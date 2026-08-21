@@ -1,38 +1,14 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BackYardUnloadThemeTemplateCommand", pm.SimpleCommand)
 
-local var_0_0 = "BackYardUnloadThemeTemplateCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(DormProxy)
+	local var_1_1 = getProxy(DormProxy):GetCustomThemeTemplateById(arg_1_1:getBody().templateId)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).templateId
-
-	getProxy = var_1_0
-	DormProxy = var_1_10006
-
-	local var_1_2 = var_1_0(var_1_10006)
-	local var_1_3 = var_4.GetCustomThemeTemplateById(var_1_2, var_1_1)
-
-	local function var_1_4(arg_2_0)
-		pg = var_2_10001
-
-		local var_2_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOn(var_2_0)
-
-		seriesAsync = var_1
-
-		var_1({
+	local function var_1_2(arg_2_0)
+		pg.UIMgr.GetInstance():LoadingOn()
+		seriesAsync({
 			function(arg_3_0)
-				BackYardThemeTempalteUtil = var_3_10001
-
-				local var_3_0 = var_3_10001.DeleteTexture
-				local var_3_1 = var_1_3
-
-				var_3_0(var_3.GetTextureName(var_3_1), function(arg_4_0)
+				BackYardThemeTempalteUtil.DeleteTexture(var_1_1:GetTextureName(), function(arg_4_0)
 					if arg_4_0 then
 						arg_3_0()
 					end
@@ -43,12 +19,7 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 				return
 			end,
 			function(arg_5_0)
-				BackYardThemeTempalteUtil = var_3_10001
-
-				local var_5_0 = var_3_10001.DeleteTexture
-				local var_5_1 = var_1_3
-
-				var_5_0(var_3.GetTextureIconName(var_5_1), function(arg_6_0)
+				BackYardThemeTempalteUtil.DeleteTexture(var_1_1:GetTextureIconName(), function(arg_6_0)
 					if arg_6_0 then
 						arg_5_0()
 					end
@@ -59,11 +30,7 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 				return
 			end
 		}, function()
-			pg = var_3_10000
-
-			local var_7_0 = var_3_10000.UIMgr.GetInstance()
-
-			var_0.LoadingOff(var_7_0)
+			pg.UIMgr.GetInstance():LoadingOff()
 
 			if arg_2_0 then
 				arg_2_0()
@@ -75,62 +42,32 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 		return
 	end
 
-	local function var_1_5(arg_8_0)
-		local var_8_0 = var_1_3
+	local function var_1_3(arg_8_0)
+		var_1_1:UnLoad()
+		var_1_0:UpdateCustomThemeTemplate(var_1_1)
 
-		var_1.UnLoad(var_8_0)
-
-		local var_8_1 = var_0
-
-		var_1.UpdateCustomThemeTemplate(var_8_1, var_1_3)
-
-		local var_8_2 = var_1_3.id
-		local var_8_3 = var_0
-
-		if var_2.GetShopThemeTemplateById(var_8_3, var_8_2) then
-			local var_8_4 = var_0
-
-			var_2.DeleteShopThemeTemplate(var_8_4, var_8_2)
+		if var_1_0:GetShopThemeTemplateById(var_1_1.id) then
+			var_1_0:DeleteShopThemeTemplate(var_1_1.id)
 		end
 
-		local var_8_5 = var_0
-
-		if var_2.GetCollectionThemeTemplateById(var_8_5, var_8_2) then
-			local var_8_6 = var_0
-
-			var_2.DeleteCollectionThemeTemplate(var_8_6, var_8_2)
+		if var_1_0:GetCollectionThemeTemplateById(var_1_1.id) then
+			var_1_0:DeleteCollectionThemeTemplate(var_1_1.id)
 		end
 
-		local var_8_7 = arg_1_0
-		local var_8_8 = var_2.sendNotification
-
-		GAME = var_5
-
-		var_8_8(var_8_7, var_5.BACKYARD_UNLOAD_THEME_TEMPLATE_DONE)
+		arg_1_0:sendNotification(GAME.BACKYARD_UNLOAD_THEME_TEMPLATE_DONE)
 
 		return
 	end
 
 	;(function()
-		pg = var_2_10000
-
-		local var_9_0 = var_2_10000.ConnectionMgr.GetInstance()
-
-		var_0.Send(var_9_0, 19125, {
-			pos = var_1_3.pos
+		pg.ConnectionMgr.GetInstance():Send(19125, {
+			pos = var_1_1.pos
 		}, 19126, function(arg_10_0)
 			if arg_10_0.result == 0 then
-				var_1_5(arg_10_0)
-				var_1_4()
+				var_1_3(arg_10_0)
+				var_1_2()
 			else
-				pg = var_1
-
-				local var_10_0 = var_1.TipsMgr.GetInstance()
-				local var_10_1 = var_1.ShowTips
-
-				ERROR_MESSAGE = var_3_10004
-
-				var_10_1(var_10_0, var_3_10004[arg_10_0.result] .. arg_10_0.result)
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_10_0.result] .. arg_10_0.result)
 			end
 
 			return
@@ -142,4 +79,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

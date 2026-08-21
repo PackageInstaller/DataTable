@@ -1,37 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShipProfileMainExCvBtn", import(".ShipProfileCvBtn"))
 
-local var_0_0 = "ShipProfileMainExCvBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".ShipProfileCvBtn"))
-
-function var_0_1.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
+function var_0_0.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0.shipGroup = arg_1_1
 	arg_1_0.isLive2d = arg_1_3
 	arg_1_0.skin = arg_1_2
 
-	local var_1_0 = "main" .. arg_1_4
+	local var_1_0 = i18n("word_cv_key_main") .. arg_1_4 .. "Ex"
 
-	pg = var_6
-
-	local var_1_1 = var_6.character_voice[var_1_0]
-
-	i18n = var_1_10007
-
-	local var_1_2 = var_1_10007("word_cv_key_main") .. arg_1_4 .. "Ex"
-
-	if var_1_1 then
-		Clone = var_8
-		arg_1_0.voice = var_8(var_1_1)
-		arg_1_0.voice.voice_name = var_1_2
+	if pg.character_voice["main" .. arg_1_4] then
+		arg_1_0.voice = Clone(pg.character_voice["main" .. arg_1_4])
+		arg_1_0.voice.voice_name = var_1_0
 	else
 		arg_1_0.voice = {
 			spine_action = "normal",
 			profile_index = 5,
 			l2d_action = "main_3",
-			key = var_1_0,
-			voice_name = var_1_2,
+			key = "main" .. arg_1_4,
+			voice_name = var_1_0,
 			resource_key = "main_" .. arg_1_4,
 			unlock_condition = {
 				0,
@@ -40,111 +25,61 @@ function var_0_1.Init(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 		}
 	end
 
-	local var_1_3 = arg_1_0.voice
+	local var_1_1 = arg_1_0.voice
 
-	pg = var_9
-	arg_1_0.words = var_9.ship_skin_words[arg_1_0.skin.id]
+	arg_1_0.words = pg.ship_skin_words[arg_1_0.skin.id]
 
+	local var_1_2
+	local var_1_3
 	local var_1_4
 	local var_1_5
 	local var_1_6
 	local var_1_7
-	local var_1_8
-	local var_1_9
-	local var_1_10 = var_1_3.key
-	local var_1_11 = arg_1_0.shipGroup
-	local var_1_12 = var_16.GetMaxIntimacy(var_1_11)
+	local var_1_8 = arg_1_0.shipGroup:GetMaxIntimacy()
 
-	string = var_1_10017
-
-	local var_1_13 = var_1_10017.find
-	local var_1_14 = var_1_10
-
-	ShipWordHelper = var_1_10020
-
-	local var_1_15
-
-	if var_1_13(var_1_14, var_1_10020.WORD_TYPE_MAIN) then
-		string = var_1_15
-		var_1_15 = var_1_15.gsub
-
-		local var_1_16 = var_1_10
-
-		ShipWordHelper = var_20
-		var_1_15 = var_1_15(var_1_16, var_20.WORD_TYPE_MAIN, "")
-		tonumber = var_1_11
-		var_1_7 = var_1_11(var_1_15)
-		ShipWordHelper = var_18
-
-		local var_1_17 = var_18.GetWordAndCV
-		local var_1_18 = arg_1_0.skin.id
-
-		ShipWordHelper = var_21
-		var_1_4, var_1_5, var_1_6 = var_1_17(var_1_18, var_21.WORD_TYPE_MAIN, var_1_7, nil, var_1_12)
+	if string.find(var_1_1.key, ShipWordHelper.WORD_TYPE_MAIN) then
+		var_1_5 = tonumber((string.gsub(var_1_1.key, ShipWordHelper.WORD_TYPE_MAIN, "")))
+		var_1_2, var_1_3, var_1_4 = ShipWordHelper.GetWordAndCV(arg_1_0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var_1_5, nil, var_1_8)
 
 		if arg_1_0.isLive2d then
-			ShipWordHelper = var_18
-
-			local var_1_19 = var_18.GetL2dCvCalibrate
-			local var_1_20 = arg_1_0.skin.id
-
-			ShipWordHelper = var_21
-			var_1_8 = var_1_19(var_1_20, var_21.WORD_TYPE_MAIN, var_1_7)
-			ShipWordHelper = var_18
-
-			local var_1_21 = var_18.GetL2dSoundEffect
-			local var_1_22 = arg_1_0.skin.id
-
-			ShipWordHelper = var_21
-			var_1_9 = var_1_21(var_1_22, var_21.WORD_TYPE_MAIN, var_1_7)
+			var_1_6 = ShipWordHelper.GetL2dCvCalibrate(arg_1_0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var_1_5)
+			var_1_7 = ShipWordHelper.GetL2dSoundEffect(arg_1_0.skin.id, ShipWordHelper.WORD_TYPE_MAIN, var_1_5)
 		end
 	else
-		ShipWordHelper = var_1_15
-		var_1_4, var_1_5, var_1_6 = var_1_15.GetWordAndCV(arg_1_0.skin.id, var_1_10)
+		var_1_2, var_1_3, var_1_4 = ShipWordHelper.GetWordAndCV(arg_1_0.skin.id, var_1_1.key)
 
 		if arg_1_0.isLive2d then
-			ShipWordHelper = var_17
-			var_1_8 = var_17.GetL2dCvCalibrate(arg_1_0.skin.id, var_1_10)
-			ShipWordHelper = var_17
-			var_1_9 = var_17.GetL2dSoundEffect(arg_1_0.skin.id, var_1_10)
+			var_1_6 = ShipWordHelper.GetL2dCvCalibrate(arg_1_0.skin.id, var_1_1.key)
+			var_1_7 = ShipWordHelper.GetL2dSoundEffect(arg_1_0.skin.id, var_1_1.key)
 		end
 	end
 
 	arg_1_0.wordData = {
-		cvKey = var_1_4,
-		cvPath = var_1_5,
-		textContent = var_1_6,
-		mainIndex = var_1_7,
-		voiceCalibrate = var_1_8,
-		se = var_1_9,
-		maxfavor = var_1_12
+		cvKey = var_1_2,
+		cvPath = var_1_3,
+		textContent = var_1_4,
+		mainIndex = var_1_5,
+		voiceCalibrate = var_1_6,
+		se = var_1_7,
+		maxfavor = var_1_8
 	}
 
 	return
 end
 
-function var_0_1.Update(arg_2_0)
+function var_0_0.Update(arg_2_0)
 	local var_2_0 = arg_2_0.voice.unlock_condition[1] < 0
 	local var_2_1 = arg_2_0.wordData.textContent == nil or arg_2_0.wordData.textContent == "nil" or arg_2_0.wordData.textContent == ""
-	local var_2_3
 
 	if not arg_2_0.isLive2d then
 		var_2_0 = var_2_0 or var_2_1
 	else
-		local var_2_2 = var_1.l2d_action
+		local var_2_2 = arg_2_0.voice.l2d_action:match("^" .. ShipWordHelper.WORD_TYPE_MAIN .. "_")
 
-		var_2_3 = var_2_3.match
-
-		local var_2_4 = "^"
-
-		ShipWordHelper = var_1_10008
-		var_2_3 = var_2_3(var_2_2, var_2_4 .. var_1_10008.WORD_TYPE_MAIN .. "_")
-		var_2_0 = var_2_0 or var_2_1 and var_2_3
+		var_2_0 = var_2_0 or var_2_1 and var_2_2
 	end
 
-	setActive = var_2_3
-
-	var_2_3(arg_2_0._tf, not var_2_0)
+	setActive(arg_2_0._tf, not var_2_0)
 
 	if not var_2_0 then
 		arg_2_0:UpdateCvBtn()
@@ -154,31 +89,14 @@ function var_0_1.Update(arg_2_0)
 	return
 end
 
-function var_0_1.UpdateCvBtn(arg_3_0)
-	local var_3_0 = arg_3_0.voice
-	local var_3_1 = arg_3_0.shipGroup
-	local var_3_2 = true
-	local var_3_3
-	local var_3_4
+function var_0_0.UpdateCvBtn(arg_3_0)
+	if true then
+		arg_3_0.nameTxt.text = arg_3_0.voice.voice_name or "???"
 
-	if not var_3_2 or not var_3_0.voice_name then
-		var_3_4 = "???"
+		setActive(arg_3_0.tagDiff, (ShipWordHelper.ExistDifferentMainExWord(arg_3_0.skin.id, arg_3_0.voice.key, arg_3_0.wordData.mainIndex, (arg_3_0.shipGroup:GetMaxIntimacy()))))
+
+		return
 	end
-
-	arg_3_0.nameTxt.text = var_3_4
-
-	local var_3_5 = arg_3_0.shipGroup
-	local var_3_6 = var_6.GetMaxIntimacy(var_3_5)
-
-	ShipWordHelper = var_1_10007
-
-	local var_3_7 = var_1_10007.ExistDifferentMainExWord(arg_3_0.skin.id, var_3_0.key, arg_3_0.wordData.mainIndex, var_3_6)
-
-	setActive = var_3_5
-
-	var_3_5(arg_3_0.tagDiff, var_3_7)
-
-	return
 end
 
-return var_0_1
+return var_0_0

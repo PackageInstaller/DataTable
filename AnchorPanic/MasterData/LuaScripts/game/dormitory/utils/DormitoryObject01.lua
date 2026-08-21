@@ -220,7 +220,7 @@ function getIsCover(self, cusTile)
     local otherEndCol = 1
     -- 厚度判断
     if self.mSite == DormitoryCost.SITE_WALL_FRONT then
-        otherStartRow = DormitoryCost.ROW_COUNT - self:getHight()
+        otherStartRow = DormitoryCost.ROW_COUNT - self:getHight() + 1
         otherEndRow = DormitoryCost.ROW_COUNT
         otherStartCol = startCol
         otherEndCol = endCol

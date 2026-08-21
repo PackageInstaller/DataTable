@@ -1,31 +1,18 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PipeGameConst")
-
-this = this
-var_0.bgm_type_default = 1
-this = var_0
-var_0.bgm_type_main = 2
-this = var_0
-var_0.bgm_type_game = 3
-this = var_0
-var_0.bg_layer_back = 1
-this = var_0
-var_0.bg_layer_mid = 2
-this = var_0
-var_0.bg_layer_top = 3
-this = var_0
-var_0.tpl_map_item = "mapItem"
-this = var_0
-var_0.tpl_rect_item = "rectItem"
-this = var_0
-var_0.game_result_level = {
+﻿this = class("PipeGameConst")
+this.bgm_type_default = 1
+this.bgm_type_main = 2
+this.bgm_type_game = 3
+this.bg_layer_back = 1
+this.bg_layer_mid = 2
+this.bg_layer_top = 3
+this.tpl_map_item = "mapItem"
+this.tpl_rect_item = "rectItem"
+this.game_result_level = {
 	0,
 	10,
 	25
 }
-this = var_0
-var_0.game_round = {
+this.game_round = {
 	{
 		input_index = 4,
 		id = 1,
@@ -131,8 +118,7 @@ var_0.game_round = {
 		}
 	}
 }
-this = var_0
-var_0.map_item_data = {
+this.map_item_data = {
 	{
 		id = 1,
 		img_full = "Object_B_01",
@@ -233,8 +219,7 @@ var_0.map_item_data = {
 		}
 	}
 }
-this = var_0
-var_0.map_rect_data = {
+this.map_rect_data = {
 	{
 		id = 1,
 		list = {
@@ -326,8 +311,7 @@ var_0.map_rect_data = {
 		}
 	}
 }
-this = var_0
-var_0.map_rect_list = {
+this.map_rect_list = {
 	{
 		{
 			1,
@@ -743,8 +727,7 @@ var_0.map_rect_list = {
 		}
 	}
 }
-this = var_0
-var_0.map_random_data = {
+this.map_random_data = {
 	{
 		id = 1,
 		list = {}
@@ -782,6 +765,5 @@ var_0.map_random_data = {
 		list = {}
 	}
 }
-this = var_0
 
-return var_0
+return this

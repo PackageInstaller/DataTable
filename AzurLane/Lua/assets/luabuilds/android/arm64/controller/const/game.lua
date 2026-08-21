@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿GAME = {
 	GAME_TRACK = "game track",
 	SUBMIT_ACTIVITY_TASK = "activity task subimit",
 	ISLAND_SUBMIT_TASK_ONE_STEP_DONE = "ISLAND_SUBMIT_TASK_ONE_STEP_DONE",
@@ -1479,6 +1479,5 @@
 	WORLD_CORE_ACTIVATE = "world core activate",
 	GET_MINI_GAME_SHOP = "get minigame shop "
 }
-local var_0_1 = GAME
 
 return

@@ -1,17 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGamePlayerPanel", import("view.base.BasePanel"))
 
-local var_0_0 = "AuctionGamePlayerPanel"
+var_0_0.REFRESH_CURRENCY = "AuctionGamePlayerPanel::REFRESH_CURRENCY"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-var_0_1.REFRESH_CURRENCY = "AuctionGamePlayerPanel::REFRESH_CURRENCY"
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -21,94 +15,26 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
-	onButton = var_1_10001
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.uiDisplayBtn
-
-	local function var_2_2()
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		local var_3_2 = var_2_10003.ON_ADD_SUBLAYER
-
-		Context = var_2_10004
-
-		local var_3_3 = var_2_10004.New
-		local var_3_4 = {}
-
-		AuctionGameNameCardLayer = var_2_10007
-		var_3_4.viewComponent = var_2_10007
-		AuctionGameNameCardMediator = var_2_10007
-		var_3_4.mediator = var_2_10007
-
-		var_3_1(var_3_0, var_3_2, var_3_3(var_3_4))
+function var_0_0.Init(arg_2_0)
+	onButton(arg_2_0, arg_2_0.uiDisplayBtn, function()
+		arg_2_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+			viewComponent = AuctionGameNameCardLayer,
+			mediator = AuctionGameNameCardMediator
+		}))
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
+	local var_2_0 = getProxy(PlayerProxy)
+	local var_2_1 = getProxy(PlayerProxy):getRawData()
 
-	var_1_10001(var_2_0, var_2_1, var_2_2, var_1_10006)
-
-	getProxy = var_1_10001
-	PlayerProxy = var_2_0
-
-	local var_2_3 = var_1_10001(var_2_0)
-
-	getProxy = var_1_10002
-	PlayerProxy = var_2_1
-
-	local var_2_4 = var_1_10002(var_2_1)
-	local var_2_5 = var_2.getRawData(var_2_4)
-
-	setText = var_2_0
-
-	var_2_0(arg_2_0.uiNameText, var_2_5.name)
-
-	local var_2_6 = var_2_5
-	local var_2_7 = var_2_5.GetShipPhantomMarks(var_2_6)[1]
-
-	getProxy = var_2_4
-	BayProxy = var_6
-
-	local var_2_8 = var_2_4(var_6)
-	local var_2_9 = var_4.GetShipPhantom(var_2_8, var_2_7)
-
-	GetImageSpriteFromAtlasAsync = var_2_6
-
-	var_2_6("SquareIcon/" .. var_2_9:getPainting(), "", arg_2_0.uiIconTf)
-
-	getProxy = var_2_6
-	ActivityProxy = var_7
-
-	local var_2_10 = var_2_6(var_7)
-	local var_2_11 = var_5.getActivityByType
-
-	ActivityConst = var_9
-
-	local var_2_12 = var_2_11(var_2_10, var_9.ACTIVITY_TYPE_AUCTION_GAME)
-	local var_2_13 = var_6.getConfig(var_2_12, "config_client").itemID
-
-	LoadSpriteAsync = var_2_10
-	Drop = var_10
-
-	local var_2_14 = var_10.New
-	local var_2_15 = {}
-
-	DROP_TYPE_VITEM = var_1_10013
-	var_2_15.type = var_1_10013
-	var_2_15.id = var_2_13
-
-	local var_2_16 = var_2_14(var_2_15)
-
-	var_2_10(var_10.getIcon(var_2_16), function(arg_4_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_2_0.uiCurrencyIcon) then
+	setText(arg_2_0.uiNameText, var_2_1.name)
+	GetImageSpriteFromAtlasAsync("SquareIcon/" .. getProxy(BayProxy):GetShipPhantom(var_2_1:GetShipPhantomMarks()[1]):getPainting(), "", arg_2_0.uiIconTf)
+	LoadSpriteAsync(Drop.New({
+		type = DROP_TYPE_VITEM,
+		id = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_AUCTION_GAME):getConfig("config_client").itemID
+	}):getIcon(), function(arg_4_0)
+		if not IsNil(arg_2_0.uiCurrencyIcon) then
 			arg_2_0.uiCurrencyIcon.sprite = arg_4_0
 		end
 
@@ -118,41 +44,24 @@ function var_0_1.Init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_5_0)
+function var_0_0.didEnter(arg_5_0)
 	arg_5_0:RefreshCurrency()
 
-	local var_5_0 = {}
-	local var_5_1 = arg_5_0
-	local var_5_2 = arg_5_0.bind
-	local var_5_3 = var_0_1.REFRESH_CURRENCY
-
-	handler = var_1_10006
-	var_5_0[1] = var_5_2(var_5_1, var_5_3, var_1_10006(arg_5_0, arg_5_0.RefreshCurrency))
-	arg_5_0.eventIDList = var_5_0
+	arg_5_0.eventIDList = {
+		arg_5_0:bind(var_0_0.REFRESH_CURRENCY, handler(arg_5_0, arg_5_0.RefreshCurrency))
+	}
 
 	return
 end
 
-function var_0_1.RefreshCurrency(arg_6_0)
-	setText = var_1_10001
-
-	local var_6_0 = arg_6_0.uiCntText
-
-	StringHelper = var_1_10004
-
-	local var_6_1 = var_1_10004.ForamtNumberK
-
-	AuctionGameTools = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1(var_1_10006.GetCurrencyCnt()))
+function var_0_0.RefreshCurrency(arg_6_0)
+	setText(arg_6_0.uiCntText, StringHelper.ForamtNumberK(AuctionGameTools.GetCurrencyCnt()))
 
 	return
 end
 
-function var_0_1.willExit(arg_7_0)
-	ipairs = var_1_10001
-
-	for iter_7_0, iter_7_1 in var_1_10001(arg_7_0.eventIDList) do
+function var_0_0.willExit(arg_7_0)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.eventIDList) do
 		arg_7_0:disconnect(iter_7_1)
 	end
 
@@ -163,4 +72,4 @@ function var_0_1.willExit(arg_7_0)
 	return
 end
 
-return var_0_1
+return var_0_0

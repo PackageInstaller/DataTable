@@ -1,225 +1,84 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Msgbox4LinkCollectGuide", import(".MsgboxSubPanel"))
 
-local var_0_0 = "Msgbox4LinkCollectGuide"
+var_0_0.SHOW_TYPE_NORMAL = 1
+var_0_0.SHOW_TYPE_LIMIT = 2
+var_0_0.SKIP_TYPE_SCENE = 2
+var_0_0.SKIP_TYPE_ACTIVITY = 3
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MsgboxSubPanel"))
-
-var_0_1.SHOW_TYPE_NORMAL = 1
-var_0_1.SHOW_TYPE_LIMIT = 2
-var_0_1.SKIP_TYPE_SCENE = 2
-var_0_1.SKIP_TYPE_ACTIVITY = 3
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "Msgbox4LinkCollectGuide"
 end
 
-function var_0_1.OnInit(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.title = arg_2_0._tf:Find("name_mask/name")
+	arg_2_0.owner = arg_2_0._tf:Find("owner")
 
-	arg_2_0.title = var_1.Find(var_2_0, "name_mask/name")
+	setText(arg_2_0.owner:Find("title"), i18n("collect_page_got"))
 
-	local var_2_1 = arg_2_0._tf
+	arg_2_0.ownerLimit = arg_2_0._tf:Find("owner_limit")
 
-	arg_2_0.owner = var_1.Find(var_2_1, "owner")
-	setText = var_1
+	setText(arg_2_0.ownerLimit:Find("title"), i18n("collect_page_got"))
 
-	local var_2_2 = arg_2_0.owner
-	local var_2_3 = var_3.Find(var_2_2, "title")
-
-	i18n = var_4
-
-	var_1(var_2_3, var_4("collect_page_got"))
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.ownerLimit = var_1.Find(var_2_4, "owner_limit")
-	setText = var_1
-
-	local var_2_5 = arg_2_0.ownerLimit
-	local var_2_6 = var_3.Find(var_2_5, "title")
-
-	i18n = var_4
-
-	var_1(var_2_6, var_4("collect_page_got"))
-
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.iconTF = var_1.Find(var_2_7, "left/IconTpl")
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.ownTF = var_1.Find(var_2_8, "left/own")
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.detailTF = var_1.Find(var_2_9, "left/detail")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.desc = var_1.Find(var_2_10, "content/desc")
-
-	local var_2_11 = arg_2_0._tf
-
-	arg_2_0.list = var_1.Find(var_2_11, "content/skipable_list")
-
-	local var_2_12 = arg_2_0.list
-
-	arg_2_0.tpl = var_1.Find(var_2_12, "tpl")
+	arg_2_0.iconTF = arg_2_0._tf:Find("left/IconTpl")
+	arg_2_0.ownTF = arg_2_0._tf:Find("left/own")
+	arg_2_0.detailTF = arg_2_0._tf:Find("left/detail")
+	arg_2_0.desc = arg_2_0._tf:Find("content/desc")
+	arg_2_0.list = arg_2_0._tf:Find("content/skipable_list")
+	arg_2_0.tpl = arg_2_0.list:Find("tpl")
 
 	return
 end
 
-function var_0_1.OnRefresh(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.SetWindowSize
+function var_0_0.OnRefresh(arg_3_0, arg_3_1)
+	arg_3_0:SetWindowSize(Vector2(930, 540))
+	setActive(arg_3_0.viewParent._btnContainer, false)
 
-	Vector2 = var_1_10005
-
-	var_3_1(var_3_0, var_1_10005(930, 540))
-
-	setActive = var_3_1
-
-	var_3_1(arg_3_0.viewParent._btnContainer, false)
-
-	Drop = var_3_1
-
-	local var_3_2 = var_3_1.New({
+	local var_3_0 = Drop.New({
 		type = arg_3_1.drop_type,
 		id = arg_3_1.drop_id
 	})
 
-	updateDrop = var_1_10003
+	updateDrop(arg_3_0.iconTF, var_3_0)
+	UpdateOwnDisplay(arg_3_0.ownTF, var_3_0)
+	RegisterDetailButton(arg_3_0.viewParent, arg_3_0.detailTF, var_3_0)
+	changeToScrollText(arg_3_0.title, var_3_0.cfg.name)
+	setText(arg_3_0.desc, var_3_0.desc)
 
-	var_1_10003(arg_3_0.iconTF, var_3_2)
+	if arg_3_1.show_type == var_0_0.SHOW_TYPE_NORMAL then
+		setActive(arg_3_0.owner, true)
+		setActive(arg_3_0.ownerLimit, false)
+		setText(arg_3_0.owner:Find("Text"), arg_3_1.count)
+	elseif arg_3_1.show_type == var_0_0.SHOW_TYPE_LIMIT then
+		setActive(arg_3_0.owner, false)
+		setActive(arg_3_0.ownerLimit, true)
 
-	UpdateOwnDisplay = var_1_10003
+		local var_3_1 = arg_3_1.count_limit or 0
 
-	var_1_10003(arg_3_0.ownTF, var_3_2)
-
-	RegisterDetailButton = var_1_10003
-
-	var_1_10003(arg_3_0.viewParent, arg_3_0.detailTF, var_3_2)
-
-	local var_3_3 = var_3_2.cfg
-
-	changeToScrollText = var_4
-
-	var_4(arg_3_0.title, var_3_3.name)
-
-	setText = var_4
-
-	var_4(arg_3_0.desc, var_3_2.desc)
-
-	if arg_3_1.show_type == var_0_1.SHOW_TYPE_NORMAL then
-		setActive = var_4
-
-		var_4(arg_3_0.owner, true)
-
-		setActive = var_4
-
-		var_4(arg_3_0.ownerLimit, false)
-
-		setText = var_4
-
-		local var_3_4 = arg_3_0.owner
-
-		var_4(var_6.Find(var_3_4, "Text"), arg_3_1.count)
-	elseif arg_3_1.show_type == var_0_1.SHOW_TYPE_LIMIT then
-		setActive = var_4
-
-		var_4(arg_3_0.owner, false)
-
-		setActive = var_4
-
-		var_4(arg_3_0.ownerLimit, true)
-
-		setText = var_4
-
-		local var_3_5 = arg_3_0.ownerLimit
-		local var_3_6 = var_6.Find(var_3_5, "Text")
-		local var_3_7 = arg_3_1.count
-		local var_3_8 = "/"
-		local var_3_9
-
-		if not arg_3_1.count_limit then
-			var_3_9 = 0
-		end
-
-		var_4(var_3_6, var_3_7 .. var_3_8 .. var_3_9)
+		setText(arg_3_0.ownerLimit:Find("Text"), arg_3_1.count .. "/" .. var_3_1)
 	end
 
-	UIItemList = var_4
-
-	var_4.StaticAlign(arg_3_0.list, arg_3_0.tpl, #arg_3_1.skipable_list, function(arg_4_0, arg_4_1, arg_4_2)
-		UIItemList = var_2_10003
-
-		if arg_4_0 == var_2_10003.EventUpdate then
+	UIItemList.StaticAlign(arg_3_0.list, arg_3_0.tpl, #arg_3_1.skipable_list, function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventUpdate then
 			local var_4_0 = arg_3_1.skipable_list[arg_4_1 + 1][1]
-			local var_4_1 = var_3[2]
-			local var_4_2 = var_3[3]
+			local var_4_1 = arg_3_1.skipable_list[arg_4_1 + 1][2]
 
-			changeToScrollText = var_2_10007
+			changeToScrollText(arg_4_2:Find("mask/title"), arg_3_1.skipable_list[arg_4_1 + 1][3])
+			onButton(arg_3_0, arg_4_2:Find("skip_btn"), function()
+				if var_4_0 == var_0_0.SKIP_TYPE_SCENE then
+					local var_5_0 = var_4_1[2] or {}
 
-			var_2_10007(arg_4_2:Find("mask/title"), var_4_2)
-
-			local var_4_3 = arg_4_2:Find("skip_btn")
-
-			onButton = var_2_10008
-
-			local var_4_4 = arg_3_0
-			local var_4_5 = var_4_3
-
-			local function var_4_6()
-				if var_4_0 == var_0_1.SKIP_TYPE_SCENE then
-					pg = var_0
-
-					local var_5_0 = var_0.m02
-					local var_5_1 = var_0.sendNotification
-
-					GAME = var_3_10003
-					var_3_10003 = var_3_10003.GO_SCENE
-					var_3_10004 = var_4_1[1]
-
-					local var_5_2
-
-					if not var_4_1[2] then
-						var_5_2 = {}
-					end
-
-					var_5_1(var_5_0, var_3_10003, var_3_10004, var_5_2)
-				elseif var_4_0 == var_0_1.SKIP_TYPE_ACTIVITY then
-					pg = var_0
-
-					local var_5_3 = var_0.m02
-					local var_5_4 = var_0.sendNotification
-
-					GAME = var_3_10003
-
-					local var_5_5 = var_3_10003.GO_SCENE
-
-					SCENE = var_3_10004
-
-					var_5_4(var_5_3, var_5_5, var_3_10004.ACTIVITY, {
+					pg.m02:sendNotification(GAME.GO_SCENE, var_4_1[1], var_5_0)
+				elseif var_4_0 == var_0_0.SKIP_TYPE_ACTIVITY then
+					pg.m02:sendNotification(GAME.GO_SCENE, SCENE.ACTIVITY, {
 						id = var_4_1
 					})
 				end
 
-				local var_5_6 = arg_3_0.viewParent
-
-				var_0.hide(var_5_6)
+				arg_3_0.viewParent:hide()
 
 				return
-			end
-
-			SFX_PANEL = var_2_10013
-
-			var_2_10008(var_4_4, var_4_5, var_4_6, var_2_10013)
-
-			Canvas = var_2_10008
-
-			var_2_10008.ForceUpdateCanvases()
+			end, SFX_PANEL)
+			Canvas.ForceUpdateCanvases()
 		end
 
 		return
@@ -228,4 +87,4 @@ function var_0_1.OnRefresh(arg_3_0, arg_3_1)
 	return
 end
 
-return var_0_1
+return var_0_0

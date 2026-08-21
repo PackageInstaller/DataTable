@@ -1,106 +1,39 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("UpgradeIslandCommand", pm.SimpleCommand)
 
-local var_0_0 = "UpgradeIslandCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().callback
-
-	arg_1_0:DoUpgrade(var_1_0)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	arg_1_0:DoUpgrade(arg_1_1:getBody().callback)
 
 	return
 end
 
-function var_0_1.DoUpgrade(arg_2_0, arg_2_1)
-	getProxy = var_1_10002
-	IslandProxy = var_1_10004
-
-	local var_2_0 = var_1_10002(var_1_10004)
-	local var_2_1 = var_2.GetIsland(var_2_0)
-
-	if not var_2.CanLevelUp(var_2_1) then
+function var_0_0.DoUpgrade(arg_2_0, arg_2_1)
+	if not getProxy(IslandProxy):GetIsland():CanLevelUp() then
 		arg_2_1()
 
 		return
 	end
 
-	pg = var_3
-
-	local var_2_2 = var_3.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_2_2, 21000, {
+	pg.ConnectionMgr.GetInstance():Send(21000, {
 		type = 0
 	}, 21001, function(arg_3_0)
 		if arg_3_0.ret == 0 then
-			getProxy = var_1
-			IslandProxy = var_2_10003
+			local var_3_0 = getProxy(IslandProxy):GetIsland()
 
-			local var_3_0 = var_1(var_2_10003)
-
-			var_2_10004 = var_1.GetIsland(var_3_0)
-
-			var_1.Upgrade(var_2_10004)
-
-			IslandDropHelper = var_2
-
-			local var_3_1 = var_2.AddItems(arg_3_0)
-
-			IslandTaskHelper = var_3_0
-
-			local var_3_2 = var_3_0.UpdateRuntimeTaskByTargetType
-
-			IslandTaskTargetType = var_2_10005
-
-			var_3_2(var_2_10005.ISLAND_LV)
-
-			IslandAchievementHelper = var_3_2
-
-			local var_3_3 = var_3_2.UpdateRecord
-
-			IslandAchievementType = var_5
-
-			var_3_3(var_5.ISLAND_LV, 0, var_1:GetLevel())
-
-			local var_3_4 = arg_2_0
-			local var_3_5 = var_3.sendNotification
-
-			GAME = var_6
-
-			var_3_5(var_3_4, var_6.ISLAND_UPGRADE_DONE, {
-				dropData = var_3_1,
+			var_3_0:Upgrade()
+			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.ISLAND_LV)
+			IslandAchievementHelper.UpdateRecord(IslandAchievementType.ISLAND_LV, 0, var_3_0:GetLevel())
+			arg_2_0:sendNotification(GAME.ISLAND_UPGRADE_DONE, {
+				dropData = IslandDropHelper.AddItems(arg_3_0),
 				callback = function()
-					local var_4_0 = arg_2_0
-
-					var_0.DoUpgrade(var_4_0, arg_2_1)
+					arg_2_0:DoUpgrade(arg_2_1)
 
 					return
 				end
 			})
-
-			pg = var_3_5
-
-			local var_3_6 = var_3_5.GameTrackerMgr.GetInstance()
-			local var_3_7 = var_3.Record
-
-			GameTrackerBuilder = var_6
-
-			var_3_7(var_3_6, var_6.BuildIslandUpgrade(var_1:GetLevel()))
-
-			local var_3_8 = var_1:GetTechnologyAgency()
-
-			var_3.TryAutoUnlock(var_3_8)
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandUpgrade(var_3_0:GetLevel()))
+			var_3_0:GetTechnologyAgency():TryAutoUnlock()
 		else
-			pg = var_1
-
-			local var_3_9 = var_1.TipsMgr.GetInstance()
-			local var_3_10 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_3_10(var_3_9, var_2_10004[arg_3_0.ret] .. arg_3_0.ret)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.ret] .. arg_3_0.ret)
 		end
 
 		return
@@ -109,4 +42,4 @@ function var_0_1.DoUpgrade(arg_2_0, arg_2_1)
 	return
 end
 
-return var_0_1
+return var_0_0

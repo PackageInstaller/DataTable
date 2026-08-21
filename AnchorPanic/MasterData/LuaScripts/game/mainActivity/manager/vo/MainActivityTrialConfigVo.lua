@@ -14,6 +14,7 @@ function parseConfigData(self, key, cusData)
     self.mon = cusData.mon
     self.scene_id = cusData.scene_id
     self.first_award = cusData.first_award
+    self.winHeroTid = cusData.hero_id
 end
 
 function getSceneId(self)

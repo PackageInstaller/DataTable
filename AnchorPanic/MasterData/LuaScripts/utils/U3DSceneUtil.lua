@@ -30,18 +30,20 @@ function loadSceneSingle(self, sceneName, loadCall, finishCall)
         GCUtil.colllectCSharpGC()
 
         -- 统一清理(3v3竞技场，全部清理)
-        if fight.FightManager:getLatestBattleType() == PreFightBattleType.Arena_Peak_Pvp then
-            print("===========3v3竞技场，清理全部资源")
+        if fight.FightManager:getLatestBattleType() == PreFightBattleType.Arena_Peak_Pvp or fight.FightManager:getLatestBattleType() == PreFightBattleType.GuildWar then
+            print("===========3v3竞技场 or 联盟团战，清理全部资源")
             gs.GOPoolMgr:ClearAll()
             gs.ResMgr:ForceUnload(true, true)
-            self:UnLoadAssetBundle({ "arts/fx/3d/role/prefab", "arts/fx/3d/sceneModule/maze", "arts/audio", "arts/character" })
+            -- self:UnLoadAssetBundle({ "arts/fx/3d/role/prefab", "arts/fx/3d/sceneModule/maze", "arts/audio", "arts/character" })
+            self:UnLoadAssetBundle({ "arts/fx/3d", "arts/audio", "arts/character" })
+        
         else
             -- gs.GOPoolMgr:ClearSameRes({ "arts/audio/cv", "arts/audio/sfx", "arts/audio/story", "arts/audio/UI", "arts/audio/amb",
             -- "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/ui",
             -- "arts/prefabs/ui" }) --指定清理
             gs.GOPoolMgr:ClearAll(unpack({ "arts/fx/3d/role/prefab/skill" })) --排除清理
             gs.ResMgr:ForceUnload(false, true, unpack({ "arts/fx/3d/role/prefab/skill", "arts/character/role", "arts/character/weapon", "arts/character/animat/role_fight", "arts/character/animat/weapon_fight" })) --排除清理
-            self:UnLoadAssetBundle({ "arts/audio", "arts/character/monster", "arts/character/animat", "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/3d/role/prefab/hit", "arts/fx/3d/role/prefab/always" })
+            self:UnLoadAssetBundle({ "arts/audio", "arts/sceneModule", "arts/fx/3d/sceneModule", "arts/character/scene_module_3Dhostel", "arts/character/monster", "arts/character/animat", "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/3d/role/prefab/hit", "arts/fx/3d/role/prefab/always" })
         end
 
         if (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
@@ -52,14 +54,14 @@ function loadSceneSingle(self, sceneName, loadCall, finishCall)
                     gs.GOPoolMgr:ClearAll()
                     gs.ResMgr:ForceUnload(true, true)
 
-                    self:UnLoadAssetBundle({ "arts/fx/3d/role/prefab", "arts/fx/3d/sceneModule/maze", "arts/audio", "arts/character" })
+                    self:UnLoadAssetBundle({ "arts/fx/3d/role/prefab", "arts/fx/3d/sceneModule", "arts/audio", "arts/character" })
                 end)
             else
                 if (systemGBSize < 6) then
                     pcall(function()
                         gs.GOPoolMgr:ClearAll(unpack({ "arts/fx/3d/role/prefab/skill" }))
                         gs.ResMgr:ForceUnload(false, true, unpack({ "arts/fx/3d/role/prefab/skill", "arts/character/role", "arts/character/weapon" }))
-                        self:UnLoadAssetBundle({ "arts/audio", "arts/character/monster", "arts/character/animat", "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/3d/role/prefab/hit", "arts/fx/3d/role/prefab/always" })
+                        self:UnLoadAssetBundle({ "arts/audio", "arts/sceneModule", "arts/fx/3d/sceneModule", "arts/character/scene_module_3Dhostel", "arts/character/monster", "arts/character/animat", "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/3d/role/prefab/hit", "arts/fx/3d/role/prefab/always" })
                     end)
                 end
             end
@@ -85,7 +87,7 @@ function loadSceneSingle(self, sceneName, loadCall, finishCall)
                 pcall(function()
                     gs.GOPoolMgr:ClearAll(unpack({ "arts/fx/3d/role/prefab/skill" }))
                     gs.ResMgr:ForceUnload(false, true, unpack({ "arts/fx/3d/role/prefab/skill", "arts/character/role", "arts/character/weapon" }))
-                    self:UnLoadAssetBundle({ "arts/audio", "arts/character/monster", "arts/character/animat", "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/3d/role/prefab/hit", "arts/fx/3d/role/prefab/always" })
+                    self:UnLoadAssetBundle({ "arts/audio", "arts/sceneModule", "arts/fx/3d/sceneModule", "arts/character/scene_module_3Dhostel", "arts/character/monster", "arts/character/animat", "arts/fx/3d/role/prefab/monster", "arts/fx/3d/role/prefab/boss", "arts/fx/3d/role/prefab/common", "arts/fx/3d/role/prefab/hit", "arts/fx/3d/role/prefab/always" })
                 end)
             end
         end
@@ -188,7 +190,14 @@ end
 
 -- 设置激活场景
 function setActiveScene(self, sceneName)
-    gs.SceneManager.SetActiveScene(gs.SceneManager.GetSceneByName(sceneName))
+    local isOk, value = pcall(
+        function() 
+            gs.SceneManager.SetActiveScene(gs.SceneManager.GetSceneByName(sceneName)) 
+        end
+    )
+    if not isOk then
+        logError("激活场景" .. sceneName .. "出错：" .. value)
+    end
 end
 
 function unLoadScene(self, sceneName, loadCall, finishCall)

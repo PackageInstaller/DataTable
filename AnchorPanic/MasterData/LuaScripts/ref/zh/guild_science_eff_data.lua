@@ -32,6 +32,8 @@ local guild_science_eff_data=
 	[560]={ arr_show=94964, arr_name=94984
 },
 	[600]={ arr_show=94965, arr_name=94985
+},
+	[700]={ arr_show=94966, arr_name=94967
 }
 }
 

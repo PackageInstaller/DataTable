@@ -108,6 +108,11 @@ function isOfficialApp(self)
     return self.res_split_type == "Official"
 end
 
+-- 判断是否内网包
+function isInner(self)
+    return self.mode == web.MODE_TYPE.DEBUG and self.net_type == web.NET_TYPE.INNER
+end
+
 -- 判断是否允许跳转游戏下载地址
 function isAllowJumpDownLoad(self)
     return self.mode == web.MODE_TYPE.DEBUG and (self.net_type == web.NET_TYPE.INNER or self.net_type == web.NET_TYPE.OUTER_TEST)
@@ -120,6 +125,10 @@ end
 
 -- 初始数据
 function __initData(self)
+
+    -- 是否需要换包
+    self.IsNeedUpdatePackage = false
+    
     --------------------------------------------------- 预加载顺序 ---------------------------------------------------
     -- 预加载类型
     -- 1：在显示登录界面之前
@@ -292,7 +301,7 @@ function parseChannelUpdateTypeData(self, webData, jsonObj)
         print("WebManager", string.format("获取cdn资源更新类型->出错码：%s，内容：%s", web.CDN_UPDATE_TYPE_SUB_CODE.STATUS_ZERO, webData))
         return web.CDN_UPDATE_TYPE_SUB_CODE.STATUS_ZERO
     else
-        if(jsonObj.data.force_update_type)then
+        if(jsonObj.data and jsonObj.data.force_update_type and jsonObj.data.force_update_type ~= "")then
             self.web_force_update_type = jsonObj.data.force_update_type
             print("WebManager", "获取cdn资源更新类型返回：" .. webData)
             return web.CDN_UPDATE_TYPE_SUB_CODE.NORMAL
@@ -405,20 +414,21 @@ function parseGameTokenData(self, webData, jsonObj)
         print("WebManager", string.format("获取游戏服登录token->出错码：%s，内容：%s", web.GAME_LOGIN_TOKEN_SUB_CODE.STATUS_ZERO, webData))
         return web.GAME_LOGIN_TOKEN_SUB_CODE.STATUS_ZERO
     else
-        if(jsonObj.data.account_id and jsonObj.data.adult and jsonObj.data.time and jsonObj.data.token)then
-            -- 防沉迷的标识
-            self.web_infant = jsonObj.data.adult
-            -- 是否白名单
-            -- self.web_is_white = data.data.is_white
-            self.web_account_id = jsonObj.data.account_id
-            self.web_login_time = jsonObj.data.time
-            self.web_login_token = jsonObj.data.token --MD5({account_id}+{time}+ {SRV_KEY})
-            print("WebManager", "获取游戏服登录Token返回：" .. webData)
-            return web.GAME_LOGIN_TOKEN_SUB_CODE.NORMAL
-        else
-            print(string.format("获取游戏服登录token->出错码：%s，内容：%s", web.GAME_LOGIN_TOKEN_SUB_CODE.ALL_FIELD_EMPTY, webData))
-            return web.GAME_LOGIN_TOKEN_SUB_CODE.ALL_FIELD_EMPTY
+        if(jsonObj.data and jsonObj.data.adult and jsonObj.data.account_id and jsonObj.data.time and jsonObj.data.token)then
+            if(jsonObj.data.adult ~= "" and jsonObj.data.account_id ~= "" and jsonObj.data.time ~= "" and jsonObj.data.token ~= "")then
+                -- 防沉迷的标识
+                self.web_infant = jsonObj.data.adult
+                -- 是否白名单
+                -- self.web_is_white = data.data.is_white
+                self.web_account_id = jsonObj.data.account_id
+                self.web_login_time = jsonObj.data.time
+                self.web_login_token = jsonObj.data.token --MD5({account_id}+{time}+ {SRV_KEY})
+                print("WebManager", "获取游戏服登录Token返回：" .. webData)
+                return web.GAME_LOGIN_TOKEN_SUB_CODE.NORMAL
+            end
         end
+        print(string.format("获取游戏服登录token->出错码：%s，内容：%s", web.GAME_LOGIN_TOKEN_SUB_CODE.ALL_FIELD_EMPTY, webData))
+        return web.GAME_LOGIN_TOKEN_SUB_CODE.ALL_FIELD_EMPTY
     end
 end
 

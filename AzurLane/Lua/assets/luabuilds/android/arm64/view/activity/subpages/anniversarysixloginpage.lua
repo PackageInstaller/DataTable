@@ -1,138 +1,43 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AnniversarySixLoginPage", import(".TemplatePage.LoginTemplatePage"))
 
-local var_0_0 = "AnniversarySixLoginPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.LoginTemplatePage"))
-
-function var_0_1.OnFirstFlush(arg_1_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_1_0.item, false)
-
-	local var_1_0 = arg_1_0.itemList
-
-	var_1.make(var_1_0, function(arg_2_0, arg_2_1, arg_2_2)
-		UIItemList = var_2_10003
-
-		if arg_2_0 == var_2_10003.EventUpdate then
-			local var_2_0 = arg_2_2:Find("item")
-			local var_2_1 = arg_1_0.config.front_drops[arg_2_1 + 1]
-			local var_2_2 = {
-				type = var_2_1[1],
-				id = var_2_1[2],
-				count = var_2_1[3]
-			}
-
-			updateDrop = var_6
-
-			var_6(var_2_0, var_2_2)
-
-			onButton = var_6
-
-			local var_2_3 = arg_1_0
-			local var_2_4 = arg_2_2
-
-			local function var_2_5()
-				local var_3_0 = arg_1_0
-				local var_3_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_3_1(var_3_0, var_3_10003.ON_DROP, var_2_2)
+function var_0_0.OnFirstFlush(arg_1_0)
+	setActive(arg_1_0.item, false)
+	arg_1_0.itemList:make(function(arg_2_0, arg_2_1, arg_2_2)
+		if arg_2_0 == UIItemList.EventUpdate then
+			updateDrop(arg_2_2:Find("item"), {
+				type = arg_1_0.config.front_drops[arg_2_1 + 1][1],
+				id = arg_1_0.config.front_drops[arg_2_1 + 1][2],
+				count = arg_1_0.config.front_drops[arg_2_1 + 1][3]
+			})
+			onButton(arg_1_0, arg_2_2, function()
+				arg_1_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10011
-
-			var_6(var_2_3, var_2_4, var_2_5, var_2_10011)
-
-			local var_2_6 = arg_2_2:Find("got")
-
-			setActive = var_2_10007
-
-			var_2_10007(var_2_6, arg_2_1 < arg_1_0.nday)
+			end, SFX_PANEL)
+			setActive(arg_2_2:Find("got"), arg_2_1 < arg_1_0.nday)
 		end
 
 		return
 	end)
 
-	setActive = var_1
+	local var_1_1 = arg_1_0.bg:Find("btn_more")
+	local var_1_2 = PLATFORM_CODE == PLATFORM_CH and LuaHelper.GetCHPackageType() == PACKAGE_TYPE_BILI and pg.TimeMgr.GetInstance():inTime(arg_1_0.activity:getConfig("config_client")[2])
 
-	local var_1_1 = arg_1_0.bg
-	local var_1_2 = var_3.Find(var_1_1, "btn_more")
-
-	PLATFORM_CODE = var_4
-	PLATFORM_CH = var_1_1
-
-	local var_1_7
-
-	if var_4 == var_1_1 then
-		LuaHelper = var_4
-
-		local var_1_3 = var_4.GetCHPackageType()
-
-		PACKAGE_TYPE_BILI = var_1_1
-
-		if var_1_3 == var_1_1 then
-			pg = var_1_3
-
-			local var_1_4 = var_1_3.TimeMgr.GetInstance()
-			local var_1_5 = var_4.inTime
-			local var_1_6 = arg_1_0.activity
-
-			var_1_7 = var_1_5(var_1_4, var_7.getConfig(var_1_6, "config_client")[2])
-
-			goto label_1_0
-		end
-	end
-
-	var_1_7 = false
-
-	if false then
-		var_1_7 = true
-	end
-
-	::label_1_0::
-
-	var_1(var_1_2, var_1_7)
-
-	onButton = var_1
-
-	local var_1_8 = arg_1_0
-	local var_1_9 = arg_1_0.bg
-	local var_1_10 = var_4.Find(var_1_9, "btn_more")
-
-	local function var_1_11()
-		Application = var_2_10000
-
-		local var_4_0 = var_2_10000.OpenURL
-		local var_4_1 = arg_1_0.activity
-
-		var_4_0(var_2.getConfig(var_4_1, "config_client")[1])
+	var_1_0(var_1_1, var_1_2)
+	onButton(arg_1_0, arg_1_0.bg:Find("btn_more"), function()
+		Application.OpenURL(arg_1_0.activity:getConfig("config_client")[1])
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_9
-
-	var_1(var_1_8, var_1_10, var_1_11, var_1_9)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_5_0)
-	var_0_1.super.OnUpdateFlush(arg_5_0)
-
-	setText = var_1
-
-	local var_5_0 = arg_5_0.bg
-
-	var_1(var_3.Find(var_5_0, "Text"), arg_5_0.nday .. "/" .. arg_5_0.Day)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	var_0_0.super.OnUpdateFlush(arg_5_0)
+	setText(arg_5_0.bg:Find("Text"), arg_5_0.nday .. "/" .. arg_5_0.Day)
 
 	return
 end
 
-return var_0_1
+return var_0_0

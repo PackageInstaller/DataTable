@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_picturepuzzle") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_picturepuzzle"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_picturepuzzle = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_picturepuzzle
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_picturepuzzle = rawget(pg, "activity_event_picturepuzzle") or setmetatable({
+	__name = "activity_event_picturepuzzle"
+}, confNEO)
+pg.activity_event_picturepuzzle.all = {
 	549,
 	758,
 	783,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	50493,
 	50810
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_picturepuzzle = {}
+pg.base = pg.base or {}
+pg.base.activity_event_picturepuzzle = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_picturepuzzle
-
-	var_1_0[549] = {
+	pg.base.activity_event_picturepuzzle[549] = {
 		id = 549,
 		cd = 1200,
 		chapter = 1360001,
@@ -129,11 +92,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			"NewShopsScene"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_picturepuzzle
-
-	var_1_1[758] = {
+	pg.base.activity_event_picturepuzzle[758] = {
 		id = 758,
 		cd = 0,
 		pickup_views = "",
@@ -157,11 +116,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_picturepuzzle
-
-	var_1_2[783] = {
+	pg.base.activity_event_picturepuzzle[783] = {
 		id = 783,
 		cd = 0,
 		pickup_views = "",
@@ -187,11 +142,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_picturepuzzle
-
-	var_1_3[935] = {
+	pg.base.activity_event_picturepuzzle[935] = {
 		id = 935,
 		cd = 1200,
 		chapter = 1360001,
@@ -248,11 +199,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			"NewShopsScene"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_picturepuzzle
-
-	var_1_4[959] = {
+	pg.base.activity_event_picturepuzzle[959] = {
 		id = 959,
 		cd = 0,
 		pickup_views = "",
@@ -273,11 +220,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_picturepuzzle
-
-	var_1_5[4058] = {
+	pg.base.activity_event_picturepuzzle[4058] = {
 		id = 4058,
 		cd = 0,
 		pickup_views = "",
@@ -303,11 +246,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_picturepuzzle
-
-	var_1_6[4178] = {
+	pg.base.activity_event_picturepuzzle[4178] = {
 		id = 4178,
 		cd = 0,
 		pickup_views = "",
@@ -331,11 +270,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_picturepuzzle
-
-	var_1_7[4669] = {
+	pg.base.activity_event_picturepuzzle[4669] = {
 		id = 4669,
 		cd = 0,
 		pickup_views = "",
@@ -354,11 +289,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_picturepuzzle
-
-	var_1_8[4733] = {
+	pg.base.activity_event_picturepuzzle[4733] = {
 		id = 4733,
 		cd = 600,
 		chapter = 1360004,
@@ -419,11 +350,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			"BuildShipScene"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_picturepuzzle
-
-	var_1_9[4779] = {
+	pg.base.activity_event_picturepuzzle[4779] = {
 		id = 4779,
 		cd = 0,
 		pickup_views = "",
@@ -453,11 +380,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_event_picturepuzzle
-
-	var_1_10[4889] = {
+	pg.base.activity_event_picturepuzzle[4889] = {
 		id = 4889,
 		cd = 0,
 		pickup_views = "",
@@ -481,11 +404,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_event_picturepuzzle
-
-	var_1_11[4935] = {
+	pg.base.activity_event_picturepuzzle[4935] = {
 		id = 4935,
 		cd = 0,
 		pickup_views = "",
@@ -509,11 +428,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_event_picturepuzzle
-
-	var_1_12[5093] = {
+	pg.base.activity_event_picturepuzzle[5093] = {
 		id = 5093,
 		cd = 0,
 		pickup_views = "",
@@ -532,11 +447,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_event_picturepuzzle
-
-	var_1_13[5267] = {
+	pg.base.activity_event_picturepuzzle[5267] = {
 		id = 5267,
 		cd = 600,
 		chapter = 1360005,
@@ -604,11 +515,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			"CollectionScene"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_event_picturepuzzle
-
-	var_1_14[5309] = {
+	pg.base.activity_event_picturepuzzle[5309] = {
 		id = 5309,
 		cd = 0,
 		pickup_views = "",
@@ -632,11 +539,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_event_picturepuzzle
-
-	var_1_15[5689] = {
+	pg.base.activity_event_picturepuzzle[5689] = {
 		id = 5689,
 		cd = 0,
 		pickup_views = "",
@@ -654,11 +557,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_event_picturepuzzle
-
-	var_1_16[5788] = {
+	pg.base.activity_event_picturepuzzle[5788] = {
 		id = 5788,
 		cd = 0,
 		pickup_views = "",
@@ -682,11 +581,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_event_picturepuzzle
-
-	var_1_17[5879] = {
+	pg.base.activity_event_picturepuzzle[5879] = {
 		id = 5879,
 		cd = 600,
 		chapter = 1360006,
@@ -752,11 +647,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			"BuildShipScene"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_event_picturepuzzle
-
-	var_1_18[28] = {
+	pg.base.activity_event_picturepuzzle[28] = {
 		id = 40476,
 		cd = 0,
 		pickup_views = "",
@@ -780,11 +671,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_event_picturepuzzle
-
-	var_1_19[334] = {
+	pg.base.activity_event_picturepuzzle[334] = {
 		id = 334,
 		cd = 0,
 		pickup_views = "",
@@ -805,11 +692,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_event_picturepuzzle
-
-	var_1_20[40228] = {
+	pg.base.activity_event_picturepuzzle[40228] = {
 		id = 40228,
 		cd = 0,
 		pickup_views = "",
@@ -835,11 +718,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_event_picturepuzzle
-
-	var_1_21[40276] = {
+	pg.base.activity_event_picturepuzzle[40276] = {
 		id = 40276,
 		cd = 0,
 		pickup_views = "",
@@ -866,11 +745,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_event_picturepuzzle
-
-	var_1_22[40284] = {
+	pg.base.activity_event_picturepuzzle[40284] = {
 		id = 40284,
 		cd = 1200,
 		pickup_views = "",
@@ -921,11 +796,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			100001
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_event_picturepuzzle
-
-	var_1_23[40305] = {
+	pg.base.activity_event_picturepuzzle[40305] = {
 		id = 40305,
 		cd = 0,
 		pickup_views = "",
@@ -946,11 +817,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_event_picturepuzzle
-
-	var_1_24[40393] = {
+	pg.base.activity_event_picturepuzzle[40393] = {
 		id = 40393,
 		cd = 0,
 		pickup_views = "",
@@ -976,11 +843,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_event_picturepuzzle
-
-	var_1_25[10] = {
+	pg.base.activity_event_picturepuzzle[10] = {
 		id = 40714,
 		cd = 0,
 		pickup_views = "",
@@ -1004,11 +867,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_event_picturepuzzle
-
-	var_1_26[41270] = {
+	pg.base.activity_event_picturepuzzle[41270] = {
 		id = 41270,
 		cd = 0,
 		pickup_views = "",
@@ -1032,11 +891,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_event_picturepuzzle
-
-	var_1_27[50422] = {
+	pg.base.activity_event_picturepuzzle[50422] = {
 		id = 50422,
 		cd = 0,
 		pickup_views = "",
@@ -1060,11 +915,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 		awards = {},
 		auto_finish_args = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_event_picturepuzzle
-
-	var_1_28[50493] = {
+	pg.base.activity_event_picturepuzzle[50493] = {
 		id = 50493,
 		cd = 600,
 		chapter = 1360007,
@@ -1130,8 +981,7 @@ var_0_3.base.activity_event_picturepuzzle = {}
 			"BuildShipScene"
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.activity_event_picturepuzzle[50810] = {
+	pg.base.activity_event_picturepuzzle[50810] = {
 		id = 50810,
 		cd = 0,
 		pickup_views = "",

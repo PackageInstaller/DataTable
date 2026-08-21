@@ -566,6 +566,7 @@ end
 function shopAudioSound(self)
     if self.audioData then
         AudioManager:stopAudioSound(self.audioData)
+        self.audioData = nil
     end
 end
 -- 暂停音效

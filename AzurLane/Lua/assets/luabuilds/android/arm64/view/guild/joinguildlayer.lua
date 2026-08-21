@@ -1,114 +1,53 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("JoinGuildLayer", import("..base.BaseUI"))
+local var_0_1 = i18n("guild_search_list_max_count", 30)
 
-local var_0_0 = "JoinGuildLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-local var_0_2 = 30
-
-i18n = var_0_0
-
-local var_0_3 = var_0_0("guild_search_list_max_count", var_0_2)
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "JoinGuildUI"
 end
 
-function var_0_1.setGuildVOs(arg_2_0, arg_2_1)
+function var_0_0.setGuildVOs(arg_2_0, arg_2_1)
 	arg_2_0.guildVOs = arg_2_1
 
 	return
 end
 
-function var_0_1.setPlayerVO(arg_3_0, arg_3_1)
+function var_0_0.setPlayerVO(arg_3_0, arg_3_1)
 	arg_3_0.playerVO = arg_3_1
 
 	return
 end
 
-function var_0_1.init(arg_4_0)
-	local var_4_0 = arg_4_0._tf
-
-	arg_4_0.guildViewRect = var_1.Find(var_4_0, "add_panel/view")
-
-	local var_4_1 = arg_4_0._tf
-
-	arg_4_0.refreshBtn = var_1.Find(var_4_1, "add_panel/center/refresh")
-
-	local var_4_2 = arg_4_0._tf
-
-	arg_4_0.searchBtn = var_1.Find(var_4_2, "add_panel/center/search")
-
-	local var_4_3 = arg_4_0._tf
-	local var_4_4 = var_1.Find(var_4_3, "add_panel/center/search_bar")
-	local var_4_5 = var_1.GetComponent
-
-	typeof = var_4
-	InputField = var_1_10006
-	arg_4_0.searchBar = var_4_5(var_4_4, var_4(var_1_10006))
-
-	local var_4_6 = arg_4_0._tf
-
-	arg_4_0.backBtn = var_1.Find(var_4_6, "blur_panel/adapt/top/back")
-
-	local var_4_7 = arg_4_0._tf
-
-	arg_4_0.sortBtn = var_1.Find(var_4_7, "add_panel/center/sort_button")
-
-	local var_4_8 = arg_4_0._tf
-
-	arg_4_0.sortBtnContainer = var_1.Find(var_4_8, "add_panel/sort_panel/mask/content")
+function var_0_0.init(arg_4_0)
+	arg_4_0.guildViewRect = arg_4_0._tf:Find("add_panel/view")
+	arg_4_0.refreshBtn = arg_4_0._tf:Find("add_panel/center/refresh")
+	arg_4_0.searchBtn = arg_4_0._tf:Find("add_panel/center/search")
+	arg_4_0.searchBar = arg_4_0._tf:Find("add_panel/center/search_bar"):GetComponent(typeof(InputField))
+	arg_4_0.backBtn = arg_4_0._tf:Find("blur_panel/adapt/top/back")
+	arg_4_0.sortBtn = arg_4_0._tf:Find("add_panel/center/sort_button")
+	arg_4_0.sortBtnContainer = arg_4_0._tf:Find("add_panel/sort_panel/mask/content")
 	arg_4_0.sortBtnTpl = arg_4_0:getTpl("add_panel/sort_panel/mask/content/tpl")
+	arg_4_0.sortPanel = arg_4_0._tf:Find("add_panel/sort_panel")
+	arg_4_0.applyRedPage = GuildApplyRedPage.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.applyBluePage = GuildApplyBluePage.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.listEmptyTF = arg_4_0._tf:Find("empty")
 
-	local var_4_9 = arg_4_0._tf
+	setActive(arg_4_0.listEmptyTF, false)
 
-	arg_4_0.sortPanel = var_1.Find(var_4_9, "add_panel/sort_panel")
-	GuildApplyRedPage = var_1
-	arg_4_0.applyRedPage = var_1.New(arg_4_0._tf, arg_4_0.event)
-	GuildApplyBluePage = var_1
-	arg_4_0.applyBluePage = var_1.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.listEmptyTxt = arg_4_0.listEmptyTF:Find("Text")
 
-	local var_4_10 = arg_4_0._tf
+	setText(arg_4_0.listEmptyTxt, i18n("list_empty_tip_joinguildui"))
+	setText(arg_4_0._tf:Find("tip"), var_0_1)
 
-	arg_4_0.listEmptyTF = var_1.Find(var_4_10, "empty")
-	setActive = var_1
-
-	var_1(arg_4_0.listEmptyTF, false)
-
-	local var_4_11 = arg_4_0.listEmptyTF
-
-	arg_4_0.listEmptyTxt = var_1.Find(var_4_11, "Text")
-	setText = var_1
-
-	local var_4_12 = arg_4_0.listEmptyTxt
-
-	i18n = var_4
-
-	var_1(var_4_12, var_4("list_empty_tip_joinguildui"))
-
-	setText = var_1
-
-	local var_4_13 = arg_4_0._tf
-
-	var_1(var_3.Find(var_4_13, "tip"), var_0_3)
-
-	local var_4_14 = arg_4_0.guildViewRect
-
-	arg_4_0.viewRect = var_1.GetComponent(var_4_14, "LScrollRect")
+	arg_4_0.viewRect = arg_4_0.guildViewRect:GetComponent("LScrollRect")
 
 	function arg_4_0.viewRect.onInitItem(arg_5_0)
-		local var_5_0 = arg_4_0
-
-		var_1.onInitItem(var_5_0, arg_5_0)
+		arg_4_0:onInitItem(arg_5_0)
 
 		return
 	end
 
 	function arg_4_0.viewRect.onUpdateItem(arg_6_0, arg_6_1)
-		local var_6_0 = arg_4_0
-
-		var_2.onUpdateItem(var_6_0, arg_6_0, arg_6_1)
+		arg_4_0:onUpdateItem(arg_6_0, arg_6_1)
 
 		return
 	end
@@ -118,115 +57,44 @@ function var_0_1.init(arg_4_0)
 	return
 end
 
-function var_0_1.didEnter(arg_7_0)
-	onButton = var_1_10001
-
-	local var_7_0 = arg_7_0
-	local var_7_1 = arg_7_0.refreshBtn
-
-	local function var_7_2()
-		local var_8_0 = arg_7_0
-		local var_8_1 = var_0.emit
-
-		JoinGuildMediator = var_2_10003
-
-		var_8_1(var_8_0, var_2_10003.REFRESH)
+function var_0_0.didEnter(arg_7_0)
+	onButton(arg_7_0, arg_7_0.refreshBtn, function()
+		arg_7_0:emit(JoinGuildMediator.REFRESH)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_7_0, var_7_1, var_7_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_7_3 = arg_7_0
-	local var_7_4 = arg_7_0.backBtn
-
-	local function var_7_5()
-		local var_9_0 = arg_7_0
-
-		var_0.emit(var_9_0, var_0_1.ON_CLOSE)
+	end, SFX_PANEL)
+	onButton(arg_7_0, arg_7_0.backBtn, function()
+		arg_7_0:emit(var_0_0.ON_CLOSE)
 
 		return
-	end
-
-	SOUND_BACK = var_1_10006
-
-	var_1_10001(var_7_3, var_7_4, var_7_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_7_6 = arg_7_0
-	local var_7_7 = arg_7_0.searchBtn
-
-	local function var_7_8()
-		local var_10_0 = arg_7_0.searchBar.text
-		local var_10_1 = arg_7_0
-		local var_10_2 = var_1.emit
-
-		JoinGuildMediator = var_2_10004
-
-		var_10_2(var_10_1, var_2_10004.SEARCH, var_10_0)
+	end, SOUND_BACK)
+	onButton(arg_7_0, arg_7_0.searchBtn, function()
+		arg_7_0:emit(JoinGuildMediator.SEARCH, arg_7_0.searchBar.text)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_7_6, var_7_7, var_7_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_7_9 = arg_7_0
-	local var_7_10 = arg_7_0.sortBtn
-
-	local function var_7_11()
-		go = var_2_10000
-
-		if var_2_10000(arg_7_0.sortPanel).activeSelf then
-			local var_11_0 = arg_7_0
-
-			var_0.closeSortPanel(var_11_0)
+	end, SFX_PANEL)
+	onButton(arg_7_0, arg_7_0.sortBtn, function()
+		if go(arg_7_0.sortPanel).activeSelf then
+			arg_7_0:closeSortPanel()
 		else
-			local var_11_1 = arg_7_0
-
-			var_0.openSortPanel(var_11_1)
+			arg_7_0:openSortPanel()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_7_9, var_7_10, var_7_11, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_7_12 = arg_7_0
-	local var_7_13 = arg_7_0.sortPanel
-
-	local function var_7_14()
-		local var_12_0 = arg_7_0
-
-		var_0.closeSortPanel(var_12_0)
+	end, SFX_PANEL)
+	onButton(arg_7_0, arg_7_0.sortPanel, function()
+		arg_7_0:closeSortPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_7_12, var_7_13, var_7_14, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.openSortPanel(arg_13_0)
+function var_0_0.openSortPanel(arg_13_0)
 	arg_13_0.isOpenSortPanel = true
-	setActive = var_1
 
-	var_1(arg_13_0.sortPanel, true)
+	setActive(arg_13_0.sortPanel, true)
 
 	if not arg_13_0.isInitSort then
 		arg_13_0.isInitSort = true
@@ -237,106 +105,63 @@ function var_0_1.openSortPanel(arg_13_0)
 	return
 end
 
-local var_0_4 = {
+local var_0_2 = {
 	{
 		"index_all"
+	},
+	{
+		"index_blhx",
+		{
+			"faction",
+			GuildConst.FACTION_TYPE_BLHX
+		}
+	},
+	{
+		"index_cszz",
+		{
+			"faction",
+			GuildConst.FACTION_TYPE_CSZZ
+		}
+	},
+	{
+		"index_power",
+		{
+			"policy",
+			GuildConst.POLICY_TYPE_POWER
+		}
+	},
+	{
+		"index_relax",
+		{
+			"policy",
+			GuildConst.POLICY_TYPE_RELAXATION
+		}
 	}
 }
-local var_0_5 = {
-	"index_blhx"
-}
-local var_0_6 = {
-	"faction"
-}
+local var_0_3 = {}
 
-GuildConst = var_0_10006
-var_0_6[2] = var_0_10006.FACTION_TYPE_BLHX
-var_0_5[2] = var_0_6
-var_0_4[2] = var_0_5
+function var_0_0.initSort(arg_14_0)
+	for iter_14_0, iter_14_1 in ipairs(var_0_2) do
+		local var_14_0 = cloneTplTo(arg_14_0.sortBtnTpl, arg_14_0.sortBtnContainer)
 
-local var_0_7 = {
-	"index_cszz"
-}
-local var_0_8 = {
-	"faction"
-}
-
-GuildConst = var_6
-var_0_8[2] = var_6.FACTION_TYPE_CSZZ
-var_0_7[2] = var_0_8
-var_0_4[3] = var_0_7
-
-local var_0_9 = {
-	"index_power"
-}
-local var_0_10 = {
-	"policy"
-}
-
-GuildConst = var_6
-var_0_10[2] = var_6.POLICY_TYPE_POWER
-var_0_9[2] = var_0_10
-var_0_4[4] = var_0_9
-
-local var_0_11 = {
-	"index_relax"
-}
-local var_0_12 = {
-	"policy"
-}
-
-GuildConst = var_6
-var_0_12[2] = var_6.POLICY_TYPE_RELAXATION
-var_0_11[2] = var_0_12
-var_0_4[5] = var_0_11
-
-local var_0_13 = {}
-
-function var_0_1.initSort(arg_14_0)
-	ipairs = var_1_10001
-
-	for iter_14_0, iter_14_1 in var_1_10001(var_0_4) do
-		cloneTplTo = var_1_10006
-		var_1_10006 = var_1_10006(arg_14_0.sortBtnTpl, arg_14_0.sortBtnContainer)
-		GetSpriteFromAtlas = var_1_10007
-		var_1_10007 = var_1_10007("ui/joinguildui_atlas", iter_14_1[1])
-		setImageSprite = var_8
-
-		var_8(var_1_10006:Find("Image"), var_1_10007, true)
-
-		onToggle = var_8
-
-		var_8(arg_14_0, var_1_10006, function(arg_15_0)
+		setImageSprite(var_14_0:Find("Image"), GetSpriteFromAtlas("ui/joinguildui_atlas", iter_14_1[1]), true)
+		onToggle(arg_14_0, var_14_0, function(arg_15_0)
 			if arg_15_0 then
-				local var_15_0 = arg_14_0
-
-				var_1.filter(var_15_0, iter_14_1)
-
-				setActive = var_1
-
-				var_1(arg_14_0.sortPanel, false)
+				arg_14_0:filter(iter_14_1)
+				setActive(arg_14_0.sortPanel, false)
 			end
 
 			return
 		end)
 	end
 
-	ipairs = var_1
+	for iter_14_2, iter_14_3 in ipairs(var_0_3) do
+		local var_14_1 = cloneTplTo(arg_14_0.sortBtnTpl, arg_14_0.sortBtnContainer)
 
-	for iter_14_2, iter_14_3 in var_1(var_0_13) do
-		cloneTplTo = var_1_10006
-		var_1_10006 = var_1_10006(arg_14_0.sortBtnTpl, arg_14_0.sortBtnContainer)
-		setText = var_1_10007
-
-		var_1_10007(var_1_10006:Find("Text"), iter_14_3[2])
-
-		onToggle = var_1_10007
-
-		var_1_10007(arg_14_0, var_1_10006, function(arg_16_0)
+		setText(var_14_1:Find("Text"), iter_14_3[2])
+		onToggle(arg_14_0, var_14_1, function(arg_16_0)
 			if arg_16_0 then
-				local var_16_0 = arg_14_0
-
-				var_1.sortGuilds(var_16_0, iter_14_3[1])
+				arg_14_0:sortGuilds(iter_14_3[1])
 			end
 
 			return
@@ -346,82 +171,46 @@ function var_0_1.initSort(arg_14_0)
 	return
 end
 
-function var_0_1.closeSortPanel(arg_17_0)
+function var_0_0.closeSortPanel(arg_17_0)
 	arg_17_0.isOpenSortPanel = nil
-	setActive = var_1
 
-	var_1(arg_17_0.sortPanel, false)
+	setActive(arg_17_0.sortPanel, false)
 
 	return
 end
 
-function var_0_1.onInitItem(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0.items
+function var_0_0.onInitItem(arg_18_0, arg_18_1)
+	arg_18_0.items[arg_18_1] = GuildApplyCard.New(arg_18_1)
 
-	GuildApplyCard = var_1_10003
-	var_18_0[arg_18_1] = var_1_10003.New(arg_18_1)
-	onButton = var_18_0
-
-	local var_18_1 = arg_18_0
-	local var_18_2 = arg_18_0.items[arg_18_1].applyBtn
-
-	local function var_18_3()
-		local var_19_0 = arg_18_0.playerVO
-
-		if var_0.inGuildCDTime(var_19_0) then
-			pg = var_0
-
-			local var_19_1 = var_0.TipsMgr.GetInstance()
-			local var_19_2 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_19_2(var_19_1, var_2_10003("guild_leave_cd_time"))
+	onButton(arg_18_0, arg_18_0.items[arg_18_1].applyBtn, function()
+		if arg_18_0.playerVO:inGuildCDTime() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_leave_cd_time"))
 
 			return
 		end
 
-		local var_19_3 = arg_18_0
-
-		var_0.showApply(var_19_3, arg_18_0.items[arg_18_1].guildVO)
+		arg_18_0:showApply(arg_18_0.items[arg_18_1].guildVO)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_18_0(var_18_1, var_18_2, var_18_3, var_1_10007)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.onUpdateItem(arg_20_0, arg_20_1, arg_20_2)
-	local var_20_0
-
+function var_0_0.onUpdateItem(arg_20_0, arg_20_1, arg_20_2)
 	if not arg_20_0.items[arg_20_2] then
 		arg_20_0:onInitItem(arg_20_2)
-
-		var_20_0 = arg_20_0.items[arg_20_2]
 	end
 
-	local var_20_1 = arg_20_0.sortVOs[arg_20_1 + 1]
-
-	var_20_0:Update(var_20_1)
+	arg_20_0.items[arg_20_2]:Update(arg_20_0.sortVOs[arg_20_1 + 1])
 
 	return
 end
 
-function var_0_1.sortGuilds(arg_21_0, arg_21_1)
-	local var_21_0
+function var_0_0.sortGuilds(arg_21_0, arg_21_1)
+	arg_21_0.sortVOs = arg_21_0.guildVOs or {}
 
-	if not arg_21_0.guildVOs then
-		var_21_0 = {}
-	end
-
-	arg_21_0.sortVOs = var_21_0
-	table = var_21_0
-
-	var_21_0.sort(arg_21_0.sortVOs, function(arg_22_0, arg_22_1)
+	table.sort(arg_21_0.sortVOs, function(arg_22_0, arg_22_1)
 		if not arg_21_1 then
 			return arg_22_0.id < arg_22_1.id
 		elseif arg_22_0[arg_21_1] == arg_22_1[arg_21_1] then
@@ -432,183 +221,87 @@ function var_0_1.sortGuilds(arg_21_0, arg_21_1)
 
 		return
 	end)
-
-	local var_21_1 = arg_21_0.viewRect
-
-	var_2.SetTotalCount(var_21_1, #arg_21_0.sortVOs, 0)
-
-	setActive = var_2
-
-	var_2(arg_21_0.listEmptyTF, #arg_21_0.sortVOs <= 0)
+	arg_21_0.viewRect:SetTotalCount(#arg_21_0.sortVOs, 0)
+	setActive(arg_21_0.listEmptyTF, #arg_21_0.sortVOs <= 0)
 
 	return
 end
 
-function var_0_1.filter(arg_23_0, arg_23_1)
+function var_0_0.filter(arg_23_0, arg_23_1)
 	local var_23_0 = arg_23_1 or arg_23_0.contextData.filterData
 
 	arg_23_0.sortVOs = {}
 
-	local var_23_1
-
 	if not var_23_0 or #var_23_0 < 2 then
-		if not arg_23_0.guildVOs then
-			var_23_1 = {}
-		end
+		arg_23_0.sortVOs = arg_23_0.guildVOs or {}
 
-		arg_23_0.sortVOs = var_23_1
-		GetSpriteFromAtlas = var_23_1
-		var_23_1 = var_23_1("ui/joinguildui_atlas", "index_all")
-		setImageSprite = var_1_10004
-
-		local var_23_2 = arg_23_0.sortBtn
-
-		var_1_10004(var_6.Find(var_23_2, "Image"), var_23_1, true)
+		setImageSprite(arg_23_0.sortBtn:Find("Image"), GetSpriteFromAtlas("ui/joinguildui_atlas", "index_all"), true)
 	else
-		ipairs = var_23_1
-
-		for iter_23_0, iter_23_1 in var_23_1(arg_23_0.guildVOs) do
+		for iter_23_0, iter_23_1 in ipairs(arg_23_0.guildVOs) do
 			if iter_23_1[var_23_0[2][1]] == var_23_0[2][2] then
-				table = var_8
-
-				var_8.insert(arg_23_0.sortVOs, iter_23_1)
+				table.insert(arg_23_0.sortVOs, iter_23_1)
 			end
 		end
 
-		GetSpriteFromAtlas = var_23_1
-		var_23_1 = var_23_1("ui/joinguildui_atlas", var_23_0[1])
-		setImageSprite = var_1_10004
-
-		local var_23_3 = arg_23_0.sortBtn
-
-		var_1_10004(var_6.Find(var_23_3, "Image"), var_23_1, true)
+		setImageSprite(arg_23_0.sortBtn:Find("Image"), GetSpriteFromAtlas("ui/joinguildui_atlas", var_23_0[1]), true)
 	end
 
-	_ = var_23_1
-
-	local var_23_4 = var_23_1.all(arg_23_0.sortVOs, function(arg_24_0)
-		local var_24_0 = arg_24_0:getFaction()
-
-		GuildConst = var_2_10002
-
-		return var_24_0 == var_2_10002.FACTION_TYPE_CSZZ
+	local var_23_1 = _.all(arg_23_0.sortVOs, function(arg_24_0)
+		return arg_24_0:getFaction() == GuildConst.FACTION_TYPE_CSZZ
 	end)
-
-	_ = var_1_10004
-
-	local var_23_5 = var_1_10004.all(arg_23_0.sortVOs, function(arg_25_0)
-		local var_25_0 = arg_25_0:getFaction()
-
-		GuildConst = var_2_10002
-
-		return var_25_0 == var_2_10002.FACTION_TYPE_BLHX
+	local var_23_2 = _.all(arg_23_0.sortVOs, function(arg_25_0)
+		return arg_25_0:getFaction() == GuildConst.FACTION_TYPE_BLHX
 	end)
 
 	arg_23_0.contextData.filterData = var_23_0
 
-	local var_23_6 = arg_23_0.viewRect
-
-	var_5.SetTotalCount(var_23_6, #arg_23_0.sortVOs, 0)
-
-	setActive = var_5
-
-	var_5(arg_23_0.listEmptyTF, #arg_23_0.sortVOs <= 0)
+	arg_23_0.viewRect:SetTotalCount(#arg_23_0.sortVOs, 0)
+	setActive(arg_23_0.listEmptyTF, #arg_23_0.sortVOs <= 0)
 
 	return
 end
 
-function var_0_1.showApply(arg_26_0, arg_26_1)
+function var_0_0.showApply(arg_26_0, arg_26_1)
 	local var_26_0 = arg_26_1:getFaction()
 
-	GuildConst = var_1_10003
-
-	if var_26_0 == var_1_10003.FACTION_TYPE_BLHX then
+	if var_26_0 == GuildConst.FACTION_TYPE_BLHX then
 		arg_26_0.page = arg_26_0.applyBluePage
-	else
-		GuildConst = var_3
-
-		if var_26_0 == var_3.FACTION_TYPE_CSZZ then
-			arg_26_0.page = arg_26_0.applyRedPage
-		end
+	elseif var_26_0 == GuildConst.FACTION_TYPE_CSZZ then
+		arg_26_0.page = arg_26_0.applyRedPage
 	end
 
-	local var_26_1 = arg_26_0.page
-
-	var_3.ExecuteAction(var_26_1, "Show", arg_26_1)
+	arg_26_0.page:ExecuteAction("Show", arg_26_1)
 
 	return
 end
 
-function var_0_1.CloseApply(arg_27_0)
-	if arg_27_0.page then
-		local var_27_0 = arg_27_0.page
-
-		if var_1.GetLoaded(var_27_0) then
-			local var_27_1 = arg_27_0.page
-
-			if var_1.isShowing(var_27_1) then
-				local var_27_2 = arg_27_0.page
-
-				var_1.Hide(var_27_2)
-			end
-		end
+function var_0_0.CloseApply(arg_27_0)
+	if arg_27_0.page and arg_27_0.page:GetLoaded() and arg_27_0.page:isShowing() then
+		arg_27_0.page:Hide()
 	end
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_28_0)
+function var_0_0.onBackPressed(arg_28_0)
 	if arg_28_0.isOpenSortPanel then
 		arg_28_0:closeSortPanel()
+	elseif arg_28_0.page and arg_28_0.page:GetLoaded() and arg_28_0.page:isShowing() then
+		arg_28_0.page:Hide()
 	else
-		if arg_28_0.page then
-			local var_28_0 = arg_28_0.page
-
-			if var_1.GetLoaded(var_28_0) then
-				local var_28_1 = arg_28_0.page
-
-				if var_1.isShowing(var_28_1) then
-					local var_28_2 = arg_28_0.page
-
-					var_1.Hide(var_28_2)
-
-					goto label_28_0
-				end
-			end
-		end
-
-		pg = var_1
-
-		local var_28_3 = var_1.CriMgr.GetInstance()
-		local var_28_4 = var_1.PlaySoundEffect_V3
-
-		SFX_CANCEL = var_1_10004
-
-		var_28_4(var_28_3, var_1_10004)
-		arg_28_0:emit(var_0_1.ON_CLOSE)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
+		arg_28_0:emit(var_0_0.ON_CLOSE)
 	end
 
-	::label_28_0::
+	return
+end
+
+function var_0_0.willExit(arg_29_0)
+	arg_29_0.applyBluePage:Destroy()
+	arg_29_0.applyRedPage:Destroy()
+	PoolMgr.GetInstance():DestroySprite("ui/JoinGuildUI_atlas")
 
 	return
 end
 
-function var_0_1.willExit(arg_29_0)
-	local var_29_0 = arg_29_0.applyBluePage
-
-	var_1.Destroy(var_29_0)
-
-	local var_29_1 = arg_29_0.applyRedPage
-
-	var_1.Destroy(var_29_1)
-
-	PoolMgr = var_1
-
-	local var_29_2 = var_1.GetInstance()
-
-	var_1.DestroySprite(var_29_2, "ui/JoinGuildUI_atlas")
-
-	return
-end
-
-return var_0_1
+return var_0_0

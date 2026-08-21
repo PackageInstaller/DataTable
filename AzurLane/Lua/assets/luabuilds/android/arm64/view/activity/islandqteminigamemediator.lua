@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandQTEMiniGameMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "IslandQTEMiniGameMediator"
+var_0_0.GAME_FINISH = "IslandQTEMiniGameMediator.GAME_FINISH"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.GAME_FINISH = "IslandQTEMiniGameMediator.GAME_FINISH"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GAME_FINISH, function(arg_2_0, arg_2_1)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GAME_FINISH, function(arg_2_0, arg_2_1)
 		arg_1_0.contextData.finishCallback(arg_2_1 or 0)
 
 		return
@@ -18,15 +12,15 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	local var_4_0 = arg_4_1:getName()
 	local var_4_1 = arg_4_1:getBody()
 
 	return
 end
 
-return var_0_1
+return var_0_0

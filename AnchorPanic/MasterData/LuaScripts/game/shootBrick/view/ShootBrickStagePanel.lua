@@ -19,7 +19,7 @@ function ctor(self)
     super.ctor(self)
     self:setSize(750, 600)
     self:setBg("")
-    self:setTxtTitle(_TT(138701))
+    self:setTxtTitle(_TT(151101))
     self:setUICode(LinkCode.ShootBrick)
 end
 --析构

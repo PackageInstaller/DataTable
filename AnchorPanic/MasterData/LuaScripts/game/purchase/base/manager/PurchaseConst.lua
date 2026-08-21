@@ -38,38 +38,37 @@ purchase.getTabList = function(self)
     local tabList = {}
     if(not GameManager:getIsInCommiting())then
         --商城推荐
-        table.insert(tabList, { page = purchase.PurchaseTab.Recommended, nomalLan = _TT(50068), funcId = funcopen.FuncOpenConst.FUNC_ID_SHOPPING, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = shop.ShopRecommendedView })    
+        table.insert(tabList, {page = purchase.PurchaseTab.Recommended, nomalLan = _TT(50068), funcId = funcopen.FuncOpenConst.FUNC_ID_SHOPPING, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = shop.ShopRecommendedView})
     end
     -- 充值
     --  if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_PURCHASE_RECHARGE, false)) then
-    table.insert(tabList, { page = purchase.PurchaseTab.RECHARGE, nomalLan = _TT(50009), funcId = funcopen.FuncOpenConst.FUNC_ID_PURCHASE_RECHARGE, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.RechargeCostView })
+    table.insert(tabList, {page = purchase.PurchaseTab.RECHARGE, nomalLan = _TT(50009), funcId = funcopen.FuncOpenConst.FUNC_ID_PURCHASE_RECHARGE, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.RechargeCostView})
     -- end
     -- 直购礼包
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_PURCHASE_DIRECT_BUY, false)) then
-        table.insert(tabList, { page = purchase.PurchaseTab.DIRECT_BUY, nomalLan = _TT(50008), funcId = funcopen.FuncOpenConst.FUNC_ID_PURCHASE_DIRECT_BUY, nomalLanEn = "Direct buy", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), view = purchase.DirectBuyView })
+        table.insert(tabList, {page = purchase.PurchaseTab.DIRECT_BUY, nomalLan = _TT(50008), funcId = funcopen.FuncOpenConst.FUNC_ID_PURCHASE_DIRECT_BUY, nomalLanEn = "Direct buy", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), view = purchase.DirectBuyView})
     end
     -- 皮肤商店
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, false) and #purchase.FashionShopManager:getCurShopList(fashionShop.ShopType.NOMAL) > 0) then
-        table.insert(tabList, { page = purchase.PurchaseTab.SKIN_SHOP, nomalLan = _TT(50033), funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "Skin shop", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_5.png"), view = purchase.FashionShopView })
+        table.insert(tabList, {page = purchase.PurchaseTab.SKIN_SHOP, nomalLan = _TT(50033), funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "Skin shop", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_5.png"), view = purchase.FashionShopComboView})
     end
     -- 时装币商店
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FASHIONCION_SHOP, false) and #purchase.FashionShopManager:getCurShopList(fashionShop.ShopType.FASHIONCOIN) > 0) then
-        table.insert(tabList, { page = purchase.PurchaseTab.FASHIONCION_SHOP, nomalLan = _TT(50064), funcId = funcopen.FuncOpenConst.FUNC_ID_FASHIONCION_SHOP, nomalLanEn = "Skin shop", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_5.png"), view = purchase.FashionShopCoinView })
+        table.insert(tabList, {page = purchase.PurchaseTab.FASHIONCION_SHOP, nomalLan = _TT(50064), funcId = funcopen.FuncOpenConst.FUNC_ID_FASHIONCION_SHOP, nomalLanEn = "Skin shop", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_5.png"), view = purchase.FashionShopCoinView})
     end
     -- 月卡
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_PURCHASE_MONTH_CARD, false)) then
-        table.insert(tabList, { page = purchase.PurchaseTab.MONTH_CARD, nomalLan = _TT(50002), funcId = funcopen.FuncOpenConst.FUNC_ID_PURCHASE_MONTH_CARD, nomalLanEn = "Month card", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), view = purchase.MonthCardView })
+        table.insert(tabList, {page = purchase.PurchaseTab.MONTH_CARD, nomalLan = _TT(50002), funcId = funcopen.FuncOpenConst.FUNC_ID_PURCHASE_MONTH_CARD, nomalLanEn = "Month card", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), view = purchase.MonthCardView})
     end
 
-
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_STRENGTH_CARD, false)) then
-        table.insert(tabList, { page = purchase.PurchaseTab.STRENGTH_CARD, nomalLan = _TT(50072), funcId = funcopen.FuncOpenConst.FUNC_ID_STRENGTH_CARD, nomalLanEn = "Month card", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), view = purchase.StrengthCardView })
+        table.insert(tabList, {page = purchase.PurchaseTab.STRENGTH_CARD, nomalLan = _TT(50072), funcId = funcopen.FuncOpenConst.FUNC_ID_STRENGTH_CARD, nomalLanEn = "Month card", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_45.png"), view = purchase.StrengthCardView})
     end
     -- 等级礼包
     if (funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_GRADE_GIFT, false) and (not purchase.GradeGiftManager:getGradeGiftAllOver())) then
-        table.insert(tabList, { page = purchase.PurchaseTab.GRADE_GIFT, nomalLan = _TT(50032), funcId = funcopen.FuncOpenConst.FUNC_ID_GRADE_GIFT, nomalLanEn = "Grade gift", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), view = purchase.GradeGiftView })
+        table.insert(tabList, {page = purchase.PurchaseTab.GRADE_GIFT, nomalLan = _TT(50032), funcId = funcopen.FuncOpenConst.FUNC_ID_GRADE_GIFT, nomalLanEn = "Grade gift", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_7.png"), view = purchase.GradeGiftView})
     end
-    
+
     return tabList
 end
 
@@ -113,8 +112,14 @@ end
 purchase.DirectBuySubTab = {
     -- 直购
     DIRECT_BUY = 1,
-    -- 临时的
-    TEMP = 2,
+    -- 家具
+    DORMITORY = 2,
+    -- 限时
+    LIMITED = 3,
+    -- 抽卡
+    RECRUIT = 4,
+    -- 体力
+    POWER = 5,
 }
 
 -- 直购礼包限购类型
@@ -133,8 +138,37 @@ purchase.DirectBuyLimitType = {
     ACTIVITY = 5,
 }
 
+
+-- 获取建筑名字
+purchase.getFashionShopComboList = function(type)
+    local pairtsList = purchase.FashionShopManager:getCurShopList(fashionShop.ShopType.PAIRTS)
+    local sceneList = purchase.FashionShopManager:getCurShopList(fashionShop.ShopType.SCENE)
+    local comboList = purchase.FashionShopManager:getComboShopList()
+    local paintingList = purchase.FashionShopManager:getPaintingList()
+    local fightSkinList = purchase.FashionShopManager:getFashionFightSkin()
+
+    local tabList = {}
+    if comboList and #comboList > 0 then
+        table.insert(tabList, {page = fashionShop.ShopType.COMBO, nomalLanId =84510, funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.FashionShopSubView})
+    end
+    
+    table.insert(tabList, {page = fashionShop.ShopType.NOMAL, nomalLanId = 84511, funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.FashionShopSubView})
+    
+    if sceneList and #sceneList > 0 then
+        table.insert(tabList, {page = fashionShop.ShopType.SCENE, nomalLanId = 84512, funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.FashionShopSubView})
+    end
+
+    --table.insert(tabList, {page = fashionShop.ShopType.PAIRTS, nomalLanId = 84513, funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.FashionShopSubView})
+    if paintingList and #paintingList > 0 then
+        table.insert(tabList, {page = fashionShop.ShopType.PAINTING, nomalLanId = 52137, funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.FashionShopSubView})
+    end
+    if fightSkinList and #fightSkinList > 0 then
+        table.insert(tabList, {page = fashionShop.ShopType.FIGHTSKIN, nomalLanId = 153003, funcId = funcopen.FuncOpenConst.FUNC_ID_SKIN_SHOP, nomalLanEn = "RECHARGE", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = purchase.FashionShopSubView})
+    end
+    return tabList
+end
 --[[ 替换语言包自动生成，请勿修改！
-	语言包: _TT(50009):	"充值"
-	语言包: _TT(50008):	"直购礼包"
-	语言包: _TT(50002):	"月卡"
+语言包: _TT(50009):"充值"
+语言包: _TT(50008):"直购礼包"
+语言包: _TT(50002):"月卡"
 ]]

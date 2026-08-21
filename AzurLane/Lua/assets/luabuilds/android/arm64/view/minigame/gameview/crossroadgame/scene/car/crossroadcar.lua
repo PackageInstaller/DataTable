@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CrossRoadCar")
+﻿local var_0_0 = class("CrossRoadCar")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0._tf = arg_1_1
@@ -11,16 +9,10 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0.speed = arg_1_2.speed
 	arg_1_0.width = arg_1_2.width
 	arg_1_0.length = arg_1_2.length
-
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.spineTF = var_5.Find(var_1_0, "spine")
-	GetComponent = var_5
-	arg_1_0.spineAnimUI = var_5(arg_1_0.spineTF, "SpineAnimUI")
-	CrossRoadGameConst = var_5
-	arg_1_0.playingStatus = var_5.CAR_STATE.showBack
-	CrossRoadGameConst = var_5
-	arg_1_0.playingTrack = var_5.BACK_ROAD_NAME
+	arg_1_0.spineTF = arg_1_0._tf:Find("spine")
+	arg_1_0.spineAnimUI = GetComponent(arg_1_0.spineTF, "SpineAnimUI")
+	arg_1_0.playingStatus = CrossRoadGameConst.CAR_STATE.showBack
+	arg_1_0.playingTrack = CrossRoadGameConst.BACK_ROAD_NAME
 	arg_1_0.playingAction = "normal"
 	arg_1_0.target = nil
 	arg_1_0.pos = nil
@@ -38,15 +30,12 @@ end
 
 function var_0_0.GetCarRectPoint(arg_2_0)
 	local var_2_0 = arg_2_0:GetPosition()
-	local var_2_1 = arg_2_0._tf.rect
 
-	return var_2_0.x - var_2_1.width / 2, var_2_0.y, var_2_0.x + var_2_1.width / 2, var_2_0.y + var_2_1.height
+	return var_2_0.x - arg_2_0._tf.rect.width / 2, var_2_0.y, var_2_0.x + arg_2_0._tf.rect.width / 2, var_2_0.y + arg_2_0._tf.rect.height
 end
 
 function var_0_0.SetParent(arg_3_0, arg_3_1)
-	setParent = var_1_10002
-
-	var_1_10002(arg_3_0._tf, arg_3_1, false)
+	setParent(arg_3_0._tf, arg_3_1, false)
 
 	return
 end
@@ -73,27 +62,9 @@ end
 
 function var_0_0.SetCarCrashList(arg_8_0, arg_8_1)
 	arg_8_1:SetParent(arg_8_0._tf)
-
-	local var_8_0 = arg_8_0._tf.localScale.x
-	local var_8_1 = arg_8_1
-	local var_8_2 = arg_8_1.SetScale
-
-	Vector3 = var_1_10006
-
-	var_8_2(var_8_1, var_1_10006(-1 / var_8_0, 1 / var_8_0, 1))
-
-	local var_8_3 = arg_8_1:GetPosition()
-	local var_8_4 = arg_8_0._tf.anchoredPosition
-	local var_8_5 = arg_8_1
-	local var_8_6 = arg_8_1.SetPosition
-
-	Vector2 = var_8
-
-	var_8_6(var_8_5, var_8(var_8_3.x - var_8_4.x, 0))
-
-	table = var_8_6
-
-	var_8_6.insert(arg_8_0.carCarshList, arg_8_1)
+	arg_8_1:SetScale(Vector3(-1 / arg_8_0._tf.localScale.x, 1 / arg_8_0._tf.localScale.x, 1))
+	arg_8_1:SetPosition(Vector2(arg_8_1:GetPosition().x - arg_8_0._tf.anchoredPosition.x, 0))
+	table.insert(arg_8_0.carCarshList, arg_8_1)
 
 	return
 end
@@ -129,9 +100,7 @@ function var_0_0.SetScale(arg_14_0, arg_14_1)
 end
 
 function var_0_0.SetActive(arg_15_0, arg_15_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_15_0._tf, arg_15_1)
+	setActive(arg_15_0._tf, arg_15_1)
 
 	return
 end
@@ -143,26 +112,9 @@ function var_0_0.SetState(arg_16_0, arg_16_1)
 end
 
 function var_0_0.GetSpeed(arg_17_0)
-	local var_17_0 = arg_17_0._runningData
-	local var_17_1 = var_1.GetRoundCnt(var_17_0)
+	local var_17_0 = math.min(arg_17_0._runningData:GetRoundCnt(), #CrossRoadGameConst.CAR_SPEED_SCALE)
 
-	math = var_1_10002
-
-	local var_17_2 = var_1_10002.min
-	local var_17_3 = var_17_1
-
-	CrossRoadGameConst = var_1_10005
-
-	local var_17_4
-
-	if var_17_2(var_17_3, #var_1_10005.CAR_SPEED_SCALE) < 1 then
-		var_17_4 = 0
-	else
-		CrossRoadGameConst = var_17_4
-		var_17_4 = var_17_4.CAR_SPEED_SCALE[var_2]
-	end
-
-	return arg_17_0.speed * (1 + var_17_4)
+	return arg_17_0.speed * (1 + (var_17_0 < 1 and 0 or CrossRoadGameConst.CAR_SPEED_SCALE[var_17_0]))
 end
 
 function var_0_0.GetState(arg_18_0)
@@ -190,17 +142,13 @@ function var_0_0.SetAction(arg_22_0, arg_22_1, arg_22_2)
 
 	arg_22_0.playingAction = arg_22_1
 
-	local var_22_0 = arg_22_0.spineAnimUI
-
-	var_3.SetAction(var_22_0, arg_22_1, arg_22_2)
+	arg_22_0.spineAnimUI:SetAction(arg_22_1, arg_22_2)
 
 	return
 end
 
 function var_0_0.SetActionCallBack(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_0._spineAnimUI
-
-	var_2.SetActionCallBack(var_23_0, arg_23_1)
+	arg_23_0._spineAnimUI:SetActionCallBack(arg_23_1)
 
 	return
 end
@@ -212,17 +160,10 @@ function var_0_0.setActionNormal(arg_24_0)
 end
 
 function var_0_0.SetSpCarAction(arg_25_0, arg_25_1)
-	local var_25_0 = arg_25_0.spineAnimUI
-
-	var_2.SetActionCallBack(var_25_0, function(arg_26_0)
+	arg_25_0.spineAnimUI:SetActionCallBack(function(arg_26_0)
 		if arg_26_0 == "finish" then
-			local var_26_0 = arg_25_0.spineAnimUI
-
-			var_1.SetActionCallBack(var_26_0, nil)
-
-			local var_26_1 = arg_25_0
-
-			var_1.setActionNormal(var_26_1)
+			arg_25_0.spineAnimUI:SetActionCallBack(nil)
+			arg_25_0:setActionNormal()
 
 			if arg_25_1 then
 				arg_25_1()
@@ -262,9 +203,7 @@ end
 
 function var_0_0.Dispose(arg_32_0)
 	if arg_32_0.carCarshList then
-		pairs = var_1
-
-		for iter_32_0, iter_32_1 in var_1(arg_32_0.carCarshList) do
+		for iter_32_0, iter_32_1 in pairs(arg_32_0.carCarshList) do
 			if iter_32_1 ~= nil then
 				iter_32_1:Clear()
 			end
@@ -274,9 +213,7 @@ function var_0_0.Dispose(arg_32_0)
 	arg_32_0.carCarshList = {}
 
 	if arg_32_0._tf then
-		destroy = var_1
-
-		var_1(arg_32_0._tf)
+		destroy(arg_32_0._tf)
 
 		arg_32_0._tf = nil
 	end
@@ -284,9 +221,7 @@ function var_0_0.Dispose(arg_32_0)
 	arg_32_0.playingAction = nil
 
 	if arg_32_0.spineAnimUI then
-		local var_32_0 = arg_32_0.spineAnimUI
-
-		var_1.SetActionCallBack(var_32_0, nil)
+		arg_32_0.spineAnimUI:SetActionCallBack(nil)
 
 		arg_32_0.spineAnimUi = nil
 	end

@@ -217,11 +217,7 @@ function refreshView(self)
         end
     end
     
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        self.mBgImg:SetImg(UrlManager:getBgPath("roundPrizeTwo/bg_01_har.jpg"))
-    else
-        self.mBgImg:SetImg(UrlManager:getBgPath("roundPrizeTwo/bg_01.jpg"))
-    end
+    self.mBgImg:SetImg(UrlManager:getRoundPrizeTwoBgUrl())
 end
 
 function onPrize(self, msg)

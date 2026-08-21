@@ -1,379 +1,199 @@
-﻿class = var_0_10000
-
-local var_0_0 = "SenrankaguraMedalScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
+﻿local var_0_0 = class("SenrankaguraMedalScene", import("..base.BaseUI"))
+local var_0_1
 local var_0_2
-local var_0_3
-local var_0_4 = 4
+local var_0_3 = 4
+local var_0_4 = "shan_luan_task_help"
 local var_0_5 = "shan_luan_task_help"
-local var_0_6 = "shan_luan_task_help"
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SenrankaguraMedalUI"
 end
 
-function var_0_1.GetTaskCountAble()
-	ActivityConst = var_1_10000
+function var_0_0.GetTaskCountAble()
+	local var_2_0
 
-	local var_2_0 = var_1_10000.SENRANKAGURA_TASK_ID
+	if not getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_TASK_ID) then
+		do return false end
 
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_2_1 = var_1_10001(var_1_10003)
-
-	if not var_1.getActivityById(var_2_1, var_2_0) then
-		return false
+		var_2_0 = 0
 	end
 
-	pg = var_1_10002
-
-	local var_2_2 = var_1_10002.activity_template[var_2_0].config_client.player_task
-	local var_2_3 = {}
-	local var_2_4 = 0
-
-	ipairs = var_1_10005
-
-	for iter_2_0, iter_2_1 in var_1_10005(var_2_2) do
-		ipairs = var_1_10010
-
-		for iter_2_2, iter_2_3 in var_1_10010(iter_2_1) do
-			table = var_1_10015
-
-			var_1_10015.insert(var_2_3, iter_2_3)
+	for iter_2_0, iter_2_1 in ipairs(pg.activity_template[ActivityConst.SENRANKAGURA_TASK_ID].config_client.player_task) do
+		for iter_2_2, iter_2_3 in ipairs(iter_2_1) do
+			table.insert({}, iter_2_3)
 		end
 	end
 
-	local var_2_5
-
-	local function var_2_6(arg_3_0)
+	local function var_2_2(arg_3_0)
 		if not arg_3_0 then
 			return true
 		end
 
-		getProxy = var_2_10001
-		TaskProxy = var_2_10003
+		local var_3_0 = getProxy(TaskProxy):getTaskById(arg_3_0)
 
-		local var_3_0 = var_2_10001(var_2_10003)
-		local var_3_1 = var_1.getTaskById(var_3_0, arg_3_0)
-
-		getProxy = var_2_10002
-		TaskProxy = var_4
-
-		local var_3_2 = var_2_10002(var_4)
-		local var_3_3 = var_2.getFinishTaskById(var_3_2, arg_3_0)
-
-		if not var_3_1 and not var_3_3 then
+		if not var_3_0 and not getProxy(TaskProxy):getFinishTaskById(arg_3_0) then
 			return false
 		end
 
-		pg = var_3_0
+		local var_3_1 = pg.task_data_template[arg_3_0].activity_client_config.before
 
-		local var_3_4 = var_3_0.task_data_template[arg_3_0].activity_client_config.before
-
-		if var_3_1 and var_3_1:getTaskStatus() <= 0 then
+		if var_3_0 and var_3_0:getTaskStatus() <= 0 then
 			return false
 		end
 
-		return var_2_6(var_3_4)
+		return var_2_2(var_3_1)
 	end
 
-	for iter_2_4 = 1, #var_2_3 do
-		local var_2_7 = var_2_3[iter_2_4]
+	for iter_2_4 = 1, #{} do
+		local var_2_3 = getProxy(TaskProxy):getTaskById(({})[iter_2_4])
 
-		getProxy = var_1_10011
-		TaskProxy = iter_2_2
-		iter_2_2 = var_1_10011(iter_2_2)
+		if var_2_3 then
+			if var_2_3:getTaskStatus() == 1 then
+				if not pg.task_data_template[({})[iter_2_4]].activity_client_config.before then
+					var_2_0 = var_2_0 + 1
+				elseif (function(arg_3_0)
+					if not arg_3_0 then
+						return true
+					end
 
-		if var_1_10011.getTaskById(iter_2_2, var_2_7) then
-			pg = var_1_10012
-			var_1_10012 = var_1_10012.task_data_template[var_2_7].activity_client_config.before
+					local var_3_0 = getProxy(TaskProxy):getTaskById(arg_3_0)
 
-			if var_1_10011:getTaskStatus() == 1 then
-				pg = iter_2_2
+					if not var_3_0 and not getProxy(TaskProxy):getFinishTaskById(arg_3_0) then
+						return false
+					end
 
-				if not iter_2_2.task_data_template[var_2_7].activity_client_config.before then
-					var_2_4 = var_2_4 + 1
-				elseif var_2_6(iter_2_2) then
-					var_2_4 = var_2_4 + 1
+					local var_3_1 = pg.task_data_template[arg_3_0].activity_client_config.before
+
+					if var_3_0 and var_3_0:getTaskStatus() <= 0 then
+						return false
+					end
+
+					return var_2_2(var_3_1)
+				end)(pg.task_data_template[({})[iter_2_4]].activity_client_config.before) then
+					var_2_0 = var_2_0 + 1
 				end
 			end
 		end
 	end
 
-	return var_2_4 > 0, var_2_4
+	return var_2_0 > 0, var_2_0
 end
 
-function var_0_1.init(arg_4_0)
-	ActivityConst = var_1_10001
-	arg_4_0.activityId = var_1_10001.SENRANKAGURA_TASK_ID
-	getProxy = var_1
-	ActivityProxy = var_1_10003
-
-	local var_4_0 = var_1(var_1_10003)
-
-	arg_4_0.taskActivity = var_1.getActivityById(var_4_0, arg_4_0.activityId)
-	pg = var_1
-	arg_4_0.taskIds = var_1.activity_template[arg_4_0.activityId].config_client.player_task
+function var_0_0.init(arg_4_0)
+	arg_4_0.activityId = ActivityConst.SENRANKAGURA_TASK_ID
+	arg_4_0.taskActivity = getProxy(ActivityProxy):getActivityById(arg_4_0.activityId)
+	arg_4_0.taskIds = pg.activity_template[arg_4_0.activityId].config_client.player_task
 	arg_4_0.taskCount = 0
 	arg_4_0.allTasksIds = {}
-	ipairs = var_1
 
-	for iter_4_0, iter_4_1 in var_1(arg_4_0.taskIds) do
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.taskIds) do
 		arg_4_0.taskCount = arg_4_0.taskCount + #iter_4_1
-		ipairs = var_1_10006
 
-		for iter_4_2, iter_4_3 in var_1_10006(iter_4_1) do
-			table = var_1_10011
-
-			var_1_10011.insert(arg_4_0.allTasksIds, iter_4_3)
+		for iter_4_2, iter_4_3 in ipairs(iter_4_1) do
+			table.insert(arg_4_0.allTasksIds, iter_4_3)
 		end
 	end
 
 	arg_4_0.openTaskFlag = arg_4_0.contextData.task
-	pg = var_1
-	arg_4_0.buffs = var_1.activity_template[arg_4_0.activityId].config_client.buff
-	pg = var_1
-	arg_4_0.ptId = var_1.activity_template[arg_4_0.activityId].config_client.pt_id
-	pg = var_1
-	arg_4_0.ptName = var_1.player_resource[arg_4_0.ptId].name
+	arg_4_0.buffs = pg.activity_template[arg_4_0.activityId].config_client.buff
+	arg_4_0.ptId = pg.activity_template[arg_4_0.activityId].config_client.pt_id
+	arg_4_0.ptName = pg.player_resource[arg_4_0.ptId].name
 	arg_4_0.ptMaxNum = #arg_4_0.allTasksIds
-	var_0_2 = #arg_4_0.taskIds
-	var_0_3 = #arg_4_0.buffs
+	var_0_1 = #arg_4_0.taskIds
+	var_0_2 = #arg_4_0.buffs
 	arg_4_0.taskListDatas = {}
 
 	for iter_4_4 = 1, #arg_4_0.taskIds do
-		local var_4_1 = arg_4_0.taskIds[iter_4_4]
-
-		var_1_10006 = {}
-		ipairs = var_1_10007
-
-		for iter_4_5, iter_4_6 in var_1_10007(var_4_1) do
-			var_1_10014 = arg_4_0
-
-			arg_4_0.initTaskListIds(var_1_10014, iter_4_6, var_1_10006)
+		for iter_4_5, iter_4_6 in ipairs(arg_4_0.taskIds[iter_4_4]) do
+			arg_4_0:initTaskListIds(iter_4_6, {})
 		end
 
-		arg_4_0:sortListDatas(var_1_10006)
-
-		table = var_1_10007
-
-		var_1_10007.insert(arg_4_0.taskListDatas, var_1_10006)
+		arg_4_0:sortListDatas({})
+		table.insert(arg_4_0.taskListDatas, {})
 	end
 
-	findTF = var_1
+	local var_4_0 = findTF(arg_4_0._tf, "ad")
 
-	local var_4_2 = var_1(arg_4_0._tf, "ad")
+	arg_4_0.btnDetail = findTF(var_4_0, "btnDetail")
+	arg_4_0.btnBack = findTF(var_4_0, "frame/btnBack")
+	arg_4_0.btnHelp = findTF(var_4_0, "frame/btnHelp")
+	arg_4_0.btnHome = findTF(var_4_0, "frame/btnHome")
+	arg_4_0.hxTf = findTF(var_4_0, "hx")
 
-	findTF = var_2
-	arg_4_0.btnDetail = var_2(var_4_2, "btnDetail")
-	findTF = var_2
-	arg_4_0.btnBack = var_2(var_4_2, "frame/btnBack")
-	findTF = var_2
-	arg_4_0.btnHelp = var_2(var_4_2, "frame/btnHelp")
-	findTF = var_2
-	arg_4_0.btnHome = var_2(var_4_2, "frame/btnHome")
-	findTF = var_2
-	arg_4_0.hxTf = var_2(var_4_2, "hx")
-	setActive = var_2
-
-	local var_4_3 = arg_4_0.hxTf
-
-	PLATFORM_CODE = var_5
-	PLATFORM_CH = var_1_10006
-
-	var_2(var_4_3, var_5 == var_1_10006)
-
-	onButton = var_2
-
-	local var_4_4 = arg_4_0
-	local var_4_5 = arg_4_0.btnDetail
-
-	local function var_4_6()
-		local var_5_0 = arg_4_0
-
-		if var_0.getMedalGetAble(var_5_0) then
-			pg = var_0
-
-			local var_5_1 = var_0.m02
-			local var_5_2 = var_0.sendNotification
-
-			GAME = var_2_10003
-			var_2_10003 = var_2_10003.ACTIVITY_OPERATION
-
-			local var_5_3 = {
-				cmd = 1
-			}
-
-			ActivityConst = var_2_10005
-			var_5_3.activity_id = var_2_10005.SENRANKAGURA_MEDAL_ID
-
-			var_5_2(var_5_1, var_2_10003, var_5_3)
+	setActive(arg_4_0.hxTf, PLATFORM_CODE == PLATFORM_CH)
+	onButton(arg_4_0, arg_4_0.btnDetail, function()
+		if arg_4_0:getMedalGetAble() then
+			pg.m02:sendNotification(GAME.ACTIVITY_OPERATION, {
+				cmd = 1,
+				activity_id = ActivityConst.SENRANKAGURA_MEDAL_ID
+			})
 		elseif arg_4_0.taskActivity then
-			local var_5_4 = arg_4_0
-
-			var_0.openDetailPane(var_5_4)
+			arg_4_0:openDetailPane()
 		else
-			pg = var_0
-
-			local var_5_5 = var_0.TipsMgr.GetInstance()
-			local var_5_6 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_5_6(var_5_5, var_2_10003("challenge_end_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 		end
 
 		return
-	end
-
-	SOUND_BACK = var_1_10007
-
-	var_2(var_4_4, var_4_5, var_4_6, var_1_10007)
-
-	onButton = var_2
-
-	local var_4_7 = arg_4_0
-	local var_4_8 = arg_4_0.btnBack
-
-	local function var_4_9()
-		local var_6_0 = arg_4_0
-
-		var_0.closeView(var_6_0)
+	end, SOUND_BACK)
+	onButton(arg_4_0, arg_4_0.btnBack, function()
+		arg_4_0:closeView()
 
 		return
-	end
-
-	SOUND_BACK = var_1_10007
-
-	var_2(var_4_7, var_4_8, var_4_9, var_1_10007)
-
-	onButton = var_2
-
-	local var_4_10 = arg_4_0
-	local var_4_11 = arg_4_0.btnHome
-
-	local function var_4_12()
-		local var_7_0 = arg_4_0
-		local var_7_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.ON_HOME)
+	end, SOUND_BACK)
+	onButton(arg_4_0, arg_4_0.btnHome, function()
+		arg_4_0:emit(BaseUI.ON_HOME)
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10007
-
-	var_2(var_4_10, var_4_11, var_4_12, var_1_10007)
-
-	onButton = var_2
-
-	local var_4_13 = arg_4_0
-	local var_4_14 = arg_4_0.btnHelp
-
-	local function var_4_15()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_8_1 = var_0.ShowMsgBox
-		local var_8_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_8_2.type = var_2_10004
-		pg = var_2_10004
-		var_8_2.helps = var_2_10004.gametip[var_0_5].tip
-
-		var_8_1(var_8_0, var_8_2)
+	end, SFX_CONFIRM)
+	onButton(arg_4_0, arg_4_0.btnHelp, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip[var_0_4].tip
+		})
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10007
-
-	var_2(var_4_13, var_4_14, var_4_15, var_1_10007)
+	end, SFX_CONFIRM)
 
 	arg_4_0.btnPlayers = {}
 
-	for iter_4_7 = 1, var_0_2 do
-		local var_4_16 = iter_4_7
+	for iter_4_7 = 1, var_0_1 do
+		local var_4_2 = findTF(var_4_0, "player/" .. iter_4_7)
 
-		findTF = var_1_10007
-		var_1_10007 = var_1_10007(var_4_2, "player/" .. iter_4_7)
-		GetComponent = var_1_10008
-		findTF = var_10
-
-		local var_4_17 = var_10(var_1_10007, "img")
-
-		typeof = var_11
-		Image = var_13
-		var_1_10008 = var_1_10008(var_4_17, var_11(var_13))
-		var_1_10008.alphaHitTestMinimumThreshold = 0.5
-
-		local var_4_18
+		GetComponent(findTF(var_4_2, "img"), typeof(Image)).alphaHitTestMinimumThreshold = 0.5
 
 		if arg_4_0.taskActivity then
-			onButton = var_9
-			var_4_18 = arg_4_0
-
-			local var_4_19 = var_1_10007
-
-			local function var_4_20()
-				local var_9_0 = arg_4_0
-
-				var_0.openTaskPanel(var_9_0, iter_4_7)
+			onButton(arg_4_0, var_4_2, function()
+				arg_4_0:openTaskPanel(iter_4_7)
 
 				return
-			end
-
-			SFX_CONFIRM = var_1_10014
-
-			var_9(var_4_18, var_4_19, var_4_20, var_1_10014)
+			end, SFX_CONFIRM)
 		end
 
-		setActive = var_9
-		findTF = var_4_18
-
-		var_9(var_4_18(var_1_10007, "redTip"), false)
-
-		table = var_9
-
-		var_9.insert(arg_4_0.btnPlayers, var_1_10007)
+		setActive(findTF(var_4_2, "redTip"), false)
+		table.insert(arg_4_0.btnPlayers, var_4_2)
 	end
 
-	findTF = var_2
+	local var_4_3 = findTF(arg_4_0._tf, "pop")
 
-	local var_4_21 = var_2(arg_4_0._tf, "pop")
+	arg_4_0.detailPanel = findTF(var_4_3, "detailPanel")
 
-	findTF = var_3
-	arg_4_0.detailPanel = var_3(var_4_21, "detailPanel")
-	setActive = var_3
-
-	var_3(arg_4_0.detailPanel, false)
+	setActive(arg_4_0.detailPanel, false)
 	arg_4_0:initDetailPanel()
 
-	findTF = var_3
-	arg_4_0.taskPanel = var_3(var_4_21, "taskPanel")
-	setActive = var_3
+	arg_4_0.taskPanel = findTF(var_4_3, "taskPanel")
 
-	var_3(arg_4_0.taskPanel, false)
+	setActive(arg_4_0.taskPanel, false)
 	arg_4_0:initTaskPanel()
 
-	findTF = var_3
-	arg_4_0.submitPanel = var_3(var_4_21, "submitPanel")
-	setActive = var_3
+	arg_4_0.submitPanel = findTF(var_4_3, "submitPanel")
 
-	var_3(arg_4_0.submitPanel, false)
+	setActive(arg_4_0.submitPanel, false)
 	arg_4_0:initSubmitPanel()
 
 	return
 end
 
-function var_0_1.didEnter(arg_10_0)
+function var_0_0.didEnter(arg_10_0)
 	arg_10_0:updateUI()
 
 	if arg_10_0.taskActivity and arg_10_0.openTaskFlag then
@@ -385,107 +205,49 @@ function var_0_1.didEnter(arg_10_0)
 	return
 end
 
-function var_0_1.updateUI(arg_11_0)
+function var_0_0.updateUI(arg_11_0)
 	local var_11_0 = arg_11_0:getMedalGetAble()
 
-	setActive = var_1_10002
-	findTF = var_1_10004
+	setActive(findTF(arg_11_0.btnDetail, "detail"), not var_11_0 and arg_11_0.taskActivity)
+	setActive(findTF(arg_11_0.btnDetail, "get"), var_11_0)
 
-	var_1_10002(var_1_10004(arg_11_0.btnDetail, "detail"), not var_11_0 and arg_11_0.taskActivity)
-
-	setActive = var_1_10002
-	findTF = var_4
-
-	var_1_10002(var_4(arg_11_0.btnDetail, "get"), var_11_0)
-
-	getProxy = var_1_10002
-	ActivityProxy = var_4
-
-	local var_11_1 = var_1_10002(var_4)
-	local var_11_2 = var_2.getActivityById
-
-	ActivityConst = var_6
-
-	local var_11_3 = var_11_2(var_11_1, var_6.SENRANKAGURA_MEDAL_ID).data2_list
-	local var_11_4 = var_3:GetPicturePuzzleIds()
+	local var_11_1 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_MEDAL_ID)
+	local var_11_2 = var_11_1:GetPicturePuzzleIds()
 
 	for iter_11_0 = 1, #arg_11_0.btnPlayers do
-		var_1_10010 = var_11_4[iter_11_0]
-
-		local var_11_5 = arg_11_0.btnPlayers[iter_11_0]
-
-		setActive = var_1_10012
-		findTF = var_1_10014
-		var_1_10014 = var_1_10014(var_11_5, "medal/icon")
-		table = var_1_10015
-
-		var_1_10012(var_1_10014, var_1_10015.contains(var_11_3, var_1_10010))
-
-		setActive = var_1_10012
-		findTF = var_1_10014
-		var_1_10014 = var_1_10014(var_11_5, "img/got")
-		table = var_1_10015
-
-		var_1_10012(var_1_10014, var_1_10015.contains(var_11_3, var_1_10010))
+		setActive(findTF(arg_11_0.btnPlayers[iter_11_0], "medal/icon"), table.contains(var_11_1.data2_list, var_11_2[iter_11_0]))
+		setActive(findTF(arg_11_0.btnPlayers[iter_11_0], "img/got"), table.contains(var_11_1.data2_list, var_11_2[iter_11_0]))
 	end
 
-	getProxy = var_6
-	ActivityProxy = var_8
+	local var_11_3 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_MEDAL_ID)
 
-	local var_11_6 = var_6(var_8)
-	local var_11_7 = var_6.getActivityById
+	for iter_11_1 = 1, #var_11_3.data1_list do
+		local var_11_4
 
-	ActivityConst = var_1_10010
+		if not false and not table.contains(var_11_3.data2_list, var_11_3.data1_list[iter_11_1]) then
+			var_11_4 = true
 
-	local var_11_8 = var_11_7(var_11_6, var_1_10010.SENRANKAGURA_MEDAL_ID).data1_list
-	local var_11_9 = var_7.data2_list
-	local var_11_10 = false
-
-	for iter_11_1 = 1, #var_11_8 do
-		if not var_11_10 then
-			table = var_1_10015
-
-			if not var_1_10015.contains(var_11_9, var_11_8[iter_11_1]) then
-				var_11_10 = true
-				pg = var_1_10015
-				var_1_10017 = var_1_10015.m02
-				var_1_10015 = var_1_10015.sendNotification
-				GAME = var_1_10018
-
-				var_1_10015(var_1_10017, var_1_10018.MEMORYBOOK_UNLOCK, {
-					id = var_11_8[iter_11_1],
-					actId = var_7.id
-				})
-			end
+			pg.m02:sendNotification(GAME.MEMORYBOOK_UNLOCK, {
+				id = var_11_3.data1_list[iter_11_1],
+				actId = var_11_3.id
+			})
 		end
 	end
 
 	if arg_11_0.taskActivity then
-		local var_11_11 = arg_11_0:getGetAbleTask()
-		local var_11_12 = {}
+		local var_11_5 = arg_11_0:getGetAbleTask()
+		local var_11_6 = {}
 
 		for iter_11_2 = 1, #arg_11_0.taskIds do
-			var_1_10017 = iter_11_2
-			ipairs = var_1_10018
-
-			for iter_11_3, iter_11_4 in var_1_10018(arg_11_0.taskIds[iter_11_2]) do
-				table = var_1_10023
-
-				if var_1_10023.contains(var_11_11, iter_11_4) then
-					if not var_11_12[var_1_10017] then
-						var_11_12[var_1_10017] = 1
-					else
-						var_11_12[var_1_10017] = var_11_12[var_1_10017] + 1
-					end
+			for iter_11_3, iter_11_4 in ipairs(arg_11_0.taskIds[iter_11_2]) do
+				if table.contains(var_11_5, iter_11_4) then
+					var_11_6[iter_11_2] = not var_11_6[iter_11_2] and 1 or var_11_6[iter_11_2] + 1
 				end
 			end
 		end
 
 		for iter_11_5 = 1, #arg_11_0.btnPlayers do
-			setActive = var_1_10017
-			findTF = var_1_10019
-
-			var_1_10017(var_1_10019(arg_11_0.btnPlayers[iter_11_5], "redTip"), var_11_12[iter_11_5] ~= nil)
+			setActive(findTF(arg_11_0.btnPlayers[iter_11_5], "redTip"), var_11_6[iter_11_5] ~= nil)
 		end
 
 		arg_11_0:updateDetailPanel()
@@ -495,145 +257,75 @@ function var_0_1.updateUI(arg_11_0)
 	return
 end
 
-function var_0_1.getMedalGetAble(arg_12_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.getMedalGetAble(arg_12_0)
+	local var_12_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_MEDAL_ID)
 
-	local var_12_0 = var_1_10001(var_1_10003)
-	local var_12_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10005
-
-	local var_12_2 = var_12_1(var_12_0, var_1_10005.SENRANKAGURA_MEDAL_ID).data1_list
-	local var_12_3 = var_2.data2_list
-	local var_12_4 = var_2:GetPicturePuzzleIds()
-
-	if #var_12_3 == #var_12_4 and var_2.data1 ~= 1 then
+	if #var_12_0.data2_list == #var_12_0:GetPicturePuzzleIds() and var_12_0.data1 ~= 1 then
 		return true
 	end
 
 	return false
 end
 
-function var_0_1.openDetailPane(arg_13_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_13_0.detailPanel, true)
+function var_0_0.openDetailPane(arg_13_0)
+	setActive(arg_13_0.detailPanel, true)
 
 	return
 end
 
-function var_0_1.initDetailPanel(arg_14_0)
-	findTF = var_1_10001
-	arg_14_0.detailSlider = var_1_10001(arg_14_0.detailPanel, "ad/progressSlider")
-	findTF = var_1
-	arg_14_0.detailClose = var_1(arg_14_0.detailPanel, "ad/btnClose")
-	onButton = var_1
+function var_0_0.initDetailPanel(arg_14_0)
+	arg_14_0.detailSlider = findTF(arg_14_0.detailPanel, "ad/progressSlider")
+	arg_14_0.detailClose = findTF(arg_14_0.detailPanel, "ad/btnClose")
 
-	local var_14_0 = arg_14_0
-
-	findTF = var_4
-
-	local var_14_1 = var_4(arg_14_0.detailPanel, "ad/black")
-
-	local function var_14_2()
-		setActive = var_2_10000
-
-		var_2_10000(arg_14_0.detailPanel, false)
+	onButton(arg_14_0, findTF(arg_14_0.detailPanel, "ad/black"), function()
+		setActive(arg_14_0.detailPanel, false)
 
 		return
-	end
-
-	SOUND_BACK = var_14_4
-
-	var_1(var_14_0, var_14_1, var_14_2, var_14_4)
-
-	onButton = var_1
-
-	var_1(arg_14_0, arg_14_0.detailClose, function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_14_0.detailPanel, false)
+	end, SOUND_BACK)
+	onButton(arg_14_0, arg_14_0.detailClose, function()
+		setActive(arg_14_0.detailPanel, false)
 
 		return
 	end)
 
-	findTF = var_1
-	arg_14_0.detailProgressTipContent = var_1(arg_14_0.detailPanel, "ad/progressDetail")
-	findTF = var_1
-	arg_14_0.detailProgressTipTpl = var_1(arg_14_0.detailPanel, "ad/progressDetail/tipTpl")
-	setActive = var_1
+	arg_14_0.detailProgressTipContent = findTF(arg_14_0.detailPanel, "ad/progressDetail")
+	arg_14_0.detailProgressTipTpl = findTF(arg_14_0.detailPanel, "ad/progressDetail/tipTpl")
 
-	var_1(arg_14_0.detailProgressTipTpl, false)
+	setActive(arg_14_0.detailProgressTipTpl, false)
 
-	findTF = var_1
-
-	local var_14_3 = var_1(arg_14_0.detailPanel, "ad/progressDetail").sizeDelta.x
+	local var_14_0 = findTF(arg_14_0.detailPanel, "ad/progressDetail").sizeDelta.x
 
 	arg_14_0.medalTfs = {}
 
-	for iter_14_0 = 1, var_0_2 do
-		table = var_14_4
-
-		local var_14_4 = var_14_4.insert
-
-		var_1_10008 = arg_14_0.medalTfs
-		findTF = var_1_10009
-
-		var_14_4(var_1_10008, var_1_10009(arg_14_0.detailPanel, "ad/medals/" .. iter_14_0))
+	for iter_14_0 = 1, var_0_1 do
+		table.insert(arg_14_0.medalTfs, findTF(arg_14_0.detailPanel, "ad/medals/" .. iter_14_0))
 	end
 
-	for iter_14_1 = 1, var_0_3 do
-		var_14_4 = arg_14_0.buffs[iter_14_1].pt[1]
-		tf = var_14_5
-		instantiate = var_1_10009
+	for iter_14_1 = 1, var_0_2 do
+		local var_14_1 = tf(instantiate(arg_14_0.detailProgressTipTpl))
 
-		local var_14_5 = var_14_5(var_1_10009(arg_14_0.detailProgressTipTpl))
+		setImageSprite(findTF(var_14_1, "num"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "buff_" .. iter_14_1), true)
+		setImageSprite(findTF(var_14_1, "count"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "buff_count_" .. iter_14_1), true)
 
-		setImageSprite = var_1_10008
-		findTF = var_1_10010
-		var_1_10010 = var_1_10010(var_14_5, "num")
-		GetSpriteFromAtlas = var_11
+		var_14_1.anchoredPosition = Vector3(arg_14_0.buffs[iter_14_1].pt[1] / arg_14_0.ptMaxNum * var_14_0, 0, 0)
 
-		var_1_10008(var_1_10010, var_11("ui/senrankaguramedalui_atlas", "buff_" .. iter_14_1), true)
-
-		setImageSprite = var_1_10008
-		findTF = var_1_10010
-		var_1_10010 = var_1_10010(var_14_5, "count")
-		GetSpriteFromAtlas = var_11
-
-		var_1_10008(var_1_10010, var_11("ui/senrankaguramedalui_atlas", "buff_count_" .. iter_14_1), true)
-
-		Vector3 = var_1_10008
-		var_14_5.anchoredPosition = var_1_10008(var_14_4 / arg_14_0.ptMaxNum * var_14_3, 0, 0)
-		SetParent = var_1_10008
-
-		var_1_10008(var_14_5, arg_14_0.detailProgressTipContent)
-
-		SetActive = var_1_10008
-
-		var_1_10008(var_14_5, true)
+		SetParent(var_14_1, arg_14_0.detailProgressTipContent)
+		SetActive(var_14_1, true)
 	end
 
 	arg_14_0.detailBuffTfs = {}
 
-	for iter_14_2 = 1, var_0_4 do
-		findTF = var_14_4
-		var_14_4 = var_14_4(arg_14_0.detailPanel, "ad/buff/" .. iter_14_2)
-		table = var_14_5
-
-		var_14_5.insert(arg_14_0.detailBuffTfs, var_14_4)
+	for iter_14_2 = 1, var_0_3 do
+		table.insert(arg_14_0.detailBuffTfs, (findTF(arg_14_0.detailPanel, "ad/buff/" .. iter_14_2)))
 	end
 
-	findTF = var_2
-	arg_14_0.detailProgressDesc = var_2(arg_14_0.detailPanel, "ad/progressDesc")
-	findTF = var_2
-	arg_14_0.detailLevelDesc = var_2(arg_14_0.detailPanel, "ad/levelDesc")
+	arg_14_0.detailProgressDesc = findTF(arg_14_0.detailPanel, "ad/progressDesc")
+	arg_14_0.detailLevelDesc = findTF(arg_14_0.detailPanel, "ad/levelDesc")
 
 	return
 end
 
-function var_0_1.updateDetailPanel(arg_17_0)
+function var_0_0.updateDetailPanel(arg_17_0)
 	local var_17_0 = arg_17_0:getPtNum()
 	local var_17_1 = arg_17_0:getBuildLv(var_17_0)
 	local var_17_2
@@ -642,116 +334,47 @@ function var_0_1.updateDetailPanel(arg_17_0)
 		var_17_2 = arg_17_0.buffs[var_17_1].benefit
 	end
 
-	for iter_17_0 = 1, var_0_4 do
-		local var_17_3
+	for iter_17_0 = 1, var_0_3 do
+		local var_17_3 = var_17_2 and pg.benefit_buff_template[var_17_2[iter_17_0]].desc or i18n("shan_luan_task_buff_default")
 
-		if var_17_2 then
-			var_1_10009 = var_17_2[iter_17_0]
-			pg = var_1_10010
-			var_17_3 = var_1_10010.benefit_buff_template[var_1_10009].desc
-		else
-			i18n = var_1_10009
-			var_17_3 = var_1_10009("shan_luan_task_buff_default")
-		end
-
-		var_1_10009 = arg_17_0.detailBuffTfs[iter_17_0]
-		setText = var_1_10010
-		findTF = var_1_10012
-
-		var_1_10010(var_1_10012(var_1_10009, "desc"), var_17_3)
+		setText(findTF(arg_17_0.detailBuffTfs[iter_17_0], "desc"), var_17_3)
 	end
 
-	setSlider = var_4
+	setSlider(arg_17_0.detailSlider, 0, arg_17_0.ptMaxNum, var_17_0)
 
-	var_4(arg_17_0.detailSlider, 0, arg_17_0.ptMaxNum, var_17_0)
-
-	getProxy = var_4
-	ActivityProxy = var_6
-
-	local var_17_4 = var_4(var_6)
-	local var_17_5 = var_4.getActivityById
-
-	ActivityConst = var_8
-
-	local var_17_6 = var_17_5(var_17_4, var_8.SENRANKAGURA_MEDAL_ID).data1_list
-	local var_17_7 = var_5.data2_list
-	local var_17_8 = var_5:GetPicturePuzzleIds()
+	local var_17_4 = getProxy(ActivityProxy):getActivityById(ActivityConst.SENRANKAGURA_MEDAL_ID)
+	local var_17_6 = var_17_4:GetPicturePuzzleIds()
 
 	for iter_17_1 = 1, #arg_17_0.medalTfs do
-		local var_17_9 = arg_17_0.medalTfs[iter_17_1]
-		local var_17_10 = var_17_8[iter_17_1]
-
-		setActive = var_1_10015
-		findTF = var_1_10017
-		var_1_10017 = var_1_10017(var_17_9, "icon")
-		table = var_1_10018
-
-		var_1_10015(var_1_10017, var_1_10018.contains(var_17_7, var_17_10))
+		setActive(findTF(arg_17_0.medalTfs[iter_17_1], "icon"), table.contains(var_17_4.data2_list, var_17_6[iter_17_1]))
 	end
 
-	setText = var_9
-	findTF = var_11
-
-	local var_17_11 = var_11(arg_17_0.detailProgressDesc, "desc")
-
-	i18n = iter_17_1
-
-	var_9(var_17_11, iter_17_1("shan_luan_task_progress_tip", arg_17_0:getTaskCompleteCount() .. "/" .. arg_17_0.taskCount))
-
-	setText = var_9
-	findTF = var_17_11
-
-	local var_17_12 = var_17_11(arg_17_0.detailLevelDesc, "desc")
-
-	i18n = var_12
-
-	var_9(var_17_12, var_12("shan_luan_task_level_tip", "Lv." .. var_17_1))
+	setText(findTF(arg_17_0.detailProgressDesc, "desc"), i18n("shan_luan_task_progress_tip", arg_17_0:getTaskCompleteCount() .. "/" .. arg_17_0.taskCount))
+	setText(findTF(arg_17_0.detailLevelDesc, "desc"), i18n("shan_luan_task_level_tip", "Lv." .. var_17_1))
 
 	return
 end
 
-function var_0_1.getTaskCompleteCount(arg_18_0)
+function var_0_0.getTaskCompleteCount(arg_18_0)
 	local var_18_0 = 0
-	local var_18_1 = arg_18_0:getActiveTask()
 
-	ipairs = var_1_10003
+	for iter_18_0, iter_18_1 in ipairs((arg_18_0:getActiveTask())) do
+		local var_18_1 = arg_18_0:getTask(iter_18_1)
 
-	for iter_18_0, iter_18_1 in var_1_10003(var_18_1) do
-		local var_18_2 = arg_18_0:getTask(iter_18_1)
-
-		if var_8.getTaskStatus(var_18_2) == 2 then
+		if var_18_1:getTaskStatus() == 2 then
 			var_18_0 = var_18_0 + 1
 		else
-			print = var_8
-
-			var_8()
+			print()
 		end
 	end
 
 	return var_18_0
 end
 
-function var_0_1.getPtNum(arg_19_0)
+function var_0_0.getPtNum(arg_19_0)
 	local var_19_0 = 0
 
-	if arg_19_0.ptId then
-		getProxy = var_2
-		PlayerProxy = var_1_10004
-		var_1_10004 = var_2(var_1_10004)
-		var_19_0 = var_2.getData(var_1_10004)[arg_19_0.ptName] or 0
-	else
-		getProxy = var_2
-		ActivityProxy = var_1_10004
-
-		local var_19_1 = var_2(var_1_10004)
-		local var_19_2 = var_2.getActivityByType
-
-		ActivityConst = var_1_10005
-
-		local var_19_3 = var_19_2(var_19_1, var_1_10005.ACTIVITY_TYPE_BUILDING_BUFF_2)
-
-		var_19_0 = var_2.GetBuildingLevelSum(var_19_3)
-	end
+	var_19_0 = arg_19_0.ptId and (getProxy(PlayerProxy):getData()[arg_19_0.ptName] or 0) or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDING_BUFF_2):GetBuildingLevelSum()
 
 	if var_19_0 > arg_19_0.ptMaxNum then
 		var_19_0 = arg_19_0.ptMaxNum
@@ -760,7 +383,7 @@ function var_0_1.getPtNum(arg_19_0)
 	return var_19_0
 end
 
-function var_0_1.getBuildLv(arg_20_0, arg_20_1)
+function var_0_0.getBuildLv(arg_20_0, arg_20_1)
 	local var_20_0 = 0
 
 	for iter_20_0 = #arg_20_0.buffs, 1, -1 do
@@ -770,564 +393,221 @@ function var_0_1.getBuildLv(arg_20_0, arg_20_1)
 	return var_20_0
 end
 
-function var_0_1.initTaskListIds(arg_21_0, arg_21_1, arg_21_2)
-	local var_21_0
-
-	pg = var_1_10004
-
-	local var_21_1 = var_1_10004.task_data_template[arg_21_1].activity_client_config.before
-
-	pg = var_4
-
-	local var_21_2
-
-	if not var_4.task_data_template[arg_21_1].activity_client_config.special then
-		var_21_2 = false
-	end
-
-	local var_21_3 = {
+function var_0_0.initTaskListIds(arg_21_0, arg_21_1, arg_21_2)
+	local var_21_1 = pg.task_data_template[arg_21_1].activity_client_config.special or false
+	local var_21_2 = {
 		id = arg_21_1,
-		before = var_21_1,
-		special = var_21_2
+		before = pg.task_data_template[arg_21_1].activity_client_config.before,
+		special = var_21_1
 	}
 
-	ipairs = var_1_10006
-
-	for iter_21_0, iter_21_1 in var_1_10006(arg_21_2) do
-		ipairs = var_1_10011
-
-		for iter_21_2, iter_21_3 in var_1_10011(iter_21_1) do
-			if iter_21_3.id == var_21_1 then
-				table = var_16
-
-				var_16.insert(iter_21_1, var_21_3)
+	for iter_21_0, iter_21_1 in ipairs(arg_21_2) do
+		for iter_21_2, iter_21_3 in ipairs(iter_21_1) do
+			if iter_21_3.id == pg.task_data_template[arg_21_1].activity_client_config.before then
+				table.insert(iter_21_1, var_21_2)
 
 				return
 			elseif iter_21_3.before == arg_21_1 then
-				table = var_16
-
-				var_16.insert(iter_21_1, var_21_3)
+				table.insert(iter_21_1, var_21_2)
 
 				return
 			end
 		end
 	end
 
-	table = var_6
-
-	var_6.insert(arg_21_2, {
-		var_21_3
+	table.insert(arg_21_2, {
+		var_21_2
 	})
 
 	return
 end
 
-function var_0_1.initTaskPanel(arg_22_0)
-	findTF = var_1_10001
-
-	local var_22_0 = var_1_10001(arg_22_0.taskPanel, "ad/frame/btnBack")
-
-	findTF = var_1_10002
-
-	local var_22_1 = var_1_10002(arg_22_0.taskPanel, "ad/frame/btnHelp")
-
-	findTF = var_3
-
-	local var_22_2 = var_3(arg_22_0.taskPanel, "ad/frame/btnHome")
-
-	onButton = var_4
-
-	local var_22_3 = arg_22_0
-	local var_22_4 = var_22_0
-
-	local function var_22_5()
-		setActive = var_2_10000
-
-		var_2_10000(arg_22_0.taskPanel, false)
+function var_0_0.initTaskPanel(arg_22_0)
+	onButton(arg_22_0, findTF(arg_22_0.taskPanel, "ad/frame/btnBack"), function()
+		setActive(arg_22_0.taskPanel, false)
 
 		return
-	end
-
-	SOUND_BACK = var_1_10009
-
-	var_4(var_22_3, var_22_4, var_22_5, var_1_10009)
-
-	onButton = var_4
-
-	local var_22_6 = arg_22_0
-	local var_22_7 = var_22_2
-
-	local function var_22_8()
-		local var_24_0 = arg_22_0
-		local var_24_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_24_1(var_24_0, var_2_10003.ON_HOME)
+	end, SOUND_BACK)
+	onButton(arg_22_0, findTF(arg_22_0.taskPanel, "ad/frame/btnHome"), function()
+		arg_22_0:emit(BaseUI.ON_HOME)
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10009
-
-	var_4(var_22_6, var_22_7, var_22_8, var_1_10009)
-
-	onButton = var_4
-
-	local var_22_9 = arg_22_0
-	local var_22_10 = var_22_1
-
-	local function var_22_11()
-		pg = var_2_10000
-
-		local var_25_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_25_1 = var_0.ShowMsgBox
-		local var_25_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_25_2.type = var_2_10004
-		pg = var_2_10004
-		var_25_2.helps = var_2_10004.gametip[var_0_6].tip
-
-		var_25_1(var_25_0, var_25_2)
+	end, SFX_CONFIRM)
+	onButton(arg_22_0, findTF(arg_22_0.taskPanel, "ad/frame/btnHelp"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip[var_0_5].tip
+		})
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10009
-
-	var_4(var_22_9, var_22_10, var_22_11, var_1_10009)
+	end, SFX_CONFIRM)
 
 	arg_22_0.taskTagTfs = {}
-	findTF = var_4
 
-	local var_22_12 = var_4(arg_22_0.taskPanel, "ad/tag/content")
+	local var_22_0 = findTF(arg_22_0.taskPanel, "ad/tag/content")
+	local var_22_1 = findTF(arg_22_0.taskPanel, "ad/tag/content/tagTpl")
 
-	findTF = var_5
+	setActive(var_22_1, false)
 
-	local var_22_13 = var_5(arg_22_0.taskPanel, "ad/tag/content/tagTpl")
+	for iter_22_0 = 1, var_0_1 do
+		local var_22_2 = iter_22_0
+		local var_22_3 = tf(instantiate(var_22_1))
 
-	setActive = var_6
-
-	var_6(var_22_13, false)
-
-	for iter_22_0 = 1, var_0_2 do
-		local var_22_14 = iter_22_0
-
-		tf = var_1_10011
-		instantiate = var_1_10013
-		var_1_10011 = var_1_10011(var_1_10013(var_22_13))
-		setImageSprite = var_1_10012
-		findTF = var_1_10014
-		var_1_10014 = var_1_10014(var_1_10011, "icon")
-		GetSpriteFromAtlas = var_15
-
-		var_1_10012(var_1_10014, var_15("ui/senrankaguramedalui_atlas", "player_icon_" .. iter_22_0), true)
-
-		SetParent = var_1_10012
-
-		var_1_10012(var_1_10011, var_22_12)
-
-		setActive = var_1_10012
-
-		var_1_10012(var_1_10011, true)
-
-		table = var_1_10012
-
-		var_1_10012.insert(arg_22_0.taskTagTfs, var_1_10011)
-
-		onButton = var_1_10012
-		var_1_10014 = arg_22_0
-
-		local var_22_15 = var_1_10011
-
-		local function var_22_16()
-			local var_26_0 = arg_22_0
-
-			var_0.taskSelectTag(var_26_0, var_22_14, true)
+		setImageSprite(findTF(var_22_3, "icon"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "player_icon_" .. iter_22_0), true)
+		SetParent(var_22_3, var_22_0)
+		setActive(var_22_3, true)
+		table.insert(arg_22_0.taskTagTfs, var_22_3)
+		onButton(arg_22_0, var_22_3, function()
+			arg_22_0:taskSelectTag(var_22_2, true)
 
 			return
-		end
-
-		SFX_CONFIRM = var_17
-
-		var_1_10012(var_1_10014, var_22_15, var_22_16, var_17)
+		end, SFX_CONFIRM)
 	end
 
-	findTF = var_6
-	arg_22_0.taskButtonTpl = var_6(arg_22_0.taskPanel, "ad/taskButtonTpl")
+	arg_22_0.taskButtonTpl = findTF(arg_22_0.taskPanel, "ad/taskButtonTpl")
 	arg_22_0.taskList = {}
-	findTF = var_6
 
-	local var_22_17 = var_6(arg_22_0.taskPanel, "ad/task/content")
+	local var_22_4 = findTF(arg_22_0.taskPanel, "ad/task/content")
 
-	findTF = var_7
-	arg_22_0.taskDragTf = var_7(arg_22_0.taskPanel, "ad/task/drag")
-	findTF = var_7
+	arg_22_0.taskDragTf = findTF(arg_22_0.taskPanel, "ad/task/drag")
 
-	local var_22_18 = var_7(arg_22_0.taskPanel, "ad/taskTpl")
+	local var_22_5 = findTF(arg_22_0.taskPanel, "ad/taskTpl")
+	local var_22_6 = findTF(arg_22_0.taskPanel, "ad/taskButtonTpl")
 
-	findTF = var_8
-
-	local var_22_19 = var_8(arg_22_0.taskPanel, "ad/taskButtonTpl")
-
-	setActive = var_9
-
-	var_9(var_22_18, false)
-
-	setActive = var_9
-
-	var_9(var_22_19, false)
+	setActive(var_22_5, false)
+	setActive(var_22_6, false)
 
 	arg_22_0.taskGroups = {}
 
-	for iter_22_1 = 1, var_0_2 do
-		local var_22_20 = {}
+	for iter_22_1 = 1, var_0_1 do
+		for iter_22_2 = 1, #arg_22_0.taskListDatas[iter_22_1] do
+			local var_22_7 = tf(instantiate(var_22_5))
 
-		var_1_10014 = arg_22_0.taskListDatas[iter_22_1]
+			setParent(var_22_7, var_22_4)
+			setActive(var_22_7, true)
 
-		for iter_22_2 = 1, #var_1_10014 do
-			tf = var_1_10019
-			instantiate = var_1_10021
-			var_1_10019 = var_1_10019(var_1_10021(var_22_18))
-			setParent = var_1_10020
+			local var_22_8 = {}
 
-			var_1_10020(var_1_10019, var_22_17)
+			for iter_22_3, iter_22_4 in ipairs(arg_22_0.taskListDatas[iter_22_1][iter_22_2]) do
+				local var_22_9 = tf(instantiate(var_22_6))
 
-			setActive = var_1_10020
-
-			var_1_10020(var_1_10019, true)
-
-			var_1_10020 = var_1_10014[iter_22_2]
-			var_1_10021 = {}
-			ipairs = var_22
-
-			for iter_22_3, iter_22_4 in var_22(var_1_10020) do
-				tf = var_1_10027
-				instantiate = var_1_10029
-				var_1_10027 = var_1_10027(var_1_10029(var_22_19))
-				Vector2 = var_1_10028
-				var_1_10027.anchoredPosition = var_1_10028(iter_22_4.pos[1] * 325 + iter_22_4.pos[2] * 90, iter_22_4.pos[2] * 190)
-
-				local var_22_21
+				var_22_9.anchoredPosition = Vector2(iter_22_4.pos[1] * 325 + iter_22_4.pos[2] * 90, iter_22_4.pos[2] * 190)
 
 				if iter_22_4.special then
 					if iter_22_4.pos[2] ~= 0 then
-						setImageSprite = var_1_10029
-						findTF = var_22_21
-						var_22_21 = var_22_21(var_1_10027, "get")
-						GetSpriteFromAtlas = var_1_10032
-
-						var_1_10029(var_22_21, var_1_10032("ui/senrankaguramedalui_atlas", "task_get_" .. 4), true)
-
-						setImageSprite = var_1_10029
-						findTF = var_22_21
-						var_22_21 = var_22_21(var_1_10027, "got")
-						GetSpriteFromAtlas = var_1_10032
-
-						var_1_10029(var_22_21, var_1_10032("ui/senrankaguramedalui_atlas", "task_got_" .. 4), true)
+						setImageSprite(findTF(var_22_9, "get"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "task_get_" .. 4), true)
+						setImageSprite(findTF(var_22_9, "got"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "task_got_" .. 4), true)
 					else
-						setImageSprite = var_1_10029
-						findTF = var_22_21
-						var_22_21 = var_22_21(var_1_10027, "get")
-						GetSpriteFromAtlas = var_1_10032
-
-						var_1_10029(var_22_21, var_1_10032("ui/senrankaguramedalui_atlas", "task_get_" .. 2), true)
-
-						setImageSprite = var_1_10029
-						findTF = var_22_21
-						var_22_21 = var_22_21(var_1_10027, "got")
-						GetSpriteFromAtlas = var_1_10032
-
-						var_1_10029(var_22_21, var_1_10032("ui/senrankaguramedalui_atlas", "task_got_" .. 2), true)
+						setImageSprite(findTF(var_22_9, "get"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "task_get_" .. 2), true)
+						setImageSprite(findTF(var_22_9, "got"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "task_got_" .. 2), true)
 					end
-				elseif not var_1_10028 and iter_22_4.pos[2] ~= 0 then
-					setImageSprite = var_1_10029
-					findTF = var_22_21
-
-					local var_22_22 = var_22_21(var_1_10027, "get")
-
-					GetSpriteFromAtlas = var_1_10032
-
-					var_1_10029(var_22_22, var_1_10032("ui/senrankaguramedalui_atlas", "task_get_" .. 3), true)
-
-					setImageSprite = var_1_10029
-					findTF = var_22_22
-
-					local var_22_23 = var_22_22(var_1_10027, "got")
-
-					GetSpriteFromAtlas = var_1_10032
-
-					var_1_10029(var_22_23, var_1_10032("ui/senrankaguramedalui_atlas", "task_got_" .. 3), true)
+				elseif not iter_22_4.special and iter_22_4.pos[2] ~= 0 then
+					setImageSprite(findTF(var_22_9, "get"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "task_get_" .. 3), true)
+					setImageSprite(findTF(var_22_9, "got"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "task_got_" .. 3), true)
 				end
 
-				setActive = var_1_10029
-
-				var_1_10029(var_1_10027, true)
-
-				SetParent = var_1_10029
-
-				var_1_10029(var_1_10027, var_1_10019)
-
-				table = var_1_10029
-
-				var_1_10029.insert(var_1_10021, {
-					tf = var_1_10027,
+				setActive(var_22_9, true)
+				SetParent(var_22_9, var_22_7)
+				table.insert(var_22_8, {
+					tf = var_22_9,
 					data = iter_22_4
 				})
-
-				onButton = var_1_10029
-
-				local var_22_24 = arg_22_0
-
-				var_1_10032 = var_1_10027
-
-				local function var_22_25()
-					local var_27_0 = arg_22_0
-
-					var_0.openSubmitPanel(var_27_0, iter_22_4)
+				onButton(arg_22_0, var_22_9, function()
+					arg_22_0:openSubmitPanel(iter_22_4)
 
 					return
-				end
-
-				SFX_CONFIRM = var_1_10034
-
-				var_1_10029(var_22_24, var_1_10032, var_22_25, var_1_10034)
+				end, SFX_CONFIRM)
 			end
 
-			var_22_20.listTf = var_1_10019
-			var_22_20.taskDic = var_1_10021
+			;({}).listTf = var_22_7
+			;({}).taskDic = var_22_8
 		end
 
-		table = var_15
-
-		var_15.insert(arg_22_0.taskGroups, var_22_20)
+		table.insert(arg_22_0.taskGroups, {})
 	end
 
-	findTF = var_9
-	arg_22_0.taskButtonTpl = var_9(arg_22_0.taskPanel, "ad/buttonTpl")
-	findTF = var_9
-	arg_22_0.taskBtnGetAll = var_9(arg_22_0.taskPanel, "ad/btnGetAll")
-	onButton = var_9
+	arg_22_0.taskButtonTpl = findTF(arg_22_0.taskPanel, "ad/buttonTpl")
+	arg_22_0.taskBtnGetAll = findTF(arg_22_0.taskPanel, "ad/btnGetAll")
 
-	local var_22_26 = arg_22_0
-	local var_22_27 = arg_22_0.taskBtnGetAll
+	onButton(arg_22_0, arg_22_0.taskBtnGetAll, function()
+		local var_28_0 = arg_22_0:getGetAbleTask()
 
-	local function var_22_28()
-		local var_28_0 = arg_22_0
-
-		if var_0.getGetAbleTask(var_28_0) and #var_0 > 0 then
-			local var_28_1 = arg_22_0
-			local var_28_2 = var_1.emit
-
-			SenrankaguraMedalMediator = var_2_10004
-
-			var_28_2(var_28_1, var_2_10004.SUBMIT_TASK_ALL, var_0)
+		if var_28_0 and #var_28_0 > 0 then
+			arg_22_0:emit(SenrankaguraMedalMediator.SUBMIT_TASK_ALL, var_28_0)
 		end
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10014
-
-	var_9(var_22_26, var_22_27, var_22_28, var_1_10014)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.updateTask(arg_29_0)
+function var_0_0.updateTask(arg_29_0)
 	for iter_29_0 = 1, #arg_29_0.taskGroups do
-		local var_29_0 = arg_29_0.taskGroups[iter_29_0].taskDic
+		for iter_29_1, iter_29_2 in ipairs(arg_29_0.taskGroups[iter_29_0].taskDic) do
+			local var_29_0 = arg_29_0:getTask(iter_29_2.data.id)
 
-		ipairs = var_1_10007
+			setActive(findTF(iter_29_2.tf, "lock"), false)
+			setActive(findTF(iter_29_2.tf, "getAble"), false)
+			setActive(findTF(iter_29_2.tf, "get"), false)
+			setActive(findTF(iter_29_2.tf, "got"), false)
 
-		for iter_29_1, iter_29_2 in var_1_10007(var_29_0) do
-			local var_29_1 = iter_29_2.tf
-			local var_29_2 = arg_29_0
-			local var_29_3 = arg_29_0.getTask(var_29_2, iter_29_2.data.id)
-
-			setActive = var_1_10014
-			findTF = var_1_10016
-
-			var_1_10014(var_1_10016(var_29_1, "lock"), false)
-
-			setActive = var_1_10014
-			findTF = var_1_10016
-
-			var_1_10014(var_1_10016(var_29_1, "getAble"), false)
-
-			setActive = var_1_10014
-			findTF = var_1_10016
-
-			var_1_10014(var_1_10016(var_29_1, "get"), false)
-
-			setActive = var_1_10014
-			findTF = var_1_10016
-
-			var_1_10014(var_1_10016(var_29_1, "got"), false)
-
-			if var_29_3 then
-				var_1_10016 = arg_29_0
-
-				local var_29_4
-
-				if arg_29_0.checkTaskBeforeComplete(var_1_10016, var_29_3:getConfig("activity_client_config").before) then
-					var_29_4 = var_29_3
-
-					if var_29_3.getTaskStatus(var_29_4) == 0 then
-						setActive = var_29_2
-						findTF = var_29_4
-
-						var_29_2(var_29_4(var_29_1, "get"), true)
-					else
-						var_29_4 = var_29_3
-
-						if var_29_3.getTaskStatus(var_29_4) == 1 then
-							setActive = var_29_2
-							findTF = var_29_4
-
-							var_29_2(var_29_4(var_29_1, "get"), true)
-
-							setActive = var_29_2
-							findTF = var_29_4
-
-							var_29_2(var_29_4(var_29_1, "getAble"), true)
-						else
-							var_29_4 = var_29_3
-
-							if var_29_3.getTaskStatus(var_29_4) == 2 then
-								setActive = var_29_2
-								findTF = var_29_4
-
-								var_29_2(var_29_4(var_29_1, "got"), true)
-							end
-						end
+			if var_29_0 then
+				if arg_29_0:checkTaskBeforeComplete(var_29_0:getConfig("activity_client_config").before) then
+					if var_29_0:getTaskStatus() == 0 then
+						setActive(findTF(iter_29_2.tf, "get"), true)
+					elseif var_29_0:getTaskStatus() == 1 then
+						setActive(findTF(iter_29_2.tf, "get"), true)
+						setActive(findTF(iter_29_2.tf, "getAble"), true)
+					elseif var_29_0:getTaskStatus() == 2 then
+						setActive(findTF(iter_29_2.tf, "got"), true)
 					end
 				else
-					setActive = var_29_2
-					findTF = var_29_4
-
-					var_29_2(var_29_4(var_29_1, "lock"), true)
-
-					setActive = var_29_2
-					findTF = var_17
-
-					var_29_2(var_17(var_29_1, "get"), true)
+					setActive(findTF(iter_29_2.tf, "lock"), true)
+					setActive(findTF(iter_29_2.tf, "get"), true)
 				end
 			else
-				setActive = var_1_10014
-				findTF = var_1_10016
-
-				var_1_10014(var_1_10016(var_29_1, "lock"), true)
-
-				setActive = var_1_10014
-				findTF = var_1_10016
-
-				var_1_10014(var_1_10016(var_29_1, "get"), true)
+				setActive(findTF(iter_29_2.tf, "lock"), true)
+				setActive(findTF(iter_29_2.tf, "get"), true)
 			end
 		end
 	end
 
 	if #arg_29_0:getGetAbleTask() > 0 then
-		setActive = var_2
-
-		var_2(arg_29_0.taskBtnGetAll, true)
+		setActive(arg_29_0.taskBtnGetAll, true)
 	else
-		setActive = var_2
-
-		var_2(arg_29_0.taskBtnGetAll, false)
+		setActive(arg_29_0.taskBtnGetAll, false)
 	end
 
 	for iter_29_3 = 1, #arg_29_0.taskGroups do
-		local var_29_5 = arg_29_0.taskGroups[iter_29_3].taskDic
-		local var_29_6 = arg_29_0.taskGroups[iter_29_3].listTf
+		for iter_29_4, iter_29_5 in ipairs(arg_29_0.taskGroups[iter_29_3].taskDic) do
+			local var_29_2 = iter_29_5.data.pos
+			local var_29_3 = iter_29_5.tf
 
-		ipairs = var_1_10008
+			setActive(findTF(iter_29_5.tf, "line/back"), false)
+			setActive(findTF(var_29_3, "line/bottom"), false)
+			setActive(findTF(var_29_3, "line/top"), false)
+			var_29_3:SetAsFirstSibling()
 
-		for iter_29_4, iter_29_5 in var_1_10008(var_29_5) do
-			local var_29_7 = iter_29_5.data.pos
-			local var_29_8 = iter_29_5.data.before
-			local var_29_9 = iter_29_5.tf
+			if not iter_29_5.data.before then
+				setActive(findTF(var_29_3, "line"), false)
+			else
+				local var_29_4 = arg_29_0:getTaskPos(iter_29_5.data.before)
+				local var_29_5 = arg_29_0:getTask(iter_29_5.data.before)
+				local var_29_6 = arg_29_0:checkTaskBeforeComplete(iter_29_5.data.before) and Color.New(0.9921568627450981, 0.9647058823529412, 0.8666666666666667) or Color.New(0.48627450980392156, 0.35294117647058826, 0.2901960784313726)
 
-			setActive = var_1_10016
-			findTF = var_1_10018
-
-			var_1_10016(var_1_10018(var_29_9, "line/back"), false)
-
-			setActive = var_1_10016
-			findTF = var_1_10018
-
-			var_1_10016(var_1_10018(var_29_9, "line/bottom"), false)
-
-			setActive = var_1_10016
-			findTF = var_1_10018
-
-			var_1_10016(var_1_10018(var_29_9, "line/top"), false)
-
-			var_1_10018 = var_29_9
-
-			var_29_9.SetAsFirstSibling(var_1_10018)
-
-			if not var_29_8 then
-				setActive = var_1_10016
-				findTF = var_1_10018
-
-				var_1_10016(var_1_10018(var_29_9, "line"), false)
-
-				goto label_29_0
-			end
-
-			var_1_10018 = arg_29_0
-			var_1_10016 = arg_29_0.getTaskPos(var_1_10018, var_29_8)
-
-			local var_29_10 = arg_29_0:getTask(var_29_8)
-
-			if arg_29_0:checkTaskBeforeComplete(var_29_8) then
-				Color = var_1_10018
-
-				if not var_1_10018.New(0.9921568627450981, 0.9647058823529412, 0.8666666666666667) then
-					Color = var_1_10018
-					var_1_10018 = var_1_10018.New(0.48627450980392156, 0.35294117647058826, 0.2901960784313726)
-				end
-
-				if var_1_10016[1] < var_29_7[1] then
-					setActive = var_19
-					findTF = var_21
-
-					var_19(var_21(var_29_9, "line/back"), true)
-
-					setImageColor = var_19
-					findTF = var_21
-
-					var_19(var_21(var_29_9, "line/back"), var_1_10018)
-				elseif var_1_10016[2] < var_29_7[2] then
-					setActive = var_19
-					findTF = var_21
-
-					var_19(var_21(var_29_9, "line/bottom"), true)
-
-					setImageColor = var_19
-					findTF = var_21
-
-					var_19(var_21(var_29_9, "line/bottom"), var_1_10018)
+				if var_29_4[1] < var_29_2[1] then
+					setActive(findTF(var_29_3, "line/back"), true)
+					setImageColor(findTF(var_29_3, "line/back"), var_29_6)
+				elseif var_29_4[2] < var_29_2[2] then
+					setActive(findTF(var_29_3, "line/bottom"), true)
+					setImageColor(findTF(var_29_3, "line/bottom"), var_29_6)
 				else
-					setActive = var_19
-					findTF = var_21
-
-					var_19(var_21(var_29_9, "line/top"), true)
-
-					setImageColor = var_19
-					findTF = var_21
-
-					var_19(var_21(var_29_9, "line/top"), var_1_10018)
+					setActive(findTF(var_29_3, "line/top"), true)
+					setImageColor(findTF(var_29_3, "line/top"), var_29_6)
 				end
 
-				setActive = var_19
-				findTF = var_21
-
-				var_19(var_21(var_29_9, "line"), true)
-
-				::label_29_0::
+				setActive(findTF(var_29_3, "line"), true)
 			end
 		end
 	end
@@ -1335,35 +615,32 @@ function var_0_1.updateTask(arg_29_0)
 	return
 end
 
-function var_0_1.checkTaskBeforeComplete(arg_30_0, arg_30_1)
+function var_0_0.checkTaskBeforeComplete(arg_30_0, arg_30_1)
 	if not arg_30_1 then
 		return true
 	end
 
 	local var_30_0 = arg_30_0:getTaskGroupData(arg_30_1).before
+	local var_30_1 = arg_30_0:getTask(arg_30_1)
 
-	if not arg_30_0:getTask(arg_30_1) then
+	if not var_30_1 then
 		return true
 	end
 
-	if var_4:getTaskStatus() == 0 then
+	if var_30_1:getTaskStatus() == 0 then
 		return false
 	end
 
-	if var_4:getTaskStatus() >= 1 then
+	if var_30_1:getTaskStatus() >= 1 then
 		return arg_30_0:checkTaskBeforeComplete(var_30_0)
 	end
 
 	return true
 end
 
-function var_0_1.getTaskGroupData(arg_31_0, arg_31_1)
+function var_0_0.getTaskGroupData(arg_31_0, arg_31_1)
 	for iter_31_0 = 1, #arg_31_0.taskGroups do
-		local var_31_0 = arg_31_0.taskGroups[iter_31_0].taskDic
-
-		ipairs = var_1_10007
-
-		for iter_31_1, iter_31_2 in var_1_10007(var_31_0) do
+		for iter_31_1, iter_31_2 in ipairs(arg_31_0.taskGroups[iter_31_0].taskDic) do
 			if iter_31_2.data.id == arg_31_1 then
 				return iter_31_2.data
 			end
@@ -1373,13 +650,9 @@ function var_0_1.getTaskGroupData(arg_31_0, arg_31_1)
 	return nil
 end
 
-function var_0_1.getTaskPos(arg_32_0, arg_32_1)
+function var_0_0.getTaskPos(arg_32_0, arg_32_1)
 	for iter_32_0 = 1, #arg_32_0.taskGroups do
-		local var_32_0 = arg_32_0.taskGroups[iter_32_0].taskDic
-
-		ipairs = var_1_10007
-
-		for iter_32_1, iter_32_2 in var_1_10007(var_32_0) do
+		for iter_32_1, iter_32_2 in ipairs(arg_32_0.taskGroups[iter_32_0].taskDic) do
 			if iter_32_2.data.id == arg_32_1 then
 				return iter_32_2.data.pos
 			end
@@ -1389,74 +662,57 @@ function var_0_1.getTaskPos(arg_32_0, arg_32_1)
 	return nil
 end
 
-function var_0_1.getTask(arg_33_0, arg_33_1)
-	getProxy = var_1_10002
-	TaskProxy = var_1_10004
+function var_0_0.getTask(arg_33_0, arg_33_1)
+	local var_33_0 = getProxy(TaskProxy)
+	local var_33_1 = var_33_0:getTaskById(arg_33_1)
 
-	local var_33_0 = var_1_10002(var_1_10004)
-	local var_33_1
-
-	if var_33_0:getTaskById(arg_33_1) then
-		return var_3
+	if var_33_1 then
+		return var_33_1
 	end
 
-	if var_33_0:getFinishTaskById(arg_33_1) then
-		return var_3
+	local var_33_3 = var_33_0:getFinishTaskById(arg_33_1)
+
+	if var_33_3 then
+		return var_33_3
 	end
 
 	return nil
 end
 
-function var_0_1.getGetAbleTask(arg_34_0)
-	local var_34_0 = {}
+function var_0_0.getGetAbleTask(arg_34_0)
+	local var_34_0 = getProxy(TaskProxy)
+	local var_34_1 = arg_34_0:getActiveTask()
 
-	getProxy = var_1_10002
-	TaskProxy = var_1_10004
+	for iter_34_0 = 1, #var_34_1 do
+		local var_34_2 = var_34_0:getTaskById(var_34_1[iter_34_0])
 
-	local var_34_1 = var_1_10002(var_1_10004)
-	local var_34_2 = arg_34_0:getActiveTask()
-
-	for iter_34_0 = 1, #var_34_2 do
-		if var_34_1:getTaskById(var_34_2[iter_34_0]) and var_8:getTaskStatus() == 1 then
-			table = var_9
-
-			var_9.insert(var_34_0, var_8.id)
+		if var_34_2 and var_34_2:getTaskStatus() == 1 then
+			table.insert({}, var_34_2.id)
 		end
 	end
 
-	return var_34_0
+	return {}
 end
 
-function var_0_1.getActiveTask(arg_35_0)
-	local var_35_0 = {}
-
+function var_0_0.getActiveTask(arg_35_0)
 	for iter_35_0 = 1, #arg_35_0.taskGroups do
-		local var_35_1 = arg_35_0.taskGroups[iter_35_0].taskDic
-
-		ipairs = var_1_10007
-
-		for iter_35_1, iter_35_2 in var_1_10007(var_35_1) do
+		for iter_35_1, iter_35_2 in ipairs(arg_35_0.taskGroups[iter_35_0].taskDic) do
 			if not iter_35_2.data.before then
-				table = var_12
-
-				var_12.insert(var_35_0, iter_35_2.data.id)
+				table.insert({}, iter_35_2.data.id)
 			elseif arg_35_0:checkTaskBeforeComplete(iter_35_2.data.before) then
-				table = var_1_10013
-
-				var_1_10013.insert(var_35_0, iter_35_2.data.id)
+				table.insert({}, iter_35_2.data.id)
 			end
 		end
 	end
 
-	return var_35_0
+	return {}
 end
 
-function var_0_1.taskSelectTag(arg_36_0, arg_36_1, arg_36_2)
+function var_0_0.taskSelectTag(arg_36_0, arg_36_1, arg_36_2)
 	local var_36_0 = 0
 
 	if arg_36_0.currentSelectIndex then
-		math = var_4
-		var_36_0 = var_4.abs(arg_36_0.currentSelectIndex - arg_36_1)
+		var_36_0 = math.abs(arg_36_0.currentSelectIndex - arg_36_1)
 	end
 
 	arg_36_0.currentSelectIndex = arg_36_1
@@ -1464,475 +720,224 @@ function var_0_1.taskSelectTag(arg_36_0, arg_36_1, arg_36_2)
 	arg_36_0.currentTaskDatas = arg_36_0.taskListDatas[arg_36_1]
 
 	for iter_36_0 = 1, #arg_36_0.taskTagTfs do
-		local var_36_1 = arg_36_0.taskTagTfs[iter_36_0]
-
-		setActive = var_1_10009
-		findTF = var_1_10011
-
-		var_1_10009(var_1_10011(var_36_1, "select"), arg_36_0.currentSelectTag == var_36_1)
+		setActive(findTF(arg_36_0.taskTagTfs[iter_36_0], "select"), arg_36_0.currentSelectTag == arg_36_0.taskTagTfs[iter_36_0])
 	end
 
-	GetComponent = var_4
-	findTF = var_6
+	arg_36_0.taskScrollRect = GetComponent(findTF(arg_36_0.taskPanel, "ad/task"), typeof(ScrollRect))
 
-	local var_36_2 = var_6(arg_36_0.taskPanel, "ad/task")
-
-	typeof = iter_36_0
-	ScrollRect = var_9
-	arg_36_0.taskScrollRect = var_4(var_36_2, iter_36_0(var_9))
-
-	local var_36_3 = var_0_2 - 1
-
-	Vector2 = var_5
-
-	local var_36_4 = var_5(arg_36_0.taskScrollRect.normalizedPosition.x, arg_36_0.taskScrollRect.normalizedPosition.y)
+	local var_36_1 = Vector2(arg_36_0.taskScrollRect.normalizedPosition.x, arg_36_0.taskScrollRect.normalizedPosition.y)
 
 	if arg_36_2 then
-		var_36_2 = arg_36_0.taskScrollRect.normalizedPosition.y
-
-		local var_36_5 = (var_36_3 - (arg_36_1 - 1)) / var_36_3
-
-		LeanTween = var_8
-
-		local var_36_6 = var_8.isTweening
-
-		go = var_1_10010
-
-		local var_36_7
-
-		if var_36_6(var_1_10010(arg_36_0._tf)) then
-			LeanTween = var_36_7
-			var_36_7 = var_36_7.cancel
-			go = var_10
-
-			var_36_7(var_10(arg_36_0._tf))
+		if LeanTween.isTweening(go(arg_36_0._tf)) then
+			LeanTween.cancel(go(arg_36_0._tf))
 		end
 
-		LeanTween = var_36_7
+		LeanTween.value(go(arg_36_0._tf), arg_36_0.taskScrollRect.normalizedPosition.y, (var_0_1 - 1 - (arg_36_1 - 1)) / (var_0_1 - 1), 0.3 + var_36_0 * 0.1):setOnUpdate(System.Action_float(function(arg_37_0)
+			var_36_1.y = arg_37_0
+			arg_36_0.taskScrollRect.normalizedPosition = var_36_1
 
-		local var_36_8 = var_36_7.value
-
-		go = var_10
-
-		local var_36_9 = var_36_8(var_10(arg_36_0._tf), var_36_2, var_36_5, 0.3 + var_36_0 * 0.1)
-		local var_36_10 = var_8.setOnUpdate
-
-		System = var_11
-
-		var_36_10(var_36_9, var_11.Action_float(function(arg_37_0)
-			var_36_4.y = arg_37_0
-			arg_36_0.taskScrollRect.normalizedPosition = var_36_4
-
-			local var_37_0 = arg_36_0.taskScrollRect.onValueChanged
-
-			var_1.Invoke(var_37_0, var_36_4)
+			arg_36_0.taskScrollRect.onValueChanged:Invoke(var_36_1)
 
 			return
 		end))
 	else
-		scrollTo = var_36_2
-
-		var_36_2(arg_36_0.taskScrollRect, 0, (var_36_3 - (arg_36_1 - 1)) / var_36_3)
+		scrollTo(arg_36_0.taskScrollRect, 0, (var_0_1 - 1 - (arg_36_1 - 1)) / (var_0_1 - 1))
 	end
 
 	return
 end
 
-function var_0_1.openTaskPanel(arg_38_0, arg_38_1)
+function var_0_0.openTaskPanel(arg_38_0, arg_38_1)
 	arg_38_1 = arg_38_1 or 1
 
 	arg_38_0:taskSelectTag(arg_38_1, false)
-
-	setActive = var_2
-
-	var_2(arg_38_0.taskPanel, true)
+	setActive(arg_38_0.taskPanel, true)
 
 	return
 end
 
-function var_0_1.sortListDatas(arg_39_0, arg_39_1)
+function var_0_0.sortListDatas(arg_39_0, arg_39_1)
 	local var_39_0
-
-	local function var_39_1(arg_40_0)
-		ipairs = var_2_10001
-
-		for iter_40_0, iter_40_1 in var_2_10001(var_39_0) do
-			if iter_40_1[1] == arg_40_0[1] and iter_40_1[2] == arg_40_0[2] then
-				return false
-			end
-		end
-
-		return true
-	end
-
-	local function var_39_2(arg_41_0, arg_41_1)
-		ipairs = var_2_10002
-
-		for iter_41_0, iter_41_1 in var_2_10002(arg_41_1) do
-			if iter_41_1.id == arg_41_0 then
-				return iter_41_1
-			end
-		end
-
-		return
-	end
 
 	for iter_39_0 = 1, #arg_39_1 do
 		var_39_0 = {}
 
-		local var_39_3 = arg_39_1[iter_39_0]
-		local var_39_4
+		for iter_39_1 = 1, #arg_39_1[iter_39_0] do
+			local var_39_2
+			local var_39_3 = arg_39_1[iter_39_0][iter_39_1]
 
-		for iter_39_1 = 1, #var_39_3 do
-			local var_39_5
-			local var_39_6
-
-			if not var_39_3[iter_39_1].before then
-				var_39_5 = {
+			if not arg_39_1[iter_39_0][iter_39_1].before then
+				var_39_2 = {
 					0,
 					0
 				}
-			elseif var_16.before then
-				var_39_6 = var_39_2(var_16.before, var_39_3)
-				assert = var_1_10018
-
-				var_1_10018(var_39_6, "找不到前置id.." .. var_16.before)
-
-				var_1_10018 = var_39_6.pos
-
-				local var_39_7 = {
-					var_1_10018[1] + 1,
-					var_1_10018[2]
-				}
-
-				for iter_39_2 = 1, 10 do
-					if var_39_1(var_39_7) then
-						break
-					else
-						if iter_39_2 == 1 then
-							var_39_7[1] = var_39_7[1] - 1
-						end
-
-						if var_39_7[2] > 0 then
-							var_39_7[2] = var_39_7[2] * -1
-						else
-							math = var_24
-							var_39_7[2] = var_24.abs(var_39_7[2]) + 1
-						end
-
-						if var_1_10018[2] - var_39_7[2] > 1 then
-							var_39_6.pos = {
-								var_39_7[1],
-								var_39_7[2]
-							}
-							var_39_7[1] = var_39_7[1] + 1
+			elseif var_39_3.before then
+				local var_39_4 = (function(arg_41_0, arg_41_1)
+					for iter_41_0, iter_41_1 in ipairs(arg_41_1) do
+						if iter_41_1.id == arg_41_0 then
+							return iter_41_1
 						end
 					end
 
-					assert = var_24
+					return
+				end)(var_39_3.before, arg_39_1[iter_39_0])
 
-					var_24(iter_39_2 ~= 10, "任务分支超过10个")
+				assert(var_39_4, "找不到前置id.." .. var_39_3.before)
+
+				local var_39_5 = var_39_4.pos
+				local var_39_6 = {
+					var_39_4.pos[1] + 1,
+					var_39_4.pos[2]
+				}
+
+				for iter_39_2 = 1, 10 do
+					if (function(arg_40_0)
+						for iter_40_0, iter_40_1 in ipairs(var_39_0) do
+							if iter_40_1[1] == arg_40_0[1] and iter_40_1[2] == arg_40_0[2] then
+								return false
+							end
+						end
+
+						return true
+					end)(var_39_6) then
+						break
+					else
+						if iter_39_2 == 1 then
+							var_39_6[1] = var_39_6[1] - 1
+						end
+
+						var_39_6[2] = var_39_6[2] > 0 and var_39_6[2] * -1 or math.abs(var_39_6[2]) + 1
+
+						if var_39_5[2] - var_39_6[2] > 1 then
+							var_39_4.pos = {
+								var_39_6[1],
+								var_39_6[2]
+							}
+							var_39_6[1] = var_39_6[1] + 1
+						end
+					end
+
+					assert(iter_39_2 ~= 10, "任务分支超过10个")
 				end
 
-				var_39_5 = var_39_7
+				var_39_2 = var_39_6
 			end
 
-			var_16.pos = var_39_5
-			table = var_39_6
+			var_39_3.pos = var_39_2
 
-			var_39_6.insert(var_39_0, var_39_5)
+			table.insert(var_39_0, var_39_2)
 		end
 	end
 
 	return
 end
 
-function var_0_1.openSubmitPanel(arg_42_0, arg_42_1)
-	setActive = var_1_10002
+function var_0_0.openSubmitPanel(arg_42_0, arg_42_1)
+	setActive(arg_42_0.submitPanel, true)
+	setImageSprite(findTF(arg_42_0.submitPanel, "icon/img"), GetSpriteFromAtlas("ui/senrankaguramedalui_atlas", "player_icon_" .. arg_42_0.currentSelectIndex), true)
 
-	var_1_10002(arg_42_0.submitPanel, true)
+	local var_42_0 = arg_42_0:getTask(arg_42_1.id)
+	local var_42_1 = arg_42_0:checkTaskBeforeComplete(arg_42_1.before)
 
-	local var_42_0 = arg_42_0.currentSelectIndex
+	if var_42_0 then
+		arg_42_0.selectTask = var_42_0
 
-	setImageSprite = var_1_10003
-	findTF = var_5
-
-	local var_42_1 = var_5(arg_42_0.submitPanel, "icon/img")
-
-	GetSpriteFromAtlas = var_1_10006
-
-	var_1_10003(var_42_1, var_1_10006("ui/senrankaguramedalui_atlas", "player_icon_" .. var_42_0), true)
-
-	local var_42_2 = arg_42_0
-	local var_42_3 = arg_42_0.getTask(var_42_2, arg_42_1.id)
-	local var_42_4 = arg_42_0:checkTaskBeforeComplete(arg_42_1.before)
-
-	if var_42_3 then
-		arg_42_0.selectTask = var_42_3
-		setText = var_42_2
-		findTF = var_7
-
-		var_42_2(var_7(arg_42_0.submitPanel, "taskDesc"), var_42_3:getConfig("desc"))
-
-		setText = var_42_2
-		findTF = var_7
-
-		local var_42_5 = var_7(arg_42_0.submitPanel, "img/taskName")
-		local var_42_6 = var_42_3
-
-		var_42_2(var_42_5, var_42_3.getConfig(var_42_6, "name"))
-
-		local var_42_7 = var_42_3
-		local var_42_8 = var_42_3.getProgress(var_42_7)
-		local var_42_9 = var_42_3:getConfig("target_num")
-
-		setText = var_42_7
-		findTF = var_9
-
-		local var_42_10 = var_9(arg_42_0.submitPanel, "progress/taskProgress")
-
-		setColorStr = var_42_6
-
-		local var_42_11 = var_42_6(var_42_8, "#C2695B")
-		local var_42_12 = "/"
-
-		setColorStr = var_12
-
-		var_42_7(var_42_10, var_42_11 .. var_42_12 .. var_12(var_42_9, "#9D6B59"))
-
-		local var_42_13 = var_42_3:getConfig("award_display")
-
-		arg_42_0:setSubmitAward(var_42_13)
-
-		setActive = var_8
-
-		var_8(arg_42_0.submitGo, var_42_3:getTaskStatus() == 0 or not var_42_4)
-
-		setActive = var_8
-
-		var_8(arg_42_0.submitGet, var_42_3:getTaskStatus() == 1 and var_42_4)
-
-		setActive = var_8
-
-		var_8(arg_42_0.submitGot, var_42_3:getTaskStatus() == 2)
+		setText(findTF(arg_42_0.submitPanel, "taskDesc"), var_42_0:getConfig("desc"))
+		setText(findTF(arg_42_0.submitPanel, "img/taskName"), var_42_0:getConfig("name"))
+		setText(findTF(arg_42_0.submitPanel, "progress/taskProgress"), setColorStr(var_42_0:getProgress(), "#C2695B") .. "/" .. setColorStr(var_42_0:getConfig("target_num"), "#9D6B59"))
+		arg_42_0:setSubmitAward((var_42_0:getConfig("award_display")))
+		setActive(arg_42_0.submitGo, var_42_0:getTaskStatus() == 0 or not var_42_1)
+		setActive(arg_42_0.submitGet, var_42_0:getTaskStatus() == 1 and var_42_1)
+		setActive(arg_42_0.submitGot, var_42_0:getTaskStatus() == 2)
 	end
 
 	return
 end
 
-function var_0_1.initSubmitPanel(arg_43_0)
-	findTF = var_1_10001
-	arg_43_0.submitGet = var_1_10001(arg_43_0.submitPanel, "get")
-	findTF = var_1
-	arg_43_0.submitGot = var_1(arg_43_0.submitPanel, "got")
-	findTF = var_1
-	arg_43_0.submitGo = var_1(arg_43_0.submitPanel, "go")
-	findTF = var_1
-	arg_43_0.submitbtnBack = var_1(arg_43_0.submitPanel, "back")
-	findTF = var_1
-	arg_43_0.submitDisplayContent = var_1(arg_43_0.submitPanel, "itemDisplay/viewport/content")
-	findTF = var_1
-	arg_43_0.submitItemTpl = var_1(arg_43_0.submitPanel, "itemDisplay/viewport/content/item")
-	setActive = var_1
+function var_0_0.initSubmitPanel(arg_43_0)
+	arg_43_0.submitGet = findTF(arg_43_0.submitPanel, "get")
+	arg_43_0.submitGot = findTF(arg_43_0.submitPanel, "got")
+	arg_43_0.submitGo = findTF(arg_43_0.submitPanel, "go")
+	arg_43_0.submitbtnBack = findTF(arg_43_0.submitPanel, "back")
+	arg_43_0.submitDisplayContent = findTF(arg_43_0.submitPanel, "itemDisplay/viewport/content")
+	arg_43_0.submitItemTpl = findTF(arg_43_0.submitPanel, "itemDisplay/viewport/content/item")
 
-	var_1(arg_43_0.submitItemTpl, false)
+	setActive(arg_43_0.submitItemTpl, false)
 
-	findTF = var_1
-	arg_43_0.submitItemDesc = var_1(arg_43_0.submitPanel, "itemDesc")
+	arg_43_0.submitItemDesc = findTF(arg_43_0.submitPanel, "itemDesc")
 	arg_43_0.submitItems = {}
-	onButton = var_1
 
-	local var_43_0 = arg_43_0
-
-	findTF = var_4
-
-	local var_43_1 = var_4(arg_43_0.submitPanel, "black")
-
-	local function var_43_2()
-		setActive = var_2_10000
-
-		var_2_10000(arg_43_0.submitPanel, false)
+	onButton(arg_43_0, findTF(arg_43_0.submitPanel, "black"), function()
+		setActive(arg_43_0.submitPanel, false)
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_43_0, var_43_1, var_43_2, var_6)
-
-	onButton = var_1
-
-	local var_43_3 = arg_43_0
-	local var_43_4 = arg_43_0.submitbtnBack
-
-	local function var_43_5()
-		setActive = var_2_10000
-
-		var_2_10000(arg_43_0.submitPanel, false)
+	end, SOUND_BACK)
+	onButton(arg_43_0, arg_43_0.submitbtnBack, function()
+		setActive(arg_43_0.submitPanel, false)
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_43_3, var_43_4, var_43_5, var_6)
-
-	onButton = var_1
-
-	local var_43_6 = arg_43_0
-	local var_43_7 = arg_43_0.submitGet
-
-	local function var_43_8()
-		local var_46_1
-
+	end, SOUND_BACK)
+	onButton(arg_43_0, arg_43_0.submitGet, function()
 		if arg_43_0.selectTask then
-			local var_46_0 = arg_43_0
-
-			var_46_1 = var_46_1.emit
-			SenrankaguraMedalMediator = var_2_10003
-
-			var_46_1(var_46_0, var_2_10003.SUBMIT_TASK, arg_43_0.selectTask.id)
+			arg_43_0:emit(SenrankaguraMedalMediator.SUBMIT_TASK, arg_43_0.selectTask.id)
 		end
 
-		setActive = var_46_1
-
-		var_46_1(arg_43_0.submitPanel, false)
+		setActive(arg_43_0.submitPanel, false)
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_43_6, var_43_7, var_43_8, var_6)
-
-	onButton = var_1
-
-	local var_43_9 = arg_43_0
-	local var_43_10 = arg_43_0.submitGo
-
-	local function var_43_11()
-		setActive = var_2_10000
-
-		var_2_10000(arg_43_0.submitPanel, false)
+	end, SOUND_BACK)
+	onButton(arg_43_0, arg_43_0.submitGo, function()
+		setActive(arg_43_0.submitPanel, false)
 
 		if arg_43_0.selectTask then
-			local var_47_0 = arg_43_0
-			local var_47_1 = var_0.emit
-
-			SenrankaguraMedalMediator = var_3
-
-			var_47_1(var_47_0, var_3.TASK_GO, arg_43_0.selectTask)
+			arg_43_0:emit(SenrankaguraMedalMediator.TASK_GO, arg_43_0.selectTask)
 		end
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_43_9, var_43_10, var_43_11, var_6)
-
-	setText = var_1
-	findTF = var_43_9
-
-	local var_43_12 = var_43_9(arg_43_0.submitPanel, "bg/txtDesc")
-
-	i18n = var_43_10
-
-	var_1(var_43_12, var_43_10("ryza_task_detail_content"))
-
-	setText = var_1
-	findTF = var_43_12
-
-	local var_43_13 = var_43_12(arg_43_0.submitPanel, "bg/txtAward")
-
-	i18n = var_4
-
-	var_1(var_43_13, var_4("ryza_task_detail_award"))
+	end, SOUND_BACK)
+	setText(findTF(arg_43_0.submitPanel, "bg/txtDesc"), i18n("ryza_task_detail_content"))
+	setText(findTF(arg_43_0.submitPanel, "bg/txtAward"), i18n("ryza_task_detail_award"))
 
 	return
 end
 
-function var_0_1.setSubmitAward(arg_48_0, arg_48_1)
+function var_0_0.setSubmitAward(arg_48_0, arg_48_1)
 	if #arg_48_0.submitItems < #arg_48_1 then
 		for iter_48_0 = 1, #arg_48_1 - #arg_48_0.submitItems do
-			tf = var_1_10006
-			instantiate = var_1_10008
-			var_1_10006 = var_1_10006(var_1_10008(arg_48_0.submitItemTpl))
-			setParent = var_1_10007
+			local var_48_0 = tf(instantiate(arg_48_0.submitItemTpl))
 
-			var_1_10007(var_1_10006, arg_48_0.submitDisplayContent)
-
-			table = var_1_10007
-
-			var_1_10007.insert(arg_48_0.submitItems, var_1_10006)
+			setParent(var_48_0, arg_48_0.submitDisplayContent)
+			table.insert(arg_48_0.submitItems, var_48_0)
 		end
 	end
 
 	for iter_48_1 = 1, #arg_48_0.submitItems do
-		local var_48_0 = arg_48_0.submitItems[iter_48_1]
-		local var_48_1
-
 		if iter_48_1 <= #arg_48_1 then
-			var_48_1 = {
+			updateDrop(arg_48_0.submitItems[iter_48_1], {
 				type = arg_48_1[iter_48_1][1],
 				id = arg_48_1[iter_48_1][2],
 				count = arg_48_1[iter_48_1][3]
-			}
-			updateDrop = var_8
-
-			var_8(var_48_0, var_48_1)
-
-			onButton = var_8
-
-			local var_48_2 = arg_48_0
-			local var_48_3 = var_48_0
-
-			local function var_48_4()
-				local var_49_0 = arg_48_0
-				local var_49_1 = var_0.emit
-
-				BaseUI = var_2_10003
-
-				var_49_1(var_49_0, var_2_10003.ON_DROP, var_48_1)
+			})
+			onButton(arg_48_0, arg_48_0.submitItems[iter_48_1], function()
+				arg_48_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_1_10013
-
-			var_8(var_48_2, var_48_3, var_48_4, var_1_10013)
-
-			setActive = var_8
-
-			var_8(var_48_0, true)
+			end, SFX_PANEL)
+			setActive(arg_48_0.submitItems[iter_48_1], true)
 		else
-			setActive = var_48_1
-
-			var_48_1(var_48_0, false)
+			setActive(arg_48_0.submitItems[iter_48_1], false)
 		end
 	end
 
 	return
 end
 
-function var_0_1.willExit(arg_50_0)
-	LeanTween = var_1_10001
-
-	local var_50_0 = var_1_10001.isTweening
-
-	go = var_1_10003
-
-	if var_50_0(var_1_10003(arg_50_0._tf)) then
-		LeanTween = var_1
-
-		local var_50_1 = var_1.cancel
-
-		go = var_3
-
-		var_50_1(var_3(arg_50_0._tf))
+function var_0_0.willExit(arg_50_0)
+	if LeanTween.isTweening(go(arg_50_0._tf)) then
+		LeanTween.cancel(go(arg_50_0._tf))
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

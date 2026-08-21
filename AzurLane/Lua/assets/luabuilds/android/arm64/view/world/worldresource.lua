@@ -1,36 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldResource", import("..base.BaseUI"))
 
-local var_0_0 = "WorldResource"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-var_0_1.Listeners = {
+var_0_0.Listeners = {
 	onUpdateInventory = "OnUpdateInventory",
 	onUpdateActivate = "OnUpdateActivate",
 	onUpdateStamina = "OnUpdateStamina",
 	onBossProgressUpdate = "OnBossProgressUpdate"
 }
 
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
-
-	PoolMgr = var_1
-
-	local var_1_0 = var_1.GetInstance()
-
-	var_1.GetUI(var_1_0, "WorldResPanel", false, function(arg_2_0)
-		pg = var_2_10001
-
-		local var_2_0 = var_2_10001.UIMgr.GetInstance().UIMain
-		local var_2_1 = arg_2_0.transform
-
-		var_2.SetParent(var_2_1, var_2_0.transform, false)
-
-		local var_2_2 = arg_1_0
-
-		var_2.onUILoaded(var_2_2, arg_2_0)
+function var_0_0.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0)
+	PoolMgr.GetInstance():GetUI("WorldResPanel", false, function(arg_2_0)
+		arg_2_0.transform:SetParent(pg.UIMgr.GetInstance().UIMain.transform, false)
+		arg_1_0:onUILoaded(arg_2_0)
 
 		return
 	end)
@@ -38,300 +19,134 @@ function var_0_1.Ctor(arg_1_0)
 	return
 end
 
-function var_0_1.init(arg_3_0)
-	pairs = var_1_10001
-
-	for iter_3_0, iter_3_1 in var_1_10001(var_0_1.Listeners) do
+function var_0_0.init(arg_3_0)
+	for iter_3_0, iter_3_1 in pairs(var_0_0.Listeners) do
 		arg_3_0[iter_3_0] = function(...)
-			var_0_1[iter_3_1](arg_3_0, ...)
+			var_0_0[iter_3_1](arg_3_0, ...)
 
 			return
 		end
 	end
 
-	nowWorld = var_1
+	local var_3_0 = nowWorld()
 
-	local var_3_0 = var_1()
-	local var_3_1 = arg_3_0._tf
+	arg_3_0.stamina = arg_3_0._tf:Find("res/stamina")
 
-	arg_3_0.stamina = var_2.Find(var_3_1, "res/stamina")
-	onButton = var_2
-
-	local var_3_2 = arg_3_0
-	local var_3_3 = arg_3_0.stamina
-
-	local function var_3_4()
-		local var_5_0 = var_3_0.staminaMgr
-
-		var_0.Show(var_5_0)
+	onButton(arg_3_0, arg_3_0.stamina, function()
+		var_3_0.staminaMgr:Show()
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10007
+	arg_3_0.oil = arg_3_0._tf:Find("res/oil")
 
-	var_2(var_3_2, var_3_3, var_3_4, var_1_10007)
+	onButton(arg_3_0, arg_3_0.oil, function()
+		local var_6_0 = ShoppingStreet.getRiseShopId(ShopArgs.BuyOil, arg_3_0.player.buyOilCount)
 
-	local var_3_5 = arg_3_0._tf
-
-	arg_3_0.oil = var_2.Find(var_3_5, "res/oil")
-	onButton = var_2
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.oil
-
-	local function var_3_8()
-		ShoppingStreet = var_2_10000
-
-		local var_6_0 = var_2_10000.getRiseShopId
-
-		ShopArgs = var_2_10002
-
-		if not var_6_0(var_2_10002.BuyOil, arg_3_0.player.buyOilCount) then
-			pg = var_2_10001
-
-			local var_6_1 = var_2_10001.TipsMgr.GetInstance()
-
-			var_2_10001 = var_2_10001.ShowTips
-			i18n = var_2_10004
-
-			var_2_10001(var_6_1, var_2_10004("common_today_buy_limit"))
+		if not var_6_0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_today_buy_limit"))
 
 			return
 		end
 
-		pg = var_2_10001
+		local var_6_1 = pg.shop_template[var_6_0]
+		local var_6_2 = pg.shop_template[var_6_0].num
 
-		local var_6_2 = var_2_10001.shop_template[var_0].num
-		local var_6_3
-
-		if var_1.num == -1 then
-			var_6_3 = var_1.genre
-			ShopArgs = var_2_10004
-
-			if var_6_3 == var_2_10004.BuyOil then
-				ShopArgs = var_6_3
-				var_6_2 = var_6_3.getOilByLevel(arg_3_0.player.level)
-			end
+		if pg.shop_template[var_6_0].num == -1 and var_6_1.genre == ShopArgs.BuyOil then
+			var_6_2 = ShopArgs.getOilByLevel(arg_3_0.player.level)
 		end
 
-		pg = var_6_3
+		if pg.gameset.buy_oil_limit.key_value > arg_3_0.player.buyOilCount then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_SINGLE_ITEM,
+				content = i18n("oil_buy_tip", var_6_1.resource_num, var_6_2, arg_3_0.player.buyOilCount),
+				drop = {
+					id = 2,
+					type = DROP_TYPE_RESOURCE,
+					count = var_6_2
+				},
+				onYes = function()
+					pg.m02:sendNotification(GAME.SHOPPING, {
+						isQuickShopping = true,
+						count = 1,
+						id = var_6_0
+					})
 
-		local var_6_4 = var_6_3.gameset.buy_oil_limit.key_value
-		local var_6_6
+					return
+				end
+			})
+		else
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_HELP,
+				helps = i18n("help_oil_buy_limit"),
+				custom = {
+					{
+						text = "text_iknow",
+						sound = SFX_CANCEL
+					}
+				}
+			})
+		end
 
-		if arg_3_0.player.buyOilCount < var_6_4 then
-			pg = var_6_6
+		return
+	end, SFX_PANEL)
 
-			local var_6_5 = var_6_6.MsgboxMgr.GetInstance()
+	arg_3_0.Whuobi = arg_3_0._tf:Find("res/Whuobi")
 
-			var_6_6 = var_6_6.ShowMsgBox
+	onButton(arg_3_0, arg_3_0.Whuobi, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_SINGLE_ITEM,
+			drop = Drop.New({
+				type = DROP_TYPE_WORLD_ITEM,
+				id = WorldItem.MoneyId
+			})
+		})
 
-			local var_6_7 = {}
+		return
+	end, SFX_PANEL)
 
-			MSGBOX_TYPE_SINGLE_ITEM = var_2_10008
-			var_6_7.type = var_2_10008
-			i18n = var_2_10008
-			var_6_7.content = var_2_10008("oil_buy_tip", var_1.resource_num, var_6_2, arg_3_0.player.buyOilCount)
-			var_2_10008 = {
-				id = 2
-			}
-			DROP_TYPE_RESOURCE = var_2_10009
-			var_2_10008.type = var_2_10009
-			var_2_10008.count = var_6_2
-			var_6_7.drop = var_2_10008
+	arg_3_0.bossProgress = arg_3_0._tf:Find("res/boss_progress")
 
-			function var_6_7.onYes()
-				pg = var_3_10000
+	onButton(arg_3_0, arg_3_0.bossProgress, function()
+		local var_9_0 = WorldBossConst.GetCurrBossItemInfo()
 
-				local var_7_0 = var_3_10000.m02
-				local var_7_1 = var_0.sendNotification
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			hideNo = true,
+			type = MSGBOX_TYPE_DROP_ITEM,
+			name = var_9_0.name,
+			content = var_9_0.display,
+			iconPath = var_9_0.icon,
+			frame = var_9_0.rarity,
+			yesText = i18n("common_go_to_analyze"),
+			yesGray = not WorldBossConst.CanUnlockCurrBoss(),
+			onYes = function()
+				if var_0 then
+					if var_3_0:GetBossProxy():IsOpen() then
+						pg.m02:sendNotification(GAME.GO_SCENE, SCENE.WORLDBOSS)
 
-				GAME = var_3_10003
+						goto label_10_0
+					end
+				end
 
-				var_7_1(var_7_0, var_3_10003.SHOPPING, {
-					isQuickShopping = true,
-					count = 1,
-					id = var_0
-				})
+				pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_progress_no_enough"))
+				pg.MsgboxMgr.GetInstance():hide()
+
+				::label_10_0::
 
 				return
 			end
-
-			var_6_6(var_6_5, var_6_7)
-		else
-			pg = var_6_6
-
-			local var_6_8 = var_6_6.MsgboxMgr.GetInstance()
-			local var_6_9 = var_4.ShowMsgBox
-			local var_6_10 = {}
-
-			MSGBOX_TYPE_HELP = var_2_10008
-			var_6_10.type = var_2_10008
-			i18n = var_2_10008
-			var_6_10.helps = var_2_10008("help_oil_buy_limit")
-
-			local var_6_11 = {}
-			local var_6_12 = {
-				text = "text_iknow"
-			}
-
-			SFX_CANCEL = var_10
-			var_6_12.sound = var_10
-			var_6_11[1] = var_6_12
-			var_6_10.custom = var_6_11
-
-			var_6_9(var_6_8, var_6_10)
-		end
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_2(var_3_6, var_3_7, var_3_8, var_1_10007)
-
-	local var_3_9 = arg_3_0._tf
-
-	arg_3_0.Whuobi = var_2.Find(var_3_9, "res/Whuobi")
-	onButton = var_2
-
-	local var_3_10 = arg_3_0
-	local var_3_11 = arg_3_0.Whuobi
-
-	local function var_3_12()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_8_1 = var_0.ShowMsgBox
-		local var_8_2 = {}
-
-		MSGBOX_TYPE_SINGLE_ITEM = var_2_10004
-		var_8_2.type = var_2_10004
-		Drop = var_2_10004
-
-		local var_8_3 = var_2_10004.New
-		local var_8_4 = {}
-
-		DROP_TYPE_WORLD_ITEM = var_2_10007
-		var_8_4.type = var_2_10007
-		WorldItem = var_2_10007
-		var_8_4.id = var_2_10007.MoneyId
-		var_8_2.drop = var_8_3(var_8_4)
-
-		var_8_1(var_8_0, var_8_2)
-
-		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_2(var_3_10, var_3_11, var_3_12, var_1_10007)
-
-	local var_3_13 = arg_3_0._tf
-
-	arg_3_0.bossProgress = var_2.Find(var_3_13, "res/boss_progress")
-	onButton = var_2
-
-	local var_3_14 = arg_3_0
-	local var_3_15 = arg_3_0.bossProgress
-
-	local function var_3_16()
-		WorldBossConst = var_2_10000
-
-		local var_9_0 = var_2_10000.GetCurrBossItemInfo()
-
-		WorldBossConst = var_2_10001
-
-		local var_9_1 = var_2_10001.CanUnlockCurrBoss()
-
-		pg = var_2_10002
-
-		local var_9_2 = var_2_10002.MsgboxMgr.GetInstance()
-		local var_9_3 = var_2.ShowMsgBox
-		local var_9_4 = {
-			hideNo = true
-		}
-
-		MSGBOX_TYPE_DROP_ITEM = var_2_10006
-		var_9_4.type = var_2_10006
-		var_9_4.name = var_9_0.name
-		var_9_4.content = var_9_0.display
-		var_9_4.iconPath = var_9_0.icon
-		var_9_4.frame = var_9_0.rarity
-		i18n = var_6
-		var_9_4.yesText = var_6("common_go_to_analyze")
-		var_9_4.yesGray = not var_9_1
-
-		function var_9_4.onYes()
-			local var_10_3
-
-			if var_9_1 then
-				local var_10_0 = var_3_0
-				local var_10_1 = var_10_3.GetBossProxy(var_10_0)
-
-				if var_10_3.IsOpen(var_10_1) then
-					pg = var_10_3
-
-					local var_10_2 = var_10_3.m02
-
-					var_10_3 = var_10_3.sendNotification
-					GAME = var_3_10003
-					var_3_10003 = var_3_10003.GO_SCENE
-					SCENE = var_3_10004
-
-					var_10_3(var_10_2, var_3_10003, var_3_10004.WORLDBOSS)
-
-					goto label_10_0
-				end
-			end
-
-			pg = var_10_3
-
-			do
-				local var_10_4 = var_10_3.TipsMgr.GetInstance()
-				local var_10_5 = var_0.ShowTips
-
-				i18n = var_3_10003
-
-				var_10_5(var_10_4, var_3_10003("world_boss_progress_no_enough"))
-
-				pg = var_10_5
-
-				local var_10_6 = var_10_5.MsgboxMgr.GetInstance()
-
-				var_0.hide(var_10_6)
-			end
-
-			::label_10_0::
-
-			return
-		end
-
-		var_9_3(var_9_2, var_9_4)
-
-		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_2(var_3_14, var_3_15, var_3_16, var_1_10007)
+	end, SFX_PANEL)
 
 	if var_3_0:GetActiveMap() then
 		arg_3_0:setStaminaMgr(var_3_0.staminaMgr)
 	else
 		arg_3_0.atlas = var_3_0:GetAtlas()
 
-		local var_3_17 = arg_3_0.atlas
-		local var_3_18 = var_2.AddListener
-
-		WorldAtlas = var_3_15
-
-		var_3_18(var_3_17, var_3_15.EventUpdateActiveMap, arg_3_0.onUpdateActivate)
-
-		setActive = var_3_18
-
-		var_3_18(arg_3_0.stamina, false)
+		arg_3_0.atlas:AddListener(WorldAtlas.EventUpdateActiveMap, arg_3_0.onUpdateActivate)
+		setActive(arg_3_0.stamina, false)
 	end
 
 	arg_3_0:setWorldInventory(var_3_0:GetInventoryProxy())
@@ -340,238 +155,103 @@ function var_0_1.init(arg_3_0)
 	return
 end
 
-function var_0_1.setParent(arg_11_0, arg_11_1, arg_11_2)
-	setParent = var_1_10003
-
-	var_1_10003(arg_11_0._go, arg_11_1, arg_11_2)
+function var_0_0.setParent(arg_11_0, arg_11_1, arg_11_2)
+	setParent(arg_11_0._go, arg_11_1, arg_11_2)
 
 	return
 end
 
-function var_0_1.setPlayer(arg_12_0, arg_12_1)
-	assert = var_1_10002
-	isa = var_1_10004
-
-	local var_12_0 = arg_12_1
-
-	Player = var_1_10007
-
-	var_1_10002(var_1_10004(var_12_0, var_1_10007), "should be an instance of Player")
+function var_0_0.setPlayer(arg_12_0, arg_12_1)
+	assert(isa(arg_12_1, Player), "should be an instance of Player")
 
 	arg_12_0.player = arg_12_1
-	setText = var_1_10002
 
-	local var_12_1 = arg_12_0.oil
-	local var_12_2 = var_4.Find(var_12_1, "max_value")
-	local var_12_3 = "MAX:"
-
-	pg = var_12_1
-
-	var_1_10002(var_12_2, var_12_3 .. var_12_1.user_level[arg_12_1.level].max_oil)
-
-	setText = var_1_10002
-
-	local var_12_4 = arg_12_0.oil
-
-	var_1_10002(var_4.Find(var_12_4, "value"), arg_12_1.oil)
+	setText(arg_12_0.oil:Find("max_value"), "MAX:" .. pg.user_level[arg_12_1.level].max_oil)
+	setText(arg_12_0.oil:Find("value"), arg_12_1.oil)
 
 	return
 end
 
-function var_0_1.OnUpdateActivate(arg_13_0)
-	local var_13_0 = arg_13_0
-	local var_13_1 = arg_13_0.setStaminaMgr
-
-	nowWorld = var_1_10004
-
-	var_13_1(var_13_0, var_1_10004().staminaMgr)
-
-	local var_13_2 = arg_13_0.atlas
-	local var_13_3 = var_1.RemoveListener
-
-	WorldAtlas = var_4
-
-	var_13_3(var_13_2, var_4.EventUpdateActiveMap, arg_13_0.onUpdateActivate)
+function var_0_0.OnUpdateActivate(arg_13_0)
+	arg_13_0:setStaminaMgr(nowWorld().staminaMgr)
+	arg_13_0.atlas:RemoveListener(WorldAtlas.EventUpdateActiveMap, arg_13_0.onUpdateActivate)
 
 	return
 end
 
-function var_0_1.setStaminaMgr(arg_14_0, arg_14_1)
+function var_0_0.setStaminaMgr(arg_14_0, arg_14_1)
 	arg_14_0.staminaMgr = arg_14_1
-	setText = var_1_10002
 
-	local var_14_0 = arg_14_0.stamina
-
-	var_1_10002(var_4.Find(var_14_0, "max_value"), "MAX:" .. arg_14_1:GetMaxStamina())
-
-	local var_14_1 = arg_14_0.staminaMgr
-	local var_14_2 = var_2.AddListener
-
-	WorldStaminaManager = var_5
-
-	var_14_2(var_14_1, var_5.EventUpdateStamina, arg_14_0.onUpdateStamina)
+	setText(arg_14_0.stamina:Find("max_value"), "MAX:" .. arg_14_1:GetMaxStamina())
+	arg_14_0.staminaMgr:AddListener(WorldStaminaManager.EventUpdateStamina, arg_14_0.onUpdateStamina)
 	arg_14_0:OnUpdateStamina()
-
-	setActive = var_2
-
-	var_2(arg_14_0.stamina, true)
+	setActive(arg_14_0.stamina, true)
 
 	return
 end
 
-function var_0_1.setWorldInventory(arg_15_0, arg_15_1)
+function var_0_0.setWorldInventory(arg_15_0, arg_15_1)
 	arg_15_0.inventoryProxy = arg_15_1
 
-	local var_15_0 = arg_15_0.inventoryProxy
-	local var_15_1 = var_2.AddListener
-
-	WorldInventoryProxy = var_1_10005
-
-	var_15_1(var_15_0, var_1_10005.EventUpdateItem, arg_15_0.onUpdateInventory)
+	arg_15_0.inventoryProxy:AddListener(WorldInventoryProxy.EventUpdateItem, arg_15_0.onUpdateInventory)
 	arg_15_0:OnUpdateInventory()
 
 	return
 end
 
-function var_0_1.OnUpdateStamina(arg_16_0)
-	setText = var_1_10001
-
-	local var_16_0 = arg_16_0.stamina
-	local var_16_1 = var_3.Find(var_16_0, "value")
-	local var_16_2 = arg_16_0.staminaMgr
-
-	var_1_10001(var_16_1, var_4.GetDisplayStanima(var_16_2))
+function var_0_0.OnUpdateStamina(arg_16_0)
+	setText(arg_16_0.stamina:Find("value"), arg_16_0.staminaMgr:GetDisplayStanima())
 
 	return
 end
 
-function var_0_1.OnUpdateInventory(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	if arg_17_1 then
-		WorldInventoryProxy = var_1_10004
-
-		if arg_17_1 == var_1_10004.EventUpdateItem then
-			var_1_10004 = arg_17_3.id
-			WorldItem = var_1_10005
-
-			if var_1_10004 == var_1_10005.MoneyId then
-				setText = var_1_10004
-
-				local var_17_0 = arg_17_0.Whuobi
-				local var_17_1 = var_6.Find(var_17_0, "value")
-				local var_17_2 = arg_17_0.inventoryProxy
-				local var_17_3 = var_7.GetItemCount
-
-				WorldItem = var_1_10010
-
-				var_1_10004(var_17_1, var_17_3(var_17_2, var_1_10010.MoneyId))
-			end
-		end
-
-		return
+function var_0_0.OnUpdateInventory(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+	if not arg_17_1 or arg_17_1 == WorldInventoryProxy.EventUpdateItem and arg_17_3.id == WorldItem.MoneyId then
+		setText(arg_17_0.Whuobi:Find("value"), arg_17_0.inventoryProxy:GetItemCount(WorldItem.MoneyId))
 	end
+
+	return
 end
 
-function var_0_1.SetWorldBossRes(arg_18_0, arg_18_1)
+function var_0_0.SetWorldBossRes(arg_18_0, arg_18_1)
 	arg_18_0.worldBossProxy = arg_18_1
 
-	local var_18_0 = arg_18_0.worldBossProxy
-	local var_18_1 = var_2.AddListener
-
-	WorldBossProxy = var_1_10005
-
-	var_18_1(var_18_0, var_1_10005.EventUnlockProgressUpdated, arg_18_0.onBossProgressUpdate)
+	arg_18_0.worldBossProxy:AddListener(WorldBossProxy.EventUnlockProgressUpdated, arg_18_0.onBossProgressUpdate)
 	arg_18_0:OnBossProgressUpdate()
 
 	return
 end
 
-function var_0_1.OnBossProgressUpdate(arg_19_0)
-	WorldBossConst = var_1_10001
-
-	local var_19_0 = var_1_10001.GetCurrBossItemProgress()
-
-	WorldBossConst = var_1_10002
-
-	local var_19_1, var_19_2, var_19_3 = var_1_10002.GetCurrBossItemCapacity()
-
-	WorldBossConst = var_1_10005
-
-	local var_19_4, var_19_5 = var_1_10005.GetCurrBossConsume()
-	local var_19_6 = arg_19_0.bossProgress
-	local var_19_7 = var_7.Find(var_19_6, "value")
-	local var_19_8 = arg_19_0.bossProgress
-	local var_19_9 = var_8.Find(var_19_8, "max_value")
+function var_0_0.OnBossProgressUpdate(arg_19_0)
+	local var_19_0 = WorldBossConst.GetCurrBossItemProgress()
+	local var_19_1, var_19_2, var_19_3 = WorldBossConst.GetCurrBossItemCapacity()
+	local var_19_4, var_19_5 = WorldBossConst.GetCurrBossConsume()
+	local var_19_6 = arg_19_0.bossProgress:Find("value")
+	local var_19_7 = arg_19_0.bossProgress:Find("max_value")
 
 	if var_19_3 <= var_19_2 then
-		COLOR_GREY = var_19_6
+		local var_19_8 = COLOR_GREY or COLOR_WHITE
 
-		if not var_19_6 then
-			COLOR_WHITE = var_19_6
-		end
-
-		setText = var_19_8
-
-		var_19_8(var_19_7, "<color=" .. var_19_6 .. ">" .. var_19_0 .. "/" .. var_19_5 .. "</color>")
-
-		setText = var_19_8
-
-		var_19_8(var_19_9, "<color=" .. var_19_6 .. ">DAILY:" .. var_19_2 .. "/" .. var_19_3 .. "</color>")
-
-		setActive = var_19_8
-
-		local var_19_10 = arg_19_0.bossProgress
-
-		nowWorld = var_13
-
-		local var_19_11 = var_13()
-		local var_19_12 = var_13.IsSystemOpen
-
-		WorldConst = var_16
-
-		var_19_8(var_19_10, var_19_12(var_19_11, var_16.SystemWorldBoss))
+		setText(var_19_6, "<color=" .. var_19_8 .. ">" .. var_19_0 .. "/" .. var_19_5 .. "</color>")
+		setText(var_19_7, "<color=" .. var_19_8 .. ">DAILY:" .. var_19_2 .. "/" .. var_19_3 .. "</color>")
+		setActive(arg_19_0.bossProgress, nowWorld():IsSystemOpen(WorldConst.SystemWorldBoss))
 
 		return
 	end
 end
 
-function var_0_1.willExit(arg_20_0)
+function var_0_0.willExit(arg_20_0)
 	if arg_20_0.staminaMgr then
-		local var_20_0 = arg_20_0.staminaMgr
-		local var_20_1 = var_1.RemoveListener
-
-		WorldStaminaManager = var_1_10004
-
-		var_20_1(var_20_0, var_1_10004.EventUpdateStamina, arg_20_0.onUpdateStamina)
+		arg_20_0.staminaMgr:RemoveListener(WorldStaminaManager.EventUpdateStamina, arg_20_0.onUpdateStamina)
 	else
-		local var_20_2 = arg_20_0.atlas
-		local var_20_3 = var_1.RemoveListener
-
-		WorldAtlas = var_1_10004
-
-		var_20_3(var_20_2, var_1_10004.EventUpdateActiveMap, arg_20_0.onUpdateActivate)
+		arg_20_0.atlas:RemoveListener(WorldAtlas.EventUpdateActiveMap, arg_20_0.onUpdateActivate)
 	end
 
-	local var_20_4 = arg_20_0.inventoryProxy
-	local var_20_5 = var_1.RemoveListener
-
-	WorldInventoryProxy = var_1_10004
-
-	var_20_5(var_20_4, var_1_10004.EventUpdateItem, arg_20_0.onUpdateInventory)
-
-	local var_20_6 = arg_20_0.worldBossProxy
-	local var_20_7 = var_1.RemoveListener
-
-	WorldBossProxy = var_4
-
-	var_20_7(var_20_6, var_4.EventUnlockProgressUpdated, arg_20_0.onBossProgressUpdate)
-
-	PoolMgr = var_20_7
-
-	local var_20_8 = var_20_7.GetInstance()
-
-	var_1.ReturnUI(var_20_8, "WorldResPanel", arg_20_0._go)
+	arg_20_0.inventoryProxy:RemoveListener(WorldInventoryProxy.EventUpdateItem, arg_20_0.onUpdateInventory)
+	arg_20_0.worldBossProxy:RemoveListener(WorldBossProxy.EventUnlockProgressUpdated, arg_20_0.onBossProgressUpdate)
+	PoolMgr.GetInstance():ReturnUI("WorldResPanel", arg_20_0._go)
 
 	return
 end
 
-return var_0_1
+return var_0_0

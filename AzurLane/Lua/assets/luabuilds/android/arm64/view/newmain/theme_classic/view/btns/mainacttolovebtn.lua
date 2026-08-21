@@ -1,100 +1,53 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainActToLoveBtn", import(".MainBaseActivityBtn"))
 
-local var_0_0 = "MainActToLoveBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainBaseActivityBtn"))
-
-function var_0_1.GetEventName(arg_1_0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_tolove"
 end
 
-function var_0_1.GetActivityID(arg_2_0)
-	checkExist = var_1_10001
-
-	if not var_1_10001(arg_2_0.config, {
+function var_0_0.GetActivityID(arg_2_0)
+	local var_2_0 = checkExist(arg_2_0.config, {
 		"time"
-	}) then
+	})
+
+	if not var_2_0 then
 		return nil
 	end
 
-	local var_2_0
-
-	if var_1[1] ~= "default" or not var_1[2] then
-		var_2_0 = nil
+	if var_2_0[1] == "default" then
+		return var_2_0[2] or nil
 	end
-
-	return var_2_0
 end
 
-function var_0_1.OnClick(arg_3_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.OnClick(arg_3_0)
+	local var_3_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.TOLOVE_MINIGAME_TASK_ID)
 
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.getActivityById
+	if var_3_0 ~= nil then
+		if var_3_0:isEnd() then
+			({}).parentContext = getProxy(ContextProxy):getCurrentContext()
+			;({}).context = Context.New({
+				mediator = MedalCollectionTemplateMediator,
+				viewComponent = ToLoveCollabMedalView
+			})
 
-	ActivityConst = var_1_10004
+			var_3_1(pg.m02, GAME.LOAD_LAYERS, {})
+		else
+			var_0_0.super.OnClick(arg_3_0)
+		end
 
-	if var_3_1(var_3_0, var_1_10004.TOLOVE_MINIGAME_TASK_ID) == nil or var_1:isEnd() then
-		pg = var_1_10002
+		return
+	end
+end
 
-		local var_3_2 = var_1_10002.m02
-		local var_3_3 = var_2.sendNotification
+function var_0_0.OnInit(arg_4_0)
+	local var_4_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.TOLOVE_MINIGAME_TASK_ID)
 
-		GAME = var_1_10005
-
-		local var_3_4 = var_1_10005.LOAD_LAYERS
-		local var_3_5 = {}
-
-		getProxy = var_1_10007
-		ContextProxy = var_1_10009
-
-		local var_3_6 = var_1_10007(var_1_10009)
-
-		var_3_5.parentContext = var_7.getCurrentContext(var_3_6)
-		Context = var_7
-
-		local var_3_7 = var_7.New
-		local var_3_8 = {}
-
-		MedalCollectionTemplateMediator = var_1_10010
-		var_3_8.mediator = var_1_10010
-		ToLoveCollabMedalView = var_1_10010
-		var_3_8.viewComponent = var_1_10010
-		var_3_5.context = var_3_7(var_3_8)
-
-		var_3_3(var_3_2, var_3_4, var_3_5)
+	if var_4_0 ~= nil and not var_4_0:isEnd() then
+		setActive(arg_4_0.tipTr.gameObject, (ToLoveCollabBackHillScene.IsShowMainTip()))
 	else
-		var_0_1.super.OnClick(arg_3_0)
+		setActive(arg_4_0.tipTr.gameObject, false)
 	end
 
 	return
 end
 
-function var_0_1.OnInit(arg_4_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_4_0 = var_1_10001(var_1_10003)
-	local var_4_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10004
-
-	if var_4_1(var_4_0, var_1_10004.TOLOVE_MINIGAME_TASK_ID) ~= nil and not var_1:isEnd() then
-		ToLoveCollabBackHillScene = var_1_10002
-		var_1_10002 = var_1_10002.IsShowMainTip()
-		setActive = var_4_0
-
-		var_4_0(arg_4_0.tipTr.gameObject, var_1_10002)
-	else
-		setActive = var_1_10002
-
-		var_1_10002(arg_4_0.tipTr.gameObject, false)
-	end
-
-	return
-end
-
-return var_0_1
+return var_0_0

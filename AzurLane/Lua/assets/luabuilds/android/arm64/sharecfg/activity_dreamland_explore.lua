@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_dreamland_explore") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_dreamland_explore"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_dreamland_explore = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_dreamland_explore
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_dreamland_explore = rawget(pg, "activity_dreamland_explore") or setmetatable({
+	__name = "activity_dreamland_explore"
+}, confNEO)
+pg.activity_dreamland_explore.all = {
 	1,
 	2,
 	3,
@@ -55,11 +32,7 @@ var_0_3.all = {
 	28,
 	29
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_dreamland_explore
-
-var_0_4.get_id_list_by_group = {
+pg.activity_dreamland_explore.get_id_list_by_group = {
 	{
 		1,
 		2,
@@ -113,25 +86,11 @@ var_0_4.get_id_list_by_group = {
 		29
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_dreamland_explore = {}
+pg.base = pg.base or {}
+pg.base.activity_dreamland_explore = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_dreamland_explore
-
-	var_1_0[1] = {
+	pg.base.activity_dreamland_explore[1] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 1,
@@ -157,11 +116,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_dreamland_explore
-
-	var_1_1[2] = {
+	pg.base.activity_dreamland_explore[2] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 1,
@@ -187,11 +142,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_dreamland_explore
-
-	var_1_2[3] = {
+	pg.base.activity_dreamland_explore[3] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 1,
@@ -217,11 +168,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_dreamland_explore
-
-	var_1_3[4] = {
+	pg.base.activity_dreamland_explore[4] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 2,
@@ -246,11 +193,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_dreamland_explore
-
-	var_1_4[5] = {
+	pg.base.activity_dreamland_explore[5] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 3,
@@ -276,11 +219,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_dreamland_explore
-
-	var_1_5[6] = {
+	pg.base.activity_dreamland_explore[6] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 3,
@@ -306,11 +245,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_dreamland_explore
-
-	var_1_6[7] = {
+	pg.base.activity_dreamland_explore[7] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 3,
@@ -336,11 +271,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_dreamland_explore
-
-	var_1_7[8] = {
+	pg.base.activity_dreamland_explore[8] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 4,
@@ -369,11 +300,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_dreamland_explore
-
-	var_1_8[9] = {
+	pg.base.activity_dreamland_explore[9] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 4,
@@ -402,11 +329,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_dreamland_explore
-
-	var_1_9[10] = {
+	pg.base.activity_dreamland_explore[10] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 4,
@@ -435,11 +358,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_dreamland_explore
-
-	var_1_10[11] = {
+	pg.base.activity_dreamland_explore[11] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 4,
@@ -468,11 +387,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_dreamland_explore
-
-	var_1_11[12] = {
+	pg.base.activity_dreamland_explore[12] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 4,
@@ -501,11 +416,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_dreamland_explore
-
-	var_1_12[13] = {
+	pg.base.activity_dreamland_explore[13] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 4,
@@ -534,11 +445,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_dreamland_explore
-
-	var_1_13[14] = {
+	pg.base.activity_dreamland_explore[14] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 5,
@@ -567,11 +474,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_dreamland_explore
-
-	var_1_14[15] = {
+	pg.base.activity_dreamland_explore[15] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 5,
@@ -600,11 +503,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_dreamland_explore
-
-	var_1_15[16] = {
+	pg.base.activity_dreamland_explore[16] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 5,
@@ -633,11 +532,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_dreamland_explore
-
-	var_1_16[17] = {
+	pg.base.activity_dreamland_explore[17] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 6,
@@ -663,11 +558,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_dreamland_explore
-
-	var_1_17[18] = {
+	pg.base.activity_dreamland_explore[18] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 7,
@@ -693,11 +584,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_dreamland_explore
-
-	var_1_18[19] = {
+	pg.base.activity_dreamland_explore[19] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 7,
@@ -723,11 +610,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_dreamland_explore
-
-	var_1_19[20] = {
+	pg.base.activity_dreamland_explore[20] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 7,
@@ -753,11 +636,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_dreamland_explore
-
-	var_1_20[21] = {
+	pg.base.activity_dreamland_explore[21] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 8,
@@ -784,11 +663,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_dreamland_explore
-
-	var_1_21[22] = {
+	pg.base.activity_dreamland_explore[22] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 8,
@@ -814,11 +689,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_dreamland_explore
-
-	var_1_22[23] = {
+	pg.base.activity_dreamland_explore[23] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 9,
@@ -844,11 +715,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_dreamland_explore
-
-	var_1_23[24] = {
+	pg.base.activity_dreamland_explore[24] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 9,
@@ -874,11 +741,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_dreamland_explore
-
-	var_1_24[25] = {
+	pg.base.activity_dreamland_explore[25] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 9,
@@ -904,11 +767,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_dreamland_explore
-
-	var_1_25[27] = {
+	pg.base.activity_dreamland_explore[27] = {
 		tip_special_effect = "",
 		type = 2,
 		group = 10,
@@ -937,11 +796,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_dreamland_explore
-
-	var_1_26[28] = {
+	pg.base.activity_dreamland_explore[28] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 11,
@@ -964,8 +819,7 @@ var_0_4.base.activity_dreamland_explore = {}
 			}
 		}
 	}
-	pg = var_1_26
-	var_1_26.base.activity_dreamland_explore[29] = {
+	pg.base.activity_dreamland_explore[29] = {
 		tip_special_effect = "",
 		type = 1,
 		group = 12,

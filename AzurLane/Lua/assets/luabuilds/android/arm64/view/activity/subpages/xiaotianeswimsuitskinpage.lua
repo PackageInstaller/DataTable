@@ -1,71 +1,30 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("XiaotianeSwimsuitSkinPage", import(".TemplatePage.SkinTemplatePage"))
 
-local var_0_0 = "XiaotianeSwimsuitSkinPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.SkinTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0.bg
-
-	arg_1_0.rtDayImage = var_1.Find(var_1_0, "day_image")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.rtCharacter = var_1.Find(var_1_1, "character")
+	arg_1_0.rtDayImage = arg_1_0.bg:Find("day_image")
+	arg_1_0.rtCharacter = arg_1_0.bg:Find("character")
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_2_0)
-	var_0_1.super.OnUpdateFlush(arg_2_0)
-
-	setText = var_1
-
-	local var_2_0 = arg_2_0.dayTF
-
-	i18n = var_1_10004
-
-	var_1(var_2_0, var_1_10004("activity_permanent_progress") .. arg_2_0.nday .. "/" .. #arg_2_0.taskGroup)
-
-	GetImageSpriteFromAtlasAsync = var_1
-
-	local var_2_1 = "ui/activityuipage/xiaotianeswimsuitskinpage_atlas"
-
-	tostring = var_4
-
-	var_1(var_2_1, var_4(arg_2_0.nday), arg_2_0.rtDayImage, true)
+function var_0_0.OnUpdateFlush(arg_2_0)
+	var_0_0.super.OnUpdateFlush(arg_2_0)
+	setText(arg_2_0.dayTF, i18n("activity_permanent_progress") .. arg_2_0.nday .. "/" .. #arg_2_0.taskGroup)
+	GetImageSpriteFromAtlasAsync("ui/activityuipage/xiaotianeswimsuitskinpage_atlas", tostring(arg_2_0.nday), arg_2_0.rtDayImage, true)
 
 	if not arg_2_0.model then
-		PoolMgr = var_1
-
-		local var_2_2 = var_1.GetInstance()
-
-		var_1.GetSpineChar(var_2_2, "xiaotiane_2", true, function(arg_3_0)
+		PoolMgr.GetInstance():GetSpineChar("xiaotiane_2", true, function(arg_3_0)
 			if arg_2_0.model then
 				return
 			end
 
-			local var_3_0 = arg_2_0
+			arg_2_0.model = arg_3_0
+			tf(arg_3_0).localScale = Vector3(1, 1, 1)
 
-			var_3_0.model = arg_3_0
-			tf = var_3_0
-
-			local var_3_1 = var_3_0(arg_3_0)
-
-			Vector3 = var_2_10002
-			var_3_1.localScale = var_2_10002(1, 1, 1)
-
-			local var_3_2 = arg_3_0:GetComponent("SpineAnimUI")
-
-			var_1.SetAction(var_3_2, "stand2", 0)
-
-			setParent = var_1
-
-			var_1(arg_3_0, arg_2_0.rtCharacter)
+			arg_3_0:GetComponent("SpineAnimUI"):SetAction("stand2", 0)
+			setParent(arg_3_0, arg_2_0.rtCharacter)
 
 			return
 		end)
@@ -74,21 +33,17 @@ function var_0_1.OnUpdateFlush(arg_2_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_4_0)
+function var_0_0.OnDestroy(arg_4_0)
 	if arg_4_0.model then
-		PoolMgr = var_1
-
-		local var_4_0 = var_1.GetInstance()
-
-		var_1.ReturnSpineChar(var_4_0, "xiaotiane_2", arg_4_0.model)
+		PoolMgr.GetInstance():ReturnSpineChar("xiaotiane_2", arg_4_0.model)
 
 		arg_4_0.prefab1 = nil
 		arg_4_0.model1 = nil
 	end
 
-	var_0_1.super.OnDestroy(arg_4_0)
+	var_0_0.super.OnDestroy(arg_4_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_shop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_shop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_shop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_shop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_shop_template = rawget(pg, "island_shop_template") or setmetatable({
+	__name = "island_shop_template"
+}, confNEO)
+pg.island_shop_template.all = {
 	10109,
 	10110,
 	10111,
@@ -71,11 +48,7 @@ var_0_3.all = {
 	50124,
 	90001
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_shop_template
-
-var_0_4.get_id_list_by_first_shop = {
+pg.island_shop_template.get_id_list_by_first_shop = {
 	[0] = {
 		10109,
 		10130,
@@ -141,11 +114,7 @@ var_0_4.get_id_list_by_first_shop = {
 		50124
 	}
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.island_shop_template
-
-var_0_5.get_id_list_by_second_shop = {
+pg.island_shop_template.get_id_list_by_second_shop = {
 	[0] = {
 		10109,
 		10110,
@@ -215,25 +184,11 @@ var_0_5.get_id_list_by_second_shop = {
 		50124
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.island_shop_template = {}
+pg.base = pg.base or {}
+pg.base.island_shop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_shop_template
-
-	var_1_0[10109] = {
+	pg.base.island_shop_template[10109] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -252,11 +207,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_shop_template
-
-	var_1_1[10110] = {
+	pg.base.island_shop_template[10110] = {
 		first_shop = 10109,
 		top_jump = "",
 		top_resource = "",
@@ -273,11 +224,7 @@ var_0_5.base.island_shop_template = {}
 			"种子"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_shop_template
-
-	var_1_2[10111] = {
+	pg.base.island_shop_template[10111] = {
 		first_shop = 10109,
 		top_jump = "",
 		second_shop = 10110,
@@ -312,11 +259,7 @@ var_0_5.base.island_shop_template = {}
 			411009
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_shop_template
-
-	var_1_3[10112] = {
+	pg.base.island_shop_template[10112] = {
 		first_shop = 10109,
 		top_jump = "",
 		second_shop = 10110,
@@ -352,11 +295,7 @@ var_0_5.base.island_shop_template = {}
 			411024
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_shop_template
-
-	var_1_4[10113] = {
+	pg.base.island_shop_template[10113] = {
 		first_shop = 10109,
 		top_jump = "",
 		second_shop = 10110,
@@ -394,11 +333,7 @@ var_0_5.base.island_shop_template = {}
 			411028
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_shop_template
-
-	var_1_5[10130] = {
+	pg.base.island_shop_template[10130] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -417,11 +352,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_shop_template
-
-	var_1_6[10131] = {
+	pg.base.island_shop_template[10131] = {
 		first_shop = 10130,
 		top_jump = "",
 		top_resource = "",
@@ -438,11 +369,7 @@ var_0_5.base.island_shop_template = {}
 			"道具"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_shop_template
-
-	var_1_7[10132] = {
+	pg.base.island_shop_template[10132] = {
 		first_shop = 10130,
 		top_jump = "",
 		second_shop = 10131,
@@ -481,11 +408,7 @@ var_0_5.base.island_shop_template = {}
 			5030004
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_shop_template
-
-	var_1_8[10010] = {
+	pg.base.island_shop_template[10010] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -504,11 +427,7 @@ var_0_5.base.island_shop_template = {}
 			"tuijian"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_shop_template
-
-	var_1_9[10011] = {
+	pg.base.island_shop_template[10011] = {
 		first_shop = 10010,
 		top_jump = "",
 		top_resource = "",
@@ -525,11 +444,7 @@ var_0_5.base.island_shop_template = {}
 			"开发季商品"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_shop_template
-
-	var_1_10[10012] = {
+	pg.base.island_shop_template[10012] = {
 		first_shop = 10010,
 		second_shop = 10011,
 		show_type = 2,
@@ -585,11 +500,7 @@ var_0_5.base.island_shop_template = {}
 			10026
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_shop_template
-
-	var_1_11[10013] = {
+	pg.base.island_shop_template[10013] = {
 		first_shop = 10010,
 		second_shop = 10011,
 		show_type = 2,
@@ -634,11 +545,7 @@ var_0_5.base.island_shop_template = {}
 			10042
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_shop_template
-
-	var_1_12[10014] = {
+	pg.base.island_shop_template[10014] = {
 		first_shop = 10010,
 		second_shop = 10011,
 		show_type = 2,
@@ -683,11 +590,7 @@ var_0_5.base.island_shop_template = {}
 			10058
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_shop_template
-
-	var_1_13[10015] = {
+	pg.base.island_shop_template[10015] = {
 		first_shop = 10010,
 		second_shop = 10011,
 		show_type = 2,
@@ -760,11 +663,7 @@ var_0_5.base.island_shop_template = {}
 			10443
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_shop_template
-
-	var_1_14[10016] = {
+	pg.base.island_shop_template[10016] = {
 		first_shop = 10010,
 		second_shop = 10011,
 		show_type = 2,
@@ -809,11 +708,7 @@ var_0_5.base.island_shop_template = {}
 			10459
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_shop_template
-
-	var_1_15[10017] = {
+	pg.base.island_shop_template[10017] = {
 		first_shop = 10010,
 		second_shop = 10011,
 		show_type = 2,
@@ -858,11 +753,7 @@ var_0_5.base.island_shop_template = {}
 			10475
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_shop_template
-
-	var_1_16[10019] = {
+	pg.base.island_shop_template[10019] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -881,11 +772,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_shop_template
-
-	var_1_17[10020] = {
+	pg.base.island_shop_template[10020] = {
 		first_shop = 10019,
 		top_jump = "",
 		top_resource = "",
@@ -902,11 +789,7 @@ var_0_5.base.island_shop_template = {}
 			"加工"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_shop_template
-
-	var_1_18[10021] = {
+	pg.base.island_shop_template[10021] = {
 		first_shop = 10019,
 		top_jump = "",
 		second_shop = 10020,
@@ -948,11 +831,7 @@ var_0_5.base.island_shop_template = {}
 			103004
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_shop_template
-
-	var_1_19[10022] = {
+	pg.base.island_shop_template[10022] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -971,11 +850,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_shop_template
-
-	var_1_20[10023] = {
+	pg.base.island_shop_template[10023] = {
 		first_shop = 10022,
 		top_jump = "",
 		top_resource = "",
@@ -992,11 +867,7 @@ var_0_5.base.island_shop_template = {}
 			"种子"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_shop_template
-
-	var_1_21[10024] = {
+	pg.base.island_shop_template[10024] = {
 		first_shop = 10022,
 		top_jump = "",
 		second_shop = 10023,
@@ -1031,11 +902,7 @@ var_0_5.base.island_shop_template = {}
 			411009
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_shop_template
-
-	var_1_22[10025] = {
+	pg.base.island_shop_template[10025] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -1054,11 +921,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_shop_template
-
-	var_1_23[10026] = {
+	pg.base.island_shop_template[10026] = {
 		first_shop = 10025,
 		top_jump = "",
 		top_resource = "",
@@ -1075,11 +938,7 @@ var_0_5.base.island_shop_template = {}
 			"种子"
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_shop_template
-
-	var_1_24[10027] = {
+	pg.base.island_shop_template[10027] = {
 		first_shop = 10025,
 		top_jump = "",
 		second_shop = 10026,
@@ -1115,11 +974,7 @@ var_0_5.base.island_shop_template = {}
 			411024
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_shop_template
-
-	var_1_25[10028] = {
+	pg.base.island_shop_template[10028] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -1138,11 +993,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_shop_template
-
-	var_1_26[10029] = {
+	pg.base.island_shop_template[10029] = {
 		first_shop = 10028,
 		top_jump = "",
 		top_resource = "",
@@ -1159,11 +1010,7 @@ var_0_5.base.island_shop_template = {}
 			"种子"
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_shop_template
-
-	var_1_27[10030] = {
+	pg.base.island_shop_template[10030] = {
 		first_shop = 10028,
 		top_jump = "",
 		second_shop = 10029,
@@ -1201,11 +1048,7 @@ var_0_5.base.island_shop_template = {}
 			411028
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_shop_template
-
-	var_1_28[10031] = {
+	pg.base.island_shop_template[10031] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -1224,11 +1067,7 @@ var_0_5.base.island_shop_template = {}
 			"daoju"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_shop_template
-
-	var_1_29[10032] = {
+	pg.base.island_shop_template[10032] = {
 		first_shop = 10031,
 		top_jump = "",
 		top_resource = "",
@@ -1245,11 +1084,7 @@ var_0_5.base.island_shop_template = {}
 			"鱼苗"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_shop_template
-
-	var_1_30[10033] = {
+	pg.base.island_shop_template[10033] = {
 		first_shop = 10031,
 		top_jump = "",
 		second_shop = 10032,
@@ -1280,11 +1115,7 @@ var_0_5.base.island_shop_template = {}
 			111107
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_shop_template
-
-	var_1_31[10034] = {
+	pg.base.island_shop_template[10034] = {
 		first_shop = 10031,
 		top_jump = "",
 		second_shop = 10032,
@@ -1317,11 +1148,7 @@ var_0_5.base.island_shop_template = {}
 			111206
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_shop_template
-
-	var_1_32[10035] = {
+	pg.base.island_shop_template[10035] = {
 		first_shop = 10031,
 		top_jump = "",
 		second_shop = 10032,
@@ -1354,11 +1181,7 @@ var_0_5.base.island_shop_template = {}
 			111208
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_shop_template
-
-	var_1_33[10036] = {
+	pg.base.island_shop_template[10036] = {
 		first_shop = 10031,
 		top_jump = "",
 		top_resource = "",
@@ -1375,11 +1198,7 @@ var_0_5.base.island_shop_template = {}
 			"鱼饵"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_shop_template
-
-	var_1_34[10037] = {
+	pg.base.island_shop_template[10037] = {
 		first_shop = 10031,
 		top_jump = "",
 		second_shop = 10036,
@@ -1409,11 +1228,7 @@ var_0_5.base.island_shop_template = {}
 			111503
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_shop_template
-
-	var_1_35[50111] = {
+	pg.base.island_shop_template[50111] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",
@@ -1432,11 +1247,7 @@ var_0_5.base.island_shop_template = {}
 			"shizhuang"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_shop_template
-
-	var_1_36[50121] = {
+	pg.base.island_shop_template[50121] = {
 		first_shop = 50111,
 		top_jump = "",
 		top_resource = "",
@@ -1453,11 +1264,7 @@ var_0_5.base.island_shop_template = {}
 			"配饰"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_shop_template
-
-	var_1_37[50131] = {
+	pg.base.island_shop_template[50131] = {
 		first_shop = 50111,
 		top_jump = "",
 		second_shop = 50121,
@@ -1488,11 +1295,7 @@ var_0_5.base.island_shop_template = {}
 			4630009
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_shop_template
-
-	var_1_38[50132] = {
+	pg.base.island_shop_template[50132] = {
 		first_shop = 50111,
 		top_jump = "",
 		second_shop = 50121,
@@ -1523,11 +1326,7 @@ var_0_5.base.island_shop_template = {}
 			4610008
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_shop_template
-
-	var_1_39[50133] = {
+	pg.base.island_shop_template[50133] = {
 		first_shop = 50111,
 		top_jump = "",
 		second_shop = 50121,
@@ -1558,11 +1357,7 @@ var_0_5.base.island_shop_template = {}
 			4620008
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_shop_template
-
-	var_1_40[50122] = {
+	pg.base.island_shop_template[50122] = {
 		first_shop = 50111,
 		top_jump = "",
 		top_resource = "",
@@ -1579,11 +1374,7 @@ var_0_5.base.island_shop_template = {}
 			"服装"
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_shop_template
-
-	var_1_41[50123] = {
+	pg.base.island_shop_template[50123] = {
 		first_shop = 50111,
 		top_jump = "",
 		second_shop = 50122,
@@ -1631,11 +1422,7 @@ var_0_5.base.island_shop_template = {}
 			99000302
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_shop_template
-
-	var_1_42[50124] = {
+	pg.base.island_shop_template[50124] = {
 		first_shop = 50111,
 		top_jump = "",
 		second_shop = 50122,
@@ -1668,8 +1455,7 @@ var_0_5.base.island_shop_template = {}
 			461060015
 		}
 	}
-	pg = var_1_42
-	var_1_42.base.island_shop_template[17] = {
+	pg.base.island_shop_template[17] = {
 		first_shop = 0,
 		top_jump = "",
 		top_resource = "",

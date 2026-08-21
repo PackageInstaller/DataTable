@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "skill_benefit_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "skill_benefit_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.skill_benefit_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.skill_benefit_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.skill_benefit_template = rawget(pg, "skill_benefit_template") or setmetatable({
+	__name = "skill_benefit_template"
+}, confNEO)
+pg.skill_benefit_template.all = {
 	363101,
 	363102,
 	363103,
@@ -480,25 +457,11 @@ var_0_3.all = {
 	19012009,
 	19012010
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.skill_benefit_template = {}
+pg.base = pg.base or {}
+pg.base.skill_benefit_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.skill_benefit_template
-
-	var_1_0[363101] = {
+	pg.base.skill_benefit_template[363101] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 2,
@@ -511,11 +474,7 @@ var_0_3.base.skill_benefit_template = {}
 			150
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.skill_benefit_template
-
-	var_1_1[363102] = {
+	pg.base.skill_benefit_template[363102] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 2,
@@ -528,11 +487,7 @@ var_0_3.base.skill_benefit_template = {}
 			200
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.skill_benefit_template
-
-	var_1_2[363103] = {
+	pg.base.skill_benefit_template[363103] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 2,
@@ -545,11 +500,7 @@ var_0_3.base.skill_benefit_template = {}
 			250
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.skill_benefit_template
-
-	var_1_3[363104] = {
+	pg.base.skill_benefit_template[363104] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 2,
@@ -562,11 +513,7 @@ var_0_3.base.skill_benefit_template = {}
 			300
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.skill_benefit_template
-
-	var_1_4[363105] = {
+	pg.base.skill_benefit_template[363105] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 2,
@@ -579,11 +526,7 @@ var_0_3.base.skill_benefit_template = {}
 			350
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.skill_benefit_template
-
-	var_1_5[363106] = {
+	pg.base.skill_benefit_template[363106] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 2,
@@ -596,11 +539,7 @@ var_0_3.base.skill_benefit_template = {}
 			400
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.skill_benefit_template
-
-	var_1_6[363107] = {
+	pg.base.skill_benefit_template[363107] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 2,
@@ -613,11 +552,7 @@ var_0_3.base.skill_benefit_template = {}
 			450
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.skill_benefit_template
-
-	var_1_7[363108] = {
+	pg.base.skill_benefit_template[363108] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 2,
@@ -630,11 +565,7 @@ var_0_3.base.skill_benefit_template = {}
 			500
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.skill_benefit_template
-
-	var_1_8[363109] = {
+	pg.base.skill_benefit_template[363109] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 2,
@@ -647,11 +578,7 @@ var_0_3.base.skill_benefit_template = {}
 			550
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.skill_benefit_template
-
-	var_1_9[363110] = {
+	pg.base.skill_benefit_template[363110] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 2,
@@ -664,11 +591,7 @@ var_0_3.base.skill_benefit_template = {}
 			600
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.skill_benefit_template
-
-	var_1_10[416101] = {
+	pg.base.skill_benefit_template[416101] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 4,
@@ -681,11 +604,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.skill_benefit_template
-
-	var_1_11[416102] = {
+	pg.base.skill_benefit_template[416102] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 4,
@@ -698,11 +617,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.skill_benefit_template
-
-	var_1_12[416103] = {
+	pg.base.skill_benefit_template[416103] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 4,
@@ -715,11 +630,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.skill_benefit_template
-
-	var_1_13[416104] = {
+	pg.base.skill_benefit_template[416104] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 4,
@@ -732,11 +643,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.skill_benefit_template
-
-	var_1_14[416105] = {
+	pg.base.skill_benefit_template[416105] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 4,
@@ -749,11 +656,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.skill_benefit_template
-
-	var_1_15[416106] = {
+	pg.base.skill_benefit_template[416106] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 4,
@@ -766,11 +669,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.skill_benefit_template
-
-	var_1_16[416107] = {
+	pg.base.skill_benefit_template[416107] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 4,
@@ -783,11 +682,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.skill_benefit_template
-
-	var_1_17[416108] = {
+	pg.base.skill_benefit_template[416108] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 4,
@@ -800,11 +695,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.skill_benefit_template
-
-	var_1_18[416109] = {
+	pg.base.skill_benefit_template[416109] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 4,
@@ -817,11 +708,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.skill_benefit_template
-
-	var_1_19[416110] = {
+	pg.base.skill_benefit_template[416110] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 4,
@@ -834,11 +721,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.skill_benefit_template
-
-	var_1_20[641101] = {
+	pg.base.skill_benefit_template[641101] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 3,
@@ -867,11 +750,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.skill_benefit_template
-
-	var_1_21[6045001] = {
+	pg.base.skill_benefit_template[6045001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 3,
@@ -898,11 +777,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.skill_benefit_template
-
-	var_1_22[1017001] = {
+	pg.base.skill_benefit_template[1017001] = {
 		lv = 1,
 		skill_group_level = 1,
 		type = 1,
@@ -918,11 +793,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.skill_benefit_template
-
-	var_1_23[1017002] = {
+	pg.base.skill_benefit_template[1017002] = {
 		lv = 2,
 		skill_group_level = 1,
 		type = 1,
@@ -938,11 +809,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.skill_benefit_template
-
-	var_1_24[1017003] = {
+	pg.base.skill_benefit_template[1017003] = {
 		lv = 3,
 		skill_group_level = 1,
 		type = 1,
@@ -958,11 +825,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.skill_benefit_template
-
-	var_1_25[1017004] = {
+	pg.base.skill_benefit_template[1017004] = {
 		lv = 4,
 		skill_group_level = 1,
 		type = 1,
@@ -978,11 +841,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.skill_benefit_template
-
-	var_1_26[1017005] = {
+	pg.base.skill_benefit_template[1017005] = {
 		lv = 5,
 		skill_group_level = 1,
 		type = 1,
@@ -998,11 +857,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.skill_benefit_template
-
-	var_1_27[1017006] = {
+	pg.base.skill_benefit_template[1017006] = {
 		lv = 6,
 		skill_group_level = 1,
 		type = 1,
@@ -1018,11 +873,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.skill_benefit_template
-
-	var_1_28[1017007] = {
+	pg.base.skill_benefit_template[1017007] = {
 		lv = 7,
 		skill_group_level = 1,
 		type = 1,
@@ -1038,11 +889,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.skill_benefit_template
-
-	var_1_29[1017008] = {
+	pg.base.skill_benefit_template[1017008] = {
 		lv = 8,
 		skill_group_level = 1,
 		type = 1,
@@ -1058,11 +905,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.skill_benefit_template
-
-	var_1_30[1017009] = {
+	pg.base.skill_benefit_template[1017009] = {
 		lv = 9,
 		skill_group_level = 1,
 		type = 1,
@@ -1078,11 +921,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.skill_benefit_template
-
-	var_1_31[1017010] = {
+	pg.base.skill_benefit_template[1017010] = {
 		lv = 10,
 		skill_group_level = 1,
 		type = 1,
@@ -1098,11 +937,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.skill_benefit_template
-
-	var_1_32[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 1,
@@ -1119,11 +954,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.skill_benefit_template
-
-	var_1_33[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 1,
@@ -1140,11 +971,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.skill_benefit_template
-
-	var_1_34[27] = {
+	pg.base.skill_benefit_template[27] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 1,
@@ -1161,11 +988,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.skill_benefit_template
-
-	var_1_35[28] = {
+	pg.base.skill_benefit_template[28] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 1,
@@ -1182,11 +1005,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.skill_benefit_template
-
-	var_1_36[29] = {
+	pg.base.skill_benefit_template[29] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 1,
@@ -1203,11 +1022,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.skill_benefit_template
-
-	var_1_37[30] = {
+	pg.base.skill_benefit_template[30] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 1,
@@ -1224,11 +1039,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.skill_benefit_template
-
-	var_1_38[31] = {
+	pg.base.skill_benefit_template[31] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 1,
@@ -1245,11 +1056,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.skill_benefit_template
-
-	var_1_39[1023008] = {
+	pg.base.skill_benefit_template[1023008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 1,
@@ -1266,11 +1073,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.skill_benefit_template
-
-	var_1_40[1023009] = {
+	pg.base.skill_benefit_template[1023009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 1,
@@ -1287,11 +1090,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.skill_benefit_template
-
-	var_1_41[1023010] = {
+	pg.base.skill_benefit_template[1023010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 1,
@@ -1308,11 +1107,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.skill_benefit_template
-
-	var_1_42[1059001] = {
+	pg.base.skill_benefit_template[1059001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 1,
@@ -1329,11 +1124,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.skill_benefit_template
-
-	var_1_43[1059002] = {
+	pg.base.skill_benefit_template[1059002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 1,
@@ -1350,11 +1141,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.skill_benefit_template
-
-	var_1_44[1059003] = {
+	pg.base.skill_benefit_template[1059003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 1,
@@ -1371,11 +1158,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.skill_benefit_template
-
-	var_1_45[1059004] = {
+	pg.base.skill_benefit_template[1059004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 1,
@@ -1392,11 +1175,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.skill_benefit_template
-
-	var_1_46[1059005] = {
+	pg.base.skill_benefit_template[1059005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 1,
@@ -1413,11 +1192,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.skill_benefit_template
-
-	var_1_47[1059006] = {
+	pg.base.skill_benefit_template[1059006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 1,
@@ -1434,11 +1209,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.skill_benefit_template
-
-	var_1_48[1059007] = {
+	pg.base.skill_benefit_template[1059007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 1,
@@ -1455,11 +1226,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.skill_benefit_template
-
-	var_1_49[1059008] = {
+	pg.base.skill_benefit_template[1059008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 1,
@@ -1476,11 +1243,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.skill_benefit_template
-
-	var_1_50[1059009] = {
+	pg.base.skill_benefit_template[1059009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 1,
@@ -1497,11 +1260,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.skill_benefit_template
-
-	var_1_51[1059010] = {
+	pg.base.skill_benefit_template[1059010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 1,
@@ -1518,11 +1277,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.skill_benefit_template
-
-	var_1_52[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 2,
@@ -1540,11 +1295,7 @@ var_0_3.base.skill_benefit_template = {}
 			450
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.skill_benefit_template
-
-	var_1_53[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 2,
@@ -1562,11 +1313,7 @@ var_0_3.base.skill_benefit_template = {}
 			520
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.skill_benefit_template
-
-	var_1_54[19] = {
+	pg.base.skill_benefit_template[19] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 2,
@@ -1584,11 +1331,7 @@ var_0_3.base.skill_benefit_template = {}
 			600
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.skill_benefit_template
-
-	var_1_55[20] = {
+	pg.base.skill_benefit_template[20] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 2,
@@ -1606,11 +1349,7 @@ var_0_3.base.skill_benefit_template = {}
 			700
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.skill_benefit_template
-
-	var_1_56[21] = {
+	pg.base.skill_benefit_template[21] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 2,
@@ -1628,11 +1367,7 @@ var_0_3.base.skill_benefit_template = {}
 			770
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.skill_benefit_template
-
-	var_1_57[22] = {
+	pg.base.skill_benefit_template[22] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 2,
@@ -1650,11 +1385,7 @@ var_0_3.base.skill_benefit_template = {}
 			850
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.skill_benefit_template
-
-	var_1_58[23] = {
+	pg.base.skill_benefit_template[23] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 2,
@@ -1672,11 +1403,7 @@ var_0_3.base.skill_benefit_template = {}
 			950
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.skill_benefit_template
-
-	var_1_59[24] = {
+	pg.base.skill_benefit_template[24] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 2,
@@ -1694,11 +1421,7 @@ var_0_3.base.skill_benefit_template = {}
 			1020
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.skill_benefit_template
-
-	var_1_60[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 2,
@@ -1716,11 +1439,7 @@ var_0_3.base.skill_benefit_template = {}
 			1100
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.skill_benefit_template
-
-	var_1_61[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 2,
@@ -1738,11 +1457,7 @@ var_0_3.base.skill_benefit_template = {}
 			1200
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.skill_benefit_template
-
-	var_1_62[9] = {
+	pg.base.skill_benefit_template[9] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -1755,11 +1470,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.skill_benefit_template
-
-	var_1_63[10] = {
+	pg.base.skill_benefit_template[10] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -1772,11 +1483,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.skill_benefit_template
-
-	var_1_64[11] = {
+	pg.base.skill_benefit_template[11] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -1789,11 +1496,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.skill_benefit_template
-
-	var_1_65[12] = {
+	pg.base.skill_benefit_template[12] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -1806,11 +1509,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.skill_benefit_template
-
-	var_1_66[13] = {
+	pg.base.skill_benefit_template[13] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -1823,11 +1522,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.skill_benefit_template
-
-	var_1_67[14] = {
+	pg.base.skill_benefit_template[14] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -1840,11 +1535,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.skill_benefit_template
-
-	var_1_68[15] = {
+	pg.base.skill_benefit_template[15] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -1857,11 +1548,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.skill_benefit_template
-
-	var_1_69[16] = {
+	pg.base.skill_benefit_template[16] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -1874,11 +1561,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.skill_benefit_template
-
-	var_1_70[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -1891,11 +1574,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.skill_benefit_template
-
-	var_1_71[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -1908,11 +1587,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.skill_benefit_template
-
-	var_1_72[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -1925,11 +1600,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.skill_benefit_template
-
-	var_1_73[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -1942,11 +1613,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.skill_benefit_template
-
-	var_1_74[27] = {
+	pg.base.skill_benefit_template[27] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -1959,11 +1626,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.skill_benefit_template
-
-	var_1_75[28] = {
+	pg.base.skill_benefit_template[28] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -1976,11 +1639,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.skill_benefit_template
-
-	var_1_76[29] = {
+	pg.base.skill_benefit_template[29] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -1993,11 +1652,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.skill_benefit_template
-
-	var_1_77[30] = {
+	pg.base.skill_benefit_template[30] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -2010,11 +1665,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.skill_benefit_template
-
-	var_1_78[31] = {
+	pg.base.skill_benefit_template[31] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -2027,11 +1678,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.skill_benefit_template
-
-	var_1_79[1343008] = {
+	pg.base.skill_benefit_template[1343008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -2044,11 +1691,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.skill_benefit_template
-
-	var_1_80[1343009] = {
+	pg.base.skill_benefit_template[1343009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -2061,11 +1704,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.skill_benefit_template
-
-	var_1_81[1343010] = {
+	pg.base.skill_benefit_template[1343010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -2078,11 +1717,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.skill_benefit_template
-
-	var_1_82[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -2095,11 +1730,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.skill_benefit_template
-
-	var_1_83[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -2112,11 +1743,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.skill_benefit_template
-
-	var_1_84[27] = {
+	pg.base.skill_benefit_template[27] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -2129,11 +1756,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.skill_benefit_template
-
-	var_1_85[28] = {
+	pg.base.skill_benefit_template[28] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -2146,11 +1769,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.skill_benefit_template
-
-	var_1_86[29] = {
+	pg.base.skill_benefit_template[29] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -2163,11 +1782,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.skill_benefit_template
-
-	var_1_87[30] = {
+	pg.base.skill_benefit_template[30] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -2180,11 +1795,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.skill_benefit_template
-
-	var_1_88[31] = {
+	pg.base.skill_benefit_template[31] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -2197,11 +1808,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.skill_benefit_template
-
-	var_1_89[1359008] = {
+	pg.base.skill_benefit_template[1359008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -2214,11 +1821,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.skill_benefit_template
-
-	var_1_90[1359009] = {
+	pg.base.skill_benefit_template[1359009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -2231,11 +1834,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.skill_benefit_template
-
-	var_1_91[1359010] = {
+	pg.base.skill_benefit_template[1359010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -2248,11 +1847,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.skill_benefit_template
-
-	var_1_92[9] = {
+	pg.base.skill_benefit_template[9] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 1,
@@ -2268,11 +1863,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.skill_benefit_template
-
-	var_1_93[10] = {
+	pg.base.skill_benefit_template[10] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 1,
@@ -2288,11 +1879,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.skill_benefit_template
-
-	var_1_94[11] = {
+	pg.base.skill_benefit_template[11] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 1,
@@ -2308,11 +1895,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.skill_benefit_template
-
-	var_1_95[12] = {
+	pg.base.skill_benefit_template[12] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 1,
@@ -2328,11 +1911,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.skill_benefit_template
-
-	var_1_96[13] = {
+	pg.base.skill_benefit_template[13] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 1,
@@ -2348,11 +1927,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.skill_benefit_template
-
-	var_1_97[14] = {
+	pg.base.skill_benefit_template[14] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 1,
@@ -2368,11 +1943,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.skill_benefit_template
-
-	var_1_98[15] = {
+	pg.base.skill_benefit_template[15] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 1,
@@ -2388,8 +1959,7 @@ var_0_3.base.skill_benefit_template = {}
 		},
 		world_extra_effect = {}
 	}
-	pg = var_1_98
-	var_1_98.base.skill_benefit_template[16] = {
+	pg.base.skill_benefit_template[16] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 1,
@@ -2409,11 +1979,7 @@ var_0_3.base.skill_benefit_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.skill_benefit_template
-
-	var_2_0[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 1,
@@ -2429,11 +1995,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.skill_benefit_template
-
-	var_2_1[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 1,
@@ -2449,11 +2011,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.skill_benefit_template
-
-	var_2_2[1452001] = {
+	pg.base.skill_benefit_template[1452001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -2466,11 +2024,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.skill_benefit_template
-
-	var_2_3[1452002] = {
+	pg.base.skill_benefit_template[1452002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -2483,11 +2037,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.skill_benefit_template
-
-	var_2_4[1452003] = {
+	pg.base.skill_benefit_template[1452003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -2500,11 +2050,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.skill_benefit_template
-
-	var_2_5[1452004] = {
+	pg.base.skill_benefit_template[1452004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -2517,11 +2063,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.skill_benefit_template
-
-	var_2_6[1452005] = {
+	pg.base.skill_benefit_template[1452005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -2534,11 +2076,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.skill_benefit_template
-
-	var_2_7[1452006] = {
+	pg.base.skill_benefit_template[1452006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -2551,11 +2089,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.skill_benefit_template
-
-	var_2_8[1452007] = {
+	pg.base.skill_benefit_template[1452007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -2568,11 +2102,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.skill_benefit_template
-
-	var_2_9[1452008] = {
+	pg.base.skill_benefit_template[1452008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -2585,11 +2115,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.skill_benefit_template
-
-	var_2_10[1452009] = {
+	pg.base.skill_benefit_template[1452009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -2602,11 +2128,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.skill_benefit_template
-
-	var_2_11[1452010] = {
+	pg.base.skill_benefit_template[1452010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -2619,11 +2141,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.skill_benefit_template
-
-	var_2_12[1463001] = {
+	pg.base.skill_benefit_template[1463001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 4,
@@ -2636,11 +2154,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.skill_benefit_template
-
-	var_2_13[1463002] = {
+	pg.base.skill_benefit_template[1463002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 4,
@@ -2653,11 +2167,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.skill_benefit_template
-
-	var_2_14[1463003] = {
+	pg.base.skill_benefit_template[1463003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 4,
@@ -2670,11 +2180,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.skill_benefit_template
-
-	var_2_15[1463004] = {
+	pg.base.skill_benefit_template[1463004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 4,
@@ -2687,11 +2193,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.skill_benefit_template
-
-	var_2_16[1463005] = {
+	pg.base.skill_benefit_template[1463005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 4,
@@ -2704,11 +2206,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.skill_benefit_template
-
-	var_2_17[1463006] = {
+	pg.base.skill_benefit_template[1463006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 4,
@@ -2721,11 +2219,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.skill_benefit_template
-
-	var_2_18[1463007] = {
+	pg.base.skill_benefit_template[1463007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 4,
@@ -2738,11 +2232,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.skill_benefit_template
-
-	var_2_19[1463008] = {
+	pg.base.skill_benefit_template[1463008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 4,
@@ -2755,11 +2245,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.skill_benefit_template
-
-	var_2_20[1463009] = {
+	pg.base.skill_benefit_template[1463009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 4,
@@ -2772,11 +2258,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.skill_benefit_template
-
-	var_2_21[1463010] = {
+	pg.base.skill_benefit_template[1463010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 4,
@@ -2789,11 +2271,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.skill_benefit_template
-
-	var_2_22[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -2806,11 +2284,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.skill_benefit_template
-
-	var_2_23[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -2823,11 +2297,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.skill_benefit_template
-
-	var_2_24[27] = {
+	pg.base.skill_benefit_template[27] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -2840,11 +2310,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.skill_benefit_template
-
-	var_2_25[28] = {
+	pg.base.skill_benefit_template[28] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -2857,11 +2323,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.skill_benefit_template
-
-	var_2_26[29] = {
+	pg.base.skill_benefit_template[29] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -2874,11 +2336,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.skill_benefit_template
-
-	var_2_27[30] = {
+	pg.base.skill_benefit_template[30] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -2891,11 +2349,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.skill_benefit_template
-
-	var_2_28[31] = {
+	pg.base.skill_benefit_template[31] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -2908,11 +2362,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.skill_benefit_template
-
-	var_2_29[1487008] = {
+	pg.base.skill_benefit_template[1487008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -2925,11 +2375,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.skill_benefit_template
-
-	var_2_30[1487009] = {
+	pg.base.skill_benefit_template[1487009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -2942,11 +2388,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.skill_benefit_template
-
-	var_2_31[1487010] = {
+	pg.base.skill_benefit_template[1487010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -2959,11 +2401,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.skill_benefit_template
-
-	var_2_32[1507001] = {
+	pg.base.skill_benefit_template[1507001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -2976,11 +2414,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.skill_benefit_template
-
-	var_2_33[1507002] = {
+	pg.base.skill_benefit_template[1507002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -2993,11 +2427,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.skill_benefit_template
-
-	var_2_34[1507003] = {
+	pg.base.skill_benefit_template[1507003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -3010,11 +2440,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.skill_benefit_template
-
-	var_2_35[1507004] = {
+	pg.base.skill_benefit_template[1507004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -3027,11 +2453,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.skill_benefit_template
-
-	var_2_36[1507005] = {
+	pg.base.skill_benefit_template[1507005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -3044,11 +2466,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.skill_benefit_template
-
-	var_2_37[1507006] = {
+	pg.base.skill_benefit_template[1507006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -3061,11 +2479,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.skill_benefit_template
-
-	var_2_38[1507007] = {
+	pg.base.skill_benefit_template[1507007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -3078,11 +2492,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.skill_benefit_template
-
-	var_2_39[1507008] = {
+	pg.base.skill_benefit_template[1507008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -3095,11 +2505,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.skill_benefit_template
-
-	var_2_40[1507009] = {
+	pg.base.skill_benefit_template[1507009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -3112,11 +2518,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.skill_benefit_template
-
-	var_2_41[1507010] = {
+	pg.base.skill_benefit_template[1507010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -3129,11 +2531,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.skill_benefit_template
-
-	var_2_42[1531001] = {
+	pg.base.skill_benefit_template[1531001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -3146,11 +2544,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.skill_benefit_template
-
-	var_2_43[1531002] = {
+	pg.base.skill_benefit_template[1531002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -3163,11 +2557,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.skill_benefit_template
-
-	var_2_44[1531003] = {
+	pg.base.skill_benefit_template[1531003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -3180,11 +2570,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.skill_benefit_template
-
-	var_2_45[1531004] = {
+	pg.base.skill_benefit_template[1531004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -3197,11 +2583,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.skill_benefit_template
-
-	var_2_46[1531005] = {
+	pg.base.skill_benefit_template[1531005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -3214,11 +2596,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.skill_benefit_template
-
-	var_2_47[1531006] = {
+	pg.base.skill_benefit_template[1531006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -3231,11 +2609,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.skill_benefit_template
-
-	var_2_48[1531007] = {
+	pg.base.skill_benefit_template[1531007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -3248,11 +2622,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.skill_benefit_template
-
-	var_2_49[0] = {
+	pg.base.skill_benefit_template[0] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -3265,11 +2635,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.skill_benefit_template
-
-	var_2_50[1] = {
+	pg.base.skill_benefit_template[1] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -3282,11 +2648,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.skill_benefit_template
-
-	var_2_51[2] = {
+	pg.base.skill_benefit_template[2] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -3299,11 +2661,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.skill_benefit_template
-
-	var_2_52[1] = {
+	pg.base.skill_benefit_template[1] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -3316,11 +2674,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.skill_benefit_template
-
-	var_2_53[2] = {
+	pg.base.skill_benefit_template[2] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -3333,11 +2687,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.skill_benefit_template
-
-	var_2_54[3] = {
+	pg.base.skill_benefit_template[3] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -3350,11 +2700,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.skill_benefit_template
-
-	var_2_55[4] = {
+	pg.base.skill_benefit_template[4] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -3367,11 +2713,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.skill_benefit_template
-
-	var_2_56[5] = {
+	pg.base.skill_benefit_template[5] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -3384,11 +2726,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.skill_benefit_template
-
-	var_2_57[6] = {
+	pg.base.skill_benefit_template[6] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -3401,11 +2739,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.skill_benefit_template
-
-	var_2_58[7] = {
+	pg.base.skill_benefit_template[7] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -3418,11 +2752,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.skill_benefit_template
-
-	var_2_59[8] = {
+	pg.base.skill_benefit_template[8] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -3435,11 +2765,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.skill_benefit_template
-
-	var_2_60[9] = {
+	pg.base.skill_benefit_template[9] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -3452,11 +2778,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.skill_benefit_template
-
-	var_2_61[10] = {
+	pg.base.skill_benefit_template[10] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -3469,11 +2791,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.skill_benefit_template
-
-	var_2_62[9] = {
+	pg.base.skill_benefit_template[9] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -3486,11 +2804,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.skill_benefit_template
-
-	var_2_63[10] = {
+	pg.base.skill_benefit_template[10] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -3503,11 +2817,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.skill_benefit_template
-
-	var_2_64[11] = {
+	pg.base.skill_benefit_template[11] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -3520,11 +2830,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.skill_benefit_template
-
-	var_2_65[12] = {
+	pg.base.skill_benefit_template[12] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -3537,11 +2843,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.skill_benefit_template
-
-	var_2_66[13] = {
+	pg.base.skill_benefit_template[13] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -3554,11 +2856,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.skill_benefit_template
-
-	var_2_67[14] = {
+	pg.base.skill_benefit_template[14] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -3571,11 +2869,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.skill_benefit_template
-
-	var_2_68[15] = {
+	pg.base.skill_benefit_template[15] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -3588,11 +2882,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.skill_benefit_template
-
-	var_2_69[16] = {
+	pg.base.skill_benefit_template[16] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -3605,11 +2895,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.skill_benefit_template
-
-	var_2_70[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -3622,11 +2908,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.skill_benefit_template
-
-	var_2_71[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -3639,11 +2921,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.skill_benefit_template
-
-	var_2_72[1622001] = {
+	pg.base.skill_benefit_template[1622001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -3656,11 +2934,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.skill_benefit_template
-
-	var_2_73[1622002] = {
+	pg.base.skill_benefit_template[1622002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -3673,11 +2947,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.skill_benefit_template
-
-	var_2_74[1622003] = {
+	pg.base.skill_benefit_template[1622003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -3690,11 +2960,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.skill_benefit_template
-
-	var_2_75[1622004] = {
+	pg.base.skill_benefit_template[1622004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -3707,11 +2973,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.skill_benefit_template
-
-	var_2_76[1622005] = {
+	pg.base.skill_benefit_template[1622005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -3724,11 +2986,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.skill_benefit_template
-
-	var_2_77[1622006] = {
+	pg.base.skill_benefit_template[1622006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -3741,11 +2999,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.skill_benefit_template
-
-	var_2_78[1622007] = {
+	pg.base.skill_benefit_template[1622007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -3758,11 +3012,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.skill_benefit_template
-
-	var_2_79[1622008] = {
+	pg.base.skill_benefit_template[1622008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -3775,11 +3025,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.skill_benefit_template
-
-	var_2_80[1622009] = {
+	pg.base.skill_benefit_template[1622009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -3792,11 +3038,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.skill_benefit_template
-
-	var_2_81[1622010] = {
+	pg.base.skill_benefit_template[1622010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -3809,11 +3051,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.skill_benefit_template
-
-	var_2_82[1645001] = {
+	pg.base.skill_benefit_template[1645001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -3826,11 +3064,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.skill_benefit_template
-
-	var_2_83[1645002] = {
+	pg.base.skill_benefit_template[1645002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -3843,11 +3077,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.skill_benefit_template
-
-	var_2_84[1645003] = {
+	pg.base.skill_benefit_template[1645003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -3860,11 +3090,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.skill_benefit_template
-
-	var_2_85[1645004] = {
+	pg.base.skill_benefit_template[1645004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -3877,11 +3103,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.skill_benefit_template
-
-	var_2_86[1645005] = {
+	pg.base.skill_benefit_template[1645005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -3894,11 +3116,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.skill_benefit_template
-
-	var_2_87[1645006] = {
+	pg.base.skill_benefit_template[1645006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -3911,11 +3129,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.skill_benefit_template
-
-	var_2_88[1645007] = {
+	pg.base.skill_benefit_template[1645007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -3928,11 +3142,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.skill_benefit_template
-
-	var_2_89[1645008] = {
+	pg.base.skill_benefit_template[1645008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -3945,11 +3155,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.skill_benefit_template
-
-	var_2_90[1645009] = {
+	pg.base.skill_benefit_template[1645009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -3962,11 +3168,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.skill_benefit_template
-
-	var_2_91[1645010] = {
+	pg.base.skill_benefit_template[1645010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -3979,11 +3181,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.skill_benefit_template
-
-	var_2_92[1677001] = {
+	pg.base.skill_benefit_template[1677001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -3996,11 +3194,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.skill_benefit_template
-
-	var_2_93[1677002] = {
+	pg.base.skill_benefit_template[1677002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -4013,11 +3207,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.skill_benefit_template
-
-	var_2_94[1677003] = {
+	pg.base.skill_benefit_template[1677003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -4030,11 +3220,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.skill_benefit_template
-
-	var_2_95[1677004] = {
+	pg.base.skill_benefit_template[1677004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -4047,11 +3233,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.skill_benefit_template
-
-	var_2_96[1677005] = {
+	pg.base.skill_benefit_template[1677005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -4064,11 +3246,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.skill_benefit_template
-
-	var_2_97[1677006] = {
+	pg.base.skill_benefit_template[1677006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -4081,11 +3259,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.skill_benefit_template
-
-	var_2_98[1677007] = {
+	pg.base.skill_benefit_template[1677007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -4098,8 +3272,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_2_98
-	var_2_98.base.skill_benefit_template[1677008] = {
+	pg.base.skill_benefit_template[1677008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -4116,11 +3289,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.skill_benefit_template
-
-	var_3_0[1677009] = {
+	pg.base.skill_benefit_template[1677009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -4133,11 +3302,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.skill_benefit_template
-
-	var_3_1[1677010] = {
+	pg.base.skill_benefit_template[1677010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -4150,11 +3315,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.skill_benefit_template
-
-	var_3_2[1703001] = {
+	pg.base.skill_benefit_template[1703001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -4167,11 +3328,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.skill_benefit_template
-
-	var_3_3[1703002] = {
+	pg.base.skill_benefit_template[1703002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -4184,11 +3341,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.skill_benefit_template
-
-	var_3_4[1703003] = {
+	pg.base.skill_benefit_template[1703003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -4201,11 +3354,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.skill_benefit_template
-
-	var_3_5[1703004] = {
+	pg.base.skill_benefit_template[1703004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -4218,11 +3367,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.skill_benefit_template
-
-	var_3_6[1703005] = {
+	pg.base.skill_benefit_template[1703005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -4235,11 +3380,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.skill_benefit_template
-
-	var_3_7[1703006] = {
+	pg.base.skill_benefit_template[1703006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -4252,11 +3393,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.skill_benefit_template
-
-	var_3_8[1703007] = {
+	pg.base.skill_benefit_template[1703007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -4269,11 +3406,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.skill_benefit_template
-
-	var_3_9[1703008] = {
+	pg.base.skill_benefit_template[1703008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -4286,11 +3419,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.skill_benefit_template
-
-	var_3_10[1703009] = {
+	pg.base.skill_benefit_template[1703009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -4303,11 +3432,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.skill_benefit_template
-
-	var_3_11[1703010] = {
+	pg.base.skill_benefit_template[1703010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -4320,11 +3445,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.skill_benefit_template
-
-	var_3_12[1735001] = {
+	pg.base.skill_benefit_template[1735001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -4337,11 +3458,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.skill_benefit_template
-
-	var_3_13[1735002] = {
+	pg.base.skill_benefit_template[1735002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -4354,11 +3471,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.skill_benefit_template
-
-	var_3_14[1735003] = {
+	pg.base.skill_benefit_template[1735003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -4371,11 +3484,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.skill_benefit_template
-
-	var_3_15[1735004] = {
+	pg.base.skill_benefit_template[1735004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -4388,11 +3497,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.skill_benefit_template
-
-	var_3_16[1735005] = {
+	pg.base.skill_benefit_template[1735005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -4405,11 +3510,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.skill_benefit_template
-
-	var_3_17[1735006] = {
+	pg.base.skill_benefit_template[1735006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -4422,11 +3523,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.skill_benefit_template
-
-	var_3_18[1735007] = {
+	pg.base.skill_benefit_template[1735007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -4439,11 +3536,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.skill_benefit_template
-
-	var_3_19[1735008] = {
+	pg.base.skill_benefit_template[1735008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -4456,11 +3549,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.skill_benefit_template
-
-	var_3_20[1735009] = {
+	pg.base.skill_benefit_template[1735009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -4473,11 +3562,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.skill_benefit_template
-
-	var_3_21[1735010] = {
+	pg.base.skill_benefit_template[1735010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -4490,11 +3575,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.skill_benefit_template
-
-	var_3_22[1761001] = {
+	pg.base.skill_benefit_template[1761001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -4507,11 +3588,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.skill_benefit_template
-
-	var_3_23[1761002] = {
+	pg.base.skill_benefit_template[1761002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -4524,11 +3601,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.skill_benefit_template
-
-	var_3_24[1761003] = {
+	pg.base.skill_benefit_template[1761003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -4541,11 +3614,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.skill_benefit_template
-
-	var_3_25[1761004] = {
+	pg.base.skill_benefit_template[1761004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -4558,11 +3627,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.skill_benefit_template
-
-	var_3_26[1761005] = {
+	pg.base.skill_benefit_template[1761005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -4575,11 +3640,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.skill_benefit_template
-
-	var_3_27[1761006] = {
+	pg.base.skill_benefit_template[1761006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -4592,11 +3653,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.skill_benefit_template
-
-	var_3_28[1761007] = {
+	pg.base.skill_benefit_template[1761007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -4609,11 +3666,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.skill_benefit_template
-
-	var_3_29[1761008] = {
+	pg.base.skill_benefit_template[1761008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -4626,11 +3679,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.skill_benefit_template
-
-	var_3_30[1761009] = {
+	pg.base.skill_benefit_template[1761009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -4643,11 +3692,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.skill_benefit_template
-
-	var_3_31[1761010] = {
+	pg.base.skill_benefit_template[1761010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -4660,11 +3705,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.skill_benefit_template
-
-	var_3_32[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -4677,11 +3718,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.skill_benefit_template
-
-	var_3_33[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -4694,11 +3731,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.skill_benefit_template
-
-	var_3_34[27] = {
+	pg.base.skill_benefit_template[27] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -4711,11 +3744,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.skill_benefit_template
-
-	var_3_35[28] = {
+	pg.base.skill_benefit_template[28] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -4728,11 +3757,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.skill_benefit_template
-
-	var_3_36[29] = {
+	pg.base.skill_benefit_template[29] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -4745,11 +3770,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.skill_benefit_template
-
-	var_3_37[30] = {
+	pg.base.skill_benefit_template[30] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -4762,11 +3783,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.skill_benefit_template
-
-	var_3_38[31] = {
+	pg.base.skill_benefit_template[31] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -4779,11 +3796,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.skill_benefit_template
-
-	var_3_39[1951008] = {
+	pg.base.skill_benefit_template[1951008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -4796,11 +3809,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.skill_benefit_template
-
-	var_3_40[1951009] = {
+	pg.base.skill_benefit_template[1951009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -4813,11 +3822,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.skill_benefit_template
-
-	var_3_41[1951010] = {
+	pg.base.skill_benefit_template[1951010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -4830,11 +3835,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.skill_benefit_template
-
-	var_3_42[6012001] = {
+	pg.base.skill_benefit_template[6012001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 2,
@@ -4848,11 +3849,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.skill_benefit_template
-
-	var_3_43[80018001] = {
+	pg.base.skill_benefit_template[80018001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -4865,11 +3862,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.skill_benefit_template
-
-	var_3_44[80018002] = {
+	pg.base.skill_benefit_template[80018002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -4882,11 +3875,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.skill_benefit_template
-
-	var_3_45[80018003] = {
+	pg.base.skill_benefit_template[80018003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -4899,11 +3888,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.skill_benefit_template
-
-	var_3_46[80018004] = {
+	pg.base.skill_benefit_template[80018004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -4916,11 +3901,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.skill_benefit_template
-
-	var_3_47[80018005] = {
+	pg.base.skill_benefit_template[80018005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -4933,11 +3914,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.skill_benefit_template
-
-	var_3_48[80018006] = {
+	pg.base.skill_benefit_template[80018006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -4950,11 +3927,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.skill_benefit_template
-
-	var_3_49[80018007] = {
+	pg.base.skill_benefit_template[80018007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -4967,11 +3940,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.skill_benefit_template
-
-	var_3_50[80018008] = {
+	pg.base.skill_benefit_template[80018008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -4984,11 +3953,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.skill_benefit_template
-
-	var_3_51[80018009] = {
+	pg.base.skill_benefit_template[80018009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -5001,11 +3966,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.skill_benefit_template
-
-	var_3_52[80018010] = {
+	pg.base.skill_benefit_template[80018010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -5018,11 +3979,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.skill_benefit_template
-
-	var_3_53[1651001] = {
+	pg.base.skill_benefit_template[1651001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 4,
@@ -5035,11 +3992,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.skill_benefit_template
-
-	var_3_54[1651002] = {
+	pg.base.skill_benefit_template[1651002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 4,
@@ -5052,11 +4005,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.skill_benefit_template
-
-	var_3_55[1651003] = {
+	pg.base.skill_benefit_template[1651003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 4,
@@ -5069,11 +4018,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.skill_benefit_template
-
-	var_3_56[1651004] = {
+	pg.base.skill_benefit_template[1651004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 4,
@@ -5086,11 +4031,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.skill_benefit_template
-
-	var_3_57[1651005] = {
+	pg.base.skill_benefit_template[1651005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 4,
@@ -5103,11 +4044,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.skill_benefit_template
-
-	var_3_58[1651006] = {
+	pg.base.skill_benefit_template[1651006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 4,
@@ -5120,11 +4057,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.skill_benefit_template
-
-	var_3_59[1651007] = {
+	pg.base.skill_benefit_template[1651007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 4,
@@ -5137,11 +4070,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.skill_benefit_template
-
-	var_3_60[1651008] = {
+	pg.base.skill_benefit_template[1651008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 4,
@@ -5154,11 +4083,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.skill_benefit_template
-
-	var_3_61[1651009] = {
+	pg.base.skill_benefit_template[1651009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 4,
@@ -5171,11 +4096,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.skill_benefit_template
-
-	var_3_62[1651010] = {
+	pg.base.skill_benefit_template[1651010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 4,
@@ -5188,11 +4109,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.skill_benefit_template
-
-	var_3_63[1652001] = {
+	pg.base.skill_benefit_template[1652001] = {
 		lv = 1,
 		skill_group_level = 1,
 		type = 1,
@@ -5208,11 +4125,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.skill_benefit_template
-
-	var_3_64[1652002] = {
+	pg.base.skill_benefit_template[1652002] = {
 		lv = 2,
 		skill_group_level = 1,
 		type = 1,
@@ -5228,11 +4141,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.skill_benefit_template
-
-	var_3_65[1652003] = {
+	pg.base.skill_benefit_template[1652003] = {
 		lv = 3,
 		skill_group_level = 1,
 		type = 1,
@@ -5248,11 +4157,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.skill_benefit_template
-
-	var_3_66[1652004] = {
+	pg.base.skill_benefit_template[1652004] = {
 		lv = 4,
 		skill_group_level = 1,
 		type = 1,
@@ -5268,11 +4173,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.skill_benefit_template
-
-	var_3_67[1652005] = {
+	pg.base.skill_benefit_template[1652005] = {
 		lv = 5,
 		skill_group_level = 1,
 		type = 1,
@@ -5288,11 +4189,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.skill_benefit_template
-
-	var_3_68[1652006] = {
+	pg.base.skill_benefit_template[1652006] = {
 		lv = 6,
 		skill_group_level = 1,
 		type = 1,
@@ -5308,11 +4205,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.skill_benefit_template
-
-	var_3_69[1652007] = {
+	pg.base.skill_benefit_template[1652007] = {
 		lv = 7,
 		skill_group_level = 1,
 		type = 1,
@@ -5328,11 +4221,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.skill_benefit_template
-
-	var_3_70[1652008] = {
+	pg.base.skill_benefit_template[1652008] = {
 		lv = 8,
 		skill_group_level = 1,
 		type = 1,
@@ -5348,11 +4237,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.skill_benefit_template
-
-	var_3_71[1652009] = {
+	pg.base.skill_benefit_template[1652009] = {
 		lv = 9,
 		skill_group_level = 1,
 		type = 1,
@@ -5368,11 +4253,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.skill_benefit_template
-
-	var_3_72[1652010] = {
+	pg.base.skill_benefit_template[1652010] = {
 		lv = 10,
 		skill_group_level = 1,
 		type = 1,
@@ -5388,11 +4269,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.skill_benefit_template
-
-	var_3_73[1742001] = {
+	pg.base.skill_benefit_template[1742001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 2,
@@ -5408,11 +4285,7 @@ end)()
 			450
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.skill_benefit_template
-
-	var_3_74[1742002] = {
+	pg.base.skill_benefit_template[1742002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 2,
@@ -5428,11 +4301,7 @@ end)()
 			520
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.skill_benefit_template
-
-	var_3_75[1742003] = {
+	pg.base.skill_benefit_template[1742003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 2,
@@ -5448,11 +4317,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.skill_benefit_template
-
-	var_3_76[1742004] = {
+	pg.base.skill_benefit_template[1742004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 2,
@@ -5468,11 +4333,7 @@ end)()
 			700
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.skill_benefit_template
-
-	var_3_77[1742005] = {
+	pg.base.skill_benefit_template[1742005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 2,
@@ -5488,11 +4349,7 @@ end)()
 			770
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.skill_benefit_template
-
-	var_3_78[1742006] = {
+	pg.base.skill_benefit_template[1742006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 2,
@@ -5508,11 +4365,7 @@ end)()
 			850
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.skill_benefit_template
-
-	var_3_79[1742007] = {
+	pg.base.skill_benefit_template[1742007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 2,
@@ -5528,11 +4381,7 @@ end)()
 			950
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.skill_benefit_template
-
-	var_3_80[1742008] = {
+	pg.base.skill_benefit_template[1742008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 2,
@@ -5548,11 +4397,7 @@ end)()
 			1020
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.skill_benefit_template
-
-	var_3_81[1742009] = {
+	pg.base.skill_benefit_template[1742009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 2,
@@ -5568,11 +4413,7 @@ end)()
 			1100
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.skill_benefit_template
-
-	var_3_82[1742010] = {
+	pg.base.skill_benefit_template[1742010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 2,
@@ -5588,11 +4429,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.skill_benefit_template
-
-	var_3_83[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 2,
@@ -5608,11 +4445,7 @@ end)()
 			450
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.skill_benefit_template
-
-	var_3_84[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 2,
@@ -5628,11 +4461,7 @@ end)()
 			520
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.skill_benefit_template
-
-	var_3_85[27] = {
+	pg.base.skill_benefit_template[27] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 2,
@@ -5648,11 +4477,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.skill_benefit_template
-
-	var_3_86[28] = {
+	pg.base.skill_benefit_template[28] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 2,
@@ -5668,11 +4493,7 @@ end)()
 			700
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.skill_benefit_template
-
-	var_3_87[29] = {
+	pg.base.skill_benefit_template[29] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 2,
@@ -5688,11 +4509,7 @@ end)()
 			770
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.skill_benefit_template
-
-	var_3_88[30] = {
+	pg.base.skill_benefit_template[30] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 2,
@@ -5708,11 +4525,7 @@ end)()
 			850
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.skill_benefit_template
-
-	var_3_89[31] = {
+	pg.base.skill_benefit_template[31] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 2,
@@ -5728,11 +4541,7 @@ end)()
 			950
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.skill_benefit_template
-
-	var_3_90[80079008] = {
+	pg.base.skill_benefit_template[80079008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 2,
@@ -5748,11 +4557,7 @@ end)()
 			1020
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.skill_benefit_template
-
-	var_3_91[80079009] = {
+	pg.base.skill_benefit_template[80079009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 2,
@@ -5768,11 +4573,7 @@ end)()
 			1100
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.skill_benefit_template
-
-	var_3_92[80079010] = {
+	pg.base.skill_benefit_template[80079010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 2,
@@ -5788,11 +4589,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.skill_benefit_template
-
-	var_3_93[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -5805,11 +4602,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.skill_benefit_template
-
-	var_3_94[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -5822,11 +4615,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.skill_benefit_template
-
-	var_3_95[19] = {
+	pg.base.skill_benefit_template[19] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -5839,11 +4628,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.skill_benefit_template
-
-	var_3_96[20] = {
+	pg.base.skill_benefit_template[20] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -5856,11 +4641,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.skill_benefit_template
-
-	var_3_97[21] = {
+	pg.base.skill_benefit_template[21] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -5873,11 +4654,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.skill_benefit_template
-
-	var_3_98[22] = {
+	pg.base.skill_benefit_template[22] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -5890,8 +4667,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_3_98
-	var_3_98.base.skill_benefit_template[23] = {
+	pg.base.skill_benefit_template[23] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -5908,11 +4684,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.skill_benefit_template
-
-	var_4_0[24] = {
+	pg.base.skill_benefit_template[24] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -5925,11 +4697,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.skill_benefit_template
-
-	var_4_1[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -5942,11 +4710,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.skill_benefit_template
-
-	var_4_2[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -5959,11 +4723,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.skill_benefit_template
-
-	var_4_3[15004001] = {
+	pg.base.skill_benefit_template[15004001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -5976,11 +4736,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.skill_benefit_template
-
-	var_4_4[15004002] = {
+	pg.base.skill_benefit_template[15004002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -5993,11 +4749,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.skill_benefit_template
-
-	var_4_5[15004003] = {
+	pg.base.skill_benefit_template[15004003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -6010,11 +4762,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.skill_benefit_template
-
-	var_4_6[15004004] = {
+	pg.base.skill_benefit_template[15004004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -6027,11 +4775,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.skill_benefit_template
-
-	var_4_7[15004005] = {
+	pg.base.skill_benefit_template[15004005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -6044,11 +4788,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.skill_benefit_template
-
-	var_4_8[15004006] = {
+	pg.base.skill_benefit_template[15004006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -6061,11 +4801,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.skill_benefit_template
-
-	var_4_9[15004007] = {
+	pg.base.skill_benefit_template[15004007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -6078,11 +4814,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.skill_benefit_template
-
-	var_4_10[15004008] = {
+	pg.base.skill_benefit_template[15004008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -6095,11 +4827,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.skill_benefit_template
-
-	var_4_11[15004009] = {
+	pg.base.skill_benefit_template[15004009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -6112,11 +4840,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.skill_benefit_template
-
-	var_4_12[15004010] = {
+	pg.base.skill_benefit_template[15004010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -6129,11 +4853,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.skill_benefit_template
-
-	var_4_13[15047001] = {
+	pg.base.skill_benefit_template[15047001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -6146,11 +4866,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.skill_benefit_template
-
-	var_4_14[15047002] = {
+	pg.base.skill_benefit_template[15047002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -6163,11 +4879,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.skill_benefit_template
-
-	var_4_15[15047003] = {
+	pg.base.skill_benefit_template[15047003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -6180,11 +4892,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.skill_benefit_template
-
-	var_4_16[15047004] = {
+	pg.base.skill_benefit_template[15047004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -6197,11 +4905,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.skill_benefit_template
-
-	var_4_17[15047005] = {
+	pg.base.skill_benefit_template[15047005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -6214,11 +4918,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.skill_benefit_template
-
-	var_4_18[15047006] = {
+	pg.base.skill_benefit_template[15047006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -6231,11 +4931,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.skill_benefit_template
-
-	var_4_19[15047007] = {
+	pg.base.skill_benefit_template[15047007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -6248,11 +4944,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.skill_benefit_template
-
-	var_4_20[15047008] = {
+	pg.base.skill_benefit_template[15047008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -6265,11 +4957,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.skill_benefit_template
-
-	var_4_21[15047009] = {
+	pg.base.skill_benefit_template[15047009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -6282,11 +4970,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.skill_benefit_template
-
-	var_4_22[15047010] = {
+	pg.base.skill_benefit_template[15047010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -6299,11 +4983,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.skill_benefit_template
-
-	var_4_23[15068001] = {
+	pg.base.skill_benefit_template[15068001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -6316,11 +4996,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.skill_benefit_template
-
-	var_4_24[15068002] = {
+	pg.base.skill_benefit_template[15068002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -6333,11 +5009,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.skill_benefit_template
-
-	var_4_25[15068003] = {
+	pg.base.skill_benefit_template[15068003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -6350,11 +5022,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.skill_benefit_template
-
-	var_4_26[15068004] = {
+	pg.base.skill_benefit_template[15068004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -6367,11 +5035,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.skill_benefit_template
-
-	var_4_27[15068005] = {
+	pg.base.skill_benefit_template[15068005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -6384,11 +5048,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.skill_benefit_template
-
-	var_4_28[15068006] = {
+	pg.base.skill_benefit_template[15068006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -6401,11 +5061,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.skill_benefit_template
-
-	var_4_29[15068007] = {
+	pg.base.skill_benefit_template[15068007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -6418,11 +5074,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.skill_benefit_template
-
-	var_4_30[15068008] = {
+	pg.base.skill_benefit_template[15068008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -6435,11 +5087,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.skill_benefit_template
-
-	var_4_31[15068009] = {
+	pg.base.skill_benefit_template[15068009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -6452,11 +5100,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.skill_benefit_template
-
-	var_4_32[15068010] = {
+	pg.base.skill_benefit_template[15068010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -6469,11 +5113,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.skill_benefit_template
-
-	var_4_33[15075001] = {
+	pg.base.skill_benefit_template[15075001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -6486,11 +5126,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.skill_benefit_template
-
-	var_4_34[15075002] = {
+	pg.base.skill_benefit_template[15075002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -6503,11 +5139,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.skill_benefit_template
-
-	var_4_35[15075003] = {
+	pg.base.skill_benefit_template[15075003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -6520,11 +5152,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.skill_benefit_template
-
-	var_4_36[15075004] = {
+	pg.base.skill_benefit_template[15075004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -6537,11 +5165,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.skill_benefit_template
-
-	var_4_37[15075005] = {
+	pg.base.skill_benefit_template[15075005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -6554,11 +5178,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.skill_benefit_template
-
-	var_4_38[15075006] = {
+	pg.base.skill_benefit_template[15075006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -6571,11 +5191,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.skill_benefit_template
-
-	var_4_39[15075007] = {
+	pg.base.skill_benefit_template[15075007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -6588,11 +5204,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.skill_benefit_template
-
-	var_4_40[15075008] = {
+	pg.base.skill_benefit_template[15075008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -6605,11 +5217,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.skill_benefit_template
-
-	var_4_41[15075009] = {
+	pg.base.skill_benefit_template[15075009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -6622,11 +5230,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.skill_benefit_template
-
-	var_4_42[15075010] = {
+	pg.base.skill_benefit_template[15075010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -6639,11 +5243,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.skill_benefit_template
-
-	var_4_43[15096001] = {
+	pg.base.skill_benefit_template[15096001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -6656,11 +5256,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.skill_benefit_template
-
-	var_4_44[15096002] = {
+	pg.base.skill_benefit_template[15096002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -6673,11 +5269,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.skill_benefit_template
-
-	var_4_45[15096003] = {
+	pg.base.skill_benefit_template[15096003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -6690,11 +5282,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.skill_benefit_template
-
-	var_4_46[15096004] = {
+	pg.base.skill_benefit_template[15096004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -6707,11 +5295,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.skill_benefit_template
-
-	var_4_47[15096005] = {
+	pg.base.skill_benefit_template[15096005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -6724,11 +5308,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.skill_benefit_template
-
-	var_4_48[15096006] = {
+	pg.base.skill_benefit_template[15096006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -6741,11 +5321,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.skill_benefit_template
-
-	var_4_49[15096007] = {
+	pg.base.skill_benefit_template[15096007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -6758,11 +5334,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.skill_benefit_template
-
-	var_4_50[15096008] = {
+	pg.base.skill_benefit_template[15096008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -6775,11 +5347,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.skill_benefit_template
-
-	var_4_51[15096009] = {
+	pg.base.skill_benefit_template[15096009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -6792,11 +5360,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.skill_benefit_template
-
-	var_4_52[15096010] = {
+	pg.base.skill_benefit_template[15096010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -6809,11 +5373,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.skill_benefit_template
-
-	var_4_53[15123001] = {
+	pg.base.skill_benefit_template[15123001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -6826,11 +5386,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.skill_benefit_template
-
-	var_4_54[15123002] = {
+	pg.base.skill_benefit_template[15123002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -6843,11 +5399,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.skill_benefit_template
-
-	var_4_55[15123003] = {
+	pg.base.skill_benefit_template[15123003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -6860,11 +5412,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.skill_benefit_template
-
-	var_4_56[15123004] = {
+	pg.base.skill_benefit_template[15123004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -6877,11 +5425,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.skill_benefit_template
-
-	var_4_57[15123005] = {
+	pg.base.skill_benefit_template[15123005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -6894,11 +5438,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.skill_benefit_template
-
-	var_4_58[15123006] = {
+	pg.base.skill_benefit_template[15123006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -6911,11 +5451,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.skill_benefit_template
-
-	var_4_59[15123007] = {
+	pg.base.skill_benefit_template[15123007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -6928,11 +5464,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.skill_benefit_template
-
-	var_4_60[15123008] = {
+	pg.base.skill_benefit_template[15123008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -6945,11 +5477,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.skill_benefit_template
-
-	var_4_61[15123009] = {
+	pg.base.skill_benefit_template[15123009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -6962,11 +5490,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.skill_benefit_template
-
-	var_4_62[15123010] = {
+	pg.base.skill_benefit_template[15123010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -6979,11 +5503,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.skill_benefit_template
-
-	var_4_63[15127001] = {
+	pg.base.skill_benefit_template[15127001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -6996,11 +5516,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.skill_benefit_template
-
-	var_4_64[15127002] = {
+	pg.base.skill_benefit_template[15127002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -7013,11 +5529,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.skill_benefit_template
-
-	var_4_65[15127003] = {
+	pg.base.skill_benefit_template[15127003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -7030,11 +5542,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.skill_benefit_template
-
-	var_4_66[15127004] = {
+	pg.base.skill_benefit_template[15127004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -7047,11 +5555,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.skill_benefit_template
-
-	var_4_67[15127005] = {
+	pg.base.skill_benefit_template[15127005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -7064,11 +5568,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.skill_benefit_template
-
-	var_4_68[15127006] = {
+	pg.base.skill_benefit_template[15127006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -7081,11 +5581,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.skill_benefit_template
-
-	var_4_69[15127007] = {
+	pg.base.skill_benefit_template[15127007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -7098,11 +5594,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.skill_benefit_template
-
-	var_4_70[15127008] = {
+	pg.base.skill_benefit_template[15127008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -7115,11 +5607,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.skill_benefit_template
-
-	var_4_71[15127009] = {
+	pg.base.skill_benefit_template[15127009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -7132,11 +5620,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.skill_benefit_template
-
-	var_4_72[15127010] = {
+	pg.base.skill_benefit_template[15127010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -7149,11 +5633,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.skill_benefit_template
-
-	var_4_73[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -7166,11 +5646,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.skill_benefit_template
-
-	var_4_74[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -7183,11 +5659,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.skill_benefit_template
-
-	var_4_75[19] = {
+	pg.base.skill_benefit_template[19] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -7200,11 +5672,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.skill_benefit_template
-
-	var_4_76[20] = {
+	pg.base.skill_benefit_template[20] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -7217,11 +5685,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.skill_benefit_template
-
-	var_4_77[21] = {
+	pg.base.skill_benefit_template[21] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -7234,11 +5698,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.skill_benefit_template
-
-	var_4_78[22] = {
+	pg.base.skill_benefit_template[22] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -7251,11 +5711,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.skill_benefit_template
-
-	var_4_79[23] = {
+	pg.base.skill_benefit_template[23] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -7268,11 +5724,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.skill_benefit_template
-
-	var_4_80[24] = {
+	pg.base.skill_benefit_template[24] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -7285,11 +5737,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.skill_benefit_template
-
-	var_4_81[25] = {
+	pg.base.skill_benefit_template[25] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -7302,11 +5750,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.skill_benefit_template
-
-	var_4_82[26] = {
+	pg.base.skill_benefit_template[26] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -7319,11 +5763,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.skill_benefit_template
-
-	var_4_83[15159001] = {
+	pg.base.skill_benefit_template[15159001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -7336,11 +5776,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.skill_benefit_template
-
-	var_4_84[15159002] = {
+	pg.base.skill_benefit_template[15159002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -7353,11 +5789,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.skill_benefit_template
-
-	var_4_85[15159003] = {
+	pg.base.skill_benefit_template[15159003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -7370,11 +5802,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.skill_benefit_template
-
-	var_4_86[15159004] = {
+	pg.base.skill_benefit_template[15159004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -7387,11 +5815,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.skill_benefit_template
-
-	var_4_87[15159005] = {
+	pg.base.skill_benefit_template[15159005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -7404,11 +5828,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.skill_benefit_template
-
-	var_4_88[15159006] = {
+	pg.base.skill_benefit_template[15159006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -7421,11 +5841,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.skill_benefit_template
-
-	var_4_89[15159007] = {
+	pg.base.skill_benefit_template[15159007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -7438,11 +5854,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.skill_benefit_template
-
-	var_4_90[15159008] = {
+	pg.base.skill_benefit_template[15159008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -7455,11 +5867,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.skill_benefit_template
-
-	var_4_91[15159009] = {
+	pg.base.skill_benefit_template[15159009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -7472,11 +5880,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.skill_benefit_template
-
-	var_4_92[15159010] = {
+	pg.base.skill_benefit_template[15159010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -7489,11 +5893,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.skill_benefit_template
-
-	var_4_93[15193001] = {
+	pg.base.skill_benefit_template[15193001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -7506,11 +5906,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.skill_benefit_template
-
-	var_4_94[15193002] = {
+	pg.base.skill_benefit_template[15193002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -7523,11 +5919,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.skill_benefit_template
-
-	var_4_95[15193003] = {
+	pg.base.skill_benefit_template[15193003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -7540,11 +5932,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.skill_benefit_template
-
-	var_4_96[15193004] = {
+	pg.base.skill_benefit_template[15193004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -7557,11 +5945,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.skill_benefit_template
-
-	var_4_97[15193005] = {
+	pg.base.skill_benefit_template[15193005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -7574,11 +5958,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.skill_benefit_template
-
-	var_4_98[15193006] = {
+	pg.base.skill_benefit_template[15193006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -7591,8 +5971,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_4_98
-	var_4_98.base.skill_benefit_template[15193007] = {
+	pg.base.skill_benefit_template[15193007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -7609,11 +5988,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.skill_benefit_template
-
-	var_5_0[15193008] = {
+	pg.base.skill_benefit_template[15193008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -7626,11 +6001,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.skill_benefit_template
-
-	var_5_1[15193009] = {
+	pg.base.skill_benefit_template[15193009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -7643,11 +6014,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.skill_benefit_template
-
-	var_5_2[15193010] = {
+	pg.base.skill_benefit_template[15193010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -7660,11 +6027,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.skill_benefit_template
-
-	var_5_3[1] = {
+	pg.base.skill_benefit_template[1] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -7677,11 +6040,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.skill_benefit_template
-
-	var_5_4[2] = {
+	pg.base.skill_benefit_template[2] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -7694,11 +6053,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.skill_benefit_template
-
-	var_5_5[3] = {
+	pg.base.skill_benefit_template[3] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -7711,11 +6066,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.skill_benefit_template
-
-	var_5_6[4] = {
+	pg.base.skill_benefit_template[4] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -7728,11 +6079,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.skill_benefit_template
-
-	var_5_7[5] = {
+	pg.base.skill_benefit_template[5] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -7745,11 +6092,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.skill_benefit_template
-
-	var_5_8[6] = {
+	pg.base.skill_benefit_template[6] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -7762,11 +6105,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.skill_benefit_template
-
-	var_5_9[7] = {
+	pg.base.skill_benefit_template[7] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -7779,11 +6118,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.skill_benefit_template
-
-	var_5_10[8] = {
+	pg.base.skill_benefit_template[8] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -7796,11 +6131,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.skill_benefit_template
-
-	var_5_11[9] = {
+	pg.base.skill_benefit_template[9] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -7813,11 +6144,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.skill_benefit_template
-
-	var_5_12[10] = {
+	pg.base.skill_benefit_template[10] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -7830,11 +6157,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.skill_benefit_template
-
-	var_5_13[15235001] = {
+	pg.base.skill_benefit_template[15235001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -7847,11 +6170,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.skill_benefit_template
-
-	var_5_14[15235002] = {
+	pg.base.skill_benefit_template[15235002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -7864,11 +6183,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.skill_benefit_template
-
-	var_5_15[15235003] = {
+	pg.base.skill_benefit_template[15235003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -7881,11 +6196,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.skill_benefit_template
-
-	var_5_16[15235004] = {
+	pg.base.skill_benefit_template[15235004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -7898,11 +6209,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.skill_benefit_template
-
-	var_5_17[15235005] = {
+	pg.base.skill_benefit_template[15235005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -7915,11 +6222,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.skill_benefit_template
-
-	var_5_18[15235006] = {
+	pg.base.skill_benefit_template[15235006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -7932,11 +6235,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.skill_benefit_template
-
-	var_5_19[15235007] = {
+	pg.base.skill_benefit_template[15235007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -7949,11 +6248,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.skill_benefit_template
-
-	var_5_20[15235008] = {
+	pg.base.skill_benefit_template[15235008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -7966,11 +6261,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.skill_benefit_template
-
-	var_5_21[15235009] = {
+	pg.base.skill_benefit_template[15235009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -7983,11 +6274,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.skill_benefit_template
-
-	var_5_22[15235010] = {
+	pg.base.skill_benefit_template[15235010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -8000,11 +6287,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.skill_benefit_template
-
-	var_5_23[9] = {
+	pg.base.skill_benefit_template[9] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 2,
@@ -8020,11 +6303,7 @@ end)()
 			450
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.skill_benefit_template
-
-	var_5_24[10] = {
+	pg.base.skill_benefit_template[10] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 2,
@@ -8040,11 +6319,7 @@ end)()
 			520
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.skill_benefit_template
-
-	var_5_25[11] = {
+	pg.base.skill_benefit_template[11] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 2,
@@ -8060,11 +6335,7 @@ end)()
 			600
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.skill_benefit_template
-
-	var_5_26[12] = {
+	pg.base.skill_benefit_template[12] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 2,
@@ -8080,11 +6351,7 @@ end)()
 			700
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.skill_benefit_template
-
-	var_5_27[13] = {
+	pg.base.skill_benefit_template[13] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 2,
@@ -8100,11 +6367,7 @@ end)()
 			770
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.skill_benefit_template
-
-	var_5_28[14] = {
+	pg.base.skill_benefit_template[14] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 2,
@@ -8120,11 +6383,7 @@ end)()
 			850
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.skill_benefit_template
-
-	var_5_29[15] = {
+	pg.base.skill_benefit_template[15] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 2,
@@ -8140,11 +6399,7 @@ end)()
 			950
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.skill_benefit_template
-
-	var_5_30[16] = {
+	pg.base.skill_benefit_template[16] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 2,
@@ -8160,11 +6415,7 @@ end)()
 			1020
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.skill_benefit_template
-
-	var_5_31[17] = {
+	pg.base.skill_benefit_template[17] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 2,
@@ -8180,11 +6431,7 @@ end)()
 			1100
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.skill_benefit_template
-
-	var_5_32[18] = {
+	pg.base.skill_benefit_template[18] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 2,
@@ -8200,11 +6447,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.skill_benefit_template
-
-	var_5_33[15238001] = {
+	pg.base.skill_benefit_template[15238001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -8217,11 +6460,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.skill_benefit_template
-
-	var_5_34[15238002] = {
+	pg.base.skill_benefit_template[15238002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -8234,11 +6473,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.skill_benefit_template
-
-	var_5_35[15238003] = {
+	pg.base.skill_benefit_template[15238003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -8251,11 +6486,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.skill_benefit_template
-
-	var_5_36[15238004] = {
+	pg.base.skill_benefit_template[15238004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -8268,11 +6499,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.skill_benefit_template
-
-	var_5_37[15238005] = {
+	pg.base.skill_benefit_template[15238005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -8285,11 +6512,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.skill_benefit_template
-
-	var_5_38[15238006] = {
+	pg.base.skill_benefit_template[15238006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -8302,11 +6525,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.skill_benefit_template
-
-	var_5_39[15238007] = {
+	pg.base.skill_benefit_template[15238007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -8319,11 +6538,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.skill_benefit_template
-
-	var_5_40[15238008] = {
+	pg.base.skill_benefit_template[15238008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -8336,11 +6551,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.skill_benefit_template
-
-	var_5_41[15238009] = {
+	pg.base.skill_benefit_template[15238009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -8353,11 +6564,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.skill_benefit_template
-
-	var_5_42[15238010] = {
+	pg.base.skill_benefit_template[15238010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,
@@ -8370,11 +6577,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.skill_benefit_template
-
-	var_5_43[19012001] = {
+	pg.base.skill_benefit_template[19012001] = {
 		lv = 1,
 		skill_group_level = 0,
 		type = 5,
@@ -8387,11 +6590,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.skill_benefit_template
-
-	var_5_44[19012002] = {
+	pg.base.skill_benefit_template[19012002] = {
 		lv = 2,
 		skill_group_level = 0,
 		type = 5,
@@ -8404,11 +6603,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.skill_benefit_template
-
-	var_5_45[19012003] = {
+	pg.base.skill_benefit_template[19012003] = {
 		lv = 3,
 		skill_group_level = 0,
 		type = 5,
@@ -8421,11 +6616,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.skill_benefit_template
-
-	var_5_46[19012004] = {
+	pg.base.skill_benefit_template[19012004] = {
 		lv = 4,
 		skill_group_level = 0,
 		type = 5,
@@ -8438,11 +6629,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.skill_benefit_template
-
-	var_5_47[19012005] = {
+	pg.base.skill_benefit_template[19012005] = {
 		lv = 5,
 		skill_group_level = 0,
 		type = 5,
@@ -8455,11 +6642,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.skill_benefit_template
-
-	var_5_48[19012006] = {
+	pg.base.skill_benefit_template[19012006] = {
 		lv = 6,
 		skill_group_level = 0,
 		type = 5,
@@ -8472,11 +6655,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.skill_benefit_template
-
-	var_5_49[19012007] = {
+	pg.base.skill_benefit_template[19012007] = {
 		lv = 7,
 		skill_group_level = 0,
 		type = 5,
@@ -8489,11 +6668,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.skill_benefit_template
-
-	var_5_50[19012008] = {
+	pg.base.skill_benefit_template[19012008] = {
 		lv = 8,
 		skill_group_level = 0,
 		type = 5,
@@ -8506,11 +6681,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.skill_benefit_template
-
-	var_5_51[19012009] = {
+	pg.base.skill_benefit_template[19012009] = {
 		lv = 9,
 		skill_group_level = 0,
 		type = 5,
@@ -8523,8 +6694,7 @@ end)()
 		},
 		world_extra_effect = {}
 	}
-	pg = var_5_51
-	var_5_51.base.skill_benefit_template[19012010] = {
+	pg.base.skill_benefit_template[19012010] = {
 		lv = 10,
 		skill_group_level = 0,
 		type = 5,

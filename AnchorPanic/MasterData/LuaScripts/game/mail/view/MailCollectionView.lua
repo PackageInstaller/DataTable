@@ -13,6 +13,9 @@ end
 
 function initData(self)
     self.gridList = {}
+    self.mailList = {}
+    self.list = nil
+    self.childShowId = 0
 end
 
 function configUI(self)
@@ -67,61 +70,73 @@ end
 
 function active(self, args)
     super.active(self, args)
+    GameDispatcher:addEventListener(EventName.UPDATE_COLLECTION_ITEM, self.updateCollectionItem, self)
+    GameDispatcher:addEventListener(EventName.UPDATE_COLLECTION_PANEL, self.updateCollectionPanel, self)
 
-    GameDispatcher:addEventListener(EventName.UPDATE_COLLECTION_ITEM,self.updateCollectionItem,self)
-    GameDispatcher:addEventListener(EventName.UPDATE_COLLECTION_PANEL,self.updateCollectionPanel,self)
-    
-    self.mMsgData = args
-    self:showPanel()
-end
-
-function deActive(self)
-    super.deActive(self)
-    
-    GameDispatcher:removeEventListener(EventName.UPDATE_COLLECTION_ITEM,self.updateCollectionItem,self)
-    GameDispatcher:removeEventListener(EventName.UPDATE_COLLECTION_PANEL,self.updateCollectionPanel,self)
+    -- 界面先打开并清空旧数据显示，等待收藏列表协议返回后再刷新
+    self.list = nil
+    self.childShowId = 0
+    self.mImgNo:SetActive(false)
+    self.mImgInfo:SetActive(false)
     self:recoverAllGrid()
     if self.mLeftScroller then
         self.mLeftScroller:CleanAllItem()
     end
+    self:recoverMailList()
+
+    GameDispatcher:dispatchEvent(EventName.REQ_OPEN_COLLECTION_LIST)
 end
 
-function updateCollectionPanel(self,msg)
-    for i = #self.mailList,1,-1 do
-        local index = table.indexof01(msg.mail_id_list,self.mailList[i].id) 
-        if index > 0 then
-            table.remove(self.mailList,i)
-        end
-    end
+function deActive(self)
+    super.deActive(self)
 
-    if #self.mailList > 0 then
-        self.mLeftScroller:ReplaceAllDataProvider(self.mailList)
-        self:updateCollectionItem(self.mailList[1].id)
-    else
-        self.mImgNo:SetActive(true)
-        self.mImgInfo:SetActive(false)
+    GameDispatcher:removeEventListener(EventName.UPDATE_COLLECTION_ITEM, self.updateCollectionItem, self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_COLLECTION_PANEL, self.updateCollectionPanel, self)
+    self:recoverAllGrid()
+    if self.mLeftScroller then
+        self.mLeftScroller:CleanAllItem()
     end
+    self:recoverMailList()
+    self.list = nil
+    self.childShowId = 0
+end
+
+function updateCollectionPanel(self)
+    self.list = mail.MailManager:getMailCollectionList()
+    if self.list == nil then
+        return
+    end
+    self:showPanel()
 end
 
 function showPanel(self)
-    self.mImgNo:SetActive(#self.mMsgData.mail_list == 0)
-    self.mImgInfo:SetActive(#self.mMsgData.mail_list > 0)
+    self:recoverAllGrid()
+    if self.mLeftScroller then
+        self.mLeftScroller:CleanAllItem()
+    end
+    self:recoverMailList()
+    self.childShowId = 0
 
-    if #self.mMsgData.mail_list > 0 then
-        self.mailList = {}
-        for _, v in ipairs(self.mMsgData.mail_list) do
-            local mailVo = LuaPoolMgr:poolGet(mail.MailVo)
-            mailVo:setData(v)
-            mailVo.isSelect = false
-            table.insert(self.mailList, mailVo)
-        end
-        self.mailList[1].isSelect = true
-        self.mLeftScroller.DataProvider = self.mailList
-
-        self.childShowId = self.mailList[1].id
-        self:showContent()
+    local hasMail = #self.list > 0
+    self.mImgNo:SetActive(not hasMail)
+    self.mImgInfo:SetActive(hasMail)
+    if not hasMail then
+        return
     end
 
+    for _, mailInfo in ipairs(self.list) do
+        local mailVo = LuaPoolMgr:poolGet(mail.MailVo)
+        mailVo:setData(mailInfo)
+        mailVo.isSelect = false
+        table.insert(self.mailList, mailVo)
+    end
+    table.sort(self.mailList, function(v1, v2)
+        return v1.date > v2.date
+    end)
+    self.mailList[1].isSelect = true
+    self.mLeftScroller.DataProvider = self.mailList
+    self.childShowId = self.mailList[1].id
+    self:showContent()
 end
 
 function updateCollectionItem(self,id)
@@ -181,6 +196,17 @@ function showContent(self)
             table.insert(self.gridList, grid)
         end
     end
+end
+
+function recoverMailList(self)
+    for _, mailVo in ipairs(self.mailList or {}) do
+        for _, propsVo in ipairs(mailVo.awardList or {}) do
+            LuaPoolMgr:poolRecover(propsVo)
+        end
+        mailVo.awardList = {}
+        LuaPoolMgr:poolRecover(mailVo)
+    end
+    self.mailList = {}
 end
 
 function recoverAllGrid(self)

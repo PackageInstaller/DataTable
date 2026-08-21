@@ -97,7 +97,7 @@ function __onMsgAddMailCollection(self, msg)
     if msg.result == 0 then
         gs.Message.Show(_TT(110503))
         GameDispatcher:dispatchEvent(EventName.SHOW_EMIL_COLLECTION_EFF)
-        -- mail.MailManager:parseAddMailCollection(msg.mail_info)
+        mail.MailManager:addCollectionMail(msg.mail_info)
     elseif msg.result == 1 then
         gs.Message.Show(_TT(110504))
     elseif msg.result == 2 then
@@ -110,13 +110,11 @@ function __onMsgAddMailCollection(self, msg)
 end
 
 function __onMsgMailCollectionList(self, msg)
-    GameDispatcher:dispatchEvent(EventName.OPEN_COLLECTION_LIST_PANEL, msg)
+    mail.MailManager:setCollectionMsg(msg)
 end
 
 function __onMsgMailCollectionDel(self, msg)
-    -- if msg.result
-    GameDispatcher:dispatchEvent(EventName.UPDATE_COLLECTION_PANEL, msg)
-
+    mail.MailManager:removeCollectionMail(msg.mail_id_list)
 end
 
 -- 请求邮件列表
@@ -163,6 +161,7 @@ end
 
 -- 请求收藏邮件列表
 function __onReqMailCollectionList(self)
+    mail.MailManager:clearCollectionMsg()
     SOCKET_SEND(Protocol.CS_COLLECTION_MAIL_LIST, {}, Protocol.SC_COLLECTION_MAIL_LIST)
 end
 
@@ -201,12 +200,12 @@ function onDestroyContentViewHandler(self)
     self.m_mailContentView = nil
 end
 
-function __onOpenMailCollectionView(self, data)
+function __onOpenMailCollectionView(self)
     if self.mMailCollectionView == nil then
         self.mMailCollectionView = UI.new(mail.MailCollectionView)
         self.mMailCollectionView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMailCollectionViewHandler, self)
     end
-    self.mMailCollectionView:open(data)
+    self.mMailCollectionView:open()
 end
 
 function onDestroyMailCollectionViewHandler(self)

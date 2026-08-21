@@ -1,56 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ActivityBossJianwuScene", import(".ActivityBossSceneTemplate"))
 
-local var_0_0 = "ActivityBossJianwuScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".ActivityBossSceneTemplate"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ActivityBossJianwuUI"
 end
 
-function var_0_1.UpdateDropItems(arg_2_0)
-	ipairs = var_1_10001
+function var_0_0.UpdateDropItems(arg_2_0)
+	local var_2_0 = arg_2_0.contextData.DisplayItems or {}
 
-	local var_2_0
+	for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+		local var_2_1 = arg_2_0.barList[iter_2_0]:Find("milestone/item")
 
-	if not arg_2_0.contextData.DisplayItems then
-		var_2_0 = {}
-	end
-
-	for iter_2_0, iter_2_1 in var_1_10001(var_2_0) do
-		local var_2_1 = arg_2_0.barList[iter_2_0]
-		local var_2_2 = var_6.Find(var_2_1, "milestone/item")
-		local var_2_3 = {
+		updateDrop(var_2_1:GetChild(0), {
 			type = arg_2_0.contextData.DisplayItems[5 - iter_2_0][1],
 			id = arg_2_0.contextData.DisplayItems[5 - iter_2_0][2],
 			count = arg_2_0.contextData.DisplayItems[5 - iter_2_0][3]
-		}
-
-		updateDrop = var_8
-
-		var_8(var_2_2:GetChild(0), var_2_3)
-
-		onButton = var_8
-
-		local var_2_4 = arg_2_0
-		local var_2_5 = var_2_2
-
-		local function var_2_6()
-			local var_3_0 = arg_2_0
-
-			var_0.emit(var_3_0, var_0_1.ON_DROP, var_2_3)
+		})
+		onButton(arg_2_0, var_2_1, function()
+			arg_2_0:emit(var_0_0.ON_DROP, var_0)
 
 			return
-		end
-
-		SFX_PANEL = var_13
-
-		var_8(var_2_4, var_2_5, var_2_6, var_13)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

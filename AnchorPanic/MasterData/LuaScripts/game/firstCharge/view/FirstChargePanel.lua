@@ -44,6 +44,7 @@ end
 --激活
 function active(self, args)
     super.active(self, args)
+    GameDispatcher:addEventListener(EventName.RESET_HIDE_PROMO,self.resetHide,self)
     GameDispatcher:addEventListener(EventName.UPDATE_FIRSTCHARGE_PANEL, self.updateView, self)
 
     if args and args.isShowToggle then
@@ -57,6 +58,7 @@ end
 --反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
+    GameDispatcher:removeEventListener(EventName.RESET_HIDE_PROMO,self.resetHide,self)
     GameDispatcher:removeEventListener(EventName.UPDATE_FIRSTCHARGE_PANEL, self.updateView, self)
     self:closeDailyList()
     self:closePropsList()
@@ -116,7 +118,7 @@ function updateView(self)
                     return
                 end
                 if props.PropsManager:getTypePropsVoByTid(propVo[1]).type == PropsType.HERO then
-                    self:hideViewAndReshow()
+                    self:hideSelf()
                 end
                 propGrid:onDefaultClickHandler()
             end)
@@ -174,8 +176,16 @@ function onClickReciveHandler(self)
 end
 --查看泠详情
 function onClickLockHandler(self)
-    self:hideViewAndReshow()
+    self:hideSelf()
     GameDispatcher:dispatchEvent(EventName.OPEN_HERO_RECRUITINFOPANEL, { heroTid = 1004 })
+end
+
+function hideSelf(self)
+    self.UIRootNode.gameObject:SetActive(false)
+end
+
+function resetHide(self)
+    self.UIRootNode.gameObject:SetActive(true)
 end
 
 return _M

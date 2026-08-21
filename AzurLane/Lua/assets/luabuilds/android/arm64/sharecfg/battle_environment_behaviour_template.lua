@@ -1,10 +1,5 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.battle_environment_behaviour_template = {
+﻿pg = pg or {}
+pg.battle_environment_behaviour_template = {
 	[10000] = {
 		id = 10000,
 		name = "默认状态无",

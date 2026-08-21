@@ -8,17 +8,16 @@
 -- @Author: ZDH
 -- @Date:   2023-07-21 10:59:29
 -- @Copyright:   (LY) 2023 雷焰网络
-
 module('guild.GuildBossInfoPanel', Class.impl(View))
 
---对应的ui文件
+-- 对应的ui文件
 UIRes = UrlManager:getUIPrefabPath("guild/GuildBossInfoPanel.prefab")
 
 destroyTime = 0 -- 自动销毁时间-1默认 0即时销毁 999不销毁
 destroyTime = 0 -- 自动销毁时间-1默认
 panelType = 2 -- 窗口类型 1 全屏 2 弹窗
 
---构造函数
+-- 构造函数
 function ctor(self)
     super.ctor(self)
 
@@ -26,7 +25,7 @@ function ctor(self)
     self:setTxtTitle(_TT(94553))
 end
 
---析构
+-- 析构
 function dtor(self)
 end
 
@@ -41,6 +40,7 @@ function configUI(self)
 
     self.mTextName = self:getChildGO("mTextName"):GetComponent(ty.Text)
     self.mTextLv = self:getChildGO("mTextLv"):GetComponent(ty.Text)
+    self.mTextTitle = self:getChildGO("mTextTitle"):GetComponent(ty.Text)
     self.mTextHpValue = self:getChildGO("mTextHpValue"):GetComponent(ty.Text)
     self.mTextBattleCount = self:getChildGO("mTextBattleCount"):GetComponent(ty.Text)
 
@@ -56,7 +56,11 @@ function configUI(self)
 end
 
 function initViewText(self)
-
+    self:setBtnLabel(self.btnRank, 94554, "傷害報告")
+    self:setBtnLabel(self.btnFight, 27, "挑战")
+    self:setBtnLabel(self.btnBossInfo, 94640, "敵人情報")
+    self:setBtnLabel(self.btnImitate, 94555, "模擬")
+    self.mTextTitle.text = _TT(29543)
 end
 
 -- UI事件管理(关闭界面会自动移除)
@@ -68,7 +72,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.btnFight, self.onFight)
 end
 
---激活
+-- 激活
 function active(self, dupConfig)
     super.active(self)
     GameDispatcher:addEventListener(EventName.ONRECEIVE_GUILDBOSS_BATTLECOUNT, self.readyBattleReceive, self)
@@ -99,7 +103,12 @@ function active(self, dupConfig)
     if awardList then
         self:clearProps()
         for _, vo in ipairs(awardList) do
-            local propsGrid = PropsGrid:createByData({tid = vo.tid, num = vo.num, parent = self.mPropsContent, showUseInTip = true})
+            local propsGrid = PropsGrid:createByData({
+                tid = vo.tid,
+                num = vo.num,
+                parent = self.mPropsContent,
+                showUseInTip = true
+            })
             table.insert(self.mPropsGrids, propsGrid)
         end
     end
@@ -112,7 +121,7 @@ function readyBattleReceive(self, msg)
         return
     end
 
-    local battle = function ()
+    local battle = function()
         self:onFightHandler(self.mClickBattleTye)
     end
     if msg.battleCount > 0 then
@@ -143,7 +152,8 @@ function refreshBossInfo(self)
             local bossCurHp = self.mBossInfo.now_hp
             local bossMaxHp = self.mBossInfo.max_hp
             self.mImgProgress.fillAmount = bossCurHp / bossMaxHp
-            self.mTextHpValue.text = string.format("%s/%s", bossCurHp, bossMaxHp)
+            self.mTextHpValue.text = string.formatChineseNumber(bossCurHp).. "/".. string.formatChineseNumber(bossMaxHp)
+            --string.format("%s/%s", bossCurHp, bossMaxHp)
         end
         local color = self.mBaseInfo.challenge_time <= 0 and "#fa3a2b" or "#202226"
         self.mTextBattleCount.text = string.format("%s<color=%s>%s</color>", _TT(94552), color, self.mBaseInfo.challenge_time)
@@ -159,11 +169,13 @@ end
 
 function refreshGuildBossTime(self)
     local curClientDt = GameManager:getClientTime()
-    local time = self.mBossEndDt - curClientDt
-    if time > 0 then
-        self.mText_Time.text = string.format("%s<color=#fa3a2b>%s</color>", _TT(94557), TimeUtil.getNewRoleShowTime(time))
-    else
-        self.mText_Time.text = _TT(94503)
+    if self.mBossEndDt then
+        local time = self.mBossEndDt - curClientDt
+        if time > 0 then
+            self.mText_Time.text = string.format("%s<color=#fa3a2b>%s</color>", _TT(94557), TimeUtil.getNewRoleShowTime(time))
+        else
+            self.mText_Time.text = _TT(94503)
+        end
     end
 end
 
@@ -226,7 +238,14 @@ function onFightHandler(self, fightBattleType)
         dataId = maxBattleCount - self.mBaseInfo.challenge_time + 1
     end
 
-    local data = {data = {[1] = self.mBaseInfo.lock_hero_list}, battleType = fightBattleType, dupType = DupType.GuildBoss, dupId = self.mDupConfigVo.dupId}
+    local data = {
+        data = {
+            [1] = self.mBaseInfo.lock_hero_list
+        },
+        battleType = fightBattleType,
+        dupType = DupType.GuildBoss,
+        dupId = self.mDupConfigVo.dupId
+    }
     formation.openFormation(formation.TYPE.GUILD_BOSS_WAR, dataId, data, callFun)
     self:close()
 end
@@ -236,14 +255,17 @@ function onOpenDamageLogPanel(self)
 end
 
 function onOpenFormationPanel(self)
-    local call = function ()
+    local call = function()
         GameDispatcher:dispatchEvent(EventName.OPEN_GUILDBOSS_DUPINFO_PANEL, self.mDupConfigVo)
     end
-    GameDispatcher:dispatchEvent(EventName.OPEN_FORMATION_PREVIEW, {dupVo = self.mDupConfigVo, closeCallBack = call})
+    GameDispatcher:dispatchEvent(EventName.OPEN_FORMATION_PREVIEW, {
+        dupVo = self.mDupConfigVo,
+        closeCallBack = call
+    })
     self:close()
 end
 
---反激活（销毁工作）
+-- 反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
 

@@ -1,19 +1,13 @@
-﻿class = var_0_10000
-
-local var_0_0 = "HalloweenGameView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-local var_0_2 = 1
-local var_0_3 = 2
-local var_0_4 = 1
-local var_0_5 = 2
-local var_0_6 = 1
-local var_0_7 = 2
-local var_0_8 = 1
-local var_0_9 = 2
-local var_0_10 = {
+﻿local var_0_0 = class("HalloweenGameView", import("..BaseMiniGameView"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 1
+local var_0_4 = 2
+local var_0_5 = 1
+local var_0_6 = 2
+local var_0_7 = 1
+local var_0_8 = 2
+local var_0_9 = {
 	{
 		3,
 		5
@@ -39,23 +33,23 @@ local var_0_10 = {
 		1.4
 	}
 }
-local var_0_11 = {
+local var_0_10 = {
 	30,
 	80,
 	120,
 	160,
 	180
 }
-local var_0_12 = {
+local var_0_11 = {
 	4,
 	6
 }
-local var_0_13 = {
+local var_0_12 = {
 	0,
 	30
 }
-local var_0_14 = 0.5
-local var_0_15 = {
+local var_0_13 = 0.5
+local var_0_14 = {
 	{
 		10,
 		13
@@ -65,24 +59,24 @@ local var_0_15 = {
 		10
 	}
 }
-local var_0_16 = {
+local var_0_15 = {
 	30
 }
-local var_0_17 = {
+local var_0_16 = {
 	0,
 	3
 }
-local var_0_18 = {
+local var_0_17 = {
 	1,
 	2
 }
-local var_0_19 = {
+local var_0_18 = {
 	100,
 	100,
 	100,
 	100
 }
-local var_0_20 = {
+local var_0_19 = {
 	0,
 	0,
 	0,
@@ -91,7 +85,7 @@ local var_0_20 = {
 	0,
 	0
 }
-local var_0_21 = {
+local var_0_20 = {
 	3,
 	3.5,
 	4,
@@ -100,7 +94,7 @@ local var_0_21 = {
 	6.6,
 	8.4
 }
-local var_0_22 = {
+local var_0_21 = {
 	30,
 	80,
 	120,
@@ -108,7 +102,7 @@ local var_0_22 = {
 	160,
 	180
 }
-local var_0_23 = {
+local var_0_22 = {
 	3,
 	3.5,
 	4,
@@ -116,53 +110,49 @@ local var_0_23 = {
 	4.7,
 	5
 }
-local var_0_24 = {
+local var_0_23 = {
 	30,
 	80,
 	120,
 	160,
 	180
 }
-local var_0_25 = 3
-local var_0_26 = {
+local var_0_24 = 3
+local var_0_25 = {
 	110,
 	193,
 	1170,
 	193
 }
-local var_0_27 = {
+local var_0_26 = {
 	117,
 	848,
 	1167,
 	848
 }
+local var_0_27 = Vector2(90, 244)
+local var_0_28 = 200
+local var_0_29 = 5
+local var_0_30 = 0
+local var_0_31 = 1000000
+local var_0_32 = 50000
+local var_0_33 = "event:/ui/getcandy"
+local var_0_34 = "event:/ui/jackboom"
 
-Vector2 = var_0_10027
-
-local var_0_28 = var_0_10027(90, 244)
-local var_0_29 = 200
-local var_0_30 = 5
-local var_0_31 = 0
-local var_0_32 = 1000000
-local var_0_33 = 50000
-local var_0_34 = "event:/ui/getcandy"
-local var_0_35 = "event:/ui/jackboom"
-
-local function var_0_36(arg_1_0)
+local function var_0_35(arg_1_0)
 	return
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "HalloweenGameUI"
 end
 
-function var_0_1.getBGM(arg_3_0)
+function var_0_0.getBGM(arg_3_0)
 	return "backyard"
 end
 
-local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = {}
-	local var_4_1 = {
+local function var_0_36(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = {
 		{
 			0,
 			4
@@ -172,72 +162,29 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 			6
 		}
 	}
-	local var_4_2 = 1
-	local var_4_3 = -1
+	local var_4_1 = 1
+	local var_4_2 = -1
 
-	var_4_0.charactorTf = arg_4_0
-	var_4_0.moveRanges = arg_4_1
-	var_4_0.scene = arg_4_2
-	var_4_0.speedX = 0
-	var_4_0.direct = 0
-	var_4_0.moveRightFlag = false
-	var_4_0.moveLeftFlag = false
-	var_4_0.charactorIdleCallback = false
+	;({}).charactorTf = arg_4_0
+	;({}).moveRanges = arg_4_1
+	;({}).scene = arg_4_2
+	;({}).speedX = 0
+	;({}).direct = 0
+	;({}).moveRightFlag = false
+	;({}).moveLeftFlag = false
+	;({}).charactorIdleCallback = false
+	;({}).ctor = function(arg_5_0)
+		arg_5_0.collider = findTF(arg_5_0.charactorTf, "collider")
+		arg_5_0.follow = findTF(arg_5_0.charactorTf, "follow")
+		arg_5_0.charAnimator = GetComponent(findTF(arg_5_0.charactorTf, "char"), typeof(Animator))
+		arg_5_0.posLight = findTF(arg_5_0.charactorTf, "posLight")
+		arg_5_0.lightCharAnimator = GetComponent(findTF(arg_5_0.posLight, "char"), typeof(Animator))
+		arg_5_0.lightCharDft = GetComponent(findTF(arg_5_0.posLight, "char"), typeof(DftAniEvent))
+		arg_5_0.lightEffectAnimator = GetComponent(findTF(arg_5_0.posLight, "light"), typeof(Animator))
+		arg_5_0.charactorDft = GetComponent(findTF(arg_5_0.charactorTf, "char"), typeof(DftAniEvent))
 
-	function var_4_0.ctor(arg_5_0)
-		findTF = var_2_10001
-		arg_5_0.collider = var_2_10001(arg_5_0.charactorTf, "collider")
-		findTF = var_1
-		arg_5_0.follow = var_1(arg_5_0.charactorTf, "follow")
-		GetComponent = var_1
-		findTF = var_3
-
-		local var_5_0 = var_3(arg_5_0.charactorTf, "char")
-
-		typeof = var_4
-		Animator = var_6
-		arg_5_0.charAnimator = var_1(var_5_0, var_4(var_6))
-		findTF = var_1
-		arg_5_0.posLight = var_1(arg_5_0.charactorTf, "posLight")
-		GetComponent = var_1
-		findTF = var_3
-
-		local var_5_1 = var_3(arg_5_0.posLight, "char")
-
-		typeof = var_4
-		Animator = var_6
-		arg_5_0.lightCharAnimator = var_1(var_5_1, var_4(var_6))
-		GetComponent = var_1
-		findTF = var_5_1
-
-		local var_5_2 = var_5_1(arg_5_0.posLight, "char")
-
-		typeof = var_4
-		DftAniEvent = var_6
-		arg_5_0.lightCharDft = var_1(var_5_2, var_4(var_6))
-		GetComponent = var_1
-		findTF = var_5_2
-
-		local var_5_3 = var_5_2(arg_5_0.posLight, "light")
-
-		typeof = var_4
-		Animator = var_6
-		arg_5_0.lightEffectAnimator = var_1(var_5_3, var_4(var_6))
-		GetComponent = var_1
-		findTF = var_5_3
-
-		local var_5_4 = var_5_3(arg_5_0.charactorTf, "char")
-
-		typeof = var_4
-		DftAniEvent = var_6
-		arg_5_0.charactorDft = var_1(var_5_4, var_4(var_6))
-
-		local var_5_5 = arg_5_0.charactorDft
-
-		var_1.SetEndEvent(var_5_5, function(arg_6_0)
-			local var_6_0 = arg_5_0
-
-			var_1.onAnimationEnd(var_6_0)
+		arg_5_0.charactorDft:SetEndEvent(function(arg_6_0)
+			arg_5_0:onAnimationEnd()
 
 			return
 		end)
@@ -245,16 +192,15 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.clearData(arg_7_0)
+	;({}).clearData = function(arg_7_0)
 		arg_7_0.inAction = false
 		arg_7_0.direct = 0
-		arg_7_0.directType = var_4_2
+		arg_7_0.directType = var_4_1
 		arg_7_0.currentDirectType = nil
 		arg_7_0.ghostFlag = false
 		arg_7_0.ghostPlayFlag = false
 		arg_7_0.speedRangeIndex = 1
-		arg_7_0.maxSpeed = var_0_12[arg_7_0.speedRangeIndex]
+		arg_7_0.maxSpeed = var_0_11[arg_7_0.speedRangeIndex]
 		arg_7_0.playLightFlag = false
 		arg_7_0.moveLeftFlag = false
 		arg_7_0.moveRightFlag = false
@@ -262,8 +208,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.setGhostFlag(arg_8_0, arg_8_1, arg_8_2)
+	;({}).setGhostFlag = function(arg_8_0, arg_8_1, arg_8_2)
 		if arg_8_1 and (arg_8_0.ghostFlag or arg_8_0.ghostPlayFlag) then
 			return
 		end
@@ -271,11 +216,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 		arg_8_0:ghostAniCallback(true)
 
 		function arg_8_0.aniCallback(arg_9_0)
-			if not arg_9_0 then
-				arg_8_0.ghostFlag = arg_8_1
-			else
-				arg_8_0.ghostFlag = false
-			end
+			arg_8_0.ghostFlag = not arg_9_0 and arg_8_1 or false
 
 			if arg_8_2 then
 				arg_8_2()
@@ -295,8 +236,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.playLight(arg_10_0, arg_10_1, arg_10_2)
+	;({}).playLight = function(arg_10_0, arg_10_1, arg_10_2)
 		if arg_10_0.playLightFlag or arg_10_0.inAction then
 			if arg_10_1 then
 				arg_10_1(false)
@@ -306,21 +246,14 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 		end
 
 		arg_10_0.playLightFlag = true
-		setActive = var_3
 
-		var_3(arg_10_0.posLight, true)
-
-		local var_10_0 = arg_10_0.lightCharDft
-
-		var_3.SetEndEvent(var_10_0, function()
+		setActive(arg_10_0.posLight, true)
+		arg_10_0.lightCharDft:SetEndEvent(function()
 			arg_10_0.playLightFlag = false
 
 			return
 		end)
-
-		local var_10_1 = arg_10_0.lightCharDft
-
-		var_3.SetTriggerEvent(var_10_1, function()
+		arg_10_0.lightCharDft:SetTriggerEvent(function()
 			if arg_10_1 then
 				arg_10_1(true)
 			end
@@ -328,28 +261,17 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 			return
 		end)
 
-		if arg_10_2 == var_0_4 then
-			local var_10_2 = arg_10_0.lightCharAnimator
-
-			var_3.Play(var_10_2, "charLight", -1, 0)
-
-			local var_10_3 = arg_10_0.lightEffectAnimator
-
-			var_3.Play(var_10_3, "lightOn", -1, 0)
-		elseif arg_10_2 == var_0_5 then
-			local var_10_4 = arg_10_0.lightCharAnimator
-
-			var_3.Play(var_10_4, "charUnLight", -1, 0)
-
-			local var_10_5 = arg_10_0.lightEffectAnimator
-
-			var_3.Play(var_10_5, "lightOff", -1, 0)
+		if arg_10_2 == var_0_3 then
+			arg_10_0.lightCharAnimator:Play("charLight", -1, 0)
+			arg_10_0.lightEffectAnimator:Play("lightOn", -1, 0)
+		elseif arg_10_2 == var_0_4 then
+			arg_10_0.lightCharAnimator:Play("charUnLight", -1, 0)
+			arg_10_0.lightEffectAnimator:Play("lightOff", -1, 0)
 		end
 
 		return
 	end
-
-	function var_4_0.ghostAniCallback(arg_13_0, arg_13_1)
+	;({}).ghostAniCallback = function(arg_13_0, arg_13_1)
 		if arg_13_0.aniCallback then
 			arg_13_0.aniCallback(arg_13_1)
 
@@ -358,123 +280,63 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.hideDrumpGhost(arg_14_0)
-		findTF = var_2_10001
-
-		local var_14_0 = var_2_10001(arg_14_0.charactorTf, "ghostContainer/posGhost")
-
-		setActive = var_2_10002
-
-		var_2_10002(var_14_0, false)
+	;({}).hideDrumpGhost = function(arg_14_0)
+		setActive(findTF(arg_14_0.charactorTf, "ghostContainer/posGhost"), false)
 
 		return
 	end
-
-	function var_4_0.getGhostFlag(arg_15_0)
-		local var_15_0
-
-		if not arg_15_0.ghostFlag then
-			var_15_0 = arg_15_0.ghostPlayFlag
-		end
-
-		return var_15_0
+	;({}).getGhostFlag = function(arg_15_0)
+		return arg_15_0.ghostFlag or arg_15_0.ghostPlayFlag
 	end
-
-	function var_4_0.getActionFlag(arg_16_0)
+	;({}).getActionFlag = function(arg_16_0)
 		return arg_16_0.inAction
 	end
-
-	function var_4_0.playGhostDrump(arg_17_0)
+	;({}).playGhostDrump = function(arg_17_0)
 		arg_17_0.ghostPlayFlag = true
-		findTF = var_1
 
-		local var_17_0 = var_1(arg_17_0.charactorTf, "ghostContainer/posGhost")
+		local var_17_0 = findTF(arg_17_0.charactorTf, "ghostContainer/posGhost")
 
-		setActive = var_2_10002
-
-		var_2_10002(var_17_0, true)
-
-		GetComponent = var_2_10002
-
-		local var_17_1 = var_17_0
-
-		typeof = var_5
-		Animator = var_2_10007
-
-		local var_17_2 = var_2_10002(var_17_1, var_5(var_2_10007))
-
-		GetComponent = var_3
-
-		local var_17_3 = var_17_0
-
-		typeof = var_2_10006
-		DftAniEvent = var_2_10008
-
-		local var_17_4 = var_3(var_17_3, var_2_10006(var_2_10008))
-
-		var_3.SetEndEvent(var_17_4, function()
-			local var_18_0 = arg_17_0
-
-			var_0.ghostAniCallback(var_18_0)
-
-			setActive = var_0
-
-			var_0(var_17_0, false)
+		setActive(var_17_0, true)
+		GetComponent(var_17_0, typeof(DftAniEvent)):SetEndEvent(function()
+			arg_17_0:ghostAniCallback()
+			setActive(var_17_0, false)
 
 			arg_17_0.ghostPlayFlag = false
 
 			if arg_17_0.inSpecial then
 				arg_17_0.currentDirectType = nil
 
-				local var_18_1 = arg_17_0
-
-				var_0.checkPlayerAnimation(var_18_1, true)
+				arg_17_0:checkPlayerAnimation(true)
 
 				arg_17_0.inSpecial = false
 			end
 
 			return
 		end)
-		var_17_2:Play("drump", -1, 0)
+		GetComponent(var_17_0, typeof(Animator)):Play("drump", -1, 0)
 
-		findTF = var_4
+		local var_17_1 = GetComponent(findTF(var_17_0, "drumpGhost/char"), typeof(Animator))
 
-		local var_17_5
-
-		var_17_5, GetComponent = var_4(var_17_0, "drumpGhost/char"), var_17_3
-		typeof = var_8
-		Animator = var_2_10010
-
-		local var_17_6 = var_17_3(var_17_5, var_8(var_2_10010))
-
-		var_5.SetInteger(var_17_6, "state_type", 0)
-		var_5:SetInteger("state_type", 3)
+		var_17_1:SetInteger("state_type", 0)
+		var_17_1:SetInteger("state_type", 3)
 
 		return
 	end
-
-	function var_4_0.boom(arg_19_0)
+	;({}).boom = function(arg_19_0)
 		if arg_19_0.inAction then
 			return
 		end
 
 		local var_19_0 = "boom"
 
-		if arg_19_0.currentDirectType == var_0_2 then
-			var_19_0 = var_19_0 .. "_left"
-		else
-			var_19_0 = var_19_0 .. "_right"
-		end
+		var_19_0 = arg_19_0.currentDirectType == var_0_1 and var_19_0 .. "_left" or var_19_0 .. "_right"
 
 		if arg_19_0.ghostFlag then
 			var_19_0 = var_19_0 .. "_ghost"
 		end
 
 		arg_19_0:PlayAniamtion(var_19_0, function()
-			local var_20_0 = arg_19_0
-
-			var_0.checkPlayerAnimation(var_20_0, true)
+			arg_19_0:checkPlayerAnimation(true)
 
 			arg_19_0.inAction = false
 
@@ -485,23 +347,18 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.fail(arg_21_0, arg_21_1)
+	;({}).fail = function(arg_21_0, arg_21_1)
 		if arg_21_0.inAction then
 			return
 		end
 
 		local var_21_0 = "fail"
 
-		if arg_21_0.currentDirectType == var_0_2 then
-			var_21_0 = var_21_0 .. "_left"
-		else
-			var_21_0 = var_21_0 .. "_right"
-		end
+		var_21_0 = arg_21_0.currentDirectType == var_0_1 and var_21_0 .. "_left" or var_21_0 .. "_right"
 
-		if arg_21_1 == var_0_8 then
+		if arg_21_1 == var_0_7 then
 			var_21_0 = var_21_0 .. "_miss"
-		elseif arg_21_1 == var_0_9 then
+		elseif arg_21_1 == var_0_8 then
 			var_21_0 = var_21_0 .. "_boom"
 		end
 
@@ -519,8 +376,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.gameOver(arg_23_0)
+	;({}).gameOver = function(arg_23_0)
 		arg_23_0.moveFlag = false
 
 		if arg_23_0.charactorIdleCallback then
@@ -529,65 +385,53 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.start(arg_24_0)
+	;({}).start = function(arg_24_0)
 		arg_24_0.moveFlag = true
-		arg_24_0.startTime = var_0_31
+		arg_24_0.startTime = var_0_30
 
 		arg_24_0:clearData()
 
 		return
 	end
-
-	function var_4_0.step(arg_25_0)
+	;({}).step = function(arg_25_0)
 		if not arg_25_0.moveFlag then
 			return
 		end
 
 		if not arg_25_0.inAction then
 			if arg_25_0.direct ~= 0 then
-				local var_25_0 = arg_25_0.maxSpeed
+				local var_25_0
 
-				math = var_2_10002
-
-				if var_25_0 - var_2_10002.abs(arg_25_0.speedX) < var_0_14 then
+				if arg_25_0.maxSpeed - math.abs(arg_25_0.speedX) < var_0_13 then
 					arg_25_0.speedX = arg_25_0.maxSpeed * arg_25_0.direct
-				else
-					math = var_1
-
-					if var_1.abs(arg_25_0.speedX) ~= arg_25_0.maxSpeed then
-						math = var_1
-						arg_25_0.speedX = (var_1.abs(arg_25_0.speedX) + var_0_14) * arg_25_0.direct
-					end
+				elseif math.abs(arg_25_0.speedX) ~= arg_25_0.maxSpeed then
+					arg_25_0.speedX = (math.abs(arg_25_0.speedX) + var_0_13) * arg_25_0.direct
+					var_25_0 = arg_25_0.charactorTf.localPosition.x
 				end
 
-				local var_25_1 = arg_25_0.ghostFlag and 0.5 or 1
-				local var_25_2
+				local var_25_1 = var_25_0 + arg_25_0.speedX * (arg_25_0.ghostFlag and 0.5 or 1)
 
-				if arg_25_0.charactorTf.localPosition.x + arg_25_0.speedX * var_25_1 < arg_25_0.moveRanges[1] then
-					var_25_2 = arg_25_0.moveRanges[1]
+				if var_25_0 + arg_25_0.speedX * (arg_25_0.ghostFlag and 0.5 or 1) < arg_25_0.moveRanges[1] then
+					var_25_1 = arg_25_0.moveRanges[1]
 				end
 
-				if var_25_2 > arg_25_0.moveRanges[3] then
-					var_25_2 = arg_25_0.moveRanges[3]
+				if var_25_1 > arg_25_0.moveRanges[3] then
+					var_25_1 = arg_25_0.moveRanges[3]
 				end
 
-				local var_25_3 = arg_25_0.charactorTf
-
-				Vector3 = var_4
-				var_25_3.localPosition = var_4(var_25_2, arg_25_0.charactorTf.localPosition.y, arg_25_0.charactorTf.localPosition.z)
+				arg_25_0.charactorTf.localPosition = Vector3(var_25_1, arg_25_0.charactorTf.localPosition.y, arg_25_0.charactorTf.localPosition.z)
 			end
 
 			arg_25_0:checkPlayerAnimation()
 		end
 
-		if arg_25_0.speedRangeIndex < #var_0_13 then
-			for iter_25_0 = #var_0_13, 1, -1 do
-				if var_0_31 - arg_25_0.startTime > var_0_13[iter_25_0] and arg_25_0.speedRangeIndex ~= iter_25_0 then
-					var_0_36("角色速度提升")
+		if arg_25_0.speedRangeIndex < #var_0_12 then
+			for iter_25_0 = #var_0_12, 1, -1 do
+				if var_0_30 - arg_25_0.startTime > var_0_12[iter_25_0] and arg_25_0.speedRangeIndex ~= iter_25_0 then
+					var_0_35("角色速度提升")
 
 					arg_25_0.speedRangeIndex = iter_25_0
-					arg_25_0.maxSpeed = var_0_12[arg_25_0.speedRangeIndex]
+					arg_25_0.maxSpeed = var_0_11[arg_25_0.speedRangeIndex]
 
 					break
 				end
@@ -596,16 +440,14 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		if arg_25_0.speedX == 0 and not arg_25_0.ghostFlag and not arg_25_0.inAction then
 			if arg_25_0.specialTime then
-				if var_0_31 - arg_25_0.specialTime >= 7 then
+				if var_0_30 - arg_25_0.specialTime >= 7 then
 					arg_25_0.specialTime = nil
 					arg_25_0.inSpecial = true
 
 					arg_25_0:PlayAniamtion("special", function()
 						arg_25_0.currentDirectType = nil
 
-						local var_26_0 = arg_25_0
-
-						var_0.checkPlayerAnimation(var_26_0, true)
+						arg_25_0:checkPlayerAnimation(true)
 
 						arg_25_0.inSpecial = false
 
@@ -613,7 +455,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 					end)
 				end
 			else
-				arg_25_0.specialTime = var_0_31
+				arg_25_0.specialTime = var_0_30
 			end
 		else
 			arg_25_0.specialTime = nil
@@ -621,7 +463,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		if arg_25_0.speedX == 0 and not arg_25_0.inAction then
 			if arg_25_0.idleTime then
-				if var_0_31 - arg_25_0.idleTime >= 5 then
+				if var_0_30 - arg_25_0.idleTime >= 5 then
 					arg_25_0.idleTime = nil
 
 					if arg_25_0.charactorIdleCallback then
@@ -629,7 +471,7 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 					end
 				end
 			else
-				arg_25_0.idleTime = var_0_31
+				arg_25_0.idleTime = var_0_30
 			end
 		else
 			arg_25_0.idleTime = nil
@@ -641,12 +483,11 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.checkPlayerAnimation(arg_27_0, arg_27_1)
+	;({}).checkPlayerAnimation = function(arg_27_0, arg_27_1)
 		if arg_27_0.currentDirectType ~= arg_27_0.directType or arg_27_1 then
 			arg_27_0.currentDirectType = arg_27_0.directType
 
-			if arg_27_0.currentDirectType == var_0_3 then
+			if arg_27_0.currentDirectType == var_0_2 then
 				arg_27_0:PlayAniamtion("idle_right")
 			else
 				arg_27_0:PlayAniamtion("idle_left")
@@ -658,45 +499,29 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 		if arg_27_0.speedX == 0 then
 			var_27_0 = 0
 		else
-			for iter_27_0 = 1, #var_4_1 do
-				local var_27_1 = var_4_1[iter_27_0]
-
-				math = var_2_10008
-
-				if var_2_10008.abs(arg_27_0.speedX) ~= 0 and arg_27_0.maxSpeed > var_27_1[1] and arg_27_0.maxSpeed <= var_27_1[2] then
+			for iter_27_0 = 1, #var_4_0 do
+				if math.abs(arg_27_0.speedX) ~= 0 and arg_27_0.maxSpeed > var_4_0[iter_27_0][1] and arg_27_0.maxSpeed <= var_4_0[iter_27_0][2] then
 					var_27_0 = iter_27_0
 				end
 			end
 		end
 
-		local var_27_2 = arg_27_0.charAnimator
-
-		if var_3.GetInteger(var_27_2, "speed_type") ~= var_27_0 then
-			local var_27_3 = arg_27_0.charAnimator
-
-			var_3.SetInteger(var_27_3, "speed_type", var_27_0)
+		if arg_27_0.charAnimator:GetInteger("speed_type") ~= var_27_0 then
+			arg_27_0.charAnimator:SetInteger("speed_type", var_27_0)
 		end
 
-		local var_27_4 = arg_27_0.charAnimator
-
-		if var_3.GetBool(var_27_4, "ghost") ~= arg_27_0.ghostFlag then
-			local var_27_5 = arg_27_0.charAnimator
-
-			var_3.SetBool(var_27_5, "ghost", arg_27_0.ghostFlag)
+		if arg_27_0.charAnimator:GetBool("ghost") ~= arg_27_0.ghostFlag then
+			arg_27_0.charAnimator:SetBool("ghost", arg_27_0.ghostFlag)
 		end
 
 		return
 	end
-
-	function var_4_0.PlayAniamtion(arg_28_0, arg_28_1, arg_28_2)
-		var_0_36("开始播放动作:" .. arg_28_1)
-
-		local var_28_0 = arg_28_0.charAnimator
-
-		var_3.Play(var_28_0, arg_28_1, -1, 0)
+	;({}).PlayAniamtion = function(arg_28_0, arg_28_1, arg_28_2)
+		var_0_35("开始播放动作:" .. arg_28_1)
+		arg_28_0.charAnimator:Play(arg_28_1, -1, 0)
 
 		if arg_28_0.onAniCallback then
-			var_0_36(arg_28_0.onAniamtionName .. "的animation被" .. arg_28_1 .. "中断")
+			var_0_35(arg_28_0.onAniamtionName .. "的animation被" .. arg_28_1 .. "中断")
 		end
 
 		arg_28_0.onAniamtionName = arg_28_1
@@ -704,22 +529,18 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
-
-	function var_4_0.onAnimationEnd(arg_29_0)
-		var_0_36("动作播放结束:" .. arg_29_0.onAniamtionName)
+	;({}).onAnimationEnd = function(arg_29_0)
+		var_0_35("动作播放结束:" .. arg_29_0.onAniamtionName)
 
 		if arg_29_0.onAniCallback then
-			local var_29_0 = arg_29_0.onAniCallback
-
 			arg_29_0.onAniCallback = nil
 
-			var_29_0()
+			arg_29_0.onAniCallback()
 		end
 
 		return
 	end
-
-	function var_4_0.onDirectChange(arg_30_0, arg_30_1, arg_30_2)
+	;({}).onDirectChange = function(arg_30_0, arg_30_1, arg_30_2)
 		if not arg_30_0.moveFlag then
 			return
 		end
@@ -732,19 +553,13 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 			arg_30_0.inSpecial = false
 		end
 
-		if arg_30_1 == var_0_2 then
+		if arg_30_1 == var_0_1 then
 			arg_30_0.moveLeftFlag = arg_30_2
-		elseif arg_30_1 == var_0_3 then
+		elseif arg_30_1 == var_0_2 then
 			arg_30_0.moveRightFlag = arg_30_2
 		end
 
-		local var_30_0
-
-		if arg_30_2 then
-			var_30_0 = arg_30_1 == var_0_2 and var_4_3 or var_4_2
-		else
-			var_30_0 = arg_30_0.moveRightFlag and 1 or arg_30_0.moveLeftFlag and -1 or 0
-		end
+		local var_30_0 = arg_30_2 and (arg_30_1 == var_0_1 and var_4_2 or var_4_1) or arg_30_0.moveRightFlag and 1 or arg_30_0.moveLeftFlag and -1 or 0
 
 		if arg_30_0.direct ~= var_30_0 or var_30_0 == 0 then
 			arg_30_0.speedX = 0
@@ -753,102 +568,99 @@ local function var_0_37(arg_4_0, arg_4_1, arg_4_2)
 		arg_30_0.direct = var_30_0
 
 		if arg_30_0.direct ~= 0 then
-			local var_30_1
+			if arg_30_0.direct == var_4_2 then
+				arg_30_0.directType = var_0_1 or var_0_2
 
-			if arg_30_0.direct ~= var_4_3 or not var_0_2 then
-				var_30_1 = var_0_3
+				return
 			end
-
-			arg_30_0.directType = var_30_1
 		end
-
-		return
 	end
-
-	function var_4_0.getCollider(arg_31_0)
+	;({}).getCollider = function(arg_31_0)
 		if not arg_31_0.collider then
 			-- block empty
 		end
 
 		local var_31_0 = arg_31_0.collider.sizeDelta.x
-		local var_31_1 = arg_31_0.collider.sizeDelta.y
-		local var_31_2 = arg_31_0.collider.position
-		local var_31_3 = arg_31_0.scene
+		local var_31_1 = arg_31_0.scene:InverseTransformPoint(arg_31_0.collider.position.x, arg_31_0.collider.position.y, 0)
 
-		var_4.x = var_4.InverseTransformPoint(var_31_3, var_31_2.x, var_31_2.y, 0).x - var_31_0 / 2
+		var_31_1.x = var_31_1.x - arg_31_0.collider.sizeDelta.x / 2
 
 		return {
-			pos = var_4,
+			pos = var_31_1,
 			width = var_31_0,
-			height = var_31_1
+			height = arg_31_0.collider.sizeDelta.y
 		}
 	end
-
-	function var_4_0.getFollowPos(arg_32_0)
+	;({}).getFollowPos = function(arg_32_0)
 		return arg_32_0.follow.position
 	end
-
-	function var_4_0.getLeavePos(arg_33_0)
+	;({}).getLeavePos = function(arg_33_0)
 		local var_33_0
 
 		if arg_33_0.ghostPlayFlag then
-			findTF = var_2
-			var_33_0 = var_2(arg_33_0.charactorTf, "ghostContainer/posGhost").position
+			var_33_0 = findTF(arg_33_0.charactorTf, "ghostContainer/posGhost").position
 
-			var_0_36("播放动画中，获取幽灵当前位置")
+			var_0_35("播放动画中，获取幽灵当前位置")
 		else
-			if not arg_33_0.leavePos then
-				findTF = var_2
-				arg_33_0.leavePos = var_2(arg_33_0.charactorTf, "posGhostLeave")
-			end
-
+			arg_33_0.leavePos = arg_33_0.leavePos or findTF(arg_33_0.charactorTf, "posGhostLeave")
 			var_33_0 = arg_33_0.leavePos.position
 
-			var_0_36("播放动画结束，获取头顶位置")
+			var_0_35("播放动画结束，获取头顶位置")
 		end
 
 		return var_33_0
 	end
-
-	function var_4_0.clearDirect(arg_34_0)
+	;({}).clearDirect = function(arg_34_0)
 		arg_34_0.direct = 0
 		arg_34_0.speedX = 0
 
 		return
 	end
 
-	var_4_0:ctor()
+	;({}):ctor()
 
-	return var_4_0
+	return {}
 end
 
-local function var_0_38(arg_35_0, arg_35_1)
-	local var_35_0 = {
+local function var_0_37(arg_35_0, arg_35_1)
+	({
 		moveTf = arg_35_0,
 		useLightTf = arg_35_1
-	}
+	}).initFlag = false
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).direct = 0
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).pointChangeCallback = nil
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).pointUpCallback = nil
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).pointLightCallback = nil
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).lightTime = nil
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).Ctor = function(arg_36_0)
+		arg_36_0.buttonDelegate = GetOrAddComponent(arg_36_0.useLightTf, "EventTriggerListener")
 
-	var_35_0.initFlag = false
-	var_35_0.direct = 0
-	var_35_0.pointChangeCallback = nil
-	var_35_0.pointUpCallback = nil
-	var_35_0.pointLightCallback = nil
-	var_35_0.lightTime = nil
-
-	function var_35_0.Ctor(arg_36_0)
-		GetOrAddComponent = var_2_10001
-		arg_36_0.buttonDelegate = var_2_10001(arg_36_0.useLightTf, "EventTriggerListener")
-
-		local var_36_0 = arg_36_0.buttonDelegate
-
-		var_1.AddPointDownFunc(var_36_0, function(arg_37_0, arg_37_1)
+		arg_36_0.buttonDelegate:AddPointDownFunc(function(arg_37_0, arg_37_1)
 			local var_37_0
 
-			if not arg_36_0.lightTime or var_0_31 - arg_36_0.lightTime > var_0_30 then
-				var_37_0 = var_0_4
-				arg_36_0.lightTime = var_0_31
+			if not arg_36_0.lightTime or var_0_30 - arg_36_0.lightTime > var_0_29 then
+				var_37_0 = var_0_3
+				arg_36_0.lightTime = var_0_30
 			else
-				var_37_0 = var_0_5
+				var_37_0 = var_0_4
 			end
 
 			if arg_36_0.pointLightCallback then
@@ -858,48 +670,33 @@ local function var_0_38(arg_35_0, arg_35_1)
 			return
 		end)
 
-		GetOrAddComponent = var_1
-		findTF = var_36_0
-		arg_36_0.delegateLeft = var_1(var_36_0(arg_36_0.moveTf, "left"), "EventTriggerListener")
-		GetOrAddComponent = var_1
-		findTF = var_3
-		arg_36_0.delegateRight = var_1(var_3(arg_36_0.moveTf, "right"), "EventTriggerListener")
+		arg_36_0.delegateLeft = GetOrAddComponent(findTF(arg_36_0.moveTf, "left"), "EventTriggerListener")
+		arg_36_0.delegateRight = GetOrAddComponent(findTF(arg_36_0.moveTf, "right"), "EventTriggerListener")
 
-		local var_36_1 = arg_36_0.delegateLeft
+		arg_36_0.delegateLeft:AddPointDownFunc(function(arg_38_0, arg_38_1)
+			if arg_36_0.pointChangeCallback then
+				arg_36_0.pointChangeCallback(var_0_1)
+			end
 
-		var_1.AddPointDownFunc(var_36_1, function(arg_38_0, arg_38_1)
+			return
+		end)
+		arg_36_0.delegateRight:AddPointDownFunc(function(arg_39_0, arg_39_1)
 			if arg_36_0.pointChangeCallback then
 				arg_36_0.pointChangeCallback(var_0_2)
 			end
 
 			return
 		end)
-
-		local var_36_2 = arg_36_0.delegateRight
-
-		var_1.AddPointDownFunc(var_36_2, function(arg_39_0, arg_39_1)
-			if arg_36_0.pointChangeCallback then
-				arg_36_0.pointChangeCallback(var_0_3)
+		arg_36_0.delegateLeft:AddPointUpFunc(function(arg_40_0, arg_40_1)
+			if arg_36_0.pointUpCallback then
+				arg_36_0.pointUpCallback(var_0_1)
 			end
 
 			return
 		end)
-
-		local var_36_3 = arg_36_0.delegateLeft
-
-		var_1.AddPointUpFunc(var_36_3, function(arg_40_0, arg_40_1)
+		arg_36_0.delegateRight:AddPointUpFunc(function(arg_41_0, arg_41_1)
 			if arg_36_0.pointUpCallback then
 				arg_36_0.pointUpCallback(var_0_2)
-			end
-
-			return
-		end)
-
-		local var_36_4 = arg_36_0.delegateRight
-
-		var_1.AddPointUpFunc(var_36_4, function(arg_41_0, arg_41_1)
-			if arg_36_0.pointUpCallback then
-				arg_36_0.pointUpCallback(var_0_3)
 			end
 
 			return
@@ -909,242 +706,184 @@ local function var_0_38(arg_35_0, arg_35_1)
 
 		return
 	end
-
-	function var_35_0.callbackDirect(arg_42_0, arg_42_1, arg_42_2)
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).callbackDirect = function(arg_42_0, arg_42_1, arg_42_2)
 		if not arg_42_2 then
 			return
 		end
 
 		local var_42_0 = arg_42_0:getPointFromEventData(arg_42_1)
 
-		var_0_36(var_42_0.x .. "  " .. var_42_0.y)
-
-		local var_42_1 = arg_42_0:getDirect(var_42_0)
-
-		arg_42_2(var_42_1)
+		var_0_35(var_42_0.x .. "  " .. var_42_0.y)
+		arg_42_2((arg_42_0:getDirect(var_42_0)))
 
 		return
 	end
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).getPointFromEventData = function(arg_43_0, arg_43_1)
+		arg_43_0.uiCam = arg_43_0.uiCam or GameObject.Find("UICamera"):GetComponent("Camera")
 
-	function var_35_0.getPointFromEventData(arg_43_0, arg_43_1)
-		if not arg_43_0.uiCam then
-			GameObject = var_2
-
-			local var_43_0 = var_2.Find("UICamera")
-
-			arg_43_0.uiCam = var_2.GetComponent(var_43_0, "Camera")
-		end
-
-		local var_43_1 = arg_43_0.uiCam
-		local var_43_2 = var_2.ScreenToWorldPoint(var_43_1, arg_43_1.position)
-		local var_43_3 = arg_43_0.moveTf
-
-		return (var_3.InverseTransformPoint(var_43_3, var_43_2))
+		return (arg_43_0.moveTf:InverseTransformPoint((arg_43_0.uiCam:ScreenToWorldPoint(arg_43_1.position))))
 	end
-
-	function var_35_0.getDirect(arg_44_0, arg_44_1)
-		local var_44_0 = arg_44_0.moveTf.sizeDelta.x
-		local var_44_1 = arg_44_0.moveTf.sizeDelta.y
-
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).getDirect = function(arg_44_0, arg_44_1)
 		if arg_44_1.x >= 0 then
-			return var_0_3
-		else
 			return var_0_2
+		else
+			return var_0_1
 		end
 
 		return
 	end
-
-	function var_35_0.changeRemind(arg_45_0, arg_45_1)
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).changeRemind = function(arg_45_0, arg_45_1)
 		arg_45_0.remindFlag = arg_45_1
-		GetComponent = var_2_10002
 
-		local var_45_0 = arg_45_0.useLightTf
+		local var_45_0 = GetComponent(arg_45_0.useLightTf, typeof(Animator))
 
-		typeof = var_2_10005
-		Animator = var_2_10007
-
-		local var_45_1 = var_2_10002(var_45_0, var_2_10005(var_2_10007))
-
-		if arg_45_1 then
-			isActive = var_2_10003
-			findTF = var_5
-
-			if var_2_10003(var_5(arg_45_0.useLightTf, "light")) then
-				var_45_1:Play("useLightRemind", -1, 0)
-
-				goto label_45_0
-			end
+		if arg_45_1 and isActive(findTF(arg_45_0.useLightTf, "light")) then
+			var_45_0:Play("useLightRemind", -1, 0)
+		else
+			var_45_0:Play("useLightIdle", -1, 0)
 		end
-
-		var_45_1:Play("useLightIdle", -1, 0)
-
-		::label_45_0::
 
 		return
 	end
-
-	function var_35_0.start(arg_46_0)
-		setActive = var_2_10001
-		findTF = var_2_10003
-
-		var_2_10001(var_2_10003(arg_46_0.useLightTf, "light"), true)
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).start = function(arg_46_0)
+		setActive(findTF(arg_46_0.useLightTf, "light"), true)
 
 		arg_46_0.lightTime = nil
 
 		return
 	end
-
-	function var_35_0.step(arg_47_0)
-		if not arg_47_0.lightTime or var_0_31 - arg_47_0.lightTime > var_0_30 then
-			isActive = var_1
-			findTF = var_2_10003
-
-			if not var_1(var_2_10003(arg_47_0.useLightTf, "light")) then
-				setActive = var_1
-				findTF = var_2_10003
-
-				var_1(var_2_10003(arg_47_0.useLightTf, "light"), true)
-
-				var_2_10003 = arg_47_0
-
-				arg_47_0.changeRemind(var_2_10003, arg_47_0.remindFlag)
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).step = function(arg_47_0)
+		if not arg_47_0.lightTime or var_0_30 - arg_47_0.lightTime > var_0_29 then
+			if not isActive(findTF(arg_47_0.useLightTf, "light")) then
+				setActive(findTF(arg_47_0.useLightTf, "light"), true)
+				arg_47_0:changeRemind(arg_47_0.remindFlag)
 			end
-		else
-			isActive = var_1
-			findTF = var_2_10003
-
-			if var_1(var_2_10003(arg_47_0.useLightTf, "light")) then
-				setActive = var_1
-				findTF = var_3
-
-				var_1(var_3(arg_47_0.useLightTf, "light"), false)
-			end
+		elseif isActive(findTF(arg_47_0.useLightTf, "light")) then
+			setActive(findTF(arg_47_0.useLightTf, "light"), false)
 		end
 
 		return
 	end
-
-	function var_35_0.gameOver(arg_48_0)
-		setActive = var_2_10001
-		findTF = var_2_10003
-
-		var_2_10001(var_2_10003(arg_48_0.useLightTf, "light"), false)
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).gameOver = function(arg_48_0)
+		setActive(findTF(arg_48_0.useLightTf, "light"), false)
 
 		return
 	end
-
-	function var_35_0.destroy(arg_49_0)
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}).destroy = function(arg_49_0)
 		if arg_49_0.delegateLeft then
-			ClearEventTrigger = var_1
-
-			var_1(arg_49_0.delegateLeft)
+			ClearEventTrigger(arg_49_0.delegateLeft)
 		end
 
 		if arg_49_0.delegateRight then
-			ClearEventTrigger = var_1
-
-			var_1(arg_49_0.delegateRight)
+			ClearEventTrigger(arg_49_0.delegateRight)
 		end
 
 		return
 	end
 
-	var_35_0:Ctor()
+	;({
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}):Ctor()
 
-	return var_35_0
+	return {
+		moveTf = arg_35_0,
+		useLightTf = arg_35_1
+	}
 end
 
-local function var_0_39(arg_50_0, arg_50_1)
-	local var_50_0 = {
+local function var_0_38(arg_50_0, arg_50_1)
+	({
 		_tf = arg_50_0,
 		moveRange = arg_50_1
-	}
+	}).targetX = nil
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).speedX = 1
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).dropCallback = nil
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).dropNum = 0
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).Ctor = function(arg_51_0)
+		arg_51_0.bodyAnimator = GetComponent(findTF(arg_51_0._tf, "char/body"), typeof(Animator))
+		arg_51_0.bodyDft = GetComponent(findTF(arg_51_0._tf, "char/body"), typeof(DftAniEvent))
 
-	var_50_0.targetX = nil
-	var_50_0.speedX = 1
-	var_50_0.dropCallback = nil
-	var_50_0.dropNum = 0
-
-	function var_50_0.Ctor(arg_51_0)
-		GetComponent = var_2_10001
-		findTF = var_2_10003
-
-		local var_51_0 = var_2_10003(arg_51_0._tf, "char/body")
-
-		typeof = var_2_10004
-		Animator = var_6
-		arg_51_0.bodyAnimator = var_2_10001(var_51_0, var_2_10004(var_6))
-		GetComponent = var_1
-		findTF = var_51_0
-
-		local var_51_1 = var_51_0(arg_51_0._tf, "char/body")
-
-		typeof = var_4
-		DftAniEvent = var_6
-		arg_51_0.bodyDft = var_1(var_51_1, var_4(var_6))
-
-		local var_51_2 = arg_51_0.bodyDft
-
-		var_1.SetEndEvent(var_51_2, function()
-			local var_52_0 = arg_51_0
-
-			var_0.dropEnd(var_52_0)
+		arg_51_0.bodyDft:SetEndEvent(function()
+			arg_51_0:dropEnd()
 
 			return
 		end)
-
-		local var_51_3 = arg_51_0.bodyDft
-
-		var_1.SetTriggerEvent(var_51_3, function()
-			local var_53_0 = arg_51_0
-
-			var_0.dropItem(var_53_0)
+		arg_51_0.bodyDft:SetTriggerEvent(function()
+			arg_51_0:dropItem()
 
 			return
 		end)
 
 		return
 	end
-
-	function var_50_0.start(arg_54_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).start = function(arg_54_0)
 		arg_54_0.moveFlag = true
 		arg_54_0.speedLevel = 1
 
 		return
 	end
-
-	function var_50_0.gameOver(arg_55_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).gameOver = function(arg_55_0)
 		arg_55_0.moveFlag = false
 
 		return
 	end
-
-	function var_50_0.step(arg_56_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).step = function(arg_56_0)
 		if not arg_56_0.moveFlag then
 			return
 		end
 
 		if arg_56_0.targetX then
-			local var_56_0
-
 			if arg_56_0.targetX ~= arg_56_0._tf.localPosition.x then
-				var_56_0 = arg_56_0.targetX
-
-				if arg_56_0._tf.localPosition.x < var_56_0 then
-					var_56_0 = arg_56_0._tf
-					Vector3 = var_2
-					var_56_0.localPosition = var_2(arg_56_0._tf.localPosition.x + arg_56_0:getSpeed(), arg_56_0._tf.localPosition.y, arg_56_0._tf.localPosition.z)
-				else
-					var_56_0 = arg_56_0._tf
-					Vector3 = var_2
-					var_56_0.localPosition = var_2(arg_56_0._tf.localPosition.x - arg_56_0:getSpeed(), arg_56_0._tf.localPosition.y, arg_56_0._tf.localPosition.z)
-				end
+				arg_56_0._tf.localPosition = arg_56_0.targetX > arg_56_0._tf.localPosition.x and Vector3(arg_56_0._tf.localPosition.x + arg_56_0:getSpeed(), arg_56_0._tf.localPosition.y, arg_56_0._tf.localPosition.z) or Vector3(arg_56_0._tf.localPosition.x - arg_56_0:getSpeed(), arg_56_0._tf.localPosition.y, arg_56_0._tf.localPosition.z)
 			end
 
-			math = var_56_0
-
-			if var_56_0.abs(arg_56_0.targetX - arg_56_0._tf.localPosition.x) <= arg_56_0:getSpeed() then
+			if math.abs(arg_56_0.targetX - arg_56_0._tf.localPosition.x) <= arg_56_0:getSpeed() then
 				arg_56_0.targetX = nil
 			end
 		end
@@ -1153,528 +892,388 @@ local function var_0_39(arg_50_0, arg_50_1)
 			arg_56_0:setNextTarget()
 		end
 
-		if arg_56_0.speedLevel < #var_0_23 and var_0_24[arg_56_0.speedLevel] < var_0_31 then
+		if arg_56_0.speedLevel < #var_0_22 and var_0_23[arg_56_0.speedLevel] < var_0_30 then
 			arg_56_0.speedLevel = arg_56_0.speedLevel + 1
 		end
 
 		return
 	end
-
-	function var_50_0.getSpeed(arg_57_0)
-		return var_0_23[arg_57_0.speedLevel]
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).getSpeed = function(arg_57_0)
+		return var_0_22[arg_57_0.speedLevel]
 	end
-
-	function var_50_0.dropItem(arg_58_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).dropItem = function(arg_58_0)
 		if arg_58_0.dropCallback then
 			arg_58_0.dropCallback()
 		end
 
 		return
 	end
-
-	function var_50_0.dropEnd(arg_59_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).dropEnd = function(arg_59_0)
 		if arg_59_0.dropNum > 0 then
 			arg_59_0.dropNum = arg_59_0.dropNum - 1
 		end
 
-		local var_59_0 = arg_59_0.bodyAnimator
-
-		var_1.SetInteger(var_59_0, "dropNums", arg_59_0.dropNum)
+		arg_59_0.bodyAnimator:SetInteger("dropNums", arg_59_0.dropNum)
 
 		return
 	end
-
-	function var_50_0.addDropNum(arg_60_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).addDropNum = function(arg_60_0)
 		arg_60_0.dropNum = arg_60_0.dropNum + 1
 
-		local var_60_0 = arg_60_0.bodyAnimator
-
-		var_1.SetInteger(var_60_0, "dropNums", arg_60_0.dropNum)
+		arg_60_0.bodyAnimator:SetInteger("dropNums", arg_60_0.dropNum)
 
 		return
 	end
-
-	function var_50_0.setNextTarget(arg_61_0)
-		if not arg_61_0.targetX then
-			if arg_61_0._tf.localPosition.x < arg_61_0.moveRange[3] / 3 then
-				math = var_2
-				arg_61_0.targetX = var_2.random(arg_61_0.moveRange[3] * 2 / 3, arg_61_0.moveRange[3])
-			else
-				math = var_2
-				arg_61_0.targetX = var_2.random(arg_61_0.moveRange[1], arg_61_0.moveRange[3] / 3)
-			end
-		end
-
-		local var_61_0 = arg_61_0._tf.localPosition.x
-
-		if arg_61_0.targetX < var_61_0 then
-			local var_61_1 = arg_61_0._tf
-
-			Vector3 = var_2
-			var_61_1.localScale = var_2(-1, 1, 1)
-		else
-			local var_61_2 = arg_61_0._tf
-
-			Vector3 = var_2
-			var_61_2.localScale = var_2(1, 1, 1)
-		end
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).setNextTarget = function(arg_61_0)
+		arg_61_0.targetX = arg_61_0.targetX or arg_61_0._tf.localPosition.x < arg_61_0.moveRange[3] / 3 and math.random(arg_61_0.moveRange[3] * 2 / 3, arg_61_0.moveRange[3]) or math.random(arg_61_0.moveRange[1], arg_61_0.moveRange[3] / 3)
+		arg_61_0._tf.localScale = arg_61_0._tf.localPosition.x > arg_61_0.targetX and Vector3(-1, 1, 1) or Vector3(1, 1, 1)
 
 		return
 	end
-
-	function var_50_0.getDropWorldPos(arg_62_0)
-		if not arg_62_0.posDrop then
-			findTF = var_1
-			arg_62_0.posDrop = var_1(arg_62_0._tf, "char/posDrop")
-		end
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).getDropWorldPos = function(arg_62_0)
+		arg_62_0.posDrop = arg_62_0.posDrop or findTF(arg_62_0._tf, "char/posDrop")
 
 		return arg_62_0.posDrop.position
 	end
-
-	function var_50_0.clear(arg_63_0)
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}).clear = function(arg_63_0)
 		arg_63_0.dropNum = 0
 		arg_63_0.dropCallback = nil
 
 		return
 	end
 
-	var_50_0:Ctor()
+	;({
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}):Ctor()
 
-	return var_50_0
+	return {
+		_tf = arg_50_0,
+		moveRange = arg_50_1
+	}
 end
 
-local function var_0_40()
-	local var_64_0 = {}
-
-	var_64_0.speedLevel = 1
-	var_64_0.dropRequestCallback = nil
-
-	function var_64_0.start(arg_65_0)
+local function var_0_39()
+	({}).speedLevel = 1
+	;({}).dropRequestCallback = nil
+	;({}).start = function(arg_65_0)
 		arg_65_0.startFlag = true
 		arg_65_0.speedLevel = 1
-		arg_65_0.startTime = var_0_31
+		arg_65_0.startTime = var_0_30
 
 		return
 	end
-
-	function var_64_0.gameOver(arg_66_0)
+	;({}).gameOver = function(arg_66_0)
 		arg_66_0.startFlag = false
 		arg_66_0.stepTime = nil
 		arg_66_0.speedLevel = nil
 
 		return
 	end
-
-	function var_64_0.step(arg_67_0)
+	;({}).step = function(arg_67_0)
 		if not arg_67_0.startFlag then
 			return
 		end
 
 		if not arg_67_0.stepTime then
-			local var_67_0 = arg_67_0.startTime
+			arg_67_0.stepTime = arg_67_0.startTime + math.random() * (var_0_9[arg_67_0.speedLevel][1] - var_0_9[arg_67_0.speedLevel][2]) + var_0_9[arg_67_0.speedLevel][1]
+		elseif var_0_30 >= arg_67_0.stepTime then
+			arg_67_0.stepTime = var_0_30 + math.random(var_0_9[arg_67_0.speedLevel][1], var_0_9[arg_67_0.speedLevel][2])
 
-			math = var_2_10002
-			arg_67_0.stepTime = var_67_0 + var_2_10002.random() * (var_0_10[arg_67_0.speedLevel][1] - var_0_10[arg_67_0.speedLevel][2]) + var_0_10[arg_67_0.speedLevel][1]
-		else
-			local var_67_1 = var_0_31
-
-			if arg_67_0.stepTime <= var_67_1 then
-				local var_67_2 = var_0_31
-
-				math = var_2
-				arg_67_0.stepTime = var_67_2 + var_2.random(var_0_10[arg_67_0.speedLevel][1], var_0_10[arg_67_0.speedLevel][2])
-
-				if arg_67_0.dropRequestCallback then
-					arg_67_0.dropRequestCallback()
-				end
+			if arg_67_0.dropRequestCallback then
+				arg_67_0.dropRequestCallback()
 			end
 		end
 
-		if arg_67_0.speedLevel <= #var_0_11 then
-			if not arg_67_0.nextSpeedUpTime then
-				arg_67_0.nextSpeedUpTime = arg_67_0.startTime + var_0_11[arg_67_0.speedLevel]
-			end
+		if arg_67_0.speedLevel <= #var_0_10 then
+			arg_67_0.nextSpeedUpTime = arg_67_0.nextSpeedUpTime or arg_67_0.startTime + var_0_10[arg_67_0.speedLevel]
 
-			if var_0_31 >= arg_67_0.nextSpeedUpTime then
+			if var_0_30 >= arg_67_0.nextSpeedUpTime then
 				arg_67_0.speedLevel = arg_67_0.speedLevel + 1
 
-				local var_67_3
+				if arg_67_0.speedLevel <= #var_0_10 then
+					arg_67_0.nextSpeedUpTime = var_0_30 + var_0_10[arg_67_0.speedLevel] or nil
 
-				if not (arg_67_0.speedLevel <= #var_0_11) or not (var_0_31 + var_0_11[arg_67_0.speedLevel]) then
-					var_67_3 = nil
+					return
 				end
-
-				arg_67_0.nextSpeedUpTime = var_67_3
 			end
 		end
-
-		return
 	end
 
-	return var_64_0
+	return {}
 end
 
-local function var_0_41(arg_68_0, arg_68_1)
-	local var_68_0 = {
+local function var_0_40(arg_68_0, arg_68_1)
+	({
 		flyer = arg_68_0,
 		scene = arg_68_1,
 		dropItems = {}
-	}
-
-	var_68_0.lostCallback = nil
-	var_68_0.boomCallback = nil
-	var_68_0.dropSpeedUpCallback = nil
-
-	function var_68_0.start(arg_69_0)
+	}).lostCallback = nil
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).boomCallback = nil
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).dropSpeedUpCallback = nil
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).start = function(arg_69_0)
 		arg_69_0.startFlag = true
 		arg_69_0.speedLevel = 1
 		arg_69_0.nextSpeedUpTime = nil
-		arg_69_0.startTime = var_0_31
+		arg_69_0.startTime = var_0_30
 
 		return
 	end
-
-	function var_68_0.gameOver(arg_70_0)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).gameOver = function(arg_70_0)
 		arg_70_0.startFlag = false
 
 		for iter_70_0 = #arg_70_0.dropItems, 1, -1 do
-			local var_70_0 = arg_70_0.dropItems[iter_70_0].tf
-
-			table = var_2_10006
-			var_2_10006 = var_2_10006.remove(arg_70_0.dropItems, iter_70_0)
-
-			arg_70_0:returnDropItem(var_2_10006)
+			arg_70_0:returnDropItem((table.remove(arg_70_0.dropItems, iter_70_0)))
 		end
 
 		return
 	end
-
-	function var_68_0.createDropItem(arg_71_0)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).createDropItem = function(arg_71_0)
 		local var_71_0 = arg_71_0:getDropItem()
-		local var_71_1 = arg_71_0.flyer
-		local var_71_2 = var_2.getDropWorldPos(var_71_1)
-		local var_71_3 = arg_71_0.scene
-		local var_71_4 = var_3.InverseTransformPoint(var_71_3, var_71_2)
 
-		var_71_0.tf.localPosition = var_71_4
+		var_71_0.tf.localPosition = arg_71_0.scene:InverseTransformPoint((arg_71_0.flyer:getDropWorldPos()))
+		arg_71_0.dropItems = arg_71_0.dropItems or {}
 
-		if not arg_71_0.dropItems then
-			arg_71_0.dropItems = {}
-		end
-
-		table = var_4
-
-		var_4.insert(arg_71_0.dropItems, var_71_0)
+		table.insert(arg_71_0.dropItems, var_71_0)
 
 		return
 	end
-
-	function var_68_0.getDropItem(arg_72_0)
-		if not arg_72_0.dropItemPool then
-			arg_72_0.dropItemPool = {}
-		end
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).getDropItem = function(arg_72_0)
+		arg_72_0.dropItemPool = arg_72_0.dropItemPool or {}
 
 		local var_72_0
-		local var_72_1 = #arg_72_0.dropItemPool
 
-		if 0 < var_72_1 then
-			table = var_72_1
-			var_72_0 = var_72_1.remove(arg_72_0.dropItemPool, 1)
+		if #arg_72_0.dropItemPool > 0 then
+			var_72_0 = table.remove(arg_72_0.dropItemPool, 1)
 		else
-			tf = var_72_1
-			instantiate = var_2_10004
-			findTF = var_2_10006
-			var_72_1 = var_72_1(var_2_10004(var_2_10006(arg_72_0.scene, "tplItem")))
-			SetParent = var_3
+			local var_72_1 = tf(instantiate(findTF(arg_72_0.scene, "tplItem")))
 
-			var_3(var_72_1, arg_72_0.scene, false)
+			SetParent(var_72_1, arg_72_0.scene, false)
 
 			var_72_0 = {
 				tf = var_72_1
 			}
 		end
 
-		math = var_72_1
+		if math.random(var_0_17[1], var_0_17[2]) <= var_0_17[1] then
+			local var_72_2 = var_0_6 or var_0_5
 
-		local var_72_2
+			var_72_0.type = var_72_2
+			var_72_0.speed = var_0_20[arg_72_0.speedLevel]
 
-		if not (var_72_1.random(var_0_18[1], var_0_18[2]) <= var_0_18[1]) or not var_0_7 then
-			var_72_2 = var_0_6
+			setActive(var_72_0.tf, true)
+			arg_72_0:setItemData(var_72_0, var_72_2)
+
+			return var_72_0
 		end
-
-		var_72_0.type = var_72_2
-		var_72_0.speed = var_0_21[arg_72_0.speedLevel]
-		setActive = var_3
-
-		var_3(var_72_0.tf, true)
-		arg_72_0:setItemData(var_72_0, var_72_2)
-
-		return var_72_0
 	end
-
-	function var_68_0.setItemData(arg_73_0, arg_73_1, arg_73_2)
-		local var_73_0 = arg_73_1.tf
-
-		findTF = var_2_10004
-
-		local var_73_1 = var_2_10004(var_73_0, "candy")
-
-		findTF = var_2_10005
-
-		local var_73_2 = var_2_10005(var_73_0, "boom")
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).setItemData = function(arg_73_0, arg_73_1, arg_73_2)
+		local var_73_0 = findTF(arg_73_1.tf, "candy")
+		local var_73_1 = findTF(arg_73_1.tf, "boom")
 
 		arg_73_1.score = 0
 
-		local var_73_3
+		if arg_73_2 == var_0_5 then
+			setActive(var_73_0, true)
+			setActive(var_73_1, false)
 
-		if arg_73_2 == var_0_6 then
-			setActive = var_73_3
+			local var_73_2 = math.random(var_0_16[1], var_0_16[2])
+			local var_73_3 = GetComponent(findTF(var_73_0, "img"), typeof(Animator))
 
-			var_73_3(var_73_1, true)
+			var_73_3:SetInteger("type", var_73_2)
+			var_73_3:Play("candyIdle", -1, 0)
 
-			setActive = var_73_3
-
-			var_73_3(var_73_2, false)
-
-			math = var_73_3
-			var_73_3 = var_73_3.random(var_0_17[1], var_0_17[2])
-			GetComponent = var_7
-			findTF = var_9
-
-			local var_73_4 = var_9(var_73_1, "img")
-
-			typeof = var_2_10010
-			Animator = var_12
-
-			local var_73_5 = var_7(var_73_4, var_2_10010(var_12))
-
-			var_7.SetInteger(var_73_5, "type", var_73_3)
-			var_7:Play("candyIdle", -1, 0)
-
-			arg_73_1.score = var_0_19[var_73_3 + 1]
+			arg_73_1.score = var_0_18[var_73_2 + 1]
 		else
-			setActive = var_73_3
-
-			var_73_3(var_73_1, false)
-
-			setActive = var_73_3
-
-			var_73_3(var_73_2, true)
+			setActive(var_73_0, false)
+			setActive(var_73_1, true)
 		end
 
 		return
 	end
-
-	function var_68_0.returnDropItem(arg_74_0, arg_74_1)
-		setActive = var_2_10002
-
-		var_2_10002(arg_74_1.tf, false)
-
-		table = var_2_10002
-
-		var_2_10002.insert(arg_74_0.dropItemPool, arg_74_1)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).returnDropItem = function(arg_74_0, arg_74_1)
+		setActive(arg_74_1.tf, false)
+		table.insert(arg_74_0.dropItemPool, arg_74_1)
 
 		return
 	end
-
-	function var_68_0.step(arg_75_0)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).step = function(arg_75_0)
 		if not arg_75_0.startFlag then
 			return
 		end
 
-		if arg_75_0.speedLevel <= #var_0_22 then
-			if not arg_75_0.nextSpeedUpTime then
-				arg_75_0.nextSpeedUpTime = arg_75_0.startTime + var_0_22[arg_75_0.speedLevel]
-			end
+		if arg_75_0.speedLevel <= #var_0_21 then
+			arg_75_0.nextSpeedUpTime = arg_75_0.nextSpeedUpTime or arg_75_0.startTime + var_0_21[arg_75_0.speedLevel]
 
-			if var_0_31 >= arg_75_0.nextSpeedUpTime then
+			if var_0_30 >= arg_75_0.nextSpeedUpTime then
 				arg_75_0.speedLevel = arg_75_0.speedLevel + 1
 
-				local var_75_0
+				if arg_75_0.speedLevel <= #var_0_21 then
+					arg_75_0.nextSpeedUpTime = arg_75_0.startTime + var_0_21[arg_75_0.speedLevel] or nil
 
-				if not (arg_75_0.speedLevel <= #var_0_22) or not (arg_75_0.startTime + var_0_22[arg_75_0.speedLevel]) then
-					var_75_0 = nil
-				end
-
-				arg_75_0.nextSpeedUpTime = var_75_0
-
-				if arg_75_0.dropSpeedUpCallback then
-					arg_75_0.dropSpeedUpCallback()
-				end
-			end
-		end
-
-		if arg_75_0.dropItems and #arg_75_0.dropItems > 0 then
-			for iter_75_0 = #arg_75_0.dropItems, 1, -1 do
-				local var_75_1 = arg_75_0.dropItems[iter_75_0].tf
-				local var_75_2 = arg_75_0.dropItems[iter_75_0].speed + var_0_20[arg_75_0.speedLevel]
-
-				arg_75_0.dropItems[iter_75_0].speed = var_75_2
-
-				if var_75_1.localPosition.y <= var_0_29 then
-					table = var_7
-
-					if var_7.remove(arg_75_0.dropItems, iter_75_0).type == var_0_6 and arg_75_0.lostCallback then
-						arg_75_0:playItemLost(var_7)
-						arg_75_0.lostCallback()
-					else
-						arg_75_0:returnDropItem(var_7)
+					if arg_75_0.dropSpeedUpCallback then
+						arg_75_0.dropSpeedUpCallback()
 					end
-				else
-					Vector3 = var_7
-					var_75_1.localPosition = var_7(var_75_1.localPosition.x, var_75_1.localPosition.y - var_75_2, var_75_1.localPosition.z)
+
+					if arg_75_0.dropItems and #arg_75_0.dropItems > 0 then
+						for iter_75_0 = #arg_75_0.dropItems, 1, -1 do
+							arg_75_0.dropItems[iter_75_0].speed = arg_75_0.dropItems[iter_75_0].speed + var_0_19[arg_75_0.speedLevel]
+
+							if arg_75_0.dropItems[iter_75_0].tf.localPosition.y <= var_0_28 then
+								local var_75_0 = table.remove(arg_75_0.dropItems, iter_75_0)
+
+								if var_75_0.type == var_0_5 and arg_75_0.lostCallback then
+									arg_75_0:playItemLost(var_75_0)
+									arg_75_0.lostCallback()
+								else
+									arg_75_0:returnDropItem(var_75_0)
+								end
+							else
+								arg_75_0.dropItems[iter_75_0].tf.localPosition = Vector3(arg_75_0.dropItems[iter_75_0].tf.localPosition.x, arg_75_0.dropItems[iter_75_0].tf.localPosition.y - (arg_75_0.dropItems[iter_75_0].speed + var_0_19[arg_75_0.speedLevel]), arg_75_0.dropItems[iter_75_0].tf.localPosition.z)
+							end
+						end
+					end
+
+					return
 				end
 			end
 		end
-
-		return
 	end
-
-	function var_68_0.dropItemCollider(arg_76_0, arg_76_1)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).dropItemCollider = function(arg_76_0, arg_76_1)
 		for iter_76_0 = #arg_76_0.dropItems, 1, -1 do
-			table = var_2_10006
-
-			if var_2_10006.contains(arg_76_1, iter_76_0) then
-				table = var_2_10006
-				var_2_10006 = var_2_10006.remove(arg_76_0.dropItems, iter_76_0)
-
-				arg_76_0:playItemEffect(var_2_10006)
+			if table.contains(arg_76_1, iter_76_0) then
+				arg_76_0:playItemEffect((table.remove(arg_76_0.dropItems, iter_76_0)))
 			end
 		end
 
 		return
 	end
-
-	function var_68_0.playItemEffect(arg_77_0, arg_77_1)
-		if arg_77_1.type == var_0_6 then
-			pg = var_3
-			var_2_10005 = var_3.CriMgr.GetInstance()
-
-			var_3.PlaySoundEffect_V3(var_2_10005, var_0_34)
-
-			GetComponent = var_3
-			findTF = var_2_10005
-			var_2_10005 = var_2_10005(arg_77_1.tf, "candy/img")
-			typeof = var_2_10006
-			Animator = var_8
-
-			local var_77_0 = var_3(var_2_10005, var_2_10006(var_8))
-
-			GetComponent = var_2_10004
-			findTF = var_2_10006
-			var_2_10006 = var_2_10006(arg_77_1.tf, "candy/img")
-			typeof = var_7
-			DftAniEvent = var_9
-
-			local var_77_1 = var_2_10004(var_2_10006, var_7(var_9))
-
-			var_2_10004.SetEndEvent(var_77_1, function()
-				local var_78_0 = arg_77_0
-
-				var_0.returnDropItem(var_78_0, arg_77_1)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).playItemEffect = function(arg_77_0, arg_77_1)
+		if arg_77_1.type == var_0_5 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_33)
+			GetComponent(findTF(arg_77_1.tf, "candy/img"), typeof(DftAniEvent)):SetEndEvent(function()
+				arg_77_0:returnDropItem(arg_77_1)
 
 				return
 			end)
-			var_77_0:SetTrigger("effect")
-		elseif var_2 == var_0_7 then
-			GetComponent = var_3
-			findTF = var_2_10005
+			GetComponent(findTF(arg_77_1.tf, "candy/img"), typeof(Animator)):SetTrigger("effect")
+		elseif arg_77_1.type == var_0_6 then
+			local var_77_0 = GetComponent(findTF(arg_77_1.tf, "boom/img"), typeof(DftAniEvent))
 
-			local var_77_2 = var_2_10005(arg_77_1.tf, "boom/img")
-
-			typeof = var_2_10006
-			Animator = var_8
-
-			local var_77_3 = var_3(var_77_2, var_2_10006(var_8))
-
-			GetComponent = var_2_10004
-			findTF = var_6
-
-			local var_77_4 = var_6(arg_77_1.tf, "boom/img")
-
-			typeof = var_7
-			DftAniEvent = var_9
-
-			local var_77_5 = var_2_10004(var_77_4, var_7(var_9))
-
-			var_4.SetEndEvent(var_77_5, function()
-				local var_79_0 = arg_77_0
-
-				var_0.returnDropItem(var_79_0, arg_77_1)
+			var_77_0:SetEndEvent(function()
+				arg_77_0:returnDropItem(arg_77_1)
 
 				return
 			end)
-
-			pg = var_5
-
-			local var_77_6 = var_5.CriMgr.GetInstance()
-
-			var_5.PlaySoundEffect_V3(var_77_6, var_0_35)
-			var_4:SetTriggerEvent(function()
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_34)
+			var_77_0:SetTriggerEvent(function()
 				if arg_77_0.boomCallback then
 					arg_77_0.boomCallback()
 				end
 
 				return
 			end)
-			var_77_3:SetTrigger("effect")
+			GetComponent(findTF(arg_77_1.tf, "boom/img"), typeof(Animator)):SetTrigger("effect")
 		end
 
 		return
 	end
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).playItemLost = function(arg_81_0, arg_81_1)
+		if arg_81_1.type == var_0_5 then
+			local var_81_0 = GetComponent(findTF(arg_81_1.tf, "candy/img"), typeof(Animator))
+			local var_81_1 = findTF(arg_81_1.tf, "candy/candy_glow")
+			local var_81_2 = GetComponent(findTF(arg_81_1.tf, "candy/img"), typeof(DftAniEvent))
 
-	function var_68_0.playItemLost(arg_81_0, arg_81_1)
-		if arg_81_1.type == var_0_6 then
-			GetComponent = var_3
-			findTF = var_2_10005
-
-			local var_81_0 = var_2_10005(arg_81_1.tf, "candy/img")
-
-			typeof = var_2_10006
-			Animator = var_8
-
-			local var_81_1 = var_3(var_81_0, var_2_10006(var_8))
-
-			findTF = var_2_10004
-
-			local var_81_2 = var_2_10004(arg_81_1.tf, "candy/candy_glow")
-
-			GetComponent = var_81_0
-			findTF = var_7
-
-			local var_81_3 = var_7(arg_81_1.tf, "candy/img")
-
-			typeof = var_8
-			DftAniEvent = var_10
-
-			local var_81_4 = var_81_0(var_81_3, var_8(var_10))
-			local var_81_5 = var_81_1:GetLayerIndex("newLayer")
-
-			var_81_4:SetEndEvent(function()
-				setActive = var_3_10000
-
-				var_3_10000(var_81_2, false)
-
-				local var_82_0 = arg_81_0
-
-				var_0.returnDropItem(var_82_0, arg_81_1)
+			var_81_2:SetEndEvent(function()
+				setActive(var_81_1, false)
+				arg_81_0:returnDropItem(arg_81_1)
 
 				return
 			end)
-			var_81_4:SetTriggerEvent(function()
-				setActive = var_3_10000
-
-				var_3_10000(var_81_2, true)
+			var_81_2:SetTriggerEvent(function()
+				setActive(var_81_1, true)
 
 				return
 			end)
-			var_81_1:Play("candyLost", var_81_5, 0)
+			var_81_0:Play("candyLost", var_81_0:GetLayerIndex("newLayer"), 0)
 		end
 
 		return
 	end
-
-	function var_68_0.getDropItemsCollider(arg_84_0)
+	;({
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}).getDropItemsCollider = function(arg_84_0)
 		if not arg_84_0.dropItems then
 			return
 		end
@@ -1682,19 +1281,13 @@ local function var_0_41(arg_68_0, arg_68_1)
 		local var_84_0 = {}
 
 		for iter_84_0 = 1, #arg_84_0.dropItems do
-			findTF = var_2_10006
+			local var_84_1 = findTF(arg_84_0.dropItems[iter_84_0].tf, "collider")
 
-			local var_84_1 = var_2_10006(arg_84_0.dropItems[iter_84_0].tf, "collider").sizeDelta.x
-			local var_84_2 = var_2_10006.sizeDelta.y
-			local var_84_3 = var_2_10006.position
-
-			table = var_2_10010
-
-			var_2_10010.insert(var_84_0, {
-				x = var_84_3.x,
-				y = var_84_3.y,
-				width = var_84_1,
-				height = var_84_2,
+			table.insert(var_84_0, {
+				x = var_84_1.position.x,
+				y = var_84_1.position.y,
+				width = var_84_1.sizeDelta.x,
+				height = var_84_1.sizeDelta.y,
 				index = iter_84_0,
 				type = arg_84_0.dropItems[iter_84_0].type,
 				score = arg_84_0.dropItems[iter_84_0].score
@@ -1704,31 +1297,42 @@ local function var_0_41(arg_68_0, arg_68_1)
 		return var_84_0
 	end
 
-	return var_68_0
+	return {
+		flyer = arg_68_0,
+		scene = arg_68_1,
+		dropItems = {}
+	}
 end
 
-local function var_0_42(arg_85_0, arg_85_1, arg_85_2)
-	local var_85_0 = {
+local function var_0_41(arg_85_0, arg_85_1, arg_85_2)
+	({
 		charactor = arg_85_0,
 		dropItemController = arg_85_1,
 		scene = arg_85_2
-	}
-
-	var_85_0.colliderDropItemCallback = nil
-
-	function var_85_0.start(arg_86_0)
+	}).colliderDropItemCallback = nil
+	;({
+		charactor = arg_85_0,
+		dropItemController = arg_85_1,
+		scene = arg_85_2
+	}).start = function(arg_86_0)
 		arg_86_0.startFlag = true
 
 		return
 	end
-
-	function var_85_0.gameOver(arg_87_0)
+	;({
+		charactor = arg_85_0,
+		dropItemController = arg_85_1,
+		scene = arg_85_2
+	}).gameOver = function(arg_87_0)
 		arg_87_0.startFlag = false
 
 		return
 	end
-
-	function var_85_0.step(arg_88_0)
+	;({
+		charactor = arg_85_0,
+		dropItemController = arg_85_1,
+		scene = arg_85_2
+	}).step = function(arg_88_0)
 		if not arg_88_0.startFlag then
 			return
 		end
@@ -1737,58 +1341,44 @@ local function var_0_42(arg_85_0, arg_85_1, arg_85_2)
 
 		return
 	end
+	;({
+		charactor = arg_85_0,
+		dropItemController = arg_85_1,
+		scene = arg_85_2
+	}).checkCollider = function(arg_89_0)
+		local var_89_0 = arg_89_0.dropItemController:getDropItemsCollider()
+		local var_89_1 = arg_89_0.charactor:getCollider()
 
-	function var_85_0.checkCollider(arg_89_0)
-		local var_89_0 = {}
-		local var_89_1 = arg_89_0.dropItemController
-		local var_89_2 = var_2.getDropItemsCollider(var_89_1)
-		local var_89_3 = arg_89_0.charactor
-		local var_89_4 = var_3.getCollider(var_89_3).pos
-
-		if var_89_2 and #var_89_2 > 0 then
-			for iter_89_0 = 1, #var_89_2 do
-				local var_89_5 = var_89_2[iter_89_0]
-				local var_89_6 = arg_89_0.scene
-				local var_89_7 = var_10.InverseTransformPoint(var_89_6, var_89_5.x, var_89_5.y, 0)
-
-				if arg_89_0:checkRectCollider(var_89_4, var_89_7, var_3, var_89_5) then
-					table = var_11
-
-					var_11.insert(var_89_0, var_89_5.index)
+		if var_89_0 and #var_89_0 > 0 then
+			for iter_89_0 = 1, #var_89_0 do
+				if arg_89_0:checkRectCollider(var_89_1.pos, arg_89_0.scene:InverseTransformPoint(var_89_0[iter_89_0].x, var_89_0[iter_89_0].y, 0), var_89_1, var_89_0[iter_89_0]) then
+					table.insert({}, var_89_0[iter_89_0].index)
 
 					if arg_89_0.colliderDropItemCallback then
-						arg_89_0.colliderDropItemCallback(var_89_5)
+						arg_89_0.colliderDropItemCallback(var_89_0[iter_89_0])
 					end
 				end
 			end
 		end
 
-		if #var_89_0 > 0 then
-			local var_89_8 = arg_89_0.dropItemController
-
-			var_5.dropItemCollider(var_89_8, var_89_0)
+		if #{} > 0 then
+			arg_89_0.dropItemController:dropItemCollider({})
 		end
 
 		return
 	end
-
-	function var_85_0.checkRectCollider(arg_90_0, arg_90_1, arg_90_2, arg_90_3, arg_90_4)
-		local var_90_0 = arg_90_1.x
-		local var_90_1 = arg_90_1.y
-		local var_90_2 = arg_90_3.width
-		local var_90_3 = arg_90_3.height
-		local var_90_4 = arg_90_2.x
-		local var_90_5 = arg_90_2.y
-		local var_90_6 = arg_90_4.width
-		local var_90_7 = arg_90_4.height
-
-		if var_90_4 <= var_90_0 and var_90_0 >= var_90_4 + var_90_6 then
+	;({
+		charactor = arg_85_0,
+		dropItemController = arg_85_1,
+		scene = arg_85_2
+	}).checkRectCollider = function(arg_90_0, arg_90_1, arg_90_2, arg_90_3, arg_90_4)
+		if arg_90_2.x <= arg_90_1.x and arg_90_1.x >= arg_90_2.x + arg_90_4.width then
 			return false
-		elseif var_90_0 <= var_90_4 and var_90_4 >= var_90_0 + var_90_2 then
+		elseif arg_90_1.x <= arg_90_2.x and arg_90_2.x >= arg_90_1.x + arg_90_3.width then
 			return false
-		elseif var_90_5 <= var_90_1 and var_90_1 >= var_90_5 + var_90_7 then
+		elseif arg_90_2.y <= arg_90_1.y and arg_90_1.y >= arg_90_2.y + arg_90_4.height then
 			return false
-		elseif var_90_1 <= var_90_5 and var_90_5 >= var_90_1 + var_90_3 then
+		elseif arg_90_1.y <= arg_90_2.y and arg_90_2.y >= arg_90_1.y + arg_90_3.height then
 			return false
 		else
 			return true
@@ -1797,236 +1387,154 @@ local function var_0_42(arg_85_0, arg_85_1, arg_85_2)
 		return
 	end
 
-	return var_85_0
+	return {
+		charactor = arg_85_0,
+		dropItemController = arg_85_1,
+		scene = arg_85_2
+	}
 end
 
-local function var_0_43(arg_91_0)
-	local var_91_0 = {
+local function var_0_42(arg_91_0)
+	({
 		_tf = arg_91_0
-	}
-
-	var_91_0.speedLevel = 1
-	var_91_0.createGhostCallback = nil
-	var_91_0.ghostSpeedUpCallback = nil
-
-	function var_91_0.start(arg_92_0)
+	}).speedLevel = 1
+	;({
+		_tf = arg_91_0
+	}).createGhostCallback = nil
+	;({
+		_tf = arg_91_0
+	}).ghostSpeedUpCallback = nil
+	;({
+		_tf = arg_91_0
+	}).start = function(arg_92_0)
 		arg_92_0.startFlag = true
 		arg_92_0.speedLevel = 1
-		arg_92_0.startTime = var_0_31
-		GetComponent = var_1
-		findTF = var_2_10003
-
-		local var_92_0 = var_2_10003(arg_92_0._tf, "char")
-
-		typeof = var_2_10004
-		Animator = var_6
-		arg_92_0.bossAnimator = var_1(var_92_0, var_2_10004(var_6))
-		findTF = var_1
-		arg_92_0.tip = var_1(arg_92_0._tf, "tip")
+		arg_92_0.startTime = var_0_30
+		arg_92_0.bossAnimator = GetComponent(findTF(arg_92_0._tf, "char"), typeof(Animator))
+		arg_92_0.tip = findTF(arg_92_0._tf, "tip")
 
 		return
 	end
-
-	function var_91_0.gameOver(arg_93_0)
+	;({
+		_tf = arg_91_0
+	}).gameOver = function(arg_93_0)
 		arg_93_0.startFlag = false
 		arg_93_0.stepTime = nil
-		setActive = var_1
 
-		var_1(arg_93_0.tip, false)
-
-		local var_93_0 = arg_93_0.bossAnimator
-
-		var_1.SetInteger(var_93_0, "state_type", 0)
+		setActive(arg_93_0.tip, false)
+		arg_93_0.bossAnimator:SetInteger("state_type", 0)
 
 		return
 	end
-
-	function var_91_0.step(arg_94_0)
+	;({
+		_tf = arg_91_0
+	}).step = function(arg_94_0)
 		if not arg_94_0.startFlag then
 			return
 		end
 
 		if not arg_94_0.stepTime then
-			local var_94_0 = arg_94_0.startTime
+			arg_94_0.stepTime = arg_94_0.startTime + math.random(var_0_14[arg_94_0.speedLevel][1], var_0_14[arg_94_0.speedLevel][2])
+		elseif var_0_30 >= arg_94_0.stepTime then
+			arg_94_0.stepTime = var_0_30 + math.random(var_0_14[arg_94_0.speedLevel][1], var_0_14[arg_94_0.speedLevel][2])
 
-			math = var_2_10002
-			arg_94_0.stepTime = var_94_0 + var_2_10002.random(var_0_15[arg_94_0.speedLevel][1], var_0_15[arg_94_0.speedLevel][2])
-		else
-			local var_94_1 = var_0_31
-
-			if arg_94_0.stepTime <= var_94_1 then
-				local var_94_2 = var_0_31
-
-				math = var_2
-				arg_94_0.stepTime = var_94_2 + var_2.random(var_0_15[arg_94_0.speedLevel][1], var_0_15[arg_94_0.speedLevel][2])
-
-				if arg_94_0.createGhostCallback then
-					arg_94_0.createGhostCallback()
-				end
+			if arg_94_0.createGhostCallback then
+				arg_94_0.createGhostCallback()
 			end
 		end
 
-		if arg_94_0.speedLevel <= #var_0_16 then
-			if not arg_94_0.nextSpeedUpTime then
-				arg_94_0.nextSpeedUpTime = arg_94_0.startTime + var_0_16[arg_94_0.speedLevel]
-			end
+		if arg_94_0.speedLevel <= #var_0_15 then
+			arg_94_0.nextSpeedUpTime = arg_94_0.nextSpeedUpTime or arg_94_0.startTime + var_0_15[arg_94_0.speedLevel]
 
-			if var_0_31 >= arg_94_0.nextSpeedUpTime then
+			if var_0_30 >= arg_94_0.nextSpeedUpTime then
 				arg_94_0.speedLevel = arg_94_0.speedLevel + 1
 
-				local var_94_3
+				if arg_94_0.speedLevel <= #var_0_15 then
+					arg_94_0.nextSpeedUpTime = arg_94_0.nextSpeedUpTime + var_0_15[arg_94_0.speedLevel] or nil
 
-				if not (arg_94_0.speedLevel <= #var_0_16) or not (arg_94_0.nextSpeedUpTime + var_0_16[arg_94_0.speedLevel]) then
-					var_94_3 = nil
+					if arg_94_0.ghostSpeedUpCallback then
+						arg_94_0.ghostSpeedUpCallback()
+					end
+
+					local var_94_1 = arg_94_0.nextSpeedUpTime or "(已经达到最高速度)"
+
+					var_94_0("幽灵生成速度提升" .. var_94_1)
+
+					return
 				end
-
-				arg_94_0.nextSpeedUpTime = var_94_3
-
-				if arg_94_0.ghostSpeedUpCallback then
-					arg_94_0.ghostSpeedUpCallback()
-				end
-
-				local var_94_4 = var_0_36
-				local var_94_5 = "幽灵生成速度提升"
-				local var_94_6
-
-				if not arg_94_0.nextSpeedUpTime then
-					var_94_6 = "(已经达到最高速度)"
-				end
-
-				var_94_4(var_94_5 .. var_94_6)
 			end
 		end
-
-		return
 	end
-
-	function var_91_0.showTip(arg_95_0, arg_95_1)
-		LeanTween = var_2_10002
-
-		local var_95_0 = var_2_10002.isTweening
-
-		go = var_2_10004
-
-		local var_95_1
-
-		if var_95_0(var_2_10004(arg_95_0.tip)) then
-			LeanTween = var_95_1
-			var_95_1 = var_95_1.cancel
-			go = var_4
-
-			var_95_1(var_4(arg_95_0.tip))
+	;({
+		_tf = arg_91_0
+	}).showTip = function(arg_95_0, arg_95_1)
+		if LeanTween.isTweening(go(arg_95_0.tip)) then
+			LeanTween.cancel(go(arg_95_0.tip))
 		end
 
-		setActive = var_95_1
-		findTF = var_4
-
-		var_95_1(var_4(arg_95_0.tip, "img1"), false)
-
-		setActive = var_95_1
-		findTF = var_4
-
-		var_95_1(var_4(arg_95_0.tip, "img2"), false)
-
-		setActive = var_95_1
-		findTF = var_4
-
-		var_95_1(var_4(arg_95_0.tip, "img" .. arg_95_1), true)
-
-		setActive = var_95_1
-
-		var_95_1(arg_95_0.tip, true)
-
-		LeanTween = var_95_1
-
-		local var_95_2 = var_95_1.delayedCall
-
-		go = var_4
-
-		local var_95_3 = var_4(arg_95_0.tip)
-		local var_95_4 = 10
-
-		System = var_6
-
-		var_95_2(var_95_3, var_95_4, var_6.Action(function()
-			setActive = var_3_10000
-
-			var_3_10000(arg_95_0.tip, false)
+		setActive(findTF(arg_95_0.tip, "img1"), false)
+		setActive(findTF(arg_95_0.tip, "img2"), false)
+		setActive(findTF(arg_95_0.tip, "img" .. arg_95_1), true)
+		setActive(arg_95_0.tip, true)
+		LeanTween.delayedCall(go(arg_95_0.tip), 10, System.Action(function()
+			setActive(arg_95_0.tip, false)
 
 			return
 		end))
 
 		return
 	end
-
-	function var_91_0.onCreate(arg_97_0)
-		local var_97_0 = arg_97_0.bossAnimator
-
-		var_1.SetInteger(var_97_0, "state_type", 3)
-
-		return
-	end
-
-	function var_91_0.onCatch(arg_98_0)
-		local var_98_0 = arg_98_0.bossAnimator
-
-		var_1.SetInteger(var_98_0, "state_type", 2)
+	;({
+		_tf = arg_91_0
+	}).onCreate = function(arg_97_0)
+		arg_97_0.bossAnimator:SetInteger("state_type", 3)
 
 		return
 	end
-
-	function var_91_0.onGhostDestroy(arg_99_0)
-		local var_99_0 = arg_99_0.bossAnimator
-
-		var_1.SetInteger(var_99_0, "state_type", 1)
-
-		local var_99_1 = var_0_31
-
-		math = var_2_10002
-		arg_99_0.stepTime = var_99_1 + var_2_10002.random(var_0_15[arg_99_0.speedLevel][1], var_0_15[arg_99_0.speedLevel][2])
+	;({
+		_tf = arg_91_0
+	}).onCatch = function(arg_98_0)
+		arg_98_0.bossAnimator:SetInteger("state_type", 2)
 
 		return
 	end
+	;({
+		_tf = arg_91_0
+	}).onGhostDestroy = function(arg_99_0)
+		arg_99_0.bossAnimator:SetInteger("state_type", 1)
 
-	function var_91_0.destory(arg_100_0)
-		LeanTween = var_2_10001
+		arg_99_0.stepTime = var_0_30 + math.random(var_0_14[arg_99_0.speedLevel][1], var_0_14[arg_99_0.speedLevel][2])
 
-		local var_100_0 = var_2_10001.isTweening
-
-		go = var_2_10003
-
-		if var_100_0(var_2_10003(arg_100_0.tip)) then
-			LeanTween = var_1
-
-			local var_100_1 = var_1.cancel
-
-			go = var_3
-
-			var_100_1(var_3(arg_100_0.tip))
+		return
+	end
+	;({
+		_tf = arg_91_0
+	}).destory = function(arg_100_0)
+		if LeanTween.isTweening(go(arg_100_0.tip)) then
+			LeanTween.cancel(go(arg_100_0.tip))
 		end
 
 		return
 	end
 
-	return var_91_0
+	return {
+		_tf = arg_91_0
+	}
 end
 
-local function var_0_44(arg_101_0, arg_101_1, arg_101_2)
-	local var_101_0 = {}
-	local var_101_1 = 4
+local function var_0_43(arg_101_0, arg_101_1, arg_101_2)
+	local var_101_0 = 4
 
-	var_101_0.tplGhost = arg_101_0
-	var_101_0.charactor = arg_101_1
-	var_101_0.scene = arg_101_2
-	var_101_0.catchCharactorCallback = nil
-
-	function var_101_0.start(arg_102_0)
+	;({}).tplGhost = arg_101_0
+	;({}).charactor = arg_101_1
+	;({}).scene = arg_101_2
+	;({}).catchCharactorCallback = nil
+	;({}).start = function(arg_102_0)
 		arg_102_0.startFlag = true
 
 		return
 	end
-
-	function var_101_0.gameOver(arg_103_0)
+	;({}).gameOver = function(arg_103_0)
 		arg_103_0.startFlag = false
 
 		if not arg_103_0.ghostChilds then
@@ -2034,89 +1542,62 @@ local function var_0_44(arg_101_0, arg_101_1, arg_101_2)
 		end
 
 		for iter_103_0 = #arg_103_0.ghostChilds, 1, -1 do
-			local var_103_0 = arg_103_0.ghostChilds[iter_103_0]
-
-			arg_103_0:removeChild(var_103_0)
+			arg_103_0:removeChild(arg_103_0.ghostChilds[iter_103_0])
 		end
 
 		return
 	end
-
-	function var_101_0.step(arg_104_0)
+	;({}).step = function(arg_104_0)
 		if not arg_104_0.startFlag or not arg_104_0.ghostChilds then
 			return
 		end
 
-		local var_104_0 = arg_104_0.charactor
-		local var_104_1 = var_1.getFollowPos(var_104_0)
-		local var_104_2 = arg_104_0.scene
-		local var_104_3 = var_2.InverseTransformPoint(var_104_2, var_104_1)
+		local var_104_0 = arg_104_0.scene:InverseTransformPoint((arg_104_0.charactor:getFollowPos()))
 
 		for iter_104_0 = #arg_104_0.ghostChilds, 1, -1 do
-			local var_104_4 = arg_104_0.ghostChilds[iter_104_0]
+			local var_104_1 = arg_104_0.ghostChilds[iter_104_0]
 
-			isActive = var_2_10008
+			if isActive(arg_104_0.ghostChilds[iter_104_0]) then
+				local var_104_2 = var_104_1.anchoredPosition
+				local var_104_3 = 0
+				local var_104_4 = 0
+				local var_104_5 = false
+				local var_104_6 = false
 
-			if var_2_10008(var_104_4) then
-				var_2_10008 = var_104_4.anchoredPosition
-
-				local var_104_5 = 0
-				local var_104_6 = 0
-				local var_104_7 = false
-				local var_104_8 = false
-
-				math = var_2_10013
-
-				if var_2_10013.abs(var_104_3.x - var_2_10008.x) > 10 then
-					var_104_5 = var_101_1 * (var_104_3.x > var_2_10008.x and 1 or -1)
+				if math.abs(var_104_0.x - var_104_1.anchoredPosition.x) > 10 then
+					var_104_3 = var_101_0 * (var_104_0.x > var_104_2.x and 1 or -1)
 				else
-					var_104_7 = true
+					var_104_5 = true
 				end
 
-				math = var_2_10013
-
-				if var_2_10013.abs(var_104_3.y - var_2_10008.y) > 10 then
-					var_104_6 = var_101_1 * (var_104_3.y > var_2_10008.y and 1 or -1)
+				if math.abs(var_104_0.y - var_104_2.y) > 10 then
+					var_104_4 = var_101_0 * (var_104_0.y > var_104_2.y and 1 or -1)
 				else
-					var_104_8 = true
+					var_104_6 = true
 				end
 
-				local var_104_9 = arg_104_0.charactor
+				if not arg_104_0.charactor:getGhostFlag() and not arg_104_0.charactor:getActionFlag() and var_104_6 and var_104_5 then
+					setActive(var_104_1, false)
 
-				if not var_2_10013.getGhostFlag(var_104_9) then
-					local var_104_10 = arg_104_0.charactor
-
-					if not var_2_10013.getActionFlag(var_104_10) and var_104_8 and var_104_7 then
-						setActive = var_2_10013
-
-						var_2_10013(var_104_4, false)
-
-						if arg_104_0.catchCharactorCallback then
-							arg_104_0.catchCharactorCallback(var_104_4)
-						end
-
-						return
+					if arg_104_0.catchCharactorCallback then
+						arg_104_0.catchCharactorCallback(var_104_1)
 					end
+
+					return
 				end
 
-				var_2_10008.x = var_2_10008.x + var_104_5
-				var_2_10008.y = var_2_10008.y + var_104_6
-				var_2_10013 = arg_104_0.ghostChilds[iter_104_0]
-				var_2_10013.anchoredPosition = var_2_10008
+				var_104_2.x = var_104_2.x + var_104_3
+				var_104_2.y = var_104_2.y + var_104_4
+				arg_104_0.ghostChilds[iter_104_0].anchoredPosition = var_104_2
 			end
 		end
 
 		return
 	end
-
-	function var_101_0.removeChild(arg_105_0, arg_105_1)
+	;({}).removeChild = function(arg_105_0, arg_105_1)
 		for iter_105_0 = 1, #arg_105_0.ghostChilds do
 			if arg_105_1 == arg_105_0.ghostChilds[iter_105_0] then
-				table = var_6
-
-				local var_105_0 = var_6.remove(arg_105_0.ghostChilds, iter_105_0)
-
-				arg_105_0:returnGhost(var_105_0)
+				arg_105_0:returnGhost((table.remove(arg_105_0.ghostChilds, iter_105_0)))
 
 				return
 			end
@@ -2124,140 +1605,65 @@ local function var_0_44(arg_101_0, arg_101_1, arg_101_2)
 
 		return
 	end
+	;({}).createGhost = function(arg_106_0)
+		arg_106_0.ghostChilds = arg_106_0.ghostChilds or {}
 
-	function var_101_0.createGhost(arg_106_0)
-		if not arg_106_0.ghostChilds then
-			arg_106_0.ghostChilds = {}
+		if #arg_106_0.ghostChilds > 0 or arg_101_1:getGhostFlag() then
+			return false
 		end
 
-		if not (#arg_106_0.ghostChilds > 0) then
-			local var_106_0 = arg_101_1
+		local var_106_0 = arg_106_0:getGhostChild()
 
-			if var_1.getGhostFlag(var_106_0) then
-				return false
-			end
+		var_106_0.anchoredPosition = var_0_27
 
-			local var_106_1 = arg_106_0:getGhostChild()
+		GetComponent(findTF(var_106_0, "char"), typeof(Animator)):SetInteger("state_type", 1)
+		table.insert(arg_106_0.ghostChilds, var_106_0)
 
-			var_106_1.anchoredPosition = var_0_28
-			GetComponent = var_2
-			findTF = var_2_10004
-
-			local var_106_2 = var_2_10004(var_106_1, "char")
-
-			typeof = var_2_10005
-			Animator = var_7
-
-			local var_106_3 = var_2(var_106_2, var_2_10005(var_7))
-
-			var_2.SetInteger(var_106_3, "state_type", 1)
-
-			table = var_3
-
-			var_3.insert(arg_106_0.ghostChilds, var_106_1)
-
-			return true
-		end
+		return true
 	end
-
-	function var_101_0.getGhostChild(arg_107_0)
-		if not arg_107_0.ghostPool then
-			arg_107_0.ghostPool = {}
-		end
+	;({}).getGhostChild = function(arg_107_0)
+		arg_107_0.ghostPool = arg_107_0.ghostPool or {}
 
 		local var_107_0
 
 		if #arg_107_0.ghostPool > 0 then
-			table = var_2
-			var_107_0 = var_2.remove(arg_107_0.ghostPool, #arg_107_0.ghostPool)
+			var_107_0 = table.remove(arg_107_0.ghostPool, #arg_107_0.ghostPool)
 		else
-			tf = var_2
-			instantiate = var_2_10004
-			var_107_0 = var_2(var_2_10004(arg_107_0.tplGhost))
-			SetParent = var_2
+			var_107_0 = tf(instantiate(arg_107_0.tplGhost))
 
-			var_2(var_107_0, arg_107_0.scene, false)
+			SetParent(var_107_0, arg_107_0.scene, false)
 		end
 
-		setActive = var_2
-
-		var_2(var_107_0, true)
+		setActive(var_107_0, true)
 
 		return var_107_0
 	end
-
-	function var_101_0.returnGhost(arg_108_0, arg_108_1)
-		setActive = var_2_10002
-
-		var_2_10002(arg_108_1, false)
-
-		table = var_2_10002
-
-		var_2_10002.insert(arg_108_0.ghostPool, arg_108_1)
+	;({}).returnGhost = function(arg_108_0, arg_108_1)
+		setActive(arg_108_1, false)
+		table.insert(arg_108_0.ghostPool, arg_108_1)
 
 		return
 	end
-
-	function var_101_0.createGhostLight(arg_109_0, arg_109_1)
+	;({}).createGhostLight = function(arg_109_0, arg_109_1)
 		if not arg_109_0.lightGhost then
-			tf = var_2
-			instantiate = var_2_10004
-			arg_109_0.lightGhost = var_2(var_2_10004(arg_109_0.tplGhost))
+			arg_109_0.lightGhost = tf(instantiate(arg_109_0.tplGhost))
+			arg_109_0.lightGhost.name = "lightGhost"
+			arg_109_0.lightAnimator = GetComponent(findTF(arg_109_0.lightGhost, "char"), typeof(Animator))
 
-			local var_109_0 = arg_109_0.lightGhost
-
-			var_109_0.name = "lightGhost"
-			GetComponent = var_109_0
-			findTF = var_4
-
-			local var_109_1 = var_4(arg_109_0.lightGhost, "char")
-
-			typeof = var_2_10005
-			Animator = var_7
-			arg_109_0.lightAnimator = var_109_0(var_109_1, var_2_10005(var_7))
-			GetComponent = var_2
-			findTF = var_109_1
-
-			local var_109_2 = var_109_1(arg_109_0.lightGhost, "char")
-
-			typeof = var_5
-			DftAniEvent = var_7
-
-			local var_109_3 = var_2(var_109_2, var_5(var_7))
-
-			var_2.SetEndEvent(var_109_3, function()
-				setActive = var_3_10000
-
-				var_3_10000(arg_109_0.lightGhost, false)
+			GetComponent(findTF(arg_109_0.lightGhost, "char"), typeof(DftAniEvent)):SetEndEvent(function()
+				setActive(arg_109_0.lightGhost, false)
 
 				return
 			end)
-
-			setParent = var_3
-
-			var_3(arg_109_0.lightGhost, arg_109_0.scene)
+			setParent(arg_109_0.lightGhost, arg_109_0.scene)
 		end
 
-		local var_109_4 = arg_109_0.charactor
+		if arg_109_0.charactor:getGhostFlag() then
+			arg_109_0.lightGhost.anchoredPosition = arg_109_0.scene:InverseTransformPoint(arg_109_0.charactor:getLeavePos())
 
-		if var_2.getGhostFlag(var_109_4) then
-			local var_109_5 = arg_109_0.lightGhost
-			local var_109_6 = arg_109_0.scene
-			local var_109_7 = var_3.InverseTransformPoint
-			local var_109_8 = arg_109_0.charactor
-
-			var_109_5.anchoredPosition = var_109_7(var_109_6, var_6.getLeavePos(var_109_8))
-			setActive = var_109_5
-
-			var_109_5(arg_109_0.lightGhost, true)
-
-			local var_109_9 = arg_109_0.lightAnimator
-
-			var_2.SetInteger(var_109_9, "state_type", 0)
-
-			local var_109_10 = arg_109_0.lightAnimator
-
-			var_2.SetInteger(var_109_10, "state_type", 2)
+			setActive(arg_109_0.lightGhost, true)
+			arg_109_0.lightAnimator:SetInteger("state_type", 0)
+			arg_109_0.lightAnimator:SetInteger("state_type", 2)
 			arg_109_1(true)
 		else
 			arg_109_1(false)
@@ -2266,66 +1672,56 @@ local function var_0_44(arg_101_0, arg_101_1, arg_101_2)
 		return
 	end
 
-	return var_101_0
+	return {}
 end
 
-local function var_0_45(arg_111_0, arg_111_1)
-	local var_111_0 = {
-		eyeTf = arg_111_0
-	}
-	local var_111_1 = 3
+local function var_0_44(arg_111_0, arg_111_1)
+	local var_111_0 = 3
 
-	function var_111_0.changeEyeShow(arg_112_0, arg_112_1)
+	;({
+		eyeTf = arg_111_0
+	}).changeEyeShow = function(arg_112_0, arg_112_1)
 		return
 	end
-
-	function var_111_0.start(arg_113_0)
+	;({
+		eyeTf = arg_111_0
+	}).start = function(arg_113_0)
 		if not arg_113_0.eyes then
 			arg_113_0.eyes = {}
 
 			for iter_113_0 = 1, 3 do
-				table = var_2_10005
-				var_2_10005 = var_2_10005.insert
-
-				local var_113_0 = arg_113_0.eyes
-
-				findTF = var_2_10008
-
-				var_2_10005(var_113_0, var_2_10008(arg_113_0.eyeTf, "eye" .. iter_113_0))
+				table.insert(arg_113_0.eyes, findTF(arg_113_0.eyeTf, "eye" .. iter_113_0))
 			end
 		end
 
-		arg_113_0.centerX = (var_0_26[3] - var_0_26[1]) / 2
-		arg_113_0.halfRnage = (var_0_26[3] - var_0_26[1]) / 2
+		arg_113_0.centerX = (var_0_25[3] - var_0_25[1]) / 2
+		arg_113_0.halfRnage = (var_0_25[3] - var_0_25[1]) / 2
 
 		arg_113_0:changeEyeShow(true)
 
 		return
 	end
-
-	function var_111_0.step(arg_114_0)
-		local var_114_0 = (arg_111_1.anchoredPosition.x - var_0_26[1] - arg_114_0.centerX) / arg_114_0.halfRnage * var_111_1
-
+	;({
+		eyeTf = arg_111_0
+	}).step = function(arg_114_0)
 		for iter_114_0 = 1, #arg_114_0.eyes do
-			setAnchoredPosition = var_2_10007
-			findTF = var_2_10009
-			var_2_10009 = var_2_10009(arg_114_0.eyes[iter_114_0], "img")
-			Vector3 = var_2_10010
-
-			var_2_10007(var_2_10009, var_2_10010(var_114_0, 0, 0))
+			setAnchoredPosition(findTF(arg_114_0.eyes[iter_114_0], "img"), Vector3((arg_111_1.anchoredPosition.x - var_0_25[1] - arg_114_0.centerX) / arg_114_0.halfRnage * var_111_0, 0, 0))
 		end
 
 		return
 	end
-
-	function var_111_0.gameOver(arg_115_0)
+	;({
+		eyeTf = arg_111_0
+	}).gameOver = function(arg_115_0)
 		return
 	end
 
-	return var_111_0
+	return {
+		eyeTf = arg_111_0
+	}
 end
 
-function var_0_1.init(arg_116_0)
+function var_0_0.init(arg_116_0)
 	arg_116_0:initUI()
 	arg_116_0:initData()
 	arg_116_0:gameReadyStart()
@@ -2333,355 +1729,182 @@ function var_0_1.init(arg_116_0)
 	return
 end
 
-function var_0_1.initUI(arg_117_0)
-	onButton = var_1_10001
-
-	local var_117_0 = arg_117_0
-
-	findTF = var_1_10004
-
-	local var_117_1 = var_1_10004(arg_117_0._tf, "conLeft/btnClose")
-
-	local function var_117_2()
+function var_0_0.initUI(arg_117_0)
+	onButton(arg_117_0, findTF(arg_117_0._tf, "conLeft/btnClose"), function()
 		if not arg_117_0.gameStartFlag then
-			local var_118_0 = arg_117_0
-
-			var_0.closeView(var_118_0)
+			arg_117_0:closeView()
 		else
-			setActive = var_0
-
-			var_0(arg_117_0.leaveUI, true)
-
-			local var_118_1 = arg_117_0
-
-			var_0.timerStop(var_118_1)
+			setActive(arg_117_0.leaveUI, true)
+			arg_117_0:timerStop()
 
 			arg_117_0.gameStartFlag = false
 		end
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_117_0.playerIdleTip = findTF(arg_117_0._tf, "idleTip")
 
-	var_1_10001(var_117_0, var_117_1, var_117_2, var_6)
-
-	findTF = var_1_10001
-	arg_117_0.playerIdleTip = var_1_10001(arg_117_0._tf, "idleTip")
-	setActive = var_1
-
-	var_1(arg_117_0.playerIdleTip, false)
+	setActive(arg_117_0.playerIdleTip, false)
 
 	arg_117_0.hearts = {}
 
-	for iter_117_0 = 1, var_0_25 do
-		table = var_117_2
-		var_117_2 = var_117_2.insert
-
-		local var_117_3 = arg_117_0.hearts
-
-		findTF = var_1_10008
-
-		var_117_2(var_117_3, var_1_10008(arg_117_0._tf, "conRight/heart/heart" .. iter_117_0))
+	for iter_117_0 = 1, var_0_24 do
+		table.insert(arg_117_0.hearts, findTF(arg_117_0._tf, "conRight/heart/heart" .. iter_117_0))
 	end
 
-	findTF = var_1
-	arg_117_0.wanshengjie = var_1(arg_117_0._tf, "wanshengjie")
-	setActive = var_1
+	arg_117_0.wanshengjie = findTF(arg_117_0._tf, "wanshengjie")
 
-	var_1(arg_117_0.wanshengjie, false)
+	setActive(arg_117_0.wanshengjie, false)
 
-	findTF = var_1
-	arg_117_0.scoreText = var_1(arg_117_0._tf, "conRight/score/text")
-	findTF = var_1
-	arg_117_0.scene = var_1(arg_117_0._tf, "scene")
-	findTF = var_1
-	arg_117_0.countUI = var_1(arg_117_0._tf, "pop/CountUI")
-	findTF = var_1
-	arg_117_0.settlementUI = var_1(arg_117_0._tf, "pop/SettleMentUI")
-	onButton = var_1
+	arg_117_0.scoreText = findTF(arg_117_0._tf, "conRight/score/text")
+	arg_117_0.scene = findTF(arg_117_0._tf, "scene")
+	arg_117_0.countUI = findTF(arg_117_0._tf, "pop/CountUI")
+	arg_117_0.settlementUI = findTF(arg_117_0._tf, "pop/SettleMentUI")
 
-	local var_117_4 = arg_117_0
-
-	findTF = var_4
-
-	local var_117_5 = var_4(arg_117_0.settlementUI, "ad/btnOver")
-
-	local function var_117_6()
-		local var_119_0 = arg_117_0
-
-		var_0.clearUI(var_119_0)
-
-		local var_119_1 = arg_117_0
-
-		var_0.closeView(var_119_1)
+	onButton(arg_117_0, findTF(arg_117_0.settlementUI, "ad/btnOver"), function()
+		arg_117_0:clearUI()
+		arg_117_0:closeView()
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_117_0.leaveUI = findTF(arg_117_0._tf, "pop/LeaveUI")
 
-	var_1(var_117_4, var_117_5, var_117_6, var_6)
-
-	findTF = var_1
-	arg_117_0.leaveUI = var_1(arg_117_0._tf, "pop/LeaveUI")
-	onButton = var_1
-
-	local var_117_7 = arg_117_0
-
-	findTF = var_4
-
-	local var_117_8 = var_4(arg_117_0.leaveUI, "ad/btnOk")
-
-	local function var_117_9()
-		setActive = var_2_10000
-
-		var_2_10000(arg_117_0.leaveUI, false)
-
-		local var_120_0 = arg_117_0
-
-		var_0.gameOver(var_120_0)
+	onButton(arg_117_0, findTF(arg_117_0.leaveUI, "ad/btnOk"), function()
+		setActive(arg_117_0.leaveUI, false)
+		arg_117_0:gameOver()
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_117_7, var_117_8, var_117_9, var_6)
-
-	onButton = var_1
-
-	local var_117_10 = arg_117_0
-
-	findTF = var_117_8
-
-	local var_117_11 = var_117_8(arg_117_0.leaveUI, "ad/btnCancel")
-
-	local function var_117_12()
-		setActive = var_2_10000
-
-		var_2_10000(arg_117_0.leaveUI, false)
-
-		local var_121_0 = arg_117_0
-
-		var_0.timerStart(var_121_0)
+	end, SFX_CANCEL)
+	onButton(arg_117_0, findTF(arg_117_0.leaveUI, "ad/btnCancel"), function()
+		setActive(arg_117_0.leaveUI, false)
+		arg_117_0:timerStart()
 
 		arg_117_0.gameStartFlag = true
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_117_10, var_117_11, var_117_12, var_6)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.initData(arg_122_0)
-	Timer = var_1_10001
-	arg_122_0.timer = var_1_10001.New(function()
-		local var_123_0 = arg_122_0
-
-		var_0.onTimer(var_123_0)
+function var_0_0.initData(arg_122_0)
+	arg_122_0.timer = Timer.New(function()
+		arg_122_0:onTimer()
 
 		return
 	end, 0.016666666666666666, -1)
-
-	local var_122_0 = var_0_37
-
-	findTF = var_3
-	arg_122_0.charactor = var_122_0(var_3(arg_122_0.scene, "charactor"), var_0_26, arg_122_0.scene)
+	arg_122_0.charactor = var_0_36(findTF(arg_122_0.scene, "charactor"), var_0_25, arg_122_0.scene)
 
 	function arg_122_0.charactor.charactorIdleCallback(arg_124_0)
-		setActive = var_2_10001
-
-		var_2_10001(arg_122_0.playerIdleTip, arg_124_0)
+		setActive(arg_122_0.playerIdleTip, arg_124_0)
 
 		return
 	end
 
-	local var_122_1 = var_0_39
-
-	findTF = var_3
-	arg_122_0.flyer = var_122_1(var_3(arg_122_0.scene, "flyCharactor"), var_0_27)
+	arg_122_0.flyer = var_0_38(findTF(arg_122_0.scene, "flyCharactor"), var_0_26)
 
 	function arg_122_0.flyer.dropCallback()
-		local var_125_0 = arg_122_0
-
-		var_0.onCreateDropItem(var_125_0)
+		arg_122_0:onCreateDropItem()
 
 		return
 	end
 
-	local var_122_2 = var_0_38
-
-	findTF = var_3
-
-	local var_122_3 = var_3(arg_122_0._tf, "controller")
-
-	findTF = var_4
-	arg_122_0.controllerUI = var_122_2(var_122_3, var_4(arg_122_0._tf, "conRight/useLight"))
+	arg_122_0.controllerUI = var_0_37(findTF(arg_122_0._tf, "controller"), findTF(arg_122_0._tf, "conRight/useLight"))
 
 	function arg_122_0.controllerUI.pointChangeCallback(arg_126_0)
-		local var_126_0 = arg_122_0
-
-		var_1.onControllerDirectChange(var_126_0, arg_126_0)
+		arg_122_0:onControllerDirectChange(arg_126_0)
 
 		return
 	end
 
 	function arg_122_0.controllerUI.pointUpCallback(arg_127_0)
-		local var_127_0 = arg_122_0
-
-		var_1.onControllerDirectUp(var_127_0, arg_127_0)
+		arg_122_0:onControllerDirectUp(arg_127_0)
 
 		return
 	end
 
 	function arg_122_0.controllerUI.pointLightCallback(arg_128_0)
-		local var_128_0 = arg_122_0
-
-		var_1.onUseLight(var_128_0, arg_128_0)
+		arg_122_0:onUseLight(arg_128_0)
 
 		return
 	end
 
-	arg_122_0.dropControl = var_0_40()
+	arg_122_0.dropControl = var_0_39()
 
 	function arg_122_0.dropControl.dropRequestCallback()
-		local var_129_0 = arg_122_0
-
-		var_0.onRequestDrop(var_129_0)
+		arg_122_0:onRequestDrop()
 
 		return
 	end
 
-	arg_122_0.dropItemController = var_0_41(arg_122_0.flyer, arg_122_0.scene)
+	arg_122_0.dropItemController = var_0_40(arg_122_0.flyer, arg_122_0.scene)
 
 	function arg_122_0.dropItemController.lostCallback()
-		local var_130_0 = arg_122_0
-
-		var_0.lostCandy(var_130_0)
+		arg_122_0:lostCandy()
 
 		return
 	end
 
 	function arg_122_0.dropItemController.boomCallback()
-		local var_131_0 = arg_122_0
-
-		var_0.touchBoom(var_131_0)
+		arg_122_0:touchBoom()
 
 		return
 	end
 
 	function arg_122_0.dropItemController.dropSpeedUpCallback()
-		local var_132_0 = arg_122_0
-
-		var_0.dropSpeedUp(var_132_0)
+		arg_122_0:dropSpeedUp()
 
 		return
 	end
 
-	arg_122_0.dropColliderControll = var_0_42(arg_122_0.charactor, arg_122_0.dropItemController, arg_122_0.scene)
+	arg_122_0.dropColliderControll = var_0_41(arg_122_0.charactor, arg_122_0.dropItemController, arg_122_0.scene)
 
 	function arg_122_0.dropColliderControll.colliderDropItemCallback(arg_133_0)
-		local var_133_0 = arg_122_0
-
-		var_1.addScore(var_133_0, arg_133_0.score)
+		arg_122_0:addScore(arg_133_0.score)
 
 		return
 	end
 
-	local var_122_4 = var_0_43
-
-	findTF = var_3
-	arg_122_0.ghostBossController = var_122_4(var_3(arg_122_0._tf, "ghostBoss"))
+	arg_122_0.ghostBossController = var_0_42(findTF(arg_122_0._tf, "ghostBoss"))
 
 	function arg_122_0.ghostBossController.createGhostCallback()
-		local var_134_0 = arg_122_0
-
-		var_0.createGhost(var_134_0)
+		arg_122_0:createGhost()
 
 		return
 	end
 
 	function arg_122_0.ghostBossController.ghostSpeedUpCallback()
 		if arg_122_0.eyesController then
-			local var_135_0 = arg_122_0.eyesController
-
-			var_0.changeEyeShow(var_135_0, false)
+			arg_122_0.eyesController:changeEyeShow(false)
 		end
 
 		return
 	end
 
-	local var_122_5 = var_0_44
-
-	findTF = var_3
-	arg_122_0.ghostChildController = var_122_5(var_3(arg_122_0.scene, "tplGhost"), arg_122_0.charactor, arg_122_0.scene)
+	arg_122_0.ghostChildController = var_0_43(findTF(arg_122_0.scene, "tplGhost"), arg_122_0.charactor, arg_122_0.scene)
 
 	function arg_122_0.ghostChildController.catchCharactorCallback(arg_136_0)
-		local var_136_0 = arg_122_0
-
-		var_1.onGhostCatch(var_136_0, arg_136_0)
+		arg_122_0:onGhostCatch(arg_136_0)
 
 		return
 	end
 
-	local var_122_6 = var_0_45
+	arg_122_0.eyesController = var_0_44(findTF(arg_122_0._tf, "bg/eyes"), findTF(arg_122_0.scene, "charactor"))
+	arg_122_0.handle = arg_122_0.handle or UpdateBeat:CreateListener(arg_122_0.Update, arg_122_0)
 
-	findTF = var_3
+	UpdateBeat:AddListener(arg_122_0.handle)
 
-	local var_122_7 = var_3(arg_122_0._tf, "bg/eyes")
+	arg_122_0.countAnimator = GetComponent(findTF(arg_122_0.countUI, "count"), typeof(Animator))
+	arg_122_0.countDft = GetComponent(findTF(arg_122_0.countUI, "count"), typeof(DftAniEvent))
 
-	findTF = var_4
-	arg_122_0.eyesController = var_122_6(var_122_7, var_4(arg_122_0.scene, "charactor"))
-
-	if not arg_122_0.handle then
-		UpdateBeat = var_1
-		arg_122_0.handle = var_1:CreateListener(arg_122_0.Update, arg_122_0)
-	end
-
-	UpdateBeat = var_1
-
-	local var_122_8 = var_1
-
-	var_1.AddListener(var_122_8, arg_122_0.handle)
-
-	GetComponent = var_1
-	findTF = var_122_8
-
-	local var_122_9 = var_122_8(arg_122_0.countUI, "count")
-
-	typeof = var_4
-	Animator = var_6
-	arg_122_0.countAnimator = var_1(var_122_9, var_4(var_6))
-	GetComponent = var_1
-	findTF = var_122_9
-
-	local var_122_10 = var_122_9(arg_122_0.countUI, "count")
-
-	typeof = var_4
-	DftAniEvent = var_6
-	arg_122_0.countDft = var_1(var_122_10, var_4(var_6))
-
-	local var_122_11 = arg_122_0.countDft
-
-	var_1.SetTriggerEvent(var_122_11, function()
+	arg_122_0.countDft:SetTriggerEvent(function()
 		return
 	end)
-
-	local var_122_12 = arg_122_0.countDft
-
-	var_1.SetEndEvent(var_122_12, function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_122_0.countUI, false)
-
-		local var_138_0 = arg_122_0
-
-		var_0.gameStart(var_138_0)
+	arg_122_0.countDft:SetEndEvent(function()
+		setActive(arg_122_0.countUI, false)
+		arg_122_0:gameStart()
 
 		return
 	end)
@@ -2689,265 +1912,156 @@ function var_0_1.initData(arg_122_0)
 	return
 end
 
-function var_0_1.gameReadyStart(arg_139_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_139_0.countUI, true)
-
-	local var_139_0 = arg_139_0.countAnimator
-
-	var_1.Play(var_139_0, "count")
+function var_0_0.gameReadyStart(arg_139_0)
+	setActive(arg_139_0.countUI, true)
+	arg_139_0.countAnimator:Play("count")
 
 	return
 end
 
-function var_0_1.gameStart(arg_140_0)
-	arg_140_0.heartNum = var_0_25
+function var_0_0.gameStart(arg_140_0)
+	arg_140_0.heartNum = var_0_24
 	arg_140_0.scoreNum = 0
 	arg_140_0.gameStartFlag = true
-	var_0_31 = 0
-	setActive = var_1
+	var_0_30 = 0
 
-	var_1(arg_140_0.scene, true)
+	setActive(arg_140_0.scene, true)
 	arg_140_0:updateUI()
-
-	local var_140_0 = arg_140_0.charactor
-
-	var_1.start(var_140_0)
-
-	local var_140_1 = arg_140_0.flyer
-
-	var_1.start(var_140_1)
-
-	local var_140_2 = arg_140_0.dropControl
-
-	var_1.start(var_140_2)
-
-	local var_140_3 = arg_140_0.dropItemController
-
-	var_1.start(var_140_3)
-
-	local var_140_4 = arg_140_0.dropColliderControll
-
-	var_1.start(var_140_4)
-
-	local var_140_5 = arg_140_0.ghostBossController
-
-	var_1.start(var_140_5)
-
-	local var_140_6 = arg_140_0.ghostChildController
-
-	var_1.start(var_140_6)
-
-	local var_140_7 = arg_140_0.controllerUI
-
-	var_1.start(var_140_7)
-
-	local var_140_8 = arg_140_0.eyesController
-
-	var_1.start(var_140_8)
+	arg_140_0.charactor:start()
+	arg_140_0.flyer:start()
+	arg_140_0.dropControl:start()
+	arg_140_0.dropItemController:start()
+	arg_140_0.dropColliderControll:start()
+	arg_140_0.ghostBossController:start()
+	arg_140_0.ghostChildController:start()
+	arg_140_0.controllerUI:start()
+	arg_140_0.eyesController:start()
 	arg_140_0:timerStart()
 
 	return
 end
 
-function var_0_1.timerStart(arg_141_0)
+function var_0_0.timerStart(arg_141_0)
 	if not arg_141_0.timer.running then
-		local var_141_0 = arg_141_0.timer
-
-		var_1.Start(var_141_0)
+		arg_141_0.timer:Start()
 	end
 
-	setActive = var_1
-
-	var_1(arg_141_0.wanshengjie, true)
+	setActive(arg_141_0.wanshengjie, true)
 
 	return
 end
 
-function var_0_1.timerStop(arg_142_0)
+function var_0_0.timerStop(arg_142_0)
 	if arg_142_0.timer.running then
-		local var_142_0 = arg_142_0.timer
-
-		var_1.Stop(var_142_0)
+		arg_142_0.timer:Stop()
 	end
 
-	setActive = var_1
-
-	var_1(arg_142_0.wanshengjie, false)
+	setActive(arg_142_0.wanshengjie, false)
 
 	return
 end
 
-function var_0_1.getGameTimes(arg_143_0)
+function var_0_0.getGameTimes(arg_143_0)
 	return arg_143_0:GetMGHubData().count
 end
 
-function var_0_1.getSoundData(arg_144_0, arg_144_1)
-	CueData = var_1_10002
-
-	local var_144_0 = var_1_10002.GetCueData()
-
-	pg = var_1_10003
-	var_144_0.channelName = var_1_10003.CriMgr.C_GALLERY_MUSIC
+function var_0_0.getSoundData(arg_144_0, arg_144_1)
+	CueData.GetCueData().channelName = pg.CriMgr.C_GALLERY_MUSIC
 	arg_144_0.cueData.cueSheetName = arg_144_1
 	arg_144_0.cueData.cueName = ""
 
 	return
 end
 
-function var_0_1.onTimer(arg_145_0)
-	var_0_31 = var_0_31 + arg_145_0.timer.duration
+function var_0_0.onTimer(arg_145_0)
+	var_0_30 = var_0_30 + arg_145_0.timer.duration
 
-	local var_145_0 = arg_145_0.charactor
-
-	var_1.step(var_145_0)
-
-	local var_145_1 = arg_145_0.flyer
-
-	var_1.step(var_145_1)
-
-	local var_145_2 = arg_145_0.dropControl
-
-	var_1.step(var_145_2)
-
-	local var_145_3 = arg_145_0.dropItemController
-
-	var_1.step(var_145_3)
-
-	local var_145_4 = arg_145_0.dropColliderControll
-
-	var_1.step(var_145_4)
-
-	local var_145_5 = arg_145_0.ghostBossController
-
-	var_1.step(var_145_5)
-
-	local var_145_6 = arg_145_0.ghostChildController
-
-	var_1.step(var_145_6)
-
-	local var_145_7 = arg_145_0.controllerUI
-
-	var_1.step(var_145_7)
-
-	local var_145_8 = arg_145_0.eyesController
-
-	var_1.step(var_145_8)
+	arg_145_0.charactor:step()
+	arg_145_0.flyer:step()
+	arg_145_0.dropControl:step()
+	arg_145_0.dropItemController:step()
+	arg_145_0.dropColliderControll:step()
+	arg_145_0.ghostBossController:step()
+	arg_145_0.ghostChildController:step()
+	arg_145_0.controllerUI:step()
+	arg_145_0.eyesController:step()
 
 	return
 end
 
-function var_0_1.updateUI(arg_146_0)
+function var_0_0.updateUI(arg_146_0)
 	for iter_146_0 = 1, #arg_146_0.hearts do
 		if iter_146_0 <= arg_146_0.heartNum then
-			setActive = var_5
-			findTF = var_1_10007
-
-			var_5(var_1_10007(arg_146_0.hearts[iter_146_0], "img"), true)
+			setActive(findTF(arg_146_0.hearts[iter_146_0], "img"), true)
 		else
-			setActive = var_5
-			findTF = var_1_10007
-
-			var_5(var_1_10007(arg_146_0.hearts[iter_146_0], "img"), false)
+			setActive(findTF(arg_146_0.hearts[iter_146_0], "img"), false)
 		end
 	end
 
-	if not arg_146_0.showOverTip and (arg_146_0.scoreNum >= var_0_32 or var_0_31 * 1000 >= var_0_33) and arg_146_0.ghostBossController then
+	if not arg_146_0.showOverTip and (arg_146_0.scoreNum >= var_0_31 or var_0_30 * 1000 >= var_0_32) and arg_146_0.ghostBossController then
 		arg_146_0.showOverTip = true
 
-		local var_146_0 = arg_146_0.ghostBossController
-
-		var_1.showTip(var_146_0, 2)
+		arg_146_0.ghostBossController:showTip(2)
 	end
 
-	setText = var_1
-
-	var_1(arg_146_0.scoreText, arg_146_0.scoreNum)
+	setText(arg_146_0.scoreText, arg_146_0.scoreNum)
 
 	return
 end
 
-function var_0_1.dropSpeedUp(arg_147_0)
+function var_0_0.dropSpeedUp(arg_147_0)
 	if arg_147_0.ghostBossController then
-		local var_147_0 = arg_147_0.ghostBossController
-
-		var_1.showTip(var_147_0, 1)
+		arg_147_0.ghostBossController:showTip(1)
 	end
 
 	return
 end
 
-function var_0_1.loseHeart(arg_148_0, arg_148_1)
+function var_0_0.loseHeart(arg_148_0, arg_148_1)
 	if arg_148_0.heartNum and arg_148_0.heartNum > 0 then
 		arg_148_0.heartNum = arg_148_0.heartNum - 1
 
 		arg_148_0:updateUI()
 
 		if arg_148_0.heartNum == 0 then
-			local var_148_0
+			if arg_148_1 == var_0_5 then
+				local var_148_0 = var_0_7 or var_0_8
 
-			if arg_148_1 ~= var_0_6 or not var_0_8 then
-				var_148_0 = var_0_9
-			end
+				arg_148_0.charactor:fail(var_148_0)
 
-			local var_148_1 = arg_148_0.charactor
+				if var_148_0 == var_0_8 then
+					arg_148_0.ghostChildController:createGhostLight(function(arg_149_0)
+						if arg_149_0 then
+							arg_148_0.ghostBossController:onGhostDestroy()
+						end
 
-			var_3.fail(var_148_1, var_148_0)
+						return
+					end)
+					arg_148_0.charactor:setGhostFlag(false)
+				end
 
-			if var_148_0 == var_0_9 then
-				local var_148_2 = arg_148_0.ghostChildController
+				arg_148_0.gameStartFlag = false
 
-				var_3.createGhostLight(var_148_2, function(arg_149_0)
-					if arg_149_0 then
-						local var_149_0 = arg_148_0.ghostBossController
-
-						var_1.onGhostDestroy(var_149_0)
-					end
+				arg_148_0:timerStop()
+				LeanTween.delayedCall(go(arg_148_0._tf), 3, System.Action(function()
+					arg_148_0:gameOver()
 
 					return
-				end)
+				end))
 
-				local var_148_3 = arg_148_0.charactor
-
-				var_3.setGhostFlag(var_148_3, false)
-			end
-
-			arg_148_0.gameStartFlag = false
-
-			local var_148_4 = arg_148_0
-
-			arg_148_0.timerStop(var_148_4)
-
-			LeanTween = var_3
-
-			local var_148_5 = var_3.delayedCall
-
-			go = var_148_4
-
-			local var_148_6 = var_148_4(arg_148_0._tf)
-			local var_148_7 = 3
-
-			System = var_7
-
-			var_148_5(var_148_6, var_148_7, var_7.Action(function()
-				local var_150_0 = arg_148_0
-
-				var_0.gameOver(var_150_0)
+				if false then
+					if arg_148_1 == var_0_6 then
+						arg_148_0.charactor:boom()
+					end
+				end
 
 				return
-			end))
-		elseif arg_148_1 == var_0_7 then
-			local var_148_8 = arg_148_0.charactor
-
-			var_2.boom(var_148_8)
+			end
 		end
 	end
-
-	return
 end
 
-function var_0_1.addScore(arg_151_0, arg_151_1)
+function var_0_0.addScore(arg_151_0, arg_151_1)
 	arg_151_0.scoreNum = arg_151_0.scoreNum + arg_151_1
 
 	arg_151_0:updateUI()
@@ -2955,42 +2069,16 @@ function var_0_1.addScore(arg_151_0, arg_151_1)
 	return
 end
 
-function var_0_1.gameOver(arg_152_0)
-	local var_152_0 = arg_152_0.charactor
-
-	var_1.gameOver(var_152_0)
-
-	local var_152_1 = arg_152_0.flyer
-
-	var_1.gameOver(var_152_1)
-
-	local var_152_2 = arg_152_0.dropControl
-
-	var_1.gameOver(var_152_2)
-
-	local var_152_3 = arg_152_0.dropItemController
-
-	var_1.gameOver(var_152_3)
-
-	local var_152_4 = arg_152_0.dropColliderControll
-
-	var_1.gameOver(var_152_4)
-
-	local var_152_5 = arg_152_0.ghostBossController
-
-	var_1.gameOver(var_152_5)
-
-	local var_152_6 = arg_152_0.ghostChildController
-
-	var_1.gameOver(var_152_6)
-
-	local var_152_7 = arg_152_0.controllerUI
-
-	var_1.gameOver(var_152_7)
-
-	local var_152_8 = arg_152_0.eyesController
-
-	var_1.gameOver(var_152_8)
+function var_0_0.gameOver(arg_152_0)
+	arg_152_0.charactor:gameOver()
+	arg_152_0.flyer:gameOver()
+	arg_152_0.dropControl:gameOver()
+	arg_152_0.dropItemController:gameOver()
+	arg_152_0.dropColliderControll:gameOver()
+	arg_152_0.ghostBossController:gameOver()
+	arg_152_0.ghostChildController:gameOver()
+	arg_152_0.controllerUI:gameOver()
+	arg_152_0.eyesController:gameOver()
 
 	if arg_152_0:getGameTimes() and arg_152_0:getGameTimes() > 0 then
 		arg_152_0:SendSuccess(0)
@@ -3001,163 +2089,97 @@ function var_0_1.gameOver(arg_152_0)
 	return
 end
 
-function var_0_1.showSettlement(arg_153_0)
-	setActive = var_1_10001
+function var_0_0.showSettlement(arg_153_0)
+	setActive(arg_153_0.settlementUI, true)
+	GetComponent(findTF(arg_153_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	var_1_10001(arg_153_0.settlementUI, true)
+	local var_153_0 = arg_153_0:GetMGData():GetRuntimeData("elements")
+	local var_153_1 = arg_153_0.scoreNum
 
-	GetComponent = var_1_10001
-	findTF = var_3
+	if var_153_0 and #var_153_0 > 0 then
+		local var_153_2 = var_153_0[1] or 0
 
-	local var_153_0 = var_3(arg_153_0.settlementUI, "ad")
-
-	typeof = var_4
-	Animator = var_6
-
-	local var_153_1 = var_1_10001(var_153_0, var_4(var_6))
-
-	var_1.Play(var_153_1, "settlement", -1, 0)
-
-	local var_153_2 = arg_153_0:GetMGData()
-	local var_153_3 = var_2.GetRuntimeData(var_153_2, "elements")
-	local var_153_4 = arg_153_0.scoreNum
-
-	if var_153_3 then
-		local var_153_5 = #var_153_3
-		local var_153_6
-
-		if not (0 < var_153_5) or not var_153_3[1] then
-			var_153_6 = 0
-		end
-
-		if var_153_6 <= var_153_4 then
-			var_153_6 = var_153_4
+		if var_153_2 <= var_153_1 then
+			var_153_2 = var_153_1
 
 			arg_153_0:StoreDataToServer({
-				var_153_6
+				var_153_1
 			})
 		end
 
-		findTF = var_5
-
-		local var_153_7 = var_5(arg_153_0.settlementUI, "ad/highText")
-
-		findTF = var_6
-
-		local var_153_8 = var_6(arg_153_0.settlementUI, "ad/currentText")
-
-		setText = var_7
-
-		var_7(var_153_7, var_153_6)
-
-		setText = var_7
-
-		var_7(var_153_8, var_153_4)
+		setText(findTF(arg_153_0.settlementUI, "ad/highText"), var_153_2)
+		setText(findTF(arg_153_0.settlementUI, "ad/currentText"), var_153_1)
 
 		return
 	end
 end
 
-function var_0_1.lostCandy(arg_154_0)
-	arg_154_0:loseHeart(var_0_6)
+function var_0_0.lostCandy(arg_154_0)
+	arg_154_0:loseHeart(var_0_5)
 
 	return
 end
 
-function var_0_1.touchBoom(arg_155_0)
-	arg_155_0:loseHeart(var_0_7)
+function var_0_0.touchBoom(arg_155_0)
+	arg_155_0:loseHeart(var_0_6)
 
 	return
 end
 
-function var_0_1.createGhost(arg_156_0)
-	if arg_156_0.ghostChildController then
-		local var_156_0 = arg_156_0.ghostChildController
-
-		if var_1.createGhost(var_156_0) then
-			local var_156_1 = arg_156_0.ghostBossController
-
-			var_2.onCreate(var_156_1)
-		end
+function var_0_0.createGhost(arg_156_0)
+	if arg_156_0.ghostChildController and arg_156_0.ghostChildController:createGhost() then
+		arg_156_0.ghostBossController:onCreate()
 	end
 
 	return
 end
 
-function var_0_1.onCreateDropItem(arg_157_0)
+function var_0_0.onCreateDropItem(arg_157_0)
 	if arg_157_0.dropItemController then
-		local var_157_0 = arg_157_0.dropItemController
-
-		var_1.createDropItem(var_157_0)
+		arg_157_0.dropItemController:createDropItem()
 	end
 
 	return
 end
 
-function var_0_1.onRequestDrop(arg_158_0)
+function var_0_0.onRequestDrop(arg_158_0)
 	if arg_158_0.flyer then
-		local var_158_0 = arg_158_0.flyer
-
-		var_1.addDropNum(var_158_0)
+		arg_158_0.flyer:addDropNum()
 	end
 
 	return
 end
 
-function var_0_1.onGhostCatch(arg_159_0, arg_159_1)
-	local var_159_0 = arg_159_0.charactor
-
-	if not var_2.getGhostFlag(var_159_0) then
-		local var_159_1 = arg_159_0.charactor
-
-		var_2.setGhostFlag(var_159_1, true, function()
-			local var_160_0 = arg_159_0.ghostChildController
-
-			var_0.removeChild(var_160_0, arg_159_1)
+function var_0_0.onGhostCatch(arg_159_0, arg_159_1)
+	if not arg_159_0.charactor:getGhostFlag() then
+		arg_159_0.charactor:setGhostFlag(true, function()
+			arg_159_0.ghostChildController:removeChild(arg_159_1)
 
 			return
 		end)
-
-		local var_159_2 = arg_159_0.controllerUI
-
-		var_2.changeRemind(var_159_2, true)
-
-		local var_159_3 = arg_159_0.ghostBossController
-
-		var_2.onCatch(var_159_3)
+		arg_159_0.controllerUI:changeRemind(true)
+		arg_159_0.ghostBossController:onCatch()
 	end
 
 	return
 end
 
-function var_0_1.onUseLight(arg_161_0, arg_161_1)
+function var_0_0.onUseLight(arg_161_0, arg_161_1)
 	if not arg_161_0.gameStartFlag then
 		return
 	end
 
-	local var_161_0 = arg_161_0.charactor
-
-	var_2.playLight(var_161_0, function(arg_162_0)
-		if arg_162_0 and arg_161_1 == var_0_4 then
-			local var_162_0 = arg_161_0.ghostChildController
-
-			var_1.createGhostLight(var_162_0, function(arg_163_0)
+	arg_161_0.charactor:playLight(function(arg_162_0)
+		if arg_162_0 and arg_161_1 == var_0_3 then
+			arg_161_0.ghostChildController:createGhostLight(function(arg_163_0)
 				if arg_163_0 then
-					local var_163_0 = arg_161_0.ghostBossController
-
-					var_1.onGhostDestroy(var_163_0)
-
-					local var_163_1 = arg_161_0.controllerUI
-
-					var_1.changeRemind(var_163_1, false)
+					arg_161_0.ghostBossController:onGhostDestroy()
+					arg_161_0.controllerUI:changeRemind(false)
 				end
 
 				return
 			end)
-
-			local var_162_1 = arg_161_0.charactor
-
-			var_1.setGhostFlag(var_162_1, false)
+			arg_161_0.charactor:setGhostFlag(false)
 		end
 
 		return
@@ -3166,123 +2188,73 @@ function var_0_1.onUseLight(arg_161_0, arg_161_1)
 	return
 end
 
-function var_0_1.onColliderItem(arg_164_0, arg_164_1)
-	var_0_36("碰撞到了物品，数量:" .. #arg_164_1)
+function var_0_0.onColliderItem(arg_164_0, arg_164_1)
+	var_0_35("碰撞到了物品，数量:" .. #arg_164_1)
 
 	return
 end
 
-function var_0_1.onControllerDirectChange(arg_165_0, arg_165_1)
+function var_0_0.onControllerDirectChange(arg_165_0, arg_165_1)
 	arg_165_0:changeDirect(arg_165_1, true)
 
 	return
 end
 
-function var_0_1.onControllerDirectUp(arg_166_0, arg_166_1)
+function var_0_0.onControllerDirectUp(arg_166_0, arg_166_1)
 	arg_166_0:changeDirect(arg_166_1, false)
 
 	return
 end
 
-function var_0_1.changeDirect(arg_167_0, arg_167_1, arg_167_2)
+function var_0_0.changeDirect(arg_167_0, arg_167_1, arg_167_2)
 	if arg_167_0.gameStartFlag then
-		local var_167_0 = arg_167_0.charactor
-
-		var_3.onDirectChange(var_167_0, arg_167_1, arg_167_2)
+		arg_167_0.charactor:onDirectChange(arg_167_1, arg_167_2)
 	end
 
 	return
 end
 
-function var_0_1.Update(arg_168_0)
+function var_0_0.Update(arg_168_0)
 	arg_168_0:AddDebugInput()
 
 	return
 end
 
-function var_0_1.AddDebugInput(arg_169_0)
-	IsUnityEditor = var_1_10001
-
-	if var_1_10001 then
-		Input = var_1_10001
-
-		local var_169_0 = var_1_10001.GetKeyDown
-
-		KeyCode = var_1_10003
-
-		local var_169_1
-
-		if var_169_0(var_1_10003.A) then
-			var_169_1 = arg_169_0
-
-			arg_169_0.changeDirect(var_169_1, var_0_2, true)
+function var_0_0.AddDebugInput(arg_169_0)
+	if IsUnityEditor then
+		if Input.GetKeyDown(KeyCode.A) then
+			arg_169_0:changeDirect(var_0_1, true)
 		end
 
-		Input = var_1
-
-		local var_169_2 = var_1.GetKeyUp
-
-		KeyCode = var_169_1
-
-		local var_169_3
-
-		if var_169_2(var_169_1.A) then
-			var_169_3 = arg_169_0
-
-			arg_169_0.changeDirect(var_169_3, var_0_2, false)
+		if Input.GetKeyUp(KeyCode.A) then
+			arg_169_0:changeDirect(var_0_1, false)
 		end
 
-		Input = var_1
-
-		local var_169_4 = var_1.GetKeyDown
-
-		KeyCode = var_169_3
-
-		local var_169_5
-
-		if var_169_4(var_169_3.D) then
-			var_169_5 = arg_169_0
-
-			arg_169_0.changeDirect(var_169_5, var_0_3, true)
+		if Input.GetKeyDown(KeyCode.D) then
+			arg_169_0:changeDirect(var_0_2, true)
 		end
 
-		Input = var_1
-
-		local var_169_6 = var_1.GetKeyUp
-
-		KeyCode = var_169_5
-
-		if var_169_6(var_169_5.D) then
-			arg_169_0:changeDirect(var_0_3, false)
+		if Input.GetKeyUp(KeyCode.D) then
+			arg_169_0:changeDirect(var_0_2, false)
 		end
 	end
 
 	return
 end
 
-function var_0_1.clearUI(arg_170_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_170_0.scene, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_170_0.settlementUI, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_170_0.countUI, false)
+function var_0_0.clearUI(arg_170_0)
+	setActive(arg_170_0.scene, false)
+	setActive(arg_170_0.settlementUI, false)
+	setActive(arg_170_0.countUI, false)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_171_0)
+function var_0_0.onBackPressed(arg_171_0)
 	if not arg_171_0.gameStartFlag then
-		arg_171_0:emit(var_0_1.ON_BACK_PRESSED)
+		arg_171_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
-		setActive = var_1
-
-		var_1(arg_171_0.leaveUI, true)
+		setActive(arg_171_0.leaveUI, true)
 		arg_171_0:timerStop()
 
 		arg_171_0.gameStartFlag = false
@@ -3291,30 +2263,16 @@ function var_0_1.onBackPressed(arg_171_0)
 	return
 end
 
-function var_0_1.willExit(arg_172_0)
+function var_0_0.willExit(arg_172_0)
 	if arg_172_0.timer and arg_172_0.timer.running then
-		var_1_10003 = arg_172_0.timer
-
-		var_1.Stop(var_1_10003)
+		arg_172_0.timer:Stop()
 	end
 
-	LeanTween = var_1
-
-	local var_172_0 = var_1.isTweening
-
-	go = var_1_10003
-
-	if var_172_0(var_1_10003(arg_172_0._tf)) then
-		LeanTween = var_1
-
-		local var_172_1 = var_1.cancel
-
-		go = var_3
-
-		var_172_1(var_3(arg_172_0._tf))
+	if LeanTween.isTweening(go(arg_172_0._tf)) then
+		LeanTween.cancel(go(arg_172_0._tf))
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

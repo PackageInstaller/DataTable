@@ -1,88 +1,39 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldPortNewShoppingCommand", pm.SimpleCommand)
 
-local var_0_0 = "WorldPortNewShoppingCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.goods
+	local var_1_2 = var_1_0.count
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().goods
-	local var_1_1 = var_2.count
-
-	if not var_1_0:canPurchase() then
-		pg = var_5
-
-		local var_1_2 = var_5.TipsMgr.GetInstance()
-		local var_1_3 = var_5.ShowTips
-
-		i18n = var_1_10008
-
-		var_1_3(var_1_2, var_1_10008("buy_countLimit"))
+	if not var_1_0.goods:canPurchase() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 		return
 	end
 
-	var_5.count = var_1_0:GetPriceInfo().count * var_1_1
+	local var_1_3 = var_1_0.goods:GetPriceInfo()
 
-	local var_1_5
+	var_1_3.count = var_1_3.count * var_1_0.count
 
-	if var_5:getOwnedCount() < var_5.count then
-		pg = var_1_5
-
-		local var_1_4 = var_1_5.TipsMgr.GetInstance()
-
-		var_1_5 = var_1_5.ShowTips
-		i18n = var_1_10009
-
-		var_1_5(var_1_4, var_1_10009("buyProp_noResource_error", var_5:getName()))
+	if var_1_3:getOwnedCount() < var_1_3.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", var_1_3:getName()))
 
 		return
 	end
 
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_6, 33403, {
+	pg.ConnectionMgr.GetInstance():Send(33403, {
 		shop_type = 2,
-		shop_id = var_1_0.id,
-		count = var_1_1
+		shop_id = var_1_0.goods.id,
+		count = var_1_0.count
 	}, 33404, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			reducePlayerOwn = var_2_2
-
-			var_2_2(var_0)
-
-			nowWorld = var_2_2
-
-			local var_2_0 = var_2_2()
-			local var_2_1 = var_2_2.GetAtlas(var_2_0)
-
-			var_2_2.UpdateNShopGoodsCount(var_2_1, var_1_0.id, var_1_1)
-
-			PlayerConst = var_2_2
-			var_2_2 = var_2_2.addTranDrop(arg_2_0.drop_list)
-			var_2_10004 = arg_1_0
-
-			local var_2_3 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_3(var_2_10004, var_5.WORLD_PORT_NEW_SHOPPING_DONE, {
-				drops = var_2_2
+			reducePlayerOwn(var_1_3)
+			nowWorld():GetAtlas():UpdateNShopGoodsCount(var_1_1.id, var_1_2)
+			arg_1_0:sendNotification(GAME.WORLD_PORT_NEW_SHOPPING_DONE, {
+				drops = PlayerConst.addTranDrop(arg_2_0.drop_list)
 			})
 		else
-			pg = var_2_2
-
-			local var_2_4 = var_2_2.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004("world_port_shopping_error_", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_port_shopping_error_", arg_2_0.result))
 		end
 
 		return
@@ -91,4 +42,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -14,31 +14,71 @@ NOVICEACTIVITY_LINKPLAN = 1
 NOVICEACTIVITY_RECRUITPLAN = 2
 --升格计划
 NOVICEACTIVITY_PROMOTIONPLAN = 3
---成长返还
-NOVICEACTIVITY_RETURN = 4
+-- --成长返还
+-- NOVICEACTIVITY_RETURN = 4
 
 --抽奖
 NOVICEACTIVITY_RAFFLE = 5
 
+--邀请函
+NOVICEAVTIVITY_SSR = 6
+
+--庆典筹备
+NOVICEACTIVITY_RECHARGE = 7
+
+--体力
+NOVICEACTIVITY_STRENGTH = 8
+
+--新人超级礼包
+NOVICEACTIVITY_NEWSUPERGIFT = 9
+
 function getTabList(self)
     local tabList = {}
+
+     self.rechargeVo = purchase.DirectBuyManager:getDirectBuyVoById(recharge.rechargeDirectId.newSuperGift)
+         local clientTime = GameManager:getClientTime()
+    if not recharge.RechargeManager:getIsBuyNewSuperGift() and self.rechargeVo ~= nil and self.rechargeVo.end_time - clientTime > 0  then
+        table.insert(tabList, { page = self.NOVICEACTIVITY_NEWSUPERGIFT, nomalLan = _TT(138210), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_107.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_107.png"), view = noviceActivity.NoviceNewSuperGiftTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_NEWSUPERGIFT })
+    end
+
+
     --招募 | 链接
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_RECRUIT) then
-        table.insert(tabList, { page = self.NOVICEACTIVITY_LINKPLAN, nomalLan = _TT(90033), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_62.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_62.png"), view = noviceActivity.NoviceActivityRecruitTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_RECRUIT })
+    --
+
+        
+    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_SSR) and activity.ActivityManager:getNoviceActivitySsrIsOpen() then
+        table.insert(tabList, { page = self.NOVICEAVTIVITY_SSR, nomalLan = _TT(121218), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_92.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_92.png"), view = noviceActivity.NoviceActivitySsrOptionalTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_SSR })
     end
-    --铸痕
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_BRACELECTS) then
-        table.insert(tabList, { page = self.NOVICEACTIVITY_RECRUITPLAN, nomalLan = _TT(90034), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_53.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_53.png"), view = noviceActivity.NoviceActivityBracelectsTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_BRACELECTS })
+
+    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_STRENGTH) and activity.ActivityManager:getNoviceActivityStrengthIsOpen() then
+        table.insert(tabList, { page = self.NOVICEACTIVITY_STRENGTH, nomalLan = _TT(138201), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_98.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_98.png"), view = noviceActivity.NoviceActivityStrengtnView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_STRENGTH })
     end
-    --铸痕升格计划
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_UPGRADEPLAN) then
-        table.insert(tabList, { page = self.NOVICEACTIVITY_PROMOTIONPLAN, nomalLan = _TT(90035), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_36.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_36.png"), view = noviceActivity.NovicePromotionPlanView, funcId = funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_UPGRADEPLAN })
-    end
-    --升级返回
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN) then
-        table.insert(tabList, { page = self.NOVICEACTIVITY_RETURN, nomalLan = _TT(90038), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_64.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_64.png"), view = noviceActivity.NoviceActivityReturnTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN })
+
+    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RECHARGE) and activity.ActivityManager:getNoviceActivityRechargeIsOpen() then
+        table.insert(tabList, { page = self.NOVICEACTIVITY_RECHARGE, nomalLan = _TT(121219), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_82.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_82.png"), view = noviceActivity.NoviceActivityRechargeTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RECHARGE })
     end
     
+    if activity.ActivityManager:getNoviceActivityIsOpen() then
+        if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_RECRUIT) then
+            table.insert(tabList, { page = self.NOVICEACTIVITY_LINKPLAN, nomalLan = _TT(90033), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_62.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_62.png"), view = noviceActivity.NoviceActivityRecruitTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_RECRUIT })
+        end
+        --铸痕
+        if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_BRACELECTS) then
+            table.insert(tabList, { page = self.NOVICEACTIVITY_RECRUITPLAN, nomalLan = _TT(90034), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_53.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_53.png"), view = noviceActivity.NoviceActivityBracelectsTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_BRACELECTS })
+        end
+        --铸痕升格计划
+        if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_UPGRADEPLAN) then
+            table.insert(tabList, { page = self.NOVICEACTIVITY_PROMOTIONPLAN, nomalLan = _TT(90035), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_36.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_36.png"), view = noviceActivity.NovicePromotionPlanView, funcId = funcopen.FuncOpenConst.FUNC_ID_FACTORY_NOVICEACTIVITY_UPGRADEPLAN })
+        end
+    end
+        -- --升级返回
+        -- if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN) then
+        --     table.insert(tabList, { page = self.NOVICEACTIVITY_RETURN, nomalLan = _TT(90038), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_64.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_64.png"), view = noviceActivity.NoviceActivityReturnTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN })
+        -- end
+
+      
+    --end
+   
     --抽奖
     -- if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RAFFLE) then
     --     table.insert(tabList, { page = self.NOVICEACTIVITY_RAFFLE, nomalLan = _TT(90051), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_37.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_37.png"), view = noviceActivity.NoviceActivityRaffleTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RAFFLE })

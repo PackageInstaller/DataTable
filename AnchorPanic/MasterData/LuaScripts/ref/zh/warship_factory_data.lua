@@ -4,18 +4,20 @@ local warship_factory_data=
 
 {
 	[1]={ icon="item/props_2513.png", name=76179, need_level=1, factory_item={
-		[1]={ prop_props={2503,1}, required_props={{2502,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
-		[2]={ prop_props={2513,1}, required_props={{2512,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
-		[3]={ prop_props={2523,1}, required_props={{2522,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
-		[4]={ prop_props={2533,1}, required_props={{2532,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
-		[5]={ prop_props={2543,1}, required_props={{2542,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
-		[6]={ prop_props={2553,1}, required_props={{2552,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
-		[7]={ prop_props={2504,1}, required_props={{2503,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
-		[8]={ prop_props={2514,1}, required_props={{2513,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
-		[9]={ prop_props={2524,1}, required_props={{2523,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
-		[10]={ prop_props={2534,1}, required_props={{2533,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
-		[11]={ prop_props={2544,1}, required_props={{2543,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
-		[12]={ prop_props={2554,1}, required_props={{2553,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[1]={ prop_props={2563,1}, required_props={{2562,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[2]={ prop_props={2503,1}, required_props={{2502,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[3]={ prop_props={2513,1}, required_props={{2512,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[4]={ prop_props={2523,1}, required_props={{2522,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[5]={ prop_props={2533,1}, required_props={{2532,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[6]={ prop_props={2543,1}, required_props={{2542,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[7]={ prop_props={2553,1}, required_props={{2552,3},{2801,10}}, required_coin={1,1500}, need_level=1, need_time=60, single_store=2 },
+		[8]={ prop_props={2564,1}, required_props={{2563,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[9]={ prop_props={2504,1}, required_props={{2503,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[10]={ prop_props={2514,1}, required_props={{2513,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[11]={ prop_props={2524,1}, required_props={{2523,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[12]={ prop_props={2534,1}, required_props={{2533,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[13]={ prop_props={2544,1}, required_props={{2543,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
+		[14]={ prop_props={2554,1}, required_props={{2553,3},{2801,20}}, required_coin={1,6000}, need_level=3, need_time=300, single_store=4 },
 }
 },
 	[2]={ icon="item/props_8103.png", name=76180, need_level=1, factory_item={

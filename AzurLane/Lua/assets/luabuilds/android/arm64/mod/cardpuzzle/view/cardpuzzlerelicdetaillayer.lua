@@ -1,78 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CardPuzzleRelicDetailLayer", BaseUI)
 
-local var_0_0 = "CardPuzzleRelicDetailLayer"
-
-BaseUI = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003)
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "CardTowerGiftDetailUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "BG")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("BG"), function()
+		arg_3_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_3_1
-
-	var_1_10001(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	local var_3_4 = arg_3_0.contextData.giftData
-
-	setImageSprite = var_1_10002
-
-	local var_3_5 = arg_3_0._tf
-	local var_3_6 = var_4.Find(var_3_5, "Gift/Icon")
-
-	LoadSprite = var_3_3
-
-	var_1_10002(var_3_6, var_3_3(var_3_4:GetIconPath(), ""))
-
-	setText = var_1_10002
-
-	local var_3_7 = arg_3_0._tf
-
-	var_1_10002(var_4.Find(var_3_7, "Gift/Name"), var_3_4:GetName())
-
-	setText = var_1_10002
-
-	local var_3_8 = arg_3_0._tf
-
-	var_1_10002(var_4.Find(var_3_8, "Gift/Desc"), var_3_4:GetDesc())
-
-	pg = var_1_10002
-
-	local var_3_9 = var_1_10002.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_3_9, arg_3_0._tf)
+	end, SFX_CANCEL)
+	setImageSprite(arg_3_0._tf:Find("Gift/Icon"), LoadSprite(arg_3_0.contextData.giftData:GetIconPath(), ""))
+	setText(arg_3_0._tf:Find("Gift/Name"), arg_3_0.contextData.giftData:GetName())
+	setText(arg_3_0._tf:Find("Gift/Desc"), arg_3_0.contextData.giftData:GetDesc())
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 
 	return
 end
 
-function var_0_1.willExit(arg_5_0)
-	pg = var_1_10001
-
-	local var_5_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_5_0, arg_5_0._tf)
+function var_0_0.willExit(arg_5_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_5_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

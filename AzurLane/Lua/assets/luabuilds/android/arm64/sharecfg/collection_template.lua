@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "collection_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "collection_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.collection_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.collection_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.collection_template = rawget(pg, "collection_template") or setmetatable({
+	__name = "collection_template"
+}, confNEO)
+pg.collection_template.all = {
 	101,
 	102,
 	103,
@@ -200,25 +177,11 @@ var_0_3.all = {
 	50027,
 	50028
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.collection_template = {}
+pg.base = pg.base or {}
+pg.base.collection_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.collection_template
-
-	var_1_0[101] = {
+	pg.base.collection_template[101] = {
 		ship_num = 2,
 		time = 0,
 		type = 1,
@@ -263,11 +226,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.collection_template
-
-	var_1_1[102] = {
+	pg.base.collection_template[102] = {
 		ship_num = 2,
 		time = 0,
 		type = 1,
@@ -311,11 +270,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.collection_template
-
-	var_1_2[103] = {
+	pg.base.collection_template[103] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -359,11 +314,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.collection_template
-
-	var_1_3[104] = {
+	pg.base.collection_template[104] = {
 		ship_num = 1,
 		time = 0,
 		type = 1,
@@ -407,11 +358,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.collection_template
-
-	var_1_4[105] = {
+	pg.base.collection_template[105] = {
 		ship_num = 1,
 		time = 0,
 		type = 1,
@@ -446,11 +393,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.collection_template
-
-	var_1_5[106] = {
+	pg.base.collection_template[106] = {
 		ship_num = 2,
 		time = 0,
 		type = 1,
@@ -495,11 +438,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.collection_template
-
-	var_1_6[107] = {
+	pg.base.collection_template[107] = {
 		ship_num = 2,
 		time = 0,
 		type = 1,
@@ -536,11 +475,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.collection_template
-
-	var_1_7[108] = {
+	pg.base.collection_template[108] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -582,11 +517,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.collection_template
-
-	var_1_8[109] = {
+	pg.base.collection_template[109] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -628,11 +559,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.collection_template
-
-	var_1_9[110] = {
+	pg.base.collection_template[110] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -674,11 +601,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.collection_template
-
-	var_1_10[201] = {
+	pg.base.collection_template[201] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -723,11 +646,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.collection_template
-
-	var_1_11[202] = {
+	pg.base.collection_template[202] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -771,11 +690,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.collection_template
-
-	var_1_12[203] = {
+	pg.base.collection_template[203] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -820,11 +735,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.collection_template
-
-	var_1_13[204] = {
+	pg.base.collection_template[204] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -869,11 +780,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.collection_template
-
-	var_1_14[205] = {
+	pg.base.collection_template[205] = {
 		ship_num = 3,
 		time = 0,
 		type = 1,
@@ -908,11 +815,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.collection_template
-
-	var_1_15[206] = {
+	pg.base.collection_template[206] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -957,11 +860,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.collection_template
-
-	var_1_16[207] = {
+	pg.base.collection_template[207] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -996,11 +895,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.collection_template
-
-	var_1_17[208] = {
+	pg.base.collection_template[208] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1042,11 +937,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.collection_template
-
-	var_1_18[209] = {
+	pg.base.collection_template[209] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1085,11 +976,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.collection_template
-
-	var_1_19[210] = {
+	pg.base.collection_template[210] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1128,11 +1015,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.collection_template
-
-	var_1_20[301] = {
+	pg.base.collection_template[301] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1177,11 +1060,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.collection_template
-
-	var_1_21[302] = {
+	pg.base.collection_template[302] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1225,11 +1104,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.collection_template
-
-	var_1_22[303] = {
+	pg.base.collection_template[303] = {
 		ship_num = 5,
 		time = 0,
 		type = 1,
@@ -1275,11 +1150,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.collection_template
-
-	var_1_23[304] = {
+	pg.base.collection_template[304] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1322,11 +1193,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.collection_template
-
-	var_1_24[305] = {
+	pg.base.collection_template[305] = {
 		ship_num = 4,
 		time = 0,
 		type = 1,
@@ -1362,11 +1229,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.collection_template
-
-	var_1_25[306] = {
+	pg.base.collection_template[306] = {
 		ship_num = 5,
 		time = 0,
 		type = 1,
@@ -1413,11 +1276,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.collection_template
-
-	var_1_26[307] = {
+	pg.base.collection_template[307] = {
 		ship_num = 5,
 		time = 0,
 		type = 1,
@@ -1450,11 +1309,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.collection_template
-
-	var_1_27[308] = {
+	pg.base.collection_template[308] = {
 		ship_num = 5,
 		time = 0,
 		type = 1,
@@ -1497,11 +1352,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.collection_template
-
-	var_1_28[309] = {
+	pg.base.collection_template[309] = {
 		ship_num = 5,
 		time = 0,
 		type = 1,
@@ -1539,11 +1390,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.collection_template
-
-	var_1_29[310] = {
+	pg.base.collection_template[310] = {
 		ship_num = 5,
 		time = 0,
 		type = 1,
@@ -1582,11 +1429,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.collection_template
-
-	var_1_30[10101] = {
+	pg.base.collection_template[10101] = {
 		ship_num = 3,
 		time = 7200,
 		type = 2,
@@ -1631,11 +1474,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.collection_template
-
-	var_1_31[10102] = {
+	pg.base.collection_template[10102] = {
 		ship_num = 3,
 		time = 7200,
 		type = 2,
@@ -1680,11 +1519,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.collection_template
-
-	var_1_32[10103] = {
+	pg.base.collection_template[10103] = {
 		ship_num = 3,
 		time = 10800,
 		type = 2,
@@ -1730,11 +1565,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.collection_template
-
-	var_1_33[10104] = {
+	pg.base.collection_template[10104] = {
 		ship_num = 3,
 		time = 10800,
 		type = 2,
@@ -1770,11 +1601,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.collection_template
-
-	var_1_34[10105] = {
+	pg.base.collection_template[10105] = {
 		ship_num = 3,
 		time = 19200,
 		type = 2,
@@ -1818,11 +1645,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.collection_template
-
-	var_1_35[10106] = {
+	pg.base.collection_template[10106] = {
 		ship_num = 3,
 		time = 19200,
 		type = 2,
@@ -1867,11 +1690,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.collection_template
-
-	var_1_36[10201] = {
+	pg.base.collection_template[10201] = {
 		ship_num = 3,
 		time = 7200,
 		type = 2,
@@ -1917,11 +1736,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.collection_template
-
-	var_1_37[10202] = {
+	pg.base.collection_template[10202] = {
 		ship_num = 3,
 		time = 7200,
 		type = 2,
@@ -1967,11 +1782,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.collection_template
-
-	var_1_38[10203] = {
+	pg.base.collection_template[10203] = {
 		ship_num = 3,
 		time = 8400,
 		type = 2,
@@ -2017,11 +1828,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.collection_template
-
-	var_1_39[10204] = {
+	pg.base.collection_template[10204] = {
 		ship_num = 3,
 		time = 8400,
 		type = 2,
@@ -2056,11 +1863,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.collection_template
-
-	var_1_40[10205] = {
+	pg.base.collection_template[10205] = {
 		ship_num = 3,
 		time = 19200,
 		type = 2,
@@ -2102,11 +1905,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.collection_template
-
-	var_1_41[10206] = {
+	pg.base.collection_template[10206] = {
 		ship_num = 3,
 		time = 19200,
 		type = 2,
@@ -2147,11 +1946,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.collection_template
-
-	var_1_42[10207] = {
+	pg.base.collection_template[10207] = {
 		ship_num = 3,
 		time = 21600,
 		type = 2,
@@ -2196,11 +1991,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.collection_template
-
-	var_1_43[10301] = {
+	pg.base.collection_template[10301] = {
 		ship_num = 4,
 		time = 18000,
 		type = 2,
@@ -2245,11 +2036,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.collection_template
-
-	var_1_44[10302] = {
+	pg.base.collection_template[10302] = {
 		ship_num = 4,
 		time = 18000,
 		type = 2,
@@ -2294,11 +2081,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.collection_template
-
-	var_1_45[10303] = {
+	pg.base.collection_template[10303] = {
 		ship_num = 4,
 		time = 12000,
 		type = 2,
@@ -2344,11 +2127,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.collection_template
-
-	var_1_46[10304] = {
+	pg.base.collection_template[10304] = {
 		ship_num = 4,
 		time = 12000,
 		type = 2,
@@ -2384,11 +2163,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.collection_template
-
-	var_1_47[10305] = {
+	pg.base.collection_template[10305] = {
 		ship_num = 4,
 		time = 40800,
 		type = 2,
@@ -2431,11 +2206,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.collection_template
-
-	var_1_48[10306] = {
+	pg.base.collection_template[10306] = {
 		ship_num = 4,
 		time = 40800,
 		type = 2,
@@ -2476,11 +2247,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.collection_template
-
-	var_1_49[10401] = {
+	pg.base.collection_template[10401] = {
 		ship_num = 4,
 		time = 18000,
 		type = 2,
@@ -2526,11 +2293,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.collection_template
-
-	var_1_50[10402] = {
+	pg.base.collection_template[10402] = {
 		ship_num = 4,
 		time = 18000,
 		type = 2,
@@ -2576,11 +2339,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.collection_template
-
-	var_1_51[10403] = {
+	pg.base.collection_template[10403] = {
 		ship_num = 4,
 		time = 40800,
 		type = 2,
@@ -2626,11 +2385,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.collection_template
-
-	var_1_52[10404] = {
+	pg.base.collection_template[10404] = {
 		ship_num = 4,
 		time = 40800,
 		type = 2,
@@ -2665,11 +2420,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.collection_template
-
-	var_1_53[10405] = {
+	pg.base.collection_template[10405] = {
 		ship_num = 4,
 		time = 32400,
 		type = 2,
@@ -2711,11 +2462,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.collection_template
-
-	var_1_54[10406] = {
+	pg.base.collection_template[10406] = {
 		ship_num = 4,
 		time = 32400,
 		type = 2,
@@ -2756,11 +2503,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.collection_template
-
-	var_1_55[10407] = {
+	pg.base.collection_template[10407] = {
 		ship_num = 4,
 		time = 43200,
 		type = 2,
@@ -2803,11 +2546,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.collection_template
-
-	var_1_56[10501] = {
+	pg.base.collection_template[10501] = {
 		ship_num = 5,
 		time = 36000,
 		type = 2,
@@ -2850,11 +2589,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.collection_template
-
-	var_1_57[10502] = {
+	pg.base.collection_template[10502] = {
 		ship_num = 5,
 		time = 36000,
 		type = 2,
@@ -2897,11 +2632,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.collection_template
-
-	var_1_58[10503] = {
+	pg.base.collection_template[10503] = {
 		ship_num = 5,
 		time = 62400,
 		type = 2,
@@ -2947,11 +2678,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.collection_template
-
-	var_1_59[10504] = {
+	pg.base.collection_template[10504] = {
 		ship_num = 5,
 		time = 62400,
 		type = 2,
@@ -2987,11 +2714,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.collection_template
-
-	var_1_60[10505] = {
+	pg.base.collection_template[10505] = {
 		ship_num = 5,
 		time = 24000,
 		type = 2,
@@ -3033,11 +2756,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.collection_template
-
-	var_1_61[10506] = {
+	pg.base.collection_template[10506] = {
 		ship_num = 5,
 		time = 24000,
 		type = 2,
@@ -3079,11 +2798,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.collection_template
-
-	var_1_62[10601] = {
+	pg.base.collection_template[10601] = {
 		ship_num = 5,
 		time = 36000,
 		type = 2,
@@ -3126,11 +2841,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.collection_template
-
-	var_1_63[10602] = {
+	pg.base.collection_template[10602] = {
 		ship_num = 5,
 		time = 36000,
 		type = 2,
@@ -3173,11 +2884,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.collection_template
-
-	var_1_64[10603] = {
+	pg.base.collection_template[10603] = {
 		ship_num = 5,
 		time = 62400,
 		type = 2,
@@ -3223,11 +2930,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.collection_template
-
-	var_1_65[10604] = {
+	pg.base.collection_template[10604] = {
 		ship_num = 5,
 		time = 62400,
 		type = 2,
@@ -3262,11 +2965,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.collection_template
-
-	var_1_66[10605] = {
+	pg.base.collection_template[10605] = {
 		ship_num = 5,
 		time = 64800,
 		type = 2,
@@ -3307,11 +3006,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.collection_template
-
-	var_1_67[10606] = {
+	pg.base.collection_template[10606] = {
 		ship_num = 5,
 		time = 64800,
 		type = 2,
@@ -3353,11 +3048,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.collection_template
-
-	var_1_68[10607] = {
+	pg.base.collection_template[10607] = {
 		ship_num = 5,
 		time = 86400,
 		type = 2,
@@ -3400,11 +3091,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.collection_template
-
-	var_1_69[20101] = {
+	pg.base.collection_template[20101] = {
 		ship_num = 3,
 		time = 0,
 		type = 3,
@@ -3460,11 +3147,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.collection_template
-
-	var_1_70[20102] = {
+	pg.base.collection_template[20102] = {
 		ship_num = 4,
 		time = 0,
 		type = 3,
@@ -3520,11 +3203,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.collection_template
-
-	var_1_71[20103] = {
+	pg.base.collection_template[20103] = {
 		ship_num = 5,
 		time = 0,
 		type = 3,
@@ -3580,11 +3259,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.collection_template
-
-	var_1_72[20104] = {
+	pg.base.collection_template[20104] = {
 		ship_num = 3,
 		time = 0,
 		type = 3,
@@ -3640,11 +3315,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.collection_template
-
-	var_1_73[20105] = {
+	pg.base.collection_template[20105] = {
 		ship_num = 4,
 		time = 0,
 		type = 3,
@@ -3700,11 +3371,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.collection_template
-
-	var_1_74[20106] = {
+	pg.base.collection_template[20106] = {
 		ship_num = 5,
 		time = 0,
 		type = 3,
@@ -3760,11 +3427,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.collection_template
-
-	var_1_75[20107] = {
+	pg.base.collection_template[20107] = {
 		ship_num = 3,
 		time = 0,
 		type = 3,
@@ -3820,11 +3483,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.collection_template
-
-	var_1_76[20108] = {
+	pg.base.collection_template[20108] = {
 		ship_num = 4,
 		time = 0,
 		type = 3,
@@ -3880,11 +3539,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.collection_template
-
-	var_1_77[20109] = {
+	pg.base.collection_template[20109] = {
 		ship_num = 5,
 		time = 0,
 		type = 3,
@@ -3940,11 +3595,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.collection_template
-
-	var_1_78[20110] = {
+	pg.base.collection_template[20110] = {
 		ship_num = 3,
 		time = 0,
 		type = 3,
@@ -4000,11 +3651,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.collection_template
-
-	var_1_79[20111] = {
+	pg.base.collection_template[20111] = {
 		ship_num = 4,
 		time = 0,
 		type = 3,
@@ -4060,11 +3707,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.collection_template
-
-	var_1_80[20112] = {
+	pg.base.collection_template[20112] = {
 		ship_num = 5,
 		time = 0,
 		type = 3,
@@ -4120,11 +3763,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.collection_template
-
-	var_1_81[20113] = {
+	pg.base.collection_template[20113] = {
 		ship_num = 3,
 		time = 0,
 		type = 3,
@@ -4180,11 +3819,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.collection_template
-
-	var_1_82[20114] = {
+	pg.base.collection_template[20114] = {
 		ship_num = 4,
 		time = 0,
 		type = 3,
@@ -4240,11 +3875,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.collection_template
-
-	var_1_83[20115] = {
+	pg.base.collection_template[20115] = {
 		ship_num = 5,
 		time = 0,
 		type = 3,
@@ -4300,11 +3931,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.collection_template
-
-	var_1_84[20116] = {
+	pg.base.collection_template[20116] = {
 		ship_num = 3,
 		time = 0,
 		type = 3,
@@ -4360,11 +3987,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.collection_template
-
-	var_1_85[20117] = {
+	pg.base.collection_template[20117] = {
 		ship_num = 4,
 		time = 0,
 		type = 3,
@@ -4420,11 +4043,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.collection_template
-
-	var_1_86[20118] = {
+	pg.base.collection_template[20118] = {
 		ship_num = 5,
 		time = 0,
 		type = 3,
@@ -4480,11 +4099,7 @@ var_0_3.base.collection_template = {}
 		},
 		special_drop = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.collection_template
-
-	var_1_87[30101] = {
+	pg.base.collection_template[30101] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4549,11 +4164,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.collection_template
-
-	var_1_88[30102] = {
+	pg.base.collection_template[30102] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4618,11 +4229,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.collection_template
-
-	var_1_89[30103] = {
+	pg.base.collection_template[30103] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4687,11 +4294,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.collection_template
-
-	var_1_90[30104] = {
+	pg.base.collection_template[30104] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4756,11 +4359,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.collection_template
-
-	var_1_91[30105] = {
+	pg.base.collection_template[30105] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4825,11 +4424,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.collection_template
-
-	var_1_92[30106] = {
+	pg.base.collection_template[30106] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4894,11 +4489,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.collection_template
-
-	var_1_93[30107] = {
+	pg.base.collection_template[30107] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -4963,11 +4554,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.collection_template
-
-	var_1_94[30108] = {
+	pg.base.collection_template[30108] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -5032,11 +4619,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.collection_template
-
-	var_1_95[30109] = {
+	pg.base.collection_template[30109] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -5101,11 +4684,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.collection_template
-
-	var_1_96[30110] = {
+	pg.base.collection_template[30110] = {
 		ship_num = 2,
 		time = 0,
 		type = 4,
@@ -5170,11 +4749,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.collection_template
-
-	var_1_97[30201] = {
+	pg.base.collection_template[30201] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5239,11 +4814,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.collection_template
-
-	var_1_98[30202] = {
+	pg.base.collection_template[30202] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5308,8 +4879,7 @@ var_0_3.base.collection_template = {}
 			type = 2
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.collection_template[30203] = {
+	pg.base.collection_template[30203] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5378,11 +4948,7 @@ var_0_3.base.collection_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.collection_template
-
-	var_2_0[30204] = {
+	pg.base.collection_template[30204] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5447,11 +5013,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.collection_template
-
-	var_2_1[30205] = {
+	pg.base.collection_template[30205] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5516,11 +5078,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.collection_template
-
-	var_2_2[30206] = {
+	pg.base.collection_template[30206] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5585,11 +5143,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.collection_template
-
-	var_2_3[30207] = {
+	pg.base.collection_template[30207] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5654,11 +5208,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.collection_template
-
-	var_2_4[30208] = {
+	pg.base.collection_template[30208] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5723,11 +5273,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.collection_template
-
-	var_2_5[30209] = {
+	pg.base.collection_template[30209] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5792,11 +5338,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.collection_template
-
-	var_2_6[30210] = {
+	pg.base.collection_template[30210] = {
 		ship_num = 3,
 		time = 0,
 		type = 4,
@@ -5861,11 +5403,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.collection_template
-
-	var_2_7[30301] = {
+	pg.base.collection_template[30301] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -5930,11 +5468,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.collection_template
-
-	var_2_8[30302] = {
+	pg.base.collection_template[30302] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -5999,11 +5533,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.collection_template
-
-	var_2_9[30303] = {
+	pg.base.collection_template[30303] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6068,11 +5598,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.collection_template
-
-	var_2_10[30304] = {
+	pg.base.collection_template[30304] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6137,11 +5663,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.collection_template
-
-	var_2_11[30305] = {
+	pg.base.collection_template[30305] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6206,11 +5728,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.collection_template
-
-	var_2_12[30306] = {
+	pg.base.collection_template[30306] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6275,11 +5793,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.collection_template
-
-	var_2_13[30307] = {
+	pg.base.collection_template[30307] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6344,11 +5858,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.collection_template
-
-	var_2_14[30308] = {
+	pg.base.collection_template[30308] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6413,11 +5923,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.collection_template
-
-	var_2_15[30309] = {
+	pg.base.collection_template[30309] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6482,11 +5988,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.collection_template
-
-	var_2_16[30310] = {
+	pg.base.collection_template[30310] = {
 		ship_num = 4,
 		time = 0,
 		type = 4,
@@ -6551,11 +6053,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.collection_template
-
-	var_2_17[30401] = {
+	pg.base.collection_template[30401] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -6620,11 +6118,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.collection_template
-
-	var_2_18[30402] = {
+	pg.base.collection_template[30402] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -6689,11 +6183,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.collection_template
-
-	var_2_19[30403] = {
+	pg.base.collection_template[30403] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -6758,11 +6248,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.collection_template
-
-	var_2_20[30404] = {
+	pg.base.collection_template[30404] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -6827,11 +6313,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.collection_template
-
-	var_2_21[30405] = {
+	pg.base.collection_template[30405] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -6896,11 +6378,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.collection_template
-
-	var_2_22[30406] = {
+	pg.base.collection_template[30406] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -6965,11 +6443,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.collection_template
-
-	var_2_23[30407] = {
+	pg.base.collection_template[30407] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -7034,11 +6508,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.collection_template
-
-	var_2_24[30408] = {
+	pg.base.collection_template[30408] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -7103,11 +6573,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.collection_template
-
-	var_2_25[30409] = {
+	pg.base.collection_template[30409] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -7172,11 +6638,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.collection_template
-
-	var_2_26[30410] = {
+	pg.base.collection_template[30410] = {
 		ship_num = 5,
 		time = 0,
 		type = 6,
@@ -7241,11 +6703,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.collection_template
-
-	var_2_27[40101] = {
+	pg.base.collection_template[40101] = {
 		ship_num = 3,
 		time = 0,
 		type = 5,
@@ -7289,11 +6747,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.collection_template
-
-	var_2_28[40102] = {
+	pg.base.collection_template[40102] = {
 		ship_num = 2,
 		time = 0,
 		type = 5,
@@ -7338,11 +6792,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.collection_template
-
-	var_2_29[40103] = {
+	pg.base.collection_template[40103] = {
 		ship_num = 2,
 		time = 0,
 		type = 5,
@@ -7379,11 +6829,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.collection_template
-
-	var_2_30[40104] = {
+	pg.base.collection_template[40104] = {
 		ship_num = 3,
 		time = 0,
 		type = 5,
@@ -7425,11 +6871,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.collection_template
-
-	var_2_31[40105] = {
+	pg.base.collection_template[40105] = {
 		ship_num = 3,
 		time = 0,
 		type = 5,
@@ -7473,11 +6915,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.collection_template
-
-	var_2_32[40106] = {
+	pg.base.collection_template[40106] = {
 		ship_num = 3,
 		time = 0,
 		type = 5,
@@ -7519,11 +6957,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.collection_template
-
-	var_2_33[9] = {
+	pg.base.collection_template[9] = {
 		ship_num = 4,
 		time = 0,
 		type = 5,
@@ -7568,11 +7002,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.collection_template
-
-	var_2_34[10] = {
+	pg.base.collection_template[10] = {
 		ship_num = 4,
 		time = 0,
 		type = 5,
@@ -7617,11 +7047,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.collection_template
-
-	var_2_35[11] = {
+	pg.base.collection_template[11] = {
 		ship_num = 4,
 		time = 0,
 		type = 5,
@@ -7656,11 +7082,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.collection_template
-
-	var_2_36[12] = {
+	pg.base.collection_template[12] = {
 		ship_num = 4,
 		time = 0,
 		type = 5,
@@ -7699,11 +7121,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.collection_template
-
-	var_2_37[13] = {
+	pg.base.collection_template[13] = {
 		ship_num = 4,
 		time = 0,
 		type = 5,
@@ -7748,11 +7166,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.collection_template
-
-	var_2_38[14] = {
+	pg.base.collection_template[14] = {
 		ship_num = 4,
 		time = 0,
 		type = 5,
@@ -7791,11 +7205,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.collection_template
-
-	var_2_39[40301] = {
+	pg.base.collection_template[40301] = {
 		ship_num = 5,
 		time = 0,
 		type = 5,
@@ -7841,11 +7251,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.collection_template
-
-	var_2_40[40302] = {
+	pg.base.collection_template[40302] = {
 		ship_num = 5,
 		time = 0,
 		type = 5,
@@ -7892,11 +7298,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.collection_template
-
-	var_2_41[40303] = {
+	pg.base.collection_template[40303] = {
 		ship_num = 5,
 		time = 0,
 		type = 5,
@@ -7929,11 +7331,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.collection_template
-
-	var_2_42[40304] = {
+	pg.base.collection_template[40304] = {
 		ship_num = 5,
 		time = 0,
 		type = 5,
@@ -7972,11 +7370,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.collection_template
-
-	var_2_43[40305] = {
+	pg.base.collection_template[40305] = {
 		ship_num = 5,
 		time = 0,
 		type = 5,
@@ -8022,11 +7416,7 @@ end)()
 			type = 2
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.collection_template
-
-	var_2_44[40306] = {
+	pg.base.collection_template[40306] = {
 		ship_num = 5,
 		time = 0,
 		type = 5,
@@ -8065,11 +7455,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.collection_template
-
-	var_2_45[50001] = {
+	pg.base.collection_template[50001] = {
 		ship_num = 2,
 		time = 0,
 		type = 0,
@@ -8130,11 +7516,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.collection_template
-
-	var_2_46[50002] = {
+	pg.base.collection_template[50002] = {
 		ship_num = 3,
 		time = 0,
 		type = 0,
@@ -8195,11 +7577,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.collection_template
-
-	var_2_47[50003] = {
+	pg.base.collection_template[50003] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8260,11 +7638,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.collection_template
-
-	var_2_48[50004] = {
+	pg.base.collection_template[50004] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8325,11 +7699,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.collection_template
-
-	var_2_49[50005] = {
+	pg.base.collection_template[50005] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8390,11 +7760,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.collection_template
-
-	var_2_50[50006] = {
+	pg.base.collection_template[50006] = {
 		ship_num = 5,
 		time = 0,
 		type = 0,
@@ -8455,11 +7821,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.collection_template
-
-	var_2_51[50007] = {
+	pg.base.collection_template[50007] = {
 		ship_num = 2,
 		time = 0,
 		type = 0,
@@ -8520,11 +7882,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.collection_template
-
-	var_2_52[50008] = {
+	pg.base.collection_template[50008] = {
 		ship_num = 3,
 		time = 0,
 		type = 0,
@@ -8585,11 +7943,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.collection_template
-
-	var_2_53[50009] = {
+	pg.base.collection_template[50009] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8650,11 +8004,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.collection_template
-
-	var_2_54[50010] = {
+	pg.base.collection_template[50010] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8715,11 +8065,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.collection_template
-
-	var_2_55[50011] = {
+	pg.base.collection_template[50011] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8780,11 +8126,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.collection_template
-
-	var_2_56[50012] = {
+	pg.base.collection_template[50012] = {
 		ship_num = 5,
 		time = 0,
 		type = 0,
@@ -8845,11 +8187,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.collection_template
-
-	var_2_57[50013] = {
+	pg.base.collection_template[50013] = {
 		ship_num = 3,
 		time = 0,
 		type = 0,
@@ -8910,11 +8248,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.collection_template
-
-	var_2_58[50014] = {
+	pg.base.collection_template[50014] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -8975,11 +8309,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.collection_template
-
-	var_2_59[50015] = {
+	pg.base.collection_template[50015] = {
 		ship_num = 2,
 		time = 0,
 		type = 0,
@@ -9040,11 +8370,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.collection_template
-
-	var_2_60[50016] = {
+	pg.base.collection_template[50016] = {
 		ship_num = 3,
 		time = 0,
 		type = 0,
@@ -9105,11 +8431,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.collection_template
-
-	var_2_61[50017] = {
+	pg.base.collection_template[50017] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -9170,11 +8492,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.collection_template
-
-	var_2_62[50018] = {
+	pg.base.collection_template[50018] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -9235,11 +8553,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.collection_template
-
-	var_2_63[50019] = {
+	pg.base.collection_template[50019] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -9300,11 +8614,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.collection_template
-
-	var_2_64[50020] = {
+	pg.base.collection_template[50020] = {
 		ship_num = 5,
 		time = 0,
 		type = 0,
@@ -9365,11 +8675,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.collection_template
-
-	var_2_65[50021] = {
+	pg.base.collection_template[50021] = {
 		ship_num = 2,
 		time = 0,
 		type = 0,
@@ -9430,11 +8736,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.collection_template
-
-	var_2_66[50022] = {
+	pg.base.collection_template[50022] = {
 		ship_num = 3,
 		time = 0,
 		type = 0,
@@ -9495,11 +8797,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.collection_template
-
-	var_2_67[50023] = {
+	pg.base.collection_template[50023] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -9560,11 +8858,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.collection_template
-
-	var_2_68[50024] = {
+	pg.base.collection_template[50024] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -9625,11 +8919,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.collection_template
-
-	var_2_69[50025] = {
+	pg.base.collection_template[50025] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,
@@ -9690,11 +8980,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.collection_template
-
-	var_2_70[50026] = {
+	pg.base.collection_template[50026] = {
 		ship_num = 5,
 		time = 0,
 		type = 0,
@@ -9755,11 +9041,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.collection_template
-
-	var_2_71[50027] = {
+	pg.base.collection_template[50027] = {
 		ship_num = 3,
 		time = 0,
 		type = 0,
@@ -9820,8 +9102,7 @@ end)()
 		},
 		special_drop = {}
 	}
-	pg = var_2_71
-	var_2_71.base.collection_template[50028] = {
+	pg.base.collection_template[50028] = {
 		ship_num = 4,
 		time = 0,
 		type = 0,

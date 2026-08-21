@@ -126,13 +126,14 @@ function showPanel(self)
     local item = SimpleInsItem:create(self.mSelectItem, self.mSelectScroll.content, "mSelectViewItem1")
     item:getChildGO("mTxtNorml"):SetActive(true)
     item:getChildGO("mSelectInfo"):SetActive(false)
-
+    item:getChildGO("mTxtInfo"):SetActive(false)
     item:getChildGO("mTxtNorml"):GetComponent(ty.Text).text = _TT(149001)
     
     local selectItem = SimpleInsItem:create(self.mSelectPropsItem, item:getChildTrans("mSelectPropsContent"),
         "mSelectPropsItem1")
     selectItem:getChildGO("mImgNor"):SetActive(true)
     selectItem:getChildGO("mIsSelect"):SetActive(false)
+  
     gs.TransQuick:UIPos(selectItem.m_go:GetComponent(ty.RectTransform), 0, 0)
     local propsGrid = PropsGrid:createByData({
         tid = vo.normalItemTid,
@@ -182,15 +183,27 @@ function showPanel(self)
     
             table.insert(self.mPropsGridList, selectProps)
         end
-
-       
-
+        childItem:getChildGO("mTxtInfo"):SetActive(self.posDic and self.posDic[i] and self.posDic[i] > 0)
+        childItem:getChildGO("mTxtInfo"):GetComponent(ty.Text).text = _TT(660)
         -- 右侧可选部分
         for j = 1, #vo.selectList[i].data.childList do
             local content = childItem:getChildGO("mCanSelectScroll"):GetComponent(ty.ScrollRect).content
             local canSelectItem = SimpleInsItem:create(self.mSelectPropsItem, content, "canSelectViewItem")
             canSelectItem:getChildGO("mImgNor"):SetActive(false)
             canSelectItem:getChildGO("mIsSelect"):SetActive(index == j)
+            local propsVo = props.PropsManager:getPropsConfigVo(vo.selectList[i].data.childList[j].tid)
+            if propsVo.type == PropsType.FASHIONPERMIT then
+                if propsVo.subType == 2 then
+                local isHas = fashion.FashionManager:getHeroFashionHaveInfo(fashion.Type.CLOTHES, propsVo.effectList[1], propsVo.effectList[2])
+                    canSelectItem:getChildGO("mImgHas"):SetActive(isHas)
+                elseif propsVo.subType == 3 then
+                    local isHas = fashion.FashionManager:getAllHeroFashionColorInfo(propsVo.effectList[1], propsVo.effectList[2], propsVo.effectList[3])
+                    canSelectItem:getChildGO("mImgHas"):SetActive(isHas)
+                end
+            else
+                canSelectItem:getChildGO("mImgHas"):SetActive(false)
+            end
+            --cusLog( vo.selectList[i].data.childList[j].tid)
             local canSelectPropsGrid = PropsGrid:createByData({
                 tid = vo.selectList[i].data.childList[j].tid,
                 num = vo.selectList[i].data.childList[j].num,

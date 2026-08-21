@@ -15,10 +15,11 @@ function init(self)
     self.mHeroFavorableData = nil
 
     self.mNeedExp = 0
-    --{ tid = , num = ,likeAdd =  , }
+    -- { tid = , num = ,likeAdd =  , }
     self.mSelectProps = {}
     -- 已领取奖励列表
     self.giftGainList = {}
+    self.storyRewardGainList = {}
     -- 当前战员id
     self.curHeroId = nil
     -- 是否是满足升级弹窗要求
@@ -78,8 +79,17 @@ function parseHeroFavorableRwardMsg(self, msg)
                 showId = n > showId and n or showId
             end
         end
+        if not self.storyRewardGainList[v.hero_tid] then
+            self.storyRewardGainList[v.hero_tid] = {}
+        end
+        for m, n in pairs(v.received_story_lvs) do
+            if table.indexof(self.storyRewardGainList[v.hero_tid], n) == false then
+                table.insert(self.storyRewardGainList[v.hero_tid], n)
+            end
+        end
     end
     GameDispatcher:dispatchEvent(EventName.FAVORABLE_REWARD_GAIN_UPDATE, showId)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_STORY_REWARD)
 end
 
 -- 解锁奖励领取返回
@@ -122,7 +132,7 @@ function getHasCaseReward(self, heroId, id)
     end
     return false
 end
---获取下一个资料是否未解锁
+-- 获取下一个资料是否未解锁
 function getIsNextNotUnlock(self, heroId, curVo)
     local heroVo = hero.HeroManager:getHeroVo(heroId)
     if heroVo then
@@ -148,7 +158,8 @@ function getCaseRewardHasRed(self, heroId)
         local list = self:getCaseList(heroVo.tid)
         if (list) then
             for i, vo in pairs(list) do
-                if heroVo.favorableLevel >= vo.relationLv and self:checkCaseRewardGain(heroVo.tid, vo.id) == false and vo.title ~= 47011 then
+                if heroVo.favorableLevel >= vo.relationLv and self:checkCaseRewardGain(heroVo.tid, vo.id) == false and
+                    vo.title ~= 47011 then
                     return true
                 end
             end
@@ -191,7 +202,11 @@ end
 function addProps(self, oneData)
     local max = self:getMax(oneData)
     if (max >= oneData.num) then
-        self.mSelectProps[oneData.tid] = { num = oneData.num, likeAdd = oneData.likeAdd, id = oneData.id }
+        self.mSelectProps[oneData.tid] = {
+            num = oneData.num,
+            likeAdd = oneData.likeAdd,
+            id = oneData.id
+        }
         return true
     else
         return false
@@ -199,18 +214,26 @@ function addProps(self, oneData)
 end
 
 function setProps(self, oneData)
-    self.mSelectProps[oneData.tid] = { num = oneData.num, likeAdd = oneData.likeAdd, id = oneData.id }
+    self.mSelectProps[oneData.tid] = {
+        num = oneData.num,
+        likeAdd = oneData.likeAdd,
+        id = oneData.id
+    }
 end
 
 function subProps(self, oneData)
-    self.mSelectProps[oneData.tid] = { num = oneData.num, likeAdd = oneData.likeAdd, id = oneData.id }
+    self.mSelectProps[oneData.tid] = {
+        num = oneData.num,
+        likeAdd = oneData.likeAdd,
+        id = oneData.id
+    }
 end
 
 function getMax(self, oneData)
     local selectNum = 0
     for id, data in pairs(self.mSelectProps) do
         if id == oneData.tid then
-            --如果是同一个道具id的不予计算
+            -- 如果是同一个道具id的不予计算
         else
             selectNum = selectNum + data.num * data.likeAdd
         end
@@ -231,7 +254,7 @@ function getSelectUpLvl(self)
     local heroVo = hero.HeroManager:getHeroVo(self.curHeroId)
     local heroFavorableData = self:getHeroFavorableData(heroVo.tid)
 
-    local lvNeedExpList = { 0 }
+    local lvNeedExpList = {0}
     for lv, data in pairs(heroFavorableData.favorableData) do
         needExp = needExp + data.favorableExp
         if (data.favorableExp > 0) then
@@ -268,10 +291,13 @@ function getSelectProps(self)
     local retList = {}
     for id, data in pairs(self.mSelectProps) do
         if data.num ~= 0 then
-            local pt_item_num = { item_id = data.id, num = data.num }
+            local pt_item_num = {
+                item_id = data.id,
+                num = data.num
+            }
             table.insert(retList, pt_item_num)
         end
-        --selectNum = selectNum + data.num * data.likeAdd
+        -- selectNum = selectNum + data.num * data.likeAdd
     end
     return retList
 end
@@ -290,7 +316,7 @@ function parseConfigData(self)
         if not self.mCaseData[key] then
             self.mCaseData[key] = {}
         end
-        --临时数据 初始资料 暂时写死
+        -- 临时数据 初始资料 暂时写死
         local tempVo = LuaPoolMgr:poolGet(favorable.FavorableCaseVo)
         tempVo:parseData(0, data.hero_case[1], key)
         tempVo.relationLv = 0
@@ -348,7 +374,14 @@ function getInteractList(self, cusTid)
     end
     return self.mInteractData[cusTid]
 end
---获取是否满足升级弹窗要求
+
+function getStoryList(self, cusTid)
+    if self.mHeroFavorableData == nil then
+        self:parseHeroFavorableData()
+    end
+    return self.mHeroFavorableData[cusTid]
+end
+-- 获取是否满足升级弹窗要求
 function getIsPopUp(self)
     return self.mIsPopUp
 end
@@ -358,7 +391,7 @@ function setIsPopUp(self, isPopUp)
 end
 
 function setOldHeroVo(self, heroVo)
-    --self.oldHeroVo = heroVo
+    -- self.oldHeroVo = heroVo
     local oldHeroVo = hero.HeroVo.new()
     oldHeroVo.id = heroVo.id
     oldHeroVo.tid = heroVo.tid
@@ -371,6 +404,57 @@ end
 
 function getOldHeroVo(self)
     return self.oldHeroVo
+end
+
+-- function parseHeroStoryRewardMsg(self,msg)
+--     self.relationStoryList = msg.relation_story_reward_list
+-- end
+
+function getHeroStoryRewardGeted(self, tid, lv)
+    if self.storyRewardGainList == nil then
+        return false
+    end
+
+    if self.storyRewardGainList[tid] == nil then
+        return false
+    end
+    return table.indexof01(self.storyRewardGainList[tid], lv) > 0
+end
+
+function updateHeroStoryReward(self, msg)
+    if not self.storyRewardGainList[msg.hero_tid] then
+        self.storyRewardGainList[msg.hero_tid] = {}
+    end
+
+    table.insert(self.storyRewardGainList[msg.hero_tid], msg.relation_lv)
+
+    GameDispatcher:dispatchEvent(EventName.FAVORABLE_REWARD_GAIN_UPDATE)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_HERO_STORY_REWARD)
+end
+
+-- 该英雄是否有资料奖励可领取
+function getStoryRewardHasRed(self, heroId)
+    local heroVo = hero.HeroManager:getHeroVo(heroId)
+    if heroVo then
+        local dic = favorable.FavorableManager:getStoryList(heroVo.tid).favorableData
+        local list = {}
+        for id, data in pairs(dic) do
+            if data.storyId > 0 then
+                table.insert(list, data)
+            end
+        end
+        -- local list = self:getCaseList(heroVo.tid)
+        if (list) then
+            for i = 1, #list do
+                local canFavorable = heroVo.favorableLevel >= list[i].favorableLevel
+                local noGet = self:getHeroStoryRewardGeted(heroVo.tid, list[i].favorableLevel) == false
+                if canFavorable and noGet then
+                    return true
+                end
+            end
+        end
+    end
+    return false
 end
 
 return _M

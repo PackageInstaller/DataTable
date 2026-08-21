@@ -1,126 +1,58 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainLiveAreaOldPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "MainLiveAreaOldPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MainLiveAreaOldUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0._academyBtn = arg_2_0._tf:Find("school_btn")
+	arg_2_0._haremBtn = arg_2_0._tf:Find("backyard_btn")
+	arg_2_0._commanderBtn = arg_2_0._tf:Find("commander_btn")
 
-	arg_2_0._academyBtn = var_1.Find(var_2_0, "school_btn")
+	local var_2_0 = pg.EasyRedDotMgr.GetInstance()
 
-	local var_2_1 = arg_2_0._tf
+	arg_2_0._haremTip = arg_2_0._haremBtn:Find("tip")
+	arg_2_0._academyTip = arg_2_0._academyBtn:Find("tip")
+	arg_2_0._commanderTip = arg_2_0._commanderBtn:Find("tip")
 
-	arg_2_0._haremBtn = var_1.Find(var_2_1, "backyard_btn")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0._commanderBtn = var_1.Find(var_2_2, "commander_btn")
-	pg = var_1
-
-	local var_2_3 = var_1.EasyRedDotMgr.GetInstance()
-	local var_2_4 = arg_2_0._haremBtn
-
-	arg_2_0._haremTip = var_2.Find(var_2_4, "tip")
-
-	local var_2_5 = arg_2_0._academyBtn
-
-	arg_2_0._academyTip = var_2.Find(var_2_5, "tip")
-
-	local var_2_6 = arg_2_0._commanderBtn
-
-	arg_2_0._commanderTip = var_2.Find(var_2_6, "tip")
-
-	var_2_3:RegisterRedDot(arg_2_0._haremTip, {
+	var_2_0:RegisterRedDot(arg_2_0._haremTip, {
 		"COURTYARD"
 	}, function(arg_3_0)
-		setActive = var_2_10001
-
-		local var_3_0 = arg_3_0
-
-		getProxy = var_2_10004
-		DormProxy = var_2_10006
-
-		local var_3_1 = var_2_10004(var_2_10006)
-
-		var_2_10001(var_3_0, var_4.IsShowRedDot(var_3_1))
+		setActive(arg_3_0, getProxy(DormProxy):IsShowRedDot())
 
 		return
 	end)
-	var_2_3:RegisterRedDot(arg_2_0._academyTip, {
+	var_2_0:RegisterRedDot(arg_2_0._academyTip, {
 		"SCHOOL"
 	}, function(arg_4_0)
-		setActive = var_2_10001
-
-		local var_4_0 = arg_4_0
-
-		getProxy = var_2_10004
-		NavalAcademyProxy = var_2_10006
-
-		local var_4_1 = var_2_10004(var_2_10006)
-
-		var_2_10001(var_4_0, var_4.IsShowTip(var_4_1))
+		setActive(arg_4_0, getProxy(NavalAcademyProxy):IsShowTip())
 
 		return
 	end)
-	var_2_3:RegisterRedDot(arg_2_0._commanderTip, {
+	var_2_0:RegisterRedDot(arg_2_0._commanderTip, {
 		"COMMANDER"
 	}, function(arg_5_0)
-		getProxy = var_2_10001
-		PlayerProxy = var_2_10003
-
-		local var_5_0 = var_2_10001(var_2_10003)
-
-		if var_1.getRawData(var_5_0).level < 40 then
-			setActive = var_1
-
-			var_1(arg_5_0, false)
+		if getProxy(PlayerProxy):getRawData().level < 40 then
+			setActive(arg_5_0, false)
 
 			return
 		end
 
-		getProxy = var_1
-		CommanderProxy = var_5_0
+		local var_5_0 = getProxy(CommanderProxy):IsFinishAllBox()
 
-		local var_5_1 = var_1(var_5_0)
-		local var_5_2 = var_1.IsFinishAllBox(var_5_1)
+		if not LOCK_CATTERY then
+			local var_5_1
 
-		LOCK_CATTERY = var_2
-
-		if not var_2 then
-			setActive = var_2
-
-			local var_5_3 = arg_5_0
-
-			if not var_5_2 then
+			if not var_5_0 then
 				::label_5_0::
 
-				getProxy = var_2_10005
-				CommanderProxy = var_2_10007
-
-				local var_5_4 = var_2_10005(var_2_10007)
-
-				if not var_2_10005.AnyCatteryExistOP(var_5_4) then
-					getProxy = var_2_10005
-					CommanderProxy = var_5_4
-
-					local var_5_5 = var_2_10005(var_5_4)
-
-					var_2_10005 = var_2_10005.AnyCatteryCanUse(var_5_5)
-				end
+				var_5_1 = getProxy(CommanderProxy):AnyCatteryExistOP()
+				var_5_1 = var_5_1 or getProxy(CommanderProxy):AnyCatteryCanUse()
 			end
 
-			var_2(var_5_3, var_2_10005)
+			setActive(arg_5_0, var_5_1)
 		else
-			setActive = var_2
-
-			var_2(arg_5_0, var_5_2)
+			setActive(arg_5_0, var_5_0)
 		end
 
 		return
@@ -129,216 +61,72 @@ function var_0_1.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.OnInit(arg_6_0)
-	onButton = var_1_10001
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0._commanderBtn
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-		local var_7_1 = var_0.emit
-
-		NewMainMediator = var_2_10003
-
-		local var_7_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		local var_7_3 = var_2_10004.COMMANDERCAT
-		local var_7_4 = {
-			fromMain = true
-		}
-
-		CommanderCatScene = var_2_10006
-		var_7_4.fleetType = var_2_10006.FLEET_TYPE_COMMON
-
-		var_7_1(var_7_0, var_7_2, var_7_3, var_7_4)
-
-		local var_7_5 = arg_6_0
-
-		var_0.Hide(var_7_5)
+function var_0_0.OnInit(arg_6_0)
+	onButton(arg_6_0, arg_6_0._commanderBtn, function()
+		arg_6_0:emit(NewMainMediator.GO_SCENE, SCENE.COMMANDERCAT, {
+			fromMain = true,
+			fleetType = CommanderCatScene.FLEET_TYPE_COMMON
+		})
+		arg_6_0:Hide()
 
 		return
-	end
-
-	SFX_MAIN = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0._haremBtn
-
-	local function var_6_5()
-		local var_8_0 = arg_6_0
-		local var_8_1 = var_0.emit
-
-		NewMainMediator = var_2_10003
-
-		local var_8_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_8_1(var_8_0, var_8_2, var_2_10004.COURTYARD)
-
-		local var_8_3 = arg_6_0
-
-		var_0.Hide(var_8_3)
+	end, SFX_MAIN)
+	onButton(arg_6_0, arg_6_0._haremBtn, function()
+		arg_6_0:emit(NewMainMediator.GO_SCENE, SCENE.COURTYARD)
+		arg_6_0:Hide()
 
 		return
-	end
-
-	SFX_MAIN = var_1_10006
-
-	var_1_10001(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0._academyBtn
-
-	local function var_6_8()
-		local var_9_0 = arg_6_0
-		local var_9_1 = var_0.emit
-
-		NewMainMediator = var_2_10003
-
-		local var_9_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_9_1(var_9_0, var_9_2, var_2_10004.NAVALACADEMYSCENE)
-
-		local var_9_3 = arg_6_0
-
-		var_0.Hide(var_9_3)
+	end, SFX_MAIN)
+	onButton(arg_6_0, arg_6_0._academyBtn, function()
+		arg_6_0:emit(NewMainMediator.GO_SCENE, SCENE.NAVALACADEMYSCENE)
+		arg_6_0:Hide()
 
 		return
-	end
-
-	SFX_MAIN = var_1_10006
-
-	var_1_10001(var_6_6, var_6_7, var_6_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_9 = arg_6_0
-	local var_6_10 = arg_6_0._tf
-
-	local function var_6_11()
-		local var_10_0 = arg_6_0
-
-		var_0.Hide(var_10_0)
+	end, SFX_MAIN)
+	onButton(arg_6_0, arg_6_0._tf, function()
+		arg_6_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_9, var_6_10, var_6_11, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_11_0)
-	var_0_1.super.Show(arg_11_0)
-
-	pg = var_1
-
-	local var_11_0 = var_1.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_11_0, arg_11_0._tf, {
+function var_0_0.Show(arg_11_0)
+	var_0_0.super.Show(arg_11_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_11_0._tf, {
 		staticBlur = true
 	})
 
-	getProxy = var_1
-	PlayerProxy = var_11_0
+	local var_11_0 = getProxy(PlayerProxy):getRawData()
 
-	local var_11_1 = var_1(var_11_0)
-	local var_11_2 = var_1.getRawData(var_11_1)
+	arg_11_0._commanderBtn:GetComponent(typeof(Image)).color = not pg.SystemOpenMgr.GetInstance():isOpenSystem(var_11_0.level, "CommanderCatMediator") and Color(0.3, 0.3, 0.3, 1) or Color(1, 1, 1, 1)
 
-	pg = var_1_10002
+	local var_11_1 = pg.SystemOpenMgr.GetInstance()
 
-	local var_11_3 = var_1_10002.SystemOpenMgr.GetInstance()
-
-	if not var_2.isOpenSystem(var_11_3, var_11_2.level, "CommanderCatMediator") then
-		local var_11_4 = arg_11_0._commanderBtn
-
-		var_11_1 = var_11_1.GetComponent
-		typeof = var_6
-		Image = var_1_10008
-		var_11_1 = var_11_1(var_11_4, var_6(var_1_10008))
-		Color = var_11_3
-		var_11_1.color = var_11_3(0.3, 0.3, 0.3, 1)
-	else
-		local var_11_5 = arg_11_0._commanderBtn
-
-		var_11_1 = var_11_1.GetComponent
-		typeof = var_6
-		Image = var_1_10008
-		var_11_1 = var_11_1(var_11_5, var_6(var_1_10008))
-		Color = var_11_3
-		var_11_1.color = var_11_3(1, 1, 1, 1)
-	end
-
-	pg = var_11_1
-
-	local var_11_6 = var_11_1.SystemOpenMgr.GetInstance()
-
-	if not var_3.isOpenSystem(var_11_6, var_11_2.level, "CourtYardMediator") then
-		local var_11_7 = arg_11_0._haremBtn
-		local var_11_8 = var_4.GetComponent
-
-		typeof = var_7
-		Image = var_1_10009
-
-		local var_11_9 = var_11_8(var_11_7, var_7(var_1_10009))
-
-		Color = var_11_6
-		var_11_9.color = var_11_6(0.3, 0.3, 0.3, 1)
-	else
-		local var_11_10 = arg_11_0._haremBtn
-		local var_11_11 = var_4.GetComponent
-
-		typeof = var_7
-		Image = var_1_10009
-
-		local var_11_12 = var_11_11(var_11_10, var_7(var_1_10009))
-
-		Color = var_11_6
-		var_11_12.color = var_11_6(1, 1, 1, 1)
-	end
+	arg_11_0._haremBtn:GetComponent(typeof(Image)).color = not var_11_1:isOpenSystem(var_11_0.level, "CourtYardMediator") and Color(0.3, 0.3, 0.3, 1) or Color(1, 1, 1, 1)
 
 	return
 end
 
-function var_0_1.Hide(arg_12_0)
+function var_0_0.Hide(arg_12_0)
 	if arg_12_0:isShowing() then
-		var_0_1.super.Hide(arg_12_0)
-
-		pg = var_1
-
-		local var_12_0 = var_1.UIMgr.GetInstance()
-
-		var_1.UnOverlayPanel(var_12_0, arg_12_0._tf, arg_12_0._parentTf)
+		var_0_0.super.Hide(arg_12_0)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0._tf, arg_12_0._parentTf)
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_13_0)
-	pg = var_1_10001
+function var_0_0.OnDestroy(arg_13_0)
+	local var_13_0 = pg.EasyRedDotMgr.GetInstance()
 
-	local var_13_0 = var_1_10001.EasyRedDotMgr.GetInstance()
-
-	var_1.UnRegisterRedDot(var_13_0, arg_13_0._haremTip)
-	var_1:UnRegisterRedDot(arg_13_0._academyTip)
-	var_1:UnRegisterRedDot(arg_13_0._commanderTip)
+	var_13_0:UnRegisterRedDot(arg_13_0._haremTip)
+	var_13_0:UnRegisterRedDot(arg_13_0._academyTip)
+	var_13_0:UnRegisterRedDot(arg_13_0._commanderTip)
 	arg_13_0:Hide()
 
 	return
 end
 
-return var_0_1
+return var_0_0

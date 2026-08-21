@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CourtYardBaseSubPage")
+﻿local var_0_0 = class("CourtYardBaseSubPage")
 
 var_0_0.STATES = {
 	LOADED = 3,
@@ -28,37 +26,18 @@ function var_0_0.Load(arg_2_0)
 	end
 
 	arg_2_0._state = var_0_0.STATES.LOADING
-	pg = var_1
 
-	local var_2_0 = var_1.UIMgr.GetInstance()
+	pg.UIMgr.GetInstance():LoadingOn()
 
-	var_1.LoadingOn(var_2_0)
+	local var_2_0 = PoolMgr.GetInstance()
 
-	PoolMgr = var_1
-
-	local var_2_1 = var_1.GetInstance()
-
-	var_1.GetUI(var_2_1, arg_2_0:getUIName(), true, function(arg_3_0)
+	PoolMgr.GetInstance():GetUI(arg_2_0:getUIName(), true, function(arg_3_0)
 		if arg_2_0._state == var_0_0.STATES.DESTROY then
-			pg = var_1
-
-			local var_3_0 = var_1.UIMgr.GetInstance()
-
-			var_1.LoadingOff(var_3_0)
-
-			local var_3_1 = var_0
-			local var_3_2 = var_1.ReturnUI
-			local var_3_3 = arg_2_0
-
-			var_3_2(var_3_1, var_4.getUIName(var_3_3), arg_3_0)
+			pg.UIMgr.GetInstance():LoadingOff()
+			var_2_0:ReturnUI(arg_2_0:getUIName(), arg_3_0)
 		else
-			local var_3_4 = arg_2_0
-
-			var_1.Loaded(var_3_4, arg_3_0)
-
-			local var_3_5 = arg_2_0
-
-			var_1.Init(var_3_5)
+			arg_2_0:Loaded(arg_3_0)
+			arg_2_0:Init()
 		end
 
 		return
@@ -68,11 +47,7 @@ function var_0_0.Load(arg_2_0)
 end
 
 function var_0_0.Loaded(arg_4_0, arg_4_1)
-	pg = var_1_10002
-
-	local var_4_0 = var_1_10002.UIMgr.GetInstance()
-
-	var_2.LoadingOff(var_4_0)
+	pg.UIMgr.GetInstance():LoadingOff()
 
 	if arg_4_0._state ~= var_0_0.STATES.LOADING then
 		return
@@ -80,15 +55,10 @@ function var_0_0.Loaded(arg_4_0, arg_4_1)
 
 	arg_4_0._state = var_0_0.STATES.LOADED
 	arg_4_0._go = arg_4_1
-	tf = var_2
-	arg_4_0._tf = var_2(arg_4_1)
-	pg = var_2
+	arg_4_0._tf = tf(arg_4_1)
 
-	var_2.DelegateInfo.New(arg_4_0)
-
-	SetParent = var_2
-
-	var_2(arg_4_0._tf, arg_4_0._parentTf, false)
+	pg.DelegateInfo.New(arg_4_0)
+	SetParent(arg_4_0._tf, arg_4_0._parentTf, false)
 	arg_4_0:OnLoaded()
 
 	return
@@ -119,19 +89,16 @@ function var_0_0.Destroy(arg_6_0)
 	end
 
 	arg_6_0._state = var_0_0.STATES.DESTROY
-	pg = var_1
 
-	var_1.DelegateInfo.Dispose(arg_6_0)
+	pg.DelegateInfo.Dispose(arg_6_0)
 	arg_6_0:OnDestroy()
 
 	arg_6_0._tf = nil
-	PoolMgr = var_1
 
-	local var_6_0 = var_1.GetInstance()
-	local var_6_1 = arg_6_0:getUIName()
+	local var_6_0 = arg_6_0:getUIName()
 
-	if arg_6_0._go ~= nil and var_6_1 then
-		var_6_0:ReturnUI(var_6_1, arg_6_0._go)
+	if arg_6_0._go ~= nil and var_6_0 then
+		PoolMgr.GetInstance():ReturnUI(var_6_0, arg_6_0._go)
 
 		arg_6_0._go = nil
 	end
@@ -142,13 +109,9 @@ end
 function var_0_0.HandleFuncQueue(arg_7_0)
 	if arg_7_0._state == var_0_0.STATES.INITED then
 		while #arg_7_0._funcQueue > 0 do
-			table = var_1
+			local var_7_0 = table.remove(arg_7_0._funcQueue, 1)
 
-			local var_7_0 = var_1.remove(arg_7_0._funcQueue, 1).func
-
-			unpack = var_4
-
-			var_7_0(var_4(var_1.params, 1, var_1.params.len))
+			var_7_0.func(unpack(var_7_0.params, 1, var_7_0.params.len))
 		end
 	end
 
@@ -162,24 +125,17 @@ function var_0_0.Reset(arg_8_0)
 end
 
 function var_0_0.ActionInvoke(arg_9_0, arg_9_1, ...)
-	assert = var_1_10002
+	assert(arg_9_0[arg_9_1], "func not exist >>>" .. arg_9_1)
 
-	var_1_10002(arg_9_0[arg_9_1], "func not exist >>>" .. arg_9_1)
-
-	local var_9_0 = arg_9_0._funcQueue
-	local var_9_1 = #arg_9_0._funcQueue + 1
-	local var_9_2 = {
+	arg_9_0._funcQueue[#arg_9_0._funcQueue + 1] = {
 		funcName = arg_9_1,
-		func = arg_9_0[arg_9_1]
+		func = arg_9_0[arg_9_1],
+		params = {
+			len = 1 + select("#", ...),
+			arg_9_0,
+			...
+		}
 	}
-	local var_9_3 = {}
-
-	select = var_6
-	var_9_3.len = 1 + var_6("#", ...)
-	var_9_3[1] = arg_9_0
-	var_9_3[2] = ...
-	var_9_2.params = var_9_3
-	var_9_0[var_9_1] = var_9_2
 
 	arg_9_0:HandleFuncQueue()
 
@@ -187,15 +143,10 @@ function var_0_0.ActionInvoke(arg_9_0, arg_9_1, ...)
 end
 
 function var_0_0.CallbackInvoke(arg_10_0, arg_10_1, ...)
-	local var_10_0 = arg_10_0._funcQueue
-	local var_10_1 = #arg_10_0._funcQueue + 1
-	local var_10_2 = {
-		func = arg_10_1
+	arg_10_0._funcQueue[#arg_10_0._funcQueue + 1] = {
+		func = arg_10_1,
+		params = packEx(...)
 	}
-
-	packEx = var_1_10005
-	var_10_2.params = var_1_10005(...)
-	var_10_0[var_10_1] = var_10_2
 
 	arg_10_0:HandleFuncQueue()
 
@@ -218,36 +169,23 @@ function var_0_0.CheckState(arg_13_0, arg_13_1)
 end
 
 function var_0_0.Show(arg_14_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_14_0._tf, true)
+	setActive(arg_14_0._tf, true)
 
 	return
 end
 
 function var_0_0.Hide(arg_15_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_15_0._tf, false)
+	setActive(arg_15_0._tf, false)
 
 	return
 end
 
 function var_0_0.isShowing(arg_16_0)
-	local var_16_0
-
-	if arg_16_0._tf then
-		isActive = var_16_0
-		var_16_0 = var_16_0(arg_16_0._tf)
-	end
-
-	return var_16_0
+	return arg_16_0._tf and isActive(arg_16_0._tf)
 end
 
 function var_0_0.Emit(arg_17_0, arg_17_1, ...)
-	local var_17_0 = arg_17_0.parent
-
-	var_2.Emit(var_17_0, arg_17_1, ...)
+	arg_17_0.parent:Emit(arg_17_1, ...)
 
 	return
 end
@@ -255,13 +193,10 @@ end
 function var_0_0.getTpl(arg_18_0, arg_18_1, arg_18_2)
 	local var_18_0 = arg_18_2:Find(arg_18_1)
 
-	var_3.SetParent(var_18_0, arg_18_0._tf, false)
+	var_18_0:SetParent(arg_18_0._tf, false)
+	SetActive(var_18_0, false)
 
-	SetActive = var_4
-
-	var_4(var_3, false)
-
-	return var_3
+	return var_18_0
 end
 
 function var_0_0.getUIName(arg_19_0)

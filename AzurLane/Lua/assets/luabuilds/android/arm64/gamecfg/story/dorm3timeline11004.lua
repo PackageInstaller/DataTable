@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿return {
 	dialogbox = 2,
 	alpha = 0,
 	hideSkip = true,
@@ -8,73 +8,63 @@
 	id = "DORM3TIMELINE11004",
 	placeholder = {
 		"dorm3d"
-	}
-}
-local var_0_1 = {}
-local var_0_2 = {
-	stopbgm = true,
-	bgm = "Story-room-anchorage"
-}
-local var_0_3 = {
-	nextOne = true
-}
-
-STORY_EVENT = var_0_10004
-var_0_3.name = var_0_10004.TEST
-var_0_3.data = {
-	op_list = {
+	},
+	scripts = {
 		{
-			sceneRoot = "Xinzexi_DB/Newjerseyhostel",
-			name = "FFliwu_10517_01",
-			scene = "map_newjerseyhostel_01",
-			type = "timeline",
-			skip = false,
-			options = {
-				{
-					{
-						content = "还是换一颗新的吧"
-					}
-				}
-			},
-			touchs = {
-				{
-					{
-						pos = {
-							-100,
-							100
+			stopbgm = true,
+			bgm = "Story-room-anchorage",
+			dispatcher = {
+				nextOne = true,
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							sceneRoot = "Xinzexi_DB/Newjerseyhostel",
+							name = "FFliwu_10517_01",
+							scene = "map_newjerseyhostel_01",
+							type = "timeline",
+							skip = false,
+							options = {
+								{
+									{
+										content = "还是换一颗新的吧"
+									}
+								}
+							},
+							touchs = {
+								{
+									{
+										pos = {
+											-100,
+											100
+										}
+									}
+								},
+								{
+									{
+										pos = {
+											-30,
+											80
+										}
+									}
+								},
+								{
+									{
+										pos = {
+											-150,
+											-260
+										}
+									}
+								}
+							}
 						}
 					}
 				},
-				{
-					{
-						pos = {
-							-30,
-							80
-						}
-					}
-				},
-				{
-					{
-						pos = {
-							-150,
-							-260
-						}
-					}
+				callbackData = {
+					hideUI = true,
+					name = STORY_EVENT.TEST_DONE
 				}
 			}
 		}
 	}
 }
-
-local var_0_4 = {
-	hideUI = true
-}
-
-STORY_EVENT = var_5
-var_0_4.name = var_5.TEST_DONE
-var_0_3.callbackData = var_0_4
-var_0_2.dispatcher = var_0_3
-var_0_1[1] = var_0_2
-var_0_0.scripts = var_0_1
-
-return var_0_0

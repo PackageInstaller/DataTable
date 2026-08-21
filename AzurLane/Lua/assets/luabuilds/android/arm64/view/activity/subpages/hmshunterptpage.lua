@@ -1,44 +1,20 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("HMSHunterPTPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "HMSHunterPTPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
+	arg_1_0.helpBtn = arg_1_0.bg:Find("help")
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0.bg
-
-	arg_1_0.helpBtn = var_1.Find(var_1_0, "help")
-	onButton = var_1
-
-	local var_1_1 = arg_1_0
-	local var_1_2 = arg_1_0.helpBtn
-
-	local function var_1_3()
-		pg = var_2_10000
-
-		local var_2_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_2_1 = var_0.ShowMsgBox
-		local var_2_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_2_2.type = var_2_10004
-		i18n = var_2_10004
-		var_2_2.helps = var_2_10004("hunter_npc")
-
-		var_2_1(var_2_0, var_2_2)
+	onButton(arg_1_0, arg_1_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("hunter_npc")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_1_1, var_1_2, var_1_3, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-return var_0_1
+return var_0_0

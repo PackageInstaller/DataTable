@@ -1,98 +1,59 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AirFightActivity", import("model.vo.Activity"))
 
-local var_0_0 = "AirFightActivity"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.Activity"))
-
-function var_0_1.GetMaxProgress(arg_1_0)
+function var_0_0.GetMaxProgress(arg_1_0)
 	return arg_1_0:getConfig("config_data")[1]
 end
 
-function var_0_1.GetPerDayCount(arg_2_0)
+function var_0_0.GetPerDayCount(arg_2_0)
 	return arg_2_0:getConfig("config_data")[2]
 end
 
-function var_0_1.GetPerLevelProgress(arg_3_0)
+function var_0_0.GetPerLevelProgress(arg_3_0)
 	return arg_3_0:getConfig("config_data")[3]
 end
 
-function var_0_1.GetLevelCount(arg_4_0)
+function var_0_0.GetLevelCount(arg_4_0)
 	return arg_4_0:GetMaxProgress() / arg_4_0:GetPerLevelProgress()
 end
 
-function var_0_1.readyToAchieve(arg_5_0)
+function var_0_0.readyToAchieve(arg_5_0)
 	if arg_5_0:IsTip() then
 		return false
 	end
 
 	local var_5_0 = arg_5_0:GetMaxProgress()
 	local var_5_1 = arg_5_0:GetPerDayCount()
-	local var_5_2 = arg_5_0:GetLevelCount()
-	local var_5_3 = 0
+	local var_5_2 = 0
 
-	for iter_5_0 = 1, var_5_2 do
-		local var_5_4
+	for iter_5_0 = 1, arg_5_0:GetLevelCount() do
+		local var_5_3 = arg_5_0:getKVPList(1, iter_5_0) or 0
 
-		if not arg_5_0:getKVPList(1, iter_5_0) then
-			var_5_4 = 0
-		end
-
-		var_5_3 = var_5_3 + var_5_4
+		var_5_2 = var_5_2 + var_5_3
 	end
 
-	pg = var_5
+	local var_5_4 = pg.TimeMgr.GetInstance()
 
-	local var_5_5 = var_5.TimeMgr.GetInstance()
-	local var_5_6 = var_5.DiffDay(var_5_5, arg_5_0.data1, var_5:GetServerTime()) + 1
-
-	math = var_7
-
-	return var_5_3 < var_7.min(var_5_6 * var_5_1, var_5_0)
+	return var_5_2 < math.min((var_5_4:DiffDay(arg_5_0.data1, var_5_4:GetServerTime()) + 1) * var_5_1, var_5_0)
 end
 
-function var_0_1.IsTip(arg_6_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
+function var_0_0.IsTip(arg_6_0)
+	local var_6_9000
+	local var_6_0 = getProxy(PlayerProxy)
+	local var_6_1 = PlayerPrefs.GetInt("airfight_tip_" .. arg_6_0.id .. "_" .. var_6_0.getRawData(var_6_9000).id, 0)
 
-	local var_6_0 = var_1_10001(var_1_10003)
-	local var_6_1 = var_1.getRawData(var_6_0).id
-
-	PlayerPrefs = var_1_10002
-
-	local var_6_2 = var_1_10002.GetInt("airfight_tip_" .. arg_6_0.id .. "_" .. var_6_1, 0)
-
-	pg = var_6_0
-
-	local var_6_3 = var_6_0.TimeMgr.GetInstance()
-
-	return var_6_2 > var_3.GetServerTime(var_6_3)
+	return var_6_1 > pg.TimeMgr.GetInstance().GetServerTime(var_6_0)
 end
 
-function var_0_1.RecordTip(arg_7_0)
-	local var_7_0 = arg_7_0
-
-	if arg_7_0.IsTip(var_7_0) then
+function var_0_0.RecordTip(arg_7_0)
+	if arg_7_0:IsTip() then
 		return
 	end
 
-	getProxy = var_1
-	PlayerProxy = var_7_0
+	local var_7_0 = getProxy(PlayerProxy)
 
-	local var_7_1 = var_1(var_7_0)
-	local var_7_2 = var_1.getRawData(var_7_1).id
-
-	pg = var_1_10002
-
-	local var_7_3 = var_1_10002.TimeMgr.GetInstance()
-	local var_7_4 = var_2.GetTimeToNextTime(var_7_3)
-
-	PlayerPrefs = var_7_1
-
-	var_7_1.SetInt("airfight_tip_" .. arg_7_0.id .. "_" .. var_7_2, var_7_4)
+	PlayerPrefs.SetInt("airfight_tip_" .. arg_7_0.id .. "_" .. var_7_0:getRawData().id, (pg.TimeMgr.GetInstance():GetTimeToNextTime()))
 
 	return
 end
 
-return var_0_1
+return var_0_0

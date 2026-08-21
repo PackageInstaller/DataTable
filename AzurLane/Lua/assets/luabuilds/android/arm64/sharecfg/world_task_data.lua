@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_task_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_task_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_task_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_task_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_task_data = rawget(pg, "world_task_data") or setmetatable({
+	__name = "world_task_data"
+}, confNEO)
+pg.world_task_data.all = {
 	1,
 	2000,
 	2001,
@@ -213,25 +190,11 @@ var_0_3.all = {
 	219500,
 	219600
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_task_data = {}
+pg.base = pg.base or {}
+pg.base.world_task_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_task_data
-
-	var_1_0[1] = {
+	pg.base.world_task_data[1] = {
 		server_type = 1,
 		name = "调查海域",
 		need_task_complete = 0,
@@ -289,11 +252,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_task_data
-
-	var_1_1[2000] = {
+	pg.base.world_task_data[2000] = {
 		server_type = 1,
 		name = "Chapter1-2似曾相识",
 		need_task_complete = 0,
@@ -361,11 +320,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_task_data
-
-	var_1_2[2001] = {
+	pg.base.world_task_data[2001] = {
 		server_type = 1,
 		name = "Chapter1-3重返百慕大",
 		need_task_complete = 0,
@@ -433,11 +388,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_task_data
-
-	var_1_3[2002] = {
+	pg.base.world_task_data[2002] = {
 		server_type = 1,
 		name = "Chapter1-4赤色之影",
 		need_task_complete = 0,
@@ -505,11 +456,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_task_data
-
-	var_1_4[2003] = {
+	pg.base.world_task_data[2003] = {
 		server_type = 1,
 		name = "Chapter1-5停火协议",
 		need_task_complete = 0,
@@ -577,11 +524,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_task_data
-
-	var_1_5[2004] = {
+	pg.base.world_task_data[2004] = {
 		server_type = 1,
 		name = "Chapter1-6前哨站",
 		need_task_complete = 0,
@@ -649,11 +592,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_task_data
-
-	var_1_6[2010] = {
+	pg.base.world_task_data[2010] = {
 		server_type = 1,
 		name = "Chapter1-SP 海域控制确保",
 		need_task_complete = 0,
@@ -725,11 +664,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_task_data
-
-	var_1_7[2050] = {
+	pg.base.world_task_data[2050] = {
 		server_type = 1,
 		name = "Chapter1-1起航",
 		need_task_complete = 0,
@@ -797,11 +732,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_task_data
-
-	var_1_8[2100] = {
+	pg.base.world_task_data[2100] = {
 		server_type = 1,
 		name = "Chapter2-1集结",
 		need_task_complete = 0,
@@ -871,11 +802,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_task_data
-
-	var_1_9[2101] = {
+	pg.base.world_task_data[2101] = {
 		server_type = 1,
 		name = "Chapter2-2并肩作战",
 		need_task_complete = 0,
@@ -943,11 +870,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_task_data
-
-	var_1_10[2102] = {
+	pg.base.world_task_data[2102] = {
 		server_type = 1,
 		name = "Chapter2-3外围清扫",
 		need_task_complete = 0,
@@ -1015,11 +938,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_task_data
-
-	var_1_11[2103] = {
+	pg.base.world_task_data[2103] = {
 		server_type = 1,
 		name = "Chapter2-4救援信号",
 		need_task_complete = 0,
@@ -1087,11 +1006,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_task_data
-
-	var_1_12[2104] = {
+	pg.base.world_task_data[2104] = {
 		server_type = 1,
 		name = "Chapter2-5女王的联络",
 		need_task_complete = 0,
@@ -1159,11 +1074,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_task_data
-
-	var_1_13[2105] = {
+	pg.base.world_task_data[2105] = {
 		server_type = 1,
 		name = "Chapter2-6强敌",
 		need_task_complete = 0,
@@ -1231,11 +1142,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_task_data
-
-	var_1_14[2110] = {
+	pg.base.world_task_data[2110] = {
 		server_type = 1,
 		name = "Chapter2-SP 海域控制确保",
 		need_task_complete = 0,
@@ -1310,11 +1217,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_task_data
-
-	var_1_15[2150] = {
+	pg.base.world_task_data[2150] = {
 		server_type = 1,
 		name = "扩编舰队",
 		need_task_complete = 0,
@@ -1368,11 +1271,7 @@ var_0_3.base.world_task_data = {}
 		show = {},
 		reset_task = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_task_data
-
-	var_1_16[2200] = {
+	pg.base.world_task_data[2200] = {
 		server_type = 1,
 		name = "Chapter3-1另一处攻击",
 		need_task_complete = 0,
@@ -1447,11 +1346,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_task_data
-
-	var_1_17[2201] = {
+	pg.base.world_task_data[2201] = {
 		server_type = 1,
 		name = "Chapter3-2TB系统",
 		need_task_complete = 0,
@@ -1524,11 +1419,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_task_data
-
-	var_1_18[2202] = {
+	pg.base.world_task_data[2202] = {
 		server_type = 1,
 		name = "Chapter3-3友军信号",
 		need_task_complete = 0,
@@ -1601,11 +1492,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_task_data
-
-	var_1_19[2203] = {
+	pg.base.world_task_data[2203] = {
 		server_type = 1,
 		name = "Chapter3-4救援",
 		need_task_complete = 0,
@@ -1678,11 +1565,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_task_data
-
-	var_1_20[2204] = {
+	pg.base.world_task_data[2204] = {
 		server_type = 1,
 		name = "Chapter3-5残影",
 		need_task_complete = 0,
@@ -1755,11 +1638,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_task_data
-
-	var_1_21[2205] = {
+	pg.base.world_task_data[2205] = {
 		server_type = 1,
 		name = "Chapter3-6一鼓作气",
 		need_task_complete = 0,
@@ -1832,11 +1711,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_task_data
-
-	var_1_22[2210] = {
+	pg.base.world_task_data[2210] = {
 		server_type = 1,
 		name = "Chapter3-SP 海域控制确保",
 		need_task_complete = 0,
@@ -1916,11 +1791,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_task_data
-
-	var_1_23[2300] = {
+	pg.base.world_task_data[2300] = {
 		server_type = 1,
 		name = "Chapter4-1初临陆间海",
 		need_task_complete = 0,
@@ -1995,11 +1866,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_task_data
-
-	var_1_24[2301] = {
+	pg.base.world_task_data[2301] = {
 		server_type = 1,
 		name = "Chapter4-2塔兰托港",
 		need_task_complete = 0,
@@ -2072,11 +1939,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_task_data
-
-	var_1_25[2302] = {
+	pg.base.world_task_data[2302] = {
 		server_type = 1,
 		name = "Chapter4-3达咯尔港",
 		need_task_complete = 0,
@@ -2151,11 +2014,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_task_data
-
-	var_1_26[2303] = {
+	pg.base.world_task_data[2303] = {
 		server_type = 1,
 		name = "Chapter4-4深入",
 		need_task_complete = 0,
@@ -2228,11 +2087,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_task_data
-
-	var_1_27[2304] = {
+	pg.base.world_task_data[2304] = {
 		server_type = 1,
 		name = "Chapter4-5海雾",
 		need_task_complete = 0,
@@ -2305,11 +2160,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_task_data
-
-	var_1_28[2305] = {
+	pg.base.world_task_data[2305] = {
 		server_type = 1,
 		name = "Chapter4-6战略调整",
 		need_task_complete = 0,
@@ -2382,11 +2233,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_task_data
-
-	var_1_29[2310] = {
+	pg.base.world_task_data[2310] = {
 		server_type = 1,
 		name = "Chapter4-SP 海域控制确保",
 		need_task_complete = 0,
@@ -2462,11 +2309,7 @@ var_0_3.base.world_task_data = {}
 			100
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_task_data
-
-	var_1_30[2600] = {
+	pg.base.world_task_data[2600] = {
 		server_type = 1,
 		name = "Chapter5-1 泥沼",
 		need_task_complete = 0,
@@ -2539,11 +2382,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_task_data
-
-	var_1_31[2601] = {
+	pg.base.world_task_data[2601] = {
 		server_type = 1,
 		name = "Chapter5-2 信标",
 		need_task_complete = 0,
@@ -2616,11 +2455,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_task_data
-
-	var_1_32[2602] = {
+	pg.base.world_task_data[2602] = {
 		server_type = 1,
 		name = "Chapter5-3 幻影",
 		need_task_complete = 0,
@@ -2693,11 +2528,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_task_data
-
-	var_1_33[2603] = {
+	pg.base.world_task_data[2603] = {
 		server_type = 1,
 		name = "Chapter5-4 茶会",
 		need_task_complete = 0,
@@ -2770,11 +2601,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_task_data
-
-	var_1_34[2604] = {
+	pg.base.world_task_data[2604] = {
 		server_type = 1,
 		name = "Chapter5-5 总攻开始",
 		need_task_complete = 0,
@@ -2847,11 +2674,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_task_data
-
-	var_1_35[2605] = {
+	pg.base.world_task_data[2605] = {
 		server_type = 1,
 		name = "Chapter5-6-0 圆环",
 		need_task_complete = 0,
@@ -2924,11 +2747,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_task_data
-
-	var_1_36[2606] = {
+	pg.base.world_task_data[2606] = {
 		server_type = 1,
 		name = "Chapter5-6-1 交汇之地",
 		need_task_complete = 0,
@@ -3001,11 +2820,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_task_data
-
-	var_1_37[2607] = {
+	pg.base.world_task_data[2607] = {
 		server_type = 1,
 		name = "Chapter5-6-2 深层循环",
 		need_task_complete = 0,
@@ -3083,11 +2898,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_task_data
-
-	var_1_38[3101] = {
+	pg.base.world_task_data[3101] = {
 		server_type = 2,
 		name = "NO.Q2A7L塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3150,11 +2961,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_task_data
-
-	var_1_39[3102] = {
+	pg.base.world_task_data[3102] = {
 		server_type = 2,
 		name = "NO.MY4BE塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3217,11 +3024,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_task_data
-
-	var_1_40[3103] = {
+	pg.base.world_task_data[3103] = {
 		server_type = 2,
 		name = "NO.K8ALD塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3284,11 +3087,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_task_data
-
-	var_1_41[3201] = {
+	pg.base.world_task_data[3201] = {
 		server_type = 2,
 		name = "NO.EMHOD塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3351,11 +3150,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_task_data
-
-	var_1_42[3202] = {
+	pg.base.world_task_data[3202] = {
 		server_type = 2,
 		name = "NO.3PF6Z塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3418,11 +3213,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_task_data
-
-	var_1_43[3203] = {
+	pg.base.world_task_data[3203] = {
 		server_type = 2,
 		name = "NO.COU42塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3485,11 +3276,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_task_data
-
-	var_1_44[3301] = {
+	pg.base.world_task_data[3301] = {
 		server_type = 2,
 		name = "NO.E8BIJ塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3552,11 +3339,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_task_data
-
-	var_1_45[3302] = {
+	pg.base.world_task_data[3302] = {
 		server_type = 2,
 		name = "NO.9RYH2塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3619,11 +3402,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_task_data
-
-	var_1_46[3303] = {
+	pg.base.world_task_data[3303] = {
 		server_type = 2,
 		name = "NO.ZKT5G塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3686,11 +3465,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_task_data
-
-	var_1_47[3304] = {
+	pg.base.world_task_data[3304] = {
 		server_type = 2,
 		name = "NO.YH16W塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3753,11 +3528,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_task_data
-
-	var_1_48[3401] = {
+	pg.base.world_task_data[3401] = {
 		server_type = 2,
 		name = "NO.SLUIA塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3820,11 +3591,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_task_data
-
-	var_1_49[3402] = {
+	pg.base.world_task_data[3402] = {
 		server_type = 2,
 		name = "NO.EC57Y塞壬实验场调查 ",
 		need_task_complete = 0,
@@ -3887,11 +3654,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_task_data
-
-	var_1_50[4100] = {
+	pg.base.world_task_data[4100] = {
 		server_type = 1,
 		name = "模拟战：代行者XIV",
 		need_task_complete = 0,
@@ -3956,11 +3719,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_task_data
-
-	var_1_51[4101] = {
+	pg.base.world_task_data[4101] = {
 		server_type = 1,
 		name = "模拟战：代行者VIII",
 		need_task_complete = 0,
@@ -4025,11 +3784,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_task_data
-
-	var_1_52[4102] = {
+	pg.base.world_task_data[4102] = {
 		server_type = 1,
 		name = "模拟战：代行者IX",
 		need_task_complete = 0,
@@ -4094,11 +3849,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_task_data
-
-	var_1_53[4200] = {
+	pg.base.world_task_data[4200] = {
 		server_type = 3,
 		name = "普通作战：仲裁机关",
 		need_task_complete = 0,
@@ -4153,11 +3904,7 @@ var_0_3.base.world_task_data = {}
 			300
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_task_data
-
-	var_1_54[4201] = {
+	pg.base.world_task_data[4201] = {
 		server_type = 3,
 		name = "困难作战：仲裁机关",
 		need_task_complete = 0,
@@ -4207,11 +3954,7 @@ var_0_3.base.world_task_data = {}
 		show = {},
 		reset_task = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_task_data
-
-	var_1_55[10000] = {
+	pg.base.world_task_data[10000] = {
 		server_type = 4,
 		name = "档案任务141-1",
 		need_task_complete = 0,
@@ -4286,11 +4029,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_task_data
-
-	var_1_56[10001] = {
+	pg.base.world_task_data[10001] = {
 		server_type = 4,
 		name = "档案任务141-2",
 		need_task_complete = 0,
@@ -4365,11 +4104,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_task_data
-
-	var_1_57[10002] = {
+	pg.base.world_task_data[10002] = {
 		server_type = 4,
 		name = "档案任务141-3",
 		need_task_complete = 0,
@@ -4444,11 +4179,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_task_data
-
-	var_1_58[10003] = {
+	pg.base.world_task_data[10003] = {
 		server_type = 4,
 		name = "档案任务141-4",
 		need_task_complete = 0,
@@ -4523,11 +4254,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_task_data
-
-	var_1_59[10004] = {
+	pg.base.world_task_data[10004] = {
 		server_type = 4,
 		name = "档案任务141-5",
 		need_task_complete = 0,
@@ -4602,11 +4329,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_task_data
-
-	var_1_60[10005] = {
+	pg.base.world_task_data[10005] = {
 		server_type = 4,
 		name = "档案任务141-6",
 		need_task_complete = 0,
@@ -4681,11 +4404,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_task_data
-
-	var_1_61[10006] = {
+	pg.base.world_task_data[10006] = {
 		server_type = 4,
 		name = "档案任务142-1",
 		need_task_complete = 0,
@@ -4760,11 +4479,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_task_data
-
-	var_1_62[10007] = {
+	pg.base.world_task_data[10007] = {
 		server_type = 4,
 		name = "档案任务142-2",
 		need_task_complete = 0,
@@ -4839,11 +4554,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_task_data
-
-	var_1_63[10008] = {
+	pg.base.world_task_data[10008] = {
 		server_type = 4,
 		name = "档案任务142-3",
 		need_task_complete = 0,
@@ -4918,11 +4629,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_task_data
-
-	var_1_64[10009] = {
+	pg.base.world_task_data[10009] = {
 		server_type = 4,
 		name = "档案任务142-4",
 		need_task_complete = 0,
@@ -4995,11 +4702,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_task_data
-
-	var_1_65[10010] = {
+	pg.base.world_task_data[10010] = {
 		server_type = 4,
 		name = "档案任务142-5",
 		need_task_complete = 0,
@@ -5074,11 +4777,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_task_data
-
-	var_1_66[10011] = {
+	pg.base.world_task_data[10011] = {
 		server_type = 4,
 		name = "档案任务142-6",
 		need_task_complete = 0,
@@ -5153,11 +4852,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_task_data
-
-	var_1_67[10012] = {
+	pg.base.world_task_data[10012] = {
 		server_type = 4,
 		name = "档案任务111-1",
 		need_task_complete = 0,
@@ -5232,11 +4927,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_task_data
-
-	var_1_68[10013] = {
+	pg.base.world_task_data[10013] = {
 		server_type = 4,
 		name = "档案任务111-2",
 		need_task_complete = 0,
@@ -5311,11 +5002,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_task_data
-
-	var_1_69[10014] = {
+	pg.base.world_task_data[10014] = {
 		server_type = 4,
 		name = "档案任务111-3",
 		need_task_complete = 0,
@@ -5390,11 +5077,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_task_data
-
-	var_1_70[10015] = {
+	pg.base.world_task_data[10015] = {
 		server_type = 4,
 		name = "档案任务111-4",
 		need_task_complete = 0,
@@ -5469,11 +5152,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_task_data
-
-	var_1_71[10016] = {
+	pg.base.world_task_data[10016] = {
 		server_type = 4,
 		name = "档案任务111-5",
 		need_task_complete = 0,
@@ -5548,11 +5227,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_task_data
-
-	var_1_72[10017] = {
+	pg.base.world_task_data[10017] = {
 		server_type = 4,
 		name = "档案任务111-6",
 		need_task_complete = 0,
@@ -5627,11 +5302,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_task_data
-
-	var_1_73[10018] = {
+	pg.base.world_task_data[10018] = {
 		server_type = 4,
 		name = "档案任务111-7",
 		need_task_complete = 0,
@@ -5706,11 +5377,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_task_data
-
-	var_1_74[10019] = {
+	pg.base.world_task_data[10019] = {
 		server_type = 4,
 		name = "档案任务111-8",
 		need_task_complete = 0,
@@ -5783,11 +5450,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_task_data
-
-	var_1_75[10020] = {
+	pg.base.world_task_data[10020] = {
 		server_type = 4,
 		name = "档案任务115-1",
 		need_task_complete = 0,
@@ -5862,11 +5525,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_task_data
-
-	var_1_76[10021] = {
+	pg.base.world_task_data[10021] = {
 		server_type = 4,
 		name = "档案任务115-2",
 		need_task_complete = 0,
@@ -5941,11 +5600,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_task_data
-
-	var_1_77[10022] = {
+	pg.base.world_task_data[10022] = {
 		server_type = 4,
 		name = "档案任务115-3",
 		need_task_complete = 0,
@@ -6020,11 +5675,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_task_data
-
-	var_1_78[10023] = {
+	pg.base.world_task_data[10023] = {
 		server_type = 4,
 		name = "档案任务115-4",
 		need_task_complete = 0,
@@ -6099,11 +5750,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_task_data
-
-	var_1_79[10024] = {
+	pg.base.world_task_data[10024] = {
 		server_type = 4,
 		name = "档案任务131-1",
 		need_task_complete = 0,
@@ -6178,11 +5825,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.world_task_data
-
-	var_1_80[10025] = {
+	pg.base.world_task_data[10025] = {
 		server_type = 4,
 		name = "档案任务131-2",
 		need_task_complete = 0,
@@ -6257,11 +5900,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.world_task_data
-
-	var_1_81[10026] = {
+	pg.base.world_task_data[10026] = {
 		server_type = 4,
 		name = "档案任务131-3",
 		need_task_complete = 0,
@@ -6336,11 +5975,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.world_task_data
-
-	var_1_82[10027] = {
+	pg.base.world_task_data[10027] = {
 		server_type = 4,
 		name = "档案任务131-4",
 		need_task_complete = 0,
@@ -6415,11 +6050,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.world_task_data
-
-	var_1_83[10028] = {
+	pg.base.world_task_data[10028] = {
 		server_type = 4,
 		name = "档案任务131-5",
 		need_task_complete = 0,
@@ -6494,11 +6125,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.world_task_data
-
-	var_1_84[10029] = {
+	pg.base.world_task_data[10029] = {
 		server_type = 4,
 		name = "档案任务131-6",
 		need_task_complete = 0,
@@ -6571,11 +6198,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.world_task_data
-
-	var_1_85[10030] = {
+	pg.base.world_task_data[10030] = {
 		server_type = 4,
 		name = "档案任务115-5",
 		need_task_complete = 0,
@@ -6650,11 +6273,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.world_task_data
-
-	var_1_86[10031] = {
+	pg.base.world_task_data[10031] = {
 		server_type = 4,
 		name = "档案任务115-6",
 		need_task_complete = 0,
@@ -6729,11 +6348,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.world_task_data
-
-	var_1_87[10032] = {
+	pg.base.world_task_data[10032] = {
 		server_type = 4,
 		name = "档案任务144-1",
 		need_task_complete = 0,
@@ -6808,11 +6423,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.world_task_data
-
-	var_1_88[10033] = {
+	pg.base.world_task_data[10033] = {
 		server_type = 4,
 		name = "档案任务144-2",
 		need_task_complete = 0,
@@ -6887,11 +6498,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.world_task_data
-
-	var_1_89[10034] = {
+	pg.base.world_task_data[10034] = {
 		server_type = 4,
 		name = "档案任务144-3",
 		need_task_complete = 0,
@@ -6966,11 +6573,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.world_task_data
-
-	var_1_90[10035] = {
+	pg.base.world_task_data[10035] = {
 		server_type = 4,
 		name = "档案任务144-4",
 		need_task_complete = 0,
@@ -7045,11 +6648,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.world_task_data
-
-	var_1_91[10036] = {
+	pg.base.world_task_data[10036] = {
 		server_type = 4,
 		name = "档案任务144-5",
 		need_task_complete = 0,
@@ -7124,11 +6723,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.world_task_data
-
-	var_1_92[10037] = {
+	pg.base.world_task_data[10037] = {
 		server_type = 4,
 		name = "档案任务144-6",
 		need_task_complete = 0,
@@ -7203,11 +6798,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.world_task_data
-
-	var_1_93[10038] = {
+	pg.base.world_task_data[10038] = {
 		server_type = 4,
 		name = "档案任务144-7",
 		need_task_complete = 0,
@@ -7282,11 +6873,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.world_task_data
-
-	var_1_94[10039] = {
+	pg.base.world_task_data[10039] = {
 		server_type = 4,
 		name = "档案任务144-8",
 		need_task_complete = 0,
@@ -7359,11 +6946,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.world_task_data
-
-	var_1_95[10040] = {
+	pg.base.world_task_data[10040] = {
 		server_type = 4,
 		name = "档案任务132-1",
 		need_task_complete = 0,
@@ -7438,11 +7021,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.world_task_data
-
-	var_1_96[10041] = {
+	pg.base.world_task_data[10041] = {
 		server_type = 4,
 		name = "档案任务132-2",
 		need_task_complete = 0,
@@ -7517,11 +7096,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.world_task_data
-
-	var_1_97[10042] = {
+	pg.base.world_task_data[10042] = {
 		server_type = 4,
 		name = "档案任务132-3",
 		need_task_complete = 0,
@@ -7596,11 +7171,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.world_task_data
-
-	var_1_98[10043] = {
+	pg.base.world_task_data[10043] = {
 		server_type = 4,
 		name = "档案任务132-4",
 		need_task_complete = 0,
@@ -7675,8 +7246,7 @@ var_0_3.base.world_task_data = {}
 		},
 		reset_task = {}
 	}
-	pg = var_1_98
-	var_1_98.base.world_task_data[10044] = {
+	pg.base.world_task_data[10044] = {
 		server_type = 4,
 		name = "档案任务132-5 132-6",
 		need_task_complete = 0,
@@ -7755,11 +7325,7 @@ var_0_3.base.world_task_data = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.world_task_data
-
-	var_2_0[10045] = {
+	pg.base.world_task_data[10045] = {
 		server_type = 4,
 		name = "档案任务143-1",
 		need_task_complete = 0,
@@ -7834,11 +7400,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.world_task_data
-
-	var_2_1[10046] = {
+	pg.base.world_task_data[10046] = {
 		server_type = 4,
 		name = "档案任务143-2",
 		need_task_complete = 0,
@@ -7913,11 +7475,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.world_task_data
-
-	var_2_2[10047] = {
+	pg.base.world_task_data[10047] = {
 		server_type = 4,
 		name = "档案任务143-3",
 		need_task_complete = 0,
@@ -7992,11 +7550,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.world_task_data
-
-	var_2_3[10048] = {
+	pg.base.world_task_data[10048] = {
 		server_type = 4,
 		name = "档案任务143-4",
 		need_task_complete = 0,
@@ -8071,11 +7625,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.world_task_data
-
-	var_2_4[10049] = {
+	pg.base.world_task_data[10049] = {
 		server_type = 4,
 		name = "档案任务143-5 143-6",
 		need_task_complete = 0,
@@ -8148,11 +7698,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.world_task_data
-
-	var_2_5[10050] = {
+	pg.base.world_task_data[10050] = {
 		server_type = 4,
 		name = "档案任务113-1",
 		need_task_complete = 0,
@@ -8227,11 +7773,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.world_task_data
-
-	var_2_6[10051] = {
+	pg.base.world_task_data[10051] = {
 		server_type = 4,
 		name = "档案任务113-2",
 		need_task_complete = 0,
@@ -8306,11 +7848,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.world_task_data
-
-	var_2_7[10052] = {
+	pg.base.world_task_data[10052] = {
 		server_type = 4,
 		name = "档案任务113-3",
 		need_task_complete = 0,
@@ -8385,11 +7923,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.world_task_data
-
-	var_2_8[10053] = {
+	pg.base.world_task_data[10053] = {
 		server_type = 4,
 		name = "档案任务113-4",
 		need_task_complete = 0,
@@ -8464,11 +7998,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.world_task_data
-
-	var_2_9[10054] = {
+	pg.base.world_task_data[10054] = {
 		server_type = 4,
 		name = "档案任务113-5 113-6",
 		need_task_complete = 0,
@@ -8543,11 +8073,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.world_task_data
-
-	var_2_10[10055] = {
+	pg.base.world_task_data[10055] = {
 		server_type = 4,
 		name = "档案任务133-1",
 		need_task_complete = 0,
@@ -8622,11 +8148,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.world_task_data
-
-	var_2_11[10056] = {
+	pg.base.world_task_data[10056] = {
 		server_type = 4,
 		name = "档案任务133-2",
 		need_task_complete = 0,
@@ -8701,11 +8223,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.world_task_data
-
-	var_2_12[10057] = {
+	pg.base.world_task_data[10057] = {
 		server_type = 4,
 		name = "档案任务133-3",
 		need_task_complete = 0,
@@ -8780,11 +8298,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.world_task_data
-
-	var_2_13[10058] = {
+	pg.base.world_task_data[10058] = {
 		server_type = 4,
 		name = "档案任务133-4",
 		need_task_complete = 0,
@@ -8859,11 +8373,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.world_task_data
-
-	var_2_14[10059] = {
+	pg.base.world_task_data[10059] = {
 		server_type = 4,
 		name = "档案任务133-5 133-6",
 		need_task_complete = 0,
@@ -8936,11 +8446,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.world_task_data
-
-	var_2_15[10060] = {
+	pg.base.world_task_data[10060] = {
 		server_type = 4,
 		name = "档案任务144-9",
 		need_task_complete = 0,
@@ -9015,11 +8521,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.world_task_data
-
-	var_2_16[10061] = {
+	pg.base.world_task_data[10061] = {
 		server_type = 4,
 		name = "档案任务144-10",
 		need_task_complete = 0,
@@ -9094,11 +8596,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.world_task_data
-
-	var_2_17[10062] = {
+	pg.base.world_task_data[10062] = {
 		server_type = 4,
 		name = "档案任务146-1",
 		need_task_complete = 0,
@@ -9173,11 +8671,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.world_task_data
-
-	var_2_18[10063] = {
+	pg.base.world_task_data[10063] = {
 		server_type = 4,
 		name = "档案任务146-2",
 		need_task_complete = 0,
@@ -9252,11 +8746,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.world_task_data
-
-	var_2_19[10064] = {
+	pg.base.world_task_data[10064] = {
 		server_type = 4,
 		name = "档案任务146-3",
 		need_task_complete = 0,
@@ -9331,11 +8821,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.world_task_data
-
-	var_2_20[10065] = {
+	pg.base.world_task_data[10065] = {
 		server_type = 4,
 		name = "档案任务146-4",
 		need_task_complete = 0,
@@ -9410,11 +8896,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.world_task_data
-
-	var_2_21[10066] = {
+	pg.base.world_task_data[10066] = {
 		server_type = 4,
 		name = "档案任务146-5",
 		need_task_complete = 0,
@@ -9489,11 +8971,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.world_task_data
-
-	var_2_22[10067] = {
+	pg.base.world_task_data[10067] = {
 		server_type = 4,
 		name = "档案任务146-6",
 		need_task_complete = 0,
@@ -9568,11 +9046,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.world_task_data
-
-	var_2_23[10068] = {
+	pg.base.world_task_data[10068] = {
 		server_type = 4,
 		name = "档案任务146-7",
 		need_task_complete = 0,
@@ -9647,11 +9121,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.world_task_data
-
-	var_2_24[10069] = {
+	pg.base.world_task_data[10069] = {
 		server_type = 4,
 		name = "档案任务146-8",
 		need_task_complete = 0,
@@ -9724,11 +9194,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.world_task_data
-
-	var_2_25[10070] = {
+	pg.base.world_task_data[10070] = {
 		server_type = 4,
 		name = "档案任务116-1",
 		need_task_complete = 0,
@@ -9803,11 +9269,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.world_task_data
-
-	var_2_26[10071] = {
+	pg.base.world_task_data[10071] = {
 		server_type = 4,
 		name = "档案任务116-2",
 		need_task_complete = 0,
@@ -9882,11 +9344,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.world_task_data
-
-	var_2_27[10072] = {
+	pg.base.world_task_data[10072] = {
 		server_type = 4,
 		name = "档案任务116-3",
 		need_task_complete = 0,
@@ -9961,11 +9419,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.world_task_data
-
-	var_2_28[10073] = {
+	pg.base.world_task_data[10073] = {
 		server_type = 4,
 		name = "档案任务116-4",
 		need_task_complete = 0,
@@ -10040,11 +9494,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.world_task_data
-
-	var_2_29[10074] = {
+	pg.base.world_task_data[10074] = {
 		server_type = 4,
 		name = "档案任务116-5",
 		need_task_complete = 0,
@@ -10119,11 +9569,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.world_task_data
-
-	var_2_30[10075] = {
+	pg.base.world_task_data[10075] = {
 		server_type = 4,
 		name = "档案任务116-6",
 		need_task_complete = 0,
@@ -10198,11 +9644,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.world_task_data
-
-	var_2_31[10076] = {
+	pg.base.world_task_data[10076] = {
 		server_type = 4,
 		name = "档案任务116-7",
 		need_task_complete = 0,
@@ -10277,11 +9719,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.world_task_data
-
-	var_2_32[10077] = {
+	pg.base.world_task_data[10077] = {
 		server_type = 4,
 		name = "档案任务116-8 116-9",
 		need_task_complete = 0,
@@ -10356,11 +9794,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.world_task_data
-
-	var_2_33[10078] = {
+	pg.base.world_task_data[10078] = {
 		server_type = 4,
 		name = "档案任务144-11",
 		need_task_complete = 0,
@@ -10435,11 +9869,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.world_task_data
-
-	var_2_34[10079] = {
+	pg.base.world_task_data[10079] = {
 		server_type = 4,
 		name = "档案任务146-9",
 		need_task_complete = 0,
@@ -10512,11 +9942,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.world_task_data
-
-	var_2_35[10080] = {
+	pg.base.world_task_data[10080] = {
 		server_type = 4,
 		name = "档案任务150-4",
 		need_task_complete = 0,
@@ -10591,11 +10017,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.world_task_data
-
-	var_2_36[10081] = {
+	pg.base.world_task_data[10081] = {
 		server_type = 4,
 		name = "档案任务151-5",
 		need_task_complete = 0,
@@ -10670,11 +10092,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.world_task_data
-
-	var_2_37[10082] = {
+	pg.base.world_task_data[10082] = {
 		server_type = 4,
 		name = "档案任务151-6",
 		need_task_complete = 0,
@@ -10749,11 +10167,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.world_task_data
-
-	var_2_38[10083] = {
+	pg.base.world_task_data[10083] = {
 		server_type = 4,
 		name = "档案任务180-1",
 		need_task_complete = 0,
@@ -10828,11 +10242,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.world_task_data
-
-	var_2_39[10084] = {
+	pg.base.world_task_data[10084] = {
 		server_type = 4,
 		name = "档案任务190-1",
 		need_task_complete = 0,
@@ -10907,11 +10317,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.world_task_data
-
-	var_2_40[10085] = {
+	pg.base.world_task_data[10085] = {
 		server_type = 4,
 		name = "档案任务190-2",
 		need_task_complete = 0,
@@ -10986,11 +10392,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.world_task_data
-
-	var_2_41[10086] = {
+	pg.base.world_task_data[10086] = {
 		server_type = 4,
 		name = "档案任务190-3",
 		need_task_complete = 0,
@@ -11065,11 +10467,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.world_task_data
-
-	var_2_42[10087] = {
+	pg.base.world_task_data[10087] = {
 		server_type = 4,
 		name = "档案任务190-4",
 		need_task_complete = 0,
@@ -11144,11 +10542,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.world_task_data
-
-	var_2_43[10088] = {
+	pg.base.world_task_data[10088] = {
 		server_type = 4,
 		name = "档案任务190-5",
 		need_task_complete = 0,
@@ -11223,11 +10617,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.world_task_data
-
-	var_2_44[10089] = {
+	pg.base.world_task_data[10089] = {
 		server_type = 4,
 		name = "档案任务190-6",
 		need_task_complete = 0,
@@ -11300,11 +10690,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.world_task_data
-
-	var_2_45[210000] = {
+	pg.base.world_task_data[210000] = {
 		server_type = 3,
 		name = "航道维护·I",
 		need_task_complete = 0,
@@ -11373,11 +10759,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.world_task_data
-
-	var_2_46[210100] = {
+	pg.base.world_task_data[210100] = {
 		server_type = 3,
 		name = "实验测试·I",
 		need_task_complete = 0,
@@ -11446,11 +10828,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.world_task_data
-
-	var_2_47[24] = {
+	pg.base.world_task_data[24] = {
 		server_type = 3,
 		name = "港口防御·I",
 		need_task_complete = 0,
@@ -11519,11 +10897,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.world_task_data
-
-	var_2_48[210300] = {
+	pg.base.world_task_data[210300] = {
 		server_type = 3,
 		name = "港口防御·II",
 		need_task_complete = 0,
@@ -11592,11 +10966,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.world_task_data
-
-	var_2_49[210400] = {
+	pg.base.world_task_data[210400] = {
 		server_type = 3,
 		name = "舰队演习·I",
 		need_task_complete = 0,
@@ -11665,11 +11035,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.world_task_data
-
-	var_2_50[210500] = {
+	pg.base.world_task_data[210500] = {
 		server_type = 3,
 		name = "舰队演习·II",
 		need_task_complete = 0,
@@ -11738,11 +11104,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.world_task_data
-
-	var_2_51[210600] = {
+	pg.base.world_task_data[210600] = {
 		server_type = 3,
 		name = "航道维护·II",
 		need_task_complete = 0,
@@ -11811,11 +11173,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.world_task_data
-
-	var_2_52[12] = {
+	pg.base.world_task_data[12] = {
 		server_type = 3,
 		name = "航道维护·III",
 		need_task_complete = 0,
@@ -11884,11 +11242,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.world_task_data
-
-	var_2_53[210800] = {
+	pg.base.world_task_data[210800] = {
 		server_type = 3,
 		name = "实验测试·II",
 		need_task_complete = 0,
@@ -11957,11 +11311,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.world_task_data
-
-	var_2_54[210900] = {
+	pg.base.world_task_data[210900] = {
 		server_type = 3,
 		name = "实验测试·III",
 		need_task_complete = 0,
@@ -12030,11 +11380,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.world_task_data
-
-	var_2_55[211000] = {
+	pg.base.world_task_data[211000] = {
 		server_type = 3,
 		name = "港口防御·III",
 		need_task_complete = 0,
@@ -12103,11 +11449,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.world_task_data
-
-	var_2_56[28] = {
+	pg.base.world_task_data[28] = {
 		server_type = 3,
 		name = "舰队演习·III",
 		need_task_complete = 0,
@@ -12181,11 +11523,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.world_task_data
-
-	var_2_57[8] = {
+	pg.base.world_task_data[8] = {
 		server_type = 3,
 		name = "物资回收·I",
 		need_task_complete = 0,
@@ -12285,11 +11623,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.world_task_data
-
-	var_2_58[213100] = {
+	pg.base.world_task_data[213100] = {
 		server_type = 3,
 		name = "物资回收·II",
 		need_task_complete = 0,
@@ -12389,11 +11723,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.world_task_data
-
-	var_2_59[213200] = {
+	pg.base.world_task_data[213200] = {
 		server_type = 3,
 		name = "物资打捞·I",
 		need_task_complete = 0,
@@ -12493,11 +11823,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.world_task_data
-
-	var_2_60[213300] = {
+	pg.base.world_task_data[213300] = {
 		server_type = 3,
 		name = "物资打捞·II",
 		need_task_complete = 0,
@@ -12597,11 +11923,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.world_task_data
-
-	var_2_61[24] = {
+	pg.base.world_task_data[24] = {
 		server_type = 3,
 		name = "塞壬歼灭·I",
 		need_task_complete = 0,
@@ -12701,11 +12023,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.world_task_data
-
-	var_2_62[213500] = {
+	pg.base.world_task_data[213500] = {
 		server_type = 3,
 		name = "塞壬歼灭·II",
 		need_task_complete = 0,
@@ -12805,11 +12123,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.world_task_data
-
-	var_2_63[213600] = {
+	pg.base.world_task_data[213600] = {
 		server_type = 3,
 		name = "商船护卫·I",
 		need_task_complete = 0,
@@ -12909,11 +12223,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.world_task_data
-
-	var_2_64[213700] = {
+	pg.base.world_task_data[213700] = {
 		server_type = 3,
 		name = "商船护卫·II",
 		need_task_complete = 0,
@@ -13013,11 +12323,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.world_task_data
-
-	var_2_65[213800] = {
+	pg.base.world_task_data[213800] = {
 		server_type = 3,
 		name = "塞壬清理·I",
 		need_task_complete = 0,
@@ -13117,11 +12423,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.world_task_data
-
-	var_2_66[12] = {
+	pg.base.world_task_data[12] = {
 		server_type = 3,
 		name = "塞壬清理·II",
 		need_task_complete = 0,
@@ -13221,11 +12523,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.world_task_data
-
-	var_2_67[216000] = {
+	pg.base.world_task_data[216000] = {
 		server_type = 3,
 		name = "前线据点建立",
 		need_task_complete = 0,
@@ -13273,11 +12571,7 @@ end)()
 		show = {},
 		reset_task = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.world_task_data
-
-	var_2_68[216100] = {
+	pg.base.world_task_data[216100] = {
 		server_type = 3,
 		name = "塞壬传送装置",
 		need_task_complete = 0,
@@ -13325,11 +12619,7 @@ end)()
 		show = {},
 		reset_task = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.world_task_data
-
-	var_2_69[8] = {
+	pg.base.world_task_data[8] = {
 		server_type = 3,
 		name = "塞壬兵力侦查",
 		need_task_complete = 0,
@@ -13377,11 +12667,7 @@ end)()
 		show = {},
 		reset_task = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.world_task_data
-
-	var_2_70[216300] = {
+	pg.base.world_task_data[216300] = {
 		server_type = 3,
 		name = "远洋物资回收·I",
 		need_task_complete = 0,
@@ -13473,11 +12759,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.world_task_data
-
-	var_2_71[216400] = {
+	pg.base.world_task_data[216400] = {
 		server_type = 3,
 		name = "远洋物资回收·II",
 		need_task_complete = 0,
@@ -13569,11 +12851,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.world_task_data
-
-	var_2_72[216500] = {
+	pg.base.world_task_data[216500] = {
 		server_type = 3,
 		name = "远洋物资打捞·I",
 		need_task_complete = 0,
@@ -13665,11 +12943,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.world_task_data
-
-	var_2_73[24] = {
+	pg.base.world_task_data[24] = {
 		server_type = 3,
 		name = "远洋物资打捞·II",
 		need_task_complete = 0,
@@ -13761,11 +13035,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.world_task_data
-
-	var_2_74[216700] = {
+	pg.base.world_task_data[216700] = {
 		server_type = 3,
 		name = "远洋塞壬歼灭·I",
 		need_task_complete = 0,
@@ -13857,11 +13127,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.world_task_data
-
-	var_2_75[216800] = {
+	pg.base.world_task_data[216800] = {
 		server_type = 3,
 		name = "远洋塞壬歼灭·II",
 		need_task_complete = 0,
@@ -13943,11 +13209,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.world_task_data
-
-	var_2_76[216900] = {
+	pg.base.world_task_data[216900] = {
 		server_type = 3,
 		name = "商船护卫·III",
 		need_task_complete = 0,
@@ -14039,11 +13301,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.world_task_data
-
-	var_2_77[217000] = {
+	pg.base.world_task_data[217000] = {
 		server_type = 3,
 		name = "商船护卫·IV",
 		need_task_complete = 0,
@@ -14135,11 +13393,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.world_task_data
-
-	var_2_78[12] = {
+	pg.base.world_task_data[12] = {
 		server_type = 3,
 		name = "塞壬补给切断",
 		need_task_complete = 0,
@@ -14187,11 +13441,7 @@ end)()
 		show = {},
 		reset_task = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.world_task_data
-
-	var_2_79[219000] = {
+	pg.base.world_task_data[219000] = {
 		server_type = 3,
 		name = "补给兑换·I",
 		need_task_complete = 0,
@@ -14251,11 +13501,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.world_task_data
-
-	var_2_80[219100] = {
+	pg.base.world_task_data[219100] = {
 		server_type = 3,
 		name = "补给兑换·II",
 		need_task_complete = 0,
@@ -14315,11 +13561,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.world_task_data
-
-	var_2_81[219200] = {
+	pg.base.world_task_data[219200] = {
 		server_type = 3,
 		name = "塞壬研究·I",
 		need_task_complete = 0,
@@ -14379,11 +13621,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.world_task_data
-
-	var_2_82[219300] = {
+	pg.base.world_task_data[219300] = {
 		server_type = 3,
 		name = "塞壬研究·II",
 		need_task_complete = 0,
@@ -14443,11 +13681,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.world_task_data
-
-	var_2_83[8] = {
+	pg.base.world_task_data[8] = {
 		server_type = 3,
 		name = "海域探索·I",
 		need_task_complete = 0,
@@ -14502,11 +13736,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.world_task_data
-
-	var_2_84[219500] = {
+	pg.base.world_task_data[219500] = {
 		server_type = 3,
 		name = "海域探索·II",
 		need_task_complete = 0,
@@ -14561,8 +13791,7 @@ end)()
 		},
 		reset_task = {}
 	}
-	pg = var_2_84
-	var_2_84.base.world_task_data[219600] = {
+	pg.base.world_task_data[219600] = {
 		server_type = 3,
 		name = "海域探索·III",
 		need_task_complete = 0,

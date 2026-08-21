@@ -65,7 +65,7 @@ function onToogle(self)
                 end
 
                 local skill = eventThing:getSkill(skill_id)
-                skill:onExecute(eventThing, targetThing)
+                skill:onExecute(eventThing)
             end
         elseif toggle_type == 2 then
             local skill = self.m_skillDic[skill_id]
@@ -73,7 +73,7 @@ function onToogle(self)
                 skill = FieldExplorationConst.GetSkill(skill_id)
                 self.m_skillDic[skill_id] = skill
             end
-            skill:onExecute(eventThing, targetThing)
+            skill:onExecute(eventThing)
         end
     end
 end

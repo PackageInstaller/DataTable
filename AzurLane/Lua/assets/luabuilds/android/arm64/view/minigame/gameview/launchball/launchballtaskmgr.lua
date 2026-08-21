@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("LaunchBallTaskMgr")
+﻿local var_0_0 = class("LaunchBallTaskMgr")
 
 var_0_0.type_split = 1
 var_0_0.type_series_split = 2
@@ -17,120 +15,81 @@ var_0_0.type_player_target_round = 400
 var_0_0.type_player_round = 401
 
 function var_0_0.CheckTaskUpdate(arg_1_0)
-	local var_1_0 = arg_1_0.player
+	local var_1_0 = LaunchBallActivityMgr.GetPlayerZhuanshuIndex(arg_1_0.player)
 
-	LaunchBallActivityMgr = var_1_10002
+	if var_1_0 and not LaunchBallActivityMgr.CheckZhuanShuAble(ActivityConst.MINIGAME_ZUMA, var_1_0) then
+		return
+	end
 
-	local var_1_1 = var_1_10002.GetPlayerZhuanshuIndex(var_1_0)
-	local var_1_2
-	local var_1_3
+	local var_1_2 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_ZUMA_TASK):getConfig("config_client")
+	local var_1_3 = {}
 
-	if var_1_1 then
-		LaunchBallActivityMgr = var_1_3
-		var_1_3 = var_1_3.CheckZhuanShuAble
-		ActivityConst = var_1_10006
-
-		if not var_1_3(var_1_10006.MINIGAME_ZUMA, var_1_1) then
-			return
+	for iter_1_0 = 1, #var_1_2 do
+		if var_1_2[iter_1_0].player == arg_1_0.player then
+			var_1_3 = var_1_2[iter_1_0].task
 		end
 	end
 
-	getProxy = var_1_3
-	ActivityProxy = var_1_10006
+	local var_1_4 = {}
 
-	local var_1_4 = var_1_3(var_1_10006)
-	local var_1_5 = var_4.getActivityById
+	for iter_1_1 = 1, #var_1_3 do
+		local var_1_5 = var_1_3[iter_1_1][2]
+		local var_1_6 = getProxy(TaskProxy):getTaskById(var_1_3[iter_1_1][2])
 
-	ActivityConst = var_1_10007
+		if var_1_6 and var_1_6:getTaskStatus() == 0 then
+			local var_1_7 = 0
+			local var_1_8 = var_1_6:getTargetNumber()
+			local var_1_9 = var_1_6:getProgress()
 
-	local var_1_6 = var_1_5(var_1_4, var_1_10007.MINIGAME_ZUMA_TASK)
-	local var_1_7 = var_4.getConfig(var_1_6, "config_client")
-	local var_1_8 = {}
-
-	for iter_1_0 = 1, #var_1_7 do
-		if var_1_7[iter_1_0].player == var_1_0 then
-			var_1_8 = var_1_7[iter_1_0].task
-		end
-	end
-
-	local var_1_9 = {}
-
-	for iter_1_1 = 1, #var_1_8 do
-		var_1_10012 = var_1_8[iter_1_1][1]
-
-		local var_1_10 = var_1_8[iter_1_1][2]
-		local var_1_11 = var_1_8[iter_1_1][3]
-
-		var_1_10015 = var_1_8[iter_1_1][4]
-		getProxy = var_1_10016
-		TaskProxy = var_1_10018
-		var_1_10018 = var_1_10016(var_1_10018)
-
-		if var_1_10016.getTaskById(var_1_10018, var_1_10) and var_1_10016:getTaskStatus() == 0 then
-			local var_1_12 = 0
-
-			var_1_10018 = var_1_10016:getTargetNumber()
-
-			local var_1_13 = var_1_10016:getProgress()
-
-			if var_1_10012 == var_0_0.type_split and arg_1_0.split_count ~= 0 then
-				var_1_12 = var_1_10018 < arg_1_0.split_count + var_1_13 and var_1_10018 or arg_1_0.split_count + var_1_13
-			elseif var_1_10012 == var_0_0.type_player_target_round then
-				if var_1_10015 == arg_1_0.round then
-					var_1_12 = var_1_13 + 1
+			if var_1_3[iter_1_1][1] == var_0_0.type_split and arg_1_0.split_count ~= 0 then
+				var_1_7 = var_1_8 < arg_1_0.split_count + var_1_9 and var_1_8 or arg_1_0.split_count + var_1_9
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_player_target_round then
+				if var_1_3[iter_1_1][4] == arg_1_0.round then
+					var_1_7 = var_1_9 + 1
 				end
-			elseif var_1_10012 == var_0_0.type_player_round then
-				var_1_12 = var_1_13 + 1
-			elseif var_1_10012 == var_0_0.type_trigger_skill and arg_1_0.use_skill ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.use_skill
-			elseif var_1_10012 == var_0_0.type_series_split and arg_1_0.series_count ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.series_count
-			elseif var_1_10012 == var_0_0.type_close_split and arg_1_0.mix_count ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.mix_count
-			elseif var_1_10012 == var_0_0.type_over_split and arg_1_0.over_count ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.over_count
-			elseif var_1_10012 == var_0_0.type_many_split and arg_1_0.many_count ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.many_count
-			elseif var_1_10012 == var_0_0.type_pass_skill and arg_1_0.use_pass_skill ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.use_pass_skill
-			elseif var_1_10012 == var_0_0.type_trigger_skill_split and arg_1_0.skill_count ~= 0 then
-				if var_1_11 <= arg_1_0.skill_count then
-					var_1_12 = var_1_10018
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_player_round then
+				var_1_7 = var_1_9 + 1
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_trigger_skill and arg_1_0.use_skill ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.use_skill
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_series_split and arg_1_0.series_count ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.series_count
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_close_split and arg_1_0.mix_count ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.mix_count
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_over_split and arg_1_0.over_count ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.over_count
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_many_split and arg_1_0.many_count ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.many_count
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_pass_skill and arg_1_0.use_pass_skill ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.use_pass_skill
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_trigger_skill_split and arg_1_0.skill_count ~= 0 then
+				if var_1_3[iter_1_1][3] <= arg_1_0.skill_count then
+					var_1_7 = var_1_8
 				end
-			elseif var_1_10012 == var_0_0.type_trigger_skill_split_all and arg_1_0.skill_count ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.skill_count
-			elseif var_1_10012 == var_0_0.type_pass_skill_split and arg_1_0.pass_skill_count ~= 0 then
-				var_1_12 = var_1_13 + arg_1_0.pass_skill_count
-			elseif var_1_10012 == var_0_0.type_trigger_skill_time and arg_1_0.double_skill_time and arg_1_0.double_skill_time <= var_1_11 then
-				var_1_12 = var_1_10018
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_trigger_skill_split_all and arg_1_0.skill_count ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.skill_count
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_pass_skill_split and arg_1_0.pass_skill_count ~= 0 then
+				var_1_7 = var_1_9 + arg_1_0.pass_skill_count
+			elseif var_1_3[iter_1_1][1] == var_0_0.type_trigger_skill_time and arg_1_0.double_skill_time and var_1_3[iter_1_1][3] >= arg_1_0.double_skill_time then
+				var_1_7 = var_1_8
 			end
 
-			if var_1_12 and var_1_12 ~= 0 then
-				if var_1_10018 < var_1_12 then
-					var_1_12 = var_1_10018
+			if var_1_7 and var_1_7 ~= 0 then
+				if var_1_8 < var_1_7 then
+					var_1_7 = var_1_8
 				end
 
-				table = var_20
-
-				var_20.insert(var_1_9, {
-					id = var_1_10,
-					progress = var_1_12
+				table.insert(var_1_4, {
+					id = var_1_5,
+					progress = var_1_7
 				})
 			end
 		end
 	end
 
-	for iter_1_2 = 1, #var_1_9 do
-		pg = var_1_10012
-
-		local var_1_14 = var_1_10012.m02
-
-		var_1_10012 = var_1_10012.sendNotification
-		GAME = var_1_10015
-
-		var_1_10012(var_1_14, var_1_10015.UPDATE_TASK_PROGRESS, {
-			taskId = var_1_9[iter_1_2].id,
-			progress = var_1_9[iter_1_2].progress
+	for iter_1_2 = 1, #var_1_4 do
+		pg.m02:sendNotification(GAME.UPDATE_TASK_PROGRESS, {
+			taskId = var_1_4[iter_1_2].id,
+			progress = var_1_4[iter_1_2].progress
 		})
 	end
 
@@ -138,36 +97,17 @@ function var_0_0.CheckTaskUpdate(arg_1_0)
 end
 
 function var_0_0.GetRedTip()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+	local var_2_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.MINIGAME_ZUMA_TASK)
 
-	local var_2_0 = var_1_10000(var_1_10002)
-	local var_2_1 = var_0.getActivityById
+	if var_2_0 and not var_2_0:isEnd() then
+		local var_2_1 = getProxy(TaskProxy)
 
-	ActivityConst = var_1_10003
+		return underscore.any(var_2_0:getConfig("config_data"), function(arg_3_0)
+			assert(var_2_1:getTaskVO(arg_3_0), "without this task:" .. arg_3_0)
 
-	if var_2_1(var_2_0, var_1_10003.MINIGAME_ZUMA_TASK) and not var_0:isEnd() then
-		local var_2_2 = var_0
-		local var_2_3 = var_0.getConfig(var_2_2, "config_data")
+			local var_3_0 = var_2_1:getTaskVO(arg_3_0)
 
-		getProxy = var_2_0
-		TaskProxy = var_4
-
-		local var_2_4 = var_2_0(var_4)
-
-		underscore = var_2_2
-
-		return var_2_2.any(var_2_3, function(arg_3_0)
-			assert = var_2_10001
-
-			local var_3_0 = var_2_4
-
-			var_2_10001(var_3.getTaskVO(var_3_0, arg_3_0), "without this task:" .. arg_3_0)
-
-			local var_3_1 = var_2_4
-			local var_3_2 = var_1.getTaskVO(var_3_1, arg_3_0)
-
-			return var_1.getTaskStatus(var_3_2) == 1
+			return var_3_0:getTaskStatus() == 1
 		end)
 	end
 

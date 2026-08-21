@@ -6,6 +6,33 @@
 
 SandPlayConst = {}
 
+--种子类型
+SandPlayConst.HappyFarm_Seed_Type =
+{
+    Poultry = 1, -- 家禽
+    Crop = 2, -- 作物
+}
+
+--家禽类型
+SandPlayConst.HappyFarm_Poultry_Type =
+{
+    Chicken = 1, --鸡
+    Sheep = 2, --羊
+}
+
+--农场农田状态
+SandPlayConst.HappyFarm_FieldState =
+{
+    Waste_land = 1, --荒地
+    Space_land = 2, --空地
+    Dry_land = 3, --旱地
+    grow_up0 = 4, --种子阶段
+    grow_up1 = 5, --发芽阶段
+    grow_up2 = 6, --初期阶段
+    grow_up3 = 7, --中期阶
+    grow_up4 = 8, --可收获
+}
+
 --碰撞标识
 SandPlayConst.ColliderTag =
 {
@@ -15,12 +42,12 @@ SandPlayConst.ColliderTag =
     PlayerSkill = "PLAYERSKILL",
 }
 
---寻路类型
-SandPlayConst.FindType =
-{
-    point = "point",
-    Npc = "Npc",
-}
+-- --寻路类型
+-- SandPlayConst.FindType =
+-- {
+--     point = "point",
+--     Npc = "Npc",
+-- }
 
 --碰撞类型
 SandPlayConst.Collider_Type =
@@ -52,6 +79,10 @@ SandPlayConst.NAME_DREADY = "QDready"
 SandPlayConst.NAME_DSTAND = "QDstand"
 SandPlayConst.NAME_DWIN01 = "QDwin01"
 SandPlayConst.NAME_DWIN02 = "QDwin02"
+SandPlayConst.NAME_SOW = "Qbz" --播种
+SandPlayConst.NAME_REAP = "Qjm"--剪毛
+SandPlayConst.NAME_CT = "Qct"--锄地
+SandPlayConst.NAME_SS = "Qss"--洒水
 
 --玩家动画列表
 SandPlayConst.HERO_ACT_LIST =
@@ -70,6 +101,10 @@ SandPlayConst.HERO_ACT_LIST =
     SandPlayConst.NAME_DWIN01,
     SandPlayConst.NAME_DWIN02,
 
+    SandPlayConst.NAME_SOW,
+    SandPlayConst.NAME_REAP,
+    SandPlayConst.NAME_CT,
+    SandPlayConst.NAME_SS,
 }
 
 --NPC动画列表
@@ -103,6 +138,13 @@ SandPlayConst.HERO_ACTION_STATE =
     --钓到鱼胜利
     FISH_WIN01 = "FISH_WIN01",
     FISH_WIN02 = "FISH_WIN02",
+
+    ----开心农场
+    HAPPYFARM_JM = "HAPPYFARM_JM", --剪毛
+    HAPPYFARM_CD = "HAPPYFARM_CD", ---锄地
+    HAPPYFARM_BZ = "HAPPYFARM_BZ", --播种
+    HAPPYFARM_SS = "HAPPYFARM_SS", --洒水
+
 }
 
 --不允许打断的状态
@@ -112,6 +154,11 @@ SandPlayConst.NoAllowForceActionState =
     SandPlayConst.HERO_ACTION_STATE.FISH_CHANGE,
     SandPlayConst.HERO_ACTION_STATE.FISH_WIN01,
     SandPlayConst.HERO_ACTION_STATE.FISH_WIN02,
+
+    SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_JM,
+    SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_CD,
+    SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_BZ,
+    SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_SS,
 }
 
 --允许恢复的状态
@@ -126,6 +173,12 @@ SandPlayConst.AllowRevertState =
 
     [SandPlayConst.HERO_ACTION_STATE.FISH_WIN01] = {reverState = SandPlayConst.HERO_ACTION_STATE.FISH_WIN02},
     [SandPlayConst.HERO_ACTION_STATE.FISH_WIN02] = {reverState = SandPlayConst.HERO_ACTION_STATE.FISH_IDLE, isAuto = true},
+
+    -- [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_JM] = {reverState = SandPlayConst.HERO_ACTION_STATE.STAND},
+    -- [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_CD] = {reverState = SandPlayConst.HERO_ACTION_STATE.STAND},
+    -- [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_BZ] = {reverState = SandPlayConst.HERO_ACTION_STATE.STAND},
+    -- [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_SS] = {reverState = SandPlayConst.HERO_ACTION_STATE.STAND},
+
 }
 
 --状态对应的动画
@@ -146,6 +199,11 @@ SandPlayConst.HERO_ACTIONSTATE_ACTHASH =
     [SandPlayConst.HERO_ACTION_STATE.FISH_ATK03] = SandPlayConst.NAME_DATK03,
     [SandPlayConst.HERO_ACTION_STATE.FISH_WIN01] = SandPlayConst.NAME_DWIN01,
     [SandPlayConst.HERO_ACTION_STATE.FISH_WIN02] = SandPlayConst.NAME_DWIN02,
+
+    [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_JM] = SandPlayConst.NAME_REAP,
+    [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_CD] = SandPlayConst.NAME_CT,
+    [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_BZ] = SandPlayConst.NAME_SOW,
+    [SandPlayConst.HERO_ACTION_STATE.HAPPYFARM_SS] = SandPlayConst.NAME_SS,
 }
 
 --NPC解锁隐藏条件
@@ -163,6 +221,9 @@ SandPlayConst.NPC_TYPE =
     TREASURE_BOX = 4, --宝箱
     TRANSMIT = 5, --传送
     DOOR = 6, --机关门
+    FIELD = 8, ---农田
+    BREED = 9, ---养殖
+    POULTRYREAP = 10, --家禽农田收获
 }
 
 --事件类型
@@ -176,6 +237,9 @@ SandPlayConst.EventType =
     Dup = 5, --副本
     Transmit = 6, --传送
     Door = 7, --机关门
+    Field = 8, --种植
+    Breed = 9, -- 养殖
+    PoultryReap = 10, --家禽农田收获
 }
 
 --事件触发时的限制
@@ -200,6 +264,18 @@ end
 
 SandPlayConst.getParticleSystemLength = function (trans)
     return 2
+end
+
+--功能导航的红点状态
+SandPlayConst.getGuildRedState = function(red_id)
+    local redStateDefine =
+    {
+        [1] = sandPlay.SandPlayManager:getHappayFarmPoultryRedState(), ---农场家禽
+        [2] = sandPlay.SandPlayManager:getHappyFarmCropRedState(), ---农场农作物
+        [3] = sandPlay.SandPlayManager:getHappyFarmTaskRedState(), ---农场任务
+    }
+
+    return redStateDefine[red_id]
 end
 
 ---客户端主动执行事件
@@ -311,9 +387,11 @@ SandPlayConst.ExecuteEvent = function (eventConfigVo, npc_id)
         if npcThing then
             npcThing:playAction("open")
         end
+    elseif eventConfigVo.event_type == SandPlayConst.EventType.Breed then
+        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.HappyFarm_Breed, param = eventConfigVo.event_param})
     end
 
-    if eventConfigVo.event_type ~= SandPlayConst.EventType.Dup then
+    if eventConfigVo.event_type ~= SandPlayConst.EventType.Dup and npc_id ~= SandPlayConst.UINPC_ID then
         GameDispatcher:dispatchEvent(EventName.SANDPLAY_FISHING_ONREQ_EVENTTRIGGER, {npc_id = npc_id, event_id = eventConfigVo.event_id})
     end
 end

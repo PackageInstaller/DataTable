@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "guardian_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "guardian_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.guardian_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.guardian_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.guardian_template = rawget(pg, "guardian_template") or setmetatable({
+	__name = "guardian_template"
+}, confNEO)
+pg.guardian_template.all = {
 	1,
 	2,
 	3,
@@ -42,25 +19,11 @@ var_0_3.all = {
 	14,
 	15
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.guardian_template = {}
+pg.base = pg.base or {}
+pg.base.guardian_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.guardian_template
-
-	var_1_0[1] = {
+	pg.base.guardian_template[1] = {
 		guardian_gain_pool = 17,
 		guardian_painting = "lisailiu",
 		buff = 200852,
@@ -81,11 +44,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.guardian_template
-
-	var_1_1[2] = {
+	pg.base.guardian_template[2] = {
 		guardian_gain_pool = 17,
 		guardian_painting = "chicheng",
 		buff = 200857,
@@ -106,11 +65,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.guardian_template
-
-	var_1_2[3] = {
+	pg.base.guardian_template[3] = {
 		guardian_gain_pool = 17,
 		guardian_painting = "kelaimengsuo",
 		buff = 200863,
@@ -131,11 +86,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.guardian_template
-
-	var_1_3[4] = {
+	pg.base.guardian_template[4] = {
 		guardian_gain_pool = 17,
 		guardian_painting = "bisimaiZ",
 		buff = 200855,
@@ -156,11 +107,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.guardian_template
-
-	var_1_4[5] = {
+	pg.base.guardian_template[5] = {
 		guardian_gain_pool = 18,
 		guardian_painting = "mingshi",
 		buff = 200871,
@@ -181,11 +128,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.guardian_template
-
-	var_1_5[6] = {
+	pg.base.guardian_template[6] = {
 		guardian_gain_pool = 18,
 		guardian_painting = "yilishabai",
 		buff = 200872,
@@ -206,11 +149,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.guardian_template
-
-	var_1_6[7] = {
+	pg.base.guardian_template[7] = {
 		guardian_gain_pool = 18,
 		guardian_painting = "yixian",
 		buff = 200868,
@@ -231,11 +170,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.guardian_template
-
-	var_1_7[8] = {
+	pg.base.guardian_template[8] = {
 		guardian_gain_pool = 18,
 		guardian_painting = "salatuojia",
 		buff = 200862,
@@ -256,11 +191,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.guardian_template
-
-	var_1_8[9] = {
+	pg.base.guardian_template[9] = {
 		guardian_gain_pool = 19,
 		guardian_painting = "weineituo",
 		buff = 200873,
@@ -281,11 +212,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.guardian_template
-
-	var_1_9[10] = {
+	pg.base.guardian_template[10] = {
 		guardian_gain_pool = 19,
 		guardian_painting = "huangjiacaifu",
 		buff = 200860,
@@ -306,11 +233,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.guardian_template
-
-	var_1_10[11] = {
+	pg.base.guardian_template[11] = {
 		guardian_gain_pool = 19,
 		guardian_painting = "tbniang",
 		buff = 200864,
@@ -331,11 +254,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.guardian_template
-
-	var_1_11[12] = {
+	pg.base.guardian_template[12] = {
 		guardian_gain_pool = 19,
 		guardian_painting = "suweiaitongmengnew",
 		buff = 200865,
@@ -356,11 +275,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.guardian_template
-
-	var_1_12[13] = {
+	pg.base.guardian_template[13] = {
 		guardian_gain_pool = 17,
 		guardian_painting = "qiye_dark",
 		buff = 200877,
@@ -383,11 +298,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.guardian_template
-
-	var_1_13[14] = {
+	pg.base.guardian_template[14] = {
 		guardian_gain_pool = 18,
 		guardian_painting = "hailunna_alter",
 		buff = 200884,
@@ -410,8 +321,7 @@ var_0_3.base.guardian_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-	var_1_13.base.guardian_template[15] = {
+	pg.base.guardian_template[15] = {
 		guardian_gain_pool = 19,
 		guardian_painting = "unknown2",
 		buff = 200887,

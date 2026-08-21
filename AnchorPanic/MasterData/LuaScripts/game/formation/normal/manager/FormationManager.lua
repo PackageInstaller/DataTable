@@ -451,6 +451,8 @@ function parseFormationList(self, list)
     end
     table.sort(self:instance().m_fightTeamIdList, sortTeamList)
     self:dispatchEvent(self.UPDATE_TEAM_FORMATION_DATA, {})
+
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_RED_INFO)
 end
 
 -- 返回修改的服务器阵型英雄列表结果
@@ -636,6 +638,8 @@ function isLockFormation(self)
 
         elseif battleType == PreFightBattleType.Doundless then
             dupVo = doundless.DoundlessManager:getDoundlessCityStageDataById(dupId)
+        elseif battleType == PreFightBattleType.Seabed then
+            dupVo = seabed.SeabedManager:getSeabedDupDataById(dupId)
         end
 
         if dupVo ~= nil then
@@ -1515,7 +1519,7 @@ function getDupVo(self, battleType, dupId)
         battleType == PreFightBattleType.DupElectricPotency or battleType ==
         PreFightBattleType.DupCavitationPotency or battleType == PreFightBattleType.DupLifePotency or
         battleType == PreFightBattleType.DupBraceletUp or battleType ==
-        PreFightBattleType.DupBraceletEvolve then
+        PreFightBattleType.DupBraceletEvolve or battleType == PreFightBattleType.Dup_Darkpotential then
         dupVo = dup.DupDailyMainManager:getDupData(dupId)
     elseif battleType == PreFightBattleType.DupApostle2War then
         dupVo = dup.DupApostlesWarManager:getDupBaseVo(dupId)
@@ -1567,6 +1571,8 @@ function getDupVo(self, battleType, dupId)
         dupVo = disaster.DisasterManager:getDisasterDupDataByDupId(dupId)
     elseif battleType == PreFightBattleType.Seabed then
         dupVo = seabed.SeabedManager:getSeabedDupDataById(dupId)
+    elseif battleType == PreFightBattleType.Vision then
+        dupVo = vision.VisionManager:getVisionMirrorStageDataByLayer(dupId)
     end
     return dupVo
 end

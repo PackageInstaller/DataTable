@@ -1,159 +1,118 @@
-﻿local var_0_0 = {}
+﻿MetaCharacterConst = {}
 
-MetaCharacterConst = MetaCharacterConst
-var_0.Meta_Type_Act_PT = 1
-var_0.Meta_Type_Build = 2
-var_0.Meta_Type_Pass = 3
+local var_0_0 = MetaCharacterConst
 
-local var_0_1 = {}
+MetaCharacterConst.Meta_Type_Act_PT = 1
+MetaCharacterConst.Meta_Type_Build = 2
+MetaCharacterConst.Meta_Type_Pass = 3
+MetaCharacterConst.REPAIR_ATTRS = {
+	AttributeType.Cannon,
+	AttributeType.Torpedo,
+	AttributeType.Air,
+	AttributeType.Reload
+}
+MetaCharacterConst.ENERGY_ATTRS = {
+	AttributeType.Durability,
+	AttributeType.Cannon,
+	AttributeType.Torpedo,
+	AttributeType.AntiAircraft,
+	AttributeType.Air,
+	AttributeType.AntiSub,
+	AttributeType.Expend
+}
+MetaCharacterConst.UIConfig = {}
 
-AttributeType = var_0_10002
-var_0_1[1] = var_0_10002.Cannon
-AttributeType = var_2
-var_0_1[2] = var_2.Torpedo
-AttributeType = var_2
-var_0_1[3] = var_2.Air
-AttributeType = var_2
-var_0_1[4] = var_2.Reload
-var_0.REPAIR_ATTRS = var_0_1
-
-local var_0_2 = {}
-
-AttributeType = var_2
-var_0_2[1] = var_2.Durability
-AttributeType = var_2
-var_0_2[2] = var_2.Cannon
-AttributeType = var_2
-var_0_2[3] = var_2.Torpedo
-AttributeType = var_2
-var_0_2[4] = var_2.AntiAircraft
-AttributeType = var_2
-var_0_2[5] = var_2.Air
-AttributeType = var_2
-var_0_2[6] = var_2.AntiSub
-AttributeType = var_2
-var_0_2[7] = var_2.Expend
-var_0.ENERGY_ATTRS = var_0_2
-var_0.UIConfig = {}
-setmetatable = var_1
-
-var_1(var_0.UIConfig, {
+setmetatable(MetaCharacterConst.UIConfig, {
 	__index = function(arg_1_0, arg_1_1)
-		pg = var_1_10002
-
-		if var_1_10002.ship_strengthen_meta[arg_1_1].uiconfig then
-			return var_3
+		if pg.ship_strengthen_meta[arg_1_1].uiconfig then
+			return pg.ship_strengthen_meta[arg_1_1].uiconfig
 		else
-			return var_0.UIConfig[970701]
+			return var_0_0.UIConfig[970701]
 		end
 
 		return
 	end
 })
 
-var_0.META_ART_RESOURCE_PERFIX = "metaship/"
-var_0.META_ACTIVE_LASTFIX = "_active"
-var_0.META_DISACTIVE_LASTFIX = "_disactive"
-var_0.META_BANNER_PERFIX = "banner_"
-var_0.META_NAME_PERFIX = "name_"
-var_0.META_TOAST_PERFIX = "toast_"
-var_0.HX_TAG = "_hx"
+MetaCharacterConst.META_ART_RESOURCE_PERFIX = "metaship/"
+MetaCharacterConst.META_ACTIVE_LASTFIX = "_active"
+MetaCharacterConst.META_DISACTIVE_LASTFIX = "_disactive"
+MetaCharacterConst.META_BANNER_PERFIX = "banner_"
+MetaCharacterConst.META_NAME_PERFIX = "name_"
+MetaCharacterConst.META_TOAST_PERFIX = "toast_"
+MetaCharacterConst.HX_TAG = "_hx"
 
-function var_0.GetMetaCharacterPaintPath(arg_2_0, arg_2_1)
-	HXSet = var_1_10002
-
-	if not var_1_10002.isHx() then
+function MetaCharacterConst.GetMetaCharacterPaintPath(arg_2_0, arg_2_1)
+	if not HXSet.isHx() then
 		if arg_2_1 == true then
-			local var_2_0 = arg_2_0 .. var_0.META_ACTIVE_LASTFIX
-
-			return var_0.META_ART_RESOURCE_PERFIX .. var_2_0, var_2_0
+			return var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX, arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX
 		else
-			local var_2_1 = arg_2_0 .. var_0.META_DISACTIVE_LASTFIX
-
-			return var_0.META_ART_RESOURCE_PERFIX .. var_2_1, var_2_1
+			return var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX, arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX
 		end
 	elseif arg_2_1 == true then
-		local var_2_2 = arg_2_0 .. var_0.META_ACTIVE_LASTFIX .. var_0.HX_TAG
-		local var_2_3 = var_0.META_ART_RESOURCE_PERFIX .. var_2_2
+		local var_2_0 = arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX .. var_0_0.HX_TAG
+		local var_2_1 = var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX .. var_0_0.HX_TAG
 
-		checkABExist = var_5
+		if not checkABExist(var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX .. var_0_0.HX_TAG) then
+			var_2_0 = arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX
+			var_2_1 = var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_ACTIVE_LASTFIX
+		end
 
-		if not var_5(var_2_3) then
-			var_2_2 = arg_2_0 .. var_0.META_ACTIVE_LASTFIX
-			var_2_3 = var_0.META_ART_RESOURCE_PERFIX .. var_2_2
+		return var_2_1, var_2_0
+	else
+		local var_2_2 = arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX .. var_0_0.HX_TAG
+		local var_2_3 = var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX .. var_0_0.HX_TAG
+
+		if not checkABExist(var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX .. var_0_0.HX_TAG) then
+			var_2_2 = arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX
+			var_2_3 = var_0_0.META_ART_RESOURCE_PERFIX .. arg_2_0 .. var_0_0.META_DISACTIVE_LASTFIX
 		end
 
 		return var_2_3, var_2_2
-	else
-		local var_2_4 = arg_2_0 .. var_0.META_DISACTIVE_LASTFIX .. var_0.HX_TAG
-		local var_2_5 = var_0.META_ART_RESOURCE_PERFIX .. var_2_4
-
-		checkABExist = var_5
-
-		if not var_5(var_2_5) then
-			var_2_4 = arg_2_0 .. var_0.META_DISACTIVE_LASTFIX
-			var_2_5 = var_0.META_ART_RESOURCE_PERFIX .. var_2_4
-		end
-
-		return var_2_5, var_2_4
 	end
 
 	return
 end
 
-function var_0.GetMetaCharacterBannerPath(arg_3_0)
-	local var_3_0 = var_0.META_BANNER_PERFIX .. arg_3_0
-
-	return var_0.META_ART_RESOURCE_PERFIX .. var_3_0, var_3_0
+function MetaCharacterConst.GetMetaCharacterBannerPath(arg_3_0)
+	return var_0_0.META_ART_RESOURCE_PERFIX .. var_0_0.META_BANNER_PERFIX .. arg_3_0, var_0_0.META_BANNER_PERFIX .. arg_3_0
 end
 
-function var_0.GetMetaCharacterNamePath(arg_4_0)
-	local var_4_0 = var_0.META_NAME_PERFIX .. arg_4_0
-
-	return var_0.META_ART_RESOURCE_PERFIX .. var_4_0, var_4_0
+function MetaCharacterConst.GetMetaCharacterNamePath(arg_4_0)
+	return var_0_0.META_ART_RESOURCE_PERFIX .. var_0_0.META_NAME_PERFIX .. arg_4_0, var_0_0.META_NAME_PERFIX .. arg_4_0
 end
 
-function var_0.GetMetaCharacterToastPath(arg_5_0)
-	local var_5_0 = var_0.META_TOAST_PERFIX .. arg_5_0
-
-	return var_0.META_ART_RESOURCE_PERFIX .. var_5_0, var_5_0
+function MetaCharacterConst.GetMetaCharacterToastPath(arg_5_0)
+	return var_0_0.META_ART_RESOURCE_PERFIX .. var_0_0.META_TOAST_PERFIX .. arg_5_0, var_0_0.META_TOAST_PERFIX .. arg_5_0
 end
 
-function var_0.GetMetaShipGroupIDByConfigID(arg_6_0)
-	math = var_1_10001
-
-	return var_1_10001.floor(arg_6_0 / 10)
+function MetaCharacterConst.GetMetaShipGroupIDByConfigID(arg_6_0)
+	return math.floor(arg_6_0 / 10)
 end
 
-function var_0.isMetaRepairRedTag(arg_7_0)
+function MetaCharacterConst.isMetaRepairRedTag(arg_7_0)
 	if not arg_7_0 then
 		return false
 	end
 
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
+	local var_7_0 = getProxy(BayProxy):getMetaShipByGroupId(arg_7_0)
 
-	local var_7_0 = var_1_10001(var_1_10003)
-
-	if not var_1.getMetaShipByGroupId(var_7_0, arg_7_0) then
+	if not var_7_0 then
 		return false
 	end
 
-	local var_7_1 = var_1
+	local var_7_1 = var_7_0:getMetaCharacter()
 
-	if not var_1.getMetaCharacter(var_7_1) then
+	if not var_7_1 then
 		return false
 	end
 
 	local var_7_2 = false
 
-	ipairs = var_7_1
-	MetaCharacterConst = var_1_10006
+	for iter_7_0, iter_7_1 in ipairs(MetaCharacterConst.REPAIR_ATTRS) do
+		var_7_2 = var_7_1:getAttrVO(iter_7_1):isCanRepair()
 
-	for iter_7_0, iter_7_1 in var_7_1(var_1_10006.REPAIR_ATTRS) do
-		local var_7_3 = var_2:getAttrVO(iter_7_1)
-
-		if var_9.isCanRepair(var_7_3) == true then
+		if var_7_2 == true then
 			break
 		end
 	end
@@ -161,177 +120,124 @@ function var_0.isMetaRepairRedTag(arg_7_0)
 	return var_7_2
 end
 
-function var_0.isMetaEnergyRedTag(arg_8_0)
+function MetaCharacterConst.isMetaEnergyRedTag(arg_8_0)
 	if not arg_8_0 then
 		return false
 	end
 
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
+	local var_8_0 = getProxy(BayProxy):getMetaShipByGroupId(arg_8_0)
 
-	local var_8_0 = var_1_10001(var_1_10003)
-
-	if not var_1.getMetaShipByGroupId(var_8_0, arg_8_0) then
+	if not var_8_0 then
 		return false
 	end
 
-	if not var_1:getMetaCharacter() then
+	local var_8_1 = var_8_0:getMetaCharacter()
+
+	if not var_8_1 then
 		return false
 	end
 
-	local var_8_1 = true
-	local var_8_2 = var_2:getBreakOutInfo()
+	local var_8_2 = true
+	local var_8_3 = var_8_1:getBreakOutInfo()
 
-	if not var_4.hasNextInfo(var_8_2) then
-		var_8_1 = false
+	if not var_8_3:hasNextInfo() then
+		var_8_2 = false
 	end
 
-	local var_8_3, var_8_4 = var_4:getLimited()
+	local var_8_4, var_8_5 = var_8_3:getLimited()
 
-	if var_8_3 > var_1.level or var_8_4 > var_2:getCurRepairExp() then
-		var_8_1 = false
+	if var_8_4 > var_8_0.level or var_8_5 > var_8_1:getCurRepairExp() then
+		var_8_2 = false
 	end
 
-	local var_8_5, var_8_6 = var_4:getConsume()
-	local var_8_7
-	local var_8_8
-	local var_8_9
-	local var_8_10 = var_8_6[1].itemId
-	local var_8_11 = var_8_6[1].count
+	local var_8_6, var_8_7 = var_8_3:getConsume()
 
-	getProxy = var_12
-	BagProxy = var_1_10014
-
-	local var_8_12 = var_12(var_1_10014)
-
-	if var_8_11 > var_12.getItemCountById(var_8_12, var_8_10) then
-		var_8_1 = false
+	if var_8_7[1].count > getProxy(BagProxy):getItemCountById(var_8_7[1].itemId) then
+		var_8_2 = false
 	end
 
-	getProxy = var_12
-	PlayerProxy = var_8_12
+	local var_8_11 = getProxy(PlayerProxy)
 
-	local var_8_13 = var_12(var_8_12)
-
-	if var_8_5 > var_12.getData(var_8_13).gold then
-		var_8_1 = false
+	if var_8_6 > var_8_11:getData().gold then
+		var_8_2 = false
 	end
 
-	return var_8_1
+	return var_8_2
 end
 
-function var_0.isMetaTacticsRedTag(arg_9_0)
-	getProxy = var_1_10001
-	MetaCharacterProxy = var_1_10003
-
-	local var_9_0 = var_1_10001(var_1_10003)
-
-	return var_1.getRedTag(var_9_0, arg_9_0)
+function MetaCharacterConst.isMetaTacticsRedTag(arg_9_0)
+	return getProxy(MetaCharacterProxy):getRedTag(arg_9_0)
 end
 
-function var_0.isMetaSynRedTag(arg_10_0)
+function MetaCharacterConst.isMetaSynRedTag(arg_10_0)
 	if not arg_10_0 then
 		return false
 	end
 
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
+	local var_10_0 = getProxy(BayProxy):getMetaShipByGroupId(arg_10_0)
 
-	local var_10_0 = var_1_10001(var_1_10003)
-
-	if not var_1.getMetaShipByGroupId(var_10_0, arg_10_0) then
+	if not var_10_0 then
 		return false
 	end
 
-	if not var_1:getMetaCharacter() then
+	if not var_10_0:getMetaCharacter() then
 		return false
 	end
 
-	getProxy = var_10_0
-	MetaCharacterProxy = var_1_10005
+	local var_10_1 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg_10_0)
 
-	local var_10_1 = var_10_0(var_1_10005)
-	local var_10_2 = var_3.getMetaProgressVOByID(var_10_1, arg_10_0)
-
-	if var_3.isPassType(var_10_2) or var_3:isBuildType() then
+	if var_10_1:isPassType() or var_10_1:isBuildType() then
 		return false
 	end
 
-	if not var_3:isShow() then
+	if not var_10_1:isShow() then
 		return false
 	end
 
-	local var_10_3 = false
+	local var_10_2 = false
 
-	if var_3.metaPtData then
-		local var_10_4 = var_3.metaPtData
-
-		var_10_3 = var_5.CanGetAward(var_10_4)
+	if var_10_1.metaPtData then
+		var_10_2 = var_10_1.metaPtData:CanGetAward()
 	end
 
-	return var_10_3
+	return var_10_2
 end
 
-function var_0.isMetaMainSceneRedTag(arg_11_0)
+function MetaCharacterConst.isMetaMainSceneRedTag(arg_11_0)
 	if not arg_11_0 then
 		return false
 	end
 
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
+	local var_11_0 = getProxy(BayProxy)
 
-	local var_11_0 = var_1_10001(var_1_10003)
-
-	if var_1.getMetaShipByGroupId(var_11_0, arg_11_0) then
+	if var_11_0:getMetaShipByGroupId(arg_11_0) then
 		return false
 	end
 
-	getProxy = var_1_10002
-	MetaCharacterProxy = var_4
+	local var_11_1 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg_11_0)
 
-	local var_11_1 = var_1_10002(var_4)
-	local var_11_2 = var_2.getMetaProgressVOByID(var_11_1, arg_11_0)
-
-	if var_2.isPassType(var_11_2) or var_2:isBuildType() then
+	if var_11_1:isPassType() or var_11_1:isBuildType() then
 		return false
 	end
 
-	if not var_2:isShow() then
+	if not var_11_1:isShow() then
 		return false
 	end
 
-	local var_11_3 = var_2:getMetaProgressPTState()
+	local var_11_2 = var_11_1:getMetaProgressPTState()
 
-	MetaProgress = var_11_1
-
-	if var_11_3 ~= var_11_1.STATE_CAN_FINISH then
-		MetaProgress = var_4
-
-		if var_11_3 == var_4.STATE_CAN_AWARD then
-			return true
-		end
-
-		return
+	if var_11_2 == MetaProgress.STATE_CAN_FINISH or var_11_2 == MetaProgress.STATE_CAN_AWARD then
+		return true
 	end
+
+	return
 end
 
-function var_0.isMetaMainEntRedPoint()
-	getProxy = var_1_10000
-	MetaCharacterProxy = var_1_10002
+function MetaCharacterConst.isMetaMainEntRedPoint()
+	for iter_12_0, iter_12_1 in ipairs((getProxy(MetaCharacterProxy):getMetaProgressVOList())) do
+		local var_12_0 = var_0_0.isMetaMainSceneRedTag(iter_12_1.id) or var_0_0.isMetaSynRedTag(iter_12_1.id)
 
-	local var_12_0 = var_1_10000(var_1_10002)
-	local var_12_1 = var_0.getMetaProgressVOList(var_12_0)
-
-	ipairs = var_1_10001
-
-	for iter_12_0, iter_12_1 in var_1_10001(var_12_1) do
-		local var_12_2
-
-		if not var_0.isMetaMainSceneRedTag(iter_12_1.id) then
-			var_12_2 = var_0.isMetaSynRedTag(iter_12_1.id)
-		end
-
-		if var_12_2 == true then
+		if var_12_0 == true then
 			return true
 		end
 	end
@@ -339,170 +245,92 @@ function var_0.isMetaMainEntRedPoint()
 	return false
 end
 
-function var_0.isMetaBannerRedPoint(arg_13_0)
-	local var_13_0
+function MetaCharacterConst.isMetaBannerRedPoint(arg_13_0)
+	local var_13_0 = var_0_0.isMetaTacticsRedTag(arg_13_0) or var_0_0.isMetaSynRedTag(arg_13_0)
+	local var_13_1 = getProxy(BayProxy):getMetaShipByGroupId(arg_13_0)
 
-	if not var_0.isMetaTacticsRedTag(arg_13_0) then
-		var_13_0 = var_0.isMetaSynRedTag(arg_13_0)
-	end
+	if var_13_1 then
+		local var_13_2 = getProxy(MetaCharacterProxy):getMetaTacticsInfoByShipID(var_13_1.id):getTacticsStateForShow() == MetaTacticsInfo.States.LearnAble
 
-	getProxy = var_1_10002
-	BayProxy = var_1_10004
-
-	local var_13_1 = var_1_10002(var_1_10004)
-	local var_13_2, var_13_3
-
-	if var_2.getMetaShipByGroupId(var_13_1, arg_13_0) then
-		getProxy = var_13_3
-		MetaCharacterProxy = var_13_2
-		var_13_2 = var_13_3(var_13_2)
-		var_13_2 = var_13_3.getMetaTacticsInfoByShipID(var_13_2, var_2.id)
-		var_13_3 = var_13_3.getTacticsStateForShow(var_13_2)
-		MetaTacticsInfo = var_13_1
-		var_13_3 = var_13_3 == var_13_1.States.LearnAble
-		var_13_0 = var_13_0 or var_13_3
+		var_13_0 = var_13_0 or var_13_2
 	else
-		getProxy = var_13_3
-		MetaCharacterProxy = var_13_2
+		local var_13_3 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg_13_0)
 
-		local var_13_4 = var_13_3(var_13_2)
-		local var_13_5 = var_3.getMetaProgressVOByID(var_13_4, arg_13_0)
-
-		if var_3.isPtType(var_13_5) and not var_13_0 then
-			local var_13_6 = var_3.metaPtData
-
-			var_13_0 = var_4.CanGetAward(var_13_6)
+		if var_13_3:isPtType() then
+			var_13_0 = var_13_0 or var_13_3.metaPtData:CanGetAward()
 		end
 	end
 
 	return var_13_0
 end
 
-function var_0.getFinalSkillIDListByMetaGroupID(arg_14_0)
+function MetaCharacterConst.getFinalSkillIDListByMetaGroupID(arg_14_0)
 	local var_14_0
 
 	for iter_14_0 = 1, 4 do
-		local var_14_1 = arg_14_0 * 10 + iter_14_0
-
-		pg = var_1_10007
-
-		if var_1_10007.ship_data_template[var_14_1] then
-			var_14_0 = var_14_1
+		if pg.ship_data_template[arg_14_0 * 10 + iter_14_0] then
+			var_14_0 = arg_14_0 * 10 + iter_14_0
 		end
 
 		break
 	end
 
-	local var_14_2 = {}
+	local var_14_1 = {}
 
-	ipairs = var_3
-	pg = iter_14_0
-
-	for iter_14_1, iter_14_2 in var_3(iter_14_0.ship_data_template[var_14_0].buff_list_display) do
-		table = var_1_10008
-
-		var_1_10008.insert(var_14_2, iter_14_2)
+	for iter_14_1, iter_14_2 in ipairs(pg.ship_data_template[var_14_0].buff_list_display) do
+		table.insert(var_14_1, iter_14_2)
 	end
 
-	return var_14_2
+	return var_14_1
 end
 
-function var_0.getTacticsSkillIDListByShipConfigID(arg_15_0)
-	local var_15_0 = {}
-
-	pg = var_1_10002
-
-	local var_15_1 = var_1_10002.ship_data_template[arg_15_0].buff_list_display
-
-	ipairs = var_1_10004
-
-	for iter_15_0, iter_15_1 in var_1_10004(var_15_1) do
-		MetaCharacterConst = var_1_10009
-
-		if var_1_10009.isMetaTaskSkillID(iter_15_1) then
-			table = var_1_10009
-
-			var_1_10009.insert(var_15_0, iter_15_1)
+function MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg_15_0)
+	for iter_15_0, iter_15_1 in ipairs(pg.ship_data_template[arg_15_0].buff_list_display) do
+		if MetaCharacterConst.isMetaTaskSkillID(iter_15_1) then
+			table.insert({}, iter_15_1)
 		end
 	end
 
-	return var_15_0
+	return {}
 end
 
-function var_0.getMetaSkillTacticsConfig(arg_16_0, arg_16_1)
-	ipairs = var_1_10002
-	pg = var_1_10004
-
-	for iter_16_0, iter_16_1 in var_1_10002(var_1_10004.ship_meta_skilltask.all) do
-		pg = var_1_10007
-
-		if var_1_10007.ship_meta_skilltask[iter_16_1].skill_ID == arg_16_0 and var_1_10007.level == arg_16_1 then
-			return var_1_10007
+function MetaCharacterConst.getMetaSkillTacticsConfig(arg_16_0, arg_16_1)
+	for iter_16_0, iter_16_1 in ipairs(pg.ship_meta_skilltask.all) do
+		if pg.ship_meta_skilltask[iter_16_1].skill_ID == arg_16_0 and pg.ship_meta_skilltask[iter_16_1].level == arg_16_1 then
+			return pg.ship_meta_skilltask[iter_16_1]
 		end
 	end
 
 	return
 end
 
-function var_0.addReMetaTransItem(arg_17_0, arg_17_1)
-	if not arg_17_0.virgin and arg_17_0:isMetaShip() then
-		Player = var_2
+function MetaCharacterConst.addReMetaTransItem(arg_17_0, arg_17_1)
+	if not arg_17_0.virgin and arg_17_0:isMetaShip() and Player.isMetaShipNeedToTrans(arg_17_0.configId) then
+		local var_17_0 = Player.metaShip2Res(arg_17_0.configId)
 
-		if var_2.isMetaShipNeedToTrans(arg_17_0.configId) then
-			Player = var_2
-
-			local var_17_0 = var_2.metaShip2Res(arg_17_0.configId)
-
-			if not arg_17_1 then
-				ipairs = var_1_10003
-
-				for iter_17_0, iter_17_1 in var_1_10003(var_17_0) do
-					local var_17_1 = iter_17_1.type
-					local var_17_2 = iter_17_1.id
-					local var_17_3 = iter_17_1.count
-
-					Drop = var_1_10011
-					var_1_10011 = var_1_10011.New({
-						type = var_17_1,
-						id = var_17_2,
-						count = var_17_3
-					})
-					pg = var_1_10012
-
-					local var_17_4 = var_1_10012.m02
-
-					var_1_10012 = var_1_10012.sendNotification
-					GAME = var_1_10015
-
-					var_1_10012(var_17_4, var_1_10015.ADD_ITEM, var_1_10011)
-				end
+		if not arg_17_1 then
+			for iter_17_0, iter_17_1 in ipairs(var_17_0) do
+				pg.m02:sendNotification(GAME.ADD_ITEM, (Drop.New({
+					type = iter_17_1.type,
+					id = iter_17_1.id,
+					count = iter_17_1.count
+				})))
 			end
-
-			local var_17_5 = var_17_0[1].type
-			local var_17_6 = var_17_0[1].id
-			local var_17_7 = var_17_0[1].count
-
-			Drop = iter_17_0
-
-			return (iter_17_0.New({
-				type = var_17_5,
-				id = var_17_6,
-				count = var_17_7
-			}))
 		end
+
+		;({}).type = var_17_0[1].type
+		;({}).id = var_17_0[1].id
+		;({}).count = var_17_0[1].count
+
+		return (Drop.New({}))
 	end
 
 	return
 end
 
-function var_0.isMetaTaskSkillID(arg_18_0)
-	ipairs = var_1_10001
-	pg = var_1_10003
-
-	for iter_18_0, iter_18_1 in var_1_10001(var_1_10003.ship_meta_skilltask.all) do
-		pg = var_1_10006
-
-		if var_1_10006.ship_meta_skilltask[iter_18_1].skill_ID == arg_18_0 then
+function MetaCharacterConst.isMetaTaskSkillID(arg_18_0)
+	for iter_18_0, iter_18_1 in ipairs(pg.ship_meta_skilltask.all) do
+		if pg.ship_meta_skilltask[iter_18_1].skill_ID == arg_18_0 then
 			return true
 		end
 	end
@@ -510,14 +338,10 @@ function var_0.isMetaTaskSkillID(arg_18_0)
 	return false
 end
 
-function var_0.isMetaInArchive(arg_19_0)
-	getProxy = var_1_10001
-	MetaCharacterProxy = var_1_10003
+function MetaCharacterConst.isMetaInArchive(arg_19_0)
+	local var_19_0 = getProxy(MetaCharacterProxy):getMetaProgressVOByID(arg_19_0)
 
-	local var_19_0 = var_1_10001(var_1_10003)
-	local var_19_1 = var_1.getMetaProgressVOByID(var_19_0, arg_19_0)
-
-	if var_2.isPtType(var_19_1) and var_2:isInArchive() then
+	if var_19_0:isPtType() and var_19_0:isInArchive() then
 		return true
 	else
 		return false
@@ -526,270 +350,130 @@ function var_0.isMetaInArchive(arg_19_0)
 	return
 end
 
-function var_0.getRepairAbleMetaProgressVOList()
-	local var_20_0 = {}
+function MetaCharacterConst.getRepairAbleMetaProgressVOList()
+	for iter_20_0, iter_20_1 in ipairs((getProxy(MetaCharacterProxy):getMetaProgressVOList())) do
+		if iter_20_1.metaShipVO then
+			local var_20_0 = iter_20_1.metaShipVO:getMetaCharacter()
 
-	getProxy = var_1_10001
-	MetaCharacterProxy = var_1_10003
-
-	local var_20_1 = var_1_10001(var_1_10003)
-	local var_20_2 = var_1.getMetaProgressVOList(var_20_1)
-
-	ipairs = var_1_10003
-
-	for iter_20_0, iter_20_1 in var_1_10003(var_20_2) do
-		if iter_20_1.metaShipVO and var_8:getMetaCharacter() and var_9:getRepairRate() < 1 then
-			table = var_11
-
-			var_11.insert(var_20_0, iter_20_1)
-		end
-	end
-
-	return var_20_0
-end
-
-function var_0.getTacticsAbleMetaProgressVOList()
-	local var_21_0 = {}
-
-	getProxy = var_1_10001
-	MetaCharacterProxy = var_1_10003
-
-	local var_21_1 = var_1_10001(var_1_10003)
-	local var_21_2 = var_1.getMetaProgressVOList(var_21_1)
-
-	ipairs = var_1_10003
-
-	for iter_21_0, iter_21_1 in var_1_10003(var_21_2) do
-		if iter_21_1.metaShipVO and not var_8:isAllMetaSkillLevelMax() then
-			table = var_1_10010
-
-			var_1_10010.insert(var_21_0, iter_21_1)
-		end
-	end
-
-	return var_21_0
-end
-
-function var_0.getEnergyAbleMetaProgressVOList()
-	local var_22_0 = {}
-
-	getProxy = var_1_10001
-	MetaCharacterProxy = var_1_10003
-
-	local var_22_1 = var_1_10001(var_1_10003)
-	local var_22_2 = var_1.getMetaProgressVOList(var_22_1)
-
-	ipairs = var_1_10003
-
-	for iter_22_0, iter_22_1 in var_1_10003(var_22_2) do
-		if iter_22_1.metaShipVO and not var_8:isMaxStar() then
-			table = var_1_10010
-
-			var_1_10010.insert(var_22_0, iter_22_1)
-		end
-	end
-
-	return var_22_0
-end
-
-function var_0.filteMetaByType(arg_23_0, arg_23_1)
-	if arg_23_1 then
-		ShipIndexConst = var_1_10002
-
-		if arg_23_1 == var_1_10002.TypeAll then
-			return true
-		end
-
-		local function var_23_0(arg_24_0)
-			local var_24_0
-
-			for iter_24_0 = 1, 4 do
-				local var_24_1 = arg_24_0 * 10 + iter_24_0
-
-				pg = var_2_10007
-
-				if var_2_10007.ship_data_template[var_24_1] then
-					var_24_0 = var_24_1
-				end
-
-				break
-			end
-
-			pg = var_2
-
-			return var_2.ship_data_statistics[var_24_0].type
-		end
-
-		local function var_23_1(arg_25_0)
-			ShipType = var_2_10001
-
-			return var_2_10001.GetTeamFromShipType(arg_25_0)
-		end
-
-		local var_23_2 = 2
-
-		ShipIndexCfg = var_1_10005
-
-		for iter_23_0 = var_23_2, #var_1_10005.type do
-			bit = var_1_10008
-			var_1_10008 = var_1_10008.lshift(1, iter_23_0 - 2)
-			bit = var_1_10009
-			var_1_10009 = var_1_10009.band(var_1_10008, arg_23_1)
-
-			if 0 < var_1_10009 then
-				local var_23_3
-
-				if iter_23_0 < 4 then
-					var_1_10009 = var_23_0(arg_23_0.id)
-					var_23_3 = var_23_1(var_1_10009)
-					ShipIndexCfg = var_11
-
-					local var_23_4 = var_11.type[iter_23_0].shipTypes
-
-					ShipIndexCfg = var_12
-
-					local var_23_5 = var_12.type[iter_23_0].types
-
-					table = var_1_10013
-
-					if var_1_10013.contains(var_23_4, var_1_10009) then
-						return true
-					end
-
-					table = var_1_10013
-
-					if var_1_10013.contains(var_23_5, var_23_3) then
-						return true
-					end
-				else
-					var_1_10009 = var_23_0(arg_23_0.id)
-					ShipIndexCfg = var_23_3
-
-					local var_23_6 = var_23_3.type[iter_23_0].types
-
-					table = var_11
-
-					if var_11.contains(var_23_6, var_1_10009) then
-						return true
-					end
-				end
+			if var_20_0 and var_20_0:getRepairRate() < 1 then
+				table.insert({}, iter_20_1)
 			end
 		end
-
-		return false
 	end
+
+	return {}
 end
 
-function var_0.filteMetaByRarity(arg_26_0, arg_26_1)
-	if arg_26_1 then
-		ShipIndexConst = var_1_10002
-
-		if arg_26_1 == var_1_10002.RarityAll then
-			return true
+function MetaCharacterConst.getTacticsAbleMetaProgressVOList()
+	for iter_21_0, iter_21_1 in ipairs((getProxy(MetaCharacterProxy):getMetaProgressVOList())) do
+		if iter_21_1.metaShipVO and not iter_21_1.metaShipVO:isAllMetaSkillLevelMax() then
+			table.insert({}, iter_21_1)
 		end
+	end
 
-		local function var_26_0(arg_27_0)
-			local var_27_0
+	return {}
+end
 
-			for iter_27_0 = 1, 4 do
-				local var_27_1 = arg_27_0 * 10 + iter_27_0
-
-				pg = var_2_10007
-
-				if var_2_10007.ship_data_template[var_27_1] then
-					var_27_0 = var_27_1
-				end
-
-				break
-			end
-
-			pg = var_2
-
-			return var_2.ship_data_statistics[var_27_0].rarity
+function MetaCharacterConst.getEnergyAbleMetaProgressVOList()
+	for iter_22_0, iter_22_1 in ipairs((getProxy(MetaCharacterProxy):getMetaProgressVOList())) do
+		if iter_22_1.metaShipVO and not iter_22_1.metaShipVO:isMaxStar() then
+			table.insert({}, iter_22_1)
 		end
+	end
 
-		local var_26_1 = 2
+	return {}
+end
 
-		ShipIndexCfg = var_1_10004
+function MetaCharacterConst.filteMetaByType(arg_23_0, arg_23_1)
+	if not arg_23_1 or arg_23_1 == ShipIndexConst.TypeAll then
+		return true
+	end
 
-		for iter_26_0 = var_26_1, #var_1_10004.rarity do
-			bit = var_1_10007
-			var_1_10007 = var_1_10007.lshift(1, iter_26_0 - 2)
-			bit = var_1_10008
-			var_1_10008 = var_1_10008.band(var_1_10007, arg_26_1)
+	for iter_23_0 = 2, #ShipIndexCfg.type do
+		if bit.band(bit.lshift(1, iter_23_0 - 2), arg_23_1) > 0 then
+			if iter_23_0 < 4 then
+				local var_23_1 = var_23_0(arg_23_0.id)
+				local var_23_2 = (function(arg_25_0)
+					return ShipType.GetTeamFromShipType(arg_25_0)
+				end)(var_23_1)
 
-			if 0 < var_1_10008 then
-				ShipIndexCfg = var_1_10008
-				var_1_10008 = var_1_10008.rarity[iter_26_0].types
-				table = var_9
-
-				if var_9.contains(var_1_10008, var_26_0(arg_26_0.id)) then
+				if table.contains(ShipIndexCfg.type[iter_23_0].shipTypes, var_23_1) then
 					return true
 				end
+
+				if table.contains(ShipIndexCfg.type[iter_23_0].types, var_23_2) then
+					return true
+				end
+			elseif table.contains(ShipIndexCfg.type[iter_23_0].types, (var_23_0(arg_23_0.id))) then
+				return true
 			end
 		end
-
-		return false
 	end
+
+	return false
 end
 
-function var_0.filteMetaExtra(arg_28_0, arg_28_1)
-	if arg_28_1 then
-		ShipIndexConst = var_1_10002
+function MetaCharacterConst.filteMetaByRarity(arg_26_0, arg_26_1)
+	if not arg_26_1 or arg_26_1 == ShipIndexConst.RarityAll then
+		return true
+	end
 
-		if arg_28_1 == var_1_10002.MetaExtraAll then
+	for iter_26_0 = 2, #ShipIndexCfg.rarity do
+		if bit.band(bit.lshift(1, iter_26_0 - 2), arg_26_1) > 0 and table.contains(ShipIndexCfg.rarity[iter_26_0].types, var_26_0(arg_26_0.id)) then
 			return true
 		end
+	end
 
-		ShipIndexConst = var_1_10002
+	return false
+end
 
-		if var_1_10002.MetaExtraRepair == arg_28_1 then
-			return var_0.filteMetaRepairAble(arg_28_0)
-		else
-			ShipIndexConst = var_2
+function MetaCharacterConst.filteMetaExtra(arg_28_0, arg_28_1)
+	if not arg_28_1 or arg_28_1 == ShipIndexConst.MetaExtraAll then
+		return true
+	end
 
-			if var_2.MetaExtraTactics == arg_28_1 then
-				return var_0.filteMetaTacticsAble(arg_28_0)
-			else
-				ShipIndexConst = var_2
+	if ShipIndexConst.MetaExtraRepair == arg_28_1 then
+		return var_0_0.filteMetaRepairAble(arg_28_0)
+	elseif ShipIndexConst.MetaExtraTactics == arg_28_1 then
+		return var_0_0.filteMetaTacticsAble(arg_28_0)
+	elseif ShipIndexConst.MetaExtraEnergy == arg_28_1 then
+		return var_0_0.filteMetaEnergyAble(arg_28_0)
+	else
+		return false
+	end
 
-				if var_2.MetaExtraEnergy == arg_28_1 then
-					return var_0.filteMetaEnergyAble(arg_28_0)
-				else
-					return false
-				end
-			end
+	return
+end
+
+function MetaCharacterConst.filteMetaRepairAble(arg_29_0)
+	if arg_29_0.metaShipVO then
+		local var_29_0 = arg_29_0.metaShipVO:getMetaCharacter()
+
+		if var_29_0 and var_29_0:getRepairRate() < 1 then
+			return true
 		end
-
-		return
 	end
+
+	return false
 end
 
-function var_0.filteMetaRepairAble(arg_29_0)
-	if arg_29_0.metaShipVO and var_1:getMetaCharacter() and var_2:getRepairRate() < 1 then
+function MetaCharacterConst.filteMetaTacticsAble(arg_30_0)
+	if arg_30_0.metaShipVO and not arg_30_0.metaShipVO:isAllMetaSkillLevelMax() then
 		return true
 	end
 
 	return false
 end
 
-function var_0.filteMetaTacticsAble(arg_30_0)
-	if arg_30_0.metaShipVO and not var_1:isAllMetaSkillLevelMax() then
+function MetaCharacterConst.filteMetaEnergyAble(arg_31_0)
+	if arg_31_0.metaShipVO and not arg_31_0.metaShipVO:isMaxStar() then
 		return true
 	end
 
 	return false
 end
 
-function var_0.filteMetaEnergyAble(arg_31_0)
-	if arg_31_0.metaShipVO and not var_1:isMaxStar() then
-		return true
-	end
-
-	return false
-end
-
-function var_0.filteMetaSynAble(arg_32_0)
+function MetaCharacterConst.filteMetaSynAble(arg_32_0)
 	if arg_32_0:isPtType() then
 		return not arg_32_0:IsGotAllAwards()
 	else
@@ -799,4 +483,4 @@ function var_0.filteMetaSynAble(arg_32_0)
 	return
 end
 
-return var_0
+return MetaCharacterConst

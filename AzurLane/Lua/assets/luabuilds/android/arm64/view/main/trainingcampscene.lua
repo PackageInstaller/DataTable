@@ -1,29 +1,19 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("TrainingCampScene", import("..base.BaseUI"))
 
-local var_0_0 = "TrainingCampScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "TrainingCampUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:findUI()
 	arg_2_0:initData()
 	arg_2_0:addListener()
 
-	TechnologyConst = var_1
-
-	if var_1.isNormalActOn() then
+	if TechnologyConst.isNormalActOn() then
 		arg_2_0:initNormalPanel()
 	end
 
-	TechnologyConst = var_1_10002
-
-	if var_1_10002.isTecActOn() then
+	if TechnologyConst.isTecActOn() then
 		arg_2_0:initTecPanel()
 	end
 
@@ -32,86 +22,29 @@ function var_0_1.init(arg_2_0)
 	return
 end
 
-function var_0_1.findUI(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.findUI(arg_3_0)
+	arg_3_0.adaptPanel = arg_3_0._tf:Find("blur_panel/adapt")
+	arg_3_0.panelContainer = arg_3_0._tf:Find("PanelContainer")
+	arg_3_0.normalPanel = arg_3_0.panelContainer:Find("NormalPanel")
+	arg_3_0.tecPanel = arg_3_0.panelContainer:Find("TecPanel")
+	arg_3_0.switchToNormalBtn = arg_3_0._tf:Find("SwitchToNormal")
+	arg_3_0.switchToTecBtn = arg_3_0._tf:Find("SwitchToTec")
+	arg_3_0.switchToNormalLight = GetOrAddComponent(arg_3_0.switchToNormalBtn:Find("Light"), "Animator")
+	arg_3_0.switchToTecLight = GetOrAddComponent(arg_3_0.switchToTecBtn:Find("Light"), "Animator")
+	arg_3_0.awardMsg = arg_3_0._tf:Find("ChooseAwardPanel")
+	arg_3_0.helpBtn = arg_3_0._tf:Find("HelpBtn")
+	arg_3_0.titleTf = arg_3_0._tf:Find("blur_panel/adapt/top/title")
 
-	arg_3_0.adaptPanel = var_1.Find(var_3_0, "blur_panel/adapt")
-
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.panelContainer = var_1.Find(var_3_1, "PanelContainer")
-
-	local var_3_2 = arg_3_0.panelContainer
-
-	arg_3_0.normalPanel = var_1.Find(var_3_2, "NormalPanel")
-
-	local var_3_3 = arg_3_0.panelContainer
-
-	arg_3_0.tecPanel = var_1.Find(var_3_3, "TecPanel")
-
-	local var_3_4 = arg_3_0._tf
-
-	arg_3_0.switchToNormalBtn = var_1.Find(var_3_4, "SwitchToNormal")
-
-	local var_3_5 = arg_3_0._tf
-
-	arg_3_0.switchToTecBtn = var_1.Find(var_3_5, "SwitchToTec")
-	GetOrAddComponent = var_1
-
-	local var_3_6 = arg_3_0.switchToNormalBtn
-
-	arg_3_0.switchToNormalLight = var_1(var_3.Find(var_3_6, "Light"), "Animator")
-	GetOrAddComponent = var_1
-
-	local var_3_7 = arg_3_0.switchToTecBtn
-
-	arg_3_0.switchToTecLight = var_1(var_3.Find(var_3_7, "Light"), "Animator")
-
-	local var_3_8 = arg_3_0._tf
-
-	arg_3_0.awardMsg = var_1.Find(var_3_8, "ChooseAwardPanel")
-
-	local var_3_9 = arg_3_0._tf
-
-	arg_3_0.helpBtn = var_1.Find(var_3_9, "HelpBtn")
-
-	local var_3_10 = arg_3_0._tf
-
-	arg_3_0.titleTf = var_1.Find(var_3_10, "blur_panel/adapt/top/title")
-	GetComponent = var_1
-	findTF = var_3_10
-
-	local var_3_11 = var_3_10(arg_3_0.titleTf, "img")
-
-	typeof = var_4
-	Image = var_6
-
-	local var_3_12 = var_1(var_3_11, var_4(var_6))
-
-	var_1.SetNativeSize(var_3_12)
+	GetComponent(findTF(arg_3_0.titleTf, "img"), typeof(Image)):SetNativeSize()
 
 	return
 end
 
-function var_0_1.initData(arg_4_0)
-	getProxy = var_1_10001
-	TaskProxy = var_1_10003
-	arg_4_0.taskProxy = var_1_10001(var_1_10003)
-	getProxy = var_1
-	ActivityProxy = var_1_10003
-	arg_4_0.activityProxy = var_1(var_1_10003)
-
-	local var_4_0 = arg_4_0.activityProxy
-	local var_4_1 = var_1.getActivityByType
-
-	ActivityConst = var_1_10004
-	arg_4_0.normalTaskactivity = var_4_1(var_4_0, var_1_10004.ACTIVITY_TYPE_GUIDE_TASKS)
-
-	local var_4_2 = arg_4_0.activityProxy
-	local var_4_3 = var_1.getActivityByType
-
-	ActivityConst = var_4
-	arg_4_0.tecTaskActivity = var_4_3(var_4_2, var_4.ACTIVITY_TYPE_FRESH_TEC_CATCHUP)
+function var_0_0.initData(arg_4_0)
+	arg_4_0.taskProxy = getProxy(TaskProxy)
+	arg_4_0.activityProxy = getProxy(ActivityProxy)
+	arg_4_0.normalTaskactivity = arg_4_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS)
+	arg_4_0.tecTaskActivity = arg_4_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP)
 	arg_4_0.phaseId = nil
 	arg_4_0.cachePageID = nil
 	arg_4_0.activity = nil
@@ -119,125 +52,45 @@ function var_0_1.initData(arg_4_0)
 	return
 end
 
-function var_0_1.addListener(arg_5_0)
-	onButton = var_1_10001
-
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.adaptPanel
-	local var_5_2 = var_4.Find(var_5_1, "top/back_button")
-
-	local function var_5_3()
-		local var_6_0 = arg_5_0
-
-		var_0.emit(var_6_0, var_0_1.ON_BACK)
+function var_0_0.addListener(arg_5_0)
+	onButton(arg_5_0, arg_5_0.adaptPanel:Find("top/back_button"), function()
+		arg_5_0:emit(var_0_0.ON_BACK)
 
 		return
-	end
-
-	SFX_PANEL = var_5_1
-
-	var_1_10001(var_5_0, var_5_2, var_5_3, var_5_1)
-
-	onButton = var_1_10001
-
-	local var_5_4 = arg_5_0
-	local var_5_5 = arg_5_0.switchToNormalBtn
-
-	local function var_5_6()
-		if not arg_5_0.isOnSwitchAni then
-			TechnologyConst = var_0
-
-			if var_0.isNormalActOn() then
-				local var_7_0 = arg_5_0
-
-				var_1.switchPanel(var_7_0, arg_5_0.normalTaskactivity, true)
-
-				setActive = var_1
-
-				var_1(arg_5_0.switchToNormalBtn, false)
-
-				setActive = var_1
-
-				var_1(arg_5_0.switchToTecBtn, true)
-
-				local var_7_1 = arg_5_0
-
-				var_1.resetSwitchBtnsLight(var_7_1)
-			end
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0.switchToNormalBtn, function()
+		if not arg_5_0.isOnSwitchAni and TechnologyConst.isNormalActOn() then
+			arg_5_0:switchPanel(arg_5_0.normalTaskactivity, true)
+			setActive(arg_5_0.switchToNormalBtn, false)
+			setActive(arg_5_0.switchToTecBtn, true)
+			arg_5_0:resetSwitchBtnsLight()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_5_1
-
-	var_1_10001(var_5_4, var_5_5, var_5_6, var_5_1)
-
-	onButton = var_1_10001
-
-	local var_5_7 = arg_5_0
-	local var_5_8 = arg_5_0.switchToTecBtn
-
-	local function var_5_9()
-		if not arg_5_0.isOnSwitchAni then
-			TechnologyConst = var_0
-
-			if var_0.isTecActOn() then
-				local var_8_0 = arg_5_0
-
-				var_1.switchPanel(var_8_0, arg_5_0.tecTaskActivity, true)
-
-				setActive = var_1
-
-				var_1(arg_5_0.switchToNormalBtn, true)
-
-				setActive = var_1
-
-				var_1(arg_5_0.switchToTecBtn, false)
-
-				local var_8_1 = arg_5_0
-
-				var_1.resetSwitchBtnsLight(var_8_1)
-			end
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0.switchToTecBtn, function()
+		if not arg_5_0.isOnSwitchAni and TechnologyConst.isTecActOn() then
+			arg_5_0:switchPanel(arg_5_0.tecTaskActivity, true)
+			setActive(arg_5_0.switchToNormalBtn, true)
+			setActive(arg_5_0.switchToTecBtn, false)
+			arg_5_0:resetSwitchBtnsLight()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_5_1
-
-	var_1_10001(var_5_7, var_5_8, var_5_9, var_5_1)
-
-	onButton = var_1_10001
-
-	local var_5_10 = arg_5_0
-	local var_5_11 = arg_5_0.helpBtn
-
-	local function var_5_12()
-		pg = var_2_10000
-
-		local var_9_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_9_1 = var_0.ShowMsgBox
-		local var_9_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_9_2.type = var_2_10004
-		i18n = var_2_10004
-		var_9_2.helps = var_2_10004("newplayer_help_tip")
-
-		var_9_1(var_9_0, var_9_2)
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("newplayer_help_tip")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_5_1
-
-	var_1_10001(var_5_10, var_5_11, var_5_12, var_5_1)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.didEnter(arg_10_0)
+function var_0_0.didEnter(arg_10_0)
 	arg_10_0:updateSwitchBtns()
 	arg_10_0:updateSwitchBtnsTag()
 	arg_10_0:autoSelectPanel()
@@ -245,135 +98,65 @@ function var_0_1.didEnter(arg_10_0)
 	return
 end
 
-function var_0_1.willExit(arg_11_0)
-	LeanTween = var_1_10001
-
-	local var_11_0 = var_1_10001.cancel
-
-	go = var_1_10003
-
-	var_11_0(var_1_10003(arg_11_0.normalPanel))
-
-	LeanTween = var_11_0
-
-	local var_11_1 = var_11_0.cancel
-
-	go = var_3
-
-	var_11_1(var_3(arg_11_0.tecPanel))
+function var_0_0.willExit(arg_11_0)
+	LeanTween.cancel(go(arg_11_0.normalPanel))
+	LeanTween.cancel(go(arg_11_0.tecPanel))
 
 	return
 end
 
-function var_0_1.updateSwitchBtns(arg_12_0)
-	TechnologyConst = var_1_10001
-
-	local var_12_0, var_12_1 = var_1_10001.isNormalActOn()
-
-	TechnologyConst = var_1_10003
-
-	local var_12_2, var_12_3 = var_1_10003.isTecActOn()
+function var_0_0.updateSwitchBtns(arg_12_0)
+	local var_12_0, var_12_1 = TechnologyConst.isNormalActOn()
+	local var_12_2, var_12_3 = TechnologyConst.isTecActOn()
 
 	if not var_12_0 or not var_12_2 then
-		setActive = var_1_10005
-
-		var_1_10005(arg_12_0.switchToNormalBtn, false)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_12_0.switchToTecBtn, false)
+		setActive(arg_12_0.switchToNormalBtn, false)
+		setActive(arg_12_0.switchToTecBtn, false)
 	elseif var_12_0 and var_12_2 then
-		setActive = var_1_10005
-
-		var_1_10005(arg_12_0.switchToNormalBtn, true)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_12_0.switchToTecBtn, true)
+		setActive(arg_12_0.switchToNormalBtn, true)
+		setActive(arg_12_0.switchToTecBtn, true)
 	end
 
-	local var_12_4 = arg_12_0.switchToNormalBtn
-	local var_12_5 = var_5.Find(var_12_4, "Tag")
-	local var_12_6 = arg_12_0.switchToTecBtn
-	local var_12_7 = var_6.Find(var_12_6, "Tag")
-
-	setActive = var_12_4
-
-	var_12_4(var_12_5, var_12_1)
-
-	setActive = var_12_4
-
-	var_12_4(var_12_7, var_12_3)
+	setActive(arg_12_0.switchToNormalBtn:Find("Tag"), var_12_1)
+	setActive(arg_12_0.switchToTecBtn:Find("Tag"), var_12_3)
 
 	return
 end
 
-function var_0_1.updateSwitchBtnsTag(arg_13_0)
-	TechnologyConst = var_1_10001
+function var_0_0.updateSwitchBtnsTag(arg_13_0)
+	local var_13_0, var_13_1 = TechnologyConst.isNormalActOn()
+	local var_13_2, var_13_3 = TechnologyConst.isTecActOn()
 
-	local var_13_0, var_13_1 = var_1_10001.isNormalActOn()
+	setActive(arg_13_0.switchToNormalBtn:Find("Tag"), var_13_1)
+	setActive(arg_13_0.switchToTecBtn:Find("Tag"), var_13_3)
 
-	TechnologyConst = var_1_10003
+	local var_13_4 = PlayerPrefs.GetInt("TrainCamp_Tec_Catchup_First_Tag", 0)
 
-	local var_13_2, var_13_3 = var_1_10003.isTecActOn()
-	local var_13_4 = arg_13_0.switchToNormalBtn
-	local var_13_5 = var_5.Find(var_13_4, "Tag")
-	local var_13_6 = arg_13_0.switchToTecBtn
-	local var_13_7 = var_6.Find(var_13_6, "Tag")
+	arg_13_0.switchToNormalLight.enabled = var_13_4 == 0
+	arg_13_0.switchToTecLight.enabled = var_13_4 == 0
 
-	setActive = var_13_4
-
-	var_13_4(var_13_5, var_13_1)
-
-	setActive = var_13_4
-
-	var_13_4(var_13_7, var_13_3)
-
-	PlayerPrefs = var_13_4
-
-	local var_13_8 = var_13_4.GetInt("TrainCamp_Tec_Catchup_First_Tag", 0)
-
-	arg_13_0.switchToNormalLight.enabled = var_13_8 == 0
-
-	local var_13_9 = arg_13_0.switchToTecLight
-
-	var_13_9.enabled = var_13_8 == 0
-
-	if var_13_8 == 0 then
-		PlayerPrefs = var_13_9
-
-		var_13_9.SetInt("TrainCamp_Tec_Catchup_First_Tag", 1)
+	if var_13_4 == 0 then
+		PlayerPrefs.SetInt("TrainCamp_Tec_Catchup_First_Tag", 1)
 	end
 
 	return
 end
 
-function var_0_1.resetSwitchBtnsLight(arg_14_0)
+function var_0_0.resetSwitchBtnsLight(arg_14_0)
 	arg_14_0.switchToNormalLight.enabled = false
 	arg_14_0.switchToTecLight.enabled = false
 
 	return
 end
 
-function var_0_1.autoSelectPanel(arg_15_0)
-	TechnologyConst = var_1_10001
-
-	local var_15_0, var_15_1 = var_1_10001.isNormalActOn()
-
-	TechnologyConst = var_1_10003
-
-	local var_15_2, var_15_3 = var_1_10003.isTecActOn()
+function var_0_0.autoSelectPanel(arg_15_0)
+	local var_15_0, var_15_1 = TechnologyConst.isNormalActOn()
+	local var_15_2, var_15_3 = TechnologyConst.isTecActOn()
 
 	if var_15_0 and var_15_2 then
 		arg_15_0:switchPanel(arg_15_0.normalTaskactivity)
-
-		setActive = var_5
-
-		var_5(arg_15_0.switchToNormalBtn, false)
-
-		setActive = var_5
-
-		var_5(arg_15_0.switchToTecBtn, true)
+		setActive(arg_15_0.switchToNormalBtn, false)
+		setActive(arg_15_0.switchToTecBtn, true)
 	elseif var_15_0 then
 		arg_15_0:switchPanel(arg_15_0.normalTaskactivity)
 	elseif var_15_2 then
@@ -383,803 +166,346 @@ function var_0_1.autoSelectPanel(arg_15_0)
 	return
 end
 
-function var_0_1.initNormalPanel(arg_16_0)
-	local var_16_0 = arg_16_0.normalPanel
-	local var_16_1 = var_1.Find(var_16_0, "ToggleList")
+function var_0_0.initNormalPanel(arg_16_0)
+	local var_16_0 = arg_16_0.normalPanel:Find("ToggleList")
 
 	arg_16_0.normalToggles = {
-		var_16_1:Find("Phase1"),
-		var_16_1:Find("Phase2"),
-		var_16_1:Find("Phase3")
+		var_16_0:Find("Phase1"),
+		var_16_0:Find("Phase2"),
+		var_16_0:Find("Phase3")
 	}
-	UIItemList = var_2
+	arg_16_0.normalTaskUIItemList = UIItemList.New(arg_16_0.normalPanel:Find("ScrollRect/Content"), arg_16_0.normalPanel:Find("ScrollRect/TaskTpl"))
+	arg_16_0.normalProgressPanel = arg_16_0.normalPanel:Find("ProgressPanel")
 
-	local var_16_2 = var_2.New
-	local var_16_3 = arg_16_0.normalPanel
-	local var_16_4 = var_4.Find(var_16_3, "ScrollRect/Content")
-	local var_16_5 = arg_16_0.normalPanel
-
-	arg_16_0.normalTaskUIItemList = var_16_2(var_16_4, var_5.Find(var_16_5, "ScrollRect/TaskTpl"))
-
-	local var_16_6 = arg_16_0.normalPanel
-
-	arg_16_0.normalProgressPanel = var_2.Find(var_16_6, "ProgressPanel")
-	pairs = var_2
-
-	for iter_16_0, iter_16_1 in var_2(arg_16_0.normalToggles) do
-		onToggle = var_16_5
-
-		local var_16_7 = arg_16_0
-		local var_16_8 = iter_16_1
-
-		local function var_16_9(arg_17_0)
+	for iter_16_0, iter_16_1 in pairs(arg_16_0.normalToggles) do
+		onToggle(arg_16_0, iter_16_1, function(arg_17_0)
 			if arg_17_0 then
 				if arg_16_0.phaseId < iter_16_0 then
-					pg = var_1
-
-					local var_17_0 = var_1.TipsMgr.GetInstance()
-					local var_17_1 = var_1.ShowTips
-
-					i18n = var_2_10004
-
-					var_17_1(var_17_0, var_2_10004("newplayer_notice_7"))
-
-					triggerToggle = var_17_1
-
-					var_17_1(arg_16_0.normalToggles[arg_16_0.cachePageID], true)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("newplayer_notice_7"))
+					triggerToggle(arg_16_0.normalToggles[arg_16_0.cachePageID], true)
 				else
-					local var_17_2 = arg_16_0
-
-					var_1.updateNormalPanel(var_17_2, iter_16_0)
+					arg_16_0:updateNormalPanel(iter_16_0)
 				end
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_1_10012
-
-		var_16_5(var_16_7, var_16_8, var_16_9, var_1_10012)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.updateNormalPanel(arg_18_0, arg_18_1)
+function var_0_0.updateNormalPanel(arg_18_0, arg_18_1)
 	arg_18_0.cachePageID = arg_18_1
 
-	local var_18_0 = arg_18_0.normalTaskactivity
-	local var_18_1 = var_2.getConfig(var_18_0, "config_data")[3][arg_18_1][1]
-	local var_18_2 = var_3[arg_18_1][2]
+	local var_18_0 = arg_18_0.normalTaskactivity:getConfig("config_data")[3]
 
-	arg_18_0:sortTaskIDList(var_18_1)
-	arg_18_0:updateTaskUIItemList(arg_18_0.normalTaskUIItemList, var_18_1)
-	arg_18_0:updateNormalProgressPanel(arg_18_1, var_18_2, var_18_1)
+	arg_18_0:sortTaskIDList(var_18_0[arg_18_1][1])
+	arg_18_0:updateTaskUIItemList(arg_18_0.normalTaskUIItemList, var_18_0[arg_18_1][1])
+	arg_18_0:updateNormalProgressPanel(arg_18_1, var_18_0[arg_18_1][2], var_18_0[arg_18_1][1])
 
 	return
 end
 
-function var_0_1.updateNormalProgressPanel(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
+function var_0_0.updateNormalProgressPanel(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 	local var_19_0 = arg_19_0:getTask(arg_19_2)
 
 	if arg_19_1 == arg_19_0.phaseId and arg_19_0:isMissTask(arg_19_3) then
-		local var_19_1 = arg_19_0
-		local var_19_2 = arg_19_0.emit
-
-		TrainingCampMediator = var_1_10008
-
-		var_19_2(var_19_1, var_1_10008.ON_TRIGGER, {
+		arg_19_0:emit(TrainingCampMediator.ON_TRIGGER, {
 			cmd = 1,
 			activity_id = arg_19_0.activity.id
 		})
 	end
 
 	if var_19_0 and var_19_0:isClientTrigger() and not var_19_0:isFinish() then
-		local var_19_3 = arg_19_0
-		local var_19_4 = arg_19_0.emit
-
-		TrainingCampMediator = var_1_10008
-
-		var_19_4(var_19_3, var_1_10008.ON_UPDATE, var_19_0)
+		arg_19_0:emit(TrainingCampMediator.ON_UPDATE, var_19_0)
 	end
 
-	local var_19_5 = arg_19_0.normalProgressPanel
-	local var_19_6 = var_5.Find(var_19_5, "Get")
-	local var_19_7 = arg_19_0.normalProgressPanel
-	local var_19_8 = var_6.Find(var_19_7, "Lock")
-	local var_19_9 = arg_19_0.normalProgressPanel
-	local var_19_10 = var_7.Find(var_19_9, "Go")
-	local var_19_11 = arg_19_0.normalProgressPanel
-	local var_19_12 = var_8.Find(var_19_11, "Pass")
+	local var_19_1 = arg_19_0.normalProgressPanel:Find("Get")
+	local var_19_2 = arg_19_0.normalProgressPanel:Find("Go")
+	local var_19_3 = var_19_0 and var_19_0:isFinish() and not var_19_0:isReceive()
 
-	setActive = var_19_9
+	setActive(var_19_1, var_19_3)
+	setActive(arg_19_0.normalProgressPanel:Find("Lock"), not var_19_0)
+	setActive(var_19_2, var_19_0 and not var_19_0:isFinish())
+	setActive(arg_19_0.normalProgressPanel:Find("Pass"), var_19_0 and var_19_0:isReceive())
 
-	local var_19_13 = var_19_6
-	local var_19_14
-
-	if var_19_0 and var_19_0:isFinish() then
-		var_19_14 = not var_19_0:isReceive()
-	end
-
-	var_19_9(var_19_13, var_19_14)
-
-	setActive = var_19_9
-
-	var_19_9(var_19_8, not var_19_0)
-
-	setActive = var_19_9
-
-	var_19_9(var_19_10, var_19_0 and not var_19_0:isFinish())
-
-	setActive = var_19_9
-
-	var_19_9(var_19_12, var_19_0 and var_19_0:isReceive())
-
-	local var_19_15 = arg_19_0.normalProgressPanel
-	local var_19_16 = var_9.Find(var_19_15, "Slider/LabelText")
-	local var_19_17 = arg_19_0.normalProgressPanel
-	local var_19_18 = var_10.Find(var_19_17, "Slider/ProgressText")
+	local var_19_4 = arg_19_0.normalProgressPanel:Find("Slider/LabelText")
+	local var_19_5 = arg_19_0.normalProgressPanel:Find("Slider/ProgressText")
 
 	if not var_19_0 then
-		Task = var_19_15
-		var_19_0 = var_19_15.New({
+		var_19_0 = Task.New({
 			id = arg_19_2
 		})
 
 		if arg_19_0:isFinishedAll(arg_19_3) then
-			local var_19_19 = arg_19_0
-
-			var_19_15 = arg_19_0.emit
-			TrainingCampMediator = var_14
-
-			var_19_15(var_19_19, var_14.ON_TRIGGER, {
+			arg_19_0:emit(TrainingCampMediator.ON_TRIGGER, {
 				cmd = 2,
 				activity_id = arg_19_0.activity.id
 			})
 		end
 
-		setText = var_19_15
+		setText(var_19_4, i18n("newplayer_notice_" .. arg_19_1))
 
-		local var_19_20 = var_19_16
+		local var_19_6 = 0
 
-		i18n = var_14
-
-		var_19_15(var_19_20, var_14("newplayer_notice_" .. arg_19_1))
-
-		var_19_15 = 0
-		_ = var_19_17
-
-		var_19_17.each(arg_19_3, function(arg_20_0)
-			local var_20_0 = arg_19_0.taskProxy
-
-			if var_1.getFinishTaskById(var_20_0, arg_20_0) ~= nil then
-				var_19_15 = var_19_15 + 1
+		_.each(arg_19_3, function(arg_20_0)
+			if arg_19_0.taskProxy:getFinishTaskById(arg_20_0) ~= nil then
+				var_19_6 = var_19_6 + 1
 			end
 
 			return
 		end)
-
-		setText = var_12
-
-		var_12(var_19_18, var_19_15 .. "/" .. #arg_19_3)
+		setText(var_19_5, 0 .. "/" .. #arg_19_3)
 	else
-		setText = var_19_15
-
-		local var_19_21 = var_19_16
-
-		var_1_10016 = var_19_0
-
-		var_19_15(var_19_21, var_19_0.getConfig(var_1_10016, "desc"))
-
-		setText = var_19_15
-
-		local var_19_22 = var_19_18
-
-		math = var_14
-
-		var_19_15(var_19_22, var_14.min(var_19_0.progress, var_19_0:getConfig("target_num")) .. "/" .. var_19_0:getConfig("target_num"))
+		setText(var_19_4, var_19_0:getConfig("desc"))
+		setText(var_19_5, math.min(var_19_0.progress, var_19_0:getConfig("target_num")) .. "/" .. var_19_0:getConfig("target_num"))
 	end
 
-	local var_19_23 = arg_19_0.normalProgressPanel
-	local var_19_24 = var_11.Find(var_19_23, "Slider")
-	local var_19_25 = var_11.GetComponent
+	local var_19_7 = arg_19_0.normalProgressPanel:Find("Slider")
 
-	typeof = var_14
-	Slider = var_1_10016
-	var_19_25(var_19_24, var_14(var_1_10016)).value = var_19_0.progress / var_19_0:getConfig("target_num")
+	var_19_7:GetComponent(typeof(Slider)).value = var_19_0.progress / var_19_0:getConfig("target_num")
+	arg_19_0.normalProgressPanel:Find("Icon"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/trainingcampui_atlas", "panel_phase_award_" .. arg_19_1)
 
-	local var_19_26 = arg_19_0.normalProgressPanel
-	local var_19_27 = var_11.Find(var_19_26, "Icon")
-	local var_19_28 = var_11.GetComponent
-
-	typeof = var_14
-	Image = var_16
-
-	local var_19_29 = var_19_28(var_19_27, var_14(var_16))
-
-	GetSpriteFromAtlas = var_12
-	var_19_29.sprite = var_12("ui/trainingcampui_atlas", "panel_phase_award_" .. arg_19_1)
-	setText = var_19_29
-
-	local var_19_30 = arg_19_0.normalProgressPanel
-	local var_19_31 = var_13.Find(var_19_30, "TipText")
-
-	i18n = var_14
-
-	var_19_29(var_19_31, var_14("newplayer_notice_" .. 3 + arg_19_1))
-
-	onButton = var_19_29
-
-	local var_19_32 = arg_19_0
-	local var_19_33 = var_19_6
-
-	local function var_19_34()
-		local var_21_0 = var_19_0
-
-		if var_0.isSelectable(var_21_0) then
-			local var_21_1 = arg_19_0
-
-			var_0.openMsgbox(var_21_1, function(arg_22_0)
-				local var_22_0 = arg_19_0
-				local var_22_1 = var_1.emit
-
-				TrainingCampMediator = var_3_10004
-
-				var_22_1(var_22_0, var_3_10004.ON_SELECTABLE_GET, var_19_0, arg_22_0)
+	setText(arg_19_0.normalProgressPanel:Find("TipText"), i18n("newplayer_notice_" .. 3 + arg_19_1))
+	onButton(arg_19_0, var_19_1, function()
+		if var_19_0:isSelectable() then
+			arg_19_0:openMsgbox(function(arg_22_0)
+				arg_19_0:emit(TrainingCampMediator.ON_SELECTABLE_GET, var_19_0, arg_22_0)
 
 				return
 			end)
 		else
-			local var_21_2 = arg_19_0
-			local var_21_3 = var_0.emit
-
-			TrainingCampMediator = var_2_10003
-
-			var_21_3(var_21_2, var_2_10003.ON_GET, var_19_0)
+			arg_19_0:emit(TrainingCampMediator.ON_GET, var_19_0)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_16
-
-	var_19_29(var_19_32, var_19_33, var_19_34, var_16)
-
-	onButton = var_19_29
-
-	local var_19_35 = arg_19_0
-	local var_19_36 = var_19_10
-
-	local function var_19_37()
-		local var_23_0 = arg_19_0
-		local var_23_1 = var_0.emit
-
-		TrainingCampMediator = var_2_10003
-
-		var_23_1(var_23_0, var_2_10003.ON_GO, var_19_0)
+	end, SFX_PANEL)
+	onButton(arg_19_0, var_19_2, function()
+		arg_19_0:emit(TrainingCampMediator.ON_GO, var_19_0)
 
 		return
-	end
-
-	SFX_PANEL = var_16
-
-	var_19_29(var_19_35, var_19_36, var_19_37, var_16)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.initTecPanel(arg_24_0)
-	local var_24_0 = arg_24_0.tecTaskActivity
-	local var_24_1 = var_1.getConfig(var_24_0, "config_data")[3]
-	local var_24_2 = arg_24_0.tecTaskActivity
+function var_0_0.initTecPanel(arg_24_0)
+	local var_24_0 = arg_24_0.tecTaskActivity:getConfig("config_data")[3]
 
-	arg_24_0.allTechPhase = #var_2.getConfig(var_24_2, "config_data")[3] + 1
+	arg_24_0.allTechPhase = #arg_24_0.tecTaskActivity:getConfig("config_data")[3] + 1
 
-	local var_24_3 = arg_24_0.tecPanel
-	local var_24_4 = var_3.Find(var_24_3, "ToggleList")
-	local var_24_5 = var_3.Find(var_24_4, "Phase1")
+	local var_24_1 = arg_24_0.tecPanel:Find("ToggleList")
 
-	UIItemList = var_24_3
-
-	var_24_3.StaticAlign(var_3, var_24_5, arg_24_0.allTechPhase, function(arg_25_0, arg_25_1, arg_25_2)
-		UIItemList = var_2_10003
-
-		if arg_25_0 == var_2_10003.EventUpdate then
+	UIItemList.StaticAlign(var_24_1, var_24_1:Find("Phase1"), arg_24_0.allTechPhase, function(arg_25_0, arg_25_1, arg_25_2)
+		if arg_25_0 == UIItemList.EventUpdate then
 			arg_25_2.name = "Phase" .. arg_25_1
-			setText = var_3
 
-			local var_25_0 = arg_25_2:Find("TextImg")
-
-			i18n = var_2_10006
-
-			var_3(var_25_0, var_2_10006("tec_catchup_" .. arg_25_1))
-
-			onToggle = var_3
-
-			local var_25_1 = arg_24_0
-			local var_25_2 = arg_25_2
-
-			local function var_25_3(arg_26_0)
-				setTextColor = var_3_10001
-
-				local var_26_0 = arg_25_2
-				local var_26_1 = var_3.Find(var_26_0, "TextImg")
+			setText(arg_25_2:Find("TextImg"), i18n("tec_catchup_" .. arg_25_1))
+			onToggle(arg_24_0, arg_25_2, function(arg_26_0)
+				local var_26_0 = arg_25_2:Find("TextImg")
 
 				if arg_26_0 then
-					Color = var_3_10004
+					local var_26_1 = Color.white or Color.NewHex("525252")
 
-					if not var_3_10004.white then
-						Color = var_3_10004
-						var_3_10004 = var_3_10004.NewHex("525252")
-					end
-
-					var_3_10001(var_26_1, var_3_10004)
+					setTextColor(var_26_0, var_26_1)
 
 					if arg_26_0 then
-						local var_26_2 = arg_24_0
-
-						var_1.updateTecPanel(var_26_2, arg_25_1)
+						arg_24_0:updateTecPanel(arg_25_1)
 					end
 
 					return
 				end
-			end
-
-			SFX_PANEL = var_8
-
-			var_3(var_25_1, var_25_2, var_25_3, var_8)
-
-			onButton = var_3
-
-			local var_25_4 = arg_24_0
-			local var_25_5 = arg_25_2
-			local var_25_6 = arg_25_2.Find(var_25_5, "Disable")
-
-			local function var_25_7()
-				pg = var_3_10000
-
-				local var_27_0 = var_3_10000.TipsMgr.GetInstance()
-				local var_27_1 = var_0.ShowTips
-
-				i18n = var_3_10003
-
-				var_27_1(var_27_0, var_3_10003("tec_notice_not_open_tip"))
+			end, SFX_PANEL)
+			onButton(arg_24_0, arg_25_2:Find("Disable"), function()
+				pg.TipsMgr.GetInstance():ShowTips(i18n("tec_notice_not_open_tip"))
 
 				return
-			end
+			end, SFX_PANEL)
+			onButton(arg_24_0, arg_25_2:Find("Unlock"), function()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = string.format("are you unlock phase %d ?", arg_25_1),
+					onYes = function()
+						if arg_25_1 == 1 then
+							warning("cmd 3")
+							arg_24_0:emit(TrainingCampMediator.ON_TRIGGER, {
+								cmd = 3,
+								activity_id = arg_24_0.tecTaskActivity.id
+							})
+						else
+							arg_24_0:emit(TrainingCampMediator.ON_TRIGGER, {
+								cmd = 1,
+								activity_id = arg_24_0.tecTaskActivity.id,
+								arg1 = arg_25_1 == 0 and 1 or arg_25_1
+							})
+						end
 
-			SFX_PANEL = var_25_5
-
-			var_3(var_25_4, var_25_6, var_25_7, var_25_5)
-
-			onButton = var_3
-
-			local var_25_8 = arg_24_0
-			local var_25_9 = arg_25_2
-			local var_25_10 = arg_25_2.Find(var_25_9, "Unlock")
-
-			local function var_25_11()
-				pg = var_3_10000
-
-				local var_28_0 = var_3_10000.MsgboxMgr.GetInstance()
-				local var_28_1 = var_0.ShowMsgBox
-				local var_28_2 = {}
-
-				string = var_3_10004
-				var_28_2.content = var_3_10004.format("are you unlock phase %d ?", arg_25_1)
-
-				function var_28_2.onYes()
-					if arg_25_1 == 1 then
-						warning = var_0
-
-						var_0("cmd 3")
-
-						local var_29_0 = arg_24_0
-						local var_29_1 = var_0.emit
-
-						TrainingCampMediator = var_4_10003
-
-						var_29_1(var_29_0, var_4_10003.ON_TRIGGER, {
-							cmd = 3,
-							activity_id = arg_24_0.tecTaskActivity.id
-						})
-					else
-						local var_29_2 = arg_24_0
-						local var_29_3 = var_0.emit
-
-						TrainingCampMediator = var_4_10003
-
-						var_29_3(var_29_2, var_4_10003.ON_TRIGGER, {
-							cmd = 1,
-							activity_id = arg_24_0.tecTaskActivity.id,
-							arg1 = arg_25_1 == 0 and 1 or arg_25_1
-						})
+						return
 					end
-
-					return
-				end
-
-				var_28_1(var_28_0, var_28_2)
+				})
 
 				return
-			end
-
-			SFX_PANEL = var_25_9
-
-			var_3(var_25_8, var_25_10, var_25_11, var_25_9)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
 
-	UIItemList = var_5
-
-	local var_24_6 = var_5.New
-	local var_24_7 = arg_24_0.tecPanel
-	local var_24_8 = var_7.Find(var_24_7, "ScrollRect/Content")
-	local var_24_9 = arg_24_0.tecPanel
-
-	arg_24_0.tecTaskUIItemList = var_24_6(var_24_8, var_8.Find(var_24_9, "ScrollRect/TaskTpl"))
-
-	local var_24_10 = arg_24_0.tecPanel
-
-	arg_24_0.tecProgressPanel = var_5.Find(var_24_10, "ProgressPanel")
+	arg_24_0.tecTaskUIItemList = UIItemList.New(arg_24_0.tecPanel:Find("ScrollRect/Content"), arg_24_0.tecPanel:Find("ScrollRect/TaskTpl"))
+	arg_24_0.tecProgressPanel = arg_24_0.tecPanel:Find("ProgressPanel")
 
 	return
 end
 
-function var_0_1.updateTecPanel(arg_30_0, arg_30_1)
+function var_0_0.updateTecPanel(arg_30_0, arg_30_1)
 	arg_30_0.cachePageID = arg_30_1
 
-	local var_30_0 = arg_30_0.tecTaskActivity
-	local var_30_1 = var_2.getConfig(var_30_0, "config_data")[3]
+	local var_30_0 = arg_30_0.tecTaskActivity:getConfig("config_data")[3]
+	local var_30_1 = var_30_0[math.max(1, arg_30_1)][1]
 
-	math = var_1_10004
-
-	local var_30_2 = var_30_1[var_1_10004.max(1, arg_30_1)][1]
-
-	math = var_30_0
-
-	local var_30_3 = var_30_1[var_30_0.max(1, arg_30_1)][2]
-
-	arg_30_0:sortTaskIDList(var_30_2)
-	arg_30_0:updateTaskUIItemList(arg_30_0.tecTaskUIItemList, var_30_2)
-	arg_30_0:updateTecProgressPanel(var_30_3, arg_30_1, var_30_2)
+	arg_30_0:sortTaskIDList(var_30_1)
+	arg_30_0:updateTaskUIItemList(arg_30_0.tecTaskUIItemList, var_30_1)
+	arg_30_0:updateTecProgressPanel(var_30_0[math.max(1, arg_30_1)][2], arg_30_1, var_30_1)
 
 	return
 end
 
-function var_0_1.updateTecProgressPanel(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
+function var_0_0.updateTecProgressPanel(arg_31_0, arg_31_1, arg_31_2, arg_31_3)
 	if arg_31_0:isFinishedAll(arg_31_3) then
-		local var_31_0 = arg_31_0
-		local var_31_1 = arg_31_0.emit
-
-		TrainingCampMediator = var_7
-
-		var_31_1(var_31_0, var_7.ON_TRIGGER, {
+		arg_31_0:emit(TrainingCampMediator.ON_TRIGGER, {
 			cmd = 2,
 			activity_id = arg_31_0.activity.id
 		})
 	end
 
-	local var_31_2
+	local var_31_0 = arg_31_0.phaseId == arg_31_2 and arg_31_0.taskProxy:getTaskVO(arg_31_1) or arg_31_0:getTask(arg_31_1)
 
-	if arg_31_0.phaseId == arg_31_2 then
-		local var_31_3 = arg_31_0.taskProxy
-
-		var_31_2 = var_5.getTaskVO(var_31_3, arg_31_1)
-	else
-		var_31_2 = arg_31_0:getTask(arg_31_1)
+	if var_31_0 and var_31_0:isClientTrigger() and not var_31_0:isFinish() then
+		arg_31_0:emit(TrainingCampMediator.ON_UPDATE, var_31_0)
 	end
 
-	if var_31_2 and var_31_2:isClientTrigger() and not var_31_2:isFinish() then
-		local var_31_4 = arg_31_0
-		local var_31_5 = arg_31_0.emit
+	local var_31_1 = arg_31_0.tecProgressPanel:Find("Get")
+	local var_31_2 = arg_31_0.tecProgressPanel:Find("Go")
+	local var_31_3 = var_31_0 and var_31_0:isFinish() and not var_31_0:isReceive()
 
-		TrainingCampMediator = var_1_10008
+	setActive(var_31_1, var_31_3)
+	setActive(arg_31_0.tecProgressPanel:Find("Lock"), not var_31_0)
+	setActive(var_31_2, var_31_0 and not var_31_0:isFinish())
+	setActive(arg_31_0.tecProgressPanel:Find("Pass"), var_31_0 and var_31_0:isReceive())
 
-		var_31_5(var_31_4, var_1_10008.ON_UPDATE, var_31_2)
-	end
+	local var_31_4 = arg_31_0.tecProgressPanel:Find("Slider/LabelText")
+	local var_31_5 = arg_31_0.tecProgressPanel:Find("Slider/ProgressText")
 
-	local var_31_6 = arg_31_0.tecProgressPanel
-	local var_31_7 = var_5.Find(var_31_6, "Get")
-	local var_31_8 = arg_31_0.tecProgressPanel
-	local var_31_9 = var_6.Find(var_31_8, "Lock")
-	local var_31_10 = arg_31_0.tecProgressPanel
-	local var_31_11 = var_7.Find(var_31_10, "Go")
-	local var_31_12 = arg_31_0.tecProgressPanel
-	local var_31_13 = var_8.Find(var_31_12, "Pass")
+	if not var_31_0 then
+		local var_31_6 = 0
 
-	setActive = var_31_10
+		_.each(arg_31_3, function(arg_32_0)
+			local var_32_0 = arg_31_0.taskProxy:getTaskVO(arg_32_0)
 
-	local var_31_14 = var_31_7
-	local var_31_15
-
-	if var_31_2 then
-		::label_31_0::
-
-		var_1_10014 = var_31_2
-
-		if var_31_2.isFinish(var_1_10014) then
-			var_1_10014 = var_31_2
-			var_31_15 = not var_31_2.isReceive(var_1_10014)
-		end
-	end
-
-	var_31_10(var_31_14, var_31_15)
-
-	setActive = var_31_10
-
-	var_31_10(var_31_9, not var_31_2)
-
-	setActive = var_31_10
-
-	local var_31_16 = var_31_11
-	local var_31_17
-
-	if var_31_2 then
-		::label_31_1::
-
-		var_1_10014 = var_31_2
-		var_31_17 = not var_31_2.isFinish(var_1_10014)
-	end
-
-	var_31_10(var_31_16, var_31_17)
-
-	setActive = var_31_10
-
-	local var_31_18 = var_31_13
-	local var_31_19
-
-	if var_31_2 then
-		::label_31_2::
-
-		var_1_10014 = var_31_2
-		var_31_19 = var_31_2.isReceive(var_1_10014)
-	end
-
-	var_31_10(var_31_18, var_31_19)
-
-	local var_31_20 = arg_31_0.tecProgressPanel
-	local var_31_21 = var_9.Find(var_31_20, "Slider/LabelText")
-	local var_31_22 = arg_31_0.tecProgressPanel
-	local var_31_23 = var_10.Find(var_31_22, "Slider/ProgressText")
-
-	if not var_31_2 then
-		var_31_20 = 0
-		_ = var_31_22
-
-		var_31_22.each(arg_31_3, function(arg_32_0)
-			local var_32_0 = arg_31_0.taskProxy
-
-			if var_1.getTaskVO(var_32_0, arg_32_0) and var_1:isReceive() then
-				var_31_20 = var_31_20 + 1
+			if var_32_0 and var_32_0:isReceive() then
+				var_31_6 = var_31_6 + 1
 			end
 
 			return
 		end)
 
-		Task = var_12
-		var_31_2 = var_12.New({
+		var_31_0 = Task.New({
 			id = arg_31_1
 		})
-		setText = var_12
-		var_1_10014 = var_31_21
-		i18n = var_15
 
-		local var_31_24 = "tec_notice"
-
-		i18n = var_1_10018
-
-		var_12(var_1_10014, var_15(var_31_24, var_1_10018("tec_catchup_" .. arg_31_2)))
+		setText(var_31_4, i18n("tec_notice", i18n("tec_catchup_" .. arg_31_2)))
 	else
-		setText = var_31_20
-
-		var_31_20(var_31_21, var_31_2:getConfig("desc"))
+		setText(var_31_4, var_31_0:getConfig("desc"))
 	end
 
-	setText = var_31_20
+	setText(var_31_5, math.min(var_31_0.progress, var_31_0:getConfig("target_num")) .. "/" .. var_31_0:getConfig("target_num"))
+	setSlider(arg_31_0.tecProgressPanel:Find("Slider"), 0, var_31_0:getConfig("target_num"), var_31_0.progress)
 
-	local var_31_25 = var_31_23
+	local var_31_7 = arg_31_0.tecProgressPanel:Find("Icon/Item")
+	local var_31_8 = var_31_0:getConfig("award_display")[1]
 
-	math = var_1_10014
-
-	var_31_20(var_31_25, var_1_10014.min(var_31_2.progress, var_31_2:getConfig("target_num")) .. "/" .. var_31_2:getConfig("target_num"))
-
-	setSlider = var_31_20
-
-	local var_31_26 = arg_31_0.tecProgressPanel
-
-	var_31_20(var_13.Find(var_31_26, "Slider"), 0, var_31_2:getConfig("target_num"), var_31_2.progress)
-
-	local var_31_27 = arg_31_0.tecProgressPanel
-	local var_31_28 = var_11.Find(var_31_27, "Icon/Item")
-	local var_31_29 = var_31_2:getConfig("award_display")[1]
-	local var_31_30 = {
-		type = var_31_29[1],
-		id = var_31_29[2],
-		count = var_31_29[3]
-	}
-
-	updateDrop = var_14
-
-	var_14(var_31_28, var_31_30)
-
-	onButton = var_14
-
-	local var_31_31 = arg_31_0
-	local var_31_32 = var_31_28
-
-	local function var_31_33()
-		local var_33_0 = arg_31_0
-		local var_33_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_33_1(var_33_0, var_2_10003.ON_DROP, var_31_30)
+	updateDrop(var_31_7, {
+		type = var_31_8[1],
+		id = var_31_8[2],
+		count = var_31_8[3]
+	})
+	onButton(arg_31_0, var_31_7, function()
+		arg_31_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
-
-	SFX_PANEL = var_19
-
-	var_14(var_31_31, var_31_32, var_31_33, var_19)
-
-	setActive = var_14
-
-	local var_31_34 = arg_31_0.tecProgressPanel
-
-	var_14(var_16.Find(var_31_34, "TipText"), false)
-
-	onButton = var_14
-
-	local var_31_35 = arg_31_0
-	local var_31_36 = var_31_7
-
-	local function var_31_37()
-		local var_34_0 = var_31_2
-
-		if var_0.isSelectable(var_34_0) then
-			local var_34_1 = arg_31_0
-
-			var_0.openMsgbox(var_34_1, function(arg_35_0)
-				local var_35_0 = arg_31_0
-				local var_35_1 = var_1.emit
-
-				TrainingCampMediator = var_3_10004
-
-				var_35_1(var_35_0, var_3_10004.ON_SELECTABLE_GET, var_31_2, arg_35_0)
+	end, SFX_PANEL)
+	setActive(arg_31_0.tecProgressPanel:Find("TipText"), false)
+	onButton(arg_31_0, var_31_1, function()
+		if var_31_0:isSelectable() then
+			arg_31_0:openMsgbox(function(arg_35_0)
+				arg_31_0:emit(TrainingCampMediator.ON_SELECTABLE_GET, var_31_0, arg_35_0)
 
 				return
 			end)
 		else
-			local var_34_2 = arg_31_0
-			local var_34_3 = var_0.emit
-
-			TrainingCampMediator = var_2_10003
-
-			var_34_3(var_34_2, var_2_10003.ON_GET, var_31_2)
+			arg_31_0:emit(TrainingCampMediator.ON_GET, var_31_0)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_19
-
-	var_14(var_31_35, var_31_36, var_31_37, var_19)
-
-	onButton = var_14
-
-	local var_31_38 = arg_31_0
-	local var_31_39 = var_31_11
-
-	local function var_31_40()
-		local var_36_0 = arg_31_0
-		local var_36_1 = var_0.emit
-
-		TrainingCampMediator = var_2_10003
-
-		var_36_1(var_36_0, var_2_10003.ON_GO, var_31_2)
+	end, SFX_PANEL)
+	onButton(arg_31_0, var_31_2, function()
+		arg_31_0:emit(TrainingCampMediator.ON_GO, var_31_0)
 
 		return
-	end
-
-	SFX_PANEL = var_19
-
-	var_14(var_31_38, var_31_39, var_31_40, var_19)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updateToggleDisable(arg_37_0, arg_37_1)
-	ipairs = var_1_10002
-
-	for iter_37_0, iter_37_1 in var_1_10002(arg_37_1) do
-		setActive = var_1_10007
-
-		var_1_10007(iter_37_1:Find("Disable"), iter_37_0 > arg_37_0.phaseId)
+function var_0_0.updateToggleDisable(arg_37_0, arg_37_1)
+	for iter_37_0, iter_37_1 in ipairs(arg_37_1) do
+		setActive(iter_37_1:Find("Disable"), iter_37_0 > arg_37_0.phaseId)
 	end
 
 	return
 end
 
-function var_0_1.updateTechToggleState(arg_38_0)
-	local var_38_0
+function var_0_0.updateTechToggleState(arg_38_0)
+	local var_38_0 = arg_38_0.techFinishTaskId and arg_38_0.taskProxy:getTaskVO(arg_38_0.techFinishTaskId)
+	local var_38_1 = arg_38_0.phaseId == "ready" or TechnologyConst.isTecActOn() and var_38_0 and var_38_0:isReceive()
 
-	if arg_38_0.techFinishTaskId then
-		var_1_10003 = arg_38_0.taskProxy
-		var_38_0 = var_1.getTaskVO(var_1_10003, arg_38_0.techFinishTaskId)
-	end
+	eachChild(arg_38_0.tecPanel:Find("ToggleList"), function(arg_39_0, arg_39_1)
+		local var_39_0 = not arg_38_0.finishPhaseDic[arg_39_1] and arg_38_0.phaseId ~= arg_39_1
+		local var_39_1 = var_38_1
 
-	if arg_38_0.phaseId ~= "ready" then
-		TechnologyConst = var_2
+		if var_38_1 then
+			if arg_39_1 == 1 then
+				var_39_1 = arg_38_0.finishPhaseDic[0]
 
-		local var_38_1
+				if not arg_38_0.finishPhaseDic[0] then
+					if arg_38_0.phaseId ~= 0 then
+						var_39_1 = false
 
-		if var_2.isTecActOn() and var_38_0 then
-			::label_38_0::
-
-			var_38_1 = var_38_0:isReceive()
-
-			if false then
-				var_38_1 = false
-			end
-
-			if false then
-				var_38_1 = true
-			end
-		end
-
-		eachChild = var_1_10003
-
-		local var_38_2 = arg_38_0.tecPanel
-
-		var_1_10003(var_5.Find(var_38_2, "ToggleList"), function(arg_39_0, arg_39_1)
-			local var_39_0 = not arg_38_0.finishPhaseDic[arg_39_1] and arg_38_0.phaseId ~= arg_39_1
-
-			if var_38_1 then
-				if arg_39_1 == 1 then
-					local var_39_1
-
-					if not arg_38_0.finishPhaseDic[0] then
-						if arg_38_0.phaseId ~= 0 then
-							var_39_1 = false
-
-							goto label_39_0
-						end
-
-						var_39_1 = true
+						goto label_39_0
 					end
 
-					::label_39_0::
-
-					setActive = var_2_10004
-
-					var_2_10004(arg_39_0:Find("Unlock"), var_39_0 and var_39_1)
-
-					setActive = var_2_10004
-
-					var_2_10004(arg_39_0:Find("Disable"), var_39_0 and not var_39_1)
-
-					return
+					var_39_1 = true
 				end
-			end
-		end)
 
-		return
-	end
+				::label_39_0::
+
+				setActive(arg_39_0:Find("Unlock"), var_39_0 and var_39_1)
+				setActive(arg_39_0:Find("Disable"), var_39_0 and not var_39_1)
+
+				return
+			end
+		end
+	end)
+
+	return
 end
 
-function var_0_1.updateTaskUIItemList(arg_40_0, arg_40_1, arg_40_2)
+function var_0_0.updateTaskUIItemList(arg_40_0, arg_40_1, arg_40_2)
 	arg_40_1:make(function(arg_41_0, arg_41_1, arg_41_2)
-		UIItemList = var_2_10003
-
-		if arg_41_0 == var_2_10003.EventUpdate then
+		if arg_41_0 == UIItemList.EventUpdate then
 			arg_41_1 = arg_41_1 + 1
 
-			local var_41_0 = arg_40_0
-
-			var_3.updateTask(var_41_0, arg_40_2[arg_41_1], arg_41_2)
+			arg_40_0:updateTask(arg_40_2[arg_41_1], arg_41_2)
 		end
 
 		return
@@ -1189,146 +515,65 @@ function var_0_1.updateTaskUIItemList(arg_40_0, arg_40_1, arg_40_2)
 	return
 end
 
-function var_0_1.updateTask(arg_42_0, arg_42_1, arg_42_2)
+function var_0_0.updateTask(arg_42_0, arg_42_1, arg_42_2)
 	local var_42_0 = arg_42_2:Find("Get")
-	local var_42_1 = arg_42_2:Find("Got")
-	local var_42_2 = arg_42_2
-	local var_42_3 = arg_42_2.Find(var_42_2, "Go")
-	local var_42_4 = arg_42_0:getTask(arg_42_1)
+	local var_42_1 = arg_42_2:Find("Go")
+	local var_42_2 = arg_42_0:getTask(arg_42_1)
+	local var_42_3 = var_42_2 and var_42_2:isFinish() and not var_42_2:isReceive()
 
-	setActive = var_42_2
+	setActive(var_42_0, var_42_3)
+	setActive(arg_42_2:Find("Got"), var_42_2 and var_42_2:isReceive())
+	setActive(var_42_1, not var_42_2 or var_42_2 and not var_42_2:isFinish())
 
-	local var_42_5 = var_42_0
-	local var_42_6
-
-	if var_42_4 and var_42_4:isFinish() then
-		var_42_6 = not var_42_4:isReceive()
+	if var_42_2 and var_42_2:isClientTrigger() and not var_42_2:isFinish() then
+		arg_42_0:emit(TrainingCampMediator.ON_UPDATE, var_42_2)
 	end
 
-	var_42_2(var_42_5, var_42_6)
+	setText(arg_42_2:Find("TitleText"), var_42_2:getConfig("desc"))
 
-	setActive = var_42_2
+	local var_42_4 = var_42_2:getConfig("award_display")[1]
+	local var_42_5 = arg_42_2:Find("Item")
 
-	var_42_2(var_42_1, var_42_4 and var_42_4:isReceive())
-
-	setActive = var_42_2
-
-	var_42_2(var_42_3, not var_42_4 or var_42_4 and not var_42_4:isFinish())
-
-	if var_42_4 and var_42_4:isClientTrigger() and not var_42_4:isFinish() then
-		local var_42_7 = arg_42_0
-
-		var_42_2 = arg_42_0.emit
-		TrainingCampMediator = var_10
-
-		var_42_2(var_42_7, var_10.ON_UPDATE, var_42_4)
-	end
-
-	setText = var_42_2
-
-	var_42_2(arg_42_2:Find("TitleText"), var_42_4:getConfig("desc"))
-
-	local var_42_8 = var_42_4:getConfig("award_display")[1]
-	local var_42_9 = arg_42_2:Find("Item")
-	local var_42_10 = {
-		type = var_42_8[1],
-		id = var_42_8[2],
-		count = var_42_8[3]
-	}
-
-	updateDrop = var_10
-
-	var_10(var_42_9, var_42_10)
-
-	onButton = var_10
-
-	local var_42_11 = arg_42_0
-	local var_42_12 = var_42_9
-
-	local function var_42_13()
-		local var_43_0 = arg_42_0
-		local var_43_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_43_1(var_43_0, var_2_10003.ON_DROP, var_42_10)
+	updateDrop(var_42_5, {
+		type = var_42_4[1],
+		id = var_42_4[2],
+		count = var_42_4[3]
+	})
+	onButton(arg_42_0, var_42_5, function()
+		arg_42_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10015
-
-	var_10(var_42_11, var_42_12, var_42_13, var_1_10015)
-
-	setText = var_10
-
-	local var_42_14 = arg_42_2:Find("ProgressText")
-
-	math = var_42_12
-
-	var_10(var_42_14, var_42_12.min(var_42_4.progress, var_42_4:getConfig("target_num")) .. "/" .. var_42_4:getConfig("target_num"))
-
-	onButton = var_10
-
-	local var_42_15 = arg_42_0
-	local var_42_16 = var_42_0
-
-	local function var_42_17()
-		local var_44_0 = arg_42_0
-		local var_44_1 = var_0.emit
-
-		TrainingCampMediator = var_2_10003
-
-		var_44_1(var_44_0, var_2_10003.ON_GET, var_42_4)
+	end, SFX_PANEL)
+	setText(arg_42_2:Find("ProgressText"), math.min(var_42_2.progress, var_42_2:getConfig("target_num")) .. "/" .. var_42_2:getConfig("target_num"))
+	onButton(arg_42_0, var_42_0, function()
+		arg_42_0:emit(TrainingCampMediator.ON_GET, var_42_2)
 
 		return
-	end
-
-	SFX_PANEL = var_15
-
-	var_10(var_42_15, var_42_16, var_42_17, var_15)
-
-	onButton = var_10
-
-	local var_42_18 = arg_42_0
-	local var_42_19 = var_42_3
-
-	local function var_42_20()
-		local var_45_0 = arg_42_0
-		local var_45_1 = var_0.emit
-
-		TrainingCampMediator = var_2_10003
-
-		var_45_1(var_45_0, var_2_10003.ON_GO, var_42_4)
+	end, SFX_PANEL)
+	onButton(arg_42_0, var_42_1, function()
+		arg_42_0:emit(TrainingCampMediator.ON_GO, var_42_2)
 
 		return
-	end
-
-	SFX_PANEL = var_15
-
-	var_10(var_42_18, var_42_19, var_42_20, var_15)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.getTask(arg_46_0, arg_46_1)
-	local var_46_0 = arg_46_0.taskProxy
+function var_0_0.getTask(arg_46_0, arg_46_1)
+	local var_46_0 = arg_46_0.taskProxy:getTaskVO(arg_46_1)
 
-	if not var_2.getTaskVO(var_46_0, arg_46_1) then
-		Task = var_1_10003
-
-		local var_46_1 = var_1_10003.New({
+	if not var_46_0 then
+		var_46_0 = Task.New({
 			id = arg_46_1
 		})
-
-		var_2.progress = var_2.getConfig(var_46_1, "target_num")
-		var_2.submitTime = 1
+		var_46_0.progress = var_46_0:getConfig("target_num")
+		var_46_0.submitTime = 1
 	end
 
-	return var_2
+	return var_46_0
 end
 
-function var_0_1.getTaskState(arg_47_0, arg_47_1)
+function var_0_0.getTaskState(arg_47_0, arg_47_1)
 	if arg_47_1:isReceive() then
 		return 0
 	elseif arg_47_1:isFinish() then
@@ -1340,38 +585,21 @@ function var_0_1.getTaskState(arg_47_0, arg_47_1)
 	return -1
 end
 
-function var_0_1.sortTaskIDList(arg_48_0, arg_48_1)
-	table = var_1_10002
+function var_0_0.sortTaskIDList(arg_48_0, arg_48_1)
+	table.sort(arg_48_1, function(arg_49_0, arg_49_1)
+		local var_49_0 = arg_48_0.taskProxy:getTaskVO(arg_49_0) or Task.New({
+			id = arg_49_0
+		})
+		local var_49_1 = arg_48_0.taskProxy:getTaskVO(arg_49_1) or Task.New({
+			id = arg_49_1
+		})
+		local var_49_2 = arg_48_0:getTaskState(var_49_0)
+		local var_49_3 = arg_48_0:getTaskState(var_49_1)
 
-	var_1_10002.sort(arg_48_1, function(arg_49_0, arg_49_1)
-		local var_49_0 = arg_48_0.taskProxy
-		local var_49_1
-
-		if not var_2.getTaskVO(var_49_0, arg_49_0) then
-			Task = var_49_1
-			var_49_1 = var_49_1.New({
-				id = arg_49_0
-			})
-		end
-
-		local var_49_2 = arg_48_0.taskProxy
-		local var_49_3
-
-		if not var_3.getTaskVO(var_49_2, arg_49_1) then
-			Task = var_49_3
-			var_49_3 = var_49_3.New({
-				id = arg_49_1
-			})
-		end
-
-		local var_49_4 = arg_48_0
-		local var_49_5 = var_4.getTaskState(var_49_4, var_49_1)
-		local var_49_6 = arg_48_0
-
-		if var_49_5 == var_5.getTaskState(var_49_6, var_49_3) then
-			return var_49_1.id < var_49_3.id
+		if var_49_2 == var_49_3 then
+			return var_49_0.id < var_49_1.id
 		else
-			return var_5 < var_49_5
+			return var_49_3 < var_49_2
 		end
 
 		return
@@ -1380,32 +608,21 @@ function var_0_1.sortTaskIDList(arg_48_0, arg_48_1)
 	return arg_48_1
 end
 
-function var_0_1.isFinishedAll(arg_50_0, arg_50_1)
-	_ = var_1_10002
+function var_0_0.isFinishedAll(arg_50_0, arg_50_1)
+	return _.all(arg_50_1, function(arg_51_0)
+		local var_51_0 = arg_50_0.taskProxy:getTaskVO(arg_51_0)
 
-	return var_1_10002.all(arg_50_1, function(arg_51_0)
-		local var_51_0 = arg_50_0.taskProxy
-		local var_51_1
-
-		if not var_1.getTaskVO(var_51_0, arg_51_0) or not var_1:isReceive() then
-			var_51_1 = false
-		end
-
-		return var_51_1
+		return var_51_0 and var_51_0:isReceive() or false
 	end)
 end
 
-function var_0_1.isMissTask(arg_52_0, arg_52_1)
-	_ = var_1_10002
-
-	return var_1_10002.any(arg_52_1, function(arg_53_0)
-		local var_53_0 = arg_52_0.taskProxy
-
-		return var_1.getTaskVO(var_53_0, arg_53_0) == nil
+function var_0_0.isMissTask(arg_52_0, arg_52_1)
+	return _.any(arg_52_1, function(arg_53_0)
+		return arg_52_0.taskProxy:getTaskVO(arg_53_0) == nil
 	end)
 end
 
-function var_0_1.setPhrase(arg_54_0)
+function var_0_0.setPhrase(arg_54_0)
 	if arg_54_0.lockFirst == true then
 		arg_54_0.phaseId = 1
 
@@ -1413,30 +630,18 @@ function var_0_1.setPhrase(arg_54_0)
 	end
 
 	local var_54_0 = 1
-	local var_54_1 = arg_54_0.activity
-	local var_54_2 = #var_2.getConfig(var_54_1, "config_data")[3]
+	local var_54_1 = arg_54_0.activity:getConfig("config_data")[3]
 
-	local function var_54_3(arg_55_0)
-		if arg_55_0 > 1 then
-			local var_55_0 = var_0[arg_55_0 - 1][2]
-			local var_55_1 = arg_54_0.taskProxy
+	for iter_54_0 = #var_54_1, 1, -1 do
+		if _.all(var_54_1[iter_54_0][1], function(arg_56_0)
+			return arg_54_0.taskProxy:getTaskVO(arg_56_0) ~= nil
+		end) or (function(arg_55_0)
+			if arg_55_0 > 1 then
+				return arg_54_0.taskProxy:getFinishTaskById(var_54_1[arg_55_0 - 1][2]) ~= nil
+			end
 
-			return var_2.getFinishTaskById(var_55_1, var_55_0) ~= nil
-		end
-
-		return
-	end
-
-	for iter_54_0 = var_54_2, 1, -1 do
-		local var_54_4 = var_2[iter_54_0][1]
-
-		_ = var_1_10010
-
-		if var_1_10010.all(var_54_4, function(arg_56_0)
-			local var_56_0 = arg_54_0.taskProxy
-
-			return var_1.getTaskVO(var_56_0, arg_56_0) ~= nil
-		end) or var_54_3(iter_54_0) then
+			return
+		end)(iter_54_0) then
 			var_54_0 = iter_54_0
 
 			break
@@ -1448,7 +653,7 @@ function var_0_1.setPhrase(arg_54_0)
 	return
 end
 
-function var_0_1.setTechPhrase(arg_57_0)
+function var_0_0.setTechPhrase(arg_57_0)
 	if arg_57_0.activity.data1 == 0 then
 		arg_57_0.phaseId = "ready"
 	else
@@ -1459,173 +664,86 @@ function var_0_1.setTechPhrase(arg_57_0)
 		end
 	end
 
-	if arg_57_0.phaseId ~= "ready" then
-		local var_57_0 = arg_57_0.activity
-		local var_57_1 = var_1.getConfig(var_57_0, "config_data")[3]
+	arg_57_0.techFinishTaskId = arg_57_0.phaseId ~= "ready" and arg_57_0.activity:getConfig("config_data")[3][math.max(1, arg_57_0.phaseId)][2] or nil
+	arg_57_0.finishPhaseDic = {}
 
-		math = var_1_10002
-
-		local var_57_2
-
-		if not var_57_1[var_1_10002.max(1, arg_57_0.phaseId)][2] then
-			var_57_2 = nil
-		end
-
-		arg_57_0.techFinishTaskId = var_57_2
-		arg_57_0.finishPhaseDic = {}
-		ipairs = var_1
-
-		for iter_57_0, iter_57_1 in var_1(arg_57_0.activity.data1_list) do
-			arg_57_0.finishPhaseDic[iter_57_1] = true
-		end
-
-		arg_57_0.finishPhaseDic[0] = arg_57_0.finishPhaseDic[1]
-		arg_57_0.finishPhaseDic[1] = arg_57_0.activity.data2 == 1 and arg_57_0.activity.data1 ~= 1
-
-		arg_57_0:updateTechToggleState()
-
-		return
+	for iter_57_0, iter_57_1 in ipairs(arg_57_0.activity.data1_list) do
+		arg_57_0.finishPhaseDic[iter_57_1] = true
 	end
+
+	arg_57_0.finishPhaseDic[0] = arg_57_0.finishPhaseDic[1]
+	arg_57_0.finishPhaseDic[1] = arg_57_0.activity.data2 == 1 and arg_57_0.activity.data1 ~= 1
+
+	arg_57_0:updateTechToggleState()
+
+	return
 end
 
-function var_0_1.switchPanel(arg_58_0, arg_58_1, arg_58_2)
+function var_0_0.switchPanel(arg_58_0, arg_58_1, arg_58_2)
 	arg_58_0.activity = arg_58_1
 
-	local var_58_0 = arg_58_1:getConfig("type")
-
-	ActivityConst = var_1_10004
-
-	if var_58_0 == var_1_10004.ACTIVITY_TYPE_GUIDE_TASKS then
+	if arg_58_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS then
 		arg_58_0:setPhrase()
 
 		if arg_58_2 then
 			arg_58_0:aniOnSwitch(arg_58_0.normalPanel, arg_58_0.tecPanel)
 		else
-			setActive = var_3
-
-			var_3(arg_58_0.normalPanel, true)
-
-			setActive = var_3
-
-			var_3(arg_58_0.tecPanel, false)
+			setActive(arg_58_0.normalPanel, true)
+			setActive(arg_58_0.tecPanel, false)
 		end
 
 		arg_58_0:updateToggleDisable(arg_58_0.normalToggles)
+		triggerToggle(arg_58_0.normalToggles[arg_58_0.phaseId], true)
+	elseif arg_58_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
+		arg_58_0:setTechPhrase()
 
-		triggerToggle = var_3
+		local var_58_0 = arg_58_0.phaseId == "ready"
 
-		var_3(arg_58_0.normalToggles[arg_58_0.phaseId], true)
-	else
-		local var_58_1 = arg_58_1:getConfig("type")
+		arg_58_0.tecPanel:Find("ToggleList"):GetComponent(typeof(ToggleGroup)).allowSwitchOff = arg_58_0.phaseId == "ready"
 
-		ActivityConst = var_4
+		setActive(arg_58_0.tecPanel:Find("ScrollRect"), not var_58_0)
+		setActive(arg_58_0.tecPanel:Find("ProgressPanel"), not var_58_0)
 
-		if var_58_1 == var_4.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
-			arg_58_0:setTechPhrase()
+		if arg_58_2 then
+			arg_58_0:aniOnSwitch(arg_58_0.tecPanel, arg_58_0.normalPanel)
+		else
+			setActive(arg_58_0.normalPanel, false)
+			setActive(arg_58_0.tecPanel, true)
+		end
 
-			local var_58_2 = arg_58_0.phaseId == "ready"
-			local var_58_3 = arg_58_0.tecPanel
-			local var_58_4 = var_4.Find(var_58_3, "ToggleList")
-			local var_58_5 = var_4.GetComponent
+		if arg_58_0.phaseId == "ready" then
+			eachChild(arg_58_0.tecPanel:Find("ToggleList"), function(arg_59_0)
+				triggerToggle(arg_59_0, false)
 
-			typeof = var_7
-			ToggleGroup = var_1_10009
-
-			local var_58_6 = var_58_5(var_58_4, var_7(var_1_10009))
-
-			var_58_6.allowSwitchOff = var_58_2
-			setActive = var_58_6
-
-			local var_58_7 = arg_58_0.tecPanel
-
-			var_58_6(var_6.Find(var_58_7, "ScrollRect"), not var_58_2)
-
-			setActive = var_58_6
-
-			local var_58_8 = arg_58_0.tecPanel
-
-			var_58_6(var_6.Find(var_58_8, "ProgressPanel"), not var_58_2)
-
-			if arg_58_2 then
-				arg_58_0:aniOnSwitch(arg_58_0.tecPanel, arg_58_0.normalPanel)
-			else
-				setActive = var_58_6
-
-				var_58_6(arg_58_0.normalPanel, false)
-
-				setActive = var_58_6
-
-				var_58_6(arg_58_0.tecPanel, true)
-			end
-
-			if arg_58_0.phaseId == "ready" then
-				eachChild = var_4
-
-				local var_58_9 = arg_58_0.tecPanel
-
-				var_4(var_6.Find(var_58_9, "ToggleList"), function(arg_59_0)
-					triggerToggle = var_2_10001
-
-					var_2_10001(arg_59_0, false)
-
-					return
-				end)
-			else
-				triggerToggle = var_4
-
-				local var_58_10 = arg_58_0.tecPanel
-				local var_58_11 = var_6.Find(var_58_10, "ToggleList")
-
-				var_4(var_6.GetChild(var_58_11, arg_58_0.phaseId), true)
-			end
+				return
+			end)
+		else
+			triggerToggle(arg_58_0.tecPanel:Find("ToggleList"):GetChild(arg_58_0.phaseId), true)
 		end
 	end
 
 	return
 end
 
-function var_0_1.switchPageByMediator(arg_60_0)
-	local var_60_0 = arg_60_0.activity
-	local var_60_1 = var_1.getConfig(var_60_0, "type")
-
-	ActivityConst = var_1_10002
-
-	if var_60_1 == var_1_10002.ACTIVITY_TYPE_GUIDE_TASKS then
+function var_0_0.switchPageByMediator(arg_60_0)
+	if arg_60_0.activity:getConfig("type") == ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS then
 		arg_60_0:switchPanel(arg_60_0.normalTaskactivity)
-	else
-		local var_60_2 = arg_60_0.activity
-		local var_60_3 = var_1.getConfig(var_60_2, "type")
-
-		ActivityConst = var_2
-
-		if var_60_3 == var_2.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
-			arg_60_0:switchPanel(arg_60_0.tecTaskActivity)
-		end
+	elseif arg_60_0.activity:getConfig("type") == ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP then
+		arg_60_0:switchPanel(arg_60_0.tecTaskActivity)
 	end
 
 	return
 end
 
-function var_0_1.aniOnSwitch(arg_61_0, arg_61_1, arg_61_2)
+function var_0_0.aniOnSwitch(arg_61_0, arg_61_1, arg_61_2)
 	arg_61_0.isOnSwitchAni = true
 
 	arg_61_1:SetAsLastSibling()
+	setActive(arg_61_1, true)
+	GetOrAddComponent(arg_61_1, "DftAniEvent"):SetEndEvent(function()
+		arg_61_0.isOnSwitchAni = false
 
-	setActive = var_3
-
-	var_3(arg_61_1, true)
-
-	GetOrAddComponent = var_3
-
-	local var_61_0 = var_3(arg_61_1, "DftAniEvent")
-
-	var_3.SetEndEvent(var_61_0, function()
-		local var_62_0 = arg_61_0
-
-		var_62_0.isOnSwitchAni = false
-		setActive = var_62_0
-
-		var_62_0(arg_61_2, false)
+		setActive(arg_61_2, false)
 
 		return
 	end)
@@ -1633,98 +751,54 @@ function var_0_1.aniOnSwitch(arg_61_0, arg_61_1, arg_61_2)
 	return
 end
 
-function var_0_1.openMsgbox(arg_63_0, arg_63_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_63_0.switchToNormalBtn, false)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_63_0.switchToTecBtn, false)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_63_0.awardMsg, true)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_63_0.normalPanel, false)
+function var_0_0.openMsgbox(arg_63_0, arg_63_1)
+	setActive(arg_63_0.switchToNormalBtn, false)
+	setActive(arg_63_0.switchToTecBtn, false)
+	setActive(arg_63_0.awardMsg, true)
+	setActive(arg_63_0.normalPanel, false)
 
 	local var_63_0
-	local var_63_1 = arg_63_0.awardMsg
-	local var_63_2 = var_3.Find(var_63_1, "photos")
+	local var_63_1 = arg_63_0.awardMsg:Find("photos")
 
-	for iter_63_0 = 1, var_63_2.childCount do
-		local var_63_3 = var_63_2:GetChild(iter_63_0 - 1)
-
-		onToggle = var_1_10009
-
-		local var_63_4 = arg_63_0
-		local var_63_5 = var_63_3
-
-		local function var_63_6(arg_64_0)
+	for iter_63_0 = 1, var_63_1.childCount do
+		onToggle(arg_63_0, var_63_1:GetChild(iter_63_0 - 1), function(arg_64_0)
 			if arg_64_0 then
 				var_63_0 = iter_63_0
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_1_10014
-
-		var_1_10009(var_63_4, var_63_5, var_63_6, var_1_10014)
+		end, SFX_PANEL)
 	end
 
-	onButton = var_4
-
-	local var_63_7 = arg_63_0
-	local var_63_8 = arg_63_0.awardMsg
-	local var_63_9 = var_7.Find(var_63_8, "confirm_btn")
-
-	local function var_63_10()
+	onButton(arg_63_0, arg_63_0.awardMsg:Find("confirm_btn"), function()
 		if var_63_0 then
 			if arg_63_1 then
 				arg_63_1(var_63_0)
 			end
 
-			local var_65_0 = arg_63_0
-
-			var_0.closeMsgBox(var_65_0)
+			arg_63_0:closeMsgBox()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_63_8
-
-	var_4(var_63_7, var_63_9, var_63_10, var_63_8)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.closeMsgBox(arg_66_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_66_0.awardMsg, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_66_0.normalPanel, true)
+function var_0_0.closeMsgBox(arg_66_0)
+	setActive(arg_66_0.awardMsg, false)
+	setActive(arg_66_0.normalPanel, true)
 	arg_66_0:updateSwitchBtns()
 
 	return
 end
 
-function var_0_1.tryShowTecFixTip(arg_67_0, arg_67_1)
+function var_0_0.tryShowTecFixTip(arg_67_0, arg_67_1)
 	if arg_67_0.tecTaskActivity and arg_67_1 == arg_67_0.tecTaskActivity.id then
-		local var_67_0 = arg_67_0.activityProxy
-		local var_67_1 = var_2.getActivityByType
-
-		ActivityConst = var_1_10005
-		arg_67_0.tecTaskActivity = var_67_1(var_67_0, var_1_10005.ACTIVITY_TYPE_FRESH_TEC_CATCHUP)
+		arg_67_0.tecTaskActivity = arg_67_0.activityProxy:getActivityByType(ActivityConst.ACTIVITY_TYPE_FRESH_TEC_CATCHUP)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ValentineQteGameConst")
+﻿local var_0_0 = class("ValentineQteGameConst")
 
 var_0_0.DEBUG = false
 var_0_0.OP_SCORE_GEAR_PERFECT = 1
@@ -25,8 +23,7 @@ var_0_0.OP_SCORE = {
 	[var_0_0.OP_SCORE_GEAR_GOOD] = 0.5,
 	[var_0_0.OP_SCORE_GEAR_MISS] = 0
 }
-
-local var_0_1 = {
+var_0_0.COMBO_EXTRA_SCORE_RATIO = {
 	{
 		2,
 		5,
@@ -46,50 +43,40 @@ local var_0_1 = {
 		16,
 		20,
 		80
+	},
+	{
+		21,
+		Mathf.Infinity,
+		100
 	}
 }
-local var_0_2 = {
-	21,
-	nil,
-	100
-}
-
-Mathf = var_3
-var_0_2[2] = var_3.Infinity
-var_0_1[5] = var_0_2
-var_0_0.COMBO_EXTRA_SCORE_RATIO = var_0_1
 var_0_0.OP_INTERVAL = 0.2
 var_0_0.GEN_ITEM_FIRST_TIME = 5
 var_0_0.GEN_ITEM_INTERVAL = 3
 var_0_0.ITEM_DISAPPEAR_TIME = 5
 var_0_0.MAX_ITEM_COUNT = 4
-
-local var_0_3 = {}
-local var_0_4 = {
-	6000,
-	nil,
-	"s"
+var_0_0.CHAT_CONTENT = {
+	{
+		6000,
+		Mathf.Infinity,
+		"s"
+	},
+	{
+		3000,
+		5999,
+		"a"
+	},
+	{
+		1000,
+		2999,
+		"b"
+	},
+	{
+		0,
+		999,
+		"c"
+	}
 }
-
-Mathf = var_3
-var_0_4[2] = var_3.Infinity
-var_0_3[1] = var_0_4
-var_0_3[2] = {
-	3000,
-	5999,
-	"a"
-}
-var_0_3[3] = {
-	1000,
-	2999,
-	"b"
-}
-var_0_3[4] = {
-	0,
-	999,
-	"c"
-}
-var_0_0.CHAT_CONTENT = var_0_3
 var_0_0.GEAR_SHOW_TIME = 0.7
 var_0_0.OPEN_DOOR_TIME = 3
 var_0_0.SOUND_PICK_ITEM = "event:/ui/mini_get"

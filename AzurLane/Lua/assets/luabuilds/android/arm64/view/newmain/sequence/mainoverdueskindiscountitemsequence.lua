@@ -1,22 +1,12 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainOverDueSkinDiscountItemSequence", import(".MainOverDueAttireSequence"))
 
-local var_0_0 = "MainOverDueSkinDiscountItemSequence"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainOverDueAttireSequence"))
-
-function var_0_1.Execute(arg_1_0, arg_1_1)
+function var_0_0.Execute(arg_1_0, arg_1_1)
 	local var_1_0, var_1_1 = arg_1_0:CollectExpiredItems()
 	local var_1_2
 
-	seriesAsync = var_1_10005
-
-	var_1_10005({
+	seriesAsync({
 		function(arg_2_0)
-			local var_2_0 = arg_1_0
-
-			var_1.RecycleItems(var_2_0, var_1_0, var_1_1, function(arg_3_0)
+			arg_1_0:RecycleItems(var_1_0, var_1_1, function(arg_3_0)
 				var_1_2 = arg_3_0
 
 				arg_2_0()
@@ -33,9 +23,7 @@ function var_0_1.Execute(arg_1_0, arg_1_1)
 				return
 			end
 
-			local var_4_0 = arg_1_0
-
-			var_1.DisplayResult(var_4_0, var_1_0, arg_4_0)
+			arg_1_0:DisplayResult(var_1_0, arg_4_0)
 
 			return
 		end,
@@ -46,16 +34,12 @@ function var_0_1.Execute(arg_1_0, arg_1_1)
 				return
 			end
 
-			local var_5_0 = arg_1_0
-
-			var_1.ShowAwardInfo(var_5_0, var_1_2, arg_5_0)
+			arg_1_0:ShowAwardInfo(var_1_2, arg_5_0)
 
 			return
 		end,
 		function(arg_6_0)
-			onNextTick = var_2_10001
-
-			var_2_10001(arg_6_0)
+			onNextTick(arg_6_0)
 
 			return
 		end
@@ -64,15 +48,8 @@ function var_0_1.Execute(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.ShowAwardInfo(arg_7_0, arg_7_1, arg_7_2)
-	pg = var_1_10003
-
-	local var_7_0 = var_1_10003.m02
-	local var_7_1 = var_3.sendNotification
-
-	NewMainMediator = var_1_10006
-
-	var_7_1(var_7_0, var_1_10006.ON_AWRADS, {
+function var_0_0.ShowAwardInfo(arg_7_0, arg_7_1, arg_7_2)
+	pg.m02:sendNotification(NewMainMediator.ON_AWRADS, {
 		items = arg_7_1,
 		callback = arg_7_2
 	})
@@ -80,48 +57,26 @@ function var_0_1.ShowAwardInfo(arg_7_0, arg_7_1, arg_7_2)
 	return
 end
 
-function var_0_1.RecycleItems(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0 = {}
-
-	ipairs = var_1_10005
-
-	for iter_8_0, iter_8_1 in var_1_10005(arg_8_1) do
-		table = var_1_10010
-
-		var_1_10010.insert(var_8_0, iter_8_1)
+function var_0_0.RecycleItems(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_1) do
+		table.insert({}, iter_8_1)
 	end
 
-	ipairs = var_5
-
-	for iter_8_2, iter_8_3 in var_5(arg_8_2) do
-		table = var_1_10010
-
-		var_1_10010.insert(var_8_0, iter_8_3)
+	for iter_8_2, iter_8_3 in ipairs(arg_8_2) do
+		table.insert({}, iter_8_3)
 	end
 
-	pg = var_5
-
-	local var_8_1 = var_5.m02
-	local var_8_2 = var_5.sendNotification
-
-	GAME = iter_8_2
-
-	var_8_2(var_8_1, iter_8_2.SELL_ITEM, {
-		items = var_8_0,
+	pg.m02:sendNotification(GAME.SELL_ITEM, {
+		items = {},
 		callback = arg_8_3
 	})
 
 	return
 end
 
-function var_0_1.DisplayResult(arg_9_0, arg_9_1, arg_9_2)
+function var_0_0.DisplayResult(arg_9_0, arg_9_1, arg_9_2)
 	if #arg_9_1 > 0 then
-		local var_9_0 = arg_9_0
-		local var_9_1 = arg_9_0.Display
-
-		SkinDiscountItemExpireDisplayPage = var_1_10006
-
-		var_9_1(var_9_0, var_1_10006, arg_9_1, arg_9_2)
+		arg_9_0:Display(SkinDiscountItemExpireDisplayPage, arg_9_1, arg_9_2)
 	else
 		arg_9_2()
 	end
@@ -129,67 +84,28 @@ function var_0_1.DisplayResult(arg_9_0, arg_9_1, arg_9_2)
 	return
 end
 
-function var_0_1.CollectExpiredItems(arg_10_0)
-	local var_10_0 = arg_10_0
-	local var_10_1 = arg_10_0._CollectExpiredItems
-
-	ItemUsage = var_1_10004
-
-	local var_10_2 = var_10_1(var_10_0, var_1_10004.USAGE_SHOP_DISCOUNT)
-	local var_10_3 = arg_10_0
-	local var_10_4 = arg_10_0._CollectExpiredItems
-
-	ItemUsage = var_1_10005
-
-	local var_10_5 = var_10_4(var_10_3, var_1_10005.USAGE_SKIN_EXP)
-
-	return var_10_2, var_10_5
+function var_0_0.CollectExpiredItems(arg_10_0)
+	return arg_10_0:_CollectExpiredItems(ItemUsage.USAGE_SHOP_DISCOUNT), (arg_10_0:_CollectExpiredItems(ItemUsage.USAGE_SKIN_EXP))
 end
 
-function var_0_1._CollectExpiredItems(arg_11_0, arg_11_1)
-	local var_11_0 = {}
+function var_0_0._CollectExpiredItems(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in pairs(pg.shop_template.get_id_list_by_genre[ShopArgs.GiftPackage]) do
+		if arg_11_0:InTime(pg.shop_template[iter_11_1].time) then
+			local var_11_0 = pg.shop_template[iter_11_1].effect_args[1] or 0
+			local var_11_1 = pg.item_data_statistics[var_11_0]
 
-	pg = var_1_10003
-
-	local var_11_1 = var_1_10003.shop_template.get_id_list_by_genre
-
-	ShopArgs = var_1_10004
-
-	local var_11_2 = var_11_1[var_1_10004.GiftPackage]
-
-	pairs = var_4
-
-	for iter_11_0, iter_11_1 in var_4(var_11_2) do
-		pg = var_1_10009
-		var_1_10009 = var_1_10009.shop_template[iter_11_1]
-
-		if arg_11_0:InTime(var_1_10009.time) then
-			local var_11_3
-
-			if not var_1_10009.effect_args[1] then
-				var_11_3 = 0
-			end
-
-			pg = var_1_10011
-
-			if var_1_10011.item_data_statistics[var_11_3] then
-				arg_11_0:GetExpiredItemIdFromDropList(var_11_0, var_1_10011.display_icon, arg_11_1)
+			if pg.item_data_statistics[var_11_0] then
+				arg_11_0:GetExpiredItemIdFromDropList({}, var_11_1.display_icon, arg_11_1)
 			end
 		end
 	end
 
-	return var_11_0
+	return {}
 end
 
-function var_0_1.InTime(arg_12_0, arg_12_1)
-	type = var_1_10002
-
-	if var_1_10002(arg_12_1) == "table" then
-		pg = var_2
-
-		local var_12_0 = var_2.TimeMgr.GetInstance()
-
-		return var_2.passTime(var_12_0, arg_12_1[2])
+function var_0_0.InTime(arg_12_0, arg_12_1)
+	if type(arg_12_1) == "table" then
+		return pg.TimeMgr.GetInstance():passTime(arg_12_1[2])
 	elseif arg_12_1 == "stop" then
 		return true
 	end
@@ -197,50 +113,27 @@ function var_0_1.InTime(arg_12_0, arg_12_1)
 	return
 end
 
-function var_0_1.GetExpiredItemIdFromDropList(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local function var_13_0(arg_14_0)
-		pg = var_2_10001
+function var_0_0.GetExpiredItemIdFromDropList(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+	local var_13_0 = getProxy(BagProxy)
 
-		local var_14_0 = var_2_10001.item_data_statistics[arg_14_0]
+	for iter_13_0, iter_13_1 in pairs(arg_13_2) do
+		local var_13_1 = iter_13_1[2]
 
-		assert = var_2_10002
+		if iter_13_1[1] == DROP_TYPE_ITEM and (function(arg_15_0)
+			return var_13_0:getItemCountById(arg_15_0) > 0
+		end)(iter_13_1[2]) and (function(arg_14_0)
+			assert(pg.item_data_statistics[arg_14_0], arg_14_0)
 
-		var_2_10002(var_14_0, arg_14_0)
+			return pg.item_data_statistics[arg_14_0] and pg.item_data_statistics[arg_14_0].usage == arg_13_3
+		end)(iter_13_1[2]) then
+			local var_13_2 = var_13_0:RawGetItemById(iter_13_1[2])
 
-		return var_14_0 and var_14_0.usage == arg_13_3
-	end
-
-	getProxy = var_1_10005
-	BagProxy = var_1_10007
-
-	local var_13_1 = var_1_10005(var_1_10007)
-
-	local function var_13_2(arg_15_0)
-		local var_15_0 = var_13_1
-
-		return var_1.getItemCountById(var_15_0, arg_15_0) > 0
-	end
-
-	pairs = var_1_10007
-
-	for iter_13_0, iter_13_1 in var_1_10007(arg_13_2) do
-		local var_13_3 = iter_13_1[1]
-		local var_13_4 = iter_13_1[2]
-
-		DROP_TYPE_ITEM = var_1_10014
-
-		if var_13_3 == var_1_10014 and var_13_2(var_13_4) and var_13_0(var_13_4) then
-			var_1_10014 = var_13_1:RawGetItemById(var_13_4)
-			_ = var_1_10015
-
-			if not var_1_10015.any(arg_13_1, function(arg_16_0)
-				return arg_16_0.id == var_13_4
+			if not _.any(arg_13_1, function(arg_16_0)
+				return arg_16_0.id == var_13_1
 			end) then
-				table = var_1_10015
-
-				var_1_10015.insert(arg_13_1, {
-					id = var_1_10014.id,
-					count = var_1_10014.count
+				table.insert(arg_13_1, {
+					id = var_13_2.id,
+					count = var_13_2.count
 				})
 			end
 		end
@@ -249,4 +142,4 @@ function var_0_1.GetExpiredItemIdFromDropList(arg_13_0, arg_13_1, arg_13_2, arg_
 	return
 end
 
-return var_0_1
+return var_0_0

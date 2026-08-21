@@ -1,42 +1,30 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleEvent
+local var_0_1 = ys.Battle.BattleCardPuzzleEvent
+local var_0_2 = ys.Battle.BattleConst
+local var_0_3 = ys.Battle.BattleConfig
+local var_0_4 = ys.Battle.BattleVariable
+local var_0_5 = ys.Battle.BattleTargetChoise
+local var_0_6 = class("BattleSceneMediator", ys.MVC.Mediator)
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleSceneMediator = var_0_6
+var_0_6.__name = "BattleSceneMediator"
 
-local var_0_1 = var_0.Battle.BattleEvent
-local var_0_2 = var_0.Battle.BattleCardPuzzleEvent
-local var_0_3 = var_0.Battle.BattleConst
-local var_0_4 = var_0.Battle.BattleConfig
-local var_0_5 = var_0.Battle.BattleVariable
-local var_0_6 = var_0.Battle.BattleTargetChoise
+local var_0_7 = Vector3(0, 0.8, 0)
 
-class = var_0_10007
+function var_0_6.Ctor(arg_1_0)
+	var_0_6.super.Ctor(arg_1_0)
 
-local var_0_7 = var_0_10007("BattleSceneMediator", var_0.MVC.Mediator)
-
-var_0.Battle.BattleSceneMediator = var_0_7
-var_0_7.__name = "BattleSceneMediator"
-Vector3 = var_8
-
-local var_0_8 = var_8(0, 0.8, 0)
-
-function var_0_7.Ctor(arg_1_0)
-	var_0_7.super.Ctor(arg_1_0)
-
-	Vector3 = var_1
-	arg_1_0.FlagShipUIPos = var_1.zero
+	arg_1_0.FlagShipUIPos = Vector3.zero
 
 	return
 end
 
-function var_0_7.Initialize(arg_2_0)
-	var_0_7.super.Initialize(arg_2_0)
+function var_0_6.Initialize(arg_2_0)
+	var_0_6.super.Initialize(arg_2_0)
 
-	local var_2_0 = arg_2_0._state
-
-	arg_2_0._dataProxy = var_1.GetProxyByName(var_2_0, var_0.Battle.BattleDataProxy.__name)
+	arg_2_0._dataProxy = arg_2_0._state:GetProxyByName(var_0.Battle.BattleDataProxy.__name)
 
 	arg_2_0:InitCharacterFactory()
 	arg_2_0:Init()
@@ -45,7 +33,7 @@ function var_0_7.Initialize(arg_2_0)
 	return
 end
 
-function var_0_7.Init(arg_3_0)
+function var_0_6.Init(arg_3_0)
 	arg_3_0._characterList = {}
 	arg_3_0._bulletList = {}
 	arg_3_0._particleBulletList = {}
@@ -53,285 +41,181 @@ function var_0_7.Init(arg_3_0)
 	arg_3_0._areaList = {}
 	arg_3_0._shelterList = {}
 	arg_3_0._arcEffectList = {}
-	GameObject = var_1
-	arg_3_0._bulletContainer = var_1.Find("BulletContainer")
+	arg_3_0._bulletContainer = GameObject.Find("BulletContainer")
 	arg_3_0._fxPool = var_0.Battle.BattleFXPool.GetInstance()
 	arg_3_0._aimBiasTFList = {}
 
-	local var_3_0 = var_0.Battle.BattleCharacterFXContainersPool.GetInstance()
-
-	var_1.Init(var_3_0)
+	var_0.Battle.BattleCharacterFXContainersPool.GetInstance():Init()
 	arg_3_0:InitPlayerAntiAirArea()
 	arg_3_0:InitPlayerAntiSubArea()
 	arg_3_0:InitFlagShipMark()
 	arg_3_0:InitSkillAim()
-
-	pg = var_1
-
-	local var_3_1 = var_1.CameraFixMgr.GetInstance()
-
-	var_1.Adapt(var_3_1)
+	pg.CameraFixMgr.GetInstance():Adapt()
 
 	return
 end
 
-function var_0_7.InitCamera(arg_4_0)
+function var_0_6.InitCamera(arg_4_0)
 	arg_4_0._cameraUtil = var_0.Battle.BattleCameraUtil.GetInstance()
 
-	local var_4_0 = arg_4_0._cameraUtil
-
-	var_1.RegisterEventListener(var_4_0, arg_4_0, var_0_1.CAMERA_FOCUS_RESET, arg_4_0.onCameraFocusReset)
-
-	local var_4_1 = arg_4_0._cameraUtil
-
-	var_1.RegisterEventListener(var_4_1, arg_4_0, var_0_1.BULLET_TIME, arg_4_0.onBulletTime)
+	arg_4_0._cameraUtil:RegisterEventListener(arg_4_0, var_0_0.CAMERA_FOCUS_RESET, arg_4_0.onCameraFocusReset)
+	arg_4_0._cameraUtil:RegisterEventListener(arg_4_0, var_0_0.BULLET_TIME, arg_4_0.onBulletTime)
 
 	return
 end
 
-function var_0_7.InitPopNumPool(arg_5_0)
+function var_0_6.InitPopNumPool(arg_5_0)
 	arg_5_0._popNumMgr = var_0.Battle.BattlePopNumManager.GetInstance()
 
-	local var_5_0 = arg_5_0._state
-	local var_5_1 = var_2.GetUI(var_5_0)
-	local var_5_2 = arg_5_0._dataProxy
-	local var_5_3 = var_3.GetInitData(var_5_2).battleType
+	local var_5_0 = arg_5_0._state:GetUI()
 
-	SYSTEM_DODGEM = var_5_0
-
-	if var_5_3 == var_5_0 then
-		local var_5_4 = arg_5_0._popNumMgr
-		local var_5_5 = var_3.InitialScorePool
-		local var_5_6 = var_5_1._tf
-
-		var_5_5(var_5_4, var_6.Find(var_5_6, var_1.CONTAINER_CHARACTER_HP .. "/container"))
+	if arg_5_0._dataProxy:GetInitData().battleType == SYSTEM_DODGEM then
+		arg_5_0._popNumMgr:InitialScorePool(var_5_0._tf:Find(var_0.Battle.BattlePopNumManager.CONTAINER_CHARACTER_HP .. "/container"))
 	else
-		local var_5_7 = arg_5_0._popNumMgr
-		local var_5_8 = var_3.InitialBundlePool
-		local var_5_9 = var_5_1._tf
-
-		var_5_8(var_5_7, var_6.Find(var_5_9, var_1.CONTAINER_CHARACTER_HP .. "/container"))
+		arg_5_0._popNumMgr:InitialBundlePool(var_5_0._tf:Find(var_0.Battle.BattlePopNumManager.CONTAINER_CHARACTER_HP .. "/container"))
 	end
 
 	return
 end
 
-function var_0_7.InitFlagShipMark(arg_6_0)
-	local var_6_0 = arg_6_0._state
-	local var_6_1 = var_1.GetUI(var_6_0)._tf
-	local var_6_2 = var_1.Find(var_6_1, "flagShipMark").gameObject
+function var_0_6.InitFlagShipMark(arg_6_0)
+	local var_6_0 = arg_6_0._state:GetUI()._tf:Find("flagShipMark").gameObject
 
-	var_1.SetActive(var_6_2, true)
+	var_6_0:SetActive(true)
 
-	arg_6_0._goFlagShipMarkTf = var_1.transform
+	arg_6_0._goFlagShipMarkTf = var_6_0.transform
 
 	return
 end
 
-function var_0_7.InitSkillAim(arg_7_0)
+function var_0_6.InitSkillAim(arg_7_0)
 	arg_7_0._cardAimTargetFilter = {}
 	arg_7_0._cardAimTargetList = {}
 
 	return
 end
 
-function var_0_7.InitCharacterFactory(arg_8_0)
-	local var_8_0 = arg_8_0._state
-	local var_8_1 = var_1.GetUI(var_8_0)
-	local var_8_2 = var_0.Battle.BattleHPBarManager.GetInstance()
-	local var_8_3 = var_2.InitialPoolRoot
-	local var_8_4 = var_8_1._tf
+function var_0_6.InitCharacterFactory(arg_8_0)
+	local var_8_0 = arg_8_0._state:GetUI()
 
-	var_8_3(var_8_2, var_5.Find(var_8_4, var_0.Battle.BattleHPBarManager.ROOT_NAME))
-
-	local var_8_5 = var_0.Battle.BattleArrowManager.GetInstance()
-	local var_8_6 = var_2.Init
-	local var_8_7 = var_8_1._tf
-
-	var_8_6(var_8_5, var_5.Find(var_8_7, var_0.Battle.BattleArrowManager.ROOT_NAME))
+	var_0.Battle.BattleHPBarManager.GetInstance():InitialPoolRoot(var_8_0._tf:Find(var_0.Battle.BattleHPBarManager.ROOT_NAME))
+	var_0.Battle.BattleArrowManager.GetInstance():Init(var_8_0._tf:Find(var_0.Battle.BattleArrowManager.ROOT_NAME))
 
 	arg_8_0._characterFactoryList = {
-		[var_0_3.UnitType.PLAYER_UNIT] = var_0.Battle.BattlePlayerCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.ENEMY_UNIT] = var_0.Battle.BattleEnemyCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.MINION_UNIT] = var_0.Battle.BattleMinionCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.BOSS_UNIT] = var_0.Battle.BattleBossCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.AIRCRAFT_UNIT] = var_0.Battle.BattleAircraftCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.AIRFIGHTER_UNIT] = var_0.Battle.BattleAirFighterCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.SUB_UNIT] = var_0.Battle.BattleSubCharacterFactory.GetInstance(),
-		[var_0_3.UnitType.SUPPORT_UNIT] = var_0.Battle.BattleSupportCharacterFactory.GetInstance()
+		[var_0_2.UnitType.PLAYER_UNIT] = var_0.Battle.BattlePlayerCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.ENEMY_UNIT] = var_0.Battle.BattleEnemyCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.MINION_UNIT] = var_0.Battle.BattleMinionCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.BOSS_UNIT] = var_0.Battle.BattleBossCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.AIRCRAFT_UNIT] = var_0.Battle.BattleAircraftCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.AIRFIGHTER_UNIT] = var_0.Battle.BattleAirFighterCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.SUB_UNIT] = var_0.Battle.BattleSubCharacterFactory.GetInstance(),
+		[var_0_2.UnitType.SUPPORT_UNIT] = var_0.Battle.BattleSupportCharacterFactory.GetInstance()
 	}
 
 	return
 end
 
-function var_0_7.InitPlayerAntiAirArea(arg_9_0)
-	local var_9_0 = arg_9_0._fxPool
-
-	arg_9_0._antiAirArea = var_1.GetFX(var_9_0, "AntiAirArea")
+function var_0_6.InitPlayerAntiAirArea(arg_9_0)
+	arg_9_0._antiAirArea = arg_9_0._fxPool:GetFX("AntiAirArea")
 	arg_9_0._antiAirAreaTF = arg_9_0._antiAirArea.transform
 
-	local var_9_1 = arg_9_0._antiAirArea
-
-	var_1.SetActive(var_9_1, false)
+	arg_9_0._antiAirArea:SetActive(false)
 
 	return
 end
 
-function var_0_7.InitPlayerAntiSubArea(arg_10_0)
-	local var_10_0 = arg_10_0._fxPool
-
-	arg_10_0._anitSubArea = var_1.GetFX(var_10_0, "AntiSubArea")
+function var_0_6.InitPlayerAntiSubArea(arg_10_0)
+	arg_10_0._anitSubArea = arg_10_0._fxPool:GetFX("AntiSubArea")
 	arg_10_0._anitSubAreaTF = arg_10_0._anitSubArea.transform
 
-	local var_10_1 = arg_10_0._anitSubArea
+	arg_10_0._anitSubArea:SetActive(false)
 
-	var_1.SetActive(var_10_1, false)
-
-	local var_10_2 = arg_10_0._anitSubAreaTF
-	local var_10_3 = var_1.Find(var_10_2, "Quad")
-	local var_10_4 = var_1.GetComponent
-
-	typeof = var_4
-	Animator = var_1_10006
-	arg_10_0._antiSubScanAnima = var_10_4(var_10_3, var_4(var_1_10006))
+	arg_10_0._antiSubScanAnima = arg_10_0._anitSubAreaTF:Find("Quad"):GetComponent(typeof(Animator))
 	arg_10_0._anitSubAreaTFList = {}
 	arg_10_0._anitSubAreaTFList[arg_10_0._anitSubAreaTF] = true
 
 	return
 end
 
-function var_0_7.InitDetailAntiSubArea(arg_11_0)
-	local var_11_0 = arg_11_0._leftFleet
-	local var_11_1 = var_1.GetFleetSonar(var_11_0)
-	local var_11_2, var_11_3, var_11_4, var_11_5 = var_1.GetTotalRangeDetail(var_11_1)
+function var_0_6.InitDetailAntiSubArea(arg_11_0)
+	local var_11_0, var_11_1, var_11_2, var_11_3 = arg_11_0._leftFleet:GetFleetSonar():GetTotalRangeDetail()
 
-	local function var_11_6(arg_12_0, arg_12_1, arg_12_2)
-		local var_12_0 = arg_11_0._fxPool
-		local var_12_1 = var_3.GetFX(var_12_0, "AntiSubArea")
+	;(function(arg_12_0, arg_12_1, arg_12_2)
+		local var_12_0 = arg_11_0._fxPool:GetFX("AntiSubArea")
 
-		var_12_1.name = arg_12_2
+		var_12_0.name = arg_12_2
+		var_12_0.transform.localScale = Vector3(arg_12_0, 0, arg_12_0)
+		var_12_0.transform:Find("static"):GetComponent("SpriteRenderer").color = arg_12_1
 
-		local var_12_2 = var_12_1.transform
+		var_12_0:SetActive(true)
 
-		Vector3 = var_12_0
-		var_12_2.localScale = var_12_0(arg_12_0, 0, arg_12_0)
-
-		local var_12_3 = var_12_2:Find("static")
-
-		var_5.GetComponent(var_12_3, "SpriteRenderer").color = arg_12_1
-
-		var_12_1:SetActive(true)
-
-		arg_11_0._anitSubAreaTFList[var_12_2] = true
+		arg_11_0._anitSubAreaTFList[var_12_0.transform] = true
 
 		return
-	end
+	end)(var_11_0 + var_11_1 + var_11_2 + var_11_3, Color.New(1, 1, 1, 1), "技能额外直径：" .. var_11_3)
+	;(function(arg_12_0, arg_12_1, arg_12_2)
+		local var_12_0 = arg_11_0._fxPool:GetFX("AntiSubArea")
 
-	local var_11_7 = var_11_2 + var_11_3 + var_11_4 + var_11_5
+		var_12_0.name = arg_12_2
+		var_12_0.transform.localScale = Vector3(arg_12_0, 0, arg_12_0)
+		var_12_0.transform:Find("static"):GetComponent("SpriteRenderer").color = arg_12_1
 
-	Color = var_1_10009
+		var_12_0:SetActive(true)
 
-	var_11_6(var_11_7, var_1_10009.New(1, 1, 1, 1), "技能额外直径：" .. var_11_5)
+		arg_11_0._anitSubAreaTFList[var_12_0.transform] = true
 
-	local var_11_8 = var_5
-	local var_11_9 = var_11_2 + var_11_3 + var_11_4
+		return
+	end)(var_11_0 + var_11_1 + var_11_2, Color.New(0.07, 1, 0, 1), "装备提供直径：" .. var_11_2)
+	;(function(arg_12_0, arg_12_1, arg_12_2)
+		local var_12_0 = arg_11_0._fxPool:GetFX("AntiSubArea")
 
-	Color = var_9
+		var_12_0.name = arg_12_2
+		var_12_0.transform.localScale = Vector3(arg_12_0, 0, arg_12_0)
+		var_12_0.transform:Find("static"):GetComponent("SpriteRenderer").color = arg_12_1
 
-	var_11_8(var_11_9, var_9.New(0.07, 1, 0, 1), "装备提供直径：" .. var_11_4)
+		var_12_0:SetActive(true)
 
-	local var_11_10 = var_5
-	local var_11_11 = var_11_2 + var_11_3
+		arg_11_0._anitSubAreaTFList[var_12_0.transform] = true
 
-	Color = var_9
+		return
+	end)(var_11_0 + var_11_1, Color.New(1, 0.32, 0, 1), "主力提供直径：" .. var_11_1)
+	;(function(arg_12_0, arg_12_1, arg_12_2)
+		local var_12_0 = arg_11_0._fxPool:GetFX("AntiSubArea")
 
-	var_11_10(var_11_11, var_9.New(1, 0.32, 0, 1), "主力提供直径：" .. var_11_3)
+		var_12_0.name = arg_12_2
+		var_12_0.transform.localScale = Vector3(arg_12_0, 0, arg_12_0)
+		var_12_0.transform:Find("static"):GetComponent("SpriteRenderer").color = arg_12_1
 
-	local var_11_12 = var_5
-	local var_11_13 = var_11_2
+		var_12_0:SetActive(true)
 
-	Color = var_9
+		arg_11_0._anitSubAreaTFList[var_12_0.transform] = true
 
-	var_11_12(var_11_13, var_9.New(1, 0, 0, 1), "基础直径：" .. var_11_2)
+		return
+	end)(var_11_0, Color.New(1, 0, 0, 1), "基础直径：" .. var_11_0)
 
 	return
 end
 
-function var_0_7.AddEvent(arg_13_0)
-	local var_13_0 = arg_13_0._dataProxy
+function var_0_6.AddEvent(arg_13_0)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.STAGE_DATA_INIT_FINISH, arg_13_0.onStageInitFinish)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ADD_UNIT, arg_13_0.onAddUnit)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_UNIT, arg_13_0.onRemoveUnit)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_BULLET, arg_13_0.onRemoveBullet)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_AIR_CRAFT, arg_13_0.onRemoveAircraft)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_AIR_FIGHTER, arg_13_0.onRemoveAirFighter)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ADD_AREA, arg_13_0.onAddArea)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_AREA, arg_13_0.onRemoveArea)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ADD_EFFECT, arg_13_0.onAddEffect)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ADD_SHELTER, arg_13_0.onAddShelter)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_SHELTER, arg_13_0.onRemoveShleter)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ANTI_AIR_AREA, arg_13_0.onAntiAirArea)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.UPDATE_HOSTILE_SUBMARINE, arg_13_0.onUpdateHostileSubmarine)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ADD_CAMERA_FX, arg_13_0.onAddCameraFX)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.ADD_AIM_BIAS, arg_13_0.onAddAimBias)
+	arg_13_0._dataProxy:RegisterEventListener(arg_13_0, var_0_0.REMOVE_AIM_BIAS, arg_13_0.onRemoveAimBias)
 
-	var_1.RegisterEventListener(var_13_0, arg_13_0, var_0_1.STAGE_DATA_INIT_FINISH, arg_13_0.onStageInitFinish)
-
-	local var_13_1 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_1, arg_13_0, var_0_1.ADD_UNIT, arg_13_0.onAddUnit)
-
-	local var_13_2 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_2, arg_13_0, var_0_1.REMOVE_UNIT, arg_13_0.onRemoveUnit)
-
-	local var_13_3 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_3, arg_13_0, var_0_1.REMOVE_BULLET, arg_13_0.onRemoveBullet)
-
-	local var_13_4 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_4, arg_13_0, var_0_1.REMOVE_AIR_CRAFT, arg_13_0.onRemoveAircraft)
-
-	local var_13_5 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_5, arg_13_0, var_0_1.REMOVE_AIR_FIGHTER, arg_13_0.onRemoveAirFighter)
-
-	local var_13_6 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_6, arg_13_0, var_0_1.ADD_AREA, arg_13_0.onAddArea)
-
-	local var_13_7 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_7, arg_13_0, var_0_1.REMOVE_AREA, arg_13_0.onRemoveArea)
-
-	local var_13_8 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_8, arg_13_0, var_0_1.ADD_EFFECT, arg_13_0.onAddEffect)
-
-	local var_13_9 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_9, arg_13_0, var_0_1.ADD_SHELTER, arg_13_0.onAddShelter)
-
-	local var_13_10 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_10, arg_13_0, var_0_1.REMOVE_SHELTER, arg_13_0.onRemoveShleter)
-
-	local var_13_11 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_11, arg_13_0, var_0_1.ANTI_AIR_AREA, arg_13_0.onAntiAirArea)
-
-	local var_13_12 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_12, arg_13_0, var_0_1.UPDATE_HOSTILE_SUBMARINE, arg_13_0.onUpdateHostileSubmarine)
-
-	local var_13_13 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_13, arg_13_0, var_0_1.ADD_CAMERA_FX, arg_13_0.onAddCameraFX)
-
-	local var_13_14 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_14, arg_13_0, var_0_1.ADD_AIM_BIAS, arg_13_0.onAddAimBias)
-
-	local var_13_15 = arg_13_0._dataProxy
-
-	var_1.RegisterEventListener(var_13_15, arg_13_0, var_0_1.REMOVE_AIM_BIAS, arg_13_0.onRemoveAimBias)
-
-	pg = var_1
-
-	local var_13_16 = var_1.CameraFixMgr.GetInstance()
-	local var_13_17 = var_1.bind
-
-	pg = var_4
-	arg_13_0._camEventId = var_13_17(var_13_16, var_4.CameraFixMgr.ASPECT_RATIO_UPDATE, function()
-		local var_14_0 = arg_13_0._dataProxy
-
-		var_0.OnCameraRatioUpdate(var_14_0)
+	arg_13_0._camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function()
+		arg_13_0._dataProxy:OnCameraRatioUpdate()
 
 		return
 	end)
@@ -339,560 +223,320 @@ function var_0_7.AddEvent(arg_13_0)
 	return
 end
 
-function var_0_7.RemoveEvent(arg_15_0)
-	local var_15_0 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_0, arg_15_0, var_0_1.SONAR_SCAN)
-
-	local var_15_1 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_1, arg_15_0, var_0_1.SONAR_UPDATE)
-
-	local var_15_2 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_2, arg_15_0, var_0_1.ADD_AIM_BIAS)
-
-	local var_15_3 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_3, arg_15_0, var_0_1.REMOVE_AIM_BIAS)
-
-	local var_15_4 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_4, arg_15_0, var_0_2.FLEET_MOVE_TO)
-
-	local var_15_5 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_5, arg_15_0, var_0_2.UPDATE_CARD_TARGET_FILTER)
-
-	local var_15_6 = arg_15_0._leftFleet
-
-	var_1.UnregisterEventListener(var_15_6, arg_15_0, var_0_1.ON_BOARD_CLICK)
-
-	local var_15_7 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_7, arg_15_0, var_0_1.STAGE_DATA_INIT_FINISH)
-
-	local var_15_8 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_8, arg_15_0, var_0_1.ADD_UNIT)
-
-	local var_15_9 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_9, arg_15_0, var_0_1.REMOVE_UNIT)
-
-	local var_15_10 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_10, arg_15_0, var_0_1.REMOVE_BULLET)
-
-	local var_15_11 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_11, arg_15_0, var_0_1.REMOVE_AIR_CRAFT)
-
-	local var_15_12 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_12, arg_15_0, var_0_1.REMOVE_AIR_FIGHTER)
-
-	local var_15_13 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_13, arg_15_0, var_0_1.ADD_AREA)
-
-	local var_15_14 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_14, arg_15_0, var_0_1.REMOVE_AREA)
-
-	local var_15_15 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_15, arg_15_0, var_0_1.ADD_EFFECT)
-
-	local var_15_16 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_16, arg_15_0, var_0_1.ADD_SHELTER)
-
-	local var_15_17 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_17, arg_15_0, var_0_1.REMOVE_SHELTER)
-
-	local var_15_18 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_18, arg_15_0, var_0_1.ANTI_AIR_AREA)
-
-	local var_15_19 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_19, arg_15_0, var_0_1.UPDATE_HOSTILE_SUBMARINE)
-
-	local var_15_20 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_20, arg_15_0, var_0_1.ADD_CAMERA_FX)
-
-	local var_15_21 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_21, arg_15_0, var_0_1.ADD_AIM_BIAS)
-
-	local var_15_22 = arg_15_0._dataProxy
-
-	var_1.UnregisterEventListener(var_15_22, arg_15_0, var_0_1.REMOVE_AIM_BIAS)
-
-	local var_15_23 = arg_15_0._cameraUtil
-
-	var_1.UnregisterEventListener(var_15_23, arg_15_0, var_0_1.CAMERA_FOCUS_RESET)
-
-	local var_15_24 = arg_15_0._cameraUtil
-
-	var_1.UnregisterEventListener(var_15_24, arg_15_0, var_0_1.BULLET_TIME)
-
-	pg = var_1
-
-	local var_15_25 = var_1.CameraFixMgr.GetInstance()
-
-	var_1.disconnect(var_15_25, arg_15_0._camEventId)
+function var_0_6.RemoveEvent(arg_15_0)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_0.SONAR_SCAN)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_0.SONAR_UPDATE)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_0.ADD_AIM_BIAS)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_AIM_BIAS)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_1.FLEET_MOVE_TO)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_1.UPDATE_CARD_TARGET_FILTER)
+	arg_15_0._leftFleet:UnregisterEventListener(arg_15_0, var_0_0.ON_BOARD_CLICK)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.STAGE_DATA_INIT_FINISH)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ADD_UNIT)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_UNIT)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_BULLET)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_AIR_CRAFT)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_AIR_FIGHTER)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ADD_AREA)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_AREA)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ADD_EFFECT)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ADD_SHELTER)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_SHELTER)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ANTI_AIR_AREA)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.UPDATE_HOSTILE_SUBMARINE)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ADD_CAMERA_FX)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.ADD_AIM_BIAS)
+	arg_15_0._dataProxy:UnregisterEventListener(arg_15_0, var_0_0.REMOVE_AIM_BIAS)
+	arg_15_0._cameraUtil:UnregisterEventListener(arg_15_0, var_0_0.CAMERA_FOCUS_RESET)
+	arg_15_0._cameraUtil:UnregisterEventListener(arg_15_0, var_0_0.BULLET_TIME)
+	pg.CameraFixMgr.GetInstance():disconnect(arg_15_0._camEventId)
 
 	return
 end
 
-function var_0_7.onStageInitFinish(arg_16_0, arg_16_1)
-	local var_16_0 = arg_16_0._dataProxy
-
-	arg_16_0._leftFleet = var_2.GetFleetByIFF(var_16_0, var_0.Battle.BattleConfig.FRIENDLY_CODE)
-
-	local var_16_1 = arg_16_0._leftFleet
-
-	arg_16_0._leftFleetMotion = var_2.GetMotion(var_16_1)
+function var_0_6.onStageInitFinish(arg_16_0, arg_16_1)
+	arg_16_0._leftFleet = arg_16_0._dataProxy:GetFleetByIFF(var_0.Battle.BattleConfig.FRIENDLY_CODE)
+	arg_16_0._leftFleetMotion = arg_16_0._leftFleet:GetMotion()
 
 	arg_16_0:InitCamera()
-
-	local var_16_2 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_2, arg_16_0, var_0_1.SONAR_SCAN, arg_16_0.onSonarScan)
-
-	local var_16_3 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_3, arg_16_0, var_0_1.SONAR_UPDATE, arg_16_0.onUpdateHostileSubmarine)
-
-	local var_16_4 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_4, arg_16_0, var_0_1.ADD_AIM_BIAS, arg_16_0.onAddAimBias)
-
-	local var_16_5 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_5, arg_16_0, var_0_1.REMOVE_AIM_BIAS, arg_16_0.onRemoveAimBias)
-
-	local var_16_6 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_6, arg_16_0, var_0_2.FLEET_MOVE_TO, arg_16_0.onUpdateMoveMark)
-
-	local var_16_7 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_7, arg_16_0, var_0_2.ON_BOARD_CLICK, arg_16_0.onBoardClick)
-
-	local var_16_8 = arg_16_0._leftFleet
-
-	var_2.RegisterEventListener(var_16_8, arg_16_0, var_0_2.UPDATE_CARD_TARGET_FILTER, arg_16_0.onUpdateSkillAim)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_0.SONAR_SCAN, arg_16_0.onSonarScan)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_0.SONAR_UPDATE, arg_16_0.onUpdateHostileSubmarine)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_0.ADD_AIM_BIAS, arg_16_0.onAddAimBias)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_0.REMOVE_AIM_BIAS, arg_16_0.onRemoveAimBias)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_1.FLEET_MOVE_TO, arg_16_0.onUpdateMoveMark)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_1.ON_BOARD_CLICK, arg_16_0.onBoardClick)
+	arg_16_0._leftFleet:RegisterEventListener(arg_16_0, var_0_1.UPDATE_CARD_TARGET_FILTER, arg_16_0.onUpdateSkillAim)
 	arg_16_0:InitPopNumPool()
 
 	return
 end
 
-function var_0_7.onAddUnit(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_1.Data.type
-	local var_17_1 = arg_17_0._characterFactoryList[var_17_0]
-	local var_17_2 = arg_17_1.Data
-
-	var_17_1:CreateCharacter(var_17_2)
+function var_0_6.onAddUnit(arg_17_0, arg_17_1)
+	arg_17_0._characterFactoryList[arg_17_1.Data.type]:CreateCharacter(arg_17_1.Data)
 
 	return
 end
 
-function var_0_7.onRemoveUnit(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_1.Data.UID
-	local var_18_1 = arg_18_1.Data.deadReason
+function var_0_6.onRemoveUnit(arg_18_0, arg_18_1)
+	if arg_18_0._characterList[arg_18_1.Data.UID] then
+		arg_18_0._characterList[arg_18_1.Data.UID]:GetFactory():RemoveCharacter(arg_18_0._characterList[arg_18_1.Data.UID], arg_18_1.Data.deadReason)
 
-	if arg_18_0._characterList[var_18_0] then
-		local var_18_2 = var_4:GetFactory()
-
-		var_5.RemoveCharacter(var_18_2, var_4, var_18_1)
-
-		arg_18_0._characterList[var_18_0] = nil
+		arg_18_0._characterList[arg_18_1.Data.UID] = nil
 	end
 
 	return
 end
 
-function var_0_7.onRemoveAircraft(arg_19_0, arg_19_1)
-	local var_19_0 = arg_19_1.Data.UID
+function var_0_6.onRemoveAircraft(arg_19_0, arg_19_1)
+	if arg_19_0._aircraftList[arg_19_1.Data.UID] then
+		arg_19_0._aircraftList[arg_19_1.Data.UID]:GetFactory():RemoveCharacter(arg_19_0._aircraftList[arg_19_1.Data.UID])
 
-	if arg_19_0._aircraftList[var_19_0] then
-		local var_19_1 = var_3:GetFactory()
-
-		var_4.RemoveCharacter(var_19_1, var_3)
-
-		arg_19_0._aircraftList[var_19_0] = nil
+		arg_19_0._aircraftList[arg_19_1.Data.UID] = nil
 	end
 
 	return
 end
 
-function var_0_7.onRemoveAirFighter(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1.Data.UID
+function var_0_6.onRemoveAirFighter(arg_20_0, arg_20_1)
+	if arg_20_0._aircraftList[arg_20_1.Data.UID] then
+		arg_20_0._aircraftList[arg_20_1.Data.UID]:GetFactory():RemoveCharacter(arg_20_0._aircraftList[arg_20_1.Data.UID])
 
-	if arg_20_0._aircraftList[var_20_0] then
-		local var_20_1 = var_3:GetFactory()
-
-		var_4.RemoveCharacter(var_20_1, var_3)
-
-		arg_20_0._aircraftList[var_20_0] = nil
+		arg_20_0._aircraftList[arg_20_1.Data.UID] = nil
 	end
 
 	return
 end
 
-function var_0_7.onRemoveBullet(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_1.Data.UID
-
-	arg_21_0:RemoveBullet(var_21_0)
+function var_0_6.onRemoveBullet(arg_21_0, arg_21_1)
+	arg_21_0:RemoveBullet(arg_21_1.Data.UID)
 
 	return
 end
 
-function var_0_7.onAddArea(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_1.Data.FXID
-	local var_22_1 = arg_22_1.Data.area
-
-	arg_22_0:AddArea(var_22_1, var_22_0)
+function var_0_6.onAddArea(arg_22_0, arg_22_1)
+	arg_22_0:AddArea(arg_22_1.Data.area, arg_22_1.Data.FXID)
 
 	return
 end
 
-function var_0_7.onRemoveArea(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_1.Data.id
-
-	arg_23_0:RemoveArea(var_23_0)
+function var_0_6.onRemoveArea(arg_23_0, arg_23_1)
+	arg_23_0:RemoveArea(arg_23_1.Data.id)
 
 	return
 end
 
-function var_0_7.onAddEffect(arg_24_0, arg_24_1)
-	local var_24_0 = arg_24_1.Data.FXID
-	local var_24_1 = arg_24_1.Data.position
-	local var_24_2 = arg_24_1.Data.localScale
-
-	arg_24_0:AddEffect(var_24_0, var_24_1, var_24_2)
+function var_0_6.onAddEffect(arg_24_0, arg_24_1)
+	arg_24_0:AddEffect(arg_24_1.Data.FXID, arg_24_1.Data.position, arg_24_1.Data.localScale)
 
 	return
 end
 
-function var_0_7.onAddShelter(arg_25_0, arg_25_1)
-	local var_25_0 = arg_25_1.Data.shelter
-	local var_25_1 = arg_25_0._fxPool
-	local var_25_2, var_25_3 = var_3.GetFX(var_25_1, var_25_0:GetFXID())
-	local var_25_4 = var_25_0:GetPosition()
+function var_0_6.onAddShelter(arg_25_0, arg_25_1)
+	local var_25_0, var_25_1 = arg_25_0._fxPool:GetFX(arg_25_1.Data.shelter:GetFXID())
 
-	pg = var_6
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var_25_0, arg_25_1.Data.shelter:GetPosition():Add(var_25_1), true)
 
-	local var_25_5 = var_6.EffectMgr.GetInstance()
-
-	var_6.PlayBattleEffect(var_25_5, var_25_2, var_25_4:Add(var_25_3), true)
-
-	if var_25_0:GetIFF() == var_0_4.FOE_CODE then
-		local var_25_6 = var_25_2.transform.localEulerAngles
-
-		var_25_6.y = 180
-		var_6.localEulerAngles = var_25_6
+	if arg_25_1.Data.shelter:GetIFF() == var_0_3.FOE_CODE then
+		var_25_0.transform.localEulerAngles.y = 180
+		var_25_0.transform.localEulerAngles = var_25_0.transform.localEulerAngles
 	end
 
-	arg_25_0._shelterList[var_25_0:GetUniqueID()] = var_25_2
+	arg_25_0._shelterList[arg_25_1.Data.shelter:GetUniqueID()] = var_25_0
 
 	return
 end
 
-function var_0_7.onRemoveShleter(arg_26_0, arg_26_1)
-	local var_26_0 = arg_26_1.Data.uid
+function var_0_6.onRemoveShleter(arg_26_0, arg_26_1)
+	if arg_26_0._shelterList[arg_26_1.Data.uid] then
+		var_0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg_26_0._shelterList[arg_26_1.Data.uid])
 
-	if arg_26_0._shelterList[var_26_0] then
-		local var_26_1 = var_0.Battle.BattleResourceManager.GetInstance()
-
-		var_4.DestroyOb(var_26_1, var_3)
-
-		arg_26_0._shelterList[var_26_0] = nil
+		arg_26_0._shelterList[arg_26_1.Data.uid] = nil
 	end
 
 	return
 end
 
-function var_0_7.onAntiAirArea(arg_27_0, arg_27_1)
+function var_0_6.onAntiAirArea(arg_27_0, arg_27_1)
 	if arg_27_1.Data.isShow ~= nil then
-		local var_27_0 = arg_27_0._antiAirArea.gameObject
+		arg_27_0._antiAirArea.gameObject:SetActive(arg_27_1.Data.isShow)
 
-		var_3.SetActive(var_27_0, arg_27_1.Data.isShow)
+		if arg_27_1.Data.isShow == true then
+			local var_27_0 = arg_27_0._leftFleet:GetFleetAntiAirWeapon():GetRange() * 2
 
-		if var_2 == true then
-			local var_27_1 = arg_27_0._leftFleet
-			local var_27_2 = var_3.GetFleetAntiAirWeapon(var_27_1)
-			local var_27_3 = var_3.GetRange(var_27_2) * 2
-			local var_27_4 = arg_27_0._antiAirAreaTF
-
-			Vector3 = var_27_2
-			var_27_4.localScale = var_27_2(var_27_3, 0, var_27_3)
+			arg_27_0._antiAirAreaTF.localScale = Vector3(var_27_0, 0, var_27_0)
 		end
 	end
 
 	return
 end
 
-function var_0_7.onAntiAirOverload(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_1.Dispatcher
-	local var_28_1 = arg_28_0._antiAirAreaTF
-	local var_28_2 = var_3.Find(var_28_1, "Quad")
-	local var_28_3 = var_3.GetComponent
+function var_0_6.onAntiAirOverload(arg_28_0, arg_28_1)
+	local var_28_0 = arg_28_0._antiAirAreaTF:Find("Quad"):GetComponent(typeof(Animator))
 
-	typeof = var_6
-	Animator = var_1_10008
-
-	local var_28_4 = var_28_3(var_28_2, var_6(var_1_10008))
-
-	if var_28_0:IsOverLoad() then
-		var_28_4.enabled = false
-	else
-		var_28_4.enabled = true
-	end
+	var_28_0.enabled = not arg_28_1.Dispatcher:IsOverLoad()
 
 	return
 end
 
-function var_0_7.onUpdateHostileSubmarine(arg_29_0, arg_29_1)
+function var_0_6.onUpdateHostileSubmarine(arg_29_0, arg_29_1)
 	arg_29_0:updateSonarView()
 
 	return
 end
 
-function var_0_7.updateSonarView(arg_30_0)
-	local var_30_0 = arg_30_0._dataProxy
-	local var_30_1 = var_1.GetEnemySubmarineCount(var_30_0)
+function var_0_6.updateSonarView(arg_30_0)
+	local var_30_0 = arg_30_0._dataProxy:GetEnemySubmarineCount() > 0
 
-	arg_30_0._sonarActive = 0 < var_30_1
-	pairs = var_2
+	arg_30_0._sonarActive = var_30_0
 
-	for iter_30_0, iter_30_1 in var_2(arg_30_0._characterList) do
-		iter_30_1:SonarAcitve(var_1)
+	for iter_30_0, iter_30_1 in pairs(arg_30_0._characterList) do
+		iter_30_1:SonarAcitve(var_30_0)
 	end
 
-	local var_30_2 = arg_30_0._leftFleet
-	local var_30_3 = var_2.GetFleetSonar(var_30_2)
-	local var_30_4 = var_2.GetCurrentState(var_30_3) ~= var_0.Battle.BattleFleetStaticSonar.STATE_DISABLE and var_1
-	local var_30_5 = arg_30_0._anitSubArea.gameObject
+	local var_30_1 = arg_30_0._leftFleet:GetFleetSonar()
+	local var_30_2 = var_30_1:GetCurrentState() ~= var_0.Battle.BattleFleetStaticSonar.STATE_DISABLE and var_30_0
 
-	var_4.SetActive(var_30_5, var_30_4)
+	arg_30_0._anitSubArea.gameObject:SetActive(var_30_2)
 
-	if var_30_4 then
-		local var_30_6 = arg_30_0._leftFleet
-		local var_30_7 = var_4.GetFleetSonar(var_30_6)
-		local var_30_8 = var_4.GetRange(var_30_7)
-		local var_30_9 = arg_30_0._anitSubAreaTF
+	if var_30_2 then
+		local var_30_3 = arg_30_0._leftFleet:GetFleetSonar():GetRange()
 
-		Vector3 = var_30_7
-		var_30_9.localScale = var_30_7(var_30_8, 0, var_30_8)
+		arg_30_0._anitSubAreaTF.localScale = Vector3(var_30_3, 0, var_30_3)
 	end
 
 	return
 end
 
-function var_0_7.onSonarScan(arg_31_0, arg_31_1)
+function var_0_6.onSonarScan(arg_31_0, arg_31_1)
 	if arg_31_1.Data.indieSonar then
-		local var_31_0 = arg_31_0._fxPool
-		local var_31_1 = var_3.GetFX(var_31_0, "AntiSubArea").transform
+		local var_31_0 = arg_31_0._fxPool:GetFX("AntiSubArea").transform
 
-		Vector3 = var_31_0
-		var_31_1.localScale = var_31_0(100, 0, 100)
-		SetActive = var_5
+		var_31_0.localScale = Vector3(100, 0, 100)
 
-		local var_31_2 = var_31_1
+		SetActive(var_31_0:Find("static"), false)
 
-		var_5(var_31_1.Find(var_31_2, "static"), false)
+		local var_31_1 = var_31_0:Find("Quad")
+		local var_31_2 = var_31_1:GetComponent(typeof(Animator))
 
-		local var_31_3 = var_31_1:Find("Quad")
-		local var_31_4 = var_5.GetComponent
+		var_31_2.enabled = true
 
-		typeof = var_31_2
-		Animator = var_1_10011
+		var_31_2:Play("antiSubZoom", -1, 0)
 
-		local var_31_5 = var_31_4(var_31_3, var_31_2(var_1_10011))
+		arg_31_0._anitSubAreaTFList[var_31_0] = true
 
-		var_31_5.enabled = true
-
-		var_31_5:Play("antiSubZoom", -1, 0)
-
-		arg_31_0._anitSubAreaTFList[var_31_1] = true
-
-		local var_31_6 = var_5:GetComponent("DftAniEvent")
-
-		var_7.SetEndEvent(var_31_6, function(arg_32_0)
-			arg_31_0._anitSubAreaTFList[var_31_1] = nil
+		var_31_1:GetComponent("DftAniEvent"):SetEndEvent(function(arg_32_0)
+			arg_31_0._anitSubAreaTFList[var_31_0] = nil
 
 			return
 		end)
 	elseif arg_31_0._antiSubScanAnima and arg_31_0._sonarActive then
 		arg_31_0._antiSubScanAnima.enabled = true
 
-		local var_31_7 = arg_31_0._antiSubScanAnima
-
-		var_3.Play(var_31_7, "antiSubZoom", -1, 0)
+		arg_31_0._antiSubScanAnima:Play("antiSubZoom", -1, 0)
 	end
 
 	return
 end
 
-function var_0_7.onAddAimBias(arg_33_0, arg_33_1)
-	local var_33_0 = arg_33_1.Data.aimBias
-	local var_33_1 = arg_33_0._fxPool
-	local var_33_2 = var_3.GetFX(var_33_1, "AimBiasArea").transform
-	local var_33_3 = arg_33_0._aimBiasTFList
-	local var_33_4 = {
-		tf = var_33_2
+function var_0_6.onAddAimBias(arg_33_0, arg_33_1)
+	arg_33_0._aimBiasTFList[arg_33_1.Data.aimBias] = {
+		tf = arg_33_0._fxPool:GetFX("AimBiasArea").transform,
+		vector = Vector3(5, 0, 5)
 	}
 
-	Vector3 = var_1_10007
-	var_33_4.vector = var_1_10007(5, 0, 5)
-	var_33_3[var_33_0] = var_33_4
-
 	return
 end
 
-function var_0_7.onRemoveAimBias(arg_34_0, arg_34_1)
-	local var_34_0 = arg_34_1.Data.aimBias
+function var_0_6.onRemoveAimBias(arg_34_0, arg_34_1)
+	if arg_34_0._aimBiasTFList[arg_34_1.Data.aimBias] then
+		var_0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg_34_0._aimBiasTFList[arg_34_1.Data.aimBias].tf.gameObject)
 
-	if arg_34_0._aimBiasTFList[var_34_0] then
-		local var_34_1 = var_3.tf.gameObject
-		local var_34_2 = var_0.Battle.BattleResourceManager.GetInstance()
-
-		var_5.DestroyOb(var_34_2, var_34_1)
-
-		arg_34_0._aimBiasTFList[var_34_0] = nil
+		arg_34_0._aimBiasTFList[arg_34_1.Data.aimBias] = nil
 	end
 
 	return
 end
 
-function var_0_7.onUpdateMoveMark(arg_35_0, arg_35_1)
-	local var_35_0 = arg_35_1.Data.pos
-
+function var_0_6.onUpdateMoveMark(arg_35_0, arg_35_1)
 	if not arg_35_0._moveMarkFXTF then
-		local var_35_1 = arg_35_0._fxPool
-
-		arg_35_0._moveMarkFX = var_35_2.GetFX(var_35_1, "kapai_weizhi")
+		arg_35_0._moveMarkFX = arg_35_0._fxPool:GetFX("kapai_weizhi")
 		arg_35_0._moveMarkFXTF = arg_35_0._moveMarkFX.transform
 	end
 
-	local var_35_2
+	if arg_35_1.Data.pos then
+		setActive(arg_35_0._moveMarkFXTF, true)
 
-	if var_35_0 then
-		setActive = var_35_2
-
-		var_35_2(arg_35_0._moveMarkFXTF, true)
-
-		var_35_2 = arg_35_0._moveMarkFXTF
-		var_35_2.position = var_35_0
+		arg_35_0._moveMarkFXTF.position = arg_35_1.Data.pos
 	else
-		setActive = var_35_2
-
-		var_35_2(arg_35_0._moveMarkFXTF, false)
+		setActive(arg_35_0._moveMarkFXTF, false)
 	end
 
 	return
 end
 
-function var_0_7.onBoardClick(arg_36_0, arg_36_1)
-	local var_36_0 = arg_36_1.Data.click
-	local var_36_1 = arg_36_0._leftFleet
-	local var_36_2 = var_4.GetCardPuzzleComponent(var_36_1)
-	local var_36_3 = var_4.GetTouchScreenPoint(var_36_2)
+function var_0_6.onBoardClick(arg_36_0, arg_36_1)
+	local var_36_0 = arg_36_0._leftFleet:GetCardPuzzleComponent():GetTouchScreenPoint()
 
-	if var_36_0 == var_0.Battle.CardPuzzleBoardClicker.CLICK_STATE_CLICK then
-		local var_36_4 = arg_36_0._fxPool
-
-		arg_36_0._clickMarkFxTF = var_5.GetFX(var_36_4, "kapai_weizhi").transform
-		arg_36_0._clickMarkFxTF.position = var_36_3
-	elseif var_36_0 == var_0.Battle.CardPuzzleBoardClicker.CLICK_STATE_DRAG then
-		arg_36_0._clickMarkFxTF.position = var_36_3
-	elseif var_36_0 == var_0.Battle.CardPuzzleBoardClicker.CLICK_STATE_RELEASE and arg_36_0._clickMarkFxTF then
-		local var_36_5 = var_0.Battle.BattleResourceManager.GetInstance()
-
-		var_5.DestroyOb(var_36_5, arg_36_0._clickMarkFxTF.gameObject)
+	if arg_36_1.Data.click == var_0.Battle.CardPuzzleBoardClicker.CLICK_STATE_CLICK then
+		arg_36_0._clickMarkFxTF = arg_36_0._fxPool:GetFX("kapai_weizhi").transform
+		arg_36_0._clickMarkFxTF.position = var_36_0
+	elseif arg_36_1.Data.click == var_0.Battle.CardPuzzleBoardClicker.CLICK_STATE_DRAG then
+		arg_36_0._clickMarkFxTF.position = var_36_0
+	elseif arg_36_1.Data.click == var_0.Battle.CardPuzzleBoardClicker.CLICK_STATE_RELEASE and arg_36_0._clickMarkFxTF then
+		var_0.Battle.BattleResourceManager.GetInstance():DestroyOb(arg_36_0._clickMarkFxTF.gameObject)
 	end
 
 	return
 end
 
-function var_0_7.onCameraFocusReset(arg_37_0, arg_37_1)
+function var_0_6.onCameraFocusReset(arg_37_0, arg_37_1)
 	arg_37_0:ResetFocus()
 
 	return
 end
 
-function var_0_7.onAddCameraFX(arg_38_0, arg_38_1)
-	local var_38_0 = arg_38_1.Data.FXID
-	local var_38_1 = arg_38_1.Data.position
-	local var_38_2 = arg_38_1.Data.localScale
-	local var_38_3 = arg_38_1.Data.orderDiff
-
-	arg_38_0:AddCameraFX(var_38_3, var_38_0, var_38_1, var_38_2)
+function var_0_6.onAddCameraFX(arg_38_0, arg_38_1)
+	arg_38_0:AddCameraFX(arg_38_1.Data.orderDiff, arg_38_1.Data.FXID, arg_38_1.Data.position, arg_38_1.Data.localScale)
 
 	return
 end
 
-function var_0_7.AddCameraFX(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4)
-	local var_39_0 = arg_39_0._fxPool
-	local var_39_1 = var_5.GetFX(var_39_0, arg_39_2)
-	local var_39_2 = arg_39_0._cameraUtil
-	local var_39_3 = var_6.Add2Camera(var_39_2, var_39_1, arg_39_1)
+function var_0_6.AddCameraFX(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4)
+	local var_39_0 = arg_39_0._fxPool:GetFX(arg_39_2)
+	local var_39_1 = arg_39_0._cameraUtil:Add2Camera(var_39_0, arg_39_1)
 
 	arg_39_4 = arg_39_4 or 1
+	var_39_0.transform.localScale = Vector3(arg_39_4 / var_39_1.x, arg_39_4 / var_39_1.y, arg_39_4 / var_39_1.z)
 
-	local var_39_4 = var_39_1.transform
-
-	Vector3 = var_39_2
-	var_39_4.localScale = var_39_2(arg_39_4 / var_39_3.x, arg_39_4 / var_39_3.y, arg_39_4 / var_39_3.z)
-	pg = var_39_4
-
-	local var_39_5 = var_39_4.EffectMgr.GetInstance()
-
-	var_7.PlayBattleEffect(var_39_5, var_39_1, arg_39_3, true)
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var_39_0, arg_39_3, true)
 
 	return
 end
 
-function var_0_7.onUpdateSkillAim(arg_40_0, arg_40_1)
+function var_0_6.onUpdateSkillAim(arg_40_0, arg_40_1)
 	arg_40_0._cardAimTargetFilter = arg_40_1.Data.targetFilterList
 
 	return
 end
 
-function var_0_7.Update(arg_41_0)
-	pairs = var_1_10001
-
-	for iter_41_0, iter_41_1 in var_1_10001(arg_41_0._characterList) do
+function var_0_6.Update(arg_41_0)
+	for iter_41_0, iter_41_1 in pairs(arg_41_0._characterList) do
 		iter_41_1:Update()
 	end
 
-	pairs = var_1
-
-	for iter_41_2, iter_41_3 in var_1(arg_41_0._aircraftList) do
+	for iter_41_2, iter_41_3 in pairs(arg_41_0._aircraftList) do
 		iter_41_3:Update()
 	end
 
-	pairs = var_1
-
-	for iter_41_4, iter_41_5 in var_1(arg_41_0._bulletList) do
+	for iter_41_4, iter_41_5 in pairs(arg_41_0._bulletList) do
 		iter_41_5:Update()
 	end
 
-	pairs = var_1
-
-	for iter_41_6, iter_41_7 in var_1(arg_41_0._areaList) do
+	for iter_41_6, iter_41_7 in pairs(arg_41_0._areaList) do
 		iter_41_7:Update()
 	end
 
-	ipairs = var_1
-
-	for iter_41_8, iter_41_9 in var_1(arg_41_0._arcEffectList) do
+	for iter_41_8, iter_41_9 in ipairs(arg_41_0._arcEffectList) do
 		iter_41_9:Update()
 	end
 
@@ -904,22 +548,18 @@ function var_0_7.Update(arg_41_0)
 	return
 end
 
-function var_0_7.UpdatePause(arg_42_0)
-	pairs = var_1_10001
-
-	for iter_42_0, iter_42_1 in var_1_10001(arg_42_0._characterList) do
+function var_0_6.UpdatePause(arg_42_0)
+	for iter_42_0, iter_42_1 in pairs(arg_42_0._characterList) do
 		iter_42_1:UpdateUIComponentPosition()
 		iter_42_1:UpdateHPBarPosition()
 	end
 
-	pairs = var_1
-
-	for iter_42_2, iter_42_3 in var_1(arg_42_0._aircraftList) do
+	for iter_42_2, iter_42_3 in pairs(arg_42_0._aircraftList) do
 		iter_42_3:UpdateUIComponentPosition()
 
 		local var_42_0 = iter_42_3:GetUnitData()
 
-		if var_6.GetUniqueID(var_42_0) == var_0_4.FOE_CODE then
+		if var_42_0:GetUniqueID() == var_0_3.FOE_CODE then
 			iter_42_3:UpdateHPBarPosition()
 		end
 	end
@@ -929,10 +569,8 @@ function var_0_7.UpdatePause(arg_42_0)
 	return
 end
 
-function var_0_7.UpdateEscapeOnly(arg_43_0, arg_43_1)
-	pairs = var_1_10002
-
-	for iter_43_0, iter_43_1 in var_1_10002(arg_43_0._characterList) do
+function var_0_6.UpdateEscapeOnly(arg_43_0, arg_43_1)
+	for iter_43_0, iter_43_1 in pairs(arg_43_0._characterList) do
 		if iter_43_1.__name == var_0.Battle.BattleEnemyCharacter.__name or iter_43_1.__name == var_0.Battle.BattleBossCharacter.__name then
 			iter_43_1:Update(arg_43_1)
 		end
@@ -941,66 +579,31 @@ function var_0_7.UpdateEscapeOnly(arg_43_0, arg_43_1)
 	return
 end
 
-function var_0_7.Pause(arg_44_0)
+function var_0_6.Pause(arg_44_0)
 	arg_44_0:PauseCharacterAction(true)
 
-	pairs = var_1
+	for iter_44_0, iter_44_1 in pairs(arg_44_0._areaList) do
+		local var_44_0 = iter_44_1._go:GetComponentsInChildren(typeof(ParticleSystem))
 
-	for iter_44_0, iter_44_1 in var_1(arg_44_0._areaList) do
-		local var_44_0 = iter_44_1._go
-		local var_44_1 = var_6.GetComponentsInChildren
-
-		typeof = var_1_10009
-		ParticleSystem = iter_44_11
-
-		local var_44_2 = var_44_1(var_44_0, var_1_10009(iter_44_11))
-		local var_44_3 = var_6.ToTable(var_44_2)
-
-		ipairs = var_1_10007
-
-		for iter_44_2, iter_44_11 in var_1_10007(var_44_3) do
-			iter_44_11:Pause()
+		for iter_44_2, iter_44_3 in ipairs((var_44_0:ToTable())) do
+			iter_44_3:Pause()
 		end
 	end
 
-	local var_44_4 = arg_44_0._cameraUtil
+	arg_44_0._cameraUtil:PauseShake()
 
-	var_1.PauseShake(var_44_4)
+	for iter_44_4, iter_44_5 in ipairs(arg_44_0._arcEffectList) do
+		local var_44_1 = iter_44_5._go:GetComponentsInChildren(typeof(ParticleSystem))
 
-	ipairs = var_1
-
-	for iter_44_4, iter_44_5 in var_1(arg_44_0._arcEffectList) do
-		local var_44_5 = iter_44_5._go
-		local var_44_6 = var_6.GetComponentsInChildren
-
-		typeof = var_1_10009
-		ParticleSystem = iter_44_11
-
-		local var_44_7 = var_44_6(var_44_5, var_1_10009(iter_44_11))
-		local var_44_8 = var_6.ToTable(var_44_7)
-
-		ipairs = var_1_10007
-
-		for iter_44_6, iter_44_11 in var_1_10007(var_44_8) do
-			iter_44_11:Pause()
+		for iter_44_6, iter_44_7 in ipairs((var_44_1:ToTable())) do
+			iter_44_7:Pause()
 		end
 	end
 
-	pairs = var_1
+	for iter_44_8, iter_44_9 in pairs(arg_44_0._particleBulletList) do
+		local var_44_2 = iter_44_8._go:GetComponentsInChildren(typeof(ParticleSystem))
 
-	for iter_44_8, iter_44_9 in var_1(arg_44_0._particleBulletList) do
-		local var_44_9 = iter_44_8._go
-		local var_44_10 = var_6.GetComponentsInChildren
-
-		typeof = var_1_10009
-		ParticleSystem = iter_44_11
-
-		local var_44_11 = var_44_10(var_44_9, var_1_10009(iter_44_11))
-		local var_44_12 = var_6.ToTable(var_44_11)
-
-		ipairs = var_1_10007
-
-		for iter_44_10, iter_44_11 in var_1_10007(var_44_12) do
+		for iter_44_10, iter_44_11 in ipairs((var_44_2:ToTable())) do
 			iter_44_11:Pause()
 		end
 	end
@@ -1008,66 +611,31 @@ function var_0_7.Pause(arg_44_0)
 	return
 end
 
-function var_0_7.Resume(arg_45_0)
+function var_0_6.Resume(arg_45_0)
 	arg_45_0:PauseCharacterAction(false)
 
-	pairs = var_1
+	for iter_45_0, iter_45_1 in pairs(arg_45_0._areaList) do
+		local var_45_0 = iter_45_1._go:GetComponentsInChildren(typeof(ParticleSystem))
 
-	for iter_45_0, iter_45_1 in var_1(arg_45_0._areaList) do
-		local var_45_0 = iter_45_1._go
-		local var_45_1 = var_6.GetComponentsInChildren
-
-		typeof = var_1_10009
-		ParticleSystem = iter_45_11
-
-		local var_45_2 = var_45_1(var_45_0, var_1_10009(iter_45_11))
-		local var_45_3 = var_6.ToTable(var_45_2)
-
-		ipairs = var_1_10007
-
-		for iter_45_2, iter_45_11 in var_1_10007(var_45_3) do
-			iter_45_11:Pause()
+		for iter_45_2, iter_45_3 in ipairs((var_45_0:ToTable())) do
+			iter_45_3:Pause()
 		end
 	end
 
-	local var_45_4 = arg_45_0._cameraUtil
+	arg_45_0._cameraUtil:ResumeShake()
 
-	var_1.ResumeShake(var_45_4)
+	for iter_45_4, iter_45_5 in ipairs(arg_45_0._arcEffectList) do
+		local var_45_1 = iter_45_5._go:GetComponentsInChildren(typeof(ParticleSystem))
 
-	ipairs = var_1
-
-	for iter_45_4, iter_45_5 in var_1(arg_45_0._arcEffectList) do
-		local var_45_5 = iter_45_5._go
-		local var_45_6 = var_6.GetComponentsInChildren
-
-		typeof = var_1_10009
-		ParticleSystem = iter_45_11
-
-		local var_45_7 = var_45_6(var_45_5, var_1_10009(iter_45_11))
-		local var_45_8 = var_6.ToTable(var_45_7)
-
-		ipairs = var_1_10007
-
-		for iter_45_6, iter_45_11 in var_1_10007(var_45_8) do
-			iter_45_11:Pause()
+		for iter_45_6, iter_45_7 in ipairs((var_45_1:ToTable())) do
+			iter_45_7:Pause()
 		end
 	end
 
-	pairs = var_1
+	for iter_45_8, iter_45_9 in pairs(arg_45_0._particleBulletList) do
+		local var_45_2 = iter_45_8._go:GetComponentsInChildren(typeof(ParticleSystem))
 
-	for iter_45_8, iter_45_9 in var_1(arg_45_0._particleBulletList) do
-		local var_45_9 = iter_45_8._go
-		local var_45_10 = var_6.GetComponentsInChildren
-
-		typeof = var_1_10009
-		ParticleSystem = iter_45_11
-
-		local var_45_11 = var_45_10(var_45_9, var_1_10009(iter_45_11))
-		local var_45_12 = var_6.ToTable(var_45_11)
-
-		ipairs = var_1_10007
-
-		for iter_45_10, iter_45_11 in var_1_10007(var_45_12) do
+		for iter_45_10, iter_45_11 in ipairs((var_45_2:ToTable())) do
 			iter_45_11:Pause()
 		end
 	end
@@ -1075,38 +643,29 @@ function var_0_7.Resume(arg_45_0)
 	return
 end
 
-function var_0_7.onBulletTime(arg_46_0, arg_46_1)
-	local var_46_0 = arg_46_1.Data.key
+function var_0_6.onBulletTime(arg_46_0, arg_46_1)
+	if arg_46_1.Data.speed then
+		local var_46_0 = arg_46_1.Data.exemptUnit:GetUniqueID()
 
-	if var_2.speed then
-		local var_46_1 = var_2.exemptUnit
-		local var_46_2 = var_5.GetUniqueID(var_46_1)
+		var_0_4.AppendIFFFactor(var_0_3.FOE_CODE, arg_46_1.Data.key, arg_46_1.Data.speed)
+		var_0_4.AppendIFFFactor(var_0_3.FRIENDLY_CODE, arg_46_1.Data.key, arg_46_1.Data.speed)
 
-		var_0_5.AppendIFFFactor(var_0_4.FOE_CODE, var_46_0, var_4)
-		var_0_5.AppendIFFFactor(var_0_4.FRIENDLY_CODE, var_46_0, var_4)
-
-		pairs = var_6
-
-		for iter_46_0, iter_46_1 in var_6(arg_46_0._characterList) do
-			if iter_46_0 == var_46_2 then
-				iter_46_1:SetAnimaSpeed(1 / var_4)
+		for iter_46_0, iter_46_1 in pairs(arg_46_0._characterList) do
+			if iter_46_0 == var_46_0 then
+				iter_46_1:SetAnimaSpeed(1 / arg_46_1.Data.speed)
 
 				break
 			end
 		end
 	else
-		var_0_5.RemoveIFFFactor(var_0_4.FOE_CODE, var_46_0)
-		var_0_5.RemoveIFFFactor(var_0_4.FRIENDLY_CODE, var_46_0)
+		var_0_4.RemoveIFFFactor(var_0_3.FOE_CODE, arg_46_1.Data.key)
+		var_0_4.RemoveIFFFactor(var_0_3.FRIENDLY_CODE, arg_46_1.Data.key)
 
-		pairs = var_5
-
-		for iter_46_2, iter_46_3 in var_5(arg_46_0._characterList) do
+		for iter_46_2, iter_46_3 in pairs(arg_46_0._characterList) do
 			iter_46_3:SetAnimaSpeed(1)
 		end
 
-		pairs = var_5
-
-		for iter_46_4, iter_46_5 in var_5(arg_46_0._bulletList) do
+		for iter_46_4, iter_46_5 in pairs(arg_46_0._bulletList) do
 			iter_46_5:SetAnimaSpeed(1)
 		end
 	end
@@ -1114,183 +673,124 @@ function var_0_7.onBulletTime(arg_46_0, arg_46_1)
 	return
 end
 
-function var_0_7.ResetFocus(arg_47_0)
-	var_0_5.RemoveIFFFactor(var_0_4.FOE_CODE, var_0_4.SPEED_FACTOR_FOCUS_CHARACTER)
-	var_0_5.RemoveIFFFactor(var_0_4.FRIENDLY_CODE, var_0_4.SPEED_FACTOR_FOCUS_CHARACTER)
+function var_0_6.ResetFocus(arg_47_0)
+	var_0_4.RemoveIFFFactor(var_0_3.FOE_CODE, var_0_3.SPEED_FACTOR_FOCUS_CHARACTER)
+	var_0_4.RemoveIFFFactor(var_0_3.FRIENDLY_CODE, var_0_3.SPEED_FACTOR_FOCUS_CHARACTER)
 
-	pairs = var_1
-
-	for iter_47_0, iter_47_1 in var_1(arg_47_0._characterList) do
+	for iter_47_0, iter_47_1 in pairs(arg_47_0._characterList) do
 		iter_47_1:SetAnimaSpeed(1)
 	end
 
-	pairs = var_1
-
-	for iter_47_2, iter_47_3 in var_1(arg_47_0._bulletList) do
+	for iter_47_2, iter_47_3 in pairs(arg_47_0._bulletList) do
 		iter_47_3:SetAnimaSpeed(1)
 	end
 
-	local var_47_0 = arg_47_0._cameraUtil
-
-	var_1.ZoomCamara(var_47_0, nil, nil, var_0_4.CAM_RESET_DURATION)
+	arg_47_0._cameraUtil:ZoomCamara(nil, nil, var_0_3.CAM_RESET_DURATION)
 
 	return
 end
 
-function var_0_7.UpdateFlagShipMark(arg_48_0)
-	local var_48_0 = arg_48_0.FlagShipUIPos
-	local var_48_1 = var_1.Copy
-	local var_48_2 = arg_48_0._leftFleetMotion
-	local var_48_3 = var_48_1(var_48_0, var_4.GetPos(var_48_2))
-	local var_48_4 = arg_48_0._goFlagShipMarkTf
-	local var_48_5 = var_0_5.CameraPosToUICamera(var_48_3)
-
-	var_48_4.position = var_3.Add(var_48_5, var_0_8)
+function var_0_6.UpdateFlagShipMark(arg_48_0)
+	arg_48_0._goFlagShipMarkTf.position = var_0_4.CameraPosToUICamera((arg_48_0.FlagShipUIPos:Copy(arg_48_0._leftFleetMotion:GetPos()))):Add(var_0_7)
 
 	return
 end
 
-function var_0_7.UpdateAntiAirArea(arg_49_0)
-	local var_49_0 = arg_49_0._antiAirAreaTF
-	local var_49_1 = arg_49_0._leftFleetMotion
+function var_0_6.UpdateAntiAirArea(arg_49_0)
+	arg_49_0._antiAirAreaTF.position = arg_49_0._leftFleetMotion:GetPos()
 
-	var_49_0.position = var_2.GetPos(var_49_1)
-	pairs = var_49_0
-
-	for iter_49_0, iter_49_1 in var_49_0(arg_49_0._anitSubAreaTFList) do
-		local var_49_2 = arg_49_0._leftFleetMotion
-
-		iter_49_0.position = var_6.GetPos(var_49_2)
+	for iter_49_0, iter_49_1 in pairs(arg_49_0._anitSubAreaTFList) do
+		iter_49_0.position = arg_49_0._leftFleetMotion:GetPos()
 	end
 
 	return
 end
 
-function var_0_7.UpdateAimBiasArea(arg_50_0)
-	pairs = var_1_10001
-
-	for iter_50_0, iter_50_1 in var_1_10001(arg_50_0._aimBiasTFList) do
+function var_0_6.UpdateAimBiasArea(arg_50_0)
+	for iter_50_0, iter_50_1 in pairs(arg_50_0._aimBiasTFList) do
 		local var_50_0 = iter_50_1.tf
-		local var_50_1 = iter_50_1.vector
-		local var_50_2 = iter_50_1.cacheState
-		local var_50_3 = iter_50_0
-		local var_50_4 = iter_50_0.GetRange(var_50_3) * 2
+		local var_50_1 = iter_50_0:GetRange() * 2
 
-		var_50_1:Set(var_50_4, 0, var_50_4)
+		iter_50_1.vector:Set(var_50_1, 0, var_50_1)
 
 		var_50_0.position = iter_50_0:GetPosition()
-		var_50_0.localScale = var_50_1
+		var_50_0.localScale = iter_50_1.vector
 
-		if iter_50_0:GetCurrentState() ~= var_50_2 then
-			setActive = var_50_3
+		local var_50_2 = iter_50_0:GetCurrentState()
 
-			var_50_3(var_50_0:Find("suofang/Quad"), var_10 ~= iter_50_0.STATE_SKILL_EXPOSE)
+		if var_50_2 ~= iter_50_1.cacheState then
+			setActive(var_50_0:Find("suofang/Quad"), var_50_2 ~= iter_50_0.STATE_SKILL_EXPOSE)
 		end
 
-		iter_50_1.cacheState = var_10
+		iter_50_1.cacheState = var_50_2
 	end
 
 	return
 end
 
-function var_0_7.updateCardAim(arg_51_0)
-	local var_51_0 = {}
-
-	pairs = var_1_10002
-
-	for iter_51_0, iter_51_1 in var_1_10002(arg_51_0._cardAimTargetFilter) do
-		local var_51_1 = var_0_6.TargetFleetIndex(nil, {
+function var_0_6.updateCardAim(arg_51_0)
+	for iter_51_0, iter_51_1 in pairs(arg_51_0._cardAimTargetFilter) do
+		local var_51_0 = var_0_5.TargetFleetIndex(nil, {
 			fleetPos = iter_51_0
 		})[1]
 
-		ipairs = var_1_10008
+		for iter_51_2, iter_51_3 in ipairs(iter_51_1) do
+			local var_51_1
 
-		for iter_51_2, iter_51_3 in var_1_10008(iter_51_1) do
-			local var_51_2
-
-			ipairs = var_1_10014
-
-			for iter_51_4, iter_51_5 in var_1_10014(iter_51_3) do
-				var_51_2 = var_0_6[iter_51_5](var_51_1, nil, var_51_2)
+			for iter_51_4, iter_51_5 in ipairs(iter_51_3) do
+				var_51_1 = var_0_5[iter_51_5](var_51_0, nil, var_51_1)
 			end
 
-			ipairs = var_1_10014
-
-			for iter_51_6, iter_51_7 in var_1_10014(var_51_2) do
-				var_51_0[iter_51_7:GetUniqueID()] = true
+			for iter_51_6, iter_51_7 in ipairs(var_51_1) do
+				({})[iter_51_7:GetUniqueID()] = true
 			end
 		end
 	end
 
-	pairs = var_2
-
-	for iter_51_8, iter_51_9 in var_2(arg_51_0._cardAimTargetList) do
-		if not var_51_0[iter_51_8] then
-			Object = var_7
-
-			local var_51_3 = var_7.Destroy
-
-			go = var_1_10009
-
-			var_51_3(var_1_10009(iter_51_9))
+	for iter_51_8, iter_51_9 in pairs(arg_51_0._cardAimTargetList) do
+		if not ({})[iter_51_8] then
+			Object.Destroy(go(iter_51_9))
 
 			arg_51_0._cardAimTargetList[iter_51_8] = nil
 		end
 	end
 
-	pairs = var_2
+	for iter_51_10, iter_51_11 in pairs({}) do
+		local var_51_2 = arg_51_0._cardAimTargetList[iter_51_10] or arg_51_0:InstantiateCharacterComponent("SkillAimContainer/SkillAim").transform
 
-	for iter_51_10, iter_51_11 in var_2(var_51_0) do
-		local var_51_4
-
-		if not arg_51_0._cardAimTargetList[iter_51_10] then
-			var_51_4 = arg_51_0:InstantiateCharacterComponent("SkillAimContainer/SkillAim").transform
-		end
-
-		arg_51_0._cardAimTargetList[iter_51_10] = var_51_4
+		arg_51_0._cardAimTargetList[iter_51_10] = var_51_2
 
 		if arg_51_0._characterList[iter_51_10] then
-			var_51_4.position = var_8:GetReferenceVector(var_8.AIM_OFFSET)
+			var_51_2.position = arg_51_0._characterList[iter_51_10]:GetReferenceVector(arg_51_0._characterList[iter_51_10].AIM_OFFSET)
 		end
 	end
 
 	return
 end
 
-function var_0_7.AddBullet(arg_52_0, arg_52_1)
+function var_0_6.AddBullet(arg_52_0, arg_52_1)
 	local var_52_0 = arg_52_1:GetBulletData()
 
 	arg_52_0._bulletList[var_52_0:GetUniqueID()] = arg_52_1
 
-	if arg_52_1:GetGO() then
-		local var_52_1 = var_3
-		local var_52_2 = var_3.GetComponent
+	local var_52_1 = arg_52_1:GetGO()
 
-		typeof = var_1_10007
-		ParticleSystem = var_1_10009
-
-		if var_52_2(var_52_1, var_1_10007(var_1_10009)) then
-			arg_52_0._particleBulletList[arg_52_1] = true
-		end
+	if var_52_1 and var_52_1:GetComponent(typeof(ParticleSystem)) then
+		arg_52_0._particleBulletList[arg_52_1] = true
 	end
 
-	if var_0_5.focusExemptList[var_52_0:GetSpeedExemptKey()] then
-		local var_52_3 = arg_52_0._state
-		local var_52_4 = var_4.GetTimeScaleRate(var_52_3)
-
-		arg_52_1:SetAnimaSpeed(1 / var_52_4)
+	if var_0_4.focusExemptList[var_52_0:GetSpeedExemptKey()] then
+		arg_52_1:SetAnimaSpeed(1 / arg_52_0._state:GetTimeScaleRate())
 	end
 
 	return
 end
 
-function var_0_7.RemoveBullet(arg_53_0, arg_53_1)
+function var_0_6.RemoveBullet(arg_53_0, arg_53_1)
 	if arg_53_0._bulletList[arg_53_1] then
-		arg_53_0._particleBulletList[var_2] = nil
+		arg_53_0._particleBulletList[arg_53_0._bulletList[arg_53_1]] = nil
 
-		local var_53_0 = var_2:GetFactory()
-
-		var_3.RemoveBullet(var_53_0, var_2)
+		arg_53_0._bulletList[arg_53_1]:GetFactory():RemoveBullet(arg_53_0._bulletList[arg_53_1])
 	end
 
 	arg_53_0._bulletList[arg_53_1] = nil
@@ -1298,135 +798,96 @@ function var_0_7.RemoveBullet(arg_53_0, arg_53_1)
 	return
 end
 
-function var_0_7.GetBulletRoot(arg_54_0)
+function var_0_6.GetBulletRoot(arg_54_0)
 	return arg_54_0._bulletContainer
 end
 
-function var_0_7.EnablePopContainer(arg_55_0, arg_55_1, arg_55_2)
-	setActive = var_1_10003
-
-	local var_55_0 = arg_55_0._state
-	local var_55_1 = var_5.GetUI(var_55_0)._tf
-
-	var_1_10003(var_5.Find(var_55_1, arg_55_1), arg_55_2)
+function var_0_6.EnablePopContainer(arg_55_0, arg_55_1, arg_55_2)
+	setActive(arg_55_0._state:GetUI()._tf:Find(arg_55_1), arg_55_2)
 
 	return
 end
 
-function var_0_7.AddPlayerCharacter(arg_56_0, arg_56_1)
+function var_0_6.AddPlayerCharacter(arg_56_0, arg_56_1)
 	arg_56_0:AppendCharacter(arg_56_1)
 
-	local var_56_0 = arg_56_0._dataProxy
-	local var_56_1 = var_2.GetInitData(var_56_0).battleType
-	local var_56_2 = arg_56_1:GetUnitData()
-	local var_56_3 = var_3.IsMainFleetUnit(var_56_2)
+	local var_56_0 = arg_56_0._dataProxy:GetInitData().battleType
+	local var_56_1 = arg_56_1:GetUnitData():IsMainFleetUnit()
 
-	SYSTEM_DUEL = var_56_0
-
-	if var_56_1 == var_56_0 then
-		goto label_56_0
+	if var_56_0 == SYSTEM_DUEL then
+		-- block empty
+	elseif var_56_0 == SYSTEM_SUBMARINE_RUN or var_56_0 == SYSTEM_SUB_ROUTINE then
+		arg_56_1:SetBarHidden(false, false)
+	else
+		arg_56_1:SetBarHidden(not var_56_1, var_56_1)
 	end
 
-	SYSTEM_SUBMARINE_RUN = var_56_0
-
-	if var_56_1 ~= var_56_0 then
-		SYSTEM_SUB_ROUTINE = var_56_0
-
-		if var_56_1 == var_56_0 then
-			arg_56_1:SetBarHidden(false, false)
-		else
-			arg_56_1:SetBarHidden(not var_56_3, var_56_3)
-		end
-
-		::label_56_0::
-
-		return
-	end
+	return
 end
 
-function var_0_7.AddEnemyCharacter(arg_57_0, arg_57_1)
+function var_0_6.AddEnemyCharacter(arg_57_0, arg_57_1)
 	arg_57_0:AppendCharacter(arg_57_1)
 
 	return
 end
 
-function var_0_7.AppendCharacter(arg_58_0, arg_58_1)
-	local var_58_0 = arg_58_1:GetUnitData()
-
-	arg_58_0._characterList[var_58_0:GetUniqueID()] = arg_58_1
+function var_0_6.AppendCharacter(arg_58_0, arg_58_1)
+	arg_58_0._characterList[arg_58_1:GetUnitData():GetUniqueID()] = arg_58_1
 
 	return
 end
 
-function var_0_7.InstantiateCharacterComponent(arg_59_0, arg_59_1)
-	local var_59_0 = arg_59_0._state
-	local var_59_1 = var_2.GetUI(var_59_0)._tf
-	local var_59_2 = var_3.Find(var_59_1, arg_59_1)
+function var_0_6.InstantiateCharacterComponent(arg_59_0, arg_59_1)
+	local var_59_0 = arg_59_0._state:GetUI()._tf:Find(arg_59_1)
 
-	cloneTplTo = var_59_0
-
-	return var_59_0(var_59_2, var_59_2.parent).gameObject
+	return cloneTplTo(var_59_0, var_59_0.parent).gameObject
 end
 
-function var_0_7.GetCharacterList(arg_60_0)
+function var_0_6.GetCharacterList(arg_60_0)
 	return arg_60_0._characterList
 end
 
-function var_0_7.GetPopNumPool(arg_61_0)
+function var_0_6.GetPopNumPool(arg_61_0)
 	return arg_61_0._popNumMgr
 end
 
-function var_0_7.PauseCharacterAction(arg_62_0, arg_62_1)
-	pairs = var_1_10002
-
-	for iter_62_0, iter_62_1 in var_1_10002(arg_62_0._characterList) do
+function var_0_6.PauseCharacterAction(arg_62_0, arg_62_1)
+	for iter_62_0, iter_62_1 in pairs(arg_62_0._characterList) do
 		iter_62_1:PauseActionAnimation(arg_62_1)
 	end
 
 	return
 end
 
-function var_0_7.GetCharacter(arg_63_0, arg_63_1)
+function var_0_6.GetCharacter(arg_63_0, arg_63_1)
 	return arg_63_0._characterList[arg_63_1]
 end
 
-function var_0_7.GetAircraft(arg_64_0, arg_64_1)
+function var_0_6.GetAircraft(arg_64_0, arg_64_1)
 	return arg_64_0._aircraftList[arg_64_1]
 end
 
-function var_0_7.AddAirCraftCharacter(arg_65_0, arg_65_1)
-	local var_65_0 = arg_65_1:GetUnitData()
-
-	arg_65_0._aircraftList[var_65_0:GetUniqueID()] = arg_65_1
+function var_0_6.AddAirCraftCharacter(arg_65_0, arg_65_1)
+	arg_65_0._aircraftList[arg_65_1:GetUnitData():GetUniqueID()] = arg_65_1
 
 	return
 end
 
-function var_0_7.AddArea(arg_66_0, arg_66_1, arg_66_2)
-	local var_66_0 = arg_66_0._fxPool
-	local var_66_1 = var_3.GetFX(var_66_0, arg_66_2)
+function var_0_6.AddArea(arg_66_0, arg_66_1, arg_66_2)
+	local var_66_0 = false
 
-	pg = var_1_10004
-
-	local var_66_2 = var_1_10004.effect_offset[arg_66_2]
-	local var_66_3 = false
-
-	if var_66_2 and var_66_2.top_cover_offset == true then
-		var_66_3 = true
+	if pg.effect_offset[arg_66_2] and pg.effect_offset[arg_66_2].top_cover_offset == true then
+		var_66_0 = true
 	end
 
-	local var_66_4 = var_0.Battle.BattleEffectArea.New(var_66_1, arg_66_1, var_66_3)
-
-	arg_66_0._areaList[arg_66_1:GetUniqueID()] = var_66_4
+	arg_66_0._areaList[arg_66_1:GetUniqueID()] = var_0.Battle.BattleEffectArea.New(arg_66_0._fxPool:GetFX(arg_66_2), arg_66_1, var_66_0)
 
 	return
 end
 
-function var_0_7.RemoveArea(arg_67_0, arg_67_1)
+function var_0_6.RemoveArea(arg_67_0, arg_67_1)
 	if arg_67_0._areaList[arg_67_1] then
-		local var_67_0 = arg_67_0._areaList[arg_67_1]
-
-		var_2.Dispose(var_67_0)
+		arg_67_0._areaList[arg_67_1]:Dispose()
 
 		arg_67_0._areaList[arg_67_1] = nil
 	end
@@ -1434,57 +895,35 @@ function var_0_7.RemoveArea(arg_67_0, arg_67_1)
 	return
 end
 
-function var_0_7.AddEffect(arg_68_0, arg_68_1, arg_68_2, arg_68_3)
-	local var_68_0 = arg_68_0._fxPool
-	local var_68_1 = var_4.GetFX(var_68_0, arg_68_1)
+function var_0_6.AddEffect(arg_68_0, arg_68_1, arg_68_2, arg_68_3)
+	local var_68_0 = arg_68_0._fxPool:GetFX(arg_68_1)
 
 	arg_68_3 = arg_68_3 or 1
+	var_68_0.transform.localScale = Vector3(arg_68_3, 1, arg_68_3)
 
-	local var_68_2 = var_68_1.transform
-
-	Vector3 = var_68_0
-	var_68_2.localScale = var_68_0(arg_68_3, 1, arg_68_3)
-	pg = var_68_2
-
-	local var_68_3 = var_68_2.EffectMgr.GetInstance()
-
-	var_5.PlayBattleEffect(var_68_3, var_68_1, arg_68_2, true)
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var_68_0, arg_68_2, true)
 
 	return
 end
 
-function var_0_7.AddArcEffect(arg_69_0, arg_69_1, arg_69_2, arg_69_3, arg_69_4)
-	local var_69_0 = arg_69_0._fxPool
-	local var_69_1 = var_5.GetFX(var_69_0, arg_69_1)
-	local var_69_2 = var_0.Battle.BattleArcEffect.New(var_69_1, arg_69_2, arg_69_3, arg_69_4)
+function var_0_6.AddArcEffect(arg_69_0, arg_69_1, arg_69_2, arg_69_3, arg_69_4)
+	local var_69_0 = var_0.Battle.BattleArcEffect.New(arg_69_0._fxPool:GetFX(arg_69_1), arg_69_2, arg_69_3, arg_69_4)
 
-	local function var_69_3()
-		local var_70_0 = arg_69_0
-
-		var_0.RemoveArcEffect(var_70_0, var_69_2)
+	var_69_0:ConfigCallback(function()
+		arg_69_0:RemoveArcEffect(var_69_0)
 
 		return
-	end
-
-	var_69_2:ConfigCallback(var_69_3)
-
-	table = var_8
-
-	var_8.insert(arg_69_0._arcEffectList, var_69_2)
+	end)
+	table.insert(arg_69_0._arcEffectList, var_69_0)
 
 	return
 end
 
-function var_0_7.RemoveArcEffect(arg_71_0, arg_71_1)
-	ipairs = var_1_10002
-
-	for iter_71_0, iter_71_1 in var_1_10002(arg_71_0._arcEffectList) do
+function var_0_6.RemoveArcEffect(arg_71_0, arg_71_1)
+	for iter_71_0, iter_71_1 in ipairs(arg_71_0._arcEffectList) do
 		if iter_71_1 == arg_71_1 then
 			iter_71_1:Dispose()
-
-			table = var_7
-
-			var_7.remove(arg_71_0._arcEffectList, iter_71_0)
+			table.remove(arg_71_0._arcEffectList, iter_71_0)
 
 			break
 		end
@@ -1493,33 +932,23 @@ function var_0_7.RemoveArcEffect(arg_71_0, arg_71_1)
 	return
 end
 
-function var_0_7.Reinitialize(arg_72_0)
+function var_0_6.Reinitialize(arg_72_0)
 	arg_72_0:Clear()
 	arg_72_0:Init()
 
 	return
 end
 
-function var_0_7.AllBulletNeutralize(arg_73_0)
-	pairs = var_1_10001
-
-	for iter_73_0, iter_73_1 in var_1_10001(arg_73_0._characterList) do
+function var_0_6.AllBulletNeutralize(arg_73_0)
+	for iter_73_0, iter_73_1 in pairs(arg_73_0._characterList) do
 		if iter_73_1.__name == var_0.Battle.BattlePlayerCharacter.__name or iter_73_1.__name == var_0.Battle.BattleSubCharacter.__name then
 			iter_73_1:DisableWeaponTrack()
 		end
 	end
 
-	local var_73_0 = arg_73_0._antiAirArea
+	arg_73_0._antiAirArea:SetActive(false)
 
-	var_1.SetActive(var_73_0, false)
-
-	local var_73_1 = 0
-
-	pairs = var_2
-
-	for iter_73_2, iter_73_3 in var_2(arg_73_0._bulletList) do
-		var_73_1 = var_73_1 + 1
-
+	for iter_73_2, iter_73_3 in pairs(arg_73_0._bulletList) do
 		iter_73_3:Neutrailze()
 	end
 
@@ -1528,100 +957,60 @@ function var_0_7.AllBulletNeutralize(arg_73_0)
 	return
 end
 
-function var_0_7.Clear(arg_74_0)
-	pairs = var_1_10001
-
-	for iter_74_0, iter_74_1 in var_1_10001(arg_74_0._characterList) do
-		local var_74_0 = iter_74_1:GetFactory()
-
-		var_6.RemoveCharacter(var_74_0, iter_74_1)
+function var_0_6.Clear(arg_74_0)
+	for iter_74_0, iter_74_1 in pairs(arg_74_0._characterList) do
+		iter_74_1:GetFactory():RemoveCharacter(iter_74_1)
 	end
 
-	pairs = var_1
-
-	for iter_74_2, iter_74_3 in var_1(arg_74_0._aircraftList) do
-		local var_74_1 = iter_74_3:GetFactory()
-
-		var_6.RemoveCharacter(var_74_1, iter_74_3)
+	for iter_74_2, iter_74_3 in pairs(arg_74_0._aircraftList) do
+		iter_74_3:GetFactory():RemoveCharacter(iter_74_3)
 	end
 
 	arg_74_0._characterList = nil
 	arg_74_0._characterFactoryList = nil
-	pairs = var_1
 
-	for iter_74_4, iter_74_5 in var_1(arg_74_0._bulletList) do
+	for iter_74_4, iter_74_5 in pairs(arg_74_0._bulletList) do
 		arg_74_0:RemoveBullet(iter_74_4)
 	end
 
-	local var_74_2 = var_0.Battle.BattleBulletFactory.GetFactoryList()
-
-	pairs = var_2
-
-	for iter_74_6, iter_74_7 in var_2(var_74_2) do
-		var_1_10009 = iter_74_7
-
-		iter_74_7.Clear(var_1_10009)
+	for iter_74_6, iter_74_7 in pairs((var_0.Battle.BattleBulletFactory.GetFactoryList())) do
+		iter_74_7:Clear()
 	end
 
-	local var_74_3 = arg_74_0._fxPool
+	arg_74_0._fxPool:Clear()
 
-	var_2.Clear(var_74_3)
-
-	pairs = var_2
-
-	for iter_74_8, iter_74_9 in var_2(arg_74_0._areaList) do
-		var_1_10009 = arg_74_0
-
-		arg_74_0.RemoveArea(var_1_10009, iter_74_8)
+	for iter_74_8, iter_74_9 in pairs(arg_74_0._areaList) do
+		arg_74_0:RemoveArea(iter_74_8)
 	end
 
 	arg_74_0._areaList = nil
-	ipairs = var_2
 
-	for iter_74_10, iter_74_11 in var_2(arg_74_0._arcEffectList) do
-		var_1_10009 = iter_74_11
-
-		iter_74_11.Dispose(var_1_10009)
+	for iter_74_10, iter_74_11 in ipairs(arg_74_0._arcEffectList) do
+		iter_74_11:Dispose()
 	end
 
 	arg_74_0._arcEffectList = nil
-	pairs = var_2
 
-	for iter_74_12, iter_74_13 in var_2(arg_74_0._cardAimTargetList) do
-		Object = var_1_10007
-		var_1_10007 = var_1_10007.Destroy
-		go = var_1_10009
-
-		var_1_10007(var_1_10009(iter_74_13))
+	for iter_74_12, iter_74_13 in pairs(arg_74_0._cardAimTargetList) do
+		Object.Destroy(go(iter_74_13))
 	end
 
 	arg_74_0._cardAimTargetList = nil
 
-	local var_74_4 = var_0.Battle.BattleCharacterFXContainersPool.GetInstance()
-
-	var_2.Clear(var_74_4)
-
-	local var_74_5 = arg_74_0._popNumMgr
-
-	var_2.Clear(var_74_5)
-
-	local var_74_6 = var_0.Battle.BattleHPBarManager.GetInstance()
-
-	var_2.Clear(var_74_6)
-
-	local var_74_7 = var_0.Battle.BattleArrowManager.GetInstance()
-
-	var_2.Clear(var_74_7)
+	var_0.Battle.BattleCharacterFXContainersPool.GetInstance():Clear()
+	arg_74_0._popNumMgr:Clear()
+	var_0.Battle.BattleHPBarManager.GetInstance():Clear()
+	var_0.Battle.BattleArrowManager.GetInstance():Clear()
 
 	arg_74_0._anitSubAreaTFList = nil
 
 	return
 end
 
-function var_0_7.Dispose(arg_75_0)
+function var_0_6.Dispose(arg_75_0)
 	arg_75_0:Clear()
 	arg_75_0:RemoveEvent()
-	var_0_7.super.Dispose(arg_75_0)
+	var_0_6.super.Dispose(arg_75_0)
 
 	return
 end

@@ -34,6 +34,9 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.FIGHT_RESULT_SHOW_BEFORE_UI, self._openTheBeforeUI, self)
     GameDispatcher:addEventListener(EventName.FIGHT_REQUEST_FLY, self.onRequestFlyHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_FIGHT_SKILL_TIPS, self.onShowFightSkillTips, self)
+    GameDispatcher:addEventListener(EventName.OPEN_FORCES_SKILL_TIPS, self.onShowForcesSkillTips, self)
+    GameDispatcher:addEventListener(EventName.CLOSE_FORCES_SKILL_TIPS, self.onCloseForcesSkillTips, self)
+
     GameDispatcher:addEventListener(EventName.EXIT_SCENE_AFTER_OPEN_PANEL, self.exitSceneAfterOpenPanel, self)
     GameDispatcher:addEventListener(EventName.FIGHT_RESULT_PREVIEW_SHOW, self.onShowPreviewHanlder, self)
     GameDispatcher:addEventListener(EventName.SHOW_FIGHT_BLACK_MASK, self.onShowFightBlackHanlder, self)
@@ -44,11 +47,14 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.SHOW_SKIP_AOYI_EFFECT, self.onShowSkipAoyiEffect, self)
     GameDispatcher:addEventListener(EventName.REMOVE_SKIP_AOYI_EFFECT, self.onRemoveSkipAoyiEffect, self)
     GameDispatcher:addEventListener(EventName.CLOSE_FIGHT_SKILL_TIPS, self.onCloseFightSkillTips, self)
+
+    GameDispatcher:addEventListener(EventName.REQ_SAVE_SETTING_INFO, self.onReqSaveSettingInfoHandler, self)
 end
 
 --注册server发来的数据
 function registerMsgHandler(self)
     return {
+        SC_SETTING = self.onSettingMsgHandler,
         -- SC_BATTLE_CALC = self.onBattleCalcMsg
     }
 end
@@ -60,8 +66,17 @@ end
 
 -- 战斗结果返回 战斗结果（0:无效的战斗,1:胜利,2:失败）
 function onFightResultShowHandler(self)
+
+    if StorageUtil:hasKey0(gstor.RANDOM_FIGHT_SKIN) and StorageUtil:getBool0(gstor.RANDOM_FIGHT_SKIN) == true then
+        role.RoleManager:resetSkinId()
+    end
+
     self:onHideFightHandler()
+    self:onCloseForcesSkillTips()
     self:onCloseFightSkillTips()
+    
+  
+
     if fight.FightManager:getLatestBattleType() == PreFightBattleType.Arena_Peak_Pvp and not fight.FightManager:isReplaying() then
 
         local fightResult = fight.FightManager:getResultData()
@@ -74,6 +89,19 @@ function onFightResultShowHandler(self)
             return
         end
     end
+
+    if fight.FightManager:getLatestBattleType() == PreFightBattleType.GuildWar and not fight.FightManager:isReplaying() then
+        local fightResult = fight.FightManager:getResultData()
+        if fightResult and fightResult.args[1] == 1 then
+            GameDispatcher:dispatchEvent(EventName.EXIT_FIGHT_END_RESET)
+            -- 巅峰pvp
+            map.MapLoader:resetMapCtrl()
+
+            fight.FightManager:reqBattleEnter(PreFightBattleType.GuildWar, fight.FightManager:getLatestBattleFieldIDStr())
+            return
+        end
+    end
+
     if fight.FightManager.m_manualExitReplay == true then
         GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, {isWin = true})
     else
@@ -224,7 +252,7 @@ end
 -- 战斗结束打开对应的功能界面
 function _openTheBeforeUI(self)
 
-    print("_openTheBeforeUI ======== ", self.m_beforeFlagDirty, self.m_lastBattleType, self.m_lastTargetID)
+    -- print("_openTheBeforeUI ======== ", self.m_beforeFlagDirty, self.m_lastBattleType, self.m_lastTargetID)
     if self.m_beforeFlagDirty == false then
         return
     end
@@ -281,8 +309,8 @@ function _openTheBeforeUI(self)
         elseif self.m_lastBattleType == PreFightBattleType.DupOldEquip then
             GameDispatcher:dispatchEvent(EventName.OPEN_DUP_OLD_EQUIP_PANEL)
         elseif self.m_lastBattleType == PreFightBattleType.HeroTrial then
-            GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL)
-
+            -- GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL, {dupId = self.m_lastTargetID})
+            GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL)
         elseif self.m_lastBattleType == PreFightBattleType.DupMoney then
             GameDispatcher:dispatchEvent(EventName.OPEN_MAINPLAY_PANEL, {type = mainPlay.MainPlayConst.MAINPLAY_DUP})
             GameDispatcher:dispatchEvent(EventName.OPEN_DUP_DAILY_PANEL, {dupType = DupType.DUP_MONEY, dupId = self.m_lastTargetID, isFight = true})
@@ -344,6 +372,10 @@ function _openTheBeforeUI(self)
         elseif self.m_lastBattleType == PreFightBattleType.ArenaChallenge then
             GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Pvp})
             GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.PvpArena})
+        elseif self.m_lastBattleType == PreFightBattleType.Dup_Darkpotential then
+            --潜能副本-暗潜能副本
+            GameDispatcher:dispatchEvent(EventName.OPEN_MAINPLAY_PANEL, {type = mainPlay.MainPlayConst.MAINPLAY_DUP})
+            GameDispatcher:dispatchEvent(EventName.OPEN_DUP_POTENCY_VIEW, {dupType = DupType.Dup_Dark_Potential, dupId = self.m_lastTargetID, isFight = true})
         elseif self.m_lastBattleType == PreFightBattleType.Arena_Peak_Pvp then
             -- 3v3
             GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Pvp})
@@ -352,6 +384,9 @@ function _openTheBeforeUI(self)
                 -- 回放额外打开记录
                 GameDispatcher:dispatchEvent(EventName.OPEN_ARENA_HELL_HIS_PANEL)
             end
+        elseif self.m_lastBattleType == PreFightBattleType.GuildWar then
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Guild})
+            GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_MAIN_PANEL)
         elseif self.m_lastBattleType == PreFightBattleType.HeroBiography then
             local dupId = self.m_lastTargetID
             local biographyVo = battleMap.BiographyManager:getBiographyVoById(dupId)
@@ -462,6 +497,9 @@ function _openTheBeforeUI(self)
         elseif self.m_lastBattleType == PreFightBattleType.Doundless then
             --GameDispatcher:dispatchEvent(EventName.OPEN_MAINPLAY_PANEL, {type = mainPlay.MainPlayConst.MAINPLAY_CHALLAGE})
             GameDispatcher:dispatchEvent(EventName.REQ_DOUNDLESS_INFO)
+        elseif self.m_lastBattleType == PreFightBattleType.Vision then
+            -- 异象残境战斗结束后回到 Vision 界面
+            GameDispatcher:dispatchEvent(EventName.OPEN_VISION_PANEL)
         elseif self.m_lastBattleType == PreFightBattleType.Guild_Sweep then
             if guild.GuildManager:getGuildSweepState() == 1 then
                 gs.Message.Show("锁定中")
@@ -488,7 +526,7 @@ function _openTheBeforeUI(self)
             GameDispatcher:dispatchEvent(EventName.OPEN_GUILDBOSSIMITATE_STAGEPANEL)
         elseif self.m_lastBattleType == PreFightBattleType.Seabed then
             GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAIN_PANEL)
-            
+
             local hasData = seabed.SeabedManager:getSeabedHasSettleData()
             if hasData == false then
                 GameDispatcher:dispatchEvent(EventName.CAN_SEABED_NEED_PANEL)
@@ -515,6 +553,7 @@ end
 function onShowFightUIHandler(self)
     if self.mFightUI == nil then
         self.mFightUI = fightUI.FightUI.new()
+        self.mFightUI:superCtor()
         self.mFightUI:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightUI, self)
     end
     self.mFightUI:open()
@@ -576,7 +615,10 @@ function onOpenWinViewHandler(self, msg)
         msg.state = arenaEntrance.ResultState.WIN
         GameDispatcher:dispatchEvent(EventName.OPEN_ARENA_HELL_RESULT_PANEL, msg)
         return
-
+    elseif battleType == PreFightBattleType.GuildWar then
+        msg.state = guildWar.ResultState.WIN
+        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_RESULT_PANEL, msg)
+        return
     elseif battleType == PreFightBattleType.Cycle then
         if cycle.CycleManager:getResourceInfo().reason_point == 0 then
             GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, {
@@ -626,6 +668,11 @@ function onOpenWinViewHandler(self, msg)
     -- end
     -- self.m_fightWinView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyWinViewHandler, self)
     -- self.m_fightWinView:open(msg)
+
+    -- 以上逻辑都还不属于真正的胜利，放到此处
+    local chapterName, stageName = FightResultProxy:getDupNameBySdk(battleType, battleFieldID)
+    sdk.SdkManager:foreignNotifyRoleStagePassSuc(battleType, chapterName, battleFieldID)
+
     FightResultProxy:showWinView(battleType, battleFieldID, msg, self.onFightResultClose, self)
 
 end
@@ -674,6 +721,10 @@ function onOpenFailViewHandler(self, msg)
     if battleType == PreFightBattleType.Arena_Peak_Pvp then
         msg.state = arenaEntrance.ResultState.LOSE
         GameDispatcher:dispatchEvent(EventName.OPEN_ARENA_HELL_RESULT_PANEL, msg)
+        return
+    elseif battleType == PreFightBattleType.GuildWar then
+        msg.state = msg.result
+        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_RESULT_PANEL, msg)
         return
     end
 
@@ -742,6 +793,25 @@ function onDestroyFightSkillTips(self)
     self.mFightSkillTips = nil
 end
 
+function onShowForcesSkillTips(self, args)
+    if self.mForcesSkillTips == nil then
+        self.mForcesSkillTips = fightUI.FightForcesSkillTips.new()
+        self.mForcesSkillTips:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyForcesSkillTips, self)
+    end
+    self.mForcesSkillTips:open(args)
+end
+
+function onCloseForcesSkillTips(self)
+    if self.mForcesSkillTips and self.mForcesSkillTips.isPop == 1 then
+        self.mForcesSkillTips:close()
+    end
+end
+
+function onDestroyForcesSkillTips(self)
+    self.mForcesSkillTips:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyForcesSkillTips, self)
+    self.mForcesSkillTips = nil
+end
+
 function onShowPreviewHanlder(self, args)
     if self.mPreview == nil then
         self.mPreview = fightUI.FightDataPreView.new()
@@ -762,6 +832,14 @@ end
 -- 移除跳过奥义转场
 function onRemoveSkipAoyiEffect(self)
     UIEffectMgr:removeEffect("fx_ui_skipaoyi", GameView.pop)
+end
+
+function onReqSaveSettingInfoHandler(self, args)
+    SOCKET_SEND(Protocol.CS_SETTING, {key = args.key, val = args.value})
+end
+
+function onSettingMsgHandler(self, msg)
+    fight.FightManager:setSettingInfo(msg)
 end
 
 return _M

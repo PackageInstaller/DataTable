@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "share_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "share_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.share_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.share_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.share_template = rawget(pg, "share_template") or setmetatable({
+	__name = "share_template"
+}, confNEO)
+pg.share_template.all = {
 	1,
 	2,
 	3,
@@ -47,25 +24,11 @@ var_0_3.all = {
 	19,
 	20
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.share_template = {}
+pg.base = pg.base or {}
+pg.base.share_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.share_template
-
-	var_1_0[1] = {
+	pg.base.share_template[1] = {
 		description = "#碧蓝航线#",
 		name = "个人信息界面",
 		deck = 1,
@@ -84,11 +47,7 @@ var_0_3.base.share_template = {}
 			"/UICamera/Canvas/UIMain/PlayerVitaeUI(Clone)/detail/PlayerVitaeDetailPage(Clone)/btn_attire"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.share_template
-
-	var_1_1[2] = {
+	pg.base.share_template[2] = {
 		description = "#碧蓝航线#",
 		name = "档案界面",
 		deck = 1,
@@ -107,11 +66,7 @@ var_0_3.base.share_template = {}
 			"/UICamera/Canvas/UIMain/ShipProfileUI(Clone)/profile_panel/view_btn"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.share_template
-
-	var_1_2[3] = {
+	pg.base.share_template[3] = {
 		description = "#碧蓝航线#",
 		name = "获得新舰船界面",
 		deck = 2,
@@ -139,11 +94,7 @@ var_0_3.base.share_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.share_template
-
-	var_1_3[4] = {
+	pg.base.share_template[4] = {
 		description = "#碧蓝航线#",
 		name = "后宅",
 		deck = 1,
@@ -159,11 +110,7 @@ var_0_3.base.share_template = {}
 			"/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.share_template
-
-	var_1_4[5] = {
+	pg.base.share_template[5] = {
 		description = "#碧蓝航线#",
 		name = "获得新皮肤界面",
 		deck = 2,
@@ -183,11 +130,7 @@ var_0_3.base.share_template = {}
 			"/OverlayCamera/Overlay/UIOverlay/TipPanel(Clone)"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.share_template
-
-	var_1_5[6] = {
+	pg.base.share_template[6] = {
 		description = "#碧蓝航线#",
 		name = "玩家历程界面",
 		deck = 3,
@@ -203,11 +146,7 @@ var_0_3.base.share_template = {}
 			"UICamera/Canvas/UIMain/PlayerSummaryUI(Clone)/bg/main/pages/page5/share"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.share_template
-
-	var_1_6[7] = {
+	pg.base.share_template[7] = {
 		description = "#碧蓝航线#",
 		name = "拍照分享",
 		deck = 1,
@@ -223,11 +162,7 @@ var_0_3.base.share_template = {}
 			"UICamera/Canvas/UIMain/SnapshotShareUI(Clone)/BtnPanel"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.share_template
-
-	var_1_7[8] = {
+	pg.base.share_template[8] = {
 		description = "#碧蓝航线#",
 		name = "回流纪念信",
 		deck = 1,
@@ -241,11 +176,7 @@ var_0_3.base.share_template = {}
 			120
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.share_template
-
-	var_1_8[9] = {
+	pg.base.share_template[9] = {
 		description = "#碧蓝航线#",
 		name = "获得新指挥喵界面",
 		deck = 1,
@@ -262,11 +193,7 @@ var_0_3.base.share_template = {}
 			"/OverlayCamera/Overlay/UIMain/GetCommanderUI(Clone)/left_panel/btns/share"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.share_template
-
-	var_1_9[10] = {
+	pg.base.share_template[10] = {
 		description = "#碧蓝航线#",
 		name = "画图功能分享",
 		deck = 1,
@@ -280,11 +207,7 @@ var_0_3.base.share_template = {}
 			-381
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.share_template
-
-	var_1_10[11] = {
+	pg.base.share_template[11] = {
 		description = "#碧蓝航线#",
 		name = "挑战分享",
 		deck = 1,
@@ -301,11 +224,7 @@ var_0_3.base.share_template = {}
 			"UICamera/Canvas/UIMain/LimitChallengeUI(Clone)/Adapt/StartBtn"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.share_template
-
-	var_1_11[12] = {
+	pg.base.share_template[12] = {
 		description = "#碧蓝航线#",
 		name = "ins分享",
 		deck = 1,
@@ -319,11 +238,7 @@ var_0_3.base.share_template = {}
 			120
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.share_template
-
-	var_1_12[13] = {
+	pg.base.share_template[13] = {
 		description = "#碧蓝航线#",
 		name = "必胜客分享",
 		deck = 2,
@@ -339,11 +254,7 @@ var_0_3.base.share_template = {}
 			"UICamera/Canvas/UIMain/PizzahutSharePage(Clone)"
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.share_template
-
-	var_1_13[14] = {
+	pg.base.share_template[14] = {
 		description = "#碧蓝航线#",
 		name = "玩家历程MarkII界面分享",
 		deck = 0,
@@ -357,11 +268,7 @@ var_0_3.base.share_template = {}
 			-279
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.share_template
-
-	var_1_14[15] = {
+	pg.base.share_template[15] = {
 		description = "#碧蓝航线#",
 		name = "POLARIS活动大佬章界面分享",
 		deck = 0,
@@ -377,11 +284,7 @@ var_0_3.base.share_template = {}
 			"/OverlayCamera/Overlay/UIEffect/ClickEffect(Clone)"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.share_template
-
-	var_1_15[16] = {
+	pg.base.share_template[16] = {
 		description = "#碧蓝航线#",
 		name = "熊小白分享",
 		deck = 2,
@@ -397,11 +300,7 @@ var_0_3.base.share_template = {}
 			"UICamera/Canvas/UIMain/IcecreamSharePage(Clone)"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.share_template
-
-	var_1_16[17] = {
+	pg.base.share_template[17] = {
 		description = "#碧蓝航线#",
 		name = "情人节qet",
 		deck = 5,
@@ -424,11 +323,7 @@ var_0_3.base.share_template = {}
 			"/OverlayCamera/Overlay/UIMain/result_panel/frame/Text"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.share_template
-
-	var_1_17[18] = {
+	pg.base.share_template[18] = {
 		description = "#碧蓝航线#",
 		name = "连战活动 - EX分享界面",
 		deck = 1,
@@ -444,11 +339,7 @@ var_0_3.base.share_template = {}
 			"UICamera/Canvas/UIMain/PizzahutSharePage(Clone)"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.share_template
-
-	var_1_18[19] = {
+	pg.base.share_template[19] = {
 		description = "#碧蓝航线#",
 		name = "3d宿舍拍照分享界面",
 		deck = 2,
@@ -470,8 +361,7 @@ var_0_3.base.share_template = {}
 			"/OverlayCamera/Overlay/UIOverlay/TipPanel(Clone)"
 		}
 	}
-	pg = var_1_18
-	var_1_18.base.share_template[20] = {
+	pg.base.share_template[20] = {
 		description = "#碧蓝航线#",
 		name = "港区竞拍分享界面",
 		deck = 2,

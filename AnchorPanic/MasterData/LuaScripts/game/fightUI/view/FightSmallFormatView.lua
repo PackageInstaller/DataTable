@@ -62,6 +62,11 @@ function setTargetFlag(self, gridId)
     item:setTargetFlag(true)
 end
 
+function setNoHpFlag(self,gridId,isDed)
+    local item = self:getGridItem(gridId)
+    item:setNoHp(true,isDed)
+end
+
 -- 取对应的格子
 function getGridItem(self, gridId)
     local parent = self.m_grids[gridId]

@@ -1,11 +1,4 @@
-﻿local var_0_0 = {
-	"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
-	"经过这次战斗，指挥官是否感觉到战力不足呢？让我们先<color=#ff7d36>暂时撤退</color>，回港修整一下吧！",
-	"点击<color=#ff7d36>撤退</color>",
-	"咳咳..没错，这只是一次战术性撤退！"
-}
-
-return {
+﻿return {
 	id = "S009",
 	events = {
 		{
@@ -15,17 +8,17 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"经过这次战斗，指挥官是否感觉到战力不足呢？让我们先<color=#ff7d36>暂时撤退</color>，回港修整一下吧！",
+					"点击<color=#ff7d36>撤退</color>",
+					"咳咳..没错，这只是一次战术性撤退！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -53,7 +46,12 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"经过这次战斗，指挥官是否感觉到战力不足呢？让我们先<color=#ff7d36>暂时撤退</color>，回港修整一下吧！",
+					"点击<color=#ff7d36>撤退</color>",
+					"咳咳..没错，这只是一次战术性撤退！"
+				})[2]
 			}
 		},
 		{
@@ -63,7 +61,12 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"经过这次战斗，指挥官是否感觉到战力不足呢？让我们先<color=#ff7d36>暂时撤退</color>，回港修整一下吧！",
+					"点击<color=#ff7d36>撤退</color>",
+					"咳咳..没错，这只是一次战术性撤退！"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -84,7 +87,12 @@ return {
 				dir = -1,
 				posY = 104.45,
 				posX = 203.04,
-				text = var_0_0[4]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"经过这次战斗，指挥官是否感觉到战力不足呢？让我们先<color=#ff7d36>暂时撤退</color>，回港修整一下吧！",
+					"点击<color=#ff7d36>撤退</color>",
+					"咳咳..没错，这只是一次战术性撤退！"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,

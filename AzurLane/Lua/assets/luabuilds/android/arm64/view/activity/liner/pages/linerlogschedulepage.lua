@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LinerLogSchedulePage", import("view.base.BaseSubView"))
 
-local var_0_0 = "LinerLogSchedulePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-var_0_1.SHOW_TIME_LIST = {
+var_0_0.SHOW_TIME_LIST = {
 	{
 		3,
 		8
@@ -37,297 +31,119 @@ var_0_1.SHOW_TIME_LIST = {
 	}
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "LinerLogSchedulePage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.togglesTF = var_1.Find(var_2_0, "toggles")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.contentTF = var_1.Find(var_2_1, "content")
-
-	local var_2_2 = arg_2_0.contentTF
-	local var_2_3 = var_1.GetComponent
-
-	typeof = var_4
-	Animation = var_1_10006
-	arg_2_0.anim = var_2_3(var_2_2, var_4(var_1_10006))
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.awardTF = var_1.Find(var_2_4, "award/mask/IconTpl")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.awardDesc = var_1.Find(var_2_5, "award/Text")
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.goBtn = var_1.Find(var_2_6, "award/go")
-
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.getBtn = var_1.Find(var_2_7, "award/get")
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.gotTF = var_1.Find(var_2_8, "award/got")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.togglesTF = arg_2_0._tf:Find("toggles")
+	arg_2_0.contentTF = arg_2_0._tf:Find("content")
+	arg_2_0.anim = arg_2_0.contentTF:GetComponent(typeof(Animation))
+	arg_2_0.awardTF = arg_2_0._tf:Find("award/mask/IconTpl")
+	arg_2_0.awardDesc = arg_2_0._tf:Find("award/Text")
+	arg_2_0.goBtn = arg_2_0._tf:Find("award/go")
+	arg_2_0.getBtn = arg_2_0._tf:Find("award/get")
+	arg_2_0.gotTF = arg_2_0._tf:Find("award/got")
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
+function var_0_0.OnInit(arg_3_0)
 	arg_3_0:UpdateActivity()
-
-	onButton = var_1
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.getBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.emit
-
-		LinerLogBookMediator = var_2_10003
-
-		local var_4_2 = var_2_10003.GET_SCHEDULE_AWARD
-		local var_4_3 = arg_3_0.activity.id
-		local var_4_4 = arg_3_0.curIdx
-		local var_4_5 = arg_3_0.groups[arg_3_0.curIdx]
-
-		var_4_1(var_4_0, var_4_2, var_4_3, var_4_4, var_6.GetDrop(var_4_5))
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		arg_3_0:emit(LinerLogBookMediator.GET_SCHEDULE_AWARD, arg_3_0.activity.id, arg_3_0.curIdx, arg_3_0.groups[arg_3_0.curIdx]:GetDrop())
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10006
-
-	var_1(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.goBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-		local var_5_1 = var_0.emit
-
-		LinerLogBookMediator = var_2_10003
-
-		var_5_1(var_5_0, var_2_10003.ON_CLOSE)
+	end, SFX_CONFIRM)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		arg_3_0:emit(LinerLogBookMediator.ON_CLOSE)
 
 		return
-	end
+	end, SFX_CONFIRM)
 
-	SFX_CONFIRM = var_1_10006
-
-	var_1(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	local var_3_6 = arg_3_0.activity
-
-	arg_3_0.groupIds = var_1.getConfig(var_3_6, "config_data")[1]
+	arg_3_0.groupIds = arg_3_0.activity:getConfig("config_data")[1]
 	arg_3_0.groups = {}
-	ipairs = var_1
 
-	for iter_3_0, iter_3_1 in var_1(arg_3_0.groupIds) do
-		local var_3_7 = arg_3_0.groups
-
-		LinerTimeGroup = var_1_10007
-		var_3_7[iter_3_0] = var_1_10007.New(iter_3_1)
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0.groupIds) do
+		arg_3_0.groups[iter_3_0] = LinerTimeGroup.New(iter_3_1)
 	end
 
-	UIItemList = var_1
+	arg_3_0.itemUIList = UIItemList.New(arg_3_0.contentTF, arg_3_0.contentTF:Find("tpl"))
 
-	local var_3_8 = var_1.New
-	local var_3_9 = arg_3_0.contentTF
-	local var_3_10 = arg_3_0.contentTF
-
-	arg_3_0.itemUIList = var_3_8(var_3_9, var_4.Find(var_3_10, "tpl"))
-
-	local var_3_11 = arg_3_0.itemUIList
-
-	var_1.make(var_3_11, function(arg_6_0, arg_6_1, arg_6_2)
-		UIItemList = var_2_10003
-
-		if arg_6_0 == var_2_10003.EventUpdate then
-			local var_6_0 = arg_3_0
-
-			var_3.UpdateItem(var_6_0, arg_6_1, arg_6_2)
+	arg_3_0.itemUIList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateItem(arg_6_1, arg_6_2)
 		end
 
 		return
 	end)
 
-	UIItemList = var_1
+	arg_3_0.toggleUIList = UIItemList.New(arg_3_0.togglesTF, arg_3_0.togglesTF:Find("tpl"))
 
-	local var_3_12 = var_1.New
-	local var_3_13 = arg_3_0.togglesTF
-	local var_3_14 = arg_3_0.togglesTF
+	arg_3_0.toggleUIList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventInit then
+			local var_7_0 = arg_7_1 + 1
 
-	arg_3_0.toggleUIList = var_3_12(var_3_13, var_4.Find(var_3_14, "tpl"))
-
-	local var_3_15 = arg_3_0.toggleUIList
-
-	var_1.make(var_3_15, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventInit then
 			arg_7_2.name = arg_7_1 + 1
 
-			local var_7_0 = "DAY "
+			local var_7_1 = "DAY " .. string.format("%02d", arg_7_1 + 1)
 
-			string = var_2_10005
-
-			local var_7_1 = var_7_0 .. var_2_10005.format("%02d", var_3)
-
-			setText = var_5
-
-			var_5(arg_7_2:Find("Text"), var_7_1)
-
-			setText = var_5
-
-			var_5(arg_7_2:Find("selected/Text"), var_7_1)
-
-			onToggle = var_5
-
-			local var_7_2 = arg_3_0
-			local var_7_3 = arg_7_2
-
-			local function var_7_4(arg_8_0)
+			setText(arg_7_2:Find("Text"), var_7_1)
+			setText(arg_7_2:Find("selected/Text"), var_7_1)
+			onToggle(arg_3_0, arg_7_2, function(arg_8_0)
 				if arg_8_0 then
-					if arg_3_0.curIdx and arg_3_0.curIdx == var_0 then
+					if arg_3_0.curIdx and arg_3_0.curIdx == var_7_0 then
 						return
 					end
 
-					arg_3_0.curIdx = var_0
+					arg_3_0.curIdx = var_7_0
 
-					local var_8_0 = arg_3_0
-
-					var_1.FlushPage(var_8_0, true)
+					arg_3_0:FlushPage(true)
 				end
 
 				return
-			end
+			end, SFX_CONFIRM)
+		elseif arg_7_0 == UIItemList.EventUpdate then
+			local var_7_2 = tonumber(arg_7_2.name) > arg_3_0.curDay
 
-			SFX_CONFIRM = var_10
+			setActive(arg_7_2:Find("lock"), var_7_2)
+			SetCompomentEnabled(arg_7_2, typeof(Toggle), not var_7_2)
 
-			var_5(var_7_2, var_7_3, var_7_4, var_10)
-		else
-			UIItemList = var_3
-
-			if arg_7_0 == var_3.EventUpdate then
-				tonumber = var_3
-
-				local var_7_5 = var_3(arg_7_2.name)
-				local var_7_6 = arg_3_0.curDay < var_7_5
-
-				setActive = var_4
-
-				var_4(arg_7_2:Find("lock"), var_7_6)
-
-				SetCompomentEnabled = var_4
-
-				local var_7_7 = arg_7_2
-
-				typeof = var_7
-				Toggle = var_9
-
-				var_4(var_7_7, var_7(var_9), not var_7_6)
-
-				if var_7_6 then
-					setActive = var_4
-
-					var_4(arg_7_2:Find("selected"), false)
-
-					setActive = var_4
-
-					var_4(arg_7_2:Find("tip"), false)
-				else
-					setActive = var_4
-
-					var_4(arg_7_2:Find("tip"), var_0_1.IsTipWithGroupId(arg_3_0.activity, arg_3_0.groups[arg_7_1 + 1].id))
-				end
+			if var_7_2 then
+				setActive(arg_7_2:Find("selected"), false)
+				setActive(arg_7_2:Find("tip"), false)
+			else
+				setActive(arg_7_2:Find("tip"), var_0_0.IsTipWithGroupId(arg_3_0.activity, arg_3_0.groups[arg_7_1 + 1].id))
 			end
 		end
 
 		return
 	end)
-
-	local var_3_16 = arg_3_0.toggleUIList
-
-	var_1.align(var_3_16, #arg_3_0.groupIds)
-
-	triggerToggle = var_1
-
-	local var_3_17 = arg_3_0._tf
-	local var_3_18 = var_3.Find
-
-	tostring = var_3_14
-
-	var_1(var_3_18(var_3_17, var_3_14(arg_3_0.curDay), arg_3_0.toggleUIList.container), true)
+	arg_3_0.toggleUIList:align(#arg_3_0.groupIds)
+	triggerToggle(arg_3_0._tf:Find(tostring(arg_3_0.curDay), arg_3_0.toggleUIList.container), true)
 
 	return
 end
 
-function var_0_1.UpdateActivity(arg_9_0, arg_9_1)
-	local var_9_1
+function var_0_0.UpdateActivity(arg_9_0, arg_9_1)
+	arg_9_0.activity = arg_9_1 or getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINER)
 
-	if not arg_9_1 then
-		::label_9_0::
+	local var_9_0 = arg_9_0.activity and not arg_9_0.activity:isEnd()
 
-		getProxy = var_9_1
-		ActivityProxy = var_1_10004
+	assert(var_9_0, "not exist liner act, type: " .. ActivityConst.ACTIVITY_TYPE_LINER)
 
-		local var_9_0 = var_9_1(var_1_10004)
-
-		var_9_1 = var_9_1.getActivityByType
-		ActivityConst = var_1_10005
-		var_9_1 = var_9_1(var_9_0, var_1_10005.ACTIVITY_TYPE_LINER)
-	end
-
-	arg_9_0.activity = var_9_1
-	assert = var_9_1
-
-	local var_9_2
-
-	if arg_9_0.activity then
-		var_1_10006 = arg_9_0.activity
-		var_9_2 = not var_4.isEnd(var_1_10006)
-	end
-
-	local var_9_3 = "not exist liner act, type: "
-
-	ActivityConst = var_1_10006
-
-	var_9_1(var_9_2, var_9_3 .. var_1_10006.ACTIVITY_TYPE_LINER)
-
-	local var_9_4 = arg_9_0.activity
-
-	arg_9_0.finishTimeIds = var_2.GetFinishTimeIds(var_9_4)
-
-	local var_9_5 = arg_9_0.activity
-
-	arg_9_0.timeId2ExploredIds = var_2.GetTimeId2ExploredIds(var_9_5)
-
-	local var_9_6 = arg_9_0.activity
-	local var_9_7 = var_2.GetDayByIdx
-	local var_9_8 = arg_9_0.activity
-
-	arg_9_0.curDay = var_9_7(var_9_6, var_5.GetCurIdx(var_9_8))
+	arg_9_0.finishTimeIds = arg_9_0.activity:GetFinishTimeIds()
+	arg_9_0.timeId2ExploredIds = arg_9_0.activity:GetTimeId2ExploredIds()
+	arg_9_0.curDay = arg_9_0.activity:GetDayByIdx(arg_9_0.activity:GetCurIdx())
 
 	return
 end
 
-function var_0_1._getLogDesc(arg_10_0, arg_10_1)
+function var_0_0._getLogDesc(arg_10_0, arg_10_1)
 	local var_10_0 = arg_10_1[1]
 	local var_10_1 = arg_10_1[2] - 1
 
-	if var_10_0 >= 24 then
+	if arg_10_1[1] >= 24 then
 		var_10_0 = var_10_0 - 24
 	end
 
@@ -337,25 +153,20 @@ function var_0_1._getLogDesc(arg_10_0, arg_10_1)
 
 	local var_10_2 = var_10_0 < 12 and "AM" or "PM"
 	local var_10_3 = var_10_1 < 12 and "AM" or "PM"
-	local var_10_4
 
-	if not (var_10_0 > 12) or not (var_10_0 - 12) then
-		var_10_4 = var_10_0
+	if var_10_0 > 12 then
+		local var_10_4 = var_10_0 - 12 or var_10_0
+
+		if var_10_1 > 12 and not (var_10_1 - 12) then
+			-- block empty
+		end
+
+		return string.format("%d:00 %s~%d:59 %s", var_10_4, var_10_2, var_10_1, var_10_3)
 	end
-
-	var_10_1 = var_10_1 > 12 and var_10_1 - 12 or var_10_1
-
-	local var_10_5 = var_10_4
-
-	string = var_10_4
-
-	return var_10_4.format("%d:00 %s~%d:59 %s", var_10_5, var_10_2, var_10_1, var_10_3)
 end
 
-function var_0_1._getReallyTime(arg_11_0, arg_11_1)
-	ipairs = var_1_10002
-
-	for iter_11_0, iter_11_1 in var_1_10002(arg_11_0.times) do
+function var_0_0._getReallyTime(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.times) do
 		local var_11_0 = iter_11_1:GetTime()[1]
 		local var_11_1 = iter_11_1:GetTime()[2]
 
@@ -375,230 +186,86 @@ function var_0_1._getReallyTime(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.UpdateItem(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0 = arg_12_1 + 1
-	local var_12_1 = var_0_1.SHOW_TIME_LIST[var_12_0]
+function var_0_0.UpdateItem(arg_12_0, arg_12_1, arg_12_2)
+	setText(arg_12_2:Find("time/Text"), arg_12_0:_getLogDesc(var_0_0.SHOW_TIME_LIST[arg_12_1 + 1]))
 
-	setText = var_1_10005
+	local var_12_0 = arg_12_0:_getReallyTime(var_0_0.SHOW_TIME_LIST[arg_12_1 + 1])
+	local var_12_1 = table.contains(arg_12_0.finishTimeIds, var_12_0.id)
+	local var_12_2 = arg_12_2:Find("desc")
+	local var_12_3 = var_12_1 and var_12_0:GetAfterDesc(arg_12_1 + 1) or var_12_0:GetBeforDesc(arg_12_1 + 1)
 
-	var_1_10005(arg_12_2:Find("time/Text"), arg_12_0:_getLogDesc(var_12_1))
-
-	local var_12_2 = arg_12_0:_getReallyTime(var_12_1)
-
-	table = var_1_10006
-
-	local var_12_3 = var_1_10006.contains(arg_12_0.finishTimeIds, var_12_2.id)
-	local var_12_4 = arg_12_2
-	local var_12_5 = arg_12_2.Find(var_12_4, "desc")
-
-	if var_12_3 then
-		local var_12_6 = var_12_2
-		local var_12_7
-
-		if not var_12_2.GetAfterDesc(var_12_6, var_12_0) then
-			var_12_6 = var_12_2
-			var_12_7 = var_12_2.GetBeforDesc(var_12_6, var_12_0)
-		end
-
-		if var_12_3 then
-			var_12_4 = var_12_2:GetType()
-			LinerTime = var_12_6
-
-			if var_12_4 == var_12_6.TYPE.EXPLORE then
-				underscore = var_12_4
-				var_12_4 = var_12_4.map(arg_12_0.timeId2ExploredIds[var_12_2.id], function(arg_13_0)
-					pg = var_2_10001
-
-					return var_2_10001.activity_liner_room[arg_13_0].name
-				end)
-				string = var_10
-
-				local var_12_8 = var_10.gsub
-				local var_12_9 = var_12_7
-				local var_12_10 = "$1"
-
-				table = var_1_10014
-				var_12_7 = var_12_8(var_12_9, var_12_10, var_1_10014.concat(var_12_4, "、"))
-			end
-		end
-
-		setText = var_12_4
-
-		var_12_4(var_12_5, var_12_7)
-
-		setActive = var_12_4
-
-		var_12_4(arg_12_2:Find("time/finish"), var_12_3)
-
-		setActive = var_12_4
-
-		var_12_4(var_12_5, arg_12_0.curIdx <= arg_12_0.curDay)
-
-		return
+	if var_12_1 and var_12_0:GetType() == LinerTime.TYPE.EXPLORE then
+		var_12_3 = string.gsub(var_12_3, "$1", table.concat(underscore.map(arg_12_0.timeId2ExploredIds[var_12_0.id], function(arg_13_0)
+			return pg.activity_liner_room[arg_13_0].name
+		end), "、"))
 	end
+
+	setText(var_12_2, var_12_3)
+	setActive(arg_12_2:Find("time/finish"), var_12_1)
+	setActive(var_12_2, arg_12_0.curIdx <= arg_12_0.curDay)
+
+	return
 end
 
-function var_0_1.FlushPage(arg_14_0)
-	local var_14_0 = arg_14_0.anim
+function var_0_0.FlushPage(arg_14_0)
+	arg_14_0.anim:Play()
+	arg_14_0.toggleUIList:align(#arg_14_0.groupIds)
 
-	var_1.Play(var_14_0)
+	arg_14_0.times = arg_14_0.groups[arg_14_0.curIdx]:GetTimeList()
 
-	local var_14_1 = arg_14_0.toggleUIList
-
-	var_1.align(var_14_1, #arg_14_0.groupIds)
-
-	local var_14_2 = arg_14_0.groups[arg_14_0.curIdx]
-
-	arg_14_0.times = var_1.GetTimeList(var_14_2)
-	table = var_1
-
-	local var_14_3 = var_1.sort
-	local var_14_4 = arg_14_0.times
-
-	CompareFuncs = var_4
-
-	var_14_3(var_14_4, var_4({
+	table.sort(arg_14_0.times, CompareFuncs({
 		function(arg_15_0)
 			return arg_15_0.id
 		end
 	}))
-
-	local var_14_5 = arg_14_0.itemUIList
-
-	var_1.align(var_14_5, #var_0_1.SHOW_TIME_LIST)
-
-	local var_14_6 = arg_14_0.groups[arg_14_0.curIdx]
-	local var_14_7 = var_1.GetDrop(var_14_6)
-
-	updateDrop = var_2
-
-	var_2(arg_14_0.awardTF, var_14_7)
-
-	onButton = var_2
-
-	local var_14_8 = arg_14_0
-	local var_14_9 = arg_14_0.awardTF
-
-	local function var_14_10()
-		local var_16_0 = arg_14_0
-		local var_16_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_16_1(var_16_0, var_2_10003.ON_DROP, var_14_7)
+	arg_14_0.itemUIList:align(#var_0_0.SHOW_TIME_LIST)
+	updateDrop(arg_14_0.awardTF, (arg_14_0.groups[arg_14_0.curIdx]:GetDrop()))
+	onButton(arg_14_0, arg_14_0.awardTF, function()
+		arg_14_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_7
+	local var_14_0 = arg_14_0.activity:IsGotTimeAward(arg_14_0.curIdx)
+	local var_14_1 = var_0_0.IsTipWithGroupId(arg_14_0.activity, arg_14_0.groups[arg_14_0.curIdx].id)
 
-	var_2(var_14_8, var_14_9, var_14_10, var_7)
+	setActive(arg_14_0.goBtn, not var_14_0 and not var_14_1)
+	setActive(arg_14_0.gotTF, var_14_0)
+	setActive(arg_14_0.awardTF:Find("mask"), var_14_0)
 
-	local var_14_11 = arg_14_0.activity
-	local var_14_12 = var_2.IsGotTimeAward(var_14_11, arg_14_0.curIdx)
-	local var_14_13 = arg_14_0.groups[arg_14_0.curIdx].id
-	local var_14_14 = var_0_1.IsTipWithGroupId(arg_14_0.activity, var_14_13)
+	local var_14_2 = var_14_0 and i18n("liner_schedule_award_tip2", arg_14_0.curIdx) or i18n("liner_schedule_award_tip1")
 
-	setActive = var_14_16
+	setText(arg_14_0.awardDesc, var_14_2)
+	setActive(arg_14_0.getBtn, var_14_1)
+	arg_14_0:Show()
 
-	var_14_16(arg_14_0.goBtn, not var_14_12 and not var_14_14)
-
-	setActive = var_14_16
-
-	var_14_16(arg_14_0.gotTF, var_14_12)
-
-	setActive = var_14_16
-
-	local var_14_15 = arg_14_0.awardTF
-
-	var_14_16(var_7.Find(var_14_15, "mask"), var_14_12)
-
-	if var_14_12 then
-		i18n = var_14_16
-
-		local var_14_16
-
-		if not var_14_16("liner_schedule_award_tip2", arg_14_0.curIdx) then
-			i18n = var_14_16
-			var_14_16 = var_14_16("liner_schedule_award_tip1")
-		end
-
-		setText = var_6
-
-		var_6(arg_14_0.awardDesc, var_14_16)
-
-		setActive = var_6
-
-		var_6(arg_14_0.getBtn, var_14_14)
-		arg_14_0:Show()
-
-		return
-	end
-end
-
-function var_0_1.OnDestroy(arg_17_0)
 	return
 end
 
-function var_0_1.IsTipWithGroupId(arg_18_0, arg_18_1)
-	table = var_1_10002
+function var_0_0.OnDestroy(arg_17_0)
+	return
+end
 
-	local var_18_0 = var_1_10002.indexof(arg_18_0:GetTimeGroupIds(), arg_18_1)
-
-	if arg_18_0:IsGotTimeAward(var_18_0) then
+function var_0_0.IsTipWithGroupId(arg_18_0, arg_18_1)
+	if arg_18_0:IsGotTimeAward((table.indexof(arg_18_0:GetTimeGroupIds(), arg_18_1))) then
 		return false
 	end
 
-	local var_18_1 = arg_18_0:GetFinishTimeIds()
+	local var_18_0 = arg_18_0:GetFinishTimeIds()
 
-	underscore = var_4
-
-	local var_18_2 = var_4.all
-
-	pg = var_6
-
-	return var_18_2(var_6.activity_liner_time_group[arg_18_1].ids, function(arg_19_0)
-		table = var_2_10001
-
-		return var_2_10001.contains(var_18_1, arg_19_0)
+	return underscore.all(pg.activity_liner_time_group[arg_18_1].ids, function(arg_19_0)
+		return table.contains(var_18_0, arg_19_0)
 	end)
 end
 
-function var_0_1.IsTip()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+function var_0_0.IsTip()
+	local var_20_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LINER)
 
-	local var_20_0 = var_1_10000(var_1_10002)
-	local var_20_1 = var_0.getActivityByType
+	assert(var_20_0 and not var_20_0:isEnd(), "not exist liner act, type: " .. ActivityConst.ACTIVITY_TYPE_LINER)
 
-	ActivityConst = var_1_10003
-
-	local var_20_2 = var_20_1(var_20_0, var_1_10003.ACTIVITY_TYPE_LINER)
-
-	assert = var_1_10001
-
-	local var_20_3
-
-	if var_20_2 then
-		::label_20_0::
-
-		var_1_10005 = var_20_2
-		var_20_3 = not var_20_2.isEnd(var_1_10005)
-	end
-
-	local var_20_4 = "not exist liner act, type: "
-
-	ActivityConst = var_1_10005
-
-	var_1_10001(var_20_3, var_20_4 .. var_1_10005.ACTIVITY_TYPE_LINER)
-
-	local var_20_5 = var_20_2:GetTimeGroupIds()
-
-	underscore = var_20_0
-
-	return var_20_0.any(var_20_5, function(arg_21_0)
-		return var_0_1.IsTipWithGroupId(var_20_2, arg_21_0)
+	return underscore.any(var_20_0:GetTimeGroupIds(), function(arg_21_0)
+		return var_0_0.IsTipWithGroupId(var_20_0, arg_21_0)
 	end)
 end
 
-return var_0_1
+return var_0_0

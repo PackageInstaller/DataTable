@@ -1,145 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildShipEquipmentsPage", import("....base.BaseSubView"))
 
-local var_0_0 = "GuildShipEquipmentsPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("....base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildShipEquipmentsPage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "frame/ship_info/shipname")
-	local var_2_2 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.shipNameTxt = var_2_2(var_2_1, var_4(var_1_10006))
-
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_1.Find(var_2_3, "frame/ship_info/username")
-	local var_2_5 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.userNameTxt = var_2_5(var_2_4, var_4(var_1_10006))
-
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_1.Find(var_2_6, "frame/ship_info/ship_type")
-	local var_2_8 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_2_0.shipTypeIcon = var_2_8(var_2_7, var_4(var_1_10006))
-	UIItemList = var_1
-
-	local var_2_9 = var_1.New
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_3.Find(var_2_10, "frame/ship_info/stars")
-	local var_2_12 = arg_2_0._tf
-
-	arg_2_0.shipStarList = var_2_9(var_2_11, var_4.Find(var_2_12, "frame/ship_info/stars/star_tpl"))
-
-	local var_2_13 = arg_2_0._tf
-	local var_2_14 = var_1.Find(var_2_13, "frame/ship_info/lv/Text")
-	local var_2_15 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_2_12
-	arg_2_0.shipLvTxt = var_2_15(var_2_14, var_4(var_2_12))
-	UIItemList = var_1
-
-	local var_2_16 = var_1.New
-	local var_2_17 = arg_2_0._tf
-	local var_2_18 = var_3.Find(var_2_17, "frame/equipemtns")
-	local var_2_19 = arg_2_0._tf
-
-	arg_2_0.equipmentList = var_2_16(var_2_18, var_4.Find(var_2_19, "frame/equipemtns/equipment_tpl"))
-	getProxy = var_1
-	PlayerProxy = var_2_18
-
-	local var_2_20 = var_1(var_2_18)
-
-	arg_2_0.playerId = var_1.getRawData(var_2_20).id
-
-	local var_2_21 = arg_2_0._tf
-
-	arg_2_0.nextBtn = var_1.Find(var_2_21, "frame/next")
-
-	local var_2_22 = arg_2_0._tf
-
-	arg_2_0.prevBtn = var_1.Find(var_2_22, "frame/prev")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.shipNameTxt = arg_2_0._tf:Find("frame/ship_info/shipname"):GetComponent(typeof(Text))
+	arg_2_0.userNameTxt = arg_2_0._tf:Find("frame/ship_info/username"):GetComponent(typeof(Text))
+	arg_2_0.shipTypeIcon = arg_2_0._tf:Find("frame/ship_info/ship_type"):GetComponent(typeof(Image))
+	arg_2_0.shipStarList = UIItemList.New(arg_2_0._tf:Find("frame/ship_info/stars"), arg_2_0._tf:Find("frame/ship_info/stars/star_tpl"))
+	arg_2_0.shipLvTxt = arg_2_0._tf:Find("frame/ship_info/lv/Text"):GetComponent(typeof(Text))
+	arg_2_0.equipmentList = UIItemList.New(arg_2_0._tf:Find("frame/equipemtns"), arg_2_0._tf:Find("frame/equipemtns/equipment_tpl"))
+	arg_2_0.playerId = getProxy(PlayerProxy):getRawData().id
+	arg_2_0.nextBtn = arg_2_0._tf:Find("frame/next")
+	arg_2_0.prevBtn = arg_2_0._tf:Find("frame/prev")
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.nextBtn
-
-	local function var_3_5()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.nextBtn, function()
 		if arg_3_0.onNext then
 			arg_3_0.onNext()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.prevBtn
-
-	local function var_3_8()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.prevBtn, function()
 		if arg_3_0.onPrev then
 			arg_3_0.onPrev()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.SetCallBack(arg_7_0, arg_7_1, arg_7_2)
+function var_0_0.SetCallBack(arg_7_0, arg_7_1, arg_7_2)
 	arg_7_0.onPrev = arg_7_1
 	arg_7_0.onNext = arg_7_2
 
 	return
 end
 
-function var_0_1.Show(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
-	var_0_1.super.Show(arg_8_0)
+function var_0_0.Show(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
+	var_0_0.super.Show(arg_8_0)
 
 	arg_8_0.OnHide = arg_8_3
 
@@ -148,25 +59,14 @@ function var_0_1.Show(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
 	end
 
 	arg_8_0:Flush(arg_8_1, arg_8_2)
-
-	pg = var_5
-
-	local var_8_0 = var_5.UIMgr.GetInstance()
-
-	var_5.BlurPanel(var_8_0, arg_8_0._tf)
-
-	setActive = var_5
-
-	var_5(arg_8_0.nextBtn, arg_8_0.onNext ~= nil)
-
-	SetActive = var_5
-
-	var_5(arg_8_0.prevBtn, arg_8_0.onPrev ~= nil)
+	pg.UIMgr.GetInstance():BlurPanel(arg_8_0._tf)
+	setActive(arg_8_0.nextBtn, arg_8_0.onNext ~= nil)
+	SetActive(arg_8_0.prevBtn, arg_8_0.onPrev ~= nil)
 
 	return
 end
 
-function var_0_1.Flush(arg_9_0, arg_9_1, arg_9_2)
+function var_0_0.Flush(arg_9_0, arg_9_1, arg_9_2)
 	arg_9_0.ship = arg_9_1
 	arg_9_0.member = arg_9_2
 
@@ -176,121 +76,59 @@ function var_0_1.Flush(arg_9_0, arg_9_1, arg_9_2)
 	return
 end
 
-function var_0_1.Refresh(arg_10_0, arg_10_1, arg_10_2)
+function var_0_0.Refresh(arg_10_0, arg_10_1, arg_10_2)
 	arg_10_0:Flush(arg_10_1, arg_10_2)
 
 	return
 end
 
-function var_0_1.UpdateShipInfo(arg_11_0)
-	local var_11_0 = arg_11_0.ship
-	local var_11_1 = arg_11_0.member
-	local var_11_2 = arg_11_0.shipNameTxt
-	local var_11_3 = var_11_0
+function var_0_0.UpdateShipInfo(arg_11_0)
+	local var_11_0 = arg_11_0.member
 
-	var_11_2.text = var_11_0.getName(var_11_3)
+	arg_11_0.shipNameTxt.text = arg_11_0.ship:getName()
+	arg_11_0.userNameTxt.text = arg_11_0.playerId == var_11_0.id and "" or i18n("guild_ship_from") .. var_11_0.name
+	arg_11_0.shipTypeIcon.sprite = GetSpriteFromAtlas("shiptype", shipType2print(pg.ship_data_statistics[arg_11_0.ship.configId].type))
 
-	local var_11_4
+	local var_11_1 = arg_11_0.ship:getStar()
 
-	if arg_11_0.playerId == var_11_1.id then
-		var_11_4 = ""
-	else
-		i18n = var_11_4
-		var_11_4 = var_11_4("guild_ship_from") .. var_11_1.name
-	end
-
-	local var_11_5 = arg_11_0.userNameTxt
-
-	var_11_5.text = var_11_4
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.ship_data_statistics[var_11_0.configId]
-	local var_11_7 = arg_11_0.shipTypeIcon
-
-	GetSpriteFromAtlas = var_11_3
-
-	local var_11_8 = "shiptype"
-
-	shipType2print = var_1_10009
-	var_11_7.sprite = var_11_3(var_11_8, var_1_10009(var_11_6.type))
-
-	local var_11_9 = var_11_0:getMaxStar()
-	local var_11_10 = var_11_0:getStar()
-	local var_11_11 = arg_11_0.shipStarList
-
-	var_7.make(var_11_11, function(arg_12_0, arg_12_1, arg_12_2)
-		UIItemList = var_2_10003
-
-		if arg_12_0 == var_2_10003.EventUpdate then
-			setActive = var_3
-
-			var_3(arg_12_2:Find("star_tpl"), arg_12_1 <= var_11_10)
+	arg_11_0.shipStarList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			setActive(arg_12_2:Find("star_tpl"), arg_12_1 <= var_11_1)
 		end
 
 		return
 	end)
+	arg_11_0.shipStarList:align((arg_11_0.ship:getMaxStar()))
 
-	local var_11_12 = arg_11_0.shipStarList
-
-	var_7.align(var_11_12, var_11_9)
-
-	arg_11_0.shipLvTxt.text = var_11_0.level
+	arg_11_0.shipLvTxt.text = arg_11_0.ship.level
 
 	return
 end
 
-function var_0_1.UpdateEquipments(arg_13_0)
-	local var_13_0 = arg_13_0.ship
-	local var_13_1 = var_1.getActiveEquipments(var_13_0)
-	local var_13_2 = arg_13_0.equipmentList
+function var_0_0.UpdateEquipments(arg_13_0)
+	local var_13_0 = arg_13_0.ship:getActiveEquipments()
 
-	var_3.make(var_13_2, function(arg_14_0, arg_14_1, arg_14_2)
-		UIItemList = var_2_10003
+	arg_13_0.equipmentList:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			setActive(arg_14_2:Find("info"), var_13_0[arg_14_1 + 1])
+			setActive(arg_14_2:Find("empty"), not var_13_0[arg_14_1 + 1])
 
-		if arg_14_0 == var_2_10003.EventUpdate then
-			local var_14_0 = var_13_1[arg_14_1 + 1]
-
-			setActive = var_4
-
-			var_4(arg_14_2:Find("info"), var_14_0)
-
-			setActive = var_4
-
-			var_4(arg_14_2:Find("empty"), not var_14_0)
-
-			if var_14_0 then
-				updateEquipment = var_4
-
-				var_4(arg_14_2:Find("info"), var_14_0)
-
-				setText = var_4
-
-				local var_14_1 = arg_14_2:Find("info/name_bg/Text")
-
-				shortenString = var_7
-
-				var_4(var_14_1, var_7(var_14_0:getConfig("name"), 5))
+			if var_13_0[arg_14_1 + 1] then
+				updateEquipment(arg_14_2:Find("info"), var_13_0[arg_14_1 + 1])
+				setText(arg_14_2:Find("info/name_bg/Text"), shortenString(var_13_0[arg_14_1 + 1]:getConfig("name"), 5))
 			end
 		end
 
 		return
 	end)
-
-	local var_13_3 = arg_13_0.equipmentList
-
-	var_3.align(var_13_3, 5)
+	arg_13_0.equipmentList:align(5)
 
 	return
 end
 
-function var_0_1.Hide(arg_15_0)
-	var_0_1.super.Hide(arg_15_0)
-
-	pg = var_1
-
-	local var_15_0 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_15_0, arg_15_0._tf, arg_15_0._parentTf)
+function var_0_0.Hide(arg_15_0)
+	var_0_0.super.Hide(arg_15_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_15_0._tf, arg_15_0._parentTf)
 
 	if arg_15_0.OnHide then
 		arg_15_0.OnHide()
@@ -301,10 +139,10 @@ function var_0_1.Hide(arg_15_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_16_0)
+function var_0_0.OnDestroy(arg_16_0)
 	arg_16_0:Hide()
 
 	return
 end
 
-return var_0_1
+return var_0_0

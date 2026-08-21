@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "medal_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "medal_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.medal_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.medal_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.medal_template = rawget(pg, "medal_template") or setmetatable({
+	__name = "medal_template"
+}, confNEO)
+pg.medal_template.all = {
 	10011,
 	10012,
 	10013,
@@ -155,27 +132,15 @@ var_0_3.all = {
 	200161,
 	200171,
 	200181,
-	200191
+	200191,
+	200201,
+	200211
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.medal_template = {}
+pg.base = pg.base or {}
+pg.base.medal_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.medal_template
-
-	var_1_0[10011] = {
+	pg.base.medal_template[10011] = {
 		target_id = "0",
 		name = "海军优秀服役勋章",
 		target_num = 2000,
@@ -196,11 +161,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "表现优秀的指挥官"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.medal_template
-
-	var_1_1[10012] = {
+	pg.base.medal_template[10012] = {
 		target_id = "0",
 		name = "海军优秀服役勋章",
 		target_num = 4000,
@@ -221,11 +182,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "表现优秀的指挥官"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.medal_template
-
-	var_1_2[10013] = {
+	pg.base.medal_template[10013] = {
 		target_id = "0",
 		name = "海军优秀服役勋章",
 		target_num = 10000,
@@ -246,11 +203,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "表现优秀的指挥官"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.medal_template
-
-	var_1_3[10014] = {
+	pg.base.medal_template[10014] = {
 		target_id = "0",
 		name = "海军优秀服役勋章",
 		target_num = 20000,
@@ -271,11 +224,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "表现优秀的指挥官"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.medal_template
-
-	var_1_4[10015] = {
+	pg.base.medal_template[10015] = {
 		target_id = "0",
 		name = "海军优秀服役勋章",
 		target_num = 1,
@@ -296,11 +245,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "表现优秀的指挥官"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.medal_template
-
-	var_1_5[10021] = {
+	pg.base.medal_template[10021] = {
 		target_id = "0",
 		name = "恪尽职守勋章",
 		target_num = 100,
@@ -321,11 +266,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "恪守职责的指挥官"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.medal_template
-
-	var_1_6[10022] = {
+	pg.base.medal_template[10022] = {
 		target_id = "0",
 		name = "恪尽职守勋章",
 		target_num = 300,
@@ -346,11 +287,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "恪守职责的指挥官"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.medal_template
-
-	var_1_7[10023] = {
+	pg.base.medal_template[10023] = {
 		target_id = "0",
 		name = "恪尽职守勋章",
 		target_num = 800,
@@ -371,11 +308,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "恪守职责的指挥官"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.medal_template
-
-	var_1_8[10024] = {
+	pg.base.medal_template[10024] = {
 		target_id = "0",
 		name = "恪尽职守勋章",
 		target_num = 1600,
@@ -396,11 +329,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "恪守职责的指挥官"
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.medal_template
-
-	var_1_9[10025] = {
+	pg.base.medal_template[10025] = {
 		target_id = "0",
 		name = "恪尽职守勋章",
 		target_num = 3200,
@@ -421,11 +350,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在服役期间",
 		explain2 = "恪守职责的指挥官"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.medal_template
-
-	var_1_10[10031] = {
+	pg.base.medal_template[10031] = {
 		target_id = "5",
 		name = "海洋探索者勋章",
 		target_num = 1,
@@ -446,11 +371,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在信念坚定",
 		explain2 = "持之以恒的指挥官"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.medal_template
-
-	var_1_11[10032] = {
+	pg.base.medal_template[10032] = {
 		target_id = "5",
 		name = "海洋探索者勋章",
 		target_num = 3,
@@ -471,11 +392,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在信念坚定",
 		explain2 = "持之以恒的指挥官"
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.medal_template
-
-	var_1_12[10033] = {
+	pg.base.medal_template[10033] = {
 		target_id = "5",
 		name = "海洋探索者勋章",
 		target_num = 10,
@@ -496,11 +413,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在信念坚定",
 		explain2 = "持之以恒的指挥官"
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.medal_template
-
-	var_1_13[10034] = {
+	pg.base.medal_template[10034] = {
 		target_id = "5",
 		name = "海洋探索者勋章",
 		target_num = 20,
@@ -521,11 +434,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在信念坚定",
 		explain2 = "持之以恒的指挥官"
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.medal_template
-
-	var_1_14[10035] = {
+	pg.base.medal_template[10035] = {
 		target_id = "0",
 		name = "海洋探索者勋章",
 		target_num = 1,
@@ -546,11 +455,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予在信念坚定",
 		explain2 = "持之以恒的指挥官"
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.medal_template
-
-	var_1_15[10041] = {
+	pg.base.medal_template[10041] = {
 		target_id = "0",
 		name = "杰出服务勋章",
 		target_num = 3000,
@@ -571,11 +476,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予为港区建设",
 		explain2 = "贡献杰出的指挥官"
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.medal_template
-
-	var_1_16[10042] = {
+	pg.base.medal_template[10042] = {
 		target_id = "0",
 		name = "杰出服务勋章",
 		target_num = 7000,
@@ -596,11 +497,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予为港区建设",
 		explain2 = "贡献杰出的指挥官"
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.medal_template
-
-	var_1_17[10043] = {
+	pg.base.medal_template[10043] = {
 		target_id = "0",
 		name = "杰出服务勋章",
 		target_num = 15000,
@@ -621,11 +518,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予为港区建设",
 		explain2 = "贡献杰出的指挥官"
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.medal_template
-
-	var_1_18[10044] = {
+	pg.base.medal_template[10044] = {
 		target_id = "0",
 		name = "杰出服务勋章",
 		target_num = 30000,
@@ -646,11 +539,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予为港区建设",
 		explain2 = "贡献杰出的指挥官"
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.medal_template
-
-	var_1_19[10045] = {
+	pg.base.medal_template[10045] = {
 		target_id = "0",
 		name = "杰出服务勋章",
 		target_num = 60000,
@@ -671,11 +560,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "授予为港区建设",
 		explain2 = "贡献杰出的指挥官"
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.medal_template
-
-	var_1_20[10051] = {
+	pg.base.medal_template[10051] = {
 		target_id = "10000",
 		name = "玫瑰誓约纪念章",
 		target_num = 10,
@@ -696,11 +581,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "点滴中耕耘的羁绊",
 		explain2 = "如玫瑰般绽放于心间 "
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.medal_template
-
-	var_1_21[10052] = {
+	pg.base.medal_template[10052] = {
 		target_id = "10000",
 		name = "玫瑰誓约纪念章",
 		target_num = 20,
@@ -721,11 +602,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "点滴中耕耘的羁绊",
 		explain2 = "如玫瑰般绽放于心间 "
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.medal_template
-
-	var_1_22[10053] = {
+	pg.base.medal_template[10053] = {
 		target_id = "10000",
 		name = "玫瑰誓约纪念章",
 		target_num = 50,
@@ -746,11 +623,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "点滴中耕耘的羁绊",
 		explain2 = "如玫瑰般绽放于心间 "
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.medal_template
-
-	var_1_23[10054] = {
+	pg.base.medal_template[10054] = {
 		target_id = "10000",
 		name = "玫瑰誓约纪念章",
 		target_num = 100,
@@ -771,11 +644,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "点滴中耕耘的羁绊",
 		explain2 = "如玫瑰般绽放于心间 "
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.medal_template
-
-	var_1_24[10055] = {
+	pg.base.medal_template[10055] = {
 		target_id = "10000",
 		name = "玫瑰誓约纪念章",
 		target_num = 200,
@@ -796,11 +665,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "点滴中耕耘的羁绊",
 		explain2 = "如玫瑰般绽放于心间 "
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.medal_template
-
-	var_1_25[10061] = {
+	pg.base.medal_template[10061] = {
 		name = "白鹰海军荣誉勋章",
 		target_num = 3,
 		type = 0,
@@ -825,11 +690,7 @@ var_0_3.base.medal_template = {}
 			100631
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.medal_template
-
-	var_1_26[10062] = {
+	pg.base.medal_template[10062] = {
 		name = "白鹰海军荣誉勋章",
 		target_num = 3,
 		type = 0,
@@ -854,11 +715,7 @@ var_0_3.base.medal_template = {}
 			100632
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.medal_template
-
-	var_1_27[10063] = {
+	pg.base.medal_template[10063] = {
 		target_id = "0",
 		name = "白鹰海军荣誉勋章",
 		target_num = 1,
@@ -879,11 +736,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以白鹰之名授予",
 		explain2 = "最杰出的指挥官"
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.medal_template
-
-	var_1_28[10064] = {
+	pg.base.medal_template[10064] = {
 		target_id = "0",
 		name = "白鹰海军荣誉勋章",
 		target_num = 1,
@@ -904,11 +757,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以白鹰之名授予",
 		explain2 = "最杰出的指挥官"
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.medal_template
-
-	var_1_29[10065] = {
+	pg.base.medal_template[10065] = {
 		target_id = "0",
 		name = "白鹰海军荣誉勋章",
 		target_num = 1,
@@ -929,11 +778,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以白鹰之名授予",
 		explain2 = "最杰出的指挥官"
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.medal_template
-
-	var_1_30[10071] = {
+	pg.base.medal_template[10071] = {
 		name = "皇家海军十字勋章",
 		target_num = 3,
 		type = 0,
@@ -958,11 +803,7 @@ var_0_3.base.medal_template = {}
 			100731
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.medal_template
-
-	var_1_31[10072] = {
+	pg.base.medal_template[10072] = {
 		name = "皇家海军十字勋章",
 		target_num = 3,
 		type = 0,
@@ -987,11 +828,7 @@ var_0_3.base.medal_template = {}
 			100732
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.medal_template
-
-	var_1_32[10073] = {
+	pg.base.medal_template[10073] = {
 		target_id = "0",
 		name = "皇家海军十字勋章",
 		target_num = 1,
@@ -1012,11 +849,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以皇家之名赠予",
 		explain2 = "最英勇的指挥官"
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.medal_template
-
-	var_1_33[10074] = {
+	pg.base.medal_template[10074] = {
 		target_id = "0",
 		name = "皇家海军十字勋章",
 		target_num = 1,
@@ -1037,11 +870,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以皇家之名赠予",
 		explain2 = "最英勇的指挥官"
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.medal_template
-
-	var_1_34[10075] = {
+	pg.base.medal_template[10075] = {
 		target_id = "0",
 		name = "皇家海军十字勋章",
 		target_num = 1,
@@ -1062,11 +891,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以皇家之名赠予",
 		explain2 = "最英勇的指挥官"
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.medal_template
-
-	var_1_35[10081] = {
+	pg.base.medal_template[10081] = {
 		name = "重樱勋位大绶章",
 		target_num = 3,
 		type = 0,
@@ -1091,11 +916,7 @@ var_0_3.base.medal_template = {}
 			100831
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.medal_template
-
-	var_1_36[10082] = {
+	pg.base.medal_template[10082] = {
 		name = "重樱勋位大绶章",
 		target_num = 3,
 		type = 0,
@@ -1120,11 +941,7 @@ var_0_3.base.medal_template = {}
 			100832
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.medal_template
-
-	var_1_37[10083] = {
+	pg.base.medal_template[10083] = {
 		target_id = "0",
 		name = "重樱勋位大绶章",
 		target_num = 1,
@@ -1145,11 +962,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以重樱之名授予",
 		explain2 = "最卓越的指挥官"
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.medal_template
-
-	var_1_38[10084] = {
+	pg.base.medal_template[10084] = {
 		target_id = "0",
 		name = "重樱勋位大绶章",
 		target_num = 1,
@@ -1170,11 +983,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以重樱之名授予",
 		explain2 = "最卓越的指挥官"
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.medal_template
-
-	var_1_39[10085] = {
+	pg.base.medal_template[10085] = {
 		target_id = "0",
 		name = "重樱勋位大绶章",
 		target_num = 1,
@@ -1195,11 +1004,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以重樱之名授予",
 		explain2 = "最卓越的指挥官"
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.medal_template
-
-	var_1_40[10091] = {
+	pg.base.medal_template[10091] = {
 		name = "铁血海军功勋勋章",
 		target_num = 3,
 		type = 0,
@@ -1224,11 +1029,7 @@ var_0_3.base.medal_template = {}
 			100931
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.medal_template
-
-	var_1_41[10092] = {
+	pg.base.medal_template[10092] = {
 		name = "铁血海军功勋勋章",
 		target_num = 3,
 		type = 0,
@@ -1253,11 +1054,7 @@ var_0_3.base.medal_template = {}
 			100932
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.medal_template
-
-	var_1_42[10093] = {
+	pg.base.medal_template[10093] = {
 		target_id = "0",
 		name = "铁血海军功勋勋章",
 		target_num = 1,
@@ -1278,11 +1075,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以铁血之名奖励",
 		explain2 = "最出色的指挥官"
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.medal_template
-
-	var_1_43[10094] = {
+	pg.base.medal_template[10094] = {
 		target_id = "0",
 		name = "铁血海军功勋勋章",
 		target_num = 1,
@@ -1303,11 +1096,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以铁血之名奖励",
 		explain2 = "最出色的指挥官"
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.medal_template
-
-	var_1_44[10095] = {
+	pg.base.medal_template[10095] = {
 		target_id = "0",
 		name = "铁血海军功勋勋章",
 		target_num = 1,
@@ -1328,11 +1117,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "以铁血之名奖励",
 		explain2 = "最出色的指挥官"
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.medal_template
-
-	var_1_45[10101] = {
+	pg.base.medal_template[10101] = {
 		target_id = "0",
 		name = "海军服役成就奖章 ",
 		target_num = 100,
@@ -1353,11 +1138,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "奖励在舰队扩大中",
 		explain2 = "有所建树的指挥官"
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.medal_template
-
-	var_1_46[10102] = {
+	pg.base.medal_template[10102] = {
 		target_id = "0",
 		name = "海军服役成就奖章 ",
 		target_num = 200,
@@ -1378,11 +1159,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "奖励在舰队扩大中",
 		explain2 = "有所建树的指挥官"
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.medal_template
-
-	var_1_47[10103] = {
+	pg.base.medal_template[10103] = {
 		target_id = "0",
 		name = "海军服役成就奖章 ",
 		target_num = 300,
@@ -1403,11 +1180,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "奖励在舰队扩大中",
 		explain2 = "有所建树的指挥官"
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.medal_template
-
-	var_1_48[10104] = {
+	pg.base.medal_template[10104] = {
 		target_id = "0",
 		name = "海军服役成就奖章 ",
 		target_num = 1,
@@ -1428,11 +1201,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "奖励在舰队扩大中",
 		explain2 = "有所建树的指挥官"
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.medal_template
-
-	var_1_49[10105] = {
+	pg.base.medal_template[10105] = {
 		target_id = "0",
 		name = "海军服役成就奖章 ",
 		target_num = 1,
@@ -1453,11 +1222,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "奖励在舰队扩大中",
 		explain2 = "有所建树的指挥官"
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.medal_template
-
-	var_1_50[3] = {
+	pg.base.medal_template[3] = {
 		name = "白鹰阵营子勋章1",
 		target_num = 12,
 		type = 0,
@@ -1483,11 +1248,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.medal_template
-
-	var_1_51[4] = {
+	pg.base.medal_template[4] = {
 		name = "白鹰阵营子勋章1",
 		target_num = 24,
 		type = 0,
@@ -1513,11 +1274,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.medal_template
-
-	var_1_52[5] = {
+	pg.base.medal_template[5] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章1",
 		target_num = 1,
@@ -1538,11 +1295,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.medal_template
-
-	var_1_53[6] = {
+	pg.base.medal_template[6] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章1",
 		target_num = 1,
@@ -1563,11 +1316,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.medal_template
-
-	var_1_54[7] = {
+	pg.base.medal_template[7] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章1",
 		target_num = 1,
@@ -1588,11 +1337,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.medal_template
-
-	var_1_55[13] = {
+	pg.base.medal_template[13] = {
 		target_id = "1",
 		name = "白鹰阵营子勋章2",
 		target_num = 200000,
@@ -1613,11 +1358,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.medal_template
-
-	var_1_56[14] = {
+	pg.base.medal_template[14] = {
 		target_id = "1",
 		name = "白鹰阵营子勋章2",
 		target_num = 400000,
@@ -1638,11 +1379,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.medal_template
-
-	var_1_57[15] = {
+	pg.base.medal_template[15] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章2",
 		target_num = 1,
@@ -1663,11 +1400,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.medal_template
-
-	var_1_58[16] = {
+	pg.base.medal_template[16] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章2",
 		target_num = 1,
@@ -1688,11 +1421,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.medal_template
-
-	var_1_59[17] = {
+	pg.base.medal_template[17] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章2",
 		target_num = 1,
@@ -1713,11 +1442,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.medal_template
-
-	var_1_60[23] = {
+	pg.base.medal_template[23] = {
 		name = "白鹰阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -1743,11 +1468,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.medal_template
-
-	var_1_61[24] = {
+	pg.base.medal_template[24] = {
 		name = "白鹰阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -1773,11 +1494,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.medal_template
-
-	var_1_62[25] = {
+	pg.base.medal_template[25] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章3",
 		target_num = 1,
@@ -1798,11 +1515,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.medal_template
-
-	var_1_63[26] = {
+	pg.base.medal_template[26] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章3",
 		target_num = 1,
@@ -1823,11 +1536,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.medal_template
-
-	var_1_64[27] = {
+	pg.base.medal_template[27] = {
 		target_id = "0",
 		name = "白鹰阵营子勋章3",
 		target_num = 1,
@@ -1848,11 +1557,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.medal_template
-
-	var_1_65[100711] = {
+	pg.base.medal_template[100711] = {
 		name = "皇家阵营子勋章1",
 		target_num = 12,
 		type = 0,
@@ -1878,11 +1583,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.medal_template
-
-	var_1_66[100712] = {
+	pg.base.medal_template[100712] = {
 		name = "皇家阵营子勋章1",
 		target_num = 24,
 		type = 0,
@@ -1908,11 +1609,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.medal_template
-
-	var_1_67[100713] = {
+	pg.base.medal_template[100713] = {
 		target_id = "0",
 		name = "皇家阵营子勋章1",
 		target_num = 1,
@@ -1933,11 +1630,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.medal_template
-
-	var_1_68[100714] = {
+	pg.base.medal_template[100714] = {
 		target_id = "0",
 		name = "皇家阵营子勋章1",
 		target_num = 1,
@@ -1958,11 +1651,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.medal_template
-
-	var_1_69[100715] = {
+	pg.base.medal_template[100715] = {
 		target_id = "0",
 		name = "皇家阵营子勋章1",
 		target_num = 1,
@@ -1983,11 +1672,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.medal_template
-
-	var_1_70[100721] = {
+	pg.base.medal_template[100721] = {
 		target_id = "2",
 		name = "皇家阵营子勋章2",
 		target_num = 200000,
@@ -2008,11 +1693,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.medal_template
-
-	var_1_71[100722] = {
+	pg.base.medal_template[100722] = {
 		target_id = "2",
 		name = "皇家阵营子勋章2",
 		target_num = 400000,
@@ -2033,11 +1714,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.medal_template
-
-	var_1_72[100723] = {
+	pg.base.medal_template[100723] = {
 		target_id = "0",
 		name = "皇家阵营子勋章2",
 		target_num = 1,
@@ -2058,11 +1735,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.medal_template
-
-	var_1_73[100724] = {
+	pg.base.medal_template[100724] = {
 		target_id = "0",
 		name = "皇家阵营子勋章2",
 		target_num = 1,
@@ -2083,11 +1756,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.medal_template
-
-	var_1_74[100725] = {
+	pg.base.medal_template[100725] = {
 		target_id = "0",
 		name = "皇家阵营子勋章2",
 		target_num = 1,
@@ -2108,11 +1777,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.medal_template
-
-	var_1_75[100731] = {
+	pg.base.medal_template[100731] = {
 		name = "皇家阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -2138,11 +1803,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.medal_template
-
-	var_1_76[100732] = {
+	pg.base.medal_template[100732] = {
 		name = "皇家阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -2168,11 +1829,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.medal_template
-
-	var_1_77[100733] = {
+	pg.base.medal_template[100733] = {
 		target_id = "0",
 		name = "皇家阵营子勋章3",
 		target_num = 1,
@@ -2193,11 +1850,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.medal_template
-
-	var_1_78[100734] = {
+	pg.base.medal_template[100734] = {
 		target_id = "0",
 		name = "皇家阵营子勋章3",
 		target_num = 1,
@@ -2218,11 +1871,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.medal_template
-
-	var_1_79[100735] = {
+	pg.base.medal_template[100735] = {
 		target_id = "0",
 		name = "皇家阵营子勋章3",
 		target_num = 1,
@@ -2243,11 +1892,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.medal_template
-
-	var_1_80[100811] = {
+	pg.base.medal_template[100811] = {
 		name = "重樱阵营子勋章1",
 		target_num = 12,
 		type = 0,
@@ -2273,11 +1918,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.medal_template
-
-	var_1_81[100812] = {
+	pg.base.medal_template[100812] = {
 		name = "重樱阵营子勋章1",
 		target_num = 24,
 		type = 0,
@@ -2303,11 +1944,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.medal_template
-
-	var_1_82[100813] = {
+	pg.base.medal_template[100813] = {
 		target_id = "0",
 		name = "重樱阵营子勋章1",
 		target_num = 1,
@@ -2328,11 +1965,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.medal_template
-
-	var_1_83[100814] = {
+	pg.base.medal_template[100814] = {
 		target_id = "0",
 		name = "重樱阵营子勋章1",
 		target_num = 1,
@@ -2353,11 +1986,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.medal_template
-
-	var_1_84[100815] = {
+	pg.base.medal_template[100815] = {
 		target_id = "0",
 		name = "重樱阵营子勋章1",
 		target_num = 1,
@@ -2378,11 +2007,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.medal_template
-
-	var_1_85[100821] = {
+	pg.base.medal_template[100821] = {
 		target_id = "3",
 		name = "重樱阵营子勋章2",
 		target_num = 200000,
@@ -2403,11 +2028,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.medal_template
-
-	var_1_86[100822] = {
+	pg.base.medal_template[100822] = {
 		target_id = "3",
 		name = "重樱阵营子勋章2",
 		target_num = 400000,
@@ -2428,11 +2049,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.medal_template
-
-	var_1_87[100823] = {
+	pg.base.medal_template[100823] = {
 		target_id = "0",
 		name = "重樱阵营子勋章2",
 		target_num = 1,
@@ -2453,11 +2070,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.medal_template
-
-	var_1_88[100824] = {
+	pg.base.medal_template[100824] = {
 		target_id = "0",
 		name = "重樱阵营子勋章2",
 		target_num = 1,
@@ -2478,11 +2091,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.medal_template
-
-	var_1_89[100825] = {
+	pg.base.medal_template[100825] = {
 		target_id = "0",
 		name = "重樱阵营子勋章2",
 		target_num = 1,
@@ -2503,11 +2112,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.medal_template
-
-	var_1_90[100831] = {
+	pg.base.medal_template[100831] = {
 		name = "重樱阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -2533,11 +2138,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.medal_template
-
-	var_1_91[100832] = {
+	pg.base.medal_template[100832] = {
 		name = "重樱阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -2563,11 +2164,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.medal_template
-
-	var_1_92[100833] = {
+	pg.base.medal_template[100833] = {
 		target_id = "0",
 		name = "重樱阵营子勋章3",
 		target_num = 1,
@@ -2588,11 +2185,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.medal_template
-
-	var_1_93[100834] = {
+	pg.base.medal_template[100834] = {
 		target_id = "0",
 		name = "重樱阵营子勋章3",
 		target_num = 1,
@@ -2613,11 +2206,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.medal_template
-
-	var_1_94[100835] = {
+	pg.base.medal_template[100835] = {
 		target_id = "0",
 		name = "重樱阵营子勋章3",
 		target_num = 1,
@@ -2638,11 +2227,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.medal_template
-
-	var_1_95[100911] = {
+	pg.base.medal_template[100911] = {
 		name = "铁血阵营子勋章1",
 		target_num = 12,
 		type = 0,
@@ -2668,11 +2253,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.medal_template
-
-	var_1_96[100912] = {
+	pg.base.medal_template[100912] = {
 		name = "铁血阵营子勋章1",
 		target_num = 24,
 		type = 0,
@@ -2698,11 +2279,7 @@ var_0_3.base.medal_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.medal_template
-
-	var_1_97[100913] = {
+	pg.base.medal_template[100913] = {
 		target_id = "0",
 		name = "铁血阵营子勋章1",
 		target_num = 1,
@@ -2723,11 +2300,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.medal_template
-
-	var_1_98[100914] = {
+	pg.base.medal_template[100914] = {
 		target_id = "0",
 		name = "铁血阵营子勋章1",
 		target_num = 1,
@@ -2748,8 +2321,7 @@ var_0_3.base.medal_template = {}
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_1_98
-	var_1_98.base.medal_template[100915] = {
+	pg.base.medal_template[100915] = {
 		target_id = "0",
 		name = "铁血阵营子勋章1",
 		target_num = 1,
@@ -2774,11 +2346,7 @@ var_0_3.base.medal_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.medal_template
-
-	var_2_0[100921] = {
+	pg.base.medal_template[100921] = {
 		target_id = "4",
 		name = "铁血阵营子勋章2",
 		target_num = 200000,
@@ -2799,11 +2367,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.medal_template
-
-	var_2_1[100922] = {
+	pg.base.medal_template[100922] = {
 		target_id = "4",
 		name = "铁血阵营子勋章2",
 		target_num = 400000,
@@ -2824,11 +2388,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.medal_template
-
-	var_2_2[100923] = {
+	pg.base.medal_template[100923] = {
 		target_id = "0",
 		name = "铁血阵营子勋章2",
 		target_num = 1,
@@ -2849,11 +2409,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.medal_template
-
-	var_2_3[100924] = {
+	pg.base.medal_template[100924] = {
 		target_id = "0",
 		name = "铁血阵营子勋章2",
 		target_num = 1,
@@ -2874,11 +2430,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.medal_template
-
-	var_2_4[100925] = {
+	pg.base.medal_template[100925] = {
 		target_id = "0",
 		name = "铁血阵营子勋章2",
 		target_num = 1,
@@ -2899,11 +2451,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.medal_template
-
-	var_2_5[100931] = {
+	pg.base.medal_template[100931] = {
 		name = "铁血阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -2929,11 +2477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.medal_template
-
-	var_2_6[100932] = {
+	pg.base.medal_template[100932] = {
 		name = "铁血阵营子勋章3",
 		target_num = 2000000,
 		type = 0,
@@ -2959,11 +2503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.medal_template
-
-	var_2_7[100933] = {
+	pg.base.medal_template[100933] = {
 		target_id = "0",
 		name = "铁血阵营子勋章3",
 		target_num = 1,
@@ -2984,11 +2524,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.medal_template
-
-	var_2_8[100934] = {
+	pg.base.medal_template[100934] = {
 		target_id = "0",
 		name = "铁血阵营子勋章3",
 		target_num = 1,
@@ -3009,11 +2545,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.medal_template
-
-	var_2_9[100935] = {
+	pg.base.medal_template[100935] = {
 		target_id = "0",
 		name = "铁血阵营子勋章3",
 		target_num = 1,
@@ -3034,11 +2566,7 @@ end)()
 		explain1 = "",
 		explain2 = ""
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.medal_template
-
-	var_2_10[200001] = {
+	pg.base.medal_template[200001] = {
 		target_id = "5711",
 		name = "抵抗之星纪念勋章",
 		target_num = 8,
@@ -3059,11 +2587,7 @@ end)()
 		explain1 = "「星光下的余晖」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.medal_template
-
-	var_2_11[200011] = {
+	pg.base.medal_template[200011] = {
 		target_id = "5769",
 		name = "华裳巧展纪念勋章",
 		target_num = 8,
@@ -3084,11 +2608,7 @@ end)()
 		explain1 = "「华裳巧展喜事长」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.medal_template
-
-	var_2_12[200021] = {
+	pg.base.medal_template[200021] = {
 		target_id = "5812",
 		name = "圣翼神光纪念勋章",
 		target_num = 8,
@@ -3109,11 +2629,7 @@ end)()
 		explain1 = "「樊笼内的神光」 ",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.medal_template
-
-	var_2_13[200031] = {
+	pg.base.medal_template[200031] = {
 		target_id = "5875",
 		name = "深谷病院调查纪念勋章",
 		target_num = 8,
@@ -3134,11 +2650,7 @@ end)()
 		explain1 = "「深谷来信」 ",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.medal_template
-
-	var_2_14[200041] = {
+	pg.base.medal_template[200041] = {
 		target_id = "5913",
 		name = "郁金启航纪念勋章",
 		target_num = 8,
@@ -3159,11 +2671,7 @@ end)()
 		explain1 = "「扬起郁金之旗」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.medal_template
-
-	var_2_15[200051] = {
+	pg.base.medal_template[200051] = {
 		target_id = "5970",
 		name = "高塔蔷薇纪念勋章",
 		target_num = 8,
@@ -3184,11 +2692,7 @@ end)()
 		explain1 = "「高塔上的蔷薇」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.medal_template
-
-	var_2_16[200061] = {
+	pg.base.medal_template[200061] = {
 		target_id = "5971",
 		name = "别墅假日纪念勋章",
 		target_num = 7,
@@ -3209,11 +2713,7 @@ end)()
 		explain1 = "「夏日重建」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.medal_template
-
-	var_2_17[7] = {
+	pg.base.medal_template[7] = {
 		target_id = "50021",
 		name = "都市寻踪纪念勋章",
 		target_num = 8,
@@ -3234,11 +2734,7 @@ end)()
 		explain1 = "「迷彩都市的寻踪者」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.medal_template
-
-	var_2_18[17] = {
+	pg.base.medal_template[17] = {
 		target_id = "50087",
 		name = "奇渊之下纪念勋章",
 		target_num = 8,
@@ -3259,11 +2755,7 @@ end)()
 		explain1 = "「奇渊下的秘密」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.medal_template
-
-	var_2_19[27] = {
+	pg.base.medal_template[27] = {
 		target_id = "50136",
 		name = "天域天原纪念勋章",
 		target_num = 8,
@@ -3284,11 +2776,7 @@ end)()
 		explain1 = "「起舞于天原之上」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.medal_template
-
-	var_2_20[200101] = {
+	pg.base.medal_template[200101] = {
 		target_id = "50209",
 		name = "自由群岛纪念勋章",
 		target_num = 8,
@@ -3309,11 +2797,7 @@ end)()
 		explain1 = "「飓风与自由群岛」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.medal_template
-
-	var_2_21[200111] = {
+	pg.base.medal_template[200111] = {
 		target_id = "50295",
 		name = "天穹之星纪念勋章",
 		target_num = 8,
@@ -3334,11 +2818,7 @@ end)()
 		explain1 = "「响彻于天穹之音」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.medal_template
-
-	var_2_22[200121] = {
+	pg.base.medal_template[200121] = {
 		target_id = "50359",
 		name = "光影风尚纪念勋章",
 		target_num = 8,
@@ -3359,11 +2839,7 @@ end)()
 		explain1 = "「光影风尚，拍摄进行时！」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.medal_template
-
-	var_2_23[200131] = {
+	pg.base.medal_template[200131] = {
 		target_id = "50405",
 		name = "春宴怀玉纪念勋章",
 		target_num = 8,
@@ -3384,11 +2860,7 @@ end)()
 		explain1 = "「春宴怀玉香满庭」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.medal_template
-
-	var_2_24[200141] = {
+	pg.base.medal_template[200141] = {
 		target_id = "50441",
 		name = "春满客栈纪念勋章",
 		target_num = 8,
@@ -3409,11 +2881,7 @@ end)()
 		explain1 = "「春满客栈online」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.medal_template
-
-	var_2_25[200151] = {
+	pg.base.medal_template[200151] = {
 		target_id = "50482",
 		name = "都市漫游纪念勋章",
 		target_num = 8,
@@ -3434,11 +2902,7 @@ end)()
 		explain1 = "「漫游者招募计划」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.medal_template
-
-	var_2_26[200161] = {
+	pg.base.medal_template[200161] = {
 		target_id = "50607",
 		name = "圣印同盟纪念勋章",
 		target_num = 8,
@@ -3459,11 +2923,7 @@ end)()
 		explain1 = "「圣印前的同盟」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.medal_template
-
-	var_2_27[200171] = {
+	pg.base.medal_template[200171] = {
 		target_id = "50616",
 		name = "奢华盛宴纪念勋章",
 		target_num = 7,
@@ -3484,11 +2944,7 @@ end)()
 		explain1 = "「奢华！享梦！浮金湾！」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.medal_template
-
-	var_2_28[200181] = {
+	pg.base.medal_template[200181] = {
 		target_id = "50659",
 		name = "美梦巡演纪念勋章",
 		target_num = 8,
@@ -3509,8 +2965,7 @@ end)()
 		explain1 = "「美梦巡演奇妙夜」",
 		explain2 = "活动纪念"
 	}
-	pg = var_2_28
-	var_2_28.base.medal_template[200191] = {
+	pg.base.medal_template[200191] = {
 		target_id = "51078",
 		name = "怪谈纪实纪念勋章",
 		target_num = 8,
@@ -3529,6 +2984,48 @@ end)()
 		rank = 1,
 		id = 200191,
 		explain1 = "「怪谈纪实：逃离白夜山庄！」",
+		explain2 = "活动纪念"
+	}
+	pg.base.medal_template[9] = {
+		target_id = "51110",
+		name = "星光城纪念勋章",
+		target_num = 8,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "迷途的旅人，你见证了星光城的美梦，然后踏碎了它。",
+		next = 0,
+		icon = "9201",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9201",
+		condition = "收集8个「沉溺于星光之城」纪念贴纸。",
+		rank = 1,
+		id = 200201,
+		explain1 = "「沉溺于星光之城」",
+		explain2 = "活动纪念"
+	}
+	pg.base.medal_template[19] = {
+		target_id = "51113",
+		name = "滨海极速纪念勋章",
+		target_num = 7,
+		type = 0,
+		is_out_of_print = 0,
+		count_inherit = 0,
+		desc = "引擎轰鸣，轮胎飞转，海风与热浪共同铺开这条闪耀的竞速之路。向着冠军全速前进吧！",
+		next = 0,
+		icon = "9211",
+		page = 2,
+		target_type = 131,
+		start = 0,
+		hide = 0,
+		label = "l_9211",
+		condition = "收集7个「滨海极速」纪念贴纸。",
+		rank = 1,
+		id = 200211,
+		explain1 = "「滨海极速」",
 		explain2 = "活动纪念"
 	}
 

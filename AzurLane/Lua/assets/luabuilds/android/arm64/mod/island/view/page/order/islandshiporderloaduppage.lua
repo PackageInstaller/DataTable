@@ -1,195 +1,77 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandShipOrderLoadUpPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "IslandShipOrderLoadUpPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandShipOrderLoadUpUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.mainTr = arg_2_0._tf:Find("main")
+	arg_2_0.cntTxt = arg_2_0._tf:Find("main/name/count"):GetComponent(typeof(Text))
+	arg_2_0.submitBtn = arg_2_0._tf:Find("main/btn/btn_1")
+	arg_2_0.noResBtn = arg_2_0._tf:Find("main/btn/btn_2")
+	arg_2_0.disableBtn = arg_2_0._tf:Find("main/btn/btn_3")
+	arg_2_0.awardCntTxt = arg_2_0._tf:Find("main/price/Text"):GetComponent(typeof(Text))
+	arg_2_0.nameTxt = arg_2_0._tf:Find("main/name"):GetComponent(typeof(Text))
 
-	arg_2_0.mainTr = var_1.Find(var_2_0, "main")
-
-	local var_2_1 = arg_2_0._tf
-	local var_2_2 = var_1.Find(var_2_1, "main/name/count")
-	local var_2_3 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.cntTxt = var_2_3(var_2_2, var_4(var_1_10006))
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.submitBtn = var_1.Find(var_2_4, "main/btn/btn_1")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.noResBtn = var_1.Find(var_2_5, "main/btn/btn_2")
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.disableBtn = var_1.Find(var_2_6, "main/btn/btn_3")
-
-	local var_2_7 = arg_2_0._tf
-	local var_2_8 = var_1.Find(var_2_7, "main/price/Text")
-	local var_2_9 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.awardCntTxt = var_2_9(var_2_8, var_4(var_1_10006))
-
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_1.Find(var_2_10, "main/name")
-	local var_2_12 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.nameTxt = var_2_12(var_2_11, var_4(var_1_10006))
-	setText = var_1
-
-	local var_2_13 = arg_2_0._tf
-	local var_2_14 = var_3.Find(var_2_13, "main/title/Text")
-
-	i18n = var_4
-
-	var_1(var_2_14, var_4("island_order_ship_loadup_award"))
-
-	setText = var_1
-
-	local var_2_15 = arg_2_0._tf
-	local var_2_16 = var_3.Find(var_2_15, "main/btn/btn_2/Text")
-
-	i18n = var_4
-
-	var_1(var_2_16, var_4("island_order_ship_loadup_nores"))
-
-	setText = var_1
-
-	local var_2_17 = arg_2_0._tf
-	local var_2_18 = var_3.Find(var_2_17, "main/btn/btn_1/Text")
-
-	i18n = var_4
-
-	var_1(var_2_18, var_4("island_order_ship_loadup"))
-
-	setText = var_1
-
-	local var_2_19 = arg_2_0._tf
-	local var_2_20 = var_3.Find(var_2_19, "main/btn/btn_3/Text")
-
-	i18n = var_4
-
-	var_1(var_2_20, var_4("island_order_ship_finish_cnt_not_enough"))
+	setText(arg_2_0._tf:Find("main/title/Text"), i18n("island_order_ship_loadup_award"))
+	setText(arg_2_0._tf:Find("main/btn/btn_2/Text"), i18n("island_order_ship_loadup_nores"))
+	setText(arg_2_0._tf:Find("main/btn/btn_1/Text"), i18n("island_order_ship_loadup"))
+	setText(arg_2_0._tf:Find("main/btn/btn_3/Text"), i18n("island_order_ship_finish_cnt_not_enough"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.emit
-
-		IslandShipOrderPage = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.EVENT_CLOSE_LOAD_UP)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:emit(IslandShipOrderPage.EVENT_CLOSE_LOAD_UP)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.submitBtn
-
-	local function var_3_5()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.submitBtn, function()
 		if not arg_3_0.slot or not arg_3_0.index then
 			return
 		end
 
-		local var_5_0 = arg_3_0.slot
-
-		if not var_0.CanTransport(var_5_0) then
+		if not arg_3_0.slot:CanTransport() then
 			return
 		end
 
-		local var_5_1 = arg_3_0
-		local var_5_2 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_5_2(var_5_1, var_2_10003.SUBMIT_SHIP_ORDER_ITME, arg_3_0.slot.id, arg_3_0.index)
+		arg_3_0:emit(IslandMediator.SUBMIT_SHIP_ORDER_ITME, arg_3_0.slot.id, arg_3_0.index)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-	var_0_1.super.Show(arg_6_0)
+function var_0_0.Show(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+	local var_6_9000
+
+	var_0_0.super.Show(arg_6_0)
 
 	arg_6_0.slot = arg_6_2
 	arg_6_0.index = arg_6_3
 	arg_6_0.mainTr.localPosition = arg_6_1
 
 	local var_6_0 = arg_6_2:GetOrder()
-	local var_6_1 = var_4.GetComsume(var_6_0, arg_6_3)
+	local var_6_1 = Drop.New((var_6_0.GetComsume(var_6_9000, arg_6_3)))
+	local var_6_2 = var_6_1.count <= var_6_0
 
-	Drop = var_1_10005
+	arg_6_0.cntTxt.text = setColorStr(var_6_1:getOwnedCount() .. "/" .. var_6_1.count, var_6_1.count <= var_6_0 and "#39beff" or "#f36c6e")
+	arg_6_0.nameTxt.text = var_6_1:getName()
+	arg_6_0.awardCntTxt.text = "X" .. arg_6_2:GetOrder():GetConsumeAwards(arg_6_3)[1].count
 
-	local var_6_2 = var_1_10005.New(var_6_1)
-	local var_6_3 = var_5.getOwnedCount(var_6_2)
-	local var_6_4 = var_5.count <= var_6_3 and "#39beff" or "#f36c6e"
-	local var_6_5 = arg_6_0.cntTxt
+	local var_6_3 = arg_6_0.slot:CanTransport()
 
-	setColorStr = var_1_10011
-	var_6_5.text = var_1_10011(var_6_3 .. "/" .. var_7, var_6_4)
-	arg_6_0.nameTxt.text = var_5:getName()
-
-	local var_6_6 = arg_6_0.awardCntTxt
-	local var_6_7 = "X"
-	local var_6_8 = arg_6_2:GetOrder()
-
-	var_6_6.text = var_6_7 .. var_12.GetConsumeAwards(var_6_8, arg_6_3)[1].count
-
-	local var_6_9 = arg_6_0.slot
-	local var_6_10 = var_10.CanTransport(var_6_9)
-
-	setActive = var_11
-
-	var_11(arg_6_0.submitBtn, var_8 and var_6_10)
-
-	setActive = var_11
-
-	var_11(arg_6_0.noResBtn, not var_8 and var_6_10)
-
-	setActive = var_11
-
-	var_11(arg_6_0.disableBtn, not var_6_10)
+	setActive(arg_6_0.submitBtn, var_6_2 and var_6_3)
+	setActive(arg_6_0.noResBtn, not var_6_2 and var_6_3)
+	setActive(arg_6_0.disableBtn, not var_6_3)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_7_0)
+function var_0_0.OnDestroy(arg_7_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,150 +1,65 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BossRushVerZenkerMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "BossRushVerZenkerMediator"
+var_0_0.ON_FLEET_SELECT = "BossRushVerZenkerMediator.ON_FLEET_SELECT"
+var_0_0.ON_EXTRA_RANK = "BossRushVerZenkerMediator.ON_EXTRA_RANK"
+var_0_0.ON_TASK_SUBMIT = "BossRushVerZenkerMediator.ON_TASK_SUBMIT"
+var_0_0.ON_PERFORM_COMBAT = "BossRushVerZenkerMediator.ON_PERFORM_COMBAT"
+var_0_0.GO_SUBLAYER = "BossRushVerZenkerMediator.GO_SUBLAYER"
+var_0_0.GO_SCENE = "BossRushVerZenkerMediator.GO_SCENE"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_FLEET_SELECT = "BossRushVerZenkerMediator.ON_FLEET_SELECT"
-var_0_1.ON_EXTRA_RANK = "BossRushVerZenkerMediator.ON_EXTRA_RANK"
-var_0_1.ON_TASK_SUBMIT = "BossRushVerZenkerMediator.ON_TASK_SUBMIT"
-var_0_1.ON_PERFORM_COMBAT = "BossRushVerZenkerMediator.ON_PERFORM_COMBAT"
-var_0_1.GO_SUBLAYER = "BossRushVerZenkerMediator.GO_SUBLAYER"
-var_0_1.GO_SCENE = "BossRushVerZenkerMediator.GO_SCENE"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GO_SUBLAYER, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-
-		var_3.addSubLayers(var_2_0, arg_2_1, nil, arg_2_2)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GO_SUBLAYER, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:addSubLayers(arg_2_1, nil, arg_2_2)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.GO_SCENE, function(arg_3_0, arg_3_1, ...)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.GO_SCENE, arg_3_1, ...)
+	arg_1_0:bind(var_0_0.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_FLEET_SELECT, function(arg_4_0, arg_4_1)
-		BossRushVerZenkerPassedLayer = var_2_10002
-		var_2_10002.seriesId = arg_4_1.configId
+	arg_1_0:bind(var_0_0.ON_FLEET_SELECT, function(arg_4_0, arg_4_1)
+		BossRushVerZenkerPassedLayer.seriesId = arg_4_1.configId
 
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_4_2 = var_2_10005.New
-		local var_4_3 = {}
-
-		BossRushFleetSelectMediator = var_2_10008
-		var_4_3.mediator = var_2_10008
-		BossRushVerZenkerFleetSelectView = var_2_10008
-		var_4_3.viewComponent = var_2_10008
-		var_4_3.data = {
-			seriesData = arg_4_1
-		}
-
-		var_4_1(var_4_0, var_4_2(var_4_3))
+		arg_1_0:addSubLayers(Context.New({
+			mediator = BossRushFleetSelectMediator,
+			viewComponent = BossRushVerZenkerFleetSelectView,
+			data = {
+				seriesData = arg_4_1
+			}
+		}))
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_EXTRA_RANK, function(arg_5_0)
-		local var_5_0 = arg_1_0
-		local var_5_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		local var_5_2 = var_2_10004.GO_SCENE
-
-		SCENE = var_2_10005
-
-		local var_5_3 = var_2_10005.BILLBOARD
-		local var_5_4 = {}
-
-		PowerRank = var_2_10007
-		var_5_4.page = var_2_10007.TYPE_BOSSRUSH
-
-		var_5_1(var_5_0, var_5_2, var_5_3, var_5_4)
+	arg_1_0:bind(var_0_0.ON_EXTRA_RANK, function(arg_5_0)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.BILLBOARD, {
+			page = PowerRank.TYPE_BOSSRUSH
+		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_PERFORM_COMBAT, function(arg_6_0, arg_6_1, arg_6_2)
-		local var_6_0 = arg_1_0
-		local var_6_1 = var_3.sendNotification
+	arg_1_0:bind(var_0_0.ON_PERFORM_COMBAT, function(arg_6_0, arg_6_1, arg_6_2)
+		arg_1_0:sendNotification(GAME.BEGIN_STAGE, {
+			system = SYSTEM_PERFORM,
+			stageId = arg_6_1,
+			exitCallback = arg_6_2
+		})
 
-		GAME = var_2_10006
-
-		local var_6_2 = var_2_10006.BEGIN_STAGE
-		local var_6_3 = {}
-
-		SYSTEM_PERFORM = var_2_10008
-		var_6_3.system = var_2_10008
-		var_6_3.stageId = arg_6_1
-		var_6_3.exitCallback = arg_6_2
-
-		var_6_1(var_6_0, var_6_2, var_6_3)
+		return
+	end)
+	arg_1_0:bind(var_0_0.ON_TASK_SUBMIT, function(arg_7_0, arg_7_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_7_1.id)
 
 		return
 	end)
 
-	local var_1_0 = arg_1_0
+	local var_1_0 = getProxy(ActivityProxy)
 
-	arg_1_0.bind(var_1_0, var_0_1.ON_TASK_SUBMIT, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_1_0
-		local var_7_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_7_1(var_7_0, var_2_10005.SUBMIT_TASK, arg_7_1.id)
-
-		return
-	end)
-
-	getProxy = var_1
-	ActivityProxy = var_1_0
-
-	local var_1_1 = var_1(var_1_0)
-	local var_1_2 = arg_1_0.contextData.activityID
-
-	assert = var_1_0
-
-	var_1_0(var_1_2, "activityID is required by BossRushVerZenkerMediator")
-
-	local var_1_3 = var_1_1:getActivityById(var_1_2)
-	local var_1_4 = arg_1_0.viewComponent
-
-	var_4.SetActivity(var_1_4, var_1_3)
-
-	local var_1_5 = var_1_1
-	local var_1_6 = var_1_1.getActivityById
-
-	ActivityConst = var_7
-
-	local var_1_7 = var_1_6(var_1_5, var_7.ZENGKEHAIJUNSHANGJIANG_PT_ACT_ID)
-	local var_1_8 = arg_1_0.viewComponent
-
-	var_5.SetPtActivity(var_1_8, var_1_7)
-
-	local var_1_9 = arg_1_0.viewComponent
-
-	var_5.addbubbleMsgBox(var_1_9, function(arg_8_0)
-		getProxy = var_2_10001
-		ContextProxy = var_2_10003
-
-		local var_8_0 = var_2_10001(var_2_10003)
-		local var_8_1 = var_1.getCurrentContext(var_8_0)
-		local var_8_2 = var_1.getContextByMediator
-
-		BossRushTotalRewardPanelMediator = var_2_10004
-
-		if var_8_2(var_8_1, var_2_10004) then
+	assert(arg_1_0.contextData.activityID, "activityID is required by BossRushVerZenkerMediator")
+	arg_1_0.viewComponent:SetActivity((var_1_0:getActivityById(arg_1_0.contextData.activityID)))
+	arg_1_0.viewComponent:SetPtActivity((var_1_0:getActivityById(ActivityConst.ZENGKEHAIJUNSHANGJIANG_PT_ACT_ID)))
+	arg_1_0.viewComponent:addbubbleMsgBox(function(arg_8_0)
+		if getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushTotalRewardPanelMediator) then
 			return
 		end
 
@@ -152,15 +67,8 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-
-	local var_1_10 = arg_1_0.viewComponent
-
-	var_5.addbubbleMsgBox(var_1_10, function(arg_9_0)
-		pg = var_2_10001
-
-		local var_9_0 = var_2_10001.GuildMsgBoxMgr.GetInstance()
-
-		var_1.NotificationForBattle(var_9_0, arg_9_0)
+	arg_1_0.viewComponent:addbubbleMsgBox(function(arg_9_0)
+		pg.GuildMsgBoxMgr.GetInstance():NotificationForBattle(arg_9_0)
 
 		return
 	end)
@@ -168,138 +76,60 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_10_0)
-	local var_10_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_10_0[1] = var_1_10002.ACTIVITY_UPDATED
-	GAME = var_2
-	var_10_0[2] = var_2.SUBMIT_TASK_AWARD_DOWN
-	GAME = var_2
-	var_10_0[3] = var_2.BEGIN_STAGE_DONE
-	BossRushTotalRewardPanelMediator = var_2
-	var_10_0[4] = var_2.ON_WILL_EXIT
-
-	return var_10_0
+function var_0_0.listNotificationInterests(arg_10_0)
+	return {
+		ActivityProxy.ACTIVITY_UPDATED,
+		GAME.SUBMIT_TASK_AWARD_DOWN,
+		GAME.BEGIN_STAGE_DONE,
+		BossRushTotalRewardPanelMediator.ON_WILL_EXIT
+	}
 end
 
-function var_0_1.handleNotification(arg_11_0, arg_11_1)
+function var_0_0.handleNotification(arg_11_0, arg_11_1)
 	local var_11_0 = arg_11_1:getName()
-	local var_11_1 = arg_11_1
-	local var_11_2 = arg_11_1.getBody(var_11_1)
-	local var_11_3 = arg_11_1:getType()
+	local var_11_1 = arg_11_1:getBody()
+	local var_11_2 = arg_11_1:getType()
 
 	if var_11_0 == nil then
 		-- block empty
-	else
-		GAME = var_11_1
-
-		local var_11_5
-
-		if var_11_0 == var_11_1.BEGIN_STAGE_DONE then
-			getProxy = var_11_5
-			ContextProxy = var_1_10007
-
-			local var_11_4 = var_11_5(var_1_10007)
-
-			var_11_5 = var_11_5.getContextByMediator
-			BossRushPreCombatMediator = var_1_10008
-
-			if not var_11_5(var_11_4, var_1_10008) then
-				local var_11_6 = arg_11_0
-				local var_11_7 = arg_11_0.sendNotification
-
-				GAME = var_1_10009
-
-				local var_11_8 = var_1_10009.GO_SCENE
-
-				SCENE = var_1_10010
-
-				var_11_7(var_11_6, var_11_8, var_1_10010.COMBATLOAD, var_11_2)
-			end
-		else
-			ActivityProxy = var_11_5
-
-			if var_11_0 == var_11_5.ACTIVITY_UPDATED then
-				if var_11_2 then
-					if var_5.id == arg_11_0.contextData.activityID then
-						local var_11_9 = arg_11_0.viewComponent
-
-						var_6.SetActivity(var_11_9, var_5)
-
-						local var_11_10 = arg_11_0.viewComponent
-
-						var_6.UpdateView(var_11_10)
-					else
-						local var_11_11 = var_5.id
-
-						ActivityConst = var_7
-
-						if var_11_11 == var_7.ZENGKEHAIJUNSHANGJIANG_PT_ACT_ID then
-							local var_11_12 = arg_11_0.viewComponent
-
-							var_6.SetPtActivity(var_11_12, var_5)
-
-							local var_11_13 = arg_11_0.viewComponent
-
-							var_6.UpdateView(var_11_13)
-						end
-					end
-				end
-			else
-				GAME = var_5
-
-				local var_11_14
-
-				if var_11_0 == var_5.SUBMIT_TASK_AWARD_DOWN then
-					var_11_14 = {}
-
-					if #var_11_2.awards > 0 then
-						table = var_6
-
-						var_6.insert(var_11_14, function(arg_12_0)
-							local var_12_0 = arg_11_0.viewComponent
-							local var_12_1 = var_1.emit
-
-							BaseUI = var_2_10004
-
-							var_12_1(var_12_0, var_2_10004.ON_ACHIEVE, var_11_2.awards, arg_12_0)
-
-							return
-						end)
-					end
-
-					seriesAsync = var_6
-
-					var_6(var_11_14, function()
-						local var_13_0 = arg_11_0.viewComponent
-
-						var_0.UpdateView(var_13_0)
-
-						return
-					end)
-				else
-					BossRushTotalRewardPanelMediator = var_11_14
-
-					if var_11_0 == var_11_14.ON_WILL_EXIT then
-						local var_11_15 = arg_11_0.viewComponent
-
-						var_5.resumeBubble(var_11_15)
-
-						local var_11_16 = arg_11_0.viewComponent
-
-						var_5.UpdateView(var_11_16)
-					end
-				end
+	elseif var_11_0 == GAME.BEGIN_STAGE_DONE then
+		if not getProxy(ContextProxy):getContextByMediator(BossRushPreCombatMediator) then
+			arg_11_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, var_11_1)
+		end
+	elseif var_11_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_11_1 then
+			if var_11_1.id == arg_11_0.contextData.activityID then
+				arg_11_0.viewComponent:SetActivity(var_11_1)
+				arg_11_0.viewComponent:UpdateView()
+			elseif var_11_1.id == ActivityConst.ZENGKEHAIJUNSHANGJIANG_PT_ACT_ID then
+				arg_11_0.viewComponent:SetPtActivity(var_11_1)
+				arg_11_0.viewComponent:UpdateView()
 			end
 		end
+	elseif var_11_0 == GAME.SUBMIT_TASK_AWARD_DOWN then
+		if #var_11_1.awards > 0 then
+			table.insert({}, function(arg_12_0)
+				arg_11_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_11_1.awards, arg_12_0)
+
+				return
+			end)
+		end
+
+		seriesAsync({}, function()
+			arg_11_0.viewComponent:UpdateView()
+
+			return
+		end)
+	elseif var_11_0 == BossRushTotalRewardPanelMediator.ON_WILL_EXIT then
+		arg_11_0.viewComponent:resumeBubble()
+		arg_11_0.viewComponent:UpdateView()
 	end
 
 	return
 end
 
-function var_0_1.remove(arg_14_0)
+function var_0_0.remove(arg_14_0)
 	return
 end
 
-return var_0_1
+return var_0_0

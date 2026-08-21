@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "chapter_boom") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "chapter_boom"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.chapter_boom = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.chapter_boom
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.chapter_boom = rawget(pg, "chapter_boom") or setmetatable({
+	__name = "chapter_boom"
+}, confNEO)
+pg.chapter_boom.all = {
 	1190001,
 	1190002,
 	1190003,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	1190015,
 	1190016
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.chapter_boom = {}
+pg.base = pg.base or {}
+pg.base.chapter_boom = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.chapter_boom
-
-	var_1_0[1190001] = {
+	pg.base.chapter_boom[1190001] = {
 		action_times = 3,
 		minimum_guarantee = 6,
 		first_time = 0,
@@ -136,11 +99,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.chapter_boom
-
-	var_1_1[1190002] = {
+	pg.base.chapter_boom[1190002] = {
 		action_times = 3,
 		minimum_guarantee = 6,
 		first_time = 0,
@@ -231,11 +190,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.chapter_boom
-
-	var_1_2[1190003] = {
+	pg.base.chapter_boom[1190003] = {
 		action_times = 3,
 		minimum_guarantee = 6,
 		first_time = 0,
@@ -346,11 +301,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.chapter_boom
-
-	var_1_3[1190004] = {
+	pg.base.chapter_boom[1190004] = {
 		action_times = 3,
 		minimum_guarantee = 6,
 		first_time = 0,
@@ -465,11 +416,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.chapter_boom
-
-	var_1_4[1190005] = {
+	pg.base.chapter_boom[1190005] = {
 		action_times = 3,
 		minimum_guarantee = 6,
 		first_time = 0,
@@ -580,11 +527,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.chapter_boom
-
-	var_1_5[1190006] = {
+	pg.base.chapter_boom[1190006] = {
 		action_times = 3,
 		minimum_guarantee = 6,
 		first_time = 0,
@@ -703,11 +646,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.chapter_boom
-
-	var_1_6[1190011] = {
+	pg.base.chapter_boom[1190011] = {
 		action_times = 3,
 		minimum_guarantee = 5,
 		first_time = 0,
@@ -786,11 +725,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.chapter_boom
-
-	var_1_7[1190012] = {
+	pg.base.chapter_boom[1190012] = {
 		action_times = 3,
 		minimum_guarantee = 5,
 		first_time = 0,
@@ -881,11 +816,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.chapter_boom
-
-	var_1_8[1190013] = {
+	pg.base.chapter_boom[1190013] = {
 		action_times = 3,
 		minimum_guarantee = 5,
 		first_time = 0,
@@ -996,11 +927,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.chapter_boom
-
-	var_1_9[1190014] = {
+	pg.base.chapter_boom[1190014] = {
 		action_times = 3,
 		minimum_guarantee = 5,
 		first_time = 0,
@@ -1115,11 +1042,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.chapter_boom
-
-	var_1_10[1190015] = {
+	pg.base.chapter_boom[1190015] = {
 		action_times = 3,
 		minimum_guarantee = 5,
 		first_time = 0,
@@ -1230,8 +1153,7 @@ var_0_3.base.chapter_boom = {}
 			}
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.chapter_boom[0] = {
+	pg.base.chapter_boom[0] = {
 		action_times = 3,
 		minimum_guarantee = 5,
 		first_time = 0,

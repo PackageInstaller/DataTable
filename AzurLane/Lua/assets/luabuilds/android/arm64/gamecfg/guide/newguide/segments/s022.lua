@@ -1,12 +1,4 @@
-﻿local var_0_0 = {
-	"啊~作战失败！点击确定退出当前关卡",
-	"指挥官请点击<color=#ffde38>出击</color>",
-	"选择主线",
-	"再次选择<color=#ff7d36>近海演习</color>关卡",
-	"点击<color=#ff7d36>立刻前往</color>开始索敌！"
-}
-
-return {
+﻿return {
 	id = "S022",
 	events = {
 		{
@@ -16,7 +8,13 @@ return {
 				dir = 1,
 				posY = 147.8,
 				posX = 328.7,
-				text = var_0_0[1]
+				text = ({
+					"啊~作战失败！点击确定退出当前关卡",
+					"指挥官请点击<color=#ffde38>出击</color>",
+					"选择主线",
+					"再次选择<color=#ff7d36>近海演习</color>关卡",
+					"点击<color=#ff7d36>立刻前往</color>开始索敌！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -40,17 +38,18 @@ return {
 				dir = 1,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[2]
+				text = ({
+					"啊~作战失败！点击确定退出当前关卡",
+					"指挥官请点击<color=#ffde38>出击</color>",
+					"选择主线",
+					"再次选择<color=#ff7d36>近海演习</color>关卡",
+					"点击<color=#ff7d36>立刻前往</color>开始索敌！"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -78,7 +77,13 @@ return {
 				dir = -1,
 				posY = -50,
 				posX = 250,
-				text = var_0_0[3]
+				text = ({
+					"啊~作战失败！点击确定退出当前关卡",
+					"指挥官请点击<color=#ffde38>出击</color>",
+					"选择主线",
+					"再次选择<color=#ff7d36>近海演习</color>关卡",
+					"点击<color=#ff7d36>立刻前往</color>开始索敌！"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -103,7 +108,13 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[4]
+				text = ({
+					"啊~作战失败！点击确定退出当前关卡",
+					"指挥官请点击<color=#ffde38>出击</color>",
+					"选择主线",
+					"再次选择<color=#ff7d36>近海演习</color>关卡",
+					"点击<color=#ff7d36>立刻前往</color>开始索敌！"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,
@@ -139,7 +150,13 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[5]
+				text = ({
+					"啊~作战失败！点击确定退出当前关卡",
+					"指挥官请点击<color=#ffde38>出击</color>",
+					"选择主线",
+					"再次选择<color=#ff7d36>近海演习</color>关卡",
+					"点击<color=#ff7d36>立刻前往</color>开始索敌！"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,

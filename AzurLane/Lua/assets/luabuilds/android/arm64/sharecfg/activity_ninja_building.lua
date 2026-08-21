@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ninja_building") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ninja_building"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ninja_building = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ninja_building
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ninja_building = rawget(pg, "activity_ninja_building") or setmetatable({
+	__name = "activity_ninja_building"
+}, confNEO)
+pg.activity_ninja_building.all = {
 	1,
 	2,
 	3,
@@ -51,11 +28,7 @@ var_0_3.all = {
 	103,
 	104
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_ninja_building
-
-var_0_4.get_id_list_by_need_level = {
+pg.activity_ninja_building.get_id_list_by_need_level = {
 	[0] = {
 		1,
 		2,
@@ -83,25 +56,11 @@ var_0_4.get_id_list_by_need_level = {
 		104
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_ninja_building = {}
+pg.base = pg.base or {}
+pg.base.activity_ninja_building = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ninja_building
-
-	var_1_0[1] = {
+	pg.base.activity_ninja_building[1] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -155,11 +114,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_changwu"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ninja_building
-
-	var_1_1[2] = {
+	pg.base.activity_ninja_building[2] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -213,11 +168,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_micang"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ninja_building
-
-	var_1_2[3] = {
+	pg.base.activity_ninja_building[3] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -271,11 +222,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_zhushuichi"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ninja_building
-
-	var_1_3[4] = {
+	pg.base.activity_ninja_building[4] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -319,11 +266,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_dashoumen"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ninja_building
-
-	var_1_4[5] = {
+	pg.base.activity_ninja_building[5] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -367,11 +310,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_eryumen"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ninja_building
-
-	var_1_5[6] = {
+	pg.base.activity_ninja_building[6] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -415,11 +354,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_minfang"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ninja_building
-
-	var_1_6[7] = {
+	pg.base.activity_ninja_building[7] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -473,11 +408,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_xiaotianshou"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ninja_building
-
-	var_1_7[8] = {
+	pg.base.activity_ninja_building[8] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -531,11 +462,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_sanyumenwaiqiaoliang"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ninja_building
-
-	var_1_8[9] = {
+	pg.base.activity_ninja_building[9] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -589,11 +516,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_xiuxingdi"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ninja_building
-
-	var_1_9[10] = {
+	pg.base.activity_ninja_building[10] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -637,11 +560,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_linyuan"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ninja_building
-
-	var_1_10[11] = {
+	pg.base.activity_ninja_building[11] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -685,11 +604,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_sanchonglu"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ninja_building
-
-	var_1_11[12] = {
+	pg.base.activity_ninja_building[12] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -733,11 +648,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_qulunyumen"
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ninja_building
-
-	var_1_12[13] = {
+	pg.base.activity_ninja_building[13] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -791,11 +702,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_bingying"
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ninja_building
-
-	var_1_13[14] = {
+	pg.base.activity_ninja_building[14] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -849,11 +756,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_wuqiku"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ninja_building
-
-	var_1_14[15] = {
+	pg.base.activity_ninja_building[15] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -897,11 +800,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_machang"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ninja_building
-
-	var_1_15[16] = {
+	pg.base.activity_ninja_building[16] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -955,11 +854,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_tianshouge"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ninja_building
-
-	var_1_16[17] = {
+	pg.base.activity_ninja_building[17] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -1013,11 +908,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_yudian"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ninja_building
-
-	var_1_17[18] = {
+	pg.base.activity_ninja_building[18] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -1061,11 +952,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_sichonglu"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ninja_building
-
-	var_1_18[19] = {
+	pg.base.activity_ninja_building[19] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -1109,11 +996,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_sanyumenwaiqiaoliang"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ninja_building
-
-	var_1_19[20] = {
+	pg.base.activity_ninja_building[20] = {
 		time = 0,
 		type = 1,
 		need_level = 0,
@@ -1167,11 +1050,7 @@ var_0_4.base.activity_ninja_building = {}
 			"ninjacityicon/icon_baowu"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ninja_building
-
-	var_1_20[101] = {
+	pg.base.activity_ninja_building[101] = {
 		time = 60,
 		type = 2,
 		need_level = 0,
@@ -1225,11 +1104,7 @@ var_0_4.base.activity_ninja_building = {}
 			"qicon/yanzhan_4"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ninja_building
-
-	var_1_21[102] = {
+	pg.base.activity_ninja_building[102] = {
 		time = 60,
 		type = 2,
 		need_level = 0,
@@ -1283,11 +1158,7 @@ var_0_4.base.activity_ninja_building = {}
 			"qicon/bulunnusi_3"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ninja_building
-
-	var_1_22[103] = {
+	pg.base.activity_ninja_building[103] = {
 		time = 60,
 		type = 2,
 		need_level = 0,
@@ -1341,8 +1212,7 @@ var_0_4.base.activity_ninja_building = {}
 			"qicon/lafeiII_4"
 		}
 	}
-	pg = var_1_22
-	var_1_22.base.activity_ninja_building[104] = {
+	pg.base.activity_ninja_building[104] = {
 		time = 60,
 		type = 2,
 		need_level = 0,

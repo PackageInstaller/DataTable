@@ -1,95 +1,45 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ComposeItemCommand", pm.SimpleCommand)
 
-local var_0_0 = "ComposeItemCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_3 = getProxy(BagProxy)
+	local var_1_4 = getProxy(BagProxy):getItemById(var_1_0.id)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.count
-
-	getProxy = var_1_10005
-	BagProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-	local var_1_3 = var_5.getItemById(var_1_2, var_1_0)
-
-	if var_1_1 == 0 then
+	if var_1_0.count == 0 then
 		return
 	end
 
-	local var_1_4 = var_1_3:getConfig("target_id")
-	local var_1_5 = var_1_3
-	local var_1_6 = var_1_3.getConfig(var_1_5, "compose_number")
+	local var_1_5 = var_1_4:getConfig("target_id")
 
-	if var_1_1 > var_1_3.count / var_1_6 then
-		pg = var_1_5
-
-		local var_1_7 = var_1_5.TipsMgr.GetInstance()
-
-		var_1_5 = var_1_5.ShowTips
-		i18n = var_1_10013
-
-		var_1_5(var_1_7, var_1_10013("common_no_item_1"))
+	if var_1_0.count > var_1_4.count / var_1_4:getConfig("compose_number") then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
-	pg = var_1_5
-
-	local var_1_8 = var_1_5.ConnectionMgr.GetInstance()
-
-	var_10.Send(var_1_8, 15006, {
-		id = var_1_0,
-		num = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(15006, {
+		id = var_1_0.id,
+		num = var_1_0.count
 	}, 15007, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
+			var_1_3:removeItemById(var_1_1, var_1_2 * var_0)
 
-			var_2_1.removeItemById(var_2_0, var_1_0, var_1_1 * var_1_6)
+			local var_2_0 = Drop.New({
+				type = DROP_TYPE_ITEM,
+				id = var_1_5,
+				count = var_1_2
+			})
 
-			Drop = var_2_1
-			var_2_1 = var_2_1.New
-
-			local var_2_2 = {}
-
-			DROP_TYPE_ITEM = var_2_10004
-			var_2_2.type = var_2_10004
-			var_2_2.id = var_1_4
-			var_2_2.count = var_1_1
-			var_2_1 = var_2_1(var_2_2)
-			var_2_10004 = arg_1_0
-
-			local var_2_3 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_3(var_2_10004, var_5.ADD_ITEM, var_2_1)
-
-			var_2_10004 = arg_1_0
-
-			local var_2_4 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_4(var_2_10004, var_5.USE_ITEM_DONE, {
+			arg_1_0:sendNotification(GAME.ADD_ITEM, var_2_0)
+			arg_1_0:sendNotification(GAME.USE_ITEM_DONE, {
 				drops = {
-					var_2_1
+					var_2_0
 				}
 			})
 		else
-			pg = var_2_1
-
-			local var_2_5 = var_2_1.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -98,4 +48,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,275 +1,131 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PursuingBluePrintCommand", pm.SimpleCommand)
 
-local var_0_0 = "PursuingBluePrintCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.count
+	local var_1_2 = var_1_0.id
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().count
-	local var_1_1 = var_2.id
-
-	if var_1_0 == 0 then
+	if var_1_0.count == 0 then
 		return
 	end
 
-	getProxy = var_1_10005
-	TechnologyProxy = var_1_10007
+	local var_1_3 = getProxy(TechnologyProxy)
+	local var_1_4 = var_1_3:getBluePrintById(var_1_0.id)
 
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.getBluePrintById(var_1_2, var_1_1) then
+	if not var_1_4 then
 		return
 	end
 
-	local var_1_3 = var_6
-
-	if not var_6.isUnlock(var_1_3) then
+	if not var_1_4:isUnlock() then
 		return
 	end
 
-	getProxy = var_7
-	PlayerProxy = var_1_3
+	local var_1_5 = getProxy(PlayerProxy):getRawData()
 
-	local var_1_4 = var_7(var_1_3)
-	local var_1_5 = var_7.getRawData(var_1_4)
-	local var_1_6 = var_7.getResource
-
-	PlayerConst = var_1_10010
-
-	if var_1_6(var_1_5, var_1_10010.ResGold) < var_5:calcPursuingCost(var_6, var_1_0) then
+	if var_1_5:getResource(PlayerConst.ResGold) < var_1_3:calcPursuingCost(var_1_4, var_1_0.count) then
 		return
 	end
 
-	if var_6:isMaxLevel() and var_6:isMaxFateLevel() then
-		pg = var_9
+	local var_1_6
 
-		local var_1_7 = var_9.TipsMgr.GetInstance()
-		local var_1_8 = var_9.ShowTips
+	if var_1_4:isMaxLevel() and var_1_4:isMaxFateLevel() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_max_level_tip"))
 
-		i18n = var_12
+		do return end
 
-		var_1_8(var_1_7, var_12("blueprint_max_level_tip"))
+		var_1_6 = Clone(var_1_4)
+	end
+
+	var_1_6:addExp(var_1_0.count * var_1_4:getItemExp())
+
+	local var_1_7 = var_1_6:getStrengthenConfig(math.max(var_1_6.level, 1))
+	local var_1_8 = getProxy(BayProxy)
+
+	if getProxy(BayProxy):getShipById(var_1_4.shipId).level < var_1_7.need_lv then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("buleprint_need_level_tip", var_1_7.need_lv))
 
 		return
 	end
 
-	local var_1_9 = var_6
-	local var_1_10 = var_1_0 * var_6.getItemExp(var_1_9)
-
-	Clone = var_1_9
-
-	local var_1_11 = var_1_9(var_6)
-
-	var_11.addExp(var_1_11, var_1_10)
-
-	local var_1_12 = var_11
-	local var_1_13 = var_11.getStrengthenConfig
-
-	math = var_15
-
-	local var_1_14 = var_1_13(var_1_12, var_15.max(var_11.level, 1))
-
-	getProxy = var_13
-	BayProxy = var_15
-
-	local var_1_15 = var_13(var_15)
-	local var_1_17
-
-	if var_13.getShipById(var_1_15, var_6.shipId).level < var_1_14.need_lv then
-		pg = var_1_17
-
-		local var_1_16 = var_1_17.TipsMgr.GetInstance()
-
-		var_1_17 = var_1_17.ShowTips
-		i18n = var_18
-
-		var_1_17(var_1_16, var_18("buleprint_need_level_tip", var_1_14.need_lv))
-
-		return
-	end
-
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.ConnectionMgr.GetInstance()
-
-	var_15.Send(var_1_18, 63212, {
-		ship_id = var_6.shipId,
-		count = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(63212, {
+		ship_id = var_1_4.shipId,
+		count = var_1_0.count
 	}, 63213, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			PlayerProxy = var_2_10003
-			var_2_10004 = var_1(var_2_10003)
+			local var_2_0 = getProxy(PlayerProxy)
+			local var_2_1 = var_2_0:getData()
 
-			local var_2_0 = var_1.getData(var_2_10004)
-
-			var_2.consume(var_2_0, {
+			var_2_1:consume({
 				gold = var_0
 			})
-			var_1:updatePlayer(var_2)
+			var_2_0:updatePlayer(var_2_1)
+			var_1_3:addPursuingTimes(var_1_1, var_1_4:isRarityUR())
 
-			local var_2_1 = var_0
-			local var_2_2 = var_3.addPursuingTimes
-			local var_2_3 = var_1_0
-			local var_2_4 = var_0
+			local var_2_2 = Clone(var_1_4)
 
-			var_2_2(var_2_1, var_2_3, var_7.isRarityUR(var_2_4))
+			var_1_4:addExp(var_1_4:getItemExp() * var_1_1)
 
-			Clone = var_2_2
+			if var_1_4.level > var_2_2.level then
+				for iter_2_0 = var_2_2.level + 1, var_1_4.level do
+					local var_2_3 = var_1_4:getStrengthenConfig(iter_2_0)
 
-			local var_2_5 = var_2_2(var_0)
-			local var_2_6 = var_0
+					if var_2_3.special == 1 and type(var_2_3.special_effect) == "table" then
+						for iter_2_1, iter_2_2 in ipairs(var_2_3.special_effect) do
+							if iter_2_2[1] == ShipBluePrint.STRENGTHEN_TYPE_SKILL then
+								local var_2_4 = getProxy(BayProxy)
+								local var_2_5 = var_2_4:getShipById(var_1_4.shipId)
 
-			var_2_10004 = var_2_10004.getItemExp(var_2_6)
+								for iter_2_3, iter_2_4 in ipairs(iter_2_2[2]) do
+									var_2_5.skills[var_1_2] = {
+										exp = 0,
+										level = 1,
+										id = iter_2_4
+									}
 
-			local var_2_7 = var_0
-
-			var_5.addExp(var_2_7, var_2_10004 * var_1_0)
-
-			if var_0.level > var_2_5.level then
-				for iter_2_0 = var_2_5.level + 1, var_0.level do
-					var_2_10011 = var_0
-
-					if var_9.getStrengthenConfig(var_2_10011, iter_2_0).special == 1 then
-						type = var_10
-
-						if var_10(var_9.special_effect) == "table" then
-							local var_2_8 = var_9.special_effect
-
-							ipairs = var_2_10011
-
-							for iter_2_1, iter_2_2 in var_2_10011(var_2_8) do
-								local var_2_9 = iter_2_2[1]
-
-								ShipBluePrint = var_2_10017
-
-								if var_2_9 == var_2_10017.STRENGTHEN_TYPE_SKILL then
-									var_2_10017 = iter_2_2[2]
-									getProxy = var_2_10018
-									BayProxy = var_2_10020
-									var_2_10021 = var_2_10018(var_2_10020)
-									var_2_10019 = var_2_10018.getShipById(var_2_10021, var_0.shipId)
-									ipairs = var_2_10020
-
-									for iter_2_3, iter_2_4 in var_2_10020(var_2_10017) do
-										local var_2_10 = var_2_10019.skills
-
-										var_2_10[var_1_1] = {
-											exp = 0,
-											level = 1,
-											id = iter_2_4
-										}
-										pg = var_2_10
-
-										local var_2_11 = var_2_10.TipsMgr.GetInstance()
-
-										var_25.ShowTips(var_2_11, iter_2_2[3])
-									end
-
-									var_2_10022 = var_2_10018
-
-									var_2_10018.updateShip(var_2_10022, var_2_10019)
-								else
-									ShipBluePrint = var_2_10017
-
-									if var_2_9 == var_2_10017.STRENGTHEN_TYPE_SKIN then
-										getProxy = var_2_10017
-										ShipSkinProxy = var_2_10019
-										var_2_10020 = var_2_10017(var_2_10019)
-										var_2_10018 = var_2_10017.addSkin
-										ShipSkin = var_2_10021
-
-										var_2_10018(var_2_10020, var_2_10021.New({
-											id = iter_2_2[2]
-										}))
-
-										pg = var_2_10018
-										var_2_10018 = var_2_10018.ship_skin_template[iter_2_2[2]].name
-										pg = var_2_10019
-										var_2_10021 = var_2_10019.TipsMgr.GetInstance()
-
-										var_2_10019.ShowTips(var_2_10021, iter_2_2[3])
-									else
-										ShipBluePrint = var_2_10017
-
-										if var_2_9 == var_2_10017.STRENGTHEN_TYPE_BREAKOUT then
-											getProxy = var_2_10017
-											BayProxy = var_2_10019
-											var_2_10020 = var_2_10017(var_2_10019)
-											var_2_10018 = var_2_10017.getShipById(var_2_10020, var_0.shipId)
-											var_2_10021 = arg_1_0
-
-											var_2_10019.upgradeStar(var_2_10021, var_2_10018)
-										end
-									end
+									pg.TipsMgr.GetInstance():ShowTips(iter_2_2[3])
 								end
+
+								var_2_4:updateShip(var_2_5)
+							elseif iter_2_2[1] == ShipBluePrint.STRENGTHEN_TYPE_SKIN then
+								getProxy(ShipSkinProxy):addSkin(ShipSkin.New({
+									id = iter_2_2[2]
+								}))
+								pg.TipsMgr.GetInstance():ShowTips(iter_2_2[3])
+							elseif iter_2_2[1] == ShipBluePrint.STRENGTHEN_TYPE_BREAKOUT then
+								local var_2_7 = getProxy(BayProxy)
+
+								arg_1_0:upgradeStar((var_2_7:getShipById(var_1_4.shipId)))
 							end
 						end
 					end
 				end
-			elseif var_0.fateLevel > var_2_5.fateLevel then
-				for iter_2_5 = var_2_5.fateLevel + 1, var_0.fateLevel do
-					var_2_10011 = var_0
+			elseif var_1_4.fateLevel > var_2_2.fateLevel then
+				for iter_2_5 = var_2_2.fateLevel + 1, var_1_4.fateLevel do
+					local var_2_8 = var_1_4:getFateStrengthenConfig(iter_2_5)
 
-					if var_9.getFateStrengthenConfig(var_2_10011, iter_2_5).special == 1 then
-						type = var_10
+					if var_2_8.special == 1 and type(var_2_8.special_effect) == "table" then
+						for iter_2_6, iter_2_7 in ipairs(var_2_8.special_effect) do
+							if iter_2_7[1] == ShipBluePrint.STRENGTHEN_TYPE_CHANGE_SKILL then
+								local var_2_9 = getProxy(BayProxy)
+								local var_2_10 = var_2_9:getShipById(var_1_4.shipId)
+								local var_2_11 = Clone(var_2_10.skills[iter_2_7[2][1]])
 
-						if var_10(var_9.special_effect) == "table" then
-							local var_2_12 = var_9.special_effect
+								assert(var_2_11, "shipVO without this skill" .. iter_2_7[2][1])
 
-							ipairs = var_2_10011
+								var_2_11.id = iter_2_7[2][2]
+								var_2_10.skills[iter_2_7[2][1]] = nil
+								var_2_10.skills[iter_2_7[2][2]] = var_2_11
 
-							for iter_2_6, iter_2_7 in var_2_10011(var_2_12) do
-								local var_2_13 = iter_2_7[1]
+								pg.TipsMgr.GetInstance():ShowTips(iter_2_7[3])
+								var_2_9:updateShip(var_2_10)
 
-								ShipBluePrint = var_2_10017
+								local var_2_12 = getProxy(NavalAcademyProxy)
+								local var_2_13 = var_2_12:getStudentByShipId(var_2_10.id)
 
-								if var_2_13 == var_2_10017.STRENGTHEN_TYPE_CHANGE_SKILL then
-									getProxy = var_2_10017
-									BayProxy = var_2_10019
+								if var_2_13 and var_2_13.skillId == iter_2_7[2][1] then
+									var_2_13.skillId = iter_2_7[2][2]
 
-									local var_2_14 = var_2_10017(var_2_10019)
-									local var_2_15 = var_2_10017.getShipById(var_2_14, var_0.shipId)
-
-									var_2_10019 = iter_2_7[2][1]
-
-									local var_2_16 = iter_2_7[2][2]
-
-									Clone = var_21
-
-									local var_2_17 = var_21(var_2_15.skills[var_2_10019])
-
-									assert = var_2_10022
-
-									var_2_10022(var_2_17, "shipVO without this skill" .. var_2_10019)
-
-									var_2_17.id = var_2_16
-									var_2_10022 = var_2_15.skills
-									var_2_10022[var_2_10019] = nil
-									var_2_10022 = var_2_15.skills
-									var_2_10022[var_2_16] = var_2_17
-									pg = var_2_10022
-
-									local var_2_18 = var_2_10022.TipsMgr.GetInstance()
-
-									var_2_10022.ShowTips(var_2_18, iter_2_7[3])
-
-									local var_2_19 = var_2_10017
-
-									var_2_10017.updateShip(var_2_19, var_2_15)
-
-									getProxy = var_2_10022
-									NavalAcademyProxy = var_2_19
-
-									local var_2_20 = var_2_10022(var_2_19)
-
-									if var_2_10022.getStudentByShipId(var_2_20, var_2_15.id) and var_23.skillId == var_2_10019 then
-										var_23.skillId = var_2_16
-
-										var_2_10022:updateStudent(var_23)
-									end
+									var_2_12:updateStudent(var_2_13)
 								end
 							end
 						end
@@ -277,65 +133,24 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 				end
 			end
 
-			local var_2_21 = var_0
-			local var_2_22 = var_5.getShipById(var_2_21, var_0.shipId)
+			local var_2_14 = var_1_8:getShipById(var_1_4.shipId)
 
-			var_2_22.strengthList = {}
-			table = var_6
+			var_2_14.strengthList = {}
 
-			local var_2_23 = var_6.insert
-			local var_2_24 = var_2_22.strengthList
-			local var_2_25 = {}
-			local var_2_26 = var_0.level
-
-			math = var_2_10011
-			var_2_25.level = var_2_26 + var_2_10011.max(var_0.fateLevel, 0)
-			var_2_25.exp = var_0.exp
-
-			var_2_23(var_2_24, var_2_25)
-
-			local var_2_27 = var_0
-
-			var_6.updateShip(var_2_27, var_2_22)
-
-			local var_2_28 = arg_1_0
-			local var_2_29 = var_6.sendNotification
-
-			GAME = var_9
-
-			var_2_29(var_2_28, var_9.MOD_BLUEPRINT_ANIM_LOCK)
-
-			local var_2_30 = var_0
-
-			var_6.updateBluePrint(var_2_30, var_0)
-
-			local var_2_31 = arg_1_0
-			local var_2_32 = var_6.sendNotification
-
-			GAME = var_9
-
-			var_2_32(var_2_31, var_9.MOD_BLUEPRINT_DONE, {
-				oldBluePrint = var_2_5,
-				newBluePrint = var_0
+			table.insert(var_2_14.strengthList, {
+				level = var_1_4.level + math.max(var_1_4.fateLevel, 0),
+				exp = var_1_4.exp
 			})
-
-			pg = var_2_32
-
-			local var_2_33 = var_2_32.TipsMgr.GetInstance()
-			local var_2_34 = var_6.ShowTips
-
-			i18n = var_9
-
-			var_2_34(var_2_33, var_9("blueprint_mod_success"))
+			var_1_8:updateShip(var_2_14)
+			arg_1_0:sendNotification(GAME.MOD_BLUEPRINT_ANIM_LOCK)
+			var_1_3:updateBluePrint(var_1_4)
+			arg_1_0:sendNotification(GAME.MOD_BLUEPRINT_DONE, {
+				oldBluePrint = var_2_2,
+				newBluePrint = var_1_4
+			})
+			pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_mod_success"))
 		else
-			pg = var_1
-
-			local var_2_35 = var_1.TipsMgr.GetInstance()
-			local var_2_36 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_36(var_2_35, var_2_10004("blueprint_mod_erro") .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_mod_erro") .. arg_2_0.result)
 		end
 
 		return
@@ -344,63 +159,33 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.upgradeStar(arg_3_0, arg_3_1)
-	Clone = var_1_10002
+function var_0_0.upgradeStar(arg_3_0, arg_3_1)
+	local var_3_0 = Clone(arg_3_1)
+	local var_3_1 = getProxy(CollectionProxy):getShipGroup(var_3_0.groupId)
 
-	local var_3_0 = var_1_10002(arg_3_1)
+	if pg.ship_data_breakout[arg_3_1.configId].breakout_id ~= 0 then
+		arg_3_1.configId = pg.ship_data_breakout[arg_3_1.configId].breakout_id
 
-	getProxy = var_1_10003
-	CollectionProxy = var_1_10005
+		for iter_3_0, iter_3_1 in ipairs(pg.ship_data_template[arg_3_1.configId].buff_list) do
+			arg_3_1.skills[iter_3_1] = arg_3_1.skills[iter_3_1] or {
+				exp = 0,
+				level = 1,
+				id = iter_3_1
+			}
+		end
 
-	local var_3_1 = var_1_10003(var_1_10005)
-	local var_3_2 = var_3.getShipGroup(var_3_1, var_3_0.groupId)
+		arg_3_1:updateMaxLevel(pg.ship_data_template[arg_3_1.configId].max_level)
 
-	pg = var_1_10005
-
-	if var_1_10005.ship_data_breakout[arg_3_1.configId].breakout_id ~= 0 then
-		arg_3_1.configId = var_5.breakout_id
-		pg = var_6
-
-		local var_3_3 = var_6.ship_data_template[arg_3_1.configId]
-
-		ipairs = var_7
-
-		for iter_3_0, iter_3_1 in var_7(var_3_3.buff_list) do
-			if not arg_3_1.skills[iter_3_1] then
-				arg_3_1.skills[iter_3_1] = {
-					exp = 0,
-					level = 1,
-					id = iter_3_1
-				}
+		for iter_3_2, iter_3_3 in ipairs(pg.ship_data_template[var_3_0.configId].buff_list) do
+			if not table.contains(pg.ship_data_template[arg_3_1.configId].buff_list, iter_3_3) then
+				arg_3_1.skills[iter_3_3] = nil
 			end
 		end
 
-		arg_3_1:updateMaxLevel(var_3_3.max_level)
-
-		pg = var_7
-
-		local var_3_4 = var_7.ship_data_template[var_3_0.configId].buff_list
-
-		ipairs = var_8
-
-		for iter_3_2, iter_3_3 in var_8(var_3_4) do
-			table = var_1_10013
-
-			if not var_1_10013.contains(var_3_3.buff_list, iter_3_3) then
-				var_1_10013 = arg_3_1.skills
-				var_1_10013[iter_3_3] = nil
-			end
-		end
-
-		getProxy = var_8
-		BayProxy = var_10
-
-		local var_3_5 = var_8(var_10)
-
-		var_8.updateShip(var_3_5, arg_3_1)
+		getProxy(BayProxy):updateShip(arg_3_1)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

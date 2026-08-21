@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WSAtlasBottom", import("...BaseEntity"))
 
-local var_0_0 = "WSAtlasBottom"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	btnShop = "userdata",
 	rtBg = "userdata",
 	btnOverview = "userdata",
@@ -19,69 +13,36 @@ var_0_1.Fields = {
 	btnCollection = "userdata",
 	btnDailyTask = "userdata"
 }
-var_0_1.EventUpdateScale = "WSAtlasBottom.EventUpdateScale"
+var_0_0.EventUpdateScale = "WSAtlasBottom.EventUpdateScale"
 
-function var_0_1.Setup(arg_1_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.New(arg_1_0)
+function var_0_0.Setup(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 	arg_1_0:Init()
 
 	return
 end
 
-function var_0_1.Dispose(arg_2_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_2_0)
+function var_0_0.Dispose(arg_2_0)
+	pg.DelegateInfo.Dispose(arg_2_0)
 	arg_2_0:Clear()
 
 	return
 end
 
-function var_0_1.Init(arg_3_0)
-	local var_3_0 = arg_3_0.transform
+function var_0_0.Init(arg_3_0)
+	arg_3_0.rtBg = arg_3_0.transform:Find("bg")
+	arg_3_0.rtButton = arg_3_0.transform:Find("button")
+	arg_3_0.btnBoss = arg_3_0.rtButton:Find("btn_boss")
+	arg_3_0.btnShop = arg_3_0.rtButton:Find("btn_shop")
+	arg_3_0.btnOverview = arg_3_0.rtButton:Find("btn_overview")
+	arg_3_0.btnCollection = arg_3_0.rtButton:Find("btn_collection")
+	arg_3_0.btnDailyTask = arg_3_0.rtButton:Find("btn_daily")
+	arg_3_0.comSilder = arg_3_0.transform:Find("scale/Slider"):GetComponent("Slider")
+	arg_3_0.comSilder.interactable = CAMERA_MOVE_OPEN
 
-	arg_3_0.rtBg = var_1.Find(var_3_0, "bg")
-	arg_3_0.rtButton = var_1:Find("button")
-
-	local var_3_1 = arg_3_0.rtButton
-
-	arg_3_0.btnBoss = var_2.Find(var_3_1, "btn_boss")
-
-	local var_3_2 = arg_3_0.rtButton
-
-	arg_3_0.btnShop = var_2.Find(var_3_2, "btn_shop")
-
-	local var_3_3 = arg_3_0.rtButton
-
-	arg_3_0.btnOverview = var_2.Find(var_3_3, "btn_overview")
-
-	local var_3_4 = arg_3_0.rtButton
-
-	arg_3_0.btnCollection = var_2.Find(var_3_4, "btn_collection")
-
-	local var_3_5 = arg_3_0.rtButton
-
-	arg_3_0.btnDailyTask = var_2.Find(var_3_5, "btn_daily")
-
-	local var_3_6 = var_1:Find("scale/Slider")
-
-	arg_3_0.comSilder = var_2.GetComponent(var_3_6, "Slider")
-
-	local var_3_7 = arg_3_0.comSilder
-
-	CAMERA_MOVE_OPEN = var_1_10003
-	var_3_7.interactable = var_1_10003
-	CAMERA_MOVE_OPEN = var_3_7
-
-	if var_3_7 then
-		local var_3_8 = arg_3_0.comSilder.onValueChanged
-
-		var_2.AddListener(var_3_8, function(arg_4_0)
-			local var_4_0 = arg_3_0
-
-			var_1.DispatchEvent(var_4_0, var_0_1.EventUpdateScale, arg_4_0)
+	if CAMERA_MOVE_OPEN then
+		arg_3_0.comSilder.onValueChanged:AddListener(function(arg_4_0)
+			arg_3_0:DispatchEvent(var_0_0.EventUpdateScale, arg_4_0)
 
 			return
 		end)
@@ -90,108 +51,45 @@ function var_0_1.Init(arg_3_0)
 	return
 end
 
-function var_0_1.UpdateScale(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+function var_0_0.UpdateScale(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 	if arg_5_2 then
-		var_1_10004 = arg_5_0.comSilder.value
-		setImageAlpha = var_1_10005
+		setImageAlpha(arg_5_0.btnOverview, arg_5_0.comSilder.value)
+		setActive(arg_5_0.btnOverview, true)
 
-		var_1_10005(arg_5_0.btnOverview, var_1_10004)
+		arg_5_0.twId = LeanTween.value(go(arg_5_0.comSilder), arg_5_0.comSilder.value, arg_5_1, WSAtlasWorld.baseDuration):setEase(LeanTweenType.easeInOutSine):setOnUpdate(System.Action_float(function(arg_6_0)
+			arg_5_0.comSilder.value = arg_6_0
 
-		setActive = var_1_10005
-
-		var_1_10005(arg_5_0.btnOverview, true)
-
-		LeanTween = var_1_10005
-
-		local var_5_0 = var_1_10005.value
-
-		go = var_7
-
-		local var_5_1 = var_7(arg_5_0.comSilder)
-		local var_5_2 = var_1_10004
-		local var_5_3 = arg_5_1
-
-		WSAtlasWorld = var_1_10010
-
-		local var_5_4 = var_5_0(var_5_1, var_5_2, var_5_3, var_1_10010.baseDuration)
-		local var_5_5 = var_5.setEase
-
-		LeanTweenType = var_5_2
-
-		local var_5_6 = var_5_5(var_5_4, var_5_2.easeInOutSine)
-		local var_5_7 = var_5.setOnUpdate
-
-		System = var_8
-
-		local var_5_8 = var_5_7(var_5_6, var_8.Action_float(function(arg_6_0)
-			local var_6_0 = arg_5_0.comSilder
-
-			var_6_0.value = arg_6_0
-			setImageAlpha = var_6_0
-
-			var_6_0(arg_5_0.btnOverview, arg_6_0)
+			setImageAlpha(arg_5_0.btnOverview, arg_6_0)
 
 			return
-		end))
-		local var_5_9 = var_5.setOnComplete
+		end)):setOnComplete(System.Action(function()
+			setActive(arg_5_0.btnOverview, arg_5_1 == 1)
 
-		System = var_8
-		arg_5_0.twId = var_5_9(var_5_8, var_8.Action(function()
-			setActive = var_2_10000
-
-			var_2_10000(arg_5_0.btnOverview, arg_5_1 == 1)
-
-			existCall = var_2_10000
-
-			return var_2_10000(arg_5_3)
+			return existCall(arg_5_3)
 		end)).uniqueId
 
-		local var_5_10 = arg_5_0.wsTimer
-
-		var_5.AddTween(var_5_10, arg_5_0.twId)
+		arg_5_0.wsTimer:AddTween(arg_5_0.twId)
 	else
-		setImageAlpha = var_1_10004
+		setImageAlpha(arg_5_0.btnOverview, arg_5_1)
+		setActive(arg_5_0.btnOverview, arg_5_1 == 1)
 
-		var_1_10004(arg_5_0.btnOverview, arg_5_1)
+		arg_5_0.comSilder.value = arg_5_1
 
-		setActive = var_1_10004
-
-		var_1_10004(arg_5_0.btnOverview, arg_5_1 == 1)
-
-		local var_5_11 = arg_5_0.comSilder
-
-		var_5_11.value = arg_5_1
-		existCall = var_5_11
-
-		return var_5_11(arg_5_3)
+		return existCall(arg_5_3)
 	end
 
 	return
 end
 
-function var_0_1.CheckIsTweening(arg_8_0)
-	local var_8_0
-
-	if arg_8_0.twId then
-		LeanTween = var_8_0
-		var_8_0 = var_8_0.isTweening(arg_8_0.twId)
-	end
-
-	return var_8_0
+function var_0_0.CheckIsTweening(arg_8_0)
+	return arg_8_0.twId and LeanTween.isTweening(arg_8_0.twId)
 end
 
-function var_0_1.SetOverSize(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0.rtBg
-
-	Vector2 = var_1_10003
-	var_9_0.offsetMin = var_1_10003(arg_9_1, arg_9_0.rtBg.offsetMin.y)
-
-	local var_9_1 = arg_9_0.rtBg
-
-	Vector2 = var_3
-	var_9_1.offsetMax = var_3(-arg_9_1, arg_9_0.rtBg.offsetMax.y)
+function var_0_0.SetOverSize(arg_9_0, arg_9_1)
+	arg_9_0.rtBg.offsetMin = Vector2(arg_9_1, arg_9_0.rtBg.offsetMin.y)
+	arg_9_0.rtBg.offsetMax = Vector2(-arg_9_1, arg_9_0.rtBg.offsetMax.y)
 
 	return
 end
 
-return var_0_1
+return var_0_0

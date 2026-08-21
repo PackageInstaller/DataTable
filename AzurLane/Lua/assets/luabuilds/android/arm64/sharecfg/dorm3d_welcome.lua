@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_welcome") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_welcome"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_welcome = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_welcome
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_welcome = rawget(pg, "dorm3d_welcome") or setmetatable({
+	__name = "dorm3d_welcome"
+}, confNEO)
+pg.dorm3d_welcome.all = {
 	202200101,
 	202200102,
 	202200103,
@@ -34,11 +11,7 @@ var_0_3.all = {
 	202200106,
 	202200107
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_welcome
-
-var_0_4.get_id_list_by_room_id = {
+pg.dorm3d_welcome.get_id_list_by_room_id = {
 	{
 		202200101,
 		202200102,
@@ -51,25 +24,11 @@ var_0_4.get_id_list_by_room_id = {
 		202200107
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_welcome = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_welcome = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_welcome
-
-	var_1_0[202200101] = {
+	pg.base.dorm3d_welcome[202200101] = {
 		item_prefab = "",
 		weight = 20,
 		welcome_talk = 1319,
@@ -81,11 +40,7 @@ var_0_4.base.dorm3d_welcome = {}
 		item_shield = "",
 		area = "Bed"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_welcome
-
-	var_1_1[202200102] = {
+	pg.base.dorm3d_welcome[202200102] = {
 		item_prefab = "",
 		weight = 20,
 		welcome_talk = 1318,
@@ -97,11 +52,7 @@ var_0_4.base.dorm3d_welcome = {}
 		item_shield = "",
 		area = "Bed"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_welcome
-
-	var_1_2[202200103] = {
+	pg.base.dorm3d_welcome[202200103] = {
 		item_prefab = "Cups_001/pre_db_cups_001_welcome",
 		weight = 0,
 		welcome_talk = 1321,
@@ -116,11 +67,7 @@ var_0_4.base.dorm3d_welcome = {}
 			"fbx/litmap_03/pre_db_ceram01b (1)"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_welcome
-
-	var_1_3[202200104] = {
+	pg.base.dorm3d_welcome[202200104] = {
 		item_prefab = "Book_01/pre_db_book_01_welcome",
 		weight = 20,
 		welcome_talk = 1320,
@@ -134,11 +81,7 @@ var_0_4.base.dorm3d_welcome = {}
 			"fbx/litmap_03/pre_db_book01"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_welcome
-
-	var_1_4[202200105] = {
+	pg.base.dorm3d_welcome[202200105] = {
 		item_prefab = "Ceram_01/pre_db_ceram_01_welcome",
 		weight = 0,
 		welcome_talk = 1317,
@@ -155,11 +98,7 @@ var_0_4.base.dorm3d_welcome = {}
 			"fbx/litmap_01/pre_db_tableware01a"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_welcome
-
-	var_1_5[202200106] = {
+	pg.base.dorm3d_welcome[202200106] = {
 		item_prefab = "",
 		weight = 20,
 		welcome_talk = 1316,
@@ -171,8 +110,7 @@ var_0_4.base.dorm3d_welcome = {}
 		item_shield = "",
 		area = "Table"
 	}
-	pg = var_1_5
-	var_1_5.base.dorm3d_welcome[202200107] = {
+	pg.base.dorm3d_welcome[202200107] = {
 		item_prefab = "",
 		weight = 20,
 		welcome_talk = 1322,

@@ -1,20 +1,8 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PlayerInputManager")
-
-require = var_0_10001
-
-local var_0_1 = var_0_10001("Framework.toLua.UnityEngine.Vector3")
+﻿local var_0_0 = class("PlayerInputManager")
+local var_0_1 = require("Framework.toLua.UnityEngine.Vector3")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	IslandCameraMgr = var_1_10002
-
-	local var_1_0 = var_1_10002.instance.gameObject
-	local var_1_1 = var_2.GetComponent
-
-	typeof = var_1_10005
-	InputController = var_1_10007
-	arg_1_0.inputController = var_1_1(var_1_0, var_1_10005(var_1_10007))
+	arg_1_0.inputController = IslandCameraMgr.instance.gameObject:GetComponent(typeof(InputController))
 	arg_1_0.controller = arg_1_1
 	arg_1_0.inputCommandQueue = {}
 	arg_1_0.isInit = false
@@ -33,27 +21,16 @@ function var_0_0.Init(arg_3_0)
 
 	function var_0_0.UpdateMoveFunc(arg_4_0)
 		local var_4_0 = var_0_1(arg_4_0.x, 0, arg_4_0.y)
-		local var_4_1 = var_3_0
-		local var_4_2 = var_2.NotifiyCore
 
-		ISLAND_EVT = var_5
+		var_3_0:NotifiyCore(ISLAND_EVT.MOVE_PLAYER_BEFORE)
 
-		var_4_2(var_4_1, var_5.MOVE_PLAYER_BEFORE)
+		local var_4_1 = arg_4_0.magnitude
 
-		local var_4_3 = arg_4_0.magnitude
-
-		table = var_3
-
-		var_3.insert(arg_3_0.inputCommandQueue, {
+		table.insert(arg_3_0.inputCommandQueue, {
 			Execute = function()
-				local var_5_0 = var_3_0
-				local var_5_1 = var_0.NotifiyCore
-
-				ISLAND_EVT = var_3_10003
-
-				var_5_1(var_5_0, var_3_10003.MOVE_PLAYER, {
+				var_3_0:NotifiyCore(ISLAND_EVT.MOVE_PLAYER, {
 					targetDir = var_4_0,
-					force = var_4_3
+					force = var_4_1
 				})
 
 				return
@@ -63,21 +40,12 @@ function var_0_0.Init(arg_3_0)
 		return
 	end
 
-	local var_3_1 = arg_3_0.inputController
-
-	var_2.AddUpdateMoveFunc(var_3_1, var_0_0.UpdateMoveFunc)
+	arg_3_0.inputController:AddUpdateMoveFunc(var_0_0.UpdateMoveFunc)
 
 	function var_0_0.CancelMoveFunc(arg_6_0)
-		table = var_2_10001
-
-		var_2_10001.insert(arg_3_0.inputCommandQueue, {
+		table.insert(arg_3_0.inputCommandQueue, {
 			Execute = function()
-				local var_7_0 = var_3_0
-				local var_7_1 = var_0.NotifiyCore
-
-				ISLAND_EVT = var_3_10003
-
-				var_7_1(var_7_0, var_3_10003.STOP_MOVE_PLAYER)
+				var_3_0:NotifiyCore(ISLAND_EVT.STOP_MOVE_PLAYER)
 
 				return
 			end
@@ -86,21 +54,12 @@ function var_0_0.Init(arg_3_0)
 		return
 	end
 
-	local var_3_2 = arg_3_0.inputController
-
-	var_2.AddCancelMoveFunc(var_3_2, var_0_0.CancelMoveFunc)
+	arg_3_0.inputController:AddCancelMoveFunc(var_0_0.CancelMoveFunc)
 
 	function var_0_0.UpdateJumpFunc(arg_8_0)
-		table = var_2_10001
-
-		var_2_10001.insert(arg_3_0.inputCommandQueue, {
+		table.insert(arg_3_0.inputCommandQueue, {
 			Execute = function()
-				local var_9_0 = var_3_0
-				local var_9_1 = var_0.NotifiyCore
-
-				ISLAND_EVT = var_3_10003
-
-				var_9_1(var_9_0, var_3_10003.JUMP_PLAYER)
+				var_3_0:NotifiyCore(ISLAND_EVT.JUMP_PLAYER)
 
 				return
 			end
@@ -109,21 +68,12 @@ function var_0_0.Init(arg_3_0)
 		return
 	end
 
-	local var_3_3 = arg_3_0.inputController
-
-	var_2.AddUpdateJumpFunc(var_3_3, var_0_0.UpdateJumpFunc)
+	arg_3_0.inputController:AddUpdateJumpFunc(var_0_0.UpdateJumpFunc)
 
 	function var_0_0.UpdateSprintFuc(arg_10_0)
-		table = var_2_10001
-
-		var_2_10001.insert(arg_3_0.inputCommandQueue, {
+		table.insert(arg_3_0.inputCommandQueue, {
 			Execute = function()
-				local var_11_0 = var_3_0
-				local var_11_1 = var_0.NotifiyCore
-
-				ISLAND_EVT = var_3_10003
-
-				var_11_1(var_11_0, var_3_10003.SPRINT_PLAYER)
+				var_3_0:NotifiyCore(ISLAND_EVT.SPRINT_PLAYER)
 
 				return
 			end
@@ -132,21 +82,12 @@ function var_0_0.Init(arg_3_0)
 		return
 	end
 
-	local var_3_4 = arg_3_0.inputController
-
-	var_2.AddUpdateSprintFunc(var_3_4, var_0_0.UpdateSprintFuc)
+	arg_3_0.inputController:AddUpdateSprintFunc(var_0_0.UpdateSprintFuc)
 
 	function var_0_0.CancelSprintFuc(arg_12_0)
-		table = var_2_10001
-
-		var_2_10001.insert(arg_3_0.inputCommandQueue, {
+		table.insert(arg_3_0.inputCommandQueue, {
 			Execute = function()
-				local var_13_0 = var_3_0
-				local var_13_1 = var_0.NotifiyCore
-
-				ISLAND_EVT = var_3_10003
-
-				var_13_1(var_13_0, var_3_10003.STOP_SPRINT_PLAYER)
+				var_3_0:NotifiyCore(ISLAND_EVT.STOP_SPRINT_PLAYER)
 
 				return
 			end
@@ -155,9 +96,7 @@ function var_0_0.Init(arg_3_0)
 		return
 	end
 
-	local var_3_5 = arg_3_0.inputController
-
-	var_2.AddCancelSprintFunc(var_3_5, var_0_0.CancelSprintFuc)
+	arg_3_0.inputController:AddCancelSprintFunc(var_0_0.CancelSprintFuc)
 
 	return
 end
@@ -171,24 +110,12 @@ function var_0_0.Update(arg_14_0)
 		return
 	end
 
-	::label_14_0::
+	while #arg_14_0.inputCommandQueue > 0 do
+		table.remove(arg_14_0.inputCommandQueue, 1)
 
-	local var_14_0 = #arg_14_0.inputCommandQueue
-
-	if 0 < var_14_0 then
-		repeat
-			local var_14_1 = arg_14_0.inputCommandQueue[1]
-
-			table = var_2
-
-			var_2.remove(arg_14_0.inputCommandQueue, 1)
-
-			if not arg_14_0.disablePlayerHandle then
-				var_14_1:Execute()
-			end
-
-			goto label_14_0
-		until true
+		if not arg_14_0.disablePlayerHandle then
+			arg_14_0.inputCommandQueue[1]:Execute()
+		end
 	end
 
 	return
@@ -199,25 +126,11 @@ function var_0_0.Dispose(arg_15_0)
 		return
 	end
 
-	local var_15_0 = arg_15_0.inputController
-
-	var_1.RemoveUpdateMoveFunc(var_15_0, var_0_0.UpdateMoveFunc)
-
-	local var_15_1 = arg_15_0.inputController
-
-	var_1.RemoveCancelMoveFunc(var_15_1, var_0_0.CancelMoveFunc)
-
-	local var_15_2 = arg_15_0.inputController
-
-	var_1.RemoveUpdateJumpFunc(var_15_2, var_0_0.UpdateJumpFunc)
-
-	local var_15_3 = arg_15_0.inputController
-
-	var_1.RemoveUpdateSprintFunc(var_15_3, var_0_0.UpdateSprintFuc)
-
-	local var_15_4 = arg_15_0.inputController
-
-	var_1.RemoveCancelSprintFunc(var_15_4, var_0_0.CancelSprintFuc)
+	arg_15_0.inputController:RemoveUpdateMoveFunc(var_0_0.UpdateMoveFunc)
+	arg_15_0.inputController:RemoveCancelMoveFunc(var_0_0.CancelMoveFunc)
+	arg_15_0.inputController:RemoveUpdateJumpFunc(var_0_0.UpdateJumpFunc)
+	arg_15_0.inputController:RemoveUpdateSprintFunc(var_0_0.UpdateSprintFuc)
+	arg_15_0.inputController:RemoveCancelSprintFunc(var_0_0.CancelSprintFuc)
 
 	arg_15_0.inputController = nil
 
@@ -225,16 +138,9 @@ function var_0_0.Dispose(arg_15_0)
 end
 
 function var_0_0.UpdataWorkStateFunc(arg_16_0, arg_16_1, arg_16_2)
-	table = var_1_10003
-
-	var_1_10003.insert(arg_16_0.inputCommandQueue, {
+	table.insert(arg_16_0.inputCommandQueue, {
 		Execute = function()
-			local var_17_0 = arg_16_0.controller
-			local var_17_1 = var_0.NotifiyCore
-
-			ISLAND_EVT = var_2_10003
-
-			var_17_1(var_17_0, var_2_10003.SET_PLAYER_WORK, arg_16_1, arg_16_2)
+			arg_16_0.controller:NotifiyCore(ISLAND_EVT.SET_PLAYER_WORK, arg_16_1, arg_16_2)
 
 			return
 		end
@@ -257,22 +163,16 @@ end
 
 function var_0_0.DisableInput(arg_20_0)
 	while #arg_20_0.inputCommandQueue > 0 do
-		table = var_1
-
-		var_1.remove(arg_20_0.inputCommandQueue, 1)
+		table.remove(arg_20_0.inputCommandQueue, 1)
 	end
 
-	local var_20_0 = arg_20_0.inputController
-
-	var_1.DisablePlayerAllOp(var_20_0)
+	arg_20_0.inputController:DisablePlayerAllOp()
 
 	return
 end
 
 function var_0_0.EnableInput(arg_21_0)
-	local var_21_0 = arg_21_0.inputController
-
-	var_1.EnablePlayerAllOp(var_21_0)
+	arg_21_0.inputController:EnablePlayerAllOp()
 
 	return
 end

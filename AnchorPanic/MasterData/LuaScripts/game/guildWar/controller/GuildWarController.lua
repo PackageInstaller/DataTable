@@ -29,12 +29,15 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_ALL_LOG_PANEL,self.onOpenGuildWarLogPanel,self)
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_GUILD_LOG_PANEL,self.onOpenGuildWarGuildLogPanel,self)
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_RANK_PANEL,self.onOpenGuildWarRankPanel,self)
-
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_CURRENT_DAY_LOG_PANEL,self.onOpenGuildWarCurrentDayLogPanel,self)
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_FIGHT_INFO_PANEL,self.onOpenGuildWarFightInfoPanel,self)
-    
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_FIGHT_RESULT_INFO_PANEL,self.onOpenGuildWarFightResultPanel,self)
-
+    GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_GUILD_FINAL_PANEL,self.onOpenGuildWarFinalPanel,self)
+    GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_TOP_DAY_PANEL,self.onOpenGuildWarTopDayPanel,self)
+    GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_TOP_BET_PANEL,self.onOpenGuildWarTopBetPanel,self)
+    GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_TOP_OB_PANEL,self.onOpenGuildWarTopObPanel,self)
+    GameDispatcher:addEventListener(EventName.OPEN_GUILD_WAR_BET_AWARD_PANEL,self.onOpenGuildWarBetAwardPanel,self)
+    
     GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_ENEMY_PANEL,self.onReqGuildWarEnemy,self)
     GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_SINGUP,self.onReqGuildWarSignUp,self)
     GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_PLAYER_INFO,self.onReqGuildWarDefFormation,self)
@@ -45,7 +48,19 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_CURRENT_DAY_LOG,self.onReqGuildWarCurrentDayLog,self)
     GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_CURRENT_FIGHT_INFO,self.onReqGuildWarCurrentFightInfo,self)
     GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_AUTO,self.onReqGuildWarAuto,self)
+   
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_INFO,self.onReqGuildWarTopInfo,self)
     
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_BET,self.onReqGuildWarTopBet,self)
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_HITSTORY_RANK,self.onReqGuildWarHistoryRank,self)
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_LOG,self.onReqGuildWarTopLog,self)
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_CURRENT_DAY_LOG,self.onReqGuildWarTopCurrentLog,self)
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_BATTLE_LOG,self.onReqGuildWarTopBattleLog,self)
+
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_TOP_OB,self.onReqGuildWarTopOb,self)
+
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_WAR_BET_AWARD,self.onReqGuildWarBetAward,self)
+
 end
 
 --注册server发来的数据
@@ -71,10 +86,32 @@ function registerMsgHandler(self)
         SC_GUILD_WAR_SWITCH_DEF_FORMATION_STATE = self.onGuildWarDefSwitchHandler,
         --- *s2c* 最近一次战斗日志 23065
         SC_GUILD_WAR_CURRENT_DAY_LOG = self.onGuildWarCurrentDayLogHandler,
-
+        --- *s2c* 正在被挑战的建筑信息 23059
         SC_GUILD_WAR_CHALLENGE_INFO = self.onGuildWarChallengeInfoHandler,
-
+        --- *s2c* 自动配置 23067
         SC_GUILD_WAR_AUTO_SIGN_UP = self.onGuildWarAutoSignUpHandler,
+        
+        --- *s2c* 联盟团战玩家赛事信息 23077
+        SC_GUILD_TOP_WAR_GAME_INFO = self.onGuildWarTopInfoHandler,
+        --- *s2c* 联盟团战玩家下注 23079
+        SC_GUILD_TOP_WAR_BET = self.onGuildWarTopBetHandler,
+
+        --- *s2c* 联盟历史排行榜 23069
+        SC_GUILD_TOP_WAR_HISTORY_RANK = self.onGuildWarHistoryRankHandler,
+        --- *s2c* 联盟团战日志 23071
+        SC_GUILD_TOP_WAR_DAY_LOG = self.onGuildWarTopLogHandler,
+        --- *c2s* 最近一次战斗日志 23072
+        SC_GUILD_TOP_WAR_CURRENT_DAY_LOG = self.onGuildWarTopCurrentLogHandler,
+        --- *c2s* 联盟团战玩家日志 23074
+        SC_GUILD_TOP_WAR_BATTLE_LOG = self.onGuildWarTopBattleLogHandler,
+        --- *s2c* 当天下注红点 23080
+        SC_GUILD_TOP_WAR_BET_RED_POINT = self.onGuildWarBetRedPointHandler,
+        --- *s2c* 联盟团战观战 23082
+        SC_GUILD_TOP_WAR_OB = self.onGuildWarTopObHandler,
+        --- *s2c* 领取下注奖励 23084
+        SC_GAIN_GUILD_TOP_WAR_BET_AWARD = self.onGuildWarBetAwardHandler,
+        --- *s2c* 下注奖励红点 23085
+        SC_GUILD_TOP_WAR_AWARD_RED_POINT = self.onGuildWarBetAwardRedPointHandler,
     }
     
 end
@@ -131,6 +168,38 @@ end
 
 function onReqGuildWarAuto(self)
     SOCKET_SEND(Protocol.CS_GUILD_WAR_AUTO_SIGN_UP,{},Protocol.SC_GUILD_WAR_AUTO_SIGN_UP)
+end
+
+function onReqGuildWarTopInfo(self,day)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_GAME_INFO,{day = day},Protocol.SC_GUILD_TOP_WAR_GAME_INFO)
+end
+
+function onReqGuildWarTopBet(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_BET,{group_id = args.groupId,day = args.day,bet_uid = args.betUid},Protocol.SC_GUILD_TOP_WAR_BET)
+end
+
+function onReqGuildWarHistoryRank(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_HISTORY_RANK,{season_id = args.seasonId},Protocol.SC_GUILD_TOP_WAR_HISTORY_RANK)
+end
+
+function onReqGuildWarTopLog(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_DAY_LOG,{page = args.page},Protocol.SC_GUILD_TOP_WAR_DAY_LOG)
+end
+
+function onReqGuildWarTopCurrentLog(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_CURRENT_DAY_LOG,{},Protocol.SC_GUILD_TOP_WAR_CURRENT_DAY_LOG)
+end
+
+function onReqGuildWarTopBattleLog(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_BATTLE_LOG,{build_id = args.buildId,page = args.page,is_atk = args.isAtk},Protocol.SC_GUILD_TOP_WAR_BATTLE_LOG)  
+end
+
+function onReqGuildWarTopOb(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_TOP_WAR_OB,{day = args.day,uid1 = args.uid1,uid2 = args.uid2},Protocol.SC_GUILD_TOP_WAR_OB)
+end
+
+function onReqGuildWarBetAward(self,args)
+    SOCKET_SEND(Protocol.CS_GAIN_GUILD_TOP_WAR_BET_AWARD,{day = args.day,group_id = args.groupId},Protocol.SC_GAIN_GUILD_TOP_WAR_BET_AWARD)
 end
 
 --- *s2c* 展示人员情报 23045
@@ -198,6 +267,56 @@ function onGuildWarAutoSignUpHandler(self,msg)
     elseif msg.result == 3 then
         gs.Message.Show(_TT(149124))
     end
+end
+
+function onGuildWarTopInfoHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildWarTopInfo(msg) 
+end
+
+
+function onGuildWarTopBetHandler(self,msg)
+    if msg.result == 1 then
+        gs.Message.Show("应援成功")
+        guildWar.GuildWarManager:parseGuildWarTopBet(msg)
+    else
+        gs.Message.Show("应援失败")
+    end
+end
+
+function onGuildWarHistoryRankHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildWarTopHistoryRank(msg)
+end
+
+function onGuildWarTopLogHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildWarTopLog(msg)
+end
+
+function onGuildWarTopCurrentLogHandler(self,msg)
+  guildWar.GuildWarManager:parseGuildWarTopCurrentLog(msg)  
+end
+
+function onGuildWarTopBattleLogHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildWarTopBattleLog(msg)
+end
+
+function onGuildWarBetRedPointHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildBetRed(msg)
+end
+
+function onGuildWarTopObHandler(self,msg)
+    if msg.result == 1 then
+        guildWar.GuildWarManager:parseGuildWarTopOb(msg)
+    else
+        gs.Message.Show("观战失败")
+    end
+end
+
+function onGuildWarBetAwardHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildWarBetAward(msg)
+end
+
+function onGuildWarBetAwardRedPointHandler(self,msg)
+    guildWar.GuildWarManager:parseGuildBetAwardRedPoint(msg)
 end
 
 function addGuildWarViewToPool(self,cusView)
@@ -377,5 +496,81 @@ function onDestoryGuildWarFightResultInfoPanel(self)
     self.mGuildWarFightResultInfoPanel = nil
 end
 
+function onOpenGuildWarFinalPanel(self,args)
+    if self.mGuildWarFinalPanel == nil then
+        self.mGuildWarFinalPanel = guildWar.GuildWarFinalPanel.new()
+        self.mGuildWarFinalPanel:addEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarFinalPanel,self)
+        self:addGuildWarViewToPool(self.mGuildWarFinalPanel)
+    end
+    self.mGuildWarFinalPanel:open(args)
+end
+
+function onDestoryGuildWarFinalPanel(self)
+    self:removeGuildWarViewToPool(self.mGuildWarFinalPanel)
+    self.mGuildWarFinalPanel:removeEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarFinalPanel,self)
+    self.mGuildWarFinalPanel = nil
+end
+
+
+function onOpenGuildWarTopDayPanel(self,args)
+    if self.mGuildWarTopDayPanel == nil then
+        self.mGuildWarTopDayPanel = guildWar.GuildWarFinalDayPanel.new()
+        self.mGuildWarTopDayPanel:addEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarTopDayPanel,self)
+        self:addGuildWarViewToPool(self.mGuildWarTopDayPanel)
+    end
+    self.mGuildWarTopDayPanel:open(args)
+end
+
+function onDestoryGuildWarTopDayPanel(self)
+    self:removeGuildWarViewToPool(self.mGuildWarTopDayPanel)
+    self.mGuildWarTopDayPanel:removeEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarTopDayPanel,self)
+    self.mGuildWarTopDayPanel = nil
+end
+
+function onOpenGuildWarTopBetPanel(self,args)
+    if self.mGuildWarTopBetPanel == nil then
+        self.mGuildWarTopBetPanel = guildWar.GuildWarTopBetPanel.new()
+        self.mGuildWarTopBetPanel:addEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarTopBetPanel,self)
+        self:addGuildWarViewToPool(self.mGuildWarTopBetPanel)
+    end
+    self.mGuildWarTopBetPanel:open(args)
+end
+
+function onDestoryGuildWarTopBetPanel(self)
+    self:removeGuildWarViewToPool(self.mGuildWarTopBetPanel)
+    self.mGuildWarTopBetPanel:removeEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarTopBetPanel,self)
+    self.mGuildWarTopBetPanel = nil
+end
+
+
+function onOpenGuildWarTopObPanel(self,args)
+    if self.mGuildWarTopObPanel == nil then
+        self.mGuildWarTopObPanel = guildWar.GuildWarTopObPanel.new()
+        self.mGuildWarTopObPanel:addEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarTopObPanel,self)
+        self:addGuildWarViewToPool(self.mGuildWarTopObPanel)
+    end
+    self.mGuildWarTopObPanel:open(args)
+end
+
+function onDestoryGuildWarTopObPanel(self)
+    self:removeGuildWarViewToPool(self.mGuildWarTopObPanel)
+    self.mGuildWarTopObPanel:removeEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarTopObPanel,self)
+    self.mGuildWarTopObPanel = nil
+end
+
+function onOpenGuildWarBetAwardPanel(self,args)
+    if self.mGuildWarBetAwardPanel == nil then
+        self.mGuildWarBetAwardPanel = guildWar.GuildWarBetAwardPanel.new()
+        self.mGuildWarBetAwardPanel:addEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarBetAwardPanel,self)
+        self:addGuildWarViewToPool(self.mGuildWarBetAwardPanel)
+    end
+    self.mGuildWarBetAwardPanel:open(args)
+end
+
+function onDestoryGuildWarBetAwardPanel(self)
+    self:removeGuildWarViewToPool(self.mGuildWarBetAwardPanel)
+    self.mGuildWarBetAwardPanel:removeEventListener(View.EVENT_VIEW_DESTROY,self.onDestoryGuildWarBetAwardPanel,self)
+    self.mGuildWarBetAwardPanel = nil
+end
 
 return _M

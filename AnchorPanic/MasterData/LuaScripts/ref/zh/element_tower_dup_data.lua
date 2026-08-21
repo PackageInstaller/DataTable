@@ -981,7 +981,7 @@ local element_tower_dup_data=
 },
 	[2489]={ tower_id=5, name=24607, describe=24909, pre_id=2488, next_id=2490, mon={13841,13842,13843,13844,13845}, formation_id=530, first_award=1169, scene_id=162, point_line=2, ele_type={4}, ele_type_num={4}, suggest_level={0,80}, suggest_ele={4,5}, lock_formation=0, pos_effect_id={3121,3153}, layer=89
 },
-	[2490]={ tower_id=5, name=24608, describe=24910, pre_id=2489, next_id=2491, mon={13846,13847,13848,13849,13850}, formation_id=543, first_award=1170, scene_id=129, point_line=0, ele_type={4}, ele_type_num={4}, suggest_level={0,80}, suggest_ele={2,5}, lock_formation=0, pos_effect_id={3122,3153}, layer=90
+	[2490]={ tower_id=5, name=24608, describe=24910, pre_id=2489, next_id=2491, mon={13846,13847,13848,13849,13850}, formation_id=543, first_award=1170, scene_id=129, point_line=3, ele_type={4}, ele_type_num={4}, suggest_level={0,80}, suggest_ele={2,5}, lock_formation=0, pos_effect_id={3122,3153}, layer=90
 },
 	[2491]={ tower_id=5, name=24609, describe=24911, pre_id=2490, next_id=2492, mon={13851,13852,13853,13854,13855}, formation_id=537, first_award=1161, scene_id=406, point_line=1, ele_type={4}, ele_type_num={5}, suggest_level={0,80}, suggest_ele={1,5}, lock_formation=0, pos_effect_id={3123,3154}, layer=91
 },
@@ -1202,6 +1202,46 @@ local element_tower_dup_data=
 	[2599]={ tower_id=6, name=24617, describe=24879, pre_id=2598, next_id=2600, mon={14491,14492,14493,14494,14495}, formation_id=502, first_award=1169, scene_id=122, point_line=3, ele_type={5}, ele_type_num={5}, suggest_level={0,80}, suggest_ele={0,2}, lock_formation=0, pos_effect_id={3125,3150}, layer=99
 },
 	[2600]={ tower_id=6, name=24618, describe=24880, pre_id=2599, next_id=0, mon={14496,14497,14498,14499,14500}, formation_id=508, first_award=1170, scene_id=205, point_line=0, ele_type={5}, ele_type_num={5}, suggest_level={0,80}, suggest_ele={1,0}, lock_formation=0, pos_effect_id={3126,3150}, layer=100
+},
+	[2601]={ tower_id=7, name=24519, describe=24962, pre_id=0, next_id=2602, mon={14501,14502,14503,14504,14505}, formation_id=504, first_award=1153, scene_id=605, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,60}, suggest_ele={0,2}, lock_formation=0, pos_effect_id={3161,3064}, layer=1
+},
+	[2602]={ tower_id=7, name=24520, describe=24962, pre_id=2601, next_id=2603, mon={14506,14507,14508,14509,14510}, formation_id=506, first_award=1154, scene_id=304, point_line=2, ele_type={6}, ele_type_num={2}, suggest_level={0,61}, suggest_ele={3,0}, lock_formation=0, pos_effect_id={3161,3064}, layer=2
+},
+	[2603]={ tower_id=7, name=24521, describe=24962, pre_id=2602, next_id=2604, mon={14511,14512,14513,14514,14515}, formation_id=506, first_award=1155, scene_id=126, point_line=3, ele_type={6}, ele_type_num={2}, suggest_level={0,62}, suggest_ele={0,3}, lock_formation=0, pos_effect_id={3161,3064}, layer=3
+},
+	[2604]={ tower_id=7, name=24522, describe=24962, pre_id=2603, next_id=2605, mon={14516,14517,14518,14519,14520}, formation_id=507, first_award=1158, scene_id=127, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,63}, suggest_ele={0,2}, lock_formation=0, pos_effect_id={3161,3064}, layer=4
+},
+	[2605]={ tower_id=7, name=24523, describe=24962, pre_id=2604, next_id=2606, mon={14521,14522,14523,14524,14525}, formation_id=501, first_award=1159, scene_id=304, point_line=2, ele_type={6}, ele_type_num={2}, suggest_level={0,64}, suggest_ele={2,5}, lock_formation=0, pos_effect_id={3161,3064}, layer=5
+},
+	[2606]={ tower_id=7, name=24524, describe=24963, pre_id=2605, next_id=2607, mon={14526,14527,14528,14529,14530}, formation_id=504, first_award=1160, scene_id=205, point_line=3, ele_type={6}, ele_type_num={2}, suggest_level={0,65}, suggest_ele={0,4,2}, lock_formation=0, pos_effect_id={3162,3064}, layer=6
+},
+	[2607]={ tower_id=7, name=24525, describe=24964, pre_id=2606, next_id=2608, mon={14531,14532,14533,14534,14535}, formation_id=504, first_award=1163, scene_id=123, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,65}, suggest_ele={0,1}, lock_formation=0, pos_effect_id={3161,3066}, layer=7
+},
+	[2608]={ tower_id=7, name=24526, describe=24964, pre_id=2607, next_id=2609, mon={14536,14537,14538,14539,14540}, formation_id=501, first_award=1164, scene_id=205, point_line=2, ele_type={6}, ele_type_num={2}, suggest_level={0,66}, suggest_ele={1,2}, lock_formation=0, pos_effect_id={3161,3066}, layer=8
+},
+	[2609]={ tower_id=7, name=24527, describe=24964, pre_id=2608, next_id=2610, mon={14541,14542,14543,14544,14545}, formation_id=508, first_award=1165, scene_id=127, point_line=3, ele_type={6}, ele_type_num={2}, suggest_level={0,67}, suggest_ele={3,2}, lock_formation=0, pos_effect_id={3161,3066}, layer=9
+},
+	[2610]={ tower_id=7, name=24528, describe=24964, pre_id=2609, next_id=2611, mon={14546,14547,14548,14549,14550}, formation_id=501, first_award=1168, scene_id=124, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,68}, suggest_ele={1,2}, lock_formation=0, pos_effect_id={3161,3066}, layer=10
+},
+	[2611]={ tower_id=7, name=24529, describe=24964, pre_id=2610, next_id=2612, mon={14551,14552,14553,14554,14555}, formation_id=503, first_award=1169, scene_id=304, point_line=2, ele_type={6}, ele_type_num={2}, suggest_level={0,69}, suggest_ele={2,4}, lock_formation=0, pos_effect_id={3161,3066}, layer=11
+},
+	[2612]={ tower_id=7, name=24530, describe=24965, pre_id=2611, next_id=2613, mon={14556,14557,14558,14559,14560}, formation_id=509, first_award=1170, scene_id=123, point_line=3, ele_type={6}, ele_type_num={2}, suggest_level={0,70}, suggest_ele={2,5,0}, lock_formation=0, pos_effect_id={3163,3066}, layer=12
+},
+	[2613]={ tower_id=7, name=24531, describe=24966, pre_id=2612, next_id=2614, mon={14561,14562,14563,14564,14565}, formation_id=509, first_award=1153, scene_id=203, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,70}, suggest_ele={2,4}, lock_formation=0, pos_effect_id={3161,3068}, layer=13
+},
+	[2614]={ tower_id=7, name=24532, describe=24966, pre_id=2613, next_id=2615, mon={14566,14567,14568,14569,14570}, formation_id=507, first_award=1154, scene_id=124, point_line=2, ele_type={6}, ele_type_num={2}, suggest_level={0,71}, suggest_ele={5,1}, lock_formation=0, pos_effect_id={3161,3068}, layer=14
+},
+	[2615]={ tower_id=7, name=24533, describe=24966, pre_id=2614, next_id=2616, mon={14571,14572,14573,14574,14575}, formation_id=505, first_award=1155, scene_id=201, point_line=3, ele_type={6}, ele_type_num={2}, suggest_level={0,72}, suggest_ele={0,1}, lock_formation=0, pos_effect_id={3161,3068}, layer=15
+},
+	[2616]={ tower_id=7, name=24534, describe=24966, pre_id=2615, next_id=2617, mon={14576,14577,14578,14579,14580}, formation_id=509, first_award=1158, scene_id=124, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,73}, suggest_ele={3,1}, lock_formation=0, pos_effect_id={3161,3068}, layer=16
+},
+	[2617]={ tower_id=7, name=24535, describe=24966, pre_id=2616, next_id=2618, mon={14581,14582,14583,14584,14585}, formation_id=504, first_award=1159, scene_id=201, point_line=2, ele_type={6}, ele_type_num={2}, suggest_level={0,74}, suggest_ele={3,0}, lock_formation=0, pos_effect_id={3161,3068}, layer=17
+},
+	[2618]={ tower_id=7, name=24536, describe=24967, pre_id=2617, next_id=2619, mon={14586,14587,14588,14589,14590}, formation_id=504, first_award=1160, scene_id=203, point_line=3, ele_type={6}, ele_type_num={2}, suggest_level={0,75}, suggest_ele={0,2,1}, lock_formation=0, pos_effect_id={3164,3068}, layer=18
+},
+	[2619]={ tower_id=7, name=24537, describe=24968, pre_id=2618, next_id=2620, mon={14591,14592,14593,14594,14595}, formation_id=504, first_award=1163, scene_id=304, point_line=1, ele_type={6}, ele_type_num={2}, suggest_level={0,75}, suggest_ele={3,5}, lock_formation=0, pos_effect_id={3161,3049}, layer=19
+},
+	[2620]={ tower_id=7, name=24538, describe=24968, pre_id=2619, next_id=0, mon={14596,14597,14598,14599,14600}, formation_id=508, first_award=1164, scene_id=127, point_line=0, ele_type={6}, ele_type_num={2}, suggest_level={0,76}, suggest_ele={0,1}, lock_formation=0, pos_effect_id={3161,3049}, layer=20
 }
 }
 

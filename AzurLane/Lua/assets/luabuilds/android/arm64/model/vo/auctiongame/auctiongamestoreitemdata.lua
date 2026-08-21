@@ -1,51 +1,27 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("AuctionGameStoreItemData")
+﻿local var_0_0 = class("AuctionGameStoreItemData")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.uid = arg_1_1.uid
 	arg_1_0.name = arg_1_1.name
 	arg_1_0.rarity = arg_1_1.rarity
-	AuctionGameTools = var_2
-	arg_1_0.contour = var_2.GetPosRange(arg_1_1.pos)
+	arg_1_0.contour = AuctionGameTools.GetPosRange(arg_1_1.pos)
 	arg_1_0.value = arg_1_1.value
 	arg_1_0.position = arg_1_1.pos[1]
 
 	if arg_1_1.id and arg_1_1.id ~= 0 then
-		pg = var_2
-		arg_1_0.price = var_2.auction_collection[arg_1_0.id].value
+		arg_1_0.price = pg.auction_collection[arg_1_0.id].value
 
 		arg_1_0:SetShowContour()
 	end
 
 	local var_1_0 = ""
 
-	ipairs = var_1_10003
-
-	for iter_1_0, iter_1_1 in var_1_10003(arg_1_1.pos) do
-		local var_1_1 = var_1_0
-
-		string = var_1_10009
-		var_1_0 = var_1_1 .. var_1_10009.format("{%s, %s}", iter_1_1.x, iter_1_1.y)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.pos) do
+		var_1_0 = var_1_0 .. string.format("{%s, %s}", iter_1_1.x, iter_1_1.y)
 	end
 
-	print = var_3
-
-	local var_1_2 = "uid"
-	local var_1_3 = arg_1_1.uid
-	local var_1_4 = "id"
-	local var_1_5 = arg_1_1.id
-	local var_1_6 = "稀有度："
-	local var_1_7 = arg_1_0.rarity
-
-	string = var_1_10011
-
-	local var_1_8 = var_1_10011.format("位置： {%s, %s}", arg_1_0.position.x, arg_1_0.position.y)
-
-	string = var_1_10012
-
-	var_3(var_1_2, var_1_3, var_1_4, var_1_5, var_1_6, var_1_7, var_1_8, var_1_10012.format("轮廓：{%s,%s}", arg_1_0.contour[1], arg_1_0.contour[2]), "占位:" .. var_1_0)
+	print("uid", arg_1_1.uid, "id", arg_1_1.id, "稀有度：", arg_1_0.rarity, string.format("位置： {%s, %s}", arg_1_0.position.x, arg_1_0.position.y), string.format("轮廓：{%s,%s}", arg_1_0.contour[1], arg_1_0.contour[2]), "占位:" .. var_1_0)
 
 	return
 end
@@ -61,8 +37,7 @@ function var_0_0.GetReveal(arg_3_0)
 end
 
 function var_0_0.UpdateContour(arg_4_0, arg_4_1)
-	AuctionGameTools = var_1_10002
-	arg_4_0.contour = var_1_10002.GetPosRange(arg_4_1)
+	arg_4_0.contour = AuctionGameTools.GetPosRange(arg_4_1)
 
 	return
 end
@@ -108,41 +83,22 @@ end
 
 function var_0_0.GetEstimateValue(arg_11_0)
 	if arg_11_0.id ~= nil and arg_11_0.id ~= 0 then
-		pg = var_1
-
-		return var_1.auction_collection[arg_11_0.id].value, var_1
+		return pg.auction_collection[arg_11_0.id].value, pg.auction_collection[arg_11_0.id].value
 	end
 
 	local var_11_0 = {}
 
 	if arg_11_0.showRarity ~= true and arg_11_0.showContour ~= true then
-		Clone = var_2
-		pg = var_1_10004
-		var_11_0 = var_2(var_1_10004.auction_collection.all)
+		var_11_0 = Clone(pg.auction_collection.all)
 	else
 		local var_11_1 = {}
 
-		if arg_11_0.showRarity then
-			Clone = var_3
-			pg = var_1_10005
-			var_11_1 = var_3(var_1_10005.auction_collection.get_id_list_by_rarity[arg_11_0.rarity])
-		else
-			Clone = var_3
-			pg = var_1_10005
-			var_11_1 = var_3(var_1_10005.auction_collection.all)
-		end
+		var_11_1 = arg_11_0.showRarity and Clone(pg.auction_collection.get_id_list_by_rarity[arg_11_0.rarity]) or Clone(pg.auction_collection.all)
 
 		if arg_11_0.showContour then
-			ipairs = var_3
-
-			for iter_11_0, iter_11_1 in var_3(var_11_1) do
-				pg = var_1_10008
-				var_1_10008 = var_1_10008.auction_collection[iter_11_1].contour
-
-				if arg_11_0.contour[1] == var_1_10008[1] and arg_11_0.contour[2] == var_1_10008[2] then
-					table = var_1_10009
-
-					var_1_10009.insert(var_11_0, iter_11_1)
+			for iter_11_0, iter_11_1 in ipairs(var_11_1) do
+				if arg_11_0.contour[1] == pg.auction_collection[iter_11_1].contour[1] and arg_11_0.contour[2] == pg.auction_collection[iter_11_1].contour[2] then
+					table.insert(var_11_0, iter_11_1)
 				end
 			end
 		else
@@ -153,18 +109,15 @@ function var_0_0.GetEstimateValue(arg_11_0)
 	local var_11_2 = 0
 	local var_11_3 = 0
 
-	ipairs = var_1_10004
+	for iter_11_2, iter_11_3 in ipairs(var_11_0) do
+		local var_11_4 = pg.auction_collection[iter_11_3]
 
-	for iter_11_2, iter_11_3 in var_1_10004(var_11_0) do
-		pg = var_1_10009
-		var_1_10009 = var_1_10009.auction_collection[iter_11_3]
-
-		if var_11_2 == 0 or var_11_2 > var_1_10009.value then
-			var_11_2 = var_1_10009.value
+		if var_11_2 == 0 or var_11_2 > var_11_4.value then
+			var_11_2 = var_11_4.value
 		end
 
-		if var_11_3 == 0 or var_11_3 < var_1_10009.value then
-			var_11_3 = var_1_10009.value
+		if var_11_3 == 0 or var_11_3 < var_11_4.value then
+			var_11_3 = var_11_4.value
 		end
 	end
 

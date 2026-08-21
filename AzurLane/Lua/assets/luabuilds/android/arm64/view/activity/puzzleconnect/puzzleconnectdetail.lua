@@ -1,165 +1,55 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PuzzleConnectDetail")
+﻿local var_0_0 = class("PuzzleConnectDetail")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
-	findTF = var_1_10003
-	arg_1_0._leftIcon1 = var_1_10003(arg_1_0._tf, "ad/leftIcon1/mask/img")
-	findTF = var_3
-	arg_1_0._leftIcon2 = var_3(arg_1_0._tf, "ad/leftIcon2/mask/img")
-	findTF = var_3
-	arg_1_0._playerDesc = var_3(arg_1_0._tf, "ad/playerDesc")
-	findTF = var_3
-	arg_1_0._progressTitle = var_3(arg_1_0._tf, "ad/progressTitle")
-	findTF = var_3
-	arg_1_0._chatText = var_3(arg_1_0._tf, "ad/chat/text")
-	findTF = var_3
-	arg_1_0._btnGo = var_3(arg_1_0._tf, "ad/btnGo")
-	findTF = var_3
-	arg_1_0._btnGoText = var_3(arg_1_0._tf, "ad/btnGo/text")
-	onButton = var_3
+	arg_1_0._leftIcon1 = findTF(arg_1_0._tf, "ad/leftIcon1/mask/img")
+	arg_1_0._leftIcon2 = findTF(arg_1_0._tf, "ad/leftIcon2/mask/img")
+	arg_1_0._playerDesc = findTF(arg_1_0._tf, "ad/playerDesc")
+	arg_1_0._progressTitle = findTF(arg_1_0._tf, "ad/progressTitle")
+	arg_1_0._chatText = findTF(arg_1_0._tf, "ad/chat/text")
+	arg_1_0._btnGo = findTF(arg_1_0._tf, "ad/btnGo")
+	arg_1_0._btnGoText = findTF(arg_1_0._tf, "ad/btnGo/text")
 
-	local var_1_0 = arg_1_0._event
-	local var_1_1 = arg_1_0._btnGo
+	onButton(arg_1_0._event, arg_1_0._btnGo, function()
+		arg_1_0._stateType = PuzzleConnectMediator.GetPuzzleActivityState(arg_1_0._configData.id, arg_1_0._activity)
 
-	local function var_1_2()
-		local var_2_0 = arg_1_0
-
-		PuzzleConnectMediator = var_2_10001
-		var_2_0._stateType = var_2_10001.GetPuzzleActivityState(arg_1_0._configData.id, arg_1_0._activity)
-
-		local var_2_1 = arg_1_0._stateType
-
-		PuzzleConnectMediator = var_1
-
-		local var_2_4
-
-		if var_2_1 == var_1.state_collection then
-			pg = var_2_1
-
-			local var_2_2 = var_2_1.m02
-			local var_2_3 = var_0.sendNotification
-
-			GAME = var_2_4
-			var_2_4 = var_2_4.GO_SCENE
-			SCENE = var_4
-
-			var_2_3(var_2_2, var_2_4, var_4.LEVEL)
-		else
-			local var_2_5 = arg_1_0._stateType
-
-			PuzzleConnectMediator = var_1
-
-			if var_2_5 == var_1.state_puzzle then
-				local var_2_6 = arg_1_0._event
-				local var_2_7 = var_0.emit
-
-				PuzzleConnectLayer = var_2_4
-
-				var_2_7(var_2_6, var_2_4.OPEN_GAME, arg_1_0._data)
-			else
-				local var_2_8 = arg_1_0._stateType
-
-				PuzzleConnectMediator = var_1
-
-				if var_2_8 == var_1.state_connection then
-					local var_2_9 = arg_1_0._event
-					local var_2_10 = var_0.emit
-
-					PuzzleConnectLayer = var_2_4
-
-					var_2_10(var_2_9, var_2_4.OPEN_GAME, arg_1_0._data)
-				end
-			end
+		if arg_1_0._stateType == PuzzleConnectMediator.state_collection then
+			pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL)
+		elseif arg_1_0._stateType == PuzzleConnectMediator.state_puzzle then
+			arg_1_0._event:emit(PuzzleConnectLayer.OPEN_GAME, arg_1_0._data)
+		elseif arg_1_0._stateType == PuzzleConnectMediator.state_connection then
+			arg_1_0._event:emit(PuzzleConnectLayer.OPEN_GAME, arg_1_0._data)
 		end
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10008
-
-	var_3(var_1_0, var_1_1, var_1_2, var_1_10008)
-
-	onButton = var_3
-
-	local var_1_3 = arg_1_0._event
-
-	findTF = var_1_1
-
-	local var_1_4 = var_1_1(arg_1_0._tf, "ad/btnClose")
-
-	local function var_1_5()
-		local var_3_0 = arg_1_0._event
-		local var_3_1 = var_0.emit
-
-		PuzzleConnectLayer = var_2_10003
-
-		var_3_1(var_3_0, var_2_10003.OPEN_MENU)
+	end, SFX_CONFIRM)
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "ad/btnClose"), function()
+		arg_1_0._event:emit(PuzzleConnectLayer.OPEN_MENU)
 
 		return
-	end
-
-	SFX_CONFIRM = var_8
-
-	var_3(var_1_3, var_1_4, var_1_5, var_8)
-
-	onButton = var_3
-
-	local var_1_6 = arg_1_0._event
-
-	findTF = var_1_4
-
-	local var_1_7 = var_1_4(arg_1_0._tf, "bottom")
-
-	local function var_1_8()
-		local var_4_0 = arg_1_0._event
-		local var_4_1 = var_0.emit
-
-		PuzzleConnectLayer = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.OPEN_MENU)
+	end, SFX_CONFIRM)
+	onButton(arg_1_0._event, findTF(arg_1_0._tf, "bottom"), function()
+		arg_1_0._event:emit(PuzzleConnectLayer.OPEN_MENU)
 
 		return
-	end
+	end, SFX_CONFIRM)
 
-	SFX_CONFIRM = var_8
-
-	var_3(var_1_6, var_1_7, var_1_8, var_8)
-
-	Timer = var_3
-	arg_1_0._timer = var_3.New(function()
+	arg_1_0._timer = Timer.New(function()
 		arg_1_0._chatIndex = arg_1_0._chatIndex + 1
 
-		local var_5_0 = arg_1_0._chatIndex
-
-		if arg_1_0._chatLengh < var_5_0 then
-			local var_5_1 = arg_1_0._timer
-
-			var_5_0.Stop(var_5_1)
+		if arg_1_0._chatIndex > arg_1_0._chatLengh then
+			arg_1_0._timer:Stop()
 
 			return
 		end
 
-		utf8 = var_5_0
-
-		local var_5_2 = var_5_0.sub(arg_1_0._chatStr, 1, arg_1_0._chatIndex)
-
-		setText = var_1
-
-		var_1(arg_1_0._chatText, var_5_2)
+		setText(arg_1_0._chatText, (utf8.sub(arg_1_0._chatStr, 1, arg_1_0._chatIndex)))
 
 		return
 	end, 0.1, -1)
-	setText = var_3
-	findTF = var_5
 
-	local var_1_9 = var_5(arg_1_0._tf, "ad/title/text")
-
-	i18n = var_6
-
-	var_3(var_1_9, var_6("tolovegame_puzzle_title_desc"))
+	setText(findTF(arg_1_0._tf, "ad/title/text"), i18n("tolovegame_puzzle_title_desc"))
 
 	return
 end
@@ -167,29 +57,20 @@ end
 function var_0_0.startChat(arg_6_0)
 	arg_6_0._chatIndex = 1
 
-	local var_6_0 = arg_6_0._timer
-
-	var_1.Start(var_6_0)
+	arg_6_0._timer:Start()
 
 	return
 end
 
 function var_0_0.show(arg_7_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_7_0._tf, true)
+	setActive(arg_7_0._tf, true)
 
 	return
 end
 
 function var_0_0.hide(arg_8_0)
-	local var_8_0 = arg_8_0._timer
-
-	var_1.Stop(var_8_0)
-
-	setActive = var_1
-
-	var_1(arg_8_0._tf, false)
+	arg_8_0._timer:Stop()
+	setActive(arg_8_0._tf, false)
 
 	return
 end
@@ -199,8 +80,7 @@ function var_0_0.setData(arg_9_0, arg_9_1)
 	arg_9_0._configData = arg_9_1.data
 	arg_9_0._index = arg_9_1.index
 	arg_9_0._chatStr = arg_9_0._configData.desc_bubble
-	utf8 = var_2
-	arg_9_0._chatLengh = var_2.len(arg_9_0._chatStr)
+	arg_9_0._chatLengh = utf8.len(arg_9_0._chatStr)
 	arg_9_0._stepDescList = arg_9_0._configData.desc_step
 
 	arg_9_0:updateUI()
@@ -216,112 +96,43 @@ function var_0_0.setActivity(arg_10_0, arg_10_1)
 		return
 	end
 
-	PuzzleConnectMediator = var_2
-	arg_10_0._stateType = var_2.GetPuzzleActivityState(arg_10_0._configData.id, arg_10_0._activity)
-	setActive = var_2
+	arg_10_0._stateType = PuzzleConnectMediator.GetPuzzleActivityState(arg_10_0._configData.id, arg_10_0._activity)
 
-	var_2(arg_10_0._btnGo, true)
+	setActive(arg_10_0._btnGo, true)
 
 	local var_10_0 = arg_10_0._configData.need[3]
 	local var_10_1 = 0
-	local var_10_2 = arg_10_0._stateType
 
-	PuzzleConnectMediator = var_5
+	if arg_10_0._stateType == PuzzleConnectMediator.state_collection then
+		setText(arg_10_0._btnGoText, i18n("tolovegame_puzzle_detail_collect"))
 
-	if var_10_2 == var_5.state_collection then
-		setText = var_10_2
-
-		local var_10_3 = arg_10_0._btnGoText
-
-		i18n = var_1_10007
-
-		var_10_2(var_10_3, var_1_10007("tolovegame_puzzle_detail_collect"))
-
-		pg = var_10_2
-
-		local var_10_4 = var_10_2.activity_tolove_jigsaw[arg_10_0._configData.id].need[2]
-
-		getProxy = var_5
-		PlayerProxy = var_1_10007
-		var_1_10007 = var_5(var_1_10007)
-		var_1_10007 = var_5.getData(var_1_10007)
-		var_10_0 = var_5.getResource(var_1_10007, var_10_4)
+		var_10_0 = getProxy(PlayerProxy):getData():getResource(pg.activity_tolove_jigsaw[arg_10_0._configData.id].need[2])
 		var_10_1 = 0
-	else
-		local var_10_5 = arg_10_0._stateType
+	elseif arg_10_0._stateType == PuzzleConnectMediator.state_puzzle then
+		setText(arg_10_0._btnGoText, i18n("tolovegame_puzzle_detail_puzzle"))
 
-		PuzzleConnectMediator = var_5
+		var_10_1 = 2
+	elseif arg_10_0._stateType == PuzzleConnectMediator.state_connection then
+		setText(arg_10_0._btnGoText, i18n("tolovegame_puzzle_detail_connection"))
 
-		if var_10_5 == var_5.state_puzzle then
-			setText = var_10_5
+		var_10_1 = 3
+	elseif arg_10_0._stateType == PuzzleConnectMediator.state_complete then
+		setActive(arg_10_0._btnGo, false)
 
-			local var_10_6 = arg_10_0._btnGoText
-
-			i18n = var_1_10007
-
-			var_10_5(var_10_6, var_1_10007("tolovegame_puzzle_detail_puzzle"))
-
-			var_10_1 = 2
-		else
-			local var_10_7 = arg_10_0._stateType
-
-			PuzzleConnectMediator = var_5
-
-			if var_10_7 == var_5.state_connection then
-				setText = var_10_7
-
-				local var_10_8 = arg_10_0._btnGoText
-
-				i18n = var_1_10007
-
-				var_10_7(var_10_8, var_1_10007("tolovegame_puzzle_detail_connection"))
-
-				var_10_1 = 3
-			else
-				local var_10_9 = arg_10_0._stateType
-
-				PuzzleConnectMediator = var_5
-
-				if var_10_9 == var_5.state_complete then
-					setActive = var_10_9
-
-					var_10_9(arg_10_0._btnGo, false)
-
-					var_10_1 = 4
-				end
-			end
-		end
+		var_10_1 = 4
 	end
 
 	for iter_10_0 = 1, #arg_10_0._stepDescList do
-		local var_10_10 = arg_10_0._stepDescList[iter_10_0]
+		local var_10_2 = findTF(arg_10_0._tf, "ad/list/text_" .. iter_10_0)
 
-		findTF = var_1_10009
-		var_1_10009 = var_1_10009(arg_10_0._tf, "ad/list/text_" .. iter_10_0)
-		setText = var_1_10010
+		setText(var_10_2, arg_10_0:replaceStr(arg_10_0._stepDescList[iter_10_0], arg_10_0._configData.need[3], var_10_0, arg_10_0._configData.need[3]))
 
-		var_1_10010(var_1_10009, arg_10_0:replaceStr(var_10_10, arg_10_0._configData.need[3], var_10_0, arg_10_0._configData.need[3]))
+		GetComponent(var_10_2, "RichText").color = iter_10_0 <= var_10_1 and Color.New(0.49, 0.5, 0.53, 1) or Color.New(0.18, 0.16, 0.18, 1)
 
-		if iter_10_0 <= var_10_1 then
-			GetComponent = var_1_10010
-			var_1_10010 = var_1_10010(var_1_10009, "RichText")
-			Color = var_11
-			var_1_10010.color = var_11.New(0.49, 0.5, 0.53, 1)
+		if iter_10_0 > 2 and iter_10_0 > var_10_1 + 1 then
+			setActive(var_10_2, false)
 		else
-			GetComponent = var_1_10010
-			var_1_10010 = var_1_10010(var_1_10009, "RichText")
-			Color = var_11
-			var_1_10010.color = var_11.New(0.18, 0.16, 0.18, 1)
-		end
-
-		if 2 < iter_10_0 and var_10_1 + 1 < iter_10_0 then
-			setActive = var_1_10010
-
-			var_1_10010(var_1_10009, false)
-		else
-			setActive = var_1_10010
-
-			var_1_10010(var_1_10009, true)
+			setActive(var_10_2, true)
 		end
 	end
 
@@ -329,55 +140,22 @@ function var_0_0.setActivity(arg_10_0, arg_10_1)
 end
 
 function var_0_0.updateUI(arg_11_0)
-	LoadImageSpriteAsync = var_1_10001
-
-	var_1_10001("SquareIcon/" .. arg_11_0._configData.portrait_up, arg_11_0._leftIcon1)
-
-	LoadImageSpriteAsync = var_1_10001
-
-	var_1_10001("SquareIcon/" .. arg_11_0._configData.portrait_down, arg_11_0._leftIcon2)
-
-	pg = var_1_10001
-
-	local var_11_0 = var_1_10001.ship_data_statistics[arg_11_0._configData.ship_id].name
-
-	setText = var_2
-	findTF = var_4
-
-	local var_11_1 = var_4(arg_11_0._tf, "ad/player")
-
-	i18n = var_1_10005
-
-	var_2(var_11_1, var_1_10005("tolovegame_puzzle_ship_need", var_11_0))
-
-	setText = var_2
-
-	var_2(arg_11_0._playerDesc, arg_11_0._configData.desc_demand)
-
-	setText = var_2
-
-	local var_11_2 = arg_11_0._progressTitle
-
-	i18n = var_5
-
-	var_2(var_11_2, var_5("tolovegame_puzzle_task_need"))
-
-	setText = var_2
-
-	var_2(arg_11_0._chatText, arg_11_0._configData.desc_bubble)
+	LoadImageSpriteAsync("SquareIcon/" .. arg_11_0._configData.portrait_up, arg_11_0._leftIcon1)
+	LoadImageSpriteAsync("SquareIcon/" .. arg_11_0._configData.portrait_down, arg_11_0._leftIcon2)
+	setText(findTF(arg_11_0._tf, "ad/player"), i18n("tolovegame_puzzle_ship_need", pg.ship_data_statistics[arg_11_0._configData.ship_id].name))
+	setText(arg_11_0._playerDesc, arg_11_0._configData.desc_demand)
+	setText(arg_11_0._progressTitle, i18n("tolovegame_puzzle_task_need"))
+	setText(arg_11_0._chatText, arg_11_0._configData.desc_bubble)
 
 	return
 end
 
 function var_0_0.replaceStr(arg_12_0, arg_12_1, ...)
 	if arg_12_1 then
-		ipairs = var_1_10002
-
-		for iter_12_0, iter_12_1 in var_1_10002({
+		for iter_12_0, iter_12_1 in ipairs({
 			...
 		}) do
-			string = var_1_10007
-			arg_12_1 = var_1_10007.gsub(arg_12_1, "$" .. iter_12_0, iter_12_1)
+			arg_12_1 = string.gsub(arg_12_1, "$" .. iter_12_0, iter_12_1)
 		end
 
 		return arg_12_1
@@ -388,9 +166,7 @@ end
 
 function var_0_0.dispose(arg_13_0)
 	if arg_13_0._timer and arg_13_0._timer.running then
-		local var_13_0 = arg_13_0._timer
-
-		var_1.Stop(var_13_0)
+		arg_13_0._timer:Stop()
 
 		arg_13_0._timer = nil
 	end

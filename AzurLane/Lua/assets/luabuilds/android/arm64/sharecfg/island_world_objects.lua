@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_world_objects") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_world_objects"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_world_objects = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_world_objects
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_world_objects = rawget(pg, "island_world_objects") or setmetatable({
+	__name = "island_world_objects"
+}, confNEO)
+pg.island_world_objects.all = {
 	10060001,
 	10060002,
 	10060003,
@@ -513,11 +490,7 @@ var_0_3.all = {
 	10010096,
 	10010097
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_world_objects
-
-var_0_4.get_id_list_by_mapId = {
+pg.island_world_objects.get_id_list_by_mapId = {
 	[1001] = {
 		10010001,
 		10010002,
@@ -1027,25 +1000,11 @@ var_0_4.get_id_list_by_mapId = {
 		10110007
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_world_objects = {}
+pg.base = pg.base or {}
+pg.base.island_world_objects = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_world_objects
-
-	var_1_0[10060001] = {
+	pg.base.island_world_objects[10060001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -1074,11 +1033,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_world_objects
-
-	var_1_1[10060002] = {
+	pg.base.island_world_objects[10060002] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1008",
 		unitId = 100800,
 		type = 1,
@@ -1107,11 +1062,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_world_objects
-
-	var_1_2[10060003] = {
+	pg.base.island_world_objects[10060003] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1140,11 +1091,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_world_objects
-
-	var_1_3[10060004] = {
+	pg.base.island_world_objects[10060004] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1173,11 +1120,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_world_objects
-
-	var_1_4[10060005] = {
+	pg.base.island_world_objects[10060005] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1206,11 +1149,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_world_objects
-
-	var_1_5[10060006] = {
+	pg.base.island_world_objects[10060006] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1239,11 +1178,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_world_objects
-
-	var_1_6[10060007] = {
+	pg.base.island_world_objects[10060007] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1272,11 +1207,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_world_objects
-
-	var_1_7[10060008] = {
+	pg.base.island_world_objects[10060008] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1305,11 +1236,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_world_objects
-
-	var_1_8[10060009] = {
+	pg.base.island_world_objects[10060009] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1338,11 +1265,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_world_objects
-
-	var_1_9[10060010] = {
+	pg.base.island_world_objects[10060010] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1371,11 +1294,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_world_objects
-
-	var_1_10[10060011] = {
+	pg.base.island_world_objects[10060011] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1404,11 +1323,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_world_objects
-
-	var_1_11[10060012] = {
+	pg.base.island_world_objects[10060012] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1437,11 +1352,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_world_objects
-
-	var_1_12[10060013] = {
+	pg.base.island_world_objects[10060013] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1470,11 +1381,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_world_objects
-
-	var_1_13[10060014] = {
+	pg.base.island_world_objects[10060014] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1503,11 +1410,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_world_objects
-
-	var_1_14[10060015] = {
+	pg.base.island_world_objects[10060015] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1536,11 +1439,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_world_objects
-
-	var_1_15[10060016] = {
+	pg.base.island_world_objects[10060016] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1569,11 +1468,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_world_objects
-
-	var_1_16[10060017] = {
+	pg.base.island_world_objects[10060017] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1602,11 +1497,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_world_objects
-
-	var_1_17[10060018] = {
+	pg.base.island_world_objects[10060018] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1635,11 +1526,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_world_objects
-
-	var_1_18[10060019] = {
+	pg.base.island_world_objects[10060019] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1668,11 +1555,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_world_objects
-
-	var_1_19[10060020] = {
+	pg.base.island_world_objects[10060020] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1701,11 +1584,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_world_objects
-
-	var_1_20[10060021] = {
+	pg.base.island_world_objects[10060021] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1734,11 +1613,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_world_objects
-
-	var_1_21[10060022] = {
+	pg.base.island_world_objects[10060022] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1767,11 +1642,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_world_objects
-
-	var_1_22[10060023] = {
+	pg.base.island_world_objects[10060023] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1800,11 +1671,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_world_objects
-
-	var_1_23[10060024] = {
+	pg.base.island_world_objects[10060024] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -1833,11 +1700,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_world_objects
-
-	var_1_24[10060025] = {
+	pg.base.island_world_objects[10060025] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -1866,11 +1729,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_world_objects
-
-	var_1_25[10060026] = {
+	pg.base.island_world_objects[10060026] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -1899,11 +1758,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_world_objects
-
-	var_1_26[10060027] = {
+	pg.base.island_world_objects[10060027] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -1932,11 +1787,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_world_objects
-
-	var_1_27[10060028] = {
+	pg.base.island_world_objects[10060028] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -1965,11 +1816,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_world_objects
-
-	var_1_28[10060029] = {
+	pg.base.island_world_objects[10060029] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -1998,11 +1845,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_world_objects
-
-	var_1_29[10060030] = {
+	pg.base.island_world_objects[10060030] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 1022,
 		type = 0,
@@ -2037,11 +1880,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_world_objects
-
-	var_1_30[10060031] = {
+	pg.base.island_world_objects[10060031] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 1022,
 		type = 0,
@@ -2076,11 +1915,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_world_objects
-
-	var_1_31[0] = {
+	pg.base.island_world_objects[0] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2109,11 +1944,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_world_objects
-
-	var_1_32[1] = {
+	pg.base.island_world_objects[1] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2142,11 +1973,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_world_objects
-
-	var_1_33[2] = {
+	pg.base.island_world_objects[2] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2175,11 +2002,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_world_objects
-
-	var_1_34[3] = {
+	pg.base.island_world_objects[3] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2208,11 +2031,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_world_objects
-
-	var_1_35[4] = {
+	pg.base.island_world_objects[4] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2241,11 +2060,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_world_objects
-
-	var_1_36[5] = {
+	pg.base.island_world_objects[5] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2274,11 +2089,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_world_objects
-
-	var_1_37[6] = {
+	pg.base.island_world_objects[6] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2307,11 +2118,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_world_objects
-
-	var_1_38[7] = {
+	pg.base.island_world_objects[7] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2340,11 +2147,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_world_objects
-
-	var_1_39[8] = {
+	pg.base.island_world_objects[8] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2373,11 +2176,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_world_objects
-
-	var_1_40[9] = {
+	pg.base.island_world_objects[9] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2406,11 +2205,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_world_objects
-
-	var_1_41[10] = {
+	pg.base.island_world_objects[10] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2439,11 +2234,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_world_objects
-
-	var_1_42[11] = {
+	pg.base.island_world_objects[11] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2472,11 +2263,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_world_objects
-
-	var_1_43[12] = {
+	pg.base.island_world_objects[12] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2505,11 +2292,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_world_objects
-
-	var_1_44[13] = {
+	pg.base.island_world_objects[13] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2538,11 +2321,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_world_objects
-
-	var_1_45[14] = {
+	pg.base.island_world_objects[14] = {
 		behaviourTree = "",
 		unitId = 20154,
 		type = 0,
@@ -2571,11 +2350,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_world_objects
-
-	var_1_46[15] = {
+	pg.base.island_world_objects[15] = {
 		behaviourTree = "",
 		unitId = 20154,
 		type = 0,
@@ -2604,11 +2379,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_world_objects
-
-	var_1_47[16] = {
+	pg.base.island_world_objects[16] = {
 		behaviourTree = "",
 		unitId = 20154,
 		type = 0,
@@ -2637,11 +2408,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_world_objects
-
-	var_1_48[17] = {
+	pg.base.island_world_objects[17] = {
 		behaviourTree = "",
 		unitId = 20154,
 		type = 0,
@@ -2670,11 +2437,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_world_objects
-
-	var_1_49[18] = {
+	pg.base.island_world_objects[18] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2703,11 +2466,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_world_objects
-
-	var_1_50[19] = {
+	pg.base.island_world_objects[19] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2736,11 +2495,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_world_objects
-
-	var_1_51[20] = {
+	pg.base.island_world_objects[20] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2769,11 +2524,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_world_objects
-
-	var_1_52[21] = {
+	pg.base.island_world_objects[21] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2802,11 +2553,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_world_objects
-
-	var_1_53[22] = {
+	pg.base.island_world_objects[22] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2835,11 +2582,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_world_objects
-
-	var_1_54[23] = {
+	pg.base.island_world_objects[23] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2868,11 +2611,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_world_objects
-
-	var_1_55[24] = {
+	pg.base.island_world_objects[24] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2901,11 +2640,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_world_objects
-
-	var_1_56[25] = {
+	pg.base.island_world_objects[25] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2934,11 +2669,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_world_objects
-
-	var_1_57[26] = {
+	pg.base.island_world_objects[26] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -2967,11 +2698,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_world_objects
-
-	var_1_58[27] = {
+	pg.base.island_world_objects[27] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3000,11 +2727,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_world_objects
-
-	var_1_59[28] = {
+	pg.base.island_world_objects[28] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3033,11 +2756,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_world_objects
-
-	var_1_60[29] = {
+	pg.base.island_world_objects[29] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3066,11 +2785,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_world_objects
-
-	var_1_61[30] = {
+	pg.base.island_world_objects[30] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -3099,11 +2814,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_world_objects
-
-	var_1_62[31] = {
+	pg.base.island_world_objects[31] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -3132,11 +2843,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_world_objects
-
-	var_1_63[10060064] = {
+	pg.base.island_world_objects[10060064] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -3165,11 +2872,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_world_objects
-
-	var_1_64[10060065] = {
+	pg.base.island_world_objects[10060065] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -3198,11 +2901,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_world_objects
-
-	var_1_65[10060066] = {
+	pg.base.island_world_objects[10060066] = {
 		behaviourTree = "Island/NodeCanvas/Commercial_Fishery_Entrance",
 		unitId = 60044,
 		type = 0,
@@ -3231,11 +2930,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_world_objects
-
-	var_1_66[10060067] = {
+	pg.base.island_world_objects[10060067] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -3264,11 +2959,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_world_objects
-
-	var_1_67[10070001] = {
+	pg.base.island_world_objects[10070001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -3297,11 +2988,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_world_objects
-
-	var_1_68[10070002] = {
+	pg.base.island_world_objects[10070002] = {
 		behaviourTree = "Island/NodeCanvas/Factory_CoffeeShop_Entrance",
 		unitId = 60043,
 		type = 0,
@@ -3330,11 +3017,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_world_objects
-
-	var_1_69[10070003] = {
+	pg.base.island_world_objects[10070003] = {
 		behaviourTree = "Island/NodeCanvas/Invitation_Entrance",
 		unitId = 100702,
 		type = 0,
@@ -3363,11 +3046,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_world_objects
-
-	var_1_70[10070004] = {
+	pg.base.island_world_objects[10070004] = {
 		behaviourTree = "Island/NodeCanvas/Research_Entrance",
 		unitId = 100701,
 		type = 0,
@@ -3396,11 +3075,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_world_objects
-
-	var_1_71[10070005] = {
+	pg.base.island_world_objects[10070005] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Factory_Mingshi",
 		unitId = 3120100,
 		type = 1,
@@ -3446,11 +3121,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_world_objects
-
-	var_1_72[10070006] = {
+	pg.base.island_world_objects[10070006] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -3479,11 +3150,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_world_objects
-
-	var_1_73[10070007] = {
+	pg.base.island_world_objects[10070007] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3512,11 +3179,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_world_objects
-
-	var_1_74[10070008] = {
+	pg.base.island_world_objects[10070008] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3545,11 +3208,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_world_objects
-
-	var_1_75[10070009] = {
+	pg.base.island_world_objects[10070009] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3578,11 +3237,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_world_objects
-
-	var_1_76[10070010] = {
+	pg.base.island_world_objects[10070010] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3611,11 +3266,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_world_objects
-
-	var_1_77[10070011] = {
+	pg.base.island_world_objects[10070011] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20003004",
 		unitId = 1022,
 		type = 0,
@@ -3650,11 +3301,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_world_objects
-
-	var_1_78[10070012] = {
+	pg.base.island_world_objects[10070012] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1009",
 		unitId = 100900,
 		type = 1,
@@ -3683,11 +3330,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_world_objects
-
-	var_1_79[10070013] = {
+	pg.base.island_world_objects[10070013] = {
 		behaviourTree = "",
 		unitId = 20004,
 		type = 0,
@@ -3716,11 +3359,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_world_objects
-
-	var_1_80[10070014] = {
+	pg.base.island_world_objects[10070014] = {
 		behaviourTree = "",
 		unitId = 20003,
 		type = 0,
@@ -3749,11 +3388,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_world_objects
-
-	var_1_81[10070015] = {
+	pg.base.island_world_objects[10070015] = {
 		behaviourTree = "",
 		unitId = 20002,
 		type = 0,
@@ -3782,11 +3417,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_world_objects
-
-	var_1_82[0] = {
+	pg.base.island_world_objects[0] = {
 		behaviourTree = "",
 		unitId = 20001,
 		type = 0,
@@ -3815,11 +3446,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_world_objects
-
-	var_1_83[1] = {
+	pg.base.island_world_objects[1] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3848,11 +3475,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_world_objects
-
-	var_1_84[2] = {
+	pg.base.island_world_objects[2] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3881,11 +3504,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_world_objects
-
-	var_1_85[3] = {
+	pg.base.island_world_objects[3] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3914,11 +3533,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_world_objects
-
-	var_1_86[4] = {
+	pg.base.island_world_objects[4] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3947,11 +3562,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_world_objects
-
-	var_1_87[5] = {
+	pg.base.island_world_objects[5] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -3980,11 +3591,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_world_objects
-
-	var_1_88[6] = {
+	pg.base.island_world_objects[6] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4013,11 +3620,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_world_objects
-
-	var_1_89[7] = {
+	pg.base.island_world_objects[7] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4046,11 +3649,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_world_objects
-
-	var_1_90[8] = {
+	pg.base.island_world_objects[8] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4079,11 +3678,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_world_objects
-
-	var_1_91[9] = {
+	pg.base.island_world_objects[9] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -4118,11 +3713,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_world_objects
-
-	var_1_92[10] = {
+	pg.base.island_world_objects[10] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20014003",
 		unitId = 1022,
 		type = 0,
@@ -4157,11 +3748,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_world_objects
-
-	var_1_93[11] = {
+	pg.base.island_world_objects[11] = {
 		behaviourTree = "Island/NodeCanvas/Factory_AuthMachine",
 		unitId = 1014,
 		type = 0,
@@ -4202,11 +3789,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_world_objects
-
-	var_1_94[12] = {
+	pg.base.island_world_objects[12] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Factory_Mingshi",
 		unitId = 3120100,
 		type = 1,
@@ -4247,11 +3830,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_world_objects
-
-	var_1_95[13] = {
+	pg.base.island_world_objects[13] = {
 		behaviourTree = "",
 		unitId = 3120100,
 		type = 1,
@@ -4297,11 +3876,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_world_objects
-
-	var_1_96[14] = {
+	pg.base.island_world_objects[14] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Factory_Mingshi",
 		unitId = 3120100,
 		type = 1,
@@ -4342,11 +3917,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_world_objects
-
-	var_1_97[15] = {
+	pg.base.island_world_objects[15] = {
 		behaviourTree = "",
 		unitId = 3120100,
 		type = 1,
@@ -4387,11 +3958,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_world_objects
-
-	var_1_98[16] = {
+	pg.base.island_world_objects[16] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4420,8 +3987,7 @@ var_0_4.base.island_world_objects = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_world_objects[17] = {
+	pg.base.island_world_objects[17] = {
 		behaviourTree = "",
 		unitId = 20060,
 		type = 0,
@@ -4454,11 +4020,7 @@ var_0_4.base.island_world_objects = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_world_objects
-
-	var_2_0[18] = {
+	pg.base.island_world_objects[18] = {
 		behaviourTree = "",
 		unitId = 20060,
 		type = 0,
@@ -4487,11 +4049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_world_objects
-
-	var_2_1[19] = {
+	pg.base.island_world_objects[19] = {
 		behaviourTree = "",
 		unitId = 20060,
 		type = 0,
@@ -4520,11 +4078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_world_objects
-
-	var_2_2[20] = {
+	pg.base.island_world_objects[20] = {
 		behaviourTree = "",
 		unitId = 20060,
 		type = 0,
@@ -4553,11 +4107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_world_objects
-
-	var_2_3[21] = {
+	pg.base.island_world_objects[21] = {
 		behaviourTree = "",
 		unitId = 100703,
 		type = 0,
@@ -4598,11 +4148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_world_objects
-
-	var_2_4[22] = {
+	pg.base.island_world_objects[22] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Factory_Mingshi0",
 		unitId = 3120100,
 		type = 1,
@@ -4642,11 +4188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_world_objects
-
-	var_2_5[23] = {
+	pg.base.island_world_objects[23] = {
 		behaviourTree = "",
 		unitId = 60045,
 		type = 0,
@@ -4687,11 +4229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_world_objects
-
-	var_2_6[24] = {
+	pg.base.island_world_objects[24] = {
 		behaviourTree = "",
 		unitId = 20158,
 		type = 0,
@@ -4726,11 +4264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_world_objects
-
-	var_2_7[1] = {
+	pg.base.island_world_objects[1] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -4759,11 +4293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_world_objects
-
-	var_2_8[17] = {
+	pg.base.island_world_objects[17] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -4792,11 +4322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_world_objects
-
-	var_2_9[18] = {
+	pg.base.island_world_objects[18] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -4825,11 +4351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_world_objects
-
-	var_2_10[19] = {
+	pg.base.island_world_objects[19] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4858,11 +4380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_world_objects
-
-	var_2_11[20] = {
+	pg.base.island_world_objects[20] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4891,11 +4409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_world_objects
-
-	var_2_12[21] = {
+	pg.base.island_world_objects[21] = {
 		behaviourTree = "",
 		unitId = 100901,
 		type = 0,
@@ -4924,11 +4438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_world_objects
-
-	var_2_13[22] = {
+	pg.base.island_world_objects[22] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4957,11 +4467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_world_objects
-
-	var_2_14[23] = {
+	pg.base.island_world_objects[23] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -4990,11 +4496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_world_objects
-
-	var_2_15[24] = {
+	pg.base.island_world_objects[24] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1012",
 		unitId = 101200,
 		type = 1,
@@ -5029,11 +4531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_world_objects
-
-	var_2_16[25] = {
+	pg.base.island_world_objects[25] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -5062,11 +4560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_world_objects
-
-	var_2_17[26] = {
+	pg.base.island_world_objects[26] = {
 		behaviourTree = "Island/NodeCanvas/CoffeeShop_Fishery_Entrance",
 		unitId = 60043,
 		type = 0,
@@ -5095,11 +4589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_world_objects
-
-	var_2_18[27] = {
+	pg.base.island_world_objects[27] = {
 		behaviourTree = "Island/NodeCanvas/CoffeeShop_Factory_Entrance",
 		unitId = 1014,
 		type = 0,
@@ -5128,11 +4618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_world_objects
-
-	var_2_19[28] = {
+	pg.base.island_world_objects[28] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -5161,11 +4647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_world_objects
-
-	var_2_20[29] = {
+	pg.base.island_world_objects[29] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_3120100_coffee_task",
 		unitId = 3120100,
 		type = 1,
@@ -5206,11 +4688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_world_objects
-
-	var_2_21[30] = {
+	pg.base.island_world_objects[30] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -5239,11 +4717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_world_objects
-
-	var_2_22[31] = {
+	pg.base.island_world_objects[31] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -5272,11 +4746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_world_objects
-
-	var_2_23[10090016] = {
+	pg.base.island_world_objects[10090016] = {
 		behaviourTree = "",
 		unitId = 10016,
 		type = 0,
@@ -5305,11 +4775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_world_objects
-
-	var_2_24[10090017] = {
+	pg.base.island_world_objects[10090017] = {
 		behaviourTree = "",
 		unitId = 1025,
 		type = 0,
@@ -5338,11 +4804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_world_objects
-
-	var_2_25[10090018] = {
+	pg.base.island_world_objects[10090018] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_3120100_coffee_task",
 		unitId = 3120100,
 		type = 1,
@@ -5383,11 +4845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_world_objects
-
-	var_2_26[10090019] = {
+	pg.base.island_world_objects[10090019] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_3120100_coffee_task",
 		unitId = 3120100,
 		type = 1,
@@ -5428,11 +4886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_world_objects
-
-	var_2_27[10090020] = {
+	pg.base.island_world_objects[10090020] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_3120100_coffee_task",
 		unitId = 3120100,
 		type = 1,
@@ -5473,11 +4927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_world_objects
-
-	var_2_28[10090021] = {
+	pg.base.island_world_objects[10090021] = {
 		behaviourTree = "",
 		unitId = 3120100,
 		type = 1,
@@ -5518,11 +4968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_world_objects
-
-	var_2_29[10090022] = {
+	pg.base.island_world_objects[10090022] = {
 		behaviourTree = "",
 		unitId = 60043,
 		type = 0,
@@ -5557,11 +5003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_world_objects
-
-	var_2_30[10100001] = {
+	pg.base.island_world_objects[10100001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -5590,11 +5032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_world_objects
-
-	var_2_31[10100002] = {
+	pg.base.island_world_objects[10100002] = {
 		behaviourTree = "",
 		unitId = 1024,
 		type = 0,
@@ -5623,11 +5061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_world_objects
-
-	var_2_32[10100003] = {
+	pg.base.island_world_objects[10100003] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/monitor",
 		unitId = 1015,
 		type = 0,
@@ -5656,11 +5090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_world_objects
-
-	var_2_33[10100004] = {
+	pg.base.island_world_objects[10100004] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/monitor1",
 		unitId = 1015,
 		type = 0,
@@ -5689,11 +5119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_world_objects
-
-	var_2_34[10100005] = {
+	pg.base.island_world_objects[10100005] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/alarm",
 		unitId = 1026,
 		type = 0,
@@ -5722,11 +5148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_world_objects
-
-	var_2_35[10100006] = {
+	pg.base.island_world_objects[10100006] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/alarm1",
 		unitId = 1017,
 		type = 0,
@@ -5755,11 +5177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_world_objects
-
-	var_2_36[10100007] = {
+	pg.base.island_world_objects[10100007] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/door",
 		unitId = 1010,
 		type = 0,
@@ -5788,11 +5206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_world_objects
-
-	var_2_37[10100008] = {
+	pg.base.island_world_objects[10100008] = {
 		behaviourTree = "",
 		unitId = 20006,
 		type = 0,
@@ -5821,11 +5235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_world_objects
-
-	var_2_38[10100009] = {
+	pg.base.island_world_objects[10100009] = {
 		behaviourTree = "",
 		unitId = 20006,
 		type = 0,
@@ -5854,11 +5264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_world_objects
-
-	var_2_39[10100010] = {
+	pg.base.island_world_objects[10100010] = {
 		behaviourTree = "",
 		unitId = 1020,
 		type = 0,
@@ -5887,11 +5293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_world_objects
-
-	var_2_40[10100011] = {
+	pg.base.island_world_objects[10100011] = {
 		behaviourTree = "",
 		unitId = 1025,
 		type = 0,
@@ -5926,11 +5328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_world_objects
-
-	var_2_41[10100012] = {
+	pg.base.island_world_objects[10100012] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/alarm",
 		unitId = 1028,
 		type = 0,
@@ -5959,11 +5357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_world_objects
-
-	var_2_42[10100013] = {
+	pg.base.island_world_objects[10100013] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/alarm",
 		unitId = 1026,
 		type = 0,
@@ -5992,11 +5386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_world_objects
-
-	var_2_43[10100014] = {
+	pg.base.island_world_objects[10100014] = {
 		behaviourTree = "Island/NodeCanvas/SeekGame/alarm",
 		unitId = 1027,
 		type = 0,
@@ -6025,11 +5415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_world_objects
-
-	var_2_44[10050000] = {
+	pg.base.island_world_objects[10050000] = {
 		behaviourTree = "",
 		unitId = 101100,
 		type = 1,
@@ -6064,11 +5450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_world_objects
-
-	var_2_45[10050001] = {
+	pg.base.island_world_objects[10050001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -6097,11 +5479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_world_objects
-
-	var_2_46[10050002] = {
+	pg.base.island_world_objects[10050002] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1011",
 		unitId = 101100,
 		type = 1,
@@ -6142,11 +5520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_world_objects
-
-	var_2_47[10050003] = {
+	pg.base.island_world_objects[10050003] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1014",
 		unitId = 101400,
 		type = 1,
@@ -6175,11 +5549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_world_objects
-
-	var_2_48[10050004] = {
+	pg.base.island_world_objects[10050004] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -6208,11 +5578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_world_objects
-
-	var_2_49[10050005] = {
+	pg.base.island_world_objects[10050005] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -6241,11 +5607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_world_objects
-
-	var_2_50[10050006] = {
+	pg.base.island_world_objects[10050006] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -6274,11 +5636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_world_objects
-
-	var_2_51[10050007] = {
+	pg.base.island_world_objects[10050007] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -6307,11 +5665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_world_objects
-
-	var_2_52[10050008] = {
+	pg.base.island_world_objects[10050008] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -6340,11 +5694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_world_objects
-
-	var_2_53[10050009] = {
+	pg.base.island_world_objects[10050009] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -6373,11 +5723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_world_objects
-
-	var_2_54[10050010] = {
+	pg.base.island_world_objects[10050010] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6406,11 +5752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_world_objects
-
-	var_2_55[10050011] = {
+	pg.base.island_world_objects[10050011] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6439,11 +5781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_world_objects
-
-	var_2_56[10050012] = {
+	pg.base.island_world_objects[10050012] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6472,11 +5810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_world_objects
-
-	var_2_57[10050013] = {
+	pg.base.island_world_objects[10050013] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6505,11 +5839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_world_objects
-
-	var_2_58[10050014] = {
+	pg.base.island_world_objects[10050014] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6538,11 +5868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_world_objects
-
-	var_2_59[10050015] = {
+	pg.base.island_world_objects[10050015] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6571,11 +5897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_world_objects
-
-	var_2_60[10050016] = {
+	pg.base.island_world_objects[10050016] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6604,11 +5926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_world_objects
-
-	var_2_61[10050017] = {
+	pg.base.island_world_objects[10050017] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6637,11 +5955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_world_objects
-
-	var_2_62[10050018] = {
+	pg.base.island_world_objects[10050018] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6670,11 +5984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_world_objects
-
-	var_2_63[10050019] = {
+	pg.base.island_world_objects[10050019] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6703,11 +6013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_world_objects
-
-	var_2_64[10050020] = {
+	pg.base.island_world_objects[10050020] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6736,11 +6042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_world_objects
-
-	var_2_65[10050021] = {
+	pg.base.island_world_objects[10050021] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6769,11 +6071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_world_objects
-
-	var_2_66[10050022] = {
+	pg.base.island_world_objects[10050022] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6802,11 +6100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_world_objects
-
-	var_2_67[10050023] = {
+	pg.base.island_world_objects[10050023] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6835,11 +6129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_world_objects
-
-	var_2_68[10050024] = {
+	pg.base.island_world_objects[10050024] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6868,11 +6158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_world_objects
-
-	var_2_69[10050025] = {
+	pg.base.island_world_objects[10050025] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6901,11 +6187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_world_objects
-
-	var_2_70[10050026] = {
+	pg.base.island_world_objects[10050026] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6934,11 +6216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_world_objects
-
-	var_2_71[10050027] = {
+	pg.base.island_world_objects[10050027] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -6967,11 +6245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_world_objects
-
-	var_2_72[10050028] = {
+	pg.base.island_world_objects[10050028] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -7000,11 +6274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_world_objects
-
-	var_2_73[10050029] = {
+	pg.base.island_world_objects[10050029] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -7033,11 +6303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_world_objects
-
-	var_2_74[10050030] = {
+	pg.base.island_world_objects[10050030] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -7066,11 +6332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_world_objects
-
-	var_2_75[10050031] = {
+	pg.base.island_world_objects[10050031] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -7099,11 +6361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_world_objects
-
-	var_2_76[10050032] = {
+	pg.base.island_world_objects[10050032] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20061,
 		type = 0,
@@ -7132,11 +6390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_world_objects
-
-	var_2_77[10050033] = {
+	pg.base.island_world_objects[10050033] = {
 		behaviourTree = "",
 		unitId = 101100,
 		type = 1,
@@ -7182,11 +6436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_world_objects
-
-	var_2_78[10050034] = {
+	pg.base.island_world_objects[10050034] = {
 		behaviourTree = "Island/NodeCanvas/StoryItem_fengchao",
 		unitId = 20036,
 		type = 0,
@@ -7221,11 +6471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_world_objects
-
-	var_2_79[10050035] = {
+	pg.base.island_world_objects[10050035] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -7254,11 +6500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_world_objects
-
-	var_2_80[10050036] = {
+	pg.base.island_world_objects[10050036] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2001200N",
 		unitId = 1022,
 		type = 0,
@@ -7293,11 +6535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_world_objects
-
-	var_2_81[10050037] = {
+	pg.base.island_world_objects[10050037] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2001200N",
 		unitId = 1022,
 		type = 0,
@@ -7332,11 +6570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_world_objects
-
-	var_2_82[10050038] = {
+	pg.base.island_world_objects[10050038] = {
 		behaviourTree = "Island/NodeCanvas/Orchard_station",
 		unitId = 1012,
 		type = 0,
@@ -7365,11 +6599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_world_objects
-
-	var_2_83[10050039] = {
+	pg.base.island_world_objects[10050039] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -7398,11 +6628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_world_objects
-
-	var_2_84[10050040] = {
+	pg.base.island_world_objects[10050040] = {
 		behaviourTree = "",
 		unitId = 100501,
 		type = 0,
@@ -7431,11 +6657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_world_objects
-
-	var_2_85[10030001] = {
+	pg.base.island_world_objects[10030001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -7464,11 +6686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_world_objects
-
-	var_2_86[10030002] = {
+	pg.base.island_world_objects[10030002] = {
 		behaviourTree = "Island/NodeCanvas/SceneAnimal_Cat",
 		unitId = 300903,
 		type = 1,
@@ -7497,11 +6715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_world_objects
-
-	var_2_87[10030003] = {
+	pg.base.island_world_objects[10030003] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1013_story",
 		unitId = 101300,
 		type = 1,
@@ -7542,11 +6756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_world_objects
-
-	var_2_88[10030004] = {
+	pg.base.island_world_objects[10030004] = {
 		behaviourTree = "",
 		unitId = 100204,
 		type = 0,
@@ -7575,11 +6785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_world_objects
-
-	var_2_89[10030005] = {
+	pg.base.island_world_objects[10030005] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_jhs_luosha",
 		unitId = 100900,
 		type = 1,
@@ -7620,11 +6826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_world_objects
-
-	var_2_90[10030006] = {
+	pg.base.island_world_objects[10030006] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1013_story1",
 		unitId = 101300,
 		type = 1,
@@ -7665,11 +6867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_world_objects
-
-	var_2_91[10030007] = {
+	pg.base.island_world_objects[10030007] = {
 		behaviourTree = "Island/NodeCanvas/Fishery_Entrance",
 		unitId = 100202,
 		type = 0,
@@ -7698,11 +6896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_world_objects
-
-	var_2_92[10030008] = {
+	pg.base.island_world_objects[10030008] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1010",
 		unitId = 101000,
 		type = 1,
@@ -7731,11 +6925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_world_objects
-
-	var_2_93[10030009] = {
+	pg.base.island_world_objects[10030009] = {
 		behaviourTree = "Island/NodeCanvas/Agora/SignIn_tree",
 		unitId = 1014,
 		type = 0,
@@ -7764,11 +6954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_world_objects
-
-	var_2_94[10030010] = {
+	pg.base.island_world_objects[10030010] = {
 		behaviourTree = "",
 		unitId = 1023,
 		type = 0,
@@ -7797,11 +6983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_world_objects
-
-	var_2_95[10030011] = {
+	pg.base.island_world_objects[10030011] = {
 		behaviourTree = "",
 		unitId = 1023,
 		type = 0,
@@ -7830,11 +7012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_world_objects
-
-	var_2_96[10030012] = {
+	pg.base.island_world_objects[10030012] = {
 		behaviourTree = "",
 		unitId = 1023,
 		type = 0,
@@ -7863,11 +7041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_world_objects
-
-	var_2_97[10030013] = {
+	pg.base.island_world_objects[10030013] = {
 		behaviourTree = "",
 		unitId = 1023,
 		type = 0,
@@ -7896,11 +7070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_world_objects
-
-	var_2_98[10030014] = {
+	pg.base.island_world_objects[10030014] = {
 		behaviourTree = "",
 		unitId = 1023,
 		type = 0,
@@ -7929,8 +7099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.island_world_objects[10030015] = {
+	pg.base.island_world_objects[10030015] = {
 		behaviourTree = "",
 		unitId = 1023,
 		type = 0,
@@ -7963,11 +7132,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_world_objects
-
-	var_3_0[10030016] = {
+	pg.base.island_world_objects[10030016] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1013",
 		unitId = 101300,
 		type = 1,
@@ -8002,11 +7167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_world_objects
-
-	var_3_1[10030017] = {
+	pg.base.island_world_objects[10030017] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -8035,11 +7196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.island_world_objects
-
-	var_3_2[10030018] = {
+	pg.base.island_world_objects[10030018] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1015",
 		unitId = 101500,
 		type = 1,
@@ -8071,11 +7228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.island_world_objects
-
-	var_3_3[10110001] = {
+	pg.base.island_world_objects[10110001] = {
 		behaviourTree = "",
 		unitId = 101004,
 		type = 0,
@@ -8104,11 +7257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.island_world_objects
-
-	var_3_4[10110002] = {
+	pg.base.island_world_objects[10110002] = {
 		behaviourTree = "",
 		unitId = 101004,
 		type = 0,
@@ -8137,11 +7286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.island_world_objects
-
-	var_3_5[10110003] = {
+	pg.base.island_world_objects[10110003] = {
 		behaviourTree = "",
 		unitId = 101004,
 		type = 0,
@@ -8170,11 +7315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.island_world_objects
-
-	var_3_6[10110004] = {
+	pg.base.island_world_objects[10110004] = {
 		behaviourTree = "",
 		unitId = 101004,
 		type = 0,
@@ -8203,11 +7344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.island_world_objects
-
-	var_3_7[10110005] = {
+	pg.base.island_world_objects[10110005] = {
 		behaviourTree = "",
 		unitId = 101001,
 		type = 0,
@@ -8236,11 +7373,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.island_world_objects
-
-	var_3_8[10110006] = {
+	pg.base.island_world_objects[10110006] = {
 		behaviourTree = "",
 		unitId = 101002,
 		type = 0,
@@ -8269,11 +7402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.island_world_objects
-
-	var_3_9[10110007] = {
+	pg.base.island_world_objects[10110007] = {
 		behaviourTree = "",
 		unitId = 101003,
 		type = 0,
@@ -8302,11 +7431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.island_world_objects
-
-	var_3_10[10020001] = {
+	pg.base.island_world_objects[10020001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -8335,11 +7460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.island_world_objects
-
-	var_3_11[10020002] = {
+	pg.base.island_world_objects[10020002] = {
 		behaviourTree = "",
 		unitId = 100204,
 		type = 0,
@@ -8379,11 +7500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.island_world_objects
-
-	var_3_12[10020003] = {
+	pg.base.island_world_objects[10020003] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -8412,11 +7529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.island_world_objects
-
-	var_3_13[10020004] = {
+	pg.base.island_world_objects[10020004] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1003",
 		unitId = 100300,
 		type = 1,
@@ -8462,11 +7575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.island_world_objects
-
-	var_3_14[10020005] = {
+	pg.base.island_world_objects[10020005] = {
 		behaviourTree = "Island/NodeCanvas/Fishery_station",
 		unitId = 1013,
 		type = 0,
@@ -8495,11 +7604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.island_world_objects
-
-	var_3_15[10020006] = {
+	pg.base.island_world_objects[10020006] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -8534,11 +7639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.island_world_objects
-
-	var_3_16[10020007] = {
+	pg.base.island_world_objects[10020007] = {
 		behaviourTree = "Island/NodeCanvas/CoffeeShop_Entrance",
 		unitId = 60043,
 		type = 0,
@@ -8567,11 +7668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.island_world_objects
-
-	var_3_17[10020008] = {
+	pg.base.island_world_objects[10020008] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20038,
 		type = 0,
@@ -8600,11 +7697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.island_world_objects
-
-	var_3_18[10020009] = {
+	pg.base.island_world_objects[10020009] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1002",
 		unitId = 100200,
 		type = 1,
@@ -8633,11 +7726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.island_world_objects
-
-	var_3_19[10020010] = {
+	pg.base.island_world_objects[10020010] = {
 		behaviourTree = "Island/NodeCanvas/jhs_Entrance",
 		unitId = 100202,
 		type = 0,
@@ -8672,11 +7761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.island_world_objects
-
-	var_3_20[10020011] = {
+	pg.base.island_world_objects[10020011] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -8705,11 +7790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.island_world_objects
-
-	var_3_21[10020012] = {
+	pg.base.island_world_objects[10020012] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_fishery_salatuojia_task",
 		unitId = 1070300,
 		type = 1,
@@ -8755,11 +7836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.island_world_objects
-
-	var_3_22[10020013] = {
+	pg.base.island_world_objects[10020013] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_3120100_fishery_task",
 		unitId = 3120100,
 		type = 1,
@@ -8810,11 +7887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.island_world_objects
-
-	var_3_23[10020014] = {
+	pg.base.island_world_objects[10020014] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20041,
 		type = 0,
@@ -8843,11 +7916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.island_world_objects
-
-	var_3_24[10020015] = {
+	pg.base.island_world_objects[10020015] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20041,
 		type = 0,
@@ -8876,11 +7945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.island_world_objects
-
-	var_3_25[10020016] = {
+	pg.base.island_world_objects[10020016] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_3120100_fishery_task",
 		unitId = 3120100,
 		type = 1,
@@ -8931,11 +7996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.island_world_objects
-
-	var_3_26[10020017] = {
+	pg.base.island_world_objects[10020017] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -8964,11 +8025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.island_world_objects
-
-	var_3_27[10020018] = {
+	pg.base.island_world_objects[10020018] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20002001",
 		unitId = 1022,
 		type = 0,
@@ -9003,11 +8060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.island_world_objects
-
-	var_3_28[10020019] = {
+	pg.base.island_world_objects[10020019] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20003003",
 		unitId = 1022,
 		type = 0,
@@ -9042,11 +8095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.island_world_objects
-
-	var_3_29[10020020] = {
+	pg.base.island_world_objects[10020020] = {
 		behaviourTree = "",
 		unitId = 100200,
 		type = 1,
@@ -9087,11 +8136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.island_world_objects
-
-	var_3_30[10020021] = {
+	pg.base.island_world_objects[10020021] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -9120,11 +8165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.island_world_objects
-
-	var_3_31[10020022] = {
+	pg.base.island_world_objects[10020022] = {
 		behaviourTree = "Island/NodeCanvas/SceneAnimal_Cat",
 		unitId = 300903,
 		type = 1,
@@ -9153,11 +8194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.island_world_objects
-
-	var_3_32[10020023] = {
+	pg.base.island_world_objects[10020023] = {
 		behaviourTree = "",
 		unitId = 100201,
 		type = 0,
@@ -9186,11 +8223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.island_world_objects
-
-	var_3_33[10020024] = {
+	pg.base.island_world_objects[10020024] = {
 		behaviourTree = "",
 		unitId = 100300,
 		type = 1,
@@ -9231,11 +8264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.island_world_objects
-
-	var_3_34[10020025] = {
+	pg.base.island_world_objects[10020025] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1016",
 		unitId = 101600,
 		type = 1,
@@ -9264,11 +8293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.island_world_objects
-
-	var_3_35[10020026] = {
+	pg.base.island_world_objects[10020026] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 20036,
 		type = 0,
@@ -9303,11 +8328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.island_world_objects
-
-	var_3_36[10020027] = {
+	pg.base.island_world_objects[10020027] = {
 		behaviourTree = "",
 		unitId = 3120100,
 		type = 1,
@@ -9358,11 +8379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.island_world_objects
-
-	var_3_37[10020028] = {
+	pg.base.island_world_objects[10020028] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -9397,11 +8414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.island_world_objects
-
-	var_3_38[10020029] = {
+	pg.base.island_world_objects[10020029] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20009003",
 		unitId = 3120100,
 		type = 1,
@@ -9442,11 +8455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.island_world_objects
-
-	var_3_39[10020030] = {
+	pg.base.island_world_objects[10020030] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20013004",
 		unitId = 1022,
 		type = 0,
@@ -9481,11 +8490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.island_world_objects
-
-	var_3_40[10020031] = {
+	pg.base.island_world_objects[10020031] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -9520,11 +8525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.island_world_objects
-
-	var_3_41[10020032] = {
+	pg.base.island_world_objects[10020032] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -9559,11 +8560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.island_world_objects
-
-	var_3_42[10020033] = {
+	pg.base.island_world_objects[10020033] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -9598,11 +8595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.island_world_objects
-
-	var_3_43[10020034] = {
+	pg.base.island_world_objects[10020034] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Fishery_sidifenni1",
 		unitId = 100300,
 		type = 1,
@@ -9637,11 +8630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.island_world_objects
-
-	var_3_44[10020035] = {
+	pg.base.island_world_objects[10020035] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -9676,11 +8665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.island_world_objects
-
-	var_3_45[10020036] = {
+	pg.base.island_world_objects[10020036] = {
 		behaviourTree = "Island/NodeCanvas/Scene_Stroll_jiujiu",
 		unitId = 300200,
 		type = 1,
@@ -9709,11 +8694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.island_world_objects
-
-	var_3_46[10020037] = {
+	pg.base.island_world_objects[10020037] = {
 		behaviourTree = "Island/NodeCanvas/Scene_Stroll_jiujiu",
 		unitId = 300200,
 		type = 1,
@@ -9742,11 +8723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.island_world_objects
-
-	var_3_47[10020038] = {
+	pg.base.island_world_objects[10020038] = {
 		behaviourTree = "Island/NodeCanvas/Scene_Stroll_jiujiu",
 		unitId = 300200,
 		type = 1,
@@ -9775,11 +8752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.island_world_objects
-
-	var_3_48[10020039] = {
+	pg.base.island_world_objects[10020039] = {
 		behaviourTree = "Island/NodeCanvas/Scene_Stroll_jiujiu",
 		unitId = 300200,
 		type = 1,
@@ -9808,11 +8781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.island_world_objects
-
-	var_3_49[10020040] = {
+	pg.base.island_world_objects[10020040] = {
 		behaviourTree = "Island/NodeCanvas/Scene_Stroll_jiujiu",
 		unitId = 300200,
 		type = 1,
@@ -9841,11 +8810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.island_world_objects
-
-	var_3_50[10020041] = {
+	pg.base.island_world_objects[10020041] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 1014,
 		type = 0,
@@ -9896,11 +8861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.island_world_objects
-
-	var_3_51[10020042] = {
+	pg.base.island_world_objects[10020042] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -9929,11 +8890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.island_world_objects
-
-	var_3_52[10020043] = {
+	pg.base.island_world_objects[10020043] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -9962,11 +8919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.island_world_objects
-
-	var_3_53[10020044] = {
+	pg.base.island_world_objects[10020044] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -9995,11 +8948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.island_world_objects
-
-	var_3_54[10020045] = {
+	pg.base.island_world_objects[10020045] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10028,11 +8977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.island_world_objects
-
-	var_3_55[10020046] = {
+	pg.base.island_world_objects[10020046] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10061,11 +9006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.island_world_objects
-
-	var_3_56[10020047] = {
+	pg.base.island_world_objects[10020047] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10094,11 +9035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.island_world_objects
-
-	var_3_57[10020048] = {
+	pg.base.island_world_objects[10020048] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10127,11 +9064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.island_world_objects
-
-	var_3_58[10020049] = {
+	pg.base.island_world_objects[10020049] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10160,11 +9093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.island_world_objects
-
-	var_3_59[10020050] = {
+	pg.base.island_world_objects[10020050] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10193,11 +9122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.island_world_objects
-
-	var_3_60[10020051] = {
+	pg.base.island_world_objects[10020051] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10226,11 +9151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.island_world_objects
-
-	var_3_61[10020052] = {
+	pg.base.island_world_objects[10020052] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10259,11 +9180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.island_world_objects
-
-	var_3_62[10020053] = {
+	pg.base.island_world_objects[10020053] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10292,11 +9209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.island_world_objects
-
-	var_3_63[10020054] = {
+	pg.base.island_world_objects[10020054] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10325,11 +9238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.island_world_objects
-
-	var_3_64[10020055] = {
+	pg.base.island_world_objects[10020055] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100206,
 		type = 3,
@@ -10358,11 +9267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.island_world_objects
-
-	var_3_65[10020056] = {
+	pg.base.island_world_objects[10020056] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10391,11 +9296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.island_world_objects
-
-	var_3_66[10020057] = {
+	pg.base.island_world_objects[10020057] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10424,11 +9325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.island_world_objects
-
-	var_3_67[10020058] = {
+	pg.base.island_world_objects[10020058] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10457,11 +9354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.island_world_objects
-
-	var_3_68[10020059] = {
+	pg.base.island_world_objects[10020059] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10490,11 +9383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.island_world_objects
-
-	var_3_69[10020060] = {
+	pg.base.island_world_objects[10020060] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10523,11 +9412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.island_world_objects
-
-	var_3_70[10020061] = {
+	pg.base.island_world_objects[10020061] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -10556,11 +9441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.island_world_objects
-
-	var_3_71[10020062] = {
+	pg.base.island_world_objects[10020062] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -10589,11 +9470,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.island_world_objects
-
-	var_3_72[10020063] = {
+	pg.base.island_world_objects[10020063] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -10622,11 +9499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.island_world_objects
-
-	var_3_73[10020064] = {
+	pg.base.island_world_objects[10020064] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -10655,11 +9528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.island_world_objects
-
-	var_3_74[10020065] = {
+	pg.base.island_world_objects[10020065] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -10688,11 +9557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.island_world_objects
-
-	var_3_75[10020066] = {
+	pg.base.island_world_objects[10020066] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -10721,11 +9586,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.island_world_objects
-
-	var_3_76[10020067] = {
+	pg.base.island_world_objects[10020067] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -10754,11 +9615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.island_world_objects
-
-	var_3_77[10020068] = {
+	pg.base.island_world_objects[10020068] = {
 		behaviourTree = "Island/NodeCanvas/PlaceItem_fishpondlock",
 		unitId = 20159,
 		type = 0,
@@ -10787,11 +9644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.island_world_objects
-
-	var_3_78[10020069] = {
+	pg.base.island_world_objects[10020069] = {
 		behaviourTree = "",
 		unitId = 20159,
 		type = 0,
@@ -10820,11 +9673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.island_world_objects
-
-	var_3_79[10020070] = {
+	pg.base.island_world_objects[10020070] = {
 		behaviourTree = "",
 		unitId = 20159,
 		type = 0,
@@ -10853,11 +9702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.island_world_objects
-
-	var_3_80[10020071] = {
+	pg.base.island_world_objects[10020071] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1018",
 		unitId = 101800,
 		type = 1,
@@ -10886,11 +9731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.island_world_objects
-
-	var_3_81[10020072] = {
+	pg.base.island_world_objects[10020072] = {
 		behaviourTree = "",
 		unitId = 1030,
 		type = 0,
@@ -10919,11 +9760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.island_world_objects
-
-	var_3_82[10020073] = {
+	pg.base.island_world_objects[10020073] = {
 		behaviourTree = "",
 		unitId = 1030,
 		type = 0,
@@ -10952,11 +9789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.island_world_objects
-
-	var_3_83[10020074] = {
+	pg.base.island_world_objects[10020074] = {
 		behaviourTree = "",
 		unitId = 1030,
 		type = 0,
@@ -10985,11 +9818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.island_world_objects
-
-	var_3_84[10020075] = {
+	pg.base.island_world_objects[10020075] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -11018,11 +9847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.island_world_objects
-
-	var_3_85[10020076] = {
+	pg.base.island_world_objects[10020076] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -11051,11 +9876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.island_world_objects
-
-	var_3_86[10020077] = {
+	pg.base.island_world_objects[10020077] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -11084,11 +9905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.island_world_objects
-
-	var_3_87[10020078] = {
+	pg.base.island_world_objects[10020078] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11123,11 +9940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.island_world_objects
-
-	var_3_88[10020079] = {
+	pg.base.island_world_objects[10020079] = {
 		behaviourTree = "",
 		unitId = 1033,
 		type = 0,
@@ -11156,11 +9969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.island_world_objects
-
-	var_3_89[10020080] = {
+	pg.base.island_world_objects[10020080] = {
 		behaviourTree = "",
 		unitId = 1033,
 		type = 0,
@@ -11189,11 +9998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.island_world_objects
-
-	var_3_90[10020081] = {
+	pg.base.island_world_objects[10020081] = {
 		behaviourTree = "",
 		unitId = 1033,
 		type = 0,
@@ -11222,11 +10027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.island_world_objects
-
-	var_3_91[10020082] = {
+	pg.base.island_world_objects[10020082] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11255,11 +10056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.island_world_objects
-
-	var_3_92[10020083] = {
+	pg.base.island_world_objects[10020083] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11288,11 +10085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.island_world_objects
-
-	var_3_93[10020084] = {
+	pg.base.island_world_objects[10020084] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11321,11 +10114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.island_world_objects
-
-	var_3_94[10020085] = {
+	pg.base.island_world_objects[10020085] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11360,11 +10149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.island_world_objects
-
-	var_3_95[10040001] = {
+	pg.base.island_world_objects[10040001] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -11393,11 +10178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.island_world_objects
-
-	var_3_96[10040002] = {
+	pg.base.island_world_objects[10040002] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1007",
 		unitId = 100700,
 		type = 1,
@@ -11458,11 +10239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.island_world_objects
-
-	var_3_97[10040003] = {
+	pg.base.island_world_objects[10040003] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11491,11 +10268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.island_world_objects
-
-	var_3_98[10040004] = {
+	pg.base.island_world_objects[10040004] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11524,8 +10297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.island_world_objects[10040005] = {
+	pg.base.island_world_objects[10040005] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11558,11 +10330,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.island_world_objects
-
-	var_4_0[10040006] = {
+	pg.base.island_world_objects[10040006] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11591,11 +10359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.island_world_objects
-
-	var_4_1[10040007] = {
+	pg.base.island_world_objects[10040007] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11624,11 +10388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.island_world_objects
-
-	var_4_2[10040008] = {
+	pg.base.island_world_objects[10040008] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11657,11 +10417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.island_world_objects
-
-	var_4_3[10040009] = {
+	pg.base.island_world_objects[10040009] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11690,11 +10446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.island_world_objects
-
-	var_4_4[10040010] = {
+	pg.base.island_world_objects[10040010] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11723,11 +10475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.island_world_objects
-
-	var_4_5[10040011] = {
+	pg.base.island_world_objects[10040011] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11756,11 +10504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.island_world_objects
-
-	var_4_6[10040012] = {
+	pg.base.island_world_objects[10040012] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11789,11 +10533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.island_world_objects
-
-	var_4_7[10040013] = {
+	pg.base.island_world_objects[10040013] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11822,11 +10562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.island_world_objects
-
-	var_4_8[10040014] = {
+	pg.base.island_world_objects[10040014] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11855,11 +10591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.island_world_objects
-
-	var_4_9[10040015] = {
+	pg.base.island_world_objects[10040015] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11888,11 +10620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.island_world_objects
-
-	var_4_10[10040016] = {
+	pg.base.island_world_objects[10040016] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -11921,11 +10649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.island_world_objects
-
-	var_4_11[10040017] = {
+	pg.base.island_world_objects[10040017] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11954,11 +10678,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.island_world_objects
-
-	var_4_12[10040018] = {
+	pg.base.island_world_objects[10040018] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -11987,11 +10707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.island_world_objects
-
-	var_4_13[10040019] = {
+	pg.base.island_world_objects[10040019] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -12020,11 +10736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.island_world_objects
-
-	var_4_14[10040020] = {
+	pg.base.island_world_objects[10040020] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -12053,11 +10765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.island_world_objects
-
-	var_4_15[10040021] = {
+	pg.base.island_world_objects[10040021] = {
 		behaviourTree = "",
 		unitId = 1008,
 		type = 0,
@@ -12086,11 +10794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.island_world_objects
-
-	var_4_16[10040022] = {
+	pg.base.island_world_objects[10040022] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1006",
 		unitId = 100600,
 		type = 1,
@@ -12130,11 +10834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.island_world_objects
-
-	var_4_17[10040023] = {
+	pg.base.island_world_objects[10040023] = {
 		behaviourTree = "",
 		unitId = 1009,
 		type = 0,
@@ -12163,11 +10863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.island_world_objects
-
-	var_4_18[10040024] = {
+	pg.base.island_world_objects[10040024] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -12196,11 +10892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.island_world_objects
-
-	var_4_19[10040025] = {
+	pg.base.island_world_objects[10040025] = {
 		behaviourTree = "Island/NodeCanvas/SceneAnimal_Cat",
 		unitId = 300902,
 		type = 1,
@@ -12229,11 +10921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.island_world_objects
-
-	var_4_20[10040026] = {
+	pg.base.island_world_objects[10040026] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -12262,11 +10950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.island_world_objects
-
-	var_4_21[10040027] = {
+	pg.base.island_world_objects[10040027] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -12295,11 +10979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.island_world_objects
-
-	var_4_22[10040028] = {
+	pg.base.island_world_objects[10040028] = {
 		behaviourTree = "",
 		unitId = 100401,
 		type = 0,
@@ -12328,11 +11008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.island_world_objects
-
-	var_4_23[10040029] = {
+	pg.base.island_world_objects[10040029] = {
 		behaviourTree = "",
 		unitId = 100402,
 		type = 0,
@@ -12361,11 +11037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.island_world_objects
-
-	var_4_24[10040030] = {
+	pg.base.island_world_objects[10040030] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 1014,
 		type = 0,
@@ -12394,11 +11066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.island_world_objects
-
-	var_4_25[10040031] = {
+	pg.base.island_world_objects[10040031] = {
 		behaviourTree = "",
 		unitId = 100700,
 		type = 1,
@@ -12439,11 +11107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.island_world_objects
-
-	var_4_26[10040032] = {
+	pg.base.island_world_objects[10040032] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_fell_mining_task",
 		unitId = 100600,
 		type = 1,
@@ -12484,11 +11148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.island_world_objects
-
-	var_4_27[10040033] = {
+	pg.base.island_world_objects[10040033] = {
 		behaviourTree = "Island/NodeCanvas/Fell_station",
 		unitId = 1012,
 		type = 0,
@@ -12523,11 +11183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.island_world_objects
-
-	var_4_28[10040034] = {
+	pg.base.island_world_objects[10040034] = {
 		behaviourTree = "",
 		unitId = 1011,
 		type = 0,
@@ -12567,11 +11223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.island_world_objects
-
-	var_4_29[10040035] = {
+	pg.base.island_world_objects[10040035] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -12606,11 +11258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.island_world_objects
-
-	var_4_30[10040036] = {
+	pg.base.island_world_objects[10040036] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -12639,11 +11287,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.island_world_objects
-
-	var_4_31[10040037] = {
+	pg.base.island_world_objects[10040037] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -12672,11 +11316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.island_world_objects
-
-	var_4_32[10040038] = {
+	pg.base.island_world_objects[10040038] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -12705,11 +11345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.island_world_objects
-
-	var_4_33[10040039] = {
+	pg.base.island_world_objects[10040039] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -12738,11 +11374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.island_world_objects
-
-	var_4_34[10040040] = {
+	pg.base.island_world_objects[10040040] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -12771,11 +11403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.island_world_objects
-
-	var_4_35[10040041] = {
+	pg.base.island_world_objects[10040041] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -12810,11 +11438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.island_world_objects
-
-	var_4_36[10040042] = {
+	pg.base.island_world_objects[10040042] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -12843,11 +11467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.island_world_objects
-
-	var_4_37[10040043] = {
+	pg.base.island_world_objects[10040043] = {
 		behaviourTree = "",
 		unitId = 1021,
 		type = 0,
@@ -12882,11 +11502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.island_world_objects
-
-	var_4_38[10040044] = {
+	pg.base.island_world_objects[10040044] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -12921,11 +11537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.island_world_objects
-
-	var_4_39[10040045] = {
+	pg.base.island_world_objects[10040045] = {
 		behaviourTree = "",
 		unitId = 100700,
 		type = 1,
@@ -12966,11 +11578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.island_world_objects
-
-	var_4_40[10040046] = {
+	pg.base.island_world_objects[10040046] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20037,
 		type = 0,
@@ -12999,11 +11607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.island_world_objects
-
-	var_4_41[10040047] = {
+	pg.base.island_world_objects[10040047] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20039,
 		type = 0,
@@ -13032,11 +11636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.island_world_objects
-
-	var_4_42[10040048] = {
+	pg.base.island_world_objects[10040048] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20040,
 		type = 0,
@@ -13065,11 +11665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.island_world_objects
-
-	var_4_43[10040049] = {
+	pg.base.island_world_objects[10040049] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20041,
 		type = 0,
@@ -13098,11 +11694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.island_world_objects
-
-	var_4_44[10040050] = {
+	pg.base.island_world_objects[10040050] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20010001",
 		unitId = 1022,
 		type = 0,
@@ -13137,11 +11729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.island_world_objects
-
-	var_4_45[10040051] = {
+	pg.base.island_world_objects[10040051] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20014002&3",
 		unitId = 1014,
 		type = 0,
@@ -13181,11 +11769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.island_world_objects
-
-	var_4_46[10040052] = {
+	pg.base.island_world_objects[10040052] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -13214,11 +11798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.island_world_objects
-
-	var_4_47[10040053] = {
+	pg.base.island_world_objects[10040053] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -13247,11 +11827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.island_world_objects
-
-	var_4_48[10040054] = {
+	pg.base.island_world_objects[10040054] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -13280,11 +11856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.island_world_objects
-
-	var_4_49[10040055] = {
+	pg.base.island_world_objects[10040055] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -13313,11 +11885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.island_world_objects
-
-	var_4_50[10040056] = {
+	pg.base.island_world_objects[10040056] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -13352,11 +11920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.island_world_objects
-
-	var_4_51[10040057] = {
+	pg.base.island_world_objects[10040057] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 1014,
 		type = 0,
@@ -13422,11 +11986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.island_world_objects
-
-	var_4_52[10040058] = {
+	pg.base.island_world_objects[10040058] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 20036,
 		type = 0,
@@ -13461,11 +12021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.island_world_objects
-
-	var_4_53[10040059] = {
+	pg.base.island_world_objects[10040059] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -13500,11 +12056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.island_world_objects
-
-	var_4_54[10040060] = {
+	pg.base.island_world_objects[10040060] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Fell_Aobulaien1",
 		unitId = 100700,
 		type = 1,
@@ -13545,11 +12097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.island_world_objects
-
-	var_4_55[10040061] = {
+	pg.base.island_world_objects[10040061] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_1007",
 		unitId = 100700,
 		type = 1,
@@ -13595,11 +12143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.island_world_objects
-
-	var_4_56[10040062] = {
+	pg.base.island_world_objects[10040062] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20050,
 		type = 0,
@@ -13628,11 +12172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.island_world_objects
-
-	var_4_57[10040063] = {
+	pg.base.island_world_objects[10040063] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20050,
 		type = 0,
@@ -13661,11 +12201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.island_world_objects
-
-	var_4_58[0] = {
+	pg.base.island_world_objects[0] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20048,
 		type = 0,
@@ -13694,11 +12230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.island_world_objects
-
-	var_4_59[1] = {
+	pg.base.island_world_objects[1] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20048,
 		type = 0,
@@ -13727,11 +12259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.island_world_objects
-
-	var_4_60[2] = {
+	pg.base.island_world_objects[2] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -13766,11 +12294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.island_world_objects
-
-	var_4_61[3] = {
+	pg.base.island_world_objects[3] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -13799,11 +12323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.island_world_objects
-
-	var_4_62[4] = {
+	pg.base.island_world_objects[4] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -13832,11 +12352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.island_world_objects
-
-	var_4_63[5] = {
+	pg.base.island_world_objects[5] = {
 		behaviourTree = "",
 		unitId = 101500,
 		type = 1,
@@ -13877,11 +12393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.island_world_objects
-
-	var_4_64[6] = {
+	pg.base.island_world_objects[6] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -13910,11 +12422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.island_world_objects
-
-	var_4_65[7] = {
+	pg.base.island_world_objects[7] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -13943,11 +12451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.island_world_objects
-
-	var_4_66[8] = {
+	pg.base.island_world_objects[8] = {
 		behaviourTree = "Island/NodeCanvas/PlaceCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -13976,11 +12480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.island_world_objects
-
-	var_4_67[9] = {
+	pg.base.island_world_objects[9] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -14009,11 +12509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.island_world_objects
-
-	var_4_68[10] = {
+	pg.base.island_world_objects[10] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -14042,11 +12538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.island_world_objects
-
-	var_4_69[11] = {
+	pg.base.island_world_objects[11] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -14075,11 +12567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.island_world_objects
-
-	var_4_70[12] = {
+	pg.base.island_world_objects[12] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -14108,11 +12596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.island_world_objects
-
-	var_4_71[13] = {
+	pg.base.island_world_objects[13] = {
 		behaviourTree = "Island/NodeCanvas/PlaceFellCollectionPoint",
 		unitId = 0,
 		type = 0,
@@ -14141,11 +12625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.island_world_objects
-
-	var_4_72[14] = {
+	pg.base.island_world_objects[14] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100205,
 		type = 3,
@@ -14174,11 +12654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.island_world_objects
-
-	var_4_73[15] = {
+	pg.base.island_world_objects[15] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -14207,11 +12683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.island_world_objects
-
-	var_4_74[16] = {
+	pg.base.island_world_objects[16] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -14240,11 +12712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.island_world_objects
-
-	var_4_75[17] = {
+	pg.base.island_world_objects[17] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -14273,11 +12741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.island_world_objects
-
-	var_4_76[18] = {
+	pg.base.island_world_objects[18] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -14306,11 +12770,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.island_world_objects
-
-	var_4_77[19] = {
+	pg.base.island_world_objects[19] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -14339,11 +12799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.island_world_objects
-
-	var_4_78[20] = {
+	pg.base.island_world_objects[20] = {
 		behaviourTree = "",
 		unitId = 1032,
 		type = 0,
@@ -14372,11 +12828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.island_world_objects
-
-	var_4_79[21] = {
+	pg.base.island_world_objects[21] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -14405,11 +12857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.island_world_objects
-
-	var_4_80[22] = {
+	pg.base.island_world_objects[22] = {
 		behaviourTree = "",
 		unitId = 1031,
 		type = 0,
@@ -14438,11 +12886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.island_world_objects
-
-	var_4_81[23] = {
+	pg.base.island_world_objects[23] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20066,
 		type = 0,
@@ -14471,11 +12915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.island_world_objects
-
-	var_4_82[24] = {
+	pg.base.island_world_objects[24] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20062,
 		type = 0,
@@ -14504,11 +12944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.island_world_objects
-
-	var_4_83[25] = {
+	pg.base.island_world_objects[25] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20062,
 		type = 0,
@@ -14537,11 +12973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.island_world_objects
-
-	var_4_84[26] = {
+	pg.base.island_world_objects[26] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20065,
 		type = 0,
@@ -14570,11 +13002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.island_world_objects
-
-	var_4_85[27] = {
+	pg.base.island_world_objects[27] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20065,
 		type = 0,
@@ -14603,11 +13031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.island_world_objects
-
-	var_4_86[28] = {
+	pg.base.island_world_objects[28] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20066,
 		type = 0,
@@ -14636,11 +13060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.island_world_objects
-
-	var_4_87[29] = {
+	pg.base.island_world_objects[29] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20067,
 		type = 0,
@@ -14669,11 +13089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.island_world_objects
-
-	var_4_88[30] = {
+	pg.base.island_world_objects[30] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20067,
 		type = 0,
@@ -14702,11 +13118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.island_world_objects
-
-	var_4_89[17] = {
+	pg.base.island_world_objects[17] = {
 		behaviourTree = "",
 		unitId = 100101,
 		type = 0,
@@ -14735,11 +13147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.island_world_objects
-
-	var_4_90[18] = {
+	pg.base.island_world_objects[18] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -14768,11 +13176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.island_world_objects
-
-	var_4_91[19] = {
+	pg.base.island_world_objects[19] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1005",
 		unitId = 100500,
 		type = 1,
@@ -14818,11 +13222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.island_world_objects
-
-	var_4_92[20] = {
+	pg.base.island_world_objects[20] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -14851,11 +13251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.island_world_objects
-
-	var_4_93[21] = {
+	pg.base.island_world_objects[21] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -14884,11 +13280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.island_world_objects
-
-	var_4_94[22] = {
+	pg.base.island_world_objects[22] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -14917,11 +13309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.island_world_objects
-
-	var_4_95[23] = {
+	pg.base.island_world_objects[23] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -14950,11 +13338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.island_world_objects
-
-	var_4_96[24] = {
+	pg.base.island_world_objects[24] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -14983,11 +13367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.island_world_objects
-
-	var_4_97[25] = {
+	pg.base.island_world_objects[25] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15016,11 +13396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.island_world_objects
-
-	var_4_98[26] = {
+	pg.base.island_world_objects[26] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15049,8 +13425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.island_world_objects[27] = {
+	pg.base.island_world_objects[27] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15083,11 +13458,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.island_world_objects
-
-	var_5_0[28] = {
+	pg.base.island_world_objects[28] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15116,11 +13487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.island_world_objects
-
-	var_5_1[29] = {
+	pg.base.island_world_objects[29] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15149,11 +13516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.island_world_objects
-
-	var_5_2[30] = {
+	pg.base.island_world_objects[30] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15182,11 +13545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.island_world_objects
-
-	var_5_3[31] = {
+	pg.base.island_world_objects[31] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15215,11 +13574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.island_world_objects
-
-	var_5_4[10010016] = {
+	pg.base.island_world_objects[10010016] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15248,11 +13603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.island_world_objects
-
-	var_5_5[10010017] = {
+	pg.base.island_world_objects[10010017] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15281,11 +13632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.island_world_objects
-
-	var_5_6[10010018] = {
+	pg.base.island_world_objects[10010018] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15314,11 +13661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.island_world_objects
-
-	var_5_7[10010019] = {
+	pg.base.island_world_objects[10010019] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15347,11 +13690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.island_world_objects
-
-	var_5_8[10010020] = {
+	pg.base.island_world_objects[10010020] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15380,11 +13719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.island_world_objects
-
-	var_5_9[10010021] = {
+	pg.base.island_world_objects[10010021] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15413,11 +13748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.island_world_objects
-
-	var_5_10[10010022] = {
+	pg.base.island_world_objects[10010022] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15446,11 +13777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.island_world_objects
-
-	var_5_11[10010023] = {
+	pg.base.island_world_objects[10010023] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15479,11 +13806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.island_world_objects
-
-	var_5_12[10010024] = {
+	pg.base.island_world_objects[10010024] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15512,11 +13835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.island_world_objects
-
-	var_5_13[10010025] = {
+	pg.base.island_world_objects[10010025] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15545,11 +13864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.island_world_objects
-
-	var_5_14[10010026] = {
+	pg.base.island_world_objects[10010026] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15578,11 +13893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.island_world_objects
-
-	var_5_15[10010027] = {
+	pg.base.island_world_objects[10010027] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15611,11 +13922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.island_world_objects
-
-	var_5_16[10010028] = {
+	pg.base.island_world_objects[10010028] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15644,11 +13951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.island_world_objects
-
-	var_5_17[10010029] = {
+	pg.base.island_world_objects[10010029] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15677,11 +13980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.island_world_objects
-
-	var_5_18[10010030] = {
+	pg.base.island_world_objects[10010030] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15710,11 +14009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.island_world_objects
-
-	var_5_19[10010031] = {
+	pg.base.island_world_objects[10010031] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15743,11 +14038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.island_world_objects
-
-	var_5_20[10010032] = {
+	pg.base.island_world_objects[10010032] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15776,11 +14067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.island_world_objects
-
-	var_5_21[10010033] = {
+	pg.base.island_world_objects[10010033] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15809,11 +14096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.island_world_objects
-
-	var_5_22[10010034] = {
+	pg.base.island_world_objects[10010034] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15842,11 +14125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.island_world_objects
-
-	var_5_23[10010035] = {
+	pg.base.island_world_objects[10010035] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15875,11 +14154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.island_world_objects
-
-	var_5_24[10010036] = {
+	pg.base.island_world_objects[10010036] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15908,11 +14183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.island_world_objects
-
-	var_5_25[10010037] = {
+	pg.base.island_world_objects[10010037] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15941,11 +14212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.island_world_objects
-
-	var_5_26[10010038] = {
+	pg.base.island_world_objects[10010038] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -15974,11 +14241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.island_world_objects
-
-	var_5_27[10010039] = {
+	pg.base.island_world_objects[10010039] = {
 		behaviourTree = "",
 		unitId = 0,
 		type = 0,
@@ -16007,11 +14270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.island_world_objects
-
-	var_5_28[10010040] = {
+	pg.base.island_world_objects[10010040] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1004",
 		unitId = 100400,
 		type = 1,
@@ -16052,11 +14311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.island_world_objects
-
-	var_5_29[10010041] = {
+	pg.base.island_world_objects[10010041] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_1001",
 		unitId = 100100,
 		type = 1,
@@ -16085,11 +14340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.island_world_objects
-
-	var_5_30[10010042] = {
+	pg.base.island_world_objects[10010042] = {
 		behaviourTree = "Island/NodeCanvas/SceneAnimal_Cat",
 		unitId = 300900,
 		type = 1,
@@ -16118,11 +14369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.island_world_objects
-
-	var_5_31[10010043] = {
+	pg.base.island_world_objects[10010043] = {
 		behaviourTree = "Island/NodeCanvas/Ranch_station",
 		unitId = 1014,
 		type = 0,
@@ -16151,11 +14398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.island_world_objects
-
-	var_5_32[10010044] = {
+	pg.base.island_world_objects[10010044] = {
 		behaviourTree = "Island/NodeCanvas/Orchard_Entrance",
 		unitId = 100102,
 		type = 0,
@@ -16190,11 +14433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.island_world_objects
-
-	var_5_33[10010045] = {
+	pg.base.island_world_objects[10010045] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -16223,11 +14462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.island_world_objects
-
-	var_5_34[10010046] = {
+	pg.base.island_world_objects[10010046] = {
 		behaviourTree = "Island/NodeCanvas/PlaceNpc_lost_animal",
 		unitId = 302000,
 		type = 1,
@@ -16262,11 +14497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.island_world_objects
-
-	var_5_35[10010047] = {
+	pg.base.island_world_objects[10010047] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16295,11 +14526,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.island_world_objects
-
-	var_5_36[10010048] = {
+	pg.base.island_world_objects[10010048] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16328,11 +14555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.island_world_objects
-
-	var_5_37[10010049] = {
+	pg.base.island_world_objects[10010049] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16361,11 +14584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.island_world_objects
-
-	var_5_38[10010050] = {
+	pg.base.island_world_objects[10010050] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16394,11 +14613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.island_world_objects
-
-	var_5_39[10010051] = {
+	pg.base.island_world_objects[10010051] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16427,11 +14642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.island_world_objects
-
-	var_5_40[10010052] = {
+	pg.base.island_world_objects[10010052] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16460,11 +14671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.island_world_objects
-
-	var_5_41[10010053] = {
+	pg.base.island_world_objects[10010053] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16493,11 +14700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.island_world_objects
-
-	var_5_42[10010054] = {
+	pg.base.island_world_objects[10010054] = {
 		behaviourTree = "",
 		unitId = 1014,
 		type = 0,
@@ -16526,11 +14729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.island_world_objects
-
-	var_5_43[10010055] = {
+	pg.base.island_world_objects[10010055] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -16559,11 +14758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.island_world_objects
-
-	var_5_44[10010056] = {
+	pg.base.island_world_objects[10010056] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -16592,11 +14787,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.island_world_objects
-
-	var_5_45[10010057] = {
+	pg.base.island_world_objects[10010057] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -16625,11 +14816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.island_world_objects
-
-	var_5_46[10010058] = {
+	pg.base.island_world_objects[10010058] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20037,
 		type = 0,
@@ -16658,11 +14845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.island_world_objects
-
-	var_5_47[10010059] = {
+	pg.base.island_world_objects[10010059] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20038,
 		type = 0,
@@ -16691,11 +14874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.island_world_objects
-
-	var_5_48[10010060] = {
+	pg.base.island_world_objects[10010060] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20039,
 		type = 0,
@@ -16724,11 +14903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.island_world_objects
-
-	var_5_49[10010061] = {
+	pg.base.island_world_objects[10010061] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20040,
 		type = 0,
@@ -16757,11 +14932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.island_world_objects
-
-	var_5_50[10010062] = {
+	pg.base.island_world_objects[10010062] = {
 		behaviourTree = "Island/NodeCanvas/WildCollectItem",
 		unitId = 20041,
 		type = 0,
@@ -16790,11 +14961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.island_world_objects
-
-	var_5_51[10010063] = {
+	pg.base.island_world_objects[10010063] = {
 		behaviourTree = "",
 		unitId = 100500,
 		type = 1,
@@ -16835,11 +15002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.island_world_objects
-
-	var_5_52[10010064] = {
+	pg.base.island_world_objects[10010064] = {
 		behaviourTree = "Island/NodeCanvas/Player",
 		unitId = 0,
 		type = 2,
@@ -16868,11 +15031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.island_world_objects
-
-	var_5_53[10010065] = {
+	pg.base.island_world_objects[10010065] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -16901,11 +15060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.island_world_objects
-
-	var_5_54[10010066] = {
+	pg.base.island_world_objects[10010066] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -16934,11 +15089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.island_world_objects
-
-	var_5_55[10010067] = {
+	pg.base.island_world_objects[10010067] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20036,
 		type = 0,
@@ -16967,11 +15118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.island_world_objects
-
-	var_5_56[10010068] = {
+	pg.base.island_world_objects[10010068] = {
 		behaviourTree = "Island/NodeCanvas/Main_Quest_Ranch_Hemo1",
 		unitId = 100400,
 		type = 1,
@@ -17012,11 +15159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.island_world_objects
-
-	var_5_57[10010069] = {
+	pg.base.island_world_objects[10010069] = {
 		behaviourTree = "",
 		unitId = 301200,
 		type = 1,
@@ -17051,11 +15194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.island_world_objects
-
-	var_5_58[10010070] = {
+	pg.base.island_world_objects[10010070] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20005005",
 		unitId = 1022,
 		type = 0,
@@ -17090,11 +15229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.island_world_objects
-
-	var_5_59[10010071] = {
+	pg.base.island_world_objects[10010071] = {
 		behaviourTree = "",
 		unitId = 60050,
 		type = 0,
@@ -17135,11 +15270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.island_world_objects
-
-	var_5_60[10010072] = {
+	pg.base.island_world_objects[10010072] = {
 		behaviourTree = "",
 		unitId = 60051,
 		type = 0,
@@ -17180,11 +15311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.island_world_objects
-
-	var_5_61[10010073] = {
+	pg.base.island_world_objects[10010073] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20005009",
 		unitId = 3120100,
 		type = 1,
@@ -17225,11 +15352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.island_world_objects
-
-	var_5_62[10010074] = {
+	pg.base.island_world_objects[10010074] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20006004",
 		unitId = 301300,
 		type = 1,
@@ -17270,11 +15393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.island_world_objects
-
-	var_5_63[10010075] = {
+	pg.base.island_world_objects[10010075] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20006001&2",
 		unitId = 60049,
 		type = 0,
@@ -17309,11 +15428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.island_world_objects
-
-	var_5_64[10010076] = {
+	pg.base.island_world_objects[10010076] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20006001&2",
 		unitId = 60048,
 		type = 0,
@@ -17348,11 +15463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.island_world_objects
-
-	var_5_65[10010077] = {
+	pg.base.island_world_objects[10010077] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -17387,11 +15498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.island_world_objects
-
-	var_5_66[10010078] = {
+	pg.base.island_world_objects[10010078] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20006007_1",
 		unitId = 301300,
 		type = 1,
@@ -17432,11 +15539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.island_world_objects
-
-	var_5_67[10010079] = {
+	pg.base.island_world_objects[10010079] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20006007_2",
 		unitId = 301300,
 		type = 1,
@@ -17477,11 +15580,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.island_world_objects
-
-	var_5_68[10010080] = {
+	pg.base.island_world_objects[10010080] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_20006007_3",
 		unitId = 301300,
 		type = 1,
@@ -17522,11 +15621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.island_world_objects
-
-	var_5_69[10010081] = {
+	pg.base.island_world_objects[10010081] = {
 		behaviourTree = "",
 		unitId = 1022,
 		type = 0,
@@ -17561,11 +15656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.island_world_objects
-
-	var_5_70[10010082] = {
+	pg.base.island_world_objects[10010082] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 20036,
 		type = 0,
@@ -17600,11 +15691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.island_world_objects
-
-	var_5_71[10010083] = {
+	pg.base.island_world_objects[10010083] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20052,
 		type = 0,
@@ -17633,11 +15720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.island_world_objects
-
-	var_5_72[10010084] = {
+	pg.base.island_world_objects[10010084] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20052,
 		type = 0,
@@ -17666,11 +15749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.island_world_objects
-
-	var_5_73[10010085] = {
+	pg.base.island_world_objects[10010085] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20054,
 		type = 0,
@@ -17699,11 +15778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.island_world_objects
-
-	var_5_74[10010086] = {
+	pg.base.island_world_objects[10010086] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20054,
 		type = 0,
@@ -17732,11 +15807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.island_world_objects
-
-	var_5_75[10010087] = {
+	pg.base.island_world_objects[10010087] = {
 		behaviourTree = "Island/NodeCanvas/Sidetask_2000700N",
 		unitId = 1014,
 		type = 0,
@@ -17787,11 +15858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.island_world_objects
-
-	var_5_76[10010088] = {
+	pg.base.island_world_objects[10010088] = {
 		behaviourTree = "",
 		unitId = 60051,
 		type = 0,
@@ -17832,11 +15899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.island_world_objects
-
-	var_5_77[10010089] = {
+	pg.base.island_world_objects[10010089] = {
 		behaviourTree = "Island/NodeCanvas/Interactable/Interactable_chair",
 		unitId = 100203,
 		type = 3,
@@ -17865,11 +15928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.island_world_objects
-
-	var_5_78[10010090] = {
+	pg.base.island_world_objects[10010090] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20068,
 		type = 0,
@@ -17898,11 +15957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.island_world_objects
-
-	var_5_79[10010091] = {
+	pg.base.island_world_objects[10010091] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20064,
 		type = 0,
@@ -17931,11 +15986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.island_world_objects
-
-	var_5_80[10010092] = {
+	pg.base.island_world_objects[10010092] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20064,
 		type = 0,
@@ -17964,11 +16015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.island_world_objects
-
-	var_5_81[10010093] = {
+	pg.base.island_world_objects[10010093] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20063,
 		type = 0,
@@ -17997,11 +16044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.island_world_objects
-
-	var_5_82[10010094] = {
+	pg.base.island_world_objects[10010094] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20063,
 		type = 0,
@@ -18030,11 +16073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.island_world_objects
-
-	var_5_83[10010095] = {
+	pg.base.island_world_objects[10010095] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20068,
 		type = 0,
@@ -18063,11 +16102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.island_world_objects
-
-	var_5_84[10010096] = {
+	pg.base.island_world_objects[10010096] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20069,
 		type = 0,
@@ -18096,8 +16131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-	var_5_84.base.island_world_objects[10010097] = {
+	pg.base.island_world_objects[10010097] = {
 		behaviourTree = "Island/NodeCanvas/WildGatherItem",
 		unitId = 20069,
 		type = 0,

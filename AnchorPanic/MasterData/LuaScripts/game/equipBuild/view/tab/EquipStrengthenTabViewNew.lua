@@ -797,8 +797,11 @@ function updateStrengthenPreInfo(self)
 
         table.insert(scrollList, scrollVo)
     end
-
-    self.mStrengthenScroller.DataProvider = scrollList
+    if (self.mStrengthenScroller.Count <= 0) then
+        self.mStrengthenScroller.DataProvider = scrollList
+    else
+        self.mStrengthenScroller:ReplaceAllDataProvider(scrollList)
+    end
     self.mTxtStrengthenCost.text = needMoneyCount
     self.mTxtStrengthenCost.gameObject:SetActive(needMoneyCount > 0)
     if needMoneyCount > 0 then

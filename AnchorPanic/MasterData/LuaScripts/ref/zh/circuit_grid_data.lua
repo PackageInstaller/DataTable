@@ -33,7 +33,15 @@ local circuit_grid_data=
 },
 	[211]={ grid_type=13, is_move=0, init_angle=0
 },
+	[212]={ grid_type=13, is_move=0, init_angle=90
+},
 	[213]={ grid_type=14, is_move=0, init_angle=0
+},
+	[214]={ grid_type=14, is_move=0, init_angle=90
+},
+	[215]={ grid_type=14, is_move=0, init_angle=180
+},
+	[216]={ grid_type=14, is_move=0, init_angle=270
 },
 	[217]={ grid_type=15, is_move=0, init_angle=0
 }

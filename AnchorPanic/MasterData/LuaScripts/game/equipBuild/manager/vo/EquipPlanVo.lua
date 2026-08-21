@@ -19,6 +19,8 @@ function parseData(self, cusData)
 	self.name = cusData.name
 	-- 模组方案列表
 	self.equipPosDic = {}
+	-- 排序方式
+	self.sort = cusData.sort
 	for i = 1, #cusData.chip_list do
 		self.equipPosDic[cusData.chip_list[i].pos] = cusData.chip_list[i].equip_id
 	end

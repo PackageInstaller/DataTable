@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("LoginSceneConst")
+﻿local var_0_0 = class("LoginSceneConst")
 
 var_0_0.DEFINE = {
 	SERVER_PANEL = 9,

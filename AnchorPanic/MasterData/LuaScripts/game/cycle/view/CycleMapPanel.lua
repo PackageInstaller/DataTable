@@ -207,6 +207,10 @@ function showPanel(self)
         title = _TT(lineData.name),
         showTypeList = {TOP_SHOW_TYPE.LV, TOP_SHOW_TYPE.REASON,TOP_SHOW_TYPE.COIN,TOP_SHOW_TYPE.HOPE,TOP_SHOW_TYPE.BUFFLIST,TOP_SHOW_TYPE.FORMATION,TOP_SHOW_TYPE.RET_MAIN,TOP_SHOW_TYPE.TOPBAR,TOP_SHOW_TYPE.BOTBAR}
     })
+    GameDispatcher:dispatchEvent(EventName.SET_CYCLE_CONTENT_PARENT, {
+        parentTrans =  GameView.story,
+        isShow = true
+    })
 
 
     cycle.CycleManager:setGroupClassCopyData(self.mGroupItems)

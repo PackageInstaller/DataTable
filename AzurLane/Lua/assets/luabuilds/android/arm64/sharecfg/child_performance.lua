@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_performance") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_performance"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_performance = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_performance
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_performance = rawget(pg, "child_performance") or setmetatable({
+	__name = "child_performance"
+}, confNEO)
+pg.child_performance.all = {
 	101,
 	102,
 	103,
@@ -773,25 +750,11 @@ var_0_3.all = {
 	1711003,
 	1800000
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_performance = {}
+pg.base = pg.base or {}
+pg.base.child_performance = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_performance
-
-	var_1_0[101] = {
+	pg.base.child_performance[101] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA1",
 		dialogue_status = 0,
 		type = 5,
@@ -804,11 +767,7 @@ var_0_3.base.child_performance = {}
 		id = 101,
 		performance_next = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_performance
-
-	var_1_1[102] = {
+	pg.base.child_performance[102] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA2",
 		dialogue_status = 0,
 		type = 5,
@@ -821,11 +780,7 @@ var_0_3.base.child_performance = {}
 		id = 102,
 		performance_next = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_performance
-
-	var_1_2[103] = {
+	pg.base.child_performance[103] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA3",
 		dialogue_status = 0,
 		type = 5,
@@ -838,11 +793,7 @@ var_0_3.base.child_performance = {}
 		id = 103,
 		performance_next = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_performance
-
-	var_1_3[104] = {
+	pg.base.child_performance[104] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA4",
 		dialogue_status = 0,
 		type = 5,
@@ -855,11 +806,7 @@ var_0_3.base.child_performance = {}
 		id = 104,
 		performance_next = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_performance
-
-	var_1_4[105] = {
+	pg.base.child_performance[105] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA5",
 		dialogue_status = 0,
 		type = 5,
@@ -872,11 +819,7 @@ var_0_3.base.child_performance = {}
 		id = 105,
 		performance_next = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_performance
-
-	var_1_5[106] = {
+	pg.base.child_performance[106] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA6",
 		dialogue_status = 0,
 		type = 5,
@@ -889,11 +832,7 @@ var_0_3.base.child_performance = {}
 		id = 106,
 		performance_next = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_performance
-
-	var_1_6[107] = {
+	pg.base.child_performance[107] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA7",
 		dialogue_status = 0,
 		type = 5,
@@ -906,11 +845,7 @@ var_0_3.base.child_performance = {}
 		id = 107,
 		performance_next = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_performance
-
-	var_1_7[108] = {
+	pg.base.child_performance[108] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA8",
 		dialogue_status = 0,
 		type = 5,
@@ -923,11 +858,7 @@ var_0_3.base.child_performance = {}
 		id = 108,
 		performance_next = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_performance
-
-	var_1_8[109] = {
+	pg.base.child_performance[109] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA9",
 		dialogue_status = 0,
 		type = 5,
@@ -940,11 +871,7 @@ var_0_3.base.child_performance = {}
 		id = 109,
 		performance_next = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_performance
-
-	var_1_9[110] = {
+	pg.base.child_performance[110] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA10",
 		dialogue_status = 0,
 		type = 5,
@@ -957,11 +884,7 @@ var_0_3.base.child_performance = {}
 		id = 110,
 		performance_next = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_performance
-
-	var_1_10[111] = {
+	pg.base.child_performance[111] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA11",
 		dialogue_status = 0,
 		type = 5,
@@ -974,11 +897,7 @@ var_0_3.base.child_performance = {}
 		id = 111,
 		performance_next = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_performance
-
-	var_1_11[112] = {
+	pg.base.child_performance[112] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA12",
 		dialogue_status = 0,
 		type = 5,
@@ -991,11 +910,7 @@ var_0_3.base.child_performance = {}
 		id = 112,
 		performance_next = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_performance
-
-	var_1_12[113] = {
+	pg.base.child_performance[113] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA13",
 		dialogue_status = 0,
 		type = 5,
@@ -1008,11 +923,7 @@ var_0_3.base.child_performance = {}
 		id = 113,
 		performance_next = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_performance
-
-	var_1_13[114] = {
+	pg.base.child_performance[114] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA14",
 		dialogue_status = 0,
 		type = 5,
@@ -1025,11 +936,7 @@ var_0_3.base.child_performance = {}
 		id = 114,
 		performance_next = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_performance
-
-	var_1_14[115] = {
+	pg.base.child_performance[115] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA15",
 		dialogue_status = 0,
 		type = 5,
@@ -1042,11 +949,7 @@ var_0_3.base.child_performance = {}
 		id = 115,
 		performance_next = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_performance
-
-	var_1_15[116] = {
+	pg.base.child_performance[116] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA16",
 		dialogue_status = 0,
 		type = 5,
@@ -1059,11 +962,7 @@ var_0_3.base.child_performance = {}
 		id = 116,
 		performance_next = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_performance
-
-	var_1_16[117] = {
+	pg.base.child_performance[117] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA17",
 		dialogue_status = 0,
 		type = 5,
@@ -1076,11 +975,7 @@ var_0_3.base.child_performance = {}
 		id = 117,
 		performance_next = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_performance
-
-	var_1_17[118] = {
+	pg.base.child_performance[118] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA18",
 		dialogue_status = 0,
 		type = 5,
@@ -1093,11 +988,7 @@ var_0_3.base.child_performance = {}
 		id = 118,
 		performance_next = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_performance
-
-	var_1_18[119] = {
+	pg.base.child_performance[119] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA19",
 		dialogue_status = 0,
 		type = 5,
@@ -1110,11 +1001,7 @@ var_0_3.base.child_performance = {}
 		id = 119,
 		performance_next = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_performance
-
-	var_1_19[120] = {
+	pg.base.child_performance[120] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA20",
 		dialogue_status = 0,
 		type = 5,
@@ -1127,11 +1014,7 @@ var_0_3.base.child_performance = {}
 		id = 120,
 		performance_next = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_performance
-
-	var_1_20[121] = {
+	pg.base.child_performance[121] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA21",
 		dialogue_status = 0,
 		type = 5,
@@ -1144,11 +1027,7 @@ var_0_3.base.child_performance = {}
 		id = 121,
 		performance_next = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_performance
-
-	var_1_21[122] = {
+	pg.base.child_performance[122] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA22",
 		dialogue_status = 0,
 		type = 5,
@@ -1161,11 +1040,7 @@ var_0_3.base.child_performance = {}
 		id = 122,
 		performance_next = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_performance
-
-	var_1_22[123] = {
+	pg.base.child_performance[123] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA23",
 		dialogue_status = 0,
 		type = 5,
@@ -1178,11 +1053,7 @@ var_0_3.base.child_performance = {}
 		id = 123,
 		performance_next = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_performance
-
-	var_1_23[124] = {
+	pg.base.child_performance[124] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA24",
 		dialogue_status = 0,
 		type = 5,
@@ -1195,11 +1066,7 @@ var_0_3.base.child_performance = {}
 		id = 124,
 		performance_next = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_performance
-
-	var_1_24[125] = {
+	pg.base.child_performance[125] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA25",
 		dialogue_status = 0,
 		type = 5,
@@ -1212,11 +1079,7 @@ var_0_3.base.child_performance = {}
 		id = 125,
 		performance_next = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_performance
-
-	var_1_25[126] = {
+	pg.base.child_performance[126] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA26",
 		dialogue_status = 0,
 		type = 5,
@@ -1229,11 +1092,7 @@ var_0_3.base.child_performance = {}
 		id = 126,
 		performance_next = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_performance
-
-	var_1_26[127] = {
+	pg.base.child_performance[127] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA27",
 		dialogue_status = 0,
 		type = 5,
@@ -1246,11 +1105,7 @@ var_0_3.base.child_performance = {}
 		id = 127,
 		performance_next = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_performance
-
-	var_1_27[128] = {
+	pg.base.child_performance[128] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA28",
 		dialogue_status = 0,
 		type = 5,
@@ -1263,11 +1118,7 @@ var_0_3.base.child_performance = {}
 		id = 128,
 		performance_next = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_performance
-
-	var_1_28[129] = {
+	pg.base.child_performance[129] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA29",
 		dialogue_status = 0,
 		type = 5,
@@ -1280,11 +1131,7 @@ var_0_3.base.child_performance = {}
 		id = 129,
 		performance_next = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child_performance
-
-	var_1_29[130] = {
+	pg.base.child_performance[130] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA30",
 		dialogue_status = 0,
 		type = 5,
@@ -1297,11 +1144,7 @@ var_0_3.base.child_performance = {}
 		id = 130,
 		performance_next = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child_performance
-
-	var_1_30[131] = {
+	pg.base.child_performance[131] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA31",
 		dialogue_status = 0,
 		type = 5,
@@ -1314,11 +1157,7 @@ var_0_3.base.child_performance = {}
 		id = 131,
 		performance_next = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child_performance
-
-	var_1_31[132] = {
+	pg.base.child_performance[132] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA32",
 		dialogue_status = 0,
 		type = 5,
@@ -1331,11 +1170,7 @@ var_0_3.base.child_performance = {}
 		id = 132,
 		performance_next = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child_performance
-
-	var_1_32[133] = {
+	pg.base.child_performance[133] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA33",
 		dialogue_status = 0,
 		type = 5,
@@ -1348,11 +1183,7 @@ var_0_3.base.child_performance = {}
 		id = 133,
 		performance_next = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child_performance
-
-	var_1_33[134] = {
+	pg.base.child_performance[134] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA34",
 		dialogue_status = 0,
 		type = 5,
@@ -1365,11 +1196,7 @@ var_0_3.base.child_performance = {}
 		id = 134,
 		performance_next = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child_performance
-
-	var_1_34[135] = {
+	pg.base.child_performance[135] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA35",
 		dialogue_status = 0,
 		type = 5,
@@ -1382,11 +1209,7 @@ var_0_3.base.child_performance = {}
 		id = 135,
 		performance_next = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child_performance
-
-	var_1_35[136] = {
+	pg.base.child_performance[136] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA36",
 		dialogue_status = 0,
 		type = 5,
@@ -1399,11 +1222,7 @@ var_0_3.base.child_performance = {}
 		id = 136,
 		performance_next = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child_performance
-
-	var_1_36[137] = {
+	pg.base.child_performance[137] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA37",
 		dialogue_status = 0,
 		type = 5,
@@ -1416,11 +1235,7 @@ var_0_3.base.child_performance = {}
 		id = 137,
 		performance_next = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child_performance
-
-	var_1_37[138] = {
+	pg.base.child_performance[138] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA38",
 		dialogue_status = 0,
 		type = 5,
@@ -1433,11 +1248,7 @@ var_0_3.base.child_performance = {}
 		id = 138,
 		performance_next = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child_performance
-
-	var_1_38[139] = {
+	pg.base.child_performance[139] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA39",
 		dialogue_status = 0,
 		type = 5,
@@ -1450,11 +1261,7 @@ var_0_3.base.child_performance = {}
 		id = 139,
 		performance_next = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child_performance
-
-	var_1_39[140] = {
+	pg.base.child_performance[140] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA40",
 		dialogue_status = 0,
 		type = 5,
@@ -1467,11 +1274,7 @@ var_0_3.base.child_performance = {}
 		id = 140,
 		performance_next = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child_performance
-
-	var_1_40[141] = {
+	pg.base.child_performance[141] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA41",
 		dialogue_status = 0,
 		type = 5,
@@ -1484,11 +1287,7 @@ var_0_3.base.child_performance = {}
 		id = 141,
 		performance_next = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child_performance
-
-	var_1_41[142] = {
+	pg.base.child_performance[142] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA42",
 		dialogue_status = 0,
 		type = 5,
@@ -1501,11 +1300,7 @@ var_0_3.base.child_performance = {}
 		id = 142,
 		performance_next = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child_performance
-
-	var_1_42[143] = {
+	pg.base.child_performance[143] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA43",
 		dialogue_status = 0,
 		type = 5,
@@ -1518,11 +1313,7 @@ var_0_3.base.child_performance = {}
 		id = 143,
 		performance_next = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child_performance
-
-	var_1_43[144] = {
+	pg.base.child_performance[144] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA44",
 		dialogue_status = 0,
 		type = 5,
@@ -1535,11 +1326,7 @@ var_0_3.base.child_performance = {}
 		id = 144,
 		performance_next = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child_performance
-
-	var_1_44[145] = {
+	pg.base.child_performance[145] = {
 		param = "LINGHANGYUANHAOGANDU1",
 		dialogue_status = 0,
 		type = 5,
@@ -1552,11 +1339,7 @@ var_0_3.base.child_performance = {}
 		id = 145,
 		performance_next = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child_performance
-
-	var_1_45[146] = {
+	pg.base.child_performance[146] = {
 		param = "LINGHANGYUANHAOGANDU2",
 		dialogue_status = 0,
 		type = 5,
@@ -1569,11 +1352,7 @@ var_0_3.base.child_performance = {}
 		id = 146,
 		performance_next = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child_performance
-
-	var_1_46[147] = {
+	pg.base.child_performance[147] = {
 		param = "LINGHANGYUANHAOGANDU3",
 		dialogue_status = 0,
 		type = 5,
@@ -1586,11 +1365,7 @@ var_0_3.base.child_performance = {}
 		id = 147,
 		performance_next = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child_performance
-
-	var_1_47[148] = {
+	pg.base.child_performance[148] = {
 		param = "LINGHANGYUANHAOGANDU4",
 		dialogue_status = 0,
 		type = 5,
@@ -1603,11 +1378,7 @@ var_0_3.base.child_performance = {}
 		id = 148,
 		performance_next = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child_performance
-
-	var_1_48[149] = {
+	pg.base.child_performance[149] = {
 		param = "LINGHANGYUANHAOGANDU5",
 		dialogue_status = 0,
 		type = 5,
@@ -1620,11 +1391,7 @@ var_0_3.base.child_performance = {}
 		id = 149,
 		performance_next = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child_performance
-
-	var_1_49[150] = {
+	pg.base.child_performance[150] = {
 		param = "LINGHANGYUANHAOGANDU6",
 		dialogue_status = 0,
 		type = 5,
@@ -1637,11 +1404,7 @@ var_0_3.base.child_performance = {}
 		id = 150,
 		performance_next = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child_performance
-
-	var_1_50[151] = {
+	pg.base.child_performance[151] = {
 		param = "LINGHANGYUANHAOGANDU7",
 		dialogue_status = 0,
 		type = 5,
@@ -1654,11 +1417,7 @@ var_0_3.base.child_performance = {}
 		id = 151,
 		performance_next = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child_performance
-
-	var_1_51[152] = {
+	pg.base.child_performance[152] = {
 		param = "LINGHANGYUANHAOGANDU8",
 		dialogue_status = 0,
 		type = 5,
@@ -1671,11 +1430,7 @@ var_0_3.base.child_performance = {}
 		id = 152,
 		performance_next = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child_performance
-
-	var_1_52[153] = {
+	pg.base.child_performance[153] = {
 		param = "LINGHANGYUANTANXIN1",
 		dialogue_status = 0,
 		type = 5,
@@ -1688,11 +1443,7 @@ var_0_3.base.child_performance = {}
 		id = 153,
 		performance_next = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child_performance
-
-	var_1_53[154] = {
+	pg.base.child_performance[154] = {
 		param = "LINGHANGYUANTANXIN2",
 		dialogue_status = 0,
 		type = 5,
@@ -1705,11 +1456,7 @@ var_0_3.base.child_performance = {}
 		id = 154,
 		performance_next = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child_performance
-
-	var_1_54[155] = {
+	pg.base.child_performance[155] = {
 		param = "LINGHANGYUANTANXIN3",
 		dialogue_status = 0,
 		type = 5,
@@ -1722,11 +1469,7 @@ var_0_3.base.child_performance = {}
 		id = 155,
 		performance_next = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child_performance
-
-	var_1_55[156] = {
+	pg.base.child_performance[156] = {
 		param = "LINGHANGYUANTANXIN4",
 		dialogue_status = 0,
 		type = 5,
@@ -1739,11 +1482,7 @@ var_0_3.base.child_performance = {}
 		id = 156,
 		performance_next = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child_performance
-
-	var_1_56[157] = {
+	pg.base.child_performance[157] = {
 		param = "LINGHANGYUANTANXIN5",
 		dialogue_status = 0,
 		type = 5,
@@ -1756,11 +1495,7 @@ var_0_3.base.child_performance = {}
 		id = 157,
 		performance_next = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child_performance
-
-	var_1_57[158] = {
+	pg.base.child_performance[158] = {
 		param = "LINGHANGYUANTANXIN6",
 		dialogue_status = 0,
 		type = 5,
@@ -1773,11 +1508,7 @@ var_0_3.base.child_performance = {}
 		id = 158,
 		performance_next = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child_performance
-
-	var_1_58[159] = {
+	pg.base.child_performance[159] = {
 		param = "LINGHANGYUANTANXIN7",
 		dialogue_status = 0,
 		type = 5,
@@ -1790,11 +1521,7 @@ var_0_3.base.child_performance = {}
 		id = 159,
 		performance_next = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child_performance
-
-	var_1_59[160] = {
+	pg.base.child_performance[160] = {
 		param = "LINGHANGYUANTANXIN8",
 		dialogue_status = 0,
 		type = 5,
@@ -1807,11 +1534,7 @@ var_0_3.base.child_performance = {}
 		id = 160,
 		performance_next = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child_performance
-
-	var_1_60[161] = {
+	pg.base.child_performance[161] = {
 		param = "LINGHANGYUANTANXIN9",
 		dialogue_status = 0,
 		type = 5,
@@ -1824,11 +1547,7 @@ var_0_3.base.child_performance = {}
 		id = 161,
 		performance_next = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child_performance
-
-	var_1_61[162] = {
+	pg.base.child_performance[162] = {
 		param = "LINGHANGYUANTANXIN10",
 		dialogue_status = 0,
 		type = 5,
@@ -1841,11 +1560,7 @@ var_0_3.base.child_performance = {}
 		id = 162,
 		performance_next = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child_performance
-
-	var_1_62[163] = {
+	pg.base.child_performance[163] = {
 		param = "LINGHANGYUANTANXIN11",
 		dialogue_status = 0,
 		type = 5,
@@ -1858,11 +1573,7 @@ var_0_3.base.child_performance = {}
 		id = 163,
 		performance_next = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child_performance
-
-	var_1_63[164] = {
+	pg.base.child_performance[164] = {
 		param = "LINGHANGYUANTANXIN12",
 		dialogue_status = 0,
 		type = 5,
@@ -1875,11 +1586,7 @@ var_0_3.base.child_performance = {}
 		id = 164,
 		performance_next = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child_performance
-
-	var_1_64[165] = {
+	pg.base.child_performance[165] = {
 		param = "LINGHANGYUANTANXIN13",
 		dialogue_status = 0,
 		type = 5,
@@ -1892,11 +1599,7 @@ var_0_3.base.child_performance = {}
 		id = 165,
 		performance_next = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child_performance
-
-	var_1_65[166] = {
+	pg.base.child_performance[166] = {
 		param = "LINGHANGYUANTANXIN14",
 		dialogue_status = 0,
 		type = 5,
@@ -1909,11 +1612,7 @@ var_0_3.base.child_performance = {}
 		id = 166,
 		performance_next = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child_performance
-
-	var_1_66[167] = {
+	pg.base.child_performance[167] = {
 		param = "LINGHANGYUANTANXIN15",
 		dialogue_status = 0,
 		type = 5,
@@ -1926,11 +1625,7 @@ var_0_3.base.child_performance = {}
 		id = 167,
 		performance_next = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child_performance
-
-	var_1_67[168] = {
+	pg.base.child_performance[168] = {
 		param = "LINGHANGYUANTANXIN16",
 		dialogue_status = 0,
 		type = 5,
@@ -1943,11 +1638,7 @@ var_0_3.base.child_performance = {}
 		id = 168,
 		performance_next = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child_performance
-
-	var_1_68[169] = {
+	pg.base.child_performance[169] = {
 		param = "LINGHANGYUANTANXIN17",
 		dialogue_status = 0,
 		type = 5,
@@ -1960,11 +1651,7 @@ var_0_3.base.child_performance = {}
 		id = 169,
 		performance_next = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child_performance
-
-	var_1_69[170] = {
+	pg.base.child_performance[170] = {
 		param = "LINGHANGYUANTANXIN18",
 		dialogue_status = 0,
 		type = 5,
@@ -1977,11 +1664,7 @@ var_0_3.base.child_performance = {}
 		id = 170,
 		performance_next = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child_performance
-
-	var_1_70[171] = {
+	pg.base.child_performance[171] = {
 		param = "LINGHANGYUANTANXIN19",
 		dialogue_status = 0,
 		type = 5,
@@ -1994,11 +1677,7 @@ var_0_3.base.child_performance = {}
 		id = 171,
 		performance_next = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child_performance
-
-	var_1_71[172] = {
+	pg.base.child_performance[172] = {
 		param = "LINGHANGYUANTANXIN20",
 		dialogue_status = 0,
 		type = 5,
@@ -2011,11 +1690,7 @@ var_0_3.base.child_performance = {}
 		id = 172,
 		performance_next = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child_performance
-
-	var_1_72[173] = {
+	pg.base.child_performance[173] = {
 		param = "LINGHANGYUANTANXIN21",
 		dialogue_status = 0,
 		type = 5,
@@ -2028,11 +1703,7 @@ var_0_3.base.child_performance = {}
 		id = 173,
 		performance_next = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child_performance
-
-	var_1_73[174] = {
+	pg.base.child_performance[174] = {
 		param = "LINGHANGYUANTANXIN22",
 		dialogue_status = 0,
 		type = 5,
@@ -2045,11 +1716,7 @@ var_0_3.base.child_performance = {}
 		id = 174,
 		performance_next = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child_performance
-
-	var_1_74[175] = {
+	pg.base.child_performance[175] = {
 		param = "LINGHANGYUANTANXIN23",
 		dialogue_status = 0,
 		type = 5,
@@ -2062,11 +1729,7 @@ var_0_3.base.child_performance = {}
 		id = 175,
 		performance_next = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child_performance
-
-	var_1_75[176] = {
+	pg.base.child_performance[176] = {
 		param = "LINGHANGYUANTANXIN24",
 		dialogue_status = 0,
 		type = 5,
@@ -2079,11 +1742,7 @@ var_0_3.base.child_performance = {}
 		id = 176,
 		performance_next = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child_performance
-
-	var_1_76[177] = {
+	pg.base.child_performance[177] = {
 		param = "LINGHANGYUANTANXIN25",
 		dialogue_status = 0,
 		type = 5,
@@ -2096,11 +1755,7 @@ var_0_3.base.child_performance = {}
 		id = 177,
 		performance_next = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child_performance
-
-	var_1_77[178] = {
+	pg.base.child_performance[178] = {
 		param = "LINGHANGYUANTANXIN26",
 		dialogue_status = 0,
 		type = 5,
@@ -2113,11 +1768,7 @@ var_0_3.base.child_performance = {}
 		id = 178,
 		performance_next = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child_performance
-
-	var_1_78[179] = {
+	pg.base.child_performance[179] = {
 		param = "LINGHANGYUANTANXIN27",
 		dialogue_status = 0,
 		type = 5,
@@ -2130,11 +1781,7 @@ var_0_3.base.child_performance = {}
 		id = 179,
 		performance_next = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child_performance
-
-	var_1_79[180] = {
+	pg.base.child_performance[180] = {
 		param = "LINGHANGYUANTANXIN28",
 		dialogue_status = 0,
 		type = 5,
@@ -2147,11 +1794,7 @@ var_0_3.base.child_performance = {}
 		id = 180,
 		performance_next = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child_performance
-
-	var_1_80[181] = {
+	pg.base.child_performance[181] = {
 		param = "LINGHANGYUANTANXIN29",
 		dialogue_status = 0,
 		type = 5,
@@ -2164,11 +1807,7 @@ var_0_3.base.child_performance = {}
 		id = 181,
 		performance_next = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child_performance
-
-	var_1_81[182] = {
+	pg.base.child_performance[182] = {
 		param = "LINGHANGYUANTANXIN30",
 		dialogue_status = 0,
 		type = 5,
@@ -2181,11 +1820,7 @@ var_0_3.base.child_performance = {}
 		id = 182,
 		performance_next = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child_performance
-
-	var_1_82[183] = {
+	pg.base.child_performance[183] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA4_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2198,11 +1833,7 @@ var_0_3.base.child_performance = {}
 		id = 183,
 		performance_next = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child_performance
-
-	var_1_83[184] = {
+	pg.base.child_performance[184] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA7_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2215,11 +1846,7 @@ var_0_3.base.child_performance = {}
 		id = 184,
 		performance_next = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child_performance
-
-	var_1_84[185] = {
+	pg.base.child_performance[185] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA8_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2232,11 +1859,7 @@ var_0_3.base.child_performance = {}
 		id = 185,
 		performance_next = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child_performance
-
-	var_1_85[186] = {
+	pg.base.child_performance[186] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA8_2",
 		dialogue_status = 0,
 		type = 5,
@@ -2249,11 +1872,7 @@ var_0_3.base.child_performance = {}
 		id = 186,
 		performance_next = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child_performance
-
-	var_1_86[187] = {
+	pg.base.child_performance[187] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA9_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2266,11 +1885,7 @@ var_0_3.base.child_performance = {}
 		id = 187,
 		performance_next = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child_performance
-
-	var_1_87[188] = {
+	pg.base.child_performance[188] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA10_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2283,11 +1898,7 @@ var_0_3.base.child_performance = {}
 		id = 188,
 		performance_next = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child_performance
-
-	var_1_88[189] = {
+	pg.base.child_performance[189] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA11_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2300,11 +1911,7 @@ var_0_3.base.child_performance = {}
 		id = 189,
 		performance_next = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child_performance
-
-	var_1_89[190] = {
+	pg.base.child_performance[190] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA12_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2317,11 +1924,7 @@ var_0_3.base.child_performance = {}
 		id = 190,
 		performance_next = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child_performance
-
-	var_1_90[191] = {
+	pg.base.child_performance[191] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA14_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2334,11 +1937,7 @@ var_0_3.base.child_performance = {}
 		id = 191,
 		performance_next = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child_performance
-
-	var_1_91[192] = {
+	pg.base.child_performance[192] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA15_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2351,11 +1950,7 @@ var_0_3.base.child_performance = {}
 		id = 192,
 		performance_next = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child_performance
-
-	var_1_92[193] = {
+	pg.base.child_performance[193] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA16_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2368,11 +1963,7 @@ var_0_3.base.child_performance = {}
 		id = 193,
 		performance_next = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child_performance
-
-	var_1_93[194] = {
+	pg.base.child_performance[194] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA17_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2385,11 +1976,7 @@ var_0_3.base.child_performance = {}
 		id = 194,
 		performance_next = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child_performance
-
-	var_1_94[195] = {
+	pg.base.child_performance[195] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA18_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2402,11 +1989,7 @@ var_0_3.base.child_performance = {}
 		id = 195,
 		performance_next = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child_performance
-
-	var_1_95[196] = {
+	pg.base.child_performance[196] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA20_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2419,11 +2002,7 @@ var_0_3.base.child_performance = {}
 		id = 196,
 		performance_next = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child_performance
-
-	var_1_96[197] = {
+	pg.base.child_performance[197] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA21_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2436,11 +2015,7 @@ var_0_3.base.child_performance = {}
 		id = 197,
 		performance_next = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child_performance
-
-	var_1_97[198] = {
+	pg.base.child_performance[198] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA22_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2453,11 +2028,7 @@ var_0_3.base.child_performance = {}
 		id = 198,
 		performance_next = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child_performance
-
-	var_1_98[199] = {
+	pg.base.child_performance[199] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA23_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2470,8 +2041,7 @@ var_0_3.base.child_performance = {}
 		id = 199,
 		performance_next = {}
 	}
-	pg = var_1_98
-	var_1_98.base.child_performance[200] = {
+	pg.base.child_performance[200] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA24_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2488,11 +2058,7 @@ var_0_3.base.child_performance = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child_performance
-
-	var_2_0[201] = {
+	pg.base.child_performance[201] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA25_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2505,11 +2071,7 @@ end)()
 		id = 201,
 		performance_next = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child_performance
-
-	var_2_1[202] = {
+	pg.base.child_performance[202] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA26_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2522,11 +2084,7 @@ end)()
 		id = 202,
 		performance_next = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child_performance
-
-	var_2_2[203] = {
+	pg.base.child_performance[203] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA27_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2539,11 +2097,7 @@ end)()
 		id = 203,
 		performance_next = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child_performance
-
-	var_2_3[204] = {
+	pg.base.child_performance[204] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA28_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2556,11 +2110,7 @@ end)()
 		id = 204,
 		performance_next = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child_performance
-
-	var_2_4[205] = {
+	pg.base.child_performance[205] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA29_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2573,11 +2123,7 @@ end)()
 		id = 205,
 		performance_next = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child_performance
-
-	var_2_5[206] = {
+	pg.base.child_performance[206] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA30_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2590,11 +2136,7 @@ end)()
 		id = 206,
 		performance_next = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child_performance
-
-	var_2_6[207] = {
+	pg.base.child_performance[207] = {
 		param = "LINGHANGYUANYANGCHENGJIHUA31_1",
 		dialogue_status = 0,
 		type = 5,
@@ -2607,11 +2149,7 @@ end)()
 		id = 207,
 		performance_next = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child_performance
-
-	var_2_7[21] = {
+	pg.base.child_performance[21] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -2636,11 +2174,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child_performance
-
-	var_2_8[22] = {
+	pg.base.child_performance[22] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2655,11 +2189,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child_performance
-
-	var_2_9[23] = {
+	pg.base.child_performance[23] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2674,11 +2204,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child_performance
-
-	var_2_10[24] = {
+	pg.base.child_performance[24] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2693,11 +2219,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child_performance
-
-	var_2_11[110201] = {
+	pg.base.child_performance[110201] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -2722,11 +2244,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child_performance
-
-	var_2_12[110202] = {
+	pg.base.child_performance[110202] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2741,11 +2259,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child_performance
-
-	var_2_13[110203] = {
+	pg.base.child_performance[110203] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2760,11 +2274,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child_performance
-
-	var_2_14[110204] = {
+	pg.base.child_performance[110204] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2779,11 +2289,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child_performance
-
-	var_2_15[110301] = {
+	pg.base.child_performance[110301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -2808,11 +2314,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child_performance
-
-	var_2_16[110302] = {
+	pg.base.child_performance[110302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2827,11 +2329,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child_performance
-
-	var_2_17[110303] = {
+	pg.base.child_performance[110303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2846,11 +2344,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child_performance
-
-	var_2_18[110304] = {
+	pg.base.child_performance[110304] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2865,11 +2359,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child_performance
-
-	var_2_19[110401] = {
+	pg.base.child_performance[110401] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -2894,11 +2384,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child_performance
-
-	var_2_20[110402] = {
+	pg.base.child_performance[110402] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2913,11 +2399,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child_performance
-
-	var_2_21[110403] = {
+	pg.base.child_performance[110403] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2932,11 +2414,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child_performance
-
-	var_2_22[110404] = {
+	pg.base.child_performance[110404] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2951,11 +2429,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child_performance
-
-	var_2_23[110501] = {
+	pg.base.child_performance[110501] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -2980,11 +2454,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child_performance
-
-	var_2_24[110502] = {
+	pg.base.child_performance[110502] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -2999,11 +2469,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child_performance
-
-	var_2_25[110503] = {
+	pg.base.child_performance[110503] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3018,11 +2484,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child_performance
-
-	var_2_26[110504] = {
+	pg.base.child_performance[110504] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3037,11 +2499,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child_performance
-
-	var_2_27[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3066,11 +2524,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child_performance
-
-	var_2_28[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3085,11 +2539,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child_performance
-
-	var_2_29[11] = {
+	pg.base.child_performance[11] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3104,11 +2554,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child_performance
-
-	var_2_30[12] = {
+	pg.base.child_performance[12] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3123,11 +2569,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child_performance
-
-	var_2_31[110701] = {
+	pg.base.child_performance[110701] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3152,11 +2594,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child_performance
-
-	var_2_32[110702] = {
+	pg.base.child_performance[110702] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3171,11 +2609,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child_performance
-
-	var_2_33[110703] = {
+	pg.base.child_performance[110703] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3190,11 +2624,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child_performance
-
-	var_2_34[110801] = {
+	pg.base.child_performance[110801] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3219,11 +2649,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child_performance
-
-	var_2_35[110802] = {
+	pg.base.child_performance[110802] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3238,11 +2664,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child_performance
-
-	var_2_36[110803] = {
+	pg.base.child_performance[110803] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3257,11 +2679,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child_performance
-
-	var_2_37[110901] = {
+	pg.base.child_performance[110901] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3286,11 +2704,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child_performance
-
-	var_2_38[110902] = {
+	pg.base.child_performance[110902] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3305,11 +2719,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child_performance
-
-	var_2_39[110903] = {
+	pg.base.child_performance[110903] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3324,11 +2734,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.child_performance
-
-	var_2_40[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3353,11 +2759,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.child_performance
-
-	var_2_41[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3372,11 +2774,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.child_performance
-
-	var_2_42[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3391,11 +2789,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.child_performance
-
-	var_2_43[111101] = {
+	pg.base.child_performance[111101] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3420,11 +2814,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.child_performance
-
-	var_2_44[111102] = {
+	pg.base.child_performance[111102] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3439,11 +2829,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.child_performance
-
-	var_2_45[111103] = {
+	pg.base.child_performance[111103] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3458,11 +2844,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.child_performance
-
-	var_2_46[111201] = {
+	pg.base.child_performance[111201] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3487,11 +2869,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.child_performance
-
-	var_2_47[111202] = {
+	pg.base.child_performance[111202] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3506,11 +2884,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.child_performance
-
-	var_2_48[111203] = {
+	pg.base.child_performance[111203] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3525,11 +2899,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.child_performance
-
-	var_2_49[111301] = {
+	pg.base.child_performance[111301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3554,11 +2924,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.child_performance
-
-	var_2_50[111302] = {
+	pg.base.child_performance[111302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3573,11 +2939,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.child_performance
-
-	var_2_51[111303] = {
+	pg.base.child_performance[111303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3592,11 +2954,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.child_performance
-
-	var_2_52[111401] = {
+	pg.base.child_performance[111401] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3621,11 +2979,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.child_performance
-
-	var_2_53[111402] = {
+	pg.base.child_performance[111402] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3640,11 +2994,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.child_performance
-
-	var_2_54[111403] = {
+	pg.base.child_performance[111403] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3659,11 +3009,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.child_performance
-
-	var_2_55[13] = {
+	pg.base.child_performance[13] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3688,11 +3034,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.child_performance
-
-	var_2_56[14] = {
+	pg.base.child_performance[14] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3707,11 +3049,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.child_performance
-
-	var_2_57[15] = {
+	pg.base.child_performance[15] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3726,11 +3064,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.child_performance
-
-	var_2_58[111601] = {
+	pg.base.child_performance[111601] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3755,11 +3089,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.child_performance
-
-	var_2_59[111602] = {
+	pg.base.child_performance[111602] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3774,11 +3104,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.child_performance
-
-	var_2_60[111603] = {
+	pg.base.child_performance[111603] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3793,11 +3119,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.child_performance
-
-	var_2_61[111701] = {
+	pg.base.child_performance[111701] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3822,11 +3144,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.child_performance
-
-	var_2_62[111702] = {
+	pg.base.child_performance[111702] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3841,11 +3159,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.child_performance
-
-	var_2_63[111703] = {
+	pg.base.child_performance[111703] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3860,11 +3174,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.child_performance
-
-	var_2_64[111801] = {
+	pg.base.child_performance[111801] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3889,11 +3199,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.child_performance
-
-	var_2_65[111802] = {
+	pg.base.child_performance[111802] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3908,11 +3214,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.child_performance
-
-	var_2_66[111803] = {
+	pg.base.child_performance[111803] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3927,11 +3229,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.child_performance
-
-	var_2_67[29] = {
+	pg.base.child_performance[29] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -3956,11 +3254,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.child_performance
-
-	var_2_68[30] = {
+	pg.base.child_performance[30] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3975,11 +3269,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.child_performance
-
-	var_2_69[31] = {
+	pg.base.child_performance[31] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -3994,11 +3284,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.child_performance
-
-	var_2_70[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4023,11 +3309,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.child_performance
-
-	var_2_71[2] = {
+	pg.base.child_performance[2] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4042,11 +3324,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.child_performance
-
-	var_2_72[3] = {
+	pg.base.child_performance[3] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4061,11 +3339,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.child_performance
-
-	var_2_73[112101] = {
+	pg.base.child_performance[112101] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4090,11 +3364,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.child_performance
-
-	var_2_74[112102] = {
+	pg.base.child_performance[112102] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4109,11 +3379,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.child_performance
-
-	var_2_75[112103] = {
+	pg.base.child_performance[112103] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4128,11 +3394,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.child_performance
-
-	var_2_76[112201] = {
+	pg.base.child_performance[112201] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4157,11 +3419,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.child_performance
-
-	var_2_77[112202] = {
+	pg.base.child_performance[112202] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4176,11 +3434,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.child_performance
-
-	var_2_78[112203] = {
+	pg.base.child_performance[112203] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4195,11 +3449,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.child_performance
-
-	var_2_79[112301] = {
+	pg.base.child_performance[112301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4224,11 +3474,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.child_performance
-
-	var_2_80[112302] = {
+	pg.base.child_performance[112302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4243,11 +3489,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.child_performance
-
-	var_2_81[112303] = {
+	pg.base.child_performance[112303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4262,11 +3504,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.child_performance
-
-	var_2_82[17] = {
+	pg.base.child_performance[17] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4291,11 +3529,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.child_performance
-
-	var_2_83[18] = {
+	pg.base.child_performance[18] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4310,11 +3544,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.child_performance
-
-	var_2_84[19] = {
+	pg.base.child_performance[19] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4329,11 +3559,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.child_performance
-
-	var_2_85[112501] = {
+	pg.base.child_performance[112501] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4358,11 +3584,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.child_performance
-
-	var_2_86[112502] = {
+	pg.base.child_performance[112502] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4377,11 +3599,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.child_performance
-
-	var_2_87[112503] = {
+	pg.base.child_performance[112503] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4396,11 +3614,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.child_performance
-
-	var_2_88[112601] = {
+	pg.base.child_performance[112601] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4425,11 +3639,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.child_performance
-
-	var_2_89[112602] = {
+	pg.base.child_performance[112602] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4444,11 +3654,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.child_performance
-
-	var_2_90[112603] = {
+	pg.base.child_performance[112603] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4463,11 +3669,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.child_performance
-
-	var_2_91[112701] = {
+	pg.base.child_performance[112701] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4492,11 +3694,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.child_performance
-
-	var_2_92[112702] = {
+	pg.base.child_performance[112702] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4511,11 +3709,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.child_performance
-
-	var_2_93[112703] = {
+	pg.base.child_performance[112703] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4530,11 +3724,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.child_performance
-
-	var_2_94[112801] = {
+	pg.base.child_performance[112801] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4559,11 +3749,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.child_performance
-
-	var_2_95[112802] = {
+	pg.base.child_performance[112802] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4578,11 +3764,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.child_performance
-
-	var_2_96[112803] = {
+	pg.base.child_performance[112803] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4597,11 +3779,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.child_performance
-
-	var_2_97[5] = {
+	pg.base.child_performance[5] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4626,11 +3804,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.child_performance
-
-	var_2_98[6] = {
+	pg.base.child_performance[6] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4645,8 +3819,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_2_98
-	var_2_98.base.child_performance[7] = {
+	pg.base.child_performance[7] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4665,11 +3838,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.child_performance
-
-	var_3_0[113001] = {
+	pg.base.child_performance[113001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4694,11 +3863,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.child_performance
-
-	var_3_1[113002] = {
+	pg.base.child_performance[113002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4713,11 +3878,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.child_performance
-
-	var_3_2[113003] = {
+	pg.base.child_performance[113003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4732,11 +3893,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.child_performance
-
-	var_3_3[120101] = {
+	pg.base.child_performance[120101] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4761,11 +3918,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.child_performance
-
-	var_3_4[120102] = {
+	pg.base.child_performance[120102] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4780,11 +3933,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.child_performance
-
-	var_3_5[120103] = {
+	pg.base.child_performance[120103] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4799,11 +3948,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.child_performance
-
-	var_3_6[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4828,11 +3973,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.child_performance
-
-	var_3_7[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4847,11 +3988,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.child_performance
-
-	var_3_8[11] = {
+	pg.base.child_performance[11] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4866,11 +4003,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.child_performance
-
-	var_3_9[120301] = {
+	pg.base.child_performance[120301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4895,11 +4028,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.child_performance
-
-	var_3_10[120302] = {
+	pg.base.child_performance[120302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4914,11 +4043,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.child_performance
-
-	var_3_11[120303] = {
+	pg.base.child_performance[120303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4933,11 +4058,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.child_performance
-
-	var_3_12[120401] = {
+	pg.base.child_performance[120401] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -4962,11 +4083,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.child_performance
-
-	var_3_13[120402] = {
+	pg.base.child_performance[120402] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -4981,11 +4098,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.child_performance
-
-	var_3_14[120403] = {
+	pg.base.child_performance[120403] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5000,11 +4113,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.child_performance
-
-	var_3_15[120501] = {
+	pg.base.child_performance[120501] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5029,11 +4138,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.child_performance
-
-	var_3_16[120502] = {
+	pg.base.child_performance[120502] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5048,11 +4153,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.child_performance
-
-	var_3_17[120503] = {
+	pg.base.child_performance[120503] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5067,11 +4168,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.child_performance
-
-	var_3_18[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5096,11 +4193,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.child_performance
-
-	var_3_19[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5115,11 +4208,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.child_performance
-
-	var_3_20[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5134,11 +4223,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.child_performance
-
-	var_3_21[120701] = {
+	pg.base.child_performance[120701] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5163,11 +4248,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.child_performance
-
-	var_3_22[120702] = {
+	pg.base.child_performance[120702] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5182,11 +4263,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.child_performance
-
-	var_3_23[120703] = {
+	pg.base.child_performance[120703] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5201,11 +4278,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.child_performance
-
-	var_3_24[120801] = {
+	pg.base.child_performance[120801] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5230,11 +4303,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.child_performance
-
-	var_3_25[120802] = {
+	pg.base.child_performance[120802] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5249,11 +4318,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.child_performance
-
-	var_3_26[120803] = {
+	pg.base.child_performance[120803] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5268,11 +4333,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.child_performance
-
-	var_3_27[120901] = {
+	pg.base.child_performance[120901] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5297,11 +4358,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.child_performance
-
-	var_3_28[120902] = {
+	pg.base.child_performance[120902] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5316,11 +4373,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.child_performance
-
-	var_3_29[120903] = {
+	pg.base.child_performance[120903] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5335,11 +4388,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.child_performance
-
-	var_3_30[121001] = {
+	pg.base.child_performance[121001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5364,11 +4413,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.child_performance
-
-	var_3_31[121002] = {
+	pg.base.child_performance[121002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5383,11 +4428,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.child_performance
-
-	var_3_32[121003] = {
+	pg.base.child_performance[121003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5402,11 +4443,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.child_performance
-
-	var_3_33[13] = {
+	pg.base.child_performance[13] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5431,11 +4468,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.child_performance
-
-	var_3_34[14] = {
+	pg.base.child_performance[14] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5450,11 +4483,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.child_performance
-
-	var_3_35[15] = {
+	pg.base.child_performance[15] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5469,11 +4498,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.child_performance
-
-	var_3_36[121201] = {
+	pg.base.child_performance[121201] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5498,11 +4523,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.child_performance
-
-	var_3_37[121202] = {
+	pg.base.child_performance[121202] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5517,11 +4538,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.child_performance
-
-	var_3_38[121203] = {
+	pg.base.child_performance[121203] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5536,11 +4553,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.child_performance
-
-	var_3_39[121301] = {
+	pg.base.child_performance[121301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5565,11 +4578,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.child_performance
-
-	var_3_40[121302] = {
+	pg.base.child_performance[121302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5584,11 +4593,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.child_performance
-
-	var_3_41[121303] = {
+	pg.base.child_performance[121303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5603,11 +4608,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.child_performance
-
-	var_3_42[121401] = {
+	pg.base.child_performance[121401] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5632,11 +4633,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.child_performance
-
-	var_3_43[121402] = {
+	pg.base.child_performance[121402] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5651,11 +4648,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.child_performance
-
-	var_3_44[121403] = {
+	pg.base.child_performance[121403] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5670,11 +4663,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.child_performance
-
-	var_3_45[29] = {
+	pg.base.child_performance[29] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5699,11 +4688,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.child_performance
-
-	var_3_46[30] = {
+	pg.base.child_performance[30] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5718,11 +4703,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.child_performance
-
-	var_3_47[31] = {
+	pg.base.child_performance[31] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5737,11 +4718,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.child_performance
-
-	var_3_48[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5766,11 +4743,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.child_performance
-
-	var_3_49[2] = {
+	pg.base.child_performance[2] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5785,11 +4758,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.child_performance
-
-	var_3_50[3] = {
+	pg.base.child_performance[3] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5804,11 +4773,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.child_performance
-
-	var_3_51[121701] = {
+	pg.base.child_performance[121701] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5833,11 +4798,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.child_performance
-
-	var_3_52[121702] = {
+	pg.base.child_performance[121702] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5852,11 +4813,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.child_performance
-
-	var_3_53[121703] = {
+	pg.base.child_performance[121703] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5871,11 +4828,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.child_performance
-
-	var_3_54[121801] = {
+	pg.base.child_performance[121801] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5900,11 +4853,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.child_performance
-
-	var_3_55[121802] = {
+	pg.base.child_performance[121802] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5919,11 +4868,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.child_performance
-
-	var_3_56[121803] = {
+	pg.base.child_performance[121803] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5938,11 +4883,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.child_performance
-
-	var_3_57[121901] = {
+	pg.base.child_performance[121901] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -5967,11 +4908,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.child_performance
-
-	var_3_58[121902] = {
+	pg.base.child_performance[121902] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -5986,11 +4923,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.child_performance
-
-	var_3_59[121903] = {
+	pg.base.child_performance[121903] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6005,11 +4938,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.child_performance
-
-	var_3_60[17] = {
+	pg.base.child_performance[17] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6034,11 +4963,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.child_performance
-
-	var_3_61[18] = {
+	pg.base.child_performance[18] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6053,11 +4978,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.child_performance
-
-	var_3_62[19] = {
+	pg.base.child_performance[19] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6072,11 +4993,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.child_performance
-
-	var_3_63[122101] = {
+	pg.base.child_performance[122101] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6101,11 +5018,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.child_performance
-
-	var_3_64[122102] = {
+	pg.base.child_performance[122102] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6120,11 +5033,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.child_performance
-
-	var_3_65[122103] = {
+	pg.base.child_performance[122103] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6139,11 +5048,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.child_performance
-
-	var_3_66[122201] = {
+	pg.base.child_performance[122201] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6168,11 +5073,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.child_performance
-
-	var_3_67[122202] = {
+	pg.base.child_performance[122202] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6187,11 +5088,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.child_performance
-
-	var_3_68[122203] = {
+	pg.base.child_performance[122203] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6206,11 +5103,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.child_performance
-
-	var_3_69[122301] = {
+	pg.base.child_performance[122301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6235,11 +5128,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.child_performance
-
-	var_3_70[122302] = {
+	pg.base.child_performance[122302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6254,11 +5143,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.child_performance
-
-	var_3_71[122303] = {
+	pg.base.child_performance[122303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6273,11 +5158,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.child_performance
-
-	var_3_72[122401] = {
+	pg.base.child_performance[122401] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6302,11 +5183,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.child_performance
-
-	var_3_73[122402] = {
+	pg.base.child_performance[122402] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6321,11 +5198,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.child_performance
-
-	var_3_74[122403] = {
+	pg.base.child_performance[122403] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6340,11 +5213,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.child_performance
-
-	var_3_75[5] = {
+	pg.base.child_performance[5] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6369,11 +5238,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.child_performance
-
-	var_3_76[6] = {
+	pg.base.child_performance[6] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6388,11 +5253,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.child_performance
-
-	var_3_77[7] = {
+	pg.base.child_performance[7] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6407,11 +5268,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.child_performance
-
-	var_3_78[122601] = {
+	pg.base.child_performance[122601] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6436,11 +5293,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.child_performance
-
-	var_3_79[122602] = {
+	pg.base.child_performance[122602] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6455,11 +5308,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.child_performance
-
-	var_3_80[122603] = {
+	pg.base.child_performance[122603] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6474,11 +5323,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.child_performance
-
-	var_3_81[122701] = {
+	pg.base.child_performance[122701] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6503,11 +5348,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.child_performance
-
-	var_3_82[122702] = {
+	pg.base.child_performance[122702] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6522,11 +5363,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.child_performance
-
-	var_3_83[122703] = {
+	pg.base.child_performance[122703] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6541,11 +5378,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.child_performance
-
-	var_3_84[130101] = {
+	pg.base.child_performance[130101] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6570,11 +5403,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.child_performance
-
-	var_3_85[130102] = {
+	pg.base.child_performance[130102] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6589,11 +5418,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.child_performance
-
-	var_3_86[130103] = {
+	pg.base.child_performance[130103] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6608,11 +5433,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.child_performance
-
-	var_3_87[130104] = {
+	pg.base.child_performance[130104] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6627,11 +5448,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.child_performance
-
-	var_3_88[130105] = {
+	pg.base.child_performance[130105] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6646,11 +5463,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.child_performance
-
-	var_3_89[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6675,11 +5488,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.child_performance
-
-	var_3_90[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6694,11 +5503,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.child_performance
-
-	var_3_91[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6713,11 +5518,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.child_performance
-
-	var_3_92[28] = {
+	pg.base.child_performance[28] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6732,11 +5533,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.child_performance
-
-	var_3_93[29] = {
+	pg.base.child_performance[29] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6751,11 +5548,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.child_performance
-
-	var_3_94[130301] = {
+	pg.base.child_performance[130301] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6780,11 +5573,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.child_performance
-
-	var_3_95[130302] = {
+	pg.base.child_performance[130302] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6799,11 +5588,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.child_performance
-
-	var_3_96[130303] = {
+	pg.base.child_performance[130303] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6818,11 +5603,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.child_performance
-
-	var_3_97[0] = {
+	pg.base.child_performance[0] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6837,11 +5618,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.child_performance
-
-	var_3_98[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6856,8 +5633,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_3_98
-	var_3_98.base.child_performance[130401] = {
+	pg.base.child_performance[130401] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6886,11 +5662,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.child_performance
-
-	var_4_0[130402] = {
+	pg.base.child_performance[130402] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6905,11 +5677,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.child_performance
-
-	var_4_1[130403] = {
+	pg.base.child_performance[130403] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6924,11 +5692,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.child_performance
-
-	var_4_2[130404] = {
+	pg.base.child_performance[130404] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6943,11 +5707,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.child_performance
-
-	var_4_3[130405] = {
+	pg.base.child_performance[130405] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -6962,11 +5722,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.child_performance
-
-	var_4_4[130501] = {
+	pg.base.child_performance[130501] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -6991,11 +5747,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.child_performance
-
-	var_4_5[130502] = {
+	pg.base.child_performance[130502] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7010,11 +5762,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.child_performance
-
-	var_4_6[130503] = {
+	pg.base.child_performance[130503] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7029,11 +5777,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.child_performance
-
-	var_4_7[130504] = {
+	pg.base.child_performance[130504] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7048,11 +5792,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.child_performance
-
-	var_4_8[130505] = {
+	pg.base.child_performance[130505] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7067,11 +5807,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.child_performance
-
-	var_4_9[130601] = {
+	pg.base.child_performance[130601] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7096,11 +5832,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.child_performance
-
-	var_4_10[130602] = {
+	pg.base.child_performance[130602] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7115,11 +5847,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.child_performance
-
-	var_4_11[130603] = {
+	pg.base.child_performance[130603] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7134,11 +5862,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.child_performance
-
-	var_4_12[130604] = {
+	pg.base.child_performance[130604] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7153,11 +5877,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.child_performance
-
-	var_4_13[130605] = {
+	pg.base.child_performance[130605] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7172,11 +5892,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.child_performance
-
-	var_4_14[13] = {
+	pg.base.child_performance[13] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7201,11 +5917,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.child_performance
-
-	var_4_15[14] = {
+	pg.base.child_performance[14] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7220,11 +5932,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.child_performance
-
-	var_4_16[15] = {
+	pg.base.child_performance[15] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7239,11 +5947,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.child_performance
-
-	var_4_17[16] = {
+	pg.base.child_performance[16] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7258,11 +5962,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.child_performance
-
-	var_4_18[17] = {
+	pg.base.child_performance[17] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7277,11 +5977,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.child_performance
-
-	var_4_19[130801] = {
+	pg.base.child_performance[130801] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7306,11 +6002,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.child_performance
-
-	var_4_20[130802] = {
+	pg.base.child_performance[130802] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7325,11 +6017,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.child_performance
-
-	var_4_21[130803] = {
+	pg.base.child_performance[130803] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7344,11 +6032,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.child_performance
-
-	var_4_22[130804] = {
+	pg.base.child_performance[130804] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7363,11 +6047,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.child_performance
-
-	var_4_23[130805] = {
+	pg.base.child_performance[130805] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7382,11 +6062,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.child_performance
-
-	var_4_24[130901] = {
+	pg.base.child_performance[130901] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7411,11 +6087,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.child_performance
-
-	var_4_25[130902] = {
+	pg.base.child_performance[130902] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7430,11 +6102,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.child_performance
-
-	var_4_26[130903] = {
+	pg.base.child_performance[130903] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7449,11 +6117,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.child_performance
-
-	var_4_27[130904] = {
+	pg.base.child_performance[130904] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7468,11 +6132,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.child_performance
-
-	var_4_28[130905] = {
+	pg.base.child_performance[130905] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7487,11 +6147,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.child_performance
-
-	var_4_29[131001] = {
+	pg.base.child_performance[131001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7516,11 +6172,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.child_performance
-
-	var_4_30[131002] = {
+	pg.base.child_performance[131002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7535,11 +6187,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.child_performance
-
-	var_4_31[131003] = {
+	pg.base.child_performance[131003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7554,11 +6202,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.child_performance
-
-	var_4_32[131004] = {
+	pg.base.child_performance[131004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7573,11 +6217,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.child_performance
-
-	var_4_33[131005] = {
+	pg.base.child_performance[131005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7592,11 +6232,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.child_performance
-
-	var_4_34[29] = {
+	pg.base.child_performance[29] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7621,11 +6257,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.child_performance
-
-	var_4_35[30] = {
+	pg.base.child_performance[30] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7640,11 +6272,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.child_performance
-
-	var_4_36[31] = {
+	pg.base.child_performance[31] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7659,11 +6287,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.child_performance
-
-	var_4_37[131104] = {
+	pg.base.child_performance[131104] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7678,11 +6302,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.child_performance
-
-	var_4_38[131105] = {
+	pg.base.child_performance[131105] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7697,11 +6317,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.child_performance
-
-	var_4_39[140101] = {
+	pg.base.child_performance[140101] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -7726,11 +6342,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.child_performance
-
-	var_4_40[140102] = {
+	pg.base.child_performance[140102] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7745,11 +6357,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.child_performance
-
-	var_4_41[140103] = {
+	pg.base.child_performance[140103] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7764,11 +6372,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.child_performance
-
-	var_4_42[140104] = {
+	pg.base.child_performance[140104] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7783,11 +6387,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.child_performance
-
-	var_4_43[140105] = {
+	pg.base.child_performance[140105] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7802,11 +6402,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.child_performance
-
-	var_4_44[140106] = {
+	pg.base.child_performance[140106] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7821,11 +6417,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.child_performance
-
-	var_4_45[140107] = {
+	pg.base.child_performance[140107] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7840,11 +6432,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.child_performance
-
-	var_4_46[140108] = {
+	pg.base.child_performance[140108] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7859,11 +6447,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.child_performance
-
-	var_4_47[140109] = {
+	pg.base.child_performance[140109] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7878,11 +6462,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.child_performance
-
-	var_4_48[140110] = {
+	pg.base.child_performance[140110] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7897,11 +6477,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.child_performance
-
-	var_4_49[140111] = {
+	pg.base.child_performance[140111] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7916,11 +6492,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.child_performance
-
-	var_4_50[140112] = {
+	pg.base.child_performance[140112] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7935,11 +6507,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.child_performance
-
-	var_4_51[140113] = {
+	pg.base.child_performance[140113] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7954,11 +6522,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.child_performance
-
-	var_4_52[140114] = {
+	pg.base.child_performance[140114] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7973,11 +6537,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.child_performance
-
-	var_4_53[140115] = {
+	pg.base.child_performance[140115] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -7992,11 +6552,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.child_performance
-
-	var_4_54[140116] = {
+	pg.base.child_performance[140116] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8011,11 +6567,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.child_performance
-
-	var_4_55[140118] = {
+	pg.base.child_performance[140118] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8030,11 +6582,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.child_performance
-
-	var_4_56[140119] = {
+	pg.base.child_performance[140119] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8049,11 +6597,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.child_performance
-
-	var_4_57[140120] = {
+	pg.base.child_performance[140120] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8068,11 +6612,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.child_performance
-
-	var_4_58[140121] = {
+	pg.base.child_performance[140121] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8087,11 +6627,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.child_performance
-
-	var_4_59[140122] = {
+	pg.base.child_performance[140122] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8106,11 +6642,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.child_performance
-
-	var_4_60[140123] = {
+	pg.base.child_performance[140123] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8125,11 +6657,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.child_performance
-
-	var_4_61[140124] = {
+	pg.base.child_performance[140124] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8144,11 +6672,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.child_performance
-
-	var_4_62[140125] = {
+	pg.base.child_performance[140125] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8163,11 +6687,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.child_performance
-
-	var_4_63[140126] = {
+	pg.base.child_performance[140126] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8182,11 +6702,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.child_performance
-
-	var_4_64[140127] = {
+	pg.base.child_performance[140127] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8201,11 +6717,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.child_performance
-
-	var_4_65[140128] = {
+	pg.base.child_performance[140128] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8220,11 +6732,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.child_performance
-
-	var_4_66[140130] = {
+	pg.base.child_performance[140130] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8239,11 +6747,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.child_performance
-
-	var_4_67[140131] = {
+	pg.base.child_performance[140131] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8258,11 +6762,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.child_performance
-
-	var_4_68[140132] = {
+	pg.base.child_performance[140132] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8277,11 +6777,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.child_performance
-
-	var_4_69[140134] = {
+	pg.base.child_performance[140134] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8296,11 +6792,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.child_performance
-
-	var_4_70[140135] = {
+	pg.base.child_performance[140135] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8315,11 +6807,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.child_performance
-
-	var_4_71[150001] = {
+	pg.base.child_performance[150001] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8334,11 +6822,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.child_performance
-
-	var_4_72[150002] = {
+	pg.base.child_performance[150002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8353,11 +6837,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.child_performance
-
-	var_4_73[150003] = {
+	pg.base.child_performance[150003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8372,11 +6852,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.child_performance
-
-	var_4_74[150004] = {
+	pg.base.child_performance[150004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8391,11 +6867,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.child_performance
-
-	var_4_75[150005] = {
+	pg.base.child_performance[150005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8410,11 +6882,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.child_performance
-
-	var_4_76[150006] = {
+	pg.base.child_performance[150006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8429,11 +6897,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.child_performance
-
-	var_4_77[150007] = {
+	pg.base.child_performance[150007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8448,11 +6912,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.child_performance
-
-	var_4_78[150008] = {
+	pg.base.child_performance[150008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8467,11 +6927,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.child_performance
-
-	var_4_79[150009] = {
+	pg.base.child_performance[150009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8486,11 +6942,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.child_performance
-
-	var_4_80[150010] = {
+	pg.base.child_performance[150010] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8505,11 +6957,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.child_performance
-
-	var_4_81[150011] = {
+	pg.base.child_performance[150011] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8524,11 +6972,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.child_performance
-
-	var_4_82[150012] = {
+	pg.base.child_performance[150012] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8543,11 +6987,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.child_performance
-
-	var_4_83[150013] = {
+	pg.base.child_performance[150013] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8562,11 +7002,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.child_performance
-
-	var_4_84[150014] = {
+	pg.base.child_performance[150014] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8581,11 +7017,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.child_performance
-
-	var_4_85[150015] = {
+	pg.base.child_performance[150015] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8600,11 +7032,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.child_performance
-
-	var_4_86[0] = {
+	pg.base.child_performance[0] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8619,11 +7047,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.child_performance
-
-	var_4_87[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8638,11 +7062,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.child_performance
-
-	var_4_88[2] = {
+	pg.base.child_performance[2] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8657,11 +7077,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.child_performance
-
-	var_4_89[3] = {
+	pg.base.child_performance[3] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8676,11 +7092,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.child_performance
-
-	var_4_90[1101001] = {
+	pg.base.child_performance[1101001] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8695,11 +7107,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.child_performance
-
-	var_4_91[1101002] = {
+	pg.base.child_performance[1101002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8714,11 +7122,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.child_performance
-
-	var_4_92[1102001] = {
+	pg.base.child_performance[1102001] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8733,11 +7137,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.child_performance
-
-	var_4_93[1102002] = {
+	pg.base.child_performance[1102002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8752,11 +7152,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.child_performance
-
-	var_4_94[1102003] = {
+	pg.base.child_performance[1102003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8771,11 +7167,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.child_performance
-
-	var_4_95[1102004] = {
+	pg.base.child_performance[1102004] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8790,11 +7182,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.child_performance
-
-	var_4_96[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -8810,11 +7198,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.child_performance
-
-	var_4_97[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8829,11 +7213,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.child_performance
-
-	var_4_98[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8848,8 +7228,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_4_98
-	var_4_98.base.child_performance[28] = {
+	pg.base.child_performance[28] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8868,11 +7247,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.child_performance
-
-	var_5_0[29] = {
+	pg.base.child_performance[29] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8887,11 +7262,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.child_performance
-
-	var_5_1[30] = {
+	pg.base.child_performance[30] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8906,11 +7277,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.child_performance
-
-	var_5_2[31] = {
+	pg.base.child_performance[31] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8925,11 +7292,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.child_performance
-
-	var_5_3[1103008] = {
+	pg.base.child_performance[1103008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -8944,11 +7307,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.child_performance
-
-	var_5_4[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -8964,11 +7323,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.child_performance
-
-	var_5_5[2] = {
+	pg.base.child_performance[2] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -8983,11 +7338,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.child_performance
-
-	var_5_6[3] = {
+	pg.base.child_performance[3] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9002,11 +7353,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.child_performance
-
-	var_5_7[1105001] = {
+	pg.base.child_performance[1105001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -9031,11 +7378,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.child_performance
-
-	var_5_8[1105002] = {
+	pg.base.child_performance[1105002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9050,11 +7393,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.child_performance
-
-	var_5_9[1105003] = {
+	pg.base.child_performance[1105003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9069,11 +7408,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.child_performance
-
-	var_5_10[1105004] = {
+	pg.base.child_performance[1105004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9088,11 +7423,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.child_performance
-
-	var_5_11[1105005] = {
+	pg.base.child_performance[1105005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9107,11 +7438,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.child_performance
-
-	var_5_12[1105006] = {
+	pg.base.child_performance[1105006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9126,11 +7453,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.child_performance
-
-	var_5_13[1105007] = {
+	pg.base.child_performance[1105007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9145,11 +7468,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.child_performance
-
-	var_5_14[1106001] = {
+	pg.base.child_performance[1106001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -9174,11 +7493,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.child_performance
-
-	var_5_15[1106002] = {
+	pg.base.child_performance[1106002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9193,11 +7508,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.child_performance
-
-	var_5_16[1106003] = {
+	pg.base.child_performance[1106003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9212,11 +7523,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.child_performance
-
-	var_5_17[1106004] = {
+	pg.base.child_performance[1106004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9231,11 +7538,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.child_performance
-
-	var_5_18[1106005] = {
+	pg.base.child_performance[1106005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9250,11 +7553,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.child_performance
-
-	var_5_19[1106006] = {
+	pg.base.child_performance[1106006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9269,11 +7568,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.child_performance
-
-	var_5_20[1106007] = {
+	pg.base.child_performance[1106007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9288,11 +7583,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.child_performance
-
-	var_5_21[1107001] = {
+	pg.base.child_performance[1107001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -9317,11 +7608,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.child_performance
-
-	var_5_22[1107002] = {
+	pg.base.child_performance[1107002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9336,11 +7623,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.child_performance
-
-	var_5_23[1107003] = {
+	pg.base.child_performance[1107003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9355,11 +7638,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.child_performance
-
-	var_5_24[1107004] = {
+	pg.base.child_performance[1107004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9374,11 +7653,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.child_performance
-
-	var_5_25[1107005] = {
+	pg.base.child_performance[1107005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9393,11 +7668,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.child_performance
-
-	var_5_26[1107006] = {
+	pg.base.child_performance[1107006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9412,11 +7683,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.child_performance
-
-	var_5_27[1107007] = {
+	pg.base.child_performance[1107007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9431,11 +7698,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.child_performance
-
-	var_5_28[1112001] = {
+	pg.base.child_performance[1112001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -9460,11 +7723,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.child_performance
-
-	var_5_29[1112002] = {
+	pg.base.child_performance[1112002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9479,11 +7738,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.child_performance
-
-	var_5_30[1112003] = {
+	pg.base.child_performance[1112003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9498,11 +7753,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.child_performance
-
-	var_5_31[1112004] = {
+	pg.base.child_performance[1112004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9517,11 +7768,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.child_performance
-
-	var_5_32[1112005] = {
+	pg.base.child_performance[1112005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9536,11 +7783,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.child_performance
-
-	var_5_33[1112006] = {
+	pg.base.child_performance[1112006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9555,11 +7798,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.child_performance
-
-	var_5_34[1112007] = {
+	pg.base.child_performance[1112007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9574,11 +7813,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.child_performance
-
-	var_5_35[1112008] = {
+	pg.base.child_performance[1112008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9593,11 +7828,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.child_performance
-
-	var_5_36[1112009] = {
+	pg.base.child_performance[1112009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9612,11 +7843,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.child_performance
-
-	var_5_37[1112010] = {
+	pg.base.child_performance[1112010] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9631,11 +7858,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.child_performance
-
-	var_5_38[1112011] = {
+	pg.base.child_performance[1112011] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9650,11 +7873,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.child_performance
-
-	var_5_39[1112012] = {
+	pg.base.child_performance[1112012] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9669,11 +7888,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.child_performance
-
-	var_5_40[1112013] = {
+	pg.base.child_performance[1112013] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9688,11 +7903,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.child_performance
-
-	var_5_41[1112014] = {
+	pg.base.child_performance[1112014] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9707,11 +7918,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.child_performance
-
-	var_5_42[1112015] = {
+	pg.base.child_performance[1112015] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9726,11 +7933,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.child_performance
-
-	var_5_43[1201001] = {
+	pg.base.child_performance[1201001] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -9745,11 +7948,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.child_performance
-
-	var_5_44[1202001] = {
+	pg.base.child_performance[1202001] = {
 		dialogue_status = 0,
 		type = 1,
 		story_status = 0,
@@ -9774,11 +7973,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.child_performance
-
-	var_5_45[1202002] = {
+	pg.base.child_performance[1202002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9793,11 +7988,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.child_performance
-
-	var_5_46[1202003] = {
+	pg.base.child_performance[1202003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9812,11 +8003,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.child_performance
-
-	var_5_47[1202004] = {
+	pg.base.child_performance[1202004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9831,11 +8018,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.child_performance
-
-	var_5_48[1202005] = {
+	pg.base.child_performance[1202005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9850,11 +8033,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.child_performance
-
-	var_5_49[1202006] = {
+	pg.base.child_performance[1202006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9869,11 +8048,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.child_performance
-
-	var_5_50[1202007] = {
+	pg.base.child_performance[1202007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9888,11 +8063,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.child_performance
-
-	var_5_51[1202008] = {
+	pg.base.child_performance[1202008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9907,11 +8078,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.child_performance
-
-	var_5_52[1204001] = {
+	pg.base.child_performance[1204001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -9927,11 +8094,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.child_performance
-
-	var_5_53[1204002] = {
+	pg.base.child_performance[1204002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9946,11 +8109,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.child_performance
-
-	var_5_54[1204003] = {
+	pg.base.child_performance[1204003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9965,11 +8124,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.child_performance
-
-	var_5_55[1204004] = {
+	pg.base.child_performance[1204004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -9984,11 +8139,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.child_performance
-
-	var_5_56[1204005] = {
+	pg.base.child_performance[1204005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10003,11 +8154,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.child_performance
-
-	var_5_57[1204006] = {
+	pg.base.child_performance[1204006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10022,11 +8169,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.child_performance
-
-	var_5_58[1204007] = {
+	pg.base.child_performance[1204007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10041,11 +8184,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.child_performance
-
-	var_5_59[1204008] = {
+	pg.base.child_performance[1204008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10060,11 +8199,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.child_performance
-
-	var_5_60[1204009] = {
+	pg.base.child_performance[1204009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10079,11 +8214,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.child_performance
-
-	var_5_61[1204010] = {
+	pg.base.child_performance[1204010] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10098,11 +8229,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.child_performance
-
-	var_5_62[1204011] = {
+	pg.base.child_performance[1204011] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10117,11 +8244,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.child_performance
-
-	var_5_63[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -10137,11 +8260,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.child_performance
-
-	var_5_64[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10156,11 +8275,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.child_performance
-
-	var_5_65[11] = {
+	pg.base.child_performance[11] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10175,11 +8290,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.child_performance
-
-	var_5_66[12] = {
+	pg.base.child_performance[12] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10194,11 +8305,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.child_performance
-
-	var_5_67[13] = {
+	pg.base.child_performance[13] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10213,11 +8320,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.child_performance
-
-	var_5_68[14] = {
+	pg.base.child_performance[14] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10232,11 +8335,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.child_performance
-
-	var_5_69[15] = {
+	pg.base.child_performance[15] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10251,11 +8350,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.child_performance
-
-	var_5_70[1206001] = {
+	pg.base.child_performance[1206001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -10271,11 +8366,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.child_performance
-
-	var_5_71[1206002] = {
+	pg.base.child_performance[1206002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10290,11 +8381,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.child_performance
-
-	var_5_72[1206003] = {
+	pg.base.child_performance[1206003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10309,11 +8396,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.child_performance
-
-	var_5_73[1206004] = {
+	pg.base.child_performance[1206004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10328,11 +8411,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.child_performance
-
-	var_5_74[1206005] = {
+	pg.base.child_performance[1206005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10347,11 +8426,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.child_performance
-
-	var_5_75[1206006] = {
+	pg.base.child_performance[1206006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10366,11 +8441,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.child_performance
-
-	var_5_76[1206007] = {
+	pg.base.child_performance[1206007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10385,11 +8456,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.child_performance
-
-	var_5_77[1207001] = {
+	pg.base.child_performance[1207001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -10405,11 +8472,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.child_performance
-
-	var_5_78[1207002] = {
+	pg.base.child_performance[1207002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10424,11 +8487,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.child_performance
-
-	var_5_79[1207003] = {
+	pg.base.child_performance[1207003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10443,11 +8502,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.child_performance
-
-	var_5_80[1207004] = {
+	pg.base.child_performance[1207004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10462,11 +8517,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.child_performance
-
-	var_5_81[1207005] = {
+	pg.base.child_performance[1207005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10481,11 +8532,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.child_performance
-
-	var_5_82[1207006] = {
+	pg.base.child_performance[1207006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10500,11 +8547,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.child_performance
-
-	var_5_83[1207007] = {
+	pg.base.child_performance[1207007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10519,11 +8562,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.child_performance
-
-	var_5_84[1211001] = {
+	pg.base.child_performance[1211001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -10539,11 +8578,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.child_performance
-
-	var_5_85[1211002] = {
+	pg.base.child_performance[1211002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10558,11 +8593,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.child_performance
-
-	var_5_86[1211003] = {
+	pg.base.child_performance[1211003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10577,11 +8608,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.child_performance
-
-	var_5_87[1211004] = {
+	pg.base.child_performance[1211004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10596,11 +8623,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.child_performance
-
-	var_5_88[1211005] = {
+	pg.base.child_performance[1211005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10615,11 +8638,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.child_performance
-
-	var_5_89[1211006] = {
+	pg.base.child_performance[1211006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10634,11 +8653,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.child_performance
-
-	var_5_90[1211007] = {
+	pg.base.child_performance[1211007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10653,11 +8668,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.child_performance
-
-	var_5_91[0] = {
+	pg.base.child_performance[0] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10672,11 +8683,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.child_performance
-
-	var_5_92[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10691,11 +8698,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.child_performance
-
-	var_5_93[2] = {
+	pg.base.child_performance[2] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10710,11 +8713,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.child_performance
-
-	var_5_94[1212001] = {
+	pg.base.child_performance[1212001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -10730,11 +8729,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.child_performance
-
-	var_5_95[1212002] = {
+	pg.base.child_performance[1212002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10749,11 +8744,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.child_performance
-
-	var_5_96[1212003] = {
+	pg.base.child_performance[1212003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10768,11 +8759,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.child_performance
-
-	var_5_97[1212004] = {
+	pg.base.child_performance[1212004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10787,11 +8774,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.child_performance
-
-	var_5_98[1212005] = {
+	pg.base.child_performance[1212005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10806,8 +8789,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_5_98
-	var_5_98.base.child_performance[1212006] = {
+	pg.base.child_performance[1212006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10826,11 +8808,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.child_performance
-
-	var_6_0[1212007] = {
+	pg.base.child_performance[1212007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10845,11 +8823,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.child_performance
-
-	var_6_1[1212008] = {
+	pg.base.child_performance[1212008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10864,11 +8838,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.child_performance
-
-	var_6_2[1213001] = {
+	pg.base.child_performance[1213001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -10884,11 +8854,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.child_performance
-
-	var_6_3[1213002] = {
+	pg.base.child_performance[1213002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10903,11 +8869,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.child_performance
-
-	var_6_4[1213003] = {
+	pg.base.child_performance[1213003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10922,11 +8884,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.child_performance
-
-	var_6_5[1213004] = {
+	pg.base.child_performance[1213004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10941,11 +8899,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.child_performance
-
-	var_6_6[1213005] = {
+	pg.base.child_performance[1213005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -10960,11 +8914,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.child_performance
-
-	var_6_7[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10979,11 +8929,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.child_performance
-
-	var_6_8[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -10998,11 +8944,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.child_performance
-
-	var_6_9[1302001] = {
+	pg.base.child_performance[1302001] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -11017,11 +8959,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.child_performance
-
-	var_6_10[1304001] = {
+	pg.base.child_performance[1304001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11037,11 +8975,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.child_performance
-
-	var_6_11[1304002] = {
+	pg.base.child_performance[1304002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11056,11 +8990,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.child_performance
-
-	var_6_12[1304003] = {
+	pg.base.child_performance[1304003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11075,11 +9005,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.child_performance
-
-	var_6_13[1304004] = {
+	pg.base.child_performance[1304004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11094,11 +9020,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.child_performance
-
-	var_6_14[1304005] = {
+	pg.base.child_performance[1304005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11113,11 +9035,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.child_performance
-
-	var_6_15[1304006] = {
+	pg.base.child_performance[1304006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11132,11 +9050,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.child_performance
-
-	var_6_16[1304007] = {
+	pg.base.child_performance[1304007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11151,11 +9065,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.child_performance
-
-	var_6_17[1304008] = {
+	pg.base.child_performance[1304008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11170,11 +9080,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.child_performance
-
-	var_6_18[1304009] = {
+	pg.base.child_performance[1304009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11189,11 +9095,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.child_performance
-
-	var_6_19[1304010] = {
+	pg.base.child_performance[1304010] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11208,11 +9110,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.child_performance
-
-	var_6_20[1304011] = {
+	pg.base.child_performance[1304011] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11227,11 +9125,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.child_performance
-
-	var_6_21[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11247,11 +9141,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.child_performance
-
-	var_6_22[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11266,11 +9156,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.child_performance
-
-	var_6_23[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11285,11 +9171,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.child_performance
-
-	var_6_24[28] = {
+	pg.base.child_performance[28] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11304,11 +9186,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.child_performance
-
-	var_6_25[1] = {
+	pg.base.child_performance[1] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11324,11 +9202,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.child_performance
-
-	var_6_26[2] = {
+	pg.base.child_performance[2] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11343,11 +9217,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.child_performance
-
-	var_6_27[3] = {
+	pg.base.child_performance[3] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11362,11 +9232,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.child_performance
-
-	var_6_28[4] = {
+	pg.base.child_performance[4] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11381,11 +9247,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.child_performance
-
-	var_6_29[1313001] = {
+	pg.base.child_performance[1313001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11401,11 +9263,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.child_performance
-
-	var_6_30[1313002] = {
+	pg.base.child_performance[1313002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11420,11 +9278,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.child_performance
-
-	var_6_31[1313003] = {
+	pg.base.child_performance[1313003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11439,11 +9293,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.child_performance
-
-	var_6_32[1313004] = {
+	pg.base.child_performance[1313004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11458,11 +9308,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.child_performance
-
-	var_6_33[1314001] = {
+	pg.base.child_performance[1314001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11478,11 +9324,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.child_performance
-
-	var_6_34[1314002] = {
+	pg.base.child_performance[1314002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11497,11 +9339,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.child_performance
-
-	var_6_35[1314003] = {
+	pg.base.child_performance[1314003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11516,11 +9354,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.child_performance
-
-	var_6_36[1314004] = {
+	pg.base.child_performance[1314004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11535,11 +9369,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.child_performance
-
-	var_6_37[1315001] = {
+	pg.base.child_performance[1315001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11555,11 +9385,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.child_performance
-
-	var_6_38[1315002] = {
+	pg.base.child_performance[1315002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11574,11 +9400,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.child_performance
-
-	var_6_39[1315003] = {
+	pg.base.child_performance[1315003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11593,11 +9415,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.child_performance
-
-	var_6_40[1315004] = {
+	pg.base.child_performance[1315004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11612,11 +9430,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.child_performance
-
-	var_6_41[1316001] = {
+	pg.base.child_performance[1316001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11632,11 +9446,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.child_performance
-
-	var_6_42[1316002] = {
+	pg.base.child_performance[1316002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11651,11 +9461,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.child_performance
-
-	var_6_43[1316003] = {
+	pg.base.child_performance[1316003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11670,11 +9476,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.child_performance
-
-	var_6_44[1316004] = {
+	pg.base.child_performance[1316004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11689,11 +9491,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.child_performance
-
-	var_6_45[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11709,11 +9507,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.child_performance
-
-	var_6_46[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11728,11 +9522,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.child_performance
-
-	var_6_47[11] = {
+	pg.base.child_performance[11] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11747,11 +9537,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.child_performance
-
-	var_6_48[1318001] = {
+	pg.base.child_performance[1318001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11767,11 +9553,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.child_performance
-
-	var_6_49[1318002] = {
+	pg.base.child_performance[1318002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11786,11 +9568,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.child_performance
-
-	var_6_50[1318003] = {
+	pg.base.child_performance[1318003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11805,11 +9583,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.child_performance
-
-	var_6_51[1319001] = {
+	pg.base.child_performance[1319001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11825,11 +9599,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.child_performance
-
-	var_6_52[1319002] = {
+	pg.base.child_performance[1319002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11844,11 +9614,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.child_performance
-
-	var_6_53[1319003] = {
+	pg.base.child_performance[1319003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11863,11 +9629,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.child_performance
-
-	var_6_54[1320001] = {
+	pg.base.child_performance[1320001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11883,11 +9645,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.child_performance
-
-	var_6_55[1320002] = {
+	pg.base.child_performance[1320002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11902,11 +9660,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.child_performance
-
-	var_6_56[1320003] = {
+	pg.base.child_performance[1320003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11921,11 +9675,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.child_performance
-
-	var_6_57[1305001] = {
+	pg.base.child_performance[1305001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -11941,11 +9691,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.child_performance
-
-	var_6_58[1305002] = {
+	pg.base.child_performance[1305002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -11960,11 +9706,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.child_performance
-
-	var_6_59[1305003] = {
+	pg.base.child_performance[1305003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -11979,11 +9721,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.child_performance
-
-	var_6_60[1305004] = {
+	pg.base.child_performance[1305004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -11998,11 +9736,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.child_performance
-
-	var_6_61[1305005] = {
+	pg.base.child_performance[1305005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12017,11 +9751,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.child_performance
-
-	var_6_62[1305006] = {
+	pg.base.child_performance[1305006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12036,11 +9766,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.child_performance
-
-	var_6_63[1305007] = {
+	pg.base.child_performance[1305007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12055,11 +9781,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.child_performance
-
-	var_6_64[17] = {
+	pg.base.child_performance[17] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12075,11 +9797,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.child_performance
-
-	var_6_65[18] = {
+	pg.base.child_performance[18] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12094,11 +9812,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.child_performance
-
-	var_6_66[19] = {
+	pg.base.child_performance[19] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -12113,11 +9827,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.child_performance
-
-	var_6_67[1401001] = {
+	pg.base.child_performance[1401001] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -12132,11 +9842,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.child_performance
-
-	var_6_68[1403001] = {
+	pg.base.child_performance[1403001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12152,11 +9858,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.child_performance
-
-	var_6_69[1403002] = {
+	pg.base.child_performance[1403002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12171,11 +9873,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.child_performance
-
-	var_6_70[1403003] = {
+	pg.base.child_performance[1403003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12190,11 +9888,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.child_performance
-
-	var_6_71[1403004] = {
+	pg.base.child_performance[1403004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12209,11 +9903,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.child_performance
-
-	var_6_72[1403005] = {
+	pg.base.child_performance[1403005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12228,11 +9918,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.child_performance
-
-	var_6_73[1403006] = {
+	pg.base.child_performance[1403006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12247,11 +9933,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.child_performance
-
-	var_6_74[1403007] = {
+	pg.base.child_performance[1403007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12266,11 +9948,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.child_performance
-
-	var_6_75[0] = {
+	pg.base.child_performance[0] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12285,11 +9963,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.child_performance
-
-	var_6_76[1404001] = {
+	pg.base.child_performance[1404001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12305,11 +9979,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.child_performance
-
-	var_6_77[1404002] = {
+	pg.base.child_performance[1404002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12324,11 +9994,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.child_performance
-
-	var_6_78[1404003] = {
+	pg.base.child_performance[1404003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12343,11 +10009,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.child_performance
-
-	var_6_79[1404004] = {
+	pg.base.child_performance[1404004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12362,11 +10024,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.child_performance
-
-	var_6_80[1404005] = {
+	pg.base.child_performance[1404005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12381,11 +10039,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.child_performance
-
-	var_6_81[1404006] = {
+	pg.base.child_performance[1404006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12400,11 +10054,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.child_performance
-
-	var_6_82[1404007] = {
+	pg.base.child_performance[1404007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12419,11 +10069,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.child_performance
-
-	var_6_83[1405001] = {
+	pg.base.child_performance[1405001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12439,11 +10085,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.child_performance
-
-	var_6_84[1405002] = {
+	pg.base.child_performance[1405002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12458,11 +10100,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.child_performance
-
-	var_6_85[1405003] = {
+	pg.base.child_performance[1405003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12477,11 +10115,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.child_performance
-
-	var_6_86[1405004] = {
+	pg.base.child_performance[1405004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12496,11 +10130,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.child_performance
-
-	var_6_87[1405005] = {
+	pg.base.child_performance[1405005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12515,11 +10145,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.child_performance
-
-	var_6_88[1405006] = {
+	pg.base.child_performance[1405006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12534,11 +10160,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.child_performance
-
-	var_6_89[1405007] = {
+	pg.base.child_performance[1405007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12553,11 +10175,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.child_performance
-
-	var_6_90[1406001] = {
+	pg.base.child_performance[1406001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12573,11 +10191,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.child_performance
-
-	var_6_91[1406002] = {
+	pg.base.child_performance[1406002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12592,11 +10206,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.child_performance
-
-	var_6_92[1406003] = {
+	pg.base.child_performance[1406003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12611,11 +10221,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.child_performance
-
-	var_6_93[1406004] = {
+	pg.base.child_performance[1406004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12630,11 +10236,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.child_performance
-
-	var_6_94[1406005] = {
+	pg.base.child_performance[1406005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12649,11 +10251,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.child_performance
-
-	var_6_95[1406006] = {
+	pg.base.child_performance[1406006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12668,11 +10266,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.child_performance
-
-	var_6_96[1406007] = {
+	pg.base.child_performance[1406007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12687,11 +10281,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.child_performance
-
-	var_6_97[1411001] = {
+	pg.base.child_performance[1411001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12707,11 +10297,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.child_performance
-
-	var_6_98[1411002] = {
+	pg.base.child_performance[1411002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12726,8 +10312,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_6_98
-	var_6_98.base.child_performance[1412001] = {
+	pg.base.child_performance[1412001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12747,11 +10332,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.child_performance
-
-	var_7_0[1412002] = {
+	pg.base.child_performance[1412002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12766,11 +10347,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.child_performance
-
-	var_7_1[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12786,11 +10363,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.child_performance
-
-	var_7_2[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12805,11 +10378,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.child_performance
-
-	var_7_3[1414001] = {
+	pg.base.child_performance[1414001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12825,11 +10394,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.child_performance
-
-	var_7_4[1414002] = {
+	pg.base.child_performance[1414002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12844,11 +10409,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.child_performance
-
-	var_7_5[1415001] = {
+	pg.base.child_performance[1415001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12864,11 +10425,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.child_performance
-
-	var_7_6[1415002] = {
+	pg.base.child_performance[1415002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12883,11 +10440,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.child_performance
-
-	var_7_7[1416001] = {
+	pg.base.child_performance[1416001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12903,11 +10456,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.child_performance
-
-	var_7_8[1416002] = {
+	pg.base.child_performance[1416002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12922,11 +10471,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.child_performance
-
-	var_7_9[1417001] = {
+	pg.base.child_performance[1417001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12942,11 +10487,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.child_performance
-
-	var_7_10[1417002] = {
+	pg.base.child_performance[1417002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -12961,11 +10502,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.child_performance
-
-	var_7_11[17] = {
+	pg.base.child_performance[17] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -12981,11 +10518,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.child_performance
-
-	var_7_12[18] = {
+	pg.base.child_performance[18] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13000,11 +10533,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.child_performance
-
-	var_7_13[1419001] = {
+	pg.base.child_performance[1419001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13020,11 +10549,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.child_performance
-
-	var_7_14[1419002] = {
+	pg.base.child_performance[1419002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13039,11 +10564,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.child_performance
-
-	var_7_15[1420001] = {
+	pg.base.child_performance[1420001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13059,11 +10580,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.child_performance
-
-	var_7_16[1420002] = {
+	pg.base.child_performance[1420002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13078,11 +10595,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.child_performance
-
-	var_7_17[1501001] = {
+	pg.base.child_performance[1501001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13098,11 +10611,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.child_performance
-
-	var_7_18[1501002] = {
+	pg.base.child_performance[1501002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13117,11 +10626,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.child_performance
-
-	var_7_19[1501003] = {
+	pg.base.child_performance[1501003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13136,11 +10641,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.child_performance
-
-	var_7_20[1501004] = {
+	pg.base.child_performance[1501004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13155,11 +10656,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.child_performance
-
-	var_7_21[1501005] = {
+	pg.base.child_performance[1501005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13174,11 +10671,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.child_performance
-
-	var_7_22[1501006] = {
+	pg.base.child_performance[1501006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13193,11 +10686,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.child_performance
-
-	var_7_23[1501007] = {
+	pg.base.child_performance[1501007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13212,11 +10701,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.child_performance
-
-	var_7_24[1501008] = {
+	pg.base.child_performance[1501008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13231,11 +10716,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.child_performance
-
-	var_7_25[1501009] = {
+	pg.base.child_performance[1501009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13250,11 +10731,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.child_performance
-
-	var_7_26[1501010] = {
+	pg.base.child_performance[1501010] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13269,11 +10746,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.child_performance
-
-	var_7_27[1502001] = {
+	pg.base.child_performance[1502001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13289,11 +10762,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.child_performance
-
-	var_7_28[1502002] = {
+	pg.base.child_performance[1502002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13308,11 +10777,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.child_performance
-
-	var_7_29[1502003] = {
+	pg.base.child_performance[1502003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13327,11 +10792,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.child_performance
-
-	var_7_30[1502004] = {
+	pg.base.child_performance[1502004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13346,11 +10807,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.child_performance
-
-	var_7_31[1502005] = {
+	pg.base.child_performance[1502005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13365,11 +10822,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.child_performance
-
-	var_7_32[1502006] = {
+	pg.base.child_performance[1502006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13384,11 +10837,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.child_performance
-
-	var_7_33[1502007] = {
+	pg.base.child_performance[1502007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13403,11 +10852,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.child_performance
-
-	var_7_34[1502008] = {
+	pg.base.child_performance[1502008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13422,11 +10867,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.child_performance
-
-	var_7_35[1502009] = {
+	pg.base.child_performance[1502009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13441,11 +10882,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.child_performance
-
-	var_7_36[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13461,11 +10898,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.child_performance
-
-	var_7_37[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13480,11 +10913,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.child_performance
-
-	var_7_38[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13499,11 +10928,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.child_performance
-
-	var_7_39[28] = {
+	pg.base.child_performance[28] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13518,11 +10943,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.child_performance
-
-	var_7_40[29] = {
+	pg.base.child_performance[29] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13537,11 +10958,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.child_performance
-
-	var_7_41[30] = {
+	pg.base.child_performance[30] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13556,11 +10973,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.child_performance
-
-	var_7_42[31] = {
+	pg.base.child_performance[31] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13575,11 +10988,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.child_performance
-
-	var_7_43[1503008] = {
+	pg.base.child_performance[1503008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13594,11 +11003,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.child_performance
-
-	var_7_44[1503009] = {
+	pg.base.child_performance[1503009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13613,11 +11018,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.child_performance
-
-	var_7_45[1601001] = {
+	pg.base.child_performance[1601001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13633,11 +11034,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.child_performance
-
-	var_7_46[1601002] = {
+	pg.base.child_performance[1601002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13652,11 +11049,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.child_performance
-
-	var_7_47[1601004] = {
+	pg.base.child_performance[1601004] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13672,11 +11065,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.child_performance
-
-	var_7_48[1601005] = {
+	pg.base.child_performance[1601005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13691,11 +11080,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.child_performance
-
-	var_7_49[1601007] = {
+	pg.base.child_performance[1601007] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13711,11 +11096,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.child_performance
-
-	var_7_50[1601008] = {
+	pg.base.child_performance[1601008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13730,11 +11111,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.child_performance
-
-	var_7_51[1602001] = {
+	pg.base.child_performance[1602001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13750,11 +11127,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.child_performance
-
-	var_7_52[1602002] = {
+	pg.base.child_performance[1602002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13769,11 +11142,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.child_performance
-
-	var_7_53[1602003] = {
+	pg.base.child_performance[1602003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13788,11 +11157,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.child_performance
-
-	var_7_54[1602004] = {
+	pg.base.child_performance[1602004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13807,11 +11172,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.child_performance
-
-	var_7_55[1602005] = {
+	pg.base.child_performance[1602005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13826,11 +11187,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.child_performance
-
-	var_7_56[1602006] = {
+	pg.base.child_performance[1602006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13845,11 +11202,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.child_performance
-
-	var_7_57[1602007] = {
+	pg.base.child_performance[1602007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13864,11 +11217,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.child_performance
-
-	var_7_58[1602008] = {
+	pg.base.child_performance[1602008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13883,11 +11232,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.child_performance
-
-	var_7_59[1602009] = {
+	pg.base.child_performance[1602009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13902,11 +11247,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.child_performance
-
-	var_7_60[1603001] = {
+	pg.base.child_performance[1603001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -13922,11 +11263,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.child_performance
-
-	var_7_61[1603002] = {
+	pg.base.child_performance[1603002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -13941,11 +11278,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.child_performance
-
-	var_7_62[1603003] = {
+	pg.base.child_performance[1603003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -13960,11 +11293,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.child_performance
-
-	var_7_63[1603004] = {
+	pg.base.child_performance[1603004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13979,11 +11308,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.child_performance
-
-	var_7_64[1603005] = {
+	pg.base.child_performance[1603005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -13998,11 +11323,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.child_performance
-
-	var_7_65[1603006] = {
+	pg.base.child_performance[1603006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14017,11 +11338,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.child_performance
-
-	var_7_66[1603007] = {
+	pg.base.child_performance[1603007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14036,11 +11353,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.child_performance
-
-	var_7_67[1604001] = {
+	pg.base.child_performance[1604001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14056,11 +11369,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.child_performance
-
-	var_7_68[1604002] = {
+	pg.base.child_performance[1604002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -14075,11 +11384,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.child_performance
-
-	var_7_69[1604003] = {
+	pg.base.child_performance[1604003] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -14094,11 +11399,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.child_performance
-
-	var_7_70[1604004] = {
+	pg.base.child_performance[1604004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14113,11 +11414,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.child_performance
-
-	var_7_71[1604005] = {
+	pg.base.child_performance[1604005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14132,11 +11429,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.child_performance
-
-	var_7_72[1604006] = {
+	pg.base.child_performance[1604006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14151,11 +11444,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.child_performance
-
-	var_7_73[1604007] = {
+	pg.base.child_performance[1604007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14170,11 +11459,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.child_performance
-
-	var_7_74[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14190,11 +11475,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.child_performance
-
-	var_7_75[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -14209,11 +11490,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.child_performance
-
-	var_7_76[11] = {
+	pg.base.child_performance[11] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -14228,11 +11505,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.child_performance
-
-	var_7_77[12] = {
+	pg.base.child_performance[12] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14247,11 +11520,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.child_performance
-
-	var_7_78[13] = {
+	pg.base.child_performance[13] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14266,11 +11535,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.child_performance
-
-	var_7_79[14] = {
+	pg.base.child_performance[14] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14285,11 +11550,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.child_performance
-
-	var_7_80[15] = {
+	pg.base.child_performance[15] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14304,11 +11565,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.child_performance
-
-	var_7_81[1606001] = {
+	pg.base.child_performance[1606001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14324,11 +11581,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.child_performance
-
-	var_7_82[1606002] = {
+	pg.base.child_performance[1606002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -14343,11 +11596,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.child_performance
-
-	var_7_83[1606003] = {
+	pg.base.child_performance[1606003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14362,11 +11611,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.child_performance
-
-	var_7_84[1606004] = {
+	pg.base.child_performance[1606004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14381,11 +11626,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.child_performance
-
-	var_7_85[1606005] = {
+	pg.base.child_performance[1606005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14400,11 +11641,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.child_performance
-
-	var_7_86[1606006] = {
+	pg.base.child_performance[1606006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14419,11 +11656,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.child_performance
-
-	var_7_87[1606007] = {
+	pg.base.child_performance[1606007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14438,11 +11671,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.child_performance
-
-	var_7_88[1606008] = {
+	pg.base.child_performance[1606008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14457,11 +11686,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.child_performance
-
-	var_7_89[9] = {
+	pg.base.child_performance[9] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14477,11 +11702,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.child_performance
-
-	var_7_90[10] = {
+	pg.base.child_performance[10] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14496,11 +11717,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.child_performance
-
-	var_7_91[11] = {
+	pg.base.child_performance[11] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14515,11 +11732,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.child_performance
-
-	var_7_92[12] = {
+	pg.base.child_performance[12] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14534,11 +11747,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.child_performance
-
-	var_7_93[13] = {
+	pg.base.child_performance[13] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14553,11 +11762,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.child_performance
-
-	var_7_94[14] = {
+	pg.base.child_performance[14] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14572,11 +11777,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.child_performance
-
-	var_7_95[15] = {
+	pg.base.child_performance[15] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14591,11 +11792,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.child_performance
-
-	var_7_96[16] = {
+	pg.base.child_performance[16] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14610,11 +11807,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.child_performance
-
-	var_7_97[17] = {
+	pg.base.child_performance[17] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14629,11 +11822,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.child_performance
-
-	var_7_98[1702001] = {
+	pg.base.child_performance[1702001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14649,8 +11838,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_7_98
-	var_7_98.base.child_performance[1702002] = {
+	pg.base.child_performance[1702002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14669,11 +11857,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.child_performance
-
-	var_8_0[1702003] = {
+	pg.base.child_performance[1702003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14688,11 +11872,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.child_performance
-
-	var_8_1[1702004] = {
+	pg.base.child_performance[1702004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14707,11 +11887,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.child_performance
-
-	var_8_2[1702005] = {
+	pg.base.child_performance[1702005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14726,11 +11902,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.child_performance
-
-	var_8_3[1702006] = {
+	pg.base.child_performance[1702006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14745,11 +11917,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.child_performance
-
-	var_8_4[1702007] = {
+	pg.base.child_performance[1702007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14764,11 +11932,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.child_performance
-
-	var_8_5[1702008] = {
+	pg.base.child_performance[1702008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14783,11 +11947,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.child_performance
-
-	var_8_6[1702009] = {
+	pg.base.child_performance[1702009] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14802,11 +11962,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.child_performance
-
-	var_8_7[1703001] = {
+	pg.base.child_performance[1703001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14822,11 +11978,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.child_performance
-
-	var_8_8[1703002] = {
+	pg.base.child_performance[1703002] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14841,11 +11993,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.child_performance
-
-	var_8_9[1703003] = {
+	pg.base.child_performance[1703003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14860,11 +12008,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.child_performance
-
-	var_8_10[1703004] = {
+	pg.base.child_performance[1703004] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14879,11 +12023,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.child_performance
-
-	var_8_11[1703005] = {
+	pg.base.child_performance[1703005] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14898,11 +12038,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.child_performance
-
-	var_8_12[1703006] = {
+	pg.base.child_performance[1703006] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14917,11 +12053,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.child_performance
-
-	var_8_13[1703007] = {
+	pg.base.child_performance[1703007] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14936,11 +12068,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.child_performance
-
-	var_8_14[1703008] = {
+	pg.base.child_performance[1703008] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -14955,11 +12083,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.child_performance
-
-	var_8_15[1706101] = {
+	pg.base.child_performance[1706101] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -14975,11 +12099,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.child_performance
-
-	var_8_16[1706102] = {
+	pg.base.child_performance[1706102] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -14994,11 +12114,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.child_performance
-
-	var_8_17[1706103] = {
+	pg.base.child_performance[1706103] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15013,11 +12129,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.child_performance
-
-	var_8_18[1706104] = {
+	pg.base.child_performance[1706104] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15032,11 +12144,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.child_performance
-
-	var_8_19[1706105] = {
+	pg.base.child_performance[1706105] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15051,11 +12159,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.child_performance
-
-	var_8_20[1706106] = {
+	pg.base.child_performance[1706106] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15070,11 +12174,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.child_performance
-
-	var_8_21[1706107] = {
+	pg.base.child_performance[1706107] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15089,11 +12189,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.child_performance
-
-	var_8_22[1707101] = {
+	pg.base.child_performance[1707101] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -15109,11 +12205,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.child_performance
-
-	var_8_23[1707102] = {
+	pg.base.child_performance[1707102] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15128,11 +12220,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.child_performance
-
-	var_8_24[1707103] = {
+	pg.base.child_performance[1707103] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15147,11 +12235,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.child_performance
-
-	var_8_25[1707104] = {
+	pg.base.child_performance[1707104] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15166,11 +12250,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.child_performance
-
-	var_8_26[1707105] = {
+	pg.base.child_performance[1707105] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15185,11 +12265,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.child_performance
-
-	var_8_27[1707106] = {
+	pg.base.child_performance[1707106] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15204,11 +12280,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.child_performance
-
-	var_8_28[1707107] = {
+	pg.base.child_performance[1707107] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15223,11 +12295,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.child_performance
-
-	var_8_29[1708101] = {
+	pg.base.child_performance[1708101] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -15243,11 +12311,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.child_performance
-
-	var_8_30[1708102] = {
+	pg.base.child_performance[1708102] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15262,11 +12326,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.child_performance
-
-	var_8_31[1708103] = {
+	pg.base.child_performance[1708103] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15281,11 +12341,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.child_performance
-
-	var_8_32[1708104] = {
+	pg.base.child_performance[1708104] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15300,11 +12356,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.child_performance
-
-	var_8_33[1708105] = {
+	pg.base.child_performance[1708105] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15319,11 +12371,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.child_performance
-
-	var_8_34[1708106] = {
+	pg.base.child_performance[1708106] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15338,11 +12386,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.child_performance
-
-	var_8_35[1708107] = {
+	pg.base.child_performance[1708107] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15357,11 +12401,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.child_performance
-
-	var_8_36[1709001] = {
+	pg.base.child_performance[1709001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -15377,11 +12417,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.child_performance
-
-	var_8_37[1709002] = {
+	pg.base.child_performance[1709002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15396,11 +12432,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.child_performance
-
-	var_8_38[1709003] = {
+	pg.base.child_performance[1709003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15415,11 +12447,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.child_performance
-
-	var_8_39[1710001] = {
+	pg.base.child_performance[1710001] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -15435,11 +12463,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.child_performance
-
-	var_8_40[1710002] = {
+	pg.base.child_performance[1710002] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15454,11 +12478,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.child_performance
-
-	var_8_41[1710003] = {
+	pg.base.child_performance[1710003] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15473,11 +12493,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.child_performance
-
-	var_8_42[25] = {
+	pg.base.child_performance[25] = {
 		dialogue_status = 0,
 		type = 7,
 		story_status = 0,
@@ -15493,11 +12509,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.child_performance
-
-	var_8_43[26] = {
+	pg.base.child_performance[26] = {
 		dialogue_status = 0,
 		type = 4,
 		story_status = 0,
@@ -15512,11 +12524,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.child_performance
-
-	var_8_44[27] = {
+	pg.base.child_performance[27] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,
@@ -15531,8 +12539,7 @@ end)()
 		},
 		performance_next = {}
 	}
-	pg = var_8_44
-	var_8_44.base.child_performance[1800000] = {
+	pg.base.child_performance[1800000] = {
 		dialogue_status = 1,
 		type = 4,
 		story_status = 0,

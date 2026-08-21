@@ -1,45 +1,12 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "frame_resource") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "frame_resource"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.frame_resource = var_0_2
-pg = var_0
-pg = var_0_2
-
-local var_0_3
-
-if not var_0_2.base then
-	var_0_3 = {}
-end
-
-var_0.base = var_0_3
-pg = var_0
-var_0.base.frame_resource = {}
+﻿pg = pg or {}
+pg.frame_resource = rawget(pg, "frame_resource") or setmetatable({
+	__name = "frame_resource"
+}, confNEO)
+pg.base = pg.base or {}
+pg.base.frame_resource = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.frame_resource
-
-	var_1_0["3_1"] = {
+	pg.base.frame_resource["3_1"] = {
 		param = {
 			0,
 			-5.5,
@@ -47,11 +14,7 @@ var_0.base.frame_resource = {}
 			-4.5
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.frame_resource
-
-	var_1_1["4_1"] = {
+	pg.base.frame_resource["4_1"] = {
 		param = {
 			-14,
 			-5.5,
@@ -59,11 +22,7 @@ var_0.base.frame_resource = {}
 			-4.5
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.frame_resource
-
-	var_1_2.b3_1 = {
+	pg.base.frame_resource.b3_1 = {
 		param = {
 			1.13,
 			-0.97,
@@ -71,11 +30,7 @@ var_0.base.frame_resource = {}
 			-5
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.frame_resource
-
-	var_1_3.b4_1 = {
+	pg.base.frame_resource.b4_1 = {
 		param = {
 			-6,
 			0,
@@ -83,11 +38,7 @@ var_0.base.frame_resource = {}
 			-5
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.frame_resource
-
-	var_1_4.prop4_1 = {
+	pg.base.frame_resource.prop4_1 = {
 		param = {
 			-4,
 			-4,
@@ -95,8 +46,7 @@ var_0.base.frame_resource = {}
 			4
 		}
 	}
-	pg = var_1_4
-	var_1_4.base.frame_resource.bprop4_1 = {
+	pg.base.frame_resource.bprop4_1 = {
 		param = {
 			-2,
 			-3,

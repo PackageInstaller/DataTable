@@ -1,11 +1,4 @@
-﻿local var_0_0 = {
-	"指挥官请点击<color=#ff7d36>出击</color>",
-	"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
-	"可恶，又遭到了敌方舰队的拦截！但是我们的<color=#ff7d36>总机动值已经提高</color>，轻而易举的就能避开这种无谓的战斗",
-	"点击<color=#ff7d36>规避</color>轻松甩掉他们的拦截吧！"
-}
-
-return {
+﻿return {
 	id = "S024",
 	events = {
 		{
@@ -16,17 +9,17 @@ return {
 				dir = 1,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"可恶，又遭到了敌方舰队的拦截！但是我们的<color=#ff7d36>总机动值已经提高</color>，轻而易举的就能避开这种无谓的战斗",
+					"点击<color=#ff7d36>规避</color>轻松甩掉他们的拦截吧！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -52,7 +45,12 @@ return {
 				dir = 1,
 				posY = -200,
 				posX = -190,
-				text = var_0_0[2]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"可恶，又遭到了敌方舰队的拦截！但是我们的<color=#ff7d36>总机动值已经提高</color>，轻而易举的就能避开这种无谓的战斗",
+					"点击<color=#ff7d36>规避</color>轻松甩掉他们的拦截吧！"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -77,7 +75,12 @@ return {
 				dir = 1,
 				posY = -304,
 				posX = -190,
-				text = var_0_0[3]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"可恶，又遭到了敌方舰队的拦截！但是我们的<color=#ff7d36>总机动值已经提高</color>，轻而易举的就能避开这种无谓的战斗",
+					"点击<color=#ff7d36>规避</color>轻松甩掉他们的拦截吧！"
+				})[3]
 			}
 		},
 		{
@@ -88,7 +91,12 @@ return {
 				dir = 1,
 				posY = 167.08,
 				posX = 23.41,
-				text = var_0_0[4]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"可恶，又遭到了敌方舰队的拦截！但是我们的<color=#ff7d36>总机动值已经提高</color>，轻而易举的就能避开这种无谓的战斗",
+					"点击<color=#ff7d36>规避</color>轻松甩掉他们的拦截吧！"
+				})[4]
 			}
 		},
 		{

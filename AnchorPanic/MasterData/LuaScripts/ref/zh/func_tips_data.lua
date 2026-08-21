@@ -128,6 +128,20 @@ local func_tips_data=
 	[62]={ uicode=43, index=3, type=1, explain=26806, control="functips_disaster_btns"
 },
 	[63]={ uicode=43, index=4, type=2, explain=26807, control="functips_disaster_remTimes"
+},
+	[64]={ uicode=4003, index=1, type=2, explain=26810, control="functips_guild_guildLog"
+},
+	[65]={ uicode=4003, index=2, type=2, explain=26811, control="functips_guild_hero"
+},
+	[66]={ uicode=4003, index=3, type=2, explain=26812, control="functips_guild_def"
+},
+	[67]={ uicode=4003, index=4, type=2, explain=26813, control="functips_guild_atk"
+},
+	[68]={ uicode=4003, index=5, type=3, explain=26814, control="functips_guild_main_item"
+},
+	[69]={ uicode=4003, index=6, type=3, explain=26815, control="functips_guild_child_item_2"
+},
+	[70]={ uicode=4003, index=7, type=2, explain=26816, control="functips_guild_final"
 }
 }
 

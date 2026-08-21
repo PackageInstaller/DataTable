@@ -30,7 +30,7 @@ end
 
 --获取图片Url
 function getImgUrl(self)
-    return UrlManager:getBgPath("story/cg/" .. self.icon)
+    return UrlManager:getStoryCgUrl(self.icon)
 end
 
 function getIsNew(self)

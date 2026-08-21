@@ -45,7 +45,7 @@ function active(self, args)
     MoneyManager:setMoneyTidList({})
     self.mStoryIndex = args.type
     self.mdata = manual.ManualStoryManager:getManualStoryVoByChapterId(self.mStoryIndex)
-    self:setBg(self.mdata:getImg(), true, "story/cg")
+    self:setBg(self.mdata:getImg(), true, self.mdata:getImgDir())
     self:updateView()
 end
 

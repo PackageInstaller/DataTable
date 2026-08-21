@@ -31,6 +31,9 @@ end
 
 --是否已解锁
 function getIsUnlock(self)
+    if fashionPermit.FashionPermitManager:getFashionPermitedLv() == nil then
+        return false
+    end
     return fashionPermit.FashionPermitManager:getFashionPermitedLv() >= self.lv
 end
 

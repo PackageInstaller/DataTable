@@ -20,7 +20,10 @@ function dtor(self)
 end
 
 function addEventListener(self, etype, func, listener)
-
+	if not etype then
+		logError("监听事件类型 etype 为nil")
+		return
+	end
 	self:checkDelEvents()
 
 	if not self._events then

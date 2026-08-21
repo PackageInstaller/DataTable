@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : FashionPairtsItem
 @Description    : 皮肤商店item
@@ -78,19 +78,19 @@ function setData(self, param)
     -- self.mTxtHeroName.text = self.mFashionVo:getHeroName()
     self.mGroupTime:SetActive(self.mFashionVo:getTime() > 0)
     self.mTxtFashionSeries.text = self.mFashionVo:getFashionSeries()
-    -- 
+    --
     self.mTxtSellOut.text = _TT(50046)--已持有
     self.mImgDiscount:SetActive(self.mFashionVo:getDiscount() > 0)
     self.mTxtDiscount.text = self.mFashionVo:getDiscount() .. "%" .. _TT(25037)
 
     -- local tapList = self.mFashionVo.heroFashionData.tap
-   
+
     -- self.mTag1:SetActive(table.indexof01(tapList,1) > 0)
     -- self.mTag2:SetActive(table.indexof01(tapList,2) > 0)
     -- self.mTag3:SetActive(table.indexof01(tapList,3) > 0)
 
     self:updateState()
-    if (self.mFashionVo:getCanUpdate()) then
+    if self.mFashionVo:getTime() > 0 then
         if self.time then
             LoopManager:removeTimerByIndex(self.time)
             self.time = nil
@@ -99,9 +99,8 @@ function setData(self, param)
         self.time = LoopManager:addTimer(1, 0, self, self.updateTime)
     end
 
-    self.colorVo = fashion.FashionManager:getFasionColorVo(self.mFashionVo.fashionDic[1],self.mFashionVo.fashionDic[2],self.mFashionVo.fashionDic[3])
-    local propsVo = props.PropsManager:getPropsConfigVo( self.colorVo.costTid)
-
+    self.colorVo = fashion.FashionManager:getFasionColorVo(self.mFashionVo.fashionDic[1], self.mFashionVo.fashionDic[2], self.mFashionVo.fashionDic[3])
+    local propsVo = props.PropsManager:getPropsConfigVo(self.colorVo.costTid)
 
     self.mTxtFashionName.text = propsVo:getName()
     if #propsVo:getName() > 5 then
@@ -110,12 +109,8 @@ function setData(self, param)
         self.mTxtFashionName.fontSize = 30
     end
 
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        self.mImgIcon:SetImg(UrlManager:getIconPath("fashionPairts_Har/"..self.colorVo.fashionIcon)  , true)
-    else
-        self.mImgIcon:SetImg(UrlManager:getIconPath("fashionPairts/"..self.colorVo.fashionIcon)  , true)
-    end
-   
+    self.mImgIcon:SetImg(UrlManager:getFashionPairtsPath(self.colorVo.fashionIcon), true)
+
 end
 
 function onClickShowHandler(self)
@@ -148,6 +143,10 @@ function updateTime(self)
     --         self.time = nil
     --     end
     -- end
+
+    if self.mFashionVo:getTime() <= 0 then
+        GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_COMBO_VIEW)
+    end
 end
 --更新下一个数据
 function updateNextDataByCurData(self, curData)
@@ -165,8 +164,6 @@ end
 
 --更新状态
 function updateState(self)
-  
-
     local textColor = (MoneyUtil.getMoneyCountByTid(self.mFashionVo:getMoneyTid()) >= self.mFashionVo:getMoneyCount()) and "000000ff" or "D53529ff"
     if not self.mFashionVo.isShow then
         self.mImgSellOut:SetActive(self.mFashionVo:getIsSellOut())
@@ -178,14 +175,13 @@ function updateState(self)
     if payType == MoneyType.MONEY then
         self.mImgMoneyIcon.gameObject:SetActive(false)
         textColor = "000000ff"
-        self.mTxtBuy.text = HtmlUtil:color("¥"..self.mFashionVo:getMoneyCount()/100, textColor)
+        self.mTxtBuy.text = HtmlUtil:color("¥"..self.mFashionVo:getMoneyCount() / 100, textColor)
     else
         self.mImgMoneyIcon.gameObject:SetActive((not self.mFashionVo:getIsSellOut()))
         self.mImgMoneyIcon:SetImg(MoneyUtil.getMoneyIconUrlByTid(self.mFashionVo:getMoneyTid()), true)
         self.mTxtBuy.text = HtmlUtil:color(self.mFashionVo:getMoneyCount(), textColor)
     end
-   
-    
+
 end
 
 return _M

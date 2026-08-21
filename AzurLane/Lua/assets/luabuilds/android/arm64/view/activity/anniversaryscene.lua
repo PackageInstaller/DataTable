@@ -1,47 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AnniversaryScene", import("..base.BaseUI"))
 
-local var_0_0 = "AnniversaryScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "AnniversaryUI"
 end
 
-function var_0_1.setActivity(arg_2_0, arg_2_1)
+function var_0_0.setActivity(arg_2_0, arg_2_1)
 	arg_2_0.activityVO = arg_2_1
-
-	local var_2_0 = arg_2_0.activityVO
-	local var_2_1
-
-	if not var_2.getConfig(var_2_0, "config_data") then
-		var_2_1 = {}
-	end
-
-	arg_2_0.configData = var_2_1
+	arg_2_0.configData = arg_2_0.activityVO:getConfig("config_data") or {}
 	arg_2_0.date = arg_2_0.activityVO.data3
 	arg_2_0.currTaskId = arg_2_0.activityVO.data2
 
 	return
 end
 
-function var_0_1.setTaskList(arg_3_0, arg_3_1)
+function var_0_0.setTaskList(arg_3_0, arg_3_1)
 	arg_3_0.taskVOs = arg_3_1
 
 	return
 end
 
-function var_0_1.getTaskById(arg_4_0, arg_4_1)
+function var_0_0.getTaskById(arg_4_0, arg_4_1)
 	local var_4_0 = -1
 
-	ipairs = var_1_10003
-
-	for iter_4_0, iter_4_1 in var_1_10003(arg_4_0.configData) do
-		pairs = var_1_10008
-
-		for iter_4_2, iter_4_3 in var_1_10008(iter_4_1) do
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.configData) do
+		for iter_4_2, iter_4_3 in pairs(iter_4_1) do
 			if arg_4_1 == iter_4_3 then
 				var_4_0 = iter_4_0
 			end
@@ -50,16 +32,14 @@ function var_0_1.getTaskById(arg_4_0, arg_4_1)
 
 	if var_4_0 ~= -1 then
 		if var_4_0 < arg_4_0.date then
-			Task = var_3
-
-			local var_4_1 = var_3.New({
+			local var_4_1 = Task.New({
 				submit_time = 2,
 				id = arg_4_1
 			})
 
-			var_3.progress = var_3.getConfig(var_4_1, "target_num")
+			var_4_1.progress = var_4_1:getConfig("target_num")
 
-			return var_3
+			return var_4_1
 		else
 			return arg_4_0.taskVOs[arg_4_1]
 		end
@@ -68,37 +48,16 @@ function var_0_1.getTaskById(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_1.init(arg_5_0)
-	local var_5_0 = arg_5_0._tf
-
-	arg_5_0.backBtn = var_1.Find(var_5_0, "bg/top/back")
-
-	local var_5_1 = arg_5_0._tf
-
-	arg_5_0.mainPanel = var_1.Find(var_5_1, "bg/main")
-
-	local var_5_2 = arg_5_0.mainPanel
-
-	arg_5_0.scrollRect = var_1.Find(var_5_2, "scroll_rect")
-
-	local var_5_3 = arg_5_0.mainPanel
-
-	arg_5_0.taskGorupContainer = var_1.Find(var_5_3, "scroll_rect/content")
+function var_0_0.init(arg_5_0)
+	arg_5_0.backBtn = arg_5_0._tf:Find("bg/top/back")
+	arg_5_0.mainPanel = arg_5_0._tf:Find("bg/main")
+	arg_5_0.scrollRect = arg_5_0.mainPanel:Find("scroll_rect")
+	arg_5_0.taskGorupContainer = arg_5_0.mainPanel:Find("scroll_rect/content")
 	arg_5_0.taskGorupTpl = arg_5_0:getTpl("taskGroup", arg_5_0.taskGorupContainer)
-	Vector2 = var_1
-	arg_5_0.offset = var_1(arg_5_0.taskGorupTpl.rect.width / 2 + 30, arg_5_0.taskGorupTpl.rect.height / 2 + 30)
-
-	local var_5_4 = arg_5_0.taskGorupContainer
-
-	arg_5_0.taskGroupDesc = var_1.Find(var_5_4, "taskGroup_desc")
-
-	local var_5_5 = arg_5_0._tf
-
-	arg_5_0.bottomPanel = var_1.Find(var_5_5, "bg/bottom")
-
-	local var_5_6 = arg_5_0.bottomPanel
-
-	arg_5_0.bottomTaskGroups = var_1.Find(var_5_6, "taskGroups")
+	arg_5_0.offset = Vector2(arg_5_0.taskGorupTpl.rect.width / 2 + 30, arg_5_0.taskGorupTpl.rect.height / 2 + 30)
+	arg_5_0.taskGroupDesc = arg_5_0.taskGorupContainer:Find("taskGroup_desc")
+	arg_5_0.bottomPanel = arg_5_0._tf:Find("bg/bottom")
+	arg_5_0.bottomTaskGroups = arg_5_0.bottomPanel:Find("taskGroups")
 	arg_5_0.bottomBTpl = arg_5_0:getTpl("bottom_task_tpl", arg_5_0.bottomTaskGroups)
 	arg_5_0.startPosition = arg_5_0.taskGorupContainer.localPosition
 	arg_5_0.titles = {}
@@ -106,72 +65,51 @@ function var_0_1.init(arg_5_0)
 	return
 end
 
-function var_0_1.didEnter(arg_6_0)
-	onButton = var_1_10001
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.backBtn
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-
-		var_0.emit(var_7_0, var_0_1.ON_BACK)
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		arg_6_0:emit(var_0_0.ON_BACK)
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1, var_6_2, var_1_10006)
+	end, SFX_CANCEL)
 	arg_6_0:initScrollRect()
 
 	return
 end
 
-local var_0_2 = 2
+local var_0_1 = 2
 
-function var_0_1.getRow(arg_8_0, arg_8_1)
-	math = var_1_10002
-
-	return var_1_10002.floor(arg_8_1 / var_0_2) * 2 + arg_8_1 % var_0_2
+function var_0_0.getRow(arg_8_0, arg_8_1)
+	return math.floor(arg_8_1 / var_0_1) * 2 + arg_8_1 % var_0_1
 end
 
-function var_0_1.initScrollRect(arg_9_0)
-	local var_9_0 = arg_9_0.configData
-	local var_9_1 = arg_9_0:getRow(#var_9_0)
-
+function var_0_0.initScrollRect(arg_9_0)
 	arg_9_0.taskGroupTFs = {}
 
-	for iter_9_0 = 0, var_9_1 - 1 do
-		for iter_9_1 = 0, var_0_2 - 1 do
-			local var_9_2 = arg_9_0.offset.x * iter_9_1
-			local var_9_3 = arg_9_0.offset.y * iter_9_0 * -1
+	for iter_9_0 = 0, arg_9_0:getRow(#arg_9_0.configData) - 1 do
+		for iter_9_1 = 0, var_0_1 - 1 do
+			local var_9_0 = arg_9_0.offset.x * iter_9_1
+			local var_9_1 = arg_9_0.offset.y * iter_9_0 * -1
 
 			if iter_9_0 % 2 == 0 == (iter_9_1 % 2 == 0) then
-				cloneTplTo = var_1_10015
-				var_1_10015 = var_1_10015(arg_9_0.taskGorupTpl, arg_9_0.taskGorupContainer)
-				Vector2 = var_1_10016
-				var_1_10015.localPosition = var_1_10016(var_9_2, var_9_3)
-				table = var_1_10016
+				local var_9_2 = cloneTplTo(arg_9_0.taskGorupTpl, arg_9_0.taskGorupContainer)
 
-				var_1_10016.insert(arg_9_0.taskGroupTFs, var_1_10015)
+				var_9_2.localPosition = Vector2(var_9_0, var_9_1)
+
+				table.insert(arg_9_0.taskGroupTFs, var_9_2)
 			end
 		end
 	end
 
 	arg_9_0:updateTaskGroups()
 
-	math = var_3
-	arg_9_0.dateIndex = var_3.max(arg_9_0.date, 1)
+	arg_9_0.dateIndex = math.max(arg_9_0.date, 1)
 
 	arg_9_0:addVerticalDrag(arg_9_0.scrollRect, function()
-		if arg_9_0.dateIndex + 1 > #var_9_0 then
+		if arg_9_0.dateIndex + 1 > #var_0 then
 			return
 		end
 
-		local var_10_0 = arg_9_0
-
-		var_1.moveToTaskGroup(var_10_0, var_0)
+		arg_9_0:moveToTaskGroup(arg_9_0.dateIndex + 1)
 
 		return
 	end, function()
@@ -179,9 +117,7 @@ function var_0_1.initScrollRect(arg_9_0)
 			return
 		end
 
-		local var_11_0 = arg_9_0
-
-		var_1.moveToTaskGroup(var_11_0, var_0)
+		arg_9_0:moveToTaskGroup(arg_9_0.dateIndex - 1)
 
 		return
 	end)
@@ -191,14 +127,11 @@ function var_0_1.initScrollRect(arg_9_0)
 	return
 end
 
-function var_0_1.initBottomPanel(arg_12_0)
+function var_0_0.initBottomPanel(arg_12_0)
 	arg_12_0.bottomTaskGroupTFs = {}
-	ipairs = var_1
 
-	for iter_12_0, iter_12_1 in var_1(arg_12_0.configData) do
-		cloneTplTo = var_1_10006
-		var_1_10006 = var_1_10006(arg_12_0.bottomBTpl, arg_12_0.bottomTaskGroups)
-		arg_12_0.bottomTaskGroupTFs[iter_12_0] = var_1_10006
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.configData) do
+		arg_12_0.bottomTaskGroupTFs[iter_12_0] = cloneTplTo(arg_12_0.bottomBTpl, arg_12_0.bottomTaskGroups)
 
 		arg_12_0:updateBottomTaskGroup(iter_12_0)
 	end
@@ -206,621 +139,249 @@ function var_0_1.initBottomPanel(arg_12_0)
 	return
 end
 
-function var_0_1.updateBottomTaskGroup(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.bottomTaskGroupTFs[arg_13_1]
+function var_0_0.updateBottomTaskGroup(arg_13_0, arg_13_1)
+	arg_13_0.bottomTaskGroupTFs[arg_13_1]:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/anniversaryui_atlas", "part" .. arg_13_1)
+	arg_13_0.bottomTaskGroupTFs[arg_13_1]:Find("Image"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/anniversaryui_atlas", "h_part" .. arg_13_1)
 
-	GetSpriteFromAtlas = var_1_10003
+	triggerToggle(arg_13_0.bottomTaskGroupTFs[arg_13_1], (_.all(arg_13_0.configData[arg_13_1], function(arg_14_0)
+		local var_14_0 = arg_13_0:getTaskById(arg_14_0)
 
-	local var_13_1 = var_1_10003("ui/anniversaryui_atlas", "h_part" .. arg_13_1)
-
-	GetSpriteFromAtlas = var_1_10004
-
-	local var_13_2 = var_1_10004("ui/anniversaryui_atlas", "part" .. arg_13_1)
-	local var_13_3 = var_13_0
-	local var_13_4 = var_13_0.GetComponent
-
-	typeof = var_8
-	Image = var_1_10010
-	var_13_4(var_13_3, var_8(var_1_10010)).sprite = var_13_2
-
-	local var_13_5 = var_13_0:Find("Image")
-	local var_13_6 = var_5.GetComponent
-
-	typeof = var_8
-	Image = var_1_10010
-	var_13_6(var_13_5, var_8(var_1_10010)).sprite = var_13_1
-
-	local var_13_7 = arg_13_0.configData[arg_13_1]
-
-	_ = var_6
-
-	local var_13_8 = var_6.all(var_13_7, function(arg_14_0)
-		local var_14_0 = arg_13_0
-
-		return var_1.getTaskById(var_14_0, arg_14_0) and var_1:isReceive()
-	end)
-
-	triggerToggle = var_13_5
-
-	var_13_5(var_13_0, var_13_8)
+		return var_14_0 and var_14_0:isReceive()
+	end)))
 
 	return
 end
 
-function var_0_1.updateTaskGroups(arg_15_0)
-	ipairs = var_1_10001
-
-	for iter_15_0, iter_15_1 in var_1_10001(arg_15_0.configData) do
+function var_0_0.updateTaskGroups(arg_15_0)
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.configData) do
 		if arg_15_0.taskGroupTFs[iter_15_0] then
-			arg_15_0:updateTaskGroup(var_6, iter_15_0, iter_15_1)
+			arg_15_0:updateTaskGroup(arg_15_0.taskGroupTFs[iter_15_0], iter_15_0, iter_15_1)
 		end
 	end
 
 	return
 end
 
-function var_0_1.updateTaskGroup(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
-	local var_16_0 = arg_16_1
-	local var_16_1 = arg_16_1.Find(var_16_0, "mask_lock")
-	local var_16_2 = arg_16_1:Find("mask_prev_unfinish")
+function var_0_0.updateTaskGroup(arg_16_0, arg_16_1, arg_16_2, arg_16_3)
+	local var_16_0 = arg_16_1:Find("mask_lock")
+	local var_16_1 = arg_16_1:Find("mask_prev_unfinish")
 
-	GetSpriteFromAtlas = var_16_0
+	arg_16_1:Find("icon"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/anniversaryui_atlas", "lihui" .. arg_16_2)
 
-	local var_16_3 = var_16_0("ui/anniversaryui_atlas", "lihui" .. arg_16_2)
-	local var_16_4 = arg_16_1:Find("icon")
-	local var_16_5 = var_7.GetComponent
+	local var_16_2 = arg_16_2 > arg_16_0.date
+	local var_16_3 = false
+	local var_16_4 = false
 
-	typeof = var_10
-	Image = var_1_10012
-	var_16_5(var_16_4, var_10(var_1_10012)).sprite = var_16_3
+	if arg_16_2 > arg_16_0.date then
+		local var_16_5 = arg_16_0.activityVO.data1 + (arg_16_2 - 1) * 0
 
-	local var_16_6 = arg_16_2 > arg_16_0.date
-	local var_16_7 = false
-	local var_16_8 = false
+		var_16_4 = arg_16_0.activityVO.data1 + (arg_16_2 - 1) * 0 <= pg.TimeMgr.GetInstance():GetServerTime()
 
-	if var_16_6 then
-		local var_16_9 = arg_16_0.activityVO.data1 + (arg_16_2 - 1) * 0
+		local var_16_6 = pg.TimeMgr.GetInstance()
 
-		pg = var_1_10012
-
-		local var_16_10 = var_1_10012.TimeMgr.GetInstance()
-
-		var_16_8 = var_16_9 <= var_12.GetServerTime(var_16_10)
-		pg = var_12
-
-		local var_16_11 = var_12.TimeMgr.GetInstance()
-		local var_16_12 = var_12.STimeDescC(var_16_11, var_16_9, "%m/%d")
-
-		setText = var_1_10013
-
-		var_1_10013(var_16_1:Find("Text"), var_16_12)
+		setText(var_16_0:Find("Text"), (var_16_6:STimeDescC(var_16_5, "%m/%d")))
 	else
-		_ = var_10
-		var_16_7 = var_10.all(arg_16_3, function(arg_17_0)
-			local var_17_0 = arg_16_0
+		var_16_3 = _.all(arg_16_3, function(arg_17_0)
+			local var_17_0 = arg_16_0:getTaskById(arg_17_0)
 
-			return var_1.getTaskById(var_17_0, arg_17_0) and var_1:isReceive()
+			return var_17_0 and var_17_0:isReceive()
 		end)
 	end
 
-	setActive = var_10
-
-	var_10(var_16_1, var_16_6 and not var_16_8)
-
-	setActive = var_10
-
-	var_10(var_16_2, var_16_6 and var_16_8)
-
-	setActive = var_10
-
-	var_10(arg_16_1:Find("completed"), var_16_7)
+	setActive(var_16_0, var_16_2 and not var_16_4)
+	setActive(var_16_1, var_16_2 and var_16_4)
+	setActive(arg_16_1:Find("completed"), var_16_3)
 
 	return
 end
 
-function var_0_1.updateTaskGroupDesc(arg_18_0, arg_18_1)
+function var_0_0.updateTaskGroupDesc(arg_18_0, arg_18_1)
 	local var_18_0 = arg_18_0.configData[arg_18_1]
-	local var_18_1 = arg_18_0.taskGroupDesc
-	local var_18_2 = var_3.Find(var_18_1, "main/desc")
-	local var_18_3 = var_3.Find(var_18_2, "Image")
-	local var_18_4 = var_4.GetComponent
+	local var_18_1 = arg_18_0.taskGroupDesc:Find("main/desc")
+	local var_18_2 = var_18_1:Find("Image"):GetComponent(typeof(Image))
 
-	typeof = var_7
-	Image = var_1_10009
+	var_18_2.sprite = arg_18_0.titles[arg_18_1] and arg_18_0.titles[arg_18_1] or GetSpriteFromAtlas("ui/anniversaryui_atlas", "title" .. arg_18_1)
 
-	local var_18_5 = var_18_4(var_18_3, var_7(var_1_10009))
-	local var_18_6
+	local var_18_4 = arg_18_0.taskGroupDesc:Find("main/task_list")
 
-	if arg_18_0.titles[arg_18_1] then
-		var_18_6 = arg_18_0.titles[arg_18_1]
-	else
-		GetSpriteFromAtlas = var_6
-		var_18_6 = var_6("ui/anniversaryui_atlas", "title" .. arg_18_1)
-	end
+	setText(var_18_1, i18n("anniversary_task_title_" .. arg_18_1))
 
-	var_18_5.sprite = var_18_6
+	local function var_18_5(arg_19_0, arg_19_1)
+		local var_19_0 = arg_18_0:getTaskById(arg_19_1) or Task.New({
+			id = arg_19_1
+		})
 
-	local var_18_7 = arg_18_0.taskGroupDesc
-	local var_18_8 = var_6.Find(var_18_7, "main/task_list")
-	local var_18_9 = var_6.Find(var_18_8, "task_tpl")
-
-	setText = var_18_7
-
-	local var_18_10 = var_3
-
-	i18n = var_1_10011
-
-	var_18_7(var_18_10, var_1_10011("anniversary_task_title_" .. arg_18_1))
-
-	local function var_18_11(arg_19_0, arg_19_1)
-		local var_19_0 = arg_18_0
-		local var_19_1
-
-		if not var_2.getTaskById(var_19_0, arg_19_1) then
-			Task = var_2_10003
-			var_19_1 = var_2_10003.New({
-				id = arg_19_1
-			})
-		end
-
-		setText = var_2_10003
-
-		var_2_10003(arg_19_0:Find("name"), var_19_1:getConfig("name"))
-
-		setText = var_2_10003
-
-		var_2_10003(arg_19_0:Find("desc"), var_19_1:getConfig("desc"))
-
-		onButton = var_2_10003
-
-		local var_19_2 = arg_18_0
-		local var_19_3 = arg_19_0
-		local var_19_4 = arg_19_0.Find(var_19_3, "confirm_btn")
-
-		local function var_19_5()
-			local var_20_0 = var_19_1
-
-			if var_0.isReceive(var_20_0) then
+		setText(arg_19_0:Find("name"), var_19_0:getConfig("name"))
+		setText(arg_19_0:Find("desc"), var_19_0:getConfig("desc"))
+		onButton(arg_18_0, arg_19_0:Find("confirm_btn"), function()
+			if var_19_0:isReceive() then
 				-- block empty
-			else
-				local var_20_1 = var_19_1
-
-				if not var_0.isFinish(var_20_1) then
-					local var_20_2 = arg_18_0
-					local var_20_3 = var_0.emit
-
-					AnniversaryMediator = var_3_10003
-
-					var_20_3(var_20_2, var_3_10003.TO_TASK, var_19_1)
-				else
-					local var_20_4 = var_19_1
-
-					if var_0.isFinish(var_20_4) then
-						local var_20_5 = arg_18_0
-						local var_20_6 = var_0.emit
-
-						AnniversaryMediator = var_3_10003
-
-						var_20_6(var_20_5, var_3_10003.ON_SUBMIT_TASK, arg_19_1)
-					end
-				end
+			elseif not var_19_0:isFinish() then
+				arg_18_0:emit(AnniversaryMediator.TO_TASK, var_19_0)
+			elseif var_19_0:isFinish() then
+				arg_18_0:emit(AnniversaryMediator.ON_SUBMIT_TASK, arg_19_1)
 			end
 
 			return
-		end
+		end, SFX_PANEL)
+		setActive(arg_19_0:Find("confirm_btn/go"), not var_19_0:isFinish())
+		setActive(arg_19_0:Find("confirm_btn/finished"), var_19_0:isReceive())
 
-		SFX_PANEL = var_19_3
+		local var_19_1 = var_19_0:isFinish() and not var_19_0:isReceive()
 
-		var_2_10003(var_19_2, var_19_4, var_19_5, var_19_3)
+		setActive(arg_19_0:Find("confirm_btn/get"), var_19_1)
 
-		setActive = var_2_10003
+		local var_19_2 = arg_19_0:Find("icon")
+		local var_19_3 = var_19_0:getConfig("award_display")[1]
 
-		var_2_10003(arg_19_0:Find("confirm_btn/go"), not var_19_1:isFinish())
-
-		setActive = var_2_10003
-
-		var_2_10003(arg_19_0:Find("confirm_btn/finished"), var_19_1:isReceive())
-
-		setActive = var_2_10003
-
-		local var_19_6 = arg_19_0:Find("confirm_btn/get")
-		local var_19_7
-
-		if var_19_1:isFinish() then
-			var_19_7 = not var_19_1:isReceive()
-		end
-
-		var_2_10003(var_19_6, var_19_7)
-
-		local var_19_8 = arg_19_0:Find("icon")
-		local var_19_9 = var_19_1
-		local var_19_10 = var_19_1.getConfig(var_19_9, "award_display")[1]
-
-		updateDrop = var_19_9
-
-		var_19_9(var_19_8, {
-			type = var_19_10[1],
-			id = var_19_10[2],
-			count = var_19_10[3]
+		updateDrop(var_19_2, {
+			type = var_19_3[1],
+			id = var_19_3[2],
+			count = var_19_3[3]
 		})
-
-		onButton = var_19_9
-
-		local var_19_11 = arg_18_0
-		local var_19_12 = var_19_8
-
-		local function var_19_13()
+		onButton(arg_18_0, var_19_2, function()
 			local var_21_0
-			local var_21_1 = var_19_10[1]
 
-			DROP_TYPE_RESOURCE = var_3_10002
-
-			if var_21_1 == var_3_10002 then
-				id2ItemId = var_21_1
-				var_21_0 = var_21_1(var_19_10[2])
-			else
-				local var_21_2 = var_19_10[1]
-
-				DROP_TYPE_ITEM = var_3_10002
-
-				if var_21_2 == var_3_10002 then
-					var_21_0 = var_19_10[2]
-				end
+			if var_19_3[1] == DROP_TYPE_RESOURCE then
+				var_21_0 = id2ItemId(var_19_3[2])
+			elseif var_19_3[1] == DROP_TYPE_ITEM then
+				var_21_0 = var_19_3[2]
 			end
 
 			if var_21_0 then
-				local var_21_3 = arg_18_0
-
-				var_1.emit(var_21_3, var_0_1.ON_ITEM, var_21_0)
+				arg_18_0:emit(var_0_0.ON_ITEM, var_21_0)
 			end
 
 			return
-		end
+		end, SFX_PANEL)
 
-		SFX_PANEL = var_2_10011
+		arg_19_0:Find("slider"):GetComponent(typeof(Slider)).value = var_19_0:getProgress() / var_19_0:getConfig("target_num")
 
-		var_19_9(var_19_11, var_19_12, var_19_13, var_2_10011)
-
-		local var_19_14 = arg_19_0:Find("slider")
-		local var_19_15 = var_6.GetComponent
-
-		typeof = var_9
-		Slider = var_2_10011
-		var_19_15(var_19_14, var_9(var_2_10011)).value = var_19_1:getProgress() / var_19_1:getConfig("target_num")
-		setText = var_7
-
-		var_7(arg_19_0:Find("slider/Text"), var_19_1:getProgress() .. "/" .. var_19_1:getConfig("target_num"))
+		setText(arg_19_0:Find("slider/Text"), var_19_0:getProgress() .. "/" .. var_19_0:getConfig("target_num"))
 
 		return
 	end
 
-	UIItemList = var_18_8
-	arg_18_0.ulist = var_18_8.New(var_6, var_18_9)
+	arg_18_0.ulist = UIItemList.New(var_18_4, (var_18_4:Find("task_tpl")))
 
-	local var_18_12 = arg_18_0.ulist
-
-	var_9.make(var_18_12, function(arg_22_0, arg_22_1, arg_22_2)
-		UIItemList = var_2_10003
-
-		if arg_22_0 == var_2_10003.EventUpdate then
-			var_18_11(arg_22_2, var_18_0[arg_22_1 + 1])
+	arg_18_0.ulist:make(function(arg_22_0, arg_22_1, arg_22_2)
+		if arg_22_0 == UIItemList.EventUpdate then
+			var_18_5(arg_22_2, var_18_0[arg_22_1 + 1])
 		end
 
 		return
 	end)
-
-	local var_18_13 = arg_18_0.ulist
-
-	var_9.align(var_18_13, #var_18_0)
+	arg_18_0.ulist:align(#var_18_0)
 
 	return
 end
 
-function var_0_1.moveToTaskGroup(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
+function var_0_0.moveToTaskGroup(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
 	if arg_23_3 then
-		LeanTween = var_1_10004
-		var_1_10004 = var_1_10004.cancel
-		go = var_1_10006
-
-		var_1_10004(var_1_10006(arg_23_0.taskGroupDesc))
-
-		LeanTween = var_1_10004
-		var_1_10004 = var_1_10004.cancel
-		go = var_1_10006
-
-		var_1_10004(var_1_10006(arg_23_0.taskGorupContainer))
-
-		goto label_23_0
+		LeanTween.cancel(go(arg_23_0.taskGroupDesc))
+		LeanTween.cancel(go(arg_23_0.taskGorupContainer))
+	elseif LeanTween.isTweening(go(arg_23_0.taskGroupDesc)) or LeanTween.isTweening(go(arg_23_0.taskGorupContainer)) then
+		return
 	end
 
-	LeanTween = var_1_10004
+	local function var_23_0()
+		arg_23_0.dateIndex = arg_23_1
 
-	local var_23_0 = var_1_10004.isTweening
+		return
+	end
 
-	go = var_1_10006
+	if arg_23_1 > arg_23_0.date then
+		LeanTween.moveLocal(go(arg_23_0.taskGorupContainer), Vector3(arg_23_0.taskGorupContainer.localPosition.x, arg_23_0.startPosition.y + (arg_23_0:getRow(arg_23_1) - 1) * arg_23_0.offset.y, 0), 0.2):setOnComplete(System.Action(var_23_0))
 
-	if not var_23_0(var_1_10006(arg_23_0.taskGroupDesc)) then
-		LeanTween = var_4
+		arg_23_0.taskGroupDesc.localScale = Vector3(0, 1, 1)
+		arg_23_0.overStep = true
 
-		do
-			local var_23_1 = var_4.isTweening
+		if arg_23_0.dateIndex then
+			triggerToggle(arg_23_0.taskGroupTFs[arg_23_0.dateIndex], false)
+		end
+	else
+		if arg_23_2 or arg_23_0.overStep then
+			arg_23_0.taskGroupDesc.localScale = Vector3(0, 1, 1)
 
-			go = var_1_10006
+			arg_23_0:openAnim(arg_23_1, var_23_0)
+			arg_23_0:updateTaskGroupDesc(arg_23_1)
+		elseif arg_23_0.dateIndex then
+			arg_23_0:closeAnim(arg_23_0.dateIndex, function()
+				arg_23_0:openAnim(arg_23_1, var_23_0)
 
-			if var_23_1(var_1_10006(arg_23_0.taskGorupContainer)) then
+				arg_23_0.dateIndex = arg_23_1
+
+				arg_23_0:updateTaskGroupDesc(arg_23_0.dateIndex)
+
 				return
-			end
+			end)
 		end
 
-		::label_23_0::
-
-		local function var_23_2()
-			arg_23_0.dateIndex = arg_23_1
-
-			return
-		end
-
-		if arg_23_1 > arg_23_0.date then
-			local var_23_3 = arg_23_0:getRow(arg_23_1)
-
-			var_1_10006 = arg_23_0.startPosition.y + (var_23_3 - 1) * arg_23_0.offset.y
-
-			local var_23_4 = arg_23_0.taskGorupContainer.localPosition.x
-
-			LeanTween = var_8
-
-			local var_23_5 = var_8.moveLocal
-
-			go = var_1_10010
-
-			local var_23_6 = var_1_10010(arg_23_0.taskGorupContainer)
-
-			Vector3 = var_1_10011
-
-			local var_23_7 = var_23_5(var_23_6, var_1_10011(var_23_4, var_1_10006, 0), 0.2)
-			local var_23_8 = var_8.setOnComplete
-
-			System = var_11
-
-			var_23_8(var_23_7, var_11.Action(var_23_2))
-
-			local var_23_9 = arg_23_0.taskGroupDesc
-
-			Vector3 = var_1_10009
-			var_23_9.localScale = var_1_10009(0, 1, 1)
-			arg_23_0.overStep = true
-
-			if arg_23_0.dateIndex then
-				triggerToggle = var_8
-
-				var_8(arg_23_0.taskGroupTFs[arg_23_0.dateIndex], false)
-			end
-		else
-			if arg_23_2 or arg_23_0.overStep then
-				local var_23_10 = arg_23_0.taskGroupDesc
-
-				Vector3 = var_1_10006
-				var_23_10.localScale = var_1_10006(0, 1, 1)
-
-				arg_23_0:openAnim(arg_23_1, var_23_2)
-				arg_23_0:updateTaskGroupDesc(arg_23_1)
-			elseif arg_23_0.dateIndex then
-				arg_23_0:closeAnim(arg_23_0.dateIndex, function()
-					local var_25_0 = arg_23_0
-
-					var_0.openAnim(var_25_0, arg_23_1, var_23_2)
-
-					arg_23_0.dateIndex = arg_23_1
-
-					local var_25_1 = arg_23_0
-
-					var_0.updateTaskGroupDesc(var_25_1, arg_23_0.dateIndex)
-
-					return
-				end)
-			end
-
-			arg_23_0.overStep = nil
-		end
-
-		return
+		arg_23_0.overStep = nil
 	end
-end
-
-function var_0_1.openAnim(arg_26_0, arg_26_1, arg_26_2)
-	local var_26_0 = {}
-
-	assert = var_1_10004
-
-	var_1_10004(arg_26_1, "index can not be nil" .. arg_26_1)
-
-	local var_26_1 = arg_26_0.taskGroupTFs[arg_26_1]
-	local var_26_2 = arg_26_0:getRow(arg_26_1)
-	local var_26_3 = arg_26_0.startPosition.y + (var_26_2 - 1) * arg_26_0.offset.y
-	local var_26_4 = arg_26_0.taskGorupContainer.localPosition.x
-
-	table = var_8
-
-	var_8.insert(var_26_0, function(arg_27_0)
-		LeanTween = var_2_10001
-
-		local var_27_0 = var_2_10001.moveLocal
-
-		go = var_2_10003
-
-		local var_27_1 = var_2_10003(arg_26_0.taskGorupContainer)
-
-		Vector3 = var_2_10004
-
-		local var_27_2 = var_27_0(var_27_1, var_2_10004(var_26_4, var_26_3, 0), 0.2)
-		local var_27_3 = var_1.setOnComplete
-
-		System = var_4
-
-		var_27_3(var_27_2, var_4.Action(arg_27_0))
-
-		return
-	end)
-
-	table = var_8
-
-	var_8.insert(var_26_0, function(arg_28_0)
-		triggerToggle = var_2_10001
-
-		var_2_10001(var_26_1, true)
-
-		local var_28_0 = var_26_1.eulerAngles.x
-		local var_28_1 = var_26_1.eulerAngles.z
-
-		LeanTween = var_3
-
-		local var_28_2 = var_3.rotate
-
-		go = var_2_10005
-
-		local var_28_3 = var_2_10005(var_26_1)
-
-		Vector3 = var_2_10006
-
-		local var_28_4 = var_28_2(var_28_3, var_2_10006(var_28_0, 0, var_28_1), 0.2)
-		local var_28_5 = var_3.setFrom
-
-		Vector3 = var_6
-
-		local var_28_6 = var_28_5(var_28_4, var_6(var_28_0, -180, var_28_1))
-		local var_28_7 = var_3.setOnComplete
-
-		System = var_6
-
-		var_28_7(var_28_6, var_6.Action(arg_28_0))
-
-		return
-	end)
-
-	table = var_8
-
-	var_8.insert(var_26_0, function(arg_29_0)
-		LeanTween = var_2_10001
-
-		local var_29_0 = var_2_10001.scale
-		local var_29_1 = arg_26_0.taskGroupDesc
-
-		Vector3 = var_2_10004
-
-		local var_29_2 = var_29_0(var_29_1, var_2_10004(1, 1, 1), 0.2)
-		local var_29_3 = var_1.setFrom
-
-		Vector3 = var_4
-
-		local var_29_4 = var_29_3(var_29_2, var_4(0, 1, 1))
-		local var_29_5 = var_1.setOnComplete
-
-		System = var_4
-
-		var_29_5(var_29_4, var_4.Action(arg_29_0))
-
-		arg_26_0.taskGroupDesc.position = var_26_1.position
-
-		local var_29_6 = arg_26_0.taskGroupDesc
-
-		var_1.SetAsLastSibling(var_29_6)
-
-		local var_29_7 = var_26_1
-
-		var_1.SetAsLastSibling(var_29_7)
-
-		return
-	end)
-
-	seriesAsync = var_8
-
-	var_8(var_26_0, arg_26_2)
 
 	return
 end
 
-function var_0_1.closeAnim(arg_30_0, arg_30_1, arg_30_2)
-	local var_30_0 = {}
-	local var_30_1 = arg_30_0.taskGroupTFs[arg_30_1]
+function var_0_0.openAnim(arg_26_0, arg_26_1, arg_26_2)
+	assert(arg_26_1, "index can not be nil" .. arg_26_1)
 
-	table = var_1_10005
+	local var_26_0 = arg_26_0.taskGroupTFs[arg_26_1]
+	local var_26_1 = arg_26_0.startPosition.y + (arg_26_0:getRow(arg_26_1) - 1) * arg_26_0.offset.y
+	local var_26_2 = arg_26_0.taskGorupContainer.localPosition.x
 
-	var_1_10005.insert(var_30_0, function(arg_31_0)
-		LeanTween = var_2_10001
-
-		local var_31_0 = var_2_10001.scale
-		local var_31_1 = arg_30_0.taskGroupDesc
-
-		Vector3 = var_2_10004
-
-		local var_31_2 = var_31_0(var_31_1, var_2_10004(0, 1, 1), 0.2)
-		local var_31_3 = var_1.setFrom
-
-		Vector3 = var_4
-
-		local var_31_4 = var_31_3(var_31_2, var_4(1, 1, 1))
-		local var_31_5 = var_1.setOnComplete
-
-		System = var_4
-
-		var_31_5(var_31_4, var_4.Action(arg_31_0))
+	table.insert({}, function(arg_27_0)
+		LeanTween.moveLocal(go(arg_26_0.taskGorupContainer), Vector3(var_26_2, var_26_1, 0), 0.2):setOnComplete(System.Action(arg_27_0))
 
 		return
 	end)
-
-	table = var_5
-
-	var_5.insert(var_30_0, function(arg_32_0)
-		local var_32_0 = var_30_1.eulerAngles.x
-		local var_32_1 = var_30_1.eulerAngles.z
-
-		LeanTween = var_2_10003
-
-		local var_32_2 = var_2_10003.rotate
-
-		go = var_2_10005
-
-		local var_32_3 = var_2_10005(var_30_1)
-
-		Vector3 = var_2_10006
-
-		local var_32_4 = var_32_2(var_32_3, var_2_10006(var_32_0, 0, var_32_1), 0.2)
-		local var_32_5 = var_3.setFrom
-
-		Vector3 = var_6
-
-		local var_32_6 = var_32_5(var_32_4, var_6(var_32_0, -180, var_32_1))
-		local var_32_7 = var_3.setOnComplete
-
-		System = var_6
-
-		var_32_7(var_32_6, var_6.Action(arg_32_0))
+	table.insert({}, function(arg_28_0)
+		triggerToggle(var_26_0, true)
+		LeanTween.rotate(go(var_26_0), Vector3(var_26_0.eulerAngles.x, 0, var_26_0.eulerAngles.z), 0.2):setFrom(Vector3(var_26_0.eulerAngles.x, -180, var_26_0.eulerAngles.z)):setOnComplete(System.Action(arg_28_0))
 
 		return
 	end)
+	table.insert({}, function(arg_29_0)
+		LeanTween.scale(arg_26_0.taskGroupDesc, Vector3(1, 1, 1), 0.2):setFrom(Vector3(0, 1, 1)):setOnComplete(System.Action(arg_29_0))
 
-	table = var_5
+		arg_26_0.taskGroupDesc.position = var_26_0.position
 
-	var_5.insert(var_30_0, function(arg_33_0)
-		triggerToggle = var_2_10001
+		arg_26_0.taskGroupDesc:SetAsLastSibling()
+		var_26_0:SetAsLastSibling()
 
-		var_2_10001(var_30_1, false)
+		return
+	end)
+	seriesAsync({}, arg_26_2)
+
+	return
+end
+
+function var_0_0.closeAnim(arg_30_0, arg_30_1, arg_30_2)
+	local var_30_0 = arg_30_0.taskGroupTFs[arg_30_1]
+
+	table.insert({}, function(arg_31_0)
+		LeanTween.scale(arg_30_0.taskGroupDesc, Vector3(0, 1, 1), 0.2):setFrom(Vector3(1, 1, 1)):setOnComplete(System.Action(arg_31_0))
+
+		return
+	end)
+	table.insert({}, function(arg_32_0)
+		LeanTween.rotate(go(var_30_0), Vector3(var_30_0.eulerAngles.x, 0, var_30_0.eulerAngles.z), 0.2):setFrom(Vector3(var_30_0.eulerAngles.x, -180, var_30_0.eulerAngles.z)):setOnComplete(System.Action(arg_32_0))
+
+		return
+	end)
+	table.insert({}, function(arg_33_0)
+		triggerToggle(var_30_0, false)
 		arg_33_0()
 
 		return
 	end)
-
-	seriesAsync = var_5
-
-	var_5(var_30_0, arg_30_2)
+	seriesAsync({}, arg_30_2)
 
 	return
 end
 
-function var_0_1.addVerticalDrag(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
-	GetOrAddComponent = var_1_10004
-
-	local var_34_0 = var_1_10004(arg_34_1, "EventTriggerListener")
+function var_0_0.addVerticalDrag(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
+	local var_34_0 = GetOrAddComponent(arg_34_1, "EventTriggerListener")
 	local var_34_1
 	local var_34_2 = 0
 	local var_34_3 = 50
@@ -832,13 +393,8 @@ function var_0_1.addVerticalDrag(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
 		return
 	end)
 	var_34_0:AddDragFunc(function(arg_36_0, arg_36_1)
-		local var_36_0 = arg_36_1.position
-
-		if not var_34_1 then
-			var_34_1 = var_36_0
-		end
-
-		var_34_2 = var_36_0.y - var_34_1.y
+		var_34_1 = var_34_1 or arg_36_1.position
+		var_34_2 = arg_36_1.position.y - var_34_1.y
 
 		return
 	end)
@@ -857,8 +413,8 @@ function var_0_1.addVerticalDrag(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
 	return
 end
 
-function var_0_1.willExit(arg_38_0)
+function var_0_0.willExit(arg_38_0)
 	return
 end
 
-return var_0_1
+return var_0_0

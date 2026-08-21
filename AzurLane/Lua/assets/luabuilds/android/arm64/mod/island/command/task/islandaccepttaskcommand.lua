@@ -1,60 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandAcceptTaskCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandAcceptTaskCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().taskIds
-	local var_1_1 = var_2.callback
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 21032, {
-		task_id_list = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(21032, {
+		task_id_list = var_1_0.taskIds
 	}, 21033, function(arg_2_0)
-		getProxy = var_2_10001
-		IslandProxy = var_2_10003
+		local var_2_0 = getProxy(IslandProxy):GetIsland():GetTaskAgency()
+		local var_2_1 = arg_2_0.task_list or {}
 
-		local var_2_0 = var_2_10001(var_2_10003)
-		local var_2_1 = var_1.GetIsland(var_2_0)
-		local var_2_2 = var_1.GetTaskAgency(var_2_1)
-		local var_2_3 = {}
-
-		ipairs = var_2_1
-
-		local var_2_4
-
-		if not arg_2_0.task_list then
-			var_2_4 = {}
+		for iter_2_0, iter_2_1 in ipairs(var_2_1) do
+			var_2_0:AddTask((IslandTask.New(iter_2_1)))
+			table.insert({}, iter_2_1.id)
 		end
 
-		for iter_2_0, iter_2_1 in var_2_1(var_2_4) do
-			IslandTask = var_2_10008
-			var_2_10008 = var_2_10008.New(iter_2_1)
-
-			var_2_2:AddTask(var_2_10008)
-
-			table = var_9
-
-			var_9.insert(var_2_3, iter_2_1.id)
+		if #{} > 0 then
+			var_2_0:TryAutoTrackTask()
 		end
 
-		if #var_2_3 > 0 then
-			var_2_2:TryAutoTrackTask()
-		end
-
-		local var_2_5 = arg_1_0
-		local var_2_6 = var_3.sendNotification
-
-		GAME = iter_2_0
-
-		var_2_6(var_2_5, iter_2_0.ISLAND_ACCEPT_TASK_DONE, {
-			taskIds = var_2_3,
+		arg_1_0:sendNotification(GAME.ISLAND_ACCEPT_TASK_DONE, {
+			taskIds = {},
 			callback = var_1_1
 		})
 
@@ -64,4 +30,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

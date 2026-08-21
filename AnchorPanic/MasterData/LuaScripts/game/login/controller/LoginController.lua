@@ -111,6 +111,7 @@ function onReqExitGameHandler(self, args)
                 UIFactory:closeForcibly()
                 -- 调用READY_EXIT_GAME的时候，会触发各个控制器clearMap调用到Perset3dHandler:reset继而隐藏默认场景相机
                 -- 手动设置场景相机为空，统一走WebController的reRequire GameView重新CameraMgr的设置相机流程
+                -- Perset3dHandler:reset()
                 gs.CameraMgr:SetSceneCamera(nil)
                 -- 如果需要重新更新游戏，此时更新界面可能不在缓存池中需要一定时间加载会有蓝屏空隙，所以由UpdateResLoadingView显示后自动关闭所有界面
                 web.WebManager:dispatchEvent(web.WebManager.REQ_MODULE_UPDATE_CHECK, { isNeedRunUpdate = isNeedRunUpdate })
@@ -126,6 +127,7 @@ function onReqExitGameHandler(self, args)
                 gs.PopPanelManager.DestroyAllPanel()
                 -- 调用READY_EXIT_GAME的时候，会触发各个控制器clearMap调用到Perset3dHandler:reset继而隐藏默认场景相机
                 -- 手动设置场景相机为空，统一走WebController的reRequire GameView重新CameraMgr的设置相机流程
+                -- Perset3dHandler:reset()
                 gs.CameraMgr:SetSceneCamera(nil)
                 web.WebManager:dispatchEvent(web.WebManager.MODULE_UPDATE_CHECK_FINISH, {})
 
@@ -191,6 +193,7 @@ function __onTryLoginHandler(self)
     print("点击正式登录->开始请求账号登录")
     web.WebController:reqReportStep(web.REPORT_STEP.SOCKET_CONNECT_SUC)
 
+    local channelId, channelName = sdk.ChannelData:getData()
     print(string.format("请求账号登录，IP：%s，端口：%s，服务器id：%s", web.WebManager.ip, web.WebManager.port, web.WebManager.server_id))
     print(string.format("账号名：%s", web.WebManager.web_account_id or ""))
     print(string.format("登录时间：%s", web.WebManager.web_login_time or ""))
@@ -199,6 +202,7 @@ function __onTryLoginHandler(self)
     print(string.format("平台id：%s", web.WebManager.pf_id or ""))
     print(string.format("平台渠道：%s", web.WebManager.channel_id or ""))
     print(string.format("平台子渠道：%s", web.WebManager.sub_channel_id or ""))
+    print(string.format("SDK渠道：%s", channelId or 0))
     print(string.format("设备类型：%s", web.WebManager.dev_os))
     print(string.format("设备码：%s", sdk.SdkManager:getUniqueId()))
     print(string.format("设备型号：%s", CS.UnityEngine.SystemInfo.deviceModel))
@@ -216,7 +220,8 @@ function __onTryLoginHandler(self)
         dev_platform_type = web.WebManager.dev_os or web.GetDeviceCode(nil),
         dev_code = sdk.SdkManager:getUniqueId() or "",
         dev_model = CS.UnityEngine.SystemInfo.deviceModel or "",
-        dev_token = gs.SdkManager:GetDevicePushToken() or ""
+        dev_token = gs.SdkManager:GetDevicePushToken() or "",
+        sdk_channel_id = channelId or 0
     })
 end
 ------------------------------------------------------------响应-------------------------------------------------------------------
@@ -444,6 +449,21 @@ end
 
 -- 点击正式登录
 function onLoginHandler(self, data)
+    if(web.WebManager.IsNeedUpdatePackage and web.WebManager:isReleaseApp())then
+        local version = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.VersionKey)
+        local versionStr = download.ResDownLoadManager:getVersionStr(version)
+        local prefixVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.PrefixVersionKey)
+        local proVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ProVersionKey)
+        local artVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ArtVersionKey)
+        local tip = string.format("当前版本 %s 过低，请前往下载最新版本", web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion))
+    
+        local confirmCall = function()
+            CS.Lylibs.SDKManager.Ins:CloseApplication()
+        end
+        UIFactory:alertOK0(_TT(49), tip, confirmCall)
+        return
+    end
+    
     local isHasNetWork, isMobileNet, isWifi = web.getNetStatus()
     if (isHasNetWork) then
         loginLoad.LoginLoadController:showLoading(self.__onCloseLoginViewHandler, self)

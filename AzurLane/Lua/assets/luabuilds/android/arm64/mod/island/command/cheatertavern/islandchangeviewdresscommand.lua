@@ -1,52 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandChangeViewDressCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandChangeViewDressCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().ship_id
-	local var_1_1 = var_2.game_type
-	local var_1_2 = var_2.type
-
-	pg = var_1_10006
-
-	local var_1_3 = var_1_10006.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_3, 23029, {
-		type = var_1_2,
-		game_type = var_1_1,
-		ship_id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(23029, {
+		type = var_1_0.type,
+		game_type = var_1_0.game_type,
+		ship_id = var_1_0.ship_id
 	}, 23030, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			IslandProxy = var_2_10003
-
-			local var_2_0 = var_1(var_2_10003)
-
-			var_2_10004 = var_1.GetIsland(var_2_0)
-
-			local var_2_1 = var_1.GetCharacterAgency(var_2_10004)
-
-			var_2.SetMiniGameShipViewId(var_2_1, var_1_1, var_1_0)
-
-			local var_2_2 = arg_1_0
-			local var_2_3 = var_3.sendNotification
-
-			GAME = var_6
-
-			var_2_3(var_2_2, var_6.PLAY_ROOM_REFRESH_ROOM_INFO)
+			getProxy(IslandProxy):GetIsland():GetCharacterAgency():SetMiniGameShipViewId(var_0, var_0)
+			arg_1_0:sendNotification(GAME.PLAY_ROOM_REFRESH_ROOM_INFO)
 		else
-			pg = var_1
-
-			local var_2_4 = var_1.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -55,4 +21,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

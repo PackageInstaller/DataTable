@@ -1,38 +1,25 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("LaunchBallGameScene")
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
-local var_0_5 = 1
-local var_0_6 = 2
-local var_0_7 = 3
-local var_0_8 = 4
-local var_0_9 = 5
-local var_0_10 = 6
-local var_0_11 = 7
-local var_0_12 = 90
-local var_0_13 = {
-	[var_0_5] = {
+﻿local var_0_0 = class("LaunchBallGameScene")
+local var_0_5 = 90
+local var_0_6 = {
+	{
 		tpl = "pointer01"
 	},
-	[var_0_6] = {
+	{
 		tpl = "pointer02"
 	},
-	[var_0_7] = {
+	{
 		tpl = "pointer03"
 	},
-	[var_0_8] = {
+	{
 		tpl = "pointer04"
 	},
-	[var_0_9] = {
+	{
 		tpl = "pointer05"
 	},
-	[var_0_10] = {
+	{
 		tpl = "pointer06"
 	},
-	[var_0_11] = {
+	{
 		tpl = "pointer07"
 	}
 }
@@ -55,189 +42,119 @@ var_0_0.PLAYER_EFFECT = "player effect"
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
-	findTF = var_1_10003
-	arg_1_0.sceneMask = var_1_10003(arg_1_0._tf, "sceneMask")
-	findTF = var_3
-	arg_1_0.tplContent = var_3(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl")
-	findTF = var_3
-	arg_1_0.contentBack = var_3(arg_1_0._tf, "sceneMask/sceneContainer/scene_background/content")
-	findTF = var_3
-	arg_1_0.contentMid = var_3(arg_1_0._tf, "sceneMask/sceneContainer/scene/content")
-	findTF = var_3
-	arg_1_0.contentTop = var_3(arg_1_0._tf, "sceneMask/sceneContainer/scene_front/content")
-	findTF = var_3
-	arg_1_0.contentEF = var_3(arg_1_0._tf, "sceneMask/sceneContainer/scene/effect_front")
-	findTF = var_3
-	arg_1_0.playerContent = var_3(arg_1_0.contentTop, "player")
-	findTF = var_3
-	arg_1_0.amuletContent = var_3(arg_1_0.contentTop, "amulet")
-	findTF = var_3
-	arg_1_0.amuletsContent = var_3(arg_1_0.contentTop, "amulets")
-	findTF = var_3
-	arg_1_0.amuletLifeContent = var_3(arg_1_0.contentTop, "amuletLifeContent")
-	findTF = var_3
-	arg_1_0.enemyContent = var_3(arg_1_0.contentMid, "enemy")
-	findTF = var_3
-	arg_1_0.lineContent = var_3(arg_1_0.contentMid, "line")
-	LaunchBallGameJoyStick = var_3
+	arg_1_0.sceneMask = findTF(arg_1_0._tf, "sceneMask")
+	arg_1_0.tplContent = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/tpl")
+	arg_1_0.contentBack = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene_background/content")
+	arg_1_0.contentMid = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/content")
+	arg_1_0.contentTop = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene_front/content")
+	arg_1_0.contentEF = findTF(arg_1_0._tf, "sceneMask/sceneContainer/scene/effect_front")
+	arg_1_0.playerContent = findTF(arg_1_0.contentTop, "player")
+	arg_1_0.amuletContent = findTF(arg_1_0.contentTop, "amulet")
+	arg_1_0.amuletsContent = findTF(arg_1_0.contentTop, "amulets")
+	arg_1_0.amuletLifeContent = findTF(arg_1_0.contentTop, "amuletLifeContent")
+	arg_1_0.enemyContent = findTF(arg_1_0.contentMid, "enemy")
+	arg_1_0.lineContent = findTF(arg_1_0.contentMid, "line")
+	arg_1_0.joyStick = LaunchBallGameJoyStick.New(findTF(arg_1_0.contentTop, "joyStick"))
 
-	local var_1_0 = var_3.New
-
-	findTF = var_5
-	arg_1_0.joyStick = var_1_0(var_5(arg_1_0.contentTop, "joyStick"))
-
-	local var_1_1 = arg_1_0.joyStick
-
-	var_3.setActiveCallback(var_1_1, function(arg_2_0)
-		local var_2_0 = arg_1_0
-
-		var_1.joystickActive(var_2_0, arg_2_0)
+	arg_1_0.joyStick:setActiveCallback(function(arg_2_0)
+		arg_1_0:joystickActive(arg_2_0)
 
 		return
 	end)
 
-	local function var_1_2(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0.launchBallAmulet
+	local var_1_0 = Clone(LaunchBallGameConst.map_data[LaunchBallGameVo.gameRoundData.map].map)
+	local var_1_1 = findTF(arg_1_0.contentBack, "bg")
+	local var_1_2 = findTF(arg_1_0.contentTop, "bg")
 
-		var_2.eventCall(var_3_0, arg_3_0, arg_3_1)
+	for iter_1_0 = 0, var_1_1.childCount - 1 do
+		local var_1_3 = var_1_1:GetChild(iter_1_0)
 
-		local var_3_1 = arg_1_0.launchBallPlayer
-
-		var_2.eventCall(var_3_1, arg_3_0, arg_3_1)
-
-		local var_3_2 = arg_1_0.launchBallEnemy
-
-		var_2.eventCall(var_3_2, arg_3_0, arg_3_1)
-
-		LaunchBallGameScene = var_2
-
-		local var_3_4
-
-		if arg_3_0 == var_2.ENEMY_FINISH then
-			local var_3_3 = arg_1_0._event
-
-			var_3_4 = var_3_4.emit
-			LaunchBallGameView = var_5
-
-			var_3_4(var_3_3, var_5.GAME_OVER)
-		else
-			LaunchBallGameScene = var_3_4
-
-			local var_3_6
-
-			if arg_3_0 == var_3_4.SPILT_ENEMY_SCORE then
-				local var_3_5 = arg_1_0._event
-
-				var_3_6 = var_3_6.emit
-				LaunchBallGameView = var_5
-
-				var_3_6(var_3_5, var_5.ADD_SCORE, arg_3_1)
-			else
-				LaunchBallGameScene = var_3_6
-
-				if arg_3_0 == var_3_6.SLASH_ENEMY then
-					arg_1_0.timeSlashDirect = arg_3_1.direct
-					arg_1_0.timeSlash = arg_3_1.time
-				end
-			end
-		end
-
-		return
+		setActive(var_1_3, var_1_3.name == var_1_0)
 	end
 
-	Clone = var_1_10004
-	LaunchBallGameConst = var_6
+	for iter_1_1 = 0, var_1_2.childCount - 1 do
+		local var_1_4 = var_1_2:GetChild(iter_1_1)
 
-	local var_1_3 = var_6.map_data
-
-	LaunchBallGameVo = var_7
-
-	local var_1_4 = var_1_10004(var_1_3[var_7.gameRoundData.map].map)
-
-	findTF = var_1_1
-
-	local var_1_5 = var_1_1(arg_1_0.contentBack, "bg")
-
-	findTF = var_6
-
-	local var_1_6 = var_6(arg_1_0.contentTop, "bg")
-
-	for iter_1_0 = 0, var_1_5.childCount - 1 do
-		var_1_10011 = var_1_5:GetChild(iter_1_0)
-		setActive = var_1_10012
-
-		var_1_10012(var_1_10011, var_1_10011.name == var_1_4)
-	end
-
-	for iter_1_1 = 0, var_1_6.childCount - 1 do
-		var_1_10011 = var_1_6:GetChild(iter_1_1)
-		setActive = var_1_10012
-
-		var_1_10012(var_1_10011, var_1_10011.name == var_1_4)
+		setActive(var_1_4, var_1_4.name == var_1_0)
 	end
 
 	for iter_1_2 = 0, arg_1_0.lineContent.childCount - 1 do
-		setActive = var_1_10011
-
-		local var_1_7 = arg_1_0.lineContent
-
-		var_1_10011(var_13.GetChild(var_1_7, iter_1_2), false)
+		setActive(arg_1_0.lineContent:GetChild(iter_1_2), false)
 	end
 
-	LaunchBallAmulet = var_7
-	arg_1_0.launchBallAmulet = var_7.New(arg_1_0.amuletContent, arg_1_0.amuletsContent, arg_1_0.amuletLifeContent, arg_1_0.tplContent, var_1_2)
-	LaunchBallPlayerControl = var_7
-	arg_1_0.launchBallPlayer = var_7.New(arg_1_0.contentTop, arg_1_0.playerContent, arg_1_0.tplContent, var_1_2)
-	LaunchBallEnemy = var_7
-	arg_1_0.launchBallEnemy = var_7.New(arg_1_0.enemyContent, arg_1_0.lineContent, arg_1_0.tplContent, var_1_2)
+	arg_1_0.launchBallAmulet = LaunchBallAmulet.New(arg_1_0.amuletContent, arg_1_0.amuletsContent, arg_1_0.amuletLifeContent, arg_1_0.tplContent, function(arg_3_0, arg_3_1)
+		arg_1_0.launchBallAmulet:eventCall(arg_3_0, arg_3_1)
+		arg_1_0.launchBallPlayer:eventCall(arg_3_0, arg_3_1)
+		arg_1_0.launchBallEnemy:eventCall(arg_3_0, arg_3_1)
 
-	if not arg_1_0.pointerContent then
-		findTF = var_7
-		arg_1_0.pointerContent = var_7(arg_1_0.contentTop, "pointer")
-	end
+		if arg_3_0 == LaunchBallGameScene.ENEMY_FINISH then
+			arg_1_0._event:emit(LaunchBallGameView.GAME_OVER)
+		elseif arg_3_0 == LaunchBallGameScene.SPILT_ENEMY_SCORE then
+			arg_1_0._event:emit(LaunchBallGameView.ADD_SCORE, arg_3_1)
+		elseif arg_3_0 == LaunchBallGameScene.SLASH_ENEMY then
+			arg_1_0.timeSlashDirect = arg_3_1.direct
+			arg_1_0.timeSlash = arg_3_1.time
+		end
+
+		return
+	end)
+	arg_1_0.launchBallPlayer = LaunchBallPlayerControl.New(arg_1_0.contentTop, arg_1_0.playerContent, arg_1_0.tplContent, function(arg_3_0, arg_3_1)
+		arg_1_0.launchBallAmulet:eventCall(arg_3_0, arg_3_1)
+		arg_1_0.launchBallPlayer:eventCall(arg_3_0, arg_3_1)
+		arg_1_0.launchBallEnemy:eventCall(arg_3_0, arg_3_1)
+
+		if arg_3_0 == LaunchBallGameScene.ENEMY_FINISH then
+			arg_1_0._event:emit(LaunchBallGameView.GAME_OVER)
+		elseif arg_3_0 == LaunchBallGameScene.SPILT_ENEMY_SCORE then
+			arg_1_0._event:emit(LaunchBallGameView.ADD_SCORE, arg_3_1)
+		elseif arg_3_0 == LaunchBallGameScene.SLASH_ENEMY then
+			arg_1_0.timeSlashDirect = arg_3_1.direct
+			arg_1_0.timeSlash = arg_3_1.time
+		end
+
+		return
+	end)
+	arg_1_0.launchBallEnemy = LaunchBallEnemy.New(arg_1_0.enemyContent, arg_1_0.lineContent, arg_1_0.tplContent, function(arg_3_0, arg_3_1)
+		arg_1_0.launchBallAmulet:eventCall(arg_3_0, arg_3_1)
+		arg_1_0.launchBallPlayer:eventCall(arg_3_0, arg_3_1)
+		arg_1_0.launchBallEnemy:eventCall(arg_3_0, arg_3_1)
+
+		if arg_3_0 == LaunchBallGameScene.ENEMY_FINISH then
+			arg_1_0._event:emit(LaunchBallGameView.GAME_OVER)
+		elseif arg_3_0 == LaunchBallGameScene.SPILT_ENEMY_SCORE then
+			arg_1_0._event:emit(LaunchBallGameView.ADD_SCORE, arg_3_1)
+		elseif arg_3_0 == LaunchBallGameScene.SLASH_ENEMY then
+			arg_1_0.timeSlashDirect = arg_3_1.direct
+			arg_1_0.timeSlash = arg_3_1.time
+		end
+
+		return
+	end)
+	arg_1_0.pointerContent = arg_1_0.pointerContent or findTF(arg_1_0.contentTop, "pointer")
 
 	if not arg_1_0.pointerCollider then
-		findTF = var_7
-		arg_1_0.pointerCollider = var_7(arg_1_0.contentTop, "collider")
-		setActive = var_7
+		arg_1_0.pointerCollider = findTF(arg_1_0.contentTop, "collider")
 
-		var_7(arg_1_0.pointerCollider, false)
+		setActive(arg_1_0.pointerCollider, false)
 	end
 
 	return
 end
 
-local var_0_14 = 50
-local var_0_15 = 500
-local var_0_16 = var_0_15 / 50
+local var_0_7 = 50
+local var_0_8 = 500 / 50
 
 function var_0_0.start(arg_4_0)
 	arg_4_0:prepareScene()
+	arg_4_0.launchBallAmulet:start()
+	arg_4_0.launchBallPlayer:start()
+	arg_4_0.launchBallEnemy:start()
 
-	local var_4_0 = arg_4_0.launchBallAmulet
-
-	var_1.start(var_4_0)
-
-	local var_4_1 = arg_4_0.launchBallPlayer
-
-	var_1.start(var_4_1)
-
-	local var_4_2 = arg_4_0.launchBallEnemy
-
-	var_1.start(var_4_2)
-
-	Vector3 = var_1
-	arg_4_0.pointerRotation = var_1(0, 0, 0)
-	Vector2 = var_1
-	arg_4_0.pointerPosition = var_1(0, 0)
+	arg_4_0.pointerRotation = Vector3(0, 0, 0)
+	arg_4_0.pointerPosition = Vector2(0, 0)
 
 	for iter_4_0 = 0, arg_4_0.pointerContent.childCount - 1 do
-		local var_4_3 = arg_4_0.pointerContent
-		local var_4_4 = var_5.GetChild(var_4_3, iter_4_0)
-
-		setActive = var_1_10006
-
-		var_1_10006(var_4_4, false)
+		setActive(arg_4_0.pointerContent:GetChild(iter_4_0), false)
 	end
 
 	arg_4_0.timeSlash = nil
@@ -246,289 +163,134 @@ function var_0_0.start(arg_4_0)
 end
 
 function var_0_0.step(arg_5_0)
-	local var_5_0 = arg_5_0.joyStick
+	arg_5_0.joyStick:step()
 
-	var_1.step(var_5_0)
+	LaunchBallGameVo.joyStickData = arg_5_0.joyStick:getValue()
 
-	LaunchBallGameVo = var_1
+	arg_5_0.launchBallAmulet:step()
+	arg_5_0.launchBallPlayer:step()
+	arg_5_0.launchBallEnemy:step()
 
-	local var_5_1 = arg_5_0.joyStick
+	local var_5_0 = arg_5_0.launchBallAmulet:getAngle()
 
-	var_1.joyStickData = var_2.getValue(var_5_1)
-
-	local var_5_2 = arg_5_0.launchBallAmulet
-
-	var_1.step(var_5_2)
-
-	local var_5_3 = arg_5_0.launchBallPlayer
-
-	var_1.step(var_5_3)
-
-	local var_5_4 = arg_5_0.launchBallEnemy
-
-	var_1.step(var_5_4)
-
-	local var_5_5 = arg_5_0.launchBallAmulet
-
-	if var_1.getAngle(var_5_5) < 0 and arg_5_0.lastContent ~= arg_5_0.amuletContent then
-		var_5_1 = arg_5_0.amuletContent
-
-		var_2.SetAsLastSibling(var_5_1)
-
-		var_5_1 = arg_5_0.amuletsContent
-
-		var_2.SetAsFirstSibling(var_5_1)
+	if var_5_0 < 0 and arg_5_0.lastContent ~= arg_5_0.amuletContent then
+		arg_5_0.amuletContent:SetAsLastSibling()
+		arg_5_0.amuletsContent:SetAsFirstSibling()
 
 		arg_5_0.lastContent = arg_5_0.amuletContent
-	elseif var_1 > 0 and arg_5_0.lastContent ~= arg_5_0.playerContent then
-		var_5_1 = arg_5_0.amuletContent
-
-		var_2.SetAsFirstSibling(var_5_1)
-
-		var_5_1 = arg_5_0.amuletsContent
-
-		var_2.SetAsLastSibling(var_5_1)
+	elseif var_5_0 > 0 and arg_5_0.lastContent ~= arg_5_0.playerContent then
+		arg_5_0.amuletContent:SetAsFirstSibling()
+		arg_5_0.amuletsContent:SetAsLastSibling()
 
 		arg_5_0.lastContent = arg_5_0.playerContent
 	end
 
-	if arg_5_0.timeSlash then
-		local var_5_6 = arg_5_0.timeSlash
+	if arg_5_0.timeSlash and arg_5_0.timeSlash > 0 then
+		arg_5_0.timeSlash = arg_5_0.timeSlash - LaunchBallGameVo.deltaTime
 
-		if 0 < var_5_6 then
-			local var_5_7 = arg_5_0.timeSlash
+		if arg_5_0.timeSlash <= 0 then
+			arg_5_0.timeSlash = nil
 
-			LaunchBallGameVo = var_3
-			arg_5_0.timeSlash = var_5_7 - var_3.deltaTime
+			local var_5_1 = GetComponent(findTF(arg_5_0.contentTop, "effect/SlashBound/ad/" .. arg_5_0.timeSlashDirect), typeof(BoxCollider2D))
+			local var_5_2 = arg_5_0.launchBallEnemy:getEnemysInBounds(var_5_1.bounds.min, var_5_1.bounds.max)
 
-			if arg_5_0.timeSlash <= 0 then
-				arg_5_0.timeSlash = nil
-				GetComponent = var_2
-				findTF = var_5_1
-
-				local var_5_8 = var_5_1(arg_5_0.contentTop, "effect/SlashBound/ad/" .. arg_5_0.timeSlashDirect)
-
-				typeof = var_1_10005
-				BoxCollider2D = var_7
-
-				local var_5_9 = var_2(var_5_8, var_1_10005(var_7)).bounds.min
-				local var_5_10 = var_2.bounds.max
-				local var_5_11 = arg_5_0.launchBallEnemy
-				local var_5_12 = var_5.getEnemysInBounds(var_5_11, var_5_9, var_5_10)
-
-				for iter_5_0 = 1, #var_5_12 do
-					var_1_10012 = var_5_12[iter_5_0]
-
-					var_10.hit(var_1_10012)
-
-					LaunchBallGameVo = var_10
-
-					local var_5_13 = var_10.GetScore(1, 1)
-					local var_5_14 = arg_5_0._event
-					local var_5_15 = var_11.emit
-
-					LaunchBallGameView = var_1_10014
-
-					var_5_15(var_5_14, var_1_10014.ADD_SCORE, {
-						num = var_5_13
-					})
-				end
-
-				LaunchBallGameVo = var_6
-
-				local var_5_16 = var_6.AddGameResultData
-
-				LaunchBallGameVo = var_8
-
-				var_5_16(var_8.result_skill_count, #var_5_12)
-			end
-		end
-	end
-
-	local var_5_17 = arg_5_0.launchBallAmulet
-
-	for iter_5_1 = #var_2.getFireAmulet(var_5_17), 1, -1 do
-		local var_5_18 = var_2[iter_5_1]
-		local var_5_19 = var_2[iter_5_1].tf.position
-
-		if not var_5_18.removeFlag then
-			local var_5_20 = arg_5_0.launchBallEnemy
-
-			if var_9.checkAmulet(var_5_20, var_2[iter_5_1]) then
-				var_5_18.removeFlag = true
-			end
-		end
-	end
-
-	local var_5_21 = arg_5_0.launchBallAmulet
-
-	for iter_5_2 = #var_3.getButterfly(var_5_21), 1, -1 do
-		local var_5_22 = var_3[iter_5_2].tf
-
-		if not var_8.removeFlag and not var_8.removeTime then
-			local var_5_23 = var_5_22.position
-			local var_5_24 = arg_5_0.launchBallEnemy
-
-			if var_11.checkPositionIn(var_5_24, var_5_23) then
-				var_8.removeTime = 0.2
-				var_1_10012 = var_8.speed
-				var_1_10012.x = 0
-				var_1_10012 = var_8.speed
-				var_1_10012.y = 0
-
-				local var_5_25 = var_8.anim
-
-				var_1_10012.Play(var_5_25, "Hit")
-				var_11:setTimeRemove()
-
-				LaunchBallGameVo = var_1_10012
-				var_1_10012 = var_1_10012.GetScore(1, 1)
-
-				local var_5_26 = arg_5_0._event
-				local var_5_27 = var_13.emit
-
-				LaunchBallGameView = var_1_10016
-
-				var_5_27(var_5_26, var_1_10016.ADD_SCORE, {
-					num = var_1_10012
+			for iter_5_0 = 1, #var_5_2 do
+				var_5_2[iter_5_0]:hit()
+				arg_5_0._event:emit(LaunchBallGameView.ADD_SCORE, {
+					num = LaunchBallGameVo.GetScore(1, 1)
 				})
+			end
 
-				LaunchBallGameVo = var_5_27
+			LaunchBallGameVo.AddGameResultData(LaunchBallGameVo.result_skill_count, #var_5_2)
+		end
+	end
 
-				local var_5_28 = var_5_27.AddGameResultData
+	local var_5_3 = arg_5_0.launchBallAmulet:getFireAmulet()
 
-				LaunchBallGameVo = var_5_26
+	for iter_5_1 = #var_5_3, 1, -1 do
+		if not var_5_3[iter_5_1].removeFlag and arg_5_0.launchBallEnemy:checkAmulet(var_5_3[iter_5_1]) then
+			var_5_3[iter_5_1].removeFlag = true
+		end
+	end
 
-				var_5_28(var_5_26.result_pass_skill_count, 1)
+	local var_5_5 = arg_5_0.launchBallAmulet:getButterfly()
+
+	for iter_5_2 = #var_5_5, 1, -1 do
+		if not var_5_5[iter_5_2].removeFlag and not var_5_5[iter_5_2].removeTime then
+			local var_5_6 = arg_5_0.launchBallEnemy:checkPositionIn(var_5_5[iter_5_2].tf.position)
+
+			if var_5_6 then
+				var_5_5[iter_5_2].removeTime = 0.2
+				var_5_5[iter_5_2].speed.x = 0
+				var_5_5[iter_5_2].speed.y = 0
+
+				var_5_5[iter_5_2].anim:Play("Hit")
+				var_5_6:setTimeRemove()
+				arg_5_0._event:emit(LaunchBallGameView.ADD_SCORE, {
+					num = LaunchBallGameVo.GetScore(1, 1)
+				})
+				LaunchBallGameVo.AddGameResultData(LaunchBallGameVo.result_pass_skill_count, 1)
 			end
 		end
 	end
 
-	LaunchBallGameVo = var_4
+	if LaunchBallGameVo.joyStickData.active and LaunchBallGameVo.amulet then
+		arg_5_0.pointerTime = arg_5_0.pointerTime + LaunchBallGameVo.deltaTime
 
-	if var_4.joyStickData.active then
-		LaunchBallGameVo = var_4
+		if not arg_5_0.pointerColor then
+			for iter_5_3 = 0, arg_5_0.pointerContent.childCount - 1 do
+				local var_5_8 = arg_5_0.pointerContent:GetChild(iter_5_3)
 
-		if var_4.amulet then
-			local var_5_29 = arg_5_0.pointerTime
-
-			LaunchBallGameVo = var_5
-			arg_5_0.pointerTime = var_5_29 + var_5.deltaTime
-
-			if not arg_5_0.pointerColor then
-				LaunchBallGameVo = var_4
-
-				local var_5_30 = var_4.amulet.color
-				local var_5_31 = var_0_13
-
-				LaunchBallGameVo = var_6
-
-				local var_5_32 = var_5_31[var_6.amulet.color].tpl
-
-				for iter_5_3 = 0, arg_5_0.pointerContent.childCount - 1 do
-					var_1_10012 = arg_5_0.pointerContent
-
-					if var_10.GetChild(var_1_10012, iter_5_3).name == var_5_32 then
-						arg_5_0.anglePointer = var_10
-					end
-
-					setActive = var_11
-
-					var_11(var_10, false)
+				if var_5_8.name == var_0_6[LaunchBallGameVo.amulet.color].tpl then
+					arg_5_0.anglePointer = var_5_8
 				end
+
+				setActive(var_5_8, false)
 			end
+		end
 
-			local var_5_33 = arg_5_0.pointerTime
+		if arg_5_0.pointerTime > 0.3 and LaunchBallGameVo.joyStickData.active then
+			if LaunchBallGameVo.joyStickData.angle and LaunchBallGameVo.joyStickData.rad then
+				arg_5_0.pointerRotation.z = LaunchBallGameVo.joyStickData.angle + var_0_5
+				arg_5_0.anglePointer.localEulerAngles = arg_5_0.pointerRotation
 
-			if 0.3 < var_5_33 then
-				LaunchBallGameVo = var_5_33
+				setActive(arg_5_0.anglePointer, true)
 
-				if var_5_33.joyStickData.active then
-					LaunchBallGameVo = var_4
+				local var_5_9 = 0
 
-					local var_5_34 = var_4.joyStickData.angle
+				for iter_5_4 = 1, var_0_8 do
+					var_5_9 = iter_5_4 * var_0_7
+					arg_5_0.pointerPosition.x = math.cos(LaunchBallGameVo.joyStickData.rad) * (iter_5_4 * var_0_7)
+					arg_5_0.pointerPosition.y = math.sin(LaunchBallGameVo.joyStickData.rad) * var_5_9
 
-					LaunchBallGameVo = var_5
-
-					local var_5_35 = var_5.joyStickData.rad
-
-					if var_5_34 and var_5_35 then
-						arg_5_0.pointerRotation.z = var_5_34 + var_0_12
-
-						local var_5_36 = arg_5_0.anglePointer
-
-						var_5_36.localEulerAngles = arg_5_0.pointerRotation
-						setActive = var_5_36
-
-						var_5_36(arg_5_0.anglePointer, true)
-
-						local var_5_37 = 0
-
-						for iter_5_4 = 1, var_0_16 do
-							var_5_37 = iter_5_4 * var_0_14
-
-							local var_5_38 = arg_5_0.pointerPosition
-
-							math = var_1_10012
-							var_5_38.x = var_1_10012.cos(var_5_35) * var_5_37
-
-							local var_5_39 = arg_5_0.pointerPosition
-
-							math = var_1_10012
-							var_5_39.y = var_1_10012.sin(var_5_35) * var_5_37
-
-							local var_5_40 = arg_5_0.pointerContent
-							local var_5_41 = var_11.TransformPoint(var_5_40, arg_5_0.pointerPosition)
-							local var_5_42 = arg_5_0.launchBallEnemy
-
-							if var_1_10012.checkWorldInEnemy(var_5_42, var_5_41) then
-								break
-							end
-						end
-
-						for iter_5_5 = 1, 4 do
-							arg_5_0.pointerPosition.x = 0
-
-							local var_5_43 = arg_5_0.pointerPosition
-
-							var_5_43.y = (5 - iter_5_5) / 4 * var_5_37 * -1
-							findTF = var_5_43
-							var_5_43(arg_5_0.anglePointer, "ad/" .. iter_5_5).anchoredPosition = arg_5_0.pointerPosition
-						end
+					if arg_5_0.launchBallEnemy:checkWorldInEnemy((arg_5_0.pointerContent:TransformPoint(arg_5_0.pointerPosition))) then
+						break
 					end
 				end
-			end
 
-			goto label_5_0
+				for iter_5_5 = 1, 4 do
+					arg_5_0.pointerPosition.x = 0
+					arg_5_0.pointerPosition.y = (5 - iter_5_5) / 4 * var_5_9 * -1
+					findTF(arg_5_0.anglePointer, "ad/" .. iter_5_5).anchoredPosition = arg_5_0.pointerPosition
+				end
+			end
+		end
+	else
+		arg_5_0.pointerTime = 0
+		arg_5_0.pointerColor = nil
+
+		if arg_5_0.anglePointer then
+			setActive(arg_5_0.anglePointer, false)
 		end
 	end
-
-	arg_5_0.pointerTime = 0
-	arg_5_0.pointerColor = nil
-
-	if arg_5_0.anglePointer then
-		setActive = var_4
-
-		var_4(arg_5_0.anglePointer, false)
-	end
-
-	::label_5_0::
 
 	return
 end
 
 function var_0_0.clear(arg_6_0)
-	local var_6_0 = arg_6_0.launchBallAmulet
-
-	var_1.clear(var_6_0)
-
-	local var_6_1 = arg_6_0.launchBallPlayer
-
-	var_1.clear(var_6_1)
-
-	local var_6_2 = arg_6_0.launchBallEnemy
-
-	var_1.clear(var_6_2)
+	arg_6_0.launchBallAmulet:clear()
+	arg_6_0.launchBallPlayer:clear()
+	arg_6_0.launchBallEnemy:clear()
 
 	return
 end
@@ -552,33 +314,25 @@ function var_0_0.prepareScene(arg_10_0)
 end
 
 function var_0_0.showContainer(arg_11_0, arg_11_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_11_0.sceneMask, arg_11_1)
+	setActive(arg_11_0.sceneMask, arg_11_1)
 
 	return
 end
 
 function var_0_0.useSkill(arg_12_0)
-	local var_12_0 = arg_12_0.launchBallPlayer
-
-	var_1.useSkill(var_12_0)
+	arg_12_0.launchBallPlayer:useSkill()
 
 	return
 end
 
 function var_0_0.press(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.launchBallEnemy
-
-	var_2.press(var_13_0, arg_13_1)
+	arg_13_0.launchBallEnemy:press(arg_13_1)
 
 	return
 end
 
 function var_0_0.joystickActive(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_0.launchBallPlayer
-
-	var_2.joystickActive(var_14_0, arg_14_1)
+	arg_14_0.launchBallPlayer:joystickActive(arg_14_1)
 
 	return
 end

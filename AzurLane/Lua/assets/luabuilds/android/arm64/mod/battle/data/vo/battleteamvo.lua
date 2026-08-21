@@ -1,24 +1,13 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_3 = ys.Battle.BattleConfig
+local var_0_4 = ys.Battle.BattleDataFunction
+local var_0_5 = class("BattleTeamVO")
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleTeamVO = var_0_5
+var_0_5.__name = "BattleTeamVO"
 
-local var_0_1 = var_0.Battle.BattleEvent
-local var_0_2 = var_0.Battle.BattleFormulas
-local var_0_3 = var_0.Battle.BattleConst
-local var_0_4 = var_0.Battle.BattleConfig
-local var_0_5 = var_0.Battle.BattleDataFunction
-
-class = var_0_10006
-
-local var_0_6 = var_0_10006("BattleTeamVO")
-
-var_0.Battle.BattleTeamVO = var_0_6
-var_0_6.__name = "BattleTeamVO"
-
-function var_0_6.Ctor(arg_1_0, arg_1_1)
+function var_0_5.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._teamID = arg_1_1
 
 	arg_1_0:init()
@@ -26,27 +15,20 @@ function var_0_6.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_6.UpdateMotion(arg_2_0)
+function var_0_5.UpdateMotion(arg_2_0)
 	if arg_2_0._motionReferenceUnit then
-		local var_2_0 = arg_2_0._motionVO
-
-		var_1.UpdatePos(var_2_0, arg_2_0._motionReferenceUnit)
-
-		local var_2_1 = arg_2_0._motionVO
-		local var_2_2 = var_1.UpdateSpeed
-		local var_2_3 = arg_2_0._motionReferenceUnit
-
-		var_2_2(var_2_1, var_4.GetSpeed(var_2_3))
+		arg_2_0._motionVO:UpdatePos(arg_2_0._motionReferenceUnit)
+		arg_2_0._motionVO:UpdateSpeed(arg_2_0._motionReferenceUnit:GetSpeed())
 	end
 
 	return
 end
 
-function var_0_6.IsFatalDamage(arg_3_0)
+function var_0_5.IsFatalDamage(arg_3_0)
 	return arg_3_0._count == 0
 end
 
-function var_0_6.AppendUnit(arg_4_0, arg_4_1)
+function var_0_5.AppendUnit(arg_4_0, arg_4_1)
 	arg_4_1:SetMotion(arg_4_0._motionVO)
 
 	arg_4_0._enemyList[#arg_4_0._enemyList + 1] = arg_4_1
@@ -58,12 +40,10 @@ function var_0_6.AppendUnit(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_6.RemoveUnit(arg_5_0, arg_5_1)
+function var_0_5.RemoveUnit(arg_5_0, arg_5_1)
 	local var_5_0 = 0
 
-	ipairs = var_1_10003
-
-	for iter_5_0, iter_5_1 in var_1_10003(arg_5_0._enemyList) do
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0._enemyList) do
 		if iter_5_1 == arg_5_1 then
 			var_5_0 = iter_5_0
 
@@ -71,9 +51,7 @@ function var_0_6.RemoveUnit(arg_5_0, arg_5_1)
 		end
 	end
 
-	table = var_3
-
-	var_3.remove(arg_5_0._enemyList, var_5_0)
+	table.remove(arg_5_0._enemyList, var_5_0)
 
 	arg_5_0._count = arg_5_0._count - 1
 
@@ -83,7 +61,7 @@ function var_0_6.RemoveUnit(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_6.init(arg_6_0)
+function var_0_5.init(arg_6_0)
 	arg_6_0._enemyList = {}
 	arg_6_0._motionVO = var_0.Battle.BattleFleetMotionVO.New()
 	arg_6_0._count = 0
@@ -91,44 +69,37 @@ function var_0_6.init(arg_6_0)
 	return
 end
 
-function var_0_6.refreshTeamFormation(arg_7_0)
-	local var_7_0 = 1
-	local var_7_1 = #arg_7_0._enemyList
-	local var_7_2 = {}
-
-	while var_7_0 <= var_7_1 do
-		var_7_2[#var_7_2 + 1] = var_7_0
-		var_7_0 = var_7_0 + 1
+function var_0_5.refreshTeamFormation(arg_7_0)
+	while 1 <= #arg_7_0._enemyList do
+		({})[#{} + 1] = 1
 	end
 
-	local var_7_3 = var_0_5.GetFormationTmpDataFromID(var_0_4.FORMATION_ID).pos_offset
+	local var_7_1 = var_0_4.GetFormationTmpDataFromID(var_0_3.FORMATION_ID).pos_offset
 
-	arg_7_0._enemyList = var_0_5.SortFleetList(var_7_2, arg_7_0._enemyList)
+	arg_7_0._enemyList = var_0_4.SortFleetList({}, arg_7_0._enemyList)
 
-	local var_7_4 = var_0_4.BornOffset
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0._enemyList) do
+		local var_7_2
 
-	ipairs = var_6
-
-	for iter_7_0, iter_7_1 in var_6(arg_7_0._enemyList) do
 		if iter_7_0 == 1 then
 			arg_7_0._motionReferenceUnit = iter_7_1
 
 			iter_7_1:CancelFollowTeam()
-		else
-			local var_7_5 = var_7_3[iter_7_0]
-			local var_7_6 = iter_7_1
-			local var_7_7 = iter_7_1.UpdateFormationOffset
 
-			Vector3 = var_1_10015
+			goto label_7_0
 
-			var_7_7(var_7_6, var_1_10015(var_7_5.x, var_7_5.y, var_7_5.z) + var_7_4 * (iter_7_0 - 1))
+			var_7_2 = iter_7_1
 		end
+
+		iter_7_1:UpdateFormationOffset(Vector3(var_7_1[iter_7_0].x, var_7_1[iter_7_0].y, var_7_1[iter_7_0].z) + var_0_3.BornOffset * (iter_7_0 - 1))
+
+		::label_7_0::
 	end
 
 	return
 end
 
-function var_0_6.Dispose(arg_8_0)
+function var_0_5.Dispose(arg_8_0)
 	arg_8_0._enemyList = nil
 	arg_8_0._motionReferenceUnit = nil
 	arg_8_0._motionVO = nil

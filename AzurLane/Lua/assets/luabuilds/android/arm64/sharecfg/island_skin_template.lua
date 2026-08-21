@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_skin_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_skin_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_skin_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_skin_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_skin_template = rawget(pg, "island_skin_template") or setmetatable({
+	__name = "island_skin_template"
+}, confNEO)
+pg.island_skin_template.all = {
 	1011001,
 	1011701,
 	1020501,
@@ -56,11 +33,7 @@ var_0_3.all = {
 	99000301,
 	99000302
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_skin_template
-
-var_0_4.get_id_list_by_ship_group = {
+pg.island_skin_template.get_id_list_by_ship_group = {
 	[10110] = {
 		1011001
 	},
@@ -143,25 +116,11 @@ var_0_4.get_id_list_by_ship_group = {
 		99000302
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_skin_template = {}
+pg.base = pg.base or {}
+pg.base.island_skin_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_skin_template
-
-	var_1_0[1011001] = {
+	pg.base.island_skin_template[1011001] = {
 		ship_group = 10110,
 		name = "元气满载！",
 		jump_page = "",
@@ -175,11 +134,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_1011001",
 		icon_normal = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_skin_template
-
-	var_1_1[1011701] = {
+	pg.base.island_skin_template[1011701] = {
 		ship_group = 10117,
 		name = "兔兔晚安",
 		jump_page = "",
@@ -193,11 +148,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_1011701",
 		icon_normal = ""
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_skin_template
-
-	var_1_2[1020501] = {
+	pg.base.island_skin_template[1020501] = {
 		ship_group = 10205,
 		name = "湛蓝之心",
 		jump_page = "",
@@ -211,11 +162,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_1020501",
 		icon_normal = ""
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_skin_template
-
-	var_1_3[1051701] = {
+	pg.base.island_skin_template[1051701] = {
 		ship_group = 10517,
 		name = "轻跃日常",
 		tech_id = 0,
@@ -229,11 +176,7 @@ var_0_4.base.island_skin_template = {}
 		icon_normal = "props/skin_1051701",
 		jump_page = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_skin_template
-
-	var_1_4[1070301] = {
+	pg.base.island_skin_template[1070301] = {
 		ship_group = 10703,
 		name = "纯真游学日",
 		tech_id = 0,
@@ -247,11 +190,7 @@ var_0_4.base.island_skin_template = {}
 		icon_normal = "props/skin_1070301",
 		jump_page = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_skin_template
-
-	var_1_5[29] = {
+	pg.base.island_skin_template[29] = {
 		ship_group = 19903,
 		name = "课间约定",
 		jump_page = "",
@@ -265,11 +204,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_1990301",
 		icon_normal = ""
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_skin_template
-
-	var_1_6[2012101] = {
+	pg.base.island_skin_template[2012101] = {
 		ship_group = 20121,
 		name = "枕头大战",
 		jump_page = "",
@@ -283,11 +218,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_2012101",
 		icon_normal = ""
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_skin_template
-
-	var_1_7[2021201] = {
+	pg.base.island_skin_template[2021201] = {
 		ship_group = 20212,
 		name = "午后书页",
 		jump_page = "",
@@ -301,11 +232,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_2021201",
 		icon_normal = ""
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_skin_template
-
-	var_1_8[13] = {
+	pg.base.island_skin_template[13] = {
 		ship_group = 20603,
 		name = "憧憬的星光",
 		tech_id = 0,
@@ -319,11 +246,7 @@ var_0_4.base.island_skin_template = {}
 		icon_normal = "props/skin_2060301",
 		jump_page = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_skin_template
-
-	var_1_9[2990301] = {
+	pg.base.island_skin_template[2990301] = {
 		ship_group = 29903,
 		name = "海盐萌趣",
 		tech_id = 0,
@@ -337,11 +260,7 @@ var_0_4.base.island_skin_template = {}
 		icon_normal = "props/skin_2990301",
 		jump_page = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_skin_template
-
-	var_1_10[3031101] = {
+	pg.base.island_skin_template[3031101] = {
 		ship_group = 30311,
 		name = "素心夜话",
 		jump_page = "",
@@ -355,11 +274,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_3031101",
 		icon_normal = ""
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_skin_template
-
-	var_1_11[3031201] = {
+	pg.base.island_skin_template[3031201] = {
 		ship_group = 30312,
 		name = "蜜语奉茶",
 		jump_page = "",
@@ -373,11 +288,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_3031201",
 		icon_normal = ""
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_skin_template
-
-	var_1_12[3040701] = {
+	pg.base.island_skin_template[3040701] = {
 		ship_group = 30407,
 		name = "雏日甜谣 ",
 		tech_id = 0,
@@ -391,11 +302,7 @@ var_0_4.base.island_skin_template = {}
 		icon_normal = "props/skin_3040701",
 		jump_page = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_skin_template
-
-	var_1_13[3120101] = {
+	pg.base.island_skin_template[3120101] = {
 		ship_group = 31201,
 		name = "空铃夜褶",
 		tech_id = 0,
@@ -409,11 +316,7 @@ var_0_4.base.island_skin_template = {}
 		icon_normal = "props/skin_3120101",
 		jump_page = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_skin_template
-
-	var_1_14[4030301] = {
+	pg.base.island_skin_template[4030301] = {
 		ship_group = 40303,
 		name = "慵懒献纳",
 		jump_page = "",
@@ -427,11 +330,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_4030301",
 		icon_normal = ""
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_skin_template
-
-	var_1_15[4990201] = {
+	pg.base.island_skin_template[4990201] = {
 		ship_group = 49902,
 		name = "优雅侍奉",
 		jump_page = "",
@@ -445,11 +344,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_4990201",
 		icon_normal = ""
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_skin_template
-
-	var_1_16[9] = {
+	pg.base.island_skin_template[9] = {
 		ship_group = 49906,
 		name = "云端梦游",
 		jump_page = "",
@@ -463,11 +358,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_4990601",
 		icon_normal = ""
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_skin_template
-
-	var_1_17[13] = {
+	pg.base.island_skin_template[13] = {
 		ship_group = 50107,
 		name = "熊猫团子",
 		jump_page = "",
@@ -481,11 +372,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_5010701",
 		icon_normal = ""
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_skin_template
-
-	var_1_18[5010801] = {
+	pg.base.island_skin_template[5010801] = {
 		ship_group = 50108,
 		name = "软乎乎放学路",
 		jump_page = "",
@@ -499,11 +386,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_5010801",
 		icon_normal = ""
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_skin_template
-
-	var_1_19[5020101] = {
+	pg.base.island_skin_template[5020101] = {
 		ship_group = 50201,
 		name = "月下茶香",
 		jump_page = "",
@@ -517,11 +400,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_5020101",
 		icon_normal = ""
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_skin_template
-
-	var_1_20[5] = {
+	pg.base.island_skin_template[5] = {
 		ship_group = 50601,
 		name = "运筹之暇",
 		jump_page = "",
@@ -535,11 +414,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_5060101",
 		icon_normal = ""
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_skin_template
-
-	var_1_21[13] = {
+	pg.base.island_skin_template[13] = {
 		ship_group = 90107,
 		name = "心跳下课铃",
 		jump_page = "",
@@ -553,11 +428,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_9010701",
 		icon_normal = ""
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_skin_template
-
-	var_1_22[96000101] = {
+	pg.base.island_skin_template[96000101] = {
 		ship_group = 960001,
 		name = "学院序曲",
 		jump_page = "",
@@ -571,11 +442,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_96000101",
 		icon_normal = ""
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_skin_template
-
-	var_1_23[9] = {
+	pg.base.island_skin_template[9] = {
 		ship_group = 990002,
 		name = "懵懂时光",
 		jump_page = "",
@@ -589,11 +456,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_99000201",
 		icon_normal = ""
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_skin_template
-
-	var_1_24[10] = {
+	pg.base.island_skin_template[10] = {
 		ship_group = 990002,
 		name = "见习观察员",
 		jump_page = "",
@@ -607,11 +470,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_99000202",
 		icon_normal = ""
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_skin_template
-
-	var_1_25[99000101] = {
+	pg.base.island_skin_template[99000101] = {
 		ship_group = 990001,
 		name = "元气上学路",
 		jump_page = "",
@@ -625,11 +484,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_99000101",
 		icon_normal = ""
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_skin_template
-
-	var_1_26[99000102] = {
+	pg.base.island_skin_template[99000102] = {
 		ship_group = 990001,
 		name = "优等生气场",
 		jump_page = "",
@@ -643,11 +498,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_99000102",
 		icon_normal = ""
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_skin_template
-
-	var_1_27[99000301] = {
+	pg.base.island_skin_template[99000301] = {
 		ship_group = 990003,
 		name = "纯白低语",
 		jump_page = "",
@@ -661,8 +512,7 @@ var_0_4.base.island_skin_template = {}
 		icon = "skin_99000301",
 		icon_normal = ""
 	}
-	pg = var_1_27
-	var_1_27.base.island_skin_template[99000302] = {
+	pg.base.island_skin_template[99000302] = {
 		ship_group = 990003,
 		name = "沉静礼装",
 		jump_page = "",

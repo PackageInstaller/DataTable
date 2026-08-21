@@ -26,6 +26,7 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_EQUIP_BREAKUP, self.__onReqEquipBrakUpHandler, self)
 
     GameDispatcher:addEventListener(EventName.OPEN_EQUIP_STRENGTHEN_UP_VIEW, self.__onOpenEquipStrengthenViewHandler, self)
+    
 end
 
 --注册server发来的数据

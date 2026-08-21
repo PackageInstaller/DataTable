@@ -29,6 +29,8 @@ function configUI(self)
 
     self.mScroller = self:getChildGO("mScroller"):GetComponent(ty.LyScroller)
     self.mScroller:SetItemRender(guild.GuildBossRankItem)
+
+    self.mBtnInfoMessage = self:getChildGO("mBtnInfoMessage")
 end
 
 function initViewText(self)
@@ -51,6 +53,12 @@ function deActive(self)
     end
 end
 
+function addAllUIEvent(self)
+    self:addUIEvent(self.mBtnInfoMessage, function ()
+        gs.Message.Show( self.damage) -- 功能暂未开启
+    end)
+end
+
 function refreshView(self)
     local guildBossInfo = guild.GuildManager:getGuildBossRankInfo()
     if table.empty(guildBossInfo) then
@@ -58,8 +66,10 @@ function refreshView(self)
     end
 
     local selfRank = guildBossInfo.selfRank
+
+    self.damage = selfRank.damage
     self.mTxtName.text = selfRank.guild_name
-    self.mTxtDamage.text = selfRank.damage
+    self.mTxtDamage.text = string.formatChineseNumber( tonumber(selfRank.damage))
 
     self.mTxtInfoRankBig.gameObject:SetActive(selfRank.rank <= 10 and selfRank.rank ~= 0)
     self.mTxtInfoRankBig.text = selfRank.rank

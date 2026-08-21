@@ -1,16 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateSetCallLayer", import("view.newEducate.base.NewEducateBaseUI"))
 
-local var_0_0 = "NewEducateSetCallLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.newEducate.base.NewEducateBaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewEducateSetCallUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:findUI()
 	arg_2_0:addListener()
@@ -18,87 +12,38 @@ function var_0_1.init(arg_2_0)
 	return
 end
 
-function var_0_1.initData(arg_3_0)
-	i18n = var_1_10001
-	arg_3_0.defaultName = var_1_10001("child_default_callname")
-	PLATFORM_CODE = var_3_0
-	PLATFORM_CH = var_1_10002
-
-	local var_3_0 = var_3_0 == var_1_10002 and var_3_0
-
-	arg_3_0.lockNamed = var_3_0
+function var_0_0.initData(arg_3_0)
+	arg_3_0.defaultName = i18n("child_default_callname")
+	arg_3_0.lockNamed = PLATFORM_CODE == PLATFORM_CH and LOCK_NAMED
 
 	return
 end
 
-function var_0_1.findUI(arg_4_0)
-	local var_4_0 = arg_4_0._tf
+function var_0_0.findUI(arg_4_0)
+	arg_4_0.bgTF = arg_4_0._tf:Find("Image")
+	arg_4_0.blurPanel = arg_4_0._tf:Find("bg")
+	arg_4_0.callInput = arg_4_0._tf:Find("bg/panel/input/nickname")
+	arg_4_0.sureBtn = arg_4_0._tf:Find("bg/panel/sure_button")
 
-	arg_4_0.bgTF = var_1.Find(var_4_0, "Image")
+	setText(arg_4_0.sureBtn:Find("Image"), i18n("word_ok"))
+	setText(arg_4_0.callInput:Find("Placeholder"), i18n("child_callname_tip"))
 
-	local var_4_1 = arg_4_0._tf
+	arg_4_0.callInput:GetComponent(typeof(InputField)).interactable = not arg_4_0.lockNamed
 
-	arg_4_0.blurPanel = var_1.Find(var_4_1, "bg")
-
-	local var_4_2 = arg_4_0._tf
-
-	arg_4_0.callInput = var_1.Find(var_4_2, "bg/panel/input/nickname")
-
-	local var_4_3 = arg_4_0._tf
-
-	arg_4_0.sureBtn = var_1.Find(var_4_3, "bg/panel/sure_button")
-	setText = var_1
-
-	local var_4_4 = arg_4_0.sureBtn
-	local var_4_5 = var_3.Find(var_4_4, "Image")
-
-	i18n = var_4
-
-	var_1(var_4_5, var_4("word_ok"))
-
-	setText = var_1
-
-	local var_4_6 = arg_4_0.callInput
-	local var_4_7 = var_3.Find(var_4_6, "Placeholder")
-
-	i18n = var_4
-
-	var_1(var_4_7, var_4("child_callname_tip"))
-
-	local var_4_8 = arg_4_0.callInput
-	local var_4_9 = var_1.GetComponent
-
-	typeof = var_4
-	InputField = var_6
-
-	local var_4_10 = var_4_9(var_4_8, var_4(var_6))
-
-	var_4_10.interactable = not arg_4_0.lockNamed
-	setActive = var_4_10
-
-	local var_4_11 = arg_4_0._tf
-
-	var_4_10(var_3.Find(var_4_11, "bg/panel/input/pan"), not arg_4_0.lockNamed)
+	setActive(arg_4_0._tf:Find("bg/panel/input/pan"), not arg_4_0.lockNamed)
 
 	return
 end
 
-function var_0_1.addListener(arg_5_0)
-	onButton = var_1_10001
+function var_0_0.addListener(arg_5_0)
+	onButton(arg_5_0, arg_5_0.sureBtn, function()
+		local var_6_0 = getInputText(arg_5_0.callInput)
 
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.sureBtn
-
-	local function var_5_2()
-		getInputText = var_2_10000
-
-		if var_2_10000(arg_5_0.callInput) == "" then
+		if var_6_0 == "" then
 			return
 		end
 
-		nameValidityCheck = var_2_10001
-
-		if not var_2_10001(var_0, 4, 14, {
+		if not nameValidityCheck(var_6_0, 4, 14, {
 			"spece_illegal_tip",
 			"login_newPlayerScene_name_tooShort",
 			"login_newPlayerScene_name_tooLong",
@@ -107,55 +52,34 @@ function var_0_1.addListener(arg_5_0)
 			return
 		end
 
-		local var_6_0 = arg_5_0
-		local var_6_1 = var_1.emit
-
-		NewEducateSetCallediator = var_4
-
-		var_6_1(var_6_0, var_4.ON_SET_CALL, var_0)
+		arg_5_0:emit(NewEducateSetCallediator.ON_SET_CALL, var_6_0)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_5_0, var_5_1, var_5_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.didEnter(arg_7_0)
-	local var_7_0 = arg_7_0.contextData.char
-	local var_7_1 = var_1.getConfig(var_7_0, "name_background")
-
-	setImageSprite = var_1_10002
-
-	local var_7_2 = arg_7_0.bgTF
-
-	LoadSprite = var_1_10005
-
-	var_1_10002(var_7_2, var_1_10005("bg/" .. var_7_1), false)
+function var_0_0.didEnter(arg_7_0)
+	setImageSprite(arg_7_0.bgTF, LoadSprite("bg/" .. arg_7_0.contextData.char:getConfig("name_background")), false)
 	arg_7_0:OverlayPanel(arg_7_0.blurPanel, {
 		groupDelta = 1,
 		pbList = {
 			arg_7_0.blurPanel
 		}
 	})
-
-	setInputText = var_2
-
-	var_2(arg_7_0.callInput, arg_7_0.defaultName)
+	setInputText(arg_7_0.callInput, arg_7_0.defaultName)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_8_0)
+function var_0_0.onBackPressed(arg_8_0)
 	return
 end
 
-function var_0_1.willExit(arg_9_0)
+function var_0_0.willExit(arg_9_0)
 	if arg_9_0.contextData.callback then
-		var_1()
+		arg_9_0.contextData.callback()
 	end
 
 	arg_9_0:UnOverlayPanel(arg_9_0.blurPanel, arg_9_0._tf)
@@ -163,4 +87,4 @@ function var_0_1.willExit(arg_9_0)
 	return
 end
 
-return var_0_1
+return var_0_0

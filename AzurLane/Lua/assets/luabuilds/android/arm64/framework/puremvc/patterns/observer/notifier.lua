@@ -1,18 +1,15 @@
-﻿import = var_0_10000
-
-local var_0_0 = var_0_10000("..facade.Facade")
-
-class = var_0_10001
-
-local var_0_1 = var_0_10001("Notifier")
+﻿local var_0_0 = import("..facade.Facade")
+local var_0_1 = class("Notifier")
 
 function var_0_1.Ctor(arg_1_0)
 	return
 end
 
 function var_0_1.sendNotification(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	if arg_2_0:getFacade() ~= nil then
-		var_4:sendNotification(arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = arg_2_0:getFacade()
+
+	if var_2_0 ~= nil then
+		var_2_0:sendNotification(arg_2_1, arg_2_2, arg_2_3)
 	end
 
 	return
@@ -27,9 +24,7 @@ end
 
 function var_0_1.getFacade(arg_4_0)
 	if arg_4_0.multitonKey == nil then
-		error = var_1
-
-		var_1(var_0_1.MULTITON_MSG)
+		error(var_0_1.MULTITON_MSG)
 	end
 
 	return var_0_0.getInstance(arg_4_0.multitonKey)

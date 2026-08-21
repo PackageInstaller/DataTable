@@ -1,114 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("UpdateLoadingPicCommand", pm.SimpleCommand)
 
-local var_0_0 = "UpdateLoadingPicCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.diyModeOpenFlag
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0
-
-	if arg_1_1:getBody().diyModeOpenFlag == nil then
-		var_1_0 = var_2.loading_pic_open_flag
+	if var_1_0.diyModeOpenFlag == nil then
+		var_1_1 = var_1_0.loading_pic_open_flag
 	end
 
-	local var_1_1
-
-	if not var_2.galleryPicIDList then
-		var_1_1 = var_2.loading_pic_id_list_1
-	end
-
-	local var_1_2
-
-	if not var_2.mangaPicIDList then
-		var_1_2 = var_2.loading_pic_id_list_2
-	end
-
-	local var_1_3 = var_2.callback
-
-	getProxy = var_1_10007
-	LoadingPicProxy = var_1_10009
-
-	local var_1_4 = var_1_10007(var_1_10009)
-
-	if var_1_0 == nil then
-		var_1_0 = var_1_4:getDiyModeOpenFlag()
-	end
+	local var_1_2 = var_1_0.galleryPicIDList or var_1_0.loading_pic_id_list_1
+	local var_1_3 = var_1_0.mangaPicIDList or var_1_0.loading_pic_id_list_2
+	local var_1_4 = var_1_0.callback
+	local var_1_5 = getProxy(LoadingPicProxy)
 
 	if var_1_1 == nil then
-		var_1_1 = var_1_4:getGalleryPicIDList()
+		var_1_1 = var_1_5:getDiyModeOpenFlag()
 	end
 
 	if var_1_2 == nil then
-		var_1_2 = var_1_4:getMangaPicIDList()
+		var_1_2 = var_1_5:getGalleryPicIDList()
 	end
 
-	local var_1_5 = #var_1_1 + #var_1_2
-
-	AppreciatePicConst = var_9
-
-	if var_9.MAX_COUNT < var_1_5 then
-		pg = var_1_5
-
-		local var_1_6 = var_1_5.TipsMgr.GetInstance()
-		local var_1_7 = var_8.ShowTips
-
-		i18n = var_1_10011
-
-		var_1_7(var_1_6, var_1_10011("loading_pic_max"))
-
-		return
+	if var_1_3 == nil then
+		var_1_3 = var_1_5:getMangaPicIDList()
 	end
 
-	local var_1_8 = var_1_0 == true and 1 or 0
-	local var_1_9 = {
-		loading_pic_open_flag = var_1_8,
-		loading_pic_id_list_1 = var_1_1,
-		loading_pic_id_list_2 = var_1_2
-	}
+	local var_1_6
 
-	pg = var_9
+	if #var_1_2 + #var_1_3 > AppreciatePicConst.MAX_COUNT then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("loading_pic_max"))
 
-	local var_1_10 = var_9.ConnectionMgr.GetInstance()
+		do return end
 
-	var_9.Send(var_1_10, 11034, var_1_9, 11035, function(arg_2_0)
-		local var_2_4
+		var_1_6 = {}
+	end
 
+	var_1_6.loading_pic_open_flag = var_1_1 == true and 1 or 0
+	var_1_6.loading_pic_id_list_1 = var_1_2
+	var_1_6.loading_pic_id_list_2 = var_1_3
+
+	pg.ConnectionMgr.GetInstance():Send(11034, var_1_6, 11035, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_4
+			var_1_5:updateDiyModeOpenFlag(var_0)
+			var_1_5:updateGalleryPicIDList(var_1_2)
+			var_1_5:updateMangaPicIDList(var_1_3)
+			pg.m02:sendNotification(GAME.UPDATE_LOADING_PIC_DONE, var_1_6)
 
-			var_2_4.updateDiyModeOpenFlag(var_2_0, var_1_8)
-
-			local var_2_1 = var_1_4
-
-			var_2_4.updateGalleryPicIDList(var_2_1, var_1_1)
-
-			local var_2_2 = var_1_4
-
-			var_2_4.updateMangaPicIDList(var_2_2, var_1_2)
-
-			pg = var_2_4
-
-			local var_2_3 = var_2_4.m02
-
-			var_2_4 = var_2_4.sendNotification
-			GAME = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004.UPDATE_LOADING_PIC_DONE, var_1_9)
-
-			if var_1_3 then
-				var_1_3()
+			if var_1_4 then
+				var_1_4()
 			end
 		else
-			pg = var_2_4
-
-			local var_2_5 = var_2_4.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -117,4 +59,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

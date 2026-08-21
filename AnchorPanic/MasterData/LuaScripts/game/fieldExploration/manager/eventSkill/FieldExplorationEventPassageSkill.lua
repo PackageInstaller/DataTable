@@ -8,7 +8,24 @@ module('game.fieldExploration.event.FieldExplorationEventPassageSkill', Class.im
 
 function setData(self, config, parent)
     super.setData(self, config, parent)
+
     self.isPass = true
+
+    local selfCollider = self:getCollider()
+
+    local playerTing = fieldExploration.FieldExplorationSceneController:getPlayerThing()
+    local playerCollider = playerTing:getCollider()
+    if playerCollider then
+        gs.Physics.IgnoreCollision(selfCollider, playerCollider)
+    end
+
+    local allSkill = playerTing:getAllSkill()
+    for skill_id, skill in pairs(allSkill) do
+        local skillCollider = skill:getCollider()
+        if skillCollider and selfCollider then
+            gs.Physics.IgnoreCollision(selfCollider, skillCollider)
+        end
+    end
 end
 
 --提示器碰撞触发

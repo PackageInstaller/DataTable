@@ -1,12 +1,4 @@
-﻿local var_0_0 = {
-	"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
-	"点击建造",
-	"这次来试试看<color=#ff7d36>重型舰建造</color>",
-	"建造材料准备充足！ 点击<color=#ff7d36>开始建造</color>",
-	"点击<color=#ff7d36>确定</color>开始建造"
-}
-
-return {
+﻿return {
 	id = "S020",
 	events = {
 		{
@@ -16,17 +8,18 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
+					"点击建造",
+					"这次来试试看<color=#ff7d36>重型舰建造</color>",
+					"建造材料准备充足！ 点击<color=#ff7d36>开始建造</color>",
+					"点击<color=#ff7d36>确定</color>开始建造"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/build"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/buildButton"
@@ -51,7 +44,13 @@ return {
 				dir = -1,
 				posY = 125,
 				posX = -520,
-				text = var_0_0[2]
+				text = ({
+					"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
+					"点击建造",
+					"这次来试试看<color=#ff7d36>重型舰建造</color>",
+					"建造材料准备充足！ 点击<color=#ff7d36>开始建造</color>",
+					"点击<color=#ff7d36>确定</color>开始建造"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -73,17 +72,18 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = ({
+					"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
+					"点击建造",
+					"这次来试试看<color=#ff7d36>重型舰建造</color>",
+					"建造材料准备充足！ 点击<color=#ff7d36>开始建造</color>",
+					"点击<color=#ff7d36>确定</color>开始建造"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					BuildShipProxy = var_1_10002
-
-					local var_2_0 = var_1_10000(var_1_10002)
-
-					if #var_0.GetPoolsWithoutNewServer(var_2_0) > 4 then
+					if #getProxy(BuildShipProxy):GetPoolsWithoutNewServer() > 4 then
 						return "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/mask/bg/toggles/heavy(Clone)/frame", 0.85
 					else
 						return "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/toggle_bg/bg/toggles/heavy(Clone)/frame", 1
@@ -107,7 +107,13 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 205.91,
-				text = var_0_0[4]
+				text = ({
+					"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
+					"点击建造",
+					"这次来试试看<color=#ff7d36>重型舰建造</color>",
+					"建造材料准备充足！ 点击<color=#ff7d36>开始建造</color>",
+					"点击<color=#ff7d36>确定</color>开始建造"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,
@@ -128,7 +134,13 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[5]
+				text = ({
+					"使用任务奖励<color=#ff7d36>建造新角色</color>吧",
+					"点击建造",
+					"这次来试试看<color=#ff7d36>重型舰建造</color>",
+					"建造材料准备充足！ 点击<color=#ff7d36>开始建造</color>",
+					"点击<color=#ff7d36>确定</color>开始建造"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,

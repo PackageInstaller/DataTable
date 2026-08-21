@@ -52,6 +52,7 @@ ty.LightRotate = typeof(CS.LightRotate)
 
 ty.UIDrawLineComponent = typeof(gs.UIDrawLineComponent)
 ty.StoryBGComponent = typeof(gs.StoryBGComponent)
+ty.OutlineComponent = typeof(gs.OutlineComponent)
 -- ty.FAnimationManager = typeof(gs.FAnimationManager)
 ty.SimpleAnimation = typeof(gs.SimpleAnimation)
 ty.FlipCameraComponent = typeof(gs.FlipCameraComponent)
@@ -64,7 +65,11 @@ ty.TextToolsComponent = typeof(gs.TextToolsComponent)
 ty.MoveComponent = typeof(gs.MoveComponent)
 ty.LifeCycleCompoment = typeof(gs.LifeCycleCompoment)
 ty.SceneToUIComponent = typeof(gs.SceneToUIComponent)
+ty.CharacterDualViewPanel = typeof(gs.CharacterDualViewPanel)
 ty.ColliderCall = typeof(gs.ColliderCall)
+ty.PhysicsFrame = typeof(gs.PhysicsFrame)
+ty.PhysicsCollision2D = typeof(gs.PhysicsCollision2D)
+ty.PhysicsTrigger2D = typeof(gs.PhysicsTrigger2D)
 
 ty.FadeModelComponent = typeof(gs.FadeModelComponent)
 ty.UIDoTween = typeof(gs.UIDoTween)
@@ -110,6 +115,9 @@ ty.Renderer = typeof(gs.Renderer)
 ty.ScrollRect = typeof(gs.ScrollRect)
 ty.BoxCollider = typeof(gs.BoxCollider)
 ty.BoxCollider2D = typeof(gs.BoxCollider2D)
+ty.CircleCollider2D = typeof(gs.CircleCollider2D)
+ty.Collider2D = typeof(gs.Collider2D)
+
 ty.SphereCollider = typeof(gs.SphereCollider)
 ty.MeshCollider = typeof(gs.MeshCollider)
 ty.Collider = typeof(gs.Collider)
@@ -153,3 +161,12 @@ ty.PathMoveComponent = typeof(gs.PathMoveComponent)
 --eff
 ty.WaterFallDissolveCtr = typeof(gs.WaterFallDissolveCtr)
 ty.DissolveBaseCtr = typeof(gs.DissolveBaseCtr)
+
+ty.UnityDebug = typeof(gs.Debug)
+
+---Final IK
+ty.FinalIKUtil = typeof(gs.FinalIKUtil)
+
+ty.LookAtIK = typeof(gs.LookAtIK)
+ty.BipedIK = typeof(gs.BipedIK)
+ty.FullBodyBipedIK = typeof(gs.FullBodyBipedIK)

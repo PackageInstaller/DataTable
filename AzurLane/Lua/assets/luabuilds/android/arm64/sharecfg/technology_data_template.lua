@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "technology_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "technology_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.technology_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.technology_data_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.technology_data_template = rawget(pg, "technology_data_template") or setmetatable({
+	__name = "technology_data_template"
+}, confNEO)
+pg.technology_data_template.all = {
 	1,
 	2,
 	3,
@@ -800,25 +777,11 @@ var_0_3.all = {
 	1825,
 	1826
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.technology_data_template = {}
+pg.base = pg.base or {}
+pg.base.technology_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.technology_data_template
-
-	var_1_0[1] = {
+	pg.base.technology_data_template[1] = {
 		id = 1,
 		rarity = 1,
 		time = 21600,
@@ -857,11 +820,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.technology_data_template
-
-	var_1_1[2] = {
+	pg.base.technology_data_template[2] = {
 		id = 2,
 		rarity = 1,
 		time = 21600,
@@ -900,11 +859,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.technology_data_template
-
-	var_1_2[3] = {
+	pg.base.technology_data_template[3] = {
 		id = 3,
 		rarity = 2,
 		time = 28800,
@@ -943,11 +898,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.technology_data_template
-
-	var_1_3[4] = {
+	pg.base.technology_data_template[4] = {
 		id = 4,
 		rarity = 2,
 		time = 28800,
@@ -986,11 +937,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.technology_data_template
-
-	var_1_4[11] = {
+	pg.base.technology_data_template[11] = {
 		id = 11,
 		rarity = 1,
 		time = 14400,
@@ -1024,11 +971,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.technology_data_template
-
-	var_1_5[12] = {
+	pg.base.technology_data_template[12] = {
 		id = 12,
 		rarity = 1,
 		time = 14400,
@@ -1062,11 +1005,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.technology_data_template
-
-	var_1_6[13] = {
+	pg.base.technology_data_template[13] = {
 		id = 13,
 		rarity = 1,
 		time = 14400,
@@ -1100,11 +1039,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.technology_data_template
-
-	var_1_7[14] = {
+	pg.base.technology_data_template[14] = {
 		id = 14,
 		rarity = 1,
 		time = 14400,
@@ -1138,11 +1073,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.technology_data_template
-
-	var_1_8[15] = {
+	pg.base.technology_data_template[15] = {
 		id = 15,
 		rarity = 2,
 		time = 14400,
@@ -1176,11 +1107,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.technology_data_template
-
-	var_1_9[16] = {
+	pg.base.technology_data_template[16] = {
 		id = 16,
 		rarity = 2,
 		time = 14400,
@@ -1214,11 +1141,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.technology_data_template
-
-	var_1_10[17] = {
+	pg.base.technology_data_template[17] = {
 		id = 17,
 		rarity = 2,
 		time = 14400,
@@ -1252,11 +1175,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.technology_data_template
-
-	var_1_11[18] = {
+	pg.base.technology_data_template[18] = {
 		id = 18,
 		rarity = 2,
 		time = 14400,
@@ -1290,11 +1209,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.technology_data_template
-
-	var_1_12[21] = {
+	pg.base.technology_data_template[21] = {
 		id = 21,
 		rarity = 1,
 		time = 10800,
@@ -1328,11 +1243,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.technology_data_template
-
-	var_1_13[22] = {
+	pg.base.technology_data_template[22] = {
 		id = 22,
 		rarity = 1,
 		time = 14400,
@@ -1366,11 +1277,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.technology_data_template
-
-	var_1_14[23] = {
+	pg.base.technology_data_template[23] = {
 		id = 23,
 		rarity = 2,
 		time = 21600,
@@ -1404,11 +1311,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.technology_data_template
-
-	var_1_15[31] = {
+	pg.base.technology_data_template[31] = {
 		id = 31,
 		rarity = 1,
 		time = 7200,
@@ -1442,11 +1345,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.technology_data_template
-
-	var_1_16[32] = {
+	pg.base.technology_data_template[32] = {
 		id = 32,
 		rarity = 2,
 		time = 7200,
@@ -1480,11 +1379,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.technology_data_template
-
-	var_1_17[33] = {
+	pg.base.technology_data_template[33] = {
 		id = 33,
 		rarity = 2,
 		time = 21600,
@@ -1524,11 +1419,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.technology_data_template
-
-	var_1_18[34] = {
+	pg.base.technology_data_template[34] = {
 		id = 34,
 		rarity = 2,
 		time = 21600,
@@ -1568,11 +1459,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.technology_data_template
-
-	var_1_19[35] = {
+	pg.base.technology_data_template[35] = {
 		id = 35,
 		rarity = 2,
 		time = 21600,
@@ -1612,11 +1499,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.technology_data_template
-
-	var_1_20[36] = {
+	pg.base.technology_data_template[36] = {
 		id = 36,
 		rarity = 2,
 		time = 21600,
@@ -1656,11 +1539,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.technology_data_template
-
-	var_1_21[37] = {
+	pg.base.technology_data_template[37] = {
 		id = 37,
 		rarity = 2,
 		time = 21600,
@@ -1700,11 +1579,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.technology_data_template
-
-	var_1_22[38] = {
+	pg.base.technology_data_template[38] = {
 		id = 38,
 		rarity = 2,
 		time = 21600,
@@ -1744,11 +1619,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.technology_data_template
-
-	var_1_23[41] = {
+	pg.base.technology_data_template[41] = {
 		id = 41,
 		rarity = 1,
 		time = 5400,
@@ -1788,11 +1659,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.technology_data_template
-
-	var_1_24[42] = {
+	pg.base.technology_data_template[42] = {
 		id = 42,
 		rarity = 1,
 		time = 5400,
@@ -1832,11 +1699,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.technology_data_template
-
-	var_1_25[43] = {
+	pg.base.technology_data_template[43] = {
 		id = 43,
 		rarity = 1,
 		time = 9000,
@@ -1876,11 +1739,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.technology_data_template
-
-	var_1_26[44] = {
+	pg.base.technology_data_template[44] = {
 		id = 44,
 		rarity = 1,
 		time = 9000,
@@ -1920,11 +1779,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.technology_data_template
-
-	var_1_27[45] = {
+	pg.base.technology_data_template[45] = {
 		id = 45,
 		rarity = 2,
 		time = 14400,
@@ -1964,11 +1819,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.technology_data_template
-
-	var_1_28[46] = {
+	pg.base.technology_data_template[46] = {
 		id = 46,
 		rarity = 2,
 		time = 14400,
@@ -2008,11 +1859,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.technology_data_template
-
-	var_1_29[51] = {
+	pg.base.technology_data_template[51] = {
 		id = 51,
 		rarity = 1,
 		time = 9000,
@@ -2052,11 +1899,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.technology_data_template
-
-	var_1_30[52] = {
+	pg.base.technology_data_template[52] = {
 		id = 52,
 		rarity = 1,
 		time = 9000,
@@ -2096,11 +1939,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.technology_data_template
-
-	var_1_31[53] = {
+	pg.base.technology_data_template[53] = {
 		id = 53,
 		rarity = 1,
 		time = 9000,
@@ -2140,11 +1979,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.technology_data_template
-
-	var_1_32[54] = {
+	pg.base.technology_data_template[54] = {
 		id = 54,
 		rarity = 1,
 		time = 9000,
@@ -2184,11 +2019,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.technology_data_template
-
-	var_1_33[55] = {
+	pg.base.technology_data_template[55] = {
 		id = 55,
 		rarity = 1,
 		time = 9000,
@@ -2228,11 +2059,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.technology_data_template
-
-	var_1_34[56] = {
+	pg.base.technology_data_template[56] = {
 		id = 56,
 		rarity = 1,
 		time = 9000,
@@ -2272,11 +2099,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.technology_data_template
-
-	var_1_35[61] = {
+	pg.base.technology_data_template[61] = {
 		id = 61,
 		rarity = 2,
 		time = 18000,
@@ -2316,11 +2139,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.technology_data_template
-
-	var_1_36[62] = {
+	pg.base.technology_data_template[62] = {
 		id = 62,
 		rarity = 2,
 		time = 18000,
@@ -2360,11 +2179,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.technology_data_template
-
-	var_1_37[63] = {
+	pg.base.technology_data_template[63] = {
 		id = 63,
 		rarity = 2,
 		time = 18000,
@@ -2404,11 +2219,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.technology_data_template
-
-	var_1_38[64] = {
+	pg.base.technology_data_template[64] = {
 		id = 64,
 		rarity = 2,
 		time = 18000,
@@ -2448,11 +2259,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.technology_data_template
-
-	var_1_39[65] = {
+	pg.base.technology_data_template[65] = {
 		id = 65,
 		rarity = 2,
 		time = 18000,
@@ -2492,11 +2299,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.technology_data_template
-
-	var_1_40[66] = {
+	pg.base.technology_data_template[66] = {
 		id = 66,
 		rarity = 2,
 		time = 18000,
@@ -2536,11 +2339,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.technology_data_template
-
-	var_1_41[71] = {
+	pg.base.technology_data_template[71] = {
 		id = 71,
 		rarity = 1,
 		time = 3600,
@@ -2580,11 +2379,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.technology_data_template
-
-	var_1_42[72] = {
+	pg.base.technology_data_template[72] = {
 		id = 72,
 		rarity = 1,
 		time = 3600,
@@ -2624,11 +2419,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.technology_data_template
-
-	var_1_43[73] = {
+	pg.base.technology_data_template[73] = {
 		id = 73,
 		rarity = 1,
 		time = 3600,
@@ -2668,11 +2459,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.technology_data_template
-
-	var_1_44[74] = {
+	pg.base.technology_data_template[74] = {
 		id = 74,
 		rarity = 1,
 		time = 3600,
@@ -2712,11 +2499,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.technology_data_template
-
-	var_1_45[75] = {
+	pg.base.technology_data_template[75] = {
 		id = 75,
 		rarity = 1,
 		time = 3600,
@@ -2756,11 +2539,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.technology_data_template
-
-	var_1_46[76] = {
+	pg.base.technology_data_template[76] = {
 		id = 76,
 		rarity = 1,
 		time = 7200,
@@ -2800,11 +2579,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.technology_data_template
-
-	var_1_47[77] = {
+	pg.base.technology_data_template[77] = {
 		id = 77,
 		rarity = 1,
 		time = 7200,
@@ -2844,11 +2619,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.technology_data_template
-
-	var_1_48[78] = {
+	pg.base.technology_data_template[78] = {
 		id = 78,
 		rarity = 1,
 		time = 7200,
@@ -2888,11 +2659,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.technology_data_template
-
-	var_1_49[79] = {
+	pg.base.technology_data_template[79] = {
 		id = 79,
 		rarity = 1,
 		time = 7200,
@@ -2932,11 +2699,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.technology_data_template
-
-	var_1_50[80] = {
+	pg.base.technology_data_template[80] = {
 		id = 80,
 		rarity = 1,
 		time = 7200,
@@ -2976,11 +2739,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.technology_data_template
-
-	var_1_51[81] = {
+	pg.base.technology_data_template[81] = {
 		id = 81,
 		rarity = 2,
 		time = 14400,
@@ -3020,11 +2779,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.technology_data_template
-
-	var_1_52[82] = {
+	pg.base.technology_data_template[82] = {
 		id = 82,
 		rarity = 2,
 		time = 14400,
@@ -3064,11 +2819,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.technology_data_template
-
-	var_1_53[83] = {
+	pg.base.technology_data_template[83] = {
 		id = 83,
 		rarity = 2,
 		time = 14400,
@@ -3108,11 +2859,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.technology_data_template
-
-	var_1_54[84] = {
+	pg.base.technology_data_template[84] = {
 		id = 84,
 		rarity = 2,
 		time = 14400,
@@ -3152,11 +2899,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.technology_data_template
-
-	var_1_55[85] = {
+	pg.base.technology_data_template[85] = {
 		id = 85,
 		rarity = 2,
 		time = 14400,
@@ -3196,11 +2939,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.technology_data_template
-
-	var_1_56[91] = {
+	pg.base.technology_data_template[91] = {
 		id = 91,
 		rarity = 1,
 		time = 3600,
@@ -3240,11 +2979,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.technology_data_template
-
-	var_1_57[92] = {
+	pg.base.technology_data_template[92] = {
 		id = 92,
 		rarity = 1,
 		time = 3600,
@@ -3284,11 +3019,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.technology_data_template
-
-	var_1_58[93] = {
+	pg.base.technology_data_template[93] = {
 		id = 93,
 		rarity = 2,
 		time = 7200,
@@ -3328,11 +3059,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.technology_data_template
-
-	var_1_59[94] = {
+	pg.base.technology_data_template[94] = {
 		id = 94,
 		rarity = 2,
 		time = 7200,
@@ -3372,11 +3099,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.technology_data_template
-
-	var_1_60[101] = {
+	pg.base.technology_data_template[101] = {
 		id = 101,
 		rarity = 1,
 		time = 21600,
@@ -3410,11 +3133,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.technology_data_template
-
-	var_1_61[102] = {
+	pg.base.technology_data_template[102] = {
 		id = 102,
 		rarity = 1,
 		time = 21600,
@@ -3448,11 +3167,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.technology_data_template
-
-	var_1_62[103] = {
+	pg.base.technology_data_template[103] = {
 		id = 103,
 		rarity = 2,
 		time = 28800,
@@ -3491,11 +3206,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.technology_data_template
-
-	var_1_63[104] = {
+	pg.base.technology_data_template[104] = {
 		id = 104,
 		rarity = 2,
 		time = 28800,
@@ -3534,11 +3245,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.technology_data_template
-
-	var_1_64[111] = {
+	pg.base.technology_data_template[111] = {
 		id = 111,
 		rarity = 1,
 		time = 14400,
@@ -3572,11 +3279,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.technology_data_template
-
-	var_1_65[112] = {
+	pg.base.technology_data_template[112] = {
 		id = 112,
 		rarity = 1,
 		time = 14400,
@@ -3610,11 +3313,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.technology_data_template
-
-	var_1_66[113] = {
+	pg.base.technology_data_template[113] = {
 		id = 113,
 		rarity = 1,
 		time = 14400,
@@ -3648,11 +3347,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.technology_data_template
-
-	var_1_67[114] = {
+	pg.base.technology_data_template[114] = {
 		id = 114,
 		rarity = 1,
 		time = 14400,
@@ -3686,11 +3381,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.technology_data_template
-
-	var_1_68[115] = {
+	pg.base.technology_data_template[115] = {
 		id = 115,
 		rarity = 2,
 		time = 14400,
@@ -3724,11 +3415,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.technology_data_template
-
-	var_1_69[116] = {
+	pg.base.technology_data_template[116] = {
 		id = 116,
 		rarity = 2,
 		time = 14400,
@@ -3762,11 +3449,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.technology_data_template
-
-	var_1_70[117] = {
+	pg.base.technology_data_template[117] = {
 		id = 117,
 		rarity = 2,
 		time = 14400,
@@ -3800,11 +3483,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.technology_data_template
-
-	var_1_71[118] = {
+	pg.base.technology_data_template[118] = {
 		id = 118,
 		rarity = 2,
 		time = 14400,
@@ -3838,11 +3517,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.technology_data_template
-
-	var_1_72[121] = {
+	pg.base.technology_data_template[121] = {
 		id = 121,
 		rarity = 1,
 		time = 10800,
@@ -3876,11 +3551,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.technology_data_template
-
-	var_1_73[122] = {
+	pg.base.technology_data_template[122] = {
 		id = 122,
 		rarity = 1,
 		time = 14400,
@@ -3914,11 +3585,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.technology_data_template
-
-	var_1_74[123] = {
+	pg.base.technology_data_template[123] = {
 		id = 123,
 		rarity = 2,
 		time = 21600,
@@ -3952,11 +3619,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.technology_data_template
-
-	var_1_75[131] = {
+	pg.base.technology_data_template[131] = {
 		id = 131,
 		rarity = 1,
 		time = 7200,
@@ -3990,11 +3653,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.technology_data_template
-
-	var_1_76[132] = {
+	pg.base.technology_data_template[132] = {
 		id = 132,
 		rarity = 2,
 		time = 7200,
@@ -4028,11 +3687,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.technology_data_template
-
-	var_1_77[133] = {
+	pg.base.technology_data_template[133] = {
 		id = 133,
 		rarity = 2,
 		time = 21600,
@@ -4072,11 +3727,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.technology_data_template
-
-	var_1_78[134] = {
+	pg.base.technology_data_template[134] = {
 		id = 134,
 		rarity = 2,
 		time = 21600,
@@ -4116,11 +3767,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.technology_data_template
-
-	var_1_79[135] = {
+	pg.base.technology_data_template[135] = {
 		id = 135,
 		rarity = 2,
 		time = 21600,
@@ -4160,11 +3807,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.technology_data_template
-
-	var_1_80[136] = {
+	pg.base.technology_data_template[136] = {
 		id = 136,
 		rarity = 2,
 		time = 21600,
@@ -4204,11 +3847,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.technology_data_template
-
-	var_1_81[137] = {
+	pg.base.technology_data_template[137] = {
 		id = 137,
 		rarity = 2,
 		time = 21600,
@@ -4248,11 +3887,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.technology_data_template
-
-	var_1_82[141] = {
+	pg.base.technology_data_template[141] = {
 		id = 141,
 		rarity = 1,
 		time = 5400,
@@ -4292,11 +3927,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.technology_data_template
-
-	var_1_83[142] = {
+	pg.base.technology_data_template[142] = {
 		id = 142,
 		rarity = 1,
 		time = 5400,
@@ -4336,11 +3967,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.technology_data_template
-
-	var_1_84[143] = {
+	pg.base.technology_data_template[143] = {
 		id = 143,
 		rarity = 1,
 		time = 9000,
@@ -4380,11 +4007,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.technology_data_template
-
-	var_1_85[144] = {
+	pg.base.technology_data_template[144] = {
 		id = 144,
 		rarity = 1,
 		time = 9000,
@@ -4424,11 +4047,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.technology_data_template
-
-	var_1_86[145] = {
+	pg.base.technology_data_template[145] = {
 		id = 145,
 		rarity = 2,
 		time = 14400,
@@ -4468,11 +4087,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.technology_data_template
-
-	var_1_87[146] = {
+	pg.base.technology_data_template[146] = {
 		id = 146,
 		rarity = 2,
 		time = 14400,
@@ -4512,11 +4127,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.technology_data_template
-
-	var_1_88[151] = {
+	pg.base.technology_data_template[151] = {
 		id = 151,
 		rarity = 1,
 		time = 9000,
@@ -4556,11 +4167,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.technology_data_template
-
-	var_1_89[152] = {
+	pg.base.technology_data_template[152] = {
 		id = 152,
 		rarity = 1,
 		time = 9000,
@@ -4600,11 +4207,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.technology_data_template
-
-	var_1_90[153] = {
+	pg.base.technology_data_template[153] = {
 		id = 153,
 		rarity = 1,
 		time = 9000,
@@ -4644,11 +4247,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.technology_data_template
-
-	var_1_91[154] = {
+	pg.base.technology_data_template[154] = {
 		id = 154,
 		rarity = 1,
 		time = 9000,
@@ -4688,11 +4287,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.technology_data_template
-
-	var_1_92[155] = {
+	pg.base.technology_data_template[155] = {
 		id = 155,
 		rarity = 1,
 		time = 9000,
@@ -4732,11 +4327,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.technology_data_template
-
-	var_1_93[156] = {
+	pg.base.technology_data_template[156] = {
 		id = 156,
 		rarity = 1,
 		time = 9000,
@@ -4776,11 +4367,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.technology_data_template
-
-	var_1_94[161] = {
+	pg.base.technology_data_template[161] = {
 		id = 161,
 		rarity = 2,
 		time = 18000,
@@ -4820,11 +4407,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.technology_data_template
-
-	var_1_95[162] = {
+	pg.base.technology_data_template[162] = {
 		id = 162,
 		rarity = 2,
 		time = 18000,
@@ -4864,11 +4447,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.technology_data_template
-
-	var_1_96[163] = {
+	pg.base.technology_data_template[163] = {
 		id = 163,
 		rarity = 2,
 		time = 18000,
@@ -4908,11 +4487,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.technology_data_template
-
-	var_1_97[164] = {
+	pg.base.technology_data_template[164] = {
 		id = 164,
 		rarity = 2,
 		time = 18000,
@@ -4952,11 +4527,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.technology_data_template
-
-	var_1_98[165] = {
+	pg.base.technology_data_template[165] = {
 		id = 165,
 		rarity = 2,
 		time = 18000,
@@ -4996,8 +4567,7 @@ var_0_3.base.technology_data_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.technology_data_template[166] = {
+	pg.base.technology_data_template[166] = {
 		id = 166,
 		rarity = 2,
 		time = 18000,
@@ -5041,11 +4611,7 @@ var_0_3.base.technology_data_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.technology_data_template
-
-	var_2_0[171] = {
+	pg.base.technology_data_template[171] = {
 		id = 171,
 		rarity = 1,
 		time = 3600,
@@ -5085,11 +4651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.technology_data_template
-
-	var_2_1[172] = {
+	pg.base.technology_data_template[172] = {
 		id = 172,
 		rarity = 1,
 		time = 3600,
@@ -5129,11 +4691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.technology_data_template
-
-	var_2_2[173] = {
+	pg.base.technology_data_template[173] = {
 		id = 173,
 		rarity = 1,
 		time = 3600,
@@ -5173,11 +4731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.technology_data_template
-
-	var_2_3[174] = {
+	pg.base.technology_data_template[174] = {
 		id = 174,
 		rarity = 1,
 		time = 3600,
@@ -5217,11 +4771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.technology_data_template
-
-	var_2_4[175] = {
+	pg.base.technology_data_template[175] = {
 		id = 175,
 		rarity = 1,
 		time = 3600,
@@ -5261,11 +4811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.technology_data_template
-
-	var_2_5[176] = {
+	pg.base.technology_data_template[176] = {
 		id = 176,
 		rarity = 1,
 		time = 7200,
@@ -5305,11 +4851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.technology_data_template
-
-	var_2_6[177] = {
+	pg.base.technology_data_template[177] = {
 		id = 177,
 		rarity = 1,
 		time = 7200,
@@ -5349,11 +4891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.technology_data_template
-
-	var_2_7[178] = {
+	pg.base.technology_data_template[178] = {
 		id = 178,
 		rarity = 1,
 		time = 7200,
@@ -5393,11 +4931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.technology_data_template
-
-	var_2_8[179] = {
+	pg.base.technology_data_template[179] = {
 		id = 179,
 		rarity = 1,
 		time = 7200,
@@ -5437,11 +4971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.technology_data_template
-
-	var_2_9[180] = {
+	pg.base.technology_data_template[180] = {
 		id = 180,
 		rarity = 1,
 		time = 7200,
@@ -5481,11 +5011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.technology_data_template
-
-	var_2_10[181] = {
+	pg.base.technology_data_template[181] = {
 		id = 181,
 		rarity = 2,
 		time = 14400,
@@ -5525,11 +5051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.technology_data_template
-
-	var_2_11[182] = {
+	pg.base.technology_data_template[182] = {
 		id = 182,
 		rarity = 2,
 		time = 14400,
@@ -5569,11 +5091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.technology_data_template
-
-	var_2_12[183] = {
+	pg.base.technology_data_template[183] = {
 		id = 183,
 		rarity = 2,
 		time = 14400,
@@ -5613,11 +5131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.technology_data_template
-
-	var_2_13[184] = {
+	pg.base.technology_data_template[184] = {
 		id = 184,
 		rarity = 2,
 		time = 14400,
@@ -5657,11 +5171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.technology_data_template
-
-	var_2_14[185] = {
+	pg.base.technology_data_template[185] = {
 		id = 185,
 		rarity = 2,
 		time = 14400,
@@ -5701,11 +5211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.technology_data_template
-
-	var_2_15[191] = {
+	pg.base.technology_data_template[191] = {
 		id = 191,
 		rarity = 1,
 		time = 3600,
@@ -5745,11 +5251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.technology_data_template
-
-	var_2_16[192] = {
+	pg.base.technology_data_template[192] = {
 		id = 192,
 		rarity = 1,
 		time = 3600,
@@ -5789,11 +5291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.technology_data_template
-
-	var_2_17[193] = {
+	pg.base.technology_data_template[193] = {
 		id = 193,
 		rarity = 2,
 		time = 7200,
@@ -5833,11 +5331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.technology_data_template
-
-	var_2_18[194] = {
+	pg.base.technology_data_template[194] = {
 		id = 194,
 		rarity = 2,
 		time = 7200,
@@ -5877,11 +5371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.technology_data_template
-
-	var_2_19[201] = {
+	pg.base.technology_data_template[201] = {
 		id = 201,
 		rarity = 1,
 		time = 21600,
@@ -5915,11 +5405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.technology_data_template
-
-	var_2_20[202] = {
+	pg.base.technology_data_template[202] = {
 		id = 202,
 		rarity = 1,
 		time = 21600,
@@ -5953,11 +5439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.technology_data_template
-
-	var_2_21[203] = {
+	pg.base.technology_data_template[203] = {
 		id = 203,
 		rarity = 2,
 		time = 28800,
@@ -5996,11 +5478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.technology_data_template
-
-	var_2_22[204] = {
+	pg.base.technology_data_template[204] = {
 		id = 204,
 		rarity = 2,
 		time = 28800,
@@ -6039,11 +5517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.technology_data_template
-
-	var_2_23[211] = {
+	pg.base.technology_data_template[211] = {
 		id = 211,
 		rarity = 1,
 		time = 14400,
@@ -6077,11 +5551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.technology_data_template
-
-	var_2_24[212] = {
+	pg.base.technology_data_template[212] = {
 		id = 212,
 		rarity = 1,
 		time = 14400,
@@ -6115,11 +5585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.technology_data_template
-
-	var_2_25[213] = {
+	pg.base.technology_data_template[213] = {
 		id = 213,
 		rarity = 1,
 		time = 14400,
@@ -6153,11 +5619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.technology_data_template
-
-	var_2_26[214] = {
+	pg.base.technology_data_template[214] = {
 		id = 214,
 		rarity = 1,
 		time = 14400,
@@ -6191,11 +5653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.technology_data_template
-
-	var_2_27[215] = {
+	pg.base.technology_data_template[215] = {
 		id = 215,
 		rarity = 2,
 		time = 14400,
@@ -6229,11 +5687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.technology_data_template
-
-	var_2_28[216] = {
+	pg.base.technology_data_template[216] = {
 		id = 216,
 		rarity = 2,
 		time = 14400,
@@ -6267,11 +5721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.technology_data_template
-
-	var_2_29[217] = {
+	pg.base.technology_data_template[217] = {
 		id = 217,
 		rarity = 2,
 		time = 14400,
@@ -6305,11 +5755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.technology_data_template
-
-	var_2_30[218] = {
+	pg.base.technology_data_template[218] = {
 		id = 218,
 		rarity = 2,
 		time = 14400,
@@ -6343,11 +5789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.technology_data_template
-
-	var_2_31[221] = {
+	pg.base.technology_data_template[221] = {
 		id = 221,
 		rarity = 1,
 		time = 10800,
@@ -6381,11 +5823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.technology_data_template
-
-	var_2_32[222] = {
+	pg.base.technology_data_template[222] = {
 		id = 222,
 		rarity = 1,
 		time = 14400,
@@ -6419,11 +5857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.technology_data_template
-
-	var_2_33[223] = {
+	pg.base.technology_data_template[223] = {
 		id = 223,
 		rarity = 2,
 		time = 21600,
@@ -6457,11 +5891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.technology_data_template
-
-	var_2_34[231] = {
+	pg.base.technology_data_template[231] = {
 		id = 231,
 		rarity = 1,
 		time = 7200,
@@ -6495,11 +5925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.technology_data_template
-
-	var_2_35[232] = {
+	pg.base.technology_data_template[232] = {
 		id = 232,
 		rarity = 2,
 		time = 7200,
@@ -6533,11 +5959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.technology_data_template
-
-	var_2_36[233] = {
+	pg.base.technology_data_template[233] = {
 		id = 233,
 		rarity = 2,
 		time = 21600,
@@ -6577,11 +5999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.technology_data_template
-
-	var_2_37[234] = {
+	pg.base.technology_data_template[234] = {
 		id = 234,
 		rarity = 2,
 		time = 21600,
@@ -6621,11 +6039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.technology_data_template
-
-	var_2_38[235] = {
+	pg.base.technology_data_template[235] = {
 		id = 235,
 		rarity = 2,
 		time = 21600,
@@ -6665,11 +6079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.technology_data_template
-
-	var_2_39[236] = {
+	pg.base.technology_data_template[236] = {
 		id = 236,
 		rarity = 2,
 		time = 21600,
@@ -6709,11 +6119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.technology_data_template
-
-	var_2_40[237] = {
+	pg.base.technology_data_template[237] = {
 		id = 237,
 		rarity = 2,
 		time = 21600,
@@ -6753,11 +6159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.technology_data_template
-
-	var_2_41[241] = {
+	pg.base.technology_data_template[241] = {
 		id = 241,
 		rarity = 1,
 		time = 5400,
@@ -6797,11 +6199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.technology_data_template
-
-	var_2_42[242] = {
+	pg.base.technology_data_template[242] = {
 		id = 242,
 		rarity = 1,
 		time = 5400,
@@ -6841,11 +6239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.technology_data_template
-
-	var_2_43[243] = {
+	pg.base.technology_data_template[243] = {
 		id = 243,
 		rarity = 1,
 		time = 9000,
@@ -6885,11 +6279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.technology_data_template
-
-	var_2_44[244] = {
+	pg.base.technology_data_template[244] = {
 		id = 244,
 		rarity = 1,
 		time = 9000,
@@ -6929,11 +6319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.technology_data_template
-
-	var_2_45[245] = {
+	pg.base.technology_data_template[245] = {
 		id = 245,
 		rarity = 2,
 		time = 14400,
@@ -6973,11 +6359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.technology_data_template
-
-	var_2_46[246] = {
+	pg.base.technology_data_template[246] = {
 		id = 246,
 		rarity = 2,
 		time = 14400,
@@ -7017,11 +6399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.technology_data_template
-
-	var_2_47[251] = {
+	pg.base.technology_data_template[251] = {
 		id = 251,
 		rarity = 1,
 		time = 9000,
@@ -7061,11 +6439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.technology_data_template
-
-	var_2_48[252] = {
+	pg.base.technology_data_template[252] = {
 		id = 252,
 		rarity = 1,
 		time = 9000,
@@ -7105,11 +6479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.technology_data_template
-
-	var_2_49[253] = {
+	pg.base.technology_data_template[253] = {
 		id = 253,
 		rarity = 1,
 		time = 9000,
@@ -7149,11 +6519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.technology_data_template
-
-	var_2_50[254] = {
+	pg.base.technology_data_template[254] = {
 		id = 254,
 		rarity = 1,
 		time = 9000,
@@ -7193,11 +6559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.technology_data_template
-
-	var_2_51[255] = {
+	pg.base.technology_data_template[255] = {
 		id = 255,
 		rarity = 1,
 		time = 9000,
@@ -7237,11 +6599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.technology_data_template
-
-	var_2_52[261] = {
+	pg.base.technology_data_template[261] = {
 		id = 261,
 		rarity = 2,
 		time = 18000,
@@ -7281,11 +6639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.technology_data_template
-
-	var_2_53[262] = {
+	pg.base.technology_data_template[262] = {
 		id = 262,
 		rarity = 2,
 		time = 18000,
@@ -7325,11 +6679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.technology_data_template
-
-	var_2_54[263] = {
+	pg.base.technology_data_template[263] = {
 		id = 263,
 		rarity = 2,
 		time = 18000,
@@ -7369,11 +6719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.technology_data_template
-
-	var_2_55[264] = {
+	pg.base.technology_data_template[264] = {
 		id = 264,
 		rarity = 2,
 		time = 18000,
@@ -7413,11 +6759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.technology_data_template
-
-	var_2_56[265] = {
+	pg.base.technology_data_template[265] = {
 		id = 265,
 		rarity = 2,
 		time = 18000,
@@ -7457,11 +6799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.technology_data_template
-
-	var_2_57[271] = {
+	pg.base.technology_data_template[271] = {
 		id = 271,
 		rarity = 1,
 		time = 3600,
@@ -7501,11 +6839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.technology_data_template
-
-	var_2_58[272] = {
+	pg.base.technology_data_template[272] = {
 		id = 272,
 		rarity = 1,
 		time = 3600,
@@ -7545,11 +6879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.technology_data_template
-
-	var_2_59[273] = {
+	pg.base.technology_data_template[273] = {
 		id = 273,
 		rarity = 1,
 		time = 3600,
@@ -7589,11 +6919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.technology_data_template
-
-	var_2_60[274] = {
+	pg.base.technology_data_template[274] = {
 		id = 274,
 		rarity = 1,
 		time = 3600,
@@ -7633,11 +6959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.technology_data_template
-
-	var_2_61[275] = {
+	pg.base.technology_data_template[275] = {
 		id = 275,
 		rarity = 1,
 		time = 3600,
@@ -7677,11 +6999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.technology_data_template
-
-	var_2_62[276] = {
+	pg.base.technology_data_template[276] = {
 		id = 276,
 		rarity = 1,
 		time = 7200,
@@ -7721,11 +7039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.technology_data_template
-
-	var_2_63[277] = {
+	pg.base.technology_data_template[277] = {
 		id = 277,
 		rarity = 1,
 		time = 7200,
@@ -7765,11 +7079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.technology_data_template
-
-	var_2_64[278] = {
+	pg.base.technology_data_template[278] = {
 		id = 278,
 		rarity = 1,
 		time = 7200,
@@ -7809,11 +7119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.technology_data_template
-
-	var_2_65[279] = {
+	pg.base.technology_data_template[279] = {
 		id = 279,
 		rarity = 1,
 		time = 7200,
@@ -7853,11 +7159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.technology_data_template
-
-	var_2_66[280] = {
+	pg.base.technology_data_template[280] = {
 		id = 280,
 		rarity = 1,
 		time = 7200,
@@ -7897,11 +7199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.technology_data_template
-
-	var_2_67[281] = {
+	pg.base.technology_data_template[281] = {
 		id = 281,
 		rarity = 2,
 		time = 14400,
@@ -7941,11 +7239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.technology_data_template
-
-	var_2_68[282] = {
+	pg.base.technology_data_template[282] = {
 		id = 282,
 		rarity = 2,
 		time = 14400,
@@ -7985,11 +7279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.technology_data_template
-
-	var_2_69[283] = {
+	pg.base.technology_data_template[283] = {
 		id = 283,
 		rarity = 2,
 		time = 14400,
@@ -8029,11 +7319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.technology_data_template
-
-	var_2_70[284] = {
+	pg.base.technology_data_template[284] = {
 		id = 284,
 		rarity = 2,
 		time = 14400,
@@ -8073,11 +7359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.technology_data_template
-
-	var_2_71[285] = {
+	pg.base.technology_data_template[285] = {
 		id = 285,
 		rarity = 2,
 		time = 14400,
@@ -8117,11 +7399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.technology_data_template
-
-	var_2_72[291] = {
+	pg.base.technology_data_template[291] = {
 		id = 291,
 		rarity = 1,
 		time = 3600,
@@ -8161,11 +7439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.technology_data_template
-
-	var_2_73[292] = {
+	pg.base.technology_data_template[292] = {
 		id = 292,
 		rarity = 1,
 		time = 3600,
@@ -8205,11 +7479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.technology_data_template
-
-	var_2_74[293] = {
+	pg.base.technology_data_template[293] = {
 		id = 293,
 		rarity = 2,
 		time = 7200,
@@ -8249,11 +7519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.technology_data_template
-
-	var_2_75[294] = {
+	pg.base.technology_data_template[294] = {
 		id = 294,
 		rarity = 2,
 		time = 7200,
@@ -8293,11 +7559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.technology_data_template
-
-	var_2_76[301] = {
+	pg.base.technology_data_template[301] = {
 		id = 301,
 		rarity = 1,
 		time = 21600,
@@ -8331,11 +7593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.technology_data_template
-
-	var_2_77[302] = {
+	pg.base.technology_data_template[302] = {
 		id = 302,
 		rarity = 1,
 		time = 21600,
@@ -8369,11 +7627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.technology_data_template
-
-	var_2_78[303] = {
+	pg.base.technology_data_template[303] = {
 		id = 303,
 		rarity = 2,
 		time = 28800,
@@ -8412,11 +7666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.technology_data_template
-
-	var_2_79[304] = {
+	pg.base.technology_data_template[304] = {
 		id = 304,
 		rarity = 2,
 		time = 28800,
@@ -8455,11 +7705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.technology_data_template
-
-	var_2_80[311] = {
+	pg.base.technology_data_template[311] = {
 		id = 311,
 		rarity = 1,
 		time = 14400,
@@ -8493,11 +7739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.technology_data_template
-
-	var_2_81[312] = {
+	pg.base.technology_data_template[312] = {
 		id = 312,
 		rarity = 1,
 		time = 14400,
@@ -8531,11 +7773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.technology_data_template
-
-	var_2_82[313] = {
+	pg.base.technology_data_template[313] = {
 		id = 313,
 		rarity = 1,
 		time = 14400,
@@ -8569,11 +7807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.technology_data_template
-
-	var_2_83[314] = {
+	pg.base.technology_data_template[314] = {
 		id = 314,
 		rarity = 1,
 		time = 14400,
@@ -8607,11 +7841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.technology_data_template
-
-	var_2_84[315] = {
+	pg.base.technology_data_template[315] = {
 		id = 315,
 		rarity = 2,
 		time = 14400,
@@ -8645,11 +7875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.technology_data_template
-
-	var_2_85[316] = {
+	pg.base.technology_data_template[316] = {
 		id = 316,
 		rarity = 2,
 		time = 14400,
@@ -8683,11 +7909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.technology_data_template
-
-	var_2_86[317] = {
+	pg.base.technology_data_template[317] = {
 		id = 317,
 		rarity = 2,
 		time = 14400,
@@ -8721,11 +7943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.technology_data_template
-
-	var_2_87[318] = {
+	pg.base.technology_data_template[318] = {
 		id = 318,
 		rarity = 2,
 		time = 14400,
@@ -8759,11 +7977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.technology_data_template
-
-	var_2_88[321] = {
+	pg.base.technology_data_template[321] = {
 		id = 321,
 		rarity = 1,
 		time = 10800,
@@ -8797,11 +8011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.technology_data_template
-
-	var_2_89[322] = {
+	pg.base.technology_data_template[322] = {
 		id = 322,
 		rarity = 1,
 		time = 14400,
@@ -8835,11 +8045,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.technology_data_template
-
-	var_2_90[323] = {
+	pg.base.technology_data_template[323] = {
 		id = 323,
 		rarity = 2,
 		time = 21600,
@@ -8873,11 +8079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.technology_data_template
-
-	var_2_91[331] = {
+	pg.base.technology_data_template[331] = {
 		id = 331,
 		rarity = 1,
 		time = 7200,
@@ -8911,11 +8113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.technology_data_template
-
-	var_2_92[332] = {
+	pg.base.technology_data_template[332] = {
 		id = 332,
 		rarity = 2,
 		time = 7200,
@@ -8949,11 +8147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.technology_data_template
-
-	var_2_93[333] = {
+	pg.base.technology_data_template[333] = {
 		id = 333,
 		rarity = 2,
 		time = 21600,
@@ -8993,11 +8187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.technology_data_template
-
-	var_2_94[334] = {
+	pg.base.technology_data_template[334] = {
 		id = 334,
 		rarity = 2,
 		time = 21600,
@@ -9037,11 +8227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.technology_data_template
-
-	var_2_95[335] = {
+	pg.base.technology_data_template[335] = {
 		id = 335,
 		rarity = 2,
 		time = 21600,
@@ -9081,11 +8267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.technology_data_template
-
-	var_2_96[336] = {
+	pg.base.technology_data_template[336] = {
 		id = 336,
 		rarity = 2,
 		time = 21600,
@@ -9125,11 +8307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.technology_data_template
-
-	var_2_97[337] = {
+	pg.base.technology_data_template[337] = {
 		id = 337,
 		rarity = 2,
 		time = 21600,
@@ -9169,11 +8347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.technology_data_template
-
-	var_2_98[341] = {
+	pg.base.technology_data_template[341] = {
 		id = 341,
 		rarity = 1,
 		time = 5400,
@@ -9213,8 +8387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.technology_data_template[342] = {
+	pg.base.technology_data_template[342] = {
 		id = 342,
 		rarity = 1,
 		time = 5400,
@@ -9258,11 +8431,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.technology_data_template
-
-	var_3_0[343] = {
+	pg.base.technology_data_template[343] = {
 		id = 343,
 		rarity = 1,
 		time = 9000,
@@ -9302,11 +8471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.technology_data_template
-
-	var_3_1[344] = {
+	pg.base.technology_data_template[344] = {
 		id = 344,
 		rarity = 1,
 		time = 9000,
@@ -9346,11 +8511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.technology_data_template
-
-	var_3_2[345] = {
+	pg.base.technology_data_template[345] = {
 		id = 345,
 		rarity = 2,
 		time = 14400,
@@ -9390,11 +8551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.technology_data_template
-
-	var_3_3[346] = {
+	pg.base.technology_data_template[346] = {
 		id = 346,
 		rarity = 2,
 		time = 14400,
@@ -9434,11 +8591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.technology_data_template
-
-	var_3_4[351] = {
+	pg.base.technology_data_template[351] = {
 		id = 351,
 		rarity = 1,
 		time = 9000,
@@ -9478,11 +8631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.technology_data_template
-
-	var_3_5[352] = {
+	pg.base.technology_data_template[352] = {
 		id = 352,
 		rarity = 1,
 		time = 9000,
@@ -9522,11 +8671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.technology_data_template
-
-	var_3_6[353] = {
+	pg.base.technology_data_template[353] = {
 		id = 353,
 		rarity = 1,
 		time = 9000,
@@ -9566,11 +8711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.technology_data_template
-
-	var_3_7[354] = {
+	pg.base.technology_data_template[354] = {
 		id = 354,
 		rarity = 1,
 		time = 9000,
@@ -9610,11 +8751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.technology_data_template
-
-	var_3_8[355] = {
+	pg.base.technology_data_template[355] = {
 		id = 355,
 		rarity = 1,
 		time = 9000,
@@ -9654,11 +8791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.technology_data_template
-
-	var_3_9[361] = {
+	pg.base.technology_data_template[361] = {
 		id = 361,
 		rarity = 2,
 		time = 18000,
@@ -9698,11 +8831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.technology_data_template
-
-	var_3_10[362] = {
+	pg.base.technology_data_template[362] = {
 		id = 362,
 		rarity = 2,
 		time = 18000,
@@ -9742,11 +8871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.technology_data_template
-
-	var_3_11[363] = {
+	pg.base.technology_data_template[363] = {
 		id = 363,
 		rarity = 2,
 		time = 18000,
@@ -9786,11 +8911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.technology_data_template
-
-	var_3_12[364] = {
+	pg.base.technology_data_template[364] = {
 		id = 364,
 		rarity = 2,
 		time = 18000,
@@ -9830,11 +8951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.technology_data_template
-
-	var_3_13[365] = {
+	pg.base.technology_data_template[365] = {
 		id = 365,
 		rarity = 2,
 		time = 18000,
@@ -9874,11 +8991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.technology_data_template
-
-	var_3_14[371] = {
+	pg.base.technology_data_template[371] = {
 		id = 371,
 		rarity = 1,
 		time = 3600,
@@ -9918,11 +9031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.technology_data_template
-
-	var_3_15[372] = {
+	pg.base.technology_data_template[372] = {
 		id = 372,
 		rarity = 1,
 		time = 3600,
@@ -9962,11 +9071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.technology_data_template
-
-	var_3_16[373] = {
+	pg.base.technology_data_template[373] = {
 		id = 373,
 		rarity = 1,
 		time = 3600,
@@ -10006,11 +9111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.technology_data_template
-
-	var_3_17[374] = {
+	pg.base.technology_data_template[374] = {
 		id = 374,
 		rarity = 1,
 		time = 3600,
@@ -10050,11 +9151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.technology_data_template
-
-	var_3_18[375] = {
+	pg.base.technology_data_template[375] = {
 		id = 375,
 		rarity = 1,
 		time = 3600,
@@ -10094,11 +9191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.technology_data_template
-
-	var_3_19[376] = {
+	pg.base.technology_data_template[376] = {
 		id = 376,
 		rarity = 1,
 		time = 7200,
@@ -10138,11 +9231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.technology_data_template
-
-	var_3_20[377] = {
+	pg.base.technology_data_template[377] = {
 		id = 377,
 		rarity = 1,
 		time = 7200,
@@ -10182,11 +9271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.technology_data_template
-
-	var_3_21[378] = {
+	pg.base.technology_data_template[378] = {
 		id = 378,
 		rarity = 1,
 		time = 7200,
@@ -10226,11 +9311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.technology_data_template
-
-	var_3_22[379] = {
+	pg.base.technology_data_template[379] = {
 		id = 379,
 		rarity = 1,
 		time = 7200,
@@ -10270,11 +9351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.technology_data_template
-
-	var_3_23[380] = {
+	pg.base.technology_data_template[380] = {
 		id = 380,
 		rarity = 1,
 		time = 7200,
@@ -10314,11 +9391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.technology_data_template
-
-	var_3_24[381] = {
+	pg.base.technology_data_template[381] = {
 		id = 381,
 		rarity = 2,
 		time = 14400,
@@ -10358,11 +9431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.technology_data_template
-
-	var_3_25[382] = {
+	pg.base.technology_data_template[382] = {
 		id = 382,
 		rarity = 2,
 		time = 14400,
@@ -10402,11 +9471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.technology_data_template
-
-	var_3_26[383] = {
+	pg.base.technology_data_template[383] = {
 		id = 383,
 		rarity = 2,
 		time = 14400,
@@ -10446,11 +9511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.technology_data_template
-
-	var_3_27[384] = {
+	pg.base.technology_data_template[384] = {
 		id = 384,
 		rarity = 2,
 		time = 14400,
@@ -10490,11 +9551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.technology_data_template
-
-	var_3_28[385] = {
+	pg.base.technology_data_template[385] = {
 		id = 385,
 		rarity = 2,
 		time = 14400,
@@ -10534,11 +9591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.technology_data_template
-
-	var_3_29[391] = {
+	pg.base.technology_data_template[391] = {
 		id = 391,
 		rarity = 1,
 		time = 3600,
@@ -10578,11 +9631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.technology_data_template
-
-	var_3_30[392] = {
+	pg.base.technology_data_template[392] = {
 		id = 392,
 		rarity = 1,
 		time = 3600,
@@ -10622,11 +9671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.technology_data_template
-
-	var_3_31[393] = {
+	pg.base.technology_data_template[393] = {
 		id = 393,
 		rarity = 2,
 		time = 7200,
@@ -10666,11 +9711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.technology_data_template
-
-	var_3_32[394] = {
+	pg.base.technology_data_template[394] = {
 		id = 394,
 		rarity = 2,
 		time = 7200,
@@ -10710,11 +9751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.technology_data_template
-
-	var_3_33[401] = {
+	pg.base.technology_data_template[401] = {
 		id = 401,
 		rarity = 1,
 		time = 21600,
@@ -10748,11 +9785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.technology_data_template
-
-	var_3_34[402] = {
+	pg.base.technology_data_template[402] = {
 		id = 402,
 		rarity = 1,
 		time = 21600,
@@ -10786,11 +9819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.technology_data_template
-
-	var_3_35[403] = {
+	pg.base.technology_data_template[403] = {
 		id = 403,
 		rarity = 2,
 		time = 28800,
@@ -10829,11 +9858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.technology_data_template
-
-	var_3_36[404] = {
+	pg.base.technology_data_template[404] = {
 		id = 404,
 		rarity = 2,
 		time = 28800,
@@ -10872,11 +9897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.technology_data_template
-
-	var_3_37[411] = {
+	pg.base.technology_data_template[411] = {
 		id = 411,
 		rarity = 1,
 		time = 14400,
@@ -10910,11 +9931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.technology_data_template
-
-	var_3_38[412] = {
+	pg.base.technology_data_template[412] = {
 		id = 412,
 		rarity = 1,
 		time = 14400,
@@ -10948,11 +9965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.technology_data_template
-
-	var_3_39[413] = {
+	pg.base.technology_data_template[413] = {
 		id = 413,
 		rarity = 1,
 		time = 14400,
@@ -10986,11 +9999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.technology_data_template
-
-	var_3_40[414] = {
+	pg.base.technology_data_template[414] = {
 		id = 414,
 		rarity = 1,
 		time = 14400,
@@ -11024,11 +10033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.technology_data_template
-
-	var_3_41[415] = {
+	pg.base.technology_data_template[415] = {
 		id = 415,
 		rarity = 2,
 		time = 14400,
@@ -11062,11 +10067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.technology_data_template
-
-	var_3_42[416] = {
+	pg.base.technology_data_template[416] = {
 		id = 416,
 		rarity = 2,
 		time = 14400,
@@ -11100,11 +10101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.technology_data_template
-
-	var_3_43[417] = {
+	pg.base.technology_data_template[417] = {
 		id = 417,
 		rarity = 2,
 		time = 14400,
@@ -11138,11 +10135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.technology_data_template
-
-	var_3_44[418] = {
+	pg.base.technology_data_template[418] = {
 		id = 418,
 		rarity = 2,
 		time = 14400,
@@ -11176,11 +10169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.technology_data_template
-
-	var_3_45[421] = {
+	pg.base.technology_data_template[421] = {
 		id = 421,
 		rarity = 1,
 		time = 10800,
@@ -11214,11 +10203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.technology_data_template
-
-	var_3_46[422] = {
+	pg.base.technology_data_template[422] = {
 		id = 422,
 		rarity = 1,
 		time = 14400,
@@ -11252,11 +10237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.technology_data_template
-
-	var_3_47[423] = {
+	pg.base.technology_data_template[423] = {
 		id = 423,
 		rarity = 2,
 		time = 21600,
@@ -11290,11 +10271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.technology_data_template
-
-	var_3_48[431] = {
+	pg.base.technology_data_template[431] = {
 		id = 431,
 		rarity = 1,
 		time = 7200,
@@ -11328,11 +10305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.technology_data_template
-
-	var_3_49[432] = {
+	pg.base.technology_data_template[432] = {
 		id = 432,
 		rarity = 2,
 		time = 7200,
@@ -11366,11 +10339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.technology_data_template
-
-	var_3_50[433] = {
+	pg.base.technology_data_template[433] = {
 		id = 433,
 		rarity = 2,
 		time = 21600,
@@ -11410,11 +10379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.technology_data_template
-
-	var_3_51[434] = {
+	pg.base.technology_data_template[434] = {
 		id = 434,
 		rarity = 2,
 		time = 21600,
@@ -11454,11 +10419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.technology_data_template
-
-	var_3_52[435] = {
+	pg.base.technology_data_template[435] = {
 		id = 435,
 		rarity = 2,
 		time = 21600,
@@ -11498,11 +10459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.technology_data_template
-
-	var_3_53[436] = {
+	pg.base.technology_data_template[436] = {
 		id = 436,
 		rarity = 2,
 		time = 21600,
@@ -11542,11 +10499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.technology_data_template
-
-	var_3_54[437] = {
+	pg.base.technology_data_template[437] = {
 		id = 437,
 		rarity = 2,
 		time = 21600,
@@ -11586,11 +10539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.technology_data_template
-
-	var_3_55[441] = {
+	pg.base.technology_data_template[441] = {
 		id = 441,
 		rarity = 1,
 		time = 5400,
@@ -11630,11 +10579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.technology_data_template
-
-	var_3_56[442] = {
+	pg.base.technology_data_template[442] = {
 		id = 442,
 		rarity = 1,
 		time = 5400,
@@ -11674,11 +10619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.technology_data_template
-
-	var_3_57[443] = {
+	pg.base.technology_data_template[443] = {
 		id = 443,
 		rarity = 1,
 		time = 9000,
@@ -11718,11 +10659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.technology_data_template
-
-	var_3_58[444] = {
+	pg.base.technology_data_template[444] = {
 		id = 444,
 		rarity = 1,
 		time = 9000,
@@ -11762,11 +10699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.technology_data_template
-
-	var_3_59[445] = {
+	pg.base.technology_data_template[445] = {
 		id = 445,
 		rarity = 2,
 		time = 14400,
@@ -11806,11 +10739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.technology_data_template
-
-	var_3_60[446] = {
+	pg.base.technology_data_template[446] = {
 		id = 446,
 		rarity = 2,
 		time = 14400,
@@ -11850,11 +10779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.technology_data_template
-
-	var_3_61[451] = {
+	pg.base.technology_data_template[451] = {
 		id = 451,
 		rarity = 1,
 		time = 9000,
@@ -11894,11 +10819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.technology_data_template
-
-	var_3_62[452] = {
+	pg.base.technology_data_template[452] = {
 		id = 452,
 		rarity = 1,
 		time = 9000,
@@ -11938,11 +10859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.technology_data_template
-
-	var_3_63[453] = {
+	pg.base.technology_data_template[453] = {
 		id = 453,
 		rarity = 1,
 		time = 9000,
@@ -11982,11 +10899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.technology_data_template
-
-	var_3_64[454] = {
+	pg.base.technology_data_template[454] = {
 		id = 454,
 		rarity = 1,
 		time = 9000,
@@ -12026,11 +10939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.technology_data_template
-
-	var_3_65[455] = {
+	pg.base.technology_data_template[455] = {
 		id = 455,
 		rarity = 1,
 		time = 9000,
@@ -12070,11 +10979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.technology_data_template
-
-	var_3_66[461] = {
+	pg.base.technology_data_template[461] = {
 		id = 461,
 		rarity = 2,
 		time = 18000,
@@ -12114,11 +11019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.technology_data_template
-
-	var_3_67[462] = {
+	pg.base.technology_data_template[462] = {
 		id = 462,
 		rarity = 2,
 		time = 18000,
@@ -12158,11 +11059,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.technology_data_template
-
-	var_3_68[463] = {
+	pg.base.technology_data_template[463] = {
 		id = 463,
 		rarity = 2,
 		time = 18000,
@@ -12202,11 +11099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.technology_data_template
-
-	var_3_69[464] = {
+	pg.base.technology_data_template[464] = {
 		id = 464,
 		rarity = 2,
 		time = 18000,
@@ -12246,11 +11139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.technology_data_template
-
-	var_3_70[465] = {
+	pg.base.technology_data_template[465] = {
 		id = 465,
 		rarity = 2,
 		time = 18000,
@@ -12290,11 +11179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.technology_data_template
-
-	var_3_71[471] = {
+	pg.base.technology_data_template[471] = {
 		id = 471,
 		rarity = 1,
 		time = 3600,
@@ -12334,11 +11219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.technology_data_template
-
-	var_3_72[472] = {
+	pg.base.technology_data_template[472] = {
 		id = 472,
 		rarity = 1,
 		time = 3600,
@@ -12378,11 +11259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.technology_data_template
-
-	var_3_73[473] = {
+	pg.base.technology_data_template[473] = {
 		id = 473,
 		rarity = 1,
 		time = 3600,
@@ -12422,11 +11299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.technology_data_template
-
-	var_3_74[474] = {
+	pg.base.technology_data_template[474] = {
 		id = 474,
 		rarity = 1,
 		time = 3600,
@@ -12466,11 +11339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.technology_data_template
-
-	var_3_75[475] = {
+	pg.base.technology_data_template[475] = {
 		id = 475,
 		rarity = 1,
 		time = 3600,
@@ -12510,11 +11379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.technology_data_template
-
-	var_3_76[476] = {
+	pg.base.technology_data_template[476] = {
 		id = 476,
 		rarity = 1,
 		time = 7200,
@@ -12554,11 +11419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.technology_data_template
-
-	var_3_77[477] = {
+	pg.base.technology_data_template[477] = {
 		id = 477,
 		rarity = 1,
 		time = 7200,
@@ -12598,11 +11459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.technology_data_template
-
-	var_3_78[478] = {
+	pg.base.technology_data_template[478] = {
 		id = 478,
 		rarity = 1,
 		time = 7200,
@@ -12642,11 +11499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.technology_data_template
-
-	var_3_79[479] = {
+	pg.base.technology_data_template[479] = {
 		id = 479,
 		rarity = 1,
 		time = 7200,
@@ -12686,11 +11539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.technology_data_template
-
-	var_3_80[480] = {
+	pg.base.technology_data_template[480] = {
 		id = 480,
 		rarity = 1,
 		time = 7200,
@@ -12730,11 +11579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.technology_data_template
-
-	var_3_81[481] = {
+	pg.base.technology_data_template[481] = {
 		id = 481,
 		rarity = 2,
 		time = 14400,
@@ -12774,11 +11619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.technology_data_template
-
-	var_3_82[482] = {
+	pg.base.technology_data_template[482] = {
 		id = 482,
 		rarity = 2,
 		time = 14400,
@@ -12818,11 +11659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.technology_data_template
-
-	var_3_83[483] = {
+	pg.base.technology_data_template[483] = {
 		id = 483,
 		rarity = 2,
 		time = 14400,
@@ -12862,11 +11699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.technology_data_template
-
-	var_3_84[484] = {
+	pg.base.technology_data_template[484] = {
 		id = 484,
 		rarity = 2,
 		time = 14400,
@@ -12906,11 +11739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.technology_data_template
-
-	var_3_85[485] = {
+	pg.base.technology_data_template[485] = {
 		id = 485,
 		rarity = 2,
 		time = 14400,
@@ -12950,11 +11779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.technology_data_template
-
-	var_3_86[491] = {
+	pg.base.technology_data_template[491] = {
 		id = 491,
 		rarity = 1,
 		time = 3600,
@@ -12994,11 +11819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.technology_data_template
-
-	var_3_87[492] = {
+	pg.base.technology_data_template[492] = {
 		id = 492,
 		rarity = 1,
 		time = 3600,
@@ -13038,11 +11859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.technology_data_template
-
-	var_3_88[493] = {
+	pg.base.technology_data_template[493] = {
 		id = 493,
 		rarity = 2,
 		time = 7200,
@@ -13082,11 +11899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.technology_data_template
-
-	var_3_89[494] = {
+	pg.base.technology_data_template[494] = {
 		id = 494,
 		rarity = 2,
 		time = 7200,
@@ -13126,11 +11939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.technology_data_template
-
-	var_3_90[501] = {
+	pg.base.technology_data_template[501] = {
 		id = 501,
 		rarity = 1,
 		time = 21600,
@@ -13164,11 +11973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.technology_data_template
-
-	var_3_91[502] = {
+	pg.base.technology_data_template[502] = {
 		id = 502,
 		rarity = 1,
 		time = 21600,
@@ -13202,11 +12007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.technology_data_template
-
-	var_3_92[503] = {
+	pg.base.technology_data_template[503] = {
 		id = 503,
 		rarity = 2,
 		time = 28800,
@@ -13245,11 +12046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.technology_data_template
-
-	var_3_93[504] = {
+	pg.base.technology_data_template[504] = {
 		id = 504,
 		rarity = 2,
 		time = 28800,
@@ -13288,11 +12085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.technology_data_template
-
-	var_3_94[511] = {
+	pg.base.technology_data_template[511] = {
 		id = 511,
 		rarity = 1,
 		time = 14400,
@@ -13326,11 +12119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.technology_data_template
-
-	var_3_95[512] = {
+	pg.base.technology_data_template[512] = {
 		id = 512,
 		rarity = 1,
 		time = 14400,
@@ -13364,11 +12153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.technology_data_template
-
-	var_3_96[513] = {
+	pg.base.technology_data_template[513] = {
 		id = 513,
 		rarity = 1,
 		time = 14400,
@@ -13402,11 +12187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.technology_data_template
-
-	var_3_97[514] = {
+	pg.base.technology_data_template[514] = {
 		id = 514,
 		rarity = 1,
 		time = 14400,
@@ -13440,11 +12221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.technology_data_template
-
-	var_3_98[515] = {
+	pg.base.technology_data_template[515] = {
 		id = 515,
 		rarity = 2,
 		time = 14400,
@@ -13478,8 +12255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.technology_data_template[516] = {
+	pg.base.technology_data_template[516] = {
 		id = 516,
 		rarity = 2,
 		time = 14400,
@@ -13517,11 +12293,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.technology_data_template
-
-	var_4_0[517] = {
+	pg.base.technology_data_template[517] = {
 		id = 517,
 		rarity = 2,
 		time = 14400,
@@ -13555,11 +12327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.technology_data_template
-
-	var_4_1[518] = {
+	pg.base.technology_data_template[518] = {
 		id = 518,
 		rarity = 2,
 		time = 14400,
@@ -13593,11 +12361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.technology_data_template
-
-	var_4_2[521] = {
+	pg.base.technology_data_template[521] = {
 		id = 521,
 		rarity = 1,
 		time = 10800,
@@ -13631,11 +12395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.technology_data_template
-
-	var_4_3[522] = {
+	pg.base.technology_data_template[522] = {
 		id = 522,
 		rarity = 1,
 		time = 14400,
@@ -13669,11 +12429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.technology_data_template
-
-	var_4_4[523] = {
+	pg.base.technology_data_template[523] = {
 		id = 523,
 		rarity = 2,
 		time = 21600,
@@ -13707,11 +12463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.technology_data_template
-
-	var_4_5[531] = {
+	pg.base.technology_data_template[531] = {
 		id = 531,
 		rarity = 1,
 		time = 7200,
@@ -13745,11 +12497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.technology_data_template
-
-	var_4_6[532] = {
+	pg.base.technology_data_template[532] = {
 		id = 532,
 		rarity = 2,
 		time = 7200,
@@ -13783,11 +12531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.technology_data_template
-
-	var_4_7[533] = {
+	pg.base.technology_data_template[533] = {
 		id = 533,
 		rarity = 2,
 		time = 21600,
@@ -13827,11 +12571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.technology_data_template
-
-	var_4_8[534] = {
+	pg.base.technology_data_template[534] = {
 		id = 534,
 		rarity = 2,
 		time = 21600,
@@ -13871,11 +12611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.technology_data_template
-
-	var_4_9[535] = {
+	pg.base.technology_data_template[535] = {
 		id = 535,
 		rarity = 2,
 		time = 21600,
@@ -13915,11 +12651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.technology_data_template
-
-	var_4_10[536] = {
+	pg.base.technology_data_template[536] = {
 		id = 536,
 		rarity = 2,
 		time = 21600,
@@ -13959,11 +12691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.technology_data_template
-
-	var_4_11[537] = {
+	pg.base.technology_data_template[537] = {
 		id = 537,
 		rarity = 2,
 		time = 21600,
@@ -14003,11 +12731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.technology_data_template
-
-	var_4_12[541] = {
+	pg.base.technology_data_template[541] = {
 		id = 541,
 		rarity = 1,
 		time = 5400,
@@ -14047,11 +12771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.technology_data_template
-
-	var_4_13[542] = {
+	pg.base.technology_data_template[542] = {
 		id = 542,
 		rarity = 1,
 		time = 5400,
@@ -14091,11 +12811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.technology_data_template
-
-	var_4_14[543] = {
+	pg.base.technology_data_template[543] = {
 		id = 543,
 		rarity = 1,
 		time = 9000,
@@ -14135,11 +12851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.technology_data_template
-
-	var_4_15[544] = {
+	pg.base.technology_data_template[544] = {
 		id = 544,
 		rarity = 1,
 		time = 9000,
@@ -14179,11 +12891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.technology_data_template
-
-	var_4_16[545] = {
+	pg.base.technology_data_template[545] = {
 		id = 545,
 		rarity = 2,
 		time = 14400,
@@ -14223,11 +12931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.technology_data_template
-
-	var_4_17[546] = {
+	pg.base.technology_data_template[546] = {
 		id = 546,
 		rarity = 2,
 		time = 14400,
@@ -14267,11 +12971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.technology_data_template
-
-	var_4_18[551] = {
+	pg.base.technology_data_template[551] = {
 		id = 551,
 		rarity = 1,
 		time = 9000,
@@ -14311,11 +13011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.technology_data_template
-
-	var_4_19[552] = {
+	pg.base.technology_data_template[552] = {
 		id = 552,
 		rarity = 1,
 		time = 9000,
@@ -14355,11 +13051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.technology_data_template
-
-	var_4_20[553] = {
+	pg.base.technology_data_template[553] = {
 		id = 553,
 		rarity = 1,
 		time = 9000,
@@ -14399,11 +13091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.technology_data_template
-
-	var_4_21[554] = {
+	pg.base.technology_data_template[554] = {
 		id = 554,
 		rarity = 1,
 		time = 9000,
@@ -14443,11 +13131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.technology_data_template
-
-	var_4_22[555] = {
+	pg.base.technology_data_template[555] = {
 		id = 555,
 		rarity = 1,
 		time = 9000,
@@ -14487,11 +13171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.technology_data_template
-
-	var_4_23[561] = {
+	pg.base.technology_data_template[561] = {
 		id = 561,
 		rarity = 2,
 		time = 18000,
@@ -14531,11 +13211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.technology_data_template
-
-	var_4_24[562] = {
+	pg.base.technology_data_template[562] = {
 		id = 562,
 		rarity = 2,
 		time = 18000,
@@ -14575,11 +13251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.technology_data_template
-
-	var_4_25[563] = {
+	pg.base.technology_data_template[563] = {
 		id = 563,
 		rarity = 2,
 		time = 18000,
@@ -14619,11 +13291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.technology_data_template
-
-	var_4_26[564] = {
+	pg.base.technology_data_template[564] = {
 		id = 564,
 		rarity = 2,
 		time = 18000,
@@ -14663,11 +13331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.technology_data_template
-
-	var_4_27[565] = {
+	pg.base.technology_data_template[565] = {
 		id = 565,
 		rarity = 2,
 		time = 18000,
@@ -14707,11 +13371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.technology_data_template
-
-	var_4_28[571] = {
+	pg.base.technology_data_template[571] = {
 		id = 571,
 		rarity = 1,
 		time = 3600,
@@ -14751,11 +13411,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.technology_data_template
-
-	var_4_29[572] = {
+	pg.base.technology_data_template[572] = {
 		id = 572,
 		rarity = 1,
 		time = 3600,
@@ -14795,11 +13451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.technology_data_template
-
-	var_4_30[573] = {
+	pg.base.technology_data_template[573] = {
 		id = 573,
 		rarity = 1,
 		time = 3600,
@@ -14839,11 +13491,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.technology_data_template
-
-	var_4_31[574] = {
+	pg.base.technology_data_template[574] = {
 		id = 574,
 		rarity = 1,
 		time = 3600,
@@ -14883,11 +13531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.technology_data_template
-
-	var_4_32[575] = {
+	pg.base.technology_data_template[575] = {
 		id = 575,
 		rarity = 1,
 		time = 3600,
@@ -14927,11 +13571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.technology_data_template
-
-	var_4_33[576] = {
+	pg.base.technology_data_template[576] = {
 		id = 576,
 		rarity = 1,
 		time = 7200,
@@ -14971,11 +13611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.technology_data_template
-
-	var_4_34[577] = {
+	pg.base.technology_data_template[577] = {
 		id = 577,
 		rarity = 1,
 		time = 7200,
@@ -15015,11 +13651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.technology_data_template
-
-	var_4_35[578] = {
+	pg.base.technology_data_template[578] = {
 		id = 578,
 		rarity = 1,
 		time = 7200,
@@ -15059,11 +13691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.technology_data_template
-
-	var_4_36[579] = {
+	pg.base.technology_data_template[579] = {
 		id = 579,
 		rarity = 1,
 		time = 7200,
@@ -15103,11 +13731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.technology_data_template
-
-	var_4_37[580] = {
+	pg.base.technology_data_template[580] = {
 		id = 580,
 		rarity = 1,
 		time = 7200,
@@ -15147,11 +13771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.technology_data_template
-
-	var_4_38[581] = {
+	pg.base.technology_data_template[581] = {
 		id = 581,
 		rarity = 2,
 		time = 14400,
@@ -15191,11 +13811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.technology_data_template
-
-	var_4_39[582] = {
+	pg.base.technology_data_template[582] = {
 		id = 582,
 		rarity = 2,
 		time = 14400,
@@ -15235,11 +13851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.technology_data_template
-
-	var_4_40[583] = {
+	pg.base.technology_data_template[583] = {
 		id = 583,
 		rarity = 2,
 		time = 14400,
@@ -15279,11 +13891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.technology_data_template
-
-	var_4_41[584] = {
+	pg.base.technology_data_template[584] = {
 		id = 584,
 		rarity = 2,
 		time = 14400,
@@ -15323,11 +13931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.technology_data_template
-
-	var_4_42[585] = {
+	pg.base.technology_data_template[585] = {
 		id = 585,
 		rarity = 2,
 		time = 14400,
@@ -15367,11 +13971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.technology_data_template
-
-	var_4_43[591] = {
+	pg.base.technology_data_template[591] = {
 		id = 591,
 		rarity = 1,
 		time = 3600,
@@ -15411,11 +14011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.technology_data_template
-
-	var_4_44[592] = {
+	pg.base.technology_data_template[592] = {
 		id = 592,
 		rarity = 1,
 		time = 3600,
@@ -15455,11 +14051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.technology_data_template
-
-	var_4_45[593] = {
+	pg.base.technology_data_template[593] = {
 		id = 593,
 		rarity = 2,
 		time = 7200,
@@ -15499,11 +14091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.technology_data_template
-
-	var_4_46[594] = {
+	pg.base.technology_data_template[594] = {
 		id = 594,
 		rarity = 2,
 		time = 7200,
@@ -15543,11 +14131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.technology_data_template
-
-	var_4_47[601] = {
+	pg.base.technology_data_template[601] = {
 		id = 601,
 		rarity = 1,
 		time = 21600,
@@ -15581,11 +14165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.technology_data_template
-
-	var_4_48[602] = {
+	pg.base.technology_data_template[602] = {
 		id = 602,
 		rarity = 1,
 		time = 21600,
@@ -15619,11 +14199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.technology_data_template
-
-	var_4_49[603] = {
+	pg.base.technology_data_template[603] = {
 		id = 603,
 		rarity = 2,
 		time = 28800,
@@ -15662,11 +14238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.technology_data_template
-
-	var_4_50[604] = {
+	pg.base.technology_data_template[604] = {
 		id = 604,
 		rarity = 2,
 		time = 28800,
@@ -15705,11 +14277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.technology_data_template
-
-	var_4_51[611] = {
+	pg.base.technology_data_template[611] = {
 		id = 611,
 		rarity = 1,
 		time = 14400,
@@ -15743,11 +14311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.technology_data_template
-
-	var_4_52[612] = {
+	pg.base.technology_data_template[612] = {
 		id = 612,
 		rarity = 1,
 		time = 14400,
@@ -15781,11 +14345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.technology_data_template
-
-	var_4_53[613] = {
+	pg.base.technology_data_template[613] = {
 		id = 613,
 		rarity = 1,
 		time = 14400,
@@ -15819,11 +14379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.technology_data_template
-
-	var_4_54[614] = {
+	pg.base.technology_data_template[614] = {
 		id = 614,
 		rarity = 1,
 		time = 14400,
@@ -15857,11 +14413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.technology_data_template
-
-	var_4_55[615] = {
+	pg.base.technology_data_template[615] = {
 		id = 615,
 		rarity = 2,
 		time = 14400,
@@ -15895,11 +14447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.technology_data_template
-
-	var_4_56[616] = {
+	pg.base.technology_data_template[616] = {
 		id = 616,
 		rarity = 2,
 		time = 14400,
@@ -15933,11 +14481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.technology_data_template
-
-	var_4_57[617] = {
+	pg.base.technology_data_template[617] = {
 		id = 617,
 		rarity = 2,
 		time = 14400,
@@ -15971,11 +14515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.technology_data_template
-
-	var_4_58[618] = {
+	pg.base.technology_data_template[618] = {
 		id = 618,
 		rarity = 2,
 		time = 14400,
@@ -16009,11 +14549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.technology_data_template
-
-	var_4_59[621] = {
+	pg.base.technology_data_template[621] = {
 		id = 621,
 		rarity = 1,
 		time = 10800,
@@ -16047,11 +14583,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.technology_data_template
-
-	var_4_60[622] = {
+	pg.base.technology_data_template[622] = {
 		id = 622,
 		rarity = 1,
 		time = 14400,
@@ -16085,11 +14617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.technology_data_template
-
-	var_4_61[623] = {
+	pg.base.technology_data_template[623] = {
 		id = 623,
 		rarity = 2,
 		time = 21600,
@@ -16123,11 +14651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.technology_data_template
-
-	var_4_62[631] = {
+	pg.base.technology_data_template[631] = {
 		id = 631,
 		rarity = 1,
 		time = 7200,
@@ -16161,11 +14685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.technology_data_template
-
-	var_4_63[632] = {
+	pg.base.technology_data_template[632] = {
 		id = 632,
 		rarity = 2,
 		time = 7200,
@@ -16199,11 +14719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.technology_data_template
-
-	var_4_64[633] = {
+	pg.base.technology_data_template[633] = {
 		id = 633,
 		rarity = 2,
 		time = 21600,
@@ -16243,11 +14759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.technology_data_template
-
-	var_4_65[634] = {
+	pg.base.technology_data_template[634] = {
 		id = 634,
 		rarity = 2,
 		time = 21600,
@@ -16287,11 +14799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.technology_data_template
-
-	var_4_66[635] = {
+	pg.base.technology_data_template[635] = {
 		id = 635,
 		rarity = 2,
 		time = 21600,
@@ -16331,11 +14839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.technology_data_template
-
-	var_4_67[636] = {
+	pg.base.technology_data_template[636] = {
 		id = 636,
 		rarity = 2,
 		time = 21600,
@@ -16375,11 +14879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.technology_data_template
-
-	var_4_68[637] = {
+	pg.base.technology_data_template[637] = {
 		id = 637,
 		rarity = 2,
 		time = 21600,
@@ -16419,11 +14919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.technology_data_template
-
-	var_4_69[641] = {
+	pg.base.technology_data_template[641] = {
 		id = 641,
 		rarity = 1,
 		time = 5400,
@@ -16463,11 +14959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.technology_data_template
-
-	var_4_70[642] = {
+	pg.base.technology_data_template[642] = {
 		id = 642,
 		rarity = 1,
 		time = 5400,
@@ -16507,11 +14999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.technology_data_template
-
-	var_4_71[643] = {
+	pg.base.technology_data_template[643] = {
 		id = 643,
 		rarity = 1,
 		time = 9000,
@@ -16551,11 +15039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.technology_data_template
-
-	var_4_72[644] = {
+	pg.base.technology_data_template[644] = {
 		id = 644,
 		rarity = 1,
 		time = 9000,
@@ -16595,11 +15079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.technology_data_template
-
-	var_4_73[645] = {
+	pg.base.technology_data_template[645] = {
 		id = 645,
 		rarity = 2,
 		time = 14400,
@@ -16639,11 +15119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.technology_data_template
-
-	var_4_74[646] = {
+	pg.base.technology_data_template[646] = {
 		id = 646,
 		rarity = 2,
 		time = 14400,
@@ -16683,11 +15159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.technology_data_template
-
-	var_4_75[651] = {
+	pg.base.technology_data_template[651] = {
 		id = 651,
 		rarity = 1,
 		time = 9000,
@@ -16727,11 +15199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.technology_data_template
-
-	var_4_76[652] = {
+	pg.base.technology_data_template[652] = {
 		id = 652,
 		rarity = 1,
 		time = 9000,
@@ -16771,11 +15239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.technology_data_template
-
-	var_4_77[653] = {
+	pg.base.technology_data_template[653] = {
 		id = 653,
 		rarity = 1,
 		time = 9000,
@@ -16815,11 +15279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.technology_data_template
-
-	var_4_78[654] = {
+	pg.base.technology_data_template[654] = {
 		id = 654,
 		rarity = 1,
 		time = 9000,
@@ -16859,11 +15319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.technology_data_template
-
-	var_4_79[655] = {
+	pg.base.technology_data_template[655] = {
 		id = 655,
 		rarity = 1,
 		time = 9000,
@@ -16903,11 +15359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.technology_data_template
-
-	var_4_80[661] = {
+	pg.base.technology_data_template[661] = {
 		id = 661,
 		rarity = 2,
 		time = 18000,
@@ -16947,11 +15399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.technology_data_template
-
-	var_4_81[662] = {
+	pg.base.technology_data_template[662] = {
 		id = 662,
 		rarity = 2,
 		time = 18000,
@@ -16991,11 +15439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.technology_data_template
-
-	var_4_82[663] = {
+	pg.base.technology_data_template[663] = {
 		id = 663,
 		rarity = 2,
 		time = 18000,
@@ -17035,11 +15479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.technology_data_template
-
-	var_4_83[664] = {
+	pg.base.technology_data_template[664] = {
 		id = 664,
 		rarity = 2,
 		time = 18000,
@@ -17079,11 +15519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.technology_data_template
-
-	var_4_84[665] = {
+	pg.base.technology_data_template[665] = {
 		id = 665,
 		rarity = 2,
 		time = 18000,
@@ -17123,11 +15559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.technology_data_template
-
-	var_4_85[671] = {
+	pg.base.technology_data_template[671] = {
 		id = 671,
 		rarity = 1,
 		time = 3600,
@@ -17167,11 +15599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.technology_data_template
-
-	var_4_86[672] = {
+	pg.base.technology_data_template[672] = {
 		id = 672,
 		rarity = 1,
 		time = 3600,
@@ -17211,11 +15639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.technology_data_template
-
-	var_4_87[673] = {
+	pg.base.technology_data_template[673] = {
 		id = 673,
 		rarity = 1,
 		time = 3600,
@@ -17255,11 +15679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.technology_data_template
-
-	var_4_88[674] = {
+	pg.base.technology_data_template[674] = {
 		id = 674,
 		rarity = 1,
 		time = 3600,
@@ -17299,11 +15719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.technology_data_template
-
-	var_4_89[675] = {
+	pg.base.technology_data_template[675] = {
 		id = 675,
 		rarity = 1,
 		time = 3600,
@@ -17343,11 +15759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.technology_data_template
-
-	var_4_90[676] = {
+	pg.base.technology_data_template[676] = {
 		id = 676,
 		rarity = 1,
 		time = 7200,
@@ -17387,11 +15799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.technology_data_template
-
-	var_4_91[677] = {
+	pg.base.technology_data_template[677] = {
 		id = 677,
 		rarity = 1,
 		time = 7200,
@@ -17431,11 +15839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.technology_data_template
-
-	var_4_92[678] = {
+	pg.base.technology_data_template[678] = {
 		id = 678,
 		rarity = 1,
 		time = 7200,
@@ -17475,11 +15879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.technology_data_template
-
-	var_4_93[679] = {
+	pg.base.technology_data_template[679] = {
 		id = 679,
 		rarity = 1,
 		time = 7200,
@@ -17519,11 +15919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.technology_data_template
-
-	var_4_94[680] = {
+	pg.base.technology_data_template[680] = {
 		id = 680,
 		rarity = 1,
 		time = 7200,
@@ -17563,11 +15959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.technology_data_template
-
-	var_4_95[681] = {
+	pg.base.technology_data_template[681] = {
 		id = 681,
 		rarity = 2,
 		time = 14400,
@@ -17607,11 +15999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.technology_data_template
-
-	var_4_96[682] = {
+	pg.base.technology_data_template[682] = {
 		id = 682,
 		rarity = 2,
 		time = 14400,
@@ -17651,11 +16039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.technology_data_template
-
-	var_4_97[683] = {
+	pg.base.technology_data_template[683] = {
 		id = 683,
 		rarity = 2,
 		time = 14400,
@@ -17695,11 +16079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.technology_data_template
-
-	var_4_98[684] = {
+	pg.base.technology_data_template[684] = {
 		id = 684,
 		rarity = 2,
 		time = 14400,
@@ -17739,8 +16119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.technology_data_template[685] = {
+	pg.base.technology_data_template[685] = {
 		id = 685,
 		rarity = 2,
 		time = 14400,
@@ -17784,11 +16163,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.technology_data_template
-
-	var_5_0[691] = {
+	pg.base.technology_data_template[691] = {
 		id = 691,
 		rarity = 1,
 		time = 3600,
@@ -17828,11 +16203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.technology_data_template
-
-	var_5_1[692] = {
+	pg.base.technology_data_template[692] = {
 		id = 692,
 		rarity = 1,
 		time = 3600,
@@ -17872,11 +16243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.technology_data_template
-
-	var_5_2[693] = {
+	pg.base.technology_data_template[693] = {
 		id = 693,
 		rarity = 2,
 		time = 7200,
@@ -17916,11 +16283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.technology_data_template
-
-	var_5_3[694] = {
+	pg.base.technology_data_template[694] = {
 		id = 694,
 		rarity = 2,
 		time = 7200,
@@ -17960,11 +16323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.technology_data_template
-
-	var_5_4[701] = {
+	pg.base.technology_data_template[701] = {
 		id = 701,
 		rarity = 1,
 		time = 21600,
@@ -17998,11 +16357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.technology_data_template
-
-	var_5_5[702] = {
+	pg.base.technology_data_template[702] = {
 		id = 702,
 		rarity = 1,
 		time = 21600,
@@ -18036,11 +16391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.technology_data_template
-
-	var_5_6[703] = {
+	pg.base.technology_data_template[703] = {
 		id = 703,
 		rarity = 2,
 		time = 28800,
@@ -18079,11 +16430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.technology_data_template
-
-	var_5_7[704] = {
+	pg.base.technology_data_template[704] = {
 		id = 704,
 		rarity = 2,
 		time = 28800,
@@ -18122,11 +16469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.technology_data_template
-
-	var_5_8[711] = {
+	pg.base.technology_data_template[711] = {
 		id = 711,
 		rarity = 1,
 		time = 14400,
@@ -18160,11 +16503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.technology_data_template
-
-	var_5_9[712] = {
+	pg.base.technology_data_template[712] = {
 		id = 712,
 		rarity = 1,
 		time = 14400,
@@ -18198,11 +16537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.technology_data_template
-
-	var_5_10[713] = {
+	pg.base.technology_data_template[713] = {
 		id = 713,
 		rarity = 1,
 		time = 14400,
@@ -18236,11 +16571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.technology_data_template
-
-	var_5_11[714] = {
+	pg.base.technology_data_template[714] = {
 		id = 714,
 		rarity = 1,
 		time = 14400,
@@ -18274,11 +16605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.technology_data_template
-
-	var_5_12[715] = {
+	pg.base.technology_data_template[715] = {
 		id = 715,
 		rarity = 2,
 		time = 14400,
@@ -18312,11 +16639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.technology_data_template
-
-	var_5_13[716] = {
+	pg.base.technology_data_template[716] = {
 		id = 716,
 		rarity = 2,
 		time = 14400,
@@ -18350,11 +16673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.technology_data_template
-
-	var_5_14[717] = {
+	pg.base.technology_data_template[717] = {
 		id = 717,
 		rarity = 2,
 		time = 14400,
@@ -18388,11 +16707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.technology_data_template
-
-	var_5_15[718] = {
+	pg.base.technology_data_template[718] = {
 		id = 718,
 		rarity = 2,
 		time = 14400,
@@ -18426,11 +16741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.technology_data_template
-
-	var_5_16[721] = {
+	pg.base.technology_data_template[721] = {
 		id = 721,
 		rarity = 1,
 		time = 10800,
@@ -18464,11 +16775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.technology_data_template
-
-	var_5_17[722] = {
+	pg.base.technology_data_template[722] = {
 		id = 722,
 		rarity = 1,
 		time = 14400,
@@ -18502,11 +16809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.technology_data_template
-
-	var_5_18[723] = {
+	pg.base.technology_data_template[723] = {
 		id = 723,
 		rarity = 2,
 		time = 21600,
@@ -18540,11 +16843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.technology_data_template
-
-	var_5_19[731] = {
+	pg.base.technology_data_template[731] = {
 		id = 731,
 		rarity = 1,
 		time = 7200,
@@ -18578,11 +16877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.technology_data_template
-
-	var_5_20[732] = {
+	pg.base.technology_data_template[732] = {
 		id = 732,
 		rarity = 2,
 		time = 7200,
@@ -18616,11 +16911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.technology_data_template
-
-	var_5_21[733] = {
+	pg.base.technology_data_template[733] = {
 		id = 733,
 		rarity = 2,
 		time = 21600,
@@ -18660,11 +16951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.technology_data_template
-
-	var_5_22[734] = {
+	pg.base.technology_data_template[734] = {
 		id = 734,
 		rarity = 2,
 		time = 21600,
@@ -18704,11 +16991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.technology_data_template
-
-	var_5_23[735] = {
+	pg.base.technology_data_template[735] = {
 		id = 735,
 		rarity = 2,
 		time = 21600,
@@ -18748,11 +17031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.technology_data_template
-
-	var_5_24[736] = {
+	pg.base.technology_data_template[736] = {
 		id = 736,
 		rarity = 2,
 		time = 21600,
@@ -18792,11 +17071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.technology_data_template
-
-	var_5_25[737] = {
+	pg.base.technology_data_template[737] = {
 		id = 737,
 		rarity = 2,
 		time = 21600,
@@ -18836,11 +17111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.technology_data_template
-
-	var_5_26[738] = {
+	pg.base.technology_data_template[738] = {
 		id = 738,
 		rarity = 2,
 		time = 21600,
@@ -18880,11 +17151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.technology_data_template
-
-	var_5_27[741] = {
+	pg.base.technology_data_template[741] = {
 		id = 741,
 		rarity = 1,
 		time = 5400,
@@ -18924,11 +17191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.technology_data_template
-
-	var_5_28[742] = {
+	pg.base.technology_data_template[742] = {
 		id = 742,
 		rarity = 1,
 		time = 5400,
@@ -18968,11 +17231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.technology_data_template
-
-	var_5_29[743] = {
+	pg.base.technology_data_template[743] = {
 		id = 743,
 		rarity = 1,
 		time = 9000,
@@ -19012,11 +17271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.technology_data_template
-
-	var_5_30[744] = {
+	pg.base.technology_data_template[744] = {
 		id = 744,
 		rarity = 1,
 		time = 9000,
@@ -19056,11 +17311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.technology_data_template
-
-	var_5_31[745] = {
+	pg.base.technology_data_template[745] = {
 		id = 745,
 		rarity = 2,
 		time = 14400,
@@ -19100,11 +17351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.technology_data_template
-
-	var_5_32[746] = {
+	pg.base.technology_data_template[746] = {
 		id = 746,
 		rarity = 2,
 		time = 14400,
@@ -19144,11 +17391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.technology_data_template
-
-	var_5_33[751] = {
+	pg.base.technology_data_template[751] = {
 		id = 751,
 		rarity = 1,
 		time = 9000,
@@ -19188,11 +17431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.technology_data_template
-
-	var_5_34[752] = {
+	pg.base.technology_data_template[752] = {
 		id = 752,
 		rarity = 1,
 		time = 9000,
@@ -19232,11 +17471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.technology_data_template
-
-	var_5_35[753] = {
+	pg.base.technology_data_template[753] = {
 		id = 753,
 		rarity = 1,
 		time = 9000,
@@ -19276,11 +17511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.technology_data_template
-
-	var_5_36[754] = {
+	pg.base.technology_data_template[754] = {
 		id = 754,
 		rarity = 1,
 		time = 9000,
@@ -19320,11 +17551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.technology_data_template
-
-	var_5_37[755] = {
+	pg.base.technology_data_template[755] = {
 		id = 755,
 		rarity = 1,
 		time = 9000,
@@ -19364,11 +17591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.technology_data_template
-
-	var_5_38[761] = {
+	pg.base.technology_data_template[761] = {
 		id = 761,
 		rarity = 2,
 		time = 18000,
@@ -19408,11 +17631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.technology_data_template
-
-	var_5_39[762] = {
+	pg.base.technology_data_template[762] = {
 		id = 762,
 		rarity = 2,
 		time = 18000,
@@ -19452,11 +17671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.technology_data_template
-
-	var_5_40[763] = {
+	pg.base.technology_data_template[763] = {
 		id = 763,
 		rarity = 2,
 		time = 18000,
@@ -19496,11 +17711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.technology_data_template
-
-	var_5_41[764] = {
+	pg.base.technology_data_template[764] = {
 		id = 764,
 		rarity = 2,
 		time = 18000,
@@ -19540,11 +17751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.technology_data_template
-
-	var_5_42[765] = {
+	pg.base.technology_data_template[765] = {
 		id = 765,
 		rarity = 2,
 		time = 18000,
@@ -19584,11 +17791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.technology_data_template
-
-	var_5_43[771] = {
+	pg.base.technology_data_template[771] = {
 		id = 771,
 		rarity = 1,
 		time = 3600,
@@ -19628,11 +17831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.technology_data_template
-
-	var_5_44[772] = {
+	pg.base.technology_data_template[772] = {
 		id = 772,
 		rarity = 1,
 		time = 3600,
@@ -19672,11 +17871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.technology_data_template
-
-	var_5_45[773] = {
+	pg.base.technology_data_template[773] = {
 		id = 773,
 		rarity = 1,
 		time = 3600,
@@ -19716,11 +17911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.technology_data_template
-
-	var_5_46[774] = {
+	pg.base.technology_data_template[774] = {
 		id = 774,
 		rarity = 1,
 		time = 3600,
@@ -19760,11 +17951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.technology_data_template
-
-	var_5_47[775] = {
+	pg.base.technology_data_template[775] = {
 		id = 775,
 		rarity = 1,
 		time = 3600,
@@ -19804,11 +17991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.technology_data_template
-
-	var_5_48[776] = {
+	pg.base.technology_data_template[776] = {
 		id = 776,
 		rarity = 1,
 		time = 7200,
@@ -19848,11 +18031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.technology_data_template
-
-	var_5_49[777] = {
+	pg.base.technology_data_template[777] = {
 		id = 777,
 		rarity = 1,
 		time = 7200,
@@ -19892,11 +18071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.technology_data_template
-
-	var_5_50[778] = {
+	pg.base.technology_data_template[778] = {
 		id = 778,
 		rarity = 1,
 		time = 7200,
@@ -19936,11 +18111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.technology_data_template
-
-	var_5_51[779] = {
+	pg.base.technology_data_template[779] = {
 		id = 779,
 		rarity = 1,
 		time = 7200,
@@ -19980,11 +18151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.technology_data_template
-
-	var_5_52[780] = {
+	pg.base.technology_data_template[780] = {
 		id = 780,
 		rarity = 1,
 		time = 7200,
@@ -20024,11 +18191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.technology_data_template
-
-	var_5_53[781] = {
+	pg.base.technology_data_template[781] = {
 		id = 781,
 		rarity = 2,
 		time = 14400,
@@ -20068,11 +18231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.technology_data_template
-
-	var_5_54[782] = {
+	pg.base.technology_data_template[782] = {
 		id = 782,
 		rarity = 2,
 		time = 14400,
@@ -20112,11 +18271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.technology_data_template
-
-	var_5_55[783] = {
+	pg.base.technology_data_template[783] = {
 		id = 783,
 		rarity = 2,
 		time = 14400,
@@ -20156,11 +18311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.technology_data_template
-
-	var_5_56[784] = {
+	pg.base.technology_data_template[784] = {
 		id = 784,
 		rarity = 2,
 		time = 14400,
@@ -20200,11 +18351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.technology_data_template
-
-	var_5_57[785] = {
+	pg.base.technology_data_template[785] = {
 		id = 785,
 		rarity = 2,
 		time = 14400,
@@ -20244,11 +18391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.technology_data_template
-
-	var_5_58[791] = {
+	pg.base.technology_data_template[791] = {
 		id = 791,
 		rarity = 1,
 		time = 3600,
@@ -20288,11 +18431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.technology_data_template
-
-	var_5_59[792] = {
+	pg.base.technology_data_template[792] = {
 		id = 792,
 		rarity = 1,
 		time = 3600,
@@ -20332,11 +18471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.technology_data_template
-
-	var_5_60[793] = {
+	pg.base.technology_data_template[793] = {
 		id = 793,
 		rarity = 2,
 		time = 7200,
@@ -20376,11 +18511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.technology_data_template
-
-	var_5_61[794] = {
+	pg.base.technology_data_template[794] = {
 		id = 794,
 		rarity = 2,
 		time = 7200,
@@ -20420,11 +18551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.technology_data_template
-
-	var_5_62[801] = {
+	pg.base.technology_data_template[801] = {
 		id = 801,
 		rarity = 1,
 		time = 21600,
@@ -20458,11 +18585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.technology_data_template
-
-	var_5_63[802] = {
+	pg.base.technology_data_template[802] = {
 		id = 802,
 		rarity = 1,
 		time = 21600,
@@ -20496,11 +18619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.technology_data_template
-
-	var_5_64[803] = {
+	pg.base.technology_data_template[803] = {
 		id = 803,
 		rarity = 2,
 		time = 28800,
@@ -20539,11 +18658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.technology_data_template
-
-	var_5_65[804] = {
+	pg.base.technology_data_template[804] = {
 		id = 804,
 		rarity = 2,
 		time = 28800,
@@ -20582,11 +18697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.technology_data_template
-
-	var_5_66[811] = {
+	pg.base.technology_data_template[811] = {
 		id = 811,
 		rarity = 1,
 		time = 14400,
@@ -20620,11 +18731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.technology_data_template
-
-	var_5_67[812] = {
+	pg.base.technology_data_template[812] = {
 		id = 812,
 		rarity = 1,
 		time = 14400,
@@ -20658,11 +18765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.technology_data_template
-
-	var_5_68[813] = {
+	pg.base.technology_data_template[813] = {
 		id = 813,
 		rarity = 1,
 		time = 14400,
@@ -20696,11 +18799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.technology_data_template
-
-	var_5_69[814] = {
+	pg.base.technology_data_template[814] = {
 		id = 814,
 		rarity = 1,
 		time = 14400,
@@ -20734,11 +18833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.technology_data_template
-
-	var_5_70[815] = {
+	pg.base.technology_data_template[815] = {
 		id = 815,
 		rarity = 2,
 		time = 14400,
@@ -20772,11 +18867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.technology_data_template
-
-	var_5_71[816] = {
+	pg.base.technology_data_template[816] = {
 		id = 816,
 		rarity = 2,
 		time = 14400,
@@ -20810,11 +18901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.technology_data_template
-
-	var_5_72[817] = {
+	pg.base.technology_data_template[817] = {
 		id = 817,
 		rarity = 2,
 		time = 14400,
@@ -20848,11 +18935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.technology_data_template
-
-	var_5_73[818] = {
+	pg.base.technology_data_template[818] = {
 		id = 818,
 		rarity = 2,
 		time = 14400,
@@ -20886,11 +18969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.technology_data_template
-
-	var_5_74[821] = {
+	pg.base.technology_data_template[821] = {
 		id = 821,
 		rarity = 1,
 		time = 10800,
@@ -20924,11 +19003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.technology_data_template
-
-	var_5_75[822] = {
+	pg.base.technology_data_template[822] = {
 		id = 822,
 		rarity = 1,
 		time = 14400,
@@ -20962,11 +19037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.technology_data_template
-
-	var_5_76[823] = {
+	pg.base.technology_data_template[823] = {
 		id = 823,
 		rarity = 2,
 		time = 21600,
@@ -21000,11 +19071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.technology_data_template
-
-	var_5_77[831] = {
+	pg.base.technology_data_template[831] = {
 		id = 831,
 		rarity = 1,
 		time = 7200,
@@ -21038,11 +19105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.technology_data_template
-
-	var_5_78[832] = {
+	pg.base.technology_data_template[832] = {
 		id = 832,
 		rarity = 2,
 		time = 7200,
@@ -21076,11 +19139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.technology_data_template
-
-	var_5_79[841] = {
+	pg.base.technology_data_template[841] = {
 		id = 841,
 		rarity = 1,
 		time = 5400,
@@ -21120,11 +19179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.technology_data_template
-
-	var_5_80[842] = {
+	pg.base.technology_data_template[842] = {
 		id = 842,
 		rarity = 1,
 		time = 5400,
@@ -21164,11 +19219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.technology_data_template
-
-	var_5_81[843] = {
+	pg.base.technology_data_template[843] = {
 		id = 843,
 		rarity = 1,
 		time = 9000,
@@ -21208,11 +19259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.technology_data_template
-
-	var_5_82[844] = {
+	pg.base.technology_data_template[844] = {
 		id = 844,
 		rarity = 1,
 		time = 9000,
@@ -21252,11 +19299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.technology_data_template
-
-	var_5_83[845] = {
+	pg.base.technology_data_template[845] = {
 		id = 845,
 		rarity = 2,
 		time = 14400,
@@ -21296,11 +19339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.technology_data_template
-
-	var_5_84[846] = {
+	pg.base.technology_data_template[846] = {
 		id = 846,
 		rarity = 2,
 		time = 14400,
@@ -21340,11 +19379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.technology_data_template
-
-	var_5_85[851] = {
+	pg.base.technology_data_template[851] = {
 		id = 851,
 		rarity = 1,
 		time = 9000,
@@ -21384,11 +19419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.technology_data_template
-
-	var_5_86[852] = {
+	pg.base.technology_data_template[852] = {
 		id = 852,
 		rarity = 1,
 		time = 9000,
@@ -21428,11 +19459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.technology_data_template
-
-	var_5_87[853] = {
+	pg.base.technology_data_template[853] = {
 		id = 853,
 		rarity = 1,
 		time = 9000,
@@ -21472,11 +19499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.technology_data_template
-
-	var_5_88[854] = {
+	pg.base.technology_data_template[854] = {
 		id = 854,
 		rarity = 1,
 		time = 9000,
@@ -21516,11 +19539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.technology_data_template
-
-	var_5_89[855] = {
+	pg.base.technology_data_template[855] = {
 		id = 855,
 		rarity = 1,
 		time = 9000,
@@ -21560,11 +19579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.technology_data_template
-
-	var_5_90[861] = {
+	pg.base.technology_data_template[861] = {
 		id = 861,
 		rarity = 2,
 		time = 18000,
@@ -21604,11 +19619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.technology_data_template
-
-	var_5_91[862] = {
+	pg.base.technology_data_template[862] = {
 		id = 862,
 		rarity = 2,
 		time = 18000,
@@ -21648,11 +19659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.technology_data_template
-
-	var_5_92[863] = {
+	pg.base.technology_data_template[863] = {
 		id = 863,
 		rarity = 2,
 		time = 18000,
@@ -21692,11 +19699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.technology_data_template
-
-	var_5_93[864] = {
+	pg.base.technology_data_template[864] = {
 		id = 864,
 		rarity = 2,
 		time = 18000,
@@ -21736,11 +19739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.technology_data_template
-
-	var_5_94[865] = {
+	pg.base.technology_data_template[865] = {
 		id = 865,
 		rarity = 2,
 		time = 18000,
@@ -21780,11 +19779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.technology_data_template
-
-	var_5_95[871] = {
+	pg.base.technology_data_template[871] = {
 		id = 871,
 		rarity = 1,
 		time = 3600,
@@ -21824,11 +19819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.technology_data_template
-
-	var_5_96[872] = {
+	pg.base.technology_data_template[872] = {
 		id = 872,
 		rarity = 1,
 		time = 3600,
@@ -21868,11 +19859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.technology_data_template
-
-	var_5_97[873] = {
+	pg.base.technology_data_template[873] = {
 		id = 873,
 		rarity = 1,
 		time = 3600,
@@ -21912,11 +19899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.technology_data_template
-
-	var_5_98[874] = {
+	pg.base.technology_data_template[874] = {
 		id = 874,
 		rarity = 1,
 		time = 3600,
@@ -21956,8 +19939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.technology_data_template[875] = {
+	pg.base.technology_data_template[875] = {
 		id = 875,
 		rarity = 1,
 		time = 3600,
@@ -22001,11 +19983,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.technology_data_template
-
-	var_6_0[876] = {
+	pg.base.technology_data_template[876] = {
 		id = 876,
 		rarity = 1,
 		time = 7200,
@@ -22045,11 +20023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.technology_data_template
-
-	var_6_1[877] = {
+	pg.base.technology_data_template[877] = {
 		id = 877,
 		rarity = 1,
 		time = 7200,
@@ -22089,11 +20063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.technology_data_template
-
-	var_6_2[878] = {
+	pg.base.technology_data_template[878] = {
 		id = 878,
 		rarity = 1,
 		time = 7200,
@@ -22133,11 +20103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.technology_data_template
-
-	var_6_3[879] = {
+	pg.base.technology_data_template[879] = {
 		id = 879,
 		rarity = 1,
 		time = 7200,
@@ -22177,11 +20143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.technology_data_template
-
-	var_6_4[880] = {
+	pg.base.technology_data_template[880] = {
 		id = 880,
 		rarity = 1,
 		time = 7200,
@@ -22221,11 +20183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.technology_data_template
-
-	var_6_5[881] = {
+	pg.base.technology_data_template[881] = {
 		id = 881,
 		rarity = 2,
 		time = 14400,
@@ -22265,11 +20223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.technology_data_template
-
-	var_6_6[882] = {
+	pg.base.technology_data_template[882] = {
 		id = 882,
 		rarity = 2,
 		time = 14400,
@@ -22309,11 +20263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.technology_data_template
-
-	var_6_7[883] = {
+	pg.base.technology_data_template[883] = {
 		id = 883,
 		rarity = 2,
 		time = 14400,
@@ -22353,11 +20303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.technology_data_template
-
-	var_6_8[884] = {
+	pg.base.technology_data_template[884] = {
 		id = 884,
 		rarity = 2,
 		time = 14400,
@@ -22397,11 +20343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.technology_data_template
-
-	var_6_9[885] = {
+	pg.base.technology_data_template[885] = {
 		id = 885,
 		rarity = 2,
 		time = 14400,
@@ -22441,11 +20383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.technology_data_template
-
-	var_6_10[891] = {
+	pg.base.technology_data_template[891] = {
 		id = 891,
 		rarity = 1,
 		time = 3600,
@@ -22485,11 +20423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.technology_data_template
-
-	var_6_11[892] = {
+	pg.base.technology_data_template[892] = {
 		id = 892,
 		rarity = 1,
 		time = 3600,
@@ -22529,11 +20463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.technology_data_template
-
-	var_6_12[893] = {
+	pg.base.technology_data_template[893] = {
 		id = 893,
 		rarity = 2,
 		time = 7200,
@@ -22573,11 +20503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.technology_data_template
-
-	var_6_13[894] = {
+	pg.base.technology_data_template[894] = {
 		id = 894,
 		rarity = 2,
 		time = 7200,
@@ -22617,11 +20543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.technology_data_template
-
-	var_6_14[1001] = {
+	pg.base.technology_data_template[1001] = {
 		id = 1001,
 		rarity = 3,
 		time = 43200,
@@ -22660,11 +20582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.technology_data_template
-
-	var_6_15[1002] = {
+	pg.base.technology_data_template[1002] = {
 		id = 1002,
 		rarity = 3,
 		time = 43200,
@@ -22703,11 +20621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.technology_data_template
-
-	var_6_16[1003] = {
+	pg.base.technology_data_template[1003] = {
 		id = 1003,
 		rarity = 3,
 		time = 14400,
@@ -22741,11 +20655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.technology_data_template
-
-	var_6_17[1004] = {
+	pg.base.technology_data_template[1004] = {
 		id = 1004,
 		rarity = 3,
 		time = 14400,
@@ -22779,11 +20689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.technology_data_template
-
-	var_6_18[1005] = {
+	pg.base.technology_data_template[1005] = {
 		id = 1005,
 		rarity = 3,
 		time = 28800,
@@ -22823,11 +20729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.technology_data_template
-
-	var_6_19[1006] = {
+	pg.base.technology_data_template[1006] = {
 		id = 1006,
 		rarity = 3,
 		time = 28800,
@@ -22867,11 +20769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.technology_data_template
-
-	var_6_20[1007] = {
+	pg.base.technology_data_template[1007] = {
 		id = 1007,
 		rarity = 3,
 		time = 28800,
@@ -22911,11 +20809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.technology_data_template
-
-	var_6_21[1008] = {
+	pg.base.technology_data_template[1008] = {
 		id = 1008,
 		rarity = 3,
 		time = 28800,
@@ -22955,11 +20849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.technology_data_template
-
-	var_6_22[1009] = {
+	pg.base.technology_data_template[1009] = {
 		id = 1009,
 		rarity = 3,
 		time = 28800,
@@ -22999,11 +20889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.technology_data_template
-
-	var_6_23[1010] = {
+	pg.base.technology_data_template[1010] = {
 		id = 1010,
 		rarity = 3,
 		time = 28800,
@@ -23043,11 +20929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.technology_data_template
-
-	var_6_24[1011] = {
+	pg.base.technology_data_template[1011] = {
 		id = 1011,
 		rarity = 3,
 		time = 14400,
@@ -23087,11 +20969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.technology_data_template
-
-	var_6_25[1012] = {
+	pg.base.technology_data_template[1012] = {
 		id = 1012,
 		rarity = 3,
 		time = 14400,
@@ -23131,11 +21009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.technology_data_template
-
-	var_6_26[1013] = {
+	pg.base.technology_data_template[1013] = {
 		id = 1013,
 		rarity = 3,
 		time = 1800,
@@ -23180,11 +21054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.technology_data_template
-
-	var_6_27[1014] = {
+	pg.base.technology_data_template[1014] = {
 		id = 1014,
 		rarity = 3,
 		time = 1800,
@@ -23229,11 +21099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.technology_data_template
-
-	var_6_28[1015] = {
+	pg.base.technology_data_template[1015] = {
 		id = 1015,
 		rarity = 3,
 		time = 1800,
@@ -23278,11 +21144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.technology_data_template
-
-	var_6_29[1016] = {
+	pg.base.technology_data_template[1016] = {
 		id = 1016,
 		rarity = 3,
 		time = 1800,
@@ -23327,11 +21189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.technology_data_template
-
-	var_6_30[1017] = {
+	pg.base.technology_data_template[1017] = {
 		id = 1017,
 		rarity = 3,
 		time = 1800,
@@ -23376,11 +21234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.technology_data_template
-
-	var_6_31[1018] = {
+	pg.base.technology_data_template[1018] = {
 		id = 1018,
 		rarity = 3,
 		time = 1800,
@@ -23425,11 +21279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.technology_data_template
-
-	var_6_32[1019] = {
+	pg.base.technology_data_template[1019] = {
 		id = 1019,
 		rarity = 3,
 		time = 1800,
@@ -23469,11 +21319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.technology_data_template
-
-	var_6_33[1020] = {
+	pg.base.technology_data_template[1020] = {
 		id = 1020,
 		rarity = 3,
 		time = 1800,
@@ -23513,11 +21359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.technology_data_template
-
-	var_6_34[1021] = {
+	pg.base.technology_data_template[1021] = {
 		id = 1021,
 		rarity = 3,
 		time = 1800,
@@ -23557,11 +21399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.technology_data_template
-
-	var_6_35[1022] = {
+	pg.base.technology_data_template[1022] = {
 		id = 1022,
 		rarity = 3,
 		time = 1800,
@@ -23601,11 +21439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.technology_data_template
-
-	var_6_36[1023] = {
+	pg.base.technology_data_template[1023] = {
 		id = 1023,
 		rarity = 3,
 		time = 1800,
@@ -23645,11 +21479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.technology_data_template
-
-	var_6_37[1024] = {
+	pg.base.technology_data_template[1024] = {
 		id = 1024,
 		rarity = 3,
 		time = 1800,
@@ -23694,11 +21524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.technology_data_template
-
-	var_6_38[1025] = {
+	pg.base.technology_data_template[1025] = {
 		id = 1025,
 		rarity = 3,
 		time = 1800,
@@ -23743,11 +21569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.technology_data_template
-
-	var_6_39[1026] = {
+	pg.base.technology_data_template[1026] = {
 		id = 1026,
 		rarity = 3,
 		time = 14400,
@@ -23781,11 +21603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.technology_data_template
-
-	var_6_40[1031] = {
+	pg.base.technology_data_template[1031] = {
 		id = 1031,
 		rarity = 3,
 		time = 7200,
@@ -23825,11 +21643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.technology_data_template
-
-	var_6_41[1032] = {
+	pg.base.technology_data_template[1032] = {
 		id = 1032,
 		rarity = 3,
 		time = 7200,
@@ -23869,11 +21683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.technology_data_template
-
-	var_6_42[1033] = {
+	pg.base.technology_data_template[1033] = {
 		id = 1033,
 		rarity = 3,
 		time = 7200,
@@ -23913,11 +21723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.technology_data_template
-
-	var_6_43[1034] = {
+	pg.base.technology_data_template[1034] = {
 		id = 1034,
 		rarity = 3,
 		time = 7200,
@@ -23957,11 +21763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.technology_data_template
-
-	var_6_44[1035] = {
+	pg.base.technology_data_template[1035] = {
 		id = 1035,
 		rarity = 3,
 		time = 7200,
@@ -24001,11 +21803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.technology_data_template
-
-	var_6_45[1036] = {
+	pg.base.technology_data_template[1036] = {
 		id = 1036,
 		rarity = 3,
 		time = 7200,
@@ -24045,11 +21843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.technology_data_template
-
-	var_6_46[1101] = {
+	pg.base.technology_data_template[1101] = {
 		id = 1101,
 		rarity = 3,
 		time = 43200,
@@ -24088,11 +21882,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.technology_data_template
-
-	var_6_47[1102] = {
+	pg.base.technology_data_template[1102] = {
 		id = 1102,
 		rarity = 3,
 		time = 43200,
@@ -24131,11 +21921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.technology_data_template
-
-	var_6_48[1103] = {
+	pg.base.technology_data_template[1103] = {
 		id = 1103,
 		rarity = 3,
 		time = 14400,
@@ -24169,11 +21955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.technology_data_template
-
-	var_6_49[1104] = {
+	pg.base.technology_data_template[1104] = {
 		id = 1104,
 		rarity = 3,
 		time = 14400,
@@ -24207,11 +21989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.technology_data_template
-
-	var_6_50[1105] = {
+	pg.base.technology_data_template[1105] = {
 		id = 1105,
 		rarity = 3,
 		time = 28800,
@@ -24251,11 +22029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.technology_data_template
-
-	var_6_51[1106] = {
+	pg.base.technology_data_template[1106] = {
 		id = 1106,
 		rarity = 3,
 		time = 28800,
@@ -24295,11 +22069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.technology_data_template
-
-	var_6_52[1107] = {
+	pg.base.technology_data_template[1107] = {
 		id = 1107,
 		rarity = 3,
 		time = 28800,
@@ -24339,11 +22109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.technology_data_template
-
-	var_6_53[1108] = {
+	pg.base.technology_data_template[1108] = {
 		id = 1108,
 		rarity = 3,
 		time = 28800,
@@ -24383,11 +22149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.technology_data_template
-
-	var_6_54[1109] = {
+	pg.base.technology_data_template[1109] = {
 		id = 1109,
 		rarity = 3,
 		time = 28800,
@@ -24427,11 +22189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.technology_data_template
-
-	var_6_55[1110] = {
+	pg.base.technology_data_template[1110] = {
 		id = 1110,
 		rarity = 3,
 		time = 28800,
@@ -24471,11 +22229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.technology_data_template
-
-	var_6_56[1111] = {
+	pg.base.technology_data_template[1111] = {
 		id = 1111,
 		rarity = 3,
 		time = 14400,
@@ -24515,11 +22269,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.technology_data_template
-
-	var_6_57[1112] = {
+	pg.base.technology_data_template[1112] = {
 		id = 1112,
 		rarity = 3,
 		time = 14400,
@@ -24559,11 +22309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.technology_data_template
-
-	var_6_58[1113] = {
+	pg.base.technology_data_template[1113] = {
 		id = 1113,
 		rarity = 3,
 		time = 1800,
@@ -24608,11 +22354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.technology_data_template
-
-	var_6_59[1114] = {
+	pg.base.technology_data_template[1114] = {
 		id = 1114,
 		rarity = 3,
 		time = 1800,
@@ -24657,11 +22399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.technology_data_template
-
-	var_6_60[1115] = {
+	pg.base.technology_data_template[1115] = {
 		id = 1115,
 		rarity = 3,
 		time = 1800,
@@ -24706,11 +22444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.technology_data_template
-
-	var_6_61[1116] = {
+	pg.base.technology_data_template[1116] = {
 		id = 1116,
 		rarity = 4,
 		time = 1800,
@@ -24755,11 +22489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.technology_data_template
-
-	var_6_62[1117] = {
+	pg.base.technology_data_template[1117] = {
 		id = 1117,
 		rarity = 4,
 		time = 1800,
@@ -24804,11 +22534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.technology_data_template
-
-	var_6_63[1118] = {
+	pg.base.technology_data_template[1118] = {
 		id = 1118,
 		rarity = 3,
 		time = 1800,
@@ -24853,11 +22579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.technology_data_template
-
-	var_6_64[1119] = {
+	pg.base.technology_data_template[1119] = {
 		id = 1119,
 		rarity = 3,
 		time = 1800,
@@ -24897,11 +22619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.technology_data_template
-
-	var_6_65[1120] = {
+	pg.base.technology_data_template[1120] = {
 		id = 1120,
 		rarity = 3,
 		time = 1800,
@@ -24941,11 +22659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.technology_data_template
-
-	var_6_66[1121] = {
+	pg.base.technology_data_template[1121] = {
 		id = 1121,
 		rarity = 3,
 		time = 1800,
@@ -24985,11 +22699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.technology_data_template
-
-	var_6_67[1122] = {
+	pg.base.technology_data_template[1122] = {
 		id = 1122,
 		rarity = 3,
 		time = 1800,
@@ -25029,11 +22739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.technology_data_template
-
-	var_6_68[1123] = {
+	pg.base.technology_data_template[1123] = {
 		id = 1123,
 		rarity = 3,
 		time = 1800,
@@ -25073,11 +22779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.technology_data_template
-
-	var_6_69[1124] = {
+	pg.base.technology_data_template[1124] = {
 		id = 1124,
 		rarity = 3,
 		time = 1800,
@@ -25122,11 +22824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.technology_data_template
-
-	var_6_70[1125] = {
+	pg.base.technology_data_template[1125] = {
 		id = 1125,
 		rarity = 3,
 		time = 1800,
@@ -25171,11 +22869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.technology_data_template
-
-	var_6_71[1126] = {
+	pg.base.technology_data_template[1126] = {
 		id = 1126,
 		rarity = 3,
 		time = 14400,
@@ -25209,11 +22903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.technology_data_template
-
-	var_6_72[1131] = {
+	pg.base.technology_data_template[1131] = {
 		id = 1131,
 		rarity = 3,
 		time = 7200,
@@ -25253,11 +22943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.technology_data_template
-
-	var_6_73[1132] = {
+	pg.base.technology_data_template[1132] = {
 		id = 1132,
 		rarity = 3,
 		time = 7200,
@@ -25297,11 +22983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.technology_data_template
-
-	var_6_74[1133] = {
+	pg.base.technology_data_template[1133] = {
 		id = 1133,
 		rarity = 3,
 		time = 7200,
@@ -25341,11 +23023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.technology_data_template
-
-	var_6_75[1134] = {
+	pg.base.technology_data_template[1134] = {
 		id = 1134,
 		rarity = 3,
 		time = 7200,
@@ -25385,11 +23063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.technology_data_template
-
-	var_6_76[1135] = {
+	pg.base.technology_data_template[1135] = {
 		id = 1135,
 		rarity = 3,
 		time = 7200,
@@ -25429,11 +23103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.technology_data_template
-
-	var_6_77[1201] = {
+	pg.base.technology_data_template[1201] = {
 		id = 1201,
 		rarity = 3,
 		time = 43200,
@@ -25472,11 +23142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.technology_data_template
-
-	var_6_78[1202] = {
+	pg.base.technology_data_template[1202] = {
 		id = 1202,
 		rarity = 3,
 		time = 43200,
@@ -25515,11 +23181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.technology_data_template
-
-	var_6_79[1203] = {
+	pg.base.technology_data_template[1203] = {
 		id = 1203,
 		rarity = 3,
 		time = 14400,
@@ -25553,11 +23215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.technology_data_template
-
-	var_6_80[1204] = {
+	pg.base.technology_data_template[1204] = {
 		id = 1204,
 		rarity = 3,
 		time = 14400,
@@ -25591,11 +23249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.technology_data_template
-
-	var_6_81[1205] = {
+	pg.base.technology_data_template[1205] = {
 		id = 1205,
 		rarity = 3,
 		time = 28800,
@@ -25635,11 +23289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.technology_data_template
-
-	var_6_82[1206] = {
+	pg.base.technology_data_template[1206] = {
 		id = 1206,
 		rarity = 3,
 		time = 28800,
@@ -25679,11 +23329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.technology_data_template
-
-	var_6_83[1207] = {
+	pg.base.technology_data_template[1207] = {
 		id = 1207,
 		rarity = 3,
 		time = 28800,
@@ -25723,11 +23369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.technology_data_template
-
-	var_6_84[1208] = {
+	pg.base.technology_data_template[1208] = {
 		id = 1208,
 		rarity = 3,
 		time = 28800,
@@ -25767,11 +23409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.technology_data_template
-
-	var_6_85[1209] = {
+	pg.base.technology_data_template[1209] = {
 		id = 1209,
 		rarity = 3,
 		time = 28800,
@@ -25811,11 +23449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.technology_data_template
-
-	var_6_86[1211] = {
+	pg.base.technology_data_template[1211] = {
 		id = 1211,
 		rarity = 3,
 		time = 14400,
@@ -25855,11 +23489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.technology_data_template
-
-	var_6_87[1212] = {
+	pg.base.technology_data_template[1212] = {
 		id = 1212,
 		rarity = 3,
 		time = 14400,
@@ -25899,11 +23529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.technology_data_template
-
-	var_6_88[1213] = {
+	pg.base.technology_data_template[1213] = {
 		id = 1213,
 		rarity = 3,
 		time = 1800,
@@ -25948,11 +23574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.technology_data_template
-
-	var_6_89[1214] = {
+	pg.base.technology_data_template[1214] = {
 		id = 1214,
 		rarity = 4,
 		time = 1800,
@@ -25997,11 +23619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.technology_data_template
-
-	var_6_90[1215] = {
+	pg.base.technology_data_template[1215] = {
 		id = 1215,
 		rarity = 3,
 		time = 1800,
@@ -26046,11 +23664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.technology_data_template
-
-	var_6_91[1216] = {
+	pg.base.technology_data_template[1216] = {
 		id = 1216,
 		rarity = 3,
 		time = 1800,
@@ -26095,11 +23709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.technology_data_template
-
-	var_6_92[1217] = {
+	pg.base.technology_data_template[1217] = {
 		id = 1217,
 		rarity = 3,
 		time = 1800,
@@ -26144,11 +23754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.technology_data_template
-
-	var_6_93[1219] = {
+	pg.base.technology_data_template[1219] = {
 		id = 1219,
 		rarity = 3,
 		time = 1800,
@@ -26188,11 +23794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.technology_data_template
-
-	var_6_94[1220] = {
+	pg.base.technology_data_template[1220] = {
 		id = 1220,
 		rarity = 3,
 		time = 1800,
@@ -26232,11 +23834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.technology_data_template
-
-	var_6_95[1221] = {
+	pg.base.technology_data_template[1221] = {
 		id = 1221,
 		rarity = 3,
 		time = 1800,
@@ -26276,11 +23874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.technology_data_template
-
-	var_6_96[1222] = {
+	pg.base.technology_data_template[1222] = {
 		id = 1222,
 		rarity = 3,
 		time = 1800,
@@ -26320,11 +23914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.technology_data_template
-
-	var_6_97[1223] = {
+	pg.base.technology_data_template[1223] = {
 		id = 1223,
 		rarity = 3,
 		time = 1800,
@@ -26364,11 +23954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.technology_data_template
-
-	var_6_98[1224] = {
+	pg.base.technology_data_template[1224] = {
 		id = 1224,
 		rarity = 3,
 		time = 1800,
@@ -26413,8 +23999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.technology_data_template[1225] = {
+	pg.base.technology_data_template[1225] = {
 		id = 1225,
 		rarity = 3,
 		time = 1800,
@@ -26463,11 +24048,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.technology_data_template
-
-	var_7_0[1226] = {
+	pg.base.technology_data_template[1226] = {
 		id = 1226,
 		rarity = 3,
 		time = 14400,
@@ -26501,11 +24082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.technology_data_template
-
-	var_7_1[1231] = {
+	pg.base.technology_data_template[1231] = {
 		id = 1231,
 		rarity = 3,
 		time = 7200,
@@ -26545,11 +24122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.technology_data_template
-
-	var_7_2[1232] = {
+	pg.base.technology_data_template[1232] = {
 		id = 1232,
 		rarity = 3,
 		time = 7200,
@@ -26589,11 +24162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.technology_data_template
-
-	var_7_3[1233] = {
+	pg.base.technology_data_template[1233] = {
 		id = 1233,
 		rarity = 3,
 		time = 7200,
@@ -26633,11 +24202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.technology_data_template
-
-	var_7_4[1234] = {
+	pg.base.technology_data_template[1234] = {
 		id = 1234,
 		rarity = 3,
 		time = 7200,
@@ -26677,11 +24242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.technology_data_template
-
-	var_7_5[1235] = {
+	pg.base.technology_data_template[1235] = {
 		id = 1235,
 		rarity = 3,
 		time = 7200,
@@ -26721,11 +24282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.technology_data_template
-
-	var_7_6[1301] = {
+	pg.base.technology_data_template[1301] = {
 		id = 1301,
 		rarity = 3,
 		time = 43200,
@@ -26764,11 +24321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.technology_data_template
-
-	var_7_7[1302] = {
+	pg.base.technology_data_template[1302] = {
 		id = 1302,
 		rarity = 3,
 		time = 43200,
@@ -26807,11 +24360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.technology_data_template
-
-	var_7_8[1303] = {
+	pg.base.technology_data_template[1303] = {
 		id = 1303,
 		rarity = 3,
 		time = 14400,
@@ -26845,11 +24394,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.technology_data_template
-
-	var_7_9[1304] = {
+	pg.base.technology_data_template[1304] = {
 		id = 1304,
 		rarity = 3,
 		time = 14400,
@@ -26883,11 +24428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.technology_data_template
-
-	var_7_10[1305] = {
+	pg.base.technology_data_template[1305] = {
 		id = 1305,
 		rarity = 3,
 		time = 28800,
@@ -26927,11 +24468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.technology_data_template
-
-	var_7_11[1306] = {
+	pg.base.technology_data_template[1306] = {
 		id = 1306,
 		rarity = 3,
 		time = 28800,
@@ -26971,11 +24508,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.technology_data_template
-
-	var_7_12[1307] = {
+	pg.base.technology_data_template[1307] = {
 		id = 1307,
 		rarity = 3,
 		time = 28800,
@@ -27015,11 +24548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.technology_data_template
-
-	var_7_13[1308] = {
+	pg.base.technology_data_template[1308] = {
 		id = 1308,
 		rarity = 3,
 		time = 28800,
@@ -27059,11 +24588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.technology_data_template
-
-	var_7_14[1309] = {
+	pg.base.technology_data_template[1309] = {
 		id = 1309,
 		rarity = 3,
 		time = 28800,
@@ -27103,11 +24628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.technology_data_template
-
-	var_7_15[1311] = {
+	pg.base.technology_data_template[1311] = {
 		id = 1311,
 		rarity = 3,
 		time = 14400,
@@ -27147,11 +24668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.technology_data_template
-
-	var_7_16[1312] = {
+	pg.base.technology_data_template[1312] = {
 		id = 1312,
 		rarity = 3,
 		time = 14400,
@@ -27191,11 +24708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.technology_data_template
-
-	var_7_17[1313] = {
+	pg.base.technology_data_template[1313] = {
 		id = 1313,
 		rarity = 3,
 		time = 1800,
@@ -27240,11 +24753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.technology_data_template
-
-	var_7_18[1314] = {
+	pg.base.technology_data_template[1314] = {
 		id = 1314,
 		rarity = 3,
 		time = 1800,
@@ -27289,11 +24798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.technology_data_template
-
-	var_7_19[1315] = {
+	pg.base.technology_data_template[1315] = {
 		id = 1315,
 		rarity = 3,
 		time = 1800,
@@ -27338,11 +24843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.technology_data_template
-
-	var_7_20[1316] = {
+	pg.base.technology_data_template[1316] = {
 		id = 1316,
 		rarity = 3,
 		time = 1800,
@@ -27387,11 +24888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.technology_data_template
-
-	var_7_21[1317] = {
+	pg.base.technology_data_template[1317] = {
 		id = 1317,
 		rarity = 3,
 		time = 1800,
@@ -27436,11 +24933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.technology_data_template
-
-	var_7_22[1319] = {
+	pg.base.technology_data_template[1319] = {
 		id = 1319,
 		rarity = 3,
 		time = 1800,
@@ -27480,11 +24973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.technology_data_template
-
-	var_7_23[1320] = {
+	pg.base.technology_data_template[1320] = {
 		id = 1320,
 		rarity = 3,
 		time = 1800,
@@ -27524,11 +25013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.technology_data_template
-
-	var_7_24[1321] = {
+	pg.base.technology_data_template[1321] = {
 		id = 1321,
 		rarity = 3,
 		time = 1800,
@@ -27568,11 +25053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.technology_data_template
-
-	var_7_25[1322] = {
+	pg.base.technology_data_template[1322] = {
 		id = 1322,
 		rarity = 3,
 		time = 1800,
@@ -27612,11 +25093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.technology_data_template
-
-	var_7_26[1323] = {
+	pg.base.technology_data_template[1323] = {
 		id = 1323,
 		rarity = 3,
 		time = 1800,
@@ -27656,11 +25133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.technology_data_template
-
-	var_7_27[1324] = {
+	pg.base.technology_data_template[1324] = {
 		id = 1324,
 		rarity = 3,
 		time = 1800,
@@ -27705,11 +25178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.technology_data_template
-
-	var_7_28[1325] = {
+	pg.base.technology_data_template[1325] = {
 		id = 1325,
 		rarity = 3,
 		time = 1800,
@@ -27754,11 +25223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.technology_data_template
-
-	var_7_29[1326] = {
+	pg.base.technology_data_template[1326] = {
 		id = 1326,
 		rarity = 3,
 		time = 14400,
@@ -27792,11 +25257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.technology_data_template
-
-	var_7_30[1331] = {
+	pg.base.technology_data_template[1331] = {
 		id = 1331,
 		rarity = 3,
 		time = 7200,
@@ -27836,11 +25297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.technology_data_template
-
-	var_7_31[1332] = {
+	pg.base.technology_data_template[1332] = {
 		id = 1332,
 		rarity = 3,
 		time = 7200,
@@ -27880,11 +25337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.technology_data_template
-
-	var_7_32[1333] = {
+	pg.base.technology_data_template[1333] = {
 		id = 1333,
 		rarity = 3,
 		time = 7200,
@@ -27924,11 +25377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.technology_data_template
-
-	var_7_33[1334] = {
+	pg.base.technology_data_template[1334] = {
 		id = 1334,
 		rarity = 3,
 		time = 7200,
@@ -27968,11 +25417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.technology_data_template
-
-	var_7_34[1335] = {
+	pg.base.technology_data_template[1335] = {
 		id = 1335,
 		rarity = 3,
 		time = 7200,
@@ -28012,11 +25457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.technology_data_template
-
-	var_7_35[1401] = {
+	pg.base.technology_data_template[1401] = {
 		id = 1401,
 		rarity = 3,
 		time = 43200,
@@ -28055,11 +25496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.technology_data_template
-
-	var_7_36[1402] = {
+	pg.base.technology_data_template[1402] = {
 		id = 1402,
 		rarity = 3,
 		time = 43200,
@@ -28098,11 +25535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.technology_data_template
-
-	var_7_37[1403] = {
+	pg.base.technology_data_template[1403] = {
 		id = 1403,
 		rarity = 3,
 		time = 14400,
@@ -28136,11 +25569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.technology_data_template
-
-	var_7_38[1404] = {
+	pg.base.technology_data_template[1404] = {
 		id = 1404,
 		rarity = 3,
 		time = 14400,
@@ -28174,11 +25603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.technology_data_template
-
-	var_7_39[1405] = {
+	pg.base.technology_data_template[1405] = {
 		id = 1405,
 		rarity = 3,
 		time = 28800,
@@ -28218,11 +25643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.technology_data_template
-
-	var_7_40[1406] = {
+	pg.base.technology_data_template[1406] = {
 		id = 1406,
 		rarity = 3,
 		time = 28800,
@@ -28262,11 +25683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.technology_data_template
-
-	var_7_41[1407] = {
+	pg.base.technology_data_template[1407] = {
 		id = 1407,
 		rarity = 3,
 		time = 28800,
@@ -28306,11 +25723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.technology_data_template
-
-	var_7_42[1408] = {
+	pg.base.technology_data_template[1408] = {
 		id = 1408,
 		rarity = 3,
 		time = 28800,
@@ -28350,11 +25763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.technology_data_template
-
-	var_7_43[1409] = {
+	pg.base.technology_data_template[1409] = {
 		id = 1409,
 		rarity = 3,
 		time = 28800,
@@ -28394,11 +25803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.technology_data_template
-
-	var_7_44[1411] = {
+	pg.base.technology_data_template[1411] = {
 		id = 1411,
 		rarity = 3,
 		time = 14400,
@@ -28438,11 +25843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.technology_data_template
-
-	var_7_45[1412] = {
+	pg.base.technology_data_template[1412] = {
 		id = 1412,
 		rarity = 3,
 		time = 14400,
@@ -28482,11 +25883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.technology_data_template
-
-	var_7_46[1413] = {
+	pg.base.technology_data_template[1413] = {
 		id = 1413,
 		rarity = 3,
 		time = 1800,
@@ -28531,11 +25928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.technology_data_template
-
-	var_7_47[1414] = {
+	pg.base.technology_data_template[1414] = {
 		id = 1414,
 		rarity = 3,
 		time = 1800,
@@ -28580,11 +25973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.technology_data_template
-
-	var_7_48[1415] = {
+	pg.base.technology_data_template[1415] = {
 		id = 1415,
 		rarity = 3,
 		time = 1800,
@@ -28629,11 +26018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.technology_data_template
-
-	var_7_49[1416] = {
+	pg.base.technology_data_template[1416] = {
 		id = 1416,
 		rarity = 3,
 		time = 1800,
@@ -28678,11 +26063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.technology_data_template
-
-	var_7_50[1417] = {
+	pg.base.technology_data_template[1417] = {
 		id = 1417,
 		rarity = 3,
 		time = 1800,
@@ -28727,11 +26108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.technology_data_template
-
-	var_7_51[1419] = {
+	pg.base.technology_data_template[1419] = {
 		id = 1419,
 		rarity = 3,
 		time = 1800,
@@ -28771,11 +26148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.technology_data_template
-
-	var_7_52[1420] = {
+	pg.base.technology_data_template[1420] = {
 		id = 1420,
 		rarity = 3,
 		time = 1800,
@@ -28815,11 +26188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.technology_data_template
-
-	var_7_53[1421] = {
+	pg.base.technology_data_template[1421] = {
 		id = 1421,
 		rarity = 3,
 		time = 1800,
@@ -28859,11 +26228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.technology_data_template
-
-	var_7_54[1422] = {
+	pg.base.technology_data_template[1422] = {
 		id = 1422,
 		rarity = 3,
 		time = 1800,
@@ -28903,11 +26268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.technology_data_template
-
-	var_7_55[1423] = {
+	pg.base.technology_data_template[1423] = {
 		id = 1423,
 		rarity = 3,
 		time = 1800,
@@ -28947,11 +26308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.technology_data_template
-
-	var_7_56[1424] = {
+	pg.base.technology_data_template[1424] = {
 		id = 1424,
 		rarity = 3,
 		time = 1800,
@@ -28996,11 +26353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.technology_data_template
-
-	var_7_57[1425] = {
+	pg.base.technology_data_template[1425] = {
 		id = 1425,
 		rarity = 3,
 		time = 1800,
@@ -29045,11 +26398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.technology_data_template
-
-	var_7_58[1426] = {
+	pg.base.technology_data_template[1426] = {
 		id = 1426,
 		rarity = 3,
 		time = 14400,
@@ -29083,11 +26432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.technology_data_template
-
-	var_7_59[1431] = {
+	pg.base.technology_data_template[1431] = {
 		id = 1431,
 		rarity = 3,
 		time = 7200,
@@ -29127,11 +26472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.technology_data_template
-
-	var_7_60[1432] = {
+	pg.base.technology_data_template[1432] = {
 		id = 1432,
 		rarity = 3,
 		time = 7200,
@@ -29171,11 +26512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.technology_data_template
-
-	var_7_61[1433] = {
+	pg.base.technology_data_template[1433] = {
 		id = 1433,
 		rarity = 3,
 		time = 7200,
@@ -29215,11 +26552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.technology_data_template
-
-	var_7_62[1501] = {
+	pg.base.technology_data_template[1501] = {
 		id = 1501,
 		rarity = 3,
 		time = 43200,
@@ -29258,11 +26591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.technology_data_template
-
-	var_7_63[1502] = {
+	pg.base.technology_data_template[1502] = {
 		id = 1502,
 		rarity = 3,
 		time = 43200,
@@ -29301,11 +26630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.technology_data_template
-
-	var_7_64[1503] = {
+	pg.base.technology_data_template[1503] = {
 		id = 1503,
 		rarity = 3,
 		time = 14400,
@@ -29339,11 +26664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.technology_data_template
-
-	var_7_65[1504] = {
+	pg.base.technology_data_template[1504] = {
 		id = 1504,
 		rarity = 3,
 		time = 14400,
@@ -29377,11 +26698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.technology_data_template
-
-	var_7_66[1505] = {
+	pg.base.technology_data_template[1505] = {
 		id = 1505,
 		rarity = 3,
 		time = 28800,
@@ -29421,11 +26738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.technology_data_template
-
-	var_7_67[1506] = {
+	pg.base.technology_data_template[1506] = {
 		id = 1506,
 		rarity = 3,
 		time = 28800,
@@ -29465,11 +26778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.technology_data_template
-
-	var_7_68[1507] = {
+	pg.base.technology_data_template[1507] = {
 		id = 1507,
 		rarity = 3,
 		time = 28800,
@@ -29509,11 +26818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.technology_data_template
-
-	var_7_69[1508] = {
+	pg.base.technology_data_template[1508] = {
 		id = 1508,
 		rarity = 3,
 		time = 28800,
@@ -29553,11 +26858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.technology_data_template
-
-	var_7_70[1509] = {
+	pg.base.technology_data_template[1509] = {
 		id = 1509,
 		rarity = 3,
 		time = 28800,
@@ -29597,11 +26898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.technology_data_template
-
-	var_7_71[1511] = {
+	pg.base.technology_data_template[1511] = {
 		id = 1511,
 		rarity = 3,
 		time = 14400,
@@ -29641,11 +26938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.technology_data_template
-
-	var_7_72[1512] = {
+	pg.base.technology_data_template[1512] = {
 		id = 1512,
 		rarity = 3,
 		time = 14400,
@@ -29685,11 +26978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.technology_data_template
-
-	var_7_73[1513] = {
+	pg.base.technology_data_template[1513] = {
 		id = 1513,
 		rarity = 3,
 		time = 1800,
@@ -29734,11 +27023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.technology_data_template
-
-	var_7_74[1514] = {
+	pg.base.technology_data_template[1514] = {
 		id = 1514,
 		rarity = 3,
 		time = 1800,
@@ -29783,11 +27068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.technology_data_template
-
-	var_7_75[1515] = {
+	pg.base.technology_data_template[1515] = {
 		id = 1515,
 		rarity = 3,
 		time = 1800,
@@ -29832,11 +27113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.technology_data_template
-
-	var_7_76[1516] = {
+	pg.base.technology_data_template[1516] = {
 		id = 1516,
 		rarity = 3,
 		time = 1800,
@@ -29881,11 +27158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.technology_data_template
-
-	var_7_77[1517] = {
+	pg.base.technology_data_template[1517] = {
 		id = 1517,
 		rarity = 3,
 		time = 1800,
@@ -29930,11 +27203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.technology_data_template
-
-	var_7_78[1519] = {
+	pg.base.technology_data_template[1519] = {
 		id = 1519,
 		rarity = 3,
 		time = 1800,
@@ -29974,11 +27243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.technology_data_template
-
-	var_7_79[1520] = {
+	pg.base.technology_data_template[1520] = {
 		id = 1520,
 		rarity = 3,
 		time = 1800,
@@ -30018,11 +27283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.technology_data_template
-
-	var_7_80[1521] = {
+	pg.base.technology_data_template[1521] = {
 		id = 1521,
 		rarity = 3,
 		time = 1800,
@@ -30062,11 +27323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.technology_data_template
-
-	var_7_81[1522] = {
+	pg.base.technology_data_template[1522] = {
 		id = 1522,
 		rarity = 3,
 		time = 1800,
@@ -30106,11 +27363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.technology_data_template
-
-	var_7_82[1523] = {
+	pg.base.technology_data_template[1523] = {
 		id = 1523,
 		rarity = 3,
 		time = 1800,
@@ -30150,11 +27403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.technology_data_template
-
-	var_7_83[1524] = {
+	pg.base.technology_data_template[1524] = {
 		id = 1524,
 		rarity = 3,
 		time = 1800,
@@ -30199,11 +27448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.technology_data_template
-
-	var_7_84[1525] = {
+	pg.base.technology_data_template[1525] = {
 		id = 1525,
 		rarity = 3,
 		time = 1800,
@@ -30248,11 +27493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.technology_data_template
-
-	var_7_85[1526] = {
+	pg.base.technology_data_template[1526] = {
 		id = 1526,
 		rarity = 3,
 		time = 14400,
@@ -30286,11 +27527,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.technology_data_template
-
-	var_7_86[1531] = {
+	pg.base.technology_data_template[1531] = {
 		id = 1531,
 		rarity = 3,
 		time = 7200,
@@ -30330,11 +27567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.technology_data_template
-
-	var_7_87[1532] = {
+	pg.base.technology_data_template[1532] = {
 		id = 1532,
 		rarity = 3,
 		time = 7200,
@@ -30374,11 +27607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.technology_data_template
-
-	var_7_88[1533] = {
+	pg.base.technology_data_template[1533] = {
 		id = 1533,
 		rarity = 3,
 		time = 7200,
@@ -30418,11 +27647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.technology_data_template
-
-	var_7_89[1534] = {
+	pg.base.technology_data_template[1534] = {
 		id = 1534,
 		rarity = 3,
 		time = 7200,
@@ -30462,11 +27687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.technology_data_template
-
-	var_7_90[1535] = {
+	pg.base.technology_data_template[1535] = {
 		id = 1535,
 		rarity = 3,
 		time = 7200,
@@ -30506,11 +27727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.technology_data_template
-
-	var_7_91[1601] = {
+	pg.base.technology_data_template[1601] = {
 		id = 1601,
 		rarity = 3,
 		time = 43200,
@@ -30549,11 +27766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.technology_data_template
-
-	var_7_92[1602] = {
+	pg.base.technology_data_template[1602] = {
 		id = 1602,
 		rarity = 3,
 		time = 43200,
@@ -30592,11 +27805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.technology_data_template
-
-	var_7_93[1603] = {
+	pg.base.technology_data_template[1603] = {
 		id = 1603,
 		rarity = 3,
 		time = 14400,
@@ -30630,11 +27839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.technology_data_template
-
-	var_7_94[1604] = {
+	pg.base.technology_data_template[1604] = {
 		id = 1604,
 		rarity = 3,
 		time = 14400,
@@ -30668,11 +27873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.technology_data_template
-
-	var_7_95[1605] = {
+	pg.base.technology_data_template[1605] = {
 		id = 1605,
 		rarity = 3,
 		time = 28800,
@@ -30712,11 +27913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.technology_data_template
-
-	var_7_96[1606] = {
+	pg.base.technology_data_template[1606] = {
 		id = 1606,
 		rarity = 3,
 		time = 28800,
@@ -30756,11 +27953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.technology_data_template
-
-	var_7_97[1607] = {
+	pg.base.technology_data_template[1607] = {
 		id = 1607,
 		rarity = 3,
 		time = 28800,
@@ -30800,11 +27993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.technology_data_template
-
-	var_7_98[1608] = {
+	pg.base.technology_data_template[1608] = {
 		id = 1608,
 		rarity = 3,
 		time = 28800,
@@ -30844,8 +28033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.technology_data_template[1609] = {
+	pg.base.technology_data_template[1609] = {
 		id = 1609,
 		rarity = 3,
 		time = 28800,
@@ -30889,11 +28077,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.technology_data_template
-
-	var_8_0[1611] = {
+	pg.base.technology_data_template[1611] = {
 		id = 1611,
 		rarity = 3,
 		time = 14400,
@@ -30933,11 +28117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.technology_data_template
-
-	var_8_1[1612] = {
+	pg.base.technology_data_template[1612] = {
 		id = 1612,
 		rarity = 3,
 		time = 14400,
@@ -30977,11 +28157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.technology_data_template
-
-	var_8_2[1613] = {
+	pg.base.technology_data_template[1613] = {
 		id = 1613,
 		rarity = 3,
 		time = 1800,
@@ -31026,11 +28202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.technology_data_template
-
-	var_8_3[1614] = {
+	pg.base.technology_data_template[1614] = {
 		id = 1614,
 		rarity = 3,
 		time = 1800,
@@ -31075,11 +28247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.technology_data_template
-
-	var_8_4[1615] = {
+	pg.base.technology_data_template[1615] = {
 		id = 1615,
 		rarity = 4,
 		time = 1800,
@@ -31124,11 +28292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.technology_data_template
-
-	var_8_5[1616] = {
+	pg.base.technology_data_template[1616] = {
 		id = 1616,
 		rarity = 4,
 		time = 1800,
@@ -31173,11 +28337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.technology_data_template
-
-	var_8_6[1617] = {
+	pg.base.technology_data_template[1617] = {
 		id = 1617,
 		rarity = 3,
 		time = 1800,
@@ -31222,11 +28382,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.technology_data_template
-
-	var_8_7[1619] = {
+	pg.base.technology_data_template[1619] = {
 		id = 1619,
 		rarity = 3,
 		time = 1800,
@@ -31266,11 +28422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.technology_data_template
-
-	var_8_8[1620] = {
+	pg.base.technology_data_template[1620] = {
 		id = 1620,
 		rarity = 3,
 		time = 1800,
@@ -31310,11 +28462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.technology_data_template
-
-	var_8_9[1621] = {
+	pg.base.technology_data_template[1621] = {
 		id = 1621,
 		rarity = 3,
 		time = 1800,
@@ -31354,11 +28502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.technology_data_template
-
-	var_8_10[1622] = {
+	pg.base.technology_data_template[1622] = {
 		id = 1622,
 		rarity = 3,
 		time = 1800,
@@ -31398,11 +28542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.technology_data_template
-
-	var_8_11[1623] = {
+	pg.base.technology_data_template[1623] = {
 		id = 1623,
 		rarity = 3,
 		time = 1800,
@@ -31442,11 +28582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.technology_data_template
-
-	var_8_12[1624] = {
+	pg.base.technology_data_template[1624] = {
 		id = 1624,
 		rarity = 3,
 		time = 1800,
@@ -31491,11 +28627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.technology_data_template
-
-	var_8_13[1625] = {
+	pg.base.technology_data_template[1625] = {
 		id = 1625,
 		rarity = 3,
 		time = 1800,
@@ -31540,11 +28672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.technology_data_template
-
-	var_8_14[1626] = {
+	pg.base.technology_data_template[1626] = {
 		id = 1626,
 		rarity = 3,
 		time = 14400,
@@ -31578,11 +28706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.technology_data_template
-
-	var_8_15[1632] = {
+	pg.base.technology_data_template[1632] = {
 		id = 1632,
 		rarity = 3,
 		time = 7200,
@@ -31622,11 +28746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.technology_data_template
-
-	var_8_16[1633] = {
+	pg.base.technology_data_template[1633] = {
 		id = 1633,
 		rarity = 3,
 		time = 7200,
@@ -31666,11 +28786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.technology_data_template
-
-	var_8_17[1634] = {
+	pg.base.technology_data_template[1634] = {
 		id = 1634,
 		rarity = 3,
 		time = 7200,
@@ -31710,11 +28826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.technology_data_template
-
-	var_8_18[1635] = {
+	pg.base.technology_data_template[1635] = {
 		id = 1635,
 		rarity = 3,
 		time = 7200,
@@ -31754,11 +28866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.technology_data_template
-
-	var_8_19[1701] = {
+	pg.base.technology_data_template[1701] = {
 		id = 1701,
 		rarity = 3,
 		time = 43200,
@@ -31797,11 +28905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.technology_data_template
-
-	var_8_20[1702] = {
+	pg.base.technology_data_template[1702] = {
 		id = 1702,
 		rarity = 3,
 		time = 43200,
@@ -31840,11 +28944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.technology_data_template
-
-	var_8_21[1703] = {
+	pg.base.technology_data_template[1703] = {
 		id = 1703,
 		rarity = 3,
 		time = 14400,
@@ -31878,11 +28978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.technology_data_template
-
-	var_8_22[1704] = {
+	pg.base.technology_data_template[1704] = {
 		id = 1704,
 		rarity = 3,
 		time = 14400,
@@ -31916,11 +29012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.technology_data_template
-
-	var_8_23[1705] = {
+	pg.base.technology_data_template[1705] = {
 		id = 1705,
 		rarity = 3,
 		time = 28800,
@@ -31960,11 +29052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.technology_data_template
-
-	var_8_24[1706] = {
+	pg.base.technology_data_template[1706] = {
 		id = 1706,
 		rarity = 3,
 		time = 28800,
@@ -32004,11 +29092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.technology_data_template
-
-	var_8_25[1707] = {
+	pg.base.technology_data_template[1707] = {
 		id = 1707,
 		rarity = 3,
 		time = 28800,
@@ -32048,11 +29132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.technology_data_template
-
-	var_8_26[1708] = {
+	pg.base.technology_data_template[1708] = {
 		id = 1708,
 		rarity = 3,
 		time = 28800,
@@ -32092,11 +29172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.technology_data_template
-
-	var_8_27[1709] = {
+	pg.base.technology_data_template[1709] = {
 		id = 1709,
 		rarity = 3,
 		time = 28800,
@@ -32136,11 +29212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.technology_data_template
-
-	var_8_28[1711] = {
+	pg.base.technology_data_template[1711] = {
 		id = 1711,
 		rarity = 3,
 		time = 14400,
@@ -32180,11 +29252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.technology_data_template
-
-	var_8_29[1712] = {
+	pg.base.technology_data_template[1712] = {
 		id = 1712,
 		rarity = 3,
 		time = 14400,
@@ -32224,11 +29292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.technology_data_template
-
-	var_8_30[1713] = {
+	pg.base.technology_data_template[1713] = {
 		id = 1713,
 		rarity = 4,
 		time = 1800,
@@ -32273,11 +29337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.technology_data_template
-
-	var_8_31[1714] = {
+	pg.base.technology_data_template[1714] = {
 		id = 1714,
 		rarity = 4,
 		time = 1800,
@@ -32322,11 +29382,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.technology_data_template
-
-	var_8_32[1715] = {
+	pg.base.technology_data_template[1715] = {
 		id = 1715,
 		rarity = 3,
 		time = 1800,
@@ -32371,11 +29427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.technology_data_template
-
-	var_8_33[1716] = {
+	pg.base.technology_data_template[1716] = {
 		id = 1716,
 		rarity = 3,
 		time = 1800,
@@ -32420,11 +29472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.technology_data_template
-
-	var_8_34[1717] = {
+	pg.base.technology_data_template[1717] = {
 		id = 1717,
 		rarity = 3,
 		time = 1800,
@@ -32469,11 +29517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.technology_data_template
-
-	var_8_35[1719] = {
+	pg.base.technology_data_template[1719] = {
 		id = 1719,
 		rarity = 3,
 		time = 1800,
@@ -32513,11 +29557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.technology_data_template
-
-	var_8_36[1720] = {
+	pg.base.technology_data_template[1720] = {
 		id = 1720,
 		rarity = 3,
 		time = 1800,
@@ -32557,11 +29597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.technology_data_template
-
-	var_8_37[1721] = {
+	pg.base.technology_data_template[1721] = {
 		id = 1721,
 		rarity = 3,
 		time = 1800,
@@ -32601,11 +29637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.technology_data_template
-
-	var_8_38[1722] = {
+	pg.base.technology_data_template[1722] = {
 		id = 1722,
 		rarity = 3,
 		time = 1800,
@@ -32645,11 +29677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.technology_data_template
-
-	var_8_39[1723] = {
+	pg.base.technology_data_template[1723] = {
 		id = 1723,
 		rarity = 3,
 		time = 1800,
@@ -32689,11 +29717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.technology_data_template
-
-	var_8_40[1724] = {
+	pg.base.technology_data_template[1724] = {
 		id = 1724,
 		rarity = 3,
 		time = 1800,
@@ -32738,11 +29762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.technology_data_template
-
-	var_8_41[1725] = {
+	pg.base.technology_data_template[1725] = {
 		id = 1725,
 		rarity = 3,
 		time = 1800,
@@ -32787,11 +29807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.technology_data_template
-
-	var_8_42[1726] = {
+	pg.base.technology_data_template[1726] = {
 		id = 1726,
 		rarity = 3,
 		time = 14400,
@@ -32825,11 +29841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.technology_data_template
-
-	var_8_43[1731] = {
+	pg.base.technology_data_template[1731] = {
 		id = 1731,
 		rarity = 3,
 		time = 7200,
@@ -32869,11 +29881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.technology_data_template
-
-	var_8_44[1732] = {
+	pg.base.technology_data_template[1732] = {
 		id = 1732,
 		rarity = 3,
 		time = 7200,
@@ -32913,11 +29921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.technology_data_template
-
-	var_8_45[1733] = {
+	pg.base.technology_data_template[1733] = {
 		id = 1733,
 		rarity = 3,
 		time = 7200,
@@ -32957,11 +29961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.technology_data_template
-
-	var_8_46[1734] = {
+	pg.base.technology_data_template[1734] = {
 		id = 1734,
 		rarity = 3,
 		time = 7200,
@@ -33001,11 +30001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.technology_data_template
-
-	var_8_47[1735] = {
+	pg.base.technology_data_template[1735] = {
 		id = 1735,
 		rarity = 3,
 		time = 7200,
@@ -33045,11 +30041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.technology_data_template
-
-	var_8_48[1736] = {
+	pg.base.technology_data_template[1736] = {
 		id = 1736,
 		rarity = 3,
 		time = 7200,
@@ -33089,11 +30081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.technology_data_template
-
-	var_8_49[1801] = {
+	pg.base.technology_data_template[1801] = {
 		id = 1801,
 		rarity = 3,
 		time = 43200,
@@ -33132,11 +30120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.technology_data_template
-
-	var_8_50[1802] = {
+	pg.base.technology_data_template[1802] = {
 		id = 1802,
 		rarity = 3,
 		time = 43200,
@@ -33175,11 +30159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.technology_data_template
-
-	var_8_51[1803] = {
+	pg.base.technology_data_template[1803] = {
 		id = 1803,
 		rarity = 3,
 		time = 14400,
@@ -33213,11 +30193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.technology_data_template
-
-	var_8_52[1804] = {
+	pg.base.technology_data_template[1804] = {
 		id = 1804,
 		rarity = 3,
 		time = 14400,
@@ -33251,11 +30227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.technology_data_template
-
-	var_8_53[1805] = {
+	pg.base.technology_data_template[1805] = {
 		id = 1805,
 		rarity = 3,
 		time = 28800,
@@ -33295,11 +30267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.technology_data_template
-
-	var_8_54[1806] = {
+	pg.base.technology_data_template[1806] = {
 		id = 1806,
 		rarity = 3,
 		time = 28800,
@@ -33339,11 +30307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.technology_data_template
-
-	var_8_55[1807] = {
+	pg.base.technology_data_template[1807] = {
 		id = 1807,
 		rarity = 3,
 		time = 28800,
@@ -33383,11 +30347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.technology_data_template
-
-	var_8_56[1808] = {
+	pg.base.technology_data_template[1808] = {
 		id = 1808,
 		rarity = 3,
 		time = 28800,
@@ -33427,11 +30387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.technology_data_template
-
-	var_8_57[1809] = {
+	pg.base.technology_data_template[1809] = {
 		id = 1809,
 		rarity = 3,
 		time = 28800,
@@ -33471,11 +30427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.technology_data_template
-
-	var_8_58[1811] = {
+	pg.base.technology_data_template[1811] = {
 		id = 1811,
 		rarity = 3,
 		time = 14400,
@@ -33515,11 +30467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.technology_data_template
-
-	var_8_59[1812] = {
+	pg.base.technology_data_template[1812] = {
 		id = 1812,
 		rarity = 3,
 		time = 14400,
@@ -33559,11 +30507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.technology_data_template
-
-	var_8_60[1813] = {
+	pg.base.technology_data_template[1813] = {
 		id = 1813,
 		rarity = 4,
 		time = 1800,
@@ -33608,11 +30552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.technology_data_template
-
-	var_8_61[1814] = {
+	pg.base.technology_data_template[1814] = {
 		id = 1814,
 		rarity = 4,
 		time = 1800,
@@ -33657,11 +30597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.technology_data_template
-
-	var_8_62[1815] = {
+	pg.base.technology_data_template[1815] = {
 		id = 1815,
 		rarity = 3,
 		time = 1800,
@@ -33706,11 +30642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.technology_data_template
-
-	var_8_63[1816] = {
+	pg.base.technology_data_template[1816] = {
 		id = 1816,
 		rarity = 3,
 		time = 1800,
@@ -33755,11 +30687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.technology_data_template
-
-	var_8_64[1817] = {
+	pg.base.technology_data_template[1817] = {
 		id = 1817,
 		rarity = 3,
 		time = 1800,
@@ -33804,11 +30732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.technology_data_template
-
-	var_8_65[1819] = {
+	pg.base.technology_data_template[1819] = {
 		id = 1819,
 		rarity = 3,
 		time = 1800,
@@ -33848,11 +30772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.technology_data_template
-
-	var_8_66[1820] = {
+	pg.base.technology_data_template[1820] = {
 		id = 1820,
 		rarity = 3,
 		time = 1800,
@@ -33892,11 +30812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.technology_data_template
-
-	var_8_67[1821] = {
+	pg.base.technology_data_template[1821] = {
 		id = 1821,
 		rarity = 3,
 		time = 1800,
@@ -33936,11 +30852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.technology_data_template
-
-	var_8_68[1822] = {
+	pg.base.technology_data_template[1822] = {
 		id = 1822,
 		rarity = 3,
 		time = 1800,
@@ -33980,11 +30892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.technology_data_template
-
-	var_8_69[1823] = {
+	pg.base.technology_data_template[1823] = {
 		id = 1823,
 		rarity = 3,
 		time = 1800,
@@ -34024,11 +30932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.technology_data_template
-
-	var_8_70[1824] = {
+	pg.base.technology_data_template[1824] = {
 		id = 1824,
 		rarity = 3,
 		time = 1800,
@@ -34073,11 +30977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.technology_data_template
-
-	var_8_71[1825] = {
+	pg.base.technology_data_template[1825] = {
 		id = 1825,
 		rarity = 3,
 		time = 1800,
@@ -34122,8 +31022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_71
-	var_8_71.base.technology_data_template[1826] = {
+	pg.base.technology_data_template[1826] = {
 		id = 1826,
 		rarity = 3,
 		time = 14400,

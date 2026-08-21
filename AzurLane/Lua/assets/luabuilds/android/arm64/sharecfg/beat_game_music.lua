@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "beat_game_music") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "beat_game_music"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.beat_game_music = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.beat_game_music
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.beat_game_music = rawget(pg, "beat_game_music") or setmetatable({
+	__name = "beat_game_music"
+}, confNEO)
+pg.beat_game_music.all = {
 	1,
 	2,
 	3,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.beat_game_music = {}
+pg.base = pg.base or {}
+pg.base.beat_game_music = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.beat_game_music
-
-	var_1_0[1] = {
+	pg.base.beat_game_music[1] = {
 		light = 2,
 		note = 6,
 		content_type = 1,
@@ -104,11 +67,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.beat_game_music
-
-	var_1_1[2] = {
+	pg.base.beat_game_music[2] = {
 		light = 3,
 		note = 8,
 		content_type = 1,
@@ -152,11 +111,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.beat_game_music
-
-	var_1_2[3] = {
+	pg.base.beat_game_music[3] = {
 		light = 1,
 		note = 7,
 		content_type = 1,
@@ -199,11 +154,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.beat_game_music
-
-	var_1_3[4] = {
+	pg.base.beat_game_music[4] = {
 		light = 0,
 		note = 9,
 		content_type = 1,
@@ -250,11 +201,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.beat_game_music
-
-	var_1_4[5] = {
+	pg.base.beat_game_music[5] = {
 		light = 0,
 		note = 10,
 		content_type = 1,
@@ -289,11 +236,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.beat_game_music
-
-	var_1_5[6] = {
+	pg.base.beat_game_music[6] = {
 		light = 0,
 		note = 1,
 		content_type = 1,
@@ -336,11 +279,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.beat_game_music
-
-	var_1_6[7] = {
+	pg.base.beat_game_music[7] = {
 		light = 0,
 		note = 2,
 		content_type = 1,
@@ -375,11 +314,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.beat_game_music
-
-	var_1_7[8] = {
+	pg.base.beat_game_music[8] = {
 		light = 0,
 		note = 3,
 		content_type = 1,
@@ -414,11 +349,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.beat_game_music
-
-	var_1_8[9] = {
+	pg.base.beat_game_music[9] = {
 		light = 0,
 		note = 4,
 		content_type = 1,
@@ -453,11 +384,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.beat_game_music
-
-	var_1_9[10] = {
+	pg.base.beat_game_music[10] = {
 		light = 0,
 		note = 5,
 		content_type = 1,
@@ -492,11 +419,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.beat_game_music
-
-	var_1_10[11] = {
+	pg.base.beat_game_music[11] = {
 		light = 0,
 		note = 11,
 		content_type = 2,
@@ -541,8 +464,7 @@ var_0_3.base.beat_game_music = {}
 			}
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.beat_game_music[12] = {
+	pg.base.beat_game_music[12] = {
 		light = 0,
 		note = 12,
 		content_type = 3,

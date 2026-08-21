@@ -14,6 +14,18 @@ local recharge_data=
 	[5]={ non_first_id=15, first_id=15, pic="recharge/icon/recharge_5.png"
 },
 	[6]={ non_first_id=15, first_id=15, pic="recharge/icon/recharge_6.png"
+},
+	[101]={ non_first_id=0, first_id=0, pic=""
+},
+	[102]={ non_first_id=0, first_id=0, pic=""
+},
+	[103]={ non_first_id=0, first_id=0, pic=""
+},
+	[104]={ non_first_id=0, first_id=0, pic=""
+},
+	[105]={ non_first_id=0, first_id=0, pic=""
+},
+	[106]={ non_first_id=0, first_id=0, pic=""
 }
 }
 

@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_technology_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_technology_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_technology_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_technology_template
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_technology_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_technology_template = rawget(pg, "island_technology_template") or setmetatable({
+	__name = "island_technology_template"
+}, confNEO)
+pg.island_technology_template.__namecode__ = true
+pg.island_technology_template.all = {
 	100001,
 	100002,
 	110001,
@@ -235,11 +208,7 @@ var_0_4.all = {
 	650202,
 	650203
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.island_technology_template
-
-var_0_5.get_id_list_by_tech_belong = {
+pg.island_technology_template.get_id_list_by_tech_belong = {
 	{
 		100001,
 		100002,
@@ -456,25 +425,11 @@ var_0_5.get_id_list_by_tech_belong = {
 		650203
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.island_technology_template = {}
+pg.base = pg.base or {}
+pg.base.island_technology_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_technology_template
-
-	var_1_0[100001] = {
+	pg.base.island_technology_template[100001] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地岛屿权限认证装置</color>处激活角色权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -499,11 +454,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_technology_template
-
-	var_1_1[100002] = {
+	pg.base.island_technology_template[100002] = {
 		complete_title = "可前往主界面查看<color=#1E8FFE>地图</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -533,11 +484,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_technology_template
-
-	var_1_2[110001] = {
+	pg.base.island_technology_template[110001] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -573,11 +520,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_technology_template
-
-	var_1_3[110002] = {
+	pg.base.island_technology_template[110002] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -613,11 +556,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_technology_template
-
-	var_1_4[21] = {
+	pg.base.island_technology_template[21] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -653,11 +592,7 @@ var_0_5.base.island_technology_template = {}
 			4
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_technology_template
-
-	var_1_5[22] = {
+	pg.base.island_technology_template[22] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -701,11 +636,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_technology_template
-
-	var_1_6[110301] = {
+	pg.base.island_technology_template[110301] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -737,11 +668,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_technology_template
-
-	var_1_7[110302] = {
+	pg.base.island_technology_template[110302] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -773,11 +700,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_technology_template
-
-	var_1_8[100301] = {
+	pg.base.island_technology_template[100301] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -807,11 +730,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_technology_template
-
-	var_1_9[110303] = {
+	pg.base.island_technology_template[110303] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -843,11 +762,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_technology_template
-
-	var_1_10[120001] = {
+	pg.base.island_technology_template[120001] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -877,11 +792,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_technology_template
-
-	var_1_11[100003] = {
+	pg.base.island_technology_template[100003] = {
 		complete_title = "可前往<color=#1E8FFE>啾咖啡</color>和<color=#1E8FFE>港口商区</color>在<color=#1E8FFE>经营管理界面</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -919,11 +830,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_technology_template
-
-	var_1_12[140101] = {
+	pg.base.island_technology_template[140101] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿科技研发装置</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -953,11 +860,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_technology_template
-
-	var_1_13[23] = {
+	pg.base.island_technology_template[23] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -989,11 +892,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_technology_template
-
-	var_1_14[110304] = {
+	pg.base.island_technology_template[110304] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "4",
 		tech_chara = 1,
@@ -1025,11 +924,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_technology_template
-
-	var_1_15[100302] = {
+	pg.base.island_technology_template[100302] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -1059,11 +954,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_technology_template
-
-	var_1_16[100004] = {
+	pg.base.island_technology_template[100004] = {
 		complete_title = "可前往<color=#1E8FFE>主界面</color>点击进入<color=#1E8FFE>管理界面</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1097,11 +988,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_technology_template
-
-	var_1_17[100303] = {
+	pg.base.island_technology_template[100303] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -1135,11 +1022,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_technology_template
-
-	var_1_18[110305] = {
+	pg.base.island_technology_template[110305] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "5",
 		tech_chara = 1,
@@ -1175,11 +1058,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_technology_template
-
-	var_1_19[130301] = {
+	pg.base.island_technology_template[130301] = {
 		complete_title = "领取<color=#1E8FFE>好友日常补给</color>的次数增加，可前往<color=#1E8FFE>好友拜访界面</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1217,11 +1096,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_technology_template
-
-	var_1_20[120003] = {
+	pg.base.island_technology_template[120003] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1255,11 +1130,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_technology_template
-
-	var_1_21[100304] = {
+	pg.base.island_technology_template[100304] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "4",
 		tech_chara = 1,
@@ -1289,11 +1160,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_technology_template
-
-	var_1_22[130302] = {
+	pg.base.island_technology_template[130302] = {
 		complete_title = "领取<color=#1E8FFE>好友日常补给</color>的次数增加，可前往<color=#1E8FFE>好友拜访界面</color>查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -1327,11 +1194,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_technology_template
-
-	var_1_23[110306] = {
+	pg.base.island_technology_template[110306] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "6",
 		tech_chara = 1,
@@ -1363,11 +1226,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_technology_template
-
-	var_1_24[100305] = {
+	pg.base.island_technology_template[100305] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "5",
 		tech_chara = 1,
@@ -1397,11 +1256,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_technology_template
-
-	var_1_25[110307] = {
+	pg.base.island_technology_template[110307] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "7",
 		tech_chara = 1,
@@ -1433,11 +1288,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_technology_template
-
-	var_1_26[100306] = {
+	pg.base.island_technology_template[100306] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "6",
 		tech_chara = 1,
@@ -1467,11 +1318,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_technology_template
-
-	var_1_27[120004] = {
+	pg.base.island_technology_template[120004] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1501,11 +1348,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_technology_template
-
-	var_1_28[110308] = {
+	pg.base.island_technology_template[110308] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "8",
 		tech_chara = 1,
@@ -1537,11 +1380,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_technology_template
-
-	var_1_29[100307] = {
+	pg.base.island_technology_template[100307] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "7",
 		tech_chara = 1,
@@ -1571,11 +1410,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_technology_template
-
-	var_1_30[100308] = {
+	pg.base.island_technology_template[100308] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "8",
 		tech_chara = 1,
@@ -1609,11 +1444,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_technology_template
-
-	var_1_31[100309] = {
+	pg.base.island_technology_template[100309] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "9",
 		tech_chara = 1,
@@ -1643,11 +1474,7 @@ var_0_5.base.island_technology_template = {}
 			9.5
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_technology_template
-
-	var_1_32[100310] = {
+	pg.base.island_technology_template[100310] = {
 		complete_title = "可前往<color=#1E8FFE>管理界面</color>点击<color=#1E8FFE>仓库</color>查看",
 		tech_level = "10",
 		tech_chara = 1,
@@ -1677,11 +1504,7 @@ var_0_5.base.island_technology_template = {}
 			10
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_technology_template
-
-	var_1_33[110309] = {
+	pg.base.island_technology_template[110309] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "9",
 		tech_chara = 1,
@@ -1713,11 +1536,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_technology_template
-
-	var_1_34[120005] = {
+	pg.base.island_technology_template[120005] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1747,11 +1566,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_technology_template
-
-	var_1_35[110310] = {
+	pg.base.island_technology_template[110310] = {
 		complete_title = "可前往<color=#1E8FFE>港口</color>在<color=#1E8FFE>帕特莉</color>的<color=#1E8FFE>岛屿订单</color>中查看",
 		tech_level = "10",
 		tech_chara = 1,
@@ -1783,11 +1598,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_technology_template
-
-	var_1_36[120006] = {
+	pg.base.island_technology_template[120006] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1817,11 +1628,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_technology_template
-
-	var_1_37[120007] = {
+	pg.base.island_technology_template[120007] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1855,11 +1662,7 @@ var_0_5.base.island_technology_template = {}
 			2
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_technology_template
-
-	var_1_38[120008] = {
+	pg.base.island_technology_template[120008] = {
 		complete_title = "可前往<color=#1E8FFE>岛屿基地</color>中<color=#1E8FFE>岛屿权限认证装置</color>处激活权限",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1893,11 +1696,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_technology_template
-
-	var_1_39[210101] = {
+	pg.base.island_technology_template[210101] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产木材",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1929,11 +1728,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_technology_template
-
-	var_1_40[220101] = {
+	pg.base.island_technology_template[220101] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产矿石",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1965,11 +1760,7 @@ var_0_5.base.island_technology_template = {}
 			6.5
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_technology_template
-
-	var_1_41[220501] = {
+	pg.base.island_technology_template[220501] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野沉石矿山</color>处手动获取",
 		tech_level = "1",
 		tech_chara = 1,
@@ -1999,11 +1790,7 @@ var_0_5.base.island_technology_template = {}
 			10
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_technology_template
-
-	var_1_42[210401] = {
+	pg.base.island_technology_template[210401] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野翠土林场</color>处手动获取",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2033,11 +1820,7 @@ var_0_5.base.island_technology_template = {}
 			4.5
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_technology_template
-
-	var_1_43[220201] = {
+	pg.base.island_technology_template[220201] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产<color=#1E8FFE>铝矿</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2069,11 +1852,7 @@ var_0_5.base.island_technology_template = {}
 			8.5
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_technology_template
-
-	var_1_44[220401] = {
+	pg.base.island_technology_template[220401] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野沉石矿山</color>处手动获取",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2103,11 +1882,7 @@ var_0_5.base.island_technology_template = {}
 			10
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_technology_template
-
-	var_1_45[210102] = {
+	pg.base.island_technology_template[210102] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2139,11 +1914,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_technology_template
-
-	var_1_46[25] = {
+	pg.base.island_technology_template[25] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产<color=#1E8FFE>实用之木</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2175,11 +1946,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_technology_template
-
-	var_1_47[220202] = {
+	pg.base.island_technology_template[220202] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产<color=#1E8FFE>铁矿</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2211,11 +1978,7 @@ var_0_5.base.island_technology_template = {}
 			8.5
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_technology_template
-
-	var_1_48[210501] = {
+	pg.base.island_technology_template[210501] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野翠土林场</color>处手动获取",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2245,11 +2008,7 @@ var_0_5.base.island_technology_template = {}
 			4.5
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_technology_template
-
-	var_1_49[220502] = {
+	pg.base.island_technology_template[220502] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野沉石矿山</color>处手动获取",
 		tech_level = "2",
 		tech_chara = 1,
@@ -2279,11 +2038,7 @@ var_0_5.base.island_technology_template = {}
 			10
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_technology_template
-
-	var_1_50[220102] = {
+	pg.base.island_technology_template[220102] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2315,11 +2070,7 @@ var_0_5.base.island_technology_template = {}
 			6.5
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_technology_template
-
-	var_1_51[220203] = {
+	pg.base.island_technology_template[220203] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产<color=#1E8FFE>硫矿</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2351,11 +2102,7 @@ var_0_5.base.island_technology_template = {}
 			8.5
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_technology_template
-
-	var_1_52[26] = {
+	pg.base.island_technology_template[26] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产<color=#1E8FFE>精选之木</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2387,11 +2134,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_technology_template
-
-	var_1_53[210502] = {
+	pg.base.island_technology_template[210502] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野翠土林场</color>处手动获取",
 		tech_level = "2",
 		tech_chara = 1,
@@ -2421,11 +2164,7 @@ var_0_5.base.island_technology_template = {}
 			4.5
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_technology_template
-
-	var_1_54[220103] = {
+	pg.base.island_technology_template[220103] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产矿石",
 		tech_level = "2",
 		tech_chara = 1,
@@ -2457,11 +2196,7 @@ var_0_5.base.island_technology_template = {}
 			6.5
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_technology_template
-
-	var_1_55[220204] = {
+	pg.base.island_technology_template[220204] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产<color=#1E8FFE>银矿</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2493,11 +2228,7 @@ var_0_5.base.island_technology_template = {}
 			8.5
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_technology_template
-
-	var_1_56[210103] = {
+	pg.base.island_technology_template[210103] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产木材",
 		tech_level = "2",
 		tech_chara = 1,
@@ -2529,11 +2260,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_technology_template
-
-	var_1_57[27] = {
+	pg.base.island_technology_template[27] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产<color=#1E8FFE>典雅之木</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2565,11 +2292,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_technology_template
-
-	var_1_58[210104] = {
+	pg.base.island_technology_template[210104] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产木材",
 		tech_level = "3",
 		tech_chara = 1,
@@ -2601,11 +2324,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_technology_template
-
-	var_1_59[220104] = {
+	pg.base.island_technology_template[220104] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产矿石",
 		tech_level = "3",
 		tech_chara = 1,
@@ -2637,11 +2356,7 @@ var_0_5.base.island_technology_template = {}
 			6.5
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_technology_template
-
-	var_1_60[210601] = {
+	pg.base.island_technology_template[210601] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野奥布莱恩</color>处委派角色生产木材",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2673,11 +2388,7 @@ var_0_5.base.island_technology_template = {}
 			4.5
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_technology_template
-
-	var_1_61[220601] = {
+	pg.base.island_technology_template[220601] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野乔安</color>处委派角色生产矿石",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2709,11 +2420,7 @@ var_0_5.base.island_technology_template = {}
 			10
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_technology_template
-
-	var_1_62[29] = {
+	pg.base.island_technology_template[29] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2743,11 +2450,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_technology_template
-
-	var_1_63[310201] = {
+	pg.base.island_technology_template[310201] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>牧草种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2779,11 +2482,7 @@ var_0_5.base.island_technology_template = {}
 			9
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_technology_template
-
-	var_1_64[30] = {
+	pg.base.island_technology_template[30] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "2",
 		tech_chara = 1,
@@ -2813,11 +2512,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_technology_template
-
-	var_1_65[320301] = {
+	pg.base.island_technology_template[320301] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃青芽苗圃</color>处播种更多苗圃作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2847,11 +2542,7 @@ var_0_5.base.island_technology_template = {}
 			5
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_technology_template
-
-	var_1_66[310101] = {
+	pg.base.island_technology_template[310101] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处委派角色生产农田作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2883,11 +2574,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_technology_template
-
-	var_1_67[310202] = {
+	pg.base.island_technology_template[310202] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>旱稻种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2919,11 +2606,7 @@ var_0_5.base.island_technology_template = {}
 			9
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_technology_template
-
-	var_1_68[330301] = {
+	pg.base.island_technology_template[330301] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃坠香果园</color>处播种更多果园作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -2953,11 +2636,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_technology_template
-
-	var_1_69[31] = {
+	pg.base.island_technology_template[31] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "3",
 		tech_chara = 1,
@@ -2987,11 +2666,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_technology_template
-
-	var_1_70[310304] = {
+	pg.base.island_technology_template[310304] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "4",
 		tech_chara = 1,
@@ -3021,11 +2696,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_technology_template
-
-	var_1_71[330101] = {
+	pg.base.island_technology_template[330101] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处委派角色生产果园作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3057,11 +2728,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_technology_template
-
-	var_1_72[310305] = {
+	pg.base.island_technology_template[310305] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "5",
 		tech_chara = 1,
@@ -3091,11 +2758,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_technology_template
-
-	var_1_73[320202] = {
+	pg.base.island_technology_template[320202] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处购买<color=#1E8FFE>棉花种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3131,11 +2794,7 @@ var_0_5.base.island_technology_template = {}
 			9
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_technology_template
-
-	var_1_74[320101] = {
+	pg.base.island_technology_template[320101] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处委派角色生产苗圃作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3167,11 +2826,7 @@ var_0_5.base.island_technology_template = {}
 			5
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_technology_template
-
-	var_1_75[320302] = {
+	pg.base.island_technology_template[320302] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃青芽苗圃</color>处播种更多苗圃作物",
 		tech_level = "2",
 		tech_chara = 1,
@@ -3201,11 +2856,7 @@ var_0_5.base.island_technology_template = {}
 			5
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_technology_template
-
-	var_1_76[330302] = {
+	pg.base.island_technology_template[330302] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃坠香果园</color>处播种更多果园作物",
 		tech_level = "2",
 		tech_chara = 1,
@@ -3235,11 +2886,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_technology_template
-
-	var_1_77[310306] = {
+	pg.base.island_technology_template[310306] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "6",
 		tech_chara = 1,
@@ -3269,11 +2916,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_technology_template
-
-	var_1_78[330102] = {
+	pg.base.island_technology_template[330102] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处委派角色生产果园作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3305,11 +2948,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_technology_template
-
-	var_1_79[310102] = {
+	pg.base.island_technology_template[310102] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处委派角色生产农田作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3341,11 +2980,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_technology_template
-
-	var_1_80[320303] = {
+	pg.base.island_technology_template[320303] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃青芽苗圃</color>处播种更多苗圃作物",
 		tech_level = "3",
 		tech_chara = 1,
@@ -3375,11 +3010,7 @@ var_0_5.base.island_technology_template = {}
 			5
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_technology_template
-
-	var_1_81[330201] = {
+	pg.base.island_technology_template[330201] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>橡胶树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3415,11 +3046,7 @@ var_0_5.base.island_technology_template = {}
 			9
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_technology_template
-
-	var_1_82[310001] = {
+	pg.base.island_technology_template[310001] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处手动播种作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3449,11 +3076,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_technology_template
-
-	var_1_83[310307] = {
+	pg.base.island_technology_template[310307] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "7",
 		tech_chara = 1,
@@ -3483,11 +3106,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_technology_template
-
-	var_1_84[320205] = {
+	pg.base.island_technology_template[320205] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处购买<color=#1E8FFE>薰衣草种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3519,11 +3138,7 @@ var_0_5.base.island_technology_template = {}
 			9
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_technology_template
-
-	var_1_85[310308] = {
+	pg.base.island_technology_template[310308] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "8",
 		tech_chara = 1,
@@ -3553,11 +3168,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_technology_template
-
-	var_1_86[330303] = {
+	pg.base.island_technology_template[330303] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃坠香果园</color>处播种更多果园作物",
 		tech_level = "3",
 		tech_chara = 1,
@@ -3587,11 +3198,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_technology_template
-
-	var_1_87[310103] = {
+	pg.base.island_technology_template[310103] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处委派角色生产农田作物",
 		tech_level = "2",
 		tech_chara = 1,
@@ -3623,11 +3230,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_technology_template
-
-	var_1_88[330103] = {
+	pg.base.island_technology_template[330103] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处委派角色生产果园作物",
 		tech_level = "2",
 		tech_chara = 1,
@@ -3659,11 +3262,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_technology_template
-
-	var_1_89[310309] = {
+	pg.base.island_technology_template[310309] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场丰壤农田</color>处播种更多农田作物",
 		tech_level = "9",
 		tech_chara = 1,
@@ -3693,11 +3292,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_technology_template
-
-	var_1_90[320304] = {
+	pg.base.island_technology_template[320304] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃青芽苗圃</color>处播种更多苗圃作物",
 		tech_level = "4",
 		tech_chara = 1,
@@ -3727,11 +3322,7 @@ var_0_5.base.island_technology_template = {}
 			5
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_technology_template
-
-	var_1_91[320102] = {
+	pg.base.island_technology_template[320102] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处委派角色生产苗圃作物",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3761,11 +3352,7 @@ var_0_5.base.island_technology_template = {}
 			5
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_technology_template
-
-	var_1_92[330104] = {
+	pg.base.island_technology_template[330104] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处委派角色生产果园作物",
 		tech_level = "3",
 		tech_chara = 1,
@@ -3797,11 +3384,7 @@ var_0_5.base.island_technology_template = {}
 			7
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_technology_template
-
-	var_1_93[310104] = {
+	pg.base.island_technology_template[310104] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处委派角色生产农田作物",
 		tech_level = "3",
 		tech_chara = 1,
@@ -3833,11 +3416,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_technology_template
-
-	var_1_94[410301] = {
+	pg.base.island_technology_template[410301] = {
 		complete_title = "咯咯鸡委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3869,11 +3448,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_technology_template
-
-	var_1_95[420301] = {
+	pg.base.island_technology_template[420301] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场梅莉</color>处点击管理牧场饲养<color=#1E8FFE>哼哼猪</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3905,11 +3480,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_technology_template
-
-	var_1_96[410302] = {
+	pg.base.island_technology_template[410302] = {
 		complete_title = "咯咯鸡委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -3941,11 +3512,7 @@ var_0_5.base.island_technology_template = {}
 			1
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_technology_template
-
-	var_1_97[420302] = {
+	pg.base.island_technology_template[420302] = {
 		complete_title = "哼哼猪委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -3977,11 +3544,7 @@ var_0_5.base.island_technology_template = {}
 			3
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_technology_template
-
-	var_1_98[1] = {
+	pg.base.island_technology_template[1] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场梅莉</color>处点击管理牧场查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4013,8 +3576,7 @@ var_0_5.base.island_technology_template = {}
 			6
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_technology_template[430301] = {
+	pg.base.island_technology_template[430301] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场梅莉</color>处点击管理牧场饲养<color=#1E8FFE>哞哞牛</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4050,11 +3612,7 @@ var_0_5.base.island_technology_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_technology_template
-
-	var_2_0[430302] = {
+	pg.base.island_technology_template[430302] = {
 		complete_title = "哞哞牛委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4086,11 +3644,7 @@ end)()
 			4.5
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_technology_template
-
-	var_2_1[440301] = {
+	pg.base.island_technology_template[440301] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场梅莉</color>处点击管理牧场饲养<color=#1E8FFE>咩咩羊</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4122,11 +3676,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_technology_template
-
-	var_2_2[440302] = {
+	pg.base.island_technology_template[440302] = {
 		complete_title = "咩咩羊委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4158,11 +3708,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_technology_template
-
-	var_2_3[420303] = {
+	pg.base.island_technology_template[420303] = {
 		complete_title = "哼哼猪委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4194,11 +3740,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_technology_template
-
-	var_2_4[410303] = {
+	pg.base.island_technology_template[410303] = {
 		complete_title = "咯咯鸡委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -4230,11 +3772,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_technology_template
-
-	var_2_5[430303] = {
+	pg.base.island_technology_template[430303] = {
 		complete_title = "哞哞牛委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4266,11 +3804,7 @@ end)()
 			4.5
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_technology_template
-
-	var_2_6[410304] = {
+	pg.base.island_technology_template[410304] = {
 		complete_title = "咯咯鸡委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "4",
 		tech_chara = 1,
@@ -4302,11 +3836,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_technology_template
-
-	var_2_7[440303] = {
+	pg.base.island_technology_template[440303] = {
 		complete_title = "咩咩羊委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4338,11 +3868,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_technology_template
-
-	var_2_8[410305] = {
+	pg.base.island_technology_template[410305] = {
 		complete_title = "咯咯鸡委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "5",
 		tech_chara = 1,
@@ -4374,11 +3900,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_technology_template
-
-	var_2_9[420304] = {
+	pg.base.island_technology_template[420304] = {
 		complete_title = "哼哼猪委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -4410,11 +3932,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_technology_template
-
-	var_2_10[430304] = {
+	pg.base.island_technology_template[430304] = {
 		complete_title = "哞哞牛委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -4446,11 +3964,7 @@ end)()
 			4.5
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_technology_template
-
-	var_2_11[450301] = {
+	pg.base.island_technology_template[450301] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场</color>蜂蜜采集点采集<color=#1E8FFE>蜂蜜</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4475,11 +3989,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_technology_template
-
-	var_2_12[440304] = {
+	pg.base.island_technology_template[440304] = {
 		complete_title = "咩咩羊委派的产出和消耗增加，可前往<color=#1E8FFE>晨露农场梅莉</color>处查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -4511,11 +4021,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_technology_template
-
-	var_2_13[450302] = {
+	pg.base.island_technology_template[450302] = {
 		complete_title = "可前往<color=#1E8FFE>栖风原野</color>蜂蜜采集点采集<color=#1E8FFE>蜂蜜</color>",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4545,11 +4051,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_technology_template
-
-	var_2_14[460001] = {
+	pg.base.island_technology_template[460001] = {
 		complete_title = "可前往<color=#1E8FFE>钓鱼点</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4581,11 +4083,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_technology_template
-
-	var_2_15[460002] = {
+	pg.base.island_technology_template[460002] = {
 		complete_title = "可前往<color=#1E8FFE>钓鱼点</color>查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4617,11 +4115,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_technology_template
-
-	var_2_16[460101] = {
+	pg.base.island_technology_template[460101] = {
 		complete_title = "可前往<color=#1E8FFE>渔场布莉缇</color>处委派角色进行<color=#1E8FFE>水产养殖</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4653,11 +4147,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_technology_template
-
-	var_2_17[13] = {
+	pg.base.island_technology_template[13] = {
 		complete_title = "可前往<color=#1E8FFE>渔场布莉缇</color>处委派角色进行<color=#1E8FFE>水产养殖</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4689,11 +4179,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_technology_template
-
-	var_2_18[460102] = {
+	pg.base.island_technology_template[460102] = {
 		complete_title = "可前往<color=#1E8FFE>渔场布莉缇</color>处委派角色进行<color=#1E8FFE>水产养殖</color>",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4725,11 +4211,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_technology_template
-
-	var_2_19[14] = {
+	pg.base.island_technology_template[14] = {
 		complete_title = "可前往<color=#1E8FFE>渔场布莉缇</color>处委派角色进行<color=#1E8FFE>水产养殖</color>",
 		tech_level = "2",
 		tech_chara = 1,
@@ -4761,11 +4243,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_technology_template
-
-	var_2_20[460201] = {
+	pg.base.island_technology_template[460201] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4801,11 +4279,7 @@ end)()
 			9.5
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_technology_template
-
-	var_2_21[460202] = {
+	pg.base.island_technology_template[460202] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4841,11 +4315,7 @@ end)()
 			9.5
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_technology_template
-
-	var_2_22[460203] = {
+	pg.base.island_technology_template[460203] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4881,11 +4351,7 @@ end)()
 			9.5
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_technology_template
-
-	var_2_23[460204] = {
+	pg.base.island_technology_template[460204] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4921,11 +4387,7 @@ end)()
 			9.5
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_technology_template
-
-	var_2_24[460205] = {
+	pg.base.island_technology_template[460205] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>啾啾简餐</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -4961,11 +4423,7 @@ end)()
 			9.5
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_technology_template
-
-	var_2_25[460206] = {
+	pg.base.island_technology_template[460206] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5001,11 +4459,7 @@ end)()
 			9.5
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_technology_template
-
-	var_2_26[500211] = {
+	pg.base.island_technology_template[500211] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>咖啡树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5037,11 +4491,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_technology_template
-
-	var_2_27[500212] = {
+	pg.base.island_technology_template[500212] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>玉米种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5073,11 +4523,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_technology_template
-
-	var_2_28[7] = {
+	pg.base.island_technology_template[7] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>苹果树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5109,11 +4555,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_technology_template
-
-	var_2_29[550201] = {
+	pg.base.island_technology_template[550201] = {
 		complete_title = "可前往<color=#1E8FFE>港口啾咖啡布莱梅</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5149,11 +4591,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_technology_template
-
-	var_2_30[500213] = {
+	pg.base.island_technology_template[500213] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>大豆种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5185,11 +4623,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_technology_template
-
-	var_2_31[500215] = {
+	pg.base.island_technology_template[500215] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>白菜种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5221,11 +4655,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_technology_template
-
-	var_2_32[520001] = {
+	pg.base.island_technology_template[520001] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处制作和销售<color=#1E8FFE>白熊饮品</color>餐品",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5261,11 +4691,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_technology_template
-
-	var_2_33[500214] = {
+	pg.base.island_technology_template[500214] = {
 		complete_title = "可前往<color=#1E8FFE>晨露农场赫莫</color>处购买<color=#1E8FFE>土豆种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5297,11 +4723,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_technology_template
-
-	var_2_34[8] = {
+	pg.base.island_technology_template[8] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>柑橘树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5333,11 +4755,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_technology_template
-
-	var_2_35[550202] = {
+	pg.base.island_technology_template[550202] = {
 		complete_title = "可前往<color=#1E8FFE>港口啾咖啡布莱梅</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5369,11 +4787,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_technology_template
-
-	var_2_36[500001] = {
+	pg.base.island_technology_template[500001] = {
 		complete_title = "可前往<color=#1E8FFE>啾咖啡和港口商区</color>在制作商品界面制作套餐",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5403,11 +4817,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_technology_template
-
-	var_2_37[510201] = {
+	pg.base.island_technology_template[510201] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处在<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5443,11 +4853,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_technology_template
-
-	var_2_38[510202] = {
+	pg.base.island_technology_template[510202] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处在<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5479,11 +4885,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_technology_template
-
-	var_2_39[510203] = {
+	pg.base.island_technology_template[510203] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处在<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5519,11 +4921,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_technology_template
-
-	var_2_40[550203] = {
+	pg.base.island_technology_template[550203] = {
 		complete_title = "可前往<color=#1E8FFE>港口啾咖啡布莱梅</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5555,11 +4953,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_technology_template
-
-	var_2_41[320201] = {
+	pg.base.island_technology_template[320201] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处购买<color=#1E8FFE>草莓种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5595,11 +4989,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_technology_template
-
-	var_2_42[9] = {
+	pg.base.island_technology_template[9] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>香蕉树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5631,11 +5021,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_technology_template
-
-	var_2_43[10] = {
+	pg.base.island_technology_template[10] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>芒果树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5671,11 +5057,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_technology_template
-
-	var_2_44[510204] = {
+	pg.base.island_technology_template[510204] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处在<color=#1E8FFE>有鱼餐馆</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5711,11 +5093,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_technology_template
-
-	var_2_45[11] = {
+	pg.base.island_technology_template[11] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>柠檬树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5751,11 +5129,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_technology_template
-
-	var_2_46[9] = {
+	pg.base.island_technology_template[9] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>白熊饮品</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5795,11 +5169,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_technology_template
-
-	var_2_47[10] = {
+	pg.base.island_technology_template[10] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>白熊饮品</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5835,11 +5205,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_technology_template
-
-	var_2_48[530001] = {
+	pg.base.island_technology_template[530001] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处制作和销售<color=#1E8FFE>啾啾简餐</color>餐品",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5875,11 +5241,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_technology_template
-
-	var_2_49[320203] = {
+	pg.base.island_technology_template[320203] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处购买<color=#1E8FFE>茶树种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5911,11 +5273,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_technology_template
-
-	var_2_50[11] = {
+	pg.base.island_technology_template[11] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>白熊饮品</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5947,11 +5305,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_technology_template
-
-	var_2_51[12] = {
+	pg.base.island_technology_template[12] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃露西</color>处购买<color=#1E8FFE>牛油果树种</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -5987,11 +5341,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_technology_template
-
-	var_2_52[29] = {
+	pg.base.island_technology_template[29] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>啾啾简餐</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6023,11 +5373,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_technology_template
-
-	var_2_53[13] = {
+	pg.base.island_technology_template[13] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>白熊饮品</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6059,11 +5405,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_technology_template
-
-	var_2_54[30] = {
+	pg.base.island_technology_template[30] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>啾啾简餐</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6095,11 +5437,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_technology_template
-
-	var_2_55[26] = {
+	pg.base.island_technology_template[26] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>啾啾简餐</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6135,11 +5473,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_technology_template
-
-	var_2_56[320204] = {
+	pg.base.island_technology_template[320204] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处购买<color=#1E8FFE>胡萝卜种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6171,11 +5505,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_technology_template
-
-	var_2_57[550204] = {
+	pg.base.island_technology_template[550204] = {
 		complete_title = "可前往<color=#1E8FFE>港口啾咖啡布莱梅</color>处查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6207,11 +5537,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_technology_template
-
-	var_2_58[540001] = {
+	pg.base.island_technology_template[540001] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6247,11 +5573,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_technology_template
-
-	var_2_59[540201] = {
+	pg.base.island_technology_template[540201] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6283,11 +5605,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_technology_template
-
-	var_2_60[12] = {
+	pg.base.island_technology_template[12] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>白熊饮品</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6323,11 +5641,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_technology_template
-
-	var_2_61[27] = {
+	pg.base.island_technology_template[27] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>啾啾简餐</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6363,11 +5677,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_technology_template
-
-	var_2_62[320206] = {
+	pg.base.island_technology_template[320206] = {
 		complete_title = "可前往<color=#1E8FFE>繁荫农圃拉科尼娅</color>处购买<color=#1E8FFE>洋葱种子</color>",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6399,11 +5709,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_technology_template
-
-	var_2_63[540202] = {
+	pg.base.island_technology_template[540202] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6435,11 +5741,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_technology_template
-
-	var_2_64[28] = {
+	pg.base.island_technology_template[28] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>啾啾简餐</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6471,11 +5773,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_technology_template
-
-	var_2_65[540204] = {
+	pg.base.island_technology_template[540204] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6507,11 +5805,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_technology_template
-
-	var_2_66[21] = {
+	pg.base.island_technology_template[21] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处商区管理中<color=#1E8FFE>有鱼餐馆</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6547,11 +5841,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_technology_template
-
-	var_2_67[540205] = {
+	pg.base.island_technology_template[540205] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处<color=#1E8FFE>乌鱼烤肉</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6583,11 +5873,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_technology_template
-
-	var_2_68[520101] = {
+	pg.base.island_technology_template[520101] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处商区管理中<color=#1E8FFE>白熊饮品</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6619,11 +5905,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_technology_template
-
-	var_2_69[530101] = {
+	pg.base.island_technology_template[530101] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处商区管理中<color=#1E8FFE>啾啾简餐</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6655,11 +5937,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_technology_template
-
-	var_2_70[540101] = {
+	pg.base.island_technology_template[540101] = {
 		complete_title = "可前往<color=#1E8FFE>港口商区阿莫玛</color>处商区管理中<color=#1E8FFE>乌鱼烤肉</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6691,11 +5969,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_technology_template
-
-	var_2_71[610101] = {
+	pg.base.island_technology_template[610101] = {
 		complete_title = "可前往<color=#1E8FFE>港口斯蒂芬妮</color>处点击<color=#1E8FFE>货运委托</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6727,11 +6001,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_technology_template
-
-	var_2_72[610401] = {
+	pg.base.island_technology_template[610401] = {
 		complete_title = "可前往<color=#1E8FFE>港口斯蒂芬妮</color>处点击<color=#1E8FFE>货运委托</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6763,11 +6033,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_technology_template
-
-	var_2_73[610102] = {
+	pg.base.island_technology_template[610102] = {
 		complete_title = "可前往<color=#1E8FFE>港口斯蒂芬妮</color>处点击<color=#1E8FFE>货运委托</color>查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -6799,11 +6065,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_technology_template
-
-	var_2_74[630201] = {
+	pg.base.island_technology_template[630201] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>木料加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6835,11 +6097,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_technology_template
-
-	var_2_75[610402] = {
+	pg.base.island_technology_template[610402] = {
 		complete_title = "可前往<color=#1E8FFE>港口斯蒂芬妮</color>处点击<color=#1E8FFE>货运委托</color>查看",
 		tech_level = "2",
 		tech_chara = 1,
@@ -6871,11 +6129,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_technology_template
-
-	var_2_76[630202] = {
+	pg.base.island_technology_template[630202] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>木料加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6907,11 +6161,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_technology_template
-
-	var_2_77[620101] = {
+	pg.base.island_technology_template[620101] = {
 		complete_title = "可前往<color=#1E8FFE>港口啾咖啡布莱梅</color>处点击<color=#1E8FFE>制作商品</color>查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6943,11 +6193,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_technology_template
-
-	var_2_78[1] = {
+	pg.base.island_technology_template[1] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>工业生产设备</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -6979,11 +6225,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_technology_template
-
-	var_2_79[630101] = {
+	pg.base.island_technology_template[630101] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>木料加工设备</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7015,11 +6257,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_technology_template
-
-	var_2_80[610403] = {
+	pg.base.island_technology_template[610403] = {
 		complete_title = "可前往<color=#1E8FFE>港口斯蒂芬妮</color>处点击<color=#1E8FFE>货运委托</color>查看",
 		tech_level = "3",
 		tech_chara = 1,
@@ -7051,11 +6289,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_technology_template
-
-	var_2_81[640201] = {
+	pg.base.island_technology_template[640201] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>工业生产设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7087,11 +6321,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_technology_template
-
-	var_2_82[660001] = {
+	pg.base.island_technology_template[660001] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>手工制作台</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7123,11 +6353,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_technology_template
-
-	var_2_83[630203] = {
+	pg.base.island_technology_template[630203] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>木料加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7159,11 +6385,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_technology_template
-
-	var_2_84[640101] = {
+	pg.base.island_technology_template[640101] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>工业生产设备</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7195,11 +6417,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_technology_template
-
-	var_2_85[640202] = {
+	pg.base.island_technology_template[640202] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>工业生产设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7231,11 +6449,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_technology_template
-
-	var_2_86[660201] = {
+	pg.base.island_technology_template[660201] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>手工制作设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7267,11 +6481,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_technology_template
-
-	var_2_87[640203] = {
+	pg.base.island_technology_template[640203] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>工业生产设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7303,11 +6513,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_technology_template
-
-	var_2_88[660202] = {
+	pg.base.island_technology_template[660202] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>手工制作设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7339,11 +6545,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_technology_template
-
-	var_2_89[660203] = {
+	pg.base.island_technology_template[660203] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>手工制作设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7375,11 +6577,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_technology_template
-
-	var_2_90[17] = {
+	pg.base.island_technology_template[17] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>电子加工设备</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7411,11 +6609,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_technology_template
-
-	var_2_91[630205] = {
+	pg.base.island_technology_template[630205] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>木料加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7447,11 +6641,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_technology_template
-
-	var_2_92[630204] = {
+	pg.base.island_technology_template[630204] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>木料加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7483,11 +6673,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_technology_template
-
-	var_2_93[660204] = {
+	pg.base.island_technology_template[660204] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>手工制作设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7519,11 +6705,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_technology_template
-
-	var_2_94[640204] = {
+	pg.base.island_technology_template[640204] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>工业生产设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7555,11 +6737,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_technology_template
-
-	var_2_95[650201] = {
+	pg.base.island_technology_template[650201] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>电子加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7591,11 +6769,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_technology_template
-
-	var_2_96[5] = {
+	pg.base.island_technology_template[5] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>手工制作设备</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7627,11 +6801,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_technology_template
-
-	var_2_97[640205] = {
+	pg.base.island_technology_template[640205] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>工业生产设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7663,11 +6833,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_technology_template
-
-	var_2_98[660205] = {
+	pg.base.island_technology_template[660205] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>手工制作设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7699,8 +6865,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.island_technology_template[650101] = {
+	pg.base.island_technology_template[650101] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处<color=#1E8FFE>电子加工设备</color>中查看",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7736,11 +6901,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_technology_template
-
-	var_3_0[660206] = {
+	pg.base.island_technology_template[660206] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>手工制作设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7772,11 +6933,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_technology_template
-
-	var_3_1[650202] = {
+	pg.base.island_technology_template[650202] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>电子加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,
@@ -7808,8 +6965,7 @@ end)()
 			9
 		}
 	}
-	pg = var_3_1
-	var_3_1.base.island_technology_template[650203] = {
+	pg.base.island_technology_template[650203] = {
 		complete_title = "可前往<color=#1E8FFE>港口基地工厂萝莎</color>处在<color=#1E8FFE>电子加工设备</color>中制作",
 		tech_level = "1",
 		tech_chara = 1,

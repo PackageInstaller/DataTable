@@ -1,73 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AddShipCommand", pm.SimpleCommand)
 
-local var_0_0 = "AddShipCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callBack
+	local var_1_2 = getProxy(DormProxy)
+	local var_1_3 = getProxy(BayProxy):getShipById(var_1_0.id)
+	local var_1_4 = getProxy(DormProxy):getRawData()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.type
-	local var_1_2 = var_2.callBack
-
-	getProxy = var_1_10006
-	DormProxy = var_1_10008
-
-	local var_1_3 = var_1_10006(var_1_10008)
-
-	getProxy = var_1_10007
-	BayProxy = var_1_10009
-
-	local var_1_4 = var_1_10007(var_1_10009)
-	local var_1_5 = var_7.getShipById(var_1_4, var_1_0)
-	local var_1_6 = var_1_3:getRawData()
-
-	pg = var_1_4
-
-	local var_1_7 = var_1_4.ConnectionMgr.GetInstance()
-
-	var_10.Send(var_1_7, 19002, {
-		ship_id = var_1_0,
-		type = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(19002, {
+		ship_id = var_1_0.id,
+		type = var_1_0.type
 	}, 19003, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_6
-
-			var_2_2.AddShip(var_2_0, var_1_5.id, var_1_1)
-
-			local var_2_1 = var_1_3
-
-			var_2_2 = var_2_2.updateDrom
-			var_2_10004 = var_1_6
-			BackYardConst = var_5
-
-			var_2_2(var_2_1, var_2_10004, var_5.DORM_UPDATE_TYPE_SHIP)
-
-			local var_2_3 = arg_1_0
-
-			var_2_2 = var_2_2.sendNotification
-			GAME = var_2_10004
-
-			var_2_2(var_2_3, var_2_10004.ADD_SHIP_DONE, {
-				id = var_1_0,
-				type = var_1_1
+			var_1_4:AddShip(var_1_3.id, var_0)
+			var_1_2:updateDrom(var_1_4, BackYardConst.DORM_UPDATE_TYPE_SHIP)
+			arg_1_0:sendNotification(GAME.ADD_SHIP_DONE, {
+				id = var_0,
+				type = var_0
 			})
 		else
-			pg = var_2_2
-
-			local var_2_4 = var_2_2.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004("backyard_addShip", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_addShip", arg_2_0.result))
 		end
 
-		if var_1_2 then
-			var_1_2()
+		if var_1_1 then
+			var_1_1()
 		end
 
 		return
@@ -76,4 +32,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_series_enemy_story") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_series_enemy_story"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_series_enemy_story = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_series_enemy_story
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_series_enemy_story = rawget(pg, "activity_series_enemy_story") or setmetatable({
+	__name = "activity_series_enemy_story"
+}, confNEO)
+pg.activity_series_enemy_story.all = {
 	1,
 	2,
 	3,
@@ -205,25 +182,11 @@ var_0_3.all = {
 	186,
 	187
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_series_enemy_story = {}
+pg.base = pg.base or {}
+pg.base.activity_series_enemy_story = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_series_enemy_story
-
-	var_1_0[1] = {
+	pg.base.activity_series_enemy_story[1] = {
 		name = "TS-1",
 		story = "JIDIFENGBAO3",
 		type = 1,
@@ -246,11 +209,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			500
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_series_enemy_story
-
-	var_1_1[2] = {
+	pg.base.activity_series_enemy_story[2] = {
 		name = "TS-2",
 		story = "JIDIFENGBAO4",
 		type = 3,
@@ -273,11 +232,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_series_enemy_story
-
-	var_1_2[3] = {
+	pg.base.activity_series_enemy_story[3] = {
 		name = "TS-3",
 		story = "JIDIFENGBAO5",
 		type = 1,
@@ -302,11 +257,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			2
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_series_enemy_story
-
-	var_1_3[4] = {
+	pg.base.activity_series_enemy_story[4] = {
 		name = "TS-4",
 		story = "1719601",
 		type = 3,
@@ -329,11 +280,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			3
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_series_enemy_story
-
-	var_1_4[5] = {
+	pg.base.activity_series_enemy_story[5] = {
 		name = "TS-5",
 		story = "JIDIFENGBAO7",
 		type = 1,
@@ -358,11 +305,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			4
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_series_enemy_story
-
-	var_1_5[6] = {
+	pg.base.activity_series_enemy_story[6] = {
 		name = "TS-6",
 		story = "JIDIFENGBAO8",
 		type = 3,
@@ -385,11 +328,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			5
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_series_enemy_story
-
-	var_1_6[7] = {
+	pg.base.activity_series_enemy_story[7] = {
 		name = "TS-7",
 		story = "JIDIFENGBAO9",
 		type = 1,
@@ -414,11 +353,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			6
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_series_enemy_story
-
-	var_1_7[8] = {
+	pg.base.activity_series_enemy_story[8] = {
 		name = "TS-8",
 		story = "JIDIFENGBAO10",
 		type = 3,
@@ -441,11 +376,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			7
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_series_enemy_story
-
-	var_1_8[9] = {
+	pg.base.activity_series_enemy_story[9] = {
 		name = "TS-9",
 		story = "JIDIFENGBAO11",
 		type = 1,
@@ -470,11 +401,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			8
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_series_enemy_story
-
-	var_1_9[10] = {
+	pg.base.activity_series_enemy_story[10] = {
 		name = "TS-10",
 		story = "JIDIFENGBAO12",
 		type = 3,
@@ -497,11 +424,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			9
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_series_enemy_story
-
-	var_1_10[11] = {
+	pg.base.activity_series_enemy_story[11] = {
 		name = "TSH-1",
 		story = "JIDIFENGBAO13",
 		type = 2,
@@ -524,11 +447,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_series_enemy_story
-
-	var_1_11[12] = {
+	pg.base.activity_series_enemy_story[12] = {
 		name = "TSH-2",
 		story = "JIDIFENGBAO14",
 		type = 2,
@@ -553,11 +472,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			11
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_series_enemy_story
-
-	var_1_12[13] = {
+	pg.base.activity_series_enemy_story[13] = {
 		name = "TSH-3",
 		story = "JIDIFENGBAO15",
 		type = 2,
@@ -582,11 +497,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			12
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_series_enemy_story
-
-	var_1_13[14] = {
+	pg.base.activity_series_enemy_story[14] = {
 		name = "TSH-4",
 		story = "JIDIFENGBAO16",
 		type = 2,
@@ -611,11 +522,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			13
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_series_enemy_story
-
-	var_1_14[15] = {
+	pg.base.activity_series_enemy_story[15] = {
 		name = "TSH-5",
 		story = "JIDIFENGBAO17",
 		type = 2,
@@ -640,11 +547,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			14
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_series_enemy_story
-
-	var_1_15[16] = {
+	pg.base.activity_series_enemy_story[16] = {
 		name = "TSH-6",
 		story = "1719602",
 		type = 2,
@@ -667,11 +570,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			15
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_series_enemy_story
-
-	var_1_16[17] = {
+	pg.base.activity_series_enemy_story[17] = {
 		trigger_type = "",
 		name = "基地1",
 		story = "",
@@ -690,11 +589,7 @@ var_0_3.base.activity_series_enemy_story = {}
 		pass_awards = 0,
 		id = 17
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_series_enemy_story
-
-	var_1_17[18] = {
+	pg.base.activity_series_enemy_story[18] = {
 		trigger_type = "",
 		name = "基地2",
 		story = "",
@@ -713,11 +608,7 @@ var_0_3.base.activity_series_enemy_story = {}
 		pass_awards = 0,
 		id = 18
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_series_enemy_story
-
-	var_1_18[19] = {
+	pg.base.activity_series_enemy_story[19] = {
 		trigger_type = "",
 		name = "基地3",
 		story = "",
@@ -736,11 +627,7 @@ var_0_3.base.activity_series_enemy_story = {}
 		pass_awards = 0,
 		id = 19
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_series_enemy_story
-
-	var_1_19[20] = {
+	pg.base.activity_series_enemy_story[20] = {
 		trigger_type = "",
 		name = "基地4",
 		story = "",
@@ -759,11 +646,7 @@ var_0_3.base.activity_series_enemy_story = {}
 		pass_awards = 0,
 		id = 20
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_series_enemy_story
-
-	var_1_20[21] = {
+	pg.base.activity_series_enemy_story[21] = {
 		trigger_type = "",
 		name = "基地5",
 		story = "",
@@ -782,11 +665,7 @@ var_0_3.base.activity_series_enemy_story = {}
 		pass_awards = 0,
 		id = 21
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_series_enemy_story
-
-	var_1_21[31] = {
+	pg.base.activity_series_enemy_story[31] = {
 		name = "叛恶者之歌",
 		story = "HUANYINLAIDAOTONGXINXUEYUAN2",
 		type = 1,
@@ -809,11 +688,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			0
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_series_enemy_story
-
-	var_1_22[32] = {
+	pg.base.activity_series_enemy_story[32] = {
 		name = "组成乐队吧♪",
 		story = "1819601",
 		type = 3,
@@ -836,11 +711,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			31
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_series_enemy_story
-
-	var_1_23[33] = {
+	pg.base.activity_series_enemy_story[33] = {
 		name = "巨大指挥官",
 		story = "1819602",
 		type = 3,
@@ -863,11 +734,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			32
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_series_enemy_story
-
-	var_1_24[34] = {
+	pg.base.activity_series_enemy_story[34] = {
 		name = "健康活力Fight",
 		story = "1819603",
 		type = 3,
@@ -890,11 +757,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			33
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_series_enemy_story
-
-	var_1_25[35] = {
+	pg.base.activity_series_enemy_story[35] = {
 		name = "拯救老师大作战",
 		story = "HUANYINLAIDAOTONGXINXUEYUAN6",
 		type = 1,
@@ -917,11 +780,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			34
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_series_enemy_story
-
-	var_1_26[36] = {
+	pg.base.activity_series_enemy_story[36] = {
 		name = "与童心重逢之时",
 		story = "1819604",
 		type = 3,
@@ -944,11 +803,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			35
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_series_enemy_story
-
-	var_1_27[37] = {
+	pg.base.activity_series_enemy_story[37] = {
 		name = "失控的童心",
 		story = "1819605",
 		type = 3,
@@ -971,11 +826,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			36
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_series_enemy_story
-
-	var_1_28[38] = {
+	pg.base.activity_series_enemy_story[38] = {
 		name = "愿童心永驻",
 		story = "HUANYINLAIDAOTONGXINXUEYUAN9",
 		type = 1,
@@ -998,11 +849,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			37
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_series_enemy_story
-
-	var_1_29[39] = {
+	pg.base.activity_series_enemy_story[39] = {
 		name = "CH-1 爆炸疑云",
 		story = "MICAIDUSHIDEXUNZONGZHE2",
 		type = 1,
@@ -1025,11 +872,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			0
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_series_enemy_story
-
-	var_1_30[40] = {
+	pg.base.activity_series_enemy_story[40] = {
 		name = "CH-2 兔警官探案中",
 		story = "MICAIDUSHIDEXUNZONGZHE3",
 		type = 1,
@@ -1052,11 +895,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			39
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_series_enemy_story
-
-	var_1_31[41] = {
+	pg.base.activity_series_enemy_story[41] = {
 		name = "CH-3 战略性约会进行时",
 		story = "MICAIDUSHIDEXUNZONGZHE4",
 		type = 1,
@@ -1079,11 +918,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			40
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_series_enemy_story
-
-	var_1_32[42] = {
+	pg.base.activity_series_enemy_story[42] = {
 		name = "CH-4 公路维和组，出击！",
 		story = "MICAIDUSHIDEXUNZONGZHE5",
 		type = 1,
@@ -1106,11 +941,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			41
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_series_enemy_story
-
-	var_1_33[43] = {
+	pg.base.activity_series_enemy_story[43] = {
 		name = "CH-5 问题的关键",
 		story = "MICAIDUSHIDEXUNZONGZHE6",
 		type = 1,
@@ -1133,11 +964,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			42
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_series_enemy_story
-
-	var_1_34[44] = {
+	pg.base.activity_series_enemy_story[44] = {
 		name = "CH-6 说来话长",
 		story = "MICAIDUSHIDEXUNZONGZHE7",
 		type = 1,
@@ -1160,11 +987,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			43
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_series_enemy_story
-
-	var_1_35[45] = {
+	pg.base.activity_series_enemy_story[45] = {
 		name = "CH-7 谈心教室",
 		story = "MICAIDUSHIDEXUNZONGZHE8",
 		type = 1,
@@ -1187,11 +1010,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			44
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_series_enemy_story
-
-	var_1_36[46] = {
+	pg.base.activity_series_enemy_story[46] = {
 		name = "CH-8 迷彩都市之夜",
 		story = "MICAIDUSHIDEXUNZONGZHE9",
 		type = 1,
@@ -1214,11 +1033,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			45
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_series_enemy_story
-
-	var_1_37[47] = {
+	pg.base.activity_series_enemy_story[47] = {
 		name = "CH-9 谁是卧底？",
 		story = "MICAIDUSHIDEXUNZONGZHE10",
 		type = 1,
@@ -1241,11 +1056,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			46
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_series_enemy_story
-
-	var_1_38[48] = {
+	pg.base.activity_series_enemy_story[48] = {
 		name = "EPS-1 一次调查",
 		story = "YOUMIYAGUANQIAPIAN1",
 		type = 1,
@@ -1268,11 +1079,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			48
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_series_enemy_story
-
-	var_1_39[49] = {
+	pg.base.activity_series_enemy_story[49] = {
 		name = "EPS-2 一场寻宝",
 		story = "YOUMIYAGUANQIAPIAN2",
 		type = 1,
@@ -1297,11 +1104,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			49
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_series_enemy_story
-
-	var_1_40[50] = {
+	pg.base.activity_series_enemy_story[50] = {
 		name = "EPS-3 一次冒险",
 		story = "YOUMIYAGUANQIAPIAN3",
 		type = 1,
@@ -1326,11 +1129,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			50
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_series_enemy_story
-
-	var_1_41[51] = {
+	pg.base.activity_series_enemy_story[51] = {
 		name = "EP1-1 起始之海",
 		story = "YOUMIYAGUANQIAPIAN4",
 		type = 1,
@@ -1355,11 +1154,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			51
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_series_enemy_story
-
-	var_1_42[52] = {
+	pg.base.activity_series_enemy_story[52] = {
 		name = "EP1-2 舒适海滩",
 		story = "YOUMIYAGUANQIAPIAN5",
 		type = 1,
@@ -1384,11 +1179,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			52
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_series_enemy_story
-
-	var_1_43[53] = {
+	pg.base.activity_series_enemy_story[53] = {
 		name = "EP1-3 险峻石滩",
 		story = "YOUMIYAGUANQIAPIAN6",
 		type = 1,
@@ -1413,11 +1204,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			53
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_series_enemy_story
-
-	var_1_44[54] = {
+	pg.base.activity_series_enemy_story[54] = {
 		name = "EP1-4 合流·其一",
 		story = "YOUMIYAGUANQIAPIAN7",
 		type = 1,
@@ -1442,11 +1229,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			54
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_series_enemy_story
-
-	var_1_45[55] = {
+	pg.base.activity_series_enemy_story[55] = {
 		name = "EP1-5 合流·其二",
 		story = "YOUMIYAGUANQIAPIAN8",
 		type = 1,
@@ -1471,11 +1254,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			55
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_series_enemy_story
-
-	var_1_46[56] = {
+	pg.base.activity_series_enemy_story[56] = {
 		name = "EP1-6 天际塔：起始区段",
 		story = "YOUMIYAGUANQIAPIAN9",
 		type = 1,
@@ -1500,11 +1279,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			56
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_series_enemy_story
-
-	var_1_47[57] = {
+	pg.base.activity_series_enemy_story[57] = {
 		name = "EP1-7 向上进发",
 		story = "YOUMIYAGUANQIAPIAN10",
 		type = 1,
@@ -1538,11 +1313,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_series_enemy_story
-
-	var_1_48[58] = {
+	pg.base.activity_series_enemy_story[58] = {
 		name = "EP2-1 丰水湖",
 		story = "YOUMIYAGUANQIAPIAN11",
 		type = 1,
@@ -1567,11 +1338,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			58
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_series_enemy_story
-
-	var_1_49[59] = {
+	pg.base.activity_series_enemy_story[59] = {
 		name = "EP2-2 丰饶林地",
 		story = "YOUMIYAGUANQIAPIAN12",
 		type = 1,
@@ -1596,11 +1363,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			59
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_series_enemy_story
-
-	var_1_50[60] = {
+	pg.base.activity_series_enemy_story[60] = {
 		name = "EP2-3 青草区",
 		story = "YOUMIYAGUANQIAPIAN13",
 		type = 1,
@@ -1625,11 +1388,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			60
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_series_enemy_story
-
-	var_1_51[61] = {
+	pg.base.activity_series_enemy_story[61] = {
 		name = "EP2-4 腐草区",
 		story = "YOUMIYAGUANQIAPIAN14",
 		type = 1,
@@ -1654,11 +1413,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			61
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_series_enemy_story
-
-	var_1_52[62] = {
+	pg.base.activity_series_enemy_story[62] = {
 		name = "EP2-5 腐水河流",
 		story = "YOUMIYAGUANQIAPIAN15",
 		type = 1,
@@ -1683,11 +1438,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			62
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_series_enemy_story
-
-	var_1_53[63] = {
+	pg.base.activity_series_enemy_story[63] = {
 		name = "EP2-6 废弃村落",
 		story = "YOUMIYAGUANQIAPIAN16",
 		type = 1,
@@ -1712,11 +1463,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			63
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_series_enemy_story
-
-	var_1_54[64] = {
+	pg.base.activity_series_enemy_story[64] = {
 		name = "EP2-7 腐水湖",
 		story = "1947001",
 		type = 3,
@@ -1741,11 +1488,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			64
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_series_enemy_story
-
-	var_1_55[65] = {
+	pg.base.activity_series_enemy_story[65] = {
 		name = "EP2-8 天际塔：L1区段",
 		story = "YOUMIYAGUANQIAPIAN18",
 		type = 1,
@@ -1770,11 +1513,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			65
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_series_enemy_story
-
-	var_1_56[66] = {
+	pg.base.activity_series_enemy_story[66] = {
 		name = "EP3-1 腐水海",
 		story = "1947002",
 		type = 3,
@@ -1808,11 +1547,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_series_enemy_story
-
-	var_1_57[67] = {
+	pg.base.activity_series_enemy_story[67] = {
 		name = "EP3-2 腐蚀林地",
 		story = "YOUMIYAGUANQIAPIAN20",
 		type = 1,
@@ -1837,11 +1572,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			67
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_series_enemy_story
-
-	var_1_58[68] = {
+	pg.base.activity_series_enemy_story[68] = {
 		name = "EP3-3 死亡荒原",
 		story = "YOUMIYAGUANQIAPIAN21",
 		type = 1,
@@ -1866,11 +1597,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			68
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_series_enemy_story
-
-	var_1_59[69] = {
+	pg.base.activity_series_enemy_story[69] = {
 		name = "EP3-4 废弃哨站",
 		story = "YOUMIYAGUANQIAPIAN22",
 		type = 1,
@@ -1895,11 +1622,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			69
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_series_enemy_story
-
-	var_1_60[70] = {
+	pg.base.activity_series_enemy_story[70] = {
 		name = "EP3-5 大裂谷",
 		story = "YOUMIYAGUANQIAPIAN23",
 		type = 1,
@@ -1924,11 +1647,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			70
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_series_enemy_story
-
-	var_1_61[71] = {
+	pg.base.activity_series_enemy_story[71] = {
 		name = "EP3-6 天际塔：L2区段",
 		story = "YOUMIYAGUANQIAPIAN24",
 		type = 1,
@@ -1953,11 +1672,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			71
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_series_enemy_story
-
-	var_1_62[72] = {
+	pg.base.activity_series_enemy_story[72] = {
 		name = "EP4-1 鬼影群山",
 		story = "YOUMIYAGUANQIAPIAN25",
 		type = 1,
@@ -1991,11 +1706,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_series_enemy_story
-
-	var_1_63[73] = {
+	pg.base.activity_series_enemy_story[73] = {
 		name = "EP4-2 废弃都市",
 		story = "YOUMIYAGUANQIAPIAN26",
 		type = 1,
@@ -2020,11 +1731,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			73
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_series_enemy_story
-
-	var_1_64[74] = {
+	pg.base.activity_series_enemy_story[74] = {
 		name = "EP4-3 天际塔：L3区段",
 		story = "YOUMIYAGUANQIAPIAN27",
 		type = 1,
@@ -2049,11 +1756,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			74
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_series_enemy_story
-
-	var_1_65[75] = {
+	pg.base.activity_series_enemy_story[75] = {
 		name = "EP5-1 天际海",
 		story = "YOUMIYAGUANQIAPIAN28",
 		type = 1,
@@ -2087,11 +1790,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_series_enemy_story
-
-	var_1_66[76] = {
+	pg.base.activity_series_enemy_story[76] = {
 		name = "EP5-2 大护盾",
 		story = "YOUMIYAGUANQIAPIAN29",
 		type = 1,
@@ -2116,11 +1815,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			76
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_series_enemy_story
-
-	var_1_67[77] = {
+	pg.base.activity_series_enemy_story[77] = {
 		name = "EP5-3 核心都市区",
 		story = "YOUMIYAGUANQIAPIAN30",
 		type = 1,
@@ -2145,11 +1840,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			77
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_series_enemy_story
-
-	var_1_68[78] = {
+	pg.base.activity_series_enemy_story[78] = {
 		name = "EP5-4 天际塔：塔尖区段",
 		story = "YOUMIYAGUANQIAPIAN31",
 		type = 1,
@@ -2174,11 +1865,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			78
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_series_enemy_story
-
-	var_1_69[79] = {
+	pg.base.activity_series_enemy_story[79] = {
 		name = "EP5-5 决战",
 		story = "1947003",
 		type = 3,
@@ -2203,11 +1890,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_series_enemy_story
-
-	var_1_70[80] = {
+	pg.base.activity_series_enemy_story[80] = {
 		name = "EPS-4 尾声",
 		story = "YOUMIYAGUANQIAPIAN33",
 		type = 1,
@@ -2232,11 +1915,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			80
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_series_enemy_story
-
-	var_1_71[81] = {
+	pg.base.activity_series_enemy_story[81] = {
 		name = "EPS-5 尾声的尾声",
 		story = "YOUMIYAGUANQIAPIAN34",
 		type = 1,
@@ -2261,11 +1940,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_series_enemy_story
-
-	var_1_72[82] = {
+	pg.base.activity_series_enemy_story[82] = {
 		name = "起始区段",
 		story = "",
 		type = 4,
@@ -2290,11 +1965,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_series_enemy_story
-
-	var_1_73[83] = {
+	pg.base.activity_series_enemy_story[83] = {
 		name = "险峻石滩",
 		story = "",
 		type = 4,
@@ -2319,11 +1990,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_series_enemy_story
-
-	var_1_74[84] = {
+	pg.base.activity_series_enemy_story[84] = {
 		name = "起始之海",
 		story = "",
 		type = 4,
@@ -2348,11 +2015,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_series_enemy_story
-
-	var_1_75[85] = {
+	pg.base.activity_series_enemy_story[85] = {
 		name = "舒适海滩",
 		story = "",
 		type = 4,
@@ -2377,11 +2040,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_series_enemy_story
-
-	var_1_76[86] = {
+	pg.base.activity_series_enemy_story[86] = {
 		name = "丰水湖",
 		story = "",
 		type = 4,
@@ -2406,11 +2065,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_series_enemy_story
-
-	var_1_77[87] = {
+	pg.base.activity_series_enemy_story[87] = {
 		name = "丰饶林地",
 		story = "",
 		type = 4,
@@ -2435,11 +2090,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_series_enemy_story
-
-	var_1_78[88] = {
+	pg.base.activity_series_enemy_story[88] = {
 		name = "L1区段",
 		story = "",
 		type = 4,
@@ -2464,11 +2115,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_series_enemy_story
-
-	var_1_79[89] = {
+	pg.base.activity_series_enemy_story[89] = {
 		name = "废弃村落",
 		story = "",
 		type = 4,
@@ -2493,11 +2140,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_series_enemy_story
-
-	var_1_80[90] = {
+	pg.base.activity_series_enemy_story[90] = {
 		name = "腐水湖",
 		story = "",
 		type = 4,
@@ -2522,11 +2165,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_series_enemy_story
-
-	var_1_81[91] = {
+	pg.base.activity_series_enemy_story[91] = {
 		name = "腐水海",
 		story = "",
 		type = 4,
@@ -2551,11 +2190,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_series_enemy_story
-
-	var_1_82[92] = {
+	pg.base.activity_series_enemy_story[92] = {
 		name = "腐蚀林地",
 		story = "",
 		type = 4,
@@ -2580,11 +2215,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_series_enemy_story
-
-	var_1_83[93] = {
+	pg.base.activity_series_enemy_story[93] = {
 		name = "死亡荒原",
 		story = "",
 		type = 4,
@@ -2609,11 +2240,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_series_enemy_story
-
-	var_1_84[94] = {
+	pg.base.activity_series_enemy_story[94] = {
 		name = "废弃哨站",
 		story = "",
 		type = 4,
@@ -2638,11 +2265,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_series_enemy_story
-
-	var_1_85[95] = {
+	pg.base.activity_series_enemy_story[95] = {
 		name = "大裂谷",
 		story = "",
 		type = 4,
@@ -2667,11 +2290,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_series_enemy_story
-
-	var_1_86[96] = {
+	pg.base.activity_series_enemy_story[96] = {
 		name = "L2区段",
 		story = "",
 		type = 4,
@@ -2696,11 +2315,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_series_enemy_story
-
-	var_1_87[97] = {
+	pg.base.activity_series_enemy_story[97] = {
 		name = "鬼影群山",
 		story = "",
 		type = 4,
@@ -2725,11 +2340,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_series_enemy_story
-
-	var_1_88[98] = {
+	pg.base.activity_series_enemy_story[98] = {
 		name = "废弃都市",
 		story = "",
 		type = 4,
@@ -2754,11 +2365,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_series_enemy_story
-
-	var_1_89[99] = {
+	pg.base.activity_series_enemy_story[99] = {
 		name = "L3区段",
 		story = "",
 		type = 4,
@@ -2783,11 +2390,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			79
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_series_enemy_story
-
-	var_1_90[100] = {
+	pg.base.activity_series_enemy_story[100] = {
 		name = "起始区段",
 		story = "",
 		type = 4,
@@ -2810,11 +2413,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_series_enemy_story
-
-	var_1_91[101] = {
+	pg.base.activity_series_enemy_story[101] = {
 		name = "险峻石滩",
 		story = "",
 		type = 4,
@@ -2837,11 +2436,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_series_enemy_story
-
-	var_1_92[102] = {
+	pg.base.activity_series_enemy_story[102] = {
 		name = "起始之海",
 		story = "",
 		type = 4,
@@ -2864,11 +2459,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_series_enemy_story
-
-	var_1_93[103] = {
+	pg.base.activity_series_enemy_story[103] = {
 		name = "舒适海滩",
 		story = "",
 		type = 4,
@@ -2891,11 +2482,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_series_enemy_story
-
-	var_1_94[104] = {
+	pg.base.activity_series_enemy_story[104] = {
 		name = "丰水湖",
 		story = "",
 		type = 4,
@@ -2918,11 +2505,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_series_enemy_story
-
-	var_1_95[105] = {
+	pg.base.activity_series_enemy_story[105] = {
 		name = "丰饶林地",
 		story = "",
 		type = 4,
@@ -2945,11 +2528,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_series_enemy_story
-
-	var_1_96[106] = {
+	pg.base.activity_series_enemy_story[106] = {
 		name = "L1区段",
 		story = "",
 		type = 4,
@@ -2972,11 +2551,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_series_enemy_story
-
-	var_1_97[107] = {
+	pg.base.activity_series_enemy_story[107] = {
 		name = "废弃村落",
 		story = "",
 		type = 4,
@@ -2999,11 +2574,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_series_enemy_story
-
-	var_1_98[108] = {
+	pg.base.activity_series_enemy_story[108] = {
 		name = "腐水湖",
 		story = "",
 		type = 4,
@@ -3026,8 +2597,7 @@ var_0_3.base.activity_series_enemy_story = {}
 			81
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_series_enemy_story[109] = {
+	pg.base.activity_series_enemy_story[109] = {
 		name = "腐水海",
 		story = "",
 		type = 4,
@@ -3054,11 +2624,7 @@ var_0_3.base.activity_series_enemy_story = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_series_enemy_story
-
-	var_2_0[110] = {
+	pg.base.activity_series_enemy_story[110] = {
 		name = "腐蚀林地",
 		story = "",
 		type = 4,
@@ -3081,11 +2647,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_series_enemy_story
-
-	var_2_1[111] = {
+	pg.base.activity_series_enemy_story[111] = {
 		name = "死亡荒原",
 		story = "",
 		type = 4,
@@ -3108,11 +2670,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_series_enemy_story
-
-	var_2_2[112] = {
+	pg.base.activity_series_enemy_story[112] = {
 		name = "废弃哨站",
 		story = "",
 		type = 4,
@@ -3135,11 +2693,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_series_enemy_story
-
-	var_2_3[113] = {
+	pg.base.activity_series_enemy_story[113] = {
 		name = "大裂谷",
 		story = "",
 		type = 4,
@@ -3162,11 +2716,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_series_enemy_story
-
-	var_2_4[114] = {
+	pg.base.activity_series_enemy_story[114] = {
 		name = "L2区段",
 		story = "",
 		type = 4,
@@ -3189,11 +2739,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_series_enemy_story
-
-	var_2_5[115] = {
+	pg.base.activity_series_enemy_story[115] = {
 		name = "鬼影群山",
 		story = "",
 		type = 4,
@@ -3216,11 +2762,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_series_enemy_story
-
-	var_2_6[116] = {
+	pg.base.activity_series_enemy_story[116] = {
 		name = "废弃都市",
 		story = "",
 		type = 4,
@@ -3243,11 +2785,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_series_enemy_story
-
-	var_2_7[117] = {
+	pg.base.activity_series_enemy_story[117] = {
 		name = "L3区段",
 		story = "",
 		type = 4,
@@ -3270,11 +2808,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_series_enemy_story
-
-	var_2_8[118] = {
+	pg.base.activity_series_enemy_story[118] = {
 		name = "天际海",
 		story = "",
 		type = 4,
@@ -3297,11 +2831,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_series_enemy_story
-
-	var_2_9[119] = {
+	pg.base.activity_series_enemy_story[119] = {
 		name = "塔尖区段",
 		story = "",
 		type = 4,
@@ -3324,11 +2854,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_series_enemy_story
-
-	var_2_10[120] = {
+	pg.base.activity_series_enemy_story[120] = {
 		name = "核心都市区",
 		story = "",
 		type = 4,
@@ -3351,11 +2877,7 @@ end)()
 			81
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_series_enemy_story
-
-	var_2_11[121] = {
+	pg.base.activity_series_enemy_story[121] = {
 		name = "EP1-1 初见即毕业",
 		story = "QIYUANXIADEMIMI2",
 		type = 1,
@@ -3378,11 +2900,7 @@ end)()
 			121
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_series_enemy_story
-
-	var_2_12[122] = {
+	pg.base.activity_series_enemy_story[122] = {
 		name = "EP1-2 初入奇渊",
 		story = "QIYUANXIADEMIMI3",
 		type = 1,
@@ -3407,11 +2925,7 @@ end)()
 			122
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_series_enemy_story
-
-	var_2_13[123] = {
+	pg.base.activity_series_enemy_story[123] = {
 		name = "EP1-3 再见还是毕业",
 		story = "QIYUANXIADEMIMI4",
 		type = 1,
@@ -3436,11 +2950,7 @@ end)()
 			123
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_series_enemy_story
-
-	var_2_14[124] = {
+	pg.base.activity_series_enemy_story[124] = {
 		name = "EP1-4 再度启程",
 		story = "QIYUANXIADEMIMI5",
 		type = 1,
@@ -3465,11 +2975,7 @@ end)()
 			124
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_series_enemy_story
-
-	var_2_15[125] = {
+	pg.base.activity_series_enemy_story[125] = {
 		name = "EP2-1 冰喉峡谷",
 		story = "QIYUANXIADEMIMI6",
 		type = 1,
@@ -3494,11 +3000,7 @@ end)()
 			125
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_series_enemy_story
-
-	var_2_16[126] = {
+	pg.base.activity_series_enemy_story[126] = {
 		name = "EP2-2 极光之地",
 		story = "QIYUANXIADEMIMI7",
 		type = 1,
@@ -3523,11 +3025,7 @@ end)()
 			126
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_series_enemy_story
-
-	var_2_17[127] = {
+	pg.base.activity_series_enemy_story[127] = {
 		name = "EP2-3 陷阱",
 		story = "QIYUANXIADEMIMI8",
 		type = 1,
@@ -3552,11 +3050,7 @@ end)()
 			127
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_series_enemy_story
-
-	var_2_18[128] = {
+	pg.base.activity_series_enemy_story[128] = {
 		name = "EP2-4 重逢",
 		story = "QIYUANXIADEMIMI9",
 		type = 1,
@@ -3581,11 +3075,7 @@ end)()
 			128
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_series_enemy_story
-
-	var_2_19[129] = {
+	pg.base.activity_series_enemy_story[129] = {
 		name = "EP2-5 过去的事",
 		story = "QIYUANXIADEMIMI10",
 		type = 1,
@@ -3610,11 +3100,7 @@ end)()
 			129
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_series_enemy_story
-
-	var_2_20[130] = {
+	pg.base.activity_series_enemy_story[130] = {
 		name = "EP2-6 古老的馈赠",
 		story = "QIYUANXIADEMIMI11",
 		type = 1,
@@ -3639,11 +3125,7 @@ end)()
 			130
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_series_enemy_story
-
-	var_2_21[131] = {
+	pg.base.activity_series_enemy_story[131] = {
 		name = "EP2-7 寒冬要塞",
 		story = "QIYUANXIADEMIMI12",
 		type = 1,
@@ -3668,11 +3150,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_series_enemy_story
-
-	var_2_22[132] = {
+	pg.base.activity_series_enemy_story[132] = {
 		name = "EP3-1 秽沼瘴潭之战",
 		story = "1956001",
 		type = 3,
@@ -3697,11 +3175,7 @@ end)()
 			132
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_series_enemy_story
-
-	var_2_23[133] = {
+	pg.base.activity_series_enemy_story[133] = {
 		name = "EP3-2 异化法师营地",
 		story = "QIYUANXIADEMIMI14",
 		type = 1,
@@ -3726,11 +3200,7 @@ end)()
 			133
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_series_enemy_story
-
-	var_2_24[134] = {
+	pg.base.activity_series_enemy_story[134] = {
 		name = "EP3-3 结盟仪式",
 		story = "QIYUANXIADEMIMI15",
 		type = 1,
@@ -3755,11 +3225,7 @@ end)()
 			134
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_series_enemy_story
-
-	var_2_25[135] = {
+	pg.base.activity_series_enemy_story[135] = {
 		name = "EP3-4 和谈生变",
 		story = "1956002",
 		type = 3,
@@ -3784,11 +3250,7 @@ end)()
 			135
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_series_enemy_story
-
-	var_2_26[136] = {
+	pg.base.activity_series_enemy_story[136] = {
 		name = "EP3-5 预言之子",
 		story = "QIYUANXIADEMIMI17",
 		type = 1,
@@ -3813,11 +3275,7 @@ end)()
 			136
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_series_enemy_story
-
-	var_2_27[137] = {
+	pg.base.activity_series_enemy_story[137] = {
 		name = "EP4-1 遗忘之地",
 		story = "1956003",
 		type = 3,
@@ -3842,11 +3300,7 @@ end)()
 			137
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_series_enemy_story
-
-	var_2_28[138] = {
+	pg.base.activity_series_enemy_story[138] = {
 		name = "EP4-2 不落要塞",
 		story = "QIYUANXIADEMIMI19",
 		type = 1,
@@ -3871,11 +3325,7 @@ end)()
 			138
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_series_enemy_story
-
-	var_2_29[139] = {
+	pg.base.activity_series_enemy_story[139] = {
 		name = "EP4-3 幻影之境",
 		story = "1956004",
 		type = 3,
@@ -3900,11 +3350,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_series_enemy_story
-
-	var_2_30[140] = {
+	pg.base.activity_series_enemy_story[140] = {
 		name = "EP4-4 黎明的终战",
 		story = "QIYUANXIADEMIMI21",
 		type = 1,
@@ -3929,11 +3375,7 @@ end)()
 			140
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_series_enemy_story
-
-	var_2_31[141] = {
+	pg.base.activity_series_enemy_story[141] = {
 		name = "EP4-5 神庙漫步",
 		story = "QIYUANXIADEMIMI22",
 		type = 1,
@@ -3958,11 +3400,7 @@ end)()
 			141
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_series_enemy_story
-
-	var_2_32[142] = {
+	pg.base.activity_series_enemy_story[142] = {
 		name = "EP4-6 回忆觉醒",
 		story = "QIYUANXIADEMIMI23",
 		type = 1,
@@ -3987,11 +3425,7 @@ end)()
 			142
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_series_enemy_story
-
-	var_2_33[143] = {
+	pg.base.activity_series_enemy_story[143] = {
 		name = "EP4-7 寂灭魔法塔",
 		story = "QIYUANXIADEMIMI24",
 		type = 1,
@@ -4016,11 +3450,7 @@ end)()
 			143
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_series_enemy_story
-
-	var_2_34[144] = {
+	pg.base.activity_series_enemy_story[144] = {
 		name = "EP4-8 逝去的时代",
 		story = "QIYUANXIADEMIMI25",
 		type = 1,
@@ -4045,11 +3475,7 @@ end)()
 			144
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_series_enemy_story
-
-	var_2_35[145] = {
+	pg.base.activity_series_enemy_story[145] = {
 		name = "EP4-9 沉睡之地",
 		story = "QIYUANXIADEMIMI26",
 		type = 1,
@@ -4074,11 +3500,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_series_enemy_story
-
-	var_2_36[146] = {
+	pg.base.activity_series_enemy_story[146] = {
 		name = "EP5-1 反攻的第一枪",
 		story = "QIYUANXIADEMIMI27",
 		type = 1,
@@ -4103,11 +3525,7 @@ end)()
 			146
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_series_enemy_story
-
-	var_2_37[147] = {
+	pg.base.activity_series_enemy_story[147] = {
 		name = "EP5-2 恩泽城之战",
 		story = "1956005",
 		type = 3,
@@ -4132,11 +3550,7 @@ end)()
 			147
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_series_enemy_story
-
-	var_2_38[148] = {
+	pg.base.activity_series_enemy_story[148] = {
 		name = "EP5-3 终结与新生",
 		story = "QIYUANXIADEMIMI29",
 		type = 1,
@@ -4161,11 +3575,7 @@ end)()
 			148
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_series_enemy_story
-
-	var_2_39[149] = {
+	pg.base.activity_series_enemy_story[149] = {
 		name = "恩泽城",
 		story = "",
 		type = 4,
@@ -4190,11 +3600,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_series_enemy_story
-
-	var_2_40[150] = {
+	pg.base.activity_series_enemy_story[150] = {
 		name = "冰喉峡谷",
 		story = "",
 		type = 4,
@@ -4217,11 +3623,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_series_enemy_story
-
-	var_2_41[151] = {
+	pg.base.activity_series_enemy_story[151] = {
 		name = "极光之地",
 		story = "",
 		type = 4,
@@ -4244,11 +3646,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_series_enemy_story
-
-	var_2_42[152] = {
+	pg.base.activity_series_enemy_story[152] = {
 		name = "永寂冰湖",
 		story = "",
 		type = 4,
@@ -4271,11 +3669,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_series_enemy_story
-
-	var_2_43[153] = {
+	pg.base.activity_series_enemy_story[153] = {
 		name = "噬光苔原",
 		story = "",
 		type = 4,
@@ -4298,11 +3692,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_series_enemy_story
-
-	var_2_44[154] = {
+	pg.base.activity_series_enemy_story[154] = {
 		name = "古代遗迹",
 		story = "",
 		type = 4,
@@ -4325,11 +3715,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_series_enemy_story
-
-	var_2_45[155] = {
+	pg.base.activity_series_enemy_story[155] = {
 		name = "寒冬要塞",
 		story = "",
 		type = 4,
@@ -4352,11 +3738,7 @@ end)()
 			131
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_series_enemy_story
-
-	var_2_46[156] = {
+	pg.base.activity_series_enemy_story[156] = {
 		name = "秽沼瘴潭",
 		story = "",
 		type = 4,
@@ -4379,11 +3761,7 @@ end)()
 			136
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_series_enemy_story
-
-	var_2_47[157] = {
+	pg.base.activity_series_enemy_story[157] = {
 		name = "异化法师营地",
 		story = "",
 		type = 4,
@@ -4406,11 +3784,7 @@ end)()
 			136
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_series_enemy_story
-
-	var_2_48[158] = {
+	pg.base.activity_series_enemy_story[158] = {
 		name = "低语林地",
 		story = "",
 		type = 4,
@@ -4433,11 +3807,7 @@ end)()
 			136
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_series_enemy_story
-
-	var_2_49[159] = {
+	pg.base.activity_series_enemy_story[159] = {
 		name = "腐心树",
 		story = "",
 		type = 4,
@@ -4460,11 +3830,7 @@ end)()
 			136
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_series_enemy_story
-
-	var_2_50[160] = {
+	pg.base.activity_series_enemy_story[160] = {
 		name = "暗夜魔宫",
 		story = "",
 		type = 4,
@@ -4487,11 +3853,7 @@ end)()
 			136
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_series_enemy_story
-
-	var_2_51[161] = {
+	pg.base.activity_series_enemy_story[161] = {
 		name = "遗忘之地",
 		story = "",
 		type = 4,
@@ -4514,11 +3876,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_series_enemy_story
-
-	var_2_52[162] = {
+	pg.base.activity_series_enemy_story[162] = {
 		name = "破碎之地",
 		story = "",
 		type = 4,
@@ -4541,11 +3899,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_series_enemy_story
-
-	var_2_53[163] = {
+	pg.base.activity_series_enemy_story[163] = {
 		name = "寂灭魔法塔",
 		story = "",
 		type = 4,
@@ -4568,11 +3922,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_series_enemy_story
-
-	var_2_54[164] = {
+	pg.base.activity_series_enemy_story[164] = {
 		name = "古战场遗迹",
 		story = "",
 		type = 4,
@@ -4595,11 +3945,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_series_enemy_story
-
-	var_2_55[165] = {
+	pg.base.activity_series_enemy_story[165] = {
 		name = "静默树庭",
 		story = "",
 		type = 4,
@@ -4622,11 +3968,7 @@ end)()
 			145
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_series_enemy_story
-
-	var_2_56[166] = {
+	pg.base.activity_series_enemy_story[166] = {
 		name = "恩泽城",
 		story = "",
 		type = 4,
@@ -4649,11 +3991,7 @@ end)()
 			148
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_series_enemy_story
-
-	var_2_57[167] = {
+	pg.base.activity_series_enemy_story[167] = {
 		name = "VR-0",
 		story = "MANYOUZHEZHAOMUJIHUA1",
 		type = 1,
@@ -4681,11 +4019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_series_enemy_story
-
-	var_2_58[168] = {
+	pg.base.activity_series_enemy_story[168] = {
 		name = "VR-1",
 		story = "MANYOUZHEZHAOMUJIHUA2",
 		type = 1,
@@ -4713,11 +4047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_series_enemy_story
-
-	var_2_59[169] = {
+	pg.base.activity_series_enemy_story[169] = {
 		name = "VR-2",
 		story = "MANYOUZHEZHAOMUJIHUA3",
 		type = 1,
@@ -4745,11 +4075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_series_enemy_story
-
-	var_2_60[170] = {
+	pg.base.activity_series_enemy_story[170] = {
 		name = "VR-3",
 		story = "MANYOUZHEZHAOMUJIHUA4",
 		type = 1,
@@ -4777,11 +4103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_series_enemy_story
-
-	var_2_61[171] = {
+	pg.base.activity_series_enemy_story[171] = {
 		name = "VR-4",
 		story = "MANYOUZHEZHAOMUJIHUA5",
 		type = 1,
@@ -4812,11 +4134,7 @@ end)()
 			flagID = 1
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_series_enemy_story
-
-	var_2_62[172] = {
+	pg.base.activity_series_enemy_story[172] = {
 		name = "VR-5",
 		story = "MANYOUZHEZHAOMUJIHUA6",
 		type = 1,
@@ -4847,11 +4165,7 @@ end)()
 			flagID = 1
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_series_enemy_story
-
-	var_2_63[173] = {
+	pg.base.activity_series_enemy_story[173] = {
 		name = "VR-6",
 		story = "MANYOUZHEZHAOMUJIHUA7",
 		type = 1,
@@ -4882,11 +4196,7 @@ end)()
 			flagID = 1
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_series_enemy_story
-
-	var_2_64[174] = {
+	pg.base.activity_series_enemy_story[174] = {
 		name = "VR-7",
 		story = "MANYOUZHEZHAOMUJIHUA8",
 		type = 1,
@@ -4917,11 +4227,7 @@ end)()
 			flagID = 1
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_series_enemy_story
-
-	var_2_65[175] = {
+	pg.base.activity_series_enemy_story[175] = {
 		name = "VR-8",
 		story = "MANYOUZHEZHAOMUJIHUA9",
 		type = 1,
@@ -4952,11 +4258,7 @@ end)()
 			flagID = 1
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_series_enemy_story
-
-	var_2_66[176] = {
+	pg.base.activity_series_enemy_story[176] = {
 		name = "VR-9",
 		story = "MANYOUZHEZHAOMUJIHUA10",
 		type = 1,
@@ -4987,11 +4289,7 @@ end)()
 			flagID = 1
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_series_enemy_story
-
-	var_2_67[177] = {
+	pg.base.activity_series_enemy_story[177] = {
 		name = "WN-1 病房逃生！",
 		story = "GUAITANJISHI2",
 		type = 1,
@@ -5014,11 +4312,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_series_enemy_story
-
-	var_2_68[178] = {
+	pg.base.activity_series_enemy_story[178] = {
 		name = "WN-2 无限回廊",
 		story = "GUAITANJISHI3",
 		type = 1,
@@ -5041,11 +4335,7 @@ end)()
 			177
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_series_enemy_story
-
-	var_2_69[179] = {
+	pg.base.activity_series_enemy_story[179] = {
 		name = "WN-3 游戏的幕后",
 		story = "GUAITANJISHI4",
 		type = 1,
@@ -5068,11 +4358,7 @@ end)()
 			178
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_series_enemy_story
-
-	var_2_70[180] = {
+	pg.base.activity_series_enemy_story[180] = {
 		name = "WN-4 渡河",
 		story = "GUAITANJISHI5",
 		type = 1,
@@ -5095,11 +4381,7 @@ end)()
 			179
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_series_enemy_story
-
-	var_2_71[181] = {
+	pg.base.activity_series_enemy_story[181] = {
 		name = "WN-5 古怪的门扉",
 		story = "GUAITANJISHI6",
 		type = 1,
@@ -5122,11 +4404,7 @@ end)()
 			180
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_series_enemy_story
-
-	var_2_72[182] = {
+	pg.base.activity_series_enemy_story[182] = {
 		name = "WN-6 邪恶院长的手术时间",
 		story = "GUAITANJISHI7",
 		type = 1,
@@ -5149,11 +4427,7 @@ end)()
 			181
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_series_enemy_story
-
-	var_2_73[183] = {
+	pg.base.activity_series_enemy_story[183] = {
 		name = "WN-7 重逢与希望",
 		story = "GUAITANJISHI8",
 		type = 1,
@@ -5176,11 +4450,7 @@ end)()
 			182
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_series_enemy_story
-
-	var_2_74[184] = {
+	pg.base.activity_series_enemy_story[184] = {
 		name = "WN-8 真实之欲",
 		story = "GUAITANJISHI9",
 		type = 1,
@@ -5203,11 +4473,7 @@ end)()
 			183
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_series_enemy_story
-
-	var_2_75[185] = {
+	pg.base.activity_series_enemy_story[185] = {
 		name = "WN-9 此路不通",
 		story = "2049601",
 		type = 3,
@@ -5230,11 +4496,7 @@ end)()
 			184
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_series_enemy_story
-
-	var_2_76[186] = {
+	pg.base.activity_series_enemy_story[186] = {
 		name = "WN-10 飞越白夜",
 		story = "2049602",
 		type = 3,
@@ -5257,8 +4519,7 @@ end)()
 			185
 		}
 	}
-	pg = var_2_76
-	var_2_76.base.activity_series_enemy_story[187] = {
+	pg.base.activity_series_enemy_story[187] = {
 		name = "WN-11 后日谈",
 		story = "GUAITANJISHI12",
 		type = 1,

@@ -1,62 +1,32 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildUpdateNodeAnimFlagCommand", import(".GuildEventBaseCommand"))
 
-local var_0_0 = "GuildUpdateNodeAnimFlagCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.position
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".GuildEventBaseCommand"))
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.position
-
-	if not arg_1_0:ExistMission(var_1_0) then
+	if not arg_1_0:ExistMission(var_1_0.id) then
 		return
 	end
 
-	local var_1_2 = {
-		event_id = var_1_0,
-		index = var_1_1
+	;({})[1] = {
+		event_id = var_1_0.id,
+		index = var_1_0.position
 	}
+	;({}).perf = {}
 
-	pg = var_1_10006
-
-	local var_1_3 = var_1_10006.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_3, 61025, {
-		perf = {
-			var_1_2
-		}
-	}, 61026, function(arg_2_0)
+	pg.ConnectionMgr.GetInstance():Send(61025, {}, 61026, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			GuildProxy = var_2_10003
-			var_2_10004 = var_1(var_2_10003)
+			local var_2_0 = getProxy(GuildProxy)
+			local var_2_1 = var_2_0:getData()
 
-			local var_2_0 = var_1.getData(var_2_10004)
-			local var_2_1 = var_2.GetActiveEvent(var_2_0)
-			local var_2_2 = var_3.GetMissionById(var_2_1, var_1_0)
-
-			var_2_10004.UpdateNodeAnimFlagIndex(var_2_2, var_1_1)
-			var_1:updateGuild(var_2)
-
-			local var_2_3 = arg_1_0
-			local var_2_4 = var_5.sendNotification
-
-			GAME = var_8
-
-			var_2_4(var_2_3, var_8.GUILD_UPDATE_NODE_ANIM_FLAG_DONE, {
-				id = var_1_0
+			var_2_1:GetActiveEvent():GetMissionById(var_1_1):UpdateNodeAnimFlagIndex(var_1_2)
+			var_2_0:updateGuild(var_2_1)
+			arg_1_0:sendNotification(GAME.GUILD_UPDATE_NODE_ANIM_FLAG_DONE, {
+				id = var_1_1
 			})
 		else
-			pg = var_1
-
-			local var_2_5 = var_1.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -65,4 +35,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

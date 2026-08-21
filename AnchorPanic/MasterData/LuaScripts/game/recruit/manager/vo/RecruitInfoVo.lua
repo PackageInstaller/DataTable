@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : RecruitInfoVo
 @Description    : 招募数据
@@ -11,7 +11,7 @@ module('recruit.RecruitInfoVo', Class.impl())
 
 function parseMsg(self, cusMsg)
     -- 类型
-    self.type = cusMsg.type
+    self.recruit_id = cusMsg.recruit_id
     -- 今日招募已抽次数
     self.recruit_daily_times = cusMsg.recruit_daily_times
     -- 活动期间累计招募已抽次数
@@ -24,9 +24,20 @@ function parseMsg(self, cusMsg)
     self.is_guaranteed_award = cusMsg.is_guaranteed_award
     --已免费次数
     self.free_times = cusMsg.free_times
+
+    --定向的tid
+    self.select_tid = cusMsg.select_tid
+
+    --呐源首周标记 1 本周是否选择过战员
+    self.first_week = cusMsg.first_week
+
+    self.select_plus_list = {}
+    for k, v in pairs(cusMsg.select_plus_list) do
+        self.select_plus_list[v.act_tid] = v.end_time
+    end
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

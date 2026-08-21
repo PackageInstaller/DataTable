@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MusicBeatGameConst")
+﻿local var_0_0 = class("MusicBeatGameConst")
 
 var_0_0.bgm_type_default = 1
 var_0_0.bgm_type_main = 2
@@ -10,15 +8,7 @@ var_0_0.menu_bgm = "story-game-rhythm"
 var_0_0.game_time = 0
 var_0_0.rule_tip = "musicbeat_minigame_help"
 var_0_0.rank_tip = "musicbeat_minigame_help"
-Application = var_1
-
-local var_0_1
-
-if not var_1.targetFrameRate then
-	var_0_1 = 60
-end
-
-var_0_0.frame_rate = var_0_1
+var_0_0.frame_rate = Application.targetFrameRate or 60
 var_0_0.ui_atlas = "ui/minigameui/musicbeatgameui_atlas"
 var_0_0.game_ui = "MusicBeatGameUI"
 var_0_0.game_room_ui = "MusicBeatGameUI"

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "class_upgrade_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "class_upgrade_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.class_upgrade_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.class_upgrade_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.class_upgrade_group = rawget(pg, "class_upgrade_group") or setmetatable({
+	__name = "class_upgrade_group"
+}, confNEO)
+pg.class_upgrade_group.all = {
 	1,
 	2,
 	3,
@@ -34,25 +11,11 @@ var_0_3.all = {
 	6,
 	7
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.class_upgrade_group = {}
+pg.base = pg.base or {}
+pg.base.class_upgrade_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.class_upgrade_group
-
-	var_1_0[1] = {
+	pg.base.class_upgrade_group[1] = {
 		id = 201011,
 		name_show = "驱逐雷击教学",
 		day = 1,
@@ -65,11 +28,7 @@ var_0_3.base.class_upgrade_group = {}
 			19
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.class_upgrade_group
-
-	var_1_1[2] = {
+	pg.base.class_upgrade_group[2] = {
 		id = 302011,
 		name_show = "巡洋炮击教学",
 		day = 2,
@@ -83,11 +42,7 @@ var_0_3.base.class_upgrade_group = {}
 			19
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.class_upgrade_group
-
-	var_1_2[3] = {
+	pg.base.class_upgrade_group[3] = {
 		id = 105031,
 		name_show = "战列理论教学",
 		day = 3,
@@ -98,11 +53,7 @@ var_0_3.base.class_upgrade_group = {}
 			13
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.class_upgrade_group
-
-	var_1_3[4] = {
+	pg.base.class_upgrade_group[4] = {
 		id = 107011,
 		name_show = "航母理论教学",
 		day = 4,
@@ -112,11 +63,7 @@ var_0_3.base.class_upgrade_group = {}
 			10
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.class_upgrade_group
-
-	var_1_4[5] = {
+	pg.base.class_upgrade_group[5] = {
 		id = 201011,
 		name_show = "驱逐实战教学",
 		day = 5,
@@ -129,11 +76,7 @@ var_0_3.base.class_upgrade_group = {}
 			19
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.class_upgrade_group
-
-	var_1_5[6] = {
+	pg.base.class_upgrade_group[6] = {
 		id = 302011,
 		name_show = "巡洋实战教学",
 		day = 6,
@@ -147,8 +90,7 @@ var_0_3.base.class_upgrade_group = {}
 			19
 		}
 	}
-	pg = var_1_5
-	var_1_5.base.class_upgrade_group[7] = {
+	pg.base.class_upgrade_group[7] = {
 		id = 105031,
 		name_show = "自主学习",
 		day = 7,

@@ -5,11 +5,11 @@ local activity_stage_step_data=
 {
 	[1]={ stage_type=0, star_num=12, reward={{3,100},{1,50000}}, des=90504
 },
-	[2]={ stage_type=0, star_num=24, reward={{3,100},{1,50000}}, des=90505
+	[2]={ stage_type=0, star_num=18, reward={{3,100},{1,50000}}, des=90521
 },
-	[3]={ stage_type=0, star_num=36, reward={{3,100},{1,50000}}, des=90506
+	[3]={ stage_type=0, star_num=24, reward={{3,100},{1,50000}}, des=90505
 },
-	[4]={ stage_type=0, star_num=45, reward={{3,100},{1,50000}}, des=90507
+	[4]={ stage_type=0, star_num=33, reward={{3,100},{1,50000}}, des=90507
 },
 	[5]={ stage_type=1, star_num=6, reward={{3,150},{1,100000}}, des=90508
 },

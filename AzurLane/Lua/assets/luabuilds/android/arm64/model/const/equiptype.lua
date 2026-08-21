@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("EquipType")
+﻿local var_0_0 = class("EquipType")
 
 var_0_0.CannonQuZhu = 1
 var_0_0.CannonQingXun = 2
@@ -82,43 +80,25 @@ var_0_0.AircraftSkinType = {
 	var_0_0.AntiSubAircraft
 }
 
-local var_0_1 = {}
-
-i18n = var_2
-var_0_1[1] = var_2("word_primary_weapons")
-i18n = var_2
-var_0_1[2] = var_2("word_sub_cannons")
-i18n = var_2
-var_0_1[3] = var_2("word_torpedo")
-i18n = var_2
-var_0_1[4] = var_2("word_air_defense_artillery")
-i18n = var_2
-var_0_1[5] = var_2("word_shipboard_aircraft")
-i18n = var_2
-var_0_1[6] = var_2("word_device")
-i18n = var_2
-var_0_1[7] = var_2("word_submarine_torpedo")
-i18n = var_2
-var_0_1[8] = var_2("wrod_sub_weapons")
-i18n = var_2
-var_0_1[9] = var_2("word_main_cannons")
-i18n = var_2
-var_0_1[10] = var_2("word_cannon")
-i18n = var_2
-var_0_1[11] = var_2("word_equipment_aircraft")
-i18n = var_2
-var_0_1[12] = var_2("word_fighter")
-i18n = var_2
-var_0_1[13] = var_2("word_bomber")
-i18n = var_2
-var_0_1[14] = var_2("word_attacker")
-i18n = var_2
-var_0_1[15] = var_2("word_seaplane")
-i18n = var_2
-var_0_1[16] = var_2("word_equipment")
-i18n = var_2
-var_0_1[17] = var_2("word_missile")
-
+local var_0_1 = {
+	i18n("word_primary_weapons"),
+	i18n("word_sub_cannons"),
+	i18n("word_torpedo"),
+	i18n("word_air_defense_artillery"),
+	i18n("word_shipboard_aircraft"),
+	i18n("word_device"),
+	i18n("word_submarine_torpedo"),
+	i18n("wrod_sub_weapons"),
+	i18n("word_main_cannons"),
+	i18n("word_cannon"),
+	i18n("word_equipment_aircraft"),
+	i18n("word_fighter"),
+	i18n("word_bomber"),
+	i18n("word_attacker"),
+	i18n("word_seaplane"),
+	i18n("word_equipment"),
+	i18n("word_missile")
+}
 local var_0_2 = {
 	"cannon",
 	"cannon",
@@ -144,55 +124,43 @@ local var_0_2 = {
 }
 
 function var_0_0.Type2Name(arg_1_0)
-	pg = var_1_10001
-
-	return var_1_10001.equip_data_by_type[arg_1_0].type_name
+	return pg.equip_data_by_type[arg_1_0].type_name
 end
 
 function var_0_0.Type2Name2(arg_2_0)
-	pg = var_1_10001
-
-	return var_1_10001.equip_data_by_type[arg_2_0].type_name2
+	return pg.equip_data_by_type[arg_2_0].type_name2
 end
 
 function var_0_0.type2Tag(arg_3_0)
-	if not var_0_0.tagPrints then
-		var_0_0.tagPrints = {
-			"4",
-			"4",
-			"4",
-			"4",
-			"5",
-			"6",
-			"7",
-			"8",
-			"9",
-			"10",
-			"4",
-			"12",
-			"5",
-			"10",
-			"13",
-			nil,
-			"14",
-			"15",
-			nil,
-			"16",
-			"6"
-		}
-	end
+	var_0_0.tagPrints = var_0_0.tagPrints or {
+		"4",
+		"4",
+		"4",
+		"4",
+		"5",
+		"6",
+		"7",
+		"8",
+		"9",
+		"10",
+		"4",
+		"12",
+		"5",
+		"10",
+		"13",
+		nil,
+		"14",
+		"15",
+		nil,
+		"16",
+		"6"
+	}
 
 	return var_0_0.tagPrints[arg_3_0]
 end
 
 function var_0_0.getCompareGroup(arg_4_0)
-	Equipment = var_1_10001
-
-	local var_4_0 = var_1_10001.getConfigData(arg_4_0).type
-
-	pg = var_1_10002
-
-	return var_1_10002.equip_data_by_type[var_4_0].compare_group
+	return pg.equip_data_by_type[Equipment.getConfigData(arg_4_0).type].compare_group
 end
 
 function var_0_0.type2Title(arg_5_0, arg_5_1)
@@ -241,37 +209,23 @@ local var_0_6 = {
 }
 
 local function var_0_7(arg_6_0)
-	_ = var_1_10001
-
-	if var_1_10001.all(arg_6_0, function(arg_7_0)
-		table = var_2_10001
-
-		return var_2_10001.contains(var_0_6, arg_7_0)
+	if _.all(arg_6_0, function(arg_7_0)
+		return table.contains(var_0_6, arg_7_0)
 	end) then
 		return "equipment"
-	else
-		_ = var_1
-
-		if var_1.all(arg_6_0, function(arg_8_0)
-			table = var_2_10001
-
-			return var_2_10001.contains(var_0_3, arg_8_0)
+	elseif _.all(arg_6_0, function(arg_8_0)
+		return table.contains(var_0_3, arg_8_0)
+	end) then
+		return "main_cannons"
+	elseif #arg_6_0 == 1 then
+		return var_0_2[arg_6_0[1]]
+	elseif #arg_6_0 > 1 then
+		if _.all(arg_6_0, function(arg_9_0)
+			return table.contains(var_0_4, arg_9_0)
 		end) then
-			return "main_cannons"
-		elseif #arg_6_0 == 1 then
-			return var_0_2[arg_6_0[1]]
-		elseif #arg_6_0 > 1 then
-			_ = var_1
-
-			if var_1.all(arg_6_0, function(arg_9_0)
-				table = var_2_10001
-
-				return var_2_10001.contains(var_0_4, arg_9_0)
-			end) then
-				return "equipment_aircraft"
-			else
-				return "primary_weapons"
-			end
+			return "equipment_aircraft"
+		else
+			return "primary_weapons"
 		end
 	end
 
@@ -279,142 +233,68 @@ local function var_0_7(arg_6_0)
 end
 
 local function var_0_8(arg_10_0, arg_10_1)
-	_ = var_1_10002
-
-	if var_1_10002.all(arg_10_1, function(arg_11_0)
-		table = var_2_10001
-
-		return var_2_10001.contains(var_0_3, arg_11_0)
-	end) then
-		_ = var_1_10003
-
-		if var_1_10003.is_equal(arg_10_0, arg_10_1) then
-			do return "main_cannons" end
-
-			goto label_10_0
-		end
-	end
-
-	_ = var_1_10003
-
-	if var_1_10003.all(arg_10_0, function(arg_12_0)
-		table = var_2_10001
-
-		return var_2_10001.contains(var_0_6, arg_12_0)
+	if _.all(arg_10_1, function(arg_11_0)
+		return table.contains(var_0_3, arg_11_0)
+	end) and _.is_equal(arg_10_0, arg_10_1) then
+		return "main_cannons"
+	elseif _.all(arg_10_0, function(arg_12_0)
+		return table.contains(var_0_6, arg_12_0)
 	end) then
 		return "equipment"
-	else
-		_ = var_3
-
-		if var_3.all(arg_10_0, function(arg_13_0)
-			table = var_2_10001
-
-			return var_2_10001.contains(var_0_5, arg_13_0)
+	elseif _.all(arg_10_0, function(arg_13_0)
+		return table.contains(var_0_5, arg_13_0)
+	end) then
+		return "sub_cannons"
+	elseif #arg_10_0 == 1 then
+		return var_0_2[arg_10_0[1]]
+	elseif #arg_10_0 > 1 then
+		if _.all(arg_10_0, function(arg_14_0)
+			return table.contains(var_0_4, arg_14_0)
 		end) then
-			return "sub_cannons"
-		elseif #arg_10_0 == 1 then
-			return var_0_2[arg_10_0[1]]
-		elseif #arg_10_0 > 1 then
-			_ = var_3
-
-			if var_3.all(arg_10_0, function(arg_14_0)
-				table = var_2_10001
-
-				return var_2_10001.contains(var_0_4, arg_14_0)
-			end) then
-				return "equipment_aircraft"
-			else
-				return "sub_weapons"
-			end
+			return "equipment_aircraft"
+		else
+			return "sub_weapons"
 		end
 	end
-
-	::label_10_0::
 
 	return ""
 end
 
 local function var_0_9(arg_15_0)
-	_ = var_1_10001
-
-	if var_1_10001.all(arg_15_0, function(arg_16_0)
-		table = var_2_10001
-
-		return var_2_10001.contains(var_0_6, arg_16_0)
+	if _.all(arg_15_0, function(arg_16_0)
+		return table.contains(var_0_6, arg_16_0)
 	end) then
 		return "equipment"
-	else
-		local var_15_0
-
-		if #arg_15_0 == 2 then
-			table = var_15_0
-			var_15_0 = var_15_0.contains
-
-			local var_15_1 = arg_15_0
-
-			EquipType = var_4
-
-			if var_15_0(var_15_1, var_4.AntiAircraft) then
-				table = var_15_0
-				var_15_0 = var_15_0.contains
-
-				local var_15_2 = arg_15_0
-
-				EquipType = var_4
-
-				if var_15_0(var_15_2, var_4.RangedAntiAircraft) then
-					do return "antiair" end
-
-					goto label_15_0
-				end
-			end
-		end
-
-		_ = var_15_0
-
-		if var_15_0.all(arg_15_0, function(arg_17_0)
-			table = var_2_10001
-
-			return var_2_10001.contains(var_0_5, arg_17_0)
+	elseif #arg_15_0 == 2 and table.contains(arg_15_0, EquipType.AntiAircraft) and table.contains(arg_15_0, EquipType.RangedAntiAircraft) then
+		return "antiair"
+	elseif _.all(arg_15_0, function(arg_17_0)
+		return table.contains(var_0_5, arg_17_0)
+	end) then
+		return "sub_cannons"
+	elseif #arg_15_0 == 1 then
+		return var_0_2[arg_15_0[1]]
+	elseif #arg_15_0 > 1 then
+		if _.all(arg_15_0, function(arg_18_0)
+			return table.contains(var_0_4, arg_18_0)
 		end) then
-			return "sub_cannons"
-		elseif #arg_15_0 == 1 then
-			return var_0_2[arg_15_0[1]]
-		elseif #arg_15_0 > 1 then
-			_ = var_1
-
-			if var_1.all(arg_15_0, function(arg_18_0)
-				table = var_2_10001
-
-				return var_2_10001.contains(var_0_4, arg_18_0)
-			end) then
-				return "equipment_aircraft"
-			else
-				return "sub_weapons"
-			end
+			return "equipment_aircraft"
+		else
+			return "sub_weapons"
 		end
 	end
-
-	::label_15_0::
 
 	return ""
 end
 
 function var_0_0.Types2Title(arg_19_0, arg_19_1)
-	pg = var_1_10002
-
-	local var_19_0 = var_1_10002.ship_data_template[arg_19_1]["equip_" .. arg_19_0]
-
 	if arg_19_0 == 1 then
-		return var_0_7(var_19_0)
+		return var_0_7(pg.ship_data_template[arg_19_1]["equip_" .. arg_19_0])
 	elseif arg_19_0 == 2 then
-		local var_19_1 = var_2.equip_1
-
-		return var_0_8(var_19_0, var_19_1)
+		return var_0_8(pg.ship_data_template[arg_19_1]["equip_" .. arg_19_0], pg.ship_data_template[arg_19_1].equip_1)
 	elseif arg_19_0 == 3 then
-		return var_0_9(var_19_0)
+		return var_0_9(pg.ship_data_template[arg_19_1]["equip_" .. arg_19_0])
 	elseif arg_19_0 == 4 or arg_19_0 == 5 then
-		return var_0_2[var_19_0[1]]
+		return var_0_2[pg.ship_data_template[arg_19_1]["equip_" .. arg_19_0][1]]
 	end
 
 	return
@@ -427,9 +307,7 @@ function var_0_0.LabelToName(arg_20_0)
 		arg_20_0 = "device"
 	end
 
-	i18n = var_1_10001
-
-	return var_1_10001("word_" .. arg_20_0)
+	return i18n("word_" .. arg_20_0)
 end
 
 return var_0_0

@@ -1,21 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatItem")
+﻿local var_0_0 = class("SailBoatItem")
 local var_0_1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	SailBoatGameVo = var_1_10003
-	var_0_1 = var_1_10003
+	var_0_1 = SailBoatGameVo
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
-	GetComponent = var_1_10003
-	findTF = var_1_10005
-
-	local var_1_0 = var_1_10005(arg_1_0._tf, "bound")
-
-	typeof = var_1_10006
-	BoxCollider2D = var_8
-	arg_1_0._collider = var_1_10003(var_1_0, var_1_10006(var_8))
+	arg_1_0._collider = GetComponent(findTF(arg_1_0._tf, "bound"), typeof(BoxCollider2D))
 
 	return
 end
@@ -39,24 +29,19 @@ function var_0_0.start(arg_3_0)
 end
 
 function var_0_0.step(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0._tf.anchoredPosition
-	local var_4_1 = var_0_1.GetSceneSpeed()
+	local var_4_0 = var_0_1.GetSceneSpeed()
 
-	arg_4_0._speed.x = arg_4_0._speed.x * arg_4_1 + var_4_1.x
-	arg_4_0._speed.y = arg_4_0._speed.y * arg_4_1 + var_4_1.y
-	var_4_0.x = var_4_0.x + arg_4_0._speed.x
-	var_4_0.y = var_4_0.y + arg_4_0._speed.y
-	arg_4_0._tf.anchoredPosition = var_4_0
+	arg_4_0._speed.x = arg_4_0._speed.x * arg_4_1 + var_4_0.x
+	arg_4_0._speed.y = arg_4_0._speed.y * arg_4_1 + var_4_0.y
+	arg_4_0._tf.anchoredPosition.x = arg_4_0._tf.anchoredPosition.x + arg_4_0._speed.x
+	arg_4_0._tf.anchoredPosition.y = arg_4_0._tf.anchoredPosition.y + arg_4_0._speed.y
+	arg_4_0._tf.anchoredPosition = arg_4_0._tf.anchoredPosition
 
 	if not arg_4_0._removeFlag then
-		if var_4_0.y < arg_4_0._maxRemoveHeight then
+		if arg_4_0._tf.anchoredPosition.y < arg_4_0._maxRemoveHeight then
 			arg_4_0._removeFlag = true
-		else
-			math = var_4
-
-			if var_4.abs(var_4_0.x) > arg_4_0._maxRemoveWidth then
-				arg_4_0._removeFlag = true
-			end
+		elseif math.abs(arg_4_0._tf.anchoredPosition.x) > arg_4_0._maxRemoveWidth then
+			arg_4_0._removeFlag = true
 		end
 	end
 
@@ -69,9 +54,8 @@ end
 
 function var_0_0.setContent(arg_6_0, arg_6_1)
 	arg_6_0._content = arg_6_1
-	SetParent = var_1_10002
 
-	var_1_10002(arg_6_0._tf, arg_6_1)
+	SetParent(arg_6_0._tf, arg_6_1)
 
 	return
 end
@@ -81,9 +65,7 @@ function var_0_0.getId(arg_7_0)
 end
 
 function var_0_0.setVisible(arg_8_0, arg_8_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_8_0._tf, arg_8_1)
+	setActive(arg_8_0._tf, arg_8_1)
 
 	return
 end
@@ -117,37 +99,27 @@ function var_0_0.dispose(arg_13_0)
 end
 
 function var_0_0.getColliderData(arg_14_0)
-	local var_14_0 = arg_14_0._content
-	local var_14_1 = var_1.InverseTransformPoint(var_14_0, arg_14_0._collider.bounds.min)
+	local var_14_0 = arg_14_0._content:InverseTransformPoint(arg_14_0._collider.bounds.min)
 
 	if not arg_14_0._boundData then
-		local var_14_2 = arg_14_0._content
-		local var_14_3 = var_2.InverseTransformPoint(var_14_2, arg_14_0._collider.bounds.max)
-		local var_14_4 = {}
+		local var_14_1 = arg_14_0._content:InverseTransformPoint(arg_14_0._collider.bounds.max)
 
-		math = var_14_2
-		var_14_4.width = var_14_2.floor(var_14_3.x - var_14_1.x)
-		math = var_4
-		var_14_4.height = var_4.floor(var_14_3.y - var_14_1.y)
-		arg_14_0._boundData = var_14_4
-	end
-
-	return var_14_1, arg_14_0._boundData
-end
-
-function var_0_0.getWorldColliderData(arg_15_0)
-	local var_15_0 = arg_15_0._collider.bounds.min
-
-	if not arg_15_0._worldBoundData then
-		local var_15_1 = arg_15_0._collider.bounds.max
-
-		arg_15_0._worldBoundData = {
-			width = var_15_1.x - var_15_0.x,
-			height = var_15_1.y - var_15_0.y
+		arg_14_0._boundData = {
+			width = math.floor(var_14_1.x - var_14_0.x),
+			height = math.floor(var_14_1.y - var_14_0.y)
 		}
 	end
 
-	return var_15_0, arg_15_0._worldBoundData
+	return var_14_0, arg_14_0._boundData
+end
+
+function var_0_0.getWorldColliderData(arg_15_0)
+	arg_15_0._worldBoundData = arg_15_0._worldBoundData or {
+		width = arg_15_0._collider.bounds.max.x - arg_15_0._collider.bounds.min.x,
+		height = arg_15_0._collider.bounds.max.y - arg_15_0._collider.bounds.min.y
+	}
+
+	return arg_15_0._collider.bounds.min, arg_15_0._worldBoundData
 end
 
 function var_0_0.getTf(arg_16_0)
@@ -163,17 +135,9 @@ function var_0_0.getUseData(arg_17_0)
 end
 
 function var_0_0.checkPositionInRange(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0._tf.anchoredPosition
+	local var_18_0 = arg_18_0:getConfig("range")
 
-	math = var_1_10003
-
-	local var_18_1 = var_1_10003.abs(var_18_0.x - arg_18_1.x)
-
-	math = var_1_10004
-
-	local var_18_2 = var_1_10004.abs(var_18_0.y - arg_18_1.y)
-
-	if var_18_1 < arg_18_0:getConfig("range").x and var_18_2 < var_5.y then
+	if math.abs(arg_18_0._tf.anchoredPosition.x - arg_18_1.x) < var_18_0.x and math.abs(arg_18_0._tf.anchoredPosition.y - arg_18_1.y) < var_18_0.y then
 		return true
 	end
 

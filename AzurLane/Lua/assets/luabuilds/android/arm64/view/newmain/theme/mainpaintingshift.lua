@@ -1,30 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MainPaintingShift")
+﻿local var_0_0 = class("MainPaintingShift")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	Vector3 = var_1_10003
-
-	local var_1_0 = var_1_10003(arg_1_1[1], arg_1_1[2], 0)
-
-	if not arg_1_2 then
-		::label_1_0::
-
-		Vector3 = var_1_10004
-		var_1_10004 = var_1_10004.zero
-	end
-
-	arg_1_0.meshImageShift = var_1_0 + var_1_10004
-	Vector3 = var_3
-	arg_1_0.l2dShift = var_3(arg_1_1[3], arg_1_1[4], 0)
-	Vector3 = var_3
-	arg_1_0.spineShift = var_3(arg_1_1[5], arg_1_1[6], 0)
-	Vector3 = var_3
-	arg_1_0.scale = var_3(arg_1_1[7], arg_1_1[7], 1)
-	Vector3 = var_3
-	arg_1_0.l2dScale = var_3(arg_1_1[8], arg_1_1[8], 1)
-	Vector3 = var_3
-	arg_1_0.spineScale = var_3(arg_1_1[9], arg_1_1[9], 1)
+	arg_1_0.meshImageShift = Vector3(arg_1_1[1], arg_1_1[2], 0) + (arg_1_2 or Vector3.zero)
+	arg_1_0.l2dShift = Vector3(arg_1_1[3], arg_1_1[4], 0)
+	arg_1_0.spineShift = Vector3(arg_1_1[5], arg_1_1[6], 0)
+	arg_1_0.scale = Vector3(arg_1_1[7], arg_1_1[7], 1)
+	arg_1_0.l2dScale = Vector3(arg_1_1[8], arg_1_1[8], 1)
+	arg_1_0.spineScale = Vector3(arg_1_1[9], arg_1_1[9], 1)
 
 	return
 end

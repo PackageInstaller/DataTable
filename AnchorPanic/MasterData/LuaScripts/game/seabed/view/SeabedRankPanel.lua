@@ -6,7 +6,7 @@ UIRes = UrlManager:getUIPrefabPath("seabed/SeabedRankPanel.prefab")
 panelType = 1-- 窗口类型 1 全屏 2 弹窗
 destroyTime = 0
 isBlur = 1 --是否开启模糊背景（仅2弹窗面板有效，默认开启，0关闭）
-isAdapta = 0--是否开启适配刘海 0 否 1 是
+--isAdapta = 0--是否开启适配刘海 0 否 1 是
 
 --构造函数
 function ctor(self)
@@ -49,6 +49,7 @@ end
 
 function active(self)
     super.active(self)
+    MoneyManager:setMoneyTidList({})
    self:updateView()
 end
 
@@ -61,6 +62,7 @@ function deActive(self)
     if self.mScroller then
         self.mScroller:CleanAllItem()
     end
+    MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
     GameDispatcher:removeEventListener(EventName.UPDATE_ARENA_RANK, self.updateView, self)
 end
 

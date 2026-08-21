@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "skill_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "skill_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.skill_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.skill_data_template
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.skill_data_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.skill_data_template = rawget(pg, "skill_data_template") or setmetatable({
+	__name = "skill_data_template"
+}, confNEO)
+pg.skill_data_template.__namecode__ = true
+pg.skill_data_template.all = {
 	1,
 	2,
 	10,
@@ -416,6 +389,7 @@ var_0_4.all = {
 	61100,
 	61110,
 	61120,
+	61130,
 	7000,
 	9010,
 	9020,
@@ -1477,6 +1451,18 @@ var_0_4.all = {
 	152530,
 	152540,
 	152550,
+	152560,
+	152570,
+	152580,
+	152590,
+	152600,
+	152610,
+	152620,
+	152630,
+	152640,
+	152650,
+	152680,
+	152690,
 	18010,
 	18040,
 	18050,
@@ -1511,6 +1497,8 @@ var_0_4.all = {
 	18780,
 	18790,
 	18860,
+	18950,
+	18980,
 	19000,
 	19001,
 	19002,
@@ -1908,6 +1896,7 @@ var_0_4.all = {
 	29092,
 	29101,
 	29102,
+	29103,
 	29111,
 	29112,
 	29121,
@@ -2212,6 +2201,10 @@ var_0_4.all = {
 	30642,
 	30661,
 	30662,
+	30671,
+	30672,
+	30681,
+	30682,
 	101010,
 	101020,
 	101030,
@@ -2532,6 +2525,7 @@ var_0_4.all = {
 	117060,
 	117070,
 	117080,
+	180000,
 	190000,
 	190010,
 	190060,
@@ -3171,25 +3165,11 @@ var_0_4.all = {
 	1090500,
 	1090490
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.skill_data_template = {}
+pg.base = pg.base or {}
+pg.base.skill_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.skill_data_template
-
-	var_1_0[1] = {
+	pg.base.skill_data_template[1] = {
 		desc_get = "",
 		name = "战列底座用",
 		type = 0,
@@ -3203,11 +3183,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.skill_data_template
-
-	var_1_1[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "战列底座用",
 		type = 0,
@@ -3221,11 +3197,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.skill_data_template
-
-	var_1_2[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "维修Lv1",
 		type = 0,
@@ -3239,11 +3211,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.skill_data_template
-
-	var_1_3[11] = {
+	pg.base.skill_data_template[11] = {
 		desc_get = "",
 		name = "维修Lv2",
 		type = 0,
@@ -3257,11 +3225,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.skill_data_template
-
-	var_1_4[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "维修Lv3",
 		type = 0,
@@ -3275,11 +3239,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.skill_data_template
-
-	var_1_5[13] = {
+	pg.base.skill_data_template[13] = {
 		desc_get = "",
 		name = "维修Lv4",
 		type = 0,
@@ -3293,11 +3253,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.skill_data_template
-
-	var_1_6[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "改造娘",
 		type = 3,
@@ -3311,11 +3267,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.skill_data_template
-
-	var_1_7[15] = {
+	pg.base.skill_data_template[15] = {
 		desc_get = "",
 		name = "改造娘MKII",
 		type = 3,
@@ -3329,11 +3281,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.skill_data_template
-
-	var_1_8[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "改造娘MKIII",
 		type = 3,
@@ -3347,11 +3295,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.skill_data_template
-
-	var_1_9[150] = {
+	pg.base.skill_data_template[150] = {
 		desc_get = "",
 		name = "战列底座用4",
 		type = 0,
@@ -3365,11 +3309,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.skill_data_template
-
-	var_1_10[152] = {
+	pg.base.skill_data_template[152] = {
 		desc_get = "",
 		name = "战列底座用6",
 		type = 0,
@@ -3383,11 +3323,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.skill_data_template
-
-	var_1_11[340] = {
+	pg.base.skill_data_template[340] = {
 		desc_get = "",
 		name = "航母空袭降低隐蔽恢复速率",
 		type = 0,
@@ -3401,11 +3337,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.skill_data_template
-
-	var_1_12[374] = {
+	pg.base.skill_data_template[374] = {
 		desc_get = "",
 		name = "雷驱增益降低鱼雷散布界",
 		type = 0,
@@ -3419,11 +3351,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.skill_data_template
-
-	var_1_13[390] = {
+	pg.base.skill_data_template[390] = {
 		desc_get = "",
 		name = "后排导驱隐蔽状态伤害增益",
 		type = 0,
@@ -3437,11 +3365,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.skill_data_template
-
-	var_1_14[392] = {
+	pg.base.skill_data_template[392] = {
 		desc_get = "",
 		name = "前排导驱主炮飞行速度提高",
 		type = 0,
@@ -3455,11 +3379,7 @@ var_0_4.base.skill_data_template = {}
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.skill_data_template
-
-	var_1_15[1001] = {
+	pg.base.skill_data_template[1001] = {
 		desc_get = "",
 		name = "炮术指挥·驱逐舰",
 		type = 3,
@@ -3520,11 +3440,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.skill_data_template
-
-	var_1_16[1002] = {
+	pg.base.skill_data_template[1002] = {
 		desc_get = "",
 		name = "炮术指挥·巡洋舰",
 		type = 3,
@@ -3585,11 +3501,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.skill_data_template
-
-	var_1_17[1003] = {
+	pg.base.skill_data_template[1003] = {
 		desc_get = "",
 		name = "炮术指挥·战列舰",
 		type = 3,
@@ -3650,11 +3562,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.skill_data_template
-
-	var_1_18[1004] = {
+	pg.base.skill_data_template[1004] = {
 		desc_get = "",
 		name = "炮术指挥·先锋",
 		type = 3,
@@ -3715,11 +3623,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.skill_data_template
-
-	var_1_19[1005] = {
+	pg.base.skill_data_template[1005] = {
 		desc_get = "",
 		name = "炮术指挥·主力",
 		type = 3,
@@ -3780,11 +3684,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.skill_data_template
-
-	var_1_20[1006] = {
+	pg.base.skill_data_template[1006] = {
 		desc_get = "",
 		name = "炮术指挥·全员",
 		type = 3,
@@ -3845,11 +3745,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.skill_data_template
-
-	var_1_21[1011] = {
+	pg.base.skill_data_template[1011] = {
 		desc_get = "",
 		name = "雷击指挥·驱逐舰",
 		type = 3,
@@ -3910,11 +3806,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.skill_data_template
-
-	var_1_22[1012] = {
+	pg.base.skill_data_template[1012] = {
 		desc_get = "",
 		name = "雷击指挥·巡洋舰",
 		type = 3,
@@ -3975,11 +3867,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.skill_data_template
-
-	var_1_23[1013] = {
+	pg.base.skill_data_template[1013] = {
 		desc_get = "",
 		name = "雷击指挥·先锋",
 		type = 3,
@@ -4040,11 +3928,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.skill_data_template
-
-	var_1_24[1021] = {
+	pg.base.skill_data_template[1021] = {
 		desc_get = "",
 		name = "航空指挥·全员",
 		type = 3,
@@ -4105,11 +3989,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.skill_data_template
-
-	var_1_25[1031] = {
+	pg.base.skill_data_template[1031] = {
 		desc_get = "",
 		name = "装填指挥·驱逐舰",
 		type = 3,
@@ -4170,11 +4050,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.skill_data_template
-
-	var_1_26[1032] = {
+	pg.base.skill_data_template[1032] = {
 		desc_get = "",
 		name = "装填指挥·巡洋舰",
 		type = 3,
@@ -4235,11 +4111,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.skill_data_template
-
-	var_1_27[1033] = {
+	pg.base.skill_data_template[1033] = {
 		desc_get = "",
 		name = "装填指挥·战列舰",
 		type = 3,
@@ -4300,11 +4172,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.skill_data_template
-
-	var_1_28[1034] = {
+	pg.base.skill_data_template[1034] = {
 		desc_get = "",
 		name = "装填指挥·先锋",
 		type = 3,
@@ -4365,11 +4233,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.skill_data_template
-
-	var_1_29[1035] = {
+	pg.base.skill_data_template[1035] = {
 		desc_get = "",
 		name = "装填指挥·主力",
 		type = 3,
@@ -4430,11 +4294,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.skill_data_template
-
-	var_1_30[1036] = {
+	pg.base.skill_data_template[1036] = {
 		desc_get = "",
 		name = "装填指挥·全员",
 		type = 3,
@@ -4495,11 +4355,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.skill_data_template
-
-	var_1_31[1037] = {
+	pg.base.skill_data_template[1037] = {
 		desc_get = "",
 		name = "装填指挥·轻航",
 		type = 3,
@@ -4560,11 +4416,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.skill_data_template
-
-	var_1_32[1041] = {
+	pg.base.skill_data_template[1041] = {
 		desc_get = "",
 		name = "防空指挥·驱逐舰",
 		type = 3,
@@ -4625,11 +4477,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.skill_data_template
-
-	var_1_33[1042] = {
+	pg.base.skill_data_template[1042] = {
 		desc_get = "",
 		name = "防空指挥·巡洋舰",
 		type = 3,
@@ -4690,11 +4538,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.skill_data_template
-
-	var_1_34[1043] = {
+	pg.base.skill_data_template[1043] = {
 		desc_get = "",
 		name = "防空指挥·战列舰",
 		type = 3,
@@ -4755,11 +4599,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.skill_data_template
-
-	var_1_35[1044] = {
+	pg.base.skill_data_template[1044] = {
 		desc_get = "",
 		name = "防空指挥·先锋",
 		type = 3,
@@ -4820,11 +4660,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.skill_data_template
-
-	var_1_36[1045] = {
+	pg.base.skill_data_template[1045] = {
 		desc_get = "",
 		name = "防空指挥·主力",
 		type = 3,
@@ -4885,11 +4721,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.skill_data_template
-
-	var_1_37[1046] = {
+	pg.base.skill_data_template[1046] = {
 		desc_get = "",
 		name = "防空指挥·全员",
 		type = 3,
@@ -4950,11 +4782,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.skill_data_template
-
-	var_1_38[1051] = {
+	pg.base.skill_data_template[1051] = {
 		desc_get = "",
 		name = "战术指挥·驱逐舰",
 		type = 3,
@@ -5015,11 +4843,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.skill_data_template
-
-	var_1_39[1052] = {
+	pg.base.skill_data_template[1052] = {
 		desc_get = "",
 		name = "战术指挥·巡洋舰",
 		type = 3,
@@ -5080,11 +4904,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.skill_data_template
-
-	var_1_40[1053] = {
+	pg.base.skill_data_template[1053] = {
 		desc_get = "",
 		name = "战术指挥·战列舰",
 		type = 3,
@@ -5145,11 +4965,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.skill_data_template
-
-	var_1_41[1054] = {
+	pg.base.skill_data_template[1054] = {
 		desc_get = "",
 		name = "战术指挥·先锋",
 		type = 3,
@@ -5210,11 +5026,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.skill_data_template
-
-	var_1_42[1055] = {
+	pg.base.skill_data_template[1055] = {
 		desc_get = "",
 		name = "战术指挥·主力",
 		type = 3,
@@ -5275,11 +5087,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.skill_data_template
-
-	var_1_43[1056] = {
+	pg.base.skill_data_template[1056] = {
 		desc_get = "",
 		name = "战术指挥·全员",
 		type = 3,
@@ -5340,11 +5148,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.skill_data_template
-
-	var_1_44[1061] = {
+	pg.base.skill_data_template[1061] = {
 		desc_get = "",
 		name = "侧翼掩护",
 		type = 2,
@@ -5405,11 +5209,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.skill_data_template
-
-	var_1_45[1071] = {
+	pg.base.skill_data_template[1071] = {
 		desc_get = "",
 		name = "前线侦查",
 		type = 3,
@@ -5470,11 +5270,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.skill_data_template
-
-	var_1_46[1081] = {
+	pg.base.skill_data_template[1081] = {
 		desc_get = "",
 		name = "空袭引导",
 		type = 3,
@@ -5535,11 +5331,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.skill_data_template
-
-	var_1_47[1091] = {
+	pg.base.skill_data_template[1091] = {
 		desc_get = "",
 		name = "水雷战队",
 		type = 3,
@@ -5600,11 +5392,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.skill_data_template
-
-	var_1_48[2001] = {
+	pg.base.skill_data_template[2001] = {
 		desc_get = "",
 		name = "快速装填",
 		type = 1,
@@ -5710,11 +5498,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.skill_data_template
-
-	var_1_49[2011] = {
+	pg.base.skill_data_template[2011] = {
 		desc_get = "",
 		name = "火力全开",
 		type = 1,
@@ -5820,11 +5604,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.skill_data_template
-
-	var_1_50[2021] = {
+	pg.base.skill_data_template[2021] = {
 		desc_get = "",
 		name = "装填号令",
 		type = 3,
@@ -5885,11 +5665,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.skill_data_template
-
-	var_1_51[2031] = {
+	pg.base.skill_data_template[2031] = {
 		desc_get = "",
 		name = "强袭号令",
 		type = 3,
@@ -5950,11 +5726,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.skill_data_template
-
-	var_1_52[2041] = {
+	pg.base.skill_data_template[2041] = {
 		desc_get = "",
 		name = "重点打击",
 		type = 1,
@@ -6015,11 +5787,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.skill_data_template
-
-	var_1_53[2051] = {
+	pg.base.skill_data_template[2051] = {
 		desc_get = "",
 		name = "鱼雷连射",
 		type = 1,
@@ -6080,11 +5848,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.skill_data_template
-
-	var_1_54[2061] = {
+	pg.base.skill_data_template[2061] = {
 		desc_get = "",
 		name = "主炮连射",
 		type = 1,
@@ -6145,11 +5909,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.skill_data_template
-
-	var_1_55[2071] = {
+	pg.base.skill_data_template[2071] = {
 		desc_get = "",
 		name = "火力覆盖",
 		type = 1,
@@ -6210,11 +5970,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.skill_data_template
-
-	var_1_56[2081] = {
+	pg.base.skill_data_template[2081] = {
 		desc_get = "",
 		name = "穿甲弹精通",
 		type = 1,
@@ -6275,11 +6031,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.skill_data_template
-
-	var_1_57[2091] = {
+	pg.base.skill_data_template[2091] = {
 		desc_get = "每隔35秒(满级15秒)，朝前方发射4发带小范围追踪效果的磁性鱼雷(威力依据技能等级)",
 		name = "磁性鱼雷",
 		type = 1,
@@ -6335,11 +6087,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.skill_data_template
-
-	var_1_58[2101] = {
+	pg.base.skill_data_template[2101] = {
 		desc_get = "每隔35秒(满级20秒)，朝前方发射3发鱼雷(威力依据技能等级)",
 		name = "鱼雷发射",
 		type = 1,
@@ -6395,11 +6143,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.skill_data_template
-
-	var_1_59[2111] = {
+	pg.base.skill_data_template[2111] = {
 		desc_get = "对自爆船、鱼雷艇、运输舰伤害提升10%（满级25%）",
 		name = "袭扰战术",
 		type = 1,
@@ -6460,11 +6204,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.skill_data_template
-
-	var_1_60[2121] = {
+	pg.base.skill_data_template[2121] = {
 		desc_get = "",
 		name = "集火信号-鱼雷",
 		type = 1,
@@ -6570,11 +6310,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.skill_data_template
-
-	var_1_61[2131] = {
+	pg.base.skill_data_template[2131] = {
 		desc_get = "",
 		name = "防空支援",
 		type = 1,
@@ -6635,11 +6371,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.skill_data_template
-
-	var_1_62[2141] = {
+	pg.base.skill_data_template[2141] = {
 		desc_get = "",
 		name = "驱逐战强化",
 		type = 2,
@@ -6700,11 +6432,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.skill_data_template
-
-	var_1_63[2151] = {
+	pg.base.skill_data_template[2151] = {
 		desc_get = "",
 		name = "均衡鱼雷",
 		type = 3,
@@ -6765,11 +6493,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.skill_data_template
-
-	var_1_64[2161] = {
+	pg.base.skill_data_template[2161] = {
 		desc_get = "",
 		name = "预备雷击",
 		type = 1,
@@ -6830,11 +6554,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.skill_data_template
-
-	var_1_65[2171] = {
+	pg.base.skill_data_template[2171] = {
 		desc_get = "",
 		name = "防空警戒",
 		type = 2,
@@ -6895,11 +6615,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.skill_data_template
-
-	var_1_66[2181] = {
+	pg.base.skill_data_template[2181] = {
 		desc_get = "",
 		name = "全面戒备",
 		type = 2,
@@ -6960,11 +6676,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.skill_data_template
-
-	var_1_67[2191] = {
+	pg.base.skill_data_template[2191] = {
 		desc_get = "",
 		name = "备弹指令",
 		type = 3,
@@ -7025,11 +6737,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.skill_data_template
-
-	var_1_68[2201] = {
+	pg.base.skill_data_template[2201] = {
 		desc_get = "",
 		name = "空海切换",
 		type = 2,
@@ -7135,11 +6843,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.skill_data_template
-
-	var_1_69[3001] = {
+	pg.base.skill_data_template[3001] = {
 		desc_get = "",
 		name = "快速起飞",
 		type = 1,
@@ -7200,11 +6904,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.skill_data_template
-
-	var_1_70[3011] = {
+	pg.base.skill_data_template[3011] = {
 		desc_get = "",
 		name = "强袭空母",
 		type = 1,
@@ -7265,11 +6965,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.skill_data_template
-
-	var_1_71[3021] = {
+	pg.base.skill_data_template[3021] = {
 		desc_get = "",
 		name = "舰队空母",
 		type = 3,
@@ -7330,11 +7026,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.skill_data_template
-
-	var_1_72[3031] = {
+	pg.base.skill_data_template[3031] = {
 		desc_get = "",
 		name = "支援空母",
 		type = 3,
@@ -7395,11 +7087,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.skill_data_template
-
-	var_1_73[3041] = {
+	pg.base.skill_data_template[3041] = {
 		desc_get = "",
 		name = "制空支援",
 		type = 3,
@@ -7460,11 +7148,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.skill_data_template
-
-	var_1_74[3051] = {
+	pg.base.skill_data_template[3051] = {
 		desc_get = "",
 		name = "航空掩护",
 		type = 2,
@@ -7525,11 +7209,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.skill_data_template
-
-	var_1_75[3511] = {
+	pg.base.skill_data_template[3511] = {
 		desc_get = "",
 		name = "额外供氧",
 		type = 3,
@@ -7592,11 +7272,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.skill_data_template
-
-	var_1_76[3521] = {
+	pg.base.skill_data_template[3521] = {
 		desc_get = "",
 		name = "水面作战",
 		type = 2,
@@ -7659,11 +7335,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.skill_data_template
-
-	var_1_77[3531] = {
+	pg.base.skill_data_template[3531] = {
 		desc_get = "",
 		name = "缓速鱼雷",
 		type = 1,
@@ -7726,11 +7398,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.skill_data_template
-
-	var_1_78[3571] = {
+	pg.base.skill_data_template[3571] = {
 		desc_get = "",
 		name = "轻巡猎手",
 		type = 1,
@@ -7793,11 +7461,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.skill_data_template
-
-	var_1_79[3581] = {
+	pg.base.skill_data_template[3581] = {
 		desc_get = "",
 		name = "重巡猎手",
 		type = 1,
@@ -7860,11 +7524,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.skill_data_template
-
-	var_1_80[3591] = {
+	pg.base.skill_data_template[3591] = {
 		desc_get = "",
 		name = "航母猎手",
 		type = 1,
@@ -7927,11 +7587,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.skill_data_template
-
-	var_1_81[3611] = {
+	pg.base.skill_data_template[3611] = {
 		desc_get = "",
 		name = "狼群战术",
 		type = 1,
@@ -7994,11 +7650,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.skill_data_template
-
-	var_1_82[3621] = {
+	pg.base.skill_data_template[3621] = {
 		desc_get = "",
 		name = "空域确认",
 		type = 3,
@@ -8061,11 +7713,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.skill_data_template
-
-	var_1_83[3631] = {
+	pg.base.skill_data_template[3631] = {
 		desc_get = "",
 		name = "远洋支援",
 		type = 3,
@@ -8128,11 +7776,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.skill_data_template
-
-	var_1_84[4001] = {
+	pg.base.skill_data_template[4001] = {
 		desc_get = "",
 		name = "防御姿态",
 		type = 2,
@@ -8238,11 +7882,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.skill_data_template
-
-	var_1_85[4011] = {
+	pg.base.skill_data_template[4011] = {
 		desc_get = "",
 		name = "防御号令",
 		type = 3,
@@ -8303,11 +7943,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.skill_data_template
-
-	var_1_86[4021] = {
+	pg.base.skill_data_template[4021] = {
 		desc_get = "",
 		name = "重点防护",
 		type = 2,
@@ -8368,11 +8004,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.skill_data_template
-
-	var_1_87[4031] = {
+	pg.base.skill_data_template[4031] = {
 		desc_get = "",
 		name = "损害管制",
 		type = 2,
@@ -8433,11 +8065,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.skill_data_template
-
-	var_1_88[4041] = {
+	pg.base.skill_data_template[4041] = {
 		desc_get = "",
 		name = "吸引火力",
 		type = 2,
@@ -8498,11 +8126,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.skill_data_template
-
-	var_1_89[4051] = {
+	pg.base.skill_data_template[4051] = {
 		desc_get = "受到伤害时有15%的概率发动，在角色正前方生成护盾，护盾可阻挡12发子弹，持续5秒(满级15秒)",
 		name = "正面装甲",
 		type = 2,
@@ -8558,11 +8182,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.skill_data_template
-
-	var_1_90[4061] = {
+	pg.base.skill_data_template[4061] = {
 		desc_get = "受到伤害时有15%的概率发动，在角色侧面生成2面护盾，护盾可阻挡6发子弹，持续5秒(满级15秒)",
 		name = "侧面装甲",
 		type = 2,
@@ -8618,11 +8238,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.skill_data_template
-
-	var_1_91[4071] = {
+	pg.base.skill_data_template[4071] = {
 		desc_get = "",
 		name = "紧急回避",
 		type = 2,
@@ -8683,11 +8299,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.skill_data_template
-
-	var_1_92[4081] = {
+	pg.base.skill_data_template[4081] = {
 		desc_get = "",
 		name = "烟雾弹",
 		type = 2,
@@ -8793,11 +8405,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.skill_data_template
-
-	var_1_93[4091] = {
+	pg.base.skill_data_template[4091] = {
 		desc_get = "",
 		name = "防空模式",
 		type = 2,
@@ -8903,11 +8511,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.skill_data_template
-
-	var_1_94[4101] = {
+	pg.base.skill_data_template[4101] = {
 		desc_get = "",
 		name = "烟雾弹·轻巡",
 		type = 2,
@@ -9013,11 +8617,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.skill_data_template
-
-	var_1_95[4111] = {
+	pg.base.skill_data_template[4111] = {
 		desc_get = "",
 		name = "穿甲防护",
 		type = 2,
@@ -9078,11 +8678,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.skill_data_template
-
-	var_1_96[4121] = {
+	pg.base.skill_data_template[4121] = {
 		desc_get = "",
 		name = "防护装甲",
 		type = 2,
@@ -9143,11 +8739,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.skill_data_template
-
-	var_1_97[4131] = {
+	pg.base.skill_data_template[4131] = {
 		desc_get = "",
 		name = "冲突禁止",
 		type = 2,
@@ -9208,11 +8800,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.skill_data_template
-
-	var_1_98[4141] = {
+	pg.base.skill_data_template[4141] = {
 		desc_get = "",
 		name = "机动护卫",
 		type = 2,
@@ -9318,8 +8906,7 @@ var_0_4.base.skill_data_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.skill_data_template[4151] = {
+	pg.base.skill_data_template[4151] = {
 		desc_get = "",
 		name = "机动制压",
 		type = 2,
@@ -9429,11 +9016,7 @@ var_0_4.base.skill_data_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.skill_data_template
-
-	var_2_0[4161] = {
+	pg.base.skill_data_template[4161] = {
 		desc_get = "",
 		name = "空域辅助",
 		type = 3,
@@ -9629,11 +9212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.skill_data_template
-
-	var_2_1[4171] = {
+	pg.base.skill_data_template[4171] = {
 		desc_get = "",
 		name = "空域辅助-共通效果占用id",
 		type = 3,
@@ -9649,11 +9228,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.skill_data_template
-
-	var_2_2[4181] = {
+	pg.base.skill_data_template[4181] = {
 		desc_get = "",
 		name = "机动制压",
 		type = 2,
@@ -9759,11 +9334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.skill_data_template
-
-	var_2_3[5001] = {
+	pg.base.skill_data_template[5001] = {
 		desc_get = "每隔20秒，有25%的概率发动，降低敌方单个单位射速与伤害，持续5秒(满级10秒)，优先对精英目标（人形单位）生效，同技能效果不叠加",
 		name = "火力干扰",
 		type = 3,
@@ -9819,11 +9390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.skill_data_template
-
-	var_2_4[5011] = {
+	pg.base.skill_data_template[5011] = {
 		desc_get = "每隔20秒，有25%的概率发动，敌方单个单位受到的伤害上升20%，持续5秒(满级15秒)，优先对精英目标（人形单位）生效，同技能效果不叠加",
 		name = "弱点侦测",
 		type = 3,
@@ -9879,11 +9446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.skill_data_template
-
-	var_2_5[5021] = {
+	pg.base.skill_data_template[5021] = {
 		desc_get = "",
 		name = "空母护航",
 		type = 2,
@@ -9944,11 +9507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.skill_data_template
-
-	var_2_6[5031] = {
+	pg.base.skill_data_template[5031] = {
 		desc_get = "",
 		name = "战舰护航",
 		type = 2,
@@ -10009,11 +9568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.skill_data_template
-
-	var_2_7[5041] = {
+	pg.base.skill_data_template[5041] = {
 		desc_get = "",
 		name = "照明弹",
 		type = 3,
@@ -10074,11 +9629,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.skill_data_template
-
-	var_2_8[5051] = {
+	pg.base.skill_data_template[5051] = {
 		desc_get = "",
 		name = "旗舰掩护",
 		type = 3,
@@ -10139,11 +9690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.skill_data_template
-
-	var_2_9[5061] = {
+	pg.base.skill_data_template[5061] = {
 		desc_get = "",
 		name = "驱逐编队",
 		type = 3,
@@ -10204,11 +9751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.skill_data_template
-
-	var_2_10[5071] = {
+	pg.base.skill_data_template[5071] = {
 		desc_get = "",
 		name = "骑士之盾",
 		type = 2,
@@ -10269,11 +9812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.skill_data_template
-
-	var_2_11[5081] = {
+	pg.base.skill_data_template[5081] = {
 		desc_get = "",
 		name = "骑士之剑",
 		type = 1,
@@ -10334,11 +9873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.skill_data_template
-
-	var_2_12[5101] = {
+	pg.base.skill_data_template[5101] = {
 		desc_get = "",
 		name = "应急战备",
 		type = 3,
@@ -10444,11 +9979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.skill_data_template
-
-	var_2_13[5111] = {
+	pg.base.skill_data_template[5111] = {
 		desc_get = "",
 		name = "航空辅助",
 		type = 3,
@@ -10554,11 +10085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.skill_data_template
-
-	var_2_14[6000] = {
+	pg.base.skill_data_template[6000] = {
 		desc_get = "",
 		name = "小海狸中队",
 		type = 0,
@@ -10572,11 +10099,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.skill_data_template
-
-	var_2_15[6010] = {
+	pg.base.skill_data_template[6010] = {
 		desc_get = "",
 		name = "防鱼雷隔舱T1",
 		type = 0,
@@ -10590,11 +10113,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.skill_data_template
-
-	var_2_16[6020] = {
+	pg.base.skill_data_template[6020] = {
 		desc_get = "",
 		name = "防鱼雷隔舱T2",
 		type = 0,
@@ -10608,11 +10127,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.skill_data_template
-
-	var_2_17[6030] = {
+	pg.base.skill_data_template[6030] = {
 		desc_get = "",
 		name = "防鱼雷隔舱T3",
 		type = 0,
@@ -10626,11 +10141,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.skill_data_template
-
-	var_2_18[6040] = {
+	pg.base.skill_data_template[6040] = {
 		desc_get = "",
 		name = "SG雷达T1",
 		type = 0,
@@ -10644,11 +10155,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.skill_data_template
-
-	var_2_19[6050] = {
+	pg.base.skill_data_template[6050] = {
 		desc_get = "",
 		name = "SG雷达T2",
 		type = 0,
@@ -10662,11 +10169,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.skill_data_template
-
-	var_2_20[6060] = {
+	pg.base.skill_data_template[6060] = {
 		desc_get = "",
 		name = "SG雷达T3",
 		type = 0,
@@ -10680,11 +10183,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.skill_data_template
-
-	var_2_21[6070] = {
+	pg.base.skill_data_template[6070] = {
 		desc_get = "",
 		name = "航空副油箱T1",
 		type = 0,
@@ -10698,11 +10197,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.skill_data_template
-
-	var_2_22[6080] = {
+	pg.base.skill_data_template[6080] = {
 		desc_get = "",
 		name = "航空副油箱T2",
 		type = 0,
@@ -10716,11 +10211,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.skill_data_template
-
-	var_2_23[6090] = {
+	pg.base.skill_data_template[6090] = {
 		desc_get = "",
 		name = "航空副油箱T3",
 		type = 0,
@@ -10734,11 +10225,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.skill_data_template
-
-	var_2_24[6100] = {
+	pg.base.skill_data_template[6100] = {
 		desc_get = "",
 		name = "维修工具T1",
 		type = 0,
@@ -10752,11 +10239,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.skill_data_template
-
-	var_2_25[6110] = {
+	pg.base.skill_data_template[6110] = {
 		desc_get = "",
 		name = "维修工具T2",
 		type = 0,
@@ -10770,11 +10253,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.skill_data_template
-
-	var_2_26[6120] = {
+	pg.base.skill_data_template[6120] = {
 		desc_get = "",
 		name = "维修工具T3",
 		type = 0,
@@ -10788,11 +10267,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.skill_data_template
-
-	var_2_27[6130] = {
+	pg.base.skill_data_template[6130] = {
 		desc_get = "",
 		name = "珍珠之泪",
 		type = 0,
@@ -10806,11 +10281,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.skill_data_template
-
-	var_2_28[6140] = {
+	pg.base.skill_data_template[6140] = {
 		desc_get = "",
 		name = "灭火器T1",
 		type = 0,
@@ -10824,11 +10295,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.skill_data_template
-
-	var_2_29[6150] = {
+	pg.base.skill_data_template[6150] = {
 		desc_get = "",
 		name = "灭火器T2",
 		type = 0,
@@ -10842,11 +10309,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.skill_data_template
-
-	var_2_30[6160] = {
+	pg.base.skill_data_template[6160] = {
 		desc_get = "",
 		name = "灭火器T3",
 		type = 0,
@@ -10860,11 +10323,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.skill_data_template
-
-	var_2_31[6170] = {
+	pg.base.skill_data_template[6170] = {
 		desc_get = "",
 		name = "喵喵治愈",
 		type = 0,
@@ -10878,11 +10337,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.skill_data_template
-
-	var_2_32[6180] = {
+	pg.base.skill_data_template[6180] = {
 		desc_get = "",
 		name = "空中侦察",
 		type = 0,
@@ -10896,11 +10351,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.skill_data_template
-
-	var_2_33[6190] = {
+	pg.base.skill_data_template[6190] = {
 		desc_get = "",
 		name = "九一式穿甲弹",
 		type = 0,
@@ -10914,11 +10365,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.skill_data_template
-
-	var_2_34[6200] = {
+	pg.base.skill_data_template[6200] = {
 		desc_get = "",
 		name = "一式穿甲弹",
 		type = 0,
@@ -10932,11 +10379,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.skill_data_template
-
-	var_2_35[6210] = {
+	pg.base.skill_data_template[6210] = {
 		desc_get = "",
 		name = "超重弹",
 		type = 0,
@@ -10950,11 +10393,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.skill_data_template
-
-	var_2_36[6220] = {
+	pg.base.skill_data_template[6220] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -10968,11 +10407,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.skill_data_template
-
-	var_2_37[6230] = {
+	pg.base.skill_data_template[6230] = {
 		desc_get = "",
 		name = "Z字旗",
 		type = 0,
@@ -10986,11 +10421,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.skill_data_template
-
-	var_2_38[6240] = {
+	pg.base.skill_data_template[6240] = {
 		desc_get = "",
 		name = "密集轰炸",
 		type = 0,
@@ -11004,11 +10435,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.skill_data_template
-
-	var_2_39[6250] = {
+	pg.base.skill_data_template[6250] = {
 		desc_get = "",
 		name = "Jolly Rogers",
 		type = 0,
@@ -11022,11 +10449,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.skill_data_template
-
-	var_2_40[6260] = {
+	pg.base.skill_data_template[6260] = {
 		desc_get = "",
 		name = "精确锁定",
 		type = 0,
@@ -11040,11 +10463,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.skill_data_template
-
-	var_2_41[6265] = {
+	pg.base.skill_data_template[6265] = {
 		desc_get = "",
 		name = "精确锁定·改",
 		type = 0,
@@ -11058,11 +10477,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.skill_data_template
-
-	var_2_42[6270] = {
+	pg.base.skill_data_template[6270] = {
 		desc_get = "",
 		name = "机动回避",
 		type = 0,
@@ -11076,11 +10491,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.skill_data_template
-
-	var_2_43[6280] = {
+	pg.base.skill_data_template[6280] = {
 		desc_get = "",
 		name = "对空搜索",
 		type = 0,
@@ -11094,11 +10505,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.skill_data_template
-
-	var_2_44[6290] = {
+	pg.base.skill_data_template[6290] = {
 		desc_get = "",
 		name = "远洋巡航I",
 		type = 0,
@@ -11112,11 +10519,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.skill_data_template
-
-	var_2_45[6291] = {
+	pg.base.skill_data_template[6291] = {
 		desc_get = "",
 		name = "远洋巡航II",
 		type = 0,
@@ -11130,11 +10533,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.skill_data_template
-
-	var_2_46[6300] = {
+	pg.base.skill_data_template[6300] = {
 		desc_get = "",
 		name = "高效燃油",
 		type = 0,
@@ -11148,11 +10547,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.skill_data_template
-
-	var_2_47[6310] = {
+	pg.base.skill_data_template[6310] = {
 		desc_get = "",
 		name = "归航引导",
 		type = 0,
@@ -11166,11 +10561,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.skill_data_template
-
-	var_2_48[6320] = {
+	pg.base.skill_data_template[6320] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11184,11 +10575,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.skill_data_template
-
-	var_2_49[6321] = {
+	pg.base.skill_data_template[6321] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11202,11 +10589,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.skill_data_template
-
-	var_2_50[6322] = {
+	pg.base.skill_data_template[6322] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11220,11 +10603,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.skill_data_template
-
-	var_2_51[6323] = {
+	pg.base.skill_data_template[6323] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11238,11 +10617,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.skill_data_template
-
-	var_2_52[6324] = {
+	pg.base.skill_data_template[6324] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11256,11 +10631,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.skill_data_template
-
-	var_2_53[6325] = {
+	pg.base.skill_data_template[6325] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11274,11 +10645,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.skill_data_template
-
-	var_2_54[6326] = {
+	pg.base.skill_data_template[6326] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11292,11 +10659,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.skill_data_template
-
-	var_2_55[6327] = {
+	pg.base.skill_data_template[6327] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11310,11 +10673,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.skill_data_template
-
-	var_2_56[6328] = {
+	pg.base.skill_data_template[6328] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11328,11 +10687,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.skill_data_template
-
-	var_2_57[6329] = {
+	pg.base.skill_data_template[6329] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11346,11 +10701,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.skill_data_template
-
-	var_2_58[6330] = {
+	pg.base.skill_data_template[6330] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11364,11 +10715,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.skill_data_template
-
-	var_2_59[6331] = {
+	pg.base.skill_data_template[6331] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11382,11 +10729,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.skill_data_template
-
-	var_2_60[6332] = {
+	pg.base.skill_data_template[6332] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11400,11 +10743,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.skill_data_template
-
-	var_2_61[6333] = {
+	pg.base.skill_data_template[6333] = {
 		desc_get = "",
 		name = "落幕与揭幕",
 		type = 0,
@@ -11418,11 +10757,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.skill_data_template
-
-	var_2_62[6360] = {
+	pg.base.skill_data_template[6360] = {
 		desc_get = "",
 		name = "延时射击",
 		type = 0,
@@ -11436,11 +10771,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.skill_data_template
-
-	var_2_63[6370] = {
+	pg.base.skill_data_template[6370] = {
 		desc_get = "",
 		name = "潜母特攻",
 		type = 0,
@@ -11454,11 +10785,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.skill_data_template
-
-	var_2_64[6380] = {
+	pg.base.skill_data_template[6380] = {
 		desc_get = "",
 		name = "随机单词生成器",
 		type = 0,
@@ -11472,11 +10799,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.skill_data_template
-
-	var_2_65[6390] = {
+	pg.base.skill_data_template[6390] = {
 		desc_get = "",
 		name = "晃悠悠",
 		type = 0,
@@ -11490,11 +10813,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.skill_data_template
-
-	var_2_66[6400] = {
+	pg.base.skill_data_template[6400] = {
 		desc_get = "",
 		name = "智慧模块",
 		type = 0,
@@ -11508,11 +10827,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.skill_data_template
-
-	var_2_67[6410] = {
+	pg.base.skill_data_template[6410] = {
 		desc_get = "",
 		name = "已抵达的承诺",
 		type = 0,
@@ -11526,11 +10841,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.skill_data_template
-
-	var_2_68[6411] = {
+	pg.base.skill_data_template[6411] = {
 		desc_get = "",
 		name = "已抵达的承诺",
 		type = 0,
@@ -11544,11 +10855,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.skill_data_template
-
-	var_2_69[6415] = {
+	pg.base.skill_data_template[6415] = {
 		desc_get = "",
 		name = "已抵达的承诺",
 		type = 0,
@@ -11562,11 +10869,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.skill_data_template
-
-	var_2_70[6420] = {
+	pg.base.skill_data_template[6420] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -11580,11 +10883,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.skill_data_template
-
-	var_2_71[6430] = {
+	pg.base.skill_data_template[6430] = {
 		desc_get = "",
 		name = "萨奇剪",
 		type = 0,
@@ -11598,11 +10897,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.skill_data_template
-
-	var_2_72[6440] = {
+	pg.base.skill_data_template[6440] = {
 		desc_get = "",
 		name = "对塞壬防御战术I",
 		type = 0,
@@ -11616,11 +10911,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.skill_data_template
-
-	var_2_73[6450] = {
+	pg.base.skill_data_template[6450] = {
 		desc_get = "",
 		name = "狂暴炮击",
 		type = 0,
@@ -11634,11 +10925,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.skill_data_template
-
-	var_2_74[6460] = {
+	pg.base.skill_data_template[6460] = {
 		desc_get = "",
 		name = "VH装甲钢板",
 		type = 0,
@@ -11652,11 +10939,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.skill_data_template
-
-	var_2_75[6470] = {
+	pg.base.skill_data_template[6470] = {
 		desc_get = "",
 		name = "VC装甲钢板",
 		type = 0,
@@ -11670,11 +10953,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.skill_data_template
-
-	var_2_76[6480] = {
+	pg.base.skill_data_template[6480] = {
 		desc_get = "",
 		name = "四神之力",
 		type = 0,
@@ -11688,11 +10967,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.skill_data_template
-
-	var_2_77[6490] = {
+	pg.base.skill_data_template[6490] = {
 		desc_get = "",
 		name = "组徽",
 		type = 0,
@@ -11706,11 +10981,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.skill_data_template
-
-	var_2_78[6500] = {
+	pg.base.skill_data_template[6500] = {
 		desc_get = "",
 		name = "Gamers的证明",
 		type = 0,
@@ -11724,11 +10995,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.skill_data_template
-
-	var_2_79[6510] = {
+	pg.base.skill_data_template[6510] = {
 		desc_get = "",
 		name = "玉米灯笼",
 		type = 0,
@@ -11742,11 +11009,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.skill_data_template
-
-	var_2_80[6520] = {
+	pg.base.skill_data_template[6520] = {
 		desc_get = "",
 		name = "鮟鱇肝",
 		type = 0,
@@ -11760,11 +11023,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.skill_data_template
-
-	var_2_81[6530] = {
+	pg.base.skill_data_template[6530] = {
 		desc_get = "",
 		name = "空中侦察",
 		type = 0,
@@ -11778,11 +11037,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.skill_data_template
-
-	var_2_82[6540] = {
+	pg.base.skill_data_template[6540] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -11796,11 +11051,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.skill_data_template
-
-	var_2_83[6550] = {
+	pg.base.skill_data_template[6550] = {
 		desc_get = "",
 		name = "！？",
 		type = 0,
@@ -11814,11 +11065,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.skill_data_template
-
-	var_2_84[6560] = {
+	pg.base.skill_data_template[6560] = {
 		desc_get = "",
 		name = "改良型艇壳",
 		type = 0,
@@ -11832,11 +11079,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.skill_data_template
-
-	var_2_85[6570] = {
+	pg.base.skill_data_template[6570] = {
 		desc_get = "",
 		name = "预装磁性鱼雷",
 		type = 0,
@@ -11850,11 +11093,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.skill_data_template
-
-	var_2_86[6580] = {
+	pg.base.skill_data_template[6580] = {
 		desc_get = "",
 		name = "“主炮”...开火！",
 		type = 0,
@@ -11868,11 +11107,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.skill_data_template
-
-	var_2_87[6590] = {
+	pg.base.skill_data_template[6590] = {
 		desc_get = "",
 		name = "“九四式40厘米炮”",
 		type = 0,
@@ -11886,11 +11121,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.skill_data_template
-
-	var_2_88[6620] = {
+	pg.base.skill_data_template[6620] = {
 		desc_get = "",
 		name = "基础声呐T3",
 		type = 0,
@@ -11904,11 +11135,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.skill_data_template
-
-	var_2_89[6650] = {
+	pg.base.skill_data_template[6650] = {
 		desc_get = "",
 		name = "改良声呐T3",
 		type = 0,
@@ -11922,11 +11149,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.skill_data_template
-
-	var_2_90[6660] = {
+	pg.base.skill_data_template[6660] = {
 		desc_get = "",
 		name = "航空兵装补给",
 		type = 0,
@@ -11940,11 +11163,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.skill_data_template
-
-	var_2_91[6670] = {
+	pg.base.skill_data_template[6670] = {
 		desc_get = "",
 		name = "中小口径兵装补给",
 		type = 0,
@@ -11958,11 +11177,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.skill_data_template
-
-	var_2_92[6680] = {
+	pg.base.skill_data_template[6680] = {
 		desc_get = "",
 		name = "鱼雷兵装补给",
 		type = 0,
@@ -11976,11 +11191,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.skill_data_template
-
-	var_2_93[6690] = {
+	pg.base.skill_data_template[6690] = {
 		desc_get = "",
 		name = "引力舞鞋",
 		type = 0,
@@ -11994,11 +11205,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.skill_data_template
-
-	var_2_94[6700] = {
+	pg.base.skill_data_template[6700] = {
 		desc_get = "",
 		name = "星云舞裙",
 		type = 0,
@@ -12012,11 +11219,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.skill_data_template
-
-	var_2_95[6710] = {
+	pg.base.skill_data_template[6710] = {
 		desc_get = "",
 		name = "炽烈之歌",
 		type = 0,
@@ -12030,11 +11233,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.skill_data_template
-
-	var_2_96[6711] = {
+	pg.base.skill_data_template[6711] = {
 		desc_get = "",
 		name = "活力之歌",
 		type = 0,
@@ -12048,11 +11247,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.skill_data_template
-
-	var_2_97[6712] = {
+	pg.base.skill_data_template[6712] = {
 		desc_get = "",
 		name = "闪耀之歌",
 		type = 0,
@@ -12066,11 +11261,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.skill_data_template
-
-	var_2_98[6720] = {
+	pg.base.skill_data_template[6720] = {
 		desc_get = "",
 		name = "觉醒宝珠",
 		type = 0,
@@ -12084,8 +11275,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_2_98
-	var_2_98.base.skill_data_template[6730] = {
+	pg.base.skill_data_template[6730] = {
 		desc_get = "",
 		name = "心之钥匙",
 		type = 0,
@@ -12103,11 +11293,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.skill_data_template
-
-	var_3_0[6740] = {
+	pg.base.skill_data_template[6740] = {
 		desc_get = "",
 		name = "开拓者奖章",
 		type = 0,
@@ -12123,11 +11309,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.skill_data_template
-
-	var_3_1[6750] = {
+	pg.base.skill_data_template[6750] = {
 		desc_get = "",
 		name = "白鹰精英损管",
 		type = 0,
@@ -12141,11 +11323,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.skill_data_template
-
-	var_3_2[6760] = {
+	pg.base.skill_data_template[6760] = {
 		desc_get = "",
 		name = "华盛顿海军条约",
 		type = 0,
@@ -12161,11 +11339,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.skill_data_template
-
-	var_3_3[6770] = {
+	pg.base.skill_data_template[6770] = {
 		desc_get = "",
 		name = "纳尔逊的旗语",
 		type = 0,
@@ -12179,11 +11353,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.skill_data_template
-
-	var_3_4[6780] = {
+	pg.base.skill_data_template[6780] = {
 		desc_get = "",
 		name = "试制炮管",
 		type = 0,
@@ -12197,11 +11367,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.skill_data_template
-
-	var_3_5[6790] = {
+	pg.base.skill_data_template[6790] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12215,11 +11381,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.skill_data_template
-
-	var_3_6[6791] = {
+	pg.base.skill_data_template[6791] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12233,11 +11395,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.skill_data_template
-
-	var_3_7[6792] = {
+	pg.base.skill_data_template[6792] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12251,11 +11409,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.skill_data_template
-
-	var_3_8[6793] = {
+	pg.base.skill_data_template[6793] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12269,11 +11423,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.skill_data_template
-
-	var_3_9[6794] = {
+	pg.base.skill_data_template[6794] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12287,11 +11437,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.skill_data_template
-
-	var_3_10[6795] = {
+	pg.base.skill_data_template[6795] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12305,11 +11451,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.skill_data_template
-
-	var_3_11[6796] = {
+	pg.base.skill_data_template[6796] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12323,11 +11465,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.skill_data_template
-
-	var_3_12[6797] = {
+	pg.base.skill_data_template[6797] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12341,11 +11479,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.skill_data_template
-
-	var_3_13[6798] = {
+	pg.base.skill_data_template[6798] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12359,11 +11493,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.skill_data_template
-
-	var_3_14[6799] = {
+	pg.base.skill_data_template[6799] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12377,11 +11507,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.skill_data_template
-
-	var_3_15[6800] = {
+	pg.base.skill_data_template[6800] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12395,11 +11521,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.skill_data_template
-
-	var_3_16[6801] = {
+	pg.base.skill_data_template[6801] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12413,11 +11535,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.skill_data_template
-
-	var_3_17[6802] = {
+	pg.base.skill_data_template[6802] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12431,11 +11549,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.skill_data_template
-
-	var_3_18[6803] = {
+	pg.base.skill_data_template[6803] = {
 		desc_get = "",
 		name = "猎杀战列",
 		type = 0,
@@ -12449,11 +11563,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.skill_data_template
-
-	var_3_19[6810] = {
+	pg.base.skill_data_template[6810] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12467,11 +11577,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.skill_data_template
-
-	var_3_20[6811] = {
+	pg.base.skill_data_template[6811] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12485,11 +11591,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.skill_data_template
-
-	var_3_21[6812] = {
+	pg.base.skill_data_template[6812] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12503,11 +11605,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.skill_data_template
-
-	var_3_22[6813] = {
+	pg.base.skill_data_template[6813] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12521,11 +11619,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.skill_data_template
-
-	var_3_23[6814] = {
+	pg.base.skill_data_template[6814] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12539,11 +11633,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.skill_data_template
-
-	var_3_24[6815] = {
+	pg.base.skill_data_template[6815] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12557,11 +11647,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.skill_data_template
-
-	var_3_25[6816] = {
+	pg.base.skill_data_template[6816] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12575,11 +11661,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.skill_data_template
-
-	var_3_26[6817] = {
+	pg.base.skill_data_template[6817] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12593,11 +11675,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.skill_data_template
-
-	var_3_27[6818] = {
+	pg.base.skill_data_template[6818] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12611,11 +11689,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.skill_data_template
-
-	var_3_28[6819] = {
+	pg.base.skill_data_template[6819] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12629,11 +11703,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.skill_data_template
-
-	var_3_29[6820] = {
+	pg.base.skill_data_template[6820] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12647,11 +11717,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.skill_data_template
-
-	var_3_30[6821] = {
+	pg.base.skill_data_template[6821] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12665,11 +11731,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.skill_data_template
-
-	var_3_31[6822] = {
+	pg.base.skill_data_template[6822] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12683,11 +11745,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.skill_data_template
-
-	var_3_32[6823] = {
+	pg.base.skill_data_template[6823] = {
 		desc_get = "",
 		name = "剑鱼(818中队)",
 		type = 0,
@@ -12701,11 +11759,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.skill_data_template
-
-	var_3_33[6830] = {
+	pg.base.skill_data_template[6830] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12719,11 +11773,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.skill_data_template
-
-	var_3_34[6831] = {
+	pg.base.skill_data_template[6831] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12737,11 +11787,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.skill_data_template
-
-	var_3_35[6832] = {
+	pg.base.skill_data_template[6832] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12755,11 +11801,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.skill_data_template
-
-	var_3_36[6833] = {
+	pg.base.skill_data_template[6833] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12773,11 +11815,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.skill_data_template
-
-	var_3_37[6834] = {
+	pg.base.skill_data_template[6834] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12791,11 +11829,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.skill_data_template
-
-	var_3_38[6835] = {
+	pg.base.skill_data_template[6835] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12809,11 +11843,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.skill_data_template
-
-	var_3_39[6836] = {
+	pg.base.skill_data_template[6836] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12827,11 +11857,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.skill_data_template
-
-	var_3_40[6837] = {
+	pg.base.skill_data_template[6837] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12845,11 +11871,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.skill_data_template
-
-	var_3_41[6838] = {
+	pg.base.skill_data_template[6838] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12863,11 +11885,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.skill_data_template
-
-	var_3_42[6839] = {
+	pg.base.skill_data_template[6839] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12881,11 +11899,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.skill_data_template
-
-	var_3_43[6840] = {
+	pg.base.skill_data_template[6840] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12899,11 +11913,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.skill_data_template
-
-	var_3_44[6841] = {
+	pg.base.skill_data_template[6841] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12917,11 +11927,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.skill_data_template
-
-	var_3_45[6842] = {
+	pg.base.skill_data_template[6842] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12935,11 +11941,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.skill_data_template
-
-	var_3_46[6843] = {
+	pg.base.skill_data_template[6843] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12953,11 +11955,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.skill_data_template
-
-	var_3_47[6850] = {
+	pg.base.skill_data_template[6850] = {
 		desc_get = "",
 		name = "对重樱作战战术I",
 		type = 0,
@@ -12971,11 +11969,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.skill_data_template
-
-	var_3_48[6860] = {
+	pg.base.skill_data_template[6860] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -12989,11 +11983,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.skill_data_template
-
-	var_3_49[6861] = {
+	pg.base.skill_data_template[6861] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13007,11 +11997,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.skill_data_template
-
-	var_3_50[6862] = {
+	pg.base.skill_data_template[6862] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13025,11 +12011,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.skill_data_template
-
-	var_3_51[6863] = {
+	pg.base.skill_data_template[6863] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13043,11 +12025,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.skill_data_template
-
-	var_3_52[6864] = {
+	pg.base.skill_data_template[6864] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13061,11 +12039,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.skill_data_template
-
-	var_3_53[6865] = {
+	pg.base.skill_data_template[6865] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13079,11 +12053,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.skill_data_template
-
-	var_3_54[6866] = {
+	pg.base.skill_data_template[6866] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13097,11 +12067,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.skill_data_template
-
-	var_3_55[6867] = {
+	pg.base.skill_data_template[6867] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13115,11 +12081,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.skill_data_template
-
-	var_3_56[6868] = {
+	pg.base.skill_data_template[6868] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13133,11 +12095,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.skill_data_template
-
-	var_3_57[6869] = {
+	pg.base.skill_data_template[6869] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13151,11 +12109,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.skill_data_template
-
-	var_3_58[6870] = {
+	pg.base.skill_data_template[6870] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13169,11 +12123,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.skill_data_template
-
-	var_3_59[6871] = {
+	pg.base.skill_data_template[6871] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13187,11 +12137,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.skill_data_template
-
-	var_3_60[6872] = {
+	pg.base.skill_data_template[6872] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13205,11 +12151,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.skill_data_template
-
-	var_3_61[6873] = {
+	pg.base.skill_data_template[6873] = {
 		desc_get = "",
 		name = "穿甲航弹",
 		type = 0,
@@ -13223,11 +12165,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.skill_data_template
-
-	var_3_62[6880] = {
+	pg.base.skill_data_template[6880] = {
 		desc_get = "",
 		name = "偶像手环",
 		type = 0,
@@ -13241,11 +12179,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.skill_data_template
-
-	var_3_63[6890] = {
+	pg.base.skill_data_template[6890] = {
 		desc_get = "",
 		name = "征战巨坦",
 		type = 0,
@@ -13259,11 +12193,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.skill_data_template
-
-	var_3_64[6900] = {
+	pg.base.skill_data_template[6900] = {
 		desc_get = "",
 		name = "古立特圣剑",
 		type = 0,
@@ -13277,11 +12207,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.skill_data_template
-
-	var_3_65[6910] = {
+	pg.base.skill_data_template[6910] = {
 		desc_get = "",
 		name = "爆裂钻孔机",
 		type = 0,
@@ -13295,11 +12221,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.skill_data_template
-
-	var_3_66[6920] = {
+	pg.base.skill_data_template[6920] = {
 		desc_get = "",
 		name = "苍穹喷射机",
 		type = 0,
@@ -13313,11 +12235,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.skill_data_template
-
-	var_3_67[6930] = {
+	pg.base.skill_data_template[6930] = {
 		desc_get = "",
 		name = "戴拿爆能加农",
 		type = 0,
@@ -13331,11 +12249,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.skill_data_template
-
-	var_3_68[6940] = {
+	pg.base.skill_data_template[6940] = {
 		desc_get = "",
 		name = "煌翼炎龙",
 		type = 0,
@@ -13349,11 +12263,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.skill_data_template
-
-	var_3_69[6950] = {
+	pg.base.skill_data_template[6950] = {
 		desc_get = "",
 		name = "破损的演讲稿",
 		type = 0,
@@ -13367,11 +12277,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.skill_data_template
-
-	var_3_70[6960] = {
+	pg.base.skill_data_template[6960] = {
 		desc_get = "",
 		name = "6CRH穿甲弹",
 		type = 0,
@@ -13385,11 +12291,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.skill_data_template
-
-	var_3_71[6970] = {
+	pg.base.skill_data_template[6970] = {
 		desc_get = "",
 		name = "天使之羽",
 		type = 0,
@@ -13403,11 +12305,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.skill_data_template
-
-	var_3_72[6980] = {
+	pg.base.skill_data_template[6980] = {
 		desc_get = "",
 		name = "撒丁的邀请",
 		type = 0,
@@ -13421,11 +12319,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.skill_data_template
-
-	var_3_73[6990] = {
+	pg.base.skill_data_template[6990] = {
 		desc_get = "",
 		name = "结界通行凭证",
 		type = 0,
@@ -13439,11 +12333,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.skill_data_template
-
-	var_3_74[60100] = {
+	pg.base.skill_data_template[60100] = {
 		desc_get = "",
 		name = "皇家作战记录_A",
 		type = 0,
@@ -13457,11 +12347,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.skill_data_template
-
-	var_3_75[60110] = {
+	pg.base.skill_data_template[60110] = {
 		desc_get = "",
 		name = "J·Force",
 		type = 0,
@@ -13475,11 +12361,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.skill_data_template
-
-	var_3_76[60120] = {
+	pg.base.skill_data_template[60120] = {
 		desc_get = "",
 		name = "球形实心弹",
 		type = 0,
@@ -13493,11 +12375,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.skill_data_template
-
-	var_3_77[60130] = {
+	pg.base.skill_data_template[60130] = {
 		desc_get = "",
 		name = "赋予火伤",
 		type = 0,
@@ -13511,11 +12389,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.skill_data_template
-
-	var_3_78[60140] = {
+	pg.base.skill_data_template[60140] = {
 		desc_get = "",
 		name = "丧失速度",
 		type = 0,
@@ -13529,11 +12403,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.skill_data_template
-
-	var_3_79[60150] = {
+	pg.base.skill_data_template[60150] = {
 		desc_get = "",
 		name = "丧失感觉",
 		type = 0,
@@ -13547,11 +12417,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.skill_data_template
-
-	var_3_80[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "最大风力",
 		type = 0,
@@ -13565,11 +12431,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.skill_data_template
-
-	var_3_81[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "核心驱动—四星极光",
 		type = 0,
@@ -13583,11 +12445,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.skill_data_template
-
-	var_3_82[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "大海呼应",
 		type = 0,
@@ -13601,11 +12459,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.skill_data_template
-
-	var_3_83[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "泡泡四溢",
 		type = 0,
@@ -13619,11 +12473,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.skill_data_template
-
-	var_3_84[60200] = {
+	pg.base.skill_data_template[60200] = {
 		desc_get = "",
 		name = "核心驱动—重力挤压",
 		type = 0,
@@ -13637,11 +12487,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.skill_data_template
-
-	var_3_85[60210] = {
+	pg.base.skill_data_template[60210] = {
 		desc_get = "",
 		name = "摄魂刻印",
 		type = 0,
@@ -13655,11 +12501,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.skill_data_template
-
-	var_3_86[60220] = {
+	pg.base.skill_data_template[60220] = {
 		desc_get = "",
 		name = "无限大的爆炸",
 		type = 0,
@@ -13673,11 +12515,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.skill_data_template
-
-	var_3_87[60230] = {
+	pg.base.skill_data_template[60230] = {
 		desc_get = "",
 		name = "核心驱动—遗言陨石",
 		type = 0,
@@ -13691,11 +12529,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.skill_data_template
-
-	var_3_88[60240] = {
+	pg.base.skill_data_template[60240] = {
 		desc_get = "",
 		name = "回避率提升",
 		type = 0,
@@ -13709,11 +12543,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.skill_data_template
-
-	var_3_89[60250] = {
+	pg.base.skill_data_template[60250] = {
 		desc_get = "",
 		name = "HP回复",
 		type = 0,
@@ -13727,11 +12557,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.skill_data_template
-
-	var_3_90[60260] = {
+	pg.base.skill_data_template[60260] = {
 		desc_get = "",
 		name = "核心驱动—天使的拥抱",
 		type = 0,
@@ -13745,11 +12571,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.skill_data_template
-
-	var_3_91[60270] = {
+	pg.base.skill_data_template[60270] = {
 		desc_get = "",
 		name = "绚丽旋律",
 		type = 0,
@@ -13763,11 +12585,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.skill_data_template
-
-	var_3_92[60280] = {
+	pg.base.skill_data_template[60280] = {
 		desc_get = "",
 		name = "道具命中",
 		type = 0,
@@ -13781,11 +12599,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.skill_data_template
-
-	var_3_93[60281] = {
+	pg.base.skill_data_template[60281] = {
 		desc_get = "",
 		name = "道具发动",
 		type = 0,
@@ -13799,11 +12613,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.skill_data_template
-
-	var_3_94[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "雪顶之梦 ",
 		type = 0,
@@ -13817,11 +12627,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.skill_data_template
-
-	var_3_95[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "戊型水上机",
 		type = 0,
@@ -13835,11 +12641,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.skill_data_template
-
-	var_3_96[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "妖精的魔法",
 		type = 0,
@@ -13853,11 +12655,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.skill_data_template
-
-	var_3_97[60320] = {
+	pg.base.skill_data_template[60320] = {
 		desc_get = "",
 		name = "梅之语",
 		type = 0,
@@ -13871,11 +12669,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.skill_data_template
-
-	var_3_98[60330] = {
+	pg.base.skill_data_template[60330] = {
 		desc_get = "",
 		name = "女王的日程表",
 		type = 0,
@@ -13889,8 +12683,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_3_98
-	var_3_98.base.skill_data_template[60340] = {
+	pg.base.skill_data_template[60340] = {
 		desc_get = "",
 		name = "作战报告·极地风暴",
 		type = 0,
@@ -13908,11 +12701,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.skill_data_template
-
-	var_4_0[60350] = {
+	pg.base.skill_data_template[60350] = {
 		desc_get = "",
 		name = "「神石样本」研究笔记",
 		type = 0,
@@ -13926,11 +12715,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.skill_data_template
-
-	var_4_1[60360] = {
+	pg.base.skill_data_template[60360] = {
 		desc_get = "",
 		name = "Mark35鱼雷",
 		type = 0,
@@ -13944,11 +12729,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.skill_data_template
-
-	var_4_2[60370] = {
+	pg.base.skill_data_template[60370] = {
 		desc_get = "",
 		name = "绿洲无液气压计",
 		type = 0,
@@ -13962,11 +12743,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.skill_data_template
-
-	var_4_3[60380] = {
+	pg.base.skill_data_template[60380] = {
 		desc_get = "",
 		name = "精细整备",
 		type = 0,
@@ -13980,11 +12757,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.skill_data_template
-
-	var_4_4[60390] = {
+	pg.base.skill_data_template[60390] = {
 		desc_get = "",
 		name = "防空炮火戒备",
 		type = 0,
@@ -13998,11 +12771,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.skill_data_template
-
-	var_4_5[60400] = {
+	pg.base.skill_data_template[60400] = {
 		desc_get = "",
 		name = "适应性强化",
 		type = 0,
@@ -14016,11 +12785,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.skill_data_template
-
-	var_4_6[60410] = {
+	pg.base.skill_data_template[60410] = {
 		desc_get = "",
 		name = "博览会纪念票",
 		type = 0,
@@ -14034,11 +12799,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.skill_data_template
-
-	var_4_7[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "对抗模拟指令",
 		type = 0,
@@ -14052,11 +12813,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.skill_data_template
-
-	var_4_8[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "刺绣锦囊",
 		type = 0,
@@ -14070,11 +12827,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.skill_data_template
-
-	var_4_9[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "扬起旗帜",
 		type = 0,
@@ -14088,11 +12841,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.skill_data_template
-
-	var_4_10[60450] = {
+	pg.base.skill_data_template[60450] = {
 		desc_get = "",
 		name = "航海望远镜",
 		type = 0,
@@ -14106,11 +12855,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.skill_data_template
-
-	var_4_11[60460] = {
+	pg.base.skill_data_template[60460] = {
 		desc_get = "",
 		name = "果蔬补给品",
 		type = 0,
@@ -14124,11 +12869,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.skill_data_template
-
-	var_4_12[60470] = {
+	pg.base.skill_data_template[60470] = {
 		desc_get = "",
 		name = "忍者大师徽章",
 		type = 0,
@@ -14142,11 +12883,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.skill_data_template
-
-	var_4_13[60480] = {
+	pg.base.skill_data_template[60480] = {
 		desc_get = "",
 		name = "忍者装束",
 		type = 0,
@@ -14160,11 +12897,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.skill_data_template
-
-	var_4_14[60490] = {
+	pg.base.skill_data_template[60490] = {
 		desc_get = "",
 		name = "忍术卷轴",
 		type = 0,
@@ -14178,11 +12911,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.skill_data_template
-
-	var_4_15[60500] = {
+	pg.base.skill_data_template[60500] = {
 		desc_get = "",
 		name = "星海B2O区通行证",
 		type = 0,
@@ -14196,11 +12925,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.skill_data_template
-
-	var_4_16[60510] = {
+	pg.base.skill_data_template[60510] = {
 		desc_get = "",
 		name = "寰昌的钓鱼竿",
 		type = 0,
@@ -14214,11 +12939,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.skill_data_template
-
-	var_4_17[60520] = {
+	pg.base.skill_data_template[60520] = {
 		desc_get = "",
 		name = "十字胸针",
 		type = 0,
@@ -14232,11 +12953,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.skill_data_template
-
-	var_4_18[60530] = {
+	pg.base.skill_data_template[60530] = {
 		desc_get = "",
 		name = "通天之匣",
 		type = 0,
@@ -14250,11 +12967,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.skill_data_template
-
-	var_4_19[60540] = {
+	pg.base.skill_data_template[60540] = {
 		desc_get = "",
 		name = "异世界冒险终端",
 		type = 0,
@@ -14268,11 +12981,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.skill_data_template
-
-	var_4_20[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "被定格的彼岸花",
 		type = 0,
@@ -14286,11 +12995,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.skill_data_template
-
-	var_4_21[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "μ兵装三期LIVE纪念票",
 		type = 0,
@@ -14304,11 +13009,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.skill_data_template
-
-	var_4_22[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "「Alizarin」应援毛巾",
 		type = 0,
@@ -14322,11 +13023,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.skill_data_template
-
-	var_4_23[60580] = {
+	pg.base.skill_data_template[60580] = {
 		desc_get = "",
 		name = "「Cyanidin」应援毛巾",
 		type = 0,
@@ -14340,11 +13037,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.skill_data_template
-
-	var_4_24[60590] = {
+	pg.base.skill_data_template[60590] = {
 		desc_get = "",
 		name = "奇怪装置「D」",
 		type = 0,
@@ -14358,11 +13051,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.skill_data_template
-
-	var_4_25[60600] = {
+	pg.base.skill_data_template[60600] = {
 		desc_get = "",
 		name = "80mm98式连装高炮",
 		type = 0,
@@ -14376,11 +13065,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.skill_data_template
-
-	var_4_26[60610] = {
+	pg.base.skill_data_template[60610] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14394,11 +13079,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.skill_data_template
-
-	var_4_27[60611] = {
+	pg.base.skill_data_template[60611] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14412,11 +13093,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.skill_data_template
-
-	var_4_28[60612] = {
+	pg.base.skill_data_template[60612] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14430,11 +13107,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.skill_data_template
-
-	var_4_29[60613] = {
+	pg.base.skill_data_template[60613] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14448,11 +13121,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.skill_data_template
-
-	var_4_30[60614] = {
+	pg.base.skill_data_template[60614] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14466,11 +13135,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.skill_data_template
-
-	var_4_31[60615] = {
+	pg.base.skill_data_template[60615] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14484,11 +13149,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.skill_data_template
-
-	var_4_32[60616] = {
+	pg.base.skill_data_template[60616] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14502,11 +13163,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.skill_data_template
-
-	var_4_33[60617] = {
+	pg.base.skill_data_template[60617] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14520,11 +13177,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.skill_data_template
-
-	var_4_34[60618] = {
+	pg.base.skill_data_template[60618] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14538,11 +13191,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.skill_data_template
-
-	var_4_35[60619] = {
+	pg.base.skill_data_template[60619] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14556,11 +13205,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.skill_data_template
-
-	var_4_36[60620] = {
+	pg.base.skill_data_template[60620] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14574,11 +13219,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.skill_data_template
-
-	var_4_37[60621] = {
+	pg.base.skill_data_template[60621] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14592,11 +13233,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.skill_data_template
-
-	var_4_38[60622] = {
+	pg.base.skill_data_template[60622] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14610,11 +13247,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.skill_data_template
-
-	var_4_39[60623] = {
+	pg.base.skill_data_template[60623] = {
 		desc_get = "",
 		name = "试作型F8F熊猫（浮筒型）",
 		type = 0,
@@ -14628,11 +13261,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.skill_data_template
-
-	var_4_40[60650] = {
+	pg.base.skill_data_template[60650] = {
 		desc_get = "",
 		name = "联合演习纪念币（限定版）",
 		type = 0,
@@ -14646,11 +13275,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.skill_data_template
-
-	var_4_41[60660] = {
+	pg.base.skill_data_template[60660] = {
 		desc_get = "",
 		name = "高速速运无人机",
 		type = 0,
@@ -14664,11 +13289,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.skill_data_template
-
-	var_4_42[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "珍贵货物箱",
 		type = 0,
@@ -14682,11 +13303,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.skill_data_template
-
-	var_4_43[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "葡萄弹",
 		type = 0,
@@ -14700,11 +13317,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.skill_data_template
-
-	var_4_44[60720] = {
+	pg.base.skill_data_template[60720] = {
 		desc_get = "",
 		name = "酒饮补给品",
 		type = 0,
@@ -14718,11 +13331,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.skill_data_template
-
-	var_4_45[60730] = {
+	pg.base.skill_data_template[60730] = {
 		desc_get = "",
 		name = "咻咻料理君",
 		type = 0,
@@ -14736,11 +13345,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.skill_data_template
-
-	var_4_46[60740] = {
+	pg.base.skill_data_template[60740] = {
 		desc_get = "",
 		name = "嗡嗡倾听君",
 		type = 0,
@@ -14754,11 +13359,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.skill_data_template
-
-	var_4_47[60750] = {
+	pg.base.skill_data_template[60750] = {
 		desc_get = "",
 		name = "嘘嘘隐身君",
 		type = 0,
@@ -14772,11 +13373,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.skill_data_template
-
-	var_4_48[60760] = {
+	pg.base.skill_data_template[60760] = {
 		desc_get = "",
 		name = "嘻嘻加班君",
 		type = 0,
@@ -14790,11 +13387,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.skill_data_template
-
-	var_4_49[60770] = {
+	pg.base.skill_data_template[60770] = {
 		desc_get = "",
 		name = "嘭嘭速生君",
 		type = 0,
@@ -14808,11 +13401,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.skill_data_template
-
-	var_4_50[60780] = {
+	pg.base.skill_data_template[60780] = {
 		desc_get = "",
 		name = "噗噗氛围君",
 		type = 0,
@@ -14826,11 +13415,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.skill_data_template
-
-	var_4_51[60790] = {
+	pg.base.skill_data_template[60790] = {
 		desc_get = "",
 		name = "辉辉光环君",
 		type = 0,
@@ -14844,11 +13429,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.skill_data_template
-
-	var_4_52[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "孟菲斯之蓝",
 		type = 0,
@@ -14862,11 +13443,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.skill_data_template
-
-	var_4_53[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "伏波的计划书",
 		type = 0,
@@ -14880,11 +13457,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.skill_data_template
-
-	var_4_54[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "黑日之冕",
 		type = 0,
@@ -14898,11 +13471,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.skill_data_template
-
-	var_4_55[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "塘鹅",
 		type = 1,
@@ -14916,11 +13485,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.skill_data_template
-
-	var_4_56[60840] = {
+	pg.base.skill_data_template[60840] = {
 		desc_get = "",
 		name = "郁金香花束",
 		type = 0,
@@ -14934,11 +13499,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.skill_data_template
-
-	var_4_57[60850] = {
+	pg.base.skill_data_template[60850] = {
 		desc_get = "",
 		name = "我的宝贝鲸鱼",
 		type = 0,
@@ -14952,11 +13513,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.skill_data_template
-
-	var_4_58[60860] = {
+	pg.base.skill_data_template[60860] = {
 		desc_get = "",
 		name = "宏伟光辉",
 		type = 0,
@@ -14970,11 +13527,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.skill_data_template
-
-	var_4_59[60870] = {
+	pg.base.skill_data_template[60870] = {
 		desc_get = "",
 		name = "高级魔导书",
 		type = 0,
@@ -14988,11 +13541,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.skill_data_template
-
-	var_4_60[60880] = {
+	pg.base.skill_data_template[60880] = {
 		desc_get = "",
 		name = "最终陨石",
 		type = 0,
@@ -15006,11 +13555,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.skill_data_template
-
-	var_4_61[60890] = {
+	pg.base.skill_data_template[60890] = {
 		desc_get = "",
 		name = "神药球",
 		type = 0,
@@ -15024,11 +13569,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.skill_data_template
-
-	var_4_62[60900] = {
+	pg.base.skill_data_template[60900] = {
 		desc_get = "",
 		name = "地狱立方体",
 		type = 0,
@@ -15042,11 +13583,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.skill_data_template
-
-	var_4_63[60910] = {
+	pg.base.skill_data_template[60910] = {
 		desc_get = "",
 		name = "天恩浑仪",
 		type = 0,
@@ -15060,11 +13597,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.skill_data_template
-
-	var_4_64[60920] = {
+	pg.base.skill_data_template[60920] = {
 		desc_get = "",
 		name = "芙拉米",
 		type = 0,
@@ -15078,11 +13611,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.skill_data_template
-
-	var_4_65[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "重樱的邀请",
 		type = 0,
@@ -15096,11 +13625,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.skill_data_template
-
-	var_4_66[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "自由群岛邀请函",
 		type = 0,
@@ -15114,11 +13639,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.skill_data_template
-
-	var_4_67[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "<封解主（Michael）>",
 		type = 0,
@@ -15132,11 +13653,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.skill_data_template
-
-	var_4_68[60960] = {
+	pg.base.skill_data_template[60960] = {
 		desc_get = "",
 		name = "灵结晶",
 		type = 0,
@@ -15150,11 +13667,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.skill_data_template
-
-	var_4_69[60970] = {
+	pg.base.skill_data_template[60970] = {
 		desc_get = "",
 		name = "超大饭团",
 		type = 0,
@@ -15168,11 +13681,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.skill_data_template
-
-	var_4_70[60980] = {
+	pg.base.skill_data_template[60980] = {
 		desc_get = "",
 		name = "海蓝色之谜",
 		type = 0,
@@ -15186,11 +13695,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.skill_data_template
-
-	var_4_71[60990] = {
+	pg.base.skill_data_template[60990] = {
 		desc_get = "",
 		name = "导演的剧本书",
 		type = 0,
@@ -15204,11 +13709,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.skill_data_template
-
-	var_4_72[61000] = {
+	pg.base.skill_data_template[61000] = {
 		desc_get = "",
 		name = "F4U海盗（VBF-94中队）",
 		type = 1,
@@ -15222,11 +13723,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.skill_data_template
-
-	var_4_73[61010] = {
+	pg.base.skill_data_template[61010] = {
 		desc_get = "",
 		name = "拍卖会请柬",
 		type = 0,
@@ -15240,11 +13737,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.skill_data_template
-
-	var_4_74[61020] = {
+	pg.base.skill_data_template[61020] = {
 		desc_get = "",
 		name = "香蝶戏竹",
 		type = 0,
@@ -15258,11 +13751,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.skill_data_template
-
-	var_4_75[61030] = {
+	pg.base.skill_data_template[61030] = {
 		desc_get = "",
 		name = "香蝶弄梅",
 		type = 0,
@@ -15276,11 +13765,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.skill_data_template
-
-	var_4_76[61040] = {
+	pg.base.skill_data_template[61040] = {
 		desc_get = "",
 		name = "漫游者",
 		type = 0,
@@ -15294,11 +13779,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.skill_data_template
-
-	var_4_77[61050] = {
+	pg.base.skill_data_template[61050] = {
 		desc_get = "",
 		name = "系统通缉者",
 		type = 0,
@@ -15312,11 +13793,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.skill_data_template
-
-	var_4_78[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "零号协议密钥",
 		type = 0,
@@ -15330,11 +13807,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.skill_data_template
-
-	var_4_79[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "千雷装饰笔",
 		type = 0,
@@ -15348,11 +13821,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.skill_data_template
-
-	var_4_80[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "写真看板",
 		type = 0,
@@ -15366,11 +13835,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.skill_data_template
-
-	var_4_81[61090] = {
+	pg.base.skill_data_template[61090] = {
 		desc_get = "",
 		name = "幸运四叶草",
 		type = 0,
@@ -15384,11 +13849,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.skill_data_template
-
-	var_4_82[61100] = {
+	pg.base.skill_data_template[61100] = {
 		desc_get = "",
 		name = "「审判号」启动钥匙",
 		type = 0,
@@ -15402,11 +13863,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.skill_data_template
-
-	var_4_83[61110] = {
+	pg.base.skill_data_template[61110] = {
 		desc_get = "",
 		name = "搞笑担当",
 		type = 0,
@@ -15420,11 +13877,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.skill_data_template
-
-	var_4_84[61120] = {
+	pg.base.skill_data_template[61120] = {
 		desc_get = "",
 		name = "名侦探之帽",
 		type = 0,
@@ -15438,11 +13891,21 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.skill_data_template
-
-	var_4_85[7000] = {
+	pg.base.skill_data_template[61130] = {
+		desc_get = "",
+		name = "Error十三世",
+		type = 0,
+		max_level = 0,
+		desc = "柯莱特装备时，战斗开始后13秒，随机使一名敌方单位在1.3秒内航速变为0",
+		id = 61130,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[7000] = {
 		desc_get = "",
 		name = "莱茵演习",
 		type = 0,
@@ -15456,11 +13919,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.skill_data_template
-
-	var_4_86[9010] = {
+	pg.base.skill_data_template[9010] = {
 		desc_get = "",
 		name = "东煌之绊",
 		type = 0,
@@ -15474,11 +13933,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.skill_data_template
-
-	var_4_87[9020] = {
+	pg.base.skill_data_template[9020] = {
 		desc_get = "",
 		name = "抗击重樱",
 		type = 0,
@@ -15492,11 +13947,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.skill_data_template
-
-	var_4_88[9030] = {
+	pg.base.skill_data_template[9030] = {
 		desc_get = "",
 		name = "布里发动了技能！ ",
 		type = 0,
@@ -15510,11 +13961,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.skill_data_template
-
-	var_4_89[9031] = {
+	pg.base.skill_data_template[9031] = {
 		desc_get = "",
 		name = "然而什么都没有发生 ",
 		type = 0,
@@ -15528,11 +13975,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.skill_data_template
-
-	var_4_90[9033] = {
+	pg.base.skill_data_template[9033] = {
 		desc_get = "",
 		name = "布里发动了技能！ ",
 		type = 0,
@@ -15546,11 +13989,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.skill_data_template
-
-	var_4_91[9034] = {
+	pg.base.skill_data_template[9034] = {
 		desc_get = "",
 		name = "然而什么都没有发生 ",
 		type = 0,
@@ -15564,11 +14003,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.skill_data_template
-
-	var_4_92[9036] = {
+	pg.base.skill_data_template[9036] = {
 		desc_get = "",
 		name = "超级彩虹锤1号！",
 		type = 0,
@@ -15582,11 +14017,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.skill_data_template
-
-	var_4_93[9037] = {
+	pg.base.skill_data_template[9037] = {
 		desc_get = "",
 		name = "发光的超级彩虹锤1号！",
 		type = 0,
@@ -15600,11 +14031,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.skill_data_template
-
-	var_4_94[9050] = {
+	pg.base.skill_data_template[9050] = {
 		desc_get = "",
 		name = "LuckyE",
 		type = 1,
@@ -15665,11 +14092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.skill_data_template
-
-	var_4_95[9061] = {
+	pg.base.skill_data_template[9061] = {
 		desc_get = "",
 		name = "火力全开",
 		type = 1,
@@ -15775,11 +14198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.skill_data_template
-
-	var_4_96[9071] = {
+	pg.base.skill_data_template[9071] = {
 		desc_get = "",
 		name = "防空模式",
 		type = 2,
@@ -15885,11 +14304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.skill_data_template
-
-	var_4_97[9081] = {
+	pg.base.skill_data_template[9081] = {
 		desc_get = "",
 		name = "旗舰掩护",
 		type = 3,
@@ -15950,11 +14365,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.skill_data_template
-
-	var_4_98[9090] = {
+	pg.base.skill_data_template[9090] = {
 		desc_get = "",
 		name = "所罗门的传说",
 		type = 3,
@@ -16105,8 +14516,11 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.skill_data_template[9101] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[9101] = {
 		desc_get = "",
 		name = "强袭号令",
 		type = 3,
@@ -16167,15 +14581,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.skill_data_template
-
-	var_5_0[9110] = {
+	pg.base.skill_data_template[9110] = {
 		desc_get = "",
 		name = "防空模式",
 		type = 2,
@@ -16281,11 +14687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.skill_data_template
-
-	var_5_1[9120] = {
+	pg.base.skill_data_template[9120] = {
 		desc_get = "",
 		name = "模拟战埃吉尔占用",
 		type = 1,
@@ -16299,11 +14701,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.skill_data_template
-
-	var_5_2[9709] = {
+	pg.base.skill_data_template[9709] = {
 		desc_get = "",
 		name = "雷达缩圈效果",
 		type = 0,
@@ -16317,11 +14715,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.skill_data_template
-
-	var_5_3[9711] = {
+	pg.base.skill_data_template[9711] = {
 		desc_get = "",
 		name = "布里之誓·purin",
 		type = 0,
@@ -16335,11 +14729,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.skill_data_template
-
-	var_5_4[10010] = {
+	pg.base.skill_data_template[10010] = {
 		desc_get = "",
 		name = "浴火重生",
 		type = 2,
@@ -16400,11 +14790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.skill_data_template
-
-	var_5_5[10020] = {
+	pg.base.skill_data_template[10020] = {
 		desc_get = "",
 		name = "水上狂飙",
 		type = 2,
@@ -16510,11 +14896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.skill_data_template
-
-	var_5_6[10030] = {
+	pg.base.skill_data_template[10030] = {
 		desc_get = "",
 		name = "姐姐气质",
 		type = 3,
@@ -16575,11 +14957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.skill_data_template
-
-	var_5_7[10040] = {
+	pg.base.skill_data_template[10040] = {
 		desc_get = "",
 		name = "31节伯克",
 		type = 3,
@@ -16640,11 +15018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.skill_data_template
-
-	var_5_8[10050] = {
+	pg.base.skill_data_template[10050] = {
 		desc_get = "受到伤害时，有15%的概率触发，5.0秒(满级10.0秒)内使全体先锋完全回避所有攻击",
 		name = "彩虹计划",
 		type = 2,
@@ -16700,11 +15074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.skill_data_template
-
-	var_5_9[10060] = {
+	pg.base.skill_data_template[10060] = {
 		desc_get = "",
 		name = "真红不死鸟",
 		type = 2,
@@ -16765,11 +15135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.skill_data_template
-
-	var_5_10[10070] = {
+	pg.base.skill_data_template[10070] = {
 		desc_get = "",
 		name = "雷达扫描",
 		type = 3,
@@ -16875,11 +15241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.skill_data_template
-
-	var_5_11[10080] = {
+	pg.base.skill_data_template[10080] = {
 		desc_get = "",
 		name = "战争之殇",
 		type = 2,
@@ -16940,11 +15302,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.skill_data_template
-
-	var_5_12[10090] = {
+	pg.base.skill_data_template[10090] = {
 		desc_get = "",
 		name = "我是NO.1！",
 		type = 3,
@@ -17005,11 +15363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.skill_data_template
-
-	var_5_13[10100] = {
+	pg.base.skill_data_template[10100] = {
 		desc_get = "",
 		name = "爪哇海岸的跳跳鬼",
 		type = 2,
@@ -17070,11 +15424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.skill_data_template
-
-	var_5_14[10110] = {
+	pg.base.skill_data_template[10110] = {
 		desc_get = "",
 		name = "妹妹真是太棒了！",
 		type = 1,
@@ -17135,11 +15485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.skill_data_template
-
-	var_5_15[10120] = {
+	pg.base.skill_data_template[10120] = {
 		desc_get = "每隔30秒，生成2面旋转的护盾，每个护盾阻挡8发子弹，被击破时对周围敌方造成较小伤害，护盾持续5秒(满级15秒)",
 		name = "潘多拉的魔盒",
 		type = 2,
@@ -17195,11 +15541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.skill_data_template
-
-	var_5_16[10130] = {
+	pg.base.skill_data_template[10130] = {
 		desc_get = "",
 		name = "崩姐",
 		type = 1,
@@ -17262,11 +15604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.skill_data_template
-
-	var_5_17[10140] = {
+	pg.base.skill_data_template[10140] = {
 		desc_get = "",
 		name = "白鹰之泪",
 		type = 3,
@@ -17327,11 +15665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.skill_data_template
-
-	var_5_18[10150] = {
+	pg.base.skill_data_template[10150] = {
 		desc_get = "",
 		name = "威压",
 		type = 3,
@@ -17392,11 +15726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.skill_data_template
-
-	var_5_19[10160] = {
+	pg.base.skill_data_template[10160] = {
 		desc_get = "",
 		name = "最强之盾",
 		type = 2,
@@ -17502,11 +15832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.skill_data_template
-
-	var_5_20[10170] = {
+	pg.base.skill_data_template[10170] = {
 		desc_get = "",
 		name = "航空先驱",
 		type = 3,
@@ -17567,11 +15893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.skill_data_template
-
-	var_5_21[10180] = {
+	pg.base.skill_data_template[10180] = {
 		desc_get = "每20秒(满级10秒)发动一次掩护炮击，威力为重巡级(依据技能等级)",
 		name = "舰炮掩护",
 		type = 1,
@@ -17627,11 +15949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.skill_data_template
-
-	var_5_22[10190] = {
+	pg.base.skill_data_template[10190] = {
 		desc_get = "",
 		name = "复仇打击",
 		type = 2,
@@ -17728,11 +16046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.skill_data_template
-
-	var_5_23[10200] = {
+	pg.base.skill_data_template[10200] = {
 		desc_get = "",
 		name = "LuckyE",
 		type = 1,
@@ -17793,11 +16107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.skill_data_template
-
-	var_5_24[10210] = {
+	pg.base.skill_data_template[10210] = {
 		desc_get = "",
 		name = "杜立特空袭",
 		type = 1,
@@ -17858,11 +16168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.skill_data_template
-
-	var_5_25[10220] = {
+	pg.base.skill_data_template[10220] = {
 		desc_get = "",
 		name = "损害管制",
 		type = 2,
@@ -17923,11 +16229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.skill_data_template
-
-	var_5_26[10230] = {
+	pg.base.skill_data_template[10230] = {
 		desc_get = "",
 		name = "原型舰·驱逐",
 		type = 3,
@@ -17988,11 +16290,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.skill_data_template
-
-	var_5_27[10240] = {
+	pg.base.skill_data_template[10240] = {
 		desc_get = "",
 		name = "彗星头槌",
 		type = 1,
@@ -18098,11 +16396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.skill_data_template
-
-	var_5_28[10250] = {
+	pg.base.skill_data_template[10250] = {
 		desc_get = "",
 		name = "标枪突袭",
 		type = 2,
@@ -18163,11 +16457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.skill_data_template
-
-	var_5_29[10260] = {
+	pg.base.skill_data_template[10260] = {
 		desc_get = "",
 		name = "魔炮-Armageddon！",
 		type = 1,
@@ -18228,11 +16518,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.skill_data_template
-
-	var_5_30[10270] = {
+	pg.base.skill_data_template[10270] = {
 		desc_get = "",
 		name = "最后的荣耀",
 		type = 1,
@@ -18293,11 +16579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.skill_data_template
-
-	var_5_31[10280] = {
+	pg.base.skill_data_template[10280] = {
 		desc_get = "",
 		name = "“Z的反击”",
 		type = 3,
@@ -18358,11 +16640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.skill_data_template
-
-	var_5_32[10290] = {
+	pg.base.skill_data_template[10290] = {
 		desc_get = "",
 		name = "皇家舰队的荣耀",
 		type = 1,
@@ -18470,11 +16748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.skill_data_template
-
-	var_5_33[10300] = {
+	pg.base.skill_data_template[10300] = {
 		desc_get = "",
 		name = "女王号令",
 		type = 3,
@@ -18535,11 +16809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.skill_data_template
-
-	var_5_34[10310] = {
+	pg.base.skill_data_template[10310] = {
 		desc_get = "每35秒(满级15秒)，对距离最远的敌人额外发动一轮必定暴击的专属炮击(威力、弹药依据技能等级)",
 		name = "神射手",
 		type = 1,
@@ -18627,11 +16897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.skill_data_template
-
-	var_5_35[10320] = {
+	pg.base.skill_data_template[10320] = {
 		desc_get = "",
 		name = "BIG SEVEN",
 		type = 1,
@@ -18692,11 +16958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.skill_data_template
-
-	var_5_36[10330] = {
+	pg.base.skill_data_template[10330] = {
 		desc_get = "",
 		name = "剑鱼出击！",
 		type = 1,
@@ -18793,11 +17055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.skill_data_template
-
-	var_5_37[10340] = {
+	pg.base.skill_data_template[10340] = {
 		desc_get = "",
 		name = "装甲空母",
 		type = 3,
@@ -18858,11 +17116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.skill_data_template
-
-	var_5_38[10350] = {
+	pg.base.skill_data_template[10350] = {
 		desc_get = "",
 		name = "无限之darkness",
 		type = 1,
@@ -18923,11 +17177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.skill_data_template
-
-	var_5_39[10360] = {
+	pg.base.skill_data_template[10360] = {
 		desc_get = "",
 		name = "所罗门的噩梦",
 		type = 1,
@@ -18988,11 +17238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.skill_data_template
-
-	var_5_40[10370] = {
+	pg.base.skill_data_template[10370] = {
 		desc_get = "",
 		name = "佐世保{namecode:17}",
 		type = 2,
@@ -19053,11 +17299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.skill_data_template
-
-	var_5_41[10380] = {
+	pg.base.skill_data_template[10380] = {
 		desc_get = "",
 		name = "Z系先驱",
 		type = 3,
@@ -19118,11 +17360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.skill_data_template
-
-	var_5_42[10390] = {
+	pg.base.skill_data_template[10390] = {
 		desc_get = "",
 		name = "不破之盾",
 		type = 2,
@@ -19183,11 +17421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.skill_data_template
-
-	var_5_43[10400] = {
+	pg.base.skill_data_template[10400] = {
 		desc_get = "",
 		name = "旗舰掩护",
 		type = 3,
@@ -19248,11 +17482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.skill_data_template
-
-	var_5_44[10410] = {
+	pg.base.skill_data_template[10410] = {
 		desc_get = "",
 		name = "所罗门的战神",
 		type = 1,
@@ -19313,11 +17543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.skill_data_template
-
-	var_5_45[10420] = {
+	pg.base.skill_data_template[10420] = {
 		desc_get = "",
 		name = "先手必胜",
 		type = 1,
@@ -19378,11 +17604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.skill_data_template
-
-	var_5_46[10430] = {
+	pg.base.skill_data_template[10430] = {
 		desc_get = "",
 		name = "一航战",
 		type = 3,
@@ -19443,11 +17665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.skill_data_template
-
-	var_5_47[10440] = {
+	pg.base.skill_data_template[10440] = {
 		desc_get = "",
 		name = "一航战",
 		type = 3,
@@ -19508,11 +17726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.skill_data_template
-
-	var_5_48[10450] = {
+	pg.base.skill_data_template[10450] = {
 		desc_get = "受到致命伤害时不会阵亡，5秒(满级15秒)内回避所有伤害，同时立刻发动一轮空袭，每场战斗只能触发1次",
 		name = "最后的反击",
 		type = 2,
@@ -19568,11 +17782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.skill_data_template
-
-	var_5_49[10460] = {
+	pg.base.skill_data_template[10460] = {
 		desc_get = "",
 		name = "二航战",
 		type = 3,
@@ -19633,11 +17843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.skill_data_template
-
-	var_5_50[10470] = {
+	pg.base.skill_data_template[10470] = {
 		desc_get = "",
 		name = "二航战",
 		type = 3,
@@ -19698,11 +17904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.skill_data_template
-
-	var_5_51[10480] = {
+	pg.base.skill_data_template[10480] = {
 		desc_get = "",
 		name = "姐妹同心",
 		type = 3,
@@ -19763,11 +17965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.skill_data_template
-
-	var_5_52[10490] = {
+	pg.base.skill_data_template[10490] = {
 		desc_get = "",
 		name = "姐妹同心",
 		type = 3,
@@ -19828,11 +18026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.skill_data_template
-
-	var_5_53[10500] = {
+	pg.base.skill_data_template[10500] = {
 		desc_get = "",
 		name = "抗击重樱",
 		type = 1,
@@ -19893,11 +18087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.skill_data_template
-
-	var_5_54[10510] = {
+	pg.base.skill_data_template[10510] = {
 		desc_get = "",
 		name = "改变时代的炮声",
 		type = 3,
@@ -19958,11 +18148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.skill_data_template
-
-	var_5_55[10520] = {
+	pg.base.skill_data_template[10520] = {
 		desc_get = "",
 		name = "定期维护",
 		type = 2,
@@ -19976,11 +18162,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.skill_data_template
-
-	var_5_56[10521] = {
+	pg.base.skill_data_template[10521] = {
 		desc_get = "",
 		name = "定期维护",
 		type = 2,
@@ -19994,11 +18176,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.skill_data_template
-
-	var_5_57[10522] = {
+	pg.base.skill_data_template[10522] = {
 		desc_get = "",
 		name = "定期维护",
 		type = 2,
@@ -20012,11 +18190,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.skill_data_template
-
-	var_5_58[10530] = {
+	pg.base.skill_data_template[10530] = {
 		desc_get = "",
 		name = "铁血先锋",
 		type = 1,
@@ -20077,11 +18251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.skill_data_template
-
-	var_5_59[10540] = {
+	pg.base.skill_data_template[10540] = {
 		desc_get = "",
 		name = "皇家同盟",
 		type = 1,
@@ -20232,11 +18402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.skill_data_template
-
-	var_5_60[10550] = {
+	pg.base.skill_data_template[10550] = {
 		desc_get = "",
 		name = "后勤维修",
 		type = 2,
@@ -20297,11 +18463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.skill_data_template
-
-	var_5_61[10560] = {
+	pg.base.skill_data_template[10560] = {
 		desc_get = "",
 		name = "终结旅程",
 		type = 1,
@@ -20362,11 +18524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.skill_data_template
-
-	var_5_62[10570] = {
+	pg.base.skill_data_template[10570] = {
 		desc_get = "",
 		name = "纵火狂魔",
 		type = 1,
@@ -20517,11 +18675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.skill_data_template
-
-	var_5_63[10580] = {
+	pg.base.skill_data_template[10580] = {
 		desc_get = "每隔35秒(满级25秒)发射一轮额外鱼雷(3发)，造成伤害的20.0%回复自身耐久",
 		name = "吸血鬼之吻",
 		type = 2,
@@ -20577,11 +18731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.skill_data_template
-
-	var_5_64[10590] = {
+	pg.base.skill_data_template[10590] = {
 		desc_get = "",
 		name = "原型舰·巡洋",
 		type = 3,
@@ -20642,11 +18792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.skill_data_template
-
-	var_5_65[10600] = {
+	pg.base.skill_data_template[10600] = {
 		desc_get = "",
 		name = "万夜·忉利天",
 		type = 1,
@@ -20752,11 +18898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.skill_data_template
-
-	var_5_66[10610] = {
+	pg.base.skill_data_template[10610] = {
 		desc_get = "",
 		name = "燃烧号令",
 		type = 1,
@@ -20862,11 +19004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.skill_data_template
-
-	var_5_67[10620] = {
+	pg.base.skill_data_template[10620] = {
 		desc_get = "",
 		name = "六驱精锐·{namecode:13}",
 		type = 1,
@@ -20927,11 +19065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.skill_data_template
-
-	var_5_68[10630] = {
+	pg.base.skill_data_template[10630] = {
 		desc_get = "",
 		name = "六驱精锐·{namecode:14}",
 		type = 1,
@@ -20992,11 +19126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.skill_data_template
-
-	var_5_69[10640] = {
+	pg.base.skill_data_template[10640] = {
 		desc_get = "",
 		name = "铁翼陨灭",
 		type = 1,
@@ -21057,11 +19187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.skill_data_template
-
-	var_5_70[10650] = {
+	pg.base.skill_data_template[10650] = {
 		desc_get = "",
 		name = "袖珍战列舰",
 		type = 1,
@@ -21122,11 +19248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.skill_data_template
-
-	var_5_71[10660] = {
+	pg.base.skill_data_template[10660] = {
 		desc_get = "每35秒(满级15秒)，对随机敌人额外发动一轮必定暴击的专属炮击(威力、弹药依据技能等级)",
 		name = "狙击手",
 		type = 1,
@@ -21214,11 +19336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.skill_data_template
-
-	var_5_72[10670] = {
+	pg.base.skill_data_template[10670] = {
 		desc_get = "",
 		name = "北方的孤独女王",
 		type = 1,
@@ -21279,11 +19397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.skill_data_template
-
-	var_5_73[10680] = {
+	pg.base.skill_data_template[10680] = {
 		desc_get = "",
 		name = "铁血之翼",
 		type = 2,
@@ -21389,11 +19503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.skill_data_template
-
-	var_5_74[10690] = {
+	pg.base.skill_data_template[10690] = {
 		desc_get = "",
 		name = "铁血之鹰",
 		type = 1,
@@ -21454,11 +19564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.skill_data_template
-
-	var_5_75[10700] = {
+	pg.base.skill_data_template[10700] = {
 		desc_get = "",
 		name = "破交作战",
 		type = 1,
@@ -21519,11 +19625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.skill_data_template
-
-	var_5_76[10710] = {
+	pg.base.skill_data_template[10710] = {
 		desc_get = "",
 		name = "巨兽猎手",
 		type = 1,
@@ -21719,11 +19821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.skill_data_template
-
-	var_5_77[10720] = {
+	pg.base.skill_data_template[10720] = {
 		desc_get = "每隔30秒，生成2面旋转的护盾，每个护盾阻挡10发子弹，护盾持续5秒(满级15秒)",
 		name = "守卫之盾",
 		type = 2,
@@ -21779,11 +19877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.skill_data_template
-
-	var_5_78[10730] = {
+	pg.base.skill_data_template[10730] = {
 		desc_get = "",
 		name = "鬼神",
 		type = 1,
@@ -21844,11 +19938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.skill_data_template
-
-	var_5_79[10740] = {
+	pg.base.skill_data_template[10740] = {
 		desc_get = "",
 		name = "历战之躯",
 		type = 2,
@@ -21909,11 +19999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.skill_data_template
-
-	var_5_80[10750] = {
+	pg.base.skill_data_template[10750] = {
 		desc_get = "",
 		name = "The Nick",
 		type = 2,
@@ -22019,11 +20105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.skill_data_template
-
-	var_5_81[10760] = {
+	pg.base.skill_data_template[10760] = {
 		desc_get = "",
 		name = "东煌之绊",
 		type = 3,
@@ -22129,11 +20211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.skill_data_template
-
-	var_5_82[10770] = {
+	pg.base.skill_data_template[10770] = {
 		desc_get = "",
 		name = "六驱精锐·{namecode:11}",
 		type = 1,
@@ -22194,11 +20272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.skill_data_template
-
-	var_5_83[10780] = {
+	pg.base.skill_data_template[10780] = {
 		desc_get = "每隔20秒，自身获得随机效果，持续5.0秒(满级10.0秒)",
 		name = "幸运舰？",
 		type = 2,
@@ -22254,11 +20328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.skill_data_template
-
-	var_5_84[10790] = {
+	pg.base.skill_data_template[10790] = {
 		desc_get = "",
 		name = "五航战",
 		type = 3,
@@ -22319,11 +20389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.skill_data_template
-
-	var_5_85[10800] = {
+	pg.base.skill_data_template[10800] = {
 		desc_get = "",
 		name = "五航战",
 		type = 3,
@@ -22429,11 +20495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.skill_data_template
-
-	var_5_86[10810] = {
+	pg.base.skill_data_template[10810] = {
 		desc_get = "",
 		name = "鹤之加护",
 		type = 2,
@@ -22539,11 +20601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.skill_data_template
-
-	var_5_87[10820] = {
+	pg.base.skill_data_template[10820] = {
 		desc_get = "",
 		name = "鹤之奋进",
 		type = 1,
@@ -22604,11 +20662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.skill_data_template
-
-	var_5_88[10830] = {
+	pg.base.skill_data_template[10830] = {
 		desc_get = "第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次",
 		name = "航空预备",
 		type = 1,
@@ -22655,11 +20709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.skill_data_template
-
-	var_5_89[10840] = {
+	pg.base.skill_data_template[10840] = {
 		desc_get = "",
 		name = "决死突袭",
 		type = 1,
@@ -22765,11 +20815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.skill_data_template
-
-	var_5_90[10850] = {
+	pg.base.skill_data_template[10850] = {
 		desc_get = "",
 		name = "命运的阴暗面",
 		type = 3,
@@ -22875,11 +20921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.skill_data_template
-
-	var_5_91[10860] = {
+	pg.base.skill_data_template[10860] = {
 		desc_get = "每20秒，有40.0%(满级70.0%)概率开启强袭模式·EX，雷击属性提高30.0%，持续8秒，同时发射强力弹幕(威力随技能等级提升)",
 		name = "强袭模式·EX",
 		type = 1,
@@ -22935,11 +20977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.skill_data_template
-
-	var_5_92[10870] = {
+	pg.base.skill_data_template[10870] = {
 		desc_get = "",
 		name = "华之二水战",
 		type = 3,
@@ -23000,11 +21038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.skill_data_template
-
-	var_5_93[10880] = {
+	pg.base.skill_data_template[10880] = {
 		desc_get = "",
 		name = "LuckyLou",
 		type = 1,
@@ -23110,11 +21144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.skill_data_template
-
-	var_5_94[10890] = {
+	pg.base.skill_data_template[10890] = {
 		desc_get = "自身受到伤害降低20.0%，在队伍中(存活)时，队伍内所有驱逐、轻巡鱼雷暴击率提高4.0%(满级10.0%，额外提高暴击伤害30.0%)",
 		name = "不屈之{namecode:39}",
 		type = 3,
@@ -23207,11 +21237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.skill_data_template
-
-	var_5_95[10900] = {
+	pg.base.skill_data_template[10900] = {
 		desc_get = "",
 		name = "救援组",
 		type = 2,
@@ -23362,11 +21388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.skill_data_template
-
-	var_5_96[10910] = {
+	pg.base.skill_data_template[10910] = {
 		desc_get = "",
 		name = "新生重樱联合",
 		type = 3,
@@ -23472,11 +21494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.skill_data_template
-
-	var_5_97[10920] = {
+	pg.base.skill_data_template[10920] = {
 		desc_get = "主炮开火时，30.0%(满级60.0%)概率触发，队伍中战巡、战列伤害提高5.0%(满级20.0%)，持续8秒",
 		name = "T字战法",
 		type = 3,
@@ -23582,11 +21600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.skill_data_template
-
-	var_5_98[10930] = {
+	pg.base.skill_data_template[10930] = {
 		desc_get = "",
 		name = "威光",
 		type = 3,
@@ -23692,8 +21706,11 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.skill_data_template[10940] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[10940] = {
 		desc_get = "每20秒，有40.0%(满级70.0%)概率开启鬼神演舞，机动属性提高30.0%，持续5秒，同时发射强力弹幕(威力随技能等级提升)",
 		name = "鬼神演舞",
 		type = 2,
@@ -23749,15 +21766,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.skill_data_template
-
-	var_6_0[10950] = {
+	pg.base.skill_data_template[10950] = {
 		desc_get = "增加3点(满级8点)航速，炮击属性提高15.0%",
 		name = "尚武之魂",
 		type = 1,
@@ -23854,11 +21863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.skill_data_template
-
-	var_6_1[10960] = {
+	pg.base.skill_data_template[10960] = {
 		desc_get = "出击时，队伍中特型驱逐舰的炮击、机动提高15.0%(满级30%)，雷击提高4%(满级10%)",
 		name = "特型领舰",
 		type = 3,
@@ -23964,11 +21969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.skill_data_template
-
-	var_6_2[10970] = {
+	pg.base.skill_data_template[10970] = {
 		desc_get = "",
 		name = "好斗的玛丽",
 		type = 1,
@@ -24074,11 +22075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.skill_data_template
-
-	var_6_3[10980] = {
+	pg.base.skill_data_template[10980] = {
 		desc_get = "",
 		name = "对空掩护",
 		type = 3,
@@ -24139,11 +22136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.skill_data_template
-
-	var_6_4[10990] = {
+	pg.base.skill_data_template[10990] = {
 		desc_get = "",
 		name = "防空火力",
 		type = 1,
@@ -24204,11 +22197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.skill_data_template
-
-	var_6_5[11000] = {
+	pg.base.skill_data_template[11000] = {
 		desc_get = "每20秒，有40.0%(满级70.0%)概率发射强力弹幕(威力随技能等级提升)",
 		name = "英勇炮击",
 		type = 1,
@@ -24266,11 +22255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.skill_data_template
-
-	var_6_6[11010] = {
+	pg.base.skill_data_template[11010] = {
 		desc_get = "",
 		name = "铁底湾之夜",
 		type = 2,
@@ -24331,11 +22316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.skill_data_template
-
-	var_6_7[11020] = {
+	pg.base.skill_data_template[11020] = {
 		desc_get = "",
 		name = "胡蜂双螫",
 		type = 1,
@@ -24396,11 +22377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.skill_data_template
-
-	var_6_8[11030] = {
+	pg.base.skill_data_template[11030] = {
 		desc_get = "",
 		name = "奇迹之风",
 		type = 2,
@@ -24506,11 +22483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.skill_data_template
-
-	var_6_9[11040] = {
+	pg.base.skill_data_template[11040] = {
 		desc_get = "",
 		name = "鞍山级领舰",
 		type = 3,
@@ -24616,11 +22589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.skill_data_template
-
-	var_6_10[11050] = {
+	pg.base.skill_data_template[11050] = {
 		desc_get = "",
 		name = "尖锐突击",
 		type = 1,
@@ -24681,11 +22650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.skill_data_template
-
-	var_6_11[11060] = {
+	pg.base.skill_data_template[11060] = {
 		desc_get = "",
 		name = "互助同盟",
 		type = 3,
@@ -24746,11 +22711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.skill_data_template
-
-	var_6_12[11070] = {
+	pg.base.skill_data_template[11070] = {
 		desc_get = "",
 		name = "团结一致",
 		type = 3,
@@ -24856,11 +22817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.skill_data_template
-
-	var_6_13[11080] = {
+	pg.base.skill_data_template[11080] = {
 		desc_get = "",
 		name = "Silver Phantom",
 		type = 1,
@@ -24921,11 +22878,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.skill_data_template
-
-	var_6_14[11090] = {
+	pg.base.skill_data_template[11090] = {
 		desc_get = "",
 		name = "曙光",
 		type = 3,
@@ -24986,11 +22939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.skill_data_template
-
-	var_6_15[11100] = {
+	pg.base.skill_data_template[11100] = {
 		desc_get = "每40秒（满级20秒），发射一组跨射炮弹，命中敌人造成减速40%，持续6秒",
 		name = "血雾之奏鸣",
 		type = 1,
@@ -25046,11 +22995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.skill_data_template
-
-	var_6_16[11110] = {
+	pg.base.skill_data_template[11110] = {
 		desc_get = "",
 		name = "灭亡之悲叹",
 		type = 3,
@@ -25156,11 +23101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.skill_data_template
-
-	var_6_17[11120] = {
+	pg.base.skill_data_template[11120] = {
 		desc_get = "",
 		name = "胜利之歌",
 		type = 1,
@@ -25266,11 +23207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.skill_data_template
-
-	var_6_18[11130] = {
+	pg.base.skill_data_template[11130] = {
 		desc_get = "",
 		name = "第一驱逐舰",
 		type = 1,
@@ -25376,11 +23313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.skill_data_template
-
-	var_6_19[11140] = {
+	pg.base.skill_data_template[11140] = {
 		desc_get = "",
 		name = "闪耀的谢菲",
 		type = 2,
@@ -25486,11 +23419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.skill_data_template
-
-	var_6_20[11150] = {
+	pg.base.skill_data_template[11150] = {
 		desc_get = "",
 		name = "巴伦支海的逆袭",
 		type = 1,
@@ -25551,11 +23480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.skill_data_template
-
-	var_6_21[11160] = {
+	pg.base.skill_data_template[11160] = {
 		desc_get = "",
 		name = "克里特岛战役",
 		type = 2,
@@ -25661,11 +23586,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.skill_data_template
-
-	var_6_22[11170] = {
+	pg.base.skill_data_template[11170] = {
 		desc_get = "",
 		name = "正义的伙伴",
 		type = 1,
@@ -25726,11 +23647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.skill_data_template
-
-	var_6_23[11180] = {
+	pg.base.skill_data_template[11180] = {
 		desc_get = "",
 		name = "校准射击",
 		type = 1,
@@ -25791,11 +23708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.skill_data_template
-
-	var_6_24[11190] = {
+	pg.base.skill_data_template[11190] = {
 		desc_get = "",
 		name = "伴随之风",
 		type = 3,
@@ -25856,11 +23769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.skill_data_template
-
-	var_6_25[11200] = {
+	pg.base.skill_data_template[11200] = {
 		desc_get = "",
 		name = "所罗门的传说",
 		type = 3,
@@ -26011,11 +23920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.skill_data_template
-
-	var_6_26[11210] = {
+	pg.base.skill_data_template[11210] = {
 		desc_get = "",
 		name = "歼灭模式",
 		type = 1,
@@ -26076,11 +23981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.skill_data_template
-
-	var_6_27[11220] = {
+	pg.base.skill_data_template[11220] = {
 		desc_get = "",
 		name = "持续打击",
 		type = 1,
@@ -26141,11 +24042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.skill_data_template
-
-	var_6_28[11230] = {
+	pg.base.skill_data_template[11230] = {
 		desc_get = "",
 		name = "吴港之{namecode:22}",
 		type = 3,
@@ -26251,11 +24148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.skill_data_template
-
-	var_6_29[11240] = {
+	pg.base.skill_data_template[11240] = {
 		desc_get = "",
 		name = "不沉的幸运舰",
 		type = 2,
@@ -26316,11 +24209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.skill_data_template
-
-	var_6_30[11250] = {
+	pg.base.skill_data_template[11250] = {
 		desc_get = "",
 		name = "萨沃岛突袭",
 		type = 3,
@@ -26471,11 +24360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.skill_data_template
-
-	var_6_31[11260] = {
+	pg.base.skill_data_template[11260] = {
 		desc_get = "每场战斗前两次执行空中支援时，将有额外的舰载机编队进行攻击(威力随技能等级提升)",
 		name = "鹰之顽抗",
 		type = 1,
@@ -26522,11 +24407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.skill_data_template
-
-	var_6_32[11270] = {
+	pg.base.skill_data_template[11270] = {
 		desc_get = "",
 		name = "闪耀之星",
 		type = 1,
@@ -26634,11 +24515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.skill_data_template
-
-	var_6_33[11280] = {
+	pg.base.skill_data_template[11280] = {
 		desc_get = "娇小的身体更加灵巧，被弹面积也更小了呢，提升自身航速3点(满级8点)，提升自身机动13%(满级25%)",
 		name = "完美的娇小女仆",
 		type = 2,
@@ -26735,11 +24612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.skill_data_template
-
-	var_6_34[11290] = {
+	pg.base.skill_data_template[11290] = {
 		desc_get = "",
 		name = "淑女们的下午茶",
 		type = 2,
@@ -26800,11 +24673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.skill_data_template
-
-	var_6_35[11300] = {
+	pg.base.skill_data_template[11300] = {
 		desc_get = "",
 		name = "压制炮击",
 		type = 1,
@@ -26865,11 +24734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.skill_data_template
-
-	var_6_36[11310] = {
+	pg.base.skill_data_template[11310] = {
 		desc_get = "",
 		name = "重樱舰队旗舰-{namecode:74}",
 		type = 3,
@@ -26975,11 +24840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.skill_data_template
-
-	var_6_37[11320] = {
+	pg.base.skill_data_template[11320] = {
 		desc_get = "",
 		name = "毁灭模式",
 		type = 1,
@@ -27040,11 +24901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.skill_data_template
-
-	var_6_38[11330] = {
+	pg.base.skill_data_template[11330] = {
 		desc_get = "",
 		name = "荣光的一番舰",
 		type = 3,
@@ -27150,11 +25007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.skill_data_template
-
-	var_6_39[11340] = {
+	pg.base.skill_data_template[11340] = {
 		desc_get = "",
 		name = "烈光的武勋舰",
 		type = 1,
@@ -27215,11 +25068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.skill_data_template
-
-	var_6_40[11350] = {
+	pg.base.skill_data_template[11350] = {
 		desc_get = "",
 		name = "第八驱逐舰队",
 		type = 3,
@@ -27325,11 +25174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.skill_data_template
-
-	var_6_41[11360] = {
+	pg.base.skill_data_template[11360] = {
 		desc_get = "",
 		name = "塔萨法隆格逆袭",
 		type = 3,
@@ -27390,11 +25235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.skill_data_template
-
-	var_6_42[11370] = {
+	pg.base.skill_data_template[11370] = {
 		desc_get = "进入战斗8秒后，发射一轮穿透鱼雷(威力和样式依据技能等级)，穿透鱼雷可以对一名敌方造成伤害后，穿透并继续前进，仍可对第二个敌方造成伤害",
 		name = "致命穿透",
 		type = 1,
@@ -27452,11 +25293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.skill_data_template
-
-	var_6_43[11380] = {
+	pg.base.skill_data_template[11380] = {
 		desc_get = "",
 		name = "谢幕演出",
 		type = 1,
@@ -27519,11 +25356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.skill_data_template
-
-	var_6_44[11390] = {
+	pg.base.skill_data_template[11390] = {
 		desc_get = "",
 		name = "潜行猎杀",
 		type = 1,
@@ -27631,11 +25464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.skill_data_template
-
-	var_6_45[11400] = {
+	pg.base.skill_data_template[11400] = {
 		desc_get = "",
 		name = "魔女的恶作剧",
 		type = 1,
@@ -27696,11 +25525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.skill_data_template
-
-	var_6_46[11410] = {
+	pg.base.skill_data_template[11410] = {
 		desc_get = "",
 		name = "狼群战术-{namecode:414}",
 		type = 1,
@@ -27808,11 +25633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.skill_data_template
-
-	var_6_47[11420] = {
+	pg.base.skill_data_template[11420] = {
 		desc_get = "",
 		name = "BIG SEVEN-樱",
 		type = 1,
@@ -27873,11 +25694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.skill_data_template
-
-	var_6_48[11430] = {
+	pg.base.skill_data_template[11430] = {
 		desc_get = "",
 		name = "BIG SEVEN-樱",
 		type = 1,
@@ -27938,11 +25755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.skill_data_template
-
-	var_6_49[11440] = {
+	pg.base.skill_data_template[11440] = {
 		desc_get = "",
 		name = "斯卡帕湾之牛",
 		type = 1,
@@ -28005,11 +25818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.skill_data_template
-
-	var_6_50[11450] = {
+	pg.base.skill_data_template[11450] = {
 		desc_get = "",
 		name = "过载炮击",
 		type = 1,
@@ -28160,11 +25969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.skill_data_template
-
-	var_6_51[11460] = {
+	pg.base.skill_data_template[11460] = {
 		desc_get = "",
 		name = "独狼",
 		type = 3,
@@ -28227,11 +26032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.skill_data_template
-
-	var_6_52[11461] = {
+	pg.base.skill_data_template[11461] = {
 		desc_get = "",
 		name = "独狼",
 		type = 3,
@@ -28294,11 +26095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.skill_data_template
-
-	var_6_53[11470] = {
+	pg.base.skill_data_template[11470] = {
 		desc_get = "",
 		name = "Nasty Asty",
 		type = 3,
@@ -28404,11 +26201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.skill_data_template
-
-	var_6_54[11480] = {
+	pg.base.skill_data_template[11480] = {
 		desc_get = "",
 		name = "库拉湾之战",
 		type = 2,
@@ -28559,11 +26352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.skill_data_template
-
-	var_6_55[11490] = {
+	pg.base.skill_data_template[11490] = {
 		desc_get = "",
 		name = "正面火力",
 		type = 1,
@@ -28624,11 +26413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.skill_data_template
-
-	var_6_56[11500] = {
+	pg.base.skill_data_template[11500] = {
 		desc_get = "",
 		name = "鸢尾之光",
 		type = 1,
@@ -28689,11 +26474,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.skill_data_template
-
-	var_6_57[11510] = {
+	pg.base.skill_data_template[11510] = {
 		desc_get = "",
 		name = "攻防转换",
 		type = 3,
@@ -28754,11 +26535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.skill_data_template
-
-	var_6_58[11520] = {
+	pg.base.skill_data_template[11520] = {
 		desc_get = "",
 		name = "爱丽丝之心",
 		type = 3,
@@ -28819,11 +26596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.skill_data_template
-
-	var_6_59[11530] = {
+	pg.base.skill_data_template[11530] = {
 		desc_get = "",
 		name = "海盗之魂",
 		type = 1,
@@ -28884,11 +26657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.skill_data_template
-
-	var_6_60[11540] = {
+	pg.base.skill_data_template[11540] = {
 		desc_get = "",
 		name = "最后的炮火",
 		type = 1,
@@ -28994,11 +26763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.skill_data_template
-
-	var_6_61[11550] = {
+	pg.base.skill_data_template[11550] = {
 		desc_get = "",
 		name = "Big Mamie",
 		type = 1,
@@ -29059,11 +26824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.skill_data_template
-
-	var_6_62[11560] = {
+	pg.base.skill_data_template[11560] = {
 		desc_get = "",
 		name = "2700磅的正义",
 		type = 1,
@@ -29169,11 +26930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.skill_data_template
-
-	var_6_63[11570] = {
+	pg.base.skill_data_template[11570] = {
 		desc_get = "",
 		name = "侦查支援",
 		type = 3,
@@ -29234,11 +26991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.skill_data_template
-
-	var_6_64[11580] = {
+	pg.base.skill_data_template[11580] = {
 		desc_get = "空中支援时，额外使用剑鱼编队进行一轮航空鱼雷攻击(威力随技能等级提升)，使被命中的敌方减速40%，持续6秒；自身对战列舰(不包括战巡、航战)伤害提高4%(满级10%)",
 		name = "剑鱼出击·改",
 		type = 1,
@@ -29335,11 +27088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.skill_data_template
-
-	var_6_65[11590] = {
+	pg.base.skill_data_template[11590] = {
 		desc_get = "",
 		name = "空域控制",
 		type = 3,
@@ -29445,11 +27194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.skill_data_template
-
-	var_6_66[11600] = {
+	pg.base.skill_data_template[11600] = {
 		desc_get = "开场10秒以后，当敌方进入防卫射程时，触发一轮弹幕(威力随技能等级提升)，触发后进入10秒冷却",
 		name = "格斗炮术",
 		type = 1,
@@ -29505,11 +27250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.skill_data_template
-
-	var_6_67[11610] = {
+	pg.base.skill_data_template[11610] = {
 		desc_get = "每场战斗前两次执行空中支援加载时间缩短5%(满级25%)，并且额外使用彗星(威力随技能等级提升)进行攻击；与任意航母或轻航一起出击时，该技能效果不再有次数限制",
 		name = "航空战队",
 		type = 1,
@@ -29606,11 +27347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.skill_data_template
-
-	var_6_68[11620] = {
+	pg.base.skill_data_template[11620] = {
 		desc_get = "",
 		name = "命运之骰",
 		type = 1,
@@ -29671,11 +27408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.skill_data_template
-
-	var_6_69[11630] = {
+	pg.base.skill_data_template[11630] = {
 		desc_get = "",
 		name = "重樱装母",
 		type = 2,
@@ -29736,11 +27469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.skill_data_template
-
-	var_6_70[11640] = {
+	pg.base.skill_data_template[11640] = {
 		desc_get = "",
 		name = "善战之舰",
 		type = 1,
@@ -29837,11 +27566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.skill_data_template
-
-	var_6_71[11650] = {
+	pg.base.skill_data_template[11650] = {
 		desc_get = "",
 		name = "航空阵列",
 		type = 3,
@@ -29947,11 +27672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.skill_data_template
-
-	var_6_72[11660] = {
+	pg.base.skill_data_template[11660] = {
 		desc_get = "",
 		name = "绝对回避",
 		type = 2,
@@ -30012,11 +27733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.skill_data_template
-
-	var_6_73[11670] = {
+	pg.base.skill_data_template[11670] = {
 		desc_get = "潜艇氧气不足上浮及从战场撤离时，各发射一组的技能鱼雷(威力随技能等级提升)，技能鱼雷有70%概率对命中的敌人造成点燃(点燃伤害依据雷击属性)",
 		name = "意外赠礼",
 		type = 1,
@@ -30065,11 +27782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.skill_data_template
-
-	var_6_74[11680] = {
+	pg.base.skill_data_template[11680] = {
 		desc_get = "",
 		name = "熟练的猎手",
 		type = 1,
@@ -30132,11 +27845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.skill_data_template
-
-	var_6_75[11690] = {
+	pg.base.skill_data_template[11690] = {
 		desc_get = "",
 		name = "湖之都的蛮牛",
 		type = 1,
@@ -30242,11 +27951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.skill_data_template
-
-	var_6_76[11700] = {
+	pg.base.skill_data_template[11700] = {
 		desc_get = "",
 		name = "猛进射击",
 		type = 3,
@@ -30397,11 +28102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.skill_data_template
-
-	var_6_77[11710] = {
+	pg.base.skill_data_template[11710] = {
 		desc_get = "",
 		name = "杜尔拉汗",
 		type = 2,
@@ -30507,11 +28208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.skill_data_template
-
-	var_6_78[11720] = {
+	pg.base.skill_data_template[11720] = {
 		desc_get = "",
 		name = "星之歌",
 		type = 1,
@@ -30617,11 +28314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.skill_data_template
-
-	var_6_79[11730] = {
+	pg.base.skill_data_template[11730] = {
 		desc_get = "",
 		name = "LittleStar",
 		type = 3,
@@ -30682,11 +28375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.skill_data_template
-
-	var_6_80[11740] = {
+	pg.base.skill_data_template[11740] = {
 		desc_get = "",
 		name = "风之加护",
 		type = 2,
@@ -30747,11 +28436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.skill_data_template
-
-	var_6_81[11750] = {
+	pg.base.skill_data_template[11750] = {
 		desc_get = "",
 		name = "蛮啾,猫猫,小枭!",
 		type = 1,
@@ -30857,11 +28542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.skill_data_template
-
-	var_6_82[11760] = {
+	pg.base.skill_data_template[11760] = {
 		desc_get = "",
 		name = "空袭信号",
 		type = 1,
@@ -30922,11 +28603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.skill_data_template
-
-	var_6_83[11770] = {
+	pg.base.skill_data_template[11770] = {
 		desc_get = "",
 		name = "Terror Field",
 		type = 3,
@@ -31077,11 +28754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.skill_data_template
-
-	var_6_84[11780] = {
+	pg.base.skill_data_template[11780] = {
 		desc_get = "",
 		name = "千年之凤",
 		type = 3,
@@ -31142,11 +28815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.skill_data_template
-
-	var_6_85[11790] = {
+	pg.base.skill_data_template[11790] = {
 		desc_get = "",
 		name = "运筹千里",
 		type = 2,
@@ -31252,11 +28921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.skill_data_template
-
-	var_6_86[11800] = {
+	pg.base.skill_data_template[11800] = {
 		desc_get = "",
 		name = "克敌机先",
 		type = 1,
@@ -31362,11 +29027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.skill_data_template
-
-	var_6_87[11810] = {
+	pg.base.skill_data_template[11810] = {
 		desc_get = "",
 		name = "战无不胜",
 		type = 1,
@@ -31429,11 +29090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.skill_data_template
-
-	var_6_88[11820] = {
+	pg.base.skill_data_template[11820] = {
 		desc_get = "战斗开始10秒后发射一轮鱼雷弹幕，随后每40秒(满级20秒)发射一轮鱼雷弹幕(威力依据技能等级)",
 		name = "攻无不取",
 		type = 1,
@@ -31489,11 +29146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.skill_data_template
-
-	var_6_89[11830] = {
+	pg.base.skill_data_template[11830] = {
 		desc_get = "战斗开始15秒后发射一轮航空弹幕，随后每20秒发射一轮航空弹幕；发射弹幕时，从(五光、猪鹿蝶、月见酒、种)中抽取一种牌型(概率非均等)，弹幕威力根据花札的牌型及技能等级提升",
 		name = "花之牌",
 		type = 1,
@@ -31550,11 +29203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.skill_data_template
-
-	var_6_90[11840] = {
+	pg.base.skill_data_template[11840] = {
 		desc_get = "战斗开始10秒后发射一轮航空弹幕，随后每20秒发射一轮航空弹幕；发射弹幕时，从(五光、青短、花见酒、滓)中抽取一种牌型(概率非均等)，弹幕威力根据花札的牌型及技能等级提升",
 		name = "花之牌",
 		type = 1,
@@ -31611,11 +29260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.skill_data_template
-
-	var_6_91[11850] = {
+	pg.base.skill_data_template[11850] = {
 		desc_get = "",
 		name = "苏腊巴亚的刃光",
 		type = 1,
@@ -31721,11 +29366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.skill_data_template
-
-	var_6_92[11860] = {
+	pg.base.skill_data_template[11860] = {
 		desc_get = "",
 		name = "苍狼之印",
 		type = 3,
@@ -31831,11 +29472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.skill_data_template
-
-	var_6_93[11870] = {
+	pg.base.skill_data_template[11870] = {
 		desc_get = "开场10秒触发神射手·改弹幕，随后每35秒(满级15秒)触发该弹幕；每场战斗第一轮该弹幕伤害提高80%(满级130%)；该弹幕必定暴击，选择最远目标，我方皇家主力编队自动跨射瞄准其目标单位概率提高(弹幕威力样式依据技能等级)",
 		name = "神射手·改",
 		type = 1,
@@ -31964,11 +29601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.skill_data_template
-
-	var_6_94[11880] = {
+	pg.base.skill_data_template[11880] = {
 		desc_get = "自身装备的主炮散布范围降低0.5点(满级5点)，炮击提高3%(满级15%)，对驱逐舰命中率提高3%(满级15%)",
 		name = "皇家传奇",
 		type = 3,
@@ -32065,11 +29698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.skill_data_template
-
-	var_6_95[11890] = {
+	pg.base.skill_data_template[11890] = {
 		desc_get = "自身受到的点燃伤害降低5%(满级15%)，被点燃时间减少3秒；若在战斗中受到伤害，导致血量低于25%后，接下来的10秒内，自身回避率上升10%(满级30%)，该效果每场战斗只能发动1次。",
 		name = "光焰中的奇迹",
 		type = 2,
@@ -32175,11 +29804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.skill_data_template
-
-	var_6_96[11900] = {
+	pg.base.skill_data_template[11900] = {
 		desc_get = "",
 		name = "816中队",
 		type = 1,
@@ -32240,11 +29865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.skill_data_template
-
-	var_6_97[11910] = {
+	pg.base.skill_data_template[11910] = {
 		desc_get = "",
 		name = "鹰击长空",
 		type = 1,
@@ -32305,11 +29926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.skill_data_template
-
-	var_6_98[11920] = {
+	pg.base.skill_data_template[11920] = {
 		desc_get = "",
 		name = "天之骑士",
 		type = 3,
@@ -32460,8 +30077,11 @@ end)()
 			}
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.skill_data_template[11930] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[11930] = {
 		desc_get = "",
 		name = "杜立特空袭.改",
 		type = 1,
@@ -32522,15 +30142,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.skill_data_template
-
-	var_7_0[11940] = {
+	pg.base.skill_data_template[11940] = {
 		desc_get = "",
 		name = "天与海的观测者",
 		type = 3,
@@ -32636,11 +30248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.skill_data_template
-
-	var_7_1[11950] = {
+	pg.base.skill_data_template[11950] = {
 		desc_get = "",
 		name = "不冻港的协奏曲",
 		type = 1,
@@ -32791,11 +30399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.skill_data_template
-
-	var_7_2[11960] = {
+	pg.base.skill_data_template[11960] = {
 		desc_get = "",
 		name = "峡湾之星",
 		type = 1,
@@ -32856,11 +30460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.skill_data_template
-
-	var_7_3[11970] = {
+	pg.base.skill_data_template[11970] = {
 		desc_get = "",
 		name = "战意提升",
 		type = 1,
@@ -32966,11 +30566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.skill_data_template
-
-	var_7_4[11980] = {
+	pg.base.skill_data_template[11980] = {
 		desc_get = "",
 		name = "特混分队旗舰",
 		type = 3,
@@ -33031,11 +30627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.skill_data_template
-
-	var_7_5[11990] = {
+	pg.base.skill_data_template[11990] = {
 		desc_get = "",
 		name = "恪尽职守",
 		type = 1,
@@ -33141,11 +30733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.skill_data_template
-
-	var_7_6[12000] = {
+	pg.base.skill_data_template[12000] = {
 		desc_get = "",
 		name = "远东的羁绊",
 		type = 3,
@@ -33251,11 +30839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.skill_data_template
-
-	var_7_7[12010] = {
+	pg.base.skill_data_template[12010] = {
 		desc_get = "",
 		name = "Code:Hikari",
 		type = 3,
@@ -33318,11 +30902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.skill_data_template
-
-	var_7_8[12020] = {
+	pg.base.skill_data_template[12020] = {
 		desc_get = "",
 		name = "潜母飞机用",
 		type = 0,
@@ -33336,11 +30916,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.skill_data_template
-
-	var_7_9[12030] = {
+	pg.base.skill_data_template[12030] = {
 		desc_get = "",
 		name = "划破夜空之火",
 		type = 1,
@@ -33446,11 +31022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.skill_data_template
-
-	var_7_10[12040] = {
+	pg.base.skill_data_template[12040] = {
 		desc_get = "",
 		name = "不安定的发明家",
 		type = 3,
@@ -33511,11 +31083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.skill_data_template
-
-	var_7_11[12050] = {
+	pg.base.skill_data_template[12050] = {
 		desc_get = "每隔35秒(满级20秒)，朝前方发射一轮鱼雷弹幕(威力依据技能等级)",
 		name = "鱼雷、发射！",
 		type = 1,
@@ -33576,11 +31144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.skill_data_template
-
-	var_7_12[12060] = {
+	pg.base.skill_data_template[12060] = {
 		desc_get = "",
 		name = "圣山的小巫女",
 		type = 2,
@@ -33641,11 +31205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.skill_data_template
-
-	var_7_13[12070] = {
+	pg.base.skill_data_template[12070] = {
 		desc_get = "",
 		name = "先发制人",
 		type = 1,
@@ -33706,11 +31266,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.skill_data_template
-
-	var_7_14[12080] = {
+	pg.base.skill_data_template[12080] = {
 		desc_get = "",
 		name = "赤红的加护",
 		type = 3,
@@ -33771,11 +31327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.skill_data_template
-
-	var_7_15[12090] = {
+	pg.base.skill_data_template[12090] = {
 		desc_get = "",
 		name = "吃我一炮！",
 		type = 1,
@@ -33836,11 +31388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.skill_data_template
-
-	var_7_16[12100] = {
+	pg.base.skill_data_template[12100] = {
 		desc_get = "",
 		name = "铁血第一航母！",
 		type = 3,
@@ -33901,11 +31449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.skill_data_template
-
-	var_7_17[12110] = {
+	pg.base.skill_data_template[12110] = {
 		desc_get = "",
 		name = "Destiny Draw！",
 		type = 1,
@@ -33966,11 +31510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.skill_data_template
-
-	var_7_18[12120] = {
+	pg.base.skill_data_template[12120] = {
 		desc_get = "",
 		name = "Wahrheit",
 		type = 1,
@@ -34076,11 +31616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.skill_data_template
-
-	var_7_19[12130] = {
+	pg.base.skill_data_template[12130] = {
 		desc_get = "",
 		name = "不屈的力量",
 		type = 1,
@@ -34188,11 +31724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.skill_data_template
-
-	var_7_20[12140] = {
+	pg.base.skill_data_template[12140] = {
 		desc_get = "",
 		name = "铁血的意志",
 		type = 3,
@@ -34343,11 +31875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.skill_data_template
-
-	var_7_21[12150] = {
+	pg.base.skill_data_template[12150] = {
 		desc_get = "",
 		name = "最适化武装",
 		type = 1,
@@ -34500,11 +32028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.skill_data_template
-
-	var_7_22[12160] = {
+	pg.base.skill_data_template[12160] = {
 		desc_get = "",
 		name = "日不落的辉光",
 		type = 3,
@@ -34610,11 +32134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.skill_data_template
-
-	var_7_23[12180] = {
+	pg.base.skill_data_template[12180] = {
 		desc_get = "",
 		name = "誓言之光",
 		type = 1,
@@ -34630,11 +32150,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.skill_data_template
-
-	var_7_24[12190] = {
+	pg.base.skill_data_template[12190] = {
 		desc_get = "",
 		name = "魔力猛击",
 		type = 1,
@@ -34695,11 +32211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.skill_data_template
-
-	var_7_25[12210] = {
+	pg.base.skill_data_template[12210] = {
 		desc_get = "",
 		name = "蜂鸟侵扰",
 		type = 1,
@@ -34760,11 +32272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.skill_data_template
-
-	var_7_26[12220] = {
+	pg.base.skill_data_template[12220] = {
 		desc_get = "",
 		name = "纯洁之光",
 		type = 3,
@@ -34870,11 +32378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.skill_data_template
-
-	var_7_27[12230] = {
+	pg.base.skill_data_template[12230] = {
 		desc_get = "",
 		name = "天真烂漫的少女",
 		type = 2,
@@ -34935,11 +32439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.skill_data_template
-
-	var_7_28[12240] = {
+	pg.base.skill_data_template[12240] = {
 		desc_get = "",
 		name = "骑士之心",
 		type = 3,
@@ -35045,11 +32545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.skill_data_template
-
-	var_7_29[12250] = {
+	pg.base.skill_data_template[12250] = {
 		desc_get = "",
 		name = "未经磨练的骑士",
 		type = 2,
@@ -35155,11 +32651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.skill_data_template
-
-	var_7_30[12260] = {
+	pg.base.skill_data_template[12260] = {
 		desc_get = "",
 		name = "闪耀登场",
 		type = 3,
@@ -35265,11 +32757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.skill_data_template
-
-	var_7_31[12270] = {
+	pg.base.skill_data_template[12270] = {
 		desc_get = "",
 		name = "Star Spark！",
 		type = 1,
@@ -35330,11 +32818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.skill_data_template
-
-	var_7_32[12280] = {
+	pg.base.skill_data_template[12280] = {
 		desc_get = "",
 		name = "毁灭模式·原型",
 		type = 1,
@@ -35485,11 +32969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.skill_data_template
-
-	var_7_33[12290] = {
+	pg.base.skill_data_template[12290] = {
 		desc_get = "",
 		name = "安全第一!",
 		type = 2,
@@ -35640,11 +33120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.skill_data_template
-
-	var_7_34[12300] = {
+	pg.base.skill_data_template[12300] = {
 		desc_get = "",
 		name = "对空指令",
 		type = 2,
@@ -35746,11 +33222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.skill_data_template
-
-	var_7_35[12310] = {
+	pg.base.skill_data_template[12310] = {
 		desc_get = "",
 		name = "先进火控系统",
 		type = 1,
@@ -35856,11 +33328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.skill_data_template
-
-	var_7_36[12320] = {
+	pg.base.skill_data_template[12320] = {
 		desc_get = "",
 		name = "Gassing Breath",
 		type = 1,
@@ -35966,11 +33434,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.skill_data_template
-
-	var_7_37[12330] = {
+	pg.base.skill_data_template[12330] = {
 		desc_get = "",
 		name = "兴奋之毒",
 		type = 2,
@@ -36031,11 +33495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.skill_data_template
-
-	var_7_38[12350] = {
+	pg.base.skill_data_template[12350] = {
 		desc_get = "",
 		name = "不服输的小魔女",
 		type = 1,
@@ -36141,11 +33601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.skill_data_template
-
-	var_7_39[12360] = {
+	pg.base.skill_data_template[12360] = {
 		desc_get = "",
 		name = "爱的使者",
 		type = 1,
@@ -36206,11 +33662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.skill_data_template
-
-	var_7_40[12370] = {
+	pg.base.skill_data_template[12370] = {
 		desc_get = "",
 		name = "格伦的问候",
 		type = 1,
@@ -36273,11 +33725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.skill_data_template
-
-	var_7_41[12380] = {
+	pg.base.skill_data_template[12380] = {
 		desc_get = "",
 		name = "临别之礼",
 		type = 1,
@@ -36385,11 +33833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.skill_data_template
-
-	var_7_42[12390] = {
+	pg.base.skill_data_template[12390] = {
 		desc_get = "",
 		name = "复仇之刃",
 		type = 1,
@@ -36452,11 +33896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.skill_data_template
-
-	var_7_43[12400] = {
+	pg.base.skill_data_template[12400] = {
 		desc_get = "",
 		name = "大鱼突击！",
 		type = 3,
@@ -36519,11 +33959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.skill_data_template
-
-	var_7_44[12410] = {
+	pg.base.skill_data_template[12410] = {
 		desc_get = "",
 		name = "狼群战术-{namecode:418}",
 		type = 2,
@@ -36631,11 +34067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.skill_data_template
-
-	var_7_45[12420] = {
+	pg.base.skill_data_template[12420] = {
 		desc_get = "",
 		name = "Londinium",
 		type = 1,
@@ -36742,11 +34174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.skill_data_template
-
-	var_7_46[12430] = {
+	pg.base.skill_data_template[12430] = {
 		desc_get = "",
 		name = "Lucky A",
 		type = 1,
@@ -36899,11 +34327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.skill_data_template
-
-	var_7_47[12440] = {
+	pg.base.skill_data_template[12440] = {
 		desc_get = "",
 		name = "驶向和平的战士",
 		type = 1,
@@ -37009,11 +34433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.skill_data_template
-
-	var_7_48[12460] = {
+	pg.base.skill_data_template[12460] = {
 		desc_get = "",
 		name = "鱼群守护",
 		type = 2,
@@ -37121,11 +34541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.skill_data_template
-
-	var_7_49[12470] = {
+	pg.base.skill_data_template[12470] = {
 		desc_get = "",
 		name = "陨翼双鲨",
 		type = 1,
@@ -37278,11 +34694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.skill_data_template
-
-	var_7_50[12480] = {
+	pg.base.skill_data_template[12480] = {
 		desc_get = "",
 		name = "Final-AP-Ride",
 		type = 1,
@@ -37343,11 +34755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.skill_data_template
-
-	var_7_51[12490] = {
+	pg.base.skill_data_template[12490] = {
 		desc_get = "",
 		name = "多面手",
 		type = 3,
@@ -37498,11 +34906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.skill_data_template
-
-	var_7_52[12500] = {
+	pg.base.skill_data_template[12500] = {
 		desc_get = "",
 		name = "咆哮的挑战者",
 		type = 1,
@@ -37653,11 +35057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.skill_data_template
-
-	var_7_53[12520] = {
+	pg.base.skill_data_template[12520] = {
 		desc_get = "",
 		name = "奋战的守护者",
 		type = 1,
@@ -37718,11 +35118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.skill_data_template
-
-	var_7_54[12530] = {
+	pg.base.skill_data_template[12530] = {
 		desc_get = "",
 		name = "海上骑士的觉悟",
 		type = 2,
@@ -37828,11 +35224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.skill_data_template
-
-	var_7_55[12540] = {
+	pg.base.skill_data_template[12540] = {
 		desc_get = "",
 		name = "禁航警告",
 		type = 3,
@@ -37938,11 +35330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.skill_data_template
-
-	var_7_56[12550] = {
+	pg.base.skill_data_template[12550] = {
 		desc_get = "",
 		name = "伍德斯托克的长弓",
 		type = 1,
@@ -38048,11 +35436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.skill_data_template
-
-	var_7_57[12560] = {
+	pg.base.skill_data_template[12560] = {
 		desc_get = "",
 		name = "乘风的贝奇",
 		type = 2,
@@ -38158,11 +35542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.skill_data_template
-
-	var_7_58[12570] = {
+	pg.base.skill_data_template[12570] = {
 		desc_get = "",
 		name = "随伴之翼",
 		type = 1,
@@ -38313,11 +35693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.skill_data_template
-
-	var_7_59[12580] = {
+	pg.base.skill_data_template[12580] = {
 		desc_get = "",
 		name = "机关禁止",
 		type = 3,
@@ -38423,11 +35799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.skill_data_template
-
-	var_7_60[12590] = {
+	pg.base.skill_data_template[12590] = {
 		desc_get = "",
 		name = "盒式装甲",
 		type = 2,
@@ -38533,11 +35905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.skill_data_template
-
-	var_7_61[12600] = {
+	pg.base.skill_data_template[12600] = {
 		desc_get = "",
 		name = "Rose Bombardamento",
 		type = 1,
@@ -38600,11 +35968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.skill_data_template
-
-	var_7_62[12610] = {
+	pg.base.skill_data_template[12610] = {
 		desc_get = "",
 		name = "撒丁的矜持",
 		type = 3,
@@ -38701,11 +36065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.skill_data_template
-
-	var_7_63[12620] = {
+	pg.base.skill_data_template[12620] = {
 		desc_get = "",
 		name = "特尔尼之盾",
 		type = 2,
@@ -38766,11 +36126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.skill_data_template
-
-	var_7_64[12630] = {
+	pg.base.skill_data_template[12630] = {
 		desc_get = "",
 		name = "弹药特性增强",
 		type = 1,
@@ -38921,11 +36277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.skill_data_template
-
-	var_7_65[12640] = {
+	pg.base.skill_data_template[12640] = {
 		desc_get = "",
 		name = "撒丁的威压",
 		type = 1,
@@ -38986,11 +36338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.skill_data_template
-
-	var_7_66[12650] = {
+	pg.base.skill_data_template[12650] = {
 		desc_get = "",
 		name = "变迁的记忆",
 		type = 1,
@@ -39141,11 +36489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.skill_data_template
-
-	var_7_67[12660] = {
+	pg.base.skill_data_template[12660] = {
 		desc_get = "",
 		name = "特殊装弹",
 		type = 1,
@@ -39206,11 +36550,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.skill_data_template
-
-	var_7_68[12670] = {
+	pg.base.skill_data_template[12670] = {
 		desc_get = "",
 		name = "巨龙之链",
 		type = 3,
@@ -39361,11 +36701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.skill_data_template
-
-	var_7_69[12680] = {
+	pg.base.skill_data_template[12680] = {
 		desc_get = "",
 		name = "风雨舞踏",
 		type = 3,
@@ -39561,11 +36897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.skill_data_template
-
-	var_7_70[12690] = {
+	pg.base.skill_data_template[12690] = {
 		desc_get = "",
 		name = "Enigma",
 		type = 3,
@@ -39617,11 +36949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.skill_data_template
-
-	var_7_71[12700] = {
+	pg.base.skill_data_template[12700] = {
 		desc_get = "",
 		name = "追随的Spiritual",
 		type = 1,
@@ -39673,11 +37001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.skill_data_template
-
-	var_7_72[12710] = {
+	pg.base.skill_data_template[12710] = {
 		desc_get = "",
 		name = "降星的Passion",
 		type = 2,
@@ -39738,11 +37062,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.skill_data_template
-
-	var_7_73[12720] = {
+	pg.base.skill_data_template[12720] = {
 		desc_get = "",
 		name = "精准直击Arrow",
 		type = 1,
@@ -39794,11 +37114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.skill_data_template
-
-	var_7_74[12730] = {
+	pg.base.skill_data_template[12730] = {
 		desc_get = "",
 		name = "闪耀共舞",
 		type = 2,
@@ -39904,11 +37220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.skill_data_template
-
-	var_7_75[12740] = {
+	pg.base.skill_data_template[12740] = {
 		desc_get = "",
 		name = "Dualism",
 		type = 1,
@@ -39960,11 +37272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.skill_data_template
-
-	var_7_76[12750] = {
+	pg.base.skill_data_template[12750] = {
 		desc_get = "",
 		name = "Overture",
 		type = 3,
@@ -40070,11 +37378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.skill_data_template
-
-	var_7_77[12760] = {
+	pg.base.skill_data_template[12760] = {
 		desc_get = "",
 		name = "热情火炎Fever",
 		type = 1,
@@ -40171,11 +37475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.skill_data_template
-
-	var_7_78[12770] = {
+	pg.base.skill_data_template[12770] = {
 		desc_get = "每隔30秒，生成2面旋转的护盾，每个护盾阻挡10发子弹，护盾持续<color=#92fc63FF>5</color>秒(满级<color=#92fc63FF>15</color>秒)；战斗开始时，若自身位于先锋领舰，则立刻触发一次该护盾",
 		name = "沉着冷静Shield",
 		type = 2,
@@ -40236,11 +37536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.skill_data_template
-
-	var_7_79[12780] = {
+	pg.base.skill_data_template[12780] = {
 		desc_get = "",
 		name = "Cœur Battant",
 		type = 1,
@@ -40337,11 +37633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.skill_data_template
-
-	var_7_80[12790] = {
+	pg.base.skill_data_template[12790] = {
 		desc_get = "",
 		name = "乐队领袖",
 		type = 3,
@@ -40492,11 +37784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.skill_data_template
-
-	var_7_81[12810] = {
+	pg.base.skill_data_template[12810] = {
 		desc_get = "",
 		name = "战术解放",
 		type = 1,
@@ -40559,11 +37847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.skill_data_template
-
-	var_7_82[12820] = {
+	pg.base.skill_data_template[12820] = {
 		desc_get = "",
 		name = "不灭之盾",
 		type = 2,
@@ -40669,11 +37953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.skill_data_template
-
-	var_7_83[12830] = {
+	pg.base.skill_data_template[12830] = {
 		desc_get = "",
 		name = "从容指顾",
 		type = 2,
@@ -40779,11 +38059,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.skill_data_template
-
-	var_7_84[12840] = {
+	pg.base.skill_data_template[12840] = {
 		desc_get = "自身对轻母、正航造成的伤害提升<color=#92fc63FF>5.0%</color>(满级<color=#92fc63FF>20.0</color>%)；在队伍中(存活)时，提高所有先锋舰队成员<color=#92fc63FF>5.0%</color>雷击属性(满级<color=#92fc63FF>20.0%</color>，额外提高暴击率<color=#92fc63FF>5.0%</color>)",
 		name = "新锐之刃",
 		type = 3,
@@ -40925,11 +38201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.skill_data_template
-
-	var_7_85[12850] = {
+	pg.base.skill_data_template[12850] = {
 		desc_get = "",
 		name = "恶鬼怒刀",
 		type = 2,
@@ -41035,11 +38307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.skill_data_template
-
-	var_7_86[12860] = {
+	pg.base.skill_data_template[12860] = {
 		desc_get = "",
 		name = "樱绽凤华",
 		type = 3,
@@ -41100,11 +38368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.skill_data_template
-
-	var_7_87[12870] = {
+	pg.base.skill_data_template[12870] = {
 		desc_get = "",
 		name = "缘结舞鲸",
 		type = 2,
@@ -41255,11 +38519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.skill_data_template
-
-	var_7_88[12880] = {
+	pg.base.skill_data_template[12880] = {
 		desc_get = "",
 		name = "恶鬼之愿",
 		type = 1,
@@ -41365,11 +38625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.skill_data_template
-
-	var_7_89[12890] = {
+	pg.base.skill_data_template[12890] = {
 		desc_get = "",
 		name = "霞光之绊",
 		type = 1,
@@ -41430,11 +38686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.skill_data_template
-
-	var_7_90[12900] = {
+	pg.base.skill_data_template[12900] = {
 		desc_get = "",
 		name = "不死鸟之羽",
 		type = 1,
@@ -41540,11 +38792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.skill_data_template
-
-	var_7_91[12910] = {
+	pg.base.skill_data_template[12910] = {
 		desc_get = "",
 		name = "六驱精锐·{namecode:12}",
 		type = 1,
@@ -41605,11 +38853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.skill_data_template
-
-	var_7_92[12930] = {
+	pg.base.skill_data_template[12930] = {
 		desc_get = "",
 		name = "Arias of Dido",
 		type = 3,
@@ -41670,11 +38914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.skill_data_template
-
-	var_7_93[12940] = {
+	pg.base.skill_data_template[12940] = {
 		desc_get = "",
 		name = "For The Queen",
 		type = 3,
@@ -41825,11 +39065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.skill_data_template
-
-	var_7_94[12950] = {
+	pg.base.skill_data_template[12950] = {
 		desc_get = "",
 		name = "The Fighting G",
 		type = 1,
@@ -41890,11 +39126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.skill_data_template
-
-	var_7_95[12960] = {
+	pg.base.skill_data_template[12960] = {
 		desc_get = "",
 		name = "守护之焰",
 		type = 2,
@@ -41955,11 +39187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.skill_data_template
-
-	var_7_96[12970] = {
+	pg.base.skill_data_template[12970] = {
 		desc_get = "",
 		name = "实战教导",
 		type = 2,
@@ -42110,11 +39338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.skill_data_template
-
-	var_7_97[12980] = {
+	pg.base.skill_data_template[12980] = {
 		desc_get = "",
 		name = "天蓝色的巡洋舰",
 		type = 1,
@@ -42265,11 +39489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.skill_data_template
-
-	var_7_98[12990] = {
+	pg.base.skill_data_template[12990] = {
 		desc_get = "",
 		name = "火力向导",
 		type = 3,
@@ -42375,8 +39595,11 @@ end)()
 			}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.skill_data_template[13000] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[13000] = {
 		desc_get = "",
 		name = "虚空的白骑兵",
 		type = 1,
@@ -42437,15 +39660,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.skill_data_template
-
-	var_8_0[13010] = {
+	pg.base.skill_data_template[13010] = {
 		desc_get = "",
 		name = "精准诱导",
 		type = 3,
@@ -42596,11 +39811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.skill_data_template
-
-	var_8_1[13020] = {
+	pg.base.skill_data_template[13020] = {
 		desc_get = "",
 		name = "冰结锋芒",
 		type = 1,
@@ -42663,11 +39874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.skill_data_template
-
-	var_8_2[13030] = {
+	pg.base.skill_data_template[13030] = {
 		desc_get = "",
 		name = "北联的狂放",
 		type = 1,
@@ -42728,11 +39935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.skill_data_template
-
-	var_8_3[13040] = {
+	pg.base.skill_data_template[13040] = {
 		desc_get = "",
 		name = "Mercury Memorial",
 		type = 1,
@@ -42838,11 +40041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.skill_data_template
-
-	var_8_4[13050] = {
+	pg.base.skill_data_template[13050] = {
 		desc_get = "",
 		name = "为革命献上祝福",
 		type = 1,
@@ -42993,11 +40192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.skill_data_template
-
-	var_8_5[13060] = {
+	pg.base.skill_data_template[13060] = {
 		desc_get = "",
 		name = "破冰移转",
 		type = 2,
@@ -43103,11 +40298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.skill_data_template
-
-	var_8_6[13070] = {
+	pg.base.skill_data_template[13070] = {
 		desc_get = "",
 		name = "翱翔的战斗者",
 		type = 1,
@@ -43159,11 +40350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.skill_data_template
-
-	var_8_7[13080] = {
+	pg.base.skill_data_template[13080] = {
 		desc_get = "",
 		name = "双重战斗模式",
 		type = 3,
@@ -43269,11 +40456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.skill_data_template
-
-	var_8_8[13090] = {
+	pg.base.skill_data_template[13090] = {
 		desc_get = "",
 		name = "英勇无畏",
 		type = 2,
@@ -43334,11 +40517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.skill_data_template
-
-	var_8_9[13100] = {
+	pg.base.skill_data_template[13100] = {
 		desc_get = "",
 		name = "火翼燎原",
 		type = 1,
@@ -43444,11 +40623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.skill_data_template
-
-	var_8_10[13110] = {
+	pg.base.skill_data_template[13110] = {
 		desc_get = "",
 		name = "Stand by Me",
 		type = 2,
@@ -43554,11 +40729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.skill_data_template
-
-	var_8_11[13120] = {
+	pg.base.skill_data_template[13120] = {
 		desc_get = "",
 		name = "锐目的支援者",
 		type = 1,
@@ -43709,11 +40880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.skill_data_template
-
-	var_8_12[13130] = {
+	pg.base.skill_data_template[13130] = {
 		desc_get = "",
 		name = "CHANGE NEKO!",
 		type = 1,
@@ -43855,11 +41022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.skill_data_template
-
-	var_8_13[13140] = {
+	pg.base.skill_data_template[13140] = {
 		desc_get = "",
 		name = "I AM RENO！",
 		type = 3,
@@ -44010,11 +41173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.skill_data_template
-
-	var_8_14[13150] = {
+	pg.base.skill_data_template[13150] = {
 		desc_get = "",
 		name = "无情的猎食者",
 		type = 3,
@@ -44077,11 +41236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.skill_data_template
-
-	var_8_15[13160] = {
+	pg.base.skill_data_template[13160] = {
 		desc_get = "",
 		name = "勇无不克",
 		type = 1,
@@ -44180,11 +41335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.skill_data_template
-
-	var_8_16[13170] = {
+	pg.base.skill_data_template[13170] = {
 		desc_get = "",
 		name = "敌无不击",
 		type = 3,
@@ -44236,11 +41387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.skill_data_template
-
-	var_8_17[13180] = {
+	pg.base.skill_data_template[13180] = {
 		desc_get = "",
 		name = "隆加角之宴",
 		type = 3,
@@ -44391,11 +41538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.skill_data_template
-
-	var_8_18[13190] = {
+	pg.base.skill_data_template[13190] = {
 		desc_get = "",
 		name = "攻守自如",
 		type = 1,
@@ -44582,11 +41725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.skill_data_template
-
-	var_8_19[13200] = {
+	pg.base.skill_data_template[13200] = {
 		desc_get = "",
 		name = "小骑士的射击训练",
 		type = 1,
@@ -44692,11 +41831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.skill_data_template
-
-	var_8_20[13210] = {
+	pg.base.skill_data_template[13210] = {
 		desc_get = "",
 		name = "小骑士的团队演练",
 		type = 3,
@@ -44757,11 +41892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.skill_data_template
-
-	var_8_21[13220] = {
+	pg.base.skill_data_template[13220] = {
 		desc_get = "",
 		name = "敌无不击",
 		type = 1,
@@ -44777,11 +41908,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.skill_data_template
-
-	var_8_22[13230] = {
+	pg.base.skill_data_template[13230] = {
 		desc_get = "",
 		name = "圣裁之Z",
 		type = 3,
@@ -44887,11 +42014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.skill_data_template
-
-	var_8_23[13240] = {
+	pg.base.skill_data_template[13240] = {
 		desc_get = "",
 		name = "爱丽丝之帜",
 		type = 3,
@@ -44997,11 +42120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.skill_data_template
-
-	var_8_24[13250] = {
+	pg.base.skill_data_template[13250] = {
 		desc_get = "",
 		name = "爱丽丝之焰",
 		type = 1,
@@ -45100,11 +42219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.skill_data_template
-
-	var_8_25[13260] = {
+	pg.base.skill_data_template[13260] = {
 		desc_get = "",
 		name = "爱丽丝之怒",
 		type = 1,
@@ -45165,11 +42280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.skill_data_template
-
-	var_8_26[13270] = {
+	pg.base.skill_data_template[13270] = {
 		desc_get = "",
 		name = "热风之炽焰",
 		type = 1,
@@ -45311,11 +42422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.skill_data_template
-
-	var_8_27[13280] = {
+	pg.base.skill_data_template[13280] = {
 		desc_get = "",
 		name = "神穹之盾",
 		type = 2,
@@ -45466,11 +42573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.skill_data_template
-
-	var_8_28[13290] = {
+	pg.base.skill_data_template[13290] = {
 		desc_get = "",
 		name = "La Pucelle",
 		type = 1,
@@ -45576,11 +42679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.skill_data_template
-
-	var_8_29[13300] = {
+	pg.base.skill_data_template[13300] = {
 		desc_get = "",
 		name = "圣女的祷告 ",
 		type = 2,
@@ -45641,11 +42740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.skill_data_template
-
-	var_8_30[13310] = {
+	pg.base.skill_data_template[13310] = {
 		desc_get = "",
 		name = "间隙装甲",
 		type = 3,
@@ -45706,11 +42801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.skill_data_template
-
-	var_8_31[13320] = {
+	pg.base.skill_data_template[13320] = {
 		desc_get = "",
 		name = "审判之弹",
 		type = 1,
@@ -45852,11 +42943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.skill_data_template
-
-	var_8_32[13330] = {
+	pg.base.skill_data_template[13330] = {
 		desc_get = "",
 		name = "Sonnez la charge!",
 		type = 3,
@@ -45962,11 +43049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.skill_data_template
-
-	var_8_33[13340] = {
+	pg.base.skill_data_template[13340] = {
 		desc_get = "",
 		name = "变迁之秘",
 		type = 1,
@@ -46072,11 +43155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.skill_data_template
-
-	var_8_34[13350] = {
+	pg.base.skill_data_template[13350] = {
 		desc_get = "",
 		name = "后备武装",
 		type = 1,
@@ -46128,11 +43207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.skill_data_template
-
-	var_8_35[13360] = {
+	pg.base.skill_data_template[13360] = {
 		desc_get = "",
 		name = "舰载机，出击！",
 		type = 1,
@@ -46229,11 +43304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.skill_data_template
-
-	var_8_36[13370] = {
+	pg.base.skill_data_template[13370] = {
 		desc_get = "",
 		name = "圣光之愿",
 		type = 3,
@@ -46330,11 +43401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.skill_data_template
-
-	var_8_37[13380] = {
+	pg.base.skill_data_template[13380] = {
 		desc_get = "",
 		name = "库拉湾之梦",
 		type = 3,
@@ -46440,11 +43507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.skill_data_template
-
-	var_8_38[13390] = {
+	pg.base.skill_data_template[13390] = {
 		desc_get = "",
 		name = "尝尝这个！",
 		type = 1,
@@ -46505,11 +43568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.skill_data_template
-
-	var_8_39[13400] = {
+	pg.base.skill_data_template[13400] = {
 		desc_get = "",
 		name = "雷达扫描·改",
 		type = 3,
@@ -46660,11 +43719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.skill_data_template
-
-	var_8_40[13410] = {
+	pg.base.skill_data_template[13410] = {
 		desc_get = "",
 		name = "翔翼的Talaria",
 		type = 2,
@@ -46806,11 +43861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.skill_data_template
-
-	var_8_41[13420] = {
+	pg.base.skill_data_template[13420] = {
 		desc_get = "",
 		name = "弹射起飞试行",
 		type = 1,
@@ -46862,11 +43913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.skill_data_template
-
-	var_8_42[13430] = {
+	pg.base.skill_data_template[13430] = {
 		desc_get = "",
 		name = "广域舰船维护",
 		type = 3,
@@ -46972,11 +44019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.skill_data_template
-
-	var_8_43[13440] = {
+	pg.base.skill_data_template[13440] = {
 		desc_get = "",
 		name = "射击Synchronize",
 		type = 1,
@@ -47118,11 +44161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.skill_data_template
-
-	var_8_44[13450] = {
+	pg.base.skill_data_template[13450] = {
 		desc_get = "",
 		name = "骑士不朽之约",
 		type = 3,
@@ -47183,11 +44222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.skill_data_template
-
-	var_8_45[13460] = {
+	pg.base.skill_data_template[13460] = {
 		desc_get = "",
 		name = "Blast Geminio",
 		type = 1,
@@ -47239,11 +44274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.skill_data_template
-
-	var_8_46[13470] = {
+	pg.base.skill_data_template[13470] = {
 		desc_get = "",
 		name = "砥柱下的应援 ",
 		type = 3,
@@ -47349,11 +44380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.skill_data_template
-
-	var_8_47[13480] = {
+	pg.base.skill_data_template[13480] = {
 		desc_get = "",
 		name = "全弹压制射击",
 		type = 1,
@@ -47450,11 +44477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.skill_data_template
-
-	var_8_48[13490] = {
+	pg.base.skill_data_template[13490] = {
 		desc_get = "",
 		name = "雷击集中模式",
 		type = 2,
@@ -47515,11 +44538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.skill_data_template
-
-	var_8_49[13500] = {
+	pg.base.skill_data_template[13500] = {
 		desc_get = "",
 		name = "气魄一击",
 		type = 3,
@@ -47571,11 +44590,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.skill_data_template
-
-	var_8_50[13510] = {
+	pg.base.skill_data_template[13510] = {
 		desc_get = "",
 		name = "正面突袭",
 		type = 1,
@@ -47636,11 +44651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.skill_data_template
-
-	var_8_51[13520] = {
+	pg.base.skill_data_template[13520] = {
 		desc_get = "",
 		name = "变迁之秘",
 		type = 1,
@@ -47746,11 +44757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.skill_data_template
-
-	var_8_52[13530] = {
+	pg.base.skill_data_template[13530] = {
 		desc_get = "",
 		name = "翔鹰之剑",
 		type = 1,
@@ -47802,11 +44809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.skill_data_template
-
-	var_8_53[13540] = {
+	pg.base.skill_data_template[13540] = {
 		desc_get = "",
 		name = "广域舰船维护",
 		type = 2,
@@ -47822,11 +44825,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.skill_data_template
-
-	var_8_54[13550] = {
+	pg.base.skill_data_template[13550] = {
 		desc_get = "",
 		name = "微笑猎手",
 		type = 1,
@@ -47925,11 +44924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.skill_data_template
-
-	var_8_55[13560] = {
+	pg.base.skill_data_template[13560] = {
 		desc_get = "",
 		name = "狼群战术-{namecode:473}",
 		type = 1,
@@ -48082,11 +45077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.skill_data_template
-
-	var_8_56[13570] = {
+	pg.base.skill_data_template[13570] = {
 		desc_get = "",
 		name = "AntiTorpedoField",
 		type = 2,
@@ -48138,11 +45129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.skill_data_template
-
-	var_8_57[13580] = {
+	pg.base.skill_data_template[13580] = {
 		desc_get = "",
 		name = "星夜之云",
 		type = 1,
@@ -48194,11 +45181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.skill_data_template
-
-	var_8_58[13590] = {
+	pg.base.skill_data_template[13590] = {
 		desc_get = "",
 		name = "幽蝶之梦",
 		type = 3,
@@ -48295,11 +45278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.skill_data_template
-
-	var_8_59[13600] = {
+	pg.base.skill_data_template[13600] = {
 		desc_get = "",
 		name = "守护之樱",
 		type = 2,
@@ -48405,11 +45384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.skill_data_template
-
-	var_8_60[13610] = {
+	pg.base.skill_data_template[13610] = {
 		desc_get = "",
 		name = "战术解放·{namecode:80}",
 		type = 1,
@@ -48508,11 +45483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.skill_data_template
-
-	var_8_61[13620] = {
+	pg.base.skill_data_template[13620] = {
 		desc_get = "",
 		name = "英勇奋进",
 		type = 3,
@@ -48618,11 +45589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.skill_data_template
-
-	var_8_62[13630] = {
+	pg.base.skill_data_template[13630] = {
 		desc_get = "",
 		name = "突击之{namecode:27}",
 		type = 1,
@@ -48683,11 +45650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.skill_data_template
-
-	var_8_63[13640] = {
+	pg.base.skill_data_template[13640] = {
 		desc_get = "",
 		name = "守卫之{namecode:27}",
 		type = 2,
@@ -48838,11 +45801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.skill_data_template
-
-	var_8_64[13650] = {
+	pg.base.skill_data_template[13650] = {
 		desc_get = "",
 		name = "损伤警备",
 		type = 2,
@@ -48903,11 +45862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.skill_data_template
-
-	var_8_65[13660] = {
+	pg.base.skill_data_template[13660] = {
 		desc_get = "",
 		name = "小心火焰！",
 		type = 2,
@@ -49004,11 +45959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.skill_data_template
-
-	var_8_66[13670] = {
+	pg.base.skill_data_template[13670] = {
 		desc_get = "",
 		name = "事不过三！",
 		type = 2,
@@ -49114,11 +46065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.skill_data_template
-
-	var_8_67[13680] = {
+	pg.base.skill_data_template[13680] = {
 		desc_get = "",
 		name = "千之羽",
 		type = 1,
@@ -49215,11 +46162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.skill_data_template
-
-	var_8_68[13690] = {
+	pg.base.skill_data_template[13690] = {
 		desc_get = "",
 		name = "千之羽",
 		type = 1,
@@ -49316,11 +46259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.skill_data_template
-
-	var_8_69[13700] = {
+	pg.base.skill_data_template[13700] = {
 		desc_get = "",
 		name = "守护之樱",
 		type = 2,
@@ -49336,11 +46275,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.skill_data_template
-
-	var_8_70[13710] = {
+	pg.base.skill_data_template[13710] = {
 		desc_get = "",
 		name = "遁入雨云",
 		type = 2,
@@ -49437,11 +46372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.skill_data_template
-
-	var_8_71[13720] = {
+	pg.base.skill_data_template[13720] = {
 		desc_get = "",
 		name = "燃烧禁令",
 		type = 3,
@@ -49538,11 +46469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.skill_data_template
-
-	var_8_72[13730] = {
+	pg.base.skill_data_template[13730] = {
 		desc_get = "",
 		name = "破灭的Encore",
 		type = 1,
@@ -49594,11 +46521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.skill_data_template
-
-	var_8_73[13740] = {
+	pg.base.skill_data_template[13740] = {
 		desc_get = "",
 		name = "环绕的Melody",
 		type = 1,
@@ -49659,11 +46582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.skill_data_template
-
-	var_8_74[13750] = {
+	pg.base.skill_data_template[13750] = {
 		desc_get = "",
 		name = "鲜红的Waltz",
 		type = 1,
@@ -49715,11 +46634,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.skill_data_template
-
-	var_8_75[13760] = {
+	pg.base.skill_data_template[13760] = {
 		desc_get = "",
 		name = "破灭的Opening",
 		type = 1,
@@ -49861,11 +46776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.skill_data_template
-
-	var_8_76[13770] = {
+	pg.base.skill_data_template[13770] = {
 		desc_get = "",
 		name = "Lumière des Anges",
 		type = 1,
@@ -49917,11 +46828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.skill_data_template
-
-	var_8_77[13780] = {
+	pg.base.skill_data_template[13780] = {
 		desc_get = "",
 		name = "怠惰天使",
 		type = 2,
@@ -50027,11 +46934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.skill_data_template
-
-	var_8_78[13790] = {
+	pg.base.skill_data_template[13790] = {
 		desc_get = "",
 		name = "星占之歌",
 		type = 3,
@@ -50227,11 +47130,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.skill_data_template
-
-	var_8_79[13800] = {
+	pg.base.skill_data_template[13800] = {
 		desc_get = "",
 		name = "星落之辉",
 		type = 1,
@@ -50292,11 +47191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.skill_data_template
-
-	var_8_80[13810] = {
+	pg.base.skill_data_template[13810] = {
 		desc_get = "",
 		name = "合奏的叙事歌",
 		type = 2,
@@ -50438,11 +47333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.skill_data_template
-
-	var_8_81[13820] = {
+	pg.base.skill_data_template[13820] = {
 		desc_get = "",
 		name = "闪光的练习曲",
 		type = 3,
@@ -50548,11 +47439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.skill_data_template
-
-	var_8_82[13830] = {
+	pg.base.skill_data_template[13830] = {
 		desc_get = "",
 		name = "冰晶印记",
 		type = 1,
@@ -50613,11 +47500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.skill_data_template
-
-	var_8_83[13840] = {
+	pg.base.skill_data_template[13840] = {
 		desc_get = "",
 		name = "γpa！",
 		type = 3,
@@ -50678,11 +47561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.skill_data_template
-
-	var_8_84[13850] = {
+	pg.base.skill_data_template[13850] = {
 		desc_get = "",
 		name = "寰宇的赠礼",
 		type = 1,
@@ -50781,11 +47660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.skill_data_template
-
-	var_8_85[13860] = {
+	pg.base.skill_data_template[13860] = {
 		desc_get = "",
 		name = "超限充能",
 		type = 1,
@@ -50882,11 +47757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.skill_data_template
-
-	var_8_86[13870] = {
+	pg.base.skill_data_template[13870] = {
 		desc_get = "",
 		name = "星辰的振付师",
 		type = 3,
@@ -50992,11 +47863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.skill_data_template
-
-	var_8_87[13880] = {
+	pg.base.skill_data_template[13880] = {
 		desc_get = "",
 		name = "迅击铁翼",
 		type = 1,
@@ -51057,11 +47924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.skill_data_template
-
-	var_8_88[13890] = {
+	pg.base.skill_data_template[13890] = {
 		desc_get = "",
 		name = "侵攻之时",
 		type = 1,
@@ -51122,11 +47985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.skill_data_template
-
-	var_8_89[13900] = {
+	pg.base.skill_data_template[13900] = {
 		desc_get = "",
 		name = "血翼之盟",
 		type = 3,
@@ -51232,11 +48091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.skill_data_template
-
-	var_8_90[13910] = {
+	pg.base.skill_data_template[13910] = {
 		desc_get = "",
 		name = "Eisen Bite",
 		type = 1,
@@ -51342,11 +48197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.skill_data_template
-
-	var_8_91[13920] = {
+	pg.base.skill_data_template[13920] = {
 		desc_get = "",
 		name = "直感之拳",
 		type = 2,
@@ -51443,11 +48294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.skill_data_template
-
-	var_8_92[13930] = {
+	pg.base.skill_data_template[13930] = {
 		desc_get = "",
 		name = "西进之戟",
 		type = 1,
@@ -51591,11 +48438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.skill_data_template
-
-	var_8_93[13940] = {
+	pg.base.skill_data_template[13940] = {
 		desc_get = "",
 		name = "狼群战术-{namecode:474}",
 		type = 1,
@@ -51703,11 +48546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.skill_data_template
-
-	var_8_94[13950] = {
+	pg.base.skill_data_template[13950] = {
 		desc_get = "",
 		name = "孤城的瞭望者",
 		type = 1,
@@ -51903,11 +48742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.skill_data_template
-
-	var_8_95[13960] = {
+	pg.base.skill_data_template[13960] = {
 		desc_get = "",
 		name = "铁血之盾",
 		type = 2,
@@ -52049,11 +48884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.skill_data_template
-
-	var_8_96[13970] = {
+	pg.base.skill_data_template[13970] = {
 		desc_get = "",
 		name = "训练有素",
 		type = 3,
@@ -52150,11 +48981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.skill_data_template
-
-	var_8_97[13980] = {
+	pg.base.skill_data_template[13980] = {
 		desc_get = "",
 		name = "空之戍卫",
 		type = 1,
@@ -52305,11 +49132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.skill_data_template
-
-	var_8_98[13990] = {
+	pg.base.skill_data_template[13990] = {
 		desc_get = "",
 		name = "魔王之庇护",
 		type = 2,
@@ -52415,8 +49238,11 @@ end)()
 			}
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.skill_data_template[14000] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[14000] = {
 		desc_get = "",
 		name = "魔王之愤怒",
 		type = 1,
@@ -52513,15 +49339,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.skill_data_template
-
-	var_9_0[14010] = {
+	pg.base.skill_data_template[14010] = {
 		desc_get = "",
 		name = "Z系领航",
 		type = 3,
@@ -52627,11 +49445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.skill_data_template
-
-	var_9_1[14020] = {
+	pg.base.skill_data_template[14020] = {
 		desc_get = "",
 		name = "护航精英",
 		type = 2,
@@ -52782,11 +49596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.skill_data_template
-
-	var_9_2[14030] = {
+	pg.base.skill_data_template[14030] = {
 		desc_get = "",
 		name = "回转的Ontology",
 		type = 1,
@@ -52847,11 +49657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.skill_data_template
-
-	var_9_3[14040] = {
+	pg.base.skill_data_template[14040] = {
 		desc_get = "",
 		name = "闪耀的Protorogia",
 		type = 3,
@@ -52957,11 +49763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.skill_data_template
-
-	var_9_4[14050] = {
+	pg.base.skill_data_template[14050] = {
 		desc_get = "",
 		name = "怒放之紫",
 		type = 1,
@@ -53022,11 +49824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.skill_data_template
-
-	var_9_5[14060] = {
+	pg.base.skill_data_template[14060] = {
 		desc_get = "",
 		name = "无惧挑战",
 		type = 3,
@@ -53132,11 +49930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.skill_data_template
-
-	var_9_6[14070] = {
+	pg.base.skill_data_template[14070] = {
 		desc_get = "",
 		name = "除恶务尽",
 		type = 3,
@@ -53233,11 +50027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.skill_data_template
-
-	var_9_7[14080] = {
+	pg.base.skill_data_template[14080] = {
 		desc_get = "",
 		name = "丹青不渝",
 		type = 2,
@@ -53298,11 +50088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.skill_data_template
-
-	var_9_8[14090] = {
+	pg.base.skill_data_template[14090] = {
 		desc_get = "",
 		name = "除恶务尽",
 		type = 3,
@@ -53399,11 +50185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.skill_data_template
-
-	var_9_9[14100] = {
+	pg.base.skill_data_template[14100] = {
 		desc_get = "",
 		name = "舞衫歌扇",
 		type = 2,
@@ -53464,11 +50246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.skill_data_template
-
-	var_9_10[14110] = {
+	pg.base.skill_data_template[14110] = {
 		desc_get = "",
 		name = "马耳他的英雄",
 		type = 1,
@@ -53574,11 +50352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.skill_data_template
-
-	var_9_11[14120] = {
+	pg.base.skill_data_template[14120] = {
 		desc_get = "",
 		name = "Pepperpot",
 		type = 2,
@@ -53639,11 +50413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.skill_data_template
-
-	var_9_12[14130] = {
+	pg.base.skill_data_template[14130] = {
 		desc_get = "",
 		name = "奇袭战术",
 		type = 1,
@@ -53751,11 +50521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.skill_data_template
-
-	var_9_13[14140] = {
+	pg.base.skill_data_template[14140] = {
 		desc_get = "",
 		name = "调皮的小雪球",
 		type = 1,
@@ -53861,11 +50627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.skill_data_template
-
-	var_9_14[14150] = {
+	pg.base.skill_data_template[14150] = {
 		desc_get = "",
 		name = "陨落冰耀",
 		type = 1,
@@ -53973,11 +50735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.skill_data_template
-
-	var_9_15[14160] = {
+	pg.base.skill_data_template[14160] = {
 		desc_get = "",
 		name = "战况把握",
 		type = 2,
@@ -54038,11 +50796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.skill_data_template
-
-	var_9_16[14170] = {
+	pg.base.skill_data_template[14170] = {
 		desc_get = "",
 		name = "Kirov Reporting!",
 		type = 1,
@@ -54148,11 +50902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.skill_data_template
-
-	var_9_17[14180] = {
+	pg.base.skill_data_template[14180] = {
 		desc_get = "",
 		name = "重击冰魄",
 		type = 3,
@@ -54258,11 +51008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.skill_data_template
-
-	var_9_18[14190] = {
+	pg.base.skill_data_template[14190] = {
 		desc_get = "",
 		name = "冰击之盾",
 		type = 2,
@@ -54323,11 +51069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.skill_data_template
-
-	var_9_19[14200] = {
+	pg.base.skill_data_template[14200] = {
 		desc_get = "",
 		name = "冰与血之忆",
 		type = 3,
@@ -54433,11 +51175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.skill_data_template
-
-	var_9_20[14210] = {
+	pg.base.skill_data_template[14210] = {
 		desc_get = "",
 		name = "骁勇近卫",
 		type = 1,
@@ -54543,11 +51281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.skill_data_template
-
-	var_9_21[14220] = {
+	pg.base.skill_data_template[14220] = {
 		desc_get = "",
 		name = "隐匿雷鸣",
 		type = 2,
@@ -54608,11 +51342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.skill_data_template
-
-	var_9_22[14230] = {
+	pg.base.skill_data_template[14230] = {
 		desc_get = "",
 		name = "不冻港之炎",
 		type = 1,
@@ -54718,11 +51448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.skill_data_template
-
-	var_9_23[14240] = {
+	pg.base.skill_data_template[14240] = {
 		desc_get = "",
 		name = "英雄城之姿",
 		type = 2,
@@ -54873,11 +51599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.skill_data_template
-
-	var_9_24[14250] = {
+	pg.base.skill_data_template[14250] = {
 		desc_get = "",
 		name = "舍身救援",
 		type = 2,
@@ -54983,11 +51705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.skill_data_template
-
-	var_9_25[14260] = {
+	pg.base.skill_data_template[14260] = {
 		desc_get = "",
 		name = "满怀爱意！",
 		type = 1,
@@ -55138,11 +51856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.skill_data_template
-
-	var_9_26[14270] = {
+	pg.base.skill_data_template[14270] = {
 		desc_get = "",
 		name = "星火之光",
 		type = 1,
@@ -55293,11 +52007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.skill_data_template
-
-	var_9_27[14280] = {
+	pg.base.skill_data_template[14280] = {
 		desc_get = "",
 		name = "喧闹之焰",
 		type = 3,
@@ -55403,11 +52113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.skill_data_template
-
-	var_9_28[14290] = {
+	pg.base.skill_data_template[14290] = {
 		desc_get = "",
 		name = "轻飘飘的守卫者",
 		type = 3,
@@ -55558,11 +52264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.skill_data_template
-
-	var_9_29[14300] = {
+	pg.base.skill_data_template[14300] = {
 		desc_get = "",
 		name = "掩护救援",
 		type = 2,
@@ -55758,11 +52460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.skill_data_template
-
-	var_9_30[14310] = {
+	pg.base.skill_data_template[14310] = {
 		desc_get = "",
 		name = "引导未来的重击",
 		type = 1,
@@ -55913,11 +52611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.skill_data_template
-
-	var_9_31[14320] = {
+	pg.base.skill_data_template[14320] = {
 		desc_get = "",
 		name = "撒丁帝国的威光",
 		type = 3,
@@ -56023,11 +52717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.skill_data_template
-
-	var_9_32[14330] = {
+	pg.base.skill_data_template[14330] = {
 		desc_get = "",
 		name = "驱逐永夜的晨光",
 		type = 1,
@@ -56133,11 +52823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.skill_data_template
-
-	var_9_33[14340] = {
+	pg.base.skill_data_template[14340] = {
 		desc_get = "",
 		name = "荣光的紫焰",
 		type = 1,
@@ -56243,11 +52929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.skill_data_template
-
-	var_9_34[14350] = {
+	pg.base.skill_data_template[14350] = {
 		desc_get = "",
 		name = "缓慢而热烈",
 		type = 3,
@@ -56353,11 +53035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.skill_data_template
-
-	var_9_35[14360] = {
+	pg.base.skill_data_template[14360] = {
 		desc_get = "",
 		name = "仅仅只是轻伤！",
 		type = 2,
@@ -56508,11 +53186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.skill_data_template
-
-	var_9_36[14370] = {
+	pg.base.skill_data_template[14370] = {
 		desc_get = "",
 		name = "领航之箭",
 		type = 1,
@@ -56573,11 +53247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.skill_data_template
-
-	var_9_37[14380] = {
+	pg.base.skill_data_template[14380] = {
 		desc_get = "",
 		name = "星辰之光",
 		type = 3,
@@ -56728,11 +53398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.skill_data_template
-
-	var_9_38[14390] = {
+	pg.base.skill_data_template[14390] = {
 		desc_get = "",
 		name = "精巧防御",
 		type = 2,
@@ -56838,11 +53504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.skill_data_template
-
-	var_9_39[14400] = {
+	pg.base.skill_data_template[14400] = {
 		desc_get = "",
 		name = "陆间海的西北风",
 		type = 2,
@@ -56948,11 +53610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.skill_data_template
-
-	var_9_40[14410] = {
+	pg.base.skill_data_template[14410] = {
 		desc_get = "",
 		name = "乘风破浪西北风",
 		type = 1,
@@ -57013,11 +53671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.skill_data_template
-
-	var_9_41[14420] = {
+	pg.base.skill_data_template[14420] = {
 		desc_get = "",
 		name = "陆间海的西南风",
 		type = 1,
@@ -57069,11 +53723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.skill_data_template
-
-	var_9_42[14430] = {
+	pg.base.skill_data_template[14430] = {
 		desc_get = "",
 		name = "迎风踏浪西南风",
 		type = 2,
@@ -57134,11 +53784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.skill_data_template
-
-	var_9_43[14440] = {
+	pg.base.skill_data_template[14440] = {
 		desc_get = "",
 		name = "扬帆起航",
 		type = 2,
@@ -57244,11 +53890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.skill_data_template
-
-	var_9_44[14450] = {
+	pg.base.skill_data_template[14450] = {
 		desc_get = "",
 		name = "勇往直前",
 		type = 3,
@@ -57309,11 +53951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.skill_data_template
-
-	var_9_45[14460] = {
+	pg.base.skill_data_template[14460] = {
 		desc_get = "",
 		name = "背水一战",
 		type = 1,
@@ -57466,11 +54104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.skill_data_template
-
-	var_9_46[14470] = {
+	pg.base.skill_data_template[14470] = {
 		desc_get = "",
 		name = "随机应变",
 		type = 1,
@@ -57522,11 +54156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.skill_data_template
-
-	var_9_47[14480] = {
+	pg.base.skill_data_template[14480] = {
 		desc_get = "",
 		name = "未雨绸缪",
 		type = 3,
@@ -57623,11 +54253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.skill_data_template
-
-	var_9_48[14490] = {
+	pg.base.skill_data_template[14490] = {
 		desc_get = "",
 		name = "小熊的庇护",
 		type = 2,
@@ -57778,11 +54404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.skill_data_template
-
-	var_9_49[14500] = {
+	pg.base.skill_data_template[14500] = {
 		desc_get = "",
 		name = "Little Luckye",
 		type = 1,
@@ -57888,11 +54510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.skill_data_template
-
-	var_9_50[14510] = {
+	pg.base.skill_data_template[14510] = {
 		desc_get = "",
 		name = "吐息之焰",
 		type = 1,
@@ -57998,11 +54616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.skill_data_template
-
-	var_9_51[14520] = {
+	pg.base.skill_data_template[14520] = {
 		desc_get = "",
 		name = "领向自由的炮火",
 		type = 3,
@@ -58153,11 +54767,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.skill_data_template
-
-	var_9_52[14530] = {
+	pg.base.skill_data_template[14530] = {
 		desc_get = "",
 		name = "Big J",
 		type = 3,
@@ -58353,11 +54963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.skill_data_template
-
-	var_9_53[14540] = {
+	pg.base.skill_data_template[14540] = {
 		desc_get = "",
 		name = "流火之翼",
 		type = 1,
@@ -58409,11 +55015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.skill_data_template
-
-	var_9_54[14550] = {
+	pg.base.skill_data_template[14550] = {
 		desc_get = "",
 		name = "航空装甲",
 		type = 2,
@@ -58510,11 +55112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.skill_data_template
-
-	var_9_55[14560] = {
+	pg.base.skill_data_template[14560] = {
 		desc_get = "",
 		name = "编队掩护",
 		type = 3,
@@ -58620,11 +55218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.skill_data_template
-
-	var_9_56[14570] = {
+	pg.base.skill_data_template[14570] = {
 		desc_get = "",
 		name = "星光连打",
 		type = 1,
@@ -58775,11 +55369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.skill_data_template
-
-	var_9_57[14580] = {
+	pg.base.skill_data_template[14580] = {
 		desc_get = "",
 		name = "久经沙场",
 		type = 3,
@@ -58975,11 +55565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.skill_data_template
-
-	var_9_58[14590] = {
+	pg.base.skill_data_template[14590] = {
 		desc_get = "",
 		name = "鱼群之光",
 		type = 3,
@@ -59132,11 +55718,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.skill_data_template
-
-	var_9_59[14600] = {
+	pg.base.skill_data_template[14600] = {
 		desc_get = "",
 		name = "射手的赠礼",
 		type = 1,
@@ -59244,11 +55826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.skill_data_template
-
-	var_9_60[14610] = {
+	pg.base.skill_data_template[14610] = {
 		desc_get = "",
 		name = "瞄准最大的！",
 		type = 1,
@@ -59390,11 +55968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.skill_data_template
-
-	var_9_61[14620] = {
+	pg.base.skill_data_template[14620] = {
 		desc_get = "",
 		name = "沉稳抉择",
 		type = 3,
@@ -59545,11 +56119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.skill_data_template
-
-	var_9_62[14630] = {
+	pg.base.skill_data_template[14630] = {
 		desc_get = "",
 		name = "空域辅助·独立",
 		type = 3,
@@ -59745,11 +56315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.skill_data_template
-
-	var_9_63[14640] = {
+	pg.base.skill_data_template[14640] = {
 		desc_get = "",
 		name = "新泽西跨队BUFFID占用",
 		type = 3,
@@ -59763,11 +56329,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.skill_data_template
-
-	var_9_64[14650] = {
+	pg.base.skill_data_template[14650] = {
 		desc_get = "",
 		name = "协同作战",
 		type = 3,
@@ -59873,11 +56435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.skill_data_template
-
-	var_9_65[14660] = {
+	pg.base.skill_data_template[14660] = {
 		desc_get = "",
 		name = "水雷先锋",
 		type = 1,
@@ -59983,11 +56541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.skill_data_template
-
-	var_9_66[14670] = {
+	pg.base.skill_data_template[14670] = {
 		desc_get = "",
 		name = "鱼雷！蓄势待发",
 		type = 1,
@@ -60138,11 +56692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.skill_data_template
-
-	var_9_67[14680] = {
+	pg.base.skill_data_template[14680] = {
 		desc_get = "",
 		name = "空袭引导-{namecode:203}",
 		type = 3,
@@ -60293,11 +56843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.skill_data_template
-
-	var_9_68[14700] = {
+	pg.base.skill_data_template[14700] = {
 		desc_get = "",
 		name = "霞光之绊·改",
 		type = 1,
@@ -60448,11 +56994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.skill_data_template
-
-	var_9_69[14710] = {
+	pg.base.skill_data_template[14710] = {
 		desc_get = "",
 		name = "破灭枪弹",
 		type = 3,
@@ -60558,11 +57100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.skill_data_template
-
-	var_9_70[14720] = {
+	pg.base.skill_data_template[14720] = {
 		desc_get = "",
 		name = "Assist Robot",
 		type = 1,
@@ -60659,11 +57197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.skill_data_template
-
-	var_9_71[14730] = {
+	pg.base.skill_data_template[14730] = {
 		desc_get = "",
 		name = "战场技师",
 		type = 2,
@@ -60769,11 +57303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.skill_data_template
-
-	var_9_72[14740] = {
+	pg.base.skill_data_template[14740] = {
 		desc_get = "",
 		name = "莽撞的鹦鹉螺",
 		type = 2,
@@ -60872,11 +57402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.skill_data_template
-
-	var_9_73[14750] = {
+	pg.base.skill_data_template[14750] = {
 		desc_get = "",
 		name = "以身诱敌",
 		type = 3,
@@ -60984,11 +57510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.skill_data_template
-
-	var_9_74[14760] = {
+	pg.base.skill_data_template[14760] = {
 		desc_get = "",
 		name = "邪魔退散 ",
 		type = 1,
@@ -61139,11 +57661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.skill_data_template
-
-	var_9_75[14770] = {
+	pg.base.skill_data_template[14770] = {
 		desc_get = "",
 		name = "「那个我」的祝福 ",
 		type = 3,
@@ -61249,11 +57767,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.skill_data_template
-
-	var_9_76[14780] = {
+	pg.base.skill_data_template[14780] = {
 		desc_get = "",
 		name = "侦测之「眼」 ",
 		type = 1,
@@ -61449,11 +57963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.skill_data_template
-
-	var_9_77[14790] = {
+	pg.base.skill_data_template[14790] = {
 		desc_get = "",
 		name = "回避之「眼」",
 		type = 2,
@@ -61559,11 +58069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.skill_data_template
-
-	var_9_78[14800] = {
+	pg.base.skill_data_template[14800] = {
 		desc_get = "",
 		name = "水雷演练",
 		type = 1,
@@ -61624,11 +58130,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.skill_data_template
-
-	var_9_79[14810] = {
+	pg.base.skill_data_template[14810] = {
 		desc_get = "",
 		name = "轻灵之风",
 		type = 2,
@@ -61734,11 +58236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.skill_data_template
-
-	var_9_80[14820] = {
+	pg.base.skill_data_template[14820] = {
 		desc_get = "",
 		name = "干劲满满",
 		type = 1,
@@ -61889,11 +58387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.skill_data_template
-
-	var_9_81[14830] = {
+	pg.base.skill_data_template[14830] = {
 		desc_get = "",
 		name = "陌上花开",
 		type = 1,
@@ -62044,11 +58538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.skill_data_template
-
-	var_9_82[14840] = {
+	pg.base.skill_data_template[14840] = {
 		desc_get = "",
 		name = "拟态装甲",
 		type = 2,
@@ -62154,11 +58644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.skill_data_template
-
-	var_9_83[14850] = {
+	pg.base.skill_data_template[14850] = {
 		desc_get = "",
 		name = "风斩雷逸",
 		type = 1,
@@ -62255,11 +58741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.skill_data_template
-
-	var_9_84[14860] = {
+	pg.base.skill_data_template[14860] = {
 		desc_get = "",
 		name = "雷光石火",
 		type = 1,
@@ -62365,11 +58847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.skill_data_template
-
-	var_9_85[14870] = {
+	pg.base.skill_data_template[14870] = {
 		desc_get = "",
 		name = "迅光雷袭",
 		type = 3,
@@ -62511,11 +58989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.skill_data_template
-
-	var_9_86[14880] = {
+	pg.base.skill_data_template[14880] = {
 		desc_get = "",
 		name = "迅光雷袭跨队BUFFID占用",
 		type = 3,
@@ -62529,11 +59003,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.skill_data_template
-
-	var_9_87[14890] = {
+	pg.base.skill_data_template[14890] = {
 		desc_get = "",
 		name = "所罗门的噩梦.改",
 		type = 1,
@@ -62684,11 +59154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.skill_data_template
-
-	var_9_88[14900] = {
+	pg.base.skill_data_template[14900] = {
 		desc_get = "",
 		name = "焰舞之爪",
 		type = 1,
@@ -62785,11 +59251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.skill_data_template
-
-	var_9_89[14910] = {
+	pg.base.skill_data_template[14910] = {
 		desc_get = "",
 		name = "新月城之绊",
 		type = 3,
@@ -62895,11 +59357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.skill_data_template
-
-	var_9_90[14920] = {
+	pg.base.skill_data_template[14920] = {
 		desc_get = "",
 		name = "Nola Finale",
 		type = 2,
@@ -63086,11 +59544,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.skill_data_template
-
-	var_9_91[14930] = {
+	pg.base.skill_data_template[14930] = {
 		desc_get = "",
 		name = "Terrible Terror",
 		type = 1,
@@ -63232,11 +59686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.skill_data_template
-
-	var_9_92[14940] = {
+	pg.base.skill_data_template[14940] = {
 		desc_get = "",
 		name = "一起竞速吧！",
 		type = 2,
@@ -63378,11 +59828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.skill_data_template
-
-	var_9_93[14950] = {
+	pg.base.skill_data_template[14950] = {
 		desc_get = "",
 		name = "正义之姿",
 		type = 1,
@@ -63488,11 +59934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.skill_data_template
-
-	var_9_94[14960] = {
+	pg.base.skill_data_template[14960] = {
 		desc_get = "",
 		name = "胜利意志",
 		type = 3,
@@ -63598,11 +60040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.skill_data_template
-
-	var_9_95[14970] = {
+	pg.base.skill_data_template[14970] = {
 		desc_get = "",
 		name = "侦测支援",
 		type = 1,
@@ -63753,11 +60191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.skill_data_template
-
-	var_9_96[14980] = {
+	pg.base.skill_data_template[14980] = {
 		desc_get = "",
 		name = "愈战愈勇",
 		type = 1,
@@ -63865,11 +60299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.skill_data_template
-
-	var_9_97[14985] = {
+	pg.base.skill_data_template[14985] = {
 		desc_get = "",
 		name = "愈战愈勇",
 		type = 1,
@@ -63977,11 +60407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.skill_data_template
-
-	var_9_98[14990] = {
+	pg.base.skill_data_template[14990] = {
 		desc_get = "",
 		name = "火舌飞舞",
 		type = 2,
@@ -64123,8 +60549,11 @@ end)()
 			}
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.skill_data_template[15000] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[15000] = {
 		desc_get = "",
 		name = "急袭轰炸",
 		type = 1,
@@ -64266,15 +60695,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.skill_data_template
-
-	var_10_0[15010] = {
+	pg.base.skill_data_template[15010] = {
 		desc_get = "",
 		name = "侵袭之盾",
 		type = 2,
@@ -64371,11 +60792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.skill_data_template
-
-	var_10_1[15020] = {
+	pg.base.skill_data_template[15020] = {
 		desc_get = "",
 		name = "破竹之势",
 		type = 1,
@@ -64517,11 +60934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.skill_data_template
-
-	var_10_2[15030] = {
+	pg.base.skill_data_template[15030] = {
 		desc_get = "",
 		name = "攻守有度",
 		type = 2,
@@ -64627,11 +61040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.skill_data_template
-
-	var_10_3[15040] = {
+	pg.base.skill_data_template[15040] = {
 		desc_get = "",
 		name = "这...这只是意外！",
 		type = 1,
@@ -64737,11 +61146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.skill_data_template
-
-	var_10_4[15050] = {
+	pg.base.skill_data_template[15050] = {
 		desc_get = "",
 		name = "桂冠诗人的韵律论",
 		type = 1,
@@ -64911,11 +61316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.skill_data_template
-
-	var_10_5[15060] = {
+	pg.base.skill_data_template[15060] = {
 		desc_get = "",
 		name = "致无名者的愚弄状",
 		type = 3,
@@ -65066,11 +61467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.skill_data_template
-
-	var_10_6[15070] = {
+	pg.base.skill_data_template[15070] = {
 		desc_get = "",
 		name = "变革者的现实谈",
 		type = 1,
@@ -65212,11 +61609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.skill_data_template
-
-	var_10_7[15080] = {
+	pg.base.skill_data_template[15080] = {
 		desc_get = "",
 		name = "乌尔里希跨队效果占用ID",
 		type = 1,
@@ -65230,11 +61623,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.skill_data_template
-
-	var_10_8[15090] = {
+	pg.base.skill_data_template[15090] = {
 		desc_get = "",
 		name = "The Approaching Whirlpool",
 		type = 1,
@@ -65340,11 +61729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.skill_data_template
-
-	var_10_9[15100] = {
+	pg.base.skill_data_template[15100] = {
 		desc_get = "",
 		name = "Tunnel Vision",
 		type = 3,
@@ -65495,11 +61880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.skill_data_template
-
-	var_10_10[15110] = {
+	pg.base.skill_data_template[15110] = {
 		desc_get = "",
 		name = "惊涛中的文墨客",
 		type = 1,
@@ -65641,11 +62022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.skill_data_template
-
-	var_10_11[15120] = {
+	pg.base.skill_data_template[15120] = {
 		desc_get = "",
 		name = "雾洒碧海前路迷",
 		type = 2,
@@ -65706,11 +62083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.skill_data_template
-
-	var_10_12[15130] = {
+	pg.base.skill_data_template[15130] = {
 		desc_get = "",
 		name = "骇浪里的戏曲家",
 		type = 1,
@@ -65852,11 +62225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.skill_data_template
-
-	var_10_13[15140] = {
+	pg.base.skill_data_template[15140] = {
 		desc_get = "",
 		name = "驰游沧海天地间",
 		type = 2,
@@ -66052,11 +62421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.skill_data_template
-
-	var_10_14[15150] = {
+	pg.base.skill_data_template[15150] = {
 		desc_get = "",
 		name = "情报调查",
 		type = 3,
@@ -66117,11 +62482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.skill_data_template
-
-	var_10_15[15160] = {
+	pg.base.skill_data_template[15160] = {
 		desc_get = "",
 		name = "DATA-857",
 		type = 1,
@@ -66308,11 +62669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.skill_data_template
-
-	var_10_16[15170] = {
+	pg.base.skill_data_template[15170] = {
 		desc_get = "",
 		name = "星罗棋布",
 		type = 1,
@@ -66454,11 +62811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.skill_data_template
-
-	var_10_17[15180] = {
+	pg.base.skill_data_template[15180] = {
 		desc_get = "",
 		name = "诈谋奇计",
 		type = 1,
@@ -66555,11 +62908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.skill_data_template
-
-	var_10_18[15190] = {
+	pg.base.skill_data_template[15190] = {
 		desc_get = "",
 		name = "青龙演武",
 		type = 1,
@@ -66656,11 +63005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.skill_data_template
-
-	var_10_19[15200] = {
+	pg.base.skill_data_template[15200] = {
 		desc_get = "",
 		name = "虎虎生威",
 		type = 1,
@@ -66757,11 +63102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.skill_data_template
-
-	var_10_20[15210] = {
+	pg.base.skill_data_template[15210] = {
 		desc_get = "",
 		name = "鞍山级领舰.改",
 		type = 3,
@@ -66867,11 +63208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.skill_data_template
-
-	var_10_21[15220] = {
+	pg.base.skill_data_template[15220] = {
 		desc_get = "",
 		name = "互助同盟.改",
 		type = 3,
@@ -66977,11 +63314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.skill_data_template
-
-	var_10_22[15230] = {
+	pg.base.skill_data_template[15230] = {
 		desc_get = "",
 		name = "幸运机械师",
 		type = 2,
@@ -67168,11 +63501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.skill_data_template
-
-	var_10_23[15240] = {
+	pg.base.skill_data_template[15240] = {
 		desc_get = "",
 		name = "锐不可当",
 		type = 1,
@@ -67269,11 +63598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.skill_data_template
-
-	var_10_24[15250] = {
+	pg.base.skill_data_template[15250] = {
 		desc_get = "",
 		name = "共济不弃",
 		type = 3,
@@ -67424,11 +63749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.skill_data_template
-
-	var_10_25[15260] = {
+	pg.base.skill_data_template[15260] = {
 		desc_get = "",
 		name = "碎冰之击",
 		type = 1,
@@ -67525,11 +63846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.skill_data_template
-
-	var_10_26[15270] = {
+	pg.base.skill_data_template[15270] = {
 		desc_get = "",
 		name = "权御战场",
 		type = 3,
@@ -67680,11 +63997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.skill_data_template
-
-	var_10_27[15280] = {
+	pg.base.skill_data_template[15280] = {
 		desc_get = "",
 		name = "天才机械师",
 		type = 2,
@@ -67781,11 +64094,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.skill_data_template
-
-	var_10_28[15290] = {
+	pg.base.skill_data_template[15290] = {
 		desc_get = "",
 		name = "钢武冰锋",
 		type = 1,
@@ -67882,11 +64191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.skill_data_template
-
-	var_10_29[15300] = {
+	pg.base.skill_data_template[15300] = {
 		desc_get = "",
 		name = "冷峻冰芒",
 		type = 2,
@@ -68028,11 +64333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.skill_data_template
-
-	var_10_30[15310] = {
+	pg.base.skill_data_template[15310] = {
 		desc_get = "",
 		name = "共进意志",
 		type = 3,
@@ -68129,11 +64430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.skill_data_template
-
-	var_10_31[15320] = {
+	pg.base.skill_data_template[15320] = {
 		desc_get = "",
 		name = "破空的水与焰",
 		type = 1,
@@ -68230,11 +64527,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.skill_data_template
-
-	var_10_32[15330] = {
+	pg.base.skill_data_template[15330] = {
 		desc_get = "",
 		name = "冰裂坠晶",
 		type = 3,
@@ -68331,11 +64624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.skill_data_template
-
-	var_10_33[15340] = {
+	pg.base.skill_data_template[15340] = {
 		desc_get = "",
 		name = "友爱团结",
 		type = 3,
@@ -68396,11 +64685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.skill_data_template
-
-	var_10_34[15350] = {
+	pg.base.skill_data_template[15350] = {
 		desc_get = "",
 		name = "共进意志跨队效果占用ID",
 		type = 3,
@@ -68414,11 +64699,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.skill_data_template
-
-	var_10_35[15360] = {
+	pg.base.skill_data_template[15360] = {
 		desc_get = "",
 		name = "往昔之影·{namecode:460}",
 		type = 3,
@@ -68515,11 +64796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.skill_data_template
-
-	var_10_36[15370] = {
+	pg.base.skill_data_template[15370] = {
 		desc_get = "",
 		name = "重振帝国荣光",
 		type = 1,
@@ -68751,11 +65028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.skill_data_template
-
-	var_10_37[15380] = {
+	pg.base.skill_data_template[15380] = {
 		desc_get = "",
 		name = "帝国睡眼惺忪",
 		type = 3,
@@ -68861,11 +65134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.skill_data_template
-
-	var_10_38[15390] = {
+	pg.base.skill_data_template[15390] = {
 		desc_get = "",
 		name = "旭日的凯旋",
 		type = 3,
@@ -68926,11 +65195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.skill_data_template
-
-	var_10_39[15400] = {
+	pg.base.skill_data_template[15400] = {
 		desc_get = "",
 		name = "风之城的护佑",
 		type = 2,
@@ -69081,11 +65346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.skill_data_template
-
-	var_10_40[15410] = {
+	pg.base.skill_data_template[15410] = {
 		desc_get = "",
 		name = "征服者的荣耀",
 		type = 1,
@@ -69191,11 +65452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.skill_data_template
-
-	var_10_41[15420] = {
+	pg.base.skill_data_template[15420] = {
 		desc_get = "",
 		name = "铁血大将",
 		type = 1,
@@ -69391,11 +65648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.skill_data_template
-
-	var_10_42[15430] = {
+	pg.base.skill_data_template[15430] = {
 		desc_get = "",
 		name = "不沉的传奇",
 		type = 2,
@@ -69501,11 +65754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.skill_data_template
-
-	var_10_43[15440] = {
+	pg.base.skill_data_template[15440] = {
 		desc_get = "",
 		name = "长夜星灯",
 		type = 3,
@@ -69647,11 +65896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.skill_data_template
-
-	var_10_44[15450] = {
+	pg.base.skill_data_template[15450] = {
 		desc_get = "",
 		name = "往昔之影·{namecode:466}",
 		type = 1,
@@ -69712,11 +65957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.skill_data_template
-
-	var_10_45[15460] = {
+	pg.base.skill_data_template[15460] = {
 		desc_get = "",
 		name = "斯卡格拉克的勇气",
 		type = 1,
@@ -69858,11 +66099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.skill_data_template
-
-	var_10_46[15470] = {
+	pg.base.skill_data_template[15470] = {
 		desc_get = "",
 		name = "狩猎时刻",
 		type = 3,
@@ -69968,11 +66205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.skill_data_template
-
-	var_10_47[15480] = {
+	pg.base.skill_data_template[15480] = {
 		desc_get = "",
 		name = "往昔之影·{namecode:461}",
 		type = 1,
@@ -70078,11 +66311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.skill_data_template
-
-	var_10_48[15490] = {
+	pg.base.skill_data_template[15490] = {
 		desc_get = "",
 		name = "精准射击",
 		type = 3,
@@ -70188,11 +66417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.skill_data_template
-
-	var_10_49[15500] = {
+	pg.base.skill_data_template[15500] = {
 		desc_get = "",
 		name = "往昔之影·{namecode:457}",
 		type = 2,
@@ -70257,11 +66482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.skill_data_template
-
-	var_10_50[15510] = {
+	pg.base.skill_data_template[15510] = {
 		desc_get = "",
 		name = "Eeny meeny miny moe",
 		type = 1,
@@ -70403,11 +66624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.skill_data_template
-
-	var_10_51[15520] = {
+	pg.base.skill_data_template[15520] = {
 		desc_get = "",
 		name = "往昔之影·{namecode:448}(?)",
 		type = 3,
@@ -70558,11 +66775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.skill_data_template
-
-	var_10_52[15530] = {
+	pg.base.skill_data_template[15530] = {
 		desc_get = "",
 		name = "攻击！攻击！",
 		type = 3,
@@ -70668,11 +66881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.skill_data_template
-
-	var_10_53[15540] = {
+	pg.base.skill_data_template[15540] = {
 		desc_get = "",
 		name = "不破之盾盾盾！",
 		type = 2,
@@ -70733,11 +66942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.skill_data_template
-
-	var_10_54[15560] = {
+	pg.base.skill_data_template[15560] = {
 		desc_get = "",
 		name = "往昔之影·{namecode:449}",
 		type = 1,
@@ -70834,11 +67039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.skill_data_template
-
-	var_10_55[15570] = {
+	pg.base.skill_data_template[15570] = {
 		desc_get = "",
 		name = "携手同行",
 		type = 3,
@@ -70944,11 +67145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.skill_data_template
-
-	var_10_56[15580] = {
+	pg.base.skill_data_template[15580] = {
 		desc_get = "",
 		name = "幸运到临",
 		type = 2,
@@ -71099,11 +67296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.skill_data_template
-
-	var_10_57[15590] = {
+	pg.base.skill_data_template[15590] = {
 		desc_get = "",
 		name = "Duellona",
 		type = 2,
@@ -71209,11 +67402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.skill_data_template
-
-	var_10_58[15600] = {
+	pg.base.skill_data_template[15600] = {
 		desc_get = "",
 		name = "Grin and Love！",
 		type = 1,
@@ -71310,11 +67499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.skill_data_template
-
-	var_10_59[15610] = {
+	pg.base.skill_data_template[15610] = {
 		desc_get = "",
 		name = "柴郡 Up！Up！Up！",
 		type = 3,
@@ -71420,11 +67605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.skill_data_template
-
-	var_10_60[15620] = {
+	pg.base.skill_data_template[15620] = {
 		desc_get = "",
 		name = "不挠之焰",
 		type = 1,
@@ -71476,11 +67657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.skill_data_template
-
-	var_10_61[15630] = {
+	pg.base.skill_data_template[15630] = {
 		desc_get = "",
 		name = "空域警戒",
 		type = 1,
@@ -71577,11 +67754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.skill_data_template
-
-	var_10_62[15640] = {
+	pg.base.skill_data_template[15640] = {
 		desc_get = "",
 		name = "航空护卫",
 		type = 3,
@@ -71732,11 +67905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.skill_data_template
-
-	var_10_63[15650] = {
+	pg.base.skill_data_template[15650] = {
 		desc_get = "",
 		name = "破敌强击",
 		type = 1,
@@ -71833,11 +68002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.skill_data_template
-
-	var_10_64[15660] = {
+	pg.base.skill_data_template[15660] = {
 		desc_get = "",
 		name = "火力移转",
 		type = 3,
@@ -71898,11 +68063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.skill_data_template
-
-	var_10_65[15670] = {
+	pg.base.skill_data_template[15670] = {
 		desc_get = "",
 		name = "独角兽的应援",
 		type = 3,
@@ -72053,11 +68214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.skill_data_template
-
-	var_10_66[15680] = {
+	pg.base.skill_data_template[15680] = {
 		desc_get = "",
 		name = "导引的荣耀之光",
 		type = 1,
@@ -72199,11 +68356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.skill_data_template
-
-	var_10_67[15690] = {
+	pg.base.skill_data_template[15690] = {
 		desc_get = "",
 		name = "威慑的忠义之刃",
 		type = 3,
@@ -72354,11 +68507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.skill_data_template
-
-	var_10_68[15700] = {
+	pg.base.skill_data_template[15700] = {
 		desc_get = "",
 		name = "闪耀的皇家之剑",
 		type = 2,
@@ -72464,11 +68613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.skill_data_template
-
-	var_10_69[15710] = {
+	pg.base.skill_data_template[15710] = {
 		desc_get = "",
 		name = "前卫跨队效果ID占位",
 		type = 3,
@@ -72482,11 +68627,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.skill_data_template
-
-	var_10_70[15720] = {
+	pg.base.skill_data_template[15720] = {
 		desc_get = "",
 		name = "梦幻秘仪",
 		type = 1,
@@ -72583,11 +68724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.skill_data_template
-
-	var_10_71[15730] = {
+	pg.base.skill_data_template[15730] = {
 		desc_get = "",
 		name = "黑羽的制裁",
 		type = 1,
@@ -72756,11 +68893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.skill_data_template
-
-	var_10_72[15740] = {
+	pg.base.skill_data_template[15740] = {
 		desc_get = "",
 		name = "审判之枪",
 		type = 1,
@@ -72983,11 +69116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.skill_data_template
-
-	var_10_73[15750] = {
+	pg.base.skill_data_template[15750] = {
 		desc_get = "",
 		name = "不屈意志",
 		type = 2,
@@ -73318,11 +69447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.skill_data_template
-
-	var_10_74[15760] = {
+	pg.base.skill_data_template[15760] = {
 		desc_get = "",
 		name = "不屈意志技能id占位",
 		type = 2,
@@ -73336,11 +69461,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.skill_data_template
-
-	var_10_75[15770] = {
+	pg.base.skill_data_template[15770] = {
 		desc_get = "",
 		name = "清扫开始！",
 		type = 1,
@@ -73446,11 +69567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.skill_data_template
-
-	var_10_76[15780] = {
+	pg.base.skill_data_template[15780] = {
 		desc_get = "",
 		name = "二天一流！",
 		type = 1,
@@ -73558,11 +69675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.skill_data_template
-
-	var_10_77[15790] = {
+	pg.base.skill_data_template[15790] = {
 		desc_get = "",
 		name = "“小袋鼠”共同出击！",
 		type = 3,
@@ -73616,11 +69729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.skill_data_template
-
-	var_10_78[15800] = {
+	pg.base.skill_data_template[15800] = {
 		desc_get = "",
 		name = "绚烂的火光",
 		type = 1,
@@ -73762,11 +69871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.skill_data_template
-
-	var_10_79[15810] = {
+	pg.base.skill_data_template[15810] = {
 		desc_get = "",
 		name = "安闲且愉悦",
 		type = 3,
@@ -73872,11 +69977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.skill_data_template
-
-	var_10_80[15820] = {
+	pg.base.skill_data_template[15820] = {
 		desc_get = "",
 		name = "不过如此！",
 		type = 2,
@@ -74018,11 +70119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.skill_data_template
-
-	var_10_81[15830] = {
+	pg.base.skill_data_template[15830] = {
 		desc_get = "",
 		name = "灵巧行动",
 		type = 2,
@@ -74128,11 +70225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.skill_data_template
-
-	var_10_82[15840] = {
+	pg.base.skill_data_template[15840] = {
 		desc_get = "",
 		name = "王政者的意志",
 		type = 1,
@@ -74283,11 +70376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.skill_data_template
-
-	var_10_83[15850] = {
+	pg.base.skill_data_template[15850] = {
 		desc_get = "",
 		name = "Veni Vidi Vici",
 		type = 3,
@@ -74393,11 +70482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.skill_data_template
-
-	var_10_84[15860] = {
+	pg.base.skill_data_template[15860] = {
 		desc_get = "",
 		name = "奥古斯都的威光",
 		type = 2,
@@ -74458,11 +70543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.skill_data_template
-
-	var_10_85[15870] = {
+	pg.base.skill_data_template[15870] = {
 		desc_get = "",
 		name = "前线情报",
 		type = 3,
@@ -74613,11 +70694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.skill_data_template
-
-	var_10_86[15880] = {
+	pg.base.skill_data_template[15880] = {
 		desc_get = "",
 		name = "紧急事态",
 		type = 2,
@@ -74723,11 +70800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.skill_data_template
-
-	var_10_87[15890] = {
+	pg.base.skill_data_template[15890] = {
 		desc_get = "",
 		name = "不惧风浪",
 		type = 3,
@@ -74833,11 +70906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.skill_data_template
-
-	var_10_88[15900] = {
+	pg.base.skill_data_template[15900] = {
 		desc_get = "",
 		name = "救援行动",
 		type = 2,
@@ -74943,11 +71012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.skill_data_template
-
-	var_10_89[15910] = {
+	pg.base.skill_data_template[15910] = {
 		desc_get = "",
 		name = "正义的力量",
 		type = 1,
@@ -75134,11 +71199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.skill_data_template
-
-	var_10_90[15920] = {
+	pg.base.skill_data_template[15920] = {
 		desc_get = "",
 		name = "布雷作业",
 		type = 1,
@@ -75190,11 +71251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.skill_data_template
-
-	var_10_91[15930] = {
+	pg.base.skill_data_template[15930] = {
 		desc_get = "",
 		name = "冒失甜心",
 		type = 1,
@@ -75381,11 +71438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.skill_data_template
-
-	var_10_92[15940] = {
+	pg.base.skill_data_template[15940] = {
 		desc_get = "",
 		name = "无所畏惧的爱",
 		type = 2,
@@ -75536,11 +71589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.skill_data_template
-
-	var_10_93[15950] = {
+	pg.base.skill_data_template[15950] = {
 		desc_get = "",
 		name = "命运的枪火",
 		type = 1,
@@ -75637,11 +71686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.skill_data_template
-
-	var_10_94[15960] = {
+	pg.base.skill_data_template[15960] = {
 		desc_get = "",
 		name = "砥砺的女武神",
 		type = 3,
@@ -75792,11 +71837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.skill_data_template
-
-	var_10_95[15970] = {
+	pg.base.skill_data_template[15970] = {
 		desc_get = "",
 		name = "苦涩的抉择",
 		type = 1,
@@ -75947,11 +71988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.skill_data_template
-
-	var_10_96[15980] = {
+	pg.base.skill_data_template[15980] = {
 		desc_get = "",
 		name = "灵机迎战",
 		type = 2,
@@ -76138,11 +72175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.skill_data_template
-
-	var_10_97[15990] = {
+	pg.base.skill_data_template[15990] = {
 		desc_get = "",
 		name = "整装出航",
 		type = 3,
@@ -76248,11 +72281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.skill_data_template
-
-	var_10_98[16000] = {
+	pg.base.skill_data_template[16000] = {
 		desc_get = "",
 		name = "川流不息",
 		type = 1,
@@ -76394,8 +72423,11 @@ end)()
 			}
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.skill_data_template[16010] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[16010] = {
 		desc_get = "",
 		name = "风平浪静",
 		type = 2,
@@ -76537,15 +72569,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.skill_data_template
-
-	var_11_0[16020] = {
+	pg.base.skill_data_template[16020] = {
 		desc_get = "",
 		name = "战争之殇.改",
 		type = 2,
@@ -76689,11 +72713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.skill_data_template
-
-	var_11_1[16030] = {
+	pg.base.skill_data_template[16030] = {
 		desc_get = "",
 		name = "静海惊雷",
 		type = 1,
@@ -76790,11 +72810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.skill_data_template
-
-	var_11_2[16040] = {
+	pg.base.skill_data_template[16040] = {
 		desc_get = "",
 		name = "舞樱刃豪",
 		type = 3,
@@ -76990,11 +73006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.skill_data_template
-
-	var_11_3[16050] = {
+	pg.base.skill_data_template[16050] = {
 		desc_get = "",
 		name = "公方之护",
 		type = 3,
@@ -77093,11 +73105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.skill_data_template
-
-	var_11_4[16060] = {
+	pg.base.skill_data_template[16060] = {
 		desc_get = "",
 		name = "武藏跨队技能占位",
 		type = 3,
@@ -77111,11 +73119,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.skill_data_template
-
-	var_11_5[16070] = {
+	pg.base.skill_data_template[16070] = {
 		desc_get = "",
 		name = "勇战无隙",
 		type = 1,
@@ -77257,11 +73261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.skill_data_template
-
-	var_11_6[16080] = {
+	pg.base.skill_data_template[16080] = {
 		desc_get = "",
 		name = "气运共济",
 		type = 2,
@@ -77367,11 +73367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.skill_data_template
-
-	var_11_7[16090] = {
+	pg.base.skill_data_template[16090] = {
 		desc_get = "",
 		name = "“铁爪爪”出击",
 		type = 1,
@@ -77423,11 +73419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.skill_data_template
-
-	var_11_8[16100] = {
+	pg.base.skill_data_template[16100] = {
 		desc_get = "",
 		name = "伙伴的力量",
 		type = 3,
@@ -77533,11 +73525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.skill_data_template
-
-	var_11_9[16110] = {
+	pg.base.skill_data_template[16110] = {
 		desc_get = "",
 		name = "携手并进",
 		type = 3,
@@ -77643,11 +73631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.skill_data_template
-
-	var_11_10[16120] = {
+	pg.base.skill_data_template[16120] = {
 		desc_get = "",
 		name = "碧波中的小天使！",
 		type = 1,
@@ -77744,11 +73728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.skill_data_template
-
-	var_11_11[16130] = {
+	pg.base.skill_data_template[16130] = {
 		desc_get = "",
 		name = "一心二用",
 		type = 1,
@@ -77809,11 +73789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.skill_data_template
-
-	var_11_12[16140] = {
+	pg.base.skill_data_template[16140] = {
 		desc_get = "",
 		name = "过早的赠礼",
 		type = 2,
@@ -77919,11 +73895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.skill_data_template
-
-	var_11_13[16150] = {
+	pg.base.skill_data_template[16150] = {
 		desc_get = "",
 		name = "指引之箭",
 		type = 1,
@@ -78020,11 +73992,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.skill_data_template
-
-	var_11_14[16160] = {
+	pg.base.skill_data_template[16160] = {
 		desc_get = "",
 		name = "启示之岛",
 		type = 3,
@@ -78130,11 +74098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.skill_data_template
-
-	var_11_15[16170] = {
+	pg.base.skill_data_template[16170] = {
 		desc_get = "",
 		name = "海神之佑",
 		type = 2,
@@ -78240,11 +74204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.skill_data_template
-
-	var_11_16[16180] = {
+	pg.base.skill_data_template[16180] = {
 		desc_get = "",
 		name = "诫训法典",
 		type = 1,
@@ -78352,11 +74312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.skill_data_template
-
-	var_11_17[16190] = {
+	pg.base.skill_data_template[16190] = {
 		desc_get = "",
 		name = "深海的守护",
 		type = 2,
@@ -78509,11 +74465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.skill_data_template
-
-	var_11_18[16200] = {
+	pg.base.skill_data_template[16200] = {
 		desc_get = "",
 		name = "皇家财富撤退用buff",
 		type = 1,
@@ -78529,11 +74481,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.skill_data_template
-
-	var_11_19[16210] = {
+	pg.base.skill_data_template[16210] = {
 		desc_get = "",
 		name = "The Fighting Lady",
 		type = 1,
@@ -78630,11 +74578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.skill_data_template
-
-	var_11_20[16220] = {
+	pg.base.skill_data_template[16220] = {
 		desc_get = "",
 		name = "跨越悲伤之城",
 		type = 3,
@@ -78821,11 +74765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.skill_data_template
-
-	var_11_21[16230] = {
+	pg.base.skill_data_template[16230] = {
 		desc_get = "",
 		name = "翱翔天际之鹰",
 		type = 3,
@@ -78967,11 +74907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.skill_data_template
-
-	var_11_22[16240] = {
+	pg.base.skill_data_template[16240] = {
 		desc_get = "",
 		name = "跨越悲伤之城",
 		type = 3,
@@ -78985,11 +74921,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.skill_data_template
-
-	var_11_23[16250] = {
+	pg.base.skill_data_template[16250] = {
 		desc_get = "",
 		name = "强袭之刺",
 		type = 1,
@@ -79086,11 +75018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.skill_data_template
-
-	var_11_24[16260] = {
+	pg.base.skill_data_template[16260] = {
 		desc_get = "",
 		name = "空战精英",
 		type = 3,
@@ -79241,11 +75169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.skill_data_template
-
-	var_11_25[16270] = {
+	pg.base.skill_data_template[16270] = {
 		desc_get = "",
 		name = "战场幽灵",
 		type = 2,
@@ -79351,11 +75275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.skill_data_template
-
-	var_11_26[16280] = {
+	pg.base.skill_data_template[16280] = {
 		desc_get = "",
 		name = "前辈的自觉",
 		type = 1,
@@ -79461,11 +75381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.skill_data_template
-
-	var_11_27[16290] = {
+	pg.base.skill_data_template[16290] = {
 		desc_get = "",
 		name = "严格的指导",
 		type = 3,
@@ -79571,11 +75487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.skill_data_template
-
-	var_11_28[16300] = {
+	pg.base.skill_data_template[16300] = {
 		desc_get = "",
 		name = "空袭引导·哈曼",
 		type = 3,
@@ -79681,11 +75593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.skill_data_template
-
-	var_11_29[16310] = {
+	pg.base.skill_data_template[16310] = {
 		desc_get = "",
 		name = "战场戒备",
 		type = 2,
@@ -79746,11 +75654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.skill_data_template
-
-	var_11_30[16320] = {
+	pg.base.skill_data_template[16320] = {
 		desc_get = "",
 		name = "炮火破袭",
 		type = 3,
@@ -79847,11 +75751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.skill_data_template
-
-	var_11_31[16330] = {
+	pg.base.skill_data_template[16330] = {
 		desc_get = "",
 		name = "Pilotfish",
 		type = 2,
@@ -79948,11 +75848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.skill_data_template
-
-	var_11_32[16340] = {
+	pg.base.skill_data_template[16340] = {
 		desc_get = "",
 		name = "迈向未来的勇气",
 		type = 1,
@@ -80049,11 +75945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.skill_data_template
-
-	var_11_33[16350] = {
+	pg.base.skill_data_template[16350] = {
 		desc_get = "",
 		name = "希望是厄运的忠实姐妹",
 		type = 3,
@@ -80249,11 +76141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.skill_data_template
-
-	var_11_34[16360] = {
+	pg.base.skill_data_template[16360] = {
 		desc_get = "",
 		name = "广结善缘",
 		type = 3,
@@ -80404,11 +76292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.skill_data_template
-
-	var_11_35[16370] = {
+	pg.base.skill_data_template[16370] = {
 		desc_get = "",
 		name = "巾帼英姿",
 		type = 1,
@@ -80505,11 +76389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.skill_data_template
-
-	var_11_36[16380] = {
+	pg.base.skill_data_template[16380] = {
 		desc_get = "",
 		name = "明鉴万里",
 		type = 3,
@@ -80750,11 +76630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.skill_data_template
-
-	var_11_37[16390] = {
+	pg.base.skill_data_template[16390] = {
 		desc_get = "",
 		name = "利析秋毫",
 		type = 3,
@@ -80941,11 +76817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.skill_data_template
-
-	var_11_38[16400] = {
+	pg.base.skill_data_template[16400] = {
 		desc_get = "",
 		name = "迷途不返之咒",
 		type = 1,
@@ -81042,11 +76914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.skill_data_template
-
-	var_11_39[16410] = {
+	pg.base.skill_data_template[16410] = {
 		desc_get = "",
 		name = "咏唱繁星之歌",
 		type = 1,
@@ -81152,11 +77020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.skill_data_template
-
-	var_11_40[16420] = {
+	pg.base.skill_data_template[16420] = {
 		desc_get = "",
 		name = "The Ship of Theseus",
 		type = 2,
@@ -81307,11 +77171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.skill_data_template
-
-	var_11_41[16430] = {
+	pg.base.skill_data_template[16430] = {
 		desc_get = "",
 		name = "东煌之绊.改",
 		type = 3,
@@ -81462,11 +77322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.skill_data_template
-
-	var_11_42[16440] = {
+	pg.base.skill_data_template[16440] = {
 		desc_get = "",
 		name = "寒夜语梅",
 		type = 1,
@@ -81653,11 +77509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.skill_data_template
-
-	var_11_43[16450] = {
+	pg.base.skill_data_template[16450] = {
 		desc_get = "",
 		name = "无法回避的命运",
 		type = 1,
@@ -81763,11 +77615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.skill_data_template
-
-	var_11_44[16460] = {
+	pg.base.skill_data_template[16460] = {
 		desc_get = "",
 		name = "予怨予还的信条",
 		type = 1,
@@ -81864,11 +77712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.skill_data_template
-
-	var_11_45[16470] = {
+	pg.base.skill_data_template[16470] = {
 		desc_get = "",
 		name = "守护羁绊的执着",
 		type = 2,
@@ -82019,11 +77863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.skill_data_template
-
-	var_11_46[16480] = {
+	pg.base.skill_data_template[16480] = {
 		desc_get = "",
 		name = "予怨予还的信条",
 		type = 1,
@@ -82037,11 +77877,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.skill_data_template
-
-	var_11_47[16490] = {
+	pg.base.skill_data_template[16490] = {
 		desc_get = "",
 		name = "紧随其后",
 		type = 1,
@@ -82138,11 +77974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.skill_data_template
-
-	var_11_48[16500] = {
+	pg.base.skill_data_template[16500] = {
 		desc_get = "",
 		name = "Mighty oak，屹立不倒",
 		type = 2,
@@ -82338,11 +78170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.skill_data_template
-
-	var_11_49[16510] = {
+	pg.base.skill_data_template[16510] = {
 		desc_get = "",
 		name = "空域辅助·百眼巨人",
 		type = 3,
@@ -82538,11 +78366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.skill_data_template
-
-	var_11_50[16520] = {
+	pg.base.skill_data_template[16520] = {
 		desc_get = "",
 		name = "荣光的开拓者",
 		type = 3,
@@ -82639,11 +78463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.skill_data_template
-
-	var_11_51[16540] = {
+	pg.base.skill_data_template[16540] = {
 		desc_get = "",
 		name = "Toothless Terror",
 		type = 3,
@@ -82749,11 +78569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.skill_data_template
-
-	var_11_52[16550] = {
+	pg.base.skill_data_template[16550] = {
 		desc_get = "",
 		name = "六头海妖之拥",
 		type = 1,
@@ -82904,11 +78720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.skill_data_template
-
-	var_11_53[16560] = {
+	pg.base.skill_data_template[16560] = {
 		desc_get = "",
 		name = "英雄、登场！",
 		type = 1,
@@ -83014,11 +78826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.skill_data_template
-
-	var_11_54[16570] = {
+	pg.base.skill_data_template[16570] = {
 		desc_get = "",
 		name = "英雄、守护？",
 		type = 2,
@@ -83124,11 +78932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.skill_data_template
-
-	var_11_55[16580] = {
+	pg.base.skill_data_template[16580] = {
 		desc_get = "",
 		name = "飞雪中的孤狼",
 		type = 2,
@@ -83234,11 +79038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.skill_data_template
-
-	var_11_56[16590] = {
+	pg.base.skill_data_template[16590] = {
 		desc_get = "",
 		name = "雪狼视界",
 		type = 1,
@@ -83335,11 +79135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.skill_data_template
-
-	var_11_57[16600] = {
+	pg.base.skill_data_template[16600] = {
 		desc_get = "",
 		name = "雪狼利爪",
 		type = 1,
@@ -83393,11 +79189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.skill_data_template
-
-	var_11_58[16610] = {
+	pg.base.skill_data_template[16610] = {
 		desc_get = "",
 		name = "变革的指导论",
 		type = 3,
@@ -83548,11 +79340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.skill_data_template
-
-	var_11_59[16620] = {
+	pg.base.skill_data_template[16620] = {
 		desc_get = "",
 		name = "顽强的坚守者",
 		type = 2,
@@ -83658,11 +79446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.skill_data_template
-
-	var_11_60[16630] = {
+	pg.base.skill_data_template[16630] = {
 		desc_get = "",
 		name = "冷彻冰结",
 		type = 1,
@@ -83759,11 +79543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.skill_data_template
-
-	var_11_61[16640] = {
+	pg.base.skill_data_template[16640] = {
 		desc_get = "",
 		name = "沉着应对",
 		type = 2,
@@ -83869,11 +79649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.skill_data_template
-
-	var_11_62[16650] = {
+	pg.base.skill_data_template[16650] = {
 		desc_get = "",
 		name = "Lady的训练时间",
 		type = 3,
@@ -84024,11 +79800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.skill_data_template
-
-	var_11_63[16660] = {
+	pg.base.skill_data_template[16660] = {
 		desc_get = "",
 		name = "Lady的甜点时间",
 		type = 2,
@@ -84134,11 +79906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.skill_data_template
-
-	var_11_64[16670] = {
+	pg.base.skill_data_template[16670] = {
 		desc_get = "",
 		name = "勇敢争先",
 		type = 1,
@@ -84280,11 +80048,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.skill_data_template
-
-	var_11_65[16680] = {
+	pg.base.skill_data_template[16680] = {
 		desc_get = "",
 		name = "踏浪疾行",
 		type = 2,
@@ -84435,11 +80199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.skill_data_template
-
-	var_11_66[16690] = {
+	pg.base.skill_data_template[16690] = {
 		desc_get = "",
 		name = "BIG SEVEN·纳尔逊",
 		type = 1,
@@ -84536,11 +80296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.skill_data_template
-
-	var_11_67[16700] = {
+	pg.base.skill_data_template[16700] = {
 		desc_get = "",
 		name = "再靠近一点点",
 		type = 1,
@@ -84601,11 +80357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.skill_data_template
-
-	var_11_68[16710] = {
+	pg.base.skill_data_template[16710] = {
 		desc_get = "",
 		name = "Ferro regina，钢铁女王",
 		type = 1,
@@ -84747,11 +80499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.skill_data_template
-
-	var_11_69[16720] = {
+	pg.base.skill_data_template[16720] = {
 		desc_get = "",
 		name = "绯红超新星壁垒",
 		type = 2,
@@ -84893,11 +80641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.skill_data_template
-
-	var_11_70[16730] = {
+	pg.base.skill_data_template[16730] = {
 		desc_get = "",
 		name = "大小姐的特殊鼓励",
 		type = 3,
@@ -85084,11 +80828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.skill_data_template
-
-	var_11_71[16740] = {
+	pg.base.skill_data_template[16740] = {
 		desc_get = "",
 		name = "好孩子的褒奖",
 		type = 1,
@@ -85239,11 +80979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.skill_data_template
-
-	var_11_72[16750] = {
+	pg.base.skill_data_template[16750] = {
 		desc_get = "",
 		name = "绯暗寂灭之息",
 		type = 1,
@@ -85385,11 +81121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.skill_data_template
-
-	var_11_73[16760] = {
+	pg.base.skill_data_template[16760] = {
 		desc_get = "",
 		name = "探求破灭之龙",
 		type = 3,
@@ -85486,11 +81218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.skill_data_template
-
-	var_11_74[16770] = {
+	pg.base.skill_data_template[16770] = {
 		desc_get = "",
 		name = "讴歌真理之耀",
 		type = 3,
@@ -85641,11 +81369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.skill_data_template
-
-	var_11_75[16780] = {
+	pg.base.skill_data_template[16780] = {
 		desc_get = "",
 		name = "讴歌真理之耀",
 		type = 3,
@@ -85659,11 +81383,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.skill_data_template
-
-	var_11_76[16790] = {
+	pg.base.skill_data_template[16790] = {
 		desc_get = "",
 		name = "{namecode:291}的护卫之甲",
 		type = 2,
@@ -85769,11 +81489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.skill_data_template
-
-	var_11_77[16800] = {
+	pg.base.skill_data_template[16800] = {
 		desc_get = "",
 		name = "{namecode:291}的骰子游戏",
 		type = 1,
@@ -85825,11 +81541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.skill_data_template
-
-	var_11_78[16810] = {
+	pg.base.skill_data_template[16810] = {
 		desc_get = "",
 		name = "引领后辈的火光",
 		type = 3,
@@ -85935,11 +81647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.skill_data_template
-
-	var_11_79[16820] = {
+	pg.base.skill_data_template[16820] = {
 		desc_get = "",
 		name = "不被辜负的期待",
 		type = 1,
@@ -86081,11 +81789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.skill_data_template
-
-	var_11_80[16830] = {
+	pg.base.skill_data_template[16830] = {
 		desc_get = "",
 		name = "幻象紫雨",
 		type = 1,
@@ -86227,11 +81931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.skill_data_template
-
-	var_11_81[16840] = {
+	pg.base.skill_data_template[16840] = {
 		desc_get = "",
 		name = "不畏艰险",
 		type = 2,
@@ -86337,11 +82037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.skill_data_template
-
-	var_11_82[16850] = {
+	pg.base.skill_data_template[16850] = {
 		desc_get = "",
 		name = "黑白兔公爵的拥抱",
 		type = 1,
@@ -86393,11 +82089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.skill_data_template
-
-	var_11_83[16860] = {
+	pg.base.skill_data_template[16860] = {
 		desc_get = "",
 		name = "童话王国的小仙子",
 		type = 2,
@@ -86503,11 +82195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.skill_data_template
-
-	var_11_84[16870] = {
+	pg.base.skill_data_template[16870] = {
 		desc_get = "",
 		name = "向着光荣前进",
 		type = 2,
@@ -86649,11 +82337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.skill_data_template
-
-	var_11_85[16880] = {
+	pg.base.skill_data_template[16880] = {
 		desc_get = "",
 		name = "奏响自由赞歌",
 		type = 3,
@@ -86804,11 +82488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.skill_data_template
-
-	var_11_86[16890] = {
+	pg.base.skill_data_template[16890] = {
 		desc_get = "",
 		name = "Admiral Satan",
 		type = 1,
@@ -86914,11 +82594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.skill_data_template
-
-	var_11_87[16900] = {
+	pg.base.skill_data_template[16900] = {
 		desc_get = "",
 		name = "守护使者",
 		type = 2,
@@ -86979,11 +82655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.skill_data_template
-
-	var_11_88[16910] = {
+	pg.base.skill_data_template[16910] = {
 		desc_get = "",
 		name = "时辰颂祷",
 		type = 3,
@@ -87134,11 +82806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.skill_data_template
-
-	var_11_89[16920] = {
+	pg.base.skill_data_template[16920] = {
 		desc_get = "",
 		name = "魔法还是舰炮？",
 		type = 1,
@@ -87244,11 +82912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.skill_data_template
-
-	var_11_90[16930] = {
+	pg.base.skill_data_template[16930] = {
 		desc_get = "",
 		name = "预见到临的魔女",
 		type = 3,
@@ -87354,11 +83018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.skill_data_template
-
-	var_11_91[16940] = {
+	pg.base.skill_data_template[16940] = {
 		desc_get = "",
 		name = "BIG SEVEN·西弗吉尼亚",
 		type = 1,
@@ -87455,11 +83115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.skill_data_template
-
-	var_11_92[16950] = {
+	pg.base.skill_data_template[16950] = {
 		desc_get = "",
 		name = "莱特湾的见证者",
 		type = 1,
@@ -87565,11 +83221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.skill_data_template
-
-	var_11_93[16960] = {
+	pg.base.skill_data_template[16960] = {
 		desc_get = "",
 		name = "审判庭的意志",
 		type = 3,
@@ -87720,11 +83372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.skill_data_template
-
-	var_11_94[16970] = {
+	pg.base.skill_data_template[16970] = {
 		desc_get = "",
 		name = "指引希望的炮火",
 		type = 1,
@@ -87821,11 +83469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.skill_data_template
-
-	var_11_95[16980] = {
+	pg.base.skill_data_template[16980] = {
 		desc_get = "",
 		name = "教廷的审判",
 		type = 1,
@@ -87931,11 +83575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.skill_data_template
-
-	var_11_96[16990] = {
+	pg.base.skill_data_template[16990] = {
 		desc_get = "",
 		name = "星辰指引",
 		type = 3,
@@ -88086,11 +83726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.skill_data_template
-
-	var_11_97[17000] = {
+	pg.base.skill_data_template[17000] = {
 		desc_get = "",
 		name = "鸢尾之愿",
 		type = 3,
@@ -88196,11 +83832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.skill_data_template
-
-	var_11_98[17010] = {
+	pg.base.skill_data_template[17010] = {
 		desc_get = "",
 		name = "涤罪裁决",
 		type = 1,
@@ -88342,8 +83974,11 @@ end)()
 			}
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.skill_data_template[17020] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[17020] = {
 		desc_get = "",
 		name = "神圣庇护",
 		type = 2,
@@ -88404,15 +84039,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.skill_data_template
-
-	var_12_0[17030] = {
+	pg.base.skill_data_template[17030] = {
 		desc_get = "",
 		name = "荡涤诸恶",
 		type = 1,
@@ -88599,11 +84226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.skill_data_template
-
-	var_12_1[17040] = {
+	pg.base.skill_data_template[17040] = {
 		desc_get = "",
 		name = "天光云影",
 		type = 1,
@@ -88709,11 +84332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.skill_data_template
-
-	var_12_2[17050] = {
+	pg.base.skill_data_template[17050] = {
 		desc_get = "",
 		name = "荡涤诸恶跨队BUFFID占用",
 		type = 1,
@@ -88727,11 +84346,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.skill_data_template
-
-	var_12_3[17060] = {
+	pg.base.skill_data_template[17060] = {
 		desc_get = "",
 		name = "结缘同行",
 		type = 3,
@@ -88927,11 +84542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.skill_data_template
-
-	var_12_4[17070] = {
+	pg.base.skill_data_template[17070] = {
 		desc_get = "",
 		name = "羁绊之力",
 		type = 3,
@@ -89073,11 +84684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.skill_data_template
-
-	var_12_5[17080] = {
+	pg.base.skill_data_template[17080] = {
 		desc_get = "",
 		name = "鹿灵之月斩",
 		type = 1,
@@ -89219,11 +84826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.skill_data_template
-
-	var_12_6[17090] = {
+	pg.base.skill_data_template[17090] = {
 		desc_get = "",
 		name = "鹿灵之灵息",
 		type = 2,
@@ -89419,11 +85022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.skill_data_template
-
-	var_12_7[17100] = {
+	pg.base.skill_data_template[17100] = {
 		desc_get = "",
 		name = "必杀铁拳！",
 		type = 1,
@@ -89520,11 +85119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.skill_data_template
-
-	var_12_8[17110] = {
+	pg.base.skill_data_template[17110] = {
 		desc_get = "",
 		name = "可靠的战友？",
 		type = 2,
@@ -89630,11 +85225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.skill_data_template
-
-	var_12_9[17120] = {
+	pg.base.skill_data_template[17120] = {
 		desc_get = "",
 		name = "“平沼”的守护",
 		type = 2,
@@ -89776,11 +85367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.skill_data_template
-
-	var_12_10[17130] = {
+	pg.base.skill_data_template[17130] = {
 		desc_get = "",
 		name = "迸发，隐藏之力！",
 		type = 1,
@@ -89877,11 +85464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.skill_data_template
-
-	var_12_11[17140] = {
+	pg.base.skill_data_template[17140] = {
 		desc_get = "",
 		name = "太空城之击",
 		type = 1,
@@ -90023,11 +85606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.skill_data_template
-
-	var_12_12[17150] = {
+	pg.base.skill_data_template[17150] = {
 		desc_get = "",
 		name = "混乱中的坚毅",
 		type = 2,
@@ -90088,11 +85667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.skill_data_template
-
-	var_12_13[17160] = {
+	pg.base.skill_data_template[17160] = {
 		desc_get = "",
 		name = "暗影无形",
 		type = 1,
@@ -90281,11 +85856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.skill_data_template
-
-	var_12_14[17170] = {
+	pg.base.skill_data_template[17170] = {
 		desc_get = "",
 		name = "深海的幽灵",
 		type = 2,
@@ -90393,11 +85964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.skill_data_template
-
-	var_12_15[17180] = {
+	pg.base.skill_data_template[17180] = {
 		desc_get = "",
 		name = "玛丽撤退用buff",
 		type = 1,
@@ -90413,11 +85980,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.skill_data_template
-
-	var_12_16[17190] = {
+	pg.base.skill_data_template[17190] = {
 		desc_get = "",
 		name = "黄金光辉永不黯淡",
 		type = 3,
@@ -90568,11 +86131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.skill_data_template
-
-	var_12_17[17200] = {
+	pg.base.skill_data_template[17200] = {
 		desc_get = "",
 		name = "圣洁轰炸",
 		type = 1,
@@ -90669,11 +86228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.skill_data_template
-
-	var_12_18[17210] = {
+	pg.base.skill_data_template[17210] = {
 		desc_get = "",
 		name = "只为安眠",
 		type = 1,
@@ -90727,11 +86282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.skill_data_template
-
-	var_12_19[17220] = {
+	pg.base.skill_data_template[17220] = {
 		desc_get = "",
 		name = "困了…",
 		type = 3,
@@ -90839,11 +86390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.skill_data_template
-
-	var_12_20[17230] = {
+	pg.base.skill_data_template[17230] = {
 		desc_get = "",
 		name = "维达号 撤退用buff",
 		type = 3,
@@ -90859,11 +86406,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.skill_data_template
-
-	var_12_21[17240] = {
+	pg.base.skill_data_template[17240] = {
 		desc_get = "",
 		name = "迷雾之境",
 		type = 1,
@@ -90969,11 +86512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.skill_data_template
-
-	var_12_22[17250] = {
+	pg.base.skill_data_template[17250] = {
 		desc_get = "",
 		name = "深海的恩典",
 		type = 3,
@@ -91070,11 +86609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.skill_data_template
-
-	var_12_23[17260] = {
+	pg.base.skill_data_template[17260] = {
 		desc_get = "",
 		name = "狂暴之爪",
 		type = 1,
@@ -91171,11 +86706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.skill_data_template
-
-	var_12_24[17270] = {
+	pg.base.skill_data_template[17270] = {
 		desc_get = "",
 		name = "宝藏守护",
 		type = 3,
@@ -91281,11 +86812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.skill_data_template
-
-	var_12_25[17280] = {
+	pg.base.skill_data_template[17280] = {
 		desc_get = "",
 		name = "Lady Lou",
 		type = 2,
@@ -91391,11 +86918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.skill_data_template
-
-	var_12_26[17290] = {
+	pg.base.skill_data_template[17290] = {
 		desc_get = "",
 		name = "淑女的进击",
 		type = 1,
@@ -91537,11 +87060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.skill_data_template
-
-	var_12_27[17300] = {
+	pg.base.skill_data_template[17300] = {
 		desc_get = "",
 		name = "战意激增",
 		type = 1,
@@ -91685,11 +87204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.skill_data_template
-
-	var_12_28[17310] = {
+	pg.base.skill_data_template[17310] = {
 		desc_get = "",
 		name = "哨戒任务",
 		type = 3,
@@ -91831,11 +87346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.skill_data_template
-
-	var_12_29[17320] = {
+	pg.base.skill_data_template[17320] = {
 		desc_get = "",
 		name = "背水之战",
 		type = 2,
@@ -91896,11 +87407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.skill_data_template
-
-	var_12_30[17330] = {
+	pg.base.skill_data_template[17330] = {
 		desc_get = "",
 		name = "战斗之星·对空焰火",
 		type = 3,
@@ -92051,11 +87558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.skill_data_template
-
-	var_12_31[17340] = {
+	pg.base.skill_data_template[17340] = {
 		desc_get = "",
 		name = "共演嘉宾！",
 		type = 1,
@@ -92152,11 +87655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.skill_data_template
-
-	var_12_32[17350] = {
+	pg.base.skill_data_template[17350] = {
 		desc_get = "",
 		name = "战况报告·现场放送",
 		type = 2,
@@ -92253,11 +87752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.skill_data_template
-
-	var_12_33[17360] = {
+	pg.base.skill_data_template[17360] = {
 		desc_get = "",
 		name = "战况报告·现场放送",
 		type = 1,
@@ -92271,11 +87766,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.skill_data_template
-
-	var_12_34[17370] = {
+	pg.base.skill_data_template[17370] = {
 		desc_get = "",
 		name = "Scaling Spiral",
 		type = 1,
@@ -92372,11 +87863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.skill_data_template
-
-	var_12_35[17380] = {
+	pg.base.skill_data_template[17380] = {
 		desc_get = "",
 		name = "奔袭的逐星者",
 		type = 3,
@@ -92482,11 +87969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.skill_data_template
-
-	var_12_36[17390] = {
+	pg.base.skill_data_template[17390] = {
 		desc_get = "",
 		name = "幼鹰的守护者",
 		type = 2,
@@ -92628,11 +88111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.skill_data_template
-
-	var_12_37[17400] = {
+	pg.base.skill_data_template[17400] = {
 		desc_get = "",
 		name = "“复仇”的恶作剧",
 		type = 1,
@@ -92684,11 +88163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.skill_data_template
-
-	var_12_38[17410] = {
+	pg.base.skill_data_template[17410] = {
 		desc_get = "",
 		name = "开启狩猎！ ",
 		type = 1,
@@ -92832,11 +88307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.skill_data_template
-
-	var_12_39[17420] = {
+	pg.base.skill_data_template[17420] = {
 		desc_get = "",
 		name = "小鱼们的伙伴 ",
 		type = 3,
@@ -92989,11 +88460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.skill_data_template
-
-	var_12_40[17450] = {
+	pg.base.skill_data_template[17450] = {
 		desc_get = "",
 		name = "兼济天下",
 		type = 3,
@@ -93099,11 +88566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.skill_data_template
-
-	var_12_41[17460] = {
+	pg.base.skill_data_template[17460] = {
 		desc_get = "",
 		name = "居安资深",
 		type = 2,
@@ -93200,11 +88663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.skill_data_template
-
-	var_12_42[17470] = {
+	pg.base.skill_data_template[17470] = {
 		desc_get = "",
 		name = "伟大“冒险”",
 		type = 3,
@@ -93310,11 +88769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.skill_data_template
-
-	var_12_43[17480] = {
+	pg.base.skill_data_template[17480] = {
 		desc_get = "",
 		name = "云飞墨舞画山水",
 		type = 1,
@@ -93456,11 +88911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.skill_data_template
-
-	var_12_44[17500] = {
+	pg.base.skill_data_template[17500] = {
 		desc_get = "",
 		name = "纵横方圆",
 		type = 3,
@@ -93557,11 +89008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.skill_data_template
-
-	var_12_45[17510] = {
+	pg.base.skill_data_template[17510] = {
 		desc_get = "",
 		name = "波涛龙武",
 		type = 1,
@@ -93613,11 +89060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.skill_data_template
-
-	var_12_46[17520] = {
+	pg.base.skill_data_template[17520] = {
 		desc_get = "",
 		name = "美馔佳肴",
 		type = 3,
@@ -93723,11 +89166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.skill_data_template
-
-	var_12_47[17530] = {
+	pg.base.skill_data_template[17530] = {
 		desc_get = "",
 		name = "虎之一拳！",
 		type = 1,
@@ -93824,11 +89263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.skill_data_template
-
-	var_12_48[17540] = {
+	pg.base.skill_data_template[17540] = {
 		desc_get = "",
 		name = "珍馐速递",
 		type = 2,
@@ -93934,11 +89369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.skill_data_template
-
-	var_12_49[17550] = {
+	pg.base.skill_data_template[17550] = {
 		desc_get = "",
 		name = "毅守玄武",
 		type = 1,
@@ -94035,11 +89466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.skill_data_template
-
-	var_12_50[17560] = {
+	pg.base.skill_data_template[17560] = {
 		desc_get = "",
 		name = "团结一致.改",
 		type = 3,
@@ -94145,11 +89572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.skill_data_template
-
-	var_12_51[17570] = {
+	pg.base.skill_data_template[17570] = {
 		desc_get = "",
 		name = "因势利导",
 		type = 3,
@@ -94255,11 +89678,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.skill_data_template
-
-	var_12_52[17580] = {
+	pg.base.skill_data_template[17580] = {
 		desc_get = "",
 		name = "朝乾夕惕",
 		type = 1,
@@ -94446,11 +89865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.skill_data_template
-
-	var_12_53[17590] = {
+	pg.base.skill_data_template[17590] = {
 		desc_get = "",
 		name = "刺破风暴的冰霜",
 		type = 1,
@@ -94592,11 +90007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.skill_data_template
-
-	var_12_54[17600] = {
+	pg.base.skill_data_template[17600] = {
 		desc_get = "",
 		name = "风雨同舟的荣耀",
 		type = 3,
@@ -94702,11 +90113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.skill_data_template
-
-	var_12_55[17610] = {
+	pg.base.skill_data_template[17610] = {
 		desc_get = "",
 		name = "坚如磐石的堡垒",
 		type = 2,
@@ -94893,11 +90300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.skill_data_template
-
-	var_12_56[17620] = {
+	pg.base.skill_data_template[17620] = {
 		desc_get = "",
 		name = "如沐暖阳",
 		type = 3,
@@ -95003,11 +90406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.skill_data_template
-
-	var_12_57[17630] = {
+	pg.base.skill_data_template[17630] = {
 		desc_get = "",
 		name = "超强火力！",
 		type = 1,
@@ -95185,11 +90584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.skill_data_template
-
-	var_12_58[17640] = {
+	pg.base.skill_data_template[17640] = {
 		desc_get = "",
 		name = "苏维埃同盟跨队BUFFID占用",
 		type = 3,
@@ -95203,11 +90598,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.skill_data_template
-
-	var_12_59[17650] = {
+	pg.base.skill_data_template[17650] = {
 		desc_get = "",
 		name = "束缚之锁",
 		type = 1,
@@ -95358,11 +90749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.skill_data_template
-
-	var_12_60[17660] = {
+	pg.base.skill_data_template[17660] = {
 		desc_get = "",
 		name = "守护之链",
 		type = 2,
@@ -95504,11 +90891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.skill_data_template
-
-	var_12_61[17670] = {
+	pg.base.skill_data_template[17670] = {
 		desc_get = "",
 		name = "涂鸦喷射",
 		type = 1,
@@ -95695,11 +91078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.skill_data_template
-
-	var_12_62[17680] = {
+	pg.base.skill_data_template[17680] = {
 		desc_get = "",
 		name = "重振精神",
 		type = 2,
@@ -95805,11 +91184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.skill_data_template
-
-	var_12_63[17690] = {
+	pg.base.skill_data_template[17690] = {
 		desc_get = "",
 		name = "女仆模式",
 		type = 3,
@@ -95951,11 +91326,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.skill_data_template
-
-	var_12_64[17700] = {
+	pg.base.skill_data_template[17700] = {
 		desc_get = "",
 		name = "必杀模式",
 		type = 1,
@@ -96061,11 +91432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.skill_data_template
-
-	var_12_65[17730] = {
+	pg.base.skill_data_template[17730] = {
 		desc_get = "",
 		name = "扫除时间",
 		type = 1,
@@ -96162,11 +91529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.skill_data_template
-
-	var_12_66[17740] = {
+	pg.base.skill_data_template[17740] = {
 		desc_get = "",
 		name = "发现灰尘！",
 		type = 3,
@@ -96317,11 +91680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.skill_data_template
-
-	var_12_67[17750] = {
+	pg.base.skill_data_template[17750] = {
 		desc_get = "",
 		name = "逆转的调和",
 		type = 2,
@@ -96427,11 +91786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.skill_data_template
-
-	var_12_68[17760] = {
+	pg.base.skill_data_template[17760] = {
 		desc_get = "",
 		name = "制胜的协和音",
 		type = 1,
@@ -96528,11 +91883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.skill_data_template
-
-	var_12_69[17770] = {
+	pg.base.skill_data_template[17770] = {
 		desc_get = "",
 		name = "Aufführung beginnt!",
 		type = 3,
@@ -96638,11 +91989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.skill_data_template
-
-	var_12_70[17780] = {
+	pg.base.skill_data_template[17780] = {
 		desc_get = "",
 		name = "深红之歌",
 		type = 1,
@@ -96784,11 +92131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.skill_data_template
-
-	var_12_71[17790] = {
+	pg.base.skill_data_template[17790] = {
 		desc_get = "",
 		name = "火力压制指令",
 		type = 3,
@@ -96930,11 +92273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.skill_data_template
-
-	var_12_72[17800] = {
+	pg.base.skill_data_template[17800] = {
 		desc_get = "",
 		name = "运动系女仆",
 		type = 2,
@@ -97040,11 +92379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.skill_data_template
-
-	var_12_73[17810] = {
+	pg.base.skill_data_template[17810] = {
 		desc_get = "",
 		name = "重音摇滚",
 		type = 1,
@@ -97105,11 +92440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.skill_data_template
-
-	var_12_74[17820] = {
+	pg.base.skill_data_template[17820] = {
 		desc_get = "",
 		name = "震耳欲聋",
 		type = 3,
@@ -97215,11 +92546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.skill_data_template
-
-	var_12_75[17830] = {
+	pg.base.skill_data_template[17830] = {
 		desc_get = "",
 		name = "完美谢幕",
 		type = 1,
@@ -97370,11 +92697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.skill_data_template
-
-	var_12_76[17840] = {
+	pg.base.skill_data_template[17840] = {
 		desc_get = "",
 		name = "深红调律",
 		type = 2,
@@ -97525,11 +92848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.skill_data_template
-
-	var_12_77[17850] = {
+	pg.base.skill_data_template[17850] = {
 		desc_get = "",
 		name = "强音共鸣",
 		type = 3,
@@ -97626,11 +92945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.skill_data_template
-
-	var_12_78[17860] = {
+	pg.base.skill_data_template[17860] = {
 		desc_get = "",
 		name = "梦幻翠青",
 		type = 1,
@@ -97772,11 +93087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.skill_data_template
-
-	var_12_79[17870] = {
+	pg.base.skill_data_template[17870] = {
 		desc_get = "",
 		name = "应援高歌",
 		type = 2,
@@ -97882,11 +93193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.skill_data_template
-
-	var_12_80[17880] = {
+	pg.base.skill_data_template[17880] = {
 		desc_get = "",
 		name = "舞台掌控",
 		type = 1,
@@ -98073,11 +93380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.skill_data_template
-
-	var_12_81[17890] = {
+	pg.base.skill_data_template[17890] = {
 		desc_get = "",
 		name = "气氛高涨",
 		type = 3,
@@ -98138,11 +93441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.skill_data_template
-
-	var_12_82[17900] = {
+	pg.base.skill_data_template[17900] = {
 		desc_get = "",
 		name = "积极的勤奋偶像",
 		type = 1,
@@ -98239,11 +93538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.skill_data_template
-
-	var_12_83[17910] = {
+	pg.base.skill_data_template[17910] = {
 		desc_get = "",
 		name = "闪耀的完美舞台",
 		type = 3,
@@ -98349,11 +93644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.skill_data_template
-
-	var_12_84[17920] = {
+	pg.base.skill_data_template[17920] = {
 		desc_get = "",
 		name = "梦见之蝶",
 		type = 1,
@@ -98405,11 +93696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.skill_data_template
-
-	var_12_85[17930] = {
+	pg.base.skill_data_template[17930] = {
 		desc_get = "",
 		name = "初醒朦胧",
 		type = 3,
@@ -98515,11 +93802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.skill_data_template
-
-	var_12_86[17940] = {
+	pg.base.skill_data_template[17940] = {
 		desc_get = "",
 		name = "阵斩罪恶之斧",
 		type = 1,
@@ -98616,11 +93899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.skill_data_template
-
-	var_12_87[17950] = {
+	pg.base.skill_data_template[17950] = {
 		desc_get = "",
 		name = "急速！加速！超速！",
 		type = 2,
@@ -98771,11 +94050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.skill_data_template
-
-	var_12_88[17960] = {
+	pg.base.skill_data_template[17960] = {
 		desc_get = "",
 		name = "闻香沉溺",
 		type = 3,
@@ -98917,11 +94192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.skill_data_template
-
-	var_12_89[17970] = {
+	pg.base.skill_data_template[17970] = {
 		desc_get = "",
 		name = "BIG SEVEN·科罗拉多",
 		type = 1,
@@ -99018,11 +94289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.skill_data_template
-
-	var_12_90[17980] = {
+	pg.base.skill_data_template[17980] = {
 		desc_get = "",
 		name = "未褪去的荣光",
 		type = 3,
@@ -99173,11 +94440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.skill_data_template
-
-	var_12_91[150000] = {
+	pg.base.skill_data_template[150000] = {
 		desc_get = "",
 		name = "迎接终结之剑",
 		type = 2,
@@ -99229,11 +94492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.skill_data_template
-
-	var_12_92[150010] = {
+	pg.base.skill_data_template[150010] = {
 		desc_get = "",
 		name = "变革世界之剑",
 		type = 3,
@@ -99330,11 +94589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.skill_data_template
-
-	var_12_93[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "攻击指令 『裁决降临』",
 		type = 1,
@@ -99431,11 +94686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.skill_data_template
-
-	var_12_94[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "战斗共识 『裁决之怒』",
 		type = 3,
@@ -99496,11 +94747,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.skill_data_template
-
-	var_12_95[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "情感失控 『临界爆发』",
 		type = 2,
@@ -99606,11 +94853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.skill_data_template
-
-	var_12_96[150050] = {
+	pg.base.skill_data_template[150050] = {
 		desc_get = "",
 		name = "玫瑰王牌",
 		type = 3,
@@ -99716,11 +94959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.skill_data_template
-
-	var_12_97[150060] = {
+	pg.base.skill_data_template[150060] = {
 		desc_get = "",
 		name = "华丽谢幕",
 		type = 2,
@@ -99826,11 +95065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.skill_data_template
-
-	var_12_98[150070] = {
+	pg.base.skill_data_template[150070] = {
 		desc_get = "",
 		name = "超重剑舞",
 		type = 1,
@@ -99936,8 +95171,11 @@ end)()
 			}
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.skill_data_template[150080] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[150080] = {
 		desc_get = "",
 		name = "阵线守护者",
 		type = 2,
@@ -100079,15 +95317,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.skill_data_template
-
-	var_13_0[150090] = {
+	pg.base.skill_data_template[150090] = {
 		desc_get = "",
 		name = "『裁决降临』跨队ID占用",
 		type = 3,
@@ -100101,11 +95331,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.skill_data_template
-
-	var_13_1[150100] = {
+	pg.base.skill_data_template[150100] = {
 		desc_get = "",
 		name = "『临界爆发』跨队ID占用",
 		type = 3,
@@ -100119,11 +95345,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.skill_data_template
-
-	var_13_2[150120] = {
+	pg.base.skill_data_template[150120] = {
 		desc_get = "",
 		name = "试演的交响曲",
 		type = 1,
@@ -100220,11 +95442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.skill_data_template
-
-	var_13_3[150130] = {
+	pg.base.skill_data_template[150130] = {
 		desc_get = "",
 		name = "稚声的合奏歌",
 		type = 3,
@@ -100366,11 +95584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.skill_data_template
-
-	var_13_4[150140] = {
+	pg.base.skill_data_template[150140] = {
 		desc_get = "",
 		name = "贯穿邪恶之矛",
 		type = 1,
@@ -100512,11 +95726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.skill_data_template
-
-	var_13_5[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "全智的女武神",
 		type = 3,
@@ -100703,11 +95913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.skill_data_template
-
-	var_13_6[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "追击狂热",
 		type = 1,
@@ -100804,11 +96010,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.skill_data_template
-
-	var_13_7[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "易殒之翼",
 		type = 3,
@@ -100959,11 +96161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.skill_data_template
-
-	var_13_8[150180] = {
+	pg.base.skill_data_template[150180] = {
 		desc_get = "",
 		name = "永恒之魔瞳",
 		type = 1,
@@ -101069,11 +96267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.skill_data_template
-
-	var_13_9[150190] = {
+	pg.base.skill_data_template[150190] = {
 		desc_get = "",
 		name = "贯彻正义的恶魔！",
 		type = 2,
@@ -101224,11 +96418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.skill_data_template
-
-	var_13_10[150200] = {
+	pg.base.skill_data_template[150200] = {
 		desc_get = "",
 		name = "当心水下！",
 		type = 1,
@@ -101325,11 +96515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.skill_data_template
-
-	var_13_11[150210] = {
+	pg.base.skill_data_template[150210] = {
 		desc_get = "",
 		name = "文员之怒",
 		type = 1,
@@ -101516,11 +96702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.skill_data_template
-
-	var_13_12[150220] = {
+	pg.base.skill_data_template[150220] = {
 		desc_get = "",
 		name = "绝对“理性”",
 		type = 3,
@@ -101581,11 +96763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.skill_data_template
-
-	var_13_13[150230] = {
+	pg.base.skill_data_template[150230] = {
 		desc_get = "",
 		name = "强袭突击",
 		type = 1,
@@ -101817,11 +96995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.skill_data_template
-
-	var_13_14[150240] = {
+	pg.base.skill_data_template[150240] = {
 		desc_get = "",
 		name = "骑士屹立于此",
 		type = 2,
@@ -102062,11 +97236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.skill_data_template
-
-	var_13_15[150250] = {
+	pg.base.skill_data_template[150250] = {
 		desc_get = "",
 		name = "审判的变奏曲",
 		type = 1,
@@ -102208,11 +97378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.skill_data_template
-
-	var_13_16[150260] = {
+	pg.base.skill_data_template[150260] = {
 		desc_get = "",
 		name = "传达到的勇气",
 		type = 3,
@@ -102318,11 +97484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.skill_data_template
-
-	var_13_17[150270] = {
+	pg.base.skill_data_template[150270] = {
 		desc_get = "",
 		name = "高速无人机支援",
 		type = 3,
@@ -102430,11 +97592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.skill_data_template
-
-	var_13_18[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "情绪数据模块",
 		type = 1,
@@ -102666,11 +97824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.skill_data_template
-
-	var_13_19[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "怒涛连打",
 		type = 1,
@@ -102767,11 +97921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.skill_data_template
-
-	var_13_20[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "防御架势",
 		type = 2,
@@ -102868,11 +98018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.skill_data_template
-
-	var_13_21[150310] = {
+	pg.base.skill_data_template[150310] = {
 		desc_get = "",
 		name = "彩虹计划·改",
 		type = 2,
@@ -102969,11 +98115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.skill_data_template
-
-	var_13_22[150320] = {
+	pg.base.skill_data_template[150320] = {
 		desc_get = "",
 		name = "电气功率MAX！",
 		type = 1,
@@ -103070,11 +98212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.skill_data_template
-
-	var_13_23[150330] = {
+	pg.base.skill_data_template[150330] = {
 		desc_get = "",
 		name = "焰引裂切",
 		type = 1,
@@ -103126,11 +98264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.skill_data_template
-
-	var_13_24[150340] = {
+	pg.base.skill_data_template[150340] = {
 		desc_get = "",
 		name = "微醺的御风之盾",
 		type = 2,
@@ -103272,11 +98406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.skill_data_template
-
-	var_13_25[150350] = {
+	pg.base.skill_data_template[150350] = {
 		desc_get = "",
 		name = "破茧成蝶",
 		type = 2,
@@ -103337,11 +98467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.skill_data_template
-
-	var_13_26[150360] = {
+	pg.base.skill_data_template[150360] = {
 		desc_get = "",
 		name = "蝴蝶的蓄势一击",
 		type = 2,
@@ -103492,11 +98618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.skill_data_template
-
-	var_13_27[150370] = {
+	pg.base.skill_data_template[150370] = {
 		desc_get = "",
 		name = "盐腌鲱鱼便当",
 		type = 2,
@@ -103694,11 +98816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.skill_data_template
-
-	var_13_28[150380] = {
+	pg.base.skill_data_template[150380] = {
 		desc_get = "",
 		name = "禁止靠近",
 		type = 1,
@@ -103797,11 +98915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.skill_data_template
-
-	var_13_29[150390] = {
+	pg.base.skill_data_template[150390] = {
 		desc_get = "",
 		name = "高速无人机支援",
 		type = 3,
@@ -103907,11 +99021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.skill_data_template
-
-	var_13_30[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "瑞彩祥云",
 		type = 3,
@@ -104053,11 +99163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.skill_data_template
-
-	var_13_31[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "凤奏鸾鸣",
 		type = 3,
@@ -104208,11 +99314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.skill_data_template
-
-	var_13_32[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "刃锋破浪",
 		type = 1,
@@ -104309,11 +99411,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.skill_data_template
-
-	var_13_33[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "流影随行",
 		type = 3,
@@ -104455,11 +99553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.skill_data_template
-
-	var_13_34[150440] = {
+	pg.base.skill_data_template[150440] = {
 		desc_get = "",
 		name = "终结一击",
 		type = 1,
@@ -104601,11 +99695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.skill_data_template
-
-	var_13_35[150450] = {
+	pg.base.skill_data_template[150450] = {
 		desc_get = "",
 		name = "BIG SEVEN·马里兰",
 		type = 1,
@@ -104702,11 +99792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.skill_data_template
-
-	var_13_36[150460] = {
+	pg.base.skill_data_template[150460] = {
 		desc_get = "",
 		name = "谋一计以谋万世",
 		type = 3,
@@ -104812,11 +99898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.skill_data_template
-
-	var_13_37[150470] = {
+	pg.base.skill_data_template[150470] = {
 		desc_get = "",
 		name = "破一役以破全局",
 		type = 1,
@@ -104913,11 +99995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.skill_data_template
-
-	var_13_38[150475] = {
+	pg.base.skill_data_template[150475] = {
 		desc_get = "",
 		name = "破一役以破全局-跨队效果",
 		type = 1,
@@ -104931,11 +100009,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.skill_data_template
-
-	var_13_39[150480] = {
+	pg.base.skill_data_template[150480] = {
 		desc_get = "",
 		name = "凤与凰",
 		type = 3,
@@ -105122,11 +100196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.skill_data_template
-
-	var_13_40[150490] = {
+	pg.base.skill_data_template[150490] = {
 		desc_get = "",
 		name = "幸运的白兔",
 		type = 3,
@@ -105268,11 +100338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.skill_data_template
-
-	var_13_41[150500] = {
+	pg.base.skill_data_template[150500] = {
 		desc_get = "",
 		name = "三籁之布阵",
 		type = 2,
@@ -105369,11 +100435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.skill_data_template
-
-	var_13_42[150510] = {
+	pg.base.skill_data_template[150510] = {
 		desc_get = "",
 		name = "凛冽沧凉",
 		type = 1,
@@ -105515,11 +100577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.skill_data_template
-
-	var_13_43[150520] = {
+	pg.base.skill_data_template[150520] = {
 		desc_get = "",
 		name = "踏浪逐波",
 		type = 3,
@@ -105625,11 +100683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.skill_data_template
-
-	var_13_44[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "假寐诱敌",
 		type = 3,
@@ -105771,11 +100825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.skill_data_template
-
-	var_13_45[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "狩猎行动",
 		type = 2,
@@ -105881,11 +100931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.skill_data_template
-
-	var_13_46[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "和睦撤退用buff",
 		type = 1,
@@ -105901,11 +100947,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.skill_data_template
-
-	var_13_47[150560] = {
+	pg.base.skill_data_template[150560] = {
 		desc_get = "",
 		name = "炮火洗礼",
 		type = 1,
@@ -106002,11 +101044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.skill_data_template
-
-	var_13_48[150570] = {
+	pg.base.skill_data_template[150570] = {
 		desc_get = "",
 		name = "深渊魔影",
 		type = 3,
@@ -106148,11 +101186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.skill_data_template
-
-	var_13_49[150580] = {
+	pg.base.skill_data_template[150580] = {
 		desc_get = "",
 		name = "祓除与治愈之风",
 		type = 2,
@@ -106294,11 +101328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.skill_data_template
-
-	var_13_50[150590] = {
+	pg.base.skill_data_template[150590] = {
 		desc_get = "",
 		name = "聚宝船与守护者",
 		type = 3,
@@ -106404,11 +101434,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.skill_data_template
-
-	var_13_51[150630] = {
+	pg.base.skill_data_template[150630] = {
 		desc_get = "",
 		name = "暴风的追击者",
 		type = 1,
@@ -106550,11 +101576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.skill_data_template
-
-	var_13_52[150640] = {
+	pg.base.skill_data_template[150640] = {
 		desc_get = "",
 		name = "烈酒与秘药",
 		type = 2,
@@ -106705,11 +101727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.skill_data_template
-
-	var_13_53[150650] = {
+	pg.base.skill_data_template[150650] = {
 		desc_get = "",
 		name = "小哭包的布雷战术",
 		type = 1,
@@ -106806,11 +101824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.skill_data_template
-
-	var_13_54[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "鼓起勇气的守护",
 		type = 3,
@@ -106961,11 +101975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.skill_data_template
-
-	var_13_55[150600] = {
+	pg.base.skill_data_template[150600] = {
 		desc_get = "",
 		name = "深海的回音",
 		type = 2,
@@ -107071,11 +102081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.skill_data_template
-
-	var_13_56[150610] = {
+	pg.base.skill_data_template[150610] = {
 		desc_get = "",
 		name = "深海的加护",
 		type = 3,
@@ -107217,11 +102223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.skill_data_template
-
-	var_13_57[150620] = {
+	pg.base.skill_data_template[150620] = {
 		desc_get = "",
 		name = "海豚号撤退用buff",
 		type = 1,
@@ -107237,11 +102239,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.skill_data_template
-
-	var_13_58[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "爆燃灼印",
 		type = 1,
@@ -107338,11 +102336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.skill_data_template
-
-	var_13_59[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "跃动心火",
 		type = 3,
@@ -107448,11 +102442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.skill_data_template
-
-	var_13_60[150690] = {
+	pg.base.skill_data_template[150690] = {
 		desc_get = "",
 		name = "雷火守护",
 		type = 2,
@@ -107558,11 +102548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.skill_data_template
-
-	var_13_61[150700] = {
+	pg.base.skill_data_template[150700] = {
 		desc_get = "",
 		name = "跃动心火",
 		type = 3,
@@ -107576,11 +102562,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.skill_data_template
-
-	var_13_62[150710] = {
+	pg.base.skill_data_template[150710] = {
 		desc_get = "",
 		name = "破敌双翼",
 		type = 1,
@@ -107722,11 +102704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.skill_data_template
-
-	var_13_63[150720] = {
+	pg.base.skill_data_template[150720] = {
 		desc_get = "",
 		name = "进退从容",
 		type = 3,
@@ -107868,11 +102846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.skill_data_template
-
-	var_13_64[150730] = {
+	pg.base.skill_data_template[150730] = {
 		desc_get = "",
 		name = "冲击之盾",
 		type = 2,
@@ -107969,11 +102943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.skill_data_template
-
-	var_13_65[150740] = {
+	pg.base.skill_data_template[150740] = {
 		desc_get = "",
 		name = "布雷作战",
 		type = 1,
@@ -108070,11 +103040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.skill_data_template
-
-	var_13_66[150750] = {
+	pg.base.skill_data_template[150750] = {
 		desc_get = "",
 		name = "英勇者的无畏之翼",
 		type = 1,
@@ -108171,11 +103137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.skill_data_template
-
-	var_13_67[150760] = {
+	pg.base.skill_data_template[150760] = {
 		desc_get = "",
 		name = "破坏者的毁灭之刃",
 		type = 1,
@@ -108272,11 +103234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.skill_data_template
-
-	var_13_68[150770] = {
+	pg.base.skill_data_template[150770] = {
 		desc_get = "",
 		name = "不屈者的坚韧之心",
 		type = 3,
@@ -108337,11 +103295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.skill_data_template
-
-	var_13_69[150780] = {
+	pg.base.skill_data_template[150780] = {
 		desc_get = "",
 		name = "英勇者的无畏之翼-跨队效果",
 		type = 1,
@@ -108355,11 +103309,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.skill_data_template
-
-	var_13_70[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "严加管教",
 		type = 1,
@@ -108501,11 +103451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.skill_data_template
-
-	var_13_71[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "扫尘迎春",
 		type = 2,
@@ -108647,11 +103593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.skill_data_template
-
-	var_13_72[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "措置裕如",
 		type = 1,
@@ -108793,11 +103735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.skill_data_template
-
-	var_13_73[150820] = {
+	pg.base.skill_data_template[150820] = {
 		desc_get = "",
 		name = "履险如夷",
 		type = 3,
@@ -108903,11 +103841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.skill_data_template
-
-	var_13_74[150830] = {
+	pg.base.skill_data_template[150830] = {
 		desc_get = "",
 		name = "破竹建瓴",
 		type = 1,
@@ -109094,11 +104028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.skill_data_template
-
-	var_13_75[150840] = {
+	pg.base.skill_data_template[150840] = {
 		desc_get = "",
 		name = "文韬武略",
 		type = 2,
@@ -109294,11 +104224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.skill_data_template
-
-	var_13_76[150850] = {
+	pg.base.skill_data_template[150850] = {
 		desc_get = "",
 		name = "秀甲乾坤",
 		type = 1,
@@ -109395,11 +104321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.skill_data_template
-
-	var_13_77[150860] = {
+	pg.base.skill_data_template[150860] = {
 		desc_get = "",
 		name = "尖锐突击.改",
 		type = 1,
@@ -109505,11 +104427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.skill_data_template
-
-	var_13_78[150865] = {
+	pg.base.skill_data_template[150865] = {
 		desc_get = "",
 		name = "抚顺4鞍山剑气彩蛋",
 		type = 1,
@@ -109523,11 +104441,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.skill_data_template
-
-	var_13_79[150870] = {
+	pg.base.skill_data_template[150870] = {
 		desc_get = "",
 		name = "朱雀萦焰",
 		type = 1,
@@ -109624,11 +104538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.skill_data_template
-
-	var_13_80[150880] = {
+	pg.base.skill_data_template[150880] = {
 		desc_get = "",
 		name = "“周密”诡计",
 		type = 1,
@@ -109725,11 +104635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.skill_data_template
-
-	var_13_81[150890] = {
+	pg.base.skill_data_template[150890] = {
 		desc_get = "",
 		name = "燎竹除旧",
 		type = 3,
@@ -109790,11 +104696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.skill_data_template
-
-	var_13_82[150900] = {
+	pg.base.skill_data_template[150900] = {
 		desc_get = "",
 		name = "战术分析完毕！",
 		type = 3,
@@ -109945,11 +104847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.skill_data_template
-
-	var_13_83[150910] = {
+	pg.base.skill_data_template[150910] = {
 		desc_get = "",
 		name = "威严的撒丁之花",
 		type = 1,
@@ -110091,11 +104989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.skill_data_template
-
-	var_13_84[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "野蛮颂歌",
 		type = 1,
@@ -110237,11 +105131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.skill_data_template
-
-	var_13_85[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "三月的歌",
 		type = 3,
@@ -110338,11 +105228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.skill_data_template
-
-	var_13_86[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "以艺术之名",
 		type = 3,
@@ -110448,11 +105334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.skill_data_template
-
-	var_13_87[150950] = {
+	pg.base.skill_data_template[150950] = {
 		desc_get = "",
 		name = "神光的加护",
 		type = 2,
@@ -110558,11 +105440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.skill_data_template
-
-	var_13_88[150960] = {
+	pg.base.skill_data_template[150960] = {
 		desc_get = "",
 		name = "超级艺术家",
 		type = 1,
@@ -110659,11 +105537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.skill_data_template
-
-	var_13_89[150967] = {
+	pg.base.skill_data_template[150967] = {
 		desc_get = "",
 		name = "超级艺术家-跨队效果",
 		type = 1,
@@ -110677,11 +105551,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.skill_data_template
-
-	var_13_90[150980] = {
+	pg.base.skill_data_template[150980] = {
 		desc_get = "",
 		name = "危机等级上升！",
 		type = 1,
@@ -110825,11 +105695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.skill_data_template
-
-	var_13_91[150990] = {
+	pg.base.skill_data_template[150990] = {
 		desc_get = "",
 		name = "天生的冒险家",
 		type = 3,
@@ -110973,11 +105839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.skill_data_template
-
-	var_13_92[151000] = {
+	pg.base.skill_data_template[151000] = {
 		desc_get = "",
 		name = "最酷最厉害",
 		type = 1,
@@ -111083,11 +105945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.skill_data_template
-
-	var_13_93[151010] = {
+	pg.base.skill_data_template[151010] = {
 		desc_get = "",
 		name = "不良少女登场",
 		type = 2,
@@ -111148,11 +106006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.skill_data_template
-
-	var_13_94[151020] = {
+	pg.base.skill_data_template[151020] = {
 		desc_get = "",
 		name = "海空强袭",
 		type = 1,
@@ -111303,11 +106157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.skill_data_template
-
-	var_13_95[151030] = {
+	pg.base.skill_data_template[151030] = {
 		desc_get = "",
 		name = "光辉突进",
 		type = 3,
@@ -111406,11 +106256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.skill_data_template
-
-	var_13_96[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "灵愈之盾",
 		type = 2,
@@ -111507,11 +106353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.skill_data_template
-
-	var_13_97[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "探索之谕",
 		type = 3,
@@ -111617,11 +106459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.skill_data_template
-
-	var_13_98[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "BIG BEN",
 		type = 1,
@@ -111718,8 +106556,11 @@ end)()
 			}
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.skill_data_template[30] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "浴火的奇迹",
 		type = 2,
@@ -111825,15 +106666,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.skill_data_template
-
-	var_14_0[151080] = {
+	pg.base.skill_data_template[151080] = {
 		desc_get = "",
 		name = "蝶影叶岚",
 		type = 3,
@@ -111975,11 +106808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.skill_data_template
-
-	var_14_1[151090] = {
+	pg.base.skill_data_template[151090] = {
 		desc_get = "",
 		name = "青空圣御",
 		type = 3,
@@ -112121,11 +106950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.skill_data_template
-
-	var_14_2[151100] = {
+	pg.base.skill_data_template[151100] = {
 		desc_get = "",
 		name = "天才直感",
 		type = 1,
@@ -112222,11 +107047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.skill_data_template
-
-	var_14_3[151110] = {
+	pg.base.skill_data_template[151110] = {
 		desc_get = "",
 		name = "疯狂科学家模式,on！",
 		type = 3,
@@ -112287,11 +107108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.skill_data_template
-
-	var_14_4[151120] = {
+	pg.base.skill_data_template[151120] = {
 		desc_get = "",
 		name = "极地巨熊的怒涛",
 		type = 3,
@@ -112478,11 +107295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.skill_data_template
-
-	var_14_5[151130] = {
+	pg.base.skill_data_template[151130] = {
 		desc_get = "",
 		name = "雪原的摇篮曲",
 		type = 2,
@@ -112588,11 +107401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.skill_data_template
-
-	var_14_6[151140] = {
+	pg.base.skill_data_template[151140] = {
 		desc_get = "",
 		name = "Peek-a-Boom!",
 		type = 2,
@@ -112779,11 +107588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.skill_data_template
-
-	var_14_7[151150] = {
+	pg.base.skill_data_template[151150] = {
 		desc_get = "",
 		name = "深渊之国",
 		type = 3,
@@ -112889,11 +107694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.skill_data_template
-
-	var_14_8[151160] = {
+	pg.base.skill_data_template[151160] = {
 		desc_get = "",
 		name = "噬甜之颚",
 		type = 1,
@@ -113044,11 +107845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.skill_data_template
-
-	var_14_9[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "完美猎手",
 		type = 3,
@@ -113190,11 +107987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.skill_data_template
-
-	var_14_10[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "狩猎标记",
 		type = 3,
@@ -113345,11 +108138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.skill_data_template
-
-	var_14_11[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "萤火虫突袭",
 		type = 1,
@@ -113491,11 +108280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.skill_data_template
-
-	var_14_12[151200] = {
+	pg.base.skill_data_template[151200] = {
 		desc_get = "",
 		name = "禁！止！通！行！",
 		type = 2,
@@ -113560,11 +108345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.skill_data_template
-
-	var_14_13[151210] = {
+	pg.base.skill_data_template[151210] = {
 		desc_get = "",
 		name = "警戒汪，出击！",
 		type = 3,
@@ -113661,11 +108442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.skill_data_template
-
-	var_14_14[151220] = {
+	pg.base.skill_data_template[151220] = {
 		desc_get = "",
 		name = "万象烬灭之炎",
 		type = 1,
@@ -113762,11 +108539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.skill_data_template
-
-	var_14_15[151230] = {
+	pg.base.skill_data_template[151230] = {
 		desc_get = "",
 		name = "运筹帷幄之中",
 		type = 3,
@@ -113998,11 +108771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.skill_data_template
-
-	var_14_16[151240] = {
+	pg.base.skill_data_template[151240] = {
 		desc_get = "",
 		name = "从容守护之盾",
 		type = 2,
@@ -114153,11 +108922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.skill_data_template
-
-	var_14_17[151250] = {
+	pg.base.skill_data_template[151250] = {
 		desc_get = "",
 		name = "铭胜之剑",
 		type = 1,
@@ -114254,11 +109019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.skill_data_template
-
-	var_14_18[151260] = {
+	pg.base.skill_data_template[151260] = {
 		desc_get = "",
 		name = "沐光辉域",
 		type = 2,
@@ -114409,11 +109170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.skill_data_template
-
-	var_14_19[151270] = {
+	pg.base.skill_data_template[151270] = {
 		desc_get = "",
 		name = "恪尽其责",
 		type = 3,
@@ -114519,11 +109276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.skill_data_template
-
-	var_14_20[151280] = {
+	pg.base.skill_data_template[151280] = {
 		desc_get = "",
 		name = "太阳神的辉光",
 		type = 1,
@@ -114665,11 +109418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.skill_data_template
-
-	var_14_21[151290] = {
+	pg.base.skill_data_template[151290] = {
 		desc_get = "",
 		name = "星象指引",
 		type = 3,
@@ -114865,11 +109614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.skill_data_template
-
-	var_14_22[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "万象烬灭之炎-跨队效果",
 		type = 1,
@@ -114883,11 +109628,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.skill_data_template
-
-	var_14_23[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "恪尽其责",
 		type = 3,
@@ -114901,11 +109642,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.skill_data_template
-
-	var_14_24[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "临界演算",
 		type = 1,
@@ -115002,11 +109739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.skill_data_template
-
-	var_14_25[151330] = {
+	pg.base.skill_data_template[151330] = {
 		desc_get = "",
 		name = "协律公式",
 		type = 3,
@@ -115157,11 +109890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.skill_data_template
-
-	var_14_26[151340] = {
+	pg.base.skill_data_template[151340] = {
 		desc_get = "",
 		name = "灵光一现的战术",
 		type = 1,
@@ -115348,11 +110077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.skill_data_template
-
-	var_14_27[151350] = {
+	pg.base.skill_data_template[151350] = {
 		desc_get = "",
 		name = "战略顾问的从容",
 		type = 2,
@@ -115458,11 +110183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.skill_data_template
-
-	var_14_28[151360] = {
+	pg.base.skill_data_template[151360] = {
 		desc_get = "",
 		name = "Roter Teufel",
 		type = 1,
@@ -115570,11 +110291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.skill_data_template
-
-	var_14_29[151370] = {
+	pg.base.skill_data_template[151370] = {
 		desc_get = "",
 		name = "狼群战术-{namecode:545}",
 		type = 1,
@@ -115682,11 +110399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.skill_data_template
-
-	var_14_30[151410] = {
+	pg.base.skill_data_template[151410] = {
 		desc_get = "",
 		name = "剑与迅捷的伙伴",
 		type = 2,
@@ -115792,11 +110505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.skill_data_template
-
-	var_14_31[151420] = {
+	pg.base.skill_data_template[151420] = {
 		desc_get = "",
 		name = "剑与新的旅程",
 		type = 1,
@@ -115857,11 +110566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.skill_data_template
-
-	var_14_32[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "净化不洁之焰",
 		type = 2,
@@ -115967,11 +110672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.skill_data_template
-
-	var_14_33[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "Bravery awarded honour",
 		type = 3,
@@ -116068,11 +110769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.skill_data_template
-
-	var_14_34[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "善战之舰.改",
 		type = 1,
@@ -116169,11 +110866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.skill_data_template
-
-	var_14_35[151460] = {
+	pg.base.skill_data_template[151460] = {
 		desc_get = "",
 		name = "时代新启",
 		type = 1,
@@ -116234,11 +110927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.skill_data_template
-
-	var_14_36[151470] = {
+	pg.base.skill_data_template[151470] = {
 		desc_get = "",
 		name = "时代新启",
 		type = 1,
@@ -116252,11 +110941,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.skill_data_template
-
-	var_14_37[151480] = {
+	pg.base.skill_data_template[151480] = {
 		desc_get = "",
 		name = "航空阵列",
 		type = 3,
@@ -116362,11 +111047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.skill_data_template
-
-	var_14_38[151490] = {
+	pg.base.skill_data_template[151490] = {
 		desc_get = "",
 		name = "歼灭武装",
 		type = 1,
@@ -116508,11 +111189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.skill_data_template
-
-	var_14_39[151500] = {
+	pg.base.skill_data_template[151500] = {
 		desc_get = "",
 		name = "大胆无畏",
 		type = 2,
@@ -116618,11 +111295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.skill_data_template
-
-	var_14_40[151510] = {
+	pg.base.skill_data_template[151510] = {
 		desc_get = "",
 		name = "天空的守护者",
 		type = 2,
@@ -116773,11 +111446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.skill_data_template
-
-	var_14_41[151520] = {
+	pg.base.skill_data_template[151520] = {
 		desc_get = "",
 		name = "梦里也要完成工作！",
 		type = 1,
@@ -116838,11 +111507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.skill_data_template
-
-	var_14_42[151390] = {
+	pg.base.skill_data_template[151390] = {
 		desc_get = "",
 		name = "幸运感知",
 		type = 1,
@@ -116903,11 +111568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.skill_data_template
-
-	var_14_43[151400] = {
+	pg.base.skill_data_template[151400] = {
 		desc_get = "",
 		name = "马塞纳超幸运",
 		type = 2,
@@ -117031,11 +111692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.skill_data_template
-
-	var_14_44[151530] = {
+	pg.base.skill_data_template[151530] = {
 		desc_get = "",
 		name = "白檀熏烟",
 		type = 3,
@@ -117186,11 +111843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.skill_data_template
-
-	var_14_45[151540] = {
+	pg.base.skill_data_template[151540] = {
 		desc_get = "",
 		name = "清艳闻幽 ",
 		type = 1,
@@ -117287,11 +111940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.skill_data_template
-
-	var_14_46[151550] = {
+	pg.base.skill_data_template[151550] = {
 		desc_get = "",
 		name = "焰染伏笼",
 		type = 1,
@@ -117442,11 +112091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.skill_data_template
-
-	var_14_47[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "无影无踪术",
 		type = 2,
@@ -117588,11 +112233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.skill_data_template
-
-	var_14_48[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "不可捉摸术",
 		type = 1,
@@ -117743,11 +112384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.skill_data_template
-
-	var_14_49[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "晴空彼端",
 		type = 1,
@@ -117855,11 +112492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.skill_data_template
-
-	var_14_50[151590] = {
+	pg.base.skill_data_template[151590] = {
 		desc_get = "",
 		name = "制霸海潮的舞者",
 		type = 3,
@@ -118003,11 +112636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.skill_data_template
-
-	var_14_51[151600] = {
+	pg.base.skill_data_template[151600] = {
 		desc_get = "",
 		name = "制霸海潮的舞者-跨队",
 		type = 3,
@@ -118023,11 +112652,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.skill_data_template
-
-	var_14_52[151610] = {
+	pg.base.skill_data_template[151610] = {
 		desc_get = "",
 		name = "流觞曲水之咏",
 		type = 1,
@@ -118133,11 +112758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.skill_data_template
-
-	var_14_53[151620] = {
+	pg.base.skill_data_template[151620] = {
 		desc_get = "",
 		name = "百韵狂歌",
 		type = 3,
@@ -118234,11 +112855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.skill_data_template
-
-	var_14_54[151630] = {
+	pg.base.skill_data_template[151630] = {
 		desc_get = "",
 		name = "可靠的{namecode:15}",
 		type = 2,
@@ -118470,11 +113087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.skill_data_template
-
-	var_14_55[151640] = {
+	pg.base.skill_data_template[151640] = {
 		desc_get = "",
 		name = "须臾之间",
 		type = 1,
@@ -118571,11 +113184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.skill_data_template
-
-	var_14_56[151650] = {
+	pg.base.skill_data_template[151650] = {
 		desc_get = "",
 		name = "刹那芳华",
 		type = 3,
@@ -118726,11 +113335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.skill_data_template
-
-	var_14_57[151660] = {
+	pg.base.skill_data_template[151660] = {
 		desc_get = "",
 		name = "贤狐的神秘汤品",
 		type = 3,
@@ -118836,11 +113441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.skill_data_template
-
-	var_14_58[151670] = {
+	pg.base.skill_data_template[151670] = {
 		desc_get = "",
 		name = "雷循川流",
 		type = 1,
@@ -118937,11 +113538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.skill_data_template
-
-	var_14_59[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "蓄势爆发",
 		type = 1,
@@ -119038,11 +113635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.skill_data_template
-
-	var_14_60[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "深海的祝福",
 		type = 3,
@@ -119148,11 +113741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.skill_data_template
-
-	var_14_61[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "深海恐怖事件",
 		type = 2,
@@ -119215,11 +113804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.skill_data_template
-
-	var_14_62[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "深海恐怖事件 +",
 		type = 2,
@@ -119318,11 +113903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.skill_data_template
-
-	var_14_63[151720] = {
+	pg.base.skill_data_template[151720] = {
 		desc_get = "",
 		name = "海盗屋中之梦",
 		type = 1,
@@ -119376,11 +113957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.skill_data_template
-
-	var_14_64[151730] = {
+	pg.base.skill_data_template[151730] = {
 		desc_get = "",
 		name = "冒险号撤退用buff",
 		type = 1,
@@ -119396,11 +113973,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.skill_data_template
-
-	var_14_65[151740] = {
+	pg.base.skill_data_template[151740] = {
 		desc_get = "",
 		name = "蓄势爆发 +",
 		type = 1,
@@ -119542,11 +114115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.skill_data_template
-
-	var_14_66[151750] = {
+	pg.base.skill_data_template[151750] = {
 		desc_get = "",
 		name = "飓风中的“航海家”",
 		type = 1,
@@ -119733,11 +114302,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.skill_data_template
-
-	var_14_67[151760] = {
+	pg.base.skill_data_template[151760] = {
 		desc_get = "",
 		name = "同航共利",
 		type = 3,
@@ -119843,11 +114408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.skill_data_template
-
-	var_14_68[151770] = {
+	pg.base.skill_data_template[151770] = {
 		desc_get = "",
 		name = "沧海月明",
 		type = 1,
@@ -119946,11 +114507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.skill_data_template
-
-	var_14_69[151780] = {
+	pg.base.skill_data_template[151780] = {
 		desc_get = "",
 		name = "珠光月华",
 		type = 3,
@@ -120056,11 +114613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.skill_data_template
-
-	var_14_70[151790] = {
+	pg.base.skill_data_template[151790] = {
 		desc_get = "",
 		name = "沧海月明 +",
 		type = 1,
@@ -120213,11 +114766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.skill_data_template
-
-	var_14_71[151800] = {
+	pg.base.skill_data_template[151800] = {
 		desc_get = "",
 		name = "枪与剑的审判",
 		type = 1,
@@ -120359,11 +114908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.skill_data_template
-
-	var_14_72[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "最终圣裁",
 		type = 2,
@@ -120469,11 +115014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.skill_data_template
-
-	var_14_73[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "时尚浪潮",
 		type = 2,
@@ -120579,11 +115120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.skill_data_template
-
-	var_14_74[151970] = {
+	pg.base.skill_data_template[151970] = {
 		desc_get = "",
 		name = "耀眼夺目",
 		type = 1,
@@ -120770,11 +115307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.skill_data_template
-
-	var_14_75[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "海空派对",
 		type = 1,
@@ -120961,11 +115494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.skill_data_template
-
-	var_14_76[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "惊喜集章",
 		type = 2,
@@ -121026,11 +115555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.skill_data_template
-
-	var_14_77[151840] = {
+	pg.base.skill_data_template[151840] = {
 		desc_get = "",
 		name = "抹除风险",
 		type = 1,
@@ -121127,11 +115652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.skill_data_template
-
-	var_14_78[151850] = {
+	pg.base.skill_data_template[151850] = {
 		desc_get = "",
 		name = "空袭引导·克拉伦斯",
 		type = 3,
@@ -121192,11 +115713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.skill_data_template
-
-	var_14_79[151860] = {
+	pg.base.skill_data_template[151860] = {
 		desc_get = "",
 		name = "海上竞逐",
 		type = 1,
@@ -121383,11 +115900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.skill_data_template
-
-	var_14_80[151870] = {
+	pg.base.skill_data_template[151870] = {
 		desc_get = "",
 		name = "过量营养",
 		type = 1,
@@ -121484,11 +115997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.skill_data_template
-
-	var_14_81[151880] = {
+	pg.base.skill_data_template[151880] = {
 		desc_get = "",
 		name = "活力鲜奶",
 		type = 3,
@@ -121594,11 +116103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.skill_data_template
-
-	var_14_82[151890] = {
+	pg.base.skill_data_template[151890] = {
 		desc_get = "",
 		name = "蓝色幽灵",
 		type = 2,
@@ -121704,11 +116209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.skill_data_template
-
-	var_14_83[151900] = {
+	pg.base.skill_data_template[151900] = {
 		desc_get = "",
 		name = "声遏行云",
 		type = 1,
@@ -121886,11 +116387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.skill_data_template
-
-	var_14_84[151910] = {
+	pg.base.skill_data_template[151910] = {
 		desc_get = "",
 		name = "莺歌燕语",
 		type = 3,
@@ -121996,11 +116493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.skill_data_template
-
-	var_14_85[151920] = {
+	pg.base.skill_data_template[151920] = {
 		desc_get = "",
 		name = "“海上传奇”",
 		type = 3,
@@ -122196,11 +116689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.skill_data_template
-
-	var_14_86[151925] = {
+	pg.base.skill_data_template[151925] = {
 		desc_get = "",
 		name = "Happy D-跨队",
 		type = 1,
@@ -122214,11 +116703,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.skill_data_template
-
-	var_14_87[151930] = {
+	pg.base.skill_data_template[151930] = {
 		desc_get = "",
 		name = "Happy D",
 		type = 1,
@@ -122360,11 +116845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.skill_data_template
-
-	var_14_88[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "不熟练的警戒舰",
 		type = 3,
@@ -122560,11 +117041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.skill_data_template
-
-	var_14_89[151980] = {
+	pg.base.skill_data_template[151980] = {
 		desc_get = "",
 		name = "从容不迫",
 		type = 3,
@@ -122751,11 +117228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.skill_data_template
-
-	var_14_90[151990] = {
+	pg.base.skill_data_template[151990] = {
 		desc_get = "",
 		name = "融皮蚀骨",
 		type = 3,
@@ -122816,11 +117289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.skill_data_template
-
-	var_14_91[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "碧海琢玉人",
 		type = 3,
@@ -122971,11 +117440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.skill_data_template
-
-	var_14_92[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "精雕显芒",
 		type = 1,
@@ -123117,11 +117582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.skill_data_template
-
-	var_14_93[152120] = {
+	pg.base.skill_data_template[152120] = {
 		desc_get = "",
 		name = "扇舞惊鸿",
 		type = 1,
@@ -123308,11 +117769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.skill_data_template
-
-	var_14_94[152130] = {
+	pg.base.skill_data_template[152130] = {
 		desc_get = "",
 		name = "笔走龙蛇",
 		type = 1,
@@ -123544,11 +118001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.skill_data_template
-
-	var_14_95[152000] = {
+	pg.base.skill_data_template[152000] = {
 		desc_get = "",
 		name = "帝国的裁决者",
 		type = 3,
@@ -123690,11 +118143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.skill_data_template
-
-	var_14_96[152010] = {
+	pg.base.skill_data_template[152010] = {
 		desc_get = "",
 		name = "受缚的裁决",
 		type = 2,
@@ -123791,11 +118240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.skill_data_template
-
-	var_14_97[152020] = {
+	pg.base.skill_data_template[152020] = {
 		desc_get = "",
 		name = "痛痛飞走！",
 		type = 2,
@@ -123856,11 +118301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.skill_data_template
-
-	var_14_98[152030] = {
+	pg.base.skill_data_template[152030] = {
 		desc_get = "",
 		name = "径直走向荣耀和死亡",
 		type = 3,
@@ -124002,8 +118443,11 @@ end)()
 			}
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.skill_data_template[152040] = {
+
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[152040] = {
 		desc_get = "",
 		name = "回旋铳舞",
 		type = 3,
@@ -124100,15 +118544,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.skill_data_template
-
-	var_15_0[152050] = {
+	pg.base.skill_data_template[152050] = {
 		desc_get = "",
 		name = "决胜博弈",
 		type = 3,
@@ -124205,11 +118641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.skill_data_template
-
-	var_15_1[152060] = {
+	pg.base.skill_data_template[152060] = {
 		desc_get = "",
 		name = "交给我吧！",
 		type = 1,
@@ -124351,11 +118783,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.skill_data_template
-
-	var_15_2[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "我能解决！",
 		type = 2,
@@ -124416,11 +118844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.skill_data_template
-
-	var_15_3[152100] = {
+	pg.base.skill_data_template[152100] = {
 		desc_get = "",
 		name = "原子机心",
 		type = 2,
@@ -124562,11 +118986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.skill_data_template
-
-	var_15_4[152110] = {
+	pg.base.skill_data_template[152110] = {
 		desc_get = "",
 		name = "Power Up!",
 		type = 3,
@@ -124663,11 +119083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.skill_data_template
-
-	var_15_5[152140] = {
+	pg.base.skill_data_template[152140] = {
 		desc_get = "",
 		name = "霜刻之剑",
 		type = 3,
@@ -124773,11 +119189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.skill_data_template
-
-	var_15_6[152150] = {
+	pg.base.skill_data_template[152150] = {
 		desc_get = "",
 		name = "勇战不退之志",
 		type = 2,
@@ -124973,11 +119385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.skill_data_template
-
-	var_15_7[152160] = {
+	pg.base.skill_data_template[152160] = {
 		desc_get = "",
 		name = "冻结要塞",
 		type = 1,
@@ -125029,11 +119437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.skill_data_template
-
-	var_15_8[152170] = {
+	pg.base.skill_data_template[152170] = {
 		desc_get = "",
 		name = "炮火惩戒",
 		type = 1,
@@ -125175,11 +119579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.skill_data_template
-
-	var_15_9[152180] = {
+	pg.base.skill_data_template[152180] = {
 		desc_get = "",
 		name = "坚韧防护",
 		type = 2,
@@ -125330,11 +119730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.skill_data_template
-
-	var_15_10[152190] = {
+	pg.base.skill_data_template[152190] = {
 		desc_get = "",
 		name = "云涌之翼",
 		type = 1,
@@ -125431,11 +119827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.skill_data_template
-
-	var_15_11[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "云隐帷幕",
 		type = 3,
@@ -125541,11 +119933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.skill_data_template
-
-	var_15_12[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "苍雷迸发",
 		type = 1,
@@ -125651,11 +120039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.skill_data_template
-
-	var_15_13[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "积雷云爆",
 		type = 3,
@@ -125752,11 +120136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.skill_data_template
-
-	var_15_14[152230] = {
+	pg.base.skill_data_template[152230] = {
 		desc_get = "",
 		name = "天救龙祈",
 		type = 3,
@@ -125862,11 +120242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.skill_data_template
-
-	var_15_15[152240] = {
+	pg.base.skill_data_template[152240] = {
 		desc_get = "",
 		name = "隐雷穿空",
 		type = 1,
@@ -125918,11 +120294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.skill_data_template
-
-	var_15_16[152250] = {
+	pg.base.skill_data_template[152250] = {
 		desc_get = "",
 		name = "静海惊雷雷雷雷雷！",
 		type = 1,
@@ -126019,11 +120391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.skill_data_template
-
-	var_15_17[152260] = {
+	pg.base.skill_data_template[152260] = {
 		desc_get = "",
 		name = "港区保护者",
 		type = 3,
@@ -126129,11 +120497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.skill_data_template
-
-	var_15_18[152270] = {
+	pg.base.skill_data_template[152270] = {
 		desc_get = "",
 		name = "伊酱！",
 		type = 1,
@@ -126230,11 +120594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.skill_data_template
-
-	var_15_19[152280] = {
+	pg.base.skill_data_template[152280] = {
 		desc_get = "",
 		name = "小小的赠礼",
 		type = 3,
@@ -126295,11 +120655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.skill_data_template
-
-	var_15_20[152290] = {
+	pg.base.skill_data_template[152290] = {
 		desc_get = "",
 		name = "Jump Scare",
 		type = 2,
@@ -126405,11 +120761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.skill_data_template
-
-	var_15_21[152300] = {
+	pg.base.skill_data_template[152300] = {
 		desc_get = "",
 		name = "怪谈时间！",
 		type = 1,
@@ -126506,11 +120858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.skill_data_template
-
-	var_15_22[152310] = {
+	pg.base.skill_data_template[152310] = {
 		desc_get = "",
 		name = "逐浪追袭",
 		type = 1,
@@ -126652,11 +121000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.skill_data_template
-
-	var_15_23[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "炙热加护",
 		type = 3,
@@ -126762,11 +121106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.skill_data_template
-
-	var_15_24[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "终章的铁腕审判",
 		type = 1,
@@ -126908,11 +121248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.skill_data_template
-
-	var_15_25[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "吟唱的反抗诗篇",
 		type = 3,
@@ -127108,11 +121444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.skill_data_template
-
-	var_15_26[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "不焚的血契之稿",
 		type = 2,
@@ -127299,11 +121631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.skill_data_template
-
-	var_15_27[152360] = {
+	pg.base.skill_data_template[152360] = {
 		desc_get = "",
 		name = "荆棘与坚盾",
 		type = 3,
@@ -127355,11 +121683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.skill_data_template
-
-	var_15_28[152370] = {
+	pg.base.skill_data_template[152370] = {
 		desc_get = "",
 		name = "渊海共鸣",
 		type = 3,
@@ -127467,11 +121791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.skill_data_template
-
-	var_15_29[152380] = {
+	pg.base.skill_data_template[152380] = {
 		desc_get = "",
 		name = "潮音的聆听者",
 		type = 1,
@@ -127624,11 +121944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.skill_data_template
-
-	var_15_30[152390] = {
+	pg.base.skill_data_template[152390] = {
 		desc_get = "",
 		name = "潮音的聆听者-跨队效果",
 		type = 1,
@@ -127644,11 +121960,7 @@ end)()
 		},
 		desc_get_add = {}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.skill_data_template
-
-	var_15_31[152410] = {
+	pg.base.skill_data_template[152410] = {
 		desc_get = "",
 		name = "不焚的血契之稿-跨队效果",
 		type = 2,
@@ -127662,11 +121974,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.skill_data_template
-
-	var_15_32[152420] = {
+	pg.base.skill_data_template[152420] = {
 		desc_get = "",
 		name = "哇啊！小锤！",
 		type = 1,
@@ -127718,11 +122026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.skill_data_template
-
-	var_15_33[152430] = {
+	pg.base.skill_data_template[152430] = {
 		desc_get = "",
 		name = "哦哦！力量满满！",
 		type = 3,
@@ -127828,11 +122132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.skill_data_template
-
-	var_15_34[152440] = {
+	pg.base.skill_data_template[152440] = {
 		desc_get = "",
 		name = "云游仙境之旅",
 		type = 1,
@@ -127974,11 +122274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.skill_data_template
-
-	var_15_35[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "秘境的珍奇宝物",
 		type = 3,
@@ -128084,11 +122380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.skill_data_template
-
-	var_15_36[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "虚实的幻术师",
 		type = 2,
@@ -128194,11 +122486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.skill_data_template
-
-	var_15_37[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "波谲云诡",
 		type = 2,
@@ -128304,11 +122592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.skill_data_template
-
-	var_15_38[152480] = {
+	pg.base.skill_data_template[152480] = {
 		desc_get = "",
 		name = "剑技·肉类全解",
 		type = 1,
@@ -128450,11 +122734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.skill_data_template
-
-	var_15_39[152490] = {
+	pg.base.skill_data_template[152490] = {
 		desc_get = "",
 		name = "烤肉美食家",
 		type = 2,
@@ -128605,11 +122885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.skill_data_template
-
-	var_15_40[152500] = {
+	pg.base.skill_data_template[152500] = {
 		desc_get = "",
 		name = "繁复美学",
 		type = 2,
@@ -128760,11 +123036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.skill_data_template
-
-	var_15_41[152510] = {
+	pg.base.skill_data_template[152510] = {
 		desc_get = "",
 		name = "华丽开幕",
 		type = 1,
@@ -128906,11 +123178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.skill_data_template
-
-	var_15_42[152520] = {
+	pg.base.skill_data_template[152520] = {
 		desc_get = "",
 		name = "作战命令，确认！",
 		type = 3,
@@ -129061,11 +123329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.skill_data_template
-
-	var_15_43[152530] = {
+	pg.base.skill_data_template[152530] = {
 		desc_get = "",
 		name = "维修命令，确认！",
 		type = 2,
@@ -129117,11 +123381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.skill_data_template
-
-	var_15_44[152540] = {
+	pg.base.skill_data_template[152540] = {
 		desc_get = "",
 		name = "战后支援",
 		type = 2,
@@ -129227,11 +123487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.skill_data_template
-
-	var_15_45[152550] = {
+	pg.base.skill_data_template[152550] = {
 		desc_get = "",
 		name = "狮鹫突击",
 		type = 1,
@@ -129328,11 +123584,1711 @@ end)()
 			}
 		}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.skill_data_template
-
-	var_15_46[18010] = {
+	pg.base.skill_data_template[152560] = {
+		desc_get = "",
+		name = "数据流轰击",
+		type = 1,
+		max_level = 10,
+		desc = "战斗开始时，自身炮击属性、命中属性提高$1；战斗开始后每15秒，随机选择1名敌方单位发动【信息锁定】（优先对精英目标生效），并触发一轮特殊弹幕$2（威力依据技能等级）；被【信息锁定】的敌方单位及其周围30距离的其他敌方单位受到来自白鹰先锋舰队的伤害提高$3，持续8秒",
+		id = 152560,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152570] = {
+		desc_get = "",
+		name = "天穹防御网",
+		type = 2,
+		max_level = 10,
+		desc = "自身在队伍内存活时，友方轻型航母、航母受到伤害降低$1；战斗开始时，自身机动属性提高$2，反潜属性提高$2；战斗开始时，先锋舰队内，若自身防空属性最高，除自身以外先锋舰队角色防空属性提高$3，若自身防空属性不为最高，自身防空属性提高$4",
+		id = 152570,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"15.0%",
+				"30.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.8%"
+				},
+				{
+					"20.0%",
+					"+1.6%"
+				},
+				{
+					"21.6%",
+					"+1.6%"
+				},
+				{
+					"23.2%",
+					"+1.8%"
+				},
+				{
+					"25.0%",
+					"+1.6%"
+				},
+				{
+					"26.6%",
+					"+1.6%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[4] = {
+		desc_get = "",
+		name = "偶像练习·战斗训练",
+		type = 2,
+		max_level = 10,
+		desc = "战斗开始时，自身炮击、防空属性提高$1；自身防空炮每开火4次，有$2概率触发一轮特殊弹幕$3（威力依据技能等级），并提高全队防空属性$4（全队防空提高效果最高叠加4层），若特殊弹幕触发失败则提高特殊弹幕触发成功率10%和自身防空属性5%，最高叠加3层",
+		id = 152580,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"10.0%",
+				"20.0%"
+			},
+			{
+				"40.0%",
+				"70.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"3.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			},
+			{
+				{
+					"40.0%",
+					"+3.3%"
+				},
+				{
+					"43.3%",
+					"+3.3%"
+				},
+				{
+					"46.6%",
+					"+3.3%"
+				},
+				{
+					"49.9%",
+					"+3.3%"
+				},
+				{
+					"53.2%",
+					"+3.3%"
+				},
+				{
+					"56.5%",
+					"+3.3%"
+				},
+				{
+					"59.8%",
+					"+3.3%"
+				},
+				{
+					"63.1%",
+					"+3.3%"
+				},
+				{
+					"66.4%",
+					"+3.6%"
+				},
+				{
+					"70%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.2%"
+				},
+				{
+					"1.2%",
+					"+0.2%"
+				},
+				{
+					"1.4%",
+					"+0.2%"
+				},
+				{
+					"1.6%",
+					"+0.2%"
+				},
+				{
+					"1.8%",
+					"+0.2%"
+				},
+				{
+					"2.0%",
+					"+0.2%"
+				},
+				{
+					"2.2%",
+					"+0.2%"
+				},
+				{
+					"2.4%",
+					"+0.3%"
+				},
+				{
+					"2.7%",
+					"+0.3%"
+				},
+				{
+					"3.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[14] = {
+		desc_get = "",
+		name = "~Lucky Power~♪",
+		type = 1,
+		max_level = 10,
+		desc = "战斗开始时，自身暴击率提高$1；战斗开始后每18秒，有$2概率触发一轮特殊弹幕$3（威力依据技能等级），并获得一枚能够抵挡自身1%最大耐久伤害的护盾，持续5秒",
+		id = 152590,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"50.0%",
+				"80.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"50.0%",
+					"+3.3%"
+				},
+				{
+					"53.3%",
+					"+3.3%"
+				},
+				{
+					"56.6%",
+					"+3.3%"
+				},
+				{
+					"59.9%",
+					"+3.3%"
+				},
+				{
+					"63.2%",
+					"+3.3%"
+				},
+				{
+					"66.5%",
+					"+3.3%"
+				},
+				{
+					"69.8%",
+					"+3.3%"
+				},
+				{
+					"73.1%",
+					"+3.3%"
+				},
+				{
+					"76.4%",
+					"+3.6%"
+				},
+				{
+					"80%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[24] = {
+		desc_get = "",
+		name = "站好！别乱动！",
+		type = 1,
+		max_level = 10,
+		desc = "战斗开始时，自身防空属性提高$1；防空圈内,每击落3架敌机，全体先锋舰队成员炮击、雷击属性提升$2，最高叠加五层，持续12秒；战斗开始后3秒及之后每20秒触发一轮特殊弹幕$3(弹幕威力依据技能等级)，被特殊弹幕击中的敌方角色会处于【失衡】状态，处于该状态的敌方单位机动降低$4，持续5秒",
+		id = 152600,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"2.5%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.1%"
+				},
+				{
+					"1.1%",
+					"+0.1%"
+				},
+				{
+					"1.2%",
+					"+0.1%"
+				},
+				{
+					"1.3%",
+					"+0.15%"
+				},
+				{
+					"1.45%",
+					"+0.15%"
+				},
+				{
+					"1.6%",
+					"+0.15%"
+				},
+				{
+					"1.75%",
+					"+0.2%"
+				},
+				{
+					"1.95%",
+					"+0.25%"
+				},
+				{
+					"2.2%",
+					"+0.3%"
+				},
+				{
+					"2.5%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152610] = {
+		desc_get = "",
+		name = "满满当当的守护",
+		type = 2,
+		max_level = 10,
+		desc = "战斗中，自身受到攻击时，有15%的概率为自身生成一枚可以阻挡12发子弹的护盾，护盾持续12秒（护盾触发后进入12秒冷却）；舰队中其他成员在战斗中受到伤害，导致耐久低于20%时触发，回复该角色$1耐久（若该角色属于白鹰阵营，额外回复其5%耐久）该回复效果每场战斗仅能触发一次",
+		id = 152610,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.0%",
+				"10.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152620] = {
+		desc_get = "",
+		name = "自由之翼",
+		type = 3,
+		max_level = 10,
+		desc = "战斗开始时，自身航空属性提高$2，命中属性提高$1；自身舰载机击落敌方飞机时，自身航空属性提高$3，最高叠加2层，叠加至满层时，使此时队伍中所有防空属性低于自身的角色防空提高$2（防空属性提升效果持续至战斗结束）",
+		id = 152620,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"4.0%",
+				"10.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.5%",
+				"5.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"4.0%",
+					"+0.6%"
+				},
+				{
+					"4.6%",
+					"+0.6%"
+				},
+				{
+					"5.2%",
+					"+0.8%"
+				},
+				{
+					"6.0%",
+					"+0.6%"
+				},
+				{
+					"6.6%",
+					"+0.6%"
+				},
+				{
+					"7.2%",
+					"+0.8%"
+				},
+				{
+					"8.0%",
+					"+0.6%"
+				},
+				{
+					"8.6%",
+					"+0.6%"
+				},
+				{
+					"9.2%",
+					"+0.8%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.3%"
+				},
+				{
+					"1.8%",
+					"+0.3%"
+				},
+				{
+					"2.1%",
+					"+0.4%"
+				},
+				{
+					"2.5%",
+					"+0.3%"
+				},
+				{
+					"2.8%",
+					"+0.3%"
+				},
+				{
+					"3.1%",
+					"+0.4%"
+				},
+				{
+					"3.5%",
+					"+0.4%"
+				},
+				{
+					"3.9%",
+					"+0.4%"
+				},
+				{
+					"4.3%",
+					"+0.7%"
+				},
+				{
+					"5.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152630] = {
+		desc_get = "",
+		name = "Vlogger`s time",
+		type = 2,
+		max_level = 10,
+		desc = "自身发动空袭时，额外触发一轮航空弹幕攻击$2（威力依据技能等级），若此时队伍中存在至少3个白鹰阵营角色，使在场的所有敌方单位2.5秒内缓慢减速至航速为0，1.5秒后恢复原航速；战斗开始时，若主力舰队存在其他白鹰阵营角色，自身受到航空伤害降低$1",
+		id = 152630,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152640] = {
+		desc_get = "",
+		name = "烟雾弹·贝尔法斯特",
+		type = 2,
+		max_level = 10,
+		desc = "战斗开始10秒后使用烟雾弹，随后每20秒有20.0%概率使用烟雾弹，处于烟幕中的角色回避率提高$1，受到航空伤害降低$2，持续10秒，技能效果与【烟雾弹·轻巡】不叠加；战斗中自身第一次发动烟雾弹时，根据队伍中轻巡洋舰数量获得增益效果：\n数量为1：50秒内，使此时存活的我方主力舰队角色造成的伤害提高$3；\n数量大于1：自身装备的主炮武器效率提高$4，队伍内轻巡洋舰防空提升$4",
+		id = 152640,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15%",
+				"35%"
+			},
+			{
+				"15%",
+				"35%"
+			},
+			{
+				"1.5%",
+				"6.0%"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+2.2%"
+				},
+				{
+					"17.2%",
+					"+2.2%"
+				},
+				{
+					"19.4%",
+					"+2.2%"
+				},
+				{
+					"21.6%",
+					"+2.2%"
+				},
+				{
+					"23.8%",
+					"+2.2%"
+				},
+				{
+					"26.0%",
+					"+2.2%"
+				},
+				{
+					"28.2%",
+					"+2.2%"
+				},
+				{
+					"30.4%",
+					"+2.2%"
+				},
+				{
+					"32.6%",
+					"+2.4%"
+				},
+				{
+					"35.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+2.2%"
+				},
+				{
+					"17.2%",
+					"+2.2%"
+				},
+				{
+					"19.4%",
+					"+2.2%"
+				},
+				{
+					"21.6%",
+					"+2.2%"
+				},
+				{
+					"23.8%",
+					"+2.2%"
+				},
+				{
+					"26.0%",
+					"+2.2%"
+				},
+				{
+					"28.2%",
+					"+2.2%"
+				},
+				{
+					"30.4%",
+					"+2.2%"
+				},
+				{
+					"32.6%",
+					"+2.4%"
+				},
+				{
+					"35.0%"
+				}
+			},
+			{
+				{
+					"1.5%",
+					"+0.5%"
+				},
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152650] = {
+		desc_get = "",
+		name = "值得信赖的完美女仆",
+		type = 3,
+		max_level = 10,
+		desc = "自身装备的防空炮武器效率提高$1，战斗开始时及战斗中每20秒触发，回复全体先锋舰队成员3%耐久并触发一轮特殊攻击$2（特殊攻击威力依据技能等级，对命中的敌方单位造成特殊点燃效果，特殊点燃效果每3秒结算一次，每次结算造成350点伤害，特殊点燃效果持续15秒）",
+		id = 152650,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15.0%",
+				"30.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+1.6%"
+				},
+				{
+					"16.6%",
+					"+1.6%"
+				},
+				{
+					"18.2%",
+					"+1.6%"
+				},
+				{
+					"19.8%",
+					"+1.6%"
+				},
+				{
+					"21.4%",
+					"+1.6%"
+				},
+				{
+					"23.0%",
+					"+1.6%"
+				},
+				{
+					"24.6%",
+					"+1.8%"
+				},
+				{
+					"26.4%",
+					"+1.8%"
+				},
+				{
+					"28.2%",
+					"+1.8%"
+				},
+				{
+					"30.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152680] = {
+		desc_get = "",
+		name = "无处不在的守卫者",
+		type = 3,
+		max_level = 10,
+		desc = "战斗开始时，自身机动，反潜属性提升$1；防空圈内，敌方飞机被击落时，自身防空属性提高$2（该效果最多叠加5层），累计触发5次时，触发【旗舰掩护】技能效果：在队伍中（存活）时降低旗舰受到的伤害$3（效果与【旗舰掩护】技能效果不叠加）。",
+		id = 152680,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"3.0%"
+			},
+			{
+				"15%",
+				"25%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+0.2%"
+				},
+				{
+					"1.2%",
+					"+0.2%"
+				},
+				{
+					"1.4%",
+					"+0.2%"
+				},
+				{
+					"1.6%",
+					"+0.2%"
+				},
+				{
+					"1.8%",
+					"+0.2%"
+				},
+				{
+					"2.0%",
+					"+0.2%"
+				},
+				{
+					"2.2%",
+					"+0.2%"
+				},
+				{
+					"2.4%",
+					"+0.3%"
+				},
+				{
+					"2.7%",
+					"+0.3%"
+				},
+				{
+					"3.0%"
+				}
+			},
+			{
+				{
+					"15.0%",
+					"+1.1%"
+				},
+				{
+					"16.1%",
+					"+1.1%"
+				},
+				{
+					"17.2%",
+					"+1.1%"
+				},
+				{
+					"18.3%",
+					"+1.1%"
+				},
+				{
+					"19.4%",
+					"+1.1%"
+				},
+				{
+					"20.5%",
+					"+1.1%"
+				},
+				{
+					"21.6%",
+					"+1.1%"
+				},
+				{
+					"22.7%",
+					"+1.1%"
+				},
+				{
+					"23.8%",
+					"+1.2%"
+				},
+				{
+					"25.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[152690] = {
+		desc_get = "",
+		name = "超常发挥的美食盲盒",
+		type = 1,
+		max_level = 10,
+		desc = "战斗开始时，自身炮击，雷击属性提升$1；每20秒触发一轮特殊弹幕$2（威力依据技能等级），同时随机选择一名我方角色品尝美食盲盒，使其回复3%最大耐久。",
+		id = 152690,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[18010] = {
 		desc_get = "",
 		name = "MKV型穿甲弹 +",
 		type = 1,
@@ -129393,11 +125349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.skill_data_template
-
-	var_15_47[18040] = {
+	pg.base.skill_data_template[18040] = {
 		desc_get = "",
 		name = "底力爆发 +",
 		type = 2,
@@ -129458,11 +125410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.skill_data_template
-
-	var_15_48[18050] = {
+	pg.base.skill_data_template[18050] = {
 		desc_get = "",
 		name = "心神合一 +",
 		type = 1,
@@ -129568,11 +125516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.skill_data_template
-
-	var_15_49[18070] = {
+	pg.base.skill_data_template[18070] = {
 		desc_get = "",
 		name = "神话之传承 +",
 		type = 1,
@@ -129635,11 +125579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.skill_data_template
-
-	var_15_50[18100] = {
+	pg.base.skill_data_template[18100] = {
 		desc_get = "战斗开始时，生成4面旋转的护盾，每个护盾阻挡8发子弹，护盾持续<color=#92fc63FF>5</color>秒(满级<color=#92fc63FF>15</color>秒)，每隔30秒再次生成该护盾",
 		name = "全方位装甲 +",
 		type = 2,
@@ -129695,11 +125635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.skill_data_template
-
-	var_15_51[18120] = {
+	pg.base.skill_data_template[18120] = {
 		desc_get = "增加<color=#92fc63FF>3</color>点(满级<color=#92fc63FF>8</color>点)航速，战斗开始时，机动属性提高<color=#92fc63FF>15%</color>(满级<color=#92fc63FF>35%</color>)，持续50秒",
 		name = "Engine boost +",
 		type = 2,
@@ -129796,11 +125732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.skill_data_template
-
-	var_15_52[18130] = {
+	pg.base.skill_data_template[18130] = {
 		desc_get = "",
 		name = "飞行NG! +",
 		type = 2,
@@ -129906,11 +125838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.skill_data_template
-
-	var_15_53[18150] = {
+	pg.base.skill_data_template[18150] = {
 		desc_get = "",
 		name = "Iron Sight Caliber +",
 		type = 3,
@@ -130016,11 +125944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.skill_data_template
-
-	var_15_54[18180] = {
+	pg.base.skill_data_template[18180] = {
 		desc_get = "",
 		name = "{namecode:164}流·六莲雷 +",
 		type = 1,
@@ -130117,11 +126041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.skill_data_template
-
-	var_15_55[18200] = {
+	pg.base.skill_data_template[18200] = {
 		desc_get = "",
 		name = "战场嗅觉 +",
 		type = 2,
@@ -130317,11 +126237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.skill_data_template
-
-	var_15_56[18210] = {
+	pg.base.skill_data_template[18210] = {
 		desc_get = "",
 		name = "特殊炮击训练 +",
 		type = 1,
@@ -130382,11 +126298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.skill_data_template
-
-	var_15_57[18220] = {
+	pg.base.skill_data_template[18220] = {
 		desc_get = "",
 		name = "破坏的交响曲 +",
 		type = 1,
@@ -130438,11 +126350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.skill_data_template
-
-	var_15_58[18240] = {
+	pg.base.skill_data_template[18240] = {
 		desc_get = "",
 		name = "暗黑的狂想曲 +",
 		type = 3,
@@ -130593,11 +126501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.skill_data_template
-
-	var_15_59[18250] = {
+	pg.base.skill_data_template[18250] = {
 		desc_get = "",
 		name = "感知抑制模块 +",
 		type = 2,
@@ -130703,11 +126607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.skill_data_template
-
-	var_15_60[18270] = {
+	pg.base.skill_data_template[18270] = {
 		desc_get = "",
 		name = "柴郡PowerUp！ +",
 		type = 3,
@@ -130858,11 +126758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.skill_data_template
-
-	var_15_61[18290] = {
+	pg.base.skill_data_template[18290] = {
 		desc_get = "",
 		name = "勇斗的Privateer +",
 		type = 1,
@@ -131004,11 +126900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.skill_data_template
-
-	var_15_62[18300] = {
+	pg.base.skill_data_template[18300] = {
 		desc_get = "",
 		name = "断罪之炎 +",
 		type = 3,
@@ -131159,11 +127051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.skill_data_template
-
-	var_15_63[18320] = {
+	pg.base.skill_data_template[18320] = {
 		desc_get = "",
 		name = "「Ausgewogen」 +",
 		type = 1,
@@ -131359,11 +127247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.skill_data_template
-
-	var_15_64[18340] = {
+	pg.base.skill_data_template[18340] = {
 		desc_get = "",
 		name = "贯穿之轰雷 +",
 		type = 1,
@@ -131424,11 +127308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.skill_data_template
-
-	var_15_65[18350] = {
+	pg.base.skill_data_template[18350] = {
 		desc_get = "",
 		name = "辅助机构「S.P.」 +",
 		type = 1,
@@ -131525,11 +127405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.skill_data_template
-
-	var_15_66[18380] = {
+	pg.base.skill_data_template[18380] = {
 		desc_get = "",
 		name = "天雷罪灭 +",
 		type = 1,
@@ -131626,11 +127502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.skill_data_template
-
-	var_15_67[18400] = {
+	pg.base.skill_data_template[18400] = {
 		desc_get = "",
 		name = "白龙云影 +",
 		type = 3,
@@ -131736,11 +127608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.skill_data_template
-
-	var_15_68[18440] = {
+	pg.base.skill_data_template[18440] = {
 		desc_get = "",
 		name = "Riddle a riddle +",
 		type = 1,
@@ -131882,11 +127750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.skill_data_template
-
-	var_15_69[18460] = {
+	pg.base.skill_data_template[18460] = {
 		desc_get = "",
 		name = "洞察技术-思想掌握 +",
 		type = 1,
@@ -131947,11 +127811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.skill_data_template
-
-	var_15_70[18500] = {
+	pg.base.skill_data_template[18500] = {
 		desc_get = "",
 		name = "野心与恩泽之威 +",
 		type = 2,
@@ -132057,11 +127917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.skill_data_template
-
-	var_15_71[18550] = {
+	pg.base.skill_data_template[18550] = {
 		desc_get = "",
 		name = "邪龙舰装·欲求之刃 +",
 		type = 1,
@@ -132194,11 +128050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.skill_data_template
-
-	var_15_72[18590] = {
+	pg.base.skill_data_template[18590] = {
 		desc_get = "",
 		name = "炮火，倾泻如瀑！ +",
 		type = 1,
@@ -132349,11 +128201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.skill_data_template
-
-	var_15_73[18610] = {
+	pg.base.skill_data_template[18610] = {
 		desc_get = "",
 		name = "辅助试验·冻结射击 +",
 		type = 1,
@@ -132414,11 +128262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.skill_data_template
-
-	var_15_74[18620] = {
+	pg.base.skill_data_template[18620] = {
 		desc_get = "",
 		name = "弱者的苦痛之源 +",
 		type = 1,
@@ -132605,11 +128449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.skill_data_template
-
-	var_15_75[18730] = {
+	pg.base.skill_data_template[18730] = {
 		desc_get = "",
 		name = "战斗命令「急袭突破」 +",
 		type = 1,
@@ -132706,11 +128546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.skill_data_template
-
-	var_15_76[18760] = {
+	pg.base.skill_data_template[18760] = {
 		desc_get = "",
 		name = "水龙神威 +",
 		type = 2,
@@ -132852,11 +128688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.skill_data_template
-
-	var_15_77[18780] = {
+	pg.base.skill_data_template[18780] = {
 		desc_get = "",
 		name = "承接期望的鸢尾之剑 +",
 		type = 1,
@@ -132962,11 +128794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.skill_data_template
-
-	var_15_78[18790] = {
+	pg.base.skill_data_template[18790] = {
 		desc_get = "",
 		name = "暗夜的制裁 +",
 		type = 1,
@@ -133108,11 +128936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.skill_data_template
-
-	var_15_79[18860] = {
+	pg.base.skill_data_template[18860] = {
 		desc_get = "",
 		name = "因果锚定 +",
 		type = 1,
@@ -133254,11 +129078,336 @@ end)()
 			}
 		}
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.skill_data_template
-
-	var_15_80[19000] = {
+	pg.base.skill_data_template[18950] = {
+		desc_get = "",
+		name = "朦胧映紫月 +",
+		type = 2,
+		max_level = 10,
+		desc = "自身装备的鱼雷武器攻击时，发射【燃油烟雾弹】$1，随后3秒内每0.5秒重新发射一枚【燃油烟雾弹】（该燃油烟雾仅对自身生效，持续1秒，处于燃油烟雾中时提高自身回避率$2），每次发射【燃油烟雾弹】时，额外触发一次【特殊弹幕 +】$1，【特殊弹幕 +】每命中敌人10次，回复自身1.5%耐久并触发一轮鱼雷弹幕$1（威力依据技能等级）",
+		id = 18950,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"20.0%",
+				"40.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"20.0%",
+					"+2.2%"
+				},
+				{
+					"22.2%",
+					"+2.2%"
+				},
+				{
+					"24.4%",
+					"+2.2%"
+				},
+				{
+					"26.6%",
+					"+2.2%"
+				},
+				{
+					"28.8%",
+					"+2.2%"
+				},
+				{
+					"31.0%",
+					"+2.2%"
+				},
+				{
+					"33.2%",
+					"+2.2%"
+				},
+				{
+					"35.4%",
+					"+2.2%"
+				},
+				{
+					"37.6%",
+					"+2.4%"
+				},
+				{
+					"40.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[18980] = {
+		desc_get = "",
+		name = "蓄能爆发 +",
+		type = 1,
+		max_level = 10,
+		desc = "战斗开始时，自身主炮武器栏位武器效率提高10%，航速提高5点；战斗中，自身对航速低于自身的单位造成的伤害提高$5，自身主炮齐射时，最后一轮底座炮击会优先瞄准精英目标（人形单位）；战斗开始后每8秒触发，为自己叠加一层【蓄势】，每有一层【蓄势】，自身防空属性提高$1，【蓄势】最多叠加三层；战斗中，主炮开火时消耗自身所有【蓄势】并触发一轮特殊弹幕$2（威力依据技能等级），每消耗一层【蓄势】，自身炮击属性提高$1，持续5秒，并根据消耗的【蓄势】层数在接下来的5秒依次获得以下效果：①大于等于一层：自身主炮暴击率提高$3；②大于等于二层：自身造成的伤害提高$4；③三层：强化本轮开火触发的特殊弹幕，自身造成的暴击伤害提高$3",
+		id = 18980,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"1.5%",
+				"6.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"1.0%",
+				"10.0%"
+			},
+			{
+				"3.5%",
+				"8.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"1.5%",
+					"+0.5%"
+				},
+				{
+					"2.0%",
+					"+0.5%"
+				},
+				{
+					"2.5%",
+					"+0.5%"
+				},
+				{
+					"3.0%",
+					"+0.5%"
+				},
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"1.0%",
+					"+1.0%"
+				},
+				{
+					"2.0%",
+					"+1.0%"
+				},
+				{
+					"3.0%",
+					"+1.0%"
+				},
+				{
+					"4.0%",
+					"+1.0%"
+				},
+				{
+					"5.0%",
+					"+1.0%"
+				},
+				{
+					"6.0%",
+					"+1.0%"
+				},
+				{
+					"7.0%",
+					"+1.0%"
+				},
+				{
+					"8.0%",
+					"+1.0%"
+				},
+				{
+					"9.0%",
+					"+1.0%"
+				},
+				{
+					"10.0%"
+				}
+			},
+			{
+				{
+					"3.5%",
+					"+0.5%"
+				},
+				{
+					"4.0%",
+					"+0.5%"
+				},
+				{
+					"4.5%",
+					"+0.5%"
+				},
+				{
+					"5.0%",
+					"+0.5%"
+				},
+				{
+					"5.5%",
+					"+0.5%"
+				},
+				{
+					"6.0%",
+					"+0.5%"
+				},
+				{
+					"6.5%",
+					"+0.5%"
+				},
+				{
+					"7.0%",
+					"+0.5%"
+				},
+				{
+					"7.5%",
+					"+0.5%"
+				},
+				{
+					"8.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[19000] = {
 		desc_get = "",
 		name = "塞壬之敌I",
 		type = 1,
@@ -133272,11 +129421,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.skill_data_template
-
-	var_15_81[19001] = {
+	pg.base.skill_data_template[19001] = {
 		desc_get = "",
 		name = "塞壬之敌II",
 		type = 1,
@@ -133290,11 +129435,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.skill_data_template
-
-	var_15_82[19002] = {
+	pg.base.skill_data_template[19002] = {
 		desc_get = "",
 		name = "塞壬之敌III",
 		type = 1,
@@ -133308,11 +129449,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.skill_data_template
-
-	var_15_83[19010] = {
+	pg.base.skill_data_template[19010] = {
 		desc_get = "",
 		name = "MKV型穿甲弹",
 		type = 1,
@@ -133373,11 +129510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.skill_data_template
-
-	var_15_84[19020] = {
+	pg.base.skill_data_template[19020] = {
 		desc_get = "",
 		name = "海之女神",
 		type = 2,
@@ -133438,11 +129571,11 @@ end)()
 			}
 		}
 	}
-	pg = var_15_84
 
-	local var_15_85 = var_15_84.base.skill_data_template
-
-	var_15_85[19030] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[19030] = {
 		desc_get = "",
 		name = "君王之睥睨 ",
 		type = 1,
@@ -133550,11 +129683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.skill_data_template
-
-	var_15_86[19040] = {
+	pg.base.skill_data_template[19040] = {
 		desc_get = "",
 		name = "底力爆发",
 		type = 2,
@@ -133615,11 +129744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.skill_data_template
-
-	var_15_87[19050] = {
+	pg.base.skill_data_template[19050] = {
 		desc_get = "",
 		name = "心神合一",
 		type = 1,
@@ -133680,11 +129805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.skill_data_template
-
-	var_15_88[19060] = {
+	pg.base.skill_data_template[19060] = {
 		desc_get = "",
 		name = "一闪",
 		type = 1,
@@ -133745,11 +129866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.skill_data_template
-
-	var_15_89[19070] = {
+	pg.base.skill_data_template[19070] = {
 		desc_get = "",
 		name = "神话之传承",
 		type = 1,
@@ -133810,11 +129927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.skill_data_template
-
-	var_15_90[19080] = {
+	pg.base.skill_data_template[19080] = {
 		desc_get = "",
 		name = "特殊护甲",
 		type = 2,
@@ -133875,11 +129988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.skill_data_template
-
-	var_15_91[19090] = {
+	pg.base.skill_data_template[19090] = {
 		desc_get = "",
 		name = "专业装填手",
 		type = 1,
@@ -133940,11 +130049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.skill_data_template
-
-	var_15_92[19100] = {
+	pg.base.skill_data_template[19100] = {
 		desc_get = "每隔30秒，生成4面旋转的护盾，每个护盾阻挡8发子弹，护盾持续5秒(满级15秒)",
 		name = "全方位装甲",
 		type = 2,
@@ -134000,11 +130105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.skill_data_template
-
-	var_15_93[19110] = {
+	pg.base.skill_data_template[19110] = {
 		desc_get = "",
 		name = "高爆穿甲弹",
 		type = 1,
@@ -134065,11 +130166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.skill_data_template
-
-	var_15_94[19120] = {
+	pg.base.skill_data_template[19120] = {
 		desc_get = "增加3点(满级8点)航速，战斗开始时，机动属性提高15%(满级35%)，持续40秒",
 		name = "Engine boost",
 		type = 2,
@@ -134166,11 +130263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.skill_data_template
-
-	var_15_95[19130] = {
+	pg.base.skill_data_template[19130] = {
 		desc_get = "",
 		name = "飞行NG!",
 		type = 2,
@@ -134276,11 +130369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.skill_data_template
-
-	var_15_96[19140] = {
+	pg.base.skill_data_template[19140] = {
 		desc_get = "",
 		name = "两手准备",
 		type = 3,
@@ -134431,11 +130520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.skill_data_template
-
-	var_15_97[19150] = {
+	pg.base.skill_data_template[19150] = {
 		desc_get = "",
 		name = "Iron Sight Caliber",
 		type = 3,
@@ -134496,11 +130581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.skill_data_template
-
-	var_15_98[19160] = {
+	pg.base.skill_data_template[19160] = {
 		desc_get = "",
 		name = "Heavy Barrel Blaster",
 		type = 1,
@@ -134563,8 +130644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_98
-	var_15_98.base.skill_data_template[19170] = {
+	pg.base.skill_data_template[19170] = {
 		desc_get = "",
 		name = "{namecode:164}流·一致斩",
 		type = 3,
@@ -134661,15 +130741,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.skill_data_template
-
-	var_16_0[19180] = {
+	pg.base.skill_data_template[19180] = {
 		desc_get = "",
 		name = "{namecode:164}流·六莲雷",
 		type = 1,
@@ -134721,11 +130793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.skill_data_template
-
-	var_16_1[19190] = {
+	pg.base.skill_data_template[19190] = {
 		desc_get = "",
 		name = "怒火连峰",
 		type = 1,
@@ -134831,11 +130899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.skill_data_template
-
-	var_16_2[19200] = {
+	pg.base.skill_data_template[19200] = {
 		desc_get = "",
 		name = "战场嗅觉",
 		type = 2,
@@ -134986,11 +131050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.skill_data_template
-
-	var_16_3[19210] = {
+	pg.base.skill_data_template[19210] = {
 		desc_get = "",
 		name = "特殊炮击训练",
 		type = 1,
@@ -135051,11 +131111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.skill_data_template
-
-	var_16_4[19220] = {
+	pg.base.skill_data_template[19220] = {
 		desc_get = "",
 		name = "破坏的交响曲",
 		type = 1,
@@ -135109,11 +131165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.skill_data_template
-
-	var_16_5[19230] = {
+	pg.base.skill_data_template[19230] = {
 		desc_get = "",
 		name = "混沌的奏鸣曲",
 		type = 1,
@@ -135219,11 +131271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.skill_data_template
-
-	var_16_6[19240] = {
+	pg.base.skill_data_template[19240] = {
 		desc_get = "",
 		name = "暗黑的狂想曲",
 		type = 3,
@@ -135374,11 +131422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.skill_data_template
-
-	var_16_7[19250] = {
+	pg.base.skill_data_template[19250] = {
 		desc_get = "",
 		name = "感知抑制模块",
 		type = 2,
@@ -135439,11 +131483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.skill_data_template
-
-	var_16_8[19260] = {
+	pg.base.skill_data_template[19260] = {
 		desc_get = "",
 		name = "精密操作协议",
 		type = 1,
@@ -135551,11 +131591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.skill_data_template
-
-	var_16_9[19270] = {
+	pg.base.skill_data_template[19270] = {
 		desc_get = "",
 		name = "柴郡PowerUp！",
 		type = 3,
@@ -135661,11 +131697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.skill_data_template
-
-	var_16_10[19280] = {
+	pg.base.skill_data_template[19280] = {
 		desc_get = "",
 		name = "Grin and fire！",
 		type = 1,
@@ -135771,11 +131803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.skill_data_template
-
-	var_16_11[19290] = {
+	pg.base.skill_data_template[19290] = {
 		desc_get = "",
 		name = "勇斗的Privateer",
 		type = 1,
@@ -135872,11 +131900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.skill_data_template
-
-	var_16_12[19300] = {
+	pg.base.skill_data_template[19300] = {
 		desc_get = "",
 		name = "断罪之炎",
 		type = 3,
@@ -136027,11 +132051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.skill_data_template
-
-	var_16_13[19310] = {
+	pg.base.skill_data_template[19310] = {
 		desc_get = "",
 		name = "反击之盾",
 		type = 2,
@@ -136092,11 +132112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.skill_data_template
-
-	var_16_14[19320] = {
+	pg.base.skill_data_template[19320] = {
 		desc_get = "",
 		name = "「Ausgewogen」",
 		type = 1,
@@ -136292,11 +132308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.skill_data_template
-
-	var_16_15[19330] = {
+	pg.base.skill_data_template[19330] = {
 		desc_get = "",
 		name = "求知之贤眼",
 		type = 3,
@@ -136492,11 +132504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.skill_data_template
-
-	var_16_16[19340] = {
+	pg.base.skill_data_template[19340] = {
 		desc_get = "",
 		name = "贯穿之轰雷",
 		type = 1,
@@ -136557,11 +132565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.skill_data_template
-
-	var_16_17[19350] = {
+	pg.base.skill_data_template[19350] = {
 		desc_get = "",
 		name = "辅助机构「S.P.」",
 		type = 1,
@@ -136658,11 +132662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.skill_data_template
-
-	var_16_18[19360] = {
+	pg.base.skill_data_template[19360] = {
 		desc_get = "",
 		name = "代行机构「E.E.」",
 		type = 3,
@@ -136858,11 +132858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.skill_data_template
-
-	var_16_19[19370] = {
+	pg.base.skill_data_template[19370] = {
 		desc_get = "",
 		name = "奥丁更换鱼雷弹幕形态效果ID占位",
 		type = 1,
@@ -136876,11 +132872,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.skill_data_template
-
-	var_16_20[19380] = {
+	pg.base.skill_data_template[19380] = {
 		desc_get = "",
 		name = "天雷罪灭",
 		type = 1,
@@ -136977,11 +132969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.skill_data_template
-
-	var_16_21[19390] = {
+	pg.base.skill_data_template[19390] = {
 		desc_get = "",
 		name = "锋焰显征",
 		type = 1,
@@ -137069,11 +133057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.skill_data_template
-
-	var_16_22[19400] = {
+	pg.base.skill_data_template[19400] = {
 		desc_get = "",
 		name = "白龙云影",
 		type = 3,
@@ -137134,11 +133118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.skill_data_template
-
-	var_16_23[19410] = {
+	pg.base.skill_data_template[19410] = {
 		desc_get = "",
 		name = "吞噬之漩",
 		type = 3,
@@ -137244,11 +133224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.skill_data_template
-
-	var_16_24[19420] = {
+	pg.base.skill_data_template[19420] = {
 		desc_get = "",
 		name = "映照之渊",
 		type = 2,
@@ -137444,11 +133420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.skill_data_template
-
-	var_16_25[19430] = {
+	pg.base.skill_data_template[19430] = {
 		desc_get = "",
 		name = "噬啮之颚",
 		type = 1,
@@ -137536,11 +133508,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.skill_data_template
-
-	var_16_26[19440] = {
+	pg.base.skill_data_template[19440] = {
 		desc_get = "",
 		name = "Riddle a riddle",
 		type = 1,
@@ -137682,11 +133650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.skill_data_template
-
-	var_16_27[19450] = {
+	pg.base.skill_data_template[19450] = {
 		desc_get = "",
 		name = "Hide and seek",
 		type = 2,
@@ -137792,11 +133756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.skill_data_template
-
-	var_16_28[19460] = {
+	pg.base.skill_data_template[19460] = {
 		desc_get = "",
 		name = "洞察技术-思想掌握",
 		type = 1,
@@ -137857,11 +133817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.skill_data_template
-
-	var_16_29[19470] = {
+	pg.base.skill_data_template[19470] = {
 		desc_get = "",
 		name = "攻击技术-本我轰击",
 		type = 1,
@@ -137913,11 +133869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.skill_data_template
-
-	var_16_30[19480] = {
+	pg.base.skill_data_template[19480] = {
 		desc_get = "",
 		name = "特殊技术-铁血翅翼",
 		type = 3,
@@ -138068,11 +134020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.skill_data_template
-
-	var_16_31[19490] = {
+	pg.base.skill_data_template[19490] = {
 		desc_get = "",
 		name = "跃动与回复之勇",
 		type = 1,
@@ -138180,11 +134128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.skill_data_template
-
-	var_16_32[19500] = {
+	pg.base.skill_data_template[19500] = {
 		desc_get = "",
 		name = "野心与恩泽之威",
 		type = 2,
@@ -138290,11 +134234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.skill_data_template
-
-	var_16_33[19510] = {
+	pg.base.skill_data_template[19510] = {
 		desc_get = "",
 		name = "开拓与探险之途",
 		type = 3,
@@ -138436,11 +134376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.skill_data_template
-
-	var_16_34[19520] = {
+	pg.base.skill_data_template[19520] = {
 		desc_get = "",
 		name = "开拓与探险之途-跨队效果ID占位",
 		type = 3,
@@ -138454,11 +134390,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.skill_data_template
-
-	var_16_35[19530] = {
+	pg.base.skill_data_template[19530] = {
 		desc_get = "",
 		name = "绽盛之威光",
 		type = 1,
@@ -138564,11 +134496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.skill_data_template
-
-	var_16_36[19540] = {
+	pg.base.skill_data_template[19540] = {
 		desc_get = "",
 		name = "探究之雾雨",
 		type = 2,
@@ -138719,11 +134647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.skill_data_template
-
-	var_16_37[19550] = {
+	pg.base.skill_data_template[19550] = {
 		desc_get = "",
 		name = "邪龙舰装·欲求之刃",
 		type = 1,
@@ -138856,11 +134780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.skill_data_template
-
-	var_16_38[19560] = {
+	pg.base.skill_data_template[19560] = {
 		desc_get = "",
 		name = "邪龙舰装·守护之环",
 		type = 2,
@@ -139011,11 +134931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.skill_data_template
-
-	var_16_39[19580] = {
+	pg.base.skill_data_template[19580] = {
 		desc_get = "",
 		name = "鱼雷，矢无虚发！",
 		type = 3,
@@ -139211,11 +135127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.skill_data_template
-
-	var_16_40[19590] = {
+	pg.base.skill_data_template[19590] = {
 		desc_get = "",
 		name = "炮火，倾泻如瀑！",
 		type = 1,
@@ -139366,11 +135278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.skill_data_template
-
-	var_16_41[19600] = {
+	pg.base.skill_data_template[19600] = {
 		desc_get = "",
 		name = "飞航试验·一齐攻击",
 		type = 1,
@@ -139512,11 +135420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.skill_data_template
-
-	var_16_42[19610] = {
+	pg.base.skill_data_template[19610] = {
 		desc_get = "",
 		name = "辅助试验·冻结射击",
 		type = 1,
@@ -139577,11 +135481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.skill_data_template
-
-	var_16_43[19630] = {
+	pg.base.skill_data_template[19630] = {
 		desc_get = "",
 		name = "精灵的合奏曲",
 		type = 1,
@@ -139732,11 +135632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.skill_data_template
-
-	var_16_44[19640] = {
+	pg.base.skill_data_template[19640] = {
 		desc_get = "",
 		name = "侧风的赞颂歌",
 		type = 3,
@@ -139842,11 +135738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.skill_data_template
-
-	var_16_45[19650] = {
+	pg.base.skill_data_template[19650] = {
 		desc_get = "",
 		name = "复苏的叙事诗",
 		type = 1,
@@ -139988,11 +135880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.skill_data_template
-
-	var_16_46[19659] = {
+	pg.base.skill_data_template[19659] = {
 		desc_get = "",
 		name = "布雷斯特展示关卡用",
 		type = 1,
@@ -140134,11 +136022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.skill_data_template
-
-	var_16_47[19660] = {
+	pg.base.skill_data_template[19660] = {
 		desc_get = "",
 		name = "多链路锁定系统",
 		type = 3,
@@ -140244,11 +136128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.skill_data_template
-
-	var_16_48[19670] = {
+	pg.base.skill_data_template[19670] = {
 		desc_get = "",
 		name = "功能性增幅机制",
 		type = 1,
@@ -140444,11 +136324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.skill_data_template
-
-	var_16_49[19680] = {
+	pg.base.skill_data_template[19680] = {
 		desc_get = "",
 		name = "自适应作战模块",
 		type = 1,
@@ -140545,11 +136421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.skill_data_template
-
-	var_16_50[19690] = {
+	pg.base.skill_data_template[19690] = {
 		desc_get = "",
 		name = "弱者的苦痛之源",
 		type = 1,
@@ -140736,11 +136608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.skill_data_template
-
-	var_16_51[19700] = {
+	pg.base.skill_data_template[19700] = {
 		desc_get = "",
 		name = "迂缓在欲望之渊",
 		type = 2,
@@ -140936,11 +136804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.skill_data_template
-
-	var_16_52[19710] = {
+	pg.base.skill_data_template[19710] = {
 		desc_get = "",
 		name = "寻乐的战场游戏",
 		type = 2,
@@ -141091,11 +136955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.skill_data_template
-
-	var_16_53[19720] = {
+	pg.base.skill_data_template[19720] = {
 		desc_get = "",
 		name = "愉悦的追灭猎杀",
 		type = 1,
@@ -141147,11 +137007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.skill_data_template
-
-	var_16_54[19730] = {
+	pg.base.skill_data_template[19730] = {
 		desc_get = "",
 		name = "战斗命令「急袭突破」",
 		type = 1,
@@ -141248,11 +137104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.skill_data_template
-
-	var_16_55[19740] = {
+	pg.base.skill_data_template[19740] = {
 		desc_get = "",
 		name = "增益命令「羽翼重丰」",
 		type = 2,
@@ -141358,11 +137210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.skill_data_template
-
-	var_16_56[19750] = {
+	pg.base.skill_data_template[19750] = {
 		desc_get = "",
 		name = "怒涛惩戒",
 		type = 1,
@@ -141459,11 +137307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.skill_data_template
-
-	var_16_57[19760] = {
+	pg.base.skill_data_template[19760] = {
 		desc_get = "",
 		name = "水龙神威",
 		type = 2,
@@ -141605,11 +137449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.skill_data_template
-
-	var_16_58[19770] = {
+	pg.base.skill_data_template[19770] = {
 		desc_get = "",
 		name = "无惧无畏的典范骑士",
 		type = 3,
@@ -141751,11 +137591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.skill_data_template
-
-	var_16_59[19780] = {
+	pg.base.skill_data_template[19780] = {
 		desc_get = "",
 		name = "承接期望的鸢尾之剑",
 		type = 1,
@@ -141816,11 +137652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.skill_data_template
-
-	var_16_60[19790] = {
+	pg.base.skill_data_template[19790] = {
 		desc_get = "",
 		name = "暗夜的制裁",
 		type = 1,
@@ -141962,11 +137794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.skill_data_template
-
-	var_16_61[19800] = {
+	pg.base.skill_data_template[19800] = {
 		desc_get = "",
 		name = "血族的完美主义",
 		type = 3,
@@ -142198,11 +138026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.skill_data_template
-
-	var_16_62[19810] = {
+	pg.base.skill_data_template[19810] = {
 		desc_get = "",
 		name = "破坏性峰值冲击",
 		type = 1,
@@ -142344,11 +138168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.skill_data_template
-
-	var_16_63[19820] = {
+	pg.base.skill_data_template[19820] = {
 		desc_get = "",
 		name = "安全性漏洞侵入",
 		type = 3,
@@ -142409,11 +138229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.skill_data_template
-
-	var_16_64[19830] = {
+	pg.base.skill_data_template[19830] = {
 		desc_get = "",
 		name = "可信任平台模块",
 		type = 2,
@@ -142474,11 +138290,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.skill_data_template
-
-	var_16_65[19840] = {
+	pg.base.skill_data_template[19840] = {
 		desc_get = "",
 		name = "永眠之邀",
 		type = 1,
@@ -142575,11 +138387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.skill_data_template
-
-	var_16_66[19850] = {
+	pg.base.skill_data_template[19850] = {
 		desc_get = "",
 		name = "雾雨朦胧",
 		type = 2,
@@ -142730,11 +138538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.skill_data_template
-
-	var_16_67[19860] = {
+	pg.base.skill_data_template[19860] = {
 		desc_get = "",
 		name = "因果锚定",
 		type = 1,
@@ -142876,11 +138680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.skill_data_template
-
-	var_16_68[19870] = {
+	pg.base.skill_data_template[19870] = {
 		desc_get = "",
 		name = "福佑于身",
 		type = 3,
@@ -142986,11 +138786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.skill_data_template
-
-	var_16_69[19880] = {
+	pg.base.skill_data_template[19880] = {
 		desc_get = "",
 		name = "那不勒斯燃油烟雾buff效果占位",
 		type = 3,
@@ -143004,11 +138800,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.skill_data_template
-
-	var_16_70[19890] = {
+	pg.base.skill_data_template[19890] = {
 		desc_get = "",
 		name = "终焉裁决·斩击之翼",
 		type = 1,
@@ -143240,11 +139032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.skill_data_template
-
-	var_16_71[19900] = {
+	pg.base.skill_data_template[19900] = {
 		desc_get = "",
 		name = "万象伊始·法则重构",
 		type = 3,
@@ -143350,11 +139138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.skill_data_template
-
-	var_16_72[19910] = {
+	pg.base.skill_data_template[19910] = {
 		desc_get = "",
 		name = "制约限界·不破障壁",
 		type = 2,
@@ -143415,11 +139199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.skill_data_template
-
-	var_16_73[19920] = {
+	pg.base.skill_data_template[19920] = {
 		desc_get = "",
 		name = "光坠星陨",
 		type = 1,
@@ -143471,11 +139251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.skill_data_template
-
-	var_16_74[19930] = {
+	pg.base.skill_data_template[19930] = {
 		desc_get = "",
 		name = "自然之佑",
 		type = 3,
@@ -143626,11 +139402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.skill_data_template
-
-	var_16_75[19940] = {
+	pg.base.skill_data_template[19940] = {
 		desc_get = "",
 		name = "空灵回响",
 		type = 1,
@@ -143727,11 +139499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.skill_data_template
-
-	var_16_76[19950] = {
+	pg.base.skill_data_template[19950] = {
 		desc_get = "",
 		name = "朦胧映紫月",
 		type = 2,
@@ -143828,11 +139596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.skill_data_template
-
-	var_16_77[19960] = {
+	pg.base.skill_data_template[19960] = {
 		desc_get = "",
 		name = "求索星月夜",
 		type = 3,
@@ -143983,11 +139747,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.skill_data_template
-
-	var_16_78[19970] = {
+	pg.base.skill_data_template[19970] = {
 		desc_get = "",
 		name = "金狮-基地航空属性-ID占位",
 		type = 1,
@@ -144001,11 +139761,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.skill_data_template
-
-	var_16_79[19972] = {
+	pg.base.skill_data_template[19972] = {
 		desc_get = "",
 		name = "金狮-基地航空属性-ID占位",
 		type = 1,
@@ -144019,11 +139775,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.skill_data_template
-
-	var_16_80[19974] = {
+	pg.base.skill_data_template[19974] = {
 		desc_get = "",
 		name = "金狮-基地航空属性-ID占位",
 		type = 1,
@@ -144037,11 +139789,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.skill_data_template
-
-	var_16_81[19976] = {
+	pg.base.skill_data_template[19976] = {
 		desc_get = "",
 		name = "金狮-基地航空属性-ID占位",
 		type = 1,
@@ -144055,11 +139803,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_81
-
-	local var_16_82 = var_16_81.base.skill_data_template
-
-	var_16_82[19980] = {
+	pg.base.skill_data_template[19980] = {
 		desc_get = "",
 		name = "蓄能爆发",
 		type = 1,
@@ -144246,11 +139990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.skill_data_template
-
-	var_16_83[19990] = {
+	pg.base.skill_data_template[19990] = {
 		desc_get = "",
 		name = "以坚挫锐",
 		type = 2,
@@ -144401,11 +140141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.skill_data_template
-
-	var_16_84[190030] = {
+	pg.base.skill_data_template[190030] = {
 		desc_get = "",
 		name = "荒古囚龙之翼",
 		type = 1,
@@ -144637,11 +140373,11 @@ end)()
 			}
 		}
 	}
-	pg = var_16_84
 
-	local var_16_85 = var_16_84.base.skill_data_template
-
-	var_16_85[190040] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[190040] = {
 		desc_get = "",
 		name = "激荡苍穹之影",
 		type = 3,
@@ -144747,11 +140483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.skill_data_template
-
-	var_16_86[190050] = {
+	pg.base.skill_data_template[190050] = {
 		desc_get = "",
 		name = "不破龙鳞之壁",
 		type = 2,
@@ -144902,11 +140634,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.skill_data_template
-
-	var_16_87[20000] = {
+	pg.base.skill_data_template[20000] = {
 		desc_get = "",
 		name = "堪萨斯智能底座1",
 		type = 0,
@@ -144920,11 +140648,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.skill_data_template
-
-	var_16_88[20001] = {
+	pg.base.skill_data_template[20001] = {
 		desc_get = "",
 		name = "堪萨斯智能底座2",
 		type = 0,
@@ -144938,11 +140662,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.skill_data_template
-
-	var_16_89[20002] = {
+	pg.base.skill_data_template[20002] = {
 		desc_get = "",
 		name = "堪萨斯智能底座3",
 		type = 0,
@@ -144956,11 +140676,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.skill_data_template
-
-	var_16_90[20011] = {
+	pg.base.skill_data_template[20011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -144974,11 +140690,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.skill_data_template
-
-	var_16_91[20012] = {
+	pg.base.skill_data_template[20012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -144992,11 +140704,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.skill_data_template
-
-	var_16_92[20021] = {
+	pg.base.skill_data_template[20021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145010,11 +140718,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.skill_data_template
-
-	var_16_93[20022] = {
+	pg.base.skill_data_template[20022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145028,11 +140732,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.skill_data_template
-
-	var_16_94[20031] = {
+	pg.base.skill_data_template[20031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145046,11 +140746,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.skill_data_template
-
-	var_16_95[20032] = {
+	pg.base.skill_data_template[20032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145064,11 +140760,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.skill_data_template
-
-	var_16_96[20041] = {
+	pg.base.skill_data_template[20041] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145082,11 +140774,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.skill_data_template
-
-	var_16_97[20042] = {
+	pg.base.skill_data_template[20042] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145100,11 +140788,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.skill_data_template
-
-	var_16_98[20051] = {
+	pg.base.skill_data_template[20051] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145118,8 +140802,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_16_98
-	var_16_98.base.skill_data_template[20052] = {
+	pg.base.skill_data_template[20052] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145133,15 +140816,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.skill_data_template
-
-	var_17_0[20061] = {
+	pg.base.skill_data_template[20061] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145155,11 +140830,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.skill_data_template
-
-	var_17_1[20062] = {
+	pg.base.skill_data_template[20062] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145173,11 +140844,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.skill_data_template
-
-	var_17_2[20071] = {
+	pg.base.skill_data_template[20071] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145191,11 +140858,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.skill_data_template
-
-	var_17_3[20072] = {
+	pg.base.skill_data_template[20072] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145209,11 +140872,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.skill_data_template
-
-	var_17_4[20081] = {
+	pg.base.skill_data_template[20081] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145227,11 +140886,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.skill_data_template
-
-	var_17_5[20082] = {
+	pg.base.skill_data_template[20082] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145245,11 +140900,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.skill_data_template
-
-	var_17_6[20091] = {
+	pg.base.skill_data_template[20091] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145263,11 +140914,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.skill_data_template
-
-	var_17_7[20092] = {
+	pg.base.skill_data_template[20092] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145281,11 +140928,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.skill_data_template
-
-	var_17_8[20111] = {
+	pg.base.skill_data_template[20111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145299,11 +140942,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.skill_data_template
-
-	var_17_9[20112] = {
+	pg.base.skill_data_template[20112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145317,11 +140956,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.skill_data_template
-
-	var_17_10[20121] = {
+	pg.base.skill_data_template[20121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145335,11 +140970,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.skill_data_template
-
-	var_17_11[20122] = {
+	pg.base.skill_data_template[20122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145353,11 +140984,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.skill_data_template
-
-	var_17_12[20131] = {
+	pg.base.skill_data_template[20131] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145371,11 +140998,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.skill_data_template
-
-	var_17_13[20132] = {
+	pg.base.skill_data_template[20132] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145389,11 +141012,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.skill_data_template
-
-	var_17_14[20133] = {
+	pg.base.skill_data_template[20133] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -145407,11 +141026,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.skill_data_template
-
-	var_17_15[20141] = {
+	pg.base.skill_data_template[20141] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145425,11 +141040,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.skill_data_template
-
-	var_17_16[20142] = {
+	pg.base.skill_data_template[20142] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145443,11 +141054,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.skill_data_template
-
-	var_17_17[20211] = {
+	pg.base.skill_data_template[20211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145461,11 +141068,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.skill_data_template
-
-	var_17_18[20212] = {
+	pg.base.skill_data_template[20212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145479,11 +141082,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.skill_data_template
-
-	var_17_19[20221] = {
+	pg.base.skill_data_template[20221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145497,11 +141096,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.skill_data_template
-
-	var_17_20[20222] = {
+	pg.base.skill_data_template[20222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145515,11 +141110,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.skill_data_template
-
-	var_17_21[20231] = {
+	pg.base.skill_data_template[20231] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145533,11 +141124,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.skill_data_template
-
-	var_17_22[20232] = {
+	pg.base.skill_data_template[20232] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145551,11 +141138,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.skill_data_template
-
-	var_17_23[20241] = {
+	pg.base.skill_data_template[20241] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145569,11 +141152,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.skill_data_template
-
-	var_17_24[20242] = {
+	pg.base.skill_data_template[20242] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145587,11 +141166,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.skill_data_template
-
-	var_17_25[20251] = {
+	pg.base.skill_data_template[20251] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145605,11 +141180,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.skill_data_template
-
-	var_17_26[20252] = {
+	pg.base.skill_data_template[20252] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145623,11 +141194,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.skill_data_template
-
-	var_17_27[20261] = {
+	pg.base.skill_data_template[20261] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145641,11 +141208,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.skill_data_template
-
-	var_17_28[20262] = {
+	pg.base.skill_data_template[20262] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145659,11 +141222,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.skill_data_template
-
-	var_17_29[20271] = {
+	pg.base.skill_data_template[20271] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145677,11 +141236,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.skill_data_template
-
-	var_17_30[20272] = {
+	pg.base.skill_data_template[20272] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145695,11 +141250,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.skill_data_template
-
-	var_17_31[20281] = {
+	pg.base.skill_data_template[20281] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145713,11 +141264,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.skill_data_template
-
-	var_17_32[20282] = {
+	pg.base.skill_data_template[20282] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145731,11 +141278,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_32
-
-	local var_17_33 = var_17_32.base.skill_data_template
-
-	var_17_33[20311] = {
+	pg.base.skill_data_template[20311] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145749,11 +141292,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_33
-
-	local var_17_34 = var_17_33.base.skill_data_template
-
-	var_17_34[20312] = {
+	pg.base.skill_data_template[20312] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145767,11 +141306,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_34
-
-	local var_17_35 = var_17_34.base.skill_data_template
-
-	var_17_35[20321] = {
+	pg.base.skill_data_template[20321] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145785,11 +141320,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_35
-
-	local var_17_36 = var_17_35.base.skill_data_template
-
-	var_17_36[20322] = {
+	pg.base.skill_data_template[20322] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145803,11 +141334,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_36
-
-	local var_17_37 = var_17_36.base.skill_data_template
-
-	var_17_37[21011] = {
+	pg.base.skill_data_template[21011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145821,11 +141348,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_37
-
-	local var_17_38 = var_17_37.base.skill_data_template
-
-	var_17_38[21012] = {
+	pg.base.skill_data_template[21012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145839,11 +141362,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_38
-
-	local var_17_39 = var_17_38.base.skill_data_template
-
-	var_17_39[21016] = {
+	pg.base.skill_data_template[21016] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145857,11 +141376,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_39
-
-	local var_17_40 = var_17_39.base.skill_data_template
-
-	var_17_40[21017] = {
+	pg.base.skill_data_template[21017] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145875,11 +141390,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_40
-
-	local var_17_41 = var_17_40.base.skill_data_template
-
-	var_17_41[21021] = {
+	pg.base.skill_data_template[21021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145893,11 +141404,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_41
-
-	local var_17_42 = var_17_41.base.skill_data_template
-
-	var_17_42[21022] = {
+	pg.base.skill_data_template[21022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145911,11 +141418,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_42
-
-	local var_17_43 = var_17_42.base.skill_data_template
-
-	var_17_43[21026] = {
+	pg.base.skill_data_template[21026] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145929,11 +141432,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_43
-
-	local var_17_44 = var_17_43.base.skill_data_template
-
-	var_17_44[21027] = {
+	pg.base.skill_data_template[21027] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145947,11 +141446,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_44
-
-	local var_17_45 = var_17_44.base.skill_data_template
-
-	var_17_45[21031] = {
+	pg.base.skill_data_template[21031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -145965,11 +141460,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_45
-
-	local var_17_46 = var_17_45.base.skill_data_template
-
-	var_17_46[21032] = {
+	pg.base.skill_data_template[21032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -145983,11 +141474,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_46
-
-	local var_17_47 = var_17_46.base.skill_data_template
-
-	var_17_47[21041] = {
+	pg.base.skill_data_template[21041] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146001,11 +141488,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_47
-
-	local var_17_48 = var_17_47.base.skill_data_template
-
-	var_17_48[21042] = {
+	pg.base.skill_data_template[21042] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146019,11 +141502,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_48
-
-	local var_17_49 = var_17_48.base.skill_data_template
-
-	var_17_49[21051] = {
+	pg.base.skill_data_template[21051] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146037,11 +141516,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_49
-
-	local var_17_50 = var_17_49.base.skill_data_template
-
-	var_17_50[21052] = {
+	pg.base.skill_data_template[21052] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146055,11 +141530,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_50
-
-	local var_17_51 = var_17_50.base.skill_data_template
-
-	var_17_51[21061] = {
+	pg.base.skill_data_template[21061] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146073,11 +141544,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_51
-
-	local var_17_52 = var_17_51.base.skill_data_template
-
-	var_17_52[21062] = {
+	pg.base.skill_data_template[21062] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146091,11 +141558,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_52
-
-	local var_17_53 = var_17_52.base.skill_data_template
-
-	var_17_53[21071] = {
+	pg.base.skill_data_template[21071] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146109,11 +141572,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_53
-
-	local var_17_54 = var_17_53.base.skill_data_template
-
-	var_17_54[21072] = {
+	pg.base.skill_data_template[21072] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146127,11 +141586,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_54
-
-	local var_17_55 = var_17_54.base.skill_data_template
-
-	var_17_55[21081] = {
+	pg.base.skill_data_template[21081] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146145,11 +141600,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_55
-
-	local var_17_56 = var_17_55.base.skill_data_template
-
-	var_17_56[21082] = {
+	pg.base.skill_data_template[21082] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146163,11 +141614,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_56
-
-	local var_17_57 = var_17_56.base.skill_data_template
-
-	var_17_57[21091] = {
+	pg.base.skill_data_template[21091] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146181,11 +141628,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_57
-
-	local var_17_58 = var_17_57.base.skill_data_template
-
-	var_17_58[21092] = {
+	pg.base.skill_data_template[21092] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146199,11 +141642,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_58
-
-	local var_17_59 = var_17_58.base.skill_data_template
-
-	var_17_59[21111] = {
+	pg.base.skill_data_template[21111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146217,11 +141656,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_59
-
-	local var_17_60 = var_17_59.base.skill_data_template
-
-	var_17_60[21112] = {
+	pg.base.skill_data_template[21112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146235,11 +141670,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_60
-
-	local var_17_61 = var_17_60.base.skill_data_template
-
-	var_17_61[21121] = {
+	pg.base.skill_data_template[21121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146253,11 +141684,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_61
-
-	local var_17_62 = var_17_61.base.skill_data_template
-
-	var_17_62[21122] = {
+	pg.base.skill_data_template[21122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146271,11 +141698,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_62
-
-	local var_17_63 = var_17_62.base.skill_data_template
-
-	var_17_63[21131] = {
+	pg.base.skill_data_template[21131] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146289,11 +141712,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_63
-
-	local var_17_64 = var_17_63.base.skill_data_template
-
-	var_17_64[21132] = {
+	pg.base.skill_data_template[21132] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146307,11 +141726,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_64
-
-	local var_17_65 = var_17_64.base.skill_data_template
-
-	var_17_65[21141] = {
+	pg.base.skill_data_template[21141] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146325,11 +141740,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_65
-
-	local var_17_66 = var_17_65.base.skill_data_template
-
-	var_17_66[21142] = {
+	pg.base.skill_data_template[21142] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146343,11 +141754,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_66
-
-	local var_17_67 = var_17_66.base.skill_data_template
-
-	var_17_67[21151] = {
+	pg.base.skill_data_template[21151] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146361,11 +141768,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_67
-
-	local var_17_68 = var_17_67.base.skill_data_template
-
-	var_17_68[21152] = {
+	pg.base.skill_data_template[21152] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146379,11 +141782,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_68
-
-	local var_17_69 = var_17_68.base.skill_data_template
-
-	var_17_69[21161] = {
+	pg.base.skill_data_template[21161] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146397,11 +141796,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_69
-
-	local var_17_70 = var_17_69.base.skill_data_template
-
-	var_17_70[21162] = {
+	pg.base.skill_data_template[21162] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146415,11 +141810,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_70
-
-	local var_17_71 = var_17_70.base.skill_data_template
-
-	var_17_71[21171] = {
+	pg.base.skill_data_template[21171] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146433,11 +141824,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_71
-
-	local var_17_72 = var_17_71.base.skill_data_template
-
-	var_17_72[21172] = {
+	pg.base.skill_data_template[21172] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146451,11 +141838,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_72
-
-	local var_17_73 = var_17_72.base.skill_data_template
-
-	var_17_73[21181] = {
+	pg.base.skill_data_template[21181] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146469,11 +141852,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_73
-
-	local var_17_74 = var_17_73.base.skill_data_template
-
-	var_17_74[21182] = {
+	pg.base.skill_data_template[21182] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146487,11 +141866,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_74
-
-	local var_17_75 = var_17_74.base.skill_data_template
-
-	var_17_75[21191] = {
+	pg.base.skill_data_template[21191] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146505,11 +141880,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_75
-
-	local var_17_76 = var_17_75.base.skill_data_template
-
-	var_17_76[21192] = {
+	pg.base.skill_data_template[21192] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146523,11 +141894,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_76
-
-	local var_17_77 = var_17_76.base.skill_data_template
-
-	var_17_77[21211] = {
+	pg.base.skill_data_template[21211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146541,11 +141908,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_77
-
-	local var_17_78 = var_17_77.base.skill_data_template
-
-	var_17_78[21212] = {
+	pg.base.skill_data_template[21212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146559,11 +141922,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_78
-
-	local var_17_79 = var_17_78.base.skill_data_template
-
-	var_17_79[21221] = {
+	pg.base.skill_data_template[21221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146577,11 +141936,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_79
-
-	local var_17_80 = var_17_79.base.skill_data_template
-
-	var_17_80[21222] = {
+	pg.base.skill_data_template[21222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146595,11 +141950,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_80
-
-	local var_17_81 = var_17_80.base.skill_data_template
-
-	var_17_81[21231] = {
+	pg.base.skill_data_template[21231] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146613,11 +141964,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_81
-
-	local var_17_82 = var_17_81.base.skill_data_template
-
-	var_17_82[21232] = {
+	pg.base.skill_data_template[21232] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146631,11 +141978,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_82
-
-	local var_17_83 = var_17_82.base.skill_data_template
-
-	var_17_83[21241] = {
+	pg.base.skill_data_template[21241] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146649,11 +141992,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_83
-
-	local var_17_84 = var_17_83.base.skill_data_template
-
-	var_17_84[21242] = {
+	pg.base.skill_data_template[21242] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146667,11 +142006,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_84
 
-	local var_17_85 = var_17_84.base.skill_data_template
-
-	var_17_85[22011] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[22011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146685,11 +142024,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_85
-
-	local var_17_86 = var_17_85.base.skill_data_template
-
-	var_17_86[22012] = {
+	pg.base.skill_data_template[22012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146703,11 +142038,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_86
-
-	local var_17_87 = var_17_86.base.skill_data_template
-
-	var_17_87[22021] = {
+	pg.base.skill_data_template[22021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146721,11 +142052,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_87
-
-	local var_17_88 = var_17_87.base.skill_data_template
-
-	var_17_88[22022] = {
+	pg.base.skill_data_template[22022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146739,11 +142066,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_88
-
-	local var_17_89 = var_17_88.base.skill_data_template
-
-	var_17_89[22031] = {
+	pg.base.skill_data_template[22031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146757,11 +142080,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_89
-
-	local var_17_90 = var_17_89.base.skill_data_template
-
-	var_17_90[22032] = {
+	pg.base.skill_data_template[22032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146775,11 +142094,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_90
-
-	local var_17_91 = var_17_90.base.skill_data_template
-
-	var_17_91[22041] = {
+	pg.base.skill_data_template[22041] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146793,11 +142108,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_91
-
-	local var_17_92 = var_17_91.base.skill_data_template
-
-	var_17_92[22042] = {
+	pg.base.skill_data_template[22042] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146811,11 +142122,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_92
-
-	local var_17_93 = var_17_92.base.skill_data_template
-
-	var_17_93[22051] = {
+	pg.base.skill_data_template[22051] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146829,11 +142136,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_93
-
-	local var_17_94 = var_17_93.base.skill_data_template
-
-	var_17_94[22052] = {
+	pg.base.skill_data_template[22052] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146847,11 +142150,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_94
-
-	local var_17_95 = var_17_94.base.skill_data_template
-
-	var_17_95[22056] = {
+	pg.base.skill_data_template[22056] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146865,11 +142164,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_95
-
-	local var_17_96 = var_17_95.base.skill_data_template
-
-	var_17_96[22057] = {
+	pg.base.skill_data_template[22057] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146883,11 +142178,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_96
-
-	local var_17_97 = var_17_96.base.skill_data_template
-
-	var_17_97[22061] = {
+	pg.base.skill_data_template[22061] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146901,11 +142192,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_97
-
-	local var_17_98 = var_17_97.base.skill_data_template
-
-	var_17_98[22062] = {
+	pg.base.skill_data_template[22062] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146919,8 +142206,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_17_98
-	var_17_98.base.skill_data_template[22071] = {
+	pg.base.skill_data_template[22071] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146934,15 +142220,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_18_0 = var_1_10000.base.skill_data_template
-
-	var_18_0[22072] = {
+	pg.base.skill_data_template[22072] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146956,11 +142234,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_0
-
-	local var_18_1 = var_18_0.base.skill_data_template
-
-	var_18_1[22081] = {
+	pg.base.skill_data_template[22081] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -146974,11 +142248,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_1
-
-	local var_18_2 = var_18_1.base.skill_data_template
-
-	var_18_2[22082] = {
+	pg.base.skill_data_template[22082] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -146992,11 +142262,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_2
-
-	local var_18_3 = var_18_2.base.skill_data_template
-
-	var_18_3[22091] = {
+	pg.base.skill_data_template[22091] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147010,11 +142276,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_3
-
-	local var_18_4 = var_18_3.base.skill_data_template
-
-	var_18_4[22092] = {
+	pg.base.skill_data_template[22092] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147028,11 +142290,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_4
-
-	local var_18_5 = var_18_4.base.skill_data_template
-
-	var_18_5[22111] = {
+	pg.base.skill_data_template[22111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147046,11 +142304,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_5
-
-	local var_18_6 = var_18_5.base.skill_data_template
-
-	var_18_6[22112] = {
+	pg.base.skill_data_template[22112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147064,11 +142318,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_6
-
-	local var_18_7 = var_18_6.base.skill_data_template
-
-	var_18_7[22121] = {
+	pg.base.skill_data_template[22121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147082,11 +142332,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_7
-
-	local var_18_8 = var_18_7.base.skill_data_template
-
-	var_18_8[22122] = {
+	pg.base.skill_data_template[22122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147100,11 +142346,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_8
-
-	local var_18_9 = var_18_8.base.skill_data_template
-
-	var_18_9[22131] = {
+	pg.base.skill_data_template[22131] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147118,11 +142360,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_9
-
-	local var_18_10 = var_18_9.base.skill_data_template
-
-	var_18_10[22132] = {
+	pg.base.skill_data_template[22132] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147136,11 +142374,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_10
-
-	local var_18_11 = var_18_10.base.skill_data_template
-
-	var_18_11[22141] = {
+	pg.base.skill_data_template[22141] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147154,11 +142388,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_11
-
-	local var_18_12 = var_18_11.base.skill_data_template
-
-	var_18_12[22142] = {
+	pg.base.skill_data_template[22142] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147172,11 +142402,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_12
-
-	local var_18_13 = var_18_12.base.skill_data_template
-
-	var_18_13[22151] = {
+	pg.base.skill_data_template[22151] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147190,11 +142416,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_13
-
-	local var_18_14 = var_18_13.base.skill_data_template
-
-	var_18_14[22152] = {
+	pg.base.skill_data_template[22152] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147208,11 +142430,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_14
-
-	local var_18_15 = var_18_14.base.skill_data_template
-
-	var_18_15[22161] = {
+	pg.base.skill_data_template[22161] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147226,11 +142444,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_15
-
-	local var_18_16 = var_18_15.base.skill_data_template
-
-	var_18_16[22162] = {
+	pg.base.skill_data_template[22162] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147244,11 +142458,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_16
-
-	local var_18_17 = var_18_16.base.skill_data_template
-
-	var_18_17[22211] = {
+	pg.base.skill_data_template[22211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147262,11 +142472,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_17
-
-	local var_18_18 = var_18_17.base.skill_data_template
-
-	var_18_18[22212] = {
+	pg.base.skill_data_template[22212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147280,11 +142486,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_18
-
-	local var_18_19 = var_18_18.base.skill_data_template
-
-	var_18_19[22221] = {
+	pg.base.skill_data_template[22221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147298,11 +142500,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_19
-
-	local var_18_20 = var_18_19.base.skill_data_template
-
-	var_18_20[22222] = {
+	pg.base.skill_data_template[22222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147316,11 +142514,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_20
-
-	local var_18_21 = var_18_20.base.skill_data_template
-
-	var_18_21[22231] = {
+	pg.base.skill_data_template[22231] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147334,11 +142528,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_21
-
-	local var_18_22 = var_18_21.base.skill_data_template
-
-	var_18_22[22232] = {
+	pg.base.skill_data_template[22232] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147352,11 +142542,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_22
-
-	local var_18_23 = var_18_22.base.skill_data_template
-
-	var_18_23[22241] = {
+	pg.base.skill_data_template[22241] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147370,11 +142556,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_23
-
-	local var_18_24 = var_18_23.base.skill_data_template
-
-	var_18_24[22242] = {
+	pg.base.skill_data_template[22242] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147388,11 +142570,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_24
-
-	local var_18_25 = var_18_24.base.skill_data_template
-
-	var_18_25[22251] = {
+	pg.base.skill_data_template[22251] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147406,11 +142584,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_25
-
-	local var_18_26 = var_18_25.base.skill_data_template
-
-	var_18_26[22252] = {
+	pg.base.skill_data_template[22252] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147424,11 +142598,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_26
-
-	local var_18_27 = var_18_26.base.skill_data_template
-
-	var_18_27[22253] = {
+	pg.base.skill_data_template[22253] = {
 		desc_get = "",
 		name = "全弹发射改",
 		type = 1,
@@ -147442,11 +142612,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_27
-
-	local var_18_28 = var_18_27.base.skill_data_template
-
-	var_18_28[22254] = {
+	pg.base.skill_data_template[22254] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147460,11 +142626,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_28
-
-	local var_18_29 = var_18_28.base.skill_data_template
-
-	var_18_29[22255] = {
+	pg.base.skill_data_template[22255] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147478,11 +142640,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_29
-
-	local var_18_30 = var_18_29.base.skill_data_template
-
-	var_18_30[22261] = {
+	pg.base.skill_data_template[22261] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147496,11 +142654,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_30
-
-	local var_18_31 = var_18_30.base.skill_data_template
-
-	var_18_31[22262] = {
+	pg.base.skill_data_template[22262] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147514,11 +142668,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_31
-
-	local var_18_32 = var_18_31.base.skill_data_template
-
-	var_18_32[22271] = {
+	pg.base.skill_data_template[22271] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147532,11 +142682,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_32
-
-	local var_18_33 = var_18_32.base.skill_data_template
-
-	var_18_33[22272] = {
+	pg.base.skill_data_template[22272] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147550,11 +142696,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_33
-
-	local var_18_34 = var_18_33.base.skill_data_template
-
-	var_18_34[22281] = {
+	pg.base.skill_data_template[22281] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147568,11 +142710,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_34
-
-	local var_18_35 = var_18_34.base.skill_data_template
-
-	var_18_35[22282] = {
+	pg.base.skill_data_template[22282] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147586,11 +142724,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_35
-
-	local var_18_36 = var_18_35.base.skill_data_template
-
-	var_18_36[22311] = {
+	pg.base.skill_data_template[22311] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147604,11 +142738,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_36
-
-	local var_18_37 = var_18_36.base.skill_data_template
-
-	var_18_37[22312] = {
+	pg.base.skill_data_template[22312] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147622,11 +142752,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_37
-
-	local var_18_38 = var_18_37.base.skill_data_template
-
-	var_18_38[22411] = {
+	pg.base.skill_data_template[22411] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147640,11 +142766,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_38
-
-	local var_18_39 = var_18_38.base.skill_data_template
-
-	var_18_39[22412] = {
+	pg.base.skill_data_template[22412] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147658,11 +142780,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_39
-
-	local var_18_40 = var_18_39.base.skill_data_template
-
-	var_18_40[23011] = {
+	pg.base.skill_data_template[23011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147676,11 +142794,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_40
-
-	local var_18_41 = var_18_40.base.skill_data_template
-
-	var_18_41[23012] = {
+	pg.base.skill_data_template[23012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147694,11 +142808,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_41
-
-	local var_18_42 = var_18_41.base.skill_data_template
-
-	var_18_42[23021] = {
+	pg.base.skill_data_template[23021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147712,11 +142822,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_42
-
-	local var_18_43 = var_18_42.base.skill_data_template
-
-	var_18_43[23022] = {
+	pg.base.skill_data_template[23022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147730,11 +142836,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_43
-
-	local var_18_44 = var_18_43.base.skill_data_template
-
-	var_18_44[23031] = {
+	pg.base.skill_data_template[23031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147748,11 +142850,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_44
-
-	local var_18_45 = var_18_44.base.skill_data_template
-
-	var_18_45[23032] = {
+	pg.base.skill_data_template[23032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147766,11 +142864,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_45
-
-	local var_18_46 = var_18_45.base.skill_data_template
-
-	var_18_46[23041] = {
+	pg.base.skill_data_template[23041] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147784,11 +142878,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_46
-
-	local var_18_47 = var_18_46.base.skill_data_template
-
-	var_18_47[23042] = {
+	pg.base.skill_data_template[23042] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147802,11 +142892,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_47
-
-	local var_18_48 = var_18_47.base.skill_data_template
-
-	var_18_48[23051] = {
+	pg.base.skill_data_template[23051] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147820,11 +142906,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_48
-
-	local var_18_49 = var_18_48.base.skill_data_template
-
-	var_18_49[23052] = {
+	pg.base.skill_data_template[23052] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147838,11 +142920,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_49
-
-	local var_18_50 = var_18_49.base.skill_data_template
-
-	var_18_50[23111] = {
+	pg.base.skill_data_template[23111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147856,11 +142934,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_50
-
-	local var_18_51 = var_18_50.base.skill_data_template
-
-	var_18_51[23112] = {
+	pg.base.skill_data_template[23112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147874,11 +142948,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_51
-
-	local var_18_52 = var_18_51.base.skill_data_template
-
-	var_18_52[23121] = {
+	pg.base.skill_data_template[23121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147892,11 +142962,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_52
-
-	local var_18_53 = var_18_52.base.skill_data_template
-
-	var_18_53[23122] = {
+	pg.base.skill_data_template[23122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147910,11 +142976,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_53
-
-	local var_18_54 = var_18_53.base.skill_data_template
-
-	var_18_54[23131] = {
+	pg.base.skill_data_template[23131] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147928,11 +142990,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_54
-
-	local var_18_55 = var_18_54.base.skill_data_template
-
-	var_18_55[23132] = {
+	pg.base.skill_data_template[23132] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147946,11 +143004,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_55
-
-	local var_18_56 = var_18_55.base.skill_data_template
-
-	var_18_56[23211] = {
+	pg.base.skill_data_template[23211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -147964,11 +143018,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_56
-
-	local var_18_57 = var_18_56.base.skill_data_template
-
-	var_18_57[23212] = {
+	pg.base.skill_data_template[23212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -147982,11 +143032,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_57
-
-	local var_18_58 = var_18_57.base.skill_data_template
-
-	var_18_58[23221] = {
+	pg.base.skill_data_template[23221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148000,11 +143046,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_58
-
-	local var_18_59 = var_18_58.base.skill_data_template
-
-	var_18_59[23222] = {
+	pg.base.skill_data_template[23222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148018,11 +143060,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_59
-
-	local var_18_60 = var_18_59.base.skill_data_template
-
-	var_18_60[23231] = {
+	pg.base.skill_data_template[23231] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148036,11 +143074,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_60
-
-	local var_18_61 = var_18_60.base.skill_data_template
-
-	var_18_61[23232] = {
+	pg.base.skill_data_template[23232] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148054,11 +143088,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_61
-
-	local var_18_62 = var_18_61.base.skill_data_template
-
-	var_18_62[23241] = {
+	pg.base.skill_data_template[23241] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148072,11 +143102,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_62
-
-	local var_18_63 = var_18_62.base.skill_data_template
-
-	var_18_63[23242] = {
+	pg.base.skill_data_template[23242] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148090,11 +143116,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_63
-
-	local var_18_64 = var_18_63.base.skill_data_template
-
-	var_18_64[23311] = {
+	pg.base.skill_data_template[23311] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148108,11 +143130,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_64
-
-	local var_18_65 = var_18_64.base.skill_data_template
-
-	var_18_65[23312] = {
+	pg.base.skill_data_template[23312] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148126,11 +143144,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_65
-
-	local var_18_66 = var_18_65.base.skill_data_template
-
-	var_18_66[23321] = {
+	pg.base.skill_data_template[23321] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148144,11 +143158,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_66
-
-	local var_18_67 = var_18_66.base.skill_data_template
-
-	var_18_67[23322] = {
+	pg.base.skill_data_template[23322] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148162,11 +143172,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_67
-
-	local var_18_68 = var_18_67.base.skill_data_template
-
-	var_18_68[23411] = {
+	pg.base.skill_data_template[23411] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148180,11 +143186,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_68
-
-	local var_18_69 = var_18_68.base.skill_data_template
-
-	var_18_69[23412] = {
+	pg.base.skill_data_template[23412] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148198,11 +143200,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_69
-
-	local var_18_70 = var_18_69.base.skill_data_template
-
-	var_18_70[23511] = {
+	pg.base.skill_data_template[23511] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148216,11 +143214,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_70
-
-	local var_18_71 = var_18_70.base.skill_data_template
-
-	var_18_71[23512] = {
+	pg.base.skill_data_template[23512] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148234,11 +143228,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_71
-
-	local var_18_72 = var_18_71.base.skill_data_template
-
-	var_18_72[23611] = {
+	pg.base.skill_data_template[23611] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148252,11 +143242,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_72
-
-	local var_18_73 = var_18_72.base.skill_data_template
-
-	var_18_73[23612] = {
+	pg.base.skill_data_template[23612] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148270,11 +143256,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_73
-
-	local var_18_74 = var_18_73.base.skill_data_template
-
-	var_18_74[24011] = {
+	pg.base.skill_data_template[24011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148288,11 +143270,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_74
-
-	local var_18_75 = var_18_74.base.skill_data_template
-
-	var_18_75[24012] = {
+	pg.base.skill_data_template[24012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148306,11 +143284,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_75
-
-	local var_18_76 = var_18_75.base.skill_data_template
-
-	var_18_76[24031] = {
+	pg.base.skill_data_template[24031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148324,11 +143298,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_76
-
-	local var_18_77 = var_18_76.base.skill_data_template
-
-	var_18_77[24032] = {
+	pg.base.skill_data_template[24032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148342,11 +143312,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_77
-
-	local var_18_78 = var_18_77.base.skill_data_template
-
-	var_18_78[24041] = {
+	pg.base.skill_data_template[24041] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148360,11 +143326,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_78
-
-	local var_18_79 = var_18_78.base.skill_data_template
-
-	var_18_79[24042] = {
+	pg.base.skill_data_template[24042] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148378,11 +143340,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_79
-
-	local var_18_80 = var_18_79.base.skill_data_template
-
-	var_18_80[24061] = {
+	pg.base.skill_data_template[24061] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148396,11 +143354,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_80
-
-	local var_18_81 = var_18_80.base.skill_data_template
-
-	var_18_81[24062] = {
+	pg.base.skill_data_template[24062] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148414,11 +143368,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_81
-
-	local var_18_82 = var_18_81.base.skill_data_template
-
-	var_18_82[24111] = {
+	pg.base.skill_data_template[24111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148432,11 +143382,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_82
-
-	local var_18_83 = var_18_82.base.skill_data_template
-
-	var_18_83[24112] = {
+	pg.base.skill_data_template[24112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148450,11 +143396,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_83
-
-	local var_18_84 = var_18_83.base.skill_data_template
-
-	var_18_84[24121] = {
+	pg.base.skill_data_template[24121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148468,11 +143410,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_84
 
-	local var_18_85 = var_18_84.base.skill_data_template
-
-	var_18_85[24122] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[24122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148486,11 +143428,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_85
-
-	local var_18_86 = var_18_85.base.skill_data_template
-
-	var_18_86[24131] = {
+	pg.base.skill_data_template[24131] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148504,11 +143442,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_86
-
-	local var_18_87 = var_18_86.base.skill_data_template
-
-	var_18_87[24132] = {
+	pg.base.skill_data_template[24132] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148522,11 +143456,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_87
-
-	local var_18_88 = var_18_87.base.skill_data_template
-
-	var_18_88[24141] = {
+	pg.base.skill_data_template[24141] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148540,11 +143470,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_88
-
-	local var_18_89 = var_18_88.base.skill_data_template
-
-	var_18_89[24142] = {
+	pg.base.skill_data_template[24142] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148558,11 +143484,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_89
-
-	local var_18_90 = var_18_89.base.skill_data_template
-
-	var_18_90[24151] = {
+	pg.base.skill_data_template[24151] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148576,11 +143498,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_90
-
-	local var_18_91 = var_18_90.base.skill_data_template
-
-	var_18_91[24152] = {
+	pg.base.skill_data_template[24152] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148594,11 +143512,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_91
-
-	local var_18_92 = var_18_91.base.skill_data_template
-
-	var_18_92[25011] = {
+	pg.base.skill_data_template[25011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148612,11 +143526,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_92
-
-	local var_18_93 = var_18_92.base.skill_data_template
-
-	var_18_93[25012] = {
+	pg.base.skill_data_template[25012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148630,11 +143540,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_93
-
-	local var_18_94 = var_18_93.base.skill_data_template
-
-	var_18_94[25021] = {
+	pg.base.skill_data_template[25021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148648,11 +143554,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_94
-
-	local var_18_95 = var_18_94.base.skill_data_template
-
-	var_18_95[25022] = {
+	pg.base.skill_data_template[25022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148666,11 +143568,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_95
-
-	local var_18_96 = var_18_95.base.skill_data_template
-
-	var_18_96[25031] = {
+	pg.base.skill_data_template[25031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148684,11 +143582,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_96
-
-	local var_18_97 = var_18_96.base.skill_data_template
-
-	var_18_97[25032] = {
+	pg.base.skill_data_template[25032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148702,11 +143596,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_97
-
-	local var_18_98 = var_18_97.base.skill_data_template
-
-	var_18_98[25041] = {
+	pg.base.skill_data_template[25041] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148720,8 +143610,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_18_98
-	var_18_98.base.skill_data_template[25042] = {
+	pg.base.skill_data_template[25042] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148735,15 +143624,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_19_0 = var_1_10000.base.skill_data_template
-
-	var_19_0[25211] = {
+	pg.base.skill_data_template[25211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148757,11 +143638,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_0
-
-	local var_19_1 = var_19_0.base.skill_data_template
-
-	var_19_1[25212] = {
+	pg.base.skill_data_template[25212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148775,11 +143652,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_1
-
-	local var_19_2 = var_19_1.base.skill_data_template
-
-	var_19_2[25213] = {
+	pg.base.skill_data_template[25213] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148793,11 +143666,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_2
-
-	local var_19_3 = var_19_2.base.skill_data_template
-
-	var_19_3[25214] = {
+	pg.base.skill_data_template[25214] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148811,11 +143680,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_3
-
-	local var_19_4 = var_19_3.base.skill_data_template
-
-	var_19_4[25221] = {
+	pg.base.skill_data_template[25221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148829,11 +143694,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_4
-
-	local var_19_5 = var_19_4.base.skill_data_template
-
-	var_19_5[25222] = {
+	pg.base.skill_data_template[25222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148847,11 +143708,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_5
-
-	local var_19_6 = var_19_5.base.skill_data_template
-
-	var_19_6[25231] = {
+	pg.base.skill_data_template[25231] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148865,11 +143722,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_6
-
-	local var_19_7 = var_19_6.base.skill_data_template
-
-	var_19_7[25232] = {
+	pg.base.skill_data_template[25232] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148883,11 +143736,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_7
-
-	local var_19_8 = var_19_7.base.skill_data_template
-
-	var_19_8[25511] = {
+	pg.base.skill_data_template[25511] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148901,11 +143750,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_8
-
-	local var_19_9 = var_19_8.base.skill_data_template
-
-	var_19_9[25512] = {
+	pg.base.skill_data_template[25512] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148919,11 +143764,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_9
-
-	local var_19_10 = var_19_9.base.skill_data_template
-
-	var_19_10[26011] = {
+	pg.base.skill_data_template[26011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148937,11 +143778,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_10
-
-	local var_19_11 = var_19_10.base.skill_data_template
-
-	var_19_11[26012] = {
+	pg.base.skill_data_template[26012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148955,11 +143792,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_11
-
-	local var_19_12 = var_19_11.base.skill_data_template
-
-	var_19_12[26021] = {
+	pg.base.skill_data_template[26021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -148973,11 +143806,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_12
-
-	local var_19_13 = var_19_12.base.skill_data_template
-
-	var_19_13[26022] = {
+	pg.base.skill_data_template[26022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -148991,11 +143820,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_13
-
-	local var_19_14 = var_19_13.base.skill_data_template
-
-	var_19_14[26031] = {
+	pg.base.skill_data_template[26031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149009,11 +143834,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_14
-
-	local var_19_15 = var_19_14.base.skill_data_template
-
-	var_19_15[26032] = {
+	pg.base.skill_data_template[26032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149027,11 +143848,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_15
-
-	local var_19_16 = var_19_15.base.skill_data_template
-
-	var_19_16[26111] = {
+	pg.base.skill_data_template[26111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149045,11 +143862,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_16
-
-	local var_19_17 = var_19_16.base.skill_data_template
-
-	var_19_17[26112] = {
+	pg.base.skill_data_template[26112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149063,11 +143876,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_17
-
-	local var_19_18 = var_19_17.base.skill_data_template
-
-	var_19_18[26121] = {
+	pg.base.skill_data_template[26121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149081,11 +143890,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_18
-
-	local var_19_19 = var_19_18.base.skill_data_template
-
-	var_19_19[26122] = {
+	pg.base.skill_data_template[26122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149099,11 +143904,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_19
-
-	local var_19_20 = var_19_19.base.skill_data_template
-
-	var_19_20[26211] = {
+	pg.base.skill_data_template[26211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149117,11 +143918,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_20
-
-	local var_19_21 = var_19_20.base.skill_data_template
-
-	var_19_21[26212] = {
+	pg.base.skill_data_template[26212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149135,11 +143932,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_21
-
-	local var_19_22 = var_19_21.base.skill_data_template
-
-	var_19_22[26311] = {
+	pg.base.skill_data_template[26311] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149153,11 +143946,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_22
-
-	local var_19_23 = var_19_22.base.skill_data_template
-
-	var_19_23[26312] = {
+	pg.base.skill_data_template[26312] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149171,11 +143960,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_23
-
-	local var_19_24 = var_19_23.base.skill_data_template
-
-	var_19_24[28011] = {
+	pg.base.skill_data_template[28011] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149189,11 +143974,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_24
-
-	local var_19_25 = var_19_24.base.skill_data_template
-
-	var_19_25[28012] = {
+	pg.base.skill_data_template[28012] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149207,11 +143988,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_25
-
-	local var_19_26 = var_19_25.base.skill_data_template
-
-	var_19_26[28021] = {
+	pg.base.skill_data_template[28021] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149225,11 +144002,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_26
-
-	local var_19_27 = var_19_26.base.skill_data_template
-
-	var_19_27[28022] = {
+	pg.base.skill_data_template[28022] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149243,11 +144016,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_27
-
-	local var_19_28 = var_19_27.base.skill_data_template
-
-	var_19_28[28031] = {
+	pg.base.skill_data_template[28031] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149261,11 +144030,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_28
-
-	local var_19_29 = var_19_28.base.skill_data_template
-
-	var_19_29[28032] = {
+	pg.base.skill_data_template[28032] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149279,11 +144044,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_29
-
-	local var_19_30 = var_19_29.base.skill_data_template
-
-	var_19_30[28111] = {
+	pg.base.skill_data_template[28111] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149297,11 +144058,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_30
-
-	local var_19_31 = var_19_30.base.skill_data_template
-
-	var_19_31[28112] = {
+	pg.base.skill_data_template[28112] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149315,11 +144072,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_31
-
-	local var_19_32 = var_19_31.base.skill_data_template
-
-	var_19_32[28121] = {
+	pg.base.skill_data_template[28121] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149333,11 +144086,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_32
-
-	local var_19_33 = var_19_32.base.skill_data_template
-
-	var_19_33[28122] = {
+	pg.base.skill_data_template[28122] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149351,11 +144100,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_33
-
-	local var_19_34 = var_19_33.base.skill_data_template
-
-	var_19_34[28211] = {
+	pg.base.skill_data_template[28211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149369,11 +144114,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_34
-
-	local var_19_35 = var_19_34.base.skill_data_template
-
-	var_19_35[28212] = {
+	pg.base.skill_data_template[28212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149387,11 +144128,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_35
-
-	local var_19_36 = var_19_35.base.skill_data_template
-
-	var_19_36[28221] = {
+	pg.base.skill_data_template[28221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149405,11 +144142,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_36
-
-	local var_19_37 = var_19_36.base.skill_data_template
-
-	var_19_37[28222] = {
+	pg.base.skill_data_template[28222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149423,11 +144156,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_37
-
-	local var_19_38 = var_19_37.base.skill_data_template
-
-	var_19_38[28231] = {
+	pg.base.skill_data_template[28231] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149441,11 +144170,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_38
-
-	local var_19_39 = var_19_38.base.skill_data_template
-
-	var_19_39[28232] = {
+	pg.base.skill_data_template[28232] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149459,11 +144184,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_39
-
-	local var_19_40 = var_19_39.base.skill_data_template
-
-	var_19_40[28241] = {
+	pg.base.skill_data_template[28241] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149477,11 +144198,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_40
-
-	local var_19_41 = var_19_40.base.skill_data_template
-
-	var_19_41[28242] = {
+	pg.base.skill_data_template[28242] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149495,11 +144212,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_41
-
-	local var_19_42 = var_19_41.base.skill_data_template
-
-	var_19_42[28251] = {
+	pg.base.skill_data_template[28251] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149513,11 +144226,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_42
-
-	local var_19_43 = var_19_42.base.skill_data_template
-
-	var_19_43[28252] = {
+	pg.base.skill_data_template[28252] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149531,11 +144240,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_43
-
-	local var_19_44 = var_19_43.base.skill_data_template
-
-	var_19_44[28261] = {
+	pg.base.skill_data_template[28261] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149549,11 +144254,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_44
-
-	local var_19_45 = var_19_44.base.skill_data_template
-
-	var_19_45[28262] = {
+	pg.base.skill_data_template[28262] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149567,11 +144268,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_45
-
-	local var_19_46 = var_19_45.base.skill_data_template
-
-	var_19_46[28271] = {
+	pg.base.skill_data_template[28271] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149585,11 +144282,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_46
-
-	local var_19_47 = var_19_46.base.skill_data_template
-
-	var_19_47[28272] = {
+	pg.base.skill_data_template[28272] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149603,11 +144296,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_47
-
-	local var_19_48 = var_19_47.base.skill_data_template
-
-	var_19_48[28281] = {
+	pg.base.skill_data_template[28281] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149621,11 +144310,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_48
-
-	local var_19_49 = var_19_48.base.skill_data_template
-
-	var_19_49[28282] = {
+	pg.base.skill_data_template[28282] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149639,11 +144324,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_49
-
-	local var_19_50 = var_19_49.base.skill_data_template
-
-	var_19_50[27] = {
+	pg.base.skill_data_template[27] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149657,11 +144338,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_50
-
-	local var_19_51 = var_19_50.base.skill_data_template
-
-	var_19_51[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149675,11 +144352,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_51
-
-	local var_19_52 = var_19_51.base.skill_data_template
-
-	var_19_52[250211] = {
+	pg.base.skill_data_template[250211] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149693,11 +144366,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_52
-
-	local var_19_53 = var_19_52.base.skill_data_template
-
-	var_19_53[250212] = {
+	pg.base.skill_data_template[250212] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149711,11 +144380,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_53
-
-	local var_19_54 = var_19_53.base.skill_data_template
-
-	var_19_54[250221] = {
+	pg.base.skill_data_template[250221] = {
 		desc_get = "",
 		name = "全弹发射I",
 		type = 1,
@@ -149729,11 +144394,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_54
-
-	local var_19_55 = var_19_54.base.skill_data_template
-
-	var_19_55[250222] = {
+	pg.base.skill_data_template[250222] = {
 		desc_get = "",
 		name = "全弹发射II",
 		type = 1,
@@ -149747,11 +144408,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_55
-
-	local var_19_56 = var_19_55.base.skill_data_template
-
-	var_19_56[29011] = {
+	pg.base.skill_data_template[29011] = {
 		desc_get = "",
 		name = "专属弹幕-英格兰I",
 		type = 1,
@@ -149765,11 +144422,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_56
-
-	local var_19_57 = var_19_56.base.skill_data_template
-
-	var_19_57[29012] = {
+	pg.base.skill_data_template[29012] = {
 		desc_get = "",
 		name = "专属弹幕-英格兰II",
 		type = 1,
@@ -149783,11 +144436,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_57
-
-	local var_19_58 = var_19_57.base.skill_data_template
-
-	var_19_58[29021] = {
+	pg.base.skill_data_template[29021] = {
 		desc_get = "",
 		name = "专属弹幕-埃尔德里奇I",
 		type = 1,
@@ -149801,11 +144450,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_58
-
-	local var_19_59 = var_19_58.base.skill_data_template
-
-	var_19_59[29022] = {
+	pg.base.skill_data_template[29022] = {
 		desc_get = "",
 		name = "专属弹幕-埃尔德里奇II",
 		type = 1,
@@ -149819,11 +144464,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_59
-
-	local var_19_60 = var_19_59.base.skill_data_template
-
-	var_19_60[29023] = {
+	pg.base.skill_data_template[29023] = {
 		desc_get = "",
 		name = "专属弹幕-埃尔德里奇III",
 		type = 1,
@@ -149837,11 +144478,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_60
-
-	local var_19_61 = var_19_60.base.skill_data_template
-
-	var_19_61[29031] = {
+	pg.base.skill_data_template[29031] = {
 		desc_get = "",
 		name = "专属弹幕",
 		type = 1,
@@ -149855,11 +144492,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_61
-
-	local var_19_62 = var_19_61.base.skill_data_template
-
-	var_19_62[29032] = {
+	pg.base.skill_data_template[29032] = {
 		desc_get = "",
 		name = "专属弹幕",
 		type = 1,
@@ -149873,11 +144506,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_62
-
-	local var_19_63 = var_19_62.base.skill_data_template
-
-	var_19_63[29041] = {
+	pg.base.skill_data_template[29041] = {
 		desc_get = "",
 		name = "专属弹幕-约翰斯顿I",
 		type = 1,
@@ -149891,11 +144520,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_63
-
-	local var_19_64 = var_19_63.base.skill_data_template
-
-	var_19_64[29042] = {
+	pg.base.skill_data_template[29042] = {
 		desc_get = "",
 		name = "专属弹幕-约翰斯顿II",
 		type = 1,
@@ -149909,11 +144534,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_64
-
-	local var_19_65 = var_19_64.base.skill_data_template
-
-	var_19_65[29051] = {
+	pg.base.skill_data_template[29051] = {
 		desc_get = "",
 		name = "专属弹幕-拉菲I",
 		type = 1,
@@ -149927,11 +144548,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_65
-
-	local var_19_66 = var_19_65.base.skill_data_template
-
-	var_19_66[29052] = {
+	pg.base.skill_data_template[29052] = {
 		desc_get = "",
 		name = "专属弹幕-拉菲II",
 		type = 1,
@@ -149945,11 +144562,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_66
-
-	local var_19_67 = var_19_66.base.skill_data_template
-
-	var_19_67[29061] = {
+	pg.base.skill_data_template[29061] = {
 		desc_get = "",
 		name = "专属弹幕-萤火虫I",
 		type = 1,
@@ -149963,11 +144576,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_67
-
-	local var_19_68 = var_19_67.base.skill_data_template
-
-	var_19_68[29062] = {
+	pg.base.skill_data_template[29062] = {
 		desc_get = "",
 		name = "专属弹幕-萤火虫II",
 		type = 1,
@@ -149981,11 +144590,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_68
-
-	local var_19_69 = var_19_68.base.skill_data_template
-
-	var_19_69[29071] = {
+	pg.base.skill_data_template[29071] = {
 		desc_get = "",
 		name = "专属弹幕-勇敢I",
 		type = 1,
@@ -149999,11 +144604,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_69
-
-	local var_19_70 = var_19_69.base.skill_data_template
-
-	var_19_70[29072] = {
+	pg.base.skill_data_template[29072] = {
 		desc_get = "",
 		name = "专属弹幕-勇敢II",
 		type = 1,
@@ -150017,11 +144618,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_70
-
-	local var_19_71 = var_19_70.base.skill_data_template
-
-	var_19_71[29081] = {
+	pg.base.skill_data_template[29081] = {
 		desc_get = "",
 		name = "专属弹幕-标枪I",
 		type = 1,
@@ -150035,11 +144632,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_71
-
-	local var_19_72 = var_19_71.base.skill_data_template
-
-	var_19_72[29082] = {
+	pg.base.skill_data_template[29082] = {
 		desc_get = "",
 		name = "专属弹幕-标枪II",
 		type = 1,
@@ -150053,11 +144646,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_72
-
-	local var_19_73 = var_19_72.base.skill_data_template
-
-	var_19_73[29091] = {
+	pg.base.skill_data_template[29091] = {
 		desc_get = "",
 		name = "专属弹幕-吸血鬼I",
 		type = 1,
@@ -150071,11 +144660,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_73
-
-	local var_19_74 = var_19_73.base.skill_data_template
-
-	var_19_74[29092] = {
+	pg.base.skill_data_template[29092] = {
 		desc_get = "",
 		name = "专属弹幕-吸血鬼II",
 		type = 1,
@@ -150089,11 +144674,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_74
-
-	local var_19_75 = var_19_74.base.skill_data_template
-
-	var_19_75[29101] = {
+	pg.base.skill_data_template[29101] = {
 		desc_get = "",
 		name = "专属弹幕-贝尔法斯特I",
 		type = 1,
@@ -150107,11 +144688,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_75
-
-	local var_19_76 = var_19_75.base.skill_data_template
-
-	var_19_76[29102] = {
+	pg.base.skill_data_template[29102] = {
 		desc_get = "",
 		name = "专属弹幕-贝尔法斯特II",
 		type = 1,
@@ -150125,11 +144702,21 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_76
-
-	local var_19_77 = var_19_76.base.skill_data_template
-
-	var_19_77[29111] = {
+	pg.base.skill_data_template[29103] = {
+		desc_get = "",
+		name = "专属弹幕-贝尔法斯特III",
+		type = 1,
+		max_level = 1,
+		desc = "主炮每进行10次攻击，触发专属弹幕-贝尔法斯特III",
+		id = 29103,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[29111] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:6}I",
 		type = 1,
@@ -150143,11 +144730,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_77
-
-	local var_19_78 = var_19_77.base.skill_data_template
-
-	var_19_78[29112] = {
+	pg.base.skill_data_template[29112] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:6}II",
 		type = 1,
@@ -150161,11 +144744,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_78
-
-	local var_19_79 = var_19_78.base.skill_data_template
-
-	var_19_79[29121] = {
+	pg.base.skill_data_template[29121] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:16}I",
 		type = 1,
@@ -150179,11 +144758,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_79
-
-	local var_19_80 = var_19_79.base.skill_data_template
-
-	var_19_80[29122] = {
+	pg.base.skill_data_template[29122] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:16}II",
 		type = 1,
@@ -150197,11 +144772,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_80
-
-	local var_19_81 = var_19_80.base.skill_data_template
-
-	var_19_81[29123] = {
+	pg.base.skill_data_template[29123] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:16}III",
 		type = 1,
@@ -150215,11 +144786,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_81
-
-	local var_19_82 = var_19_81.base.skill_data_template
-
-	var_19_82[29131] = {
+	pg.base.skill_data_template[29131] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:22}I",
 		type = 1,
@@ -150233,11 +144800,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_82
-
-	local var_19_83 = var_19_82.base.skill_data_template
-
-	var_19_83[29132] = {
+	pg.base.skill_data_template[29132] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:22}II",
 		type = 1,
@@ -150251,11 +144814,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_83
 
-	local var_19_84 = var_19_83.base.skill_data_template
-
-	var_19_84[29141] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[29141] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:18}I",
 		type = 1,
@@ -150269,11 +144832,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_84
-
-	local var_19_85 = var_19_84.base.skill_data_template
-
-	var_19_85[29142] = {
+	pg.base.skill_data_template[29142] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:18}II",
 		type = 1,
@@ -150287,11 +144846,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_85
-
-	local var_19_86 = var_19_85.base.skill_data_template
-
-	var_19_86[29151] = {
+	pg.base.skill_data_template[29151] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:44}I",
 		type = 1,
@@ -150305,11 +144860,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_86
-
-	local var_19_87 = var_19_86.base.skill_data_template
-
-	var_19_87[29152] = {
+	pg.base.skill_data_template[29152] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:44}II",
 		type = 1,
@@ -150323,11 +144874,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_87
-
-	local var_19_88 = var_19_87.base.skill_data_template
-
-	var_19_88[29161] = {
+	pg.base.skill_data_template[29161] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:45}I",
 		type = 1,
@@ -150341,11 +144888,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_88
-
-	local var_19_89 = var_19_88.base.skill_data_template
-
-	var_19_89[29162] = {
+	pg.base.skill_data_template[29162] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:45}II",
 		type = 1,
@@ -150359,11 +144902,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_89
-
-	local var_19_90 = var_19_89.base.skill_data_template
-
-	var_19_90[29171] = {
+	pg.base.skill_data_template[29171] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:400}I",
 		type = 1,
@@ -150377,11 +144916,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_90
-
-	local var_19_91 = var_19_90.base.skill_data_template
-
-	var_19_91[29172] = {
+	pg.base.skill_data_template[29172] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:400}II",
 		type = 1,
@@ -150395,11 +144930,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_91
-
-	local var_19_92 = var_19_91.base.skill_data_template
-
-	var_19_92[29181] = {
+	pg.base.skill_data_template[29181] = {
 		desc_get = "",
 		name = "专属弹幕-鞍山I",
 		type = 1,
@@ -150413,11 +144944,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_92
-
-	local var_19_93 = var_19_92.base.skill_data_template
-
-	var_19_93[29182] = {
+	pg.base.skill_data_template[29182] = {
 		desc_get = "",
 		name = "专属弹幕-鞍山II",
 		type = 1,
@@ -150431,11 +144958,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_93
-
-	local var_19_94 = var_19_93.base.skill_data_template
-
-	var_19_94[29191] = {
+	pg.base.skill_data_template[29191] = {
 		desc_get = "",
 		name = "专属弹幕-阿芙乐尔I",
 		type = 1,
@@ -150449,11 +144972,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_94
-
-	local var_19_95 = var_19_94.base.skill_data_template
-
-	var_19_95[29192] = {
+	pg.base.skill_data_template[29192] = {
 		desc_get = "",
 		name = "专属弹幕-阿芙乐尔II",
 		type = 1,
@@ -150467,11 +144986,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_95
-
-	local var_19_96 = var_19_95.base.skill_data_template
-
-	var_19_96[29201] = {
+	pg.base.skill_data_template[29201] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:408}I",
 		type = 1,
@@ -150485,11 +145000,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_96
-
-	local var_19_97 = var_19_96.base.skill_data_template
-
-	var_19_97[29202] = {
+	pg.base.skill_data_template[29202] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:408}II",
 		type = 1,
@@ -150503,11 +145014,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_97
-
-	local var_19_98 = var_19_97.base.skill_data_template
-
-	var_19_98[29211] = {
+	pg.base.skill_data_template[29211] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:412}I",
 		type = 1,
@@ -150521,8 +145028,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_19_98
-	var_19_98.base.skill_data_template[29212] = {
+	pg.base.skill_data_template[29212] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:412}II",
 		type = 1,
@@ -150536,15 +145042,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_20_0 = var_1_10000.base.skill_data_template
-
-	var_20_0[29221] = {
+	pg.base.skill_data_template[29221] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:152}I",
 		type = 1,
@@ -150558,11 +145056,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_0
-
-	local var_20_1 = var_20_0.base.skill_data_template
-
-	var_20_1[29222] = {
+	pg.base.skill_data_template[29222] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:152}II",
 		type = 1,
@@ -150576,11 +145070,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_1
-
-	local var_20_2 = var_20_1.base.skill_data_template
-
-	var_20_2[29231] = {
+	pg.base.skill_data_template[29231] = {
 		desc_get = "",
 		name = "专属弹幕-海王星I",
 		type = 1,
@@ -150594,11 +145084,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_2
-
-	local var_20_3 = var_20_2.base.skill_data_template
-
-	var_20_3[29232] = {
+	pg.base.skill_data_template[29232] = {
 		desc_get = "",
 		name = "专属弹幕-海王星II",
 		type = 1,
@@ -150612,11 +145098,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_3
-
-	local var_20_4 = var_20_3.base.skill_data_template
-
-	var_20_4[29241] = {
+	pg.base.skill_data_template[29241] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:439}I",
 		type = 1,
@@ -150630,11 +145112,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_4
-
-	local var_20_5 = var_20_4.base.skill_data_template
-
-	var_20_5[29242] = {
+	pg.base.skill_data_template[29242] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:439}II",
 		type = 1,
@@ -150648,11 +145126,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_5
-
-	local var_20_6 = var_20_5.base.skill_data_template
-
-	var_20_6[29251] = {
+	pg.base.skill_data_template[29251] = {
 		desc_get = "",
 		name = "专属弹幕-路易九世I",
 		type = 1,
@@ -150666,11 +145140,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_6
-
-	local var_20_7 = var_20_6.base.skill_data_template
-
-	var_20_7[29252] = {
+	pg.base.skill_data_template[29252] = {
 		desc_get = "",
 		name = "专属弹幕-路易九世II",
 		type = 1,
@@ -150684,11 +145154,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_7
-
-	local var_20_8 = var_20_7.base.skill_data_template
-
-	var_20_8[29261] = {
+	pg.base.skill_data_template[29261] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:154}I",
 		type = 1,
@@ -150702,11 +145168,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_8
-
-	local var_20_9 = var_20_8.base.skill_data_template
-
-	var_20_9[29262] = {
+	pg.base.skill_data_template[29262] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:154}II",
 		type = 1,
@@ -150720,11 +145182,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_9
-
-	local var_20_10 = var_20_9.base.skill_data_template
-
-	var_20_10[29271] = {
+	pg.base.skill_data_template[29271] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:414}I",
 		type = 1,
@@ -150738,11 +145196,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_10
-
-	local var_20_11 = var_20_10.base.skill_data_template
-
-	var_20_11[29272] = {
+	pg.base.skill_data_template[29272] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:414}II",
 		type = 1,
@@ -150756,11 +145210,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_11
-
-	local var_20_12 = var_20_11.base.skill_data_template
-
-	var_20_12[29281] = {
+	pg.base.skill_data_template[29281] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:158}I",
 		type = 1,
@@ -150774,11 +145224,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_12
-
-	local var_20_13 = var_20_12.base.skill_data_template
-
-	var_20_13[29282] = {
+	pg.base.skill_data_template[29282] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:158}II",
 		type = 1,
@@ -150792,11 +145238,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_13
-
-	local var_20_14 = var_20_13.base.skill_data_template
-
-	var_20_14[29291] = {
+	pg.base.skill_data_template[29291] = {
 		desc_get = "",
 		name = "专属弹幕-22I",
 		type = 1,
@@ -150810,11 +145252,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_14
-
-	local var_20_15 = var_20_14.base.skill_data_template
-
-	var_20_15[29292] = {
+	pg.base.skill_data_template[29292] = {
 		desc_get = "",
 		name = "专属弹幕-22II",
 		type = 1,
@@ -150828,11 +145266,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_15
-
-	local var_20_16 = var_20_15.base.skill_data_template
-
-	var_20_16[29301] = {
+	pg.base.skill_data_template[29301] = {
 		desc_get = "",
 		name = "专属弹幕-33I",
 		type = 1,
@@ -150846,11 +145280,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_16
-
-	local var_20_17 = var_20_16.base.skill_data_template
-
-	var_20_17[29302] = {
+	pg.base.skill_data_template[29302] = {
 		desc_get = "",
 		name = "专属弹幕-33II",
 		type = 1,
@@ -150864,11 +145294,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_17
-
-	local var_20_18 = var_20_17.base.skill_data_template
-
-	var_20_18[29311] = {
+	pg.base.skill_data_template[29311] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:413}I",
 		type = 1,
@@ -150882,11 +145308,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_18
-
-	local var_20_19 = var_20_18.base.skill_data_template
-
-	var_20_19[29312] = {
+	pg.base.skill_data_template[29312] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:413}II",
 		type = 1,
@@ -150900,11 +145322,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_19
-
-	local var_20_20 = var_20_19.base.skill_data_template
-
-	var_20_20[29321] = {
+	pg.base.skill_data_template[29321] = {
 		desc_get = "",
 		name = "专属弹幕-絮库夫I",
 		type = 1,
@@ -150920,11 +145338,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_20
-
-	local var_20_21 = var_20_20.base.skill_data_template
-
-	var_20_21[29322] = {
+	pg.base.skill_data_template[29322] = {
 		desc_get = "",
 		name = "专属弹幕-絮库夫II",
 		type = 1,
@@ -150940,11 +145354,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_21
-
-	local var_20_22 = var_20_21.base.skill_data_template
-
-	var_20_22[29331] = {
+	pg.base.skill_data_template[29331] = {
 		desc_get = "",
 		name = "专属弹幕-凯旋I",
 		type = 1,
@@ -150958,11 +145368,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_22
-
-	local var_20_23 = var_20_22.base.skill_data_template
-
-	var_20_23[29332] = {
+	pg.base.skill_data_template[29332] = {
 		desc_get = "",
 		name = "专属弹幕-凯旋II",
 		type = 1,
@@ -150976,11 +145382,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_23
-
-	local var_20_24 = var_20_23.base.skill_data_template
-
-	var_20_24[29341] = {
+	pg.base.skill_data_template[29341] = {
 		desc_get = "",
 		name = "专属弹幕-大青花鱼I",
 		type = 1,
@@ -150994,11 +145396,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_24
-
-	local var_20_25 = var_20_24.base.skill_data_template
-
-	var_20_25[29342] = {
+	pg.base.skill_data_template[29342] = {
 		desc_get = "",
 		name = "专属弹幕-大青花鱼II",
 		type = 1,
@@ -151012,11 +145410,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_25
-
-	local var_20_26 = var_20_25.base.skill_data_template
-
-	var_20_26[29351] = {
+	pg.base.skill_data_template[29351] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:524}I",
 		type = 1,
@@ -151030,11 +145424,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_26
-
-	local var_20_27 = var_20_26.base.skill_data_template
-
-	var_20_27[29361] = {
+	pg.base.skill_data_template[29361] = {
 		desc_get = "",
 		name = "专属弹幕-天狼星I",
 		type = 1,
@@ -151048,11 +145438,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_27
-
-	local var_20_28 = var_20_27.base.skill_data_template
-
-	var_20_28[29362] = {
+	pg.base.skill_data_template[29362] = {
 		desc_get = "",
 		name = "专属弹幕-天狼星II",
 		type = 1,
@@ -151066,11 +145452,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_28
-
-	local var_20_29 = var_20_28.base.skill_data_template
-
-	var_20_29[29371] = {
+	pg.base.skill_data_template[29371] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:163}I",
 		type = 1,
@@ -151084,11 +145466,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_29
-
-	local var_20_30 = var_20_29.base.skill_data_template
-
-	var_20_30[29372] = {
+	pg.base.skill_data_template[29372] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:163}II",
 		type = 1,
@@ -151102,11 +145480,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_30
-
-	local var_20_31 = var_20_30.base.skill_data_template
-
-	var_20_31[29381] = {
+	pg.base.skill_data_template[29381] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:164}I",
 		type = 1,
@@ -151120,11 +145494,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_31
-
-	local var_20_32 = var_20_31.base.skill_data_template
-
-	var_20_32[29382] = {
+	pg.base.skill_data_template[29382] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:164}II",
 		type = 1,
@@ -151138,11 +145508,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_32
-
-	local var_20_33 = var_20_32.base.skill_data_template
-
-	var_20_33[29391] = {
+	pg.base.skill_data_template[29391] = {
 		desc_get = "",
 		name = "专属弹幕-西雅图I",
 		type = 1,
@@ -151156,11 +145522,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_33
-
-	local var_20_34 = var_20_33.base.skill_data_template
-
-	var_20_34[29392] = {
+	pg.base.skill_data_template[29392] = {
 		desc_get = "",
 		name = "专属弹幕-西雅图II",
 		type = 1,
@@ -151174,11 +145536,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_34
-
-	local var_20_35 = var_20_34.base.skill_data_template
-
-	var_20_35[29401] = {
+	pg.base.skill_data_template[29401] = {
 		desc_get = "",
 		name = "专属弹幕-确捷I",
 		type = 1,
@@ -151192,11 +145550,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_35
-
-	local var_20_36 = var_20_35.base.skill_data_template
-
-	var_20_36[29402] = {
+	pg.base.skill_data_template[29402] = {
 		desc_get = "",
 		name = "专属弹幕-确捷II",
 		type = 1,
@@ -151210,11 +145564,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_36
-
-	local var_20_37 = var_20_36.base.skill_data_template
-
-	var_20_37[29411] = {
+	pg.base.skill_data_template[29411] = {
 		desc_get = "",
 		name = "专属弹幕-恶毒I",
 		type = 1,
@@ -151228,11 +145578,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_37
-
-	local var_20_38 = var_20_37.base.skill_data_template
-
-	var_20_38[29412] = {
+	pg.base.skill_data_template[29412] = {
 		desc_get = "",
 		name = "专属弹幕-恶毒II",
 		type = 1,
@@ -151246,11 +145592,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_38
-
-	local var_20_39 = var_20_38.base.skill_data_template
-
-	var_20_39[29421] = {
+	pg.base.skill_data_template[29421] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:256}I",
 		type = 1,
@@ -151264,11 +145606,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_39
-
-	local var_20_40 = var_20_39.base.skill_data_template
-
-	var_20_40[29422] = {
+	pg.base.skill_data_template[29422] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:256}II",
 		type = 1,
@@ -151282,11 +145620,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_40
-
-	local var_20_41 = var_20_40.base.skill_data_template
-
-	var_20_41[29431] = {
+	pg.base.skill_data_template[29431] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:418}I",
 		type = 1,
@@ -151300,11 +145634,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_41
-
-	local var_20_42 = var_20_41.base.skill_data_template
-
-	var_20_42[29432] = {
+	pg.base.skill_data_template[29432] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:418}II",
 		type = 1,
@@ -151318,11 +145648,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_42
-
-	local var_20_43 = var_20_42.base.skill_data_template
-
-	var_20_43[29441] = {
+	pg.base.skill_data_template[29441] = {
 		desc_get = "",
 		name = "专属弹幕-棘鳍I",
 		type = 1,
@@ -151336,11 +145662,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_43
-
-	local var_20_44 = var_20_43.base.skill_data_template
-
-	var_20_44[29442] = {
+	pg.base.skill_data_template[29442] = {
 		desc_get = "",
 		name = "专属弹幕-棘鳍II",
 		type = 1,
@@ -151354,11 +145676,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_44
-
-	local var_20_45 = var_20_44.base.skill_data_template
-
-	var_20_45[29451] = {
+	pg.base.skill_data_template[29451] = {
 		desc_get = "",
 		name = "专属弹幕-克利夫兰(μ兵装)I",
 		type = 1,
@@ -151372,11 +145690,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_45
-
-	local var_20_46 = var_20_45.base.skill_data_template
-
-	var_20_46[29452] = {
+	pg.base.skill_data_template[29452] = {
 		desc_get = "",
 		name = "专属弹幕-克利夫兰(μ兵装)II",
 		type = 1,
@@ -151390,11 +145704,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_46
-
-	local var_20_47 = var_20_46.base.skill_data_template
-
-	var_20_47[29461] = {
+	pg.base.skill_data_template[29461] = {
 		desc_get = "",
 		name = "专属弹幕-谢菲尔德(μ兵装)I",
 		type = 1,
@@ -151408,11 +145718,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_47
-
-	local var_20_48 = var_20_47.base.skill_data_template
-
-	var_20_48[29462] = {
+	pg.base.skill_data_template[29462] = {
 		desc_get = "",
 		name = "专属弹幕-谢菲尔德(μ兵装)II",
 		type = 1,
@@ -151426,11 +145732,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_48
-
-	local var_20_49 = var_20_48.base.skill_data_template
-
-	var_20_49[29471] = {
+	pg.base.skill_data_template[29471] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:451}I",
 		type = 1,
@@ -151444,11 +145746,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_49
-
-	local var_20_50 = var_20_49.base.skill_data_template
-
-	var_20_50[29472] = {
+	pg.base.skill_data_template[29472] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:451}II",
 		type = 1,
@@ -151462,11 +145760,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_50
-
-	local var_20_51 = var_20_50.base.skill_data_template
-
-	var_20_51[29481] = {
+	pg.base.skill_data_template[29481] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:50}I",
 		type = 1,
@@ -151480,11 +145774,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_51
-
-	local var_20_52 = var_20_51.base.skill_data_template
-
-	var_20_52[29482] = {
+	pg.base.skill_data_template[29482] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:50}II",
 		type = 1,
@@ -151498,11 +145788,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_52
-
-	local var_20_53 = var_20_52.base.skill_data_template
-
-	var_20_53[29491] = {
+	pg.base.skill_data_template[29491] = {
 		desc_get = "",
 		name = "专属弹幕-黛朵I",
 		type = 1,
@@ -151516,11 +145802,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_53
-
-	local var_20_54 = var_20_53.base.skill_data_template
-
-	var_20_54[29492] = {
+	pg.base.skill_data_template[29492] = {
 		desc_get = "",
 		name = "专属弹幕-黛朵II",
 		type = 1,
@@ -151534,11 +145816,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_54
-
-	local var_20_55 = var_20_54.base.skill_data_template
-
-	var_20_55[29501] = {
+	pg.base.skill_data_template[29501] = {
 		desc_get = "",
 		name = "专属弹幕-塔什干I",
 		type = 1,
@@ -151552,11 +145830,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_55
-
-	local var_20_56 = var_20_55.base.skill_data_template
-
-	var_20_56[29502] = {
+	pg.base.skill_data_template[29502] = {
 		desc_get = "",
 		name = "专属弹幕-塔什干II",
 		type = 1,
@@ -151570,11 +145844,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_56
-
-	local var_20_57 = var_20_56.base.skill_data_template
-
-	var_20_57[29511] = {
+	pg.base.skill_data_template[29511] = {
 		desc_get = "",
 		name = "专属弹幕-恰巴耶夫I",
 		type = 1,
@@ -151588,11 +145858,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_57
-
-	local var_20_58 = var_20_57.base.skill_data_template
-
-	var_20_58[29512] = {
+	pg.base.skill_data_template[29512] = {
 		desc_get = "",
 		name = "专属弹幕-恰巴耶夫II",
 		type = 1,
@@ -151606,11 +145872,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_58
-
-	local var_20_59 = var_20_58.base.skill_data_template
-
-	var_20_59[29521] = {
+	pg.base.skill_data_template[29521] = {
 		desc_get = "",
 		name = "专属弹幕-里诺I",
 		type = 1,
@@ -151624,11 +145886,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_59
-
-	local var_20_60 = var_20_59.base.skill_data_template
-
-	var_20_60[29531] = {
+	pg.base.skill_data_template[29531] = {
 		desc_get = "",
 		name = "专属弹幕-里诺II",
 		type = 1,
@@ -151642,11 +145900,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_60
-
-	local var_20_61 = var_20_60.base.skill_data_template
-
-	var_20_61[29541] = {
+	pg.base.skill_data_template[29541] = {
 		desc_get = "",
 		name = "专属弹幕-圣女贞德I",
 		type = 1,
@@ -151660,11 +145914,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_61
-
-	local var_20_62 = var_20_61.base.skill_data_template
-
-	var_20_62[29542] = {
+	pg.base.skill_data_template[29542] = {
 		desc_get = "",
 		name = "专属弹幕-圣女贞德II",
 		type = 1,
@@ -151678,11 +145928,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_62
-
-	local var_20_63 = var_20_62.base.skill_data_template
-
-	var_20_63[29551] = {
+	pg.base.skill_data_template[29551] = {
 		desc_get = "",
 		name = "专属弹幕-柴郡I",
 		type = 1,
@@ -151696,11 +145942,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_63
-
-	local var_20_64 = var_20_63.base.skill_data_template
-
-	var_20_64[29552] = {
+	pg.base.skill_data_template[29552] = {
 		desc_get = "",
 		name = "专属弹幕-柴郡II",
 		type = 1,
@@ -151714,11 +145956,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_64
-
-	local var_20_65 = var_20_64.base.skill_data_template
-
-	var_20_65[29561] = {
+	pg.base.skill_data_template[29561] = {
 		desc_get = "",
 		name = "专属弹幕-德雷克I",
 		type = 1,
@@ -151732,11 +145970,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_65
-
-	local var_20_66 = var_20_65.base.skill_data_template
-
-	var_20_66[29562] = {
+	pg.base.skill_data_template[29562] = {
 		desc_get = "",
 		name = "专属弹幕-德雷克II",
 		type = 1,
@@ -151750,11 +145984,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_66
-
-	local var_20_67 = var_20_66.base.skill_data_template
-
-	var_20_67[29571] = {
+	pg.base.skill_data_template[29571] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:479}I",
 		type = 1,
@@ -151768,11 +145998,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_67
-
-	local var_20_68 = var_20_67.base.skill_data_template
-
-	var_20_68[29572] = {
+	pg.base.skill_data_template[29572] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:479}II",
 		type = 1,
@@ -151786,11 +146012,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_68
-
-	local var_20_69 = var_20_68.base.skill_data_template
-
-	var_20_69[29581] = {
+	pg.base.skill_data_template[29581] = {
 		desc_get = "",
 		name = "专属弹幕-赫敏I",
 		type = 1,
@@ -151804,11 +146026,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_69
-
-	local var_20_70 = var_20_69.base.skill_data_template
-
-	var_20_70[29582] = {
+	pg.base.skill_data_template[29582] = {
 		desc_get = "",
 		name = "专属弹幕-赫敏II",
 		type = 1,
@@ -151822,11 +146040,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_70
-
-	local var_20_71 = var_20_70.base.skill_data_template
-
-	var_20_71[29591] = {
+	pg.base.skill_data_template[29591] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:473}I",
 		type = 1,
@@ -151842,11 +146056,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_71
-
-	local var_20_72 = var_20_71.base.skill_data_template
-
-	var_20_72[29592] = {
+	pg.base.skill_data_template[29592] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:473}II",
 		type = 1,
@@ -151862,11 +146072,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_72
-
-	local var_20_73 = var_20_72.base.skill_data_template
-
-	var_20_73[29601] = {
+	pg.base.skill_data_template[29601] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:27}I",
 		type = 1,
@@ -151880,11 +146086,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_73
-
-	local var_20_74 = var_20_73.base.skill_data_template
-
-	var_20_74[29602] = {
+	pg.base.skill_data_template[29602] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:27}II",
 		type = 1,
@@ -151898,11 +146100,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_74
-
-	local var_20_75 = var_20_74.base.skill_data_template
-
-	var_20_75[29611] = {
+	pg.base.skill_data_template[29611] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:452}I",
 		type = 1,
@@ -151916,11 +146114,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_75
-
-	local var_20_76 = var_20_75.base.skill_data_template
-
-	var_20_76[29612] = {
+	pg.base.skill_data_template[29612] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:452}II",
 		type = 1,
@@ -151934,11 +146128,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_76
-
-	local var_20_77 = var_20_76.base.skill_data_template
-
-	var_20_77[29621] = {
+	pg.base.skill_data_template[29621] = {
 		desc_get = "",
 		name = "专属弹幕-恶毒(μ兵装)I",
 		type = 1,
@@ -151952,11 +146142,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_77
-
-	local var_20_78 = var_20_77.base.skill_data_template
-
-	var_20_78[29622] = {
+	pg.base.skill_data_template[29622] = {
 		desc_get = "",
 		name = "专属弹幕-恶毒(μ兵装)II",
 		type = 1,
@@ -151970,11 +146156,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_78
-
-	local var_20_79 = var_20_78.base.skill_data_template
-
-	var_20_79[29631] = {
+	pg.base.skill_data_template[29631] = {
 		desc_get = "",
 		name = "专属弹幕-黛朵(μ兵装)I",
 		type = 1,
@@ -151988,11 +146170,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_79
-
-	local var_20_80 = var_20_79.base.skill_data_template
-
-	var_20_80[29632] = {
+	pg.base.skill_data_template[29632] = {
 		desc_get = "",
 		name = "专属弹幕-黛朵(μ兵装)II",
 		type = 1,
@@ -152006,11 +146184,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_80
-
-	local var_20_81 = var_20_80.base.skill_data_template
-
-	var_20_81[29641] = {
+	pg.base.skill_data_template[29641] = {
 		desc_get = "",
 		name = "专属弹幕-塔什干(μ兵装)I",
 		type = 1,
@@ -152024,11 +146198,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_81
-
-	local var_20_82 = var_20_81.base.skill_data_template
-
-	var_20_82[29642] = {
+	pg.base.skill_data_template[29642] = {
 		desc_get = "",
 		name = "专属弹幕-塔什干(μ兵装)II",
 		type = 1,
@@ -152042,11 +146212,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_82
-
-	local var_20_83 = var_20_82.base.skill_data_template
-
-	var_20_83[29651] = {
+	pg.base.skill_data_template[29651] = {
 		desc_get = "",
 		name = "专属弹幕-大青花鱼(μ兵装)I",
 		type = 1,
@@ -152060,11 +146226,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_83
 
-	local var_20_84 = var_20_83.base.skill_data_template
-
-	var_20_84[29652] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[29652] = {
 		desc_get = "",
 		name = "专属弹幕-大青花鱼(μ兵装)II",
 		type = 1,
@@ -152078,11 +146244,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_84
-
-	local var_20_85 = var_20_84.base.skill_data_template
-
-	var_20_85[29661] = {
+	pg.base.skill_data_template[29661] = {
 		desc_get = "",
 		name = "专属弹幕-巴尔的摩(μ兵装)I",
 		type = 1,
@@ -152096,11 +146258,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_85
-
-	local var_20_86 = var_20_85.base.skill_data_template
-
-	var_20_86[29662] = {
+	pg.base.skill_data_template[29662] = {
 		desc_get = "",
 		name = "专属弹幕-巴尔的摩(μ兵装)II",
 		type = 1,
@@ -152114,11 +146272,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_86
-
-	local var_20_87 = var_20_86.base.skill_data_template
-
-	var_20_87[29671] = {
+	pg.base.skill_data_template[29671] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:474}I",
 		type = 1,
@@ -152132,11 +146286,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_87
-
-	local var_20_88 = var_20_87.base.skill_data_template
-
-	var_20_88[29672] = {
+	pg.base.skill_data_template[29672] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:474}II",
 		type = 1,
@@ -152150,11 +146300,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_88
-
-	local var_20_89 = var_20_88.base.skill_data_template
-
-	var_20_89[29681] = {
+	pg.base.skill_data_template[29681] = {
 		desc_get = "",
 		name = "专属弹幕-基洛夫I",
 		type = 1,
@@ -152168,11 +146314,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_89
-
-	local var_20_90 = var_20_89.base.skill_data_template
-
-	var_20_90[29682] = {
+	pg.base.skill_data_template[29682] = {
 		desc_get = "",
 		name = "专属弹幕-基洛夫II",
 		type = 1,
@@ -152186,11 +146328,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_90
-
-	local var_20_91 = var_20_90.base.skill_data_template
-
-	var_20_91[29691] = {
+	pg.base.skill_data_template[29691] = {
 		desc_get = "",
 		name = "专属弹幕-艾伦·萨姆纳I",
 		type = 1,
@@ -152204,11 +146342,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_91
-
-	local var_20_92 = var_20_91.base.skill_data_template
-
-	var_20_92[29692] = {
+	pg.base.skill_data_template[29692] = {
 		desc_get = "",
 		name = "专属弹幕-艾伦·萨姆纳II",
 		type = 1,
@@ -152222,11 +146356,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_92
-
-	local var_20_93 = var_20_92.base.skill_data_template
-
-	var_20_93[29701] = {
+	pg.base.skill_data_template[29701] = {
 		desc_get = "",
 		name = "专属弹幕-阿布鲁齐公爵I",
 		type = 1,
@@ -152240,11 +146370,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_93
-
-	local var_20_94 = var_20_93.base.skill_data_template
-
-	var_20_94[29702] = {
+	pg.base.skill_data_template[29702] = {
 		desc_get = "",
 		name = "专属弹幕-阿布鲁齐公爵II",
 		type = 1,
@@ -152258,11 +146384,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_94
-
-	local var_20_95 = var_20_94.base.skill_data_template
-
-	var_20_95[29711] = {
+	pg.base.skill_data_template[29711] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:195}I",
 		type = 1,
@@ -152276,11 +146398,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_95
-
-	local var_20_96 = var_20_95.base.skill_data_template
-
-	var_20_96[29712] = {
+	pg.base.skill_data_template[29712] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:195}II",
 		type = 1,
@@ -152294,11 +146412,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_96
-
-	local var_20_97 = var_20_96.base.skill_data_template
-
-	var_20_97[29721] = {
+	pg.base.skill_data_template[29721] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:196}I",
 		type = 1,
@@ -152312,11 +146426,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_97
-
-	local var_20_98 = var_20_97.base.skill_data_template
-
-	var_20_98[29722] = {
+	pg.base.skill_data_template[29722] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:196}II",
 		type = 1,
@@ -152330,8 +146440,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_20_98
-	var_20_98.base.skill_data_template[29731] = {
+	pg.base.skill_data_template[29731] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:203}I",
 		type = 1,
@@ -152345,15 +146454,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_21_0 = var_1_10000.base.skill_data_template
-
-	var_21_0[29732] = {
+	pg.base.skill_data_template[29732] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:203}II",
 		type = 1,
@@ -152367,11 +146468,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_0
-
-	local var_21_1 = var_21_0.base.skill_data_template
-
-	var_21_1[29741] = {
+	pg.base.skill_data_template[29741] = {
 		desc_get = "",
 		name = "专属弹幕-安克雷奇I",
 		type = 1,
@@ -152385,11 +146482,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_1
-
-	local var_21_2 = var_21_1.base.skill_data_template
-
-	var_21_2[29742] = {
+	pg.base.skill_data_template[29742] = {
 		desc_get = "",
 		name = "专属弹幕-安克雷奇II",
 		type = 1,
@@ -152403,11 +146496,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_2
-
-	local var_21_3 = var_21_2.base.skill_data_template
-
-	var_21_3[29751] = {
+	pg.base.skill_data_template[29751] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:525}I",
 		type = 1,
@@ -152421,11 +146510,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_3
-
-	local var_21_4 = var_21_3.base.skill_data_template
-
-	var_21_4[29752] = {
+	pg.base.skill_data_template[29752] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:525}II",
 		type = 1,
@@ -152439,11 +146524,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_4
-
-	local var_21_5 = var_21_4.base.skill_data_template
-
-	var_21_5[29761] = {
+	pg.base.skill_data_template[29761] = {
 		desc_get = "",
 		name = "专属弹幕-可怖I",
 		type = 1,
@@ -152457,11 +146538,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_5
-
-	local var_21_6 = var_21_5.base.skill_data_template
-
-	var_21_6[29762] = {
+	pg.base.skill_data_template[29762] = {
 		desc_get = "",
 		name = "专属弹幕-可怖II",
 		type = 1,
@@ -152475,11 +146552,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_6
-
-	local var_21_7 = var_21_6.base.skill_data_template
-
-	var_21_7[29771] = {
+	pg.base.skill_data_template[29771] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:447}I",
 		type = 1,
@@ -152493,11 +146566,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_7
-
-	local var_21_8 = var_21_7.base.skill_data_template
-
-	var_21_8[29772] = {
+	pg.base.skill_data_template[29772] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:447}II",
 		type = 1,
@@ -152511,11 +146580,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_8
-
-	local var_21_9 = var_21_8.base.skill_data_template
-
-	var_21_9[29781] = {
+	pg.base.skill_data_template[29781] = {
 		desc_get = "",
 		name = "专属弹幕-卡律布狄斯I",
 		type = 1,
@@ -152529,11 +146594,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_9
-
-	local var_21_10 = var_21_9.base.skill_data_template
-
-	var_21_10[29782] = {
+	pg.base.skill_data_template[29782] = {
 		desc_get = "",
 		name = "专属弹幕-卡律布狄斯II",
 		type = 1,
@@ -152547,11 +146608,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_10
-
-	local var_21_11 = var_21_10.base.skill_data_template
-
-	var_21_11[29791] = {
+	pg.base.skill_data_template[29791] = {
 		desc_get = "",
 		name = "专属弹幕-布里斯托尔I",
 		type = 1,
@@ -152565,11 +146622,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_11
-
-	local var_21_12 = var_21_11.base.skill_data_template
-
-	var_21_12[29792] = {
+	pg.base.skill_data_template[29792] = {
 		desc_get = "",
 		name = "专属弹幕-布里斯托尔II",
 		type = 1,
@@ -152583,11 +146636,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_12
-
-	local var_21_13 = var_21_12.base.skill_data_template
-
-	var_21_13[29801] = {
+	pg.base.skill_data_template[29801] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -152601,11 +146650,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_13
-
-	local var_21_14 = var_21_13.base.skill_data_template
-
-	var_21_14[29802] = {
+	pg.base.skill_data_template[29802] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -152619,11 +146664,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_14
-
-	local var_21_15 = var_21_14.base.skill_data_template
-
-	var_21_15[29811] = {
+	pg.base.skill_data_template[29811] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -152637,11 +146678,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_15
-
-	local var_21_16 = var_21_15.base.skill_data_template
-
-	var_21_16[29812] = {
+	pg.base.skill_data_template[29812] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -152655,11 +146692,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_16
-
-	local var_21_17 = var_21_16.base.skill_data_template
-
-	var_21_17[29821] = {
+	pg.base.skill_data_template[29821] = {
 		desc_get = "",
 		name = "专属弹幕-基辅I",
 		type = 1,
@@ -152673,11 +146706,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_17
-
-	local var_21_18 = var_21_17.base.skill_data_template
-
-	var_21_18[29822] = {
+	pg.base.skill_data_template[29822] = {
 		desc_get = "",
 		name = "专属弹幕-基辅II",
 		type = 1,
@@ -152691,11 +146720,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_18
-
-	local var_21_19 = var_21_18.base.skill_data_template
-
-	var_21_19[29831] = {
+	pg.base.skill_data_template[29831] = {
 		desc_get = "",
 		name = "专属弹幕-庞培·马格诺I",
 		type = 1,
@@ -152709,11 +146734,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_19
-
-	local var_21_20 = var_21_19.base.skill_data_template
-
-	var_21_20[29832] = {
+	pg.base.skill_data_template[29832] = {
 		desc_get = "",
 		name = "专属弹幕-庞培·马格诺II",
 		type = 1,
@@ -152727,11 +146748,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_20
-
-	local var_21_21 = var_21_20.base.skill_data_template
-
-	var_21_21[29841] = {
+	pg.base.skill_data_template[29841] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:448}I",
 		type = 1,
@@ -152745,11 +146762,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_21
-
-	local var_21_22 = var_21_21.base.skill_data_template
-
-	var_21_22[29842] = {
+	pg.base.skill_data_template[29842] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:448}II",
 		type = 1,
@@ -152763,11 +146776,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_22
-
-	local var_21_23 = var_21_22.base.skill_data_template
-
-	var_21_23[29851] = {
+	pg.base.skill_data_template[29851] = {
 		desc_get = "",
 		name = "专属弹幕-贾维斯I",
 		type = 1,
@@ -152781,11 +146790,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_23
-
-	local var_21_24 = var_21_23.base.skill_data_template
-
-	var_21_24[29852] = {
+	pg.base.skill_data_template[29852] = {
 		desc_get = "",
 		name = "专属弹幕-贾维斯II",
 		type = 1,
@@ -152799,11 +146804,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_24
-
-	local var_21_25 = var_21_24.base.skill_data_template
-
-	var_21_25[29861] = {
+	pg.base.skill_data_template[29861] = {
 		desc_get = "",
 		name = "专属弹幕-小柴郡I",
 		type = 1,
@@ -152817,11 +146818,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_25
-
-	local var_21_26 = var_21_25.base.skill_data_template
-
-	var_21_26[29862] = {
+	pg.base.skill_data_template[29862] = {
 		desc_get = "",
 		name = "专属弹幕-小柴郡II",
 		type = 1,
@@ -152835,11 +146832,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_26
-
-	local var_21_27 = var_21_26.base.skill_data_template
-
-	var_21_27[29881] = {
+	pg.base.skill_data_template[29881] = {
 		desc_get = "",
 		name = "专属弹幕-不屈I",
 		type = 1,
@@ -152853,11 +146846,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_27
-
-	local var_21_28 = var_21_27.base.skill_data_template
-
-	var_21_28[29882] = {
+	pg.base.skill_data_template[29882] = {
 		desc_get = "",
 		name = "专属弹幕-不屈II",
 		type = 1,
@@ -152871,11 +146860,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_28
-
-	local var_21_29 = var_21_28.base.skill_data_template
-
-	var_21_29[29891] = {
+	pg.base.skill_data_template[29891] = {
 		desc_get = "",
 		name = "专属弹幕-普利茅斯I",
 		type = 1,
@@ -152889,11 +146874,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_29
-
-	local var_21_30 = var_21_29.base.skill_data_template
-
-	var_21_30[29892] = {
+	pg.base.skill_data_template[29892] = {
 		desc_get = "",
 		name = "专属弹幕-普利茅斯II",
 		type = 1,
@@ -152907,11 +146888,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_30
-
-	local var_21_31 = var_21_30.base.skill_data_template
-
-	var_21_31[29901] = {
+	pg.base.skill_data_template[29901] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:224}I",
 		type = 1,
@@ -152925,11 +146902,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_31
-
-	local var_21_32 = var_21_31.base.skill_data_template
-
-	var_21_32[29902] = {
+	pg.base.skill_data_template[29902] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:224}II",
 		type = 1,
@@ -152943,11 +146916,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_32
-
-	local var_21_33 = var_21_32.base.skill_data_template
-
-	var_21_33[29911] = {
+	pg.base.skill_data_template[29911] = {
 		desc_get = "",
 		name = "专属弹幕-莱昂纳多·达·芬奇 I",
 		type = 1,
@@ -152961,11 +146930,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_33
-
-	local var_21_34 = var_21_33.base.skill_data_template
-
-	var_21_34[29912] = {
+	pg.base.skill_data_template[29912] = {
 		desc_get = "",
 		name = "专属弹幕-莱昂纳多·达·芬奇 II",
 		type = 1,
@@ -152979,11 +146944,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_34
-
-	local var_21_35 = var_21_34.base.skill_data_template
-
-	var_21_35[29921] = {
+	pg.base.skill_data_template[29921] = {
 		desc_get = "",
 		name = "专属弹幕-朱塞佩·加里波第 I",
 		type = 1,
@@ -152997,11 +146958,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_35
-
-	local var_21_36 = var_21_35.base.skill_data_template
-
-	var_21_36[29922] = {
+	pg.base.skill_data_template[29922] = {
 		desc_get = "",
 		name = "专属弹幕-朱塞佩·加里波第 II",
 		type = 1,
@@ -153015,11 +146972,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_36
-
-	local var_21_37 = var_21_36.base.skill_data_template
-
-	var_21_37[29931] = {
+	pg.base.skill_data_template[29931] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:226}I",
 		type = 1,
@@ -153033,11 +146986,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_37
-
-	local var_21_38 = var_21_37.base.skill_data_template
-
-	var_21_38[29932] = {
+	pg.base.skill_data_template[29932] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:226}II",
 		type = 1,
@@ -153051,11 +147000,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_38
-
-	local var_21_39 = var_21_38.base.skill_data_template
-
-	var_21_39[29941] = {
+	pg.base.skill_data_template[29941] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:225}I",
 		type = 1,
@@ -153069,11 +147014,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_39
-
-	local var_21_40 = var_21_39.base.skill_data_template
-
-	var_21_40[29942] = {
+	pg.base.skill_data_template[29942] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:225}II",
 		type = 1,
@@ -153087,11 +147028,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_40
-
-	local var_21_41 = var_21_40.base.skill_data_template
-
-	var_21_41[29951] = {
+	pg.base.skill_data_template[29951] = {
 		desc_get = "",
 		name = "专属弹幕-雅努斯I",
 		type = 1,
@@ -153105,11 +147042,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_41
-
-	local var_21_42 = var_21_41.base.skill_data_template
-
-	var_21_42[29952] = {
+	pg.base.skill_data_template[29952] = {
 		desc_get = "",
 		name = "专属弹幕-雅努斯II",
 		type = 1,
@@ -153123,11 +147056,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_42
-
-	local var_21_43 = var_21_42.base.skill_data_template
-
-	var_21_43[29961] = {
+	pg.base.skill_data_template[29961] = {
 		desc_get = "",
 		name = "专属弹幕-皇家财富号I",
 		type = 1,
@@ -153141,11 +147070,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_43
-
-	local var_21_44 = var_21_43.base.skill_data_template
-
-	var_21_44[29962] = {
+	pg.base.skill_data_template[29962] = {
 		desc_get = "",
 		name = "专属弹幕-皇家财富号II",
 		type = 1,
@@ -153159,11 +147084,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_44
-
-	local var_21_45 = var_21_44.base.skill_data_template
-
-	var_21_45[29971] = {
+	pg.base.skill_data_template[29971] = {
 		desc_get = "",
 		name = "专属弹幕-古比雪夫I",
 		type = 1,
@@ -153177,11 +147098,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_45
-
-	local var_21_46 = var_21_45.base.skill_data_template
-
-	var_21_46[29972] = {
+	pg.base.skill_data_template[29972] = {
 		desc_get = "",
 		name = "专属弹幕-古比雪夫II",
 		type = 1,
@@ -153195,11 +147112,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_46
-
-	local var_21_47 = var_21_46.base.skill_data_template
-
-	var_21_47[29981] = {
+	pg.base.skill_data_template[29981] = {
 		desc_get = "",
 		name = "专属弹幕-斯库拉I",
 		type = 1,
@@ -153213,11 +147126,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_47
-
-	local var_21_48 = var_21_47.base.skill_data_template
-
-	var_21_48[29982] = {
+	pg.base.skill_data_template[29982] = {
 		desc_get = "",
 		name = "专属弹幕-斯库拉II",
 		type = 1,
@@ -153231,11 +147140,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_48
-
-	local var_21_49 = var_21_48.base.skill_data_template
-
-	var_21_49[29991] = {
+	pg.base.skill_data_template[29991] = {
 		desc_get = "",
 		name = "专属弹幕-伏罗希洛夫I",
 		type = 1,
@@ -153249,11 +147154,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_49
-
-	local var_21_50 = var_21_49.base.skill_data_template
-
-	var_21_50[29992] = {
+	pg.base.skill_data_template[29992] = {
 		desc_get = "",
 		name = "专属弹幕-伏罗希洛夫II",
 		type = 1,
@@ -153267,11 +147168,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_50
-
-	local var_21_51 = var_21_50.base.skill_data_template
-
-	var_21_51[30001] = {
+	pg.base.skill_data_template[30001] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:510}I",
 		type = 1,
@@ -153285,11 +147182,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_51
-
-	local var_21_52 = var_21_51.base.skill_data_template
-
-	var_21_52[30011] = {
+	pg.base.skill_data_template[30011] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:510}II",
 		type = 1,
@@ -153303,11 +147196,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_52
-
-	local var_21_53 = var_21_52.base.skill_data_template
-
-	var_21_53[30021] = {
+	pg.base.skill_data_template[30021] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:516}I",
 		type = 1,
@@ -153321,11 +147210,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_53
-
-	local var_21_54 = var_21_53.base.skill_data_template
-
-	var_21_54[30022] = {
+	pg.base.skill_data_template[30022] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:516}II",
 		type = 1,
@@ -153339,11 +147224,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_54
-
-	local var_21_55 = var_21_54.base.skill_data_template
-
-	var_21_55[30031] = {
+	pg.base.skill_data_template[30031] = {
 		desc_get = "",
 		name = "专属弹幕-阿蒂利奥·雷戈洛I",
 		type = 1,
@@ -153357,11 +147238,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_55
-
-	local var_21_56 = var_21_55.base.skill_data_template
-
-	var_21_56[30032] = {
+	pg.base.skill_data_template[30032] = {
 		desc_get = "",
 		name = "专属弹幕-阿蒂利奥·雷戈洛II",
 		type = 1,
@@ -153375,11 +147252,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_56
-
-	local var_21_57 = var_21_56.base.skill_data_template
-
-	var_21_57[30041] = {
+	pg.base.skill_data_template[30041] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:518}I",
 		type = 1,
@@ -153393,11 +147266,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_57
-
-	local var_21_58 = var_21_57.base.skill_data_template
-
-	var_21_58[30051] = {
+	pg.base.skill_data_template[30051] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:518}II",
 		type = 1,
@@ -153411,11 +147280,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_58
-
-	local var_21_59 = var_21_58.base.skill_data_template
-
-	var_21_59[30061] = {
+	pg.base.skill_data_template[30061] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:521}I",
 		type = 1,
@@ -153429,11 +147294,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_59
-
-	local var_21_60 = var_21_59.base.skill_data_template
-
-	var_21_60[30062] = {
+	pg.base.skill_data_template[30062] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:521}II",
 		type = 1,
@@ -153447,11 +147308,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_60
-
-	local var_21_61 = var_21_60.base.skill_data_template
-
-	var_21_61[30071] = {
+	pg.base.skill_data_template[30071] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:292}I",
 		type = 1,
@@ -153465,11 +147322,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_61
-
-	local var_21_62 = var_21_61.base.skill_data_template
-
-	var_21_62[30072] = {
+	pg.base.skill_data_template[30072] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:292}II",
 		type = 1,
@@ -153483,11 +147336,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_62
-
-	local var_21_63 = var_21_62.base.skill_data_template
-
-	var_21_63[30081] = {
+	pg.base.skill_data_template[30081] = {
 		desc_get = "",
 		name = "专属弹幕-马赛曲I",
 		type = 1,
@@ -153501,11 +147350,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_63
-
-	local var_21_64 = var_21_63.base.skill_data_template
-
-	var_21_64[30082] = {
+	pg.base.skill_data_template[30082] = {
 		desc_get = "",
 		name = "专属弹幕-马赛曲II",
 		type = 1,
@@ -153519,11 +147364,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_64
-
-	local var_21_65 = var_21_64.base.skill_data_template
-
-	var_21_65[30091] = {
+	pg.base.skill_data_template[30091] = {
 		desc_get = "",
 		name = "专属弹幕-吉尚I",
 		type = 1,
@@ -153537,11 +147378,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_65
-
-	local var_21_66 = var_21_65.base.skill_data_template
-
-	var_21_66[30092] = {
+	pg.base.skill_data_template[30092] = {
 		desc_get = "",
 		name = "专属弹幕-吉尚II",
 		type = 1,
@@ -153555,11 +147392,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_66
-
-	local var_21_67 = var_21_66.base.skill_data_template
-
-	var_21_67[30101] = {
+	pg.base.skill_data_template[30101] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:294}I",
 		type = 1,
@@ -153573,11 +147406,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_67
-
-	local var_21_68 = var_21_67.base.skill_data_template
-
-	var_21_68[30102] = {
+	pg.base.skill_data_template[30102] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:294}II",
 		type = 1,
@@ -153591,11 +147420,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_68
-
-	local var_21_69 = var_21_68.base.skill_data_template
-
-	var_21_69[30111] = {
+	pg.base.skill_data_template[30111] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:189}I",
 		type = 1,
@@ -153609,11 +147434,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_69
-
-	local var_21_70 = var_21_69.base.skill_data_template
-
-	var_21_70[30112] = {
+	pg.base.skill_data_template[30112] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:189}II",
 		type = 1,
@@ -153627,11 +147448,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_70
-
-	local var_21_71 = var_21_70.base.skill_data_template
-
-	var_21_71[30121] = {
+	pg.base.skill_data_template[30121] = {
 		desc_get = "",
 		name = "专属弹幕-休斯敦 II-I",
 		type = 1,
@@ -153645,11 +147462,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_71
-
-	local var_21_72 = var_21_71.base.skill_data_template
-
-	var_21_72[30122] = {
+	pg.base.skill_data_template[30122] = {
 		desc_get = "",
 		name = "专属弹幕-休斯敦 II-II",
 		type = 1,
@@ -153663,11 +147476,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_72
-
-	local var_21_73 = var_21_72.base.skill_data_template
-
-	var_21_73[30131] = {
+	pg.base.skill_data_template[30131] = {
 		desc_get = "",
 		name = "专属弹幕-玛丽·西莱斯特号I",
 		type = 1,
@@ -153681,11 +147490,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_73
-
-	local var_21_74 = var_21_73.base.skill_data_template
-
-	var_21_74[30132] = {
+	pg.base.skill_data_template[30132] = {
 		desc_get = "",
 		name = "专属弹幕-玛丽·西莱斯特号II",
 		type = 1,
@@ -153699,11 +147504,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_74
-
-	local var_21_75 = var_21_74.base.skill_data_template
-
-	var_21_75[30141] = {
+	pg.base.skill_data_template[30141] = {
 		desc_get = "",
 		name = "专属弹幕-维达号I",
 		type = 1,
@@ -153717,11 +147518,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_75
-
-	local var_21_76 = var_21_75.base.skill_data_template
-
-	var_21_76[30142] = {
+	pg.base.skill_data_template[30142] = {
 		desc_get = "",
 		name = "专属弹幕-维达号II",
 		type = 1,
@@ -153735,11 +147532,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_76
-
-	local var_21_77 = var_21_76.base.skill_data_template
-
-	var_21_77[30151] = {
+	pg.base.skill_data_template[30151] = {
 		desc_get = "",
 		name = "专属弹幕-金鹿号I",
 		type = 1,
@@ -153753,11 +147546,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_77
-
-	local var_21_78 = var_21_77.base.skill_data_template
-
-	var_21_78[30152] = {
+	pg.base.skill_data_template[30152] = {
 		desc_get = "",
 		name = "专属弹幕-金鹿号II",
 		type = 1,
@@ -153771,11 +147560,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_78
-
-	local var_21_79 = var_21_78.base.skill_data_template
-
-	var_21_79[30161] = {
+	pg.base.skill_data_template[30161] = {
 		desc_get = "",
 		name = "专属弹幕-加里冒险号I",
 		type = 1,
@@ -153789,11 +147574,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_79
-
-	local var_21_80 = var_21_79.base.skill_data_template
-
-	var_21_80[30162] = {
+	pg.base.skill_data_template[30162] = {
 		desc_get = "",
 		name = "专属弹幕-加里冒险号II",
 		type = 1,
@@ -153807,11 +147588,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_80
-
-	local var_21_81 = var_21_80.base.skill_data_template
-
-	var_21_81[30171] = {
+	pg.base.skill_data_template[30171] = {
 		desc_get = "",
 		name = "专属弹幕-拉菲 II-I",
 		type = 1,
@@ -153825,11 +147602,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_81
-
-	local var_21_82 = var_21_81.base.skill_data_template
-
-	var_21_82[30172] = {
+	pg.base.skill_data_template[30172] = {
 		desc_get = "",
 		name = "专属弹幕-拉菲 II-II",
 		type = 1,
@@ -153843,11 +147616,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_82
-
-	local var_21_83 = var_21_82.base.skill_data_template
-
-	var_21_83[30181] = {
+	pg.base.skill_data_template[30181] = {
 		desc_get = "",
 		name = "专属弹幕-松鲷I",
 		type = 1,
@@ -153861,11 +147630,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_83
 
-	local var_21_84 = var_21_83.base.skill_data_template
-
-	var_21_84[30182] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[30182] = {
 		desc_get = "",
 		name = "专属弹幕-松鲷II",
 		type = 1,
@@ -153879,11 +147648,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_84
-
-	local var_21_85 = var_21_84.base.skill_data_template
-
-	var_21_85[30191] = {
+	pg.base.skill_data_template[30191] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -153897,11 +147662,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_85
-
-	local var_21_86 = var_21_85.base.skill_data_template
-
-	var_21_86[30192] = {
+	pg.base.skill_data_template[30192] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -153915,11 +147676,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_86
-
-	local var_21_87 = var_21_86.base.skill_data_template
-
-	var_21_87[30201] = {
+	pg.base.skill_data_template[30201] = {
 		desc_get = "",
 		name = "专属弹幕-火力I",
 		type = 1,
@@ -153933,11 +147690,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_87
-
-	local var_21_88 = var_21_87.base.skill_data_template
-
-	var_21_88[30202] = {
+	pg.base.skill_data_template[30202] = {
 		desc_get = "",
 		name = "专属弹幕-火力II",
 		type = 1,
@@ -153951,11 +147704,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_88
-
-	local var_21_89 = var_21_88.base.skill_data_template
-
-	var_21_89[30211] = {
+	pg.base.skill_data_template[30211] = {
 		desc_get = "",
 		name = "专属弹幕-努比亚人I",
 		type = 1,
@@ -153969,11 +147718,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_89
-
-	local var_21_90 = var_21_89.base.skill_data_template
-
-	var_21_90[30212] = {
+	pg.base.skill_data_template[30212] = {
 		desc_get = "",
 		name = "专属弹幕-努比亚人II",
 		type = 1,
@@ -153987,11 +147732,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_90
-
-	local var_21_91 = var_21_90.base.skill_data_template
-
-	var_21_91[30221] = {
+	pg.base.skill_data_template[30221] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:532}I",
 		type = 1,
@@ -154005,11 +147746,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_91
-
-	local var_21_92 = var_21_91.base.skill_data_template
-
-	var_21_92[30222] = {
+	pg.base.skill_data_template[30222] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:532}II",
 		type = 1,
@@ -154023,11 +147760,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_92
-
-	local var_21_93 = var_21_92.base.skill_data_template
-
-	var_21_93[30231] = {
+	pg.base.skill_data_template[30231] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:227}I",
 		type = 1,
@@ -154041,11 +147774,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_93
-
-	local var_21_94 = var_21_93.base.skill_data_template
-
-	var_21_94[30232] = {
+	pg.base.skill_data_template[30232] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:227}II",
 		type = 1,
@@ -154059,11 +147788,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_94
-
-	local var_21_95 = var_21_94.base.skill_data_template
-
-	var_21_95[30241] = {
+	pg.base.skill_data_template[30241] = {
 		desc_get = "",
 		name = "专属弹幕-鲁莽(μ兵装)I",
 		type = 1,
@@ -154077,11 +147802,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_95
-
-	local var_21_96 = var_21_95.base.skill_data_template
-
-	var_21_96[30242] = {
+	pg.base.skill_data_template[30242] = {
 		desc_get = "",
 		name = "专属弹幕-鲁莽(μ兵装)II",
 		type = 1,
@@ -154095,11 +147816,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_96
-
-	local var_21_97 = var_21_96.base.skill_data_template
-
-	var_21_97[30251] = {
+	pg.base.skill_data_template[30251] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:533}I",
 		type = 1,
@@ -154113,11 +147830,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_97
-
-	local var_21_98 = var_21_97.base.skill_data_template
-
-	var_21_98[30252] = {
+	pg.base.skill_data_template[30252] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:533}II",
 		type = 1,
@@ -154131,8 +147844,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_21_98
-	var_21_98.base.skill_data_template[30261] = {
+	pg.base.skill_data_template[30261] = {
 		desc_get = "",
 		name = "专属弹幕-莫加多尔I",
 		type = 1,
@@ -154146,15 +147858,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_22_0 = var_1_10000.base.skill_data_template
-
-	var_22_0[30262] = {
+	pg.base.skill_data_template[30262] = {
 		desc_get = "",
 		name = "专属弹幕-莫加多尔II",
 		type = 1,
@@ -154168,11 +147872,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_0
-
-	local var_22_1 = var_22_0.base.skill_data_template
-
-	var_22_1[30271] = {
+	pg.base.skill_data_template[30271] = {
 		desc_get = "",
 		name = "专属弹幕-布伦努斯I",
 		type = 1,
@@ -154186,11 +147886,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_1
-
-	local var_22_2 = var_22_1.base.skill_data_template
-
-	var_22_2[30272] = {
+	pg.base.skill_data_template[30272] = {
 		desc_get = "",
 		name = "专属弹幕-布伦努斯II",
 		type = 1,
@@ -154204,11 +147900,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_2
-
-	local var_22_3 = var_22_2.base.skill_data_template
-
-	var_22_3[30281] = {
+	pg.base.skill_data_template[30281] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:494}I",
 		type = 1,
@@ -154222,11 +147914,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_3
-
-	local var_22_4 = var_22_3.base.skill_data_template
-
-	var_22_4[30282] = {
+	pg.base.skill_data_template[30282] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:494}II",
 		type = 1,
@@ -154240,11 +147928,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_4
-
-	local var_22_5 = var_22_4.base.skill_data_template
-
-	var_22_5[30291] = {
+	pg.base.skill_data_template[30291] = {
 		desc_get = "",
 		name = "专属弹幕-贝亚德I",
 		type = 1,
@@ -154258,11 +147942,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_5
-
-	local var_22_6 = var_22_5.base.skill_data_template
-
-	var_22_6[30292] = {
+	pg.base.skill_data_template[30292] = {
 		desc_get = "",
 		name = "专属弹幕-贝亚德II",
 		type = 1,
@@ -154276,11 +147956,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_6
-
-	local var_22_7 = var_22_6.base.skill_data_template
-
-	var_22_7[30301] = {
+	pg.base.skill_data_template[30301] = {
 		desc_get = "",
 		name = "专属弹幕-哈尔福德I",
 		type = 1,
@@ -154294,11 +147970,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_7
-
-	local var_22_8 = var_22_7.base.skill_data_template
-
-	var_22_8[30302] = {
+	pg.base.skill_data_template[30302] = {
 		desc_get = "",
 		name = "专属弹幕-哈尔福德II",
 		type = 1,
@@ -154312,11 +147984,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_8
-
-	local var_22_9 = var_22_8.base.skill_data_template
-
-	var_22_9[30311] = {
+	pg.base.skill_data_template[30311] = {
 		desc_get = "",
 		name = "专属弹幕-那不勒斯I",
 		type = 1,
@@ -154330,11 +147998,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_9
-
-	local var_22_10 = var_22_9.base.skill_data_template
-
-	var_22_10[30312] = {
+	pg.base.skill_data_template[30312] = {
 		desc_get = "",
 		name = "专属弹幕-那不勒斯II",
 		type = 1,
@@ -154348,11 +148012,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_10
-
-	local var_22_11 = var_22_10.base.skill_data_template
-
-	var_22_11[30321] = {
+	pg.base.skill_data_template[30321] = {
 		desc_get = "",
 		name = "专属弹幕-果敢I",
 		type = 1,
@@ -154366,11 +148026,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_11
-
-	local var_22_12 = var_22_11.base.skill_data_template
-
-	var_22_12[30322] = {
+	pg.base.skill_data_template[30322] = {
 		desc_get = "",
 		name = "专属弹幕-果敢II",
 		type = 1,
@@ -154384,11 +148040,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_12
-
-	local var_22_13 = var_22_12.base.skill_data_template
-
-	var_22_13[30331] = {
+	pg.base.skill_data_template[30331] = {
 		desc_get = "",
 		name = "专属弹幕-法戈I",
 		type = 1,
@@ -154402,11 +148054,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_13
-
-	local var_22_14 = var_22_13.base.skill_data_template
-
-	var_22_14[30332] = {
+	pg.base.skill_data_template[30332] = {
 		desc_get = "",
 		name = "专属弹幕-法戈II",
 		type = 1,
@@ -154420,11 +148068,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_14
-
-	local var_22_15 = var_22_14.base.skill_data_template
-
-	var_22_15[30341] = {
+	pg.base.skill_data_template[30341] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:231}I",
 		type = 1,
@@ -154438,11 +148082,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_15
-
-	local var_22_16 = var_22_15.base.skill_data_template
-
-	var_22_16[30342] = {
+	pg.base.skill_data_template[30342] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:231}II",
 		type = 1,
@@ -154456,11 +148096,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_16
-
-	local var_22_17 = var_22_16.base.skill_data_template
-
-	var_22_17[30351] = {
+	pg.base.skill_data_template[30351] = {
 		desc_get = "",
 		name = "专属弹幕-和睦号I",
 		type = 1,
@@ -154474,11 +148110,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_17
-
-	local var_22_18 = var_22_17.base.skill_data_template
-
-	var_22_18[30352] = {
+	pg.base.skill_data_template[30352] = {
 		desc_get = "",
 		name = "专属弹幕-和睦号II",
 		type = 1,
@@ -154492,11 +148124,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_18
-
-	local var_22_19 = var_22_18.base.skill_data_template
-
-	var_22_19[30361] = {
+	pg.base.skill_data_template[30361] = {
 		desc_get = "",
 		name = "专属弹幕-幻想号I",
 		type = 1,
@@ -154510,11 +148138,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_19
-
-	local var_22_20 = var_22_19.base.skill_data_template
-
-	var_22_20[30362] = {
+	pg.base.skill_data_template[30362] = {
 		desc_get = "",
 		name = "专属弹幕-幻想号II",
 		type = 1,
@@ -154528,11 +148152,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_20
-
-	local var_22_21 = var_22_20.base.skill_data_template
-
-	var_22_21[30371] = {
+	pg.base.skill_data_template[30371] = {
 		desc_get = "",
 		name = "专属弹幕-海豚号I",
 		type = 1,
@@ -154546,11 +148166,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_21
-
-	local var_22_22 = var_22_21.base.skill_data_template
-
-	var_22_22[30372] = {
+	pg.base.skill_data_template[30372] = {
 		desc_get = "",
 		name = "专属弹幕-海豚号II",
 		type = 1,
@@ -154564,11 +148180,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_22
-
-	local var_22_23 = var_22_22.base.skill_data_template
-
-	var_22_23[30381] = {
+	pg.base.skill_data_template[30381] = {
 		desc_get = "",
 		name = "专属弹幕-朴茨茅斯冒险号I",
 		type = 1,
@@ -154582,11 +148194,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_23
-
-	local var_22_24 = var_22_23.base.skill_data_template
-
-	var_22_24[30382] = {
+	pg.base.skill_data_template[30382] = {
 		desc_get = "",
 		name = "专属弹幕-朴茨茅斯冒险号II",
 		type = 1,
@@ -154600,11 +148208,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_24
-
-	local var_22_25 = var_22_24.base.skill_data_template
-
-	var_22_25[30391] = {
+	pg.base.skill_data_template[30391] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:540}I",
 		type = 1,
@@ -154618,11 +148222,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_25
-
-	local var_22_26 = var_22_25.base.skill_data_template
-
-	var_22_26[30392] = {
+	pg.base.skill_data_template[30392] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:540}II",
 		type = 1,
@@ -154636,11 +148236,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_26
-
-	local var_22_27 = var_22_26.base.skill_data_template
-
-	var_22_27[30401] = {
+	pg.base.skill_data_template[30401] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:541}I",
 		type = 1,
@@ -154654,11 +148250,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_27
-
-	local var_22_28 = var_22_27.base.skill_data_template
-
-	var_22_28[30402] = {
+	pg.base.skill_data_template[30402] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:541}II",
 		type = 1,
@@ -154672,11 +148264,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_28
-
-	local var_22_29 = var_22_28.base.skill_data_template
-
-	var_22_29[30411] = {
+	pg.base.skill_data_template[30411] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -154690,11 +148278,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_29
-
-	local var_22_30 = var_22_29.base.skill_data_template
-
-	var_22_30[30412] = {
+	pg.base.skill_data_template[30412] = {
 		desc_get = "",
 		name = "全弹发射III",
 		type = 1,
@@ -154708,11 +148292,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_30
-
-	local var_22_31 = var_22_30.base.skill_data_template
-
-	var_22_31[30421] = {
+	pg.base.skill_data_template[30421] = {
 		desc_get = "",
 		name = "专属弹幕-巴拉卡少校I",
 		type = 1,
@@ -154726,11 +148306,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_31
-
-	local var_22_32 = var_22_31.base.skill_data_template
-
-	var_22_32[30422] = {
+	pg.base.skill_data_template[30422] = {
 		desc_get = "",
 		name = "专属弹幕-巴拉卡少校II",
 		type = 1,
@@ -154744,11 +148320,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_32
-
-	local var_22_33 = var_22_32.base.skill_data_template
-
-	var_22_33[30431] = {
+	pg.base.skill_data_template[30431] = {
 		desc_get = "",
 		name = "专属弹幕-圣塔菲I",
 		type = 1,
@@ -154762,11 +148334,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_33
-
-	local var_22_34 = var_22_33.base.skill_data_template
-
-	var_22_34[30432] = {
+	pg.base.skill_data_template[30432] = {
 		desc_get = "",
 		name = "专属弹幕-圣塔菲II",
 		type = 1,
@@ -154780,11 +148348,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_34
-
-	local var_22_35 = var_22_34.base.skill_data_template
-
-	var_22_35[30441] = {
+	pg.base.skill_data_template[30441] = {
 		desc_get = "",
 		name = "专属弹幕-七省I",
 		type = 1,
@@ -154798,11 +148362,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_35
-
-	local var_22_36 = var_22_35.base.skill_data_template
-
-	var_22_36[30442] = {
+	pg.base.skill_data_template[30442] = {
 		desc_get = "",
 		name = "专属弹幕-七省II",
 		type = 1,
@@ -154816,11 +148376,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_36
-
-	local var_22_37 = var_22_36.base.skill_data_template
-
-	var_22_37[30451] = {
+	pg.base.skill_data_template[30451] = {
 		desc_get = "",
 		name = "专属弹幕-小安克雷奇I",
 		type = 1,
@@ -154834,11 +148390,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_37
-
-	local var_22_38 = var_22_37.base.skill_data_template
-
-	var_22_38[30452] = {
+	pg.base.skill_data_template[30452] = {
 		desc_get = "",
 		name = "专属弹幕-小安克雷奇II",
 		type = 1,
@@ -154852,11 +148404,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_38
-
-	local var_22_39 = var_22_38.base.skill_data_template
-
-	var_22_39[30461] = {
+	pg.base.skill_data_template[30461] = {
 		desc_get = "",
 		name = "专属弹幕-克利奥佩特拉I",
 		type = 1,
@@ -154870,11 +148418,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_39
-
-	local var_22_40 = var_22_39.base.skill_data_template
-
-	var_22_40[30462] = {
+	pg.base.skill_data_template[30462] = {
 		desc_get = "",
 		name = "专属弹幕-克利奥佩特拉II",
 		type = 1,
@@ -154888,11 +148432,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_40
-
-	local var_22_41 = var_22_40.base.skill_data_template
-
-	var_22_41[30471] = {
+	pg.base.skill_data_template[30471] = {
 		desc_get = "",
 		name = "专属弹幕-特拉法尔加I",
 		type = 1,
@@ -154906,11 +148446,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_41
-
-	local var_22_42 = var_22_41.base.skill_data_template
-
-	var_22_42[30472] = {
+	pg.base.skill_data_template[30472] = {
 		desc_get = "",
 		name = "专属弹幕-特拉法尔加II",
 		type = 1,
@@ -154924,11 +148460,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_42
-
-	local var_22_43 = var_22_42.base.skill_data_template
-
-	var_22_43[30481] = {
+	pg.base.skill_data_template[30481] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:545}I",
 		type = 1,
@@ -154942,11 +148474,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_43
-
-	local var_22_44 = var_22_43.base.skill_data_template
-
-	var_22_44[30482] = {
+	pg.base.skill_data_template[30482] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:545}II",
 		type = 1,
@@ -154960,11 +148488,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_44
-
-	local var_22_45 = var_22_44.base.skill_data_template
-
-	var_22_45[30491] = {
+	pg.base.skill_data_template[30491] = {
 		desc_get = "",
 		name = "专属弹幕-维托里奥·库尼贝尔蒂I",
 		type = 1,
@@ -154978,11 +148502,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_45
-
-	local var_22_46 = var_22_45.base.skill_data_template
-
-	var_22_46[30492] = {
+	pg.base.skill_data_template[30492] = {
 		desc_get = "",
 		name = "专属弹幕-维托里奥·库尼贝尔蒂II",
 		type = 1,
@@ -154996,11 +148516,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_46
-
-	local var_22_47 = var_22_46.base.skill_data_template
-
-	var_22_47[30501] = {
+	pg.base.skill_data_template[30501] = {
 		desc_get = "",
 		name = "专属弹幕-迪米特里·顿斯科伊I",
 		type = 1,
@@ -155014,11 +148530,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_47
-
-	local var_22_48 = var_22_47.base.skill_data_template
-
-	var_22_48[30502] = {
+	pg.base.skill_data_template[30502] = {
 		desc_get = "",
 		name = "专属弹幕-迪米特里·顿斯科伊II",
 		type = 1,
@@ -155032,11 +148544,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_48
-
-	local var_22_49 = var_22_48.base.skill_data_template
-
-	var_22_49[30511] = {
+	pg.base.skill_data_template[30511] = {
 		desc_get = "",
 		name = "专属弹幕-大胆I",
 		type = 1,
@@ -155050,11 +148558,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_49
-
-	local var_22_50 = var_22_49.base.skill_data_template
-
-	var_22_50[30512] = {
+	pg.base.skill_data_template[30512] = {
 		desc_get = "",
 		name = "专属弹幕-大胆II",
 		type = 1,
@@ -155068,11 +148572,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_50
-
-	local var_22_51 = var_22_50.base.skill_data_template
-
-	var_22_51[30521] = {
+	pg.base.skill_data_template[30521] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:303}I",
 		type = 1,
@@ -155088,11 +148588,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_51
-
-	local var_22_52 = var_22_51.base.skill_data_template
-
-	var_22_52[30522] = {
+	pg.base.skill_data_template[30522] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:303}II",
 		type = 1,
@@ -155108,11 +148604,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_52
-
-	local var_22_53 = var_22_52.base.skill_data_template
-
-	var_22_53[30531] = {
+	pg.base.skill_data_template[30531] = {
 		desc_get = "",
 		name = "专属弹幕-皇家詹姆斯号I",
 		type = 1,
@@ -155126,11 +148618,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_53
-
-	local var_22_54 = var_22_53.base.skill_data_template
-
-	var_22_54[30532] = {
+	pg.base.skill_data_template[30532] = {
 		desc_get = "",
 		name = "专属弹幕-皇家詹姆斯号II",
 		type = 1,
@@ -155144,11 +148632,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_54
-
-	local var_22_55 = var_22_54.base.skill_data_template
-
-	var_22_55[30541] = {
+	pg.base.skill_data_template[30541] = {
 		desc_get = "",
 		name = "专属弹幕-冒险号I",
 		type = 1,
@@ -155162,11 +148646,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_55
-
-	local var_22_56 = var_22_55.base.skill_data_template
-
-	var_22_56[30542] = {
+	pg.base.skill_data_template[30542] = {
 		desc_get = "",
 		name = "专属弹幕-冒险号II",
 		type = 1,
@@ -155180,11 +148660,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_56
-
-	local var_22_57 = var_22_56.base.skill_data_template
-
-	var_22_57[30551] = {
+	pg.base.skill_data_template[30551] = {
 		desc_get = "",
 		name = "专属弹幕-莱姆号I",
 		type = 1,
@@ -155198,11 +148674,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_57
-
-	local var_22_58 = var_22_57.base.skill_data_template
-
-	var_22_58[30552] = {
+	pg.base.skill_data_template[30552] = {
 		desc_get = "",
 		name = "专属弹幕-莱姆号II",
 		type = 1,
@@ -155216,11 +148688,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_58
-
-	local var_22_59 = var_22_58.base.skill_data_template
-
-	var_22_59[30561] = {
+	pg.base.skill_data_template[30561] = {
 		desc_get = "",
 		name = "专属弹幕-威廉·D·波特I",
 		type = 1,
@@ -155234,11 +148702,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_59
-
-	local var_22_60 = var_22_59.base.skill_data_template
-
-	var_22_60[30562] = {
+	pg.base.skill_data_template[30562] = {
 		desc_get = "",
 		name = "专属弹幕-威廉·D·波特II",
 		type = 1,
@@ -155252,11 +148716,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_60
-
-	local var_22_61 = var_22_60.base.skill_data_template
-
-	var_22_61[30571] = {
+	pg.base.skill_data_template[30571] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:310}I",
 		type = 1,
@@ -155270,11 +148730,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_61
-
-	local var_22_62 = var_22_61.base.skill_data_template
-
-	var_22_62[30572] = {
+	pg.base.skill_data_template[30572] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:310}II",
 		type = 1,
@@ -155288,11 +148744,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_62
-
-	local var_22_63 = var_22_62.base.skill_data_template
-
-	var_22_63[30581] = {
+	pg.base.skill_data_template[30581] = {
 		desc_get = "",
 		name = "专属弹幕-顽皮I",
 		type = 1,
@@ -155306,11 +148758,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_63
-
-	local var_22_64 = var_22_63.base.skill_data_template
-
-	var_22_64[30582] = {
+	pg.base.skill_data_template[30582] = {
 		desc_get = "",
 		name = "专属弹幕-顽皮II",
 		type = 1,
@@ -155324,11 +148772,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_64
-
-	local var_22_65 = var_22_64.base.skill_data_template
-
-	var_22_65[30591] = {
+	pg.base.skill_data_template[30591] = {
 		desc_get = "",
 		name = "专属弹幕-莫斯科I",
 		type = 1,
@@ -155342,11 +148786,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_65
-
-	local var_22_66 = var_22_65.base.skill_data_template
-
-	var_22_66[30592] = {
+	pg.base.skill_data_template[30592] = {
 		desc_get = "",
 		name = "专属弹幕-莫斯科II",
 		type = 1,
@@ -155360,11 +148800,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_66
-
-	local var_22_67 = var_22_66.base.skill_data_template
-
-	var_22_67[30601] = {
+	pg.base.skill_data_template[30601] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:558}I",
 		type = 1,
@@ -155380,11 +148816,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_67
-
-	local var_22_68 = var_22_67.base.skill_data_template
-
-	var_22_68[30602] = {
+	pg.base.skill_data_template[30602] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:558}II",
 		type = 1,
@@ -155400,11 +148832,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_68
-
-	local var_22_69 = var_22_68.base.skill_data_template
-
-	var_22_69[30611] = {
+	pg.base.skill_data_template[30611] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:559}I",
 		type = 1,
@@ -155418,11 +148846,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_69
-
-	local var_22_70 = var_22_69.base.skill_data_template
-
-	var_22_70[30612] = {
+	pg.base.skill_data_template[30612] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:559}II",
 		type = 1,
@@ -155436,11 +148860,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_70
-
-	local var_22_71 = var_22_70.base.skill_data_template
-
-	var_22_71[30631] = {
+	pg.base.skill_data_template[30631] = {
 		desc_get = "",
 		name = "专属弹幕-暴风雨I",
 		type = 1,
@@ -155454,11 +148874,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_71
-
-	local var_22_72 = var_22_71.base.skill_data_template
-
-	var_22_72[30632] = {
+	pg.base.skill_data_template[30632] = {
 		desc_get = "",
 		name = "专属弹幕-暴风雨II",
 		type = 1,
@@ -155472,11 +148888,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_72
-
-	local var_22_73 = var_22_72.base.skill_data_template
-
-	var_22_73[30651] = {
+	pg.base.skill_data_template[30651] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:313}I",
 		type = 1,
@@ -155490,11 +148902,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_73
-
-	local var_22_74 = var_22_73.base.skill_data_template
-
-	var_22_74[30652] = {
+	pg.base.skill_data_template[30652] = {
 		desc_get = "",
 		name = "专属弹幕-{namecode:313}II",
 		type = 1,
@@ -155508,11 +148916,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_74
-
-	local var_22_75 = var_22_74.base.skill_data_template
-
-	var_22_75[30621] = {
+	pg.base.skill_data_template[30621] = {
 		desc_get = "",
 		name = "专属弹幕-瑟堡I",
 		type = 1,
@@ -155526,11 +148930,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_75
-
-	local var_22_76 = var_22_75.base.skill_data_template
-
-	var_22_76[30622] = {
+	pg.base.skill_data_template[30622] = {
 		desc_get = "",
 		name = "专属弹幕-瑟堡II",
 		type = 1,
@@ -155544,11 +148944,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_76
-
-	local var_22_77 = var_22_76.base.skill_data_template
-
-	var_22_77[30641] = {
+	pg.base.skill_data_template[30641] = {
 		desc_get = "",
 		name = "专属弹幕-华丽I",
 		type = 1,
@@ -155562,11 +148958,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_77
-
-	local var_22_78 = var_22_77.base.skill_data_template
-
-	var_22_78[30642] = {
+	pg.base.skill_data_template[30642] = {
 		desc_get = "",
 		name = "专属弹幕-华丽II",
 		type = 1,
@@ -155580,11 +148972,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_78
-
-	local var_22_79 = var_22_78.base.skill_data_template
-
-	var_22_79[30661] = {
+	pg.base.skill_data_template[30661] = {
 		desc_get = "",
 		name = "专属弹幕-萨里I",
 		type = 1,
@@ -155598,11 +148986,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_79
-
-	local var_22_80 = var_22_79.base.skill_data_template
-
-	var_22_80[30662] = {
+	pg.base.skill_data_template[30662] = {
 		desc_get = "",
 		name = "专属弹幕-萨里II",
 		type = 1,
@@ -155616,11 +149000,67 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_80
+	pg.base.skill_data_template[30671] = {
+		desc_get = "",
+		name = "专属弹幕-柯莱特I",
+		type = 1,
+		max_level = 1,
+		desc = "主炮每进行15次攻击，触发专属弹幕-柯莱特I",
+		id = 30671,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[30672] = {
+		desc_get = "",
+		name = "专属弹幕-柯莱特II",
+		type = 1,
+		max_level = 1,
+		desc = "主炮每进行10次攻击，触发专属弹幕-柯莱特II",
+		id = 30672,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[30681] = {
+		desc_get = "",
+		name = "专属弹幕-维克斯堡I",
+		type = 1,
+		max_level = 1,
+		desc = "主炮每进行15次攻击，触发专属弹幕-维克斯堡I",
+		id = 30681,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
 
-	local var_22_81 = var_22_80.base.skill_data_template
-
-	var_22_81[18] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[30682] = {
+		desc_get = "",
+		name = "专属弹幕-维克斯堡II",
+		type = 1,
+		max_level = 1,
+		desc = "主炮每进行10次攻击，触发专属弹幕-维克斯堡II",
+		id = 30682,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {},
+		desc_add = {}
+	}
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "主人公补正",
 		type = 3,
@@ -155726,11 +149166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_81
-
-	local var_22_82 = var_22_81.base.skill_data_template
-
-	var_22_82[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "冥想·S",
 		type = 1,
@@ -155836,11 +149272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_82
-
-	local var_22_83 = var_22_82.base.skill_data_template
-
-	var_22_83[101030] = {
+	pg.base.skill_data_template[101030] = {
 		desc_get = "",
 		name = "限阻破坏",
 		type = 3,
@@ -156036,11 +149468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_83
-
-	local var_22_84 = var_22_83.base.skill_data_template
-
-	var_22_84[101040] = {
+	pg.base.skill_data_template[101040] = {
 		desc_get = "",
 		name = "联结·阿萨姆",
 		type = 2,
@@ -156146,11 +149574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_84
-
-	local var_22_85 = var_22_84.base.skill_data_template
-
-	var_22_85[101050] = {
+	pg.base.skill_data_template[101050] = {
 		desc_get = "",
 		name = "十字缔结",
 		type = 1,
@@ -156211,11 +149635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_85
-
-	local var_22_86 = var_22_85.base.skill_data_template
-
-	var_22_86[101060] = {
+	pg.base.skill_data_template[101060] = {
 		desc_get = "战斗开始115秒后触发，发射超强弹幕(威力依据技能等级)，每场战斗只能触发1次",
 		name = "胜利刺穿",
 		type = 1,
@@ -156271,11 +149691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_86
-
-	local var_22_87 = var_22_86.base.skill_data_template
-
-	var_22_87[101070] = {
+	pg.base.skill_data_template[101070] = {
 		desc_get = "每隔20秒，有20.0%(满级40.0%)的概率触发，发射强力弹幕(威力依据技能等级)，命中敌人概率造成起火，持续12秒",
 		name = "烈焰崩袭",
 		type = 1,
@@ -156372,11 +149788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_87
-
-	local var_22_88 = var_22_87.base.skill_data_template
-
-	var_22_88[101080] = {
+	pg.base.skill_data_template[101080] = {
 		desc_get = "",
 		name = "三色秩序",
 		type = 3,
@@ -156390,11 +149802,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_22_88
-
-	local var_22_89 = var_22_88.base.skill_data_template
-
-	var_22_89[101090] = {
+	pg.base.skill_data_template[101090] = {
 		desc_get = "每隔20秒，有20.0%(满级40.0%)的概率触发，发射强力弹幕(威力依据技能等级)",
 		name = "蕾丝狂舞",
 		type = 1,
@@ -156491,11 +149899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_89
-
-	local var_22_90 = var_22_89.base.skill_data_template
-
-	var_22_90[101100] = {
+	pg.base.skill_data_template[101100] = {
 		desc_get = "",
 		name = "幻影刃舞·风暴",
 		type = 1,
@@ -156556,11 +149960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_90
-
-	local var_22_91 = var_22_90.base.skill_data_template
-
-	var_22_91[101110] = {
+	pg.base.skill_data_template[101110] = {
 		desc_get = "每隔20秒，有20.0%(满级40.0%)的概率触发，发射强力弹幕(威力依据技能等级)，命中敌人概率造成减速效果，持续8秒",
 		name = "众神之怒·雪崩雷震",
 		type = 1,
@@ -156657,11 +150057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_91
-
-	local var_22_92 = var_22_91.base.skill_data_template
-
-	var_22_92[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "怒旋·大吉岭",
 		type = 3,
@@ -156812,11 +150208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_92
-
-	local var_22_93 = var_22_92.base.skill_data_template
-
-	var_22_93[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "每隔20秒，有20.0%(满级40.0%)概率释放特殊航空弹幕(威力依据技能等级)",
 		name = "宝石枪雨",
 		type = 1,
@@ -156913,11 +150305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_93
-
-	local var_22_94 = var_22_93.base.skill_data_template
-
-	var_22_94[102010] = {
+	pg.base.skill_data_template[102010] = {
 		desc_get = "",
 		name = "bili看板娘",
 		type = 3,
@@ -156978,11 +150366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_94
-
-	local var_22_95 = var_22_94.base.skill_data_template
-
-	var_22_95[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "bili看板娘",
 		type = 3,
@@ -157088,11 +150472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_95
-
-	local var_22_96 = var_22_95.base.skill_data_template
-
-	var_22_96[103010] = {
+	pg.base.skill_data_template[103010] = {
 		desc_get = "",
 		name = "四神变幻",
 		type = 3,
@@ -157153,11 +150533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_96
-
-	local var_22_97 = var_22_96.base.skill_data_template
-
-	var_22_97[103020] = {
+	pg.base.skill_data_template[103020] = {
 		desc_get = "",
 		name = "十姊妹",
 		type = 1,
@@ -157218,11 +150594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_97
-
-	local var_22_98 = var_22_97.base.skill_data_template
-
-	var_22_98[103030] = {
+	pg.base.skill_data_template[103030] = {
 		desc_get = "",
 		name = "白虹",
 		type = 2,
@@ -157328,8 +150700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_22_98
-	var_22_98.base.skill_data_template[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "夕星",
 		type = 1,
@@ -157390,15 +150761,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_23_0 = var_1_10000.base.skill_data_template
-
-	var_23_0[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "生命的鼓动",
 		type = 2,
@@ -157459,11 +150822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_0
-
-	local var_23_1 = var_23_0.base.skill_data_template
-
-	var_23_1[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "百合根",
 		type = 1,
@@ -157510,11 +150869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_1
-
-	local var_23_2 = var_23_1.base.skill_data_template
-
-	var_23_2[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "锁之巫女",
 		type = 3,
@@ -157620,11 +150975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_2
-
-	local var_23_3 = var_23_2.base.skill_data_template
-
-	var_23_3[103080] = {
+	pg.base.skill_data_template[103080] = {
 		desc_get = "",
 		name = "双影无双",
 		type = 1,
@@ -157671,11 +151022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_3
-
-	local var_23_4 = var_23_3.base.skill_data_template
-
-	var_23_4[103090] = {
+	pg.base.skill_data_template[103090] = {
 		desc_get = "",
 		name = "锁之巫女",
 		type = 3,
@@ -157781,11 +151128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_4
-
-	local var_23_5 = var_23_4.base.skill_data_template
-
-	var_23_5[103100] = {
+	pg.base.skill_data_template[103100] = {
 		desc_get = "",
 		name = "双影无双",
 		type = 1,
@@ -157832,11 +151175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_5
-
-	local var_23_6 = var_23_5.base.skill_data_template
-
-	var_23_6[103110] = {
+	pg.base.skill_data_template[103110] = {
 		desc_get = "",
 		name = "百华蜜",
 		type = 2,
@@ -157942,11 +151281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_6
-
-	local var_23_7 = var_23_6.base.skill_data_template
-
-	var_23_7[103120] = {
+	pg.base.skill_data_template[103120] = {
 		desc_get = "战斗开始20秒(满级10秒)后触发一次特殊弹幕，之后每30秒(满级20秒)触发一次特殊弹幕(特殊弹幕威力依据技能等级)",
 		name = "蜜月",
 		type = 1,
@@ -158052,11 +151387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_7
-
-	local var_23_8 = var_23_7.base.skill_data_template
-
-	var_23_8[104010] = {
+	pg.base.skill_data_template[104010] = {
 		desc_get = "",
 		name = "爱碳光线！",
 		type = 3,
@@ -158108,11 +151439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_8
-
-	local var_23_9 = var_23_8.base.skill_data_template
-
-	var_23_9[104020] = {
+	pg.base.skill_data_template[104020] = {
 		desc_get = "",
 		name = "危机规避！",
 		type = 2,
@@ -158218,11 +151545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_9
-
-	local var_23_10 = var_23_9.base.skill_data_template
-
-	var_23_10[104030] = {
+	pg.base.skill_data_template[104030] = {
 		desc_get = "",
 		name = "链接着的羁绊",
 		type = 3,
@@ -158328,11 +151651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_10
-
-	local var_23_11 = var_23_10.base.skill_data_template
-
-	var_23_11[104040] = {
+	pg.base.skill_data_template[104040] = {
 		desc_get = "",
 		name = "绝对清楚宣言",
 		type = 2,
@@ -158393,11 +151712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_11
-
-	local var_23_12 = var_23_11.base.skill_data_template
-
-	var_23_12[104050] = {
+	pg.base.skill_data_template[104050] = {
 		desc_get = "",
 		name = "Future Base",
 		type = 1,
@@ -158449,11 +151764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_12
-
-	local var_23_13 = var_23_12.base.skill_data_template
-
-	var_23_13[104060] = {
+	pg.base.skill_data_template[104060] = {
 		desc_get = "",
 		name = "Melty World",
 		type = 1,
@@ -158514,11 +151825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_13
-
-	local var_23_14 = var_23_13.base.skill_data_template
-
-	var_23_14[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "描边大师",
 		type = 1,
@@ -158624,11 +151931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_14
-
-	local var_23_15 = var_23_14.base.skill_data_template
-
-	var_23_15[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "智能寻路系统",
 		type = 2,
@@ -158689,11 +151992,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_15
-
-	local var_23_16 = var_23_15.base.skill_data_template
-
-	var_23_16[105010] = {
+	pg.base.skill_data_template[105010] = {
 		desc_get = "",
 		name = "2.25马赫之华",
 		type = 1,
@@ -158745,11 +152044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_16
-
-	local var_23_17 = var_23_16.base.skill_data_template
-
-	var_23_17[105020] = {
+	pg.base.skill_data_template[105020] = {
 		desc_get = "",
 		name = "二重存在之狐",
 		type = 3,
@@ -158855,11 +152150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_17
-
-	local var_23_18 = var_23_17.base.skill_data_template
-
-	var_23_18[105030] = {
+	pg.base.skill_data_template[105030] = {
 		desc_get = "",
 		name = "Dream☆Story",
 		type = 1,
@@ -158956,11 +152247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_18
-
-	local var_23_19 = var_23_18.base.skill_data_template
-
-	var_23_19[105040] = {
+	pg.base.skill_data_template[105040] = {
 		desc_get = "",
 		name = "比大海更深邃的天空下",
 		type = 2,
@@ -159066,11 +152353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_19
-
-	local var_23_20 = var_23_19.base.skill_data_template
-
-	var_23_20[105050] = {
+	pg.base.skill_data_template[105050] = {
 		desc_get = "",
 		name = "室内系女仆",
 		type = 1,
@@ -159178,11 +152461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_20
-
-	local var_23_21 = var_23_20.base.skill_data_template
-
-	var_23_21[105060] = {
+	pg.base.skill_data_template[105060] = {
 		desc_get = "",
 		name = "废柴天使",
 		type = 3,
@@ -159236,11 +152515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_21
-
-	local var_23_22 = var_23_21.base.skill_data_template
-
-	var_23_22[105070] = {
+	pg.base.skill_data_template[105070] = {
 		desc_get = "",
 		name = "向日葵的约定 ",
 		type = 1,
@@ -159294,11 +152569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_22
-
-	local var_23_23 = var_23_22.base.skill_data_template
-
-	var_23_23[105080] = {
+	pg.base.skill_data_template[105080] = {
 		desc_get = "",
 		name = "与你眺望的夏日之花",
 		type = 1,
@@ -159395,11 +152666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_23
-
-	local var_23_24 = var_23_23.base.skill_data_template
-
-	var_23_24[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "第三日的见异思迁",
 		type = 3,
@@ -159505,11 +152772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_24
-
-	local var_23_25 = var_23_24.base.skill_data_template
-
-	var_23_25[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "鬼神☆百鬼",
 		type = 3,
@@ -159615,11 +152878,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_25
-
-	local var_23_26 = var_23_25.base.skill_data_template
-
-	var_23_26[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "阿修罗修罗刹鬼神斩",
 		type = 1,
@@ -159716,11 +152975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_26
-
-	local var_23_27 = var_23_26.base.skill_data_template
-
-	var_23_27[105120] = {
+	pg.base.skill_data_template[105120] = {
 		desc_get = "",
 		name = "梦见好梦的「WAVE」",
 		type = 3,
@@ -159826,11 +153081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_27
-
-	local var_23_28 = var_23_27.base.skill_data_template
-
-	var_23_28[105130] = {
+	pg.base.skill_data_template[105130] = {
 		desc_get = "",
 		name = "MP清零的「EXPLOSION」",
 		type = 1,
@@ -159882,11 +153133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_28
-
-	local var_23_29 = var_23_28.base.skill_data_template
-
-	var_23_29[105140] = {
+	pg.base.skill_data_template[105140] = {
 		desc_get = "",
 		name = "野性的二元论",
 		type = 1,
@@ -159938,11 +153185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_29
-
-	local var_23_30 = var_23_29.base.skill_data_template
-
-	var_23_30[105150] = {
+	pg.base.skill_data_template[105150] = {
 		desc_get = "",
 		name = "塔罗占卜师",
 		type = 3,
@@ -159994,11 +153237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_30
-
-	local var_23_31 = var_23_30.base.skill_data_template
-
-	var_23_31[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "玫瑰边刺",
 		type = 1,
@@ -160140,11 +153379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_31
-
-	local var_23_32 = var_23_31.base.skill_data_template
-
-	var_23_32[106020] = {
+	pg.base.skill_data_template[106020] = {
 		desc_get = "",
 		name = "活泼的小步舞曲",
 		type = 2,
@@ -160250,11 +153485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_32
-
-	local var_23_33 = var_23_32.base.skill_data_template
-
-	var_23_33[106030] = {
+	pg.base.skill_data_template[106030] = {
 		desc_get = "",
 		name = "必杀☆猜拳",
 		type = 1,
@@ -160396,11 +153627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_33
-
-	local var_23_34 = var_23_33.base.skill_data_template
-
-	var_23_34[106040] = {
+	pg.base.skill_data_template[106040] = {
 		desc_get = "",
 		name = "必杀☆大爆发",
 		type = 2,
@@ -160499,11 +153726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_34
-
-	local var_23_35 = var_23_34.base.skill_data_template
-
-	var_23_35[106050] = {
+	pg.base.skill_data_template[106050] = {
 		desc_get = "",
 		name = "樱花天舞袭",
 		type = 1,
@@ -160555,11 +153778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_35
-
-	local var_23_36 = var_23_35.base.skill_data_template
-
-	var_23_36[106060] = {
+	pg.base.skill_data_template[106060] = {
 		desc_get = "",
 		name = "霞镜花",
 		type = 3,
@@ -160665,11 +153884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_36
-
-	local var_23_37 = var_23_36.base.skill_data_template
-
-	var_23_37[106070] = {
+	pg.base.skill_data_template[106070] = {
 		desc_get = "",
 		name = "害羞的助理少女",
 		type = 3,
@@ -160820,11 +154035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_37
-
-	local var_23_38 = var_23_37.base.skill_data_template
-
-	var_23_38[106080] = {
+	pg.base.skill_data_template[106080] = {
 		desc_get = "",
 		name = "维纳斯之友",
 		type = 1,
@@ -160921,11 +154132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_38
-
-	local var_23_39 = var_23_38.base.skill_data_template
-
-	var_23_39[106090] = {
+	pg.base.skill_data_template[106090] = {
 		desc_get = "",
 		name = "温柔？的姐姐",
 		type = 1,
@@ -161067,11 +154274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_39
-
-	local var_23_40 = var_23_39.base.skill_data_template
-
-	var_23_40[106100] = {
+	pg.base.skill_data_template[106100] = {
 		desc_get = "",
 		name = "神秘的维纳斯",
 		type = 2,
@@ -161177,11 +154380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_40
-
-	local var_23_41 = var_23_40.base.skill_data_template
-
-	var_23_41[106110] = {
+	pg.base.skill_data_template[106110] = {
 		desc_get = "",
 		name = "鬼牌游戏",
 		type = 1,
@@ -161233,11 +154432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_41
-
-	local var_23_42 = var_23_41.base.skill_data_template
-
-	var_23_42[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "皇家同花顺",
 		type = 3,
@@ -161298,11 +154493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_42
-
-	local var_23_43 = var_23_42.base.skill_data_template
-
-	var_23_43[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "飞天之舞",
 		type = 1,
@@ -161354,11 +154545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_43
-
-	local var_23_44 = var_23_43.base.skill_data_template
-
-	var_23_44[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "花神乐",
 		type = 3,
@@ -161509,11 +154696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_44
-
-	local var_23_45 = var_23_44.base.skill_data_template
-
-	var_23_45[106150] = {
+	pg.base.skill_data_template[106150] = {
 		desc_get = "",
 		name = "学者的海上调查",
 		type = 1,
@@ -161610,11 +154793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_45
-
-	local var_23_46 = var_23_45.base.skill_data_template
-
-	var_23_46[106160] = {
+	pg.base.skill_data_template[106160] = {
 		desc_get = "",
 		name = "忙碌后的饥饿感",
 		type = 3,
@@ -161675,11 +154854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_46
-
-	local var_23_47 = var_23_46.base.skill_data_template
-
-	var_23_47[106170] = {
+	pg.base.skill_data_template[106170] = {
 		desc_get = "",
 		name = "玫瑰边刺 +",
 		type = 1,
@@ -161821,11 +154996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_47
-
-	local var_23_48 = var_23_47.base.skill_data_template
-
-	var_23_48[106180] = {
+	pg.base.skill_data_template[106180] = {
 		desc_get = "",
 		name = "蔷薇舞",
 		type = 1,
@@ -161839,11 +155010,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_48
-
-	local var_23_49 = var_23_48.base.skill_data_template
-
-	var_23_49[106190] = {
+	pg.base.skill_data_template[106190] = {
 		desc_get = "",
 		name = "忙碌后的饥饿感 +",
 		type = 3,
@@ -161904,11 +155071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_49
-
-	local var_23_50 = var_23_49.base.skill_data_template
-
-	var_23_50[106200] = {
+	pg.base.skill_data_template[106200] = {
 		desc_get = "",
 		name = "幸福的用餐时间",
 		type = 3,
@@ -161922,11 +155085,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_50
-
-	local var_23_51 = var_23_50.base.skill_data_template
-
-	var_23_51[106210] = {
+	pg.base.skill_data_template[106210] = {
 		desc_get = "",
 		name = "必杀☆大爆发 +",
 		type = 2,
@@ -162025,11 +155184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_51
-
-	local var_23_52 = var_23_51.base.skill_data_template
-
-	var_23_52[106220] = {
+	pg.base.skill_data_template[106220] = {
 		desc_get = "",
 		name = "必杀☆翠雀",
 		type = 2,
@@ -162043,11 +155198,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_52
-
-	local var_23_53 = var_23_52.base.skill_data_template
-
-	var_23_53[106230] = {
+	pg.base.skill_data_template[106230] = {
 		desc_get = "",
 		name = "琉璃光",
 		type = 2,
@@ -162061,11 +155212,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_53
-
-	local var_23_54 = var_23_53.base.skill_data_template
-
-	var_23_54[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "霞镜花 +",
 		type = 3,
@@ -162216,11 +155363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_54
-
-	local var_23_55 = var_23_54.base.skill_data_template
-
-	var_23_55[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "舒芙蕾攻势",
 		type = 1,
@@ -162234,11 +155377,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_55
-
-	local var_23_56 = var_23_55.base.skill_data_template
-
-	var_23_56[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "神秘的维纳斯 +",
 		type = 2,
@@ -162389,11 +155528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_56
-
-	local var_23_57 = var_23_56.base.skill_data_template
-
-	var_23_57[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "天狗之羽",
 		type = 3,
@@ -162407,11 +155542,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_57
-
-	local var_23_58 = var_23_57.base.skill_data_template
-
-	var_23_58[106280] = {
+	pg.base.skill_data_template[106280] = {
 		desc_get = "",
 		name = "花神乐 +",
 		type = 3,
@@ -162562,11 +155693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_58
-
-	local var_23_59 = var_23_58.base.skill_data_template
-
-	var_23_59[106290] = {
+	pg.base.skill_data_template[106290] = {
 		desc_get = "",
 		name = "皇家同花顺 +",
 		type = 3,
@@ -162627,11 +155754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_59
-
-	local var_23_60 = var_23_59.base.skill_data_template
-
-	var_23_60[106300] = {
+	pg.base.skill_data_template[106300] = {
 		desc_get = "",
 		name = "黑杰克",
 		type = 3,
@@ -162645,11 +155768,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_60
-
-	local var_23_61 = var_23_60.base.skill_data_template
-
-	var_23_61[106310] = {
+	pg.base.skill_data_template[106310] = {
 		desc_get = "",
 		name = "Iconic Direction",
 		type = 3,
@@ -162663,11 +155782,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_61
-
-	local var_23_62 = var_23_61.base.skill_data_template
-
-	var_23_62[106320] = {
+	pg.base.skill_data_template[106320] = {
 		desc_get = "",
 		name = "Fitting Time",
 		type = 2,
@@ -162773,11 +155888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_62
-
-	local var_23_63 = var_23_62.base.skill_data_template
-
-	var_23_63[106330] = {
+	pg.base.skill_data_template[106330] = {
 		desc_get = "",
 		name = "lisianthus Halation",
 		type = 1,
@@ -162928,11 +156039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_63
-
-	local var_23_64 = var_23_63.base.skill_data_template
-
-	var_23_64[106340] = {
+	pg.base.skill_data_template[106340] = {
 		desc_get = "",
 		name = "lisianthus Halation +",
 		type = 1,
@@ -163083,11 +156190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_64
-
-	local var_23_65 = var_23_64.base.skill_data_template
-
-	var_23_65[106350] = {
+	pg.base.skill_data_template[106350] = {
 		desc_get = "",
 		name = "美味可口可丽饼",
 		type = 3,
@@ -163101,11 +156204,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_65
-
-	local var_23_66 = var_23_65.base.skill_data_template
-
-	var_23_66[106360] = {
+	pg.base.skill_data_template[106360] = {
 		desc_get = "",
 		name = "害羞的助理少女 +",
 		type = 3,
@@ -163256,11 +156355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_66
-
-	local var_23_67 = var_23_66.base.skill_data_template
-
-	var_23_67[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "自制便当",
 		type = 2,
@@ -163357,11 +156452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_67
-
-	local var_23_68 = var_23_67.base.skill_data_template
-
-	var_23_68[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "狐狸的cosplay",
 		type = 1,
@@ -163557,11 +156648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_68
-
-	local var_23_69 = var_23_68.base.skill_data_template
-
-	var_23_69[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "狐狸的cosplay +",
 		type = 1,
@@ -163757,11 +156844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_69
-
-	local var_23_70 = var_23_69.base.skill_data_template
-
-	var_23_70[106400] = {
+	pg.base.skill_data_template[106400] = {
 		desc_get = "",
 		name = "丰年祭主持",
 		type = 1,
@@ -163775,11 +156858,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_70
-
-	local var_23_71 = var_23_70.base.skill_data_template
-
-	var_23_71[106410] = {
+	pg.base.skill_data_template[106410] = {
 		desc_get = "",
 		name = "Neon Pink Burst",
 		type = 1,
@@ -163921,11 +157000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_71
-
-	local var_23_72 = var_23_71.base.skill_data_template
-
-	var_23_72[106420] = {
+	pg.base.skill_data_template[106420] = {
 		desc_get = "",
 		name = "Neon Pink Burst +",
 		type = 1,
@@ -164112,11 +157187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_72
-
-	local var_23_73 = var_23_72.base.skill_data_template
-
-	var_23_73[106430] = {
+	pg.base.skill_data_template[106430] = {
 		desc_get = "",
 		name = "应援你的【喜欢】！",
 		type = 2,
@@ -164267,11 +157338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_73
-
-	local var_23_74 = var_23_73.base.skill_data_template
-
-	var_23_74[106440] = {
+	pg.base.skill_data_template[106440] = {
 		desc_get = "",
 		name = "微苦回甜",
 		type = 1,
@@ -164285,11 +157352,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_74
-
-	local var_23_75 = var_23_74.base.skill_data_template
-
-	var_23_75[106450] = {
+	pg.base.skill_data_template[106450] = {
 		desc_get = "",
 		name = "来自水中的问候",
 		type = 1,
@@ -164350,11 +157413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_75
-
-	local var_23_76 = var_23_75.base.skill_data_template
-
-	var_23_76[106460] = {
+	pg.base.skill_data_template[106460] = {
 		desc_get = "",
 		name = "来自水中的问候 +",
 		type = 1,
@@ -164460,11 +157519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_76
-
-	local var_23_77 = var_23_76.base.skill_data_template
-
-	var_23_77[106470] = {
+	pg.base.skill_data_template[106470] = {
 		desc_get = "",
 		name = "预知危险的本能",
 		type = 1,
@@ -164570,11 +157625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_77
-
-	local var_23_78 = var_23_77.base.skill_data_template
-
-	var_23_78[106480] = {
+	pg.base.skill_data_template[106480] = {
 		desc_get = "",
 		name = "料足味美汉堡包",
 		type = 1,
@@ -164588,11 +157639,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_78
-
-	local var_23_79 = var_23_78.base.skill_data_template
-
-	var_23_79[106490] = {
+	pg.base.skill_data_template[106490] = {
 		desc_get = "",
 		name = "伊莉丝的战术指导",
 		type = 3,
@@ -164743,11 +157790,11 @@ end)()
 			}
 		}
 	}
-	pg = var_23_79
 
-	local var_23_80 = var_23_79.base.skill_data_template
-
-	var_23_80[4] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "讲师的责任",
 		type = 1,
@@ -164808,11 +157855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_80
-
-	local var_23_81 = var_23_80.base.skill_data_template
-
-	var_23_81[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "讲师的责任 +",
 		type = 1,
@@ -164918,11 +157961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_81
-
-	local var_23_82 = var_23_81.base.skill_data_template
-
-	var_23_82[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "黑白魔法师",
 		type = 1,
@@ -164936,11 +157975,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_82
-
-	local var_23_83 = var_23_82.base.skill_data_template
-
-	var_23_83[106530] = {
+	pg.base.skill_data_template[106530] = {
 		desc_get = "",
 		name = "梦幻调配",
 		type = 3,
@@ -165046,11 +158081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_83
-
-	local var_23_84 = var_23_83.base.skill_data_template
-
-	var_23_84[106540] = {
+	pg.base.skill_data_template[106540] = {
 		desc_get = "",
 		name = "镖无虚发",
 		type = 1,
@@ -165147,11 +158178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_84
-
-	local var_23_85 = var_23_84.base.skill_data_template
-
-	var_23_85[106550] = {
+	pg.base.skill_data_template[106550] = {
 		desc_get = "",
 		name = "镖无虚发 +",
 		type = 1,
@@ -165248,11 +158275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_85
-
-	local var_23_86 = var_23_85.base.skill_data_template
-
-	var_23_86[106560] = {
+	pg.base.skill_data_template[106560] = {
 		desc_get = "",
 		name = "辣椒蟹",
 		type = 1,
@@ -165266,11 +158289,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_86
-
-	local var_23_87 = var_23_86.base.skill_data_template
-
-	var_23_87[106570] = {
+	pg.base.skill_data_template[106570] = {
 		desc_get = "",
 		name = "有冲击力的构图",
 		type = 1,
@@ -165412,11 +158431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_87
-
-	local var_23_88 = var_23_87.base.skill_data_template
-
-	var_23_88[106580] = {
+	pg.base.skill_data_template[106580] = {
 		desc_get = "",
 		name = "有冲击力的构图 +",
 		type = 1,
@@ -165558,11 +158573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_88
-
-	local var_23_89 = var_23_88.base.skill_data_template
-
-	var_23_89[106590] = {
+	pg.base.skill_data_template[106590] = {
 		desc_get = "",
 		name = "宅女的休闲时刻",
 		type = 2,
@@ -165713,11 +158724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_89
-
-	local var_23_90 = var_23_89.base.skill_data_template
-
-	var_23_90[106600] = {
+	pg.base.skill_data_template[106600] = {
 		desc_get = "",
 		name = "灵感喷发",
 		type = 1,
@@ -165731,11 +158738,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_23_90
-
-	local var_23_91 = var_23_90.base.skill_data_template
-
-	var_23_91[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "冒失娘？",
 		type = 1,
@@ -165796,11 +158799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_91
-
-	local var_23_92 = var_23_91.base.skill_data_template
-
-	var_23_92[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "idol的向上心",
 		type = 3,
@@ -165942,11 +158941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_92
-
-	local var_23_93 = var_23_92.base.skill_data_template
-
-	var_23_93[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "PositiveBurst！",
 		type = 1,
@@ -166007,11 +159002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_93
-
-	local var_23_94 = var_23_93.base.skill_data_template
-
-	var_23_94[107040] = {
+	pg.base.skill_data_template[107040] = {
 		desc_get = "",
 		name = "响彻天空的碧蓝之歌",
 		type = 1,
@@ -166117,11 +159108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_94
-
-	local var_23_95 = var_23_94.base.skill_data_template
-
-	var_23_95[107050] = {
+	pg.base.skill_data_template[107050] = {
 		desc_get = "",
 		name = "努力成就之景",
 		type = 3,
@@ -166182,11 +159169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_95
-
-	local var_23_96 = var_23_95.base.skill_data_template
-
-	var_23_96[107060] = {
+	pg.base.skill_data_template[107060] = {
 		desc_get = "",
 		name = "协行的海之翼",
 		type = 2,
@@ -166292,11 +159275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_96
-
-	local var_23_97 = var_23_96.base.skill_data_template
-
-	var_23_97[107070] = {
+	pg.base.skill_data_template[107070] = {
 		desc_get = "",
 		name = "伊织Strike!",
 		type = 1,
@@ -166447,11 +159426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_97
-
-	local var_23_98 = var_23_97.base.skill_data_template
-
-	var_23_98[107080] = {
+	pg.base.skill_data_template[107080] = {
 		desc_get = "",
 		name = "伊织Defence!",
 		type = 2,
@@ -166557,8 +159532,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_98
-	var_23_98.base.skill_data_template[107090] = {
+	pg.base.skill_data_template[107090] = {
 		desc_get = "",
 		name = "天然系？招牌姿势",
 		type = 1,
@@ -166664,15 +159638,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_24_0 = var_1_10000.base.skill_data_template
-
-	var_24_0[107100] = {
+	pg.base.skill_data_template[107100] = {
 		desc_get = "",
 		name = "治愈系占卜",
 		type = 2,
@@ -166913,11 +159879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_0
-
-	local var_24_1 = var_24_0.base.skill_data_template
-
-	var_24_1[107110] = {
+	pg.base.skill_data_template[107110] = {
 		desc_get = "",
 		name = "迷路的偶像",
 		type = 1,
@@ -166978,11 +159940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_1
-
-	local var_24_2 = var_24_1.base.skill_data_template
-
-	var_24_2[107120] = {
+	pg.base.skill_data_template[107120] = {
 		desc_get = "",
 		name = "前行航路Management",
 		type = 3,
@@ -167088,11 +160046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_2
-
-	local var_24_3 = var_24_2.base.skill_data_template
-
-	var_24_3[107130] = {
+	pg.base.skill_data_template[107130] = {
 		desc_get = "",
 		name = "运输的好伙伴",
 		type = 2,
@@ -167153,11 +160107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_3
-
-	local var_24_4 = var_24_3.base.skill_data_template
-
-	var_24_4[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "恶作剧Cheering·亚美",
 		type = 3,
@@ -167220,11 +160170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_4
-
-	local var_24_5 = var_24_4.base.skill_data_template
-
-	var_24_5[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "双子共舞·亚美",
 		type = 1,
@@ -167287,11 +160233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_5
-
-	local var_24_6 = var_24_5.base.skill_data_template
-
-	var_24_6[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "恶作剧Cheering·真美",
 		type = 3,
@@ -167354,11 +160296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_6
-
-	local var_24_7 = var_24_6.base.skill_data_template
-
-	var_24_7[107170] = {
+	pg.base.skill_data_template[107170] = {
 		desc_get = "",
 		name = "双子共舞·真美",
 		type = 1,
@@ -167421,11 +160359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_7
-
-	local var_24_8 = var_24_7.base.skill_data_template
-
-	var_24_8[108010] = {
+	pg.base.skill_data_template[108010] = {
 		desc_get = "",
 		name = "古立特光线",
 		type = 1,
@@ -167531,11 +160465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_8
-
-	local var_24_9 = var_24_8.base.skill_data_template
-
-	var_24_9[108020] = {
+	pg.base.skill_data_template[108020] = {
 		desc_get = "",
 		name = "Slash & Circus",
 		type = 3,
@@ -167686,11 +160616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_9
-
-	local var_24_10 = var_24_9.base.skill_data_template
-
-	var_24_10[108030] = {
+	pg.base.skill_data_template[108030] = {
 		desc_get = "",
 		name = "古立特修正光线",
 		type = 2,
@@ -167751,11 +160677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_10
-
-	local var_24_11 = var_24_10.base.skill_data_template
-
-	var_24_11[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "能量脉冲",
 		type = 1,
@@ -167863,11 +160785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_11
-
-	local var_24_12 = var_24_11.base.skill_data_template
-
-	var_24_12[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "Instance Abreaction",
 		type = 1,
@@ -167928,11 +160846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_12
-
-	local var_24_13 = var_24_12.base.skill_data_template
-
-	var_24_13[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "不死之焰",
 		type = 2,
@@ -167993,11 +160907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_13
-
-	local var_24_14 = var_24_13.base.skill_data_template
-
-	var_24_14[108070] = {
+	pg.base.skill_data_template[108070] = {
 		desc_get = "",
 		name = "圣剑终结",
 		type = 2,
@@ -168058,11 +160968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_14
-
-	local var_24_15 = var_24_14.base.skill_data_template
-
-	var_24_15[108080] = {
+	pg.base.skill_data_template[108080] = {
 		desc_get = "",
 		name = "巨坦炮击",
 		type = 1,
@@ -168168,11 +161074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_15
-
-	local var_24_16 = var_24_15.base.skill_data_template
-
-	var_24_16[108090] = {
+	pg.base.skill_data_template[108090] = {
 		desc_get = "",
 		name = "一齐射击 ",
 		type = 2,
@@ -168233,11 +161135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_16
-
-	local var_24_17 = var_24_16.base.skill_data_template
-
-	var_24_17[108100] = {
+	pg.base.skill_data_template[108100] = {
 		desc_get = "",
 		name = "Amp Laser Circus",
 		type = 1,
@@ -168388,11 +161286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_17
-
-	local var_24_18 = var_24_17.base.skill_data_template
-
-	var_24_18[108110] = {
+	pg.base.skill_data_template[108110] = {
 		desc_get = "",
 		name = "必烧大火炎·暴龙怒吼",
 		type = 1,
@@ -168453,11 +161347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_18
-
-	local var_24_19 = var_24_18.base.skill_data_template
-
-	var_24_19[108120] = {
+	pg.base.skill_data_template[108120] = {
 		desc_get = "",
 		name = "那什么光线！",
 		type = 3,
@@ -168563,11 +161453,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_19
-
-	local var_24_20 = var_24_19.base.skill_data_template
-
-	var_24_20[108130] = {
+	pg.base.skill_data_template[108130] = {
 		desc_get = "",
 		name = "DYNAZENON FULL BURST！",
 		type = 1,
@@ -168673,11 +161559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_20
-
-	local var_24_21 = var_24_20.base.skill_data_template
-
-	var_24_21[108140] = {
+	pg.base.skill_data_template[108140] = {
 		desc_get = "",
 		name = "共战乘风",
 		type = 1,
@@ -168738,11 +161620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_21
-
-	local var_24_22 = var_24_21.base.skill_data_template
-
-	var_24_22[108150] = {
+	pg.base.skill_data_template[108150] = {
 		desc_get = "",
 		name = "炎龙展翼",
 		type = 2,
@@ -168803,11 +161681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_22
-
-	local var_24_23 = var_24_22.base.skill_data_template
-
-	var_24_23[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "实例控制·翼",
 		type = 1,
@@ -168868,11 +161742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_23
-
-	local var_24_24 = var_24_23.base.skill_data_template
-
-	var_24_24[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "实例控制·焰",
 		type = 1,
@@ -168933,11 +161803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_24
-
-	local var_24_25 = var_24_24.base.skill_data_template
-
-	var_24_25[108210] = {
+	pg.base.skill_data_template[108210] = {
 		desc_get = "",
 		name = "古立特光线 +",
 		type = 1,
@@ -169043,11 +161909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_25
-
-	local var_24_26 = var_24_25.base.skill_data_template
-
-	var_24_26[108220] = {
+	pg.base.skill_data_template[108220] = {
 		desc_get = "",
 		name = "能量脉冲 +",
 		type = 1,
@@ -169155,11 +162017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_26
-
-	local var_24_27 = var_24_26.base.skill_data_template
-
-	var_24_27[108230] = {
+	pg.base.skill_data_template[108230] = {
 		desc_get = "",
 		name = "巨坦炮击 +",
 		type = 1,
@@ -169265,11 +162123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_27
-
-	local var_24_28 = var_24_27.base.skill_data_template
-
-	var_24_28[108240] = {
+	pg.base.skill_data_template[108240] = {
 		desc_get = "",
 		name = "一齐射击 +",
 		type = 2,
@@ -169330,11 +162184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_28
-
-	local var_24_29 = var_24_28.base.skill_data_template
-
-	var_24_29[108250] = {
+	pg.base.skill_data_template[108250] = {
 		desc_get = "",
 		name = "那什么光线！ +",
 		type = 3,
@@ -169440,11 +162290,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_29
-
-	local var_24_30 = var_24_29.base.skill_data_template
-
-	var_24_30[108260] = {
+	pg.base.skill_data_template[108260] = {
 		desc_get = "",
 		name = "炎龙展翼 +",
 		type = 2,
@@ -169505,11 +162351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_30
-
-	local var_24_31 = var_24_30.base.skill_data_template
-
-	var_24_31[108270] = {
+	pg.base.skill_data_template[108270] = {
 		desc_get = "",
 		name = "实例控制·焰 +",
 		type = 1,
@@ -169570,11 +162412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_31
-
-	local var_24_32 = var_24_31.base.skill_data_template
-
-	var_24_32[108280] = {
+	pg.base.skill_data_template[108280] = {
 		desc_get = "",
 		name = "桑德拉斯 爆发射击 +",
 		type = 1,
@@ -169725,11 +162563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_32
-
-	local var_24_33 = var_24_32.base.skill_data_template
-
-	var_24_33[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "打起精神！+",
 		type = 1,
@@ -169880,11 +162714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_33
-
-	local var_24_34 = var_24_33.base.skill_data_template
-
-	var_24_34[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "桑德拉斯 爆发射击",
 		type = 1,
@@ -170035,11 +162865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_34
-
-	local var_24_35 = var_24_34.base.skill_data_template
-
-	var_24_35[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "旋律光束炮",
 		type = 3,
@@ -170190,11 +163016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_35
-
-	local var_24_36 = var_24_35.base.skill_data_template
-
-	var_24_36[108320] = {
+	pg.base.skill_data_template[108320] = {
 		desc_get = "",
 		name = "打起精神！",
 		type = 2,
@@ -170300,11 +163122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_36
-
-	local var_24_37 = var_24_36.base.skill_data_template
-
-	var_24_37[108330] = {
+	pg.base.skill_data_template[108330] = {
 		desc_get = "",
 		name = "约定、爱与保质期",
 		type = 3,
@@ -170410,11 +163228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_37
-
-	local var_24_38 = var_24_37.base.skill_data_template
-
-	var_24_38[108340] = {
+	pg.base.skill_data_template[108340] = {
 		desc_get = "",
 		name = "帝王蟹（附带小票）",
 		type = 1,
@@ -170428,11 +163242,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_38
-
-	local var_24_39 = var_24_38.base.skill_data_template
-
-	var_24_39[108350] = {
+	pg.base.skill_data_template[108350] = {
 		desc_get = "",
 		name = "木龙雕塑",
 		type = 1,
@@ -170446,11 +163256,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_39
-
-	local var_24_40 = var_24_39.base.skill_data_template
-
-	var_24_40[108410] = {
+	pg.base.skill_data_template[108410] = {
 		desc_get = "",
 		name = "原始接收器",
 		type = 1,
@@ -170464,11 +163270,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_40
-
-	local var_24_41 = var_24_40.base.skill_data_template
-
-	var_24_41[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "监禁程序",
 		type = 1,
@@ -170482,11 +163284,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_41
-
-	local var_24_42 = var_24_41.base.skill_data_template
-
-	var_24_42[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "征战巨坦强化组件",
 		type = 1,
@@ -170500,11 +163298,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_42
-
-	local var_24_43 = var_24_42.base.skill_data_template
-
-	var_24_43[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "爆裂钻孔机强化组件",
 		type = 1,
@@ -170518,11 +163312,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_43
-
-	local var_24_44 = var_24_43.base.skill_data_template
-
-	var_24_44[108450] = {
+	pg.base.skill_data_template[108450] = {
 		desc_get = "",
 		name = "戴拿飞翼",
 		type = 1,
@@ -170536,11 +163326,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_44
-
-	local var_24_45 = var_24_44.base.skill_data_template
-
-	var_24_45[108460] = {
+	pg.base.skill_data_template[108460] = {
 		desc_get = "",
 		name = "巨大煌翼炎龙的禅绕画",
 		type = 1,
@@ -170554,11 +163340,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_45
-
-	local var_24_46 = var_24_45.base.skill_data_template
-
-	var_24_46[108470] = {
+	pg.base.skill_data_template[108470] = {
 		desc_get = "",
 		name = "怪兽种子",
 		type = 1,
@@ -170572,11 +163354,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_46
-
-	local var_24_47 = var_24_46.base.skill_data_template
-
-	var_24_47[108480] = {
+	pg.base.skill_data_template[108480] = {
 		desc_get = "",
 		name = "桑德拉斯",
 		type = 1,
@@ -170590,11 +163368,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_47
-
-	local var_24_48 = var_24_47.base.skill_data_template
-
-	var_24_48[108490] = {
+	pg.base.skill_data_template[108490] = {
 		desc_get = "",
 		name = "支援怒吼",
 		type = 1,
@@ -170608,11 +163382,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_48
-
-	local var_24_49 = var_24_48.base.skill_data_template
-
-	var_24_49[109010] = {
+	pg.base.skill_data_template[109010] = {
 		desc_get = "",
 		name = "闪光爆裂",
 		type = 1,
@@ -170673,11 +163443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_49
-
-	local var_24_50 = var_24_49.base.skill_data_template
-
-	var_24_50[109020] = {
+	pg.base.skill_data_template[109020] = {
 		desc_get = "",
 		name = "炼金术之师",
 		type = 3,
@@ -170783,11 +163549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_50
-
-	local var_24_51 = var_24_50.base.skill_data_template
-
-	var_24_51[109030] = {
+	pg.base.skill_data_template[109030] = {
 		desc_get = "",
 		name = "北斗七星",
 		type = 1,
@@ -170848,11 +163610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_51
-
-	local var_24_52 = var_24_51.base.skill_data_template
-
-	var_24_52[109040] = {
+	pg.base.skill_data_template[109040] = {
 		desc_get = "",
 		name = "北斗七星 +",
 		type = 1,
@@ -170958,11 +163716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_52
-
-	local var_24_53 = var_24_52.base.skill_data_template
-
-	var_24_53[109050] = {
+	pg.base.skill_data_template[109050] = {
 		desc_get = "",
 		name = "冰结百合",
 		type = 3,
@@ -171023,11 +163777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_53
-
-	local var_24_54 = var_24_53.base.skill_data_template
-
-	var_24_54[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "祝福旋律",
 		type = 2,
@@ -171178,11 +163928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_54
-
-	local var_24_55 = var_24_54.base.skill_data_template
-
-	var_24_55[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "纯白镇魂歌",
 		type = 1,
@@ -171243,11 +163989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_55
-
-	local var_24_56 = var_24_55.base.skill_data_template
-
-	var_24_56[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "纯白镇魂歌 +",
 		type = 1,
@@ -171353,11 +164095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_56
-
-	local var_24_57 = var_24_56.base.skill_data_template
-
-	var_24_57[109090] = {
+	pg.base.skill_data_template[109090] = {
 		desc_get = "",
 		name = "红焰斩",
 		type = 1,
@@ -171463,11 +164201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_57
-
-	local var_24_58 = var_24_57.base.skill_data_template
-
-	var_24_58[109100] = {
+	pg.base.skill_data_template[109100] = {
 		desc_get = "",
 		name = "武装魅惑",
 		type = 3,
@@ -171573,11 +164307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_58
-
-	local var_24_59 = var_24_58.base.skill_data_template
-
-	var_24_59[109110] = {
+	pg.base.skill_data_template[109110] = {
 		desc_get = "",
 		name = "完美愿望",
 		type = 1,
@@ -171638,11 +164368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_59
-
-	local var_24_60 = var_24_59.base.skill_data_template
-
-	var_24_60[109120] = {
+	pg.base.skill_data_template[109120] = {
 		desc_get = "",
 		name = "完美愿望 +",
 		type = 1,
@@ -171748,11 +164474,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_60
-
-	local var_24_61 = var_24_60.base.skill_data_template
-
-	var_24_61[109130] = {
+	pg.base.skill_data_template[109130] = {
 		desc_get = "",
 		name = "野性生长",
 		type = 3,
@@ -171813,11 +164535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_61
-
-	local var_24_62 = var_24_61.base.skill_data_template
-
-	var_24_62[109140] = {
+	pg.base.skill_data_template[109140] = {
 		desc_get = "",
 		name = "自然守护者",
 		type = 2,
@@ -171923,11 +164641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_62
-
-	local var_24_63 = var_24_62.base.skill_data_template
-
-	var_24_63[109150] = {
+	pg.base.skill_data_template[109150] = {
 		desc_get = "",
 		name = "永恒盛开",
 		type = 1,
@@ -171988,11 +164702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_63
-
-	local var_24_64 = var_24_63.base.skill_data_template
-
-	var_24_64[109160] = {
+	pg.base.skill_data_template[109160] = {
 		desc_get = "",
 		name = "永恒盛开 +",
 		type = 1,
@@ -172098,11 +164808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_64
-
-	local var_24_65 = var_24_64.base.skill_data_template
-
-	var_24_65[109170] = {
+	pg.base.skill_data_template[109170] = {
 		desc_get = "",
 		name = "元素链接",
 		type = 3,
@@ -172163,11 +164869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_65
-
-	local var_24_66 = var_24_65.base.skill_data_template
-
-	var_24_66[109180] = {
+	pg.base.skill_data_template[109180] = {
 		desc_get = "",
 		name = "精灵之力",
 		type = 3,
@@ -172273,11 +164975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_66
-
-	local var_24_67 = var_24_66.base.skill_data_template
-
-	var_24_67[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "一骑当千",
 		type = 1,
@@ -172338,11 +165036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_67
-
-	local var_24_68 = var_24_67.base.skill_data_template
-
-	var_24_68[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "一骑当千 +",
 		type = 1,
@@ -172448,11 +165142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_68
-
-	local var_24_69 = var_24_68.base.skill_data_template
-
-	var_24_69[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "暗黑灵体",
 		type = 1,
@@ -172558,11 +165248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_69
-
-	local var_24_70 = var_24_69.base.skill_data_template
-
-	var_24_70[109220] = {
+	pg.base.skill_data_template[109220] = {
 		desc_get = "",
 		name = "圣光轨迹",
 		type = 2,
@@ -172623,11 +165309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_70
-
-	local var_24_71 = var_24_70.base.skill_data_template
-
-	var_24_71[109230] = {
+	pg.base.skill_data_template[109230] = {
 		desc_get = "",
 		name = "月之审判",
 		type = 1,
@@ -172688,11 +165370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_71
-
-	local var_24_72 = var_24_71.base.skill_data_template
-
-	var_24_72[109240] = {
+	pg.base.skill_data_template[109240] = {
 		desc_get = "",
 		name = "月之审判 +",
 		type = 1,
@@ -172798,11 +165476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_72
-
-	local var_24_73 = var_24_72.base.skill_data_template
-
-	var_24_73[109250] = {
+	pg.base.skill_data_template[109250] = {
 		desc_get = "",
 		name = "莱莎武装替换占用",
 		type = 1,
@@ -172816,11 +165490,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_73
-
-	local var_24_74 = var_24_73.base.skill_data_template
-
-	var_24_74[109310] = {
+	pg.base.skill_data_template[109310] = {
 		desc_get = "",
 		name = "照明度提升",
 		type = 1,
@@ -172834,11 +165504,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_74
-
-	local var_24_75 = var_24_74.base.skill_data_template
-
-	var_24_75[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "阵光",
 		type = 1,
@@ -172852,11 +165518,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_75
-
-	local var_24_76 = var_24_75.base.skill_data_template
-
-	var_24_76[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "高雅姿态",
 		type = 1,
@@ -172870,11 +165532,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_76
-
-	local var_24_77 = var_24_76.base.skill_data_template
-
-	var_24_77[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "盛开花海",
 		type = 1,
@@ -172888,11 +165546,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_77
-
-	local var_24_78 = var_24_77.base.skill_data_template
-
-	var_24_78[109350] = {
+	pg.base.skill_data_template[109350] = {
 		desc_get = "",
 		name = "元素之歌",
 		type = 1,
@@ -172906,11 +165560,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_78
-
-	local var_24_79 = var_24_78.base.skill_data_template
-
-	var_24_79[109360] = {
+	pg.base.skill_data_template[109360] = {
 		desc_get = "",
 		name = "不灭百合",
 		type = 1,
@@ -172924,11 +165574,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_24_79
 
-	local var_24_80 = var_24_79.base.skill_data_template
-
-	var_24_80[110010] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[110010] = {
 		desc_get = "",
 		name = "双刀追斩",
 		type = 1,
@@ -173106,11 +165756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_80
-
-	local var_24_81 = var_24_80.base.skill_data_template
-
-	var_24_81[110020] = {
+	pg.base.skill_data_template[110020] = {
 		desc_get = "",
 		name = "刀刃交锋",
 		type = 1,
@@ -173252,11 +165898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_81
-
-	local var_24_82 = var_24_81.base.skill_data_template
-
-	var_24_82[110030] = {
+	pg.base.skill_data_template[110030] = {
 		desc_get = "",
 		name = "刀刃交锋 +",
 		type = 1,
@@ -173434,11 +166076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_82
-
-	local var_24_83 = var_24_82.base.skill_data_template
-
-	var_24_83[110040] = {
+	pg.base.skill_data_template[110040] = {
 		desc_get = "",
 		name = "烈空凰闪",
 		type = 1,
@@ -173544,11 +166182,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_83
-
-	local var_24_84 = var_24_83.base.skill_data_template
-
-	var_24_84[110050] = {
+	pg.base.skill_data_template[110050] = {
 		desc_get = "",
 		name = "凤华炎舞",
 		type = 3,
@@ -173744,11 +166378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_84
-
-	local var_24_85 = var_24_84.base.skill_data_template
-
-	var_24_85[110060] = {
+	pg.base.skill_data_template[110060] = {
 		desc_get = "",
 		name = "烈空凰闪 +",
 		type = 1,
@@ -173940,11 +166570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_85
-
-	local var_24_86 = var_24_85.base.skill_data_template
-
-	var_24_86[110070] = {
+	pg.base.skill_data_template[110070] = {
 		desc_get = "",
 		name = "殉身飞舞",
 		type = 1,
@@ -174007,11 +166633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_86
-
-	local var_24_87 = var_24_86.base.skill_data_template
-
-	var_24_87[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "红莲之焰",
 		type = 3,
@@ -174119,11 +166741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_87
-
-	local var_24_88 = var_24_87.base.skill_data_template
-
-	var_24_88[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "殉身飞舞 +",
 		type = 1,
@@ -174231,11 +166849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_88
-
-	local var_24_89 = var_24_88.base.skill_data_template
-
-	var_24_89[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "冰雪扇舞",
 		type = 1,
@@ -174341,11 +166955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_89
-
-	local var_24_90 = var_24_89.base.skill_data_template
-
-	var_24_90[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "天岚冰扇",
 		type = 1,
@@ -174442,11 +167052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_90
-
-	local var_24_91 = var_24_90.base.skill_data_template
-
-	var_24_91[110120] = {
+	pg.base.skill_data_template[110120] = {
 		desc_get = "",
 		name = "冰雪扇舞 +",
 		type = 1,
@@ -174552,11 +167158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_91
-
-	local var_24_92 = var_24_91.base.skill_data_template
-
-	var_24_92[110130] = {
+	pg.base.skill_data_template[110130] = {
 		desc_get = "",
 		name = "管理委员的威严",
 		type = 3,
@@ -174752,11 +167354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_92
-
-	local var_24_93 = var_24_92.base.skill_data_template
-
-	var_24_93[110140] = {
+	pg.base.skill_data_template[110140] = {
 		desc_get = "",
 		name = "紫冰爆破",
 		type = 1,
@@ -174909,11 +167507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_93
-
-	local var_24_94 = var_24_93.base.skill_data_template
-
-	var_24_94[110150] = {
+	pg.base.skill_data_template[110150] = {
 		desc_get = "",
 		name = "紫冰爆破 +",
 		type = 1,
@@ -175066,11 +167660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_94
-
-	local var_24_95 = var_24_94.base.skill_data_template
-
-	var_24_95[110160] = {
+	pg.base.skill_data_template[110160] = {
 		desc_get = "",
 		name = "小贝贝Hide!",
 		type = 2,
@@ -175176,11 +167766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_95
-
-	local var_24_96 = var_24_95.base.skill_data_template
-
-	var_24_96[110170] = {
+	pg.base.skill_data_template[110170] = {
 		desc_get = "",
 		name = "祸魂紫舞",
 		type = 1,
@@ -175241,11 +167827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_96
-
-	local var_24_97 = var_24_96.base.skill_data_template
-
-	var_24_97[110180] = {
+	pg.base.skill_data_template[110180] = {
 		desc_get = "",
 		name = "祸魂紫舞 +",
 		type = 1,
@@ -175306,11 +167888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_97
-
-	local var_24_98 = var_24_97.base.skill_data_template
-
-	var_24_98[110190] = {
+	pg.base.skill_data_template[110190] = {
 		desc_get = "",
 		name = "远野之魂",
 		type = 3,
@@ -175407,8 +167985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_98
-	var_24_98.base.skill_data_template[110200] = {
+	pg.base.skill_data_template[110200] = {
 		desc_get = "",
 		name = "连环斩击",
 		type = 1,
@@ -175514,15 +168091,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_25_0 = var_1_10000.base.skill_data_template
-
-	var_25_0[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "远野之魂 +",
 		type = 1,
@@ -175619,11 +168188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_0
-
-	local var_25_1 = var_25_0.base.skill_data_template
-
-	var_25_1[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "New Link Chance！",
 		type = 1,
@@ -175637,11 +168202,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_1
-
-	local var_25_2 = var_25_1.base.skill_data_template
-
-	var_25_2[110310] = {
+	pg.base.skill_data_template[110310] = {
 		desc_get = "",
 		name = "双刀・两舷缭闪",
 		type = 1,
@@ -175655,11 +168216,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_2
-
-	local var_25_3 = var_25_2.base.skill_data_template
-
-	var_25_3[110320] = {
+	pg.base.skill_data_template[110320] = {
 		desc_get = "",
 		name = "拔刀・凤闪飞燕",
 		type = 1,
@@ -175673,11 +168230,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_3
-
-	local var_25_4 = var_25_3.base.skill_data_template
-
-	var_25_4[110330] = {
+	pg.base.skill_data_template[110330] = {
 		desc_get = "",
 		name = "六刀・魁之焰",
 		type = 1,
@@ -175691,11 +168244,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_4
-
-	local var_25_5 = var_25_4.base.skill_data_template
-
-	var_25_5[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "扇・霜袖雪舞",
 		type = 1,
@@ -175709,11 +168258,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_5
-
-	local var_25_6 = var_25_5.base.skill_data_template
-
-	var_25_6[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "扇・紫冰连华",
 		type = 1,
@@ -175727,11 +168272,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_6
-
-	local var_25_7 = var_25_6.base.skill_data_template
-
-	var_25_7[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "手里剑・圆月潜影",
 		type = 1,
@@ -175745,11 +168286,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_7
-
-	local var_25_8 = var_25_7.base.skill_data_template
-
-	var_25_8[110370] = {
+	pg.base.skill_data_template[110370] = {
 		desc_get = "",
 		name = "太刀・钢",
 		type = 1,
@@ -175763,11 +168300,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_8
-
-	local var_25_9 = var_25_8.base.skill_data_template
-
-	var_25_9[111010] = {
+	pg.base.skill_data_template[111010] = {
 		desc_get = "",
 		name = "GO!GO!Vacuum!",
 		type = 2,
@@ -175873,11 +168406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_9
-
-	local var_25_10 = var_25_9.base.skill_data_template
-
-	var_25_10[111020] = {
+	pg.base.skill_data_template[111020] = {
 		desc_get = "",
 		name = "发明!战斗!Almighty!",
 		type = 1,
@@ -176073,11 +168602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_10
-
-	local var_25_11 = var_25_10.base.skill_data_template
-
-	var_25_11[111030] = {
+	pg.base.skill_data_template[111030] = {
 		desc_get = "",
 		name = "发明!战斗!Almighty! +",
 		type = 1,
@@ -176273,11 +168798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_11
-
-	local var_25_12 = var_25_11.base.skill_data_template
-
-	var_25_12[111040] = {
+	pg.base.skill_data_template[111040] = {
 		desc_get = "",
 		name = "异星动物伙伴",
 		type = 1,
@@ -176383,11 +168904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_12
-
-	local var_25_13 = var_25_12.base.skill_data_template
-
-	var_25_13[111050] = {
+	pg.base.skill_data_template[111050] = {
 		desc_get = "",
 		name = "坚强的意志力",
 		type = 3,
@@ -176583,11 +169100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_13
-
-	local var_25_14 = var_25_13.base.skill_data_template
-
-	var_25_14[111060] = {
+	pg.base.skill_data_template[111060] = {
 		desc_get = "",
 		name = "异星动物伙伴 +",
 		type = 1,
@@ -176693,11 +169206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_14
-
-	local var_25_15 = var_25_14.base.skill_data_template
-
-	var_25_15[111070] = {
+	pg.base.skill_data_template[111070] = {
 		desc_get = "",
 		name = "异星植物伙伴",
 		type = 1,
@@ -176803,11 +169312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_15
-
-	local var_25_16 = var_25_15.base.skill_data_template
-
-	var_25_16[111080] = {
+	pg.base.skill_data_template[111080] = {
 		desc_get = "",
 		name = "异星植物伙伴 +",
 		type = 1,
@@ -176958,11 +169463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_16
-
-	local var_25_17 = var_25_16.base.skill_data_template
-
-	var_25_17[111090] = {
+	pg.base.skill_data_template[111090] = {
 		desc_get = "",
 		name = "神秘计划",
 		type = 3,
@@ -177104,11 +169605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_17
-
-	local var_25_18 = var_25_17.base.skill_data_template
-
-	var_25_18[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "深藏于心的感情",
 		type = 2,
@@ -177214,11 +169711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_18
-
-	local var_25_19 = var_25_18.base.skill_data_template
-
-	var_25_19[111140] = {
+	pg.base.skill_data_template[111140] = {
 		desc_get = "",
 		name = "深藏于心的感情+",
 		type = 2,
@@ -177324,11 +169817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_19
-
-	local var_25_20 = var_25_19.base.skill_data_template
-
-	var_25_20[111150] = {
+	pg.base.skill_data_template[111150] = {
 		desc_get = "",
 		name = "平静不下的心",
 		type = 1,
@@ -177434,11 +169923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_20
-
-	local var_25_21 = var_25_20.base.skill_data_template
-
-	var_25_21[111160] = {
+	pg.base.skill_data_template[111160] = {
 		desc_get = "",
 		name = "不知廉耻！",
 		type = 1,
@@ -177589,11 +170074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_21
-
-	local var_25_22 = var_25_21.base.skill_data_template
-
-	var_25_22[111170] = {
+	pg.base.skill_data_template[111170] = {
 		desc_get = "",
 		name = "不知廉耻！+",
 		type = 1,
@@ -177789,11 +170270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_22
-
-	local var_25_23 = var_25_22.base.skill_data_template
-
-	var_25_23[111180] = {
+	pg.base.skill_data_template[111180] = {
 		desc_get = "",
 		name = "强气下的温柔",
 		type = 3,
@@ -177944,11 +170421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_23
-
-	local var_25_24 = var_25_23.base.skill_data_template
-
-	var_25_24[111200] = {
+	pg.base.skill_data_template[111200] = {
 		desc_get = "",
 		name = "戴比路克之力",
 		type = 1,
@@ -177962,11 +170435,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_24
-
-	local var_25_25 = var_25_24.base.skill_data_template
-
-	var_25_25[111210] = {
+	pg.base.skill_data_template[111210] = {
 		desc_get = "",
 		name = "戴比路克之力",
 		type = 1,
@@ -177980,11 +170449,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_25
-
-	local var_25_26 = var_25_25.base.skill_data_template
-
-	var_25_26[111220] = {
+	pg.base.skill_data_template[111220] = {
 		desc_get = "",
 		name = "戴比路克之力",
 		type = 1,
@@ -177998,11 +170463,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_26
-
-	local var_25_27 = var_25_26.base.skill_data_template
-
-	var_25_27[111100] = {
+	pg.base.skill_data_template[111100] = {
 		desc_get = "",
 		name = "武装变幻",
 		type = 1,
@@ -178099,11 +170560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_27
-
-	local var_25_28 = var_25_27.base.skill_data_template
-
-	var_25_28[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "武装变幻+",
 		type = 1,
@@ -178200,11 +170657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_28
-
-	local var_25_29 = var_25_28.base.skill_data_template
-
-	var_25_29[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "鲷鱼烧，超喜欢",
 		type = 2,
@@ -178310,11 +170763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_29
-
-	local var_25_30 = var_25_29.base.skill_data_template
-
-	var_25_30[111230] = {
+	pg.base.skill_data_template[111230] = {
 		desc_get = "",
 		name = "生物兵器",
 		type = 1,
@@ -178328,11 +170777,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_30
-
-	local var_25_31 = var_25_30.base.skill_data_template
-
-	var_25_31[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "大家，来我这边",
 		type = 2,
@@ -178346,11 +170791,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_31
-
-	local var_25_32 = var_25_31.base.skill_data_template
-
-	var_25_32[111270] = {
+	pg.base.skill_data_template[111270] = {
 		desc_get = "",
 		name = "风纪整肃！",
 		type = 3,
@@ -178364,11 +170805,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_32
-
-	local var_25_33 = var_25_32.base.skill_data_template
-
-	var_25_33[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "超越世界·限制解除",
 		type = 1,
@@ -178564,11 +171001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_33
-
-	local var_25_34 = var_25_33.base.skill_data_template
-
-	var_25_34[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "超越世界·限制解除 +",
 		type = 1,
@@ -178719,11 +171152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_34
-
-	local var_25_35 = var_25_34.base.skill_data_template
-
-	var_25_35[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "守护信念之心",
 		type = 2,
@@ -178874,11 +171303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_35
-
-	local var_25_36 = var_25_35.base.skill_data_template
-
-	var_25_36[112040] = {
+	pg.base.skill_data_template[112040] = {
 		desc_get = "",
 		name = "★Rock Fire",
 		type = 1,
@@ -178892,11 +171317,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_36
-
-	local var_25_37 = var_25_36.base.skill_data_template
-
-	var_25_37[112050] = {
+	pg.base.skill_data_template[112050] = {
 		desc_get = "",
 		name = "死亡领域·锁链囚笼",
 		type = 1,
@@ -178993,11 +171414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_37
-
-	local var_25_38 = var_25_37.base.skill_data_template
-
-	var_25_38[112060] = {
+	pg.base.skill_data_template[112060] = {
 		desc_get = "",
 		name = "死律审判",
 		type = 1,
@@ -179148,11 +171565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_38
-
-	local var_25_39 = var_25_38.base.skill_data_template
-
-	var_25_39[112070] = {
+	pg.base.skill_data_template[112070] = {
 		desc_get = "",
 		name = "死律审判 +",
 		type = 1,
@@ -179348,11 +171761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_39
-
-	local var_25_40 = var_25_39.base.skill_data_template
-
-	var_25_40[112080] = {
+	pg.base.skill_data_template[112080] = {
 		desc_get = "",
 		name = "Dead  Reaping",
 		type = 1,
@@ -179366,11 +171775,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_40
-
-	local var_25_41 = var_25_40.base.skill_data_template
-
-	var_25_41[112090] = {
+	pg.base.skill_data_template[112090] = {
 		desc_get = "",
 		name = "禁忌与希望的炼金术",
 		type = 1,
@@ -179422,11 +171827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_41
-
-	local var_25_42 = var_25_41.base.skill_data_template
-
-	var_25_42[112100] = {
+	pg.base.skill_data_template[112100] = {
 		desc_get = "",
 		name = "追忆之炼金术士",
 		type = 3,
@@ -179487,11 +171888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_42
-
-	local var_25_43 = var_25_42.base.skill_data_template
-
-	var_25_43[112110] = {
+	pg.base.skill_data_template[112110] = {
 		desc_get = "",
 		name = "迈向明日的一步",
 		type = 1,
@@ -179543,11 +171940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_43
-
-	local var_25_44 = var_25_43.base.skill_data_template
-
-	var_25_44[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "迈向明日的一步 +",
 		type = 1,
@@ -179599,11 +171992,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_44
-
-	local var_25_45 = var_25_44.base.skill_data_template
-
-	var_25_45[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "时间压缩",
 		type = 1,
@@ -179617,11 +172006,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_45
-
-	local var_25_46 = var_25_45.base.skill_data_template
-
-	var_25_46[112180] = {
+	pg.base.skill_data_template[112180] = {
 		desc_get = "",
 		name = "兽耳人的进击",
 		type = 1,
@@ -179718,11 +172103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_46
-
-	local var_25_47 = var_25_46.base.skill_data_template
-
-	var_25_47[112190] = {
+	pg.base.skill_data_template[112190] = {
 		desc_get = "",
 		name = "兽耳人的荣耀",
 		type = 3,
@@ -179864,11 +172245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_47
-
-	local var_25_48 = var_25_47.base.skill_data_template
-
-	var_25_48[112200] = {
+	pg.base.skill_data_template[112200] = {
 		desc_get = "",
 		name = "兽耳人的荣耀 +",
 		type = 3,
@@ -180010,11 +172387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_48
-
-	local var_25_49 = var_25_48.base.skill_data_template
-
-	var_25_49[112210] = {
+	pg.base.skill_data_template[112210] = {
 		desc_get = "",
 		name = "黄泉之螳螂",
 		type = 1,
@@ -180028,11 +172401,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_49
-
-	local var_25_50 = var_25_49.base.skill_data_template
-
-	var_25_50[112220] = {
+	pg.base.skill_data_template[112220] = {
 		desc_get = "",
 		name = "快速射击",
 		type = 1,
@@ -180174,11 +172543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_50
-
-	local var_25_51 = var_25_50.base.skill_data_template
-
-	var_25_51[112230] = {
+	pg.base.skill_data_template[112230] = {
 		desc_get = "",
 		name = "佣兵的战斗技巧",
 		type = 3,
@@ -180329,11 +172694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_51
-
-	local var_25_52 = var_25_51.base.skill_data_template
-
-	var_25_52[112240] = {
+	pg.base.skill_data_template[112240] = {
 		desc_get = "",
 		name = "快速射击 +",
 		type = 1,
@@ -180430,11 +172791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_52
-
-	local var_25_53 = var_25_52.base.skill_data_template
-
-	var_25_53[112250] = {
+	pg.base.skill_data_template[112250] = {
 		desc_get = "",
 		name = "无限精力",
 		type = 1,
@@ -180448,11 +172805,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_53
-
-	local var_25_54 = var_25_53.base.skill_data_template
-
-	var_25_54[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "优米雅阵营环境玛那技能",
 		type = 1,
@@ -180466,11 +172819,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_54
-
-	local var_25_55 = var_25_54.base.skill_data_template
-
-	var_25_55[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "既是骑士也是少女",
 		type = 1,
@@ -180567,11 +172916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_55
-
-	local var_25_56 = var_25_55.base.skill_data_template
-
-	var_25_56[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "阿尔巴的眷顾",
 		type = 3,
@@ -180668,11 +173013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_56
-
-	local var_25_57 = var_25_56.base.skill_data_template
-
-	var_25_57[112290] = {
+	pg.base.skill_data_template[112290] = {
 		desc_get = "",
 		name = "阿尔巴的眷顾 +",
 		type = 3,
@@ -180805,11 +173146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_57
-
-	local var_25_58 = var_25_57.base.skill_data_template
-
-	var_25_58[112300] = {
+	pg.base.skill_data_template[112300] = {
 		desc_get = "",
 		name = "扩散伤痕",
 		type = 3,
@@ -180823,11 +173160,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_58
-
-	local var_25_59 = var_25_58.base.skill_data_template
-
-	var_25_59[114100] = {
+	pg.base.skill_data_template[114100] = {
 		desc_get = "",
 		name = "星辰记忆",
 		type = 3,
@@ -181014,11 +173347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_59
-
-	local var_25_60 = var_25_59.base.skill_data_template
-
-	var_25_60[114110] = {
+	pg.base.skill_data_template[114110] = {
 		desc_get = "",
 		name = "光明之风",
 		type = 1,
@@ -181151,11 +173480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_60
-
-	local var_25_61 = var_25_60.base.skill_data_template
-
-	var_25_61[114120] = {
+	pg.base.skill_data_template[114120] = {
 		desc_get = "",
 		name = "光明之风 +",
 		type = 1,
@@ -181288,11 +173613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_61
-
-	local var_25_62 = var_25_61.base.skill_data_template
-
-	var_25_62[114129] = {
+	pg.base.skill_data_template[114129] = {
 		desc_get = "",
 		name = "精灵正义女神",
 		type = 3,
@@ -181306,11 +173627,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_62
-
-	local var_25_63 = var_25_62.base.skill_data_template
-
-	var_25_63[114010] = {
+	pg.base.skill_data_template[114010] = {
 		desc_get = "",
 		name = "神的恩惠",
 		type = 2,
@@ -181416,11 +173733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_63
-
-	local var_25_64 = var_25_63.base.skill_data_template
-
-	var_25_64[114020] = {
+	pg.base.skill_data_template[114020] = {
 		desc_get = "",
 		name = "伪现·灶神圣火殿",
 		type = 3,
@@ -181562,11 +173875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_64
-
-	local var_25_65 = var_25_64.base.skill_data_template
-
-	var_25_65[114030] = {
+	pg.base.skill_data_template[114030] = {
 		desc_get = "",
 		name = "伪现·灶神圣火殿 +",
 		type = 3,
@@ -181663,11 +173972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_65
-
-	local var_25_66 = var_25_65.base.skill_data_template
-
-	var_25_66[114040] = {
+	pg.base.skill_data_template[114040] = {
 		desc_get = "",
 		name = "赫斯缇雅的缎带",
 		type = 3,
@@ -181681,11 +173986,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_66
-
-	local var_25_67 = var_25_66.base.skill_data_template
-
-	var_25_67[115010] = {
+	pg.base.skill_data_template[115010] = {
 		desc_get = "",
 		name = "最后之剑",
 		type = 1,
@@ -181782,11 +174083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_67
-
-	local var_25_68 = var_25_67.base.skill_data_template
-
-	var_25_68[115020] = {
+	pg.base.skill_data_template[115020] = {
 		desc_get = "",
 		name = "神威灵装·十番",
 		type = 2,
@@ -181928,11 +174225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_68
-
-	local var_25_69 = var_25_68.base.skill_data_template
-
-	var_25_69[115030] = {
+	pg.base.skill_data_template[115030] = {
 		desc_get = "",
 		name = "最后之剑 +",
 		type = 1,
@@ -182029,11 +174322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_69
-
-	local var_25_70 = var_25_69.base.skill_data_template
-
-	var_25_70[115040] = {
+	pg.base.skill_data_template[115040] = {
 		desc_get = "",
 		name = "鏖杀公",
 		type = 3,
@@ -182047,11 +174336,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_70
-
-	local var_25_71 = var_25_70.base.skill_data_template
-
-	var_25_71[115050] = {
+	pg.base.skill_data_template[115050] = {
 		desc_get = "",
 		name = "神威灵装·五番",
 		type = 1,
@@ -182103,11 +174388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_71
-
-	local var_25_72 = var_25_71.base.skill_data_template
-
-	var_25_72[115060] = {
+	pg.base.skill_data_template[115060] = {
 		desc_get = "",
 		name = "炎魔之力",
 		type = 2,
@@ -182213,11 +174494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_72
-
-	local var_25_73 = var_25_72.base.skill_data_template
-
-	var_25_73[115070] = {
+	pg.base.skill_data_template[115070] = {
 		desc_get = "",
 		name = "炎魔之力 +",
 		type = 2,
@@ -182368,11 +174645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_73
-
-	local var_25_74 = var_25_73.base.skill_data_template
-
-	var_25_74[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "灼烂歼鬼",
 		type = 2,
@@ -182386,11 +174659,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_74
-
-	local var_25_75 = var_25_74.base.skill_data_template
-
-	var_25_75[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "天际疾驰者",
 		type = 1,
@@ -182442,11 +174711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_75
-
-	local var_25_76 = var_25_75.base.skill_data_template
-
-	var_25_76[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "神威灵装·八番",
 		type = 3,
@@ -182552,11 +174817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_76
-
-	local var_25_77 = var_25_76.base.skill_data_template
-
-	var_25_77[115110] = {
+	pg.base.skill_data_template[115110] = {
 		desc_get = "",
 		name = "天际疾驰者 +",
 		type = 1,
@@ -182653,11 +174914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_77
-
-	local var_25_78 = var_25_77.base.skill_data_template
-
-	var_25_78[115120] = {
+	pg.base.skill_data_template[115120] = {
 		desc_get = "",
 		name = "飓风骑士",
 		type = 1,
@@ -182671,11 +174928,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_78
-
-	local var_25_79 = var_25_78.base.skill_data_template
-
-	var_25_79[115130] = {
+	pg.base.skill_data_template[115130] = {
 		desc_get = "",
 		name = "刻刻帝",
 		type = 1,
@@ -182689,11 +174942,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_79
 
-	local var_25_80 = var_25_79.base.skill_data_template
-
-	var_25_80[115140] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[115140] = {
 		desc_get = "",
 		name = "食时之城",
 		type = 1,
@@ -182799,11 +175052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_80
-
-	local var_25_81 = var_25_80.base.skill_data_template
-
-	var_25_81[115150] = {
+	pg.base.skill_data_template[115150] = {
 		desc_get = "",
 		name = "神威灵装·三番",
 		type = 2,
@@ -182902,11 +175151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_81
-
-	local var_25_82 = var_25_81.base.skill_data_template
-
-	var_25_82[115160] = {
+	pg.base.skill_data_template[115160] = {
 		desc_get = "",
 		name = "神威灵装·三番 +",
 		type = 2,
@@ -183005,11 +175250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_82
-
-	local var_25_83 = var_25_82.base.skill_data_template
-
-	var_25_83[115170] = {
+	pg.base.skill_data_template[115170] = {
 		desc_get = "",
 		name = "绝灭天使·光剑",
 		type = 1,
@@ -183106,11 +175347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_83
-
-	local var_25_84 = var_25_83.base.skill_data_template
-
-	var_25_84[115180] = {
+	pg.base.skill_data_template[115180] = {
 		desc_get = "",
 		name = "绝灭天使·炮冠",
 		type = 3,
@@ -183207,11 +175444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_84
-
-	local var_25_85 = var_25_84.base.skill_data_template
-
-	var_25_85[115190] = {
+	pg.base.skill_data_template[115190] = {
 		desc_get = "",
 		name = "神威灵装·一番",
 		type = 2,
@@ -183353,11 +175586,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_85
-
-	local var_25_86 = var_25_85.base.skill_data_template
-
-	var_25_86[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "神威灵装·四番",
 		type = 1,
@@ -183544,11 +175773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_86
-
-	local var_25_87 = var_25_86.base.skill_data_template
-
-	var_25_87[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "神威灵装·四番 +",
 		type = 1,
@@ -183694,11 +175919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_87
-
-	local var_25_88 = var_25_87.base.skill_data_template
-
-	var_25_88[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "冰壁防御",
 		type = 2,
@@ -183795,11 +176016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_88
-
-	local var_25_89 = var_25_88.base.skill_data_template
-
-	var_25_89[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "冰结傀儡",
 		type = 1,
@@ -183813,11 +176030,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_89
-
-	local var_25_90 = var_25_89.base.skill_data_template
-
-	var_25_90[115240] = {
+	pg.base.skill_data_template[115240] = {
 		desc_get = "",
 		name = "神威灵装·三番＋",
 		desc_get_add = "",
@@ -183831,11 +176044,7 @@ end)()
 			1
 		}
 	}
-	pg = var_25_90
-
-	local var_25_91 = var_25_90.base.skill_data_template
-
-	var_25_91[115250] = {
+	pg.base.skill_data_template[115250] = {
 		desc_get = "",
 		name = "绝灭天使·炮冠 +",
 		type = 3,
@@ -183977,11 +176186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_91
-
-	local var_25_92 = var_25_91.base.skill_data_template
-
-	var_25_92[115260] = {
+	pg.base.skill_data_template[115260] = {
 		desc_get = "",
 		name = "绝灭天使",
 		type = 3,
@@ -183995,11 +176200,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_92
-
-	local var_25_93 = var_25_92.base.skill_data_template
-
-	var_25_93[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "压制：战线构筑",
 		type = 1,
@@ -184051,11 +176252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_93
-
-	local var_25_94 = var_25_93.base.skill_data_template
-
-	var_25_94[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "信念",
 		type = 3,
@@ -184161,11 +176358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_94
-
-	local var_25_95 = var_25_94.base.skill_data_template
-
-	var_25_95[117030] = {
+	pg.base.skill_data_template[117030] = {
 		desc_get = "",
 		name = "压制：战线构筑 +",
 		type = 1,
@@ -184217,11 +176410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_95
-
-	local var_25_96 = var_25_95.base.skill_data_template
-
-	var_25_96[117040] = {
+	pg.base.skill_data_template[117040] = {
 		desc_get = "",
 		name = "白之契约",
 		type = 1,
@@ -184235,11 +176424,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_25_96
-
-	local var_25_97 = var_25_96.base.skill_data_template
-
-	var_25_97[117050] = {
+	pg.base.skill_data_template[117050] = {
 		desc_get = "",
 		name = "重击破斩",
 		type = 1,
@@ -184336,11 +176521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_97
-
-	local var_25_98 = var_25_97.base.skill_data_template
-
-	var_25_98[117060] = {
+	pg.base.skill_data_template[117060] = {
 		desc_get = "",
 		name = "复仇",
 		type = 3,
@@ -184401,8 +176582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_25_98
-	var_25_98.base.skill_data_template[117070] = {
+	pg.base.skill_data_template[117070] = {
 		desc_get = "",
 		name = "重击破斩 +",
 		type = 1,
@@ -184499,15 +176679,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_26_0 = var_1_10000.base.skill_data_template
-
-	var_26_0[117080] = {
+	pg.base.skill_data_template[117080] = {
 		desc_get = "",
 		name = "四o式战术刀",
 		type = 1,
@@ -184521,11 +176693,194 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_0
-
-	local var_26_1 = var_26_0.base.skill_data_template
-
-	var_26_1[190000] = {
+	pg.base.skill_data_template[180000] = {
+		desc_get = "",
+		name = "钢铁洪流的和声 +",
+		type = 3,
+		max_level = 10,
+		desc = "战斗开始时，若自身装备穿甲弹主炮，自身暴击、暴击伤害提高$1，主炮武器效率提高$2；战斗开始时，选择炮击属性最高的友方战列或战巡附加【协同打击】状态，当处于【协同打击】状态的友方舰船主炮武器开火时，迪米特里·顿斯科伊发射一轮强化穿甲弹弹幕$3(威力依据技能等级)，同时为当前场上所有敌人附加【穿甲标记】：受到的穿甲弹伤害提高5%，持续5秒（该效果不可叠加）；迪米特里·顿斯科伊对有【穿甲标记】的敌人伤害额外提高$4；",
+		id = 180000,
+		system_transform = {},
+		world_death_mark = {
+			1
+		},
+		desc_get_add = {
+			{
+				"15.0%",
+				"25.0%"
+			},
+			{
+				"5.0%",
+				"15.0%"
+			},
+			{
+				"Lv.1",
+				"Lv.10"
+			},
+			{
+				"10.0%",
+				"20.0%"
+			}
+		},
+		desc_add = {
+			{
+				{
+					"15.0%",
+					"+1.1%"
+				},
+				{
+					"16.1%",
+					"+1.1%"
+				},
+				{
+					"17.2%",
+					"+1.1%"
+				},
+				{
+					"18.3%",
+					"+1.1%"
+				},
+				{
+					"19.4%",
+					"+1.1%"
+				},
+				{
+					"20.5%",
+					"+1.1%"
+				},
+				{
+					"21.6%",
+					"+1.1%"
+				},
+				{
+					"22.7%",
+					"+1.1%"
+				},
+				{
+					"23.8%",
+					"+1.2%"
+				},
+				{
+					"25.0%"
+				}
+			},
+			{
+				{
+					"5.0%",
+					"+1.1%"
+				},
+				{
+					"6.1%",
+					"+1.1%"
+				},
+				{
+					"7.2%",
+					"+1.1%"
+				},
+				{
+					"8.3%",
+					"+1.1%"
+				},
+				{
+					"9.4%",
+					"+1.1%"
+				},
+				{
+					"10.5%",
+					"+1.1%"
+				},
+				{
+					"11.6%",
+					"+1.1%"
+				},
+				{
+					"12.7%",
+					"+1.1%"
+				},
+				{
+					"13.8%",
+					"+1.2%"
+				},
+				{
+					"15.0%"
+				}
+			},
+			{
+				{
+					"Lv.1"
+				},
+				{
+					"Lv.2"
+				},
+				{
+					"Lv.3"
+				},
+				{
+					"Lv.4"
+				},
+				{
+					"Lv.5"
+				},
+				{
+					"Lv.6"
+				},
+				{
+					"Lv.7"
+				},
+				{
+					"Lv.8"
+				},
+				{
+					"Lv.9"
+				},
+				{
+					"Lv.10"
+				}
+			},
+			{
+				{
+					"10.0%",
+					"+1.1%"
+				},
+				{
+					"11.1%",
+					"+1.1%"
+				},
+				{
+					"12.2%",
+					"+1.1%"
+				},
+				{
+					"13.3%",
+					"+1.1%"
+				},
+				{
+					"14.4%",
+					"+1.1%"
+				},
+				{
+					"15.5%",
+					"+1.1%"
+				},
+				{
+					"16.6%",
+					"+1.1%"
+				},
+				{
+					"17.7%",
+					"+1.1%"
+				},
+				{
+					"18.8%",
+					"+1.2%"
+				},
+				{
+					"20.0%"
+				}
+			}
+		}
+	}
+	pg.base.skill_data_template[190000] = {
 		desc_get = "",
 		name = "钢铁洪流的和声",
 		type = 3,
@@ -184712,11 +177067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_1
-
-	local var_26_2 = var_26_1.base.skill_data_template
-
-	var_26_2[190010] = {
+	pg.base.skill_data_template[190010] = {
 		desc_get = "",
 		name = "凛冬生存准则",
 		type = 2,
@@ -184867,11 +177218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_2
-
-	local var_26_3 = var_26_2.base.skill_data_template
-
-	var_26_3[190060] = {
+	pg.base.skill_data_template[190060] = {
 		desc_get = "",
 		name = "风暴将至",
 		type = 1,
@@ -184968,11 +177315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_3
-
-	local var_26_4 = var_26_3.base.skill_data_template
-
-	var_26_4[190070] = {
+	pg.base.skill_data_template[190070] = {
 		desc_get = "",
 		name = "无畏风暴",
 		type = 3,
@@ -185114,11 +177457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_4
-
-	local var_26_5 = var_26_4.base.skill_data_template
-
-	var_26_5[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "清扫任务开始",
 		type = 1,
@@ -185260,11 +177599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_5
-
-	local var_26_6 = var_26_5.base.skill_data_template
-
-	var_26_6[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "专业特工的从容",
 		type = 2,
@@ -185406,11 +177741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_6
-
-	local var_26_7 = var_26_6.base.skill_data_template
-
-	var_26_7[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "航路导引之风",
 		type = 1,
@@ -185507,11 +177838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_7
-
-	local var_26_8 = var_26_7.base.skill_data_template
-
-	var_26_8[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "晶焰归航之诗",
 		type = 3,
@@ -185698,11 +178025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_8
-
-	local var_26_9 = var_26_8.base.skill_data_template
-
-	var_26_9[190120] = {
+	pg.base.skill_data_template[190120] = {
 		desc_get = "",
 		name = "宝石治愈之歌",
 		type = 2,
@@ -185844,11 +178167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_9
-
-	local var_26_10 = var_26_9.base.skill_data_template
-
-	var_26_10[190130] = {
+	pg.base.skill_data_template[190130] = {
 		desc_get = "",
 		name = "Capture Web",
 		type = 3,
@@ -185990,11 +178309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_10
-
-	local var_26_11 = var_26_10.base.skill_data_template
-
-	var_26_11[190140] = {
+	pg.base.skill_data_template[190140] = {
 		desc_get = "",
 		name = "石窟的蜘蛛巢",
 		type = 2,
@@ -186136,11 +178451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_11
-
-	local var_26_12 = var_26_11.base.skill_data_template
-
-	var_26_12[190150] = {
+	pg.base.skill_data_template[190150] = {
 		desc_get = "",
 		name = "宝石治愈之歌",
 		type = 2,
@@ -186154,11 +178465,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_12
-
-	local var_26_13 = var_26_12.base.skill_data_template
-
-	var_26_13[201017] = {
+	pg.base.skill_data_template[201017] = {
 		desc_get = "",
 		name = "速运高速无人机",
 		type = 0,
@@ -186172,11 +178479,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_13
-
-	local var_26_14 = var_26_13.base.skill_data_template
-
-	var_26_14[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "烬火枪焰",
 		type = 1,
@@ -186228,11 +178531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_14
-
-	local var_26_15 = var_26_14.base.skill_data_template
-
-	var_26_15[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "幻影强袭",
 		type = 1,
@@ -186329,11 +178628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_15
-
-	local var_26_16 = var_26_15.base.skill_data_template
-
-	var_26_16[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "荣光之锋",
 		type = 3,
@@ -186430,11 +178725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_16
-
-	local var_26_17 = var_26_16.base.skill_data_template
-
-	var_26_17[800040] = {
+	pg.base.skill_data_template[800040] = {
 		desc_get = "",
 		name = "烬火之刃",
 		type = 1,
@@ -186531,11 +178822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_17
-
-	local var_26_18 = var_26_17.base.skill_data_template
-
-	var_26_18[800050] = {
+	pg.base.skill_data_template[800050] = {
 		desc_get = "",
 		name = "光暗花札",
 		type = 3,
@@ -186632,11 +178919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_18
-
-	local var_26_19 = var_26_18.base.skill_data_template
-
-	var_26_19[800060] = {
+	pg.base.skill_data_template[800060] = {
 		desc_get = "",
 		name = "战忆之樱",
 		type = 2,
@@ -186859,11 +179142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_19
-
-	local var_26_20 = var_26_19.base.skill_data_template
-
-	var_26_20[800071] = {
+	pg.base.skill_data_template[800071] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:94}I",
 		type = 3,
@@ -186879,11 +179158,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_20
-
-	local var_26_21 = var_26_20.base.skill_data_template
-
-	var_26_21[800072] = {
+	pg.base.skill_data_template[800072] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:94}II",
 		type = 3,
@@ -186899,11 +179174,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_21
-
-	local var_26_22 = var_26_21.base.skill_data_template
-
-	var_26_22[800075] = {
+	pg.base.skill_data_template[800075] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:94}I",
 		type = 3,
@@ -186919,11 +179190,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_22
-
-	local var_26_23 = var_26_22.base.skill_data_template
-
-	var_26_23[800077] = {
+	pg.base.skill_data_template[800077] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:94}II",
 		type = 3,
@@ -186939,11 +179206,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_23
-
-	local var_26_24 = var_26_23.base.skill_data_template
-
-	var_26_24[800081] = {
+	pg.base.skill_data_template[800081] = {
 		desc_get = "",
 		name = "破敌之炬·皇家方舟I",
 		type = 3,
@@ -186959,11 +179222,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_24
-
-	local var_26_25 = var_26_24.base.skill_data_template
-
-	var_26_25[800082] = {
+	pg.base.skill_data_template[800082] = {
 		desc_get = "",
 		name = "破敌之炬·皇家方舟II",
 		type = 3,
@@ -186979,11 +179238,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_25
-
-	local var_26_26 = var_26_25.base.skill_data_template
-
-	var_26_26[800085] = {
+	pg.base.skill_data_template[800085] = {
 		desc_get = "",
 		name = "破敌之炬·皇家方舟I",
 		type = 3,
@@ -186999,11 +179254,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_26
-
-	local var_26_27 = var_26_26.base.skill_data_template
-
-	var_26_27[800087] = {
+	pg.base.skill_data_template[800087] = {
 		desc_get = "",
 		name = "破敌之炬·皇家方舟II",
 		type = 3,
@@ -187019,11 +179270,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_27
-
-	local var_26_28 = var_26_27.base.skill_data_template
-
-	var_26_28[800090] = {
+	pg.base.skill_data_template[800090] = {
 		desc_get = "",
 		name = "烬火鹰翼",
 		type = 1,
@@ -187075,11 +179322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_28
-
-	local var_26_29 = var_26_28.base.skill_data_template
-
-	var_26_29[800100] = {
+	pg.base.skill_data_template[800100] = {
 		desc_get = "",
 		name = "雷达扫描·Hacking",
 		type = 3,
@@ -187185,11 +179428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_29
-
-	local var_26_30 = var_26_29.base.skill_data_template
-
-	var_26_30[800110] = {
+	pg.base.skill_data_template[800110] = {
 		desc_get = "",
 		name = "情报掌握",
 		type = 2,
@@ -187340,11 +179579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_30
-
-	local var_26_31 = var_26_30.base.skill_data_template
-
-	var_26_31[800121] = {
+	pg.base.skill_data_template[800121] = {
 		desc_get = "",
 		name = "破敌之炬·海伦娜I",
 		type = 3,
@@ -187360,11 +179595,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_31
-
-	local var_26_32 = var_26_31.base.skill_data_template
-
-	var_26_32[800122] = {
+	pg.base.skill_data_template[800122] = {
 		desc_get = "",
 		name = "破敌之炬·海伦娜II",
 		type = 3,
@@ -187380,11 +179611,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_32
-
-	local var_26_33 = var_26_32.base.skill_data_template
-
-	var_26_33[800125] = {
+	pg.base.skill_data_template[800125] = {
 		desc_get = "",
 		name = "破敌之炬·海伦娜I",
 		type = 3,
@@ -187400,11 +179627,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_33
-
-	local var_26_34 = var_26_33.base.skill_data_template
-
-	var_26_34[800127] = {
+	pg.base.skill_data_template[800127] = {
 		desc_get = "",
 		name = "破敌之炬·海伦娜II",
 		type = 3,
@@ -187420,11 +179643,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_34
-
-	local var_26_35 = var_26_34.base.skill_data_template
-
-	var_26_35[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "焰舞花札",
 		type = 1,
@@ -187476,11 +179695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_35
-
-	local var_26_36 = var_26_35.base.skill_data_template
-
-	var_26_36[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "剑锋暗曳",
 		type = 1,
@@ -187532,11 +179747,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_36
-
-	local var_26_37 = var_26_36.base.skill_data_template
-
-	var_26_37[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "惊雷乱舞",
 		type = 3,
@@ -187642,11 +179853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_37
-
-	local var_26_38 = var_26_37.base.skill_data_template
-
-	var_26_38[800161] = {
+	pg.base.skill_data_template[800161] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:205}I",
 		type = 3,
@@ -187662,11 +179869,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_38
-
-	local var_26_39 = var_26_38.base.skill_data_template
-
-	var_26_39[800162] = {
+	pg.base.skill_data_template[800162] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:205}II",
 		type = 3,
@@ -187682,11 +179885,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_39
-
-	local var_26_40 = var_26_39.base.skill_data_template
-
-	var_26_40[800165] = {
+	pg.base.skill_data_template[800165] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:205}I",
 		type = 3,
@@ -187702,11 +179901,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_40
-
-	local var_26_41 = var_26_40.base.skill_data_template
-
-	var_26_41[800167] = {
+	pg.base.skill_data_template[800167] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:205}II",
 		type = 3,
@@ -187722,11 +179917,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_41
-
-	local var_26_42 = var_26_41.base.skill_data_template
-
-	var_26_42[800170] = {
+	pg.base.skill_data_template[800170] = {
 		desc_get = "",
 		name = "烬火之咒",
 		type = 1,
@@ -187778,11 +179969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_42
-
-	local var_26_43 = var_26_42.base.skill_data_template
-
-	var_26_43[800180] = {
+	pg.base.skill_data_template[800180] = {
 		desc_get = "",
 		name = "幽蝶终归海",
 		type = 3,
@@ -187834,11 +180021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_43
-
-	local var_26_44 = var_26_43.base.skill_data_template
-
-	var_26_44[800190] = {
+	pg.base.skill_data_template[800190] = {
 		desc_get = "",
 		name = "清算-{namecode:78}",
 		type = 1,
@@ -187944,11 +180127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_44
-
-	local var_26_45 = var_26_44.base.skill_data_template
-
-	var_26_45[800201] = {
+	pg.base.skill_data_template[800201] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:78}I",
 		type = 3,
@@ -187964,11 +180143,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_45
-
-	local var_26_46 = var_26_45.base.skill_data_template
-
-	var_26_46[800202] = {
+	pg.base.skill_data_template[800202] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:78}II",
 		type = 3,
@@ -187984,11 +180159,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_46
-
-	local var_26_47 = var_26_46.base.skill_data_template
-
-	var_26_47[800205] = {
+	pg.base.skill_data_template[800205] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:78}I",
 		type = 3,
@@ -188004,11 +180175,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_47
-
-	local var_26_48 = var_26_47.base.skill_data_template
-
-	var_26_48[800207] = {
+	pg.base.skill_data_template[800207] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:78}II",
 		type = 3,
@@ -188024,11 +180191,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_48
-
-	local var_26_49 = var_26_48.base.skill_data_template
-
-	var_26_49[800210] = {
+	pg.base.skill_data_template[800210] = {
 		desc_get = "",
 		name = "幽蝶终归海",
 		type = 2,
@@ -188042,11 +180205,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_49
-
-	local var_26_50 = var_26_49.base.skill_data_template
-
-	var_26_50[800220] = {
+	pg.base.skill_data_template[800220] = {
 		desc_get = "",
 		name = "翱翔之翼",
 		type = 1,
@@ -188098,11 +180257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_50
-
-	local var_26_51 = var_26_50.base.skill_data_template
-
-	var_26_51[800230] = {
+	pg.base.skill_data_template[800230] = {
 		desc_get = "",
 		name = "鹰之合击",
 		type = 3,
@@ -188163,11 +180318,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_51
-
-	local var_26_52 = var_26_51.base.skill_data_template
-
-	var_26_52[800240] = {
+	pg.base.skill_data_template[800240] = {
 		desc_get = "",
 		name = "戢羽待发",
 		type = 2,
@@ -188228,11 +180379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_52
-
-	local var_26_53 = var_26_52.base.skill_data_template
-
-	var_26_53[800251] = {
+	pg.base.skill_data_template[800251] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:85}I",
 		type = 1,
@@ -188248,11 +180395,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_53
-
-	local var_26_54 = var_26_53.base.skill_data_template
-
-	var_26_54[800252] = {
+	pg.base.skill_data_template[800252] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:85}II",
 		type = 1,
@@ -188268,11 +180411,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_54
-
-	local var_26_55 = var_26_54.base.skill_data_template
-
-	var_26_55[800255] = {
+	pg.base.skill_data_template[800255] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:85}I",
 		type = 1,
@@ -188288,11 +180427,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_55
-
-	local var_26_56 = var_26_55.base.skill_data_template
-
-	var_26_56[1] = {
+	pg.base.skill_data_template[1] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:85}II",
 		type = 1,
@@ -188308,11 +180443,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_56
-
-	local var_26_57 = var_26_56.base.skill_data_template
-
-	var_26_57[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "焰光之链",
 		type = 1,
@@ -188418,11 +180549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_57
-
-	local var_26_58 = var_26_57.base.skill_data_template
-
-	var_26_58[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "波乱雷光",
 		type = 3,
@@ -188528,11 +180655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_58
-
-	local var_26_59 = var_26_58.base.skill_data_template
-
-	var_26_59[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "血忆之宴",
 		type = 2,
@@ -188638,11 +180761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_59
-
-	local var_26_60 = var_26_59.base.skill_data_template
-
-	var_26_60[800291] = {
+	pg.base.skill_data_template[800291] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:434}I",
 		type = 3,
@@ -188658,11 +180777,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_60
-
-	local var_26_61 = var_26_60.base.skill_data_template
-
-	var_26_61[800292] = {
+	pg.base.skill_data_template[800292] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:434}II",
 		type = 3,
@@ -188678,11 +180793,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_61
-
-	local var_26_62 = var_26_61.base.skill_data_template
-
-	var_26_62[800295] = {
+	pg.base.skill_data_template[800295] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:434}I",
 		type = 3,
@@ -188698,11 +180809,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_62
-
-	local var_26_63 = var_26_62.base.skill_data_template
-
-	var_26_63[800297] = {
+	pg.base.skill_data_template[800297] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:434}II",
 		type = 3,
@@ -188718,11 +180825,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_63
-
-	local var_26_64 = var_26_63.base.skill_data_template
-
-	var_26_64[800300] = {
+	pg.base.skill_data_template[800300] = {
 		desc_get = "",
 		name = "畅游之翼",
 		type = 1,
@@ -188774,11 +180877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_64
-
-	local var_26_65 = var_26_64.base.skill_data_template
-
-	var_26_65[800310] = {
+	pg.base.skill_data_template[800310] = {
 		desc_get = "",
 		name = "鹰之合击",
 		type = 3,
@@ -188839,11 +180938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_65
-
-	local var_26_66 = var_26_65.base.skill_data_template
-
-	var_26_66[800320] = {
+	pg.base.skill_data_template[800320] = {
 		desc_get = "",
 		name = "待时而动",
 		type = 2,
@@ -188904,11 +180999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_66
-
-	local var_26_67 = var_26_66.base.skill_data_template
-
-	var_26_67[800331] = {
+	pg.base.skill_data_template[800331] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:86}I",
 		type = 1,
@@ -188924,11 +181015,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_67
-
-	local var_26_68 = var_26_67.base.skill_data_template
-
-	var_26_68[800332] = {
+	pg.base.skill_data_template[800332] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:86}II",
 		type = 1,
@@ -188944,11 +181031,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_68
-
-	local var_26_69 = var_26_68.base.skill_data_template
-
-	var_26_69[800335] = {
+	pg.base.skill_data_template[800335] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:86}I",
 		type = 1,
@@ -188964,11 +181047,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_69
-
-	local var_26_70 = var_26_69.base.skill_data_template
-
-	var_26_70[800337] = {
+	pg.base.skill_data_template[800337] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:86}II",
 		type = 1,
@@ -188984,11 +181063,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_70
-
-	local var_26_71 = var_26_70.base.skill_data_template
-
-	var_26_71[800340] = {
+	pg.base.skill_data_template[800340] = {
 		desc_get = "",
 		name = "双重狙击",
 		type = 1,
@@ -189040,11 +181115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_71
-
-	local var_26_72 = var_26_71.base.skill_data_template
-
-	var_26_72[800350] = {
+	pg.base.skill_data_template[800350] = {
 		desc_get = "",
 		name = "雷闪炎舞",
 		type = 3,
@@ -189141,11 +181212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_72
-
-	local var_26_73 = var_26_72.base.skill_data_template
-
-	var_26_73[800360] = {
+	pg.base.skill_data_template[800360] = {
 		desc_get = "",
 		name = "钢火战烬",
 		type = 2,
@@ -189206,11 +181273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_73
-
-	local var_26_74 = var_26_73.base.skill_data_template
-
-	var_26_74[800371] = {
+	pg.base.skill_data_template[800371] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:433}I",
 		type = 1,
@@ -189226,11 +181289,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_74
-
-	local var_26_75 = var_26_74.base.skill_data_template
-
-	var_26_75[800372] = {
+	pg.base.skill_data_template[800372] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:433}II",
 		type = 1,
@@ -189246,11 +181305,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_75
-
-	local var_26_76 = var_26_75.base.skill_data_template
-
-	var_26_76[800375] = {
+	pg.base.skill_data_template[800375] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:433}I",
 		type = 1,
@@ -189266,11 +181321,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_76
-
-	local var_26_77 = var_26_76.base.skill_data_template
-
-	var_26_77[800377] = {
+	pg.base.skill_data_template[800377] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:433}II",
 		type = 1,
@@ -189286,11 +181337,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_77
-
-	local var_26_78 = var_26_77.base.skill_data_template
-
-	var_26_78[800380] = {
+	pg.base.skill_data_template[800380] = {
 		desc_get = "",
 		name = "血厄狂乱",
 		type = 1,
@@ -189351,11 +181398,11 @@ end)()
 			}
 		}
 	}
-	pg = var_26_78
 
-	local var_26_79 = var_26_78.base.skill_data_template
-
-	var_26_79[6] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "灾厄还复来",
 		type = 3,
@@ -189416,11 +181463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_79
-
-	local var_26_80 = var_26_79.base.skill_data_template
-
-	var_26_80[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "碎忆-{namecode:79}",
 		type = 1,
@@ -189481,11 +181524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_80
-
-	local var_26_81 = var_26_80.base.skill_data_template
-
-	var_26_81[27] = {
+	pg.base.skill_data_template[27] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:79}I",
 		type = 1,
@@ -189501,11 +181540,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_81
-
-	local var_26_82 = var_26_81.base.skill_data_template
-
-	var_26_82[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:79}II",
 		type = 1,
@@ -189521,11 +181556,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_82
-
-	local var_26_83 = var_26_82.base.skill_data_template
-
-	var_26_83[31] = {
+	pg.base.skill_data_template[31] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:79}I",
 		type = 1,
@@ -189541,11 +181572,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_83
-
-	local var_26_84 = var_26_83.base.skill_data_template
-
-	var_26_84[800417] = {
+	pg.base.skill_data_template[800417] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:79}II",
 		type = 1,
@@ -189561,11 +181588,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_84
-
-	local var_26_85 = var_26_84.base.skill_data_template
-
-	var_26_85[800420] = {
+	pg.base.skill_data_template[800420] = {
 		desc_get = "",
 		name = "压制与掌握",
 		type = 1,
@@ -189626,11 +181649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_85
-
-	local var_26_86 = var_26_85.base.skill_data_template
-
-	var_26_86[800430] = {
+	pg.base.skill_data_template[800430] = {
 		desc_get = "",
 		name = "目标与共识",
 		type = 3,
@@ -189691,11 +181710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_86
-
-	local var_26_87 = var_26_86.base.skill_data_template
-
-	var_26_87[800440] = {
+	pg.base.skill_data_template[800440] = {
 		desc_get = "",
 		name = "看破与协作",
 		type = 2,
@@ -189801,11 +181816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_87
-
-	local var_26_88 = var_26_87.base.skill_data_template
-
-	var_26_88[800451] = {
+	pg.base.skill_data_template[800451] = {
 		desc_get = "",
 		name = "构造之理·孟菲斯I",
 		type = 1,
@@ -189821,11 +181832,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_88
-
-	local var_26_89 = var_26_88.base.skill_data_template
-
-	var_26_89[800452] = {
+	pg.base.skill_data_template[800452] = {
 		desc_get = "",
 		name = "构造之理·孟菲斯II",
 		type = 1,
@@ -189841,11 +181848,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_89
-
-	local var_26_90 = var_26_89.base.skill_data_template
-
-	var_26_90[800455] = {
+	pg.base.skill_data_template[800455] = {
 		desc_get = "",
 		name = "构造之理·孟菲斯I",
 		type = 1,
@@ -189861,11 +181864,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_90
-
-	local var_26_91 = var_26_90.base.skill_data_template
-
-	var_26_91[800457] = {
+	pg.base.skill_data_template[800457] = {
 		desc_get = "",
 		name = "构造之理·孟菲斯II",
 		type = 1,
@@ -189881,11 +181880,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_91
-
-	local var_26_92 = var_26_91.base.skill_data_template
-
-	var_26_92[800460] = {
+	pg.base.skill_data_template[800460] = {
 		desc_get = "",
 		name = "熔岩之刃",
 		type = 1,
@@ -190027,11 +182022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_92
-
-	local var_26_93 = var_26_92.base.skill_data_template
-
-	var_26_93[800470] = {
+	pg.base.skill_data_template[800470] = {
 		desc_get = "",
 		name = "反击焰火",
 		type = 2,
@@ -190137,11 +182128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_93
-
-	local var_26_94 = var_26_93.base.skill_data_template
-
-	var_26_94[800480] = {
+	pg.base.skill_data_template[800480] = {
 		desc_get = "",
 		name = "历战之炎",
 		type = 3,
@@ -190247,11 +182234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_94
-
-	local var_26_95 = var_26_94.base.skill_data_template
-
-	var_26_95[800491] = {
+	pg.base.skill_data_template[800491] = {
 		desc_get = "",
 		name = "破敌之炬·反击I",
 		type = 3,
@@ -190267,11 +182250,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_95
-
-	local var_26_96 = var_26_95.base.skill_data_template
-
-	var_26_96[800492] = {
+	pg.base.skill_data_template[800492] = {
 		desc_get = "",
 		name = "破敌之炬·反击II",
 		type = 3,
@@ -190287,11 +182266,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_96
-
-	local var_26_97 = var_26_96.base.skill_data_template
-
-	var_26_97[800495] = {
+	pg.base.skill_data_template[800495] = {
 		desc_get = "",
 		name = "破敌之炬·反击I",
 		type = 3,
@@ -190307,11 +182282,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_97
-
-	local var_26_98 = var_26_97.base.skill_data_template
-
-	var_26_98[800497] = {
+	pg.base.skill_data_template[800497] = {
 		desc_get = "",
 		name = "破敌之炬·反击II",
 		type = 3,
@@ -190327,8 +182298,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_26_98
-	var_26_98.base.skill_data_template[800500] = {
+	pg.base.skill_data_template[800500] = {
 		desc_get = "",
 		name = "殇视之剑",
 		type = 1,
@@ -190434,15 +182404,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_27_0 = var_1_10000.base.skill_data_template
-
-	var_27_0[800510] = {
+	pg.base.skill_data_template[800510] = {
 		desc_get = "",
 		name = "殇视之怒",
 		type = 1,
@@ -190548,11 +182510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_0
-
-	local var_27_1 = var_27_0.base.skill_data_template
-
-	var_27_1[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "殇视之盾",
 		type = 3,
@@ -190658,11 +182616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_1
-
-	local var_27_2 = var_27_1.base.skill_data_template
-
-	var_27_2[19] = {
+	pg.base.skill_data_template[19] = {
 		desc_get = "",
 		name = "摇曳之火·特伦托I",
 		type = 1,
@@ -190678,11 +182632,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_2
-
-	local var_27_3 = var_27_2.base.skill_data_template
-
-	var_27_3[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "摇曳之火·特伦托II",
 		type = 1,
@@ -190698,11 +182648,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_3
-
-	local var_27_4 = var_27_3.base.skill_data_template
-
-	var_27_4[23] = {
+	pg.base.skill_data_template[23] = {
 		desc_get = "",
 		name = "摇曳之火·特伦托I",
 		type = 1,
@@ -190718,11 +182664,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_4
-
-	local var_27_5 = var_27_4.base.skill_data_template
-
-	var_27_5[25] = {
+	pg.base.skill_data_template[25] = {
 		desc_get = "",
 		name = "摇曳之火·特伦托II",
 		type = 1,
@@ -190738,11 +182680,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_5
-
-	local var_27_6 = var_27_5.base.skill_data_template
-
-	var_27_6[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "火焰浇铸的剑锋",
 		type = 1,
@@ -190794,11 +182732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_6
-
-	local var_27_7 = var_27_6.base.skill_data_template
-
-	var_27_7[800550] = {
+	pg.base.skill_data_template[800550] = {
 		desc_get = "",
 		name = "历战骑士的荣耀",
 		type = 3,
@@ -190904,11 +182838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_7
-
-	local var_27_8 = var_27_7.base.skill_data_template
-
-	var_27_8[800560] = {
+	pg.base.skill_data_template[800560] = {
 		desc_get = "",
 		name = "信念誓言的守护",
 		type = 2,
@@ -190969,11 +182899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_8
-
-	local var_27_9 = var_27_8.base.skill_data_template
-
-	var_27_9[800571] = {
+	pg.base.skill_data_template[800571] = {
 		desc_get = "",
 		name = "破敌之炬·声望I",
 		type = 3,
@@ -190989,11 +182915,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_9
-
-	local var_27_10 = var_27_9.base.skill_data_template
-
-	var_27_10[800572] = {
+	pg.base.skill_data_template[800572] = {
 		desc_get = "",
 		name = "破敌之炬·声望II",
 		type = 3,
@@ -191009,11 +182931,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_10
-
-	local var_27_11 = var_27_10.base.skill_data_template
-
-	var_27_11[800575] = {
+	pg.base.skill_data_template[800575] = {
 		desc_get = "",
 		name = "破敌之炬·声望I",
 		type = 3,
@@ -191029,11 +182947,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_11
-
-	local var_27_12 = var_27_11.base.skill_data_template
-
-	var_27_12[800577] = {
+	pg.base.skill_data_template[800577] = {
 		desc_get = "",
 		name = "破敌之炬·声望II",
 		type = 3,
@@ -191049,11 +182963,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_12
-
-	local var_27_13 = var_27_12.base.skill_data_template
-
-	var_27_13[800580] = {
+	pg.base.skill_data_template[800580] = {
 		desc_get = "",
 		name = "锋裂印记",
 		type = 1,
@@ -191150,11 +183060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_13
-
-	local var_27_14 = var_27_13.base.skill_data_template
-
-	var_27_14[800590] = {
+	pg.base.skill_data_template[800590] = {
 		desc_get = "",
 		name = "窥见真实",
 		type = 3,
@@ -191260,11 +183166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_14
-
-	local var_27_15 = var_27_14.base.skill_data_template
-
-	var_27_15[800601] = {
+	pg.base.skill_data_template[800601] = {
 		desc_get = "",
 		name = "逐光之焰·猎人I",
 		type = 3,
@@ -191280,11 +183182,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_15
-
-	local var_27_16 = var_27_15.base.skill_data_template
-
-	var_27_16[800602] = {
+	pg.base.skill_data_template[800602] = {
 		desc_get = "",
 		name = "逐光之焰·猎人II",
 		type = 3,
@@ -191300,11 +183198,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_16
-
-	local var_27_17 = var_27_16.base.skill_data_template
-
-	var_27_17[800605] = {
+	pg.base.skill_data_template[800605] = {
 		desc_get = "",
 		name = "逐光之焰·猎人I",
 		type = 3,
@@ -191320,11 +183214,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_17
-
-	local var_27_18 = var_27_17.base.skill_data_template
-
-	var_27_18[800607] = {
+	pg.base.skill_data_template[800607] = {
 		desc_get = "",
 		name = "逐光之焰·猎人II",
 		type = 3,
@@ -191340,11 +183230,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_18
-
-	local var_27_19 = var_27_18.base.skill_data_template
-
-	var_27_19[800610] = {
+	pg.base.skill_data_template[800610] = {
 		desc_get = "",
 		name = "命运的未来视",
 		type = 1,
@@ -191396,11 +183282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_19
-
-	local var_27_20 = var_27_19.base.skill_data_template
-
-	var_27_20[800620] = {
+	pg.base.skill_data_template[800620] = {
 		desc_get = "",
 		name = "回击的因果律",
 		type = 1,
@@ -191542,11 +183424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_20
-
-	local var_27_21 = var_27_20.base.skill_data_template
-
-	var_27_21[800631] = {
+	pg.base.skill_data_template[800631] = {
 		desc_get = "",
 		name = "逐光之焰·命运女神",
 		type = 3,
@@ -191562,11 +183440,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_21
-
-	local var_27_22 = var_27_21.base.skill_data_template
-
-	var_27_22[800632] = {
+	pg.base.skill_data_template[800632] = {
 		desc_get = "",
 		name = "逐光之焰·命运女神",
 		type = 3,
@@ -191582,11 +183456,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_22
-
-	local var_27_23 = var_27_22.base.skill_data_template
-
-	var_27_23[800635] = {
+	pg.base.skill_data_template[800635] = {
 		desc_get = "",
 		name = "逐光之焰·命运女神",
 		type = 3,
@@ -191602,11 +183472,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_23
-
-	local var_27_24 = var_27_23.base.skill_data_template
-
-	var_27_24[800637] = {
+	pg.base.skill_data_template[800637] = {
 		desc_get = "",
 		name = "逐光之焰·命运女神",
 		type = 3,
@@ -191622,11 +183488,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_24
-
-	local var_27_25 = var_27_24.base.skill_data_template
-
-	var_27_25[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "细听轻音",
 		type = 3,
@@ -191732,11 +183594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_25
-
-	local var_27_26 = var_27_25.base.skill_data_template
-
-	var_27_26[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "不再哭泣",
 		type = 2,
@@ -191833,11 +183691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_26
-
-	local var_27_27 = var_27_26.base.skill_data_template
-
-	var_27_27[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "昨日重现",
 		type = 3,
@@ -191943,11 +183797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_27
-
-	local var_27_28 = var_27_27.base.skill_data_template
-
-	var_27_28[31] = {
+	pg.base.skill_data_template[31] = {
 		desc_get = "",
 		name = "构造之理·亚利桑那I",
 		type = 3,
@@ -191963,11 +183813,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_28
-
-	local var_27_29 = var_27_28.base.skill_data_template
-
-	var_27_29[800672] = {
+	pg.base.skill_data_template[800672] = {
 		desc_get = "",
 		name = "构造之理·亚利桑那II",
 		type = 3,
@@ -191983,11 +183829,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_29
-
-	local var_27_30 = var_27_29.base.skill_data_template
-
-	var_27_30[800675] = {
+	pg.base.skill_data_template[800675] = {
 		desc_get = "",
 		name = "构造之理·亚利桑那I",
 		type = 3,
@@ -192003,11 +183845,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_30
-
-	local var_27_31 = var_27_30.base.skill_data_template
-
-	var_27_31[800677] = {
+	pg.base.skill_data_template[800677] = {
 		desc_get = "",
 		name = "构造之理·亚利桑那II",
 		type = 3,
@@ -192023,11 +183861,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_31
-
-	local var_27_32 = var_27_31.base.skill_data_template
-
-	var_27_32[800680] = {
+	pg.base.skill_data_template[800680] = {
 		desc_get = "",
 		name = "快速拔枪",
 		type = 1,
@@ -192124,11 +183958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_32
-
-	local var_27_33 = var_27_32.base.skill_data_template
-
-	var_27_33[800690] = {
+	pg.base.skill_data_template[800690] = {
 		desc_get = "",
 		name = "闪耀暴击",
 		type = 1,
@@ -192234,11 +184064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_33
-
-	local var_27_34 = var_27_33.base.skill_data_template
-
-	var_27_34[800701] = {
+	pg.base.skill_data_template[800701] = {
 		desc_get = "",
 		name = "破敌之炬·谢菲尔德I",
 		type = 3,
@@ -192254,11 +184080,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_34
-
-	local var_27_35 = var_27_34.base.skill_data_template
-
-	var_27_35[800702] = {
+	pg.base.skill_data_template[800702] = {
 		desc_get = "",
 		name = "破敌之炬·谢菲尔德II",
 		type = 3,
@@ -192274,11 +184096,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_35
-
-	local var_27_36 = var_27_35.base.skill_data_template
-
-	var_27_36[800705] = {
+	pg.base.skill_data_template[800705] = {
 		desc_get = "",
 		name = "破敌之炬·谢菲尔德I",
 		type = 3,
@@ -192294,11 +184112,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_36
-
-	local var_27_37 = var_27_36.base.skill_data_template
-
-	var_27_37[800707] = {
+	pg.base.skill_data_template[800707] = {
 		desc_get = "",
 		name = "破敌之炬·谢菲尔德II",
 		type = 3,
@@ -192314,11 +184128,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_37
-
-	local var_27_38 = var_27_37.base.skill_data_template
-
-	var_27_38[800710] = {
+	pg.base.skill_data_template[800710] = {
 		desc_get = "",
 		name = "光影之间的女王",
 		type = 1,
@@ -192469,11 +184279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_38
-
-	local var_27_39 = var_27_38.base.skill_data_template
-
-	var_27_39[800720] = {
+	pg.base.skill_data_template[800720] = {
 		desc_get = "",
 		name = "矛盾交织的暗影",
 		type = 2,
@@ -192579,11 +184385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_39
-
-	local var_27_40 = var_27_39.base.skill_data_template
-
-	var_27_40[800730] = {
+	pg.base.skill_data_template[800730] = {
 		desc_get = "",
 		name = "回应祈祷的恩赐",
 		type = 3,
@@ -192689,11 +184491,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_40
-
-	local var_27_41 = var_27_40.base.skill_data_template
-
-	var_27_41[800741] = {
+	pg.base.skill_data_template[800741] = {
 		desc_get = "",
 		name = "逐光之焰·伊丽莎白女王I",
 		type = 3,
@@ -192709,11 +184507,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_41
-
-	local var_27_42 = var_27_41.base.skill_data_template
-
-	var_27_42[800742] = {
+	pg.base.skill_data_template[800742] = {
 		desc_get = "",
 		name = "逐光之焰·伊丽莎白女王II",
 		type = 3,
@@ -192729,11 +184523,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_42
-
-	local var_27_43 = var_27_42.base.skill_data_template
-
-	var_27_43[800745] = {
+	pg.base.skill_data_template[800745] = {
 		desc_get = "",
 		name = "逐光之焰·伊丽莎白女王I",
 		type = 3,
@@ -192749,11 +184539,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_43
-
-	local var_27_44 = var_27_43.base.skill_data_template
-
-	var_27_44[800747] = {
+	pg.base.skill_data_template[800747] = {
 		desc_get = "",
 		name = "逐光之焰·伊丽莎白女王II",
 		type = 3,
@@ -192769,11 +184555,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_44
-
-	local var_27_45 = var_27_44.base.skill_data_template
-
-	var_27_45[800750] = {
+	pg.base.skill_data_template[800750] = {
 		desc_get = "",
 		name = "审判之锤",
 		type = 1,
@@ -192915,11 +184697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_45
-
-	local var_27_46 = var_27_45.base.skill_data_template
-
-	var_27_46[800760] = {
+	pg.base.skill_data_template[800760] = {
 		desc_get = "",
 		name = "裁决之斧",
 		type = 1,
@@ -193025,11 +184803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_46
-
-	local var_27_47 = var_27_46.base.skill_data_template
-
-	var_27_47[3] = {
+	pg.base.skill_data_template[3] = {
 		desc_get = "",
 		name = "逐光之焰·拉·加利索尼埃I",
 		type = 3,
@@ -193045,11 +184819,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_47
-
-	local var_27_48 = var_27_47.base.skill_data_template
-
-	var_27_48[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "逐光之焰·拉·加利索尼埃II",
 		type = 3,
@@ -193065,11 +184835,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_48
-
-	local var_27_49 = var_27_48.base.skill_data_template
-
-	var_27_49[7] = {
+	pg.base.skill_data_template[7] = {
 		desc_get = "",
 		name = "逐光之焰·拉·加利索尼埃I",
 		type = 3,
@@ -193085,11 +184851,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_49
-
-	local var_27_50 = var_27_49.base.skill_data_template
-
-	var_27_50[9] = {
+	pg.base.skill_data_template[9] = {
 		desc_get = "",
 		name = "逐光之焰·拉·加利索尼埃II",
 		type = 3,
@@ -193105,11 +184867,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_50
-
-	local var_27_51 = var_27_50.base.skill_data_template
-
-	var_27_51[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "迷惘混乱的内心",
 		type = 1,
@@ -193262,11 +185020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_51
-
-	local var_27_52 = var_27_51.base.skill_data_template
-
-	var_27_52[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "自由随性的骑士",
 		type = 3,
@@ -193365,11 +185119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_52
-
-	local var_27_53 = var_27_52.base.skill_data_template
-
-	var_27_53[800800] = {
+	pg.base.skill_data_template[800800] = {
 		desc_get = "",
 		name = "铭记在心的誓言",
 		type = 1,
@@ -193522,11 +185272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_53
-
-	local var_27_54 = var_27_53.base.skill_data_template
-
-	var_27_54[800811] = {
+	pg.base.skill_data_template[800811] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:416}I",
 		type = 3,
@@ -193542,11 +185288,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_54
-
-	local var_27_55 = var_27_54.base.skill_data_template
-
-	var_27_55[800812] = {
+	pg.base.skill_data_template[800812] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:416}II",
 		type = 3,
@@ -193562,11 +185304,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_55
-
-	local var_27_56 = var_27_55.base.skill_data_template
-
-	var_27_56[800815] = {
+	pg.base.skill_data_template[800815] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:416}I",
 		type = 3,
@@ -193582,11 +185320,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_56
-
-	local var_27_57 = var_27_56.base.skill_data_template
-
-	var_27_57[800817] = {
+	pg.base.skill_data_template[800817] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:416}II",
 		type = 3,
@@ -193602,11 +185336,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_57
-
-	local var_27_58 = var_27_57.base.skill_data_template
-
-	var_27_58[800820] = {
+	pg.base.skill_data_template[800820] = {
 		desc_get = "",
 		name = "构造调整·碎裂化",
 		type = 1,
@@ -193712,11 +185442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_58
-
-	local var_27_59 = var_27_58.base.skill_data_template
-
-	var_27_59[800830] = {
+	pg.base.skill_data_template[800830] = {
 		desc_get = "",
 		name = "构造调整·活性化",
 		type = 2,
@@ -193822,11 +185548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_59
-
-	local var_27_60 = var_27_59.base.skill_data_template
-
-	var_27_60[800841] = {
+	pg.base.skill_data_template[800841] = {
 		desc_get = "",
 		name = "构造之理·女灶神I",
 		type = 3,
@@ -193842,11 +185564,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_60
-
-	local var_27_61 = var_27_60.base.skill_data_template
-
-	var_27_61[800842] = {
+	pg.base.skill_data_template[800842] = {
 		desc_get = "",
 		name = "构造之理·女灶神II",
 		type = 3,
@@ -193862,11 +185580,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_61
-
-	local var_27_62 = var_27_61.base.skill_data_template
-
-	var_27_62[800845] = {
+	pg.base.skill_data_template[800845] = {
 		desc_get = "",
 		name = "构造之理·女灶神I",
 		type = 3,
@@ -193882,11 +185596,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_62
-
-	local var_27_63 = var_27_62.base.skill_data_template
-
-	var_27_63[800847] = {
+	pg.base.skill_data_template[800847] = {
 		desc_get = "",
 		name = "构造之理·女灶神II",
 		type = 3,
@@ -193902,11 +185612,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_63
-
-	local var_27_64 = var_27_63.base.skill_data_template
-
-	var_27_64[800850] = {
+	pg.base.skill_data_template[800850] = {
 		desc_get = "",
 		name = "堕天使的追放",
 		type = 1,
@@ -194048,11 +185754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_64
-
-	local var_27_65 = var_27_64.base.skill_data_template
-
-	var_27_65[800860] = {
+	pg.base.skill_data_template[800860] = {
 		desc_get = "",
 		name = "堕天使的低语",
 		type = 3,
@@ -194158,11 +185860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_65
-
-	local var_27_66 = var_27_65.base.skill_data_template
-
-	var_27_66[800870] = {
+	pg.base.skill_data_template[800870] = {
 		desc_get = "",
 		name = "涤罪之焰",
 		type = 1,
@@ -194223,11 +185921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_66
-
-	local var_27_67 = var_27_66.base.skill_data_template
-
-	var_27_67[800881] = {
+	pg.base.skill_data_template[800881] = {
 		desc_get = "",
 		name = "逐光之焰·阿尔及利亚I",
 		type = 3,
@@ -194243,11 +185937,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_67
-
-	local var_27_68 = var_27_67.base.skill_data_template
-
-	var_27_68[800882] = {
+	pg.base.skill_data_template[800882] = {
 		desc_get = "",
 		name = "逐光之焰·阿尔及利亚II",
 		type = 3,
@@ -194263,11 +185953,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_68
-
-	local var_27_69 = var_27_68.base.skill_data_template
-
-	var_27_69[800885] = {
+	pg.base.skill_data_template[800885] = {
 		desc_get = "",
 		name = "逐光之焰·阿尔及利亚I",
 		type = 3,
@@ -194283,11 +185969,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_69
-
-	local var_27_70 = var_27_69.base.skill_data_template
-
-	var_27_70[800887] = {
+	pg.base.skill_data_template[800887] = {
 		desc_get = "",
 		name = "逐光之焰·阿尔及利亚II",
 		type = 3,
@@ -194303,11 +185985,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_70
-
-	local var_27_71 = var_27_70.base.skill_data_template
-
-	var_27_71[800890] = {
+	pg.base.skill_data_template[800890] = {
 		desc_get = "",
 		name = "灵感闪现",
 		type = 1,
@@ -194404,11 +186082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_71
-
-	local var_27_72 = var_27_71.base.skill_data_template
-
-	var_27_72[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "护卫变幻",
 		type = 2,
@@ -194514,11 +186188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_72
-
-	local var_27_73 = var_27_72.base.skill_data_template
-
-	var_27_73[15] = {
+	pg.base.skill_data_template[15] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:140}",
 		type = 3,
@@ -194534,11 +186204,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_73
-
-	local var_27_74 = var_27_73.base.skill_data_template
-
-	var_27_74[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:140}",
 		type = 3,
@@ -194554,11 +186220,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_74
-
-	local var_27_75 = var_27_74.base.skill_data_template
-
-	var_27_75[19] = {
+	pg.base.skill_data_template[19] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:140}",
 		type = 3,
@@ -194574,11 +186236,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_75
-
-	local var_27_76 = var_27_75.base.skill_data_template
-
-	var_27_76[21] = {
+	pg.base.skill_data_template[21] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:140}",
 		type = 3,
@@ -194594,11 +186252,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_76
-
-	local var_27_77 = var_27_76.base.skill_data_template
-
-	var_27_77[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "不屈之华的盛放",
 		type = 1,
@@ -194704,11 +186358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_77
-
-	local var_27_78 = var_27_77.base.skill_data_template
-
-	var_27_78[800930] = {
+	pg.base.skill_data_template[800930] = {
 		desc_get = "",
 		name = "生死之间的谋策",
 		type = 3,
@@ -194859,11 +186509,11 @@ end)()
 			}
 		}
 	}
-	pg = var_27_78
 
-	local var_27_79 = var_27_78.base.skill_data_template
-
-	var_27_79[800940] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[800940] = {
 		desc_get = "",
 		name = "慎与勇的抉择",
 		type = 2,
@@ -194969,11 +186619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_79
-
-	local var_27_80 = var_27_79.base.skill_data_template
-
-	var_27_80[800951] = {
+	pg.base.skill_data_template[800951] = {
 		desc_get = "",
 		name = "构造之理·{namecode:293}I",
 		type = 3,
@@ -194989,11 +186635,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_80
-
-	local var_27_81 = var_27_80.base.skill_data_template
-
-	var_27_81[800952] = {
+	pg.base.skill_data_template[800952] = {
 		desc_get = "",
 		name = "构造之理·{namecode:293}II",
 		type = 3,
@@ -195009,11 +186651,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_81
-
-	local var_27_82 = var_27_81.base.skill_data_template
-
-	var_27_82[800955] = {
+	pg.base.skill_data_template[800955] = {
 		desc_get = "",
 		name = "构造之理·{namecode:293}I",
 		type = 3,
@@ -195029,11 +186667,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_82
-
-	local var_27_83 = var_27_82.base.skill_data_template
-
-	var_27_83[800957] = {
+	pg.base.skill_data_template[800957] = {
 		desc_get = "",
 		name = "构造之理·{namecode:293}II",
 		type = 3,
@@ -195049,11 +186683,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_83
-
-	local var_27_84 = var_27_83.base.skill_data_template
-
-	var_27_84[800960] = {
+	pg.base.skill_data_template[800960] = {
 		desc_get = "",
 		name = "燃火之磷",
 		type = 1,
@@ -195204,11 +186834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_84
-
-	local var_27_85 = var_27_84.base.skill_data_template
-
-	var_27_85[800970] = {
+	pg.base.skill_data_template[800970] = {
 		desc_get = "",
 		name = "隐入云雨",
 		type = 2,
@@ -195350,11 +186976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_85
-
-	local var_27_86 = var_27_85.base.skill_data_template
-
-	var_27_86[800981] = {
+	pg.base.skill_data_template[800981] = {
 		desc_get = "",
 		name = "破敌之炬·普林斯顿I",
 		type = 1,
@@ -195370,11 +186992,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_86
-
-	local var_27_87 = var_27_86.base.skill_data_template
-
-	var_27_87[800982] = {
+	pg.base.skill_data_template[800982] = {
 		desc_get = "",
 		name = "破敌之炬·普林斯顿II",
 		type = 1,
@@ -195390,11 +187008,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_87
-
-	local var_27_88 = var_27_87.base.skill_data_template
-
-	var_27_88[800985] = {
+	pg.base.skill_data_template[800985] = {
 		desc_get = "",
 		name = "破敌之炬·普林斯顿I",
 		type = 1,
@@ -195410,11 +187024,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_88
-
-	local var_27_89 = var_27_88.base.skill_data_template
-
-	var_27_89[800987] = {
+	pg.base.skill_data_template[800987] = {
 		desc_get = "",
 		name = "破敌之炬·普林斯顿II",
 		type = 1,
@@ -195430,11 +187040,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_89
-
-	local var_27_90 = var_27_89.base.skill_data_template
-
-	var_27_90[800990] = {
+	pg.base.skill_data_template[800990] = {
 		desc_get = "",
 		name = "于噩梦中降临",
 		type = 3,
@@ -195540,11 +187146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_90
-
-	local var_27_91 = var_27_90.base.skill_data_template
-
-	var_27_91[801000] = {
+	pg.base.skill_data_template[801000] = {
 		desc_get = "",
 		name = "于黑暗中消亡",
 		type = 1,
@@ -195686,11 +187288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_91
-
-	local var_27_92 = var_27_91.base.skill_data_template
-
-	var_27_92[801011] = {
+	pg.base.skill_data_template[801011] = {
 		desc_get = "",
 		name = "逐光之焰·黑暗界I",
 		type = 3,
@@ -195706,11 +187304,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_92
-
-	local var_27_93 = var_27_92.base.skill_data_template
-
-	var_27_93[801012] = {
+	pg.base.skill_data_template[801012] = {
 		desc_get = "",
 		name = "逐光之焰·黑暗界II",
 		type = 3,
@@ -195726,11 +187320,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_93
-
-	local var_27_94 = var_27_93.base.skill_data_template
-
-	var_27_94[801015] = {
+	pg.base.skill_data_template[801015] = {
 		desc_get = "",
 		name = "逐光之焰·黑暗界I",
 		type = 3,
@@ -195746,11 +187336,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_94
-
-	local var_27_95 = var_27_94.base.skill_data_template
-
-	var_27_95[801017] = {
+	pg.base.skill_data_template[801017] = {
 		desc_get = "",
 		name = "逐光之焰·黑暗界II",
 		type = 3,
@@ -195766,11 +187352,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_27_95
-
-	local var_27_96 = var_27_95.base.skill_data_template
-
-	var_27_96[801020] = {
+	pg.base.skill_data_template[801020] = {
 		desc_get = "",
 		name = "闪流咆哮",
 		type = 1,
@@ -195822,11 +187404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_96
-
-	local var_27_97 = var_27_96.base.skill_data_template
-
-	var_27_97[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "冰魄逐光",
 		type = 3,
@@ -195932,11 +187510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_97
-
-	local var_27_98 = var_27_97.base.skill_data_template
-
-	var_27_98[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "冰舞与炮火",
 		type = 1,
@@ -196033,8 +187607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_27_98
-	var_27_98.base.skill_data_template[27] = {
+	pg.base.skill_data_template[27] = {
 		desc_get = "",
 		name = "逐光之焰·基洛夫I",
 		type = 3,
@@ -196050,15 +187623,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_28_0 = var_1_10000.base.skill_data_template
-
-	var_28_0[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "逐光之焰·基洛夫II",
 		type = 3,
@@ -196074,11 +187639,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_0
-
-	local var_28_1 = var_28_0.base.skill_data_template
-
-	var_28_1[31] = {
+	pg.base.skill_data_template[31] = {
 		desc_get = "",
 		name = "逐光之焰·基洛夫I",
 		type = 3,
@@ -196094,11 +187655,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_1
-
-	local var_28_2 = var_28_1.base.skill_data_template
-
-	var_28_2[801057] = {
+	pg.base.skill_data_template[801057] = {
 		desc_get = "",
 		name = "逐光之焰·基洛夫II",
 		type = 3,
@@ -196114,11 +187671,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_2
-
-	local var_28_3 = var_28_2.base.skill_data_template
-
-	var_28_3[801060] = {
+	pg.base.skill_data_template[801060] = {
 		desc_get = "",
 		name = "无尽长夜",
 		type = 1,
@@ -196296,11 +187849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_3
-
-	local var_28_4 = var_28_3.base.skill_data_template
-
-	var_28_4[801070] = {
+	pg.base.skill_data_template[801070] = {
 		desc_get = "",
 		name = "永战不息",
 		type = 1,
@@ -196406,11 +187955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_4
-
-	local var_28_5 = var_28_4.base.skill_data_template
-
-	var_28_5[801081] = {
+	pg.base.skill_data_template[801081] = {
 		desc_get = "",
 		name = "破敌之炬·金伯利I",
 		type = 1,
@@ -196426,11 +187971,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_5
-
-	local var_28_6 = var_28_5.base.skill_data_template
-
-	var_28_6[801082] = {
+	pg.base.skill_data_template[801082] = {
 		desc_get = "",
 		name = "破敌之炬·金伯利II",
 		type = 1,
@@ -196446,11 +187987,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_6
-
-	local var_28_7 = var_28_6.base.skill_data_template
-
-	var_28_7[801085] = {
+	pg.base.skill_data_template[801085] = {
 		desc_get = "",
 		name = "破敌之炬·金伯利I",
 		type = 1,
@@ -196466,11 +188003,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_7
-
-	local var_28_8 = var_28_7.base.skill_data_template
-
-	var_28_8[801087] = {
+	pg.base.skill_data_template[801087] = {
 		desc_get = "",
 		name = "破敌之炬·金伯利II",
 		type = 1,
@@ -196486,11 +188019,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_8
-
-	local var_28_9 = var_28_8.base.skill_data_template
-
-	var_28_9[801090] = {
+	pg.base.skill_data_template[801090] = {
 		desc_get = "",
 		name = "破灭的牵绊",
 		type = 1,
@@ -196587,11 +188116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_9
-
-	local var_28_10 = var_28_9.base.skill_data_template
-
-	var_28_10[801100] = {
+	pg.base.skill_data_template[801100] = {
 		desc_get = "",
 		name = "再现的荣光",
 		type = 2,
@@ -196697,11 +188222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_10
-
-	local var_28_11 = var_28_10.base.skill_data_template
-
-	var_28_11[801110] = {
+	pg.base.skill_data_template[801110] = {
 		desc_get = "",
 		name = "交织的回忆",
 		type = 3,
@@ -196762,11 +188283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_11
-
-	local var_28_12 = var_28_11.base.skill_data_template
-
-	var_28_12[801121] = {
+	pg.base.skill_data_template[801121] = {
 		desc_get = "",
 		name = "摇曳之火·水星纪念I",
 		type = 1,
@@ -196782,11 +188299,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_12
-
-	local var_28_13 = var_28_12.base.skill_data_template
-
-	var_28_13[801122] = {
+	pg.base.skill_data_template[801122] = {
 		desc_get = "",
 		name = "摇曳之火·水星纪念II",
 		type = 1,
@@ -196802,11 +188315,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_13
-
-	local var_28_14 = var_28_13.base.skill_data_template
-
-	var_28_14[801125] = {
+	pg.base.skill_data_template[801125] = {
 		desc_get = "",
 		name = "摇曳之火·水星纪念I",
 		type = 1,
@@ -196822,11 +188331,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_14
-
-	local var_28_15 = var_28_14.base.skill_data_template
-
-	var_28_15[801127] = {
+	pg.base.skill_data_template[801127] = {
 		desc_get = "",
 		name = "摇曳之火·水星纪念II",
 		type = 1,
@@ -196842,11 +188347,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_15
-
-	local var_28_16 = var_28_15.base.skill_data_template
-
-	var_28_16[801130] = {
+	pg.base.skill_data_template[801130] = {
 		desc_get = "",
 		name = "「我」的投影",
 		type = 3,
@@ -196898,11 +188399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_16
-
-	local var_28_17 = var_28_16.base.skill_data_template
-
-	var_28_17[801140] = {
+	pg.base.skill_data_template[801140] = {
 		desc_get = "",
 		name = "「我们」的祈祷",
 		type = 3,
@@ -197008,11 +188505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_17
-
-	local var_28_18 = var_28_17.base.skill_data_template
-
-	var_28_18[801150] = {
+	pg.base.skill_data_template[801150] = {
 		desc_get = "",
 		name = "降临的「终结」",
 		type = 1,
@@ -197109,11 +188602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_18
-
-	local var_28_19 = var_28_18.base.skill_data_template
-
-	var_28_19[9] = {
+	pg.base.skill_data_template[9] = {
 		desc_get = "",
 		name = "构造之理·罗德尼I",
 		type = 1,
@@ -197129,11 +188618,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_19
-
-	local var_28_20 = var_28_19.base.skill_data_template
-
-	var_28_20[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "构造之理·罗德尼II",
 		type = 1,
@@ -197149,11 +188634,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_20
-
-	local var_28_21 = var_28_20.base.skill_data_template
-
-	var_28_21[13] = {
+	pg.base.skill_data_template[13] = {
 		desc_get = "",
 		name = "构造之理·罗德尼I",
 		type = 1,
@@ -197169,11 +188650,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_21
-
-	local var_28_22 = var_28_21.base.skill_data_template
-
-	var_28_22[15] = {
+	pg.base.skill_data_template[15] = {
 		desc_get = "",
 		name = "构造之理·罗德尼II",
 		type = 1,
@@ -197189,11 +188666,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_22
-
-	local var_28_23 = var_28_22.base.skill_data_template
-
-	var_28_23[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "永夜之吻",
 		type = 1,
@@ -197344,11 +188817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_23
-
-	local var_28_24 = var_28_23.base.skill_data_template
-
-	var_28_24[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "璀璨之花",
 		type = 1,
@@ -197400,11 +188869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_24
-
-	local var_28_25 = var_28_24.base.skill_data_template
-
-	var_28_25[801191] = {
+	pg.base.skill_data_template[801191] = {
 		desc_get = "",
 		name = "逐光之焰·吸血鬼I",
 		type = 1,
@@ -197420,11 +188885,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_25
-
-	local var_28_26 = var_28_25.base.skill_data_template
-
-	var_28_26[801192] = {
+	pg.base.skill_data_template[801192] = {
 		desc_get = "",
 		name = "逐光之焰·吸血鬼II",
 		type = 1,
@@ -197440,11 +188901,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_26
-
-	local var_28_27 = var_28_26.base.skill_data_template
-
-	var_28_27[801195] = {
+	pg.base.skill_data_template[801195] = {
 		desc_get = "",
 		name = "逐光之焰·吸血鬼I",
 		type = 1,
@@ -197460,11 +188917,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_27
-
-	local var_28_28 = var_28_27.base.skill_data_template
-
-	var_28_28[801197] = {
+	pg.base.skill_data_template[801197] = {
 		desc_get = "",
 		name = "逐光之焰·吸血鬼II",
 		type = 1,
@@ -197480,11 +188933,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_28
-
-	local var_28_29 = var_28_28.base.skill_data_template
-
-	var_28_29[801200] = {
+	pg.base.skill_data_template[801200] = {
 		desc_get = "",
 		name = "魔导书的审判",
 		type = 1,
@@ -197626,11 +189075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_29
-
-	local var_28_30 = var_28_29.base.skill_data_template
-
-	var_28_30[801210] = {
+	pg.base.skill_data_template[801210] = {
 		desc_get = "",
 		name = "暴风降临",
 		type = 2,
@@ -197772,11 +189217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_30
-
-	local var_28_31 = var_28_30.base.skill_data_template
-
-	var_28_31[801220] = {
+	pg.base.skill_data_template[801220] = {
 		desc_get = "",
 		name = "秘仪之力",
 		type = 3,
@@ -197918,11 +189359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_31
-
-	local var_28_32 = var_28_31.base.skill_data_template
-
-	var_28_32[801231] = {
+	pg.base.skill_data_template[801231] = {
 		desc_get = "",
 		name = "摇曳之火·贝亚恩I",
 		type = 1,
@@ -197938,11 +189375,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_32
-
-	local var_28_33 = var_28_32.base.skill_data_template
-
-	var_28_33[801232] = {
+	pg.base.skill_data_template[801232] = {
 		desc_get = "",
 		name = "摇曳之火·贝亚恩II",
 		type = 1,
@@ -197958,11 +189391,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_33
-
-	local var_28_34 = var_28_33.base.skill_data_template
-
-	var_28_34[801235] = {
+	pg.base.skill_data_template[801235] = {
 		desc_get = "",
 		name = "摇曳之火·贝亚恩I",
 		type = 1,
@@ -197978,11 +189407,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_34
-
-	local var_28_35 = var_28_34.base.skill_data_template
-
-	var_28_35[801237] = {
+	pg.base.skill_data_template[801237] = {
 		desc_get = "",
 		name = "摇曳之火·贝亚恩II",
 		type = 1,
@@ -197998,11 +189423,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_35
-
-	local var_28_36 = var_28_35.base.skill_data_template
-
-	var_28_36[801240] = {
+	pg.base.skill_data_template[801240] = {
 		desc_get = "",
 		name = "剑锋所向",
 		type = 1,
@@ -198099,11 +189520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_36
-
-	local var_28_37 = var_28_36.base.skill_data_template
-
-	var_28_37[801250] = {
+	pg.base.skill_data_template[801250] = {
 		desc_get = "",
 		name = "战争意志",
 		type = 3,
@@ -198254,11 +189671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_37
-
-	local var_28_38 = var_28_37.base.skill_data_template
-
-	var_28_38[801261] = {
+	pg.base.skill_data_template[801261] = {
 		desc_get = "",
 		name = "逐光之焰·福煦I",
 		type = 3,
@@ -198274,11 +189687,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_38
-
-	local var_28_39 = var_28_38.base.skill_data_template
-
-	var_28_39[801262] = {
+	pg.base.skill_data_template[801262] = {
 		desc_get = "",
 		name = "逐光之焰·福煦II",
 		type = 3,
@@ -198294,11 +189703,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_39
-
-	local var_28_40 = var_28_39.base.skill_data_template
-
-	var_28_40[801265] = {
+	pg.base.skill_data_template[801265] = {
 		desc_get = "",
 		name = "逐光之焰·福煦I",
 		type = 3,
@@ -198314,11 +189719,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_40
-
-	local var_28_41 = var_28_40.base.skill_data_template
-
-	var_28_41[801267] = {
+	pg.base.skill_data_template[801267] = {
 		desc_get = "",
 		name = "逐光之焰·福煦II",
 		type = 3,
@@ -198334,11 +189735,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_41
-
-	local var_28_42 = var_28_41.base.skill_data_template
-
-	var_28_42[801270] = {
+	pg.base.skill_data_template[801270] = {
 		desc_get = "",
 		name = "砥砺前行",
 		type = 1,
@@ -198435,11 +189832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_42
-
-	local var_28_43 = var_28_42.base.skill_data_template
-
-	var_28_43[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "破釜沉舟",
 		type = 1,
@@ -198545,11 +189938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_43
-
-	local var_28_44 = var_28_43.base.skill_data_template
-
-	var_28_44[10] = {
+	pg.base.skill_data_template[10] = {
 		desc_get = "",
 		name = "绝体绝命",
 		type = 1,
@@ -198682,11 +190071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_44
-
-	local var_28_45 = var_28_44.base.skill_data_template
-
-	var_28_45[21] = {
+	pg.base.skill_data_template[21] = {
 		desc_get = "",
 		name = "破敌之炬·威奇塔I",
 		type = 1,
@@ -198702,11 +190087,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_45
-
-	local var_28_46 = var_28_45.base.skill_data_template
-
-	var_28_46[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "破敌之炬·威奇塔II",
 		type = 1,
@@ -198722,11 +190103,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_46
-
-	local var_28_47 = var_28_46.base.skill_data_template
-
-	var_28_47[25] = {
+	pg.base.skill_data_template[25] = {
 		desc_get = "",
 		name = "破敌之炬·威奇塔I",
 		type = 1,
@@ -198742,11 +190119,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_47
-
-	local var_28_48 = var_28_47.base.skill_data_template
-
-	var_28_48[27] = {
+	pg.base.skill_data_template[27] = {
 		desc_get = "",
 		name = "破敌之炬·威奇塔II",
 		type = 1,
@@ -198762,11 +190135,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_48
-
-	local var_28_49 = var_28_48.base.skill_data_template
-
-	var_28_49[801320] = {
+	pg.base.skill_data_template[801320] = {
 		desc_get = "",
 		name = "幽绽之炎",
 		type = 1,
@@ -198863,11 +190232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_49
-
-	local var_28_50 = var_28_49.base.skill_data_template
-
-	var_28_50[801330] = {
+	pg.base.skill_data_template[801330] = {
 		desc_get = "",
 		name = "霞之守护",
 		type = 2,
@@ -198973,11 +190338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_50
-
-	local var_28_51 = var_28_50.base.skill_data_template
-
-	var_28_51[801341] = {
+	pg.base.skill_data_template[801341] = {
 		desc_get = "",
 		name = "构造之理·{namecode:180}I",
 		type = 1,
@@ -198993,11 +190354,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_51
-
-	local var_28_52 = var_28_51.base.skill_data_template
-
-	var_28_52[801342] = {
+	pg.base.skill_data_template[801342] = {
 		desc_get = "",
 		name = "构造之理·{namecode:180}II",
 		type = 1,
@@ -199013,11 +190370,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_52
-
-	local var_28_53 = var_28_52.base.skill_data_template
-
-	var_28_53[801345] = {
+	pg.base.skill_data_template[801345] = {
 		desc_get = "",
 		name = "构造之理·{namecode:180}I",
 		type = 1,
@@ -199033,11 +190386,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_53
-
-	local var_28_54 = var_28_53.base.skill_data_template
-
-	var_28_54[801347] = {
+	pg.base.skill_data_template[801347] = {
 		desc_get = "",
 		name = "构造之理·{namecode:180}II",
 		type = 1,
@@ -199053,11 +190402,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_54
-
-	local var_28_55 = var_28_54.base.skill_data_template
-
-	var_28_55[801350] = {
+	pg.base.skill_data_template[801350] = {
 		desc_get = "",
 		name = "樱绽樱舞",
 		type = 3,
@@ -199208,11 +190553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_55
-
-	local var_28_56 = var_28_55.base.skill_data_template
-
-	var_28_56[801360] = {
+	pg.base.skill_data_template[801360] = {
 		desc_get = "",
 		name = "月亏月盈",
 		type = 2,
@@ -199273,11 +190614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_56
-
-	local var_28_57 = var_28_56.base.skill_data_template
-
-	var_28_57[801370] = {
+	pg.base.skill_data_template[801370] = {
 		desc_get = "",
 		name = "雨织雨散",
 		type = 1,
@@ -199329,11 +190666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_57
-
-	local var_28_58 = var_28_57.base.skill_data_template
-
-	var_28_58[801381] = {
+	pg.base.skill_data_template[801381] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:230}I",
 		type = 3,
@@ -199349,11 +190682,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_58
-
-	local var_28_59 = var_28_58.base.skill_data_template
-
-	var_28_59[801382] = {
+	pg.base.skill_data_template[801382] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:230}II",
 		type = 3,
@@ -199369,11 +190698,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_59
-
-	local var_28_60 = var_28_59.base.skill_data_template
-
-	var_28_60[801385] = {
+	pg.base.skill_data_template[801385] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:230}I",
 		type = 3,
@@ -199389,11 +190714,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_60
-
-	local var_28_61 = var_28_60.base.skill_data_template
-
-	var_28_61[801387] = {
+	pg.base.skill_data_template[801387] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:230}II",
 		type = 3,
@@ -199409,11 +190730,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_61
-
-	local var_28_62 = var_28_61.base.skill_data_template
-
-	var_28_62[801390] = {
+	pg.base.skill_data_template[801390] = {
 		desc_get = "",
 		name = "穿云的天斩",
 		type = 1,
@@ -199591,11 +190908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_62
-
-	local var_28_63 = var_28_62.base.skill_data_template
-
-	var_28_63[801400] = {
+	pg.base.skill_data_template[801400] = {
 		desc_get = "",
 		name = "破影的辉光",
 		type = 3,
@@ -199836,11 +191149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_63
-
-	local var_28_64 = var_28_63.base.skill_data_template
-
-	var_28_64[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "勇气的奇迹",
 		type = 2,
@@ -200036,11 +191345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_64
-
-	local var_28_65 = var_28_64.base.skill_data_template
-
-	var_28_65[13] = {
+	pg.base.skill_data_template[13] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:71}I",
 		type = 3,
@@ -200056,11 +191361,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_65
-
-	local var_28_66 = var_28_65.base.skill_data_template
-
-	var_28_66[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:71}II",
 		type = 3,
@@ -200076,11 +191377,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_66
-
-	local var_28_67 = var_28_66.base.skill_data_template
-
-	var_28_67[17] = {
+	pg.base.skill_data_template[17] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:71}I",
 		type = 3,
@@ -200096,11 +191393,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_67
-
-	local var_28_68 = var_28_67.base.skill_data_template
-
-	var_28_68[19] = {
+	pg.base.skill_data_template[19] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:71}II",
 		type = 3,
@@ -200116,11 +191409,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_68
-
-	local var_28_69 = var_28_68.base.skill_data_template
-
-	var_28_69[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "倾听破灭之音",
 		type = 1,
@@ -200217,11 +191506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_69
-
-	local var_28_70 = var_28_69.base.skill_data_template
-
-	var_28_70[801440] = {
+	pg.base.skill_data_template[801440] = {
 		desc_get = "",
 		name = "奏响反击之律",
 		type = 3,
@@ -200282,11 +191567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_70
-
-	local var_28_71 = var_28_70.base.skill_data_template
-
-	var_28_71[801451] = {
+	pg.base.skill_data_template[801451] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:89}I",
 		type = 3,
@@ -200302,11 +191583,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_71
-
-	local var_28_72 = var_28_71.base.skill_data_template
-
-	var_28_72[801452] = {
+	pg.base.skill_data_template[801452] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:89}II",
 		type = 3,
@@ -200322,11 +191599,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_72
-
-	local var_28_73 = var_28_72.base.skill_data_template
-
-	var_28_73[801455] = {
+	pg.base.skill_data_template[801455] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:89}I",
 		type = 3,
@@ -200342,11 +191615,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_73
-
-	local var_28_74 = var_28_73.base.skill_data_template
-
-	var_28_74[801457] = {
+	pg.base.skill_data_template[801457] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:89}II",
 		type = 3,
@@ -200362,11 +191631,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_74
-
-	local var_28_75 = var_28_74.base.skill_data_template
-
-	var_28_75[801460] = {
+	pg.base.skill_data_template[801460] = {
 		desc_get = "",
 		name = "veni,vidi,vici!",
 		type = 1,
@@ -200508,11 +191773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_75
-
-	local var_28_76 = var_28_75.base.skill_data_template
-
-	var_28_76[801470] = {
+	pg.base.skill_data_template[801470] = {
 		desc_get = "",
 		name = "帝国的征服者",
 		type = 1,
@@ -200618,11 +191879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_76
-
-	local var_28_77 = var_28_76.base.skill_data_template
-
-	var_28_77[801481] = {
+	pg.base.skill_data_template[801481] = {
 		desc_get = "",
 		name = "逐光之焰·朱利奥·凯撒I",
 		type = 3,
@@ -200638,11 +191895,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_77
-
-	local var_28_78 = var_28_77.base.skill_data_template
-
-	var_28_78[801482] = {
+	pg.base.skill_data_template[801482] = {
 		desc_get = "",
 		name = "逐光之焰·朱利奥·凯撒II",
 		type = 3,
@@ -200658,11 +191911,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_78
 
-	local var_28_79 = var_28_78.base.skill_data_template
-
-	var_28_79[801485] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[801485] = {
 		desc_get = "",
 		name = "逐光之焰·朱利奥·凯撒I",
 		type = 3,
@@ -200678,11 +191931,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_79
-
-	local var_28_80 = var_28_79.base.skill_data_template
-
-	var_28_80[801487] = {
+	pg.base.skill_data_template[801487] = {
 		desc_get = "",
 		name = "逐光之焰·朱利奥·凯撒II",
 		type = 3,
@@ -200698,11 +191947,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_80
-
-	local var_28_81 = var_28_80.base.skill_data_template
-
-	var_28_81[801490] = {
+	pg.base.skill_data_template[801490] = {
 		desc_get = "",
 		name = "百鬼之影",
 		type = 1,
@@ -200754,11 +191999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_81
-
-	local var_28_82 = var_28_81.base.skill_data_template
-
-	var_28_82[801500] = {
+	pg.base.skill_data_template[801500] = {
 		desc_get = "",
 		name = "破灭之章",
 		type = 3,
@@ -200864,11 +192105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_82
-
-	local var_28_83 = var_28_82.base.skill_data_template
-
-	var_28_83[801510] = {
+	pg.base.skill_data_template[801510] = {
 		desc_get = "",
 		name = "彼岸之境",
 		type = 1,
@@ -200920,11 +192157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_83
-
-	local var_28_84 = var_28_83.base.skill_data_template
-
-	var_28_84[801521] = {
+	pg.base.skill_data_template[801521] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:97}I",
 		type = 3,
@@ -200940,11 +192173,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_84
-
-	local var_28_85 = var_28_84.base.skill_data_template
-
-	var_28_85[801522] = {
+	pg.base.skill_data_template[801522] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:97}II",
 		type = 3,
@@ -200960,11 +192189,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_85
-
-	local var_28_86 = var_28_85.base.skill_data_template
-
-	var_28_86[801525] = {
+	pg.base.skill_data_template[801525] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:97}I",
 		type = 3,
@@ -200980,11 +192205,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_86
-
-	local var_28_87 = var_28_86.base.skill_data_template
-
-	var_28_87[801527] = {
+	pg.base.skill_data_template[801527] = {
 		desc_get = "",
 		name = "摇曳之火·{namecode:97}II",
 		type = 3,
@@ -201000,11 +192221,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_87
-
-	local var_28_88 = var_28_87.base.skill_data_template
-
-	var_28_88[801530] = {
+	pg.base.skill_data_template[801530] = {
 		desc_get = "",
 		name = "束缚之焰",
 		type = 3,
@@ -201110,11 +192327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_88
-
-	local var_28_89 = var_28_88.base.skill_data_template
-
-	var_28_89[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "攻守转换",
 		type = 1,
@@ -201292,11 +192505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_89
-
-	local var_28_90 = var_28_89.base.skill_data_template
-
-	var_28_90[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "陌路同行",
 		type = 2,
@@ -201402,11 +192611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_90
-
-	local var_28_91 = var_28_90.base.skill_data_template
-
-	var_28_91[25] = {
+	pg.base.skill_data_template[25] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:425}I",
 		type = 3,
@@ -201422,11 +192627,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_91
-
-	local var_28_92 = var_28_91.base.skill_data_template
-
-	var_28_92[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:425}II",
 		type = 3,
@@ -201442,11 +192643,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_92
-
-	local var_28_93 = var_28_92.base.skill_data_template
-
-	var_28_93[29] = {
+	pg.base.skill_data_template[29] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:425}I",
 		type = 3,
@@ -201462,11 +192659,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_93
-
-	local var_28_94 = var_28_93.base.skill_data_template
-
-	var_28_94[31] = {
+	pg.base.skill_data_template[31] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:425}II",
 		type = 3,
@@ -201482,11 +192675,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_94
-
-	local var_28_95 = var_28_94.base.skill_data_template
-
-	var_28_95[801570] = {
+	pg.base.skill_data_template[801570] = {
 		desc_get = "",
 		name = "光与焰",
 		type = 1,
@@ -201583,11 +192772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_95
-
-	local var_28_96 = var_28_95.base.skill_data_template
-
-	var_28_96[801580] = {
+	pg.base.skill_data_template[801580] = {
 		desc_get = "",
 		name = "独行的骑士",
 		type = 3,
@@ -201783,11 +192968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_96
-
-	local var_28_97 = var_28_96.base.skill_data_template
-
-	var_28_97[801591] = {
+	pg.base.skill_data_template[801591] = {
 		desc_get = "",
 		name = "逐光之焰·博尔扎诺I",
 		type = 3,
@@ -201803,11 +192984,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_97
-
-	local var_28_98 = var_28_97.base.skill_data_template
-
-	var_28_98[801592] = {
+	pg.base.skill_data_template[801592] = {
 		desc_get = "",
 		name = "逐光之焰·博尔扎诺II",
 		type = 3,
@@ -201823,8 +193000,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_28_98
-	var_28_98.base.skill_data_template[801595] = {
+	pg.base.skill_data_template[801595] = {
 		desc_get = "",
 		name = "逐光之焰·博尔扎诺I",
 		type = 3,
@@ -201840,15 +193016,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_29_0 = var_1_10000.base.skill_data_template
-
-	var_29_0[801597] = {
+	pg.base.skill_data_template[801597] = {
 		desc_get = "",
 		name = "逐光之焰·博尔扎诺II",
 		type = 3,
@@ -201864,11 +193032,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_0
-
-	local var_29_1 = var_29_0.base.skill_data_template
-
-	var_29_1[801600] = {
+	pg.base.skill_data_template[801600] = {
 		desc_get = "",
 		name = "永夜之暗",
 		type = 1,
@@ -202064,11 +193228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_1
-
-	local var_29_2 = var_29_1.base.skill_data_template
-
-	var_29_2[801610] = {
+	pg.base.skill_data_template[801610] = {
 		desc_get = "",
 		name = "永夜战旗",
 		type = 3,
@@ -202264,11 +193424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_2
-
-	local var_29_3 = var_29_2.base.skill_data_template
-
-	var_29_3[801620] = {
+	pg.base.skill_data_template[801620] = {
 		desc_get = "",
 		name = "永夜帷幕",
 		type = 2,
@@ -202455,11 +193611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_3
-
-	local var_29_4 = var_29_3.base.skill_data_template
-
-	var_29_4[801631] = {
+	pg.base.skill_data_template[801631] = {
 		desc_get = "",
 		name = "逐光之焰·安德烈亚·多利亚I",
 		type = 3,
@@ -202475,11 +193627,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_4
-
-	local var_29_5 = var_29_4.base.skill_data_template
-
-	var_29_5[801632] = {
+	pg.base.skill_data_template[801632] = {
 		desc_get = "",
 		name = "逐光之焰·安德烈亚·多利亚II",
 		type = 3,
@@ -202495,11 +193643,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_5
-
-	local var_29_6 = var_29_5.base.skill_data_template
-
-	var_29_6[801635] = {
+	pg.base.skill_data_template[801635] = {
 		desc_get = "",
 		name = "逐光之焰·安德烈亚·多利亚I",
 		type = 3,
@@ -202515,11 +193659,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_6
-
-	local var_29_7 = var_29_6.base.skill_data_template
-
-	var_29_7[801637] = {
+	pg.base.skill_data_template[801637] = {
 		desc_get = "",
 		name = "逐光之焰·安德烈亚·多利亚II",
 		type = 3,
@@ -202535,11 +193675,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_7
-
-	local var_29_8 = var_29_7.base.skill_data_template
-
-	var_29_8[801640] = {
+	pg.base.skill_data_template[801640] = {
 		desc_get = "",
 		name = "烬火强袭",
 		type = 1,
@@ -202600,11 +193736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_8
-
-	local var_29_9 = var_29_8.base.skill_data_template
-
-	var_29_9[801650] = {
+	pg.base.skill_data_template[801650] = {
 		desc_get = "",
 		name = "如影幻梦",
 		type = 3,
@@ -202701,11 +193833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_9
-
-	local var_29_10 = var_29_9.base.skill_data_template
-
-	var_29_10[801660] = {
+	pg.base.skill_data_template[801660] = {
 		desc_get = "",
 		name = "幽灵行动",
 		type = 2,
@@ -202766,11 +193894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_10
-
-	local var_29_11 = var_29_10.base.skill_data_template
-
-	var_29_11[7] = {
+	pg.base.skill_data_template[7] = {
 		desc_get = "",
 		name = "破敌之炬·大黄蜂I",
 		type = 1,
@@ -202786,11 +193910,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_11
-
-	local var_29_12 = var_29_11.base.skill_data_template
-
-	var_29_12[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "破敌之炬·大黄蜂II",
 		type = 1,
@@ -202806,11 +193926,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_12
-
-	local var_29_13 = var_29_12.base.skill_data_template
-
-	var_29_13[11] = {
+	pg.base.skill_data_template[11] = {
 		desc_get = "",
 		name = "破敌之炬·大黄蜂I",
 		type = 1,
@@ -202826,11 +193942,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_13
-
-	local var_29_14 = var_29_13.base.skill_data_template
-
-	var_29_14[13] = {
+	pg.base.skill_data_template[13] = {
 		desc_get = "",
 		name = "破敌之炬·大黄蜂II",
 		type = 1,
@@ -202846,11 +193958,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_14
-
-	local var_29_15 = var_29_14.base.skill_data_template
-
-	var_29_15[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "威胁清除指令",
 		type = 1,
@@ -202992,11 +194100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_15
-
-	local var_29_16 = var_29_15.base.skill_data_template
-
-	var_29_16[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "应急防御系统",
 		type = 2,
@@ -203102,11 +194206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_16
-
-	local var_29_17 = var_29_16.base.skill_data_template
-
-	var_29_17[801701] = {
+	pg.base.skill_data_template[801701] = {
 		desc_get = "",
 		name = "破敌之炬·内华达I",
 		type = 1,
@@ -203122,11 +194222,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_17
-
-	local var_29_18 = var_29_17.base.skill_data_template
-
-	var_29_18[801702] = {
+	pg.base.skill_data_template[801702] = {
 		desc_get = "",
 		name = "破敌之炬·内华达II",
 		type = 1,
@@ -203142,11 +194238,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_18
-
-	local var_29_19 = var_29_18.base.skill_data_template
-
-	var_29_19[801705] = {
+	pg.base.skill_data_template[801705] = {
 		desc_get = "",
 		name = "破敌之炬·内华达I",
 		type = 1,
@@ -203162,11 +194254,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_19
-
-	local var_29_20 = var_29_19.base.skill_data_template
-
-	var_29_20[801707] = {
+	pg.base.skill_data_template[801707] = {
 		desc_get = "",
 		name = "破敌之炬·内华达II",
 		type = 1,
@@ -203182,11 +194270,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_20
-
-	local var_29_21 = var_29_20.base.skill_data_template
-
-	var_29_21[801710] = {
+	pg.base.skill_data_template[801710] = {
 		desc_get = "",
 		name = "应尽之责",
 		type = 1,
@@ -203247,11 +194331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_21
-
-	local var_29_22 = var_29_21.base.skill_data_template
-
-	var_29_22[801720] = {
+	pg.base.skill_data_template[801720] = {
 		desc_get = "",
 		name = "枪火连射",
 		type = 1,
@@ -203312,11 +194392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_22
-
-	local var_29_23 = var_29_22.base.skill_data_template
-
-	var_29_23[801741] = {
+	pg.base.skill_data_template[801741] = {
 		desc_get = "",
 		name = "逐光之焰·格伦维尔I",
 		type = 3,
@@ -203332,11 +194408,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_23
-
-	local var_29_24 = var_29_23.base.skill_data_template
-
-	var_29_24[801742] = {
+	pg.base.skill_data_template[801742] = {
 		desc_get = "",
 		name = "逐光之焰·格伦维尔II",
 		type = 3,
@@ -203352,11 +194424,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_24
-
-	local var_29_25 = var_29_24.base.skill_data_template
-
-	var_29_25[801745] = {
+	pg.base.skill_data_template[801745] = {
 		desc_get = "",
 		name = "逐光之焰·格伦维尔I",
 		type = 3,
@@ -203372,11 +194440,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_25
-
-	local var_29_26 = var_29_25.base.skill_data_template
-
-	var_29_26[801747] = {
+	pg.base.skill_data_template[801747] = {
 		desc_get = "",
 		name = "逐光之焰·格伦维尔II",
 		type = 3,
@@ -203392,11 +194456,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_26
-
-	local var_29_27 = var_29_26.base.skill_data_template
-
-	var_29_27[801750] = {
+	pg.base.skill_data_template[801750] = {
 		desc_get = "",
 		name = "往日荣光",
 		type = 2,
@@ -203457,11 +194517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_27
-
-	local var_29_28 = var_29_27.base.skill_data_template
-
-	var_29_28[801760] = {
+	pg.base.skill_data_template[801760] = {
 		desc_get = "",
 		name = "光荣永存",
 		type = 1,
@@ -203558,11 +194614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_28
-
-	local var_29_29 = var_29_28.base.skill_data_template
-
-	var_29_29[801770] = {
+	pg.base.skill_data_template[801770] = {
 		desc_get = "",
 		name = "蔷薇刻印",
 		type = 3,
@@ -203704,11 +194756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_29
-
-	local var_29_30 = var_29_29.base.skill_data_template
-
-	var_29_30[801781] = {
+	pg.base.skill_data_template[801781] = {
 		desc_get = "",
 		name = "逐光之焰·光荣I",
 		type = 3,
@@ -203724,11 +194772,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_30
-
-	local var_29_31 = var_29_30.base.skill_data_template
-
-	var_29_31[801782] = {
+	pg.base.skill_data_template[801782] = {
 		desc_get = "",
 		name = "逐光之焰·光荣II",
 		type = 3,
@@ -203744,11 +194788,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_31
-
-	local var_29_32 = var_29_31.base.skill_data_template
-
-	var_29_32[801785] = {
+	pg.base.skill_data_template[801785] = {
 		desc_get = "",
 		name = "逐光之焰·光荣I",
 		type = 3,
@@ -203764,11 +194804,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_32
-
-	local var_29_33 = var_29_32.base.skill_data_template
-
-	var_29_33[801787] = {
+	pg.base.skill_data_template[801787] = {
 		desc_get = "",
 		name = "逐光之焰·光荣II",
 		type = 3,
@@ -203784,11 +194820,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_33
-
-	local var_29_34 = var_29_33.base.skill_data_template
-
-	var_29_34[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "二刀流·夕照",
 		type = 1,
@@ -203849,11 +194881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_34
-
-	local var_29_35 = var_29_34.base.skill_data_template
-
-	var_29_35[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "血影伴身",
 		type = 1,
@@ -203959,11 +194987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_35
-
-	local var_29_36 = var_29_35.base.skill_data_template
-
-	var_29_36[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "无主之刃",
 		type = 3,
@@ -204114,11 +195138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_36
-
-	local var_29_37 = var_29_36.base.skill_data_template
-
-	var_29_37[801831] = {
+	pg.base.skill_data_template[801831] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:158}I",
 		type = 1,
@@ -204134,11 +195154,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_37
-
-	local var_29_38 = var_29_37.base.skill_data_template
-
-	var_29_38[801832] = {
+	pg.base.skill_data_template[801832] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:158}II",
 		type = 1,
@@ -204154,11 +195170,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_38
-
-	local var_29_39 = var_29_38.base.skill_data_template
-
-	var_29_39[801835] = {
+	pg.base.skill_data_template[801835] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:158}I",
 		type = 1,
@@ -204174,11 +195186,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_39
-
-	local var_29_40 = var_29_39.base.skill_data_template
-
-	var_29_40[801837] = {
+	pg.base.skill_data_template[801837] = {
 		desc_get = "",
 		name = "湮烬之核·{namecode:158}II",
 		type = 1,
@@ -204194,11 +195202,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_40
-
-	local var_29_41 = var_29_40.base.skill_data_template
-
-	var_29_41[801840] = {
+	pg.base.skill_data_template[801840] = {
 		desc_get = "",
 		name = "甜甜圈恶魔的诱惑",
 		type = 1,
@@ -204297,11 +195301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_41
-
-	local var_29_42 = var_29_41.base.skill_data_template
-
-	var_29_42[801850] = {
+	pg.base.skill_data_template[801850] = {
 		desc_get = "",
 		name = "战场骑士的威压",
 		type = 3,
@@ -204452,11 +195452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_42
-
-	local var_29_43 = var_29_42.base.skill_data_template
-
-	var_29_43[801861] = {
+	pg.base.skill_data_template[801861] = {
 		desc_get = "",
 		name = "逐光之焰·敦刻尔克I",
 		type = 3,
@@ -204472,11 +195468,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_43
-
-	local var_29_44 = var_29_43.base.skill_data_template
-
-	var_29_44[801862] = {
+	pg.base.skill_data_template[801862] = {
 		desc_get = "",
 		name = "逐光之焰·敦刻尔克II",
 		type = 3,
@@ -204492,11 +195484,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_44
-
-	local var_29_45 = var_29_44.base.skill_data_template
-
-	var_29_45[801865] = {
+	pg.base.skill_data_template[801865] = {
 		desc_get = "",
 		name = "逐光之焰·敦刻尔克I",
 		type = 3,
@@ -204512,11 +195500,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_45
-
-	local var_29_46 = var_29_45.base.skill_data_template
-
-	var_29_46[801867] = {
+	pg.base.skill_data_template[801867] = {
 		desc_get = "",
 		name = "逐光之焰·敦刻尔克II",
 		type = 3,
@@ -204532,11 +195516,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_46
-
-	local var_29_47 = var_29_46.base.skill_data_template
-
-	var_29_47[801870] = {
+	pg.base.skill_data_template[801870] = {
 		desc_get = "",
 		name = "焰击之爪",
 		type = 1,
@@ -204597,11 +195577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_47
-
-	local var_29_48 = var_29_47.base.skill_data_template
-
-	var_29_48[801880] = {
+	pg.base.skill_data_template[801880] = {
 		desc_get = "",
 		name = "迅捷狩猎",
 		type = 3,
@@ -204752,11 +195728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_48
-
-	local var_29_49 = var_29_48.base.skill_data_template
-
-	var_29_49[801890] = {
+	pg.base.skill_data_template[801890] = {
 		desc_get = "",
 		name = "炬火萦身",
 		type = 2,
@@ -204862,11 +195834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_49
-
-	local var_29_50 = var_29_49.base.skill_data_template
-
-	var_29_50[801901] = {
+	pg.base.skill_data_template[801901] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:16}I",
 		type = 3,
@@ -204882,11 +195850,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_50
-
-	local var_29_51 = var_29_50.base.skill_data_template
-
-	var_29_51[801902] = {
+	pg.base.skill_data_template[801902] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:16}II",
 		type = 3,
@@ -204902,11 +195866,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_51
-
-	local var_29_52 = var_29_51.base.skill_data_template
-
-	var_29_52[801905] = {
+	pg.base.skill_data_template[801905] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:16}I",
 		type = 3,
@@ -204922,11 +195882,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_52
-
-	local var_29_53 = var_29_52.base.skill_data_template
-
-	var_29_53[801907] = {
+	pg.base.skill_data_template[801907] = {
 		desc_get = "",
 		name = "破敌之炬·{namecode:16}II",
 		type = 3,
@@ -204942,11 +195898,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_53
-
-	local var_29_54 = var_29_53.base.skill_data_template
-
-	var_29_54[801910] = {
+	pg.base.skill_data_template[801910] = {
 		desc_get = "",
 		name = "战术辅佐",
 		type = 3,
@@ -205052,11 +196004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_54
-
-	local var_29_55 = var_29_54.base.skill_data_template
-
-	var_29_55[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "进攻态势",
 		type = 1,
@@ -205162,11 +196110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_55
-
-	local var_29_56 = var_29_55.base.skill_data_template
-
-	var_29_56[11] = {
+	pg.base.skill_data_template[11] = {
 		desc_get = "",
 		name = "破敌之炬·杜威I",
 		type = 3,
@@ -205182,11 +196126,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_56
-
-	local var_29_57 = var_29_56.base.skill_data_template
-
-	var_29_57[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "破敌之炬·杜威II",
 		type = 3,
@@ -205202,11 +196142,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_57
-
-	local var_29_58 = var_29_57.base.skill_data_template
-
-	var_29_58[15] = {
+	pg.base.skill_data_template[15] = {
 		desc_get = "",
 		name = "破敌之炬·杜威I",
 		type = 3,
@@ -205222,11 +196158,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_58
-
-	local var_29_59 = var_29_58.base.skill_data_template
-
-	var_29_59[17] = {
+	pg.base.skill_data_template[17] = {
 		desc_get = "",
 		name = "破敌之炬·杜威II",
 		type = 3,
@@ -205242,11 +196174,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_59
-
-	local var_29_60 = var_29_59.base.skill_data_template
-
-	var_29_60[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "不渝守护",
 		type = 3,
@@ -205397,11 +196325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_60
-
-	local var_29_61 = var_29_60.base.skill_data_template
-
-	var_29_61[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "殇之障壁",
 		type = 2,
@@ -205462,11 +196386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_61
-
-	local var_29_62 = var_29_61.base.skill_data_template
-
-	var_29_62[801961] = {
+	pg.base.skill_data_template[801961] = {
 		desc_get = "",
 		name = "构造之理·{namecode:197}I",
 		type = 2,
@@ -205482,11 +196402,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_62
-
-	local var_29_63 = var_29_62.base.skill_data_template
-
-	var_29_63[801962] = {
+	pg.base.skill_data_template[801962] = {
 		desc_get = "",
 		name = "构造之理·{namecode:197}II",
 		type = 2,
@@ -205502,11 +196418,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_63
-
-	local var_29_64 = var_29_63.base.skill_data_template
-
-	var_29_64[801965] = {
+	pg.base.skill_data_template[801965] = {
 		desc_get = "",
 		name = "构造之理·{namecode:197}I",
 		type = 2,
@@ -205522,11 +196434,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_64
-
-	local var_29_65 = var_29_64.base.skill_data_template
-
-	var_29_65[801967] = {
+	pg.base.skill_data_template[801967] = {
 		desc_get = "",
 		name = "构造之理·{namecode:197}II",
 		type = 2,
@@ -205542,11 +196450,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_65
-
-	local var_29_66 = var_29_65.base.skill_data_template
-
-	var_29_66[801970] = {
+	pg.base.skill_data_template[801970] = {
 		desc_get = "",
 		name = "对命运的注视",
 		type = 3,
@@ -205697,11 +196601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_66
-
-	local var_29_67 = var_29_66.base.skill_data_template
-
-	var_29_67[801980] = {
+	pg.base.skill_data_template[801980] = {
 		desc_get = "",
 		name = "对往昔的追忆",
 		type = 2,
@@ -205807,11 +196707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_67
-
-	local var_29_68 = var_29_67.base.skill_data_template
-
-	var_29_68[801990] = {
+	pg.base.skill_data_template[801990] = {
 		desc_get = "",
 		name = "观测存亡之人",
 		type = 3,
@@ -205917,11 +196813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_68
-
-	local var_29_69 = var_29_68.base.skill_data_template
-
-	var_29_69[802001] = {
+	pg.base.skill_data_template[802001] = {
 		desc_get = "",
 		name = "构造之理·约克城I",
 		type = 1,
@@ -205937,11 +196829,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_69
-
-	local var_29_70 = var_29_69.base.skill_data_template
-
-	var_29_70[802002] = {
+	pg.base.skill_data_template[802002] = {
 		desc_get = "",
 		name = "构造之理·约克城II",
 		type = 1,
@@ -205957,11 +196845,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_70
-
-	local var_29_71 = var_29_70.base.skill_data_template
-
-	var_29_71[802005] = {
+	pg.base.skill_data_template[802005] = {
 		desc_get = "",
 		name = "构造之理·约克城I",
 		type = 1,
@@ -205977,11 +196861,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_71
-
-	local var_29_72 = var_29_71.base.skill_data_template
-
-	var_29_72[802007] = {
+	pg.base.skill_data_template[802007] = {
 		desc_get = "",
 		name = "构造之理·约克城II",
 		type = 1,
@@ -205997,11 +196877,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_72
-
-	local var_29_73 = var_29_72.base.skill_data_template
-
-	var_29_73[802010] = {
+	pg.base.skill_data_template[802010] = {
 		desc_get = "",
 		name = "久经战场的骑士",
 		type = 1,
@@ -206098,11 +196974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_73
-
-	local var_29_74 = var_29_73.base.skill_data_template
-
-	var_29_74[802020] = {
+	pg.base.skill_data_template[802020] = {
 		desc_get = "",
 		name = "毁灭号令",
 		type = 3,
@@ -206253,11 +197125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_74
-
-	local var_29_75 = var_29_74.base.skill_data_template
-
-	var_29_75[802030] = {
+	pg.base.skill_data_template[802030] = {
 		desc_get = "",
 		name = "空域拦截",
 		type = 2,
@@ -206408,11 +197276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_75
-
-	local var_29_76 = var_29_75.base.skill_data_template
-
-	var_29_76[802041] = {
+	pg.base.skill_data_template[802041] = {
 		desc_get = "",
 		name = "破敌之炬·克利夫兰I",
 		type = 1,
@@ -206428,11 +197292,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_76
-
-	local var_29_77 = var_29_76.base.skill_data_template
-
-	var_29_77[802042] = {
+	pg.base.skill_data_template[802042] = {
 		desc_get = "",
 		name = "破敌之炬·克利夫兰II",
 		type = 1,
@@ -206448,11 +197308,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_77
-
-	local var_29_78 = var_29_77.base.skill_data_template
-
-	var_29_78[802045] = {
+	pg.base.skill_data_template[802045] = {
 		desc_get = "",
 		name = "破敌之炬·克利夫兰I",
 		type = 1,
@@ -206468,11 +197324,11 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_78
 
-	local var_29_79 = var_29_78.base.skill_data_template
-
-	var_29_79[802047] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[802047] = {
 		desc_get = "",
 		name = "破敌之炬·克利夫兰II",
 		type = 1,
@@ -206488,11 +197344,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_79
-
-	local var_29_80 = var_29_79.base.skill_data_template
-
-	var_29_80[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "炽热装弹",
 		type = 1,
@@ -206544,11 +197396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_80
-
-	local var_29_81 = var_29_80.base.skill_data_template
-
-	var_29_81[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "守卫之枪",
 		type = 2,
@@ -206744,11 +197592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_81
-
-	local var_29_82 = var_29_81.base.skill_data_template
-
-	var_29_82[23] = {
+	pg.base.skill_data_template[23] = {
 		desc_get = "",
 		name = "逐光之焰·龙骑兵I",
 		type = 1,
@@ -206764,11 +197608,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_82
-
-	local var_29_83 = var_29_82.base.skill_data_template
-
-	var_29_83[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "逐光之焰·龙骑兵II",
 		type = 1,
@@ -206784,11 +197624,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_83
-
-	local var_29_84 = var_29_83.base.skill_data_template
-
-	var_29_84[27] = {
+	pg.base.skill_data_template[27] = {
 		desc_get = "",
 		name = "逐光之焰·龙骑兵I",
 		type = 1,
@@ -206804,11 +197640,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_84
-
-	local var_29_85 = var_29_84.base.skill_data_template
-
-	var_29_85[29] = {
+	pg.base.skill_data_template[29] = {
 		desc_get = "",
 		name = "逐光之焰·龙骑兵II",
 		type = 1,
@@ -206824,11 +197656,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_85
-
-	local var_29_86 = var_29_85.base.skill_data_template
-
-	var_29_86[802080] = {
+	pg.base.skill_data_template[802080] = {
 		desc_get = "",
 		name = "为战斗献上礼炮",
 		type = 1,
@@ -206925,11 +197753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_86
-
-	local var_29_87 = var_29_86.base.skill_data_template
-
-	var_29_87[802090] = {
+	pg.base.skill_data_template[802090] = {
 		desc_get = "",
 		name = "守疆御敌",
 		type = 2,
@@ -207035,11 +197859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_87
-
-	local var_29_88 = var_29_87.base.skill_data_template
-
-	var_29_88[802101] = {
+	pg.base.skill_data_template[802101] = {
 		desc_get = "",
 		name = "逐光之焰·甘古特I",
 		type = 1,
@@ -207055,11 +197875,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_88
-
-	local var_29_89 = var_29_88.base.skill_data_template
-
-	var_29_89[802102] = {
+	pg.base.skill_data_template[802102] = {
 		desc_get = "",
 		name = "逐光之焰·甘古特II",
 		type = 1,
@@ -207075,11 +197891,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_89
-
-	local var_29_90 = var_29_89.base.skill_data_template
-
-	var_29_90[802105] = {
+	pg.base.skill_data_template[802105] = {
 		desc_get = "",
 		name = "逐光之焰·甘古特I",
 		type = 1,
@@ -207095,11 +197907,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_90
-
-	local var_29_91 = var_29_90.base.skill_data_template
-
-	var_29_91[802107] = {
+	pg.base.skill_data_template[802107] = {
 		desc_get = "",
 		name = "逐光之焰·甘古特II",
 		type = 1,
@@ -207115,11 +197923,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_91
-
-	local var_29_92 = var_29_91.base.skill_data_template
-
-	var_29_92[802110] = {
+	pg.base.skill_data_template[802110] = {
 		desc_get = "",
 		name = "狩猎开始！",
 		type = 1,
@@ -207261,11 +198065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_92
-
-	local var_29_93 = var_29_92.base.skill_data_template
-
-	var_29_93[802120] = {
+	pg.base.skill_data_template[802120] = {
 		desc_get = "",
 		name = "集群猎杀",
 		type = 3,
@@ -207371,11 +198171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_93
-
-	local var_29_94 = var_29_93.base.skill_data_template
-
-	var_29_94[802130] = {
+	pg.base.skill_data_template[802130] = {
 		desc_get = "",
 		name = "狩猎者的警觉",
 		type = 2,
@@ -207517,11 +198313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_94
-
-	local var_29_95 = var_29_94.base.skill_data_template
-
-	var_29_95[802141] = {
+	pg.base.skill_data_template[802141] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:516}I",
 		type = 1,
@@ -207537,11 +198329,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_95
-
-	local var_29_96 = var_29_95.base.skill_data_template
-
-	var_29_96[802142] = {
+	pg.base.skill_data_template[802142] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:516}II",
 		type = 1,
@@ -207557,11 +198345,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_96
-
-	local var_29_97 = var_29_96.base.skill_data_template
-
-	var_29_97[802145] = {
+	pg.base.skill_data_template[802145] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:516}I",
 		type = 1,
@@ -207577,11 +198361,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_97
-
-	local var_29_98 = var_29_97.base.skill_data_template
-
-	var_29_98[802147] = {
+	pg.base.skill_data_template[802147] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:516}II",
 		type = 1,
@@ -207597,8 +198377,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_29_98
-	var_29_98.base.skill_data_template[802150] = {
+	pg.base.skill_data_template[802150] = {
 		desc_get = "",
 		name = "敌情研究",
 		type = 3,
@@ -207704,15 +198483,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_30_0 = var_1_10000.base.skill_data_template
-
-	var_30_0[802160] = {
+	pg.base.skill_data_template[802160] = {
 		desc_get = "",
 		name = "火力勘察",
 		type = 1,
@@ -207809,11 +198580,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_0
-
-	local var_30_1 = var_30_0.base.skill_data_template
-
-	var_30_1[802171] = {
+	pg.base.skill_data_template[802171] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:423}I",
 		type = 3,
@@ -207829,11 +198596,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_1
-
-	local var_30_2 = var_30_1.base.skill_data_template
-
-	var_30_2[802172] = {
+	pg.base.skill_data_template[802172] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:423}II",
 		type = 3,
@@ -207849,11 +198612,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_2
-
-	local var_30_3 = var_30_2.base.skill_data_template
-
-	var_30_3[802175] = {
+	pg.base.skill_data_template[802175] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:423}I",
 		type = 3,
@@ -207869,11 +198628,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_3
-
-	local var_30_4 = var_30_3.base.skill_data_template
-
-	var_30_4[1] = {
+	pg.base.skill_data_template[1] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:423}II",
 		type = 3,
@@ -207889,11 +198644,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_4
-
-	local var_30_5 = var_30_4.base.skill_data_template
-
-	var_30_5[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "训诫之鞭 ",
 		type = 3,
@@ -208080,11 +198831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_5
-
-	local var_30_6 = var_30_5.base.skill_data_template
-
-	var_30_6[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "防护器械 ",
 		type = 2,
@@ -208181,11 +198928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_6
-
-	local var_30_7 = var_30_6.base.skill_data_template
-
-	var_30_7[25] = {
+	pg.base.skill_data_template[25] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:421}I",
 		type = 1,
@@ -208201,11 +198944,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_7
-
-	local var_30_8 = var_30_7.base.skill_data_template
-
-	var_30_8[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:421}II",
 		type = 1,
@@ -208221,11 +198960,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_8
-
-	local var_30_9 = var_30_8.base.skill_data_template
-
-	var_30_9[29] = {
+	pg.base.skill_data_template[29] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:421}I",
 		type = 1,
@@ -208241,11 +198976,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_9
-
-	local var_30_10 = var_30_9.base.skill_data_template
-
-	var_30_10[31] = {
+	pg.base.skill_data_template[31] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:421}II",
 		type = 1,
@@ -208261,11 +198992,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_10
-
-	local var_30_11 = var_30_10.base.skill_data_template
-
-	var_30_11[802210] = {
+	pg.base.skill_data_template[802210] = {
 		desc_get = "",
 		name = "这里交给我！",
 		type = 2,
@@ -208371,11 +199098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_11
-
-	local var_30_12 = var_30_11.base.skill_data_template
-
-	var_30_12[802220] = {
+	pg.base.skill_data_template[802220] = {
 		desc_get = "",
 		name = "双重打击",
 		type = 3,
@@ -208427,11 +199150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_12
-
-	local var_30_13 = var_30_12.base.skill_data_template
-
-	var_30_13[802231] = {
+	pg.base.skill_data_template[802231] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:468}I",
 		type = 3,
@@ -208447,11 +199166,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_13
-
-	local var_30_14 = var_30_13.base.skill_data_template
-
-	var_30_14[802232] = {
+	pg.base.skill_data_template[802232] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:468}II",
 		type = 3,
@@ -208467,11 +199182,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_14
-
-	local var_30_15 = var_30_14.base.skill_data_template
-
-	var_30_15[802235] = {
+	pg.base.skill_data_template[802235] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:468}I",
 		type = 3,
@@ -208487,11 +199198,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_15
-
-	local var_30_16 = var_30_15.base.skill_data_template
-
-	var_30_16[802237] = {
+	pg.base.skill_data_template[802237] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:468}II",
 		type = 3,
@@ -208507,11 +199214,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_16
-
-	local var_30_17 = var_30_16.base.skill_data_template
-
-	var_30_17[802240] = {
+	pg.base.skill_data_template[802240] = {
 		desc_get = "",
 		name = "星彩光轮",
 		type = 1,
@@ -208608,11 +199311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_17
-
-	local var_30_18 = var_30_17.base.skill_data_template
-
-	var_30_18[802250] = {
+	pg.base.skill_data_template[802250] = {
 		desc_get = "",
 		name = "情报调查·传奇",
 		type = 3,
@@ -208718,11 +199417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_18
-
-	local var_30_19 = var_30_18.base.skill_data_template
-
-	var_30_19[802260] = {
+	pg.base.skill_data_template[802260] = {
 		desc_get = "",
 		name = "维度追猎",
 		type = 2,
@@ -208828,11 +199523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_19
-
-	local var_30_20 = var_30_19.base.skill_data_template
-
-	var_30_20[802271] = {
+	pg.base.skill_data_template[802271] = {
 		desc_get = "",
 		name = "逐光之焰·布里斯托尔I",
 		type = 3,
@@ -208848,11 +199539,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_20
-
-	local var_30_21 = var_30_20.base.skill_data_template
-
-	var_30_21[802272] = {
+	pg.base.skill_data_template[802272] = {
 		desc_get = "",
 		name = "逐光之焰·布里斯托尔II",
 		type = 3,
@@ -208868,11 +199555,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_21
-
-	local var_30_22 = var_30_21.base.skill_data_template
-
-	var_30_22[802275] = {
+	pg.base.skill_data_template[802275] = {
 		desc_get = "",
 		name = "逐光之焰·布里斯托尔I",
 		type = 3,
@@ -208888,11 +199571,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_22
-
-	local var_30_23 = var_30_22.base.skill_data_template
-
-	var_30_23[802277] = {
+	pg.base.skill_data_template[802277] = {
 		desc_get = "",
 		name = "逐光之焰·布里斯托尔II",
 		type = 3,
@@ -208908,11 +199587,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_23
-
-	local var_30_24 = var_30_23.base.skill_data_template
-
-	var_30_24[802280] = {
+	pg.base.skill_data_template[802280] = {
 		desc_get = "",
 		name = "斩乱之剑",
 		type = 1,
@@ -209009,11 +199684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_24
-
-	local var_30_25 = var_30_24.base.skill_data_template
-
-	var_30_25[802290] = {
+	pg.base.skill_data_template[802290] = {
 		desc_get = "",
 		name = "宝物守护",
 		type = 2,
@@ -209164,11 +199835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_25
-
-	local var_30_26 = var_30_25.base.skill_data_template
-
-	var_30_26[802301] = {
+	pg.base.skill_data_template[802301] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:446}I",
 		type = 3,
@@ -209184,11 +199851,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_26
-
-	local var_30_27 = var_30_26.base.skill_data_template
-
-	var_30_27[802302] = {
+	pg.base.skill_data_template[802302] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:446}II",
 		type = 3,
@@ -209204,11 +199867,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_27
-
-	local var_30_28 = var_30_27.base.skill_data_template
-
-	var_30_28[1] = {
+	pg.base.skill_data_template[1] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:446}I",
 		type = 3,
@@ -209224,11 +199883,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_28
-
-	local var_30_29 = var_30_28.base.skill_data_template
-
-	var_30_29[3] = {
+	pg.base.skill_data_template[3] = {
 		desc_get = "",
 		name = "逐光之焰·{namecode:446}II",
 		type = 3,
@@ -209244,11 +199899,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_29
-
-	local var_30_30 = var_30_29.base.skill_data_template
-
-	var_30_30[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "特殊斩击-放射型",
 		type = 1,
@@ -209262,11 +199913,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_30
-
-	local var_30_31 = var_30_30.base.skill_data_template
-
-	var_30_31[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "特殊斩击-区域型",
 		type = 2,
@@ -209280,11 +199927,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_31
-
-	local var_30_32 = var_30_31.base.skill_data_template
-
-	var_30_32[902010] = {
+	pg.base.skill_data_template[902010] = {
 		desc_get = "",
 		name = "防空掩护",
 		type = 3,
@@ -209298,11 +199941,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_32
-
-	local var_30_33 = var_30_32.base.skill_data_template
-
-	var_30_33[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "战斗底力-炮击",
 		type = 3,
@@ -209316,11 +199955,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_33
-
-	local var_30_34 = var_30_33.base.skill_data_template
-
-	var_30_34[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "压制引导-炮击",
 		type = 3,
@@ -209334,11 +199969,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_34
-
-	local var_30_35 = var_30_34.base.skill_data_template
-
-	var_30_35[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "弹药调整-穿甲",
 		type = 3,
@@ -209352,11 +199983,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_35
-
-	local var_30_36 = var_30_35.base.skill_data_template
-
-	var_30_36[902050] = {
+	pg.base.skill_data_template[902050] = {
 		desc_get = "",
 		name = "制空战术",
 		type = 3,
@@ -209370,11 +199997,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_36
-
-	local var_30_37 = var_30_36.base.skill_data_template
-
-	var_30_37[902060] = {
+	pg.base.skill_data_template[902060] = {
 		desc_get = "",
 		name = "压制引导-航空",
 		type = 3,
@@ -209388,11 +200011,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_37
-
-	local var_30_38 = var_30_37.base.skill_data_template
-
-	var_30_38[902070] = {
+	pg.base.skill_data_template[902070] = {
 		desc_get = "",
 		name = "暴击技巧-鱼雷",
 		type = 3,
@@ -209406,11 +200025,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_38
-
-	local var_30_39 = var_30_38.base.skill_data_template
-
-	var_30_39[902080] = {
+	pg.base.skill_data_template[902080] = {
 		desc_get = "",
 		name = "致伤武器-鱼雷",
 		type = 3,
@@ -209424,11 +200039,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_39
-
-	local var_30_40 = var_30_39.base.skill_data_template
-
-	var_30_40[902090] = {
+	pg.base.skill_data_template[902090] = {
 		desc_get = "",
 		name = "破甲炮击",
 		type = 3,
@@ -209442,11 +200053,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_40
-
-	local var_30_41 = var_30_40.base.skill_data_template
-
-	var_30_41[902100] = {
+	pg.base.skill_data_template[902100] = {
 		desc_get = "",
 		name = "提速装填",
 		type = 3,
@@ -209460,11 +200067,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_41
-
-	local var_30_42 = var_30_41.base.skill_data_template
-
-	var_30_42[902110] = {
+	pg.base.skill_data_template[902110] = {
 		desc_get = "",
 		name = "储备氧气",
 		type = 3,
@@ -209478,11 +200081,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_42
-
-	local var_30_43 = var_30_42.base.skill_data_template
-
-	var_30_43[902120] = {
+	pg.base.skill_data_template[902120] = {
 		desc_get = "",
 		name = "快速压制-航空",
 		type = 3,
@@ -209496,11 +200095,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_43
-
-	local var_30_44 = var_30_43.base.skill_data_template
-
-	var_30_44[902130] = {
+	pg.base.skill_data_template[902130] = {
 		desc_get = "",
 		name = "守卫压制-航空",
 		type = 3,
@@ -209514,11 +200109,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_44
-
-	local var_30_45 = var_30_44.base.skill_data_template
-
-	var_30_45[902140] = {
+	pg.base.skill_data_template[902140] = {
 		desc_get = "",
 		name = "航空演训",
 		type = 3,
@@ -209532,11 +200123,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_45
-
-	local var_30_46 = var_30_45.base.skill_data_template
-
-	var_30_46[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "防卫射击",
 		type = 3,
@@ -209550,11 +200137,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_46
-
-	local var_30_47 = var_30_46.base.skill_data_template
-
-	var_30_47[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "恬静的午后",
 		type = 3,
@@ -209568,11 +200151,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_47
-
-	local var_30_48 = var_30_47.base.skill_data_template
-
-	var_30_48[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "万夜裂空",
 		type = 3,
@@ -209586,11 +200165,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_48
-
-	local var_30_49 = var_30_48.base.skill_data_template
-
-	var_30_49[902180] = {
+	pg.base.skill_data_template[902180] = {
 		desc_get = "",
 		name = "精准狩猎",
 		type = 3,
@@ -209604,11 +200179,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_49
-
-	local var_30_50 = var_30_49.base.skill_data_template
-
-	var_30_50[902190] = {
+	pg.base.skill_data_template[902190] = {
 		desc_get = "",
 		name = "布里Full Charge！",
 		type = 3,
@@ -209622,11 +200193,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_50
-
-	local var_30_51 = var_30_50.base.skill_data_template
-
-	var_30_51[902200] = {
+	pg.base.skill_data_template[902200] = {
 		desc_get = "",
 		name = "幻想之环",
 		type = 3,
@@ -209640,11 +200207,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_51
-
-	local var_30_52 = var_30_51.base.skill_data_template
-
-	var_30_52[902210] = {
+	pg.base.skill_data_template[902210] = {
 		desc_get = "",
 		name = "防空作战技术",
 		type = 3,
@@ -209658,11 +200221,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_52
-
-	local var_30_53 = var_30_52.base.skill_data_template
-
-	var_30_53[902220] = {
+	pg.base.skill_data_template[902220] = {
 		desc_get = "",
 		name = "轻量化护甲",
 		type = 2,
@@ -209676,11 +200235,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_53
-
-	local var_30_54 = var_30_53.base.skill_data_template
-
-	var_30_54[902230] = {
+	pg.base.skill_data_template[902230] = {
 		desc_get = "",
 		name = "飓风的加护",
 		type = 2,
@@ -209694,11 +200249,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_54
-
-	local var_30_55 = var_30_54.base.skill_data_template
-
-	var_30_55[902240] = {
+	pg.base.skill_data_template[902240] = {
 		desc_get = "",
 		name = "飓风的庇佑",
 		type = 2,
@@ -209712,11 +200263,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_55
-
-	local var_30_56 = var_30_55.base.skill_data_template
-
-	var_30_56[902250] = {
+	pg.base.skill_data_template[902250] = {
 		desc_get = "",
 		name = "飓风的复苏",
 		type = 2,
@@ -209730,11 +200277,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_56
-
-	local var_30_57 = var_30_56.base.skill_data_template
-
-	var_30_57[902260] = {
+	pg.base.skill_data_template[902260] = {
 		desc_get = "",
 		name = "幽・正邪双刃",
 		type = 3,
@@ -209748,11 +200291,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_57
-
-	local var_30_58 = var_30_57.base.skill_data_template
-
-	var_30_58[902270] = {
+	pg.base.skill_data_template[902270] = {
 		desc_get = "",
 		name = "星之守护",
 		type = 3,
@@ -209766,11 +200305,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_58
-
-	local var_30_59 = var_30_58.base.skill_data_template
-
-	var_30_59[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "空域演训",
 		type = 3,
@@ -209784,11 +200319,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_59
-
-	local var_30_60 = var_30_59.base.skill_data_template
-
-	var_30_60[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "航空演训-轰炸",
 		type = 3,
@@ -209802,11 +200333,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_60
-
-	local var_30_61 = var_30_60.base.skill_data_template
-
-	var_30_61[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "鱼雷技巧-暴击",
 		type = 3,
@@ -209820,11 +200347,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_61
-
-	local var_30_62 = var_30_61.base.skill_data_template
-
-	var_30_62[902310] = {
+	pg.base.skill_data_template[902310] = {
 		desc_get = "",
 		name = "皇家的荣耀",
 		type = 3,
@@ -209838,11 +200361,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_62
-
-	local var_30_63 = var_30_62.base.skill_data_template
-
-	var_30_63[902320] = {
+	pg.base.skill_data_template[902320] = {
 		desc_get = "",
 		name = "快速装填手",
 		type = 3,
@@ -209856,11 +200375,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_63
-
-	local var_30_64 = var_30_63.base.skill_data_template
-
-	var_30_64[902330] = {
+	pg.base.skill_data_template[902330] = {
 		desc_get = "",
 		name = "航空作战技术",
 		type = 3,
@@ -209874,11 +200389,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_64
-
-	local var_30_65 = var_30_64.base.skill_data_template
-
-	var_30_65[902340] = {
+	pg.base.skill_data_template[902340] = {
 		desc_get = "",
 		name = "飓风的掠夺",
 		type = 1,
@@ -209892,11 +200403,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_65
-
-	local var_30_66 = var_30_65.base.skill_data_template
-
-	var_30_66[902350] = {
+	pg.base.skill_data_template[902350] = {
 		desc_get = "",
 		name = "快速反应",
 		type = 1,
@@ -209910,11 +200417,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_66
-
-	local var_30_67 = var_30_66.base.skill_data_template
-
-	var_30_67[902360] = {
+	pg.base.skill_data_template[902360] = {
 		desc_get = "",
 		name = "御天之舰",
 		type = 2,
@@ -209928,11 +200431,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_67
-
-	local var_30_68 = var_30_67.base.skill_data_template
-
-	var_30_68[902370] = {
+	pg.base.skill_data_template[902370] = {
 		desc_get = "",
 		name = "锐爪斩击",
 		type = 2,
@@ -209946,11 +200445,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_68
-
-	local var_30_69 = var_30_68.base.skill_data_template
-
-	var_30_69[902380] = {
+	pg.base.skill_data_template[902380] = {
 		desc_get = "",
 		name = "防空集火训练",
 		type = 3,
@@ -209964,11 +200459,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_69
-
-	local var_30_70 = var_30_69.base.skill_data_template
-
-	var_30_70[902390] = {
+	pg.base.skill_data_template[902390] = {
 		desc_get = "",
 		name = "快速校射",
 		type = 3,
@@ -209982,11 +200473,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_70
-
-	local var_30_71 = var_30_70.base.skill_data_template
-
-	var_30_71[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "海盗英雄之剑",
 		type = 1,
@@ -210000,11 +200487,7 @@ end)()
 		desc_get_add = {},
 		desc_add = {}
 	}
-	pg = var_30_71
-
-	local var_30_72 = var_30_71.base.skill_data_template
-
-	var_30_72[1010140] = {
+	pg.base.skill_data_template[1010140] = {
 		desc_get = "",
 		name = "白鹰之泪 +",
 		type = 3,
@@ -210112,11 +200595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_72
-
-	local var_30_73 = var_30_72.base.skill_data_template
-
-	var_30_73[1010270] = {
+	pg.base.skill_data_template[1010270] = {
 		desc_get = "",
 		name = "最后的荣耀 +",
 		type = 1,
@@ -210303,11 +200782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_73
-
-	local var_30_74 = var_30_73.base.skill_data_template
-
-	var_30_74[1010390] = {
+	pg.base.skill_data_template[1010390] = {
 		desc_get = "",
 		name = "不破之盾 +",
 		type = 2,
@@ -210413,11 +200888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_74
-
-	local var_30_75 = var_30_74.base.skill_data_template
-
-	var_30_75[1010410] = {
+	pg.base.skill_data_template[1010410] = {
 		desc_get = "",
 		name = "所罗门的战神 +",
 		type = 1,
@@ -210568,11 +201039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_75
-
-	local var_30_76 = var_30_75.base.skill_data_template
-
-	var_30_76[1010510] = {
+	pg.base.skill_data_template[1010510] = {
 		desc_get = "",
 		name = "改变时代的炮声 +",
 		type = 3,
@@ -210714,11 +201181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_76
-
-	local var_30_77 = var_30_76.base.skill_data_template
-
-	var_30_77[1010610] = {
+	pg.base.skill_data_template[1010610] = {
 		desc_get = "",
 		name = "燃烧号令 +",
 		type = 1,
@@ -210869,11 +201332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_77
-
-	local var_30_78 = var_30_77.base.skill_data_template
-
-	var_30_78[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "铁血之鹰 +",
 		type = 1,
@@ -210970,11 +201429,11 @@ end)()
 			}
 		}
 	}
-	pg = var_30_78
 
-	local var_30_79 = var_30_78.base.skill_data_template
-
-	var_30_79[1010730] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[1010730] = {
 		desc_get = "",
 		name = "鬼神 +",
 		type = 1,
@@ -211170,11 +201629,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_79
-
-	local var_30_80 = var_30_79.base.skill_data_template
-
-	var_30_80[1011380] = {
+	pg.base.skill_data_template[1011380] = {
 		desc_get = "",
 		name = "谢幕演出 +",
 		type = 1,
@@ -211282,11 +201737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_80
-
-	local var_30_81 = var_30_80.base.skill_data_template
-
-	var_30_81[1011540] = {
+	pg.base.skill_data_template[1011540] = {
 		desc_get = "",
 		name = "最后的炮火 +",
 		type = 1,
@@ -211428,11 +201879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_81
-
-	local var_30_82 = var_30_81.base.skill_data_template
-
-	var_30_82[1010340] = {
+	pg.base.skill_data_template[1010340] = {
 		desc_get = "",
 		name = "装甲空母 +",
 		type = 3,
@@ -211529,11 +201976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_82
-
-	local var_30_83 = var_30_82.base.skill_data_template
-
-	var_30_83[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "吸血鬼之吻 +",
 		type = 2,
@@ -211589,11 +202032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_83
-
-	local var_30_84 = var_30_83.base.skill_data_template
-
-	var_30_84[1012670] = {
+	pg.base.skill_data_template[1012670] = {
 		desc_get = "",
 		name = "巨龙之链 +",
 		type = 3,
@@ -211780,11 +202219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_84
-
-	local var_30_85 = var_30_84.base.skill_data_template
-
-	var_30_85[1011620] = {
+	pg.base.skill_data_template[1011620] = {
 		desc_get = "",
 		name = "命运之骰 +",
 		type = 1,
@@ -211845,11 +202280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_85
-
-	local var_30_86 = var_30_85.base.skill_data_template
-
-	var_30_86[1011700] = {
+	pg.base.skill_data_template[1011700] = {
 		desc_get = "",
 		name = "猛进射击 +",
 		type = 3,
@@ -212036,11 +202467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_86
-
-	local var_30_87 = var_30_86.base.skill_data_template
-
-	var_30_87[1010530] = {
+	pg.base.skill_data_template[1010530] = {
 		desc_get = "",
 		name = "铁血先锋 +",
 		type = 1,
@@ -212191,11 +202618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_87
-
-	local var_30_88 = var_30_87.base.skill_data_template
-
-	var_30_88[1010290] = {
+	pg.base.skill_data_template[1010290] = {
 		desc_get = "",
 		name = "皇家舰队的荣耀 +",
 		type = 1,
@@ -212303,11 +202726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_88
-
-	local var_30_89 = var_30_88.base.skill_data_template
-
-	var_30_89[1011670] = {
+	pg.base.skill_data_template[1011670] = {
 		desc_get = "",
 		name = "意外赠礼 +",
 		type = 1,
@@ -212356,11 +202775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_89
-
-	local var_30_90 = var_30_89.base.skill_data_template
-
-	var_30_90[1011900] = {
+	pg.base.skill_data_template[1011900] = {
 		desc_get = "",
 		name = "816中队 +",
 		type = 1,
@@ -212421,11 +202836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_90
-
-	local var_30_91 = var_30_90.base.skill_data_template
-
-	var_30_91[1011500] = {
+	pg.base.skill_data_template[1011500] = {
 		desc_get = "",
 		name = "鸢尾之光 +",
 		type = 1,
@@ -212576,11 +202987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_91
-
-	local var_30_92 = var_30_91.base.skill_data_template
-
-	var_30_92[1010600] = {
+	pg.base.skill_data_template[1010600] = {
 		desc_get = "",
 		name = "万夜·忉利天 +",
 		type = 1,
@@ -212686,11 +203093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_92
-
-	local var_30_93 = var_30_92.base.skill_data_template
-
-	var_30_93[1011710] = {
+	pg.base.skill_data_template[1011710] = {
 		desc_get = "",
 		name = "杜尔拉汗 +",
 		type = 2,
@@ -212841,11 +203244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_93
-
-	local var_30_94 = var_30_93.base.skill_data_template
-
-	var_30_94[1010250] = {
+	pg.base.skill_data_template[1010250] = {
 		desc_get = "",
 		name = "标枪突袭 +",
 		type = 2,
@@ -212987,11 +203386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_94
-
-	local var_30_95 = var_30_94.base.skill_data_template
-
-	var_30_95[1010380] = {
+	pg.base.skill_data_template[1010380] = {
 		desc_get = "",
 		name = "Z系先驱 +",
 		type = 3,
@@ -213052,11 +203447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_95
-
-	local var_30_96 = var_30_95.base.skill_data_template
-
-	var_30_96[1010670] = {
+	pg.base.skill_data_template[1010670] = {
 		desc_get = "",
 		name = "北方的孤独女王 +",
 		type = 1,
@@ -213117,11 +203508,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_96
-
-	local var_30_97 = var_30_96.base.skill_data_template
-
-	var_30_97[1011520] = {
+	pg.base.skill_data_template[1011520] = {
 		desc_get = "",
 		name = "爱丽丝之心 +",
 		type = 3,
@@ -213227,11 +203614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_97
-
-	local var_30_98 = var_30_97.base.skill_data_template
-
-	var_30_98[1011360] = {
+	pg.base.skill_data_template[1011360] = {
 		desc_get = "",
 		name = "塔萨法隆格逆袭 +",
 		type = 3,
@@ -213373,8 +203756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_98
-	var_30_98.base.skill_data_template[1012350] = {
+	pg.base.skill_data_template[1012350] = {
 		desc_get = "",
 		name = "不服输的小魔女 +",
 		type = 1,
@@ -213561,15 +203943,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_31_0 = var_1_10000.base.skill_data_template
-
-	var_31_0[1012600] = {
+	pg.base.skill_data_template[1012600] = {
 		desc_get = "",
 		name = "Rose Bombardamento +",
 		type = 1,
@@ -213632,11 +204006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_0
-
-	local var_31_1 = var_31_0.base.skill_data_template
-
-	var_31_1[1010540] = {
+	pg.base.skill_data_template[1010540] = {
 		desc_get = "",
 		name = "皇家同盟 +",
 		type = 1,
@@ -213787,11 +204157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_1
-
-	local var_31_2 = var_31_1.base.skill_data_template
-
-	var_31_2[1010100] = {
+	pg.base.skill_data_template[1010100] = {
 		desc_get = "",
 		name = "爪哇海岸的跳跳鬼 +",
 		type = 2,
@@ -213888,11 +204254,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_2
-
-	local var_31_3 = var_31_2.base.skill_data_template
-
-	var_31_3[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "热风之炽焰 +",
 		type = 1,
@@ -214034,11 +204396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_3
-
-	local var_31_4 = var_31_3.base.skill_data_template
-
-	var_31_4[1010160] = {
+	pg.base.skill_data_template[1010160] = {
 		desc_get = "",
 		name = "最强之盾 +",
 		type = 2,
@@ -214189,11 +204547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_4
-
-	local var_31_5 = var_31_4.base.skill_data_template
-
-	var_31_5[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "战意提升 +",
 		type = 1,
@@ -214299,11 +204653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_5
-
-	local var_31_6 = var_31_5.base.skill_data_template
-
-	var_31_6[1011440] = {
+	pg.base.skill_data_template[1011440] = {
 		desc_get = "",
 		name = "斯卡帕湾之牛 +",
 		type = 1,
@@ -214402,11 +204752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_6
-
-	local var_31_7 = var_31_6.base.skill_data_template
-
-	var_31_7[1011120] = {
+	pg.base.skill_data_template[1011120] = {
 		desc_get = "",
 		name = "胜利之歌 +",
 		type = 1,
@@ -214557,11 +204903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_7
-
-	local var_31_8 = var_31_7.base.skill_data_template
-
-	var_31_8[1017160] = {
+	pg.base.skill_data_template[1017160] = {
 		desc_get = "",
 		name = "暗影无形 +",
 		type = 1,
@@ -214750,11 +205092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_8
-
-	local var_31_9 = var_31_8.base.skill_data_template
-
-	var_31_9[1017200] = {
+	pg.base.skill_data_template[1017200] = {
 		desc_get = "",
 		name = "圣洁轰炸 +",
 		type = 1,
@@ -214851,11 +205189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_9
-
-	local var_31_10 = var_31_9.base.skill_data_template
-
-	var_31_10[1017270] = {
+	pg.base.skill_data_template[1017270] = {
 		desc_get = "",
 		name = "宝藏守护 +",
 		type = 3,
@@ -214961,11 +205295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_10
-
-	local var_31_11 = var_31_10.base.skill_data_template
-
-	var_31_11[1017250] = {
+	pg.base.skill_data_template[1017250] = {
 		desc_get = "",
 		name = "深海的恩典 +",
 		type = 3,
@@ -215107,11 +205437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_11
-
-	local var_31_12 = var_31_11.base.skill_data_template
-
-	var_31_12[1017210] = {
+	pg.base.skill_data_template[1017210] = {
 		desc_get = "",
 		name = "只为安眠 +",
 		type = 1,
@@ -215210,11 +205536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_12
-
-	local var_31_13 = var_31_12.base.skill_data_template
-
-	var_31_13[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "特尔尼之盾 +",
 		type = 2,
@@ -215275,11 +205597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_13
-
-	local var_31_14 = var_31_13.base.skill_data_template
-
-	var_31_14[1011940] = {
+	pg.base.skill_data_template[1011940] = {
 		desc_get = "",
 		name = "天与海的观测者 +",
 		type = 3,
@@ -215385,11 +205703,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_14
-
-	local var_31_15 = var_31_14.base.skill_data_template
-
-	var_31_15[1012160] = {
+	pg.base.skill_data_template[1012160] = {
 		desc_get = "",
 		name = "日不落的辉光 +",
 		type = 3,
@@ -215495,11 +205809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_15
-
-	local var_31_16 = var_31_15.base.skill_data_template
-
-	var_31_16[1010480] = {
+	pg.base.skill_data_template[1010480] = {
 		desc_get = "",
 		name = "姐妹同心 +",
 		type = 3,
@@ -215605,11 +205915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_16
-
-	local var_31_17 = var_31_16.base.skill_data_template
-
-	var_31_17[1010490] = {
+	pg.base.skill_data_template[1010490] = {
 		desc_get = "",
 		name = "姐妹同心 +",
 		type = 3,
@@ -215715,11 +206021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_17
-
-	local var_31_18 = var_31_17.base.skill_data_template
-
-	var_31_18[1011370] = {
+	pg.base.skill_data_template[1011370] = {
 		desc_get = "",
 		name = "致命穿透 +",
 		type = 1,
@@ -215818,11 +206120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_18
-
-	local var_31_19 = var_31_18.base.skill_data_template
-
-	var_31_19[1010750] = {
+	pg.base.skill_data_template[1010750] = {
 		desc_get = "",
 		name = "The Nick +",
 		type = 2,
@@ -215928,11 +206226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_19
-
-	local var_31_20 = var_31_19.base.skill_data_template
-
-	var_31_20[1012940] = {
+	pg.base.skill_data_template[1012940] = {
 		desc_get = "",
 		name = "For The Queen +",
 		type = 3,
@@ -216083,11 +206377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_20
-
-	local var_31_21 = var_31_20.base.skill_data_template
-
-	var_31_21[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "骑士之盾 +",
 		type = 2,
@@ -216229,11 +206519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_21
-
-	local var_31_22 = var_31_21.base.skill_data_template
-
-	var_31_22[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "骑士之剑 +",
 		type = 1,
@@ -216375,11 +206661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_22
-
-	local var_31_23 = var_31_22.base.skill_data_template
-
-	var_31_23[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "虚空的白骑兵 +",
 		type = 1,
@@ -216521,11 +206803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_23
-
-	local var_31_24 = var_31_23.base.skill_data_template
-
-	var_31_24[1010980] = {
+	pg.base.skill_data_template[1010980] = {
 		desc_get = "",
 		name = "对空掩护 +",
 		type = 3,
@@ -216667,11 +206945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_24
-
-	local var_31_25 = var_31_24.base.skill_data_template
-
-	var_31_25[1010660] = {
+	pg.base.skill_data_template[1010660] = {
 		desc_get = "",
 		name = "狙击手 +",
 		type = 1,
@@ -216759,11 +207033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_25
-
-	local var_31_26 = var_31_25.base.skill_data_template
-
-	var_31_26[1012320] = {
+	pg.base.skill_data_template[1012320] = {
 		desc_get = "",
 		name = "Gassing Breath +",
 		type = 1,
@@ -216905,11 +207175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_26
-
-	local var_31_27 = var_31_26.base.skill_data_template
-
-	var_31_27[1019080] = {
+	pg.base.skill_data_template[1019080] = {
 		desc_get = "",
 		name = "特殊护甲 +",
 		type = 2,
@@ -217015,11 +207281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_27
-
-	local var_31_28 = var_31_27.base.skill_data_template
-
-	var_31_28[1011170] = {
+	pg.base.skill_data_template[1011170] = {
 		desc_get = "",
 		name = "正义的伙伴 +",
 		type = 1,
@@ -217080,11 +207342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_28
-
-	local var_31_29 = var_31_28.base.skill_data_template
-
-	var_31_29[1010090] = {
+	pg.base.skill_data_template[1010090] = {
 		desc_get = "",
 		name = "我是NO.1！+",
 		type = 3,
@@ -217181,11 +207439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_29
-
-	local var_31_30 = var_31_29.base.skill_data_template
-
-	var_31_30[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "空域控制 +",
 		type = 3,
@@ -217291,11 +207545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_30
-
-	local var_31_31 = var_31_30.base.skill_data_template
-
-	var_31_31[1013550] = {
+	pg.base.skill_data_template[1013550] = {
 		desc_get = "",
 		name = "微笑猎手 +",
 		type = 1,
@@ -217439,11 +207689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_31
-
-	local var_31_32 = var_31_31.base.skill_data_template
-
-	var_31_32[1012990] = {
+	pg.base.skill_data_template[1012990] = {
 		desc_get = "",
 		name = "火力向导 +",
 		type = 3,
@@ -217549,11 +207795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_32
-
-	local var_31_33 = var_31_32.base.skill_data_template
-
-	var_31_33[1011490] = {
+	pg.base.skill_data_template[1011490] = {
 		desc_get = "",
 		name = "正面火力 +",
 		type = 1,
@@ -217704,11 +207946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_33
-
-	local var_31_34 = var_31_33.base.skill_data_template
-
-	var_31_34[1019060] = {
+	pg.base.skill_data_template[1019060] = {
 		desc_get = "",
 		name = "一闪 +",
 		type = 1,
@@ -217805,11 +208043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_34
-
-	local var_31_35 = var_31_34.base.skill_data_template
-
-	var_31_35[1011000] = {
+	pg.base.skill_data_template[1011000] = {
 		desc_get = "",
 		name = "英勇炮击 +",
 		type = 1,
@@ -217953,11 +208187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_35
-
-	local var_31_36 = var_31_35.base.skill_data_template
-
-	var_31_36[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "假寐诱敌 +",
 		type = 3,
@@ -218099,11 +208329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_36
-
-	local var_31_37 = var_31_36.base.skill_data_template
-
-	var_31_37[10150570] = {
+	pg.base.skill_data_template[10150570] = {
 		desc_get = "",
 		name = "深渊魔影 +",
 		type = 3,
@@ -218245,11 +208471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_37
-
-	local var_31_38 = var_31_37.base.skill_data_template
-
-	var_31_38[10150580] = {
+	pg.base.skill_data_template[10150580] = {
 		desc_get = "",
 		name = "祓除与治愈之风 +",
 		type = 2,
@@ -218391,11 +208613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_38
-
-	local var_31_39 = var_31_38.base.skill_data_template
-
-	var_31_39[10150640] = {
+	pg.base.skill_data_template[10150640] = {
 		desc_get = "",
 		name = "烈酒与秘药 +",
 		type = 2,
@@ -218546,11 +208764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_39
-
-	local var_31_40 = var_31_39.base.skill_data_template
-
-	var_31_40[10150600] = {
+	pg.base.skill_data_template[10150600] = {
 		desc_get = "",
 		name = "深海的回音 +",
 		type = 2,
@@ -218746,11 +208960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_40
-
-	local var_31_41 = var_31_40.base.skill_data_template
-
-	var_31_41[10151760] = {
+	pg.base.skill_data_template[10151760] = {
 		desc_get = "",
 		name = "同航共利 +",
 		type = 3,
@@ -218856,11 +209066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_41
-
-	local var_31_42 = var_31_41.base.skill_data_template
-
-	var_31_42[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "海之女神 +",
 		type = 2,
@@ -219002,11 +209208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_42
-
-	local var_31_43 = var_31_42.base.skill_data_template
-
-	var_31_43[1019090] = {
+	pg.base.skill_data_template[1019090] = {
 		desc_get = "",
 		name = "专业装填手 +",
 		type = 1,
@@ -219148,11 +209350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_43
-
-	local var_31_44 = var_31_43.base.skill_data_template
-
-	var_31_44[1019110] = {
+	pg.base.skill_data_template[1019110] = {
 		desc_get = "",
 		name = "高爆穿甲弹 +",
 		type = 1,
@@ -219339,11 +209537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_44
-
-	local var_31_45 = var_31_44.base.skill_data_template
-
-	var_31_45[1014070] = {
+	pg.base.skill_data_template[1014070] = {
 		desc_get = "",
 		name = "除恶务尽 +",
 		type = 3,
@@ -219530,11 +209724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_45
-
-	local var_31_46 = var_31_45.base.skill_data_template
-
-	var_31_46[1014090] = {
+	pg.base.skill_data_template[1014090] = {
 		desc_get = "",
 		name = "除恶务尽 +",
 		type = 3,
@@ -219721,11 +209911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_46
-
-	local var_31_47 = var_31_46.base.skill_data_template
-
-	var_31_47[1010260] = {
+	pg.base.skill_data_template[1010260] = {
 		desc_get = "",
 		name = "魔炮-Armageddon！ +",
 		type = 1,
@@ -219867,11 +210053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_47
-
-	local var_31_48 = var_31_47.base.skill_data_template
-
-	var_31_48[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "冰结锋芒+",
 		type = 1,
@@ -220058,11 +210240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_48
-
-	local var_31_49 = var_31_48.base.skill_data_template
-
-	var_31_49[1011560] = {
+	pg.base.skill_data_template[1011560] = {
 		desc_get = "",
 		name = "2700磅的正义+",
 		type = 1,
@@ -220159,11 +210337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_49
-
-	local var_31_50 = var_31_49.base.skill_data_template
-
-	var_31_50[1013880] = {
+	pg.base.skill_data_template[1013880] = {
 		desc_get = "",
 		name = "迅击铁翼 +",
 		type = 1,
@@ -220224,11 +210398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_50
-
-	local var_31_51 = var_31_50.base.skill_data_template
-
-	var_31_51[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "特型领舰+",
 		type = 3,
@@ -220460,11 +210630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_51
-
-	local var_31_52 = var_31_51.base.skill_data_template
-
-	var_31_52[1012400] = {
+	pg.base.skill_data_template[1012400] = {
 		desc_get = "",
 		name = "大鱼突击！+",
 		type = 3,
@@ -220527,11 +210693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_52
-
-	local var_31_53 = var_31_52.base.skill_data_template
-
-	var_31_53[1011150] = {
+	pg.base.skill_data_template[1011150] = {
 		desc_get = "",
 		name = "巴伦支海的逆袭 +",
 		type = 1,
@@ -220763,11 +210925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_53
-
-	local var_31_54 = var_31_53.base.skill_data_template
-
-	var_31_54[1013050] = {
+	pg.base.skill_data_template[1013050] = {
 		desc_get = "",
 		name = "为革命献上祝福 +",
 		type = 1,
@@ -220963,11 +211121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_54
-
-	local var_31_55 = var_31_54.base.skill_data_template
-
-	var_31_55[0] = {
+	pg.base.skill_data_template[0] = {
 		desc_get = "",
 		name = "Final-AP-Ride +",
 		type = 1,
@@ -221073,11 +211227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_55
-
-	local var_31_56 = var_31_55.base.skill_data_template
-
-	var_31_56[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "神射手 +",
 		type = 1,
@@ -221174,11 +211324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_56
-
-	local var_31_57 = var_31_56.base.skill_data_template
-
-	var_31_57[30] = {
+	pg.base.skill_data_template[30] = {
 		desc_get = "",
 		name = "神射手·改 +",
 		type = 1,
@@ -221365,11 +211511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_57
-
-	local var_31_58 = var_31_57.base.skill_data_template
-
-	var_31_58[1011960] = {
+	pg.base.skill_data_template[1011960] = {
 		desc_get = "",
 		name = "峡湾之星 +",
 		type = 1,
@@ -221475,11 +211617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_58
-
-	local var_31_59 = var_31_58.base.skill_data_template
-
-	var_31_59[1010880] = {
+	pg.base.skill_data_template[1010880] = {
 		desc_get = "",
 		name = "LuckyLou +",
 		type = 1,
@@ -221720,11 +211858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_59
-
-	local var_31_60 = var_31_59.base.skill_data_template
-
-	var_31_60[1011250] = {
+	pg.base.skill_data_template[1011250] = {
 		desc_get = "",
 		name = "萨沃岛突袭 +",
 		type = 3,
@@ -221911,11 +212045,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_60
-
-	local var_31_61 = var_31_60.base.skill_data_template
-
-	var_31_61[1010790] = {
+	pg.base.skill_data_template[1010790] = {
 		desc_get = "",
 		name = "五航战 +",
 		type = 3,
@@ -222111,11 +212241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_61
-
-	local var_31_62 = var_31_61.base.skill_data_template
-
-	var_31_62[1014340] = {
+	pg.base.skill_data_template[1014340] = {
 		desc_get = "",
 		name = "荣光的紫焰 +",
 		type = 1,
@@ -222212,11 +212338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_62
-
-	local var_31_63 = var_31_62.base.skill_data_template
-
-	var_31_63[1010720] = {
+	pg.base.skill_data_template[1010720] = {
 		desc_get = "",
 		name = "守卫之盾 +",
 		type = 2,
@@ -222412,11 +212534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_63
-
-	local var_31_64 = var_31_63.base.skill_data_template
-
-	var_31_64[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "复仇打击 +",
 		type = 2,
@@ -222612,11 +212730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_64
-
-	local var_31_65 = var_31_64.base.skill_data_template
-
-	var_31_65[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "君王之睥睨 +",
 		type = 1,
@@ -222805,11 +212919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_65
-
-	local var_31_66 = var_31_65.base.skill_data_template
-
-	var_31_66[1011240] = {
+	pg.base.skill_data_template[1011240] = {
 		desc_get = "",
 		name = "不沉的幸运舰 +",
 		type = 2,
@@ -222951,11 +213061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_66
-
-	local var_31_67 = var_31_66.base.skill_data_template
-
-	var_31_67[1011450] = {
+	pg.base.skill_data_template[1011450] = {
 		desc_get = "",
 		name = "过载炮击 +",
 		type = 1,
@@ -223142,11 +213248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_67
-
-	local var_31_68 = var_31_67.base.skill_data_template
-
-	var_31_68[1012430] = {
+	pg.base.skill_data_template[1012430] = {
 		desc_get = "",
 		name = "Lucky A +",
 		type = 1,
@@ -223299,11 +213401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_68
-
-	local var_31_69 = var_31_68.base.skill_data_template
-
-	var_31_69[1012640] = {
+	pg.base.skill_data_template[1012640] = {
 		desc_get = "",
 		name = "撒丁的威压 +",
 		type = 1,
@@ -223454,11 +213552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_69
-
-	local var_31_70 = var_31_69.base.skill_data_template
-
-	var_31_70[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "最终圣裁 +",
 		type = 2,
@@ -223609,11 +213703,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_70
-
-	local var_31_71 = var_31_70.base.skill_data_template
-
-	var_31_71[1011910] = {
+	pg.base.skill_data_template[1011910] = {
 		desc_get = "",
 		name = "鹰击长空 +",
 		type = 1,
@@ -223710,11 +213800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_71
-
-	local var_31_72 = var_31_71.base.skill_data_template
-
-	var_31_72[1011390] = {
+	pg.base.skill_data_template[1011390] = {
 		desc_get = "",
 		name = "潜行猎杀 +",
 		type = 1,
@@ -223867,11 +213953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_72
-
-	local var_31_73 = var_31_72.base.skill_data_template
-
-	var_31_73[1012840] = {
+	pg.base.skill_data_template[1012840] = {
 		desc_get = "",
 		name = "新锐之刃 +",
 		type = 3,
@@ -224094,11 +214176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_73
-
-	local var_31_74 = var_31_73.base.skill_data_template
-
-	var_31_74[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "Nasty Asty +",
 		type = 3,
@@ -224294,11 +214372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_74
-
-	local var_31_75 = var_31_74.base.skill_data_template
-
-	var_31_75[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "Eisen Bite +",
 		type = 1,
@@ -224404,11 +214478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_75
-
-	local var_31_76 = var_31_75.base.skill_data_template
-
-	var_31_76[1012570] = {
+	pg.base.skill_data_template[1012570] = {
 		desc_get = "",
 		name = "随伴之翼 +",
 		type = 1,
@@ -224595,11 +214665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_76
-
-	local var_31_77 = var_31_76.base.skill_data_template
-
-	var_31_77[1013470] = {
+	pg.base.skill_data_template[1013470] = {
 		desc_get = "",
 		name = "砥柱下的应援 +",
 		type = 3,
@@ -224741,11 +214807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_77
-
-	local var_31_78 = var_31_77.base.skill_data_template
-
-	var_31_78[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "水雷先锋 +",
 		type = 1,
@@ -224941,11 +215003,11 @@ end)()
 			}
 		}
 	}
-	pg = var_31_78
 
-	local var_31_79 = var_31_78.base.skill_data_template
-
-	var_31_79[24] = {
+	return
+end)()
+;(function()
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "Heavy Barrel Blaster +",
 		type = 1,
@@ -225089,11 +215151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_79
-
-	local var_31_80 = var_31_79.base.skill_data_template
-
-	var_31_80[1014990] = {
+	pg.base.skill_data_template[1014990] = {
 		desc_get = "",
 		name = "火舌飞舞 +",
 		type = 2,
@@ -225235,11 +215293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_80
-
-	local var_31_81 = var_31_80.base.skill_data_template
-
-	var_31_81[20] = {
+	pg.base.skill_data_template[20] = {
 		desc_get = "",
 		name = "I AM RENO！ +",
 		type = 3,
@@ -225381,11 +215435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_81
-
-	local var_31_82 = var_31_81.base.skill_data_template
-
-	var_31_82[1012910] = {
+	pg.base.skill_data_template[1012910] = {
 		desc_get = "",
 		name = "六驱精锐·{namecode:12} +",
 		type = 1,
@@ -225446,11 +215496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_82
-
-	local var_31_83 = var_31_82.base.skill_data_template
-
-	var_31_83[1014140] = {
+	pg.base.skill_data_template[1014140] = {
 		desc_get = "",
 		name = "调皮的小雪球 +",
 		type = 1,
@@ -225637,11 +215683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_83
-
-	local var_31_84 = var_31_83.base.skill_data_template
-
-	var_31_84[1019260] = {
+	pg.base.skill_data_template[1019260] = {
 		desc_get = "",
 		name = "精密操作协议 +",
 		type = 1,
@@ -225839,11 +215881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_84
-
-	local var_31_85 = var_31_84.base.skill_data_template
-
-	var_31_85[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "Kirov Reporting! +",
 		type = 1,
@@ -225994,11 +216032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_85
-
-	local var_31_86 = var_31_85.base.skill_data_template
-
-	var_31_86[1012470] = {
+	pg.base.skill_data_template[1012470] = {
 		desc_get = "",
 		name = "陨翼双鲨 +",
 		type = 1,
@@ -226151,11 +216185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_86
-
-	local var_31_87 = var_31_86.base.skill_data_template
-
-	var_31_87[1010800] = {
+	pg.base.skill_data_template[1010800] = {
 		desc_get = "",
 		name = "五航战 +",
 		type = 3,
@@ -226306,11 +216336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_87
-
-	local var_31_88 = var_31_87.base.skill_data_template
-
-	var_31_88[1019300] = {
+	pg.base.skill_data_template[1019300] = {
 		desc_get = "",
 		name = "断罪之炎·改",
 		type = 3,
@@ -226497,11 +216523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_88
-
-	local var_31_89 = var_31_88.base.skill_data_template
-
-	var_31_89[1018300] = {
+	pg.base.skill_data_template[1018300] = {
 		desc_get = "",
 		name = "断罪之炎·改 +",
 		type = 3,
@@ -226688,11 +216710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_89
-
-	local var_31_90 = var_31_89.base.skill_data_template
-
-	var_31_90[1013450] = {
+	pg.base.skill_data_template[1013450] = {
 		desc_get = "",
 		name = "骑士不朽之约 +",
 		type = 3,
@@ -226798,11 +216816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_90
-
-	local var_31_91 = var_31_90.base.skill_data_template
-
-	var_31_91[1014050] = {
+	pg.base.skill_data_template[1014050] = {
 		desc_get = "",
 		name = "怒放之紫 +",
 		type = 1,
@@ -226944,11 +216958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_91
-
-	local var_31_92 = var_31_91.base.skill_data_template
-
-	var_31_92[1090010] = {
+	pg.base.skill_data_template[1090010] = {
 		desc_get = "",
 		name = "舰队空母·光荣",
 		type = 3,
@@ -227054,11 +217064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_92
-
-	local var_31_93 = var_31_92.base.skill_data_template
-
-	var_31_93[1090020] = {
+	pg.base.skill_data_template[1090020] = {
 		desc_get = "",
 		name = "火力全开·{namecode:422}",
 		type = 1,
@@ -227164,11 +217170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_93
-
-	local var_31_94 = var_31_93.base.skill_data_template
-
-	var_31_94[1090030] = {
+	pg.base.skill_data_template[1090030] = {
 		desc_get = "",
 		name = "防空模式·蒙彼利埃",
 		type = 2,
@@ -227364,11 +217366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_94
-
-	local var_31_95 = var_31_94.base.skill_data_template
-
-	var_31_95[1090040] = {
+	pg.base.skill_data_template[1090040] = {
 		desc_get = "",
 		name = "狼群战术·{namecode:415}",
 		type = 1,
@@ -227467,11 +217465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_95
-
-	local var_31_96 = var_31_95.base.skill_data_template
-
-	var_31_96[2] = {
+	pg.base.skill_data_template[2] = {
 		desc_get = "",
 		name = "火力全开·{namecode:46}",
 		type = 1,
@@ -227622,11 +217616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_96
-
-	local var_31_97 = var_31_96.base.skill_data_template
-
-	var_31_97[12] = {
+	pg.base.skill_data_template[12] = {
 		desc_get = "",
 		name = "主炮连射·威奇塔",
 		type = 1,
@@ -227768,11 +217758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_97
-
-	local var_31_98 = var_31_97.base.skill_data_template
-
-	var_31_98[22] = {
+	pg.base.skill_data_template[22] = {
 		desc_get = "",
 		name = "炮术指挥·西姆斯",
 		type = 3,
@@ -227869,8 +217855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_98
-	var_31_98.base.skill_data_template[1090080] = {
+	pg.base.skill_data_template[1090080] = {
 		desc_get = "",
 		name = "雷击指挥·{namecode:19}",
 		type = 3,
@@ -228021,15 +218006,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_32_0 = var_1_10000.base.skill_data_template
-
-	var_32_0[1090090] = {
+	pg.base.skill_data_template[1090090] = {
 		desc_get = "",
 		name = "变迁的记忆·加富尔伯爵",
 		type = 1,
@@ -228225,11 +218202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_0
-
-	local var_32_1 = var_32_0.base.skill_data_template
-
-	var_32_1[1090100] = {
+	pg.base.skill_data_template[1090100] = {
 		desc_get = "",
 		name = "穿甲弹精通·爱丁堡",
 		type = 1,
@@ -228335,11 +218308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_1
-
-	local var_32_2 = var_32_1.base.skill_data_template
-
-	var_32_2[1090110] = {
+	pg.base.skill_data_template[1090110] = {
 		desc_get = "",
 		name = "鱼雷发射·{namecode:434}",
 		type = 1,
@@ -228445,11 +218414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_2
-
-	local var_32_3 = var_32_2.base.skill_data_template
-
-	var_32_3[1090120] = {
+	pg.base.skill_data_template[1090120] = {
 		desc_get = "",
 		name = "穿甲弹精通·{namecode:412}",
 		type = 1,
@@ -228600,11 +218565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_3
-
-	local var_32_4 = var_32_3.base.skill_data_template
-
-	var_32_4[1090130] = {
+	pg.base.skill_data_template[1090130] = {
 		desc_get = "",
 		name = "快速装填·{namecode:33}",
 		type = 1,
@@ -228710,11 +218671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_4
-
-	local var_32_5 = var_32_4.base.skill_data_template
-
-	var_32_5[1090140] = {
+	pg.base.skill_data_template[1090140] = {
 		desc_get = "",
 		name = "舰炮掩护·萨拉托加",
 		type = 1,
@@ -228847,11 +218804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_5
-
-	local var_32_6 = var_32_5.base.skill_data_template
-
-	var_32_6[1090150] = {
+	pg.base.skill_data_template[1090150] = {
 		desc_get = "",
 		name = "水面作战·絮库夫",
 		type = 2,
@@ -228950,11 +218903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_6
-
-	local var_32_7 = var_32_6.base.skill_data_template
-
-	var_32_7[1090160] = {
+	pg.base.skill_data_template[1090160] = {
 		desc_get = "",
 		name = "主炮连射·萨福克",
 		type = 1,
@@ -229015,11 +218964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_7
-
-	local var_32_8 = var_32_7.base.skill_data_template
-
-	var_32_8[1090170] = {
+	pg.base.skill_data_template[1090170] = {
 		desc_get = "",
 		name = "穿甲防护·{namecode:57}",
 		type = 2,
@@ -229161,11 +219106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_8
-
-	local var_32_9 = var_32_8.base.skill_data_template
-
-	var_32_9[4] = {
+	pg.base.skill_data_template[4] = {
 		desc_get = "",
 		name = "火力覆盖·{namecode:78}",
 		type = 2,
@@ -229262,11 +219203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_9
-
-	local var_32_10 = var_32_9.base.skill_data_template
-
-	var_32_10[14] = {
+	pg.base.skill_data_template[14] = {
 		desc_get = "",
 		name = "重点打击·{namecode:66}",
 		type = 1,
@@ -229408,11 +219345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_10
-
-	local var_32_11 = var_32_10.base.skill_data_template
-
-	var_32_11[24] = {
+	pg.base.skill_data_template[24] = {
 		desc_get = "",
 		name = "鱼雷连射·麦考尔",
 		type = 1,
@@ -229473,11 +219406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_11
-
-	local var_32_12 = var_32_11.base.skill_data_template
-
-	var_32_12[1090210] = {
+	pg.base.skill_data_template[1090210] = {
 		desc_get = "",
 		name = "紧急回避·命运女神",
 		type = 2,
@@ -229538,11 +219467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_12
-
-	local var_32_13 = var_32_12.base.skill_data_template
-
-	var_32_13[1090220] = {
+	pg.base.skill_data_template[1090220] = {
 		desc_get = "",
 		name = "装填指挥·{namecode:421}",
 		type = 3,
@@ -229639,11 +219564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_13
-
-	local var_32_14 = var_32_13.base.skill_data_template
-
-	var_32_14[1090230] = {
+	pg.base.skill_data_template[1090230] = {
 		desc_get = "",
 		name = "穿甲弹精通·{namecode:404}",
 		type = 1,
@@ -229830,11 +219751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_14
-
-	local var_32_15 = var_32_14.base.skill_data_template
-
-	var_32_15[1090240] = {
+	pg.base.skill_data_template[1090240] = {
 		desc_get = "",
 		name = "水雷战队·{namecode:38}",
 		type = 3,
@@ -229985,11 +219902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_15
-
-	local var_32_16 = var_32_15.base.skill_data_template
-
-	var_32_16[1090250] = {
+	pg.base.skill_data_template[1090250] = {
 		desc_get = "",
 		name = "雷击指挥·彗星",
 		type = 3,
@@ -230086,11 +219999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_16
-
-	local var_32_17 = var_32_16.base.skill_data_template
-
-	var_32_17[1090260] = {
+	pg.base.skill_data_template[1090260] = {
 		desc_get = "",
 		name = "快速装填·斯彭斯",
 		type = 1,
@@ -230277,11 +220186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_17
-
-	local var_32_18 = var_32_17.base.skill_data_template
-
-	var_32_18[1090270] = {
+	pg.base.skill_data_template[1090270] = {
 		desc_get = "",
 		name = "战术指挥·{namecode:424}",
 		type = 3,
@@ -230423,11 +220328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_18
-
-	local var_32_19 = var_32_18.base.skill_data_template
-
-	var_32_19[1090280] = {
+	pg.base.skill_data_template[1090280] = {
 		desc_get = "",
 		name = "快速起飞·长岛",
 		type = 1,
@@ -230569,11 +220470,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_19
-
-	local var_32_20 = var_32_19.base.skill_data_template
-
-	var_32_20[1090290] = {
+	pg.base.skill_data_template[1090290] = {
 		desc_get = "",
 		name = "鱼雷连射·{namecode:20}",
 		type = 1,
@@ -230715,11 +220612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_20
-
-	local var_32_21 = var_32_20.base.skill_data_template
-
-	var_32_21[6] = {
+	pg.base.skill_data_template[6] = {
 		desc_get = "",
 		name = "火力全开·埃克塞特",
 		type = 1,
@@ -230943,11 +220836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_21
-
-	local var_32_22 = var_32_21.base.skill_data_template
-
-	var_32_22[16] = {
+	pg.base.skill_data_template[16] = {
 		desc_get = "",
 		name = "紧急回避·大斗犬",
 		type = 2,
@@ -231089,11 +220978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_22
-
-	local var_32_23 = var_32_22.base.skill_data_template
-
-	var_32_23[26] = {
+	pg.base.skill_data_template[26] = {
 		desc_get = "",
 		name = "雷击指挥·{namecode:15}",
 		type = 3,
@@ -231190,11 +221075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_23
-
-	local var_32_24 = var_32_23.base.skill_data_template
-
-	var_32_24[1090340] = {
+	pg.base.skill_data_template[1090340] = {
 		desc_get = "",
 		name = "快速起飞·博格",
 		type = 1,
@@ -231291,11 +221172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_24
-
-	local var_32_25 = var_32_24.base.skill_data_template
-
-	var_32_25[1090350] = {
+	pg.base.skill_data_template[1090350] = {
 		desc_get = "",
 		name = "火力全开·{namecode:37}",
 		type = 1,
@@ -231437,11 +221314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_25
-
-	local var_32_26 = var_32_25.base.skill_data_template
-
-	var_32_26[1090360] = {
+	pg.base.skill_data_template[1090360] = {
 		desc_get = "",
 		name = "制空支援·{namecode:89}",
 		type = 3,
@@ -231583,11 +221456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_26
-
-	local var_32_27 = var_32_26.base.skill_data_template
-
-	var_32_27[1090380] = {
+	pg.base.skill_data_template[1090380] = {
 		desc_get = "",
 		name = "鱼雷连射·{namecode:67}",
 		type = 1,
@@ -231729,11 +221598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_27
-
-	local var_32_28 = var_32_27.base.skill_data_template
-
-	var_32_28[1090390] = {
+	pg.base.skill_data_template[1090390] = {
 		desc_get = "",
 		name = "防空模式·哥伦比亚",
 		type = 2,
@@ -231830,11 +221695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_28
-
-	local var_32_29 = var_32_28.base.skill_data_template
-
-	var_32_29[1090400] = {
+	pg.base.skill_data_template[1090400] = {
 		desc_get = "",
 		name = "火力全开·{namecode:423}",
 		type = 1,
@@ -231976,11 +221837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_29
-
-	local var_32_30 = var_32_29.base.skill_data_template
-
-	var_32_30[1090420] = {
+	pg.base.skill_data_template[1090420] = {
 		desc_get = "",
 		name = "火力全开·威严",
 		type = 1,
@@ -232167,11 +222024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_30
-
-	local var_32_31 = var_32_30.base.skill_data_template
-
-	var_32_31[1090430] = {
+	pg.base.skill_data_template[1090430] = {
 		desc_get = "",
 		name = "吸引火力·{namecode:63}",
 		type = 2,
@@ -232232,11 +222085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_31
-
-	local var_32_32 = var_32_31.base.skill_data_template
-
-	var_32_32[18] = {
+	pg.base.skill_data_template[18] = {
 		desc_get = "",
 		name = "集火信号-鱼雷·无敌",
 		type = 3,
@@ -232378,11 +222227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_32
-
-	local var_32_33 = var_32_32.base.skill_data_template
-
-	var_32_33[8] = {
+	pg.base.skill_data_template[8] = {
 		desc_get = "",
 		name = "穿甲弹精通·{namecode:405}",
 		type = 1,
@@ -232569,11 +222414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_33
-
-	local var_32_34 = var_32_33.base.skill_data_template
-
-	var_32_34[28] = {
+	pg.base.skill_data_template[28] = {
 		desc_get = "",
 		name = "炮术指挥·格伦维尔",
 		type = 3,
@@ -232670,11 +222511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_34
-
-	local var_32_35 = var_32_34.base.skill_data_template
-
-	var_32_35[1090470] = {
+	pg.base.skill_data_template[1090470] = {
 		desc_get = "",
 		name = "快速装填·{namecode:34}",
 		type = 1,
@@ -232825,11 +222662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_35
-
-	local var_32_36 = var_32_35.base.skill_data_template
-
-	var_32_36[1090480] = {
+	pg.base.skill_data_template[1090480] = {
 		desc_get = "",
 		name = "袖珍战列舰·{namecode:429}",
 		type = 1,
@@ -233151,11 +222984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_36
-
-	local var_32_37 = var_32_36.base.skill_data_template
-
-	var_32_37[1090500] = {
+	pg.base.skill_data_template[1090500] = {
 		desc_get = "",
 		name = "吸引火力·{namecode:64}",
 		type = 2,
@@ -233261,8 +223090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_37
-	var_32_37.base.skill_data_template[1090490] = {
+	pg.base.skill_data_template[1090490] = {
 		desc_get = "",
 		name = "装填号令·彭萨科拉",
 		type = 3,

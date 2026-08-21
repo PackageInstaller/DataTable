@@ -1,97 +1,68 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandShipStatusMsgboxWindow", import(".IslandCommonMsgboxWindow"))
 
-local var_0_0 = "IslandShipStatusMsgboxWindow"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandCommonMsgboxWindow"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandShipStatusMsgboxUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	var_0_1.super.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
+	var_0_0.super.OnLoaded(arg_2_0)
 
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "Text")
-	local var_2_2 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.buffDesc = var_2_2(var_2_1, var_4(var_1_10006))
+	arg_2_0.buffDesc = arg_2_0._tf:Find("Text"):GetComponent(typeof(Text))
 
 	return
 end
 
-function var_0_1.OnShow(arg_3_0)
-	var_0_1.super.OnShow(arg_3_0)
+function var_0_0.OnShow(arg_3_0)
+	var_0_0.super.OnShow(arg_3_0)
 	arg_3_0:FlushBuff()
 
 	return
 end
 
-function var_0_1.FlushBuff(arg_4_0)
+function var_0_0.FlushBuff(arg_4_0)
 	if not arg_4_0.settings.buff then
 		return
 	end
 
 	arg_4_0.buffDesc.text = ""
 
-	arg_4_0:AddTimer(var_1)
+	arg_4_0:AddTimer(arg_4_0.settings.buff)
 
 	return
 end
 
-function var_0_1.AddTimer(arg_5_0, arg_5_1)
+function var_0_0.AddTimer(arg_5_0, arg_5_1)
 	arg_5_0:RemoveTimer()
 
 	if arg_5_1:GetEndTime() <= 0 then
 		return
 	end
 
-	Timer = var_3
-	arg_5_0.timer = var_3.New(function()
-		pg = var_2_10000
+	arg_5_0.timer = Timer.New(function()
+		local var_6_0 = var_0 - pg.TimeMgr.GetInstance():GetServerTime()
 
-		local var_6_0 = var_2_10000.TimeMgr.GetInstance()
-		local var_6_1 = var_0.GetServerTime(var_6_0)
-		local var_6_3
+		if var_6_0 <= 0 then
+			arg_5_0:RemoveTimer()
 
-		if var_0 - var_6_1 <= 0 then
-			local var_6_2 = arg_5_0
-
-			var_6_3.RemoveTimer(var_6_2)
-
-			var_6_3 = arg_5_0.buffDesc
-			var_6_3.text = ""
+			arg_5_0.buffDesc.text = ""
 		else
-			pg = var_6_3
+			local var_6_1 = pg.TimeMgr.GetInstance()
 
-			local var_6_4 = var_6_3.TimeMgr.GetInstance()
-			local var_6_5 = var_2.DescCDTime(var_6_4, var_1)
-			local var_6_6 = arg_5_0.buffDesc
-			local var_6_7 = arg_5_1
-
-			var_6_6.text = var_4.GetName(var_6_7) .. ":" .. var_6_5
+			arg_5_0.buffDesc.text = arg_5_1:GetName() .. ":" .. var_6_1:DescCDTime(var_6_0)
 		end
 
 		return
 	end, 1, -1)
 
-	local var_5_0 = arg_5_0.timer
-
-	var_3.Start(var_5_0)
+	arg_5_0.timer:Start()
 	arg_5_0.timer.func()
 
 	return
 end
 
-function var_0_1.RemoveTimer(arg_7_0)
+function var_0_0.RemoveTimer(arg_7_0)
 	if arg_7_0.timer then
-		local var_7_0 = arg_7_0.timer
-
-		var_1.Stop(var_7_0)
+		arg_7_0.timer:Stop()
 
 		arg_7_0.timer = nil
 	end
@@ -99,11 +70,11 @@ function var_0_1.RemoveTimer(arg_7_0)
 	return
 end
 
-function var_0_1.OnHide(arg_8_0)
-	var_0_1.super.OnHide(arg_8_0)
+function var_0_0.OnHide(arg_8_0)
+	var_0_0.super.OnHide(arg_8_0)
 	arg_8_0:RemoveTimer()
 
 	return
 end
 
-return var_0_1
+return var_0_0

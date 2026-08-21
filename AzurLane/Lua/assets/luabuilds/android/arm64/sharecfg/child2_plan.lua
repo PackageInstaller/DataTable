@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_plan") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_plan"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_plan = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_plan
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_plan = rawget(pg, "child2_plan") or setmetatable({
+	__name = "child2_plan"
+}, confNEO)
+pg.child2_plan.all = {
 	1101,
 	1102,
 	1103,
@@ -97,11 +74,7 @@ var_0_3.all = {
 	1236,
 	1237
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_plan
-
-var_0_4.get_id_list_by_group_id = {
+pg.child2_plan.get_id_list_by_group_id = {
 	{
 		1101
 	},
@@ -241,25 +214,11 @@ var_0_4.get_id_list_by_group_id = {
 		1225
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child2_plan = {}
+pg.base = pg.base or {}
+pg.base.child2_plan = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_plan
-
-	var_1_0[1101] = {
+	pg.base.child2_plan[1101] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_1",
 		level = 1,
@@ -294,11 +253,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_plan
-
-	var_1_1[1102] = {
+	pg.base.child2_plan[1102] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_2",
 		level = 1,
@@ -333,11 +288,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_plan
-
-	var_1_2[1103] = {
+	pg.base.child2_plan[1103] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_3",
 		level = 1,
@@ -372,11 +323,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_plan
-
-	var_1_3[1104] = {
+	pg.base.child2_plan[1104] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_4",
 		level = 1,
@@ -411,11 +358,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_plan
-
-	var_1_4[1105] = {
+	pg.base.child2_plan[1105] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_5",
 		level = 1,
@@ -439,11 +382,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_plan
-
-	var_1_5[1106] = {
+	pg.base.child2_plan[1106] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_6",
 		level = 1,
@@ -467,11 +406,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_plan
-
-	var_1_6[1107] = {
+	pg.base.child2_plan[1107] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_7",
 		level = 1,
@@ -528,11 +463,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_plan
-
-	var_1_7[1108] = {
+	pg.base.child2_plan[1108] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_7",
 		level = 2,
@@ -589,11 +520,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_plan
-
-	var_1_8[1109] = {
+	pg.base.child2_plan[1109] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_7",
 		level = 3,
@@ -631,11 +558,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_plan
-
-	var_1_9[1110] = {
+	pg.base.child2_plan[1110] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_8",
 		level = 1,
@@ -692,11 +615,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_plan
-
-	var_1_10[1111] = {
+	pg.base.child2_plan[1111] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_8",
 		level = 2,
@@ -753,11 +672,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_plan
-
-	var_1_11[1112] = {
+	pg.base.child2_plan[1112] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_8",
 		level = 3,
@@ -795,11 +710,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_plan
-
-	var_1_12[1113] = {
+	pg.base.child2_plan[1113] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_9",
 		level = 1,
@@ -856,11 +767,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_plan
-
-	var_1_13[1114] = {
+	pg.base.child2_plan[1114] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_9",
 		level = 2,
@@ -917,11 +824,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_plan
-
-	var_1_14[1115] = {
+	pg.base.child2_plan[1115] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_9",
 		level = 3,
@@ -959,11 +862,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_plan
-
-	var_1_15[1116] = {
+	pg.base.child2_plan[1116] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_10",
 		level = 1,
@@ -1020,11 +919,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_plan
-
-	var_1_16[1117] = {
+	pg.base.child2_plan[1117] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_10",
 		level = 2,
@@ -1081,11 +976,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_plan
-
-	var_1_17[1118] = {
+	pg.base.child2_plan[1118] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_10",
 		level = 3,
@@ -1123,11 +1014,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_plan
-
-	var_1_18[1119] = {
+	pg.base.child2_plan[1119] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_12",
 		level = 1,
@@ -1151,11 +1038,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_plan
-
-	var_1_19[1122] = {
+	pg.base.child2_plan[1122] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_rectangle_11",
 		level = 1,
@@ -1179,11 +1062,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_plan
-
-	var_1_20[3001] = {
+	pg.base.child2_plan[3001] = {
 		replace_type_show = 2,
 		icon_rectangle = "plan_rectangle_15",
 		level = 1,
@@ -1207,11 +1086,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_plan
-
-	var_1_21[3002] = {
+	pg.base.child2_plan[3002] = {
 		replace_type_show = 2,
 		icon_rectangle = "plan_rectangle_15",
 		level = 2,
@@ -1235,11 +1110,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_plan
-
-	var_1_22[3003] = {
+	pg.base.child2_plan[3003] = {
 		replace_type_show = 2,
 		icon_rectangle = "plan_rectangle_15",
 		level = 3,
@@ -1263,11 +1134,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_plan
-
-	var_1_23[3107] = {
+	pg.base.child2_plan[3107] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_7",
 		level = 1,
@@ -1302,11 +1169,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_plan
-
-	var_1_24[3108] = {
+	pg.base.child2_plan[3108] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_7",
 		level = 2,
@@ -1341,11 +1204,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_plan
-
-	var_1_25[3109] = {
+	pg.base.child2_plan[3109] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_7",
 		level = 3,
@@ -1380,11 +1239,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_plan
-
-	var_1_26[3110] = {
+	pg.base.child2_plan[3110] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_8",
 		level = 1,
@@ -1419,11 +1274,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_plan
-
-	var_1_27[3111] = {
+	pg.base.child2_plan[3111] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_8",
 		level = 2,
@@ -1458,11 +1309,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_plan
-
-	var_1_28[3112] = {
+	pg.base.child2_plan[3112] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_8",
 		level = 3,
@@ -1497,11 +1344,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_plan
-
-	var_1_29[3113] = {
+	pg.base.child2_plan[3113] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_9",
 		level = 1,
@@ -1536,11 +1379,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_plan
-
-	var_1_30[3114] = {
+	pg.base.child2_plan[3114] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_9",
 		level = 2,
@@ -1575,11 +1414,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_plan
-
-	var_1_31[3115] = {
+	pg.base.child2_plan[3115] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_9",
 		level = 3,
@@ -1614,11 +1449,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_plan
-
-	var_1_32[3116] = {
+	pg.base.child2_plan[3116] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_10",
 		level = 1,
@@ -1653,11 +1484,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_plan
-
-	var_1_33[3117] = {
+	pg.base.child2_plan[3117] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_10",
 		level = 2,
@@ -1692,11 +1519,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_plan
-
-	var_1_34[3118] = {
+	pg.base.child2_plan[3118] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_rectangle_10",
 		level = 3,
@@ -1731,11 +1554,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_plan
-
-	var_1_35[1201] = {
+	pg.base.child2_plan[1201] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_1",
 		level = 1,
@@ -1770,11 +1589,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_plan
-
-	var_1_36[1202] = {
+	pg.base.child2_plan[1202] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_2",
 		level = 1,
@@ -1809,11 +1624,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_plan
-
-	var_1_37[1203] = {
+	pg.base.child2_plan[1203] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_3",
 		level = 1,
@@ -1848,11 +1659,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_plan
-
-	var_1_38[1204] = {
+	pg.base.child2_plan[1204] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_4",
 		level = 1,
@@ -1887,11 +1694,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_plan
-
-	var_1_39[1205] = {
+	pg.base.child2_plan[1205] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_5",
 		level = 1,
@@ -1915,11 +1718,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_plan
-
-	var_1_40[1206] = {
+	pg.base.child2_plan[1206] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_6",
 		level = 1,
@@ -1943,11 +1742,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_plan
-
-	var_1_41[1207] = {
+	pg.base.child2_plan[1207] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_7",
 		level = 1,
@@ -2004,11 +1799,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_plan
-
-	var_1_42[1208] = {
+	pg.base.child2_plan[1208] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_7",
 		level = 2,
@@ -2065,11 +1856,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_plan
-
-	var_1_43[1209] = {
+	pg.base.child2_plan[1209] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_7",
 		level = 3,
@@ -2107,11 +1894,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_plan
-
-	var_1_44[1210] = {
+	pg.base.child2_plan[1210] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_8",
 		level = 1,
@@ -2168,11 +1951,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_plan
-
-	var_1_45[1211] = {
+	pg.base.child2_plan[1211] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_8",
 		level = 2,
@@ -2229,11 +2008,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_plan
-
-	var_1_46[1212] = {
+	pg.base.child2_plan[1212] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_8",
 		level = 3,
@@ -2271,11 +2046,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_plan
-
-	var_1_47[1213] = {
+	pg.base.child2_plan[1213] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_9",
 		level = 1,
@@ -2332,11 +2103,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_plan
-
-	var_1_48[1214] = {
+	pg.base.child2_plan[1214] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_9",
 		level = 2,
@@ -2393,11 +2160,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_plan
-
-	var_1_49[1215] = {
+	pg.base.child2_plan[1215] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_9",
 		level = 3,
@@ -2435,11 +2198,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_plan
-
-	var_1_50[1216] = {
+	pg.base.child2_plan[1216] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_10",
 		level = 1,
@@ -2496,11 +2255,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_plan
-
-	var_1_51[1217] = {
+	pg.base.child2_plan[1217] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_10",
 		level = 2,
@@ -2557,11 +2312,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_plan
-
-	var_1_52[1218] = {
+	pg.base.child2_plan[1218] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_10",
 		level = 3,
@@ -2599,11 +2350,7 @@ var_0_4.base.child2_plan = {}
 			2
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_plan
-
-	var_1_53[1219] = {
+	pg.base.child2_plan[1219] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_12",
 		level = 1,
@@ -2627,11 +2374,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_plan
-
-	var_1_54[1222] = {
+	pg.base.child2_plan[1222] = {
 		replace_type_show = 1,
 		icon_rectangle = "plan_explorer_rectangle_11",
 		level = 1,
@@ -2655,11 +2398,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_plan
-
-	var_1_55[1223] = {
+	pg.base.child2_plan[1223] = {
 		replace_type_show = 2,
 		icon_rectangle = "plan_explorer_rectangle_15",
 		level = 1,
@@ -2683,11 +2422,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_plan
-
-	var_1_56[1224] = {
+	pg.base.child2_plan[1224] = {
 		replace_type_show = 2,
 		icon_rectangle = "plan_explorer_rectangle_15",
 		level = 2,
@@ -2711,11 +2446,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_plan
-
-	var_1_57[1225] = {
+	pg.base.child2_plan[1225] = {
 		replace_type_show = 2,
 		icon_rectangle = "plan_explorer_rectangle_15",
 		level = 3,
@@ -2739,11 +2470,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_plan
-
-	var_1_58[1226] = {
+	pg.base.child2_plan[1226] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_7",
 		level = 1,
@@ -2778,11 +2505,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_plan
-
-	var_1_59[1227] = {
+	pg.base.child2_plan[1227] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_7",
 		level = 2,
@@ -2817,11 +2540,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_plan
-
-	var_1_60[1228] = {
+	pg.base.child2_plan[1228] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_7",
 		level = 3,
@@ -2856,11 +2575,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_plan
-
-	var_1_61[1229] = {
+	pg.base.child2_plan[1229] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_8",
 		level = 1,
@@ -2895,11 +2610,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_plan
-
-	var_1_62[1230] = {
+	pg.base.child2_plan[1230] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_8",
 		level = 2,
@@ -2934,11 +2645,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_plan
-
-	var_1_63[1231] = {
+	pg.base.child2_plan[1231] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_8",
 		level = 3,
@@ -2973,11 +2680,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_plan
-
-	var_1_64[1232] = {
+	pg.base.child2_plan[1232] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_9",
 		level = 1,
@@ -3012,11 +2715,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_plan
-
-	var_1_65[1233] = {
+	pg.base.child2_plan[1233] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_9",
 		level = 2,
@@ -3051,11 +2750,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_plan
-
-	var_1_66[1234] = {
+	pg.base.child2_plan[1234] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_9",
 		level = 3,
@@ -3090,11 +2785,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_plan
-
-	var_1_67[1235] = {
+	pg.base.child2_plan[1235] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_10",
 		level = 1,
@@ -3129,11 +2820,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_plan
-
-	var_1_68[1236] = {
+	pg.base.child2_plan[1236] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_10",
 		level = 2,
@@ -3168,8 +2855,7 @@ var_0_4.base.child2_plan = {}
 		},
 		replace_type = {}
 	}
-	pg = var_1_68
-	var_1_68.base.child2_plan[1237] = {
+	pg.base.child2_plan[1237] = {
 		replace_type_show = 3,
 		icon_rectangle = "plan_explorer_rectangle_10",
 		level = 3,

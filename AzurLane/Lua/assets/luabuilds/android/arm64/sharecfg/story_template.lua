@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "story_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "story_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.story_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.story_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.story_template = rawget(pg, "story_template") or setmetatable({
+	__name = "story_template"
+}, confNEO)
+pg.story_template.all = {
 	4342,
 	4343,
 	4344,
@@ -51,27 +28,15 @@ var_0_3.all = {
 	6959,
 	6969,
 	6976,
-	6979
+	6979,
+	7922
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.story_template = {}
+pg.base = pg.base or {}
+pg.base.story_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.story_template
-
-	var_1_0[4342] = {
+	pg.base.story_template[4342] = {
+		drop_client = "",
 		name = "E0-1",
 		id = 4342,
 		icon = "story-doujichang",
@@ -81,11 +46,8 @@ var_0_3.base.story_template = {}
 			0.3
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.story_template
-
-	var_1_1[4343] = {
+	pg.base.story_template[4343] = {
+		drop_client = "",
 		name = "E0-2",
 		id = 4343,
 		icon = "story-doujichang",
@@ -95,11 +57,8 @@ var_0_3.base.story_template = {}
 			0.3
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.story_template
-
-	var_1_2[4344] = {
+	pg.base.story_template[4344] = {
+		drop_client = "",
 		name = "E0-3",
 		id = 4344,
 		icon = "story-doujichang",
@@ -109,11 +68,8 @@ var_0_3.base.story_template = {}
 			0.3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.story_template
-
-	var_1_3[4350] = {
+	pg.base.story_template[4350] = {
+		drop_client = "",
 		name = "E1-1",
 		id = 4350,
 		icon = "story-diluoyi",
@@ -123,11 +79,8 @@ var_0_3.base.story_template = {}
 			0.14
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.story_template
-
-	var_1_4[4351] = {
+	pg.base.story_template[4351] = {
+		drop_client = "",
 		name = "E1-2",
 		id = 4351,
 		icon = "story-diluoyi",
@@ -137,11 +90,8 @@ var_0_3.base.story_template = {}
 			0.136
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.story_template
-
-	var_1_5[4352] = {
+	pg.base.story_template[4352] = {
+		drop_client = "",
 		name = "E1-3",
 		id = 4352,
 		icon = "story-diluoyi",
@@ -151,11 +101,8 @@ var_0_3.base.story_template = {}
 			0.355
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.story_template
-
-	var_1_6[4353] = {
+	pg.base.story_template[4353] = {
+		drop_client = "",
 		name = "E1-4",
 		id = 4353,
 		icon = "story-diluoyi",
@@ -165,11 +112,8 @@ var_0_3.base.story_template = {}
 			0.296
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.story_template
-
-	var_1_7[4354] = {
+	pg.base.story_template[4354] = {
+		drop_client = "",
 		name = "E1-5",
 		id = 4354,
 		icon = "story-diluoyi",
@@ -179,11 +123,8 @@ var_0_3.base.story_template = {}
 			0.276
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.story_template
-
-	var_1_8[4355] = {
+	pg.base.story_template[4355] = {
+		drop_client = "",
 		name = "E1-6",
 		id = 4355,
 		icon = "story-diluoyi",
@@ -193,11 +134,8 @@ var_0_3.base.story_template = {}
 			0.412
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.story_template
-
-	var_1_9[4356] = {
+	pg.base.story_template[4356] = {
+		drop_client = "",
 		name = "E1-7",
 		id = 4356,
 		icon = "story-diluoyi",
@@ -207,11 +145,8 @@ var_0_3.base.story_template = {}
 			0.391
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.story_template
-
-	var_1_10[4368] = {
+	pg.base.story_template[4368] = {
+		drop_client = "",
 		name = "E2-1",
 		id = 4368,
 		icon = "story-xinhaota",
@@ -221,11 +156,8 @@ var_0_3.base.story_template = {}
 			0.114
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.story_template
-
-	var_1_11[4369] = {
+	pg.base.story_template[4369] = {
+		drop_client = "",
 		name = "E2-2",
 		id = 4369,
 		icon = "story-xinhaota",
@@ -235,11 +167,8 @@ var_0_3.base.story_template = {}
 			0.33
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.story_template
-
-	var_1_12[4370] = {
+	pg.base.story_template[4370] = {
+		drop_client = "",
 		name = "E2-3",
 		id = 4370,
 		icon = "story-xinhaota",
@@ -249,11 +178,8 @@ var_0_3.base.story_template = {}
 			0.341
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.story_template
-
-	var_1_13[4371] = {
+	pg.base.story_template[4371] = {
+		drop_client = "",
 		name = "E2-4",
 		id = 4371,
 		icon = "story-xinhaota",
@@ -263,11 +189,8 @@ var_0_3.base.story_template = {}
 			0.152
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.story_template
-
-	var_1_14[4372] = {
+	pg.base.story_template[4372] = {
+		drop_client = "",
 		name = "E2-5",
 		id = 4372,
 		icon = "story-xinhaota",
@@ -277,11 +200,8 @@ var_0_3.base.story_template = {}
 			0.176
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.story_template
-
-	var_1_15[4373] = {
+	pg.base.story_template[4373] = {
+		drop_client = "",
 		name = "E2-6",
 		id = 4373,
 		icon = "story-xinhaota",
@@ -291,11 +211,8 @@ var_0_3.base.story_template = {}
 			0.358
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.story_template
-
-	var_1_16[4374] = {
+	pg.base.story_template[4374] = {
+		drop_client = "",
 		name = "E2-7",
 		id = 4374,
 		icon = "story-xinhaota",
@@ -305,11 +222,8 @@ var_0_3.base.story_template = {}
 			0.447
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.story_template
-
-	var_1_17[6180] = {
+	pg.base.story_template[6180] = {
+		drop_client = "",
 		name = "E1-1",
 		id = 6180,
 		icon = "story-wurenji",
@@ -319,11 +233,8 @@ var_0_3.base.story_template = {}
 			0.49
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.story_template
-
-	var_1_18[6181] = {
+	pg.base.story_template[6181] = {
+		drop_client = "",
 		name = "E1-2",
 		id = 6181,
 		icon = "story-wurenji",
@@ -333,11 +244,8 @@ var_0_3.base.story_template = {}
 			0.1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.story_template
-
-	var_1_19[6182] = {
+	pg.base.story_template[6182] = {
+		drop_client = "",
 		name = "E1-3",
 		id = 6182,
 		icon = "story-wurenji",
@@ -347,11 +255,8 @@ var_0_3.base.story_template = {}
 			0.25
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.story_template
-
-	var_1_20[6183] = {
+	pg.base.story_template[6183] = {
+		drop_client = "",
 		name = "E1-4",
 		id = 6183,
 		icon = "story-xinghaizhuangzhi",
@@ -361,11 +266,8 @@ var_0_3.base.story_template = {}
 			0.4
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.story_template
-
-	var_1_21[6184] = {
+	pg.base.story_template[6184] = {
+		drop_client = "",
 		name = "E1-5",
 		id = 6184,
 		icon = "story-zhihuimao",
@@ -375,11 +277,8 @@ var_0_3.base.story_template = {}
 			0.4
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.story_template
-
-	var_1_22[6959] = {
+	pg.base.story_template[6959] = {
+		drop_client = "",
 		name = "SP",
 		id = 6959,
 		icon = "story-doujichang",
@@ -389,11 +288,8 @@ var_0_3.base.story_template = {}
 			0.3
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.story_template
-
-	var_1_23[6969] = {
+	pg.base.story_template[6969] = {
+		drop_client = "",
 		name = "SP",
 		id = 6969,
 		icon = "story-doujichang",
@@ -403,11 +299,8 @@ var_0_3.base.story_template = {}
 			0.3
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.story_template
-
-	var_1_24[6976] = {
+	pg.base.story_template[6976] = {
+		drop_client = "",
 		name = "SP",
 		id = 6976,
 		icon = "story-doujichang",
@@ -417,8 +310,8 @@ var_0_3.base.story_template = {}
 			0.3
 		}
 	}
-	pg = var_1_24
-	var_1_24.base.story_template[6979] = {
+	pg.base.story_template[6979] = {
+		drop_client = "",
 		name = "SP",
 		id = 6979,
 		icon = "story-doujichang",
@@ -426,6 +319,23 @@ var_0_3.base.story_template = {}
 		pos = {
 			0.5,
 			0.3
+		}
+	}
+	pg.base.story_template[7922] = {
+		name = "SP",
+		id = 7922,
+		icon = "story-doujichasng",
+		story = "BINHAIJISU22",
+		pos = {
+			0.5,
+			0.3
+		},
+		drop_client = {
+			{
+				2,
+				20001,
+				5
+			}
 		}
 	}
 

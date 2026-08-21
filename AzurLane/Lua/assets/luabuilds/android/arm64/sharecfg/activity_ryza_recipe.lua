@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ryza_recipe") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ryza_recipe"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ryza_recipe = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ryza_recipe
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ryza_recipe = rawget(pg, "activity_ryza_recipe") or setmetatable({
+	__name = "activity_ryza_recipe"
+}, confNEO)
+pg.activity_ryza_recipe.all = {
 	10,
 	20,
 	30,
@@ -87,25 +64,11 @@ var_0_3.all = {
 	1030,
 	1031
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_ryza_recipe = {}
+pg.base = pg.base or {}
+pg.base.activity_ryza_recipe = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ryza_recipe
-
-	var_1_0[10] = {
+	pg.base.activity_ryza_recipe[10] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为特殊兵装核心*2）</color>\n莱莎琳·斯托特使用的武器。\n散发强烈光芒的手杖。即使什么都不做也会持续闪烁耀眼光辉。沐浴在这道光芒中，不仅装备者，连四周的人都会感觉内心变得光明。",
 		prop_type = "",
@@ -134,11 +97,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			104
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ryza_recipe
-
-	var_1_1[20] = {
+	pg.base.activity_ryza_recipe[20] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为特殊兵装核心*2）</color>\n科洛蒂娅·巴兰茨使用的武器。\n射出的箭矢会在黑暗中如星星般闪耀，因此而得名。应该谁都不想在黑暗中被这种弓瞄准吧。",
 		prop_type = "",
@@ -167,11 +126,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			206
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ryza_recipe
-
-	var_1_2[30] = {
+	pg.base.activity_ryza_recipe[30] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为特殊兵装核心*2）</color>\n帕特莉夏·阿贝尔海姆使用的武器。\n据说这把剑具有意志，会自己选择使用者。如果没有高尚的灵魂，再厉害的高手都无法驾驭。",
 		prop_type = "",
@@ -201,11 +156,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			311
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ryza_recipe
-
-	var_1_3[40] = {
+	pg.base.activity_ryza_recipe[40] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为特殊兵装核心*2）</color>\n莉拉·德西亚斯使用的武器。\n欧兰族曾经使用的传统武器之一。据称，将武器背在身上，周遭居住的精灵便会赋予其力量。",
 		prop_type = "",
@@ -237,11 +188,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			411
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ryza_recipe
-
-	var_1_4[50] = {
+	pg.base.activity_ryza_recipe[50] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为特殊兵装核心*2）</color>\n赛莉·古劳斯使用的武器。\n据说曾被称为“花之贤者”的人物戴过的手环。佩戴者行走在路上，四周的花朵就会盛开，因此“花之贤者”的周围好像总是一片花田。",
 		prop_type = "",
@@ -271,11 +218,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			511
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ryza_recipe
-
-	var_1_5[60] = {
+	pg.base.activity_ryza_recipe[60] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为特殊兵装核心*2）</color>\n卡菈·伊迪亚斯使用的武器。\n奇形怪状的战锤。平坦的部分另一侧的造型纯粹是为了美观。",
 		prop_type = "",
@@ -307,11 +250,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			610
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ryza_recipe
-
-	var_1_6[70] = {
+	pg.base.activity_ryza_recipe[70] = {
 		rarity = 4,
 		display = "一种威力强大的火属性炸弹，使用后可以对敌人造成伤害。",
 		prop_type = "",
@@ -344,11 +283,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			714
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ryza_recipe
-
-	var_1_7[80] = {
+	pg.base.activity_ryza_recipe[80] = {
 		rarity = 4,
 		display = "一种威力强大的冰属性炸弹，使用后可以对敌人造成伤害。",
 		prop_type = "",
@@ -381,11 +316,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			812
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ryza_recipe
-
-	var_1_8[90] = {
+	pg.base.activity_ryza_recipe[90] = {
 		rarity = 4,
 		display = "一种威力强大的雷属性炸弹，使用后可以对敌人造成伤害。",
 		prop_type = "",
@@ -418,11 +349,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			905
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ryza_recipe
-
-	var_1_9[100] = {
+	pg.base.activity_ryza_recipe[100] = {
 		rarity = 4,
 		display = "一种威力强大的风属性炸弹，使用后可以对敌人造成伤害。",
 		prop_type = "",
@@ -454,11 +381,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1013
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ryza_recipe
-
-	var_1_10[110] = {
+	pg.base.activity_ryza_recipe[110] = {
 		rarity = 4,
 		display = "用力一敲就能让大地剧烈摇晃的槌子。大地摇晃时空气振动及天空传来鸣响的样子，让人联想到创世的景象，所以如此命名。",
 		prop_type = "",
@@ -492,11 +415,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1107
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ryza_recipe
-
-	var_1_11[120] = {
+	pg.base.activity_ryza_recipe[120] = {
 		rarity = 4,
 		display = "不需要枪管的子弹。将前端对准目标发射，子弹会先在上空盘旋，然后笔直地朝目标前进，在打中的瞬间爆炸。",
 		prop_type = "",
@@ -533,11 +452,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1210
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ryza_recipe
-
-	var_1_12[130] = {
+	pg.base.activity_ryza_recipe[130] = {
 		rarity = 4,
 		display = "一种威力强大的炸弹，使用后可以降低敌人的防御力。",
 		prop_type = "",
@@ -571,11 +486,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1307
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ryza_recipe
-
-	var_1_13[140] = {
+	pg.base.activity_ryza_recipe[140] = {
 		rarity = 4,
 		display = "一种威力强大的道具，使用后可以降低敌人属性，但使用时会消耗使用者的HP。",
 		prop_type = "",
@@ -617,11 +528,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1416
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ryza_recipe
-
-	var_1_14[150] = {
+	pg.base.activity_ryza_recipe[150] = {
 		rarity = 4,
 		display = "色调带有神秘感的羽衣。虽然是薄得可以一眼看透的布料，但展开之后可以保护自己不受任何攻击。",
 		prop_type = "",
@@ -661,11 +568,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1507
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ryza_recipe
-
-	var_1_15[160] = {
+	pg.base.activity_ryza_recipe[160] = {
 		rarity = 4,
 		display = "不仅能治好任何伤和疾病，就连死亡也能应对的超强力药剂。只有极少数的炼金术士才做得出来，被视为炼金术的终极技术之一。",
 		prop_type = "",
@@ -703,11 +606,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1612
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ryza_recipe
-
-	var_1_16[170] = {
+	pg.base.activity_ryza_recipe[170] = {
 		rarity = 4,
 		display = "可将意志化作音色的口琴。不仅吹奏的人，听到口琴音色的人也会被赋予各种力量。",
 		prop_type = "",
@@ -735,11 +634,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1705
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ryza_recipe
-
-	var_1_17[180] = {
+	pg.base.activity_ryza_recipe[180] = {
 		rarity = 4,
 		display = "可以获得一件随机的炼金工房风格外观装备",
 		prop_type = "",
@@ -773,11 +668,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1808
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ryza_recipe
-
-	var_1_18[190] = {
+	pg.base.activity_ryza_recipe[190] = {
 		rarity = 3,
 		display = "借助炼金术融合四把钥匙之后形成的类似门卡的装置，形状似乎能与核心之所大门上的凹槽完美对应。",
 		prop_type = "",
@@ -800,11 +691,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			1902
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ryza_recipe
-
-	var_1_19[200] = {
+	pg.base.activity_ryza_recipe[200] = {
 		rarity = 4,
 		display = "<color=#ff5c5c>（重复获得将自动转化为物资*2000）</color>\n利用从遗迹中回收的素材制作的精美雕塑，纪念这一段充满惊喜的秘密遗迹群岛冒险之旅。——「炼金术士与秘密遗迹群岛」活动纪念\n「……嗯，这也是桶子！」",
 		prop_type = "",
@@ -840,11 +727,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2012
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ryza_recipe
-
-	var_1_20[210] = {
+	pg.base.activity_ryza_recipe[210] = {
 		rarity = 2,
 		display = "小瓶中封存了以炼金术人工制造的精灵之力。可适应任何属性，却不易使用。",
 		prop_type = "",
@@ -865,11 +748,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2102
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ryza_recipe
-
-	var_1_21[220] = {
+	pg.base.activity_ryza_recipe[220] = {
 		rarity = 3,
 		display = "频繁出现在炼金术调合中的基础药剂。为红色液体，与火属性素材的契合度高。",
 		prop_type = "",
@@ -891,11 +770,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2202
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ryza_recipe
-
-	var_1_22[230] = {
+	pg.base.activity_ryza_recipe[230] = {
 		rarity = 3,
 		display = "频繁出现在炼金术调合中的基础药剂。为蓝色液体，与冰属性素材的契合度高。",
 		prop_type = "",
@@ -917,11 +792,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2302
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ryza_recipe
-
-	var_1_23[240] = {
+	pg.base.activity_ryza_recipe[240] = {
 		rarity = 3,
 		display = "频繁出现在炼金术调合中的基础药剂。为黄色液体，与雷属性素材的契合度高。",
 		prop_type = "",
@@ -943,11 +814,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2402
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ryza_recipe
-
-	var_1_24[250] = {
+	pg.base.activity_ryza_recipe[250] = {
 		rarity = 3,
 		display = "频繁出现在炼金术调合中的基础药剂。为绿色液体，与风属性素材的契合度高。",
 		prop_type = "",
@@ -969,11 +836,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2502
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ryza_recipe
-
-	var_1_25[260] = {
+	pg.base.activity_ryza_recipe[260] = {
 		rarity = 4,
 		display = "从四种元素核心制作而成的最高阶素材之一。具备全属性与高属性值，进行高阶调合时可派上用场。",
 		prop_type = "",
@@ -996,11 +859,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2604
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ryza_recipe
-
-	var_1_26[270] = {
+	pg.base.activity_ryza_recipe[270] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得炮击、航空、雷击属性提高的效果",
 		prop_type = "",
@@ -1027,11 +886,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2708
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ryza_recipe
-
-	var_1_27[280] = {
+	pg.base.activity_ryza_recipe[280] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得伤害降低的效果",
 		prop_type = "",
@@ -1058,11 +913,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2808
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ryza_recipe
-
-	var_1_28[290] = {
+	pg.base.activity_ryza_recipe[290] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得恢复耐久的效果",
 		prop_type = "",
@@ -1089,11 +940,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			2908
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ryza_recipe
-
-	var_1_29[300] = {
+	pg.base.activity_ryza_recipe[300] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得损伤管控的效果",
 		prop_type = "",
@@ -1120,11 +967,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			3008
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ryza_recipe
-
-	var_1_30[310] = {
+	pg.base.activity_ryza_recipe[310] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得点燃弹幕支援的效果",
 		prop_type = "",
@@ -1151,11 +994,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			3108
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ryza_recipe
-
-	var_1_31[320] = {
+	pg.base.activity_ryza_recipe[320] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得易伤弹幕支援的效果",
 		prop_type = "",
@@ -1182,11 +1021,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			3208
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ryza_recipe
-
-	var_1_32[330] = {
+	pg.base.activity_ryza_recipe[330] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得经验提升的效果",
 		prop_type = "",
@@ -1213,11 +1048,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			3308
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ryza_recipe
-
-	var_1_33[340] = {
+	pg.base.activity_ryza_recipe[340] = {
 		rarity = 4,
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得好感提升的效果",
 		prop_type = "",
@@ -1244,11 +1075,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			3408
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ryza_recipe
-
-	var_1_34[350] = {
+	pg.base.activity_ryza_recipe[350] = {
 		rarity = 3,
 		display = "兵装强化石，主要用于特殊兵装的制造、强化、突破。",
 		prop_type = "",
@@ -1269,11 +1096,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			3503
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ryza_recipe
-
-	var_1_35[1001] = {
+	pg.base.activity_ryza_recipe[1001] = {
 		rarity = 3,
 		display = "优米雅·利斯菲尔德使用的武器。\n为了将射击与打击的威力发挥到极限而制作的枪杖。上面有着以凝缩的玛那为光源的照明灯。",
 		prop_type = "",
@@ -1298,11 +1121,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10007
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ryza_recipe
-
-	var_1_36[1002] = {
+	pg.base.activity_ryza_recipe[1002] = {
 		rarity = 3,
 		display = "艾菈·冯·杜勒使用的武器。\n枪尖材质为宝石的长枪，可随时替换枪尖。",
 		prop_type = "",
@@ -1327,11 +1146,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10017
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ryza_recipe
-
-	var_1_37[1003] = {
+	pg.base.activity_ryza_recipe[1003] = {
 		rarity = 3,
 		display = "妮娜·弗里德使用的武器。\n尺寸便于使用的短枪和短剑，短剑轻巧锋利，但短枪的威力和后坐力较强。",
 		prop_type = "",
@@ -1356,11 +1171,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10027
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ryza_recipe
-
-	var_1_38[1004] = {
+	pg.base.activity_ryza_recipe[1004] = {
 		rarity = 3,
 		display = "蕾妮雅使用的武器。\n攻击方式更接近锯的武器，造成的伤势难以愈合，还很容易留下疤痕。",
 		prop_type = "",
@@ -1385,11 +1196,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10037
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ryza_recipe
-
-	var_1_39[1011] = {
+	pg.base.activity_ryza_recipe[1011] = {
 		rarity = 3,
 		display = "缠绕着火与雷两种力量的双头剑。熟练使用的话可以迅速发挥两种力量。",
 		prop_type = "",
@@ -1414,11 +1221,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10047
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ryza_recipe
-
-	var_1_40[1012] = {
+	pg.base.activity_ryza_recipe[1012] = {
 		rarity = 3,
 		display = "封印了强大风之力的魔导书，只要打开便可解放书中的力量。",
 		prop_type = "",
@@ -1443,11 +1246,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10057
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ryza_recipe
-
-	var_1_41[1013] = {
+	pg.base.activity_ryza_recipe[1013] = {
 		rarity = 3,
 		display = "绽放七彩光芒的大剑，兼具所有种类的力量。",
 		prop_type = "",
@@ -1472,11 +1271,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10067
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ryza_recipe
-
-	var_1_42[1014] = {
+	pg.base.activity_ryza_recipe[1014] = {
 		rarity = 3,
 		display = "映照着美丽花田与晴空的水晶球，具有可以治愈所有伤势的效果。",
 		prop_type = "",
@@ -1501,11 +1296,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10077
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ryza_recipe
-
-	var_1_43[1015] = {
+	pg.base.activity_ryza_recipe[1015] = {
 		rarity = 3,
 		display = "拥有再生之力的天球仪，中心的宝石蕴含治愈之力。",
 		prop_type = "",
@@ -1530,11 +1321,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10087
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ryza_recipe
-
-	var_1_44[1016] = {
+	pg.base.activity_ryza_recipe[1016] = {
 		rarity = 3,
 		display = "封印着太古时代可怕魔物的立方体，禁止擅自解除封印。",
 		prop_type = "",
@@ -1559,11 +1346,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10097
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ryza_recipe
-
-	var_1_45[1017] = {
+	pg.base.activity_ryza_recipe[1017] = {
 		rarity = 3,
 		display = "Ⅰ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = "",
@@ -1589,11 +1372,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10108
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ryza_recipe
-
-	var_1_46[1018] = {
+	pg.base.activity_ryza_recipe[1018] = {
 		rarity = 3,
 		display = "Ⅱ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = "",
@@ -1619,11 +1398,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10118
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ryza_recipe
-
-	var_1_47[1019] = {
+	pg.base.activity_ryza_recipe[1019] = {
 		rarity = 3,
 		display = "Ⅲ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = "",
@@ -1649,11 +1424,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10128
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ryza_recipe
-
-	var_1_48[1020] = {
+	pg.base.activity_ryza_recipe[1020] = {
 		rarity = 3,
 		display = "Ⅳ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = "",
@@ -1679,11 +1450,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10138
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ryza_recipe
-
-	var_1_49[1021] = {
+	pg.base.activity_ryza_recipe[1021] = {
 		rarity = 3,
 		display = "频繁运用于炼金术的基础药剂，红色中和剂与火属性具有良好的契合度。",
 		prop_type = "",
@@ -1704,11 +1471,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10143
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ryza_recipe
-
-	var_1_50[1022] = {
+	pg.base.activity_ryza_recipe[1022] = {
 		rarity = 3,
 		display = "频繁运用于炼金术的基础药剂，蓝色中和剂与冰属性具有良好的契合度。",
 		prop_type = "",
@@ -1729,11 +1492,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10153
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ryza_recipe
-
-	var_1_51[1023] = {
+	pg.base.activity_ryza_recipe[1023] = {
 		rarity = 3,
 		display = "频繁运用于炼金术的基础药剂，黄色中和剂与雷属性具有良好的契合度。",
 		prop_type = "",
@@ -1754,11 +1513,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10163
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ryza_recipe
-
-	var_1_52[1024] = {
+	pg.base.activity_ryza_recipe[1024] = {
 		rarity = 3,
 		display = "频繁运用于炼金术的基础药剂，绿色中和剂与风属性具有良好的契合度。",
 		prop_type = "",
@@ -1779,11 +1534,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10173
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ryza_recipe
-
-	var_1_53[1025] = {
+	pg.base.activity_ryza_recipe[1025] = {
 		rarity = 3,
 		display = "频繁用于炼金术的基础药剂。经过改良后，成了与任何素材均可高度契合的万能中和剂。",
 		prop_type = "",
@@ -1806,11 +1557,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10185
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ryza_recipe
-
-	var_1_54[1026] = {
+	pg.base.activity_ryza_recipe[1026] = {
 		rarity = 3,
 		display = "可以获得一件随机的炼金工房II风格外观装备",
 		prop_type = "",
@@ -1832,11 +1579,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10194
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ryza_recipe
-
-	var_1_55[1027] = {
+	pg.base.activity_ryza_recipe[1027] = {
 		rarity = 3,
 		display = "兵装强化石，主要用于特殊兵装的制造、强化、突破。",
 		prop_type = "",
@@ -1858,11 +1601,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10204
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ryza_recipe
-
-	var_1_56[1028] = {
+	pg.base.activity_ryza_recipe[1028] = {
 		rarity = 3,
 		display = "通用建筑材料，可用于建设任何木类建筑。",
 		prop_type = "",
@@ -1883,11 +1622,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10213
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ryza_recipe
-
-	var_1_57[1029] = {
+	pg.base.activity_ryza_recipe[1029] = {
 		rarity = 3,
 		display = "通用建筑素材，可用于制作任何石类建筑。",
 		prop_type = "",
@@ -1908,11 +1643,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10223
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ryza_recipe
-
-	var_1_58[1030] = {
+	pg.base.activity_ryza_recipe[1030] = {
 		rarity = 3,
 		display = "通用建筑素材，可用于制作任何金属类建筑。",
 		prop_type = "",
@@ -1933,8 +1664,7 @@ var_0_3.base.activity_ryza_recipe = {}
 			10233
 		}
 	}
-	pg = var_1_58
-	var_1_58.base.activity_ryza_recipe[1031] = {
+	pg.base.activity_ryza_recipe[1031] = {
 		rarity = 3,
 		display = "通用建筑素材，可用于制作任何植被类建筑。",
 		prop_type = "",

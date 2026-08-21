@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_round") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_round"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_round = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_round
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_round = rawget(pg, "child2_round") or setmetatable({
+	__name = "child2_round"
+}, confNEO)
+pg.child2_round.all = {
 	1,
 	2,
 	3,
@@ -107,11 +84,7 @@ var_0_3.all = {
 	259,
 	260
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_round
-
-var_0_4.get_id_list_by_character = {
+pg.child2_round.get_id_list_by_character = {
 	{
 		1,
 		2,
@@ -197,25 +170,11 @@ var_0_4.get_id_list_by_character = {
 		260
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child2_round = {}
+pg.base = pg.base or {}
+pg.base.child2_round = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_round
-
-	var_1_0[1] = {
+	pg.base.child2_round[1] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 0,
@@ -498,11 +457,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_round
-
-	var_1_1[2] = {
+	pg.base.child2_round[2] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -592,11 +547,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_round
-
-	var_1_2[3] = {
+	pg.base.child2_round[3] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -686,11 +637,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_round
-
-	var_1_3[4] = {
+	pg.base.child2_round[4] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -780,11 +727,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_round
-
-	var_1_4[5] = {
+	pg.base.child2_round[5] = {
 		target_id = 1,
 		benefit_select = "",
 		round_type = 1,
@@ -874,11 +817,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_round
-
-	var_1_5[6] = {
+	pg.base.child2_round[6] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -1177,11 +1116,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_round
-
-	var_1_6[7] = {
+	pg.base.child2_round[7] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -1271,11 +1206,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_round
-
-	var_1_7[8] = {
+	pg.base.child2_round[8] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -1365,11 +1296,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_round
-
-	var_1_8[9] = {
+	pg.base.child2_round[9] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -1468,11 +1395,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_round
-
-	var_1_9[10] = {
+	pg.base.child2_round[10] = {
 		target_id = 2,
 		benefit_select = "",
 		round_type = 1,
@@ -1562,11 +1485,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_round
-
-	var_1_10[11] = {
+	pg.base.child2_round[11] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -1865,11 +1784,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_round
-
-	var_1_11[12] = {
+	pg.base.child2_round[12] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -1950,11 +1865,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_round
-
-	var_1_12[13] = {
+	pg.base.child2_round[13] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -2044,11 +1955,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_round
-
-	var_1_13[14] = {
+	pg.base.child2_round[14] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -2138,11 +2045,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_round
-
-	var_1_14[15] = {
+	pg.base.child2_round[15] = {
 		target_id = 3,
 		benefit_select = "",
 		round_type = 1,
@@ -2232,11 +2135,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_round
-
-	var_1_15[16] = {
+	pg.base.child2_round[16] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -2502,11 +2401,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_round
-
-	var_1_16[17] = {
+	pg.base.child2_round[17] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -2596,11 +2491,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_round
-
-	var_1_17[18] = {
+	pg.base.child2_round[18] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -2681,11 +2572,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_round
-
-	var_1_18[19] = {
+	pg.base.child2_round[19] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -2775,11 +2662,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_round
-
-	var_1_19[20] = {
+	pg.base.child2_round[20] = {
 		target_id = 4,
 		benefit_select = "",
 		round_type = 1,
@@ -2869,11 +2752,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_round
-
-	var_1_20[101] = {
+	pg.base.child2_round[101] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -2965,11 +2844,7 @@ var_0_4.base.child2_round = {}
 			1000
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_round
-
-	var_1_21[102] = {
+	pg.base.child2_round[102] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -3059,11 +2934,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_round
-
-	var_1_22[103] = {
+	pg.base.child2_round[103] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -3162,11 +3033,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_round
-
-	var_1_23[104] = {
+	pg.base.child2_round[104] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -3247,11 +3114,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_round
-
-	var_1_24[105] = {
+	pg.base.child2_round[105] = {
 		target_id = 101,
 		benefit_select = "",
 		round_type = 1,
@@ -3341,11 +3204,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_round
-
-	var_1_25[106] = {
+	pg.base.child2_round[106] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -3553,11 +3412,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_round
-
-	var_1_26[107] = {
+	pg.base.child2_round[107] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -3647,11 +3502,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_round
-
-	var_1_27[108] = {
+	pg.base.child2_round[108] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -3741,11 +3592,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_round
-
-	var_1_28[109] = {
+	pg.base.child2_round[109] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -3835,11 +3682,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_round
-
-	var_1_29[110] = {
+	pg.base.child2_round[110] = {
 		target_id = 102,
 		benefit_select = "",
 		round_type = 1,
@@ -3929,11 +3772,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_round
-
-	var_1_30[111] = {
+	pg.base.child2_round[111] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -4141,11 +3980,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_round
-
-	var_1_31[112] = {
+	pg.base.child2_round[112] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -4226,11 +4061,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_round
-
-	var_1_32[113] = {
+	pg.base.child2_round[113] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -4320,11 +4151,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_round
-
-	var_1_33[114] = {
+	pg.base.child2_round[114] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -4405,11 +4232,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_round
-
-	var_1_34[115] = {
+	pg.base.child2_round[115] = {
 		target_id = 103,
 		benefit_select = "",
 		round_type = 1,
@@ -4499,11 +4322,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_round
-
-	var_1_35[116] = {
+	pg.base.child2_round[116] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -4702,11 +4521,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_round
-
-	var_1_36[117] = {
+	pg.base.child2_round[117] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -4796,11 +4611,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_round
-
-	var_1_37[118] = {
+	pg.base.child2_round[118] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -4881,11 +4692,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_round
-
-	var_1_38[119] = {
+	pg.base.child2_round[119] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -4966,11 +4773,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_round
-
-	var_1_39[120] = {
+	pg.base.child2_round[120] = {
 		target_id = 104,
 		benefit_select = "",
 		round_type = 1,
@@ -5060,11 +4863,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_round
-
-	var_1_40[151] = {
+	pg.base.child2_round[151] = {
 		target_id = 111,
 		benefit_select = "",
 		round_type = 2,
@@ -5145,11 +4944,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_round
-
-	var_1_41[152] = {
+	pg.base.child2_round[152] = {
 		target_id = 112,
 		benefit_select = "",
 		round_type = 2,
@@ -5230,11 +5025,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_round
-
-	var_1_42[153] = {
+	pg.base.child2_round[153] = {
 		target_id = 113,
 		benefit_select = "",
 		round_type = 2,
@@ -5315,11 +5106,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_round
-
-	var_1_43[154] = {
+	pg.base.child2_round[154] = {
 		target_id = 114,
 		benefit_select = "",
 		round_type = 2,
@@ -5400,11 +5187,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_round
-
-	var_1_44[155] = {
+	pg.base.child2_round[155] = {
 		target_id = 115,
 		benefit_select = "",
 		round_type = 2,
@@ -5485,11 +5268,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_round
-
-	var_1_45[156] = {
+	pg.base.child2_round[156] = {
 		target_id = 116,
 		benefit_select = "",
 		round_type = 2,
@@ -5570,11 +5349,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_round
-
-	var_1_46[157] = {
+	pg.base.child2_round[157] = {
 		target_id = 117,
 		benefit_select = "",
 		round_type = 2,
@@ -5655,11 +5430,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_round
-
-	var_1_47[158] = {
+	pg.base.child2_round[158] = {
 		target_id = 118,
 		benefit_select = "",
 		round_type = 2,
@@ -5740,11 +5511,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_round
-
-	var_1_48[159] = {
+	pg.base.child2_round[159] = {
 		target_id = 119,
 		benefit_select = "",
 		round_type = 2,
@@ -5825,11 +5592,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_round
-
-	var_1_49[160] = {
+	pg.base.child2_round[160] = {
 		target_id = 120,
 		benefit_select = "",
 		round_type = 2,
@@ -5910,11 +5673,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_round
-
-	var_1_50[201] = {
+	pg.base.child2_round[201] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6006,11 +5765,7 @@ var_0_4.base.child2_round = {}
 			1001
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_round
-
-	var_1_51[202] = {
+	pg.base.child2_round[202] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6100,11 +5855,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_round
-
-	var_1_52[203] = {
+	pg.base.child2_round[203] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6203,11 +5954,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_round
-
-	var_1_53[204] = {
+	pg.base.child2_round[204] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6288,11 +6035,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_round
-
-	var_1_54[205] = {
+	pg.base.child2_round[205] = {
 		target_id = 201,
 		benefit_select = "",
 		round_type = 1,
@@ -6382,11 +6125,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_round
-
-	var_1_55[206] = {
+	pg.base.child2_round[206] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -6630,11 +6369,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_round
-
-	var_1_56[207] = {
+	pg.base.child2_round[207] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6724,11 +6459,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_round
-
-	var_1_57[208] = {
+	pg.base.child2_round[208] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6818,11 +6549,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_round
-
-	var_1_58[209] = {
+	pg.base.child2_round[209] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -6912,11 +6639,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_round
-
-	var_1_59[210] = {
+	pg.base.child2_round[210] = {
 		target_id = 202,
 		benefit_select = "",
 		round_type = 1,
@@ -7006,11 +6729,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_round
-
-	var_1_60[211] = {
+	pg.base.child2_round[211] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -7254,11 +6973,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_round
-
-	var_1_61[212] = {
+	pg.base.child2_round[212] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -7339,11 +7054,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_round
-
-	var_1_62[213] = {
+	pg.base.child2_round[213] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -7433,11 +7144,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_round
-
-	var_1_63[214] = {
+	pg.base.child2_round[214] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -7518,11 +7225,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_round
-
-	var_1_64[215] = {
+	pg.base.child2_round[215] = {
 		target_id = 203,
 		benefit_select = "",
 		round_type = 1,
@@ -7612,11 +7315,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_round
-
-	var_1_65[216] = {
+	pg.base.child2_round[216] = {
 		target_id = 0,
 		round_type = 1,
 		map_mobility = 3,
@@ -7851,11 +7550,7 @@ var_0_4.base.child2_round = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_round
-
-	var_1_66[217] = {
+	pg.base.child2_round[217] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -7945,11 +7640,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_round
-
-	var_1_67[218] = {
+	pg.base.child2_round[218] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -8030,11 +7721,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_round
-
-	var_1_68[219] = {
+	pg.base.child2_round[219] = {
 		target_id = 0,
 		benefit_select = "",
 		round_type = 1,
@@ -8115,11 +7802,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child2_round
-
-	var_1_69[220] = {
+	pg.base.child2_round[220] = {
 		target_id = 204,
 		benefit_select = "",
 		round_type = 1,
@@ -8209,11 +7892,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child2_round
-
-	var_1_70[251] = {
+	pg.base.child2_round[251] = {
 		target_id = 211,
 		benefit_select = "",
 		round_type = 2,
@@ -8294,11 +7973,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child2_round
-
-	var_1_71[252] = {
+	pg.base.child2_round[252] = {
 		target_id = 212,
 		benefit_select = "",
 		round_type = 2,
@@ -8379,11 +8054,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child2_round
-
-	var_1_72[253] = {
+	pg.base.child2_round[253] = {
 		target_id = 213,
 		benefit_select = "",
 		round_type = 2,
@@ -8464,11 +8135,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child2_round
-
-	var_1_73[254] = {
+	pg.base.child2_round[254] = {
 		target_id = 214,
 		benefit_select = "",
 		round_type = 2,
@@ -8549,11 +8216,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child2_round
-
-	var_1_74[255] = {
+	pg.base.child2_round[255] = {
 		target_id = 215,
 		benefit_select = "",
 		round_type = 2,
@@ -8634,11 +8297,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child2_round
-
-	var_1_75[256] = {
+	pg.base.child2_round[256] = {
 		target_id = 216,
 		benefit_select = "",
 		round_type = 2,
@@ -8719,11 +8378,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child2_round
-
-	var_1_76[257] = {
+	pg.base.child2_round[257] = {
 		target_id = 217,
 		benefit_select = "",
 		round_type = 2,
@@ -8804,11 +8459,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child2_round
-
-	var_1_77[258] = {
+	pg.base.child2_round[258] = {
 		target_id = 218,
 		benefit_select = "",
 		round_type = 2,
@@ -8889,11 +8540,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child2_round
-
-	var_1_78[259] = {
+	pg.base.child2_round[259] = {
 		target_id = 219,
 		benefit_select = "",
 		round_type = 2,
@@ -8974,8 +8621,7 @@ var_0_4.base.child2_round = {}
 		},
 		main_event_chat_node_id = {}
 	}
-	pg = var_1_78
-	var_1_78.base.child2_round[260] = {
+	pg.base.child2_round[260] = {
 		target_id = 220,
 		benefit_select = "",
 		round_type = 2,

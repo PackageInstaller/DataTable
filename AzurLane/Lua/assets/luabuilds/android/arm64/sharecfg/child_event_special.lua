@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_event_special") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_event_special"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_event_special = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_event_special
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_event_special = rawget(pg, "child_event_special") or setmetatable({
+	__name = "child_event_special"
+}, confNEO)
+pg.child_event_special.all = {
 	101,
 	102,
 	103,
@@ -124,25 +101,11 @@ var_0_3.all = {
 	1717,
 	1718
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_event_special = {}
+pg.base = pg.base or {}
+pg.base.child_event_special = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_event_special
-
-	var_1_0[101] = {
+	pg.base.child_event_special[101] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "",
@@ -170,11 +133,7 @@ var_0_3.base.child_event_special = {}
 			107
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_event_special
-
-	var_1_1[102] = {
+	pg.base.child_event_special[102] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "",
@@ -202,11 +161,7 @@ var_0_3.base.child_event_special = {}
 			108
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_event_special
-
-	var_1_2[103] = {
+	pg.base.child_event_special[103] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "",
@@ -234,11 +189,7 @@ var_0_3.base.child_event_special = {}
 			109
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_event_special
-
-	var_1_3[104] = {
+	pg.base.child_event_special[104] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "水族馆之行",
@@ -266,11 +217,7 @@ var_0_3.base.child_event_special = {}
 			110
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_event_special
-
-	var_1_4[106] = {
+	pg.base.child_event_special[106] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "幼儿园开放日",
@@ -298,11 +245,7 @@ var_0_3.base.child_event_special = {}
 			112
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_event_special
-
-	var_1_5[108] = {
+	pg.base.child_event_special[108] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "校园运动会",
@@ -330,11 +273,7 @@ var_0_3.base.child_event_special = {}
 			114
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_event_special
-
-	var_1_6[109] = {
+	pg.base.child_event_special[109] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "修学旅行",
@@ -362,11 +301,7 @@ var_0_3.base.child_event_special = {}
 			115
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_event_special
-
-	var_1_7[110] = {
+	pg.base.child_event_special[110] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "夏日祭",
@@ -394,11 +329,7 @@ var_0_3.base.child_event_special = {}
 			116
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_event_special
-
-	var_1_8[111] = {
+	pg.base.child_event_special[111] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "露营前的准备",
@@ -426,11 +357,7 @@ var_0_3.base.child_event_special = {}
 			117
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_event_special
-
-	var_1_9[112] = {
+	pg.base.child_event_special[112] = {
 		child_attr2 = 0,
 		type = 1,
 		main_desc = "考前复习",
@@ -458,11 +385,7 @@ var_0_3.base.child_event_special = {}
 			118
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_event_special
-
-	var_1_10[114] = {
+	pg.base.child_event_special[114] = {
 		child_attr2 = 201,
 		type = 1,
 		main_desc = "游乐场之行",
@@ -490,11 +413,7 @@ var_0_3.base.child_event_special = {}
 			120
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_event_special
-
-	var_1_11[115] = {
+	pg.base.child_event_special[115] = {
 		child_attr2 = 203,
 		type = 1,
 		main_desc = "游乐场之行",
@@ -522,11 +441,7 @@ var_0_3.base.child_event_special = {}
 			121
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_event_special
-
-	var_1_12[116] = {
+	pg.base.child_event_special[116] = {
 		child_attr2 = 202,
 		type = 1,
 		main_desc = "游乐场之行",
@@ -554,11 +469,7 @@ var_0_3.base.child_event_special = {}
 			122
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_event_special
-
-	var_1_13[118] = {
+	pg.base.child_event_special[118] = {
 		child_attr2 = 201,
 		type = 1,
 		main_desc = "圣诞节",
@@ -586,11 +497,7 @@ var_0_3.base.child_event_special = {}
 			123
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_event_special
-
-	var_1_14[119] = {
+	pg.base.child_event_special[119] = {
 		child_attr2 = 203,
 		type = 1,
 		main_desc = "圣诞节",
@@ -618,11 +525,7 @@ var_0_3.base.child_event_special = {}
 			124
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_event_special
-
-	var_1_15[120] = {
+	pg.base.child_event_special[120] = {
 		child_attr2 = 202,
 		type = 1,
 		main_desc = "圣诞节",
@@ -650,11 +553,7 @@ var_0_3.base.child_event_special = {}
 			125
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_event_special
-
-	var_1_16[121] = {
+	pg.base.child_event_special[121] = {
 		child_attr2 = 201,
 		type = 1,
 		main_desc = "温泉之旅",
@@ -682,11 +581,7 @@ var_0_3.base.child_event_special = {}
 			126
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_event_special
-
-	var_1_17[122] = {
+	pg.base.child_event_special[122] = {
 		child_attr2 = 203,
 		type = 1,
 		main_desc = "温泉之旅",
@@ -714,11 +609,7 @@ var_0_3.base.child_event_special = {}
 			127
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_event_special
-
-	var_1_18[123] = {
+	pg.base.child_event_special[123] = {
 		child_attr2 = 202,
 		type = 1,
 		main_desc = "温泉之旅",
@@ -746,11 +637,7 @@ var_0_3.base.child_event_special = {}
 			128
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_event_special
-
-	var_1_19[124] = {
+	pg.base.child_event_special[124] = {
 		child_attr2 = 201,
 		type = 1,
 		main_desc = "毕业舞会",
@@ -778,11 +665,7 @@ var_0_3.base.child_event_special = {}
 			129
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_event_special
-
-	var_1_20[125] = {
+	pg.base.child_event_special[125] = {
 		child_attr2 = 203,
 		type = 1,
 		main_desc = "毕业舞会",
@@ -810,11 +693,7 @@ var_0_3.base.child_event_special = {}
 			130
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_event_special
-
-	var_1_21[126] = {
+	pg.base.child_event_special[126] = {
 		child_attr2 = 202,
 		type = 1,
 		main_desc = "毕业舞会",
@@ -842,11 +721,7 @@ var_0_3.base.child_event_special = {}
 			131
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_event_special
-
-	var_1_22[127] = {
+	pg.base.child_event_special[127] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -870,11 +745,7 @@ var_0_3.base.child_event_special = {}
 			153
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_event_special
-
-	var_1_23[128] = {
+	pg.base.child_event_special[128] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -898,11 +769,7 @@ var_0_3.base.child_event_special = {}
 			154
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_event_special
-
-	var_1_24[129] = {
+	pg.base.child_event_special[129] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -926,11 +793,7 @@ var_0_3.base.child_event_special = {}
 			155
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_event_special
-
-	var_1_25[130] = {
+	pg.base.child_event_special[130] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -954,11 +817,7 @@ var_0_3.base.child_event_special = {}
 			156
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_event_special
-
-	var_1_26[131] = {
+	pg.base.child_event_special[131] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -982,11 +841,7 @@ var_0_3.base.child_event_special = {}
 			157
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_event_special
-
-	var_1_27[132] = {
+	pg.base.child_event_special[132] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1010,11 +865,7 @@ var_0_3.base.child_event_special = {}
 			158
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_event_special
-
-	var_1_28[133] = {
+	pg.base.child_event_special[133] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1038,11 +889,7 @@ var_0_3.base.child_event_special = {}
 			159
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child_event_special
-
-	var_1_29[134] = {
+	pg.base.child_event_special[134] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1066,11 +913,7 @@ var_0_3.base.child_event_special = {}
 			160
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child_event_special
-
-	var_1_30[135] = {
+	pg.base.child_event_special[135] = {
 		child_attr2 = 201,
 		type = 3,
 		type_param = "",
@@ -1094,11 +937,7 @@ var_0_3.base.child_event_special = {}
 			161
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child_event_special
-
-	var_1_31[136] = {
+	pg.base.child_event_special[136] = {
 		child_attr2 = 203,
 		type = 3,
 		type_param = "",
@@ -1122,11 +961,7 @@ var_0_3.base.child_event_special = {}
 			162
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child_event_special
-
-	var_1_32[137] = {
+	pg.base.child_event_special[137] = {
 		child_attr2 = 202,
 		type = 3,
 		type_param = "",
@@ -1150,11 +985,7 @@ var_0_3.base.child_event_special = {}
 			163
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child_event_special
-
-	var_1_33[138] = {
+	pg.base.child_event_special[138] = {
 		child_attr2 = 201,
 		type = 3,
 		type_param = "",
@@ -1178,11 +1009,7 @@ var_0_3.base.child_event_special = {}
 			164
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child_event_special
-
-	var_1_34[139] = {
+	pg.base.child_event_special[139] = {
 		child_attr2 = 203,
 		type = 3,
 		type_param = "",
@@ -1206,11 +1033,7 @@ var_0_3.base.child_event_special = {}
 			165
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child_event_special
-
-	var_1_35[140] = {
+	pg.base.child_event_special[140] = {
 		child_attr2 = 202,
 		type = 3,
 		type_param = "",
@@ -1234,11 +1057,7 @@ var_0_3.base.child_event_special = {}
 			166
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child_event_special
-
-	var_1_36[141] = {
+	pg.base.child_event_special[141] = {
 		child_attr2 = 201,
 		type = 3,
 		type_param = "",
@@ -1262,11 +1081,7 @@ var_0_3.base.child_event_special = {}
 			167
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child_event_special
-
-	var_1_37[142] = {
+	pg.base.child_event_special[142] = {
 		child_attr2 = 203,
 		type = 3,
 		type_param = "",
@@ -1290,11 +1105,7 @@ var_0_3.base.child_event_special = {}
 			168
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child_event_special
-
-	var_1_38[143] = {
+	pg.base.child_event_special[143] = {
 		child_attr2 = 202,
 		type = 3,
 		type_param = "",
@@ -1318,11 +1129,7 @@ var_0_3.base.child_event_special = {}
 			169
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child_event_special
-
-	var_1_39[144] = {
+	pg.base.child_event_special[144] = {
 		child_attr2 = 201,
 		type = 3,
 		type_param = "",
@@ -1346,11 +1153,7 @@ var_0_3.base.child_event_special = {}
 			170
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child_event_special
-
-	var_1_40[145] = {
+	pg.base.child_event_special[145] = {
 		child_attr2 = 203,
 		type = 3,
 		type_param = "",
@@ -1374,11 +1177,7 @@ var_0_3.base.child_event_special = {}
 			171
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child_event_special
-
-	var_1_41[146] = {
+	pg.base.child_event_special[146] = {
 		child_attr2 = 202,
 		type = 3,
 		type_param = "",
@@ -1402,11 +1201,7 @@ var_0_3.base.child_event_special = {}
 			172
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child_event_special
-
-	var_1_42[147] = {
+	pg.base.child_event_special[147] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1430,11 +1225,7 @@ var_0_3.base.child_event_special = {}
 			173
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child_event_special
-
-	var_1_43[148] = {
+	pg.base.child_event_special[148] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1458,11 +1249,7 @@ var_0_3.base.child_event_special = {}
 			174
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child_event_special
-
-	var_1_44[149] = {
+	pg.base.child_event_special[149] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1486,11 +1273,7 @@ var_0_3.base.child_event_special = {}
 			175
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child_event_special
-
-	var_1_45[150] = {
+	pg.base.child_event_special[150] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1514,11 +1297,7 @@ var_0_3.base.child_event_special = {}
 			176
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child_event_special
-
-	var_1_46[151] = {
+	pg.base.child_event_special[151] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1542,11 +1321,7 @@ var_0_3.base.child_event_special = {}
 			177
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child_event_special
-
-	var_1_47[152] = {
+	pg.base.child_event_special[152] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1570,11 +1345,7 @@ var_0_3.base.child_event_special = {}
 			178
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child_event_special
-
-	var_1_48[153] = {
+	pg.base.child_event_special[153] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1598,11 +1369,7 @@ var_0_3.base.child_event_special = {}
 			179
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child_event_special
-
-	var_1_49[154] = {
+	pg.base.child_event_special[154] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1626,11 +1393,7 @@ var_0_3.base.child_event_special = {}
 			180
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child_event_special
-
-	var_1_50[155] = {
+	pg.base.child_event_special[155] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1654,11 +1417,7 @@ var_0_3.base.child_event_special = {}
 			181
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child_event_special
-
-	var_1_51[156] = {
+	pg.base.child_event_special[156] = {
 		child_attr2 = 0,
 		type = 3,
 		type_param = "",
@@ -1682,11 +1441,7 @@ var_0_3.base.child_event_special = {}
 			182
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child_event_special
-
-	var_1_52[1101] = {
+	pg.base.child_event_special[1101] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届厨神大赛",
@@ -1713,11 +1468,7 @@ var_0_3.base.child_event_special = {}
 			1105003
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child_event_special
-
-	var_1_53[1102] = {
+	pg.base.child_event_special[1102] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届厨神大赛",
@@ -1744,11 +1495,7 @@ var_0_3.base.child_event_special = {}
 			1106003
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child_event_special
-
-	var_1_54[1103] = {
+	pg.base.child_event_special[1103] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届厨神大赛",
@@ -1775,11 +1522,7 @@ var_0_3.base.child_event_special = {}
 			1107003
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child_event_special
-
-	var_1_55[1104] = {
+	pg.base.child_event_special[1104] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "美食坊试吃活动",
@@ -1805,11 +1548,7 @@ var_0_3.base.child_event_special = {}
 			1104002
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child_event_special
-
-	var_1_56[1105] = {
+	pg.base.child_event_special[1105] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "美食坊试吃活动",
@@ -1835,11 +1574,7 @@ var_0_3.base.child_event_special = {}
 			1104002
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child_event_special
-
-	var_1_57[1106] = {
+	pg.base.child_event_special[1106] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "美食坊试吃活动",
@@ -1865,11 +1600,7 @@ var_0_3.base.child_event_special = {}
 			1104002
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child_event_special
-
-	var_1_58[1107] = {
+	pg.base.child_event_special[1107] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "美食坊试吃活动",
@@ -1895,11 +1626,7 @@ var_0_3.base.child_event_special = {}
 			1104002
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child_event_special
-
-	var_1_59[1201] = {
+	pg.base.child_event_special[1201] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届钓鱼达人赛",
@@ -1926,11 +1653,7 @@ var_0_3.base.child_event_special = {}
 			1205003
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child_event_special
-
-	var_1_60[1202] = {
+	pg.base.child_event_special[1202] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届钓鱼达人赛",
@@ -1957,11 +1680,7 @@ var_0_3.base.child_event_special = {}
 			1206003
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child_event_special
-
-	var_1_61[1203] = {
+	pg.base.child_event_special[1203] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届钓鱼达人赛",
@@ -1988,11 +1707,7 @@ var_0_3.base.child_event_special = {}
 			1207003
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child_event_special
-
-	var_1_62[1301] = {
+	pg.base.child_event_special[1301] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届摄影大赛",
@@ -2019,11 +1734,7 @@ var_0_3.base.child_event_special = {}
 			1305003
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child_event_special
-
-	var_1_63[1302] = {
+	pg.base.child_event_special[1302] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "商业街乐队表演",
@@ -2049,11 +1760,7 @@ var_0_3.base.child_event_special = {}
 			1306003
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child_event_special
-
-	var_1_64[1303] = {
+	pg.base.child_event_special[1303] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届摄影大赛",
@@ -2080,11 +1787,7 @@ var_0_3.base.child_event_special = {}
 			1305003
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child_event_special
-
-	var_1_65[1304] = {
+	pg.base.child_event_special[1304] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届摄影大赛",
@@ -2111,11 +1814,7 @@ var_0_3.base.child_event_special = {}
 			1305003
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child_event_special
-
-	var_1_66[1305] = {
+	pg.base.child_event_special[1305] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "商业街乐队表演",
@@ -2141,11 +1840,7 @@ var_0_3.base.child_event_special = {}
 			1306003
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child_event_special
-
-	var_1_67[1306] = {
+	pg.base.child_event_special[1306] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "商业街乐队表演",
@@ -2171,11 +1866,7 @@ var_0_3.base.child_event_special = {}
 			1306003
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child_event_special
-
-	var_1_68[1307] = {
+	pg.base.child_event_special[1307] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "商业街乐队表演",
@@ -2201,11 +1892,7 @@ var_0_3.base.child_event_special = {}
 			1306003
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child_event_special
-
-	var_1_69[1401] = {
+	pg.base.child_event_special[1401] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届明日之星",
@@ -2232,11 +1919,7 @@ var_0_3.base.child_event_special = {}
 			1404003
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child_event_special
-
-	var_1_70[1402] = {
+	pg.base.child_event_special[1402] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届明日之星",
@@ -2263,11 +1946,7 @@ var_0_3.base.child_event_special = {}
 			1405003
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child_event_special
-
-	var_1_71[1403] = {
+	pg.base.child_event_special[1403] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届明日之星",
@@ -2294,11 +1973,7 @@ var_0_3.base.child_event_special = {}
 			1406003
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child_event_special
-
-	var_1_72[1601] = {
+	pg.base.child_event_special[1601] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届运动大赛",
@@ -2325,11 +2000,7 @@ var_0_3.base.child_event_special = {}
 			1603003
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child_event_special
-
-	var_1_73[1602] = {
+	pg.base.child_event_special[1602] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届运动大赛",
@@ -2356,11 +2027,7 @@ var_0_3.base.child_event_special = {}
 			1604003
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child_event_special
-
-	var_1_74[1603] = {
+	pg.base.child_event_special[1603] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届运动大赛",
@@ -2387,11 +2054,7 @@ var_0_3.base.child_event_special = {}
 			1605003
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child_event_special
-
-	var_1_75[1604] = {
+	pg.base.child_event_special[1604] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "精彩体育赛事举行",
@@ -2417,11 +2080,7 @@ var_0_3.base.child_event_special = {}
 			1606002
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child_event_special
-
-	var_1_76[1605] = {
+	pg.base.child_event_special[1605] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "精彩体育赛事举行",
@@ -2447,11 +2106,7 @@ var_0_3.base.child_event_special = {}
 			1606002
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child_event_special
-
-	var_1_77[1606] = {
+	pg.base.child_event_special[1606] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "精彩体育赛事举行",
@@ -2477,11 +2132,7 @@ var_0_3.base.child_event_special = {}
 			1606002
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child_event_special
-
-	var_1_78[1607] = {
+	pg.base.child_event_special[1607] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "精彩体育赛事举行",
@@ -2507,11 +2158,7 @@ var_0_3.base.child_event_special = {}
 			1606002
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child_event_special
-
-	var_1_79[1701] = {
+	pg.base.child_event_special[1701] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届文学大奖赛",
@@ -2538,11 +2185,7 @@ var_0_3.base.child_event_special = {}
 			1706103
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child_event_special
-
-	var_1_80[1702] = {
+	pg.base.child_event_special[1702] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届绘画大奖赛",
@@ -2569,11 +2212,7 @@ var_0_3.base.child_event_special = {}
 			1707103
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child_event_special
-
-	var_1_81[1703] = {
+	pg.base.child_event_special[1703] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第一届歌者之声大奖赛",
@@ -2600,11 +2239,7 @@ var_0_3.base.child_event_special = {}
 			1708103
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child_event_special
-
-	var_1_82[1704] = {
+	pg.base.child_event_special[1704] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "图书馆写作限时指导",
@@ -2630,11 +2265,7 @@ var_0_3.base.child_event_special = {}
 			1709002
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child_event_special
-
-	var_1_83[1705] = {
+	pg.base.child_event_special[1705] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "绘画教室限时指导",
@@ -2660,11 +2291,7 @@ var_0_3.base.child_event_special = {}
 			1710002
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child_event_special
-
-	var_1_84[1706] = {
+	pg.base.child_event_special[1706] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "声乐教室限时指导",
@@ -2690,11 +2317,7 @@ var_0_3.base.child_event_special = {}
 			1711002
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child_event_special
-
-	var_1_85[1707] = {
+	pg.base.child_event_special[1707] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届文学大奖赛",
@@ -2721,11 +2344,7 @@ var_0_3.base.child_event_special = {}
 			1706103
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child_event_special
-
-	var_1_86[1708] = {
+	pg.base.child_event_special[1708] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届文学大奖赛",
@@ -2752,11 +2371,7 @@ var_0_3.base.child_event_special = {}
 			1706103
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child_event_special
-
-	var_1_87[1709] = {
+	pg.base.child_event_special[1709] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届绘画大奖赛",
@@ -2783,11 +2398,7 @@ var_0_3.base.child_event_special = {}
 			1707103
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child_event_special
-
-	var_1_88[1710] = {
+	pg.base.child_event_special[1710] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届绘画大奖赛",
@@ -2814,11 +2425,7 @@ var_0_3.base.child_event_special = {}
 			1707103
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child_event_special
-
-	var_1_89[1711] = {
+	pg.base.child_event_special[1711] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第二届歌者之声大奖赛",
@@ -2845,11 +2452,7 @@ var_0_3.base.child_event_special = {}
 			1708103
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child_event_special
-
-	var_1_90[1712] = {
+	pg.base.child_event_special[1712] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "第三届歌者之声大奖赛",
@@ -2876,11 +2479,7 @@ var_0_3.base.child_event_special = {}
 			1708103
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child_event_special
-
-	var_1_91[1713] = {
+	pg.base.child_event_special[1713] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "图书馆写作限时指导",
@@ -2906,11 +2505,7 @@ var_0_3.base.child_event_special = {}
 			1709002
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child_event_special
-
-	var_1_92[1714] = {
+	pg.base.child_event_special[1714] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "绘画教室限时指导",
@@ -2936,11 +2531,7 @@ var_0_3.base.child_event_special = {}
 			1710002
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child_event_special
-
-	var_1_93[1715] = {
+	pg.base.child_event_special[1715] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "声乐教室限时指导",
@@ -2966,11 +2557,7 @@ var_0_3.base.child_event_special = {}
 			1711002
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child_event_special
-
-	var_1_94[1716] = {
+	pg.base.child_event_special[1716] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "图书馆写作限时指导",
@@ -2996,11 +2583,7 @@ var_0_3.base.child_event_special = {}
 			1709002
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child_event_special
-
-	var_1_95[1717] = {
+	pg.base.child_event_special[1717] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "绘画教室限时指导",
@@ -3026,8 +2609,7 @@ var_0_3.base.child_event_special = {}
 			1710002
 		}
 	}
-	pg = var_1_95
-	var_1_95.base.child_event_special[1718] = {
+	pg.base.child_event_special[1718] = {
 		child_attr2 = 0,
 		type = 2,
 		main_desc = "声乐教室限时指导",

@@ -50,6 +50,7 @@ function configUI(self)
     self.mTxtAddFavorable = self:getChildGO("mTxtAddFavorable"):GetComponent(ty.Text)
     self.mImgQualityBar = self:getChildGO("mImgQualityBar"):GetComponent(ty.Image)
     self.mBtnFavorable = self:getChildGO("mBtnFavorable")
+    self.mBtnStory = self:getChildGO("mBtnStory")
     self.mModelPlayer = ModelScenePlayer.new()
 end
 
@@ -123,6 +124,7 @@ end
 
 function initViewText(self)
     self:setBtnLabel(self.mBtnFavorable, nil, "档案")
+    self:setBtnLabel(self.mBtnStory, nil, _TT(41758))
 end
 
 function addAllUIEvent(self)
@@ -130,6 +132,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnLast, self.onClickHeroPreHandler)
     self:addUIEvent(self.mBtnNext, self.onClickHeroNextHandler)
     self:addUIEvent(self.mBtnBackList, self.onClickBackListHandler)
+    self:addUIEvent(self.mBtnStory, self.onClickStoryHandler)
 end
 
 function onClickHeroPreHandler(self)
@@ -156,6 +159,16 @@ function onClickHeroNextHandler(self)
         self.mUpLv = 0
         self:onUpdateFavorable()
     end
+end
+
+function onClickStoryHandler(self)
+    if not self.heroFavorableData.hasStory then
+        gs.Message.Show(_TT(41749))
+        return
+    end
+
+    self:setActiveArgs(self:getActiveArgs())
+    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_STORY_PANEL, { heroId = self.cusHeroId, heroTid = self.heroVo.tid })
 end
 
 -- 打开英雄选择界面
@@ -227,7 +240,16 @@ end
 
 function __updateModelView(self, heroVo)
     if (heroVo) then
-        self.mModelPlayer:setData(heroVo.id, true, 1, true, MainCityConst.ROLE_MODE_CULTIVATE, UrlManager:getBgPath("hero5/hero5_bg_4.png"))
+        self.mModelPlayer:setData(heroVo.id, true, 1, true, MainCityConst.ROLE_MODE_CULTIVATE, UrlManager:getBgPath("hero5/hero5_bg_4.png"), nil, false, function()
+
+            local data = fashion.FashionManager:getModelHarData(heroVo:getHeroModel())
+            if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                -- 替换材质球预览
+                self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                    self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                end)
+            end
+        end)
     else
         self:recoverModel(false)
     end
@@ -235,6 +257,10 @@ end
 
 function recoverModel(self, isResetMaincity)
     self.mModelPlayer:reset(isResetMaincity)
+    if self.mHarFrameSn then
+        LoopManager:removeFrameByIndex(self.mHarFrameSn)
+        self.mHarFrameSn = nil
+    end
 end
 
 function changeHero(self)
@@ -259,14 +285,26 @@ end
 function show(self)
     self.heroFavorableData = favorable.FavorableManager:getHeroFavorableData(self.heroVo.tid)
     self.numList = {}
+
+    self.mMaxLv = sysParam.SysParamManager:getValue(SysParamType.MAX_FAVORABLE_LV)
+
     local needExp = 0
     table.insert(self.numList, 0)
+
+    local heroIsPromise = self.heroVo.isPromise == 1
+
     for lv, data in pairs(self.heroFavorableData.favorableData) do
         needExp = data.favorableExp
-        if (data.favorableExp == 0) then
-            --等级所需经验为0说明已经满级
+        if heroIsPromise then
+            if data.favorableExp ~= 0 then
+                table.insert(self.numList, needExp)
+            end
         else
-            table.insert(self.numList, needExp)
+            if data.isPromise == 0 and lv < self.mMaxLv then
+                table.insert(self.numList, needExp)
+            elseif data.lv == self.mMaxLv then
+                table.insert(self.numList, 0)
+            end
         end
     end
 
@@ -291,7 +329,7 @@ function show(self)
     -- gs.TransQuick:SizeDelta01(self.mImgCVLine, math.ceil(#self.heroVo.zhCVName / 3) * 20)
 
     local function LoadExp()
-        self.mMaxLv = sysParam.SysParamManager:getValue(SysParamType.MAX_FAVORABLE_LV)
+
         local mMaxExp = self.heroFavorableData.favorableData[self.mMaxLv - 1].favorableExp
         self.isMaxExp = false
         if self.curFavorableExp == 0 and self.maxExp == self.numList[#self.numList] then
@@ -342,6 +380,8 @@ function show(self)
     self.mBtnNext:SetActive(self.heroList[index + 1] ~= nil)
 
     self:updateBubble(self.cusHeroId)
+
+    --self.mBtnStory:SetActive(self.heroFavorableData.hasStory)
 end
 
 function updatePreView(self)
@@ -458,6 +498,14 @@ function updateBubble(self, curHeroId)
     else
         RedPointManager:remove(self.mBtnFavorable.transform)
     end
+
+    local storyFlag = favorable.FavorableManager:getStoryRewardHasRed(curHeroId)
+    if storyFlag then
+        RedPointManager:add(self.mBtnStory.transform, nil, 40.5, 40.5)
+    else
+        RedPointManager:remove(self.mBtnStory.transform)
+    end
+
     if hero.HeroFlagManager:getAllFlagExceptHero(curHeroId, hero.HeroFlagManager.FLAG_BTN_FAVORABLE) then
         RedPointManager:add(self.mBtnBackList.transform, nil, 40.5, 40.5)
     else
@@ -473,6 +521,15 @@ function updateCaseBubble(self)
         self:addBubble(favorable.FavorableConst.HERO_FILE_CASE, 21, 57)
     else
         self:removeBubble(favorable.FavorableConst.HERO_FILE_CASE)
+    end
+end
+
+function updateHeroStoryBubble(self)
+    local isBubble = favorable.FavorableManager:getStoryRewardHasRed(self.cusHeroId)
+    if isBubble then
+        self:addBubble(favorable.FavorableConst.HERO_STORY, 21, 57)
+    else
+        self:removeBubble(favorable.FavorableConst.HERO_STORY)
     end
 end
 

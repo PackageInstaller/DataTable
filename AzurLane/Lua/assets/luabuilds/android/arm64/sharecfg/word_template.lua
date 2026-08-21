@@ -1,10 +1,8 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
 
-local var_0_0
+local var_0_0 = pg
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.word_template = {
+pg.word_template = {
 	subFolderName = "word_subList",
 	subList = {
 		"word_template_1",
@@ -4384,27 +4382,26 @@ var_0.word_template = {
 		彡 = 142
 	}
 }
-setmetatable = var_1
 
-var_1(var_0.word_template, {
+setmetatable(pg.word_template, {
 	__index = function(arg_1_0, arg_1_1)
 		if arg_1_1 == nil then
 			return nil
 		end
 
-		if var_0.word_template.indexs[arg_1_1] == nil then
+		local var_1_0 = var_0_0.word_template.indexs[arg_1_1]
+
+		if var_0_0.word_template.indexs[arg_1_1] == nil then
 			return nil
 		end
 
-		local var_1_0 = var_0.word_template.subList[var_2]
+		local var_1_1 = var_0_0.word_template.subList[var_1_0]
 
-		if var_0[var_1_0] == nil then
-			require = var_4
-
-			var_4("ShareCfg.word_subList." .. var_1_0)
+		if var_0_0[var_0_0.word_template.subList[var_1_0]] == nil then
+			require("ShareCfg.word_subList." .. var_1_1)
 		end
 
-		return var_0[var_1_0][arg_1_1]
+		return var_0_0[var_1_1][arg_1_1]
 	end
 })
 

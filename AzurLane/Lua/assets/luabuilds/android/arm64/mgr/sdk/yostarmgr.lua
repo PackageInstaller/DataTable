@@ -1,280 +1,86 @@
 ﻿local var_0_0 = {}
+local var_0_1 = YoStarSDKMgr.inst
 
-YoStarSDKMgr = var_0_10001
+;({}).YOSTAR_SDK_INITED = false
+;({}).OnYoStarPaying = -1
+;({}).BuyingLimit = 60
+;({}).isCache = false
+;({}).DeviceID = "-1"
+;({}).isAudit = false
+;({}).isPreAudit = false
+;({}).isPretest = false
+;({}).isGoogleSimulator = false
+;({}).isRelease = false
+;({}).LoginPlatform = PLATFORM_YOSTARJP
+;({}).SDK_PID_TEST = "JP-AZURLANE-TEST"
+;({}).SDK_PID_RELEASE = "JP-AZURLANE"
+;({}).SDK_SERVER_URL = "https://jp-sdk-api.yostarplat.com"
+;({}).SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
+;({}).InitJP = function()
+	var_0_0.isAudit = NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
+	var_0_0.isPreAudit = NetConst.GATEWAY_PORT == 30001 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp" or NetConst.GATEWAY_PORT == 21 and NetConst.GATEWAY_HOST == "blhxjpauditapi.azurlane.jp"
+	var_0_0.isPretest = IsUnityEditor or var_0_0.isPreAudit
+	var_0_0.isGoogleSimulator = NetConst.GATEWAY_PORT == 4001 and NetConst.GATEWAY_HOST == "business.azurlane.jp"
+	var_0_0.isRelease = NetConst.GATEWAY_PORT == 80 and NetConst.GATEWAY_HOST == "blhxjploginapi.azurlane.jp"
+	var_0_0.LoginPlatform = PLATFORM_YOSTARJP
+	var_0_0.SDK_PID_TEST = "JP-AZURLANE-TEST"
+	var_0_0.SDK_PID_RELEASE = "JP-AZURLANE"
+	var_0_0.SDK_SERVER_URL = "https://jp-sdk-api.yostarplat.com"
+	var_0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
 
-local var_0_1 = var_0_10001.inst
-
-var_0_0.YOSTAR_SDK_INITED = false
-var_0_0.OnYoStarPaying = -1
-var_0_0.BuyingLimit = 60
-var_0_0.isCache = false
-var_0_0.DeviceID = "-1"
-var_0_0.isAudit = false
-var_0_0.isPreAudit = false
-var_0_0.isPretest = false
-var_0_0.isGoogleSimulator = false
-var_0_0.isRelease = false
-PLATFORM_YOSTARJP = var_2
-var_0_0.LoginPlatform = var_2
-var_0_0.SDK_PID_TEST = "JP-AZURLANE-TEST"
-var_0_0.SDK_PID_RELEASE = "JP-AZURLANE"
-var_0_0.SDK_SERVER_URL = "https://jp-sdk-api.yostarplat.com"
-var_0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
-
-function var_0_0.InitJP()
-	local var_1_0 = var_0_0
-
-	NetConst = var_1_10001
-
-	if var_1_10001.GATEWAY_PORT == 20001 then
-		NetConst = var_1
-
-		local var_1_1
-
-		if var_1.GATEWAY_HOST ~= "blhxjpauditapi.azurlane.jp" then
-			var_1_1 = false
-		else
-			var_1_1 = true
-		end
-
-		var_1_0.isAudit = var_1_1
-
-		local var_1_2 = var_0_0
-
-		NetConst = var_1_1
-
-		if var_1_1.GATEWAY_PORT == 30001 then
-			NetConst = var_1
-
-			if var_1.GATEWAY_HOST ~= "blhxjpauditapi.azurlane.jp" then
-				NetConst = var_1
-
-				if var_1.GATEWAY_PORT == 21 then
-					NetConst = var_1
-
-					local var_1_3
-
-					if var_1.GATEWAY_HOST ~= "blhxjpauditapi.azurlane.jp" then
-						var_1_3 = false
-
-						goto label_1_0
-					end
-
-					var_1_3 = true
-
-					::label_1_0::
-
-					var_1_2.isPreAudit = var_1_3
-
-					local var_1_4 = var_0_0
-
-					IsUnityEditor = var_1_3
-					var_1_3 = var_1_3 or var_0_0.isPreAudit
-					var_1_4.isPretest = var_1_3
-
-					local var_1_5 = var_0_0
-
-					NetConst = var_1_3
-
-					if var_1_3.GATEWAY_PORT == 4001 then
-						NetConst = var_1
-
-						local var_1_6
-
-						if var_1.GATEWAY_HOST ~= "business.azurlane.jp" then
-							var_1_6 = false
-						else
-							var_1_6 = true
-						end
-
-						var_1_5.isGoogleSimulator = var_1_6
-
-						local var_1_7 = var_0_0
-
-						NetConst = var_1_6
-
-						if var_1_6.GATEWAY_PORT == 80 then
-							NetConst = var_1
-
-							local var_1_8
-
-							if var_1.GATEWAY_HOST ~= "blhxjploginapi.azurlane.jp" then
-								var_1_8 = false
-							else
-								var_1_8 = true
-							end
-
-							var_1_7.isRelease = var_1_8
-
-							local var_1_9 = var_0_0
-
-							PLATFORM_YOSTARJP = var_1_8
-							var_1_9.LoginPlatform = var_1_8
-							var_0_0.SDK_PID_TEST = "JP-AZURLANE-TEST"
-							var_0_0.SDK_PID_RELEASE = "JP-AZURLANE"
-							var_0_0.SDK_SERVER_URL = "https://jp-sdk-api.yostarplat.com"
-							var_0_0.SDK_TRANS_URL = "https://migration.yostar.co.jp?pid=JP-AZURLANE"
-
-							return
-						end
-					end
-				end
-			end
-		end
-	end
+	return
 end
+;({}).InitUS = function()
+	var_0_0.isAudit = NetConst.GATEWAY_PORT == 20001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
+	var_0_0.isPreAudit = NetConst.GATEWAY_PORT == 30001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
+	var_0_0.isPretest = IsUnityEditor or var_0_0.isPreAudit
+	var_0_0.isGoogleSimulator = NetConst.GATEWAY_PORT == 50001 and NetConst.GATEWAY_HOST == "audit.us.yo-star.com"
+	var_0_0.isRelease = NetConst.GATEWAY_PORT == 80 and NetConst.GATEWAY_HOST == "blhxusgate.yo-star.com"
+	var_0_0.LoginPlatform = PLATFORM_YOSTARUS
+	var_0_0.SDK_PID_TEST = ""
+	var_0_0.SDK_PID_RELEASE = ""
+	var_0_0.SDK_SERVER_URL = ""
+	var_0_0.SDK_TRANS_URL = ""
 
-function var_0_0.InitUS()
-	local var_2_0 = var_0_0
-
-	NetConst = var_1_10001
-
-	if var_1_10001.GATEWAY_PORT == 20001 then
-		NetConst = var_1
-
-		local var_2_1
-
-		if var_1.GATEWAY_HOST ~= "audit.us.yo-star.com" then
-			var_2_1 = false
-		else
-			var_2_1 = true
-		end
-
-		var_2_0.isAudit = var_2_1
-
-		local var_2_2 = var_0_0
-
-		NetConst = var_2_1
-
-		if var_2_1.GATEWAY_PORT == 30001 then
-			NetConst = var_1
-
-			local var_2_3
-
-			if var_1.GATEWAY_HOST ~= "audit.us.yo-star.com" then
-				var_2_3 = false
-			else
-				var_2_3 = true
-			end
-
-			var_2_2.isPreAudit = var_2_3
-
-			local var_2_4 = var_0_0
-
-			IsUnityEditor = var_2_3
-			var_2_3 = var_2_3 or var_0_0.isPreAudit
-			var_2_4.isPretest = var_2_3
-
-			local var_2_5 = var_0_0
-
-			NetConst = var_2_3
-
-			if var_2_3.GATEWAY_PORT == 50001 then
-				NetConst = var_1
-
-				local var_2_6
-
-				if var_1.GATEWAY_HOST ~= "audit.us.yo-star.com" then
-					var_2_6 = false
-				else
-					var_2_6 = true
-				end
-
-				var_2_5.isGoogleSimulator = var_2_6
-
-				local var_2_7 = var_0_0
-
-				NetConst = var_2_6
-
-				if var_2_6.GATEWAY_PORT == 80 then
-					NetConst = var_1
-
-					local var_2_8
-
-					if var_1.GATEWAY_HOST ~= "blhxusgate.yo-star.com" then
-						var_2_8 = false
-					else
-						var_2_8 = true
-					end
-
-					var_2_7.isRelease = var_2_8
-
-					local var_2_9 = var_0_0
-
-					PLATFORM_YOSTARUS = var_2_8
-					var_2_9.LoginPlatform = var_2_8
-					var_0_0.SDK_PID_TEST = ""
-					var_0_0.SDK_PID_RELEASE = ""
-					var_0_0.SDK_SERVER_URL = ""
-					var_0_0.SDK_TRANS_URL = ""
-
-					return
-				end
-			end
-		end
-	end
+	return
 end
-
-function var_0_0.CheckAudit()
-	NetConst = var_1_10000
-
-	return var_1_10000.getwayType == 1
+;({}).CheckAudit = function()
+	return NetConst.getwayType == 1
 end
-
-function var_0_0.CheckPreAudit()
+;({}).CheckPreAudit = function()
 	return var_0_0.isPreAudit
 end
-
-function var_0_0.CheckPretest()
+;({}).CheckPretest = function()
 	return var_0_0.isPretest
 end
-
-function var_0_0.CheckGoogleSimulator()
-	NetConst = var_1_10000
-
-	return var_1_10000.getwayType == 2
+;({}).CheckGoogleSimulator = function()
+	return NetConst.getwayType == 2
 end
-
-function var_0_0.CheckRelease()
-	NetConst = var_1_10000
-
-	return var_1_10000.getwayType == 0
+;({}).CheckRelease = function()
+	return NetConst.getwayType == 0
 end
-
-function var_0_0.CheckBiz()
-	NetConst = var_1_10000
-
-	return var_1_10000.getwayType == 3
+;({}).CheckBiz = function()
+	return NetConst.getwayType == 3
 end
-
-function var_0_0.GetLoginType()
+;({}).GetLoginType = function()
 	return var_0_1.loginType
 end
-
-function var_0_0.GetIsPlatform()
+;({}).GetIsPlatform = function()
 	return var_0_1.isPlatform
 end
-
-function var_0_0.GetChannelUID()
+;({}).GetChannelUID = function()
 	return var_0_1.channelUID
 end
-
-function var_0_0.GoSDkLoginScene()
-	local var_12_0 = var_0_1
-
-	var_0.GoLoginScene(var_12_0)
+;({}).GoSDkLoginScene = function()
+	var_0_1:GoLoginScene()
 	var_0_0.Init()
 
 	return
 end
 
-local function var_0_2()
-	IsUnityEditor = var_1_10000
-
-	if var_1_10000 then
-		onInit_YoStar = var_1_10000
-
-		var_1_10000({
+function GoLoginScene()
+	if IsUnityEditor then
+		onInit_YoStar({
 			R_CODE = 0
 		})
 	end
@@ -282,102 +88,60 @@ local function var_0_2()
 	return
 end
 
-local var_0_3 = GoLoginScene
-
-function var_0_0.EnterServer()
+;({}).EnterServer = function()
 	var_0_0.RoleInfoUpload()
 
 	return
 end
-
-function var_0_0.Survey(arg_15_0)
-	Application = var_1_10001
-
-	var_1_10001.OpenURL(arg_15_0)
+;({}).Survey = function(arg_15_0)
+	Application.OpenURL(arg_15_0)
 
 	return
 end
-
-function var_0_0.OnAndoridBackPress()
-	PressBack = var_1_10000
-
-	var_1_10000()
+;({}).OnAndoridBackPress = function()
+	PressBack()
 
 	return
 end
-
-function var_0_0.BindCPU()
+;({}).BindCPU = function()
 	return
 end
-
-function var_0_0.CheckYoStarCanBuy()
-	if var_0_0.OnYoStarPaying ~= -1 then
-		Time = var_0
-
-		if var_0.realtimeSinceStartup - var_0_0.OnYoStarPaying > var_0_0.BuyingLimit then
-			return true
-		else
-			return false
-		end
-
-		return
+;({}).CheckYoStarCanBuy = function()
+	if var_0_0.OnYoStarPaying == -1 or Time.realtimeSinceStartup - var_0_0.OnYoStarPaying > var_0_0.BuyingLimit then
+		return true
+	else
+		return false
 	end
-end
 
-function var_0_0.OnAppPauseForSDK(arg_19_0)
+	return
+end
+;({}).OnAppPauseForSDK = function(arg_19_0)
 	if not var_0_0.YOSTAR_SDK_INITED then
 		return
 	end
 
 	if arg_19_0 then
-		local var_19_0 = var_0_1
-
-		var_1.OnPause(var_19_0)
+		var_0_1:OnPause()
 	else
-		local var_19_1 = var_0_1
-
-		var_1.OnResume(var_19_1)
+		var_0_1:OnResume()
 	end
 
 	return
 end
-
-function var_0_0.YoStarGoLogin(arg_20_0)
-	pg = var_1_10001
-
-	local var_20_0 = var_1_10001.m02
-	local var_20_1 = var_1.sendNotification
-
-	GAME = var_1_10004
-
-	local var_20_2 = var_1_10004.GO_SCENE
-
-	SCENE = var_1_10005
-
-	var_20_1(var_20_0, var_20_2, var_1_10005.LOGIN, {
+;({}).YoStarGoLogin = function(arg_20_0)
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LOGIN, {
 		loginPlatform = arg_20_0
 	})
-
-	gcAll = var_20_1
-
-	var_20_1()
+	gcAll()
 
 	return
 end
-
-function var_0_0.GetDeviceId()
+;({}).GetDeviceId = function()
 	return var_0_0.DeviceID
 end
-
-function var_0_0.CheckHadAccountCache()
+;({}).CheckHadAccountCache = function()
 	if var_0_0.GetIsPlatform() then
-		local var_22_0
-
-		if not var_0_0.CheckUserCacheExist() then
-			var_22_0 = var_0_0.isCache
-		end
-
-		return var_22_0
+		return var_0_0.CheckUserCacheExist() or var_0_0.isCache
 	else
 		return true
 	end
@@ -387,42 +151,24 @@ end
 
 ;(function()
 	function var_0_0.Init(arg_24_0)
-		pg = var_2_10001
-
-		local var_24_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOn(var_24_0)
+		pg.UIMgr.GetInstance():LoadingOn()
 
 		if var_0_0.GetIsPlatform() then
-			local var_24_1 = var_0_1
-			local var_24_2
+			if var_0_0.CheckRelease() or var_0_0.CheckAudit() then
+				var_0_1.pid = var_0_0.SDK_PID_RELEASE or var_0_0.SDK_PID_TEST
+				var_0_1.gameServerUrl = var_0_0.SDK_SERVER_URL
 
-			if not var_0_0.CheckRelease() and not var_0_0.CheckAudit() or not var_0_0.SDK_PID_RELEASE then
-				var_24_2 = var_0_0.SDK_PID_TEST
+				var_0_1:Init()
+
+				return
 			end
-
-			var_24_1.pid = var_24_2
-			var_0_1.gameServerUrl = var_0_0.SDK_SERVER_URL
-
-			local var_24_3 = var_0_1
-
-			var_1.Init(var_24_3)
 		end
-
-		return
 	end
 
 	function var_0_0.Login()
 		if var_0_0.GetIsPlatform() then
-			pg = var_0
-
-			local var_25_0 = var_0.UIMgr.GetInstance()
-
-			var_0.LoadingOn(var_25_0)
-
-			local var_25_1 = var_0_1
-
-			var_0.Login(var_25_1)
+			pg.UIMgr.GetInstance():LoadingOn()
+			var_0_1:Login()
 		end
 
 		return
@@ -430,9 +176,7 @@ end
 
 	function var_0_0.SetBirthday()
 		if var_0_0.GetIsPlatform() then
-			local var_26_0 = var_0_1
-
-			var_0.SetBirthday(var_26_0)
+			var_0_1:SetBirthday()
 		end
 
 		return
@@ -440,9 +184,7 @@ end
 
 	function var_0_0.ShowUserCenter()
 		if var_0_0.GetIsPlatform() then
-			local var_27_0 = var_0_1
-
-			var_0.ShowUserCenter(var_27_0)
+			var_0_1:ShowUserCenter()
 		end
 
 		return
@@ -450,20 +192,11 @@ end
 
 	function var_0_0.Pay(arg_28_0, arg_28_1, arg_28_2)
 		if var_0_0.GetIsPlatform() then
-			pg = var_3
+			pg.UIMgr.GetInstance():LoadingOn()
 
-			local var_28_0 = var_3.UIMgr.GetInstance()
+			var_0_0.OnYoStarPaying = Time.realtimeSinceStartup
 
-			var_3.LoadingOn(var_28_0)
-
-			local var_28_1 = var_0_0
-
-			Time = var_2_10004
-			var_28_1.OnYoStarPaying = var_2_10004.realtimeSinceStartup
-
-			local var_28_2 = var_0_1
-
-			var_3.Pay(var_28_2, arg_28_0, arg_28_1, arg_28_2)
+			var_0_1:Pay(arg_28_0, arg_28_1, arg_28_2)
 		end
 
 		return
@@ -471,9 +204,7 @@ end
 
 	function var_0_0.ShowAihelp()
 		if var_0_0.GetIsPlatform() then
-			local var_29_0 = var_0_1
-
-			var_0.ShowAihelp(var_29_0)
+			var_0_1:ShowAihelp()
 		end
 
 		return
@@ -481,9 +212,7 @@ end
 
 	function var_0_0.UserEventUpload(arg_30_0)
 		if var_0_0.GetIsPlatform() then
-			local var_30_0 = var_0_1
-
-			var_1.UserEventUpload(var_30_0, arg_30_0)
+			var_0_1:UserEventUpload(arg_30_0)
 		end
 
 		return
@@ -491,42 +220,12 @@ end
 
 	function var_0_0.RoleInfoUpload()
 		if var_0_0.GetIsPlatform() then
-			getProxy = var_0
-			PlayerProxy = var_2_10002
+			local var_31_0 = getProxy(PlayerProxy):getData()
+			local var_31_1 = getProxy(ServerProxy):getLastServer(getProxy(UserProxy):getData().uid)
 
-			local var_31_0 = var_0(var_2_10002)
-			local var_31_1 = var_0.getData(var_31_0)
-
-			getProxy = var_2_10002
-			UserProxy = var_2_10004
-
-			local var_31_2 = var_2_10002(var_2_10004)
-			local var_31_3 = var_2.getData(var_31_2)
-
-			getProxy = var_2_10004
-			ServerProxy = var_2_10006
-
-			local var_31_4 = var_2_10004(var_2_10006)
-			local var_31_5 = var_4.getLastServer(var_31_4, var_31_3.uid)
-
-			tostring = var_2_10006
-
-			local var_31_6 = var_2_10006(var_31_5.id .. " - " .. var_31_5.name)
-
-			tostring = var_31_4
-
-			local var_31_7 = var_31_4(var_31_1.id)
-			local var_31_8 = var_31_1.name
-			local var_31_9 = {}
-
-			tostring = var_10
-			var_31_9[1] = var_10(var_31_1.rmb)
-			YoStarRoleInfo = var_10
-
-			local var_31_10 = var_10.New(var_31_6, var_31_7, var_31_8, var_31_9)
-			local var_31_11 = var_0_1
-
-			var_11.RoleInfoUpload(var_31_11, var_31_10)
+			var_0_1:RoleInfoUpload((YoStarRoleInfo.New(tostring(var_31_1.id .. " - " .. var_31_1.name), tostring(var_31_0.id), var_31_0.name, {
+				(tostring(var_31_0.rmb))
+			})))
 		end
 
 		return
@@ -534,18 +233,7 @@ end
 
 	function var_0_0.ShowSurvey(arg_32_0, arg_32_1)
 		if var_0_0.GetIsPlatform() then
-			getProxy = var_2
-			PlayerProxy = var_2_10004
-
-			local var_32_0 = var_2(var_2_10004)
-			local var_32_1 = var_2.getData(var_32_0)
-			local var_32_2 = var_0_1
-			local var_32_3 = var_4.ShowSurvey
-			local var_32_4 = arg_32_0
-
-			tostring = var_2_10008
-
-			var_32_3(var_32_2, var_32_4, var_2_10008(var_32_1.id), arg_32_1)
+			var_0_1:ShowSurvey(arg_32_0, tostring(getProxy(PlayerProxy):getData().id), arg_32_1)
 		end
 
 		return
@@ -553,9 +241,7 @@ end
 
 	function var_0_0.ShowAgreement(arg_33_0)
 		if var_0_0.GetIsPlatform() then
-			local var_33_0 = var_0_1
-
-			var_1.ShowSurvey(var_33_0, arg_33_0)
+			var_0_1:ShowSurvey(arg_33_0)
 		end
 
 		return
@@ -563,9 +249,7 @@ end
 
 	function var_0_0.ShowSwitchAccount()
 		if var_0_0.GetIsPlatform() then
-			local var_34_0 = var_0_1
-
-			var_0.ShowSwitchAccount(var_34_0)
+			var_0_1:ShowSwitchAccount()
 		end
 
 		return
@@ -573,9 +257,7 @@ end
 
 	function var_0_0.SystemShare(arg_35_0, arg_35_1)
 		if var_0_0.GetIsPlatform() then
-			local var_35_0 = var_0_1
-
-			var_2.SystemShare(var_35_0, arg_35_0, arg_35_1)
+			var_0_1:SystemShare(arg_35_0, arg_35_1)
 		end
 
 		return
@@ -583,9 +265,7 @@ end
 
 	function var_0_0.ShareImage(arg_36_0)
 		if var_0_0.GetIsPlatform() then
-			local var_36_0 = var_0_1
-
-			var_1.ShareImage(var_36_0, arg_36_0)
+			var_0_1:ShareImage(arg_36_0)
 		end
 
 		return
@@ -593,9 +273,7 @@ end
 
 	function var_0_0.ShareUrl(arg_37_0, arg_37_1)
 		if var_0_0.GetIsPlatform() then
-			local var_37_0 = var_0_1
-
-			var_2.ShareUrl(var_37_0, arg_37_0, arg_37_1)
+			var_0_1:ShareUrl(arg_37_0, arg_37_1)
 		end
 
 		return
@@ -603,9 +281,7 @@ end
 
 	function var_0_0.ShowNetworkTest(arg_38_0)
 		if var_0_0.GetIsPlatform() then
-			local var_38_0 = var_0_1
-
-			var_1.ShowNetworkTest(var_38_0, arg_38_0)
+			var_0_1:ShowNetworkTest(arg_38_0)
 		end
 
 		return
@@ -613,9 +289,7 @@ end
 
 	function var_0_0.ShowWebView(arg_39_0, arg_39_1)
 		if var_0_0.GetIsPlatform() then
-			local var_39_0 = var_0_1
-
-			var_2.ShowWebView(var_39_0, arg_39_0, arg_39_1)
+			var_0_1:ShowWebView(arg_39_0, arg_39_1)
 		end
 
 		return
@@ -623,9 +297,7 @@ end
 
 	function var_0_0.RequestStoreReview()
 		if var_0_0.GetIsPlatform() then
-			local var_40_0 = var_0_1
-
-			var_0.RequestStoreReview(var_40_0)
+			var_0_1:RequestStoreReview()
 		end
 
 		return
@@ -633,9 +305,7 @@ end
 
 	function var_0_0.QueryErrorMsg(arg_41_0)
 		if var_0_0.GetIsPlatform() then
-			local var_41_0 = var_0_1
-
-			return var_1.QueryErrorMsg(var_41_0, arg_41_0)
+			return var_0_1:QueryErrorMsg(arg_41_0)
 		end
 
 		return
@@ -643,9 +313,7 @@ end
 
 	function var_0_0.QuerySkuDetails(arg_42_0)
 		if var_0_0.GetIsPlatform() then
-			local var_42_0 = var_0_1
-
-			var_1.QuerySkuDetails(var_42_0)
+			var_0_1:QuerySkuDetails()
 		end
 
 		return
@@ -653,9 +321,7 @@ end
 
 	function var_0_0.QueryTextLegality(arg_43_0)
 		if var_0_0.GetIsPlatform() then
-			local var_43_0 = var_0_1
-
-			var_1.QueryTextLegality(var_43_0, arg_43_0)
+			var_0_1:QueryTextLegality(arg_43_0)
 		end
 
 		return
@@ -663,9 +329,7 @@ end
 
 	function var_0_0.ShowAccountCenter()
 		if var_0_0.GetIsPlatform() then
-			local var_44_0 = var_0_1
-
-			var_0.ShowAccountCenter(var_44_0)
+			var_0_1:ShowAccountCenter()
 		end
 
 		return
@@ -673,9 +337,7 @@ end
 
 	function var_0_0.FetchDeviceTrackingID()
 		if var_0_0.GetIsPlatform() then
-			local var_45_0 = var_0_1
-
-			var_0.FetchDeviceTrackingID(var_45_0)
+			var_0_1:FetchDeviceTrackingID()
 		end
 
 		return
@@ -683,9 +345,7 @@ end
 
 	function var_0_0.CheckUserCacheExist()
 		if var_0_0.GetIsPlatform() then
-			local var_46_0 = var_0_1
-
-			var_0.CheckUserCacheExist(var_46_0)
+			var_0_1:CheckUserCacheExist()
 		end
 
 		return
@@ -693,9 +353,7 @@ end
 
 	function var_0_0.BuildLocalNotification(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
 		if var_0_0.GetIsPlatform() then
-			local var_47_0 = var_0_1
-
-			var_4.BuildLocalNotification(var_47_0, arg_47_0, arg_47_1, arg_47_2, arg_47_3)
+			var_0_1:BuildLocalNotification(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
 		end
 
 		return
@@ -703,9 +361,7 @@ end
 
 	function var_0_0.DeleteLocalNotification(arg_48_0)
 		if var_0_0.GetIsPlatform() then
-			local var_48_0 = var_0_1
-
-			var_1.DeleteLocalNotification(var_48_0, arg_48_0)
+			var_0_1:DeleteLocalNotification(arg_48_0)
 		end
 
 		return
@@ -714,12 +370,8 @@ end
 	return
 end)()
 ;(function()
-	local function var_49_0(arg_50_0)
-		pg = var_2_10001
-
-		local var_50_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOff(var_50_0)
+	function onInit_YoStar(arg_50_0)
+		pg.UIMgr.GetInstance():LoadingOff()
 
 		if var_0_0.YoStarRetCodeHandler(arg_50_0) then
 			var_0_0.YOSTAR_SDK_INITED = true
@@ -731,52 +383,26 @@ end)()
 		return
 	end
 
-	local var_49_1 = onInit_YoStar
-
-	local function var_49_2(arg_51_0)
-		pg = var_2_10001
-
-		local var_51_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOff(var_51_0)
+	function onLogin_YoStar(arg_51_0)
+		pg.UIMgr.GetInstance():LoadingOff()
 
 		if var_0_0.YoStarRetCodeHandler(arg_51_0) then
-			User = var_1
-
-			local var_51_1 = var_1.New({
-				type = 1,
-				arg1 = var_0_0.LoginPlatform,
-				arg2 = arg_51_0.LOGIN_UID,
-				arg3 = arg_51_0.LOGIN_TOKEN
-			})
-
-			pg = var_2_10002
-
-			local var_51_2 = var_2_10002.m02
-			local var_51_3 = var_2.sendNotification
-
-			GAME = var_2_10005
-
-			var_51_3(var_51_2, var_2_10005.PLATFORM_LOGIN_DONE, {
-				user = var_51_1
+			pg.m02:sendNotification(GAME.PLATFORM_LOGIN_DONE, {
+				user = User.New({
+					type = 1,
+					arg1 = var_0_0.LoginPlatform,
+					arg2 = arg_51_0.LOGIN_UID,
+					arg3 = arg_51_0.LOGIN_TOKEN
+				})
 			})
 		end
 
 		return
 	end
 
-	local var_49_3 = onLogin_YoStar
-
-	local function var_49_4(arg_52_0)
+	function onLogout_YoStar(arg_52_0)
 		if var_0_0.YoStarRetCodeHandler(arg_52_0) then
-			pg = var_1
-
-			local var_52_0 = var_1.m02
-			local var_52_1 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_52_1(var_52_0, var_2_10004.LOGOUT, {
+			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
 			})
 		end
@@ -784,52 +410,20 @@ end)()
 		return
 	end
 
-	local var_49_5 = onLogout_YoStar
+	function onPay_YoStar(arg_53_0)
+		var_0_0.OnYoStarPaying = -1
 
-	local function var_49_6(arg_53_0)
-		local var_53_0 = var_0_0
-
-		var_53_0.OnYoStarPaying = -1
-		pg = var_53_0
-
-		local var_53_1 = var_53_0.UIMgr.GetInstance()
-
-		var_1.LoadingOff(var_53_1)
-
-		local var_53_2, var_53_3
+		pg.UIMgr.GetInstance():LoadingOff()
 
 		if var_0_0.YoStarRetCodeHandler(arg_53_0) then
-			getProxy = var_53_3
-			ShopsProxy = var_53_2
-			var_53_2 = var_53_3(var_53_2)
-
-			var_53_3.removeWaitTimer(var_53_2)
-
-			pg = var_53_3
-			var_53_2 = var_53_3.m02
-			var_53_3 = var_53_3.sendNotification
-			GAME = var_2_10004
-
-			var_53_3(var_53_2, var_2_10004.CHARGE_CONFIRM, {
+			getProxy(ShopsProxy):removeWaitTimer()
+			pg.m02:sendNotification(GAME.CHARGE_CONFIRM, {
 				payId = arg_53_0.EXTRA_DATA,
 				bsId = arg_53_0.ORDER_ID
 			})
 		else
-			getProxy = var_53_3
-			ShopsProxy = var_53_2
-
-			local var_53_4 = var_53_3(var_53_2)
-
-			var_1.removeWaitTimer(var_53_4)
-
-			pg = var_1
-
-			local var_53_5 = var_1.m02
-			local var_53_6 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_53_6(var_53_5, var_2_10004.CHARGE_FAILED, {
+			getProxy(ShopsProxy):removeWaitTimer()
+			pg.m02:sendNotification(GAME.CHARGE_FAILED, {
 				payId = arg_53_0.EXTRA_DATA
 			})
 		end
@@ -837,9 +431,7 @@ end)()
 		return
 	end
 
-	local var_49_7 = onPay_YoStar
-
-	local function var_49_8(arg_54_0)
+	function onSystemShare_YoStar(arg_54_0)
 		if var_0_0.YoStarRetCodeHandler(arg_54_0) then
 			-- block empty
 		end
@@ -847,18 +439,9 @@ end)()
 		return
 	end
 
-	local var_49_9 = onSystemShare_YoStar
-
-	local function var_49_10(arg_55_0)
+	function onDeleteAccount_YoStar(arg_55_0)
 		if var_0_0.YoStarRetCodeHandler(arg_55_0) then
-			pg = var_1
-
-			local var_55_0 = var_1.m02
-			local var_55_1 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_55_1(var_55_0, var_2_10004.LOGOUT, {
+			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
 			})
 		end
@@ -866,18 +449,9 @@ end)()
 		return
 	end
 
-	local var_49_11 = onDeleteAccount_YoStar
-
-	local function var_49_12(arg_56_0)
+	function onClearSDKCache_YoStar(arg_56_0)
 		if var_0_0.YoStarRetCodeHandler(arg_56_0) then
-			pg = var_1
-
-			local var_56_0 = var_1.m02
-			local var_56_1 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_56_1(var_56_0, var_2_10004.LOGOUT, {
+			pg.m02:sendNotification(GAME.LOGOUT, {
 				code = 0
 			})
 		end
@@ -885,9 +459,7 @@ end)()
 		return
 	end
 
-	local var_49_13 = onClearSDKCache_YoStar
-
-	local function var_49_14(arg_57_0)
+	function onQuerySkuDetails_YoStar(arg_57_0)
 		if var_0_0.YoStarRetCodeHandler(arg_57_0) then
 			-- block empty
 		end
@@ -895,9 +467,7 @@ end)()
 		return
 	end
 
-	local var_49_15 = onQuerySkuDetails_YoStar
-
-	local function var_49_16(arg_58_0)
+	function onUserSurvey_YoStar(arg_58_0)
 		if var_0_0.YoStarRetCodeHandler(arg_58_0) then
 			-- block empty
 		end
@@ -905,15 +475,11 @@ end)()
 		return
 	end
 
-	local var_49_17 = onUserSurvey_YoStar
-
-	local function var_49_18(arg_59_0)
+	function onSwitchServer_YoStar(arg_59_0)
 		return
 	end
 
-	local var_49_19 = onSwitchServer_YoStar
-
-	local function var_49_20(arg_60_0)
+	function onQueryTextLegality_YoStar(arg_60_0)
 		if var_0_0.YoStarRetCodeHandler(arg_60_0) then
 			-- block empty
 		end
@@ -921,9 +487,7 @@ end)()
 		return
 	end
 
-	local var_49_21 = onQueryTextLegality_YoStar
-
-	local function var_49_22(arg_61_0)
+	function onPushMsgReceive_YoStar(arg_61_0)
 		if var_0_0.YoStarRetCodeHandler(arg_61_0) then
 			-- block empty
 		end
@@ -931,9 +495,7 @@ end)()
 		return
 	end
 
-	local var_49_23 = onPushMsgReceive_YoStar
-
-	local function var_49_24(arg_62_0)
+	function onUniversalLink_YoStar(arg_62_0)
 		if var_0_0.YoStarRetCodeHandler(arg_62_0) then
 			-- block empty
 		end
@@ -941,9 +503,7 @@ end)()
 		return
 	end
 
-	local var_49_25 = onUniversalLink_YoStar
-
-	local function var_49_26(arg_63_0)
+	function onDeviceTrackingID_YoStar(arg_63_0)
 		if var_0_0.YoStarRetCodeHandler(arg_63_0) then
 			var_0_0.DeviceID = arg_63_0.DATA
 		end
@@ -951,9 +511,7 @@ end)()
 		return
 	end
 
-	local var_49_27 = onDeviceTrackingID_YoStar
-
-	local function var_49_28(arg_64_0)
+	function onLocalNotification_YoStar(arg_64_0)
 		if var_0_0.YoStarRetCodeHandler(arg_64_0) then
 			-- block empty
 		end
@@ -961,9 +519,7 @@ end)()
 		return
 	end
 
-	local var_49_29 = onLocalNotification_YoStar
-
-	local function var_49_30(arg_65_0)
+	function onSetBirthday_YoStar(arg_65_0)
 		if var_0_0.YoStarRetCodeHandler(arg_65_0) then
 			-- block empty
 		end
@@ -971,45 +527,27 @@ end)()
 		return
 	end
 
-	local var_49_31 = onSetBirthday_YoStar
-
 	return
 end)()
 
-function var_0_0.YoStarRetCodeHandler(arg_66_0)
+;({}).YoStarRetCodeHandler = function(arg_66_0)
 	if arg_66_0.R_CODE == 0 then
 		return true
 	else
-		local var_66_0 = "SDK Error Code:" .. var_1
+		local var_66_0 = "SDK Error Code:" .. arg_66_0.R_CODE
 
-		originalPrint = var_3
+		originalPrint("SDK Error Code:" .. arg_66_0.R_CODE)
 
-		var_3(var_66_0)
+		local var_66_1 = var_0_0.QueryErrorMsg(arg_66_0.R_CODE)
 
-		if var_0_0.QueryErrorMsg(var_1) then
-			string = var_1_10004
-
-			if var_1_10004.len(var_3) > 0 then
-				pg = var_1_10004
-
-				local var_66_1 = var_1_10004.TipsMgr.GetInstance()
-
-				var_1_10004.ShowTips(var_66_1, var_3)
-
-				goto label_66_0
-			end
+		if var_66_1 and string.len(var_66_1) > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(var_66_1)
+		else
+			pg.TipsMgr.GetInstance():ShowTips(var_66_0)
 		end
-
-		pg = var_1_10004
-
-		local var_66_2 = var_1_10004.TipsMgr.GetInstance()
-
-		var_4.ShowTips(var_66_2, var_66_0)
 	end
-
-	::label_66_0::
 
 	return false
 end
 
-return var_0_0
+return {}

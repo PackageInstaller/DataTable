@@ -42,13 +42,15 @@ function getOpenTabTypeList(self)
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_EQUIP, false) then
         table.insert(self.mTabList, bag.BagTabType.EQUIP)
     end
-    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_FRAGMENT, false) then
-        table.insert(self.mTabList, bag.BagTabType.HERO_FRAGMENT)
-    end
+    -- if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_FRAGMENT, false) then
+    --     table.insert(self.mTabList, bag.BagTabType.HERO_FRAGMENT)
+    -- end
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_BRACELETS, false) then
         table.insert(self.mTabList, bag.BagTabType.BRACELETS)
     end
-
+    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_BRACELETS, false) then
+        table.insert(self.mTabList, bag.BagTabType.HEROEGG)
+    end
     return self.mTabList
 end
 
@@ -126,7 +128,7 @@ function getTabClass(self)
     self.tabClassDic[bag.BagTabType.EQUIP] = bag.BagEquipTabView
     self.tabClassDic[bag.BagTabType.CONSUME] = bag.BagConsumeTabView
     self.tabClassDic[bag.BagTabType.HERO_FRAGMENT] = bag.BagFragmentTabView
-
+    self.tabClassDic[bag.BagTabType.HEROEGG] = bag.BagEggTabView
     self.tabClassDic[bag.BagTabType.BRACELETS] = bag.BagBraceletsTabView
     return self.tabClassDic
 end
@@ -172,7 +174,7 @@ function __updateTabView(self)
     bag.BagManager.mBagTabArge = {tabType = self.mTabType, suitId = self.mParams.suitId, propsId = self.mParams.propsId}
     self.mParams = {}
 
-    if self.mTabType == bag.BagTabType.EQUIP or self.mTabType == bag.BagTabType.BRACELETS then
+    if self.mTabType == bag.BagTabType.EQUIP or self.mTabType == bag.BagTabType.BRACELETS or self.mTabType == bag.BagTabType.HEROEGG then
         -- if self.mTabType == bag.BagTabType.EQUIP then
         self.mBtnDecompose:SetActive(true)
     else

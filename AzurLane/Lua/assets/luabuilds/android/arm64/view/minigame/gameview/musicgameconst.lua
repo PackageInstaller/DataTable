@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MusicGameConst")
+﻿local var_0_0 = class("MusicGameConst")
 
 var_0_0.music_game_data = {
 	{
@@ -160,18 +158,7 @@ var_0_0.music_game_data = {
 }
 
 function var_0_0.getRandomBand()
-	math = var_1_10000
-
-	local var_1_0 = var_1_10000.random
-	local var_1_1 = 1
-
-	MusicGameConst = var_1_10003
-
-	local var_1_2 = var_1_0(var_1_1, #var_1_10003.random_band)
-
-	MusicGameConst = var_1_10001
-
-	return var_1_10001.random_band[var_1_2]
+	return MusicGameConst.random_band[math.random(1, #MusicGameConst.random_band)]
 end
 
 var_0_0.painting_const_key = {

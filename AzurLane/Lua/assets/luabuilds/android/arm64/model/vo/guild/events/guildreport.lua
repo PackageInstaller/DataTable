@@ -1,43 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildReport", import("...BaseVO"))
 
-local var_0_0 = "GuildReport"
+var_0_0.SCORE_TYPE_S = 1
+var_0_0.SCORE_TYPE_A = 2
+var_0_0.SCORE_TYPE_B = 3
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseVO"))
-
-var_0_1.SCORE_TYPE_S = 1
-var_0_1.SCORE_TYPE_A = 2
-var_0_1.SCORE_TYPE_B = 3
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.eventId = arg_1_1.event_id
 	arg_1_0.configId = arg_1_0.eventId
 	arg_1_0.score = arg_1_1.score
-	GuildConst = var_2
-	arg_1_0.state = var_2.REPORT_STATE_LOCK
+	arg_1_0.state = GuildConst.REPORT_STATE_LOCK
 	arg_1_0.nodeAwards = {}
 
 	local var_1_0 = {}
 
-	ipairs = var_1_10003
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.nodes) do
+		local var_1_1
+		local var_1_2 = Clone(pg.guild_event_node[iter_1_1.id])
 
-	for iter_1_0, iter_1_1 in var_1_10003(arg_1_1.nodes) do
-		var_1_10008 = nil
-		Clone = var_1_10009
-		pg = var_1_10011
-		var_1_10009 = var_1_10009(var_1_10011.guild_event_node[iter_1_1.id])
+		var_1_1 = iter_1_1.status == 1 and var_1_2.success_award or var_1_2.fail_award
 
-		if iter_1_1.status == 1 then
-			var_1_10008 = var_1_10009.success_award
-		else
-			var_1_10008 = var_1_10009.fail_award
-		end
-
-		ipairs = var_10
-
-		for iter_1_2, iter_1_3 in var_10(var_1_10008) do
+		for iter_1_2, iter_1_3 in ipairs(var_1_1) do
 			if not var_1_0[iter_1_3[2]] then
 				var_1_0[iter_1_3[2]] = iter_1_3
 			else
@@ -46,12 +29,8 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 		end
 	end
 
-	pairs = var_3
-
-	for iter_1_4, iter_1_5 in var_3(var_1_0) do
-		table = var_1_10008
-
-		var_1_10008.insert(arg_1_0.nodeAwards, iter_1_5)
+	for iter_1_4, iter_1_5 in pairs(var_1_0) do
+		table.insert(arg_1_0.nodeAwards, iter_1_5)
 	end
 
 	arg_1_0:SetStatus(arg_1_1.status)
@@ -59,73 +38,54 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.SetStatus(arg_2_0, arg_2_1)
+function var_0_0.SetStatus(arg_2_0, arg_2_1)
 	arg_2_0.state = arg_2_1
 
 	return
 end
 
-function var_0_1.IsBoss(arg_3_0)
+function var_0_0.IsBoss(arg_3_0)
 	return false
 end
 
-function var_0_1.IsLock(arg_4_0)
-	local var_4_0 = arg_4_0.state
-
-	GuildConst = var_1_10002
-
-	return var_4_0 == var_1_10002.REPORT_STATE_LOCK
+function var_0_0.IsLock(arg_4_0)
+	return arg_4_0.state == GuildConst.REPORT_STATE_LOCK
 end
 
-function var_0_1.IsUnlock(arg_5_0)
-	local var_5_0 = arg_5_0.state
-
-	GuildConst = var_1_10002
-
-	return var_5_0 > var_1_10002.REPORT_STATE_LOCK
+function var_0_0.IsUnlock(arg_5_0)
+	return arg_5_0.state > GuildConst.REPORT_STATE_LOCK
 end
 
-function var_0_1.CanSubmit(arg_6_0)
-	local var_6_0 = arg_6_0.state
-
-	GuildConst = var_1_10002
-
-	return var_6_0 == var_1_10002.REPORT_STATE_UNlOCK
+function var_0_0.CanSubmit(arg_6_0)
+	return arg_6_0.state == GuildConst.REPORT_STATE_UNlOCK
 end
 
-function var_0_1.IsSubmited(arg_7_0)
-	local var_7_0 = arg_7_0.state
-
-	GuildConst = var_1_10002
-
-	return var_7_0 == var_1_10002.REPORT_STATE_SUBMITED
+function var_0_0.IsSubmited(arg_7_0)
+	return arg_7_0.state == GuildConst.REPORT_STATE_SUBMITED
 end
 
-function var_0_1.Submit(arg_8_0)
+function var_0_0.Submit(arg_8_0)
 	if arg_8_0:CanSubmit() then
-		GuildConst = var_1
-		arg_8_0.state = var_1.REPORT_STATE_SUBMITED
+		arg_8_0.state = GuildConst.REPORT_STATE_SUBMITED
 	end
 
 	return
 end
 
-function var_0_1.bindConfigTable(arg_9_0)
-	pg = var_1_10001
-
-	return var_1_10001.guild_base_event
+function var_0_0.bindConfigTable(arg_9_0)
+	return pg.guild_base_event
 end
 
-function var_0_1.GetReportDesc(arg_10_0)
+function var_0_0.GetReportDesc(arg_10_0)
 	return arg_10_0:getConfig("report")[arg_10_0.score]
 end
 
-function var_0_1.IsPerfectFinish(arg_11_0)
-	return arg_11_0.score == var_0_1.SCORE_TYPE_S
+function var_0_0.IsPerfectFinish(arg_11_0)
+	return arg_11_0.score == var_0_0.SCORE_TYPE_S
 end
 
-function var_0_1.GetSelfDrop(arg_12_0)
-	if arg_12_0.score == var_0_1.SCORE_TYPE_S then
+function var_0_0.GetSelfDrop(arg_12_0)
+	if arg_12_0.score == var_0_0.SCORE_TYPE_S then
 		return arg_12_0:getConfig("award_list_report")
 	else
 		return {}
@@ -134,37 +94,26 @@ function var_0_1.GetSelfDrop(arg_12_0)
 	return
 end
 
-function var_0_1.GetNodeDrop(arg_13_0)
+function var_0_0.GetNodeDrop(arg_13_0)
 	return arg_13_0.nodeAwards
 end
 
-function var_0_1.GetDrop(arg_14_0)
-	local var_14_0 = {}
-	local var_14_1 = arg_14_0
-	local var_14_2 = arg_14_0.GetSelfDrop(var_14_1)
-	local var_14_3 = arg_14_0:GetNodeDrop()
+function var_0_0.GetDrop(arg_14_0)
+	local var_14_0 = arg_14_0:GetSelfDrop()
 
-	ipairs = var_14_1
-
-	for iter_14_0, iter_14_1 in var_14_1(var_14_2) do
-		table = var_1_10009
-
-		var_1_10009.insert(var_14_0, iter_14_1)
+	for iter_14_0, iter_14_1 in ipairs(var_14_0) do
+		table.insert({}, iter_14_1)
 	end
 
-	ipairs = var_4
-
-	for iter_14_2, iter_14_3 in var_4(var_14_3) do
-		table = var_1_10009
-
-		var_1_10009.insert(var_14_0, iter_14_3)
+	for iter_14_2, iter_14_3 in ipairs((arg_14_0:GetNodeDrop())) do
+		table.insert({}, iter_14_3)
 	end
 
-	return var_14_0, #var_14_2
+	return {}, #var_14_0
 end
 
-function var_0_1.GetType(arg_15_0)
+function var_0_0.GetType(arg_15_0)
 	return arg_15_0:getConfig("type")
 end
 
-return var_0_1
+return var_0_0

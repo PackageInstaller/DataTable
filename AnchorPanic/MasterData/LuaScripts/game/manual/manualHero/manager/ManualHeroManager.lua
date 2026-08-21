@@ -29,6 +29,50 @@ function __init(self)
     self.mManualHeroCampDic = nil
 end
 
+function parseWorldMapData(self)
+    self.mapData = {}
+    local baseData = RefMgr:getData("world_map_data")
+    for key, data in pairs(baseData) do
+        local vo = manual.ManualMapVo.new()
+        vo:parseData(key, data)
+        self.mapData[key] = vo
+    end
+end
+
+function getWorldDataByMapId(self, mapId)
+    if self.mapData == nil then
+        self:parseWorldMapData()
+    end
+    return self.mapData[mapId]
+end
+
+function getWorldMapData(self)
+    if self.mapData == nil then
+        self:parseWorldMapData()
+    end
+    local list = {}
+    for _, vo in pairs(self.mapData) do
+        table.insert(list, vo)
+    end
+    table.sort(list, function(vo1, vo2) return vo1.sort < vo2.sort end)
+    return list
+end
+
+function getChildIdList(self)
+    if self.mapData == nil then
+        self:parseWorldMapData()
+    end
+    local childIdList = {}
+    for _, vo in pairs(self.mapData) do
+        if #vo.areaList> 0 then
+            for i = 1, #vo.areaList, 1 do
+                table.insert(childIdList, vo.areaList[i])
+            end
+        end
+    end
+    return childIdList
+end
+
 -- 解析图鉴配置
 function parseManualHeroConfig(self)
     self.mManualHeroList = {}
@@ -128,6 +172,16 @@ function getAllUnlockListPercent(self)
     end
     return math.floor((count / allCount) * 100)
 end
+
+function setLastClickMapId(self, mapId)
+    self.lastClickMapId = mapId
+end
+
+function getLastClickMapId(self)
+    return self.lastClickMapId or 0
+end
+
+
 
 return _M
 

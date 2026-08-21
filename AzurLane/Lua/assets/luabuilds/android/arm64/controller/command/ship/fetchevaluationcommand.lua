@@ -1,89 +1,42 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FetchEvaluationCommand", pm.SimpleCommand)
 
-local var_0_0 = "FetchEvaluationCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_9000
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = pg.TimeMgr.GetInstance()
+	local var_1_2 = var_1_1.GetServerTime(var_1_9000)
+	local var_1_3 = getProxy(CollectionProxy)
+	local var_1_4 = getProxy(CollectionProxy):getShipGroup(var_1_0)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0)
-
-	pg = var_1_10003
-
-	local var_1_2 = var_1_10003.TimeMgr.GetInstance()
-	local var_1_3 = var_3.GetServerTime(var_1_2)
-
-	getProxy = var_1_0
-	CollectionProxy = var_1_10006
-
-	local var_1_4 = var_1_0(var_1_10006)
-
-	if not var_4.getShipGroup(var_1_4, var_1_1) then
+	if not var_1_1 then
 		return
 	end
 
-	assert = var_1_10006
+	assert(var_1_4, "shipGroup is nil" .. var_1_0)
 
-	var_1_10006(var_5, "shipGroup is nil" .. var_1_1)
-
-	local var_1_5 = var_1_3 - var_5.lastReqStamp
-
-	ShipGroup = var_1_4
-
-	if var_1_5 > var_1_4.REQ_INTERVAL then
-		pg = var_1_5
-
-		local var_1_6 = var_1_5.ConnectionMgr.GetInstance()
-
-		var_6.Send(var_1_6, 17101, {
-			ship_group_id = var_1_1
+	if var_1_2 - var_1_4.lastReqStamp > ShipGroup.REQ_INTERVAL then
+		pg.ConnectionMgr.GetInstance():Send(17101, {
+			ship_group_id = var_1_0
 		}, 17102, function(arg_2_0)
-			if arg_2_0.ship_discuss and var_1.ship_group_id == var_1_1 then
-				if var_0 then
-					var_2_10002 = var_0
-					ShipEvaluation = var_3
-					var_2_10002.evaluation = var_3.New(var_1)
-					var_2_10002 = var_0
-					pg = var_3
-					var_2_10005 = var_3.TimeMgr.GetInstance()
-					var_2_10002.lastReqStamp = var_3.GetServerTime(var_2_10005)
+			if arg_2_0.ship_discuss and arg_2_0.ship_discuss.ship_group_id == var_1_0 then
+				if var_1_4 then
+					var_1_4.evaluation = ShipEvaluation.New(arg_2_0.ship_discuss)
+					var_1_4.lastReqStamp = pg.TimeMgr.GetInstance():GetServerTime()
 
-					local var_2_0 = var_0
-
-					var_2_10002.updateShipGroup(var_2_0, var_0)
-
-					local var_2_1 = arg_1_0
-
-					var_2_10002 = var_2_10002.sendNotification
-					GAME = var_2_10005
-
-					var_2_10002(var_2_1, var_2_10005.FETCH_EVALUATION_DONE, var_1_1)
+					var_1_3:updateShipGroup(var_1_4)
+					arg_1_0:sendNotification(GAME.FETCH_EVALUATION_DONE, var_1_0)
 				end
 			else
-				pg = var_2_10002
-
-				local var_2_2 = var_2_10002.TipsMgr.GetInstance()
-				local var_2_3 = var_2.ShowTips
-
-				errorTip = var_2_10005
-
-				var_2_3(var_2_2, var_2_10005("fetch_ship_eva", arg_2_0.result))
+				pg.TipsMgr.GetInstance():ShowTips(errorTip("fetch_ship_eva", arg_2_0.result))
 			end
 
 			return
 		end)
-	elseif var_5.evaluation then
-		local var_1_7 = arg_1_0
-		local var_1_8 = arg_1_0.sendNotification
-
-		GAME = var_9
-
-		var_1_8(var_1_7, var_9.FETCH_EVALUATION_DONE, var_1_1)
+	elseif var_1_4.evaluation then
+		arg_1_0:sendNotification(GAME.FETCH_EVALUATION_DONE, var_1_0)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

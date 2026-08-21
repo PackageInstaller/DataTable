@@ -1,151 +1,46 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RectKeyTriggerController")
+﻿local var_0_0 = class("RectKeyTriggerController")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._keyInfo = arg_1_1
+	arg_1_0.handle = arg_1_0.handle or UpdateBeat:CreateListener(arg_1_0.Update, arg_1_0)
 
-	if not arg_1_0.handle then
-		UpdateBeat = var_2
-		arg_1_0.handle = var_2:CreateListener(arg_1_0.Update, arg_1_0)
-	end
-
-	UpdateBeat = var_2
-
-	var_2:AddListener(arg_1_0.handle)
+	UpdateBeat:AddListener(arg_1_0.handle)
 
 	return
 end
 
 function var_0_0.Update(arg_2_0)
-	Application = var_1_10001
-
-	if var_1_10001.isEditor then
-		Input = var_1
-
-		local var_2_0 = var_1.GetKeyDown
-
-		KeyCode = var_1_10003
-
-		local var_2_1, var_2_2
-
-		if var_2_0(var_1_10003.A) then
-			var_2_1 = arg_2_0._keyInfo
-			var_2_2 = var_2_2.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_2(var_2_1, var_1_10004.A, true)
+	if Application.isEditor then
+		if Input.GetKeyDown(KeyCode.A) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.A, true)
 		end
 
-		Input = var_2_2
-
-		local var_2_3 = var_2_2.GetKeyDown
-
-		KeyCode = var_2_1
-
-		local var_2_4, var_2_5
-
-		if var_2_3(var_2_1.D) then
-			var_2_4 = arg_2_0._keyInfo
-			var_2_5 = var_2_5.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_5(var_2_4, var_1_10004.D, true)
+		if Input.GetKeyDown(KeyCode.D) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.D, true)
 		end
 
-		Input = var_2_5
-
-		local var_2_6 = var_2_5.GetKeyUp
-
-		KeyCode = var_2_4
-
-		local var_2_7, var_2_8
-
-		if var_2_6(var_2_4.A) then
-			var_2_7 = arg_2_0._keyInfo
-			var_2_8 = var_2_8.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_8(var_2_7, var_1_10004.A, false)
+		if Input.GetKeyUp(KeyCode.A) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.A, false)
 		end
 
-		Input = var_2_8
-
-		local var_2_9 = var_2_8.GetKeyUp
-
-		KeyCode = var_2_7
-
-		local var_2_10, var_2_11
-
-		if var_2_9(var_2_7.D) then
-			var_2_10 = arg_2_0._keyInfo
-			var_2_11 = var_2_11.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_11(var_2_10, var_1_10004.D, false)
+		if Input.GetKeyUp(KeyCode.D) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.D, false)
 		end
 
-		Input = var_2_11
-
-		local var_2_12 = var_2_11.GetKeyDown
-
-		KeyCode = var_2_10
-
-		local var_2_13, var_2_14
-
-		if var_2_12(var_2_10.Space) then
-			var_2_13 = arg_2_0._keyInfo
-			var_2_14 = var_2_14.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_14(var_2_13, var_1_10004.Space, true)
+		if Input.GetKeyDown(KeyCode.Space) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.Space, true)
 		end
 
-		Input = var_2_14
-
-		local var_2_15 = var_2_14.GetKeyUp
-
-		KeyCode = var_2_13
-
-		local var_2_16, var_2_17
-
-		if var_2_15(var_2_13.Space) then
-			var_2_16 = arg_2_0._keyInfo
-			var_2_17 = var_2_17.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_17(var_2_16, var_1_10004.Space, false)
+		if Input.GetKeyUp(KeyCode.Space) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.Space, false)
 		end
 
-		Input = var_2_17
-
-		local var_2_18 = var_2_17.GetKeyDown
-
-		KeyCode = var_2_16
-
-		local var_2_19, var_2_20
-
-		if var_2_18(var_2_16.J) then
-			var_2_19 = arg_2_0._keyInfo
-			var_2_20 = var_2_20.setKeyPress
-			KeyCode = var_1_10004
-
-			var_2_20(var_2_19, var_1_10004.J, true)
+		if Input.GetKeyDown(KeyCode.J) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.J, true)
 		end
 
-		Input = var_2_20
-
-		local var_2_21 = var_2_20.GetKeyUp
-
-		KeyCode = var_2_19
-
-		if var_2_21(var_2_19.J) then
-			local var_2_22 = arg_2_0._keyInfo
-			local var_2_23 = var_1.setKeyPress
-
-			KeyCode = var_1_10004
-
-			var_2_23(var_2_22, var_1_10004.J, false)
+		if Input.GetKeyUp(KeyCode.J) then
+			arg_2_0._keyInfo:setKeyPress(KeyCode.J, false)
 		end
 	end
 
@@ -154,9 +49,7 @@ end
 
 function var_0_0.destroy(arg_3_0)
 	if arg_3_0.handle then
-		UpdateBeat = var_1
-
-		var_1:RemoveListener(arg_3_0.handle)
+		UpdateBeat:RemoveListener(arg_3_0.handle)
 
 		arg_3_0.handle = nil
 	end

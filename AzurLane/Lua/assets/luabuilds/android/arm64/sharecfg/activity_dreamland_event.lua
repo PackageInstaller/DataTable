@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_dreamland_event") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_dreamland_event"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_dreamland_event = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_dreamland_event
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_dreamland_event = rawget(pg, "activity_dreamland_event") or setmetatable({
+	__name = "activity_dreamland_event"
+}, confNEO)
+pg.activity_dreamland_event.all = {
 	1,
 	2,
 	3,
@@ -46,25 +23,11 @@ var_0_3.all = {
 	18,
 	19
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_dreamland_event = {}
+pg.base = pg.base or {}
+pg.base.activity_dreamland_event = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_dreamland_event
-
-	var_1_0[1] = {
+	pg.base.activity_dreamland_event[1] = {
 		bg = 1,
 		name = "梦境的入口",
 		id = 1,
@@ -75,11 +38,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 268
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_dreamland_event
-
-	var_1_1[2] = {
+	pg.base.activity_dreamland_event[2] = {
 		bg = 1,
 		name = "来一杯冰牛奶吧~",
 		id = 2,
@@ -90,11 +49,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 293
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_dreamland_event
-
-	var_1_2[3] = {
+	pg.base.activity_dreamland_event[3] = {
 		bg = 1,
 		name = "一日之计在于晨？",
 		id = 3,
@@ -105,11 +60,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 139
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_dreamland_event
-
-	var_1_3[4] = {
+	pg.base.activity_dreamland_event[4] = {
 		bg = 1,
 		name = "通往心房的钥匙",
 		id = 4,
@@ -120,11 +71,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 97
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_dreamland_event
-
-	var_1_4[5] = {
+	pg.base.activity_dreamland_event[5] = {
 		bg = 1,
 		name = "闪耀的魔法表演",
 		id = 5,
@@ -135,11 +82,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -603
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_dreamland_event
-
-	var_1_5[6] = {
+	pg.base.activity_dreamland_event[6] = {
 		bg = 1,
 		name = "泳装女仆与冰镇汽水",
 		id = 6,
@@ -150,11 +93,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -505
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_dreamland_event
-
-	var_1_6[7] = {
+	pg.base.activity_dreamland_event[7] = {
 		bg = 1,
 		name = "特别的花车巡游",
 		id = 7,
@@ -165,11 +104,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -537
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_dreamland_event
-
-	var_1_7[8] = {
+	pg.base.activity_dreamland_event[8] = {
 		bg = 1,
 		name = "正中靶心的甜蜜赌局",
 		id = 8,
@@ -180,11 +115,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -63
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_dreamland_event
-
-	var_1_8[9] = {
+	pg.base.activity_dreamland_event[9] = {
 		bg = 1,
 		name = "换上纯白礼服吧！",
 		id = 9,
@@ -195,11 +126,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 151
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_dreamland_event
-
-	var_1_9[10] = {
+	pg.base.activity_dreamland_event[10] = {
 		bg = 2,
 		name = "逢魔之时",
 		id = 10,
@@ -210,11 +137,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 148
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_dreamland_event
-
-	var_1_10[11] = {
+	pg.base.activity_dreamland_event[11] = {
 		bg = 2,
 		name = "迷宫之中",
 		id = 11,
@@ -225,11 +148,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 140
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_dreamland_event
-
-	var_1_11[12] = {
+	pg.base.activity_dreamland_event[12] = {
 		bg = 2,
 		name = "缠绕的黑暗",
 		id = 12,
@@ -240,11 +159,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 33
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_dreamland_event
-
-	var_1_12[13] = {
+	pg.base.activity_dreamland_event[13] = {
 		bg = 3,
 		name = "特殊时刻",
 		id = 13,
@@ -255,11 +170,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 452
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_dreamland_event
-
-	var_1_13[14] = {
+	pg.base.activity_dreamland_event[14] = {
 		bg = 3,
 		name = "夜晚的游乐时间",
 		id = 14,
@@ -270,11 +181,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -309
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_dreamland_event
-
-	var_1_14[15] = {
+	pg.base.activity_dreamland_event[15] = {
 		bg = 3,
 		name = "烟花与回忆",
 		id = 15,
@@ -285,11 +192,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 6
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_dreamland_event
-
-	var_1_15[16] = {
+	pg.base.activity_dreamland_event[16] = {
 		bg = 3,
 		name = "美梦落幕之时",
 		id = 16,
@@ -300,11 +203,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = 103
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_dreamland_event
-
-	var_1_16[17] = {
+	pg.base.activity_dreamland_event[17] = {
 		bg = 3,
 		name = "梦幻的烟火",
 		id = 17,
@@ -315,11 +214,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -103
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_dreamland_event
-
-	var_1_17[18] = {
+	pg.base.activity_dreamland_event[18] = {
 		bg = 1,
 		name = "特别的睡前服务",
 		id = 18,
@@ -330,8 +225,7 @@ var_0_3.base.activity_dreamland_event = {}
 			y = -357
 		}
 	}
-	pg = var_1_17
-	var_1_17.base.activity_dreamland_event[19] = {
+	pg.base.activity_dreamland_event[19] = {
 		bg = 1,
 		name = "后日谈",
 		id = 19,

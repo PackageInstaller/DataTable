@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "fleet_tech_ship_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "fleet_tech_ship_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.fleet_tech_ship_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.fleet_tech_ship_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.fleet_tech_ship_template = rawget(pg, "fleet_tech_ship_template") or setmetatable({
+	__name = "fleet_tech_ship_template"
+}, confNEO)
+pg.fleet_tech_ship_template.all = {
 	10102,
 	10103,
 	10104,
@@ -71,6 +48,9 @@ var_0_3.all = {
 	10152,
 	10153,
 	10155,
+	10156,
+	10157,
+	10158,
 	10201,
 	10202,
 	10203,
@@ -98,6 +78,7 @@ var_0_3.all = {
 	10233,
 	10234,
 	10235,
+	10236,
 	10301,
 	10302,
 	10303,
@@ -153,6 +134,7 @@ var_0_3.all = {
 	10714,
 	10716,
 	10717,
+	10720,
 	10722,
 	10723,
 	10725,
@@ -773,25 +755,11 @@ var_0_3.all = {
 	971201,
 	971301
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.fleet_tech_ship_template = {}
+pg.base = pg.base or {}
+pg.base.fleet_tech_ship_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_1_0[10102] = {
+	pg.base.fleet_tech_ship_template[10102] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -813,11 +781,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.fleet_tech_ship_template
-
-	var_1_1[10103] = {
+	pg.base.fleet_tech_ship_template[10103] = {
 		max_star = 4,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -839,11 +803,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.fleet_tech_ship_template
-
-	var_1_2[10104] = {
+	pg.base.fleet_tech_ship_template[10104] = {
 		max_star = 4,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -865,11 +825,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.fleet_tech_ship_template
-
-	var_1_3[10105] = {
+	pg.base.fleet_tech_ship_template[10105] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 4,
@@ -891,11 +847,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.fleet_tech_ship_template
-
-	var_1_4[10106] = {
+	pg.base.fleet_tech_ship_template[10106] = {
 		max_star = 4,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -917,11 +869,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.fleet_tech_ship_template
-
-	var_1_5[10107] = {
+	pg.base.fleet_tech_ship_template[10107] = {
 		max_star = 4,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -943,11 +891,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.fleet_tech_ship_template
-
-	var_1_6[10108] = {
+	pg.base.fleet_tech_ship_template[10108] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 9,
@@ -969,11 +913,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.fleet_tech_ship_template
-
-	var_1_7[10109] = {
+	pg.base.fleet_tech_ship_template[10109] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -995,11 +935,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.fleet_tech_ship_template
-
-	var_1_8[10110] = {
+	pg.base.fleet_tech_ship_template[10110] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 1,
@@ -1021,11 +957,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.fleet_tech_ship_template
-
-	var_1_9[10111] = {
+	pg.base.fleet_tech_ship_template[10111] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 9,
@@ -1047,11 +979,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.fleet_tech_ship_template
-
-	var_1_10[10112] = {
+	pg.base.fleet_tech_ship_template[10112] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1073,11 +1001,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.fleet_tech_ship_template
-
-	var_1_11[10113] = {
+	pg.base.fleet_tech_ship_template[10113] = {
 		max_star = 4,
 		pt_level = 6,
 		add_level_attr = 1,
@@ -1099,11 +1023,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.fleet_tech_ship_template
-
-	var_1_12[10114] = {
+	pg.base.fleet_tech_ship_template[10114] = {
 		max_star = 4,
 		pt_level = 6,
 		add_level_attr = 1,
@@ -1125,11 +1045,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.fleet_tech_ship_template
-
-	var_1_13[10115] = {
+	pg.base.fleet_tech_ship_template[10115] = {
 		max_star = 4,
 		pt_level = 6,
 		add_level_attr = 1,
@@ -1151,11 +1067,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.fleet_tech_ship_template
-
-	var_1_14[10116] = {
+	pg.base.fleet_tech_ship_template[10116] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1177,11 +1089,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.fleet_tech_ship_template
-
-	var_1_15[10117] = {
+	pg.base.fleet_tech_ship_template[10117] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 2,
@@ -1203,11 +1111,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.fleet_tech_ship_template
-
-	var_1_16[10124] = {
+	pg.base.fleet_tech_ship_template[10124] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 4,
@@ -1229,11 +1133,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.fleet_tech_ship_template
-
-	var_1_17[10125] = {
+	pg.base.fleet_tech_ship_template[10125] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 4,
@@ -1255,11 +1155,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.fleet_tech_ship_template
-
-	var_1_18[10126] = {
+	pg.base.fleet_tech_ship_template[10126] = {
 		max_star = 6,
 		pt_level = 10,
 		add_level_attr = 4,
@@ -1281,11 +1177,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.fleet_tech_ship_template
-
-	var_1_19[10127] = {
+	pg.base.fleet_tech_ship_template[10127] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1307,11 +1199,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.fleet_tech_ship_template
-
-	var_1_20[10129] = {
+	pg.base.fleet_tech_ship_template[10129] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1333,11 +1221,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.fleet_tech_ship_template
-
-	var_1_21[10130] = {
+	pg.base.fleet_tech_ship_template[10130] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1359,11 +1243,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.fleet_tech_ship_template
-
-	var_1_22[10131] = {
+	pg.base.fleet_tech_ship_template[10131] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 2,
@@ -1385,11 +1265,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.fleet_tech_ship_template
-
-	var_1_23[10133] = {
+	pg.base.fleet_tech_ship_template[10133] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1411,11 +1287,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.fleet_tech_ship_template
-
-	var_1_24[10134] = {
+	pg.base.fleet_tech_ship_template[10134] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1437,11 +1309,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.fleet_tech_ship_template
-
-	var_1_25[10135] = {
+	pg.base.fleet_tech_ship_template[10135] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1463,11 +1331,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.fleet_tech_ship_template
-
-	var_1_26[10136] = {
+	pg.base.fleet_tech_ship_template[10136] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1489,11 +1353,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.fleet_tech_ship_template
-
-	var_1_27[10137] = {
+	pg.base.fleet_tech_ship_template[10137] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1515,11 +1375,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.fleet_tech_ship_template
-
-	var_1_28[10138] = {
+	pg.base.fleet_tech_ship_template[10138] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1541,11 +1397,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.fleet_tech_ship_template
-
-	var_1_29[10139] = {
+	pg.base.fleet_tech_ship_template[10139] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 4,
@@ -1567,11 +1419,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.fleet_tech_ship_template
-
-	var_1_30[10140] = {
+	pg.base.fleet_tech_ship_template[10140] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -1593,11 +1441,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.fleet_tech_ship_template
-
-	var_1_31[10141] = {
+	pg.base.fleet_tech_ship_template[10141] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1619,11 +1463,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.fleet_tech_ship_template
-
-	var_1_32[10142] = {
+	pg.base.fleet_tech_ship_template[10142] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1645,11 +1485,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.fleet_tech_ship_template
-
-	var_1_33[10143] = {
+	pg.base.fleet_tech_ship_template[10143] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 4,
@@ -1671,11 +1507,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.fleet_tech_ship_template
-
-	var_1_34[10144] = {
+	pg.base.fleet_tech_ship_template[10144] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 2,
@@ -1697,11 +1529,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.fleet_tech_ship_template
-
-	var_1_35[10145] = {
+	pg.base.fleet_tech_ship_template[10145] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 1,
@@ -1723,11 +1551,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.fleet_tech_ship_template
-
-	var_1_36[10146] = {
+	pg.base.fleet_tech_ship_template[10146] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 1,
@@ -1749,11 +1573,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.fleet_tech_ship_template
-
-	var_1_37[10147] = {
+	pg.base.fleet_tech_ship_template[10147] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 12,
@@ -1775,11 +1595,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.fleet_tech_ship_template
-
-	var_1_38[10148] = {
+	pg.base.fleet_tech_ship_template[10148] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 1,
@@ -1801,11 +1617,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.fleet_tech_ship_template
-
-	var_1_39[10149] = {
+	pg.base.fleet_tech_ship_template[10149] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 1,
@@ -1827,11 +1639,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.fleet_tech_ship_template
-
-	var_1_40[10150] = {
+	pg.base.fleet_tech_ship_template[10150] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 4,
@@ -1853,11 +1661,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.fleet_tech_ship_template
-
-	var_1_41[10151] = {
+	pg.base.fleet_tech_ship_template[10151] = {
 		max_star = 6,
 		pt_level = 25,
 		add_level_attr = 1,
@@ -1879,11 +1683,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.fleet_tech_ship_template
-
-	var_1_42[10152] = {
+	pg.base.fleet_tech_ship_template[10152] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 12,
@@ -1905,11 +1705,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.fleet_tech_ship_template
-
-	var_1_43[10153] = {
+	pg.base.fleet_tech_ship_template[10153] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 4,
@@ -1931,11 +1727,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.fleet_tech_ship_template
-
-	var_1_44[10155] = {
+	pg.base.fleet_tech_ship_template[10155] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 12,
@@ -1957,11 +1749,73 @@ var_0_3.base.fleet_tech_ship_template = {}
 			21
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.fleet_tech_ship_template
-
-	var_1_45[10201] = {
+	pg.base.fleet_tech_ship_template[10156] = {
+		max_star = 6,
+		pt_level = 18,
+		add_level_attr = 1,
+		pt_upgrage = 24,
+		add_get_attr = 2,
+		add_level_value = 2,
+		class = 10108,
+		id = 10156,
+		add_get_value = 1,
+		pt_get = 12,
+		add_get_shiptype = {
+			1,
+			20,
+			21
+		},
+		add_level_shiptype = {
+			1,
+			20,
+			21
+		}
+	}
+	pg.base.fleet_tech_ship_template[10157] = {
+		max_star = 5,
+		pt_level = 13,
+		add_level_attr = 4,
+		pt_upgrage = 17,
+		add_get_attr = 1,
+		add_level_value = 1,
+		class = 10104,
+		id = 10157,
+		add_get_value = 1,
+		pt_get = 8,
+		add_get_shiptype = {
+			1,
+			20,
+			21
+		},
+		add_level_shiptype = {
+			1,
+			20,
+			21
+		}
+	}
+	pg.base.fleet_tech_ship_template[10158] = {
+		max_star = 5,
+		pt_level = 13,
+		add_level_attr = 12,
+		pt_upgrage = 17,
+		add_get_attr = 1,
+		add_level_value = 1,
+		class = 10104,
+		id = 10158,
+		add_get_value = 1,
+		pt_get = 8,
+		add_get_shiptype = {
+			1,
+			20,
+			21
+		},
+		add_level_shiptype = {
+			1,
+			20,
+			21
+		}
+	}
+	pg.base.fleet_tech_ship_template[10201] = {
 		max_star = 4,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -1979,11 +1833,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.fleet_tech_ship_template
-
-	var_1_46[10202] = {
+	pg.base.fleet_tech_ship_template[10202] = {
 		max_star = 4,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -2001,11 +1851,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.fleet_tech_ship_template
-
-	var_1_47[10203] = {
+	pg.base.fleet_tech_ship_template[10203] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -2023,11 +1869,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.fleet_tech_ship_template
-
-	var_1_48[10204] = {
+	pg.base.fleet_tech_ship_template[10204] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -2045,11 +1887,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.fleet_tech_ship_template
-
-	var_1_49[10205] = {
+	pg.base.fleet_tech_ship_template[10205] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 2,
@@ -2067,11 +1905,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.fleet_tech_ship_template
-
-	var_1_50[10206] = {
+	pg.base.fleet_tech_ship_template[10206] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -2089,11 +1923,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.fleet_tech_ship_template
-
-	var_1_51[10207] = {
+	pg.base.fleet_tech_ship_template[10207] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -2111,11 +1941,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.fleet_tech_ship_template
-
-	var_1_52[10208] = {
+	pg.base.fleet_tech_ship_template[10208] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 4,
@@ -2133,11 +1959,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.fleet_tech_ship_template
-
-	var_1_53[10209] = {
+	pg.base.fleet_tech_ship_template[10209] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -2155,11 +1977,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.fleet_tech_ship_template
-
-	var_1_54[10210] = {
+	pg.base.fleet_tech_ship_template[10210] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -2177,11 +1995,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.fleet_tech_ship_template
-
-	var_1_55[10211] = {
+	pg.base.fleet_tech_ship_template[10211] = {
 		max_star = 4,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -2199,11 +2013,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.fleet_tech_ship_template
-
-	var_1_56[10212] = {
+	pg.base.fleet_tech_ship_template[10212] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -2221,11 +2031,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.fleet_tech_ship_template
-
-	var_1_57[10213] = {
+	pg.base.fleet_tech_ship_template[10213] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 8,
@@ -2243,11 +2049,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.fleet_tech_ship_template
-
-	var_1_58[10214] = {
+	pg.base.fleet_tech_ship_template[10214] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2265,11 +2067,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.fleet_tech_ship_template
-
-	var_1_59[10215] = {
+	pg.base.fleet_tech_ship_template[10215] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -2287,11 +2085,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.fleet_tech_ship_template
-
-	var_1_60[10216] = {
+	pg.base.fleet_tech_ship_template[10216] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -2309,11 +2103,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.fleet_tech_ship_template
-
-	var_1_61[10218] = {
+	pg.base.fleet_tech_ship_template[10218] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -2331,11 +2121,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.fleet_tech_ship_template
-
-	var_1_62[10222] = {
+	pg.base.fleet_tech_ship_template[10222] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -2353,11 +2139,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.fleet_tech_ship_template
-
-	var_1_63[10223] = {
+	pg.base.fleet_tech_ship_template[10223] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -2375,11 +2157,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.fleet_tech_ship_template
-
-	var_1_64[10225] = {
+	pg.base.fleet_tech_ship_template[10225] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -2397,11 +2175,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.fleet_tech_ship_template
-
-	var_1_65[10226] = {
+	pg.base.fleet_tech_ship_template[10226] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 4,
@@ -2419,11 +2193,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.fleet_tech_ship_template
-
-	var_1_66[10227] = {
+	pg.base.fleet_tech_ship_template[10227] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 2,
@@ -2441,11 +2211,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.fleet_tech_ship_template
-
-	var_1_67[10229] = {
+	pg.base.fleet_tech_ship_template[10229] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 2,
@@ -2463,11 +2229,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.fleet_tech_ship_template
-
-	var_1_68[10231] = {
+	pg.base.fleet_tech_ship_template[10231] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2485,11 +2247,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.fleet_tech_ship_template
-
-	var_1_69[10233] = {
+	pg.base.fleet_tech_ship_template[10233] = {
 		max_star = 6,
 		pt_level = 25,
 		add_level_attr = 2,
@@ -2507,11 +2265,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.fleet_tech_ship_template
-
-	var_1_70[10234] = {
+	pg.base.fleet_tech_ship_template[10234] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2529,11 +2283,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.fleet_tech_ship_template
-
-	var_1_71[10235] = {
+	pg.base.fleet_tech_ship_template[10235] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -2551,11 +2301,25 @@ var_0_3.base.fleet_tech_ship_template = {}
 			2
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.fleet_tech_ship_template
-
-	var_1_72[10301] = {
+	pg.base.fleet_tech_ship_template[10236] = {
+		max_star = 6,
+		pt_level = 18,
+		add_level_attr = 2,
+		pt_upgrage = 24,
+		add_get_attr = 4,
+		add_level_value = 1,
+		class = 10202,
+		id = 10236,
+		add_get_value = 1,
+		pt_get = 12,
+		add_get_shiptype = {
+			2
+		},
+		add_level_shiptype = {
+			2
+		}
+	}
+	pg.base.fleet_tech_ship_template[10301] = {
 		max_star = 4,
 		pt_level = 8,
 		add_level_attr = 4,
@@ -2577,11 +2341,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.fleet_tech_ship_template
-
-	var_1_73[10302] = {
+	pg.base.fleet_tech_ship_template[10302] = {
 		max_star = 4,
 		pt_level = 8,
 		add_level_attr = 4,
@@ -2603,11 +2363,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.fleet_tech_ship_template
-
-	var_1_74[10303] = {
+	pg.base.fleet_tech_ship_template[10303] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 4,
@@ -2629,11 +2385,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.fleet_tech_ship_template
-
-	var_1_75[10304] = {
+	pg.base.fleet_tech_ship_template[10304] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 4,
@@ -2655,11 +2407,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.fleet_tech_ship_template
-
-	var_1_76[10305] = {
+	pg.base.fleet_tech_ship_template[10305] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 9,
@@ -2681,11 +2429,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.fleet_tech_ship_template
-
-	var_1_77[10306] = {
+	pg.base.fleet_tech_ship_template[10306] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 4,
@@ -2707,11 +2451,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.fleet_tech_ship_template
-
-	var_1_78[10307] = {
+	pg.base.fleet_tech_ship_template[10307] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -2733,11 +2473,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.fleet_tech_ship_template
-
-	var_1_79[10308] = {
+	pg.base.fleet_tech_ship_template[10308] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -2759,11 +2495,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.fleet_tech_ship_template
-
-	var_1_80[10309] = {
+	pg.base.fleet_tech_ship_template[10309] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -2785,11 +2517,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.fleet_tech_ship_template
-
-	var_1_81[10310] = {
+	pg.base.fleet_tech_ship_template[10310] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -2811,11 +2539,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.fleet_tech_ship_template
-
-	var_1_82[10311] = {
+	pg.base.fleet_tech_ship_template[10311] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2837,11 +2561,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.fleet_tech_ship_template
-
-	var_1_83[10312] = {
+	pg.base.fleet_tech_ship_template[10312] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2863,11 +2583,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.fleet_tech_ship_template
-
-	var_1_84[10313] = {
+	pg.base.fleet_tech_ship_template[10313] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2889,11 +2605,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.fleet_tech_ship_template
-
-	var_1_85[10314] = {
+	pg.base.fleet_tech_ship_template[10314] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -2915,11 +2627,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.fleet_tech_ship_template
-
-	var_1_86[10316] = {
+	pg.base.fleet_tech_ship_template[10316] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -2941,11 +2649,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.fleet_tech_ship_template
-
-	var_1_87[10324] = {
+	pg.base.fleet_tech_ship_template[10324] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -2967,11 +2671,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.fleet_tech_ship_template
-
-	var_1_88[10326] = {
+	pg.base.fleet_tech_ship_template[10326] = {
 		max_star = 6,
 		pt_level = 25,
 		add_level_attr = 8,
@@ -2993,11 +2693,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.fleet_tech_ship_template
-
-	var_1_89[10327] = {
+	pg.base.fleet_tech_ship_template[10327] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 4,
@@ -3019,11 +2715,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.fleet_tech_ship_template
-
-	var_1_90[10328] = {
+	pg.base.fleet_tech_ship_template[10328] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -3045,11 +2737,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			18
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.fleet_tech_ship_template
-
-	var_1_91[10401] = {
+	pg.base.fleet_tech_ship_template[10401] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 9,
@@ -3069,11 +2757,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			4
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.fleet_tech_ship_template
-
-	var_1_92[10501] = {
+	pg.base.fleet_tech_ship_template[10501] = {
 		max_star = 4,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -3095,11 +2779,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.fleet_tech_ship_template
-
-	var_1_93[10502] = {
+	pg.base.fleet_tech_ship_template[10502] = {
 		max_star = 4,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -3121,11 +2801,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.fleet_tech_ship_template
-
-	var_1_94[10503] = {
+	pg.base.fleet_tech_ship_template[10503] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,
@@ -3147,11 +2823,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.fleet_tech_ship_template
-
-	var_1_95[10504] = {
+	pg.base.fleet_tech_ship_template[10504] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 1,
@@ -3173,11 +2845,11 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_95
 
-	local var_1_96 = var_1_95.base.fleet_tech_ship_template
-
-	var_1_96[10507] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[10507] = {
 		max_star = 5,
 		pt_level = 19,
 		add_level_attr = 6,
@@ -3199,11 +2871,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.fleet_tech_ship_template
-
-	var_1_97[10508] = {
+	pg.base.fleet_tech_ship_template[10508] = {
 		max_star = 5,
 		pt_level = 19,
 		add_level_attr = 6,
@@ -3225,11 +2893,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.fleet_tech_ship_template
-
-	var_1_98[10509] = {
+	pg.base.fleet_tech_ship_template[10509] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -3251,8 +2915,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.fleet_tech_ship_template[10510] = {
+	pg.base.fleet_tech_ship_template[10510] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -3274,15 +2937,7 @@ var_0_3.base.fleet_tech_ship_template = {}
 			10
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_2_0[10511] = {
+	pg.base.fleet_tech_ship_template[10511] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -3304,11 +2959,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.fleet_tech_ship_template
-
-	var_2_1[10512] = {
+	pg.base.fleet_tech_ship_template[10512] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 4,
@@ -3330,11 +2981,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.fleet_tech_ship_template
-
-	var_2_2[10513] = {
+	pg.base.fleet_tech_ship_template[10513] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 4,
@@ -3356,11 +3003,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.fleet_tech_ship_template
-
-	var_2_3[10514] = {
+	pg.base.fleet_tech_ship_template[10514] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 4,
@@ -3382,11 +3025,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.fleet_tech_ship_template
-
-	var_2_4[10515] = {
+	pg.base.fleet_tech_ship_template[10515] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 4,
@@ -3408,11 +3047,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.fleet_tech_ship_template
-
-	var_2_5[10517] = {
+	pg.base.fleet_tech_ship_template[10517] = {
 		max_star = 6,
 		pt_level = 43,
 		add_level_attr = 2,
@@ -3434,11 +3069,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.fleet_tech_ship_template
-
-	var_2_6[10519] = {
+	pg.base.fleet_tech_ship_template[10519] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 8,
@@ -3460,11 +3091,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.fleet_tech_ship_template
-
-	var_2_7[10520] = {
+	pg.base.fleet_tech_ship_template[10520] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 2,
@@ -3486,11 +3113,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.fleet_tech_ship_template
-
-	var_2_8[10601] = {
+	pg.base.fleet_tech_ship_template[10601] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -3509,11 +3132,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.fleet_tech_ship_template
-
-	var_2_9[10602] = {
+	pg.base.fleet_tech_ship_template[10602] = {
 		max_star = 4,
 		pt_level = 7,
 		add_level_attr = 12,
@@ -3531,11 +3150,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.fleet_tech_ship_template
-
-	var_2_10[10655] = {
+	pg.base.fleet_tech_ship_template[10655] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -3554,11 +3169,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.fleet_tech_ship_template
-
-	var_2_11[10701] = {
+	pg.base.fleet_tech_ship_template[10701] = {
 		max_star = 4,
 		pt_level = 6,
 		add_level_attr = 6,
@@ -3577,11 +3188,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.fleet_tech_ship_template
-
-	var_2_12[10702] = {
+	pg.base.fleet_tech_ship_template[10702] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 5,
@@ -3601,11 +3208,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.fleet_tech_ship_template
-
-	var_2_13[10703] = {
+	pg.base.fleet_tech_ship_template[10703] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 5,
@@ -3625,11 +3228,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.fleet_tech_ship_template
-
-	var_2_14[10704] = {
+	pg.base.fleet_tech_ship_template[10704] = {
 		max_star = 4,
 		pt_level = 9,
 		add_level_attr = 5,
@@ -3648,11 +3247,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.fleet_tech_ship_template
-
-	var_2_15[10705] = {
+	pg.base.fleet_tech_ship_template[10705] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,
@@ -3672,11 +3267,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.fleet_tech_ship_template
-
-	var_2_16[10706] = {
+	pg.base.fleet_tech_ship_template[10706] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 5,
@@ -3696,11 +3287,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.fleet_tech_ship_template
-
-	var_2_17[10707] = {
+	pg.base.fleet_tech_ship_template[10707] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 8,
@@ -3720,11 +3307,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.fleet_tech_ship_template
-
-	var_2_18[10708] = {
+	pg.base.fleet_tech_ship_template[10708] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -3744,11 +3327,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.fleet_tech_ship_template
-
-	var_2_19[10709] = {
+	pg.base.fleet_tech_ship_template[10709] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -3768,11 +3347,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.fleet_tech_ship_template
-
-	var_2_20[10710] = {
+	pg.base.fleet_tech_ship_template[10710] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 5,
@@ -3792,11 +3367,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.fleet_tech_ship_template
-
-	var_2_21[10711] = {
+	pg.base.fleet_tech_ship_template[10711] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -3816,11 +3387,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.fleet_tech_ship_template
-
-	var_2_22[10712] = {
+	pg.base.fleet_tech_ship_template[10712] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -3840,11 +3407,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.fleet_tech_ship_template
-
-	var_2_23[10713] = {
+	pg.base.fleet_tech_ship_template[10713] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -3864,11 +3427,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.fleet_tech_ship_template
-
-	var_2_24[10714] = {
+	pg.base.fleet_tech_ship_template[10714] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -3888,11 +3447,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.fleet_tech_ship_template
-
-	var_2_25[10716] = {
+	pg.base.fleet_tech_ship_template[10716] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 5,
@@ -3912,11 +3467,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.fleet_tech_ship_template
-
-	var_2_26[10717] = {
+	pg.base.fleet_tech_ship_template[10717] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -3936,11 +3487,27 @@ end)()
 			7
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.fleet_tech_ship_template
-
-	var_2_27[10722] = {
+	pg.base.fleet_tech_ship_template[10720] = {
+		max_star = 6,
+		pt_level = 26,
+		add_level_attr = 5,
+		pt_upgrage = 35,
+		add_get_attr = 1,
+		add_level_value = 2,
+		class = 10705,
+		id = 10720,
+		add_get_value = 1,
+		pt_get = 17,
+		add_get_shiptype = {
+			6,
+			7
+		},
+		add_level_shiptype = {
+			6,
+			7
+		}
+	}
+	pg.base.fleet_tech_ship_template[10722] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -3959,11 +3526,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.fleet_tech_ship_template
-
-	var_2_28[10723] = {
+	pg.base.fleet_tech_ship_template[10723] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -3982,11 +3545,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.fleet_tech_ship_template
-
-	var_2_29[10725] = {
+	pg.base.fleet_tech_ship_template[10725] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 6,
@@ -4005,11 +3564,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.fleet_tech_ship_template
-
-	var_2_30[10727] = {
+	pg.base.fleet_tech_ship_template[10727] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 5,
@@ -4028,11 +3583,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.fleet_tech_ship_template
-
-	var_2_31[10729] = {
+	pg.base.fleet_tech_ship_template[10729] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -4051,11 +3602,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.fleet_tech_ship_template
-
-	var_2_32[10730] = {
+	pg.base.fleet_tech_ship_template[10730] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -4074,11 +3621,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.fleet_tech_ship_template
-
-	var_2_33[10738] = {
+	pg.base.fleet_tech_ship_template[10738] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -4098,11 +3641,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.fleet_tech_ship_template
-
-	var_2_34[10801] = {
+	pg.base.fleet_tech_ship_template[10801] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 3,
@@ -4122,11 +3661,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.fleet_tech_ship_template
-
-	var_2_35[10802] = {
+	pg.base.fleet_tech_ship_template[10802] = {
 		max_star = 6,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -4146,11 +3681,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.fleet_tech_ship_template
-
-	var_2_36[10803] = {
+	pg.base.fleet_tech_ship_template[10803] = {
 		max_star = 6,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -4170,11 +3701,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.fleet_tech_ship_template
-
-	var_2_37[10804] = {
+	pg.base.fleet_tech_ship_template[10804] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 3,
@@ -4194,11 +3721,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.fleet_tech_ship_template
-
-	var_2_38[10806] = {
+	pg.base.fleet_tech_ship_template[10806] = {
 		max_star = 6,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -4218,11 +3741,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.fleet_tech_ship_template
-
-	var_2_39[10807] = {
+	pg.base.fleet_tech_ship_template[10807] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 1,
@@ -4242,11 +3761,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.fleet_tech_ship_template
-
-	var_2_40[10808] = {
+	pg.base.fleet_tech_ship_template[10808] = {
 		max_star = 6,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -4266,11 +3781,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.fleet_tech_ship_template
-
-	var_2_41[10809] = {
+	pg.base.fleet_tech_ship_template[10809] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 3,
@@ -4290,11 +3801,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.fleet_tech_ship_template
-
-	var_2_42[11201] = {
+	pg.base.fleet_tech_ship_template[11201] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 1,
@@ -4312,11 +3819,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.fleet_tech_ship_template
-
-	var_2_43[11802] = {
+	pg.base.fleet_tech_ship_template[11802] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -4338,11 +3841,7 @@ end)()
 			18
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.fleet_tech_ship_template
-
-	var_2_44[19901] = {
+	pg.base.fleet_tech_ship_template[19901] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -4360,11 +3859,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.fleet_tech_ship_template
-
-	var_2_45[19902] = {
+	pg.base.fleet_tech_ship_template[19902] = {
 		max_star = 6,
 		pt_level = 39,
 		add_level_attr = 2,
@@ -4386,11 +3881,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.fleet_tech_ship_template
-
-	var_2_46[19903] = {
+	pg.base.fleet_tech_ship_template[19903] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 8,
@@ -4412,11 +3903,7 @@ end)()
 			18
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.fleet_tech_ship_template
-
-	var_2_47[19904] = {
+	pg.base.fleet_tech_ship_template[19904] = {
 		max_star = 6,
 		pt_level = 50,
 		add_level_attr = 2,
@@ -4438,11 +3925,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.fleet_tech_ship_template
-
-	var_2_48[19905] = {
+	pg.base.fleet_tech_ship_template[19905] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 9,
@@ -4464,11 +3947,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.fleet_tech_ship_template
-
-	var_2_49[19906] = {
+	pg.base.fleet_tech_ship_template[19906] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 2,
@@ -4490,11 +3969,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.fleet_tech_ship_template
-
-	var_2_50[20101] = {
+	pg.base.fleet_tech_ship_template[20101] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 12,
@@ -4516,11 +3991,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.fleet_tech_ship_template
-
-	var_2_51[20102] = {
+	pg.base.fleet_tech_ship_template[20102] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 12,
@@ -4542,11 +4013,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.fleet_tech_ship_template
-
-	var_2_52[20103] = {
+	pg.base.fleet_tech_ship_template[20103] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 12,
@@ -4568,11 +4035,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.fleet_tech_ship_template
-
-	var_2_53[20106] = {
+	pg.base.fleet_tech_ship_template[20106] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -4594,11 +4057,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.fleet_tech_ship_template
-
-	var_2_54[20107] = {
+	pg.base.fleet_tech_ship_template[20107] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -4620,11 +4079,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.fleet_tech_ship_template
-
-	var_2_55[20108] = {
+	pg.base.fleet_tech_ship_template[20108] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -4646,11 +4101,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.fleet_tech_ship_template
-
-	var_2_56[20109] = {
+	pg.base.fleet_tech_ship_template[20109] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -4672,11 +4123,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.fleet_tech_ship_template
-
-	var_2_57[20110] = {
+	pg.base.fleet_tech_ship_template[20110] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -4698,11 +4145,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.fleet_tech_ship_template
-
-	var_2_58[20111] = {
+	pg.base.fleet_tech_ship_template[20111] = {
 		max_star = 4,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -4724,11 +4167,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.fleet_tech_ship_template
-
-	var_2_59[20112] = {
+	pg.base.fleet_tech_ship_template[20112] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 12,
@@ -4750,11 +4189,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.fleet_tech_ship_template
-
-	var_2_60[20113] = {
+	pg.base.fleet_tech_ship_template[20113] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 9,
@@ -4776,11 +4211,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.fleet_tech_ship_template
-
-	var_2_61[20114] = {
+	pg.base.fleet_tech_ship_template[20114] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 9,
@@ -4802,11 +4233,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.fleet_tech_ship_template
-
-	var_2_62[20115] = {
+	pg.base.fleet_tech_ship_template[20115] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 9,
@@ -4828,11 +4255,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.fleet_tech_ship_template
-
-	var_2_63[20116] = {
+	pg.base.fleet_tech_ship_template[20116] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -4854,11 +4277,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.fleet_tech_ship_template
-
-	var_2_64[20120] = {
+	pg.base.fleet_tech_ship_template[20120] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 12,
@@ -4880,11 +4299,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.fleet_tech_ship_template
-
-	var_2_65[20121] = {
+	pg.base.fleet_tech_ship_template[20121] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 9,
@@ -4906,11 +4321,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.fleet_tech_ship_template
-
-	var_2_66[20122] = {
+	pg.base.fleet_tech_ship_template[20122] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 12,
@@ -4932,11 +4343,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.fleet_tech_ship_template
-
-	var_2_67[20123] = {
+	pg.base.fleet_tech_ship_template[20123] = {
 		max_star = 5,
 		pt_level = 4,
 		add_level_attr = 3,
@@ -4958,11 +4365,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.fleet_tech_ship_template
-
-	var_2_68[20124] = {
+	pg.base.fleet_tech_ship_template[20124] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 12,
@@ -4984,11 +4387,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.fleet_tech_ship_template
-
-	var_2_69[20125] = {
+	pg.base.fleet_tech_ship_template[20125] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 12,
@@ -5010,11 +4409,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.fleet_tech_ship_template
-
-	var_2_70[20126] = {
+	pg.base.fleet_tech_ship_template[20126] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 9,
@@ -5036,11 +4431,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.fleet_tech_ship_template
-
-	var_2_71[20127] = {
+	pg.base.fleet_tech_ship_template[20127] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 9,
@@ -5062,11 +4453,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.fleet_tech_ship_template
-
-	var_2_72[20129] = {
+	pg.base.fleet_tech_ship_template[20129] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 12,
@@ -5088,11 +4475,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.fleet_tech_ship_template
-
-	var_2_73[20132] = {
+	pg.base.fleet_tech_ship_template[20132] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 2,
@@ -5114,11 +4497,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.fleet_tech_ship_template
-
-	var_2_74[20133] = {
+	pg.base.fleet_tech_ship_template[20133] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 12,
@@ -5140,11 +4519,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.fleet_tech_ship_template
-
-	var_2_75[20134] = {
+	pg.base.fleet_tech_ship_template[20134] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 9,
@@ -5166,11 +4541,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.fleet_tech_ship_template
-
-	var_2_76[20135] = {
+	pg.base.fleet_tech_ship_template[20135] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 9,
@@ -5192,11 +4563,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.fleet_tech_ship_template
-
-	var_2_77[20136] = {
+	pg.base.fleet_tech_ship_template[20136] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 12,
@@ -5218,11 +4585,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.fleet_tech_ship_template
-
-	var_2_78[20137] = {
+	pg.base.fleet_tech_ship_template[20137] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 2,
@@ -5244,11 +4607,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.fleet_tech_ship_template
-
-	var_2_79[20138] = {
+	pg.base.fleet_tech_ship_template[20138] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 8,
@@ -5270,11 +4629,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.fleet_tech_ship_template
-
-	var_2_80[20139] = {
+	pg.base.fleet_tech_ship_template[20139] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 9,
@@ -5296,11 +4651,7 @@ end)()
 			21
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.fleet_tech_ship_template
-
-	var_2_81[20201] = {
+	pg.base.fleet_tech_ship_template[20201] = {
 		max_star = 4,
 		pt_level = 7,
 		add_level_attr = 1,
@@ -5318,11 +4669,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.fleet_tech_ship_template
-
-	var_2_82[20202] = {
+	pg.base.fleet_tech_ship_template[20202] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 12,
@@ -5340,11 +4687,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.fleet_tech_ship_template
-
-	var_2_83[20203] = {
+	pg.base.fleet_tech_ship_template[20203] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 12,
@@ -5362,11 +4705,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.fleet_tech_ship_template
-
-	var_2_84[20204] = {
+	pg.base.fleet_tech_ship_template[20204] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -5384,11 +4723,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.fleet_tech_ship_template
-
-	var_2_85[20207] = {
+	pg.base.fleet_tech_ship_template[20207] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 12,
@@ -5406,11 +4741,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.fleet_tech_ship_template
-
-	var_2_86[20208] = {
+	pg.base.fleet_tech_ship_template[20208] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 3,
@@ -5428,11 +4759,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.fleet_tech_ship_template
-
-	var_2_87[20209] = {
+	pg.base.fleet_tech_ship_template[20209] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 4,
@@ -5450,11 +4777,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.fleet_tech_ship_template
-
-	var_2_88[20210] = {
+	pg.base.fleet_tech_ship_template[20210] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 4,
@@ -5472,11 +4795,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.fleet_tech_ship_template
-
-	var_2_89[20211] = {
+	pg.base.fleet_tech_ship_template[20211] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 3,
@@ -5494,11 +4813,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.fleet_tech_ship_template
-
-	var_2_90[20212] = {
+	pg.base.fleet_tech_ship_template[20212] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -5516,11 +4831,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.fleet_tech_ship_template
-
-	var_2_91[20213] = {
+	pg.base.fleet_tech_ship_template[20213] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 12,
@@ -5538,11 +4849,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.fleet_tech_ship_template
-
-	var_2_92[20214] = {
+	pg.base.fleet_tech_ship_template[20214] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 12,
@@ -5560,11 +4867,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.fleet_tech_ship_template
-
-	var_2_93[20215] = {
+	pg.base.fleet_tech_ship_template[20215] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -5582,11 +4885,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.fleet_tech_ship_template
-
-	var_2_94[20216] = {
+	pg.base.fleet_tech_ship_template[20216] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 12,
@@ -5604,11 +4903,11 @@ end)()
 			2
 		}
 	}
-	pg = var_2_94
 
-	local var_2_95 = var_2_94.base.fleet_tech_ship_template
-
-	var_2_95[20217] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[20217] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 12,
@@ -5626,11 +4925,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.fleet_tech_ship_template
-
-	var_2_96[20236] = {
+	pg.base.fleet_tech_ship_template[20236] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 8,
@@ -5648,11 +4943,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.fleet_tech_ship_template
-
-	var_2_97[20219] = {
+	pg.base.fleet_tech_ship_template[20219] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 12,
@@ -5670,11 +4961,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.fleet_tech_ship_template
-
-	var_2_98[20220] = {
+	pg.base.fleet_tech_ship_template[20220] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -5692,8 +4979,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.fleet_tech_ship_template[20221] = {
+	pg.base.fleet_tech_ship_template[20221] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 12,
@@ -5711,15 +4997,7 @@ end)()
 			2
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_3_0[20222] = {
+	pg.base.fleet_tech_ship_template[20222] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 12,
@@ -5737,11 +5015,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.fleet_tech_ship_template
-
-	var_3_1[20223] = {
+	pg.base.fleet_tech_ship_template[20223] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 8,
@@ -5759,11 +5033,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.fleet_tech_ship_template
-
-	var_3_2[20224] = {
+	pg.base.fleet_tech_ship_template[20224] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 4,
@@ -5781,11 +5051,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.fleet_tech_ship_template
-
-	var_3_3[20226] = {
+	pg.base.fleet_tech_ship_template[20226] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -5803,11 +5069,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.fleet_tech_ship_template
-
-	var_3_4[20227] = {
+	pg.base.fleet_tech_ship_template[20227] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -5825,11 +5087,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.fleet_tech_ship_template
-
-	var_3_5[20229] = {
+	pg.base.fleet_tech_ship_template[20229] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 8,
@@ -5847,11 +5105,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.fleet_tech_ship_template
-
-	var_3_6[20230] = {
+	pg.base.fleet_tech_ship_template[20230] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -5869,11 +5123,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.fleet_tech_ship_template
-
-	var_3_7[20231] = {
+	pg.base.fleet_tech_ship_template[20231] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 4,
@@ -5891,11 +5141,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.fleet_tech_ship_template
-
-	var_3_8[20232] = {
+	pg.base.fleet_tech_ship_template[20232] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -5913,11 +5159,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.fleet_tech_ship_template
-
-	var_3_9[20233] = {
+	pg.base.fleet_tech_ship_template[20233] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -5935,11 +5177,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.fleet_tech_ship_template
-
-	var_3_10[20234] = {
+	pg.base.fleet_tech_ship_template[20234] = {
 		max_star = 5,
 		pt_level = 15,
 		add_level_attr = 4,
@@ -5957,11 +5195,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.fleet_tech_ship_template
-
-	var_3_11[20235] = {
+	pg.base.fleet_tech_ship_template[20235] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -5979,11 +5213,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.fleet_tech_ship_template
-
-	var_3_12[20237] = {
+	pg.base.fleet_tech_ship_template[20237] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 8,
@@ -6001,11 +5231,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.fleet_tech_ship_template
-
-	var_3_13[20301] = {
+	pg.base.fleet_tech_ship_template[20301] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -6027,11 +5253,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.fleet_tech_ship_template
-
-	var_3_14[20302] = {
+	pg.base.fleet_tech_ship_template[20302] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -6053,11 +5275,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.fleet_tech_ship_template
-
-	var_3_15[20303] = {
+	pg.base.fleet_tech_ship_template[20303] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -6079,11 +5297,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.fleet_tech_ship_template
-
-	var_3_16[20304] = {
+	pg.base.fleet_tech_ship_template[20304] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -6105,11 +5319,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.fleet_tech_ship_template
-
-	var_3_17[20305] = {
+	pg.base.fleet_tech_ship_template[20305] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -6131,11 +5341,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.fleet_tech_ship_template
-
-	var_3_18[20306] = {
+	pg.base.fleet_tech_ship_template[20306] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -6157,11 +5363,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.fleet_tech_ship_template
-
-	var_3_19[20307] = {
+	pg.base.fleet_tech_ship_template[20307] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -6183,11 +5385,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.fleet_tech_ship_template
-
-	var_3_20[20308] = {
+	pg.base.fleet_tech_ship_template[20308] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -6209,11 +5407,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.fleet_tech_ship_template
-
-	var_3_21[20309] = {
+	pg.base.fleet_tech_ship_template[20309] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -6235,11 +5429,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.fleet_tech_ship_template
-
-	var_3_22[20313] = {
+	pg.base.fleet_tech_ship_template[20313] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -6261,11 +5451,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.fleet_tech_ship_template
-
-	var_3_23[20314] = {
+	pg.base.fleet_tech_ship_template[20314] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 6,
@@ -6287,11 +5473,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.fleet_tech_ship_template
-
-	var_3_24[20401] = {
+	pg.base.fleet_tech_ship_template[20401] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -6311,11 +5493,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.fleet_tech_ship_template
-
-	var_3_25[20402] = {
+	pg.base.fleet_tech_ship_template[20402] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 9,
@@ -6335,11 +5513,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.fleet_tech_ship_template
-
-	var_3_26[20403] = {
+	pg.base.fleet_tech_ship_template[20403] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 9,
@@ -6359,11 +5533,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.fleet_tech_ship_template
-
-	var_3_27[20501] = {
+	pg.base.fleet_tech_ship_template[20501] = {
 		max_star = 5,
 		pt_level = 21,
 		add_level_attr = 8,
@@ -6385,11 +5555,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.fleet_tech_ship_template
-
-	var_3_28[20502] = {
+	pg.base.fleet_tech_ship_template[20502] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 8,
@@ -6411,11 +5577,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.fleet_tech_ship_template
-
-	var_3_29[20503] = {
+	pg.base.fleet_tech_ship_template[20503] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -6437,11 +5599,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.fleet_tech_ship_template
-
-	var_3_30[20504] = {
+	pg.base.fleet_tech_ship_template[20504] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -6463,11 +5621,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.fleet_tech_ship_template
-
-	var_3_31[20505] = {
+	pg.base.fleet_tech_ship_template[20505] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 2,
@@ -6489,11 +5643,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.fleet_tech_ship_template
-
-	var_3_32[20506] = {
+	pg.base.fleet_tech_ship_template[20506] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 2,
@@ -6515,11 +5665,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.fleet_tech_ship_template
-
-	var_3_33[20507] = {
+	pg.base.fleet_tech_ship_template[20507] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 6,
@@ -6541,11 +5687,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.fleet_tech_ship_template
-
-	var_3_34[20509] = {
+	pg.base.fleet_tech_ship_template[20509] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 2,
@@ -6567,11 +5709,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.fleet_tech_ship_template
-
-	var_3_35[20510] = {
+	pg.base.fleet_tech_ship_template[20510] = {
 		max_star = 5,
 		pt_level = 21,
 		add_level_attr = 8,
@@ -6593,11 +5731,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.fleet_tech_ship_template
-
-	var_3_36[20511] = {
+	pg.base.fleet_tech_ship_template[20511] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -6619,11 +5753,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.fleet_tech_ship_template
-
-	var_3_37[20513] = {
+	pg.base.fleet_tech_ship_template[20513] = {
 		max_star = 6,
 		pt_level = 43,
 		add_level_attr = 8,
@@ -6645,11 +5775,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.fleet_tech_ship_template
-
-	var_3_38[20514] = {
+	pg.base.fleet_tech_ship_template[20514] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 2,
@@ -6671,11 +5797,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.fleet_tech_ship_template
-
-	var_3_39[20516] = {
+	pg.base.fleet_tech_ship_template[20516] = {
 		max_star = 6,
 		pt_level = 43,
 		add_level_attr = 2,
@@ -6697,11 +5819,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.fleet_tech_ship_template
-
-	var_3_40[20601] = {
+	pg.base.fleet_tech_ship_template[20601] = {
 		max_star = 4,
 		pt_level = 7,
 		add_level_attr = 12,
@@ -6719,11 +5837,7 @@ end)()
 			6
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.fleet_tech_ship_template
-
-	var_3_41[20602] = {
+	pg.base.fleet_tech_ship_template[20602] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 5,
@@ -6742,11 +5856,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.fleet_tech_ship_template
-
-	var_3_42[20603] = {
+	pg.base.fleet_tech_ship_template[20603] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 6,
@@ -6765,11 +5875,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.fleet_tech_ship_template
-
-	var_3_43[20604] = {
+	pg.base.fleet_tech_ship_template[20604] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 5,
@@ -6789,11 +5895,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.fleet_tech_ship_template
-
-	var_3_44[20605] = {
+	pg.base.fleet_tech_ship_template[20605] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 12,
@@ -6811,11 +5913,7 @@ end)()
 			6
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.fleet_tech_ship_template
-
-	var_3_45[20606] = {
+	pg.base.fleet_tech_ship_template[20606] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 5,
@@ -6833,11 +5931,7 @@ end)()
 			6
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.fleet_tech_ship_template
-
-	var_3_46[20607] = {
+	pg.base.fleet_tech_ship_template[20607] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 5,
@@ -6857,11 +5951,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.fleet_tech_ship_template
-
-	var_3_47[20608] = {
+	pg.base.fleet_tech_ship_template[20608] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 5,
@@ -6879,11 +5969,7 @@ end)()
 			6
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.fleet_tech_ship_template
-
-	var_3_48[20701] = {
+	pg.base.fleet_tech_ship_template[20701] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 5,
@@ -6903,11 +5989,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.fleet_tech_ship_template
-
-	var_3_49[20702] = {
+	pg.base.fleet_tech_ship_template[20702] = {
 		max_star = 5,
 		pt_level = 23,
 		add_level_attr = 8,
@@ -6927,11 +6009,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.fleet_tech_ship_template
-
-	var_3_50[20703] = {
+	pg.base.fleet_tech_ship_template[20703] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 4,
@@ -6951,11 +6029,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.fleet_tech_ship_template
-
-	var_3_51[20704] = {
+	pg.base.fleet_tech_ship_template[20704] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 4,
@@ -6975,11 +6049,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.fleet_tech_ship_template
-
-	var_3_52[20705] = {
+	pg.base.fleet_tech_ship_template[20705] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 4,
@@ -6999,11 +6069,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.fleet_tech_ship_template
-
-	var_3_53[20712] = {
+	pg.base.fleet_tech_ship_template[20712] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 4,
@@ -7023,11 +6089,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.fleet_tech_ship_template
-
-	var_3_54[20706] = {
+	pg.base.fleet_tech_ship_template[20706] = {
 		max_star = 5,
 		pt_level = 21,
 		add_level_attr = 6,
@@ -7047,11 +6109,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.fleet_tech_ship_template
-
-	var_3_55[20707] = {
+	pg.base.fleet_tech_ship_template[20707] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 5,
@@ -7071,11 +6129,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.fleet_tech_ship_template
-
-	var_3_56[21301] = {
+	pg.base.fleet_tech_ship_template[21301] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -7097,11 +6151,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.fleet_tech_ship_template
-
-	var_3_57[21302] = {
+	pg.base.fleet_tech_ship_template[21302] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -7123,11 +6173,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.fleet_tech_ship_template
-
-	var_3_58[21304] = {
+	pg.base.fleet_tech_ship_template[21304] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -7149,11 +6195,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.fleet_tech_ship_template
-
-	var_3_59[29901] = {
+	pg.base.fleet_tech_ship_template[29901] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -7171,11 +6213,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.fleet_tech_ship_template
-
-	var_3_60[29902] = {
+	pg.base.fleet_tech_ship_template[29902] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 2,
@@ -7197,11 +6235,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.fleet_tech_ship_template
-
-	var_3_61[29903] = {
+	pg.base.fleet_tech_ship_template[29903] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 4,
@@ -7223,11 +6257,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.fleet_tech_ship_template
-
-	var_3_62[29904] = {
+	pg.base.fleet_tech_ship_template[29904] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -7249,11 +6279,7 @@ end)()
 			18
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.fleet_tech_ship_template
-
-	var_3_63[29905] = {
+	pg.base.fleet_tech_ship_template[29905] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -7271,11 +6297,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.fleet_tech_ship_template
-
-	var_3_64[29906] = {
+	pg.base.fleet_tech_ship_template[29906] = {
 		max_star = 6,
 		pt_level = 39,
 		add_level_attr = 2,
@@ -7297,11 +6319,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.fleet_tech_ship_template
-
-	var_3_65[30101] = {
+	pg.base.fleet_tech_ship_template[30101] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -7323,11 +6341,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.fleet_tech_ship_template
-
-	var_3_66[30102] = {
+	pg.base.fleet_tech_ship_template[30102] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 12,
@@ -7349,11 +6363,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.fleet_tech_ship_template
-
-	var_3_67[30104] = {
+	pg.base.fleet_tech_ship_template[30104] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 12,
@@ -7375,11 +6385,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.fleet_tech_ship_template
-
-	var_3_68[30105] = {
+	pg.base.fleet_tech_ship_template[30105] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -7401,11 +6407,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.fleet_tech_ship_template
-
-	var_3_69[30109] = {
+	pg.base.fleet_tech_ship_template[30109] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 8,
@@ -7427,11 +6429,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.fleet_tech_ship_template
-
-	var_3_70[30110] = {
+	pg.base.fleet_tech_ship_template[30110] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 8,
@@ -7453,11 +6451,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.fleet_tech_ship_template
-
-	var_3_71[30111] = {
+	pg.base.fleet_tech_ship_template[30111] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 8,
@@ -7479,11 +6473,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.fleet_tech_ship_template
-
-	var_3_72[30112] = {
+	pg.base.fleet_tech_ship_template[30112] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 8,
@@ -7505,11 +6495,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.fleet_tech_ship_template
-
-	var_3_73[30113] = {
+	pg.base.fleet_tech_ship_template[30113] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 6,
@@ -7531,11 +6517,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.fleet_tech_ship_template
-
-	var_3_74[30114] = {
+	pg.base.fleet_tech_ship_template[30114] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -7557,11 +6539,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.fleet_tech_ship_template
-
-	var_3_75[30115] = {
+	pg.base.fleet_tech_ship_template[30115] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -7583,11 +6561,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.fleet_tech_ship_template
-
-	var_3_76[30116] = {
+	pg.base.fleet_tech_ship_template[30116] = {
 		max_star = 6,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -7609,11 +6583,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.fleet_tech_ship_template
-
-	var_3_77[30117] = {
+	pg.base.fleet_tech_ship_template[30117] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 6,
@@ -7635,11 +6605,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.fleet_tech_ship_template
-
-	var_3_78[30118] = {
+	pg.base.fleet_tech_ship_template[30118] = {
 		max_star = 4,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -7661,11 +6627,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.fleet_tech_ship_template
-
-	var_3_79[30120] = {
+	pg.base.fleet_tech_ship_template[30120] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -7687,11 +6649,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.fleet_tech_ship_template
-
-	var_3_80[30121] = {
+	pg.base.fleet_tech_ship_template[30121] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 6,
@@ -7713,11 +6671,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.fleet_tech_ship_template
-
-	var_3_81[30123] = {
+	pg.base.fleet_tech_ship_template[30123] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 6,
@@ -7739,11 +6693,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.fleet_tech_ship_template
-
-	var_3_82[30124] = {
+	pg.base.fleet_tech_ship_template[30124] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 6,
@@ -7765,11 +6715,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.fleet_tech_ship_template
-
-	var_3_83[30125] = {
+	pg.base.fleet_tech_ship_template[30125] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 6,
@@ -7791,11 +6737,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.fleet_tech_ship_template
-
-	var_3_84[30126] = {
+	pg.base.fleet_tech_ship_template[30126] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 6,
@@ -7817,11 +6759,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.fleet_tech_ship_template
-
-	var_3_85[30127] = {
+	pg.base.fleet_tech_ship_template[30127] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 6,
@@ -7843,11 +6781,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.fleet_tech_ship_template
-
-	var_3_86[30128] = {
+	pg.base.fleet_tech_ship_template[30128] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 6,
@@ -7869,11 +6803,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.fleet_tech_ship_template
-
-	var_3_87[30129] = {
+	pg.base.fleet_tech_ship_template[30129] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 3,
@@ -7895,11 +6825,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.fleet_tech_ship_template
-
-	var_3_88[30130] = {
+	pg.base.fleet_tech_ship_template[30130] = {
 		max_star = 5,
 		pt_level = 3,
 		add_level_attr = 6,
@@ -7921,11 +6847,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.fleet_tech_ship_template
-
-	var_3_89[30131] = {
+	pg.base.fleet_tech_ship_template[30131] = {
 		max_star = 5,
 		pt_level = 3,
 		add_level_attr = 6,
@@ -7947,11 +6869,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.fleet_tech_ship_template
-
-	var_3_90[30132] = {
+	pg.base.fleet_tech_ship_template[30132] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -7973,11 +6891,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.fleet_tech_ship_template
-
-	var_3_91[30133] = {
+	pg.base.fleet_tech_ship_template[30133] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -7999,11 +6913,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.fleet_tech_ship_template
-
-	var_3_92[30135] = {
+	pg.base.fleet_tech_ship_template[30135] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -8025,11 +6935,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.fleet_tech_ship_template
-
-	var_3_93[30137] = {
+	pg.base.fleet_tech_ship_template[30137] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -8051,11 +6957,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.fleet_tech_ship_template
-
-	var_3_94[30138] = {
+	pg.base.fleet_tech_ship_template[30138] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 6,
@@ -8077,11 +6979,11 @@ end)()
 			21
 		}
 	}
-	pg = var_3_94
 
-	local var_3_95 = var_3_94.base.fleet_tech_ship_template
-
-	var_3_95[30139] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[30139] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -8103,11 +7005,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.fleet_tech_ship_template
-
-	var_3_96[30141] = {
+	pg.base.fleet_tech_ship_template[30141] = {
 		max_star = 4,
 		pt_level = 3,
 		add_level_attr = 1,
@@ -8129,11 +7027,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.fleet_tech_ship_template
-
-	var_3_97[30147] = {
+	pg.base.fleet_tech_ship_template[30147] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -8155,11 +7049,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.fleet_tech_ship_template
-
-	var_3_98[30148] = {
+	pg.base.fleet_tech_ship_template[30148] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -8181,8 +7071,7 @@ end)()
 			21
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.fleet_tech_ship_template[30149] = {
+	pg.base.fleet_tech_ship_template[30149] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -8204,15 +7093,7 @@ end)()
 			21
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_4_0[30154] = {
+	pg.base.fleet_tech_ship_template[30154] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -8234,11 +7115,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.fleet_tech_ship_template
-
-	var_4_1[30156] = {
+	pg.base.fleet_tech_ship_template[30156] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 4,
@@ -8260,11 +7137,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.fleet_tech_ship_template
-
-	var_4_2[30157] = {
+	pg.base.fleet_tech_ship_template[30157] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 4,
@@ -8286,11 +7159,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.fleet_tech_ship_template
-
-	var_4_3[30158] = {
+	pg.base.fleet_tech_ship_template[30158] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 4,
@@ -8312,11 +7181,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.fleet_tech_ship_template
-
-	var_4_4[30159] = {
+	pg.base.fleet_tech_ship_template[30159] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 8,
@@ -8338,11 +7203,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.fleet_tech_ship_template
-
-	var_4_5[30160] = {
+	pg.base.fleet_tech_ship_template[30160] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 8,
@@ -8364,11 +7225,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.fleet_tech_ship_template
-
-	var_4_6[30161] = {
+	pg.base.fleet_tech_ship_template[30161] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 8,
@@ -8390,11 +7247,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.fleet_tech_ship_template
-
-	var_4_7[30162] = {
+	pg.base.fleet_tech_ship_template[30162] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 8,
@@ -8416,11 +7269,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.fleet_tech_ship_template
-
-	var_4_8[30163] = {
+	pg.base.fleet_tech_ship_template[30163] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 8,
@@ -8442,11 +7291,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.fleet_tech_ship_template
-
-	var_4_9[30164] = {
+	pg.base.fleet_tech_ship_template[30164] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 8,
@@ -8468,11 +7313,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.fleet_tech_ship_template
-
-	var_4_10[30165] = {
+	pg.base.fleet_tech_ship_template[30165] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 8,
@@ -8494,11 +7335,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.fleet_tech_ship_template
-
-	var_4_11[30166] = {
+	pg.base.fleet_tech_ship_template[30166] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 8,
@@ -8520,11 +7357,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.fleet_tech_ship_template
-
-	var_4_12[30172] = {
+	pg.base.fleet_tech_ship_template[30172] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 6,
@@ -8546,11 +7379,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.fleet_tech_ship_template
-
-	var_4_13[30179] = {
+	pg.base.fleet_tech_ship_template[30179] = {
 		max_star = 5,
 		pt_level = 3,
 		add_level_attr = 6,
@@ -8572,11 +7401,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.fleet_tech_ship_template
-
-	var_4_14[30180] = {
+	pg.base.fleet_tech_ship_template[30180] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -8598,11 +7423,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.fleet_tech_ship_template
-
-	var_4_15[30181] = {
+	pg.base.fleet_tech_ship_template[30181] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -8624,11 +7445,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.fleet_tech_ship_template
-
-	var_4_16[30182] = {
+	pg.base.fleet_tech_ship_template[30182] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 4,
@@ -8650,11 +7467,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.fleet_tech_ship_template
-
-	var_4_17[30183] = {
+	pg.base.fleet_tech_ship_template[30183] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -8676,11 +7489,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.fleet_tech_ship_template
-
-	var_4_18[30184] = {
+	pg.base.fleet_tech_ship_template[30184] = {
 		max_star = 6,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -8702,11 +7511,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.fleet_tech_ship_template
-
-	var_4_19[30185] = {
+	pg.base.fleet_tech_ship_template[30185] = {
 		max_star = 5,
 		pt_level = 3,
 		add_level_attr = 6,
@@ -8728,11 +7533,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.fleet_tech_ship_template
-
-	var_4_20[30186] = {
+	pg.base.fleet_tech_ship_template[30186] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -8754,11 +7555,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.fleet_tech_ship_template
-
-	var_4_21[30188] = {
+	pg.base.fleet_tech_ship_template[30188] = {
 		max_star = 6,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -8780,11 +7577,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.fleet_tech_ship_template
-
-	var_4_22[30189] = {
+	pg.base.fleet_tech_ship_template[30189] = {
 		max_star = 6,
 		pt_level = 15,
 		add_level_attr = 2,
@@ -8806,11 +7599,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.fleet_tech_ship_template
-
-	var_4_23[30190] = {
+	pg.base.fleet_tech_ship_template[30190] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -8832,11 +7621,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.fleet_tech_ship_template
-
-	var_4_24[30191] = {
+	pg.base.fleet_tech_ship_template[30191] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -8858,11 +7643,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.fleet_tech_ship_template
-
-	var_4_25[30192] = {
+	pg.base.fleet_tech_ship_template[30192] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -8884,11 +7665,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.fleet_tech_ship_template
-
-	var_4_26[30194] = {
+	pg.base.fleet_tech_ship_template[30194] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -8910,11 +7687,7 @@ end)()
 			21
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.fleet_tech_ship_template
-
-	var_4_27[30201] = {
+	pg.base.fleet_tech_ship_template[30201] = {
 		max_star = 5,
 		pt_level = 5,
 		add_level_attr = 3,
@@ -8932,11 +7705,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.fleet_tech_ship_template
-
-	var_4_28[30204] = {
+	pg.base.fleet_tech_ship_template[30204] = {
 		max_star = 4,
 		pt_level = 5,
 		add_level_attr = 1,
@@ -8954,11 +7723,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.fleet_tech_ship_template
-
-	var_4_29[30205] = {
+	pg.base.fleet_tech_ship_template[30205] = {
 		max_star = 5,
 		pt_level = 7,
 		add_level_attr = 4,
@@ -8976,11 +7741,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.fleet_tech_ship_template
-
-	var_4_30[30206] = {
+	pg.base.fleet_tech_ship_template[30206] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 9,
@@ -8998,11 +7759,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.fleet_tech_ship_template
-
-	var_4_31[30207] = {
+	pg.base.fleet_tech_ship_template[30207] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -9020,11 +7777,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.fleet_tech_ship_template
-
-	var_4_32[30208] = {
+	pg.base.fleet_tech_ship_template[30208] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -9042,11 +7795,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.fleet_tech_ship_template
-
-	var_4_33[30209] = {
+	pg.base.fleet_tech_ship_template[30209] = {
 		max_star = 4,
 		pt_level = 5,
 		add_level_attr = 3,
@@ -9064,11 +7813,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.fleet_tech_ship_template
-
-	var_4_34[30210] = {
+	pg.base.fleet_tech_ship_template[30210] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -9086,11 +7831,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.fleet_tech_ship_template
-
-	var_4_35[30211] = {
+	pg.base.fleet_tech_ship_template[30211] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -9108,11 +7849,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.fleet_tech_ship_template
-
-	var_4_36[30212] = {
+	pg.base.fleet_tech_ship_template[30212] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -9130,11 +7867,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.fleet_tech_ship_template
-
-	var_4_37[30213] = {
+	pg.base.fleet_tech_ship_template[30213] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -9152,11 +7885,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.fleet_tech_ship_template
-
-	var_4_38[30214] = {
+	pg.base.fleet_tech_ship_template[30214] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -9174,11 +7903,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.fleet_tech_ship_template
-
-	var_4_39[30220] = {
+	pg.base.fleet_tech_ship_template[30220] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -9196,11 +7921,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.fleet_tech_ship_template
-
-	var_4_40[30221] = {
+	pg.base.fleet_tech_ship_template[30221] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 4,
@@ -9218,11 +7939,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.fleet_tech_ship_template
-
-	var_4_41[30223] = {
+	pg.base.fleet_tech_ship_template[30223] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 4,
@@ -9240,11 +7957,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.fleet_tech_ship_template
-
-	var_4_42[30225] = {
+	pg.base.fleet_tech_ship_template[30225] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 8,
@@ -9262,11 +7975,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.fleet_tech_ship_template
-
-	var_4_43[30226] = {
+	pg.base.fleet_tech_ship_template[30226] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -9284,11 +7993,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.fleet_tech_ship_template
-
-	var_4_44[30227] = {
+	pg.base.fleet_tech_ship_template[30227] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -9306,11 +8011,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.fleet_tech_ship_template
-
-	var_4_45[30228] = {
+	pg.base.fleet_tech_ship_template[30228] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -9328,11 +8029,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.fleet_tech_ship_template
-
-	var_4_46[30229] = {
+	pg.base.fleet_tech_ship_template[30229] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -9350,11 +8047,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.fleet_tech_ship_template
-
-	var_4_47[30301] = {
+	pg.base.fleet_tech_ship_template[30301] = {
 		max_star = 4,
 		pt_level = 8,
 		add_level_attr = 1,
@@ -9376,11 +8069,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.fleet_tech_ship_template
-
-	var_4_48[30302] = {
+	pg.base.fleet_tech_ship_template[30302] = {
 		max_star = 4,
 		pt_level = 8,
 		add_level_attr = 1,
@@ -9402,11 +8091,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.fleet_tech_ship_template
-
-	var_4_49[30303] = {
+	pg.base.fleet_tech_ship_template[30303] = {
 		max_star = 4,
 		pt_level = 9,
 		add_level_attr = 1,
@@ -9428,11 +8113,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.fleet_tech_ship_template
-
-	var_4_50[30304] = {
+	pg.base.fleet_tech_ship_template[30304] = {
 		max_star = 4,
 		pt_level = 9,
 		add_level_attr = 1,
@@ -9454,11 +8135,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.fleet_tech_ship_template
-
-	var_4_51[30306] = {
+	pg.base.fleet_tech_ship_template[30306] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 2,
@@ -9480,11 +8157,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.fleet_tech_ship_template
-
-	var_4_52[30307] = {
+	pg.base.fleet_tech_ship_template[30307] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 1,
@@ -9506,11 +8179,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.fleet_tech_ship_template
-
-	var_4_53[30308] = {
+	pg.base.fleet_tech_ship_template[30308] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 1,
@@ -9532,11 +8201,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.fleet_tech_ship_template
-
-	var_4_54[30309] = {
+	pg.base.fleet_tech_ship_template[30309] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -9558,11 +8223,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.fleet_tech_ship_template
-
-	var_4_55[30310] = {
+	pg.base.fleet_tech_ship_template[30310] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -9584,11 +8245,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.fleet_tech_ship_template
-
-	var_4_56[30311] = {
+	pg.base.fleet_tech_ship_template[30311] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 3,
@@ -9610,11 +8267,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.fleet_tech_ship_template
-
-	var_4_57[30312] = {
+	pg.base.fleet_tech_ship_template[30312] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 3,
@@ -9636,11 +8289,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.fleet_tech_ship_template
-
-	var_4_58[30313] = {
+	pg.base.fleet_tech_ship_template[30313] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 3,
@@ -9662,11 +8311,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.fleet_tech_ship_template
-
-	var_4_59[30314] = {
+	pg.base.fleet_tech_ship_template[30314] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 4,
@@ -9688,11 +8333,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.fleet_tech_ship_template
-
-	var_4_60[30317] = {
+	pg.base.fleet_tech_ship_template[30317] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -9714,11 +8355,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.fleet_tech_ship_template
-
-	var_4_61[30318] = {
+	pg.base.fleet_tech_ship_template[30318] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -9740,11 +8377,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.fleet_tech_ship_template
-
-	var_4_62[30319] = {
+	pg.base.fleet_tech_ship_template[30319] = {
 		max_star = 6,
 		pt_level = 35,
 		add_level_attr = 2,
@@ -9766,11 +8399,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.fleet_tech_ship_template
-
-	var_4_63[30320] = {
+	pg.base.fleet_tech_ship_template[30320] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 3,
@@ -9792,11 +8421,7 @@ end)()
 			18
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.fleet_tech_ship_template
-
-	var_4_64[30401] = {
+	pg.base.fleet_tech_ship_template[30401] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -9816,11 +8441,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.fleet_tech_ship_template
-
-	var_4_65[30402] = {
+	pg.base.fleet_tech_ship_template[30402] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -9840,11 +8461,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.fleet_tech_ship_template
-
-	var_4_66[30403] = {
+	pg.base.fleet_tech_ship_template[30403] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -9864,11 +8481,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.fleet_tech_ship_template
-
-	var_4_67[30404] = {
+	pg.base.fleet_tech_ship_template[30404] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -9888,11 +8501,7 @@ end)()
 			4
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.fleet_tech_ship_template
-
-	var_4_68[30405] = {
+	pg.base.fleet_tech_ship_template[30405] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 2,
@@ -9914,11 +8523,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.fleet_tech_ship_template
-
-	var_4_69[30501] = {
+	pg.base.fleet_tech_ship_template[30501] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,
@@ -9940,11 +8545,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.fleet_tech_ship_template
-
-	var_4_70[30502] = {
+	pg.base.fleet_tech_ship_template[30502] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,
@@ -9966,11 +8567,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.fleet_tech_ship_template
-
-	var_4_71[30503] = {
+	pg.base.fleet_tech_ship_template[30503] = {
 		max_star = 5,
 		pt_level = 19,
 		add_level_attr = 6,
@@ -9992,11 +8589,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.fleet_tech_ship_template
-
-	var_4_72[30504] = {
+	pg.base.fleet_tech_ship_template[30504] = {
 		max_star = 5,
 		pt_level = 19,
 		add_level_attr = 6,
@@ -10018,11 +8611,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.fleet_tech_ship_template
-
-	var_4_73[30505] = {
+	pg.base.fleet_tech_ship_template[30505] = {
 		max_star = 6,
 		pt_level = 27,
 		add_level_attr = 2,
@@ -10044,11 +8633,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.fleet_tech_ship_template
-
-	var_4_74[30506] = {
+	pg.base.fleet_tech_ship_template[30506] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -10070,11 +8655,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.fleet_tech_ship_template
-
-	var_4_75[30507] = {
+	pg.base.fleet_tech_ship_template[30507] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 2,
@@ -10096,11 +8677,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.fleet_tech_ship_template
-
-	var_4_76[30508] = {
+	pg.base.fleet_tech_ship_template[30508] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 2,
@@ -10122,11 +8699,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.fleet_tech_ship_template
-
-	var_4_77[30510] = {
+	pg.base.fleet_tech_ship_template[30510] = {
 		max_star = 6,
 		pt_level = 39,
 		add_level_attr = 2,
@@ -10148,11 +8721,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.fleet_tech_ship_template
-
-	var_4_78[30511] = {
+	pg.base.fleet_tech_ship_template[30511] = {
 		max_star = 6,
 		pt_level = 10,
 		add_level_attr = 8,
@@ -10174,11 +8743,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.fleet_tech_ship_template
-
-	var_4_79[30512] = {
+	pg.base.fleet_tech_ship_template[30512] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 2,
@@ -10200,11 +8765,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.fleet_tech_ship_template
-
-	var_4_80[30513] = {
+	pg.base.fleet_tech_ship_template[30513] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 2,
@@ -10226,11 +8787,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.fleet_tech_ship_template
-
-	var_4_81[30514] = {
+	pg.base.fleet_tech_ship_template[30514] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 2,
@@ -10252,11 +8809,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.fleet_tech_ship_template
-
-	var_4_82[30516] = {
+	pg.base.fleet_tech_ship_template[30516] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 2,
@@ -10278,11 +8831,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.fleet_tech_ship_template
-
-	var_4_83[30601] = {
+	pg.base.fleet_tech_ship_template[30601] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -10301,11 +8850,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.fleet_tech_ship_template
-
-	var_4_84[30602] = {
+	pg.base.fleet_tech_ship_template[30602] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -10324,11 +8869,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.fleet_tech_ship_template
-
-	var_4_85[30603] = {
+	pg.base.fleet_tech_ship_template[30603] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -10347,11 +8888,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.fleet_tech_ship_template
-
-	var_4_86[30604] = {
+	pg.base.fleet_tech_ship_template[30604] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 8,
@@ -10370,11 +8907,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.fleet_tech_ship_template
-
-	var_4_87[30605] = {
+	pg.base.fleet_tech_ship_template[30605] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 6,
@@ -10393,11 +8926,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.fleet_tech_ship_template
-
-	var_4_88[30606] = {
+	pg.base.fleet_tech_ship_template[30606] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -10416,11 +8945,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.fleet_tech_ship_template
-
-	var_4_89[30607] = {
+	pg.base.fleet_tech_ship_template[30607] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 8,
@@ -10439,11 +8964,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.fleet_tech_ship_template
-
-	var_4_90[30608] = {
+	pg.base.fleet_tech_ship_template[30608] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 5,
@@ -10462,11 +8983,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.fleet_tech_ship_template
-
-	var_4_91[30609] = {
+	pg.base.fleet_tech_ship_template[30609] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 6,
@@ -10485,11 +9002,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.fleet_tech_ship_template
-
-	var_4_92[30701] = {
+	pg.base.fleet_tech_ship_template[30701] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 5,
@@ -10509,11 +9022,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.fleet_tech_ship_template
-
-	var_4_93[30702] = {
+	pg.base.fleet_tech_ship_template[30702] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 5,
@@ -10533,11 +9042,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.fleet_tech_ship_template
-
-	var_4_94[30703] = {
+	pg.base.fleet_tech_ship_template[30703] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,
@@ -10557,11 +9062,11 @@ end)()
 			7
 		}
 	}
-	pg = var_4_94
 
-	local var_4_95 = var_4_94.base.fleet_tech_ship_template
-
-	var_4_95[30704] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[30704] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 8,
@@ -10581,11 +9086,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.fleet_tech_ship_template
-
-	var_4_96[30705] = {
+	pg.base.fleet_tech_ship_template[30705] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 5,
@@ -10605,11 +9106,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.fleet_tech_ship_template
-
-	var_4_97[30706] = {
+	pg.base.fleet_tech_ship_template[30706] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 5,
@@ -10629,11 +9126,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.fleet_tech_ship_template
-
-	var_4_98[30707] = {
+	pg.base.fleet_tech_ship_template[30707] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 5,
@@ -10653,8 +9146,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.fleet_tech_ship_template[30708] = {
+	pg.base.fleet_tech_ship_template[30708] = {
 		max_star = 6,
 		pt_level = 39,
 		add_level_attr = 5,
@@ -10674,15 +9166,7 @@ end)()
 			7
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_5_0[30712] = {
+	pg.base.fleet_tech_ship_template[30712] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 8,
@@ -10702,11 +9186,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.fleet_tech_ship_template
-
-	var_5_1[30715] = {
+	pg.base.fleet_tech_ship_template[30715] = {
 		max_star = 6,
 		pt_level = 30,
 		add_level_attr = 5,
@@ -10726,11 +9206,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.fleet_tech_ship_template
-
-	var_5_2[30716] = {
+	pg.base.fleet_tech_ship_template[30716] = {
 		max_star = 6,
 		pt_level = 39,
 		add_level_attr = 5,
@@ -10750,11 +9226,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.fleet_tech_ship_template
-
-	var_5_3[30717] = {
+	pg.base.fleet_tech_ship_template[30717] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 5,
@@ -10774,11 +9246,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.fleet_tech_ship_template
-
-	var_5_4[30801] = {
+	pg.base.fleet_tech_ship_template[30801] = {
 		max_star = 6,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -10798,11 +9266,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.fleet_tech_ship_template
-
-	var_5_5[30802] = {
+	pg.base.fleet_tech_ship_template[30802] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 3,
@@ -10822,11 +9286,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.fleet_tech_ship_template
-
-	var_5_6[30803] = {
+	pg.base.fleet_tech_ship_template[30803] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 3,
@@ -10846,11 +9306,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.fleet_tech_ship_template
-
-	var_5_7[30804] = {
+	pg.base.fleet_tech_ship_template[30804] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 3,
@@ -10870,11 +9326,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.fleet_tech_ship_template
-
-	var_5_8[30805] = {
+	pg.base.fleet_tech_ship_template[30805] = {
 		max_star = 5,
 		pt_level = 6,
 		add_level_attr = 3,
@@ -10894,11 +9346,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.fleet_tech_ship_template
-
-	var_5_9[30806] = {
+	pg.base.fleet_tech_ship_template[30806] = {
 		max_star = 6,
 		pt_level = 9,
 		add_level_attr = 3,
@@ -10918,11 +9366,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.fleet_tech_ship_template
-
-	var_5_10[31201] = {
+	pg.base.fleet_tech_ship_template[31201] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 1,
@@ -10940,11 +9384,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.fleet_tech_ship_template
-
-	var_5_11[31701] = {
+	pg.base.fleet_tech_ship_template[31701] = {
 		max_star = 6,
 		pt_level = 9,
 		add_level_attr = 5,
@@ -10963,11 +9403,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.fleet_tech_ship_template
-
-	var_5_12[31702] = {
+	pg.base.fleet_tech_ship_template[31702] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 5,
@@ -10986,11 +9422,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.fleet_tech_ship_template
-
-	var_5_13[31901] = {
+	pg.base.fleet_tech_ship_template[31901] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 1,
@@ -11008,11 +9440,7 @@ end)()
 			19
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.fleet_tech_ship_template
-
-	var_5_14[39901] = {
+	pg.base.fleet_tech_ship_template[39901] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 3,
@@ -11034,11 +9462,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.fleet_tech_ship_template
-
-	var_5_15[39902] = {
+	pg.base.fleet_tech_ship_template[39902] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -11060,11 +9484,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.fleet_tech_ship_template
-
-	var_5_16[39903] = {
+	pg.base.fleet_tech_ship_template[39903] = {
 		max_star = 6,
 		pt_level = 21,
 		add_level_attr = 2,
@@ -11086,11 +9506,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.fleet_tech_ship_template
-
-	var_5_17[39904] = {
+	pg.base.fleet_tech_ship_template[39904] = {
 		max_star = 6,
 		pt_level = 48,
 		add_level_attr = 2,
@@ -11112,11 +9528,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.fleet_tech_ship_template
-
-	var_5_18[39905] = {
+	pg.base.fleet_tech_ship_template[39905] = {
 		max_star = 6,
 		pt_level = 39,
 		add_level_attr = 5,
@@ -11136,11 +9548,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.fleet_tech_ship_template
-
-	var_5_19[39906] = {
+	pg.base.fleet_tech_ship_template[39906] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 3,
@@ -11158,11 +9566,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.fleet_tech_ship_template
-
-	var_5_20[39907] = {
+	pg.base.fleet_tech_ship_template[39907] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -11184,11 +9588,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.fleet_tech_ship_template
-
-	var_5_21[39908] = {
+	pg.base.fleet_tech_ship_template[39908] = {
 		max_star = 6,
 		pt_level = 25,
 		add_level_attr = 3,
@@ -11206,11 +9606,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.fleet_tech_ship_template
-
-	var_5_22[40101] = {
+	pg.base.fleet_tech_ship_template[40101] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11232,11 +9628,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.fleet_tech_ship_template
-
-	var_5_23[40109] = {
+	pg.base.fleet_tech_ship_template[40109] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11258,11 +9650,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.fleet_tech_ship_template
-
-	var_5_24[40102] = {
+	pg.base.fleet_tech_ship_template[40102] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11284,11 +9672,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.fleet_tech_ship_template
-
-	var_5_25[40111] = {
+	pg.base.fleet_tech_ship_template[40111] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11310,11 +9694,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.fleet_tech_ship_template
-
-	var_5_26[40113] = {
+	pg.base.fleet_tech_ship_template[40113] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11336,11 +9716,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.fleet_tech_ship_template
-
-	var_5_27[40114] = {
+	pg.base.fleet_tech_ship_template[40114] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11362,11 +9738,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.fleet_tech_ship_template
-
-	var_5_28[40115] = {
+	pg.base.fleet_tech_ship_template[40115] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11388,11 +9760,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.fleet_tech_ship_template
-
-	var_5_29[40116] = {
+	pg.base.fleet_tech_ship_template[40116] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11414,11 +9782,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.fleet_tech_ship_template
-
-	var_5_30[40118] = {
+	pg.base.fleet_tech_ship_template[40118] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 6,
@@ -11440,11 +9804,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.fleet_tech_ship_template
-
-	var_5_31[40119] = {
+	pg.base.fleet_tech_ship_template[40119] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 6,
@@ -11466,11 +9826,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.fleet_tech_ship_template
-
-	var_5_32[40120] = {
+	pg.base.fleet_tech_ship_template[40120] = {
 		max_star = 4,
 		pt_level = 8,
 		add_level_attr = 1,
@@ -11492,11 +9848,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.fleet_tech_ship_template
-
-	var_5_33[40121] = {
+	pg.base.fleet_tech_ship_template[40121] = {
 		max_star = 4,
 		pt_level = 8,
 		add_level_attr = 1,
@@ -11518,11 +9870,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.fleet_tech_ship_template
-
-	var_5_34[40123] = {
+	pg.base.fleet_tech_ship_template[40123] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 2,
@@ -11544,11 +9892,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.fleet_tech_ship_template
-
-	var_5_35[40124] = {
+	pg.base.fleet_tech_ship_template[40124] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 2,
@@ -11570,11 +9914,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.fleet_tech_ship_template
-
-	var_5_36[40125] = {
+	pg.base.fleet_tech_ship_template[40125] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 2,
@@ -11596,11 +9936,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.fleet_tech_ship_template
-
-	var_5_37[40126] = {
+	pg.base.fleet_tech_ship_template[40126] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 2,
@@ -11622,11 +9958,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.fleet_tech_ship_template
-
-	var_5_38[40128] = {
+	pg.base.fleet_tech_ship_template[40128] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 2,
@@ -11648,11 +9980,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.fleet_tech_ship_template
-
-	var_5_39[40135] = {
+	pg.base.fleet_tech_ship_template[40135] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -11674,11 +10002,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.fleet_tech_ship_template
-
-	var_5_40[40136] = {
+	pg.base.fleet_tech_ship_template[40136] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -11700,11 +10024,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.fleet_tech_ship_template
-
-	var_5_41[40143] = {
+	pg.base.fleet_tech_ship_template[40143] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -11726,11 +10046,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.fleet_tech_ship_template
-
-	var_5_42[40146] = {
+	pg.base.fleet_tech_ship_template[40146] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -11752,11 +10068,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.fleet_tech_ship_template
-
-	var_5_43[40147] = {
+	pg.base.fleet_tech_ship_template[40147] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -11778,11 +10090,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.fleet_tech_ship_template
-
-	var_5_44[40152] = {
+	pg.base.fleet_tech_ship_template[40152] = {
 		max_star = 6,
 		pt_level = 54,
 		add_level_attr = 2,
@@ -11804,11 +10112,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.fleet_tech_ship_template
-
-	var_5_45[7] = {
+	pg.base.fleet_tech_ship_template[7] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 2,
@@ -11830,11 +10134,7 @@ end)()
 			21
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.fleet_tech_ship_template
-
-	var_5_46[9] = {
+	pg.base.fleet_tech_ship_template[9] = {
 		max_star = 4,
 		pt_level = 10,
 		add_level_attr = 1,
@@ -11852,11 +10152,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.fleet_tech_ship_template
-
-	var_5_47[10] = {
+	pg.base.fleet_tech_ship_template[10] = {
 		max_star = 4,
 		pt_level = 10,
 		add_level_attr = 1,
@@ -11874,11 +10170,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.fleet_tech_ship_template
-
-	var_5_48[11] = {
+	pg.base.fleet_tech_ship_template[11] = {
 		max_star = 4,
 		pt_level = 10,
 		add_level_attr = 1,
@@ -11896,11 +10188,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.fleet_tech_ship_template
-
-	var_5_49[12] = {
+	pg.base.fleet_tech_ship_template[12] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -11918,11 +10206,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.fleet_tech_ship_template
-
-	var_5_50[13] = {
+	pg.base.fleet_tech_ship_template[13] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 4,
@@ -11940,11 +10224,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.fleet_tech_ship_template
-
-	var_5_51[14] = {
+	pg.base.fleet_tech_ship_template[14] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -11962,11 +10242,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.fleet_tech_ship_template
-
-	var_5_52[15] = {
+	pg.base.fleet_tech_ship_template[15] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 2,
@@ -11984,11 +10260,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.fleet_tech_ship_template
-
-	var_5_53[16] = {
+	pg.base.fleet_tech_ship_template[16] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 2,
@@ -12006,11 +10278,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.fleet_tech_ship_template
-
-	var_5_54[18] = {
+	pg.base.fleet_tech_ship_template[18] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -12028,11 +10296,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.fleet_tech_ship_template
-
-	var_5_55[19] = {
+	pg.base.fleet_tech_ship_template[19] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -12050,11 +10314,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.fleet_tech_ship_template
-
-	var_5_56[40301] = {
+	pg.base.fleet_tech_ship_template[40301] = {
 		max_star = 5,
 		pt_level = 36,
 		add_level_attr = 1,
@@ -12076,11 +10336,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.fleet_tech_ship_template
-
-	var_5_57[40302] = {
+	pg.base.fleet_tech_ship_template[40302] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -12102,11 +10358,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.fleet_tech_ship_template
-
-	var_5_58[40303] = {
+	pg.base.fleet_tech_ship_template[40303] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 1,
@@ -12128,11 +10380,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.fleet_tech_ship_template
-
-	var_5_59[40304] = {
+	pg.base.fleet_tech_ship_template[40304] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 2,
@@ -12154,11 +10402,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.fleet_tech_ship_template
-
-	var_5_60[40305] = {
+	pg.base.fleet_tech_ship_template[40305] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 2,
@@ -12180,11 +10424,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.fleet_tech_ship_template
-
-	var_5_61[40309] = {
+	pg.base.fleet_tech_ship_template[40309] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -12206,11 +10446,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.fleet_tech_ship_template
-
-	var_5_62[40310] = {
+	pg.base.fleet_tech_ship_template[40310] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -12232,11 +10468,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.fleet_tech_ship_template
-
-	var_5_63[40311] = {
+	pg.base.fleet_tech_ship_template[40311] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 2,
@@ -12258,11 +10490,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.fleet_tech_ship_template
-
-	var_5_64[40314] = {
+	pg.base.fleet_tech_ship_template[40314] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -12284,11 +10512,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.fleet_tech_ship_template
-
-	var_5_65[40317] = {
+	pg.base.fleet_tech_ship_template[40317] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -12310,11 +10534,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.fleet_tech_ship_template
-
-	var_5_66[40401] = {
+	pg.base.fleet_tech_ship_template[40401] = {
 		max_star = 5,
 		pt_level = 42,
 		add_level_attr = 9,
@@ -12334,11 +10554,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.fleet_tech_ship_template
-
-	var_5_67[40402] = {
+	pg.base.fleet_tech_ship_template[40402] = {
 		max_star = 5,
 		pt_level = 42,
 		add_level_attr = 9,
@@ -12358,11 +10574,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.fleet_tech_ship_template
-
-	var_5_68[40403] = {
+	pg.base.fleet_tech_ship_template[40403] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 9,
@@ -12382,11 +10594,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.fleet_tech_ship_template
-
-	var_5_69[40404] = {
+	pg.base.fleet_tech_ship_template[40404] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 9,
@@ -12406,11 +10614,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.fleet_tech_ship_template
-
-	var_5_70[40405] = {
+	pg.base.fleet_tech_ship_template[40405] = {
 		max_star = 6,
 		pt_level = 54,
 		add_level_attr = 2,
@@ -12432,11 +10636,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.fleet_tech_ship_template
-
-	var_5_71[40406] = {
+	pg.base.fleet_tech_ship_template[40406] = {
 		max_star = 6,
 		pt_level = 54,
 		add_level_attr = 2,
@@ -12458,11 +10658,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.fleet_tech_ship_template
-
-	var_5_72[40407] = {
+	pg.base.fleet_tech_ship_template[40407] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 8,
@@ -12484,11 +10680,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.fleet_tech_ship_template
-
-	var_5_73[40501] = {
+	pg.base.fleet_tech_ship_template[40501] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -12510,11 +10702,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.fleet_tech_ship_template
-
-	var_5_74[40502] = {
+	pg.base.fleet_tech_ship_template[40502] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -12536,11 +10724,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.fleet_tech_ship_template
-
-	var_5_75[40503] = {
+	pg.base.fleet_tech_ship_template[40503] = {
 		max_star = 6,
 		pt_level = 86,
 		add_level_attr = 6,
@@ -12562,11 +10746,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.fleet_tech_ship_template
-
-	var_5_76[40504] = {
+	pg.base.fleet_tech_ship_template[40504] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 2,
@@ -12588,11 +10768,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.fleet_tech_ship_template
-
-	var_5_77[40505] = {
+	pg.base.fleet_tech_ship_template[40505] = {
 		max_star = 6,
 		pt_level = 86,
 		add_level_attr = 8,
@@ -12614,11 +10790,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.fleet_tech_ship_template
-
-	var_5_78[40507] = {
+	pg.base.fleet_tech_ship_template[40507] = {
 		max_star = 6,
 		pt_level = 86,
 		add_level_attr = 2,
@@ -12640,11 +10812,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.fleet_tech_ship_template
-
-	var_5_79[25] = {
+	pg.base.fleet_tech_ship_template[25] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 6,
@@ -12662,11 +10830,7 @@ end)()
 			6
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.fleet_tech_ship_template
-
-	var_5_80[26] = {
+	pg.base.fleet_tech_ship_template[26] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 6,
@@ -12684,11 +10848,7 @@ end)()
 			6
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.fleet_tech_ship_template
-
-	var_5_81[27] = {
+	pg.base.fleet_tech_ship_template[27] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 6,
@@ -12706,11 +10866,7 @@ end)()
 			6
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.fleet_tech_ship_template
-
-	var_5_82[40701] = {
+	pg.base.fleet_tech_ship_template[40701] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 4,
@@ -12730,11 +10886,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.fleet_tech_ship_template
-
-	var_5_83[40703] = {
+	pg.base.fleet_tech_ship_template[40703] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 5,
@@ -12754,11 +10906,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.fleet_tech_ship_template
-
-	var_5_84[0] = {
+	pg.base.fleet_tech_ship_template[0] = {
 		max_star = 6,
 		pt_level = 66,
 		add_level_attr = 5,
@@ -12778,11 +10926,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.fleet_tech_ship_template
-
-	var_5_85[40801] = {
+	pg.base.fleet_tech_ship_template[40801] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 3,
@@ -12802,11 +10946,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.fleet_tech_ship_template
-
-	var_5_86[40802] = {
+	pg.base.fleet_tech_ship_template[40802] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -12826,11 +10966,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.fleet_tech_ship_template
-
-	var_5_87[40803] = {
+	pg.base.fleet_tech_ship_template[40803] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -12850,11 +10986,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.fleet_tech_ship_template
-
-	var_5_88[40804] = {
+	pg.base.fleet_tech_ship_template[40804] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -12874,11 +11006,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.fleet_tech_ship_template
-
-	var_5_89[40805] = {
+	pg.base.fleet_tech_ship_template[40805] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -12898,11 +11026,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.fleet_tech_ship_template
-
-	var_5_90[40806] = {
+	pg.base.fleet_tech_ship_template[40806] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -12922,11 +11046,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.fleet_tech_ship_template
-
-	var_5_91[40807] = {
+	pg.base.fleet_tech_ship_template[40807] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 1,
@@ -12946,11 +11066,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.fleet_tech_ship_template
-
-	var_5_92[40808] = {
+	pg.base.fleet_tech_ship_template[40808] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 1,
@@ -12970,11 +11086,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.fleet_tech_ship_template
-
-	var_5_93[40809] = {
+	pg.base.fleet_tech_ship_template[40809] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 8,
@@ -12994,11 +11106,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.fleet_tech_ship_template
-
-	var_5_94[40810] = {
+	pg.base.fleet_tech_ship_template[40810] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 3,
@@ -13018,11 +11126,11 @@ end)()
 			17
 		}
 	}
-	pg = var_5_94
 
-	local var_5_95 = var_5_94.base.fleet_tech_ship_template
-
-	var_5_95[40811] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[40811] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -13042,11 +11150,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.fleet_tech_ship_template
-
-	var_5_96[40812] = {
+	pg.base.fleet_tech_ship_template[40812] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -13066,11 +11170,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.fleet_tech_ship_template
-
-	var_5_97[40813] = {
+	pg.base.fleet_tech_ship_template[40813] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 3,
@@ -13090,11 +11190,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.fleet_tech_ship_template
-
-	var_5_98[40814] = {
+	pg.base.fleet_tech_ship_template[40814] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 3,
@@ -13114,8 +11210,7 @@ end)()
 			17
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.fleet_tech_ship_template[40815] = {
+	pg.base.fleet_tech_ship_template[40815] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 3,
@@ -13135,15 +11230,7 @@ end)()
 			17
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_6_0[49901] = {
+	pg.base.fleet_tech_ship_template[49901] = {
 		max_star = 6,
 		pt_level = 56,
 		add_level_attr = 2,
@@ -13165,11 +11252,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.fleet_tech_ship_template
-
-	var_6_1[49902] = {
+	pg.base.fleet_tech_ship_template[49902] = {
 		max_star = 6,
 		pt_level = 86,
 		add_level_attr = 2,
@@ -13191,11 +11274,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.fleet_tech_ship_template
-
-	var_6_2[49903] = {
+	pg.base.fleet_tech_ship_template[49903] = {
 		max_star = 6,
 		pt_level = 45,
 		add_level_attr = 1,
@@ -13213,11 +11292,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.fleet_tech_ship_template
-
-	var_6_3[49904] = {
+	pg.base.fleet_tech_ship_template[49904] = {
 		max_star = 6,
 		pt_level = 72,
 		add_level_attr = 8,
@@ -13239,11 +11314,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.fleet_tech_ship_template
-
-	var_6_4[49905] = {
+	pg.base.fleet_tech_ship_template[49905] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -13265,11 +11336,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.fleet_tech_ship_template
-
-	var_6_5[49906] = {
+	pg.base.fleet_tech_ship_template[49906] = {
 		max_star = 6,
 		pt_level = 54,
 		add_level_attr = 5,
@@ -13289,11 +11356,7 @@ end)()
 			7
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.fleet_tech_ship_template
-
-	var_6_6[49907] = {
+	pg.base.fleet_tech_ship_template[49907] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -13315,11 +11378,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.fleet_tech_ship_template
-
-	var_6_7[49908] = {
+	pg.base.fleet_tech_ship_template[49908] = {
 		max_star = 6,
 		pt_level = 38,
 		add_level_attr = 2,
@@ -13341,11 +11400,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.fleet_tech_ship_template
-
-	var_6_8[49909] = {
+	pg.base.fleet_tech_ship_template[49909] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -13367,11 +11422,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.fleet_tech_ship_template
-
-	var_6_9[49910] = {
+	pg.base.fleet_tech_ship_template[49910] = {
 		max_star = 6,
 		pt_level = 108,
 		add_level_attr = 2,
@@ -13393,11 +11444,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.fleet_tech_ship_template
-
-	var_6_10[49911] = {
+	pg.base.fleet_tech_ship_template[49911] = {
 		max_star = 6,
 		pt_level = 92,
 		add_level_attr = 5,
@@ -13417,11 +11464,7 @@ end)()
 			7
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.fleet_tech_ship_template
-
-	var_6_11[50101] = {
+	pg.base.fleet_tech_ship_template[50101] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -13443,11 +11486,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.fleet_tech_ship_template
-
-	var_6_12[50102] = {
+	pg.base.fleet_tech_ship_template[50102] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -13469,11 +11508,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.fleet_tech_ship_template
-
-	var_6_13[50103] = {
+	pg.base.fleet_tech_ship_template[50103] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -13495,11 +11530,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.fleet_tech_ship_template
-
-	var_6_14[50104] = {
+	pg.base.fleet_tech_ship_template[50104] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -13521,11 +11552,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.fleet_tech_ship_template
-
-	var_6_15[50105] = {
+	pg.base.fleet_tech_ship_template[50105] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -13547,11 +11574,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.fleet_tech_ship_template
-
-	var_6_16[50106] = {
+	pg.base.fleet_tech_ship_template[50106] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -13573,11 +11596,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.fleet_tech_ship_template
-
-	var_6_17[50107] = {
+	pg.base.fleet_tech_ship_template[50107] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -13599,11 +11618,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.fleet_tech_ship_template
-
-	var_6_18[50108] = {
+	pg.base.fleet_tech_ship_template[50108] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -13625,11 +11640,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.fleet_tech_ship_template
-
-	var_6_19[50109] = {
+	pg.base.fleet_tech_ship_template[50109] = {
 		max_star = 5,
 		pt_level = 8,
 		add_level_attr = 3,
@@ -13651,11 +11662,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.fleet_tech_ship_template
-
-	var_6_20[25] = {
+	pg.base.fleet_tech_ship_template[25] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 6,
@@ -13673,11 +11680,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.fleet_tech_ship_template
-
-	var_6_21[26] = {
+	pg.base.fleet_tech_ship_template[26] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 6,
@@ -13695,11 +11698,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.fleet_tech_ship_template
-
-	var_6_22[27] = {
+	pg.base.fleet_tech_ship_template[27] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 6,
@@ -13717,11 +11716,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.fleet_tech_ship_template
-
-	var_6_23[28] = {
+	pg.base.fleet_tech_ship_template[28] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -13739,11 +11734,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.fleet_tech_ship_template
-
-	var_6_24[29] = {
+	pg.base.fleet_tech_ship_template[29] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -13761,11 +11752,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.fleet_tech_ship_template
-
-	var_6_25[31] = {
+	pg.base.fleet_tech_ship_template[31] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 1,
@@ -13783,11 +11770,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.fleet_tech_ship_template
-
-	var_6_26[50208] = {
+	pg.base.fleet_tech_ship_template[50208] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 1,
@@ -13805,11 +11788,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.fleet_tech_ship_template
-
-	var_6_27[50209] = {
+	pg.base.fleet_tech_ship_template[50209] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -13827,11 +11806,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.fleet_tech_ship_template
-
-	var_6_28[50210] = {
+	pg.base.fleet_tech_ship_template[50210] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -13849,11 +11824,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.fleet_tech_ship_template
-
-	var_6_29[50212] = {
+	pg.base.fleet_tech_ship_template[50212] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -13871,11 +11842,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.fleet_tech_ship_template
-
-	var_6_30[50301] = {
+	pg.base.fleet_tech_ship_template[50301] = {
 		max_star = 6,
 		pt_level = 16,
 		add_level_attr = 8,
@@ -13893,11 +11860,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.fleet_tech_ship_template
-
-	var_6_31[50302] = {
+	pg.base.fleet_tech_ship_template[50302] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 8,
@@ -13915,11 +11878,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.fleet_tech_ship_template
-
-	var_6_32[50401] = {
+	pg.base.fleet_tech_ship_template[50401] = {
 		max_star = 6,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -13939,11 +11898,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.fleet_tech_ship_template
-
-	var_6_33[50601] = {
+	pg.base.fleet_tech_ship_template[50601] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 6,
@@ -13963,11 +11918,7 @@ end)()
 			7
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.fleet_tech_ship_template
-
-	var_6_34[50602] = {
+	pg.base.fleet_tech_ship_template[50602] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 6,
@@ -13987,11 +11938,7 @@ end)()
 			7
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.fleet_tech_ship_template
-
-	var_6_35[51901] = {
+	pg.base.fleet_tech_ship_template[51901] = {
 		max_star = 5,
 		pt_level = 9,
 		add_level_attr = 1,
@@ -14009,11 +11956,7 @@ end)()
 			19
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.fleet_tech_ship_template
-
-	var_6_36[59901] = {
+	pg.base.fleet_tech_ship_template[59901] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 3,
@@ -14031,11 +11974,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.fleet_tech_ship_template
-
-	var_6_37[60102] = {
+	pg.base.fleet_tech_ship_template[60102] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 9,
@@ -14057,11 +11996,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.fleet_tech_ship_template
-
-	var_6_38[60103] = {
+	pg.base.fleet_tech_ship_template[60103] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 12,
@@ -14083,11 +12018,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.fleet_tech_ship_template
-
-	var_6_39[60104] = {
+	pg.base.fleet_tech_ship_template[60104] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -14109,11 +12040,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.fleet_tech_ship_template
-
-	var_6_40[60105] = {
+	pg.base.fleet_tech_ship_template[60105] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -14135,11 +12062,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.fleet_tech_ship_template
-
-	var_6_41[60106] = {
+	pg.base.fleet_tech_ship_template[60106] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -14161,11 +12084,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.fleet_tech_ship_template
-
-	var_6_42[60107] = {
+	pg.base.fleet_tech_ship_template[60107] = {
 		max_star = 6,
 		pt_level = 38,
 		add_level_attr = 2,
@@ -14187,11 +12106,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.fleet_tech_ship_template
-
-	var_6_43[60108] = {
+	pg.base.fleet_tech_ship_template[60108] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 12,
@@ -14213,11 +12128,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.fleet_tech_ship_template
-
-	var_6_44[60109] = {
+	pg.base.fleet_tech_ship_template[60109] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -14239,11 +12150,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.fleet_tech_ship_template
-
-	var_6_45[60110] = {
+	pg.base.fleet_tech_ship_template[60110] = {
 		max_star = 6,
 		pt_level = 38,
 		add_level_attr = 2,
@@ -14265,11 +12172,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.fleet_tech_ship_template
-
-	var_6_46[60111] = {
+	pg.base.fleet_tech_ship_template[60111] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 12,
@@ -14291,11 +12194,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.fleet_tech_ship_template
-
-	var_6_47[60112] = {
+	pg.base.fleet_tech_ship_template[60112] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -14317,11 +12216,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.fleet_tech_ship_template
-
-	var_6_48[15] = {
+	pg.base.fleet_tech_ship_template[15] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -14343,11 +12238,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.fleet_tech_ship_template
-
-	var_6_49[60201] = {
+	pg.base.fleet_tech_ship_template[60201] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -14365,11 +12256,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.fleet_tech_ship_template
-
-	var_6_50[60202] = {
+	pg.base.fleet_tech_ship_template[60202] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -14387,11 +12274,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.fleet_tech_ship_template
-
-	var_6_51[60203] = {
+	pg.base.fleet_tech_ship_template[60203] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -14409,11 +12292,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.fleet_tech_ship_template
-
-	var_6_52[60204] = {
+	pg.base.fleet_tech_ship_template[60204] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -14431,11 +12310,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.fleet_tech_ship_template
-
-	var_6_53[13] = {
+	pg.base.fleet_tech_ship_template[13] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 8,
@@ -14457,11 +12332,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.fleet_tech_ship_template
-
-	var_6_54[14] = {
+	pg.base.fleet_tech_ship_template[14] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -14483,11 +12354,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.fleet_tech_ship_template
-
-	var_6_55[15] = {
+	pg.base.fleet_tech_ship_template[15] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 8,
@@ -14509,11 +12376,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.fleet_tech_ship_template
-
-	var_6_56[16] = {
+	pg.base.fleet_tech_ship_template[16] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 2,
@@ -14535,11 +12398,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.fleet_tech_ship_template
-
-	var_6_57[17] = {
+	pg.base.fleet_tech_ship_template[17] = {
 		max_star = 5,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -14561,11 +12420,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.fleet_tech_ship_template
-
-	var_6_58[18] = {
+	pg.base.fleet_tech_ship_template[18] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -14587,11 +12442,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.fleet_tech_ship_template
-
-	var_6_59[14] = {
+	pg.base.fleet_tech_ship_template[14] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -14613,11 +12464,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.fleet_tech_ship_template
-
-	var_6_60[60501] = {
+	pg.base.fleet_tech_ship_template[60501] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -14639,11 +12486,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.fleet_tech_ship_template
-
-	var_6_61[60502] = {
+	pg.base.fleet_tech_ship_template[60502] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -14665,11 +12508,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.fleet_tech_ship_template
-
-	var_6_62[60503] = {
+	pg.base.fleet_tech_ship_template[60503] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -14691,11 +12530,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.fleet_tech_ship_template
-
-	var_6_63[60505] = {
+	pg.base.fleet_tech_ship_template[60505] = {
 		max_star = 5,
 		pt_level = 32,
 		add_level_attr = 6,
@@ -14717,11 +12552,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.fleet_tech_ship_template
-
-	var_6_64[60506] = {
+	pg.base.fleet_tech_ship_template[60506] = {
 		max_star = 5,
 		pt_level = 36,
 		add_level_attr = 8,
@@ -14743,11 +12574,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.fleet_tech_ship_template
-
-	var_6_65[60507] = {
+	pg.base.fleet_tech_ship_template[60507] = {
 		max_star = 5,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -14769,11 +12596,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.fleet_tech_ship_template
-
-	var_6_66[60508] = {
+	pg.base.fleet_tech_ship_template[60508] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -14795,11 +12618,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.fleet_tech_ship_template
-
-	var_6_67[60509] = {
+	pg.base.fleet_tech_ship_template[60509] = {
 		max_star = 6,
 		pt_level = 54,
 		add_level_attr = 2,
@@ -14821,11 +12640,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.fleet_tech_ship_template
-
-	var_6_68[29] = {
+	pg.base.fleet_tech_ship_template[29] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 1,
@@ -14845,11 +12660,7 @@ end)()
 			7
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.fleet_tech_ship_template
-
-	var_6_69[30] = {
+	pg.base.fleet_tech_ship_template[30] = {
 		max_star = 6,
 		pt_level = 48,
 		add_level_attr = 5,
@@ -14869,11 +12680,7 @@ end)()
 			7
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.fleet_tech_ship_template
-
-	var_6_70[1] = {
+	pg.base.fleet_tech_ship_template[1] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -14893,11 +12700,7 @@ end)()
 			17
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.fleet_tech_ship_template
-
-	var_6_71[2] = {
+	pg.base.fleet_tech_ship_template[2] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 3,
@@ -14917,11 +12720,7 @@ end)()
 			17
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.fleet_tech_ship_template
-
-	var_6_72[3] = {
+	pg.base.fleet_tech_ship_template[3] = {
 		max_star = 6,
 		pt_level = 18,
 		add_level_attr = 3,
@@ -14941,11 +12740,7 @@ end)()
 			17
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.fleet_tech_ship_template
-
-	var_6_73[13] = {
+	pg.base.fleet_tech_ship_template[13] = {
 		max_star = 6,
 		pt_level = 72,
 		add_level_attr = 1,
@@ -14967,11 +12762,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.fleet_tech_ship_template
-
-	var_6_74[70102] = {
+	pg.base.fleet_tech_ship_template[70102] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -14993,11 +12784,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.fleet_tech_ship_template
-
-	var_6_75[70103] = {
+	pg.base.fleet_tech_ship_template[70103] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -15019,11 +12806,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.fleet_tech_ship_template
-
-	var_6_76[70104] = {
+	pg.base.fleet_tech_ship_template[70104] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 1,
@@ -15045,11 +12828,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.fleet_tech_ship_template
-
-	var_6_77[70106] = {
+	pg.base.fleet_tech_ship_template[70106] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 8,
@@ -15071,11 +12850,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.fleet_tech_ship_template
-
-	var_6_78[70107] = {
+	pg.base.fleet_tech_ship_template[70107] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -15097,11 +12872,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.fleet_tech_ship_template
-
-	var_6_79[70108] = {
+	pg.base.fleet_tech_ship_template[70108] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -15123,11 +12894,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.fleet_tech_ship_template
-
-	var_6_80[70109] = {
+	pg.base.fleet_tech_ship_template[70109] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -15149,11 +12916,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.fleet_tech_ship_template
-
-	var_6_81[70110] = {
+	pg.base.fleet_tech_ship_template[70110] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 1,
@@ -15175,11 +12938,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.fleet_tech_ship_template
-
-	var_6_82[70111] = {
+	pg.base.fleet_tech_ship_template[70111] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 1,
@@ -15201,11 +12960,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.fleet_tech_ship_template
-
-	var_6_83[70112] = {
+	pg.base.fleet_tech_ship_template[70112] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 9,
@@ -15227,11 +12982,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.fleet_tech_ship_template
-
-	var_6_84[70113] = {
+	pg.base.fleet_tech_ship_template[70113] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 1,
@@ -15253,11 +13004,7 @@ end)()
 			21
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.fleet_tech_ship_template
-
-	var_6_85[70201] = {
+	pg.base.fleet_tech_ship_template[70201] = {
 		max_star = 6,
 		pt_level = 14,
 		add_level_attr = 2,
@@ -15275,11 +13022,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.fleet_tech_ship_template
-
-	var_6_86[70202] = {
+	pg.base.fleet_tech_ship_template[70202] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -15297,11 +13040,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.fleet_tech_ship_template
-
-	var_6_87[70203] = {
+	pg.base.fleet_tech_ship_template[70203] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -15319,11 +13058,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.fleet_tech_ship_template
-
-	var_6_88[70204] = {
+	pg.base.fleet_tech_ship_template[70204] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -15341,11 +13076,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.fleet_tech_ship_template
-
-	var_6_89[70205] = {
+	pg.base.fleet_tech_ship_template[70205] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -15363,11 +13094,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.fleet_tech_ship_template
-
-	var_6_90[70206] = {
+	pg.base.fleet_tech_ship_template[70206] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -15385,11 +13112,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.fleet_tech_ship_template
-
-	var_6_91[70207] = {
+	pg.base.fleet_tech_ship_template[70207] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 9,
@@ -15407,11 +13130,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.fleet_tech_ship_template
-
-	var_6_92[70208] = {
+	pg.base.fleet_tech_ship_template[70208] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -15429,11 +13148,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.fleet_tech_ship_template
-
-	var_6_93[70209] = {
+	pg.base.fleet_tech_ship_template[70209] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -15451,11 +13166,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.fleet_tech_ship_template
-
-	var_6_94[70210] = {
+	pg.base.fleet_tech_ship_template[70210] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 8,
@@ -15473,11 +13184,11 @@ end)()
 			2
 		}
 	}
-	pg = var_6_94
 
-	local var_6_95 = var_6_94.base.fleet_tech_ship_template
-
-	var_6_95[31] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[31] = {
 		max_star = 6,
 		pt_level = 50,
 		add_level_attr = 2,
@@ -15495,11 +13206,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.fleet_tech_ship_template
-
-	var_6_96[29] = {
+	pg.base.fleet_tech_ship_template[29] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 1,
@@ -15521,11 +13228,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.fleet_tech_ship_template
-
-	var_6_97[30] = {
+	pg.base.fleet_tech_ship_template[30] = {
 		max_star = 6,
 		pt_level = 46,
 		add_level_attr = 2,
@@ -15547,11 +13250,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.fleet_tech_ship_template
-
-	var_6_98[31] = {
+	pg.base.fleet_tech_ship_template[31] = {
 		max_star = 6,
 		pt_level = 70,
 		add_level_attr = 8,
@@ -15573,8 +13272,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.fleet_tech_ship_template[70501] = {
+	pg.base.fleet_tech_ship_template[70501] = {
 		max_star = 5,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -15596,15 +13294,7 @@ end)()
 			10
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_7_0[70502] = {
+	pg.base.fleet_tech_ship_template[70502] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -15626,11 +13316,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.fleet_tech_ship_template
-
-	var_7_1[70504] = {
+	pg.base.fleet_tech_ship_template[70504] = {
 		max_star = 6,
 		pt_level = 66,
 		add_level_attr = 2,
@@ -15652,11 +13338,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.fleet_tech_ship_template
-
-	var_7_2[70505] = {
+	pg.base.fleet_tech_ship_template[70505] = {
 		max_star = 6,
 		pt_level = 66,
 		add_level_attr = 2,
@@ -15678,11 +13360,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.fleet_tech_ship_template
-
-	var_7_3[70506] = {
+	pg.base.fleet_tech_ship_template[70506] = {
 		max_star = 5,
 		pt_level = 48,
 		add_level_attr = 2,
@@ -15704,11 +13382,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.fleet_tech_ship_template
-
-	var_7_4[70507] = {
+	pg.base.fleet_tech_ship_template[70507] = {
 		max_star = 5,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -15730,11 +13404,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.fleet_tech_ship_template
-
-	var_7_5[70508] = {
+	pg.base.fleet_tech_ship_template[70508] = {
 		max_star = 5,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -15756,11 +13426,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.fleet_tech_ship_template
-
-	var_7_6[70509] = {
+	pg.base.fleet_tech_ship_template[70509] = {
 		max_star = 6,
 		pt_level = 66,
 		add_level_attr = 2,
@@ -15782,11 +13448,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.fleet_tech_ship_template
-
-	var_7_7[70701] = {
+	pg.base.fleet_tech_ship_template[70701] = {
 		max_star = 6,
 		pt_level = 52,
 		add_level_attr = 8,
@@ -15806,11 +13468,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.fleet_tech_ship_template
-
-	var_7_8[29] = {
+	pg.base.fleet_tech_ship_template[29] = {
 		max_star = 6,
 		pt_level = 58,
 		add_level_attr = 5,
@@ -15830,11 +13488,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.fleet_tech_ship_template
-
-	var_7_9[30] = {
+	pg.base.fleet_tech_ship_template[30] = {
 		max_star = 6,
 		pt_level = 92,
 		add_level_attr = 5,
@@ -15854,11 +13508,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.fleet_tech_ship_template
-
-	var_7_10[71801] = {
+	pg.base.fleet_tech_ship_template[71801] = {
 		max_star = 6,
 		pt_level = 72,
 		add_level_attr = 2,
@@ -15880,11 +13530,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.fleet_tech_ship_template
-
-	var_7_11[80101] = {
+	pg.base.fleet_tech_ship_template[80101] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -15906,11 +13552,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.fleet_tech_ship_template
-
-	var_7_12[80102] = {
+	pg.base.fleet_tech_ship_template[80102] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 9,
@@ -15932,11 +13574,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.fleet_tech_ship_template
-
-	var_7_13[80103] = {
+	pg.base.fleet_tech_ship_template[80103] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 9,
@@ -15958,11 +13596,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.fleet_tech_ship_template
-
-	var_7_14[80104] = {
+	pg.base.fleet_tech_ship_template[80104] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 9,
@@ -15984,11 +13618,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.fleet_tech_ship_template
-
-	var_7_15[80105] = {
+	pg.base.fleet_tech_ship_template[80105] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 2,
@@ -16010,11 +13640,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.fleet_tech_ship_template
-
-	var_7_16[80106] = {
+	pg.base.fleet_tech_ship_template[80106] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 9,
@@ -16036,11 +13662,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.fleet_tech_ship_template
-
-	var_7_17[80107] = {
+	pg.base.fleet_tech_ship_template[80107] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -16062,11 +13684,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.fleet_tech_ship_template
-
-	var_7_18[80108] = {
+	pg.base.fleet_tech_ship_template[80108] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -16088,11 +13706,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.fleet_tech_ship_template
-
-	var_7_19[80201] = {
+	pg.base.fleet_tech_ship_template[80201] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 9,
@@ -16110,11 +13724,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.fleet_tech_ship_template
-
-	var_7_20[80202] = {
+	pg.base.fleet_tech_ship_template[80202] = {
 		max_star = 6,
 		pt_level = 20,
 		add_level_attr = 8,
@@ -16132,11 +13742,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.fleet_tech_ship_template
-
-	var_7_21[80203] = {
+	pg.base.fleet_tech_ship_template[80203] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 9,
@@ -16154,11 +13760,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.fleet_tech_ship_template
-
-	var_7_22[80204] = {
+	pg.base.fleet_tech_ship_template[80204] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 2,
@@ -16176,11 +13778,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.fleet_tech_ship_template
-
-	var_7_23[89904] = {
+	pg.base.fleet_tech_ship_template[89904] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 9,
@@ -16198,11 +13796,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.fleet_tech_ship_template
-
-	var_7_24[89905] = {
+	pg.base.fleet_tech_ship_template[89905] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 3,
@@ -16224,11 +13818,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.fleet_tech_ship_template
-
-	var_7_25[80301] = {
+	pg.base.fleet_tech_ship_template[80301] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 3,
@@ -16250,11 +13840,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.fleet_tech_ship_template
-
-	var_7_26[80302] = {
+	pg.base.fleet_tech_ship_template[80302] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 9,
@@ -16276,11 +13862,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.fleet_tech_ship_template
-
-	var_7_27[80303] = {
+	pg.base.fleet_tech_ship_template[80303] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 9,
@@ -16302,11 +13884,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.fleet_tech_ship_template
-
-	var_7_28[17] = {
+	pg.base.fleet_tech_ship_template[17] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 9,
@@ -16326,11 +13904,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.fleet_tech_ship_template
-
-	var_7_29[80501] = {
+	pg.base.fleet_tech_ship_template[80501] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -16352,11 +13926,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.fleet_tech_ship_template
-
-	var_7_30[80502] = {
+	pg.base.fleet_tech_ship_template[80502] = {
 		max_star = 5,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -16378,11 +13948,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.fleet_tech_ship_template
-
-	var_7_31[80503] = {
+	pg.base.fleet_tech_ship_template[80503] = {
 		max_star = 6,
 		pt_level = 86,
 		add_level_attr = 2,
@@ -16404,11 +13970,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.fleet_tech_ship_template
-
-	var_7_32[80601] = {
+	pg.base.fleet_tech_ship_template[80601] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 8,
@@ -16427,11 +13989,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.fleet_tech_ship_template
-
-	var_7_33[80602] = {
+	pg.base.fleet_tech_ship_template[80602] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 5,
@@ -16449,11 +14007,7 @@ end)()
 			6
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.fleet_tech_ship_template
-
-	var_7_34[80701] = {
+	pg.base.fleet_tech_ship_template[80701] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 5,
@@ -16473,11 +14027,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.fleet_tech_ship_template
-
-	var_7_35[80702] = {
+	pg.base.fleet_tech_ship_template[80702] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 4,
@@ -16497,11 +14047,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.fleet_tech_ship_template
-
-	var_7_36[80801] = {
+	pg.base.fleet_tech_ship_template[80801] = {
 		max_star = 5,
 		pt_level = 12,
 		add_level_attr = 3,
@@ -16521,11 +14067,7 @@ end)()
 			17
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.fleet_tech_ship_template
-
-	var_7_37[9] = {
+	pg.base.fleet_tech_ship_template[9] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 1,
@@ -16547,11 +14089,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.fleet_tech_ship_template
-
-	var_7_38[89901] = {
+	pg.base.fleet_tech_ship_template[89901] = {
 		max_star = 6,
 		pt_level = 52,
 		add_level_attr = 9,
@@ -16573,11 +14111,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.fleet_tech_ship_template
-
-	var_7_39[89902] = {
+	pg.base.fleet_tech_ship_template[89902] = {
 		max_star = 6,
 		pt_level = 72,
 		add_level_attr = 8,
@@ -16599,11 +14133,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.fleet_tech_ship_template
-
-	var_7_40[89903] = {
+	pg.base.fleet_tech_ship_template[89903] = {
 		max_star = 6,
 		pt_level = 72,
 		add_level_attr = 1,
@@ -16625,11 +14155,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.fleet_tech_ship_template
-
-	var_7_41[90101] = {
+	pg.base.fleet_tech_ship_template[90101] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 9,
@@ -16651,11 +14177,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.fleet_tech_ship_template
-
-	var_7_42[90102] = {
+	pg.base.fleet_tech_ship_template[90102] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 12,
@@ -16677,11 +14199,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.fleet_tech_ship_template
-
-	var_7_43[90103] = {
+	pg.base.fleet_tech_ship_template[90103] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -16703,11 +14221,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.fleet_tech_ship_template
-
-	var_7_44[90104] = {
+	pg.base.fleet_tech_ship_template[90104] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -16729,11 +14243,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.fleet_tech_ship_template
-
-	var_7_45[90105] = {
+	pg.base.fleet_tech_ship_template[90105] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 9,
@@ -16755,11 +14265,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.fleet_tech_ship_template
-
-	var_7_46[90106] = {
+	pg.base.fleet_tech_ship_template[90106] = {
 		max_star = 5,
 		pt_level = 20,
 		add_level_attr = 9,
@@ -16781,11 +14287,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.fleet_tech_ship_template
-
-	var_7_47[90107] = {
+	pg.base.fleet_tech_ship_template[90107] = {
 		max_star = 6,
 		pt_level = 50,
 		add_level_attr = 9,
@@ -16807,11 +14309,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.fleet_tech_ship_template
-
-	var_7_48[90111] = {
+	pg.base.fleet_tech_ship_template[90111] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -16833,11 +14331,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.fleet_tech_ship_template
-
-	var_7_49[1] = {
+	pg.base.fleet_tech_ship_template[1] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -16859,11 +14353,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.fleet_tech_ship_template
-
-	var_7_50[2] = {
+	pg.base.fleet_tech_ship_template[2] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 2,
@@ -16885,11 +14375,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.fleet_tech_ship_template
-
-	var_7_51[90201] = {
+	pg.base.fleet_tech_ship_template[90201] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 2,
@@ -16907,11 +14393,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.fleet_tech_ship_template
-
-	var_7_52[90202] = {
+	pg.base.fleet_tech_ship_template[90202] = {
 		max_star = 6,
 		pt_level = 28,
 		add_level_attr = 2,
@@ -16929,11 +14411,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.fleet_tech_ship_template
-
-	var_7_53[90301] = {
+	pg.base.fleet_tech_ship_template[90301] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 3,
@@ -16955,11 +14433,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.fleet_tech_ship_template
-
-	var_7_54[90302] = {
+	pg.base.fleet_tech_ship_template[90302] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -16981,11 +14455,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.fleet_tech_ship_template
-
-	var_7_55[90303] = {
+	pg.base.fleet_tech_ship_template[90303] = {
 		max_star = 5,
 		pt_level = 28,
 		add_level_attr = 3,
@@ -17007,11 +14477,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.fleet_tech_ship_template
-
-	var_7_56[90401] = {
+	pg.base.fleet_tech_ship_template[90401] = {
 		max_star = 5,
 		pt_level = 38,
 		add_level_attr = 9,
@@ -17031,11 +14497,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.fleet_tech_ship_template
-
-	var_7_57[90402] = {
+	pg.base.fleet_tech_ship_template[90402] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 2,
@@ -17055,11 +14517,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.fleet_tech_ship_template
-
-	var_7_58[5] = {
+	pg.base.fleet_tech_ship_template[5] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -17081,11 +14539,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.fleet_tech_ship_template
-
-	var_7_59[6] = {
+	pg.base.fleet_tech_ship_template[6] = {
 		max_star = 6,
 		pt_level = 60,
 		add_level_attr = 2,
@@ -17107,11 +14561,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.fleet_tech_ship_template
-
-	var_7_60[90701] = {
+	pg.base.fleet_tech_ship_template[90701] = {
 		max_star = 6,
 		pt_level = 42,
 		add_level_attr = 4,
@@ -17131,11 +14581,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.fleet_tech_ship_template
-
-	var_7_61[99901] = {
+	pg.base.fleet_tech_ship_template[99901] = {
 		max_star = 6,
 		pt_level = 66,
 		add_level_attr = 6,
@@ -17157,11 +14603,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.fleet_tech_ship_template
-
-	var_7_62[99902] = {
+	pg.base.fleet_tech_ship_template[99902] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 2,
@@ -17183,11 +14625,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.fleet_tech_ship_template
-
-	var_7_63[21] = {
+	pg.base.fleet_tech_ship_template[21] = {
 		max_star = 5,
 		pt_level = 14,
 		add_level_attr = 1,
@@ -17209,11 +14647,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.fleet_tech_ship_template
-
-	var_7_64[110201] = {
+	pg.base.fleet_tech_ship_template[110201] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 6,
@@ -17231,11 +14665,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.fleet_tech_ship_template
-
-	var_7_65[119901] = {
+	pg.base.fleet_tech_ship_template[119901] = {
 		max_star = 6,
 		pt_level = 78,
 		add_level_attr = 4,
@@ -17257,11 +14687,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.fleet_tech_ship_template
-
-	var_7_66[129901] = {
+	pg.base.fleet_tech_ship_template[129901] = {
 		max_star = 6,
 		pt_level = 86,
 		add_level_attr = 8,
@@ -17283,11 +14709,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.fleet_tech_ship_template
-
-	var_7_67[1] = {
+	pg.base.fleet_tech_ship_template[1] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 2,
@@ -17309,11 +14731,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.fleet_tech_ship_template
-
-	var_7_68[2] = {
+	pg.base.fleet_tech_ship_template[2] = {
 		max_star = 6,
 		pt_level = 58,
 		add_level_attr = 8,
@@ -17335,11 +14753,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.fleet_tech_ship_template
-
-	var_7_69[3] = {
+	pg.base.fleet_tech_ship_template[3] = {
 		max_star = 6,
 		pt_level = 32,
 		add_level_attr = 9,
@@ -17361,11 +14775,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.fleet_tech_ship_template
-
-	var_7_70[4] = {
+	pg.base.fleet_tech_ship_template[4] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 1,
@@ -17387,11 +14797,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.fleet_tech_ship_template
-
-	var_7_71[5] = {
+	pg.base.fleet_tech_ship_template[5] = {
 		max_star = 5,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -17413,11 +14819,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.fleet_tech_ship_template
-
-	var_7_72[6] = {
+	pg.base.fleet_tech_ship_template[6] = {
 		max_star = 5,
 		pt_level = 26,
 		add_level_attr = 2,
@@ -17439,11 +14841,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.fleet_tech_ship_template
-
-	var_7_73[7] = {
+	pg.base.fleet_tech_ship_template[7] = {
 		max_star = 6,
 		pt_level = 58,
 		add_level_attr = 2,
@@ -17465,11 +14863,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.fleet_tech_ship_template
-
-	var_7_74[8] = {
+	pg.base.fleet_tech_ship_template[8] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 9,
@@ -17491,11 +14885,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.fleet_tech_ship_template
-
-	var_7_75[9] = {
+	pg.base.fleet_tech_ship_template[9] = {
 		max_star = 6,
 		pt_level = 12,
 		add_level_attr = 1,
@@ -17517,11 +14907,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.fleet_tech_ship_template
-
-	var_7_76[10] = {
+	pg.base.fleet_tech_ship_template[10] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 9,
@@ -17543,11 +14929,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.fleet_tech_ship_template
-
-	var_7_77[11] = {
+	pg.base.fleet_tech_ship_template[11] = {
 		max_star = 5,
 		pt_level = 2,
 		add_level_attr = 1,
@@ -17569,11 +14951,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.fleet_tech_ship_template
-
-	var_7_78[12] = {
+	pg.base.fleet_tech_ship_template[12] = {
 		max_star = 6,
 		pt_level = 58,
 		add_level_attr = 8,
@@ -17595,11 +14973,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.fleet_tech_ship_template
-
-	var_7_79[13] = {
+	pg.base.fleet_tech_ship_template[13] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 9,
@@ -17621,11 +14995,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.fleet_tech_ship_template
-
-	var_7_80[14] = {
+	pg.base.fleet_tech_ship_template[14] = {
 		max_star = 6,
 		pt_level = 58,
 		add_level_attr = 2,
@@ -17647,11 +15017,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.fleet_tech_ship_template
-
-	var_7_81[15] = {
+	pg.base.fleet_tech_ship_template[15] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 1,
@@ -17673,11 +15039,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.fleet_tech_ship_template
-
-	var_7_82[16] = {
+	pg.base.fleet_tech_ship_template[16] = {
 		max_star = 5,
 		pt_level = 4,
 		add_level_attr = 1,
@@ -17699,11 +15061,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.fleet_tech_ship_template
-
-	var_7_83[970101] = {
+	pg.base.fleet_tech_ship_template[970101] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 12,
@@ -17725,11 +15083,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.fleet_tech_ship_template
-
-	var_7_84[970102] = {
+	pg.base.fleet_tech_ship_template[970102] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 12,
@@ -17751,11 +15105,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.fleet_tech_ship_template
-
-	var_7_85[970103] = {
+	pg.base.fleet_tech_ship_template[970103] = {
 		max_star = 5,
 		pt_level = 10,
 		add_level_attr = 6,
@@ -17777,11 +15127,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.fleet_tech_ship_template
-
-	var_7_86[970104] = {
+	pg.base.fleet_tech_ship_template[970104] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 12,
@@ -17803,11 +15149,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.fleet_tech_ship_template
-
-	var_7_87[970105] = {
+	pg.base.fleet_tech_ship_template[970105] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -17829,11 +15171,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.fleet_tech_ship_template
-
-	var_7_88[970106] = {
+	pg.base.fleet_tech_ship_template[970106] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -17855,11 +15193,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.fleet_tech_ship_template
-
-	var_7_89[970107] = {
+	pg.base.fleet_tech_ship_template[970107] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 9,
@@ -17881,11 +15215,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.fleet_tech_ship_template
-
-	var_7_90[970108] = {
+	pg.base.fleet_tech_ship_template[970108] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 3,
@@ -17907,11 +15237,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.fleet_tech_ship_template
-
-	var_7_91[970109] = {
+	pg.base.fleet_tech_ship_template[970109] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 3,
@@ -17933,11 +15259,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.fleet_tech_ship_template
-
-	var_7_92[970110] = {
+	pg.base.fleet_tech_ship_template[970110] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 1,
@@ -17959,11 +15281,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.fleet_tech_ship_template
-
-	var_7_93[970111] = {
+	pg.base.fleet_tech_ship_template[970111] = {
 		max_star = 5,
 		pt_level = 13,
 		add_level_attr = 9,
@@ -17985,11 +15303,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.fleet_tech_ship_template
-
-	var_7_94[0] = {
+	pg.base.fleet_tech_ship_template[0] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 1,
@@ -18011,11 +15325,11 @@ end)()
 			21
 		}
 	}
-	pg = var_7_94
 
-	local var_7_95 = var_7_94.base.fleet_tech_ship_template
-
-	var_7_95[970201] = {
+	return
+end)()
+;(function()
+	pg.base.fleet_tech_ship_template[970201] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -18033,11 +15347,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.fleet_tech_ship_template
-
-	var_7_96[970202] = {
+	pg.base.fleet_tech_ship_template[970202] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,
@@ -18055,11 +15365,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.fleet_tech_ship_template
-
-	var_7_97[970203] = {
+	pg.base.fleet_tech_ship_template[970203] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 3,
@@ -18077,11 +15383,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.fleet_tech_ship_template
-
-	var_7_98[970204] = {
+	pg.base.fleet_tech_ship_template[970204] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 2,
@@ -18099,8 +15401,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.fleet_tech_ship_template[970205] = {
+	pg.base.fleet_tech_ship_template[970205] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 3,
@@ -18118,15 +15419,7 @@ end)()
 			2
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.fleet_tech_ship_template
-
-	var_8_0[970206] = {
+	pg.base.fleet_tech_ship_template[970206] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -18144,11 +15437,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.fleet_tech_ship_template
-
-	var_8_1[970207] = {
+	pg.base.fleet_tech_ship_template[970207] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 8,
@@ -18166,11 +15455,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.fleet_tech_ship_template
-
-	var_8_2[970208] = {
+	pg.base.fleet_tech_ship_template[970208] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -18188,11 +15473,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.fleet_tech_ship_template
-
-	var_8_3[970209] = {
+	pg.base.fleet_tech_ship_template[970209] = {
 		max_star = 6,
 		pt_level = 23,
 		add_level_attr = 2,
@@ -18210,11 +15491,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.fleet_tech_ship_template
-
-	var_8_4[970210] = {
+	pg.base.fleet_tech_ship_template[970210] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 1,
@@ -18232,11 +15509,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.fleet_tech_ship_template
-
-	var_8_5[970211] = {
+	pg.base.fleet_tech_ship_template[970211] = {
 		max_star = 6,
 		pt_level = 19,
 		add_level_attr = 8,
@@ -18254,11 +15527,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.fleet_tech_ship_template
-
-	var_8_6[970212] = {
+	pg.base.fleet_tech_ship_template[970212] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 1,
@@ -18276,11 +15545,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.fleet_tech_ship_template
-
-	var_8_7[970213] = {
+	pg.base.fleet_tech_ship_template[970213] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 4,
@@ -18298,11 +15563,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.fleet_tech_ship_template
-
-	var_8_8[970301] = {
+	pg.base.fleet_tech_ship_template[970301] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 8,
@@ -18324,11 +15585,7 @@ end)()
 			18
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.fleet_tech_ship_template
-
-	var_8_9[970302] = {
+	pg.base.fleet_tech_ship_template[970302] = {
 		max_star = 6,
 		pt_level = 52,
 		add_level_attr = 2,
@@ -18350,11 +15607,7 @@ end)()
 			18
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.fleet_tech_ship_template
-
-	var_8_10[970303] = {
+	pg.base.fleet_tech_ship_template[970303] = {
 		max_star = 5,
 		pt_level = 36,
 		add_level_attr = 3,
@@ -18376,11 +15629,7 @@ end)()
 			18
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.fleet_tech_ship_template
-
-	var_8_11[970304] = {
+	pg.base.fleet_tech_ship_template[970304] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 2,
@@ -18402,11 +15651,7 @@ end)()
 			18
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.fleet_tech_ship_template
-
-	var_8_12[970305] = {
+	pg.base.fleet_tech_ship_template[970305] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 1,
@@ -18428,11 +15673,7 @@ end)()
 			18
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.fleet_tech_ship_template
-
-	var_8_13[970306] = {
+	pg.base.fleet_tech_ship_template[970306] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 2,
@@ -18454,11 +15695,7 @@ end)()
 			18
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.fleet_tech_ship_template
-
-	var_8_14[970401] = {
+	pg.base.fleet_tech_ship_template[970401] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 9,
@@ -18478,11 +15715,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.fleet_tech_ship_template
-
-	var_8_15[970402] = {
+	pg.base.fleet_tech_ship_template[970402] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 9,
@@ -18502,11 +15735,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.fleet_tech_ship_template
-
-	var_8_16[970403] = {
+	pg.base.fleet_tech_ship_template[970403] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 9,
@@ -18526,11 +15755,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.fleet_tech_ship_template
-
-	var_8_17[970404] = {
+	pg.base.fleet_tech_ship_template[970404] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 9,
@@ -18550,11 +15775,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.fleet_tech_ship_template
-
-	var_8_18[970405] = {
+	pg.base.fleet_tech_ship_template[970405] = {
 		max_star = 6,
 		pt_level = 33,
 		add_level_attr = 9,
@@ -18574,11 +15795,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.fleet_tech_ship_template
-
-	var_8_19[970406] = {
+	pg.base.fleet_tech_ship_template[970406] = {
 		max_star = 5,
 		pt_level = 24,
 		add_level_attr = 9,
@@ -18598,11 +15815,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.fleet_tech_ship_template
-
-	var_8_20[5] = {
+	pg.base.fleet_tech_ship_template[5] = {
 		max_star = 5,
 		pt_level = 27,
 		add_level_attr = 6,
@@ -18624,11 +15837,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.fleet_tech_ship_template
-
-	var_8_21[6] = {
+	pg.base.fleet_tech_ship_template[6] = {
 		max_star = 5,
 		pt_level = 27,
 		add_level_attr = 6,
@@ -18650,11 +15859,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.fleet_tech_ship_template
-
-	var_8_22[7] = {
+	pg.base.fleet_tech_ship_template[7] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 1,
@@ -18676,11 +15881,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.fleet_tech_ship_template
-
-	var_8_23[8] = {
+	pg.base.fleet_tech_ship_template[8] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 8,
@@ -18702,11 +15903,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.fleet_tech_ship_template
-
-	var_8_24[9] = {
+	pg.base.fleet_tech_ship_template[9] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -18728,11 +15925,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.fleet_tech_ship_template
-
-	var_8_25[10] = {
+	pg.base.fleet_tech_ship_template[10] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -18754,11 +15947,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.fleet_tech_ship_template
-
-	var_8_26[11] = {
+	pg.base.fleet_tech_ship_template[11] = {
 		max_star = 5,
 		pt_level = 27,
 		add_level_attr = 8,
@@ -18780,11 +15969,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.fleet_tech_ship_template
-
-	var_8_27[12] = {
+	pg.base.fleet_tech_ship_template[12] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -18806,11 +15991,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.fleet_tech_ship_template
-
-	var_8_28[13] = {
+	pg.base.fleet_tech_ship_template[13] = {
 		max_star = 5,
 		pt_level = 27,
 		add_level_attr = 6,
@@ -18832,11 +16013,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.fleet_tech_ship_template
-
-	var_8_29[14] = {
+	pg.base.fleet_tech_ship_template[14] = {
 		max_star = 6,
 		pt_level = 36,
 		add_level_attr = 2,
@@ -18858,11 +16035,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.fleet_tech_ship_template
-
-	var_8_30[970601] = {
+	pg.base.fleet_tech_ship_template[970601] = {
 		max_star = 5,
 		pt_level = 21,
 		add_level_attr = 6,
@@ -18881,11 +16054,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.fleet_tech_ship_template
-
-	var_8_31[970602] = {
+	pg.base.fleet_tech_ship_template[970602] = {
 		max_star = 5,
 		pt_level = 21,
 		add_level_attr = 6,
@@ -18904,11 +16073,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.fleet_tech_ship_template
-
-	var_8_32[970603] = {
+	pg.base.fleet_tech_ship_template[970603] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 6,
@@ -18927,11 +16092,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.fleet_tech_ship_template
-
-	var_8_33[970604] = {
+	pg.base.fleet_tech_ship_template[970604] = {
 		max_star = 5,
 		pt_level = 18,
 		add_level_attr = 6,
@@ -18950,11 +16111,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.fleet_tech_ship_template
-
-	var_8_34[970605] = {
+	pg.base.fleet_tech_ship_template[970605] = {
 		max_star = 6,
 		pt_level = 26,
 		add_level_attr = 6,
@@ -18972,11 +16129,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.fleet_tech_ship_template
-
-	var_8_35[970701] = {
+	pg.base.fleet_tech_ship_template[970701] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 8,
@@ -18996,11 +16149,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.fleet_tech_ship_template
-
-	var_8_36[970702] = {
+	pg.base.fleet_tech_ship_template[970702] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 8,
@@ -19020,11 +16169,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.fleet_tech_ship_template
-
-	var_8_37[970703] = {
+	pg.base.fleet_tech_ship_template[970703] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 6,
@@ -19044,11 +16189,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.fleet_tech_ship_template
-
-	var_8_38[970704] = {
+	pg.base.fleet_tech_ship_template[970704] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 5,
@@ -19068,11 +16209,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.fleet_tech_ship_template
-
-	var_8_39[970705] = {
+	pg.base.fleet_tech_ship_template[970705] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 5,
@@ -19092,11 +16229,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.fleet_tech_ship_template
-
-	var_8_40[970706] = {
+	pg.base.fleet_tech_ship_template[970706] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 8,
@@ -19116,11 +16249,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.fleet_tech_ship_template
-
-	var_8_41[970707] = {
+	pg.base.fleet_tech_ship_template[970707] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 6,
@@ -19140,11 +16269,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.fleet_tech_ship_template
-
-	var_8_42[970708] = {
+	pg.base.fleet_tech_ship_template[970708] = {
 		max_star = 6,
 		pt_level = 29,
 		add_level_attr = 6,
@@ -19164,11 +16289,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.fleet_tech_ship_template
-
-	var_8_43[970801] = {
+	pg.base.fleet_tech_ship_template[970801] = {
 		max_star = 6,
 		pt_level = 13,
 		add_level_attr = 3,
@@ -19188,11 +16309,7 @@ end)()
 			17
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.fleet_tech_ship_template
-
-	var_8_44[971201] = {
+	pg.base.fleet_tech_ship_template[971201] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 1,
@@ -19210,8 +16327,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_44
-	var_8_44.base.fleet_tech_ship_template[971301] = {
+	pg.base.fleet_tech_ship_template[971301] = {
 		max_star = 5,
 		pt_level = 16,
 		add_level_attr = 6,

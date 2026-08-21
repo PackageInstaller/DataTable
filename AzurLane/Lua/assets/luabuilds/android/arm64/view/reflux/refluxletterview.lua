@@ -1,16 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RefluxLetterView", import("..base.BaseSubView"))
 
-local var_0_0 = "RefluxLetterView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "RefluxLetterUI"
 end
 
-function var_0_1.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:initUI()
 	arg_2_0:updateUI()
@@ -18,11 +12,11 @@ function var_0_1.OnInit(arg_2_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_3_0)
+function var_0_0.OnDestroy(arg_3_0)
 	return
 end
 
-function var_0_1.OnBackPress(arg_4_0)
+function var_0_0.OnBackPress(arg_4_0)
 	arg_4_0:Hide()
 
 	if arg_4_0.closeCB then
@@ -32,83 +26,50 @@ function var_0_1.OnBackPress(arg_4_0)
 	return
 end
 
-function var_0_1.initData(arg_5_0)
-	getProxy = var_1_10001
-	RefluxProxy = var_1_10003
-	arg_5_0.refluxProxy = var_1_10001(var_1_10003)
+function var_0_0.initData(arg_5_0)
+	arg_5_0.refluxProxy = getProxy(RefluxProxy)
 
 	return
 end
 
-function var_0_1.initUI(arg_6_0)
-	local var_6_0 = arg_6_0._tf
+function var_0_0.initUI(arg_6_0)
+	local var_6_0 = arg_6_0._tf:Find("billboard")
 
-	arg_6_0.billboardTF = var_1.Find(var_6_0, "billboard")
-	arg_6_0.yearText = var_1:Find("year")
-	arg_6_0.monthText = var_1:Find("month")
-	arg_6_0.dateText = var_1:Find("date")
-	arg_6_0.daysText = var_1:Find("days")
-	arg_6_0.countText = var_1:Find("count")
-	arg_6_0.shareBtn = var_1:Find("btn_share")
-	setActive = var_2
+	arg_6_0.billboardTF = var_6_0
+	arg_6_0.yearText = var_6_0:Find("year")
+	arg_6_0.monthText = var_6_0:Find("month")
+	arg_6_0.dateText = var_6_0:Find("date")
+	arg_6_0.daysText = var_6_0:Find("days")
+	arg_6_0.countText = var_6_0:Find("count")
+	arg_6_0.shareBtn = var_6_0:Find("btn_share")
 
-	var_2(arg_6_0.shareBtn, false)
-
-	onButton = var_2
-
-	local var_6_1 = arg_6_0
-	local var_6_2 = arg_6_0.billboardTF
-
-	local function var_6_3()
-		local var_7_0 = arg_6_0
-
-		var_0.OnBackPress(var_7_0)
+	setActive(arg_6_0.shareBtn, false)
+	onButton(arg_6_0, arg_6_0.billboardTF, function()
+		arg_6_0:OnBackPress()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_2(var_6_1, var_6_2, var_6_3, var_1_10007)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updateUI(arg_8_0)
-	pg = var_1_10001
+function var_0_0.updateUI(arg_8_0)
+	local var_8_0 = pg.TimeMgr.GetInstance()
+	local var_8_1 = var_8_0:STimeDescS(arg_8_0.refluxProxy.returnLastTimestamp, "*t")
 
-	local var_8_0 = var_1_10001.TimeMgr.GetInstance()
-	local var_8_1 = arg_8_0.refluxProxy.returnLastTimestamp
-	local var_8_2 = arg_8_0.refluxProxy.returnTimestamp
-	local var_8_3 = var_8_0:STimeDescS(var_8_1, "*t")
-
-	setText = var_1_10005
-
-	var_1_10005(arg_8_0.yearText, var_8_3.year % 100)
-
-	setText = var_1_10005
-
-	var_1_10005(arg_8_0.monthText, var_8_3.month)
-
-	setText = var_1_10005
-
-	var_1_10005(arg_8_0.dateText, var_8_3.day)
-
-	setText = var_1_10005
-
-	var_1_10005(arg_8_0.daysText, var_8_0:DiffDay(var_8_1, var_8_2))
-
-	setText = var_1_10005
-
-	var_1_10005(arg_8_0.countText, arg_8_0.refluxProxy.returnShipNum)
+	setText(arg_8_0.yearText, var_8_1.year % 100)
+	setText(arg_8_0.monthText, var_8_1.month)
+	setText(arg_8_0.dateText, var_8_1.day)
+	setText(arg_8_0.daysText, var_8_0:DiffDay(arg_8_0.refluxProxy.returnLastTimestamp, arg_8_0.refluxProxy.returnTimestamp))
+	setText(arg_8_0.countText, arg_8_0.refluxProxy.returnShipNum)
 
 	return
 end
 
-function var_0_1.setCloseFunc(arg_9_0, arg_9_1)
+function var_0_0.setCloseFunc(arg_9_0, arg_9_1)
 	arg_9_0.closeCB = arg_9_1
 
 	return
 end
 
-return var_0_1
+return var_0_0

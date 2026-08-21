@@ -1,56 +1,19 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_furniture_theme") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_furniture_theme"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_furniture_theme = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_furniture_theme
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_furniture_theme = rawget(pg, "island_furniture_theme") or setmetatable({
+	__name = "island_furniture_theme"
+}, confNEO)
+pg.island_furniture_theme.all = {
 	1,
 	2,
 	3,
 	4,
 	5
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_furniture_theme = {}
+pg.base = pg.base or {}
+pg.base.island_furniture_theme = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_furniture_theme
-
-	var_1_0[1] = {
+	pg.base.island_furniture_theme[1] = {
 		name = "白熊营地",
 		id = 1,
 		icon = "",
@@ -88,11 +51,7 @@ var_0_3.base.island_furniture_theme = {}
 			10801
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_furniture_theme
-
-	var_1_1[2] = {
+	pg.base.island_furniture_theme[2] = {
 		name = "秋日枫庭",
 		id = 2,
 		icon = "",
@@ -126,11 +85,7 @@ var_0_3.base.island_furniture_theme = {}
 			20803
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_furniture_theme
-
-	var_1_2[3] = {
+	pg.base.island_furniture_theme[3] = {
 		name = "古典花庭",
 		id = 3,
 		icon = "",
@@ -164,11 +119,7 @@ var_0_3.base.island_furniture_theme = {}
 			30803
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_furniture_theme
-
-	var_1_3[4] = {
+	pg.base.island_furniture_theme[4] = {
 		name = "梦幻游乐园",
 		id = 4,
 		icon = "",
@@ -205,8 +156,7 @@ var_0_3.base.island_furniture_theme = {}
 			40803
 		}
 	}
-	pg = var_1_3
-	var_1_3.base.island_furniture_theme[5] = {
+	pg.base.island_furniture_theme[5] = {
 		name = "荒野小镇",
 		id = 5,
 		icon = "",

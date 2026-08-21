@@ -6,6 +6,7 @@ web = {}
 
 require("game/web/manager/WebConst")
 require("game/web/manager/WebUtil")
+require("game/web/manager/WebMisc")
 
 web.WebServerVo = require("game/web/manager/vo/WebServerVo")
 web.WebManager = require("game/web/manager/WebManager").new()

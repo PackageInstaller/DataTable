@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "auction_event") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "auction_event"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.auction_event = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.auction_event
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.auction_event = rawget(pg, "auction_event") or setmetatable({
+	__name = "auction_event"
+}, confNEO)
+pg.auction_event.all = {
 	101,
 	102,
 	103,
@@ -74,25 +51,11 @@ var_0_3.all = {
 	1905,
 	99901
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.auction_event = {}
+pg.base = pg.base or {}
+pg.base.auction_event = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.auction_event
-
-	var_1_0[101] = {
+	pg.base.auction_event[101] = {
 		information_bar = 1,
 		describe = "显示所有规格为1*1的藏品轮廓",
 		name = "单点显影",
@@ -106,11 +69,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.auction_event
-
-	var_1_1[102] = {
+	pg.base.auction_event[102] = {
 		information_bar = 1,
 		describe = "显示所有规格为1*2的藏品轮廓",
 		name = "纵列显影",
@@ -124,11 +83,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.auction_event
-
-	var_1_2[103] = {
+	pg.base.auction_event[103] = {
 		information_bar = 1,
 		describe = "显示所有规格为1*3的藏品轮廓",
 		name = "长列显影",
@@ -142,11 +97,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.auction_event
-
-	var_1_3[104] = {
+	pg.base.auction_event[104] = {
 		information_bar = 1,
 		describe = "显示所有规格为2*1的藏品轮廓",
 		name = "横列显影",
@@ -160,11 +111,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.auction_event
-
-	var_1_4[105] = {
+	pg.base.auction_event[105] = {
 		information_bar = 1,
 		describe = "显示所有规格为2*2的藏品轮廓",
 		name = "方阵显影",
@@ -178,11 +125,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.auction_event
-
-	var_1_5[106] = {
+	pg.base.auction_event[106] = {
 		information_bar = 1,
 		describe = "显示所有规格为2*3的藏品轮廓",
 		name = "纵幅显影",
@@ -196,11 +139,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.auction_event
-
-	var_1_6[107] = {
+	pg.base.auction_event[107] = {
 		information_bar = 1,
 		describe = "显示所有规格为3*1的藏品轮廓",
 		name = "长行显影",
@@ -214,11 +153,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.auction_event
-
-	var_1_7[108] = {
+	pg.base.auction_event[108] = {
 		information_bar = 1,
 		describe = "显示所有规格为3*2的藏品轮廓",
 		name = "横幅显影",
@@ -232,11 +167,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.auction_event
-
-	var_1_8[109] = {
+	pg.base.auction_event[109] = {
 		information_bar = 1,
 		describe = "显示所有规格为3*3的藏品轮廓",
 		name = "全域显影",
@@ -250,11 +181,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.auction_event
-
-	var_1_9[201] = {
+	pg.base.auction_event[201] = {
 		information_bar = 1,
 		describe = "随机显示4件藏品的位置",
 		name = "全局定位",
@@ -267,11 +194,7 @@ var_0_3.base.auction_event = {}
 			4
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.auction_event
-
-	var_1_10[301] = {
+	pg.base.auction_event[301] = {
 		information_bar = 0,
 		describe = "显示本局白色品质藏品数",
 		name = "品质扫描（白）",
@@ -284,11 +207,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.auction_event
-
-	var_1_11[302] = {
+	pg.base.auction_event[302] = {
 		information_bar = 0,
 		describe = "显示本局蓝色品质藏品数",
 		name = "品质扫描（蓝）",
@@ -301,11 +220,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.auction_event
-
-	var_1_12[303] = {
+	pg.base.auction_event[303] = {
 		information_bar = 0,
 		describe = "显示本局紫色品质藏品数",
 		name = "品质扫描（紫）",
@@ -318,11 +233,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.auction_event
-
-	var_1_13[304] = {
+	pg.base.auction_event[304] = {
 		information_bar = 0,
 		describe = "显示本局金色品质藏品数",
 		name = "品质扫描（金）",
@@ -335,11 +246,7 @@ var_0_3.base.auction_event = {}
 			4
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.auction_event
-
-	var_1_14[401] = {
+	pg.base.auction_event[401] = {
 		information_bar = 1,
 		describe = "随机显示2件藏品的位置与品质",
 		name = "随机侦测x2",
@@ -352,11 +259,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.auction_event
-
-	var_1_15[402] = {
+	pg.base.auction_event[402] = {
 		information_bar = 1,
 		describe = "随机显示5件藏品的位置与品质",
 		name = "随机侦测x5",
@@ -369,11 +272,7 @@ var_0_3.base.auction_event = {}
 			5
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.auction_event
-
-	var_1_16[501] = {
+	pg.base.auction_event[501] = {
 		information_bar = 1,
 		describe = "随机完整揭示1件藏品",
 		name = "藏品揭示x1",
@@ -386,11 +285,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.auction_event
-
-	var_1_17[502] = {
+	pg.base.auction_event[502] = {
 		information_bar = 1,
 		describe = "随机完整揭示3件藏品",
 		name = "藏品揭示x3",
@@ -403,11 +298,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.auction_event
-
-	var_1_18[601] = {
+	pg.base.auction_event[601] = {
 		information_bar = 0,
 		describe = "计算本局白色品质藏品总价值",
 		name = "总额计算（白）",
@@ -420,11 +311,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.auction_event
-
-	var_1_19[602] = {
+	pg.base.auction_event[602] = {
 		information_bar = 0,
 		describe = "计算本局蓝色品质藏品总价值",
 		name = "总额计算（蓝）",
@@ -437,11 +324,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.auction_event
-
-	var_1_20[603] = {
+	pg.base.auction_event[603] = {
 		information_bar = 0,
 		describe = "计算本局紫色品质藏品总价值",
 		name = "总额计算（紫）",
@@ -454,11 +337,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.auction_event
-
-	var_1_21[604] = {
+	pg.base.auction_event[604] = {
 		information_bar = 0,
 		describe = "计算本局金色品质藏品总价值",
 		name = "总额计算（金）",
@@ -471,11 +350,7 @@ var_0_3.base.auction_event = {}
 			4
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.auction_event
-
-	var_1_22[701] = {
+	pg.base.auction_event[701] = {
 		information_bar = 1,
 		describe = "显示本局占格数最多的藏品轮廓",
 		name = "藏品显影-最大面积",
@@ -486,11 +361,7 @@ var_0_3.base.auction_event = {}
 		warehouse_display = 0,
 		config_data = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.auction_event
-
-	var_1_23[901] = {
+	pg.base.auction_event[901] = {
 		information_bar = 0,
 		describe = "显示本局单件价值最高的藏品价值",
 		name = "藏品锁定-最高价值",
@@ -501,11 +372,7 @@ var_0_3.base.auction_event = {}
 		warehouse_display = 1,
 		config_data = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.auction_event
-
-	var_1_24[1001] = {
+	pg.base.auction_event[1001] = {
 		information_bar = 0,
 		describe = "显示本局单个单元格最高价值",
 		name = "单元计算-最高价值",
@@ -516,11 +383,7 @@ var_0_3.base.auction_event = {}
 		warehouse_display = 1,
 		config_data = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.auction_event
-
-	var_1_25[1101] = {
+	pg.base.auction_event[1101] = {
 		information_bar = 0,
 		describe = "显示本局藏品的最高品质",
 		name = "藏品分析-最高品质",
@@ -531,11 +394,7 @@ var_0_3.base.auction_event = {}
 		warehouse_display = 1,
 		config_data = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.auction_event
-
-	var_1_26[1201] = {
+	pg.base.auction_event[1201] = {
 		information_bar = 0,
 		describe = "计算本局所有藏品的总占格数",
 		name = "面积计算-全部藏品",
@@ -546,11 +405,7 @@ var_0_3.base.auction_event = {}
 		warehouse_display = 1,
 		config_data = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.auction_event
-
-	var_1_27[1701] = {
+	pg.base.auction_event[1701] = {
 		information_bar = 1,
 		describe = "显示所有白色品质藏品的位置",
 		name = "藏品定位（白）",
@@ -563,11 +418,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.auction_event
-
-	var_1_28[1702] = {
+	pg.base.auction_event[1702] = {
 		information_bar = 1,
 		describe = "显示所有蓝色品质藏品的位置",
 		name = "藏品定位（蓝）",
@@ -580,11 +431,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.auction_event
-
-	var_1_29[1703] = {
+	pg.base.auction_event[1703] = {
 		information_bar = 1,
 		describe = "显示所有紫色品质藏品的位置",
 		name = "藏品定位（紫）",
@@ -597,11 +444,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.auction_event
-
-	var_1_30[1704] = {
+	pg.base.auction_event[1704] = {
 		information_bar = 1,
 		describe = "显示所有金色品质藏品的位置",
 		name = "藏品定位（金）",
@@ -614,11 +457,7 @@ var_0_3.base.auction_event = {}
 			4
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.auction_event
-
-	var_1_31[1705] = {
+	pg.base.auction_event[1705] = {
 		information_bar = 1,
 		describe = "显示所有彩色品质藏品的位置",
 		name = "藏品定位（彩）",
@@ -631,11 +470,7 @@ var_0_3.base.auction_event = {}
 			5
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.auction_event
-
-	var_1_32[1801] = {
+	pg.base.auction_event[1801] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为1*1的藏品的平均价值",
 		name = "单点计算",
@@ -649,11 +484,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.auction_event
-
-	var_1_33[1802] = {
+	pg.base.auction_event[1802] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为1*2的藏品的平均价值",
 		name = "纵列计算",
@@ -667,11 +498,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.auction_event
-
-	var_1_34[1803] = {
+	pg.base.auction_event[1803] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为1*3的藏品的平均价值",
 		name = "长列计算",
@@ -685,11 +512,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.auction_event
-
-	var_1_35[1804] = {
+	pg.base.auction_event[1804] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为2*1的藏品的平均价值",
 		name = "横列计算",
@@ -703,11 +526,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.auction_event
-
-	var_1_36[1805] = {
+	pg.base.auction_event[1805] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为2*2的藏品的平均价值",
 		name = "方阵计算",
@@ -721,11 +540,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.auction_event
-
-	var_1_37[1806] = {
+	pg.base.auction_event[1806] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为2*3的藏品的平均价值",
 		name = "纵幅计算",
@@ -739,11 +554,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.auction_event
-
-	var_1_38[1807] = {
+	pg.base.auction_event[1807] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为3*1的藏品的平均价值",
 		name = "长行计算",
@@ -757,11 +568,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.auction_event
-
-	var_1_39[1808] = {
+	pg.base.auction_event[1808] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为3*2的藏品的平均价值",
 		name = "横幅计算",
@@ -775,11 +582,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.auction_event
-
-	var_1_40[1809] = {
+	pg.base.auction_event[1809] = {
 		information_bar = 0,
 		describe = "计算本局所有规格为3*3的藏品的平均价值",
 		name = "全域计算",
@@ -793,11 +596,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.auction_event
-
-	var_1_41[1901] = {
+	pg.base.auction_event[1901] = {
 		information_bar = 0,
 		describe = "计算本局所有品质为白的藏品的平均占用格数",
 		name = "空间计算（白）",
@@ -810,11 +609,7 @@ var_0_3.base.auction_event = {}
 			1
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.auction_event
-
-	var_1_42[1902] = {
+	pg.base.auction_event[1902] = {
 		information_bar = 0,
 		describe = "计算本局所有品质为蓝的藏品的平均占用格数",
 		name = "空间计算（蓝）",
@@ -827,11 +622,7 @@ var_0_3.base.auction_event = {}
 			2
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.auction_event
-
-	var_1_43[1903] = {
+	pg.base.auction_event[1903] = {
 		information_bar = 0,
 		describe = "计算本局所有品质为紫的藏品的平均占用格数",
 		name = "空间计算（紫）",
@@ -844,11 +635,7 @@ var_0_3.base.auction_event = {}
 			3
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.auction_event
-
-	var_1_44[1904] = {
+	pg.base.auction_event[1904] = {
 		information_bar = 0,
 		describe = "计算本局所有品质为金的藏品的平均占用格数",
 		name = "空间计算（金）",
@@ -861,11 +648,7 @@ var_0_3.base.auction_event = {}
 			4
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.auction_event
-
-	var_1_45[1905] = {
+	pg.base.auction_event[1905] = {
 		information_bar = 0,
 		describe = "计算本局所有品质为彩的藏品的平均占用格数",
 		name = "空间计算（彩）",
@@ -878,8 +661,7 @@ var_0_3.base.auction_event = {}
 			5
 		}
 	}
-	pg = var_1_45
-	var_1_45.base.auction_event[99901] = {
+	pg.base.auction_event[99901] = {
 		information_bar = 1,
 		describe = "本轮无公共事件",
 		name = "信号静默",

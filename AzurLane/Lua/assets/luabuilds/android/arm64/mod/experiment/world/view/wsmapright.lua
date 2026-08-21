@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WSMapRight", import("...BaseEntity"))
 
-local var_0_0 = "WSMapRight"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	map = "table",
 	btnPort = "userdata",
 	btnInventory = "userdata",
@@ -34,7 +28,7 @@ var_0_1.Fields = {
 	wsTimer = "table",
 	wsPool = "table"
 }
-var_0_1.Listeners = {
+var_0_0.Listeners = {
 	onUpdateFleetBuff = "OnUpdateFleetBuff",
 	onClearLog = "OnClearLog",
 	onAppendLog = "OnAppendLog",
@@ -44,128 +38,73 @@ var_0_1.Listeners = {
 	onUpdateSelectedFleet = "OnUpdateSelectedFleet"
 }
 
-function var_0_1.Setup(arg_1_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.New(arg_1_0)
+function var_0_0.Setup(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 	arg_1_0:Init()
 
 	return
 end
 
-function var_0_1.Dispose(arg_2_0)
-	local var_2_0 = arg_2_0.wsCompass
-
-	var_1.Dispose(var_2_0)
+function var_0_0.Dispose(arg_2_0)
+	arg_2_0.wsCompass:Dispose()
 	arg_2_0:RemoveFleetListener(arg_2_0.fleet)
 	arg_2_0:RemoveMapListener()
 
-	local var_2_2
-
 	if arg_2_0.taskProxy then
-		local var_2_1 = arg_2_0.taskProxy
-
-		var_2_2 = var_2_2.RemoveListener
-		WorldTaskProxy = var_4
-
-		var_2_2(var_2_1, var_4.EventUpdateTask, arg_2_0.onUpdateInfoBtnTip)
+		arg_2_0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, arg_2_0.onUpdateInfoBtnTip)
 
 		arg_2_0.taskProxy = nil
 	end
 
-	pg = var_2_2
-
-	var_2_2.DelegateInfo.Dispose(arg_2_0)
+	pg.DelegateInfo.Dispose(arg_2_0)
 	arg_2_0:Clear()
 
 	return
 end
 
-function var_0_1.Init(arg_3_0)
-	local var_3_0 = arg_3_0.transform
+function var_0_0.Init(arg_3_0)
+	arg_3_0.rtCompassPanel = arg_3_0.transform:Find("compass_panel")
+	arg_3_0.btnOrder = arg_3_0.rtCompassPanel:Find("btn_order")
+	arg_3_0.btnScan = arg_3_0.rtCompassPanel:Find("btn_scan")
+	arg_3_0.btnDefeat = arg_3_0.rtCompassPanel:Find("btn_defeat")
+	arg_3_0.btnDetail = arg_3_0.rtCompassPanel:Find("btn_detail")
+	arg_3_0.toggleSkipPrecombat = arg_3_0.transform:Find("btn_list/lock_fleet")
 
-	arg_3_0.rtCompassPanel = var_1.Find(var_3_0, "compass_panel")
-
-	local var_3_1 = arg_3_0.rtCompassPanel
-
-	arg_3_0.btnOrder = var_2.Find(var_3_1, "btn_order")
-
-	local var_3_2 = arg_3_0.rtCompassPanel
-
-	arg_3_0.btnScan = var_2.Find(var_3_2, "btn_scan")
-
-	local var_3_3 = arg_3_0.rtCompassPanel
-
-	arg_3_0.btnDefeat = var_2.Find(var_3_3, "btn_defeat")
-
-	local var_3_4 = arg_3_0.rtCompassPanel
-
-	arg_3_0.btnDetail = var_2.Find(var_3_4, "btn_detail")
-	arg_3_0.toggleSkipPrecombat = var_1:Find("btn_list/lock_fleet")
-	onToggle = var_2
-
-	local var_3_5 = arg_3_0
-	local var_3_6 = arg_3_0.toggleSkipPrecombat
-
-	local function var_3_7(arg_4_0)
-		PlayerPrefs = var_2_10001
-
-		var_2_10001.SetInt("world_skip_precombat", arg_4_0 and 1 or 0)
+	onToggle(arg_3_0, arg_3_0.toggleSkipPrecombat, function(arg_4_0)
+		PlayerPrefs.SetInt("world_skip_precombat", arg_4_0 and 1 or 0)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10007
+	arg_3_0.toggleAutoFight = arg_3_0.transform:Find("btn_list/auto_fight")
+	arg_3_0.toggleAutoSwitch = arg_3_0.transform:Find("btn_list/auto_switch")
+	arg_3_0.btnInventory = arg_3_0.transform:Find("btn_list/dock/inventory_button")
+	arg_3_0.btnInformation = arg_3_0.transform:Find("btn_list/dock/information_button")
+	arg_3_0.btnTransport = arg_3_0.transform:Find("btn_list/dock/transport_button")
+	arg_3_0.btnHelp = arg_3_0.transform:Find("btn_list/dock/help_button")
+	arg_3_0.btnPort = arg_3_0.transform:Find("btn_list/dock/port_button")
 
-	var_2(var_3_5, var_3_6, var_3_7, var_1_10007)
+	setActive(arg_3_0.btnPort, false)
 
-	arg_3_0.toggleAutoFight = var_1:Find("btn_list/auto_fight")
-	arg_3_0.toggleAutoSwitch = var_1:Find("btn_list/auto_switch")
-	arg_3_0.btnInventory = var_1:Find("btn_list/dock/inventory_button")
-	arg_3_0.btnInformation = var_1:Find("btn_list/dock/information_button")
-	arg_3_0.btnTransport = var_1:Find("btn_list/dock/transport_button")
-	arg_3_0.btnHelp = var_1:Find("btn_list/dock/help_button")
-	arg_3_0.btnPort = var_1:Find("btn_list/dock/port_button")
-	setActive = var_2
+	arg_3_0.btnExit = arg_3_0.transform:Find("btn_list/dock/exit_button")
 
-	var_2(arg_3_0.btnPort, false)
+	setActive(arg_3_0.btnExit, false)
 
-	arg_3_0.btnExit = var_1:Find("btn_list/dock/exit_button")
-	setActive = var_2
-
-	var_2(arg_3_0.btnExit, false)
-
-	WSCompass = var_2
-	arg_3_0.wsCompass = var_2.New()
-
-	local var_3_8 = arg_3_0.wsCompass
-	local var_3_9 = arg_3_0.rtCompassPanel
-
-	var_3_8.tf = var_3.Find(var_3_9, "ring/compass")
+	arg_3_0.wsCompass = WSCompass.New()
+	arg_3_0.wsCompass.tf = arg_3_0.rtCompassPanel:Find("ring/compass")
 	arg_3_0.wsCompass.pool = arg_3_0.wsPool
 
-	local var_3_10 = arg_3_0.wsCompass
+	arg_3_0.wsCompass:Setup()
 
-	var_2.Setup(var_3_10)
+	arg_3_0.rtTipWord = arg_3_0.transform:Find("tip_word")
+	arg_3_0.taskProxy = nowWorld():GetTaskProxy()
 
-	arg_3_0.rtTipWord = var_1:Find("tip_word")
-	nowWorld = var_2
-
-	local var_3_11 = var_2()
-
-	arg_3_0.taskProxy = var_2.GetTaskProxy(var_3_11)
-
-	local var_3_12 = arg_3_0.taskProxy
-	local var_3_13 = var_2.AddListener
-
-	WorldTaskProxy = var_5
-
-	var_3_13(var_3_12, var_5.EventUpdateTask, arg_3_0.onUpdateInfoBtnTip)
+	arg_3_0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, arg_3_0.onUpdateInfoBtnTip)
 
 	return
 end
 
-function var_0_1.Update(arg_5_0, arg_5_1, arg_5_2)
+function var_0_0.Update(arg_5_0, arg_5_1, arg_5_2)
 	if arg_5_0.entrance ~= arg_5_1 or arg_5_0.map ~= arg_5_2 or arg_5_0.gid ~= arg_5_2.gid then
 		arg_5_0:RemoveMapListener()
 
@@ -183,97 +122,52 @@ function var_0_1.Update(arg_5_0, arg_5_1, arg_5_2)
 	return
 end
 
-function var_0_1.AddMapListener(arg_6_0)
+function var_0_0.AddMapListener(arg_6_0)
 	if arg_6_0.map then
-		local var_6_0 = arg_6_0.map
-		local var_6_1 = var_1.AddListener
-
-		WorldMap = var_1_10004
-
-		var_6_1(var_6_0, var_1_10004.EventUpdateFIndex, arg_6_0.onUpdateSelectedFleet)
+		arg_6_0.map:AddListener(WorldMap.EventUpdateFIndex, arg_6_0.onUpdateSelectedFleet)
 	end
 
 	return
 end
 
-function var_0_1.RemoveMapListener(arg_7_0)
+function var_0_0.RemoveMapListener(arg_7_0)
 	if arg_7_0.map then
-		local var_7_0 = arg_7_0.map
-		local var_7_1 = var_1.RemoveListener
-
-		WorldMap = var_1_10004
-
-		var_7_1(var_7_0, var_1_10004.EventUpdateFIndex, arg_7_0.onUpdateSelectedFleet)
+		arg_7_0.map:RemoveListener(WorldMap.EventUpdateFIndex, arg_7_0.onUpdateSelectedFleet)
 	end
 
 	return
 end
 
-function var_0_1.AddFleetListener(arg_8_0, arg_8_1)
+function var_0_0.AddFleetListener(arg_8_0, arg_8_1)
 	if arg_8_1 then
-		local var_8_0 = arg_8_1
-		local var_8_1 = arg_8_1.AddListener
-
-		WorldMapFleet = var_1_10005
-
-		var_8_1(var_8_0, var_1_10005.EventUpdateLocation, arg_8_0.onUpdateFleetLocation)
-
-		local var_8_2 = arg_8_1
-		local var_8_3 = arg_8_1.AddListener
-
-		WorldMapFleet = var_5
-
-		var_8_3(var_8_2, var_5.EventUpdateBuff, arg_8_0.onUpdateFleetBuff)
-
-		local var_8_4 = arg_8_1
-		local var_8_5 = arg_8_1.AddListener
-
-		WorldMapFleet = var_5
-
-		var_8_5(var_8_4, var_5.EventUpdateDefeat, arg_8_0.onUpdateFleetDefeat)
+		arg_8_1:AddListener(WorldMapFleet.EventUpdateLocation, arg_8_0.onUpdateFleetLocation)
+		arg_8_1:AddListener(WorldMapFleet.EventUpdateBuff, arg_8_0.onUpdateFleetBuff)
+		arg_8_1:AddListener(WorldMapFleet.EventUpdateDefeat, arg_8_0.onUpdateFleetDefeat)
 	end
 
 	return
 end
 
-function var_0_1.RemoveFleetListener(arg_9_0, arg_9_1)
+function var_0_0.RemoveFleetListener(arg_9_0, arg_9_1)
 	if arg_9_1 then
-		local var_9_0 = arg_9_1
-		local var_9_1 = arg_9_1.RemoveListener
-
-		WorldMapFleet = var_1_10005
-
-		var_9_1(var_9_0, var_1_10005.EventUpdateLocation, arg_9_0.onUpdateFleetLocation)
-
-		local var_9_2 = arg_9_1
-		local var_9_3 = arg_9_1.RemoveListener
-
-		WorldMapFleet = var_5
-
-		var_9_3(var_9_2, var_5.EventUpdateBuff, arg_9_0.onUpdateFleetBuff)
-
-		local var_9_4 = arg_9_1
-		local var_9_5 = arg_9_1.RemoveListener
-
-		WorldMapFleet = var_5
-
-		var_9_5(var_9_4, var_5.EventUpdateDefeat, arg_9_0.onUpdateFleetDefeat)
+		arg_9_1:RemoveListener(WorldMapFleet.EventUpdateLocation, arg_9_0.onUpdateFleetLocation)
+		arg_9_1:RemoveListener(WorldMapFleet.EventUpdateBuff, arg_9_0.onUpdateFleetBuff)
+		arg_9_1:RemoveListener(WorldMapFleet.EventUpdateDefeat, arg_9_0.onUpdateFleetDefeat)
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateSelectedFleet(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.map
-	local var_10_1 = var_2.GetFleet(var_10_0)
+function var_0_0.OnUpdateSelectedFleet(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_0.map:GetFleet()
 
-	if not arg_10_1 or arg_10_0.fleet ~= var_10_1 then
+	if not arg_10_1 or arg_10_0.fleet ~= var_10_0 then
 		arg_10_0:RemoveFleetListener(arg_10_0.fleet)
 
-		arg_10_0.fleet = var_10_1
+		arg_10_0.fleet = var_10_0
 
 		arg_10_0:AddFleetListener(arg_10_0.fleet)
-		arg_10_0:UpdateCompassRotation(var_10_1)
+		arg_10_0:UpdateCompassRotation(var_10_0)
 		arg_10_0:OnUpdateFleetLocation()
 		arg_10_0:OnUpdateFleetBuff()
 		arg_10_0:OnUpdateFleetDefeat()
@@ -282,7 +176,7 @@ function var_0_1.OnUpdateSelectedFleet(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.OnUpdateFleetLocation(arg_11_0)
+function var_0_0.OnUpdateFleetLocation(arg_11_0)
 	if not arg_11_0.map.active then
 		return
 	end
@@ -292,158 +186,83 @@ function var_0_1.OnUpdateFleetLocation(arg_11_0)
 	return
 end
 
-function var_0_1.OnUpdateFleetBuff(arg_12_0)
-	setActive = var_1_10001
-
-	local var_12_0 = arg_12_0.wsCompass.tf
-	local var_12_1 = arg_12_0.fleet
-	local var_12_2 = var_4.GetBuffsByTrap
-
-	WorldBuff = var_1_10007
-
-	var_1_10001(var_12_0, #var_12_2(var_12_1, var_1_10007.TrapCompassInterference) == 0)
+function var_0_0.OnUpdateFleetBuff(arg_12_0)
+	setActive(arg_12_0.wsCompass.tf, #arg_12_0.fleet:GetBuffsByTrap(WorldBuff.TrapCompassInterference) == 0)
 
 	return
 end
 
-function var_0_1.OnUpdateFleetDefeat(arg_13_0)
-	setText = var_1_10001
-
-	local var_13_0 = arg_13_0.btnDefeat
-	local var_13_1 = var_3.Find(var_13_0, "Text")
-
-	math = var_1_10004
-
-	local var_13_2 = var_1_10004.min
-	local var_13_3 = arg_13_0.fleet
-
-	var_1_10001(var_13_1, var_13_2(var_6.getDefeatCount(var_13_3), 99))
+function var_0_0.OnUpdateFleetDefeat(arg_13_0)
+	setText(arg_13_0.btnDefeat:Find("Text"), math.min(arg_13_0.fleet:getDefeatCount(), 99))
 
 	return
 end
 
-function var_0_1.UpdateCompass(arg_14_0)
-	local var_14_0 = arg_14_0.map
-	local var_14_1 = var_1.GetFleet(var_14_0)
-
+function var_0_0.UpdateCompass(arg_14_0)
 	arg_14_0:UpdateCompassMarks()
-	arg_14_0:UpdateCompassRotation(var_14_1)
+	arg_14_0:UpdateCompassRotation((arg_14_0.map:GetFleet()))
 
 	return
 end
 
-function var_0_1.UpdateCompossView(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = arg_15_0.map
-	local var_15_1 = arg_15_0.wsCompass
-
-	var_4.UpdateByViewer(var_15_1, var_15_0, arg_15_1, arg_15_2)
+function var_0_0.UpdateCompossView(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_0.wsCompass:UpdateByViewer(arg_15_0.map, arg_15_1, arg_15_2)
 
 	return
 end
 
-function var_0_1.UpdateCompassRotation(arg_16_0, arg_16_1)
-	local var_16_0 = arg_16_0.wsCompass
-
-	var_2.UpdateCompassRotation(var_16_0, arg_16_1)
+function var_0_0.UpdateCompassRotation(arg_16_0, arg_16_1)
+	arg_16_0.wsCompass:UpdateCompassRotation(arg_16_1)
 
 	return
 end
 
-function var_0_1.UpdateCompassMarks(arg_17_0)
-	local var_17_0 = arg_17_0.wsCompass
-
-	var_1.ClearMarks(var_17_0)
-
-	local var_17_1 = arg_17_0.wsCompass
-
-	var_1.Update(var_17_1, arg_17_0.entrance, arg_17_0.map)
+function var_0_0.UpdateCompassMarks(arg_17_0)
+	arg_17_0.wsCompass:ClearMarks()
+	arg_17_0.wsCompass:Update(arg_17_0.entrance, arg_17_0.map)
 
 	return
 end
 
-function var_0_1.OnUpdateEventTips(arg_18_0)
-	local var_18_0 = arg_18_0.map
-	local var_18_1, var_18_2 = var_1.GetEventTipWord(var_18_0)
+function var_0_0.OnUpdateEventTips(arg_18_0)
+	local var_18_0, var_18_1 = arg_18_0.map:GetEventTipWord()
 
-	if arg_18_0.tipEventPri ~= var_18_2 then
-		setActive = var_3
+	if arg_18_0.tipEventPri ~= var_18_1 then
+		setActive(arg_18_0.rtTipWord, false)
 
-		var_3(arg_18_0.rtTipWord, false)
-
-		arg_18_0.tipEventPri = var_18_2
+		arg_18_0.tipEventPri = var_18_1
 	end
 
-	setActive = var_3
+	setActive(arg_18_0.rtTipWord, var_18_1 > 0)
 
-	var_3(arg_18_0.rtTipWord, var_18_2 > 0)
-
-	if 0 < var_18_2 then
-		setText = var_3
-
-		local var_18_3 = arg_18_0.rtTipWord
-
-		var_3(var_5.Find(var_18_3, "Text"), var_18_1)
+	if var_18_1 > 0 then
+		setText(arg_18_0.rtTipWord:Find("Text"), var_18_0)
 	end
 
 	return
 end
 
-function var_0_1.UpdateBtns(arg_19_0)
-	local var_19_0 = arg_19_0.map
-	local var_19_1 = var_1.GetPort(var_19_0)
+function var_0_0.UpdateBtns(arg_19_0)
+	local var_19_0 = arg_19_0.map:GetPort()
 
-	setActive = var_1_10002
-
-	var_1_10002(arg_19_0.btnPort, var_19_1 and not var_19_1:IsTempPort())
-
-	setActive = var_1_10002
-
-	local var_19_2 = arg_19_0.btnExit
-	local var_19_3 = arg_19_0.map
-
-	var_1_10002(var_19_2, var_5.canExit(var_19_3))
+	setActive(arg_19_0.btnPort, var_19_0 and not var_19_0:IsTempPort())
+	setActive(arg_19_0.btnExit, arg_19_0.map:canExit())
 
 	return
 end
 
-function var_0_1.OnUpdateInfoBtnTip(arg_20_0)
-	_ = var_1_10001
-
-	local var_20_0 = var_1_10001.any
-	local var_20_1 = arg_20_0.taskProxy
-	local var_20_2 = var_20_0(var_3.getTaskVOs(var_20_1), function(arg_21_0)
-		local var_21_0 = arg_21_0:getState()
-
-		WorldTask = var_2_10002
-
-		return var_21_0 == var_2_10002.STATE_FINISHED
-	end)
-
-	setActive = var_1_10002
-
-	local var_20_3 = arg_20_0.btnInformation
-
-	var_1_10002(var_4.Find(var_20_3, "tip"), var_20_2)
+function var_0_0.OnUpdateInfoBtnTip(arg_20_0)
+	setActive(arg_20_0.btnInformation:Find("tip"), (_.any(arg_20_0.taskProxy:getTaskVOs(), function(arg_21_0)
+		return arg_21_0:getState() == WorldTask.STATE_FINISHED
+	end)))
 
 	return
 end
 
-function var_0_1.OnUpdateHelpBtnTip(arg_22_0, arg_22_1)
-	nowWorld = var_1_10002
-
-	local var_22_0 = var_1_10002()
-	local var_22_1 = var_2.GetProgress(var_22_0)
-
-	setActive = var_1_10003
-
-	local var_22_2 = arg_22_0.btnHelp
-	local var_22_3 = var_5.Find(var_22_2, "imge/tip")
-
-	WorldConst = var_1_10006
-
-	var_1_10003(var_22_3, var_1_10006.IsWorldHelpNew(var_22_1, arg_22_1))
+function var_0_0.OnUpdateHelpBtnTip(arg_22_0, arg_22_1)
+	setActive(arg_22_0.btnHelp:Find("imge/tip"), WorldConst.IsWorldHelpNew(nowWorld():GetProgress(), arg_22_1))
 
 	return
 end
 
-return var_0_1
+return var_0_0

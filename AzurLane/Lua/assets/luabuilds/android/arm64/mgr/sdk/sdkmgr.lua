@@ -1,71 +1,30 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.SdkMgr = singletonClass("SdkMgr")
 
-local var_0_0
+local var_0_0 = pg.SdkMgr
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-singletonClass = var_0_10001
-var_0.SdkMgr = var_0_10001("SdkMgr")
-pg = var_0
+function pg.SdkMgr.Ctor(arg_1_0)
+	if PLATFORM_CODE == PLATFORM_CH then
+		arg_1_0.instance = require("Mgr.Sdk.BiliSDKMgr")
+	elseif PLATFORM_CODE == PLATFORM_JP then
+		arg_1_0.instance = require("Mgr.Sdk.YoStarMgr")
 
-local var_0_1 = var_0.SdkMgr
-
-function var_0_1.Ctor(arg_1_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CH = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
-		require = var_1_10001
-		arg_1_0.instance = var_1_10001("Mgr.Sdk.BiliSDKMgr")
-	else
-		PLATFORM_CODE = var_1_10001
-		PLATFORM_JP = var_1_10002
-
-		if var_1_10001 == var_1_10002 then
-			require = var_1_10001
-			arg_1_0.instance = var_1_10001("Mgr.Sdk.YoStarMgr")
-
-			arg_1_0.instance.InitJP()
-		else
-			PLATFORM_CODE = var_1_10001
-			PLATFORM_KR = var_1_10002
-
-			if var_1_10001 == var_1_10002 then
-				require = var_1_10001
-				arg_1_0.instance = var_1_10001("Mgr.Sdk.TxwyKrSDKMgr")
-			else
-				PLATFORM_CODE = var_1_10001
-				PLATFORM_US = var_1_10002
-
-				if var_1_10001 == var_1_10002 then
-					require = var_1_10001
-					arg_1_0.instance = var_1_10001("Mgr.Sdk.AiriSDKUSMgr")
-				else
-					PLATFORM_CODE = var_1_10001
-					PLATFORM_CHT = var_1_10002
-
-					if var_1_10001 == var_1_10002 then
-						require = var_1_10001
-						arg_1_0.instance = var_1_10001("Mgr.Sdk.YongshiSdkMgr")
-					end
-				end
-			end
-		end
+		arg_1_0.instance.InitJP()
+	elseif PLATFORM_CODE == PLATFORM_KR then
+		arg_1_0.instance = require("Mgr.Sdk.TxwyKrSDKMgr")
+	elseif PLATFORM_CODE == PLATFORM_US then
+		arg_1_0.instance = require("Mgr.Sdk.AiriSDKUSMgr")
+	elseif PLATFORM_CODE == PLATFORM_CHT then
+		arg_1_0.instance = require("Mgr.Sdk.YongshiSdkMgr")
 	end
 
-	local var_1_0 = arg_1_0
-	local var_1_1 = arg_1_0.GetPlatformCode
-
-	Application = var_1_10004
-	arg_1_0.pcode = var_1_1(var_1_0, var_1_10004.identifier)
+	arg_1_0.pcode = arg_1_0:GetPlatformCode(Application.identifier)
 
 	return
 end
 
-function var_0_1.Call(arg_2_0, arg_2_1, ...)
-	assert = var_1_10002
-
-	var_1_10002(arg_2_0.instance)
+function pg.SdkMgr.Call(arg_2_0, arg_2_1, ...)
+	assert(arg_2_0.instance)
 
 	if arg_2_0.instance[arg_2_1] then
 		arg_2_0.instance[arg_2_1](...)
@@ -74,335 +33,309 @@ function var_0_1.Call(arg_2_0, arg_2_1, ...)
 	return
 end
 
-function var_0_1.Get(arg_3_0, arg_3_1, ...)
-	assert = var_1_10002
-
-	var_1_10002(arg_3_0.instance)
-
-	assert = var_1_10002
-
-	var_1_10002(arg_3_0.instance[arg_3_1], "func should exist " .. arg_3_1)
+function pg.SdkMgr.Get(arg_3_0, arg_3_1, ...)
+	assert(arg_3_0.instance)
+	assert(arg_3_0.instance[arg_3_1], "func should exist " .. arg_3_1)
 
 	return arg_3_0.instance[arg_3_1](...)
 end
 
-local function var_0_2(arg_4_0)
-	originalPrint = var_1_10001
-
-	var_1_10001(".......EnterMultiWindow")
+function EnterMultiWindow(arg_4_0)
+	originalPrint(".......EnterMultiWindow")
 
 	return
 end
 
-local var_0_3 = EnterMultiWindow
-
-local function var_0_4(arg_5_0)
-	originalPrint = var_1_10001
-
-	var_1_10001(".......ExitMultiWindow")
+function ExitMultiWindow(arg_5_0)
+	originalPrint(".......ExitMultiWindow")
 
 	return
 end
 
-local var_0_5 = ExitMultiWindow
-
-function var_0_1.InitSDK(arg_6_0)
+function pg.SdkMgr.InitSDK(arg_6_0)
 	arg_6_0:Call("InitSDK")
 
 	return
 end
 
-function var_0_1.GoSDkLoginScene(arg_7_0)
+function pg.SdkMgr.GoSDkLoginScene(arg_7_0)
 	arg_7_0:Call("GoSDkLoginScene")
 
 	return
 end
 
-function var_0_1.LoginSdk(arg_8_0, arg_8_1)
+function pg.SdkMgr.LoginSdk(arg_8_0, arg_8_1)
 	arg_8_0:Call("LoginSdk", arg_8_1)
 
 	return
 end
 
-function var_0_1.TryLoginSdk(arg_9_0)
+function pg.SdkMgr.TryLoginSdk(arg_9_0)
 	arg_9_0:Call("TryLoginSdk")
 
 	return
 end
 
-function var_0_1.CreateRole(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5)
+function pg.SdkMgr.CreateRole(arg_10_0, arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5)
 	arg_10_0:Call("CreateRole", arg_10_1, arg_10_2, arg_10_3, arg_10_4, arg_10_5)
 
 	return
 end
 
-function var_0_1.EnterServer(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4, arg_11_5, arg_11_6, arg_11_7)
+function pg.SdkMgr.EnterServer(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4, arg_11_5, arg_11_6, arg_11_7)
 	arg_11_0:Call("EnterServer", arg_11_1, arg_11_2, arg_11_3, arg_11_4, arg_11_5, arg_11_6, arg_11_7)
 
 	return
 end
 
-function var_0_1.ChooseServer(arg_12_0, arg_12_1, arg_12_2)
+function pg.SdkMgr.ChooseServer(arg_12_0, arg_12_1, arg_12_2)
 	arg_12_0:Call("ChooseServer", arg_12_1, arg_12_2)
 
 	return
 end
 
-function var_0_1.SdkGateWayLogined(arg_13_0)
+function pg.SdkMgr.SdkGateWayLogined(arg_13_0)
 	arg_13_0:Call("SdkGateWayLogined")
 
 	return
 end
 
-function var_0_1.SdkLoginGetaWayFailed(arg_14_0)
+function pg.SdkMgr.SdkLoginGetaWayFailed(arg_14_0)
 	arg_14_0:Call("SdkLoginGetaWayFailed")
 
 	return
 end
 
-function var_0_1.SdkLevelUp(arg_15_0)
+function pg.SdkMgr.SdkLevelUp(arg_15_0)
 	arg_15_0:Call("SdkLevelUp")
 
 	return
 end
 
-function var_0_1.SdkPay(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5, arg_16_6, arg_16_7, arg_16_8, arg_16_9, arg_16_10)
+function pg.SdkMgr.SdkPay(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5, arg_16_6, arg_16_7, arg_16_8, arg_16_9, arg_16_10)
 	arg_16_0:Call("SdkPay", arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5, arg_16_6, arg_16_7, arg_16_8, arg_16_9, arg_16_10)
 
 	return
 end
 
-function var_0_1.LogoutSDK(arg_17_0, arg_17_1)
+function pg.SdkMgr.LogoutSDK(arg_17_0, arg_17_1)
 	arg_17_0:Call("LogoutSDK", arg_17_1)
 
 	return
 end
 
-function var_0_1.BindCPU(arg_18_0)
+function pg.SdkMgr.BindCPU(arg_18_0)
 	arg_18_0:Call("BindCPU")
 
 	return
 end
 
-function var_0_1.OnAndoridBackPress(arg_19_0)
+function pg.SdkMgr.OnAndoridBackPress(arg_19_0)
 	arg_19_0:Call("OnAndoridBackPress")
 
 	return
 end
 
-function var_0_1.DeleteAccount(arg_20_0)
+function pg.SdkMgr.DeleteAccount(arg_20_0)
 	arg_20_0:Call("DeleteAccount")
 
 	return
 end
 
-function var_0_1.GetChannelUID(arg_21_0)
-	if arg_21_0:Get("GetChannelUID") == "" then
-		PLATFORM_LOCAL = var_1
+function pg.SdkMgr.GetChannelUID(arg_21_0)
+	local var_21_0 = arg_21_0:Get("GetChannelUID")
+
+	if var_21_0 == "" then
+		var_21_0 = PLATFORM_LOCAL
 	end
 
-	return var_1
+	return var_21_0
 end
 
-function var_0_1.IsTestServer(arg_22_0)
-	NetConst = var_1_10001
-
-	return var_1_10001.getwayType == 2
+function pg.SdkMgr.IsTestServer(arg_22_0)
+	return NetConst.getwayType == 2
 end
 
-function var_0_1.GetChannelUIDIncludeHarmony(arg_23_0)
-	local function var_23_0()
-		local var_24_0 = arg_23_0
+function pg.SdkMgr.GetChannelUIDIncludeHarmony(arg_23_0)
+	if arg_23_0:IsTestServer() or IsUnityEditor then
+		local var_23_0 = IsUnityEditor and PathMgr.getAssetBundle("../localization.txt") or Application.persistentDataPath .. "/localization.txt"
 
-		if var_0.GetChannelUID(var_24_0) == "harmony" then
-			return 9999
-		else
-			tonumber = var_2_10001
+		if not PathMgr.FileExists(var_23_0) then
+			return (function()
+				local var_24_0 = arg_23_0:GetChannelUID()
 
-			if var_2_10001(var_0) then
-				return var_1
-			else
-				return var_0 or 0
-			end
+				if var_24_0 == "harmony" then
+					return 9999
+				else
+					local var_24_1 = tonumber(var_24_0)
+
+					if var_24_1 then
+						return var_24_1
+					else
+						return var_24_0 or 0
+					end
+				end
+
+				return
+			end)()
 		end
 
-		return
-	end
+		local var_23_1 = PathMgr.ReadAllLines(var_23_0)
 
-	if not arg_23_0:IsTestServer() then
-		IsUnityEditor = var_2
-
-		if var_2 then
-			local var_23_1
-
-			IsUnityEditor = var_1_10003
-
-			if var_1_10003 then
-				PathMgr = var_1_10003
-				var_23_1 = var_1_10003.getAssetBundle("../localization.txt")
-			else
-				Application = var_1_10003
-				var_23_1 = var_1_10003.persistentDataPath .. "/localization.txt"
-			end
-
-			PathMgr = var_1_10003
-
-			if not var_1_10003.FileExists(var_23_1) then
-				return var_23_0()
-			end
-
-			PathMgr = var_3
-
-			local var_23_2
-
-			if not (var_3.ReadAllLines(var_23_1).Length > 2) or not var_3[2] then
-				var_23_2 = ""
-			end
+		if var_23_1.Length > 2 then
+			local var_23_2 = var_23_1[2] or ""
 
 			if not var_23_2 or var_23_2 == "" then
-				return var_23_0()
+				return (function()
+					local var_24_0 = arg_23_0:GetChannelUID()
+
+					if var_24_0 == "harmony" then
+						return 9999
+					else
+						local var_24_1 = tonumber(var_24_0)
+
+						if var_24_1 then
+							return var_24_1
+						else
+							return var_24_0 or 0
+						end
+					end
+
+					return
+				end)()
 			end
 
-			local var_23_3 = var_23_2:match("^%s*ChannelUID%s*=%s*(%d+)")
+			local var_23_3 = tonumber((var_23_2:match("^%s*ChannelUID%s*=%s*(%d+)")))
 
-			tonumber = var_1_10006
-
-			if var_1_10006(var_23_3) then
-				return var_5
+			if var_23_3 then
+				return var_23_3
 			else
-				return var_23_0()
-			end
-		else
-			return var_23_0()
-		end
+				return (function()
+					local var_24_0 = arg_23_0:GetChannelUID()
 
-		return
+					if var_24_0 == "harmony" then
+						return 9999
+					else
+						local var_24_1 = tonumber(var_24_0)
+
+						if var_24_1 then
+							return var_24_1
+						else
+							return var_24_0 or 0
+						end
+					end
+
+					return
+				end)()
+			end
+
+			if false then
+				return (function()
+					local var_24_0 = arg_23_0:GetChannelUID()
+
+					if var_24_0 == "harmony" then
+						return 9999
+					else
+						local var_24_1 = tonumber(var_24_0)
+
+						if var_24_1 then
+							return var_24_1
+						else
+							return var_24_0 or 0
+						end
+					end
+
+					return
+				end)()
+			end
+
+			return
+		end
 	end
 end
 
-function var_0_1.GetLoginType(arg_25_0)
-	Application = var_1_10001
-
-	local var_25_0 = var_1_10001.persistentDataPath .. "/server_config.txt"
-
-	PathMgr = var_2
-
-	if var_2.FileExists(var_25_0) then
-		LoginType = var_2
-
-		return var_2.PLATFORM_INNER
+function pg.SdkMgr.GetLoginType(arg_25_0)
+	if PathMgr.FileExists(Application.persistentDataPath .. "/server_config.txt") then
+		return LoginType.PLATFORM_INNER
 	end
 
-	string = var_2
-
-	local var_25_1 = var_2.match
-
-	NetConst = var_4
-
-	if var_25_1(var_4.GATEWAY_HOST, "^10%.0") then
-		LoginType = var_2
-
-		return var_2.PLATFORM_INNER
+	if string.match(NetConst.GATEWAY_HOST, "^10%.0") then
+		return LoginType.PLATFORM_INNER
 	end
 
 	return arg_25_0:Get("GetLoginType")
 end
 
-function var_0_1.GetIsPlatform(arg_26_0)
+function pg.SdkMgr.GetIsPlatform(arg_26_0)
 	return arg_26_0:Get("GetIsPlatform")
 end
 
-function var_0_1.EnterLoginScene(arg_27_0)
+function pg.SdkMgr.EnterLoginScene(arg_27_0)
 	arg_27_0.inLoginScene = true
 
 	return
 end
 
-function var_0_1.ExitLoginScene(arg_28_0)
+function pg.SdkMgr.ExitLoginScene(arg_28_0)
 	arg_28_0.inLoginScene = false
 
 	return
 end
 
-function var_0_1.IsInLoginScene(arg_29_0)
+function pg.SdkMgr.IsInLoginScene(arg_29_0)
 	return arg_29_0.inLoginScene
 end
 
-function var_0_1.IsYunPackage(arg_30_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CH = var_1_10002
-
-	return var_1_10001 == var_1_10002 and arg_30_0:GetChannelUID() == "yun"
+function pg.SdkMgr.IsYunPackage(arg_30_0)
+	return PLATFORM_CODE == PLATFORM_CH and arg_30_0:GetChannelUID() == "yun"
 end
 
-function var_0_1.Service(arg_31_0)
+function pg.SdkMgr.Service(arg_31_0)
 	arg_31_0:Call("Service")
 
 	return
 end
 
-function var_0_1.Survey(arg_32_0, arg_32_1)
+function pg.SdkMgr.Survey(arg_32_0, arg_32_1)
 	arg_32_0:Call("Survey", arg_32_1)
 
 	return
 end
 
-function var_0_1.IsHuaweiPackage(arg_33_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CH = var_1_10002
-
-	return var_1_10001 == var_1_10002 and arg_33_0:Get("IsHuaweiPackage")
+function pg.SdkMgr.IsHuaweiPackage(arg_33_0)
+	return PLATFORM_CODE == PLATFORM_CH and arg_33_0:Get("IsHuaweiPackage")
 end
 
-function var_0_1.CheckAudit(arg_34_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_JP = var_1_10002
-
-	if var_1_10001 ~= var_1_10002 then
-		PLATFORM_CODE = var_1_10001
-		PLATFORM_US = var_1_10002
-
-		if var_1_10001 == var_1_10002 then
-			return arg_34_0:Get("CheckAudit")
-		else
-			return false
-		end
-
-		return
+function pg.SdkMgr.CheckAudit(arg_34_0)
+	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
+		return arg_34_0:Get("CheckAudit")
+	else
+		return false
 	end
+
+	return
 end
 
-function var_0_1.CheckPreAudit(arg_35_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_JP = var_1_10002
-
-	if var_1_10001 ~= var_1_10002 then
-		PLATFORM_CODE = var_1_10001
-		PLATFORM_US = var_1_10002
-
-		if var_1_10001 == var_1_10002 then
-			return arg_35_0:Get("CheckPreAudit")
-		else
-			return false
-		end
-
-		return
+function pg.SdkMgr.CheckPreAudit(arg_35_0)
+	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
+		return arg_35_0:Get("CheckPreAudit")
+	else
+		return false
 	end
+
+	return
 end
 
-function var_0_1.CheckPretest(arg_36_0)
+function pg.SdkMgr.CheckPretest(arg_36_0)
 	return arg_36_0:Get("CheckPretest")
 end
 
-function var_0_1.CheckGoogleSimulator(arg_37_0)
+function pg.SdkMgr.CheckGoogleSimulator(arg_37_0)
 	return arg_37_0:Get("CheckGoogleSimulator")
 end
 
-function var_0_1.CheckWorldTest(arg_38_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CH = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.CheckWorldTest(arg_38_0)
+	if PLATFORM_CODE == PLATFORM_CH then
 		return arg_38_0:Get("CheckWorldTest")
 	else
 		return false
@@ -411,90 +344,84 @@ function var_0_1.CheckWorldTest(arg_38_0)
 	return
 end
 
-function var_0_1.OnAppPauseForSDK(arg_39_0, arg_39_1)
+function pg.SdkMgr.OnAppPauseForSDK(arg_39_0, arg_39_1)
 	arg_39_0:Call("OnAppPauseForSDK", arg_39_1)
 
 	return
 end
 
-function var_0_1.UserEventUpload(arg_40_0, arg_40_1)
+function pg.SdkMgr.UserEventUpload(arg_40_0, arg_40_1)
 	arg_40_0:Call("UserEventUpload", arg_40_1)
 
 	return
 end
 
-function var_0_1.GameShare(arg_41_0, arg_41_1, arg_41_2)
+function pg.SdkMgr.GameShare(arg_41_0, arg_41_1, arg_41_2)
 	arg_41_0:Call("GameShare", arg_41_1, arg_41_2)
 
 	return
 end
 
-local function var_0_6()
-	function var_0_1.GetYostarUid(arg_43_0)
-		return arg_43_0:Get("GetYostarUid")
-	end
+if PLATFORM_CODE == PLATFORM_US then
+	(function()
+		function var_0_0.GetYostarUid(arg_43_0)
+			return arg_43_0:Get("GetYostarUid")
+		end
 
-	function var_0_1.GetYostarTransCode(arg_44_0)
-		return arg_44_0:Get("GetTransCode")
-	end
+		function var_0_0.GetYostarTransCode(arg_44_0)
+			return arg_44_0:Get("GetTransCode")
+		end
 
-	function var_0_1.AiriLoginSDK(arg_45_0)
-		arg_45_0:Call("AiriLogin")
+		function var_0_0.AiriLoginSDK(arg_45_0)
+			arg_45_0:Call("AiriLogin")
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.TranscodeRequest(arg_46_0)
-		arg_46_0:Call("TranscodeRequest")
+		function var_0_0.TranscodeRequest(arg_46_0)
+			arg_46_0:Call("TranscodeRequest")
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.LoginWithTranscode(arg_47_0, arg_47_1, arg_47_2)
-		arg_47_0:Call("LoginWithTranscode", arg_47_1, arg_47_2)
+		function var_0_0.LoginWithTranscode(arg_47_0, arg_47_1, arg_47_2)
+			arg_47_0:Call("LoginWithTranscode", arg_47_1, arg_47_2)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.LoginWithSocial(arg_48_0, arg_48_1, arg_48_2, arg_48_3)
-		arg_48_0:Call("LoginWithSocial", arg_48_1, arg_48_2, arg_48_3)
+		function var_0_0.LoginWithSocial(arg_48_0, arg_48_1, arg_48_2, arg_48_3)
+			arg_48_0:Call("LoginWithSocial", arg_48_1, arg_48_2, arg_48_3)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.LoginWithDevice(arg_49_0)
-		arg_49_0:Call("LoginWithDevice")
+		function var_0_0.LoginWithDevice(arg_49_0)
+			arg_49_0:Call("LoginWithDevice")
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.AiriBuy(arg_50_0, arg_50_1, arg_50_2, arg_50_3)
-		arg_50_0:Call("AiriBuy", arg_50_1, arg_50_2, arg_50_3)
+		function var_0_0.AiriBuy(arg_50_0, arg_50_1, arg_50_2, arg_50_3)
+			arg_50_0:Call("AiriBuy", arg_50_1, arg_50_2, arg_50_3)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.LinkSocial(arg_51_0, arg_51_1, arg_51_2, arg_51_3)
-		arg_51_0:Call("LinkSocial", arg_51_1, arg_51_2, arg_51_3)
+		function var_0_0.LinkSocial(arg_51_0, arg_51_1, arg_51_2, arg_51_3)
+			arg_51_0:Call("LinkSocial", arg_51_1, arg_51_2, arg_51_3)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.UnlinkSocial(arg_52_0, arg_52_1)
-		arg_52_0:Call("UnlinkSocial", arg_52_1)
+		function var_0_0.UnlinkSocial(arg_52_0, arg_52_1)
+			arg_52_0:Call("UnlinkSocial", arg_52_1)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.IsSocialLink(arg_53_0, arg_53_1)
-		PLATFORM_CODE = var_2_10002
-		PLATFORM_JP = var_2_10003
-
-		if var_2_10002 ~= var_2_10003 then
-			PLATFORM_CODE = var_2_10002
-			PLATFORM_US = var_2_10003
-
-			if var_2_10002 == var_2_10003 then
+		function var_0_0.IsSocialLink(arg_53_0, arg_53_1)
+			if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 				return arg_53_0:Get("IsSocialLink", arg_53_1)
 			else
 				return false
@@ -502,17 +429,9 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.GetSocialName(arg_54_0, arg_54_1)
-		PLATFORM_CODE = var_2_10002
-		PLATFORM_JP = var_2_10003
-
-		if var_2_10002 ~= var_2_10003 then
-			PLATFORM_CODE = var_2_10002
-			PLATFORM_US = var_2_10003
-
-			if var_2_10002 == var_2_10003 then
+		function var_0_0.GetSocialName(arg_54_0, arg_54_1)
+			if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 				return arg_54_0:Get("GetSocialName", arg_54_1)
 			else
 				return "none"
@@ -520,79 +439,63 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.GetIsBirthSet(arg_55_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_JP = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_US = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.GetIsBirthSet(arg_55_0)
+			if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
 				return arg_55_0:Get("GetIsBirthSet")
 			end
 
 			return true
 		end
-	end
 
-	function var_0_1.SetBirth(arg_56_0, arg_56_1)
-		arg_56_0:Call("SetBirth", arg_56_1)
+		function var_0_0.SetBirth(arg_56_0, arg_56_1)
+			arg_56_0:Call("SetBirth", arg_56_1)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.ClearAccountCache(arg_57_0)
-		arg_57_0:Call("ClearAccountCache")
+		function var_0_0.ClearAccountCache(arg_57_0)
+			arg_57_0:Call("ClearAccountCache")
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.GameShare(arg_58_0, arg_58_1, arg_58_2)
-		arg_58_0:Call("GameShare", arg_58_1, arg_58_2)
+		function var_0_0.GameShare(arg_58_0, arg_58_1, arg_58_2)
+			arg_58_0:Call("GameShare", arg_58_1, arg_58_2)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.VerificationCodeReq(arg_59_0, arg_59_1)
-		arg_59_0:Call("VerificationCodeReq", arg_59_1)
+		function var_0_0.VerificationCodeReq(arg_59_0, arg_59_1)
+			arg_59_0:Call("VerificationCodeReq", arg_59_1)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.OpenYostarHelp(arg_60_0)
-		arg_60_0:Call("OpenYostarHelp")
+		function var_0_0.OpenYostarHelp(arg_60_0)
+			arg_60_0:Call("OpenYostarHelp")
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.OnAppPauseForSDK(arg_61_0, arg_61_1)
-		arg_61_0:Call("OnAppPauseForSDK", arg_61_1)
+		function var_0_0.OnAppPauseForSDK(arg_61_0, arg_61_1)
+			arg_61_0:Call("OnAppPauseForSDK", arg_61_1)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.UserEventUpload(arg_62_0, arg_62_1)
-		arg_62_0:Call("UserEventUpload", arg_62_1)
+		function var_0_0.UserEventUpload(arg_62_0, arg_62_1)
+			arg_62_0:Call("UserEventUpload", arg_62_1)
 
-		return
-	end
+			return
+		end
 
-	function var_0_1.ShowSurvey(arg_63_0, arg_63_1, arg_63_2)
-		return arg_63_0:Call("ShowSurvey", arg_63_1, arg_63_2)
-	end
+		function var_0_0.ShowSurvey(arg_63_0, arg_63_1, arg_63_2)
+			return arg_63_0:Call("ShowSurvey", arg_63_1, arg_63_2)
+		end
 
-	function var_0_1.CheckAiriCanBuy(arg_64_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.CheckAiriCanBuy(arg_64_0)
+			if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 				return arg_64_0:Get("CheckAiriCanBuy")
 			else
 				return true
@@ -600,30 +503,19 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.CheckHadAccountCache(arg_65_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_JP = var_2_10002
+		function var_0_0.CheckHadAccountCache(arg_65_0)
+			if PLATFORM_CODE == PLATFORM_JP then
+				return arg_65_0:Get("CheckHadAccountCache")
+			else
+				return true
+			end
 
-		if var_2_10001 == var_2_10002 then
-			return arg_65_0:Get("CheckHadAccountCache")
-		else
-			return true
+			return
 		end
 
-		return
-	end
-
-	function var_0_1.AccountDelete(arg_66_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.AccountDelete(arg_66_0)
+			if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 				return arg_66_0:Get("AccountDelete")
 			else
 				return true
@@ -631,17 +523,9 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.AccountReborn(arg_67_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.AccountReborn(arg_67_0)
+			if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 				return arg_67_0:Get("AccountReborn")
 			else
 				return true
@@ -649,17 +533,9 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.ConfirmLinkGooglePlayGame(arg_68_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.ConfirmLinkGooglePlayGame(arg_68_0)
+			if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 				return arg_68_0:Get("ConfirmLinkGooglePlayGame")
 			else
 				return true
@@ -667,17 +543,9 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.ConfirmUnLinkGooglePlayGame(arg_69_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.ConfirmUnLinkGooglePlayGame(arg_69_0)
+			if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 				return arg_69_0:Get("ConfirmUnLinkGooglePlayGame")
 			else
 				return true
@@ -685,17 +553,9 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	function var_0_1.BindYostarPass(arg_70_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
+		function var_0_0.BindYostarPass(arg_70_0)
+			if PLATFORM_CODE == PLATFORM_US or PLATFORM_CODE == PLATFORM_JP then
 				return arg_70_0:Get("BindYostarPass")
 			else
 				return true
@@ -703,378 +563,124 @@ local function var_0_6()
 
 			return
 		end
-	end
 
-	local var_42_0 = 0
-	local var_42_1 = AIRI_LAST_GEN_TIME
-	local var_42_2 = 30
-	local var_42_3 = AIRI_GEN_LIMIT_TIME
+		AIRI_LAST_GEN_TIME = 0
+		AIRI_GEN_LIMIT_TIME = 30
 
-	local function var_42_4()
-		Time = var_2_10000
-
-		local var_71_0 = var_2_10000.realtimeSinceStartup
-
-		AIRI_LAST_GEN_TIME = var_2_10001
-
-		local var_71_1 = var_71_0 - var_2_10001
-
-		AIRI_GEN_LIMIT_TIME = var_2_10001
-
-		if not (var_2_10001 < var_71_1) then
-			AIRI_LAST_GEN_TIME = var_2_10001
-
-			if var_2_10001 == 0 then
+		function GetAiriGenCodeTimeRemain()
+			if Time.realtimeSinceStartup - AIRI_LAST_GEN_TIME > AIRI_GEN_LIMIT_TIME or AIRI_LAST_GEN_TIME == 0 then
 				return 0
 			else
-				math = var_2_10001
-
-				local var_71_2 = var_2_10001.floor
-
-				AIRI_GEN_LIMIT_TIME = var_2_10003
-
-				return var_71_2(var_2_10003 - var_71_1)
+				return math.floor(AIRI_GEN_LIMIT_TIME - (Time.realtimeSinceStartup - AIRI_LAST_GEN_TIME))
 			end
 
 			return
 		end
-	end
-
-	local var_42_5 = GetAiriGenCodeTimeRemain
-
-	return
-end
-
-PLATFORM_CODE = var_0_10002
-PLATFORM_US = var_3
-
-if var_0_10002 == var_3 then
-	var_0_6()
-end
-
-local function var_0_7()
-	function var_0_1.YoStarLoginSDK(arg_73_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_JP = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_US = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				arg_73_0:Call("Login")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarPay(arg_74_0, arg_74_1, arg_74_2, arg_74_3)
-		PLATFORM_CODE = var_2_10004
-		PLATFORM_JP = var_2_10005
-
-		if var_2_10004 ~= var_2_10005 then
-			PLATFORM_CODE = var_2_10004
-			PLATFORM_US = var_2_10005
-
-			if var_2_10004 == var_2_10005 then
-				arg_74_0:Call("Pay", arg_74_1, arg_74_2, arg_74_3)
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.GameShare(arg_75_0, arg_75_1, arg_75_2)
-		PLATFORM_CODE = var_2_10003
-		PLATFORM_JP = var_2_10004
-
-		if var_2_10003 ~= var_2_10004 then
-			PLATFORM_CODE = var_2_10003
-			PLATFORM_US = var_2_10004
-
-			if var_2_10003 == var_2_10004 then
-				arg_75_0:Call("SystemShare", arg_75_1, arg_75_2)
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YostarOpenAiHelp(arg_76_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_JP = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_US = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				arg_76_0:Call("ShowAihelp")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.OnAppPauseForSDK(arg_77_0, arg_77_1)
-		PLATFORM_CODE = var_2_10002
-		PLATFORM_JP = var_2_10003
-
-		if var_2_10002 ~= var_2_10003 then
-			PLATFORM_CODE = var_2_10002
-			PLATFORM_US = var_2_10003
-
-			if var_2_10002 == var_2_10003 then
-				arg_77_0:Call("OnAppPauseForSDK", arg_77_1)
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarShowSurvey(arg_78_0, arg_78_1, arg_78_2)
-		PLATFORM_CODE = var_2_10003
-		PLATFORM_JP = var_2_10004
-
-		if var_2_10003 ~= var_2_10004 then
-			PLATFORM_CODE = var_2_10003
-			PLATFORM_US = var_2_10004
-
-			if var_2_10003 == var_2_10004 then
-				return arg_78_0:Call("ShowSurvey", arg_78_1, arg_78_2)
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarCheckCanBuy(arg_79_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				return arg_79_0:Get("CheckYoStarCanBuy")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarCheckHadAccountCache(arg_80_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				return arg_80_0:Get("CheckHadAccountCache")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarShowUserCenter(arg_81_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				return arg_81_0:Get("ShowUserCenter")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarRoleInfoUpload(arg_82_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				return arg_82_0:Get("RoleInfoUpload")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarShowSwitchAccount(arg_83_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				return arg_83_0:Get("ShowSwitchAccount")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.YoStarShowAccountCenter(arg_84_0)
-		PLATFORM_CODE = var_2_10001
-		PLATFORM_US = var_2_10002
-
-		if var_2_10001 ~= var_2_10002 then
-			PLATFORM_CODE = var_2_10001
-			PLATFORM_JP = var_2_10002
-
-			if var_2_10001 == var_2_10002 then
-				return arg_84_0:Get("ShowAccountCenter")
-			end
-
-			return
-		end
-	end
-
-	function var_0_1.UserEventUpload(arg_85_0, arg_85_1)
-		arg_85_0:Call("UserEventUpload", arg_85_1)
 
 		return
-	end
-
-	return
+	end)()
 end
 
-PLATFORM_CODE = var_3
-PLATFORM_JP = var_0_10004
-
-if var_3 == var_0_10004 then
-	var_0_7()
+if PLATFORM_CODE == PLATFORM_JP then
+	var_0_1()
 end
 
-function var_0_1.UserCenter(arg_86_0)
+function pg.SdkMgr.UserCenter(arg_86_0)
 	arg_86_0:Call("UserCenter")
 
 	return
 end
 
-function var_0_1.BugReport(arg_87_0)
+function pg.SdkMgr.BugReport(arg_87_0)
 	arg_87_0:Call("BugReport")
 
 	return
 end
 
-function var_0_1.StoreReview(arg_88_0)
+function pg.SdkMgr.StoreReview(arg_88_0)
 	arg_88_0:Call("StoreReview")
 
 	return
 end
 
-function var_0_1.QueryWithProduct(arg_89_0)
+function pg.SdkMgr.QueryWithProduct(arg_89_0)
 	arg_89_0:Call("QueryWithProduct")
 
 	return
 end
 
-function var_0_1.QueryPendingTransaction(arg_90_0)
+function pg.SdkMgr.QueryPendingTransaction(arg_90_0)
 	arg_90_0:Call("QueryPendingTransaction")
 
 	return
 end
 
-function var_0_1.ShareImg(arg_91_0, arg_91_1, arg_91_2)
+function pg.SdkMgr.ShareImg(arg_91_0, arg_91_1, arg_91_2)
 	arg_91_0:Call("ShareImg", arg_91_1, arg_91_2)
 
 	return
 end
 
-function var_0_1.SwitchAccount(arg_92_0)
+function pg.SdkMgr.SwitchAccount(arg_92_0)
 	arg_92_0:Call("SwitchAccount")
 
 	return
 end
 
-function var_0_1.EventTrack(arg_93_0, arg_93_1)
+function pg.SdkMgr.EventTrack(arg_93_0, arg_93_1)
 	arg_93_0:Call("EventTrack", arg_93_1)
 
 	return
 end
 
-function var_0_1.EventTrack(arg_94_0, arg_94_1)
+function pg.SdkMgr.EventTrack(arg_94_0, arg_94_1)
 	arg_94_0:Call("EventTrack", arg_94_1)
 
 	return
 end
 
-function var_0_1.IsBindFaceBook(arg_95_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CHT = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.IsBindFaceBook(arg_95_0)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_95_0:Get("IsBindFaceBook")
 	end
 
 	return
 end
 
-function var_0_1.IsBindApple(arg_96_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CHT = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.IsBindApple(arg_96_0)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_96_0:Get("IsBindApple")
 	end
 
 	return
 end
 
-function var_0_1.IsBindGoogle(arg_97_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CHT = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.IsBindGoogle(arg_97_0)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_97_0:Get("IsBindGoogle")
 	end
 
 	return
 end
 
-function var_0_1.IsBindPhone(arg_98_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CHT = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.IsBindPhone(arg_98_0)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_98_0:Get("IsBindPhone")
 	end
 
 	return
 end
 
-function var_0_1.IsBindGameCenter(arg_99_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CHT = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.IsBindGameCenter(arg_99_0)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return false
 	end
 
 	return
 end
 
-function var_0_1.CanTriggerDeepLinking(arg_100_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CHT = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
+function pg.SdkMgr.CanTriggerDeepLinking(arg_100_0)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_100_0:Get("CanTriggerDeepLinking")
 	else
 		return false
@@ -1083,13 +689,13 @@ function var_0_1.CanTriggerDeepLinking(arg_100_0)
 	return
 end
 
-function var_0_1.TriggerDeepLinking(arg_101_0)
+function pg.SdkMgr.TriggerDeepLinking(arg_101_0)
 	arg_101_0:Call("TriggerDeepLinking")
 
 	return
 end
 
-function var_0_1.BindSocial(arg_102_0, arg_102_1)
+function pg.SdkMgr.BindSocial(arg_102_0, arg_102_1)
 	if arg_102_1 == 1 then
 		arg_102_0:BindFaceBook()
 	elseif arg_102_1 == 2 then
@@ -1105,7 +711,7 @@ function var_0_1.BindSocial(arg_102_0, arg_102_1)
 	return
 end
 
-function var_0_1.UnbindSocial(arg_103_0, arg_103_1)
+function pg.SdkMgr.UnbindSocial(arg_103_0, arg_103_1)
 	if arg_103_1 == 1 then
 		arg_103_0:UnBindFaceBook()
 	elseif arg_103_1 == 2 then
@@ -1119,139 +725,100 @@ function var_0_1.UnbindSocial(arg_103_0, arg_103_1)
 	return
 end
 
-function var_0_1.BindFaceBook(arg_104_0)
+function pg.SdkMgr.BindFaceBook(arg_104_0)
 	arg_104_0:Call("BindFaceBook")
 
 	return
 end
 
-function var_0_1.BindApple(arg_105_0)
+function pg.SdkMgr.BindApple(arg_105_0)
 	arg_105_0:Call("BindApple")
 
 	return
 end
 
-function var_0_1.BindGoogle(arg_106_0)
+function pg.SdkMgr.BindGoogle(arg_106_0)
 	arg_106_0:Call("BindGoogle")
 
 	return
 end
 
-function var_0_1.BindPhone(arg_107_0)
+function pg.SdkMgr.BindPhone(arg_107_0)
 	arg_107_0:Call("BindPhone")
 
 	return
 end
 
-function var_0_1.UnBindFaceBook(arg_108_0)
+function pg.SdkMgr.UnBindFaceBook(arg_108_0)
 	arg_108_0:Call("UnBindFaceBook")
 
 	return
 end
 
-function var_0_1.UnBindGoogle(arg_109_0)
+function pg.SdkMgr.UnBindGoogle(arg_109_0)
 	arg_109_0:Call("UnBindGoogle")
 
 	return
 end
 
-function var_0_1.UnBindPhone(arg_110_0)
+function pg.SdkMgr.UnBindPhone(arg_110_0)
 	arg_110_0:Call("UnBindPhone")
 
 	return
 end
 
-function var_0_1.ShowLicence(arg_111_0)
+function pg.SdkMgr.ShowLicence(arg_111_0)
 	arg_111_0:Call("ShowLicence")
 
 	return
 end
 
-function var_0_1.ShowPrivate(arg_112_0)
+function pg.SdkMgr.ShowPrivate(arg_112_0)
 	arg_112_0:Call("ShowPrivate")
 
 	return
 end
 
-function var_0_1.OpenMiniProgram(arg_113_0)
+function pg.SdkMgr.OpenMiniProgram(arg_113_0)
 	arg_113_0:Call("OpenMiniProgram")
 
 	return
 end
 
-function var_0_1.GetProduct(arg_114_0, arg_114_1)
-	PLATFORM_CODE = var_1_10002
-	PLATFORM_CHT = var_1_10003
-
-	if var_1_10002 == var_1_10003 then
+function pg.SdkMgr.GetProduct(arg_114_0, arg_114_1)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_114_0:Get("GetProduct", arg_114_1)
 	end
 
 	return
 end
 
-function var_0_1.GetDeviceId(arg_115_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_JP = var_1_10002
-
-	if var_1_10001 ~= var_1_10002 then
-		PLATFORM_CODE = var_1_10001
-		PLATFORM_US = var_1_10002
-
-		if var_1_10001 == var_1_10002 then
-			return arg_115_0:Get("GetDeviceId")
-		else
-			PLATFORM_CODE = var_1_10001
-			PLATFORM_KR = var_1_10002
-
-			if var_1_10001 == var_1_10002 then
-				return arg_115_0:Get("GetDeviceModel")
-			else
-				PLATFORM_CODE = var_1_10001
-				PLATFORM_CHT = var_1_10002
-
-				if var_1_10001 == var_1_10002 then
-					SystemInfo = var_1_10001
-
-					return var_1_10001.deviceUniqueIdentifier
-				else
-					return ""
-				end
-			end
-		end
-
-		return
+function pg.SdkMgr.GetDeviceId(arg_115_0)
+	if PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_US then
+		return arg_115_0:Get("GetDeviceId")
+	elseif PLATFORM_CODE == PLATFORM_KR then
+		return arg_115_0:Get("GetDeviceModel")
+	elseif PLATFORM_CODE == PLATFORM_CHT then
+		return SystemInfo.deviceUniqueIdentifier
+	else
+		return ""
 	end
+
+	return
 end
 
-local function var_0_8()
-	local function var_116_0()
-		getProxy = var_2_10000
-		UserProxy = var_2_10002
-
-		local var_117_0 = var_2_10000(var_2_10002)
-
-		return var_0.GetLoginedFlag(var_117_0)
-	end
-
-	pg = var_1_10001
-
-	local var_116_1 = var_1_10001.SdkMgr.GetInstance()
-
-	if var_1.IsInLoginScene(var_116_1) and not var_116_0() then
+function InLoginScene()
+	if pg.SdkMgr.GetInstance():IsInLoginScene() and not (function()
+		return getProxy(UserProxy):GetLoginedFlag()
+	end)() then
 		return true
 	end
 
 	return false
 end
 
-local var_0_9 = InLoginScene
-
-function var_0_1.GetPlatformCode(arg_118_0, arg_118_1)
-	PLATFORM_CODE = var_1_10002
-	PLATFORM_CHT = var_1_10003
-
-	if var_1_10002 == var_1_10003 then
+function pg.SdkMgr.GetPlatformCode(arg_118_0, arg_118_1)
+	if PLATFORM_CODE == PLATFORM_CHT then
 		return arg_118_0:Get("GetPackageCode", arg_118_1)
 	else
 		return nil
@@ -1260,17 +827,11 @@ function var_0_1.GetPlatformCode(arg_118_0, arg_118_1)
 	return
 end
 
-function var_0_1.IgnorePlatform(arg_119_0, arg_119_1)
-	if arg_119_0.pcode and arg_119_1 and #arg_119_1 > 0 then
-		_ = var_3
-
-		if var_3.any(arg_119_1, function(arg_120_0)
-			tostring = var_2_10001
-
-			return var_2_10001(arg_120_0) == var_0
-		end) then
-			return true
-		end
+function pg.SdkMgr.IgnorePlatform(arg_119_0, arg_119_1)
+	if arg_119_0.pcode and arg_119_1 and #arg_119_1 > 0 and _.any(arg_119_1, function(arg_120_0)
+		return tostring(arg_120_0) == var_0
+	end) then
+		return true
 	end
 
 	return false

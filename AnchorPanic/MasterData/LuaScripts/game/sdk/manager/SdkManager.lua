@@ -32,14 +32,14 @@ SDK_XUNFEI_RESULT = "SDK_XUNFEI_RESULT"
 
 --构造函数
 function ctor(self)
-	super.ctor(self)
+    super.ctor(self)
     self:initData()
 end
 
 function initData(self)
-    -- sdk的信息数据
+    -- sdk的信息数据    
     self.mSdkInfo = nil
-
+    self.mSdkInfoStr = nil
     local deviceInfo = CS.UnityEngine.SystemInfo
 
     self.mIsEditor = CS.Lylibs.ApplicationUtil.IsEditorRun
@@ -67,11 +67,12 @@ end
 -- 检查动态添加的sdk
 function checkDynamicSdk(self)
     self:checkPocoSdk()
+    self:checkBuglySdk()
     self:checkXunFeiSdk()
     self:checkCosxmlSdk()
 end
 
--- 检查Poco
+-- 检查UI自动化测试Poco
 function checkPocoSdk(self)
     if(not web.WebManager:isReleaseApp() and web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS)then
         local sdkTrans = self:getSdkTrans()
@@ -81,10 +82,11 @@ function checkPocoSdk(self)
     end
 end
 
--- 检查讯飞
-function checkXunFeiSdk(self)
+-- 检查Bugly
+function checkBuglySdk(self)
     if(not self.mIsEditor)then
         if(web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS)then
+            print("开始初始化Bugly")
             local buglyAppId = nil
             if(web.WebManager.platform == web.DEVICE_TYPE.ANDROID)then
                 buglyAppId = web.__getConfig().bugly_app_id_android
@@ -92,21 +94,27 @@ function checkXunFeiSdk(self)
                 buglyAppId = web.__getConfig().bugly_app_id_ios
             end
             local isBuglyDebug = web.__getConfig().bugly_is_debug == "1"
-    
+
             -- 初始化注册
             local tip1 = web.WebManager.branch_type .. "-" .. web.WebManager.platform .. "-" .. web.WebManager.net_type .. "-" .. web.WebManager.channel_id .. "-" .. web.WebManager.sub_channel_id
             local tip2 = web.getFormatVersion(web.WebManager.prefix_version_str, web.WebManager.game_version_name, web.WebManager.pro_svn_version, web.WebManager.art_svn_version)
             local version = web.WebManager.game_version_name
             local userSign = self:getUniqueId()
             local initDelay = 0
-        
+
             self:buglyConfigDebugMode(isBuglyDebug)
             self:buglyConfigDefault(tip1 .. "（" .. tip2 .. "）", version, userSign, initDelay)
             self:buglyInitWithAppId(buglyAppId)
             self:buglyEnableExceptionHandler()
+            print("Bugly初始化完毕")
         end
+    end
+end
 
-        print("开始注册讯飞")
+-- 检查讯飞
+function checkXunFeiSdk(self)
+    if(not self.mIsEditor)then
+        print("开始初始化讯飞")
         -- 开始注册讯飞相关回调
         gs.SdkManager:RegisterXunfeiLuaFunc()
 
@@ -115,13 +123,14 @@ function checkXunFeiSdk(self)
         -- 设置讯飞录音文件写入路径
         self.mXunFeiAudioWriteDir = gs.PathUtil.GetPersistentAssetsWPath(self:getXunFeiAudioFolder())
         -- 清理旧的语音文件
-        if(gs.Directory.Exists(self.mXunFeiAudioWriteDir))then
+        if (gs.Directory.Exists(self.mXunFeiAudioWriteDir)) then
             gs.Directory.Delete(self.mXunFeiAudioWriteDir, true)
         end
         gs.SdkManager:SetXunFeiAudioDir(self.mXunFeiAudioWriteDir)
 
-        print("讯飞音频读取路径："..self.mXunFeiAudioReadDir)
-        print("讯飞音频写入路径："..self.mXunFeiAudioWriteDir)
+        print("讯飞音频读取路径：" .. self.mXunFeiAudioReadDir)
+        print("讯飞音频写入路径：" .. self.mXunFeiAudioWriteDir)
+        print("讯飞初始化完毕")
     end
 end
 
@@ -137,7 +146,7 @@ end
 
 -- 获取讯飞本地音频文件可读路径
 function getXunFeiAudioRPath(self, fileName)
-    if(fileName == nil)then
+    if (fileName == nil) then
         return self.mXunFeiAudioReadDir
     else
         return self.mXunFeiAudioReadDir .. "/" .. self:getXunFeiAudioName(fileName)
@@ -146,7 +155,7 @@ end
 
 -- 获取讯飞本地音频文件可写路径
 function getXunFeiAudioWPath(self, fileName)
-    if(fileName == nil)then
+    if (fileName == nil) then
         return self.mXunFeiAudioWriteDir
     else
         return self.mXunFeiAudioWriteDir .. "/" .. self:getXunFeiAudioName(fileName)
@@ -155,7 +164,7 @@ end
 
 -- 检查云桶
 function checkCosxmlSdk(self)
-    if(not self.mIsEditor)then
+    if (not self.mIsEditor) then
         local appId = web.__getConfig().cosxml_app_id
         local region = web.__getConfig().cosxml_region
         local bucket = web.__getConfig().cosxml_bucket
@@ -167,39 +176,23 @@ function checkCosxmlSdk(self)
 end
 
 ----------------------------------------------------------------------sdk请求----------------------------------------------------------------------
--- 正式获取渠道类型数据
-function getChannelData(self)
-    if self.mIsEditor then
-        return sdk.AndroidChannelId.NONE, ""
-    end
-    local jsonStr = gs.SdkManager:GetChannelData("")
-    if(jsonStr == nil)then
-        return sdk.AndroidChannelId.NONE, ""
-    else
-        jsonStr = string.gsub(jsonStr, " ", "")
-        if(jsonStr == "" or jsonStr == "{}")then
-            return sdk.AndroidChannelId.NONE, ""
-        else
-            local data = JsonUtil.decode(jsonStr)
-            if (data and data.channelId ~= "") then
-                return tonumber(data.channelId), data.channelName or ""
-            else
-                logInfo("渠道类型数据解析失败", "SdkManager")
-                return sdk.AndroidChannelId.NONE, ""
-            end
-        end
-    end
-end
-
 -- 登录（type：0 默认自动登录，1 刷新token重登）
 function sdkLogin(self, isDefaultAuto)
     if self.mIsEditor then
         return
     end
     local params = {}
-    params.type = isDefaultAuto and 0 or 1 
+    params.type = isDefaultAuto and 0 or 1
     local jsonObjStr = JsonUtil.encode(params)
     gs.SdkManager:Login(jsonObjStr)
+end
+
+-- 注销账号
+function destroyAccount(self)
+    if self.mIsEditor then
+        return
+    end
+    gs.SdkManager:DestroyAccount("")
 end
 
 -- 切换账号
@@ -207,7 +200,6 @@ function switchAccount(self)
     if self.mIsEditor then
         return
     end
-    -- 待补充参数
     gs.SdkManager:SwitchAccount("")
 end
 
@@ -252,6 +244,7 @@ function __getSendSdkParamsObj(self, isRoleLvlUp)
     params.server_create_time = GameManager.openTime or math.floor(web.__getTime())
     params.platform_user_id = web.WebManager.sdk_account_id
     params.role_id = role.RoleManager:getRoleVo().playerId or web.WebManager.login_account_id
+    params.role_show_id = role.RoleManager:getRoleVo().showId or web.WebManager.login_account_id
     params.role_name = role.RoleManager:getRoleVo():getPlayerName() or ""
     params.role_lvl = role.RoleManager:getRoleVo():getPlayerLvl() or 0
     params.role_sex = 0
@@ -276,7 +269,7 @@ function __getSendSdkParamsObj(self, isRoleLvlUp)
     local friendDataList = {}
     params.friend_list = friendDataList
     local friendList = friend.FriendManager:getFriendList()
-    if(friendList)then
+    if (friendList) then
         for i = 1, #friendList do
             local friendVo = friendList[i]
             local friendData = {}
@@ -300,7 +293,7 @@ function notifyCreateRoleSuc(self)
     if self.mIsEditor then
         return
     end
-    if(login.LoginManager.isFirstCreateRole == true)then
+    if (login.LoginManager.isFirstCreateRole == true) then
         login.LoginManager.isFirstCreateRole = false
         gs.SdkManager:NotifyCreateRoleSuc(self:__getSendSdkParams(false))
     end
@@ -352,6 +345,125 @@ function notifyCommonSuc(self, eventId, eventName, jsonObjStr)
     gs.SdkManager:NotifyCommonSuc(tostring(eventId), tostring(eventName), jsonObjStr)
 end
 
+--------------------------------------------------------------------------------------------------------------------------
+-- 通知启动埋点信息：
+-- login_req	请求登录SDK
+-- login_fail	SDK登录失败
+-- srv_login_token_req	开始进行登录二次验证
+-- srv_login_token_suc	二次校验成功
+-- srv_login_token_fail	二次校验失败
+-- config_req	拉取游戏配置表
+-- load_ok	游戏资源加载成功
+-- load_fail	游戏资源加载失败
+-- enter_game	进入游戏
+function foreignNotifyStartUp(self, value)
+    if self.mIsEditor then
+        return
+    end
+    local params = {}
+    params.login_step = tostring(value or "")
+    local jsonObjStr = JsonUtil.encode(params)
+    self:__foreignNotifyCommonSuc("", "login_data", jsonObjStr)
+end
+
+-- 通知加入公会信息
+function foreignNotifyJoinGuildSuc(self, guildId)
+    if self.mIsEditor then
+        return
+    end
+    local params = self:__getSendSdkParamsObj()
+    params.guild_id = tostring(guildId or "")
+    local jsonObjStr = JsonUtil.encode(params)
+    self:__foreignNotifyCommonSuc("", "join_guild", jsonObjStr)
+end
+
+-- 通知游玩PVP信息
+-- type = 1 (常规演习进攻）
+-- type = 2 (综合对抗赛进攻）
+function foreignNotifyPvpInfoSuc(self, type)
+    if self.mIsEditor then
+        return
+    end
+    self:foreignNotifyCommonSuc("", "pvp_play", "type", type)
+end
+
+-- 通知每日任务活跃点信息
+function foreignNotifyDailyScoreSuc(self, score)
+    if self.mIsEditor then
+        return
+    end
+    self:foreignNotifyCommonSuc("", "daily_quest", "activeness", score)
+end
+
+-- 通知通过关卡成功信息（type和FightConst保持一致）
+function foreignNotifyRoleStagePassSuc(self, dupType, chapterId, stageId)
+    if self.mIsEditor then
+        return
+    end
+    -- 这里在战斗完会调用到，比较重要所以捕获
+    pcall(
+        function()
+            local params = self:__getSendSdkParamsObj()
+            params.type = tostring(dupType or "")
+            params.pass_chapter = tostring(chapterId or "")
+            params.pass_stage = tostring(stageId or "")
+            local jsonObjStr = JsonUtil.encode(params)
+            self:__foreignNotifyCommonSuc("", "pass_lv", jsonObjStr)
+        end
+    )
+end
+
+-- 通知充值信息
+function foreignNotifyRechargeSuc(self, rechargeId)
+    if self.mIsEditor then
+        return
+    end
+    local params = self:__getSendSdkParamsObj()
+    params.break_level = tostring(role.RoleManager:getRoleVo():getPlayerLvl() or 0)
+    params.break_packid = tostring(rechargeId or "")
+    local jsonObjStr = JsonUtil.encode(params)
+    self:__foreignNotifyCommonSuc("", "break_pay", jsonObjStr)
+end
+
+-- 通知完成抽卡成功信息
+function foreignNotifyRecruitSuc(self, isFirst, recruitType, recruitCount, totalRecruitCount)
+    if self.mIsEditor then
+        return
+    end
+    local params = self:__getSendSdkParamsObj()
+    -- 抽卡类型
+    params.draw_type = tostring(recruitType or "")
+    -- 1：首次抽卡；0：非首次抽卡
+    params.type = isFirst and "1" or "0"
+    -- 抽卡次数
+    params.number = tostring(recruitCount or "")
+    -- 总抽卡次数
+    params.total_num = tostring(totalRecruitCount or "")
+    local jsonObjStr = JsonUtil.encode(params)
+    self:__foreignNotifyCommonSuc("", "pull", jsonObjStr)
+end
+
+-- 海外渠道通用通知（单个key-value用）
+function foreignNotifyCommonSuc(self, eventToken, eventName, key, value)
+    if self.mIsEditor then
+        return
+    end
+    local params = self:__getSendSdkParamsObj()
+    params[key or ""] = tostring(value or "")
+    local jsonObjStr = JsonUtil.encode(params)
+    self:__foreignNotifyCommonSuc(eventToken, eventName, jsonObjStr)
+end
+
+-- 海外渠道通用通知（多个key-value整成json用）
+function __foreignNotifyCommonSuc(self, eventToken, eventName, jsonObjStr)
+    if self.mIsEditor then
+        return
+    end
+    gs.SdkManager:ForeignNotifyCommonSuc(tostring(eventToken or ""), tostring(eventName or ""), jsonObjStr)
+end
+
+--------------------------------------------------------------------------------------------------------------------------
+
 -- 获取当前apk是否为版署版本
 -- 是则不接充值接口
 -- 是则不接用户中心接口
@@ -369,7 +481,7 @@ end
 -- amount:充值金额，double类型的字符串
 -- productCode:充值品项的id，Sdk方运营给出商品列表
 function pay(self, orderId, deliveryAddress, itemId, itemPrice, itemTitle, itemName, itemDes, isCurrencyProduct)
-    if(self:getIsBranch())then
+    if (self:getIsBranch()) then
         print("版署版本无充值")
         return
     end
@@ -378,11 +490,13 @@ function pay(self, orderId, deliveryAddress, itemId, itemPrice, itemTitle, itemN
     --游戏厂商订单号
     params.gameOrderId = orderId
     --游戏自定义参数
-    params.gameExt = "orderId="..orderId.."#itemId="..itemId.."#pf_id="..web.WebManager.pf_id.."#channel_id="..web.WebManager.channel_id
+    params.gameExt = "orderId=" .. orderId .. "#itemId=" .. itemId .. "#pf_id=" .. web.WebManager.pf_id .. "#channel_id=" .. web.WebManager.channel_id
     --透传地址
     params.deliveryAddress = deliveryAddress or ""
     -- 金额.00f，单位：元（double）
     params.amount = itemPrice
+    -- 完整的商品id
+    params.accurateProductCode = itemId
     ----后台商品编号，即充值商品id，这里只截取"_"前的一部分
     params.productCode = string.split(itemId, "_")[1]
     -- 商品标题
@@ -413,6 +527,56 @@ function pay(self, orderId, deliveryAddress, itemId, itemPrice, itemTitle, itemN
     gs.SdkManager:Pay(jsonObjStr)
 end
 
+-- 获取功能按钮是否显示
+function getSdkButtonEnable(self)
+    if self.mIsEditor then
+        return
+    end
+
+    local sdkBtnEnableDic = {}
+    -- 登录账号按钮功能
+    sdkBtnEnableDic.loginBtnEnable = false
+    -- 切换账号按钮功能
+    sdkBtnEnableDic.switchAccountBtnEnable = false
+    -- 登出账号按钮功能
+    sdkBtnEnableDic.logoutBtnEnable = false
+    -- 用户中心按钮功能
+    sdkBtnEnableDic.settingBtnEnable = false
+    -- 绑定账号按钮功能
+    sdkBtnEnableDic.bindAccountBtnEnable = false
+    -- 注销按钮
+    sdkBtnEnableDic.destroyAccountBtnEnable = false
+    -- 客服按钮
+    sdkBtnEnableDic.customerBtnEnable = false
+    -- 社区按钮
+    sdkBtnEnableDic.communityBtnEnable = false
+
+    local sdkButtonEnableJsonStr = gs.SdkManager:GetSdkButtonEnable("")
+    local data = JsonUtil.decode(sdkButtonEnableJsonStr)
+    if(data)then
+        sdkBtnEnableDic.loginBtnEnable = data.loginBtnEnable == "1"
+        sdkBtnEnableDic.switchAccountBtnEnable = data.switchAccountBtnEnable == "1"
+        sdkBtnEnableDic.logoutBtnEnable = data.logoutBtnEnable == "1"
+        sdkBtnEnableDic.settingBtnEnable = data.settingBtnEnable == "1"
+        sdkBtnEnableDic.bindAccountBtnEnable = data.bindAccountBtnEnable == "1"
+        sdkBtnEnableDic.destroyAccountBtnEnable = data.destroyAccountBtnEnable == "1"
+        sdkBtnEnableDic.customerBtnEnable = data.customerBtnEnable == "1"
+        sdkBtnEnableDic.communityBtnEnable = data.communityBtnEnable == "1"     
+    else
+        logInfo("获取功能按钮是否显示数据解析失败", "SdkManager")
+    end
+
+    return sdkBtnEnableDic
+end
+
+-- 启动Sdk的设置中心界面
+function openSdkSettingUI(self)
+    if self.mIsEditor then
+        return
+    end
+    gs.SdkManager:OpenSdkSettingUI("")
+end
+
 -- 是否允许显示个人中心按钮
 function hasUserCenter(self)
     if self.mIsEditor then
@@ -426,10 +590,14 @@ function openSdkUserUI(self)
     if self.mIsEditor then
         return
     end
-    if(self:getIsBranch())then
+    if (self:getIsBranch()) then
         print("版属版本无用户中心界面")
         return
     end
+
+    -- 预设邮件基础数据
+    -- self:preSetEmailConfig()
+
     local roleInfoList = {}
     table.insert(roleInfoList, self:__getSendSdkParamsObj())
     local jsonObjStr = JsonUtil.encode(roleInfoList)
@@ -468,103 +636,44 @@ function getSdkInfo(self)
     if self.mIsEditor then
         return nil
     end
-    if(not self.mSdkInfo)then
-        if(web.WebManager:isReleaseApp())then
-            local sdkInfo = gs.SdkManager:GetSdkInfo("")
-            if (sdkInfo ~= "") then
-                local okFun = function(data)
-                    self.mSdkInfo = data
-                    if (self.mSdkInfo) then
-                        -- -- 游戏id
-                        -- self.mSdkInfo.gameId
-                        -- -- 渠道id
-                        -- self.mSdkInfo.channelId
-                        -- -- 二级渠道id
-                        -- self.mSdkInfo.subChannelId
-                        -- -- sdk版本号
-                        -- self.mSdkInfo.sdkVersion
-                        -- -- 系统版本号
-                        -- self.mSdkInfo.osVersion
-                        -- -- 设备制造商
-                        -- self.mSdkInfo.manufacturer
-                        -- -- 设备型号
-                        -- self.mSdkInfo.deviceModel
-                        -- -- 设备类型（1：安卓， 2：苹果）
-                        -- self.mSdkInfo.deviceType
-                        -- -- 设备id
-                        -- self.mSdkInfo.uniqueId
-                        -- -- 游戏版本号
-                        -- self.mSdkInfo.versionCode
-                        -- -- 游戏版本名称
-                        -- self.mSdkInfo.versionName
-                        -- -- 游戏包名
-                        -- self.mSdkInfo.packageName
-                        -- -- 设备屏幕宽度
-                        -- self.mSdkInfo.screenWidth
-                        -- -- 设备屏幕高度
-                        -- self.mSdkInfo.screenHeight
-                        -- -- 设备的dpi
-                        -- self.mSdkInfo.densityDpi
-                        -- -- 网络类型（3g/4g/5g/wifi）
-                        -- self.mSdkInfo.networkType
-                        -- -- 设备当前使用的语言代码
-                        -- self.mSdkInfo.language
-                        -- -- 设备当前使用的区域代码
-                        -- self.mSdkInfo.regions
-                        print("获取sdk信息数据解析成功：" .. CS.Lylibs.UTF8StringUtil.GetString(sdkInfo))
-                    end
-                end
-                local errFun = function()
-                    print("WebManager", "获取sdk信息数据解析出错：", sdkInfo)
-                end
-                web.tryParseJson(sdkInfo, okFun, errFun)
+    if(web.WebManager:isReleaseApp())then
+        local sdkInfoString = gs.SdkManager:GetSdkInfo("")
+        if (self.mSdkInfoStr ~= sdkInfoString) then
+            local okFun = function(data)
+                self.mSdkInfo = data
+                self.mSdkInfoStr = sdkInfoString
+                print("获取sdk信息数据解析成功：" .. CS.Lylibs.UTF8StringUtil.GetString(sdkInfoString))
             end
+            local errFun = function()
+                self.mSdkInfo = nil
+                self.mSdkInfoStr = nil
+                print("WebManager", "获取sdk信息数据解析出错：", sdkInfoString)
+            end
+            web.tryParseJson(sdkInfoString, okFun, errFun)
         end
     end
     return self.mSdkInfo
 end
 
--- taptap特制活动
-function getIsTaptapActivity(self)
-    if(web.WebManager:isReleaseApp())then
-        if(web.WebManager.platform == web.DEVICE_TYPE.WINDOWS)then
-            return true
-        end
-        local channelId, channelName = sdk.SdkManager:getChannelData()
-        if(web.WebManager.platform == web.DEVICE_TYPE.ANDROID)then
-            if (channelId == sdk.AndroidChannelId.LEIYAN) then
-                -- 特殊处理好游快爆没有taptap特制活动
-                local sdkInfo = sdk.SdkManager:getSdkInfo()
-                if(sdkInfo and sdkInfo.subChannelId and tostring(sdkInfo.subChannelId) == "1021003")then
-                    return false
-                else
-                    return true
-                end
-            end
-        end
-        if(web.WebManager.platform == web.DEVICE_TYPE.IOS)then
-            if (channelId == sdk.IosChannelId.LEIYAN) then
-                return true
-            end
-        end
-    end
-    return false
-end
-
+-- 接近于设备id
 function getUniqueId(self)
-    -- 自己算的不准
-    -- return gs.SdkManager:GetUniqueId()
+    local id = ""
     -- 使用sdk提供的唯一id
     local sdkInfo = sdk.SdkManager:getSdkInfo()
-    if(sdkInfo)then
-        return sdkInfo.uniqueId
+    if (sdkInfo) then
+        id = sdkInfo.uniqueId
     end
-    return ""
+    -- sdk拿到空的话，取用自己写的方法获取id
+    if(id == "")then
+        id = gs.SdkManager:GetUniqueId()
+    end
+    return id
 end
 
 -- 跳转外部浏览器网页页面
 function jumpBrowserWebView(self, webUrl)
     if self.mIsEditor then
+        gs.SdkManager:LaunchUrlDetail(webUrl)
         return ""
     end
     local params = {}
@@ -591,10 +700,10 @@ function openWebView(self, webIdStr, webUrl, parentTrans, posX, posY, width, hei
         return ""
     end
     -- 保留两位小数
-    posX = posX-posX % 0.01
-    posY = posY-posY % 0.01
-    width = width-width % 0.01
-    height = height-height % 0.01
+    posX = posX - posX % 0.01
+    posY = posY - posY % 0.01
+    width = width - width % 0.01
+    height = height - height % 0.01
     local screenW, screenH = ScreenUtil:getScreenSize()
     local params = {}
     params.webId = webIdStr
@@ -626,9 +735,9 @@ function closeWebView(self, ...)
         return ""
     end
     local webIdListStr = ""
-    local webIdList = {...}
+    local webIdList = { ... }
     for i = 1, #webIdList do
-        if(i == 1)then
+        if (i == 1) then
             webIdListStr = webIdList[i]
         else
             webIdListStr = webIdListStr .. "_" .. webIdList[i]
@@ -681,6 +790,29 @@ function reachAchievement(self, achievementId)
     params.achievementId = achievementId
     local jsonObjStr = JsonUtil.encode(params)
     gs.SdkManager:ReachAchievement(jsonObjStr)
+end
+
+-- 预设邮件基础数据
+-- email_title: 邮件标题
+-- game_version: 游戏内资源版本号
+-- to_recipients_list: 发送给收件人
+-- cc_recipients_list: 抄送给收件人
+function preSetEmailConfig(self)
+    if self.mIsEditor then
+        return
+    end
+    if(self:getIsBranch())then
+        print("版属版本无用户中心界面，不需预设邮件基础数据")
+        return
+    end
+
+    local emailConfig = {}
+    emailConfig.email_title = _TT(10000002) --"《錨點降臨》用戶問題詢問"
+    emailConfig.game_version = web.WebManager.game_version_name
+    emailConfig.to_recipients_list = {"sonetapc@so-net.net.tw"}
+    emailConfig.cc_recipients_list = {}
+    local jsonObjStr = JsonUtil.encode(emailConfig)
+    gs.SdkManager:PreSetEmailConfig(jsonObjStr)
 end
 
 -- 获取一些设备信息
@@ -803,11 +935,11 @@ end
 
 -- 分享结果回调
 function parseShare(self, msg)
-    if(msg == 0)then
+    if (msg == 0) then
         gs.Message.Show("分享失败")
-    elseif(msg == 1)then
+    elseif (msg == 1) then
         gs.Message.Show("分享成功")
-    elseif(msg == 2)then
+    elseif (msg == 2) then
         gs.Message.Show("分享取消成功")
     end
     self:dispatchEvent(self.SDK_SHARE, msg)
@@ -816,11 +948,11 @@ end
 -- 耳机状态回调
 function headphoneState(self, msg)
     if (msg) then
-        if msg==1 or msg=="1" then -- 连上耳机
+        if msg == 1 or msg == "1" then -- 连上耳机
             gs.AudioManager:ChangeMixerSnapshot(0)
             print("耳机快照模式")
         else
-            if gs.Application.platform==gs.RuntimePlatform.Android then
+            if gs.Application.platform == gs.RuntimePlatform.Android then
                 gs.AudioManager:ChangeMixerSnapshot(1)
                 print("Android扩音快照模式")
             else
@@ -836,71 +968,71 @@ end
 ----------------------------------------------------------------------讯飞回调----------------------------------------------------------------------
 -- 录音机已经准备好了，用户可以开始语音输入
 function parseXunFeiBegin(self, msg)
-	logInfo("录音机已经准备好了，用户可以开始语音输入", msg)
+    logInfo("录音机已经准备好了，用户可以开始语音输入", msg)
     self:dispatchEvent(self.SDK_XUNFEI_BEGIN, {})
 end
 
 -- 录音错误码
 function parseXunFeiError(self, msg)
-	logWarn("讯飞录音错误码："..msg, self.__cname)
+    logWarn("讯飞录音错误码：" .. msg, self.__cname)
     if (msg == "10118") then
-		gs.Message.Show("(您没有说话)可能是录音机权限被禁，请打开录音机权限")
-    elseif(msg == "20004")then
-		gs.Message.Show("没有听清楚，请重新说一遍")
-    elseif(msg == "20006")then
-		gs.Message.Show("没有录音权限或者没有麦克风")
-    elseif(msg == "22002")then
-		gs.Message.Show("")
-    elseif(msg == "22003")then
-		gs.Message.Show("")
-	end
+        gs.Message.Show(_TT(10000341))
+    elseif (msg == "20004") then
+        gs.Message.Show(_TT(10000340))
+    elseif (msg == "20006") then
+        gs.Message.Show(_TT(10000339))
+    elseif (msg == "22002") then
+        gs.Message.Show("")
+    elseif (msg == "22003") then
+        gs.Message.Show("")
+    end
     self:dispatchEvent(self.SDK_XUNFEI_ERROR, {})
 end
 
 -- 检测到了语音的尾端点，已经进入识别过程，不再接受语音输入
 function parseXunFeiEnd(self, msg)
-	logInfo("检测到了语音的尾端点，已经进入识别过程，不再接受语音输入："..msg, self.__cname)
+    logInfo("检测到了语音的尾端点，已经进入识别过程，不再接受语音输入：" .. msg, self.__cname)
     self:dispatchEvent(self.SDK_XUNFEI_END, {})
 end
 
 -- 语音解析完毕
 function parseXunFeiResult(self, msg)
     local paramsList = string.split(msg, '&')
-	local voiceContent = paramsList[1]
-	local voicePath = paramsList[2]
-	local voiceFileName = paramsList[3]
+    local voiceContent = paramsList[1]
+    local voicePath = paramsList[2]
+    local voiceFileName = paramsList[3]
 
-	logInfo(string.format("音频内容：%s", voiceContent), self.__cname)
-	logInfo(string.format("音频路径：%s", voicePath), self.__cname)
-	logInfo(string.format("音频文件名：%s", voiceFileName), self.__cname)
+    logInfo(string.format("音频内容：%s", voiceContent), self.__cname)
+    logInfo(string.format("音频路径：%s", voicePath), self.__cname)
+    logInfo(string.format("音频文件名：%s", voiceFileName), self.__cname)
 
-    self:dispatchEvent(self.SDK_XUNFEI_RESULT, {voiceContent = voiceContent, voiceFileName = voiceFileName})
+    self:dispatchEvent(self.SDK_XUNFEI_RESULT, { voiceContent = voiceContent, voiceFileName = voiceFileName })
 end
 
 -- 录入的音量变化
 function parseXunFeiVolume(self, msg)
     local volume = msg
-	-- logInfo("录入的音量变化："..volume, self.__cname)
-	-- gs.Message.Show("(录入的音量变化")
-    self:dispatchEvent(self.SDK_VOLMU_CHANGE, {volume = volume})
+    -- logInfo("录入的音量变化："..volume, self.__cname)
+    -- gs.Message.Show("(录入的音量变化")
+    self:dispatchEvent(self.SDK_VOLMU_CHANGE, { volume = volume })
 end
 
 -- 事件回调
 function parseXunFeiEvent(self, msg)
-	logWarn("事件回调码："..msg, self.__cname)
+    logWarn("事件回调码：" .. msg, self.__cname)
     if (msg == "10008") then
-		gs.Message.Show("没有听清楚，请重新说一遍")
+        gs.Message.Show(_TT(10000340))
     elseif (msg == "10114") then
-        gs.Message.Show("没有识别出来，请重新说一遍")
+        gs.Message.Show(_TT(10000342))
     elseif (msg == "10118") then
-        gs.Message.Show("没有听清楚，请重新说一遍")
-    elseif(msg == "20004")then
-        gs.Message.Show("没有听清楚，请重新说一遍")
-	end
+        gs.Message.Show(_TT(10000340))
+    elseif (msg == "20004")then
+        gs.Message.Show(_TT(10000340))
+    end
 end
 
 return _M
 
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

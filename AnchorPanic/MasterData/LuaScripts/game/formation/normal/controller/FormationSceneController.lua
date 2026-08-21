@@ -80,7 +80,7 @@ end
 
 -- 播放元素特效 元素类型 数量
 function playEffLoopPrefab(self, col, row, ele, count)
-    if self:getDeactiveTile(col,row) ~= nil then
+    if self:getDeactiveTile(col, row) ~= nil then
         local url = count > 2 and self:getElePrefabMaxLoopUrl(ele) or self:getElePrefabLoopUrl(ele)
         local effPrefab = gs.GOPoolMgr:Get(url)
         local parentTrans = self:getDeactiveTile(col, row).transform
@@ -598,7 +598,7 @@ function setTileActive(self, col_x, row_y, formationId, isShowTipTile)
         end
 
         isShowTipTile = isShowTipTile == nil and (self:getIsShowTipTile() and self:isEmpty(col_x, row_y)) or
-                            isShowTipTile
+        isShowTipTile
         data.deactiveTile.gameObject:SetActive(true)
         data.activeTile.gameObject:SetActive(not isShowTipTile and isLock == false)
         data.tipTile.gameObject:SetActive(isShowTipTile and isLock == false)
@@ -618,8 +618,15 @@ function getModel(self, model, formationHeroVo, col_x, row_y, allLoadCall)
     local parent = self.m_formationTrans[string.substitute(self.m_nodeModel, col_x, row_y)]
     local function _finishCall()
         model:setToParent(parent, false)
+
+        local data = fashion.FashionManager:getModelHarData(formationHeroVo:getModel())
+        if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious(sdk.ChannelData.HAR_LEVEL_0)) and data then
+            -- 替换材质球预览
+            model:updateMaterial(data.pos, data.materials, {})
+        end
+
         local offsetVo = fight.RoleShowManager:getOffsetData2(formationHeroVo:getHeroTid(),
-            MainCityConst.ROLE_MODE_FORMATION)
+        MainCityConst.ROLE_MODE_FORMATION)
         if not table.empty(offsetVo) then
             gs.TransQuick:LPos(model:getTrans(), offsetVo[1], offsetVo[2], offsetVo[3])
         end
@@ -651,7 +658,7 @@ function getModel(self, model, formationHeroVo, col_x, row_y, allLoadCall)
             end
         end
 
-        model:setModelID(type, formationHeroVo:getModel(), false, 1, _finishCall)
+        model:setModelID(type, formationHeroVo:getModel(), true, 1, _finishCall)
     end
     return model
 end

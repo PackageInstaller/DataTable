@@ -217,6 +217,29 @@ function setBtnLabel(self, obj, langId, name, ...)
     btnLabCom.text = str
 end
 
+function setTextLabel(self, name, langId, str)
+    if type(name) ~= "string" then
+        logError("name 参数并非 string ，检查下代码")
+        return
+    end
+    if type(langId) ~= "number" and not str then
+        logError("langId 参数并非 number ，检查下代码")
+        return
+    end
+    local obj = self:getChildGO(name)
+    if not obj then
+        logError("找不到对象，对象名是：" .. name)
+        return
+    end
+    local textCpt = obj:GetComponent(ty.Text)
+    if not textCpt then
+        logError("对象身上找不到Text组件，对象名是：" .. name)
+        return
+    end
+    str = langId and _TT(langId) or str
+    textCpt.text = str
+end
+
 -- 销毁
 function destroy(self)
     guide.GuideUITransHandler:deActive(self.m_sn)

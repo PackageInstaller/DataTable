@@ -278,6 +278,28 @@ function getFormatTimeBySeconds_12(t)
     return string.format("%d-%d %02d:%02d:%02d", timeTable.month, timeTable.day, timeTable.hour, timeTable.min, timeTable.sec)
 end
 
+-- 根据时间戳获取指定格式的时间显示  9-3 10:10:9
+function getFormatTimeBySeconds_13(t)
+    local timeTable = getTimeTable(t)
+    return string.format("%02d:%02d:%02d", timeTable.hour, timeTable.min, timeTable.sec)
+end
+
+-- 倒计时专用格式（不含天/时，仅分秒，不补零）
+-- 超过60秒显示 x:y（如 1:50）
+-- 不足60秒显示 x（如 50）
+-- 负数/0 显示 0
+function getFormatTimeBySeconds_14(t)
+    if (not t or t < 0) then
+        return "0"
+    end
+    local mins = math.floor(t / 60)
+    local secs = math.floor(t % 60)
+    if (mins > 0) then
+        return mins .. ":" .. secs 
+    end
+    return secs 
+end
+
 -- 根据秒数获取天，时，分，秒
 function getDHMSByTime(t)
     local d = math.floor(t / (24 * 3600))
@@ -485,6 +507,157 @@ function getTimeDifference(state, limit, specialTimer, returnParameter)
         difTimer = dayDifTimer
     end
     return difTimer
+end
+
+-- 获取指定日期是当年的第几周（周一为每周第一天）
+-- @param year 年份，如 2025
+-- @param month 月份，1-12
+-- @param day 日期，1-31
+-- @return 当年的周数
+function getWeekOfYear()
+    local t = GameManager:getClientTime()
+    local now = os.date("*t", t)
+    local year, month, day = now.year, now.month, now.day
+    -- 计算指定日期是当年的第几天
+    local days_in_month = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+    -- 检查闰年
+    if (year % 4 == 0 and year % 100 ~= 0) or (year % 400 == 0) then
+        days_in_month[2] = 29
+    end
+    
+    local day_of_year = 0
+    for i = 1, month - 1 do
+        day_of_year = day_of_year + days_in_month[i]
+    end
+    day_of_year = day_of_year + day
+    
+    -- 获取指定日期是星期几（1=周日，2=周一，...，7=周六）
+    local date_table = os.date("*t", os.time({year=year, month=month, day=day}))
+    local weekday = date_table.wday  -- 1=周日，2=周一，...，7=周六
+    
+    -- 计算当年第一周的第一天（第一个周一）
+    local first_weekday = os.date("*t", os.time({year=year, month=1, day=1})).wday
+    local first_monday_offset = (9 - first_weekday) % 7  -- 计算1月1日后的第一个周一
+    local first_monday = 1 + first_monday_offset
+    
+    -- 如果指定日期在第一个周一之前，属于上一年的最后一周
+    if day_of_year < first_monday then
+        -- 获取上一年的最后一周周数
+        local prev_year = year - 1
+        local prev_year_days = 365
+        if (prev_year % 4 == 0 and prev_year % 100 ~= 0) or (prev_year % 400 == 0) then
+            prev_year_days = 366
+        end
+        
+        -- 计算上一年最后一周的第一天
+        local prev_year_first_weekday = os.date("*t", os.time({year=prev_year, month=1, day=1})).wday
+        local prev_year_first_monday = 1 + ((9 - prev_year_first_weekday) % 7)
+        
+        -- 上一年的周数
+        return math.floor((prev_year_days - prev_year_first_monday + 7) / 7)
+    end
+    
+    -- 计算指定日期所在周数
+    local week_number = math.floor((day_of_year - first_monday) / 7) + 1
+    return week_number
+end
+
+-- 将UTC时间戳转换为目标时区的日期时间table
+-- @param timestamp 时间戳（单位：秒）
+-- @param utc_offset 目标时区的UTC偏移量（单位：小时）
+-- @return 包含年月日时分秒的table {year, month, day, hour, min, sec}
+function getServerTimeTable(timestamp, utc_offset)
+    timestamp = timestamp or GameManager:getServerTime()
+    if timestamp == 0 then
+        timestamp = os.time()
+    end
+    utc_offset = utc_offset or TimeUtil.getServerTimeZone()
+    -- 解析时区偏移量（传入的 utc_offset 为小时）
+    local offset_seconds = utc_offset * 3600
+
+    -- 调整时间戳并获取UTC时间table
+    local adjusted_timestamp = timestamp + offset_seconds
+    local time_table = os.date("!*t", adjusted_timestamp)
+
+    -- 返回需要的字段（Lua的os.date月份范围是1-12，与常规一致）
+    return {
+        year = time_table.year,
+        month = time_table.month,
+        day = time_table.day,
+        hour = time_table.hour,
+        min = time_table.min,
+        sec = time_table.sec
+    }
+end
+
+-- 将时间table格式化为年月日 时:分:秒的字符串
+-- @param time_table 时间表，包含年月日时分秒
+-- @return 格式化后的时间字符串（"YYYY-MM-DD HH:MM:SS"）
+function formatTimeTable(time_table)
+    -- 确保时间表包含正确的字段
+    if not time_table.year or not time_table.month or not time_table.day or
+       not time_table.hour or not time_table.min or not time_table.sec then
+        logError("Invalid time table format")
+    end
+
+    -- 格式化成"YYYY-MM-DD HH:MM:SS"
+    local formatted_time = string.format("%04d-%02d-%02d %02d:%02d:%02d", 
+        time_table.year, time_table.month, time_table.day, 
+        time_table.hour, time_table.min, time_table.sec)
+
+    return formatted_time
+end
+
+-- 将目标时区的日期时间table转换为标准时间戳
+-- @param datetime_table 目标时区的时间表 {year, month, day, hour, min, sec}
+-- @param utc_offset 目标时区的UTC偏移量（如 +09:00 或 -08:00，单位是小时 只能传递number 例如9，-8）
+-- @return Unix时间戳（秒数）
+function datetime_to_timestamp(datetime_table, utc_offset)
+    datetime_table = datetime_table or TimeUtil.getServerTimeTable()
+    utc_offset = utc_offset or TimeUtil.getServerTimeZone()
+    -- 获取日期时间表中的各个字段
+    local year = datetime_table.year
+    local month = datetime_table.month
+    local day = datetime_table.day
+    local hour = datetime_table.hour
+    local min = datetime_table.min
+    local sec = datetime_table.sec
+
+    -- 获取设备时区的UTC偏移量（单位：秒）
+    local device_offset_seconds = os.time() - os.time(os.date("!*t"))
+
+    -- 将目标时区的UTC偏移量转换为秒
+    local target_offset_seconds = utc_offset * 3600
+
+    -- 计算目标时区时间相对于设备时区的时间偏移
+    local offset_diff = target_offset_seconds - device_offset_seconds
+
+    -- 使用 os.time 获取设备时区的时间戳
+    local timestamp = os.time({
+        year = year,
+        month = month,
+        day = day,
+        hour = hour,
+        min = min,
+        sec = sec
+    })
+
+    -- 调整时间戳，得到标准的UTC时间戳
+    local adjusted_timestamp = timestamp - offset_diff
+
+    return adjusted_timestamp
+end
+
+-- 获取服务器下发的时区偏移
+-- @return 单位小时 number
+function getServerTimeZone()
+    local timeZone = systemSetting.SystemSettingManager:getScSettingDataByType(systemSetting.ScSettingType.TimeZone)
+    if not timeZone or timeZone == 0 then
+        --判断合法性计算本地设备时区偏移
+        local device_offset_seconds = os.time() - os.time(os.date("!*t"))
+        timeZone = math.round(device_offset_seconds / 3600)
+    end
+    return timeZone
 end
 
 return _M

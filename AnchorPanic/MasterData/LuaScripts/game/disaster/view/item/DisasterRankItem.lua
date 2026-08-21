@@ -65,7 +65,7 @@ function setData(self, param)
         self.m_childGos["mTop"]:SetActive(false)
     end
     self.mTxtRank.text = self.data.rank
-    self.mTxtName.text = self.data.name
+    self.mTxtName.text = FilterWordUtil:filterTemp(self.data.name)
 
     if (not self.mPlayerHeadGrid) then
         self.mPlayerHeadGrid = PlayerHeadGrid:poolGet()

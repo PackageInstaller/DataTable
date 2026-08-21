@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_draw") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_draw"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_draw = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_draw
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_draw = rawget(pg, "island_draw") or setmetatable({
+	__name = "island_draw"
+}, confNEO)
+pg.island_draw.all = {
 	999901,
 	990009,
 	990020,
 	990026
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_draw = {}
+pg.base = pg.base or {}
+pg.base.island_draw = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_draw
-
-	var_1_0[999901] = {
+	pg.base.island_draw[999901] = {
 		id = 999901,
 		shop = 500000,
 		convert_language = "island_draw_convert",
@@ -253,11 +216,7 @@ var_0_3.base.island_draw = {}
 			30
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_draw
-
-	var_1_1[990009] = {
+	pg.base.island_draw[990009] = {
 		id = 990009,
 		shop = 500001,
 		convert_language = "island_draw_convert",
@@ -469,11 +428,7 @@ var_0_3.base.island_draw = {}
 			30
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_draw
-
-	var_1_2[990020] = {
+	pg.base.island_draw[990020] = {
 		id = 990020,
 		shop = 500002,
 		convert_language = "island_draw_convert",
@@ -689,8 +644,7 @@ var_0_3.base.island_draw = {}
 			30
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.island_draw[990026] = {
+	pg.base.island_draw[990026] = {
 		id = 990026,
 		shop = 500003,
 		convert_language = "island_draw_convert",

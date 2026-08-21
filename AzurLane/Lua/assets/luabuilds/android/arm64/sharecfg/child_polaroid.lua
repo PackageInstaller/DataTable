@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_polaroid") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_polaroid"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_polaroid = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_polaroid
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_polaroid = rawget(pg, "child_polaroid") or setmetatable({
+	__name = "child_polaroid"
+}, confNEO)
+pg.child_polaroid.all = {
 	1,
 	2,
 	3,
@@ -194,11 +171,7 @@ var_0_3.all = {
 	166,
 	167
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child_polaroid
-
-var_0_4.get_id_list_by_group = {
+pg.child_polaroid.get_id_list_by_group = {
 	[101] = {
 		1,
 		2
@@ -507,25 +480,11 @@ var_0_4.get_id_list_by_group = {
 		167
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child_polaroid = {}
+pg.base = pg.base or {}
+pg.base.child_polaroid = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_polaroid
-
-	var_1_0[1] = {
+	pg.base.child_polaroid[1] = {
 		group = 101,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -537,11 +496,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_polaroid
-
-	var_1_1[2] = {
+	pg.base.child_polaroid[2] = {
 		group = 101,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -553,11 +508,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_polaroid
-
-	var_1_2[3] = {
+	pg.base.child_polaroid[3] = {
 		group = 102,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -569,11 +520,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_polaroid
-
-	var_1_3[4] = {
+	pg.base.child_polaroid[4] = {
 		group = 102,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -585,11 +532,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_polaroid
-
-	var_1_4[5] = {
+	pg.base.child_polaroid[5] = {
 		group = 103,
 		condition = "出行-随便逛逛",
 		id = 5,
@@ -603,11 +546,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_polaroid
-
-	var_1_5[6] = {
+	pg.base.child_polaroid[6] = {
 		group = 103,
 		condition = "出行-随便逛逛",
 		id = 6,
@@ -621,11 +560,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_polaroid
-
-	var_1_6[7] = {
+	pg.base.child_polaroid[7] = {
 		group = 103,
 		condition = "出行-随便逛逛",
 		id = 7,
@@ -639,11 +574,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_polaroid
-
-	var_1_7[8] = {
+	pg.base.child_polaroid[8] = {
 		group = 104,
 		condition = "出行-随便逛逛",
 		id = 8,
@@ -657,11 +588,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_polaroid
-
-	var_1_8[9] = {
+	pg.base.child_polaroid[9] = {
 		group = 104,
 		condition = "出行-随便逛逛",
 		id = 9,
@@ -675,11 +602,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_polaroid
-
-	var_1_9[10] = {
+	pg.base.child_polaroid[10] = {
 		group = 104,
 		condition = "出行-随便逛逛",
 		id = 10,
@@ -693,11 +616,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_polaroid
-
-	var_1_10[11] = {
+	pg.base.child_polaroid[11] = {
 		group = 105,
 		condition = "出行-随便逛逛",
 		id = 11,
@@ -711,11 +630,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_polaroid
-
-	var_1_11[12] = {
+	pg.base.child_polaroid[12] = {
 		group = 105,
 		condition = "出行-随便逛逛",
 		id = 12,
@@ -729,11 +644,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_polaroid
-
-	var_1_12[13] = {
+	pg.base.child_polaroid[13] = {
 		group = 105,
 		condition = "出行-随便逛逛",
 		id = 13,
@@ -747,11 +658,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_polaroid
-
-	var_1_13[14] = {
+	pg.base.child_polaroid[14] = {
 		group = 106,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -763,11 +670,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_polaroid
-
-	var_1_14[15] = {
+	pg.base.child_polaroid[15] = {
 		group = 107,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -779,11 +682,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_polaroid
-
-	var_1_15[16] = {
+	pg.base.child_polaroid[16] = {
 		group = 108,
 		condition = "出行-随便逛逛",
 		id = 16,
@@ -797,11 +696,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_polaroid
-
-	var_1_16[17] = {
+	pg.base.child_polaroid[17] = {
 		group = 108,
 		condition = "出行-随便逛逛",
 		id = 17,
@@ -815,11 +710,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_polaroid
-
-	var_1_17[18] = {
+	pg.base.child_polaroid[18] = {
 		group = 108,
 		condition = "出行-随便逛逛",
 		id = 18,
@@ -833,11 +724,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_polaroid
-
-	var_1_18[19] = {
+	pg.base.child_polaroid[19] = {
 		group = 109,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -849,11 +736,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_polaroid
-
-	var_1_19[20] = {
+	pg.base.child_polaroid[20] = {
 		group = 109,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -865,11 +748,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_polaroid
-
-	var_1_20[21] = {
+	pg.base.child_polaroid[21] = {
 		group = 110,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -881,11 +760,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_polaroid
-
-	var_1_21[22] = {
+	pg.base.child_polaroid[22] = {
 		group = 110,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -897,11 +772,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_polaroid
-
-	var_1_22[23] = {
+	pg.base.child_polaroid[23] = {
 		group = 111,
 		condition = "出行-随便逛逛",
 		id = 23,
@@ -915,11 +786,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_polaroid
-
-	var_1_23[24] = {
+	pg.base.child_polaroid[24] = {
 		group = 111,
 		condition = "出行-随便逛逛",
 		id = 24,
@@ -933,11 +800,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_polaroid
-
-	var_1_24[25] = {
+	pg.base.child_polaroid[25] = {
 		group = 111,
 		condition = "出行-随便逛逛",
 		id = 25,
@@ -951,11 +814,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_polaroid
-
-	var_1_25[26] = {
+	pg.base.child_polaroid[26] = {
 		group = 112,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -967,11 +826,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_polaroid
-
-	var_1_26[27] = {
+	pg.base.child_polaroid[27] = {
 		group = 112,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -983,11 +838,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_polaroid
-
-	var_1_27[28] = {
+	pg.base.child_polaroid[28] = {
 		group = 113,
 		condition = "出行-随便逛逛",
 		id = 28,
@@ -1001,11 +852,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_polaroid
-
-	var_1_28[29] = {
+	pg.base.child_polaroid[29] = {
 		group = 113,
 		condition = "出行-随便逛逛",
 		id = 29,
@@ -1019,11 +866,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child_polaroid
-
-	var_1_29[30] = {
+	pg.base.child_polaroid[30] = {
 		group = 113,
 		condition = "出行-随便逛逛",
 		id = 30,
@@ -1037,11 +880,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child_polaroid
-
-	var_1_30[31] = {
+	pg.base.child_polaroid[31] = {
 		group = 114,
 		condition = "出行-随便逛逛",
 		id = 31,
@@ -1055,11 +894,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child_polaroid
-
-	var_1_31[32] = {
+	pg.base.child_polaroid[32] = {
 		group = 114,
 		condition = "出行-随便逛逛",
 		id = 32,
@@ -1073,11 +908,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child_polaroid
-
-	var_1_32[33] = {
+	pg.base.child_polaroid[33] = {
 		group = 114,
 		condition = "出行-随便逛逛",
 		id = 33,
@@ -1091,11 +922,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child_polaroid
-
-	var_1_33[34] = {
+	pg.base.child_polaroid[34] = {
 		group = 115,
 		condition = "出行-随便逛逛",
 		id = 34,
@@ -1109,11 +936,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child_polaroid
-
-	var_1_34[35] = {
+	pg.base.child_polaroid[35] = {
 		group = 115,
 		condition = "出行-随便逛逛",
 		id = 35,
@@ -1127,11 +950,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child_polaroid
-
-	var_1_35[36] = {
+	pg.base.child_polaroid[36] = {
 		group = 115,
 		condition = "出行-随便逛逛",
 		id = 36,
@@ -1145,11 +964,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child_polaroid
-
-	var_1_36[37] = {
+	pg.base.child_polaroid[37] = {
 		group = 116,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1161,11 +976,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child_polaroid
-
-	var_1_37[38] = {
+	pg.base.child_polaroid[38] = {
 		group = 116,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1177,11 +988,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child_polaroid
-
-	var_1_38[39] = {
+	pg.base.child_polaroid[39] = {
 		group = 117,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1193,11 +1000,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child_polaroid
-
-	var_1_39[40] = {
+	pg.base.child_polaroid[40] = {
 		group = 117,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1209,11 +1012,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child_polaroid
-
-	var_1_40[41] = {
+	pg.base.child_polaroid[41] = {
 		group = 117,
 		condition = "出行-随便逛逛",
 		id = 41,
@@ -1227,11 +1026,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child_polaroid
-
-	var_1_41[42] = {
+	pg.base.child_polaroid[42] = {
 		group = 117,
 		condition = "出行-随便逛逛",
 		id = 42,
@@ -1245,11 +1040,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child_polaroid
-
-	var_1_42[43] = {
+	pg.base.child_polaroid[43] = {
 		group = 117,
 		condition = "出行-随便逛逛",
 		id = 43,
@@ -1263,11 +1054,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child_polaroid
-
-	var_1_43[44] = {
+	pg.base.child_polaroid[44] = {
 		group = 118,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1279,11 +1066,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child_polaroid
-
-	var_1_44[45] = {
+	pg.base.child_polaroid[45] = {
 		group = 119,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1295,11 +1078,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child_polaroid
-
-	var_1_45[46] = {
+	pg.base.child_polaroid[46] = {
 		group = 120,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1311,11 +1090,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child_polaroid
-
-	var_1_46[47] = {
+	pg.base.child_polaroid[47] = {
 		group = 121,
 		condition = "出行-随便逛逛",
 		id = 47,
@@ -1329,11 +1104,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child_polaroid
-
-	var_1_47[48] = {
+	pg.base.child_polaroid[48] = {
 		group = 121,
 		condition = "出行-随便逛逛",
 		id = 48,
@@ -1347,11 +1118,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child_polaroid
-
-	var_1_48[49] = {
+	pg.base.child_polaroid[49] = {
 		group = 121,
 		condition = "出行-随便逛逛",
 		id = 49,
@@ -1365,11 +1132,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child_polaroid
-
-	var_1_49[50] = {
+	pg.base.child_polaroid[50] = {
 		group = 122,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1381,11 +1144,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child_polaroid
-
-	var_1_50[51] = {
+	pg.base.child_polaroid[51] = {
 		group = 123,
 		condition = "出行-随便逛逛",
 		id = 51,
@@ -1399,11 +1158,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child_polaroid
-
-	var_1_51[52] = {
+	pg.base.child_polaroid[52] = {
 		group = 123,
 		condition = "出行-随便逛逛",
 		id = 52,
@@ -1417,11 +1172,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child_polaroid
-
-	var_1_52[53] = {
+	pg.base.child_polaroid[53] = {
 		group = 123,
 		condition = "出行-随便逛逛",
 		id = 53,
@@ -1435,11 +1186,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child_polaroid
-
-	var_1_53[54] = {
+	pg.base.child_polaroid[54] = {
 		group = 124,
 		condition = "出行-随便逛逛",
 		id = 54,
@@ -1453,11 +1200,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child_polaroid
-
-	var_1_54[55] = {
+	pg.base.child_polaroid[55] = {
 		group = 124,
 		condition = "出行-随便逛逛",
 		id = 55,
@@ -1471,11 +1214,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child_polaroid
-
-	var_1_55[56] = {
+	pg.base.child_polaroid[56] = {
 		group = 124,
 		condition = "出行-随便逛逛",
 		id = 56,
@@ -1489,11 +1228,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child_polaroid
-
-	var_1_56[57] = {
+	pg.base.child_polaroid[57] = {
 		group = 125,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1505,11 +1240,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child_polaroid
-
-	var_1_57[58] = {
+	pg.base.child_polaroid[58] = {
 		group = 125,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1521,11 +1252,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child_polaroid
-
-	var_1_58[59] = {
+	pg.base.child_polaroid[59] = {
 		group = 125,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1537,11 +1264,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child_polaroid
-
-	var_1_59[60] = {
+	pg.base.child_polaroid[60] = {
 		group = 126,
 		condition = "出行-随便逛逛",
 		id = 60,
@@ -1555,11 +1278,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child_polaroid
-
-	var_1_60[61] = {
+	pg.base.child_polaroid[61] = {
 		group = 126,
 		condition = "出行-随便逛逛",
 		id = 61,
@@ -1573,11 +1292,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child_polaroid
-
-	var_1_61[62] = {
+	pg.base.child_polaroid[62] = {
 		group = 126,
 		condition = "出行-随便逛逛",
 		id = 62,
@@ -1591,11 +1306,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child_polaroid
-
-	var_1_62[63] = {
+	pg.base.child_polaroid[63] = {
 		group = 127,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1607,11 +1318,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child_polaroid
-
-	var_1_63[64] = {
+	pg.base.child_polaroid[64] = {
 		group = 127,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1623,11 +1330,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child_polaroid
-
-	var_1_64[65] = {
+	pg.base.child_polaroid[65] = {
 		group = 128,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1639,11 +1342,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child_polaroid
-
-	var_1_65[66] = {
+	pg.base.child_polaroid[66] = {
 		group = 128,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1655,11 +1354,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child_polaroid
-
-	var_1_66[67] = {
+	pg.base.child_polaroid[67] = {
 		group = 128,
 		condition = "出行-随便逛逛",
 		id = 67,
@@ -1673,11 +1368,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child_polaroid
-
-	var_1_67[68] = {
+	pg.base.child_polaroid[68] = {
 		group = 128,
 		condition = "出行-随便逛逛",
 		id = 68,
@@ -1691,11 +1382,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child_polaroid
-
-	var_1_68[69] = {
+	pg.base.child_polaroid[69] = {
 		group = 128,
 		condition = "出行-随便逛逛",
 		id = 69,
@@ -1709,11 +1396,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child_polaroid
-
-	var_1_69[70] = {
+	pg.base.child_polaroid[70] = {
 		group = 129,
 		condition = "出行-随便逛逛",
 		id = 70,
@@ -1727,11 +1410,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child_polaroid
-
-	var_1_70[71] = {
+	pg.base.child_polaroid[71] = {
 		group = 129,
 		condition = "出行-随便逛逛",
 		id = 71,
@@ -1745,11 +1424,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child_polaroid
-
-	var_1_71[72] = {
+	pg.base.child_polaroid[72] = {
 		group = 129,
 		condition = "出行-随便逛逛",
 		id = 72,
@@ -1763,11 +1438,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child_polaroid
-
-	var_1_72[73] = {
+	pg.base.child_polaroid[73] = {
 		group = 129,
 		condition = "出行-随便逛逛",
 		id = 73,
@@ -1781,11 +1452,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child_polaroid
-
-	var_1_73[74] = {
+	pg.base.child_polaroid[74] = {
 		group = 129,
 		condition = "出行-随便逛逛",
 		id = 74,
@@ -1799,11 +1466,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child_polaroid
-
-	var_1_74[75] = {
+	pg.base.child_polaroid[75] = {
 		group = 129,
 		condition = "出行-随便逛逛",
 		id = 75,
@@ -1817,11 +1480,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child_polaroid
-
-	var_1_75[76] = {
+	pg.base.child_polaroid[76] = {
 		group = 130,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1833,11 +1492,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child_polaroid
-
-	var_1_76[77] = {
+	pg.base.child_polaroid[77] = {
 		group = 130,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1849,11 +1504,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child_polaroid
-
-	var_1_77[78] = {
+	pg.base.child_polaroid[78] = {
 		group = 130,
 		condition = "出行-随便逛逛",
 		id = 78,
@@ -1867,11 +1518,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child_polaroid
-
-	var_1_78[79] = {
+	pg.base.child_polaroid[79] = {
 		group = 130,
 		condition = "出行-随便逛逛",
 		id = 79,
@@ -1885,11 +1532,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child_polaroid
-
-	var_1_79[80] = {
+	pg.base.child_polaroid[80] = {
 		group = 130,
 		condition = "出行-随便逛逛",
 		id = 80,
@@ -1903,11 +1546,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child_polaroid
-
-	var_1_80[81] = {
+	pg.base.child_polaroid[81] = {
 		group = 131,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1919,11 +1558,7 @@ var_0_4.base.child_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child_polaroid
-
-	var_1_81[82] = {
+	pg.base.child_polaroid[82] = {
 		group = 131,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -1935,11 +1570,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child_polaroid
-
-	var_1_82[83] = {
+	pg.base.child_polaroid[83] = {
 		group = 131,
 		condition = "出行-随便逛逛",
 		id = 83,
@@ -1953,11 +1584,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child_polaroid
-
-	var_1_83[84] = {
+	pg.base.child_polaroid[84] = {
 		group = 131,
 		condition = "出行-随便逛逛",
 		id = 84,
@@ -1971,11 +1598,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child_polaroid
-
-	var_1_84[85] = {
+	pg.base.child_polaroid[85] = {
 		group = 131,
 		condition = "出行-随便逛逛",
 		id = 85,
@@ -1989,11 +1612,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child_polaroid
-
-	var_1_85[86] = {
+	pg.base.child_polaroid[86] = {
 		group = 132,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2005,11 +1624,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child_polaroid
-
-	var_1_86[87] = {
+	pg.base.child_polaroid[87] = {
 		group = 132,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2021,11 +1636,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child_polaroid
-
-	var_1_87[88] = {
+	pg.base.child_polaroid[88] = {
 		group = 133,
 		condition = "出行-随便逛逛",
 		id = 88,
@@ -2039,11 +1650,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child_polaroid
-
-	var_1_88[89] = {
+	pg.base.child_polaroid[89] = {
 		group = 133,
 		condition = "出行-随便逛逛",
 		id = 89,
@@ -2057,11 +1664,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child_polaroid
-
-	var_1_89[90] = {
+	pg.base.child_polaroid[90] = {
 		group = 133,
 		condition = "出行-随便逛逛",
 		id = 90,
@@ -2075,11 +1678,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child_polaroid
-
-	var_1_90[91] = {
+	pg.base.child_polaroid[91] = {
 		group = 134,
 		condition = "出行-随便逛逛",
 		id = 91,
@@ -2093,11 +1692,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child_polaroid
-
-	var_1_91[92] = {
+	pg.base.child_polaroid[92] = {
 		group = 134,
 		condition = "出行-随便逛逛",
 		id = 92,
@@ -2111,11 +1706,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child_polaroid
-
-	var_1_92[93] = {
+	pg.base.child_polaroid[93] = {
 		group = 134,
 		condition = "出行-随便逛逛",
 		id = 93,
@@ -2129,11 +1720,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child_polaroid
-
-	var_1_93[94] = {
+	pg.base.child_polaroid[94] = {
 		group = 135,
 		condition = "出行-随便逛逛",
 		id = 94,
@@ -2147,11 +1734,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child_polaroid
-
-	var_1_94[95] = {
+	pg.base.child_polaroid[95] = {
 		group = 135,
 		condition = "出行-随便逛逛",
 		id = 95,
@@ -2165,11 +1748,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child_polaroid
-
-	var_1_95[96] = {
+	pg.base.child_polaroid[96] = {
 		group = 135,
 		condition = "出行-随便逛逛",
 		id = 96,
@@ -2183,11 +1762,7 @@ var_0_4.base.child_polaroid = {}
 			202
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child_polaroid
-
-	var_1_96[97] = {
+	pg.base.child_polaroid[97] = {
 		group = 136,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2199,11 +1774,7 @@ var_0_4.base.child_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child_polaroid
-
-	var_1_97[98] = {
+	pg.base.child_polaroid[98] = {
 		group = 137,
 		condition = "出行-随便逛逛",
 		id = 98,
@@ -2217,11 +1788,7 @@ var_0_4.base.child_polaroid = {}
 			203
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child_polaroid
-
-	var_1_98[99] = {
+	pg.base.child_polaroid[99] = {
 		group = 137,
 		condition = "出行-随便逛逛",
 		id = 99,
@@ -2235,8 +1802,7 @@ var_0_4.base.child_polaroid = {}
 			201
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child_polaroid[100] = {
+	pg.base.child_polaroid[100] = {
 		group = 137,
 		condition = "出行-随便逛逛",
 		id = 100,
@@ -2254,11 +1820,7 @@ var_0_4.base.child_polaroid = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child_polaroid
-
-	var_2_0[101] = {
+	pg.base.child_polaroid[101] = {
 		group = 138,
 		condition = "出行-随便逛逛",
 		id = 101,
@@ -2272,11 +1834,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child_polaroid
-
-	var_2_1[102] = {
+	pg.base.child_polaroid[102] = {
 		group = 138,
 		condition = "出行-随便逛逛",
 		id = 102,
@@ -2290,11 +1848,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child_polaroid
-
-	var_2_2[103] = {
+	pg.base.child_polaroid[103] = {
 		group = 138,
 		condition = "出行-随便逛逛",
 		id = 103,
@@ -2308,11 +1862,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child_polaroid
-
-	var_2_3[104] = {
+	pg.base.child_polaroid[104] = {
 		group = 139,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2324,11 +1874,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child_polaroid
-
-	var_2_4[105] = {
+	pg.base.child_polaroid[105] = {
 		group = 140,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2340,11 +1886,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child_polaroid
-
-	var_2_5[106] = {
+	pg.base.child_polaroid[106] = {
 		group = 141,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2356,11 +1898,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child_polaroid
-
-	var_2_6[107] = {
+	pg.base.child_polaroid[107] = {
 		group = 142,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2372,11 +1910,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child_polaroid
-
-	var_2_7[108] = {
+	pg.base.child_polaroid[108] = {
 		group = 143,
 		condition = "出行-随便逛逛",
 		id = 108,
@@ -2390,11 +1924,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child_polaroid
-
-	var_2_8[109] = {
+	pg.base.child_polaroid[109] = {
 		group = 143,
 		condition = "出行-随便逛逛",
 		id = 109,
@@ -2408,11 +1938,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child_polaroid
-
-	var_2_9[110] = {
+	pg.base.child_polaroid[110] = {
 		group = 143,
 		condition = "出行-随便逛逛",
 		id = 110,
@@ -2426,11 +1952,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child_polaroid
-
-	var_2_10[111] = {
+	pg.base.child_polaroid[111] = {
 		group = 144,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2442,11 +1964,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child_polaroid
-
-	var_2_11[112] = {
+	pg.base.child_polaroid[112] = {
 		group = 144,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2458,11 +1976,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child_polaroid
-
-	var_2_12[113] = {
+	pg.base.child_polaroid[113] = {
 		group = 144,
 		condition = "出行-随便逛逛",
 		id = 113,
@@ -2476,11 +1990,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child_polaroid
-
-	var_2_13[114] = {
+	pg.base.child_polaroid[114] = {
 		group = 144,
 		condition = "出行-随便逛逛",
 		id = 114,
@@ -2494,11 +2004,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child_polaroid
-
-	var_2_14[115] = {
+	pg.base.child_polaroid[115] = {
 		group = 144,
 		condition = "出行-随便逛逛",
 		id = 115,
@@ -2512,11 +2018,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child_polaroid
-
-	var_2_15[116] = {
+	pg.base.child_polaroid[116] = {
 		group = 145,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2528,11 +2030,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child_polaroid
-
-	var_2_16[117] = {
+	pg.base.child_polaroid[117] = {
 		group = 145,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2544,11 +2042,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child_polaroid
-
-	var_2_17[118] = {
+	pg.base.child_polaroid[118] = {
 		group = 146,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2560,11 +2054,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child_polaroid
-
-	var_2_18[119] = {
+	pg.base.child_polaroid[119] = {
 		group = 146,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2576,11 +2066,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child_polaroid
-
-	var_2_19[120] = {
+	pg.base.child_polaroid[120] = {
 		group = 147,
 		condition = "出行-随便逛逛",
 		id = 120,
@@ -2594,11 +2080,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child_polaroid
-
-	var_2_20[121] = {
+	pg.base.child_polaroid[121] = {
 		group = 147,
 		condition = "出行-随便逛逛",
 		id = 121,
@@ -2612,11 +2094,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child_polaroid
-
-	var_2_21[122] = {
+	pg.base.child_polaroid[122] = {
 		group = 147,
 		condition = "出行-随便逛逛",
 		id = 122,
@@ -2630,11 +2108,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child_polaroid
-
-	var_2_22[123] = {
+	pg.base.child_polaroid[123] = {
 		group = 148,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2646,11 +2120,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child_polaroid
-
-	var_2_23[124] = {
+	pg.base.child_polaroid[124] = {
 		group = 149,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2662,11 +2132,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child_polaroid
-
-	var_2_24[125] = {
+	pg.base.child_polaroid[125] = {
 		group = 149,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2678,11 +2144,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child_polaroid
-
-	var_2_25[126] = {
+	pg.base.child_polaroid[126] = {
 		group = 150,
 		condition = "出行-随便逛逛",
 		id = 126,
@@ -2696,11 +2158,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child_polaroid
-
-	var_2_26[127] = {
+	pg.base.child_polaroid[127] = {
 		group = 150,
 		condition = "出行-随便逛逛",
 		id = 127,
@@ -2714,11 +2172,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child_polaroid
-
-	var_2_27[128] = {
+	pg.base.child_polaroid[128] = {
 		group = 150,
 		condition = "出行-随便逛逛",
 		id = 128,
@@ -2732,11 +2186,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child_polaroid
-
-	var_2_28[129] = {
+	pg.base.child_polaroid[129] = {
 		group = 151,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2748,11 +2198,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child_polaroid
-
-	var_2_29[130] = {
+	pg.base.child_polaroid[130] = {
 		group = 152,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2764,11 +2210,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child_polaroid
-
-	var_2_30[131] = {
+	pg.base.child_polaroid[131] = {
 		group = 153,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2780,11 +2222,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child_polaroid
-
-	var_2_31[132] = {
+	pg.base.child_polaroid[132] = {
 		group = 154,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2796,11 +2234,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child_polaroid
-
-	var_2_32[133] = {
+	pg.base.child_polaroid[133] = {
 		group = 155,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2812,11 +2246,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child_polaroid
-
-	var_2_33[134] = {
+	pg.base.child_polaroid[134] = {
 		group = 156,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2828,11 +2258,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child_polaroid
-
-	var_2_34[135] = {
+	pg.base.child_polaroid[135] = {
 		group = 157,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2844,11 +2270,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child_polaroid
-
-	var_2_35[136] = {
+	pg.base.child_polaroid[136] = {
 		group = 158,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2860,11 +2282,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child_polaroid
-
-	var_2_36[137] = {
+	pg.base.child_polaroid[137] = {
 		group = 159,
 		condition = "出行-随便逛逛",
 		id = 137,
@@ -2878,11 +2296,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child_polaroid
-
-	var_2_37[138] = {
+	pg.base.child_polaroid[138] = {
 		group = 159,
 		condition = "出行-随便逛逛",
 		id = 138,
@@ -2896,11 +2310,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child_polaroid
-
-	var_2_38[139] = {
+	pg.base.child_polaroid[139] = {
 		group = 159,
 		condition = "出行-随便逛逛",
 		id = 139,
@@ -2914,11 +2324,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child_polaroid
-
-	var_2_39[140] = {
+	pg.base.child_polaroid[140] = {
 		group = 160,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -2930,11 +2336,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.child_polaroid
-
-	var_2_40[141] = {
+	pg.base.child_polaroid[141] = {
 		group = 160,
 		condition = "出行-随便逛逛",
 		id = 141,
@@ -2948,11 +2350,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.child_polaroid
-
-	var_2_41[142] = {
+	pg.base.child_polaroid[142] = {
 		group = 160,
 		condition = "出行-随便逛逛",
 		id = 142,
@@ -2966,11 +2364,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.child_polaroid
-
-	var_2_42[143] = {
+	pg.base.child_polaroid[143] = {
 		group = 160,
 		condition = "出行-随便逛逛",
 		id = 143,
@@ -2984,11 +2378,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.child_polaroid
-
-	var_2_43[144] = {
+	pg.base.child_polaroid[144] = {
 		group = 161,
 		condition = "出行-随便逛逛",
 		id = 144,
@@ -3002,11 +2392,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.child_polaroid
-
-	var_2_44[145] = {
+	pg.base.child_polaroid[145] = {
 		group = 161,
 		condition = "出行-随便逛逛",
 		id = 145,
@@ -3020,11 +2406,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.child_polaroid
-
-	var_2_45[146] = {
+	pg.base.child_polaroid[146] = {
 		group = 161,
 		condition = "出行-随便逛逛",
 		id = 146,
@@ -3038,11 +2420,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.child_polaroid
-
-	var_2_46[147] = {
+	pg.base.child_polaroid[147] = {
 		group = 162,
 		condition = "出行-随便逛逛",
 		id = 147,
@@ -3056,11 +2434,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.child_polaroid
-
-	var_2_47[148] = {
+	pg.base.child_polaroid[148] = {
 		group = 162,
 		condition = "出行-随便逛逛",
 		id = 148,
@@ -3074,11 +2448,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.child_polaroid
-
-	var_2_48[149] = {
+	pg.base.child_polaroid[149] = {
 		group = 162,
 		condition = "出行-随便逛逛",
 		id = 149,
@@ -3092,11 +2462,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.child_polaroid
-
-	var_2_49[150] = {
+	pg.base.child_polaroid[150] = {
 		group = 163,
 		condition = "出行-随便逛逛",
 		id = 150,
@@ -3110,11 +2476,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.child_polaroid
-
-	var_2_50[151] = {
+	pg.base.child_polaroid[151] = {
 		group = 163,
 		condition = "出行-随便逛逛",
 		id = 151,
@@ -3128,11 +2490,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.child_polaroid
-
-	var_2_51[152] = {
+	pg.base.child_polaroid[152] = {
 		group = 163,
 		condition = "出行-随便逛逛",
 		id = 152,
@@ -3146,11 +2504,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.child_polaroid
-
-	var_2_52[153] = {
+	pg.base.child_polaroid[153] = {
 		group = 164,
 		condition = "出行-随便逛逛",
 		id = 153,
@@ -3164,11 +2518,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.child_polaroid
-
-	var_2_53[154] = {
+	pg.base.child_polaroid[154] = {
 		group = 164,
 		condition = "出行-随便逛逛",
 		id = 154,
@@ -3182,11 +2532,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.child_polaroid
-
-	var_2_54[155] = {
+	pg.base.child_polaroid[155] = {
 		group = 164,
 		condition = "出行-随便逛逛",
 		id = 155,
@@ -3200,11 +2546,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.child_polaroid
-
-	var_2_55[156] = {
+	pg.base.child_polaroid[156] = {
 		group = 165,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -3216,11 +2558,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.child_polaroid
-
-	var_2_56[157] = {
+	pg.base.child_polaroid[157] = {
 		group = 166,
 		condition = "出行-随便逛逛",
 		id = 157,
@@ -3234,11 +2572,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.child_polaroid
-
-	var_2_57[158] = {
+	pg.base.child_polaroid[158] = {
 		group = 166,
 		condition = "出行-随便逛逛",
 		id = 158,
@@ -3252,11 +2586,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.child_polaroid
-
-	var_2_58[159] = {
+	pg.base.child_polaroid[159] = {
 		group = 166,
 		condition = "出行-随便逛逛",
 		id = 159,
@@ -3270,11 +2600,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.child_polaroid
-
-	var_2_59[160] = {
+	pg.base.child_polaroid[160] = {
 		group = 167,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -3286,11 +2612,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.child_polaroid
-
-	var_2_60[161] = {
+	pg.base.child_polaroid[161] = {
 		group = 168,
 		condition = "出行-随便逛逛",
 		xingge = "",
@@ -3302,11 +2624,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.child_polaroid
-
-	var_2_61[162] = {
+	pg.base.child_polaroid[162] = {
 		group = 169,
 		condition = "出行-随便逛逛",
 		id = 162,
@@ -3320,11 +2638,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.child_polaroid
-
-	var_2_62[163] = {
+	pg.base.child_polaroid[163] = {
 		group = 169,
 		condition = "出行-随便逛逛",
 		id = 163,
@@ -3338,11 +2652,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.child_polaroid
-
-	var_2_63[164] = {
+	pg.base.child_polaroid[164] = {
 		group = 169,
 		condition = "出行-随便逛逛",
 		id = 164,
@@ -3356,11 +2666,7 @@ end)()
 			202
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.child_polaroid
-
-	var_2_64[165] = {
+	pg.base.child_polaroid[165] = {
 		group = 170,
 		condition = "出行-随便逛逛",
 		id = 165,
@@ -3374,11 +2680,7 @@ end)()
 			203
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.child_polaroid
-
-	var_2_65[166] = {
+	pg.base.child_polaroid[166] = {
 		group = 170,
 		condition = "出行-随便逛逛",
 		id = 166,
@@ -3392,8 +2694,7 @@ end)()
 			201
 		}
 	}
-	pg = var_2_65
-	var_2_65.base.child_polaroid[167] = {
+	pg.base.child_polaroid[167] = {
 		group = 170,
 		condition = "出行-随便逛逛",
 		id = 167,

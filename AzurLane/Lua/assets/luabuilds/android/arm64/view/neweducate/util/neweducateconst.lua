@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NewEducateConst")
+﻿local var_0_0 = class("NewEducateConst")
 
 var_0_0.NEW_EDUCATE_SELECT_ID = "NEW_EDUCATE_SELECT_ID"
 var_0_0.NEW_EDUCATE_SKIP_PLANS_ANIM = "NEW_EDUCATE_SKIP_PLANS_ANIM"

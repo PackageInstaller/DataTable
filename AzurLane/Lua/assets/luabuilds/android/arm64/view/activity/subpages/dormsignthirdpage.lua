@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DormSignThirdPage", import("view.activity.subPages.DormSignTwoPage"))
 
-local var_0_0 = "DormSignThirdPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.subPages.DormSignTwoPage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "DormSignThirdPage"
 end
 
-return var_0_1
+return var_0_0

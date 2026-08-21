@@ -1,71 +1,30 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CatteryAddHomeExpAnim")
+﻿local var_0_0 = class("CatteryAddHomeExpAnim")
 local var_0_1 = 1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._tf = arg_1_1
-	findTF = var_1_10002
-
-	local var_1_0 = var_1_10002(arg_1_0._tf, "slider")
-	local var_1_1 = var_2.GetComponent
-
-	typeof = var_5
-	Slider = var_1_10007
-	arg_1_0.expSlider = var_1_1(var_1_0, var_5(var_1_10007))
-	findTF = var_2
-
-	local var_1_2 = var_2(arg_1_0._tf, "level")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.levelTxt = var_1_3(var_1_2, var_5(var_1_10007))
-	findTF = var_2
-
-	local var_1_4 = var_2(arg_1_0._tf, "exp")
-	local var_1_5 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.expTxt = var_1_5(var_1_4, var_5(var_1_10007))
-	findTF = var_2
-	arg_1_0.addition = var_2(arg_1_0._tf, "addition")
-	findTF = var_2
-	arg_1_0.additionExp = var_2(arg_1_0._tf, "addition/exp")
-
-	local var_1_6 = arg_1_0.additionExp
-	local var_1_7 = var_2.Find(var_1_6, "Text")
-	local var_1_8 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.additionExpTxt = var_1_8(var_1_7, var_5(var_1_10007))
-	findTF = var_2
-	arg_1_0.additionItem = var_2(arg_1_0._tf, "addition/item")
-	findTF = var_2
-	arg_1_0.additionItemImg = var_2(arg_1_0._tf, "addition/item/icon")
+	arg_1_0.expSlider = findTF(arg_1_0._tf, "slider"):GetComponent(typeof(Slider))
+	arg_1_0.levelTxt = findTF(arg_1_0._tf, "level"):GetComponent(typeof(Text))
+	arg_1_0.expTxt = findTF(arg_1_0._tf, "exp"):GetComponent(typeof(Text))
+	arg_1_0.addition = findTF(arg_1_0._tf, "addition")
+	arg_1_0.additionExp = findTF(arg_1_0._tf, "addition/exp")
+	arg_1_0.additionExpTxt = arg_1_0.additionExp:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.additionItem = findTF(arg_1_0._tf, "addition/item")
+	arg_1_0.additionItemImg = findTF(arg_1_0._tf, "addition/item/icon")
 	arg_1_0.animRiseH = arg_1_0.addition.localPosition.y
-	setActive = var_2
 
-	var_2(arg_1_0._tf, false)
+	setActive(arg_1_0._tf, false)
 
 	return
 end
 
 function var_0_0.Action(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
-	setActive = var_1_10006
-
-	var_1_10006(arg_2_0._tf, true)
+	setActive(arg_2_0._tf, true)
 
 	arg_2_0.callback = arg_2_5
 
-	local var_2_0 = arg_2_0:GetAwardOffset(arg_2_3, arg_2_4)
-
-	setAnchoredPosition = var_1_10007
-
-	var_1_10007(arg_2_0.addition, {
-		x = var_2_0
+	setAnchoredPosition(arg_2_0.addition, {
+		x = arg_2_0:GetAwardOffset(arg_2_3, arg_2_4)
 	})
 	arg_2_0:RefreshAward(arg_2_3, arg_2_4)
 	arg_2_0:RefreshHome(arg_2_2)
@@ -79,35 +38,25 @@ end
 
 function var_0_0.RefreshAward(arg_4_0, arg_4_1, arg_4_2)
 	if arg_4_1 then
-		GetImageSpriteFromAtlasAsync = var_1_10003
-
-		var_1_10003("Props/20010", "", arg_4_0.additionItemImg)
+		GetImageSpriteFromAtlasAsync("Props/20010", "", arg_4_0.additionItemImg)
 	elseif arg_4_2 then
-		GetImageSpriteFromAtlasAsync = var_1_10003
-
-		var_1_10003("Props/dormMoney", "", arg_4_0.additionItemImg)
+		GetImageSpriteFromAtlasAsync("Props/dormMoney", "", arg_4_0.additionItemImg)
 	end
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_4_0.additionItem, arg_4_1 or arg_4_2)
+	setActive(arg_4_0.additionItem, arg_4_1 or arg_4_2)
 
 	return
 end
 
 function var_0_0.RefreshHome(arg_5_0, arg_5_1)
-	getProxy = var_1_10002
-	CommanderProxy = var_1_10004
-
-	local var_5_0 = var_1_10002(var_1_10004)
-	local var_5_1 = var_2.GetCommanderHome(var_5_0)
+	local var_5_0 = getProxy(CommanderProxy):GetCommanderHome()
 
 	arg_5_0.additionExpTxt.text = arg_5_1 .. "<size=40>EXP</size>"
 
-	if var_5_1.exp - arg_5_1 < 0 then
-		arg_5_0:DoUpgradeAnim(var_5_1, arg_5_1)
+	if var_5_0.exp - arg_5_1 < 0 then
+		arg_5_0:DoUpgradeAnim(var_5_0, arg_5_1)
 	else
-		arg_5_0:DoAddExpAnim(var_5_1, arg_5_1)
+		arg_5_0:DoAddExpAnim(var_5_0, arg_5_1)
 	end
 
 	return
@@ -123,33 +72,18 @@ function var_0_0.DoUpgradeAnim(arg_6_0, arg_6_1, arg_6_2)
 	end
 
 	local var_6_0 = arg_6_1:GetPrevLevelExp()
-
-	math = var_4
-
-	local var_6_1 = var_6_0 - var_4.abs(arg_6_1.exp - arg_6_2)
+	local var_6_1 = var_6_0 - math.abs(arg_6_1.exp - arg_6_2)
 
 	arg_6_0.expTxt.text = "<color=#92FC63FF>" .. var_6_1 .. "/</color>" .. var_6_0
+	arg_6_0.expSlider.value = var_6_1 / var_6_0
 
-	local var_6_2 = var_6_1 / var_6_0
+	local var_6_2 = arg_6_1.exp / arg_6_1:GetNextLevelExp()
 
-	arg_6_0.expSlider.value = var_6_2
+	arg_6_0:AddExpAnim(var_6_1 / var_6_0, 1, var_6_1, var_6_0, var_6_0, function()
+		arg_6_0.levelTxt.text = "LV." .. arg_6_1:GetLevel()
 
-	local var_6_3 = arg_6_1:GetNextLevelExp()
-	local var_6_4 = arg_6_1.exp / var_6_3
-
-	arg_6_0:AddExpAnim(var_6_2, 1, var_6_1, var_6_0, var_6_0, function()
-		local var_7_0 = arg_6_0.levelTxt
-		local var_7_1 = "LV."
-		local var_7_2 = arg_6_1
-
-		var_7_0.text = var_7_1 .. var_2.GetLevel(var_7_2)
-
-		local var_7_3 = arg_6_0
-
-		var_0.AddExpAnim(var_7_3, 0, var_6_4, 0, arg_6_1.exp, var_6_3, function()
-			local var_8_0 = arg_6_0
-
-			var_0.IfIsMaxLevel(var_8_0, arg_6_1, arg_6_2)
+		arg_6_0:AddExpAnim(0, var_6_2, 0, arg_6_1.exp, var_0, function()
+			arg_6_0:IfIsMaxLevel(arg_6_1, arg_6_2)
 
 			return
 		end)
@@ -179,10 +113,8 @@ function var_0_0.DoAddExpAnim(arg_10_0, arg_10_1, arg_10_2)
 	end
 
 	local var_10_0 = arg_10_1:GetNextLevelExp()
-	local var_10_1 = arg_10_1.exp / var_10_0
-	local var_10_2 = (arg_10_1.exp - arg_10_2) / var_10_0
 
-	arg_10_0:AddExpAnim(var_10_2, var_10_1, var_5, arg_10_1.exp, var_10_0)
+	arg_10_0:AddExpAnim((arg_10_1.exp - arg_10_2) / var_10_0, arg_10_1.exp / var_10_0, arg_10_1.exp - arg_10_2, arg_10_1.exp, var_10_0)
 	arg_10_0:AdditionAnim(var_0_1, function()
 		if arg_10_0.callback then
 			arg_10_0.callback()
@@ -190,9 +122,7 @@ function var_0_0.DoAddExpAnim(arg_10_0, arg_10_1, arg_10_2)
 
 		arg_10_0.callback = nil
 
-		local var_11_0 = arg_10_0
-
-		var_0.IfIsMaxLevel(var_11_0, arg_10_1, arg_10_2)
+		arg_10_0:IfIsMaxLevel(arg_10_1, arg_10_2)
 
 		return
 	end)
@@ -209,109 +139,49 @@ function var_0_0.IfIsMaxLevel(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
 	arg_12_0:HideOrShowAddition(arg_12_2)
 
 	if arg_12_3 then
-		IsNil = var_4
+		if not IsNil(arg_12_0.additionItem) and isActive(arg_12_0.additionItem) then
+			arg_12_0:AdditionAnim(var_0_1, function()
+				if arg_12_0.callback then
+					arg_12_0.callback()
+				end
 
-		if not var_4(arg_12_0.additionItem) then
-			isActive = var_4
+				arg_12_0.callback = nil
 
-			if var_4(arg_12_0.additionItem) then
-				arg_12_0:AdditionAnim(var_0_1, function()
-					if arg_12_0.callback then
-						arg_12_0.callback()
-					end
+				return
+			end)
+		else
+			Timer.New(function()
+				if arg_12_0.callback then
+					arg_12_0.callback()
+				end
 
-					arg_12_0.callback = nil
+				arg_12_0.callback = nil
 
-					return
-				end)
-
-				goto label_12_0
-			end
+				return
+			end, var_0_1, 1):Start()
 		end
-
-		Timer = var_4
-
-		local var_12_0 = var_4.New(function()
-			if arg_12_0.callback then
-				arg_12_0.callback()
-			end
-
-			arg_12_0.callback = nil
-
-			return
-		end, var_0_1, 1)
-
-		var_4.Start(var_12_0)
 	end
-
-	::label_12_0::
 
 	return
 end
 
 function var_0_0.HideOrShowAddition(arg_15_0, arg_15_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_15_0.additionExp, arg_15_1 > 0)
+	setActive(arg_15_0.additionExp, arg_15_1 > 0)
 
 	return
 end
 
 function var_0_0.Clear(arg_16_0)
-	IsNil = var_1_10001
-
-	local var_16_0
-
-	if not var_1_10001(arg_16_0.expSlider) then
-		LeanTween = var_16_0
-		var_16_0 = var_16_0.isTweening
-		go = var_3
-
-		if var_16_0(var_3(arg_16_0.expSlider)) then
-			LeanTween = var_16_0
-			var_16_0 = var_16_0.cancel
-			go = var_3
-
-			var_16_0(var_3(arg_16_0.expSlider))
-		end
+	if not IsNil(arg_16_0.expSlider) and LeanTween.isTweening(go(arg_16_0.expSlider)) then
+		LeanTween.cancel(go(arg_16_0.expSlider))
 	end
 
-	IsNil = var_16_0
-
-	local var_16_1
-
-	if not var_16_0(arg_16_0.expTxt) then
-		LeanTween = var_16_1
-		var_16_1 = var_16_1.isTweening
-		go = var_3
-
-		if var_16_1(var_3(arg_16_0.expTxt)) then
-			LeanTween = var_16_1
-			var_16_1 = var_16_1.cancel
-			go = var_3
-
-			var_16_1(var_3(arg_16_0.expTxt))
-		end
+	if not IsNil(arg_16_0.expTxt) and LeanTween.isTweening(go(arg_16_0.expTxt)) then
+		LeanTween.cancel(go(arg_16_0.expTxt))
 	end
 
-	IsNil = var_16_1
-
-	if not var_16_1(arg_16_0.addition) then
-		LeanTween = var_1
-
-		local var_16_2 = var_1.isTweening
-
-		go = var_3
-
-		if var_16_2(var_3(arg_16_0.addition)) then
-			LeanTween = var_1
-
-			local var_16_3 = var_1.cancel
-
-			go = var_3
-
-			var_16_3(var_3(arg_16_0.addition))
-		end
+	if not IsNil(arg_16_0.addition) and LeanTween.isTweening(go(arg_16_0.addition)) then
+		LeanTween.cancel(go(arg_16_0.addition))
 	end
 
 	return
@@ -319,10 +189,7 @@ end
 
 function var_0_0.Hide(arg_17_0)
 	arg_17_0:Clear()
-
-	setActive = var_1
-
-	var_1(arg_17_0._tf, false)
+	setActive(arg_17_0._tf, false)
 
 	return
 end
@@ -334,60 +201,22 @@ function var_0_0.Dispose(arg_18_0)
 end
 
 function var_0_0.AddExpAnim(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, arg_19_5, arg_19_6)
-	parallelAsync = var_1_10007
-
-	var_1_10007({
+	parallelAsync({
 		function(arg_20_0)
-			LeanTween = var_2_10001
-
-			local var_20_0 = var_2_10001.value
-
-			go = var_2_10003
-
-			local var_20_1 = var_20_0(var_2_10003(arg_19_0.expSlider), arg_19_1, arg_19_2, var_0_1)
-			local var_20_2 = var_1.setOnUpdate
-
-			System = var_4
-
-			local var_20_3 = var_20_2(var_20_1, var_4.Action_float(function(arg_21_0)
+			LeanTween.value(go(arg_19_0.expSlider), arg_19_1, arg_19_2, var_0_1):setOnUpdate(System.Action_float(function(arg_21_0)
 				arg_19_0.expSlider.value = arg_21_0
 
 				return
-			end))
-			local var_20_4 = var_1.setOnComplete
-
-			System = var_4
-
-			var_20_4(var_20_3, var_4.Action(arg_20_0))
+			end)):setOnComplete(System.Action(arg_20_0))
 
 			return
 		end,
 		function(arg_22_0)
-			LeanTween = var_2_10001
-
-			local var_22_0 = var_2_10001.value
-
-			go = var_2_10003
-
-			local var_22_1 = var_22_0(var_2_10003(arg_19_0.expTxt), arg_19_3, arg_19_4, var_0_1)
-			local var_22_2 = var_1.setOnUpdate
-
-			System = var_4
-
-			local var_22_3 = var_22_2(var_22_1, var_4.Action_float(function(arg_23_0)
-				math = var_3_10001
-
-				local var_23_0 = var_3_10001.ceil(arg_23_0)
-
-				arg_19_0.expTxt.text = "<color=#92FC63FF>" .. var_23_0 .. "/</color>" .. arg_19_5
+			LeanTween.value(go(arg_19_0.expTxt), arg_19_3, arg_19_4, var_0_1):setOnUpdate(System.Action_float(function(arg_23_0)
+				arg_19_0.expTxt.text = "<color=#92FC63FF>" .. math.ceil(arg_23_0) .. "/</color>" .. arg_19_5
 
 				return
-			end))
-			local var_22_4 = var_1.setOnComplete
-
-			System = var_4
-
-			var_22_4(var_22_3, var_4.Action(arg_22_0))
+			end)):setOnComplete(System.Action(arg_22_0))
 
 			return
 		end
@@ -403,43 +232,16 @@ function var_0_0.AddExpAnim(arg_19_0, arg_19_1, arg_19_2, arg_19_3, arg_19_4, ar
 end
 
 function var_0_0.AdditionAnim(arg_25_0, arg_25_1, arg_25_2)
-	setActive = var_1_10003
-
-	var_1_10003(arg_25_0.addition, true)
-
-	LeanTween = var_1_10003
-
-	local var_25_0 = var_1_10003.value
-
-	go = var_5
-
-	local var_25_1 = var_25_0(var_5(arg_25_0.addition), arg_25_0.animRiseH, arg_25_0.animRiseH + 25, arg_25_1)
-	local var_25_2 = var_3.setOnUpdate
-
-	System = var_6
-
-	local var_25_3 = var_25_2(var_25_1, var_6.Action_float(function(arg_26_0)
-		local var_26_0 = arg_25_0.addition
-
-		Vector3 = var_2_10002
-		var_26_0.localPosition = var_2_10002(arg_25_0.addition.localPosition.x, arg_26_0, 0)
+	setActive(arg_25_0.addition, true)
+	LeanTween.value(go(arg_25_0.addition), arg_25_0.animRiseH, arg_25_0.animRiseH + 25, arg_25_1):setOnUpdate(System.Action_float(function(arg_26_0)
+		arg_25_0.addition.localPosition = Vector3(arg_25_0.addition.localPosition.x, arg_26_0, 0)
 
 		return
-	end))
-	local var_25_4 = var_3.setOnComplete
-
-	System = var_6
-
-	var_25_4(var_25_3, var_6.Action(function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_25_0.addition, false)
+	end)):setOnComplete(System.Action(function()
+		setActive(arg_25_0.addition, false)
 		arg_25_2()
 
-		local var_27_0 = arg_25_0.addition
-
-		Vector3 = var_2_10001
-		var_27_0.localPosition = var_2_10001(arg_25_0.addition.localPosition.x, 0, 0)
+		arg_25_0.addition.localPosition = Vector3(arg_25_0.addition.localPosition.x, 0, 0)
 
 		return
 	end))

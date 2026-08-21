@@ -52,6 +52,8 @@ function configUI(self)
     self.mTxtTargetTaskName = self:getChildGO("mTxtTargetTaskName"):GetComponent(ty.Text)
     self.mTxtTargetTaskProgress = self:getChildGO("mTxtTargetTaskProgress"):GetComponent(ty.Text)
     self.mLyScroller:SetItemRender(Celebration.CelebrationTaskItem)
+
+    self.mImgHeroHar = self:getChildGO("mImgHeroHar")
 end
 
 --激活
@@ -79,8 +81,8 @@ end
 ]]
 function initViewText(self)
     self.mTxtTitle.text = _TT(98107)--"动态立绘"
-    self.mTxtHeroName.text = "纯白芳颜   莉丽拉"
-    self.mTxtFashionName.text = "绫罗礼宴"
+    self.mTxtHeroName.text = _TT(121223)
+    self.mTxtFashionName.text = _TT(121224)
     self.mTxtTargetTaskName.text=_TT(121007)
     self.mTxtTargetIng.text=_TT(36520)
     self:setBtnLabel(self.mBtnTargetRecive, 412, "领取")
@@ -112,6 +114,10 @@ function updateView(self)
     local md, hm = TimeUtil.getMDHByTime2(curActivityOverTime)
     self.mTxtTime.text = _TT(121009,md .. " " .. hm) 
 
+
+    local isHar = (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())
+    self.mImgHeroHar.gameObject:SetActive(isHar)
+    self:getChildGO("Spine"):SetActive(not isHar)
 end
 
 function updateTargetTaskInfo(self)
@@ -192,6 +198,7 @@ end
 
 function updateList(self,isInit)
     self:updateTargetTaskInfo()
+
     for i, dayItem in ipairs(self.mDayItemList) do
         local isRed = Celebration.CelebrationManager:getIsRedByDay(i)
         if isRed then
@@ -206,8 +213,11 @@ function updateList(self,isInit)
         for i = 1, 3 do
             list[i].tweenId =i/2
         end
-        self:setTimeout(3 * 0.02, function() self.mLyScroller.DataProvider = list end)
+        self:setTimeout(3*0.02, function() self.mLyScroller.DataProvider = list end)
     else
+        for i = 1, #list do
+            list[i].tweenId = nil
+        end
         self.mLyScroller:ReplaceAllDataProvider(list)
         self.mLyScroller:JumpToTop()
     end

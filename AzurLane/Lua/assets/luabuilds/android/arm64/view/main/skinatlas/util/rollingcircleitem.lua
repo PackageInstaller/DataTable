@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RollingCircleItem")
+﻿local var_0_0 = class("RollingCircleItem")
 local var_0_1 = 73
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
@@ -49,14 +47,9 @@ function var_0_0.Init(arg_8_0)
 		return
 	end
 
-	local var_8_0 = var_1:GetLocalposition()
-	local var_8_1 = var_1:GetSpace()
-	local var_8_2 = arg_8_0
-	local var_8_3 = arg_8_0.UpdateLocalPosition
+	local var_8_0 = arg_8_0.prev:GetLocalposition()
 
-	Vector3 = var_1_10007
-
-	var_8_3(var_8_2, var_1_10007(var_8_0.x, var_8_0.y - var_8_1, 0))
+	arg_8_0:UpdateLocalPosition(Vector3(var_8_0.x, var_8_0.y - arg_8_0.prev:GetSpace(), 0))
 
 	return
 end
@@ -88,11 +81,10 @@ end
 
 function var_0_0.GoForward(arg_14_0)
 	if arg_14_0.nex then
-		local var_14_0 = arg_14_0.nex
-		local var_14_1, var_14_2 = var_1.GetLastPositionAndIndex(var_14_0)
+		local var_14_0, var_14_1 = arg_14_0.nex:GetLastPositionAndIndex()
 
-		arg_14_0:SetIndex(var_14_2)
-		arg_14_0:UpdateLocalPosition(var_14_1)
+		arg_14_0:SetIndex(var_14_1)
+		arg_14_0:UpdateLocalPosition(var_14_0)
 	end
 
 	return
@@ -100,20 +92,17 @@ end
 
 function var_0_0.GoBack(arg_15_0)
 	if arg_15_0.prev then
-		local var_15_0 = arg_15_0.prev
-		local var_15_1, var_15_2 = var_1.GetLastPositionAndIndex(var_15_0)
+		local var_15_0, var_15_1 = arg_15_0.prev:GetLastPositionAndIndex()
 
-		arg_15_0:SetIndex(var_15_2)
-		arg_15_0:UpdateLocalPosition(var_15_1)
+		arg_15_0:SetIndex(var_15_1)
+		arg_15_0:UpdateLocalPosition(var_15_0)
 	end
 
 	return
 end
 
 function var_0_0.Dispose(arg_16_0)
-	Object = var_1_10001
-
-	var_1_10001.Destroy(arg_16_0.tr.gameObject)
+	Object.Destroy(arg_16_0.tr.gameObject)
 
 	arg_16_0.prev = nil
 	arg_16_0.nex = nil

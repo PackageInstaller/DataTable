@@ -21,6 +21,8 @@ function initData(self)
     self.mNPCInfolist = {}
 
     self.mNPBBubbleShowTime = 2
+
+    self:setUICode(LinkCode.SandPlay)
 end
 
 -- 初始化
@@ -39,33 +41,37 @@ function configUI(self)
     self.mGroupNPCInfo = self:getChildTrans("mGroupNPCInfo")
 
     self.mItemFunc = self:getChildGO("mItemFunc")
+
     self.mGroupFuncList = self:getChildTrans("mGroupFuncList")
 
+    self.mBoxNum = self:getChildGO("mBoxNum")
     self.mTextBoxNum = self:getChildGO("mTextBoxNum"):GetComponent(ty.Text)
+
+    self.mFieldInfoGroup = self:getChildGO("mFieldInfoGroup")
+    self.mTextFieldTime = self:getChildGO("mTextFieldTime"):GetComponent(ty.Text)
+    self.mTextFieldName = self:getChildGO("mTextFieldName"):GetComponent(ty.Text)
+
+    self.mBtnTeaching = self:getChildGO("mBtnTeaching")
 end
 
 function initViewText(self)
-
+    self:setBtnLabel(self.mBtnTeaching, 95197, "农场教程")
 end
 
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnBack, self.onExit)
     self:addUIEvent(self.minMap, self.onOpenMapPanel)
-
+    self:addUIEvent(self.mBtnTeaching, self.onOpenTeaching)
 end
 
 --激活
 function active(self, args)
     super.active(self)
 
-    self.mItemNPCInfo:SetActive(false)
-    self.mItemNPCBubble:SetActive(false)
-    self.mGroupFuncList.gameObject:SetActive(false)
-
     GameDispatcher:addEventListener(EventName.SANDPLAY_NPC_SHOWBUBBLE, self.showNPCBubble, self)
-    GameDispatcher:addEventListener(EventName.FIELDEXPLORATION_JOYSTICK_UPDATE, self.onPlayMove, self)
-    GameDispatcher:addEventListener(EventName.SANDPLAY_NPC_ADD, self.addNpc, self)
+    GameDispatcher:addEventListener(EventName.SANDPLAY_CAMERA_REFRESHPOS, self.onCamreRefresh, self)
+    GameDispatcher:addEventListener(EventName.SANDPLAY_NPC_ADD, self.onRefreshNpc, self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_TRIGGERENTER_NPC, self.onShowFunclist, self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_TRIGGEREXIT_NPC, self.onHideFunclist, self)
     GameDispatcher:addEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.refreshGuideRedState, self)
@@ -76,6 +82,20 @@ function active(self, args)
 
     GameDispatcher:addEventListener(EventName.SANDPLAY_RECEIVE_MAPEVENT_TRIGGER, self.refreshBoxNum, self)
     GameDispatcher:addEventListener(EventName.SANDPLAY_RECEIVE_MAPEVENTINFO, self.refreshBoxNum, self)
+
+    GameDispatcher:addEventListener(EventName.SANDPLAY_HAPPYFARM_SHOW_FIELDINFO, self.onShowFieldInfo, self)
+
+    self.mItemNPCInfo:SetActive(false)
+    self.mItemNPCBubble:SetActive(false)
+    self.mGroupFuncList.gameObject:SetActive(false)
+
+    if sandPlay.SandPlayManager:getHappyFarmActivityOpenRedState() then
+        self:onOpenTeaching()
+        StorageUtil:saveNumber1(gstor.SANDPLAY_HAPPYFARM_OPENRED, GameManager:getClientTime())
+    end
+
+    local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.HappyFarm)
+    self.mBtnTeaching:SetActive(activityVo:getIsCanOpen())
 
     self.mSceneConfigVo = sandPlay.SandPlaySceneController:getSceneConfigVo()
 
@@ -95,8 +115,9 @@ function deActive(self)
     super.deActive(self)
 
     GameDispatcher:removeEventListener(EventName.SANDPLAY_NPC_SHOWBUBBLE, self.showNPCBubble, self)
-    GameDispatcher:removeEventListener(EventName.FIELDEXPLORATION_JOYSTICK_UPDATE, self.onPlayMove, self)
-    GameDispatcher:removeEventListener(EventName.SANDPLAY_NPC_ADD, self.addNpc, self)
+    GameDispatcher:removeEventListener(EventName.SANDPLAY_CAMERA_REFRESHPOS, self.onCamreRefresh, self)
+
+    GameDispatcher:removeEventListener(EventName.SANDPLAY_NPC_ADD, self.onRefreshNpc, self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_TRIGGERENTER_NPC, self.onShowFunclist, self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_TRIGGEREXIT_NPC, self.onHideFunclist, self)
     GameDispatcher:removeEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.refreshGuideRedState, self)
@@ -108,6 +129,8 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_RECEIVE_MAPEVENT_TRIGGER, self.refreshBoxNum, self)
     GameDispatcher:removeEventListener(EventName.SANDPLAY_RECEIVE_MAPEVENTINFO, self.refreshBoxNum, self)
 
+    GameDispatcher:removeEventListener(EventName.SANDPLAY_HAPPYFARM_SHOW_FIELDINFO, self.onShowFieldInfo, self)
+
     self:clearMinMap()
     self:clearJoystick()
     self:clearNPCBubble()
@@ -115,6 +138,8 @@ function deActive(self)
     self:clearShowNPCBubbleTimer()
 
     self:clearFuncList()
+
+    self:hideFieldInfo()
 end
 
 function deleteNPC(self, npc_id)
@@ -129,7 +154,6 @@ function onShowFunclist(self)
     end
 
     local funcNPC_Id = playThing:getCurFuncNPC()
-
     if funcNPC_Id == nil then
         return
     end
@@ -156,7 +180,7 @@ function creatFuncList(self, event_list, npc_id)
 
         if isShow then
             local iconPath = event_list[i]:getIconPath()
-            local item = SimpleInsItem:create(self.mItemFunc, self.mGroupFuncList, "SandPlaySceneUI_NPC_FuncItem")
+            local item = SimpleInsItem:create(self.mItemFunc, self.mGroupFuncList, "SandPlaySceneUI_NPC_FuncItem_1")
 
             item:getChildGO("mTextLabel"):GetComponent(ty.Text).text = event_list[i].label
             item:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage):SetImg(iconPath)
@@ -178,7 +202,7 @@ function clearFuncList(self)
     self.mFuncItemList = {}
 end
 
-function onPlayMove(self)
+function onCamreRefresh(self)
     self:refreshNPCBubblePos()
     self:refreshNPCInfoPos()
 end
@@ -189,6 +213,11 @@ function onExit(self)
     GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.MAIN_CITY)
 end
 
+-- 打开教学
+function onOpenTeaching(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_FISH_TEACHING_VIEW, {resList = {"happyFarm_tips_1", "happyFarm_tips_2", "happyFarm_tips_3"}, des = {98971, 98972, 98973}})
+end
+
 function onOpenMapPanel(self)
     GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_MAPPANEL)
 end
@@ -196,51 +225,69 @@ end
 function refreshBoxNum(self)
     local totalNum, openNum = 0, 0
 
-    local sceneConfig = sandPlay.SandPlaySceneController:getSceneConfigVo()
-    if sceneConfig then
-        local clientTime = GameManager:getClientTime()
+    local clientTime = GameManager:getClientTime()
 
-        for npc_id, npcConfig in pairs(sceneConfig.npcList) do
-            for _, eventConfigVo in pairs(npcConfig.base_config.event_ConfigVoList) do
-                if eventConfigVo.event_type == SandPlayConst.EventType.Treasure_Box then
-                    local unLock = true
-                    if npcConfig.show_Dt ~= 0 then
-                        unLock = clientTime >= npcConfig.show_Dt
-                    end
+    for npc_id, npcConfig in pairs(self.mSceneConfigVo.npcList) do
+        for _, eventConfigVo in pairs(npcConfig.base_config.event_ConfigVoList) do
+            if eventConfigVo.event_type == SandPlayConst.EventType.Treasure_Box then
+                local unLock = true
+                if npcConfig.show_Dt ~= 0 then
+                    unLock = clientTime >= npcConfig.show_Dt
+                end
 
-                    if isShow and npcConfig.hide_Dt ~= 0 then
-                        unLock = clientTime < npcConfig.hide_Dt
-                    end
+                if isShow and npcConfig.hide_Dt ~= 0 then
+                    unLock = clientTime < npcConfig.hide_Dt
+                end
 
-                    if not table.empty(npcConfig.show_condition) and isShow then
-                        unLock = SandPlayConst.NPCConditionPass(npcConfig.show_condition)
-                    end
+                if not table.empty(npcConfig.show_condition) and isShow then
+                    unLock = SandPlayConst.NPCConditionPass(npcConfig.show_condition)
+                end
 
-                    if unLock then
-                        totalNum = totalNum + 1
+                if unLock then
+                    totalNum = totalNum + 1
 
-                        if sandPlay.SandPlayManager:getMapEventIsPass(nil, npc_id, eventConfigVo.event_id) then
-                            openNum = openNum + 1
-                        end
+                    if sandPlay.SandPlayManager:getMapEventIsPass(nil, npc_id, eventConfigVo.event_id) then
+                        openNum = openNum + 1
                     end
                 end
             end
         end
     end
 
-    self.mTextBoxNum.text = string.format("%s/%s", openNum, totalNum)
+    if totalNum <= 0 then
+        self.mBoxNum:SetActive(false)
+    else
+        self.mBoxNum:SetActive(true)
+        self.mTextBoxNum.text = string.format("%s/%s", openNum, totalNum)
+    end
 end
 
 -------------------------------------------NPC信息
 function initNpcInfo(self)
     local npcThingList = sandPlay.SandPlaySceneController:getAllNPCList()
     for npc_id, npcThing in pairs(npcThingList) do
-        self:addNPCInfo(npcThing)
+        local npcInfo_data = npcThing:getInfoData()
+        if npcInfo_data then
+            self:refreshNPCInfo(npcInfo_data)
+        end
+
+        if npcThing.mData.config.base_config.type == SandPlayConst.NPC_TYPE.BREED then
+            local breedThing = npcThing:getPoultryThingList(SandPlayConst.HappyFarm_Poultry_Type.Sheep)
+            for _, sheepThing in pairs(breedThing) do
+                local thing_data = sheepThing:getInfoData()
+                if thing_data then
+                    self:refreshNPCInfo(thing_data)
+                end
+            end
+        end
     end
 end
 
-function addNpc(self, npcThing)
-    self:addNPCInfo(npcThing)
+function onRefreshNpc(self, npcThing)
+    local npcInfo_data = npcThing:getInfoData()
+    if npcInfo_data then
+        self:refreshNPCInfo(npcInfo_data)
+    end
     self:refreshBoxNum()
 end
 
@@ -250,40 +297,72 @@ function refreshNPCInfoPos(self)
     end
 end
 
-function addNPCInfo(self, npcThing)
-    local npcConfig = npcThing:getData().config.base_config
-    local npc_id = npcConfig.npc_id
-    local item = self.mNPCInfolist[npc_id]
+function refreshNPCInfo(self, npcInfo_data)
+    local item = self.mNPCInfolist[npcInfo_data.id]
     if item == nil then
         item = SimpleInsItem:create(self.mItemNPCInfo, self.mGroupNPCInfo, "sandPlay_SceneNPCInfo")
-        self.mNPCInfolist[npc_id] = item
-
-        item.thing = npcThing
-
-        local isNullOrEmpty = string.NullOrEmpty(npcConfig.fun_name)
-        local mTextNPCFunName = item:getChildGO("mTextNPCFunName")
-        mTextNPCFunName:SetActive(not isNullOrEmpty)
-        if not isNullOrEmpty then
-            mTextNPCFunName:GetComponent(ty.Text).text = npcConfig.fun_name
-        end
-
-        isNullOrEmpty = string.NullOrEmpty(npcConfig.name)
-        local mTextNPCName = item:getChildGO("mTextNPCName")
-        mTextNPCName:SetActive(not isNullOrEmpty)
-        if not isNullOrEmpty then
-            mTextNPCName:GetComponent(ty.Text).text = npcConfig.name
-        end
-
-        local path = npcConfig:getSignPath()
-        isNullOrEmpty = path == nil
-        item:getChildGO("mNPCSign"):SetActive(not isNullOrEmpty)
-        if not isNullOrEmpty then
-            item:getChildGO("mImgNPCSign"):GetComponent(ty.AutoRefImage):SetImg(path)
-        end
+        self.mNPCInfolist[npcInfo_data.id] = item
 
         item.updatePos = function(obj)
-            local followTrans = obj.thing:getTrans()
-            gs.CameraMgr:World2UIOffsetY(followTrans, self.mGroupNPCInfo.transform, obj.m_trans, 1.1)
+            local followTrans = obj.data.follow_trans
+            if followTrans ~= nil and not gs.GoUtil.IsTransNull(followTrans) then
+                gs.CameraMgr:World2UIOffsetY(followTrans, self.mGroupNPCInfo.transform, obj.m_trans, obj.data.offset_Y)
+            end
+        end
+
+        item:addUIEvent("mBtnFunc", function ()
+            if item.data.funCall then
+                item.data.funCall()
+            end
+        end)
+    end
+
+    item.data = npcInfo_data
+
+    local isNullOrEmpty = string.NullOrEmpty(npcInfo_data.fun_name)
+    local mTextNPCFunName = item:getChildGO("mTextNPCFunName")
+    mTextNPCFunName:SetActive(not isNullOrEmpty)
+    if not isNullOrEmpty then
+        mTextNPCFunName:GetComponent(ty.Text).text = npcInfo_data.fun_name
+    end
+
+    isNullOrEmpty = string.NullOrEmpty(npcInfo_data.name)
+    local mTextNPCName = item:getChildGO("mTextNPCName")
+    mTextNPCName:SetActive(not isNullOrEmpty)
+    if not isNullOrEmpty then
+        mTextNPCName:GetComponent(ty.Text).text = npcInfo_data.name
+    end
+
+    local path = npcInfo_data.sign_path
+    isNullOrEmpty = path == nil
+    item:getChildGO("mNPCSign"):SetActive(not isNullOrEmpty)
+    if not isNullOrEmpty then
+        item:getChildGO("mImgNPCSign"):GetComponent(ty.AutoRefImage):SetImg(path)
+    end
+
+    if npcInfo_data.funCall ~= nil then
+        item:getChildGO("mBtnFunc"):SetActive(true)
+        item:getChildGO("mImgFunc"):GetComponent(ty.AutoRefImage):SetImg(npcInfo_data.funcPath)
+    else
+        item:getChildGO("mBtnFunc"):SetActive(false)
+    end
+
+    item:getChildGO("mEffect"):SetActive(npcInfo_data.is_reap)
+
+    item:updatePos()
+end
+
+function refreshNPCSign(self, npc_id, signPath)
+    if not self.mNPCInfolist then
+        return
+    end
+
+    local npcInfoItem = self.mNPCInfolist[npc_id]
+    if npcInfoItem then
+        local isNullOrEmpty = string.NullOrEmpty(signPath)
+        item:getChildGO("mNPCSign"):SetActive(not isNullOrEmpty)
+        if not isNullOrEmpty then
+            item:getChildGO("mImgNPCSign"):GetComponent(ty.AutoRefImage):SetImg(signPath)
         end
     end
 end
@@ -310,7 +389,8 @@ end
 
 --检测NPC气泡显示的时间
 function checkNPCBubble(self)
-    self.mShowBubbleTime = sysParam.SysParamManager:getValue(SysParamType.SandPlayNPCBubbleShowTime)
+    self.mShowBubbleTime = sysParam.SysParamManager:getValue(SysParamType.SandPlayNPCBubbleShowTime) or
+    self.mNPBBubbleShowTime
 
     self:clearShowNPCBubbleTimer()
     self.mShowBubbleTimer = self:addTimer(1, 0, self.onCheckNPCBubble)
@@ -329,8 +409,14 @@ function onCheckNPCBubble(self)
     end
 
     local clientTime = GameManager:getClientTime()
+    if not clientTime then
+        return
+    end
+
     for npc_id, bubbleItem in pairs(self.mNPCBubbleList) do
-        if (clientTime - bubbleItem.lateShowTime) >= self.mShowBubbleTime then
+        if not bubbleItem.lateShowTime then
+            bubbleItem.lateShowTime = clientTime
+        elseif (clientTime - bubbleItem.lateShowTime) >= self.mShowBubbleTime then
             self:deleteNPCBubble(npc_id)
         end
     end
@@ -351,11 +437,10 @@ function getNPCBubble(self, npc_id)
         self.mNPCBubbleList[npc_id] = item
 
         local npcThing = sandPlay.SandPlaySceneController:getNPCThing(npc_id)
-        -- logAll(npc_id)
         item.thing = npcThing
 
         item.mTextBubble = item.m_childGos["mTextBubble"]:GetComponent(ty.Text)
-        item.lateShowTime = 0
+        item.lateShowTime = nil
 
         item.refreshText = function(obj, text)
             if obj.m_go.activeSelf == false then
@@ -487,6 +572,54 @@ function clearGuildItem(self)
     self.mGuideItemList = {}
 end
 
+---------------------------------------农田信息
+function onShowFieldInfo(self, args)
+    --{active,name,reapTime} 激活状态、名字、收获时间戳
+    if self.mFieldInfo then
+        if args.id == self.mFieldInfo.id then
+            if not args.active then
+                return
+            end
+        end
+    end
+
+    if not args.active or args.reapTime - GameManager:getClientTime() <= 0 then
+        self:hideFieldInfo()
+        return
+    end
+
+    self.mFieldInfoGroup:SetActive(true)
+
+    self.mFieldInfo = args
+    self.mTextFieldName.text = self.mFieldInfo.name
+
+    self:showFieldInfo()
+
+    self.mFieldInfoTimeSn = self:addTimer(1, 0, self.showFieldInfo)
+end
+
+function hideFieldInfo(self)
+    self.mFieldInfo = nil
+    self:clearFieldInfoTimeSn()
+    self.mFieldInfoGroup:SetActive(false)
+end
+
+function showFieldInfo(self)
+    local growDt = self.mFieldInfo.reapTime - GameManager:getClientTime()
+    if growDt > 0 then
+        self.mTextFieldTime.text = _TT(137025, TimeUtil.getFormatTimeBySeconds_1(growDt))
+    else
+        self:hideFieldInfo()
+    end
+end
+
+function clearFieldInfoTimeSn(self)
+    if self.mFieldInfoTimeSn then
+        self:removeTimerByIndex(self.mFieldInfoTimeSn)
+        self.mFieldInfoTimeSn = nil
+    end
+end
+
 function refreshGuideRedState(self)
     if not self.mSceneConfigVo then
         return
@@ -506,9 +639,24 @@ function refreshGuideRedState(self)
                 end
             end
             if isShowRed then
-                RedPointManager:add(guildItem.m_trans, nil, 23.6, 26.4)
+                RedPointManager:add(guildItem.m_trans, nil, 16.4, 19)
             else
                 RedPointManager:remove(guildItem.m_trans)
+            end
+        end
+    end
+
+    for i = 1, #self.mSceneConfigVo.guideList do
+        local data = self.mSceneConfigVo.guideList[i]
+
+        local guildItem = self.mGuideItemList[i]
+        if guildItem then
+            if data.red_id ~= 0 then
+                if SandPlayConst.getGuildRedState(data.red_id) then
+                    RedPointManager:add(guildItem.m_trans, nil, 16.4, 19)
+                else
+                    RedPointManager:remove(guildItem.m_trans)
+                end
             end
         end
     end

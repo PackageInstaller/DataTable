@@ -1,9 +1,4 @@
-﻿local var_0_0 = {
-	"先把角色<color=#ffde38>锁定</color>起来吧",
-	"让我们返回主界面"
-}
-
-return {
+﻿return {
 	id = "S003",
 	events = {
 		{
@@ -28,7 +23,10 @@ return {
 				dir = -1,
 				posY = 250,
 				posX = 450,
-				text = var_0_0[1]
+				text = ({
+					"先把角色<color=#ffde38>锁定</color>起来吧",
+					"让我们返回主界面"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -49,7 +47,10 @@ return {
 				dir = -1,
 				posY = 213.63,
 				posX = -194.88,
-				text = var_0_0[2]
+				text = ({
+					"先把角色<color=#ffde38>锁定</color>起来吧",
+					"让我们返回主界面"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,

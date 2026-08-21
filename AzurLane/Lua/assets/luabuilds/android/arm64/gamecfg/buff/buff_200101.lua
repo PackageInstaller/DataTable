@@ -37,14 +37,10 @@
 					}
 				},
 				centerPosFun = function(arg_1_0)
-					Vector3 = var_1_10001
-
-					return var_1_10001(3.5, -0.5, 0)
+					return Vector3(3.5, -0.5, 0)
 				end,
 				rotationFun = function(arg_2_0)
-					Vector3 = var_1_10001
-
-					return var_1_10001(0, 0, 0)
+					return Vector3(0, 0, 0)
 				end
 			}
 		}

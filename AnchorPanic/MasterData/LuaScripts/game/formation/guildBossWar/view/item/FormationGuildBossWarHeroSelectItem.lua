@@ -63,8 +63,11 @@ function __update(self)
 end
 
 function __onClickHeadHandler(self)
+    local isReplaceHero = self.data:getDataVo().isReplaceHero
     if self.lockState == 1 and self.data:getDataVo().teamId ~= 14004 then
-        gs.Message.Show("战员已锁定不可选择")
+        gs.Message.Show(_TT(149266))
+    elseif not self.m_isInFormation and self.manager:getSelectFilterHeroCount(self.data:getDataVo().teamId) >= 5 and not isReplaceHero then
+        gs.Message.Show(_TT(149267))
     else
         self.manager:dispatchEvent(self.manager.HERO_FORMATION_SELECT, {heroId = self.dataVo.id, heroTid = self.dataVo.tid, heroSourceType = formation.HERO_SOURCE_TYPE.OWN, isInFormation = self.m_isInFormation, isInAssist = self.m_isInAssist})
     end

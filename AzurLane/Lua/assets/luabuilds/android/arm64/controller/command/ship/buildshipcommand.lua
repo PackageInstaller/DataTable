@@ -1,142 +1,65 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BuildShipCommand", pm.SimpleCommand)
 
-local var_0_0 = "BuildShipCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.buildId
+	local var_1_2 = var_1_0.count or 1
+	local var_1_3 = var_1_0.isTicket
+	local var_1_4, var_1_5, var_1_6 = BuildShip.canBuildShipByBuildId(var_1_1, var_1_2, var_1_0.isTicket)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().buildId
-	local var_1_1
-
-	if not var_2.count then
-		var_1_1 = 1
-	end
-
-	local var_1_2 = var_2.isTicket
-
-	BuildShip = var_1_10006
-
-	local var_1_3, var_1_4, var_1_5 = var_1_10006.canBuildShipByBuildId(var_1_0, var_1_1, var_1_2)
-
-	if not var_1_3 then
-		if var_1_5 then
-			GoShoppingMsgBox = var_9
-			i18n = var_1_10011
-
-			local var_1_6 = var_1_10011("switch_to_shop_tip_1")
-
-			ChargeScene = var_1_10012
-
-			var_9(var_1_6, var_1_10012.TYPE_ITEM, var_1_5)
+	if not var_1_4 then
+		if var_1_6 then
+			GoShoppingMsgBox(i18n("switch_to_shop_tip_1"), ChargeScene.TYPE_ITEM, var_1_6)
 		else
-			pg = var_9
-
-			local var_1_7 = var_9.TipsMgr.GetInstance()
-
-			var_9.ShowTips(var_1_7, var_1_4)
+			pg.TipsMgr.GetInstance():ShowTips(var_1_5)
 		end
 
 		return
 	end
 
-	pg = var_9
-
-	local var_1_8 = var_9.ConnectionMgr.GetInstance()
-
-	var_9.Send(var_1_8, 12002, {
-		id = var_1_0,
-		count = var_1_1,
-		costtype = var_1_2 and 1 or 0
+	pg.ConnectionMgr.GetInstance():Send(12002, {
+		id = var_1_1,
+		count = var_1_2,
+		costtype = var_1_3 and 1 or 0
 	}, 12003, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			pg = var_2_1
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_BUILD_SHIP, var_1_2)
 
-			local var_2_0 = var_2_1.TrackerMgr.GetInstance()
+			local var_2_0 = pg.ship_data_create_material[var_1_1]
 
-			var_2_1 = var_2_1.Tracking
-			TRACKING_BUILD_SHIP = var_2_10004
+			if var_1_3 then
+				local var_2_1 = getProxy(ActivityProxy)
+				local var_2_2 = var_2_1:getBuildFreeActivityByBuildId(var_1_1)
 
-			var_2_1(var_2_0, var_2_10004, var_1_1)
+				var_2_2.data1 = var_2_2.data1 - var_1_2
 
-			pg = var_2_1
-			var_2_1 = var_2_1.ship_data_create_material[var_1_0]
-
-			if var_1_2 then
-				getProxy = var_2
-				ActivityProxy = var_2_10004
-
-				local var_2_2 = var_2(var_2_10004)
-
-				var_3.data1 = var_2.getBuildFreeActivityByBuildId(var_2_2, var_1_0).data1 - var_1_1
-
-				var_2:updateActivity(var_3)
+				var_2_1:updateActivity(var_2_2)
 			else
-				getProxy = var_2
-				BagProxy = var_2_10004
+				getProxy(BagProxy):removeItemById(var_2_0.use_item, var_2_0.number_1 * var_1_2)
 
-				local var_2_3 = var_2(var_2_10004)
+				local var_2_3 = getProxy(PlayerProxy)
+				local var_2_4 = var_2_3:getData()
 
-				var_2.removeItemById(var_2_3, var_2_1.use_item, var_2_1.number_1 * var_1_1)
-
-				getProxy = var_3
-				PlayerProxy = var_2_3
-
-				local var_2_4 = var_3(var_2_3)
-				local var_2_5 = var_3.getData(var_2_4)
-
-				var_2_10004.consume(var_2_5, {
-					gold = var_2_1.use_gold * var_1_1
+				var_2_4:consume({
+					gold = var_2_0.use_gold * var_1_2
 				})
-				var_3:updatePlayer(var_2_10004)
+				var_2_3:updatePlayer(var_2_4)
 			end
 
-			getProxy = var_2
-			BuildShipProxy = var_2_10004
+			local var_2_5 = getProxy(BuildShipProxy)
 
-			local var_2_6 = var_2(var_2_10004)
-			local var_2_7 = var_2_1.exchange_count
-
-			if 0 < var_2_7 then
-				var_2_6:changeRegularExchangeCount(var_1_1 * var_2_1.exchange_count)
+			if var_2_0.exchange_count > 0 then
+				var_2_5:changeRegularExchangeCount(var_1_2 * var_2_0.exchange_count)
 			end
 
-			ipairs = var_2_7
-
-			for iter_2_0, iter_2_1 in var_2_7(arg_2_0.build_info) do
-				BuildShip = var_2_10008
-				var_2_10008 = var_2_10008.New(iter_2_1)
-
-				var_2_6:addBuildShip(var_2_10008)
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.build_info) do
+				var_2_5:addBuildShip((BuildShip.New(iter_2_1)))
 			end
 
-			local var_2_8 = arg_1_0
-			local var_2_9 = var_3.sendNotification
-
-			GAME = iter_2_0
-
-			var_2_9(var_2_8, iter_2_0.BUILD_SHIP_DONE)
-
-			pg = var_2_9
-
-			local var_2_10 = var_2_9.TipsMgr.GetInstance()
-			local var_2_11 = var_3.ShowTips
-
-			i18n = var_6
-
-			var_2_11(var_2_10, var_6("ship_buildShipMediator_startBuild"))
+			arg_1_0:sendNotification(GAME.BUILD_SHIP_DONE)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_buildShipMediator_startBuild"))
 		else
-			pg = var_2_1
-
-			local var_2_12 = var_2_1.TipsMgr.GetInstance()
-			local var_2_13 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_13(var_2_12, var_2_10004("ship_buildShip_error", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_buildShip_error", arg_2_0.result))
 		end
 
 		return
@@ -145,4 +68,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

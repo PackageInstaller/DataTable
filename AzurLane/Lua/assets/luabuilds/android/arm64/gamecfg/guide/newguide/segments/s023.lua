@@ -1,10 +1,4 @@
-﻿local var_0_0 = {
-	"指挥官请点击<color=#ff7d36>出击</color>",
-	"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！击破她的话就可以获得演习的胜利了！快上吧",
-	"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~"
-}
-
-return {
+﻿return {
 	id = "S023",
 	events = {
 		{
@@ -15,17 +9,16 @@ return {
 				dir = 1,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！击破她的话就可以获得演习的胜利了！快上吧",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -49,7 +42,11 @@ return {
 				dir = 1,
 				posY = -200,
 				posX = -190,
-				text = var_0_0[2]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！击破她的话就可以获得演习的胜利了！快上吧",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~"
+				})[2]
 			},
 			baseui = {
 				delay = 0.2,
@@ -64,7 +61,11 @@ return {
 				dir = 1,
 				posY = -351,
 				posX = -257,
-				text = var_0_0[3]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！击破她的话就可以获得演习的胜利了！快上吧",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~"
+				})[3]
 			},
 			ui = {
 				eventPath = "/LevelCamera/Canvas/UIMain/LevelGrid/DragLayer/plane/quads/chapter_cell_quad_4_6",

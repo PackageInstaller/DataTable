@@ -1,158 +1,57 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ValentineQteGameResultWindow")
+﻿local var_0_0 = class("ValentineQteGameResultWindow")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg = var_1_10002
-
-	var_1_10002.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
 	arg_1_0._tf = arg_1_1
 	arg_1_0._parentTf = arg_1_1.parent
 	arg_1_0.backBtn = arg_1_1:Find("back")
 	arg_1_0.shareBtn = arg_1_1:Find("share")
-
-	local var_1_0 = arg_1_1:Find("frame/score/Text")
-	local var_1_1 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.scoreTxt = var_1_1(var_1_0, var_5(var_1_10007))
-
-	local var_1_2 = arg_1_1:Find("frame/content/Perfect/value/Text")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.perfectTxt = var_1_3(var_1_2, var_5(var_1_10007))
-
-	local var_1_4 = arg_1_1:Find("frame/content/Great/value/Text")
-	local var_1_5 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.greatTxt = var_1_5(var_1_4, var_5(var_1_10007))
-
-	local var_1_6 = arg_1_1:Find("frame/content/Good/value/Text")
-	local var_1_7 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.goodTxt = var_1_7(var_1_6, var_5(var_1_10007))
-
-	local var_1_8 = arg_1_1:Find("frame/content/Miss/value/Text")
-	local var_1_9 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.missTxt = var_1_9(var_1_8, var_5(var_1_10007))
-
-	local var_1_10 = arg_1_1:Find("frame/content/Combo/value/Text")
-	local var_1_11 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.comboTxt = var_1_11(var_1_10, var_5(var_1_10007))
-
-	local var_1_12 = arg_1_1:Find("chat/Text")
-	local var_1_13 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.chatTxt = var_1_13(var_1_12, var_5(var_1_10007))
-
-	local var_1_14 = arg_1_1:Find("frame/Text")
-	local var_1_15 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTxt = var_1_15(var_1_14, var_5(var_1_10007))
+	arg_1_0.scoreTxt = arg_1_1:Find("frame/score/Text"):GetComponent(typeof(Text))
+	arg_1_0.perfectTxt = arg_1_1:Find("frame/content/Perfect/value/Text"):GetComponent(typeof(Text))
+	arg_1_0.greatTxt = arg_1_1:Find("frame/content/Great/value/Text"):GetComponent(typeof(Text))
+	arg_1_0.goodTxt = arg_1_1:Find("frame/content/Good/value/Text"):GetComponent(typeof(Text))
+	arg_1_0.missTxt = arg_1_1:Find("frame/content/Miss/value/Text"):GetComponent(typeof(Text))
+	arg_1_0.comboTxt = arg_1_1:Find("frame/content/Combo/value/Text"):GetComponent(typeof(Text))
+	arg_1_0.chatTxt = arg_1_1:Find("chat/Text"):GetComponent(typeof(Text))
+	arg_1_0.nameTxt = arg_1_1:Find("frame/Text"):GetComponent(typeof(Text))
 
 	arg_1_0:Init()
+	setText(arg_1_1:Find("frame/score/label"), i18n("Valentine_minigame_label1"))
 
-	setText = var_2
+	arg_1_0.nameTxt.text = getProxy(PlayerProxy):getRawData():GetName()
 
-	local var_1_16 = arg_1_1:Find("frame/score/label")
-
-	i18n = var_5
-
-	var_2(var_1_16, var_5("Valentine_minigame_label1"))
-
-	local var_1_17 = arg_1_0.nameTxt
-
-	getProxy = var_1_10003
-	PlayerProxy = var_5
-
-	local var_1_18 = var_1_10003(var_5)
-	local var_1_19 = var_3.getRawData(var_1_18)
-
-	var_1_17.text = var_3.GetName(var_1_19)
-	setActive = var_1_17
-
-	var_1_17(arg_1_0.nameTxt.gameObject, false)
+	setActive(arg_1_0.nameTxt.gameObject, false)
 
 	return
 end
 
 function var_0_0.Init(arg_2_0)
-	onButton = var_1_10001
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.backBtn
-
-	local function var_2_2()
+	onButton(arg_2_0, arg_2_0.backBtn, function()
 		if arg_2_0.callback then
 			arg_2_0.callback()
 		end
 
-		local var_3_0 = arg_2_0
-
-		var_0.Hide(var_3_0)
+		arg_2_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_0, var_2_1, var_2_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_2_3 = arg_2_0
-	local var_2_4 = arg_2_0.shareBtn
-
-	local function var_2_5()
-		pg = var_2_10000
-
-		local var_4_0 = var_2_10000.ShareMgr.GetInstance()
-		local var_4_1 = var_0.Share
-
-		pg = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.ShareMgr.TypeValentineQte)
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.shareBtn, function()
+		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeValentineQte)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_3, var_2_4, var_2_5, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
 function var_0_0.Show(arg_5_0, arg_5_1, arg_5_2)
-	pg = var_1_10003
-
-	local var_5_0 = var_1_10003.UIMgr.GetInstance()
-
-	var_3.BlurPanel(var_5_0, arg_5_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
 
 	arg_5_0.statistics = arg_5_1
 	arg_5_0.callback = arg_5_2
-	setActive = var_3
 
-	var_3(arg_5_0._tf, true)
+	setActive(arg_5_0._tf, true)
 	arg_5_0:Flush()
 
 	return
@@ -173,25 +72,16 @@ end
 function var_0_0.GetChatTxt(arg_7_0, arg_7_1)
 	local var_7_0
 
-	ipairs = var_1_10003
-	ValentineQteGameConst = var_1_10005
-
-	for iter_7_0, iter_7_1 in var_1_10003(var_1_10005.CHAT_CONTENT) do
-		local var_7_1 = iter_7_1[1]
-		local var_7_2 = iter_7_1[2]
-		local var_7_3 = iter_7_1[3]
-
-		if var_7_1 <= arg_7_1 and arg_7_1 <= var_7_2 then
-			var_7_0 = var_7_3
+	for iter_7_0, iter_7_1 in ipairs(ValentineQteGameConst.CHAT_CONTENT) do
+		if iter_7_1[1] <= arg_7_1 and arg_7_1 <= iter_7_1[2] then
+			var_7_0 = iter_7_1[3]
 
 			break
 		end
 	end
 
 	if var_7_0 then
-		i18n = var_3
-
-		return var_3("2025Valentine_minigame_" .. var_7_0)
+		return i18n("2025Valentine_minigame_" .. var_7_0)
 	else
 		return ""
 	end
@@ -200,26 +90,18 @@ function var_0_0.GetChatTxt(arg_7_0, arg_7_1)
 end
 
 function var_0_0.Hide(arg_8_0)
-	pg = var_1_10001
-
-	local var_8_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_8_0, arg_8_0._tf, arg_8_0._parentTf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_8_0._tf, arg_8_0._parentTf)
 
 	arg_8_0.callback = nil
-	setActive = var_1
 
-	var_1(arg_8_0._tf, false)
+	setActive(arg_8_0._tf, false)
 
 	return
 end
 
 function var_0_0.Destroy(arg_9_0)
 	arg_9_0:Hide()
-
-	pg = var_1
-
-	var_1.DelegateInfo.Dispose(arg_9_0)
+	pg.DelegateInfo.Dispose(arg_9_0)
 
 	return
 end

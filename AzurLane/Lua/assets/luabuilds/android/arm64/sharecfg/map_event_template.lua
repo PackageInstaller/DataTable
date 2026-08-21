@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "map_event_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "map_event_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.map_event_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.map_event_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.map_event_template = rawget(pg, "map_event_template") or setmetatable({
+	__name = "map_event_template"
+}, confNEO)
+pg.map_event_template.all = {
 	20,
 	21,
 	22,
@@ -922,25 +899,11 @@ var_0_3.all = {
 	934,
 	935
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.map_event_template = {}
+pg.base = pg.base or {}
+pg.base.map_event_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.map_event_template
-
-	var_1_0[20] = {
+	pg.base.map_event_template[20] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -975,11 +938,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.map_event_template
-
-	var_1_1[21] = {
+	pg.base.map_event_template[21] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "maoyin",
@@ -997,11 +956,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.map_event_template
-
-	var_1_2[22] = {
+	pg.base.map_event_template[22] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "lulutiye",
@@ -1019,11 +974,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.map_event_template
-
-	var_1_3[24] = {
+	pg.base.map_event_template[24] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1042,11 +993,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.map_event_template
-
-	var_1_4[25] = {
+	pg.base.map_event_template[25] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1065,11 +1012,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.map_event_template
-
-	var_1_5[27] = {
+	pg.base.map_event_template[27] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1093,11 +1036,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.map_event_template
-
-	var_1_6[28] = {
+	pg.base.map_event_template[28] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1115,11 +1054,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.map_event_template
-
-	var_1_7[29] = {
+	pg.base.map_event_template[29] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1137,11 +1072,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.map_event_template
-
-	var_1_8[30] = {
+	pg.base.map_event_template[30] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1159,11 +1090,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.map_event_template
-
-	var_1_9[31] = {
+	pg.base.map_event_template[31] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1181,11 +1108,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.map_event_template
-
-	var_1_10[32] = {
+	pg.base.map_event_template[32] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1203,11 +1126,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.map_event_template
-
-	var_1_11[33] = {
+	pg.base.map_event_template[33] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1225,11 +1144,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.map_event_template
-
-	var_1_12[34] = {
+	pg.base.map_event_template[34] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1247,11 +1162,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.map_event_template
-
-	var_1_13[35] = {
+	pg.base.map_event_template[35] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1293,11 +1204,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.map_event_template
-
-	var_1_14[36] = {
+	pg.base.map_event_template[36] = {
 		grid_color = "cell_box",
 		memory = 40045,
 		ship_prefab = "",
@@ -1338,11 +1245,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.map_event_template
-
-	var_1_15[37] = {
+	pg.base.map_event_template[37] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1377,11 +1280,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.map_event_template
-
-	var_1_16[38] = {
+	pg.base.map_event_template[38] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1399,11 +1298,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.map_event_template
-
-	var_1_17[39] = {
+	pg.base.map_event_template[39] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1421,11 +1316,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.map_event_template
-
-	var_1_18[40] = {
+	pg.base.map_event_template[40] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1443,11 +1334,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.map_event_template
-
-	var_1_19[41] = {
+	pg.base.map_event_template[41] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1465,11 +1352,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.map_event_template
-
-	var_1_20[42] = {
+	pg.base.map_event_template[42] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1487,11 +1370,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.map_event_template
-
-	var_1_21[43] = {
+	pg.base.map_event_template[43] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1509,11 +1388,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.map_event_template
-
-	var_1_22[44] = {
+	pg.base.map_event_template[44] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1541,11 +1416,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.map_event_template
-
-	var_1_23[50] = {
+	pg.base.map_event_template[50] = {
 		grid_color = "cell_box",
 		memory = 40032,
 		ship_prefab = "",
@@ -1563,11 +1434,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.map_event_template
-
-	var_1_24[51] = {
+	pg.base.map_event_template[51] = {
 		grid_color = "cell_box",
 		memory = 40037,
 		ship_prefab = "",
@@ -1585,11 +1452,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.map_event_template
-
-	var_1_25[52] = {
+	pg.base.map_event_template[52] = {
 		grid_color = "cell_box",
 		memory = 40033,
 		ship_prefab = "",
@@ -1607,11 +1470,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.map_event_template
-
-	var_1_26[53] = {
+	pg.base.map_event_template[53] = {
 		grid_color = "cell_box",
 		memory = 40039,
 		ship_prefab = "",
@@ -1629,11 +1488,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.map_event_template
-
-	var_1_27[54] = {
+	pg.base.map_event_template[54] = {
 		grid_color = "cell_box",
 		memory = 40043,
 		ship_prefab = "",
@@ -1651,11 +1506,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.map_event_template
-
-	var_1_28[55] = {
+	pg.base.map_event_template[55] = {
 		grid_color = "cell_box",
 		memory = 40040,
 		ship_prefab = "",
@@ -1673,11 +1524,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.map_event_template
-
-	var_1_29[56] = {
+	pg.base.map_event_template[56] = {
 		grid_color = "cell_box",
 		memory = 40041,
 		ship_prefab = "",
@@ -1695,11 +1542,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.map_event_template
-
-	var_1_30[57] = {
+	pg.base.map_event_template[57] = {
 		grid_color = "cell_box",
 		memory = 40034,
 		ship_prefab = "",
@@ -1717,11 +1560,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.map_event_template
-
-	var_1_31[58] = {
+	pg.base.map_event_template[58] = {
 		grid_color = "cell_box",
 		memory = 40035,
 		ship_prefab = "",
@@ -1739,11 +1578,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.map_event_template
-
-	var_1_32[59] = {
+	pg.base.map_event_template[59] = {
 		grid_color = "cell_box",
 		memory = 40036,
 		ship_prefab = "",
@@ -1761,11 +1596,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.map_event_template
-
-	var_1_33[60] = {
+	pg.base.map_event_template[60] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1786,11 +1617,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.map_event_template
-
-	var_1_34[61] = {
+	pg.base.map_event_template[61] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1811,11 +1638,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.map_event_template
-
-	var_1_35[62] = {
+	pg.base.map_event_template[62] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1836,11 +1659,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.map_event_template
-
-	var_1_36[63] = {
+	pg.base.map_event_template[63] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1861,11 +1680,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.map_event_template
-
-	var_1_37[64] = {
+	pg.base.map_event_template[64] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1886,11 +1701,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.map_event_template
-
-	var_1_38[65] = {
+	pg.base.map_event_template[65] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1916,11 +1727,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.map_event_template
-
-	var_1_39[66] = {
+	pg.base.map_event_template[66] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1941,11 +1748,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.map_event_template
-
-	var_1_40[67] = {
+	pg.base.map_event_template[67] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1966,11 +1769,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.map_event_template
-
-	var_1_41[68] = {
+	pg.base.map_event_template[68] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -1991,11 +1790,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.map_event_template
-
-	var_1_42[69] = {
+	pg.base.map_event_template[69] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2016,11 +1811,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.map_event_template
-
-	var_1_43[70] = {
+	pg.base.map_event_template[70] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2044,11 +1835,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.map_event_template
-
-	var_1_44[71] = {
+	pg.base.map_event_template[71] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2072,11 +1859,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.map_event_template
-
-	var_1_45[72] = {
+	pg.base.map_event_template[72] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2100,11 +1883,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.map_event_template
-
-	var_1_46[73] = {
+	pg.base.map_event_template[73] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2128,11 +1907,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.map_event_template
-
-	var_1_47[74] = {
+	pg.base.map_event_template[74] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2156,11 +1931,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.map_event_template
-
-	var_1_48[75] = {
+	pg.base.map_event_template[75] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2178,11 +1949,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.map_event_template
-
-	var_1_49[76] = {
+	pg.base.map_event_template[76] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2200,11 +1967,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.map_event_template
-
-	var_1_50[78] = {
+	pg.base.map_event_template[78] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2222,11 +1985,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.map_event_template
-
-	var_1_51[84] = {
+	pg.base.map_event_template[84] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2248,11 +2007,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.map_event_template
-
-	var_1_52[85] = {
+	pg.base.map_event_template[85] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2274,11 +2029,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.map_event_template
-
-	var_1_53[87] = {
+	pg.base.map_event_template[87] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2299,11 +2050,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.map_event_template
-
-	var_1_54[88] = {
+	pg.base.map_event_template[88] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2324,11 +2071,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.map_event_template
-
-	var_1_55[89] = {
+	pg.base.map_event_template[89] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2349,11 +2092,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.map_event_template
-
-	var_1_56[90] = {
+	pg.base.map_event_template[90] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2371,11 +2110,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.map_event_template
-
-	var_1_57[91] = {
+	pg.base.map_event_template[91] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2393,11 +2128,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.map_event_template
-
-	var_1_58[92] = {
+	pg.base.map_event_template[92] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2415,11 +2146,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.map_event_template
-
-	var_1_59[93] = {
+	pg.base.map_event_template[93] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2437,11 +2164,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.map_event_template
-
-	var_1_60[94] = {
+	pg.base.map_event_template[94] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "aijiangCL",
@@ -2459,11 +2182,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.map_event_template
-
-	var_1_61[95] = {
+	pg.base.map_event_template[95] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2491,11 +2210,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.map_event_template
-
-	var_1_62[96] = {
+	pg.base.map_event_template[96] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2513,11 +2228,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.map_event_template
-
-	var_1_63[97] = {
+	pg.base.map_event_template[97] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2535,11 +2246,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.map_event_template
-
-	var_1_64[98] = {
+	pg.base.map_event_template[98] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2557,11 +2264,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.map_event_template
-
-	var_1_65[99] = {
+	pg.base.map_event_template[99] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2579,11 +2282,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.map_event_template
-
-	var_1_66[100] = {
+	pg.base.map_event_template[100] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2601,11 +2300,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.map_event_template
-
-	var_1_67[101] = {
+	pg.base.map_event_template[101] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2623,11 +2318,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.map_event_template
-
-	var_1_68[102] = {
+	pg.base.map_event_template[102] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2645,11 +2336,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.map_event_template
-
-	var_1_69[103] = {
+	pg.base.map_event_template[103] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2667,11 +2354,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.map_event_template
-
-	var_1_70[104] = {
+	pg.base.map_event_template[104] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2698,11 +2381,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.map_event_template
-
-	var_1_71[105] = {
+	pg.base.map_event_template[105] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2729,11 +2408,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.map_event_template
-
-	var_1_72[106] = {
+	pg.base.map_event_template[106] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2760,11 +2435,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.map_event_template
-
-	var_1_73[107] = {
+	pg.base.map_event_template[107] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2791,11 +2462,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.map_event_template
-
-	var_1_74[108] = {
+	pg.base.map_event_template[108] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2822,11 +2489,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.map_event_template
-
-	var_1_75[109] = {
+	pg.base.map_event_template[109] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2853,11 +2516,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.map_event_template
-
-	var_1_76[110] = {
+	pg.base.map_event_template[110] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2884,11 +2543,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.map_event_template
-
-	var_1_77[111] = {
+	pg.base.map_event_template[111] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2915,11 +2570,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.map_event_template
-
-	var_1_78[112] = {
+	pg.base.map_event_template[112] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2946,11 +2597,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.map_event_template
-
-	var_1_79[113] = {
+	pg.base.map_event_template[113] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -2977,11 +2624,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.map_event_template
-
-	var_1_80[114] = {
+	pg.base.map_event_template[114] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3008,11 +2651,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.map_event_template
-
-	var_1_81[115] = {
+	pg.base.map_event_template[115] = {
 		grid_color = "cell_box",
 		memory = 40133,
 		ship_prefab = "",
@@ -3030,11 +2669,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.map_event_template
-
-	var_1_82[116] = {
+	pg.base.map_event_template[116] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3055,11 +2690,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.map_event_template
-
-	var_1_83[117] = {
+	pg.base.map_event_template[117] = {
 		grid_color = "cell_box",
 		memory = 40132,
 		ship_prefab = "",
@@ -3077,11 +2708,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.map_event_template
-
-	var_1_84[118] = {
+	pg.base.map_event_template[118] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3102,11 +2729,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.map_event_template
-
-	var_1_85[119] = {
+	pg.base.map_event_template[119] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3124,11 +2747,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.map_event_template
-
-	var_1_86[120] = {
+	pg.base.map_event_template[120] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3146,11 +2765,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.map_event_template
-
-	var_1_87[121] = {
+	pg.base.map_event_template[121] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3168,11 +2783,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.map_event_template
-
-	var_1_88[122] = {
+	pg.base.map_event_template[122] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3190,11 +2801,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.map_event_template
-
-	var_1_89[123] = {
+	pg.base.map_event_template[123] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3243,11 +2850,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.map_event_template
-
-	var_1_90[124] = {
+	pg.base.map_event_template[124] = {
 		grid_color = "cell_box",
 		memory = 40139,
 		ship_prefab = "",
@@ -3265,11 +2868,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.map_event_template
-
-	var_1_91[125] = {
+	pg.base.map_event_template[125] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3290,11 +2889,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.map_event_template
-
-	var_1_92[126] = {
+	pg.base.map_event_template[126] = {
 		grid_color = "cell_box",
 		memory = 40138,
 		ship_prefab = "",
@@ -3312,11 +2907,7 @@ var_0_3.base.map_event_template = {}
 		},
 		effect = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.map_event_template
-
-	var_1_93[127] = {
+	pg.base.map_event_template[127] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3337,11 +2928,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.map_event_template
-
-	var_1_94[128] = {
+	pg.base.map_event_template[128] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3383,11 +2970,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.map_event_template
-
-	var_1_95[129] = {
+	pg.base.map_event_template[129] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3409,11 +2992,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.map_event_template
-
-	var_1_96[130] = {
+	pg.base.map_event_template[130] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3435,11 +3014,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.map_event_template
-
-	var_1_97[131] = {
+	pg.base.map_event_template[131] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3461,11 +3036,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.map_event_template
-
-	var_1_98[132] = {
+	pg.base.map_event_template[132] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3487,8 +3058,7 @@ var_0_3.base.map_event_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.map_event_template[133] = {
+	pg.base.map_event_template[133] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3514,11 +3084,7 @@ var_0_3.base.map_event_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.map_event_template
-
-	var_2_0[134] = {
+	pg.base.map_event_template[134] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3540,11 +3106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.map_event_template
-
-	var_2_1[135] = {
+	pg.base.map_event_template[135] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3566,11 +3128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.map_event_template
-
-	var_2_2[136] = {
+	pg.base.map_event_template[136] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3592,11 +3150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.map_event_template
-
-	var_2_3[137] = {
+	pg.base.map_event_template[137] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3618,11 +3172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.map_event_template
-
-	var_2_4[138] = {
+	pg.base.map_event_template[138] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3644,11 +3194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.map_event_template
-
-	var_2_5[139] = {
+	pg.base.map_event_template[139] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3670,11 +3216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.map_event_template
-
-	var_2_6[140] = {
+	pg.base.map_event_template[140] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3696,11 +3238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.map_event_template
-
-	var_2_7[141] = {
+	pg.base.map_event_template[141] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3722,11 +3260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.map_event_template
-
-	var_2_8[142] = {
+	pg.base.map_event_template[142] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3744,11 +3278,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.map_event_template
-
-	var_2_9[143] = {
+	pg.base.map_event_template[143] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3766,11 +3296,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.map_event_template
-
-	var_2_10[144] = {
+	pg.base.map_event_template[144] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3791,11 +3317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.map_event_template
-
-	var_2_11[145] = {
+	pg.base.map_event_template[145] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3816,11 +3338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.map_event_template
-
-	var_2_12[146] = {
+	pg.base.map_event_template[146] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3841,11 +3359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.map_event_template
-
-	var_2_13[147] = {
+	pg.base.map_event_template[147] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3866,11 +3380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.map_event_template
-
-	var_2_14[148] = {
+	pg.base.map_event_template[148] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3891,11 +3401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.map_event_template
-
-	var_2_15[149] = {
+	pg.base.map_event_template[149] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3916,11 +3422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.map_event_template
-
-	var_2_16[150] = {
+	pg.base.map_event_template[150] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3941,11 +3443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.map_event_template
-
-	var_2_17[151] = {
+	pg.base.map_event_template[151] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3966,11 +3464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.map_event_template
-
-	var_2_18[152] = {
+	pg.base.map_event_template[152] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -3991,11 +3485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.map_event_template
-
-	var_2_19[153] = {
+	pg.base.map_event_template[153] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4016,11 +3506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.map_event_template
-
-	var_2_20[154] = {
+	pg.base.map_event_template[154] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4041,11 +3527,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.map_event_template
-
-	var_2_21[155] = {
+	pg.base.map_event_template[155] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4066,11 +3548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.map_event_template
-
-	var_2_22[156] = {
+	pg.base.map_event_template[156] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4092,11 +3570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.map_event_template
-
-	var_2_23[157] = {
+	pg.base.map_event_template[157] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4118,11 +3592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.map_event_template
-
-	var_2_24[158] = {
+	pg.base.map_event_template[158] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4144,11 +3614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.map_event_template
-
-	var_2_25[159] = {
+	pg.base.map_event_template[159] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4170,11 +3636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.map_event_template
-
-	var_2_26[160] = {
+	pg.base.map_event_template[160] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4196,11 +3658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.map_event_template
-
-	var_2_27[161] = {
+	pg.base.map_event_template[161] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4222,11 +3680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.map_event_template
-
-	var_2_28[162] = {
+	pg.base.map_event_template[162] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4248,11 +3702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.map_event_template
-
-	var_2_29[163] = {
+	pg.base.map_event_template[163] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4274,11 +3724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.map_event_template
-
-	var_2_30[164] = {
+	pg.base.map_event_template[164] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4300,11 +3746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.map_event_template
-
-	var_2_31[165] = {
+	pg.base.map_event_template[165] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4331,11 +3773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.map_event_template
-
-	var_2_32[166] = {
+	pg.base.map_event_template[166] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4362,11 +3800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.map_event_template
-
-	var_2_33[167] = {
+	pg.base.map_event_template[167] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4393,11 +3827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.map_event_template
-
-	var_2_34[168] = {
+	pg.base.map_event_template[168] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4424,11 +3854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.map_event_template
-
-	var_2_35[169] = {
+	pg.base.map_event_template[169] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4455,11 +3881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.map_event_template
-
-	var_2_36[170] = {
+	pg.base.map_event_template[170] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4486,11 +3908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.map_event_template
-
-	var_2_37[171] = {
+	pg.base.map_event_template[171] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4517,11 +3935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.map_event_template
-
-	var_2_38[172] = {
+	pg.base.map_event_template[172] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4548,11 +3962,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.map_event_template
-
-	var_2_39[173] = {
+	pg.base.map_event_template[173] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4579,11 +3989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.map_event_template
-
-	var_2_40[174] = {
+	pg.base.map_event_template[174] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4610,11 +4016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.map_event_template
-
-	var_2_41[175] = {
+	pg.base.map_event_template[175] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4632,11 +4034,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.map_event_template
-
-	var_2_42[176] = {
+	pg.base.map_event_template[176] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4660,11 +4058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.map_event_template
-
-	var_2_43[177] = {
+	pg.base.map_event_template[177] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4686,11 +4080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.map_event_template
-
-	var_2_44[178] = {
+	pg.base.map_event_template[178] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4712,11 +4102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.map_event_template
-
-	var_2_45[179] = {
+	pg.base.map_event_template[179] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4738,11 +4124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.map_event_template
-
-	var_2_46[180] = {
+	pg.base.map_event_template[180] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4764,11 +4146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.map_event_template
-
-	var_2_47[181] = {
+	pg.base.map_event_template[181] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4790,11 +4168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.map_event_template
-
-	var_2_48[182] = {
+	pg.base.map_event_template[182] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4816,11 +4190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.map_event_template
-
-	var_2_49[183] = {
+	pg.base.map_event_template[183] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4842,11 +4212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.map_event_template
-
-	var_2_50[184] = {
+	pg.base.map_event_template[184] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4868,11 +4234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.map_event_template
-
-	var_2_51[185] = {
+	pg.base.map_event_template[185] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4894,11 +4256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.map_event_template
-
-	var_2_52[186] = {
+	pg.base.map_event_template[186] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4920,11 +4278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.map_event_template
-
-	var_2_53[187] = {
+	pg.base.map_event_template[187] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4946,11 +4300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.map_event_template
-
-	var_2_54[188] = {
+	pg.base.map_event_template[188] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4972,11 +4322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.map_event_template
-
-	var_2_55[189] = {
+	pg.base.map_event_template[189] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -4998,11 +4344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.map_event_template
-
-	var_2_56[190] = {
+	pg.base.map_event_template[190] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5024,11 +4366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.map_event_template
-
-	var_2_57[191] = {
+	pg.base.map_event_template[191] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5050,11 +4388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.map_event_template
-
-	var_2_58[192] = {
+	pg.base.map_event_template[192] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5076,11 +4410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.map_event_template
-
-	var_2_59[193] = {
+	pg.base.map_event_template[193] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5102,11 +4432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.map_event_template
-
-	var_2_60[194] = {
+	pg.base.map_event_template[194] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5128,11 +4454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.map_event_template
-
-	var_2_61[195] = {
+	pg.base.map_event_template[195] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5154,11 +4476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.map_event_template
-
-	var_2_62[196] = {
+	pg.base.map_event_template[196] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5180,11 +4498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.map_event_template
-
-	var_2_63[197] = {
+	pg.base.map_event_template[197] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5206,11 +4520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.map_event_template
-
-	var_2_64[198] = {
+	pg.base.map_event_template[198] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5232,11 +4542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.map_event_template
-
-	var_2_65[199] = {
+	pg.base.map_event_template[199] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5258,11 +4564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.map_event_template
-
-	var_2_66[200] = {
+	pg.base.map_event_template[200] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5284,11 +4586,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.map_event_template
-
-	var_2_67[201] = {
+	pg.base.map_event_template[201] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5310,11 +4608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.map_event_template
-
-	var_2_68[202] = {
+	pg.base.map_event_template[202] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5336,11 +4630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.map_event_template
-
-	var_2_69[203] = {
+	pg.base.map_event_template[203] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5362,11 +4652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.map_event_template
-
-	var_2_70[204] = {
+	pg.base.map_event_template[204] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5388,11 +4674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.map_event_template
-
-	var_2_71[205] = {
+	pg.base.map_event_template[205] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5414,11 +4696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.map_event_template
-
-	var_2_72[206] = {
+	pg.base.map_event_template[206] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5440,11 +4718,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.map_event_template
-
-	var_2_73[207] = {
+	pg.base.map_event_template[207] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5466,11 +4740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.map_event_template
-
-	var_2_74[208] = {
+	pg.base.map_event_template[208] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5492,11 +4762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.map_event_template
-
-	var_2_75[209] = {
+	pg.base.map_event_template[209] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5518,11 +4784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.map_event_template
-
-	var_2_76[210] = {
+	pg.base.map_event_template[210] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5544,11 +4806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.map_event_template
-
-	var_2_77[211] = {
+	pg.base.map_event_template[211] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5570,11 +4828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.map_event_template
-
-	var_2_78[212] = {
+	pg.base.map_event_template[212] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5596,11 +4850,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.map_event_template
-
-	var_2_79[213] = {
+	pg.base.map_event_template[213] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5622,11 +4872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.map_event_template
-
-	var_2_80[214] = {
+	pg.base.map_event_template[214] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5648,11 +4894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.map_event_template
-
-	var_2_81[215] = {
+	pg.base.map_event_template[215] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5674,11 +4916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.map_event_template
-
-	var_2_82[216] = {
+	pg.base.map_event_template[216] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5700,11 +4938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.map_event_template
-
-	var_2_83[217] = {
+	pg.base.map_event_template[217] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5726,11 +4960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.map_event_template
-
-	var_2_84[218] = {
+	pg.base.map_event_template[218] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5752,11 +4982,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.map_event_template
-
-	var_2_85[219] = {
+	pg.base.map_event_template[219] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5778,11 +5004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.map_event_template
-
-	var_2_86[220] = {
+	pg.base.map_event_template[220] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5804,11 +5026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.map_event_template
-
-	var_2_87[221] = {
+	pg.base.map_event_template[221] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5830,11 +5048,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.map_event_template
-
-	var_2_88[222] = {
+	pg.base.map_event_template[222] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5852,11 +5066,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.map_event_template
-
-	var_2_89[223] = {
+	pg.base.map_event_template[223] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5874,11 +5084,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.map_event_template
-
-	var_2_90[224] = {
+	pg.base.map_event_template[224] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5896,11 +5102,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.map_event_template
-
-	var_2_91[225] = {
+	pg.base.map_event_template[225] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5918,11 +5120,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.map_event_template
-
-	var_2_92[226] = {
+	pg.base.map_event_template[226] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5940,11 +5138,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.map_event_template
-
-	var_2_93[227] = {
+	pg.base.map_event_template[227] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -5993,11 +5187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.map_event_template
-
-	var_2_94[228] = {
+	pg.base.map_event_template[228] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6018,11 +5208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.map_event_template
-
-	var_2_95[229] = {
+	pg.base.map_event_template[229] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6043,11 +5229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.map_event_template
-
-	var_2_96[230] = {
+	pg.base.map_event_template[230] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6068,11 +5250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.map_event_template
-
-	var_2_97[231] = {
+	pg.base.map_event_template[231] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6094,11 +5272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.map_event_template
-
-	var_2_98[232] = {
+	pg.base.map_event_template[232] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6120,8 +5294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.map_event_template[233] = {
+	pg.base.map_event_template[233] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6147,11 +5320,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.map_event_template
-
-	var_3_0[234] = {
+	pg.base.map_event_template[234] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6173,11 +5342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.map_event_template
-
-	var_3_1[235] = {
+	pg.base.map_event_template[235] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6199,11 +5364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.map_event_template
-
-	var_3_2[236] = {
+	pg.base.map_event_template[236] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6225,11 +5386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.map_event_template
-
-	var_3_3[237] = {
+	pg.base.map_event_template[237] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6251,11 +5408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.map_event_template
-
-	var_3_4[238] = {
+	pg.base.map_event_template[238] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6277,11 +5430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.map_event_template
-
-	var_3_5[239] = {
+	pg.base.map_event_template[239] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6303,11 +5452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.map_event_template
-
-	var_3_6[240] = {
+	pg.base.map_event_template[240] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6329,11 +5474,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.map_event_template
-
-	var_3_7[241] = {
+	pg.base.map_event_template[241] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6355,11 +5496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.map_event_template
-
-	var_3_8[242] = {
+	pg.base.map_event_template[242] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6381,11 +5518,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.map_event_template
-
-	var_3_9[243] = {
+	pg.base.map_event_template[243] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6407,11 +5540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.map_event_template
-
-	var_3_10[244] = {
+	pg.base.map_event_template[244] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6433,11 +5562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.map_event_template
-
-	var_3_11[245] = {
+	pg.base.map_event_template[245] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6459,11 +5584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.map_event_template
-
-	var_3_12[246] = {
+	pg.base.map_event_template[246] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6485,11 +5606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.map_event_template
-
-	var_3_13[247] = {
+	pg.base.map_event_template[247] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6511,11 +5628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.map_event_template
-
-	var_3_14[248] = {
+	pg.base.map_event_template[248] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6537,11 +5650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.map_event_template
-
-	var_3_15[249] = {
+	pg.base.map_event_template[249] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6563,11 +5672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.map_event_template
-
-	var_3_16[250] = {
+	pg.base.map_event_template[250] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6589,11 +5694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.map_event_template
-
-	var_3_17[251] = {
+	pg.base.map_event_template[251] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6615,11 +5716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.map_event_template
-
-	var_3_18[252] = {
+	pg.base.map_event_template[252] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6641,11 +5738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.map_event_template
-
-	var_3_19[253] = {
+	pg.base.map_event_template[253] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6667,11 +5760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.map_event_template
-
-	var_3_20[254] = {
+	pg.base.map_event_template[254] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6693,11 +5782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.map_event_template
-
-	var_3_21[255] = {
+	pg.base.map_event_template[255] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6719,11 +5804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.map_event_template
-
-	var_3_22[256] = {
+	pg.base.map_event_template[256] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6745,11 +5826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.map_event_template
-
-	var_3_23[257] = {
+	pg.base.map_event_template[257] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6771,11 +5848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.map_event_template
-
-	var_3_24[258] = {
+	pg.base.map_event_template[258] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6797,11 +5870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.map_event_template
-
-	var_3_25[259] = {
+	pg.base.map_event_template[259] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6823,11 +5892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.map_event_template
-
-	var_3_26[260] = {
+	pg.base.map_event_template[260] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6849,11 +5914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.map_event_template
-
-	var_3_27[261] = {
+	pg.base.map_event_template[261] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6875,11 +5936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.map_event_template
-
-	var_3_28[262] = {
+	pg.base.map_event_template[262] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6901,11 +5958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.map_event_template
-
-	var_3_29[263] = {
+	pg.base.map_event_template[263] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6927,11 +5980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.map_event_template
-
-	var_3_30[264] = {
+	pg.base.map_event_template[264] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6953,11 +6002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.map_event_template
-
-	var_3_31[265] = {
+	pg.base.map_event_template[265] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -6979,11 +6024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.map_event_template
-
-	var_3_32[266] = {
+	pg.base.map_event_template[266] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7005,11 +6046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.map_event_template
-
-	var_3_33[267] = {
+	pg.base.map_event_template[267] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7032,11 +6069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.map_event_template
-
-	var_3_34[268] = {
+	pg.base.map_event_template[268] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7059,11 +6092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.map_event_template
-
-	var_3_35[269] = {
+	pg.base.map_event_template[269] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7086,11 +6115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.map_event_template
-
-	var_3_36[270] = {
+	pg.base.map_event_template[270] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7113,11 +6138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.map_event_template
-
-	var_3_37[271] = {
+	pg.base.map_event_template[271] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7140,11 +6161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.map_event_template
-
-	var_3_38[272] = {
+	pg.base.map_event_template[272] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7167,11 +6184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.map_event_template
-
-	var_3_39[273] = {
+	pg.base.map_event_template[273] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7194,11 +6207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.map_event_template
-
-	var_3_40[274] = {
+	pg.base.map_event_template[274] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7221,11 +6230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.map_event_template
-
-	var_3_41[275] = {
+	pg.base.map_event_template[275] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7248,11 +6253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.map_event_template
-
-	var_3_42[276] = {
+	pg.base.map_event_template[276] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7275,11 +6276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.map_event_template
-
-	var_3_43[277] = {
+	pg.base.map_event_template[277] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7302,11 +6299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.map_event_template
-
-	var_3_44[278] = {
+	pg.base.map_event_template[278] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7329,11 +6322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.map_event_template
-
-	var_3_45[279] = {
+	pg.base.map_event_template[279] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7356,11 +6345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.map_event_template
-
-	var_3_46[280] = {
+	pg.base.map_event_template[280] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7383,11 +6368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.map_event_template
-
-	var_3_47[281] = {
+	pg.base.map_event_template[281] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7410,11 +6391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.map_event_template
-
-	var_3_48[282] = {
+	pg.base.map_event_template[282] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7437,11 +6414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.map_event_template
-
-	var_3_49[283] = {
+	pg.base.map_event_template[283] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7464,11 +6437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.map_event_template
-
-	var_3_50[284] = {
+	pg.base.map_event_template[284] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7491,11 +6460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.map_event_template
-
-	var_3_51[285] = {
+	pg.base.map_event_template[285] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7518,11 +6483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.map_event_template
-
-	var_3_52[286] = {
+	pg.base.map_event_template[286] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7545,11 +6506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.map_event_template
-
-	var_3_53[287] = {
+	pg.base.map_event_template[287] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7572,11 +6529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.map_event_template
-
-	var_3_54[288] = {
+	pg.base.map_event_template[288] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7599,11 +6552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.map_event_template
-
-	var_3_55[289] = {
+	pg.base.map_event_template[289] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7626,11 +6575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.map_event_template
-
-	var_3_56[290] = {
+	pg.base.map_event_template[290] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7653,11 +6598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.map_event_template
-
-	var_3_57[291] = {
+	pg.base.map_event_template[291] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7680,11 +6621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.map_event_template
-
-	var_3_58[292] = {
+	pg.base.map_event_template[292] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7707,11 +6644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.map_event_template
-
-	var_3_59[293] = {
+	pg.base.map_event_template[293] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7734,11 +6667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.map_event_template
-
-	var_3_60[294] = {
+	pg.base.map_event_template[294] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7761,11 +6690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.map_event_template
-
-	var_3_61[295] = {
+	pg.base.map_event_template[295] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7788,11 +6713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.map_event_template
-
-	var_3_62[296] = {
+	pg.base.map_event_template[296] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7815,11 +6736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.map_event_template
-
-	var_3_63[297] = {
+	pg.base.map_event_template[297] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7842,11 +6759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.map_event_template
-
-	var_3_64[298] = {
+	pg.base.map_event_template[298] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7869,11 +6782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.map_event_template
-
-	var_3_65[299] = {
+	pg.base.map_event_template[299] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7896,11 +6805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.map_event_template
-
-	var_3_66[300] = {
+	pg.base.map_event_template[300] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7923,11 +6828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.map_event_template
-
-	var_3_67[301] = {
+	pg.base.map_event_template[301] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7950,11 +6851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.map_event_template
-
-	var_3_68[302] = {
+	pg.base.map_event_template[302] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -7977,11 +6874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.map_event_template
-
-	var_3_69[303] = {
+	pg.base.map_event_template[303] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8004,11 +6897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.map_event_template
-
-	var_3_70[304] = {
+	pg.base.map_event_template[304] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8031,11 +6920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.map_event_template
-
-	var_3_71[305] = {
+	pg.base.map_event_template[305] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8058,11 +6943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.map_event_template
-
-	var_3_72[306] = {
+	pg.base.map_event_template[306] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8085,11 +6966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.map_event_template
-
-	var_3_73[307] = {
+	pg.base.map_event_template[307] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8112,11 +6989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.map_event_template
-
-	var_3_74[308] = {
+	pg.base.map_event_template[308] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8139,11 +7012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.map_event_template
-
-	var_3_75[309] = {
+	pg.base.map_event_template[309] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8166,11 +7035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.map_event_template
-
-	var_3_76[310] = {
+	pg.base.map_event_template[310] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8193,11 +7058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.map_event_template
-
-	var_3_77[311] = {
+	pg.base.map_event_template[311] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8220,11 +7081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.map_event_template
-
-	var_3_78[312] = {
+	pg.base.map_event_template[312] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8247,11 +7104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.map_event_template
-
-	var_3_79[313] = {
+	pg.base.map_event_template[313] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8274,11 +7127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.map_event_template
-
-	var_3_80[314] = {
+	pg.base.map_event_template[314] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8301,11 +7150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.map_event_template
-
-	var_3_81[315] = {
+	pg.base.map_event_template[315] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8328,11 +7173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.map_event_template
-
-	var_3_82[316] = {
+	pg.base.map_event_template[316] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8355,11 +7196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.map_event_template
-
-	var_3_83[317] = {
+	pg.base.map_event_template[317] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8382,11 +7219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.map_event_template
-
-	var_3_84[318] = {
+	pg.base.map_event_template[318] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8409,11 +7242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.map_event_template
-
-	var_3_85[319] = {
+	pg.base.map_event_template[319] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8436,11 +7265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.map_event_template
-
-	var_3_86[320] = {
+	pg.base.map_event_template[320] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8463,11 +7288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.map_event_template
-
-	var_3_87[321] = {
+	pg.base.map_event_template[321] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8490,11 +7311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.map_event_template
-
-	var_3_88[322] = {
+	pg.base.map_event_template[322] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8517,11 +7334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.map_event_template
-
-	var_3_89[323] = {
+	pg.base.map_event_template[323] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8544,11 +7357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.map_event_template
-
-	var_3_90[324] = {
+	pg.base.map_event_template[324] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8571,11 +7380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.map_event_template
-
-	var_3_91[325] = {
+	pg.base.map_event_template[325] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8598,11 +7403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.map_event_template
-
-	var_3_92[326] = {
+	pg.base.map_event_template[326] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8625,11 +7426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.map_event_template
-
-	var_3_93[327] = {
+	pg.base.map_event_template[327] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8652,11 +7449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.map_event_template
-
-	var_3_94[328] = {
+	pg.base.map_event_template[328] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8679,11 +7472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.map_event_template
-
-	var_3_95[329] = {
+	pg.base.map_event_template[329] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8706,11 +7495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.map_event_template
-
-	var_3_96[330] = {
+	pg.base.map_event_template[330] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8733,11 +7518,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.map_event_template
-
-	var_3_97[331] = {
+	pg.base.map_event_template[331] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8760,11 +7541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.map_event_template
-
-	var_3_98[332] = {
+	pg.base.map_event_template[332] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8787,8 +7564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.map_event_template[333] = {
+	pg.base.map_event_template[333] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8815,11 +7591,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.map_event_template
-
-	var_4_0[334] = {
+	pg.base.map_event_template[334] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8842,11 +7614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.map_event_template
-
-	var_4_1[335] = {
+	pg.base.map_event_template[335] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8869,11 +7637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.map_event_template
-
-	var_4_2[336] = {
+	pg.base.map_event_template[336] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8896,11 +7660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.map_event_template
-
-	var_4_3[337] = {
+	pg.base.map_event_template[337] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8923,11 +7683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.map_event_template
-
-	var_4_4[338] = {
+	pg.base.map_event_template[338] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8950,11 +7706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.map_event_template
-
-	var_4_5[339] = {
+	pg.base.map_event_template[339] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -8977,11 +7729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.map_event_template
-
-	var_4_6[340] = {
+	pg.base.map_event_template[340] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9004,11 +7752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.map_event_template
-
-	var_4_7[341] = {
+	pg.base.map_event_template[341] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9031,11 +7775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.map_event_template
-
-	var_4_8[342] = {
+	pg.base.map_event_template[342] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9058,11 +7798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.map_event_template
-
-	var_4_9[343] = {
+	pg.base.map_event_template[343] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9085,11 +7821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.map_event_template
-
-	var_4_10[344] = {
+	pg.base.map_event_template[344] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9112,11 +7844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.map_event_template
-
-	var_4_11[345] = {
+	pg.base.map_event_template[345] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9139,11 +7867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.map_event_template
-
-	var_4_12[346] = {
+	pg.base.map_event_template[346] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9166,11 +7890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.map_event_template
-
-	var_4_13[347] = {
+	pg.base.map_event_template[347] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9193,11 +7913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.map_event_template
-
-	var_4_14[348] = {
+	pg.base.map_event_template[348] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9220,11 +7936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.map_event_template
-
-	var_4_15[349] = {
+	pg.base.map_event_template[349] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9247,11 +7959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.map_event_template
-
-	var_4_16[350] = {
+	pg.base.map_event_template[350] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9274,11 +7982,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.map_event_template
-
-	var_4_17[351] = {
+	pg.base.map_event_template[351] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9301,11 +8005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.map_event_template
-
-	var_4_18[352] = {
+	pg.base.map_event_template[352] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9328,11 +8028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.map_event_template
-
-	var_4_19[353] = {
+	pg.base.map_event_template[353] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9355,11 +8051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.map_event_template
-
-	var_4_20[354] = {
+	pg.base.map_event_template[354] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9382,11 +8074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.map_event_template
-
-	var_4_21[355] = {
+	pg.base.map_event_template[355] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9409,11 +8097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.map_event_template
-
-	var_4_22[356] = {
+	pg.base.map_event_template[356] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9436,11 +8120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.map_event_template
-
-	var_4_23[357] = {
+	pg.base.map_event_template[357] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9463,11 +8143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.map_event_template
-
-	var_4_24[358] = {
+	pg.base.map_event_template[358] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9490,11 +8166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.map_event_template
-
-	var_4_25[359] = {
+	pg.base.map_event_template[359] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9517,11 +8189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.map_event_template
-
-	var_4_26[360] = {
+	pg.base.map_event_template[360] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9544,11 +8212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.map_event_template
-
-	var_4_27[361] = {
+	pg.base.map_event_template[361] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9571,11 +8235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.map_event_template
-
-	var_4_28[362] = {
+	pg.base.map_event_template[362] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9598,11 +8258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.map_event_template
-
-	var_4_29[363] = {
+	pg.base.map_event_template[363] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9625,11 +8281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.map_event_template
-
-	var_4_30[364] = {
+	pg.base.map_event_template[364] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9652,11 +8304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.map_event_template
-
-	var_4_31[365] = {
+	pg.base.map_event_template[365] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9679,11 +8327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.map_event_template
-
-	var_4_32[366] = {
+	pg.base.map_event_template[366] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9706,11 +8350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.map_event_template
-
-	var_4_33[367] = {
+	pg.base.map_event_template[367] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9733,11 +8373,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.map_event_template
-
-	var_4_34[368] = {
+	pg.base.map_event_template[368] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9760,11 +8396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.map_event_template
-
-	var_4_35[369] = {
+	pg.base.map_event_template[369] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9787,11 +8419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.map_event_template
-
-	var_4_36[370] = {
+	pg.base.map_event_template[370] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9814,11 +8442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.map_event_template
-
-	var_4_37[371] = {
+	pg.base.map_event_template[371] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9841,11 +8465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.map_event_template
-
-	var_4_38[372] = {
+	pg.base.map_event_template[372] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9868,11 +8488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.map_event_template
-
-	var_4_39[373] = {
+	pg.base.map_event_template[373] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9895,11 +8511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.map_event_template
-
-	var_4_40[374] = {
+	pg.base.map_event_template[374] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9922,11 +8534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.map_event_template
-
-	var_4_41[375] = {
+	pg.base.map_event_template[375] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9944,11 +8552,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.map_event_template
-
-	var_4_42[376] = {
+	pg.base.map_event_template[376] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9966,11 +8570,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.map_event_template
-
-	var_4_43[377] = {
+	pg.base.map_event_template[377] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -9988,11 +8588,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.map_event_template
-
-	var_4_44[378] = {
+	pg.base.map_event_template[378] = {
 		grid_color = "cell_box",
 		memory = 2757,
 		ship_prefab = "",
@@ -10010,11 +8606,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.map_event_template
-
-	var_4_45[379] = {
+	pg.base.map_event_template[379] = {
 		grid_color = "cell_box",
 		memory = 2758,
 		ship_prefab = "",
@@ -10032,11 +8624,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.map_event_template
-
-	var_4_46[380] = {
+	pg.base.map_event_template[380] = {
 		grid_color = "cell_box",
 		memory = 2759,
 		ship_prefab = "",
@@ -10054,11 +8642,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.map_event_template
-
-	var_4_47[381] = {
+	pg.base.map_event_template[381] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10087,11 +8671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.map_event_template
-
-	var_4_48[382] = {
+	pg.base.map_event_template[382] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10120,11 +8700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.map_event_template
-
-	var_4_49[383] = {
+	pg.base.map_event_template[383] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10153,11 +8729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.map_event_template
-
-	var_4_50[384] = {
+	pg.base.map_event_template[384] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10186,11 +8758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.map_event_template
-
-	var_4_51[385] = {
+	pg.base.map_event_template[385] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10219,11 +8787,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.map_event_template
-
-	var_4_52[386] = {
+	pg.base.map_event_template[386] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10252,11 +8816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.map_event_template
-
-	var_4_53[387] = {
+	pg.base.map_event_template[387] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10285,11 +8845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.map_event_template
-
-	var_4_54[388] = {
+	pg.base.map_event_template[388] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10318,11 +8874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.map_event_template
-
-	var_4_55[389] = {
+	pg.base.map_event_template[389] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10351,11 +8903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.map_event_template
-
-	var_4_56[390] = {
+	pg.base.map_event_template[390] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10384,11 +8932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.map_event_template
-
-	var_4_57[391] = {
+	pg.base.map_event_template[391] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10417,11 +8961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.map_event_template
-
-	var_4_58[392] = {
+	pg.base.map_event_template[392] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10450,11 +8990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.map_event_template
-
-	var_4_59[393] = {
+	pg.base.map_event_template[393] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10483,11 +9019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.map_event_template
-
-	var_4_60[394] = {
+	pg.base.map_event_template[394] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10516,11 +9048,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.map_event_template
-
-	var_4_61[395] = {
+	pg.base.map_event_template[395] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10549,11 +9077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.map_event_template
-
-	var_4_62[396] = {
+	pg.base.map_event_template[396] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10582,11 +9106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.map_event_template
-
-	var_4_63[397] = {
+	pg.base.map_event_template[397] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10615,11 +9135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.map_event_template
-
-	var_4_64[398] = {
+	pg.base.map_event_template[398] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10648,11 +9164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.map_event_template
-
-	var_4_65[399] = {
+	pg.base.map_event_template[399] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10681,11 +9193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.map_event_template
-
-	var_4_66[400] = {
+	pg.base.map_event_template[400] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10714,11 +9222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.map_event_template
-
-	var_4_67[401] = {
+	pg.base.map_event_template[401] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10736,11 +9240,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.map_event_template
-
-	var_4_68[402] = {
+	pg.base.map_event_template[402] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10758,11 +9258,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.map_event_template
-
-	var_4_69[403] = {
+	pg.base.map_event_template[403] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10780,11 +9276,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.map_event_template
-
-	var_4_70[404] = {
+	pg.base.map_event_template[404] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10802,11 +9294,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.map_event_template
-
-	var_4_71[405] = {
+	pg.base.map_event_template[405] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10824,11 +9312,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.map_event_template
-
-	var_4_72[406] = {
+	pg.base.map_event_template[406] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10863,11 +9347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.map_event_template
-
-	var_4_73[407] = {
+	pg.base.map_event_template[407] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10895,11 +9375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.map_event_template
-
-	var_4_74[408] = {
+	pg.base.map_event_template[408] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10941,11 +9417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.map_event_template
-
-	var_4_75[409] = {
+	pg.base.map_event_template[409] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -10987,11 +9459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.map_event_template
-
-	var_4_76[410] = {
+	pg.base.map_event_template[410] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11031,11 +9499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.map_event_template
-
-	var_4_77[411] = {
+	pg.base.map_event_template[411] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11056,11 +9520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.map_event_template
-
-	var_4_78[412] = {
+	pg.base.map_event_template[412] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11100,11 +9560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.map_event_template
-
-	var_4_79[413] = {
+	pg.base.map_event_template[413] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11125,11 +9581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.map_event_template
-
-	var_4_80[414] = {
+	pg.base.map_event_template[414] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11169,11 +9621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.map_event_template
-
-	var_4_81[415] = {
+	pg.base.map_event_template[415] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11194,11 +9642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.map_event_template
-
-	var_4_82[416] = {
+	pg.base.map_event_template[416] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11245,11 +9689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.map_event_template
-
-	var_4_83[417] = {
+	pg.base.map_event_template[417] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11270,11 +9710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.map_event_template
-
-	var_4_84[418] = {
+	pg.base.map_event_template[418] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11321,11 +9757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.map_event_template
-
-	var_4_85[419] = {
+	pg.base.map_event_template[419] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11346,11 +9778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.map_event_template
-
-	var_4_86[420] = {
+	pg.base.map_event_template[420] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11404,11 +9832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.map_event_template
-
-	var_4_87[421] = {
+	pg.base.map_event_template[421] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11429,11 +9853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.map_event_template
-
-	var_4_88[422] = {
+	pg.base.map_event_template[422] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11473,11 +9893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.map_event_template
-
-	var_4_89[423] = {
+	pg.base.map_event_template[423] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11498,11 +9914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.map_event_template
-
-	var_4_90[424] = {
+	pg.base.map_event_template[424] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11542,11 +9954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.map_event_template
-
-	var_4_91[425] = {
+	pg.base.map_event_template[425] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11567,11 +9975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.map_event_template
-
-	var_4_92[426] = {
+	pg.base.map_event_template[426] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11611,11 +10015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.map_event_template
-
-	var_4_93[427] = {
+	pg.base.map_event_template[427] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11636,11 +10036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.map_event_template
-
-	var_4_94[428] = {
+	pg.base.map_event_template[428] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11687,11 +10083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.map_event_template
-
-	var_4_95[429] = {
+	pg.base.map_event_template[429] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11712,11 +10104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.map_event_template
-
-	var_4_96[430] = {
+	pg.base.map_event_template[430] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11763,11 +10151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.map_event_template
-
-	var_4_97[431] = {
+	pg.base.map_event_template[431] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11788,11 +10172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.map_event_template
-
-	var_4_98[432] = {
+	pg.base.map_event_template[432] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11846,8 +10226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.map_event_template[433] = {
+	pg.base.map_event_template[433] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11872,11 +10251,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.map_event_template
-
-	var_5_0[434] = {
+	pg.base.map_event_template[434] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11916,11 +10291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.map_event_template
-
-	var_5_1[435] = {
+	pg.base.map_event_template[435] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11941,11 +10312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.map_event_template
-
-	var_5_2[436] = {
+	pg.base.map_event_template[436] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11966,11 +10333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.map_event_template
-
-	var_5_3[437] = {
+	pg.base.map_event_template[437] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -11991,11 +10354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.map_event_template
-
-	var_5_4[438] = {
+	pg.base.map_event_template[438] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12016,11 +10375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.map_event_template
-
-	var_5_5[439] = {
+	pg.base.map_event_template[439] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12041,11 +10396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.map_event_template
-
-	var_5_6[440] = {
+	pg.base.map_event_template[440] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12066,11 +10417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.map_event_template
-
-	var_5_7[441] = {
+	pg.base.map_event_template[441] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12091,11 +10438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.map_event_template
-
-	var_5_8[442] = {
+	pg.base.map_event_template[442] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12113,11 +10456,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.map_event_template
-
-	var_5_9[443] = {
+	pg.base.map_event_template[443] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12135,11 +10474,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.map_event_template
-
-	var_5_10[444] = {
+	pg.base.map_event_template[444] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12157,11 +10492,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.map_event_template
-
-	var_5_11[445] = {
+	pg.base.map_event_template[445] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12179,11 +10510,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.map_event_template
-
-	var_5_12[446] = {
+	pg.base.map_event_template[446] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12201,11 +10528,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.map_event_template
-
-	var_5_13[447] = {
+	pg.base.map_event_template[447] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12223,11 +10546,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.map_event_template
-
-	var_5_14[448] = {
+	pg.base.map_event_template[448] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12245,11 +10564,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.map_event_template
-
-	var_5_15[449] = {
+	pg.base.map_event_template[449] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12267,11 +10582,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.map_event_template
-
-	var_5_16[450] = {
+	pg.base.map_event_template[450] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12289,11 +10600,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.map_event_template
-
-	var_5_17[451] = {
+	pg.base.map_event_template[451] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12311,11 +10618,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.map_event_template
-
-	var_5_18[452] = {
+	pg.base.map_event_template[452] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12333,11 +10636,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.map_event_template
-
-	var_5_19[453] = {
+	pg.base.map_event_template[453] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12355,11 +10654,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.map_event_template
-
-	var_5_20[454] = {
+	pg.base.map_event_template[454] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12377,11 +10672,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.map_event_template
-
-	var_5_21[455] = {
+	pg.base.map_event_template[455] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12399,11 +10690,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.map_event_template
-
-	var_5_22[456] = {
+	pg.base.map_event_template[456] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12421,11 +10708,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.map_event_template
-
-	var_5_23[457] = {
+	pg.base.map_event_template[457] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12443,11 +10726,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.map_event_template
-
-	var_5_24[458] = {
+	pg.base.map_event_template[458] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12465,11 +10744,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.map_event_template
-
-	var_5_25[459] = {
+	pg.base.map_event_template[459] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12487,11 +10762,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.map_event_template
-
-	var_5_26[460] = {
+	pg.base.map_event_template[460] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12509,11 +10780,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.map_event_template
-
-	var_5_27[461] = {
+	pg.base.map_event_template[461] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12531,11 +10798,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.map_event_template
-
-	var_5_28[462] = {
+	pg.base.map_event_template[462] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12553,11 +10816,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.map_event_template
-
-	var_5_29[463] = {
+	pg.base.map_event_template[463] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12575,11 +10834,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.map_event_template
-
-	var_5_30[464] = {
+	pg.base.map_event_template[464] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12597,11 +10852,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.map_event_template
-
-	var_5_31[465] = {
+	pg.base.map_event_template[465] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12619,11 +10870,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.map_event_template
-
-	var_5_32[466] = {
+	pg.base.map_event_template[466] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12641,11 +10888,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.map_event_template
-
-	var_5_33[467] = {
+	pg.base.map_event_template[467] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12663,11 +10906,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.map_event_template
-
-	var_5_34[468] = {
+	pg.base.map_event_template[468] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12685,11 +10924,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.map_event_template
-
-	var_5_35[469] = {
+	pg.base.map_event_template[469] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12707,11 +10942,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.map_event_template
-
-	var_5_36[470] = {
+	pg.base.map_event_template[470] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12729,11 +10960,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.map_event_template
-
-	var_5_37[471] = {
+	pg.base.map_event_template[471] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12751,11 +10978,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.map_event_template
-
-	var_5_38[472] = {
+	pg.base.map_event_template[472] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12773,11 +10996,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.map_event_template
-
-	var_5_39[473] = {
+	pg.base.map_event_template[473] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12795,11 +11014,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.map_event_template
-
-	var_5_40[474] = {
+	pg.base.map_event_template[474] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12817,11 +11032,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.map_event_template
-
-	var_5_41[475] = {
+	pg.base.map_event_template[475] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12839,11 +11050,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.map_event_template
-
-	var_5_42[476] = {
+	pg.base.map_event_template[476] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12861,11 +11068,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.map_event_template
-
-	var_5_43[477] = {
+	pg.base.map_event_template[477] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12883,11 +11086,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.map_event_template
-
-	var_5_44[478] = {
+	pg.base.map_event_template[478] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12905,11 +11104,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.map_event_template
-
-	var_5_45[479] = {
+	pg.base.map_event_template[479] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12927,11 +11122,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.map_event_template
-
-	var_5_46[480] = {
+	pg.base.map_event_template[480] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12949,11 +11140,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.map_event_template
-
-	var_5_47[481] = {
+	pg.base.map_event_template[481] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -12971,11 +11158,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.map_event_template
-
-	var_5_48[482] = {
+	pg.base.map_event_template[482] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13017,11 +11200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.map_event_template
-
-	var_5_49[483] = {
+	pg.base.map_event_template[483] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13063,11 +11242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.map_event_template
-
-	var_5_50[484] = {
+	pg.base.map_event_template[484] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13095,11 +11270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.map_event_template
-
-	var_5_51[485] = {
+	pg.base.map_event_template[485] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13120,11 +11291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.map_event_template
-
-	var_5_52[486] = {
+	pg.base.map_event_template[486] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13145,11 +11312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.map_event_template
-
-	var_5_53[487] = {
+	pg.base.map_event_template[487] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13167,11 +11330,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.map_event_template
-
-	var_5_54[488] = {
+	pg.base.map_event_template[488] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13189,11 +11348,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.map_event_template
-
-	var_5_55[489] = {
+	pg.base.map_event_template[489] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13221,11 +11376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.map_event_template
-
-	var_5_56[490] = {
+	pg.base.map_event_template[490] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13246,11 +11397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.map_event_template
-
-	var_5_57[491] = {
+	pg.base.map_event_template[491] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13271,11 +11418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.map_event_template
-
-	var_5_58[492] = {
+	pg.base.map_event_template[492] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13293,11 +11436,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.map_event_template
-
-	var_5_59[493] = {
+	pg.base.map_event_template[493] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13315,11 +11454,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.map_event_template
-
-	var_5_60[494] = {
+	pg.base.map_event_template[494] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13347,11 +11482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.map_event_template
-
-	var_5_61[495] = {
+	pg.base.map_event_template[495] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13372,11 +11503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.map_event_template
-
-	var_5_62[496] = {
+	pg.base.map_event_template[496] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13397,11 +11524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.map_event_template
-
-	var_5_63[497] = {
+	pg.base.map_event_template[497] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13419,11 +11542,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.map_event_template
-
-	var_5_64[498] = {
+	pg.base.map_event_template[498] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13441,11 +11560,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.map_event_template
-
-	var_5_65[499] = {
+	pg.base.map_event_template[499] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13473,11 +11588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.map_event_template
-
-	var_5_66[500] = {
+	pg.base.map_event_template[500] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13498,11 +11609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.map_event_template
-
-	var_5_67[501] = {
+	pg.base.map_event_template[501] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13523,11 +11630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.map_event_template
-
-	var_5_68[502] = {
+	pg.base.map_event_template[502] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13545,11 +11648,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.map_event_template
-
-	var_5_69[503] = {
+	pg.base.map_event_template[503] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13567,11 +11666,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.map_event_template
-
-	var_5_70[504] = {
+	pg.base.map_event_template[504] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13620,11 +11715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.map_event_template
-
-	var_5_71[505] = {
+	pg.base.map_event_template[505] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13660,11 +11751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.map_event_template
-
-	var_5_72[506] = {
+	pg.base.map_event_template[506] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13685,11 +11772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.map_event_template
-
-	var_5_73[507] = {
+	pg.base.map_event_template[507] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13710,11 +11793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.map_event_template
-
-	var_5_74[508] = {
+	pg.base.map_event_template[508] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13735,11 +11814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.map_event_template
-
-	var_5_75[509] = {
+	pg.base.map_event_template[509] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13760,11 +11835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.map_event_template
-
-	var_5_76[510] = {
+	pg.base.map_event_template[510] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13792,11 +11863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.map_event_template
-
-	var_5_77[511] = {
+	pg.base.map_event_template[511] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13824,11 +11891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.map_event_template
-
-	var_5_78[512] = {
+	pg.base.map_event_template[512] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13856,11 +11919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.map_event_template
-
-	var_5_79[513] = {
+	pg.base.map_event_template[513] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13888,11 +11947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.map_event_template
-
-	var_5_80[514] = {
+	pg.base.map_event_template[514] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13910,11 +11965,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.map_event_template
-
-	var_5_81[515] = {
+	pg.base.map_event_template[515] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13942,11 +11993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.map_event_template
-
-	var_5_82[516] = {
+	pg.base.map_event_template[516] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13967,11 +12014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.map_event_template
-
-	var_5_83[517] = {
+	pg.base.map_event_template[517] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -13992,11 +12035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.map_event_template
-
-	var_5_84[518] = {
+	pg.base.map_event_template[518] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14014,11 +12053,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.map_event_template
-
-	var_5_85[519] = {
+	pg.base.map_event_template[519] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14036,11 +12071,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.map_event_template
-
-	var_5_86[520] = {
+	pg.base.map_event_template[520] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14068,11 +12099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.map_event_template
-
-	var_5_87[521] = {
+	pg.base.map_event_template[521] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14093,11 +12120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.map_event_template
-
-	var_5_88[522] = {
+	pg.base.map_event_template[522] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14118,11 +12141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.map_event_template
-
-	var_5_89[523] = {
+	pg.base.map_event_template[523] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14140,11 +12159,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.map_event_template
-
-	var_5_90[524] = {
+	pg.base.map_event_template[524] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14162,11 +12177,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.map_event_template
-
-	var_5_91[525] = {
+	pg.base.map_event_template[525] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14194,11 +12205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.map_event_template
-
-	var_5_92[526] = {
+	pg.base.map_event_template[526] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14219,11 +12226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.map_event_template
-
-	var_5_93[527] = {
+	pg.base.map_event_template[527] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14244,11 +12247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.map_event_template
-
-	var_5_94[528] = {
+	pg.base.map_event_template[528] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14266,11 +12265,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.map_event_template
-
-	var_5_95[529] = {
+	pg.base.map_event_template[529] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14288,11 +12283,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.map_event_template
-
-	var_5_96[530] = {
+	pg.base.map_event_template[530] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14320,11 +12311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.map_event_template
-
-	var_5_97[531] = {
+	pg.base.map_event_template[531] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14345,11 +12332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.map_event_template
-
-	var_5_98[532] = {
+	pg.base.map_event_template[532] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14370,8 +12353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.map_event_template[533] = {
+	pg.base.map_event_template[533] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14393,11 +12375,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.map_event_template
-
-	var_6_0[534] = {
+	pg.base.map_event_template[534] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14415,11 +12393,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.map_event_template
-
-	var_6_1[535] = {
+	pg.base.map_event_template[535] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14468,11 +12442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.map_event_template
-
-	var_6_2[536] = {
+	pg.base.map_event_template[536] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14508,11 +12478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.map_event_template
-
-	var_6_3[537] = {
+	pg.base.map_event_template[537] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14533,11 +12499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.map_event_template
-
-	var_6_4[538] = {
+	pg.base.map_event_template[538] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14558,11 +12520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.map_event_template
-
-	var_6_5[539] = {
+	pg.base.map_event_template[539] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14583,11 +12541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.map_event_template
-
-	var_6_6[540] = {
+	pg.base.map_event_template[540] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14608,11 +12562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.map_event_template
-
-	var_6_7[541] = {
+	pg.base.map_event_template[541] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14640,11 +12590,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.map_event_template
-
-	var_6_8[542] = {
+	pg.base.map_event_template[542] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14672,11 +12618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.map_event_template
-
-	var_6_9[543] = {
+	pg.base.map_event_template[543] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14704,11 +12646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.map_event_template
-
-	var_6_10[544] = {
+	pg.base.map_event_template[544] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14736,11 +12674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.map_event_template
-
-	var_6_11[545] = {
+	pg.base.map_event_template[545] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14758,11 +12692,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.map_event_template
-
-	var_6_12[546] = {
+	pg.base.map_event_template[546] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14811,11 +12741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.map_event_template
-
-	var_6_13[547] = {
+	pg.base.map_event_template[547] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14851,11 +12777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.map_event_template
-
-	var_6_14[548] = {
+	pg.base.map_event_template[548] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14876,11 +12798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.map_event_template
-
-	var_6_15[549] = {
+	pg.base.map_event_template[549] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14901,11 +12819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.map_event_template
-
-	var_6_16[550] = {
+	pg.base.map_event_template[550] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14926,11 +12840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.map_event_template
-
-	var_6_17[551] = {
+	pg.base.map_event_template[551] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14951,11 +12861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.map_event_template
-
-	var_6_18[552] = {
+	pg.base.map_event_template[552] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14973,11 +12879,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.map_event_template
-
-	var_6_19[553] = {
+	pg.base.map_event_template[553] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -14995,11 +12897,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.map_event_template
-
-	var_6_20[554] = {
+	pg.base.map_event_template[554] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15017,11 +12915,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.map_event_template
-
-	var_6_21[555] = {
+	pg.base.map_event_template[555] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15039,11 +12933,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.map_event_template
-
-	var_6_22[556] = {
+	pg.base.map_event_template[556] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15061,11 +12951,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.map_event_template
-
-	var_6_23[561] = {
+	pg.base.map_event_template[561] = {
 		grid_color = "cell_box",
 		memory = 0,
 		ship_prefab = "",
@@ -15089,11 +12975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.map_event_template
-
-	var_6_24[562] = {
+	pg.base.map_event_template[562] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15121,11 +13003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.map_event_template
-
-	var_6_25[563] = {
+	pg.base.map_event_template[563] = {
 		grid_color = "cell_box",
 		memory = 0,
 		ship_prefab = "",
@@ -15149,11 +13027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.map_event_template
-
-	var_6_26[564] = {
+	pg.base.map_event_template[564] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15181,11 +13055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.map_event_template
-
-	var_6_27[565] = {
+	pg.base.map_event_template[565] = {
 		grid_color = "cell_box",
 		memory = 0,
 		ship_prefab = "",
@@ -15209,11 +13079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.map_event_template
-
-	var_6_28[566] = {
+	pg.base.map_event_template[566] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15241,11 +13107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.map_event_template
-
-	var_6_29[567] = {
+	pg.base.map_event_template[567] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15273,11 +13135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.map_event_template
-	local var_6_31 = 568
-	local var_6_32 = {
+	pg.base.map_event_template[568] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15289,32 +13147,24 @@ end)()
 		animation = "",
 		id = 568,
 		icon = "",
-		address = {}
-	}
-	local var_6_33 = {
-		{
-			"flag",
-			0,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				22
+			},
+			{
+				random_buff,
+				{
+					9401,
+					9421,
+					9441
+				}
+			}
 		}
 	}
-	local var_6_34 = {}
-
-	random_buff = var_5
-	var_6_34[1] = var_5
-	var_6_34[2] = {
-		9401,
-		9421,
-		9441
-	}
-	var_6_33[2] = var_6_34
-	var_6_32.effect = var_6_33
-	var_6_30[var_6_31] = var_6_32
-	pg = var_6_30
-
-	local var_6_35 = var_6_30.base.map_event_template
-	local var_6_36 = 569
-	local var_6_37 = {
+	pg.base.map_event_template[569] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15326,31 +13176,23 @@ end)()
 		animation = "",
 		id = 569,
 		icon = "",
-		address = {}
-	}
-	local var_6_38 = {
-		{
-			"flag",
-			0,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				24
+			},
+			{
+				random_buff,
+				{
+					9461,
+					9481
+				}
+			}
 		}
 	}
-	local var_6_39 = {}
-
-	random_buff = var_5
-	var_6_39[1] = var_5
-	var_6_39[2] = {
-		9461,
-		9481
-	}
-	var_6_38[2] = var_6_39
-	var_6_37.effect = var_6_38
-	var_6_35[var_6_36] = var_6_37
-	pg = var_6_35
-
-	local var_6_40 = var_6_35.base.map_event_template
-
-	var_6_40[570] = {
+	pg.base.map_event_template[570] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15371,11 +13213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.map_event_template
-	local var_6_42 = 571
-	local var_6_43 = {
+	pg.base.map_event_template[571] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15387,30 +13225,22 @@ end)()
 		animation = "",
 		id = 571,
 		icon = "",
-		address = {}
-	}
-	local var_6_44 = {
-		{
-			"flag",
-			21,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				21,
+				22
+			},
+			{
+				random_buff,
+				{
+					9401
+				}
+			}
 		}
 	}
-	local var_6_45 = {}
-
-	random_buff = var_5
-	var_6_45[1] = var_5
-	var_6_45[2] = {
-		9401
-	}
-	var_6_44[2] = var_6_45
-	var_6_43.effect = var_6_44
-	var_6_41[var_6_42] = var_6_43
-	pg = var_6_41
-
-	local var_6_46 = var_6_41.base.map_event_template
-
-	var_6_46[572] = {
+	pg.base.map_event_template[572] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15431,11 +13261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.map_event_template
-	local var_6_48 = 573
-	local var_6_49 = {
+	pg.base.map_event_template[573] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15447,30 +13273,22 @@ end)()
 		animation = "",
 		id = 573,
 		icon = "",
-		address = {}
-	}
-	local var_6_50 = {
-		{
-			"flag",
-			23,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				23,
+				24
+			},
+			{
+				random_buff,
+				{
+					9461
+				}
+			}
 		}
 	}
-	local var_6_51 = {}
-
-	random_buff = var_5
-	var_6_51[1] = var_5
-	var_6_51[2] = {
-		9461
-	}
-	var_6_50[2] = var_6_51
-	var_6_49.effect = var_6_50
-	var_6_47[var_6_48] = var_6_49
-	pg = var_6_47
-
-	local var_6_52 = var_6_47.base.map_event_template
-
-	var_6_52[574] = {
+	pg.base.map_event_template[574] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15491,11 +13309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.map_event_template
-	local var_6_54 = 575
-	local var_6_55 = {
+	pg.base.map_event_template[575] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15507,30 +13321,22 @@ end)()
 		animation = "",
 		id = 575,
 		icon = "",
-		address = {}
-	}
-	local var_6_56 = {
-		{
-			"flag",
-			21,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				21,
+				22
+			},
+			{
+				random_buff,
+				{
+					9421
+				}
+			}
 		}
 	}
-	local var_6_57 = {}
-
-	random_buff = var_5
-	var_6_57[1] = var_5
-	var_6_57[2] = {
-		9421
-	}
-	var_6_56[2] = var_6_57
-	var_6_55.effect = var_6_56
-	var_6_53[var_6_54] = var_6_55
-	pg = var_6_53
-
-	local var_6_58 = var_6_53.base.map_event_template
-
-	var_6_58[576] = {
+	pg.base.map_event_template[576] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15551,11 +13357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.map_event_template
-	local var_6_60 = 577
-	local var_6_61 = {
+	pg.base.map_event_template[577] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15567,30 +13369,22 @@ end)()
 		animation = "",
 		id = 577,
 		icon = "",
-		address = {}
-	}
-	local var_6_62 = {
-		{
-			"flag",
-			23,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				23,
+				24
+			},
+			{
+				random_buff,
+				{
+					9461
+				}
+			}
 		}
 	}
-	local var_6_63 = {}
-
-	random_buff = var_5
-	var_6_63[1] = var_5
-	var_6_63[2] = {
-		9461
-	}
-	var_6_62[2] = var_6_63
-	var_6_61.effect = var_6_62
-	var_6_59[var_6_60] = var_6_61
-	pg = var_6_59
-
-	local var_6_64 = var_6_59.base.map_event_template
-
-	var_6_64[578] = {
+	pg.base.map_event_template[578] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15611,11 +13405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.map_event_template
-	local var_6_66 = 579
-	local var_6_67 = {
+	pg.base.map_event_template[579] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15627,30 +13417,22 @@ end)()
 		animation = "",
 		id = 579,
 		icon = "",
-		address = {}
-	}
-	local var_6_68 = {
-		{
-			"flag",
-			21,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				21,
+				22
+			},
+			{
+				random_buff,
+				{
+					9441
+				}
+			}
 		}
 	}
-	local var_6_69 = {}
-
-	random_buff = var_5
-	var_6_69[1] = var_5
-	var_6_69[2] = {
-		9441
-	}
-	var_6_68[2] = var_6_69
-	var_6_67.effect = var_6_68
-	var_6_65[var_6_66] = var_6_67
-	pg = var_6_65
-
-	local var_6_70 = var_6_65.base.map_event_template
-
-	var_6_70[580] = {
+	pg.base.map_event_template[580] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15671,11 +13453,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.map_event_template
-	local var_6_72 = 581
-	local var_6_73 = {
+	pg.base.map_event_template[581] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15687,30 +13465,22 @@ end)()
 		animation = "",
 		id = 581,
 		icon = "",
-		address = {}
-	}
-	local var_6_74 = {
-		{
-			"flag",
-			23,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				23,
+				24
+			},
+			{
+				random_buff,
+				{
+					9481
+				}
+			}
 		}
 	}
-	local var_6_75 = {}
-
-	random_buff = var_5
-	var_6_75[1] = var_5
-	var_6_75[2] = {
-		9481
-	}
-	var_6_74[2] = var_6_75
-	var_6_73.effect = var_6_74
-	var_6_71[var_6_72] = var_6_73
-	pg = var_6_71
-
-	local var_6_76 = var_6_71.base.map_event_template
-
-	var_6_76[582] = {
+	pg.base.map_event_template[582] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15731,11 +13501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.map_event_template
-	local var_6_78 = 583
-	local var_6_79 = {
+	pg.base.map_event_template[583] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15747,32 +13513,24 @@ end)()
 		animation = "",
 		id = 583,
 		icon = "",
-		address = {}
-	}
-	local var_6_80 = {
-		{
-			"flag",
-			21,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				21,
+				22
+			},
+			{
+				random_buff,
+				{
+					9401,
+					9421,
+					9441
+				}
+			}
 		}
 	}
-	local var_6_81 = {}
-
-	random_buff = var_5
-	var_6_81[1] = var_5
-	var_6_81[2] = {
-		9401,
-		9421,
-		9441
-	}
-	var_6_80[2] = var_6_81
-	var_6_79.effect = var_6_80
-	var_6_77[var_6_78] = var_6_79
-	pg = var_6_77
-
-	local var_6_82 = var_6_77.base.map_event_template
-
-	var_6_82[584] = {
+	pg.base.map_event_template[584] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15793,11 +13551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.map_event_template
-	local var_6_84 = 585
-	local var_6_85 = {
+	pg.base.map_event_template[585] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15809,31 +13563,23 @@ end)()
 		animation = "",
 		id = 585,
 		icon = "",
-		address = {}
-	}
-	local var_6_86 = {
-		{
-			"flag",
-			23,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				23,
+				24
+			},
+			{
+				random_buff,
+				{
+					9461,
+					9481
+				}
+			}
 		}
 	}
-	local var_6_87 = {}
-
-	random_buff = var_5
-	var_6_87[1] = var_5
-	var_6_87[2] = {
-		9461,
-		9481
-	}
-	var_6_86[2] = var_6_87
-	var_6_85.effect = var_6_86
-	var_6_83[var_6_84] = var_6_85
-	pg = var_6_83
-
-	local var_6_88 = var_6_83.base.map_event_template
-
-	var_6_88[586] = {
+	pg.base.map_event_template[586] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15875,11 +13621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.map_event_template
-
-	var_6_89[590] = {
+	pg.base.map_event_template[590] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15900,11 +13642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.map_event_template
-
-	var_6_90[591] = {
+	pg.base.map_event_template[591] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15922,11 +13660,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.map_event_template
-
-	var_6_91[592] = {
+	pg.base.map_event_template[592] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -15972,11 +13706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.map_event_template
-
-	var_6_92[593] = {
+	pg.base.map_event_template[593] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16022,11 +13752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.map_event_template
-
-	var_6_93[594] = {
+	pg.base.map_event_template[594] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16072,11 +13798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.map_event_template
-
-	var_6_94[595] = {
+	pg.base.map_event_template[595] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16122,11 +13844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.map_event_template
-	local var_6_96 = 596
-	local var_6_97 = {
+	pg.base.map_event_template[596] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16138,30 +13856,22 @@ end)()
 		animation = "",
 		id = 596,
 		icon = "",
-		address = {}
-	}
-	local var_6_98 = {
-		{
-			"flag",
-			0,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				22
+			},
+			{
+				random_buff,
+				{
+					9401
+				}
+			}
 		}
 	}
-	local var_6_99 = {}
-
-	random_buff = var_5
-	var_6_99[1] = var_5
-	var_6_99[2] = {
-		9401
-	}
-	var_6_98[2] = var_6_99
-	var_6_97.effect = var_6_98
-	var_6_95[var_6_96] = var_6_97
-	pg = var_6_95
-
-	local var_6_100 = var_6_95.base.map_event_template
-	local var_6_101 = 597
-	local var_6_102 = {
+	pg.base.map_event_template[597] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16173,30 +13883,22 @@ end)()
 		animation = "",
 		id = 597,
 		icon = "",
-		address = {}
-	}
-	local var_6_103 = {
-		{
-			"flag",
-			0,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				24
+			},
+			{
+				random_buff,
+				{
+					9461
+				}
+			}
 		}
 	}
-	local var_6_104 = {}
-
-	random_buff = var_5
-	var_6_104[1] = var_5
-	var_6_104[2] = {
-		9461
-	}
-	var_6_103[2] = var_6_104
-	var_6_102.effect = var_6_103
-	var_6_100[var_6_101] = var_6_102
-	pg = var_6_100
-
-	local var_6_105 = var_6_100.base.map_event_template
-	local var_6_106 = 598
-	local var_6_107 = {
+	pg.base.map_event_template[598] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16208,30 +13910,22 @@ end)()
 		animation = "",
 		id = 598,
 		icon = "",
-		address = {}
-	}
-	local var_6_108 = {
-		{
-			"flag",
-			0,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				22
+			},
+			{
+				random_buff,
+				{
+					9421
+				}
+			}
 		}
 	}
-	local var_6_109 = {}
-
-	random_buff = var_5
-	var_6_109[1] = var_5
-	var_6_109[2] = {
-		9421
-	}
-	var_6_108[2] = var_6_109
-	var_6_107.effect = var_6_108
-	var_6_105[var_6_106] = var_6_107
-	pg = var_6_105
-
-	local var_6_110 = var_6_105.base.map_event_template
-	local var_6_111 = 599
-	local var_6_112 = {
+	pg.base.map_event_template[599] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16243,30 +13937,22 @@ end)()
 		animation = "",
 		id = 599,
 		icon = "",
-		address = {}
-	}
-	local var_6_113 = {
-		{
-			"flag",
-			0,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				24
+			},
+			{
+				random_buff,
+				{
+					9461
+				}
+			}
 		}
 	}
-	local var_6_114 = {}
-
-	random_buff = var_5
-	var_6_114[1] = var_5
-	var_6_114[2] = {
-		9461
-	}
-	var_6_113[2] = var_6_114
-	var_6_112.effect = var_6_113
-	var_6_110[var_6_111] = var_6_112
-	pg = var_6_110
-
-	local var_6_115 = var_6_110.base.map_event_template
-	local var_6_116 = 600
-	local var_6_117 = {
+	pg.base.map_event_template[600] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16278,30 +13964,22 @@ end)()
 		animation = "",
 		id = 600,
 		icon = "",
-		address = {}
-	}
-	local var_6_118 = {
-		{
-			"flag",
-			0,
-			22
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				22
+			},
+			{
+				random_buff,
+				{
+					9441
+				}
+			}
 		}
 	}
-	local var_6_119 = {}
-
-	random_buff = var_5
-	var_6_119[1] = var_5
-	var_6_119[2] = {
-		9441
-	}
-	var_6_118[2] = var_6_119
-	var_6_117.effect = var_6_118
-	var_6_115[var_6_116] = var_6_117
-	pg = var_6_115
-
-	local var_6_120 = var_6_115.base.map_event_template
-	local var_6_121 = 601
-	local var_6_122 = {
+	pg.base.map_event_template[601] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16313,30 +13991,22 @@ end)()
 		animation = "",
 		id = 601,
 		icon = "",
-		address = {}
-	}
-	local var_6_123 = {
-		{
-			"flag",
-			0,
-			24
+		address = {},
+		effect = {
+			{
+				"flag",
+				0,
+				24
+			},
+			{
+				random_buff,
+				{
+					9481
+				}
+			}
 		}
 	}
-	local var_6_124 = {}
-
-	random_buff = var_5
-	var_6_124[1] = var_5
-	var_6_124[2] = {
-		9481
-	}
-	var_6_123[2] = var_6_124
-	var_6_122.effect = var_6_123
-	var_6_120[var_6_121] = var_6_122
-	pg = var_6_120
-
-	local var_6_125 = var_6_120.base.map_event_template
-
-	var_6_125[602] = {
+	pg.base.map_event_template[602] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16354,11 +14024,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_125
-
-	local var_6_126 = var_6_125.base.map_event_template
-
-	var_6_126[603] = {
+	pg.base.map_event_template[603] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16376,11 +14042,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_126
-
-	local var_6_127 = var_6_126.base.map_event_template
-
-	var_6_127[604] = {
+	pg.base.map_event_template[604] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16398,11 +14060,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_127
-
-	local var_6_128 = var_6_127.base.map_event_template
-
-	var_6_128[605] = {
+	pg.base.map_event_template[605] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16420,11 +14078,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_128
-
-	local var_6_129 = var_6_128.base.map_event_template
-
-	var_6_129[606] = {
+	pg.base.map_event_template[606] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16451,11 +14105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_129
-
-	local var_6_130 = var_6_129.base.map_event_template
-
-	var_6_130[607] = {
+	pg.base.map_event_template[607] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16482,11 +14132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_130
-
-	local var_6_131 = var_6_130.base.map_event_template
-
-	var_6_131[608] = {
+	pg.base.map_event_template[608] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16513,11 +14159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_131
-
-	local var_6_132 = var_6_131.base.map_event_template
-
-	var_6_132[609] = {
+	pg.base.map_event_template[609] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16544,11 +14186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_132
-
-	local var_6_133 = var_6_132.base.map_event_template
-
-	var_6_133[610] = {
+	pg.base.map_event_template[610] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16575,11 +14213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_133
-
-	local var_6_134 = var_6_133.base.map_event_template
-
-	var_6_134[611] = {
+	pg.base.map_event_template[611] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16606,11 +14240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_134
-
-	local var_6_135 = var_6_134.base.map_event_template
-
-	var_6_135[612] = {
+	pg.base.map_event_template[612] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16637,11 +14267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_135
-
-	local var_6_136 = var_6_135.base.map_event_template
-
-	var_6_136[613] = {
+	pg.base.map_event_template[613] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16668,11 +14294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_136
-
-	local var_6_137 = var_6_136.base.map_event_template
-
-	var_6_137[614] = {
+	pg.base.map_event_template[614] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16699,11 +14321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_137
-
-	local var_6_138 = var_6_137.base.map_event_template
-
-	var_6_138[615] = {
+	pg.base.map_event_template[615] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16730,11 +14348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_138
-
-	local var_6_139 = var_6_138.base.map_event_template
-
-	var_6_139[616] = {
+	pg.base.map_event_template[616] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16761,11 +14375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_139
-
-	local var_6_140 = var_6_139.base.map_event_template
-
-	var_6_140[617] = {
+	pg.base.map_event_template[617] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16786,11 +14396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_140
-
-	local var_6_141 = var_6_140.base.map_event_template
-
-	var_6_141[618] = {
+	pg.base.map_event_template[618] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16816,11 +14422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_141
-
-	local var_6_142 = var_6_141.base.map_event_template
-
-	var_6_142[619] = {
+	pg.base.map_event_template[619] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16841,11 +14443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_142
-
-	local var_6_143 = var_6_142.base.map_event_template
-
-	var_6_143[620] = {
+	pg.base.map_event_template[620] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16866,11 +14464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_143
-
-	local var_6_144 = var_6_143.base.map_event_template
-
-	var_6_144[621] = {
+	pg.base.map_event_template[621] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16889,11 +14483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_144
-
-	local var_6_145 = var_6_144.base.map_event_template
-
-	var_6_145[622] = {
+	pg.base.map_event_template[622] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16920,11 +14510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_145
-
-	local var_6_146 = var_6_145.base.map_event_template
-
-	var_6_146[623] = {
+	pg.base.map_event_template[623] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -16966,11 +14552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_146
-
-	local var_6_147 = var_6_146.base.map_event_template
-
-	var_6_147[624] = {
+	pg.base.map_event_template[624] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17012,11 +14594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_147
-
-	local var_6_148 = var_6_147.base.map_event_template
-
-	var_6_148[625] = {
+	pg.base.map_event_template[625] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17034,11 +14612,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_148
-
-	local var_6_149 = var_6_148.base.map_event_template
-
-	var_6_149[626] = {
+	pg.base.map_event_template[626] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17056,11 +14630,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_149
-
-	local var_6_150 = var_6_149.base.map_event_template
-
-	var_6_150[627] = {
+	pg.base.map_event_template[627] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17078,11 +14648,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_150
-
-	local var_6_151 = var_6_150.base.map_event_template
-
-	var_6_151[628] = {
+	pg.base.map_event_template[628] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17100,11 +14666,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_151
-
-	local var_6_152 = var_6_151.base.map_event_template
-
-	var_6_152[629] = {
+	pg.base.map_event_template[629] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17122,11 +14684,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_152
-
-	local var_6_153 = var_6_152.base.map_event_template
-
-	var_6_153[630] = {
+	pg.base.map_event_template[630] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17144,11 +14702,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_153
-
-	local var_6_154 = var_6_153.base.map_event_template
-
-	var_6_154[631] = {
+	pg.base.map_event_template[631] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17166,11 +14720,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_154
-
-	local var_6_155 = var_6_154.base.map_event_template
-
-	var_6_155[632] = {
+	pg.base.map_event_template[632] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17188,11 +14738,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_155
-
-	local var_6_156 = var_6_155.base.map_event_template
-
-	var_6_156[633] = {
+	pg.base.map_event_template[633] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17210,11 +14756,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_156
-
-	local var_6_157 = var_6_156.base.map_event_template
-
-	var_6_157[634] = {
+	pg.base.map_event_template[634] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17232,11 +14774,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_157
-
-	local var_6_158 = var_6_157.base.map_event_template
-
-	var_6_158[635] = {
+	pg.base.map_event_template[635] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17254,11 +14792,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_158
-
-	local var_6_159 = var_6_158.base.map_event_template
-
-	var_6_159[636] = {
+	pg.base.map_event_template[636] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17276,11 +14810,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_159
-
-	local var_6_160 = var_6_159.base.map_event_template
-
-	var_6_160[637] = {
+	pg.base.map_event_template[637] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17298,11 +14828,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_160
-
-	local var_6_161 = var_6_160.base.map_event_template
-
-	var_6_161[638] = {
+	pg.base.map_event_template[638] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17320,11 +14846,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_161
-
-	local var_6_162 = var_6_161.base.map_event_template
-
-	var_6_162[639] = {
+	pg.base.map_event_template[639] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17342,8 +14864,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_6_162
-	var_6_162.base.map_event_template[640] = {
+	pg.base.map_event_template[640] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17365,11 +14886,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.map_event_template
-
-	var_7_0[641] = {
+	pg.base.map_event_template[641] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17387,11 +14904,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.map_event_template
-
-	var_7_1[642] = {
+	pg.base.map_event_template[642] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17409,11 +14922,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.map_event_template
-
-	var_7_2[643] = {
+	pg.base.map_event_template[643] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17431,11 +14940,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.map_event_template
-
-	var_7_3[644] = {
+	pg.base.map_event_template[644] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17453,11 +14958,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.map_event_template
-
-	var_7_4[645] = {
+	pg.base.map_event_template[645] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17475,11 +14976,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.map_event_template
-
-	var_7_5[646] = {
+	pg.base.map_event_template[646] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17497,11 +14994,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.map_event_template
-
-	var_7_6[647] = {
+	pg.base.map_event_template[647] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17519,11 +15012,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.map_event_template
-
-	var_7_7[648] = {
+	pg.base.map_event_template[648] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17541,11 +15030,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.map_event_template
-
-	var_7_8[649] = {
+	pg.base.map_event_template[649] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17566,11 +15051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.map_event_template
-
-	var_7_9[650] = {
+	pg.base.map_event_template[650] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17596,11 +15077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.map_event_template
-
-	var_7_10[651] = {
+	pg.base.map_event_template[651] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17621,11 +15098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.map_event_template
-
-	var_7_11[652] = {
+	pg.base.map_event_template[652] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17646,11 +15119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.map_event_template
-
-	var_7_12[653] = {
+	pg.base.map_event_template[653] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17669,11 +15138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.map_event_template
-
-	var_7_13[654] = {
+	pg.base.map_event_template[654] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17701,11 +15166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.map_event_template
-
-	var_7_14[655] = {
+	pg.base.map_event_template[655] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17723,11 +15184,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.map_event_template
-
-	var_7_15[656] = {
+	pg.base.map_event_template[656] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17745,11 +15202,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.map_event_template
-
-	var_7_16[657] = {
+	pg.base.map_event_template[657] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17767,11 +15220,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.map_event_template
-
-	var_7_17[658] = {
+	pg.base.map_event_template[658] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17789,11 +15238,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.map_event_template
-
-	var_7_18[659] = {
+	pg.base.map_event_template[659] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17811,11 +15256,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.map_event_template
-
-	var_7_19[660] = {
+	pg.base.map_event_template[660] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17843,11 +15284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.map_event_template
-
-	var_7_20[661] = {
+	pg.base.map_event_template[661] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17875,11 +15312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.map_event_template
-
-	var_7_21[662] = {
+	pg.base.map_event_template[662] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17897,11 +15330,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.map_event_template
-
-	var_7_22[663] = {
+	pg.base.map_event_template[663] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17919,11 +15348,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.map_event_template
-
-	var_7_23[664] = {
+	pg.base.map_event_template[664] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17941,11 +15366,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.map_event_template
-
-	var_7_24[665] = {
+	pg.base.map_event_template[665] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17963,11 +15384,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.map_event_template
-
-	var_7_25[666] = {
+	pg.base.map_event_template[666] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -17985,11 +15402,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.map_event_template
-
-	var_7_26[667] = {
+	pg.base.map_event_template[667] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18017,11 +15430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.map_event_template
-
-	var_7_27[668] = {
+	pg.base.map_event_template[668] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18056,11 +15465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.map_event_template
-
-	var_7_28[669] = {
+	pg.base.map_event_template[669] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18078,11 +15483,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.map_event_template
-
-	var_7_29[670] = {
+	pg.base.map_event_template[670] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18100,11 +15501,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.map_event_template
-
-	var_7_30[671] = {
+	pg.base.map_event_template[671] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18122,11 +15519,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.map_event_template
-
-	var_7_31[672] = {
+	pg.base.map_event_template[672] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18144,11 +15537,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.map_event_template
-
-	var_7_32[673] = {
+	pg.base.map_event_template[673] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18166,11 +15555,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.map_event_template
-
-	var_7_33[674] = {
+	pg.base.map_event_template[674] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18188,11 +15573,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.map_event_template
-
-	var_7_34[675] = {
+	pg.base.map_event_template[675] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18210,11 +15591,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.map_event_template
-
-	var_7_35[676] = {
+	pg.base.map_event_template[676] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18232,11 +15609,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.map_event_template
-
-	var_7_36[677] = {
+	pg.base.map_event_template[677] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18264,11 +15637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.map_event_template
-
-	var_7_37[678] = {
+	pg.base.map_event_template[678] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18296,11 +15665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.map_event_template
-
-	var_7_38[679] = {
+	pg.base.map_event_template[679] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18318,11 +15683,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.map_event_template
-
-	var_7_39[680] = {
+	pg.base.map_event_template[680] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18340,11 +15701,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.map_event_template
-
-	var_7_40[681] = {
+	pg.base.map_event_template[681] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18362,11 +15719,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.map_event_template
-
-	var_7_41[682] = {
+	pg.base.map_event_template[682] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18384,11 +15737,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.map_event_template
-
-	var_7_42[683] = {
+	pg.base.map_event_template[683] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18406,11 +15755,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.map_event_template
-
-	var_7_43[684] = {
+	pg.base.map_event_template[684] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18445,11 +15790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.map_event_template
-
-	var_7_44[685] = {
+	pg.base.map_event_template[685] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18477,11 +15818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.map_event_template
-
-	var_7_45[686] = {
+	pg.base.map_event_template[686] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18499,11 +15836,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.map_event_template
-
-	var_7_46[687] = {
+	pg.base.map_event_template[687] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18521,11 +15854,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.map_event_template
-
-	var_7_47[688] = {
+	pg.base.map_event_template[688] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18543,11 +15872,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.map_event_template
-
-	var_7_48[689] = {
+	pg.base.map_event_template[689] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18565,11 +15890,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.map_event_template
-
-	var_7_49[690] = {
+	pg.base.map_event_template[690] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18587,11 +15908,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.map_event_template
-
-	var_7_50[691] = {
+	pg.base.map_event_template[691] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18626,11 +15943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.map_event_template
-
-	var_7_51[692] = {
+	pg.base.map_event_template[692] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18665,11 +15978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.map_event_template
-
-	var_7_52[693] = {
+	pg.base.map_event_template[693] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18687,11 +15996,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.map_event_template
-
-	var_7_53[694] = {
+	pg.base.map_event_template[694] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18709,11 +16014,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.map_event_template
-
-	var_7_54[695] = {
+	pg.base.map_event_template[695] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18731,11 +16032,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.map_event_template
-
-	var_7_55[696] = {
+	pg.base.map_event_template[696] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18753,11 +16050,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.map_event_template
-
-	var_7_56[697] = {
+	pg.base.map_event_template[697] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18775,11 +16068,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.map_event_template
-
-	var_7_57[698] = {
+	pg.base.map_event_template[698] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18797,11 +16086,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.map_event_template
-
-	var_7_58[699] = {
+	pg.base.map_event_template[699] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18819,11 +16104,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.map_event_template
-
-	var_7_59[700] = {
+	pg.base.map_event_template[700] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18841,11 +16122,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.map_event_template
-
-	var_7_60[701] = {
+	pg.base.map_event_template[701] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18880,11 +16157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.map_event_template
-
-	var_7_61[702] = {
+	pg.base.map_event_template[702] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18912,11 +16185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.map_event_template
-
-	var_7_62[703] = {
+	pg.base.map_event_template[703] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18934,11 +16203,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.map_event_template
-
-	var_7_63[704] = {
+	pg.base.map_event_template[704] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18956,11 +16221,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.map_event_template
-
-	var_7_64[705] = {
+	pg.base.map_event_template[705] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -18978,11 +16239,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.map_event_template
-
-	var_7_65[706] = {
+	pg.base.map_event_template[706] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19000,11 +16257,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.map_event_template
-
-	var_7_66[707] = {
+	pg.base.map_event_template[707] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19022,11 +16275,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.map_event_template
-
-	var_7_67[708] = {
+	pg.base.map_event_template[708] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19047,11 +16296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.map_event_template
-
-	var_7_68[709] = {
+	pg.base.map_event_template[709] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19072,11 +16317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.map_event_template
-
-	var_7_69[710] = {
+	pg.base.map_event_template[710] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19097,11 +16338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.map_event_template
-
-	var_7_70[711] = {
+	pg.base.map_event_template[711] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19122,11 +16359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.map_event_template
-
-	var_7_71[712] = {
+	pg.base.map_event_template[712] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19147,11 +16380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.map_event_template
-
-	var_7_72[713] = {
+	pg.base.map_event_template[713] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19200,11 +16429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.map_event_template
-
-	var_7_73[714] = {
+	pg.base.map_event_template[714] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19239,11 +16464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.map_event_template
-
-	var_7_74[715] = {
+	pg.base.map_event_template[715] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19271,11 +16492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.map_event_template
-
-	var_7_75[716] = {
+	pg.base.map_event_template[716] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19303,11 +16520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.map_event_template
-
-	var_7_76[717] = {
+	pg.base.map_event_template[717] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19335,11 +16548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.map_event_template
-
-	var_7_77[718] = {
+	pg.base.map_event_template[718] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19374,11 +16583,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.map_event_template
-
-	var_7_78[719] = {
+	pg.base.map_event_template[719] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19406,11 +16611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.map_event_template
-
-	var_7_79[720] = {
+	pg.base.map_event_template[720] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19438,11 +16639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.map_event_template
-
-	var_7_80[721] = {
+	pg.base.map_event_template[721] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19470,11 +16667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.map_event_template
-
-	var_7_81[722] = {
+	pg.base.map_event_template[722] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19509,11 +16702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.map_event_template
-
-	var_7_82[723] = {
+	pg.base.map_event_template[723] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19541,11 +16730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.map_event_template
-
-	var_7_83[724] = {
+	pg.base.map_event_template[724] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19573,11 +16758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.map_event_template
-
-	var_7_84[725] = {
+	pg.base.map_event_template[725] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19605,11 +16786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.map_event_template
-
-	var_7_85[726] = {
+	pg.base.map_event_template[726] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19644,11 +16821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.map_event_template
-
-	var_7_86[727] = {
+	pg.base.map_event_template[727] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19676,11 +16849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.map_event_template
-
-	var_7_87[728] = {
+	pg.base.map_event_template[728] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19708,11 +16877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.map_event_template
-
-	var_7_88[729] = {
+	pg.base.map_event_template[729] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19740,11 +16905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.map_event_template
-
-	var_7_89[730] = {
+	pg.base.map_event_template[730] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19793,11 +16954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.map_event_template
-
-	var_7_90[731] = {
+	pg.base.map_event_template[731] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19851,11 +17008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.map_event_template
-
-	var_7_91[732] = {
+	pg.base.map_event_template[732] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19904,11 +17057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.map_event_template
-
-	var_7_92[733] = {
+	pg.base.map_event_template[733] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19934,11 +17083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.map_event_template
-
-	var_7_93[734] = {
+	pg.base.map_event_template[734] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19964,11 +17109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.map_event_template
-
-	var_7_94[735] = {
+	pg.base.map_event_template[735] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -19998,11 +17139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.map_event_template
-
-	var_7_95[736] = {
+	pg.base.map_event_template[736] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20028,11 +17165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.map_event_template
-
-	var_7_96[737] = {
+	pg.base.map_event_template[737] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20066,11 +17199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.map_event_template
-
-	var_7_97[738] = {
+	pg.base.map_event_template[738] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20096,11 +17225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.map_event_template
-
-	var_7_98[739] = {
+	pg.base.map_event_template[739] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20138,8 +17263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.map_event_template[740] = {
+	pg.base.map_event_template[740] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20169,11 +17293,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.map_event_template
-
-	var_8_0[741] = {
+	pg.base.map_event_template[741] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20219,11 +17339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.map_event_template
-
-	var_8_1[742] = {
+	pg.base.map_event_template[742] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20249,11 +17365,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.map_event_template
-
-	var_8_2[743] = {
+	pg.base.map_event_template[743] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20276,11 +17388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.map_event_template
-
-	var_8_3[744] = {
+	pg.base.map_event_template[744] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20303,11 +17411,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.map_event_template
-
-	var_8_4[745] = {
+	pg.base.map_event_template[745] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20330,11 +17434,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.map_event_template
-
-	var_8_5[746] = {
+	pg.base.map_event_template[746] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20357,11 +17457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.map_event_template
-
-	var_8_6[747] = {
+	pg.base.map_event_template[747] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20384,11 +17480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.map_event_template
-
-	var_8_7[748] = {
+	pg.base.map_event_template[748] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20411,11 +17503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.map_event_template
-
-	var_8_8[749] = {
+	pg.base.map_event_template[749] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20438,11 +17526,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.map_event_template
-
-	var_8_9[750] = {
+	pg.base.map_event_template[750] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20465,11 +17549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.map_event_template
-
-	var_8_10[751] = {
+	pg.base.map_event_template[751] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20492,11 +17572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.map_event_template
-
-	var_8_11[752] = {
+	pg.base.map_event_template[752] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20519,11 +17595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.map_event_template
-
-	var_8_12[753] = {
+	pg.base.map_event_template[753] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20546,11 +17618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.map_event_template
-
-	var_8_13[754] = {
+	pg.base.map_event_template[754] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20573,11 +17641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.map_event_template
-
-	var_8_14[755] = {
+	pg.base.map_event_template[755] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20600,11 +17664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.map_event_template
-
-	var_8_15[756] = {
+	pg.base.map_event_template[756] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20627,11 +17687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.map_event_template
-
-	var_8_16[757] = {
+	pg.base.map_event_template[757] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20654,11 +17710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.map_event_template
-
-	var_8_17[758] = {
+	pg.base.map_event_template[758] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20681,11 +17733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.map_event_template
-
-	var_8_18[759] = {
+	pg.base.map_event_template[759] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20708,11 +17756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.map_event_template
-
-	var_8_19[760] = {
+	pg.base.map_event_template[760] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20735,11 +17779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.map_event_template
-
-	var_8_20[761] = {
+	pg.base.map_event_template[761] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20762,11 +17802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.map_event_template
-
-	var_8_21[762] = {
+	pg.base.map_event_template[762] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20789,11 +17825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.map_event_template
-
-	var_8_22[763] = {
+	pg.base.map_event_template[763] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20816,11 +17848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.map_event_template
-
-	var_8_23[764] = {
+	pg.base.map_event_template[764] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20843,11 +17871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.map_event_template
-
-	var_8_24[765] = {
+	pg.base.map_event_template[765] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20870,11 +17894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.map_event_template
-
-	var_8_25[766] = {
+	pg.base.map_event_template[766] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20897,11 +17917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.map_event_template
-
-	var_8_26[767] = {
+	pg.base.map_event_template[767] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20924,11 +17940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.map_event_template
-
-	var_8_27[768] = {
+	pg.base.map_event_template[768] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20951,11 +17963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.map_event_template
-
-	var_8_28[769] = {
+	pg.base.map_event_template[769] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -20978,11 +17986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.map_event_template
-
-	var_8_29[770] = {
+	pg.base.map_event_template[770] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21005,11 +18009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.map_event_template
-
-	var_8_30[771] = {
+	pg.base.map_event_template[771] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21032,11 +18032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.map_event_template
-
-	var_8_31[772] = {
+	pg.base.map_event_template[772] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21059,11 +18055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.map_event_template
-
-	var_8_32[773] = {
+	pg.base.map_event_template[773] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21086,11 +18078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.map_event_template
-
-	var_8_33[774] = {
+	pg.base.map_event_template[774] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21113,11 +18101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.map_event_template
-
-	var_8_34[775] = {
+	pg.base.map_event_template[775] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21140,11 +18124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.map_event_template
-
-	var_8_35[776] = {
+	pg.base.map_event_template[776] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21167,11 +18147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.map_event_template
-
-	var_8_36[777] = {
+	pg.base.map_event_template[777] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21194,11 +18170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.map_event_template
-
-	var_8_37[778] = {
+	pg.base.map_event_template[778] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21221,11 +18193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.map_event_template
-
-	var_8_38[779] = {
+	pg.base.map_event_template[779] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21248,11 +18216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.map_event_template
-
-	var_8_39[780] = {
+	pg.base.map_event_template[780] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21275,11 +18239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.map_event_template
-
-	var_8_40[781] = {
+	pg.base.map_event_template[781] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21302,11 +18262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.map_event_template
-
-	var_8_41[782] = {
+	pg.base.map_event_template[782] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21329,11 +18285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.map_event_template
-
-	var_8_42[783] = {
+	pg.base.map_event_template[783] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21356,11 +18308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.map_event_template
-
-	var_8_43[784] = {
+	pg.base.map_event_template[784] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21383,11 +18331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.map_event_template
-
-	var_8_44[785] = {
+	pg.base.map_event_template[785] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21416,11 +18360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.map_event_template
-
-	var_8_45[786] = {
+	pg.base.map_event_template[786] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21449,11 +18389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.map_event_template
-
-	var_8_46[787] = {
+	pg.base.map_event_template[787] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21482,11 +18418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.map_event_template
-
-	var_8_47[788] = {
+	pg.base.map_event_template[788] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21515,11 +18447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.map_event_template
-
-	var_8_48[789] = {
+	pg.base.map_event_template[789] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21548,11 +18476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.map_event_template
-
-	var_8_49[790] = {
+	pg.base.map_event_template[790] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21581,11 +18505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.map_event_template
-
-	var_8_50[791] = {
+	pg.base.map_event_template[791] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21614,11 +18534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.map_event_template
-
-	var_8_51[792] = {
+	pg.base.map_event_template[792] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21647,11 +18563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.map_event_template
-
-	var_8_52[793] = {
+	pg.base.map_event_template[793] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21680,11 +18592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.map_event_template
-
-	var_8_53[794] = {
+	pg.base.map_event_template[794] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21713,11 +18621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.map_event_template
-
-	var_8_54[795] = {
+	pg.base.map_event_template[795] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21738,11 +18642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.map_event_template
-
-	var_8_55[796] = {
+	pg.base.map_event_template[796] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21763,11 +18663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.map_event_template
-
-	var_8_56[797] = {
+	pg.base.map_event_template[797] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21788,11 +18684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.map_event_template
-
-	var_8_57[798] = {
+	pg.base.map_event_template[798] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21813,11 +18705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.map_event_template
-
-	var_8_58[799] = {
+	pg.base.map_event_template[799] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21838,11 +18726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.map_event_template
-
-	var_8_59[800] = {
+	pg.base.map_event_template[800] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21891,11 +18775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.map_event_template
-
-	var_8_60[801] = {
+	pg.base.map_event_template[801] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21916,11 +18796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.map_event_template
-
-	var_8_61[802] = {
+	pg.base.map_event_template[802] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -21961,11 +18837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.map_event_template
-
-	var_8_62[803] = {
+	pg.base.map_event_template[803] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22014,11 +18886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.map_event_template
-
-	var_8_63[804] = {
+	pg.base.map_event_template[804] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22039,11 +18907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.map_event_template
-
-	var_8_64[805] = {
+	pg.base.map_event_template[805] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22069,11 +18933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.map_event_template
-
-	var_8_65[806] = {
+	pg.base.map_event_template[806] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22104,11 +18964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.map_event_template
-
-	var_8_66[807] = {
+	pg.base.map_event_template[807] = {
 		grid_color = "cell_green",
 		memory = 0,
 		ship_prefab = "",
@@ -22152,11 +19008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.map_event_template
-
-	var_8_67[808] = {
+	pg.base.map_event_template[808] = {
 		grid_color = "cell_green",
 		memory = 0,
 		ship_prefab = "",
@@ -22200,11 +19052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.map_event_template
-
-	var_8_68[809] = {
+	pg.base.map_event_template[809] = {
 		grid_color = "cell_green",
 		memory = 0,
 		ship_prefab = "",
@@ -22248,11 +19096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.map_event_template
-
-	var_8_69[810] = {
+	pg.base.map_event_template[810] = {
 		grid_color = "cell_green",
 		memory = 0,
 		ship_prefab = "",
@@ -22296,11 +19140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.map_event_template
-
-	var_8_70[811] = {
+	pg.base.map_event_template[811] = {
 		grid_color = "cell_green",
 		memory = 0,
 		ship_prefab = "",
@@ -22344,11 +19184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.map_event_template
-
-	var_8_71[812] = {
+	pg.base.map_event_template[812] = {
 		grid_color = "cell_green",
 		memory = 0,
 		ship_prefab = "",
@@ -22392,11 +19228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.map_event_template
-
-	var_8_72[813] = {
+	pg.base.map_event_template[813] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22414,11 +19246,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.map_event_template
-
-	var_8_73[814] = {
+	pg.base.map_event_template[814] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22436,11 +19264,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.map_event_template
-
-	var_8_74[815] = {
+	pg.base.map_event_template[815] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22458,11 +19282,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.map_event_template
-
-	var_8_75[816] = {
+	pg.base.map_event_template[816] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22480,11 +19300,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.map_event_template
-
-	var_8_76[817] = {
+	pg.base.map_event_template[817] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22502,11 +19318,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.map_event_template
-
-	var_8_77[818] = {
+	pg.base.map_event_template[818] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22524,11 +19336,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.map_event_template
-
-	var_8_78[819] = {
+	pg.base.map_event_template[819] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22546,11 +19354,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.map_event_template
-
-	var_8_79[820] = {
+	pg.base.map_event_template[820] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22568,11 +19372,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.map_event_template
-
-	var_8_80[821] = {
+	pg.base.map_event_template[821] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22621,11 +19421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.map_event_template
-
-	var_8_81[822] = {
+	pg.base.map_event_template[822] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22648,11 +19444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.map_event_template
-
-	var_8_82[823] = {
+	pg.base.map_event_template[823] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22675,11 +19467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.map_event_template
-
-	var_8_83[824] = {
+	pg.base.map_event_template[824] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22702,11 +19490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.map_event_template
-
-	var_8_84[825] = {
+	pg.base.map_event_template[825] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22729,11 +19513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.map_event_template
-
-	var_8_85[826] = {
+	pg.base.map_event_template[826] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22756,11 +19536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.map_event_template
-
-	var_8_86[827] = {
+	pg.base.map_event_template[827] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22783,11 +19559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.map_event_template
-
-	var_8_87[828] = {
+	pg.base.map_event_template[828] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22810,11 +19582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.map_event_template
-
-	var_8_88[829] = {
+	pg.base.map_event_template[829] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22837,11 +19605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.map_event_template
-
-	var_8_89[830] = {
+	pg.base.map_event_template[830] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22864,11 +19628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.map_event_template
-
-	var_8_90[831] = {
+	pg.base.map_event_template[831] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22891,11 +19651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.map_event_template
-
-	var_8_91[832] = {
+	pg.base.map_event_template[832] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22918,11 +19674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.map_event_template
-
-	var_8_92[833] = {
+	pg.base.map_event_template[833] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22945,11 +19697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.map_event_template
-
-	var_8_93[834] = {
+	pg.base.map_event_template[834] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22972,11 +19720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.map_event_template
-
-	var_8_94[835] = {
+	pg.base.map_event_template[835] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -22999,11 +19743,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.map_event_template
-
-	var_8_95[836] = {
+	pg.base.map_event_template[836] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23026,11 +19766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.map_event_template
-
-	var_8_96[837] = {
+	pg.base.map_event_template[837] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23053,11 +19789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.map_event_template
-
-	var_8_97[838] = {
+	pg.base.map_event_template[838] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23080,11 +19812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.map_event_template
-
-	var_8_98[839] = {
+	pg.base.map_event_template[839] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23107,8 +19835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.map_event_template[840] = {
+	pg.base.map_event_template[840] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23135,11 +19862,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.map_event_template
-
-	var_9_0[841] = {
+	pg.base.map_event_template[841] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23162,11 +19885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.map_event_template
-
-	var_9_1[842] = {
+	pg.base.map_event_template[842] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23189,11 +19908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.map_event_template
-
-	var_9_2[843] = {
+	pg.base.map_event_template[843] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23216,11 +19931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.map_event_template
-
-	var_9_3[844] = {
+	pg.base.map_event_template[844] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23243,11 +19954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.map_event_template
-
-	var_9_4[845] = {
+	pg.base.map_event_template[845] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23270,11 +19977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.map_event_template
-
-	var_9_5[846] = {
+	pg.base.map_event_template[846] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23297,11 +20000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.map_event_template
-
-	var_9_6[847] = {
+	pg.base.map_event_template[847] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23324,11 +20023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.map_event_template
-
-	var_9_7[848] = {
+	pg.base.map_event_template[848] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23351,11 +20046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.map_event_template
-
-	var_9_8[849] = {
+	pg.base.map_event_template[849] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23378,11 +20069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.map_event_template
-
-	var_9_9[850] = {
+	pg.base.map_event_template[850] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23400,11 +20087,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.map_event_template
-
-	var_9_10[851] = {
+	pg.base.map_event_template[851] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23422,11 +20105,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.map_event_template
-
-	var_9_11[852] = {
+	pg.base.map_event_template[852] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23468,11 +20147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.map_event_template
-
-	var_9_12[853] = {
+	pg.base.map_event_template[853] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23500,11 +20175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.map_event_template
-
-	var_9_13[854] = {
+	pg.base.map_event_template[854] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23532,11 +20203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.map_event_template
-
-	var_9_14[855] = {
+	pg.base.map_event_template[855] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23569,11 +20236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.map_event_template
-
-	var_9_15[856] = {
+	pg.base.map_event_template[856] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23601,11 +20264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.map_event_template
-
-	var_9_16[857] = {
+	pg.base.map_event_template[857] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23633,11 +20292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.map_event_template
-
-	var_9_17[858] = {
+	pg.base.map_event_template[858] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23670,11 +20325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.map_event_template
-
-	var_9_18[859] = {
+	pg.base.map_event_template[859] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23702,11 +20353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.map_event_template
-
-	var_9_19[860] = {
+	pg.base.map_event_template[860] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23739,11 +20386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.map_event_template
-
-	var_9_20[861] = {
+	pg.base.map_event_template[861] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23771,11 +20414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.map_event_template
-
-	var_9_21[862] = {
+	pg.base.map_event_template[862] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23815,11 +20454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.map_event_template
-
-	var_9_22[863] = {
+	pg.base.map_event_template[863] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23840,11 +20475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.map_event_template
-
-	var_9_23[864] = {
+	pg.base.map_event_template[864] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23865,11 +20496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.map_event_template
-
-	var_9_24[865] = {
+	pg.base.map_event_template[865] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23890,11 +20517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.map_event_template
-
-	var_9_25[866] = {
+	pg.base.map_event_template[866] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23920,11 +20543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.map_event_template
-
-	var_9_26[867] = {
+	pg.base.map_event_template[867] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23945,11 +20564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.map_event_template
-
-	var_9_27[868] = {
+	pg.base.map_event_template[868] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -23970,11 +20585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.map_event_template
-
-	var_9_28[869] = {
+	pg.base.map_event_template[869] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24007,11 +20618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.map_event_template
-
-	var_9_29[870] = {
+	pg.base.map_event_template[870] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24032,11 +20639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.map_event_template
-
-	var_9_30[871] = {
+	pg.base.map_event_template[871] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24069,11 +20672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.map_event_template
-
-	var_9_31[872] = {
+	pg.base.map_event_template[872] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24094,11 +20693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.map_event_template
-
-	var_9_32[873] = {
+	pg.base.map_event_template[873] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24131,11 +20726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.map_event_template
-
-	var_9_33[874] = {
+	pg.base.map_event_template[874] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24156,11 +20747,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.map_event_template
-
-	var_9_34[875] = {
+	pg.base.map_event_template[875] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24193,11 +20780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.map_event_template
-
-	var_9_35[876] = {
+	pg.base.map_event_template[876] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24218,11 +20801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.map_event_template
-
-	var_9_36[877] = {
+	pg.base.map_event_template[877] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24255,11 +20834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.map_event_template
-
-	var_9_37[878] = {
+	pg.base.map_event_template[878] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24280,11 +20855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.map_event_template
-
-	var_9_38[879] = {
+	pg.base.map_event_template[879] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24317,11 +20888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.map_event_template
-
-	var_9_39[880] = {
+	pg.base.map_event_template[880] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24342,11 +20909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.map_event_template
-
-	var_9_40[881] = {
+	pg.base.map_event_template[881] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24379,11 +20942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.map_event_template
-
-	var_9_41[882] = {
+	pg.base.map_event_template[882] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24404,11 +20963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.map_event_template
-
-	var_9_42[883] = {
+	pg.base.map_event_template[883] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24441,11 +20996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.map_event_template
-
-	var_9_43[884] = {
+	pg.base.map_event_template[884] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24466,11 +21017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.map_event_template
-
-	var_9_44[885] = {
+	pg.base.map_event_template[885] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24503,11 +21050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.map_event_template
-
-	var_9_45[886] = {
+	pg.base.map_event_template[886] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24528,11 +21071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.map_event_template
-
-	var_9_46[887] = {
+	pg.base.map_event_template[887] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24565,11 +21104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.map_event_template
-
-	var_9_47[888] = {
+	pg.base.map_event_template[888] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24590,11 +21125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.map_event_template
-
-	var_9_48[889] = {
+	pg.base.map_event_template[889] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24636,11 +21167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.map_event_template
-
-	var_9_49[890] = {
+	pg.base.map_event_template[890] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24668,11 +21195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.map_event_template
-
-	var_9_50[891] = {
+	pg.base.map_event_template[891] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24700,11 +21223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.map_event_template
-
-	var_9_51[892] = {
+	pg.base.map_event_template[892] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24732,11 +21251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.map_event_template
-
-	var_9_52[893] = {
+	pg.base.map_event_template[893] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24764,11 +21279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.map_event_template
-
-	var_9_53[894] = {
+	pg.base.map_event_template[894] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24796,11 +21307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.map_event_template
-
-	var_9_54[895] = {
+	pg.base.map_event_template[895] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24828,11 +21335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.map_event_template
-
-	var_9_55[896] = {
+	pg.base.map_event_template[896] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24860,11 +21363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.map_event_template
-
-	var_9_56[897] = {
+	pg.base.map_event_template[897] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24892,11 +21391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.map_event_template
-
-	var_9_57[898] = {
+	pg.base.map_event_template[898] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24924,11 +21419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.map_event_template
-
-	var_9_58[899] = {
+	pg.base.map_event_template[899] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24963,11 +21454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.map_event_template
-
-	var_9_59[900] = {
+	pg.base.map_event_template[900] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -24997,11 +21484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.map_event_template
-
-	var_9_60[901] = {
+	pg.base.map_event_template[901] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25022,11 +21505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.map_event_template
-
-	var_9_61[902] = {
+	pg.base.map_event_template[902] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25044,11 +21523,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.map_event_template
-
-	var_9_62[903] = {
+	pg.base.map_event_template[903] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25066,11 +21541,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.map_event_template
-
-	var_9_63[904] = {
+	pg.base.map_event_template[904] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25088,11 +21559,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.map_event_template
-
-	var_9_64[905] = {
+	pg.base.map_event_template[905] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25110,11 +21577,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.map_event_template
-
-	var_9_65[906] = {
+	pg.base.map_event_template[906] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25132,11 +21595,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.map_event_template
-
-	var_9_66[907] = {
+	pg.base.map_event_template[907] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25154,11 +21613,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.map_event_template
-
-	var_9_67[908] = {
+	pg.base.map_event_template[908] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25176,11 +21631,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.map_event_template
-
-	var_9_68[909] = {
+	pg.base.map_event_template[909] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25229,11 +21680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.map_event_template
-
-	var_9_69[910] = {
+	pg.base.map_event_template[910] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25251,11 +21698,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.map_event_template
-
-	var_9_70[911] = {
+	pg.base.map_event_template[911] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25273,11 +21716,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.map_event_template
-
-	var_9_71[912] = {
+	pg.base.map_event_template[912] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25295,11 +21734,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.map_event_template
-
-	var_9_72[913] = {
+	pg.base.map_event_template[913] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25317,11 +21752,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.map_event_template
-
-	var_9_73[914] = {
+	pg.base.map_event_template[914] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25339,11 +21770,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.map_event_template
-
-	var_9_74[915] = {
+	pg.base.map_event_template[915] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25361,11 +21788,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.map_event_template
-
-	var_9_75[916] = {
+	pg.base.map_event_template[916] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25383,11 +21806,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.map_event_template
-
-	var_9_76[917] = {
+	pg.base.map_event_template[917] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25405,11 +21824,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.map_event_template
-
-	var_9_77[918] = {
+	pg.base.map_event_template[918] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25427,11 +21842,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.map_event_template
-
-	var_9_78[919] = {
+	pg.base.map_event_template[919] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25449,11 +21860,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.map_event_template
-
-	var_9_79[920] = {
+	pg.base.map_event_template[920] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25471,11 +21878,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.map_event_template
-
-	var_9_80[921] = {
+	pg.base.map_event_template[921] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25524,11 +21927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.map_event_template
-
-	var_9_81[922] = {
+	pg.base.map_event_template[922] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25546,11 +21945,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.map_event_template
-
-	var_9_82[923] = {
+	pg.base.map_event_template[923] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25568,11 +21963,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.map_event_template
-
-	var_9_83[924] = {
+	pg.base.map_event_template[924] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25590,11 +21981,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.map_event_template
-
-	var_9_84[925] = {
+	pg.base.map_event_template[925] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25612,11 +21999,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.map_event_template
-
-	var_9_85[926] = {
+	pg.base.map_event_template[926] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25634,11 +22017,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.map_event_template
-
-	var_9_86[927] = {
+	pg.base.map_event_template[927] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25656,11 +22035,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.map_event_template
-
-	var_9_87[928] = {
+	pg.base.map_event_template[928] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25678,11 +22053,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.map_event_template
-
-	var_9_88[929] = {
+	pg.base.map_event_template[929] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25700,11 +22071,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.map_event_template
-
-	var_9_89[930] = {
+	pg.base.map_event_template[930] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25746,11 +22113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.map_event_template
-
-	var_9_90[931] = {
+	pg.base.map_event_template[931] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25813,11 +22176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.map_event_template
-
-	var_9_91[932] = {
+	pg.base.map_event_template[932] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25862,11 +22221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.map_event_template
-
-	var_9_92[933] = {
+	pg.base.map_event_template[933] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25922,11 +22277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.map_event_template
-
-	var_9_93[934] = {
+	pg.base.map_event_template[934] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",
@@ -25975,8 +22326,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_93
-	var_9_93.base.map_event_template[935] = {
+	pg.base.map_event_template[935] = {
 		grid_color = "",
 		memory = 0,
 		ship_prefab = "",

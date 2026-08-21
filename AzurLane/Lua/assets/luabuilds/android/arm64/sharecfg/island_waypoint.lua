@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_waypoint") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_waypoint"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_waypoint = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_waypoint
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_waypoint = rawget(pg, "island_waypoint") or setmetatable({
+	__name = "island_waypoint"
+}, confNEO)
+pg.island_waypoint.all = {
 	10050001,
 	10050002,
 	10050003,
@@ -159,11 +136,7 @@ var_0_3.all = {
 	10020061,
 	10020062
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_waypoint
-
-var_0_4.get_id_list_by_mapId = {
+pg.island_waypoint.get_id_list_by_mapId = {
 	[1001] = {
 		10010001,
 		10010002,
@@ -305,25 +278,11 @@ var_0_4.get_id_list_by_mapId = {
 		10050018
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_waypoint = {}
+pg.base = pg.base or {}
+pg.base.island_waypoint = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_waypoint
-
-	var_1_0[10050001] = {
+	pg.base.island_waypoint[10050001] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -342,11 +301,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_waypoint
-
-	var_1_1[10050002] = {
+	pg.base.island_waypoint[10050002] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -365,11 +320,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_waypoint
-
-	var_1_2[10050003] = {
+	pg.base.island_waypoint[10050003] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -388,11 +339,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_waypoint
-
-	var_1_3[10050004] = {
+	pg.base.island_waypoint[10050004] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -411,11 +358,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_waypoint
-
-	var_1_4[10050005] = {
+	pg.base.island_waypoint[10050005] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -434,11 +377,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_waypoint
-
-	var_1_5[10050006] = {
+	pg.base.island_waypoint[10050006] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -457,11 +396,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_waypoint
-
-	var_1_6[10050007] = {
+	pg.base.island_waypoint[10050007] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -480,11 +415,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_waypoint
-
-	var_1_7[10050008] = {
+	pg.base.island_waypoint[10050008] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -503,11 +434,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_waypoint
-
-	var_1_8[10050009] = {
+	pg.base.island_waypoint[10050009] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -526,11 +453,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_waypoint
-
-	var_1_9[10050010] = {
+	pg.base.island_waypoint[10050010] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -549,11 +472,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_waypoint
-
-	var_1_10[10050011] = {
+	pg.base.island_waypoint[10050011] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -572,11 +491,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_waypoint
-
-	var_1_11[10050012] = {
+	pg.base.island_waypoint[10050012] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -595,11 +510,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_waypoint
-
-	var_1_12[10050013] = {
+	pg.base.island_waypoint[10050013] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -618,11 +529,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_waypoint
-
-	var_1_13[10050014] = {
+	pg.base.island_waypoint[10050014] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -641,11 +548,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_waypoint
-
-	var_1_14[10050015] = {
+	pg.base.island_waypoint[10050015] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -664,11 +567,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_waypoint
-
-	var_1_15[10050016] = {
+	pg.base.island_waypoint[10050016] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -687,11 +586,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_waypoint
-
-	var_1_16[10050017] = {
+	pg.base.island_waypoint[10050017] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -710,11 +605,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_waypoint
-
-	var_1_17[10050018] = {
+	pg.base.island_waypoint[10050018] = {
 		mapId = 1005,
 		turn_to = 0,
 		wait = 0,
@@ -733,11 +624,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_waypoint
-
-	var_1_18[10040001] = {
+	pg.base.island_waypoint[10040001] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -756,11 +643,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_waypoint
-
-	var_1_19[10040002] = {
+	pg.base.island_waypoint[10040002] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -779,11 +662,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_waypoint
-
-	var_1_20[10040003] = {
+	pg.base.island_waypoint[10040003] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -802,11 +681,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_waypoint
-
-	var_1_21[10040004] = {
+	pg.base.island_waypoint[10040004] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -825,11 +700,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_waypoint
-
-	var_1_22[10040005] = {
+	pg.base.island_waypoint[10040005] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -848,11 +719,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_waypoint
-
-	var_1_23[10040006] = {
+	pg.base.island_waypoint[10040006] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -871,11 +738,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_waypoint
-
-	var_1_24[10040007] = {
+	pg.base.island_waypoint[10040007] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -894,11 +757,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_waypoint
-
-	var_1_25[10040008] = {
+	pg.base.island_waypoint[10040008] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -917,11 +776,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_waypoint
-
-	var_1_26[10040009] = {
+	pg.base.island_waypoint[10040009] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -940,11 +795,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_waypoint
-
-	var_1_27[10040010] = {
+	pg.base.island_waypoint[10040010] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -963,11 +814,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_waypoint
-
-	var_1_28[10040011] = {
+	pg.base.island_waypoint[10040011] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -986,11 +833,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_waypoint
-
-	var_1_29[10040012] = {
+	pg.base.island_waypoint[10040012] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1009,11 +852,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_waypoint
-
-	var_1_30[10040013] = {
+	pg.base.island_waypoint[10040013] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1032,11 +871,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_waypoint
-
-	var_1_31[10040014] = {
+	pg.base.island_waypoint[10040014] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1055,11 +890,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_waypoint
-
-	var_1_32[10040015] = {
+	pg.base.island_waypoint[10040015] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1078,11 +909,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_waypoint
-
-	var_1_33[10040016] = {
+	pg.base.island_waypoint[10040016] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1101,11 +928,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_waypoint
-
-	var_1_34[10040017] = {
+	pg.base.island_waypoint[10040017] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1124,11 +947,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_waypoint
-
-	var_1_35[10040018] = {
+	pg.base.island_waypoint[10040018] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1147,11 +966,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_waypoint
-
-	var_1_36[10040019] = {
+	pg.base.island_waypoint[10040019] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1170,11 +985,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_waypoint
-
-	var_1_37[10040020] = {
+	pg.base.island_waypoint[10040020] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1193,11 +1004,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_waypoint
-
-	var_1_38[10040021] = {
+	pg.base.island_waypoint[10040021] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1216,11 +1023,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_waypoint
-
-	var_1_39[10040022] = {
+	pg.base.island_waypoint[10040022] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1239,11 +1042,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_waypoint
-
-	var_1_40[10040023] = {
+	pg.base.island_waypoint[10040023] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1262,11 +1061,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_waypoint
-
-	var_1_41[10040024] = {
+	pg.base.island_waypoint[10040024] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1285,11 +1080,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_waypoint
-
-	var_1_42[10040025] = {
+	pg.base.island_waypoint[10040025] = {
 		mapId = 1004,
 		turn_to = 0,
 		wait = 0,
@@ -1308,11 +1099,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_waypoint
-
-	var_1_43[17] = {
+	pg.base.island_waypoint[17] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1331,11 +1118,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_waypoint
-
-	var_1_44[18] = {
+	pg.base.island_waypoint[18] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1354,11 +1137,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_waypoint
-
-	var_1_45[19] = {
+	pg.base.island_waypoint[19] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1377,11 +1156,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_waypoint
-
-	var_1_46[20] = {
+	pg.base.island_waypoint[20] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1400,11 +1175,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_waypoint
-
-	var_1_47[21] = {
+	pg.base.island_waypoint[21] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1423,11 +1194,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_waypoint
-
-	var_1_48[22] = {
+	pg.base.island_waypoint[22] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1446,11 +1213,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_waypoint
-
-	var_1_49[23] = {
+	pg.base.island_waypoint[23] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1469,11 +1232,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_waypoint
-
-	var_1_50[24] = {
+	pg.base.island_waypoint[24] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1492,11 +1251,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_waypoint
-
-	var_1_51[25] = {
+	pg.base.island_waypoint[25] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1515,11 +1270,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_waypoint
-
-	var_1_52[26] = {
+	pg.base.island_waypoint[26] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1538,11 +1289,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_waypoint
-
-	var_1_53[27] = {
+	pg.base.island_waypoint[27] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1561,11 +1308,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_waypoint
-
-	var_1_54[28] = {
+	pg.base.island_waypoint[28] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1584,11 +1327,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_waypoint
-
-	var_1_55[29] = {
+	pg.base.island_waypoint[29] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1607,11 +1346,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_waypoint
-
-	var_1_56[30] = {
+	pg.base.island_waypoint[30] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1630,11 +1365,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_waypoint
-
-	var_1_57[31] = {
+	pg.base.island_waypoint[31] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1653,11 +1384,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_waypoint
-
-	var_1_58[10010016] = {
+	pg.base.island_waypoint[10010016] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1676,11 +1403,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_waypoint
-
-	var_1_59[10010017] = {
+	pg.base.island_waypoint[10010017] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1699,11 +1422,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_waypoint
-
-	var_1_60[10010018] = {
+	pg.base.island_waypoint[10010018] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1722,11 +1441,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_waypoint
-
-	var_1_61[10010019] = {
+	pg.base.island_waypoint[10010019] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1745,11 +1460,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_waypoint
-
-	var_1_62[10010020] = {
+	pg.base.island_waypoint[10010020] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1768,11 +1479,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_waypoint
-
-	var_1_63[10010021] = {
+	pg.base.island_waypoint[10010021] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1791,11 +1498,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_waypoint
-
-	var_1_64[10010022] = {
+	pg.base.island_waypoint[10010022] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1814,11 +1517,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_waypoint
-
-	var_1_65[10010023] = {
+	pg.base.island_waypoint[10010023] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1837,11 +1536,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_waypoint
-
-	var_1_66[10010024] = {
+	pg.base.island_waypoint[10010024] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1860,11 +1555,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_waypoint
-
-	var_1_67[10010025] = {
+	pg.base.island_waypoint[10010025] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1883,11 +1574,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_waypoint
-
-	var_1_68[10010026] = {
+	pg.base.island_waypoint[10010026] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1906,11 +1593,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_waypoint
-
-	var_1_69[10010027] = {
+	pg.base.island_waypoint[10010027] = {
 		mapId = 1001,
 		turn_to = 0,
 		wait = 0,
@@ -1929,11 +1612,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_waypoint
-
-	var_1_70[10020001] = {
+	pg.base.island_waypoint[10020001] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -1952,11 +1631,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_waypoint
-
-	var_1_71[10020002] = {
+	pg.base.island_waypoint[10020002] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -1975,11 +1650,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_waypoint
-
-	var_1_72[10020003] = {
+	pg.base.island_waypoint[10020003] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -1998,11 +1669,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_waypoint
-
-	var_1_73[10020004] = {
+	pg.base.island_waypoint[10020004] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2021,11 +1688,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_waypoint
-
-	var_1_74[10020005] = {
+	pg.base.island_waypoint[10020005] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2044,11 +1707,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_waypoint
-
-	var_1_75[10020006] = {
+	pg.base.island_waypoint[10020006] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2067,11 +1726,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_waypoint
-
-	var_1_76[10020007] = {
+	pg.base.island_waypoint[10020007] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2090,11 +1745,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_waypoint
-
-	var_1_77[10020008] = {
+	pg.base.island_waypoint[10020008] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2113,11 +1764,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_waypoint
-
-	var_1_78[10020009] = {
+	pg.base.island_waypoint[10020009] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2136,11 +1783,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_waypoint
-
-	var_1_79[10020010] = {
+	pg.base.island_waypoint[10020010] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 3,
@@ -2159,11 +1802,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_waypoint
-
-	var_1_80[10020011] = {
+	pg.base.island_waypoint[10020011] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 5,
@@ -2182,11 +1821,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_waypoint
-
-	var_1_81[10020012] = {
+	pg.base.island_waypoint[10020012] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2205,11 +1840,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_waypoint
-
-	var_1_82[10020013] = {
+	pg.base.island_waypoint[10020013] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2228,11 +1859,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_waypoint
-
-	var_1_83[10020014] = {
+	pg.base.island_waypoint[10020014] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 5,
@@ -2251,11 +1878,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_waypoint
-
-	var_1_84[10020015] = {
+	pg.base.island_waypoint[10020015] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2274,11 +1897,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_waypoint
-
-	var_1_85[10020016] = {
+	pg.base.island_waypoint[10020016] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2297,11 +1916,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_waypoint
-
-	var_1_86[10020017] = {
+	pg.base.island_waypoint[10020017] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2320,11 +1935,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_waypoint
-
-	var_1_87[10020018] = {
+	pg.base.island_waypoint[10020018] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2343,11 +1954,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_waypoint
-
-	var_1_88[10020019] = {
+	pg.base.island_waypoint[10020019] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2366,11 +1973,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_waypoint
-
-	var_1_89[10020020] = {
+	pg.base.island_waypoint[10020020] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2389,11 +1992,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_waypoint
-
-	var_1_90[10020021] = {
+	pg.base.island_waypoint[10020021] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2412,11 +2011,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_waypoint
-
-	var_1_91[10020022] = {
+	pg.base.island_waypoint[10020022] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2435,11 +2030,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_waypoint
-
-	var_1_92[10020023] = {
+	pg.base.island_waypoint[10020023] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2458,11 +2049,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_waypoint
-
-	var_1_93[10020024] = {
+	pg.base.island_waypoint[10020024] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2481,11 +2068,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_waypoint
-
-	var_1_94[10020025] = {
+	pg.base.island_waypoint[10020025] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2504,11 +2087,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_waypoint
-
-	var_1_95[10020026] = {
+	pg.base.island_waypoint[10020026] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2527,11 +2106,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_waypoint
-
-	var_1_96[10020027] = {
+	pg.base.island_waypoint[10020027] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2550,11 +2125,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_waypoint
-
-	var_1_97[10020028] = {
+	pg.base.island_waypoint[10020028] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2573,11 +2144,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_waypoint
-
-	var_1_98[10020029] = {
+	pg.base.island_waypoint[10020029] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2596,8 +2163,7 @@ var_0_4.base.island_waypoint = {}
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_1_98
-	var_1_98.base.island_waypoint[10020030] = {
+	pg.base.island_waypoint[10020030] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2620,11 +2186,7 @@ var_0_4.base.island_waypoint = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_waypoint
-
-	var_2_0[10020031] = {
+	pg.base.island_waypoint[10020031] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2643,11 +2205,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_waypoint
-
-	var_2_1[10020032] = {
+	pg.base.island_waypoint[10020032] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 5,
@@ -2666,11 +2224,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_waypoint
-
-	var_2_2[10020033] = {
+	pg.base.island_waypoint[10020033] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2689,11 +2243,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_waypoint
-
-	var_2_3[10020034] = {
+	pg.base.island_waypoint[10020034] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2712,11 +2262,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_waypoint
-
-	var_2_4[10020035] = {
+	pg.base.island_waypoint[10020035] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2735,11 +2281,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_waypoint
-
-	var_2_5[10020036] = {
+	pg.base.island_waypoint[10020036] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2758,11 +2300,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_waypoint
-
-	var_2_6[10020037] = {
+	pg.base.island_waypoint[10020037] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2781,11 +2319,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_waypoint
-
-	var_2_7[10020038] = {
+	pg.base.island_waypoint[10020038] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2804,11 +2338,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_waypoint
-
-	var_2_8[10020039] = {
+	pg.base.island_waypoint[10020039] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2827,11 +2357,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_waypoint
-
-	var_2_9[10020040] = {
+	pg.base.island_waypoint[10020040] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2850,11 +2376,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_waypoint
-
-	var_2_10[10020041] = {
+	pg.base.island_waypoint[10020041] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2873,11 +2395,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_waypoint
-
-	var_2_11[10020042] = {
+	pg.base.island_waypoint[10020042] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2896,11 +2414,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_waypoint
-
-	var_2_12[10020043] = {
+	pg.base.island_waypoint[10020043] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2919,11 +2433,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_waypoint
-
-	var_2_13[10020044] = {
+	pg.base.island_waypoint[10020044] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2942,11 +2452,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_waypoint
-
-	var_2_14[10020045] = {
+	pg.base.island_waypoint[10020045] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2965,11 +2471,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_waypoint
-
-	var_2_15[10020046] = {
+	pg.base.island_waypoint[10020046] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -2988,11 +2490,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_waypoint
-
-	var_2_16[10020047] = {
+	pg.base.island_waypoint[10020047] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3011,11 +2509,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_waypoint
-
-	var_2_17[10020048] = {
+	pg.base.island_waypoint[10020048] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3034,11 +2528,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_waypoint
-
-	var_2_18[10020049] = {
+	pg.base.island_waypoint[10020049] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3057,11 +2547,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_waypoint
-
-	var_2_19[10020050] = {
+	pg.base.island_waypoint[10020050] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3080,11 +2566,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_waypoint
-
-	var_2_20[10020051] = {
+	pg.base.island_waypoint[10020051] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3103,11 +2585,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_waypoint
-
-	var_2_21[10020052] = {
+	pg.base.island_waypoint[10020052] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3126,11 +2604,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_waypoint
-
-	var_2_22[10020053] = {
+	pg.base.island_waypoint[10020053] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3149,11 +2623,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_waypoint
-
-	var_2_23[10020054] = {
+	pg.base.island_waypoint[10020054] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3172,11 +2642,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_waypoint
-
-	var_2_24[10020055] = {
+	pg.base.island_waypoint[10020055] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3195,11 +2661,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_waypoint
-
-	var_2_25[10020056] = {
+	pg.base.island_waypoint[10020056] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3218,11 +2680,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_waypoint
-
-	var_2_26[10020057] = {
+	pg.base.island_waypoint[10020057] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3241,11 +2699,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_waypoint
-
-	var_2_27[10020058] = {
+	pg.base.island_waypoint[10020058] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3264,11 +2718,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_waypoint
-
-	var_2_28[10020059] = {
+	pg.base.island_waypoint[10020059] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3287,11 +2737,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_waypoint
-
-	var_2_29[10020060] = {
+	pg.base.island_waypoint[10020060] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3310,11 +2756,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_waypoint
-
-	var_2_30[10020061] = {
+	pg.base.island_waypoint[10020061] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,
@@ -3333,8 +2775,7 @@ end)()
 		process_action = {},
 		arrive_action = {}
 	}
-	pg = var_2_30
-	var_2_30.base.island_waypoint[10020062] = {
+	pg.base.island_waypoint[10020062] = {
 		mapId = 1002,
 		turn_to = 0,
 		wait = 0,

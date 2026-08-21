@@ -1,29 +1,17 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CourtYardPoolMgr")
+﻿local var_0_0 = class("CourtYardPoolMgr")
 
 function var_0_0.Init(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.pools = {}
 	arg_1_0.root = arg_1_1
 	arg_1_0.goList = {}
 
-	local var_1_0 = arg_1_0:GenPool(arg_1_1)
-
-	parallelAsync = var_1_10004
-
-	var_1_10004(var_1_0, arg_1_2)
+	parallelAsync(arg_1_0:GenPool(arg_1_1), arg_1_2)
 
 	return
 end
 
 function var_0_0.GenPool(arg_2_0, arg_2_1)
 	local var_2_0 = {
-		"CourtYardFurniture",
-		"CourtYardGrid",
-		"CourtYardShip",
-		"CourtYardWallGrid"
-	}
-	local var_2_1 = {
 		{
 			10,
 			15
@@ -41,52 +29,20 @@ function var_0_0.GenPool(arg_2_0, arg_2_1)
 			8
 		}
 	}
-	local var_2_2 = {
-		"Heart"
-	}
-	local var_2_3 = {}
 
-	ipairs = var_1_10006
-
-	for iter_2_0, iter_2_1 in var_1_10006(var_2_0) do
-		table = var_1_10011
-
-		var_1_10011.insert(var_2_3, function(arg_3_0)
-			ResourceMgr = var_2_10001
-
-			local var_3_0 = var_2_10001.Inst
-			local var_3_1 = var_1.getAssetAsync
-			local var_3_2 = "ui/" .. iter_2_1
-			local var_3_3 = ""
-
-			typeof = var_2_10006
-			Object = var_2_10008
-
-			local var_3_4 = var_2_10006(var_2_10008)
-
-			UnityEngine = var_2_10007
-
-			var_3_1(var_3_0, var_3_2, var_3_3, var_3_4, var_2_10007.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
+	for iter_2_0, iter_2_1 in ipairs({
+		"CourtYardFurniture",
+		"CourtYardGrid",
+		"CourtYardShip",
+		"CourtYardWallGrid"
+	}) do
+		table.insert({}, function(arg_3_0)
+			ResourceMgr.Inst:getAssetAsync("ui/" .. iter_2_1, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
 				if arg_2_0.exited then
 					return
 				end
 
-				local var_4_0 = var_2_1[iter_2_0]
-
-				Object = var_2
-
-				local var_4_1 = var_2.Instantiate(arg_4_0)
-				local var_4_2 = arg_2_0.pools
-				local var_4_3 = iter_2_1
-
-				CourtYardPool = var_3_10005
-
-				local var_4_4 = var_3_10005.New
-				local var_4_5 = arg_2_1
-				local var_4_6 = var_4_1
-
-				unpack = var_3_10009
-				var_4_2[var_4_3] = var_4_4(var_4_5, var_4_6, var_3_10009(var_4_0))
+				arg_2_0.pools[iter_2_1] = CourtYardPool.New(arg_2_1, Object.Instantiate(arg_4_0), unpack(var_2_0[iter_2_0]))
 
 				arg_3_0()
 
@@ -97,39 +53,16 @@ function var_0_0.GenPool(arg_2_0, arg_2_1)
 		end)
 	end
 
-	ipairs = var_6
-
-	for iter_2_2, iter_2_3 in var_6(var_2_2) do
-		table = var_1_10011
-
-		var_1_10011.insert(var_2_3, function(arg_5_0)
-			ResourceMgr = var_2_10001
-
-			local var_5_0 = var_2_10001.Inst
-			local var_5_1 = var_1.getAssetAsync
-			local var_5_2 = "Effect/" .. iter_2_3
-			local var_5_3 = ""
-
-			typeof = var_2_10006
-			Object = var_2_10008
-
-			local var_5_4 = var_2_10006(var_2_10008)
-
-			UnityEngine = var_2_10007
-
-			var_5_1(var_5_0, var_5_2, var_5_3, var_5_4, var_2_10007.Events.UnityAction_UnityEngine_Object(function(arg_6_0)
+	for iter_2_2, iter_2_3 in ipairs({
+		"Heart"
+	}) do
+		table.insert({}, function(arg_5_0)
+			ResourceMgr.Inst:getAssetAsync("Effect/" .. iter_2_3, "", typeof(Object), UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_6_0)
 				if arg_2_0.exited then
 					return
 				end
 
-				Object = var_1
-
-				local var_6_0 = var_1.Instantiate(arg_6_0)
-				local var_6_1 = arg_2_0.pools
-				local var_6_2 = iter_2_3
-
-				CourtYardEffectPool = var_3_10004
-				var_6_1[var_6_2] = var_3_10004.New(arg_2_1, var_6_0, 0, 3)
+				arg_2_0.pools[iter_2_3] = CourtYardEffectPool.New(arg_2_1, Object.Instantiate(arg_6_0), 0, 3)
 
 				arg_5_0()
 
@@ -140,7 +73,7 @@ function var_0_0.GenPool(arg_2_0, arg_2_1)
 		end)
 	end
 
-	return var_2_3
+	return {}
 end
 
 function var_0_0.LoadAsset(arg_7_0, arg_7_1, arg_7_2)
@@ -184,15 +117,9 @@ function var_0_0.GetZzzPool(arg_16_0)
 end
 
 function var_0_0.Dispose(arg_17_0)
-	pairs = var_1_10001
+	local var_17_0 = arg_17_0.pools or {}
 
-	local var_17_0
-
-	if not arg_17_0.pools then
-		var_17_0 = {}
-	end
-
-	for iter_17_0, iter_17_1 in var_1_10001(var_17_0) do
+	for iter_17_0, iter_17_1 in pairs(var_17_0) do
 		iter_17_1:Dispose()
 	end
 

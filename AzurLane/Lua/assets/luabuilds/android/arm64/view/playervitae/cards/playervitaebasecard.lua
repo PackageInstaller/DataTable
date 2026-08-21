@@ -1,14 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PlayerVitaeBaseCard")
+﻿local var_0_0 = class("PlayerVitaeBaseCard")
 local var_0_1 = 160
 local var_0_2 = 25
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.event = arg_1_2
-	pg = var_1_10003
 
-	var_1_10003.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 	arg_1_0:Init(arg_1_1)
 
 	return
@@ -18,10 +15,7 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 	arg_2_0._go = arg_2_1
 	arg_2_0._tf = arg_2_1.transform
 	arg_2_0.width = arg_2_0._tf.sizeDelta.x
-
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.mask = var_2.Find(var_2_0, "mask")
+	arg_2_0.mask = arg_2_0._tf:Find("mask")
 
 	arg_2_0:OnInit()
 
@@ -29,15 +23,9 @@ function var_0_0.Init(arg_2_0, arg_2_1)
 end
 
 function var_0_0.UpdatePosition(arg_3_0, arg_3_1)
-	local var_3_0 = var_0_1 + (arg_3_0.width + var_0_2) * (arg_3_1 - 1)
-	local var_3_1 = arg_3_0._tf
+	arg_3_0._tf.anchoredPosition3D = Vector3(var_0_1 + (arg_3_0.width + var_0_2) * (arg_3_1 - 1), 0, 0)
 
-	Vector3 = var_4
-	var_3_1.anchoredPosition3D = var_4(var_3_0, 0, 0)
-
-	local var_3_2 = arg_3_0._tf
-
-	var_3.SetSiblingIndex(var_3_2, arg_3_1 - 1)
+	arg_3_0._tf:SetSiblingIndex(arg_3_1 - 1)
 
 	return
 end
@@ -50,45 +38,31 @@ function var_0_0.Update(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5)
 end
 
 function var_0_0.Enable(arg_5_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0._tf, true)
+	setActive(arg_5_0._tf, true)
 
 	return
 end
 
 function var_0_0.Disable(arg_6_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_6_0._tf, false)
+	setActive(arg_6_0._tf, false)
 
 	return
 end
 
 function var_0_0.Clone(arg_7_0)
-	cloneTplTo = var_1_10001
-
-	local var_7_0 = var_1_10001(arg_7_0._go, arg_7_0._go.parent)
-
-	_G = var_1_10002
-
-	return var_1_10002[arg_7_0.__cname].New(var_7_0, arg_7_0.event)
+	return _G[arg_7_0.__cname].New(cloneTplTo(arg_7_0._go, arg_7_0._go.parent), arg_7_0.event)
 end
 
 function var_0_0.emit(arg_8_0, ...)
 	if arg_8_0.event then
-		local var_8_0 = arg_8_0.event
-
-		var_1.emit(var_8_0, ...)
+		arg_8_0.event:emit(...)
 	end
 
 	return
 end
 
 function var_0_0.Dispose(arg_9_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_9_0)
+	pg.DelegateInfo.Dispose(arg_9_0)
 	arg_9_0:OnDispose()
 
 	return

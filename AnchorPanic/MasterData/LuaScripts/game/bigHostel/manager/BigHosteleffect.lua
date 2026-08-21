@@ -18,44 +18,55 @@ function resetData(self)
     self.m_snId = nil
     self.m_go = nil
     self.m_path = nil
-    self.m_finishCall = nil
+    self.m_recoverCall = nil
 end
 
 -- 通过已有资源创建新实例
-function create(self, path, parentTrans, wpos, finishCall)
+function create(self, path, parentTrans, life_time, recoverCall)
     local item = self:poolGet()
     item:resetData()
 
     item.m_snId = SnMgr:getSn()
     item.m_go = gs.GOPoolMgr:Get(path, false)
-    if item.m_go == nil or gs.GoUtil.IsGoNull(item.m_go) then
-        LuaPoolMgr:poolRecover(item)
-        gs.GOPoolMgr:Recover(item.m_go, path)
 
-        if item.m_finishCall then item.m_finishCall() end
+    if item.m_go == nil or gs.GoUtil.IsGoNull(item.m_go) then
+        item:recover()
+
         logAll("特效不存在" .. path)
         return
     end
 
     item.m_go:SetActive(true)
     item.m_path = path
+    item.m_recoverCall = recoverCall
 
     if parentTrans and not gs.GoUtil.IsTransNull(parentTrans) and not gs.GoUtil.IsTransNull(item.m_go.transform) then
-        wpos = wpos or gs.VEC3_ZERO
         gs.TransQuick:SetParentOrg01(item.m_go, parentTrans)
-        gs.TransQuick:LPos(item.m_go.transform, wpos)
     end
+
+    if life_time ~= nil then
+        item.m_timeOutSn = LoopManager:setTimeout(life_time, item, item.onTimeOutCall)
+    end
+
     return item
+end
+
+function setParent(self, parentTrans)
+    self.m_go.transform:SetParent(parentTrans)
 end
 
 function setActive(self, val)
     self.m_go:SetActive(val)
 end
 
+function onTimeOutCall(self)
+    self.m_timeOutSn = nil
+    if self.m_recoverCall then self.m_recoverCall(self.m_snId) end
+end
+
 -- 回收
 function recover(self)
     gs.GOPoolMgr:Recover(self.m_go, self.m_path)
-    -- self.m_go:SetActive(false)
     LuaPoolMgr:poolRecover(self)
 end
 return _M

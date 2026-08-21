@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_ins_chat_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_ins_chat_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_ins_chat_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_ins_chat_group
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_ins_chat_group
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.dorm3d_ins_chat_group = rawget(pg, "dorm3d_ins_chat_group") or setmetatable({
+	__name = "dorm3d_ins_chat_group"
+}, confNEO)
+pg.dorm3d_ins_chat_group.__namecode__ = true
+pg.dorm3d_ins_chat_group.all = {
 	20220101,
 	20220102,
 	20220103,
@@ -84,11 +57,7 @@ var_0_4.all = {
 	79902109,
 	79902110
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.dorm3d_ins_chat_group
-
-var_0_5.get_id_list_by_ship_group = {
+pg.dorm3d_ins_chat_group.get_id_list_by_ship_group = {
 	[10517] = {
 		10517101,
 		10517102,
@@ -156,25 +125,11 @@ var_0_5.get_id_list_by_ship_group = {
 		79902110
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.dorm3d_ins_chat_group = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_ins_chat_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_ins_chat_group
-
-	var_1_0[20220101] = {
+	pg.base.dorm3d_ins_chat_group[20220101] = {
 		ship_group = 20220,
 		name = "安心",
 		unlock_desc = "累计进入天狼星宿舍1天",
@@ -200,11 +155,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			17
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_ins_chat_group
-
-	var_1_1[20220102] = {
+	pg.base.dorm3d_ins_chat_group[20220102] = {
 		ship_group = 20220,
 		name = "再次会错意 ",
 		unlock_desc = "在天狼星宿舍中收集20件物品",
@@ -228,11 +179,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			32
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_ins_chat_group
-
-	var_1_2[20220103] = {
+	pg.base.dorm3d_ins_chat_group[20220103] = {
 		ship_group = 20220,
 		name = "恢复精神",
 		unlock_desc = "进入10次天狼星的触摸模式",
@@ -257,11 +204,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			48
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_ins_chat_group
-
-	var_1_3[20220104] = {
+	pg.base.dorm3d_ins_chat_group[20220104] = {
 		ship_group = 20220,
 		name = "记录",
 		unlock_desc = "给天狼星拍2张照片",
@@ -283,11 +226,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			61
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_ins_chat_group
-
-	var_1_4[20220105] = {
+	pg.base.dorm3d_ins_chat_group[20220105] = {
 		ship_group = 20220,
 		name = "实现愿望",
 		unlock_desc = "在夜晚触摸天狼星1次",
@@ -311,11 +250,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			76
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_ins_chat_group
-
-	var_1_5[30221101] = {
+	pg.base.dorm3d_ins_chat_group[30221101] = {
 		ship_group = 30221,
 		name = "只要是您所希望的……",
 		unlock_desc = "累计进入{namecode:50}宿舍1天",
@@ -339,11 +274,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			91
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_ins_chat_group
-
-	var_1_6[30221102] = {
+	pg.base.dorm3d_ins_chat_group[30221102] = {
 		ship_group = 30221,
 		name = "依赖",
 		unlock_desc = "在{namecode:50}宿舍中收集20件物品",
@@ -368,11 +299,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			107
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_ins_chat_group
-
-	var_1_7[30221103] = {
+	pg.base.dorm3d_ins_chat_group[30221103] = {
 		ship_group = 30221,
 		name = "话题",
 		unlock_desc = "和{namecode:50}对话15次",
@@ -397,11 +324,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			123
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_ins_chat_group
-
-	var_1_8[30221104] = {
+	pg.base.dorm3d_ins_chat_group[30221104] = {
 		ship_group = 30221,
 		name = "向着未来",
 		unlock_desc = "进入10次{namecode:50}的触摸模式",
@@ -425,11 +348,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			138
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_ins_chat_group
-
-	var_1_9[30221105] = {
+	pg.base.dorm3d_ins_chat_group[30221105] = {
 		ship_group = 30221,
 		name = "今宵月色真美",
 		unlock_desc = "在夜晚给{namecode:50}拍照",
@@ -454,11 +373,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			154
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_ins_chat_group
-
-	var_1_10[19903101] = {
+	pg.base.dorm3d_ins_chat_group[19903101] = {
 		ship_group = 19903,
 		name = "睡前",
 		unlock_desc = "累计进入安克雷奇宿舍1天",
@@ -485,11 +400,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			172
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_ins_chat_group
-
-	var_1_11[19903102] = {
+	pg.base.dorm3d_ins_chat_group[19903102] = {
 		ship_group = 19903,
 		name = "最需要 ",
 		unlock_desc = "进入安克雷奇宿舍第2天解锁",
@@ -517,11 +428,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			191
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_ins_chat_group
-
-	var_1_12[19903103] = {
+	pg.base.dorm3d_ins_chat_group[19903103] = {
 		ship_group = 19903,
 		name = "特别的是…",
 		unlock_desc = "进入安克雷奇宿舍第4天解锁",
@@ -549,11 +456,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			210
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_ins_chat_group
-
-	var_1_13[0] = {
+	pg.base.dorm3d_ins_chat_group[0] = {
 		ship_group = 19903,
 		name = "丢失的秘密 ",
 		unlock_desc = "在安克雷奇宿舍中收集20件物品",
@@ -585,11 +488,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			233
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_ins_chat_group
-
-	var_1_14[1] = {
+	pg.base.dorm3d_ins_chat_group[1] = {
 		ship_group = 19903,
 		name = "需要更多…",
 		unlock_desc = "进入10次安克雷奇的触摸模式",
@@ -617,11 +516,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			252
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_ins_chat_group
-
-	var_1_15[2] = {
+	pg.base.dorm3d_ins_chat_group[2] = {
 		ship_group = 19903,
 		name = "谢谢的意义",
 		unlock_desc = "给安克雷奇赠送5次礼物",
@@ -649,11 +544,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			271
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_ins_chat_group
-
-	var_1_16[3] = {
+	pg.base.dorm3d_ins_chat_group[3] = {
 		ship_group = 19903,
 		name = "喜欢的理由…",
 		unlock_desc = "在安克雷奇小游戏中获得3分",
@@ -680,11 +571,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			289
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_ins_chat_group
-
-	var_1_17[4] = {
+	pg.base.dorm3d_ins_chat_group[4] = {
 		ship_group = 19903,
 		name = "回礼 ",
 		unlock_desc = "在夜晚给安克雷奇送礼",
@@ -712,11 +599,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			308
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_ins_chat_group
-
-	var_1_18[10517101] = {
+	pg.base.dorm3d_ins_chat_group[10517101] = {
 		ship_group = 10517,
 		name = "醒来之后，想看到你",
 		unlock_desc = "新泽西进入宿舍1天",
@@ -744,11 +627,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			327
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_ins_chat_group
-
-	var_1_19[10517102] = {
+	pg.base.dorm3d_ins_chat_group[10517102] = {
 		ship_group = 10517,
 		name = "关于行程安排",
 		unlock_desc = "新泽西解锁宿舍4天",
@@ -778,11 +657,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			347
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_ins_chat_group
-
-	var_1_20[10517103] = {
+	pg.base.dorm3d_ins_chat_group[10517103] = {
 		ship_group = 10517,
 		name = "动作电影",
 		unlock_desc = "新泽西解锁宿舍7天",
@@ -808,11 +683,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			364
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_ins_chat_group
-
-	var_1_21[10517104] = {
+	pg.base.dorm3d_ins_chat_group[10517104] = {
 		ship_group = 10517,
 		name = "少女的秘密？",
 		unlock_desc = "新泽西可收集物品达到20个",
@@ -842,11 +713,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			385
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_ins_chat_group
-
-	var_1_22[29] = {
+	pg.base.dorm3d_ins_chat_group[29] = {
 		ship_group = 30707,
 		name = "二人世界 ",
 		unlock_desc = "累计进入{namecode:97}宿舍1天",
@@ -866,11 +733,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			396
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_ins_chat_group
-
-	var_1_23[30] = {
+	pg.base.dorm3d_ins_chat_group[30] = {
 		ship_group = 30707,
 		name = "变慢的时间 ",
 		unlock_desc = "进入{namecode:97}宿舍第2天解锁",
@@ -892,11 +755,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			409
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_ins_chat_group
-
-	var_1_24[31] = {
+	pg.base.dorm3d_ins_chat_group[31] = {
 		ship_group = 30707,
 		name = "爱心便当 ",
 		unlock_desc = "进入{namecode:97}宿舍第4天解锁",
@@ -918,11 +777,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			422
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_ins_chat_group
-
-	var_1_25[30707104] = {
+	pg.base.dorm3d_ins_chat_group[30707104] = {
 		ship_group = 30707,
 		name = "杀虫规划图 ",
 		unlock_desc = "在{namecode:97}宿舍中收集20件物品",
@@ -942,11 +797,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			433
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_ins_chat_group
-
-	var_1_26[30707105] = {
+	pg.base.dorm3d_ins_chat_group[30707105] = {
 		ship_group = 30707,
 		name = "合照 ",
 		unlock_desc = "触摸{namecode:97}3次",
@@ -966,11 +817,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			444
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_ins_chat_group
-
-	var_1_27[30707106] = {
+	pg.base.dorm3d_ins_chat_group[30707106] = {
 		ship_group = 30707,
 		name = "被炉 ",
 		unlock_desc = "给{namecode:97}赠送5次礼物",
@@ -996,11 +843,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			461
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_ins_chat_group
-
-	var_1_28[30707107] = {
+	pg.base.dorm3d_ins_chat_group[30707107] = {
 		ship_group = 30707,
 		name = "正常清洗 ",
 		unlock_desc = "累计进入{namecode:97}宿舍7天",
@@ -1022,11 +865,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			474
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_ins_chat_group
-
-	var_1_29[30707108] = {
+	pg.base.dorm3d_ins_chat_group[30707108] = {
 		ship_group = 30707,
 		name = "话题与茶 ",
 		unlock_desc = "和{namecode:97}对话15次",
@@ -1051,11 +890,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			490
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_ins_chat_group
-
-	var_1_30[30707109] = {
+	pg.base.dorm3d_ins_chat_group[30707109] = {
 		ship_group = 30707,
 		name = "依赖与按摩 ",
 		unlock_desc = "触摸{namecode:97}5次",
@@ -1079,11 +914,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			505
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_ins_chat_group
-
-	var_1_31[30707110] = {
+	pg.base.dorm3d_ins_chat_group[30707110] = {
 		ship_group = 30707,
 		name = "珍贵之物 ",
 		unlock_desc = "给{namecode:97}赠送10次礼物",
@@ -1107,11 +938,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			520
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_ins_chat_group
-
-	var_1_32[49905101] = {
+	pg.base.dorm3d_ins_chat_group[49905101] = {
 		ship_group = 49905,
 		name = "睡前“问候” ",
 		unlock_desc = "累计进入{namecode:480}宿舍1天",
@@ -1136,11 +963,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			536
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_ins_chat_group
-
-	var_1_33[49905102] = {
+	pg.base.dorm3d_ins_chat_group[49905102] = {
 		ship_group = 49905,
 		name = "水族箱？ ",
 		unlock_desc = "进入{namecode:480}宿舍第2天解锁",
@@ -1171,11 +994,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			558
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_ins_chat_group
-
-	var_1_34[49905103] = {
+	pg.base.dorm3d_ins_chat_group[49905103] = {
 		ship_group = 49905,
 		name = "幸运物 ",
 		unlock_desc = "进入{namecode:480}宿舍第4天解锁",
@@ -1205,11 +1024,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			579
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_ins_chat_group
-
-	var_1_35[49905104] = {
+	pg.base.dorm3d_ins_chat_group[49905104] = {
 		ship_group = 49905,
 		name = "没被发现的东西 ",
 		unlock_desc = "在{namecode:480}宿舍中收集20件物品",
@@ -1238,11 +1053,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			599
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_ins_chat_group
-
-	var_1_36[49905105] = {
+	pg.base.dorm3d_ins_chat_group[49905105] = {
 		ship_group = 49905,
 		name = "依存症 ",
 		unlock_desc = "触摸{namecode:480}3次",
@@ -1270,11 +1081,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			618
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_ins_chat_group
-
-	var_1_37[49905106] = {
+	pg.base.dorm3d_ins_chat_group[49905106] = {
 		ship_group = 49905,
 		name = "被留下的，被带走的 ",
 		unlock_desc = "给{namecode:480}赠送5次礼物",
@@ -1296,11 +1103,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			631
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_ins_chat_group
-
-	var_1_38[49905107] = {
+	pg.base.dorm3d_ins_chat_group[49905107] = {
 		ship_group = 49905,
 		name = "好胜心 ",
 		unlock_desc = "累计进入{namecode:480}宿舍7天",
@@ -1327,11 +1130,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			649
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_ins_chat_group
-
-	var_1_39[49905108] = {
+	pg.base.dorm3d_ins_chat_group[49905108] = {
 		ship_group = 49905,
 		name = "星不落的夜晚 ",
 		unlock_desc = "和{namecode:480}对话15次",
@@ -1365,11 +1164,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			674
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_ins_chat_group
-
-	var_1_40[49905109] = {
+	pg.base.dorm3d_ins_chat_group[49905109] = {
 		ship_group = 49905,
 		name = "特别款待 ",
 		unlock_desc = "触摸{namecode:480}5次",
@@ -1396,11 +1191,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			692
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_ins_chat_group
-
-	var_1_41[49905110] = {
+	pg.base.dorm3d_ins_chat_group[49905110] = {
 		ship_group = 49905,
 		name = "焦点“误入”",
 		unlock_desc = "给{namecode:480}赠送10次礼物",
@@ -1428,11 +1219,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			711
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_ins_chat_group
-
-	var_1_42[21] = {
+	pg.base.dorm3d_ins_chat_group[21] = {
 		ship_group = 79902,
 		name = "汽车，出发",
 		unlock_desc = "累计进入纳希莫夫海军上将宿舍1天",
@@ -1458,11 +1245,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			728
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_ins_chat_group
-
-	var_1_43[22] = {
+	pg.base.dorm3d_ins_chat_group[22] = {
 		ship_group = 79902,
 		name = "我是线缆",
 		unlock_desc = "进入纳希莫夫海军上将宿舍第2天解锁",
@@ -1486,11 +1269,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			743
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_ins_chat_group
-
-	var_1_44[23] = {
+	pg.base.dorm3d_ins_chat_group[23] = {
 		ship_group = 79902,
 		name = "一起钓鱼吧",
 		unlock_desc = "进入纳希莫夫海军上将宿舍第4天解锁",
@@ -1515,11 +1294,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			759
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_ins_chat_group
-
-	var_1_45[24] = {
+	pg.base.dorm3d_ins_chat_group[24] = {
 		ship_group = 79902,
 		name = "房间里的变量",
 		unlock_desc = "在纳希莫夫海军上将宿舍中收集20件物品",
@@ -1541,11 +1316,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			772
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_ins_chat_group
-
-	var_1_46[25] = {
+	pg.base.dorm3d_ins_chat_group[25] = {
 		ship_group = 79902,
 		name = "如何科学地缠住指挥官",
 		unlock_desc = "触摸纳希莫夫海军上将3次",
@@ -1566,11 +1337,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			784
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_ins_chat_group
-
-	var_1_47[26] = {
+	pg.base.dorm3d_ins_chat_group[26] = {
 		ship_group = 79902,
 		name = "认真工作的魅力",
 		unlock_desc = "给纳希莫夫海军上将赠送5次礼物",
@@ -1590,11 +1357,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			843
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_ins_chat_group
-
-	var_1_48[27] = {
+	pg.base.dorm3d_ins_chat_group[27] = {
 		ship_group = 79902,
 		name = "突如其来的雨",
 		unlock_desc = "累计进入纳希莫夫海军上将宿舍7天",
@@ -1612,11 +1375,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			807
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_ins_chat_group
-
-	var_1_49[28] = {
+	pg.base.dorm3d_ins_chat_group[28] = {
 		ship_group = 79902,
 		name = "猫咪的习性",
 		unlock_desc = "和纳希莫夫海军上将对话15次",
@@ -1638,11 +1397,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			820
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_ins_chat_group
-
-	var_1_50[29] = {
+	pg.base.dorm3d_ins_chat_group[29] = {
 		ship_group = 79902,
 		name = "缓解疲劳",
 		unlock_desc = "触摸纳希莫夫海军上将5次",
@@ -1663,8 +1418,7 @@ var_0_5.base.dorm3d_ins_chat_group = {}
 			832
 		}
 	}
-	pg = var_1_50
-	var_1_50.base.dorm3d_ins_chat_group[30] = {
+	pg.base.dorm3d_ins_chat_group[30] = {
 		ship_group = 79902,
 		name = "好感度系统",
 		unlock_desc = "给纳希莫夫海军上将赠送10次礼物",

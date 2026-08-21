@@ -255,7 +255,12 @@ function updateStyle(self)
     end
 
     if (stageType == battleMap.MainMapStageType.Boss) then
-        local source = UrlManager:getPackPath("mainMap4/mainMap_0" .. stageVo.chapter .. "_0" .. stageType .. "_" .. self.mUnlock .. ".png")
+        local source
+        if stageVo.chapter >= 10 then
+            source = UrlManager:getPackPath("mainMap4/mainMap_" .. stageVo.chapter .. "_0" .. stageType .. "_" .. self.mUnlock .. ".png")
+        else
+            source = UrlManager:getPackPath("mainMap4/mainMap_0" .. stageVo.chapter .. "_0" .. stageType .. "_" .. self.mUnlock .. ".png")
+        end
         self.mImgStage:SetImg(source, true)
     end
 

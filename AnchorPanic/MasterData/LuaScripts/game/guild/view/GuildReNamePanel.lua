@@ -58,6 +58,18 @@ function onClickConfirm(self)
         return
     end
 
+
+
+    if guild.GuildManager:getIsJoinGuildWar() then
+        gs.Message.Show(_TT(149213))
+        return
+    end
+
+        if guild.GuildManager:getIsJoinGuildWarTop() then
+        gs.Message.Show(_TT(149236))
+        return
+    end
+
     local newName = self.mInputFieldName.text
     if not newName or newName == "" then
         gs.Message.Show(_TT(94583)) --请输入名称
@@ -69,14 +81,14 @@ function onClickConfirm(self)
         return
     end
 
-    local result, tips = MoneyUtil.judgeNeedMoneyCountByTid(self.needTid, self.needCount, true, true)
-    if tips == "" and result == true then
+    -- local result, tips = MoneyUtil.judgeNeedMoneyCountByTid(self.needTid, self.needCount, true, true)
+    -- if tips == "" and result == true then
         GameDispatcher:dispatchEvent(EventName.REQ_RANAME_GUILD, {
             name = self.mInputFieldName.text
         })
-    else
-        gs.Message.Show(tips)
-    end
+    -- else
+    --     gs.Message.Show(tips)
+    -- end
 
 end
 -- 激活

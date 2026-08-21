@@ -22,6 +22,7 @@ shop.ShopConvertItem = require("game/shop/view/item/ShopConvertItem")
 
 shop.ShopBuyView = "game/shop/view/ShopBuyView"
 shop.ShopBuyView2 = "game/shop/view/ShopBuyView2"
+shop.ShopBuyView3 = "game/shop/view/ShopBuyView3"
 shop.ShopPanel = "game/shop/view/ShopPanel"
 shop.ShoppingPanel = "game/shop/view/ShoppingPanel"
 -- shop.ShopPanel = require("game/shop/view/ShopPanel")

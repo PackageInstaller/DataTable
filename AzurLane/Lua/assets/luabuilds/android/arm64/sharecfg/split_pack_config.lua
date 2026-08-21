@@ -1,10 +1,5 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.split_pack_config = {
+﻿pg = pg or {}
+pg.split_pack_config = {
 	LoginMediator = {
 		res_list = {}
 	},

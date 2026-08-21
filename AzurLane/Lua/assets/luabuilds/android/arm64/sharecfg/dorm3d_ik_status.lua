@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_ik_status") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_ik_status"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_ik_status = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_ik_status
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_ik_status = rawget(pg, "dorm3d_ik_status") or setmetatable({
+	__name = "dorm3d_ik_status"
+}, confNEO)
+pg.dorm3d_ik_status.all = {
 	2,
 	3,
 	4,
@@ -441,11 +418,7 @@ var_0_3.all = {
 	710430,
 	710440
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_ik_status
-
-var_0_4.get_id_list_by_camera_group = {
+pg.dorm3d_ik_status.get_id_list_by_camera_group = {
 	{
 		2,
 		3,
@@ -1181,10 +1154,7 @@ var_0_4.get_id_list_by_camera_group = {
 		710421
 	}
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.dorm3d_ik_status
-local var_0_6 = {
+pg.dorm3d_ik_status.get_id_list_by_base = {
 	[2] = {
 		2
 	},
@@ -2000,37 +1970,17 @@ local var_0_6 = {
 	[14] = {
 		700430,
 		710430
+	},
+	[24] = {
+		700440,
+		710440
 	}
 }
-local var_0_7 = {
-	700440,
-	710440
-}
-
-var_0_6[24] = var_0_7
-var_0_5.get_id_list_by_base = var_0_6
-pg = var_0_5
-
-local var_0_8 = "base"
-
-pg = var_0_7
-
-local var_0_9
-
-if not var_0_7.base then
-	var_0_9 = {}
-end
-
-var_0_5[var_0_8] = var_0_9
-pg = var_0_5
-var_0_5.base.dorm3d_ik_status = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_ik_status = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_ik_status
-
-	var_1_0[2] = {
+	pg.base.dorm3d_ik_status[2] = {
 		ik_camera = "StoolIKCamera4",
 		character_action = "SitH",
 		base = 2,
@@ -2097,11 +2047,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_ik_status
-
-	var_1_1[3] = {
+	pg.base.dorm3d_ik_status[3] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 3,
@@ -2167,11 +2113,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_ik_status
-
-	var_1_2[4] = {
+	pg.base.dorm3d_ik_status[4] = {
 		ik_camera = "StoolIKCamera3",
 		character_action = "SitH",
 		base = 4,
@@ -2236,11 +2178,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_ik_status
-
-	var_1_3[5] = {
+	pg.base.dorm3d_ik_status[5] = {
 		ik_camera = "BedIKCamera",
 		character_action = "GoToBedL",
 		base = 5,
@@ -2307,11 +2245,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_ik_status
-
-	var_1_4[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "BedIKCamera",
 		character_action = "shui_idle_L_loop",
 		base = 6,
@@ -2378,11 +2312,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_ik_status
-
-	var_1_5[7] = {
+	pg.base.dorm3d_ik_status[7] = {
 		ik_camera = "BedIKCamera",
 		character_action = "sikao_loop",
 		base = 7,
@@ -2439,11 +2369,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_ik_status
-
-	var_1_6[8] = {
+	pg.base.dorm3d_ik_status[8] = {
 		ik_camera = "ChairIKCamera",
 		character_action = "Sit",
 		base = 8,
@@ -2510,11 +2436,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_ik_status
-
-	var_1_7[9] = {
+	pg.base.dorm3d_ik_status[9] = {
 		ik_camera = "Cam200411",
 		character_action = "ND_IK_FF_chuang_ZJD_idle_01",
 		base = 9,
@@ -2568,11 +2490,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_ik_status
-
-	var_1_8[100] = {
+	pg.base.dorm3d_ik_status[100] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 100,
@@ -2638,11 +2556,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_ik_status
-
-	var_1_9[101] = {
+	pg.base.dorm3d_ik_status[101] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 101,
@@ -2708,11 +2622,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_ik_status
-
-	var_1_10[102] = {
+	pg.base.dorm3d_ik_status[102] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 102,
@@ -2778,11 +2688,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_ik_status
-
-	var_1_11[103] = {
+	pg.base.dorm3d_ik_status[103] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 103,
@@ -2848,11 +2754,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_ik_status
-
-	var_1_12[104] = {
+	pg.base.dorm3d_ik_status[104] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 104,
@@ -2918,11 +2820,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_ik_status
-
-	var_1_13[105] = {
+	pg.base.dorm3d_ik_status[105] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 105,
@@ -2988,11 +2886,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_ik_status
-
-	var_1_14[106] = {
+	pg.base.dorm3d_ik_status[106] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 106,
@@ -3058,11 +2952,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_ik_status
-
-	var_1_15[107] = {
+	pg.base.dorm3d_ik_status[107] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 107,
@@ -3128,11 +3018,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_ik_status
-
-	var_1_16[108] = {
+	pg.base.dorm3d_ik_status[108] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 108,
@@ -3198,11 +3084,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_ik_status
-
-	var_1_17[109] = {
+	pg.base.dorm3d_ik_status[109] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 109,
@@ -3268,11 +3150,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_ik_status
-
-	var_1_18[110] = {
+	pg.base.dorm3d_ik_status[110] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 110,
@@ -3338,11 +3216,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_ik_status
-
-	var_1_19[111] = {
+	pg.base.dorm3d_ik_status[111] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 111,
@@ -3408,11 +3282,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_ik_status
-
-	var_1_20[112] = {
+	pg.base.dorm3d_ik_status[112] = {
 		ik_camera = "StoolIKCamera2",
 		character_action = "SitH",
 		base = 112,
@@ -3478,11 +3348,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_ik_status
-
-	var_1_21[14] = {
+	pg.base.dorm3d_ik_status[14] = {
 		ik_camera = "Cam100110",
 		character_action = "SitH",
 		base = 100110,
@@ -3550,11 +3416,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_ik_status
-
-	var_1_22[24] = {
+	pg.base.dorm3d_ik_status[24] = {
 		ik_camera = "Cam100120",
 		character_action = "SitH",
 		base = 100120,
@@ -3612,11 +3474,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_ik_status
-
-	var_1_23[100130] = {
+	pg.base.dorm3d_ik_status[100130] = {
 		ik_camera = "Cam100130",
 		character_action = "SitH",
 		base = 100130,
@@ -3693,11 +3551,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_ik_status
-
-	var_1_24[100210] = {
+	pg.base.dorm3d_ik_status[100210] = {
 		ik_camera = "Cam100210",
 		character_action = "PayGoToSofaLoop",
 		base = 100210,
@@ -3765,11 +3619,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_ik_status
-
-	var_1_25[100220] = {
+	pg.base.dorm3d_ik_status[100220] = {
 		ik_camera = "Cam100220",
 		character_action = "PayGoToSofaLoop",
 		base = 100220,
@@ -3838,11 +3688,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_ik_status
-
-	var_1_26[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "Cam100230",
 		character_action = "PayGoToSofaLoop",
 		base = 100230,
@@ -3882,11 +3728,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_ik_status
-
-	var_1_27[100211] = {
+	pg.base.dorm3d_ik_status[100211] = {
 		ik_camera = "Cam100211",
 		character_action = "zuo_FF_2_hudong_jianbang_1_loop",
 		base = 100211,
@@ -3945,11 +3787,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_ik_status
-
-	var_1_28[100221] = {
+	pg.base.dorm3d_ik_status[100221] = {
 		ik_camera = "Cam100221",
 		character_action = "zuo_FF_2_hudong_xiong_1_loop",
 		base = 100221,
@@ -4008,11 +3846,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_ik_status
-
-	var_1_29[7] = {
+	pg.base.dorm3d_ik_status[7] = {
 		ik_camera = "Cam100231",
 		character_action = "zuo_FF_2_hudong_jiao_2_loop",
 		base = 100231,
@@ -4071,11 +3905,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_ik_status
-
-	var_1_30[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam100250",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100250,
@@ -4148,11 +3978,7 @@ var_0_5.base.dorm3d_ik_status = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_ik_status
-
-	var_1_31[100260] = {
+	pg.base.dorm3d_ik_status[100260] = {
 		ik_camera = "Cam100260",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100260,
@@ -4216,11 +4042,7 @@ var_0_5.base.dorm3d_ik_status = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_ik_status
-
-	var_1_32[100270] = {
+	pg.base.dorm3d_ik_status[100270] = {
 		ik_camera = "Cam100270",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100270,
@@ -4292,11 +4114,7 @@ var_0_5.base.dorm3d_ik_status = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_ik_status
-
-	var_1_33[100280] = {
+	pg.base.dorm3d_ik_status[100280] = {
 		ik_camera = "Cam100280",
 		character_action = "TLX_TD_shafa_idle_03",
 		base = 100280,
@@ -4373,11 +4191,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_ik_status
-
-	var_1_34[27] = {
+	pg.base.dorm3d_ik_status[27] = {
 		ik_camera = "Cam100251",
 		character_action = "TLX_TD_shafa_idle_02",
 		base = 100251,
@@ -4445,11 +4259,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_ik_status
-
-	var_1_35[100310] = {
+	pg.base.dorm3d_ik_status[100310] = {
 		ik_camera = "Cam100310",
 		character_action = "Sit",
 		base = 100310,
@@ -4516,11 +4326,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_ik_status
-
-	var_1_36[100320] = {
+	pg.base.dorm3d_ik_status[100320] = {
 		ik_camera = "Cam100320",
 		character_action = "Sit",
 		base = 100320,
@@ -4578,11 +4384,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_ik_status
-
-	var_1_37[100330] = {
+	pg.base.dorm3d_ik_status[100330] = {
 		ik_camera = "Cam100330",
 		character_action = "Sit",
 		base = 100330,
@@ -4649,11 +4451,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_ik_status
-
-	var_1_38[100410] = {
+	pg.base.dorm3d_ik_status[100410] = {
 		ik_camera = "Cam100410",
 		character_action = "GoToBedL",
 		base = 100410,
@@ -4721,11 +4519,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_ik_status
-
-	var_1_39[100420] = {
+	pg.base.dorm3d_ik_status[100420] = {
 		ik_camera = "Cam100420",
 		character_action = "GoToBedL",
 		base = 100420,
@@ -4783,11 +4577,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_ik_status
-
-	var_1_40[100430] = {
+	pg.base.dorm3d_ik_status[100430] = {
 		ik_camera = "Cam100430",
 		character_action = "GoToBedL",
 		base = 100430,
@@ -4854,11 +4644,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_ik_status
-
-	var_1_41[100710] = {
+	pg.base.dorm3d_ik_status[100710] = {
 		ik_camera = "Cam100710",
 		character_action = "PayGoToBed",
 		base = 100710,
@@ -4935,11 +4721,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_ik_status
-
-	var_1_42[100720] = {
+	pg.base.dorm3d_ik_status[100720] = {
 		ik_camera = "Cam100720",
 		character_action = "PayGoToBed",
 		base = 100720,
@@ -4997,11 +4779,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_ik_status
-
-	var_1_43[100730] = {
+	pg.base.dorm3d_ik_status[100730] = {
 		ik_camera = "Cam100730",
 		character_action = "PayGoToBed",
 		base = 100730,
@@ -5059,11 +4837,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_ik_status
-
-	var_1_44[100711] = {
+	pg.base.dorm3d_ik_status[100711] = {
 		ik_camera = "Cam100711",
 		character_action = "chuang_beibu_1_idle",
 		base = 100711,
@@ -5130,11 +4904,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_ik_status
-
-	var_1_45[100721] = {
+	pg.base.dorm3d_ik_status[100721] = {
 		ik_camera = "Cam100721",
 		character_action = "chuang_2_pigu_2_idle",
 		base = 100721,
@@ -5192,11 +4962,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_ik_status
-
-	var_1_46[100731] = {
+	pg.base.dorm3d_ik_status[100731] = {
 		ik_camera = "Cam100731",
 		character_action = "chuang_jiao_1_idle",
 		base = 100731,
@@ -5254,11 +5020,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_ik_status
-
-	var_1_47[115010] = {
+	pg.base.dorm3d_ik_status[115010] = {
 		ik_camera = "Cam115010",
 		character_action = "swim01_idle",
 		base = 115010,
@@ -5307,11 +5069,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_ik_status
-
-	var_1_48[115020] = {
+	pg.base.dorm3d_ik_status[115020] = {
 		ik_camera = "Cam115010",
 		character_action = "swim01_idle",
 		base = 115020,
@@ -5360,11 +5118,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_ik_status
-
-	var_1_49[115030] = {
+	pg.base.dorm3d_ik_status[115030] = {
 		ik_camera = "Cam115010",
 		character_action = "swim01_idle",
 		base = 115030,
@@ -5413,11 +5167,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_ik_status
-
-	var_1_50[115040] = {
+	pg.base.dorm3d_ik_status[115040] = {
 		ik_camera = "Cam115010",
 		character_action = "swim01_idle",
 		base = 115040,
@@ -5466,11 +5216,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_ik_status
-
-	var_1_51[115050] = {
+	pg.base.dorm3d_ik_status[115050] = {
 		ik_camera = "Cam115050",
 		character_action = "swim02_idle",
 		base = 115050,
@@ -5519,11 +5265,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_ik_status
-
-	var_1_52[115060] = {
+	pg.base.dorm3d_ik_status[115060] = {
 		ik_camera = "Cam115050",
 		character_action = "swim02_idle",
 		base = 115060,
@@ -5572,11 +5314,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_ik_status
-
-	var_1_53[115070] = {
+	pg.base.dorm3d_ik_status[115070] = {
 		ik_camera = "Cam115050",
 		character_action = "swim02_idle",
 		base = 115070,
@@ -5625,11 +5363,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_ik_status
-
-	var_1_54[8] = {
+	pg.base.dorm3d_ik_status[8] = {
 		ik_camera = "Cam115050",
 		character_action = "swim02_idle",
 		base = 115080,
@@ -5678,11 +5412,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_ik_status
-
-	var_1_55[30] = {
+	pg.base.dorm3d_ik_status[30] = {
 		ik_camera = "Cam100110",
 		character_action = "SitH",
 		base = 100110,
@@ -5732,11 +5462,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_ik_status
-
-	var_1_56[110120] = {
+	pg.base.dorm3d_ik_status[110120] = {
 		ik_camera = "Cam100120",
 		character_action = "SitH",
 		base = 100120,
@@ -5776,11 +5502,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_ik_status
-
-	var_1_57[110130] = {
+	pg.base.dorm3d_ik_status[110130] = {
 		ik_camera = "Cam100130",
 		character_action = "SitH",
 		base = 100130,
@@ -5839,11 +5561,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_ik_status
-
-	var_1_58[2] = {
+	pg.base.dorm3d_ik_status[2] = {
 		ik_camera = "Cam100210",
 		character_action = "PayGoToSofaLoop",
 		base = 100210,
@@ -5912,11 +5630,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_ik_status
-
-	var_1_59[12] = {
+	pg.base.dorm3d_ik_status[12] = {
 		ik_camera = "Cam100220",
 		character_action = "PayGoToSofaLoop",
 		base = 100220,
@@ -5986,11 +5700,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_ik_status
-
-	var_1_60[22] = {
+	pg.base.dorm3d_ik_status[22] = {
 		ik_camera = "Cam100230",
 		character_action = "PayGoToSofaLoop",
 		base = 100230,
@@ -6049,11 +5759,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_ik_status
-
-	var_1_61[3] = {
+	pg.base.dorm3d_ik_status[3] = {
 		ik_camera = "Cam100211",
 		character_action = "zuo_FF_2_hudong_jianbang_1_loop",
 		base = 100211,
@@ -6113,11 +5819,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_ik_status
-
-	var_1_62[13] = {
+	pg.base.dorm3d_ik_status[13] = {
 		ik_camera = "Cam100221",
 		character_action = "zuo_FF_2_hudong_xiong_1_loop",
 		base = 100221,
@@ -6177,11 +5879,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_ik_status
-
-	var_1_63[23] = {
+	pg.base.dorm3d_ik_status[23] = {
 		ik_camera = "Cam100231",
 		character_action = "zuo_FF_2_hudong_jiao_2_loop",
 		base = 100231,
@@ -6241,11 +5939,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_ik_status
-
-	var_1_64[110310] = {
+	pg.base.dorm3d_ik_status[110310] = {
 		ik_camera = "Cam100310",
 		character_action = "Sit",
 		base = 100310,
@@ -6294,11 +5988,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_ik_status
-
-	var_1_65[110320] = {
+	pg.base.dorm3d_ik_status[110320] = {
 		ik_camera = "Cam100320",
 		character_action = "Sit",
 		base = 100320,
@@ -6338,11 +6028,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_ik_status
-
-	var_1_66[110330] = {
+	pg.base.dorm3d_ik_status[110330] = {
 		ik_camera = "Cam100330",
 		character_action = "Sit",
 		base = 100330,
@@ -6391,11 +6077,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_ik_status
-
-	var_1_67[110410] = {
+	pg.base.dorm3d_ik_status[110410] = {
 		ik_camera = "Cam100410",
 		character_action = "GoToBedL",
 		base = 100410,
@@ -6445,11 +6127,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_ik_status
-
-	var_1_68[110420] = {
+	pg.base.dorm3d_ik_status[110420] = {
 		ik_camera = "Cam100420",
 		character_action = "GoToBedL",
 		base = 100420,
@@ -6489,11 +6167,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_ik_status
-
-	var_1_69[110430] = {
+	pg.base.dorm3d_ik_status[110430] = {
 		ik_camera = "Cam100430",
 		character_action = "GoToBedL",
 		base = 100430,
@@ -6542,11 +6216,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_ik_status
-
-	var_1_70[110710] = {
+	pg.base.dorm3d_ik_status[110710] = {
 		ik_camera = "Cam100710",
 		character_action = "PayGoToBed",
 		base = 100710,
@@ -6605,11 +6275,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_ik_status
-
-	var_1_71[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam100720",
 		character_action = "PayGoToBed",
 		base = 100720,
@@ -6653,11 +6319,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_ik_status
-
-	var_1_72[10] = {
+	pg.base.dorm3d_ik_status[10] = {
 		ik_camera = "Cam100730",
 		character_action = "PayGoToBed",
 		base = 100730,
@@ -6697,11 +6359,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_ik_status
-
-	var_1_73[110711] = {
+	pg.base.dorm3d_ik_status[110711] = {
 		ik_camera = "Cam100711",
 		character_action = "chuang_beibu_1_idle",
 		base = 100711,
@@ -6750,11 +6408,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_ik_status
-
-	var_1_74[1] = {
+	pg.base.dorm3d_ik_status[1] = {
 		ik_camera = "Cam100721",
 		character_action = "chuang_2_pigu_2_idle",
 		base = 100721,
@@ -6794,11 +6448,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_ik_status
-
-	var_1_75[11] = {
+	pg.base.dorm3d_ik_status[11] = {
 		ik_camera = "Cam100731",
 		character_action = "chuang_jiao_1_idle",
 		base = 100731,
@@ -6838,11 +6488,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_ik_status
-
-	var_1_76[199999] = {
+	pg.base.dorm3d_ik_status[199999] = {
 		ik_camera = "Cam100320",
 		character_action = "Sit",
 		base = 100320,
@@ -6899,11 +6545,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.dorm3d_ik_status
-
-	var_1_77[110250] = {
+	pg.base.dorm3d_ik_status[110250] = {
 		ik_camera = "Cam100250",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100250,
@@ -6958,11 +6600,7 @@ var_0_5.base.dorm3d_ik_status = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.dorm3d_ik_status
-
-	var_1_78[110260] = {
+	pg.base.dorm3d_ik_status[110260] = {
 		ik_camera = "Cam100260",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100260,
@@ -7027,11 +6665,7 @@ var_0_5.base.dorm3d_ik_status = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.dorm3d_ik_status
-
-	var_1_79[110270] = {
+	pg.base.dorm3d_ik_status[110270] = {
 		ik_camera = "Cam100270",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100270,
@@ -7085,11 +6719,7 @@ var_0_5.base.dorm3d_ik_status = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.dorm3d_ik_status
-
-	var_1_80[110280] = {
+	pg.base.dorm3d_ik_status[110280] = {
 		ik_camera = "Cam100280",
 		character_action = "TLX_TD_shafa_idle_03",
 		base = 100280,
@@ -7148,11 +6778,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.dorm3d_ik_status
-
-	var_1_81[110251] = {
+	pg.base.dorm3d_ik_status[110251] = {
 		ik_camera = "Cam100251",
 		character_action = "TLX_TD_shafa_idle_02",
 		base = 100251,
@@ -7202,11 +6828,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.dorm3d_ik_status
-
-	var_1_82[120110] = {
+	pg.base.dorm3d_ik_status[120110] = {
 		ik_camera = "Cam100110",
 		character_action = "SitH",
 		base = 100110,
@@ -7255,11 +6877,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.dorm3d_ik_status
-
-	var_1_83[120120] = {
+	pg.base.dorm3d_ik_status[120120] = {
 		ik_camera = "Cam100120",
 		character_action = "SitH",
 		base = 100120,
@@ -7298,11 +6916,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.dorm3d_ik_status
-
-	var_1_84[120130] = {
+	pg.base.dorm3d_ik_status[120130] = {
 		ik_camera = "Cam100130",
 		character_action = "SitH",
 		base = 100130,
@@ -7360,11 +6974,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.dorm3d_ik_status
-
-	var_1_85[18] = {
+	pg.base.dorm3d_ik_status[18] = {
 		ik_camera = "Cam100210",
 		character_action = "PayGoToSofaLoop",
 		base = 100210,
@@ -7413,11 +7023,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.dorm3d_ik_status
-
-	var_1_86[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam100220",
 		character_action = "PayGoToSofaLoop",
 		base = 100220,
@@ -7467,11 +7073,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.dorm3d_ik_status
-
-	var_1_87[120230] = {
+	pg.base.dorm3d_ik_status[120230] = {
 		ik_camera = "Cam100230",
 		character_action = "PayGoToSofaLoop",
 		base = 100230,
@@ -7510,11 +7112,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.dorm3d_ik_status
-
-	var_1_88[19] = {
+	pg.base.dorm3d_ik_status[19] = {
 		ik_camera = "Cam100211",
 		character_action = "zuo_FF_2_hudong_jianbang_1_loop",
 		base = 100211,
@@ -7554,11 +7152,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.dorm3d_ik_status
-
-	var_1_89[29] = {
+	pg.base.dorm3d_ik_status[29] = {
 		ik_camera = "Cam100221",
 		character_action = "zuo_FF_2_hudong_xiong_1_loop",
 		base = 100221,
@@ -7618,11 +7212,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.dorm3d_ik_status
-
-	var_1_90[120231] = {
+	pg.base.dorm3d_ik_status[120231] = {
 		ik_camera = "Cam100231",
 		character_action = "zuo_FF_2_hudong_jiao_2_loop",
 		base = 100231,
@@ -7682,11 +7272,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.dorm3d_ik_status
-
-	var_1_91[120310] = {
+	pg.base.dorm3d_ik_status[120310] = {
 		ik_camera = "Cam100310",
 		character_action = "Sit",
 		base = 100310,
@@ -7734,11 +7320,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.dorm3d_ik_status
-
-	var_1_92[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam100320",
 		character_action = "Sit",
 		base = 100320,
@@ -7777,11 +7359,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.dorm3d_ik_status
-
-	var_1_93[10] = {
+	pg.base.dorm3d_ik_status[10] = {
 		ik_camera = "Cam100330",
 		character_action = "Sit",
 		base = 100330,
@@ -7829,11 +7407,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.dorm3d_ik_status
-
-	var_1_94[120410] = {
+	pg.base.dorm3d_ik_status[120410] = {
 		ik_camera = "Cam100410",
 		character_action = "GoToBedL",
 		base = 100410,
@@ -7882,11 +7456,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.dorm3d_ik_status
-
-	var_1_95[120420] = {
+	pg.base.dorm3d_ik_status[120420] = {
 		ik_camera = "Cam100420",
 		character_action = "GoToBedL",
 		base = 100420,
@@ -7925,11 +7495,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.dorm3d_ik_status
-
-	var_1_96[120430] = {
+	pg.base.dorm3d_ik_status[120430] = {
 		ik_camera = "Cam100430",
 		character_action = "GoToBedL",
 		base = 100430,
@@ -7977,11 +7543,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.dorm3d_ik_status
-
-	var_1_97[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "Cam100710",
 		character_action = "PayGoToBed",
 		base = 100710,
@@ -8040,11 +7602,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.dorm3d_ik_status
-
-	var_1_98[16] = {
+	pg.base.dorm3d_ik_status[16] = {
 		ik_camera = "Cam100720",
 		character_action = "PayGoToBed",
 		base = 100720,
@@ -8088,8 +7646,7 @@ var_0_5.base.dorm3d_ik_status = {}
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_1_98
-	var_1_98.base.dorm3d_ik_status[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam100730",
 		character_action = "PayGoToBed",
 		base = 100730,
@@ -8133,11 +7690,7 @@ var_0_5.base.dorm3d_ik_status = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.dorm3d_ik_status
-
-	var_2_0[7] = {
+	pg.base.dorm3d_ik_status[7] = {
 		ik_camera = "Cam100711",
 		character_action = "chuang_beibu_1_idle",
 		base = 100711,
@@ -8186,11 +7739,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.dorm3d_ik_status
-
-	var_2_1[17] = {
+	pg.base.dorm3d_ik_status[17] = {
 		ik_camera = "Cam100721",
 		character_action = "chuang_2_pigu_2_idle",
 		base = 100721,
@@ -8230,11 +7779,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.dorm3d_ik_status
-
-	var_2_2[27] = {
+	pg.base.dorm3d_ik_status[27] = {
 		ik_camera = "Cam100731",
 		character_action = "chuang_jiao_1_idle",
 		base = 100731,
@@ -8274,11 +7819,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.dorm3d_ik_status
-
-	var_2_3[120250] = {
+	pg.base.dorm3d_ik_status[120250] = {
 		ik_camera = "Cam100250",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100250,
@@ -8333,11 +7874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.dorm3d_ik_status
-
-	var_2_4[120260] = {
+	pg.base.dorm3d_ik_status[120260] = {
 		ik_camera = "Cam100260",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100260,
@@ -8402,11 +7939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.dorm3d_ik_status
-
-	var_2_5[120270] = {
+	pg.base.dorm3d_ik_status[120270] = {
 		ik_camera = "Cam100270",
 		character_action = "TLX_TD_shafa_idle_01",
 		base = 100270,
@@ -8460,11 +7993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.dorm3d_ik_status
-
-	var_2_6[120280] = {
+	pg.base.dorm3d_ik_status[120280] = {
 		ik_camera = "Cam100280",
 		character_action = "TLX_TD_shafa_idle_03",
 		base = 100280,
@@ -8523,11 +8052,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.dorm3d_ik_status
-
-	var_2_7[120251] = {
+	pg.base.dorm3d_ik_status[120251] = {
 		ik_camera = "Cam100251",
 		character_action = "TLX_TD_shafa_idle_02",
 		base = 100251,
@@ -8577,11 +8102,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.dorm3d_ik_status
-
-	var_2_8[120810] = {
+	pg.base.dorm3d_ik_status[120810] = {
 		ik_camera = "Cam810910",
 		character_action = "bunny_IK_cafe_idle01",
 		base = 120810,
@@ -8645,11 +8166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.dorm3d_ik_status
-
-	var_2_9[120820] = {
+	pg.base.dorm3d_ik_status[120820] = {
 		ik_camera = "Cam810920",
 		character_action = "bunny_IK_cafe_idle02",
 		base = 120820,
@@ -8697,11 +8214,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.dorm3d_ik_status
-
-	var_2_10[200110] = {
+	pg.base.dorm3d_ik_status[200110] = {
 		ik_camera = "Cam200110",
 		character_action = "sofa_sit_idle",
 		base = 200110,
@@ -8763,11 +8276,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.dorm3d_ik_status
-
-	var_2_11[200120] = {
+	pg.base.dorm3d_ik_status[200120] = {
 		ik_camera = "Cam200120",
 		character_action = "sofa_sit_idle",
 		base = 200120,
@@ -8829,11 +8338,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.dorm3d_ik_status
-
-	var_2_12[200130] = {
+	pg.base.dorm3d_ik_status[200130] = {
 		ik_camera = "Cam200130",
 		character_action = "sofa_sit_idle",
 		base = 200130,
@@ -8882,11 +8387,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.dorm3d_ik_status
-
-	var_2_13[18] = {
+	pg.base.dorm3d_ik_status[18] = {
 		ik_camera = "Cam200210",
 		character_action = "bed_lay_idle",
 		base = 200210,
@@ -8935,11 +8436,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.dorm3d_ik_status
-
-	var_2_14[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam200220",
 		character_action = "bed_lay_idle",
 		base = 200220,
@@ -8979,11 +8476,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.dorm3d_ik_status
-
-	var_2_15[200230] = {
+	pg.base.dorm3d_ik_status[200230] = {
 		ik_camera = "Cam200230",
 		character_action = "bed_lay_idle",
 		base = 200230,
@@ -9054,11 +8547,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.dorm3d_ik_status
-
-	var_2_16[200310] = {
+	pg.base.dorm3d_ik_status[200310] = {
 		ik_camera = "Cam200310",
 		character_action = "table_sit_idle",
 		base = 200310,
@@ -9122,11 +8611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.dorm3d_ik_status
-
-	var_2_17[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam200320",
 		character_action = "table_sit_idle",
 		base = 200320,
@@ -9190,11 +8675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.dorm3d_ik_status
-
-	var_2_18[10] = {
+	pg.base.dorm3d_ik_status[10] = {
 		ik_camera = "Cam200330",
 		character_action = "table_sit_idle",
 		base = 200330,
@@ -9271,11 +8752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.dorm3d_ik_status
-
-	var_2_19[200410] = {
+	pg.base.dorm3d_ik_status[200410] = {
 		ik_camera = "Cam200410",
 		character_action = "ND_IK_FF_chuang_idle_01",
 		base = 200410,
@@ -9334,11 +8811,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.dorm3d_ik_status
-
-	var_2_20[200420] = {
+	pg.base.dorm3d_ik_status[200420] = {
 		ik_camera = "Cam200420",
 		character_action = "ND_IK_FF_chuang_idle_01",
 		base = 200420,
@@ -9415,11 +8888,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.dorm3d_ik_status
-
-	var_2_21[200430] = {
+	pg.base.dorm3d_ik_status[200430] = {
 		ik_camera = "Cam200430",
 		character_action = "ND_IK_FF_chuang_idle_01",
 		base = 200430,
@@ -9468,11 +8937,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.dorm3d_ik_status
-
-	var_2_22[200411] = {
+	pg.base.dorm3d_ik_status[200411] = {
 		ik_camera = "Cam200411",
 		character_action = "ND_IK_FF_chuang_ZJD_idle_01",
 		base = 200411,
@@ -9540,11 +9005,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.dorm3d_ik_status
-
-	var_2_23[200510] = {
+	pg.base.dorm3d_ik_status[200510] = {
 		ik_camera = "Cam200510",
 		character_action = "ND_TD_beilu_idle_01",
 		base = 200510,
@@ -9609,11 +9070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.dorm3d_ik_status
-
-	var_2_24[200520] = {
+	pg.base.dorm3d_ik_status[200520] = {
 		ik_camera = "Cam200520",
 		character_action = "ND_TD_beilu_idle_01",
 		base = 200520,
@@ -9668,11 +9125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.dorm3d_ik_status
-
-	var_2_25[200530] = {
+	pg.base.dorm3d_ik_status[200530] = {
 		ik_camera = "Cam200530",
 		character_action = "ND_TD_beilu_idle_01",
 		base = 200530,
@@ -9735,11 +9188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.dorm3d_ik_status
-
-	var_2_26[200511] = {
+	pg.base.dorm3d_ik_status[200511] = {
 		ik_camera = "Cam200511",
 		character_action = "ND_TD_beilu_ZJD_idle_02",
 		base = 200511,
@@ -9804,11 +9253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.dorm3d_ik_status
-
-	var_2_27[200512] = {
+	pg.base.dorm3d_ik_status[200512] = {
 		ik_camera = "Cam200512",
 		character_action = "ND_TD_beilu_ZJD_shou_01-loop",
 		base = 200512,
@@ -9863,11 +9308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.dorm3d_ik_status
-
-	var_2_28[200522] = {
+	pg.base.dorm3d_ik_status[200522] = {
 		ik_camera = "Cam200522",
 		character_action = "ND_TD_beilu_dafu_01-loop",
 		base = 200522,
@@ -9922,11 +9363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.dorm3d_ik_status
-
-	var_2_29[200540] = {
+	pg.base.dorm3d_ik_status[200540] = {
 		ik_camera = "Cam200540",
 		character_action = "ND_TD_beilu_idle_03",
 		base = 200540,
@@ -9989,11 +9426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.dorm3d_ik_status
-
-	var_2_30[200610] = {
+	pg.base.dorm3d_ik_status[200610] = {
 		ik_camera = "Cam200610",
 		character_action = "ND_FF_IK_zhuozi_idle_01",
 		base = 200610,
@@ -10071,11 +9504,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.dorm3d_ik_status
-
-	var_2_31[200620] = {
+	pg.base.dorm3d_ik_status[200620] = {
 		ik_camera = "Cam200620",
 		character_action = "ND_FF_IK_zhuozi_ZJD_loop",
 		base = 200620,
@@ -10172,11 +9601,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.dorm3d_ik_status
-
-	var_2_32[200630] = {
+	pg.base.dorm3d_ik_status[200630] = {
 		ik_camera = "Cam200630",
 		character_action = "ND_FF_IK_zhuozi_idle_03",
 		base = 200630,
@@ -10271,11 +9696,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.dorm3d_ik_status
-
-	var_2_33[200611] = {
+	pg.base.dorm3d_ik_status[200611] = {
 		ik_camera = "Cam200611",
 		character_action = "ND_FF_IK_zhuozi_idle_02",
 		base = 200611,
@@ -10316,11 +9737,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.dorm3d_ik_status
-
-	var_2_34[200621] = {
+	pg.base.dorm3d_ik_status[200621] = {
 		ik_camera = "Cam200621",
 		character_action = "ND_FF_IK_zhuozi_ZJD_xiong_01-loop",
 		base = 200621,
@@ -10361,11 +9778,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.dorm3d_ik_status
-
-	var_2_35[200631] = {
+	pg.base.dorm3d_ik_status[200631] = {
 		ik_camera = "Cam200631",
 		character_action = "ND_FF_IK_zhuozi_ZJD_jiao_01-loop",
 		base = 200631,
@@ -10406,11 +9819,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.dorm3d_ik_status
-
-	var_2_36[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "Cam200710",
 		character_action = "FF_IK_shafa_idle01",
 		base = 200710,
@@ -10541,11 +9950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.dorm3d_ik_status
-
-	var_2_37[16] = {
+	pg.base.dorm3d_ik_status[16] = {
 		ik_camera = "Cam200720",
 		character_action = "FF_IK_shafa_idle01",
 		base = 200720,
@@ -10675,11 +10080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.dorm3d_ik_status
-
-	var_2_38[200740] = {
+	pg.base.dorm3d_ik_status[200740] = {
 		ik_camera = "Cam200740",
 		character_action = "FF_IK_shafa_idle01",
 		base = 200740,
@@ -10809,11 +10210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.dorm3d_ik_status
-
-	var_2_39[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam200730",
 		character_action = "FF_IK_shafa_idle02",
 		base = 200730,
@@ -10944,11 +10341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.dorm3d_ik_status
-
-	var_2_40[210110] = {
+	pg.base.dorm3d_ik_status[210110] = {
 		ik_camera = "Cam200110",
 		character_action = "sofa_sit_idle",
 		base = 200110,
@@ -11045,11 +10438,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.dorm3d_ik_status
-
-	var_2_41[210120] = {
+	pg.base.dorm3d_ik_status[210120] = {
 		ik_camera = "Cam200120",
 		character_action = "sofa_sit_idle",
 		base = 200120,
@@ -11146,11 +10535,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.dorm3d_ik_status
-
-	var_2_42[210130] = {
+	pg.base.dorm3d_ik_status[210130] = {
 		ik_camera = "Cam200130",
 		character_action = "sofa_sit_idle",
 		base = 200130,
@@ -11247,11 +10632,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.dorm3d_ik_status
-
-	var_2_43[210210] = {
+	pg.base.dorm3d_ik_status[210210] = {
 		ik_camera = "Cam200210",
 		character_action = "bed_lay_idle",
 		base = 200210,
@@ -11348,11 +10729,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.dorm3d_ik_status
-
-	var_2_44[210220] = {
+	pg.base.dorm3d_ik_status[210220] = {
 		ik_camera = "Cam200220",
 		character_action = "bed_lay_idle",
 		base = 200220,
@@ -11440,11 +10817,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.dorm3d_ik_status
-
-	var_2_45[210230] = {
+	pg.base.dorm3d_ik_status[210230] = {
 		ik_camera = "Cam200230",
 		character_action = "bed_lay_idle",
 		base = 200230,
@@ -11550,11 +10923,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.dorm3d_ik_status
-
-	var_2_46[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "Cam200310",
 		character_action = "table_sit_idle",
 		base = 200310,
@@ -11619,11 +10988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.dorm3d_ik_status
-
-	var_2_47[16] = {
+	pg.base.dorm3d_ik_status[16] = {
 		ik_camera = "Cam200320",
 		character_action = "table_sit_idle",
 		base = 200320,
@@ -11735,11 +11100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.dorm3d_ik_status
-
-	var_2_48[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam200330",
 		character_action = "table_sit_idle",
 		base = 200330,
@@ -11851,11 +11212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.dorm3d_ik_status
-
-	var_2_49[210410] = {
+	pg.base.dorm3d_ik_status[210410] = {
 		ik_camera = "Cam200410",
 		character_action = "ND_IK_FF_chuang_idle_01",
 		base = 200410,
@@ -11953,11 +11310,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.dorm3d_ik_status
-
-	var_2_50[210420] = {
+	pg.base.dorm3d_ik_status[210420] = {
 		ik_camera = "Cam200420",
 		character_action = "ND_IK_FF_chuang_idle_01",
 		base = 200420,
@@ -12054,11 +11407,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.dorm3d_ik_status
-
-	var_2_51[210430] = {
+	pg.base.dorm3d_ik_status[210430] = {
 		ik_camera = "Cam200430",
 		character_action = "ND_IK_FF_chuang_idle_01",
 		base = 200430,
@@ -12146,11 +11495,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.dorm3d_ik_status
-
-	var_2_52[210411] = {
+	pg.base.dorm3d_ik_status[210411] = {
 		ik_camera = "Cam200411",
 		character_action = "ND_IK_FF_chuang_ZJD_idle_01",
 		base = 200411,
@@ -12257,11 +11602,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.dorm3d_ik_status
-
-	var_2_53[215110] = {
+	pg.base.dorm3d_ik_status[215110] = {
 		ik_camera = "Cam210110",
 		character_action = "ND_IK_swim_idle_01",
 		base = 210110,
@@ -12326,11 +11667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.dorm3d_ik_status
-
-	var_2_54[215120] = {
+	pg.base.dorm3d_ik_status[215120] = {
 		ik_camera = "Cam210120",
 		character_action = "ND_IK_swim_idle_02",
 		base = 210120,
@@ -12372,11 +11709,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.dorm3d_ik_status
-
-	var_2_55[215130] = {
+	pg.base.dorm3d_ik_status[215130] = {
 		ik_camera = "Cam210130",
 		character_action = "ND_IK_swim_idle_03",
 		base = 210120,
@@ -12418,11 +11751,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.dorm3d_ik_status
-
-	var_2_56[210510] = {
+	pg.base.dorm3d_ik_status[210510] = {
 		ik_camera = "Cam200510",
 		character_action = "ND_TD_beilu_idle_01",
 		base = 200510,
@@ -12535,11 +11864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.dorm3d_ik_status
-
-	var_2_57[210520] = {
+	pg.base.dorm3d_ik_status[210520] = {
 		ik_camera = "Cam200520",
 		character_action = "ND_TD_beilu_idle_01",
 		base = 200520,
@@ -12642,11 +11967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.dorm3d_ik_status
-
-	var_2_58[210530] = {
+	pg.base.dorm3d_ik_status[210530] = {
 		ik_camera = "Cam200530",
 		character_action = "ND_TD_beilu_idle_01",
 		base = 200530,
@@ -12757,11 +12078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.dorm3d_ik_status
-
-	var_2_59[210511] = {
+	pg.base.dorm3d_ik_status[210511] = {
 		ik_camera = "Cam200511",
 		character_action = "ND_TD_beilu_ZJD_idle_02",
 		base = 200511,
@@ -12874,11 +12191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.dorm3d_ik_status
-
-	var_2_60[210512] = {
+	pg.base.dorm3d_ik_status[210512] = {
 		ik_camera = "Cam200512",
 		character_action = "ND_TD_beilu_ZJD_shou_01-loop",
 		base = 200512,
@@ -12981,11 +12294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.dorm3d_ik_status
-
-	var_2_61[210522] = {
+	pg.base.dorm3d_ik_status[210522] = {
 		ik_camera = "Cam200522",
 		character_action = "ND_TD_beilu_dafu_01-loop",
 		base = 200522,
@@ -13088,11 +12397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.dorm3d_ik_status
-
-	var_2_62[210540] = {
+	pg.base.dorm3d_ik_status[210540] = {
 		ik_camera = "Cam200540",
 		character_action = "ND_TD_beilu_idle_03",
 		base = 200540,
@@ -13203,11 +12508,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.dorm3d_ik_status
-
-	var_2_63[210610] = {
+	pg.base.dorm3d_ik_status[210610] = {
 		ik_camera = "Cam200610",
 		character_action = "ND_FF_IK_zhuozi_idle_01",
 		base = 200610,
@@ -13296,11 +12597,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.dorm3d_ik_status
-
-	var_2_64[210620] = {
+	pg.base.dorm3d_ik_status[210620] = {
 		ik_camera = "Cam200620",
 		character_action = "ND_FF_IK_zhuozi_ZJD_loop",
 		base = 200620,
@@ -13408,11 +12705,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.dorm3d_ik_status
-
-	var_2_65[210630] = {
+	pg.base.dorm3d_ik_status[210630] = {
 		ik_camera = "Cam200630",
 		character_action = "ND_FF_IK_zhuozi_idle_03",
 		base = 200630,
@@ -13518,11 +12811,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.dorm3d_ik_status
-
-	var_2_66[210611] = {
+	pg.base.dorm3d_ik_status[210611] = {
 		ik_camera = "Cam200611",
 		character_action = "ND_FF_IK_zhuozi_idle_02",
 		base = 200611,
@@ -13611,11 +12900,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.dorm3d_ik_status
-
-	var_2_67[210621] = {
+	pg.base.dorm3d_ik_status[210621] = {
 		ik_camera = "Cam200621",
 		character_action = "ND_FF_IK_zhuozi_ZJD_xiong_01-loop",
 		base = 200621,
@@ -13704,11 +12989,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.dorm3d_ik_status
-
-	var_2_68[210631] = {
+	pg.base.dorm3d_ik_status[210631] = {
 		ik_camera = "Cam200631",
 		character_action = "ND_FF_IK_zhuozi_ZJD_jiao_01-loop",
 		base = 200631,
@@ -13797,11 +13078,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.dorm3d_ik_status
-
-	var_2_69[22] = {
+	pg.base.dorm3d_ik_status[22] = {
 		ik_camera = "Cam200710",
 		character_action = "FF_IK_shafa_idle01",
 		base = 200710,
@@ -13932,11 +13209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.dorm3d_ik_status
-
-	var_2_70[210720] = {
+	pg.base.dorm3d_ik_status[210720] = {
 		ik_camera = "Cam200720",
 		character_action = "FF_IK_shafa_idle01",
 		base = 200720,
@@ -14066,11 +13339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.dorm3d_ik_status
-
-	var_2_71[210740] = {
+	pg.base.dorm3d_ik_status[210740] = {
 		ik_camera = "Cam200740",
 		character_action = "FF_IK_shafa_idle01",
 		base = 200740,
@@ -14200,11 +13469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.dorm3d_ik_status
-
-	var_2_72[210730] = {
+	pg.base.dorm3d_ik_status[210730] = {
 		ik_camera = "Cam200730",
 		character_action = "FF_IK_shafa_idle02",
 		base = 200730,
@@ -14335,11 +13600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.dorm3d_ik_status
-
-	var_2_73[299991] = {
+	pg.base.dorm3d_ik_status[299991] = {
 		ik_camera = "Cam299991",
 		character_action = "ND_liwu_01_01-loop",
 		base = 299991,
@@ -14402,11 +13663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.dorm3d_ik_status
-
-	var_2_74[299992] = {
+	pg.base.dorm3d_ik_status[299992] = {
 		ik_camera = "Cam299992",
 		character_action = "ND_liwu_01_03-loop",
 		base = 299992,
@@ -14475,11 +13732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.dorm3d_ik_status
-
-	var_2_75[299993] = {
+	pg.base.dorm3d_ik_status[299993] = {
 		ik_camera = "Cam299992",
 		character_action = "ND_FFliwu_2_03-1-loop",
 		base = 299993,
@@ -14540,11 +13793,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.dorm3d_ik_status
-
-	var_2_76[300110] = {
+	pg.base.dorm3d_ik_status[300110] = {
 		ik_camera = "Cam300110",
 		character_action = "ab_chuang_idle_01",
 		base = 300110,
@@ -14594,11 +13843,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.dorm3d_ik_status
-
-	var_2_77[300111] = {
+	pg.base.dorm3d_ik_status[300111] = {
 		ik_camera = "Cam300111",
 		character_action = "ab_chuang_idle_01",
 		base = 300111,
@@ -14639,11 +13884,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.dorm3d_ik_status
-
-	var_2_78[300112] = {
+	pg.base.dorm3d_ik_status[300112] = {
 		ik_camera = "Cam300112",
 		character_action = "ab_chuang_idle_01",
 		base = 300112,
@@ -14693,11 +13934,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.dorm3d_ik_status
-
-	var_2_79[300210] = {
+	pg.base.dorm3d_ik_status[300210] = {
 		ik_camera = "Cam300210",
 		character_action = "ab_shafa_idle_01",
 		base = 300210,
@@ -14747,11 +13984,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.dorm3d_ik_status
-
-	var_2_80[300211] = {
+	pg.base.dorm3d_ik_status[300211] = {
 		ik_camera = "Cam300211",
 		character_action = "ab_shafa_idle_01",
 		base = 300211,
@@ -14801,11 +14034,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.dorm3d_ik_status
-
-	var_2_81[300212] = {
+	pg.base.dorm3d_ik_status[300212] = {
 		ik_camera = "Cam300212",
 		character_action = "ab_shafa_idle_01",
 		base = 300212,
@@ -14846,11 +14075,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.dorm3d_ik_status
-
-	var_2_82[22] = {
+	pg.base.dorm3d_ik_status[22] = {
 		ik_camera = "Cam300310",
 		character_action = "ab_ditan_idle_01",
 		base = 300310,
@@ -14900,11 +14125,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.dorm3d_ik_status
-
-	var_2_83[23] = {
+	pg.base.dorm3d_ik_status[23] = {
 		ik_camera = "Cam300311",
 		character_action = "ab_ditan_idle_01",
 		base = 300311,
@@ -14954,11 +14175,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.dorm3d_ik_status
-
-	var_2_84[24] = {
+	pg.base.dorm3d_ik_status[24] = {
 		ik_camera = "Cam300312",
 		character_action = "ab_ditan_idle_01",
 		base = 300312,
@@ -15008,11 +14225,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.dorm3d_ik_status
-
-	var_2_85[300410] = {
+	pg.base.dorm3d_ik_status[300410] = {
 		ik_camera = "Cam300410",
 		character_action = "ab_FF_ditan_1_idle_1",
 		base = 300410,
@@ -15067,11 +14280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.dorm3d_ik_status
-
-	var_2_86[300411] = {
+	pg.base.dorm3d_ik_status[300411] = {
 		ik_camera = "Cam300411",
 		character_action = "ab_FF_ditan_1_idle_1",
 		base = 300411,
@@ -15126,11 +14335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.dorm3d_ik_status
-
-	var_2_87[300412] = {
+	pg.base.dorm3d_ik_status[300412] = {
 		ik_camera = "Cam300412",
 		character_action = "ab_FF_ditan_2_idle_1",
 		base = 300412,
@@ -15180,11 +14385,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.dorm3d_ik_status
-
-	var_2_88[300510] = {
+	pg.base.dorm3d_ik_status[300510] = {
 		ik_camera = "Cam300510",
 		character_action = "ab_FF_chuang_1_idle_01",
 		base = 300510,
@@ -15234,11 +14435,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.dorm3d_ik_status
-
-	var_2_89[300511] = {
+	pg.base.dorm3d_ik_status[300511] = {
 		ik_camera = "Cam300511",
 		character_action = "ab_FF_chuang_1_idle_01",
 		base = 300511,
@@ -15279,11 +14476,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.dorm3d_ik_status
-
-	var_2_90[300512] = {
+	pg.base.dorm3d_ik_status[300512] = {
 		ik_camera = "Cam300512",
 		character_action = "ab_FF_chuang_2_idle_01",
 		base = 300512,
@@ -15343,11 +14536,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.dorm3d_ik_status
-
-	var_2_91[300513] = {
+	pg.base.dorm3d_ik_status[300513] = {
 		ik_camera = "Cam300513",
 		character_action = "ab_FF_chuang_2_xiong_01-loop",
 		base = 300513,
@@ -15399,11 +14588,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.dorm3d_ik_status
-
-	var_2_92[300610] = {
+	pg.base.dorm3d_ik_status[300610] = {
 		ik_camera = "Cam300610",
 		character_action = "ab_FF_shafa_idle01",
 		base = 300610,
@@ -15551,11 +14736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.dorm3d_ik_status
-
-	var_2_93[300620] = {
+	pg.base.dorm3d_ik_status[300620] = {
 		ik_camera = "Cam300620",
 		character_action = "ab_FF_shafa_idle01",
 		base = 300620,
@@ -15703,11 +14884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.dorm3d_ik_status
-
-	var_2_94[300630] = {
+	pg.base.dorm3d_ik_status[300630] = {
 		ik_camera = "Cam300630",
 		character_action = "ab_FF_shafa_idle02",
 		base = 300630,
@@ -15839,11 +15016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.dorm3d_ik_status
-
-	var_2_95[300640] = {
+	pg.base.dorm3d_ik_status[300640] = {
 		ik_camera = "Cam300640",
 		character_action = "ab_FF_shafa_idle02",
 		base = 300640,
@@ -15976,11 +15149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.dorm3d_ik_status
-
-	var_2_96[300710] = {
+	pg.base.dorm3d_ik_status[300710] = {
 		ik_camera = "Cam300710",
 		character_action = "ab_TD_bed_idle01",
 		base = 300710,
@@ -16130,11 +15299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.dorm3d_ik_status
-
-	var_2_97[300720] = {
+	pg.base.dorm3d_ik_status[300720] = {
 		ik_camera = "Cam300720",
 		character_action = "ab_TD_bed_idle02",
 		base = 300720,
@@ -16293,11 +15458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.dorm3d_ik_status
-
-	var_2_98[300730] = {
+	pg.base.dorm3d_ik_status[300730] = {
 		ik_camera = "Cam300730",
 		character_action = "ab_TD_bed_idle02",
 		base = 300730,
@@ -16447,8 +15608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.dorm3d_ik_status[300740] = {
+	pg.base.dorm3d_ik_status[300740] = {
 		ik_camera = "Cam300740",
 		character_action = "ab_TD_bed_idle03",
 		base = 300740,
@@ -16611,11 +15771,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.dorm3d_ik_status
-
-	var_3_0[310110] = {
+	pg.base.dorm3d_ik_status[310110] = {
 		ik_camera = "Cam310110",
 		character_action = "ab_chuang_idle_01",
 		base = 300110,
@@ -16731,11 +15887,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.dorm3d_ik_status
-
-	var_3_1[310111] = {
+	pg.base.dorm3d_ik_status[310111] = {
 		ik_camera = "Cam310111",
 		character_action = "ab_chuang_idle_01",
 		base = 300111,
@@ -16842,11 +15994,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.dorm3d_ik_status
-
-	var_3_2[310112] = {
+	pg.base.dorm3d_ik_status[310112] = {
 		ik_camera = "Cam310112",
 		character_action = "ab_chuang_idle_01",
 		base = 300112,
@@ -16962,11 +16110,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.dorm3d_ik_status
-
-	var_3_3[310210] = {
+	pg.base.dorm3d_ik_status[310210] = {
 		ik_camera = "Cam310210",
 		character_action = "ab_shafa_idle_01",
 		base = 300210,
@@ -17082,11 +16226,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.dorm3d_ik_status
-
-	var_3_4[310211] = {
+	pg.base.dorm3d_ik_status[310211] = {
 		ik_camera = "Cam310211",
 		character_action = "ab_shafa_idle_01",
 		base = 300211,
@@ -17202,11 +16342,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.dorm3d_ik_status
-
-	var_3_5[310212] = {
+	pg.base.dorm3d_ik_status[310212] = {
 		ik_camera = "Cam310212",
 		character_action = "ab_shafa_idle_01",
 		base = 300212,
@@ -17313,11 +16449,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.dorm3d_ik_status
-
-	var_3_6[310310] = {
+	pg.base.dorm3d_ik_status[310310] = {
 		ik_camera = "Cam310310",
 		character_action = "ab_ditan_idle_01",
 		base = 300310,
@@ -17433,11 +16565,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.dorm3d_ik_status
-
-	var_3_7[310311] = {
+	pg.base.dorm3d_ik_status[310311] = {
 		ik_camera = "Cam310311",
 		character_action = "ab_ditan_idle_01",
 		base = 300311,
@@ -17553,11 +16681,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.dorm3d_ik_status
-
-	var_3_8[310312] = {
+	pg.base.dorm3d_ik_status[310312] = {
 		ik_camera = "Cam310312",
 		character_action = "ab_ditan_idle_01",
 		base = 300312,
@@ -17673,11 +16797,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.dorm3d_ik_status
-
-	var_3_9[10] = {
+	pg.base.dorm3d_ik_status[10] = {
 		ik_camera = "Cam310410",
 		character_action = "ab_FF_ditan_1_idle_1",
 		base = 300410,
@@ -17798,11 +16918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.dorm3d_ik_status
-
-	var_3_10[11] = {
+	pg.base.dorm3d_ik_status[11] = {
 		ik_camera = "Cam310411",
 		character_action = "ab_FF_ditan_1_idle_1",
 		base = 300411,
@@ -17923,11 +17039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.dorm3d_ik_status
-
-	var_3_11[12] = {
+	pg.base.dorm3d_ik_status[12] = {
 		ik_camera = "Cam310412",
 		character_action = "ab_FF_ditan_2_idle_1",
 		base = 300412,
@@ -18043,11 +17155,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.dorm3d_ik_status
-
-	var_3_12[310510] = {
+	pg.base.dorm3d_ik_status[310510] = {
 		ik_camera = "Cam310510",
 		character_action = "ab_FF_chuang_1_idle_01",
 		base = 300510,
@@ -18163,11 +17271,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.dorm3d_ik_status
-
-	var_3_13[310511] = {
+	pg.base.dorm3d_ik_status[310511] = {
 		ik_camera = "Cam310511",
 		character_action = "ab_FF_chuang_1_idle_01",
 		base = 300511,
@@ -18274,11 +17378,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.dorm3d_ik_status
-
-	var_3_14[310512] = {
+	pg.base.dorm3d_ik_status[310512] = {
 		ik_camera = "Cam310512",
 		character_action = "ab_FF_chuang_2_idle_01",
 		base = 300512,
@@ -18404,11 +17504,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.dorm3d_ik_status
-
-	var_3_15[310513] = {
+	pg.base.dorm3d_ik_status[310513] = {
 		ik_camera = "Cam310513",
 		character_action = "ab_FF_chuang_2_xiong_01-loop",
 		base = 300513,
@@ -18526,11 +17622,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.dorm3d_ik_status
-
-	var_3_16[310610] = {
+	pg.base.dorm3d_ik_status[310610] = {
 		ik_camera = "Cam310610",
 		character_action = "ab_FF_shafa_idle01",
 		base = 300610,
@@ -18673,11 +17765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.dorm3d_ik_status
-
-	var_3_17[310620] = {
+	pg.base.dorm3d_ik_status[310620] = {
 		ik_camera = "Cam310620",
 		character_action = "ab_FF_shafa_idle01",
 		base = 300620,
@@ -18820,11 +17908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.dorm3d_ik_status
-
-	var_3_18[310630] = {
+	pg.base.dorm3d_ik_status[310630] = {
 		ik_camera = "Cam310630",
 		character_action = "ab_FF_shafa_idle02",
 		base = 300630,
@@ -18951,11 +18035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.dorm3d_ik_status
-
-	var_3_19[310640] = {
+	pg.base.dorm3d_ik_status[310640] = {
 		ik_camera = "Cam310640",
 		character_action = "ab_FF_shafa_idle02",
 		base = 300640,
@@ -19083,11 +18163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.dorm3d_ik_status
-
-	var_3_20[310710] = {
+	pg.base.dorm3d_ik_status[310710] = {
 		ik_camera = "Cam310710",
 		character_action = "ab_TD_bed_idle01",
 		base = 300710,
@@ -19227,11 +18303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.dorm3d_ik_status
-
-	var_3_21[310720] = {
+	pg.base.dorm3d_ik_status[310720] = {
 		ik_camera = "Cam310720",
 		character_action = "ab_TD_bed_idle02",
 		base = 300720,
@@ -19380,11 +18452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.dorm3d_ik_status
-
-	var_3_22[310730] = {
+	pg.base.dorm3d_ik_status[310730] = {
 		ik_camera = "Cam310730",
 		character_action = "ab_TD_bed_idle02",
 		base = 300730,
@@ -19525,11 +18593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.dorm3d_ik_status
-
-	var_3_23[310740] = {
+	pg.base.dorm3d_ik_status[310740] = {
 		ik_camera = "Cam310740",
 		character_action = "ab_TD_bed_idle03",
 		base = 300740,
@@ -19679,11 +18743,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.dorm3d_ik_status
-
-	var_3_24[320110] = {
+	pg.base.dorm3d_ik_status[320110] = {
 		ik_camera = "Cam300110",
 		character_action = "ab_chuang_idle_01",
 		base = 300110,
@@ -19733,11 +18793,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.dorm3d_ik_status
-
-	var_3_25[320111] = {
+	pg.base.dorm3d_ik_status[320111] = {
 		ik_camera = "Cam300111",
 		character_action = "ab_chuang_idle_01",
 		base = 300111,
@@ -19778,11 +18834,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.dorm3d_ik_status
-
-	var_3_26[320112] = {
+	pg.base.dorm3d_ik_status[320112] = {
 		ik_camera = "Cam300112",
 		character_action = "ab_chuang_idle_01",
 		base = 300112,
@@ -19832,11 +18884,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.dorm3d_ik_status
-
-	var_3_27[320210] = {
+	pg.base.dorm3d_ik_status[320210] = {
 		ik_camera = "Cam300210",
 		character_action = "ab_shafa_idle_01",
 		base = 300210,
@@ -19886,11 +18934,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.dorm3d_ik_status
-
-	var_3_28[320211] = {
+	pg.base.dorm3d_ik_status[320211] = {
 		ik_camera = "Cam300211",
 		character_action = "ab_shafa_idle_01",
 		base = 300211,
@@ -19940,11 +18984,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.dorm3d_ik_status
-
-	var_3_29[320212] = {
+	pg.base.dorm3d_ik_status[320212] = {
 		ik_camera = "Cam300212",
 		character_action = "ab_shafa_idle_01",
 		base = 300212,
@@ -19985,11 +19025,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.dorm3d_ik_status
-
-	var_3_30[320310] = {
+	pg.base.dorm3d_ik_status[320310] = {
 		ik_camera = "Cam300310",
 		character_action = "ab_ditan_idle_01",
 		base = 300310,
@@ -20039,11 +19075,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.dorm3d_ik_status
-
-	var_3_31[320311] = {
+	pg.base.dorm3d_ik_status[320311] = {
 		ik_camera = "Cam300311",
 		character_action = "ab_ditan_idle_01",
 		base = 300311,
@@ -20093,11 +19125,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.dorm3d_ik_status
-
-	var_3_32[320312] = {
+	pg.base.dorm3d_ik_status[320312] = {
 		ik_camera = "Cam300312",
 		character_action = "ab_ditan_idle_01",
 		base = 300312,
@@ -20147,11 +19175,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.dorm3d_ik_status
-
-	var_3_33[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam300410",
 		character_action = "ab_FF_ditan_1_idle_1",
 		base = 300410,
@@ -20206,11 +19230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.dorm3d_ik_status
-
-	var_3_34[27] = {
+	pg.base.dorm3d_ik_status[27] = {
 		ik_camera = "Cam300411",
 		character_action = "ab_FF_ditan_1_idle_1",
 		base = 300411,
@@ -20265,11 +19285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.dorm3d_ik_status
-
-	var_3_35[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam300412",
 		character_action = "ab_FF_ditan_2_idle_1",
 		base = 300412,
@@ -20319,11 +19335,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.dorm3d_ik_status
-
-	var_3_36[320510] = {
+	pg.base.dorm3d_ik_status[320510] = {
 		ik_camera = "Cam300510",
 		character_action = "ab_FF_chuang_1_idle_01",
 		base = 300510,
@@ -20373,11 +19385,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.dorm3d_ik_status
-
-	var_3_37[320511] = {
+	pg.base.dorm3d_ik_status[320511] = {
 		ik_camera = "Cam300511",
 		character_action = "ab_FF_chuang_1_idle_01",
 		base = 300511,
@@ -20418,11 +19426,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.dorm3d_ik_status
-
-	var_3_38[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam300512",
 		character_action = "ab_FF_chuang_2_idle_01",
 		base = 300512,
@@ -20482,11 +19486,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.dorm3d_ik_status
-
-	var_3_39[1] = {
+	pg.base.dorm3d_ik_status[1] = {
 		ik_camera = "Cam300513",
 		character_action = "ab_FF_chuang_2_xiong_01-loop",
 		base = 300513,
@@ -20538,11 +19538,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.dorm3d_ik_status
-
-	var_3_40[320610] = {
+	pg.base.dorm3d_ik_status[320610] = {
 		ik_camera = "Cam300610",
 		character_action = "ab_FF_shafa_idle01",
 		base = 300610,
@@ -20690,11 +19686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.dorm3d_ik_status
-
-	var_3_41[320620] = {
+	pg.base.dorm3d_ik_status[320620] = {
 		ik_camera = "Cam300620",
 		character_action = "ab_FF_shafa_idle01",
 		base = 300620,
@@ -20842,11 +19834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.dorm3d_ik_status
-
-	var_3_42[320630] = {
+	pg.base.dorm3d_ik_status[320630] = {
 		ik_camera = "Cam300630",
 		character_action = "ab_FF_shafa_idle02",
 		base = 300630,
@@ -20978,11 +19966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.dorm3d_ik_status
-
-	var_3_43[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam300640",
 		character_action = "ab_FF_shafa_idle02",
 		base = 300640,
@@ -21115,11 +20099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.dorm3d_ik_status
-
-	var_3_44[320710] = {
+	pg.base.dorm3d_ik_status[320710] = {
 		ik_camera = "Cam320710",
 		character_action = "ab_TD_bed_idle01",
 		base = 300710,
@@ -21269,11 +20249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.dorm3d_ik_status
-
-	var_3_45[320720] = {
+	pg.base.dorm3d_ik_status[320720] = {
 		ik_camera = "Cam320720",
 		character_action = "ab_TD_bed_idle02",
 		base = 300720,
@@ -21432,11 +20408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.dorm3d_ik_status
-
-	var_3_46[320730] = {
+	pg.base.dorm3d_ik_status[320730] = {
 		ik_camera = "Cam320730",
 		character_action = "ab_TD_bed_idle02",
 		base = 300730,
@@ -21586,11 +20558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.dorm3d_ik_status
-
-	var_3_47[320740] = {
+	pg.base.dorm3d_ik_status[320740] = {
 		ik_camera = "Cam320740",
 		character_action = "ab_TD_bed_idle03",
 		base = 300740,
@@ -21749,11 +20717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.dorm3d_ik_status
-
-	var_3_48[310910] = {
+	pg.base.dorm3d_ik_status[310910] = {
 		ik_camera = "Cam310910",
 		character_action = "ab_IK_swim_1_idle_01",
 		base = 310910,
@@ -21804,11 +20768,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.dorm3d_ik_status
-
-	var_3_49[310911] = {
+	pg.base.dorm3d_ik_status[310911] = {
 		ik_camera = "Cam310911",
 		character_action = "ab_IK_swim_2_idle_01",
 		base = 310920,
@@ -21864,11 +20824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.dorm3d_ik_status
-
-	var_3_50[400110] = {
+	pg.base.dorm3d_ik_status[400110] = {
 		ik_camera = "Cam400110",
 		character_action = "xzx_bingxiang_idle_01",
 		base = 400110,
@@ -21980,11 +20936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.dorm3d_ik_status
-
-	var_3_51[400111] = {
+	pg.base.dorm3d_ik_status[400111] = {
 		ik_camera = "Cam400111",
 		character_action = "xzx_bingxiang_idle_01",
 		base = 400111,
@@ -22087,11 +21039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.dorm3d_ik_status
-
-	var_3_52[400112] = {
+	pg.base.dorm3d_ik_status[400112] = {
 		ik_camera = "Cam400112",
 		character_action = "xzx_bingxiang_idle_01",
 		base = 400112,
@@ -22146,11 +21094,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.dorm3d_ik_status
-
-	var_3_53[400210] = {
+	pg.base.dorm3d_ik_status[400210] = {
 		ik_camera = "Cam400210",
 		character_action = "IK_living01_idle01",
 		base = 400210,
@@ -22276,11 +21220,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_cosmetic16"
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.dorm3d_ik_status
-
-	var_3_54[400211] = {
+	pg.base.dorm3d_ik_status[400211] = {
 		ik_camera = "Cam400211",
 		character_action = "IK_living01_idle01",
 		base = 400211,
@@ -22397,11 +21337,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_cosmetic16"
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.dorm3d_ik_status
-
-	var_3_55[400212] = {
+	pg.base.dorm3d_ik_status[400212] = {
 		ik_camera = "Cam400212",
 		character_action = "IK_living01_idle01",
 		base = 400212,
@@ -22518,11 +21454,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_cosmetic16"
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.dorm3d_ik_status
-
-	var_3_56[400310] = {
+	pg.base.dorm3d_ik_status[400310] = {
 		ik_camera = "Cam400310",
 		character_action = "IK_bed01_idle01",
 		base = 400310,
@@ -22634,11 +21566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.dorm3d_ik_status
-
-	var_3_57[400311] = {
+	pg.base.dorm3d_ik_status[400311] = {
 		ik_camera = "Cam400311",
 		character_action = "IK_bed01_idle01",
 		base = 400311,
@@ -22741,11 +21669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.dorm3d_ik_status
-
-	var_3_58[400312] = {
+	pg.base.dorm3d_ik_status[400312] = {
 		ik_camera = "Cam400312",
 		character_action = "IK_bed01_idle01",
 		base = 400312,
@@ -22848,11 +21772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.dorm3d_ik_status
-
-	var_3_59[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam400410",
 		character_action = "IK_living02_idle01",
 		base = 400410,
@@ -22964,11 +21884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.dorm3d_ik_status
-
-	var_3_60[27] = {
+	pg.base.dorm3d_ik_status[27] = {
 		ik_camera = "Cam400411",
 		character_action = "IK_living02_idle01",
 		base = 400420,
@@ -23080,11 +21996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.dorm3d_ik_status
-
-	var_3_61[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam400412",
 		character_action = "IK_living02_idle02",
 		base = 400430,
@@ -23214,11 +22126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.dorm3d_ik_status
-
-	var_3_62[400510] = {
+	pg.base.dorm3d_ik_status[400510] = {
 		ik_camera = "Cam400510",
 		character_action = "IK_bed02_idle01",
 		base = 400510,
@@ -23325,11 +22233,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.dorm3d_ik_status
-
-	var_3_63[8] = {
+	pg.base.dorm3d_ik_status[8] = {
 		ik_camera = "Cam400520",
 		character_action = "IK_bed02_idle01",
 		base = 400520,
@@ -23459,11 +22363,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.dorm3d_ik_status
-
-	var_3_64[18] = {
+	pg.base.dorm3d_ik_status[18] = {
 		ik_camera = "Cam400530",
 		character_action = "IK_bed02_idle02",
 		base = 400530,
@@ -23570,11 +22470,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.dorm3d_ik_status
-
-	var_3_65[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam400540",
 		character_action = "IK_bed02_idle03",
 		base = 400540,
@@ -23672,11 +22568,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.dorm3d_ik_status
-
-	var_3_66[400710] = {
+	pg.base.dorm3d_ik_status[400710] = {
 		ik_camera = "Cam400710",
 		character_action = "IK_sp01_idle03",
 		base = 400710,
@@ -23813,11 +22705,7 @@ end)()
 			"fbx/litmap_04/pre_db_bonsai11"
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.dorm3d_ik_status
-
-	var_3_67[400720] = {
+	pg.base.dorm3d_ik_status[400720] = {
 		ik_camera = "Cam400720",
 		character_action = "IK_sp01_idle02",
 		base = 400720,
@@ -23929,11 +22817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.dorm3d_ik_status
-
-	var_3_68[400730] = {
+	pg.base.dorm3d_ik_status[400730] = {
 		ik_camera = "Cam400730",
 		character_action = "IK_sp01_idle02",
 		base = 400730,
@@ -24068,11 +22952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.dorm3d_ik_status
-
-	var_3_69[400740] = {
+	pg.base.dorm3d_ik_status[400740] = {
 		ik_camera = "Cam400740",
 		character_action = "IK_sp01_idle01",
 		base = 400740,
@@ -24211,11 +23091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.dorm3d_ik_status
-
-	var_3_70[400750] = {
+	pg.base.dorm3d_ik_status[400750] = {
 		ik_camera = "Cam400750",
 		character_action = "IK_sp01_idle01",
 		base = 400750,
@@ -24354,11 +23230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.dorm3d_ik_status
-
-	var_3_71[400810] = {
+	pg.base.dorm3d_ik_status[400810] = {
 		ik_camera = "Cam400810",
 		character_action = "IK_dining02_idle01",
 		base = 400810,
@@ -24494,11 +23366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.dorm3d_ik_status
-
-	var_3_72[400820] = {
+	pg.base.dorm3d_ik_status[400820] = {
 		ik_camera = "Cam400820",
 		character_action = "IK_dining02_idle01",
 		base = 400820,
@@ -24634,11 +23502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.dorm3d_ik_status
-
-	var_3_73[400830] = {
+	pg.base.dorm3d_ik_status[400830] = {
 		ik_camera = "Cam400830",
 		character_action = "IK_dining02_idle02",
 		base = 400830,
@@ -24782,11 +23646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.dorm3d_ik_status
-
-	var_3_74[400840] = {
+	pg.base.dorm3d_ik_status[400840] = {
 		ik_camera = "Cam400840",
 		character_action = "IK_dining02_idle02",
 		base = 400840,
@@ -24912,11 +23772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.dorm3d_ik_status
-
-	var_3_75[410110] = {
+	pg.base.dorm3d_ik_status[410110] = {
 		ik_camera = "Cam410110",
 		character_action = "xzx_bingxiang_idle_01",
 		base = 400110,
@@ -24972,11 +23828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.dorm3d_ik_status
-
-	var_3_76[410111] = {
+	pg.base.dorm3d_ik_status[410111] = {
 		ik_camera = "Cam410111",
 		character_action = "xzx_bingxiang_idle_01",
 		base = 400111,
@@ -25023,11 +23875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.dorm3d_ik_status
-
-	var_3_77[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam410112",
 		character_action = "xzx_bingxiang_idle_01",
 		base = 400112,
@@ -25083,11 +23931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.dorm3d_ik_status
-
-	var_3_78[410210] = {
+	pg.base.dorm3d_ik_status[410210] = {
 		ik_camera = "Cam410210",
 		character_action = "IK_living01_idle01",
 		base = 400210,
@@ -25157,11 +24001,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_cosmetic16"
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.dorm3d_ik_status
-
-	var_3_79[410211] = {
+	pg.base.dorm3d_ik_status[410211] = {
 		ik_camera = "Cam410211",
 		character_action = "IK_living01_idle01",
 		base = 400211,
@@ -25222,11 +24062,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_cosmetic16"
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.dorm3d_ik_status
-
-	var_3_80[410212] = {
+	pg.base.dorm3d_ik_status[410212] = {
 		ik_camera = "Cam410212",
 		character_action = "IK_living01_idle01",
 		base = 400212,
@@ -25287,11 +24123,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_cosmetic16"
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.dorm3d_ik_status
-
-	var_3_81[410310] = {
+	pg.base.dorm3d_ik_status[410310] = {
 		ik_camera = "Cam410310",
 		character_action = "IK_bed01_idle01",
 		base = 400310,
@@ -25347,11 +24179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.dorm3d_ik_status
-
-	var_3_82[410311] = {
+	pg.base.dorm3d_ik_status[410311] = {
 		ik_camera = "Cam410311",
 		character_action = "IK_bed01_idle01",
 		base = 400311,
@@ -25398,11 +24226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.dorm3d_ik_status
-
-	var_3_83[410312] = {
+	pg.base.dorm3d_ik_status[410312] = {
 		ik_camera = "Cam410312",
 		character_action = "IK_bed01_idle01",
 		base = 400312,
@@ -25449,11 +24273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.dorm3d_ik_status
-
-	var_3_84[410410] = {
+	pg.base.dorm3d_ik_status[410410] = {
 		ik_camera = "Cam410410",
 		character_action = "IK_living02_idle01",
 		base = 400410,
@@ -25509,11 +24329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.dorm3d_ik_status
-
-	var_3_85[410411] = {
+	pg.base.dorm3d_ik_status[410411] = {
 		ik_camera = "Cam410411",
 		character_action = "IK_living02_idle01",
 		base = 400420,
@@ -25569,11 +24385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.dorm3d_ik_status
-
-	var_3_86[410412] = {
+	pg.base.dorm3d_ik_status[410412] = {
 		ik_camera = "Cam410412",
 		character_action = "IK_living02_idle02",
 		base = 400430,
@@ -25647,11 +24459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.dorm3d_ik_status
-
-	var_3_87[14] = {
+	pg.base.dorm3d_ik_status[14] = {
 		ik_camera = "Cam410510",
 		character_action = "IK_bed02_idle01",
 		base = 400510,
@@ -25756,11 +24564,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.dorm3d_ik_status
-
-	var_3_88[24] = {
+	pg.base.dorm3d_ik_status[24] = {
 		ik_camera = "Cam410520",
 		character_action = "IK_bed02_idle01",
 		base = 400520,
@@ -25889,11 +24693,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.dorm3d_ik_status
-
-	var_3_89[410530] = {
+	pg.base.dorm3d_ik_status[410530] = {
 		ik_camera = "Cam410530",
 		character_action = "IK_bed02_idle02",
 		base = 400530,
@@ -25998,11 +24798,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.dorm3d_ik_status
-
-	var_3_90[410540] = {
+	pg.base.dorm3d_ik_status[410540] = {
 		ik_camera = "Cam410540",
 		character_action = "IK_bed02_idle03",
 		base = 400540,
@@ -26098,11 +24894,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.dorm3d_ik_status
-
-	var_3_91[30] = {
+	pg.base.dorm3d_ik_status[30] = {
 		ik_camera = "Cam410910",
 		character_action = "bunny_IK_cafe_idle02",
 		base = 410910,
@@ -26153,11 +24945,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.dorm3d_ik_status
-
-	var_3_92[31] = {
+	pg.base.dorm3d_ik_status[31] = {
 		ik_camera = "Cam410911",
 		character_action = "bunny_IK_cafe_idle01",
 		base = 410911,
@@ -26208,11 +24996,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.dorm3d_ik_status
-
-	var_3_93[410710] = {
+	pg.base.dorm3d_ik_status[410710] = {
 		ik_camera = "Cam410710",
 		character_action = "bunny_IK_sp01_idle03",
 		base = 400710,
@@ -26348,11 +25132,7 @@ end)()
 			"fbx/litmap_04/pre_db_bonsai11"
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.dorm3d_ik_status
-
-	var_3_94[410720] = {
+	pg.base.dorm3d_ik_status[410720] = {
 		ik_camera = "Cam410720",
 		character_action = "bunny_IK_sp01_idle02",
 		base = 400720,
@@ -26486,11 +25266,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.dorm3d_ik_status
-
-	var_3_95[410730] = {
+	pg.base.dorm3d_ik_status[410730] = {
 		ik_camera = "Cam410730",
 		character_action = "bunny_IK_sp01_idle02",
 		base = 400730,
@@ -26624,11 +25400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.dorm3d_ik_status
-
-	var_3_96[410740] = {
+	pg.base.dorm3d_ik_status[410740] = {
 		ik_camera = "Cam410740",
 		character_action = "bunny_IK_sp01_idle01",
 		base = 400740,
@@ -26766,11 +25538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.dorm3d_ik_status
-
-	var_3_97[410750] = {
+	pg.base.dorm3d_ik_status[410750] = {
 		ik_camera = "Cam410750",
 		character_action = "bunny_IK_sp01_idle01",
 		base = 400750,
@@ -26908,11 +25676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.dorm3d_ik_status
-
-	var_3_98[410810] = {
+	pg.base.dorm3d_ik_status[410810] = {
 		ik_camera = "Cam410810",
 		character_action = "IK_dining02_idle01",
 		base = 400810,
@@ -27048,8 +25812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.dorm3d_ik_status[410820] = {
+	pg.base.dorm3d_ik_status[410820] = {
 		ik_camera = "Cam410820",
 		character_action = "IK_dining02_idle01",
 		base = 400820,
@@ -27189,11 +25952,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.dorm3d_ik_status
-
-	var_4_0[410830] = {
+	pg.base.dorm3d_ik_status[410830] = {
 		ik_camera = "Cam410830",
 		character_action = "IK_dining02_idle02",
 		base = 400830,
@@ -27337,11 +26096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.dorm3d_ik_status
-
-	var_4_1[410840] = {
+	pg.base.dorm3d_ik_status[410840] = {
 		ik_camera = "Cam410840",
 		character_action = "IK_dining02_idle02",
 		base = 400840,
@@ -27467,11 +26222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.dorm3d_ik_status
-
-	var_4_2[14] = {
+	pg.base.dorm3d_ik_status[14] = {
 		ik_camera = "Cam500110",
 		character_action = "IK_bed01_idle01",
 		base = 500110,
@@ -27541,11 +26292,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.dorm3d_ik_status
-
-	var_4_3[24] = {
+	pg.base.dorm3d_ik_status[24] = {
 		ik_camera = "Cam500120",
 		character_action = "IK_bed01_idle01",
 		base = 500120,
@@ -27606,11 +26353,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.dorm3d_ik_status
-
-	var_4_4[500130] = {
+	pg.base.dorm3d_ik_status[500130] = {
 		ik_camera = "Cam500130",
 		character_action = "IK_bed01_idle01",
 		base = 500130,
@@ -27671,11 +26414,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.dorm3d_ik_status
-
-	var_4_5[500210] = {
+	pg.base.dorm3d_ik_status[500210] = {
 		ik_camera = "Cam500210",
 		character_action = "IK_dining01_idle01",
 		base = 500210,
@@ -27802,11 +26541,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/all/pre_db_kitchenware25"
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.dorm3d_ik_status
-
-	var_4_6[500220] = {
+	pg.base.dorm3d_ik_status[500220] = {
 		ik_camera = "Cam500220",
 		character_action = "IK_dining01_idle01",
 		base = 500220,
@@ -27933,11 +26668,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/all/pre_db_kitchenware25"
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.dorm3d_ik_status
-
-	var_4_7[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "Cam500230",
 		character_action = "IK_dining01_idle01",
 		base = 500230,
@@ -28073,11 +26804,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/all/pre_db_kitchenware25"
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.dorm3d_ik_status
-
-	var_4_8[500310] = {
+	pg.base.dorm3d_ik_status[500310] = {
 		ik_camera = "Cam500310",
 		character_action = "IK_living01_idle01",
 		base = 500310,
@@ -28191,11 +26918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.dorm3d_ik_status
-
-	var_4_9[500320] = {
+	pg.base.dorm3d_ik_status[500320] = {
 		ik_camera = "Cam500320",
 		character_action = "IK_living01_idle01",
 		base = 500320,
@@ -28309,11 +27032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.dorm3d_ik_status
-
-	var_4_10[500330] = {
+	pg.base.dorm3d_ik_status[500330] = {
 		ik_camera = "Cam500330",
 		character_action = "IK_living01_idle01",
 		base = 500330,
@@ -28436,11 +27155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.dorm3d_ik_status
-
-	var_4_11[500410] = {
+	pg.base.dorm3d_ik_status[500410] = {
 		ik_camera = "Cam500410",
 		character_action = "IK_bed02_idle01",
 		base = 500410,
@@ -28584,11 +27299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.dorm3d_ik_status
-
-	var_4_12[500420] = {
+	pg.base.dorm3d_ik_status[500420] = {
 		ik_camera = "Cam500420",
 		character_action = "IK_bed02_idle01",
 		base = 500420,
@@ -28674,11 +27385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.dorm3d_ik_status
-
-	var_4_13[500430] = {
+	pg.base.dorm3d_ik_status[500430] = {
 		ik_camera = "Cam500430",
 		character_action = "IK_bed02_idle02",
 		base = 500430,
@@ -28749,11 +27456,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.dorm3d_ik_status
-
-	var_4_14[30] = {
+	pg.base.dorm3d_ik_status[30] = {
 		ik_camera = "Cam500510",
 		character_action = "IK_sp01_idle01",
 		base = 500510,
@@ -28898,11 +27601,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.dorm3d_ik_status
-
-	var_4_15[500520] = {
+	pg.base.dorm3d_ik_status[500520] = {
 		ik_camera = "Cam500520",
 		character_action = "IK_sp01_idle02",
 		base = 500520,
@@ -29038,11 +27737,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.dorm3d_ik_status
-
-	var_4_16[500530] = {
+	pg.base.dorm3d_ik_status[500530] = {
 		ik_camera = "Cam500530",
 		character_action = "IK_sp01_idle03",
 		base = 500530,
@@ -29178,11 +27873,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.dorm3d_ik_status
-
-	var_4_17[500540] = {
+	pg.base.dorm3d_ik_status[500540] = {
 		ik_camera = "Cam500540",
 		character_action = "IK_sp01_idle03",
 		base = 500540,
@@ -29318,11 +28009,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.dorm3d_ik_status
-
-	var_4_18[2] = {
+	pg.base.dorm3d_ik_status[2] = {
 		ik_camera = "Cam500610",
 		character_action = "IK_living02_idle01",
 		base = 500610,
@@ -29448,11 +28135,7 @@ end)()
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.dorm3d_ik_status
-
-	var_4_19[12] = {
+	pg.base.dorm3d_ik_status[12] = {
 		ik_camera = "Cam500620",
 		character_action = "IK_living02_idle01",
 		base = 500620,
@@ -29577,11 +28260,7 @@ end)()
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.dorm3d_ik_status
-
-	var_4_20[22] = {
+	pg.base.dorm3d_ik_status[22] = {
 		ik_camera = "Cam500630",
 		character_action = "IK_living02_idle02",
 		base = 500630,
@@ -29715,11 +28394,7 @@ end)()
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.dorm3d_ik_status
-
-	var_4_21[30] = {
+	pg.base.dorm3d_ik_status[30] = {
 		ik_camera = "Cam510110",
 		character_action = "bunny_IK_bed01_idle01",
 		base = 500110,
@@ -29771,11 +28446,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.dorm3d_ik_status
-
-	var_4_22[510120] = {
+	pg.base.dorm3d_ik_status[510120] = {
 		ik_camera = "Cam510120",
 		character_action = "bunny_IK_bed01_idle01",
 		base = 500120,
@@ -29818,11 +28489,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.dorm3d_ik_status
-
-	var_4_23[510130] = {
+	pg.base.dorm3d_ik_status[510130] = {
 		ik_camera = "Cam510130",
 		character_action = "bunny_IK_bed01_idle01",
 		base = 500130,
@@ -29865,11 +28532,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.dorm3d_ik_status
-
-	var_4_24[2] = {
+	pg.base.dorm3d_ik_status[2] = {
 		ik_camera = "Cam510210",
 		character_action = "bunny_IK_dining01_idle01",
 		base = 500210,
@@ -29930,11 +28593,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/all/pre_db_kitchenware25"
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.dorm3d_ik_status
-
-	var_4_25[12] = {
+	pg.base.dorm3d_ik_status[12] = {
 		ik_camera = "Cam510220",
 		character_action = "bunny_IK_dining01_idle01",
 		base = 500220,
@@ -29995,11 +28654,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/all/pre_db_kitchenware25"
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.dorm3d_ik_status
-
-	var_4_26[22] = {
+	pg.base.dorm3d_ik_status[22] = {
 		ik_camera = "Cam510230",
 		character_action = "bunny_IK_dining01_idle01",
 		base = 500230,
@@ -30069,11 +28724,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/all/pre_db_kitchenware25"
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.dorm3d_ik_status
-
-	var_4_27[510310] = {
+	pg.base.dorm3d_ik_status[510310] = {
 		ik_camera = "Cam510310",
 		character_action = "bunny_IK_living01_idle01",
 		base = 500310,
@@ -30121,11 +28772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.dorm3d_ik_status
-
-	var_4_28[510320] = {
+	pg.base.dorm3d_ik_status[510320] = {
 		ik_camera = "Cam510320",
 		character_action = "bunny_IK_living01_idle01",
 		base = 500320,
@@ -30173,11 +28820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.dorm3d_ik_status
-
-	var_4_29[510330] = {
+	pg.base.dorm3d_ik_status[510330] = {
 		ik_camera = "Cam510330",
 		character_action = "bunny_IK_living01_idle01",
 		base = 500330,
@@ -30234,11 +28877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.dorm3d_ik_status
-
-	var_4_30[510410] = {
+	pg.base.dorm3d_ik_status[510410] = {
 		ik_camera = "Cam510410",
 		character_action = "bunny_IK_bed02_idle01",
 		base = 500410,
@@ -30316,11 +28955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.dorm3d_ik_status
-
-	var_4_31[510420] = {
+	pg.base.dorm3d_ik_status[510420] = {
 		ik_camera = "Cam510420",
 		character_action = "bunny_IK_bed02_idle01",
 		base = 500420,
@@ -30388,11 +29023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.dorm3d_ik_status
-
-	var_4_32[510430] = {
+	pg.base.dorm3d_ik_status[510430] = {
 		ik_camera = "Cam510430",
 		character_action = "bunny_IK_bed02_idle02",
 		base = 500430,
@@ -30445,11 +29076,7 @@ end)()
 		},
 		enter_scene_anim = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.dorm3d_ik_status
-
-	var_4_33[510510] = {
+	pg.base.dorm3d_ik_status[510510] = {
 		ik_camera = "Cam510510",
 		character_action = "bunny_IK_sp01_idle01",
 		base = 500510,
@@ -30580,11 +29207,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.dorm3d_ik_status
-
-	var_4_34[510520] = {
+	pg.base.dorm3d_ik_status[510520] = {
 		ik_camera = "Cam510520",
 		character_action = "bunny_IK_sp01_idle02",
 		base = 500520,
@@ -30715,11 +29338,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.dorm3d_ik_status
-
-	var_4_35[510530] = {
+	pg.base.dorm3d_ik_status[510530] = {
 		ik_camera = "Cam510530",
 		character_action = "bunny_IK_sp01_idle03",
 		base = 500530,
@@ -30850,11 +29469,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.dorm3d_ik_status
-
-	var_4_36[510540] = {
+	pg.base.dorm3d_ik_status[510540] = {
 		ik_camera = "Cam510540",
 		character_action = "bunny_IK_sp01_idle03",
 		base = 500540,
@@ -30976,11 +29591,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.dorm3d_ik_status
-
-	var_4_37[18] = {
+	pg.base.dorm3d_ik_status[18] = {
 		ik_camera = "Cam510610",
 		character_action = "IK_living02_idle01",
 		base = 500610,
@@ -31106,11 +29717,7 @@ end)()
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.dorm3d_ik_status
-
-	var_4_38[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam510620",
 		character_action = "IK_living02_idle01",
 		base = 500620,
@@ -31235,11 +29842,7 @@ end)()
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.dorm3d_ik_status
-
-	var_4_39[510630] = {
+	pg.base.dorm3d_ik_status[510630] = {
 		ik_camera = "Cam510630",
 		character_action = "IK_living02_idle02",
 		base = 500630,
@@ -31373,11 +29976,7 @@ end)()
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.dorm3d_ik_status
-
-	var_4_40[510910] = {
+	pg.base.dorm3d_ik_status[510910] = {
 		ik_camera = "Cam510910",
 		character_action = "bunny_IK_cafe_idle01",
 		base = 510910,
@@ -31434,11 +30033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.dorm3d_ik_status
-
-	var_4_41[510920] = {
+	pg.base.dorm3d_ik_status[510920] = {
 		ik_camera = "Cam510920",
 		character_action = "bunny_IK_cafe_idle02",
 		base = 510920,
@@ -31506,11 +30101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.dorm3d_ik_status
-
-	var_4_42[600110] = {
+	pg.base.dorm3d_ik_status[600110] = {
 		ik_camera = "Cam600110",
 		character_action = "IK_bed01_idle01",
 		base = 600110,
@@ -31601,11 +30192,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.dorm3d_ik_status
-
-	var_4_43[600120] = {
+	pg.base.dorm3d_ik_status[600120] = {
 		ik_camera = "Cam600120",
 		character_action = "IK_bed01_idle01",
 		base = 600120,
@@ -31696,11 +30283,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.dorm3d_ik_status
-
-	var_4_44[600130] = {
+	pg.base.dorm3d_ik_status[600130] = {
 		ik_camera = "Cam600130",
 		character_action = "IK_bed01_idle01",
 		base = 600130,
@@ -31791,11 +30374,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.dorm3d_ik_status
-
-	var_4_45[18] = {
+	pg.base.dorm3d_ik_status[18] = {
 		ik_camera = "Cam600210",
 		character_action = "IK_desk01_idle01",
 		base = 600210,
@@ -31893,11 +30472,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.dorm3d_ik_status
-
-	var_4_46[28] = {
+	pg.base.dorm3d_ik_status[28] = {
 		ik_camera = "Cam600220",
 		character_action = "IK_desk01_idle01",
 		base = 600220,
@@ -31995,11 +30570,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.dorm3d_ik_status
-
-	var_4_47[600230] = {
+	pg.base.dorm3d_ik_status[600230] = {
 		ik_camera = "Cam600230",
 		character_action = "IK_desk01_idle01",
 		base = 600230,
@@ -32106,11 +30677,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.dorm3d_ik_status
-
-	var_4_48[600310] = {
+	pg.base.dorm3d_ik_status[600310] = {
 		ik_camera = "Cam600310",
 		character_action = "IK_living01_idle01",
 		base = 600310,
@@ -32201,11 +30768,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.dorm3d_ik_status
-
-	var_4_49[0] = {
+	pg.base.dorm3d_ik_status[0] = {
 		ik_camera = "Cam600320",
 		character_action = "IK_living01_idle01",
 		base = 600320,
@@ -32305,11 +30868,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.dorm3d_ik_status
-
-	var_4_50[10] = {
+	pg.base.dorm3d_ik_status[10] = {
 		ik_camera = "Cam600330",
 		character_action = "IK_living01_idle01",
 		base = 600330,
@@ -32400,11 +30959,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.dorm3d_ik_status
-
-	var_4_51[600410] = {
+	pg.base.dorm3d_ik_status[600410] = {
 		ik_camera = "Cam600410",
 		character_action = "IK_bed02_idle01",
 		base = 600410,
@@ -32510,11 +31065,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.dorm3d_ik_status
-
-	var_4_52[600420] = {
+	pg.base.dorm3d_ik_status[600420] = {
 		ik_camera = "Cam600420",
 		character_action = "IK_bed02_idle01",
 		base = 600420,
@@ -32610,11 +31161,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.dorm3d_ik_status
-
-	var_4_53[600430] = {
+	pg.base.dorm3d_ik_status[600430] = {
 		ik_camera = "Cam600430",
 		character_action = "IK_bed02_idle02",
 		base = 600430,
@@ -32728,11 +31275,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.dorm3d_ik_status
-
-	var_4_54[600510] = {
+	pg.base.dorm3d_ik_status[600510] = {
 		ik_camera = "Cam600510",
 		character_action = "IK_desk02_idle01",
 		base = 600510,
@@ -32871,11 +31414,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.dorm3d_ik_status
-
-	var_4_55[600520] = {
+	pg.base.dorm3d_ik_status[600520] = {
 		ik_camera = "Cam600520",
 		character_action = "IK_desk02_idle02",
 		base = 600520,
@@ -32998,11 +31537,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.dorm3d_ik_status
-
-	var_4_56[600530] = {
+	pg.base.dorm3d_ik_status[600530] = {
 		ik_camera = "Cam600530",
 		character_action = "IK_desk02_idle02",
 		base = 600530,
@@ -33143,11 +31678,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.dorm3d_ik_status
-
-	var_4_57[600610] = {
+	pg.base.dorm3d_ik_status[600610] = {
 		ik_camera = "Cam600610",
 		character_action = "IK_living02_idle01",
 		base = 600610,
@@ -33294,11 +31825,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.dorm3d_ik_status
-
-	var_4_58[600620] = {
+	pg.base.dorm3d_ik_status[600620] = {
 		ik_camera = "Cam600620",
 		character_action = "IK_living02_idle02",
 		base = 600620,
@@ -33428,11 +31955,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.dorm3d_ik_status
-
-	var_4_59[600630] = {
+	pg.base.dorm3d_ik_status[600630] = {
 		ik_camera = "Cam600630",
 		character_action = "IK_living02_idle02",
 		base = 600630,
@@ -33581,11 +32104,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.dorm3d_ik_status
-
-	var_4_60[600640] = {
+	pg.base.dorm3d_ik_status[600640] = {
 		ik_camera = "Cam600640",
 		character_action = "IK_living02_idle02",
 		base = 600640,
@@ -33715,11 +32234,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.dorm3d_ik_status
-
-	var_4_61[610110] = {
+	pg.base.dorm3d_ik_status[610110] = {
 		ik_camera = "Cam610110",
 		character_action = "IK_bed01_idle01",
 		base = 600110,
@@ -33762,11 +32277,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.dorm3d_ik_status
-
-	var_4_62[610120] = {
+	pg.base.dorm3d_ik_status[610120] = {
 		ik_camera = "Cam610120",
 		character_action = "IK_bed01_idle01",
 		base = 600120,
@@ -33808,11 +32319,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.dorm3d_ik_status
-
-	var_4_63[610130] = {
+	pg.base.dorm3d_ik_status[610130] = {
 		ik_camera = "Cam610130",
 		character_action = "IK_bed01_idle01",
 		base = 600130,
@@ -33854,11 +32361,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.dorm3d_ik_status
-
-	var_4_64[610210] = {
+	pg.base.dorm3d_ik_status[610210] = {
 		ik_camera = "Cam610210",
 		character_action = "IK_desk01_idle01",
 		base = 600210,
@@ -33907,11 +32410,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.dorm3d_ik_status
-
-	var_4_65[610220] = {
+	pg.base.dorm3d_ik_status[610220] = {
 		ik_camera = "Cam610220",
 		character_action = "IK_desk01_idle01",
 		base = 600220,
@@ -33960,11 +32459,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.dorm3d_ik_status
-
-	var_4_66[610230] = {
+	pg.base.dorm3d_ik_status[610230] = {
 		ik_camera = "Cam610230",
 		character_action = "IK_desk01_idle01",
 		base = 600230,
@@ -34022,11 +32517,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.dorm3d_ik_status
-
-	var_4_67[6] = {
+	pg.base.dorm3d_ik_status[6] = {
 		ik_camera = "Cam610310",
 		character_action = "IK_living01_idle01",
 		base = 600310,
@@ -34069,11 +32560,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.dorm3d_ik_status
-
-	var_4_68[16] = {
+	pg.base.dorm3d_ik_status[16] = {
 		ik_camera = "Cam610320",
 		character_action = "IK_living01_idle01",
 		base = 600320,
@@ -34124,11 +32611,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.dorm3d_ik_status
-
-	var_4_69[26] = {
+	pg.base.dorm3d_ik_status[26] = {
 		ik_camera = "Cam610330",
 		character_action = "IK_living01_idle01",
 		base = 600330,
@@ -34171,11 +32654,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.dorm3d_ik_status
-
-	var_4_70[610410] = {
+	pg.base.dorm3d_ik_status[610410] = {
 		ik_camera = "Cam610410",
 		character_action = "IK_bed02_idle01",
 		base = 600410,
@@ -34233,11 +32712,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.dorm3d_ik_status
-
-	var_4_71[610420] = {
+	pg.base.dorm3d_ik_status[610420] = {
 		ik_camera = "Cam610420",
 		character_action = "IK_bed02_idle01",
 		base = 600420,
@@ -34285,11 +32760,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.dorm3d_ik_status
-
-	var_4_72[610430] = {
+	pg.base.dorm3d_ik_status[610430] = {
 		ik_camera = "Cam610430",
 		character_action = "IK_bed02_idle02",
 		base = 600430,
@@ -34354,11 +32825,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.dorm3d_ik_status
-
-	var_4_73[610910] = {
+	pg.base.dorm3d_ik_status[610910] = {
 		ik_camera = "Cam610910",
 		character_action = "bunny_IK_cafe_idle01",
 		base = 610910,
@@ -34443,11 +32910,7 @@ end)()
 			"fbx/litmap_05/pre_db_drink13_4"
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.dorm3d_ik_status
-
-	var_4_74[610920] = {
+	pg.base.dorm3d_ik_status[610920] = {
 		ik_camera = "Cam610920",
 		character_action = "bunny_IK_cafe_idle02",
 		base = 610920,
@@ -34547,11 +33010,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.dorm3d_ik_status
-
-	var_4_75[610510] = {
+	pg.base.dorm3d_ik_status[610510] = {
 		ik_camera = "Cam610510",
 		character_action = "IK_desk02_idle01",
 		base = 600510,
@@ -34672,11 +33131,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.dorm3d_ik_status
-
-	var_4_76[610520] = {
+	pg.base.dorm3d_ik_status[610520] = {
 		ik_camera = "Cam610520",
 		character_action = "IK_desk02_idle02",
 		base = 600520,
@@ -34781,11 +33236,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.dorm3d_ik_status
-
-	var_4_77[610530] = {
+	pg.base.dorm3d_ik_status[610530] = {
 		ik_camera = "Cam610530",
 		character_action = "IK_desk02_idle02",
 		base = 600530,
@@ -34908,11 +33359,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.dorm3d_ik_status
-
-	var_4_78[610610] = {
+	pg.base.dorm3d_ik_status[610610] = {
 		ik_camera = "Cam600610",
 		character_action = "IK_living02_idle01",
 		base = 600610,
@@ -35059,11 +33506,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.dorm3d_ik_status
-
-	var_4_79[610620] = {
+	pg.base.dorm3d_ik_status[610620] = {
 		ik_camera = "Cam600620",
 		character_action = "IK_living02_idle02",
 		base = 600620,
@@ -35193,11 +33636,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.dorm3d_ik_status
-
-	var_4_80[610630] = {
+	pg.base.dorm3d_ik_status[610630] = {
 		ik_camera = "Cam610630",
 		character_action = "IK_living02_idle02",
 		base = 600630,
@@ -35346,11 +33785,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.dorm3d_ik_status
-
-	var_4_81[610640] = {
+	pg.base.dorm3d_ik_status[610640] = {
 		ik_camera = "Cam610640",
 		character_action = "IK_living02_idle02",
 		base = 600640,
@@ -35480,11 +33915,7 @@ end)()
 		},
 		hide_scene_item = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.dorm3d_ik_status
-
-	var_4_82[700110] = {
+	pg.base.dorm3d_ik_status[700110] = {
 		ik_camera = "Cam700110",
 		character_action = "IK_bed01_idle01",
 		base = 700110,
@@ -35606,11 +34037,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.dorm3d_ik_status
-
-	var_4_83[700120] = {
+	pg.base.dorm3d_ik_status[700120] = {
 		ik_camera = "Cam700120",
 		character_action = "IK_bed01_idle01",
 		base = 700120,
@@ -35732,11 +34159,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.dorm3d_ik_status
-
-	var_4_84[700130] = {
+	pg.base.dorm3d_ik_status[700130] = {
 		ik_camera = "Cam700130",
 		character_action = "IK_bed01_idle01",
 		base = 700130,
@@ -35858,11 +34281,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.dorm3d_ik_status
-
-	var_4_85[700210] = {
+	pg.base.dorm3d_ik_status[700210] = {
 		ik_camera = "Cam700210",
 		character_action = "IK_desk01_idle01",
 		base = 700210,
@@ -35984,11 +34403,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.dorm3d_ik_status
-
-	var_4_86[700220] = {
+	pg.base.dorm3d_ik_status[700220] = {
 		ik_camera = "Cam700220",
 		character_action = "IK_desk01_idle01",
 		base = 700220,
@@ -36110,11 +34525,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.dorm3d_ik_status
-
-	var_4_87[700230] = {
+	pg.base.dorm3d_ik_status[700230] = {
 		ik_camera = "Cam700230",
 		character_action = "IK_desk01_idle01",
 		base = 700230,
@@ -36245,11 +34656,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.dorm3d_ik_status
-
-	var_4_88[22] = {
+	pg.base.dorm3d_ik_status[22] = {
 		ik_camera = "Cam700310",
 		character_action = "IK_living01_idle01",
 		base = 700310,
@@ -36371,11 +34778,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.dorm3d_ik_status
-
-	var_4_89[700320] = {
+	pg.base.dorm3d_ik_status[700320] = {
 		ik_camera = "Cam700320",
 		character_action = "IK_living01_idle01",
 		base = 700320,
@@ -36506,11 +34909,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.dorm3d_ik_status
-
-	var_4_90[700330] = {
+	pg.base.dorm3d_ik_status[700330] = {
 		ik_camera = "Cam700330",
 		character_action = "IK_living01_idle01",
 		base = 700330,
@@ -36632,11 +35031,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.dorm3d_ik_status
-
-	var_4_91[700410] = {
+	pg.base.dorm3d_ik_status[700410] = {
 		ik_camera = "Cam700410",
 		character_action = "IK_desk02_idle01",
 		base = 700410,
@@ -36772,11 +35167,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.dorm3d_ik_status
-
-	var_4_92[700411] = {
+	pg.base.dorm3d_ik_status[700411] = {
 		ik_camera = "Cam700411",
 		character_action = "IK_desk02_idle01_fb01-1-loop",
 		base = 700411,
@@ -36879,11 +35270,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.dorm3d_ik_status
-
-	var_4_93[700412] = {
+	pg.base.dorm3d_ik_status[700412] = {
 		ik_camera = "Cam700412",
 		character_action = "IK_desk02_idle01_fb01-2-loop",
 		base = 700412,
@@ -36986,11 +35373,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.dorm3d_ik_status
-
-	var_4_94[4] = {
+	pg.base.dorm3d_ik_status[4] = {
 		ik_camera = "Cam700420",
 		character_action = "IK_desk02_idle02",
 		base = 700420,
@@ -37117,11 +35500,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.dorm3d_ik_status
-
-	var_4_95[5] = {
+	pg.base.dorm3d_ik_status[5] = {
 		ik_camera = "Cam700421",
 		character_action = "IK_desk02_idle02_fb01-2-loop",
 		base = 700421,
@@ -37218,11 +35597,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.dorm3d_ik_status
-
-	var_4_96[14] = {
+	pg.base.dorm3d_ik_status[14] = {
 		ik_camera = "Cam700430",
 		character_action = "IK_desk02_idle02",
 		base = 700430,
@@ -37348,11 +35723,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.dorm3d_ik_status
-
-	var_4_97[24] = {
+	pg.base.dorm3d_ik_status[24] = {
 		ik_camera = "Cam700440",
 		character_action = "IK_desk02_idle02",
 		base = 700440,
@@ -37487,11 +35858,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.dorm3d_ik_status
-
-	var_4_98[710110] = {
+	pg.base.dorm3d_ik_status[710110] = {
 		ik_camera = "Cam700110",
 		character_action = "IK_bed01_idle01",
 		base = 700110,
@@ -37539,8 +35906,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_4_98
-	var_4_98.base.dorm3d_ik_status[710120] = {
+	pg.base.dorm3d_ik_status[710120] = {
 		ik_camera = "Cam700120",
 		character_action = "IK_bed01_idle01",
 		base = 700120,
@@ -37592,11 +35958,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.dorm3d_ik_status
-
-	var_5_0[710130] = {
+	pg.base.dorm3d_ik_status[710130] = {
 		ik_camera = "Cam700130",
 		character_action = "IK_bed01_idle01",
 		base = 700130,
@@ -37644,11 +36006,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.dorm3d_ik_status
-
-	var_5_1[710210] = {
+	pg.base.dorm3d_ik_status[710210] = {
 		ik_camera = "Cam700210",
 		character_action = "IK_desk01_idle01",
 		base = 700210,
@@ -37696,11 +36054,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.dorm3d_ik_status
-
-	var_5_2[710220] = {
+	pg.base.dorm3d_ik_status[710220] = {
 		ik_camera = "Cam700220",
 		character_action = "IK_desk01_idle01",
 		base = 700220,
@@ -37748,11 +36102,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.dorm3d_ik_status
-
-	var_5_3[710230] = {
+	pg.base.dorm3d_ik_status[710230] = {
 		ik_camera = "Cam700230",
 		character_action = "IK_desk01_idle01",
 		base = 700230,
@@ -37809,11 +36159,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.dorm3d_ik_status
-
-	var_5_4[710310] = {
+	pg.base.dorm3d_ik_status[710310] = {
 		ik_camera = "Cam700310",
 		character_action = "IK_living01_idle01",
 		base = 700310,
@@ -37861,11 +36207,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.dorm3d_ik_status
-
-	var_5_5[710320] = {
+	pg.base.dorm3d_ik_status[710320] = {
 		ik_camera = "Cam700320",
 		character_action = "IK_living01_idle01",
 		base = 700320,
@@ -37922,11 +36264,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.dorm3d_ik_status
-
-	var_5_6[710330] = {
+	pg.base.dorm3d_ik_status[710330] = {
 		ik_camera = "Cam700330",
 		character_action = "IK_living01_idle01",
 		base = 700330,
@@ -37974,11 +36312,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.dorm3d_ik_status
-
-	var_5_7[10] = {
+	pg.base.dorm3d_ik_status[10] = {
 		ik_camera = "Cam700410",
 		character_action = "IK_desk02_idle01",
 		base = 700410,
@@ -38040,11 +36374,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.dorm3d_ik_status
-
-	var_5_8[11] = {
+	pg.base.dorm3d_ik_status[11] = {
 		ik_camera = "Cam700411",
 		character_action = "IK_desk02_idle01_fb01-1-loop",
 		base = 700411,
@@ -38146,11 +36476,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.dorm3d_ik_status
-
-	var_5_9[12] = {
+	pg.base.dorm3d_ik_status[12] = {
 		ik_camera = "Cam700412",
 		character_action = "IK_desk02_idle01_fb01-2-loop",
 		base = 700412,
@@ -38252,11 +36578,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.dorm3d_ik_status
-
-	var_5_10[20] = {
+	pg.base.dorm3d_ik_status[20] = {
 		ik_camera = "Cam700420",
 		character_action = "IK_desk02_idle02",
 		base = 700420,
@@ -38309,11 +36631,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.dorm3d_ik_status
-
-	var_5_11[21] = {
+	pg.base.dorm3d_ik_status[21] = {
 		ik_camera = "Cam700421",
 		character_action = "IK_desk02_idle02_fb01-2-loop",
 		base = 700421,
@@ -38409,11 +36727,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.dorm3d_ik_status
-
-	var_5_12[30] = {
+	pg.base.dorm3d_ik_status[30] = {
 		ik_camera = "Cam710430",
 		character_action = "IK_desk02_idle02",
 		base = 700430,
@@ -38465,8 +36779,7 @@ end)()
 		enter_extra_item = {},
 		hide_scene_item = {}
 	}
-	pg = var_5_12
-	var_5_12.base.dorm3d_ik_status[710440] = {
+	pg.base.dorm3d_ik_status[710440] = {
 		ik_camera = "Cam710440",
 		character_action = "IK_desk02_idle02",
 		base = 700440,

@@ -220,7 +220,7 @@ function getCanReciveNum(self)
 end
 
 function updateRed(self)
-    return self:getCanReciveNum() >= 1
+    return self:getCanReciveNum() >= 1 or activity.ActitvityExtraManager:getFashionPermitRedInfo()
 end
 
 function updateBubble(self)

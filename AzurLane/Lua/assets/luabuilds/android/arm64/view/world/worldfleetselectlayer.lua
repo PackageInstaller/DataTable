@@ -1,290 +1,127 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldFleetSelectLayer", import("..base.BaseUI"))
 
-local var_0_0 = "WorldFleetSelectLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldFleetSelect"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0.rtBg = arg_2_0._tf:Find("bg")
 
-	arg_2_0.rtBg = var_1.Find(var_2_0, "bg")
-	nowWorld = var_1
+	local var_2_0 = nowWorld():GetRealm()
 
-	local var_2_1 = var_1()
-	local var_2_2 = var_1.GetRealm(var_2_1)
-
-	eachChild = var_1_10002
-
-	var_1_10002(arg_2_0.rtBg, function(arg_3_0)
-		setActive = var_2_10001
-
-		local var_3_0 = arg_3_0
-		local var_3_1 = arg_3_0.name
-
-		tostring = var_2_10005
-
-		var_2_10001(var_3_0, var_3_1 == var_2_10005(var_2_2))
+	eachChild(arg_2_0.rtBg, function(arg_3_0)
+		setActive(arg_3_0, arg_3_0.name == tostring(var_2_0))
 
 		return
 	end)
 
-	local var_2_3 = arg_2_0._tf
+	arg_2_0.rtPanel = arg_2_0._tf:Find("panel")
+	arg_2_0.rtShipTpl = arg_2_0.rtPanel:Find("shiptpl")
 
-	arg_2_0.rtPanel = var_2.Find(var_2_3, "panel")
+	setActive(arg_2_0.rtShipTpl, false)
 
-	local var_2_4 = arg_2_0.rtPanel
+	arg_2_0.rtEmptyTpl = arg_2_0.rtPanel:Find("emptytpl")
 
-	arg_2_0.rtShipTpl = var_2.Find(var_2_4, "shiptpl")
-	setActive = var_2
+	setActive(arg_2_0.rtEmptyTpl, false)
 
-	var_2(arg_2_0.rtShipTpl, false)
+	arg_2_0.rtScroll = arg_2_0.rtPanel:Find("bg")
+	arg_2_0.rtContent = arg_2_0.rtScroll:Find("content")
+	arg_2_0.rtFleets = {
+		[FleetType.Normal] = arg_2_0.rtContent:Find("fleet"),
+		[FleetType.Submarine] = arg_2_0.rtContent:Find("sub")
+	}
+	arg_2_0.btnBack = arg_2_0.rtPanel:Find("btnBack")
+	arg_2_0.btnGo = arg_2_0.rtPanel:Find("start_button")
+	arg_2_0.commanderToggle = arg_2_0.rtPanel:Find("commander_btn")
+	arg_2_0.formationToggle = arg_2_0.rtPanel:Find("formation_btn")
+	arg_2_0.tfLimitTip = arg_2_0.rtPanel:Find("limit_tip")
 
-	local var_2_5 = arg_2_0.rtPanel
+	setText(arg_2_0.tfLimitTip:Find("Text"), i18n("world_fleet_choose"))
 
-	arg_2_0.rtEmptyTpl = var_2.Find(var_2_5, "emptytpl")
-	setActive = var_2
+	arg_2_0.tfLimitSub = arg_2_0.rtPanel:Find("limit_world/limit_sub")
 
-	var_2(arg_2_0.rtEmptyTpl, false)
+	setText(arg_2_0.tfLimitSub:Find("Text"), i18n("ship_limit_notice"))
 
-	local var_2_6 = arg_2_0.rtPanel
-
-	arg_2_0.rtScroll = var_2.Find(var_2_6, "bg")
-
-	local var_2_7 = arg_2_0.rtScroll
-
-	arg_2_0.rtContent = var_2.Find(var_2_7, "content")
-
-	local var_2_8 = {}
-
-	FleetType = var_2_1
-
-	local var_2_9 = var_2_1.Normal
-	local var_2_10 = arg_2_0.rtContent
-
-	var_2_8[var_2_9] = var_4.Find(var_2_10, "fleet")
-	FleetType = var_2_9
-
-	local var_2_11 = var_2_9.Submarine
-	local var_2_12 = arg_2_0.rtContent
-
-	var_2_8[var_2_11] = var_4.Find(var_2_12, "sub")
-	arg_2_0.rtFleets = var_2_8
-
-	local var_2_13 = arg_2_0.rtPanel
-
-	arg_2_0.btnBack = var_2.Find(var_2_13, "btnBack")
-
-	local var_2_14 = arg_2_0.rtPanel
-
-	arg_2_0.btnGo = var_2.Find(var_2_14, "start_button")
-
-	local var_2_15 = arg_2_0.rtPanel
-
-	arg_2_0.commanderToggle = var_2.Find(var_2_15, "commander_btn")
-
-	local var_2_16 = arg_2_0.rtPanel
-
-	arg_2_0.formationToggle = var_2.Find(var_2_16, "formation_btn")
-
-	local var_2_17 = arg_2_0.rtPanel
-
-	arg_2_0.tfLimitTip = var_2.Find(var_2_17, "limit_tip")
-	setText = var_2
-
-	local var_2_18 = arg_2_0.tfLimitTip
-	local var_2_19 = var_4.Find(var_2_18, "Text")
-
-	i18n = var_5
-
-	var_2(var_2_19, var_5("world_fleet_choose"))
-
-	local var_2_20 = arg_2_0.rtPanel
-
-	arg_2_0.tfLimitSub = var_2.Find(var_2_20, "limit_world/limit_sub")
-	setText = var_2
-
-	local var_2_21 = arg_2_0.tfLimitSub
-	local var_2_22 = var_4.Find(var_2_21, "Text")
-
-	i18n = var_5
-
-	var_2(var_2_22, var_5("ship_limit_notice"))
-
-	local var_2_23 = arg_2_0.rtPanel
-
-	arg_2_0.tfLimitContainer = var_2.Find(var_2_23, "limit_world/limit_list")
-
-	local var_2_24 = arg_2_0.tfLimitContainer
-
-	arg_2_0.tfLimitTpl = var_2.Find(var_2_24, "condition")
+	arg_2_0.tfLimitContainer = arg_2_0.rtPanel:Find("limit_world/limit_list")
+	arg_2_0.tfLimitTpl = arg_2_0.tfLimitContainer:Find("condition")
 
 	arg_2_0:buildCommanderPanel()
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0)
-	pg = var_1_10001
+function var_0_0.didEnter(arg_4_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0.rtPanel)
+	onButton(arg_4_0, arg_4_0.btnGo, function()
+		local var_5_0, var_5_1 = arg_4_0:CheckValid()
 
-	local var_4_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_4_0, arg_4_0.rtPanel)
-
-	onButton = var_1
-
-	local var_4_1 = arg_4_0
-	local var_4_2 = arg_4_0.btnGo
-
-	local function var_4_3()
-		local var_5_0 = arg_4_0
-		local var_5_1, var_5_2 = var_0.CheckValid(var_5_0)
-
-		if var_5_1 then
-			local var_5_3 = arg_4_0
-
-			var_5_0 = var_5_0.emit
-			WorldFleetSelectMediator = var_2_10005
-
-			var_5_0(var_5_3, var_2_10005.OnGO)
+		if var_5_0 then
+			arg_4_0:emit(WorldFleetSelectMediator.OnGO)
 		else
-			pg = var_5_0
-
-			local var_5_4 = var_5_0.TipsMgr.GetInstance()
-
-			var_2.ShowTips(var_5_4, var_5_2)
+			pg.TipsMgr.GetInstance():ShowTips(var_5_1)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_1, var_4_2, var_4_3, var_1_10006)
-
-	onButton = var_1
-
-	local var_4_4 = arg_4_0
-	local var_4_5 = arg_4_0.btnBack
-
-	local function var_4_6()
-		local var_6_0 = arg_4_0
-
-		var_0.closeView(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.btnBack, function()
+		arg_4_0:closeView()
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_1_10006
+	local function var_4_0(arg_7_0)
+		arg_4_0.contextData.showCommander = arg_7_0
 
-	var_1(var_4_4, var_4_5, var_4_6, var_1_10006)
-
-	local function var_4_7(arg_7_0)
-		local var_7_0 = arg_4_0.contextData
-
-		var_7_0.showCommander = arg_7_0
-		pairs = var_7_0
-
-		for iter_7_0, iter_7_1 in var_7_0(arg_4_0.rtFleets) do
+		for iter_7_0, iter_7_1 in pairs(arg_4_0.rtFleets) do
 			for iter_7_2 = 1, #arg_4_0.contextData.fleets[iter_7_0] do
-				local var_7_1 = arg_4_0
-
-				var_10.updateCommanderBtn(var_7_1, iter_7_1:GetChild(iter_7_2 - 1))
+				arg_4_0:updateCommanderBtn(iter_7_1:GetChild(iter_7_2 - 1))
 			end
 		end
 
 		return
 	end
 
-	onToggle = var_1_10002
-
-	local var_4_8 = arg_4_0
-	local var_4_9 = arg_4_0.commanderToggle
-
-	local function var_4_10(arg_8_0)
+	onToggle(arg_4_0, arg_4_0.commanderToggle, function(arg_8_0)
 		if arg_8_0 then
-			var_4_7(arg_8_0)
+			var_4_0(arg_8_0)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_4_8, var_4_9, var_4_10, var_1_10007)
-
-	onToggle = var_1_10002
-
-	local var_4_11 = arg_4_0
-	local var_4_12 = arg_4_0.formationToggle
-
-	local function var_4_13(arg_9_0)
+	end, SFX_PANEL)
+	onToggle(arg_4_0, arg_4_0.formationToggle, function(arg_9_0)
 		if arg_9_0 then
-			var_4_7(not arg_9_0)
+			var_4_0(not arg_9_0)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_4_11, var_4_12, var_4_13, var_1_10007)
+	end, SFX_PANEL)
 	arg_4_0:UpdateFleets()
+	scrollTo(arg_4_0.rtContent, nil, arg_4_0.contextData.scrollY)
 
-	scrollTo = var_2
+	arg_4_0.contextData.showCommander = defaultValue(arg_4_0.contextData.showCommander, true)
 
-	var_2(arg_4_0.rtContent, nil, arg_4_0.contextData.scrollY)
+	if arg_4_0.contextData.showCommander then
+		local var_4_2 = arg_4_0.commanderToggle or arg_4_0.formationToggle
 
-	local var_4_14 = arg_4_0.contextData
+		var_4_1(var_4_2, true)
+		arg_4_0:CheckWorldResetAward()
 
-	defaultValue = var_4_4
-	var_4_14.showCommander = var_4_4(arg_4_0.contextData.showCommander, true)
-	triggerToggle = var_4_14
-
-	local var_4_15
-
-	if not arg_4_0.contextData.showCommander or not arg_4_0.commanderToggle then
-		var_4_15 = arg_4_0.formationToggle
+		return
 	end
-
-	var_4_14(var_4_15, true)
-	arg_4_0:CheckWorldResetAward()
-
-	return
 end
 
-function var_0_1.willExit(arg_10_0)
-	local var_10_0 = arg_10_0.contextData
+function var_0_0.willExit(arg_10_0)
+	arg_10_0.contextData.scrollY = GetComponent(arg_10_0.rtContent, typeof(ScrollRect)).normalizedPosition.y
 
-	GetComponent = var_1_10002
-
-	local var_10_1 = arg_10_0.rtContent
-
-	typeof = var_1_10005
-	ScrollRect = var_1_10007
-	var_10_0.scrollY = var_1_10002(var_10_1, var_1_10005(var_1_10007)).normalizedPosition.y
-	pg = var_10_0
-
-	local var_10_2 = var_10_0.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_10_2, arg_10_0.rtPanel, arg_10_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_10_0.rtPanel, arg_10_0._tf)
 	arg_10_0:destroyCommanderPanel()
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_11_0)
-	local var_11_0 = arg_11_0.levelCMDFormationView
-
-	if var_1.isShowing(var_11_0) then
-		local var_11_1 = arg_11_0.levelCMDFormationView
-
-		var_1.ActionInvoke(var_11_1, "Hide")
+function var_0_0.onBackPressed(arg_11_0)
+	if arg_11_0.levelCMDFormationView:isShowing() then
+		arg_11_0.levelCMDFormationView:ActionInvoke("Hide")
 	else
 		arg_11_0:closeView()
 	end
@@ -292,34 +129,22 @@ function var_0_1.onBackPressed(arg_11_0)
 	return
 end
 
-function var_0_1.UpdateFleets(arg_12_0)
+function var_0_0.UpdateFleets(arg_12_0)
 	local var_12_0 = arg_12_0.contextData.fleets
 
-	pairs = var_1_10002
-
-	for iter_12_0, iter_12_1 in var_1_10002(var_12_0) do
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.contextData.fleets) do
 		local var_12_1 = arg_12_0.rtFleets[iter_12_0]
+		local var_12_2 = UIItemList.New(arg_12_0.rtFleets[iter_12_0], arg_12_0.rtFleets[iter_12_0]:GetChild(0))
 
-		UIItemList = var_1_10008
-
-		local var_12_2 = var_1_10008.New(var_12_1, var_12_1:GetChild(0))
-
-		var_1_10008.make(var_12_2, function(arg_13_0, arg_13_1, arg_13_2)
-			UIItemList = var_2_10003
-
-			if arg_13_0 == var_2_10003.EventUpdate then
-				local var_13_0 = arg_12_0
-
-				var_3.UpdateFleet(var_13_0, arg_13_2, iter_12_0, arg_13_1 + 1)
+		var_12_2:make(function(arg_13_0, arg_13_1, arg_13_2)
+			if arg_13_0 == UIItemList.EventUpdate then
+				arg_12_0:UpdateFleet(arg_13_2, iter_12_0, arg_13_1 + 1)
 			end
 
 			return
 		end)
-		var_1_10008:align(#var_12_0[iter_12_0])
-
-		setActive = var_9
-
-		var_9(var_12_1, #var_12_0[iter_12_0] > 0)
+		var_12_2:align(#var_12_0[iter_12_0])
+		setActive(var_12_1, #var_12_0[iter_12_0] > 0)
 	end
 
 	arg_12_0:updateEliteLimit()
@@ -327,656 +152,264 @@ function var_0_1.UpdateFleets(arg_12_0)
 	return
 end
 
-function var_0_1.IsPropertyLimitationSatisfy(arg_14_0)
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
+function var_0_0.IsPropertyLimitationSatisfy(arg_14_0)
+	local var_14_0 = getProxy(BayProxy):getRawData()
+	local var_14_1 = {}
 
-	local var_14_0 = var_1_10001(var_1_10003)
-	local var_14_1 = var_1.getRawData(var_14_0)
-
-	pg = var_1_10002
-
-	local var_14_2 = var_1_10002.gameset.world_fleet_unlock_level.description
-	local var_14_3 = {}
-
-	ipairs = var_1_10004
-
-	for iter_14_0, iter_14_1 in var_1_10004(var_14_2) do
-		var_14_3[iter_14_1[1]] = 0
+	for iter_14_0, iter_14_1 in ipairs(pg.gameset.world_fleet_unlock_level.description) do
+		var_14_1[iter_14_1[1]] = 0
 	end
 
-	local var_14_4 = 0
+	local var_14_2 = 0
 
-	ipairs = var_5
+	for iter_14_2, iter_14_3 in ipairs(arg_14_0.contextData.fleets[FleetType.Normal]) do
+		if arg_14_0:GetTeamShipCount(iter_14_3[TeamType.Main]) == 0 or arg_14_0:GetTeamShipCount(iter_14_3[TeamType.Vanguard]) == 0 then
+			-- block empty
+		else
+			local var_14_3 = {}
+			local var_14_4 = 0
 
-	local var_14_5 = arg_14_0.contextData.fleets
+			for iter_14_4, iter_14_5 in ipairs(pg.gameset.world_fleet_unlock_level.description) do
+				local var_14_5, var_14_6, var_14_7, var_14_8 = unpack(iter_14_5)
 
-	FleetType = iter_14_1
-
-	for iter_14_2, iter_14_3 in var_5(var_14_5[iter_14_1.Normal]) do
-		local var_14_6 = arg_14_0
-		local var_14_7 = arg_14_0.GetTeamShipCount
-
-		TeamType = var_1_10013
-
-		if var_14_7(var_14_6, iter_14_3[var_1_10013.Main]) ~= 0 then
-			local var_14_8 = arg_14_0
-			local var_14_9 = arg_14_0.GetTeamShipCount
-
-			TeamType = var_1_10013
-
-			if var_14_9(var_14_8, iter_14_3[var_1_10013.Vanguard]) == 0 then
-				-- block empty
-			else
-				local var_14_10 = {}
-
-				var_1_10011 = {}
-
-				local var_14_11 = 0
-
-				ipairs = var_1_10013
-
-				for iter_14_4, iter_14_5 in var_1_10013(var_14_2) do
-					unpack = var_1_10018
-
-					local var_14_12, var_14_13, var_14_14
-
-					var_1_10018, var_14_12, var_14_13, var_14_14 = var_1_10018(iter_14_5)
-					string = var_1_10022
-
-					if var_1_10022.sub(var_1_10018, 1, 5) == "fleet" then
-						var_14_10[var_1_10018] = 0
-						var_1_10011[var_1_10018] = var_14_14
-					end
+				if string.sub(var_14_5, 1, 5) == "fleet" then
+					var_14_3[var_14_5] = 0
+					;({})[var_14_5] = var_14_8
 				end
+			end
 
-				pairs = var_1_10013
+			for iter_14_6, iter_14_7 in pairs(iter_14_3) do
+				for iter_14_8 = 1, 3 do
+					local var_14_9 = iter_14_7[iter_14_8] and var_14_0[iter_14_7[iter_14_8]]
 
-				for iter_14_6, iter_14_7 in var_1_10013(iter_14_3) do
-					for iter_14_8 = 1, 3 do
-						if iter_14_7[iter_14_8] then
-							var_1_10022 = var_14_1[iter_14_7[iter_14_8]]
-						end
+					if var_14_9 then
+						var_14_2 = var_14_2 + 1
+						var_14_4 = var_14_4 + 1
 
-						if var_1_10022 then
-							var_14_4 = var_14_4 + 1
-							var_14_11 = var_14_11 + 1
-							intProperties = var_1_10023
-							var_1_10023 = var_1_10023(var_1_10022:getProperties())
-							pairs = var_1_10024
+						local var_14_10 = intProperties(var_14_9:getProperties())
 
-							for iter_14_9, iter_14_10 in var_1_10024(var_14_3) do
-								string = var_1_10029
-
-								if var_1_10029.sub(iter_14_9, 1, 5) == "fleet" then
-									if iter_14_9 == "fleet_totle_level" then
-										var_14_10[iter_14_9] = var_14_10[iter_14_9] + var_1_10022.level
-									end
-								elseif iter_14_9 == "level" then
-									var_14_3[iter_14_9] = iter_14_10 + var_1_10022.level
-								else
-									var_14_3[iter_14_9] = iter_14_10 + var_1_10023[iter_14_9]
+						for iter_14_9, iter_14_10 in pairs(var_14_1) do
+							if string.sub(iter_14_9, 1, 5) == "fleet" then
+								if iter_14_9 == "fleet_totle_level" then
+									var_14_3[iter_14_9] = var_14_3[iter_14_9] + var_14_9.level
 								end
+							else
+								var_14_1[iter_14_9] = iter_14_9 == "level" and iter_14_10 + var_14_9.level or iter_14_10 + var_14_10[iter_14_9]
 							end
 						end
 					end
 				end
+			end
 
-				pairs = var_1_10013
-
-				for iter_14_11, iter_14_12 in var_1_10013(var_14_10) do
-					if iter_14_11 == "fleet_totle_level" and var_1_10011[iter_14_11] < iter_14_12 then
-						var_14_3[iter_14_11] = var_14_3[iter_14_11] + 1
-					end
+			for iter_14_11, iter_14_12 in pairs(var_14_3) do
+				if iter_14_11 == "fleet_totle_level" and iter_14_12 > ({})[iter_14_11] then
+					var_14_1[iter_14_11] = var_14_1[iter_14_11] + 1
 				end
 			end
 		end
 	end
 
-	local var_14_15 = {}
+	local var_14_11 = {}
 
-	ipairs = var_6
+	for iter_14_13, iter_14_14 in ipairs(pg.gameset.world_fleet_unlock_level.description) do
+		local var_14_12, var_14_13, var_14_14, var_14_15 = unpack(iter_14_14)
 
-	for iter_14_13, iter_14_14 in var_6(var_14_2) do
-		unpack = var_1_10011
-
-		local var_14_16, var_14_17, var_14_18
-
-		var_1_10011, var_14_16, var_14_17, var_14_18 = var_1_10011(iter_14_14)
-
-		if var_1_10011 == "level" and 0 < var_14_4 then
-			math = var_1_10015
-			var_14_3[var_1_10011] = var_1_10015.ceil(var_14_3[var_1_10011] / var_14_4)
+		if var_14_12 == "level" and var_14_2 > 0 then
+			var_14_1[var_14_12] = math.ceil(var_14_1[var_14_12] / var_14_2)
 		end
 
-		AttributeType = var_1_10015
-		var_1_10015 = var_1_10015.EliteConditionCompare(var_14_16, var_14_3[var_1_10011], var_14_17) and 1 or 0
-		var_14_15[iter_14_13] = var_1_10015
+		var_14_11[iter_14_13] = AttributeType.EliteConditionCompare(var_14_13, var_14_1[var_14_12], var_14_14) and 1 or 0
 	end
 
-	return var_14_15, var_14_3
+	return var_14_11, var_14_1
 end
 
-function var_0_1.updateEliteLimit(arg_15_0)
-	pg = var_1_10001
+function var_0_0.updateEliteLimit(arg_15_0)
+	local var_15_0 = pg.gameset.world_fleet_unlock_level.description
 
-	if #var_1_10001.gameset.world_fleet_unlock_level.description == 0 then
+	if #pg.gameset.world_fleet_unlock_level.description == 0 then
 		return
 	end
 
-	local var_15_0 = arg_15_0
-	local var_15_1, var_15_2 = arg_15_0.IsPropertyLimitationSatisfy(var_15_0)
+	local var_15_1, var_15_2 = arg_15_0:IsPropertyLimitationSatisfy()
+	local var_15_3 = UIItemList.New(arg_15_0.tfLimitContainer, arg_15_0.tfLimitTpl)
 
-	UIItemList = var_15_0
-
-	local var_15_3 = var_15_0.New(arg_15_0.tfLimitContainer, arg_15_0.tfLimitTpl)
-
-	var_4.make(var_15_3, function(arg_16_0, arg_16_1, arg_16_2)
+	var_15_3:make(function(arg_16_0, arg_16_1, arg_16_2)
 		arg_16_1 = arg_16_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_16_0 == var_2_10003.EventUpdate then
-			local var_16_0 = var_0[arg_16_1]
-
-			unpack = var_2_10004
-
-			local var_16_1, var_16_2, var_16_3, var_16_4 = var_2_10004(var_16_0)
-			local var_16_6
+		if arg_16_0 == UIItemList.EventUpdate then
+			local var_16_0, var_16_1, var_16_2, var_16_3 = unpack(var_15_0[arg_16_1])
 
 			if var_15_1[arg_16_1] == 1 then
-				local var_16_5 = arg_16_2:Find("Text")
-
-				var_16_6 = var_16_6.GetComponent
-				typeof = var_11
-				Text = var_2_10013
-				var_16_6 = var_16_6(var_16_5, var_11(var_2_10013))
-				Color = var_2_10009
-				var_16_6.color = var_2_10009.New(1, 0.9607843137254902, 0.5019607843137255)
+				arg_16_2:Find("Text"):GetComponent(typeof(Text)).color = Color.New(1, 0.9607843137254902, 0.5019607843137255)
 			else
-				local var_16_7 = arg_16_2:Find("Text")
+				local var_16_4 = arg_16_2:Find("Text")
 
-				var_16_6 = var_16_6.GetComponent
-				typeof = var_11
-				Text = var_2_10013
-				var_16_6 = var_16_6(var_16_7, var_11(var_2_10013))
-				Color = var_2_10009
-				var_16_6.color = var_2_10009.New(0.9568627450980393, 0.30196078431372547, 0.30196078431372547)
+				var_16_4:GetComponent(typeof(Text)).color = Color.New(0.9568627450980393, 0.30196078431372547, 0.30196078431372547)
 			end
 
-			AttributeType = var_16_6
-
-			local var_16_8 = var_16_6.EliteCondition2Name(var_16_1, var_16_4)
-
-			AttributeType = var_2_10009
-
-			local var_16_9 = (var_16_8 .. var_2_10009.eliteConditionCompareTip(var_16_2) .. var_16_3) .. "（" .. var_15_2[var_16_1] .. "）"
-
-			setText = var_9
-
-			var_9(arg_16_2:Find("Text"), var_16_9)
+			setText(arg_16_2:Find("Text"), (AttributeType.EliteCondition2Name(var_16_0, var_16_3) .. AttributeType.eliteConditionCompareTip(var_16_1) .. var_16_2) .. "（" .. var_15_2[var_16_0] .. "）")
 		end
 
 		return
 	end)
-	var_4:align(#var_1)
+	var_15_3:align(#pg.gameset.world_fleet_unlock_level.description)
 
 	return
 end
 
-function var_0_1.updateCommanderBtn(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_1:Find("btn_recom")
-	local var_17_1 = arg_17_1
-	local var_17_2 = arg_17_1.Find(var_17_1, "btn_clear")
-	local var_17_3 = arg_17_1:Find("commander")
-
-	setActive = var_17_1
-
-	var_17_1(var_17_0, not arg_17_0.contextData.showCommander)
-
-	setActive = var_17_1
-
-	var_17_1(var_17_2, not arg_17_0.contextData.showCommander)
-
-	setActive = var_17_1
-
-	var_17_1(var_17_3, arg_17_0.contextData.showCommander)
+function var_0_0.updateCommanderBtn(arg_17_0, arg_17_1)
+	setActive(arg_17_1:Find("btn_recom"), not arg_17_0.contextData.showCommander)
+	setActive(arg_17_1:Find("btn_clear"), not arg_17_0.contextData.showCommander)
+	setActive(arg_17_1:Find("commander"), arg_17_0.contextData.showCommander)
 
 	return
 end
 
-function var_0_1.UpdateFleet(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
-	local var_18_0 = arg_18_1:Find("commander")
-	local var_18_1 = arg_18_0
-
-	arg_18_0.updateCommanders(var_18_1, var_18_0, arg_18_2, arg_18_3)
-
-	local var_18_2 = arg_18_0.contextData.fleets[arg_18_2][arg_18_3]
-
-	FleetType = var_18_1
-
-	local var_18_3 = (arg_18_2 == var_18_1.Submarine and 10 or 0) + arg_18_3
-
-	setText = var_8
-
-	local var_18_4 = arg_18_1
-	local var_18_5 = arg_18_1.Find(var_18_4, "bg/name")
-
-	Fleet = var_1_10011
-
-	var_8(var_18_5, var_1_10011.DEFAULT_NAME[var_18_3])
-
-	FleetType = var_8
-
-	if arg_18_2 == var_8.Normal then
-		local var_18_6 = arg_18_0
-		local var_18_7 = arg_18_0.UpdateShips
-		local var_18_8 = arg_18_1
-		local var_18_9 = arg_18_1.Find
-
-		TeamType = var_1_10014
-
-		local var_18_10 = var_18_9(var_18_8, var_1_10014.Main)
-
-		TeamType = var_18_4
-
-		var_18_7(var_18_6, var_18_10, var_18_4.Main, var_18_2)
-
-		local var_18_11 = arg_18_0
-
-		var_18_7 = arg_18_0.UpdateShips
-
-		local var_18_12 = arg_18_1
-		local var_18_13 = arg_18_1.Find
-
-		TeamType = var_1_10014
-
-		local var_18_14 = var_18_13(var_18_12, var_1_10014.Vanguard)
-
-		TeamType = var_18_4
-
-		var_18_7(var_18_11, var_18_14, var_18_4.Vanguard, var_18_2)
-
-		setActive = var_18_7
-		var_18_4 = arg_18_1
-
-		local var_18_15 = arg_18_1.Find(var_18_4, "selected")
-		local var_18_16 = arg_18_0
-		local var_18_17 = arg_18_0.GetTeamShipCount
-
-		TeamType = var_1_10014
-
-		local var_18_18 = var_18_17(var_18_16, var_18_2[var_1_10014.Main])
-
-		if 0 < var_18_18 then
-			local var_18_19 = arg_18_0
-			local var_18_20 = arg_18_0.GetTeamShipCount
-
-			TeamType = var_1_10014
-
-			local var_18_21 = var_18_20(var_18_19, var_18_2[var_1_10014.Vanguard])
-			local var_18_22
-
-			if not (0 < var_18_21) then
-				var_18_22 = false
-			else
-				var_18_22 = true
-			end
-
-			var_18_7(var_18_15, var_18_22)
-
-			if false then
-				FleetType = var_18_7
-
-				if arg_18_2 == var_18_7.Submarine then
-					local var_18_23 = arg_18_0
-					local var_18_24 = arg_18_0.UpdateShips
-					local var_18_25 = arg_18_1
-					local var_18_26 = arg_18_1.Find
-
-					TeamType = var_1_10014
-
-					local var_18_27 = var_18_26(var_18_25, var_1_10014.Submarine)
-
-					TeamType = var_18_4
-
-					var_18_24(var_18_23, var_18_27, var_18_4.Submarine, var_18_2)
-
-					setActive = var_18_24
-
-					local var_18_28 = arg_18_1:Find("selected")
-					local var_18_29 = arg_18_0
-					local var_18_30 = arg_18_0.GetTeamShipCount
-
-					TeamType = var_14
-
-					var_18_24(var_18_28, var_18_30(var_18_29, var_18_2[var_14.Submarine]) > 0)
-				end
-			end
-
-			local var_18_31 = arg_18_1
-			local var_18_32 = arg_18_1.Find(var_18_31, "btn_recom")
-			local var_18_33 = arg_18_1:Find("btn_clear")
-
-			onButton = var_18_31
-
-			local var_18_34 = arg_18_0
-			local var_18_35 = var_18_32
-
-			local function var_18_36()
-				local var_19_0 = arg_18_0
-
-				var_0.RecommendFormation(var_19_0, arg_18_2, arg_18_3)
-
-				local var_19_1 = arg_18_0
-
-				var_0.UpdateFleet(var_19_1, arg_18_1, arg_18_2, arg_18_3)
-
-				local var_19_2 = arg_18_0
-
-				var_0.updateEliteLimit(var_19_2)
-
-				return
-			end
-
-			SFX_PANEL = var_1_10015
-
-			var_18_31(var_18_34, var_18_35, var_18_36, var_1_10015)
-
-			onButton = var_18_31
-
-			local var_18_37 = arg_18_0
-			local var_18_38 = var_18_33
-
-			local function var_18_39()
-				local var_20_0 = arg_18_0
-				local var_20_1 = var_0.GetTeamShipCount
-				local var_20_2 = var_18_2
-
-				TeamType = var_2_10004
-
-				if not (var_20_1(var_20_0, var_20_2[var_2_10004.Main]) > 0) then
-					local var_20_3 = arg_18_0
-					local var_20_4 = var_20_4.GetTeamShipCount
-					local var_20_5 = var_18_2
-
-					TeamType = var_4
-
-					if not (var_20_4(var_20_3, var_20_5[var_4.Vanguard]) > 0) then
-						local var_20_6 = arg_18_0
-
-						var_20_4 = var_20_4.GetTeamShipCount
-
-						local var_20_7 = var_18_2
-
-						TeamType = var_4
-
-						if var_20_4(var_20_6, var_20_7[var_4.Submarine]) > 0 then
-							pg = var_20_4
-
-							local var_20_8 = var_20_4.MsgboxMgr.GetInstance()
-							local var_20_9 = var_0.ShowMsgBox
-							local var_20_10 = {}
-
-							i18n = var_4
-							var_20_10.content = var_4("battle_preCombatLayer_clear_confirm")
-
-							function var_20_10.onYes()
-								local var_21_0 = var_18_2
-
-								TeamType = var_3_10001
-								var_21_0[var_3_10001.Main] = {}
-
-								local var_21_1 = var_18_2
-
-								TeamType = var_1
-								var_21_1[var_1.Vanguard] = {}
-
-								local var_21_2 = var_18_2
-
-								TeamType = var_1
-								var_21_2[var_1.Submarine] = {}
-
-								local var_21_3 = arg_18_0
-
-								var_0.UpdateFleet(var_21_3, arg_18_1, arg_18_2, arg_18_3)
-
-								local var_21_4 = arg_18_0
-
-								var_0.updateEliteLimit(var_21_4)
-
-								return
-							end
-
-							var_20_9(var_20_8, var_20_10)
-						end
-
-						return
-					end
-				end
-			end
-
-			SFX_CANCEL = var_1_10015
-
-			var_18_31(var_18_37, var_18_38, var_18_39, var_1_10015)
-
-			return
-		end
+function var_0_0.UpdateFleet(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
+	arg_18_0:updateCommanders(arg_18_1:Find("commander"), arg_18_2, arg_18_3)
+
+	local var_18_0 = arg_18_0.contextData.fleets[arg_18_2][arg_18_3]
+
+	setText(arg_18_1:Find("bg/name"), Fleet.DEFAULT_NAME[(arg_18_2 == FleetType.Submarine and 10 or 0) + arg_18_3])
+
+	if arg_18_2 == FleetType.Normal then
+		arg_18_0:UpdateShips(arg_18_1:Find(TeamType.Main), TeamType.Main, var_18_0)
+		arg_18_0:UpdateShips(arg_18_1:Find(TeamType.Vanguard), TeamType.Vanguard, var_18_0)
+		setActive(arg_18_1:Find("selected"), arg_18_0:GetTeamShipCount(var_18_0[TeamType.Main]) > 0 and arg_18_0:GetTeamShipCount(var_18_0[TeamType.Vanguard]) > 0)
+	elseif arg_18_2 == FleetType.Submarine then
+		arg_18_0:UpdateShips(arg_18_1:Find(TeamType.Submarine), TeamType.Submarine, var_18_0)
+		setActive(arg_18_1:Find("selected"), arg_18_0:GetTeamShipCount(var_18_0[TeamType.Submarine]) > 0)
 	end
+
+	onButton(arg_18_0, arg_18_1:Find("btn_recom"), function()
+		arg_18_0:RecommendFormation(arg_18_2, arg_18_3)
+		arg_18_0:UpdateFleet(arg_18_1, arg_18_2, arg_18_3)
+		arg_18_0:updateEliteLimit()
+
+		return
+	end, SFX_PANEL)
+	onButton(arg_18_0, arg_18_1:Find("btn_clear"), function()
+		if arg_18_0:GetTeamShipCount(var_18_0[TeamType.Main]) > 0 or arg_18_0:GetTeamShipCount(var_18_0[TeamType.Vanguard]) > 0 or arg_18_0:GetTeamShipCount(var_18_0[TeamType.Submarine]) > 0 then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("battle_preCombatLayer_clear_confirm"),
+				onYes = function()
+					var_18_0[TeamType.Main] = {}
+					var_18_0[TeamType.Vanguard] = {}
+					var_18_0[TeamType.Submarine] = {}
+
+					arg_18_0:UpdateFleet(arg_18_1, arg_18_2, arg_18_3)
+					arg_18_0:updateEliteLimit()
+
+					return
+				end
+			})
+		end
+
+		return
+	end, SFX_CANCEL)
+
+	return
 end
 
-function var_0_1.updateCommanders(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
-	local var_22_0 = arg_22_0.contextData.fleets[arg_22_2][arg_22_3]
-
-	Fleet = var_1_10005
-
-	local var_22_1 = var_1_10005.New({
+function var_0_0.updateCommanders(arg_22_0, arg_22_1, arg_22_2, arg_22_3)
+	local var_22_0 = Fleet.New({
 		ship_list = {},
-		commanders = var_22_0.commanders
+		commanders = arg_22_0.contextData.fleets[arg_22_2][arg_22_3].commanders
 	})
 
 	for iter_22_0 = 1, 2 do
-		local var_22_2 = var_22_1:getCommanderByPos(iter_22_0)
-		local var_22_3 = arg_22_1:Find("pos" .. iter_22_0)
-		local var_22_4 = var_11.Find(var_22_3, "add")
-		local var_22_5 = var_11
-		local var_22_6 = var_11.Find(var_22_5, "info")
+		local var_22_1 = var_22_0:getCommanderByPos(iter_22_0)
+		local var_22_2 = arg_22_1:Find("pos" .. iter_22_0)
+		local var_22_3 = var_22_2:Find("add")
+		local var_22_4 = var_22_2:Find("info")
 
-		setActive = var_22_3
+		setActive(var_22_3, not var_22_1)
+		setActive(var_22_4, var_22_1)
 
-		var_22_3(var_22_4, not var_22_2)
-
-		setActive = var_22_3
-
-		var_22_3(var_22_6, var_22_2)
-
-		if var_22_2 then
-			Commander = var_22_3
-			var_22_3 = var_22_3.rarity2Frame
-
-			local var_22_7 = var_22_2
-
-			var_22_3 = var_22_3(var_22_2.getRarity(var_22_7))
-			setImageSprite = var_22_5
-			var_1_10019 = var_22_6
-
-			local var_22_8 = var_22_6.Find(var_1_10019, "frame")
-
-			GetSpriteFromAtlas = var_22_7
-
-			var_22_5(var_22_8, var_22_7("weaponframes", "commander_" .. var_22_3))
-
-			GetImageSpriteFromAtlasAsync = var_22_5
-
-			var_22_5("CommanderHrz/" .. var_22_2:getPainting(), "", var_22_6:Find("mask/icon"))
+		if var_22_1 then
+			setImageSprite(var_22_4:Find("frame"), GetSpriteFromAtlas("weaponframes", "commander_" .. Commander.rarity2Frame(var_22_1:getRarity())))
+			GetImageSpriteFromAtlasAsync("CommanderHrz/" .. var_22_1:getPainting(), "", var_22_4:Find("mask/icon"))
 		else
-			var_22_3 = 1
+			local var_22_5 = 1
 
-			while var_22_0.commanders[var_22_3] and var_22_0.commanders[var_22_3].pos ~= iter_22_0 do
-				var_22_3 = var_22_3 + 1
+			while arg_22_0.contextData.fleets[arg_22_2][arg_22_3].commanders[var_22_5] and arg_22_0.contextData.fleets[arg_22_2][arg_22_3].commanders[var_22_5].pos ~= iter_22_0 do
+				var_22_5 = var_22_5 + 1
 			end
 
-			if var_22_0.commanders[var_22_3] then
-				table = var_15
-
-				var_15.remove(var_22_0.commanders, var_22_3)
+			if arg_22_0.contextData.fleets[arg_22_2][arg_22_3].commanders[var_22_5] then
+				table.remove(arg_22_0.contextData.fleets[arg_22_2][arg_22_3].commanders, var_22_5)
 			end
 		end
 
-		onButton = var_22_3
-
-		local var_22_9 = arg_22_0
-		local var_22_10 = var_22_4
-
-		local function var_22_11()
-			local var_23_0 = arg_22_0
-
-			var_0.openCommanderPanel(var_23_0, var_22_1, arg_22_2, arg_22_3)
+		onButton(arg_22_0, var_22_3, function()
+			arg_22_0:openCommanderPanel(var_22_0, arg_22_2, arg_22_3)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10019
-
-		var_22_3(var_22_9, var_22_10, var_22_11, var_1_10019)
-
-		onButton = var_22_3
-
-		local var_22_12 = arg_22_0
-		local var_22_13 = var_22_6
-
-		local function var_22_14()
-			local var_24_0 = arg_22_0
-
-			var_0.openCommanderPanel(var_24_0, var_22_1, arg_22_2, arg_22_3)
+		end, SFX_PANEL)
+		onButton(arg_22_0, var_22_4, function()
+			arg_22_0:openCommanderPanel(var_22_0, arg_22_2, arg_22_3)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10019
-
-		var_22_3(var_22_12, var_22_13, var_22_14, var_1_10019)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.UpdateShips(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
-	getProxy = var_1_10004
-	BayProxy = var_1_10006
-
-	local var_25_0 = var_1_10004(var_1_10006)
+function var_0_0.UpdateShips(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
+	local var_25_0 = getProxy(BayProxy)
 	local var_25_1 = arg_25_3[arg_25_2]
 	local var_25_2 = {}
 
-	ipairs = var_1_10007
-
-	local var_25_3 = {}
-
-	TeamType = var_1_10010
-	var_25_3[1] = var_1_10010.Vanguard
-	TeamType = var_10
-	var_25_3[2] = var_10.Main
-	TeamType = var_10
-	var_25_3[3] = var_10.Submarine
-
-	for iter_25_0, iter_25_1 in var_1_10007(var_25_3) do
+	for iter_25_0, iter_25_1 in ipairs({
+		TeamType.Vanguard,
+		TeamType.Main,
+		TeamType.Submarine
+	}) do
 		for iter_25_2 = 1, 3 do
-			local var_25_4
+			local var_25_3 = arg_25_3[iter_25_1][iter_25_2] and var_25_0:getShipById(arg_25_3[iter_25_1][iter_25_2]) or nil
 
-			if not arg_25_3[iter_25_1][iter_25_2] or not var_25_0:getShipById(arg_25_3[iter_25_1][iter_25_2]) then
-				var_25_4 = nil
-			end
+			table.insert(var_25_2, var_25_3)
 
-			table = var_1_10017
-
-			var_1_10017.insert(var_25_2, var_25_4)
-
-			if not var_25_4 then
-				var_1_10017 = arg_25_3[iter_25_1]
-				var_1_10017[iter_25_2] = nil
+			if not var_25_3 then
+				arg_25_3[iter_25_1][iter_25_2] = nil
 			end
 		end
 	end
 
-	removeAllChildren = var_7
-
-	var_7(arg_25_1)
+	removeAllChildren(arg_25_1)
 
 	for iter_25_3 = 1, 3 do
+		local var_25_4
 		local var_25_5
-		local var_25_6
 
-		if var_25_1[iter_25_3] then
-			cloneTplTo = var_13
-			var_25_5 = var_13(arg_25_0.rtShipTpl, arg_25_1, "ship_" .. var_25_1[iter_25_3])
-			var_25_6 = var_25_0:getShipById(var_25_1[iter_25_3])
-			updateShip = var_13
+		if arg_25_3[arg_25_2][iter_25_3] then
+			var_25_4 = cloneTplTo(arg_25_0.rtShipTpl, arg_25_1, "ship_" .. arg_25_3[arg_25_2][iter_25_3])
 
-			var_13(var_25_5, var_25_6)
+			updateShip(var_25_4, (var_25_0:getShipById(arg_25_3[arg_25_2][iter_25_3])))
 		else
-			cloneTplTo = var_13
-			var_25_5 = var_13(arg_25_0.rtEmptyTpl, arg_25_1, "empty")
-			setActive = var_13
+			var_25_4 = cloneTplTo(arg_25_0.rtEmptyTpl, arg_25_1, "empty")
 
-			var_13(var_25_5:Find("ship_type"), false)
+			setActive(var_25_4:Find("ship_type"), false)
 		end
 
-		onButton = var_13
-
-		local var_25_7 = arg_25_0
-		local var_25_8 = var_25_5
-		local var_25_9 = var_25_5.Find(var_25_8, "icon_bg")
-
-		local function var_25_10()
-			local var_26_0 = arg_25_0
-			local var_26_1 = var_0.emit
-
-			WorldFleetSelectMediator = var_2_10003
-
-			var_26_1(var_26_0, var_2_10003.OnSelectShip, arg_25_2, var_25_1, iter_25_3)
+		onButton(arg_25_0, var_25_4:Find("icon_bg"), function()
+			arg_25_0:emit(WorldFleetSelectMediator.OnSelectShip, arg_25_2, var_25_1, iter_25_3)
 
 			return
-		end
+		end, SFX_PANEL)
 
-		SFX_PANEL = var_25_8
+		local var_25_6 = GetOrAddComponent(var_25_4:Find("icon_bg"), typeof(UILongPressTrigger))
 
-		var_13(var_25_7, var_25_9, var_25_10, var_25_8)
-
-		GetOrAddComponent = var_13
-
-		local var_25_11 = var_25_5:Find("icon_bg")
-
-		typeof = var_25_9
-		UILongPressTrigger = var_18
-
-		local var_25_12 = var_13(var_25_11, var_25_9(var_18))
-
-		pg = var_1_10014
-
-		var_1_10014.DelegateInfo.Add(arg_25_0, var_25_12.onLongPressed)
-
-		local var_25_13 = var_25_12.onLongPressed
-
-		var_1_10014.RemoveAllListeners(var_25_13)
-
-		local var_25_14 = var_25_12.onLongPressed
-
-		var_1_10014.AddListener(var_25_14, function()
-			if not var_25_6 then
-				local var_27_0 = arg_25_0
-				local var_27_1 = var_0.emit
-
-				WorldFleetSelectMediator = var_2_10003
-
-				var_27_1(var_27_0, var_2_10003.OnSelectShip, arg_25_2, var_25_1, iter_25_3)
+		pg.DelegateInfo.Add(arg_25_0, var_25_6.onLongPressed)
+		var_25_6.onLongPressed:RemoveAllListeners()
+		var_25_6.onLongPressed:AddListener(function()
+			if not var_25_5 then
+				arg_25_0:emit(WorldFleetSelectMediator.OnSelectShip, arg_25_2, var_25_1, iter_25_3)
 			else
-				local var_27_2 = arg_25_0
-				local var_27_3 = var_0.emit
-
-				WorldFleetSelectMediator = var_2_10003
-
-				var_27_3(var_27_2, var_2_10003.OnShipDetail, {
-					shipId = var_25_6.id,
+				arg_25_0:emit(WorldFleetSelectMediator.OnShipDetail, {
+					shipId = var_25_5.id,
 					shipVOs = var_25_2
 				})
 			end
@@ -988,187 +421,102 @@ function var_0_1.UpdateShips(arg_25_0, arg_25_1, arg_25_2, arg_25_3)
 	return
 end
 
-function var_0_1.setCommanderPrefabs(arg_28_0, arg_28_1)
+function var_0_0.setCommanderPrefabs(arg_28_0, arg_28_1)
 	arg_28_0.commanderPrefabs = arg_28_1
 
 	return
 end
 
-function var_0_1.openCommanderPanel(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
-	local var_29_0 = arg_29_0.levelCMDFormationView
+function var_0_0.openCommanderPanel(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+	arg_29_0.levelCMDFormationView:setCallback(function(arg_30_0)
+		if arg_30_0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
+			arg_29_0:emit(WorldFleetSelectMediator.OnCommanderSkill, arg_30_0.skill)
+		elseif arg_30_0.type == LevelUIConst.COMMANDER_OP_ADD then
+			arg_29_0.contextData.eliteCommanderSelected = {
+				fleetType = arg_29_2,
+				fleetIndex = arg_29_3,
+				pos = arg_30_0.pos
+			}
 
-	var_4.setCallback(var_29_0, function(arg_30_0)
-		local var_30_0 = arg_30_0.type
-
-		LevelUIConst = var_2_10002
-
-		if var_30_0 == var_2_10002.COMMANDER_OP_SHOW_SKILL then
-			local var_30_1 = arg_29_0
-			local var_30_2 = var_1.emit
-
-			WorldFleetSelectMediator = var_2_10004
-
-			var_30_2(var_30_1, var_2_10004.OnCommanderSkill, arg_30_0.skill)
+			arg_29_0:emit(WorldFleetSelectMediator.OnSelectEliteCommander, arg_29_2, arg_29_3, arg_30_0.pos)
+			arg_29_0:closeCommanderPanel()
 		else
-			local var_30_3 = arg_30_0.type
-
-			LevelUIConst = var_2
-
-			if var_30_3 == var_2.COMMANDER_OP_ADD then
-				arg_29_0.contextData.eliteCommanderSelected = {
-					fleetType = arg_29_2,
-					fleetIndex = arg_29_3,
-					pos = arg_30_0.pos
-				}
-
-				local var_30_4 = arg_29_0
-				local var_30_5 = var_1.emit
-
-				WorldFleetSelectMediator = var_2_10004
-
-				var_30_5(var_30_4, var_2_10004.OnSelectEliteCommander, arg_29_2, arg_29_3, arg_30_0.pos)
-
-				local var_30_6 = arg_29_0
-
-				var_1.closeCommanderPanel(var_30_6)
-			else
-				local var_30_7 = arg_29_0
-				local var_30_8 = var_1.emit
-
-				WorldFleetSelectMediator = var_2_10004
-
-				local var_30_9 = var_2_10004.OnCommanderFormationOp
-				local var_30_10 = {}
-
-				LevelUIConst = var_2_10006
-				var_30_10.FleetType = var_2_10006.FLEET_TYPE_WORLD
-				var_30_10.data = arg_30_0
-				var_30_10.fleets = arg_29_0.contextData.fleets
-				var_30_10.fleetType = arg_29_2
-				var_30_10.fleetIndex = arg_29_3
-
-				var_30_8(var_30_7, var_30_9, var_30_10)
-			end
+			arg_29_0:emit(WorldFleetSelectMediator.OnCommanderFormationOp, {
+				FleetType = LevelUIConst.FLEET_TYPE_WORLD,
+				data = arg_30_0,
+				fleets = arg_29_0.contextData.fleets,
+				fleetType = arg_29_2,
+				fleetIndex = arg_29_3
+			})
 		end
 
 		return
 	end)
-
-	local var_29_1 = arg_29_0.levelCMDFormationView
-
-	var_4.Load(var_29_1)
-
-	local var_29_2 = arg_29_0.levelCMDFormationView
-
-	var_4.ActionInvoke(var_29_2, "update", arg_29_1, arg_29_0.commanderPrefabs)
-
-	local var_29_3 = arg_29_0.levelCMDFormationView
-
-	var_4.ActionInvoke(var_29_3, "Show")
+	arg_29_0.levelCMDFormationView:Load()
+	arg_29_0.levelCMDFormationView:ActionInvoke("update", arg_29_1, arg_29_0.commanderPrefabs)
+	arg_29_0.levelCMDFormationView:ActionInvoke("Show")
 
 	return
 end
 
-function var_0_1.closeCommanderPanel(arg_31_0)
-	local var_31_0 = arg_31_0.levelCMDFormationView
-
-	var_1.ActionInvoke(var_31_0, "Hide")
+function var_0_0.closeCommanderPanel(arg_31_0)
+	arg_31_0.levelCMDFormationView:ActionInvoke("Hide")
 
 	return
 end
 
-function var_0_1.updateCommanderFleet(arg_32_0, arg_32_1)
-	local var_32_0 = arg_32_0.levelCMDFormationView
-
-	if var_2.isShowing(var_32_0) then
-		local var_32_1 = arg_32_0.levelCMDFormationView
-
-		var_2.ActionInvoke(var_32_1, "updateFleet", arg_32_1)
+function var_0_0.updateCommanderFleet(arg_32_0, arg_32_1)
+	if arg_32_0.levelCMDFormationView:isShowing() then
+		arg_32_0.levelCMDFormationView:ActionInvoke("updateFleet", arg_32_1)
 	end
 
 	return
 end
 
-function var_0_1.updateCommanderPrefab(arg_33_0)
-	local var_33_0 = arg_33_0.levelCMDFormationView
-
-	if var_1.isShowing(var_33_0) then
-		local var_33_1 = arg_33_0.levelCMDFormationView
-
-		var_1.ActionInvoke(var_33_1, "updatePrefabs", arg_33_0.commanderPrefabs)
+function var_0_0.updateCommanderPrefab(arg_33_0)
+	if arg_33_0.levelCMDFormationView:isShowing() then
+		arg_33_0.levelCMDFormationView:ActionInvoke("updatePrefabs", arg_33_0.commanderPrefabs)
 	end
 
 	return
 end
 
-function var_0_1.buildCommanderPanel(arg_34_0)
-	LevelCMDFormationView = var_1_10001
-	arg_34_0.levelCMDFormationView = var_1_10001.New(arg_34_0._tf, arg_34_0.event, arg_34_0.contextData)
+function var_0_0.buildCommanderPanel(arg_34_0)
+	arg_34_0.levelCMDFormationView = LevelCMDFormationView.New(arg_34_0._tf, arg_34_0.event, arg_34_0.contextData)
 
 	return
 end
 
-function var_0_1.destroyCommanderPanel(arg_35_0)
-	local var_35_0 = arg_35_0.levelCMDFormationView
-
-	var_1.Destroy(var_35_0)
+function var_0_0.destroyCommanderPanel(arg_35_0)
+	arg_35_0.levelCMDFormationView:Destroy()
 
 	arg_35_0.levelCMDFormationView = nil
 
 	return
 end
 
-function var_0_1.CheckValid(arg_36_0)
-	pairs = var_1_10001
+function var_0_0.CheckValid(arg_36_0)
+	for iter_36_0, iter_36_1 in pairs(arg_36_0.contextData.fleets) do
+		if iter_36_0 == FleetType.Normal then
+			for iter_36_2, iter_36_3 in ipairs(iter_36_1) do
+				if arg_36_0:GetTeamShipCount(iter_36_3[TeamType.Main]) == 0 or arg_36_0:GetTeamShipCount(iter_36_3[TeamType.Vanguard]) == 0 then
+					local var_36_1 = i18n("world_fleet_formation_not_valid", Fleet.DEFAULT_NAME[iter_36_2])
 
-	for iter_36_0, iter_36_1 in var_1_10001(arg_36_0.contextData.fleets) do
-		FleetType = var_1_10006
-
-		if iter_36_0 == var_1_10006.Normal then
-			ipairs = var_1_10006
-
-			for iter_36_2, iter_36_3 in var_1_10006(iter_36_1) do
-				local var_36_0 = arg_36_0
-				local var_36_1 = arg_36_0.GetTeamShipCount
-
-				TeamType = var_1_10014
-
-				if var_36_1(var_36_0, iter_36_3[var_1_10014.Main]) ~= 0 then
-					local var_36_2 = arg_36_0
-					local var_36_3 = arg_36_0.GetTeamShipCount
-
-					TeamType = var_1_10014
-
-					if var_36_3(var_36_2, iter_36_3[var_1_10014.Vanguard]) == 0 then
-						local var_36_4 = false
-
-						i18n = var_1_10012
-						var_1_10014 = "world_fleet_formation_not_valid"
-						Fleet = var_1_10015
-						var_1_10012 = var_1_10012(var_1_10014, var_1_10015.DEFAULT_NAME[iter_36_2])
-
-						return
-					end
+					return
 				end
 			end
 		end
 	end
 
-	local var_36_5, var_36_6 = arg_36_0:IsPropertyLimitationSatisfy()
-	local var_36_7 = 1
+	local var_36_2, var_36_3 = arg_36_0:IsPropertyLimitationSatisfy()
+	local var_36_4 = 1
 
-	ipairs = iter_36_0
-
-	for iter_36_4, iter_36_5 in iter_36_0(var_36_5) do
-		var_36_7 = var_36_7 * iter_36_5
+	for iter_36_4, iter_36_5 in ipairs(var_36_2) do
+		var_36_4 = var_36_4 * iter_36_5
 	end
 
-	if var_36_7 ~= 1 then
-		local var_36_8 = false
-
-		i18n = var_5
-
-		local var_36_9 = var_5("elite_disable_property_unsatisfied")
+	if var_36_4 ~= 1 then
+		local var_36_6 = i18n("elite_disable_property_unsatisfied")
 
 		return
 	end
@@ -1176,7 +524,7 @@ function var_0_1.CheckValid(arg_36_0)
 	return true
 end
 
-function var_0_1.GetTeamShipCount(arg_37_0, arg_37_1)
+function var_0_0.GetTeamShipCount(arg_37_0, arg_37_1)
 	local var_37_0 = 0
 
 	for iter_37_0 = 1, 3 do
@@ -1188,68 +536,47 @@ function var_0_1.GetTeamShipCount(arg_37_0, arg_37_1)
 	return var_37_0
 end
 
-function var_0_1.RecommendFormation(arg_38_0, arg_38_1, arg_38_2)
-	local var_38_0 = {}
-
-	FleetType = var_1_10004
-
-	local var_38_1 = var_1_10004.Normal
-	local var_38_2 = {}
-
-	TeamType = var_1_10006
-	var_38_2[1] = var_1_10006.Main
-	TeamType = var_6
-	var_38_2[2] = var_6.Vanguard
-	var_38_0[var_38_1] = var_38_2
-	FleetType = var_38_1
-
-	local var_38_3 = var_38_1.Submarine
-	local var_38_4 = {}
-
-	TeamType = var_6
-	var_38_4[1] = var_6.Submarine
-	var_38_0[var_38_3] = var_38_4
-
-	local var_38_5 = {}
-
-	pairs = var_38_4
-
-	for iter_38_0, iter_38_1 in var_38_4(arg_38_0.contextData.fleets) do
-		ipairs = var_1_10010
-
-		for iter_38_2, iter_38_3 in var_1_10010(iter_38_1) do
-			ipairs = var_1_10015
-
-			for iter_38_4, iter_38_5 in var_1_10015(var_38_0[iter_38_0]) do
+function var_0_0.RecommendFormation(arg_38_0, arg_38_1, arg_38_2)
+	for iter_38_0, iter_38_1 in pairs(arg_38_0.contextData.fleets) do
+		for iter_38_2, iter_38_3 in ipairs(iter_38_1) do
+			for iter_38_4, iter_38_5 in ipairs(({
+				[FleetType.Normal] = {
+					TeamType.Main,
+					TeamType.Vanguard
+				},
+				[FleetType.Submarine] = {
+					TeamType.Submarine
+				}
+			})[iter_38_0]) do
 				for iter_38_6 = 1, 3 do
 					if iter_38_3[iter_38_5][iter_38_6] then
-						table = var_1_10025
-
-						var_1_10025.insert(var_38_5, var_24)
+						table.insert({}, iter_38_3[iter_38_5][iter_38_6])
 					end
 				end
 			end
 		end
 	end
 
-	local var_38_6 = arg_38_0.contextData.fleets[arg_38_1][arg_38_2]
+	local var_38_0 = getProxy(BayProxy)
 
-	getProxy = var_6
-	BayProxy = iter_38_0
-
-	local var_38_7 = var_6(iter_38_0)
-
-	ipairs = var_7
-
-	for iter_38_7, iter_38_8 in var_7(var_38_0[arg_38_1]) do
+	for iter_38_7, iter_38_8 in ipairs(({
+		[FleetType.Normal] = {
+			TeamType.Main,
+			TeamType.Vanguard
+		},
+		[FleetType.Submarine] = {
+			TeamType.Submarine
+		}
+	})[arg_38_1]) do
 		for iter_38_9 = 1, 3 do
-			if not var_38_6[iter_38_8][iter_38_9] and var_38_7:getWorldRecommendShip(iter_38_8, var_38_5) then
-				local var_38_8 = var_38_6[iter_38_8]
+			if not arg_38_0.contextData.fleets[arg_38_1][arg_38_2][iter_38_8][iter_38_9] then
+				local var_38_1 = var_38_0:getWorldRecommendShip(iter_38_8, {})
 
-				var_38_8[iter_38_9] = var_16.id
-				table = var_38_8
+				if var_38_1 then
+					arg_38_0.contextData.fleets[arg_38_1][arg_38_2][iter_38_8][iter_38_9] = var_38_1.id
 
-				var_38_8.insert(var_38_5, var_16.id)
+					table.insert({}, var_38_1.id)
+				end
 			end
 		end
 	end
@@ -1257,98 +584,57 @@ function var_0_1.RecommendFormation(arg_38_0, arg_38_1, arg_38_2)
 	return
 end
 
-function var_0_1.CheckWorldResetAward(arg_39_0)
-	local var_39_0 = {}
+function var_0_0.CheckWorldResetAward(arg_39_0)
+	local var_39_0 = nowWorld()
+	local var_39_1 = var_39_0.resetAward
 
-	nowWorld = var_1_10002
-
-	if var_1_10002().resetAward and #var_3 > 0 then
-		pg = var_4
-
-		if #var_4.gameset.world_resetting_story.description[1] > 0 then
-			table = var_5
-
-			var_5.insert(var_39_0, function(arg_40_0)
-				pg = var_2_10001
-
-				local var_40_0 = var_2_10001.NewStoryMgr.GetInstance()
-
-				var_1.Play(var_40_0, var_0, arg_40_0, true)
+	if var_39_0.resetAward and #var_39_0.resetAward > 0 then
+		if #pg.gameset.world_resetting_story.description[1] > 0 then
+			table.insert({}, function(arg_40_0)
+				pg.NewStoryMgr.GetInstance():Play(var_0, arg_40_0, true)
 
 				return
 			end)
 		end
 
-		table = var_5
-
-		var_5.insert(var_39_0, function(arg_41_0)
+		table.insert({}, function(arg_41_0)
 			local var_41_0
-			local var_41_1 = {
+
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
 				hideYes = true,
-				hideNo = true
-			}
+				hideNo = true,
+				type = MSGBOX_TYPE_WORLD_RESET,
+				itemFunc = function(arg_42_0)
+					arg_39_0:emit(var_0_0.ON_DROP, arg_42_0, function()
+						pg.MsgboxMgr.GetInstance():ShowMsgBox(var_41_0)
 
-			MSGBOX_TYPE_WORLD_RESET = var_2_10003
-			var_41_1.type = var_2_10003
-
-			function var_41_1.itemFunc(arg_42_0)
-				local var_42_0 = arg_39_0
-
-				var_1.emit(var_42_0, var_0_1.ON_DROP, arg_42_0, function()
-					pg = var_4_10000
-
-					local var_43_0 = var_4_10000.MsgboxMgr.GetInstance()
-
-					var_0.ShowMsgBox(var_43_0, var_41_0)
+						return
+					end)
 
 					return
-				end)
-
-				return
-			end
-
-			var_41_1.drops = var_0
-			i18n = var_3
-			var_41_1.tipWord = var_3("world_recycle_item_transform")
-			var_41_1.onNo = arg_41_0
-			var_41_0 = var_41_1
-			pg = var_41_1
-
-			local var_41_2 = var_41_1.MsgboxMgr.GetInstance()
-
-			var_2.ShowMsgBox(var_41_2, var_41_0)
+				end,
+				drops = var_39_1,
+				tipWord = i18n("world_recycle_item_transform"),
+				onNo = arg_41_0
+			})
 
 			return
 		end)
 	end
 
-	if var_2.resetLimitTip then
-		table = var_4
-
-		var_4.insert(var_39_0, function(arg_44_0)
-			pg = var_2_10001
-
-			local var_44_0 = var_2_10001.MsgboxMgr.GetInstance()
-			local var_44_1 = var_1.ShowMsgBox
-			local var_44_2 = {
-				hideNo = true
-			}
-
-			i18n = var_2_10005
-			var_44_2.content = var_2_10005("world_resource_fill")
-
-			var_44_1(var_44_0, var_44_2)
+	if var_39_0.resetLimitTip then
+		table.insert({}, function(arg_44_0)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				hideNo = true,
+				content = i18n("world_resource_fill")
+			})
 
 			return
 		end)
 	end
 
-	seriesAsync = var_4
-
-	var_4(var_39_0, function()
-		local var_45_0 = var_0
-
-		var_0.ClearResetAward(var_45_0)
+	seriesAsync({}, function()
+		var_39_0:ClearResetAward()
 
 		return
 	end)
@@ -1356,4 +642,4 @@ function var_0_1.CheckWorldResetAward(arg_39_0)
 	return
 end
 
-return var_0_1
+return var_0_0

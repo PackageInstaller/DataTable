@@ -1,21 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateRankMediator", import("view.newEducate.base.NewEducateContextMediator"))
 
-local var_0_0 = "NewEducateRankMediator"
+var_0_0.ON_GET_RANK = "NewEducateRankMediator.ON_GET_RANK"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.newEducate.base.NewEducateContextMediator"))
-
-var_0_1.ON_GET_RANK = "NewEducateRankMediator.ON_GET_RANK"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_GET_RANK, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_1(var_2_0, var_2_10006.NEW_EDUCATE_GET_RANK, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_GET_RANK, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.NEW_EDUCATE_GET_RANK, {
 			type = arg_2_1,
 			tbId = arg_2_2
 		})
@@ -26,29 +15,20 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	local var_3_0 = {}
-
-	GAME = var_1_10002
-	var_3_0[1] = var_1_10002.NEW_EDUCATE_GET_RANK_DONE
-
-	return var_3_0
+function var_0_0.listNotificationInterests(arg_3_0)
+	return {
+		GAME.NEW_EDUCATE_GET_RANK_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getName(var_4_0)
-	local var_4_2 = arg_4_1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getBody()
 
-	GAME = var_4_0
-
-	if var_4_1 == var_4_0.NEW_EDUCATE_GET_RANK_DONE then
-		local var_4_3 = arg_4_0.viewComponent
-
-		var_4.OnGetRankDone(var_4_3, var_4_2.type, var_4_2.tbId, var_4_2.list, var_4_2.playerInfo)
+	if arg_4_1:getName() == GAME.NEW_EDUCATE_GET_RANK_DONE then
+		arg_4_0.viewComponent:OnGetRankDone(var_4_0.type, var_4_0.tbId, var_4_0.list, var_4_0.playerInfo)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

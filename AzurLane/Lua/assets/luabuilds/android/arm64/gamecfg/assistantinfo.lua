@@ -1,11 +1,10 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
 
-local var_0_0
+local var_0_0 = pg
+local var_0_1 = {}
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.AssistantInfo = {}
-var_1.assistantEvents = {
+pg.AssistantInfo = {}
+;({}).assistantEvents = {
 	event_complete = {
 		action = "complete",
 		dialog = "expedition"
@@ -103,52 +102,30 @@ var_1.assistantEvents = {
 		dialog = "feeling5"
 	}
 }
-
-function var_1.GetShipTouchEvents(arg_1_0, arg_1_1)
+;({}).GetShipTouchEvents = function(arg_1_0, arg_1_1)
 	arg_1_1 = arg_1_1 or -1
 
-	local var_1_0 = var_0.GetShipMainEvents(arg_1_0, arg_1_1)
+	local var_1_0 = var_0_1.GetShipMainEvents(arg_1_0, arg_1_1)
 
-	table = var_1_10003
-
-	var_1_10003.insert(var_1_0, "TouchBody")
+	table.insert(var_1_0, "TouchBody")
 
 	return var_1_0
 end
-
-function var_1.GetShipMainEvents(arg_2_0, arg_2_1)
+;({}).GetShipMainEvents = function(arg_2_0, arg_2_1)
 	if not arg_2_0 then
 		return {}
 	end
 
 	local var_2_0 = {}
-	local var_2_1
-	local var_2_2 = var_0.ship_skin_template[arg_2_0].skin_type
-
-	ShipSkin = var_1_10005
-
-	if var_2_2 == var_1_10005.SKIN_TYPE_TB then
-		EducateCharWordHelper = var_2_2
-		var_2_2 = var_2_2.GetMainSceneWordCnt
-		NewEducateHelper = var_1_10006
-		var_2_1 = var_2_2(var_1_10006.GetSecIdBySkinId(arg_2_0))
-	else
-		ShipWordHelper = var_2_2
-		var_2_1 = var_2_2.GetMainSceneWordCnt(arg_2_0, arg_2_1)
-	end
+	local var_2_1 = var_0_0.ship_skin_template[arg_2_0].skin_type == ShipSkin.SKIN_TYPE_TB and EducateCharWordHelper.GetMainSceneWordCnt(NewEducateHelper.GetSecIdBySkinId(arg_2_0)) or ShipWordHelper.GetMainSceneWordCnt(arg_2_0, arg_2_1)
 
 	for iter_2_0 = 1, var_2_1 do
-		local var_2_3 = iter_2_0
-
-		table = var_1_10009
-
-		var_1_10009.insert(var_2_0, "main_" .. var_2_3)
+		table.insert(var_2_0, "main_" .. iter_2_0)
 	end
 
 	return var_2_0
 end
-
-function var_1.GetAssistantEvents(arg_3_0)
+;({}).GetAssistantEvents = function(arg_3_0)
 	local var_3_0 = arg_3_0:find("main_", 1, true)
 
 	if arg_3_0:find("main_", 1, true) == 1 then
@@ -158,10 +135,9 @@ function var_1.GetAssistantEvents(arg_3_0)
 		}
 	end
 
-	return var_0.assistantEvents[arg_3_0]
+	return var_0_1.assistantEvents[arg_3_0]
 end
-
-function var_1.GetAssistantEventsByDialog(arg_4_0)
+;({}).GetAssistantEventsByDialog = function(arg_4_0)
 	local var_4_0 = arg_4_0:find("main_", 1, true)
 
 	if arg_4_0:find("main_", 1, true) == 1 then
@@ -171,9 +147,7 @@ function var_1.GetAssistantEventsByDialog(arg_4_0)
 		}
 	end
 
-	pairs = var_2
-
-	for iter_4_0, iter_4_1 in var_2(var_0.assistantEvents) do
+	for iter_4_0, iter_4_1 in pairs(var_0_1.assistantEvents) do
 		if iter_4_1.dialog == arg_4_0 then
 			return iter_4_1
 		end
@@ -181,14 +155,13 @@ function var_1.GetAssistantEventsByDialog(arg_4_0)
 
 	return nil
 end
-
-var_1.assistantTouchParts = {
+;({}).assistantTouchParts = {
 	"TouchSpecial",
 	"TouchHead",
 	"TouchBody"
 }
-var_1.useNewTouchEventShip = {}
-var_1.action2Id = {
+;({}).useNewTouchEventShip = {}
+;({}).action2Id = {
 	touch_drag19 = 120,
 	touch_idle52 = 253,
 	touch_drag39 = 140,
@@ -373,7 +346,7 @@ var_1.action2Id = {
 	login = 6,
 	touch_head = 12
 }
-var_1.action2Words = {
+;({}).action2Words = {
 	"main1",
 	"main2",
 	"main3",
@@ -386,10 +359,10 @@ var_1.action2Words = {
 	"touch",
 	"headtouch"
 }
-var_1.idleActions = {
-	var_1.action2Id.idle
+;({}).idleActions = {
+	({}).action2Id.idle
 }
-var_1.PaintingTouchParts = {
+;({}).PaintingTouchParts = {
 	["3"] = "TouchHead",
 	["22"] = "TouchBody",
 	["33"] = "TouchHead",
@@ -397,81 +370,58 @@ var_1.PaintingTouchParts = {
 	["1"] = "TouchSpecial",
 	["11"] = "TouchSpecial"
 }
-
-function var_1.enable()
-	HXSet = var_1_10000
-
-	return var_1_10000.isHx()
+;({}).enable = function()
+	return HXSet.isHx()
 end
-
-function var_1.getAssistantTouchEvents(arg_6_0, arg_6_1)
-	if var_0.enable() and var_0.assistantTouchParts[arg_6_0] == "TouchSpecial" then
+;({}).getAssistantTouchEvents = function(arg_6_0, arg_6_1)
+	if var_0_1.enable() and var_0_1.assistantTouchParts[arg_6_0] == "TouchSpecial" then
 		arg_6_0 = 3
 	end
 
 	local var_6_0 = {}
 
 	if arg_6_0 == 3 then
-		var_6_0 = var_0.GetShipTouchEvents(arg_6_1, -1)
+		var_6_0 = var_0_1.GetShipTouchEvents(arg_6_1, -1)
 	else
-		table = var_1_10003
-
-		var_1_10003.insert(var_6_0, var_0.assistantTouchParts[arg_6_0])
+		table.insert(var_6_0, var_0_1.assistantTouchParts[arg_6_0])
 	end
 
 	return var_6_0
 end
-
-function var_1.getPaintingTouchEvents(arg_7_0)
-	if var_0.enable() and var_0.PaintingTouchParts[arg_7_0] == "TouchSpecial" then
+;({}).getPaintingTouchEvents = function(arg_7_0)
+	if var_0_1.enable() and var_0_1.PaintingTouchParts[arg_7_0] == "TouchSpecial" then
 		arg_7_0 = "2"
 	end
 
-	return var_0.PaintingTouchParts[arg_7_0]
+	return var_0_1.PaintingTouchParts[arg_7_0]
 end
-
-function var_1.isDisableSpecialClick(arg_8_0)
-	if var_0.enable() and arg_8_0 == "touch2" then
+;({}).isDisableSpecialClick = function(arg_8_0)
+	if var_0_1.enable() and arg_8_0 == "touch2" then
 		return true
 	end
 
 	return false
 end
-
-function var_1.filterAssistantEvents(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = {}
-
+;({}).filterAssistantEvents = function(arg_9_0, arg_9_1, arg_9_2)
 	arg_9_2 = arg_9_2 or 0
-	ShipWordHelper = var_1_10004
 
-	local var_9_1 = var_1_10004.GetMainSceneWordCnt(arg_9_1, arg_9_2)
+	local var_9_0 = ShipWordHelper.GetMainSceneWordCnt(arg_9_1, arg_9_2)
 
-	ipairs = var_1_10005
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0) do
+		local var_9_1 = string.split(var_0_1.GetAssistantEvents(iter_9_1).dialog, "_")
 
-	for iter_9_0, iter_9_1 in var_1_10005(arg_9_0) do
-		local var_9_2 = var_0.GetAssistantEvents(iter_9_1).dialog
-
-		string = var_12
-
-		if var_12.split(var_9_2, "_")[1] == "main" then
-			tonumber = var_13
-
-			if var_13(var_12[2]) <= var_9_1 then
-				table = var_14
-
-				var_14.insert(var_9_0, iter_9_1)
+		if var_9_1[1] == "main" then
+			if var_9_0 >= tonumber(var_9_1[2]) then
+				table.insert({}, iter_9_1)
 			end
 		else
-			table = var_13
-
-			var_13.insert(var_9_0, iter_9_1)
+			table.insert({}, iter_9_1)
 		end
 	end
 
-	return var_9_0
+	return {}
 end
-
-var_1.Expressions = {
+;({}).Expressions = {
 	dunkeerke = {
 		faces = {
 			mission_complete = "1",
@@ -2262,59 +2212,33 @@ var_1.Expressions = {
 		}
 	}
 }
-
-function var_1.GetCvList()
-	local var_10_0 = {}
-
-	ipairs = var_1_10001
-
-	for iter_10_0, iter_10_1 in var_1_10001(var_0.action2Words) do
-		if var_0.character_voice[iter_10_1] and not var_0.AssistantInfo.isDisableSpecialClick(iter_10_1) and var_6.unlock_condition[1] >= 0 then
-			table = var_7
-
-			var_7.insert(var_10_0, var_6)
+;({}).GetCvList = function()
+	for iter_10_0, iter_10_1 in ipairs(var_0_1.action2Words) do
+		if var_0_0.character_voice[iter_10_1] and not var_0_0.AssistantInfo.isDisableSpecialClick(iter_10_1) and var_0_0.character_voice[iter_10_1].unlock_condition[1] >= 0 then
+			table.insert({}, var_0_0.character_voice[iter_10_1])
 		end
 	end
 
-	return var_10_0
+	return {}
 end
-
-function var_1.GetCVListForProfile(arg_11_0, arg_11_1)
-	local var_11_0 = {}
-
-	ipairs = var_1_10003
-
-	for iter_11_0, iter_11_1 in var_1_10003(var_0.character_voice.all) do
-		local var_11_1 = var_0.character_voice[iter_11_1]
-
-		if not var_0.AssistantInfo.isDisableSpecialClick(iter_11_1) then
-			local var_11_2 = var_11_1.unlock_condition[1]
-
-			if 0 <= var_11_2 and var_11_1.l2d_action ~= "" then
-				if var_11_1.l2d_action == "get" then
-					PaintingShowScene = var_9
-
-					if var_9.GetSkinShowAble(arg_11_1) then
-						table = var_10
-
-						var_10.insert(var_11_0, var_11_1)
-					end
-				elseif var_11_1.sp_trans_l2d == 1 then
-					if arg_11_0 then
-						table = var_9
-
-						var_9.insert(var_11_0, var_11_1)
-					end
-				elseif var_11_1.sp_trans_l2d == 0 or not var_11_1.sp_trans_l2d then
-					table = var_9
-
-					var_9.insert(var_11_0, var_11_1)
+;({}).GetCVListForProfile = function(arg_11_0, arg_11_1)
+	for iter_11_0, iter_11_1 in ipairs(var_0_0.character_voice.all) do
+		if not var_0_0.AssistantInfo.isDisableSpecialClick(iter_11_1) and var_0_0.character_voice[iter_11_1].unlock_condition[1] >= 0 and var_0_0.character_voice[iter_11_1].l2d_action ~= "" then
+			if var_0_0.character_voice[iter_11_1].l2d_action == "get" then
+				if PaintingShowScene.GetSkinShowAble(arg_11_1) then
+					table.insert({}, var_0_0.character_voice[iter_11_1])
 				end
+			elseif var_0_0.character_voice[iter_11_1].sp_trans_l2d == 1 then
+				if arg_11_0 then
+					table.insert({}, var_0_0.character_voice[iter_11_1])
+				end
+			elseif var_0_0.character_voice[iter_11_1].sp_trans_l2d == 0 or not var_0_0.character_voice[iter_11_1].sp_trans_l2d then
+				table.insert({}, var_0_0.character_voice[iter_11_1])
 			end
 		end
 	end
 
-	return var_11_0
+	return {}
 end
 
 return

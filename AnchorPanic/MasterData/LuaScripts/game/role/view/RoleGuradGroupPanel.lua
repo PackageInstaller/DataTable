@@ -83,10 +83,14 @@ function deActive(self)
     local state = mainui.MainUIManager:getIsShowDynamic()
     if self.mToggleSpine.isOn then
         if state == 0 then
-
+            self.isChangeType = true
         end
         mainui.MainUIManager:setIsShowDynamic(1)
     else
+
+        if state == 1 then
+            self.isChangeType = true
+        end
         mainui.MainUIManager:setIsShowDynamic(0)
     end
 
@@ -113,10 +117,14 @@ function changeShowBoard(self)
     if self.isChangeType then
         -- 切换是否动态立绘直接重新设置
         local groupData = role.RoleManager:getHeroGroup()
-        for i = 1, 6 do
-            local heroId = groupData[tostring(i)]
-            if heroId then
-                GameDispatcher:dispatchEvent(EventName.REQ_CHANGE_SHOW_BOARD_HERO, { heroId = heroId })
+        for i = 1, 12 do
+            local selectId = groupData[tostring(i)]
+            if selectId then
+                local guradType, id = role.RoleManager:getGuradTypeAndId(selectId)
+                if guradType == role.GuradType.Gurad_hero then
+                    GameDispatcher:dispatchEvent(EventName.REQ_CHANGE_SHOW_BOARD_HERO, { heroId = tonumber(id) })
+                end
+                role.RoleManager:setMainUISpineTypeAndId(guradType, id)
                 self.isChangeType = false
                 break
             end
@@ -130,7 +138,6 @@ function toggleSpine(self)
     local type = self.mToggleSpine.isOn and 1 or 0
     role.RoleManager:setHeroGroupShowSpine(type)
 
-    self.isChangeType = true
     self:updateHeroItem()
 end
 
@@ -141,18 +148,25 @@ end
 
 function updateView(self)
     self:updateHeroItem()
+    self:updateHeroFashionState()
 end
 
 function updateHeroItem(self)
     self:recoverHeroItem()
     local groupData = role.RoleManager:getHeroGroup()
-    for i = 1, 6 do
+    for i = 1, 12 do
         local item = SimpleInsItem:create(self:getChildGO("GroupHeroItem"), self.mGroupTran, "RoleGuradGroupPanelGroupHeroItem")
         item:getChildGO("mImgHero"):GetComponent(ty.AutoRefImage)
-        local heroId = groupData[tostring(i)]
-        if heroId then
-            local heroVo = hero.HeroManager:getHeroVo(heroId)
-            item:getChildGO("mImgHero"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getHeroBodyImgUrl(heroVo:getHeroModel()))
+        local selectId = groupData[tostring(i)]
+        if selectId then
+            local guradType, id = role.RoleManager:getGuradTypeAndId(selectId)
+            if guradType == role.GuradType.Gurad_hero then
+                local heroVo = hero.HeroManager:getHeroVo(tonumber(id))
+                item:getChildGO("mImgHero"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getHeroBodyImgUrl(heroVo:getHeroModel()))
+            else
+                local paintingData = purchase.FashionShopManager:getPaintingDataById(tonumber(id))
+                item:getChildGO("mImgHero"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPaintingIconPath(paintingData.icon))
+            end
             item:getChildGO("mImgHeroBg"):SetActive(true)
         else
             item:getChildGO("mImgHeroBg"):SetActive(false)
@@ -164,7 +178,7 @@ function updateHeroItem(self)
             if not self.mToggleFashion.isOn then
                 self.mSelectIndex = i
                 local id = groupData[tostring(self.mSelectIndex)]
-                GameDispatcher:dispatchEvent(EventName.OPEN_HERO_GROUP_SELECT_VIEW, { heroId = id })
+                GameDispatcher:dispatchEvent(EventName.OPEN_HERO_GROUP_SELECT_VIEW, { selectId = id })
             else
                 -- gs.Message.Show("请先关闭换装设置")
                 gs.Message.Show(_TT(41744))
@@ -173,7 +187,7 @@ function updateHeroItem(self)
         item:addUIEvent("mBtnFashion", function()
             self.mSelectIndex = i
             local id = groupData[tostring(self.mSelectIndex)]
-            GameDispatcher:dispatchEvent(EventName.OPEN_HERO_GROUP_FASHION_VIEW, { heroId = id })
+            GameDispatcher:dispatchEvent(EventName.OPEN_HERO_GROUP_FASHION_VIEW, { selectId = id })
         end)
         table.insert(self.mHeroItemList, item)
     end
@@ -182,9 +196,14 @@ end
 function updateHeroFashionState(self)
     local groupData = role.RoleManager:getHeroGroup()
     for k, item in pairs(self.mHeroItemList) do
-        local heroId = groupData[tostring(k)]
-        if heroId and heroId > 0 then
-            item:getChildGO("mImgFashion"):SetActive(self.mToggleFashion.isOn)
+        local selectId = groupData[tostring(k)]
+        if selectId and selectId ~= "" then
+            local guradType, id = role.RoleManager:getGuradTypeAndId(selectId)
+            if guradType == role.GuradType.Gurad_hero then
+                item:getChildGO("mImgFashion"):SetActive(self.mToggleFashion.isOn)
+            else
+                item:getChildGO("mImgFashion"):SetActive(false)
+            end
         else
             item:getChildGO("mImgFashion"):SetActive(false)
         end
@@ -201,25 +220,26 @@ function recoverHeroItem(self)
 end
 
 function onHeroGroupSelectOne(self, args)
-    local heroId = args.heroId
+    local selectId = args.selectId
 
     local groupData = role.RoleManager:getHeroGroup()
 
     for k, v in pairs(groupData) do
-        if tonumber(k) ~= self.mSelectIndex and v == heroId then
+        if tonumber(k) ~= self.mSelectIndex and v == selectId then
             -- 把相同的换过来
             local id = groupData[tostring(self.mSelectIndex)]
             groupData[k] = id
         end
-        if tonumber(k) == self.mSelectIndex and v == heroId then
+        if tonumber(k) == self.mSelectIndex and v == selectId then
             -- 同位置同战员则取消
-            heroId = nil
+            selectId = nil
         end
     end
-    groupData[tostring(self.mSelectIndex)] = heroId
+    groupData[tostring(self.mSelectIndex)] = selectId
     role.RoleManager:setHeroGroup(groupData)
     self:updateHeroItem()
 end
+
 
 return _M
 

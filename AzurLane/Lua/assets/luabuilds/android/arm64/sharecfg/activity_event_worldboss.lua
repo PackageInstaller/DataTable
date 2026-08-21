@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_worldboss") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_worldboss"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_worldboss = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_worldboss
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_worldboss = rawget(pg, "activity_event_worldboss") or setmetatable({
+	__name = "activity_event_worldboss"
+}, confNEO)
+pg.activity_event_worldboss.all = {
 	1,
 	2,
 	3,
@@ -41,25 +18,11 @@ var_0_3.all = {
 	13,
 	14
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_worldboss = {}
+pg.base = pg.base or {}
+pg.base.activity_event_worldboss = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_worldboss
-
-	var_1_0[1] = {
+	pg.base.activity_event_worldboss[1] = {
 		group_num = 1,
 		submarine_num = 1,
 		expedition_both_buff = "",
@@ -213,11 +176,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_worldboss
-
-	var_1_1[2] = {
+	pg.base.activity_event_worldboss[2] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -320,11 +279,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_worldboss
-
-	var_1_2[3] = {
+	pg.base.activity_event_worldboss[3] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -427,11 +382,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_worldboss
-
-	var_1_3[4] = {
+	pg.base.activity_event_worldboss[4] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -534,11 +485,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_worldboss
-
-	var_1_4[5] = {
+	pg.base.activity_event_worldboss[5] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -641,11 +588,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_worldboss
-
-	var_1_5[6] = {
+	pg.base.activity_event_worldboss[6] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -748,11 +691,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_worldboss
-
-	var_1_6[7] = {
+	pg.base.activity_event_worldboss[7] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -855,11 +794,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_worldboss
-
-	var_1_7[8] = {
+	pg.base.activity_event_worldboss[8] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -963,11 +898,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_worldboss
-
-	var_1_8[9] = {
+	pg.base.activity_event_worldboss[9] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -1070,11 +1001,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_worldboss
-
-	var_1_9[10] = {
+	pg.base.activity_event_worldboss[10] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -1177,11 +1104,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_event_worldboss
-
-	var_1_10[11] = {
+	pg.base.activity_event_worldboss[11] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -1284,11 +1207,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_event_worldboss
-
-	var_1_11[12] = {
+	pg.base.activity_event_worldboss[12] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -1391,11 +1310,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_event_worldboss
-
-	var_1_12[13] = {
+	pg.base.activity_event_worldboss[13] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",
@@ -1498,8 +1413,7 @@ var_0_3.base.activity_event_worldboss = {}
 			}
 		}
 	}
-	pg = var_1_12
-	var_1_12.base.activity_event_worldboss[14] = {
+	pg.base.activity_event_worldboss[14] = {
 		group_num = 1,
 		submarine_num = 1,
 		time = "stop",

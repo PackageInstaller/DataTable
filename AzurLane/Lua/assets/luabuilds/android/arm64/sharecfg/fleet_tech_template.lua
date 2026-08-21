@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "fleet_tech_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "fleet_tech_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.fleet_tech_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.fleet_tech_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.fleet_tech_template = rawget(pg, "fleet_tech_template") or setmetatable({
+	__name = "fleet_tech_template"
+}, confNEO)
+pg.fleet_tech_template.all = {
 	1001,
 	1002,
 	1003,
@@ -63,25 +40,11 @@ var_0_3.all = {
 	4008,
 	4009
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.fleet_tech_template = {}
+pg.base = pg.base or {}
+pg.base.fleet_tech_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.fleet_tech_template
-
-	var_1_0[1001] = {
+	pg.base.fleet_tech_template[1001] = {
 		cost = 1000,
 		time = 1800,
 		groupid = 1,
@@ -130,11 +93,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.fleet_tech_template
-
-	var_1_1[1002] = {
+	pg.base.fleet_tech_template[1002] = {
 		cost = 1200,
 		time = 3600,
 		groupid = 1,
@@ -239,11 +198,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.fleet_tech_template
-
-	var_1_2[1003] = {
+	pg.base.fleet_tech_template[1003] = {
 		cost = 1500,
 		time = 7200,
 		groupid = 1,
@@ -386,11 +341,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.fleet_tech_template
-
-	var_1_3[1004] = {
+	pg.base.fleet_tech_template[1004] = {
 		cost = 3000,
 		time = 14400,
 		groupid = 1,
@@ -533,11 +484,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.fleet_tech_template
-
-	var_1_4[1005] = {
+	pg.base.fleet_tech_template[1005] = {
 		cost = 4000,
 		time = 21600,
 		groupid = 1,
@@ -680,11 +627,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.fleet_tech_template
-
-	var_1_5[1006] = {
+	pg.base.fleet_tech_template[1006] = {
 		cost = 5000,
 		time = 28800,
 		groupid = 1,
@@ -827,11 +770,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.fleet_tech_template
-
-	var_1_6[1007] = {
+	pg.base.fleet_tech_template[1007] = {
 		cost = 10000,
 		time = 50400,
 		groupid = 1,
@@ -974,11 +913,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.fleet_tech_template
-
-	var_1_7[1008] = {
+	pg.base.fleet_tech_template[1008] = {
 		cost = 12000,
 		time = 68400,
 		groupid = 1,
@@ -1121,11 +1056,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.fleet_tech_template
-
-	var_1_8[1009] = {
+	pg.base.fleet_tech_template[1009] = {
 		cost = 15000,
 		time = 86400,
 		groupid = 1,
@@ -1268,11 +1199,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.fleet_tech_template
-
-	var_1_9[2001] = {
+	pg.base.fleet_tech_template[2001] = {
 		cost = 1000,
 		time = 1800,
 		groupid = 2,
@@ -1327,11 +1254,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.fleet_tech_template
-
-	var_1_10[2002] = {
+	pg.base.fleet_tech_template[2002] = {
 		cost = 1200,
 		time = 3600,
 		groupid = 2,
@@ -1433,11 +1356,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.fleet_tech_template
-
-	var_1_11[2003] = {
+	pg.base.fleet_tech_template[2003] = {
 		cost = 1500,
 		time = 7200,
 		groupid = 2,
@@ -1561,11 +1480,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.fleet_tech_template
-
-	var_1_12[2004] = {
+	pg.base.fleet_tech_template[2004] = {
 		cost = 3000,
 		time = 14400,
 		groupid = 2,
@@ -1689,11 +1604,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.fleet_tech_template
-
-	var_1_13[2005] = {
+	pg.base.fleet_tech_template[2005] = {
 		cost = 4000,
 		time = 21600,
 		groupid = 2,
@@ -1817,11 +1728,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.fleet_tech_template
-
-	var_1_14[2006] = {
+	pg.base.fleet_tech_template[2006] = {
 		cost = 5000,
 		time = 28800,
 		groupid = 2,
@@ -1945,11 +1852,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.fleet_tech_template
-
-	var_1_15[2007] = {
+	pg.base.fleet_tech_template[2007] = {
 		cost = 10000,
 		time = 50400,
 		groupid = 2,
@@ -2073,11 +1976,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.fleet_tech_template
-
-	var_1_16[2008] = {
+	pg.base.fleet_tech_template[2008] = {
 		cost = 12000,
 		time = 68400,
 		groupid = 2,
@@ -2201,11 +2100,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.fleet_tech_template
-
-	var_1_17[2009] = {
+	pg.base.fleet_tech_template[2009] = {
 		cost = 15000,
 		time = 86400,
 		groupid = 2,
@@ -2329,11 +2224,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.fleet_tech_template
-
-	var_1_18[3001] = {
+	pg.base.fleet_tech_template[3001] = {
 		cost = 1000,
 		time = 1800,
 		groupid = 3,
@@ -2390,11 +2281,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.fleet_tech_template
-
-	var_1_19[3002] = {
+	pg.base.fleet_tech_template[3002] = {
 		cost = 1200,
 		time = 3600,
 		groupid = 3,
@@ -2481,11 +2368,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.fleet_tech_template
-
-	var_1_20[3003] = {
+	pg.base.fleet_tech_template[3003] = {
 		cost = 1500,
 		time = 7200,
 		groupid = 3,
@@ -2596,11 +2479,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.fleet_tech_template
-
-	var_1_21[3004] = {
+	pg.base.fleet_tech_template[3004] = {
 		cost = 3000,
 		time = 14400,
 		groupid = 3,
@@ -2711,11 +2590,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.fleet_tech_template
-
-	var_1_22[3005] = {
+	pg.base.fleet_tech_template[3005] = {
 		cost = 4000,
 		time = 21600,
 		groupid = 3,
@@ -2826,11 +2701,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.fleet_tech_template
-
-	var_1_23[3006] = {
+	pg.base.fleet_tech_template[3006] = {
 		cost = 5000,
 		time = 28800,
 		groupid = 3,
@@ -2941,11 +2812,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.fleet_tech_template
-
-	var_1_24[3007] = {
+	pg.base.fleet_tech_template[3007] = {
 		cost = 10000,
 		time = 50400,
 		groupid = 3,
@@ -3056,11 +2923,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.fleet_tech_template
-
-	var_1_25[3008] = {
+	pg.base.fleet_tech_template[3008] = {
 		cost = 12000,
 		time = 68400,
 		groupid = 3,
@@ -3171,11 +3034,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.fleet_tech_template
-
-	var_1_26[3009] = {
+	pg.base.fleet_tech_template[3009] = {
 		cost = 15000,
 		time = 86400,
 		groupid = 3,
@@ -3286,11 +3145,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.fleet_tech_template
-
-	var_1_27[4001] = {
+	pg.base.fleet_tech_template[4001] = {
 		cost = 1500,
 		time = 2700,
 		groupid = 4,
@@ -3340,11 +3195,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.fleet_tech_template
-
-	var_1_28[4002] = {
+	pg.base.fleet_tech_template[4002] = {
 		cost = 1800,
 		time = 5400,
 		groupid = 4,
@@ -3436,11 +3287,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.fleet_tech_template
-
-	var_1_29[4003] = {
+	pg.base.fleet_tech_template[4003] = {
 		cost = 2250,
 		time = 10800,
 		groupid = 4,
@@ -3547,11 +3394,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.fleet_tech_template
-
-	var_1_30[4004] = {
+	pg.base.fleet_tech_template[4004] = {
 		cost = 4500,
 		time = 21600,
 		groupid = 4,
@@ -3658,11 +3501,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.fleet_tech_template
-
-	var_1_31[4005] = {
+	pg.base.fleet_tech_template[4005] = {
 		cost = 6000,
 		time = 32400,
 		groupid = 4,
@@ -3793,11 +3632,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.fleet_tech_template
-
-	var_1_32[4006] = {
+	pg.base.fleet_tech_template[4006] = {
 		cost = 7500,
 		time = 43200,
 		groupid = 4,
@@ -3937,11 +3772,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.fleet_tech_template
-
-	var_1_33[4007] = {
+	pg.base.fleet_tech_template[4007] = {
 		cost = 15000,
 		time = 75600,
 		groupid = 4,
@@ -4081,11 +3912,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.fleet_tech_template
-
-	var_1_34[4008] = {
+	pg.base.fleet_tech_template[4008] = {
 		cost = 18000,
 		time = 102600,
 		groupid = 4,
@@ -4225,8 +4052,7 @@ var_0_3.base.fleet_tech_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-	var_1_34.base.fleet_tech_template[4009] = {
+	pg.base.fleet_tech_template[4009] = {
 		cost = 22500,
 		time = 129600,
 		groupid = 4,

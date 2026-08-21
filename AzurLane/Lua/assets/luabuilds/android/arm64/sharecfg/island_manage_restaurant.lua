@@ -1,56 +1,19 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_manage_restaurant") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_manage_restaurant"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_manage_restaurant = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_manage_restaurant
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_manage_restaurant = rawget(pg, "island_manage_restaurant") or setmetatable({
+	__name = "island_manage_restaurant"
+}, confNEO)
+pg.island_manage_restaurant.all = {
 	601,
 	602,
 	603,
 	604,
 	901
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_manage_restaurant = {}
+pg.base = pg.base or {}
+pg.base.island_manage_restaurant = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_manage_restaurant
-
-	var_1_0[601] = {
+	pg.base.island_manage_restaurant[601] = {
 		name_en = "Golden Koi Restaurant",
 		opening_time = 28800,
 		aera_group = 1,
@@ -126,11 +89,7 @@ var_0_3.base.island_manage_restaurant = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_manage_restaurant
-
-	var_1_1[602] = {
+	pg.base.island_manage_restaurant[602] = {
 		name_en = "Polar Bear Teahouse",
 		opening_time = 28800,
 		aera_group = 1,
@@ -202,11 +161,7 @@ var_0_3.base.island_manage_restaurant = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_manage_restaurant
-
-	var_1_2[603] = {
+	pg.base.island_manage_restaurant[603] = {
 		name_en = "Manjuu Eatery",
 		opening_time = 28800,
 		aera_group = 1,
@@ -274,11 +229,7 @@ var_0_3.base.island_manage_restaurant = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_manage_restaurant
-
-	var_1_3[604] = {
+	pg.base.island_manage_restaurant[604] = {
 		name_en = "Fin-'n'-Feather Grill",
 		opening_time = 28800,
 		aera_group = 1,
@@ -342,8 +293,7 @@ var_0_3.base.island_manage_restaurant = {}
 			}
 		}
 	}
-	pg = var_1_3
-	var_1_3.base.island_manage_restaurant[901] = {
+	pg.base.island_manage_restaurant[901] = {
 		name_en = "Café Manjuu",
 		opening_time = 28800,
 		aera_group = 2,

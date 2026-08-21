@@ -24,7 +24,8 @@ function init(self)
     self.m_mainuiInitComplete = false
     self.m_showUIDic = {}
     self.m_iconDic = {}
-
+    self.m_simpleDic = {}
+    self.m_singleDic = {}
     -- 红点状态改变
     self.isRedFlagUdpate = false
     -- 红点状态列表
@@ -42,6 +43,14 @@ function init(self)
 
     -- 等待主场景加载完成后需要打开的uicode
     self.mWaitOpenUICode = 0
+
+    -- 是否拖拽改变spine
+    self.isDragSpine = nil
+
+    -- 进入壁纸的时间
+    self.wallpaperTimes = { 60, 180, 600 }
+    -- self.wallpaperTimes = { 10, 180, 600 }
+
 
     -- 付费活动相关功能开放id manager需要拥有函数 checkShowState()
     self.activityFuncList = {
@@ -68,6 +77,21 @@ end
 -- 注册图标
 function registerIcon(self, cusId, cusType, cusIcon, ignoreRed)
     self.m_iconDic[cusId] = { icon = cusIcon, type = cusType, ignore = ignoreRed }
+end
+
+function simpleRegisterIcon(self, cusId, cusType, cusIcon, ignoreRed)
+    self.m_simpleDic[cusId] = { icon = cusIcon, type = cusType, ignore = ignoreRed }
+end
+function getFuncSimpleIcon(self, cusId)
+    return self.m_simpleDic[cusId]
+end
+
+function singleRegisterIcon(self, cusId, cusType, cusIcon, ignoreRed)
+    self.m_singleDic[cusId] = { icon = cusIcon, type = cusType, ignore = ignoreRed }
+end
+
+function getFuncSingleIcon(self, cusId)
+    return self.m_singleDic[cusId]
 end
 
 -- 获取图标
@@ -174,18 +198,42 @@ end
 
 -- 展示互动
 function getHeroInteract(self, cusInteractId)
-    local heroVo = hero.HeroManager:getHeroVo(role.RoleManager:getRoleVo():getShowBoardHeroId())
-    if (not heroVo) then
-        local list = hero.HeroManager:getHeroList()
-        if list and #list > 0 then
-            heroVo = list[1]
+
+    local modelId = "3101"
+    local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+    if saveType == role.GuradType.Gurad_hero then
+        local heroVo = hero.HeroManager:getHeroVo(role.RoleManager:getRoleVo():getShowBoardHeroId())
+        if (not heroVo) then
+            local list = hero.HeroManager:getHeroList()
+            if list and #list > 0 then
+                heroVo = list[1]
+            end
+        end
+        if heroVo then
+            modelId = heroVo:getHeroModel()
+        end
+    else
+        -- 图册随机播放图片战员交互语音（配置）
+        if saveId and saveId ~= "" then
+            local paintingData = purchase.FashionShopManager:getPaintingDataById(tonumber(saveId))
+            local heroModelList = string.split(paintingData.interactModels, "|")
+            local canUseModelList = {}
+            for i, v in ipairs(heroModelList) do
+                local fasihonConfigVo = fashion.FashionManager:getFashionVoByModelId(v)
+                local heroId = hero.HeroManager:getHeroIdByTid(fasihonConfigVo.heroTid)
+                local fashionVo, state = fashion.FashionManager:getHeroFashionVo(fashion.Type.CLOTHES, heroId, fasihonConfigVo.fashionId)
+                if state ~= fashion.State.LOCK then
+                    table.insert(canUseModelList, v)
+                end
+            end
+            if #canUseModelList <= 0 then
+                table.insert(canUseModelList, heroModelList[1]) --配置首位为默认
+            end
+            modelId = canUseModelList[math.random(1, #canUseModelList)]
         end
     end
-    if not heroVo then
-        return
-    end
 
-    local baseData = hero.HeroInteractManager:getConfigData(heroVo:getHeroModel())
+    local baseData = hero.HeroInteractManager:getConfigData(modelId)
     if not baseData then
         logError("没有该英雄互动配置", "MainUIManager")
         return
@@ -270,27 +318,47 @@ function playFirstCV(self)
             self.mlazySn = nil
             local roleVo = role.RoleManager:getRoleVo()
             if roleVo then
-                local heroVo = hero.HeroManager:getHeroVo(roleVo:getShowBoardHeroId())
-                if (not heroVo) then
-                    local list = hero.HeroManager:getHeroList()
-                    if list and #list > 0 then
-                        heroVo = list[1]
+                local tid = "1110"
+                local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+                if saveType == role.GuradType.Gurad_hero then
+                    local heroVo = hero.HeroManager:getHeroVo(roleVo:getShowBoardHeroId())
+                    if (not heroVo) then
+                        local list = hero.HeroManager:getHeroList()
+                        if list and #list > 0 then
+                            heroVo = list[1]
+                        end
+                    end
+                    if heroVo then
+                        tid = heroVo.tid
+                    end
+                else
+                    -- 图册随机播放图片战员问候语（配置）
+                    if saveId and saveId ~= "" then
+                        local paintingData = purchase.FashionShopManager:getPaintingDataById(tonumber(saveId))
+                        local heroModelList = string.split(paintingData.interactModels, "|")
+                        local modelId = heroModelList[math.random(1, #heroModelList)]
+                        if modelId then
+                            local fasihonConfigVo = fashion.FashionManager:getFashionVoByModelId(modelId)
+                            if fasihonConfigVo then
+                                tid = fasihonConfigVo.heroTid
+                            end
+                        end
                     end
                 end
-                if heroVo then
-                    local finishPlayCvCall = function()
-                        GameDispatcher:dispatchEvent(EventName.MAINUI_LIVEVIEW_CVCALLFINISH)
-                        mainui.MainUIManager:setCurPlayCv(nil)
-                    end
 
-                    local audioData, cvId = AudioManager:playHeroCVByFieldName(heroVo.tid, "hello_voice", finishPlayCvCall)
-                    if audioData then
-                        self:setCurPlayCv(audioData)
-                        local cvData = AudioManager:getCVData(cvId)
-                        GameDispatcher:dispatchEvent(EventName.SHOW_HERO_INTERACT_TEXT_ONLY, cvData.lines)
-                    end
-                    self.mIsPlayFirstCv = true
+
+                local finishPlayCvCall = function()
+                    GameDispatcher:dispatchEvent(EventName.MAINUI_LIVEVIEW_CVCALLFINISH)
+                    mainui.MainUIManager:setCurPlayCv(nil)
                 end
+
+                local audioData, cvId = AudioManager:playHeroCVByFieldName(tid, "hello_voice", finishPlayCvCall)
+                if audioData then
+                    self:setCurPlayCv(audioData)
+                    local cvData = AudioManager:getCVData(cvId)
+                    GameDispatcher:dispatchEvent(EventName.SHOW_HERO_INTERACT_TEXT_ONLY, cvData.lines)
+                end
+                self.mIsPlayFirstCv = true
             end
         end
         LoopManager:clearTimeout(self.mlazySn)

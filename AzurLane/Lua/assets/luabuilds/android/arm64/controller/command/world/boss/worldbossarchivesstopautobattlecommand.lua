@@ -1,76 +1,33 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldBossArchivesStopAutoBattleCommand", pm.SimpleCommand)
 
-local var_0_0 = "WorldBossArchivesStopAutoBattleCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_2 = nowWorld():GetBossProxy()
+	local var_1_3 = var_1_2:GetSelfBoss()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.type
-
-	nowWorld = var_1_10005
-
-	local var_1_2 = var_1_10005()
-	local var_1_3 = var_5.GetBossProxy(var_1_2)
-
-	if not var_5.GetSelfBoss(var_1_3) then
+	if not var_1_3 then
 		return
 	end
 
-	local var_1_4 = var_6.hp
-	local var_1_5 = var_5:GetHighestDamage()
+	local var_1_5 = var_1_2:GetHighestDamage()
 
-	pg = var_1_10009
-
-	local var_1_6 = var_1_10009.ConnectionMgr.GetInstance()
-
-	var_9.Send(var_1_6, 34525, {
-		boss_id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(34525, {
+		boss_id = var_1_0.id
 	}, 34526, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
+			var_1_2:ClearAutoBattle()
 
-			var_2_1.ClearAutoBattle(var_2_0)
+			local var_2_0 = arg_2_0.count or 0
+			local var_2_1 = arg_2_0.damage or 0
+			local var_2_2 = arg_2_0.oil or 0
 
-			if not arg_2_0.count then
-				var_2_1 = 0
-			end
-
-			local var_2_2
-
-			if not arg_2_0.damage then
-				var_2_2 = 0
-			end
-
-			local var_2_3
-
-			if not arg_2_0.oil then
-				var_2_3 = 0
-			end
-
-			local var_2_4 = arg_1_0
-
-			var_2_10004 = var_2_10004.sendNotification
-			GAME = var_2_10007
-
-			var_2_10004(var_2_4, var_2_10007.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE_DONE, {
-				cnt = var_2_1,
-				damage = var_2_2,
-				oil = var_2_3
+			arg_1_0:sendNotification(GAME.WORLD_ARCHIVES_BOSS_STOP_AUTO_BATTLE_DONE, {
+				cnt = var_2_0,
+				damage = var_2_1,
+				oil = var_2_2
 			})
 		else
-			pg = var_2_1
-
-			local var_2_5 = var_2_1.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -79,4 +36,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

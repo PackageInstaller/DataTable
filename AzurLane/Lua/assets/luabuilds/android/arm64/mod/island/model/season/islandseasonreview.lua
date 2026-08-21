@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSeasonReview", import("model.vo.BaseVO"))
 
-local var_0_0 = "IslandSeasonReview"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.BaseVO"))
-
-var_0_1.KEYS = {
+var_0_0.KEYS = {
 	TECHNOLOGY = 3,
 	MINIGAME = 9,
 	FORMULA = 7,
@@ -17,87 +11,38 @@ var_0_1.KEYS = {
 	SHIP = 2,
 	PT_RANK = 5
 }
+var_0_0.KEY2NAME = {
+	[var_0_0.KEYS.LEVEL] = i18n("island_season_charts_level"),
+	[var_0_0.KEYS.SHIP] = i18n("island_season_review_charnum"),
+	[var_0_0.KEYS.TECHNOLOGY] = i18n("island_season_review_projuctnum"),
+	[var_0_0.KEYS.PT] = i18n("island_season_review_ptnum"),
+	[var_0_0.KEYS.PT_RANK] = i18n("island_season_review_ptrank"),
+	[var_0_0.KEYS.ORDER] = i18n("island_season_review_ordernum"),
+	[var_0_0.KEYS.FORMULA] = i18n("island_season_review_formulanum"),
+	[var_0_0.KEYS.FISHING] = i18n("island_season_review_fishnum"),
+	[var_0_0.KEYS.MINIGAME] = i18n("island_season_review_gamenum")
+}
 
-local var_0_2 = {}
-local var_0_3 = var_0_1.KEYS.LEVEL
-
-i18n = var_3
-var_0_2[var_0_3] = var_3("island_season_charts_level")
-
-local var_0_4 = var_0_1.KEYS.SHIP
-
-i18n = var_3
-var_0_2[var_0_4] = var_3("island_season_review_charnum")
-
-local var_0_5 = var_0_1.KEYS.TECHNOLOGY
-
-i18n = var_3
-var_0_2[var_0_5] = var_3("island_season_review_projuctnum")
-
-local var_0_6 = var_0_1.KEYS.PT
-
-i18n = var_3
-var_0_2[var_0_6] = var_3("island_season_review_ptnum")
-
-local var_0_7 = var_0_1.KEYS.PT_RANK
-
-i18n = var_3
-var_0_2[var_0_7] = var_3("island_season_review_ptrank")
-
-local var_0_8 = var_0_1.KEYS.ORDER
-
-i18n = var_3
-var_0_2[var_0_8] = var_3("island_season_review_ordernum")
-
-local var_0_9 = var_0_1.KEYS.FORMULA
-
-i18n = var_3
-var_0_2[var_0_9] = var_3("island_season_review_formulanum")
-
-local var_0_10 = var_0_1.KEYS.FISHING
-
-i18n = var_3
-var_0_2[var_0_10] = var_3("island_season_review_fishnum")
-
-local var_0_11 = var_0_1.KEYS.MINIGAME
-
-i18n = var_3
-var_0_2[var_0_11] = var_3("island_season_review_gamenum")
-var_0_1.KEY2NAME = var_0_2
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.configId = arg_1_0.id
 	arg_1_0.data = {}
-	ipairs = var_2
 
-	local var_1_0
+	local var_1_0 = arg_1_1.count_list or {}
 
-	if not arg_1_1.count_list then
-		var_1_0 = {}
-	end
-
-	for iter_1_0, iter_1_1 in var_2(var_1_0) do
+	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
 		arg_1_0.data[iter_1_1.key] = iter_1_1.value
 	end
 
 	return
 end
 
-function var_0_1.bindConfigTable(arg_2_0)
-	pg = var_1_10001
-
-	return var_1_10001.island_season
+function var_0_0.bindConfigTable(arg_2_0)
+	return pg.island_season
 end
 
-function var_0_1.GetRecordData(arg_3_0, arg_3_1)
-	local var_3_0
-
-	if not arg_3_0.data[arg_3_1] then
-		var_3_0 = 0
-	end
-
-	return var_3_0
+function var_0_0.GetRecordData(arg_3_0, arg_3_1)
+	return arg_3_0.data[arg_3_1] or 0
 end
 
-return var_0_1
+return var_0_0

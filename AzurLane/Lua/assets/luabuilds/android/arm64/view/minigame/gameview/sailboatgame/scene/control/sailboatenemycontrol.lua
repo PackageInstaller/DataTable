@@ -1,15 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatEnemyControllua")
+﻿local var_0_0 = class("SailBoatEnemyControllua")
 local var_0_1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	SailBoatGameVo = var_1_10003
-	var_0_1 = var_1_10003
+	var_0_1 = SailBoatGameVo
 	arg_1_0._bgContent = arg_1_1
 	arg_1_0._eventCall = arg_1_2
-	findTF = var_1_10003
-	arg_1_0._content = var_1_10003(arg_1_0._bgContent, "scene/content")
+	arg_1_0._content = findTF(arg_1_0._bgContent, "scene/content")
 	arg_1_0._enemys = {}
 	arg_1_0._enemyPool = {}
 	arg_1_0._rules = {}
@@ -19,35 +15,27 @@ end
 
 function var_0_0.start(arg_2_0)
 	for iter_2_0 = #arg_2_0._enemys, 1, -1 do
-		local var_2_0 = arg_2_0
-		local var_2_1 = arg_2_0.returnEnemy
-
-		table = var_1_10008
-
-		var_2_1(var_2_0, var_1_10008.remove(arg_2_0._enemys, iter_2_0))
+		arg_2_0:returnEnemy(table.remove(arg_2_0._enemys, iter_2_0))
 	end
 
 	arg_2_0._rules = {}
 
 	var_0_1.SetGameEnemys(arg_2_0._enemys)
 
-	if var_0_1.GetRoundData() then
-		for iter_2_1 = 1, #var_1.enemy_rule do
-			SailBoatGameConst = var_1_10006
+	local var_2_0 = var_0_1.GetRoundData()
 
-			if not var_1_10006.enemy_rule[var_1.enemy_rule[iter_2_1]] then
-				print = var_7
-
-				var_7("不存在 rule id " .. var_1.enemy_rule[iter_2_1])
+	if var_2_0 then
+		for iter_2_1 = 1, #var_2_0.enemy_rule do
+			if not SailBoatGameConst.enemy_rule[var_2_0.enemy_rule[iter_2_1]] then
+				print("不存在 rule id " .. var_2_0.enemy_rule[iter_2_1])
 			end
 
-			local var_2_2 = 0
+			;({
+				data = SailBoatGameConst.enemy_rule[var_2_0.enemy_rule[iter_2_1]]
+			}).time = 0
 
-			table = var_1_10008
-
-			var_1_10008.insert(arg_2_0._rules, {
-				data = var_1_10006,
-				time = var_2_2
+			table.insert(arg_2_0._rules, {
+				data = SailBoatGameConst.enemy_rule[var_2_0.enemy_rule[iter_2_1]]
 			})
 		end
 	end
@@ -64,67 +52,47 @@ function var_0_0.step(arg_3_0, arg_3_1)
 		arg_3_0._fireIndex = var_0_1.fire_step
 
 		local var_3_0 = var_0_1.GetGameChar()
-		local var_3_1 = var_2.getPosition(var_3_0)
+		local var_3_1 = var_3_0:getPosition()
 		local var_3_2 = var_0_1.GetGameEnemys()
 
 		for iter_3_0 = 1, #var_3_2 do
-			local var_3_3 = var_3_2[iter_3_0]
-
-			if var_9.canFire(var_3_3) then
-				arg_3_0:checkEnemyFire(var_2, var_9)
+			if var_3_2[iter_3_0]:canFire() then
+				arg_3_0:checkEnemyFire(var_3_0, var_3_2[iter_3_0])
 			end
 		end
 	end
 
-	local var_3_4 = var_0_1.GetGameItems()
+	local var_3_3 = var_0_1.GetGameItems()
 
 	for iter_3_1 = #arg_3_0._enemys, 1, -1 do
-		local var_3_5 = arg_3_0._enemys[iter_3_1]
+		arg_3_0._enemys[iter_3_1]:step(arg_3_1)
 
-		var_7.step(var_3_5, arg_3_1)
+		if arg_3_0._enemys[iter_3_1]:getRemoveFlag() then
+			table.remove(arg_3_0._enemys, iter_3_1)
+			arg_3_0:returnEnemy(arg_3_0._enemys[iter_3_1])
+		elseif not arg_3_0._enemys[iter_3_1]:getStop() then
+			for iter_3_2, iter_3_3 in ipairs(var_3_3) do
+				if arg_3_0:checkEnemyCollider(arg_3_0._enemys[iter_3_1], iter_3_3) then
+					arg_3_0._enemys[iter_3_1]:stopTarget(Vector2(0, 0))
 
-		if var_7:getRemoveFlag() then
-			table = var_8
-
-			var_8.remove(arg_3_0._enemys, iter_3_1)
-			arg_3_0:returnEnemy(var_7)
-		elseif not var_7:getStop() then
-			ipairs = var_8
-
-			for iter_3_2, iter_3_3 in var_8(var_3_4) do
-				if arg_3_0:checkEnemyCollider(var_7, iter_3_3) then
-					local var_3_6 = var_7
-					local var_3_7 = var_7.stopTarget
-
-					Vector2 = var_16
-
-					var_3_7(var_3_6, var_16(0, 0))
-
-					if var_7:getConfig("boom") and var_7:damage({
+					if arg_3_0._enemys[iter_3_1]:getConfig("boom") and arg_3_0._enemys[iter_3_1]:damage({
 						num = 99999
 					}) then
-						local var_3_8 = arg_3_0._eventCall
-
-						SailBoatGameEvent = var_16
-
-						var_3_8(var_16.DESTROY_ENEMY, var_7:getDestroyData())
+						arg_3_0._eventCall(SailBoatGameEvent.DESTROY_ENEMY, arg_3_0._enemys[iter_3_1]:getDestroyData())
 					end
 				end
 			end
 		end
 	end
 
-	local var_3_9 = var_0_1.gameTime
-
 	for iter_3_4 = 1, #arg_3_0._rules do
-		if var_3_9 > arg_3_0._rules[iter_3_4].data.create_time[1] and var_3_9 < var_9[2] and var_8.time and var_8.time >= 0 then
-			var_8.time = var_8.time - arg_3_1
+		if var_0_1.gameTime > arg_3_0._rules[iter_3_4].data.create_time[1] and var_0_1.gameTime < arg_3_0._rules[iter_3_4].data.create_time[2] and arg_3_0._rules[iter_3_4].time and arg_3_0._rules[iter_3_4].time >= 0 then
+			arg_3_0._rules[iter_3_4].time = arg_3_0._rules[iter_3_4].time - arg_3_1
 
-			if var_8.time <= 0 then
-				math = var_10
-				var_8.time = var_10.random(1, var_8.data.time[2] - var_8.data.time[1]) + var_8.data.time[1]
+			if arg_3_0._rules[iter_3_4].time <= 0 then
+				arg_3_0._rules[iter_3_4].time = math.random(1, arg_3_0._rules[iter_3_4].data.time[2] - arg_3_0._rules[iter_3_4].data.time[1]) + arg_3_0._rules[iter_3_4].data.time[1]
 
-				arg_3_0:applyRule(var_8)
+				arg_3_0:applyRule(arg_3_0._rules[iter_3_4])
 			end
 		end
 	end
@@ -141,92 +109,37 @@ function var_0_0.checkEnemyFire(arg_4_0, arg_4_1, arg_4_2)
 		local var_4_4, var_4_5 = arg_4_2:getFirePos()
 		local var_4_6, var_4_7 = arg_4_2:getFireContent()
 		local var_4_8 = var_4_0.x > var_4_1.x and var_4_3 or var_4_2
-		local var_4_9 = (var_4_0.x > var_4_1.x and var_4_5 or var_4_4).y
+		local var_4_9 = var_4_0.x > var_4_1.x and var_4_5 or var_4_4
 
-		math = var_1_10014
-		var_12.y = var_4_9 + var_1_10014.random(-15, 15)
+		var_4_9.y = (var_4_0.x > var_4_1.x and var_4_5 or var_4_4).y + math.random(-15, 15)
 
-		local var_4_10 = var_4_0.x
-		local var_4_11 = var_4_1.x < var_4_10 and var_4_7 or var_4_6
+		local var_4_10 = var_4_0.x > var_4_1.x and var_4_7 or var_4_6
 
-		math = var_14
-
-		local var_4_12 = var_14.sqrt
-
-		math = var_16
-
-		local var_4_13 = var_16.pow(var_4_0.x - var_4_1.x, 2)
-
-		math = var_17
-
-		local var_4_14 = var_4_12(var_4_13 + var_17.pow(var_4_0.y - var_4_1.y, 2))
-		local var_4_15 = arg_4_2
-
-		if var_4_14 < arg_4_2.getWeaponMaxDistance(var_4_15) then
-			math = var_16
-
-			local var_4_16 = var_16.atan2
-			local var_4_17 = var_4_0.y - var_4_1.y
-
-			math = var_19
-
-			local var_4_18 = var_4_17 + var_19.random(-50, 50)
-			local var_4_19 = var_4_0.x - var_4_1.x
-
-			math = var_20
-
-			local var_4_20 = var_4_16(var_4_18, var_4_19 + var_20.random(-50, 50))
-
-			math = var_4_15
-
-			local var_4_21 = var_4_20 * var_4_15.rad2Deg
+		if math.sqrt(math.pow(var_4_0.x - var_4_1.x, 2) + math.pow(var_4_0.y - var_4_1.y, 2)) < arg_4_2:getWeaponMaxDistance() then
+			local var_4_11 = math.atan2(var_4_0.y - var_4_1.y + math.random(-50, 50), var_4_0.x - var_4_1.x + math.random(-50, 50))
 
 			for iter_4_0 = 1, #var_4_8 do
-				local var_4_22 = var_4_8[iter_4_0]
+				if var_4_8[iter_4_0]:getFireAble() then
+					local var_4_12 = var_4_8[iter_4_0]:getAngel()
 
-				if var_22.getFireAble(var_4_22) then
-					local var_4_23 = var_22:getAngel()
+					if var_4_12 > math.abs(var_4_11 * math.rad2Deg) or var_4_12 > math.abs(180 - math.abs(var_4_11 * math.rad2Deg)) then
+						local var_4_13 = var_4_8[iter_4_0]:fire()
 
-					math = var_1_10024
-
-					if not (var_1_10024.abs(var_4_21) < var_4_23) then
-						math = var_1_10024
-						var_1_10024 = var_1_10024.abs
-						math = var_26
-
-						if var_1_10024(180 - var_26.abs(var_4_21)) < var_4_23 then
-							local var_4_24 = var_22
-
-							if var_22.fire(var_4_24) then
-								arg_4_2:fire()
-
-								local var_4_25 = {
-									pos = var_12
+						if var_4_13 then
+							arg_4_2:fire()
+							arg_4_0._eventCall(SailBoatGameEvent.BOAT_EVENT_FIRE, {
+								bullet_id = var_4_13.bullet_id,
+								weapon_data = var_4_13,
+								fire_data = {
+									pos = var_4_9,
+									move = Vector2(math.cos(var_4_11), math.sin(var_4_11)),
+									hit = arg_4_2:getHitGroup(),
+									effect_pos = Vector2(0, 0),
+									effect_content = var_4_10
 								}
+							})
 
-								Vector2 = var_4_24
-								math = var_1_10028
-								var_1_10028 = var_1_10028.cos(var_4_20)
-								math = var_1_10029
-								var_4_25.move = var_4_24(var_1_10028, var_1_10029.sin(var_4_20))
-								var_1_10028 = arg_4_2
-								var_4_25.hit = arg_4_2.getHitGroup(var_1_10028)
-								Vector2 = var_26
-								var_4_25.effect_pos = var_26(0, 0)
-								var_4_25.effect_content = var_4_11
-
-								local var_4_26 = arg_4_0._eventCall
-
-								SailBoatGameEvent = var_1_10028
-
-								var_4_26(var_1_10028.BOAT_EVENT_FIRE, {
-									bullet_id = var_1_10024.bullet_id,
-									weapon_data = var_1_10024,
-									fire_data = var_4_25
-								})
-
-								return
-							end
+							return
 						end
 					end
 				end
@@ -239,36 +152,22 @@ end
 
 function var_0_0.returnEnemy(arg_5_0, arg_5_1)
 	arg_5_1:clear()
-
-	table = var_2
-
-	var_2.insert(arg_5_0._enemyPool, arg_5_1)
+	table.insert(arg_5_0._enemyPool, arg_5_1)
 
 	return
 end
 
 function var_0_0.checkEnemyCollider(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_2:getConfig("type")
+	if arg_6_2:getConfig("type") == SailBoatGameConst.item_static then
+		local var_6_0 = arg_6_2:getPosition()
+		local var_6_1 = arg_6_1:getPosition()
 
-	SailBoatGameConst = var_1_10004
+		if math.abs(var_6_0.x - var_6_1.x) < 500 and math.abs(var_6_0.y - var_6_1.y) < 500 then
+			local var_6_2, var_6_3 = arg_6_2:getWorldColliderData()
+			local var_6_4, var_6_5 = arg_6_1:getWorldColliderData()
 
-	if var_6_0 == var_1_10004.item_static then
-		local var_6_1 = arg_6_2
-		local var_6_2 = arg_6_2.getPosition(var_6_1)
-		local var_6_3 = arg_6_1:getPosition()
-
-		math = var_6_1
-
-		if var_6_1.abs(var_6_2.x - var_6_3.x) < 500 then
-			math = var_5
-
-			if var_5.abs(var_6_2.y - var_6_3.y) < 500 then
-				local var_6_4, var_6_5 = arg_6_2:getWorldColliderData()
-				local var_6_6, var_6_7 = arg_6_1:getWorldColliderData()
-
-				if var_0_1.CheckRectCollider(var_6_6, var_6_4, var_6_7, var_6_5) then
-					return true
-				end
+			if var_0_1.CheckRectCollider(var_6_4, var_6_2, var_6_5, var_6_3) then
+				return true
 			end
 		end
 	end
@@ -278,37 +177,26 @@ end
 
 function var_0_0.applyRule(arg_7_0, arg_7_1)
 	local var_7_0 = arg_7_1.data.enemys
-	local var_7_1 = var_2.screen_pos_x
-	local var_7_2 = var_2.screen_pos_y
+	local var_7_1 = arg_7_1.data.screen_pos_x
+	local var_7_2 = arg_7_1.data.screen_pos_y
 
-	if not var_7_1 or not var_7_2 then
-		print = var_1_10006
-
-		var_1_10006("rule id = " .. var_2 .. " 异常，没有范围参数")
+	if not arg_7_1.data.screen_pos_x or not var_7_2 then
+		print("rule id = " .. arg_7_1.data .. " 异常，没有范围参数")
 	end
 
-	math = var_1_10006
+	local var_7_3 = var_7_0[math.random(1, #var_7_0)]
+	local var_7_4 = var_0_1.GetRangePos(var_7_1, var_7_2)
 
-	local var_7_3 = var_7_0[var_1_10006.random(1, #var_7_0)]
-
-	if not var_0_1.GetRangePos(var_7_1, var_7_2) then
+	if not var_7_4 then
 		return
 	end
 
-	local var_7_4 = arg_7_0:getOrCreateEnemy(var_7_3)
+	local var_7_5 = arg_7_0:getOrCreateEnemy(var_7_3)
 
-	var_8.setPosition(var_7_4, var_7)
-
-	table = var_9
-
-	var_9.insert(arg_7_0._enemys, var_8)
-
-	local var_7_5 = arg_7_1.data.target_x
-	local var_7_6 = arg_7_1.data.target_y
-	local var_7_7 = arg_7_1.data.target_speed
-
-	var_8:setTarget(var_7_5, var_7_6, var_7_7)
-	var_8:start()
+	var_7_5:setPosition(var_7_4)
+	table.insert(arg_7_0._enemys, var_7_5)
+	var_7_5:setTarget(arg_7_1.data.target_x, arg_7_1.data.target_y, arg_7_1.data.target_speed)
+	var_7_5:start()
 
 	return
 end
@@ -318,40 +206,25 @@ function var_0_0.getOrCreateEnemy(arg_8_0, arg_8_1, arg_8_2)
 
 	if #arg_8_0._enemyPool > 0 then
 		for iter_8_0 = #arg_8_0._enemyPool, 1, -1 do
-			if not var_8_0 then
-				local var_8_1 = arg_8_0._enemyPool[iter_8_0]
+			if not var_8_0 and arg_8_0._enemyPool[iter_8_0]:getId() == arg_8_1 then
+				var_8_0 = table.remove(arg_8_0._enemyPool, iter_8_0)
 
-				if var_8.getId(var_8_1) == arg_8_1 then
-					table = var_9
-					var_8_0 = var_9.remove(arg_8_0._enemyPool, iter_8_0)
-
-					break
-				end
+				break
 			end
 		end
 	end
 
 	if not var_8_0 then
-		SailBoatGameConst = var_4
-
-		if not var_4.game_enemy[arg_8_1] then
-			print = var_4
-
-			var_4("id = " .. arg_8_1 .. " 的敌人不存在")
+		if not SailBoatGameConst.game_enemy[arg_8_1] then
+			print("id = " .. arg_8_1 .. " 的敌人不存在")
 		end
 
-		Clone = var_4
-		SailBoatGameConst = var_1_10006
+		local var_8_1 = Clone(SailBoatGameConst.game_enemy[arg_8_1])
 
-		local var_8_2 = var_4(var_1_10006.game_enemy[arg_8_1])
-		local var_8_3 = var_0_1.GetGameEnemyTf(var_8_2.tpl)
+		var_8_0 = SailBoatEnemy.New(var_0_1.GetGameEnemyTf(var_8_1.tpl), arg_8_0._event)
 
-		SailBoatEnemy = var_6
-
-		local var_8_4 = var_6.New(var_8_3, arg_8_0._event)
-
-		var_8_0.setData(var_8_4, var_8_2)
-		arg_8_0:initWeapon(var_8_0, var_8_2.weapons)
+		var_8_0:setData(var_8_1)
+		arg_8_0:initWeapon(var_8_0, var_8_1.weapons)
 		var_8_0:setContent(arg_8_0._content)
 	end
 
@@ -359,34 +232,15 @@ function var_0_0.getOrCreateEnemy(arg_8_0, arg_8_1, arg_8_2)
 end
 
 function var_0_0.initWeapon(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = {}
-	local var_9_1 = {}
-
 	for iter_9_0 = 1, #arg_9_2[1] do
-		local var_9_2 = arg_9_2[1][iter_9_0]
-
-		SailBoatGameConst = var_1_10010
-		var_1_10010 = var_1_10010.game_weapon[var_9_2]
-		SailBoatWeapon = var_1_10011
-		var_1_10011 = var_1_10011.New(var_1_10010)
-		table = var_1_10012
-
-		var_1_10012.insert(var_9_0, var_1_10011)
+		table.insert({}, (SailBoatWeapon.New(SailBoatGameConst.game_weapon[arg_9_2[1][iter_9_0]])))
 	end
 
 	for iter_9_1 = 1, #arg_9_2[2] do
-		local var_9_3 = arg_9_2[2][iter_9_1]
-
-		SailBoatGameConst = var_1_10010
-		var_1_10010 = var_1_10010.game_weapon[var_9_3]
-		SailBoatWeapon = var_1_10011
-		var_1_10011 = var_1_10011.New(var_1_10010)
-		table = var_1_10012
-
-		var_1_10012.insert(var_9_1, var_1_10011)
+		table.insert({}, (SailBoatWeapon.New(SailBoatGameConst.game_weapon[arg_9_2[2][iter_9_1]])))
 	end
 
-	arg_9_1:setWeapon(var_9_0, var_9_1)
+	arg_9_1:setWeapon({}, {})
 
 	return
 end

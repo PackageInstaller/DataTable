@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("FushunBeastChar")
+﻿local var_0_0 = class("FushunBeastChar")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._go = arg_1_1
@@ -17,43 +15,11 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.escape = false
 	arg_1_0.freeze = false
 	arg_1_0.attacking = false
-
-	local var_1_0 = arg_1_0._go
-	local var_1_1 = var_4.GetComponent
-
-	typeof = var_1_10007
-	Animator = var_1_10009
-	arg_1_0.animator = var_1_1(var_1_0, var_1_10007(var_1_10009))
-
-	local var_1_2 = arg_1_0._go
-	local var_1_3 = var_4.GetComponent
-
-	typeof = var_7
-	DftAniEvent = var_1_10009
-	arg_1_0.animatorEvent = var_1_3(var_1_2, var_7(var_1_10009))
-
-	local var_1_4 = arg_1_0._tf
-	local var_1_5 = var_4.GetComponent
-
-	typeof = var_7
-	UnityEngine = var_1_10009
-	arg_1_0.collider2D = var_1_5(var_1_4, var_7(var_1_10009.Collider2D))
-
-	local var_1_6 = arg_1_0._tf
-	local var_1_7 = var_4.Find(var_1_6, "effect")
-	local var_1_8 = var_4.GetComponent
-
-	typeof = var_7
-	UnityEngine = var_9
-	arg_1_0.effectCollider2D = var_1_8(var_1_7, var_7(var_9.Collider2D))
-	UIItemList = var_4
-
-	local var_1_9 = var_4.New
-	local var_1_10 = arg_1_1.transform
-	local var_1_11 = var_6.Find(var_1_10, "hp")
-	local var_1_12 = arg_1_1.transform
-
-	arg_1_0.hpBar = var_1_9(var_1_11, var_7.Find(var_1_12, "hp/tpl"))
+	arg_1_0.animator = arg_1_0._go:GetComponent(typeof(Animator))
+	arg_1_0.animatorEvent = arg_1_0._go:GetComponent(typeof(DftAniEvent))
+	arg_1_0.collider2D = arg_1_0._tf:GetComponent(typeof(UnityEngine.Collider2D))
+	arg_1_0.effectCollider2D = arg_1_0._tf:Find("effect"):GetComponent(typeof(UnityEngine.Collider2D))
+	arg_1_0.hpBar = UIItemList.New(arg_1_1.transform:Find("hp"), arg_1_1.transform:Find("hp/tpl"))
 
 	arg_1_0:MakeHpBar()
 
@@ -61,27 +27,15 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 end
 
 function var_0_0.MakeHpBar(arg_2_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_2_0.hpBar.container, true)
-
-	local var_2_0 = arg_2_0.hpBar
-
-	var_1.make(var_2_0, function(arg_3_0, arg_3_1, arg_3_2)
-		UIItemList = var_2_10003
-
-		if arg_3_0 == var_2_10003.EventUpdate then
-			setActive = var_3
-
-			var_3(arg_3_2:Find("mark"), arg_3_1 < arg_2_0.hp)
+	setActive(arg_2_0.hpBar.container, true)
+	arg_2_0.hpBar:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventUpdate then
+			setActive(arg_3_2:Find("mark"), arg_3_1 < arg_2_0.hp)
 		end
 
 		return
 	end)
-
-	local var_2_1 = arg_2_0.hpBar
-
-	var_1.align(var_2_1, arg_2_0.maxHp)
+	arg_2_0.hpBar:align(arg_2_0.maxHp)
 
 	return
 end
@@ -103,11 +57,7 @@ function var_0_0.GetPosition(arg_6_0)
 end
 
 function var_0_0.GetAttackPosition(arg_7_0)
-	local var_7_0 = arg_7_0._tf.localPosition
-
-	Vector3 = var_1_10002
-
-	return var_7_0 - var_1_10002(arg_7_0.attackDistance, 0, 0)
+	return arg_7_0._tf.localPosition - Vector3(arg_7_0.attackDistance, 0, 0)
 end
 
 function var_0_0.Move(arg_8_0)
@@ -115,64 +65,32 @@ function var_0_0.Move(arg_8_0)
 		return
 	end
 
-	local var_8_0 = arg_8_0._tf
-	local var_8_1 = var_1.Translate
-
-	Vector3 = var_1_10004
-
-	local var_8_2 = -1 * arg_8_0.speed
-
-	Time = var_1_10007
-
-	var_8_1(var_8_0, var_1_10004(var_8_2 * var_1_10007.deltaTime, 0, 0))
-
-	local var_8_3 = arg_8_0.animator
-
-	var_1.SetFloat(var_8_3, "speed", arg_8_0.speed)
+	arg_8_0._tf:Translate(Vector3(-1 * arg_8_0.speed * Time.deltaTime, 0, 0))
+	arg_8_0.animator:SetFloat("speed", arg_8_0.speed)
 
 	return
 end
 
 function var_0_0.Attack(arg_9_0)
-	local var_9_0 = arg_9_0.animatorEvent
-
-	var_1.SetEndEvent(var_9_0, nil)
-
-	local var_9_1 = arg_9_0.animatorEvent
-
-	var_1.SetEndEvent(var_9_1, function()
+	arg_9_0.animatorEvent:SetEndEvent(nil)
+	arg_9_0.animatorEvent:SetEndEvent(function()
 		arg_9_0.attacking = false
 
-		local var_10_0 = arg_9_0
-
-		var_0.Unfreeze(var_10_0)
-
-		local var_10_1 = arg_9_0
-
-		var_0.Die(var_10_1)
+		arg_9_0:Unfreeze()
+		arg_9_0:Die()
 
 		return
 	end)
-
-	local var_9_2 = arg_9_0.animatorEvent
-
-	var_1.SetTriggerEvent(var_9_2, nil)
-
-	local var_9_3 = arg_9_0.animatorEvent
-
-	var_1.SetTriggerEvent(var_9_3, function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_9_0.hpBar.container, false)
+	arg_9_0.animatorEvent:SetTriggerEvent(nil)
+	arg_9_0.animatorEvent:SetTriggerEvent(function()
+		setActive(arg_9_0.hpBar.container, false)
 
 		return
 	end)
 
 	arg_9_0.attacking = true
 
-	local var_9_4 = arg_9_0.animator
-
-	var_1.SetTrigger(var_9_4, "attack")
+	arg_9_0.animator:SetTrigger("attack")
 
 	return
 end
@@ -206,12 +124,9 @@ function var_0_0.Hurt(arg_15_0, arg_15_1)
 end
 
 function var_0_0.UpdateHp(arg_16_0, arg_16_1)
-	math = var_1_10002
-	arg_16_0.hp = var_1_10002.max(arg_16_1, 0)
+	arg_16_0.hp = math.max(arg_16_1, 0)
 
-	local var_16_0 = arg_16_0.hpBar
-
-	var_2.align(var_16_0, arg_16_0.maxHp)
+	arg_16_0.hpBar:align(arg_16_0.maxHp)
 
 	return
 end
@@ -237,13 +152,7 @@ function var_0_0.IsDeath(arg_20_0)
 end
 
 function var_0_0.WillDeath(arg_21_0)
-	local var_21_0
-
-	if not arg_21_0:IsDeath() then
-		var_21_0 = arg_21_0:IsEscape()
-	end
-
-	return var_21_0
+	return arg_21_0:IsDeath() or arg_21_0:IsEscape()
 end
 
 function var_0_0.GetHp(arg_22_0)
@@ -260,28 +169,16 @@ function var_0_0.Vanish(arg_23_0)
 	else
 		arg_23_0.vanish = true
 
-		local var_23_0 = arg_23_0.animatorEvent
-
-		var_1.SetEndEvent(var_23_0, nil)
-
-		local var_23_1 = arg_23_0.animatorEvent
-
-		var_1.SetEndEvent(var_23_1, function()
-			local var_24_0 = arg_23_0
-
-			var_0.Dispose(var_24_0)
+		arg_23_0.animatorEvent:SetEndEvent(nil)
+		arg_23_0.animatorEvent:SetEndEvent(function()
+			arg_23_0:Dispose()
 
 			return
 		end)
-
-		local var_23_2 = arg_23_0.animator
-
-		var_1.SetTrigger(var_23_2, "vanish")
+		arg_23_0.animator:SetTrigger("vanish")
 	end
 
-	setActive = var_1
-
-	var_1(arg_23_0.hpBar.container, false)
+	setActive(arg_23_0.hpBar.container, false)
 
 	return
 end
@@ -299,18 +196,11 @@ function var_0_0.GetMaxHp(arg_27_0)
 end
 
 function var_0_0.Dispose(arg_28_0)
-	local var_28_0 = arg_28_0.animatorEvent
-
-	var_1.SetTriggerEvent(var_28_0, nil)
-
-	local var_28_1 = arg_28_0.animatorEvent
-
-	var_1.SetEndEvent(var_28_1, nil)
+	arg_28_0.animatorEvent:SetTriggerEvent(nil)
+	arg_28_0.animatorEvent:SetEndEvent(nil)
 
 	if arg_28_0._go then
-		Destroy = var_1
-
-		var_1(arg_28_0._go)
+		Destroy(arg_28_0._go)
 	end
 
 	arg_28_0._go = nil

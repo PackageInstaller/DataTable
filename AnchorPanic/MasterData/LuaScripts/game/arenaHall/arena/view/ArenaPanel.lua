@@ -275,6 +275,7 @@ end
 --进入战斗等待页面
 function onClickChallengeHandler(self, args)
     if bag.BagManager:getPropsCountByTid(MoneyTid.ARENA_CHALLENGE_TICKET_TID) < sysParam.SysParamManager:getValue(18, 1) then
+        sdk.SdkManager:foreignNotifyPvpInfoSuc(1)
         GameDispatcher:dispatchEvent(EventName.REQ_ARENA_OK, { type = 2 })
     else
         self.mBtnFuncTips:SetActive(false)

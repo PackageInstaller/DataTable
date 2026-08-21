@@ -48,6 +48,8 @@ function configUI(self)
     self.mItemTask = self:getChildGO("mItemTask")
 
     self.mTextStarCount = self:getChildGO("mTextStarCount"):GetComponent(ty.Text)
+
+    self.ImEffect = self:getChildGO("ImEffect")
 end
 
 function initViewText(self)
@@ -150,11 +152,7 @@ function refreshStarCount(self)
 end
 
 function updataRedState(self)
-    if danke.DanKeManager:getDankeStarRewardState() then
-        RedPointManager:add(self.mImgTask.transform, nil, 33.7, 20.3)
-    else
-        RedPointManager:remove(self.mImgTask.transform)
-    end
+    self.ImEffect:SetActive(danke.DanKeManager:getDankeStarRewardState())
 end
 
 function onFight(self)

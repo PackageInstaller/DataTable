@@ -1,73 +1,35 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PSSHei5TaskPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "PSSHei5TaskPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "PSSHei5TaskPage"
 end
 
-function var_0_1.UpdateActivity(arg_2_0, arg_2_1)
-	local var_2_1
+function var_0_0.UpdateActivity(arg_2_0, arg_2_1)
+	arg_2_0.activity = arg_2_1 or getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_HEI5)
 
-	if not arg_2_1 then
-		::label_2_0::
-
-		getProxy = var_2_1
-		ActivityProxy = var_1_10004
-
-		local var_2_0 = var_2_1(var_1_10004)
-
-		var_2_1 = var_2_1.getAliveActivityByType
-		ActivityConst = var_1_10005
-		var_2_1 = var_2_1(var_2_0, var_1_10005.ACTIVITY_TYPE_PT_HEI5)
-	end
-
-	arg_2_0.activity = var_2_1
-	pairs = var_2_1
-
-	local var_2_2 = arg_2_0.activity
-
-	for iter_2_0, iter_2_1 in var_2_1(var_4.GetHei5Info(var_2_2)) do
+	for iter_2_0, iter_2_1 in pairs(arg_2_0.activity:GetHei5Info()) do
 		arg_2_0[iter_2_0] = iter_2_1
 	end
 
 	arg_2_0.taskGroupList = {}
-	pg = var_2
 
-	local var_2_3 = var_2.TimeMgr.GetInstance()
-	local var_2_4 = var_2.GetServerDay
-	local var_2_5 = arg_2_0.activity
-	local var_2_6 = var_2_4(var_2_3, var_5.getStartTime(var_2_5))
+	local var_2_0 = pg.TimeMgr.GetInstance():GetServerDay(arg_2_0.activity:getStartTime())
 
-	ipairs = var_3
-
-	local var_2_7 = arg_2_0.activity
-
-	for iter_2_2, iter_2_3 in var_3(var_5.getConfig(var_2_7, "config_data")) do
-		pg = var_2_8
-
-		local var_2_8 = var_2_8.black_friday_battlepass_task_group[iter_2_3]
-
-		arg_2_0.taskGroupList[var_2_8.group_mask] = {
-			task_group = var_2_8.task_group,
-			isLock = var_2_6 < var_2_8.group_mask
+	for iter_2_2, iter_2_3 in ipairs(arg_2_0.activity:getConfig("config_data")) do
+		arg_2_0.taskGroupList[pg.black_friday_battlepass_task_group[iter_2_3].group_mask] = {
+			task_group = pg.black_friday_battlepass_task_group[iter_2_3].task_group,
+			isLock = var_2_0 < pg.black_friday_battlepass_task_group[iter_2_3].group_mask
 		}
 	end
 
-	updateCrusingHei5ActivityTask = var_3
-
-	var_3(arg_2_0.activity)
+	updateCrusingHei5ActivityTask(arg_2_0.activity)
 
 	arg_2_0.finishAll = arg_2_0.phase == #arg_2_0.awardList
 
 	return
 end
 
-function var_0_1.initTplVar(arg_3_0)
+function var_0_0.initTplVar(arg_3_0)
 	arg_3_0.btnGoText = "task_go"
 	arg_3_0.btnGetText = "task_get"
 	arg_3_0.taskDayText = "blackfriday_cruise_task_day"
@@ -77,64 +39,33 @@ function var_0_1.initTplVar(arg_3_0)
 	return
 end
 
-function var_0_1.OnLoaded(arg_4_0)
+function var_0_0.OnLoaded(arg_4_0)
 	arg_4_0:initTplVar()
 	arg_4_0:UpdateActivity()
 
-	local var_4_0 = arg_4_0._tf
-	local var_4_1 = var_1.Find(var_4_0, "frame")
+	local var_4_0 = arg_4_0._tf:Find("frame")
 
-	arg_4_0.togglesTF = var_1.Find(var_4_1, "week_list")
+	arg_4_0.togglesTF = var_4_0:Find("week_list")
+	arg_4_0.toggleCount = arg_4_0.togglesTF:Find("count")
 
-	local var_4_2 = arg_4_0.togglesTF
+	local var_4_1 = var_4_0:Find("view/content")
+	local var_4_2 = var_4_1:Find("tpl")
 
-	arg_4_0.toggleCount = var_2.Find(var_4_2, "count")
+	setText(var_4_2:Find("info/go/Text"), i18n(arg_4_0.btnGoText))
+	setText(var_4_2:Find("info/get/Text"), i18n(arg_4_0.btnGetText))
+	setText(var_4_2:Find("info/got/Text"), i18n("task_got"))
 
-	local var_4_3 = var_1
-	local var_4_4 = var_1.Find(var_4_3, "view/content")
-	local var_4_5 = var_2.Find(var_4_4, "tpl")
-
-	setText = var_4_3
-
-	local var_4_6 = var_4_5:Find("info/go/Text")
-
-	i18n = var_1_10007
-
-	var_4_3(var_4_6, var_1_10007(arg_4_0.btnGoText))
-
-	setText = var_4_3
-
-	local var_4_7 = var_4_5:Find("info/get/Text")
-
-	i18n = var_7
-
-	var_4_3(var_4_7, var_7(arg_4_0.btnGetText))
-
-	setText = var_4_3
-
-	local var_4_8 = var_4_5:Find("info/got/Text")
-
-	i18n = var_7
-
-	var_4_3(var_4_8, var_7("task_got"))
-
-	UIItemList = var_4_3
-	arg_4_0.taskGroupItemList = var_4_3.New(var_2, var_4_5)
+	arg_4_0.taskGroupItemList = UIItemList.New(var_4_1, var_4_2)
 
 	return
 end
 
-function var_0_1.OnInit(arg_5_0)
-	local var_5_0 = arg_5_0.taskGroupItemList
-
-	var_1.make(var_5_0, function(arg_6_0, arg_6_1, arg_6_2)
+function var_0_0.OnInit(arg_5_0)
+	arg_5_0.taskGroupItemList:make(function(arg_6_0, arg_6_1, arg_6_2)
 		arg_6_1 = arg_6_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_6_0 == var_2_10003.EventUpdate then
-			local var_6_0 = arg_5_0
-
-			var_3.UpdateTaskGroup(var_6_0, arg_6_2, arg_5_0.tempTaskGroup[arg_6_1])
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_5_0:UpdateTaskGroup(arg_6_2, arg_5_0.tempTaskGroup[arg_6_1])
 		end
 
 		return
@@ -143,239 +74,101 @@ function var_0_1.OnInit(arg_5_0)
 	return
 end
 
-function var_0_1.Flush(arg_7_0, arg_7_1)
+function var_0_0.Flush(arg_7_0, arg_7_1)
 	if arg_7_1 then
-		var_1_10004 = arg_7_0
-
-		arg_7_0.UpdateActivity(var_1_10004, arg_7_1)
+		arg_7_0:UpdateActivity(arg_7_1)
 	end
 
-	getProxy = var_1_10002
-	TaskProxy = var_1_10004
+	local var_7_0 = getProxy(TaskProxy)
 
-	local var_7_0 = var_1_10002(var_1_10004)
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.taskGroupList) do
+		local var_7_1 = iter_7_0 == 0 and arg_7_0._tf:Find("frame/" .. iter_7_0) or arg_7_0.toggleCount:Find(iter_7_0)
 
-	pairs = var_1_10003
-
-	for iter_7_0, iter_7_1 in var_1_10003(arg_7_0.taskGroupList) do
-		local var_7_1
-
-		if iter_7_0 == 0 then
-			local var_7_2 = arg_7_0._tf
-
-			var_7_1 = var_9.Find(var_7_2, "frame/" .. iter_7_0)
-		else
-			local var_7_3 = arg_7_0.toggleCount
-
-			var_7_1 = var_9.Find(var_7_3, iter_7_0)
+		if iter_7_0 > 0 then
+			setText(var_7_1:Find("off/Text"), i18n(arg_7_0.taskDayText, iter_7_0))
+			setText(var_7_1:Find("on/Text"), i18n(arg_7_0.taskDayText, iter_7_0))
 		end
 
-		if 0 < iter_7_0 then
-			setText = var_9
-			var_1_10013 = var_7_1
+		setActive(var_7_1:Find("tip"), not iter_7_1.isLock and PlayerPrefs.GetInt(string.format("cursing_%d_task_week_%d", arg_7_0.activity.id, iter_7_0), 0) == 0)
+		onToggle(arg_7_0, var_7_1, function(arg_8_0)
+			if arg_8_0 then
+				setActive(var_7_1:Find("tip"), false)
+				PlayerPrefs.SetInt(string.format("cursing_%d_task_week_%d", arg_7_0.activity.id, iter_7_0), 1)
 
-			local var_7_4 = var_7_1.Find(var_1_10013, "off/Text")
+				arg_7_0.weekToggle = iter_7_0
+				arg_7_0.contextData.weekToggle = iter_7_0
+				arg_7_0.tempTaskGroup = underscore.map(iter_7_1.task_group, function(arg_9_0)
+					return underscore.map(arg_9_0, function(arg_10_0)
+						assert(var_7_0:getTaskVO(arg_10_0), "without this task:" .. arg_10_0)
 
-			i18n = var_1_10012
-
-			var_9(var_7_4, var_1_10012(arg_7_0.taskDayText, iter_7_0))
-
-			setText = var_9
-			var_1_10013 = var_7_1
-
-			local var_7_5 = var_7_1.Find(var_1_10013, "on/Text")
-
-			i18n = var_1_10012
-
-			var_9(var_7_5, var_1_10012(arg_7_0.taskDayText, iter_7_0))
-		end
-
-		setActive = var_9
-		var_1_10013 = var_7_1
-
-		local var_7_6 = var_7_1.Find(var_1_10013, "tip")
-
-		if not iter_7_1.isLock then
-			PlayerPrefs = var_1_10012
-			var_1_10012 = var_1_10012.GetInt
-			string = var_14
-
-			if var_1_10012(var_14.format("cursing_%d_task_week_%d", arg_7_0.activity.id, iter_7_0), 0) ~= 0 then
-				var_1_10012 = false
-			else
-				var_1_10012 = true
-			end
-
-			var_9(var_7_6, var_1_10012)
-
-			onToggle = var_9
-
-			local var_7_7 = arg_7_0
-
-			var_1_10012 = var_7_1
-
-			function var_1_10013(arg_8_0)
-				if arg_8_0 then
-					setActive = var_2_10001
-
-					local var_8_0 = var_7_1
-
-					var_2_10001(var_3.Find(var_8_0, "tip"), false)
-
-					PlayerPrefs = var_2_10001
-
-					local var_8_1 = var_2_10001.SetInt
-
-					string = var_3
-
-					var_8_1(var_3.format("cursing_%d_task_week_%d", arg_7_0.activity.id, iter_7_0), 1)
-
-					arg_7_0.weekToggle = iter_7_0
-					arg_7_0.contextData.weekToggle = iter_7_0
-
-					local var_8_2 = arg_7_0
-
-					underscore = var_2
-					var_8_2.tempTaskGroup = var_2.map(iter_7_1.task_group, function(arg_9_0)
-						underscore = var_3_10001
-
-						return var_3_10001.map(arg_9_0, function(arg_10_0)
-							assert = var_4_10001
-
-							local var_10_0 = var_7_0
-
-							var_4_10001(var_3.getTaskVO(var_10_0, arg_10_0), "without this task:" .. arg_10_0)
-
-							local var_10_1 = var_7_0
-
-							return var_1.getTaskVO(var_10_1, arg_10_0)
-						end)
+						return var_7_0:getTaskVO(arg_10_0)
 					end)
-					table = var_8_2
+				end)
 
-					local var_8_3 = var_8_2.sort
-					local var_8_4 = arg_7_0.tempTaskGroup
-
-					CompareFuncs = var_4
-
-					var_8_3(var_8_4, var_4({
-						function(arg_11_0)
-							underscore = var_3_10001
-
-							return var_3_10001.all(arg_11_0, function(arg_12_0)
-								return arg_12_0:isReceive()
-							end) and 1 or 0
-						end,
-						function(arg_13_0)
-							return arg_13_0[1].id
-						end
-					}))
-
-					local var_8_5 = arg_7_0.taskGroupItemList
-
-					var_1.align(var_8_5, #arg_7_0.tempTaskGroup)
-				end
-
-				return
+				table.sort(arg_7_0.tempTaskGroup, CompareFuncs({
+					function(arg_11_0)
+						return underscore.all(arg_11_0, function(arg_12_0)
+							return arg_12_0:isReceive()
+						end) and 1 or 0
+					end,
+					function(arg_13_0)
+						return arg_13_0[1].id
+					end
+				}))
+				arg_7_0.taskGroupItemList:align(#arg_7_0.tempTaskGroup)
 			end
 
-			SFX_PANEL = var_14
+			return
+		end, SFX_PANEL)
 
-			var_9(var_7_7, var_1_10012, var_1_10013, var_14)
-
-			if var_7_1:Find("mask") then
-				setActive = var_9
-				var_1_10013 = var_7_1
-
-				var_9(var_7_1.Find(var_1_10013, "mask"), iter_7_1.isLock)
-			end
+		if var_7_1:Find("mask") then
+			setActive(var_7_1:Find("mask"), iter_7_1.isLock)
 		end
 	end
 
-	underscore = var_3
+	local var_7_2 = underscore.keys(arg_7_0.taskGroupList)
 
-	local var_7_8 = var_3.keys(arg_7_0.taskGroupList)
-
-	table = var_4
-
-	var_4.sort(var_7_8, function(arg_14_0, arg_14_1)
+	table.sort(var_7_2, function(arg_14_0, arg_14_1)
 		return arg_14_0 < arg_14_1
 	end)
 
-	local var_7_9
-
 	if arg_7_0.contextData.weekToggle and not arg_7_0.taskGroupList[arg_7_0.contextData.weekToggle].isLock then
 		arg_7_0.weekToggle = arg_7_0.contextData.weekToggle
-		var_7_9 = arg_7_0.contextData
-		var_7_9.weekToggle = nil
+		arg_7_0.contextData.weekToggle = nil
 	else
-		table = var_7_9
-		arg_7_0.weekToggle = var_7_9.remove(var_7_8, 1)
-		ipairs = var_4
+		arg_7_0.weekToggle = table.remove(var_7_2, 1)
 
-		for iter_7_2, iter_7_3 in var_4(var_7_8) do
+		for iter_7_2, iter_7_3 in ipairs(var_7_2) do
 			if arg_7_0.taskGroupList[iter_7_3].isLock then
 				break
-			else
-				underscore = var_1_10010
-				var_1_10010 = var_1_10010.any
-				underscore = var_1_10012
+			elseif underscore.any(underscore.flatten(arg_7_0.taskGroupList[iter_7_3].task_group), function(arg_15_0)
+				local var_15_0 = var_7_0:getTaskVO(arg_15_0)
 
-				if var_1_10010(var_1_10012.flatten(var_9.task_group), function(arg_15_0)
-					local var_15_0 = var_7_0
+				return var_15_0 and not var_15_0:isReceive()
+			end) then
+				arg_7_0.weekToggle = iter_7_3
 
-					return var_1.getTaskVO(var_15_0, arg_15_0) and not var_1:isReceive()
-				end) then
-					arg_7_0.weekToggle = iter_7_3
-
-					break
-				end
+				break
 			end
 		end
 	end
 
 	if arg_7_0.weekToggle == 0 then
-		triggerToggle = var_4
-
-		local var_7_10 = arg_7_0._tf
-
-		var_4(var_6.Find(var_7_10, "frame/0"), true)
+		triggerToggle(arg_7_0._tf:Find("frame/0"), true)
 	else
-		triggerToggle = var_4
-
-		local var_7_11 = arg_7_0.toggleCount
-
-		var_4(var_6.Find(var_7_11, arg_7_0.weekToggle), true)
+		triggerToggle(arg_7_0.toggleCount:Find(arg_7_0.weekToggle), true)
 	end
 
-	ipairs = var_4
+	for iter_7_4, iter_7_5 in ipairs(arg_7_0.taskGroupList) do
+		local var_7_3 = arg_7_0.toggleCount:Find(iter_7_4)
 
-	for iter_7_4, iter_7_5 in var_4(arg_7_0.taskGroupList) do
-		local var_7_12 = arg_7_0.toggleCount
-		local var_7_13 = var_9.Find(var_7_12, iter_7_4)
-
-		SetCompomentEnabled = var_1_10010
-
-		local var_7_14 = var_7_13
-
-		typeof = var_1_10013
-		Toggle = var_1_10015
-
-		var_1_10010(var_7_14, var_1_10013(var_1_10015), not iter_7_5.isLock)
+		SetCompomentEnabled(var_7_3, typeof(Toggle), not iter_7_5.isLock)
 
 		if not iter_7_5.isLock then
-			setGray = var_1_10010
+			setGray(var_7_3, underscore.all(underscore.flatten(iter_7_5.task_group), function(arg_16_0)
+				local var_16_0 = var_7_0:getTaskVO(arg_16_0)
 
-			local var_7_15 = var_7_13
-
-			underscore = var_1_10013
-			var_1_10013 = var_1_10013.all
-			underscore = var_1_10015
-
-			var_1_10010(var_7_15, var_1_10013(var_1_10015.flatten(iter_7_5.task_group), function(arg_16_0)
-				local var_16_0 = var_7_0
-
-				return var_1.getTaskVO(var_16_0, arg_16_0) and var_1:isReceive()
+				return var_16_0 and var_16_0:isReceive()
 			end))
 		end
 	end
@@ -385,185 +178,66 @@ function var_0_1.Flush(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.UpdateTaskGroup(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_1
-	local var_17_1 = arg_17_1.Find(var_17_0, "info")
-	local var_17_2 = {}
+function var_0_0.UpdateTaskGroup(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_1:Find("info")
 
-	ipairs = var_17_0
-
-	for iter_17_0, iter_17_1 in var_17_0(arg_17_2) do
+	for iter_17_0, iter_17_1 in ipairs(arg_17_2) do
 		if not iter_17_1:isReceive() then
-			table = var_10
-
-			var_10.insert(var_17_2, iter_17_1)
+			table.insert({}, iter_17_1)
 		end
 	end
 
-	if #var_17_2 > 0 then
-		table = var_5
+	local var_17_1 = #{} > 0 and table.remove({}, 1) or arg_17_2[#arg_17_2]
 
-		local var_17_3
+	arg_17_0:UpdateTaskDisplay(var_17_0, var_17_1)
 
-		if not var_5.remove(var_17_2, 1) then
-			var_17_3 = arg_17_2[#arg_17_2]
-		end
-
-		arg_17_0:UpdateTaskDisplay(var_17_1, var_17_3)
-
-		return
-	end
+	return
 end
 
-function var_0_1.UpdateTaskDisplay(arg_18_0, arg_18_1, arg_18_2)
-	local var_18_0 = arg_18_2
-	local var_18_1 = arg_18_2.getProgress(var_18_0)
-	local var_18_2 = arg_18_2:getConfig("target_num")
+function var_0_0.UpdateTaskDisplay(arg_18_0, arg_18_1, arg_18_2)
+	setText(arg_18_1:Find("desc"), string.format("%s(%d/%d)", arg_18_2:getConfig("desc"), arg_18_2:getProgress(), (arg_18_2:getConfig("target_num"))))
 
-	setText = var_18_0
+	local var_18_0 = Drop.Create(arg_18_2:getConfig("award_display")[1])
+	local var_18_1 = arg_18_0.finishAll and 2 or arg_18_2:getTaskStatus()
 
-	local var_18_3 = arg_18_1:Find("desc")
+	setActive(arg_18_1:Find("go"), var_18_1 == 0)
+	setActive(arg_18_1:Find("get"), var_18_1 == 1)
+	setActive(arg_18_1:Find("got"), var_18_1 == 2)
+	setText(arg_18_1:Find("go/Text"), i18n("island_word_go"))
+	setText(arg_18_1:Find("get/Text"), i18n("handbook_research_final_task_btn_claim"))
+	setText(arg_18_1:Find("got/Text"), i18n("handbook_research_final_task_btn_finished"))
 
-	string = var_1_10008
+	local var_18_2 = Drop.Create(arg_18_2:getConfig("award_display")[1])
 
-	var_18_0(var_18_3, var_1_10008.format("%s(%d/%d)", arg_18_2:getConfig("desc"), var_18_1, var_18_2))
-
-	Drop = var_18_0
-
-	local var_18_4 = var_18_0.Create(arg_18_2:getConfig("award_display")[1])
-	local var_18_5, var_18_6
-
-	if arg_18_0.finishAll then
-		var_18_5 = 2
-	else
-		var_18_6 = arg_18_2
-		var_18_5 = arg_18_2.getTaskStatus(var_18_6)
-	end
-
-	setActive = var_7
-
-	var_7(arg_18_1:Find("go"), var_18_5 == 0)
-
-	setActive = var_7
-
-	var_7(arg_18_1:Find("get"), var_18_5 == 1)
-
-	setActive = var_7
-
-	var_7(arg_18_1:Find("got"), var_18_5 == 2)
-
-	setText = var_7
-
-	local var_18_7 = arg_18_1:Find("go/Text")
-
-	i18n = var_10
-
-	var_7(var_18_7, var_10("island_word_go"))
-
-	setText = var_7
-
-	local var_18_8 = arg_18_1:Find("get/Text")
-
-	i18n = var_10
-
-	var_7(var_18_8, var_10("handbook_research_final_task_btn_claim"))
-
-	setText = var_7
-
-	local var_18_9 = arg_18_1:Find("got/Text")
-
-	i18n = var_10
-
-	var_7(var_18_9, var_10("handbook_research_final_task_btn_finished"))
-
-	Drop = var_7
-
-	local var_18_10 = var_7.Create(arg_18_2:getConfig("award_display")[1])
-
-	setText = var_18_6
-
-	var_18_6(arg_18_1:Find("icon/num"), "X" .. arg_18_2:getConfig("award_display")[1][3])
+	setText(arg_18_1:Find("icon/num"), "X" .. arg_18_2:getConfig("award_display")[1][3])
 
 	if arg_18_0.pticonAtlas and arg_18_0.pticonName then
-		setImageSprite = var_8
-
-		local var_18_11 = arg_18_1:Find("icon")
-
-		LoadSprite = var_11
-
-		var_8(var_18_11, var_11("ui/PSSHei5UI_atlas", "battlepass_blackfriday"), false)
+		setImageSprite(arg_18_1:Find("icon"), LoadSprite("ui/PSSHei5UI_atlas", "battlepass_blackfriday"), false)
 	end
 
-	onButton = var_8
-
-	local var_18_12 = arg_18_0
-	local var_18_13 = arg_18_1
-	local var_18_14 = arg_18_1.Find(var_18_13, "icon")
-
-	local function var_18_15()
-		local var_19_0 = arg_18_0
-		local var_19_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_19_1(var_19_0, var_2_10003.ON_NEW_STYLE_DROP, {
-			drop = var_18_10
+	onButton(arg_18_0, arg_18_1:Find("icon"), function()
+		arg_18_0:emit(BaseUI.ON_NEW_STYLE_DROP, {
+			drop = var_18_2
 		})
 
 		return
-	end
-
-	SFX_PANEL = var_18_13
-
-	var_8(var_18_12, var_18_14, var_18_15, var_18_13)
-
-	onButton = var_8
-
-	local var_18_16 = arg_18_0
-	local var_18_17 = arg_18_1
-	local var_18_18 = arg_18_1.Find(var_18_17, "go")
-
-	local function var_18_19()
-		local var_20_0 = arg_18_0
-		local var_20_1 = var_0.emit
-
-		PSSHei5Mediator = var_2_10003
-
-		var_20_1(var_20_0, var_2_10003.ON_TASK_GO, arg_18_2)
+	end, SFX_PANEL)
+	onButton(arg_18_0, arg_18_1:Find("go"), function()
+		arg_18_0:emit(PSSHei5Mediator.ON_TASK_GO, arg_18_2)
 
 		return
-	end
-
-	SFX_PANEL = var_18_17
-
-	var_8(var_18_16, var_18_18, var_18_19, var_18_17)
-
-	onButton = var_8
-
-	local var_18_20 = arg_18_0
-	local var_18_21 = arg_18_1
-	local var_18_22 = arg_18_1.Find(var_18_21, "get")
-
-	local function var_18_23()
-		local var_21_0 = arg_18_0
-		local var_21_1 = var_0.emit
-
-		PSSHei5Mediator = var_2_10003
-
-		var_21_1(var_21_0, var_2_10003.ON_TASK_SUBMIT, arg_18_2)
+	end, SFX_PANEL)
+	onButton(arg_18_0, arg_18_1:Find("get"), function()
+		arg_18_0:emit(PSSHei5Mediator.ON_TASK_SUBMIT, arg_18_2)
 
 		return
-	end
-
-	SFX_CONFIRM = var_18_21
-
-	var_8(var_18_20, var_18_22, var_18_23, var_18_21)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_22_0)
+function var_0_0.OnDestroy(arg_22_0)
 	return
 end
 
-return var_0_1
+return var_0_0

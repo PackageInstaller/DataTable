@@ -45,11 +45,13 @@ function active(self, args)
     super.active(self, args)
     self.selectType = 1
     GameDispatcher:addEventListener(EventName.ON_CLICK_SEABED_COLLECTION_ITEM, self.onClickItem, self)
+    GameDispatcher:addEventListener(EventName.UPDATE_SEABED_COLLECTION_PANEL,self.updateRed,self)
     self:onBtnTabClickHandler(self.selectType)
 end
 
 function deActive(self)
     super.deActive(self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_COLLECTION_PANEL,self.updateRed,self)
     GameDispatcher:removeEventListener(EventName.ON_CLICK_SEABED_COLLECTION_ITEM, self.onClickItem, self)
 end
 
@@ -174,6 +176,16 @@ function showPanel(self)
     else
         self.mEmpty:SetActive(true)
         self.mGroup:SetActive(false)
+    end
+
+    self:updateRed()
+end
+
+function updateRed(self)
+    if seabed.SeabedManager:canGetGain(self:getOpenType()) then
+        RedPointManager:add(self.mBtnAward.transform, nil, 27, 45)
+    else
+        RedPointManager:remove(self.mBtnAward.transform)
     end
 end
 

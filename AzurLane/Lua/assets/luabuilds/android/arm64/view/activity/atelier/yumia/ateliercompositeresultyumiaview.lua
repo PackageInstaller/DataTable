@@ -1,176 +1,80 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AtelierCompositeResultYumiaView", import("view.activity.Atelier.base.AtelierCompositeResultView"))
 
-local var_0_0 = "AtelierCompositeResultYumiaView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.Atelier.base.AtelierCompositeResultView"))
-
-function var_0_1.ShowCompositeResult(arg_1_0, arg_1_1)
-	GetComponent = var_1_10002
-
-	local var_1_0 = arg_1_0._tf
-
-	typeof = var_1_10005
-	Animation = var_1_10007
-
-	local var_1_1 = var_1_10002(var_1_0, var_1_10005(var_1_10007))
-
-	var_2.Play(var_1_1, "Anim_AtelierCompositeYumiaUI_ConfirmWindow_Resultwindow_In")
-
-	setActive = var_3
-
-	var_3(arg_1_0._go, true)
-
-	pg = var_3
-
-	local var_1_2 = var_3.UIMgr.GetInstance()
-
-	var_3.BlurPanel(var_1_2, arg_1_0._tf)
+function var_0_0.ShowCompositeResult(arg_1_0, arg_1_1)
+	GetComponent(arg_1_0._tf, typeof(Animation)):Play("Anim_AtelierCompositeYumiaUI_ConfirmWindow_Resultwindow_In")
+	setActive(arg_1_0._go, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_1_0._tf)
 
 	if arg_1_1[1] == nil then
 		return
 	end
 
-	local var_1_3 = arg_1_0._tf
-	local var_1_4 = var_4.Find(var_1_3, "Window/itemContant")
-	local var_1_5 = arg_1_0._tf
-	local var_1_6 = var_5.Find(var_1_5, "Window/AtelierCommonYumiaItem")
-	local var_1_7 = var_3.type
+	local var_1_0 = arg_1_0._tf:Find("Window/itemContant")
+	local var_1_1 = arg_1_0._tf:Find("Window/AtelierCommonYumiaItem")
 
-	DROP_TYPE_RYZA_DROP = var_1_5
-
-	if var_1_7 ~= var_1_5 then
-		setActive = var_1_7
-
-		var_1_7(var_1_6, false)
-
-		setActive = var_1_7
-
-		var_1_7(var_1_4, true)
-
-		UIItemList = var_1_7
-		var_1_7 = var_1_7.StaticAlign
-
-		local var_1_8 = var_1_4
-		local var_1_9 = arg_1_0._tf
-
-		var_1_7(var_1_8, var_9.Find(var_1_9, "Window/itemContant/Icon"), #arg_1_1, function(arg_2_0, arg_2_1, arg_2_2)
-			UIItemList = var_2_10003
-
-			if arg_2_0 == var_2_10003.EventUpdate then
-				local var_2_0 = arg_1_1[arg_2_1 + 1]
-				local var_2_1 = arg_1_0._parentClass
-
-				var_4.UpdateRyzaDrop(var_2_1, arg_2_2, var_2_0)
-
-				setActive = var_4
-
-				var_4(arg_2_2, true)
+	if arg_1_1[1].type ~= DROP_TYPE_RYZA_DROP then
+		setActive(var_1_1, false)
+		setActive(var_1_0, true)
+		UIItemList.StaticAlign(var_1_0, arg_1_0._tf:Find("Window/itemContant/Icon"), #arg_1_1, function(arg_2_0, arg_2_1, arg_2_2)
+			if arg_2_0 == UIItemList.EventUpdate then
+				arg_1_0._parentClass:UpdateRyzaDrop(arg_2_2, arg_1_1[arg_2_1 + 1])
+				setActive(arg_2_2, true)
 			end
 
 			return
 		end)
 
-		var_1_7 = 0
-		ipairs = var_1_5
+		local var_1_2 = 0
 
-		for iter_1_0, iter_1_1 in var_1_5(arg_1_1) do
-			var_1_7 = iter_1_1:getCount() + var_1_7
+		for iter_1_0, iter_1_1 in ipairs(arg_1_1) do
+			var_1_2 = iter_1_1:getCount() + var_1_2
 		end
 
-		setText = var_7
-
-		local var_1_10 = arg_1_0._tf
-
-		var_7(var_9.Find(var_1_10, "Window/CountBG/Text"), var_1_7)
+		setText(arg_1_0._tf:Find("Window/CountBG/Text"), var_1_2)
 	else
-		AtelierMaterial = var_1_7
-
-		local var_1_11 = var_1_7.New({
-			configId = var_3.id
+		local var_1_3 = AtelierMaterial.New({
+			configId = arg_1_1[1].id
 		})
 
-		var_1_11.count = var_3:getCount()
+		var_1_3.count = arg_1_1[1]:getCount()
 
-		local var_1_12 = arg_1_0._parentClass
-
-		var_7.UpdateRyzaItem(var_1_12, var_1_6, var_1_11)
-
-		setActive = var_7
-
-		var_7(var_1_6, true)
-
-		setActive = var_7
-
-		var_7(var_1_4, false)
-
-		setText = var_7
-
-		local var_1_13 = arg_1_0._tf
-
-		var_7(var_9.Find(var_1_13, "Window/CountBG/Text"), var_3:getCount())
+		arg_1_0._parentClass:UpdateRyzaItem(var_1_1, var_1_3)
+		setActive(var_1_1, true)
+		setActive(var_1_0, false)
+		setText(arg_1_0._tf:Find("Window/CountBG/Text"), arg_1_1[1]:getCount())
 	end
 
 	return
 end
 
-function var_0_1.HideCompositeResult(arg_3_0)
-	isActive = var_1_10001
-
-	if not var_1_10001(arg_3_0._go) then
+function var_0_0.HideCompositeResult(arg_3_0)
+	if not isActive(arg_3_0._go) then
 		return
 	end
 
-	GetComponent = var_1
+	local var_3_0 = GetComponent(arg_3_0._tf, typeof(Animation))
 
-	local var_3_0 = arg_3_0._tf
+	var_3_0:Play("Anim_AtelierCompositeYumiaUI_ConfirmWindow_Resultwindow_Out")
+	pg.UIMgr.GetInstance():LoadingOn(false)
 
-	typeof = var_1_10004
-	Animation = var_1_10006
-
-	local var_3_1 = var_1(var_3_0, var_1_10004(var_1_10006))
-
-	var_1.Play(var_3_1, "Anim_AtelierCompositeYumiaUI_ConfirmWindow_Resultwindow_Out")
-
-	pg = var_2
-
-	local var_3_2 = var_2.UIMgr.GetInstance()
-
-	var_2.LoadingOn(var_3_2, false)
-
-	FrameTimer = var_2
-	arg_3_0.closeTimer = var_2.New(function()
-		local var_4_0 = var_0
-
-		if not var_0.IsPlaying(var_4_0, "Anim_AtelierCompositeYumiaUI_ConfirmWindow_Resultwindow_Out") then
-			local var_4_1 = arg_3_0
-
-			var_0.StopCloseTimer(var_4_1)
-
-			pg = var_0
-
-			local var_4_2 = var_0.UIMgr.GetInstance()
-
-			var_0.LoadingOff(var_4_2)
-			var_0_1.super.HideCompositeResult(arg_3_0)
+	arg_3_0.closeTimer = FrameTimer.New(function()
+		if not var_3_0:IsPlaying("Anim_AtelierCompositeYumiaUI_ConfirmWindow_Resultwindow_Out") then
+			arg_3_0:StopCloseTimer()
+			pg.UIMgr.GetInstance():LoadingOff()
+			var_0_0.super.HideCompositeResult(arg_3_0)
 		end
 
 		return
 	end, 1, -1)
 
-	local var_3_3 = arg_3_0.closeTimer
-
-	var_2.Start(var_3_3)
+	arg_3_0.closeTimer:Start()
 
 	return true
 end
 
-function var_0_1.StopCloseTimer(arg_5_0)
+function var_0_0.StopCloseTimer(arg_5_0)
 	if arg_5_0.closeTimer then
-		local var_5_0 = arg_5_0.closeTimer
-
-		var_1.Stop(var_5_0)
+		arg_5_0.closeTimer:Stop()
 
 		arg_5_0.closeTimer = nil
 	end
@@ -178,8 +82,8 @@ function var_0_1.StopCloseTimer(arg_5_0)
 	return
 end
 
-function var_0_1.PlayGuide(arg_6_0)
+function var_0_0.PlayGuide(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

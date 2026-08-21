@@ -81,6 +81,8 @@ function __updateCustomView(self)
     self:updateisShowLove()
     self:getChildGO("mTxtLvlDec"):GetComponent(ty.Text).text = _TT(1361)
     self:getChildGO("mIsLimit"):SetActive(self:getData().isLimit == 1)
+    self:getChildGO("mImgLike"):SetActive(self:getData().isLike == 1)
+    --self:getChildGO("mImgLike").color = self:getData().isLike == 1 and gs.ColorUtil.GetColor("FF0000FF") or gs.ColorUtil.GetColor("000000FF")
 end
 
 function setDetailVisible(self, isShow)
@@ -135,7 +137,8 @@ function updateLvl(self)
                 -- if self:getData().lvl == 1 then
                 --     self.mTxtLvl.text = "01"
                 -- else
-                self.mTxtLvl.text = self:getData().lvl
+                self.mTxtLvl.text = self:getData().lvl 
+                self.mTxtLvl.color = self:getData().lvl == 100 and gs.ColorUtil.GetColor("F9a829FF") or gs.ColorUtil.GetColor("FFFFFFFF")
                 --end
             else
                 self.mTxtLvl.text = "1"
@@ -157,7 +160,12 @@ function updateName(self)
             self.mTxtName = self:getChildGO("mTxtName"):GetComponent(ty.Text)
         end
         if (self.mName == nil) then
-            self.mTxtName.text = self:getData().name
+            if self:getData().__cname == hero.HeroConfigVo.__cname then
+                self.mTxtName.text = self:getData().name
+            else
+                self.mTxtName.text = self:getData():getHeroName()
+            end
+           
         else
             self.mTxtName.text = self.mName
         end

@@ -1,106 +1,61 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GetThemeTemplatePlayerInfoCommand", pm.SimpleCommand)
 
-local var_0_0 = "GetThemeTemplatePlayerInfoCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.templateId
+	local var_1_2 = var_1_0.callback
+	local var_1_3 = getProxy(DormProxy)
 
-pm = var_0_10003
+	if var_1_0.type == BackYardConst.THEME_TEMPLATE_TYPE_SHOP or var_1_0.type == BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION then
+		local function var_1_4(arg_2_0)
+			local var_2_0 = CourtYardThemeOwner.New(arg_2_0.player)
+			local var_2_1 = var_1_3:GetShopThemeTemplateById(var_1_1)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().type
-	local var_1_1 = var_2.templateId
-	local var_1_2 = var_2.userId
-	local var_1_3 = var_2.callback
-
-	getProxy = var_1_10007
-	DormProxy = var_1_10009
-
-	local var_1_4 = var_1_10007(var_1_10009)
-
-	BackYardConst = var_1_10008
-
-	if var_1_0 ~= var_1_10008.THEME_TEMPLATE_TYPE_SHOP then
-		BackYardConst = var_1_5
-
-		local var_1_5
-
-		if var_1_0 == var_1_5.THEME_TEMPLATE_TYPE_COLLECTION then
-			function var_1_5(arg_2_0)
-				CourtYardThemeOwner = var_2_10001
-
-				local var_2_0 = var_2_10001.New(arg_2_0.player)
-				local var_2_1 = var_1_4
-
-				if var_2.GetShopThemeTemplateById(var_2_1, var_1_1) then
-					var_2:SetPlayerInfo(var_2_0)
-
-					local var_2_2 = var_1_4
-
-					var_3.UpdateShopThemeTemplate(var_2_2, var_2)
-				end
-
-				local var_2_3 = var_1_4
-
-				if var_3.GetCollectionThemeTemplateById(var_2_3, var_1_1) then
-					var_3:SetPlayerInfo(var_2_0)
-
-					local var_2_4 = var_1_4
-
-					var_4.UpdateCollectionThemeTemplate(var_2_4, var_3)
-				end
-
-				if var_1_3 then
-					var_1_3(var_2_0)
-				end
-
-				return
+			if var_2_1 then
+				var_2_1:SetPlayerInfo(var_2_0)
+				var_1_3:UpdateShopThemeTemplate(var_2_1)
 			end
 
-			pg = var_1_10009
+			local var_2_2 = var_1_3:GetCollectionThemeTemplateById(var_1_1)
 
-			local var_1_6 = var_1_10009.ConnectionMgr.GetInstance()
-
-			var_9.Send(var_1_6, 50113, {
-				user_id = var_1_2
-			}, 50114, function(arg_3_0)
-				if arg_3_0.result == 0 then
-					var_1_5(arg_3_0)
-				else
-					pg = var_1
-
-					local var_3_0 = var_1.TipsMgr.GetInstance()
-					local var_3_1 = var_1.ShowTips
-
-					ERROR_MESSAGE = var_2_10004
-
-					var_3_1(var_3_0, var_2_10004[arg_3_0.result] .. arg_3_0.result)
-				end
-
-				return
-			end)
-		else
-			BackYardConst = var_1_5
-
-			if var_1_0 == var_1_5.THEME_TEMPLATE_TYPE_CUSTOM then
-				getProxy = var_8
-				PlayerProxy = var_1_10010
-
-				local var_1_7 = var_8(var_1_10010)
-				local var_1_8 = var_8.getData(var_1_7)
-
-				if var_1_4:GetCustomThemeTemplateById(var_1_1) then
-					var_9:SetPlayerInfo(var_1_8)
-					var_1_4:UpdateCustomThemeTemplate(var_9)
-				end
-
-				if var_1_3 then
-					var_1_3(var_1_8)
-				end
+			if var_2_2 then
+				var_2_2:SetPlayerInfo(var_2_0)
+				var_1_3:UpdateCollectionThemeTemplate(var_2_2)
 			end
+
+			if var_1_2 then
+				var_1_2(var_2_0)
+			end
+
+			return
 		end
 
-		return
+		pg.ConnectionMgr.GetInstance():Send(50113, {
+			user_id = var_1_0.userId
+		}, 50114, function(arg_3_0)
+			if arg_3_0.result == 0 then
+				var_1_4(arg_3_0)
+			else
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
+			end
+
+			return
+		end)
+	elseif var_1_0.type == BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM then
+		local var_1_5 = getProxy(PlayerProxy):getData()
+		local var_1_6 = var_1_3:GetCustomThemeTemplateById(var_1_0.templateId)
+
+		if var_1_6 then
+			var_1_6:SetPlayerInfo(var_1_5)
+			var_1_3:UpdateCustomThemeTemplate(var_1_6)
+		end
+
+		if var_1_0.callback then
+			var_1_0.callback(var_1_5)
+		end
 	end
+
+	return
 end
 
-return var_0_1
+return var_0_0

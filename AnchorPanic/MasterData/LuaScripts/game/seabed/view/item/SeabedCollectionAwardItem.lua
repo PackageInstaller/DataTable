@@ -61,17 +61,17 @@ function setData(self, param)
     if self.mData.battleType == seabed.SeabedBattleType.Collage then
         hasNum = seabed.SeabedManager:getHisCollNum()
         if self.mData.num > hasNum then
-            self.mTextName.text = "累计获取收藏品达到:<color=#D53529>" .. self.mData.num .. "</color>个"
+            self.mTextName.text = _TT(111176,self.mData.num)
         else
-            self.mTextName.text = "累计获取收藏品达到:" .. self.mData.num .. "个"
+            self.mTextName.text = _TT(111178,self.mData.num)-- "累计获取收藏品达到:" .. self.mData.num .. "个"
         end
     else
 
         hasNum = seabed.SeabedManager:getHisBuffNum()
         if self.mData.num > hasNum then
-            self.mTextName.text = "累计获取增益达到:<color=#D53529>" .. self.mData.num .. "</color>个"
+            self.mTextName.text = _TT(111177,self.mData.num)-- "累计获取增益达到:<color=#D53529>" .. self.mData.num .. "</color>个"
         else
-            self.mTextName.text = "累计获取增益达到:" .. self.mData.num .. "个"
+            self.mTextName.text = _TT(111179,self.mData.num) --"累计获取增益达到:" .. self.mData.num .. "个"
         end
        
     end

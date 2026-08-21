@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_holylight") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_holylight"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_holylight = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_holylight
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_holylight = rawget(pg, "dorm3d_holylight") or setmetatable({
+	__name = "dorm3d_holylight"
+}, confNEO)
+pg.dorm3d_holylight.all = {
 	49905101,
 	49905301,
 	49905102,
@@ -36,11 +13,7 @@ var_0_3.all = {
 	79902103,
 	79902104
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_holylight
-
-var_0_4.get_id_list_by_skin_id = {
+pg.dorm3d_holylight.get_id_list_by_skin_id = {
 	[199031] = {
 		19903101
 	},
@@ -67,25 +40,11 @@ var_0_4.get_id_list_by_skin_id = {
 		79902104
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_holylight = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_holylight = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_holylight
-
-	var_1_0[49905101] = {
+	pg.base.dorm3d_holylight[49905101] = {
 		texture = "dorm3dholylight/Eff_smoke_114",
 		id = 49905101,
 		invert = 1,
@@ -113,11 +72,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_holylight
-
-	var_1_1[21] = {
+	pg.base.dorm3d_holylight[21] = {
 		texture = "dorm3dholylight/Eff_smoke_114",
 		id = 49905301,
 		invert = 1,
@@ -145,11 +100,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_holylight
-
-	var_1_2[49905102] = {
+	pg.base.dorm3d_holylight[49905102] = {
 		texture = "dorm3dholylight/Eff_smoke_114",
 		id = 49905102,
 		invert = 1,
@@ -177,11 +128,7 @@ var_0_4.base.dorm3d_holylight = {}
 			35
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_holylight
-
-	var_1_3[13] = {
+	pg.base.dorm3d_holylight[13] = {
 		texture = "dorm3dholylight/Eff_smoke_114",
 		id = 20220301,
 		invert = 1,
@@ -209,11 +156,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_holylight
-
-	var_1_4[19903101] = {
+	pg.base.dorm3d_holylight[19903101] = {
 		texture = "dorm3dholylight/Eff_smoke_114",
 		id = 19903101,
 		invert = 1,
@@ -241,11 +184,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_holylight
-
-	var_1_5[21] = {
+	pg.base.dorm3d_holylight[21] = {
 		texture = "dorm3dholylight/Eff_smoke_116",
 		id = 79902101,
 		invert = 1,
@@ -273,11 +212,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_holylight
-
-	var_1_6[22] = {
+	pg.base.dorm3d_holylight[22] = {
 		texture = "dorm3dholylight/Eff_smoke_116",
 		id = 79902102,
 		invert = 1,
@@ -305,11 +240,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_holylight
-
-	var_1_7[23] = {
+	pg.base.dorm3d_holylight[23] = {
 		texture = "dorm3dholylight/Eff_smoke_116",
 		id = 79902103,
 		invert = 1,
@@ -337,8 +268,7 @@ var_0_4.base.dorm3d_holylight = {}
 			0
 		}
 	}
-	pg = var_1_7
-	var_1_7.base.dorm3d_holylight[24] = {
+	pg.base.dorm3d_holylight[24] = {
 		texture = "dorm3dholylight/Eff_smoke_116",
 		id = 79902104,
 		invert = 1,

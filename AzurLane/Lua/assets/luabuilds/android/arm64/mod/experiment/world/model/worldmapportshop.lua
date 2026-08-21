@@ -1,28 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldMapPortShop", import("...BaseEntity"))
 
-local var_0_0 = "WorldMapPortShop"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	items = "table",
 	expiredTime = "number"
 }
 
-function var_0_1.Setup(arg_1_0)
+function var_0_0.Setup(arg_1_0)
 	return
 end
 
-function var_0_1.IsValid(arg_2_0)
-	local var_2_0 = arg_2_0.expiredTime
+function var_0_0.IsValid(arg_2_0)
+	local var_2_0 = pg.TimeMgr.GetInstance()
 
-	pg = var_1_10002
-
-	local var_2_1 = var_1_10002.TimeMgr.GetInstance()
-
-	return var_2_0 >= var_2.GetServerTime(var_2_1)
+	return arg_2_0.expiredTime >= var_2_0:GetServerTime()
 end
 
-return var_0_1
+return var_0_0

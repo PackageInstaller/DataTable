@@ -1,48 +1,24 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NavalTacticsSkillInfoLayer", import(".SkillInfoLayer"))
 
-local var_0_0 = "NavalTacticsSkillInfoLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SkillInfoLayer"))
-
-function var_0_1.showBase(arg_1_0)
-	var_0_1.super.showBase(arg_1_0)
-
-	setActive = var_1
-
-	var_1(arg_1_0.metaBtn, false)
-
-	setActive = var_1
-
-	var_1(arg_1_0.upgradeBtn, false)
+function var_0_0.showBase(arg_1_0)
+	var_0_0.super.showBase(arg_1_0)
+	setActive(arg_1_0.metaBtn, false)
+	setActive(arg_1_0.upgradeBtn, false)
 
 	return
 end
 
-function var_0_1.showInfo(arg_2_0, arg_2_1)
+function var_0_0.showInfo(arg_2_0, arg_2_1)
 	arg_2_0.isWorld = arg_2_1
 
-	local var_2_0 = arg_2_0.contextData.skillId
-	local var_2_1
+	if arg_2_0.contextData.skillOnShip then
+		local var_2_1 = arg_2_0.contextData.skillOnShip.level or 1
 
-	if not arg_2_0.contextData.skillOnShip or not var_3.level then
-		var_2_1 = 1
+		setText(arg_2_0.skillInfoLv, "Lv." .. var_2_1)
+		setText(arg_2_0.skillInfoIntro, Student.getSkillDesc(var_2_0, var_2_1, arg_2_1))
+
+		return
 	end
-
-	setText = var_1_10005
-
-	var_1_10005(arg_2_0.skillInfoLv, "Lv." .. var_2_1)
-
-	setText = var_1_10005
-
-	local var_2_2 = arg_2_0.skillInfoIntro
-
-	Student = var_8
-
-	var_1_10005(var_2_2, var_8.getSkillDesc(var_2_0, var_2_1, arg_2_1))
-
-	return
 end
 
-return var_0_1
+return var_0_0

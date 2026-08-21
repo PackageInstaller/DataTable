@@ -10,6 +10,8 @@ decorate.ModuleType = {
     BACKGROUND = 3,
     --聊天气泡
     CHATBUBLLE = 4,
+    --战斗皮肤
+    FIGHTSKIN = 6,
 }
 
 -- 切卡类型
@@ -47,6 +49,8 @@ decorate.getModuleTypeByTabType = function(tabType)
         return decorate.ModuleType.TITLE
     elseif (tabType == decorate.TabType.BACKGROUND) then
         return decorate.ModuleType.BACKGROUND
+    elseif (tabType == decorate.TabType.FIGHTSKIN) then
+        return decorate.ModuleType.FIGHTSKIN
     end
 end
 
@@ -59,6 +63,8 @@ decorate.getReadTypeByModuleType = function(moduleType)
         return ReadConst.NEW_TITLE
     elseif (moduleType == decorate.ModuleType.BACKGROUND) then
         return ReadConst.NEW_TITLE
+            elseif (moduleType == decorate.ModuleType.FIGHTSKIN) then
+        return ReadConst.FIGHT_SKIN_BUBBLE
     end
 end
 

@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldTrigger", import("...BaseEntity"))
 
-local var_0_0 = "WorldTrigger"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	config = "table",
 	progress = "number",
 	id = "number",
@@ -14,28 +8,26 @@ var_0_1.Fields = {
 	desc = "string"
 }
 
-function var_0_1.Setup(arg_1_0, arg_1_1)
+function var_0_0.Setup(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1
 
 	return
 end
 
-function var_0_1.GetProgress(arg_2_0)
+function var_0_0.GetProgress(arg_2_0)
 	return arg_2_0.progress
 end
 
-function var_0_1.GetMaxProgress(arg_3_0)
+function var_0_0.GetMaxProgress(arg_3_0)
 	return arg_3_0.maxProgress
 end
 
-function var_0_1.GetDesc(arg_4_0)
-	string = var_1_10001
-
-	return var_1_10001.format("%s(%s/%s)", arg_4_0.desc, arg_4_0.progress, arg_4_0.maxProgress)
+function var_0_0.GetDesc(arg_4_0)
+	return string.format("%s(%s/%s)", arg_4_0.desc, arg_4_0.progress, arg_4_0.maxProgress)
 end
 
-function var_0_1.IsAchieved(arg_5_0)
+function var_0_0.IsAchieved(arg_5_0)
 	return arg_5_0:GetProgress() >= arg_5_0:GetMaxProgress()
 end
 
-return var_0_1
+return var_0_0

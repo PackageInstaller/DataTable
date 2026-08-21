@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_furniture_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_furniture_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_furniture_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_furniture_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_furniture_template = rawget(pg, "dorm3d_furniture_template") or setmetatable({
+	__name = "dorm3d_furniture_template"
+}, confNEO)
+pg.dorm3d_furniture_template.all = {
 	1,
 	2,
 	3,
@@ -105,11 +82,7 @@ var_0_3.all = {
 	2115,
 	2161
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_furniture_template
-
-var_0_4.get_id_list_by_room_id = {
+pg.dorm3d_furniture_template.get_id_list_by_room_id = {
 	{
 		1,
 		2,
@@ -205,25 +178,11 @@ var_0_4.get_id_list_by_room_id = {
 		2161
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_furniture_template = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_furniture_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_furniture_template
-
-	var_1_0[1] = {
+	pg.base.dorm3d_furniture_template[1] = {
 		rarity = 3,
 		name = "吧台椅",
 		unlock_tips = "",
@@ -249,11 +208,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_furniture_template
-
-	var_1_1[2] = {
+	pg.base.dorm3d_furniture_template[2] = {
 		rarity = 2,
 		name = "榨汁机",
 		unlock_tips = "",
@@ -274,11 +229,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_furniture_template
-
-	var_1_2[3] = {
+	pg.base.dorm3d_furniture_template[3] = {
 		rarity = 3,
 		name = "经典沙发",
 		unlock_tips = "",
@@ -304,11 +255,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_furniture_template
-
-	var_1_3[4] = {
+	pg.base.dorm3d_furniture_template[4] = {
 		rarity = 3,
 		name = "简约木床",
 		unlock_tips = "",
@@ -334,11 +281,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_furniture_template
-
-	var_1_4[5] = {
+	pg.base.dorm3d_furniture_template[5] = {
 		rarity = 2,
 		name = "台灯",
 		unlock_tips = "",
@@ -359,11 +302,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_furniture_template
-
-	var_1_5[6] = {
+	pg.base.dorm3d_furniture_template[6] = {
 		rarity = 2,
 		name = "邮轮模型",
 		unlock_tips = "",
@@ -384,11 +323,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_furniture_template
-
-	var_1_6[121] = {
+	pg.base.dorm3d_furniture_template[121] = {
 		rarity = 4,
 		name = "甜蜜心事",
 		type = 4,
@@ -420,11 +355,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture121"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_furniture_template
-
-	var_1_7[122] = {
+	pg.base.dorm3d_furniture_template[122] = {
 		rarity = 4,
 		name = "午后遐乡",
 		type = 5,
@@ -456,11 +387,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture122"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_furniture_template
-
-	var_1_8[201] = {
+	pg.base.dorm3d_furniture_template[201] = {
 		rarity = 3,
 		name = "简然舒眠",
 		unlock_tips = "",
@@ -486,11 +413,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_furniture_template
-
-	var_1_9[202] = {
+	pg.base.dorm3d_furniture_template[202] = {
 		rarity = 3,
 		name = "惬意一餐",
 		unlock_tips = "",
@@ -516,11 +439,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_furniture_template
-
-	var_1_10[203] = {
+	pg.base.dorm3d_furniture_template[203] = {
 		rarity = 3,
 		name = "午后微风",
 		unlock_tips = "",
@@ -546,11 +465,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_furniture_template
-
-	var_1_11[204] = {
+	pg.base.dorm3d_furniture_template[204] = {
 		rarity = 2,
 		name = "瓶中暖意",
 		unlock_tips = "",
@@ -571,11 +486,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_furniture_template
-
-	var_1_12[205] = {
+	pg.base.dorm3d_furniture_template[205] = {
 		rarity = 2,
 		name = "啾啾玩偶",
 		unlock_tips = "",
@@ -596,11 +507,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_furniture_template
-
-	var_1_13[206] = {
+	pg.base.dorm3d_furniture_template[206] = {
 		rarity = 2,
 		name = "杯沿春色",
 		unlock_tips = "",
@@ -621,11 +528,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_furniture_template
-
-	var_1_14[207] = {
+	pg.base.dorm3d_furniture_template[207] = {
 		rarity = 2,
 		name = "一支青霄",
 		unlock_tips = "",
@@ -646,11 +549,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_furniture_template
-
-	var_1_15[208] = {
+	pg.base.dorm3d_furniture_template[208] = {
 		rarity = 2,
 		name = "闲时留白",
 		unlock_tips = "",
@@ -671,11 +570,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_furniture_template
-
-	var_1_16[209] = {
+	pg.base.dorm3d_furniture_template[209] = {
 		rarity = 2,
 		name = "瓶中灿景",
 		unlock_tips = "",
@@ -696,11 +591,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_furniture_template
-
-	var_1_17[210] = {
+	pg.base.dorm3d_furniture_template[210] = {
 		rarity = 2,
 		name = "好运将至",
 		unlock_tips = "",
@@ -721,11 +612,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_furniture_template
-
-	var_1_18[221] = {
+	pg.base.dorm3d_furniture_template[221] = {
 		rarity = 4,
 		name = "柔软怀抱",
 		type = 4,
@@ -757,11 +644,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture221"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_furniture_template
-
-	var_1_19[222] = {
+	pg.base.dorm3d_furniture_template[222] = {
 		rarity = 3,
 		name = "对坐之谈",
 		type = 6,
@@ -795,11 +678,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake_pay_prop/diningroom"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_furniture_template
-
-	var_1_20[223] = {
+	pg.base.dorm3d_furniture_template[223] = {
 		rarity = 4,
 		name = "安逸时光",
 		type = 5,
@@ -833,11 +712,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_furniture_template
-
-	var_1_21[151] = {
+	pg.base.dorm3d_furniture_template[151] = {
 		rarity = 5,
 		name = "圣诞雪橇沙发套组",
 		type = 5,
@@ -875,11 +750,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/litmap_03/pre_db_book01"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_furniture_template
-
-	var_1_22[251] = {
+	pg.base.dorm3d_furniture_template[251] = {
 		rarity = 5,
 		name = "暖意入梦",
 		type = 5,
@@ -913,11 +784,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_furniture_template
-
-	var_1_23[301] = {
+	pg.base.dorm3d_furniture_template[301] = {
 		rarity = 3,
 		name = "海盐曲奇木床",
 		unlock_tips = "",
@@ -943,11 +810,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_furniture_template
-
-	var_1_24[302] = {
+	pg.base.dorm3d_furniture_template[302] = {
 		rarity = 3,
 		name = "湛蓝奇趣",
 		unlock_tips = "",
@@ -973,11 +836,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_furniture_template
-
-	var_1_25[303] = {
+	pg.base.dorm3d_furniture_template[303] = {
 		rarity = 3,
 		name = "曲奇沙发",
 		unlock_tips = "",
@@ -1003,11 +862,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_furniture_template
-
-	var_1_26[304] = {
+	pg.base.dorm3d_furniture_template[304] = {
 		rarity = 2,
 		name = "海洋生物玩偶",
 		unlock_tips = "",
@@ -1028,11 +883,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_furniture_template
-
-	var_1_27[305] = {
+	pg.base.dorm3d_furniture_template[305] = {
 		rarity = 2,
 		name = "自然之息",
 		unlock_tips = "",
@@ -1053,11 +904,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_furniture_template
-
-	var_1_28[306] = {
+	pg.base.dorm3d_furniture_template[306] = {
 		rarity = 2,
 		name = "时光印记",
 		unlock_tips = "",
@@ -1078,11 +925,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_furniture_template
-
-	var_1_29[307] = {
+	pg.base.dorm3d_furniture_template[307] = {
 		rarity = 2,
 		name = "海洋奇遇",
 		unlock_tips = "",
@@ -1103,11 +946,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_furniture_template
-
-	var_1_30[321] = {
+	pg.base.dorm3d_furniture_template[321] = {
 		rarity = 4,
 		name = "童心下午茶",
 		type = 6,
@@ -1141,11 +980,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake_pay_prop/entertainmentarea"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_furniture_template
-
-	var_1_31[322] = {
+	pg.base.dorm3d_furniture_template[322] = {
 		rarity = 4,
 		name = "星河满船",
 		type = 4,
@@ -1179,11 +1014,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake_pay_prop/bedroom"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_furniture_template
-
-	var_1_32[401] = {
+	pg.base.dorm3d_furniture_template[401] = {
 		rarity = 5,
 		name = "滨海欢愉 ",
 		type = 3,
@@ -1210,11 +1041,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture401"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_furniture_template
-
-	var_1_33[323] = {
+	pg.base.dorm3d_furniture_template[323] = {
 		rarity = 4,
 		name = "云中甜梦",
 		type = 5,
@@ -1248,11 +1075,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_furniture_template
-
-	var_1_34[324] = {
+	pg.base.dorm3d_furniture_template[324] = {
 		rarity = 5,
 		name = "童心乐园 ",
 		type = 4,
@@ -1288,11 +1111,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_furniture_template
-
-	var_1_35[1101] = {
+	pg.base.dorm3d_furniture_template[1101] = {
 		rarity = 3,
 		name = "兔兔摇篮",
 		unlock_tips = "",
@@ -1318,11 +1137,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_furniture_template
-
-	var_1_36[1102] = {
+	pg.base.dorm3d_furniture_template[1102] = {
 		rarity = 3,
 		name = "极冰纪元",
 		unlock_tips = "",
@@ -1348,11 +1163,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_furniture_template
-
-	var_1_37[1103] = {
+	pg.base.dorm3d_furniture_template[1103] = {
 		rarity = 3,
 		name = "日光棉岛",
 		unlock_tips = "",
@@ -1378,11 +1189,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_furniture_template
-
-	var_1_38[1104] = {
+	pg.base.dorm3d_furniture_template[1104] = {
 		rarity = 2,
 		name = "惑星夜灯",
 		unlock_tips = "",
@@ -1403,11 +1210,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_furniture_template
-
-	var_1_39[1105] = {
+	pg.base.dorm3d_furniture_template[1105] = {
 		rarity = 2,
 		name = "装饰画",
 		unlock_tips = "",
@@ -1428,11 +1231,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_furniture_template
-
-	var_1_40[1106] = {
+	pg.base.dorm3d_furniture_template[1106] = {
 		rarity = 2,
 		name = "静谧深蓝",
 		unlock_tips = "",
@@ -1453,11 +1252,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_furniture_template
-
-	var_1_41[1107] = {
+	pg.base.dorm3d_furniture_template[1107] = {
 		rarity = 2,
 		name = "微波炉",
 		unlock_tips = "",
@@ -1478,11 +1273,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_furniture_template
-
-	var_1_42[1108] = {
+	pg.base.dorm3d_furniture_template[1108] = {
 		rarity = 2,
 		name = "绿意盆栽",
 		unlock_tips = "",
@@ -1503,11 +1294,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_furniture_template
-
-	var_1_43[1151] = {
+	pg.base.dorm3d_furniture_template[1151] = {
 		rarity = 4,
 		name = "星空一隅",
 		type = 5,
@@ -1541,11 +1328,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_furniture_template
-
-	var_1_44[1152] = {
+	pg.base.dorm3d_furniture_template[1152] = {
 		rarity = 5,
 		name = "动感飞轮",
 		type = 5,
@@ -1579,11 +1362,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_furniture_template
-
-	var_1_45[1153] = {
+	pg.base.dorm3d_furniture_template[1153] = {
 		rarity = 4,
 		name = "天外庇所 ",
 		type = 4,
@@ -1617,11 +1396,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/bedroom"
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_furniture_template
-
-	var_1_46[1154] = {
+	pg.base.dorm3d_furniture_template[1154] = {
 		rarity = 4,
 		name = "智能冰箱IB-7",
 		type = 6,
@@ -1653,11 +1428,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture1154"
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_furniture_template
-
-	var_1_47[1201] = {
+	pg.base.dorm3d_furniture_template[1201] = {
 		rarity = 3,
 		name = "温馨软床 ",
 		unlock_tips = "",
@@ -1685,11 +1456,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture1151"
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_furniture_template
-
-	var_1_48[1202] = {
+	pg.base.dorm3d_furniture_template[1202] = {
 		rarity = 3,
 		name = "木制餐桌",
 		unlock_tips = "",
@@ -1717,11 +1484,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture1151"
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_furniture_template
-
-	var_1_49[1203] = {
+	pg.base.dorm3d_furniture_template[1203] = {
 		rarity = 3,
 		name = "简约座椅",
 		unlock_tips = "",
@@ -1749,11 +1512,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"banner_furniture1152"
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_furniture_template
-
-	var_1_50[1211] = {
+	pg.base.dorm3d_furniture_template[1211] = {
 		rarity = 2,
 		name = "古典挂画",
 		unlock_tips = "",
@@ -1774,11 +1533,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_furniture_template
-
-	var_1_51[1212] = {
+	pg.base.dorm3d_furniture_template[1212] = {
 		rarity = 2,
 		name = "黑色比基尼",
 		unlock_tips = "",
@@ -1799,11 +1554,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_furniture_template
-
-	var_1_52[1213] = {
+	pg.base.dorm3d_furniture_template[1213] = {
 		rarity = 2,
 		name = "落地灯",
 		unlock_tips = "",
@@ -1824,11 +1575,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_furniture_template
-
-	var_1_53[1214] = {
+	pg.base.dorm3d_furniture_template[1214] = {
 		rarity = 2,
 		name = "半透明屏风",
 		unlock_tips = "",
@@ -1851,11 +1598,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_prop_substitute/pre_db_frame32"
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_furniture_template
-
-	var_1_54[1215] = {
+	pg.base.dorm3d_furniture_template[1215] = {
 		rarity = 2,
 		name = "小夜灯",
 		unlock_tips = "",
@@ -1876,11 +1619,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_furniture_template
-
-	var_1_55[1221] = {
+	pg.base.dorm3d_furniture_template[1221] = {
 		rarity = 4,
 		name = "爱之巢",
 		unlock_tips = "",
@@ -1912,11 +1651,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/bedroom"
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_furniture_template
-
-	var_1_56[1222] = {
+	pg.base.dorm3d_furniture_template[1222] = {
 		rarity = 5,
 		name = "花乐留韵",
 		type = 99,
@@ -1950,11 +1685,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/entertainment"
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_furniture_template
-
-	var_1_57[1223] = {
+	pg.base.dorm3d_furniture_template[1223] = {
 		rarity = 4,
 		name = "绯樱雅席 ",
 		type = 5,
@@ -1988,11 +1719,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_furniture_template
-
-	var_1_58[1401] = {
+	pg.base.dorm3d_furniture_template[1401] = {
 		rarity = 3,
 		name = "丝绒软床",
 		unlock_tips = "",
@@ -2018,11 +1745,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_furniture_template
-
-	var_1_59[1402] = {
+	pg.base.dorm3d_furniture_template[1402] = {
 		rarity = 3,
 		name = "简约书桌",
 		unlock_tips = "",
@@ -2048,11 +1771,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_furniture_template
-
-	var_1_60[1403] = {
+	pg.base.dorm3d_furniture_template[1403] = {
 		rarity = 3,
 		name = "真皮沙发",
 		unlock_tips = "",
@@ -2078,11 +1797,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_furniture_template
-
-	var_1_61[1411] = {
+	pg.base.dorm3d_furniture_template[1411] = {
 		rarity = 2,
 		name = "长杆蜡烛",
 		unlock_tips = "",
@@ -2103,11 +1818,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_furniture_template
-
-	var_1_62[1412] = {
+	pg.base.dorm3d_furniture_template[1412] = {
 		rarity = 2,
 		name = "绿意盆栽",
 		unlock_tips = "",
@@ -2128,11 +1839,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_furniture_template
-
-	var_1_63[1413] = {
+	pg.base.dorm3d_furniture_template[1413] = {
 		rarity = 2,
 		name = "护眼台灯",
 		unlock_tips = "",
@@ -2153,11 +1860,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_furniture_template
-
-	var_1_64[1414] = {
+	pg.base.dorm3d_furniture_template[1414] = {
 		rarity = 2,
 		name = "老式相机",
 		unlock_tips = "",
@@ -2178,11 +1881,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_furniture_template
-
-	var_1_65[1415] = {
+	pg.base.dorm3d_furniture_template[1415] = {
 		rarity = 2,
 		name = "肖像画",
 		unlock_tips = "",
@@ -2203,11 +1902,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_furniture_template
-
-	var_1_66[1461] = {
+	pg.base.dorm3d_furniture_template[1461] = {
 		rarity = 4,
 		name = "真红谧影",
 		type = 4,
@@ -2241,11 +1936,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/bedroom"
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_furniture_template
-
-	var_1_67[1462] = {
+	pg.base.dorm3d_furniture_template[1462] = {
 		rarity = 4,
 		name = "知韵沉思",
 		type = 6,
@@ -2279,11 +1970,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/study"
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_furniture_template
-
-	var_1_68[1463] = {
+	pg.base.dorm3d_furniture_template[1463] = {
 		rarity = 4,
 		name = "深红逸趣",
 		type = 5,
@@ -2317,11 +2004,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 			"no_bake_pay_prop/livingroom"
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_furniture_template
-
-	var_1_69[2101] = {
+	pg.base.dorm3d_furniture_template[2101] = {
 		rarity = 3,
 		name = "纸壳小窝 ",
 		unlock_tips = "",
@@ -2347,11 +2030,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_furniture_template
-
-	var_1_70[2102] = {
+	pg.base.dorm3d_furniture_template[2102] = {
 		rarity = 3,
 		name = "多用置物架",
 		unlock_tips = "",
@@ -2377,11 +2056,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_furniture_template
-
-	var_1_71[2103] = {
+	pg.base.dorm3d_furniture_template[2103] = {
 		rarity = 3,
 		name = "阳光暖意沙发",
 		unlock_tips = "",
@@ -2407,11 +2082,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_furniture_template
-
-	var_1_72[2111] = {
+	pg.base.dorm3d_furniture_template[2111] = {
 		rarity = 2,
 		name = "窗边绿植",
 		unlock_tips = "",
@@ -2432,11 +2103,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_furniture_template
-
-	var_1_73[2112] = {
+	pg.base.dorm3d_furniture_template[2112] = {
 		rarity = 2,
 		name = "猫猫坐垫",
 		unlock_tips = "",
@@ -2457,11 +2124,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_furniture_template
-
-	var_1_74[2113] = {
+	pg.base.dorm3d_furniture_template[2113] = {
 		rarity = 2,
 		name = "原子球模型",
 		unlock_tips = "",
@@ -2482,11 +2145,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_furniture_template
-
-	var_1_75[2114] = {
+	pg.base.dorm3d_furniture_template[2114] = {
 		rarity = 2,
 		name = "黄釉圆瓶",
 		unlock_tips = "",
@@ -2507,11 +2166,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_furniture_template
-
-	var_1_76[2115] = {
+	pg.base.dorm3d_furniture_template[2115] = {
 		rarity = 2,
 		name = "香薰瓶",
 		unlock_tips = "",
@@ -2532,8 +2187,7 @@ var_0_4.base.dorm3d_furniture_template = {}
 		},
 		shop_id = {}
 	}
-	pg = var_1_76
-	var_1_76.base.dorm3d_furniture_template[2161] = {
+	pg.base.dorm3d_furniture_template[2161] = {
 		rarity = 4,
 		name = "魔方检测仪",
 		type = 6,

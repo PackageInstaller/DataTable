@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BeatGameMapBase")
+﻿local var_0_0 = class("BeatGameMapBase")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._tf = arg_1_1
@@ -15,12 +13,7 @@ end
 
 function var_0_0.addScore(arg_2_0, arg_2_1)
 	if arg_2_1 > 0 then
-		local var_2_0 = arg_2_0._event
-		local var_2_1 = var_2.emit
-
-		MusicBeatGameEvent = var_1_10005
-
-		var_2_1(var_2_0, var_1_10005.ADD_SCORE, {
+		arg_2_0._event:emit(MusicBeatGameEvent.ADD_SCORE, {
 			num = arg_2_1
 		})
 	end
@@ -42,9 +35,8 @@ end
 
 function var_0_0.setSelect(arg_5_0, arg_5_1)
 	arg_5_0._selectFlag = arg_5_1
-	setActive = var_1_10002
 
-	var_1_10002(arg_5_0._tf, arg_5_1)
+	setActive(arg_5_0._tf, arg_5_1)
 	arg_5_0:onSelectChange()
 
 	return

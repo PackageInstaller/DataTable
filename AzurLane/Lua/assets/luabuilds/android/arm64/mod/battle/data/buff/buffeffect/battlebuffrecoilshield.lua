@@ -1,68 +1,49 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleBuffRecoilShield = class("BattleBuffRecoilShield", ys.Battle.BattleBuffShield)
+ys.Battle.BattleBuffRecoilShield.__name = "BattleBuffRecoilShield"
 
-local var_0_1 = var_0.Battle
+local var_0_1 = ys.Battle.BattleBuffRecoilShield
 
-class = var_0_10002
-var_0_1.BattleBuffRecoilShield = var_0_10002("BattleBuffRecoilShield", var_0.Battle.BattleBuffShield)
-var_0.Battle.BattleBuffRecoilShield.__name = "BattleBuffRecoilShield"
-
-local var_0_2 = var_0.Battle.BattleBuffRecoilShield
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.BattleBuffRecoilShield.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 
 	return
 end
 
-function var_0_2.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	var_0_2.super.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+function ys.Battle.BattleBuffRecoilShield.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	var_0_1.super.SetArgs(arg_2_0, arg_2_1, arg_2_2)
 
-	local var_2_0
-
-	if not arg_2_0._tempData.arg_list.recoilRate then
-		var_2_0 = 1
-	end
-
-	arg_2_0._recoilRate = var_2_0
-	arg_2_0._proxy = var_0.Battle.BattleDataProxy.GetInstance()
+	arg_2_0._recoilRate = arg_2_0._tempData.arg_list.recoilRate or 1
+	arg_2_0._proxy = var_0_0.Battle.BattleDataProxy.GetInstance()
 
 	return
 end
 
-function var_0_2.onFinishGame(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_0._totalShield - arg_3_0._shield
-
-	if 1 <= var_3_0 then
-		math = var_4
-
-		local var_3_1 = var_4.floor(var_3_0 * arg_3_0._recoilRate)
-		local var_3_2 = arg_3_0._proxy
-
-		var_5.HandleDirectDamage(var_3_2, arg_3_1, var_3_1, nil, nil, false, false, true)
+function ys.Battle.BattleBuffRecoilShield.onFinishGame(arg_3_0, arg_3_1, arg_3_2)
+	if arg_3_0._totalShield - arg_3_0._shield >= 1 then
+		arg_3_0._proxy:HandleDirectDamage(arg_3_1, math.floor((arg_3_0._totalShield - arg_3_0._shield) * arg_3_0._recoilRate), nil, nil, false, false, true)
 	end
 
 	return
 end
 
-function var_0_2.onAttach(arg_4_0, arg_4_1, arg_4_2)
-	var_0_2.super.onAttach(arg_4_0, arg_4_1, arg_4_2)
-	arg_4_1:DispatchEvent(var_0.Event.New(var_0.Battle.BattleBuffEvent.BUFF_EFFECT_RECOIL_SHIELD))
+function ys.Battle.BattleBuffRecoilShield.onAttach(arg_4_0, arg_4_1, arg_4_2)
+	var_0_1.super.onAttach(arg_4_0, arg_4_1, arg_4_2)
+	arg_4_1:DispatchEvent(var_0_0.Event.New(var_0_0.Battle.BattleBuffEvent.BUFF_EFFECT_RECOIL_SHIELD))
 
 	return
 end
 
-function var_0_2.CalcNumber(arg_5_0, arg_5_1)
-	arg_5_0._totalShield = var_0_2.super.CalcNumber(arg_5_0, arg_5_1)
+function ys.Battle.BattleBuffRecoilShield.CalcNumber(arg_5_0, arg_5_1)
+	arg_5_0._totalShield = var_0_1.super.CalcNumber(arg_5_0, arg_5_1)
 
 	return arg_5_0._totalShield
 end
 
-function var_0_2.GetCurrentRate(arg_6_0)
+function ys.Battle.BattleBuffRecoilShield.GetCurrentRate(arg_6_0)
 	return arg_6_0._shield / arg_6_0._totalShield
 end
 

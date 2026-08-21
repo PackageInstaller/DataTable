@@ -3676,6 +3676,306 @@ local boundless_city_stage_data=
 	[321808]={ war_id=3, city_id=3, sort=18, pre_id={321708}, next_id={}, mon={52396,52397,52398,52399,52400}, formation_id=509, number="018", target_list={332,344,345}, first_award=6682, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,5}, pos_effect_id={}, lock_formation=0, limit_point=3850, extra_hero={2171,2172}, is_normal=1
 },
 	[321809]={ war_id=3, city_id=3, sort=18, pre_id={321709}, next_id={}, mon={51196,51197,51198,51199,51200}, formation_id=509, number="018", target_list={351,344,361}, first_award=6682, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,5}, pos_effect_id={}, lock_formation=0, limit_point=4060, extra_hero={}, is_normal=1
+},
+	[401001]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402001}, mon={52401,52402,52403,52404,52405}, formation_id=504, number="001", target_list={401,453,499,493}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,0,3}, pos_effect_id={}, lock_formation=0, limit_point=5050, extra_hero={}, is_normal=1
+},
+	[402001]={ war_id=3, city_id=3, sort=2, pre_id={401001}, next_id={403001}, mon={52406,52407,52408,52409,52410}, formation_id=502, number="002", target_list={461,483,493,433}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,5}, pos_effect_id={}, lock_formation=0, limit_point=5200, extra_hero={}, is_normal=1
+},
+	[403001]={ war_id=3, city_id=3, sort=3, pre_id={402001}, next_id={404001}, mon={52411,52412,52413,52414,52415}, formation_id=502, number="003", target_list={446,490,500,428}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,2}, pos_effect_id={}, lock_formation=0, limit_point=5280, extra_hero={}, is_normal=1
+},
+	[404001]={ war_id=3, city_id=3, sort=4, pre_id={403001}, next_id={405001}, mon={52416,52417,52418,52419,52420}, formation_id=503, number="004", target_list={423,452,491,494}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,2}, pos_effect_id={}, lock_formation=0, limit_point=5210, extra_hero={}, is_normal=1
+},
+	[405001]={ war_id=3, city_id=3, sort=5, pre_id={404001}, next_id={406001}, mon={52421,52422,52423,52424,52425}, formation_id=509, number="005", target_list={503,421,495,491,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,0,3}, pos_effect_id={}, lock_formation=0, limit_point=6970, extra_hero={}, is_normal=1
+},
+	[406001]={ war_id=3, city_id=3, sort=6, pre_id={405001}, next_id={407001}, mon={52426,52427,52428,52429,52430}, formation_id=503, number="006", target_list={446,490,418,484,500}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,3}, pos_effect_id={}, lock_formation=0, limit_point=5730, extra_hero={}, is_normal=1
+},
+	[407001]={ war_id=3, city_id=3, sort=7, pre_id={406001}, next_id={408001}, mon={52431,52432,52433,52434,52435}, formation_id=510, number="007", target_list={446,413,418,500,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5810, extra_hero={}, is_normal=1
+},
+	[408001]={ war_id=3, city_id=3, sort=8, pre_id={407001}, next_id={409001}, mon={52436,52437,52438,52439,52440}, formation_id=504, number="008", target_list={410,403,489,501,484}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,5}, pos_effect_id={}, lock_formation=0, limit_point=5930, extra_hero={}, is_normal=1
+},
+	[409001]={ war_id=3, city_id=3, sort=9, pre_id={408001}, next_id={410001}, mon={52441,52442,52443,52444,52445}, formation_id=505, number="009", target_list={451,420,484,500,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,4}, pos_effect_id={}, lock_formation=0, limit_point=6800, extra_hero={}, is_normal=1
+},
+	[410001]={ war_id=3, city_id=3, sort=10, pre_id={409001}, next_id={}, mon={52446,52447,52448,52449,52450}, formation_id=510, number="010", target_list={503,410,439,484,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,5}, pos_effect_id={}, lock_formation=0, limit_point=8000, extra_hero={2024}, is_normal=1
+},
+	[401002]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402002}, mon={52451,52452,52453,52454,52455}, formation_id=510, number="001", target_list={406,488,500,472}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,4}, pos_effect_id={}, lock_formation=0, limit_point=5130, extra_hero={}, is_normal=1
+},
+	[402002]={ war_id=3, city_id=3, sort=2, pre_id={401002}, next_id={403002}, mon={52456,52457,52458,52459,52460}, formation_id=510, number="002", target_list={417,410,499,500}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,2}, pos_effect_id={}, lock_formation=0, limit_point=5260, extra_hero={}, is_normal=1
+},
+	[403002]={ war_id=3, city_id=3, sort=3, pre_id={402002}, next_id={404002}, mon={52461,52462,52463,52464,52465}, formation_id=503, number="003", target_list={489,402,496,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,4}, pos_effect_id={}, lock_formation=0, limit_point=5180, extra_hero={}, is_normal=1
+},
+	[404002]={ war_id=3, city_id=3, sort=4, pre_id={403002}, next_id={405002}, mon={52466,52467,52468,52469,52470}, formation_id=504, number="004", target_list={415,406,493,496}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,3}, pos_effect_id={}, lock_formation=0, limit_point=5260, extra_hero={}, is_normal=1
+},
+	[405002]={ war_id=3, city_id=3, sort=5, pre_id={404002}, next_id={406002}, mon={52471,52472,52473,52474,52475}, formation_id=507, number="005", target_list={458,419,499,501,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,2}, pos_effect_id={}, lock_formation=0, limit_point=7070, extra_hero={}, is_normal=1
+},
+	[406002]={ war_id=3, city_id=3, sort=6, pre_id={405002}, next_id={407002}, mon={52476,52477,52478,52479,52480}, formation_id=502, number="006", target_list={407,416,486,499,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5780, extra_hero={}, is_normal=1
+},
+	[407002]={ war_id=3, city_id=3, sort=7, pre_id={406002}, next_id={408002}, mon={52481,52482,52483,52484,52485}, formation_id=506, number="007", target_list={417,483,488,500,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,3}, pos_effect_id={}, lock_formation=0, limit_point=5880, extra_hero={}, is_normal=1
+},
+	[408002]={ war_id=3, city_id=3, sort=8, pre_id={407002}, next_id={409002}, mon={52486,52487,52488,52489,52490}, formation_id=506, number="008", target_list={453,419,486,484,501}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5930, extra_hero={}, is_normal=1
+},
+	[409002]={ war_id=3, city_id=3, sort=9, pre_id={408002}, next_id={410002}, mon={52491,52492,52493,52494,52495}, formation_id=507, number="009", target_list={416,411,495,493,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=6700, extra_hero={}, is_normal=1
+},
+	[410002]={ war_id=3, city_id=3, sort=10, pre_id={409002}, next_id={}, mon={52496,52497,52498,52499,52500}, formation_id=510, number="010", target_list={452,410,500,495,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,5}, pos_effect_id={}, lock_formation=0, limit_point=7900, extra_hero={}, is_normal=1
+},
+	[401003]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402003}, mon={52501,52502,52503,52504,52505}, formation_id=506, number="001", target_list={406,450,498,491}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,5}, pos_effect_id={}, lock_formation=0, limit_point=5050, extra_hero={}, is_normal=1
+},
+	[402003]={ war_id=3, city_id=3, sort=2, pre_id={401003}, next_id={403003}, mon={52506,52507,52508,52509,52510}, formation_id=501, number="002", target_list={486,446,495,484}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,0,1}, pos_effect_id={}, lock_formation=0, limit_point=4990, extra_hero={}, is_normal=1
+},
+	[403003]={ war_id=3, city_id=3, sort=3, pre_id={402003}, next_id={404003}, mon={52511,52512,52513,52514,52515}, formation_id=504, number="003", target_list={444,421,495,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[404003]={ war_id=3, city_id=3, sort=4, pre_id={403003}, next_id={405003}, mon={52516,52517,52518,52519,52520}, formation_id=505, number="004", target_list={422,450,496,498}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5410, extra_hero={}, is_normal=1
+},
+	[405003]={ war_id=3, city_id=3, sort=5, pre_id={404003}, next_id={406003}, mon={52521,52522,52523,52524,52525}, formation_id=508, number="005", target_list={490,503,431,493,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,5}, pos_effect_id={}, lock_formation=0, limit_point=7100, extra_hero={}, is_normal=1
+},
+	[406003]={ war_id=3, city_id=3, sort=6, pre_id={405003}, next_id={407003}, mon={52526,52527,52528,52529,52530}, formation_id=509, number="006", target_list={421,404,457,501,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5750, extra_hero={}, is_normal=1
+},
+	[407003]={ war_id=3, city_id=3, sort=7, pre_id={406003}, next_id={408003}, mon={52531,52532,52533,52534,52535}, formation_id=510, number="007", target_list={448,489,413,484,500}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,3,1}, pos_effect_id={}, lock_formation=0, limit_point=5840, extra_hero={}, is_normal=1
+},
+	[408003]={ war_id=3, city_id=3, sort=8, pre_id={407003}, next_id={409003}, mon={52536,52537,52538,52539,52540}, formation_id=502, number="008", target_list={417,488,401,484,494}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5780, extra_hero={}, is_normal=1
+},
+	[409003]={ war_id=3, city_id=3, sort=9, pre_id={408003}, next_id={410003}, mon={52541,52542,52543,52544,52545}, formation_id=503, number="009", target_list={462,483,432,498,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=6940, extra_hero={}, is_normal=1
+},
+	[410003]={ war_id=3, city_id=3, sort=10, pre_id={409003}, next_id={}, mon={52546,52547,52548,52549,52550}, formation_id=502, number="010", target_list={457,405,484,496,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=7850, extra_hero={}, is_normal=1
+},
+	[401004]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402004}, mon={52551,52552,52553,52554,52555}, formation_id=507, number="001", target_list={405,462,484,501}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,5}, pos_effect_id={}, lock_formation=0, limit_point=5050, extra_hero={}, is_normal=1
+},
+	[402004]={ war_id=3, city_id=3, sort=2, pre_id={401004}, next_id={403004}, mon={52556,52557,52558,52559,52560}, formation_id=510, number="002", target_list={406,486,492,484}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,3,0}, pos_effect_id={}, lock_formation=0, limit_point=4990, extra_hero={}, is_normal=1
+},
+	[403004]={ war_id=3, city_id=3, sort=3, pre_id={402004}, next_id={404004}, mon={52561,52562,52563,52564,52565}, formation_id=502, number="003", target_list={421,488,463,496}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,1}, pos_effect_id={}, lock_formation=0, limit_point=5330, extra_hero={}, is_normal=1
+},
+	[404004]={ war_id=3, city_id=3, sort=4, pre_id={403004}, next_id={405004}, mon={52566,52567,52568,52569,52570}, formation_id=507, number="004", target_list={490,405,435,496}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,5}, pos_effect_id={}, lock_formation=0, limit_point=5340, extra_hero={}, is_normal=1
+},
+	[405004]={ war_id=3, city_id=3, sort=5, pre_id={404004}, next_id={406004}, mon={52571,52572,52573,52574,52575}, formation_id=504, number="005", target_list={489,448,433,498,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,0,1}, pos_effect_id={}, lock_formation=0, limit_point=7050, extra_hero={}, is_normal=1
+},
+	[406004]={ war_id=3, city_id=3, sort=6, pre_id={405004}, next_id={407004}, mon={52576,52577,52578,52579,52580}, formation_id=506, number="006", target_list={420,446,401,500,499}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5800, extra_hero={}, is_normal=1
+},
+	[407004]={ war_id=3, city_id=3, sort=7, pre_id={406004}, next_id={408004}, mon={52581,52582,52583,52584,52585}, formation_id=505, number="007", target_list={449,483,419,484,501}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5900, extra_hero={}, is_normal=1
+},
+	[408004]={ war_id=3, city_id=3, sort=8, pre_id={407004}, next_id={409004}, mon={52586,52587,52588,52589,52590}, formation_id=506, number="008", target_list={423,448,486,493,484}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5830, extra_hero={}, is_normal=1
+},
+	[409004]={ war_id=3, city_id=3, sort=9, pre_id={408004}, next_id={410004}, mon={52591,52592,52593,52594,52595}, formation_id=504, number="009", target_list={452,413,493,484,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,5}, pos_effect_id={}, lock_formation=0, limit_point=6750, extra_hero={}, is_normal=1
+},
+	[410004]={ war_id=3, city_id=3, sort=10, pre_id={409004}, next_id={}, mon={52596,52597,52598,52599,52600}, formation_id=507, number="010", target_list={423,449,491,484,512}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,3,1}, pos_effect_id={}, lock_formation=0, limit_point=7750, extra_hero={2195}, is_normal=1
+},
+	[401005]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402005}, mon={52601,52602,52603,52604,52605}, formation_id=505, number="001", target_list={451,421,430,484}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[402005]={ war_id=3, city_id=3, sort=2, pre_id={401005}, next_id={403005}, mon={52606,52607,52608,52609,52610}, formation_id=501, number="002", target_list={418,407,469,491}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5160, extra_hero={}, is_normal=1
+},
+	[403005]={ war_id=3, city_id=3, sort=3, pre_id={402005}, next_id={404005}, mon={52611,52612,52613,52614,52615}, formation_id=503, number="003", target_list={404,421,491,492}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[404005]={ war_id=3, city_id=3, sort=4, pre_id={403005}, next_id={405005}, mon={52616,52617,52618,52619,52620}, formation_id=506, number="004", target_list={448,421,493,496}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5310, extra_hero={}, is_normal=1
+},
+	[405005]={ war_id=3, city_id=3, sort=5, pre_id={404005}, next_id={406005}, mon={52621,52622,52623,52624,52625}, formation_id=501, number="005", target_list={402,408,498,495,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,2}, pos_effect_id={}, lock_formation=0, limit_point=6970, extra_hero={}, is_normal=1
+},
+	[406005]={ war_id=3, city_id=3, sort=6, pre_id={405005}, next_id={407005}, mon={52626,52627,52628,52629,52630}, formation_id=510, number="006", target_list={416,407,489,498,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5780, extra_hero={}, is_normal=1
+},
+	[407005]={ war_id=3, city_id=3, sort=7, pre_id={406005}, next_id={408005}, mon={52631,52632,52633,52634,52635}, formation_id=509, number="007", target_list={502,408,413,494,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5920, extra_hero={}, is_normal=1
+},
+	[408005]={ war_id=3, city_id=3, sort=8, pre_id={407005}, next_id={409005}, mon={52636,52637,52638,52639,52640}, formation_id=508, number="008", target_list={404,409,483,501,494}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,3}, pos_effect_id={}, lock_formation=0, limit_point=5940, extra_hero={}, is_normal=1
+},
+	[409005]={ war_id=3, city_id=3, sort=9, pre_id={408005}, next_id={410005}, mon={52641,52642,52643,52644,52645}, formation_id=508, number="009", target_list={489,459,501,429,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,2}, pos_effect_id={}, lock_formation=0, limit_point=6880, extra_hero={}, is_normal=1
+},
+	[410005]={ war_id=3, city_id=3, sort=10, pre_id={409005}, next_id={}, mon={52646,52647,52648,52649,52650}, formation_id=509, number="010", target_list={507,411,498,484,512}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,0,2}, pos_effect_id={}, lock_formation=0, limit_point=8010, extra_hero={2155}, is_normal=1
+},
+	[401006]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402006}, mon={52651,52652,52653,52654,52655}, formation_id=502, number="001", target_list={401,419,499,463}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,5,3}, pos_effect_id={}, lock_formation=0, limit_point=5150, extra_hero={}, is_normal=1
+},
+	[402006]={ war_id=3, city_id=3, sort=2, pre_id={401006}, next_id={403006}, mon={52656,52657,52658,52659,52660}, formation_id=502, number="002", target_list={417,483,499,493}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,1}, pos_effect_id={}, lock_formation=0, limit_point=5200, extra_hero={}, is_normal=1
+},
+	[403006]={ war_id=3, city_id=3, sort=3, pre_id={402006}, next_id={404006}, mon={52661,52662,52663,52664,52665}, formation_id=502, number="003", target_list={448,483,430,499}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,0}, pos_effect_id={}, lock_formation=0, limit_point=5390, extra_hero={}, is_normal=1
+},
+	[404006]={ war_id=3, city_id=3, sort=4, pre_id={403006}, next_id={405006}, mon={52666,52667,52668,52669,52670}, formation_id=510, number="004", target_list={413,414,484,494}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,0,3}, pos_effect_id={}, lock_formation=0, limit_point=5210, extra_hero={}, is_normal=1
+},
+	[405006]={ war_id=3, city_id=3, sort=5, pre_id={404006}, next_id={406006}, mon={52671,52672,52673,52674,52675}, formation_id=510, number="005", target_list={453,423,498,491,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,2}, pos_effect_id={}, lock_formation=0, limit_point=7020, extra_hero={}, is_normal=1
+},
+	[406006]={ war_id=3, city_id=3, sort=6, pre_id={405006}, next_id={407006}, mon={52676,52677,52678,52679,52680}, formation_id=508, number="006", target_list={449,418,406,496,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,5,3}, pos_effect_id={}, lock_formation=0, limit_point=5750, extra_hero={}, is_normal=1
+},
+	[407006]={ war_id=3, city_id=3, sort=7, pre_id={406006}, next_id={408006}, mon={52681,52682,52683,52684,52685}, formation_id=507, number="007", target_list={409,422,483,493,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,1,0}, pos_effect_id={}, lock_formation=0, limit_point=5800, extra_hero={}, is_normal=1
+},
+	[408006]={ war_id=3, city_id=3, sort=8, pre_id={407006}, next_id={409006}, mon={52686,52687,52688,52689,52690}, formation_id=503, number="008", target_list={407,459,488,484,499}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,5,2}, pos_effect_id={}, lock_formation=0, limit_point=5930, extra_hero={}, is_normal=1
+},
+	[409006]={ war_id=3, city_id=3, sort=9, pre_id={408006}, next_id={410006}, mon={52691,52692,52693,52694,52695}, formation_id=505, number="009", target_list={407,402,494,498,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,0,1}, pos_effect_id={}, lock_formation=0, limit_point=6800, extra_hero={}, is_normal=1
+},
+	[410006]={ war_id=3, city_id=3, sort=10, pre_id={409006}, next_id={}, mon={52696,52697,52698,52699,52700}, formation_id=510, number="010", target_list={504,423,497,491,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,0}, pos_effect_id={}, lock_formation=0, limit_point=8060, extra_hero={}, is_normal=1
+},
+	[401007]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402007}, mon={52701,52702,52703,52704,52705}, formation_id=502, number="001", target_list={503,405,493,484}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5050, extra_hero={}, is_normal=1
+},
+	[402007]={ war_id=3, city_id=3, sort=2, pre_id={401007}, next_id={403007}, mon={52706,52707,52708,52709,52710}, formation_id=505, number="002", target_list={454,488,484,495}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,2}, pos_effect_id={}, lock_formation=0, limit_point=5040, extra_hero={}, is_normal=1
+},
+	[403007]={ war_id=3, city_id=3, sort=3, pre_id={402007}, next_id={404007}, mon={52711,52712,52713,52714,52715}, formation_id=505, number="003", target_list={409,406,494,493}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,0}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[404007]={ war_id=3, city_id=3, sort=4, pre_id={403007}, next_id={405007}, mon={52716,52717,52718,52719,52720}, formation_id=509, number="004", target_list={417,408,491,498}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,2}, pos_effect_id={}, lock_formation=0, limit_point=5310, extra_hero={}, is_normal=1
+},
+	[405007]={ war_id=3, city_id=3, sort=5, pre_id={404007}, next_id={406007}, mon={52721,52722,52723,52724,52725}, formation_id=507, number="005", target_list={416,401,484,498,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,0}, pos_effect_id={}, lock_formation=0, limit_point=6920, extra_hero={}, is_normal=1
+},
+	[406007]={ war_id=3, city_id=3, sort=6, pre_id={405007}, next_id={407007}, mon={52726,52727,52728,52729,52730}, formation_id=502, number="006", target_list={409,423,488,494,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,4}, pos_effect_id={}, lock_formation=0, limit_point=5680, extra_hero={}, is_normal=1
+},
+	[407007]={ war_id=3, city_id=3, sort=7, pre_id={406007}, next_id={408007}, mon={52731,52732,52733,52734,52735}, formation_id=502, number="007", target_list={423,503,489,498,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5940, extra_hero={}, is_normal=1
+},
+	[408007]={ war_id=3, city_id=3, sort=8, pre_id={407007}, next_id={409007}, mon={52736,52737,52738,52739,52740}, formation_id=504, number="008", target_list={458,489,488,484,433}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5910, extra_hero={}, is_normal=1
+},
+	[409007]={ war_id=3, city_id=3, sort=9, pre_id={408007}, next_id={410007}, mon={52741,52742,52743,52744,52745}, formation_id=507, number="009", target_list={419,462,494,501,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,3}, pos_effect_id={}, lock_formation=0, limit_point=6850, extra_hero={}, is_normal=1
+},
+	[410007]={ war_id=3, city_id=3, sort=10, pre_id={409007}, next_id={}, mon={52746,52747,52748,52749,52750}, formation_id=510, number="010", target_list={457,418,484,496,512}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=7850, extra_hero={}, is_normal=1
+},
+	[401008]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402008}, mon={52751,52752,52753,52754,52755}, formation_id=509, number="001", target_list={487,483,429,484}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5120, extra_hero={}, is_normal=1
+},
+	[402008]={ war_id=3, city_id=3, sort=2, pre_id={401008}, next_id={403008}, mon={52756,52757,52758,52759,52760}, formation_id=507, number="002", target_list={404,448,433,484}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5110, extra_hero={}, is_normal=1
+},
+	[403008]={ war_id=3, city_id=3, sort=3, pre_id={402008}, next_id={404008}, mon={52761,52762,52763,52764,52765}, formation_id=501, number="003", target_list={415,410,484,501}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,0,4}, pos_effect_id={}, lock_formation=0, limit_point=5250, extra_hero={}, is_normal=1
+},
+	[404008]={ war_id=3, city_id=3, sort=4, pre_id={403008}, next_id={405008}, mon={52766,52767,52768,52769,52770}, formation_id=501, number="004", target_list={459,419,495,491}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,0,3}, pos_effect_id={}, lock_formation=0, limit_point=5210, extra_hero={}, is_normal=1
+},
+	[405008]={ war_id=3, city_id=3, sort=5, pre_id={404008}, next_id={406008}, mon={52771,52772,52773,52774,52775}, formation_id=507, number="005", target_list={490,461,493,484,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=6900, extra_hero={}, is_normal=1
+},
+	[406008]={ war_id=3, city_id=3, sort=6, pre_id={405008}, next_id={407008}, mon={52776,52777,52778,52779,52780}, formation_id=504, number="006", target_list={452,410,483,500,499}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,1,0}, pos_effect_id={}, lock_formation=0, limit_point=5940, extra_hero={}, is_normal=1
+},
+	[407008]={ war_id=3, city_id=3, sort=7, pre_id={406008}, next_id={408008}, mon={52781,52782,52783,52784,52785}, formation_id=506, number="007", target_list={459,488,483,500,432}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5980, extra_hero={}, is_normal=1
+},
+	[408008]={ war_id=3, city_id=3, sort=8, pre_id={407008}, next_id={409008}, mon={52786,52787,52788,52789,52790}, formation_id=510, number="008", target_list={412,483,405,492,495}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5840, extra_hero={}, is_normal=1
+},
+	[409008]={ war_id=3, city_id=3, sort=9, pre_id={408008}, next_id={410008}, mon={52791,52792,52793,52794,52795}, formation_id=502, number="009", target_list={455,488,501,484,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,3}, pos_effect_id={}, lock_formation=0, limit_point=6830, extra_hero={}, is_normal=1
+},
+	[410008]={ war_id=3, city_id=3, sort=10, pre_id={409008}, next_id={}, mon={52796,52797,52798,52799,52800}, formation_id=510, number="010", target_list={457,412,493,499,512}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=7850, extra_hero={2171,2172}, is_normal=1
+},
+	[401009]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402009}, mon={52801,52802,52803,52804,52805}, formation_id=507, number="001", target_list={453,419,494,491}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,2}, pos_effect_id={}, lock_formation=0, limit_point=5000, extra_hero={}, is_normal=1
+},
+	[402009]={ war_id=3, city_id=3, sort=2, pre_id={401009}, next_id={403009}, mon={52806,52807,52808,52809,52810}, formation_id=510, number="002", target_list={415,404,495,496}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,0,5}, pos_effect_id={}, lock_formation=0, limit_point=5110, extra_hero={}, is_normal=1
+},
+	[403009]={ war_id=3, city_id=3, sort=3, pre_id={402009}, next_id={404009}, mon={52811,52812,52813,52814,52815}, formation_id=501, number="003", target_list={456,423,496,499}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,3,0}, pos_effect_id={}, lock_formation=0, limit_point=5350, extra_hero={}, is_normal=1
+},
+	[404009]={ war_id=3, city_id=3, sort=4, pre_id={403009}, next_id={405009}, mon={52816,52817,52818,52819,52820}, formation_id=501, number="004", target_list={490,448,499,484}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,2}, pos_effect_id={}, lock_formation=0, limit_point=5290, extra_hero={}, is_normal=1
+},
+	[405009]={ war_id=3, city_id=3, sort=5, pre_id={404009}, next_id={406009}, mon={52821,52822,52823,52824,52825}, formation_id=509, number="005", target_list={419,452,494,484,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,0}, pos_effect_id={}, lock_formation=0, limit_point=6870, extra_hero={}, is_normal=1
+},
+	[406009]={ war_id=3, city_id=3, sort=6, pre_id={405009}, next_id={407009}, mon={52826,52827,52828,52829,52830}, formation_id=506, number="006", target_list={450,410,483,499,495}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,2}, pos_effect_id={}, lock_formation=0, limit_point=5840, extra_hero={}, is_normal=1
+},
+	[407009]={ war_id=3, city_id=3, sort=7, pre_id={406009}, next_id={408009}, mon={52831,52832,52833,52834,52835}, formation_id=507, number="007", target_list={505,488,423,499,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,4}, pos_effect_id={}, lock_formation=0, limit_point=6000, extra_hero={}, is_normal=1
+},
+	[408009]={ war_id=3, city_id=3, sort=8, pre_id={407009}, next_id={409009}, mon={52836,52837,52838,52839,52840}, formation_id=509, number="008", target_list={409,423,488,484,494}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,2}, pos_effect_id={}, lock_formation=0, limit_point=5830, extra_hero={}, is_normal=1
+},
+	[409009]={ war_id=3, city_id=3, sort=9, pre_id={408009}, next_id={410009}, mon={52841,52842,52843,52844,52845}, formation_id=510, number="009", target_list={458,420,500,491,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,2}, pos_effect_id={}, lock_formation=0, limit_point=6850, extra_hero={}, is_normal=1
+},
+	[410009]={ war_id=3, city_id=3, sort=10, pre_id={409009}, next_id={}, mon={52846,52847,52848,52849,52850}, formation_id=503, number="010", target_list={446,410,443,484,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,0}, pos_effect_id={}, lock_formation=0, limit_point=7850, extra_hero={}, is_normal=1
+},
+	[401010]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402010}, mon={52851,52852,52853,52854,52855}, formation_id=510, number="001", target_list={454,488,499,484}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5080, extra_hero={}, is_normal=1
+},
+	[402010]={ war_id=3, city_id=3, sort=2, pre_id={401010}, next_id={403010}, mon={52856,52857,52858,52859,52860}, formation_id=507, number="002", target_list={419,490,484,468}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5140, extra_hero={}, is_normal=1
+},
+	[403010]={ war_id=3, city_id=3, sort=3, pre_id={402010}, next_id={404010}, mon={52861,52862,52863,52864,52865}, formation_id=501, number="003", target_list={503,418,491,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5250, extra_hero={}, is_normal=1
+},
+	[404010]={ war_id=3, city_id=3, sort=4, pre_id={403010}, next_id={405010}, mon={52866,52867,52868,52869,52870}, formation_id=510, number="004", target_list={505,488,433,494}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,0,2}, pos_effect_id={}, lock_formation=0, limit_point=5450, extra_hero={}, is_normal=1
+},
+	[405010]={ war_id=3, city_id=3, sort=5, pre_id={404010}, next_id={406010}, mon={52871,52872,52873,52874,52875}, formation_id=501, number="005", target_list={421,459,496,493,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,0,1}, pos_effect_id={}, lock_formation=0, limit_point=7020, extra_hero={}, is_normal=1
+},
+	[406010]={ war_id=3, city_id=3, sort=6, pre_id={405010}, next_id={407010}, mon={52876,52877,52878,52879,52880}, formation_id=504, number="006", target_list={483,450,413,440,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5840, extra_hero={}, is_normal=1
+},
+	[407010]={ war_id=3, city_id=3, sort=7, pre_id={406010}, next_id={408010}, mon={52881,52882,52883,52884,52885}, formation_id=509, number="007", target_list={456,401,421,495,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5710, extra_hero={}, is_normal=1
+},
+	[408010]={ war_id=3, city_id=3, sort=8, pre_id={407010}, next_id={409010}, mon={52886,52887,52888,52889,52890}, formation_id=509, number="008", target_list={453,483,401,494,495}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5840, extra_hero={}, is_normal=1
+},
+	[409010]={ war_id=3, city_id=3, sort=9, pre_id={408010}, next_id={410010}, mon={52891,52892,52893,52894,52895}, formation_id=507, number="009", target_list={414,413,494,500,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,2}, pos_effect_id={}, lock_formation=0, limit_point=6850, extra_hero={}, is_normal=1
+},
+	[410010]={ war_id=3, city_id=3, sort=10, pre_id={409010}, next_id={}, mon={52896,52897,52898,52899,52900}, formation_id=507, number="010", target_list={408,507,494,430,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,4,1}, pos_effect_id={}, lock_formation=0, limit_point=8060, extra_hero={2185}, is_normal=1
+},
+	[401011]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402011}, mon={52901,52902,52903,52904,52905}, formation_id=501, number="001", target_list={417,421,484,491}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,5,3}, pos_effect_id={}, lock_formation=0, limit_point=5000, extra_hero={}, is_normal=1
+},
+	[402011]={ war_id=3, city_id=3, sort=2, pre_id={401011}, next_id={403011}, mon={52906,52907,52908,52909,52910}, formation_id=509, number="002", target_list={487,422,493,484}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,0,1}, pos_effect_id={}, lock_formation=0, limit_point=5040, extra_hero={}, is_normal=1
+},
+	[403011]={ war_id=3, city_id=3, sort=3, pre_id={402011}, next_id={404011}, mon={52911,52912,52913,52914,52915}, formation_id=506, number="003", target_list={452,420,431,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,2}, pos_effect_id={}, lock_formation=0, limit_point=5250, extra_hero={}, is_normal=1
+},
+	[404011]={ war_id=3, city_id=3, sort=4, pre_id={403011}, next_id={405011}, mon={52916,52917,52918,52919,52920}, formation_id=502, number="004", target_list={407,446,484,491}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,0,2}, pos_effect_id={}, lock_formation=0, limit_point=5160, extra_hero={}, is_normal=1
+},
+	[405011]={ war_id=3, city_id=3, sort=5, pre_id={404011}, next_id={406011}, mon={52921,52922,52923,52924,52925}, formation_id=508, number="005", target_list={446,410,499,501,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,1,3}, pos_effect_id={}, lock_formation=0, limit_point=7070, extra_hero={}, is_normal=1
+},
+	[406011]={ war_id=3, city_id=3, sort=6, pre_id={405011}, next_id={407011}, mon={52926,52927,52928,52929,52930}, formation_id=508, number="006", target_list={461,418,401,484,501}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,5,0}, pos_effect_id={}, lock_formation=0, limit_point=5750, extra_hero={}, is_normal=1
+},
+	[407011]={ war_id=3, city_id=3, sort=7, pre_id={406011}, next_id={408011}, mon={52931,52932,52933,52934,52935}, formation_id=503, number="007", target_list={418,456,412,495,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,5,3}, pos_effect_id={}, lock_formation=0, limit_point=5760, extra_hero={}, is_normal=1
+},
+	[408011]={ war_id=3, city_id=3, sort=8, pre_id={407011}, next_id={409011}, mon={52936,52937,52938,52939,52940}, formation_id=505, number="008", target_list={456,405,419,491,495}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,5,2}, pos_effect_id={}, lock_formation=0, limit_point=5800, extra_hero={}, is_normal=1
+},
+	[409011]={ war_id=3, city_id=3, sort=9, pre_id={408011}, next_id={410011}, mon={52941,52942,52943,52944,52945}, formation_id=505, number="009", target_list={454,488,499,433,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={5,0,3}, pos_effect_id={}, lock_formation=0, limit_point=6880, extra_hero={}, is_normal=1
+},
+	[410011]={ war_id=3, city_id=3, sort=10, pre_id={409011}, next_id={}, mon={52946,52947,52948,52949,52950}, formation_id=501, number="010", target_list={487,404,484,499,512}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,5,3}, pos_effect_id={}, lock_formation=0, limit_point=7780, extra_hero={}, is_normal=1
+},
+	[401012]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402012}, mon={52951,52952,52953,52954,52955}, formation_id=510, number="001", target_list={417,412,499,493}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,1,3}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[402012]={ war_id=3, city_id=3, sort=2, pre_id={401012}, next_id={403012}, mon={52956,52957,52958,52959,52960}, formation_id=505, number="002", target_list={450,489,495,429}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,0,4}, pos_effect_id={}, lock_formation=0, limit_point=5140, extra_hero={}, is_normal=1
+},
+	[403012]={ war_id=3, city_id=3, sort=3, pre_id={402012}, next_id={404012}, mon={52961,52962,52963,52964,52965}, formation_id=505, number="003", target_list={486,450,495,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,2}, pos_effect_id={}, lock_formation=0, limit_point=5130, extra_hero={}, is_normal=1
+},
+	[404012]={ war_id=3, city_id=3, sort=4, pre_id={403012}, next_id={405012}, mon={52966,52967,52968,52969,52970}, formation_id=505, number="004", target_list={451,401,501,499}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,2}, pos_effect_id={}, lock_formation=0, limit_point=5360, extra_hero={}, is_normal=1
+},
+	[405012]={ war_id=3, city_id=3, sort=5, pre_id={404012}, next_id={406012}, mon={52971,52972,52973,52974,52975}, formation_id=503, number="005", target_list={407,410,506,499,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,3}, pos_effect_id={}, lock_formation=0, limit_point=7030, extra_hero={}, is_normal=1
+},
+	[406012]={ war_id=3, city_id=3, sort=6, pre_id={405012}, next_id={407012}, mon={52976,52977,52978,52979,52980}, formation_id=507, number="006", target_list={415,423,483,496,498}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,4}, pos_effect_id={}, lock_formation=0, limit_point=5940, extra_hero={}, is_normal=1
+},
+	[407012]={ war_id=3, city_id=3, sort=7, pre_id={406012}, next_id={408012}, mon={52981,52982,52983,52984,52985}, formation_id=510, number="007", target_list={406,503,408,499,493}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,2}, pos_effect_id={}, lock_formation=0, limit_point=5910, extra_hero={}, is_normal=1
+},
+	[408012]={ war_id=3, city_id=3, sort=8, pre_id={407012}, next_id={409012}, mon={52986,52987,52988,52989,52990}, formation_id=503, number="008", target_list={488,456,486,443,484}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,0}, pos_effect_id={}, lock_formation=0, limit_point=5910, extra_hero={}, is_normal=1
+},
+	[409012]={ war_id=3, city_id=3, sort=9, pre_id={408012}, next_id={410012}, mon={52991,52992,52993,52994,52995}, formation_id=504, number="009", target_list={502,404,495,494,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,2}, pos_effect_id={}, lock_formation=0, limit_point=6810, extra_hero={}, is_normal=1
+},
+	[410012]={ war_id=3, city_id=3, sort=10, pre_id={409012}, next_id={}, mon={52996,52997,52998,52999,53000}, formation_id=502, number="010", target_list={456,407,493,500,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,5,2}, pos_effect_id={}, lock_formation=0, limit_point=7900, extra_hero={}, is_normal=1
+},
+	[401013]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402013}, mon={53001,53002,53003,53004,53005}, formation_id=508, number="001", target_list={502,411,493,484}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=5160, extra_hero={}, is_normal=1
+},
+	[402013]={ war_id=3, city_id=3, sort=2, pre_id={401013}, next_id={403013}, mon={53006,53007,53008,53009,53010}, formation_id=508, number="002", target_list={446,418,500,495}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,0,1}, pos_effect_id={}, lock_formation=0, limit_point=5110, extra_hero={}, is_normal=1
+},
+	[403013]={ war_id=3, city_id=3, sort=3, pre_id={402013}, next_id={404013}, mon={53011,53012,53013,53014,53015}, formation_id=508, number="003", target_list={490,421,471,491}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5230, extra_hero={}, is_normal=1
+},
+	[404013]={ war_id=3, city_id=3, sort=4, pre_id={403013}, next_id={405013}, mon={53016,53017,53018,53019,53020}, formation_id=501, number="004", target_list={420,415,496,500}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,5,1}, pos_effect_id={}, lock_formation=0, limit_point=5410, extra_hero={}, is_normal=1
+},
+	[405013]={ war_id=3, city_id=3, sort=5, pre_id={404013}, next_id={406013}, mon={53021,53022,53023,53024,53025}, formation_id=507, number="005", target_list={414,411,501,484,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,5,0}, pos_effect_id={}, lock_formation=0, limit_point=6970, extra_hero={}, is_normal=1
+},
+	[406013]={ war_id=3, city_id=3, sort=6, pre_id={405013}, next_id={407013}, mon={53026,53027,53028,53029,53030}, formation_id=503, number="006", target_list={448,406,418,496,500}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,0}, pos_effect_id={}, lock_formation=0, limit_point=5850, extra_hero={}, is_normal=1
+},
+	[407013]={ war_id=3, city_id=3, sort=7, pre_id={406013}, next_id={408013}, mon={53031,53032,53033,53034,53035}, formation_id=506, number="007", target_list={502,411,490,500,484}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,5}, pos_effect_id={}, lock_formation=0, limit_point=6000, extra_hero={}, is_normal=1
+},
+	[408013]={ war_id=3, city_id=3, sort=8, pre_id={407013}, next_id={409013}, mon={53036,53037,53038,53039,53040}, formation_id=509, number="008", target_list={503,407,419,496,494}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,2,3}, pos_effect_id={}, lock_formation=0, limit_point=6050, extra_hero={}, is_normal=1
+},
+	[409013]={ war_id=3, city_id=3, sort=9, pre_id={408013}, next_id={410013}, mon={53041,53042,53043,53044,53045}, formation_id=506, number="009", target_list={416,401,495,493,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=6700, extra_hero={}, is_normal=1
+},
+	[410013]={ war_id=3, city_id=3, sort=10, pre_id={409013}, next_id={}, mon={53046,53047,53048,53049,53050}, formation_id=510, number="010", target_list={502,418,496,484,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,2,1}, pos_effect_id={}, lock_formation=0, limit_point=8060, extra_hero={}, is_normal=1
+},
+	[401014]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402014}, mon={53051,53052,53053,53054,53055}, formation_id=510, number="001", target_list={422,459,429,484}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,4}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[402014]={ war_id=3, city_id=3, sort=2, pre_id={401014}, next_id={403014}, mon={53056,53057,53058,53059,53060}, formation_id=503, number="002", target_list={457,483,484,495}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,0,2}, pos_effect_id={}, lock_formation=0, limit_point=5100, extra_hero={}, is_normal=1
+},
+	[403014]={ war_id=3, city_id=3, sort=3, pre_id={402014}, next_id={404014}, mon={53061,53062,53063,53064,53065}, formation_id=503, number="003", target_list={406,454,431,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,1}, pos_effect_id={}, lock_formation=0, limit_point=5200, extra_hero={}, is_normal=1
+},
+	[404014]={ war_id=3, city_id=3, sort=4, pre_id={403014}, next_id={405014}, mon={53066,53067,53068,53069,53070}, formation_id=501, number="004", target_list={446,488,491,443}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,2}, pos_effect_id={}, lock_formation=0, limit_point=5240, extra_hero={}, is_normal=1
+},
+	[405014]={ war_id=3, city_id=3, sort=5, pre_id={404014}, next_id={406014}, mon={53071,53072,53073,53074,53075}, formation_id=502, number="005", target_list={487,411,495,484,512}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,2}, pos_effect_id={}, lock_formation=0, limit_point=6850, extra_hero={}, is_normal=1
+},
+	[406014]={ war_id=3, city_id=3, sort=6, pre_id={405014}, next_id={407014}, mon={53076,53077,53078,53079,53080}, formation_id=504, number="006", target_list={405,417,488,491,484}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={0,3,1}, pos_effect_id={}, lock_formation=0, limit_point=5630, extra_hero={}, is_normal=1
+},
+	[407014]={ war_id=3, city_id=3, sort=7, pre_id={406014}, next_id={408014}, mon={53081,53082,53083,53084,53085}, formation_id=508, number="007", target_list={462,413,483,484,494}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,1,5}, pos_effect_id={}, lock_formation=0, limit_point=5800, extra_hero={}, is_normal=1
+},
+	[408014]={ war_id=3, city_id=3, sort=8, pre_id={407014}, next_id={409014}, mon={53086,53087,53088,53089,53090}, formation_id=502, number="008", target_list={406,462,418,500,491}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,0}, pos_effect_id={}, lock_formation=0, limit_point=5900, extra_hero={}, is_normal=1
+},
+	[409014]={ war_id=3, city_id=3, sort=9, pre_id={408014}, next_id={410014}, mon={53091,53092,53093,53094,53095}, formation_id=506, number="009", target_list={449,488,432,484,512}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,3,1}, pos_effect_id={}, lock_formation=0, limit_point=6780, extra_hero={}, is_normal=1
+},
+	[410014]={ war_id=3, city_id=3, sort=10, pre_id={409014}, next_id={}, mon={53096,53097,53098,53099,53100}, formation_id=506, number="010", target_list={412,462,493,499,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,3,5}, pos_effect_id={}, lock_formation=0, limit_point=7900, extra_hero={2024}, is_normal=1
+},
+	[401015]={ war_id=3, city_id=3, sort=1, pre_id={}, next_id={402015}, mon={53101,53102,53103,53104,53105}, formation_id=501, number="001", target_list={504,413,494,498}, first_award=6700, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,0,2}, pos_effect_id={}, lock_formation=0, limit_point=5260, extra_hero={}, is_normal=1
+},
+	[402015]={ war_id=3, city_id=3, sort=2, pre_id={401015}, next_id={403015}, mon={53106,53107,53108,53109,53110}, formation_id=502, number="002", target_list={489,456,500,430}, first_award=6701, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,4,5}, pos_effect_id={}, lock_formation=0, limit_point=5240, extra_hero={}, is_normal=1
+},
+	[403015]={ war_id=3, city_id=3, sort=3, pre_id={402015}, next_id={404015}, mon={53111,53112,53113,53114,53115}, formation_id=507, number="003", target_list={415,410,495,484}, first_award=6702, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,2}, pos_effect_id={}, lock_formation=0, limit_point=5150, extra_hero={}, is_normal=1
+},
+	[404015]={ war_id=3, city_id=3, sort=4, pre_id={403015}, next_id={405015}, mon={53116,53117,53118,53119,53120}, formation_id=503, number="004", target_list={449,422,429,484}, first_award=6703, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,0,1}, pos_effect_id={}, lock_formation=0, limit_point=5310, extra_hero={}, is_normal=1
+},
+	[405015]={ war_id=3, city_id=3, sort=5, pre_id={404015}, next_id={406015}, mon={53121,53122,53123,53124,53125}, formation_id=505, number="005", target_list={449,420,491,500,485}, first_award=6704, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,4,3}, pos_effect_id={}, lock_formation=0, limit_point=7020, extra_hero={}, is_normal=1
+},
+	[406015]={ war_id=3, city_id=3, sort=6, pre_id={405015}, next_id={407015}, mon={53126,53127,53128,53129,53130}, formation_id=508, number="006", target_list={404,456,405,495,496}, first_award=6705, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5700, extra_hero={}, is_normal=1
+},
+	[407015]={ war_id=3, city_id=3, sort=7, pre_id={406015}, next_id={408015}, mon={53131,53132,53133,53134,53135}, formation_id=507, number="007", target_list={461,488,490,484,431}, first_award=6706, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={1,4,3}, pos_effect_id={}, lock_formation=0, limit_point=5820, extra_hero={}, is_normal=1
+},
+	[408015]={ war_id=3, city_id=3, sort=8, pre_id={407015}, next_id={409015}, mon={53136,53137,53138,53139,53140}, formation_id=501, number="008", target_list={416,488,422,484,496}, first_award=6707, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={3,4,1}, pos_effect_id={}, lock_formation=0, limit_point=5930, extra_hero={}, is_normal=1
+},
+	[409015]={ war_id=3, city_id=3, sort=9, pre_id={408015}, next_id={410015}, mon={53141,53142,53143,53144,53145}, formation_id=506, number="009", target_list={404,459,432,500,485}, first_award=6708, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={4,0,3}, pos_effect_id={}, lock_formation=0, limit_point=6900, extra_hero={}, is_normal=1
+},
+	[410015]={ war_id=3, city_id=3, sort=10, pre_id={409015}, next_id={}, mon={53146,53147,53148,53149,53150}, formation_id=509, number="010", target_list={421,452,495,498,485}, first_award=6709, music_id=48, scene_id=304, suggest_level={0,80}, suggest_ele={2,4,3}, pos_effect_id={}, lock_formation=0, limit_point=7900, extra_hero={}, is_normal=1
 }
 }
 

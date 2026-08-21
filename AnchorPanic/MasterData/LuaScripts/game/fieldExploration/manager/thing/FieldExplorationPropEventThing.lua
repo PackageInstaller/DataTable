@@ -10,7 +10,7 @@ function resetData(self)
 
     self.mTimeOutSnList = {}
 
-    self.mSkillList = {}
+    self.mSkillDic = {}
     self.isOnExecute = false
     self.isDisable = false
 end
@@ -32,12 +32,6 @@ function setupModel(self)
 
     self.mModel = self:getModel()
 
-    self:setPosition(self.mData.createPos)
-    self:setEulerAngles({x = 0, y = self.mData.angle, z = 0})
-    if self.mData.scale then
-        self:setScale(self.mData.scale)
-    end
-
     self.mModel.m_rootGo.layer = gs.LayerMask.NameToLayer("Event")
     self.mModel:setupPrefab(prefabPath, false, function ()
         self:onModelLoadFinish()
@@ -48,6 +42,12 @@ function setupModel(self)
 end
 
 function onModelLoadFinish(self)
+    self:setPosition(self.mData.createPos)
+    self:setAngle(self.mData.angle, true)
+    if self.mData.scale then
+        self:setScale(self.mData.scale)
+    end
+
     local eventConfig = self:getEventConfig()
     if eventConfig.interact_type ~= FieldExplorationConst.Collider_Type.None then
         self:addCollider()
@@ -143,12 +143,14 @@ function addCollider(self)
 
             if eventConfig.interact_type == FieldExplorationConst.Collider_Type.CapsuleCollider then
                 colliderCall:InitCapsuleCollider((eventConfig.interact_range[1] + 20) * 0.01, eventConfig.interact_range[2] * 0.01)
+                self.mColliderGo:GetComponent(ty.CapsuleCollider).center = eventConfig.interact_center
             elseif eventConfig.interact_type == FieldExplorationConst.Collider_Type.BoxCollider then
-                colliderCall:InitBoxCollider((eventConfig.interact_range[1] + 20) * 0.01, self:getColliderHeight(), (eventConfig.interact_range[2] + 20) * 0.01)
+                colliderCall:InitBoxCollider((eventConfig.interact_range[1] + 20) * 0.01, self:getColliderHeight() + 0.2, (eventConfig.interact_range[2] + 20) * 0.01)
+                self.mColliderGo:GetComponent(ty.BoxCollider).center = eventConfig.interact_center
             elseif eventConfig.interact_type == FieldExplorationConst.Collider_Type.SelfCollider then
                 colliderCall:InitSelfCollider()
             elseif eventConfig.interact_type == FieldExplorationConst.Collider_Type.SectorCollider then
-                colliderCall:InitSectorCollider((eventConfig.interact_range[1] + 20) * 0.01, self:getColliderHeight(), eventConfig.interact_range[2] + 0.01)
+                colliderCall:InitSectorCollider((eventConfig.interact_range[1] + 20) * 0.01, self:getColliderHeight() + 0.2, eventConfig.interact_range[2] + 0.01)
             end
 
             colliderCall.IsTrigger = true
@@ -168,7 +170,6 @@ function addCollider(self)
                 if tag == "AirWall" then
                     return
                 end
-
                 self:onCollisionExit(tag, tagId)
             end
 
@@ -213,7 +214,24 @@ function recoverColliderGo(self)
 end
 
 function getColliderHeight(self)
-    return 5
+    local eventConfig = self:getEventConfig()
+    if eventConfig.interact_type == FieldExplorationConst.Collider_Type.CapsuleCollider then
+        return eventConfig.interact_range[2] * 0.01
+
+    elseif eventConfig.interact_type == FieldExplorationConst.Collider_Type.BoxCollider then
+        if not eventConfig.interact_range[3] then
+            return 1
+        end
+        return eventConfig.interact_range[3] * 0.01
+
+    elseif eventConfig.interact_type == FieldExplorationConst.Collider_Type.SelfCollider then
+        return 1
+    elseif eventConfig.interact_type == FieldExplorationConst.Collider_Type.SectorCollider then
+        if not eventConfig.interact_range[3] then
+            return 1
+        end
+        return eventConfig.interact_range[3] * 0.01
+    end
 end
 
 function getColliderTags(self)
@@ -246,17 +264,17 @@ function killMoveTween(self)
 end
 
 function getSkill(self, skill_id)
-    local skill = self.mSkillList[skill_id]
+    local skill = self.mSkillDic[skill_id]
     if not skill then
         skill = FieldExplorationConst.GetSkill(skill_id, self.mModel.m_trans)
-        self.mSkillList[skill_id] = skill
+        self.mSkillDic[skill_id] = skill
     end
 
     return skill
 end
 
 function getAllSkill(self)
-    return self.mSkillList
+    return self.mSkillDic
 end
 
 --触发(触发方式：计时器定时自动触发、触发器碰撞触发、玩家技能触发)
@@ -356,7 +374,14 @@ function getPrefabPath(self)
         return ""
     end
 
-    return eventConfig.prefab_name
+    ---策划陈剑的需求，毫无意义的操作。只是为了方便自身的操作 （2024.7.30）
+    local baseData = RefMgr:getData("mothodplay_res")
+    if not baseData[eventConfig.prefab_name] then
+        logError(eventConfig.prefab_name .. " 不存在mothodplay_res 表里，请找尊贵的土著陈剑大人~")
+    end
+    return baseData[eventConfig.prefab_name].prefab_name
+
+    -- return eventConfig.prefab_name
 end
 
 function getEventConfig(self)
@@ -409,11 +434,11 @@ function recover(self)
     self:clearAllTimeOutSn()
     self:killMoveTween()
 
-    if not table.empty(self.mSkillList) then
-        for skill_id, skill in pairs(self.mSkillList) do
+    if not table.empty(self.mSkillDic) then
+        for skill_id, skill in pairs(self.mSkillDic) do
             skill:recover()
         end
-        self.mSkillList = nil
+        self.mSkillDic = nil
     end
 
     self:recoverColliderGo()

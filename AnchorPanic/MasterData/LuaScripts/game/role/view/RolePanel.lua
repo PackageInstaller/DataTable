@@ -44,9 +44,10 @@ function initData(self)
     table.insert(self.mTabDataList, role.RoleInfoTab.RoleInfo)
     table.insert(self.mTabDataList, role.RoleInfoTab.QualitySetting)
     table.insert(self.mTabDataList, role.RoleInfoTab.SoundSetting)
-    if (not GameManager:getIsInCommiting()) then
-        table.insert(self.mTabDataList, role.RoleInfoTab.ExchangeCodeTabView)
-    end
+    table.insert(self.mTabDataList, role.RoleInfoTab.OtherSetting)
+    -- if (not GameManager:getIsInCommiting() and funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_EXCHANGE_CODE, false)) then
+    --     table.insert(self.mTabDataList, role.RoleInfoTab.ExchangeCodeTabView)
+    -- end
     self.showTabType = 2
 end
 
@@ -91,7 +92,7 @@ end
 
 function initViewText(self)
     self:updateChannel()
-    self.mTextPolicyAgreement.text = _TT(340)
+    self:setBtnLabel(self.mBtnQuit, 62106, "退出游戲")
 end
 
 function updateChannel(self)
@@ -99,8 +100,7 @@ function updateChannel(self)
     if (web.WebManager:isReleaseApp()) then
         if (sdk.SdkManager:hasUserCenter()) then
             self.mBtnLogOut:SetActive(true)
-            local channelId, channelName = sdk.SdkManager:getChannelData()
-            if(channelId == sdk.AndroidChannelId.QIANYOU)then
+            if(sdk.ChannelData:isChannelQY())then
                 self:setBtnLabel(self.mBtnLogOut, nil, "账号注销")
             else
                 self:setBtnLabel(self.mBtnLogOut, nil, "用户中心")
@@ -115,9 +115,12 @@ function updateChannel(self)
 
     -- 华为渠道再单独显示隐私政策
     if (web.WebManager:isReleaseApp()) then
-        local channelId, channelName = sdk.SdkManager:getChannelData()
-        if channelId == sdk.AndroidChannelId.HMS then
+        if(sdk.ChannelData:isChannel(sdk.ChannelData.ANDROID_QY_HW))then
             self.mTextPolicyAgreement.gameObject:SetActive(true)
+            self.mTextPolicyAgreement.text = _TT(340)
+        elseif(sdk.ChannelData:isChannelQuick3())then
+            self.mTextPolicyAgreement.gameObject:SetActive(true)
+            self.mTextPolicyAgreement.text = _TT(347)
         else
             self.mTextPolicyAgreement.gameObject:SetActive(false)
         end
@@ -135,8 +138,7 @@ end
 function __onClickLogOutHandler(self, args)
     if (web.WebManager:isReleaseApp()) then
         if (sdk.SdkManager:hasUserCenter()) then
-            local channelId, channelName = sdk.SdkManager:getChannelData()
-            if(channelId == sdk.AndroidChannelId.QIANYOU)then
+            if(sdk.ChannelData:isChannelQY())then
                 sdk.SdkManager:logout()
             else
                 sdk.SdkManager:openSdkUserUI()
@@ -166,7 +168,7 @@ function getTabClass(self)
     self.tabClassDic[role.RoleInfoTab.QualitySetting] = systemSetting.QualitySettingTabView
     self.tabClassDic[role.RoleInfoTab.SoundSetting] = systemSetting.SoundSettingTabView
     self.tabClassDic[role.RoleInfoTab.OtherSetting] = systemSetting.OtherSettingTabView
-    self.tabClassDic[role.RoleInfoTab.ExchangeCodeTabView] = role.ExchangeCodeTabView
+    -- self.tabClassDic[role.RoleInfoTab.ExchangeCodeTabView] = role.ExchangeCodeTabView
     return self.tabClassDic
 end
 
@@ -185,7 +187,7 @@ end
 
 -- 主页红点
 function updateInfoBubble(self)
-    if decorate.DecorateManager:isBubble() == true or decorate.DecorateManager:updateBgReadRed() == true then
+    if decorate.DecorateManager:isBubble() == true or decorate.DecorateManager:updateBgReadRed() == true or decorate.DecorateManager:getIsFightSkinRed() == true then
         self:addBubble(role.RoleInfoTab.RoleInfo)
     else
         self:removeBubble(role.RoleInfoTab.RoleInfo)

@@ -1,43 +1,21 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CatteryStyleCard")
+﻿local var_0_0 = class("CatteryStyleCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 	arg_1_0._tf = arg_1_1.transform
-
-	local var_1_0 = arg_1_0._tf
-	local var_1_1 = var_2.Find(var_1_0, "mask/icon")
-	local var_1_2 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.styleIcon = var_1_2(var_1_1, var_5(var_1_10007))
-	findTF = var_2
-	arg_1_0.lockTF = var_2(arg_1_0._tf, "lock")
-	findTF = var_2
-	arg_1_0.mark = var_2(arg_1_0._tf, "mark")
+	arg_1_0.styleIcon = arg_1_0._tf:Find("mask/icon"):GetComponent(typeof(Image))
+	arg_1_0.lockTF = findTF(arg_1_0._tf, "lock")
+	arg_1_0.mark = findTF(arg_1_0._tf, "mark")
 
 	return
 end
 
 function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0.style = arg_2_1
+	arg_2_0.styleIcon.sprite = GetSpriteFromAtlas("CatteryStyle/" .. arg_2_1:getConfig("name"), "")
 
-	local var_2_0 = arg_2_0.styleIcon
-
-	GetSpriteFromAtlas = var_1_10004
-	var_2_0.sprite = var_1_10004("CatteryStyle/" .. arg_2_1:getConfig("name"), "")
-
-	local var_2_1 = arg_2_1:IsOwn()
-
-	setActive = var_4
-
-	var_4(arg_2_0.lockTF, not var_2_1)
-
-	setActive = var_4
-
-	var_4(arg_2_0.mark, arg_2_2)
+	setActive(arg_2_0.lockTF, not arg_2_1:IsOwn())
+	setActive(arg_2_0.mark, arg_2_2)
 
 	return
 end

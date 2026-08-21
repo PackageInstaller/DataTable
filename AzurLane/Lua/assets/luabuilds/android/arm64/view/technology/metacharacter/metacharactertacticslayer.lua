@@ -1,16 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MetaCharacterTacticsLayer", import("...base.BaseUI"))
 
-local var_0_0 = "MetaCharacterTacticsLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MetaCharacterTacticsUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:initUITextTips()
 	arg_2_0:initData()
 	arg_2_0:initUI()
@@ -19,7 +13,7 @@ function var_0_1.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0:updateRedTag()
 	arg_3_0:updateShipImg()
 	arg_3_0:updateNamePanel()
@@ -38,7 +32,7 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.willExit(arg_4_0)
+function var_0_0.willExit(arg_4_0)
 	arg_4_0:moveShipImg(false)
 	arg_4_0:recycleChar()
 	arg_4_0:disablePartialBlur()
@@ -46,48 +40,28 @@ function var_0_1.willExit(arg_4_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_5_0)
-	isActive = var_1_10001
-
-	if var_1_10001(arg_5_0.skillUnlockPanel) then
+function var_0_0.onBackPressed(arg_5_0)
+	if isActive(arg_5_0.skillUnlockPanel) then
 		arg_5_0:closeUnlockSkillPanel()
 
 		return
 	else
-		arg_5_0:emit(var_0_1.ON_BACK_PRESSED)
+		arg_5_0:emit(var_0_0.ON_BACK_PRESSED)
 	end
 
 	return
 end
 
-function var_0_1.initUITextTips(arg_6_0)
-	local var_6_0 = arg_6_0._tf
-	local var_6_1 = var_1.Find(var_6_0, "ExpPanel")
-	local var_6_2
-
-	var_6_2, setText = var_1.Find(var_6_1, "ExpEveryDay"), var_6_0
-	i18n = var_1_10006
-
-	var_6_0(var_6_2, var_1_10006("meta_exp_per_day"))
-
-	local var_6_3 = arg_6_0._tf
-	local var_6_4
-
-	var_6_4, setText = var_3.Find(var_6_3, "TaskPanel/StudySkillTip/TipText"), var_6_1
-	i18n = var_1_10007
-
-	var_6_1(var_6_4, var_1_10007("meta_skill_unlock"))
+function var_0_0.initUITextTips(arg_6_0)
+	setText(arg_6_0._tf:Find("ExpPanel"):Find("ExpEveryDay"), i18n("meta_exp_per_day"))
+	setText(arg_6_0._tf:Find("TaskPanel/StudySkillTip/TipText"), i18n("meta_skill_unlock"))
 
 	return
 end
 
-function var_0_1.initData(arg_7_0)
-	getProxy = var_1_10001
-	MetaCharacterProxy = var_1_10003
-	arg_7_0.metaCharacterProxy = var_1_10001(var_1_10003)
-	getProxy = var_1
-	BayProxy = var_1_10003
-	arg_7_0.bayProxy = var_1(var_1_10003)
+function var_0_0.initData(arg_7_0)
+	arg_7_0.metaCharacterProxy = getProxy(MetaCharacterProxy)
+	arg_7_0.bayProxy = getProxy(BayProxy)
 	arg_7_0.shipPrefab = nil
 	arg_7_0.shipModel = nil
 	arg_7_0.curMetaShipID = arg_7_0.contextData.shipID
@@ -104,19 +78,14 @@ function var_0_1.initData(arg_7_0)
 	return
 end
 
-function var_0_1.updateData(arg_8_0)
-	local var_8_0 = arg_8_0.bayProxy
-
-	arg_8_0.curShipVO = var_1.getShipById(var_8_0, arg_8_0.curMetaShipID)
-
-	local var_8_1 = arg_8_0.curShipVO
-
-	arg_8_0.curMetaCharacterVO = var_1.getMetaCharacter(var_8_1)
+function var_0_0.updateData(arg_8_0)
+	arg_8_0.curShipVO = arg_8_0.bayProxy:getShipById(arg_8_0.curMetaShipID)
+	arg_8_0.curMetaCharacterVO = arg_8_0.curShipVO:getMetaCharacter()
 
 	return
 end
 
-function var_0_1.setTacticsData(arg_9_0, arg_9_1)
+function var_0_0.setTacticsData(arg_9_0, arg_9_1)
 	arg_9_0.doubleExpValue = arg_9_1.doubleExp
 	arg_9_0.normalExpValue = arg_9_1.normalExp
 	arg_9_0.curSkillID = arg_9_1.curSkillID
@@ -128,14 +97,14 @@ function var_0_1.setTacticsData(arg_9_0, arg_9_1)
 	return
 end
 
-function var_0_1.switchTacticsSkillData(arg_10_0, arg_10_1, arg_10_2)
+function var_0_0.switchTacticsSkillData(arg_10_0, arg_10_1, arg_10_2)
 	arg_10_0.curSkillID = arg_10_1
 	arg_10_0.switchCountLeft = arg_10_2
 
 	return
 end
 
-function var_0_1.levelupTacticsSkillData(arg_11_0, arg_11_1, arg_11_2)
+function var_0_0.levelupTacticsSkillData(arg_11_0, arg_11_1, arg_11_2)
 	arg_11_0.skillExpTable[arg_11_1] = 0
 	arg_11_0.switchCountLeft = arg_11_2
 
@@ -144,407 +113,168 @@ function var_0_1.levelupTacticsSkillData(arg_11_0, arg_11_1, arg_11_2)
 	return
 end
 
-function var_0_1.updateSkillExp(arg_12_0, arg_12_1, arg_12_2)
+function var_0_0.updateSkillExp(arg_12_0, arg_12_1, arg_12_2)
 	arg_12_0.skillExpTable[arg_12_1] = arg_12_2
 
 	return
 end
 
-function var_0_1.clearTaskInfo(arg_13_0, arg_13_1)
+function var_0_0.clearTaskInfo(arg_13_0, arg_13_1)
 	arg_13_0.taskInfoTable[arg_13_1] = {}
 
 	return
 end
 
-function var_0_1.initUI(arg_14_0)
-	local var_14_0 = arg_14_0._tf
-
-	arg_14_0.shipImg = var_1.Find(var_14_0, "ShipImg")
-
-	local var_14_1 = arg_14_0._tf
-
-	arg_14_0.nameTF = var_1.Find(var_14_1, "NamePanel")
-
-	local var_14_2 = arg_14_0.nameTF
-
-	arg_14_0.nameScrollText = var_1.Find(var_14_2, "NameMask/NameText")
-
-	local var_14_3 = arg_14_0.nameTF
-
-	arg_14_0.shipTypeImg = var_1.Find(var_14_3, "TypeImg")
-
-	local var_14_4 = arg_14_0.nameTF
-
-	arg_14_0.enNameText = var_1.Find(var_14_4, "NameENText")
-
-	local var_14_5 = arg_14_0.nameTF
-	local var_14_6 = var_1.Find(var_14_5, "StarTpl")
-	local var_14_7 = arg_14_0.nameTF
-	local var_14_8 = var_2.Find(var_14_7, "StarContainer")
-
-	UIItemList = var_14_5
-	arg_14_0.nameTFStarUIList = var_14_5.New(var_14_8, var_14_6)
-
-	local var_14_9 = arg_14_0._tf
-
-	arg_14_0.expPanel = var_3.Find(var_14_9, "ExpPanel")
-
-	local var_14_10 = arg_14_0.expPanel
-
-	arg_14_0.expText = var_3.Find(var_14_10, "ExpText")
-
-	local var_14_11 = arg_14_0.expText
-
-	arg_14_0.expDoubleTag = var_3.Find(var_14_11, "DoubleTag")
-
-	local var_14_12 = arg_14_0._tf
-
-	arg_14_0.taskPanel = var_3.Find(var_14_12, "TaskPanel")
-
-	local var_14_13 = arg_14_0.taskPanel
-
-	arg_14_0.qCharContainer = var_3.Find(var_14_13, "QChar")
-
-	local var_14_14 = arg_14_0.taskPanel
-
-	arg_14_0.taskTpl = var_3.Find(var_14_14, "TaskTpl")
-
-	local var_14_15 = arg_14_0.taskPanel
-
-	arg_14_0.taskScrollTF = var_3.Find(var_14_15, "ScrollView")
-
-	local var_14_16 = arg_14_0.taskPanel
-
-	arg_14_0.taskTplContainer = var_3.Find(var_14_16, "ScrollView/Viewport/Content")
-
-	local var_14_17 = arg_14_0.taskPanel
-
-	arg_14_0.taskScrollBar = var_3.Find(var_14_17, "ScrollView/Scrollbar Vertical")
-	UIItemList = var_3
-	arg_14_0.taskUIItemList = var_3.New(arg_14_0.taskTplContainer, arg_14_0.taskTpl)
-
-	local var_14_18 = arg_14_0.taskPanel
-
-	arg_14_0.skillInfoPanel = var_3.Find(var_14_18, "SkillInfo")
-
-	local var_14_19 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillIcon = var_3.Find(var_14_19, "Skill/Icon")
-
-	local var_14_20 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillNameScrollText = var_3.Find(var_14_20, "NameMask/Name")
-
-	local var_14_21 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillLevelText = var_3.Find(var_14_21, "LevelInfo/CurLevel")
-
-	local var_14_22 = arg_14_0.skillInfoPanel
-
-	arg_14_0.nextSkillLevelText = var_3.Find(var_14_22, "LevelInfo/NextLevel")
-
-	local var_14_23 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillDescText = var_3.Find(var_14_23, "DescView/Viewport/SkillDesc")
-
-	local var_14_24 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillProgressText = var_3.Find(var_14_24, "ExpProgress/Text")
-
-	local var_14_25 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillProgressSlider = var_3.Find(var_14_25, "ExpSlider")
-
-	local var_14_26 = arg_14_0.skillInfoPanel
-
-	arg_14_0.curSkillQuickBtn = var_3.Find(var_14_26, "QuickBtn")
-
-	local var_14_27 = arg_14_0.taskPanel
-
-	arg_14_0.studySkillTip = var_3.Find(var_14_27, "StudySkillTip")
-
-	local var_14_28 = arg_14_0.taskPanel
-
-	arg_14_0.startSkillTip = var_3.Find(var_14_28, "StartLearn")
-
-	local var_14_29 = arg_14_0.taskPanel
-
-	arg_14_0.maxSkillTip = var_3.Find(var_14_29, "SkillMax")
-
-	local var_14_30 = arg_14_0.startSkillTip
-
-	arg_14_0.studySkillBtn = var_3.Find(var_14_30, "StartLearnBtn")
-
-	local var_14_31 = arg_14_0._tf
-
-	arg_14_0.skillPanel = var_3.Find(var_14_31, "SkillPanel")
-
-	local var_14_32 = arg_14_0.skillPanel
-
-	arg_14_0.skillTpl = var_3.Find(var_14_32, "SkillTpl")
-
-	local var_14_33 = arg_14_0.skillPanel
-
-	arg_14_0.skillContainer = var_3.Find(var_14_33, "Skills/Content")
-	UIItemList = var_3
-	arg_14_0.skillUIItemList = var_3.New(arg_14_0.skillContainer, arg_14_0.skillTpl)
-
-	local var_14_34 = arg_14_0._tf
-
-	arg_14_0.skillUnlockPanel = var_3.Find(var_14_34, "SkillLearnBox")
-
-	local var_14_35 = arg_14_0.skillUnlockPanel
-
-	arg_14_0.skillUnlockPanelBG = var_3.Find(var_14_35, "BG")
-
-	local var_14_36 = arg_14_0.skillUnlockPanel
-
-	arg_14_0.skillUnlockPanelTipText = var_3.Find(var_14_36, "Box/TipText")
-
-	local var_14_37 = arg_14_0.skillUnlockPanel
-
-	arg_14_0.skillUnlockPanelCancelBtn = var_3.Find(var_14_37, "Box/Btns/CancenBtn")
-
-	local var_14_38 = arg_14_0.skillUnlockPanel
-
-	arg_14_0.skillUnlockPanelConfirmBtn = var_3.Find(var_14_38, "Box/Btns/ConfirmBtn")
-
-	local var_14_39 = arg_14_0.skillUnlockPanel
-
-	arg_14_0.materialTpl = var_3.Find(var_14_39, "Box/Material")
-
-	local var_14_40 = arg_14_0.skillUnlockPanel
-
-	arg_14_0.materialTplContainer = var_3.Find(var_14_40, "Box/MaterialContainer")
-	UIItemList = var_3
-	arg_14_0.materialUIItemList = var_3.New(arg_14_0.materialTplContainer, arg_14_0.materialTpl)
+function var_0_0.initUI(arg_14_0)
+	arg_14_0.shipImg = arg_14_0._tf:Find("ShipImg")
+	arg_14_0.nameTF = arg_14_0._tf:Find("NamePanel")
+	arg_14_0.nameScrollText = arg_14_0.nameTF:Find("NameMask/NameText")
+	arg_14_0.shipTypeImg = arg_14_0.nameTF:Find("TypeImg")
+	arg_14_0.enNameText = arg_14_0.nameTF:Find("NameENText")
+	arg_14_0.nameTFStarUIList = UIItemList.New(arg_14_0.nameTF:Find("StarContainer"), (arg_14_0.nameTF:Find("StarTpl")))
+	arg_14_0.expPanel = arg_14_0._tf:Find("ExpPanel")
+	arg_14_0.expText = arg_14_0.expPanel:Find("ExpText")
+	arg_14_0.expDoubleTag = arg_14_0.expText:Find("DoubleTag")
+	arg_14_0.taskPanel = arg_14_0._tf:Find("TaskPanel")
+	arg_14_0.qCharContainer = arg_14_0.taskPanel:Find("QChar")
+	arg_14_0.taskTpl = arg_14_0.taskPanel:Find("TaskTpl")
+	arg_14_0.taskScrollTF = arg_14_0.taskPanel:Find("ScrollView")
+	arg_14_0.taskTplContainer = arg_14_0.taskPanel:Find("ScrollView/Viewport/Content")
+	arg_14_0.taskScrollBar = arg_14_0.taskPanel:Find("ScrollView/Scrollbar Vertical")
+	arg_14_0.taskUIItemList = UIItemList.New(arg_14_0.taskTplContainer, arg_14_0.taskTpl)
+	arg_14_0.skillInfoPanel = arg_14_0.taskPanel:Find("SkillInfo")
+	arg_14_0.curSkillIcon = arg_14_0.skillInfoPanel:Find("Skill/Icon")
+	arg_14_0.curSkillNameScrollText = arg_14_0.skillInfoPanel:Find("NameMask/Name")
+	arg_14_0.curSkillLevelText = arg_14_0.skillInfoPanel:Find("LevelInfo/CurLevel")
+	arg_14_0.nextSkillLevelText = arg_14_0.skillInfoPanel:Find("LevelInfo/NextLevel")
+	arg_14_0.curSkillDescText = arg_14_0.skillInfoPanel:Find("DescView/Viewport/SkillDesc")
+	arg_14_0.curSkillProgressText = arg_14_0.skillInfoPanel:Find("ExpProgress/Text")
+	arg_14_0.curSkillProgressSlider = arg_14_0.skillInfoPanel:Find("ExpSlider")
+	arg_14_0.curSkillQuickBtn = arg_14_0.skillInfoPanel:Find("QuickBtn")
+	arg_14_0.studySkillTip = arg_14_0.taskPanel:Find("StudySkillTip")
+	arg_14_0.startSkillTip = arg_14_0.taskPanel:Find("StartLearn")
+	arg_14_0.maxSkillTip = arg_14_0.taskPanel:Find("SkillMax")
+	arg_14_0.studySkillBtn = arg_14_0.startSkillTip:Find("StartLearnBtn")
+	arg_14_0.skillPanel = arg_14_0._tf:Find("SkillPanel")
+	arg_14_0.skillTpl = arg_14_0.skillPanel:Find("SkillTpl")
+	arg_14_0.skillContainer = arg_14_0.skillPanel:Find("Skills/Content")
+	arg_14_0.skillUIItemList = UIItemList.New(arg_14_0.skillContainer, arg_14_0.skillTpl)
+	arg_14_0.skillUnlockPanel = arg_14_0._tf:Find("SkillLearnBox")
+	arg_14_0.skillUnlockPanelBG = arg_14_0.skillUnlockPanel:Find("BG")
+	arg_14_0.skillUnlockPanelTipText = arg_14_0.skillUnlockPanel:Find("Box/TipText")
+	arg_14_0.skillUnlockPanelCancelBtn = arg_14_0.skillUnlockPanel:Find("Box/Btns/CancenBtn")
+	arg_14_0.skillUnlockPanelConfirmBtn = arg_14_0.skillUnlockPanel:Find("Box/Btns/ConfirmBtn")
+	arg_14_0.materialTpl = arg_14_0.skillUnlockPanel:Find("Box/Material")
+	arg_14_0.materialTplContainer = arg_14_0.skillUnlockPanel:Find("Box/MaterialContainer")
+	arg_14_0.materialUIItemList = UIItemList.New(arg_14_0.materialTplContainer, arg_14_0.materialTpl)
 
 	return
 end
 
-function var_0_1.addListener(arg_15_0)
-	onButton = var_1_10001
-
-	local var_15_0 = arg_15_0
-	local var_15_1 = arg_15_0.skillUnlockPanelBG
-
-	local function var_15_2()
-		local var_16_0 = arg_15_0
-
-		var_0.closeUnlockSkillPanel(var_16_0)
+function var_0_0.addListener(arg_15_0)
+	onButton(arg_15_0, arg_15_0.skillUnlockPanelBG, function()
+		arg_15_0:closeUnlockSkillPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_0, var_15_1, var_15_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_3 = arg_15_0
-	local var_15_4 = arg_15_0.skillUnlockPanelCancelBtn
-
-	local function var_15_5()
-		local var_17_0 = arg_15_0
-
-		var_0.closeUnlockSkillPanel(var_17_0)
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.skillUnlockPanelCancelBtn, function()
+		arg_15_0:closeUnlockSkillPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_3, var_15_4, var_15_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_6 = arg_15_0
-	local var_15_7 = arg_15_0.skillUnlockPanelConfirmBtn
-
-	local function var_15_8()
-		local var_18_0
-
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.skillUnlockPanelConfirmBtn, function()
 		if not arg_15_0.curUnlockMaterialID then
-			pg = var_18_0
-			var_2_10002 = var_18_0.TipsMgr.GetInstance()
-			var_18_0 = var_18_0.ShowTips
-			i18n = var_2_10003
-
-			var_18_0(var_2_10002, var_2_10003("meta_unlock_skill_select"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("meta_unlock_skill_select"))
 
 			return
 		else
-			getProxy = var_18_0
-			BagProxy = var_2_10002
+			local var_18_0 = getProxy(BagProxy)
 
-			local var_18_1 = var_18_0(var_2_10002)
-
-			if var_0.getItemCountById(var_18_1, arg_15_0.curUnlockMaterialID) < arg_15_0.curUnlockMaterialNeedCount then
-				pg = var_1
-
-				local var_18_2 = var_1.TipsMgr.GetInstance()
-				local var_18_3 = var_1.ShowTips
-
-				i18n = var_2_10004
-
-				var_18_3(var_18_2, var_2_10004("word_materal_no_enough"))
+			if var_18_0:getItemCountById(arg_15_0.curUnlockMaterialID) < arg_15_0.curUnlockMaterialNeedCount then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 			else
-				local var_18_4 = 0
-				local var_18_5 = 0
-				local var_18_6 = arg_15_0
-				local var_18_7 = var_3.getMetaSkillTacticsConfigBySkillID(var_18_6, arg_15_0.curUnlockSkillID, 1).skill_unlock
+				local var_18_1 = 0
+				local var_18_2 = 0
 
-				ipairs = var_18_6
-
-				for iter_18_0, iter_18_1 in var_18_6(var_18_7) do
+				for iter_18_0, iter_18_1 in ipairs(arg_15_0:getMetaSkillTacticsConfigBySkillID(arg_15_0.curUnlockSkillID, 1).skill_unlock) do
 					if arg_15_0.curUnlockMaterialID == iter_18_1[2] then
-						var_18_4 = iter_18_0
-						var_18_5 = iter_18_1[3]
+						var_18_1 = iter_18_0
+						var_18_2 = iter_18_1[3]
 
 						break
 					end
 				end
 
-				pg = var_5
-
-				local var_18_8 = var_5.m02
-				local var_18_9 = var_5.sendNotification
-
-				GAME = iter_18_0
-
-				var_18_9(var_18_8, iter_18_0.TACTICS_META_UNLOCK_SKILL, {
+				pg.m02:sendNotification(GAME.TACTICS_META_UNLOCK_SKILL, {
 					shipID = arg_15_0.curMetaShipID,
 					skillID = arg_15_0.curUnlockSkillID,
-					materialIndex = var_18_4,
+					materialIndex = var_18_1,
 					materialInfo = {
 						id = arg_15_0.curUnlockMaterialID,
-						count = var_18_5
+						count = var_18_2
 					}
 				})
 			end
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_6, var_15_7, var_15_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updateRedTag(arg_19_0)
-	local var_19_0 = arg_19_0.metaCharacterProxy
-
-	var_1.updateRedTag(var_19_0, arg_19_0.curMetaCharacterVO.id)
+function var_0_0.updateRedTag(arg_19_0)
+	arg_19_0.metaCharacterProxy:updateRedTag(arg_19_0.curMetaCharacterVO.id)
 
 	return
 end
 
-function var_0_1.updateShipImg(arg_20_0)
-	MetaCharacterConst = var_1_10001
+function var_0_0.updateShipImg(arg_20_0)
+	local var_20_0, var_20_1 = MetaCharacterConst.GetMetaCharacterPaintPath(arg_20_0.curMetaCharacterVO.id, true)
 
-	local var_20_0, var_20_1 = var_1_10001.GetMetaCharacterPaintPath(arg_20_0.curMetaCharacterVO.id, true)
-
-	setImageSprite = var_3
-
-	local var_20_2 = arg_20_0.shipImg
-
-	LoadSprite = var_1_10006
-
-	var_3(var_20_2, var_1_10006(var_20_0, var_20_1), true)
-
-	local var_20_3 = arg_20_0.curMetaCharacterVO.id
-
-	MetaCharacterConst = var_4
-
-	local var_20_4 = var_4.UIConfig[var_20_3]
-
-	setLocalPosition = var_20_2
-
-	var_20_2(arg_20_0.shipImg, {
-		x = var_20_4[7],
-		y = var_20_4[8]
+	setImageSprite(arg_20_0.shipImg, LoadSprite(var_20_0, var_20_1), true)
+	setLocalPosition(arg_20_0.shipImg, {
+		x = MetaCharacterConst.UIConfig[arg_20_0.curMetaCharacterVO.id][7],
+		y = MetaCharacterConst.UIConfig[arg_20_0.curMetaCharacterVO.id][8]
 	})
-
-	setLocalScale = var_20_2
-
-	var_20_2(arg_20_0.shipImg, {
-		x = var_20_4[3],
-		y = var_20_4[4]
+	setLocalScale(arg_20_0.shipImg, {
+		x = MetaCharacterConst.UIConfig[arg_20_0.curMetaCharacterVO.id][3],
+		y = MetaCharacterConst.UIConfig[arg_20_0.curMetaCharacterVO.id][4]
 	})
 
 	return
 end
 
-function var_0_1.updateNamePanel(arg_21_0)
-	local var_21_0 = arg_21_0.curShipVO
-	local var_21_1 = arg_21_0.curMetaCharacterVO
-	local var_21_2 = var_21_0
-	local var_21_3 = var_21_0.getName(var_21_2)
+function var_0_0.updateNamePanel(arg_21_0)
+	setScrollText(arg_21_0.nameScrollText, (arg_21_0.curShipVO:getName()))
+	setImageSprite(arg_21_0.shipTypeImg, LoadSprite("shiptype", (arg_21_0.curShipVO:getShipType())))
+	setText(arg_21_0.enNameText, (arg_21_0.curShipVO:getConfig("english_name")))
 
-	setScrollText = var_1_10004
+	local var_21_1 = arg_21_0.curShipVO:getStar()
 
-	var_1_10004(arg_21_0.nameScrollText, var_21_3)
-
-	local var_21_4 = var_21_0
-	local var_21_5 = var_21_0.getShipType(var_21_4)
-
-	setImageSprite = var_21_2
-
-	local var_21_6 = arg_21_0.shipTypeImg
-
-	LoadSprite = var_1_10008
-
-	var_21_2(var_21_6, var_1_10008("shiptype", var_21_5))
-
-	local var_21_7 = var_21_0:getConfig("english_name")
-
-	setText = var_21_4
-
-	var_21_4(arg_21_0.enNameText, var_21_7)
-
-	local var_21_8 = var_21_0:getMaxStar()
-	local var_21_9 = var_21_0:getStar()
-	local var_21_10 = arg_21_0.nameTFStarUIList
-
-	var_8.make(var_21_10, function(arg_22_0, arg_22_1, arg_22_2)
-		UIItemList = var_2_10003
-
-		if arg_22_0 == var_2_10003.EventUpdate then
-			local var_22_0 = arg_22_2
-			local var_22_1 = arg_22_2.Find(var_22_0, "empty")
-			local var_22_2 = arg_22_2:Find("on")
+	arg_21_0.nameTFStarUIList:make(function(arg_22_0, arg_22_1, arg_22_2)
+		if arg_22_0 == UIItemList.EventUpdate then
+			local var_22_0 = arg_22_2:Find("empty")
 
 			arg_22_1 = arg_22_1 + 1
-			setActive = var_22_0
 
-			var_22_0(var_22_2, arg_22_1 <= var_21_9)
+			setActive(arg_22_2:Find("on"), arg_22_1 <= var_21_1)
 		end
 
 		return
 	end)
-
-	local var_21_11 = arg_21_0.nameTFStarUIList
-
-	var_8.align(var_21_11, var_21_8)
+	arg_21_0.nameTFStarUIList:align((arg_21_0.curShipVO:getMaxStar()))
 
 	return
 end
 
-function var_0_1.updateChar(arg_23_0)
+function var_0_0.updateChar(arg_23_0)
 	return
 end
 
-function var_0_1.recycleChar(arg_24_0)
+function var_0_0.recycleChar(arg_24_0)
 	if arg_24_0.shipPrefab and arg_24_0.shipModel then
-		PoolMgr = var_1
-
-		local var_24_0 = var_1.GetInstance()
-
-		var_1.ReturnSpineChar(var_24_0, arg_24_0.shipPrefab, arg_24_0.shipModel)
+		PoolMgr.GetInstance():ReturnSpineChar(arg_24_0.shipPrefab, arg_24_0.shipModel)
 
 		arg_24_0.shipPrefab = nil
 		arg_24_0.shipModel = nil
@@ -553,526 +283,218 @@ function var_0_1.recycleChar(arg_24_0)
 	return
 end
 
-function var_0_1.updateSkillListPanel(arg_25_0)
-	local var_25_0 = arg_25_0.curShipVO
-	local var_25_1 = arg_25_0.curMetaCharacterVO
-	local var_25_2 = arg_25_0:getSkillIDListForShow(var_25_0.configId)
-	local var_25_3 = arg_25_0.skillUIItemList
+function var_0_0.updateSkillListPanel(arg_25_0)
+	local var_25_1 = arg_25_0:getSkillIDListForShow(arg_25_0.curShipVO.configId)
 
-	var_4.make(var_25_3, function(arg_26_0, arg_26_1, arg_26_2)
-		UIItemList = var_2_10003
+	arg_25_0.skillUIItemList:make(function(arg_26_0, arg_26_1, arg_26_2)
+		if arg_26_0 == UIItemList.EventUpdate then
+			if var_25_1[arg_26_1 + 1] then
+				arg_25_0.skillBtnList[var_25_1[arg_26_1 + 1]] = arg_26_2
 
-		if arg_26_0 == var_2_10003.EventUpdate and var_25_2[arg_26_1 + 1] then
-			arg_25_0.skillBtnList[var_3] = arg_26_2
-
-			local var_26_0 = arg_25_0
-
-			var_4.updateSkillTF(var_26_0, arg_26_2, var_3)
+				arg_25_0:updateSkillTF(arg_26_2, var_25_1[arg_26_1 + 1])
+			end
 		end
 
 		return
 	end)
-
-	local var_25_4 = arg_25_0.skillUIItemList
-
-	var_4.align(var_25_4, #var_25_2)
+	arg_25_0.skillUIItemList:align(#arg_25_0:getSkillIDListForShow(arg_25_0.curShipVO.configId))
 
 	return
 end
 
-function var_0_1.updateSkillTF(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = arg_27_0.curShipVO
-	local var_27_1 = arg_27_0.curMetaCharacterVO
-	local var_27_2 = arg_27_1:Find("Skill/Icon")
-	local var_27_3 = arg_27_1:Find("Skill/Level")
-	local var_27_4 = arg_27_1:Find("Skill/Mask/Name")
-	local var_27_5 = arg_27_1:Find("Skill/Arrow")
-	local var_27_6 = arg_27_1
-	local var_27_7 = arg_27_1.Find(var_27_6, "Lock")
-	local var_27_8 = arg_27_1:Find("Learning")
+function var_0_0.updateSkillTF(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_1 = arg_27_1:Find("Skill/Level")
+	local var_27_2 = arg_27_1:Find("Skill/Arrow")
+	local var_27_3 = arg_27_1:Find("Lock")
+	local var_27_4 = arg_27_1:Find("Learning")
+	local var_27_5 = getSkillConfig(arg_27_2)
+	local var_27_6 = arg_27_0.curShipVO:getMetaSkillLevelBySkillID(arg_27_2)
 
-	getSkillConfig = var_27_6
+	setImageSprite(arg_27_1:Find("Skill/Icon"), LoadSprite("skillicon/" .. var_27_5.icon))
+	setScrollText(arg_27_1:Find("Skill/Mask/Name"), getSkillName(var_27_5.id))
 
-	local var_27_9 = var_27_6(arg_27_2)
-	local var_27_10 = var_27_0:getMetaSkillLevelBySkillID(arg_27_2)
-
-	setImageSprite = var_13
-
-	local var_27_11 = var_27_2
-
-	LoadSprite = var_1_10016
-
-	var_13(var_27_11, var_1_10016("skillicon/" .. var_27_9.icon))
-
-	setScrollText = var_13
-
-	local var_27_12 = var_27_4
-
-	getSkillName = var_16
-
-	var_13(var_27_12, var_16(var_27_9.id))
-
-	if 0 < var_27_10 then
-		setText = var_13
-
-		var_13(var_27_3, "LEVEL: " .. var_27_10)
-
-		setActive = var_13
-
-		var_13(var_27_7, false)
-
-		onButton = var_13
-
-		local var_27_13 = arg_27_0
-		local var_27_14 = arg_27_1
-
-		local function var_27_15()
-			isActive = var_2_10000
-
-			if not var_2_10000(var_27_5) then
-				eachChild = var_0
-
-				var_0(arg_27_0.skillContainer, function(arg_29_0)
-					local var_29_0 = arg_29_0:Find("Skill/Arrow")
-
-					setActive = var_3_10002
-
-					var_3_10002(var_29_0, false)
+	if var_27_6 > 0 then
+		setText(var_27_1, "LEVEL: " .. var_27_6)
+		setActive(var_27_3, false)
+		onButton(arg_27_0, arg_27_1, function()
+			if not isActive(var_27_2) then
+				eachChild(arg_27_0.skillContainer, function(arg_29_0)
+					setActive(arg_29_0:Find("Skill/Arrow"), false)
 
 					return
 				end)
-
-				setActive = var_0
-
-				var_0(var_27_5, true)
-
-				local var_28_0 = arg_27_0
-
-				var_0.updateTaskPanel(var_28_0, arg_27_2)
+				setActive(var_27_2, true)
+				arg_27_0:updateTaskPanel(arg_27_2)
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_18
-
-		var_13(var_27_13, var_27_14, var_27_15, var_18)
+		end, SFX_PANEL)
 	else
-		setText = var_13
-
-		var_13(var_27_3, "LEVEL: ??")
-
-		setActive = var_13
-
-		var_13(var_27_7, true)
-
-		onButton = var_13
-
-		local var_27_16 = arg_27_0
-		local var_27_17 = arg_27_1
-
-		local function var_27_18()
-			local var_30_0 = arg_27_0
-
-			var_0.openUnlockSkillPanel(var_30_0, arg_27_2)
+		setText(var_27_1, "LEVEL: ??")
+		setActive(var_27_3, true)
+		onButton(arg_27_0, arg_27_1, function()
+			arg_27_0:openUnlockSkillPanel(arg_27_2)
 
 			return
-		end
-
-		SFX_PANEL = var_18
-
-		var_13(var_27_16, var_27_17, var_27_18, var_18)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.updateSkillTFLearning(arg_31_0)
-	local var_31_0 = arg_31_0.curShipVO
+function var_0_0.updateSkillTFLearning(arg_31_0)
+	for iter_31_0, iter_31_1 in pairs(arg_31_0.skillBtnList) do
+		local var_31_0 = arg_31_0.curShipVO:isSkillLevelMax(iter_31_0)
 
-	pairs = var_1_10002
-
-	for iter_31_0, iter_31_1 in var_1_10002(arg_31_0.skillBtnList) do
-		local var_31_1 = iter_31_1:Find("Learning")
-		local var_31_2 = var_31_0
-		local var_31_3 = var_31_0.isSkillLevelMax(var_31_2, iter_31_0)
-		local var_31_4 = iter_31_0 == arg_31_0.curSkillID
-
-		setActive = var_31_2
-
-		var_31_2(var_31_1, var_31_4 and not var_31_3)
+		setActive(iter_31_1:Find("Learning"), iter_31_0 == arg_31_0.curSkillID and not var_31_0)
 	end
 
 	return
 end
 
-function var_0_1.TryPlayGuide(arg_32_0)
-	pg = var_1_10001
-
-	local var_32_0 = var_1_10001.SystemGuideMgr.GetInstance()
-
-	var_1.PlayByGuideId(var_32_0, "NG0025")
+function var_0_0.TryPlayGuide(arg_32_0)
+	pg.SystemGuideMgr.GetInstance():PlayByGuideId("NG0025")
 
 	return
 end
 
-function var_0_1.updateExpPanel(arg_33_0)
-	local var_33_0 = arg_33_0
-	local var_33_1 = arg_33_0.isAllSkillLock(var_33_0)
-	local var_33_2 = arg_33_0:isAllSkillMaxLevel()
+function var_0_0.updateExpPanel(arg_33_0)
+	if arg_33_0:isAllSkillLock() or arg_33_0:isAllSkillMaxLevel() then
+		setActive(arg_33_0.expPanel, false)
+	elseif arg_33_0.curSkillID > 0 then
+		setActive(arg_33_0.expPanel, true)
 
-	if var_33_1 or var_33_2 then
-		setActive = var_33_0
+		local var_33_0 = pg.gameset.meta_skill_exp_double.key_value
 
-		var_33_0(arg_33_0.expPanel, false)
+		setText(arg_33_0.expText, arg_33_0.normalExpValue .. "/" .. pg.gameset.meta_skill_exp_max.key_value)
+		setActive(arg_33_0.expDoubleTag, var_33_0 > arg_33_0.doubleExpValue)
 	else
-		local var_33_3 = arg_33_0.curSkillID
-
-		if 0 < var_33_3 then
-			setActive = var_33_3
-
-			var_33_3(arg_33_0.expPanel, true)
-
-			pg = var_33_3
-			var_33_3 = var_33_3.gameset.meta_skill_exp_double.key_value
-			pg = var_4
-
-			local var_33_4 = var_4.gameset.meta_skill_exp_max.key_value
-
-			setText = var_5
-
-			var_5(arg_33_0.expText, arg_33_0.normalExpValue .. "/" .. var_33_4)
-
-			setActive = var_5
-
-			var_5(arg_33_0.expDoubleTag, var_33_3 > arg_33_0.doubleExpValue)
-		else
-			setActive = var_33_3
-
-			var_33_3(arg_33_0.expPanel, false)
-		end
+		setActive(arg_33_0.expPanel, false)
 	end
 
 	return
 end
 
-function var_0_1.updateSkillInfoPanel(arg_34_0, arg_34_1)
-	local var_34_0 = arg_34_0.curShipVO
+function var_0_0.updateSkillInfoPanel(arg_34_0, arg_34_1)
+	local var_34_0 = getSkillConfig(arg_34_1)
 
-	getSkillConfig = var_1_10003
+	setImageSprite(arg_34_0.curSkillIcon, LoadSprite("skillicon/" .. var_34_0.icon))
+	setScrollText(arg_34_0.curSkillNameScrollText, getSkillName(var_34_0.id))
 
-	local var_34_1 = var_1_10003(arg_34_1)
+	local var_34_1 = pg.skill_data_template[arg_34_1].max_level
+	local var_34_2 = arg_34_0.curShipVO:getMetaSkillLevelBySkillID(arg_34_1)
+	local var_34_3 = pg.skill_data_template[arg_34_1].max_level <= var_34_2
 
-	setImageSprite = var_1_10004
-
-	local var_34_2 = arg_34_0.curSkillIcon
-
-	LoadSprite = var_1_10007
-
-	var_1_10004(var_34_2, var_1_10007("skillicon/" .. var_34_1.icon))
-
-	setScrollText = var_1_10004
-
-	local var_34_3 = arg_34_0.curSkillNameScrollText
-
-	getSkillName = var_7
-
-	var_1_10004(var_34_3, var_7(var_34_1.id))
-
-	pg = var_1_10004
-
-	local var_34_4 = var_1_10004.skill_data_template[arg_34_1].max_level
-	local var_34_5 = var_34_0
-	local var_34_6 = var_34_4 <= var_34_0.getMetaSkillLevelBySkillID(var_34_5, arg_34_1)
-
-	setText = var_34_5
-
-	var_34_5(arg_34_0.curSkillLevelText, var_5)
-
-	math = var_34_5
-
-	local var_34_7 = var_34_5.min(var_5 + 1, var_34_4)
-
-	setText = var_8
-
-	var_8(arg_34_0.nextSkillLevelText, var_34_7)
-
-	setText = var_8
-
-	local var_34_8 = arg_34_0.curSkillDescText
-
-	getSkillDesc = var_11
-
-	var_8(var_34_8, var_11(arg_34_1, var_34_0:getMetaSkillLevelBySkillID(arg_34_1)))
-
-	setActive = var_8
-
-	local var_34_9 = arg_34_0.curSkillQuickBtn
-	local var_34_10
-
-	if not var_34_6 then
-		LOCK_META_SKILL_QUICK = var_11
-		var_34_10 = not var_11
-	else
-		var_34_10 = false
-	end
-
-	if false then
-		var_34_10 = true
-	end
-
-	var_8(var_34_9, var_34_10)
-
-	onButton = var_8
-
-	local var_34_11 = arg_34_0
-	local var_34_12 = arg_34_0.curSkillQuickBtn
-
-	local function var_34_13()
-		local var_35_0 = arg_34_0
-		local var_35_1 = var_0.emit
-
-		MetaCharacterTacticsMediator = var_2_10003
-
-		var_35_1(var_35_0, var_2_10003.ON_QUICK, arg_34_0.curShipVO.id, arg_34_1)
+	setText(arg_34_0.curSkillLevelText, var_34_2)
+	setText(arg_34_0.nextSkillLevelText, (math.min(var_34_2 + 1, var_34_1)))
+	setText(arg_34_0.curSkillDescText, getSkillDesc(arg_34_1, arg_34_0.curShipVO:getMetaSkillLevelBySkillID(arg_34_1)))
+	setActive(arg_34_0.curSkillQuickBtn, not var_34_3 and not LOCK_META_SKILL_QUICK)
+	onButton(arg_34_0, arg_34_0.curSkillQuickBtn, function()
+		arg_34_0:emit(MetaCharacterTacticsMediator.ON_QUICK, arg_34_0.curShipVO.id, arg_34_1)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_13
+	local var_34_4 = arg_34_0.skillExpTable[arg_34_1] or 0
 
-	var_8(var_34_11, var_34_12, var_34_13, var_13)
+	if not var_34_3 then
+		local var_34_5 = arg_34_0:getMetaSkillTacticsConfigBySkillID(arg_34_1, var_34_2).need_exp
 
-	local var_34_14
+		setText(arg_34_0.curSkillProgressText, var_34_4 .. "/" .. var_34_5)
+		setSlider(arg_34_0.curSkillProgressSlider, 0, var_34_5, var_34_4)
 
-	if not arg_34_0.skillExpTable[arg_34_1] then
-		var_34_14 = 0
-	end
-
-	if not var_34_6 then
-		local var_34_15 = arg_34_0
-		local var_34_16 = arg_34_0.getMetaSkillTacticsConfigBySkillID(var_34_15, arg_34_1, var_5).need_exp
-
-		setText = var_34_15
-
-		var_34_15(arg_34_0.curSkillProgressText, var_34_14 .. "/" .. var_34_16)
-
-		setSlider = var_34_15
-
-		var_34_15(arg_34_0.curSkillProgressSlider, 0, var_34_16, var_34_14)
-
-		if var_34_14 < var_34_16 then
+		if var_34_4 < var_34_5 then
 			-- block empty
 		end
 	else
-		setText = var_9
-
-		var_9(arg_34_0.curSkillProgressText, var_34_14 .. "/Max")
-
-		setSlider = var_9
-
-		var_9(arg_34_0.curSkillProgressSlider, 0, 1, 1)
+		setText(arg_34_0.curSkillProgressText, var_34_4 .. "/Max")
+		setSlider(arg_34_0.curSkillProgressSlider, 0, 1, 1)
 	end
 
 	return
 end
 
-function var_0_1.updateTaskListPanel(arg_36_0, arg_36_1)
-	local var_36_0 = arg_36_0.curShipVO
-	local var_36_1 = var_2.getMetaSkillLevelBySkillID(var_36_0, arg_36_1)
-	local var_36_2 = arg_36_0:getMetaSkillTacticsConfigBySkillID(arg_36_1, var_36_1).skill_levelup_task
-	local var_36_3 = arg_36_0:sortTaskConfig(arg_36_1, var_36_2)
-	local var_36_4 = arg_36_0.taskUIItemList
+function var_0_0.updateTaskListPanel(arg_36_0, arg_36_1)
+	local var_36_0 = arg_36_0:sortTaskConfig(arg_36_1, arg_36_0:getMetaSkillTacticsConfigBySkillID(arg_36_1, (arg_36_0.curShipVO:getMetaSkillLevelBySkillID(arg_36_1))).skill_levelup_task)
 
-	var_6.make(var_36_4, function(arg_37_0, arg_37_1, arg_37_2)
-		UIItemList = var_2_10003
-
-		if arg_37_0 == var_2_10003.EventUpdate then
+	arg_36_0.taskUIItemList:make(function(arg_37_0, arg_37_1, arg_37_2)
+		if arg_37_0 == UIItemList.EventUpdate then
 			local var_37_0 = arg_37_2:Find("Desc")
 			local var_37_1 = arg_37_2:Find("AddExp")
 			local var_37_2 = arg_37_2:Find("Text")
 
 			arg_37_1 = arg_37_1 + 1
 
-			local var_37_3 = var_36_3[arg_37_1][1]
-			local var_37_4 = arg_36_0
-			local var_37_5
+			local var_37_3 = var_36_0[arg_37_1]
+			local var_37_4 = var_36_0[arg_37_1][1]
+			local var_37_5 = arg_36_0:getTaskInfoBySkillAndTaskID(arg_36_1, var_36_0[arg_37_1][1])
 
-			if not var_8.getTaskInfoBySkillAndTaskID(var_37_4, arg_36_1, var_37_3) or not var_8.finishCount then
-				var_37_5 = 0
+			if var_37_5 then
+				local var_37_6 = var_37_5.finishCount or 0
+
+				setText(var_37_1, "+" .. var_37_3[3])
+
+				if var_37_3[2] == 0 then
+					setText(var_37_2, var_37_6 .. "/∞")
+				else
+					setText(var_37_2, var_37_6 .. "/" .. var_37_3[2])
+				end
+
+				setText(var_37_0, pg.task_meta_data_template[var_37_4].desc)
+
+				return
 			end
-
-			local var_37_6 = var_6[3]
-
-			setText = var_11
-
-			var_11(var_37_1, "+" .. var_37_6)
-
-			if var_6[2] == 0 then
-				setText = var_12
-
-				var_12(var_37_2, var_37_5 .. "/∞")
-			else
-				setText = var_12
-
-				var_12(var_37_2, var_37_5 .. "/" .. var_11)
-			end
-
-			setText = var_12
-
-			local var_37_7 = var_37_0
-
-			pg = var_15
-
-			var_12(var_37_7, var_15.task_meta_data_template[var_37_3].desc)
 		end
-
-		return
 	end)
-
-	local var_36_5 = arg_36_0.taskUIItemList
-
-	var_6.align(var_36_5, #var_36_3)
+	arg_36_0.taskUIItemList:align(#arg_36_0:sortTaskConfig(arg_36_1, arg_36_0:getMetaSkillTacticsConfigBySkillID(arg_36_1, (arg_36_0.curShipVO:getMetaSkillLevelBySkillID(arg_36_1))).skill_levelup_task))
 
 	return
 end
 
-function var_0_1.updateTaskPanel(arg_38_0, arg_38_1)
-	local var_38_0 = arg_38_0.curShipVO
-	local var_38_1 = arg_38_0.curMetaCharacterVO
-
-	if var_38_0:isSkillLevelMax(arg_38_1) == true then
-		setActive = var_1_10005
-
-		var_1_10005(arg_38_0.studySkillTip, false)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_38_0.startSkillTip, false)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_38_0.maxSkillTip, true)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_38_0.skillInfoPanel, true)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_38_0.taskTplContainer, false)
-
-		setActive = var_1_10005
-
-		var_1_10005(arg_38_0.taskScrollBar, false)
+function var_0_0.updateTaskPanel(arg_38_0, arg_38_1)
+	if arg_38_0.curShipVO:isSkillLevelMax(arg_38_1) == true then
+		setActive(arg_38_0.studySkillTip, false)
+		setActive(arg_38_0.startSkillTip, false)
+		setActive(arg_38_0.maxSkillTip, true)
+		setActive(arg_38_0.skillInfoPanel, true)
+		setActive(arg_38_0.taskTplContainer, false)
+		setActive(arg_38_0.taskScrollBar, false)
 		arg_38_0:updateSkillInfoPanel(arg_38_1)
 	elseif arg_38_1 ~= arg_38_0.curSkillID then
-		setActive = var_5
-
-		var_5(arg_38_0.studySkillTip, false)
-
-		setActive = var_5
-
-		var_5(arg_38_0.startSkillTip, true)
-
-		setActive = var_5
-
-		var_5(arg_38_0.maxSkillTip, false)
-
-		setActive = var_5
-
-		var_5(arg_38_0.skillInfoPanel, true)
-
-		setActive = var_5
-
-		var_5(arg_38_0.taskTplContainer, true)
-
-		setActive = var_5
-
-		var_5(arg_38_0.taskScrollBar, true)
+		setActive(arg_38_0.studySkillTip, false)
+		setActive(arg_38_0.startSkillTip, true)
+		setActive(arg_38_0.maxSkillTip, false)
+		setActive(arg_38_0.skillInfoPanel, true)
+		setActive(arg_38_0.taskTplContainer, true)
+		setActive(arg_38_0.taskScrollBar, true)
 		arg_38_0:updateSkillInfoPanel(arg_38_1)
 		arg_38_0:updateTaskListPanel(arg_38_1)
-
-		onButton = var_5
-
-		local var_38_2 = arg_38_0
-		local var_38_3 = arg_38_0.studySkillBtn
-
-		local function var_38_4()
-			local var_39_1
-
+		onButton(arg_38_0, arg_38_0.studySkillBtn, function()
 			if arg_38_0.switchCountLeft == 0 then
-				pg = var_39_1
-
-				local var_39_0 = var_39_1.TipsMgr.GetInstance()
-
-				var_39_1 = var_39_1.ShowTips
-				i18n = var_2_10003
-
-				var_39_1(var_39_0, var_2_10003("meta_switch_skill_disable"))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("meta_switch_skill_disable"))
 			else
-				pg = var_39_1
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("meta_switch_skill_box_title", getSkillName(arg_38_1)),
+					onYes = function()
+						pg.m02:sendNotification(GAME.TACTICS_META_SWITCH_SKILL, {
+							shipID = var_0.id,
+							skillID = arg_38_1
+						})
 
-				local var_39_2 = var_39_1.MsgboxMgr.GetInstance()
-				local var_39_3 = var_0.ShowMsgBox
-				local var_39_4 = {}
-
-				i18n = var_2_10004
-
-				local var_39_5 = "meta_switch_skill_box_title"
-
-				getSkillName = var_2_10007
-				var_39_4.content = var_2_10004(var_39_5, var_2_10007(arg_38_1))
-
-				function var_39_4.onYes()
-					pg = var_3_10000
-
-					local var_40_0 = var_3_10000.m02
-					local var_40_1 = var_0.sendNotification
-
-					GAME = var_3_10003
-
-					var_40_1(var_40_0, var_3_10003.TACTICS_META_SWITCH_SKILL, {
-						shipID = var_38_0.id,
-						skillID = arg_38_1
-					})
-
-					return
-				end
-
-				var_39_3(var_39_2, var_39_4)
+						return
+					end
+				})
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_1_10010
-
-		var_5(var_38_2, var_38_3, var_38_4, var_1_10010)
+		end, SFX_PANEL)
 	else
-		setActive = var_5
-
-		var_5(arg_38_0.studySkillTip, false)
-
-		setActive = var_5
-
-		var_5(arg_38_0.startSkillTip, false)
-
-		setActive = var_5
-
-		var_5(arg_38_0.maxSkillTip, false)
-
-		setActive = var_5
-
-		var_5(arg_38_0.skillInfoPanel, true)
-
-		setActive = var_5
-
-		var_5(arg_38_0.taskTplContainer, true)
-
-		setActive = var_5
-
-		var_5(arg_38_0.taskScrollBar, true)
+		setActive(arg_38_0.studySkillTip, false)
+		setActive(arg_38_0.startSkillTip, false)
+		setActive(arg_38_0.maxSkillTip, false)
+		setActive(arg_38_0.skillInfoPanel, true)
+		setActive(arg_38_0.taskTplContainer, true)
+		setActive(arg_38_0.taskScrollBar, true)
 		arg_38_0:updateSkillInfoPanel(arg_38_1)
 		arg_38_0:updateTaskListPanel(arg_38_1)
 	end
@@ -1080,286 +502,130 @@ function var_0_1.updateTaskPanel(arg_38_0, arg_38_1)
 	return
 end
 
-function var_0_1.updateMain(arg_41_0)
-	local var_41_0 = arg_41_0.curShipVO
-	local var_41_1 = arg_41_0:getSkillIDListForShow(var_41_0.configId)
-	local var_41_2 = true
-	local var_41_3 = 0
-	local var_41_4, var_41_5 = arg_41_0:isAllSkillLock()
-	local var_41_6 = var_41_5
-	local var_41_7 = var_41_4
+function var_0_0.updateMain(arg_41_0)
+	local var_41_0 = arg_41_0:getSkillIDListForShow(arg_41_0.curShipVO.configId)
+	local var_41_3, var_41_4 = arg_41_0:isAllSkillLock()
 
-	setActive = var_41_4
+	setActive(arg_41_0.taskScrollTF, not var_41_3)
 
-	var_41_4(arg_41_0.taskScrollTF, not var_41_7)
-
-	if var_41_7 then
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.expPanel, false)
-
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.skillInfoPanel, false)
-
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.taskTplContainer, false)
-
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.taskScrollBar, false)
-
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.studySkillTip, true)
-
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.startSkillTip, false)
-
-		setActive = var_41_4
-
-		var_41_4(arg_41_0.maxSkillTip, false)
+	if var_41_3 then
+		setActive(arg_41_0.expPanel, false)
+		setActive(arg_41_0.skillInfoPanel, false)
+		setActive(arg_41_0.taskTplContainer, false)
+		setActive(arg_41_0.taskScrollBar, false)
+		setActive(arg_41_0.studySkillTip, true)
+		setActive(arg_41_0.startSkillTip, false)
+		setActive(arg_41_0.maxSkillTip, false)
 	elseif arg_41_0.curUnlockSkillID then
-		triggerButton = var_5
-
-		var_5(arg_41_0.skillBtnList[arg_41_0.curUnlockSkillID])
+		triggerButton(arg_41_0.skillBtnList[arg_41_0.curUnlockSkillID])
 	elseif arg_41_0.curSkillID > 0 then
-		triggerButton = var_5
-
-		var_5(arg_41_0.skillBtnList[arg_41_0.curSkillID])
+		triggerButton(arg_41_0.skillBtnList[arg_41_0.curSkillID])
 	else
-		triggerButton = var_5
-
-		var_5(arg_41_0.skillBtnList[var_41_6])
+		triggerButton(arg_41_0.skillBtnList[var_41_4])
 	end
 
 	return
 end
 
-function var_0_1.tryLearnSkillAfterFirstUnlock(arg_42_0)
-	local var_42_0 = arg_42_0.curUnlockSkillID
-	local var_42_1 = 1
-
-	arg_42_0:switchTacticsSkillData(var_42_0, var_42_1)
+function var_0_0.tryLearnSkillAfterFirstUnlock(arg_42_0)
+	arg_42_0:switchTacticsSkillData(arg_42_0.curUnlockSkillID, 1)
 	arg_42_0:updateExpPanel()
-	arg_42_0:updateTaskPanel(var_42_0)
+	arg_42_0:updateTaskPanel(arg_42_0.curUnlockSkillID)
 	arg_42_0:updateSkillTFLearning()
 	arg_42_0:TryPlayGuide()
 
 	return
 end
 
-function var_0_1.moveShipImg(arg_43_0, arg_43_1)
-	local var_43_0 = arg_43_0.curMetaCharacterVO.id
+function var_0_0.moveShipImg(arg_43_0, arg_43_1)
+	local var_43_0 = MetaCharacterConst.UIConfig[arg_43_0.curMetaCharacterVO.id]
+	local var_43_1 = arg_43_1 and -2000 or var_43_0[7]
 
-	MetaCharacterConst = var_1_10003
+	if arg_43_1 then
+		arg_43_0:managedTween(LeanTween.moveX, nil, rtf(arg_43_0.shipImg), var_43_2, 0.2):setFrom(var_43_1)
 
-	local var_43_1 = var_1_10003.UIConfig[var_43_0]
-	local var_43_2 = arg_43_1 and -2000 or var_43_1[7]
-	local var_43_3
-
-	if not arg_43_1 or not var_43_1[7] then
-		var_43_3 = -2000
+		return
 	end
+end
 
-	local var_43_4 = arg_43_0
-	local var_43_5 = arg_43_0.managedTween
-
-	LeanTween = var_1_10009
-
-	local var_43_6 = var_1_10009.moveX
-	local var_43_7
-
-	rtf = var_1_10011
-
-	local var_43_8 = var_43_5(var_43_4, var_43_6, var_43_7, var_1_10011(arg_43_0.shipImg), var_43_3, 0.2)
-
-	var_6.setFrom(var_43_8, var_43_2)
+function var_0_0.moveRightPanel(arg_44_0)
+	arg_44_0:managedTween(LeanTween.moveX, nil, rtf(arg_44_0.skillPanel), 500, 0.2):setFrom(2000)
+	arg_44_0:managedTween(LeanTween.moveX, nil, rtf(arg_44_0.taskPanel), 500, 0.2):setFrom(2000)
 
 	return
 end
 
-function var_0_1.moveRightPanel(arg_44_0)
-	local var_44_0 = 2000
-	local var_44_1 = 500
-	local var_44_2 = arg_44_0
-	local var_44_3 = arg_44_0.managedTween
-
-	LeanTween = var_1_10006
-
-	local var_44_4 = var_1_10006.moveX
-	local var_44_5
-
-	rtf = var_1_10008
-
-	local var_44_6 = var_44_3(var_44_2, var_44_4, var_44_5, var_1_10008(arg_44_0.skillPanel), var_44_1, 0.2)
-
-	var_3.setFrom(var_44_6, var_44_0)
-
-	local var_44_7 = arg_44_0
-	local var_44_8 = arg_44_0.managedTween
-
-	LeanTween = var_6
-
-	local var_44_9 = var_6.moveX
-	local var_44_10
-
-	rtf = var_8
-
-	local var_44_11 = var_44_8(var_44_7, var_44_9, var_44_10, var_8(arg_44_0.taskPanel), var_44_1, 0.2)
-
-	var_3.setFrom(var_44_11, var_44_0)
-
-	return
-end
-
-function var_0_1.openUnlockSkillPanel(arg_45_0, arg_45_1)
-	local var_45_0 = arg_45_0.curShipVO
-	local var_45_1 = arg_45_0.curMetaCharacterVO
-
+function var_0_0.openUnlockSkillPanel(arg_45_0, arg_45_1)
 	arg_45_0.curUnlockSkillID = arg_45_1
-	ShipGroup = var_1_10004
 
-	local var_45_2 = var_1_10004.getDefaultShipNameByGroupID(var_45_1.id)
+	setText(arg_45_0.skillUnlockPanelTipText, i18n("meta_unlock_skill_tip", ShipGroup.getDefaultShipNameByGroupID(arg_45_0.curMetaCharacterVO.id), (getSkillName(arg_45_1))))
 
-	getSkillName = var_1_10005
-
-	local var_45_3 = var_1_10005(arg_45_1)
-
-	setText = var_6
-
-	local var_45_4 = arg_45_0.skillUnlockPanelTipText
-
-	i18n = var_1_10009
-
-	var_6(var_45_4, var_1_10009("meta_unlock_skill_tip", var_45_2, var_45_3))
-
-	local var_45_5 = arg_45_0:getMetaSkillTacticsConfigBySkillID(arg_45_1, 1).skill_unlock
-	local var_45_6 = {
-		var_6.skill_unlock[1]
+	local var_45_1 = arg_45_0:getMetaSkillTacticsConfigBySkillID(arg_45_1, 1)
+	local var_45_3 = {
+		var_45_1.skill_unlock[1]
 	}
-	local var_45_7 = arg_45_0.materialUIItemList
 
-	var_8.make(var_45_7, function(arg_46_0, arg_46_1, arg_46_2)
-		UIItemList = var_2_10003
-
-		if arg_46_0 == var_2_10003.EventUpdate then
+	arg_45_0.materialUIItemList:make(function(arg_46_0, arg_46_1, arg_46_2)
+		if arg_46_0 == UIItemList.EventUpdate then
 			arg_46_1 = arg_46_1 + 1
 
-			local var_46_0 = var_45_6[arg_46_1]
-			local var_46_1 = arg_46_2:Find("Item")
-			local var_46_2 = arg_46_2:Find("SelectedTag")
-			local var_46_3 = arg_46_2
-			local var_46_4 = arg_46_2.Find(var_46_3, "Count/Text")
-			local var_46_5 = {}
+			local var_46_0 = var_45_3[arg_46_1]
+			local var_46_1 = arg_46_2:Find("Count/Text")
 
-			DROP_TYPE_ITEM = var_46_3
-			var_46_5.type = var_46_3
-			var_46_5.id = var_46_0[2]
-			var_46_5.count = var_46_0[3]
-			updateDrop = var_8
+			updateDrop(arg_46_2:Find("Item"), {
+				type = DROP_TYPE_ITEM,
+				id = var_45_3[arg_46_1][2],
+				count = var_45_3[arg_46_1][3]
+			})
+			setActive(arg_46_2:Find("SelectedTag"), false)
 
-			var_8(var_46_1, var_46_5)
+			local var_46_2 = var_46_0[2]
+			local var_46_3 = var_46_0[3]
+			local var_46_4 = getProxy(BagProxy):getItemCountById(var_46_0[2])
+			local var_46_5 = var_46_4 < var_46_0[3] and setColorStr(var_46_4, COLOR_RED) or setColorStr(var_46_4, COLOR_GREEN)
 
-			setActive = var_8
+			setText(var_46_1, var_46_5 .. "/" .. var_46_0[3])
 
-			var_8(var_46_2, false)
-
-			local var_46_6 = var_46_0[2]
-			local var_46_7 = var_46_0[3]
-
-			getProxy = var_10
-			BagProxy = var_2_10012
-
-			local var_46_8 = var_10(var_2_10012)
-
-			if var_10.getItemCountById(var_46_8, var_46_6) < var_46_7 then
-				setColorStr = var_46_11
-
-				local var_46_9 = var_10
-
-				COLOR_RED = var_2_10014
-
-				local var_46_11
-
-				if not var_46_11(var_46_9, var_2_10014) then
-					setColorStr = var_46_11
-
-					local var_46_10 = var_10
-
-					COLOR_GREEN = var_2_10014
-					var_46_11 = var_46_11(var_46_10, var_2_10014)
-				end
-
-				setText = var_46_8
-
-				var_46_8(var_46_4, var_46_11 .. "/" .. var_46_7)
-
-				arg_45_0.curUnlockMaterialID = var_46_6
-				arg_45_0.curUnlockMaterialNeedCount = var_46_7
-
-				return
-			end
+			arg_45_0.curUnlockMaterialID = var_46_2
+			arg_45_0.curUnlockMaterialNeedCount = var_46_3
 		end
+
+		return
 	end)
-
-	local var_45_8 = arg_45_0.materialUIItemList
-
-	var_8.align(var_45_8, #var_45_6)
-
-	setActive = var_8
-
-	var_8(arg_45_0.skillUnlockPanel, true)
-
-	pg = var_8
-
-	local var_45_9 = var_8.UIMgr.GetInstance()
-
-	var_8.BlurPanel(var_45_9, arg_45_0.skillUnlockPanel)
+	arg_45_0.materialUIItemList:align(#{
+		var_45_1.skill_unlock[1]
+	})
+	setActive(arg_45_0.skillUnlockPanel, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_45_0.skillUnlockPanel)
 
 	return
 end
 
-function var_0_1.closeUnlockSkillPanel(arg_47_0)
+function var_0_0.closeUnlockSkillPanel(arg_47_0)
 	arg_47_0.curUnlockSkillID = nil
 	arg_47_0.curUnlockMaterialID = nil
 	arg_47_0.curUnlockMaterialNeedCount = nil
-	setActive = var_1
 
-	var_1(arg_47_0.skillUnlockPanel, false)
-
-	pg = var_1
-
-	local var_47_0 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_47_0, arg_47_0.skillUnlockPanel, arg_47_0._tf)
+	setActive(arg_47_0.skillUnlockPanel, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_47_0.skillUnlockPanel, arg_47_0._tf)
 
 	return
 end
 
-function var_0_1.enablePartialBlur(arg_48_0)
+function var_0_0.enablePartialBlur(arg_48_0)
 	if arg_48_0._tf then
-		local var_48_0 = {}
-
-		table = var_1_10002
-
-		var_1_10002.insert(var_48_0, arg_48_0.taskPanel)
-
-		table = var_2
-
-		var_2.insert(var_48_0, arg_48_0.skillPanel)
+		table.insert({}, arg_48_0.taskPanel)
+		table.insert({}, arg_48_0.skillPanel)
 		arg_48_0:OverlayPanel(arg_48_0._tf, {
 			groupDelta = -1,
-			pbList = var_48_0
+			pbList = {}
 		})
 	end
 
 	return
 end
 
-function var_0_1.disablePartialBlur(arg_49_0)
+function var_0_0.disablePartialBlur(arg_49_0)
 	if arg_49_0._tf then
 		arg_49_0:UnOverlayPanel(arg_49_0._tf)
 	end
@@ -1367,22 +633,14 @@ function var_0_1.disablePartialBlur(arg_49_0)
 	return
 end
 
-function var_0_1.getMetaSkillTacticsConfigBySkillID(arg_50_0, arg_50_1, arg_50_2)
-	MetaCharacterConst = var_1_10003
-
-	return var_1_10003.getMetaSkillTacticsConfig(arg_50_1, arg_50_2)
+function var_0_0.getMetaSkillTacticsConfigBySkillID(arg_50_0, arg_50_1, arg_50_2)
+	return MetaCharacterConst.getMetaSkillTacticsConfig(arg_50_1, arg_50_2)
 end
 
-function var_0_1.getTaskInfoBySkillAndTaskID(arg_51_0, arg_51_1, arg_51_2)
-	local var_51_0
+function var_0_0.getTaskInfoBySkillAndTaskID(arg_51_0, arg_51_1, arg_51_2)
+	local var_51_0 = arg_51_0.taskInfoTable[arg_51_1] or {}
 
-	if not arg_51_0.taskInfoTable[arg_51_1] then
-		var_51_0 = {}
-	end
-
-	ipairs = var_1_10004
-
-	for iter_51_0, iter_51_1 in var_1_10004(var_51_0) do
+	for iter_51_0, iter_51_1 in ipairs(var_51_0) do
 		if iter_51_1.taskID == arg_51_2 then
 			return iter_51_1
 		end
@@ -1391,36 +649,25 @@ function var_0_1.getTaskInfoBySkillAndTaskID(arg_51_0, arg_51_1, arg_51_2)
 	return
 end
 
-function var_0_1.isAllSkillLock(arg_52_0)
-	local var_52_0 = arg_52_0.curShipVO
-	local var_52_1 = arg_52_0:getSkillIDListForShow(var_52_0.configId)
-	local var_52_2 = true
-	local var_52_3 = 0
+function var_0_0.isAllSkillLock(arg_52_0)
+	local var_52_0 = true
+	local var_52_1 = 0
 
-	ipairs = var_5
-
-	for iter_52_0, iter_52_1 in var_5(var_52_1) do
-		if var_52_0:getMetaSkillLevelBySkillID(iter_52_1) > 0 then
-			var_52_2 = false
-			var_52_3 = iter_52_1
+	for iter_52_0, iter_52_1 in ipairs((arg_52_0:getSkillIDListForShow(arg_52_0.curShipVO.configId))) do
+		if arg_52_0.curShipVO:getMetaSkillLevelBySkillID(iter_52_1) > 0 then
+			var_52_0 = false
+			var_52_1 = iter_52_1
 
 			break
 		end
 	end
 
-	return var_52_2, var_52_3
+	return var_52_0, var_52_1
 end
 
-function var_0_1.isAllSkillMaxLevel(arg_53_0)
-	local var_53_0 = arg_53_0.curShipVO
-	local var_53_1 = arg_53_0
-	local var_53_2 = arg_53_0.getSkillIDListForShow(var_53_1, var_53_0.configId)
-	local var_53_3 = true
-
-	ipairs = var_53_1
-
-	for iter_53_0, iter_53_1 in var_53_1(var_53_2) do
-		if not var_53_0:isSkillLevelMax(iter_53_1) then
+function var_0_0.isAllSkillMaxLevel(arg_53_0)
+	for iter_53_0, iter_53_1 in ipairs((arg_53_0:getSkillIDListForShow(arg_53_0.curShipVO.configId))) do
+		if not arg_53_0.curShipVO:isSkillLevelMax(iter_53_1) then
 			return false
 		end
 	end
@@ -1428,31 +675,22 @@ function var_0_1.isAllSkillMaxLevel(arg_53_0)
 	return
 end
 
-function var_0_1.updateTacticsRedTag(arg_54_0)
-	local var_54_0 = arg_54_0.curShipVO
-	local var_54_1 = var_1.getMetaCharacter(var_54_0)
-	local var_54_2 = arg_54_0
-	local var_54_3 = arg_54_0.getSkillIDListForShow(var_54_2, var_1.configId)
-	local var_54_4 = false
+function var_0_0.updateTacticsRedTag(arg_54_0)
+	local var_54_0 = arg_54_0.curShipVO:getMetaCharacter()
 
-	ipairs = var_54_2
+	for iter_54_0, iter_54_1 in ipairs((arg_54_0:getSkillIDListForShow(arg_54_0.curShipVO.configId))) do
+		local var_54_2 = arg_54_0.curShipVO:getMetaSkillLevelBySkillID(iter_54_1)
+		local var_54_3 = arg_54_0.curShipVO:isSkillLevelMax(iter_54_1)
 
-	for iter_54_0, iter_54_1 in var_54_2(var_54_3) do
-		local var_54_5 = var_1:getMetaSkillLevelBySkillID(iter_54_1)
-		local var_54_6 = var_1:isSkillLevelMax(iter_54_1)
+		if var_54_2 > 0 and not var_54_3 then
+			local var_54_4 = arg_54_0:getMetaSkillTacticsConfigBySkillID(iter_54_1, var_54_2).need_exp
 
-		if var_54_5 > 0 and not var_54_6 then
-			local var_54_7 = arg_54_0:getMetaSkillTacticsConfigBySkillID(iter_54_1, var_54_5).need_exp
-			local var_54_8
+			if arg_54_0.skillExpTable then
+				local var_54_5 = arg_54_0.skillExpTable[iter_54_1] or 0
 
-			if not arg_54_0.skillExpTable or not arg_54_0.skillExpTable[iter_54_1] then
-				var_54_8 = 0
-			end
-
-			if var_54_7 <= var_54_8 then
-				local var_54_9 = true
-
-				break
+				if var_54_4 <= var_54_5 then
+					break
+				end
 			end
 		end
 	end
@@ -1460,63 +698,50 @@ function var_0_1.updateTacticsRedTag(arg_54_0)
 	return
 end
 
-function var_0_1.sortTaskConfig(arg_55_0, arg_55_1, arg_55_2)
-	Clone = var_1_10003
+function var_0_0.sortTaskConfig(arg_55_0, arg_55_1, arg_55_2)
+	local var_55_0 = Clone(arg_55_2)
 
-	local var_55_0 = var_1_10003(arg_55_2)
+	table.sort(var_55_0, function(arg_56_0, arg_56_1)
+		local var_56_0 = arg_56_1[1]
+		local var_56_1 = arg_56_0[2]
+		local var_56_2 = arg_56_1[2]
+		local var_56_3 = arg_55_0:getTaskInfoBySkillAndTaskID(arg_55_1, arg_56_0[1])
+		local var_56_4 = arg_55_0:getTaskInfoBySkillAndTaskID(arg_55_1, arg_56_1[1])
 
-	table = var_1_10004
+		if var_56_3 then
+			local var_56_5 = var_56_3.finishCount or 0
 
-	var_1_10004.sort(var_55_0, function(arg_56_0, arg_56_1)
-		local var_56_0 = arg_56_0[1]
-		local var_56_1 = arg_56_1[1]
-		local var_56_2 = arg_56_0[2]
-		local var_56_3 = arg_56_1[2]
-		local var_56_4 = arg_55_0
-		local var_56_5 = var_6.getTaskInfoBySkillAndTaskID(var_56_4, arg_55_1, var_56_0)
-		local var_56_6 = arg_55_0
-		local var_56_7 = var_7.getTaskInfoBySkillAndTaskID(var_56_6, arg_55_1, var_56_1)
-		local var_56_8
+			if var_56_4 then
+				local var_56_6 = var_56_4.finishCount or 0
+				local var_56_7 = var_56_1 > 0 and var_56_5 <= var_56_1
+				local var_56_8 = var_56_2 > 0 and var_56_6 <= var_56_2
 
-		if not var_56_5 or not var_56_5.finishCount then
-			var_56_8 = 0
+				if var_56_1 == 0 and var_56_2 == 0 then
+					return arg_56_0[1] < var_56_0
+				elseif var_56_1 == 0 then
+					return true
+				elseif var_56_2 == 0 then
+					return false
+				elseif var_56_7 == true and var_56_8 == true then
+					return arg_56_0[1] < var_56_0
+				elseif var_56_7 == true then
+					return false
+				elseif var_56_8 == true then
+					return true
+				else
+					return arg_56_0[1] < var_56_0
+				end
+
+				return
+			end
 		end
-
-		local var_56_9
-
-		if not var_56_7 or not var_56_7.finishCount then
-			var_56_9 = 0
-		end
-
-		local var_56_10 = var_56_2 > 0 and var_56_8 <= var_56_2
-		local var_56_11 = var_56_3 > 0 and var_56_9 <= var_56_3
-
-		if var_56_2 == 0 and var_56_3 == 0 then
-			return var_56_0 < var_56_1
-		elseif var_56_2 == 0 then
-			return true
-		elseif var_56_3 == 0 then
-			return false
-		elseif var_56_10 == true and var_56_11 == true then
-			return var_56_0 < var_56_1
-		elseif var_56_10 == true then
-			return false
-		elseif var_56_11 == true then
-			return true
-		else
-			return var_56_0 < var_56_1
-		end
-
-		return
 	end)
 
 	return var_55_0
 end
 
-function var_0_1.getSkillIDListForShow(arg_57_0, arg_57_1)
-	MetaCharacterConst = var_1_10002
-
-	return var_1_10002.getTacticsSkillIDListByShipConfigID(arg_57_1)
+function var_0_0.getSkillIDListForShow(arg_57_0, arg_57_1)
+	return MetaCharacterConst.getTacticsSkillIDListByShipConfigID(arg_57_1)
 end
 
-return var_0_1
+return var_0_0

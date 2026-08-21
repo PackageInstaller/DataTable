@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_target_set") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_target_set"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_target_set = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_target_set
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_target_set = rawget(pg, "child_target_set") or setmetatable({
+	__name = "child_target_set"
+}, confNEO)
+pg.child_target_set.all = {
 	1,
 	2,
 	3,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	55,
 	56
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_target_set = {}
+pg.base = pg.base or {}
+pg.base.child_target_set = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_target_set
-
-	var_1_0[1] = {
+	pg.base.child_target_set[1] = {
 		target_progress = 5,
 		name = "快乐玩耍",
 		stage = 1,
@@ -107,11 +70,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_target_set
-
-	var_1_1[2] = {
+	pg.base.child_target_set[2] = {
 		target_progress = 5,
 		name = "教育启蒙",
 		stage = 1,
@@ -143,11 +102,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_target_set
-
-	var_1_2[3] = {
+	pg.base.child_target_set[3] = {
 		target_progress = 5,
 		name = "举止优雅",
 		stage = 1,
@@ -179,11 +134,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_target_set
-
-	var_1_3[4] = {
+	pg.base.child_target_set[4] = {
 		target_progress = 5,
 		name = "感知世界",
 		stage = 1,
@@ -215,11 +166,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_target_set
-
-	var_1_4[11] = {
+	pg.base.child_target_set[11] = {
 		target_progress = 5,
 		name = "精力充沛",
 		stage = 2,
@@ -254,11 +201,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_target_set
-
-	var_1_5[12] = {
+	pg.base.child_target_set[12] = {
 		target_progress = 5,
 		name = "聪颖过人",
 		stage = 2,
@@ -293,11 +236,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_target_set
-
-	var_1_6[13] = {
+	pg.base.child_target_set[13] = {
 		target_progress = 5,
 		name = "举止大方",
 		stage = 2,
@@ -332,11 +271,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_target_set
-
-	var_1_7[14] = {
+	pg.base.child_target_set[14] = {
 		target_progress = 5,
 		name = "细致入微",
 		stage = 2,
@@ -371,11 +306,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_target_set
-
-	var_1_8[21] = {
+	pg.base.child_target_set[21] = {
 		target_progress = 8,
 		name = "身姿矫健",
 		stage = 3,
@@ -405,11 +336,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_target_set
-
-	var_1_9[22] = {
+	pg.base.child_target_set[22] = {
 		target_progress = 8,
 		name = "才思敏捷",
 		stage = 3,
@@ -439,11 +366,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_target_set
-
-	var_1_10[23] = {
+	pg.base.child_target_set[23] = {
 		target_progress = 8,
 		name = "气质非凡",
 		stage = 3,
@@ -473,11 +396,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_target_set
-
-	var_1_11[24] = {
+	pg.base.child_target_set[24] = {
 		target_progress = 8,
 		name = "敏感细腻",
 		stage = 3,
@@ -507,11 +426,7 @@ var_0_3.base.child_target_set = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_target_set
-
-	var_1_12[31] = {
+	pg.base.child_target_set[31] = {
 		target_progress = 10,
 		name = "灵巧机敏",
 		stage = 4,
@@ -550,11 +465,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_target_set
-
-	var_1_13[32] = {
+	pg.base.child_target_set[32] = {
 		target_progress = 11,
 		name = "创意无限",
 		stage = 4,
@@ -594,11 +505,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_target_set
-
-	var_1_14[33] = {
+	pg.base.child_target_set[33] = {
 		target_progress = 11,
 		name = "注重细节",
 		stage = 4,
@@ -638,11 +545,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_target_set
-
-	var_1_15[34] = {
+	pg.base.child_target_set[34] = {
 		target_progress = 11,
 		name = "行动力强",
 		stage = 4,
@@ -682,11 +585,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_target_set
-
-	var_1_16[35] = {
+	pg.base.child_target_set[35] = {
 		target_progress = 11,
 		name = "乐感十足",
 		stage = 4,
@@ -726,11 +625,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_target_set
-
-	var_1_17[36] = {
+	pg.base.child_target_set[36] = {
 		target_progress = 11,
 		name = "魅力非凡",
 		stage = 4,
@@ -770,11 +665,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_target_set
-
-	var_1_18[41] = {
+	pg.base.child_target_set[41] = {
 		target_progress = 10,
 		name = "灵巧机敏",
 		stage = 4,
@@ -813,11 +704,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_target_set
-
-	var_1_19[42] = {
+	pg.base.child_target_set[42] = {
 		target_progress = 11,
 		name = "创意无限",
 		stage = 4,
@@ -857,11 +744,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_target_set
-
-	var_1_20[43] = {
+	pg.base.child_target_set[43] = {
 		target_progress = 11,
 		name = "注重细节",
 		stage = 4,
@@ -901,11 +784,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_target_set
-
-	var_1_21[44] = {
+	pg.base.child_target_set[44] = {
 		target_progress = 11,
 		name = "行动力强",
 		stage = 4,
@@ -945,11 +824,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_target_set
-
-	var_1_22[45] = {
+	pg.base.child_target_set[45] = {
 		target_progress = 11,
 		name = "乐感十足",
 		stage = 4,
@@ -989,11 +864,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_target_set
-
-	var_1_23[46] = {
+	pg.base.child_target_set[46] = {
 		target_progress = 11,
 		name = "魅力非凡",
 		stage = 4,
@@ -1033,11 +904,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_target_set
-
-	var_1_24[51] = {
+	pg.base.child_target_set[51] = {
 		target_progress = 10,
 		name = "灵巧机敏",
 		stage = 4,
@@ -1076,11 +943,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_target_set
-
-	var_1_25[52] = {
+	pg.base.child_target_set[52] = {
 		target_progress = 11,
 		name = "创意无限",
 		stage = 4,
@@ -1120,11 +983,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_target_set
-
-	var_1_26[53] = {
+	pg.base.child_target_set[53] = {
 		target_progress = 11,
 		name = "注重细节",
 		stage = 4,
@@ -1164,11 +1023,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_target_set
-
-	var_1_27[54] = {
+	pg.base.child_target_set[54] = {
 		target_progress = 11,
 		name = "行动力强",
 		stage = 4,
@@ -1208,11 +1063,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_target_set
-
-	var_1_28[55] = {
+	pg.base.child_target_set[55] = {
 		target_progress = 11,
 		name = "乐感十足",
 		stage = 4,
@@ -1252,8 +1103,7 @@ var_0_3.base.child_target_set = {}
 			}
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.child_target_set[56] = {
+	pg.base.child_target_set[56] = {
 		target_progress = 11,
 		name = "魅力非凡",
 		stage = 4,

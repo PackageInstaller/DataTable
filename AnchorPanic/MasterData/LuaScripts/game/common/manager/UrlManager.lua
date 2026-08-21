@@ -9,7 +9,7 @@ function getPackPath(self, pathName)
     return "arts/ui/pack/" .. pathName
 end
 
--- 获取ui公共资源资源全路径（pathName = common_1001.png）
+-- 获取ui公共资源全路径（pathName = common_1001.png）
 function getCommonPath(self, pathName)
     return "arts/ui/pack/common1/" .. pathName
 end
@@ -92,9 +92,14 @@ function getFightSoundPath(self, pathName)
     return ""
 end
 
+-- 获取cv配音路径开头
+function getCVSoundPrefixPath(self)
+    return "arts/audio/cv/"
+end
+
 -- 获取cv配音路径
 function getCVSoundPath(self, pathName)
-    return "arts/audio/cv/" .. pathName
+    return self:getCVSoundPrefixPath() .. pathName
 end
 
 -- 获取ui音源路径
@@ -107,7 +112,62 @@ function getUIBaseSoundPath(self, pathName)
     return "arts/audio/UI/basic/" .. pathName
 end
 
--- 获取宿舍音效路径
+-- 是否使用发行版本资源
+function getIsChannelHar(self, level)
+    return RefMgr and RefMgr:getSpecialConfig() and sdk and sdk.ChannelData and sdk.ChannelData:getIsChannelHarmonious(level)
+end
+
+-- 获取发行版本资源目录，海外版本使用_lymden，发行版本使用_Har
+function getHarDir(self, dirName, level)
+    return self:getIsChannelHar(level) and (dirName .. "_Har") or (dirName .. "_lymden")
+end
+
+-- 获取发行版本资源文件名，默认在后缀前追加_har
+function getHarFileName(self, fileName, harSuffix)
+    harSuffix = harSuffix or "_har"
+    local name, ext = string.match(fileName, "^(.*)(%.[^%.]+)$")
+    if name and ext then
+        return name .. harSuffix .. ext
+    end
+    return fileName .. harSuffix
+end
+
+-- 兼容配置中已带旧目录或已带后缀目录的路径，避免重复拼接目录
+function getHarPathName(self, dirName, pathName)
+    pathName = string.gsub(pathName, "\\", "/")
+    pathName = string.gsub(pathName, "^" .. dirName .. "/", "")
+    pathName = string.gsub(pathName, "^" .. dirName .. "_lymden/", "")
+    pathName = string.gsub(pathName, "^" .. dirName .. "_Har/", "")
+    return pathName
+end
+
+-- 获取arts/ui/icon下按目录区分的发行版本/海外版本资源路径
+function getHarIconPath(self, dirName, pathName, level)
+    pathName = self:getHarPathName(dirName, pathName)
+    return self:getIconPath(string.format("%s/%s", self:getHarDir(dirName, level), pathName))
+end
+
+-- 获取arts/ui/bg下按目录区分的发行版本/海外版本资源路径
+function getHarBgPath(self, dirName, pathName, level)
+    pathName = self:getHarPathName(dirName, pathName)
+    return self:getBgPath(string.format("%s/%s", self:getHarDir(dirName, level), pathName))
+end
+
+-- 获取bg资源路径：发行版本使用原目录+_har文件名，海外版本使用_lymden目录
+function getHarBgFilePath(self, dirName, fileName, level, harSuffix)
+    if self:getIsChannelHar(level) then
+        return self:getBgPath(string.format("%s/%s", dirName, self:getHarFileName(fileName, harSuffix)))
+    end
+    return self:getBgPath(string.format("%s_lymden/%s", dirName, fileName))
+end
+
+-- 获取bg资源路径：发行版本使用_Har目录+_har文件名，海外版本使用_lymden目录
+function getHarBgDirFilePath(self, dirName, fileName, level, harSuffix)
+    if self:getIsChannelHar(level) then
+        return self:getBgPath(string.format("%s_Har/%s", dirName, self:getHarFileName(fileName, harSuffix)))
+    end
+    return self:getBgPath(string.format("%s_lymden/%s", dirName, fileName))
+end
 function getDormSoundPath(self, pathName)
     return "arts/audio/UI/dorm/" .. pathName
 end
@@ -225,6 +285,11 @@ function getFightUIPath(self, pathName)
     return self:getPackPath("fight5/" .. pathName)
 end
 
+-- 战斗UI资源路径 战斗皮肤
+function getFightUIPathByFightSkin(self, pathName,skinId)
+    return self:getPackPath("fight_"..skinId.."/" .. pathName)
+end
+
 -- 战斗UI资源路径
 function getFightArtfontPath(self, pathName)
     return self:getPackPath("fightArtfont/" .. pathName)
@@ -235,7 +300,7 @@ function getTabIcon(self, pathName)
     return self:getIconPath("tabIcon/" .. pathName)
 end
 
--- 页签小图标
+-- 金币小图标
 function getMoneyIconUrl(self, propsTid)
     return self:getIconPath(string.format("money/money_%s.png", propsTid))
 end
@@ -252,12 +317,13 @@ end
 
 -- 战员时装商店半身像路径
 function getFashionShopBodyPath(self, pathName)
-    return self:getIconPath("fashionShop/" .. pathName)
+    return self:getHarIconPath("fashionShop", pathName)
 end
 
+-- 战员时装商店半身像路径，国服版
 -- 战员时装界面半身像路径（是时装商店的不一样）
 function getHeroFashionBodyPath(self, modelId)
-    return self:getIconPath(string.format("heroFashion/hero_fashion_%s.png", modelId))
+    return self:getHarIconPath("heroFashion", string.format("hero_fashion_%s.png", modelId))
 end
 
 -- 模组头像
@@ -297,7 +363,7 @@ end
 
 -- 获取手环图标icon
 function getBraceletIconUrl(self, propsTid)
-    return UrlManager:getIconPath("bracelet/mark_" .. propsTid .. ".png")
+    return UrlManager:getHarIconPath("bracelet", "mark_" .. propsTid .. ".png")
 end
 
 -- 获取手环颜色
@@ -386,7 +452,7 @@ function getPropsLeftTopColorIconUrl(self, color)
     return dic.source
 end
 
-------------------------------------------------------------------------start-待废用--------------------------------------------------------------------------
+------------------------------------------------------------------------start-待废弃-------------------------------------------------------------------------
 -- 获取英雄圆形头像
 function getHeroCircularHeadUrl(self, heroTid)
     local dic = self:getDic(self.getHeroCircularHeadUrl, heroTid)
@@ -396,7 +462,7 @@ function getHeroCircularHeadUrl(self, heroTid)
     return dic.source
 end
 
--- 获取英雄又是半身像
+-- 获取英雄原始半身像
 function getHeroBgImgUrl(self, source)
     if source then
         return "arts/ui/icon/heroShadow/" .. source
@@ -404,7 +470,7 @@ function getHeroBgImgUrl(self, source)
     return source
 end
 
-------------------------------------------------------------------------end-待废用--------------------------------------------------------------------------
+------------------------------------------------------------------------end-待废弃-------------------------------------------------------------------------
 
 -- 通过id获取怪物头像
 function getMonsterHeadUrl(self, uniqueId)
@@ -518,7 +584,7 @@ end
 
 -- 获取英雄半身像通过模型id
 function getHeroSmallBodyImgUrl(self, modelId)
-    return string.format("arts/ui/icon/heroSmallList/hero_smallBody_%s.png", modelId)
+    return self:getHarIconPath("heroSmallList", string.format("hero_smallBody_%s.png", modelId))
     -- local dic = self:getDic(self.getHeroBodyImgUrl, modelId)
     -- if (not dic.source) then
     --     dic.source = string.format("arts/ui/icon/heroList/hero_bigBody_%s.png", modelId)
@@ -528,11 +594,12 @@ end
 
 -- 获取英雄半身像通过模型id
 function getHeroBodyImgUrl(self, modelId)
-    local dic = self:getDic(self.getHeroBodyImgUrl, modelId)
-    if (not dic.source) then
-        dic.source = string.format("arts/ui/icon/heroList/hero_bigBody_%s.png", modelId)
-    end
-    return dic.source
+    return self:getHarIconPath("heroList", string.format("hero_bigBody_%s.png", modelId))
+    -- local dic = self:getDic(self.getHeroBodyImgUrl, modelId)
+    -- if (not dic.source) then
+    --     dic.source = string.format("arts/ui/icon/heroList/hero_bigBody_%s.png", modelId)
+    -- end
+    -- return dic.source
 end
 
 -- 获取英雄半身像通过模型id
@@ -553,12 +620,12 @@ function getHeroBodyUrlByImgName(self, imgName)
     return dic.source
 end
 
--- 获取pain像
+-- 获取painting图
 function getPainImg(self, imgName)
-    return "arts/ui/bg/heroRecord/" .. imgName
+    return self:getHarBgPath("heroRecord", imgName)
 end
 
----- 获取时装服饰像
+---- 获取时装服饰图
 --function getFashionClothesUrl(self, model)
 --	local dic = self:getDic(self.getFashionClothesUrl, model)
 --	if(not dic.source)then
@@ -571,12 +638,12 @@ end
 function getFashionShopClothesUrl(self, model)
     local dic = self:getDic(self.getFashionClothesUrl, model)
     if (not dic.source) then
-        dic.source = "arts/ui/icon/fashionShop/hero_fashionShop_" .. model .. ".png"
+        dic.source = self:getHarIconPath("fashionShop", "hero_fashionShop_" .. model .. ".png")
     end
     return dic.source
 end
 
--- 获取英雄武器像
+-- 获取英雄武器图
 function getFashionWeaponUrl(self, propsTid)
     local dic = self:getDic(self.getFashionWeaponUrl, propsTid)
     if (not dic.source) then
@@ -657,7 +724,7 @@ end
 function getHeroModelUrl(self, source)
     local dic = self:getDic(self.getHeroModelUrl, source)
     if (not dic.source) then
-        dic.source = "arts/ui/bg/heroRecord/" .. source
+        dic.source = self:getHarBgPath("heroRecord", source)
     end
     return dic.source
 end
@@ -665,10 +732,91 @@ end
 -- 获取战员立绘
 function getheroRecordUrl(self, modelId)
     local dic = self:getDic(self.getheroRecordUrl, modelId)
-    if (not dic.source) then
-        dic.source = string.format("arts/ui/bg/heroRecord/record_pic_%s.png", modelId)
-    end
+    --if (not dic.source) then
+    dic.source = self:getHarBgPath("heroRecord", string.format("record_pic_%s.png", modelId))
+    --end
     return dic.source
+end
+
+function getHeroRecoedUrlByDetail(self, picUrl)
+    local dic = self:getDic(self.getheroRecordUrl, picUrl)
+    --if (not dic.source) then
+    dic.source = self:getHarBgPath("heroRecord", picUrl)
+    --end
+    return dic.source
+end
+
+function getFashionComboPath(self, pathName)
+    return self:getHarIconPath("fashionCombo", pathName)
+end
+
+function getFashionPairtsPath(self, pathName)
+    return self:getHarIconPath("fashionPairts", pathName)
+end
+
+function getFriendLittleBgPath(self, icon)
+    return self:getHarBgPath("friend", string.format("littleBg/friend_bg_little_%s.png", icon))
+end
+
+function getFriendBigBgPath(self, icon)
+    return self:getHarBgPath("friend", string.format("bigBg/friend_bg_%s.jpg", icon))
+end
+
+function getArenaInfoVsPicPath(self, modelId)
+    return self:getHarBgPath("arenaInfoPanel", string.format("vs_pic_%s.png", modelId))
+end
+
+function getBiographyHeroBgPath(self, modelId)
+    return self:getHarIconPath("biography", string.format("biography_%s.png", modelId))
+end
+
+function getHeroRecruitPath(self, modelId)
+    return self:getHarIconPath("heroRecruit", string.format("hero_recruit_%s.png", modelId))
+end
+
+function getBillboardBgUrl(self, illustration)
+    return self:getHarBgDirFilePath("billboard", string.format("billboard_bg_%s.jpg", illustration))
+end
+
+function getBillboardBgHarUrl(self, illustration)
+    return self:getBgPath(string.format("billboard_Har/%s", self:getHarFileName(string.format("billboard_bg_%s.jpg", illustration))))
+end
+
+function getBillboardReadBgUrl(self, illustration)
+    return self:getHarBgDirFilePath("billboardRead", string.format("billboard_bg_%s.png", illustration))
+end
+
+function getRoundPrizeBgUrl(self)
+    return self:getHarBgPath("roundPrize", "bg_01.jpg")
+end
+
+function getRoundPrizeTwoBgUrl(self)
+    return self:getHarBgPath("roundPrizeTwo", "bg_01.jpg")
+end
+
+function getShopRecom15Path(self)
+    if self:getIsChannelHar() then
+        return self:getPackPath("shop/shop_recom_15_har.png")
+    end
+    return self:getPackPath("shop_lymden/shop_recom_15.png")
+end
+
+function getBigHostelModelClassPath(self, modelId, isHar)
+    if isHar then
+        return string.format("game/bigHostel/manager/model/BigHostel_Model_%s_Har", modelId)
+    end
+    return "game/bigHostel/manager/model/BigHostel_Model_" .. modelId
+end
+
+function getBigHostelPrefabPath(self, modelId, isHar)
+    if isHar then
+        return string.format("arts/character/scene_module_3Dhostel/%s_har/model%s_har.prefab", modelId, modelId)
+    end
+    return string.format("arts/character/scene_module_3Dhostel/%s/model%s.prefab", modelId, modelId)
+end
+
+function getBigHostelMatPath(self, modelId, matName)
+    return string.format("arts/character/scene_module_3Dhostel/%s/mats/%s.mat", modelId, matName)
 end
 
 -- 获取英雄品质大图
@@ -866,7 +1014,7 @@ function getArenaHallBarTitleUrl(self, arenaHallType)
     return dic.source
 end
 
--- 获取竞技大厅Bar标题图
+-- 获取编队地格标题图
 function getFormationTileImgUrl(self, tileIndex)
     local dic = self:getDic(self.getFormationTileImgUrl, tileIndex)
     if (not dic.source) then
@@ -916,7 +1064,7 @@ function getPlayerTitleUrl(self, titleId)
     return dic.source
 end
 
--- 获取竞技场排名图标
+-- 获取竞技场排名图
 function getArenaRankIconUrl(self, rank)
     local dic = self:getDic(self.getArenaRankIconUrl, rank)
     local curIndex = 5248 + rank
@@ -940,7 +1088,7 @@ function getMainMapChapterIconUrl(self, chapterId)
     -- return dic.source
 end
 
--- 获取主线章节的章节背景图片
+-- 获取主线章节的章节背景图
 function getMainMapChapterBgUrl(self, styleType, chapterId)
     local dic = self:getDic(self.getMainMapChapterBgUrl, styleType .. "_" .. chapterId)
     if (not dic.source) then
@@ -949,7 +1097,7 @@ function getMainMapChapterBgUrl(self, styleType, chapterId)
     return dic.source
 end
 
--- 获取装备改造部位图标
+-- 获取装备改造部位图
 function getEquipRemakePosIconUrl(self, remakePos)
     local dic = self:getDic(self.getEquipRemakePosIconUrl, remakePos)
     if (not dic.source) then
@@ -971,7 +1119,7 @@ function getBraceletsRefineLvlIconUrl(self, isNotYet)
     return dic.source
 end
 
--- 获取盟约助手头像小图标
+-- 获取盟约助手头像小图
 function getHelperHeadIconUrl(self, helperId)
     local dic = self:getDic(self.getHelperHeadIconUrl, helperId)
     if (not dic.source) then
@@ -1056,6 +1204,76 @@ function getDynamicEmojiUrl(self, index)
     return dic.source
 end
 
+-- 获取dna音效路径
+function getDnaSoundPath(self, tid, ttype)
+    return "arts/audio/UI/dna/" .. string.format("ui_dna_%s_%s.prefab", tid, ttype)
+end
+
+function getDnaOtherSoundPath(self, name)
+    return "arts/audio/UI/dna/" .. name .. ".prefab"
+end
+
+-- 获取dna蛋图标路径
+function getDnaEggIconUrl(self, id)
+    local dic = self:getDic(self.getDnaEggIconUrl, id)
+    if (not dic.source) then
+        dic.source = UrlManager:getIconPath(string.format("dna/dna_egg_%s.png", id))
+    end
+    return dic.source
+end
+
+-- 获取dna人形头像路径
+function getDnaHeroHeadUrl(self, id)
+    local dic = self:getDic(self.getDnaHeroHeadUrl, id)
+    if (not dic.source) then
+        dic.source = UrlManager:getIconPath(string.format("dna/dna_head_%s.png", id))
+    end
+    return dic.source
+end
+
+-- 获取dna人形形象路径
+function getDnaHeroRoleUrl(self, id)
+    local dic = self:getDic(self.getDnaHeroRoleUrl, id)
+    if (not dic.source) then
+        dic.source = UrlManager:getIconPath(string.format("dna/dna_role_%s.png", id))
+    end
+    return dic.source
+end
+
+-- 获取dna人形形象帧动画路径
+function getDnaRoleFrameAniUrl(self, id)
+    local dic = self:getDic(self.getDnaRoleFrameAniUrl, id)
+    if (not dic.source) then
+        dic.source = string.format("arts/fx/ui/dnaFrame/prefabs/dna_frame_ani_%s.prefab", id)
+    end
+    return dic.source
+end
+
+-- 获取dna选择蛋item品质背景图
+function getDnaEggChoiceItemBgUrl(self, quality)
+    local dic = self:getDic(self.getDnaEggChoiceItemBgUrl, quality)
+    if (not dic.source) then
+        -- quality传入的暂时只有1-3品质 资源美术命名的pnl_05 - 07(显示的品质是倒着来的)
+        dic.source = UrlManager:getPackPath(string.format("dna/pnl_0%s.png", 5 + (3 - quality)))
+    end
+    return dic.source
+end
+
+-- 获取dna品质icon
+function getDnaGridQualityBg(self, quality)
+    local dic = self:getDic(self.getDnaGridQualityBg, quality)
+    if (not dic.source) then
+        if quality == hero.eggQuality.r then
+            dic.source = self:getCommon5Path("common_0175.png")
+        elseif quality == hero.eggQuality.sr then
+            dic.source = self:getCommon5Path("common_0174.png")
+        elseif quality == hero.eggQuality.ssr then
+            dic.source = self:getCommon5Path("common_0173.png")
+        end
+    end
+    return dic.source
+end
+
 function getRemakeTypeUrl(self, colorType)
     return UrlManager:getPackPath("equipBuild/equip_remake_color_" .. colorType .. ".png")
 end
@@ -1080,7 +1298,68 @@ function getStoryPrefabPath(self)
     return "arts/storyPrefab/"
 end
 
+function getStoryCgConfigPath(self)
+    return "arts/ui/bg/story/cg/"
+end
+
+function getStoryCgPath(self)
+    return "arts/ui/bg/story/cg_lymden/"
+end
+
+function getStoryCgHarPath(self)
+    return "arts/ui/bg/story/cg_Har/"
+end
+
 -- 剧情角色
+function getStoryCgLymdenUrl(self, url)
+    if not url then
+        return url
+    end
+    if string.find(url, self:getStoryCgPath()) then
+        return url
+    end
+    if string.find(url, self:getStoryCgHarPath()) then
+        return string.gsub(url, self:getStoryCgHarPath(), self:getStoryCgPath(), 1)
+    end
+    if string.find(url, self:getStoryCgConfigPath()) then
+        return string.gsub(url, self:getStoryCgConfigPath(), self:getStoryCgPath(), 1)
+    end
+
+    local pathName = string.gsub(url, "^story/cg/", "")
+    pathName = string.gsub(pathName, "^cg/", "")
+    return self:getStoryCgPath() .. pathName
+end
+
+function getStoryCgHarUrl(self, url)
+    if not url then
+        return url
+    end
+    if string.find(url, self:getStoryCgHarPath()) then
+        return url
+    end
+    if string.find(url, self:getStoryCgPath()) then
+        return string.gsub(url, self:getStoryCgPath(), self:getStoryCgHarPath(), 1)
+    end
+    if string.find(url, self:getStoryCgConfigPath()) then
+        return string.gsub(url, self:getStoryCgConfigPath(), self:getStoryCgHarPath(), 1)
+    end
+
+    local pathName = string.gsub(url, "^story/cg/", "")
+    pathName = string.gsub(pathName, "^cg/", "")
+    return self:getStoryCgHarPath() .. pathName
+end
+
+function getStoryCgUrl(self, url, level)
+    if not string.find(url, "^cg/") then
+        return self:getBgPath("story/" .. url)
+    end
+    local harUrl = self:getStoryCgHarUrl(url)
+    if AssetLoader and AssetLoader.GetAsset(harUrl) ~= nil then
+        return harUrl
+    end
+    return self:getStoryCgLymdenUrl(url)
+end
+
 function getStoryCharactorUrl(self, source)
     return "arts/storyPrefab/expression/" .. source .. "/" .. source .. ".png"
 end
@@ -1090,7 +1369,20 @@ function getStoryCharactorFaceUrl(self, source, index)
     return "arts/storyPrefab/expression/" .. source .. "/" .. source .. "_Face_" .. index .. ".png"
 end
 
+-- 获取图册列表图标
+function getPaintingIconPath(self, name)
+    return "arts/ui/icon/paintingList/" .. name
+end
+
+function getStoryHarCharactorUrl(self, source)
+    return "arts/storyPrefab/expression_Har/" .. source .. "/" .. source .. ".png"
+end
+
+function getStoryHarCharactorFaceUrl(self, source, index)
+    return "arts/storyPrefab/expression_Har/" .. source .. "/" .. source .. "_Face_" .. index .. ".png"
+end
+
 return _M
 
---[[ 替换语言包自动生成，请勿修改！
+--[[ 替换语言包自动生成，请勿修改 
 ]]

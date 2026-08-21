@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_data_create_material") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_data_create_material"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_data_create_material = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_data_create_material
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_data_create_material = rawget(pg, "ship_data_create_material") or setmetatable({
+	__name = "ship_data_create_material"
+}, confNEO)
+pg.ship_data_create_material.all = {
 	1,
 	2,
 	3,
@@ -40,25 +17,11 @@ var_0_3.all = {
 	12,
 	13
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_data_create_material = {}
+pg.base = pg.base or {}
+pg.base.ship_data_create_material = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_data_create_material
-
-	var_1_0[1] = {
+	pg.base.ship_data_create_material[1] = {
 		use_gold = 1500,
 		name = "特型舰",
 		build_anim = "building",
@@ -78,11 +41,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：28.8%"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_data_create_material
-
-	var_1_1[2] = {
+	pg.base.ship_data_create_material[2] = {
 		use_gold = 600,
 		name = "轻型舰",
 		build_anim = "building",
@@ -101,11 +60,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：55%"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_data_create_material
-
-	var_1_2[3] = {
+	pg.base.ship_data_create_material[3] = {
 		use_gold = 1500,
 		name = "重型舰",
 		build_anim = "building",
@@ -125,11 +80,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：28.8%"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_data_create_material
-
-	var_1_3[4] = {
+	pg.base.ship_data_create_material[4] = {
 		use_gold = 1500,
 		name = "限时建造",
 		build_anim = "building",
@@ -146,16 +97,16 @@ var_0_3.base.ship_data_create_material = {}
 			"<color=#d797ff>精锐舰船</color>：12%",
 			"<color=#3dc6ff>稀有舰船</color>：51%",
 			"普通舰船：30%",
-			"<color=#ffde38>华丽</color>：2.0%<color=#92FC63>(up!)</color>",
+			"<color=#ffde38>本宁顿</color>：2.0%<color=#92FC63>(up!)</color>",
 			" ",
-			"<color=#ffde38>萨里</color>：2.0%<color=#92FC63>(up!)</color>"
+			"<color=#ffde38>维克斯堡</color>：2.0%<color=#92FC63>(up!)</color>",
+			" ",
+			"<color=#ffde38>柯莱特</color>：0.5%",
+			" ",
+			"<color=#d797ff>哈里森</color>：2.5%<color=#92FC63>(up!)</color>"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_data_create_material
-
-	var_1_4[5] = {
+	pg.base.ship_data_create_material[5] = {
 		use_gold = 1500,
 		name = "限时建造",
 		build_anim = "building",
@@ -174,11 +125,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：30%"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_data_create_material
-
-	var_1_5[6] = {
+	pg.base.ship_data_create_material[6] = {
 		use_gold = 1500,
 		name = "特型舰祈愿",
 		build_anim = "building",
@@ -198,11 +145,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：28.8%"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_data_create_material
-
-	var_1_6[7] = {
+	pg.base.ship_data_create_material[7] = {
 		use_gold = 600,
 		name = "轻型舰祈愿",
 		build_anim = "building",
@@ -221,11 +164,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：55%"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_data_create_material
-
-	var_1_7[8] = {
+	pg.base.ship_data_create_material[8] = {
 		use_gold = 1500,
 		name = "重型舰祈愿",
 		build_anim = "building",
@@ -245,11 +184,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：28.8%"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_data_create_material
-
-	var_1_8[9] = {
+	pg.base.ship_data_create_material[9] = {
 		use_gold = 600,
 		name = "轻型限时建造",
 		build_anim = "building",
@@ -269,11 +204,7 @@ var_0_3.base.ship_data_create_material = {}
 			"<color=#d797ff>塔尔图</color>：1.4%(<color=#92fc63>up!</color>)"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_data_create_material
-
-	var_1_9[10] = {
+	pg.base.ship_data_create_material[10] = {
 		use_gold = 1500,
 		name = "限时建造",
 		build_anim = "building",
@@ -301,11 +232,7 @@ var_0_3.base.ship_data_create_material = {}
 			"<color=#d797ff>花剑</color>：2.5%(<color=#92fc63>up!</color>)"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_data_create_material
-
-	var_1_10[11] = {
+	pg.base.ship_data_create_material[11] = {
 		use_gold = 1500,
 		name = "庆典新手建造",
 		build_anim = "building",
@@ -324,11 +251,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：30%"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_data_create_material
-
-	var_1_11[12] = {
+	pg.base.ship_data_create_material[12] = {
 		use_gold = 1500,
 		name = "限时建造",
 		build_anim = "building",
@@ -347,8 +270,7 @@ var_0_3.base.ship_data_create_material = {}
 			"普通舰船：30%"
 		}
 	}
-	pg = var_1_11
-	var_1_11.base.ship_data_create_material[13] = {
+	pg.base.ship_data_create_material[13] = {
 		use_gold = 1500,
 		name = "限时建造",
 		build_anim = "building",

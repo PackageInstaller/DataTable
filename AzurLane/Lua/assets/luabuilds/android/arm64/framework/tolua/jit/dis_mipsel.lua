@@ -1,13 +1,5 @@
-﻿require = var_0_10000
-string = var_0_10002
-
-local var_0_0
-
-if not var_0_10002.match(..., ".*%.") then
-	var_0_0 = ""
-end
-
-local var_0_1 = var_0_10000(var_0_0 .. "dis_mips")
+﻿local var_0_0 = string.match(..., ".*%.") or ""
+local var_0_1 = require(var_0_0 .. "dis_mips")
 
 return {
 	create = var_0_1.create_el,

@@ -1,21 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SixthAnniversaryIslandShopWindowMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "SixthAnniversaryIslandShopWindowMediator"
+var_0_0.SHOPPING_CONFIRM = "SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.SHOPPING_CONFIRM = "SixthAnniversaryIslandShopWindowMediator.SHOPPING_CONFIRM"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.SHOPPING_CONFIRM, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.ISLAND_SHOPPING, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SHOPPING_CONFIRM, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ISLAND_SHOPPING, {
 			shop = arg_1_0.contextData.shop,
 			arg1 = arg_1_0.contextData.goods.id,
 			arg2 = arg_2_1
@@ -23,37 +12,25 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-
-	local var_1_0 = arg_1_0.viewComponent
-
-	var_1.setGoods(var_1_0, arg_1_0.contextData.goods)
+	arg_1_0.viewComponent:setGoods(arg_1_0.contextData.goods)
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	local var_3_0 = {}
-
-	GAME = var_1_10002
-	var_3_0[1] = var_1_10002.ISLAND_SHOPPING_DONE
-
-	return var_3_0
+function var_0_0.listNotificationInterests(arg_3_0)
+	return {
+		GAME.ISLAND_SHOPPING_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getName(var_4_0)
-	local var_4_2 = arg_4_1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getBody()
 
-	GAME = var_4_0
-
-	if var_4_1 == var_4_0.ISLAND_SHOPPING_DONE then
-		local var_4_3 = arg_4_0.viewComponent
-
-		var_4.closeView(var_4_3)
+	if arg_4_1:getName() == GAME.ISLAND_SHOPPING_DONE then
+		arg_4_0.viewComponent:closeView()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MusicPlayer")
+﻿local var_0_0 = class("MusicPlayer")
 
 var_0_0.NO_PLAY_MUSIC_NOTIFICATION = "MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION"
 var_0_0.CALLBACK_DIC = {
@@ -26,9 +24,7 @@ function var_0_0.Ctor(arg_4_0, arg_4_1, arg_4_2)
 end
 
 function var_0_0.ChangeData(arg_5_0, arg_5_1)
-	pairs = var_1_10002
-
-	for iter_5_0, iter_5_1 in var_1_10002(arg_5_1) do
+	for iter_5_0, iter_5_1 in pairs(arg_5_1) do
 		arg_5_0[iter_5_0] = iter_5_1
 	end
 
@@ -37,47 +33,19 @@ end
 
 function var_0_0.Reflush(arg_6_0, arg_6_1)
 	arg_6_0.finishDic = {}
-
-	if not arg_6_0.list then
-		getProxy = var_2
-		AppreciateProxy = var_1_10004
-
-		local var_6_0 = var_2(var_1_10004)
-
-		arg_6_0.list = var_2.getAlbumMusicList(var_6_0, arg_6_0.albumName)
-	end
-
+	arg_6_0.list = arg_6_0.list or getProxy(AppreciateProxy):getAlbumMusicList(arg_6_0.albumName)
 	arg_6_0.count = #arg_6_0.list
 
-	local var_6_3
-
 	if arg_6_0.count == 0 then
-		pg = var_6_3
-
-		local var_6_1 = var_6_3.TipsMgr.GetInstance()
-
-		var_6_3.ShowTips(var_6_1, "this album without any song")
-
-		existCall = var_6_3
-
-		var_6_3(arg_6_0.callbackDic.noPlayCall)
-
-		pg = var_6_3
-
-		local var_6_2 = var_6_3.m02
-
-		var_6_3 = var_6_3.sendNotification
-		MusicPlayer = var_5
-
-		var_6_3(var_6_2, var_5.NO_PLAY_MUSIC_NOTIFICATION)
+		pg.TipsMgr.GetInstance():ShowTips("this album without any song")
+		existCall(arg_6_0.callbackDic.noPlayCall)
+		pg.m02:sendNotification(MusicPlayer.NO_PLAY_MUSIC_NOTIFICATION)
 
 		return
 	end
 
 	if not arg_6_1 then
-		switch = var_6_3
-
-		var_6_3(arg_6_0.loopType, {
+		switch(arg_6_0.loopType, {
 			one = function()
 				arg_6_0.index = 1
 
@@ -89,10 +57,7 @@ function var_0_0.Reflush(arg_6_0, arg_6_1)
 				return
 			end,
 			random = function()
-				local var_9_0 = arg_6_0
-
-				math = var_2_10001
-				var_9_0.index = var_2_10001.random(arg_6_0.count)
+				arg_6_0.index = math.random(arg_6_0.count)
 
 				return
 			end
@@ -105,75 +70,40 @@ function var_0_0.Reflush(arg_6_0, arg_6_1)
 end
 
 function var_0_0.Play(arg_10_0)
-	pg = var_1_10001
-	arg_10_0.cacheMusicName = var_1_10001.music_collect_config[arg_10_0.list[arg_10_0.index]].music
-	onNextTick = var_2
+	arg_10_0.cacheMusicName = pg.music_collect_config[arg_10_0.list[arg_10_0.index]].music
 
-	var_2(function()
-		CueData = var_2_10000
+	onNextTick(function()
+		local var_11_0 = CueData.GetCueData()
 
-		local var_11_0 = var_2_10000.GetCueData()
-
-		pg = var_2_10001
-		var_11_0.channelName = var_2_10001.CriMgr.C_GALLERY_MUSIC
+		var_11_0.channelName = pg.CriMgr.C_GALLERY_MUSIC
 		var_11_0.cueSheetName = var_0
 		var_11_0.cueName = ""
-		CriWareMgr = var_1
 
-		local var_11_1 = var_1.Inst
-		local var_11_2 = var_1.PlaySound
-		local var_11_3 = var_11_0
-
-		CriWareMgr = var_2_10005
-
-		var_11_2(var_11_1, var_11_3, var_2_10005.CRI_FADE_TYPE.FADE_INOUT, function(arg_12_0)
+		CriWareMgr.Inst:PlaySound(var_11_0, CriWareMgr.CRI_FADE_TYPE.FADE_INOUT, function(arg_12_0)
 			arg_10_0.playbackInfo = arg_12_0
 
-			local var_12_0 = arg_10_0.playbackInfo
+			arg_10_0.playbackInfo:SetIgnoreAutoUnload(true)
 
-			var_1.SetIgnoreAutoUnload(var_12_0, true)
+			arg_10_0.finishDic[arg_10_0.index] = true
 
-			local var_12_1 = arg_10_0.finishDic
-
-			var_12_1[arg_10_0.index] = true
-			existCall = var_12_1
-
-			local var_12_2 = arg_10_0.callbackDic.startCall
-			local var_12_3 = arg_10_0.playbackInfo
-
-			var_12_1(var_12_2, var_4.GetLength(var_12_3))
+			existCall(arg_10_0.callbackDic.startCall, arg_10_0.playbackInfo:GetLength())
 
 			if not arg_10_0.timer then
-				local var_12_4 = arg_10_0
-
-				Timer = var_2
-				var_12_4.timer = var_2.New(function()
+				arg_10_0.timer = Timer.New(function()
 					if not arg_10_0.playbackInfo then
 						return
 					end
 
-					existCall = var_0
+					existCall(arg_10_0.callbackDic.progressCall, arg_10_0.playbackInfo:GetTime())
 
-					local var_13_0 = arg_10_0.callbackDic.progressCall
-					local var_13_1 = arg_10_0.playbackInfo
-
-					var_0(var_13_0, var_3.GetTime(var_13_1))
-
-					local var_13_2 = arg_10_0.playbackInfo.playback
-					local var_13_3 = var_0.GetStatus(var_13_2)
-
-					if var_0.ToInt(var_13_3) == 3 then
-						local var_13_4 = arg_10_0
-
-						var_0.Finish(var_13_4)
+					if arg_10_0.playbackInfo.playback:GetStatus():ToInt() == 3 then
+						arg_10_0:Finish()
 					end
 
 					return
 				end, 0.033, -1)
 
-				local var_12_5 = arg_10_0.timer
-
-				var_1.Start(var_12_5)
+				arg_10_0.timer:Start()
 			end
 
 			return
@@ -190,38 +120,21 @@ function var_0_0.Stop(arg_14_0)
 		return
 	end
 
-	local var_14_0 = arg_14_0.playbackInfo
+	arg_14_0.playbackInfo:SetStartTime(0)
+	arg_14_0.playbackInfo:SetIgnoreAutoUnload(false)
 
-	var_1.SetStartTime(var_14_0, 0)
+	local var_14_0 = CueData.GetCueData()
 
-	local var_14_1 = arg_14_0.playbackInfo
+	var_14_0.channelName = pg.CriMgr.C_GALLERY_MUSIC
+	var_14_0.cueSheetName = arg_14_0.cacheMusicName
+	var_14_0.cueName = ""
 
-	var_1.SetIgnoreAutoUnload(var_14_1, false)
-
-	CueData = var_1
-
-	local var_14_2 = var_1.GetCueData()
-
-	pg = var_1_10002
-	var_14_2.channelName = var_1_10002.CriMgr.C_GALLERY_MUSIC
-	var_14_2.cueSheetName = arg_14_0.cacheMusicName
-	var_14_2.cueName = ""
-	CriWareMgr = var_2
-
-	local var_14_3 = var_2.Inst
-	local var_14_4 = var_2.StopSound
-	local var_14_5 = var_14_2
-
-	CriWareMgr = var_1_10006
-
-	var_14_4(var_14_3, var_14_5, var_1_10006.CRI_FADE_TYPE.NONE)
+	CriWareMgr.Inst:StopSound(var_14_0, CriWareMgr.CRI_FADE_TYPE.NONE)
 
 	arg_14_0.playbackInfo = nil
 
 	if arg_14_0.timer then
-		local var_14_6 = arg_14_0.timer
-
-		var_2.Stop(var_14_6)
+		arg_14_0.timer:Stop()
 
 		arg_14_0.timer = nil
 	end
@@ -232,43 +145,25 @@ end
 function var_0_0.Finish(arg_15_0, arg_15_1)
 	arg_15_0:Stop()
 
-	table = var_2
-
-	if var_2.getCount(arg_15_0.finishDic) < arg_15_0.count then
-		switch = var_2
-
-		var_2(arg_15_0.loopType, {
+	if table.getCount(arg_15_0.finishDic) < arg_15_0.count then
+		switch(arg_15_0.loopType, {
 			one = function()
 				arg_15_0.index = arg_15_0.index
 
 				return
 			end,
 			list = function()
-				local var_17_0
-
-				if not arg_15_1 then
-					var_17_0 = 1
-				end
-
-				arg_15_1 = var_17_0
+				arg_15_1 = arg_15_1 or 1
 				arg_15_0.index = (arg_15_0.index + arg_15_1 - 1) % arg_15_0.count + 1
 
 				return
 			end,
 			random = function()
-				underscore = var_2_10000
-
-				local var_18_0 = var_2_10000.filter
-
-				underscore = var_2_10002
-
-				local var_18_1 = var_18_0(var_2_10002.keys(arg_15_0.list), function(arg_19_0)
+				local var_18_0 = underscore.filter(underscore.keys(arg_15_0.list), function(arg_19_0)
 					return not arg_15_0.finishDic[arg_19_0]
 				end)
-				local var_18_2 = arg_15_0
 
-				math = var_2
-				var_18_2.index = var_18_1[var_2.random(#var_18_1)]
+				arg_15_0.index = var_18_0[math.random(#var_18_0)]
 
 				return
 			end
@@ -302,9 +197,7 @@ function var_0_0.SetProgress(arg_22_0, arg_22_1)
 
 	arg_22_0.progress = arg_22_1
 
-	local var_22_0 = arg_22_0.playbackInfo.playback
-
-	if not var_2.IsPaused(var_22_0) then
+	if not arg_22_0.playbackInfo.playback:IsPaused() then
 		arg_22_0:Resume()
 	end
 
@@ -317,23 +210,14 @@ function var_0_0.Resume(arg_23_0)
 	end
 
 	if arg_23_0.progress then
-		local var_23_0 = arg_23_0.playbackInfo
-
-		var_1.SetStartTimeAndPlay(var_23_0, arg_23_0.progress)
+		arg_23_0.playbackInfo:SetStartTimeAndPlay(arg_23_0.progress)
 	else
-		local var_23_1 = arg_23_0.playbackInfo.playback
-		local var_23_2 = var_1.Resume
-
-		CriWare = var_1_10004
-
-		var_23_2(var_23_1, var_1_10004.CriAtomEx.ResumeMode.PausedPlayback)
+		arg_23_0.playbackInfo.playback:Resume(CriWare.CriAtomEx.ResumeMode.PausedPlayback)
 	end
 
 	arg_23_0.progress = nil
 
-	local var_23_3 = arg_23_0.timer
-
-	var_1.Resume(var_23_3)
+	arg_23_0.timer:Resume()
 
 	return
 end
@@ -343,13 +227,8 @@ function var_0_0.Pause(arg_24_0)
 		return
 	end
 
-	local var_24_0 = arg_24_0.playbackInfo.playback
-
-	var_1.Pause(var_24_0)
-
-	local var_24_1 = arg_24_0.timer
-
-	var_1.Pause(var_24_1)
+	arg_24_0.playbackInfo.playback:Pause()
+	arg_24_0.timer:Pause()
 
 	return
 end
@@ -359,9 +238,7 @@ function var_0_0.IsPaused(arg_25_0)
 		return
 	end
 
-	local var_25_0 = arg_25_0.playbackInfo.playback
-
-	return var_1.IsPaused(var_25_0)
+	return arg_25_0.playbackInfo.playback:IsPaused()
 end
 
 function var_0_0.GetCurrentMusicId(arg_26_0)

@@ -1,8 +1,6 @@
-﻿module = var_0_10000
+﻿module("protobuf.descriptor")
 
-var_0_10000("protobuf.descriptor")
-
-local var_0_0 = {
+FieldDescriptor = {
 	MAX_CPPTYPE = 10,
 	TYPE_BYTES = 12,
 	CPPTYPE_UINT32 = 3,
@@ -38,6 +36,5 @@ local var_0_0 = {
 	CPPTYPE_FLOAT = 6,
 	CPPTYPE_UINT64 = 4
 }
-local var_0_1 = FieldDescriptor
 
 return

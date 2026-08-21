@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_site_display") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_site_display"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_site_display = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_site_display
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_site_display
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.child2_site_display = rawget(pg, "child2_site_display") or setmetatable({
+	__name = "child2_site_display"
+}, confNEO)
+pg.child2_site_display.__namecode__ = true
+pg.child2_site_display.all = {
 	1,
 	2,
 	3,
@@ -629,11 +602,7 @@ var_0_4.all = {
 	3229401,
 	3229501
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.child2_site_display
-
-var_0_5.get_id_list_by_type = {
+pg.child2_site_display.get_id_list_by_type = {
 	{
 		6,
 		7,
@@ -1242,25 +1211,11 @@ var_0_5.get_id_list_by_type = {
 		3229501
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.child2_site_display = {}
+pg.base = pg.base or {}
+pg.base.child2_site_display = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_site_display
-
-	var_1_0[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 0,
 		name = "生活体验",
 		event_icon = "site_work",
@@ -1278,11 +1233,7 @@ var_0_5.base.child2_site_display = {}
 			-310
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_site_display
-
-	var_1_1[2] = {
+	pg.base.child2_site_display[2] = {
 		param = 0,
 		name = "外出旅游",
 		event_icon = "site_travel",
@@ -1300,11 +1251,7 @@ var_0_5.base.child2_site_display = {}
 			-206
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_site_display
-
-	var_1_2[3] = {
+	pg.base.child2_site_display[3] = {
 		param = 0,
 		name = "商店",
 		event_icon = "site_shop",
@@ -1322,11 +1269,7 @@ var_0_5.base.child2_site_display = {}
 			-111
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_site_display
-
-	var_1_3[6] = {
+	pg.base.child2_site_display[6] = {
 		param = 1,
 		name = "独角兽",
 		event_icon = "",
@@ -1344,11 +1287,7 @@ var_0_5.base.child2_site_display = {}
 			45
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_site_display
-
-	var_1_4[7] = {
+	pg.base.child2_site_display[7] = {
 		param = 2,
 		name = "独角兽",
 		event_icon = "",
@@ -1366,11 +1305,7 @@ var_0_5.base.child2_site_display = {}
 			533
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_site_display
-
-	var_1_5[8] = {
+	pg.base.child2_site_display[8] = {
 		param = 3,
 		name = "独角兽",
 		event_icon = "",
@@ -1388,11 +1323,7 @@ var_0_5.base.child2_site_display = {}
 			225
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_site_display
-
-	var_1_6[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 4,
 		name = "不显示",
 		event_icon = "",
@@ -1410,11 +1341,7 @@ var_0_5.base.child2_site_display = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_site_display
-
-	var_1_7[10] = {
+	pg.base.child2_site_display[10] = {
 		param = 5,
 		name = "海天",
 		event_icon = "",
@@ -1432,11 +1359,7 @@ var_0_5.base.child2_site_display = {}
 			328
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_site_display
-
-	var_1_8[11] = {
+	pg.base.child2_site_display[11] = {
 		param = 6,
 		name = "海天",
 		event_icon = "",
@@ -1454,11 +1377,7 @@ var_0_5.base.child2_site_display = {}
 			468
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_site_display
-
-	var_1_9[12] = {
+	pg.base.child2_site_display[12] = {
 		param = 7,
 		name = "海天",
 		event_icon = "",
@@ -1476,11 +1395,7 @@ var_0_5.base.child2_site_display = {}
 			339.5
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_site_display
-
-	var_1_10[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 8,
 		name = "不显示",
 		event_icon = "",
@@ -1498,11 +1413,7 @@ var_0_5.base.child2_site_display = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_site_display
-
-	var_1_11[14] = {
+	pg.base.child2_site_display[14] = {
 		param = 9,
 		name = "安克雷奇",
 		event_icon = "",
@@ -1520,11 +1431,7 @@ var_0_5.base.child2_site_display = {}
 			-298.3
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_site_display
-
-	var_1_12[15] = {
+	pg.base.child2_site_display[15] = {
 		param = 10,
 		name = "安克雷奇",
 		event_icon = "",
@@ -1542,11 +1449,7 @@ var_0_5.base.child2_site_display = {}
 			-473
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_site_display
-
-	var_1_13[16] = {
+	pg.base.child2_site_display[16] = {
 		param = 11,
 		name = "安克雷奇",
 		event_icon = "",
@@ -1564,11 +1467,7 @@ var_0_5.base.child2_site_display = {}
 			125
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_site_display
-
-	var_1_14[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 12,
 		name = "不显示",
 		event_icon = "",
@@ -1586,11 +1485,7 @@ var_0_5.base.child2_site_display = {}
 			0
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_site_display
-
-	var_1_15[18] = {
+	pg.base.child2_site_display[18] = {
 		param = 13,
 		name = "{namecode:491}",
 		event_icon = "",
@@ -1608,11 +1503,7 @@ var_0_5.base.child2_site_display = {}
 			-57
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_site_display
-
-	var_1_16[19] = {
+	pg.base.child2_site_display[19] = {
 		param = 14,
 		name = "{namecode:491}",
 		event_icon = "",
@@ -1630,11 +1521,7 @@ var_0_5.base.child2_site_display = {}
 			-569
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_site_display
-
-	var_1_17[20] = {
+	pg.base.child2_site_display[20] = {
 		param = 15,
 		name = "{namecode:491}",
 		event_icon = "",
@@ -1652,11 +1539,7 @@ var_0_5.base.child2_site_display = {}
 			-608
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_site_display
-
-	var_1_18[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 16,
 		name = "不显示",
 		event_icon = "",
@@ -1674,11 +1557,7 @@ var_0_5.base.child2_site_display = {}
 			0
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_site_display
-
-	var_1_19[22] = {
+	pg.base.child2_site_display[22] = {
 		param = 17,
 		name = "凶猛",
 		event_icon = "",
@@ -1696,11 +1575,7 @@ var_0_5.base.child2_site_display = {}
 			419
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_site_display
-
-	var_1_20[23] = {
+	pg.base.child2_site_display[23] = {
 		param = 18,
 		name = "凶猛",
 		event_icon = "",
@@ -1718,11 +1593,7 @@ var_0_5.base.child2_site_display = {}
 			286.5
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_site_display
-
-	var_1_21[24] = {
+	pg.base.child2_site_display[24] = {
 		param = 19,
 		name = "凶猛",
 		event_icon = "",
@@ -1740,11 +1611,7 @@ var_0_5.base.child2_site_display = {}
 			359
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_site_display
-
-	var_1_22[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 20,
 		name = "不显示",
 		event_icon = "",
@@ -1762,11 +1629,7 @@ var_0_5.base.child2_site_display = {}
 			0
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_site_display
-
-	var_1_23[26] = {
+	pg.base.child2_site_display[26] = {
 		param = 21,
 		name = "{namecode:439}",
 		event_icon = "",
@@ -1784,11 +1647,7 @@ var_0_5.base.child2_site_display = {}
 			501
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_site_display
-
-	var_1_24[27] = {
+	pg.base.child2_site_display[27] = {
 		param = 22,
 		name = "{namecode:439}",
 		event_icon = "",
@@ -1806,11 +1665,7 @@ var_0_5.base.child2_site_display = {}
 			113
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_site_display
-
-	var_1_25[28] = {
+	pg.base.child2_site_display[28] = {
 		param = 23,
 		name = "{namecode:439}",
 		event_icon = "",
@@ -1828,11 +1683,7 @@ var_0_5.base.child2_site_display = {}
 			167
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_site_display
-
-	var_1_26[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 24,
 		name = "不显示",
 		event_icon = "",
@@ -1850,11 +1701,7 @@ var_0_5.base.child2_site_display = {}
 			0
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_site_display
-
-	var_1_27[4101] = {
+	pg.base.child2_site_display[4101] = {
 		param = 4101,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -1872,11 +1719,7 @@ var_0_5.base.child2_site_display = {}
 			542
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_site_display
-
-	var_1_28[4102] = {
+	pg.base.child2_site_display[4102] = {
 		param = 4102,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -1894,11 +1737,7 @@ var_0_5.base.child2_site_display = {}
 			45
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_site_display
-
-	var_1_29[4103] = {
+	pg.base.child2_site_display[4103] = {
 		param = 4103,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -1916,11 +1755,7 @@ var_0_5.base.child2_site_display = {}
 			-240
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_site_display
-
-	var_1_30[4104] = {
+	pg.base.child2_site_display[4104] = {
 		param = 4104,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -1938,11 +1773,7 @@ var_0_5.base.child2_site_display = {}
 			-160
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_site_display
-
-	var_1_31[4105] = {
+	pg.base.child2_site_display[4105] = {
 		param = 4105,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -1960,11 +1791,7 @@ var_0_5.base.child2_site_display = {}
 			149
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_site_display
-
-	var_1_32[4106] = {
+	pg.base.child2_site_display[4106] = {
 		param = 4106,
 		name = "商业街",
 		event_icon = "site_event",
@@ -1982,11 +1809,7 @@ var_0_5.base.child2_site_display = {}
 			56
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_site_display
-
-	var_1_33[4107] = {
+	pg.base.child2_site_display[4107] = {
 		param = 4107,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -2004,11 +1827,7 @@ var_0_5.base.child2_site_display = {}
 			-141
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_site_display
-
-	var_1_34[4108] = {
+	pg.base.child2_site_display[4108] = {
 		param = 4108,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2026,11 +1845,7 @@ var_0_5.base.child2_site_display = {}
 			144
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_site_display
-
-	var_1_35[4109] = {
+	pg.base.child2_site_display[4109] = {
 		param = 4109,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -2048,11 +1863,7 @@ var_0_5.base.child2_site_display = {}
 			-143
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_site_display
-
-	var_1_36[4110] = {
+	pg.base.child2_site_display[4110] = {
 		param = 4110,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -2070,11 +1881,7 @@ var_0_5.base.child2_site_display = {}
 			43
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_site_display
-
-	var_1_37[4111] = {
+	pg.base.child2_site_display[4111] = {
 		param = 4111,
 		name = "学院",
 		event_icon = "site_event",
@@ -2092,11 +1899,7 @@ var_0_5.base.child2_site_display = {}
 			427
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_site_display
-
-	var_1_38[4112] = {
+	pg.base.child2_site_display[4112] = {
 		param = 4112,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -2114,11 +1917,7 @@ var_0_5.base.child2_site_display = {}
 			221
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_site_display
-
-	var_1_39[4113] = {
+	pg.base.child2_site_display[4113] = {
 		param = 4113,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2136,11 +1935,7 @@ var_0_5.base.child2_site_display = {}
 			-80
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_site_display
-
-	var_1_40[4114] = {
+	pg.base.child2_site_display[4114] = {
 		param = 4114,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -2158,11 +1953,7 @@ var_0_5.base.child2_site_display = {}
 			-288
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_site_display
-
-	var_1_41[4115] = {
+	pg.base.child2_site_display[4115] = {
 		param = 4115,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -2180,11 +1971,7 @@ var_0_5.base.child2_site_display = {}
 			273
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_site_display
-
-	var_1_42[4116] = {
+	pg.base.child2_site_display[4116] = {
 		param = 4116,
 		name = "学院",
 		event_icon = "site_event",
@@ -2202,11 +1989,7 @@ var_0_5.base.child2_site_display = {}
 			523
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_site_display
-
-	var_1_43[4117] = {
+	pg.base.child2_site_display[4117] = {
 		param = 4117,
 		name = "学院",
 		event_icon = "site_event",
@@ -2224,11 +2007,7 @@ var_0_5.base.child2_site_display = {}
 			528
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_site_display
-
-	var_1_44[4118] = {
+	pg.base.child2_site_display[4118] = {
 		param = 4118,
 		name = "学院",
 		event_icon = "site_event",
@@ -2246,11 +2025,7 @@ var_0_5.base.child2_site_display = {}
 			480
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_site_display
-
-	var_1_45[4119] = {
+	pg.base.child2_site_display[4119] = {
 		param = 4119,
 		name = "学院",
 		event_icon = "site_event",
@@ -2268,11 +2043,7 @@ var_0_5.base.child2_site_display = {}
 			435
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_site_display
-
-	var_1_46[4120] = {
+	pg.base.child2_site_display[4120] = {
 		param = 4120,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -2290,11 +2061,7 @@ var_0_5.base.child2_site_display = {}
 			291
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_site_display
-
-	var_1_47[4121] = {
+	pg.base.child2_site_display[4121] = {
 		param = 4121,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -2312,11 +2079,7 @@ var_0_5.base.child2_site_display = {}
 			-496
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_site_display
-
-	var_1_48[4122] = {
+	pg.base.child2_site_display[4122] = {
 		param = 4122,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -2334,11 +2097,7 @@ var_0_5.base.child2_site_display = {}
 			-351
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_site_display
-
-	var_1_49[4123] = {
+	pg.base.child2_site_display[4123] = {
 		param = 4123,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -2356,11 +2115,7 @@ var_0_5.base.child2_site_display = {}
 			302
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_site_display
-
-	var_1_50[4124] = {
+	pg.base.child2_site_display[4124] = {
 		param = 4124,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -2378,11 +2133,7 @@ var_0_5.base.child2_site_display = {}
 			324
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_site_display
-
-	var_1_51[4125] = {
+	pg.base.child2_site_display[4125] = {
 		param = 4125,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -2400,11 +2151,7 @@ var_0_5.base.child2_site_display = {}
 			324
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_site_display
-
-	var_1_52[4126] = {
+	pg.base.child2_site_display[4126] = {
 		param = 4126,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -2422,11 +2169,7 @@ var_0_5.base.child2_site_display = {}
 			122
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_site_display
-
-	var_1_53[4127] = {
+	pg.base.child2_site_display[4127] = {
 		param = 4127,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2444,11 +2187,7 @@ var_0_5.base.child2_site_display = {}
 			-222
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_site_display
-
-	var_1_54[4128] = {
+	pg.base.child2_site_display[4128] = {
 		param = 4128,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2466,11 +2205,7 @@ var_0_5.base.child2_site_display = {}
 			-176
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_site_display
-
-	var_1_55[4129] = {
+	pg.base.child2_site_display[4129] = {
 		param = 4129,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2488,11 +2223,7 @@ var_0_5.base.child2_site_display = {}
 			2.5
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_site_display
-
-	var_1_56[4130] = {
+	pg.base.child2_site_display[4130] = {
 		param = 4130,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -2510,11 +2241,7 @@ var_0_5.base.child2_site_display = {}
 			263
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_site_display
-
-	var_1_57[4131] = {
+	pg.base.child2_site_display[4131] = {
 		param = 4131,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -2532,11 +2259,7 @@ var_0_5.base.child2_site_display = {}
 			525
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_site_display
-
-	var_1_58[4132] = {
+	pg.base.child2_site_display[4132] = {
 		param = 4132,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -2554,11 +2277,7 @@ var_0_5.base.child2_site_display = {}
 			447
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_site_display
-
-	var_1_59[4133] = {
+	pg.base.child2_site_display[4133] = {
 		param = 4133,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2576,11 +2295,7 @@ var_0_5.base.child2_site_display = {}
 			78
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_site_display
-
-	var_1_60[4134] = {
+	pg.base.child2_site_display[4134] = {
 		param = 4134,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2598,11 +2313,7 @@ var_0_5.base.child2_site_display = {}
 			-268
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_site_display
-
-	var_1_61[4135] = {
+	pg.base.child2_site_display[4135] = {
 		param = 4135,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2620,11 +2331,7 @@ var_0_5.base.child2_site_display = {}
 			-120.2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_site_display
-
-	var_1_62[4136] = {
+	pg.base.child2_site_display[4136] = {
 		param = 4136,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -2642,11 +2349,7 @@ var_0_5.base.child2_site_display = {}
 			542
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_site_display
-
-	var_1_63[4137] = {
+	pg.base.child2_site_display[4137] = {
 		param = 4137,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -2664,11 +2367,7 @@ var_0_5.base.child2_site_display = {}
 			-427
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_site_display
-
-	var_1_64[4138] = {
+	pg.base.child2_site_display[4138] = {
 		param = 4138,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -2686,11 +2385,7 @@ var_0_5.base.child2_site_display = {}
 			419
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_site_display
-
-	var_1_65[4139] = {
+	pg.base.child2_site_display[4139] = {
 		param = 4139,
 		name = "",
 		event_icon = "site_ending",
@@ -2708,11 +2403,7 @@ var_0_5.base.child2_site_display = {}
 			163
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_site_display
-
-	var_1_66[4140] = {
+	pg.base.child2_site_display[4140] = {
 		param = 4140,
 		name = "",
 		event_icon = "site_ending",
@@ -2730,11 +2421,7 @@ var_0_5.base.child2_site_display = {}
 			-490
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_site_display
-
-	var_1_67[4141] = {
+	pg.base.child2_site_display[4141] = {
 		param = 4141,
 		name = "",
 		event_icon = "site_ending",
@@ -2752,11 +2439,7 @@ var_0_5.base.child2_site_display = {}
 			10
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_site_display
-
-	var_1_68[4142] = {
+	pg.base.child2_site_display[4142] = {
 		param = 4142,
 		name = "",
 		event_icon = "site_ending",
@@ -2774,11 +2457,7 @@ var_0_5.base.child2_site_display = {}
 			470
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child2_site_display
-
-	var_1_69[4143] = {
+	pg.base.child2_site_display[4143] = {
 		param = 4143,
 		name = "",
 		event_icon = "site_ending",
@@ -2796,11 +2475,7 @@ var_0_5.base.child2_site_display = {}
 			159
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child2_site_display
-
-	var_1_70[4144] = {
+	pg.base.child2_site_display[4144] = {
 		param = 4144,
 		name = "",
 		event_icon = "site_ending",
@@ -2818,11 +2493,7 @@ var_0_5.base.child2_site_display = {}
 			140
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child2_site_display
-
-	var_1_71[4145] = {
+	pg.base.child2_site_display[4145] = {
 		param = 4145,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -2840,11 +2511,7 @@ var_0_5.base.child2_site_display = {}
 			-31
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child2_site_display
-
-	var_1_72[4146] = {
+	pg.base.child2_site_display[4146] = {
 		param = 4146,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -2862,11 +2529,7 @@ var_0_5.base.child2_site_display = {}
 			-63
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child2_site_display
-
-	var_1_73[4160] = {
+	pg.base.child2_site_display[4160] = {
 		param = 4160,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -2884,11 +2547,7 @@ var_0_5.base.child2_site_display = {}
 			542
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child2_site_display
-
-	var_1_74[4161] = {
+	pg.base.child2_site_display[4161] = {
 		param = 4161,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -2906,11 +2565,7 @@ var_0_5.base.child2_site_display = {}
 			-240
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child2_site_display
-
-	var_1_75[4162] = {
+	pg.base.child2_site_display[4162] = {
 		param = 4162,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -2928,11 +2583,7 @@ var_0_5.base.child2_site_display = {}
 			-160
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child2_site_display
-
-	var_1_76[4163] = {
+	pg.base.child2_site_display[4163] = {
 		param = 4163,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -2950,11 +2601,7 @@ var_0_5.base.child2_site_display = {}
 			149
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child2_site_display
-
-	var_1_77[4164] = {
+	pg.base.child2_site_display[4164] = {
 		param = 4164,
 		name = "商业街",
 		event_icon = "site_event",
@@ -2972,11 +2619,7 @@ var_0_5.base.child2_site_display = {}
 			-222
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child2_site_display
-
-	var_1_78[4165] = {
+	pg.base.child2_site_display[4165] = {
 		param = 4165,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -2994,11 +2637,7 @@ var_0_5.base.child2_site_display = {}
 			-427
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child2_site_display
-
-	var_1_79[4166] = {
+	pg.base.child2_site_display[4166] = {
 		param = 4166,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -3016,11 +2655,7 @@ var_0_5.base.child2_site_display = {}
 			-31
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child2_site_display
-
-	var_1_80[4167] = {
+	pg.base.child2_site_display[4167] = {
 		param = 4167,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -3038,11 +2673,7 @@ var_0_5.base.child2_site_display = {}
 			-63
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child2_site_display
-
-	var_1_81[4168] = {
+	pg.base.child2_site_display[4168] = {
 		param = 4168,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -3060,11 +2691,7 @@ var_0_5.base.child2_site_display = {}
 			542
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child2_site_display
-
-	var_1_82[4169] = {
+	pg.base.child2_site_display[4169] = {
 		param = 4169,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -3082,11 +2709,7 @@ var_0_5.base.child2_site_display = {}
 			-240
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child2_site_display
-
-	var_1_83[4170] = {
+	pg.base.child2_site_display[4170] = {
 		param = 4170,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -3104,11 +2727,7 @@ var_0_5.base.child2_site_display = {}
 			-160
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child2_site_display
-
-	var_1_84[4171] = {
+	pg.base.child2_site_display[4171] = {
 		param = 4171,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -3126,11 +2745,7 @@ var_0_5.base.child2_site_display = {}
 			149
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child2_site_display
-
-	var_1_85[4172] = {
+	pg.base.child2_site_display[4172] = {
 		param = 4172,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3148,11 +2763,7 @@ var_0_5.base.child2_site_display = {}
 			-222
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child2_site_display
-
-	var_1_86[4173] = {
+	pg.base.child2_site_display[4173] = {
 		param = 4173,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -3170,11 +2781,7 @@ var_0_5.base.child2_site_display = {}
 			-427
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child2_site_display
-
-	var_1_87[4174] = {
+	pg.base.child2_site_display[4174] = {
 		param = 4174,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -3192,11 +2799,7 @@ var_0_5.base.child2_site_display = {}
 			-31
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child2_site_display
-
-	var_1_88[4175] = {
+	pg.base.child2_site_display[4175] = {
 		param = 4175,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -3214,11 +2817,7 @@ var_0_5.base.child2_site_display = {}
 			-63
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child2_site_display
-
-	var_1_89[4201] = {
+	pg.base.child2_site_display[4201] = {
 		param = 4201,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -3236,11 +2835,7 @@ var_0_5.base.child2_site_display = {}
 			542
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child2_site_display
-
-	var_1_90[4202] = {
+	pg.base.child2_site_display[4202] = {
 		param = 4202,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -3258,11 +2853,7 @@ var_0_5.base.child2_site_display = {}
 			45
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child2_site_display
-
-	var_1_91[4203] = {
+	pg.base.child2_site_display[4203] = {
 		param = 4203,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -3280,11 +2871,7 @@ var_0_5.base.child2_site_display = {}
 			-240
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child2_site_display
-
-	var_1_92[4204] = {
+	pg.base.child2_site_display[4204] = {
 		param = 4204,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -3302,11 +2889,7 @@ var_0_5.base.child2_site_display = {}
 			-160
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child2_site_display
-
-	var_1_93[4205] = {
+	pg.base.child2_site_display[4205] = {
 		param = 4205,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -3324,11 +2907,7 @@ var_0_5.base.child2_site_display = {}
 			149
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child2_site_display
-
-	var_1_94[4206] = {
+	pg.base.child2_site_display[4206] = {
 		param = 4206,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3346,11 +2925,7 @@ var_0_5.base.child2_site_display = {}
 			56
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child2_site_display
-
-	var_1_95[4207] = {
+	pg.base.child2_site_display[4207] = {
 		param = 4207,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -3368,11 +2943,7 @@ var_0_5.base.child2_site_display = {}
 			-141
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child2_site_display
-
-	var_1_96[4208] = {
+	pg.base.child2_site_display[4208] = {
 		param = 4208,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3390,11 +2961,7 @@ var_0_5.base.child2_site_display = {}
 			144
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child2_site_display
-
-	var_1_97[4209] = {
+	pg.base.child2_site_display[4209] = {
 		param = 4209,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -3412,11 +2979,7 @@ var_0_5.base.child2_site_display = {}
 			-143
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child2_site_display
-
-	var_1_98[4210] = {
+	pg.base.child2_site_display[4210] = {
 		param = 4210,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -3434,8 +2997,7 @@ var_0_5.base.child2_site_display = {}
 			43
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child2_site_display[4211] = {
+	pg.base.child2_site_display[4211] = {
 		param = 4211,
 		name = "学院",
 		event_icon = "site_event",
@@ -3457,11 +3019,7 @@ var_0_5.base.child2_site_display = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child2_site_display
-
-	var_2_0[4212] = {
+	pg.base.child2_site_display[4212] = {
 		param = 4212,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -3479,11 +3037,7 @@ end)()
 			221
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child2_site_display
-
-	var_2_1[4213] = {
+	pg.base.child2_site_display[4213] = {
 		param = 4213,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3501,11 +3055,7 @@ end)()
 			-80
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child2_site_display
-
-	var_2_2[4214] = {
+	pg.base.child2_site_display[4214] = {
 		param = 4214,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -3523,11 +3073,7 @@ end)()
 			-288
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child2_site_display
-
-	var_2_3[4215] = {
+	pg.base.child2_site_display[4215] = {
 		param = 4215,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -3545,11 +3091,7 @@ end)()
 			273
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child2_site_display
-
-	var_2_4[4216] = {
+	pg.base.child2_site_display[4216] = {
 		param = 4216,
 		name = "学院",
 		event_icon = "site_event",
@@ -3567,11 +3109,7 @@ end)()
 			523
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child2_site_display
-
-	var_2_5[4217] = {
+	pg.base.child2_site_display[4217] = {
 		param = 4217,
 		name = "学院",
 		event_icon = "site_event",
@@ -3589,11 +3127,7 @@ end)()
 			528
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child2_site_display
-
-	var_2_6[4218] = {
+	pg.base.child2_site_display[4218] = {
 		param = 4218,
 		name = "学院",
 		event_icon = "site_event",
@@ -3611,11 +3145,7 @@ end)()
 			480
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child2_site_display
-
-	var_2_7[4219] = {
+	pg.base.child2_site_display[4219] = {
 		param = 4219,
 		name = "学院",
 		event_icon = "site_event",
@@ -3633,11 +3163,7 @@ end)()
 			435
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child2_site_display
-
-	var_2_8[4220] = {
+	pg.base.child2_site_display[4220] = {
 		param = 4220,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -3655,11 +3181,7 @@ end)()
 			291
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child2_site_display
-
-	var_2_9[4221] = {
+	pg.base.child2_site_display[4221] = {
 		param = 4221,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -3677,11 +3199,7 @@ end)()
 			-496
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child2_site_display
-
-	var_2_10[4222] = {
+	pg.base.child2_site_display[4222] = {
 		param = 4222,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -3699,11 +3217,7 @@ end)()
 			-351
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child2_site_display
-
-	var_2_11[4223] = {
+	pg.base.child2_site_display[4223] = {
 		param = 4223,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -3721,11 +3235,7 @@ end)()
 			302
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child2_site_display
-
-	var_2_12[4224] = {
+	pg.base.child2_site_display[4224] = {
 		param = 4224,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -3743,11 +3253,7 @@ end)()
 			324
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child2_site_display
-
-	var_2_13[4225] = {
+	pg.base.child2_site_display[4225] = {
 		param = 4225,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -3765,11 +3271,7 @@ end)()
 			324
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child2_site_display
-
-	var_2_14[4226] = {
+	pg.base.child2_site_display[4226] = {
 		param = 4226,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -3787,11 +3289,7 @@ end)()
 			122
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child2_site_display
-
-	var_2_15[4227] = {
+	pg.base.child2_site_display[4227] = {
 		param = 4227,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3809,11 +3307,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child2_site_display
-
-	var_2_16[4228] = {
+	pg.base.child2_site_display[4228] = {
 		param = 4228,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3831,11 +3325,7 @@ end)()
 			-176
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child2_site_display
-
-	var_2_17[4229] = {
+	pg.base.child2_site_display[4229] = {
 		param = 4229,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3853,11 +3343,7 @@ end)()
 			2.5
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child2_site_display
-
-	var_2_18[4230] = {
+	pg.base.child2_site_display[4230] = {
 		param = 4230,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -3875,11 +3361,7 @@ end)()
 			263
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child2_site_display
-
-	var_2_19[4231] = {
+	pg.base.child2_site_display[4231] = {
 		param = 4231,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -3897,11 +3379,7 @@ end)()
 			525
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child2_site_display
-
-	var_2_20[4232] = {
+	pg.base.child2_site_display[4232] = {
 		param = 4232,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -3919,11 +3397,7 @@ end)()
 			447
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child2_site_display
-
-	var_2_21[4233] = {
+	pg.base.child2_site_display[4233] = {
 		param = 4233,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3941,11 +3415,7 @@ end)()
 			78
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child2_site_display
-
-	var_2_22[4234] = {
+	pg.base.child2_site_display[4234] = {
 		param = 4234,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3963,11 +3433,7 @@ end)()
 			-268
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child2_site_display
-
-	var_2_23[4235] = {
+	pg.base.child2_site_display[4235] = {
 		param = 4235,
 		name = "商业街",
 		event_icon = "site_event",
@@ -3985,11 +3451,7 @@ end)()
 			-120.2
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child2_site_display
-
-	var_2_24[4236] = {
+	pg.base.child2_site_display[4236] = {
 		param = 4236,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -4007,11 +3469,7 @@ end)()
 			542
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child2_site_display
-
-	var_2_25[4237] = {
+	pg.base.child2_site_display[4237] = {
 		param = 4237,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -4029,11 +3487,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child2_site_display
-
-	var_2_26[4238] = {
+	pg.base.child2_site_display[4238] = {
 		param = 4238,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -4051,11 +3505,7 @@ end)()
 			419
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child2_site_display
-
-	var_2_27[4239] = {
+	pg.base.child2_site_display[4239] = {
 		param = 4239,
 		name = "",
 		event_icon = "site_ending",
@@ -4073,11 +3523,7 @@ end)()
 			163
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child2_site_display
-
-	var_2_28[4240] = {
+	pg.base.child2_site_display[4240] = {
 		param = 4240,
 		name = "",
 		event_icon = "site_ending",
@@ -4095,11 +3541,7 @@ end)()
 			-490
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child2_site_display
-
-	var_2_29[4241] = {
+	pg.base.child2_site_display[4241] = {
 		param = 4241,
 		name = "",
 		event_icon = "site_ending",
@@ -4117,11 +3559,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child2_site_display
-
-	var_2_30[4242] = {
+	pg.base.child2_site_display[4242] = {
 		param = 4242,
 		name = "",
 		event_icon = "site_ending",
@@ -4139,11 +3577,7 @@ end)()
 			470
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child2_site_display
-
-	var_2_31[4243] = {
+	pg.base.child2_site_display[4243] = {
 		param = 4243,
 		name = "",
 		event_icon = "site_ending",
@@ -4161,11 +3595,7 @@ end)()
 			159
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child2_site_display
-
-	var_2_32[4244] = {
+	pg.base.child2_site_display[4244] = {
 		param = 4244,
 		name = "",
 		event_icon = "site_ending",
@@ -4183,11 +3613,7 @@ end)()
 			140
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child2_site_display
-
-	var_2_33[4245] = {
+	pg.base.child2_site_display[4245] = {
 		param = 4245,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4205,11 +3631,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child2_site_display
-
-	var_2_34[4246] = {
+	pg.base.child2_site_display[4246] = {
 		param = 4246,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4227,11 +3649,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child2_site_display
-
-	var_2_35[4260] = {
+	pg.base.child2_site_display[4260] = {
 		param = 4260,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -4249,11 +3667,7 @@ end)()
 			542
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child2_site_display
-
-	var_2_36[4261] = {
+	pg.base.child2_site_display[4261] = {
 		param = 4261,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -4271,11 +3685,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child2_site_display
-
-	var_2_37[4262] = {
+	pg.base.child2_site_display[4262] = {
 		param = 4262,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -4293,11 +3703,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child2_site_display
-
-	var_2_38[4263] = {
+	pg.base.child2_site_display[4263] = {
 		param = 4263,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -4315,11 +3721,7 @@ end)()
 			149
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child2_site_display
-
-	var_2_39[4264] = {
+	pg.base.child2_site_display[4264] = {
 		param = 4264,
 		name = "商业街",
 		event_icon = "site_event",
@@ -4337,11 +3739,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.child2_site_display
-
-	var_2_40[4265] = {
+	pg.base.child2_site_display[4265] = {
 		param = 4265,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -4359,11 +3757,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.child2_site_display
-
-	var_2_41[4266] = {
+	pg.base.child2_site_display[4266] = {
 		param = 4266,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4381,11 +3775,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.child2_site_display
-
-	var_2_42[4267] = {
+	pg.base.child2_site_display[4267] = {
 		param = 4267,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4403,11 +3793,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.child2_site_display
-
-	var_2_43[4268] = {
+	pg.base.child2_site_display[4268] = {
 		param = 4268,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -4425,11 +3811,7 @@ end)()
 			542
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.child2_site_display
-
-	var_2_44[4269] = {
+	pg.base.child2_site_display[4269] = {
 		param = 4269,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -4447,11 +3829,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.child2_site_display
-
-	var_2_45[4270] = {
+	pg.base.child2_site_display[4270] = {
 		param = 4270,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -4469,11 +3847,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.child2_site_display
-
-	var_2_46[4271] = {
+	pg.base.child2_site_display[4271] = {
 		param = 4271,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -4491,11 +3865,7 @@ end)()
 			149
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.child2_site_display
-
-	var_2_47[4272] = {
+	pg.base.child2_site_display[4272] = {
 		param = 4272,
 		name = "商业街",
 		event_icon = "site_event",
@@ -4513,11 +3883,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.child2_site_display
-
-	var_2_48[4273] = {
+	pg.base.child2_site_display[4273] = {
 		param = 4273,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -4535,11 +3901,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.child2_site_display
-
-	var_2_49[4274] = {
+	pg.base.child2_site_display[4274] = {
 		param = 4274,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4557,11 +3919,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.child2_site_display
-
-	var_2_50[4275] = {
+	pg.base.child2_site_display[4275] = {
 		param = 4275,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4579,11 +3937,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.child2_site_display
-
-	var_2_51[4301] = {
+	pg.base.child2_site_display[4301] = {
 		param = 4301,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -4601,11 +3955,7 @@ end)()
 			542
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.child2_site_display
-
-	var_2_52[4302] = {
+	pg.base.child2_site_display[4302] = {
 		param = 4302,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -4623,11 +3973,7 @@ end)()
 			45
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.child2_site_display
-
-	var_2_53[4303] = {
+	pg.base.child2_site_display[4303] = {
 		param = 4303,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -4645,11 +3991,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.child2_site_display
-
-	var_2_54[4304] = {
+	pg.base.child2_site_display[4304] = {
 		param = 4304,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -4667,11 +4009,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.child2_site_display
-
-	var_2_55[4305] = {
+	pg.base.child2_site_display[4305] = {
 		param = 4305,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -4689,11 +4027,7 @@ end)()
 			149
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.child2_site_display
-
-	var_2_56[4306] = {
+	pg.base.child2_site_display[4306] = {
 		param = 4306,
 		name = "商业街",
 		event_icon = "site_event",
@@ -4711,11 +4045,7 @@ end)()
 			56
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.child2_site_display
-
-	var_2_57[4307] = {
+	pg.base.child2_site_display[4307] = {
 		param = 4307,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -4733,11 +4063,7 @@ end)()
 			-141
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.child2_site_display
-
-	var_2_58[4308] = {
+	pg.base.child2_site_display[4308] = {
 		param = 4308,
 		name = "商业街",
 		event_icon = "site_event",
@@ -4755,11 +4081,7 @@ end)()
 			144
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.child2_site_display
-
-	var_2_59[4309] = {
+	pg.base.child2_site_display[4309] = {
 		param = 4309,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -4777,11 +4099,7 @@ end)()
 			-143
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.child2_site_display
-
-	var_2_60[4310] = {
+	pg.base.child2_site_display[4310] = {
 		param = 4310,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -4799,11 +4117,7 @@ end)()
 			43
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.child2_site_display
-
-	var_2_61[4311] = {
+	pg.base.child2_site_display[4311] = {
 		param = 4311,
 		name = "学院",
 		event_icon = "site_event",
@@ -4821,11 +4135,7 @@ end)()
 			427
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.child2_site_display
-
-	var_2_62[4312] = {
+	pg.base.child2_site_display[4312] = {
 		param = 4312,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -4843,11 +4153,7 @@ end)()
 			221
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.child2_site_display
-
-	var_2_63[4313] = {
+	pg.base.child2_site_display[4313] = {
 		param = 4313,
 		name = "商业街",
 		event_icon = "site_event",
@@ -4865,11 +4171,7 @@ end)()
 			-80
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.child2_site_display
-
-	var_2_64[4314] = {
+	pg.base.child2_site_display[4314] = {
 		param = 4314,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -4887,11 +4189,7 @@ end)()
 			-288
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.child2_site_display
-
-	var_2_65[4315] = {
+	pg.base.child2_site_display[4315] = {
 		param = 4315,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -4909,11 +4207,7 @@ end)()
 			273
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.child2_site_display
-
-	var_2_66[4316] = {
+	pg.base.child2_site_display[4316] = {
 		param = 4316,
 		name = "学院",
 		event_icon = "site_event",
@@ -4931,11 +4225,7 @@ end)()
 			523
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.child2_site_display
-
-	var_2_67[4317] = {
+	pg.base.child2_site_display[4317] = {
 		param = 4317,
 		name = "学院",
 		event_icon = "site_event",
@@ -4953,11 +4243,7 @@ end)()
 			528
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.child2_site_display
-
-	var_2_68[4318] = {
+	pg.base.child2_site_display[4318] = {
 		param = 4318,
 		name = "学院",
 		event_icon = "site_event",
@@ -4975,11 +4261,7 @@ end)()
 			480
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.child2_site_display
-
-	var_2_69[4319] = {
+	pg.base.child2_site_display[4319] = {
 		param = 4319,
 		name = "学院",
 		event_icon = "site_event",
@@ -4997,11 +4279,7 @@ end)()
 			435
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.child2_site_display
-
-	var_2_70[4320] = {
+	pg.base.child2_site_display[4320] = {
 		param = 4320,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -5019,11 +4297,7 @@ end)()
 			291
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.child2_site_display
-
-	var_2_71[4321] = {
+	pg.base.child2_site_display[4321] = {
 		param = 4321,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -5041,11 +4315,7 @@ end)()
 			-496
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.child2_site_display
-
-	var_2_72[4322] = {
+	pg.base.child2_site_display[4322] = {
 		param = 4322,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -5063,11 +4333,7 @@ end)()
 			-351
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.child2_site_display
-
-	var_2_73[4323] = {
+	pg.base.child2_site_display[4323] = {
 		param = 4323,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -5085,11 +4351,7 @@ end)()
 			302
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.child2_site_display
-
-	var_2_74[4324] = {
+	pg.base.child2_site_display[4324] = {
 		param = 4324,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -5107,11 +4369,7 @@ end)()
 			324
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.child2_site_display
-
-	var_2_75[4325] = {
+	pg.base.child2_site_display[4325] = {
 		param = 4325,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -5129,11 +4387,7 @@ end)()
 			324
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.child2_site_display
-
-	var_2_76[4326] = {
+	pg.base.child2_site_display[4326] = {
 		param = 4326,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -5151,11 +4405,7 @@ end)()
 			122
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.child2_site_display
-
-	var_2_77[4327] = {
+	pg.base.child2_site_display[4327] = {
 		param = 4327,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5173,11 +4423,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.child2_site_display
-
-	var_2_78[4328] = {
+	pg.base.child2_site_display[4328] = {
 		param = 4328,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5195,11 +4441,7 @@ end)()
 			-176
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.child2_site_display
-
-	var_2_79[4329] = {
+	pg.base.child2_site_display[4329] = {
 		param = 4329,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5217,11 +4459,7 @@ end)()
 			2.5
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.child2_site_display
-
-	var_2_80[4330] = {
+	pg.base.child2_site_display[4330] = {
 		param = 4330,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -5239,11 +4477,7 @@ end)()
 			263
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.child2_site_display
-
-	var_2_81[4331] = {
+	pg.base.child2_site_display[4331] = {
 		param = 4331,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -5261,11 +4495,7 @@ end)()
 			525
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.child2_site_display
-
-	var_2_82[4332] = {
+	pg.base.child2_site_display[4332] = {
 		param = 4332,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -5283,11 +4513,7 @@ end)()
 			447
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.child2_site_display
-
-	var_2_83[4333] = {
+	pg.base.child2_site_display[4333] = {
 		param = 4333,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5305,11 +4531,7 @@ end)()
 			78
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.child2_site_display
-
-	var_2_84[4334] = {
+	pg.base.child2_site_display[4334] = {
 		param = 4334,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5327,11 +4549,7 @@ end)()
 			-268
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.child2_site_display
-
-	var_2_85[4335] = {
+	pg.base.child2_site_display[4335] = {
 		param = 4335,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5349,11 +4567,7 @@ end)()
 			-120.2
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.child2_site_display
-
-	var_2_86[4336] = {
+	pg.base.child2_site_display[4336] = {
 		param = 4336,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -5371,11 +4585,7 @@ end)()
 			542
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.child2_site_display
-
-	var_2_87[4337] = {
+	pg.base.child2_site_display[4337] = {
 		param = 4337,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -5393,11 +4603,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.child2_site_display
-
-	var_2_88[4338] = {
+	pg.base.child2_site_display[4338] = {
 		param = 4338,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -5415,11 +4621,7 @@ end)()
 			419
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.child2_site_display
-
-	var_2_89[4339] = {
+	pg.base.child2_site_display[4339] = {
 		param = 4339,
 		name = "",
 		event_icon = "site_ending",
@@ -5437,11 +4639,7 @@ end)()
 			163
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.child2_site_display
-
-	var_2_90[4340] = {
+	pg.base.child2_site_display[4340] = {
 		param = 4340,
 		name = "",
 		event_icon = "site_ending",
@@ -5459,11 +4657,7 @@ end)()
 			-490
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.child2_site_display
-
-	var_2_91[4341] = {
+	pg.base.child2_site_display[4341] = {
 		param = 4341,
 		name = "",
 		event_icon = "site_ending",
@@ -5481,11 +4675,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.child2_site_display
-
-	var_2_92[4342] = {
+	pg.base.child2_site_display[4342] = {
 		param = 4342,
 		name = "",
 		event_icon = "site_ending",
@@ -5503,11 +4693,7 @@ end)()
 			470
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.child2_site_display
-
-	var_2_93[4343] = {
+	pg.base.child2_site_display[4343] = {
 		param = 4343,
 		name = "",
 		event_icon = "site_ending",
@@ -5525,11 +4711,7 @@ end)()
 			159
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.child2_site_display
-
-	var_2_94[4344] = {
+	pg.base.child2_site_display[4344] = {
 		param = 4344,
 		name = "",
 		event_icon = "site_ending",
@@ -5547,11 +4729,7 @@ end)()
 			140
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.child2_site_display
-
-	var_2_95[4345] = {
+	pg.base.child2_site_display[4345] = {
 		param = 4345,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5569,11 +4747,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.child2_site_display
-
-	var_2_96[4346] = {
+	pg.base.child2_site_display[4346] = {
 		param = 4346,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5591,11 +4765,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.child2_site_display
-
-	var_2_97[4360] = {
+	pg.base.child2_site_display[4360] = {
 		param = 4360,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -5613,11 +4783,7 @@ end)()
 			542
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.child2_site_display
-
-	var_2_98[4361] = {
+	pg.base.child2_site_display[4361] = {
 		param = 4361,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -5635,8 +4801,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.child2_site_display[4362] = {
+	pg.base.child2_site_display[4362] = {
 		param = 4362,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -5658,11 +4823,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.child2_site_display
-
-	var_3_0[4363] = {
+	pg.base.child2_site_display[4363] = {
 		param = 4363,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -5680,11 +4841,7 @@ end)()
 			149
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.child2_site_display
-
-	var_3_1[4364] = {
+	pg.base.child2_site_display[4364] = {
 		param = 4364,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5702,11 +4859,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.child2_site_display
-
-	var_3_2[4365] = {
+	pg.base.child2_site_display[4365] = {
 		param = 4365,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -5724,11 +4877,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.child2_site_display
-
-	var_3_3[4366] = {
+	pg.base.child2_site_display[4366] = {
 		param = 4366,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5746,11 +4895,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.child2_site_display
-
-	var_3_4[4367] = {
+	pg.base.child2_site_display[4367] = {
 		param = 4367,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5768,11 +4913,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.child2_site_display
-
-	var_3_5[4368] = {
+	pg.base.child2_site_display[4368] = {
 		param = 4368,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -5790,11 +4931,7 @@ end)()
 			542
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.child2_site_display
-
-	var_3_6[4369] = {
+	pg.base.child2_site_display[4369] = {
 		param = 4369,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -5812,11 +4949,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.child2_site_display
-
-	var_3_7[4370] = {
+	pg.base.child2_site_display[4370] = {
 		param = 4370,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -5834,11 +4967,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.child2_site_display
-
-	var_3_8[4371] = {
+	pg.base.child2_site_display[4371] = {
 		param = 4371,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -5856,11 +4985,7 @@ end)()
 			149
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.child2_site_display
-
-	var_3_9[4372] = {
+	pg.base.child2_site_display[4372] = {
 		param = 4372,
 		name = "商业街",
 		event_icon = "site_event",
@@ -5878,11 +5003,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.child2_site_display
-
-	var_3_10[4373] = {
+	pg.base.child2_site_display[4373] = {
 		param = 4373,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -5900,11 +5021,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.child2_site_display
-
-	var_3_11[4374] = {
+	pg.base.child2_site_display[4374] = {
 		param = 4374,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5922,11 +5039,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.child2_site_display
-
-	var_3_12[4375] = {
+	pg.base.child2_site_display[4375] = {
 		param = 4375,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5944,11 +5057,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.child2_site_display
-
-	var_3_13[4401] = {
+	pg.base.child2_site_display[4401] = {
 		param = 4401,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -5966,11 +5075,7 @@ end)()
 			542
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.child2_site_display
-
-	var_3_14[4402] = {
+	pg.base.child2_site_display[4402] = {
 		param = 4402,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -5988,11 +5093,7 @@ end)()
 			45
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.child2_site_display
-
-	var_3_15[4403] = {
+	pg.base.child2_site_display[4403] = {
 		param = 4403,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -6010,11 +5111,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.child2_site_display
-
-	var_3_16[4404] = {
+	pg.base.child2_site_display[4404] = {
 		param = 4404,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -6032,11 +5129,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.child2_site_display
-
-	var_3_17[4405] = {
+	pg.base.child2_site_display[4405] = {
 		param = 4405,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -6054,11 +5147,7 @@ end)()
 			149
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.child2_site_display
-
-	var_3_18[4406] = {
+	pg.base.child2_site_display[4406] = {
 		param = 4406,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6076,11 +5165,7 @@ end)()
 			56
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.child2_site_display
-
-	var_3_19[4407] = {
+	pg.base.child2_site_display[4407] = {
 		param = 4407,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -6098,11 +5183,7 @@ end)()
 			-141
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.child2_site_display
-
-	var_3_20[4408] = {
+	pg.base.child2_site_display[4408] = {
 		param = 4408,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6120,11 +5201,7 @@ end)()
 			144
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.child2_site_display
-
-	var_3_21[4409] = {
+	pg.base.child2_site_display[4409] = {
 		param = 4409,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -6142,11 +5219,7 @@ end)()
 			-143
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.child2_site_display
-
-	var_3_22[4410] = {
+	pg.base.child2_site_display[4410] = {
 		param = 4410,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -6164,11 +5237,7 @@ end)()
 			43
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.child2_site_display
-
-	var_3_23[4411] = {
+	pg.base.child2_site_display[4411] = {
 		param = 4411,
 		name = "学院",
 		event_icon = "site_event",
@@ -6186,11 +5255,7 @@ end)()
 			427
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.child2_site_display
-
-	var_3_24[4412] = {
+	pg.base.child2_site_display[4412] = {
 		param = 4412,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -6208,11 +5273,7 @@ end)()
 			221
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.child2_site_display
-
-	var_3_25[4413] = {
+	pg.base.child2_site_display[4413] = {
 		param = 4413,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6230,11 +5291,7 @@ end)()
 			-80
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.child2_site_display
-
-	var_3_26[4414] = {
+	pg.base.child2_site_display[4414] = {
 		param = 4414,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -6252,11 +5309,7 @@ end)()
 			-288
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.child2_site_display
-
-	var_3_27[4415] = {
+	pg.base.child2_site_display[4415] = {
 		param = 4415,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -6274,11 +5327,7 @@ end)()
 			273
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.child2_site_display
-
-	var_3_28[4416] = {
+	pg.base.child2_site_display[4416] = {
 		param = 4416,
 		name = "学院",
 		event_icon = "site_event",
@@ -6296,11 +5345,7 @@ end)()
 			523
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.child2_site_display
-
-	var_3_29[4417] = {
+	pg.base.child2_site_display[4417] = {
 		param = 4417,
 		name = "学院",
 		event_icon = "site_event",
@@ -6318,11 +5363,7 @@ end)()
 			528
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.child2_site_display
-
-	var_3_30[4418] = {
+	pg.base.child2_site_display[4418] = {
 		param = 4418,
 		name = "学院",
 		event_icon = "site_event",
@@ -6340,11 +5381,7 @@ end)()
 			480
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.child2_site_display
-
-	var_3_31[4419] = {
+	pg.base.child2_site_display[4419] = {
 		param = 4419,
 		name = "学院",
 		event_icon = "site_event",
@@ -6362,11 +5399,7 @@ end)()
 			435
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.child2_site_display
-
-	var_3_32[4420] = {
+	pg.base.child2_site_display[4420] = {
 		param = 4420,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -6384,11 +5417,7 @@ end)()
 			291
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.child2_site_display
-
-	var_3_33[4421] = {
+	pg.base.child2_site_display[4421] = {
 		param = 4421,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -6406,11 +5435,7 @@ end)()
 			-496
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.child2_site_display
-
-	var_3_34[4422] = {
+	pg.base.child2_site_display[4422] = {
 		param = 4422,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -6428,11 +5453,7 @@ end)()
 			-351
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.child2_site_display
-
-	var_3_35[4423] = {
+	pg.base.child2_site_display[4423] = {
 		param = 4423,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -6450,11 +5471,7 @@ end)()
 			302
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.child2_site_display
-
-	var_3_36[4424] = {
+	pg.base.child2_site_display[4424] = {
 		param = 4424,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -6472,11 +5489,7 @@ end)()
 			324
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.child2_site_display
-
-	var_3_37[4425] = {
+	pg.base.child2_site_display[4425] = {
 		param = 4425,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -6494,11 +5507,7 @@ end)()
 			324
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.child2_site_display
-
-	var_3_38[4426] = {
+	pg.base.child2_site_display[4426] = {
 		param = 4426,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -6516,11 +5525,7 @@ end)()
 			122
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.child2_site_display
-
-	var_3_39[4427] = {
+	pg.base.child2_site_display[4427] = {
 		param = 4427,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6538,11 +5543,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.child2_site_display
-
-	var_3_40[4428] = {
+	pg.base.child2_site_display[4428] = {
 		param = 4428,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6560,11 +5561,7 @@ end)()
 			-176
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.child2_site_display
-
-	var_3_41[4429] = {
+	pg.base.child2_site_display[4429] = {
 		param = 4429,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6582,11 +5579,7 @@ end)()
 			2.5
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.child2_site_display
-
-	var_3_42[4430] = {
+	pg.base.child2_site_display[4430] = {
 		param = 4430,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -6604,11 +5597,7 @@ end)()
 			263
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.child2_site_display
-
-	var_3_43[4431] = {
+	pg.base.child2_site_display[4431] = {
 		param = 4431,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -6626,11 +5615,7 @@ end)()
 			525
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.child2_site_display
-
-	var_3_44[4432] = {
+	pg.base.child2_site_display[4432] = {
 		param = 4432,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -6648,11 +5633,7 @@ end)()
 			447
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.child2_site_display
-
-	var_3_45[4433] = {
+	pg.base.child2_site_display[4433] = {
 		param = 4433,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6670,11 +5651,7 @@ end)()
 			78
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.child2_site_display
-
-	var_3_46[4434] = {
+	pg.base.child2_site_display[4434] = {
 		param = 4434,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6692,11 +5669,7 @@ end)()
 			-268
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.child2_site_display
-
-	var_3_47[4435] = {
+	pg.base.child2_site_display[4435] = {
 		param = 4435,
 		name = "商业街",
 		event_icon = "site_event",
@@ -6714,11 +5687,7 @@ end)()
 			-120.2
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.child2_site_display
-
-	var_3_48[4436] = {
+	pg.base.child2_site_display[4436] = {
 		param = 4436,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -6736,11 +5705,7 @@ end)()
 			542
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.child2_site_display
-
-	var_3_49[4437] = {
+	pg.base.child2_site_display[4437] = {
 		param = 4437,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -6758,11 +5723,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.child2_site_display
-
-	var_3_50[4438] = {
+	pg.base.child2_site_display[4438] = {
 		param = 4438,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -6780,11 +5741,7 @@ end)()
 			419
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.child2_site_display
-
-	var_3_51[4439] = {
+	pg.base.child2_site_display[4439] = {
 		param = 4439,
 		name = "",
 		event_icon = "site_ending",
@@ -6802,11 +5759,7 @@ end)()
 			163
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.child2_site_display
-
-	var_3_52[4440] = {
+	pg.base.child2_site_display[4440] = {
 		param = 4440,
 		name = "",
 		event_icon = "site_ending",
@@ -6824,11 +5777,7 @@ end)()
 			-490
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.child2_site_display
-
-	var_3_53[4441] = {
+	pg.base.child2_site_display[4441] = {
 		param = 4441,
 		name = "",
 		event_icon = "site_ending",
@@ -6846,11 +5795,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.child2_site_display
-
-	var_3_54[4442] = {
+	pg.base.child2_site_display[4442] = {
 		param = 4442,
 		name = "",
 		event_icon = "site_ending",
@@ -6868,11 +5813,7 @@ end)()
 			470
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.child2_site_display
-
-	var_3_55[4443] = {
+	pg.base.child2_site_display[4443] = {
 		param = 4443,
 		name = "",
 		event_icon = "site_ending",
@@ -6890,11 +5831,7 @@ end)()
 			159
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.child2_site_display
-
-	var_3_56[4444] = {
+	pg.base.child2_site_display[4444] = {
 		param = 4444,
 		name = "",
 		event_icon = "site_ending",
@@ -6912,11 +5849,7 @@ end)()
 			140
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.child2_site_display
-
-	var_3_57[4445] = {
+	pg.base.child2_site_display[4445] = {
 		param = 4445,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -6934,11 +5867,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.child2_site_display
-
-	var_3_58[4446] = {
+	pg.base.child2_site_display[4446] = {
 		param = 4446,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -6956,11 +5885,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.child2_site_display
-
-	var_3_59[4460] = {
+	pg.base.child2_site_display[4460] = {
 		param = 4460,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -6978,11 +5903,7 @@ end)()
 			542
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.child2_site_display
-
-	var_3_60[4461] = {
+	pg.base.child2_site_display[4461] = {
 		param = 4461,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -7000,11 +5921,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.child2_site_display
-
-	var_3_61[4462] = {
+	pg.base.child2_site_display[4462] = {
 		param = 4462,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -7022,11 +5939,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.child2_site_display
-
-	var_3_62[4463] = {
+	pg.base.child2_site_display[4463] = {
 		param = 4463,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -7044,11 +5957,7 @@ end)()
 			149
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.child2_site_display
-
-	var_3_63[4464] = {
+	pg.base.child2_site_display[4464] = {
 		param = 4464,
 		name = "商业街",
 		event_icon = "site_event",
@@ -7066,11 +5975,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.child2_site_display
-
-	var_3_64[4465] = {
+	pg.base.child2_site_display[4465] = {
 		param = 4465,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -7088,11 +5993,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.child2_site_display
-
-	var_3_65[4466] = {
+	pg.base.child2_site_display[4466] = {
 		param = 4466,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -7110,11 +6011,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.child2_site_display
-
-	var_3_66[4467] = {
+	pg.base.child2_site_display[4467] = {
 		param = 4467,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -7132,11 +6029,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.child2_site_display
-
-	var_3_67[4468] = {
+	pg.base.child2_site_display[4468] = {
 		param = 4468,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -7154,11 +6047,7 @@ end)()
 			542
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.child2_site_display
-
-	var_3_68[4469] = {
+	pg.base.child2_site_display[4469] = {
 		param = 4469,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -7176,11 +6065,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.child2_site_display
-
-	var_3_69[4470] = {
+	pg.base.child2_site_display[4470] = {
 		param = 4470,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -7198,11 +6083,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.child2_site_display
-
-	var_3_70[4471] = {
+	pg.base.child2_site_display[4471] = {
 		param = 4471,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -7220,11 +6101,7 @@ end)()
 			149
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.child2_site_display
-
-	var_3_71[4472] = {
+	pg.base.child2_site_display[4472] = {
 		param = 4472,
 		name = "商业街",
 		event_icon = "site_event",
@@ -7242,11 +6119,7 @@ end)()
 			-222
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.child2_site_display
-
-	var_3_72[4473] = {
+	pg.base.child2_site_display[4473] = {
 		param = 4473,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -7264,11 +6137,7 @@ end)()
 			-427
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.child2_site_display
-
-	var_3_73[4474] = {
+	pg.base.child2_site_display[4474] = {
 		param = 4474,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -7286,11 +6155,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.child2_site_display
-
-	var_3_74[4475] = {
+	pg.base.child2_site_display[4475] = {
 		param = 4475,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -7308,11 +6173,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.child2_site_display
-
-	var_3_75[8001] = {
+	pg.base.child2_site_display[8001] = {
 		param = 0,
 		name = "生活体验",
 		event_icon = "site_work",
@@ -7330,11 +6191,7 @@ end)()
 			-310
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.child2_site_display
-
-	var_3_76[8002] = {
+	pg.base.child2_site_display[8002] = {
 		param = 0,
 		name = "外出旅游",
 		event_icon = "site_travel",
@@ -7352,11 +6209,7 @@ end)()
 			-206
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.child2_site_display
-
-	var_3_77[8003] = {
+	pg.base.child2_site_display[8003] = {
 		param = 0,
 		name = "占星馆",
 		event_icon = "site_tarot",
@@ -7374,11 +6227,7 @@ end)()
 			-111
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.child2_site_display
-
-	var_3_78[9001] = {
+	pg.base.child2_site_display[9001] = {
 		param = 9001,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7396,11 +6245,7 @@ end)()
 			542
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.child2_site_display
-
-	var_3_79[9002] = {
+	pg.base.child2_site_display[9002] = {
 		param = 9002,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7418,11 +6263,7 @@ end)()
 			45
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.child2_site_display
-
-	var_3_80[9003] = {
+	pg.base.child2_site_display[9003] = {
 		param = 9003,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7440,11 +6281,7 @@ end)()
 			-240
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.child2_site_display
-
-	var_3_81[9004] = {
+	pg.base.child2_site_display[9004] = {
 		param = 9004,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7462,11 +6299,7 @@ end)()
 			-160
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.child2_site_display
-
-	var_3_82[9005] = {
+	pg.base.child2_site_display[9005] = {
 		param = 9005,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7484,11 +6317,7 @@ end)()
 			149
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.child2_site_display
-
-	var_3_83[9006] = {
+	pg.base.child2_site_display[9006] = {
 		param = 9006,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7506,11 +6335,7 @@ end)()
 			56
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.child2_site_display
-
-	var_3_84[9007] = {
+	pg.base.child2_site_display[9007] = {
 		param = 9007,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7528,11 +6353,7 @@ end)()
 			-141
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.child2_site_display
-
-	var_3_85[9008] = {
+	pg.base.child2_site_display[9008] = {
 		param = 9008,
 		name = "测试事件（掉落）",
 		event_icon = "site_event",
@@ -7550,11 +6371,7 @@ end)()
 			144
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.child2_site_display
-
-	var_3_86[9009] = {
+	pg.base.child2_site_display[9009] = {
 		param = 9009,
 		name = "测试事件（小游戏）",
 		event_icon = "site_event",
@@ -7572,11 +6389,7 @@ end)()
 			-31
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.child2_site_display
-
-	var_3_87[9010] = {
+	pg.base.child2_site_display[9010] = {
 		param = 9010,
 		name = "测试事件（小游戏）",
 		event_icon = "site_event",
@@ -7594,11 +6407,7 @@ end)()
 			-63
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.child2_site_display
-
-	var_3_88[201] = {
+	pg.base.child2_site_display[201] = {
 		param = 201,
 		name = "{namecode:199}",
 		event_icon = "",
@@ -7616,11 +6425,7 @@ end)()
 			45
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.child2_site_display
-
-	var_3_89[202] = {
+	pg.base.child2_site_display[202] = {
 		param = 202,
 		name = "{namecode:199}",
 		event_icon = "",
@@ -7638,11 +6443,7 @@ end)()
 			533
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.child2_site_display
-
-	var_3_90[203] = {
+	pg.base.child2_site_display[203] = {
 		param = 203,
 		name = "{namecode:199}",
 		event_icon = "",
@@ -7660,11 +6461,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.child2_site_display
-
-	var_3_91[204] = {
+	pg.base.child2_site_display[204] = {
 		param = 204,
 		name = "不显示",
 		event_icon = "",
@@ -7682,11 +6479,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.child2_site_display
-
-	var_3_92[205] = {
+	pg.base.child2_site_display[205] = {
 		param = 205,
 		name = "七省",
 		event_icon = "",
@@ -7704,11 +6497,7 @@ end)()
 			328
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.child2_site_display
-
-	var_3_93[206] = {
+	pg.base.child2_site_display[206] = {
 		param = 206,
 		name = "七省",
 		event_icon = "",
@@ -7726,11 +6515,7 @@ end)()
 			468
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.child2_site_display
-
-	var_3_94[207] = {
+	pg.base.child2_site_display[207] = {
 		param = 207,
 		name = "七省",
 		event_icon = "",
@@ -7748,11 +6533,7 @@ end)()
 			339.5
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.child2_site_display
-
-	var_3_95[208] = {
+	pg.base.child2_site_display[208] = {
 		param = 208,
 		name = "不显示",
 		event_icon = "",
@@ -7770,11 +6551,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.child2_site_display
-
-	var_3_96[209] = {
+	pg.base.child2_site_display[209] = {
 		param = 209,
 		name = "塔什干",
 		event_icon = "",
@@ -7792,11 +6569,7 @@ end)()
 			-298.3
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.child2_site_display
-
-	var_3_97[210] = {
+	pg.base.child2_site_display[210] = {
 		param = 210,
 		name = "塔什干",
 		event_icon = "",
@@ -7814,11 +6587,7 @@ end)()
 			-473
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.child2_site_display
-
-	var_3_98[211] = {
+	pg.base.child2_site_display[211] = {
 		param = 211,
 		name = "塔什干",
 		event_icon = "",
@@ -7836,8 +6605,7 @@ end)()
 			125
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.child2_site_display[212] = {
+	pg.base.child2_site_display[212] = {
 		param = 212,
 		name = "不显示",
 		event_icon = "",
@@ -7859,11 +6627,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.child2_site_display
-
-	var_4_0[213] = {
+	pg.base.child2_site_display[213] = {
 		param = 213,
 		name = "天狼星",
 		event_icon = "",
@@ -7881,11 +6645,7 @@ end)()
 			-57
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.child2_site_display
-
-	var_4_1[214] = {
+	pg.base.child2_site_display[214] = {
 		param = 214,
 		name = "天狼星",
 		event_icon = "",
@@ -7903,11 +6663,7 @@ end)()
 			-569
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.child2_site_display
-
-	var_4_2[215] = {
+	pg.base.child2_site_display[215] = {
 		param = 215,
 		name = "天狼星",
 		event_icon = "",
@@ -7925,11 +6681,7 @@ end)()
 			-608
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.child2_site_display
-
-	var_4_3[216] = {
+	pg.base.child2_site_display[216] = {
 		param = 216,
 		name = "不显示",
 		event_icon = "",
@@ -7947,11 +6699,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.child2_site_display
-
-	var_4_4[217] = {
+	pg.base.child2_site_display[217] = {
 		param = 217,
 		name = "重剑",
 		event_icon = "",
@@ -7969,11 +6717,7 @@ end)()
 			419
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.child2_site_display
-
-	var_4_5[218] = {
+	pg.base.child2_site_display[218] = {
 		param = 218,
 		name = "重剑",
 		event_icon = "",
@@ -7991,11 +6735,7 @@ end)()
 			286.5
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.child2_site_display
-
-	var_4_6[219] = {
+	pg.base.child2_site_display[219] = {
 		param = 219,
 		name = "重剑",
 		event_icon = "",
@@ -8013,11 +6753,7 @@ end)()
 			359
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.child2_site_display
-
-	var_4_7[220] = {
+	pg.base.child2_site_display[220] = {
 		param = 220,
 		name = "不显示",
 		event_icon = "",
@@ -8035,11 +6771,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.child2_site_display
-
-	var_4_8[221] = {
+	pg.base.child2_site_display[221] = {
 		param = 221,
 		name = "{namecode:50}",
 		event_icon = "",
@@ -8057,11 +6789,7 @@ end)()
 			501
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.child2_site_display
-
-	var_4_9[222] = {
+	pg.base.child2_site_display[222] = {
 		param = 222,
 		name = "{namecode:50}",
 		event_icon = "",
@@ -8079,11 +6807,7 @@ end)()
 			113
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.child2_site_display
-
-	var_4_10[223] = {
+	pg.base.child2_site_display[223] = {
 		param = 223,
 		name = "{namecode:50}",
 		event_icon = "",
@@ -8101,11 +6825,7 @@ end)()
 			167
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.child2_site_display
-
-	var_4_11[224] = {
+	pg.base.child2_site_display[224] = {
 		param = 224,
 		name = "不显示",
 		event_icon = "",
@@ -8123,11 +6843,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.child2_site_display
-
-	var_4_12[3200101] = {
+	pg.base.child2_site_display[3200101] = {
 		param = 3200101,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -8145,11 +6861,7 @@ end)()
 			536
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.child2_site_display
-
-	var_4_13[3200201] = {
+	pg.base.child2_site_display[3200201] = {
 		param = 3200201,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -8167,11 +6879,7 @@ end)()
 			423
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.child2_site_display
-
-	var_4_14[3200301] = {
+	pg.base.child2_site_display[3200301] = {
 		param = 3200301,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -8189,11 +6897,7 @@ end)()
 			515
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.child2_site_display
-
-	var_4_15[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3200401,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -8211,11 +6915,7 @@ end)()
 			410
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.child2_site_display
-
-	var_4_16[3200501] = {
+	pg.base.child2_site_display[3200501] = {
 		param = 3200501,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -8233,11 +6933,7 @@ end)()
 			439
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.child2_site_display
-
-	var_4_17[3200601] = {
+	pg.base.child2_site_display[3200601] = {
 		param = 3200601,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -8255,11 +6951,7 @@ end)()
 			238
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.child2_site_display
-
-	var_4_18[3200701] = {
+	pg.base.child2_site_display[3200701] = {
 		param = 3200701,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -8277,11 +6969,7 @@ end)()
 			188
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.child2_site_display
-
-	var_4_19[3200801] = {
+	pg.base.child2_site_display[3200801] = {
 		param = 3200801,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -8299,11 +6987,7 @@ end)()
 			157
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.child2_site_display
-
-	var_4_20[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3200901,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -8321,11 +7005,7 @@ end)()
 			306
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.child2_site_display
-
-	var_4_21[3201001] = {
+	pg.base.child2_site_display[3201001] = {
 		param = 3201001,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -8343,11 +7023,7 @@ end)()
 			-58
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.child2_site_display
-
-	var_4_22[3201101] = {
+	pg.base.child2_site_display[3201101] = {
 		param = 3201101,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -8365,11 +7041,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.child2_site_display
-
-	var_4_23[3201201] = {
+	pg.base.child2_site_display[3201201] = {
 		param = 3201201,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -8387,11 +7059,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.child2_site_display
-
-	var_4_24[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3201301,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -8409,11 +7077,7 @@ end)()
 			31
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.child2_site_display
-
-	var_4_25[3201401] = {
+	pg.base.child2_site_display[3201401] = {
 		param = 3201401,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -8431,11 +7095,7 @@ end)()
 			526
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.child2_site_display
-
-	var_4_26[3201501] = {
+	pg.base.child2_site_display[3201501] = {
 		param = 3201501,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -8453,11 +7113,7 @@ end)()
 			420
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.child2_site_display
-
-	var_4_27[3201601] = {
+	pg.base.child2_site_display[3201601] = {
 		param = 3201601,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -8475,11 +7131,7 @@ end)()
 			348
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.child2_site_display
-
-	var_4_28[3201701] = {
+	pg.base.child2_site_display[3201701] = {
 		param = 3201701,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -8497,11 +7149,7 @@ end)()
 			420
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.child2_site_display
-
-	var_4_29[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3201801,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -8519,11 +7167,7 @@ end)()
 			216
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.child2_site_display
-
-	var_4_30[3201901] = {
+	pg.base.child2_site_display[3201901] = {
 		param = 3201901,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -8541,11 +7185,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.child2_site_display
-
-	var_4_31[3202001] = {
+	pg.base.child2_site_display[3202001] = {
 		param = 3202001,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -8563,11 +7203,7 @@ end)()
 			196
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.child2_site_display
-
-	var_4_32[3202101] = {
+	pg.base.child2_site_display[3202101] = {
 		param = 3202101,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -8585,11 +7221,7 @@ end)()
 			196
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.child2_site_display
-
-	var_4_33[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3202201,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -8607,11 +7239,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.child2_site_display
-
-	var_4_34[3202301] = {
+	pg.base.child2_site_display[3202301] = {
 		param = 3202301,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -8629,11 +7257,7 @@ end)()
 			216
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.child2_site_display
-
-	var_4_35[3202401] = {
+	pg.base.child2_site_display[3202401] = {
 		param = 3202401,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -8651,11 +7275,7 @@ end)()
 			-260
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.child2_site_display
-
-	var_4_36[3202501] = {
+	pg.base.child2_site_display[3202501] = {
 		param = 3202501,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -8673,11 +7293,7 @@ end)()
 			-221
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.child2_site_display
-
-	var_4_37[3202601] = {
+	pg.base.child2_site_display[3202601] = {
 		param = 3202601,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -8695,11 +7311,7 @@ end)()
 			-158
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.child2_site_display
-
-	var_4_38[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3202701,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -8717,11 +7329,7 @@ end)()
 			-212
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.child2_site_display
-
-	var_4_39[3202801] = {
+	pg.base.child2_site_display[3202801] = {
 		param = 3202801,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -8739,11 +7347,7 @@ end)()
 			534
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.child2_site_display
-
-	var_4_40[3202901] = {
+	pg.base.child2_site_display[3202901] = {
 		param = 3202901,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -8761,11 +7365,7 @@ end)()
 			519
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.child2_site_display
-
-	var_4_41[3203001] = {
+	pg.base.child2_site_display[3203001] = {
 		param = 3203001,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -8783,11 +7383,7 @@ end)()
 			567
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.child2_site_display
-
-	var_4_42[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3203101,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -8805,11 +7401,7 @@ end)()
 			589
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.child2_site_display
-
-	var_4_43[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3203201,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -8827,11 +7419,7 @@ end)()
 			574
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.child2_site_display
-
-	var_4_44[3203301] = {
+	pg.base.child2_site_display[3203301] = {
 		param = 3203301,
 		name = "商业街",
 		event_icon = "site_event",
@@ -8849,11 +7437,7 @@ end)()
 			49
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.child2_site_display
-
-	var_4_45[3203401] = {
+	pg.base.child2_site_display[3203401] = {
 		param = 3203401,
 		name = "商业街",
 		event_icon = "site_event",
@@ -8871,11 +7455,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.child2_site_display
-
-	var_4_46[3203501] = {
+	pg.base.child2_site_display[3203501] = {
 		param = 3203501,
 		name = "商业街",
 		event_icon = "site_event",
@@ -8893,11 +7473,7 @@ end)()
 			33
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.child2_site_display
-
-	var_4_47[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3203601,
 		name = "商业街",
 		event_icon = "site_event",
@@ -8915,11 +7491,7 @@ end)()
 			24
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.child2_site_display
-
-	var_4_48[3203701] = {
+	pg.base.child2_site_display[3203701] = {
 		param = 3203701,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -8937,11 +7509,7 @@ end)()
 			-8
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.child2_site_display
-
-	var_4_49[3203801] = {
+	pg.base.child2_site_display[3203801] = {
 		param = 3203801,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -8959,11 +7527,7 @@ end)()
 			-93
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.child2_site_display
-
-	var_4_50[3203901] = {
+	pg.base.child2_site_display[3203901] = {
 		param = 3203901,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -8981,11 +7545,7 @@ end)()
 			-95
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.child2_site_display
-
-	var_4_51[3204001] = {
+	pg.base.child2_site_display[3204001] = {
 		param = 3204001,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -9003,11 +7563,7 @@ end)()
 			239
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.child2_site_display
-
-	var_4_52[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3204101,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -9025,11 +7581,7 @@ end)()
 			183
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.child2_site_display
-
-	var_4_53[3204201] = {
+	pg.base.child2_site_display[3204201] = {
 		param = 3204201,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -9047,11 +7599,7 @@ end)()
 			272
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.child2_site_display
-
-	var_4_54[3204301] = {
+	pg.base.child2_site_display[3204301] = {
 		param = 3204301,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -9069,11 +7617,7 @@ end)()
 			208
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.child2_site_display
-
-	var_4_55[3204401] = {
+	pg.base.child2_site_display[3204401] = {
 		param = 3204401,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -9091,11 +7635,7 @@ end)()
 			-449
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.child2_site_display
-
-	var_4_56[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3204501,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -9113,11 +7653,7 @@ end)()
 			-410
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.child2_site_display
-
-	var_4_57[3204601] = {
+	pg.base.child2_site_display[3204601] = {
 		param = 3204601,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -9135,11 +7671,7 @@ end)()
 			-453
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.child2_site_display
-
-	var_4_58[3204701] = {
+	pg.base.child2_site_display[3204701] = {
 		param = 3204701,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -9157,11 +7689,7 @@ end)()
 			-527
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.child2_site_display
-
-	var_4_59[3204801] = {
+	pg.base.child2_site_display[3204801] = {
 		param = 3204801,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -9179,11 +7707,7 @@ end)()
 			-475
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.child2_site_display
-
-	var_4_60[3204901] = {
+	pg.base.child2_site_display[3204901] = {
 		param = 3204901,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -9201,11 +7725,7 @@ end)()
 			-484
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.child2_site_display
-
-	var_4_61[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3205001,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -9223,11 +7743,7 @@ end)()
 			-480
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.child2_site_display
-
-	var_4_62[3205101] = {
+	pg.base.child2_site_display[3205101] = {
 		param = 3205101,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -9245,11 +7761,7 @@ end)()
 			-463
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.child2_site_display
-
-	var_4_63[3205201] = {
+	pg.base.child2_site_display[3205201] = {
 		param = 3205201,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -9267,11 +7779,7 @@ end)()
 			-387
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.child2_site_display
-
-	var_4_64[3205301] = {
+	pg.base.child2_site_display[3205301] = {
 		param = 3205301,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -9289,11 +7797,7 @@ end)()
 			-394
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.child2_site_display
-
-	var_4_65[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3205401,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -9311,11 +7815,7 @@ end)()
 			-157
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.child2_site_display
-
-	var_4_66[3205501] = {
+	pg.base.child2_site_display[3205501] = {
 		param = 3205501,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -9333,11 +7833,7 @@ end)()
 			-168
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.child2_site_display
-
-	var_4_67[3205601] = {
+	pg.base.child2_site_display[3205601] = {
 		param = 3205601,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -9355,11 +7851,7 @@ end)()
 			-209
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.child2_site_display
-
-	var_4_68[3205701] = {
+	pg.base.child2_site_display[3205701] = {
 		param = 3205701,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -9377,11 +7869,7 @@ end)()
 			-246
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.child2_site_display
-
-	var_4_69[3205801] = {
+	pg.base.child2_site_display[3205801] = {
 		param = 3205801,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -9399,11 +7887,7 @@ end)()
 			-257
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.child2_site_display
-
-	var_4_70[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3205901,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -9421,11 +7905,7 @@ end)()
 			437
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.child2_site_display
-
-	var_4_71[3206001] = {
+	pg.base.child2_site_display[3206001] = {
 		param = 3206001,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -9443,11 +7923,7 @@ end)()
 			430
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.child2_site_display
-
-	var_4_72[3206101] = {
+	pg.base.child2_site_display[3206101] = {
 		param = 3206101,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -9465,11 +7941,7 @@ end)()
 			444
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.child2_site_display
-
-	var_4_73[3206201] = {
+	pg.base.child2_site_display[3206201] = {
 		param = 3206201,
 		name = "星光舞台",
 		event_icon = "site_event",
@@ -9487,11 +7959,7 @@ end)()
 			298
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.child2_site_display
-
-	var_4_74[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3206301,
 		name = "星光舞台",
 		event_icon = "site_event",
@@ -9509,11 +7977,7 @@ end)()
 			293
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.child2_site_display
-
-	var_4_75[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3206401,
 		name = "学院",
 		event_icon = "site_event",
@@ -9531,11 +7995,7 @@ end)()
 			304
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.child2_site_display
-
-	var_4_76[3206501] = {
+	pg.base.child2_site_display[3206501] = {
 		param = 3206501,
 		name = "学院",
 		event_icon = "site_event",
@@ -9553,11 +8013,7 @@ end)()
 			311
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.child2_site_display
-
-	var_4_77[3206601] = {
+	pg.base.child2_site_display[3206601] = {
 		param = 3206601,
 		name = "学院",
 		event_icon = "site_event",
@@ -9575,11 +8031,7 @@ end)()
 			207
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.child2_site_display
-
-	var_4_78[3206701] = {
+	pg.base.child2_site_display[3206701] = {
 		param = 3206701,
 		name = "学院",
 		event_icon = "site_event",
@@ -9597,11 +8049,7 @@ end)()
 			200
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.child2_site_display
-
-	var_4_79[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3206801,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -9619,11 +8067,7 @@ end)()
 			295
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.child2_site_display
-
-	var_4_80[3206901] = {
+	pg.base.child2_site_display[3206901] = {
 		param = 3206901,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -9641,11 +8085,7 @@ end)()
 			375
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.child2_site_display
-
-	var_4_81[3207001] = {
+	pg.base.child2_site_display[3207001] = {
 		param = 3207001,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -9663,11 +8103,7 @@ end)()
 			-332
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.child2_site_display
-
-	var_4_82[3207101] = {
+	pg.base.child2_site_display[3207101] = {
 		param = 3207101,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -9685,11 +8121,7 @@ end)()
 			-320
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.child2_site_display
-
-	var_4_83[3207201] = {
+	pg.base.child2_site_display[3207201] = {
 		param = 3207201,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -9707,11 +8139,7 @@ end)()
 			-218
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.child2_site_display
-
-	var_4_84[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3207301,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -9729,11 +8157,7 @@ end)()
 			-301
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.child2_site_display
-
-	var_4_85[3207401] = {
+	pg.base.child2_site_display[3207401] = {
 		param = 3207401,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -9751,11 +8175,7 @@ end)()
 			-67
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.child2_site_display
-
-	var_4_86[3207501] = {
+	pg.base.child2_site_display[3207501] = {
 		param = 3207501,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -9773,11 +8193,7 @@ end)()
 			-16
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.child2_site_display
-
-	var_4_87[3207601] = {
+	pg.base.child2_site_display[3207601] = {
 		param = 3207601,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -9795,11 +8211,7 @@ end)()
 			-41
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.child2_site_display
-
-	var_4_88[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3207701,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -9817,11 +8229,7 @@ end)()
 			78
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.child2_site_display
-
-	var_4_89[3207801] = {
+	pg.base.child2_site_display[3207801] = {
 		param = 3207801,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -9839,11 +8247,7 @@ end)()
 			91
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.child2_site_display
-
-	var_4_90[3207901] = {
+	pg.base.child2_site_display[3207901] = {
 		param = 3207901,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -9861,11 +8265,7 @@ end)()
 			-58
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.child2_site_display
-
-	var_4_91[3208001] = {
+	pg.base.child2_site_display[3208001] = {
 		param = 3208001,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -9883,11 +8283,7 @@ end)()
 			82
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.child2_site_display
-
-	var_4_92[3208101] = {
+	pg.base.child2_site_display[3208101] = {
 		param = 3208101,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -9905,11 +8301,7 @@ end)()
 			161
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.child2_site_display
-
-	var_4_93[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3208201,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -9927,11 +8319,7 @@ end)()
 			147
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.child2_site_display
-
-	var_4_94[3208301] = {
+	pg.base.child2_site_display[3208301] = {
 		param = 3208301,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -9949,11 +8337,7 @@ end)()
 			51
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.child2_site_display
-
-	var_4_95[3208401] = {
+	pg.base.child2_site_display[3208401] = {
 		param = 3208401,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -9971,11 +8355,7 @@ end)()
 			51
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.child2_site_display
-
-	var_4_96[3208501] = {
+	pg.base.child2_site_display[3208501] = {
 		param = 3208501,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -9993,11 +8373,7 @@ end)()
 			51
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.child2_site_display
-
-	var_4_97[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3208601,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -10015,11 +8391,7 @@ end)()
 			51
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.child2_site_display
-
-	var_4_98[3208701] = {
+	pg.base.child2_site_display[3208701] = {
 		param = 3208701,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -10037,8 +8409,7 @@ end)()
 			-569
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.child2_site_display[3208801] = {
+	pg.base.child2_site_display[3208801] = {
 		param = 3208801,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -10060,11 +8431,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.child2_site_display
-
-	var_5_0[3208901] = {
+	pg.base.child2_site_display[3208901] = {
 		param = 3208901,
 		name = "商业街",
 		event_icon = "site_ending",
@@ -10082,11 +8449,7 @@ end)()
 			124
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.child2_site_display
-
-	var_5_1[3209001] = {
+	pg.base.child2_site_display[3209001] = {
 		param = 3209001,
 		name = "音乐教室",
 		event_icon = "site_ending",
@@ -10104,11 +8467,7 @@ end)()
 			43
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.child2_site_display
-
-	var_5_2[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3209101,
 		name = "音浪市集",
 		event_icon = "site_ending",
@@ -10126,11 +8485,7 @@ end)()
 			-379
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.child2_site_display
-
-	var_5_3[3209201] = {
+	pg.base.child2_site_display[3209201] = {
 		param = 3209201,
 		name = "校图书馆",
 		event_icon = "site_ending",
@@ -10148,11 +8503,7 @@ end)()
 			521
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.child2_site_display
-
-	var_5_4[3209301] = {
+	pg.base.child2_site_display[3209301] = {
 		param = 3209301,
 		name = "度假庄园",
 		event_icon = "site_ending",
@@ -10170,11 +8521,7 @@ end)()
 			320
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.child2_site_display
-
-	var_5_5[3209401] = {
+	pg.base.child2_site_display[3209401] = {
 		param = 3209401,
 		name = "学院",
 		event_icon = "site_ending",
@@ -10192,11 +8539,7 @@ end)()
 			532
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.child2_site_display
-
-	var_5_6[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3209501,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -10214,11 +8557,7 @@ end)()
 			-155
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.child2_site_display
-
-	var_5_7[3210101] = {
+	pg.base.child2_site_display[3210101] = {
 		param = 3210101,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -10236,11 +8575,7 @@ end)()
 			536
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.child2_site_display
-
-	var_5_8[3210201] = {
+	pg.base.child2_site_display[3210201] = {
 		param = 3210201,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -10258,11 +8593,7 @@ end)()
 			423
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.child2_site_display
-
-	var_5_9[3210301] = {
+	pg.base.child2_site_display[3210301] = {
 		param = 3210301,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -10280,11 +8611,7 @@ end)()
 			515
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.child2_site_display
-
-	var_5_10[3210401] = {
+	pg.base.child2_site_display[3210401] = {
 		param = 3210401,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -10302,11 +8629,7 @@ end)()
 			410
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.child2_site_display
-
-	var_5_11[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3210501,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -10324,11 +8647,7 @@ end)()
 			439
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.child2_site_display
-
-	var_5_12[3210601] = {
+	pg.base.child2_site_display[3210601] = {
 		param = 3210601,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -10346,11 +8665,7 @@ end)()
 			238
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.child2_site_display
-
-	var_5_13[3210701] = {
+	pg.base.child2_site_display[3210701] = {
 		param = 3210701,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -10368,11 +8683,7 @@ end)()
 			188
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.child2_site_display
-
-	var_5_14[3210801] = {
+	pg.base.child2_site_display[3210801] = {
 		param = 3210801,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -10390,11 +8701,7 @@ end)()
 			157
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.child2_site_display
-
-	var_5_15[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3210901,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -10412,11 +8719,7 @@ end)()
 			306
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.child2_site_display
-
-	var_5_16[3211001] = {
+	pg.base.child2_site_display[3211001] = {
 		param = 3211001,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -10434,11 +8737,7 @@ end)()
 			-58
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.child2_site_display
-
-	var_5_17[3211101] = {
+	pg.base.child2_site_display[3211101] = {
 		param = 3211101,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -10456,11 +8755,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.child2_site_display
-
-	var_5_18[3211201] = {
+	pg.base.child2_site_display[3211201] = {
 		param = 3211201,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -10478,11 +8773,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.child2_site_display
-
-	var_5_19[3211301] = {
+	pg.base.child2_site_display[3211301] = {
 		param = 3211301,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -10500,11 +8791,7 @@ end)()
 			31
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.child2_site_display
-
-	var_5_20[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3211401,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -10522,11 +8809,7 @@ end)()
 			526
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.child2_site_display
-
-	var_5_21[3211501] = {
+	pg.base.child2_site_display[3211501] = {
 		param = 3211501,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -10544,11 +8827,7 @@ end)()
 			420
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.child2_site_display
-
-	var_5_22[3211601] = {
+	pg.base.child2_site_display[3211601] = {
 		param = 3211601,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -10566,11 +8845,7 @@ end)()
 			348
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.child2_site_display
-
-	var_5_23[3211701] = {
+	pg.base.child2_site_display[3211701] = {
 		param = 3211701,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -10588,11 +8863,7 @@ end)()
 			420
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.child2_site_display
-
-	var_5_24[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3211801,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -10610,11 +8881,7 @@ end)()
 			216
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.child2_site_display
-
-	var_5_25[3211901] = {
+	pg.base.child2_site_display[3211901] = {
 		param = 3211901,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -10632,11 +8899,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.child2_site_display
-
-	var_5_26[3212001] = {
+	pg.base.child2_site_display[3212001] = {
 		param = 3212001,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -10654,11 +8917,7 @@ end)()
 			196
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.child2_site_display
-
-	var_5_27[3212101] = {
+	pg.base.child2_site_display[3212101] = {
 		param = 3212101,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -10676,11 +8935,7 @@ end)()
 			196
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.child2_site_display
-
-	var_5_28[3212201] = {
+	pg.base.child2_site_display[3212201] = {
 		param = 3212201,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -10698,11 +8953,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.child2_site_display
-
-	var_5_29[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3212301,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -10720,11 +8971,7 @@ end)()
 			216
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.child2_site_display
-
-	var_5_30[3212401] = {
+	pg.base.child2_site_display[3212401] = {
 		param = 3212401,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -10742,11 +8989,7 @@ end)()
 			-260
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.child2_site_display
-
-	var_5_31[3212501] = {
+	pg.base.child2_site_display[3212501] = {
 		param = 3212501,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -10764,11 +9007,7 @@ end)()
 			-221
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.child2_site_display
-
-	var_5_32[3212601] = {
+	pg.base.child2_site_display[3212601] = {
 		param = 3212601,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -10786,11 +9025,7 @@ end)()
 			-158
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.child2_site_display
-
-	var_5_33[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3212701,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -10808,11 +9043,7 @@ end)()
 			-212
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.child2_site_display
-
-	var_5_34[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3212801,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -10830,11 +9061,7 @@ end)()
 			534
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.child2_site_display
-
-	var_5_35[3212901] = {
+	pg.base.child2_site_display[3212901] = {
 		param = 3212901,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -10852,11 +9079,7 @@ end)()
 			519
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.child2_site_display
-
-	var_5_36[3213001] = {
+	pg.base.child2_site_display[3213001] = {
 		param = 3213001,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -10874,11 +9097,7 @@ end)()
 			567
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.child2_site_display
-
-	var_5_37[3213101] = {
+	pg.base.child2_site_display[3213101] = {
 		param = 3213101,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -10896,11 +9115,7 @@ end)()
 			589
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.child2_site_display
-
-	var_5_38[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3213201,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -10918,11 +9133,7 @@ end)()
 			574
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.child2_site_display
-
-	var_5_39[3213301] = {
+	pg.base.child2_site_display[3213301] = {
 		param = 3213301,
 		name = "商业街",
 		event_icon = "site_event",
@@ -10940,11 +9151,7 @@ end)()
 			49
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.child2_site_display
-
-	var_5_40[3213401] = {
+	pg.base.child2_site_display[3213401] = {
 		param = 3213401,
 		name = "商业街",
 		event_icon = "site_event",
@@ -10962,11 +9169,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.child2_site_display
-
-	var_5_41[3213501] = {
+	pg.base.child2_site_display[3213501] = {
 		param = 3213501,
 		name = "商业街",
 		event_icon = "site_event",
@@ -10984,11 +9187,7 @@ end)()
 			33
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.child2_site_display
-
-	var_5_42[3213601] = {
+	pg.base.child2_site_display[3213601] = {
 		param = 3213601,
 		name = "商业街",
 		event_icon = "site_event",
@@ -11006,11 +9205,7 @@ end)()
 			24
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.child2_site_display
-
-	var_5_43[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3213701,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -11028,11 +9223,7 @@ end)()
 			-8
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.child2_site_display
-
-	var_5_44[3213801] = {
+	pg.base.child2_site_display[3213801] = {
 		param = 3213801,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -11050,11 +9241,7 @@ end)()
 			-93
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.child2_site_display
-
-	var_5_45[3213901] = {
+	pg.base.child2_site_display[3213901] = {
 		param = 3213901,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -11072,11 +9259,7 @@ end)()
 			-95
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.child2_site_display
-
-	var_5_46[3214001] = {
+	pg.base.child2_site_display[3214001] = {
 		param = 3214001,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -11094,11 +9277,7 @@ end)()
 			239
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.child2_site_display
-
-	var_5_47[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3214101,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -11116,11 +9295,7 @@ end)()
 			183
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.child2_site_display
-
-	var_5_48[3214201] = {
+	pg.base.child2_site_display[3214201] = {
 		param = 3214201,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -11138,11 +9313,7 @@ end)()
 			272
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.child2_site_display
-
-	var_5_49[3214301] = {
+	pg.base.child2_site_display[3214301] = {
 		param = 3214301,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -11160,11 +9331,7 @@ end)()
 			208
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.child2_site_display
-
-	var_5_50[3214401] = {
+	pg.base.child2_site_display[3214401] = {
 		param = 3214401,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -11182,11 +9349,7 @@ end)()
 			-449
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.child2_site_display
-
-	var_5_51[3214501] = {
+	pg.base.child2_site_display[3214501] = {
 		param = 3214501,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -11204,11 +9367,7 @@ end)()
 			-410
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.child2_site_display
-
-	var_5_52[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3214601,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -11226,11 +9385,7 @@ end)()
 			-453
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.child2_site_display
-
-	var_5_53[3214701] = {
+	pg.base.child2_site_display[3214701] = {
 		param = 3214701,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -11248,11 +9403,7 @@ end)()
 			-527
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.child2_site_display
-
-	var_5_54[3214801] = {
+	pg.base.child2_site_display[3214801] = {
 		param = 3214801,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -11270,11 +9421,7 @@ end)()
 			-475
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.child2_site_display
-
-	var_5_55[3214901] = {
+	pg.base.child2_site_display[3214901] = {
 		param = 3214901,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -11292,11 +9439,7 @@ end)()
 			-484
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.child2_site_display
-
-	var_5_56[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3215001,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -11314,11 +9457,7 @@ end)()
 			-480
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.child2_site_display
-
-	var_5_57[3215101] = {
+	pg.base.child2_site_display[3215101] = {
 		param = 3215101,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -11336,11 +9475,7 @@ end)()
 			-463
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.child2_site_display
-
-	var_5_58[3215201] = {
+	pg.base.child2_site_display[3215201] = {
 		param = 3215201,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -11358,11 +9493,7 @@ end)()
 			-387
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.child2_site_display
-
-	var_5_59[3215301] = {
+	pg.base.child2_site_display[3215301] = {
 		param = 3215301,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -11380,11 +9511,7 @@ end)()
 			-394
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.child2_site_display
-
-	var_5_60[3215401] = {
+	pg.base.child2_site_display[3215401] = {
 		param = 3215401,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -11402,11 +9529,7 @@ end)()
 			-157
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.child2_site_display
-
-	var_5_61[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3215501,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -11424,11 +9547,7 @@ end)()
 			-168
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.child2_site_display
-
-	var_5_62[3215601] = {
+	pg.base.child2_site_display[3215601] = {
 		param = 3215601,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -11446,11 +9565,7 @@ end)()
 			-209
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.child2_site_display
-
-	var_5_63[3215701] = {
+	pg.base.child2_site_display[3215701] = {
 		param = 3215701,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -11468,11 +9583,7 @@ end)()
 			-246
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.child2_site_display
-
-	var_5_64[3215801] = {
+	pg.base.child2_site_display[3215801] = {
 		param = 3215801,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -11490,11 +9601,7 @@ end)()
 			-257
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.child2_site_display
-
-	var_5_65[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3215901,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -11512,11 +9619,7 @@ end)()
 			437
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.child2_site_display
-
-	var_5_66[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3216001,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -11534,11 +9637,7 @@ end)()
 			430
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.child2_site_display
-
-	var_5_67[3216101] = {
+	pg.base.child2_site_display[3216101] = {
 		param = 3216101,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -11556,11 +9655,7 @@ end)()
 			444
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.child2_site_display
-
-	var_5_68[3216201] = {
+	pg.base.child2_site_display[3216201] = {
 		param = 3216201,
 		name = "星光舞台",
 		event_icon = "site_event",
@@ -11578,11 +9673,7 @@ end)()
 			298
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.child2_site_display
-
-	var_5_69[3216301] = {
+	pg.base.child2_site_display[3216301] = {
 		param = 3216301,
 		name = "星光舞台",
 		event_icon = "site_event",
@@ -11600,11 +9691,7 @@ end)()
 			293
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.child2_site_display
-
-	var_5_70[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3216401,
 		name = "学院",
 		event_icon = "site_event",
@@ -11622,11 +9709,7 @@ end)()
 			304
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.child2_site_display
-
-	var_5_71[3216501] = {
+	pg.base.child2_site_display[3216501] = {
 		param = 3216501,
 		name = "学院",
 		event_icon = "site_event",
@@ -11644,11 +9727,7 @@ end)()
 			311
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.child2_site_display
-
-	var_5_72[3216601] = {
+	pg.base.child2_site_display[3216601] = {
 		param = 3216601,
 		name = "学院",
 		event_icon = "site_event",
@@ -11666,11 +9745,7 @@ end)()
 			207
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.child2_site_display
-
-	var_5_73[3216701] = {
+	pg.base.child2_site_display[3216701] = {
 		param = 3216701,
 		name = "学院",
 		event_icon = "site_event",
@@ -11688,11 +9763,7 @@ end)()
 			200
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.child2_site_display
-
-	var_5_74[3216801] = {
+	pg.base.child2_site_display[3216801] = {
 		param = 3216801,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -11710,11 +9781,7 @@ end)()
 			295
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.child2_site_display
-
-	var_5_75[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3216901,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -11732,11 +9799,7 @@ end)()
 			375
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.child2_site_display
-
-	var_5_76[3217001] = {
+	pg.base.child2_site_display[3217001] = {
 		param = 3217001,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -11754,11 +9817,7 @@ end)()
 			-332
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.child2_site_display
-
-	var_5_77[3217101] = {
+	pg.base.child2_site_display[3217101] = {
 		param = 3217101,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -11776,11 +9835,7 @@ end)()
 			-320
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.child2_site_display
-
-	var_5_78[3217201] = {
+	pg.base.child2_site_display[3217201] = {
 		param = 3217201,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -11798,11 +9853,7 @@ end)()
 			-218
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.child2_site_display
-
-	var_5_79[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3217301,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -11820,11 +9871,7 @@ end)()
 			-301
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.child2_site_display
-
-	var_5_80[3217401] = {
+	pg.base.child2_site_display[3217401] = {
 		param = 3217401,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -11842,11 +9889,7 @@ end)()
 			-67
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.child2_site_display
-
-	var_5_81[3217501] = {
+	pg.base.child2_site_display[3217501] = {
 		param = 3217501,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -11864,11 +9907,7 @@ end)()
 			-16
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.child2_site_display
-
-	var_5_82[3217601] = {
+	pg.base.child2_site_display[3217601] = {
 		param = 3217601,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -11886,11 +9925,7 @@ end)()
 			-41
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.child2_site_display
-
-	var_5_83[3217701] = {
+	pg.base.child2_site_display[3217701] = {
 		param = 3217701,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -11908,11 +9943,7 @@ end)()
 			78
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.child2_site_display
-
-	var_5_84[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3217801,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -11930,11 +9961,7 @@ end)()
 			91
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.child2_site_display
-
-	var_5_85[3217901] = {
+	pg.base.child2_site_display[3217901] = {
 		param = 3217901,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -11952,11 +9979,7 @@ end)()
 			-58
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.child2_site_display
-
-	var_5_86[3218001] = {
+	pg.base.child2_site_display[3218001] = {
 		param = 3218001,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -11974,11 +9997,7 @@ end)()
 			82
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.child2_site_display
-
-	var_5_87[3218101] = {
+	pg.base.child2_site_display[3218101] = {
 		param = 3218101,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -11996,11 +10015,7 @@ end)()
 			161
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.child2_site_display
-
-	var_5_88[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3218201,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -12018,11 +10033,7 @@ end)()
 			147
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.child2_site_display
-
-	var_5_89[3218301] = {
+	pg.base.child2_site_display[3218301] = {
 		param = 3218301,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -12040,11 +10051,7 @@ end)()
 			51
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.child2_site_display
-
-	var_5_90[3218401] = {
+	pg.base.child2_site_display[3218401] = {
 		param = 3218401,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -12062,11 +10069,7 @@ end)()
 			51
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.child2_site_display
-
-	var_5_91[3218501] = {
+	pg.base.child2_site_display[3218501] = {
 		param = 3218501,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -12084,11 +10087,7 @@ end)()
 			51
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.child2_site_display
-
-	var_5_92[3218601] = {
+	pg.base.child2_site_display[3218601] = {
 		param = 3218601,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -12106,11 +10105,7 @@ end)()
 			51
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.child2_site_display
-
-	var_5_93[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3218701,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -12128,11 +10123,7 @@ end)()
 			-569
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.child2_site_display
-
-	var_5_94[3218801] = {
+	pg.base.child2_site_display[3218801] = {
 		param = 3218801,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -12150,11 +10141,7 @@ end)()
 			-578
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.child2_site_display
-
-	var_5_95[3218901] = {
+	pg.base.child2_site_display[3218901] = {
 		param = 3218901,
 		name = "商业街",
 		event_icon = "site_ending",
@@ -12172,11 +10159,7 @@ end)()
 			124
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.child2_site_display
-
-	var_5_96[3219001] = {
+	pg.base.child2_site_display[3219001] = {
 		param = 3219001,
 		name = "音乐教室",
 		event_icon = "site_ending",
@@ -12194,11 +10177,7 @@ end)()
 			43
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.child2_site_display
-
-	var_5_97[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3219101,
 		name = "音浪市集",
 		event_icon = "site_ending",
@@ -12216,11 +10195,7 @@ end)()
 			-379
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.child2_site_display
-
-	var_5_98[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3219201,
 		name = "校图书馆",
 		event_icon = "site_ending",
@@ -12238,8 +10213,7 @@ end)()
 			521
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.child2_site_display[3219301] = {
+	pg.base.child2_site_display[3219301] = {
 		param = 3219301,
 		name = "度假庄园",
 		event_icon = "site_ending",
@@ -12261,11 +10235,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.child2_site_display
-
-	var_6_0[3219401] = {
+	pg.base.child2_site_display[3219401] = {
 		param = 3219401,
 		name = "学院",
 		event_icon = "site_ending",
@@ -12283,11 +10253,7 @@ end)()
 			532
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.child2_site_display
-
-	var_6_1[3219501] = {
+	pg.base.child2_site_display[3219501] = {
 		param = 3219501,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -12305,11 +10271,7 @@ end)()
 			-155
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.child2_site_display
-
-	var_6_2[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3220101,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -12327,11 +10289,7 @@ end)()
 			536
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.child2_site_display
-
-	var_6_3[3220201] = {
+	pg.base.child2_site_display[3220201] = {
 		param = 3220201,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -12349,11 +10307,7 @@ end)()
 			423
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.child2_site_display
-
-	var_6_4[3220301] = {
+	pg.base.child2_site_display[3220301] = {
 		param = 3220301,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -12371,11 +10325,7 @@ end)()
 			515
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.child2_site_display
-
-	var_6_5[3220401] = {
+	pg.base.child2_site_display[3220401] = {
 		param = 3220401,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -12393,11 +10343,7 @@ end)()
 			410
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.child2_site_display
-
-	var_6_6[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3220501,
 		name = "度假庄园",
 		event_icon = "site_event",
@@ -12415,11 +10361,7 @@ end)()
 			439
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.child2_site_display
-
-	var_6_7[3220601] = {
+	pg.base.child2_site_display[3220601] = {
 		param = 3220601,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -12437,11 +10379,7 @@ end)()
 			238
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.child2_site_display
-
-	var_6_8[3220701] = {
+	pg.base.child2_site_display[3220701] = {
 		param = 3220701,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -12459,11 +10397,7 @@ end)()
 			188
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.child2_site_display
-
-	var_6_9[3220801] = {
+	pg.base.child2_site_display[3220801] = {
 		param = 3220801,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -12481,11 +10415,7 @@ end)()
 			157
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.child2_site_display
-
-	var_6_10[3220901] = {
+	pg.base.child2_site_display[3220901] = {
 		param = 3220901,
 		name = "海滨公园",
 		event_icon = "site_event",
@@ -12503,11 +10433,7 @@ end)()
 			306
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.child2_site_display
-
-	var_6_11[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3221001,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -12525,11 +10451,7 @@ end)()
 			-58
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.child2_site_display
-
-	var_6_12[3221101] = {
+	pg.base.child2_site_display[3221101] = {
 		param = 3221101,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -12547,11 +10469,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.child2_site_display
-
-	var_6_13[3221201] = {
+	pg.base.child2_site_display[3221201] = {
 		param = 3221201,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -12569,11 +10487,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.child2_site_display
-
-	var_6_14[3221301] = {
+	pg.base.child2_site_display[3221301] = {
 		param = 3221301,
 		name = "好味餐厅",
 		event_icon = "site_event",
@@ -12591,11 +10505,7 @@ end)()
 			31
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.child2_site_display
-
-	var_6_15[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3221401,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -12613,11 +10523,7 @@ end)()
 			526
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.child2_site_display
-
-	var_6_16[3221501] = {
+	pg.base.child2_site_display[3221501] = {
 		param = 3221501,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -12635,11 +10541,7 @@ end)()
 			420
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.child2_site_display
-
-	var_6_17[3221601] = {
+	pg.base.child2_site_display[3221601] = {
 		param = 3221601,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -12657,11 +10559,7 @@ end)()
 			348
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.child2_site_display
-
-	var_6_18[3221701] = {
+	pg.base.child2_site_display[3221701] = {
 		param = 3221701,
 		name = "静谧之峰",
 		event_icon = "site_event",
@@ -12679,11 +10577,7 @@ end)()
 			420
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.child2_site_display
-
-	var_6_19[3221801] = {
+	pg.base.child2_site_display[3221801] = {
 		param = 3221801,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -12701,11 +10595,7 @@ end)()
 			216
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.child2_site_display
-
-	var_6_20[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3221901,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -12723,11 +10613,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.child2_site_display
-
-	var_6_21[3222001] = {
+	pg.base.child2_site_display[3222001] = {
 		param = 3222001,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -12745,11 +10631,7 @@ end)()
 			196
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.child2_site_display
-
-	var_6_22[3222101] = {
+	pg.base.child2_site_display[3222101] = {
 		param = 3222101,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -12767,11 +10649,7 @@ end)()
 			196
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.child2_site_display
-
-	var_6_23[3222201] = {
+	pg.base.child2_site_display[3222201] = {
 		param = 3222201,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -12789,11 +10667,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.child2_site_display
-
-	var_6_24[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3222301,
 		name = "漫海商坊",
 		event_icon = "site_event",
@@ -12811,11 +10685,7 @@ end)()
 			216
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.child2_site_display
-
-	var_6_25[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3222401,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -12833,11 +10703,7 @@ end)()
 			-260
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.child2_site_display
-
-	var_6_26[3222501] = {
+	pg.base.child2_site_display[3222501] = {
 		param = 3222501,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -12855,11 +10721,7 @@ end)()
 			-221
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.child2_site_display
-
-	var_6_27[3222601] = {
+	pg.base.child2_site_display[3222601] = {
 		param = 3222601,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -12877,11 +10739,7 @@ end)()
 			-158
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.child2_site_display
-
-	var_6_28[3222701] = {
+	pg.base.child2_site_display[3222701] = {
 		param = 3222701,
 		name = "美食坊",
 		event_icon = "site_event",
@@ -12899,11 +10757,7 @@ end)()
 			-212
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.child2_site_display
-
-	var_6_29[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3222801,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -12921,11 +10775,7 @@ end)()
 			534
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.child2_site_display
-
-	var_6_30[3222901] = {
+	pg.base.child2_site_display[3222901] = {
 		param = 3222901,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -12943,11 +10793,7 @@ end)()
 			519
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.child2_site_display
-
-	var_6_31[3223001] = {
+	pg.base.child2_site_display[3223001] = {
 		param = 3223001,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -12965,11 +10811,7 @@ end)()
 			567
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.child2_site_display
-
-	var_6_32[3223101] = {
+	pg.base.child2_site_display[3223101] = {
 		param = 3223101,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -12987,11 +10829,7 @@ end)()
 			589
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.child2_site_display
-
-	var_6_33[3223201] = {
+	pg.base.child2_site_display[3223201] = {
 		param = 3223201,
 		name = "山畔池塘",
 		event_icon = "site_event",
@@ -13009,11 +10847,7 @@ end)()
 			574
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.child2_site_display
-
-	var_6_34[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3223301,
 		name = "商业街",
 		event_icon = "site_event",
@@ -13031,11 +10865,7 @@ end)()
 			49
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.child2_site_display
-
-	var_6_35[3223401] = {
+	pg.base.child2_site_display[3223401] = {
 		param = 3223401,
 		name = "商业街",
 		event_icon = "site_event",
@@ -13053,11 +10883,7 @@ end)()
 			-625
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.child2_site_display
-
-	var_6_36[3223501] = {
+	pg.base.child2_site_display[3223501] = {
 		param = 3223501,
 		name = "商业街",
 		event_icon = "site_event",
@@ -13075,11 +10901,7 @@ end)()
 			33
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.child2_site_display
-
-	var_6_37[3223601] = {
+	pg.base.child2_site_display[3223601] = {
 		param = 3223601,
 		name = "商业街",
 		event_icon = "site_event",
@@ -13097,11 +10919,7 @@ end)()
 			24
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.child2_site_display
-
-	var_6_38[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3223701,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -13119,11 +10937,7 @@ end)()
 			-8
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.child2_site_display
-
-	var_6_39[3223801] = {
+	pg.base.child2_site_display[3223801] = {
 		param = 3223801,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -13141,11 +10955,7 @@ end)()
 			-93
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.child2_site_display
-
-	var_6_40[3223901] = {
+	pg.base.child2_site_display[3223901] = {
 		param = 3223901,
 		name = "水族馆",
 		event_icon = "site_event",
@@ -13163,11 +10973,7 @@ end)()
 			-95
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.child2_site_display
-
-	var_6_41[3224001] = {
+	pg.base.child2_site_display[3224001] = {
 		param = 3224001,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -13185,11 +10991,7 @@ end)()
 			239
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.child2_site_display
-
-	var_6_42[3224101] = {
+	pg.base.child2_site_display[3224101] = {
 		param = 3224101,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -13207,11 +11009,7 @@ end)()
 			183
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.child2_site_display
-
-	var_6_43[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3224201,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -13229,11 +11027,7 @@ end)()
 			272
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.child2_site_display
-
-	var_6_44[3224301] = {
+	pg.base.child2_site_display[3224301] = {
 		param = 3224301,
 		name = "体育馆",
 		event_icon = "site_event",
@@ -13251,11 +11045,7 @@ end)()
 			208
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.child2_site_display
-
-	var_6_45[3224401] = {
+	pg.base.child2_site_display[3224401] = {
 		param = 3224401,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -13273,11 +11063,7 @@ end)()
 			-449
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.child2_site_display
-
-	var_6_46[3224501] = {
+	pg.base.child2_site_display[3224501] = {
 		param = 3224501,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -13295,11 +11081,7 @@ end)()
 			-410
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.child2_site_display
-
-	var_6_47[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3224601,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -13317,11 +11099,7 @@ end)()
 			-453
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.child2_site_display
-
-	var_6_48[3224701] = {
+	pg.base.child2_site_display[3224701] = {
 		param = 3224701,
 		name = "童心乐园",
 		event_icon = "site_event",
@@ -13339,11 +11117,7 @@ end)()
 			-527
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.child2_site_display
-
-	var_6_49[3224801] = {
+	pg.base.child2_site_display[3224801] = {
 		param = 3224801,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -13361,11 +11135,7 @@ end)()
 			-475
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.child2_site_display
-
-	var_6_50[3224901] = {
+	pg.base.child2_site_display[3224901] = {
 		param = 3224901,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -13383,11 +11153,7 @@ end)()
 			-484
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.child2_site_display
-
-	var_6_51[3225001] = {
+	pg.base.child2_site_display[3225001] = {
 		param = 3225001,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -13405,11 +11171,7 @@ end)()
 			-480
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.child2_site_display
-
-	var_6_52[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3225101,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -13427,11 +11189,7 @@ end)()
 			-463
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.child2_site_display
-
-	var_6_53[3225201] = {
+	pg.base.child2_site_display[3225201] = {
 		param = 3225201,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -13449,11 +11207,7 @@ end)()
 			-387
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.child2_site_display
-
-	var_6_54[3225301] = {
+	pg.base.child2_site_display[3225301] = {
 		param = 3225301,
 		name = "五金商店",
 		event_icon = "site_event",
@@ -13471,11 +11225,7 @@ end)()
 			-394
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.child2_site_display
-
-	var_6_55[3225401] = {
+	pg.base.child2_site_display[3225401] = {
 		param = 3225401,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -13493,11 +11243,7 @@ end)()
 			-157
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.child2_site_display
-
-	var_6_56[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3225501,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -13515,11 +11261,7 @@ end)()
 			-168
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.child2_site_display
-
-	var_6_57[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3225601,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -13537,11 +11279,7 @@ end)()
 			-209
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.child2_site_display
-
-	var_6_58[3225701] = {
+	pg.base.child2_site_display[3225701] = {
 		param = 3225701,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -13559,11 +11297,7 @@ end)()
 			-246
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.child2_site_display
-
-	var_6_59[3225801] = {
+	pg.base.child2_site_display[3225801] = {
 		param = 3225801,
 		name = "香醇小站",
 		event_icon = "site_event",
@@ -13581,11 +11315,7 @@ end)()
 			-257
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.child2_site_display
-
-	var_6_60[3225901] = {
+	pg.base.child2_site_display[3225901] = {
 		param = 3225901,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -13603,11 +11333,7 @@ end)()
 			437
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.child2_site_display
-
-	var_6_61[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3226001,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -13625,11 +11351,7 @@ end)()
 			430
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.child2_site_display
-
-	var_6_62[3226101] = {
+	pg.base.child2_site_display[3226101] = {
 		param = 3226101,
 		name = "校图书馆",
 		event_icon = "site_event",
@@ -13647,11 +11369,7 @@ end)()
 			444
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.child2_site_display
-
-	var_6_63[3226201] = {
+	pg.base.child2_site_display[3226201] = {
 		param = 3226201,
 		name = "星光舞台",
 		event_icon = "site_event",
@@ -13669,11 +11387,7 @@ end)()
 			298
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.child2_site_display
-
-	var_6_64[3226301] = {
+	pg.base.child2_site_display[3226301] = {
 		param = 3226301,
 		name = "星光舞台",
 		event_icon = "site_event",
@@ -13691,11 +11405,7 @@ end)()
 			293
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.child2_site_display
-
-	var_6_65[3226401] = {
+	pg.base.child2_site_display[3226401] = {
 		param = 3226401,
 		name = "学院",
 		event_icon = "site_event",
@@ -13713,11 +11423,7 @@ end)()
 			304
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.child2_site_display
-
-	var_6_66[5] = {
+	pg.base.child2_site_display[5] = {
 		param = 3226501,
 		name = "学院",
 		event_icon = "site_event",
@@ -13735,11 +11441,7 @@ end)()
 			311
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.child2_site_display
-
-	var_6_67[3226601] = {
+	pg.base.child2_site_display[3226601] = {
 		param = 3226601,
 		name = "学院",
 		event_icon = "site_event",
@@ -13757,11 +11459,7 @@ end)()
 			207
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.child2_site_display
-
-	var_6_68[3226701] = {
+	pg.base.child2_site_display[3226701] = {
 		param = 3226701,
 		name = "学院",
 		event_icon = "site_event",
@@ -13779,11 +11477,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.child2_site_display
-
-	var_6_69[3226801] = {
+	pg.base.child2_site_display[3226801] = {
 		param = 3226801,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -13801,11 +11495,7 @@ end)()
 			295
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.child2_site_display
-
-	var_6_70[21] = {
+	pg.base.child2_site_display[21] = {
 		param = 3226901,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -13823,11 +11513,7 @@ end)()
 			375
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.child2_site_display
-
-	var_6_71[3227001] = {
+	pg.base.child2_site_display[3227001] = {
 		param = 3227001,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -13845,11 +11531,7 @@ end)()
 			-332
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.child2_site_display
-
-	var_6_72[3227101] = {
+	pg.base.child2_site_display[3227101] = {
 		param = 3227101,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -13867,11 +11549,7 @@ end)()
 			-320
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.child2_site_display
-
-	var_6_73[3227201] = {
+	pg.base.child2_site_display[3227201] = {
 		param = 3227201,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -13889,11 +11567,7 @@ end)()
 			-218
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.child2_site_display
-
-	var_6_74[3227301] = {
+	pg.base.child2_site_display[3227301] = {
 		param = 3227301,
 		name = "音浪市集",
 		event_icon = "site_event",
@@ -13911,11 +11585,7 @@ end)()
 			-301
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.child2_site_display
-
-	var_6_75[9] = {
+	pg.base.child2_site_display[9] = {
 		param = 3227401,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -13933,11 +11603,7 @@ end)()
 			-67
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.child2_site_display
-
-	var_6_76[3227501] = {
+	pg.base.child2_site_display[3227501] = {
 		param = 3227501,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -13955,11 +11621,7 @@ end)()
 			-16
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.child2_site_display
-
-	var_6_77[3227601] = {
+	pg.base.child2_site_display[3227601] = {
 		param = 3227601,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -13977,11 +11639,7 @@ end)()
 			-41
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.child2_site_display
-
-	var_6_78[3227701] = {
+	pg.base.child2_site_display[3227701] = {
 		param = 3227701,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -13999,11 +11657,7 @@ end)()
 			78
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.child2_site_display
-
-	var_6_79[25] = {
+	pg.base.child2_site_display[25] = {
 		param = 3227801,
 		name = "音乐教室",
 		event_icon = "site_event",
@@ -14021,11 +11675,7 @@ end)()
 			91
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.child2_site_display
-
-	var_6_80[3227901] = {
+	pg.base.child2_site_display[3227901] = {
 		param = 3227901,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -14043,11 +11693,7 @@ end)()
 			-58
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.child2_site_display
-
-	var_6_81[3228001] = {
+	pg.base.child2_site_display[3228001] = {
 		param = 3228001,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -14065,11 +11711,7 @@ end)()
 			82
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.child2_site_display
-
-	var_6_82[3228101] = {
+	pg.base.child2_site_display[3228101] = {
 		param = 3228101,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -14087,11 +11729,7 @@ end)()
 			161
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.child2_site_display
-
-	var_6_83[3228201] = {
+	pg.base.child2_site_display[3228201] = {
 		param = 3228201,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -14109,11 +11747,7 @@ end)()
 			147
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.child2_site_display
-
-	var_6_84[13] = {
+	pg.base.child2_site_display[13] = {
 		param = 3228301,
 		name = "影像工作室",
 		event_icon = "site_event",
@@ -14131,11 +11765,7 @@ end)()
 			51
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.child2_site_display
-
-	var_6_85[3228401] = {
+	pg.base.child2_site_display[3228401] = {
 		param = 3228401,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -14153,11 +11783,7 @@ end)()
 			51
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.child2_site_display
-
-	var_6_86[3228501] = {
+	pg.base.child2_site_display[3228501] = {
 		param = 3228501,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -14175,11 +11801,7 @@ end)()
 			51
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.child2_site_display
-
-	var_6_87[3228601] = {
+	pg.base.child2_site_display[3228601] = {
 		param = 3228601,
 		name = "游乐场",
 		event_icon = "site_event",
@@ -14197,11 +11819,7 @@ end)()
 			51
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.child2_site_display
-
-	var_6_88[29] = {
+	pg.base.child2_site_display[29] = {
 		param = 3228701,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -14219,11 +11837,7 @@ end)()
 			-569
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.child2_site_display
-
-	var_6_89[1] = {
+	pg.base.child2_site_display[1] = {
 		param = 3228801,
 		name = "转角书屋",
 		event_icon = "site_event",
@@ -14241,11 +11855,7 @@ end)()
 			-578
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.child2_site_display
-
-	var_6_90[3228901] = {
+	pg.base.child2_site_display[3228901] = {
 		param = 3228901,
 		name = "商业街",
 		event_icon = "site_ending",
@@ -14263,11 +11873,7 @@ end)()
 			124
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.child2_site_display
-
-	var_6_91[3229001] = {
+	pg.base.child2_site_display[3229001] = {
 		param = 3229001,
 		name = "音乐教室",
 		event_icon = "site_ending",
@@ -14285,11 +11891,7 @@ end)()
 			43
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.child2_site_display
-
-	var_6_92[3229101] = {
+	pg.base.child2_site_display[3229101] = {
 		param = 3229101,
 		name = "音浪市集",
 		event_icon = "site_ending",
@@ -14307,11 +11909,7 @@ end)()
 			-379
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.child2_site_display
-
-	var_6_93[17] = {
+	pg.base.child2_site_display[17] = {
 		param = 3229201,
 		name = "校图书馆",
 		event_icon = "site_ending",
@@ -14329,11 +11927,7 @@ end)()
 			521
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.child2_site_display
-
-	var_6_94[3229301] = {
+	pg.base.child2_site_display[3229301] = {
 		param = 3229301,
 		name = "度假庄园",
 		event_icon = "site_ending",
@@ -14351,11 +11945,7 @@ end)()
 			320
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.child2_site_display
-
-	var_6_95[3229401] = {
+	pg.base.child2_site_display[3229401] = {
 		param = 3229401,
 		name = "学院",
 		event_icon = "site_ending",
@@ -14373,8 +11963,7 @@ end)()
 			532
 		}
 	}
-	pg = var_6_95
-	var_6_95.base.child2_site_display[3229501] = {
+	pg.base.child2_site_display[3229501] = {
 		param = 3229501,
 		name = "游乐场",
 		event_icon = "site_event",

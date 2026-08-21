@@ -46,6 +46,12 @@ function configUI(self)
     self.mTxtHasTalent = self:getChildGO("mTxtHasTalent"):GetComponent(ty.Text)
 
     self.mTxtSelectCostCount = self:getChildGO("mTxtSelectCostCount"):GetComponent(ty.Text)
+
+    self.mBgTalentPoint = self:getChildGO("mBgTalentPoint")
+    self.mTipsTalent = self:getChildGO("mTipsTalent")
+    self.mBtnHideTipsTalent = self:getChildGO("mBtnHideTipsTalent")
+    self.mTitleTalent = self:getChildGO("mTitleTalent"):GetComponent(ty.Text)
+    self.mDesTalent = self:getChildGO("mDesTalent"):GetComponent(ty.Text)
 end
 
 function initViewText(self)
@@ -53,32 +59,80 @@ function initViewText(self)
     self:getChildGO("mTxtActive"):GetComponent(ty.Text).text = _TT(111026)
     self:getChildGO("mTxtMax"):GetComponent(ty.Text).text = _TT(111027)
     self:getChildGO("mTxtUnlock"):GetComponent(ty.Text).text = _TT(111028)
+
+    self.mTitleTalent.text = _TT(111174)
+    self.mDesTalent.text = _TT(111175)
 end
 
 -- 激活
 function active(self, args)
     super.active(self, args)
     MoneyManager:setMoneyTidList({})
-    GameDispatcher:addEventListener(EventName.UPDATE_SEABED_TALENT_PANEL, self.showPanel, self)
-    
-    self:showPanel()
+    GameDispatcher:addEventListener(EventName.UPDATE_SEABED_TALENT_PANEL, self.singleTalentUp, self)
+
+    self:showPanel(true)
 end
 
 -- 反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
-    MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
+    MoneyManager:setMoneyTidList({MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID})
 
-    GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_TALENT_PANEL, self.showPanel, self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_TALENT_PANEL, self.singleTalentUp, self)
 
     self:clearTalentDic()
     self:clearContentDic()
+
+    if self.upSn then
+        LoopManager:clearTimeout(self.upSn)
+        self.upSn = nil
+    end
+end
+
+function singleTalentUp(self, args)
+
+    local dic = seabed.SeabedManager:getSeabedTalentData()
+    self.mTxtAllTalent.text = _TT(111025) .. seabed.SeabedManager:getSeabedTalentUnlockNum() .. "/" .. table.nums(dic)
+    self.mTxtHasTalent.text = seabed.SeabedManager:getSeabedTalentPoint()
+
+    if args then
+        local vo = seabed.SeabedManager:getSeabedTalentDataById(args.id)
+        local key = vo.row .. "-" .. vo.col
+    
+        local data = self.mTalentDic[key]
+        data.item:getChildGO("mEffUPed"):SetActive(true)
+        data.item:getChildGO("mEffCanUp"):SetActive(false)
+        self.selectId = args.id
+        self:onClickTalent(self.selectId)
+        self.upSn = LoopManager:setTimeout(1.7, nil, function()
+            self:showPanel(false)
+            -- data.item:getChildGO("mImgLock"):SetActive(false)
+            -- self:updateLine(data.item, data.vo)
+            -- for i = 1, #data.vo.nextId do
+            --     local changeVo = seabed.SeabedManager:getSeabedTalentDataById(data.vo.nextId[i])
+            --     local changeKey = changeVo.row .. "-" .. changeVo.col
+            --     local canGet = seabed.SeabedManager:canGetTalentSingle(changeVo)
+            --     self.mTalentDic[changeKey].item:getChildGO("mEffCanUp"):SetActive(canGet)
+            -- end
+        end)
+    end
 end
 
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
     self:addUIEvent(self.mBtnActive, self.onBtnActiveClickHandler)
-    --self:addUIEvent(self.mBtnAllTalent, self.onBtnTalentAllClickHandler)
+    self:addUIEvent(self.mBgTalentPoint, self.onBtnTalentTipsClickHandler)
+    self:addUIEvent(self.mBtnHideTipsTalent, self.onBtnHideTalentTipsClickHandler)
+    
+    -- self:addUIEvent(self.mBtnAllTalent, self.onBtnTalentAllClickHandler)
+end
+
+function onBtnTalentTipsClickHandler(self)
+    self.mTipsTalent:SetActive(true)
+end
+
+function onBtnHideTalentTipsClickHandler(self)
+    self.mTipsTalent:SetActive(false)
 end
 
 function onBtnTalentAllClickHandler(self)
@@ -88,20 +142,20 @@ end
 function onBtnActiveClickHandler(self)
     local vo = seabed.SeabedManager:getSeabedTalentDataById(self.selectId)
     if seabed.SeabedManager:getSeabedTalentPoint() >= vo.needTalent then
-        GameDispatcher:dispatchEvent(EventName.REQ_SEABED_TALENT_UNLOCK,{id = self.selectId})
+        GameDispatcher:dispatchEvent(EventName.REQ_SEABED_TALENT_UNLOCK, {
+            id = self.selectId
+        })
     else
         gs.Message.Show(_TT(111024))
     end
-   
+
 end
 
-function showPanel(self)
+function showPanel(self,isInit)
 
-    self.mTxtHasTalent.text = seabed.SeabedManager:getSeabedTalentPoint()
     local dic = seabed.SeabedManager:getSeabedTalentData()
-    self.mTxtAllTalent.text = _TT(111025) .. seabed.SeabedManager:getSeabedTalentUnlockNum() .. "/" ..
-                                  table.nums(dic)
-
+    self.mTxtAllTalent.text = _TT(111025) .. seabed.SeabedManager:getSeabedTalentUnlockNum() .. "/" .. table.nums(dic)
+    self.mTxtHasTalent.text = seabed.SeabedManager:getSeabedTalentPoint()
     local maxRow = 0 -- 8
     local maxCol = 0 -- 3
     for k, vo in pairs(dic) do
@@ -123,13 +177,23 @@ function showPanel(self)
         end
     end
 
+    local minCanGetY = 999
     for id, vo in pairs(dic) do
         local content = self.contentDic[vo.row .. "-" .. vo.col]
         local item = SimpleInsItem:create(self.mTalentItem, content:getChildTrans("mTalentTrans"), "mSeabedTalentItem")
         gs.TransQuick:UIPos(item:getGo():GetComponent(ty.RectTransform), 0, 0)
 
         item:getChildGO("mImgSelect"):SetActive(false)
-        item:getChildGO("mImgTalentIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(vo.icon),false)
+        item:getChildGO("mImgTalentIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(vo.icon), false)
+
+        item:getChildGO("mEffUPed"):SetActive(false)
+        local canGet = seabed.SeabedManager:canGetTalentSingle(vo)
+        item:getChildGO("mEffCanUp"):SetActive(canGet)
+        if canGet then
+            if vo.row < minCanGetY then
+                minCanGetY = vo.row
+            end
+        end
 
         item:addUIEvent("mImgClick", function()
             self:onClickTalent(id)
@@ -140,17 +204,26 @@ function showPanel(self)
         }
     end
 
+    if minCanGetY == 999 then
+        minCanGetY = 0
+    end
+
     for key, data in pairs(self.mTalentDic) do
         self:updateLine(data.item, data.vo)
     end
 
+    if isInit then
+        gs.TransQuick:UIPosY(self.mTalentScroll.content, gs.Mathf.Clamp(152 * (minCanGetY - 3), 0, maxRow * 152))
+
+    end
+    
     if self.selectId == nil then
         self.selectId = 1
     end
     self:onClickTalent(self.selectId)
 end
 
-function onClickTalent(self,id)
+function onClickTalent(self, id)
     local vo = seabed.SeabedManager:getSeabedTalentDataById(id)
     self.selectId = id
 
@@ -158,21 +231,20 @@ function onClickTalent(self,id)
         data.item:getChildGO("mImgSelect"):SetActive(data.vo.id == id)
     end
 
-    --self.mTxtSelectTalentType.text = "天赋"
-    self.mImgSelectTalentIcon:SetImg(UrlManager:getIconPath(vo.icon),false) 
-    self.mTxtSelectTalentName = _TT(vo.title)
-    self.mTxtSelectTalentDes = _TT(vo.des)
+    -- self.mTxtSelectTalentType.text = "天赋"
+    self.mImgSelectTalentIcon:SetImg(UrlManager:getIconPath(vo.icon), false)
+    self.mTxtSelectTalentName.text = _TT(vo.title)
+    self.mTxtSelectTalentDes.text = _TT(vo.des)
 
     local isPreUnLock = true
     for i = 1, #vo.preId do
         isPreUnLock = isPreUnLock and seabed.SeabedManager:getSeabedTalentMsgDataById(vo.preId[i])
     end
 
- 
     local isUnLock = seabed.SeabedManager:getSeabedTalentMsgDataById(vo.id)
-    self.mBtnActive:SetActive(isPreUnLock and not isUnLock) 
+    self.mBtnActive:SetActive(isPreUnLock and not isUnLock)
     self.mBtnMax:SetActive(isPreUnLock and isUnLock)
-    self.mTxtUnlock.gameObject:SetActive(not isPreUnLock) 
+    self.mTxtUnlock.gameObject:SetActive(not isPreUnLock)
     self.mTxtSelectCostCount.text = vo.needTalent
 
     if vo.needTalent > seabed.SeabedManager:getSeabedTalentPoint() then

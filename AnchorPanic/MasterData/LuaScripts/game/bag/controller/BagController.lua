@@ -27,6 +27,9 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPEN_BAG_BREAK_VIEW, self.onOpenBagBreakPanelHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_BAG_BREAK_PRE_VIEW, self.onOpenBagBreakPreViewHandler, self)
 
+    GameDispatcher:addEventListener(EventName.OPEN_USE_HEROEGG_PRO_VIEW, self.onOpenUseHeroEggViewHandler, self)
+    
+
     bag.BagManager:addEventListener(bag.BagManager.SELECT_PROPS_GRID, self.onSelectGridHandler, self)
     bag.BagManager:addEventListener(bag.BagManager.EVENT_SELECT_TYPES_OVER, self.onBreakTypesSelectHandler, self)
 
@@ -44,6 +47,8 @@ function registerMsgHandler(self)
         SC_BAG_UPDATE = self.onResBagUpdateMsgHandler,
         --- *s2c* 通用奖励获取 17013
         SC_PROP_AWARD_SEND = self.onPropsAwardMsgHandler,
+        --- *s2c* 回收道具面板 17021
+        SC_ITEM_RECYCLE_PANEL = self.onResItemRecyclePanelMsgHandler,
     }
 end
 
@@ -67,6 +72,10 @@ end
 function onPropsAwardMsgHandler(self, msg)
     ShowAwardPanel:showPropsAwardMsg(msg.award_list)
     -- UIFactory:bgMaskClose()
+end
+
+function onResItemRecyclePanelMsgHandler(self,msg)
+    bag.BagManager:setRecycleData(msg)
 end
 
 -- 点击了道具格子
@@ -179,6 +188,8 @@ function onOpenBagBreakPanelHandler(self, args)
             self.mBagBreakPanel = UI.new(bag.BagBreakEquipView)
         elseif tabType == bag.BagTabType.BRACELETS then
             self.mBagBreakPanel = UI.new(bag.BagBreakBraceletsView)
+        elseif tabType == bag.BagTabType.HEROEGG then
+            self.mBagBreakPanel = UI.new(bag.BagBreakHeroEggView)
         end
         self.mBagBreakPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyBagBreakViewHandler, self)
     end
@@ -214,6 +225,21 @@ function __onCheckBubbleHandler(self, args)
     else
         bag.BagManager:updateBubble()
     end
+end
+
+
+function onOpenUseHeroEggViewHandler(self,args)
+    if self.mUseHeroEggView == nil then
+        self.mUseHeroEggView = UI.new(bag.UseHeroEggRulePanel)
+        self.mUseHeroEggView:addEventListener(View.EVENT_VIEW_DESTROY, self.onCloseUseHeroEggViewHandler, self)
+    end
+    self.mUseHeroEggView:open(args)
+end
+
+function onCloseUseHeroEggViewHandler(self)
+    self.mUseHeroEggView:close()
+    self.mUseHeroEggView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onCloseUseHeroEggViewHandler, self)
+    self.mUseHeroEggView = nil
 end
 
 return _M

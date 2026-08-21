@@ -99,8 +99,34 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop})
     elseif linkId == LinkCode.FirstCharge then--首充
         GameDispatcher:dispatchEvent(EventName.OPEN_FIRSTCHARGE_PANEL)
+    elseif linkId == LinkCode.FirstChargeTwo then--首充
+        GameDispatcher:dispatchEvent(EventName.OPEN_FIRSTCHARGE_TWO_PANEL)
     elseif linkId == LinkCode.FashionPermit then--时装通行证
-        GameDispatcher:dispatchEvent(EventName.OPEN_FASHIONPERMIT_PANEL)
+        if activity.ActivityManager:getActivityVoById(activity.ActivityId.Fashion_Permit) then
+            local clientTime = GameManager:getClientTime()
+            local remainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.Fashion_Permit):getEndTime() - clientTime
+            if remainingTime > 0 then
+                GameDispatcher:dispatchEvent(EventName.OPEN_FASHIONPERMIT_PANEL)
+            else
+                gs.Message.Show(_TT(95053))
+            end
+        else
+            gs.Message.Show(_TT(95053))
+        end
+    elseif linkId == LinkCode.FashionPermitTwo then--时装通行证
+        if activity.ActivityManager:getActivityVoById(activity.ActivityId.Fashion_Permit_Two) then
+            local clientTime = GameManager:getClientTime()
+            local remainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.Fashion_Permit_Two):getEndTime() - clientTime
+            if remainingTime > 0 then
+                GameDispatcher:dispatchEvent(EventName.OPEN_FASHIONPERMIT_TWO_PANEL)
+            else
+                gs.Message.Show(_TT(95053))
+            end
+        else
+            gs.Message.Show(_TT(95053))
+        end
+    elseif linkId == LinkCode.Supercial then--时装通行证
+        GameDispatcher:dispatchEvent(EventName.OPEN_SUPERCIAL_PANEL)
     elseif linkId == LinkCode.Covenant then
         --屏蔽盟约 改为 --基础建设
         --GameDispatcher:dispatchEvent(EventName.OPEN_COVENANT_SELECT_PANEL)
@@ -109,6 +135,7 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_MAIL_PANEL)
     elseif linkId == LinkCode.GrowthFund then
         GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_PANEL, {type = activity.ActivityConst.ACTIVITY_GROUTHFUND})
+
     elseif linkId == LinkCode.Bulletin then
         GameDispatcher:dispatchEvent(EventName.OPEN_BULLETIN_PANEL, {bulletinId = param})
     elseif linkId == LinkCode.HomePage then
@@ -124,8 +151,29 @@ function openLinkHandler(self, args)
     elseif linkId == LinkCode.HomeWelfare then
         GameDispatcher:dispatchEvent(EventName.OPEN_WELFAREOPT_PANEL)
         --GameDispatcher:dispatchEvent(EventName.OPEN_WELFARE_PANEL)
+    elseif linkId == LinkCode.SpecialSupply then--特供活动
+        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL)
+    elseif linkId == LinkCode.ActivityCarnivaGift then--狂欢好礼
+        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL, {type = activity.ActivitySpecialSupplyConst.ACTIVITY_CARNIVA_GIFT})
+    elseif linkId == LinkCode.Lottery then
+        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL, {type = activity.ActivitySpecialSupplyConst.LOTTERY})
+    elseif linkId == LinkCode.Activity_SummerRecharge_Gift then--夏日促销礼包
+        local activityVo = activity.ActivityManager:getActivityVoById(activity.ActivityId.Activity_SummerRecharge_Gift)
+        if not activityVo then
+            gs.Message.Show(_TT(95053))
+            return
+        end
+        local clientTime = GameManager:getClientTime()
+        local remainingTime = activityVo:getEndTime() - clientTime
+        if remainingTime <= 0 then
+            gs.Message.Show(_TT(95053))
+            return
+        end
+        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL, {type = activity.ActivitySpecialSupplyConst.ACTIVITY_SUMMER_RECHARGE_GIFT})
     elseif linkId == LinkCode.Activity then--活动
         GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_PANEL)
+    elseif linkId == LinkCode.OrganizeBackpacks then--小游戏-整理背包
+        GameDispatcher:dispatchEvent(EventName.OPEN_ORGANIZE_BACKPACKS_GAME_DUP_VIEW)
     elseif linkId == LinkCode.Shopping then--交易所
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL)
     elseif linkId == LinkCode.HomeSignIn then
@@ -139,14 +187,28 @@ function openLinkHandler(self, args)
     elseif linkId == LinkCode.StrengthCard then--体力月卡
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.STRENGTH_CARD})
     elseif linkId == LinkCode.FashionShop then--皮肤商店
-        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP})
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.NOMAL})
+    elseif linkId == LinkCode.SHOPCOMBO then--皮肤商店 组合包
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.COMBO})
+    elseif linkId == LinkCode.SHOPSCENE then--皮肤商店 场景
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.SCENE})
+    elseif linkId == LinkCode.SHOPPAIRTS then--皮肤商店 配件
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.PAIRTS})
+    elseif linkId == LinkCode.ShopPainting then--皮肤商店 配件
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.PAINTING})
+         elseif linkId == LinkCode.ShopFight then--皮肤商店 配件
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.FIGHTSKIN})
     elseif linkId == LinkCode.DirectBuy then-- 直购礼包
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.DIRECT_BUY})
     elseif linkId == LinkCode.FashionCionShop then--时装币商店
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.FASHIONCION_SHOP})
     elseif linkId == LinkCode.GradeGift then--等级礼包
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.GRADE_GIFT})
-    elseif linkId == LinkCode.MainMap then
+    elseif linkId == LinkCode.ShopLimitGift then--等级礼包
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.DIRECT_BUY, subChildType = 3})
+    elseif linkId == LinkCode.ShopLimitSupply then--等级礼包
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.DIRECT_BUY, subChildType = 1})
+    elseif linkId == LinkCode.MainMap or linkId == LinkCode.MainMap2 then
         GameDispatcher:dispatchEvent(EventName.OPEN_MAINPLAY_PANEL, {type = mainPlay.MainPlayConst.MAINPLAY_MAIN})
         --GameDispatcher:dispatchEvent(EventName.OPEN_MAIN_STAGE_PANEL)
     elseif linkId == LinkCode.DupDaily then
@@ -180,17 +242,29 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_TASK_HALL_PANEL, {type = task.HallTabType.WEEK_TASK})
 
     elseif linkId == LinkCode.RecruitSuper then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_TOP})
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_TOP)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
     elseif linkId == LinkCode.RecruitNomal then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_COMMON})
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_COMMON)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
     elseif linkId == LinkCode.RecruitNewPlayer then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_NEW_PLAYER})
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
     elseif linkId == LinkCode.RecruitBracelets then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_BRACELETS})
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_BRACELETS)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
     elseif linkId == LinkCode.RecruitActivity then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_ACTIVITY_1})
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_ACTIVITY_1)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
     elseif linkId == LinkCode.RecruitBraceletsActivity then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_ACTIVITY_2})
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_ACTIVITY_2)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
+    elseif linkId == LinkCode.RecruitAppActTop then
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_APP_ACTTOP)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
+    elseif linkId == LinkCode.RecruitAppBracelets then
+        local recruit_id = param or recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_APP_BRACELETS)
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_PANEL, {recruitId = recruit_id})
 
     elseif linkId == LinkCode.HeroDismiss then
         GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DISMISS_PANEL)
@@ -218,6 +292,8 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.ROGUELIKE})
     elseif linkId == LinkCode.ShopDoundless then--兑换商店-无限城
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.DOUNDLESS})
+    elseif linkId == LinkCode.ShopVision then--兑换商店-异象残境
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.VISION})
     elseif linkId == LinkCode.ShopDupApostles then--兑换商店-异想回渊
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.APOSTLES2})
     elseif linkId == LinkCode.ShopDecoration then--兑换商店-装潢商店
@@ -227,7 +303,11 @@ function openLinkHandler(self, args)
     elseif linkId == LinkCode.ShopArenaHell then
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.ARENAHELL})
     elseif linkId == LinkCode.ShopGuild then
-        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.GUILD})
+        if guild.GuildManager:getJoinGuilded() then
+            GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.GUILD})
+        else
+            GameDispatcher:dispatchEvent(EventName.CAN_OPEN_GUILD)
+        end
     elseif linkId == LinkCode.ShopBlack then
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.BLACK})
     elseif linkId == LinkCode.ShopConvert then
@@ -242,6 +322,8 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.ASSIST})
     elseif linkId == LinkCode.ShopFragmentFragment then
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.FRAGMENT})
+    elseif linkId == LinkCode.ShopDna then
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.DNA})
     elseif linkId == LinkCode.ShopDormitory then
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.DECORATE})
     elseif linkId == LinkCode.ShopDisaster then
@@ -334,6 +416,14 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_DUP_POTENCY_VIEW, {dupType = DupType.DUP_HERO_STAR_UP, dupId = DupPontencyDupId.AttackHardening_2, isFight = false, isJump = true})
     elseif linkId == LinkCode.DupHeroStarUp_3 then
         GameDispatcher:dispatchEvent(EventName.OPEN_DUP_POTENCY_VIEW, {dupType = DupType.DUP_HERO_STAR_UP, dupId = DupPontencyDupId.AttackHardening_3, isFight = false, isJump = true})
+   elseif linkId == LinkCode.DupDark_1 then
+        GameDispatcher:dispatchEvent(EventName.OPEN_DUP_POTENCY_VIEW, {dupType = DupType.Dup_Dark_Potential, dupId = DupPontencyDupId.Dark_1, isFight = false, isJump = true})
+    elseif linkId == LinkCode.DupDark_2 then--潜能副本-直击
+        GameDispatcher:dispatchEvent(EventName.OPEN_DUP_POTENCY_VIEW, {dupType = DupType.Dup_Dark_Potential, dupId = DupPontencyDupId.Dark_2, isFight = false, isJump = true})
+    elseif linkId == LinkCode.DupDark_3 then
+        GameDispatcher:dispatchEvent(EventName.OPEN_DUP_POTENCY_VIEW, {dupType = DupType.Dup_Dark_Potential, dupId = DupPontencyDupId.Dark_3, isFight = false, isJump = true})
+   
+   
     elseif linkId == LinkCode.DupHeroGrowUp then
         GameDispatcher:dispatchEvent(EventName.OPEN_DUP_DAILY_PANEL, {dupType = DupType.DUP_HERO_GROW_UP, dupId = 0, isFight = false, isJump = true})
     elseif linkId == LinkCode.DupHeroSkillUp then
@@ -392,8 +482,19 @@ function openLinkHandler(self, args)
     elseif linkId == LinkCode.DupApostlesWar then
         GameDispatcher:dispatchEvent(EventName.OPEN_DUP_APOSTLES_WAR_PANEL)
     elseif linkId == LinkCode.Permit then
+        if activity.ActivityManager:getActivityVoById(activity.ActivityId.Permit) then
+            local clientTime = GameManager:getClientTime()
+            local remainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.Permit):getEndTime() - clientTime
+            if remainingTime > 0 then
+                GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_PANEL, {type = activity.ActivityConst.ACTIVITY_PERMIT})
+            else
+                gs.Message.Show(_TT(95053))
+            end
+        else
+            gs.Message.Show(_TT(95053))
+        end
         -- 通行证
-        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_PANEL, {type = activity.ActivityConst.ACTIVITY_PERMIT})
+
     elseif linkId == LinkCode.DupImplied then
         GameDispatcher:dispatchEvent(EventName.OPEN_DUP_IMPLIED_ENTER_PANEL)
     elseif linkId == LinkCode.ChellengeCodeHope then
@@ -438,20 +539,68 @@ function openLinkHandler(self, args)
     elseif linkId == LinkCode.Cycle then
         GameDispatcher:dispatchEvent(EventName.OPEN_CYCLE_MAIN_PANEL)
     elseif linkId == LinkCode.MainActivity then--1.1主题活动主界面
-        local dup_id = sandPlay.SandPlayManager:getMapId()
-        if dup_id == nil then
-            dup_id = sysParam.SysParamManager:getValue(SysParamType.SandPlayDupId)
-        end
-
+        local dup_id = sysParam.SysParamManager:getValue(SysParamType.SandPlayDupId)
         if dup_id ~= 0 then
+            local mapId = sandPlay.SandPlayManager:getMapId()
+            if mapId then
+                dup_id = mapId
+            end
+
             sandPlay.SandPlayManager:setNextMapId(dup_id)
             GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.SANDPLAY_GAME)
         else
             GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.MAIN_CITY)
             GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_PANEL)
         end
+    elseif linkId == LinkCode.HappyFarm then--开心农场
+        local dup_id = sysParam.SysParamManager:getValue(SysParamType.HappyFarmDupId)
+        sandPlay.SandPlayManager:setNextMapId(dup_id)
+        GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.SANDPLAY_GAME)
+
+    elseif linkId == LinkCode.HappyFarm_Breed then--农场养殖
+        GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_HAPPYFARM_BREEDPANEL, param)
+    elseif linkId == LinkCode.HappyFarm_Task then--农场任务
+        GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_HAPPYFARM_TASKPANEL)
+    elseif linkId == LinkCode.HappyFarm_Warehouse then--农场仓库
+        GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_HAPPYFARM_FIELD, {tab = 2})
+    elseif linkId == LinkCode.HappyFarm_Shop then--农场养殖
+        GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_HAPPYFARM_SHOPPANEL)
+
+    elseif linkId == LinkCode.ThreeSheep then--痒了又痒
+        GameDispatcher:dispatchEvent(EventName.THREESHEEP_OPEN_STAGEMAINUI, {})
+    elseif linkId == LinkCode.ShootBrick then--打砖块
+        GameDispatcher:dispatchEvent(EventName.OPEN_SHOOTBRICK_STAGEPANEL, {})
+
     elseif linkId == LinkCode.DanKe then--蛋壳
         GameDispatcher:dispatchEvent(EventName.OPEN_DANKE_STAGEPANEL)
+    elseif linkId == LinkCode.PutImage then--拼图游戏
+        GameDispatcher:dispatchEvent(EventName.OPEN_PUTIMAGE_STAGEPANEL)
+    elseif linkId == LinkCode.Ranking then--排位游戏
+        GameDispatcher:dispatchEvent(EventName.OPEN_RANKING_STAGEPANEL)
+    elseif linkId == LinkCode.Block then--六边形方块游戏
+        GameDispatcher:dispatchEvent(EventName.OPEN_BLOCK_STAGEPANEL)
+    elseif linkId == LinkCode.PickGold then--捡金币
+        GameDispatcher:dispatchEvent(EventName.OPEN_PICKGOLD_STAGEPANEL)
+    elseif linkId == LinkCode.Linklink then--连连看游戏
+        GameDispatcher:dispatchEvent(EventName.LINKLINK_OPEN_STAGEMAINUI)
+    elseif linkId == LinkCode.Mole then--连连看游戏
+        GameDispatcher:dispatchEvent(EventName.OPEN_MOLE_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Watermelon then
+        GameDispatcher:dispatchEvent(EventName.OPEN_WATERMELON_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Dessert then
+        GameDispatcher:dispatchEvent(EventName.OPEN_DESSERT_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Build then
+        GameDispatcher:dispatchEvent(EventName.OPEN_BUILD_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Drop then
+        GameDispatcher:dispatchEvent(EventName.OPEN_DROP_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Bird then
+        GameDispatcher:dispatchEvent(EventName.OPEN_BIRD_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Split then
+        GameDispatcher:dispatchEvent(EventName.OPEN_SPLIT_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Ghost then
+        GameDispatcher:dispatchEvent(EventName.OPEN_GHOST_STAGEMAIN_UI)
+    elseif linkId == LinkCode.Bulle then
+        GameDispatcher:dispatchEvent(EventName.OPEN_BULLE_STAGEMAIN_UI)
     elseif linkId == LinkCode.MainActivitySign then--1.1主题活动-骑兵补给（签到）
         GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_SIGN_VIEW)
     elseif linkId == LinkCode.ActiveDup then -- 1.1副本
@@ -462,17 +611,35 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVEDUP_STAGE_PANEL, mainActivity.ActiveDupStyleType.Hard)
     elseif linkId == LinkCode.NoviceActivity then--新人活动
         GameDispatcher:dispatchEvent(EventName.OPEN_NOVICE_ACTIVITY_PANEL)
+    elseif linkId == LinkCode.NoviceRechargePanel then--新人活动 --累充
+        if not activity.ActivityManager:getNoviceActivityRechargeIsOpen() then
+            gs.Message.Show("活动已结束") -- 活动已结束
+            return
+        end
+        GameDispatcher:dispatchEvent(EventName.OPEN_NOVICE_ACTIVITY_PANEL, {type = noviceActivity.NoviceActivityConst.NOVICEACTIVITY_RECHARGE})
     elseif linkId == LinkCode.MainActivityShop then--1.1主题活动 商店
+        local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.Shop)
+        if activityVo:getTimeRemaining() <= 0 then
+            gs.Message.Show("活动已结束") -- 活动已结束
+            return
+        elseif not activityVo:getIsCanOpen() then
+            gs.Message.Show(activityVo:getLockDec()) -- 未到活动时间
+            return
+        end
+
         GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITYSHOP_PANEL)
     elseif linkId == LinkCode.MainActivityTask then--1.1主题活动 任务
         GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITYTASK_PANEL)
     elseif linkId == LinkCode.MainActivityTrial then--1.1主题活动 试玩
-        GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL)
+        local recruit_id = sysParam.SysParamManager:getValue(SysParamType.MAINACTIVITY_TRIAL_RECRUITID)
+        GameDispatcher:dispatchEvent(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL, {recruit_id = recruit_id})
     elseif linkId == LinkCode.MainActivityGameplay then--1.2 主题活动 鹿灵试炼
 
         GameDispatcher:dispatchEvent(EventName.OPEN_FIELDEXPLORATIONMAINUI, param)
     elseif linkId == LinkCode.Celebration then--周年庆
         GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL)
+    elseif linkId == LinkCode.CelebrationAccRechargeTwo then--周年庆-累充
+        GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.AccRechargeTwo})
     elseif linkId == LinkCode.NoviceRafflePanel then--周年庆-抽奖
         GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.Raffle})
     elseif linkId == LinkCode.CelebrationSsrOption then--周年庆-SSR月卡自选
@@ -481,6 +648,30 @@ function openLinkHandler(self, args)
         GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.Celebration_Task})
     elseif linkId == LinkCode.CelebrationAccRecharge then--周年庆典-庆典累充
         GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.AccRecharge})
+    elseif linkId == LinkCode.CelebrationRoundPrize then--周年庆典-庆典抽奖
+        local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.RoundPrize)
+        if activityVo:getTimeRemaining() <= 0 then
+            gs.Message.Show("活动已结束") -- 活动已结束
+            return
+        elseif not activityVo:getIsCanOpen() then
+            gs.Message.Show(activityVo:getLockDec()) -- 未到活动时间
+            return
+        end
+
+        -- GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.ROUNDPRIZE})
+        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL, {type = activity.ActivitySpecialSupplyConst.ROUNDPRIZE})
+    elseif linkId == LinkCode.CelebrationRoundPrizeTwo then--周年庆典-庆典抽奖
+        local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.RoundPrizeTwo)
+        if activityVo:getTimeRemaining() <= 0 then
+            gs.Message.Show("活动已结束") -- 活动已结束
+            return
+        elseif not activityVo:getIsCanOpen() then
+            gs.Message.Show(activityVo:getLockDec()) -- 未到活动时间
+            return
+        end
+
+        -- GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.ROUNDPRIZE})
+        GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL, {type = activity.ActivitySpecialSupplyConst.ROUNDPRIZE_TWO})
     elseif linkId == LinkCode.FESTIVAL then--周年庆典-七日签到
         GameDispatcher:dispatchEvent(EventName.OPEN_CELEBRATION_PANEL, {type = Celebration.CelebrationConst.WELFAREOPT_HOLIDAY})
     elseif linkId == LinkCode.MainActivityGameplayMap then--1.2 主题活动 鹿灵试炼地图
@@ -560,13 +751,63 @@ function openLinkHandler(self, args)
 
     elseif linkId == LinkCode.Seabed then
         GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAIN_PANEL)
+    elseif linkId == LinkCode.Vision then
+        GameDispatcher:dispatchEvent(EventName.OPEN_VISION_PANEL)
 
     elseif linkId == LinkCode.HeroPreview then
         GameDispatcher:dispatchEvent(EventName.OPEN_HERO_INTRODUCETIONPANEL, args.param)
     elseif linkId == LinkCode.HeroFashionShow then
         GameDispatcher:dispatchEvent(EventName.OPEN_SKIN_SHOW_VIEW, args.param)
     elseif linkId == LinkCode.TaptapAward then
-        GameDispatcher:dispatchEvent(EventName.OPEN_TAPTAP_AWARD_PANEL)
+        local url = "https://l.taptap.cn/pLauEiwE?channel=rep-rep_w9x8nxhit8g"
+        sdk.SdkManager:jumpBrowserWebView(url)
+        -- if param == nil then
+        --     param = {}
+        -- end
+        -- param.webUrl = url
+        -- GameDispatcher:dispatchEvent(EventName.OPEN_WEBVIEW,  param)
+        --GameDispatcher:dispatchEvent()
+        --GameDispatcher:dispatchEvent(EventName.OPEN_TAPTAP_AWARD_PANEL)
+    elseif linkId == LinkCode.GuildWar then
+        local isJoin = guild.GuildManager:getJoinGuilded()
+        if isJoin then
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Guild})
+            GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_MAIN_PANEL)
+        else
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Guild})
+        end
+    elseif linkId == LinkCode.ShopGuildWar then
+        local isJoin = guild.GuildManager:getJoinGuilded()
+        if isJoin then
+            GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.GUILDWAR})
+        else
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Guild})
+        end
+    elseif linkId == LinkCode.GuildWarTopShop   then
+        local isJoin = guild.GuildManager:getJoinGuilded()
+        if isJoin then
+            GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Shop, subType = ShopType.GUILDWARTOP})
+        else
+            GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.ShopGuildWar})
+        end
+    elseif linkId == LinkCode.GuildWarTopBet then
+        local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.GuildWarTopBet)
+        if activityVo:getIsCanOpen() then
+        -- local type = guildWar.GuildWarManager:getSeasonType()
+        -- if type == guildWar.GuildWarType.Top then
+            GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_GUILD_FINAL_PANEL)
+        else
+            gs.Message.Show(_TT(149220))
+        end
+    elseif linkId == LinkCode.DailyRecharge then
+        -- local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.DailyRecharge)
+        -- if activityVo:getIsCanOpen() then
+        -- local type = guildWar.GuildWarManager:getSeasonType()
+        -- if type == guildWar.GuildWarType.Top then
+            GameDispatcher:dispatchEvent(EventName.OPEN_DAILY_RECHARGE_PANEL)
+        -- else
+        --     gs.Message.Show(_TT(149220))
+        --end
     end
 
     if args.noGuide then
@@ -574,6 +815,9 @@ function openLinkHandler(self, args)
     end
     guide.GuideCondition:condition09(linkId)
     storyTalk.StoryTalkCondition:condition12(linkId)
+    if activity.ActitvityExtraManager:getIsLimitShopTypeParam(activity.LimitShopActivityType.View, linkId) then
+        GameDispatcher:dispatchEvent(EventName.REQ_OPEN_SOME_VIEW_UNLOCK_GIFT, {id = linkId})
+    end
 end
 
 return _M

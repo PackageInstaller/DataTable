@@ -38,7 +38,7 @@ function setData(self, param)
             
             self.mBtnStart:SetActive(true)
             self.mBtnCancel:SetActive(false)
-            self:setBtnLabel(self.mBtnStart, 0, "开始下载")
+            self:setBtnLabel(self.mBtnStart, 10000300, "开始下载")
             gs.TransQuick:SizeDelta01(self.mRectImgBar, 0)
 
         elseif(downloadedKbSize < downloadMaxKbSize)then
@@ -52,25 +52,25 @@ function setData(self, param)
             if (not download.ResDownLoadManager:isModuleAssetsDownloading(moduleTypeList)) then
                 self.mBtnStart:SetActive(true)
                 self.mBtnCancel:SetActive(false)
-                self:setBtnLabel(self.mBtnStart, 0, "继续下载")
+                self:setBtnLabel(self.mBtnStart, 10000302, "继续下载")
             else
                 self.mBtnStart:SetActive(false)
                 self.mBtnCancel:SetActive(true)
-                self:setBtnLabel(self.mBtnCancel, 0, "暂停下载")
+                self:setBtnLabel(self.mBtnCancel, 10000301, "暂停下载")
             end
             
         elseif(downloadedKbSize >= downloadMaxKbSize)then
             gs.TransQuick:SizeDelta01(self.mRectImgBar, self.mImgBarMaxWidth)
             if(movedCount < moveTotalCount)then
-                self.mTextTip.text = textContent .. " 请稍等，整理文件中：" .. movedCount .. "个/" .. moveTotalCount .. "个"
+                self.mTextTip.text = textContent .. _TT(10000304, movedCount, moveTotalCount)
             else
-                self.mTextTip.text = textContent .. " 下载资源成功"
+                self.mTextTip.text = textContent .. _TT(10000303)
             end
             self.mBtnStart:SetActive(false)
             self.mBtnCancel:SetActive(false)
         end
     else
-        self.mTextTip.text = textContent .. " 下载资源成功"
+        self.mTextTip.text = textContent .. _TT(10000303)
         gs.TransQuick:SizeDelta01(self.mRectImgBar, self.mImgBarMaxWidth)
         self.mBtnStart:SetActive(false)
         self.mBtnCancel:SetActive(false)
@@ -102,7 +102,8 @@ function onSubDownLoadMoveUpdateHandler(self, args)
         local moduleType = taskData.moduleTypeList[i]
         if(moduleType == self.data.module_type)then
             local textContent = self.data.tag_content
-            self.mTextTip.text = textContent .. " 请稍等，整理文件中：" .. taskData.movedCount .. "个/" .. taskData.moveTotalCount .. "个"
+            
+            self.mTextTip.text = textContent .. _TT(10000304, taskData.movedCount, taskData.moveTotalCount)
 
             self.mBtnStart:SetActive(false)
             self.mBtnCancel:SetActive(false)
@@ -117,7 +118,7 @@ function onSubDownLoadSuccessUpdateHandler(self, args)
         local moduleType = taskData.moduleTypeSuccessList[i]
         if(moduleType == self.data.module_type)then
             local textContent = self.data.tag_content
-            self.mTextTip.text = textContent .. " 下载资源成功"
+            self.mTextTip.text = textContent .. _TT(10000303)
 
             gs.TransQuick:SizeDelta01(self.mRectImgBar, self.mImgBarMaxWidth)
             self.mBtnStart:SetActive(false)
@@ -134,11 +135,11 @@ function onSubDownLoadFailUpdateHandler(self, args)
         local moduleType = taskData.moduleTypeFailList[i]
         if(moduleType == self.data.module_type)then
             local textContent = self.data.tag_content
-            self.mTextTip.text = textContent .. " 下载资源失败"
+            self.mTextTip.text = textContent .. _TT(10000319)
 
             self.mBtnStart:SetActive(true)
             self.mBtnCancel:SetActive(false)
-            self:setBtnLabel(self.mBtnStart, 0, "重新下载")
+            self:setBtnLabel(self.mBtnStart, 10000305, "重新下载")
             self.mCacheDownLoadedKbSize = 0
         end
     end
@@ -151,26 +152,26 @@ function onClickStartHandler(self)
 
     self.mBtnStart:SetActive(false)
     self.mBtnCancel:SetActive(true)
-    self:setBtnLabel(self.mBtnCancel, 0, "暂停下载")
+    self:setBtnLabel(self.mBtnCancel, 10000301, "暂停下载")
 end
 
 function onClickCancelHandler(self)
 	local moduleType = self.data.module_type
 	local result = download.ResDownLoadManager:cancelDownloadingModuleAssets(moduleType)
 	if(result == true)then
-		gs.Message.Show(self.data.tag_content .. "暂停下载成功")
+		gs.Message.Show(self.data.tag_content .. _TT(10000306))
 	end
 
     self.mBtnStart:SetActive(true)
     self.mBtnCancel:SetActive(false)
-    self:setBtnLabel(self.mBtnStart, 0, "继续下载")
+    self:setBtnLabel(self.mBtnStart, 10000302, "继续下载")
 end
 
 function onClickDelHandler(self)
 	local moduleType = self.data.module_type
 	local result = download.ResDownLoadManager:delDownloadedModuleAssets(moduleType)
 	if(result == true)then
-		gs.Message.Show(self.data.tag_content .. "删除下载成功")
+		gs.Message.Show(self.data.tag_content .. _TT(10000307))
 		local size = download.ResDownLoadManager:getModuleAssetsSize({moduleType})
 		local formatSize, unit = download.GetFormatSize(size)
         self.mTextTip.text = self.data.tag_content .. " " .. tostring(formatSize) .. unit .. ""

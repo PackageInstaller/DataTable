@@ -1,156 +1,58 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("KurskSPPtPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "KurskSPPtPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
-
-function var_0_1.OnFirstFlush(arg_1_0)
-	var_0_1.super.OnFirstFlush(arg_1_0)
-
-	onButton = var_1
-
-	local var_1_0 = arg_1_0
-	local var_1_1 = arg_1_0.battleBtn
-
-	local function var_1_2()
-		local var_2_0
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.battleBtn, function()
 		local var_2_1
-		local var_2_2 = arg_1_0.activity
+		local var_2_2 = arg_1_0.activity:getConfig("config_client").linkActID
 
-		if var_2.getConfig(var_2_2, "config_client").linkActID then
-			getProxy = var_2_5
-			ActivityProxy = var_2_2
-
-			local var_2_3 = var_2_5(var_2_2)
-
-			var_2_1 = var_2_5.getActivityById(var_2_3, var_0)
+		if var_2_2 then
+			var_2_1 = getProxy(ActivityProxy):getActivityById(var_2_2)
 		end
 
-		local var_2_5, var_2_6
-
-		if not var_0 then
-			local var_2_4 = arg_1_0
-
-			var_2_5 = var_2_5.emit
-			ActivityMediator = var_2_6
-			var_2_6 = var_2_6.EVENT_GO_SCENE
-			SCENE = var_2_10006
-
-			var_2_5(var_2_4, var_2_6, var_2_10006.BOSSRUSH_MAIN)
+		if not var_2_2 then
+			arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.BOSSRUSH_MAIN)
 		elseif var_2_1 and not var_2_1:isEnd() then
-			local var_2_7 = arg_1_0
-
-			var_2_5 = var_2_5.emit
-			ActivityMediator = var_2_6
-			var_2_6 = var_2_6.EVENT_GO_SCENE
-			SCENE = var_2_10006
-
-			var_2_5(var_2_7, var_2_6, var_2_10006.BOSSRUSH_MAIN)
+			arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.BOSSRUSH_MAIN)
 		else
-			pg = var_2_5
-
-			local var_2_8 = var_2_5.TipsMgr.GetInstance()
-			local var_2_9 = var_2.ShowTips
-
-			i18n = var_2_6
-
-			var_2_9(var_2_8, var_2_6("challenge_end_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_1_0, var_1_1, var_1_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_1_3 = arg_1_0
-	local var_1_4 = arg_1_0.bg
-	local var_1_5 = var_4.Find(var_1_4, "build_btn")
-
-	local function var_1_6()
-		local var_3_0
+	end, SFX_PANEL)
+	onButton(arg_1_0, arg_1_0.bg:Find("build_btn"), function()
 		local var_3_1
-		local var_3_2 = arg_1_0.activity
+		local var_3_2 = arg_1_0.activity:getConfig("config_client").linkActID
 
-		if var_2.getConfig(var_3_2, "config_client").linkActID then
-			getProxy = var_3_5
-			ActivityProxy = var_3_2
-
-			local var_3_3 = var_3_5(var_3_2)
-
-			var_3_1 = var_3_5.getActivityById(var_3_3, var_0)
+		if var_3_2 then
+			var_3_1 = getProxy(ActivityProxy):getActivityById(var_3_2)
 		end
 
-		local var_3_5, var_3_6
-
-		if not var_0 then
-			local var_3_4 = arg_1_0
-
-			var_3_5 = var_3_5.emit
-			ActivityMediator = var_3_6
-			var_3_6 = var_3_6.EVENT_GO_SCENE
-			SCENE = var_2_10006
-			var_2_10006 = var_2_10006.GETBOAT
-
-			local var_3_7 = {}
-
-			BuildShipScene = var_2_10008
-			var_3_7.page = var_2_10008.PAGE_BUILD
-			BuildShipScene = var_2_10008
-			var_3_7.projectName = var_2_10008.PROJECTS.ACTIVITY
-
-			var_3_5(var_3_4, var_3_6, var_2_10006, var_3_7)
+		if not var_3_2 then
+			arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+				page = BuildShipScene.PAGE_BUILD,
+				projectName = BuildShipScene.PROJECTS.ACTIVITY
+			})
 		elseif var_3_1 and not var_3_1:isEnd() then
-			local var_3_8 = arg_1_0
-
-			var_3_5 = var_3_5.emit
-			ActivityMediator = var_3_6
-			var_3_6 = var_3_6.EVENT_GO_SCENE
-			SCENE = var_2_10006
-
-			local var_3_9 = var_2_10006.GETBOAT
-			local var_3_10 = {}
-
-			BuildShipScene = var_2_10008
-			var_3_10.page = var_2_10008.PAGE_BUILD
-			BuildShipScene = var_8
-			var_3_10.projectName = var_8.PROJECTS.ACTIVITY
-
-			var_3_5(var_3_8, var_3_6, var_3_9, var_3_10)
+			arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+				page = BuildShipScene.PAGE_BUILD,
+				projectName = BuildShipScene.PROJECTS.ACTIVITY
+			})
 		else
-			pg = var_3_5
-
-			local var_3_11 = var_3_5.TipsMgr.GetInstance()
-			local var_3_12 = var_2.ShowTips
-
-			i18n = var_3_6
-
-			var_3_12(var_3_11, var_3_6("challenge_end_tip"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("challenge_end_tip"))
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_4
-
-	var_1(var_1_3, var_1_5, var_1_6, var_1_4)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_4_0)
-	var_0_1.super.OnUpdateFlush(arg_4_0)
-
-	setActive = var_1
-
-	var_1(arg_4_0.battleBtn, true)
+function var_0_0.OnUpdateFlush(arg_4_0)
+	var_0_0.super.OnUpdateFlush(arg_4_0)
+	setActive(arg_4_0.battleBtn, true)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -19,7 +19,7 @@ function initData(self)
     self.mDelayUpdate = nil
     self.mDelayLvUpCost = nil
     self.isUpdate = false
-   
+    self.mLvlUpAttrList={}
 end
 
 function configUI(self)
@@ -69,6 +69,10 @@ function configUI(self)
         table.insert(self.mStartGroup, self:getChildGO("mStart" .. i):GetComponent(ty.Image))
     end
     self.mBtnRankUp = self:getChildGO("mBtnRankUp")
+
+    self.mBtnResetExp = self:getChildGO("mBtnResetExp")
+    self.mTxtResetExp = self:getChildGO("mTxtResetExp"):GetComponent(ty.Text)
+    self.mBtnChangeName = self:getChildGO("mBtnChangeName")
 end
 
 function active(self, args)
@@ -127,6 +131,10 @@ function deActive(self)
     self:recyAllItem()
     self:removeActionTextSn()
     self:removeAllDelay()
+
+    -- self:recyLvlUpItem()
+    -- self:recyLvlUpAttrList()
+
     hero.HeroController:stopCurPlayCVData()
     self.isUpdate = false
 end
@@ -156,6 +164,8 @@ function initViewText(self)
     
     self:setBtnLabel(self.mBtnLvlUp, 1106, "升级")
     self:setBtnLabel(self.mBtnAward, 48131, "训练目标")
+
+    self.mTxtResetExp.text = _TT(4238)
 end
 
 function addAllUIEvent(self)
@@ -165,6 +175,24 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnEle, self.onOpenEleTip)
     self:addUIEvent(self.NameGroup, self.onOpenFightTip)
     self:addUIEvent(self.mBtnRankUp, self.onOpenRankUp)
+
+    self:addUIEvent(self.mBtnResetExp, self.onClickBtnResetExpHandler)
+    self:addUIEvent(self.mBtnChangeName, self.onClickBtnChangeNameHandler)
+    
+end
+
+function onClickBtnChangeNameHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_MARRIAGE_RENAME_VIEW, { heroId = self.mCurHeroId })
+end
+
+function onClickBtnResetExpHandler(self)
+    if self.mCurHeroVo.lvl <= 1 then
+        gs.Message.Show(_TT(53707))
+        return
+    end
+    GameDispatcher:dispatchEvent(EventName.REQ_CS_RESET_HERO_LV_PRE_VIEW, {
+        hero_id = self.mCurHeroVo.id
+    })
 end
 
 -- 选择快速升级
@@ -461,7 +489,7 @@ function updateView(self)
     self.mIconFight:SetImg(UrlManager:getHeroJobSmallIconUrl(self.mCurHeroVo.professionType), false)
     self.mTxtFight.text = hero.getProfessionName(self.mCurHeroVo.professionType)
     self.mTxtDefineType.text = hero.getDefineName(self.mCurHeroVo.defineType)
-    self.mTxtName.text = self.mCurHeroVo.name
+    self.mTxtName.text = self.mCurHeroVo:getHeroName()
     local initialStar = self.mCurHeroVo.evolutionLvl and self.mCurHeroVo.evolutionLvl or 0
     for i = 1, 6 do
         local color = "5c697aff"
@@ -480,10 +508,12 @@ function updateView(self)
 
     self.mBtnRankUp:SetActive(false)
     self.mBtnLvlUp:SetActive(true)
+    local maxMilitaryRank = hero.HeroMilitaryRankManager:getMaxMilitaryRankLvl(self.mCurHeroVo.tid)
+    local isMaxMilitaryRank = self.mCurHeroVo.militaryRank >= maxMilitaryRank
+
     if (self.mCurHeroVo.lvl >= self.mCurHeroVo:getMaxMilitaryLvl()) then
         self:onClickLvlUpCancelHandler()
-        local maxMilitaryRank = hero.HeroMilitaryRankManager:getMaxMilitaryRankLvl(self.mCurHeroVo.tid)
-        if (self.mCurHeroVo.militaryRank >= maxMilitaryRank) then -- 军阶已满，且英雄已经升级到最大级了
+        if (isMaxMilitaryRank) then -- 军阶已满，且英雄已经升级到最大级了
             self.mTxtMax:SetActive(true)
             self.mGroupDoLvlUp:SetActive(false)
             self.mGroupMaxLvl:SetActive(true)
@@ -510,7 +540,109 @@ function updateView(self)
         self.mDelayUpdate = nil
     end
     self:updateLvlUpBubbleView()
+    --self:updateLvlUpHandler()
+
+    self.mBtnResetExp:SetActive(not isMaxMilitaryRank)
+
+    self.mBtnChangeName:SetActive(self.mCurHeroVo.isPromise == 1)
 end
+
+-- function recyLvlUpAttrList(self)
+--     if (self.mLvlUpAttrList) then
+--         for k, item in pairs(self.mLvlUpAttrList) do
+--             item:destroy()
+--             item:poolRecover()
+--             item=nil
+--         end
+--     end
+--     self.mLvlUpAttrList = {}
+--     if self.mLvlUpUsingItemList then
+--         for i = 1, #self.mLvlUpUsingItemList do
+--             local item = self.mLvlUpUsingItemList[i]
+--             item:poolRecover()
+--             item=nil
+--         end
+--     end
+
+--     self.mLvlUpUsingItemList={}
+-- end
+
+-- function recyLvlUpItem(self)
+--     if (self.mLvlUpItemDic) then
+--         for _, item in pairs(self.mLvlUpItemDic) do
+--             local event=item:getChildGO("mBtnAdd"):GetComponent(ty.LongPressOrClickEventTrigger)
+--             event.onPointerUp:RemoveAllListeners()
+--             event.onLongPress:RemoveAllListeners()
+--             item:poolRecover()
+--             item=nil
+--         end
+--     end
+--     self.mLvlUpItemDic = {}
+-- end
+
+--function updateLvlUpHandler(self)
+--     self:recyLvlUpAttrList()
+--     self:recyLvlUpItem()
+--     --self:resetNumHandler()
+--     --self.mTxtShowAddExp.text=""
+--     local curExp = self.mCurHeroVo.exp
+--     local list={ AttConst.HP_MAX, AttConst.ATTACK, AttConst.DEFENSE}
+
+--    for i = 1, #list do
+--        local attrKey = self.showAttrList[i]
+--        if (self.mCurHeroVo.attrDic[attrKey]) then
+--            local addValueVo = hero.HeroLvlUpManager:getHeroLvlUpAddAllValue(self.mCurHeroVo,self.mCurHeroVo.lvl,attrKey)
+--            addValueVo.value=self.mCurHeroVo.basicAttrDic[attrKey]+addValueVo.value
+--            local item =self.mLvlUpAttrList[attrKey] or hero.HeroLvlUpAttrItem:poolGet()
+--            item:setData(i, addValueVo,i, true,addValueVo)
+--            item:setParent(self.mLvUpAttrTrans)
+--            self.mLvlUpAttrList[attrKey]=item
+--        end
+--    end
+--     --local needNumDic,costTidDic = hero.HeroLvlUpManager:getLvlUpMaxInfo(self.mCurHeroVo)
+--     local costTidDic = hero.HeroLvlUpManager:getLvlUpCostDic()
+--     for i, tid in pairs(costTidDic) do
+--         if not  self.mNumChangeDic[tid] then
+--             self.mNumChangeDic[tid]=0  
+--         end
+--         local item=SimpleInsItem:create(self.mExpendItem, self.mItemTrans, "LvlUpExpendItem"..i)
+--         local propsGrid=PropsGrid:createByData({ tid = tid, num = 0, parent = item:getChildTrans("mTrans"), scale = 1, showUseInTip = true })
+--         table.insert(self.mLvlUpUsingItemList,propsGrid)
+--         item:getChildGO("mTxtNum"):GetComponent(ty.Text).text = _TT(45013,self.mNumChangeDic[tid],MoneyUtil.getMoneyCountByTid(tid))
+--         item:getChildGO("mBtnReduce"):SetActive(false)
+--         local curAddExp=hero.HeroLvlUpManager:getCurAddExp(self.mNumChangeDic)
+--         local _,isMax=hero.HeroLvlUpManager:getCurLvStateByExp(self.mCurHeroVo,curAddExp)
+--         local isCanClick = self.mNumChangeDic[tid]<MoneyUtil.getMoneyCountByTid(tid) and MoneyUtil.getMoneyCountByTid(tid)>0 and not isMax
+--         item:getChildGO("mBtnAdd"):SetActive(isCanClick)
+--         local function onLongClick()
+--             if not self.mTimeSn then
+--                 self.mTimeSn = LoopManager:addTimer(0.3,0,self,function()
+--                     self:onClickHanlder(tid)
+--                 end)
+--             end
+--         end
+--         local function onClear()
+--             self:onClearTime()
+--         end
+--         local event=item:getChildGO("mBtnAdd"):GetComponent(ty.LongPressOrClickEventTrigger)
+--         event.onLongPress:AddListener(onLongClick)
+--         event.onPointerUp:AddListener(onClear)
+--         item:addUIEvent("mBtnAdd",function ()
+--             self:onClickHanlder(tid)
+--         end)
+--         item:addUIEvent("mBtnReduce",function ()
+--             if self.mNumChangeDic[tid]>0 then
+--                 self.mNumChangeDic[tid]=self.mNumChangeDic[tid]-1
+--                 self:updateShowInfo(tid)
+--             end
+--         end)
+--         self.mLvlUpItemDic[tid]=item
+--     end
+--     self.mTxtLvUpLvl.text = _TT(102001).." "..HtmlUtil:colorAndSize(self.mCurHeroVo.lvl, "ffffffff", 28)
+--     self.mTxtLvUpExpPro.text = _TT(45013,curExp,self.mCurHeroVo.maxExp)
+--     self.mLvUpBar.fillAmount = curExp / self.mCurHeroVo.maxExp
+--     self.mLvUpAddBar.fillAmount = curExp / self.mCurHeroVo.maxExp
+--end
 
 function recoverMilitaryAddAttrList(self)
     if (self.mMilitaryAddAttrList) then

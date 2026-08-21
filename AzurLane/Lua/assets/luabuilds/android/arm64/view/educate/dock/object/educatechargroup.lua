@@ -1,23 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("EducateCharGroup")
+﻿local var_0_0 = class("EducateCharGroup")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1
-	pg = var_1_10002
-
-	local var_1_0 = var_1_10002.secretary_special_ship.get_id_list_by_group[arg_1_1]
-
 	arg_1_0.charIdList = {}
-	ipairs = var_3
 
-	for iter_1_0, iter_1_1 in var_3(var_1_0) do
-		pg = var_1_10008
-
-		if var_1_10008.secretary_special_ship[iter_1_1].secrerary_show == 1 then
-			table = var_1_10008
-
-			var_1_10008.insert(arg_1_0.charIdList, iter_1_1)
+	for iter_1_0, iter_1_1 in ipairs(pg.secretary_special_ship.get_id_list_by_group[arg_1_1]) do
+		if pg.secretary_special_ship[iter_1_1].secrerary_show == 1 then
+			table.insert(arg_1_0.charIdList, iter_1_1)
 		end
 	end
 
@@ -25,11 +14,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.GetSortWeight(arg_2_0)
-	local var_2_0 = arg_2_0:GetShowId()
-
-	pg = var_1_10002
-
-	return var_1_10002.secretary_special_ship[var_2_0].type
+	return pg.secretary_special_ship[arg_2_0:GetShowId()].type
 end
 
 function var_0_0.GetCharIdList(arg_3_0)
@@ -37,112 +22,64 @@ function var_0_0.GetCharIdList(arg_3_0)
 end
 
 function var_0_0.GetTitle(arg_4_0)
-	local var_4_0 = arg_4_0:GetShowId()
-
-	pg = var_1_10002
-
-	if var_1_10002.secretary_special_ship[var_4_0].genghuan_word == 1 then
-		i18n = var_2
-
-		return var_2("secretary_special_title_age")
+	if pg.secretary_special_ship[arg_4_0:GetShowId()].genghuan_word == 1 then
+		return i18n("secretary_special_title_age")
 	else
-		i18n = var_2
-
-		return var_2("secretary_special_title_physiognomy")
+		return i18n("secretary_special_title_physiognomy")
 	end
 
 	return
 end
 
 function var_0_0.GetUnlockDesc(arg_5_0)
-	local var_5_0 = arg_5_0:GetShowId()
-
-	pg = var_1_10002
-
-	return var_1_10002.secretary_special_ship[var_5_0].unlock_desc
+	return pg.secretary_special_ship[arg_5_0:GetShowId()].unlock_desc
 end
 
 function var_0_0.GetSpriteName(arg_6_0)
-	local var_6_0 = arg_6_0:GetShowId()
-
-	pg = var_1_10002
-
-	local var_6_1 = var_1_10002.secretary_special_ship[var_6_0].type
-
-	return "label_" .. var_6_1
+	return "label_" .. pg.secretary_special_ship[arg_6_0:GetShowId()].type
 end
 
 function var_0_0.GetShowId(arg_7_0)
-	_ = var_1_10001
-
-	return (var_1_10001.detect(arg_7_0.charIdList, function(arg_8_0)
-		pg = var_2_10001
-
-		return var_2_10001.secretary_special_ship[arg_8_0].type ~= 0
+	return (_.detect(arg_7_0.charIdList, function(arg_8_0)
+		return pg.secretary_special_ship[arg_8_0].type ~= 0
 	end))
 end
 
 function var_0_0.IsSp(arg_9_0)
-	pg = var_1_10001
-
-	local var_9_0 = var_1_10001.secretary_special_ship[arg_9_0:GetShowId()].type
-
-	EducateConst = var_2
-
-	return var_9_0 == var_2.SECRETARY_TYPE_SP
+	return pg.secretary_special_ship[arg_9_0:GetShowId()].type == EducateConst.SECRETARY_TYPE_SP
 end
 
 function var_0_0.GetShowPainting(arg_10_0)
 	local var_10_0 = arg_10_0:GetShowId()
 
-	assert = var_1_10002
+	assert(var_10_0)
 
-	var_1_10002(var_10_0)
-
-	pg = var_1_10002
-
-	return var_1_10002.secretary_special_ship[var_10_0].painting
+	return pg.secretary_special_ship[var_10_0].painting
 end
 
 function var_0_0.IsSelected(arg_11_0, arg_11_1)
-	_ = var_1_10002
-
-	return var_1_10002.any(arg_11_0.charIdList, function(arg_12_0)
+	return _.any(arg_11_0.charIdList, function(arg_12_0)
 		return arg_11_1 == arg_12_0
 	end)
 end
 
 function var_0_0.IsLock(arg_13_0)
-	NewEducateHelper = var_1_10001
+	local var_13_0 = {}
 
-	local var_13_0 = var_1_10001.GetAllUnlockSecretaryIds()
-	local var_13_1 = {}
-
-	ipairs = var_1_10003
-
-	for iter_13_0, iter_13_1 in var_1_10003(var_13_0) do
-		var_13_1[iter_13_1] = true
+	for iter_13_0, iter_13_1 in ipairs((NewEducateHelper.GetAllUnlockSecretaryIds())) do
+		({})[iter_13_1] = true
 	end
 
-	_ = var_3
-
-	return var_3.all(arg_13_0.charIdList, function(arg_14_0)
-		return not var_13_1[arg_14_0]
+	return _.all(arg_13_0.charIdList, function(arg_14_0)
+		return not var_13_0[arg_14_0]
 	end)
 end
 
 function var_0_0.ShouldTip(arg_15_0)
-	getProxy = var_1_10001
-	SettingsProxy = var_1_10003
+	local var_15_0 = getProxy(SettingsProxy)
 
-	local var_15_0 = var_1_10001(var_1_10003)
-
-	_ = var_1_10002
-
-	return var_1_10002.any(arg_15_0.charIdList, function(arg_16_0)
-		local var_16_0 = var_15_0
-
-		return var_1._ShouldEducateCharTip(var_16_0, arg_16_0)
+	return _.any(arg_15_0.charIdList, function(arg_16_0)
+		return var_15_0:_ShouldEducateCharTip(arg_16_0)
 	end)
 end
 

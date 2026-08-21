@@ -40,6 +40,7 @@ function setData(self, liveVo, callBack)
     self:playAction(fight.FightDef.ACT_STAND)
     local finishCall = function(beSuccess, live)
         self:setMaterial()
+        self:setAutoCameraNode(live)
         if callBack then
             callBack(beSuccess, live)
         end
@@ -56,15 +57,52 @@ function setWeaponData(self, modelId, showWeaponSn)
         self:setWeaponLoadFightAni(true)
         showWeaponSn = showWeaponSn or 1
         local wpath = UrlManager:getWeaponPath(string.format("%s_wq_%02d/model%s_wq_%02d.prefab", modelId, showWeaponSn, modelId, showWeaponSn))
-        self:addWeapon(wpath, sRo:getWeaponNode())
+        self:addWeapon(wpath, sRo:getWeaponNode(), true)
     end
+end
+
+-- 设置战斗中角色镜头挂点
+function setAutoCameraNode(self, live)
+    if self.mCameraRT == nil then
+        self.mCameraRT = gs.GameObject()
+        self.mCameraRTTrans = self.mCameraRT.transform
+        self.mCameraRTTrans:SetParent(self.m_trans, false)
+        gs.TransQuick:Rotate(self.mCameraRTTrans, 0, -25, 0)
+
+    end
+    local rtName = string.match(self.m_prefabName, "model%d*") .. "CameraRT"
+    self.mCameraRT.name = rtName
+
+    if self.mCameraDT == nil then
+        self.mCameraDT = gs.GameObject()
+        self.mCameraDTTrans = self.mCameraDT.transform
+        gs.TransQuick:SetParentOrg(self.mCameraDTTrans, self.mCameraRTTrans)
+        gs.TransQuick:LPos(self.mCameraDTTrans, 0, 1.5, -3)
+        gs.TransQuick:Rotate(self.mCameraDTTrans, 0, 0, 0)
+    end
+    local dtName = string.match(self.m_prefabName, "model%d*") .. "CameraDT"
+    self.mCameraDT.name = dtName
+
+    if self.mCameraFT == nil then
+        self.mCameraFT = gs.GameObject()
+        self.mCameraFTTrans = self.mCameraFT.transform
+        gs.TransQuick:SetParentOrg(self.mCameraFTTrans, self.mCameraDTTrans)
+        gs.TransQuick:LPos(self.mCameraFTTrans, 0, 0, 0)
+        gs.TransQuick:Rotate(self.mCameraFTTrans, 0, 0, 0)
+    end
+    local ftName = string.match(self.m_prefabName, "model%d*") .. "CameraFT"
+    self.mCameraFT.name = ftName
+
+    self.m_points[fight.FightDef.POINT_CAMERA_RT] = gs.GoUtil.FindNameInChilds(self:getTrans(), rtName)
+    self.m_points[fight.FightDef.POINT_CAMERA_DT] = gs.GoUtil.FindNameInChilds(self:getTrans(), dtName)
+    self.m_points[fight.FightDef.POINT_CAMERA_FT] = gs.GoUtil.FindNameInChilds(self:getTrans(), ftName)
 end
 
 -- 设置替换的材质球
 function setMaterial(self)
     local fashionColorVo = fashion.FashionManager:getFasionColorVo(self.m_liveVo.tid, self.m_liveVo.m_fashionId, self.m_liveVo.m_fashionColorId)
     if fashionColorVo then
-        self:updateMaterial(fashionColorVo.posList, fashionColorVo.materials)
+        self:updateMaterial(fashionColorVo.posList, fashionColorVo.materials, fashionColorVo.dissolves, fashionColorVo.posY)
     end
 end
 
@@ -142,7 +180,7 @@ function justChangeAppearance(self, liveVo, finishCall)
         if sRo then
             local showWeaponSn = 1
             local wpath = UrlManager:getWeaponPath(string.format("%s_wq_%02d/model%s_wq_%02d.prefab", liveVo:getModelID(), showWeaponSn, liveVo:getModelID(), showWeaponSn))
-            self:addWeapon(wpath, sRo:getWeaponNode())
+            self:addWeapon(wpath, sRo:getWeaponNode(), true)
         end
     end
 end
@@ -151,6 +189,11 @@ function _afterLoad(self)
     super._afterLoad(self)
     if self.m_liveVo:getRaceVo().monType == monster.MonsterType.SUPER_BOSS then
         -- 超级boss不显示头顶血条
+        return
+    end
+
+    if self.m_liveVo:getRaceVo().monType == monster.MonsterType.NO_HP_MONSTER then
+        -- 不显示头顶血条的怪物
         return
     end
 
@@ -188,6 +231,7 @@ function addEvent(self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_UPATE_ANI_BOOLVAL, self.updateAniBoolVal, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_UPATE_ANI_TRIGGERVAL, self.updateAniTriggerVal, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_VISIBLE, self.setVisible, self)
+    self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_VISIBLE_BY_SCALE, self.setVisibleByScale, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_VISIBLE_BY_CAMERA, self.setVisibleByCamera, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_TRANPARENCY, self.setTranparency, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_UPDATE_SCALE, self.onUpdateScale, self)
@@ -197,6 +241,8 @@ function addEvent(self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_ANIMAT_OTHER_BIND, self.onUpdateOtherAniClipBind, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_CHANGE_WEEK_EFFECT, self.setIsWeekEnable, self)
     self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_CHANGE_MODEL_HIT, self.setIsHitModel, self)
+    self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_CHANGE_MODEL_WING, self.setIsShowModelWing, self)
+    -- self.m_liveVo:addEventListener(fight.LivethingVo.EVENT_CHANGE_EXIT_BATTLE, self.setExitBattle, self)
 end
 
 function removeEvent(self)
@@ -209,6 +255,7 @@ function removeEvent(self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_UPATE_ANI_BOOLVAL, self.updateAniBoolVal, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_UPATE_ANI_TRIGGERVAL, self.updateAniTriggerVal, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_VISIBLE, self.setVisible, self)
+    self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_VISIBLE_BY_SCALE, self.setVisibleByScale, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_VISIBLE_BY_CAMERA, self.setVisibleByCamera, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_TRANPARENCY, self.setTranparency, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_UPDATE_SCALE, self.onUpdateScale, self)
@@ -218,6 +265,8 @@ function removeEvent(self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_ANIMAT_OTHER_BIND, self.onUpdateOtherAniClipBind, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_CHANGE_WEEK_EFFECT, self.setIsWeekEnable, self)
     self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_CHANGE_MODEL_HIT, self.setIsHitModel, self)
+    self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_CHANGE_MODEL_WING, self.setIsShowModelWing, self)
+    -- self.m_liveVo:removeEventListener(fight.LivethingVo.EVENT_CHANGE_EXIT_BATTLE, self.setExitBattle, self)
 end
 
 function onAliveEvent(self)
@@ -237,7 +286,7 @@ function onUpdateAction(self, data)
 end
 
 function onAniTransCond(self, data)
-    self:playActionTrigger(data[1], data[2], data[3])
+    self:playActionTrigger(data[1], data[2], data[3], nil, data[4])
 end
 
 function updateAniBoolVal(self, data)
@@ -251,6 +300,9 @@ end
 -- 绑定非预设绑定的动作片段
 function onUpdateOtherAniClipBind(self, data)
     self:setOtherAniClipBind(data[1], data[2], data[3])
+    for _, weaponLive in ipairs(self.m_weaponList) do
+        weaponLive:setOtherAniClipBind(data[1], data[2], data[3])
+    end
 end
 
 function getHeadArea(self)
@@ -302,11 +354,45 @@ function showWeakBreak(self, type)
 end
 
 -- 设置是否显示
-function setVisible(self, beVisible)
+function setVisible(self, beVisible, unHitEff)
+    if beVisible == false then
+        for key, _ in pairs(self.m_liveVo:getTravelSns()) do
+            -- 先移除身上的战斗特效，避免特效被改变layer
+            STravelHandle:endTravel(key)
+        end
+        self.m_liveVo:clearTravelSns()
+
+        if unHitEff ~= true then
+            -- 奥义隐藏所有buff特效
+            BuffEftHandler:hideAllEft(self.m_liveVo.id)
+        end
+    end
+
+    local tempVisible = self.m_isVisible
     if self.m_isHitModelEnable and beVisible then
         -- 机制隐藏状态，不给显示
-        return
+    else
+        super.setVisible(self, beVisible)
     end
+
+
+    if tempVisible == false and beVisible == true and unHitEff ~= true then
+        -- 恢复奥义隐藏的特效
+        BuffEftHandler:showAllEft(self.m_liveVo.id)
+    end
+    if self.m_headArea then
+        if beVisible == false then
+            self.m_headArea:setVisibleByScale(beVisible)
+        else
+            if self.m_headVisible == true then
+                self.m_headArea:setVisibleByScale(true)
+            end
+        end
+    end
+end
+
+-- 通过缩放设置是否显示，用于放逐等不需要有特效保留显示的方式
+function setVisibleByScale(self, beVisible)
     if beVisible == false then
         for key, _ in pairs(self.m_liveVo:getTravelSns()) do
             -- 先移除身上的战斗特效，避免特效被改变layer
@@ -315,7 +401,12 @@ function setVisible(self, beVisible)
         self.m_liveVo:clearTravelSns()
     end
 
-    super.setVisible(self, beVisible)
+    if beVisible then
+        gs.TransQuick:Scale(self.m_modelTrans, 1, 1, 1)
+    else
+        gs.TransQuick:Scale(self.m_modelTrans, 0, 0, 0)
+    end
+
     if self.m_headArea then
         if beVisible == false then
             self.m_headArea:setVisibleByScale(beVisible)
@@ -382,13 +473,37 @@ function setIsWeekEnable(self, isEnable)
     super.setIsWeekEnable(self, isEnable)
 end
 
--- 进入隐藏模型状态（可能是雷遁，可能是放逐等）
+-- 进入隐藏模型状态（雷遁，场景上会保留特效）
 function setIsHitModel(self, isEnable)
     if self.m_isHitModelEnable == isEnable then
         return
     end
     self.m_isHitModelEnable = isEnable
-    self:setVisible(not isEnable)
+    if isEnable then
+        self.m_liveVo:updateAni(fight.FightDef.ACT_DIE)
+    end
+    self:setVisible(not isEnable, true)
+end
+
+-- 放逐、附身 模型退出战场效果（可能是放逐和附身，完全消失）
+function setExitBattle(self, isEnable)
+    if self.m_isExitBattle == isEnable then
+        return
+    end
+    self.m_isExitBattle = isEnable
+    self:setVisibleByScale(not isEnable)
+end
+
+-- 泽菲琳是否显示翅膀
+function setIsShowModelWing(self, isEnable)
+    if self.m_isShowModelWingEnable == isEnable then
+        return
+    end
+    self.m_isShowModelWingEnable = isEnable
+
+    if self.m_modelTrans and self.m_modelTrans:Find("chibang_R") then
+        self.m_modelTrans:Find("chibang_R").gameObject:SetActive(isEnable)
+    end
 end
 
 -- 设置景深渲染顺序

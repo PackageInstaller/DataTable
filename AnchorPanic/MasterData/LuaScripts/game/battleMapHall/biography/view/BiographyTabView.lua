@@ -9,7 +9,7 @@ function ctor(self)
 end
 
 function initData(self)
-    self.mAttrList = {_TT(81056), _TT(81052), _TT(81051), _TT(81053), _TT(81054), _TT(81055)}
+    self.mAttrList = {_TT(81056), _TT(81052), _TT(81051), _TT(81053), _TT(81054), _TT(81055),_TT(81075)}
     self.cusAttrType = 0
     self.attrMenuItem = {}
 end
@@ -83,7 +83,7 @@ end
 
 function sortAttr(self)
     self:recoverAttrMenuItem()
-    for i=1, 6 do 
+    for i=1, 7 do 
         local item = SimpleInsItem:create(self.mAttrMenu, self.mGroup, "AttrMenuItem")
         item:getChildGO("mTxtAttr"):GetComponent(ty.Text).text = self.mAttrList[i]
         item:getChildGO("mImgAttr"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath("biography/img_icon_0"..i..".png"))

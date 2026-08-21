@@ -240,6 +240,7 @@ function getArenaHellResultData(self, index)
             return self.statistic[i]
         end
     end
+    return nil
 end
 
 

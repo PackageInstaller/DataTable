@@ -1,61 +1,27 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateNextPlanCommand", pm.SimpleCommand)
 
-local var_0_0 = "NewEducateNextPlanCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.rePlay
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.rePlay
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 29042, {
-		id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(29042, {
+		id = var_1_0.id
 	}, 29043, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			NewEducateProxy = var_2_10003
+			local var_2_0 = getProxy(NewEducateProxy):GetCurChar():GetFSM()
 
-			local var_2_0 = var_1(var_2_10003)
-			local var_2_1 = var_1.GetCurChar(var_2_0)
-			local var_2_2 = var_1.GetFSM(var_2_1)
+			var_2_0:SetCurNode(arg_2_0.first_node)
 
-			var_1.SetCurNode(var_2_2, arg_2_0.first_node)
+			local var_2_1 = var_2_0:GetState(NewEducateFSM.SYSTEM.PLAN)
 
-			local var_2_3 = var_1
-			local var_2_4 = var_1.GetState
-
-			NewEducateFSM = var_5
-
-			local var_2_5 = var_2_4(var_2_3, var_5.SYSTEM.PLAN)
-
-			var_2.SetNextPlanIdx(var_2_5)
-
-			NewEducateDropHelper = var_3
-
-			local var_2_6 = var_3.HandleDrops(arg_2_0.drop)
-			local var_2_7 = var_2:GetCurIdx() == var_2:GetIdxList()[1]
-			local var_2_8 = arg_1_0
-			local var_2_9 = var_5.sendNotification
-
-			GAME = var_2_10008
-
-			var_2_9(var_2_8, var_2_10008.NEW_EDUCATE_NEXT_PLAN_DONE, {
-				drops = var_2_6,
+			var_2_1:SetNextPlanIdx()
+			arg_1_0:sendNotification(GAME.NEW_EDUCATE_NEXT_PLAN_DONE, {
+				drops = NewEducateDropHelper.HandleDrops(arg_2_0.drop),
 				node = arg_2_0.first_node,
-				isFristNode = var_2_7 or var_1_1
+				isFristNode = var_2_1:GetCurIdx() == var_2_1:GetIdxList()[1] or var_1_1
 			})
 		else
-			pg = var_1
-
-			local var_2_10 = var_1.TipsMgr.GetInstance()
-
-			var_1.ShowTips(var_2_10, "NewEducate_NextPlan: " .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("NewEducate_NextPlan: " .. arg_2_0.result)
 		end
 
 		return
@@ -64,4 +30,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

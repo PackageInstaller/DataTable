@@ -1,159 +1,59 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DexiV6FramePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-local var_0_0 = "DexiV6FramePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.NewFrameTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.battleBtn = var_1.Find(var_1_1, "battle_btn")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.getBtn = var_1.Find(var_1_2, "get_btn")
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.gotBtn = var_1.Find(var_1_3, "got_btn")
-
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0.switchBtn = var_1.Find(var_1_4, "AD/switch_btn")
-
-	local var_1_5 = {}
-	local var_1_6 = arg_1_0._tf
-
-	var_1_5[1] = var_2.Find(var_1_6, "AD/switcher/phase1")
-
-	local var_1_7 = arg_1_0._tf
-
-	var_1_5[2] = var_2.Find(var_1_7, "AD/switcher/phase2")
-	arg_1_0.phases = var_1_5
-
-	local var_1_8 = arg_1_0._tf
-
-	arg_1_0.bar = var_1.Find(var_1_8, "AD/switcher/phase2/Image/barContent/bar")
-
-	local var_1_9 = arg_1_0._tf
-
-	arg_1_0.cur = var_1.Find(var_1_9, "AD/switcher/phase2/Image/step")
-
-	local var_1_10 = arg_1_0._tf
-
-	arg_1_0.gotTag = var_1.Find(var_1_10, "AD/switcher/phase2/Image/got")
-
-	local var_1_11 = arg_1_0._tf
-
-	arg_1_0.getTag = var_1.Find(var_1_11, "AD/switcher/phase2/Image/get")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.battleBtn = arg_1_0.bg:Find("battle_btn")
+	arg_1_0.getBtn = arg_1_0.bg:Find("get_btn")
+	arg_1_0.gotBtn = arg_1_0.bg:Find("got_btn")
+	arg_1_0.switchBtn = arg_1_0._tf:Find("AD/switch_btn")
+	arg_1_0.phases = {
+		arg_1_0._tf:Find("AD/switcher/phase1"),
+		arg_1_0._tf:Find("AD/switcher/phase2")
+	}
+	arg_1_0.bar = arg_1_0._tf:Find("AD/switcher/phase2/Image/barContent/bar")
+	arg_1_0.cur = arg_1_0._tf:Find("AD/switcher/phase2/Image/step")
+	arg_1_0.gotTag = arg_1_0._tf:Find("AD/switcher/phase2/Image/got")
+	arg_1_0.getTag = arg_1_0._tf:Find("AD/switcher/phase2/Image/get")
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_2_0)
+function var_0_0.OnUpdateFlush(arg_2_0)
 	local var_2_0 = arg_2_0.activity.data1
+	local var_2_1 = arg_2_0.avatarConfig.target
 
-	var_2_0 = arg_2_0.avatarConfig.target < var_2_0 and var_2 or var_2_0
+	var_2_0 = arg_2_0.avatarConfig.target < arg_2_0.activity.data1 and var_2_1 or var_2_0
 
-	local var_2_1 = var_2_0 / var_2
+	local var_2_2 = var_2_0 / var_2_1
+	local var_2_3 = var_2_0 / var_2_1 >= 1 and setColorStr(var_2_0, COLOR_GREEN) or setColorStr(var_2_0, "#81CBD0")
 
-	setText = var_1_10004
+	setText(arg_2_0.cur, var_2_3 .. setColorStr("/" .. var_2_1, "#1AB3B1"))
+	setFillAmount(arg_2_0.bar, var_2_2)
 
-	local var_2_2 = arg_2_0.cur
+	local var_2_4 = var_2_1 <= var_2_0
+	local var_2_5 = arg_2_0.activity.data2 >= 1
+	local var_2_7 = arg_2_0.inPhase2 and not var_2_4
 
-	if 1 <= var_2_1 then
-		setColorStr = var_2_4
+	var_2_6(arg_2_0.battleBtn, var_2_7)
 
-		local var_2_3 = var_2_0
+	local var_2_8 = arg_2_0.inPhase2 and not var_2_5 and var_2_4
 
-		COLOR_GREEN = var_1_10010
+	setActive(arg_2_0.getBtn, var_2_8)
 
-		local var_2_4
+	local var_2_9 = arg_2_0.inPhase2 and var_2_5
 
-		if not var_2_4(var_2_3, var_1_10010) then
-			setColorStr = var_2_4
-			var_2_4 = var_2_4(var_2_0, "#81CBD0")
-		end
+	setActive(arg_2_0.gotBtn, var_2_9)
 
-		setColorStr = var_1_10008
+	local var_2_10 = arg_2_0.inPhase2 and var_2_5
 
-		var_1_10004(var_2_2, var_2_4 .. var_1_10008("/" .. var_2, "#1AB3B1"))
+	setActive(arg_2_0.gotTag, var_2_10)
 
-		setFillAmount = var_1_10004
+	local var_2_11 = arg_2_0.inPhase2 and not var_2_5 and var_2_4
 
-		var_1_10004(arg_2_0.bar, var_2_1)
+	setActive(arg_2_0.getTag, var_2_11)
+	setActive(arg_2_0.cur, not var_2_5)
 
-		local var_2_5 = var_2 <= var_2_0
-		local var_2_6 = arg_2_0.activity.data2
-		local var_2_7 = 1 <= var_2_6
-
-		setActive = var_6
-
-		local var_2_8 = arg_2_0.battleBtn
-		local var_2_9
-
-		if arg_2_0.inPhase2 then
-			var_2_9 = not var_2_5
-		end
-
-		var_6(var_2_8, var_2_9)
-
-		setActive = var_6
-
-		local var_2_10 = arg_2_0.getBtn
-		local var_2_11
-
-		if arg_2_0.inPhase2 then
-			var_2_11 = not var_2_7 and var_2_5
-		end
-
-		var_6(var_2_10, var_2_11)
-
-		setActive = var_6
-
-		local var_2_12 = arg_2_0.gotBtn
-		local var_2_13
-
-		if arg_2_0.inPhase2 then
-			var_2_13 = var_2_7
-		end
-
-		var_6(var_2_12, var_2_13)
-
-		setActive = var_6
-
-		local var_2_14 = arg_2_0.gotTag
-		local var_2_15
-
-		if arg_2_0.inPhase2 then
-			var_2_15 = var_2_7
-		end
-
-		var_6(var_2_14, var_2_15)
-
-		setActive = var_6
-
-		local var_2_16 = arg_2_0.getTag
-		local var_2_17
-
-		if arg_2_0.inPhase2 then
-			var_2_17 = not var_2_7 and var_2_5
-		end
-
-		var_6(var_2_16, var_2_17)
-
-		setActive = var_6
-
-		var_6(arg_2_0.cur, not var_2_7)
-
-		return
-	end
+	return
 end
 
-return var_0_1
+return var_0_0

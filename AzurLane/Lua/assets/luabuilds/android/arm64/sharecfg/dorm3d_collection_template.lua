@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_collection_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_collection_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_collection_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_collection_template
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_collection_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.dorm3d_collection_template = rawget(pg, "dorm3d_collection_template") or setmetatable({
+	__name = "dorm3d_collection_template"
+}, confNEO)
+pg.dorm3d_collection_template.__namecode__ = true
+pg.dorm3d_collection_template.all = {
 	1,
 	2,
 	3,
@@ -253,11 +226,7 @@ var_0_4.all = {
 	2609,
 	2610
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.dorm3d_collection_template
-
-var_0_5.get_id_list_by_room_id = {
+pg.dorm3d_collection_template.get_id_list_by_room_id = {
 	{
 		1,
 		2,
@@ -500,25 +469,11 @@ var_0_5.get_id_list_by_room_id = {
 		2610
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.dorm3d_collection_template = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_collection_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_collection_template
-
-	var_1_0[1] = {
+	pg.base.dorm3d_collection_template[1] = {
 		name = "微波炉",
 		award = 0,
 		time = 0,
@@ -539,11 +494,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_04/pre_db_electrical01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_collection_template
-
-	var_1_1[2] = {
+	pg.base.dorm3d_collection_template[2] = {
 		name = "咖啡机",
 		award = 0,
 		time = 0,
@@ -564,11 +515,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_04/pre_db_electrical07/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_collection_template
-
-	var_1_2[3] = {
+	pg.base.dorm3d_collection_template[3] = {
 		name = "玛丽珍鞋",
 		award = 0,
 		time = 1,
@@ -589,11 +536,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_shoe01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_collection_template
-
-	var_1_3[4] = {
+	pg.base.dorm3d_collection_template[4] = {
 		name = "装饰挂画",
 		award = 0,
 		time = 0,
@@ -614,11 +557,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_billboard06d/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_collection_template
-
-	var_1_4[5] = {
+	pg.base.dorm3d_collection_template[5] = {
 		name = "烤吐司机",
 		award = 0,
 		time = 1,
@@ -639,11 +578,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_electrical02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_collection_template
-
-	var_1_5[6] = {
+	pg.base.dorm3d_collection_template[6] = {
 		name = "垃圾桶",
 		award = 0,
 		time = 1,
@@ -664,11 +599,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_pail01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_collection_template
-
-	var_1_6[7] = {
+	pg.base.dorm3d_collection_template[7] = {
 		name = "相框",
 		award = 0,
 		time = 0,
@@ -689,11 +620,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_billboard02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_collection_template
-
-	var_1_7[8] = {
+	pg.base.dorm3d_collection_template[8] = {
 		name = "蝴蝶标本",
 		award = 0,
 		time = 0,
@@ -714,11 +641,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_billboard03 (1)/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_collection_template
-
-	var_1_8[9] = {
+	pg.base.dorm3d_collection_template[9] = {
 		name = "落地灯",
 		award = 0,
 		time = 0,
@@ -739,11 +662,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_chandelier06/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_collection_template
-
-	var_1_9[10] = {
+	pg.base.dorm3d_collection_template[10] = {
 		name = "面包组合？",
 		award = 0,
 		time = 1,
@@ -764,11 +683,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_04/pre_db_food01b/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_collection_template
-
-	var_1_10[11] = {
+	pg.base.dorm3d_collection_template[11] = {
 		name = "休闲读物",
 		award = 0,
 		time = 1,
@@ -789,11 +704,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_book01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_collection_template
-
-	var_1_11[12] = {
+	pg.base.dorm3d_collection_template[12] = {
 		name = "高脚杯",
 		award = 0,
 		time = 1,
@@ -814,11 +725,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_tableware07/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_collection_template
-
-	var_1_12[13] = {
+	pg.base.dorm3d_collection_template[13] = {
 		name = "勇者之剑模型",
 		award = 0,
 		time = 0,
@@ -839,11 +746,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_decoration02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_collection_template
-
-	var_1_13[14] = {
+	pg.base.dorm3d_collection_template[14] = {
 		name = "插花练习作品·I",
 		award = 0,
 		time = 0,
@@ -864,11 +767,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_04/pre_db_ceram05 (1)/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_collection_template
-
-	var_1_14[15] = {
+	pg.base.dorm3d_collection_template[15] = {
 		name = "床头书堆",
 		award = 0,
 		time = 1,
@@ -889,11 +788,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_book08/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_collection_template
-
-	var_1_15[16] = {
+	pg.base.dorm3d_collection_template[16] = {
 		name = "梳妆台",
 		award = 0,
 		time = 0,
@@ -914,11 +809,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_dressingtablecomponents01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_collection_template
-
-	var_1_16[17] = {
+	pg.base.dorm3d_collection_template[17] = {
 		name = "珠宝展示盒",
 		award = 0,
 		time = 0,
@@ -939,11 +830,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_jewelrybox01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_collection_template
-
-	var_1_17[18] = {
+	pg.base.dorm3d_collection_template[18] = {
 		name = "插花练习作品·II",
 		award = 0,
 		time = 0,
@@ -964,11 +851,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_ceram10_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_collection_template
-
-	var_1_18[19] = {
+	pg.base.dorm3d_collection_template[19] = {
 		name = "侦探小说",
 		award = 0,
 		time = 1,
@@ -989,11 +872,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_book02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_collection_template
-
-	var_1_19[20] = {
+	pg.base.dorm3d_collection_template[20] = {
 		name = "柴犬玩偶",
 		award = 0,
 		time = 1,
@@ -1014,11 +893,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_toy03/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_collection_template
-
-	var_1_20[21] = {
+	pg.base.dorm3d_collection_template[21] = {
 		name = "盛夏的纪念",
 		award = 0,
 		time = 0,
@@ -1039,11 +914,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_toy02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_collection_template
-
-	var_1_21[22] = {
+	pg.base.dorm3d_collection_template[22] = {
 		name = "日程本收纳箱",
 		award = 0,
 		time = 0,
@@ -1064,11 +935,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_paperskin01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_collection_template
-
-	var_1_22[23] = {
+	pg.base.dorm3d_collection_template[23] = {
 		name = "浇水壶",
 		award = 0,
 		time = 0,
@@ -1089,11 +956,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_smalltool02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_collection_template
-
-	var_1_23[24] = {
+	pg.base.dorm3d_collection_template[24] = {
 		name = "小夜灯",
 		award = 0,
 		time = 2,
@@ -1114,11 +977,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_desklamp02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_collection_template
-
-	var_1_24[25] = {
+	pg.base.dorm3d_collection_template[25] = {
 		name = "太阳镜",
 		award = 0,
 		time = 2,
@@ -1139,11 +998,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_glasses01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_collection_template
-
-	var_1_25[26] = {
+	pg.base.dorm3d_collection_template[26] = {
 		name = "身体乳",
 		award = 0,
 		time = 2,
@@ -1164,11 +1019,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_cosmetic15/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_collection_template
-
-	var_1_26[27] = {
+	pg.base.dorm3d_collection_template[27] = {
 		name = "室内香薰",
 		award = 0,
 		time = 2,
@@ -1189,11 +1040,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_cosmetic14/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_collection_template
-
-	var_1_27[28] = {
+	pg.base.dorm3d_collection_template[28] = {
 		name = "使用过的白色毛巾",
 		award = 0,
 		time = 2,
@@ -1214,11 +1061,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_towel10/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_collection_template
-
-	var_1_28[29] = {
+	pg.base.dorm3d_collection_template[29] = {
 		name = "如何俘获指挥官的心·第二册",
 		award = 0,
 		time = 2,
@@ -1239,11 +1082,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_book10/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_collection_template
-
-	var_1_29[30] = {
+	pg.base.dorm3d_collection_template[30] = {
 		name = "喝了一半的牛奶",
 		award = 0,
 		time = 2,
@@ -1264,11 +1103,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_drink01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_collection_template
-
-	var_1_30[31] = {
+	pg.base.dorm3d_collection_template[31] = {
 		name = "华丽沙雕城堡",
 		award = 0,
 		time = 0,
@@ -1289,11 +1124,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_dp_toy05_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_collection_template
-
-	var_1_31[32] = {
+	pg.base.dorm3d_collection_template[32] = {
 		name = "沙雕玩具套组",
 		award = 0,
 		time = 0,
@@ -1314,11 +1145,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_smalltool09_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_collection_template
-
-	var_1_32[33] = {
+	pg.base.dorm3d_collection_template[33] = {
 		name = "海风气息的吉他",
 		award = 0,
 		time = 0,
@@ -1339,11 +1166,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_guitar02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_collection_template
-
-	var_1_33[34] = {
+	pg.base.dorm3d_collection_template[34] = {
 		name = "不知何人的饮料",
 		award = 0,
 		time = 0,
@@ -1364,11 +1187,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_drink06_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_collection_template
-
-	var_1_34[35] = {
+	pg.base.dorm3d_collection_template[35] = {
 		name = "冲浪板",
 		award = 0,
 		time = 0,
@@ -1389,11 +1208,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_sportinggoods04a_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_collection_template
-
-	var_1_35[36] = {
+	pg.base.dorm3d_collection_template[36] = {
 		name = "迷你冰箱",
 		award = 0,
 		time = 0,
@@ -1414,11 +1229,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap06/box/pre_plasticbox01_2/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_collection_template
-
-	var_1_36[37] = {
+	pg.base.dorm3d_collection_template[37] = {
 		name = "救生圈",
 		award = 0,
 		time = 0,
@@ -1439,11 +1250,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_sportinggoods02_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_collection_template
-
-	var_1_37[38] = {
+	pg.base.dorm3d_collection_template[38] = {
 		name = "垃圾桶",
 		award = 0,
 		time = 0,
@@ -1464,11 +1271,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"no_bake_prop/pre_db_trashcan02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_collection_template
-
-	var_1_38[39] = {
+	pg.base.dorm3d_collection_template[39] = {
 		name = "轻巧提灯",
 		award = 0,
 		time = 0,
@@ -1489,11 +1292,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap04/pre_desklamp01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_collection_template
-
-	var_1_39[51] = {
+	pg.base.dorm3d_collection_template[51] = {
 		name = "花见团子",
 		award = 0,
 		time = 0,
@@ -1514,11 +1313,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware14/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_collection_template
-
-	var_1_40[52] = {
+	pg.base.dorm3d_collection_template[52] = {
 		name = "菱饼",
 		award = 0,
 		time = 0,
@@ -1539,11 +1334,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware15/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_collection_template
-
-	var_1_41[53] = {
+	pg.base.dorm3d_collection_template[53] = {
 		name = "打开的书",
 		award = 0,
 		time = 1,
@@ -1564,11 +1355,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/day/pre_db_book01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_collection_template
-
-	var_1_42[54] = {
+	pg.base.dorm3d_collection_template[54] = {
 		name = "被褥",
 		award = 0,
 		time = 0,
@@ -1589,11 +1376,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_04/pre_db_quilt01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_collection_template
-
-	var_1_43[55] = {
+	pg.base.dorm3d_collection_template[55] = {
 		name = "制服",
 		award = 0,
 		time = 0,
@@ -1614,11 +1397,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_cloth02_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_collection_template
-
-	var_1_44[56] = {
+	pg.base.dorm3d_collection_template[56] = {
 		name = "和果子",
 		award = 0,
 		time = 0,
@@ -1639,11 +1418,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/table/pre_db_tableware13/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_collection_template
-
-	var_1_45[57] = {
+	pg.base.dorm3d_collection_template[57] = {
 		name = "风铃",
 		award = 0,
 		time = 0,
@@ -1664,11 +1439,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_curtain04/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_collection_template
-
-	var_1_46[58] = {
+	pg.base.dorm3d_collection_template[58] = {
 		name = "风铃·II",
 		award = 0,
 		time = 0,
@@ -1689,11 +1460,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_decoration06/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_collection_template
-
-	var_1_47[59] = {
+	pg.base.dorm3d_collection_template[59] = {
 		name = "购物袋",
 		award = 0,
 		time = 0,
@@ -1714,11 +1481,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_bag01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_collection_template
-
-	var_1_48[60] = {
+	pg.base.dorm3d_collection_template[60] = {
 		name = "和服",
 		award = 0,
 		time = 0,
@@ -1739,11 +1502,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_frame06/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_collection_template
-
-	var_1_49[61] = {
+	pg.base.dorm3d_collection_template[61] = {
 		name = "永生花",
 		award = 0,
 		time = 0,
@@ -1764,11 +1523,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/day/pre_db_decoration07/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_collection_template
-
-	var_1_50[62] = {
+	pg.base.dorm3d_collection_template[62] = {
 		name = "景观树",
 		award = 0,
 		time = 0,
@@ -1789,11 +1544,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_bonsai03_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_collection_template
-
-	var_1_51[63] = {
+	pg.base.dorm3d_collection_template[63] = {
 		name = "流水造景",
 		award = 0,
 		time = 0,
@@ -1814,11 +1565,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_noshirohostel01_02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_collection_template
-
-	var_1_52[64] = {
+	pg.base.dorm3d_collection_template[64] = {
 		name = "和伞",
 		award = 0,
 		time = 0,
@@ -1839,11 +1586,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_decoration05_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_collection_template
-
-	var_1_53[65] = {
+	pg.base.dorm3d_collection_template[65] = {
 		name = "蒲团",
 		award = 0,
 		time = 0,
@@ -1864,11 +1607,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/table/pre_db_chair08/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_collection_template
-
-	var_1_54[66] = {
+	pg.base.dorm3d_collection_template[66] = {
 		name = "寿司拼盘",
 		award = 0,
 		time = 0,
@@ -1889,11 +1628,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/diningroom/pre_db_tableware12_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_collection_template
-
-	var_1_55[67] = {
+	pg.base.dorm3d_collection_template[67] = {
 		name = "樱花",
 		award = 0,
 		time = 0,
@@ -1914,11 +1649,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/table/pre_db_flowers04/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_collection_template
-
-	var_1_56[68] = {
+	pg.base.dorm3d_collection_template[68] = {
 		name = "书堆",
 		award = 0,
 		time = 0,
@@ -1939,11 +1670,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_book04_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_collection_template
-
-	var_1_57[70] = {
+	pg.base.dorm3d_collection_template[70] = {
 		name = "水壶",
 		award = 0,
 		time = 0,
@@ -1964,11 +1691,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_tableware09/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_collection_template
-
-	var_1_58[72] = {
+	pg.base.dorm3d_collection_template[72] = {
 		name = "卷轴",
 		award = 0,
 		time = 0,
@@ -1989,11 +1712,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/pre_db_cupboard08_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_collection_template
-
-	var_1_59[71] = {
+	pg.base.dorm3d_collection_template[71] = {
 		name = "石灯",
 		award = 0,
 		time = 1,
@@ -2014,11 +1733,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/day/pre_db_noshirohostel01_lamp02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_collection_template
-
-	var_1_60[76] = {
+	pg.base.dorm3d_collection_template[76] = {
 		name = "空气加湿器",
 		award = 0,
 		time = 2,
@@ -2039,11 +1754,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/night/pre_db_electrical08/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_collection_template
-
-	var_1_61[77] = {
+	pg.base.dorm3d_collection_template[77] = {
 		name = "护肤精油",
 		award = 0,
 		time = 2,
@@ -2064,11 +1775,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/night/pre_db_cosmetic10/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_collection_template
-
-	var_1_62[78] = {
+	pg.base.dorm3d_collection_template[78] = {
 		name = "香水瓶",
 		award = 0,
 		time = 2,
@@ -2089,11 +1796,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/night/pre_db_cosmetic01_01/pre_db_cosmetic01c/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_collection_template
-
-	var_1_63[79] = {
+	pg.base.dorm3d_collection_template[79] = {
 		name = "香薰",
 		award = 0,
 		time = 2,
@@ -2114,11 +1817,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_04/night/pre_db_cosmetic02a_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_collection_template
-
-	var_1_64[74] = {
+	pg.base.dorm3d_collection_template[74] = {
 		name = "夜灯",
 		award = 0,
 		time = 2,
@@ -2139,11 +1838,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_03/night/pre_db_chandelier11_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_collection_template
-
-	var_1_65[75] = {
+	pg.base.dorm3d_collection_template[75] = {
 		name = "台灯",
 		award = 0,
 		time = 2,
@@ -2164,11 +1859,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/pre_db_chandelier08_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_collection_template
-
-	var_1_66[101] = {
+	pg.base.dorm3d_collection_template[101] = {
 		name = "温馨映像",
 		award = 0,
 		time = 0,
@@ -2189,11 +1880,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_billboard14/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_collection_template
-
-	var_1_67[102] = {
+	pg.base.dorm3d_collection_template[102] = {
 		name = "童话茶时",
 		award = 0,
 		time = 0,
@@ -2214,11 +1901,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_ceram11_group01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_collection_template
-
-	var_1_68[103] = {
+	pg.base.dorm3d_collection_template[103] = {
 		name = "心愿菜单",
 		award = 0,
 		time = 0,
@@ -2239,11 +1922,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_blackboard01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_collection_template
-
-	var_1_69[104] = {
+	pg.base.dorm3d_collection_template[104] = {
 		name = "知识宝库",
 		award = 0,
 		time = 0,
@@ -2264,11 +1943,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_book15_group01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_collection_template
-
-	var_1_70[105] = {
+	pg.base.dorm3d_collection_template[105] = {
 		name = "文件收纳架",
 		award = 0,
 		time = 0,
@@ -2289,11 +1964,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_cupboard18/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_collection_template
-
-	var_1_71[106] = {
+	pg.base.dorm3d_collection_template[106] = {
 		name = "古典钢琴",
 		award = 0,
 		time = 0,
@@ -2314,11 +1985,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_musicalInstrument02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_collection_template
-
-	var_1_72[107] = {
+	pg.base.dorm3d_collection_template[107] = {
 		name = "蜡笔画作",
 		award = 0,
 		time = 0,
@@ -2339,11 +2006,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_paper02_group01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_collection_template
-
-	var_1_73[108] = {
+	pg.base.dorm3d_collection_template[108] = {
 		name = "闹钟",
 		award = 0,
 		time = 0,
@@ -2364,11 +2027,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/bedroom/pre_db_clock02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_collection_template
-
-	var_1_74[109] = {
+	pg.base.dorm3d_collection_template[109] = {
 		name = "收纳箱",
 		award = 0,
 		time = 0,
@@ -2389,11 +2048,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_basket04_group01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_collection_template
-
-	var_1_75[110] = {
+	pg.base.dorm3d_collection_template[110] = {
 		name = "夏日浮圈",
 		award = 0,
 		time = 0,
@@ -2414,11 +2069,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_toy07/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_collection_template
-
-	var_1_76[111] = {
+	pg.base.dorm3d_collection_template[111] = {
 		name = "启蒙厨刀",
 		award = 0,
 		time = 0,
@@ -2439,11 +2090,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_kitchenware08_group01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.dorm3d_collection_template
-
-	var_1_77[112] = {
+	pg.base.dorm3d_collection_template[112] = {
 		name = "童话绘本",
 		award = 0,
 		time = 0,
@@ -2464,11 +2111,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/pre_db_book11a/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.dorm3d_collection_template
-
-	var_1_78[113] = {
+	pg.base.dorm3d_collection_template[113] = {
 		name = "毛绒玩具",
 		award = 0,
 		time = 0,
@@ -2489,11 +2132,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/pre_db_toy06/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.dorm3d_collection_template
-
-	var_1_79[114] = {
+	pg.base.dorm3d_collection_template[114] = {
 		name = "绿意相伴",
 		award = 0,
 		time = 0,
@@ -2514,11 +2153,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_flowerpot10/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.dorm3d_collection_template
-
-	var_1_80[115] = {
+	pg.base.dorm3d_collection_template[115] = {
 		name = "厨具套组",
 		award = 0,
 		time = 0,
@@ -2539,11 +2174,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_kitchenware01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.dorm3d_collection_template
-
-	var_1_81[116] = {
+	pg.base.dorm3d_collection_template[116] = {
 		name = "海洋摇篮",
 		award = 0,
 		time = 0,
@@ -2564,11 +2195,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/pre_db_chair16/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.dorm3d_collection_template
-
-	var_1_82[117] = {
+	pg.base.dorm3d_collection_template[117] = {
 		name = "储物篮",
 		award = 0,
 		time = 0,
@@ -2589,11 +2216,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_basket05/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.dorm3d_collection_template
-
-	var_1_83[118] = {
+	pg.base.dorm3d_collection_template[118] = {
 		name = "海洋伙伴",
 		award = 0,
 		time = 0,
@@ -2614,11 +2237,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/bedroom/pre_db_toy10/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.dorm3d_collection_template
-
-	var_1_84[119] = {
+	pg.base.dorm3d_collection_template[119] = {
 		name = "小黑板",
 		award = 0,
 		time = 0,
@@ -2639,11 +2258,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/entertainmentarea/pre_db_blackboard02/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.dorm3d_collection_template
-
-	var_1_85[120] = {
+	pg.base.dorm3d_collection_template[120] = {
 		name = "方块抱枕",
 		award = 0,
 		time = 0,
@@ -2664,11 +2279,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/entertainmentarea/pre_db_toy12/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.dorm3d_collection_template
-
-	var_1_86[121] = {
+	pg.base.dorm3d_collection_template[121] = {
 		name = "回忆相册",
 		award = 0,
 		time = 0,
@@ -2689,11 +2300,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/pre_db_decoration12/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.dorm3d_collection_template
-
-	var_1_87[122] = {
+	pg.base.dorm3d_collection_template[122] = {
 		name = "雨伞收纳",
 		award = 0,
 		time = 1,
@@ -2714,11 +2321,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/day/pre_db_decoration11/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.dorm3d_collection_template
-
-	var_1_88[123] = {
+	pg.base.dorm3d_collection_template[123] = {
 		name = "暖心相随",
 		award = 0,
 		time = 1,
@@ -2739,11 +2342,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/day/pre_db_tableware26/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.dorm3d_collection_template
-
-	var_1_89[124] = {
+	pg.base.dorm3d_collection_template[124] = {
 		name = "欢乐印记",
 		award = 0,
 		time = 1,
@@ -2764,11 +2363,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/day/pre_db_cupboard19_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.dorm3d_collection_template
-
-	var_1_90[125] = {
+	pg.base.dorm3d_collection_template[125] = {
 		name = "温柔光影",
 		award = 0,
 		time = 2,
@@ -2789,11 +2384,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/bedroom/pre_db_desklamp03/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.dorm3d_collection_template
-
-	var_1_91[126] = {
+	pg.base.dorm3d_collection_template[126] = {
 		name = "深海幻境",
 		award = 0,
 		time = 2,
@@ -2814,11 +2405,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.dorm3d_collection_template
-
-	var_1_92[127] = {
+	pg.base.dorm3d_collection_template[127] = {
 		name = "啾啾马克杯",
 		award = 0,
 		time = 2,
@@ -2839,11 +2426,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/no_bake_pay_prop/livingroom/pre_db_tableware24/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.dorm3d_collection_template
-
-	var_1_93[128] = {
+	pg.base.dorm3d_collection_template[128] = {
 		name = "浴巾",
 		award = 0,
 		time = 2,
@@ -2864,11 +2447,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_02/night/pre_db_towel01_group01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.dorm3d_collection_template
-
-	var_1_94[1101] = {
+	pg.base.dorm3d_collection_template[1101] = {
 		name = "焦糖爆米花",
 		award = 0,
 		time = 0,
@@ -2889,11 +2468,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_electrical18/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.dorm3d_collection_template
-
-	var_1_95[1102] = {
+	pg.base.dorm3d_collection_template[1102] = {
 		name = "爱心围裙",
 		award = 0,
 		time = 0,
@@ -2914,11 +2489,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_cloth05/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.dorm3d_collection_template
-
-	var_1_96[1103] = {
+	pg.base.dorm3d_collection_template[1103] = {
 		name = "榨汁机",
 		award = 0,
 		time = 0,
@@ -2939,11 +2510,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_electrical13/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.dorm3d_collection_template
-
-	var_1_97[1104] = {
+	pg.base.dorm3d_collection_template[1104] = {
 		name = "一碗草莓",
 		award = 0,
 		time = 0,
@@ -2964,11 +2531,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_fruit01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.dorm3d_collection_template
-
-	var_1_98[1105] = {
+	pg.base.dorm3d_collection_template[1105] = {
 		name = "油烟机",
 		award = 0,
 		time = 0,
@@ -2989,8 +2552,7 @@ var_0_5.base.dorm3d_collection_template = {}
 			"fbx/litmap_01/pre_db_newjerseyhostel01_cupboard01/vfx_wupintishi01"
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.dorm3d_collection_template[1106] = {
+	pg.base.dorm3d_collection_template[1106] = {
 		name = "清新柠檬水",
 		award = 0,
 		time = 0,
@@ -3015,11 +2577,7 @@ var_0_5.base.dorm3d_collection_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.dorm3d_collection_template
-
-	var_2_0[1107] = {
+	pg.base.dorm3d_collection_template[1107] = {
 		name = "日常外衣",
 		award = 0,
 		time = 0,
@@ -3040,11 +2598,7 @@ end)()
 			"fbx/litmap_01/pre_db_cloth06/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.dorm3d_collection_template
-
-	var_2_1[1108] = {
+	pg.base.dorm3d_collection_template[1108] = {
 		name = "烤面包机",
 		award = 0,
 		time = 0,
@@ -3065,11 +2619,7 @@ end)()
 			"fbx/litmap_01/pre_db_electrical10_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.dorm3d_collection_template
-
-	var_2_2[1109] = {
+	pg.base.dorm3d_collection_template[1109] = {
 		name = "丛林风潮",
 		award = 0,
 		time = 0,
@@ -3090,11 +2640,7 @@ end)()
 			"fbx/litmap_01/pre_db_bonsai13/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.dorm3d_collection_template
-
-	var_2_3[1110] = {
+	pg.base.dorm3d_collection_template[1110] = {
 		name = "甜甜圈",
 		award = 0,
 		time = 0,
@@ -3115,11 +2661,7 @@ end)()
 			"fbx/litmap_01/pre_db_food16_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.dorm3d_collection_template
-
-	var_2_4[1111] = {
+	pg.base.dorm3d_collection_template[1111] = {
 		name = "扫地机器人",
 		award = 0,
 		time = 0,
@@ -3140,11 +2682,7 @@ end)()
 			"fbx/litmap_01/pre_db_electrical17/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.dorm3d_collection_template
-
-	var_2_5[1112] = {
+	pg.base.dorm3d_collection_template[1112] = {
 		name = "超清大电视",
 		award = 0,
 		time = 0,
@@ -3165,11 +2703,7 @@ end)()
 			"fbx/litmap_01/pre_db_appliances06/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.dorm3d_collection_template
-
-	var_2_6[1113] = {
+	pg.base.dorm3d_collection_template[1113] = {
 		name = "时尚杂志",
 		award = 0,
 		time = 0,
@@ -3190,11 +2724,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_book05_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.dorm3d_collection_template
-
-	var_2_7[1114] = {
+	pg.base.dorm3d_collection_template[1114] = {
 		name = "手包",
 		award = 0,
 		time = 0,
@@ -3215,11 +2745,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_bag05/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.dorm3d_collection_template
-
-	var_2_8[1115] = {
+	pg.base.dorm3d_collection_template[1115] = {
 		name = "室外运动套装",
 		award = 0,
 		time = 0,
@@ -3240,11 +2766,7 @@ end)()
 			"fbx/litmap_01/pre_db_bag03_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.dorm3d_collection_template
-
-	var_2_9[1116] = {
+	pg.base.dorm3d_collection_template[1116] = {
 		name = "Big J门牌",
 		award = 0,
 		time = 0,
@@ -3265,11 +2787,7 @@ end)()
 			"fbx/litmap_01/pre_db_newjerseyhostel01_billboard01_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.dorm3d_collection_template
-
-	var_2_10[1117] = {
+	pg.base.dorm3d_collection_template[1117] = {
 		name = "衣帽架",
 		award = 0,
 		time = 0,
@@ -3290,11 +2808,7 @@ end)()
 			"fbx/litmap_01/pre_db_cloth07_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.dorm3d_collection_template
-
-	var_2_11[1118] = {
+	pg.base.dorm3d_collection_template[1118] = {
 		name = "透明手提包",
 		award = 0,
 		time = 0,
@@ -3315,11 +2829,7 @@ end)()
 			"fbx/litmap_01/pre_db_bag06/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.dorm3d_collection_template
-
-	var_2_12[1119] = {
+	pg.base.dorm3d_collection_template[1119] = {
 		name = "灵动兔耳",
 		award = 0,
 		time = 0,
@@ -3340,11 +2850,7 @@ end)()
 			"fbx/litmap_01/pre_db_headgear01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.dorm3d_collection_template
-
-	var_2_13[1120] = {
+	pg.base.dorm3d_collection_template[1120] = {
 		name = "空调",
 		award = 0,
 		time = 0,
@@ -3365,11 +2871,7 @@ end)()
 			"fbx/litmap_01/pre_db_appliances01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.dorm3d_collection_template
-
-	var_2_14[1121] = {
+	pg.base.dorm3d_collection_template[1121] = {
 		name = "空气净化器",
 		award = 0,
 		time = 0,
@@ -3390,11 +2892,7 @@ end)()
 			"fbx/litmap_01/pre_db_appliances03/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.dorm3d_collection_template
-
-	var_2_15[1122] = {
+	pg.base.dorm3d_collection_template[1122] = {
 		name = "冷冻饮品",
 		award = 0,
 		time = 0,
@@ -3415,11 +2913,7 @@ end)()
 			"fbx/litmap_01/pre_db_food03_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.dorm3d_collection_template
-
-	var_2_16[1123] = {
+	pg.base.dorm3d_collection_template[1123] = {
 		name = "音响",
 		award = 0,
 		time = 0,
@@ -3440,11 +2934,7 @@ end)()
 			"fbx/litmap_01/pre_db_electrical03/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.dorm3d_collection_template
-
-	var_2_17[1124] = {
+	pg.base.dorm3d_collection_template[1124] = {
 		name = "兔子夜灯",
 		award = 0,
 		time = 2,
@@ -3465,11 +2955,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_newjerseyhostel01_lamp01a_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.dorm3d_collection_template
-
-	var_2_18[1125] = {
+	pg.base.dorm3d_collection_template[1125] = {
 		name = "哑铃",
 		award = 0,
 		time = 0,
@@ -3490,11 +2976,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_sportinggoods06_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.dorm3d_collection_template
-
-	var_2_19[1126] = {
+	pg.base.dorm3d_collection_template[1126] = {
 		name = "卷发棒",
 		award = 0,
 		time = 0,
@@ -3515,11 +2997,7 @@ end)()
 			"fbx/litmap_01/pre_db_electrical15/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.dorm3d_collection_template
-
-	var_2_20[1127] = {
+	pg.base.dorm3d_collection_template[1127] = {
 		name = "黑色丝袜",
 		award = 0,
 		time = 2,
@@ -3540,11 +3018,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_sock01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.dorm3d_collection_template
-
-	var_2_21[1128] = {
+	pg.base.dorm3d_collection_template[1128] = {
 		name = "护肤套装",
 		award = 0,
 		time = 2,
@@ -3565,11 +3039,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_cosmetic17/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.dorm3d_collection_template
-
-	var_2_22[1201] = {
+	pg.base.dorm3d_collection_template[1201] = {
 		name = "瓷器",
 		award = 0,
 		time = 0,
@@ -3590,11 +3060,7 @@ end)()
 			"fbx/litmap_01/pre_db_ceram23/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.dorm3d_collection_template
-
-	var_2_23[1202] = {
+	pg.base.dorm3d_collection_template[1202] = {
 		name = "制服裙",
 		award = 0,
 		time = 2,
@@ -3615,11 +3081,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_cloth11/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.dorm3d_collection_template
-
-	var_2_24[1203] = {
+	pg.base.dorm3d_collection_template[1203] = {
 		name = "吊带礼服",
 		award = 0,
 		time = 0,
@@ -3640,11 +3102,7 @@ end)()
 			"fbx/litmap_01/pre_db_cloth10/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.dorm3d_collection_template
-
-	var_2_25[1204] = {
+	pg.base.dorm3d_collection_template[1204] = {
 		name = "木制储物箱",
 		award = 0,
 		time = 0,
@@ -3665,11 +3123,7 @@ end)()
 			"fbx/litmap_01/pre_db_woodbox03/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.dorm3d_collection_template
-
-	var_2_26[1205] = {
+	pg.base.dorm3d_collection_template[1205] = {
 		name = "景观盆栽",
 		award = 0,
 		time = 0,
@@ -3690,11 +3144,7 @@ end)()
 			"fbx/litmap_01/pre_db_bonsai20/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.dorm3d_collection_template
-
-	var_2_27[1206] = {
+	pg.base.dorm3d_collection_template[1206] = {
 		name = "凤头发饰 ",
 		award = 0,
 		time = 0,
@@ -3715,11 +3165,7 @@ end)()
 			"fbx/litmap_01/pre_db_headgear02/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.dorm3d_collection_template
-
-	var_2_28[1207] = {
+	pg.base.dorm3d_collection_template[1207] = {
 		name = "传统木屐",
 		award = 0,
 		time = 0,
@@ -3740,11 +3186,7 @@ end)()
 			"fbx/litmap_01/pre_db_shoe02/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.dorm3d_collection_template
-
-	var_2_29[1208] = {
+	pg.base.dorm3d_collection_template[1208] = {
 		name = "图书合集",
 		award = 0,
 		time = 0,
@@ -3765,11 +3207,7 @@ end)()
 			"fbx/litmap_01/pre_db_book19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.dorm3d_collection_template
-
-	var_2_30[1209] = {
+	pg.base.dorm3d_collection_template[1209] = {
 		name = "清雅香薰",
 		award = 0,
 		time = 2,
@@ -3790,11 +3228,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_decoration17/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.dorm3d_collection_template
-
-	var_2_31[1210] = {
+	pg.base.dorm3d_collection_template[1210] = {
 		name = "猫爬架",
 		award = 0,
 		time = 0,
@@ -3815,11 +3249,7 @@ end)()
 			"fbx/litmap_01/pre_db_decoration04/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.dorm3d_collection_template
-
-	var_2_32[1211] = {
+	pg.base.dorm3d_collection_template[1211] = {
 		name = "香薰蜡烛",
 		award = 0,
 		time = 2,
@@ -3840,11 +3270,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_decoration19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.dorm3d_collection_template
-
-	var_2_33[1212] = {
+	pg.base.dorm3d_collection_template[1212] = {
 		name = "新鲜花卉",
 		award = 0,
 		time = 0,
@@ -3865,11 +3291,7 @@ end)()
 			"fbx/litmap_01/pre_db_flowerpot16/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.dorm3d_collection_template
-
-	var_2_34[1213] = {
+	pg.base.dorm3d_collection_template[1213] = {
 		name = "黑白猫碗",
 		award = 0,
 		time = 0,
@@ -3890,11 +3312,7 @@ end)()
 			"fbx/litmap_01/pre_db_tableware44/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.dorm3d_collection_template
-
-	var_2_35[1214] = {
+	pg.base.dorm3d_collection_template[1214] = {
 		name = "水果托盘",
 		award = 0,
 		time = 0,
@@ -3915,11 +3333,7 @@ end)()
 			"no_bake_pay_prop/kitchen/pre_db_df_kitchen01_0/pre_db_tableware47/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.dorm3d_collection_template
-
-	var_2_36[1215] = {
+	pg.base.dorm3d_collection_template[1215] = {
 		name = "立柜冰箱",
 		award = 0,
 		time = 0,
@@ -3940,11 +3354,7 @@ end)()
 			"fbx/litmap_01/pre_db_appliances08/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.dorm3d_collection_template
-
-	var_2_37[1216] = {
+	pg.base.dorm3d_collection_template[1216] = {
 		name = "厨用陶瓷刀",
 		award = 0,
 		time = 0,
@@ -3965,11 +3375,7 @@ end)()
 			"no_bake/pre_db_kitchenware25/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.dorm3d_collection_template
-
-	var_2_38[1217] = {
+	pg.base.dorm3d_collection_template[1217] = {
 		name = "热水壶",
 		award = 0,
 		time = 0,
@@ -3990,11 +3396,7 @@ end)()
 			"fbx/litmap_01/pre_db_kitchenware19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.dorm3d_collection_template
-
-	var_2_39[1218] = {
+	pg.base.dorm3d_collection_template[1218] = {
 		name = "手鞠球",
 		award = 0,
 		time = 2,
@@ -4015,11 +3417,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_toy15/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.dorm3d_collection_template
-
-	var_2_40[1219] = {
+	pg.base.dorm3d_collection_template[1219] = {
 		name = "猫猫坐垫",
 		award = 0,
 		time = 0,
@@ -4040,11 +3438,7 @@ end)()
 			"fbx/litmap_01/pre_db_chair28/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.dorm3d_collection_template
-
-	var_2_41[1220] = {
+	pg.base.dorm3d_collection_template[1220] = {
 		name = "金枪鱼寿司",
 		award = 0,
 		time = 2,
@@ -4065,11 +3459,7 @@ end)()
 			"no_bake_pay_prop/kitchen/pre_db_df_kitchen01_0/pre_db_food22/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.dorm3d_collection_template
-
-	var_2_42[1221] = {
+	pg.base.dorm3d_collection_template[1221] = {
 		name = "爱心便当",
 		award = 0,
 		time = 2,
@@ -4090,11 +3480,7 @@ end)()
 			"no_bake_pay_prop/kitchen/pre_db_df_kitchen01_0/pre_db_food23/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.dorm3d_collection_template
-
-	var_2_43[1222] = {
+	pg.base.dorm3d_collection_template[1222] = {
 		name = "木制储物柜",
 		award = 0,
 		time = 0,
@@ -4115,11 +3501,7 @@ end)()
 			"fbx/litmap_01/pre_db_cupboard29/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.dorm3d_collection_template
-
-	var_2_44[1223] = {
+	pg.base.dorm3d_collection_template[1223] = {
 		name = "厨具套装",
 		award = 0,
 		time = 0,
@@ -4140,11 +3522,7 @@ end)()
 			"fbx/litmap_01/pre_db_kitchenware21/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.dorm3d_collection_template
-
-	var_2_45[1224] = {
+	pg.base.dorm3d_collection_template[1224] = {
 		name = "和扇",
 		award = 0,
 		time = 0,
@@ -4165,11 +3543,7 @@ end)()
 			"fbx/litmap_01/pre_db_decoration16b/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.dorm3d_collection_template
-
-	var_2_46[1225] = {
+	pg.base.dorm3d_collection_template[1225] = {
 		name = "书法桌",
 		award = 0,
 		time = 0,
@@ -4190,11 +3564,7 @@ end)()
 			"fbx/litmap_01/pre_db_table19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.dorm3d_collection_template
-
-	var_2_47[1226] = {
+	pg.base.dorm3d_collection_template[1226] = {
 		name = "装饰花卉",
 		award = 0,
 		time = 0,
@@ -4215,11 +3585,7 @@ end)()
 			"fbx/litmap_01/pre_db_flowerpot19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.dorm3d_collection_template
-
-	var_2_48[1227] = {
+	pg.base.dorm3d_collection_template[1227] = {
 		name = "油烟机",
 		award = 0,
 		time = 0,
@@ -4240,11 +3606,7 @@ end)()
 			"fbx/litmap_01/pre_db_dafeng01_rangehood01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.dorm3d_collection_template
-
-	var_2_49[1228] = {
+	pg.base.dorm3d_collection_template[1228] = {
 		name = "扇形画框",
 		award = 0,
 		time = 0,
@@ -4265,11 +3627,7 @@ end)()
 			"no_bake_pay_prop/entertainment/pre_db_df_entertainment_01_0/pre_db_billboard27/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.dorm3d_collection_template
-
-	var_2_50[1229] = {
+	pg.base.dorm3d_collection_template[1229] = {
 		name = "猫咪挂画",
 		award = 0,
 		time = 0,
@@ -4290,11 +3648,7 @@ end)()
 			"fbx/litmap_01/pre_db_wallscrolls03/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.dorm3d_collection_template
-
-	var_2_51[1230] = {
+	pg.base.dorm3d_collection_template[1230] = {
 		name = "精致瓷器",
 		award = 0,
 		time = 0,
@@ -4315,11 +3669,7 @@ end)()
 			"fbx/litmap_01/pre_db_ceram18/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.dorm3d_collection_template
-
-	var_2_52[1601] = {
+	pg.base.dorm3d_collection_template[1601] = {
 		name = "招牌菜单",
 		award = 0,
 		time = 0,
@@ -4336,11 +3686,7 @@ end)()
 			"fbx/litmap_03/pre_db_billboard16_2/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.dorm3d_collection_template
-
-	var_2_53[1602] = {
+	pg.base.dorm3d_collection_template[1602] = {
 		name = "简约指引牌",
 		award = 0,
 		time = 0,
@@ -4357,11 +3703,7 @@ end)()
 			"fbx/litmap_03/pre_db_billboard13/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.dorm3d_collection_template
-
-	var_2_54[1603] = {
+	pg.base.dorm3d_collection_template[1603] = {
 		name = "暖光蜡烛",
 		award = 0,
 		time = 0,
@@ -4378,11 +3720,7 @@ end)()
 			"fbx/litmap_03/pre_db_desklamp06_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.dorm3d_collection_template
-
-	var_2_55[1604] = {
+	pg.base.dorm3d_collection_template[1604] = {
 		name = "收银台",
 		award = 0,
 		time = 0,
@@ -4399,11 +3737,7 @@ end)()
 			"fbx/litmap_03/pre_db_electrical19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.dorm3d_collection_template
-
-	var_2_56[1605] = {
+	pg.base.dorm3d_collection_template[1605] = {
 		name = "简约几何杯",
 		award = 0,
 		time = 0,
@@ -4420,11 +3754,7 @@ end)()
 			"fbx/litmap_03/pre_db_drink03_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.dorm3d_collection_template
-
-	var_2_57[1606] = {
+	pg.base.dorm3d_collection_template[1606] = {
 		name = "巧克力甜甜圈",
 		award = 0,
 		time = 0,
@@ -4441,11 +3771,7 @@ end)()
 			"fbx/litmap_03/pre_db_food07/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.dorm3d_collection_template
-
-	var_2_58[1607] = {
+	pg.base.dorm3d_collection_template[1607] = {
 		name = "调酒组合",
 		award = 0,
 		time = 0,
@@ -4462,11 +3788,7 @@ end)()
 			"fbx/litmap_03/pre_db_frame23_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.dorm3d_collection_template
-
-	var_2_59[1608] = {
+	pg.base.dorm3d_collection_template[1608] = {
 		name = "餐巾纸",
 		award = 0,
 		time = 0,
@@ -4483,11 +3805,7 @@ end)()
 			"fbx/litmap_03/pre_db_tableware30_4/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.dorm3d_collection_template
-
-	var_2_60[1609] = {
+	pg.base.dorm3d_collection_template[1609] = {
 		name = "招牌雕塑",
 		award = 0,
 		time = 0,
@@ -4504,11 +3822,7 @@ end)()
 			"fbx/litmap_03/pre_db_publiccafe01_statue01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.dorm3d_collection_template
-
-	var_2_61[1401] = {
+	pg.base.dorm3d_collection_template[1401] = {
 		name = "复古留声机",
 		award = 0,
 		time = 0,
@@ -4529,11 +3843,7 @@ end)()
 			"fbx/litmap_01/pre_db_decoration25/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.dorm3d_collection_template
-
-	var_2_62[1402] = {
+	pg.base.dorm3d_collection_template[1402] = {
 		name = "古典烛台",
 		award = 0,
 		time = 2,
@@ -4554,11 +3864,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_decoration26_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.dorm3d_collection_template
-
-	var_2_63[1403] = {
+	pg.base.dorm3d_collection_template[1403] = {
 		name = "唱片集",
 		award = 0,
 		time = 0,
@@ -4579,11 +3885,7 @@ end)()
 			"fbx/litmap_05/pre_db_decoration28/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.dorm3d_collection_template
-
-	var_2_64[1404] = {
+	pg.base.dorm3d_collection_template[1404] = {
 		name = "双铃闹钟",
 		award = 0,
 		time = 0,
@@ -4604,11 +3906,7 @@ end)()
 			"fbx/litmap_05/pre_db_clock04/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.dorm3d_collection_template
-
-	var_2_65[1405] = {
+	pg.base.dorm3d_collection_template[1405] = {
 		name = "铜质酒杯",
 		award = 0,
 		time = 2,
@@ -4629,11 +3927,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_decoration23/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.dorm3d_collection_template
-
-	var_2_66[1406] = {
+	pg.base.dorm3d_collection_template[1406] = {
 		name = "陶瓷茶杯",
 		award = 0,
 		time = 0,
@@ -4654,11 +3948,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_aijier_living01_0/pre_db_ceram28_group02/pre_db_ceram28a/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.dorm3d_collection_template
-
-	var_2_67[1407] = {
+	pg.base.dorm3d_collection_template[1407] = {
 		name = "画作集 ",
 		award = 0,
 		time = 0,
@@ -4679,11 +3969,7 @@ end)()
 			"fbx/litmap_01/pre_db_billboard_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.dorm3d_collection_template
-
-	var_2_68[1408] = {
+	pg.base.dorm3d_collection_template[1408] = {
 		name = "木质衣柜 ",
 		award = 0,
 		time = 0,
@@ -4704,11 +3990,7 @@ end)()
 			"fbx/litmap_01/pre_db_cupboard38/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.dorm3d_collection_template
-
-	var_2_69[1409] = {
+	pg.base.dorm3d_collection_template[1409] = {
 		name = "梳妆镜 ",
 		award = 0,
 		time = 0,
@@ -4729,11 +4011,7 @@ end)()
 			"no_bake_pay_prop/entertainment/pre_db_aje_entertainment01_0/pre_db_mirror05/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.dorm3d_collection_template
-
-	var_2_70[1410] = {
+	pg.base.dorm3d_collection_template[1410] = {
 		name = "装饰挂画A",
 		award = 0,
 		time = 0,
@@ -4754,11 +4032,7 @@ end)()
 			"fbx/litmap_01/pre_db_billboard32/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.dorm3d_collection_template
-
-	var_2_71[1411] = {
+	pg.base.dorm3d_collection_template[1411] = {
 		name = "装饰挂画B",
 		award = 0,
 		time = 0,
@@ -4779,11 +4053,7 @@ end)()
 			"fbx/litmap_01/pre_db_billboard31/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.dorm3d_collection_template
-
-	var_2_72[1412] = {
+	pg.base.dorm3d_collection_template[1412] = {
 		name = "首饰盒",
 		award = 0,
 		time = 1,
@@ -4804,11 +4074,7 @@ end)()
 			"no_bake_pay_prop/entertainment/pre_db_aje_entertainment01_0/pre_db_jewelrybox02/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.dorm3d_collection_template
-
-	var_2_73[1413] = {
+	pg.base.dorm3d_collection_template[1413] = {
 		name = "手提箱",
 		award = 0,
 		time = 0,
@@ -4829,11 +4095,7 @@ end)()
 			"fbx/litmap_03/pre_db_bag08/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.dorm3d_collection_template
-
-	var_2_74[1414] = {
+	pg.base.dorm3d_collection_template[1414] = {
 		name = "小立柜",
 		award = 0,
 		time = 0,
@@ -4854,11 +4116,7 @@ end)()
 			"fbx/litmap_05/pre_db_cupboard39/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.dorm3d_collection_template
-
-	var_2_75[1415] = {
+	pg.base.dorm3d_collection_template[1415] = {
 		name = "壁炉",
 		award = 0,
 		time = 0,
@@ -4879,11 +4137,7 @@ end)()
 			"fbx/litmap_01/pre_db_fireplace02/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.dorm3d_collection_template
-
-	var_2_76[1416] = {
+	pg.base.dorm3d_collection_template[1416] = {
 		name = "落地灯",
 		award = 0,
 		time = 0,
@@ -4904,11 +4158,7 @@ end)()
 			"fbx/litmap_01/day/pre_db_floorlamp04_2/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.dorm3d_collection_template
-
-	var_2_77[1417] = {
+	pg.base.dorm3d_collection_template[1417] = {
 		name = "新鲜花卉",
 		award = 0,
 		time = 0,
@@ -4929,11 +4179,7 @@ end)()
 			"fbx/litmap_01/pre_db_flowers17/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.dorm3d_collection_template
-
-	var_2_78[1418] = {
+	pg.base.dorm3d_collection_template[1418] = {
 		name = "装饰花卉",
 		award = 0,
 		time = 0,
@@ -4954,11 +4200,7 @@ end)()
 			"fbx/litmap_01/pre_db_flowers18/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.dorm3d_collection_template
-
-	var_2_79[1419] = {
+	pg.base.dorm3d_collection_template[1419] = {
 		name = "香薰蜡烛",
 		award = 0,
 		time = 2,
@@ -4979,11 +4221,7 @@ end)()
 			"fbx/litmap_01/night/pre_db_decoration24_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.dorm3d_collection_template
-
-	var_2_80[1420] = {
+	pg.base.dorm3d_collection_template[1420] = {
 		name = "方柜",
 		award = 0,
 		time = 0,
@@ -5004,11 +4242,7 @@ end)()
 			"fbx/litmap_01/pre_db_cupboard37/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.dorm3d_collection_template
-
-	var_2_81[1421] = {
+	pg.base.dorm3d_collection_template[1421] = {
 		name = "壁灯",
 		award = 0,
 		time = 0,
@@ -5029,11 +4263,7 @@ end)()
 			"fbx/litmap_05/pre_db_aijier_lamp01_7/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.dorm3d_collection_template
-
-	var_2_82[1422] = {
+	pg.base.dorm3d_collection_template[1422] = {
 		name = "化妆品套装",
 		award = 0,
 		time = 1,
@@ -5054,11 +4284,7 @@ end)()
 			"no_bake_pay_prop/entertainment/pre_db_aje_entertainment01_0/pre_db_cosmetic19/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.dorm3d_collection_template
-
-	var_2_83[1423] = {
+	pg.base.dorm3d_collection_template[1423] = {
 		name = "休闲读物？",
 		award = 0,
 		time = 0,
@@ -5079,11 +4305,7 @@ end)()
 			"fbx/litmap_01/book_group/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.dorm3d_collection_template
-
-	var_2_84[1424] = {
+	pg.base.dorm3d_collection_template[1424] = {
 		name = "油画",
 		award = 0,
 		time = 0,
@@ -5104,11 +4326,7 @@ end)()
 			"fbx/litmap_05/pre_db_billboard29a/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.dorm3d_collection_template
-
-	var_2_85[1425] = {
+	pg.base.dorm3d_collection_template[1425] = {
 		name = "金色奖杯",
 		award = 0,
 		time = 0,
@@ -5129,11 +4347,7 @@ end)()
 			"fbx/litmap_01/pre_db_decoration21/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.dorm3d_collection_template
-
-	var_2_86[2101] = {
+	pg.base.dorm3d_collection_template[2101] = {
 		name = "火箭模型",
 		award = 0,
 		time = 0,
@@ -5154,11 +4368,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_decoration32/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.dorm3d_collection_template
-
-	var_2_87[2102] = {
+	pg.base.dorm3d_collection_template[2102] = {
 		name = "圆润瓷瓶",
 		award = 0,
 		time = 0,
@@ -5179,11 +4389,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_ceram29/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.dorm3d_collection_template
-
-	var_2_88[2103] = {
+	pg.base.dorm3d_collection_template[2103] = {
 		name = "玻璃酒瓶",
 		award = 0,
 		time = 2,
@@ -5204,11 +4410,7 @@ end)()
 			"fbx/litmap_03/night/pre_db_drink18/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.dorm3d_collection_template
-
-	var_2_89[2104] = {
+	pg.base.dorm3d_collection_template[2104] = {
 		name = "老式电视机",
 		award = 0,
 		time = 0,
@@ -5229,11 +4431,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_electrical25/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.dorm3d_collection_template
-
-	var_2_90[2105] = {
+	pg.base.dorm3d_collection_template[2105] = {
 		name = "亲肤浴巾",
 		award = 0,
 		time = 2,
@@ -5254,11 +4452,7 @@ end)()
 			"fbx/litmap_03/night/pre_db_towel02_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.dorm3d_collection_template
-
-	var_2_91[2106] = {
+	pg.base.dorm3d_collection_template[2106] = {
 		name = "双层储物柜",
 		award = 0,
 		time = 0,
@@ -5279,11 +4473,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_cupboard42/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.dorm3d_collection_template
-
-	var_2_92[2107] = {
+	pg.base.dorm3d_collection_template[2107] = {
 		name = "猫耳球椅",
 		award = 0,
 		time = 0,
@@ -5304,11 +4494,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_chair30/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.dorm3d_collection_template
-
-	var_2_93[2108] = {
+	pg.base.dorm3d_collection_template[2108] = {
 		name = "黑胶唱片",
 		award = 0,
 		time = 0,
@@ -5329,11 +4515,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_decoration30/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.dorm3d_collection_template
-
-	var_2_94[2109] = {
+	pg.base.dorm3d_collection_template[2109] = {
 		name = "悬挂绒球",
 		award = 0,
 		time = 0,
@@ -5354,11 +4536,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_toy18_7/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.dorm3d_collection_template
-
-	var_2_95[2110] = {
+	pg.base.dorm3d_collection_template[2110] = {
 		name = "猫猫纸巾盒",
 		award = 0,
 		time = 0,
@@ -5379,11 +4557,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_plasticbox03/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.dorm3d_collection_template
-
-	var_2_96[2111] = {
+	pg.base.dorm3d_collection_template[2111] = {
 		name = "暖橙壁灯",
 		award = 0,
 		time = 0,
@@ -5404,11 +4578,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_walllamp02/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.dorm3d_collection_template
-
-	var_2_97[2112] = {
+	pg.base.dorm3d_collection_template[2112] = {
 		name = "绿植盆栽Ⅰ",
 		award = 0,
 		time = 0,
@@ -5429,11 +4599,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_flowerpot26_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.dorm3d_collection_template
-
-	var_2_98[2113] = {
+	pg.base.dorm3d_collection_template[2113] = {
 		name = "瓦楞猫抓板",
 		award = 0,
 		time = 0,
@@ -5454,8 +4620,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_toy17_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.dorm3d_collection_template[2114] = {
+	pg.base.dorm3d_collection_template[2114] = {
 		name = "吊装电视机",
 		award = 0,
 		time = 0,
@@ -5480,11 +4645,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.dorm3d_collection_template
-
-	var_3_0[2115] = {
+	pg.base.dorm3d_collection_template[2115] = {
 		name = "书堆",
 		award = 0,
 		time = 0,
@@ -5505,11 +4666,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_book30_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.dorm3d_collection_template
-
-	var_3_1[2116] = {
+	pg.base.dorm3d_collection_template[2116] = {
 		name = "猫碗套装",
 		award = 0,
 		time = 0,
@@ -5530,11 +4687,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_tableware55/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.dorm3d_collection_template
-
-	var_3_2[2117] = {
+	pg.base.dorm3d_collection_template[2117] = {
 		name = "暖光小台灯",
 		award = 0,
 		time = 2,
@@ -5555,11 +4708,7 @@ end)()
 			"fbx/litmap_03/night/pre_db_desklamp07_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.dorm3d_collection_template
-
-	var_3_3[2118] = {
+	pg.base.dorm3d_collection_template[2118] = {
 		name = "科技感吊灯",
 		award = 0,
 		time = 2,
@@ -5580,11 +4729,7 @@ end)()
 			"fbx/litmap_03/night/pre_db_chandelier28_on/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.dorm3d_collection_template
-
-	var_3_4[2119] = {
+	pg.base.dorm3d_collection_template[2119] = {
 		name = "置物矮柜",
 		award = 0,
 		time = 0,
@@ -5605,11 +4750,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_cupboard40/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.dorm3d_collection_template
-
-	var_3_5[2120] = {
+	pg.base.dorm3d_collection_template[2120] = {
 		name = "电梯按钮",
 		award = 0,
 		time = 0,
@@ -5630,11 +4771,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_naximofu_button01/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.dorm3d_collection_template
-
-	var_3_6[2121] = {
+	pg.base.dorm3d_collection_template[2121] = {
 		name = "桌凳套装",
 		award = 0,
 		time = 0,
@@ -5655,11 +4792,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_naximofu_table02_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.dorm3d_collection_template
-
-	var_3_7[2122] = {
+	pg.base.dorm3d_collection_template[2122] = {
 		name = "方形音箱",
 		award = 0,
 		time = 0,
@@ -5680,11 +4813,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_electrical21_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.dorm3d_collection_template
-
-	var_3_8[2123] = {
+	pg.base.dorm3d_collection_template[2123] = {
 		name = "绿植盆栽Ⅱ",
 		award = 0,
 		time = 0,
@@ -5705,11 +4834,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_flowerpot26/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.dorm3d_collection_template
-
-	var_3_9[2124] = {
+	pg.base.dorm3d_collection_template[2124] = {
 		name = "立式唱片机",
 		award = 0,
 		time = 0,
@@ -5730,11 +4855,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_decoration31/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.dorm3d_collection_template
-
-	var_3_10[2125] = {
+	pg.base.dorm3d_collection_template[2125] = {
 		name = "舒适猫窝",
 		award = 0,
 		time = 0,
@@ -5755,11 +4876,7 @@ end)()
 			"fbx/litmap_03/day/pre_db_bed06_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.dorm3d_collection_template
-
-	var_3_11[2601] = {
+	pg.base.dorm3d_collection_template[2601] = {
 		name = "高清电视",
 		award = 0,
 		time = 0,
@@ -5776,11 +4893,7 @@ end)()
 			"fbx/litmap_05/pre_db_appliances09/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.dorm3d_collection_template
-
-	var_3_12[2602] = {
+	pg.base.dorm3d_collection_template[2602] = {
 		name = "街头滑板",
 		award = 0,
 		time = 0,
@@ -5797,11 +4910,7 @@ end)()
 			"fbx/litmap_05/pre_db_sportinggoods08_02/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.dorm3d_collection_template
-
-	var_3_13[2603] = {
+	pg.base.dorm3d_collection_template[2603] = {
 		name = "双头咖啡机",
 		award = 0,
 		time = 0,
@@ -5818,11 +4927,7 @@ end)()
 			"fbx/litmap_05/pre_db_electrical23_group_01/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.dorm3d_collection_template
-
-	var_3_14[2604] = {
+	pg.base.dorm3d_collection_template[2604] = {
 		name = "荣誉奖杯",
 		award = 0,
 		time = 0,
@@ -5839,11 +4944,7 @@ end)()
 			"fbx/litmap_05/pre_db_decoration33c_02/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.dorm3d_collection_template
-
-	var_3_15[2605] = {
+	pg.base.dorm3d_collection_template[2605] = {
 		name = "红酒套装",
 		award = 0,
 		time = 0,
@@ -5860,11 +4961,7 @@ end)()
 			"fbx/litmap_05/pre_db_tableware56_group_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.dorm3d_collection_template
-
-	var_3_16[2606] = {
+	pg.base.dorm3d_collection_template[2606] = {
 		name = "冠军奖杯",
 		award = 0,
 		time = 0,
@@ -5881,11 +4978,7 @@ end)()
 			"fbx/litmap_05/pre_db_decoration34/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.dorm3d_collection_template
-
-	var_3_17[2607] = {
+	pg.base.dorm3d_collection_template[2607] = {
 		name = "反应训练器",
 		award = 0,
 		time = 0,
@@ -5902,11 +4995,7 @@ end)()
 			"no_bake/pre_db_entertainment01/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.dorm3d_collection_template
-
-	var_3_18[2608] = {
+	pg.base.dorm3d_collection_template[2608] = {
 		name = "赛车模拟器",
 		award = 0,
 		time = 0,
@@ -5923,11 +5012,7 @@ end)()
 			"no_bake/pre_db_cw_racingsim01/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.dorm3d_collection_template
-
-	var_3_19[2609] = {
+	pg.base.dorm3d_collection_template[2609] = {
 		name = "专业赛车服",
 		award = 0,
 		time = 0,
@@ -5944,8 +5029,7 @@ end)()
 			"fbx/litmap_05/pre_db_cloth12_1/vfx_wupintishi01"
 		}
 	}
-	pg = var_3_19
-	var_3_19.base.dorm3d_collection_template[2610] = {
+	pg.base.dorm3d_collection_template[2610] = {
 		name = "赛车清洗用具",
 		award = 0,
 		time = 0,

@@ -50,7 +50,7 @@ function doRegisterMsg(self)
                 end
 
                 if table.empty(socket.waitResponseDic.waitDic) then
-                    if socket.waitResponseDic.waitTimer then 
+                    if socket.waitResponseDic.waitTimer then
                         LoopManager:clearTimeout(socket.waitResponseDic.waitTimer)
                         socket.waitResponseDic.waitTimer = nil
                     end
@@ -65,16 +65,34 @@ function doRegisterMsg(self)
                         socket.faultTimer = nil
                     end
                 end
-                if _protocol == _G.Protocol.SC_SYS_PING then 
+                if _protocol == _G.Protocol.SC_SYS_PING then
                     socket.pingCount = socket.pingCount + 1
                 end
+
+                -- 因为血量超过64位，把特殊string类型统一转成number
+                local traverseTable
+                traverseTable = function(data)
+                    for key, value in pairs(data) do
+                        if type(value) == "table" then
+                            if value.int_to_string_value ~= nil then
+                                data[key] = tonumber(value.int_to_string_value)
+                            else
+                                traverseTable(value)
+                            end
+                        end
+                    end
+                end
+
+                traverseTable(msgData)
+
+
                 v(self, msgData)
             end
-            if(not _protocol)then
-                Debug:log_error(self.__cname, "协议号出错:"..k)
+            if (not _protocol) then
+                Debug:log_error(self.__cname, "协议号出错:" .. k)
             end
-            if(not func)then
-                Debug:log_error(self.__cname, "响应方法出错："..k)
+            if (not func) then
+                Debug:log_error(self.__cname, "响应方法出错：" .. k)
             end
             _socketProxy.AddMsgListener(_protocol, func)
         end

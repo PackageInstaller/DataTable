@@ -1,11 +1,8 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatWeapon")
+﻿local var_0_0 = class("SailBoatWeapon")
 local var_0_1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	SailBoatGameVo = var_1_10002
-	var_0_1 = var_1_10002
+	var_0_1 = SailBoatGameVo
 	arg_1_0._data = arg_1_1
 	arg_1_0._fireTime = nil
 
@@ -57,19 +54,11 @@ function var_0_0.fire(arg_6_0)
 end
 
 function var_0_0.getFireTime(arg_7_0)
-	local var_7_0
-
-	if not arg_7_0._fireTime then
-		var_7_0 = 0
-	end
-
-	return var_7_0
+	return arg_7_0._fireTime or 0
 end
 
 function var_0_0.getFireData(arg_8_0)
-	Clone = var_1_10001
-
-	return var_1_10001(arg_8_0._data)
+	return Clone(arg_8_0._data)
 end
 
 function var_0_0.getAngel(arg_9_0)

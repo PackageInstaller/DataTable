@@ -1,161 +1,70 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SVAchievement", import("view.base.BaseSubView"))
 
-local var_0_0 = "SVAchievement"
+var_0_0.HideView = "SVAchievement.HideView"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-var_0_1.HideView = "SVAchievement.HideView"
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SVAchievement"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	local var_3_0 = arg_3_0._tf
-	local var_3_1 = var_1.Find(var_3_0, "display")
-	local var_3_2 = arg_3_0._tf.rect.width / var_3_1.rect.width
+function var_0_0.OnInit(arg_3_0)
+	local var_3_0 = arg_3_0._tf:Find("display")
 
-	Vector3 = var_3
-	var_3_1.localScale = var_3.New(var_3_2, var_3_2, 0)
-	arg_3_0.rtDesc = var_3_1:Find("desc")
+	var_3_0.localScale = Vector3.New(arg_3_0._tf.rect.width / var_3_0.rect.width, arg_3_0._tf.rect.width / var_3_0.rect.width, 0)
+	arg_3_0.rtDesc = var_3_0:Find("desc")
+	arg_3_0.rtStar = arg_3_0.rtDesc:Find("star")
 
-	local var_3_3 = arg_3_0.rtDesc
-
-	arg_3_0.rtStar = var_3.Find(var_3_3, "star")
-	onButton = var_3
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = arg_3_0._tf
-
-	local function var_3_6()
+	onButton(arg_3_0, arg_3_0._tf, function()
 		if arg_3_0.isClosing then
 			return
 		end
 
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10008
-
-	var_3(var_3_4, var_3_5, var_3_6, var_1_10008)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_5_0)
+function var_0_0.OnDestroy(arg_5_0)
 	return
 end
 
-function var_0_1.Show(arg_6_0)
-	setAnchoredPosition = var_1_10001
-
-	local var_6_0 = arg_6_0.rtStar
-
-	Vector2 = var_1_10004
-
-	var_1_10001(var_6_0, var_1_10004.New(100, 0))
-
-	setActive = var_1_10001
-
-	local var_6_1 = arg_6_0.rtStar
-
-	var_1_10001(var_3.Find(var_6_1, "SVAstar"), false)
-
-	pg = var_1_10001
-
-	local var_6_2 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_6_2, arg_6_0._tf)
-
-	setActive = var_1
-
-	var_1(arg_6_0._tf, true)
+function var_0_0.Show(arg_6_0)
+	setAnchoredPosition(arg_6_0.rtStar, Vector2.New(100, 0))
+	setActive(arg_6_0.rtStar:Find("SVAstar"), false)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_6_0._tf)
+	setActive(arg_6_0._tf, true)
 
 	return
 end
 
-function var_0_1.Hide(arg_7_0)
+function var_0_0.Hide(arg_7_0)
 	arg_7_0.isClosing = true
 
-	local var_7_0 = arg_7_0.rtDesc
-	local var_7_1 = var_1.InverseTransformPoint(var_7_0, arg_7_0.starWorldPos)
-	local var_7_2 = {}
+	local var_7_0 = arg_7_0.rtDesc:InverseTransformPoint(arg_7_0.starWorldPos)
 
-	table = var_7_0
-
-	var_7_0.insert(var_7_2, function(arg_8_0)
-		setActive = var_2_10001
-
-		local var_8_0 = arg_7_0.rtStar
-
-		var_2_10001(var_3.Find(var_8_0, "SVAstar"), true)
-
-		LeanTween = var_2_10001
-
-		local var_8_1 = var_2_10001.moveLocal
-
-		go = var_3
-
-		local var_8_2 = var_3(arg_7_0.rtStar)
-
-		Vector3 = var_4
-
-		local var_8_3 = var_8_1(var_8_2, var_4.New(var_7_1.x, var_7_1.y, 0), 0.5)
-		local var_8_4 = var_1.setEase
-
-		LeanTweenType = var_4
-
-		local var_8_5 = var_8_4(var_8_3, var_4.easeInOutSine)
-		local var_8_6 = var_1.setOnComplete
-
-		System = var_4
-
-		var_8_6(var_8_5, var_4.Action(arg_8_0))
+	table.insert({}, function(arg_8_0)
+		setActive(arg_7_0.rtStar:Find("SVAstar"), true)
+		LeanTween.moveLocal(go(arg_7_0.rtStar), Vector3.New(var_7_0.x, var_7_0.y, 0), 0.5):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_8_0))
 
 		return
 	end)
-
-	table = var_3
-
-	var_3.insert(var_7_2, function(arg_9_0)
-		Timer = var_2_10001
-
-		local var_9_0 = var_2_10001.New(arg_9_0, 1.1)
-
-		var_1.Start(var_9_0)
+	table.insert({}, function(arg_9_0)
+		Timer.New(arg_9_0, 1.1):Start()
 
 		return
 	end)
+	seriesAsync({}, function()
+		arg_7_0.isClosing = false
 
-	seriesAsync = var_3
-
-	var_3(var_7_2, function()
-		local var_10_0 = arg_7_0
-
-		var_10_0.isClosing = false
-		pg = var_10_0
-
-		local var_10_1 = var_10_0.UIMgr.GetInstance()
-
-		var_0.UnOverlayPanel(var_10_1, arg_7_0._tf, arg_7_0._parentTf)
-
-		setActive = var_0
-
-		var_0(arg_7_0._tf, false)
-
-		local var_10_2 = arg_7_0
-
-		var_0.emit(var_10_2, var_0_1.HideView)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_7_0._tf, arg_7_0._parentTf)
+		setActive(arg_7_0._tf, false)
+		arg_7_0:emit(var_0_0.HideView)
 
 		return
 	end)
@@ -163,14 +72,12 @@ function var_0_1.Hide(arg_7_0)
 	return
 end
 
-function var_0_1.Setup(arg_11_0, arg_11_1, arg_11_2)
-	setText = var_1_10003
-
-	var_1_10003(arg_11_0.rtDesc, arg_11_1.config.target_desc)
+function var_0_0.Setup(arg_11_0, arg_11_1, arg_11_2)
+	setText(arg_11_0.rtDesc, arg_11_1.config.target_desc)
 
 	arg_11_0.starWorldPos = arg_11_2
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,17 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DreamlandChatPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "DreamlandChatPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "DreamlandChatUI"
 end
 
-function var_0_1.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	var_0_1.super.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	var_0_0.super.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
 	arg_2_0.uiList = {
 		arg_2_1:Find("adapt/time"),
@@ -23,133 +17,73 @@ function var_0_1.Ctor(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	return
 end
 
-function var_0_1.OnLoaded(arg_3_0)
-	local var_3_0 = arg_3_0._tf
-	local var_3_1 = var_1.Find(var_3_0, "icon")
-	local var_3_2 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_3_0.icon = var_3_2(var_3_1, var_4(var_1_10006))
-
-	local var_3_3 = arg_3_0._tf
-	local var_3_4 = var_1.Find(var_3_3, "Text")
-	local var_3_5 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_3_0.content = var_3_5(var_3_4, var_4(var_1_10006))
+function var_0_0.OnLoaded(arg_3_0)
+	arg_3_0.icon = arg_3_0._tf:Find("icon"):GetComponent(typeof(Image))
+	arg_3_0.content = arg_3_0._tf:Find("Text"):GetComponent(typeof(Text))
 
 	return
 end
 
-function var_0_1.OnInit(arg_4_0)
-	onButton = var_1_10001
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0._tf
-
-	local function var_4_2()
+function var_0_0.OnInit(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf, function()
 		if arg_4_0.clickCnt < arg_4_0.totlalCnt then
-			local var_5_0 = arg_4_0
-
-			var_0.ShowContent(var_5_0)
+			arg_4_0:ShowContent()
 		else
-			local var_5_1 = arg_4_0
-
-			var_0.Hide(var_5_1)
+			arg_4_0:Hide()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_4_0, var_4_1, var_4_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_6_0, arg_6_1)
-	var_0_1.super.Show(arg_6_0)
+function var_0_0.Show(arg_6_0, arg_6_1)
+	var_0_0.super.Show(arg_6_0)
 
 	arg_6_0.clickCnt = 0
-	_ = var_2
-	arg_6_0.textList = var_2.flatten(arg_6_1.desc)
+	arg_6_0.textList = _.flatten(arg_6_1.desc)
 	arg_6_0.totlalCnt = #arg_6_0.textList
 
 	arg_6_0:ShowContent()
 
-	local var_6_0 = arg_6_0:GetPic(arg_6_1)
+	arg_6_0.icon.sprite = LoadSprite("exploreObj/icon_" .. arg_6_0:GetPic(arg_6_1))
 
-	LoadSprite = var_1_10003
-
-	local var_6_1 = var_1_10003("exploreObj/icon_" .. var_6_0)
-
-	arg_6_0.icon.sprite = var_6_1
-
-	local var_6_2 = arg_6_0.icon
-
-	var_4.SetNativeSize(var_6_2)
+	arg_6_0.icon:SetNativeSize()
 	arg_6_0:HideUI()
 
 	return
 end
 
-function var_0_1.ShowContent(arg_7_0)
+function var_0_0.ShowContent(arg_7_0)
 	arg_7_0.clickCnt = arg_7_0.clickCnt + 1
 
-	local var_7_0
+	local var_7_0 = arg_7_0.textList[arg_7_0.clickCnt] or ""
 
-	if not arg_7_0.textList[arg_7_0.clickCnt] then
-		var_7_0 = ""
-	end
-
-	local var_7_1 = arg_7_0.content
-
-	HXSet = var_1_10003
-	var_7_1.text = var_1_10003.hxLan(var_7_0)
+	arg_7_0.content.text = HXSet.hxLan(var_7_0)
 
 	return
 end
 
-function var_0_1.HideUI(arg_8_0)
+function var_0_0.HideUI(arg_8_0)
 	arg_8_0.toHideUI = {}
-	ipairs = var_1
 
-	for iter_8_0, iter_8_1 in var_1(arg_8_0.uiList) do
-		isActive = var_1_10006
-
-		if var_1_10006(iter_8_1) then
-			setActive = var_1_10006
-
-			var_1_10006(iter_8_1, false)
-
-			table = var_1_10006
-
-			var_1_10006.insert(arg_8_0.toHideUI, iter_8_1)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0.uiList) do
+		if isActive(iter_8_1) then
+			setActive(iter_8_1, false)
+			table.insert(arg_8_0.toHideUI, iter_8_1)
 		end
 	end
 
 	return
 end
 
-function var_0_1.ShowUI(arg_9_0)
-	ipairs = var_1_10001
+function var_0_0.ShowUI(arg_9_0)
+	local var_9_0 = arg_9_0.toHideUI or {}
 
-	local var_9_0
-
-	if not arg_9_0.toHideUI then
-		var_9_0 = {}
-	end
-
-	for iter_9_0, iter_9_1 in var_1_10001(var_9_0) do
-		isActive = var_1_10006
-
-		if not var_1_10006(iter_9_1) then
-			setActive = var_1_10006
-
-			var_1_10006(iter_9_1, true)
+	for iter_9_0, iter_9_1 in ipairs(var_9_0) do
+		if not isActive(iter_9_1) then
+			setActive(iter_9_1, true)
 		end
 	end
 
@@ -158,8 +92,8 @@ function var_0_1.ShowUI(arg_9_0)
 	return
 end
 
-function var_0_1.Hide(arg_10_0)
-	var_0_1.super.Hide(arg_10_0)
+function var_0_0.Hide(arg_10_0)
+	var_0_0.super.Hide(arg_10_0)
 
 	arg_10_0.textList = {}
 	arg_10_0.clickCnt = 0
@@ -170,28 +104,15 @@ function var_0_1.Hide(arg_10_0)
 	return
 end
 
-function var_0_1.GetPic(arg_11_0, arg_11_1)
-	pg = var_1_10002
+function var_0_0.GetPic(arg_11_0, arg_11_1)
+	local var_11_0 = pg.activity_dreamland_explore.get_id_list_by_group[arg_11_1.group] or {}
+	local var_11_1 = var_11_0[1] or arg_11_1.id
 
-	local var_11_0
-
-	if not var_1_10002.activity_dreamland_explore.get_id_list_by_group[arg_11_1.group] then
-		var_11_0 = {}
-	end
-
-	local var_11_1
-
-	if not var_11_0[1] then
-		var_11_1 = arg_11_1.id
-	end
-
-	pg = var_1_10005
-
-	return var_1_10005.activity_dreamland_explore[var_11_1].pic
+	return pg.activity_dreamland_explore[var_11_1].pic
 end
 
-function var_0_1.OnDestroy(arg_12_0)
+function var_0_0.OnDestroy(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_dialogue_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_dialogue_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_dialogue_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_dialogue_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_dialogue_group = rawget(pg, "dorm3d_dialogue_group") or setmetatable({
+	__name = "dorm3d_dialogue_group"
+}, confNEO)
+pg.dorm3d_dialogue_group.all = {
 	1001,
 	1002,
 	1003,
@@ -952,11 +929,7 @@ var_0_3.all = {
 	210227,
 	210228
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_dialogue_group
-
-var_0_4.get_id_list_by_char_id = {
+pg.dorm3d_dialogue_group.get_id_list_by_char_id = {
 	[10517] = {
 		110101,
 		110102,
@@ -1897,11 +1870,7 @@ var_0_4.get_id_list_by_char_id = {
 		210228
 	}
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.dorm3d_dialogue_group
-
-var_0_5.get_id_list_by_room_id = {
+pg.dorm3d_dialogue_group.get_id_list_by_room_id = {
 	{
 		1001,
 		1002,
@@ -2848,25 +2817,11 @@ var_0_5.get_id_list_by_room_id = {
 		210055
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.dorm3d_dialogue_group = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_dialogue_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_1_0[1001] = {
+	pg.base.dorm3d_dialogue_group[1001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -2885,11 +2840,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_dialogue_group
-
-	var_1_1[1002] = {
+	pg.base.dorm3d_dialogue_group[1002] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -2908,11 +2859,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_dialogue_group
-
-	var_1_2[1003] = {
+	pg.base.dorm3d_dialogue_group[1003] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -2931,11 +2878,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_dialogue_group
-
-	var_1_3[1004] = {
+	pg.base.dorm3d_dialogue_group[1004] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -2954,11 +2897,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_dialogue_group
-
-	var_1_4[1005] = {
+	pg.base.dorm3d_dialogue_group[1005] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -2977,11 +2916,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_dialogue_group
-
-	var_1_5[1006] = {
+	pg.base.dorm3d_dialogue_group[1006] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3000,11 +2935,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_dialogue_group
-
-	var_1_6[1007] = {
+	pg.base.dorm3d_dialogue_group[1007] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3023,11 +2954,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_dialogue_group
-
-	var_1_7[1008] = {
+	pg.base.dorm3d_dialogue_group[1008] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3046,11 +2973,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_dialogue_group
-
-	var_1_8[1009] = {
+	pg.base.dorm3d_dialogue_group[1009] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3069,11 +2992,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_dialogue_group
-
-	var_1_9[1010] = {
+	pg.base.dorm3d_dialogue_group[1010] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3092,11 +3011,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_dialogue_group
-
-	var_1_10[1011] = {
+	pg.base.dorm3d_dialogue_group[1011] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3115,11 +3030,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_dialogue_group
-
-	var_1_11[1012] = {
+	pg.base.dorm3d_dialogue_group[1012] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3138,11 +3049,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_dialogue_group
-
-	var_1_12[1013] = {
+	pg.base.dorm3d_dialogue_group[1013] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3161,11 +3068,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_dialogue_group
-
-	var_1_13[1014] = {
+	pg.base.dorm3d_dialogue_group[1014] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3184,11 +3087,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_dialogue_group
-
-	var_1_14[1015] = {
+	pg.base.dorm3d_dialogue_group[1015] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3207,11 +3106,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_dialogue_group
-
-	var_1_15[1016] = {
+	pg.base.dorm3d_dialogue_group[1016] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3230,11 +3125,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_dialogue_group
-
-	var_1_16[1017] = {
+	pg.base.dorm3d_dialogue_group[1017] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3253,11 +3144,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_dialogue_group
-
-	var_1_17[1018] = {
+	pg.base.dorm3d_dialogue_group[1018] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3276,11 +3163,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_dialogue_group
-
-	var_1_18[1019] = {
+	pg.base.dorm3d_dialogue_group[1019] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3299,11 +3182,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_dialogue_group
-
-	var_1_19[1020] = {
+	pg.base.dorm3d_dialogue_group[1020] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3322,11 +3201,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_dialogue_group
-
-	var_1_20[1021] = {
+	pg.base.dorm3d_dialogue_group[1021] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3345,11 +3220,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_dialogue_group
-
-	var_1_21[1022] = {
+	pg.base.dorm3d_dialogue_group[1022] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3368,11 +3239,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_dialogue_group
-
-	var_1_22[1023] = {
+	pg.base.dorm3d_dialogue_group[1023] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3391,11 +3258,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			8
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_dialogue_group
-
-	var_1_23[1024] = {
+	pg.base.dorm3d_dialogue_group[1024] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3414,11 +3277,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			12
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_dialogue_group
-
-	var_1_24[1025] = {
+	pg.base.dorm3d_dialogue_group[1025] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3437,11 +3296,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_dialogue_group
-
-	var_1_25[1026] = {
+	pg.base.dorm3d_dialogue_group[1026] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3460,11 +3315,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_dialogue_group
-
-	var_1_26[1027] = {
+	pg.base.dorm3d_dialogue_group[1027] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3483,11 +3334,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			8
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_dialogue_group
-
-	var_1_27[1028] = {
+	pg.base.dorm3d_dialogue_group[1028] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3506,11 +3353,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			12
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_dialogue_group
-
-	var_1_28[1029] = {
+	pg.base.dorm3d_dialogue_group[1029] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3529,11 +3372,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_dialogue_group
-
-	var_1_29[1030] = {
+	pg.base.dorm3d_dialogue_group[1030] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3552,11 +3391,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_dialogue_group
-
-	var_1_30[1031] = {
+	pg.base.dorm3d_dialogue_group[1031] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3575,11 +3410,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			8
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_dialogue_group
-
-	var_1_31[1032] = {
+	pg.base.dorm3d_dialogue_group[1032] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3598,11 +3429,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			12
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_dialogue_group
-
-	var_1_32[1033] = {
+	pg.base.dorm3d_dialogue_group[1033] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3621,11 +3448,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_dialogue_group
-
-	var_1_33[1034] = {
+	pg.base.dorm3d_dialogue_group[1034] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3644,11 +3467,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_dialogue_group
-
-	var_1_34[1035] = {
+	pg.base.dorm3d_dialogue_group[1035] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3667,11 +3486,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			8
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_dialogue_group
-
-	var_1_35[1036] = {
+	pg.base.dorm3d_dialogue_group[1036] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3690,11 +3505,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			12
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_dialogue_group
-
-	var_1_36[1037] = {
+	pg.base.dorm3d_dialogue_group[1037] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3713,11 +3524,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_dialogue_group
-
-	var_1_37[1038] = {
+	pg.base.dorm3d_dialogue_group[1038] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3736,11 +3543,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_dialogue_group
-
-	var_1_38[1039] = {
+	pg.base.dorm3d_dialogue_group[1039] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3759,11 +3562,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_dialogue_group
-
-	var_1_39[1040] = {
+	pg.base.dorm3d_dialogue_group[1040] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3782,11 +3581,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_dialogue_group
-
-	var_1_40[1041] = {
+	pg.base.dorm3d_dialogue_group[1041] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3805,11 +3600,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_dialogue_group
-
-	var_1_41[1042] = {
+	pg.base.dorm3d_dialogue_group[1042] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3828,11 +3619,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_dialogue_group
-
-	var_1_42[1043] = {
+	pg.base.dorm3d_dialogue_group[1043] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3851,11 +3638,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_dialogue_group
-
-	var_1_43[1044] = {
+	pg.base.dorm3d_dialogue_group[1044] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3874,11 +3657,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_dialogue_group
-
-	var_1_44[1045] = {
+	pg.base.dorm3d_dialogue_group[1045] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3897,11 +3676,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_dialogue_group
-
-	var_1_45[1046] = {
+	pg.base.dorm3d_dialogue_group[1046] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3920,11 +3695,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_dialogue_group
-
-	var_1_46[1047] = {
+	pg.base.dorm3d_dialogue_group[1047] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3943,11 +3714,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_dialogue_group
-
-	var_1_47[1048] = {
+	pg.base.dorm3d_dialogue_group[1048] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3966,11 +3733,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_dialogue_group
-
-	var_1_48[1049] = {
+	pg.base.dorm3d_dialogue_group[1049] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -3989,11 +3752,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_dialogue_group
-
-	var_1_49[1050] = {
+	pg.base.dorm3d_dialogue_group[1050] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4012,11 +3771,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_dialogue_group
-
-	var_1_50[1051] = {
+	pg.base.dorm3d_dialogue_group[1051] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4035,11 +3790,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_dialogue_group
-
-	var_1_51[1052] = {
+	pg.base.dorm3d_dialogue_group[1052] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4058,11 +3809,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_dialogue_group
-
-	var_1_52[1101] = {
+	pg.base.dorm3d_dialogue_group[1101] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4081,11 +3828,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_dialogue_group
-
-	var_1_53[1102] = {
+	pg.base.dorm3d_dialogue_group[1102] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4104,11 +3847,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_dialogue_group
-
-	var_1_54[1103] = {
+	pg.base.dorm3d_dialogue_group[1103] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4127,11 +3866,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_dialogue_group
-
-	var_1_55[1104] = {
+	pg.base.dorm3d_dialogue_group[1104] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4150,11 +3885,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_dialogue_group
-
-	var_1_56[1105] = {
+	pg.base.dorm3d_dialogue_group[1105] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4173,11 +3904,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_dialogue_group
-
-	var_1_57[1106] = {
+	pg.base.dorm3d_dialogue_group[1106] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4196,11 +3923,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_dialogue_group
-
-	var_1_58[1107] = {
+	pg.base.dorm3d_dialogue_group[1107] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4219,11 +3942,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_dialogue_group
-
-	var_1_59[1108] = {
+	pg.base.dorm3d_dialogue_group[1108] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4242,11 +3961,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_dialogue_group
-
-	var_1_60[1109] = {
+	pg.base.dorm3d_dialogue_group[1109] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4265,11 +3980,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_dialogue_group
-
-	var_1_61[1110] = {
+	pg.base.dorm3d_dialogue_group[1110] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4288,11 +3999,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			1
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_dialogue_group
-
-	var_1_62[1111] = {
+	pg.base.dorm3d_dialogue_group[1111] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4311,11 +4018,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_dialogue_group
-
-	var_1_63[1112] = {
+	pg.base.dorm3d_dialogue_group[1112] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4334,11 +4037,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_dialogue_group
-
-	var_1_64[1113] = {
+	pg.base.dorm3d_dialogue_group[1113] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4357,11 +4056,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_dialogue_group
-
-	var_1_65[1114] = {
+	pg.base.dorm3d_dialogue_group[1114] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4380,11 +4075,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_dialogue_group
-
-	var_1_66[1115] = {
+	pg.base.dorm3d_dialogue_group[1115] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4403,11 +4094,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_dialogue_group
-
-	var_1_67[1116] = {
+	pg.base.dorm3d_dialogue_group[1116] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4426,11 +4113,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_dialogue_group
-
-	var_1_68[1117] = {
+	pg.base.dorm3d_dialogue_group[1117] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4449,11 +4132,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_dialogue_group
-
-	var_1_69[1118] = {
+	pg.base.dorm3d_dialogue_group[1118] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4472,11 +4151,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_dialogue_group
-
-	var_1_70[1119] = {
+	pg.base.dorm3d_dialogue_group[1119] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4495,11 +4170,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_dialogue_group
-
-	var_1_71[1120] = {
+	pg.base.dorm3d_dialogue_group[1120] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4518,11 +4189,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_dialogue_group
-
-	var_1_72[1121] = {
+	pg.base.dorm3d_dialogue_group[1121] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4541,11 +4208,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_dialogue_group
-
-	var_1_73[1122] = {
+	pg.base.dorm3d_dialogue_group[1122] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4564,11 +4227,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_dialogue_group
-
-	var_1_74[1123] = {
+	pg.base.dorm3d_dialogue_group[1123] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4587,11 +4246,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_dialogue_group
-
-	var_1_75[1124] = {
+	pg.base.dorm3d_dialogue_group[1124] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4610,11 +4265,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_dialogue_group
-
-	var_1_76[1125] = {
+	pg.base.dorm3d_dialogue_group[1125] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4633,11 +4284,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			6
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.dorm3d_dialogue_group
-
-	var_1_77[1126] = {
+	pg.base.dorm3d_dialogue_group[1126] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4656,11 +4303,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.dorm3d_dialogue_group
-
-	var_1_78[1127] = {
+	pg.base.dorm3d_dialogue_group[1127] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4679,11 +4322,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.dorm3d_dialogue_group
-
-	var_1_79[1128] = {
+	pg.base.dorm3d_dialogue_group[1128] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4702,11 +4341,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.dorm3d_dialogue_group
-
-	var_1_80[1129] = {
+	pg.base.dorm3d_dialogue_group[1129] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4725,11 +4360,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.dorm3d_dialogue_group
-
-	var_1_81[1130] = {
+	pg.base.dorm3d_dialogue_group[1130] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4748,11 +4379,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.dorm3d_dialogue_group
-
-	var_1_82[1131] = {
+	pg.base.dorm3d_dialogue_group[1131] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4771,11 +4398,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.dorm3d_dialogue_group
-
-	var_1_83[1132] = {
+	pg.base.dorm3d_dialogue_group[1132] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4794,11 +4417,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.dorm3d_dialogue_group
-
-	var_1_84[1133] = {
+	pg.base.dorm3d_dialogue_group[1133] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4817,11 +4436,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.dorm3d_dialogue_group
-
-	var_1_85[1134] = {
+	pg.base.dorm3d_dialogue_group[1134] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4840,11 +4455,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.dorm3d_dialogue_group
-
-	var_1_86[1135] = {
+	pg.base.dorm3d_dialogue_group[1135] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4863,11 +4474,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.dorm3d_dialogue_group
-
-	var_1_87[1136] = {
+	pg.base.dorm3d_dialogue_group[1136] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4886,11 +4493,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.dorm3d_dialogue_group
-
-	var_1_88[1137] = {
+	pg.base.dorm3d_dialogue_group[1137] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4909,11 +4512,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.dorm3d_dialogue_group
-
-	var_1_89[1138] = {
+	pg.base.dorm3d_dialogue_group[1138] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4932,11 +4531,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.dorm3d_dialogue_group
-
-	var_1_90[1139] = {
+	pg.base.dorm3d_dialogue_group[1139] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4955,11 +4550,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.dorm3d_dialogue_group
-
-	var_1_91[1140] = {
+	pg.base.dorm3d_dialogue_group[1140] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -4978,11 +4569,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.dorm3d_dialogue_group
-
-	var_1_92[1141] = {
+	pg.base.dorm3d_dialogue_group[1141] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5001,11 +4588,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.dorm3d_dialogue_group
-
-	var_1_93[1142] = {
+	pg.base.dorm3d_dialogue_group[1142] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5024,11 +4607,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.dorm3d_dialogue_group
-
-	var_1_94[1143] = {
+	pg.base.dorm3d_dialogue_group[1143] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5047,11 +4626,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.dorm3d_dialogue_group
-
-	var_1_95[1144] = {
+	pg.base.dorm3d_dialogue_group[1144] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5070,11 +4645,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.dorm3d_dialogue_group
-
-	var_1_96[1145] = {
+	pg.base.dorm3d_dialogue_group[1145] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5093,11 +4664,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.dorm3d_dialogue_group
-
-	var_1_97[1146] = {
+	pg.base.dorm3d_dialogue_group[1146] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5116,11 +4683,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.dorm3d_dialogue_group
-
-	var_1_98[1147] = {
+	pg.base.dorm3d_dialogue_group[1147] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5139,8 +4702,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 			11
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.dorm3d_dialogue_group[1148] = {
+	pg.base.dorm3d_dialogue_group[1148] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5163,11 +4725,7 @@ var_0_5.base.dorm3d_dialogue_group = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_2_0[1149] = {
+	pg.base.dorm3d_dialogue_group[1149] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5186,11 +4744,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.dorm3d_dialogue_group
-
-	var_2_1[1150] = {
+	pg.base.dorm3d_dialogue_group[1150] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5209,11 +4763,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.dorm3d_dialogue_group
-
-	var_2_2[1151] = {
+	pg.base.dorm3d_dialogue_group[1151] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5232,11 +4782,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.dorm3d_dialogue_group
-
-	var_2_3[1152] = {
+	pg.base.dorm3d_dialogue_group[1152] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5255,11 +4801,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.dorm3d_dialogue_group
-
-	var_2_4[1153] = {
+	pg.base.dorm3d_dialogue_group[1153] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5278,11 +4820,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.dorm3d_dialogue_group
-
-	var_2_5[1154] = {
+	pg.base.dorm3d_dialogue_group[1154] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5301,11 +4839,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.dorm3d_dialogue_group
-
-	var_2_6[1155] = {
+	pg.base.dorm3d_dialogue_group[1155] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5324,11 +4858,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.dorm3d_dialogue_group
-
-	var_2_7[1156] = {
+	pg.base.dorm3d_dialogue_group[1156] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -5347,11 +4877,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.dorm3d_dialogue_group
-
-	var_2_8[1157] = {
+	pg.base.dorm3d_dialogue_group[1157] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -5370,11 +4896,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.dorm3d_dialogue_group
-
-	var_2_9[1158] = {
+	pg.base.dorm3d_dialogue_group[1158] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -5393,11 +4915,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.dorm3d_dialogue_group
-
-	var_2_10[1159] = {
+	pg.base.dorm3d_dialogue_group[1159] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -5416,11 +4934,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.dorm3d_dialogue_group
-
-	var_2_11[1160] = {
+	pg.base.dorm3d_dialogue_group[1160] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -5439,11 +4953,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.dorm3d_dialogue_group
-
-	var_2_12[1301] = {
+	pg.base.dorm3d_dialogue_group[1301] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5462,11 +4972,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.dorm3d_dialogue_group
-
-	var_2_13[1302] = {
+	pg.base.dorm3d_dialogue_group[1302] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5485,11 +4991,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.dorm3d_dialogue_group
-
-	var_2_14[1303] = {
+	pg.base.dorm3d_dialogue_group[1303] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5508,11 +5010,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.dorm3d_dialogue_group
-
-	var_2_15[1304] = {
+	pg.base.dorm3d_dialogue_group[1304] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5531,11 +5029,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.dorm3d_dialogue_group
-
-	var_2_16[1305] = {
+	pg.base.dorm3d_dialogue_group[1305] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5554,11 +5048,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.dorm3d_dialogue_group
-
-	var_2_17[1306] = {
+	pg.base.dorm3d_dialogue_group[1306] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5577,11 +5067,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.dorm3d_dialogue_group
-
-	var_2_18[1307] = {
+	pg.base.dorm3d_dialogue_group[1307] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5602,11 +5088,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.dorm3d_dialogue_group
-
-	var_2_19[1308] = {
+	pg.base.dorm3d_dialogue_group[1308] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5627,11 +5109,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.dorm3d_dialogue_group
-
-	var_2_20[1309] = {
+	pg.base.dorm3d_dialogue_group[1309] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5652,11 +5130,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.dorm3d_dialogue_group
-
-	var_2_21[1310] = {
+	pg.base.dorm3d_dialogue_group[1310] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5677,11 +5151,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.dorm3d_dialogue_group
-
-	var_2_22[1311] = {
+	pg.base.dorm3d_dialogue_group[1311] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5701,11 +5171,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.dorm3d_dialogue_group
-
-	var_2_23[1312] = {
+	pg.base.dorm3d_dialogue_group[1312] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5726,11 +5192,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.dorm3d_dialogue_group
-
-	var_2_24[1313] = {
+	pg.base.dorm3d_dialogue_group[1313] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5751,11 +5213,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.dorm3d_dialogue_group
-
-	var_2_25[1314] = {
+	pg.base.dorm3d_dialogue_group[1314] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5776,11 +5234,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.dorm3d_dialogue_group
-
-	var_2_26[1315] = {
+	pg.base.dorm3d_dialogue_group[1315] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -5801,11 +5255,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.dorm3d_dialogue_group
-
-	var_2_27[1316] = {
+	pg.base.dorm3d_dialogue_group[1316] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5826,11 +5276,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.dorm3d_dialogue_group
-
-	var_2_28[1317] = {
+	pg.base.dorm3d_dialogue_group[1317] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5851,11 +5297,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.dorm3d_dialogue_group
-
-	var_2_29[1318] = {
+	pg.base.dorm3d_dialogue_group[1318] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5876,11 +5318,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.dorm3d_dialogue_group
-
-	var_2_30[1319] = {
+	pg.base.dorm3d_dialogue_group[1319] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5901,11 +5339,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.dorm3d_dialogue_group
-
-	var_2_31[1320] = {
+	pg.base.dorm3d_dialogue_group[1320] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5926,11 +5360,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.dorm3d_dialogue_group
-
-	var_2_32[1321] = {
+	pg.base.dorm3d_dialogue_group[1321] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5951,11 +5381,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.dorm3d_dialogue_group
-
-	var_2_33[1322] = {
+	pg.base.dorm3d_dialogue_group[1322] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -5976,11 +5402,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.dorm3d_dialogue_group
-
-	var_2_34[1323] = {
+	pg.base.dorm3d_dialogue_group[1323] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -6001,11 +5423,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.dorm3d_dialogue_group
-
-	var_2_35[1501] = {
+	pg.base.dorm3d_dialogue_group[1501] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6024,11 +5442,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.dorm3d_dialogue_group
-
-	var_2_36[1502] = {
+	pg.base.dorm3d_dialogue_group[1502] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6047,11 +5461,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.dorm3d_dialogue_group
-
-	var_2_37[1503] = {
+	pg.base.dorm3d_dialogue_group[1503] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6070,11 +5480,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.dorm3d_dialogue_group
-
-	var_2_38[1504] = {
+	pg.base.dorm3d_dialogue_group[1504] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6093,11 +5499,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.dorm3d_dialogue_group
-
-	var_2_39[1505] = {
+	pg.base.dorm3d_dialogue_group[1505] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6116,11 +5518,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.dorm3d_dialogue_group
-
-	var_2_40[1506] = {
+	pg.base.dorm3d_dialogue_group[1506] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6139,11 +5537,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.dorm3d_dialogue_group
-
-	var_2_41[10010] = {
+	pg.base.dorm3d_dialogue_group[10010] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6162,11 +5556,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.dorm3d_dialogue_group
-
-	var_2_42[10011] = {
+	pg.base.dorm3d_dialogue_group[10011] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6185,11 +5575,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.dorm3d_dialogue_group
-
-	var_2_43[10012] = {
+	pg.base.dorm3d_dialogue_group[10012] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6208,11 +5594,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.dorm3d_dialogue_group
-
-	var_2_44[10020] = {
+	pg.base.dorm3d_dialogue_group[10020] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6233,11 +5615,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.dorm3d_dialogue_group
-
-	var_2_45[10021] = {
+	pg.base.dorm3d_dialogue_group[10021] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6256,11 +5634,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.dorm3d_dialogue_group
-
-	var_2_46[10030] = {
+	pg.base.dorm3d_dialogue_group[10030] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6281,11 +5655,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.dorm3d_dialogue_group
-
-	var_2_47[10031] = {
+	pg.base.dorm3d_dialogue_group[10031] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6304,11 +5674,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.dorm3d_dialogue_group
-
-	var_2_48[10032] = {
+	pg.base.dorm3d_dialogue_group[10032] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6327,11 +5693,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.dorm3d_dialogue_group
-
-	var_2_49[10040] = {
+	pg.base.dorm3d_dialogue_group[10040] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6352,11 +5714,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.dorm3d_dialogue_group
-
-	var_2_50[10041] = {
+	pg.base.dorm3d_dialogue_group[10041] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6375,11 +5733,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.dorm3d_dialogue_group
-
-	var_2_51[10050] = {
+	pg.base.dorm3d_dialogue_group[10050] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6400,11 +5754,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.dorm3d_dialogue_group
-
-	var_2_52[10051] = {
+	pg.base.dorm3d_dialogue_group[10051] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6423,11 +5773,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.dorm3d_dialogue_group
-
-	var_2_53[10060] = {
+	pg.base.dorm3d_dialogue_group[10060] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6447,11 +5793,7 @@ end)()
 			2022001
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.dorm3d_dialogue_group
-
-	var_2_54[10061] = {
+	pg.base.dorm3d_dialogue_group[10061] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6469,11 +5811,7 @@ end)()
 			2022001
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.dorm3d_dialogue_group
-
-	var_2_55[10070] = {
+	pg.base.dorm3d_dialogue_group[10070] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6493,11 +5831,7 @@ end)()
 			2022002
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.dorm3d_dialogue_group
-
-	var_2_56[10071] = {
+	pg.base.dorm3d_dialogue_group[10071] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6515,11 +5849,7 @@ end)()
 			2022002
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.dorm3d_dialogue_group
-
-	var_2_57[10080] = {
+	pg.base.dorm3d_dialogue_group[10080] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6539,11 +5869,7 @@ end)()
 			2022003
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.dorm3d_dialogue_group
-
-	var_2_58[10081] = {
+	pg.base.dorm3d_dialogue_group[10081] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6561,11 +5887,7 @@ end)()
 			2022003
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.dorm3d_dialogue_group
-
-	var_2_59[10011000] = {
+	pg.base.dorm3d_dialogue_group[10011000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6584,11 +5906,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.dorm3d_dialogue_group
-
-	var_2_60[10011001] = {
+	pg.base.dorm3d_dialogue_group[10011001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6607,11 +5925,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.dorm3d_dialogue_group
-
-	var_2_61[10012000] = {
+	pg.base.dorm3d_dialogue_group[10012000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6630,11 +5944,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.dorm3d_dialogue_group
-
-	var_2_62[10012001] = {
+	pg.base.dorm3d_dialogue_group[10012001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6653,11 +5963,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.dorm3d_dialogue_group
-
-	var_2_63[10013000] = {
+	pg.base.dorm3d_dialogue_group[10013000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6676,11 +5982,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.dorm3d_dialogue_group
-
-	var_2_64[10013001] = {
+	pg.base.dorm3d_dialogue_group[10013001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6699,11 +6001,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.dorm3d_dialogue_group
-
-	var_2_65[24] = {
+	pg.base.dorm3d_dialogue_group[24] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6722,11 +6020,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.dorm3d_dialogue_group
-
-	var_2_66[25] = {
+	pg.base.dorm3d_dialogue_group[25] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6745,11 +6039,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.dorm3d_dialogue_group
-
-	var_2_67[0] = {
+	pg.base.dorm3d_dialogue_group[0] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6768,11 +6058,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.dorm3d_dialogue_group
-
-	var_2_68[1] = {
+	pg.base.dorm3d_dialogue_group[1] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6791,11 +6077,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.dorm3d_dialogue_group
-
-	var_2_69[10033000] = {
+	pg.base.dorm3d_dialogue_group[10033000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6814,11 +6096,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.dorm3d_dialogue_group
-
-	var_2_70[10033001] = {
+	pg.base.dorm3d_dialogue_group[10033001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6837,11 +6115,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.dorm3d_dialogue_group
-
-	var_2_71[10041000] = {
+	pg.base.dorm3d_dialogue_group[10041000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6860,11 +6134,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.dorm3d_dialogue_group
-
-	var_2_72[10041001] = {
+	pg.base.dorm3d_dialogue_group[10041001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6883,11 +6153,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.dorm3d_dialogue_group
-
-	var_2_73[16] = {
+	pg.base.dorm3d_dialogue_group[16] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6906,11 +6172,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.dorm3d_dialogue_group
-
-	var_2_74[17] = {
+	pg.base.dorm3d_dialogue_group[17] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6929,11 +6191,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.dorm3d_dialogue_group
-
-	var_2_75[10043000] = {
+	pg.base.dorm3d_dialogue_group[10043000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6952,11 +6210,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.dorm3d_dialogue_group
-
-	var_2_76[10043001] = {
+	pg.base.dorm3d_dialogue_group[10043001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6975,11 +6229,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.dorm3d_dialogue_group
-
-	var_2_77[12081000] = {
+	pg.base.dorm3d_dialogue_group[12081000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -6998,11 +6248,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.dorm3d_dialogue_group
-
-	var_2_78[12081001] = {
+	pg.base.dorm3d_dialogue_group[12081001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -7021,11 +6267,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.dorm3d_dialogue_group
-
-	var_2_79[12082000] = {
+	pg.base.dorm3d_dialogue_group[12082000] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -7044,11 +6286,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.dorm3d_dialogue_group
-
-	var_2_80[12082001] = {
+	pg.base.dorm3d_dialogue_group[12082001] = {
 		reward = 0,
 		room_id = 1,
 		trigger_area = "",
@@ -7067,11 +6305,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.dorm3d_dialogue_group
-
-	var_2_81[20101] = {
+	pg.base.dorm3d_dialogue_group[20101] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7090,11 +6324,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.dorm3d_dialogue_group
-
-	var_2_82[20102] = {
+	pg.base.dorm3d_dialogue_group[20102] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7113,11 +6343,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.dorm3d_dialogue_group
-
-	var_2_83[20103] = {
+	pg.base.dorm3d_dialogue_group[20103] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7136,11 +6362,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.dorm3d_dialogue_group
-
-	var_2_84[20104] = {
+	pg.base.dorm3d_dialogue_group[20104] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7159,11 +6381,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.dorm3d_dialogue_group
-
-	var_2_85[20105] = {
+	pg.base.dorm3d_dialogue_group[20105] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7182,11 +6400,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.dorm3d_dialogue_group
-
-	var_2_86[20106] = {
+	pg.base.dorm3d_dialogue_group[20106] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7205,11 +6419,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.dorm3d_dialogue_group
-
-	var_2_87[20107] = {
+	pg.base.dorm3d_dialogue_group[20107] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7228,11 +6438,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.dorm3d_dialogue_group
-
-	var_2_88[20108] = {
+	pg.base.dorm3d_dialogue_group[20108] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7251,11 +6457,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.dorm3d_dialogue_group
-
-	var_2_89[20109] = {
+	pg.base.dorm3d_dialogue_group[20109] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7274,11 +6476,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.dorm3d_dialogue_group
-
-	var_2_90[20110] = {
+	pg.base.dorm3d_dialogue_group[20110] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7297,11 +6495,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.dorm3d_dialogue_group
-
-	var_2_91[20111] = {
+	pg.base.dorm3d_dialogue_group[20111] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7320,11 +6514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.dorm3d_dialogue_group
-
-	var_2_92[20112] = {
+	pg.base.dorm3d_dialogue_group[20112] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7343,11 +6533,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.dorm3d_dialogue_group
-
-	var_2_93[20113] = {
+	pg.base.dorm3d_dialogue_group[20113] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7366,11 +6552,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.dorm3d_dialogue_group
-
-	var_2_94[20114] = {
+	pg.base.dorm3d_dialogue_group[20114] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7389,11 +6571,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.dorm3d_dialogue_group
-
-	var_2_95[20115] = {
+	pg.base.dorm3d_dialogue_group[20115] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7412,11 +6590,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.dorm3d_dialogue_group
-
-	var_2_96[20001] = {
+	pg.base.dorm3d_dialogue_group[20001] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7435,11 +6609,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.dorm3d_dialogue_group
-
-	var_2_97[20002] = {
+	pg.base.dorm3d_dialogue_group[20002] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7458,11 +6628,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.dorm3d_dialogue_group
-
-	var_2_98[20003] = {
+	pg.base.dorm3d_dialogue_group[20003] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7481,8 +6647,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.dorm3d_dialogue_group[20004] = {
+	pg.base.dorm3d_dialogue_group[20004] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7505,11 +6670,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_3_0[20005] = {
+	pg.base.dorm3d_dialogue_group[20005] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7528,11 +6689,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.dorm3d_dialogue_group
-
-	var_3_1[20006] = {
+	pg.base.dorm3d_dialogue_group[20006] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7551,11 +6708,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.dorm3d_dialogue_group
-
-	var_3_2[20007] = {
+	pg.base.dorm3d_dialogue_group[20007] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7574,11 +6727,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.dorm3d_dialogue_group
-
-	var_3_3[20008] = {
+	pg.base.dorm3d_dialogue_group[20008] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7597,11 +6746,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.dorm3d_dialogue_group
-
-	var_3_4[20009] = {
+	pg.base.dorm3d_dialogue_group[20009] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7620,11 +6765,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.dorm3d_dialogue_group
-
-	var_3_5[20010] = {
+	pg.base.dorm3d_dialogue_group[20010] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7643,11 +6784,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.dorm3d_dialogue_group
-
-	var_3_6[20011] = {
+	pg.base.dorm3d_dialogue_group[20011] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7666,11 +6803,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.dorm3d_dialogue_group
-
-	var_3_7[20012] = {
+	pg.base.dorm3d_dialogue_group[20012] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7689,11 +6822,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.dorm3d_dialogue_group
-
-	var_3_8[20013] = {
+	pg.base.dorm3d_dialogue_group[20013] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7712,11 +6841,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.dorm3d_dialogue_group
-
-	var_3_9[20014] = {
+	pg.base.dorm3d_dialogue_group[20014] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7735,11 +6860,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.dorm3d_dialogue_group
-
-	var_3_10[20015] = {
+	pg.base.dorm3d_dialogue_group[20015] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7758,11 +6879,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.dorm3d_dialogue_group
-
-	var_3_11[20016] = {
+	pg.base.dorm3d_dialogue_group[20016] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7781,11 +6898,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.dorm3d_dialogue_group
-
-	var_3_12[20017] = {
+	pg.base.dorm3d_dialogue_group[20017] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7804,11 +6917,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.dorm3d_dialogue_group
-
-	var_3_13[20018] = {
+	pg.base.dorm3d_dialogue_group[20018] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7827,11 +6936,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.dorm3d_dialogue_group
-
-	var_3_14[20019] = {
+	pg.base.dorm3d_dialogue_group[20019] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7850,11 +6955,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.dorm3d_dialogue_group
-
-	var_3_15[20020] = {
+	pg.base.dorm3d_dialogue_group[20020] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7873,11 +6974,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.dorm3d_dialogue_group
-
-	var_3_16[20021] = {
+	pg.base.dorm3d_dialogue_group[20021] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7896,11 +6993,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.dorm3d_dialogue_group
-
-	var_3_17[20022] = {
+	pg.base.dorm3d_dialogue_group[20022] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7919,11 +7012,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.dorm3d_dialogue_group
-
-	var_3_18[20023] = {
+	pg.base.dorm3d_dialogue_group[20023] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7942,11 +7031,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.dorm3d_dialogue_group
-
-	var_3_19[20024] = {
+	pg.base.dorm3d_dialogue_group[20024] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7965,11 +7050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.dorm3d_dialogue_group
-
-	var_3_20[20025] = {
+	pg.base.dorm3d_dialogue_group[20025] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -7988,11 +7069,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.dorm3d_dialogue_group
-
-	var_3_21[20026] = {
+	pg.base.dorm3d_dialogue_group[20026] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8011,11 +7088,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.dorm3d_dialogue_group
-
-	var_3_22[20027] = {
+	pg.base.dorm3d_dialogue_group[20027] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8034,11 +7107,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.dorm3d_dialogue_group
-
-	var_3_23[20028] = {
+	pg.base.dorm3d_dialogue_group[20028] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8057,11 +7126,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.dorm3d_dialogue_group
-
-	var_3_24[20029] = {
+	pg.base.dorm3d_dialogue_group[20029] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8080,11 +7145,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.dorm3d_dialogue_group
-
-	var_3_25[20030] = {
+	pg.base.dorm3d_dialogue_group[20030] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8103,11 +7164,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.dorm3d_dialogue_group
-
-	var_3_26[20031] = {
+	pg.base.dorm3d_dialogue_group[20031] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8126,11 +7183,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.dorm3d_dialogue_group
-
-	var_3_27[20032] = {
+	pg.base.dorm3d_dialogue_group[20032] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8149,11 +7202,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.dorm3d_dialogue_group
-
-	var_3_28[20033] = {
+	pg.base.dorm3d_dialogue_group[20033] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8172,11 +7221,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.dorm3d_dialogue_group
-
-	var_3_29[20034] = {
+	pg.base.dorm3d_dialogue_group[20034] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8195,11 +7240,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.dorm3d_dialogue_group
-
-	var_3_30[20035] = {
+	pg.base.dorm3d_dialogue_group[20035] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8218,11 +7259,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.dorm3d_dialogue_group
-
-	var_3_31[20036] = {
+	pg.base.dorm3d_dialogue_group[20036] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8241,11 +7278,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.dorm3d_dialogue_group
-
-	var_3_32[20037] = {
+	pg.base.dorm3d_dialogue_group[20037] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8264,11 +7297,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.dorm3d_dialogue_group
-
-	var_3_33[20038] = {
+	pg.base.dorm3d_dialogue_group[20038] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8287,11 +7316,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.dorm3d_dialogue_group
-
-	var_3_34[20039] = {
+	pg.base.dorm3d_dialogue_group[20039] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8310,11 +7335,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.dorm3d_dialogue_group
-
-	var_3_35[20040] = {
+	pg.base.dorm3d_dialogue_group[20040] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8333,11 +7354,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.dorm3d_dialogue_group
-
-	var_3_36[20041] = {
+	pg.base.dorm3d_dialogue_group[20041] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8356,11 +7373,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.dorm3d_dialogue_group
-
-	var_3_37[20042] = {
+	pg.base.dorm3d_dialogue_group[20042] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8379,11 +7392,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.dorm3d_dialogue_group
-
-	var_3_38[20043] = {
+	pg.base.dorm3d_dialogue_group[20043] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8402,11 +7411,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.dorm3d_dialogue_group
-
-	var_3_39[20044] = {
+	pg.base.dorm3d_dialogue_group[20044] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8425,11 +7430,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.dorm3d_dialogue_group
-
-	var_3_40[20045] = {
+	pg.base.dorm3d_dialogue_group[20045] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8448,11 +7449,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.dorm3d_dialogue_group
-
-	var_3_41[20046] = {
+	pg.base.dorm3d_dialogue_group[20046] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8471,11 +7468,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.dorm3d_dialogue_group
-
-	var_3_42[20047] = {
+	pg.base.dorm3d_dialogue_group[20047] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8494,11 +7487,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.dorm3d_dialogue_group
-
-	var_3_43[20048] = {
+	pg.base.dorm3d_dialogue_group[20048] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8517,11 +7506,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.dorm3d_dialogue_group
-
-	var_3_44[20049] = {
+	pg.base.dorm3d_dialogue_group[20049] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8540,11 +7525,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.dorm3d_dialogue_group
-
-	var_3_45[20050] = {
+	pg.base.dorm3d_dialogue_group[20050] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8563,11 +7544,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.dorm3d_dialogue_group
-
-	var_3_46[20051] = {
+	pg.base.dorm3d_dialogue_group[20051] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -8586,11 +7563,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.dorm3d_dialogue_group
-
-	var_3_47[20052] = {
+	pg.base.dorm3d_dialogue_group[20052] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -8609,11 +7582,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.dorm3d_dialogue_group
-
-	var_3_48[20053] = {
+	pg.base.dorm3d_dialogue_group[20053] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -8632,11 +7601,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.dorm3d_dialogue_group
-
-	var_3_49[20054] = {
+	pg.base.dorm3d_dialogue_group[20054] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -8655,11 +7620,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.dorm3d_dialogue_group
-
-	var_3_50[20055] = {
+	pg.base.dorm3d_dialogue_group[20055] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -8678,11 +7639,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.dorm3d_dialogue_group
-
-	var_3_51[20500] = {
+	pg.base.dorm3d_dialogue_group[20500] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8703,11 +7660,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.dorm3d_dialogue_group
-
-	var_3_52[20501] = {
+	pg.base.dorm3d_dialogue_group[20501] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8726,11 +7679,7 @@ end)()
 			4
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.dorm3d_dialogue_group
-
-	var_3_53[20510] = {
+	pg.base.dorm3d_dialogue_group[20510] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8751,11 +7700,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.dorm3d_dialogue_group
-
-	var_3_54[20511] = {
+	pg.base.dorm3d_dialogue_group[20511] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8774,11 +7719,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.dorm3d_dialogue_group
-
-	var_3_55[20520] = {
+	pg.base.dorm3d_dialogue_group[20520] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8799,11 +7740,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.dorm3d_dialogue_group
-
-	var_3_56[20521] = {
+	pg.base.dorm3d_dialogue_group[20521] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8822,11 +7759,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.dorm3d_dialogue_group
-
-	var_3_57[20530] = {
+	pg.base.dorm3d_dialogue_group[20530] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8846,11 +7779,7 @@ end)()
 			3022102
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.dorm3d_dialogue_group
-
-	var_3_58[20531] = {
+	pg.base.dorm3d_dialogue_group[20531] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8868,11 +7797,7 @@ end)()
 			3022102
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.dorm3d_dialogue_group
-
-	var_3_59[20201] = {
+	pg.base.dorm3d_dialogue_group[20201] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8891,11 +7816,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.dorm3d_dialogue_group
-
-	var_3_60[20202] = {
+	pg.base.dorm3d_dialogue_group[20202] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8914,11 +7835,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.dorm3d_dialogue_group
-
-	var_3_61[20203] = {
+	pg.base.dorm3d_dialogue_group[20203] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8937,11 +7854,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.dorm3d_dialogue_group
-
-	var_3_62[20204] = {
+	pg.base.dorm3d_dialogue_group[20204] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8960,11 +7873,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.dorm3d_dialogue_group
-
-	var_3_63[20205] = {
+	pg.base.dorm3d_dialogue_group[20205] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -8983,11 +7892,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.dorm3d_dialogue_group
-
-	var_3_64[20206] = {
+	pg.base.dorm3d_dialogue_group[20206] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9006,11 +7911,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.dorm3d_dialogue_group
-
-	var_3_65[20207] = {
+	pg.base.dorm3d_dialogue_group[20207] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9029,11 +7930,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.dorm3d_dialogue_group
-
-	var_3_66[20208] = {
+	pg.base.dorm3d_dialogue_group[20208] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9052,11 +7949,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.dorm3d_dialogue_group
-
-	var_3_67[20209] = {
+	pg.base.dorm3d_dialogue_group[20209] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9075,11 +7968,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.dorm3d_dialogue_group
-
-	var_3_68[20210] = {
+	pg.base.dorm3d_dialogue_group[20210] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9098,11 +7987,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.dorm3d_dialogue_group
-
-	var_3_69[20211] = {
+	pg.base.dorm3d_dialogue_group[20211] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9121,11 +8006,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.dorm3d_dialogue_group
-
-	var_3_70[20212] = {
+	pg.base.dorm3d_dialogue_group[20212] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9144,11 +8025,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.dorm3d_dialogue_group
-
-	var_3_71[20213] = {
+	pg.base.dorm3d_dialogue_group[20213] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9167,11 +8044,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.dorm3d_dialogue_group
-
-	var_3_72[20214] = {
+	pg.base.dorm3d_dialogue_group[20214] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9190,11 +8063,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.dorm3d_dialogue_group
-
-	var_3_73[20215] = {
+	pg.base.dorm3d_dialogue_group[20215] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9213,11 +8082,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.dorm3d_dialogue_group
-
-	var_3_74[20216] = {
+	pg.base.dorm3d_dialogue_group[20216] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9236,11 +8101,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.dorm3d_dialogue_group
-
-	var_3_75[20217] = {
+	pg.base.dorm3d_dialogue_group[20217] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9259,11 +8120,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.dorm3d_dialogue_group
-
-	var_3_76[20218] = {
+	pg.base.dorm3d_dialogue_group[20218] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9282,11 +8139,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.dorm3d_dialogue_group
-
-	var_3_77[20219] = {
+	pg.base.dorm3d_dialogue_group[20219] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9305,11 +8158,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.dorm3d_dialogue_group
-
-	var_3_78[20220] = {
+	pg.base.dorm3d_dialogue_group[20220] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9328,11 +8177,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.dorm3d_dialogue_group
-
-	var_3_79[20221] = {
+	pg.base.dorm3d_dialogue_group[20221] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9351,11 +8196,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.dorm3d_dialogue_group
-
-	var_3_80[20222] = {
+	pg.base.dorm3d_dialogue_group[20222] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9374,11 +8215,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.dorm3d_dialogue_group
-
-	var_3_81[20223] = {
+	pg.base.dorm3d_dialogue_group[20223] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9397,11 +8234,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.dorm3d_dialogue_group
-
-	var_3_82[20224] = {
+	pg.base.dorm3d_dialogue_group[20224] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9420,11 +8253,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.dorm3d_dialogue_group
-
-	var_3_83[20225] = {
+	pg.base.dorm3d_dialogue_group[20225] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9443,11 +8272,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.dorm3d_dialogue_group
-
-	var_3_84[20226] = {
+	pg.base.dorm3d_dialogue_group[20226] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9466,11 +8291,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.dorm3d_dialogue_group
-
-	var_3_85[20227] = {
+	pg.base.dorm3d_dialogue_group[20227] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9489,11 +8310,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.dorm3d_dialogue_group
-
-	var_3_86[20228] = {
+	pg.base.dorm3d_dialogue_group[20228] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9512,11 +8329,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.dorm3d_dialogue_group
-
-	var_3_87[20229] = {
+	pg.base.dorm3d_dialogue_group[20229] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9535,11 +8348,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.dorm3d_dialogue_group
-
-	var_3_88[20230] = {
+	pg.base.dorm3d_dialogue_group[20230] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9558,11 +8367,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.dorm3d_dialogue_group
-
-	var_3_89[20231] = {
+	pg.base.dorm3d_dialogue_group[20231] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9581,11 +8386,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.dorm3d_dialogue_group
-
-	var_3_90[20232] = {
+	pg.base.dorm3d_dialogue_group[20232] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9604,11 +8405,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.dorm3d_dialogue_group
-
-	var_3_91[20233] = {
+	pg.base.dorm3d_dialogue_group[20233] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9627,11 +8424,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.dorm3d_dialogue_group
-
-	var_3_92[20234] = {
+	pg.base.dorm3d_dialogue_group[20234] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9650,11 +8443,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.dorm3d_dialogue_group
-
-	var_3_93[20235] = {
+	pg.base.dorm3d_dialogue_group[20235] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9673,11 +8462,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.dorm3d_dialogue_group
-
-	var_3_94[20236] = {
+	pg.base.dorm3d_dialogue_group[20236] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9696,11 +8481,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.dorm3d_dialogue_group
-
-	var_3_95[20237] = {
+	pg.base.dorm3d_dialogue_group[20237] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9719,11 +8500,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.dorm3d_dialogue_group
-
-	var_3_96[20238] = {
+	pg.base.dorm3d_dialogue_group[20238] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9742,11 +8519,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.dorm3d_dialogue_group
-
-	var_3_97[20239] = {
+	pg.base.dorm3d_dialogue_group[20239] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9765,11 +8538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.dorm3d_dialogue_group
-
-	var_3_98[20240] = {
+	pg.base.dorm3d_dialogue_group[20240] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9788,8 +8557,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.dorm3d_dialogue_group[20241] = {
+	pg.base.dorm3d_dialogue_group[20241] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9812,11 +8580,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_4_0[20301] = {
+	pg.base.dorm3d_dialogue_group[20301] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9835,11 +8599,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.dorm3d_dialogue_group
-
-	var_4_1[20302] = {
+	pg.base.dorm3d_dialogue_group[20302] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9858,11 +8618,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.dorm3d_dialogue_group
-
-	var_4_2[20303] = {
+	pg.base.dorm3d_dialogue_group[20303] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9881,11 +8637,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.dorm3d_dialogue_group
-
-	var_4_3[20304] = {
+	pg.base.dorm3d_dialogue_group[20304] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9904,11 +8656,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.dorm3d_dialogue_group
-
-	var_4_4[20305] = {
+	pg.base.dorm3d_dialogue_group[20305] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9927,11 +8675,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.dorm3d_dialogue_group
-
-	var_4_5[29991] = {
+	pg.base.dorm3d_dialogue_group[29991] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9951,11 +8695,7 @@ end)()
 			3022101
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.dorm3d_dialogue_group
-
-	var_4_6[29992] = {
+	pg.base.dorm3d_dialogue_group[29992] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9973,11 +8713,7 @@ end)()
 			3022101
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.dorm3d_dialogue_group
-
-	var_4_7[29993] = {
+	pg.base.dorm3d_dialogue_group[29993] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -9995,11 +8731,7 @@ end)()
 			3022101
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.dorm3d_dialogue_group
-
-	var_4_8[29994] = {
+	pg.base.dorm3d_dialogue_group[29994] = {
 		reward = 0,
 		room_id = 2,
 		trigger_area = "",
@@ -10017,11 +8749,7 @@ end)()
 			3022101
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.dorm3d_dialogue_group
-
-	var_4_9[30101] = {
+	pg.base.dorm3d_dialogue_group[30101] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10040,11 +8768,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.dorm3d_dialogue_group
-
-	var_4_10[30102] = {
+	pg.base.dorm3d_dialogue_group[30102] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10063,11 +8787,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.dorm3d_dialogue_group
-
-	var_4_11[30103] = {
+	pg.base.dorm3d_dialogue_group[30103] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10086,11 +8806,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.dorm3d_dialogue_group
-
-	var_4_12[30104] = {
+	pg.base.dorm3d_dialogue_group[30104] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10109,11 +8825,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.dorm3d_dialogue_group
-
-	var_4_13[30105] = {
+	pg.base.dorm3d_dialogue_group[30105] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10132,11 +8844,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.dorm3d_dialogue_group
-
-	var_4_14[30106] = {
+	pg.base.dorm3d_dialogue_group[30106] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10155,11 +8863,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.dorm3d_dialogue_group
-
-	var_4_15[30107] = {
+	pg.base.dorm3d_dialogue_group[30107] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10178,11 +8882,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.dorm3d_dialogue_group
-
-	var_4_16[30108] = {
+	pg.base.dorm3d_dialogue_group[30108] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10201,11 +8901,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.dorm3d_dialogue_group
-
-	var_4_17[30109] = {
+	pg.base.dorm3d_dialogue_group[30109] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10224,11 +8920,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.dorm3d_dialogue_group
-
-	var_4_18[30110] = {
+	pg.base.dorm3d_dialogue_group[30110] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10247,11 +8939,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.dorm3d_dialogue_group
-
-	var_4_19[30111] = {
+	pg.base.dorm3d_dialogue_group[30111] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10270,11 +8958,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.dorm3d_dialogue_group
-
-	var_4_20[30112] = {
+	pg.base.dorm3d_dialogue_group[30112] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10293,11 +8977,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.dorm3d_dialogue_group
-
-	var_4_21[30113] = {
+	pg.base.dorm3d_dialogue_group[30113] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10316,11 +8996,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.dorm3d_dialogue_group
-
-	var_4_22[30114] = {
+	pg.base.dorm3d_dialogue_group[30114] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10339,11 +9015,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.dorm3d_dialogue_group
-
-	var_4_23[30115] = {
+	pg.base.dorm3d_dialogue_group[30115] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10362,11 +9034,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.dorm3d_dialogue_group
-
-	var_4_24[30001] = {
+	pg.base.dorm3d_dialogue_group[30001] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10385,11 +9053,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.dorm3d_dialogue_group
-
-	var_4_25[30002] = {
+	pg.base.dorm3d_dialogue_group[30002] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10408,11 +9072,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.dorm3d_dialogue_group
-
-	var_4_26[30003] = {
+	pg.base.dorm3d_dialogue_group[30003] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10431,11 +9091,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.dorm3d_dialogue_group
-
-	var_4_27[30004] = {
+	pg.base.dorm3d_dialogue_group[30004] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10454,11 +9110,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.dorm3d_dialogue_group
-
-	var_4_28[30005] = {
+	pg.base.dorm3d_dialogue_group[30005] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10477,11 +9129,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.dorm3d_dialogue_group
-
-	var_4_29[30006] = {
+	pg.base.dorm3d_dialogue_group[30006] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10500,11 +9148,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.dorm3d_dialogue_group
-
-	var_4_30[30007] = {
+	pg.base.dorm3d_dialogue_group[30007] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10523,11 +9167,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.dorm3d_dialogue_group
-
-	var_4_31[30008] = {
+	pg.base.dorm3d_dialogue_group[30008] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10546,11 +9186,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.dorm3d_dialogue_group
-
-	var_4_32[30009] = {
+	pg.base.dorm3d_dialogue_group[30009] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10569,11 +9205,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.dorm3d_dialogue_group
-
-	var_4_33[30010] = {
+	pg.base.dorm3d_dialogue_group[30010] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10592,11 +9224,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.dorm3d_dialogue_group
-
-	var_4_34[30011] = {
+	pg.base.dorm3d_dialogue_group[30011] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10615,11 +9243,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.dorm3d_dialogue_group
-
-	var_4_35[30012] = {
+	pg.base.dorm3d_dialogue_group[30012] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10638,11 +9262,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.dorm3d_dialogue_group
-
-	var_4_36[30013] = {
+	pg.base.dorm3d_dialogue_group[30013] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10661,11 +9281,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.dorm3d_dialogue_group
-
-	var_4_37[30014] = {
+	pg.base.dorm3d_dialogue_group[30014] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10684,11 +9300,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.dorm3d_dialogue_group
-
-	var_4_38[30015] = {
+	pg.base.dorm3d_dialogue_group[30015] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10707,11 +9319,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.dorm3d_dialogue_group
-
-	var_4_39[30016] = {
+	pg.base.dorm3d_dialogue_group[30016] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10730,11 +9338,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.dorm3d_dialogue_group
-
-	var_4_40[30017] = {
+	pg.base.dorm3d_dialogue_group[30017] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10753,11 +9357,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.dorm3d_dialogue_group
-
-	var_4_41[30018] = {
+	pg.base.dorm3d_dialogue_group[30018] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10776,11 +9376,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.dorm3d_dialogue_group
-
-	var_4_42[30019] = {
+	pg.base.dorm3d_dialogue_group[30019] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10799,11 +9395,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.dorm3d_dialogue_group
-
-	var_4_43[30020] = {
+	pg.base.dorm3d_dialogue_group[30020] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10822,11 +9414,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.dorm3d_dialogue_group
-
-	var_4_44[30021] = {
+	pg.base.dorm3d_dialogue_group[30021] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10845,11 +9433,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.dorm3d_dialogue_group
-
-	var_4_45[30022] = {
+	pg.base.dorm3d_dialogue_group[30022] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10868,11 +9452,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.dorm3d_dialogue_group
-
-	var_4_46[30023] = {
+	pg.base.dorm3d_dialogue_group[30023] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10891,11 +9471,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.dorm3d_dialogue_group
-
-	var_4_47[30024] = {
+	pg.base.dorm3d_dialogue_group[30024] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10914,11 +9490,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.dorm3d_dialogue_group
-
-	var_4_48[30025] = {
+	pg.base.dorm3d_dialogue_group[30025] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10937,11 +9509,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.dorm3d_dialogue_group
-
-	var_4_49[30026] = {
+	pg.base.dorm3d_dialogue_group[30026] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10960,11 +9528,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.dorm3d_dialogue_group
-
-	var_4_50[30027] = {
+	pg.base.dorm3d_dialogue_group[30027] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -10983,11 +9547,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.dorm3d_dialogue_group
-
-	var_4_51[30028] = {
+	pg.base.dorm3d_dialogue_group[30028] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11006,11 +9566,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.dorm3d_dialogue_group
-
-	var_4_52[30029] = {
+	pg.base.dorm3d_dialogue_group[30029] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11029,11 +9585,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.dorm3d_dialogue_group
-
-	var_4_53[30030] = {
+	pg.base.dorm3d_dialogue_group[30030] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11052,11 +9604,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.dorm3d_dialogue_group
-
-	var_4_54[30031] = {
+	pg.base.dorm3d_dialogue_group[30031] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11075,11 +9623,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.dorm3d_dialogue_group
-
-	var_4_55[30032] = {
+	pg.base.dorm3d_dialogue_group[30032] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11098,11 +9642,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.dorm3d_dialogue_group
-
-	var_4_56[30033] = {
+	pg.base.dorm3d_dialogue_group[30033] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11121,11 +9661,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.dorm3d_dialogue_group
-
-	var_4_57[30034] = {
+	pg.base.dorm3d_dialogue_group[30034] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11144,11 +9680,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.dorm3d_dialogue_group
-
-	var_4_58[30035] = {
+	pg.base.dorm3d_dialogue_group[30035] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11167,11 +9699,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.dorm3d_dialogue_group
-
-	var_4_59[30036] = {
+	pg.base.dorm3d_dialogue_group[30036] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11190,11 +9718,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.dorm3d_dialogue_group
-
-	var_4_60[30037] = {
+	pg.base.dorm3d_dialogue_group[30037] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11213,11 +9737,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.dorm3d_dialogue_group
-
-	var_4_61[30038] = {
+	pg.base.dorm3d_dialogue_group[30038] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11236,11 +9756,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.dorm3d_dialogue_group
-
-	var_4_62[30039] = {
+	pg.base.dorm3d_dialogue_group[30039] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11259,11 +9775,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.dorm3d_dialogue_group
-
-	var_4_63[30040] = {
+	pg.base.dorm3d_dialogue_group[30040] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11282,11 +9794,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.dorm3d_dialogue_group
-
-	var_4_64[30041] = {
+	pg.base.dorm3d_dialogue_group[30041] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11305,11 +9813,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.dorm3d_dialogue_group
-
-	var_4_65[30042] = {
+	pg.base.dorm3d_dialogue_group[30042] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11328,11 +9832,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.dorm3d_dialogue_group
-
-	var_4_66[30043] = {
+	pg.base.dorm3d_dialogue_group[30043] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11351,11 +9851,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.dorm3d_dialogue_group
-
-	var_4_67[30044] = {
+	pg.base.dorm3d_dialogue_group[30044] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11374,11 +9870,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.dorm3d_dialogue_group
-
-	var_4_68[30045] = {
+	pg.base.dorm3d_dialogue_group[30045] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11397,11 +9889,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.dorm3d_dialogue_group
-
-	var_4_69[30046] = {
+	pg.base.dorm3d_dialogue_group[30046] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11420,11 +9908,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.dorm3d_dialogue_group
-
-	var_4_70[30047] = {
+	pg.base.dorm3d_dialogue_group[30047] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11443,11 +9927,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.dorm3d_dialogue_group
-
-	var_4_71[30048] = {
+	pg.base.dorm3d_dialogue_group[30048] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11466,11 +9946,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.dorm3d_dialogue_group
-
-	var_4_72[30049] = {
+	pg.base.dorm3d_dialogue_group[30049] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11489,11 +9965,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.dorm3d_dialogue_group
-
-	var_4_73[30050] = {
+	pg.base.dorm3d_dialogue_group[30050] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11512,11 +9984,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.dorm3d_dialogue_group
-
-	var_4_74[30051] = {
+	pg.base.dorm3d_dialogue_group[30051] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -11535,11 +10003,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.dorm3d_dialogue_group
-
-	var_4_75[30052] = {
+	pg.base.dorm3d_dialogue_group[30052] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -11558,11 +10022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.dorm3d_dialogue_group
-
-	var_4_76[30053] = {
+	pg.base.dorm3d_dialogue_group[30053] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -11581,11 +10041,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.dorm3d_dialogue_group
-
-	var_4_77[30054] = {
+	pg.base.dorm3d_dialogue_group[30054] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -11604,11 +10060,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.dorm3d_dialogue_group
-
-	var_4_78[30055] = {
+	pg.base.dorm3d_dialogue_group[30055] = {
 		reward = 0,
 		room_id = 4,
 		trigger_area = "",
@@ -11627,11 +10079,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.dorm3d_dialogue_group
-
-	var_4_79[30301] = {
+	pg.base.dorm3d_dialogue_group[30301] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11650,11 +10098,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.dorm3d_dialogue_group
-
-	var_4_80[30302] = {
+	pg.base.dorm3d_dialogue_group[30302] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11673,11 +10117,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.dorm3d_dialogue_group
-
-	var_4_81[30303] = {
+	pg.base.dorm3d_dialogue_group[30303] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11696,11 +10136,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.dorm3d_dialogue_group
-
-	var_4_82[30304] = {
+	pg.base.dorm3d_dialogue_group[30304] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11719,11 +10155,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.dorm3d_dialogue_group
-
-	var_4_83[30305] = {
+	pg.base.dorm3d_dialogue_group[30305] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11742,11 +10174,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.dorm3d_dialogue_group
-
-	var_4_84[30201] = {
+	pg.base.dorm3d_dialogue_group[30201] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11765,11 +10193,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.dorm3d_dialogue_group
-
-	var_4_85[30202] = {
+	pg.base.dorm3d_dialogue_group[30202] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11788,11 +10212,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.dorm3d_dialogue_group
-
-	var_4_86[30203] = {
+	pg.base.dorm3d_dialogue_group[30203] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11811,11 +10231,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.dorm3d_dialogue_group
-
-	var_4_87[30204] = {
+	pg.base.dorm3d_dialogue_group[30204] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11834,11 +10250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.dorm3d_dialogue_group
-
-	var_4_88[30205] = {
+	pg.base.dorm3d_dialogue_group[30205] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11857,11 +10269,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.dorm3d_dialogue_group
-
-	var_4_89[30206] = {
+	pg.base.dorm3d_dialogue_group[30206] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11880,11 +10288,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.dorm3d_dialogue_group
-
-	var_4_90[30207] = {
+	pg.base.dorm3d_dialogue_group[30207] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11903,11 +10307,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.dorm3d_dialogue_group
-
-	var_4_91[30208] = {
+	pg.base.dorm3d_dialogue_group[30208] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11926,11 +10326,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.dorm3d_dialogue_group
-
-	var_4_92[30209] = {
+	pg.base.dorm3d_dialogue_group[30209] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11949,11 +10345,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.dorm3d_dialogue_group
-
-	var_4_93[30210] = {
+	pg.base.dorm3d_dialogue_group[30210] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11972,11 +10364,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.dorm3d_dialogue_group
-
-	var_4_94[30211] = {
+	pg.base.dorm3d_dialogue_group[30211] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -11995,11 +10383,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.dorm3d_dialogue_group
-
-	var_4_95[30212] = {
+	pg.base.dorm3d_dialogue_group[30212] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12018,11 +10402,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.dorm3d_dialogue_group
-
-	var_4_96[30213] = {
+	pg.base.dorm3d_dialogue_group[30213] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12041,11 +10421,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.dorm3d_dialogue_group
-
-	var_4_97[30214] = {
+	pg.base.dorm3d_dialogue_group[30214] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12064,11 +10440,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.dorm3d_dialogue_group
-
-	var_4_98[30215] = {
+	pg.base.dorm3d_dialogue_group[30215] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12087,8 +10459,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.dorm3d_dialogue_group[30216] = {
+	pg.base.dorm3d_dialogue_group[30216] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12111,11 +10482,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_5_0[30217] = {
+	pg.base.dorm3d_dialogue_group[30217] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12134,11 +10501,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.dorm3d_dialogue_group
-
-	var_5_1[30218] = {
+	pg.base.dorm3d_dialogue_group[30218] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12157,11 +10520,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.dorm3d_dialogue_group
-
-	var_5_2[30219] = {
+	pg.base.dorm3d_dialogue_group[30219] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12180,11 +10539,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.dorm3d_dialogue_group
-
-	var_5_3[30220] = {
+	pg.base.dorm3d_dialogue_group[30220] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12203,11 +10558,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.dorm3d_dialogue_group
-
-	var_5_4[30221] = {
+	pg.base.dorm3d_dialogue_group[30221] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12226,11 +10577,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.dorm3d_dialogue_group
-
-	var_5_5[30222] = {
+	pg.base.dorm3d_dialogue_group[30222] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12249,11 +10596,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.dorm3d_dialogue_group
-
-	var_5_6[30223] = {
+	pg.base.dorm3d_dialogue_group[30223] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12272,11 +10615,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.dorm3d_dialogue_group
-
-	var_5_7[30224] = {
+	pg.base.dorm3d_dialogue_group[30224] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12295,11 +10634,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.dorm3d_dialogue_group
-
-	var_5_8[30225] = {
+	pg.base.dorm3d_dialogue_group[30225] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12318,11 +10653,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.dorm3d_dialogue_group
-
-	var_5_9[30226] = {
+	pg.base.dorm3d_dialogue_group[30226] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12341,11 +10672,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.dorm3d_dialogue_group
-
-	var_5_10[30227] = {
+	pg.base.dorm3d_dialogue_group[30227] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12364,11 +10691,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.dorm3d_dialogue_group
-
-	var_5_11[30228] = {
+	pg.base.dorm3d_dialogue_group[30228] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12387,11 +10710,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.dorm3d_dialogue_group
-
-	var_5_12[30229] = {
+	pg.base.dorm3d_dialogue_group[30229] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12410,11 +10729,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.dorm3d_dialogue_group
-
-	var_5_13[30230] = {
+	pg.base.dorm3d_dialogue_group[30230] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12433,11 +10748,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.dorm3d_dialogue_group
-
-	var_5_14[30231] = {
+	pg.base.dorm3d_dialogue_group[30231] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12456,11 +10767,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.dorm3d_dialogue_group
-
-	var_5_15[30232] = {
+	pg.base.dorm3d_dialogue_group[30232] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12479,11 +10786,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.dorm3d_dialogue_group
-
-	var_5_16[30233] = {
+	pg.base.dorm3d_dialogue_group[30233] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12502,11 +10805,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.dorm3d_dialogue_group
-
-	var_5_17[30234] = {
+	pg.base.dorm3d_dialogue_group[30234] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12525,11 +10824,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.dorm3d_dialogue_group
-
-	var_5_18[30235] = {
+	pg.base.dorm3d_dialogue_group[30235] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12548,11 +10843,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.dorm3d_dialogue_group
-
-	var_5_19[30236] = {
+	pg.base.dorm3d_dialogue_group[30236] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12571,11 +10862,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.dorm3d_dialogue_group
-
-	var_5_20[30237] = {
+	pg.base.dorm3d_dialogue_group[30237] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12594,11 +10881,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.dorm3d_dialogue_group
-
-	var_5_21[30238] = {
+	pg.base.dorm3d_dialogue_group[30238] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12617,11 +10900,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.dorm3d_dialogue_group
-
-	var_5_22[30239] = {
+	pg.base.dorm3d_dialogue_group[30239] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12640,11 +10919,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.dorm3d_dialogue_group
-
-	var_5_23[30240] = {
+	pg.base.dorm3d_dialogue_group[30240] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12663,11 +10938,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.dorm3d_dialogue_group
-
-	var_5_24[30510] = {
+	pg.base.dorm3d_dialogue_group[30510] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12687,11 +10958,7 @@ end)()
 			1990301
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.dorm3d_dialogue_group
-
-	var_5_25[30511] = {
+	pg.base.dorm3d_dialogue_group[30511] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12709,11 +10976,7 @@ end)()
 			1990301
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.dorm3d_dialogue_group
-
-	var_5_26[30520] = {
+	pg.base.dorm3d_dialogue_group[30520] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12734,11 +10997,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.dorm3d_dialogue_group
-
-	var_5_27[30521] = {
+	pg.base.dorm3d_dialogue_group[30521] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12757,11 +11016,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.dorm3d_dialogue_group
-
-	var_5_28[30530] = {
+	pg.base.dorm3d_dialogue_group[30530] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12782,11 +11037,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.dorm3d_dialogue_group
-
-	var_5_29[30531] = {
+	pg.base.dorm3d_dialogue_group[30531] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12805,11 +11056,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.dorm3d_dialogue_group
-
-	var_5_30[30540] = {
+	pg.base.dorm3d_dialogue_group[30540] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12830,11 +11077,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.dorm3d_dialogue_group
-
-	var_5_31[30541] = {
+	pg.base.dorm3d_dialogue_group[30541] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12853,11 +11096,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.dorm3d_dialogue_group
-
-	var_5_32[30550] = {
+	pg.base.dorm3d_dialogue_group[30550] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12877,11 +11116,7 @@ end)()
 			1990302
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.dorm3d_dialogue_group
-
-	var_5_33[30552] = {
+	pg.base.dorm3d_dialogue_group[30552] = {
 		reward = 0,
 		room_id = 3,
 		trigger_area = "",
@@ -12899,11 +11134,7 @@ end)()
 			1990302
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.dorm3d_dialogue_group
-
-	var_5_34[21] = {
+	pg.base.dorm3d_dialogue_group[21] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -12922,11 +11153,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.dorm3d_dialogue_group
-
-	var_5_35[22] = {
+	pg.base.dorm3d_dialogue_group[22] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -12945,11 +11172,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.dorm3d_dialogue_group
-
-	var_5_36[23] = {
+	pg.base.dorm3d_dialogue_group[23] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -12968,11 +11191,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.dorm3d_dialogue_group
-
-	var_5_37[24] = {
+	pg.base.dorm3d_dialogue_group[24] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -12991,11 +11210,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.dorm3d_dialogue_group
-
-	var_5_38[25] = {
+	pg.base.dorm3d_dialogue_group[25] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13014,11 +11229,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.dorm3d_dialogue_group
-
-	var_5_39[26] = {
+	pg.base.dorm3d_dialogue_group[26] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13037,11 +11248,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.dorm3d_dialogue_group
-
-	var_5_40[27] = {
+	pg.base.dorm3d_dialogue_group[27] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13060,11 +11267,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.dorm3d_dialogue_group
-
-	var_5_41[28] = {
+	pg.base.dorm3d_dialogue_group[28] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13083,11 +11286,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.dorm3d_dialogue_group
-
-	var_5_42[29] = {
+	pg.base.dorm3d_dialogue_group[29] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13106,11 +11305,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.dorm3d_dialogue_group
-
-	var_5_43[30] = {
+	pg.base.dorm3d_dialogue_group[30] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13129,11 +11324,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.dorm3d_dialogue_group
-
-	var_5_44[31] = {
+	pg.base.dorm3d_dialogue_group[31] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13152,11 +11343,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.dorm3d_dialogue_group
-
-	var_5_45[110112] = {
+	pg.base.dorm3d_dialogue_group[110112] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13175,11 +11362,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.dorm3d_dialogue_group
-
-	var_5_46[110113] = {
+	pg.base.dorm3d_dialogue_group[110113] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13198,11 +11381,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.dorm3d_dialogue_group
-
-	var_5_47[110114] = {
+	pg.base.dorm3d_dialogue_group[110114] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13221,11 +11400,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.dorm3d_dialogue_group
-
-	var_5_48[110115] = {
+	pg.base.dorm3d_dialogue_group[110115] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13244,11 +11419,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.dorm3d_dialogue_group
-
-	var_5_49[110001] = {
+	pg.base.dorm3d_dialogue_group[110001] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13267,11 +11438,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.dorm3d_dialogue_group
-
-	var_5_50[110002] = {
+	pg.base.dorm3d_dialogue_group[110002] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13290,11 +11457,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.dorm3d_dialogue_group
-
-	var_5_51[110003] = {
+	pg.base.dorm3d_dialogue_group[110003] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13313,11 +11476,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.dorm3d_dialogue_group
-
-	var_5_52[110004] = {
+	pg.base.dorm3d_dialogue_group[110004] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13336,11 +11495,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.dorm3d_dialogue_group
-
-	var_5_53[110005] = {
+	pg.base.dorm3d_dialogue_group[110005] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13359,11 +11514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.dorm3d_dialogue_group
-
-	var_5_54[110006] = {
+	pg.base.dorm3d_dialogue_group[110006] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13382,11 +11533,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.dorm3d_dialogue_group
-
-	var_5_55[110007] = {
+	pg.base.dorm3d_dialogue_group[110007] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13405,11 +11552,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.dorm3d_dialogue_group
-
-	var_5_56[110008] = {
+	pg.base.dorm3d_dialogue_group[110008] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13428,11 +11571,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.dorm3d_dialogue_group
-
-	var_5_57[110009] = {
+	pg.base.dorm3d_dialogue_group[110009] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13451,11 +11590,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.dorm3d_dialogue_group
-
-	var_5_58[110010] = {
+	pg.base.dorm3d_dialogue_group[110010] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13474,11 +11609,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.dorm3d_dialogue_group
-
-	var_5_59[110011] = {
+	pg.base.dorm3d_dialogue_group[110011] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13497,11 +11628,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.dorm3d_dialogue_group
-
-	var_5_60[110012] = {
+	pg.base.dorm3d_dialogue_group[110012] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13520,11 +11647,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.dorm3d_dialogue_group
-
-	var_5_61[110013] = {
+	pg.base.dorm3d_dialogue_group[110013] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13543,11 +11666,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.dorm3d_dialogue_group
-
-	var_5_62[110014] = {
+	pg.base.dorm3d_dialogue_group[110014] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13566,11 +11685,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.dorm3d_dialogue_group
-
-	var_5_63[110015] = {
+	pg.base.dorm3d_dialogue_group[110015] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13589,11 +11704,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.dorm3d_dialogue_group
-
-	var_5_64[110016] = {
+	pg.base.dorm3d_dialogue_group[110016] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13612,11 +11723,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.dorm3d_dialogue_group
-
-	var_5_65[110017] = {
+	pg.base.dorm3d_dialogue_group[110017] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13635,11 +11742,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.dorm3d_dialogue_group
-
-	var_5_66[110018] = {
+	pg.base.dorm3d_dialogue_group[110018] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13658,11 +11761,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.dorm3d_dialogue_group
-
-	var_5_67[110019] = {
+	pg.base.dorm3d_dialogue_group[110019] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13681,11 +11780,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.dorm3d_dialogue_group
-
-	var_5_68[110020] = {
+	pg.base.dorm3d_dialogue_group[110020] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13704,11 +11799,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.dorm3d_dialogue_group
-
-	var_5_69[110021] = {
+	pg.base.dorm3d_dialogue_group[110021] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13727,11 +11818,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.dorm3d_dialogue_group
-
-	var_5_70[110022] = {
+	pg.base.dorm3d_dialogue_group[110022] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13750,11 +11837,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.dorm3d_dialogue_group
-
-	var_5_71[110023] = {
+	pg.base.dorm3d_dialogue_group[110023] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13773,11 +11856,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.dorm3d_dialogue_group
-
-	var_5_72[110024] = {
+	pg.base.dorm3d_dialogue_group[110024] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13796,11 +11875,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.dorm3d_dialogue_group
-
-	var_5_73[110025] = {
+	pg.base.dorm3d_dialogue_group[110025] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13819,11 +11894,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.dorm3d_dialogue_group
-
-	var_5_74[110026] = {
+	pg.base.dorm3d_dialogue_group[110026] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13842,11 +11913,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.dorm3d_dialogue_group
-
-	var_5_75[110027] = {
+	pg.base.dorm3d_dialogue_group[110027] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13865,11 +11932,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.dorm3d_dialogue_group
-
-	var_5_76[110028] = {
+	pg.base.dorm3d_dialogue_group[110028] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13888,11 +11951,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.dorm3d_dialogue_group
-
-	var_5_77[110029] = {
+	pg.base.dorm3d_dialogue_group[110029] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13911,11 +11970,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.dorm3d_dialogue_group
-
-	var_5_78[110030] = {
+	pg.base.dorm3d_dialogue_group[110030] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13934,11 +11989,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.dorm3d_dialogue_group
-
-	var_5_79[110031] = {
+	pg.base.dorm3d_dialogue_group[110031] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13957,11 +12008,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.dorm3d_dialogue_group
-
-	var_5_80[110032] = {
+	pg.base.dorm3d_dialogue_group[110032] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -13980,11 +12027,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.dorm3d_dialogue_group
-
-	var_5_81[110033] = {
+	pg.base.dorm3d_dialogue_group[110033] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14003,11 +12046,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.dorm3d_dialogue_group
-
-	var_5_82[110034] = {
+	pg.base.dorm3d_dialogue_group[110034] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14026,11 +12065,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.dorm3d_dialogue_group
-
-	var_5_83[110035] = {
+	pg.base.dorm3d_dialogue_group[110035] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14049,11 +12084,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.dorm3d_dialogue_group
-
-	var_5_84[110036] = {
+	pg.base.dorm3d_dialogue_group[110036] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14072,11 +12103,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.dorm3d_dialogue_group
-
-	var_5_85[110037] = {
+	pg.base.dorm3d_dialogue_group[110037] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14095,11 +12122,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.dorm3d_dialogue_group
-
-	var_5_86[110038] = {
+	pg.base.dorm3d_dialogue_group[110038] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14118,11 +12141,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.dorm3d_dialogue_group
-
-	var_5_87[110039] = {
+	pg.base.dorm3d_dialogue_group[110039] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14141,11 +12160,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.dorm3d_dialogue_group
-
-	var_5_88[110040] = {
+	pg.base.dorm3d_dialogue_group[110040] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14164,11 +12179,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.dorm3d_dialogue_group
-
-	var_5_89[110041] = {
+	pg.base.dorm3d_dialogue_group[110041] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14187,11 +12198,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.dorm3d_dialogue_group
-
-	var_5_90[110042] = {
+	pg.base.dorm3d_dialogue_group[110042] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14210,11 +12217,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.dorm3d_dialogue_group
-
-	var_5_91[110043] = {
+	pg.base.dorm3d_dialogue_group[110043] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14233,11 +12236,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.dorm3d_dialogue_group
-
-	var_5_92[110044] = {
+	pg.base.dorm3d_dialogue_group[110044] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14256,11 +12255,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.dorm3d_dialogue_group
-
-	var_5_93[110045] = {
+	pg.base.dorm3d_dialogue_group[110045] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14279,11 +12274,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.dorm3d_dialogue_group
-
-	var_5_94[110046] = {
+	pg.base.dorm3d_dialogue_group[110046] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14302,11 +12293,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.dorm3d_dialogue_group
-
-	var_5_95[110047] = {
+	pg.base.dorm3d_dialogue_group[110047] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14325,11 +12312,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.dorm3d_dialogue_group
-
-	var_5_96[110048] = {
+	pg.base.dorm3d_dialogue_group[110048] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14348,11 +12331,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.dorm3d_dialogue_group
-
-	var_5_97[110049] = {
+	pg.base.dorm3d_dialogue_group[110049] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14371,11 +12350,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.dorm3d_dialogue_group
-
-	var_5_98[110050] = {
+	pg.base.dorm3d_dialogue_group[110050] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14394,8 +12369,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.dorm3d_dialogue_group[110051] = {
+	pg.base.dorm3d_dialogue_group[110051] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -14418,11 +12392,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_6_0[110052] = {
+	pg.base.dorm3d_dialogue_group[110052] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -14441,11 +12411,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.dorm3d_dialogue_group
-
-	var_6_1[110053] = {
+	pg.base.dorm3d_dialogue_group[110053] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -14464,11 +12430,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.dorm3d_dialogue_group
-
-	var_6_2[110054] = {
+	pg.base.dorm3d_dialogue_group[110054] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -14487,11 +12449,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.dorm3d_dialogue_group
-
-	var_6_3[110055] = {
+	pg.base.dorm3d_dialogue_group[110055] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -14510,11 +12468,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.dorm3d_dialogue_group
-
-	var_6_4[110201] = {
+	pg.base.dorm3d_dialogue_group[110201] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14533,11 +12487,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.dorm3d_dialogue_group
-
-	var_6_5[110202] = {
+	pg.base.dorm3d_dialogue_group[110202] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14556,11 +12506,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.dorm3d_dialogue_group
-
-	var_6_6[110203] = {
+	pg.base.dorm3d_dialogue_group[110203] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14579,11 +12525,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.dorm3d_dialogue_group
-
-	var_6_7[110204] = {
+	pg.base.dorm3d_dialogue_group[110204] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14602,11 +12544,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.dorm3d_dialogue_group
-
-	var_6_8[110205] = {
+	pg.base.dorm3d_dialogue_group[110205] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14625,11 +12563,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.dorm3d_dialogue_group
-
-	var_6_9[110206] = {
+	pg.base.dorm3d_dialogue_group[110206] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14648,11 +12582,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.dorm3d_dialogue_group
-
-	var_6_10[110207] = {
+	pg.base.dorm3d_dialogue_group[110207] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14671,11 +12601,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.dorm3d_dialogue_group
-
-	var_6_11[0] = {
+	pg.base.dorm3d_dialogue_group[0] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14694,11 +12620,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.dorm3d_dialogue_group
-
-	var_6_12[1] = {
+	pg.base.dorm3d_dialogue_group[1] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14717,11 +12639,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.dorm3d_dialogue_group
-
-	var_6_13[2] = {
+	pg.base.dorm3d_dialogue_group[2] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14740,11 +12658,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.dorm3d_dialogue_group
-
-	var_6_14[3] = {
+	pg.base.dorm3d_dialogue_group[3] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14763,11 +12677,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.dorm3d_dialogue_group
-
-	var_6_15[4] = {
+	pg.base.dorm3d_dialogue_group[4] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14786,11 +12696,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.dorm3d_dialogue_group
-
-	var_6_16[5] = {
+	pg.base.dorm3d_dialogue_group[5] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14809,11 +12715,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.dorm3d_dialogue_group
-
-	var_6_17[6] = {
+	pg.base.dorm3d_dialogue_group[6] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14832,11 +12734,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.dorm3d_dialogue_group
-
-	var_6_18[7] = {
+	pg.base.dorm3d_dialogue_group[7] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14855,11 +12753,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.dorm3d_dialogue_group
-
-	var_6_19[8] = {
+	pg.base.dorm3d_dialogue_group[8] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14878,11 +12772,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.dorm3d_dialogue_group
-
-	var_6_20[9] = {
+	pg.base.dorm3d_dialogue_group[9] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14901,11 +12791,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.dorm3d_dialogue_group
-
-	var_6_21[10] = {
+	pg.base.dorm3d_dialogue_group[10] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14924,11 +12810,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.dorm3d_dialogue_group
-
-	var_6_22[11] = {
+	pg.base.dorm3d_dialogue_group[11] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14947,11 +12829,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.dorm3d_dialogue_group
-
-	var_6_23[12] = {
+	pg.base.dorm3d_dialogue_group[12] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14970,11 +12848,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.dorm3d_dialogue_group
-
-	var_6_24[13] = {
+	pg.base.dorm3d_dialogue_group[13] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -14993,11 +12867,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.dorm3d_dialogue_group
-
-	var_6_25[14] = {
+	pg.base.dorm3d_dialogue_group[14] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15016,11 +12886,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.dorm3d_dialogue_group
-
-	var_6_26[15] = {
+	pg.base.dorm3d_dialogue_group[15] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15039,11 +12905,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.dorm3d_dialogue_group
-
-	var_6_27[16] = {
+	pg.base.dorm3d_dialogue_group[16] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15062,11 +12924,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.dorm3d_dialogue_group
-
-	var_6_28[17] = {
+	pg.base.dorm3d_dialogue_group[17] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15085,11 +12943,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.dorm3d_dialogue_group
-
-	var_6_29[18] = {
+	pg.base.dorm3d_dialogue_group[18] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15108,11 +12962,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.dorm3d_dialogue_group
-
-	var_6_30[19] = {
+	pg.base.dorm3d_dialogue_group[19] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15131,11 +12981,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.dorm3d_dialogue_group
-
-	var_6_31[20] = {
+	pg.base.dorm3d_dialogue_group[20] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15154,11 +13000,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.dorm3d_dialogue_group
-
-	var_6_32[21] = {
+	pg.base.dorm3d_dialogue_group[21] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15177,11 +13019,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.dorm3d_dialogue_group
-
-	var_6_33[22] = {
+	pg.base.dorm3d_dialogue_group[22] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15200,11 +13038,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.dorm3d_dialogue_group
-
-	var_6_34[23] = {
+	pg.base.dorm3d_dialogue_group[23] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15223,11 +13057,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.dorm3d_dialogue_group
-
-	var_6_35[24] = {
+	pg.base.dorm3d_dialogue_group[24] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15246,11 +13076,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.dorm3d_dialogue_group
-
-	var_6_36[25] = {
+	pg.base.dorm3d_dialogue_group[25] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15269,11 +13095,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.dorm3d_dialogue_group
-
-	var_6_37[26] = {
+	pg.base.dorm3d_dialogue_group[26] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15292,11 +13114,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.dorm3d_dialogue_group
-
-	var_6_38[27] = {
+	pg.base.dorm3d_dialogue_group[27] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15315,11 +13133,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.dorm3d_dialogue_group
-
-	var_6_39[28] = {
+	pg.base.dorm3d_dialogue_group[28] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15338,11 +13152,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.dorm3d_dialogue_group
-
-	var_6_40[29] = {
+	pg.base.dorm3d_dialogue_group[29] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15361,11 +13171,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.dorm3d_dialogue_group
-
-	var_6_41[30] = {
+	pg.base.dorm3d_dialogue_group[30] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15384,11 +13190,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.dorm3d_dialogue_group
-
-	var_6_42[31] = {
+	pg.base.dorm3d_dialogue_group[31] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15407,11 +13209,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.dorm3d_dialogue_group
-
-	var_6_43[110240] = {
+	pg.base.dorm3d_dialogue_group[110240] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15430,11 +13228,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.dorm3d_dialogue_group
-
-	var_6_44[110241] = {
+	pg.base.dorm3d_dialogue_group[110241] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15453,11 +13247,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.dorm3d_dialogue_group
-
-	var_6_45[110242] = {
+	pg.base.dorm3d_dialogue_group[110242] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15476,11 +13266,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.dorm3d_dialogue_group
-
-	var_6_46[110243] = {
+	pg.base.dorm3d_dialogue_group[110243] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15499,11 +13285,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.dorm3d_dialogue_group
-
-	var_6_47[110301] = {
+	pg.base.dorm3d_dialogue_group[110301] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15522,11 +13304,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.dorm3d_dialogue_group
-
-	var_6_48[110302] = {
+	pg.base.dorm3d_dialogue_group[110302] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15545,11 +13323,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.dorm3d_dialogue_group
-
-	var_6_49[110303] = {
+	pg.base.dorm3d_dialogue_group[110303] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15568,11 +13342,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.dorm3d_dialogue_group
-
-	var_6_50[110304] = {
+	pg.base.dorm3d_dialogue_group[110304] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15591,11 +13361,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.dorm3d_dialogue_group
-
-	var_6_51[110305] = {
+	pg.base.dorm3d_dialogue_group[110305] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15614,11 +13380,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.dorm3d_dialogue_group
-
-	var_6_52[9] = {
+	pg.base.dorm3d_dialogue_group[9] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15637,11 +13399,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.dorm3d_dialogue_group
-
-	var_6_53[10] = {
+	pg.base.dorm3d_dialogue_group[10] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15660,11 +13418,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.dorm3d_dialogue_group
-
-	var_6_54[11] = {
+	pg.base.dorm3d_dialogue_group[11] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15683,11 +13437,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.dorm3d_dialogue_group
-
-	var_6_55[110510] = {
+	pg.base.dorm3d_dialogue_group[110510] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15708,11 +13458,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.dorm3d_dialogue_group
-
-	var_6_56[110511] = {
+	pg.base.dorm3d_dialogue_group[110511] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15731,11 +13477,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.dorm3d_dialogue_group
-
-	var_6_57[110520] = {
+	pg.base.dorm3d_dialogue_group[110520] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15756,11 +13498,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.dorm3d_dialogue_group
-
-	var_6_58[110521] = {
+	pg.base.dorm3d_dialogue_group[110521] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15779,11 +13517,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.dorm3d_dialogue_group
-
-	var_6_59[110530] = {
+	pg.base.dorm3d_dialogue_group[110530] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15804,11 +13538,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.dorm3d_dialogue_group
-
-	var_6_60[110531] = {
+	pg.base.dorm3d_dialogue_group[110531] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15827,11 +13557,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.dorm3d_dialogue_group
-
-	var_6_61[110541] = {
+	pg.base.dorm3d_dialogue_group[110541] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15851,11 +13577,7 @@ end)()
 			1051701
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.dorm3d_dialogue_group
-
-	var_6_62[110542] = {
+	pg.base.dorm3d_dialogue_group[110542] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15873,11 +13595,7 @@ end)()
 			1051701
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.dorm3d_dialogue_group
-
-	var_6_63[110543] = {
+	pg.base.dorm3d_dialogue_group[110543] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15895,11 +13613,7 @@ end)()
 			1051701
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.dorm3d_dialogue_group
-
-	var_6_64[110551] = {
+	pg.base.dorm3d_dialogue_group[110551] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15919,11 +13633,7 @@ end)()
 			1051702
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.dorm3d_dialogue_group
-
-	var_6_65[110552] = {
+	pg.base.dorm3d_dialogue_group[110552] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15941,11 +13651,7 @@ end)()
 			1051702
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.dorm3d_dialogue_group
-
-	var_6_66[110553] = {
+	pg.base.dorm3d_dialogue_group[110553] = {
 		reward = 0,
 		room_id = 11,
 		trigger_area = "",
@@ -15963,11 +13669,7 @@ end)()
 			1051702
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.dorm3d_dialogue_group
-
-	var_6_67[120001] = {
+	pg.base.dorm3d_dialogue_group[120001] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -15986,11 +13688,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.dorm3d_dialogue_group
-
-	var_6_68[120002] = {
+	pg.base.dorm3d_dialogue_group[120002] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16009,11 +13707,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.dorm3d_dialogue_group
-
-	var_6_69[120003] = {
+	pg.base.dorm3d_dialogue_group[120003] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16032,11 +13726,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.dorm3d_dialogue_group
-
-	var_6_70[120004] = {
+	pg.base.dorm3d_dialogue_group[120004] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16055,11 +13745,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.dorm3d_dialogue_group
-
-	var_6_71[120005] = {
+	pg.base.dorm3d_dialogue_group[120005] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16078,11 +13764,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.dorm3d_dialogue_group
-
-	var_6_72[120006] = {
+	pg.base.dorm3d_dialogue_group[120006] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16101,11 +13783,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.dorm3d_dialogue_group
-
-	var_6_73[120007] = {
+	pg.base.dorm3d_dialogue_group[120007] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16124,11 +13802,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.dorm3d_dialogue_group
-
-	var_6_74[120008] = {
+	pg.base.dorm3d_dialogue_group[120008] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16147,11 +13821,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.dorm3d_dialogue_group
-
-	var_6_75[120009] = {
+	pg.base.dorm3d_dialogue_group[120009] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16170,11 +13840,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.dorm3d_dialogue_group
-
-	var_6_76[120010] = {
+	pg.base.dorm3d_dialogue_group[120010] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16193,11 +13859,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.dorm3d_dialogue_group
-
-	var_6_77[120011] = {
+	pg.base.dorm3d_dialogue_group[120011] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16216,11 +13878,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.dorm3d_dialogue_group
-
-	var_6_78[120012] = {
+	pg.base.dorm3d_dialogue_group[120012] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16239,11 +13897,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.dorm3d_dialogue_group
-
-	var_6_79[120013] = {
+	pg.base.dorm3d_dialogue_group[120013] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16262,11 +13916,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.dorm3d_dialogue_group
-
-	var_6_80[120014] = {
+	pg.base.dorm3d_dialogue_group[120014] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16285,11 +13935,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.dorm3d_dialogue_group
-
-	var_6_81[120015] = {
+	pg.base.dorm3d_dialogue_group[120015] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16308,11 +13954,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.dorm3d_dialogue_group
-
-	var_6_82[120016] = {
+	pg.base.dorm3d_dialogue_group[120016] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16331,11 +13973,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.dorm3d_dialogue_group
-
-	var_6_83[120017] = {
+	pg.base.dorm3d_dialogue_group[120017] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16354,11 +13992,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.dorm3d_dialogue_group
-
-	var_6_84[120018] = {
+	pg.base.dorm3d_dialogue_group[120018] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16377,11 +14011,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.dorm3d_dialogue_group
-
-	var_6_85[120019] = {
+	pg.base.dorm3d_dialogue_group[120019] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16400,11 +14030,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.dorm3d_dialogue_group
-
-	var_6_86[120020] = {
+	pg.base.dorm3d_dialogue_group[120020] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16423,11 +14049,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.dorm3d_dialogue_group
-
-	var_6_87[120021] = {
+	pg.base.dorm3d_dialogue_group[120021] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16446,11 +14068,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.dorm3d_dialogue_group
-
-	var_6_88[120022] = {
+	pg.base.dorm3d_dialogue_group[120022] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16469,11 +14087,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.dorm3d_dialogue_group
-
-	var_6_89[120023] = {
+	pg.base.dorm3d_dialogue_group[120023] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16492,11 +14106,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.dorm3d_dialogue_group
-
-	var_6_90[120024] = {
+	pg.base.dorm3d_dialogue_group[120024] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16515,11 +14125,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.dorm3d_dialogue_group
-
-	var_6_91[120025] = {
+	pg.base.dorm3d_dialogue_group[120025] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16538,11 +14144,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.dorm3d_dialogue_group
-
-	var_6_92[120026] = {
+	pg.base.dorm3d_dialogue_group[120026] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16561,11 +14163,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.dorm3d_dialogue_group
-
-	var_6_93[120027] = {
+	pg.base.dorm3d_dialogue_group[120027] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16584,11 +14182,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.dorm3d_dialogue_group
-
-	var_6_94[120028] = {
+	pg.base.dorm3d_dialogue_group[120028] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16607,11 +14201,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.dorm3d_dialogue_group
-
-	var_6_95[120029] = {
+	pg.base.dorm3d_dialogue_group[120029] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16630,11 +14220,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.dorm3d_dialogue_group
-
-	var_6_96[120030] = {
+	pg.base.dorm3d_dialogue_group[120030] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16653,11 +14239,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.dorm3d_dialogue_group
-
-	var_6_97[120031] = {
+	pg.base.dorm3d_dialogue_group[120031] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16676,11 +14258,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.dorm3d_dialogue_group
-
-	var_6_98[120032] = {
+	pg.base.dorm3d_dialogue_group[120032] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16699,8 +14277,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.dorm3d_dialogue_group[120033] = {
+	pg.base.dorm3d_dialogue_group[120033] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16723,11 +14300,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_7_0[120034] = {
+	pg.base.dorm3d_dialogue_group[120034] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16746,11 +14319,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.dorm3d_dialogue_group
-
-	var_7_1[120035] = {
+	pg.base.dorm3d_dialogue_group[120035] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16769,11 +14338,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.dorm3d_dialogue_group
-
-	var_7_2[120036] = {
+	pg.base.dorm3d_dialogue_group[120036] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16792,11 +14357,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.dorm3d_dialogue_group
-
-	var_7_3[120037] = {
+	pg.base.dorm3d_dialogue_group[120037] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16815,11 +14376,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.dorm3d_dialogue_group
-
-	var_7_4[120038] = {
+	pg.base.dorm3d_dialogue_group[120038] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16838,11 +14395,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.dorm3d_dialogue_group
-
-	var_7_5[120039] = {
+	pg.base.dorm3d_dialogue_group[120039] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16861,11 +14414,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.dorm3d_dialogue_group
-
-	var_7_6[120040] = {
+	pg.base.dorm3d_dialogue_group[120040] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16884,11 +14433,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.dorm3d_dialogue_group
-
-	var_7_7[120041] = {
+	pg.base.dorm3d_dialogue_group[120041] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16907,11 +14452,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.dorm3d_dialogue_group
-
-	var_7_8[120042] = {
+	pg.base.dorm3d_dialogue_group[120042] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16930,11 +14471,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.dorm3d_dialogue_group
-
-	var_7_9[120043] = {
+	pg.base.dorm3d_dialogue_group[120043] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16953,11 +14490,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.dorm3d_dialogue_group
-
-	var_7_10[120044] = {
+	pg.base.dorm3d_dialogue_group[120044] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16976,11 +14509,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.dorm3d_dialogue_group
-
-	var_7_11[120045] = {
+	pg.base.dorm3d_dialogue_group[120045] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -16999,11 +14528,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.dorm3d_dialogue_group
-
-	var_7_12[120046] = {
+	pg.base.dorm3d_dialogue_group[120046] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17022,11 +14547,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.dorm3d_dialogue_group
-
-	var_7_13[120047] = {
+	pg.base.dorm3d_dialogue_group[120047] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17045,11 +14566,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.dorm3d_dialogue_group
-
-	var_7_14[120048] = {
+	pg.base.dorm3d_dialogue_group[120048] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17068,11 +14585,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.dorm3d_dialogue_group
-
-	var_7_15[120049] = {
+	pg.base.dorm3d_dialogue_group[120049] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17091,11 +14604,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.dorm3d_dialogue_group
-
-	var_7_16[120050] = {
+	pg.base.dorm3d_dialogue_group[120050] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17114,11 +14623,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.dorm3d_dialogue_group
-
-	var_7_17[120051] = {
+	pg.base.dorm3d_dialogue_group[120051] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -17137,11 +14642,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.dorm3d_dialogue_group
-
-	var_7_18[120052] = {
+	pg.base.dorm3d_dialogue_group[120052] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -17160,11 +14661,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.dorm3d_dialogue_group
-
-	var_7_19[120053] = {
+	pg.base.dorm3d_dialogue_group[120053] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -17183,11 +14680,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.dorm3d_dialogue_group
-
-	var_7_20[120054] = {
+	pg.base.dorm3d_dialogue_group[120054] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -17206,11 +14699,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.dorm3d_dialogue_group
-
-	var_7_21[120055] = {
+	pg.base.dorm3d_dialogue_group[120055] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -17229,11 +14718,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.dorm3d_dialogue_group
-
-	var_7_22[120101] = {
+	pg.base.dorm3d_dialogue_group[120101] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17252,11 +14737,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.dorm3d_dialogue_group
-
-	var_7_23[120102] = {
+	pg.base.dorm3d_dialogue_group[120102] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17275,11 +14756,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.dorm3d_dialogue_group
-
-	var_7_24[120103] = {
+	pg.base.dorm3d_dialogue_group[120103] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17298,11 +14775,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.dorm3d_dialogue_group
-
-	var_7_25[120104] = {
+	pg.base.dorm3d_dialogue_group[120104] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17321,11 +14794,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.dorm3d_dialogue_group
-
-	var_7_26[120105] = {
+	pg.base.dorm3d_dialogue_group[120105] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17344,11 +14813,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.dorm3d_dialogue_group
-
-	var_7_27[120106] = {
+	pg.base.dorm3d_dialogue_group[120106] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17367,11 +14832,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.dorm3d_dialogue_group
-
-	var_7_28[120107] = {
+	pg.base.dorm3d_dialogue_group[120107] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17390,11 +14851,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.dorm3d_dialogue_group
-
-	var_7_29[120108] = {
+	pg.base.dorm3d_dialogue_group[120108] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17413,11 +14870,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.dorm3d_dialogue_group
-
-	var_7_30[120109] = {
+	pg.base.dorm3d_dialogue_group[120109] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17436,11 +14889,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.dorm3d_dialogue_group
-
-	var_7_31[120110] = {
+	pg.base.dorm3d_dialogue_group[120110] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17459,11 +14908,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.dorm3d_dialogue_group
-
-	var_7_32[120111] = {
+	pg.base.dorm3d_dialogue_group[120111] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17482,11 +14927,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.dorm3d_dialogue_group
-
-	var_7_33[120112] = {
+	pg.base.dorm3d_dialogue_group[120112] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17505,11 +14946,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.dorm3d_dialogue_group
-
-	var_7_34[120113] = {
+	pg.base.dorm3d_dialogue_group[120113] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17528,11 +14965,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.dorm3d_dialogue_group
-
-	var_7_35[120114] = {
+	pg.base.dorm3d_dialogue_group[120114] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17551,11 +14984,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.dorm3d_dialogue_group
-
-	var_7_36[120115] = {
+	pg.base.dorm3d_dialogue_group[120115] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17574,11 +15003,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.dorm3d_dialogue_group
-
-	var_7_37[9] = {
+	pg.base.dorm3d_dialogue_group[9] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17597,11 +15022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.dorm3d_dialogue_group
-
-	var_7_38[10] = {
+	pg.base.dorm3d_dialogue_group[10] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17620,11 +15041,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.dorm3d_dialogue_group
-
-	var_7_39[11] = {
+	pg.base.dorm3d_dialogue_group[11] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17643,11 +15060,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.dorm3d_dialogue_group
-
-	var_7_40[12] = {
+	pg.base.dorm3d_dialogue_group[12] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17666,11 +15079,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.dorm3d_dialogue_group
-
-	var_7_41[13] = {
+	pg.base.dorm3d_dialogue_group[13] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17689,11 +15098,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.dorm3d_dialogue_group
-
-	var_7_42[14] = {
+	pg.base.dorm3d_dialogue_group[14] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17712,11 +15117,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.dorm3d_dialogue_group
-
-	var_7_43[15] = {
+	pg.base.dorm3d_dialogue_group[15] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17735,11 +15136,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.dorm3d_dialogue_group
-
-	var_7_44[16] = {
+	pg.base.dorm3d_dialogue_group[16] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17758,11 +15155,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.dorm3d_dialogue_group
-
-	var_7_45[17] = {
+	pg.base.dorm3d_dialogue_group[17] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17781,11 +15174,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.dorm3d_dialogue_group
-
-	var_7_46[18] = {
+	pg.base.dorm3d_dialogue_group[18] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17804,11 +15193,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.dorm3d_dialogue_group
-
-	var_7_47[19] = {
+	pg.base.dorm3d_dialogue_group[19] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17827,11 +15212,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.dorm3d_dialogue_group
-
-	var_7_48[20] = {
+	pg.base.dorm3d_dialogue_group[20] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17850,11 +15231,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.dorm3d_dialogue_group
-
-	var_7_49[21] = {
+	pg.base.dorm3d_dialogue_group[21] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17873,11 +15250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.dorm3d_dialogue_group
-
-	var_7_50[22] = {
+	pg.base.dorm3d_dialogue_group[22] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17896,11 +15269,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.dorm3d_dialogue_group
-
-	var_7_51[23] = {
+	pg.base.dorm3d_dialogue_group[23] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17919,11 +15288,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.dorm3d_dialogue_group
-
-	var_7_52[24] = {
+	pg.base.dorm3d_dialogue_group[24] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17942,11 +15307,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.dorm3d_dialogue_group
-
-	var_7_53[25] = {
+	pg.base.dorm3d_dialogue_group[25] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17965,11 +15326,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.dorm3d_dialogue_group
-
-	var_7_54[26] = {
+	pg.base.dorm3d_dialogue_group[26] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -17988,11 +15345,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.dorm3d_dialogue_group
-
-	var_7_55[27] = {
+	pg.base.dorm3d_dialogue_group[27] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18011,11 +15364,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.dorm3d_dialogue_group
-
-	var_7_56[28] = {
+	pg.base.dorm3d_dialogue_group[28] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18034,11 +15383,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.dorm3d_dialogue_group
-
-	var_7_57[29] = {
+	pg.base.dorm3d_dialogue_group[29] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18057,11 +15402,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.dorm3d_dialogue_group
-
-	var_7_58[30] = {
+	pg.base.dorm3d_dialogue_group[30] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18080,11 +15421,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.dorm3d_dialogue_group
-
-	var_7_59[31] = {
+	pg.base.dorm3d_dialogue_group[31] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18103,11 +15440,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.dorm3d_dialogue_group
-
-	var_7_60[120224] = {
+	pg.base.dorm3d_dialogue_group[120224] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18126,11 +15459,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.dorm3d_dialogue_group
-
-	var_7_61[120225] = {
+	pg.base.dorm3d_dialogue_group[120225] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18149,11 +15478,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.dorm3d_dialogue_group
-
-	var_7_62[120226] = {
+	pg.base.dorm3d_dialogue_group[120226] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18172,11 +15497,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.dorm3d_dialogue_group
-
-	var_7_63[120227] = {
+	pg.base.dorm3d_dialogue_group[120227] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18195,11 +15516,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.dorm3d_dialogue_group
-
-	var_7_64[120228] = {
+	pg.base.dorm3d_dialogue_group[120228] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18218,11 +15535,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.dorm3d_dialogue_group
-
-	var_7_65[120229] = {
+	pg.base.dorm3d_dialogue_group[120229] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18241,11 +15554,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.dorm3d_dialogue_group
-
-	var_7_66[120230] = {
+	pg.base.dorm3d_dialogue_group[120230] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18264,11 +15573,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.dorm3d_dialogue_group
-
-	var_7_67[120231] = {
+	pg.base.dorm3d_dialogue_group[120231] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18287,11 +15592,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.dorm3d_dialogue_group
-
-	var_7_68[120232] = {
+	pg.base.dorm3d_dialogue_group[120232] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18310,11 +15611,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.dorm3d_dialogue_group
-
-	var_7_69[120233] = {
+	pg.base.dorm3d_dialogue_group[120233] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18333,11 +15630,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.dorm3d_dialogue_group
-
-	var_7_70[120234] = {
+	pg.base.dorm3d_dialogue_group[120234] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18356,11 +15649,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.dorm3d_dialogue_group
-
-	var_7_71[120235] = {
+	pg.base.dorm3d_dialogue_group[120235] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18379,11 +15668,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.dorm3d_dialogue_group
-
-	var_7_72[120236] = {
+	pg.base.dorm3d_dialogue_group[120236] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18402,11 +15687,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.dorm3d_dialogue_group
-
-	var_7_73[120237] = {
+	pg.base.dorm3d_dialogue_group[120237] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18425,11 +15706,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.dorm3d_dialogue_group
-
-	var_7_74[120238] = {
+	pg.base.dorm3d_dialogue_group[120238] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18448,11 +15725,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.dorm3d_dialogue_group
-
-	var_7_75[120239] = {
+	pg.base.dorm3d_dialogue_group[120239] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18471,11 +15744,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.dorm3d_dialogue_group
-
-	var_7_76[120240] = {
+	pg.base.dorm3d_dialogue_group[120240] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18494,11 +15763,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.dorm3d_dialogue_group
-
-	var_7_77[120301] = {
+	pg.base.dorm3d_dialogue_group[120301] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18517,11 +15782,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.dorm3d_dialogue_group
-
-	var_7_78[120302] = {
+	pg.base.dorm3d_dialogue_group[120302] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18540,11 +15801,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.dorm3d_dialogue_group
-
-	var_7_79[120303] = {
+	pg.base.dorm3d_dialogue_group[120303] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18563,11 +15820,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.dorm3d_dialogue_group
-
-	var_7_80[120304] = {
+	pg.base.dorm3d_dialogue_group[120304] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18586,11 +15839,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.dorm3d_dialogue_group
-
-	var_7_81[120305] = {
+	pg.base.dorm3d_dialogue_group[120305] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18609,11 +15858,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.dorm3d_dialogue_group
-
-	var_7_82[25] = {
+	pg.base.dorm3d_dialogue_group[25] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18632,11 +15877,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.dorm3d_dialogue_group
-
-	var_7_83[26] = {
+	pg.base.dorm3d_dialogue_group[26] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18655,11 +15896,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.dorm3d_dialogue_group
-
-	var_7_84[120510] = {
+	pg.base.dorm3d_dialogue_group[120510] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18680,11 +15917,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.dorm3d_dialogue_group
-
-	var_7_85[120511] = {
+	pg.base.dorm3d_dialogue_group[120511] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18703,11 +15936,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.dorm3d_dialogue_group
-
-	var_7_86[120520] = {
+	pg.base.dorm3d_dialogue_group[120520] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18728,11 +15957,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.dorm3d_dialogue_group
-
-	var_7_87[120521] = {
+	pg.base.dorm3d_dialogue_group[120521] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18751,11 +15976,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.dorm3d_dialogue_group
-
-	var_7_88[120530] = {
+	pg.base.dorm3d_dialogue_group[120530] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18776,11 +15997,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.dorm3d_dialogue_group
-
-	var_7_89[120531] = {
+	pg.base.dorm3d_dialogue_group[120531] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18799,11 +16016,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.dorm3d_dialogue_group
-
-	var_7_90[120541] = {
+	pg.base.dorm3d_dialogue_group[120541] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18823,11 +16036,7 @@ end)()
 			3070701
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.dorm3d_dialogue_group
-
-	var_7_91[120542] = {
+	pg.base.dorm3d_dialogue_group[120542] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18845,11 +16054,7 @@ end)()
 			3070701
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.dorm3d_dialogue_group
-
-	var_7_92[120543] = {
+	pg.base.dorm3d_dialogue_group[120543] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18867,11 +16072,7 @@ end)()
 			3070701
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.dorm3d_dialogue_group
-
-	var_7_93[120551] = {
+	pg.base.dorm3d_dialogue_group[120551] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18891,11 +16092,7 @@ end)()
 			3070702
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.dorm3d_dialogue_group
-
-	var_7_94[120552] = {
+	pg.base.dorm3d_dialogue_group[120552] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18913,11 +16110,7 @@ end)()
 			3070702
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.dorm3d_dialogue_group
-
-	var_7_95[120553] = {
+	pg.base.dorm3d_dialogue_group[120553] = {
 		reward = 0,
 		room_id = 12,
 		trigger_area = "",
@@ -18935,11 +16128,7 @@ end)()
 			3070702
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.dorm3d_dialogue_group
-
-	var_7_96[140001] = {
+	pg.base.dorm3d_dialogue_group[140001] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -18958,11 +16147,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.dorm3d_dialogue_group
-
-	var_7_97[140002] = {
+	pg.base.dorm3d_dialogue_group[140002] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -18981,11 +16166,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.dorm3d_dialogue_group
-
-	var_7_98[140003] = {
+	pg.base.dorm3d_dialogue_group[140003] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19004,8 +16185,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.dorm3d_dialogue_group[140004] = {
+	pg.base.dorm3d_dialogue_group[140004] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19028,11 +16208,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_8_0[140005] = {
+	pg.base.dorm3d_dialogue_group[140005] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19051,11 +16227,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.dorm3d_dialogue_group
-
-	var_8_1[140006] = {
+	pg.base.dorm3d_dialogue_group[140006] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19074,11 +16246,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.dorm3d_dialogue_group
-
-	var_8_2[140007] = {
+	pg.base.dorm3d_dialogue_group[140007] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19097,11 +16265,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.dorm3d_dialogue_group
-
-	var_8_3[140008] = {
+	pg.base.dorm3d_dialogue_group[140008] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19120,11 +16284,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.dorm3d_dialogue_group
-
-	var_8_4[140009] = {
+	pg.base.dorm3d_dialogue_group[140009] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19143,11 +16303,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.dorm3d_dialogue_group
-
-	var_8_5[140010] = {
+	pg.base.dorm3d_dialogue_group[140010] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19166,11 +16322,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.dorm3d_dialogue_group
-
-	var_8_6[140011] = {
+	pg.base.dorm3d_dialogue_group[140011] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19189,11 +16341,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.dorm3d_dialogue_group
-
-	var_8_7[140012] = {
+	pg.base.dorm3d_dialogue_group[140012] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19212,11 +16360,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.dorm3d_dialogue_group
-
-	var_8_8[140013] = {
+	pg.base.dorm3d_dialogue_group[140013] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19235,11 +16379,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.dorm3d_dialogue_group
-
-	var_8_9[140014] = {
+	pg.base.dorm3d_dialogue_group[140014] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19258,11 +16398,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.dorm3d_dialogue_group
-
-	var_8_10[140015] = {
+	pg.base.dorm3d_dialogue_group[140015] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19281,11 +16417,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.dorm3d_dialogue_group
-
-	var_8_11[140016] = {
+	pg.base.dorm3d_dialogue_group[140016] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19304,11 +16436,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.dorm3d_dialogue_group
-
-	var_8_12[140017] = {
+	pg.base.dorm3d_dialogue_group[140017] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19327,11 +16455,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.dorm3d_dialogue_group
-
-	var_8_13[140018] = {
+	pg.base.dorm3d_dialogue_group[140018] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19350,11 +16474,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.dorm3d_dialogue_group
-
-	var_8_14[140019] = {
+	pg.base.dorm3d_dialogue_group[140019] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19373,11 +16493,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.dorm3d_dialogue_group
-
-	var_8_15[140020] = {
+	pg.base.dorm3d_dialogue_group[140020] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19396,11 +16512,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.dorm3d_dialogue_group
-
-	var_8_16[140021] = {
+	pg.base.dorm3d_dialogue_group[140021] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19419,11 +16531,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.dorm3d_dialogue_group
-
-	var_8_17[140022] = {
+	pg.base.dorm3d_dialogue_group[140022] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19442,11 +16550,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.dorm3d_dialogue_group
-
-	var_8_18[140023] = {
+	pg.base.dorm3d_dialogue_group[140023] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19465,11 +16569,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.dorm3d_dialogue_group
-
-	var_8_19[140024] = {
+	pg.base.dorm3d_dialogue_group[140024] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19488,11 +16588,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.dorm3d_dialogue_group
-
-	var_8_20[140025] = {
+	pg.base.dorm3d_dialogue_group[140025] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19511,11 +16607,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.dorm3d_dialogue_group
-
-	var_8_21[140026] = {
+	pg.base.dorm3d_dialogue_group[140026] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19534,11 +16626,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.dorm3d_dialogue_group
-
-	var_8_22[140027] = {
+	pg.base.dorm3d_dialogue_group[140027] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19557,11 +16645,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.dorm3d_dialogue_group
-
-	var_8_23[140028] = {
+	pg.base.dorm3d_dialogue_group[140028] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19580,11 +16664,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.dorm3d_dialogue_group
-
-	var_8_24[140029] = {
+	pg.base.dorm3d_dialogue_group[140029] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19603,11 +16683,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.dorm3d_dialogue_group
-
-	var_8_25[140030] = {
+	pg.base.dorm3d_dialogue_group[140030] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19626,11 +16702,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.dorm3d_dialogue_group
-
-	var_8_26[140031] = {
+	pg.base.dorm3d_dialogue_group[140031] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19649,11 +16721,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.dorm3d_dialogue_group
-
-	var_8_27[0] = {
+	pg.base.dorm3d_dialogue_group[0] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19672,11 +16740,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.dorm3d_dialogue_group
-
-	var_8_28[1] = {
+	pg.base.dorm3d_dialogue_group[1] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19695,11 +16759,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.dorm3d_dialogue_group
-
-	var_8_29[2] = {
+	pg.base.dorm3d_dialogue_group[2] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19718,11 +16778,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.dorm3d_dialogue_group
-
-	var_8_30[3] = {
+	pg.base.dorm3d_dialogue_group[3] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19741,11 +16797,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.dorm3d_dialogue_group
-
-	var_8_31[4] = {
+	pg.base.dorm3d_dialogue_group[4] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19764,11 +16816,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.dorm3d_dialogue_group
-
-	var_8_32[5] = {
+	pg.base.dorm3d_dialogue_group[5] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19787,11 +16835,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.dorm3d_dialogue_group
-
-	var_8_33[6] = {
+	pg.base.dorm3d_dialogue_group[6] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19810,11 +16854,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.dorm3d_dialogue_group
-
-	var_8_34[7] = {
+	pg.base.dorm3d_dialogue_group[7] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19833,11 +16873,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.dorm3d_dialogue_group
-
-	var_8_35[8] = {
+	pg.base.dorm3d_dialogue_group[8] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19856,11 +16892,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.dorm3d_dialogue_group
-
-	var_8_36[9] = {
+	pg.base.dorm3d_dialogue_group[9] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19879,11 +16911,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.dorm3d_dialogue_group
-
-	var_8_37[10] = {
+	pg.base.dorm3d_dialogue_group[10] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19902,11 +16930,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.dorm3d_dialogue_group
-
-	var_8_38[11] = {
+	pg.base.dorm3d_dialogue_group[11] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19925,11 +16949,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.dorm3d_dialogue_group
-
-	var_8_39[12] = {
+	pg.base.dorm3d_dialogue_group[12] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19948,11 +16968,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.dorm3d_dialogue_group
-
-	var_8_40[13] = {
+	pg.base.dorm3d_dialogue_group[13] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19971,11 +16987,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.dorm3d_dialogue_group
-
-	var_8_41[14] = {
+	pg.base.dorm3d_dialogue_group[14] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -19994,11 +17006,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.dorm3d_dialogue_group
-
-	var_8_42[15] = {
+	pg.base.dorm3d_dialogue_group[15] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20017,11 +17025,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.dorm3d_dialogue_group
-
-	var_8_43[16] = {
+	pg.base.dorm3d_dialogue_group[16] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20040,11 +17044,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.dorm3d_dialogue_group
-
-	var_8_44[17] = {
+	pg.base.dorm3d_dialogue_group[17] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20063,11 +17063,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.dorm3d_dialogue_group
-
-	var_8_45[18] = {
+	pg.base.dorm3d_dialogue_group[18] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20086,11 +17082,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.dorm3d_dialogue_group
-
-	var_8_46[19] = {
+	pg.base.dorm3d_dialogue_group[19] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -20109,11 +17101,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.dorm3d_dialogue_group
-
-	var_8_47[20] = {
+	pg.base.dorm3d_dialogue_group[20] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -20132,11 +17120,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.dorm3d_dialogue_group
-
-	var_8_48[21] = {
+	pg.base.dorm3d_dialogue_group[21] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -20155,11 +17139,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.dorm3d_dialogue_group
-
-	var_8_49[22] = {
+	pg.base.dorm3d_dialogue_group[22] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -20178,11 +17158,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.dorm3d_dialogue_group
-
-	var_8_50[23] = {
+	pg.base.dorm3d_dialogue_group[23] = {
 		reward = 0,
 		room_id = 16,
 		trigger_area = "",
@@ -20201,11 +17177,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.dorm3d_dialogue_group
-
-	var_8_51[140101] = {
+	pg.base.dorm3d_dialogue_group[140101] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20224,11 +17196,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.dorm3d_dialogue_group
-
-	var_8_52[140102] = {
+	pg.base.dorm3d_dialogue_group[140102] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20247,11 +17215,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.dorm3d_dialogue_group
-
-	var_8_53[140103] = {
+	pg.base.dorm3d_dialogue_group[140103] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20270,11 +17234,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.dorm3d_dialogue_group
-
-	var_8_54[140104] = {
+	pg.base.dorm3d_dialogue_group[140104] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20293,11 +17253,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.dorm3d_dialogue_group
-
-	var_8_55[140105] = {
+	pg.base.dorm3d_dialogue_group[140105] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20316,11 +17272,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.dorm3d_dialogue_group
-
-	var_8_56[140106] = {
+	pg.base.dorm3d_dialogue_group[140106] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20339,11 +17291,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.dorm3d_dialogue_group
-
-	var_8_57[140107] = {
+	pg.base.dorm3d_dialogue_group[140107] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20362,11 +17310,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.dorm3d_dialogue_group
-
-	var_8_58[140108] = {
+	pg.base.dorm3d_dialogue_group[140108] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20385,11 +17329,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.dorm3d_dialogue_group
-
-	var_8_59[140109] = {
+	pg.base.dorm3d_dialogue_group[140109] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20408,11 +17348,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.dorm3d_dialogue_group
-
-	var_8_60[140110] = {
+	pg.base.dorm3d_dialogue_group[140110] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20431,11 +17367,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.dorm3d_dialogue_group
-
-	var_8_61[140111] = {
+	pg.base.dorm3d_dialogue_group[140111] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20454,11 +17386,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.dorm3d_dialogue_group
-
-	var_8_62[140112] = {
+	pg.base.dorm3d_dialogue_group[140112] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20477,11 +17405,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.dorm3d_dialogue_group
-
-	var_8_63[140113] = {
+	pg.base.dorm3d_dialogue_group[140113] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20500,11 +17424,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.dorm3d_dialogue_group
-
-	var_8_64[140114] = {
+	pg.base.dorm3d_dialogue_group[140114] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20523,11 +17443,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.dorm3d_dialogue_group
-
-	var_8_65[140115] = {
+	pg.base.dorm3d_dialogue_group[140115] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20546,11 +17462,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.dorm3d_dialogue_group
-
-	var_8_66[13] = {
+	pg.base.dorm3d_dialogue_group[13] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20569,11 +17481,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.dorm3d_dialogue_group
-
-	var_8_67[14] = {
+	pg.base.dorm3d_dialogue_group[14] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20592,11 +17500,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.dorm3d_dialogue_group
-
-	var_8_68[15] = {
+	pg.base.dorm3d_dialogue_group[15] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20615,11 +17519,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.dorm3d_dialogue_group
-
-	var_8_69[16] = {
+	pg.base.dorm3d_dialogue_group[16] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20638,11 +17538,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.dorm3d_dialogue_group
-
-	var_8_70[140510] = {
+	pg.base.dorm3d_dialogue_group[140510] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20663,11 +17559,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.dorm3d_dialogue_group
-
-	var_8_71[140511] = {
+	pg.base.dorm3d_dialogue_group[140511] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20686,11 +17578,7 @@ end)()
 			4
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.dorm3d_dialogue_group
-
-	var_8_72[140520] = {
+	pg.base.dorm3d_dialogue_group[140520] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20711,11 +17599,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.dorm3d_dialogue_group
-
-	var_8_73[140521] = {
+	pg.base.dorm3d_dialogue_group[140521] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20734,11 +17618,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.dorm3d_dialogue_group
-
-	var_8_74[140530] = {
+	pg.base.dorm3d_dialogue_group[140530] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20759,11 +17639,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.dorm3d_dialogue_group
-
-	var_8_75[140531] = {
+	pg.base.dorm3d_dialogue_group[140531] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20782,11 +17658,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.dorm3d_dialogue_group
-
-	var_8_76[140541] = {
+	pg.base.dorm3d_dialogue_group[140541] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20806,11 +17678,7 @@ end)()
 			4990501
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.dorm3d_dialogue_group
-
-	var_8_77[140542] = {
+	pg.base.dorm3d_dialogue_group[140542] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20828,11 +17696,7 @@ end)()
 			4990501
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.dorm3d_dialogue_group
-
-	var_8_78[140543] = {
+	pg.base.dorm3d_dialogue_group[140543] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20850,11 +17714,7 @@ end)()
 			4990501
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.dorm3d_dialogue_group
-
-	var_8_79[140601] = {
+	pg.base.dorm3d_dialogue_group[140601] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20873,11 +17733,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.dorm3d_dialogue_group
-
-	var_8_80[140602] = {
+	pg.base.dorm3d_dialogue_group[140602] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20896,11 +17752,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.dorm3d_dialogue_group
-
-	var_8_81[140201] = {
+	pg.base.dorm3d_dialogue_group[140201] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20919,11 +17771,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.dorm3d_dialogue_group
-
-	var_8_82[140202] = {
+	pg.base.dorm3d_dialogue_group[140202] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20942,11 +17790,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.dorm3d_dialogue_group
-
-	var_8_83[140203] = {
+	pg.base.dorm3d_dialogue_group[140203] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20965,11 +17809,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.dorm3d_dialogue_group
-
-	var_8_84[140204] = {
+	pg.base.dorm3d_dialogue_group[140204] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -20988,11 +17828,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.dorm3d_dialogue_group
-
-	var_8_85[140205] = {
+	pg.base.dorm3d_dialogue_group[140205] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21011,11 +17847,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.dorm3d_dialogue_group
-
-	var_8_86[140206] = {
+	pg.base.dorm3d_dialogue_group[140206] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21034,11 +17866,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.dorm3d_dialogue_group
-
-	var_8_87[140207] = {
+	pg.base.dorm3d_dialogue_group[140207] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21057,11 +17885,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.dorm3d_dialogue_group
-
-	var_8_88[140208] = {
+	pg.base.dorm3d_dialogue_group[140208] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21080,11 +17904,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.dorm3d_dialogue_group
-
-	var_8_89[140209] = {
+	pg.base.dorm3d_dialogue_group[140209] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21103,11 +17923,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.dorm3d_dialogue_group
-
-	var_8_90[140210] = {
+	pg.base.dorm3d_dialogue_group[140210] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21126,11 +17942,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.dorm3d_dialogue_group
-
-	var_8_91[140211] = {
+	pg.base.dorm3d_dialogue_group[140211] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21149,11 +17961,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.dorm3d_dialogue_group
-
-	var_8_92[140212] = {
+	pg.base.dorm3d_dialogue_group[140212] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21172,11 +17980,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.dorm3d_dialogue_group
-
-	var_8_93[140213] = {
+	pg.base.dorm3d_dialogue_group[140213] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21195,11 +17999,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.dorm3d_dialogue_group
-
-	var_8_94[140214] = {
+	pg.base.dorm3d_dialogue_group[140214] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21218,11 +18018,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.dorm3d_dialogue_group
-
-	var_8_95[140215] = {
+	pg.base.dorm3d_dialogue_group[140215] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21241,11 +18037,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.dorm3d_dialogue_group
-
-	var_8_96[140216] = {
+	pg.base.dorm3d_dialogue_group[140216] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21264,11 +18056,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.dorm3d_dialogue_group
-
-	var_8_97[140217] = {
+	pg.base.dorm3d_dialogue_group[140217] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21287,11 +18075,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.dorm3d_dialogue_group
-
-	var_8_98[140218] = {
+	pg.base.dorm3d_dialogue_group[140218] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21310,8 +18094,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.dorm3d_dialogue_group[140219] = {
+	pg.base.dorm3d_dialogue_group[140219] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21334,11 +18117,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_9_0[140220] = {
+	pg.base.dorm3d_dialogue_group[140220] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21357,11 +18136,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.dorm3d_dialogue_group
-
-	var_9_1[140221] = {
+	pg.base.dorm3d_dialogue_group[140221] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21380,11 +18155,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.dorm3d_dialogue_group
-
-	var_9_2[140222] = {
+	pg.base.dorm3d_dialogue_group[140222] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21403,11 +18174,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.dorm3d_dialogue_group
-
-	var_9_3[140223] = {
+	pg.base.dorm3d_dialogue_group[140223] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21426,11 +18193,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.dorm3d_dialogue_group
-
-	var_9_4[140224] = {
+	pg.base.dorm3d_dialogue_group[140224] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21449,11 +18212,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.dorm3d_dialogue_group
-
-	var_9_5[140225] = {
+	pg.base.dorm3d_dialogue_group[140225] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21472,11 +18231,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.dorm3d_dialogue_group
-
-	var_9_6[140226] = {
+	pg.base.dorm3d_dialogue_group[140226] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21495,11 +18250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.dorm3d_dialogue_group
-
-	var_9_7[140227] = {
+	pg.base.dorm3d_dialogue_group[140227] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21518,11 +18269,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.dorm3d_dialogue_group
-
-	var_9_8[140228] = {
+	pg.base.dorm3d_dialogue_group[140228] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21541,11 +18288,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.dorm3d_dialogue_group
-
-	var_9_9[140229] = {
+	pg.base.dorm3d_dialogue_group[140229] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21564,11 +18307,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.dorm3d_dialogue_group
-
-	var_9_10[140230] = {
+	pg.base.dorm3d_dialogue_group[140230] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21587,11 +18326,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.dorm3d_dialogue_group
-
-	var_9_11[140231] = {
+	pg.base.dorm3d_dialogue_group[140231] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21610,11 +18345,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.dorm3d_dialogue_group
-
-	var_9_12[140232] = {
+	pg.base.dorm3d_dialogue_group[140232] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21633,11 +18364,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.dorm3d_dialogue_group
-
-	var_9_13[140233] = {
+	pg.base.dorm3d_dialogue_group[140233] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21656,11 +18383,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.dorm3d_dialogue_group
-
-	var_9_14[140234] = {
+	pg.base.dorm3d_dialogue_group[140234] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21679,11 +18402,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.dorm3d_dialogue_group
-
-	var_9_15[140235] = {
+	pg.base.dorm3d_dialogue_group[140235] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21702,11 +18421,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.dorm3d_dialogue_group
-
-	var_9_16[140236] = {
+	pg.base.dorm3d_dialogue_group[140236] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21725,11 +18440,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.dorm3d_dialogue_group
-
-	var_9_17[140237] = {
+	pg.base.dorm3d_dialogue_group[140237] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21748,11 +18459,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.dorm3d_dialogue_group
-
-	var_9_18[140238] = {
+	pg.base.dorm3d_dialogue_group[140238] = {
 		reward = 0,
 		room_id = 14,
 		trigger_area = "",
@@ -21771,11 +18478,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.dorm3d_dialogue_group
-
-	var_9_19[210001] = {
+	pg.base.dorm3d_dialogue_group[210001] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21794,11 +18497,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.dorm3d_dialogue_group
-
-	var_9_20[210002] = {
+	pg.base.dorm3d_dialogue_group[210002] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21817,11 +18516,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.dorm3d_dialogue_group
-
-	var_9_21[210003] = {
+	pg.base.dorm3d_dialogue_group[210003] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21840,11 +18535,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.dorm3d_dialogue_group
-
-	var_9_22[210004] = {
+	pg.base.dorm3d_dialogue_group[210004] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21863,11 +18554,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.dorm3d_dialogue_group
-
-	var_9_23[210005] = {
+	pg.base.dorm3d_dialogue_group[210005] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21886,11 +18573,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.dorm3d_dialogue_group
-
-	var_9_24[210006] = {
+	pg.base.dorm3d_dialogue_group[210006] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21909,11 +18592,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.dorm3d_dialogue_group
-
-	var_9_25[210007] = {
+	pg.base.dorm3d_dialogue_group[210007] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21932,11 +18611,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.dorm3d_dialogue_group
-
-	var_9_26[210008] = {
+	pg.base.dorm3d_dialogue_group[210008] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21955,11 +18630,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.dorm3d_dialogue_group
-
-	var_9_27[210009] = {
+	pg.base.dorm3d_dialogue_group[210009] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -21978,11 +18649,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.dorm3d_dialogue_group
-
-	var_9_28[210010] = {
+	pg.base.dorm3d_dialogue_group[210010] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22001,11 +18668,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.dorm3d_dialogue_group
-
-	var_9_29[210011] = {
+	pg.base.dorm3d_dialogue_group[210011] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22024,11 +18687,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.dorm3d_dialogue_group
-
-	var_9_30[210012] = {
+	pg.base.dorm3d_dialogue_group[210012] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22047,11 +18706,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.dorm3d_dialogue_group
-
-	var_9_31[210013] = {
+	pg.base.dorm3d_dialogue_group[210013] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22070,11 +18725,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.dorm3d_dialogue_group
-
-	var_9_32[210014] = {
+	pg.base.dorm3d_dialogue_group[210014] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22093,11 +18744,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.dorm3d_dialogue_group
-
-	var_9_33[210015] = {
+	pg.base.dorm3d_dialogue_group[210015] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22116,11 +18763,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.dorm3d_dialogue_group
-
-	var_9_34[210016] = {
+	pg.base.dorm3d_dialogue_group[210016] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22139,11 +18782,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.dorm3d_dialogue_group
-
-	var_9_35[210017] = {
+	pg.base.dorm3d_dialogue_group[210017] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22162,11 +18801,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.dorm3d_dialogue_group
-
-	var_9_36[210018] = {
+	pg.base.dorm3d_dialogue_group[210018] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22185,11 +18820,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.dorm3d_dialogue_group
-
-	var_9_37[210019] = {
+	pg.base.dorm3d_dialogue_group[210019] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22208,11 +18839,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.dorm3d_dialogue_group
-
-	var_9_38[210020] = {
+	pg.base.dorm3d_dialogue_group[210020] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22231,11 +18858,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.dorm3d_dialogue_group
-
-	var_9_39[210021] = {
+	pg.base.dorm3d_dialogue_group[210021] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22254,11 +18877,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.dorm3d_dialogue_group
-
-	var_9_40[210022] = {
+	pg.base.dorm3d_dialogue_group[210022] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22277,11 +18896,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.dorm3d_dialogue_group
-
-	var_9_41[210023] = {
+	pg.base.dorm3d_dialogue_group[210023] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22300,11 +18915,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.dorm3d_dialogue_group
-
-	var_9_42[210024] = {
+	pg.base.dorm3d_dialogue_group[210024] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22323,11 +18934,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.dorm3d_dialogue_group
-
-	var_9_43[210025] = {
+	pg.base.dorm3d_dialogue_group[210025] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22346,11 +18953,7 @@ end)()
 			6
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.dorm3d_dialogue_group
-
-	var_9_44[210026] = {
+	pg.base.dorm3d_dialogue_group[210026] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22369,11 +18972,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.dorm3d_dialogue_group
-
-	var_9_45[210027] = {
+	pg.base.dorm3d_dialogue_group[210027] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22392,11 +18991,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.dorm3d_dialogue_group
-
-	var_9_46[210028] = {
+	pg.base.dorm3d_dialogue_group[210028] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22415,11 +19010,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.dorm3d_dialogue_group
-
-	var_9_47[210029] = {
+	pg.base.dorm3d_dialogue_group[210029] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22438,11 +19029,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.dorm3d_dialogue_group
-
-	var_9_48[210030] = {
+	pg.base.dorm3d_dialogue_group[210030] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22461,11 +19048,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.dorm3d_dialogue_group
-
-	var_9_49[210031] = {
+	pg.base.dorm3d_dialogue_group[210031] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22484,11 +19067,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.dorm3d_dialogue_group
-
-	var_9_50[210032] = {
+	pg.base.dorm3d_dialogue_group[210032] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22507,11 +19086,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.dorm3d_dialogue_group
-
-	var_9_51[210033] = {
+	pg.base.dorm3d_dialogue_group[210033] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22530,11 +19105,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.dorm3d_dialogue_group
-
-	var_9_52[210034] = {
+	pg.base.dorm3d_dialogue_group[210034] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22553,11 +19124,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.dorm3d_dialogue_group
-
-	var_9_53[210035] = {
+	pg.base.dorm3d_dialogue_group[210035] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22576,11 +19143,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.dorm3d_dialogue_group
-
-	var_9_54[210036] = {
+	pg.base.dorm3d_dialogue_group[210036] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22599,11 +19162,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.dorm3d_dialogue_group
-
-	var_9_55[210037] = {
+	pg.base.dorm3d_dialogue_group[210037] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22622,11 +19181,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.dorm3d_dialogue_group
-
-	var_9_56[210038] = {
+	pg.base.dorm3d_dialogue_group[210038] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22645,11 +19200,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.dorm3d_dialogue_group
-
-	var_9_57[210039] = {
+	pg.base.dorm3d_dialogue_group[210039] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22668,11 +19219,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.dorm3d_dialogue_group
-
-	var_9_58[210040] = {
+	pg.base.dorm3d_dialogue_group[210040] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22691,11 +19238,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.dorm3d_dialogue_group
-
-	var_9_59[210041] = {
+	pg.base.dorm3d_dialogue_group[210041] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22714,11 +19257,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.dorm3d_dialogue_group
-
-	var_9_60[210042] = {
+	pg.base.dorm3d_dialogue_group[210042] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22737,11 +19276,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.dorm3d_dialogue_group
-
-	var_9_61[210043] = {
+	pg.base.dorm3d_dialogue_group[210043] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22760,11 +19295,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.dorm3d_dialogue_group
-
-	var_9_62[210044] = {
+	pg.base.dorm3d_dialogue_group[210044] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22783,11 +19314,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.dorm3d_dialogue_group
-
-	var_9_63[210045] = {
+	pg.base.dorm3d_dialogue_group[210045] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22806,11 +19333,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.dorm3d_dialogue_group
-
-	var_9_64[210046] = {
+	pg.base.dorm3d_dialogue_group[210046] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22829,11 +19352,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.dorm3d_dialogue_group
-
-	var_9_65[210047] = {
+	pg.base.dorm3d_dialogue_group[210047] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22852,11 +19371,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.dorm3d_dialogue_group
-
-	var_9_66[0] = {
+	pg.base.dorm3d_dialogue_group[0] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22875,11 +19390,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.dorm3d_dialogue_group
-
-	var_9_67[1] = {
+	pg.base.dorm3d_dialogue_group[1] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22898,11 +19409,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.dorm3d_dialogue_group
-
-	var_9_68[2] = {
+	pg.base.dorm3d_dialogue_group[2] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -22921,11 +19428,7 @@ end)()
 			11
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.dorm3d_dialogue_group
-
-	var_9_69[3] = {
+	pg.base.dorm3d_dialogue_group[3] = {
 		reward = 0,
 		room_id = 26,
 		trigger_area = "",
@@ -22944,11 +19447,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.dorm3d_dialogue_group
-
-	var_9_70[4] = {
+	pg.base.dorm3d_dialogue_group[4] = {
 		reward = 0,
 		room_id = 26,
 		trigger_area = "",
@@ -22967,11 +19466,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.dorm3d_dialogue_group
-
-	var_9_71[5] = {
+	pg.base.dorm3d_dialogue_group[5] = {
 		reward = 0,
 		room_id = 26,
 		trigger_area = "",
@@ -22990,11 +19485,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.dorm3d_dialogue_group
-
-	var_9_72[6] = {
+	pg.base.dorm3d_dialogue_group[6] = {
 		reward = 0,
 		room_id = 26,
 		trigger_area = "",
@@ -23013,11 +19504,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.dorm3d_dialogue_group
-
-	var_9_73[7] = {
+	pg.base.dorm3d_dialogue_group[7] = {
 		reward = 0,
 		room_id = 26,
 		trigger_area = "",
@@ -23036,11 +19523,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.dorm3d_dialogue_group
-
-	var_9_74[210101] = {
+	pg.base.dorm3d_dialogue_group[210101] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23059,11 +19542,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.dorm3d_dialogue_group
-
-	var_9_75[210102] = {
+	pg.base.dorm3d_dialogue_group[210102] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23082,11 +19561,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.dorm3d_dialogue_group
-
-	var_9_76[210103] = {
+	pg.base.dorm3d_dialogue_group[210103] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23105,11 +19580,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.dorm3d_dialogue_group
-
-	var_9_77[210104] = {
+	pg.base.dorm3d_dialogue_group[210104] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23128,11 +19599,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.dorm3d_dialogue_group
-
-	var_9_78[210105] = {
+	pg.base.dorm3d_dialogue_group[210105] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23151,11 +19618,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.dorm3d_dialogue_group
-
-	var_9_79[210106] = {
+	pg.base.dorm3d_dialogue_group[210106] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23174,11 +19637,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.dorm3d_dialogue_group
-
-	var_9_80[210107] = {
+	pg.base.dorm3d_dialogue_group[210107] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23197,11 +19656,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.dorm3d_dialogue_group
-
-	var_9_81[210108] = {
+	pg.base.dorm3d_dialogue_group[210108] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23220,11 +19675,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.dorm3d_dialogue_group
-
-	var_9_82[210109] = {
+	pg.base.dorm3d_dialogue_group[210109] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23243,11 +19694,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.dorm3d_dialogue_group
-
-	var_9_83[210110] = {
+	pg.base.dorm3d_dialogue_group[210110] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23266,11 +19713,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.dorm3d_dialogue_group
-
-	var_9_84[210111] = {
+	pg.base.dorm3d_dialogue_group[210111] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23289,11 +19732,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.dorm3d_dialogue_group
-
-	var_9_85[210112] = {
+	pg.base.dorm3d_dialogue_group[210112] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23312,11 +19751,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.dorm3d_dialogue_group
-
-	var_9_86[210113] = {
+	pg.base.dorm3d_dialogue_group[210113] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23335,11 +19770,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.dorm3d_dialogue_group
-
-	var_9_87[210114] = {
+	pg.base.dorm3d_dialogue_group[210114] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23358,11 +19789,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.dorm3d_dialogue_group
-
-	var_9_88[210115] = {
+	pg.base.dorm3d_dialogue_group[210115] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23381,11 +19808,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.dorm3d_dialogue_group
-
-	var_9_89[210301] = {
+	pg.base.dorm3d_dialogue_group[210301] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23404,11 +19827,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.dorm3d_dialogue_group
-
-	var_9_90[210302] = {
+	pg.base.dorm3d_dialogue_group[210302] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23427,11 +19846,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.dorm3d_dialogue_group
-
-	var_9_91[210303] = {
+	pg.base.dorm3d_dialogue_group[210303] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23450,11 +19865,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.dorm3d_dialogue_group
-
-	var_9_92[0] = {
+	pg.base.dorm3d_dialogue_group[0] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23473,11 +19884,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.dorm3d_dialogue_group
-
-	var_9_93[210510] = {
+	pg.base.dorm3d_dialogue_group[210510] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23498,11 +19905,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.dorm3d_dialogue_group
-
-	var_9_94[210511] = {
+	pg.base.dorm3d_dialogue_group[210511] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23521,11 +19924,7 @@ end)()
 			4
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.dorm3d_dialogue_group
-
-	var_9_95[210520] = {
+	pg.base.dorm3d_dialogue_group[210520] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23546,11 +19945,7 @@ end)()
 			8
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.dorm3d_dialogue_group
-
-	var_9_96[210521] = {
+	pg.base.dorm3d_dialogue_group[210521] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23569,11 +19964,7 @@ end)()
 			8
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.dorm3d_dialogue_group
-
-	var_9_97[210530] = {
+	pg.base.dorm3d_dialogue_group[210530] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23594,11 +19985,7 @@ end)()
 			12
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.dorm3d_dialogue_group
-
-	var_9_98[210531] = {
+	pg.base.dorm3d_dialogue_group[210531] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23617,8 +20004,7 @@ end)()
 			12
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.dorm3d_dialogue_group[210541] = {
+	pg.base.dorm3d_dialogue_group[210541] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23642,11 +20028,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.dorm3d_dialogue_group
-
-	var_10_0[210542] = {
+	pg.base.dorm3d_dialogue_group[210542] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23664,11 +20046,7 @@ end)()
 			7990201
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.dorm3d_dialogue_group
-
-	var_10_1[210543] = {
+	pg.base.dorm3d_dialogue_group[210543] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23686,11 +20064,7 @@ end)()
 			7990201
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.dorm3d_dialogue_group
-
-	var_10_2[210601] = {
+	pg.base.dorm3d_dialogue_group[210601] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23709,11 +20083,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.dorm3d_dialogue_group
-
-	var_10_3[210602] = {
+	pg.base.dorm3d_dialogue_group[210602] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23732,11 +20102,7 @@ end)()
 			8
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.dorm3d_dialogue_group
-
-	var_10_4[25] = {
+	pg.base.dorm3d_dialogue_group[25] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23755,11 +20121,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.dorm3d_dialogue_group
-
-	var_10_5[26] = {
+	pg.base.dorm3d_dialogue_group[26] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23778,11 +20140,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.dorm3d_dialogue_group
-
-	var_10_6[27] = {
+	pg.base.dorm3d_dialogue_group[27] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23801,11 +20159,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.dorm3d_dialogue_group
-
-	var_10_7[28] = {
+	pg.base.dorm3d_dialogue_group[28] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23824,11 +20178,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.dorm3d_dialogue_group
-
-	var_10_8[29] = {
+	pg.base.dorm3d_dialogue_group[29] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23847,11 +20197,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.dorm3d_dialogue_group
-
-	var_10_9[30] = {
+	pg.base.dorm3d_dialogue_group[30] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23870,11 +20216,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.dorm3d_dialogue_group
-
-	var_10_10[31] = {
+	pg.base.dorm3d_dialogue_group[31] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23893,11 +20235,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.dorm3d_dialogue_group
-
-	var_10_11[210208] = {
+	pg.base.dorm3d_dialogue_group[210208] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23916,11 +20254,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.dorm3d_dialogue_group
-
-	var_10_12[210209] = {
+	pg.base.dorm3d_dialogue_group[210209] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23939,11 +20273,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.dorm3d_dialogue_group
-
-	var_10_13[210210] = {
+	pg.base.dorm3d_dialogue_group[210210] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23962,11 +20292,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.dorm3d_dialogue_group
-
-	var_10_14[210211] = {
+	pg.base.dorm3d_dialogue_group[210211] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -23985,11 +20311,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.dorm3d_dialogue_group
-
-	var_10_15[210212] = {
+	pg.base.dorm3d_dialogue_group[210212] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24008,11 +20330,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.dorm3d_dialogue_group
-
-	var_10_16[210220] = {
+	pg.base.dorm3d_dialogue_group[210220] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24031,11 +20349,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.dorm3d_dialogue_group
-
-	var_10_17[210221] = {
+	pg.base.dorm3d_dialogue_group[210221] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24054,11 +20368,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.dorm3d_dialogue_group
-
-	var_10_18[210222] = {
+	pg.base.dorm3d_dialogue_group[210222] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24077,11 +20387,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.dorm3d_dialogue_group
-
-	var_10_19[210223] = {
+	pg.base.dorm3d_dialogue_group[210223] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24100,11 +20406,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.dorm3d_dialogue_group
-
-	var_10_20[210224] = {
+	pg.base.dorm3d_dialogue_group[210224] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24123,11 +20425,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.dorm3d_dialogue_group
-
-	var_10_21[210225] = {
+	pg.base.dorm3d_dialogue_group[210225] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24146,11 +20444,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.dorm3d_dialogue_group
-
-	var_10_22[210226] = {
+	pg.base.dorm3d_dialogue_group[210226] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24169,11 +20463,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.dorm3d_dialogue_group
-
-	var_10_23[210227] = {
+	pg.base.dorm3d_dialogue_group[210227] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",
@@ -24192,8 +20482,7 @@ end)()
 			1
 		}
 	}
-	pg = var_10_23
-	var_10_23.base.dorm3d_dialogue_group[210228] = {
+	pg.base.dorm3d_dialogue_group[210228] = {
 		reward = 0,
 		room_id = 21,
 		trigger_area = "",

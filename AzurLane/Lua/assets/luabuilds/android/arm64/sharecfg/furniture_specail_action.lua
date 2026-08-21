@@ -1,45 +1,12 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "furniture_specail_action") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "furniture_specail_action"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.furniture_specail_action = var_0_2
-pg = var_0
-pg = var_0_2
-
-local var_0_3
-
-if not var_0_2.base then
-	var_0_3 = {}
-end
-
-var_0.base = var_0_3
-pg = var_0
-var_0.base.furniture_specail_action = {}
+﻿pg = pg or {}
+pg.furniture_specail_action = rawget(pg, "furniture_specail_action") or setmetatable({
+	__name = "furniture_specail_action"
+}, confNEO)
+pg.base = pg.base or {}
+pg.base.furniture_specail_action = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.furniture_specail_action
-
-	var_1_0[60118] = {
+	pg.base.furniture_specail_action[60118] = {
 		id = 60118,
 		actions = {
 			{
@@ -52,11 +19,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.furniture_specail_action
-
-	var_1_1[61125] = {
+	pg.base.furniture_specail_action[61125] = {
 		id = 61125,
 		actions = {
 			{
@@ -73,11 +36,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.furniture_specail_action
-
-	var_1_2[100013] = {
+	pg.base.furniture_specail_action[100013] = {
 		id = 100013,
 		actions = {
 			{
@@ -90,11 +49,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.furniture_specail_action
-
-	var_1_3[100009] = {
+	pg.base.furniture_specail_action[100009] = {
 		id = 100009,
 		actions = {
 			{
@@ -103,11 +58,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.furniture_specail_action
-
-	var_1_4[50124] = {
+	pg.base.furniture_specail_action[50124] = {
 		id = 50124,
 		actions = {
 			{
@@ -116,11 +67,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.furniture_specail_action
-
-	var_1_5[46129] = {
+	pg.base.furniture_specail_action[46129] = {
 		id = 46129,
 		actions = {
 			{
@@ -129,11 +76,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.furniture_specail_action
-
-	var_1_6[100006] = {
+	pg.base.furniture_specail_action[100006] = {
 		id = 100006,
 		actions = {
 			{
@@ -150,11 +93,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.furniture_specail_action
-
-	var_1_7[100005] = {
+	pg.base.furniture_specail_action[100005] = {
 		id = 100005,
 		actions = {
 			{
@@ -167,11 +106,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.furniture_specail_action
-
-	var_1_8[39126] = {
+	pg.base.furniture_specail_action[39126] = {
 		id = 39126,
 		actions = {
 			{
@@ -180,11 +115,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.furniture_specail_action
-
-	var_1_9[176] = {
+	pg.base.furniture_specail_action[176] = {
 		id = 176,
 		actions = {
 			{
@@ -193,11 +124,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.furniture_specail_action
-
-	var_1_10[100018] = {
+	pg.base.furniture_specail_action[100018] = {
 		id = 100018,
 		actions = {
 			{
@@ -206,11 +133,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.furniture_specail_action
-
-	var_1_11[72125] = {
+	pg.base.furniture_specail_action[72125] = {
 		id = 72125,
 		actions = {
 			{
@@ -223,11 +146,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.furniture_specail_action
-
-	var_1_12[77117] = {
+	pg.base.furniture_specail_action[77117] = {
 		id = 77117,
 		actions = {
 			{
@@ -240,11 +159,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.furniture_specail_action
-
-	var_1_13[100025] = {
+	pg.base.furniture_specail_action[100025] = {
 		id = 100025,
 		actions = {
 			{
@@ -261,11 +176,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.furniture_specail_action
-
-	var_1_14[100027] = {
+	pg.base.furniture_specail_action[100027] = {
 		id = 100027,
 		actions = {
 			{
@@ -274,8 +185,7 @@ var_0.base.furniture_specail_action = {}
 			}
 		}
 	}
-	pg = var_1_14
-	var_1_14.base.furniture_specail_action[195] = {
+	pg.base.furniture_specail_action[195] = {
 		id = 195,
 		actions = {
 			{

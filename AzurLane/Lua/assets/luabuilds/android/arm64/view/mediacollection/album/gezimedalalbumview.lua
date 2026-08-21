@@ -1,106 +1,47 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GeZiMedalAlbumView", import(".MedalAlbumTemplateView"))
 
-local var_0_0 = "GeZiMedalAlbumView"
+var_0_0.GROUP_ID = 50607
+var_0_0.MEDAL_COUNT = 8
+var_0_0.HELP_TIPS = "help_starLightAlbum"
+var_0_0.ICON_SCALE = 1
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MedalAlbumTemplateView"))
-
-var_0_1.GROUP_ID = 50607
-var_0_1.MEDAL_COUNT = 8
-var_0_1.HELP_TIPS = "help_starLightAlbum"
-var_0_1.ICON_SCALE = 1
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MedalAlbumGeZiPage"
 end
 
-function var_0_1.FindUI(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "Top")
-	local var_2_2 = arg_2_0._tf
+function var_0_0.FindUI(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("Top")
 
-	arg_2_0.bg = var_2.Find(var_2_2, "mask")
-	arg_2_0.backBtn = var_2_1:Find("BackBtn")
-	arg_2_0.helpBtn = var_2_1:Find("InfoBtn")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.taskBtn = var_2.Find(var_2_3, "Desk/taskBtn")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.prevBtn = var_2.Find(var_2_4, "Desk/prevBtn")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.nextBtn = var_2.Find(var_2_5, "Desk/nextBtn")
+	arg_2_0.bg = arg_2_0._tf:Find("mask")
+	arg_2_0.backBtn = var_2_0:Find("BackBtn")
+	arg_2_0.helpBtn = var_2_0:Find("InfoBtn")
+	arg_2_0.taskBtn = arg_2_0._tf:Find("Desk/taskBtn")
+	arg_2_0.prevBtn = arg_2_0._tf:Find("Desk/prevBtn")
+	arg_2_0.nextBtn = arg_2_0._tf:Find("Desk/nextBtn")
 	arg_2_0.slots = {}
 
 	for iter_2_0 = 1, arg_2_0.MEDAL_COUNT do
-		local var_2_6 = arg_2_0.slots
-		local var_2_7 = {}
-		local var_2_8 = arg_2_0._tf
-
-		var_2_7.slot = var_8.Find(var_2_8, "Desk/Slot" .. iter_2_0)
-
-		local var_2_9 = arg_2_0._tf
-
-		var_2_7.active = var_8.Find(var_2_9, "Desk/Slot" .. iter_2_0 .. "/active")
-
-		local var_2_10 = arg_2_0._tf
-
-		var_2_7.tips = var_8.Find(var_2_10, "Desk/Slot" .. iter_2_0 .. "/reddot")
-
-		local var_2_11 = arg_2_0._tf
-
-		var_2_7.click = var_8.Find(var_2_11, "Desk/Slot" .. iter_2_0 .. "/Click")
-		var_2_6[iter_2_0] = var_2_7
+		arg_2_0.slots[iter_2_0] = {
+			slot = arg_2_0._tf:Find("Desk/Slot" .. iter_2_0),
+			active = arg_2_0._tf:Find("Desk/Slot" .. iter_2_0 .. "/active"),
+			tips = arg_2_0._tf:Find("Desk/Slot" .. iter_2_0 .. "/reddot"),
+			click = arg_2_0._tf:Find("Desk/Slot" .. iter_2_0 .. "/Click")
+		}
 	end
 
-	local var_2_12 = arg_2_0._tf
+	arg_2_0.medalLock = arg_2_0._tf:Find("Desk/medal")
+	arg_2_0.trophyLock = arg_2_0._tf:Find("Desk/trophy")
+	arg_2_0.medalDetailView = MedalDetailPanel.New(arg_2_0._tf:Find("DetailView"), arg_2_0)
 
-	arg_2_0.medalLock = var_2.Find(var_2_12, "Desk/medal")
+	arg_2_0.medalDetailView:SetIconScale(arg_2_0.ICON_SCALE)
 
-	local var_2_13 = arg_2_0._tf
+	arg_2_0.medalTaskView = TianqiongMedalTaskPanel.New(arg_2_0._tf:Find("TaskView"), arg_2_0)
 
-	arg_2_0.trophyLock = var_2.Find(var_2_13, "Desk/trophy")
-	MedalDetailPanel = var_2
-
-	local var_2_14 = var_2.New
-	local var_2_15 = arg_2_0._tf
-
-	arg_2_0.medalDetailView = var_2_14(var_4.Find(var_2_15, "DetailView"), arg_2_0)
-
-	local var_2_16 = arg_2_0.medalDetailView
-
-	var_2.SetIconScale(var_2_16, arg_2_0.ICON_SCALE)
-
-	TianqiongMedalTaskPanel = var_2
-
-	local var_2_17 = var_2.New
-	local var_2_18 = arg_2_0._tf
-
-	arg_2_0.medalTaskView = var_2_17(var_4.Find(var_2_18, "TaskView"), arg_2_0)
-	setActive = var_2
-
-	local var_2_19 = arg_2_0._tf
-
-	var_2(var_4.Find(var_2_19, "Desk"), true)
-
-	setActive = var_2
-
-	local var_2_20 = arg_2_0._tf
-
-	var_2(var_4.Find(var_2_20, "DetailView"), false)
-
-	setActive = var_2
-
-	local var_2_21 = arg_2_0._tf
-
-	var_2(var_4.Find(var_2_21, "TaskView"), false)
+	setActive(arg_2_0._tf:Find("Desk"), true)
+	setActive(arg_2_0._tf:Find("DetailView"), false)
+	setActive(arg_2_0._tf:Find("TaskView"), false)
 
 	return
 end
 
-return var_0_1
+return var_0_0

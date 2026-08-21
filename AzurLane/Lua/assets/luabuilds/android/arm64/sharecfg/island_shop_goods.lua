@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_shop_goods") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_shop_goods"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_shop_goods = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_shop_goods
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_shop_goods
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_shop_goods = rawget(pg, "island_shop_goods") or setmetatable({
+	__name = "island_shop_goods"
+}, confNEO)
+pg.island_shop_goods.__namecode__ = true
+pg.island_shop_goods.all = {
 	10000,
 	10001,
 	10002,
@@ -459,25 +432,11 @@ var_0_4.all = {
 	99000302,
 	461060015
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_shop_goods = {}
+pg.base = pg.base or {}
+pg.base.island_shop_goods = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_shop_goods
-
-	var_1_0[10000] = {
+	pg.base.island_shop_goods[10000] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -518,11 +477,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_shop_goods
-
-	var_1_1[10001] = {
+	pg.base.island_shop_goods[10001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -563,11 +518,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_shop_goods
-
-	var_1_2[10002] = {
+	pg.base.island_shop_goods[10002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -608,11 +559,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_shop_goods
-
-	var_1_3[10003] = {
+	pg.base.island_shop_goods[10003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -653,11 +600,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_shop_goods
-
-	var_1_4[10004] = {
+	pg.base.island_shop_goods[10004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -698,11 +641,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_shop_goods
-
-	var_1_5[10005] = {
+	pg.base.island_shop_goods[10005] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -743,11 +682,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_shop_goods
-
-	var_1_6[10006] = {
+	pg.base.island_shop_goods[10006] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -788,11 +723,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_shop_goods
-
-	var_1_7[10007] = {
+	pg.base.island_shop_goods[10007] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -833,11 +764,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_shop_goods
-
-	var_1_8[10008] = {
+	pg.base.island_shop_goods[10008] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -878,11 +805,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_shop_goods
-
-	var_1_9[10009] = {
+	pg.base.island_shop_goods[10009] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -923,11 +846,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_shop_goods
-
-	var_1_10[10010] = {
+	pg.base.island_shop_goods[10010] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -968,11 +887,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_shop_goods
-
-	var_1_11[10011] = {
+	pg.base.island_shop_goods[10011] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1013,11 +928,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_shop_goods
-
-	var_1_12[10012] = {
+	pg.base.island_shop_goods[10012] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1058,11 +969,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_shop_goods
-
-	var_1_13[10013] = {
+	pg.base.island_shop_goods[10013] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1103,11 +1010,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_shop_goods
-
-	var_1_14[10014] = {
+	pg.base.island_shop_goods[10014] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1148,11 +1051,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_shop_goods
-
-	var_1_15[10015] = {
+	pg.base.island_shop_goods[10015] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1193,11 +1092,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_shop_goods
-
-	var_1_16[10016] = {
+	pg.base.island_shop_goods[10016] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1238,11 +1133,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_shop_goods
-
-	var_1_17[10017] = {
+	pg.base.island_shop_goods[10017] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1283,11 +1174,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_shop_goods
-
-	var_1_18[10018] = {
+	pg.base.island_shop_goods[10018] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1328,11 +1215,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_shop_goods
-
-	var_1_19[10019] = {
+	pg.base.island_shop_goods[10019] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1373,11 +1256,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_shop_goods
-
-	var_1_20[10020] = {
+	pg.base.island_shop_goods[10020] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1418,11 +1297,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_shop_goods
-
-	var_1_21[10021] = {
+	pg.base.island_shop_goods[10021] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1463,11 +1338,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_shop_goods
-
-	var_1_22[10022] = {
+	pg.base.island_shop_goods[10022] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1508,11 +1379,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_shop_goods
-
-	var_1_23[10023] = {
+	pg.base.island_shop_goods[10023] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1553,11 +1420,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_shop_goods
-
-	var_1_24[10024] = {
+	pg.base.island_shop_goods[10024] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1598,11 +1461,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_shop_goods
-
-	var_1_25[10025] = {
+	pg.base.island_shop_goods[10025] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1643,11 +1502,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_shop_goods
-
-	var_1_26[10026] = {
+	pg.base.island_shop_goods[10026] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1688,11 +1543,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_shop_goods
-
-	var_1_27[10027] = {
+	pg.base.island_shop_goods[10027] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1733,11 +1584,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_shop_goods
-
-	var_1_28[10028] = {
+	pg.base.island_shop_goods[10028] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1778,11 +1625,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_shop_goods
-
-	var_1_29[10029] = {
+	pg.base.island_shop_goods[10029] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1823,11 +1666,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_shop_goods
-
-	var_1_30[10030] = {
+	pg.base.island_shop_goods[10030] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1868,11 +1707,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_shop_goods
-
-	var_1_31[10031] = {
+	pg.base.island_shop_goods[10031] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1913,11 +1748,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_shop_goods
-
-	var_1_32[10032] = {
+	pg.base.island_shop_goods[10032] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -1958,11 +1789,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_shop_goods
-
-	var_1_33[10033] = {
+	pg.base.island_shop_goods[10033] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2003,11 +1830,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_shop_goods
-
-	var_1_34[10034] = {
+	pg.base.island_shop_goods[10034] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2048,11 +1871,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_shop_goods
-
-	var_1_35[10035] = {
+	pg.base.island_shop_goods[10035] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2093,11 +1912,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_shop_goods
-
-	var_1_36[10036] = {
+	pg.base.island_shop_goods[10036] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2138,11 +1953,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_shop_goods
-
-	var_1_37[10037] = {
+	pg.base.island_shop_goods[10037] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2183,11 +1994,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_shop_goods
-
-	var_1_38[10038] = {
+	pg.base.island_shop_goods[10038] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2228,11 +2035,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_shop_goods
-
-	var_1_39[10039] = {
+	pg.base.island_shop_goods[10039] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2273,11 +2076,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_shop_goods
-
-	var_1_40[10040] = {
+	pg.base.island_shop_goods[10040] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2318,11 +2117,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_shop_goods
-
-	var_1_41[10041] = {
+	pg.base.island_shop_goods[10041] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2363,11 +2158,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_shop_goods
-
-	var_1_42[10042] = {
+	pg.base.island_shop_goods[10042] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2408,11 +2199,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_shop_goods
-
-	var_1_43[10043] = {
+	pg.base.island_shop_goods[10043] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2453,11 +2240,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_shop_goods
-
-	var_1_44[10044] = {
+	pg.base.island_shop_goods[10044] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2498,11 +2281,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_shop_goods
-
-	var_1_45[10045] = {
+	pg.base.island_shop_goods[10045] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2543,11 +2322,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_shop_goods
-
-	var_1_46[10046] = {
+	pg.base.island_shop_goods[10046] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2588,11 +2363,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_shop_goods
-
-	var_1_47[10047] = {
+	pg.base.island_shop_goods[10047] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2633,11 +2404,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_shop_goods
-
-	var_1_48[10048] = {
+	pg.base.island_shop_goods[10048] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2678,11 +2445,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_shop_goods
-
-	var_1_49[10049] = {
+	pg.base.island_shop_goods[10049] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2723,11 +2486,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_shop_goods
-
-	var_1_50[10050] = {
+	pg.base.island_shop_goods[10050] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2768,11 +2527,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_shop_goods
-
-	var_1_51[10051] = {
+	pg.base.island_shop_goods[10051] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2813,11 +2568,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_shop_goods
-
-	var_1_52[10052] = {
+	pg.base.island_shop_goods[10052] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2858,11 +2609,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_shop_goods
-
-	var_1_53[10053] = {
+	pg.base.island_shop_goods[10053] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2903,11 +2650,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_shop_goods
-
-	var_1_54[10054] = {
+	pg.base.island_shop_goods[10054] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2948,11 +2691,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_shop_goods
-
-	var_1_55[10055] = {
+	pg.base.island_shop_goods[10055] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -2993,11 +2732,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_shop_goods
-
-	var_1_56[10056] = {
+	pg.base.island_shop_goods[10056] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3038,11 +2773,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_shop_goods
-
-	var_1_57[10057] = {
+	pg.base.island_shop_goods[10057] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3083,11 +2814,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_shop_goods
-
-	var_1_58[10058] = {
+	pg.base.island_shop_goods[10058] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3128,11 +2855,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_shop_goods
-
-	var_1_59[10102] = {
+	pg.base.island_shop_goods[10102] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -3173,11 +2896,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_shop_goods
-
-	var_1_60[10103] = {
+	pg.base.island_shop_goods[10103] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3218,11 +2937,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_shop_goods
-
-	var_1_61[10104] = {
+	pg.base.island_shop_goods[10104] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3263,11 +2978,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_shop_goods
-
-	var_1_62[10105] = {
+	pg.base.island_shop_goods[10105] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3308,11 +3019,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_shop_goods
-
-	var_1_63[10106] = {
+	pg.base.island_shop_goods[10106] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3353,11 +3060,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_shop_goods
-
-	var_1_64[10107] = {
+	pg.base.island_shop_goods[10107] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3398,11 +3101,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_shop_goods
-
-	var_1_65[10108] = {
+	pg.base.island_shop_goods[10108] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3443,11 +3142,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_shop_goods
-
-	var_1_66[10109] = {
+	pg.base.island_shop_goods[10109] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3488,11 +3183,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_shop_goods
-
-	var_1_67[10110] = {
+	pg.base.island_shop_goods[10110] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3533,11 +3224,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_shop_goods
-
-	var_1_68[10111] = {
+	pg.base.island_shop_goods[10111] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3578,11 +3265,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_shop_goods
-
-	var_1_69[10112] = {
+	pg.base.island_shop_goods[10112] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3623,11 +3306,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_shop_goods
-
-	var_1_70[10113] = {
+	pg.base.island_shop_goods[10113] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3668,11 +3347,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_shop_goods
-
-	var_1_71[10114] = {
+	pg.base.island_shop_goods[10114] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3713,11 +3388,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_shop_goods
-
-	var_1_72[10115] = {
+	pg.base.island_shop_goods[10115] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3758,11 +3429,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_shop_goods
-
-	var_1_73[10116] = {
+	pg.base.island_shop_goods[10116] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3803,11 +3470,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_shop_goods
-
-	var_1_74[10117] = {
+	pg.base.island_shop_goods[10117] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3848,11 +3511,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_shop_goods
-
-	var_1_75[10118] = {
+	pg.base.island_shop_goods[10118] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3893,11 +3552,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_shop_goods
-
-	var_1_76[10119] = {
+	pg.base.island_shop_goods[10119] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3938,11 +3593,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_shop_goods
-
-	var_1_77[10120] = {
+	pg.base.island_shop_goods[10120] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -3983,11 +3634,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_shop_goods
-
-	var_1_78[10121] = {
+	pg.base.island_shop_goods[10121] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4028,11 +3675,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_shop_goods
-
-	var_1_79[10122] = {
+	pg.base.island_shop_goods[10122] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4073,11 +3716,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_shop_goods
-
-	var_1_80[10123] = {
+	pg.base.island_shop_goods[10123] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4118,11 +3757,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_shop_goods
-
-	var_1_81[10124] = {
+	pg.base.island_shop_goods[10124] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4163,11 +3798,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_shop_goods
-
-	var_1_82[10125] = {
+	pg.base.island_shop_goods[10125] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4208,11 +3839,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_shop_goods
-
-	var_1_83[10126] = {
+	pg.base.island_shop_goods[10126] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4253,11 +3880,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_shop_goods
-
-	var_1_84[10127] = {
+	pg.base.island_shop_goods[10127] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4298,11 +3921,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_shop_goods
-
-	var_1_85[10128] = {
+	pg.base.island_shop_goods[10128] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4343,11 +3962,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_shop_goods
-
-	var_1_86[10129] = {
+	pg.base.island_shop_goods[10129] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4388,11 +4003,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_shop_goods
-
-	var_1_87[10130] = {
+	pg.base.island_shop_goods[10130] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4433,11 +4044,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_shop_goods
-
-	var_1_88[10131] = {
+	pg.base.island_shop_goods[10131] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4478,11 +4085,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_shop_goods
-
-	var_1_89[10132] = {
+	pg.base.island_shop_goods[10132] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4523,11 +4126,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_shop_goods
-
-	var_1_90[10133] = {
+	pg.base.island_shop_goods[10133] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4568,11 +4167,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_shop_goods
-
-	var_1_91[10134] = {
+	pg.base.island_shop_goods[10134] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4613,11 +4208,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_shop_goods
-
-	var_1_92[10135] = {
+	pg.base.island_shop_goods[10135] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4658,11 +4249,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_shop_goods
-
-	var_1_93[10136] = {
+	pg.base.island_shop_goods[10136] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4703,11 +4290,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_shop_goods
-
-	var_1_94[10137] = {
+	pg.base.island_shop_goods[10137] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4748,11 +4331,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_shop_goods
-
-	var_1_95[10138] = {
+	pg.base.island_shop_goods[10138] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4793,11 +4372,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_shop_goods
-
-	var_1_96[10139] = {
+	pg.base.island_shop_goods[10139] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4838,11 +4413,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_shop_goods
-
-	var_1_97[10140] = {
+	pg.base.island_shop_goods[10140] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4883,11 +4454,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_shop_goods
-
-	var_1_98[10141] = {
+	pg.base.island_shop_goods[10141] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4928,8 +4495,7 @@ var_0_4.base.island_shop_goods = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_shop_goods[10142] = {
+	pg.base.island_shop_goods[10142] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -4974,11 +4540,7 @@ var_0_4.base.island_shop_goods = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_shop_goods
-
-	var_2_0[10143] = {
+	pg.base.island_shop_goods[10143] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5019,11 +4581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_shop_goods
-
-	var_2_1[10144] = {
+	pg.base.island_shop_goods[10144] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5064,11 +4622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_shop_goods
-
-	var_2_2[10145] = {
+	pg.base.island_shop_goods[10145] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5109,11 +4663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_shop_goods
-
-	var_2_3[10146] = {
+	pg.base.island_shop_goods[10146] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5154,11 +4704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_shop_goods
-
-	var_2_4[10147] = {
+	pg.base.island_shop_goods[10147] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5199,11 +4745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_shop_goods
-
-	var_2_5[10148] = {
+	pg.base.island_shop_goods[10148] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5244,11 +4786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_shop_goods
-
-	var_2_6[10149] = {
+	pg.base.island_shop_goods[10149] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5289,11 +4827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_shop_goods
-
-	var_2_7[10150] = {
+	pg.base.island_shop_goods[10150] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5334,11 +4868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_shop_goods
-
-	var_2_8[10151] = {
+	pg.base.island_shop_goods[10151] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5379,11 +4909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_shop_goods
-
-	var_2_9[10152] = {
+	pg.base.island_shop_goods[10152] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5424,11 +4950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_shop_goods
-
-	var_2_10[10153] = {
+	pg.base.island_shop_goods[10153] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5469,11 +4991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_shop_goods
-
-	var_2_11[10154] = {
+	pg.base.island_shop_goods[10154] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5514,11 +5032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_shop_goods
-
-	var_2_12[10155] = {
+	pg.base.island_shop_goods[10155] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5559,11 +5073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_shop_goods
-
-	var_2_13[10156] = {
+	pg.base.island_shop_goods[10156] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5604,11 +5114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_shop_goods
-
-	var_2_14[10157] = {
+	pg.base.island_shop_goods[10157] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5649,11 +5155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_shop_goods
-
-	var_2_15[10158] = {
+	pg.base.island_shop_goods[10158] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5694,11 +5196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_shop_goods
-
-	var_2_16[10201] = {
+	pg.base.island_shop_goods[10201] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -5739,11 +5237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_shop_goods
-
-	var_2_17[10202] = {
+	pg.base.island_shop_goods[10202] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -5784,11 +5278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_shop_goods
-
-	var_2_18[10203] = {
+	pg.base.island_shop_goods[10203] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -5829,11 +5319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_shop_goods
-
-	var_2_19[10204] = {
+	pg.base.island_shop_goods[10204] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5874,11 +5360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_shop_goods
-
-	var_2_20[10205] = {
+	pg.base.island_shop_goods[10205] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5919,11 +5401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_shop_goods
-
-	var_2_21[10206] = {
+	pg.base.island_shop_goods[10206] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -5964,11 +5442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_shop_goods
-
-	var_2_22[10207] = {
+	pg.base.island_shop_goods[10207] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6009,11 +5483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_shop_goods
-
-	var_2_23[10208] = {
+	pg.base.island_shop_goods[10208] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6054,11 +5524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_shop_goods
-
-	var_2_24[10209] = {
+	pg.base.island_shop_goods[10209] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6099,11 +5565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_shop_goods
-
-	var_2_25[10210] = {
+	pg.base.island_shop_goods[10210] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6144,11 +5606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_shop_goods
-
-	var_2_26[10211] = {
+	pg.base.island_shop_goods[10211] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6189,11 +5647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_shop_goods
-
-	var_2_27[10212] = {
+	pg.base.island_shop_goods[10212] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6234,11 +5688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_shop_goods
-
-	var_2_28[10213] = {
+	pg.base.island_shop_goods[10213] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6279,11 +5729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_shop_goods
-
-	var_2_29[10214] = {
+	pg.base.island_shop_goods[10214] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6324,11 +5770,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_shop_goods
-
-	var_2_30[10215] = {
+	pg.base.island_shop_goods[10215] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6369,11 +5811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_shop_goods
-
-	var_2_31[10216] = {
+	pg.base.island_shop_goods[10216] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6414,11 +5852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_shop_goods
-
-	var_2_32[10217] = {
+	pg.base.island_shop_goods[10217] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6459,11 +5893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_shop_goods
-
-	var_2_33[10218] = {
+	pg.base.island_shop_goods[10218] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6504,11 +5934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_shop_goods
-
-	var_2_34[10219] = {
+	pg.base.island_shop_goods[10219] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6549,11 +5975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_shop_goods
-
-	var_2_35[10220] = {
+	pg.base.island_shop_goods[10220] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6594,11 +6016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_shop_goods
-
-	var_2_36[10221] = {
+	pg.base.island_shop_goods[10221] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6639,11 +6057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_shop_goods
-
-	var_2_37[10222] = {
+	pg.base.island_shop_goods[10222] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6684,11 +6098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_shop_goods
-
-	var_2_38[10223] = {
+	pg.base.island_shop_goods[10223] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6729,11 +6139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_shop_goods
-
-	var_2_39[10224] = {
+	pg.base.island_shop_goods[10224] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6774,11 +6180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_shop_goods
-
-	var_2_40[10225] = {
+	pg.base.island_shop_goods[10225] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6819,11 +6221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_shop_goods
-
-	var_2_41[10226] = {
+	pg.base.island_shop_goods[10226] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6864,11 +6262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_shop_goods
-
-	var_2_42[10227] = {
+	pg.base.island_shop_goods[10227] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6909,11 +6303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_shop_goods
-
-	var_2_43[10228] = {
+	pg.base.island_shop_goods[10228] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6954,11 +6344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_shop_goods
-
-	var_2_44[10229] = {
+	pg.base.island_shop_goods[10229] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -6999,11 +6385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_shop_goods
-
-	var_2_45[10230] = {
+	pg.base.island_shop_goods[10230] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7044,11 +6426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_shop_goods
-
-	var_2_46[10231] = {
+	pg.base.island_shop_goods[10231] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7089,11 +6467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_shop_goods
-
-	var_2_47[10232] = {
+	pg.base.island_shop_goods[10232] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7134,11 +6508,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_shop_goods
-
-	var_2_48[10233] = {
+	pg.base.island_shop_goods[10233] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7179,11 +6549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_shop_goods
-
-	var_2_49[10234] = {
+	pg.base.island_shop_goods[10234] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7224,11 +6590,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_shop_goods
-
-	var_2_50[10235] = {
+	pg.base.island_shop_goods[10235] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7269,11 +6631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_shop_goods
-
-	var_2_51[10236] = {
+	pg.base.island_shop_goods[10236] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7314,11 +6672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_shop_goods
-
-	var_2_52[10237] = {
+	pg.base.island_shop_goods[10237] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7359,11 +6713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_shop_goods
-
-	var_2_53[10238] = {
+	pg.base.island_shop_goods[10238] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7404,11 +6754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_shop_goods
-
-	var_2_54[10239] = {
+	pg.base.island_shop_goods[10239] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7449,11 +6795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_shop_goods
-
-	var_2_55[10240] = {
+	pg.base.island_shop_goods[10240] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7494,11 +6836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_shop_goods
-
-	var_2_56[10241] = {
+	pg.base.island_shop_goods[10241] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7539,11 +6877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_shop_goods
-
-	var_2_57[10242] = {
+	pg.base.island_shop_goods[10242] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7584,11 +6918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_shop_goods
-
-	var_2_58[10243] = {
+	pg.base.island_shop_goods[10243] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7629,11 +6959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_shop_goods
-
-	var_2_59[10244] = {
+	pg.base.island_shop_goods[10244] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7674,11 +7000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_shop_goods
-
-	var_2_60[10245] = {
+	pg.base.island_shop_goods[10245] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7719,11 +7041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_shop_goods
-
-	var_2_61[10246] = {
+	pg.base.island_shop_goods[10246] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7764,11 +7082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_shop_goods
-
-	var_2_62[10247] = {
+	pg.base.island_shop_goods[10247] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7809,11 +7123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_shop_goods
-
-	var_2_63[10248] = {
+	pg.base.island_shop_goods[10248] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7854,11 +7164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_shop_goods
-
-	var_2_64[10249] = {
+	pg.base.island_shop_goods[10249] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7899,11 +7205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_shop_goods
-
-	var_2_65[10250] = {
+	pg.base.island_shop_goods[10250] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7944,11 +7246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_shop_goods
-
-	var_2_66[10251] = {
+	pg.base.island_shop_goods[10251] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -7989,11 +7287,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_shop_goods
-
-	var_2_67[10252] = {
+	pg.base.island_shop_goods[10252] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8034,11 +7328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_shop_goods
-
-	var_2_68[10253] = {
+	pg.base.island_shop_goods[10253] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8079,11 +7369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_shop_goods
-
-	var_2_69[10254] = {
+	pg.base.island_shop_goods[10254] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8124,11 +7410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_shop_goods
-
-	var_2_70[10255] = {
+	pg.base.island_shop_goods[10255] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8169,11 +7451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_shop_goods
-
-	var_2_71[10256] = {
+	pg.base.island_shop_goods[10256] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8214,11 +7492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_shop_goods
-
-	var_2_72[10257] = {
+	pg.base.island_shop_goods[10257] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8259,11 +7533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_shop_goods
-
-	var_2_73[10258] = {
+	pg.base.island_shop_goods[10258] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8304,11 +7574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_shop_goods
-
-	var_2_74[10259] = {
+	pg.base.island_shop_goods[10259] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8349,11 +7615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_shop_goods
-
-	var_2_75[10260] = {
+	pg.base.island_shop_goods[10260] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8394,11 +7656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_shop_goods
-
-	var_2_76[10261] = {
+	pg.base.island_shop_goods[10261] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8439,11 +7697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_shop_goods
-
-	var_2_77[10262] = {
+	pg.base.island_shop_goods[10262] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8484,11 +7738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_shop_goods
-
-	var_2_78[10263] = {
+	pg.base.island_shop_goods[10263] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8529,11 +7779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_shop_goods
-
-	var_2_79[10264] = {
+	pg.base.island_shop_goods[10264] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8574,11 +7820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_shop_goods
-
-	var_2_80[10265] = {
+	pg.base.island_shop_goods[10265] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8619,11 +7861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_shop_goods
-
-	var_2_81[10266] = {
+	pg.base.island_shop_goods[10266] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8664,11 +7902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_shop_goods
-
-	var_2_82[10267] = {
+	pg.base.island_shop_goods[10267] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8709,11 +7943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_shop_goods
-
-	var_2_83[10268] = {
+	pg.base.island_shop_goods[10268] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8754,11 +7984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_shop_goods
-
-	var_2_84[10269] = {
+	pg.base.island_shop_goods[10269] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8799,11 +8025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_shop_goods
-
-	var_2_85[10301] = {
+	pg.base.island_shop_goods[10301] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -8844,11 +8066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_shop_goods
-
-	var_2_86[10302] = {
+	pg.base.island_shop_goods[10302] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -8889,11 +8107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_shop_goods
-
-	var_2_87[10303] = {
+	pg.base.island_shop_goods[10303] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -8934,11 +8148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_shop_goods
-
-	var_2_88[10304] = {
+	pg.base.island_shop_goods[10304] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -8979,11 +8189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_shop_goods
-
-	var_2_89[10305] = {
+	pg.base.island_shop_goods[10305] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9024,11 +8230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_shop_goods
-
-	var_2_90[10306] = {
+	pg.base.island_shop_goods[10306] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9069,11 +8271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_shop_goods
-
-	var_2_91[10307] = {
+	pg.base.island_shop_goods[10307] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9114,11 +8312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_shop_goods
-
-	var_2_92[10308] = {
+	pg.base.island_shop_goods[10308] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9159,11 +8353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_shop_goods
-
-	var_2_93[10309] = {
+	pg.base.island_shop_goods[10309] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9204,11 +8394,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_shop_goods
-
-	var_2_94[10310] = {
+	pg.base.island_shop_goods[10310] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9249,11 +8435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_shop_goods
-
-	var_2_95[10311] = {
+	pg.base.island_shop_goods[10311] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9294,11 +8476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_shop_goods
-
-	var_2_96[10312] = {
+	pg.base.island_shop_goods[10312] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9339,11 +8517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_shop_goods
-
-	var_2_97[10313] = {
+	pg.base.island_shop_goods[10313] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9384,11 +8558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_shop_goods
-
-	var_2_98[10314] = {
+	pg.base.island_shop_goods[10314] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9429,8 +8599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.island_shop_goods[10315] = {
+	pg.base.island_shop_goods[10315] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9475,11 +8644,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_shop_goods
-
-	var_3_0[10316] = {
+	pg.base.island_shop_goods[10316] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9520,11 +8685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_shop_goods
-
-	var_3_1[10317] = {
+	pg.base.island_shop_goods[10317] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9565,11 +8726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.island_shop_goods
-
-	var_3_2[10318] = {
+	pg.base.island_shop_goods[10318] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9610,11 +8767,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.island_shop_goods
-
-	var_3_3[10319] = {
+	pg.base.island_shop_goods[10319] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9655,11 +8808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.island_shop_goods
-
-	var_3_4[10320] = {
+	pg.base.island_shop_goods[10320] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9700,11 +8849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.island_shop_goods
-
-	var_3_5[10321] = {
+	pg.base.island_shop_goods[10321] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9745,11 +8890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.island_shop_goods
-
-	var_3_6[10322] = {
+	pg.base.island_shop_goods[10322] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9790,11 +8931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.island_shop_goods
-
-	var_3_7[10323] = {
+	pg.base.island_shop_goods[10323] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9835,11 +8972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.island_shop_goods
-
-	var_3_8[10324] = {
+	pg.base.island_shop_goods[10324] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9880,11 +9013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.island_shop_goods
-
-	var_3_9[10325] = {
+	pg.base.island_shop_goods[10325] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9925,11 +9054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.island_shop_goods
-
-	var_3_10[10326] = {
+	pg.base.island_shop_goods[10326] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -9970,11 +9095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.island_shop_goods
-
-	var_3_11[10327] = {
+	pg.base.island_shop_goods[10327] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10015,11 +9136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.island_shop_goods
-
-	var_3_12[10328] = {
+	pg.base.island_shop_goods[10328] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10060,11 +9177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.island_shop_goods
-
-	var_3_13[10329] = {
+	pg.base.island_shop_goods[10329] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10105,11 +9218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.island_shop_goods
-
-	var_3_14[10330] = {
+	pg.base.island_shop_goods[10330] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10150,11 +9259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.island_shop_goods
-
-	var_3_15[10331] = {
+	pg.base.island_shop_goods[10331] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10195,11 +9300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.island_shop_goods
-
-	var_3_16[10332] = {
+	pg.base.island_shop_goods[10332] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10240,11 +9341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.island_shop_goods
-
-	var_3_17[10333] = {
+	pg.base.island_shop_goods[10333] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10285,11 +9382,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.island_shop_goods
-
-	var_3_18[10334] = {
+	pg.base.island_shop_goods[10334] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10330,11 +9423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.island_shop_goods
-
-	var_3_19[10335] = {
+	pg.base.island_shop_goods[10335] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10375,11 +9464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.island_shop_goods
-
-	var_3_20[10336] = {
+	pg.base.island_shop_goods[10336] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10420,11 +9505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.island_shop_goods
-
-	var_3_21[10337] = {
+	pg.base.island_shop_goods[10337] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10465,11 +9546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.island_shop_goods
-
-	var_3_22[10338] = {
+	pg.base.island_shop_goods[10338] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10510,11 +9587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.island_shop_goods
-
-	var_3_23[10339] = {
+	pg.base.island_shop_goods[10339] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10555,11 +9628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.island_shop_goods
-
-	var_3_24[10340] = {
+	pg.base.island_shop_goods[10340] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10600,11 +9669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.island_shop_goods
-
-	var_3_25[10341] = {
+	pg.base.island_shop_goods[10341] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10645,11 +9710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.island_shop_goods
-
-	var_3_26[10342] = {
+	pg.base.island_shop_goods[10342] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10690,11 +9751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.island_shop_goods
-
-	var_3_27[10343] = {
+	pg.base.island_shop_goods[10343] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10735,11 +9792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.island_shop_goods
-
-	var_3_28[10344] = {
+	pg.base.island_shop_goods[10344] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10780,11 +9833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.island_shop_goods
-
-	var_3_29[10345] = {
+	pg.base.island_shop_goods[10345] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10825,11 +9874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.island_shop_goods
-
-	var_3_30[10346] = {
+	pg.base.island_shop_goods[10346] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10870,11 +9915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.island_shop_goods
-
-	var_3_31[10347] = {
+	pg.base.island_shop_goods[10347] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10915,11 +9956,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.island_shop_goods
-
-	var_3_32[10348] = {
+	pg.base.island_shop_goods[10348] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -10960,11 +9997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.island_shop_goods
-
-	var_3_33[10349] = {
+	pg.base.island_shop_goods[10349] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11005,11 +10038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.island_shop_goods
-
-	var_3_34[10350] = {
+	pg.base.island_shop_goods[10350] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11050,11 +10079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.island_shop_goods
-
-	var_3_35[10351] = {
+	pg.base.island_shop_goods[10351] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11095,11 +10120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.island_shop_goods
-
-	var_3_36[10352] = {
+	pg.base.island_shop_goods[10352] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11140,11 +10161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.island_shop_goods
-
-	var_3_37[10353] = {
+	pg.base.island_shop_goods[10353] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11185,11 +10202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.island_shop_goods
-
-	var_3_38[10354] = {
+	pg.base.island_shop_goods[10354] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11230,11 +10243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.island_shop_goods
-
-	var_3_39[10355] = {
+	pg.base.island_shop_goods[10355] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11275,11 +10284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.island_shop_goods
-
-	var_3_40[10356] = {
+	pg.base.island_shop_goods[10356] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11320,11 +10325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.island_shop_goods
-
-	var_3_41[10357] = {
+	pg.base.island_shop_goods[10357] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11365,11 +10366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.island_shop_goods
-
-	var_3_42[10358] = {
+	pg.base.island_shop_goods[10358] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11410,11 +10407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.island_shop_goods
-
-	var_3_43[10359] = {
+	pg.base.island_shop_goods[10359] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11455,11 +10448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.island_shop_goods
-
-	var_3_44[10360] = {
+	pg.base.island_shop_goods[10360] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11500,11 +10489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.island_shop_goods
-
-	var_3_45[10361] = {
+	pg.base.island_shop_goods[10361] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11545,11 +10530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.island_shop_goods
-
-	var_3_46[10362] = {
+	pg.base.island_shop_goods[10362] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11590,11 +10571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.island_shop_goods
-
-	var_3_47[10363] = {
+	pg.base.island_shop_goods[10363] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11635,11 +10612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.island_shop_goods
-
-	var_3_48[10364] = {
+	pg.base.island_shop_goods[10364] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11680,11 +10653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.island_shop_goods
-
-	var_3_49[10365] = {
+	pg.base.island_shop_goods[10365] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11725,11 +10694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.island_shop_goods
-
-	var_3_50[10366] = {
+	pg.base.island_shop_goods[10366] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11770,11 +10735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.island_shop_goods
-
-	var_3_51[10367] = {
+	pg.base.island_shop_goods[10367] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11815,11 +10776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.island_shop_goods
-
-	var_3_52[10368] = {
+	pg.base.island_shop_goods[10368] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11860,11 +10817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.island_shop_goods
-
-	var_3_53[10369] = {
+	pg.base.island_shop_goods[10369] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -11905,11 +10858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.island_shop_goods
-
-	var_3_54[10401] = {
+	pg.base.island_shop_goods[10401] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -11950,11 +10899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.island_shop_goods
-
-	var_3_55[10402] = {
+	pg.base.island_shop_goods[10402] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -11995,11 +10940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.island_shop_goods
-
-	var_3_56[10403] = {
+	pg.base.island_shop_goods[10403] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -12040,11 +10981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.island_shop_goods
-
-	var_3_57[10404] = {
+	pg.base.island_shop_goods[10404] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12085,11 +11022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.island_shop_goods
-
-	var_3_58[10405] = {
+	pg.base.island_shop_goods[10405] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12130,11 +11063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.island_shop_goods
-
-	var_3_59[10406] = {
+	pg.base.island_shop_goods[10406] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12175,11 +11104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.island_shop_goods
-
-	var_3_60[10407] = {
+	pg.base.island_shop_goods[10407] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12220,11 +11145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.island_shop_goods
-
-	var_3_61[10408] = {
+	pg.base.island_shop_goods[10408] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12265,11 +11186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.island_shop_goods
-
-	var_3_62[10409] = {
+	pg.base.island_shop_goods[10409] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12310,11 +11227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.island_shop_goods
-
-	var_3_63[10410] = {
+	pg.base.island_shop_goods[10410] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12355,11 +11268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.island_shop_goods
-
-	var_3_64[10411] = {
+	pg.base.island_shop_goods[10411] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12400,11 +11309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.island_shop_goods
-
-	var_3_65[10412] = {
+	pg.base.island_shop_goods[10412] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12445,11 +11350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.island_shop_goods
-
-	var_3_66[10413] = {
+	pg.base.island_shop_goods[10413] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12490,11 +11391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.island_shop_goods
-
-	var_3_67[10414] = {
+	pg.base.island_shop_goods[10414] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12535,11 +11432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.island_shop_goods
-
-	var_3_68[10415] = {
+	pg.base.island_shop_goods[10415] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12580,11 +11473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.island_shop_goods
-
-	var_3_69[10416] = {
+	pg.base.island_shop_goods[10416] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12625,11 +11514,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.island_shop_goods
-
-	var_3_70[10417] = {
+	pg.base.island_shop_goods[10417] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12670,11 +11555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.island_shop_goods
-
-	var_3_71[10418] = {
+	pg.base.island_shop_goods[10418] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12715,11 +11596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.island_shop_goods
-
-	var_3_72[10419] = {
+	pg.base.island_shop_goods[10419] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12760,11 +11637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.island_shop_goods
-
-	var_3_73[10420] = {
+	pg.base.island_shop_goods[10420] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12805,11 +11678,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.island_shop_goods
-
-	var_3_74[10421] = {
+	pg.base.island_shop_goods[10421] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12850,11 +11719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.island_shop_goods
-
-	var_3_75[10422] = {
+	pg.base.island_shop_goods[10422] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12895,11 +11760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.island_shop_goods
-
-	var_3_76[10423] = {
+	pg.base.island_shop_goods[10423] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12940,11 +11801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.island_shop_goods
-
-	var_3_77[10424] = {
+	pg.base.island_shop_goods[10424] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -12985,11 +11842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.island_shop_goods
-
-	var_3_78[10425] = {
+	pg.base.island_shop_goods[10425] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13030,11 +11883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.island_shop_goods
-
-	var_3_79[10426] = {
+	pg.base.island_shop_goods[10426] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13075,11 +11924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.island_shop_goods
-
-	var_3_80[10427] = {
+	pg.base.island_shop_goods[10427] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13120,11 +11965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.island_shop_goods
-
-	var_3_81[10428] = {
+	pg.base.island_shop_goods[10428] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13165,11 +12006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.island_shop_goods
-
-	var_3_82[10429] = {
+	pg.base.island_shop_goods[10429] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13210,11 +12047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.island_shop_goods
-
-	var_3_83[10430] = {
+	pg.base.island_shop_goods[10430] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13255,11 +12088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.island_shop_goods
-
-	var_3_84[10431] = {
+	pg.base.island_shop_goods[10431] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13300,11 +12129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.island_shop_goods
-
-	var_3_85[10432] = {
+	pg.base.island_shop_goods[10432] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13345,11 +12170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.island_shop_goods
-
-	var_3_86[10433] = {
+	pg.base.island_shop_goods[10433] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13390,11 +12211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.island_shop_goods
-
-	var_3_87[10434] = {
+	pg.base.island_shop_goods[10434] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13435,11 +12252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.island_shop_goods
-
-	var_3_88[10435] = {
+	pg.base.island_shop_goods[10435] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13480,11 +12293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.island_shop_goods
-
-	var_3_89[10436] = {
+	pg.base.island_shop_goods[10436] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13525,11 +12334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.island_shop_goods
-
-	var_3_90[10437] = {
+	pg.base.island_shop_goods[10437] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13570,11 +12375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.island_shop_goods
-
-	var_3_91[10438] = {
+	pg.base.island_shop_goods[10438] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13615,11 +12416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.island_shop_goods
-
-	var_3_92[10439] = {
+	pg.base.island_shop_goods[10439] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13660,11 +12457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.island_shop_goods
-
-	var_3_93[10440] = {
+	pg.base.island_shop_goods[10440] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13705,11 +12498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.island_shop_goods
-
-	var_3_94[10441] = {
+	pg.base.island_shop_goods[10441] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13750,11 +12539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.island_shop_goods
-
-	var_3_95[10442] = {
+	pg.base.island_shop_goods[10442] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13795,11 +12580,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.island_shop_goods
-
-	var_3_96[10443] = {
+	pg.base.island_shop_goods[10443] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13840,11 +12621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.island_shop_goods
-
-	var_3_97[10444] = {
+	pg.base.island_shop_goods[10444] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13885,11 +12662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.island_shop_goods
-
-	var_3_98[10445] = {
+	pg.base.island_shop_goods[10445] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13930,8 +12703,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.island_shop_goods[10446] = {
+	pg.base.island_shop_goods[10446] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -13976,11 +12748,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.island_shop_goods
-
-	var_4_0[10447] = {
+	pg.base.island_shop_goods[10447] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14021,11 +12789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.island_shop_goods
-
-	var_4_1[10448] = {
+	pg.base.island_shop_goods[10448] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14066,11 +12830,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.island_shop_goods
-
-	var_4_2[10449] = {
+	pg.base.island_shop_goods[10449] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14111,11 +12871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.island_shop_goods
-
-	var_4_3[10450] = {
+	pg.base.island_shop_goods[10450] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14156,11 +12912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.island_shop_goods
-
-	var_4_4[10451] = {
+	pg.base.island_shop_goods[10451] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14201,11 +12953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.island_shop_goods
-
-	var_4_5[10452] = {
+	pg.base.island_shop_goods[10452] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14246,11 +12994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.island_shop_goods
-
-	var_4_6[10453] = {
+	pg.base.island_shop_goods[10453] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14291,11 +13035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.island_shop_goods
-
-	var_4_7[10454] = {
+	pg.base.island_shop_goods[10454] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14336,11 +13076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.island_shop_goods
-
-	var_4_8[10455] = {
+	pg.base.island_shop_goods[10455] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14381,11 +13117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.island_shop_goods
-
-	var_4_9[10456] = {
+	pg.base.island_shop_goods[10456] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14426,11 +13158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.island_shop_goods
-
-	var_4_10[10457] = {
+	pg.base.island_shop_goods[10457] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14471,11 +13199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.island_shop_goods
-
-	var_4_11[10458] = {
+	pg.base.island_shop_goods[10458] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14516,11 +13240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.island_shop_goods
-
-	var_4_12[10459] = {
+	pg.base.island_shop_goods[10459] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14561,11 +13281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.island_shop_goods
-
-	var_4_13[10460] = {
+	pg.base.island_shop_goods[10460] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14606,11 +13322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.island_shop_goods
-
-	var_4_14[10461] = {
+	pg.base.island_shop_goods[10461] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14651,11 +13363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.island_shop_goods
-
-	var_4_15[10462] = {
+	pg.base.island_shop_goods[10462] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14696,11 +13404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.island_shop_goods
-
-	var_4_16[10463] = {
+	pg.base.island_shop_goods[10463] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14741,11 +13445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.island_shop_goods
-
-	var_4_17[10464] = {
+	pg.base.island_shop_goods[10464] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14786,11 +13486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.island_shop_goods
-
-	var_4_18[10465] = {
+	pg.base.island_shop_goods[10465] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14831,11 +13527,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.island_shop_goods
-
-	var_4_19[10466] = {
+	pg.base.island_shop_goods[10466] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14876,11 +13568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.island_shop_goods
-
-	var_4_20[10467] = {
+	pg.base.island_shop_goods[10467] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14921,11 +13609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.island_shop_goods
-
-	var_4_21[10468] = {
+	pg.base.island_shop_goods[10468] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -14966,11 +13650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.island_shop_goods
-
-	var_4_22[10469] = {
+	pg.base.island_shop_goods[10469] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15011,11 +13691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.island_shop_goods
-
-	var_4_23[10470] = {
+	pg.base.island_shop_goods[10470] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15056,11 +13732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.island_shop_goods
-
-	var_4_24[10471] = {
+	pg.base.island_shop_goods[10471] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15101,11 +13773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.island_shop_goods
-
-	var_4_25[10472] = {
+	pg.base.island_shop_goods[10472] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15146,11 +13814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.island_shop_goods
-
-	var_4_26[10473] = {
+	pg.base.island_shop_goods[10473] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15191,11 +13855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.island_shop_goods
-
-	var_4_27[10474] = {
+	pg.base.island_shop_goods[10474] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15236,11 +13896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.island_shop_goods
-
-	var_4_28[10475] = {
+	pg.base.island_shop_goods[10475] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15281,11 +13937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.island_shop_goods
-
-	var_4_29[103000] = {
+	pg.base.island_shop_goods[103000] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15326,11 +13978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.island_shop_goods
-
-	var_4_30[103001] = {
+	pg.base.island_shop_goods[103001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15371,11 +14019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.island_shop_goods
-
-	var_4_31[103002] = {
+	pg.base.island_shop_goods[103002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15416,11 +14060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.island_shop_goods
-
-	var_4_32[103003] = {
+	pg.base.island_shop_goods[103003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15461,11 +14101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.island_shop_goods
-
-	var_4_33[103004] = {
+	pg.base.island_shop_goods[103004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15506,11 +14142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.island_shop_goods
-
-	var_4_34[12] = {
+	pg.base.island_shop_goods[12] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15551,11 +14183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.island_shop_goods
-
-	var_4_35[14] = {
+	pg.base.island_shop_goods[14] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15596,11 +14224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.island_shop_goods
-
-	var_4_36[15] = {
+	pg.base.island_shop_goods[15] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15641,11 +14265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.island_shop_goods
-
-	var_4_37[111101] = {
+	pg.base.island_shop_goods[111101] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15688,11 +14308,7 @@ end)()
 			3201003
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.island_shop_goods
-
-	var_4_38[111102] = {
+	pg.base.island_shop_goods[111102] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15735,11 +14351,7 @@ end)()
 			3201012
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.island_shop_goods
-
-	var_4_39[111103] = {
+	pg.base.island_shop_goods[111103] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15782,11 +14394,7 @@ end)()
 			3201002
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.island_shop_goods
-
-	var_4_40[0] = {
+	pg.base.island_shop_goods[0] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15829,11 +14437,7 @@ end)()
 			3201013
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.island_shop_goods
-
-	var_4_41[1] = {
+	pg.base.island_shop_goods[1] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15876,11 +14480,7 @@ end)()
 			3201001
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.island_shop_goods
-
-	var_4_42[2] = {
+	pg.base.island_shop_goods[2] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15923,11 +14523,7 @@ end)()
 			3201004
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.island_shop_goods
-
-	var_4_43[3] = {
+	pg.base.island_shop_goods[3] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -15970,11 +14566,7 @@ end)()
 			3201014
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.island_shop_goods
-
-	var_4_44[4] = {
+	pg.base.island_shop_goods[4] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16017,11 +14609,7 @@ end)()
 			3201008
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.island_shop_goods
-
-	var_4_45[111201] = {
+	pg.base.island_shop_goods[111201] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16064,11 +14652,7 @@ end)()
 			3201007
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.island_shop_goods
-
-	var_4_46[111202] = {
+	pg.base.island_shop_goods[111202] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16111,11 +14695,7 @@ end)()
 			3201009
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.island_shop_goods
-
-	var_4_47[111203] = {
+	pg.base.island_shop_goods[111203] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16158,11 +14738,7 @@ end)()
 			3201010
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.island_shop_goods
-
-	var_4_48[111204] = {
+	pg.base.island_shop_goods[111204] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16205,11 +14781,7 @@ end)()
 			3201005
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.island_shop_goods
-
-	var_4_49[111205] = {
+	pg.base.island_shop_goods[111205] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16252,11 +14824,7 @@ end)()
 			3201015
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.island_shop_goods
-
-	var_4_50[111206] = {
+	pg.base.island_shop_goods[111206] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16299,11 +14867,7 @@ end)()
 			3201016
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.island_shop_goods
-
-	var_4_51[111207] = {
+	pg.base.island_shop_goods[111207] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16346,11 +14910,7 @@ end)()
 			3201011
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.island_shop_goods
-
-	var_4_52[111208] = {
+	pg.base.island_shop_goods[111208] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16393,11 +14953,7 @@ end)()
 			3201006
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.island_shop_goods
-
-	var_4_53[411000] = {
+	pg.base.island_shop_goods[411000] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16438,11 +14994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.island_shop_goods
-
-	var_4_54[411001] = {
+	pg.base.island_shop_goods[411001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16485,11 +15037,7 @@ end)()
 			3101002
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.island_shop_goods
-
-	var_4_55[411002] = {
+	pg.base.island_shop_goods[411002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16532,11 +15080,7 @@ end)()
 			3101005
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.island_shop_goods
-
-	var_4_56[411003] = {
+	pg.base.island_shop_goods[411003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16579,11 +15123,7 @@ end)()
 			3101006
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.island_shop_goods
-
-	var_4_57[411004] = {
+	pg.base.island_shop_goods[411004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16626,11 +15166,7 @@ end)()
 			3502006
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.island_shop_goods
-
-	var_4_58[411005] = {
+	pg.base.island_shop_goods[411005] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16673,11 +15209,7 @@ end)()
 			3101008
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.island_shop_goods
-
-	var_4_59[411006] = {
+	pg.base.island_shop_goods[411006] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16720,11 +15252,7 @@ end)()
 			3101007
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.island_shop_goods
-
-	var_4_60[411007] = {
+	pg.base.island_shop_goods[411007] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16767,11 +15295,7 @@ end)()
 			3502007
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.island_shop_goods
-
-	var_4_61[0] = {
+	pg.base.island_shop_goods[0] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16814,11 +15338,7 @@ end)()
 			3101003
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.island_shop_goods
-
-	var_4_62[1] = {
+	pg.base.island_shop_goods[1] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16861,11 +15381,7 @@ end)()
 			3101004
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.island_shop_goods
-
-	var_4_63[2] = {
+	pg.base.island_shop_goods[2] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16906,11 +15422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.island_shop_goods
-
-	var_4_64[3] = {
+	pg.base.island_shop_goods[3] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -16953,11 +15465,7 @@ end)()
 			3502002
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.island_shop_goods
-
-	var_4_65[4] = {
+	pg.base.island_shop_goods[4] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17000,11 +15508,7 @@ end)()
 			3502003
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.island_shop_goods
-
-	var_4_66[6] = {
+	pg.base.island_shop_goods[6] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17047,11 +15551,7 @@ end)()
 			3502004
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.island_shop_goods
-
-	var_4_67[7] = {
+	pg.base.island_shop_goods[7] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17094,11 +15594,7 @@ end)()
 			3502005
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.island_shop_goods
-
-	var_4_68[8] = {
+	pg.base.island_shop_goods[8] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17141,11 +15637,7 @@ end)()
 			3501001
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.island_shop_goods
-
-	var_4_69[9] = {
+	pg.base.island_shop_goods[9] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17188,11 +15680,7 @@ end)()
 			3501002
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.island_shop_goods
-
-	var_4_70[10] = {
+	pg.base.island_shop_goods[10] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17235,11 +15723,7 @@ end)()
 			3501003
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.island_shop_goods
-
-	var_4_71[11] = {
+	pg.base.island_shop_goods[11] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17282,11 +15766,7 @@ end)()
 			3501004
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.island_shop_goods
-
-	var_4_72[12] = {
+	pg.base.island_shop_goods[12] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17329,11 +15809,7 @@ end)()
 			3501005
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.island_shop_goods
-
-	var_4_73[13] = {
+	pg.base.island_shop_goods[13] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17376,11 +15852,7 @@ end)()
 			3501006
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.island_shop_goods
-
-	var_4_74[14] = {
+	pg.base.island_shop_goods[14] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17423,11 +15895,7 @@ end)()
 			3501007
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.island_shop_goods
-
-	var_4_75[15] = {
+	pg.base.island_shop_goods[15] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17493,11 +15961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.island_shop_goods
-
-	var_4_76[16] = {
+	pg.base.island_shop_goods[16] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17563,11 +16027,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.island_shop_goods
-
-	var_4_77[17] = {
+	pg.base.island_shop_goods[17] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17633,11 +16093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.island_shop_goods
-
-	var_4_78[18] = {
+	pg.base.island_shop_goods[18] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17703,11 +16159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.island_shop_goods
-
-	var_4_79[19] = {
+	pg.base.island_shop_goods[19] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17773,11 +16225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.island_shop_goods
-
-	var_4_80[20] = {
+	pg.base.island_shop_goods[20] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17843,11 +16291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.island_shop_goods
-
-	var_4_81[412000] = {
+	pg.base.island_shop_goods[412000] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17888,11 +16332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.island_shop_goods
-
-	var_4_82[412001] = {
+	pg.base.island_shop_goods[412001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17933,11 +16373,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.island_shop_goods
-
-	var_4_83[412002] = {
+	pg.base.island_shop_goods[412002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -17978,11 +16414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.island_shop_goods
-
-	var_4_84[412003] = {
+	pg.base.island_shop_goods[412003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18023,11 +16455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.island_shop_goods
-
-	var_4_85[4600001] = {
+	pg.base.island_shop_goods[4600001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18068,11 +16496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.island_shop_goods
-
-	var_4_86[4600002] = {
+	pg.base.island_shop_goods[4600002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18113,11 +16537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.island_shop_goods
-
-	var_4_87[4600003] = {
+	pg.base.island_shop_goods[4600003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18158,11 +16578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.island_shop_goods
-
-	var_4_88[4620004] = {
+	pg.base.island_shop_goods[4620004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18203,11 +16619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.island_shop_goods
-
-	var_4_89[4630005] = {
+	pg.base.island_shop_goods[4630005] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18248,11 +16660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.island_shop_goods
-
-	var_4_90[4610003] = {
+	pg.base.island_shop_goods[4610003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18293,11 +16701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.island_shop_goods
-
-	var_4_91[4620007] = {
+	pg.base.island_shop_goods[4620007] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18338,11 +16742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.island_shop_goods
-
-	var_4_92[4630008] = {
+	pg.base.island_shop_goods[4630008] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18383,11 +16783,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.island_shop_goods
-
-	var_4_93[4610006] = {
+	pg.base.island_shop_goods[4610006] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18428,11 +16824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.island_shop_goods
-
-	var_4_94[4620008] = {
+	pg.base.island_shop_goods[4620008] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18473,11 +16865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.island_shop_goods
-
-	var_4_95[4630009] = {
+	pg.base.island_shop_goods[4630009] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18518,11 +16906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.island_shop_goods
-
-	var_4_96[4610008] = {
+	pg.base.island_shop_goods[4610008] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,
@@ -18563,11 +16947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.island_shop_goods
-
-	var_4_97[5010001] = {
+	pg.base.island_shop_goods[5010001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18633,11 +17013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.island_shop_goods
-
-	var_4_98[5020001] = {
+	pg.base.island_shop_goods[5020001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18703,8 +17079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.island_shop_goods[5030001] = {
+	pg.base.island_shop_goods[5030001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18774,11 +17149,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.island_shop_goods
-
-	var_5_0[5010002] = {
+	pg.base.island_shop_goods[5010002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18844,11 +17215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.island_shop_goods
-
-	var_5_1[5020002] = {
+	pg.base.island_shop_goods[5020002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18914,11 +17281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.island_shop_goods
-
-	var_5_2[5030002] = {
+	pg.base.island_shop_goods[5030002] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -18984,11 +17347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.island_shop_goods
-
-	var_5_3[5010003] = {
+	pg.base.island_shop_goods[5010003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -19054,11 +17413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.island_shop_goods
-
-	var_5_4[5020003] = {
+	pg.base.island_shop_goods[5020003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -19124,11 +17479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.island_shop_goods
-
-	var_5_5[5030003] = {
+	pg.base.island_shop_goods[5030003] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -19194,11 +17545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.island_shop_goods
-
-	var_5_6[5010004] = {
+	pg.base.island_shop_goods[5010004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -19264,11 +17611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.island_shop_goods
-
-	var_5_7[5020004] = {
+	pg.base.island_shop_goods[5020004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -19334,11 +17677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.island_shop_goods
-
-	var_5_8[5030004] = {
+	pg.base.island_shop_goods[5030004] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 1,
@@ -19404,11 +17743,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.island_shop_goods
-
-	var_5_9[471070301] = {
+	pg.base.island_shop_goods[471070301] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19449,11 +17784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.island_shop_goods
-
-	var_5_10[473120101] = {
+	pg.base.island_shop_goods[473120101] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19494,11 +17825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.island_shop_goods
-
-	var_5_11[471051701] = {
+	pg.base.island_shop_goods[471051701] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19539,11 +17866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.island_shop_goods
-
-	var_5_12[471011001] = {
+	pg.base.island_shop_goods[471011001] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19584,11 +17907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.island_shop_goods
-
-	var_5_13[5] = {
+	pg.base.island_shop_goods[5] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19629,11 +17948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.island_shop_goods
-
-	var_5_14[474030301] = {
+	pg.base.island_shop_goods[474030301] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19674,11 +17989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.island_shop_goods
-
-	var_5_15[471011701] = {
+	pg.base.island_shop_goods[471011701] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19719,11 +18030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.island_shop_goods
-
-	var_5_16[472012101] = {
+	pg.base.island_shop_goods[472012101] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19764,11 +18071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.island_shop_goods
-
-	var_5_17[473031101] = {
+	pg.base.island_shop_goods[473031101] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19809,11 +18112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.island_shop_goods
-
-	var_5_18[472021201] = {
+	pg.base.island_shop_goods[472021201] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19854,11 +18153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.island_shop_goods
-
-	var_5_19[11] = {
+	pg.base.island_shop_goods[11] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19899,11 +18194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.island_shop_goods
-
-	var_5_20[99000101] = {
+	pg.base.island_shop_goods[99000101] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19944,11 +18235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.island_shop_goods
-
-	var_5_21[99000102] = {
+	pg.base.island_shop_goods[99000102] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -19989,11 +18276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.island_shop_goods
-
-	var_5_22[9] = {
+	pg.base.island_shop_goods[9] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -20034,11 +18317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.island_shop_goods
-
-	var_5_23[10] = {
+	pg.base.island_shop_goods[10] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -20079,11 +18358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.island_shop_goods
-
-	var_5_24[99000301] = {
+	pg.base.island_shop_goods[99000301] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -20124,11 +18399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.island_shop_goods
-
-	var_5_25[99000302] = {
+	pg.base.island_shop_goods[99000302] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 4,
@@ -20169,8 +18440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-	var_5_25.base.island_shop_goods[461060015] = {
+	pg.base.island_shop_goods[461060015] = {
 		goods_have = 0,
 		items_model = "",
 		goods_detail_type = 2,

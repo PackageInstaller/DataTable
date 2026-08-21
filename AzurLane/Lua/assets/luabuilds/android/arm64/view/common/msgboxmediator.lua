@@ -1,53 +1,35 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MsgboxMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "MsgboxMediator"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_2_0)
+function var_0_0.listNotificationInterests(arg_2_0)
 	return {}
 end
 
-function var_0_1.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1:getName()
-	local var_3_1 = arg_3_1:getBody()
+function var_0_0.handleNotification(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_1:getBody()
 
-	if var_3_0 == nil then
+	if arg_3_1:getName() == nil then
 		-- block empty
 	end
 
 	return
 end
 
-function var_0_1.remove(arg_4_0)
+function var_0_0.remove(arg_4_0)
 	return
 end
 
-function var_0_1.ShowMsgBox(arg_5_0)
-	LoadContextCommand = var_1_10001
-
-	local var_5_0 = var_1_10001.LoadLayerOnTopContext
-
-	Context = var_1_10003
-
-	local var_5_1 = var_1_10003.New
-	local var_5_2 = {}
-
-	MsgboxMediator = var_1_10006
-	var_5_2.mediator = var_1_10006
-	MsgboxLayer = var_1_10006
-	var_5_2.viewComponent = var_1_10006
-	var_5_2.data = arg_5_0
-
-	var_5_0(var_5_1(var_5_2))
+function var_0_0.ShowMsgBox(arg_5_0)
+	LoadContextCommand.LoadLayerOnTopContext(Context.New({
+		mediator = MsgboxMediator,
+		viewComponent = MsgboxLayer,
+		data = arg_5_0
+	}))
 
 	return
 end
 
-return var_0_1
+return var_0_0

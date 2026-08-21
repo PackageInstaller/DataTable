@@ -27,6 +27,18 @@ function getData(self, fileName, allowByNew)
     if not refData or allowByNew == true then
         refData = self.m_loadLanMap[fileName]
 
+        if (GameManager:getIsInCommiting()) then
+            local path = gs.PathUtil.GetPersistentAssetsWPath("LuaScripts/ref/zh/harmony/" .. fileName .. ".lua")
+            local isExist = gs.File.Exists(path)
+            if (isExist) then
+                refData = require(self.m_lanPath .. "harmony/" .. fileName)
+                if refData ~= nil then
+                    self.m_loadLanMap[fileName] = refData
+                    return refData
+                end
+            end
+        end
+
         if not refData or allowByNew == true then
             local function _tryLanRequire()
                 refData = require(self.m_lanPath .. fileName)
@@ -100,10 +112,24 @@ function clearAllLanData(self)
     self.m_loadLanMap = {}
 end
 
+-- 特殊资源配置
+function getSpecialConfig(self)
+    if GameManager:getIsInCommiting() or role.RoleManager:getRoleVo().location ~= 1 then
+        return {}
+    end
+    if (web.WebManager.net_type ~= web.NET_TYPE.OUTER_RELEASE and GameManager.isTestHar) then
+        return true
+    end
+    if (gs.File.Exists(gs.PathUtil.GetPersistentAssetsWPath("LuaScripts/resconfig/re_config.lua")) and gs.File.Exists(web.HarmoniousFilePath)) then
+        local refData = require("resconfig/re_config")
+        return refData
+    end
+    return nil
+end
+
 function clearAllData(self)
     self:clearAllBaseData()
     self:clearAllLanData()
 end
 
 return _M
-

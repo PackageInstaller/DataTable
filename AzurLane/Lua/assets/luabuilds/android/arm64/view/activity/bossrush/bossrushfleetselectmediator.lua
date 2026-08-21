@@ -1,146 +1,80 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BossRushFleetSelectMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "BossRushFleetSelectMediator"
+var_0_0.ON_OPEN_DECK = "BossRushFleetSelectMediator:ON_OPEN_DECK"
+var_0_0.ON_FLEET_SHIPINFO = "BossRushFleetSelectMediator:ON_FLEET_SHIPINFO"
+var_0_0.ON_TRACE = "BossRushFleetSelectMediator:ON_TRACE"
+var_0_0.ON_UPDATE_CUSTOM_FLEET = "BossRushFleetSelectMediator:ON_UPDATE_CUSTOM_FLEET"
+var_0_0.ON_PRECOMBAT = "BossRushFleetSelectMediator:ON_PRECOMBAT"
+var_0_0.ON_ELITE_RECOMMEND = "BossRushFleetSelectMediator:ON_ELITE_RECOMMEND"
+var_0_0.ON_ELITE_CLEAR = "BossRushFleetSelectMediator:ON_ELITE_CLEAR"
+var_0_0.OPEN_COMMANDER_PANEL = "BossRushFleetSelectMediator:OPEN_COMMANDER_PANEL"
+var_0_0.ON_SELECT_COMMANDER = "BossRushFleetSelectMediator:ON_SELECT_COMMANDER"
+var_0_0.ON_COMMANDER_SKILL = "BossRushFleetSelectMediator:ON_COMMANDER_SKILL"
+var_0_0.ON_SWITCH_MODE = "BossRushFleetSelectMediator:ON_SWITCH_MODE"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_OPEN_DECK = "BossRushFleetSelectMediator:ON_OPEN_DECK"
-var_0_1.ON_FLEET_SHIPINFO = "BossRushFleetSelectMediator:ON_FLEET_SHIPINFO"
-var_0_1.ON_TRACE = "BossRushFleetSelectMediator:ON_TRACE"
-var_0_1.ON_UPDATE_CUSTOM_FLEET = "BossRushFleetSelectMediator:ON_UPDATE_CUSTOM_FLEET"
-var_0_1.ON_PRECOMBAT = "BossRushFleetSelectMediator:ON_PRECOMBAT"
-var_0_1.ON_ELITE_RECOMMEND = "BossRushFleetSelectMediator:ON_ELITE_RECOMMEND"
-var_0_1.ON_ELITE_CLEAR = "BossRushFleetSelectMediator:ON_ELITE_CLEAR"
-var_0_1.OPEN_COMMANDER_PANEL = "BossRushFleetSelectMediator:OPEN_COMMANDER_PANEL"
-var_0_1.ON_SELECT_COMMANDER = "BossRushFleetSelectMediator:ON_SELECT_COMMANDER"
-var_0_1.ON_COMMANDER_SKILL = "BossRushFleetSelectMediator:ON_COMMANDER_SKILL"
-var_0_1.ON_SWITCH_MODE = "BossRushFleetSelectMediator:ON_SWITCH_MODE"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_OPEN_DECK, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_2_1.fleetIndex
-		local var_2_1 = arg_2_1.shipVO
-
-		_ = var_2_10004
-
-		local var_2_2 = var_2_10004.flatten
-
-		_ = var_2_10006
-
-		local var_2_3 = var_2_2(var_2_10006.map(arg_1_0.contextData.fleets, function(arg_3_0)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_OPEN_DECK, function(arg_2_0, arg_2_1)
+		local var_2_0 = arg_2_1.shipVO
+		local var_2_1 = _.flatten(_.map(arg_1_0.contextData.fleets, function(arg_3_0)
 			return arg_3_0:GetRawShipIds()
 		end))
-		local var_2_4 = arg_2_1.teamType
-		local var_2_5, var_2_6, var_2_7 = arg_1_0.getDockCallbackFuncs(var_2_1, arg_1_0.contextData.fleets[var_2_0], var_2_4, var_2_3, arg_1_0.contextData.actId)
-		local var_2_8 = arg_1_0
-		local var_2_9 = var_9.sendNotification
+		local var_2_2 = arg_2_1.teamType
+		local var_2_3, var_2_4, var_2_5 = arg_1_0.getDockCallbackFuncs(arg_2_1.shipVO, arg_1_0.contextData.fleets[arg_2_1.fleetIndex], arg_2_1.teamType, var_2_1, arg_1_0.contextData.actId)
 
-		GAME = var_12
-
-		local var_2_10 = var_12.GO_SCENE
-
-		SCENE = var_2_10013
-
-		local var_2_11 = var_2_10013.DOCKYARD
-		local var_2_12 = {
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD, {
 			selectedMin = 0,
 			useBlackBlock = true,
 			selectedMax = 1,
-			energyDisplay = true
-		}
-
-		i18n = var_2_10015
-		var_2_12.leastLimitMsg = var_2_10015("ship_formationMediator_leastLimit")
-		var_2_12.quitTeam = var_2_1 ~= nil
-		var_2_12.teamFilter = var_2_4
-		i18n = var_15
-		var_2_12.leftTopInfo = var_15("word_formation")
-		var_2_12.onShip = var_2_5
-		var_2_12.confirmSelect = var_2_6
-		var_2_12.onSelected = var_2_7
-		setmetatable = var_15
-
-		local var_2_13 = {
-			inActivity = arg_1_0.contextData.actId
-		}
-		local var_2_14 = {}
-
-		ShipStatus = var_2_10019
-		var_2_14.__index = var_2_10019.TAG_HIDE_ACTIVITY_BOSS
-		var_2_12.hideTagFlags = var_15(var_2_13, var_2_14)
-		var_2_12.otherSelectedIds = var_2_3
-
-		var_2_9(var_2_8, var_2_10, var_2_11, var_2_12)
+			energyDisplay = true,
+			leastLimitMsg = i18n("ship_formationMediator_leastLimit"),
+			quitTeam = var_2_0 ~= nil,
+			teamFilter = var_2_2,
+			leftTopInfo = i18n("word_formation"),
+			onShip = var_2_3,
+			confirmSelect = var_2_4,
+			onSelected = var_2_5,
+			hideTagFlags = setmetatable({
+				inActivity = arg_1_0.contextData.actId
+			}, {
+				__index = ShipStatus.TAG_HIDE_ACTIVITY_BOSS
+			}),
+			otherSelectedIds = var_2_1
+		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_FLEET_SHIPINFO, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0.contextData.fleet
-		local var_4_1 = arg_1_0
-		local var_4_2 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_4_3 = var_2_10006.GO_SCENE
-
-		SCENE = var_2_10007
-
-		var_4_2(var_4_1, var_4_3, var_2_10007.SHIPINFO, {
+	arg_1_0:bind(var_0_0.ON_FLEET_SHIPINFO, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 			shipId = arg_4_1.shipId,
 			shipVOs = arg_4_1.shipVOs
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_UPDATE_CUSTOM_FLEET, function(arg_5_0)
-		_ = var_2_10001
-
-		var_2_10001.each(arg_1_0.contextData.fullFleets, function(arg_6_0)
-			getProxy = var_3_10001
-			FleetProxy = var_3_10003
-
-			local var_6_0 = var_3_10001(var_3_10003)
-
-			var_1.updateActivityFleet(var_6_0, arg_1_0.contextData.actId, arg_6_0.id, arg_6_0)
+	arg_1_0:bind(var_0_0.ON_UPDATE_CUSTOM_FLEET, function(arg_5_0)
+		_.each(arg_1_0.contextData.fullFleets, function(arg_6_0)
+			getProxy(FleetProxy):updateActivityFleet(arg_1_0.contextData.actId, arg_6_0.id, arg_6_0)
 
 			return
 		end)
 
 		local var_5_0 = {}
 
-		_ = var_2_10002
-
-		var_2_10002.each(arg_1_0.contextData.fullFleets, function(arg_7_0)
+		_.each(arg_1_0.contextData.fullFleets, function(arg_7_0)
 			var_5_0[arg_7_0.id] = arg_7_0
 
 			return
 		end)
-
-		local var_5_1 = arg_1_0
-		local var_5_2 = var_2.sendNotification
-
-		GAME = var_5
-
-		var_5_2(var_5_1, var_5.EDIT_ACTIVITY_FLEET, {
+		arg_1_0:sendNotification(GAME.EDIT_ACTIVITY_FLEET, {
 			actID = arg_1_0.contextData.actId,
-			fleets = var_5_0
+			fleets = {}
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_TRACE, function(arg_8_0)
-		local var_8_0 = arg_1_0.viewComponent
-
-		var_1.emit(var_8_0, var_0_1.ON_UPDATE_CUSTOM_FLEET)
-
-		local var_8_1 = arg_1_0
-		local var_8_2 = var_1.sendNotification
-
-		GAME = var_4
-
-		var_8_2(var_8_1, var_4.BOSSRUSH_TRACE, {
+	arg_1_0:bind(var_0_0.ON_TRACE, function(arg_8_0)
+		arg_1_0.viewComponent:emit(var_0_0.ON_UPDATE_CUSTOM_FLEET)
+		arg_1_0:sendNotification(GAME.BOSSRUSH_TRACE, {
 			actId = arg_1_0.contextData.actId,
 			seriesId = arg_1_0.contextData.seriesData.id,
 			mode = arg_1_0.contextData.mode
@@ -148,596 +82,317 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_ELITE_RECOMMEND, function(arg_9_0, arg_9_1)
-		local var_9_0 = arg_9_1.index
-		local var_9_1 = arg_1_0.contextData.fleets[var_9_0]
-		local var_9_2
-
-		var_9_2 = var_9_0 == #arg_1_0.contextData.fleets
-		table = var_2_10005
-
-		local var_9_3 = var_2_10005.shallowCopy(var_9_1:GetRawShipIds())
-
-		underscore = var_2_10006
-
-		local var_9_4 = var_2_10006(arg_1_0.contextData.fleets)
-		local var_9_5 = var_6.chain(var_9_4)
-		local var_9_6 = var_6.map(var_9_5, function(arg_10_0)
+	arg_1_0:bind(var_0_0.ON_ELITE_RECOMMEND, function(arg_9_0, arg_9_1)
+		local var_9_0 = arg_1_0.contextData.fleets[arg_9_1.index]
+		local var_9_2 = table.shallowCopy(var_9_0:GetRawShipIds())
+		local var_9_3 = underscore(arg_1_0.contextData.fleets):chain():map(function(arg_10_0)
 			return arg_10_0:GetRawShipIds()
-		end)
-		local var_9_7 = var_6.flatten(var_9_6)
-		local var_9_8 = var_6.value(var_9_7)
+		end):flatten():value()
+		local var_9_4 = getProxy(BayProxy):getRawData()
 
-		getProxy = var_7
-		BayProxy = var_9
+		if arg_9_1.index == #arg_1_0.contextData.fleets then
+			(function(arg_11_0, arg_11_1)
+				for iter_11_0, iter_11_1 in ipairs((getProxy(BayProxy):getActivityRecommendShips(arg_11_0, var_9_3, TeamType.GetTeamShipMax(arg_11_1) - #underscore.filter(var_9_0:GetRawShipIds(), function(arg_12_0)
+					return var_9_4[arg_12_0]:getTeamType() == arg_11_1
+				end), arg_1_0.contextData.actId))) do
+					var_9_0:insertShip(iter_11_1, nil, iter_11_1:getTeamType())
+					table.insert(var_9_2, iter_11_1.id)
+					table.insert(var_9_3, iter_11_1.id)
+				end
 
-		local var_9_9 = var_7(var_9)
-		local var_9_10 = var_7.getRawData(var_9_9)
-
-		local function var_9_11(arg_11_0, arg_11_1)
-			TeamType = var_3_10002
-
-			local var_11_0 = var_3_10002.GetTeamShipMax(arg_11_1)
-
-			underscore = var_3_10003
-
-			local var_11_1 = var_3_10003.filter
-			local var_11_2 = var_9_1
-			local var_11_3 = var_11_0 - #var_11_1(var_5.GetRawShipIds(var_11_2), function(arg_12_0)
-				local var_12_0 = var_9_10[arg_12_0]
-
-				return var_1.getTeamType(var_12_0) == arg_11_1
-			end)
-
-			getProxy = var_3
-			BayProxy = var_5
-
-			local var_11_4 = var_3(var_5)
-			local var_11_5 = var_3.getActivityRecommendShips(var_11_4, arg_11_0, var_9_8, var_11_3, arg_1_0.contextData.actId)
-
-			ipairs = var_4
-
-			for iter_11_0, iter_11_1 in var_4(var_11_5) do
-				local var_11_6 = var_9_1
-
-				var_9.insertShip(var_11_6, iter_11_1, nil, iter_11_1:getTeamType())
-
-				table = var_9
-
-				var_9.insert(var_9_3, iter_11_1.id)
-
-				table = var_9
-
-				var_9.insert(var_9_8, iter_11_1.id)
-			end
-
-			return
-		end
-
-		local var_9_12
-
-		if var_9_0 == #arg_1_0.contextData.fleets then
-			local var_9_13 = var_9_11
-
-			ShipType = var_2_10012
-			var_2_10012 = var_2_10012.SubShipType
-			TeamType = var_2_10013
-
-			var_9_13(var_2_10012, var_2_10013.Submarine)
+				return
+			end)(ShipType.SubShipType, TeamType.Submarine)
 		else
-			local var_9_14 = var_9_11
+			(function(arg_11_0, arg_11_1)
+				for iter_11_0, iter_11_1 in ipairs((getProxy(BayProxy):getActivityRecommendShips(arg_11_0, var_9_3, TeamType.GetTeamShipMax(arg_11_1) - #underscore.filter(var_9_0:GetRawShipIds(), function(arg_12_0)
+					return var_9_4[arg_12_0]:getTeamType() == arg_11_1
+				end), arg_1_0.contextData.actId))) do
+					var_9_0:insertShip(iter_11_1, nil, iter_11_1:getTeamType())
+					table.insert(var_9_2, iter_11_1.id)
+					table.insert(var_9_3, iter_11_1.id)
+				end
 
-			ShipType = var_2_10012
+				return
+			end)(ShipType.MainShipType, TeamType.Main)
+			;(function(arg_11_0, arg_11_1)
+				for iter_11_0, iter_11_1 in ipairs((getProxy(BayProxy):getActivityRecommendShips(arg_11_0, var_9_3, TeamType.GetTeamShipMax(arg_11_1) - #underscore.filter(var_9_0:GetRawShipIds(), function(arg_12_0)
+					return var_9_4[arg_12_0]:getTeamType() == arg_11_1
+				end), arg_1_0.contextData.actId))) do
+					var_9_0:insertShip(iter_11_1, nil, iter_11_1:getTeamType())
+					table.insert(var_9_2, iter_11_1.id)
+					table.insert(var_9_3, iter_11_1.id)
+				end
 
-			local var_9_15 = var_2_10012.MainShipType
-
-			TeamType = var_2_10013
-
-			var_9_14(var_9_15, var_2_10013.Main)
-
-			local var_9_16 = var_9_11
-
-			ShipType = var_9_15
-
-			local var_9_17 = var_9_15.VanguardShipType
-
-			TeamType = var_13
-
-			var_9_16(var_9_17, var_13.Vanguard)
+				return
+			end)(ShipType.VanguardShipType, TeamType.Vanguard)
 		end
 
-		local var_9_18 = arg_1_0.viewComponent
-
-		var_10.updateEliteFleets(var_9_18)
+		arg_1_0.viewComponent:updateEliteFleets()
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_ELITE_CLEAR, function(arg_13_0, arg_13_1)
-		local var_13_0 = arg_1_0.contextData.fleets[arg_13_1.index]
-
-		var_2.clearFleet(var_13_0)
-
-		local var_13_1 = arg_1_0.viewComponent
-
-		var_3.updateEliteFleets(var_13_1)
+	arg_1_0:bind(var_0_0.ON_ELITE_CLEAR, function(arg_13_0, arg_13_1)
+		arg_1_0.contextData.fleets[arg_13_1.index]:clearFleet()
+		arg_1_0.viewComponent:updateEliteFleets()
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_PRECOMBAT, function(arg_14_0)
-		table = var_2_10001
-
-		local var_14_0 = var_2_10001.shallowCopy(arg_1_0.contextData.fleets)
-		local var_14_1 = arg_1_0
-		local var_14_2 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_14_3 = var_2_10005.New
-		local var_14_4 = {}
-
-		BossRushPreCombatMediator = var_2_10008
-		var_14_4.mediator = var_2_10008
-		BossRushPreCombatLayer = var_2_10008
-		var_14_4.viewComponent = var_2_10008
-		var_14_4.data = {
-			seriesData = arg_1_0.contextData.seriesData,
-			actId = arg_1_0.contextData.actId,
-			system = arg_1_0.contextData.system,
-			mode = arg_1_0.contextData.mode,
-			stageIds = arg_1_0.contextData.stageIds,
-			fleets = var_14_0,
-			fleetIndex = arg_1_0.contextData.fleetIndex
-		}
-
-		var_14_2(var_14_1, var_14_3(var_14_4), true)
+	arg_1_0:bind(var_0_0.ON_PRECOMBAT, function(arg_14_0)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = BossRushPreCombatMediator,
+			viewComponent = BossRushPreCombatLayer,
+			data = {
+				seriesData = arg_1_0.contextData.seriesData,
+				actId = arg_1_0.contextData.actId,
+				system = arg_1_0.contextData.system,
+				mode = arg_1_0.contextData.mode,
+				stageIds = arg_1_0.contextData.stageIds,
+				fleets = table.shallowCopy(arg_1_0.contextData.fleets),
+				fleetIndex = arg_1_0.contextData.fleetIndex
+			}
+		}), true)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_COMMANDER_PANEL, function(arg_15_0, arg_15_1)
-		local var_15_0 = arg_1_0
-
-		var_2.openCommanderPanel(var_15_0, arg_15_1, arg_1_0.contextData.fleetIndex)
+	arg_1_0:bind(var_0_0.OPEN_COMMANDER_PANEL, function(arg_15_0, arg_15_1)
+		arg_1_0:openCommanderPanel(arg_15_1, arg_1_0.contextData.fleetIndex)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_SELECT_COMMANDER, function(arg_16_0, arg_16_1, arg_16_2)
-		local var_16_0 = arg_1_0.contextData.fleets[arg_16_1]
-		local var_16_1 = var_4.getCommanders(var_16_0)
-		local var_16_2 = arg_1_0
-		local var_16_3 = var_6.sendNotification
+	arg_1_0:bind(var_0_0.ON_SELECT_COMMANDER, function(arg_16_0, arg_16_1, arg_16_2)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.COMMANDERCAT, {
+			maxCount = 1,
+			mode = CommanderCatScene.MODE_SELECT,
+			activeCommander = arg_1_0.contextData.fleets[arg_16_1]:getCommanders()[arg_16_2],
+			fleetType = CommanderCatScene.FLEET_TYPE_BOSSRUSH,
+			fleets = arg_1_0.contextData.fleets,
+			ignoredIds = {},
+			onCommander = function(arg_17_0)
+				return true
+			end,
+			onSelected = function(arg_18_0, arg_18_1)
+				local var_18_0 = getProxy(CommanderProxy):getCommanderById(arg_18_0[1])
 
-		GAME = var_2_10009
+				for iter_18_0, iter_18_1 in pairs(var_0) do
+					if iter_18_0 == arg_16_1 then
+						for iter_18_2, iter_18_3 in pairs(var_0) do
+							if iter_18_3.groupId == var_18_0.groupId and iter_18_2 ~= arg_16_2 then
+								pg.TipsMgr.GetInstance():ShowTips(i18n("commander_can_not_select_same_group"))
 
-		local var_16_4 = var_2_10009.GO_SCENE
-
-		SCENE = var_2_10010
-
-		local var_16_5 = var_2_10010.COMMANDERCAT
-		local var_16_6 = {
-			maxCount = 1
-		}
-
-		CommanderCatScene = var_2_10012
-		var_16_6.mode = var_2_10012.MODE_SELECT
-		var_16_6.activeCommander = var_16_1[arg_16_2]
-		CommanderCatScene = var_12
-		var_16_6.fleetType = var_12.FLEET_TYPE_BOSSRUSH
-		var_16_6.fleets = var_3
-		var_16_6.ignoredIds = {}
-
-		function var_16_6.onCommander(arg_17_0)
-			return true
-		end
-
-		function var_16_6.onSelected(arg_18_0, arg_18_1)
-			local var_18_0 = arg_18_0[1]
-
-			getProxy = var_3_10003
-			CommanderProxy = var_3_10005
-
-			local var_18_1 = var_3_10003(var_3_10005)
-			local var_18_2 = var_3.getCommanderById(var_18_1, var_18_0)
-
-			pairs = var_3_10005
-
-			for iter_18_0, iter_18_1 in var_3_10005(var_0) do
-				if iter_18_0 == arg_16_1 then
-					pairs = var_10
-
-					for iter_18_2, iter_18_3 in var_10(var_16_1) do
-						if iter_18_3.groupId == var_18_2.groupId and iter_18_2 ~= arg_16_2 then
-							pg = var_15
-
-							local var_18_3 = var_15.TipsMgr.GetInstance()
-							local var_18_4 = var_15.ShowTips
-
-							i18n = var_3_10018
-
-							var_18_4(var_18_3, var_3_10018("commander_can_not_select_same_group"))
-
-							return
+								return
+							end
 						end
-					end
-				else
-					local var_18_5 = iter_18_1:getCommanders()
+					else
+						for iter_18_4, iter_18_5 in pairs((iter_18_1:getCommanders())) do
+							if arg_18_0[1] == iter_18_5.id then
+								pg.TipsMgr.GetInstance():ShowTips(i18n("commander_is_in_fleet_already"))
 
-					pairs = var_3_10011
-
-					for iter_18_4, iter_18_5 in var_3_10011(var_18_5) do
-						if var_18_0 == iter_18_5.id then
-							pg = var_16
-							var_3_10018 = var_16.TipsMgr.GetInstance()
-
-							local var_18_6 = var_16.ShowTips
-
-							i18n = var_3_10019
-
-							var_18_6(var_3_10018, var_3_10019("commander_is_in_fleet_already"))
-
-							return
+								return
+							end
 						end
 					end
 				end
+
+				var_0:updateCommanderByPos(arg_16_2, var_18_0)
+				arg_18_1()
+
+				return
+			end,
+			onQuit = function(arg_19_0)
+				var_0:updateCommanderByPos(arg_16_2, nil)
+				arg_19_0()
+
+				return
 			end
-
-			local var_18_7 = var_0
-
-			var_5.updateCommanderByPos(var_18_7, arg_16_2, var_18_2)
-			arg_18_1()
-
-			return
-		end
-
-		function var_16_6.onQuit(arg_19_0)
-			local var_19_0 = var_0
-
-			var_1.updateCommanderByPos(var_19_0, arg_16_2, nil)
-			arg_19_0()
-
-			return
-		end
-
-		var_16_3(var_16_2, var_16_4, var_16_5, var_16_6)
+		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_COMMANDER_SKILL, function(arg_20_0, arg_20_1)
-		local var_20_0 = arg_1_0
-		local var_20_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_20_2 = var_2_10005.New
-		local var_20_3 = {}
-
-		CommanderSkillMediator = var_2_10008
-		var_20_3.mediator = var_2_10008
-		CommanderSkillLayer = var_2_10008
-		var_20_3.viewComponent = var_2_10008
-		var_20_3.data = {
-			skill = arg_20_1
-		}
-
-		var_20_1(var_20_0, var_20_2(var_20_3))
+	arg_1_0:bind(var_0_0.ON_COMMANDER_SKILL, function(arg_20_0, arg_20_1)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = CommanderSkillMediator,
+			viewComponent = CommanderSkillLayer,
+			data = {
+				skill = arg_20_1
+			}
+		}))
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_SWITCH_MODE, function(arg_21_0, arg_21_1)
-		local var_21_0 = arg_1_0
-
-		var_2.OnSwitchMode(var_21_0, arg_21_1)
+	arg_1_0:bind(var_0_0.ON_SWITCH_MODE, function(arg_21_0, arg_21_1)
+		arg_1_0:OnSwitchMode(arg_21_1)
 
 		return
 	end)
 
 	local var_1_0 = arg_1_0.contextData.seriesData
 
-	arg_1_0.contextData.stageIds = var_1_0:GetExpeditionIds()
+	arg_1_0.contextData.stageIds = arg_1_0.contextData.seriesData:GetExpeditionIds()
 	arg_1_0.contextData.fullFleets = var_1_0:GetFleets()
 
 	if not arg_1_0.contextData.mode then
-		local var_1_1 = "series_mode_flag" .. var_1_0.id
+		local var_1_1 = PlayerPrefs.GetInt("series_mode_flag" .. var_1_0.id, -1)
 
-		PlayerPrefs = var_3
-
-		if var_3.GetInt(var_1_1, -1) ~= -1 then
-			arg_1_0.contextData.mode = var_3
+		if var_1_1 ~= -1 then
+			arg_1_0.contextData.mode = var_1_1
 		end
 	end
 
 	local var_1_2 = arg_1_0.contextData
-	local var_1_3
 
-	if not arg_1_0.contextData.mode then
-		BossRushSeriesData = var_1_3
-		var_1_3 = var_1_3.MODE.MULTIPLE
+	var_1_2.mode = arg_1_0.contextData.mode or BossRushSeriesData.MODE.MULTIPLE
+
+	if not var_1_0:IsSingleFight() then
+		arg_1_0.contextData.mode = BossRushSeriesData.MODE.MULTIPLE
 	end
 
-	var_1_2.mode = var_1_3
+	local var_1_3 = arg_1_0.contextData.fullFleets
 
-	local var_1_4 = var_1_0
-
-	if not var_1_0.IsSingleFight(var_1_4) then
-		local var_1_5 = arg_1_0.contextData
-
-		BossRushSeriesData = var_1_3
-		var_1_5.mode = var_1_3.MODE.MULTIPLE
-	end
-
-	local var_1_6 = arg_1_0.contextData.fullFleets
-	local var_1_7 = arg_1_0.contextData.mode
-
-	BossRushSeriesData = var_1_4
-
-	if var_1_7 == var_1_4.MODE.SINGLE then
+	if arg_1_0.contextData.mode == BossRushSeriesData.MODE.SINGLE then
 		arg_1_0.contextData.fleets = {
-			var_1_6[1],
-			var_1_6[#var_1_6]
+			var_1_3[1],
+			var_1_3[#var_1_3]
 		}
 	else
-		local var_1_8 = arg_1_0.contextData
-		local var_1_9
+		local var_1_4 = arg_1_0.contextData
 
-		if not arg_1_0.contextData.fleets then
-			underscore = var_1_9
-			var_1_9 = var_1_9.rest(var_1_6)
-		end
-
-		var_1_8.fleets = var_1_9
+		var_1_4.fleets = arg_1_0.contextData.fleets or underscore.rest(var_1_3)
 	end
 
-	local var_1_10 = arg_1_0.contextData
-	local var_1_11
+	local var_1_5 = arg_1_0.contextData
 
-	if not arg_1_0.contextData.fleetIndex then
-		var_1_11 = 1
-	end
+	var_1_5.fleetIndex = arg_1_0.contextData.fleetIndex or 1
 
-	var_1_10.fleetIndex = var_1_11
-
-	local var_1_12 = arg_1_0.contextData.fleetIndex
-
-	if #arg_1_0.contextData.fleets < var_1_12 then
+	if arg_1_0.contextData.fleetIndex > #arg_1_0.contextData.fleets then
 		arg_1_0.contextData.fleetIndex = 1
 	end
 
-	if var_1_0.__cname == "CollabrateBossRushSeriesData" then
-		local var_1_13 = arg_1_0.contextData
+	local var_1_6
 
-		SYSTEM_BOSS_RUSH_COLLABRATE = var_4
-		var_1_13.system = var_4
+	if var_1_0.__cname == "CollabrateBossRushSeriesData" then
+		arg_1_0.contextData.system = SYSTEM_BOSS_RUSH_COLLABRATE
 
 		goto label_1_0
+
+		var_1_6 = arg_1_0.contextData
 	end
 
-	local var_1_14 = var_1_0
-	local var_1_15 = var_1_0.GetType(var_1_14)
+	::label_1_0::
 
-	BossRushSeriesData = var_4
-
-	local var_1_16 = var_1_15 == var_4.TYPE.EXTRA
-	local var_1_17 = arg_1_0.contextData
-
-	if not var_1_16 then
-		SYSTEM_BOSS_RUSH = var_1_14
-
-		if not var_1_14 then
-			SYSTEM_BOSS_RUSH_EX = var_1_14
-		end
-
-		var_1_17.system = var_1_14
-
-		::label_1_0::
-
+	if var_1_0:GetType() ~= BossRushSeriesData.TYPE.EXTRA then
+		var_1_6.system = SYSTEM_BOSS_RUSH or SYSTEM_BOSS_RUSH_EX
 		arg_1_0.contextData.actId = var_1_0.actId
 
-		local var_1_18 = arg_1_0.viewComponent
-		local var_1_19 = var_3.setHardShipVOs
-
-		getProxy = var_1_10006
-		BayProxy = var_1_10008
-
-		local var_1_20 = var_1_10006(var_1_10008)
-
-		var_1_19(var_1_18, var_6.getRawData(var_1_20))
+		arg_1_0.viewComponent:setHardShipVOs(getProxy(BayProxy):getRawData())
 
 		return
 	end
 end
 
-function var_0_1.OnSwitchMode(arg_22_0, arg_22_1)
-	assert = var_1_10002
-
-	var_1_10002(arg_22_1)
-
-	local var_22_0 = arg_22_0.contextData.mode
+function var_0_0.OnSwitchMode(arg_22_0, arg_22_1)
+	assert(arg_22_1)
 
 	arg_22_0.contextData.mode = arg_22_1
 
-	local var_22_1 = arg_22_0.contextData.fullFleets
-	local var_22_2 = arg_22_0.contextData.mode
-
-	BossRushSeriesData = var_1_10005
-
-	if var_22_2 == var_1_10005.MODE.SINGLE then
-		if arg_22_1 ~= var_22_0 then
-			if arg_22_0.contextData.fleetIndex < #arg_22_0.contextData.fleets then
-				arg_22_0.contextData.fleetIndex = 1
-			else
-				arg_22_0.contextData.fleetIndex = 2
-			end
+	if arg_22_0.contextData.mode == BossRushSeriesData.MODE.SINGLE then
+		if arg_22_1 ~= arg_22_0.contextData.mode then
+			arg_22_0.contextData.fleetIndex = arg_22_0.contextData.fleetIndex < #arg_22_0.contextData.fleets and 1 or 2
 		end
 
 		arg_22_0.contextData.fleets = {
-			var_22_1[1],
-			var_22_1[#var_22_1]
+			arg_22_0.contextData.fullFleets[1],
+			arg_22_0.contextData.fullFleets[#arg_22_0.contextData.fullFleets]
 		}
 	else
-		local var_22_3 = arg_22_0.contextData
+		arg_22_0.contextData.fleets = underscore.rest(arg_22_0.contextData.fullFleets)
 
-		underscore = var_5
-		var_22_3.fleets = var_5.rest(var_22_1)
-
-		if arg_22_1 ~= var_22_0 and arg_22_0.contextData.fleetIndex == 2 then
+		if arg_22_1 ~= arg_22_0.contextData.mode and arg_22_0.contextData.fleetIndex == 2 then
 			arg_22_0.contextData.fleetIndex = #arg_22_0.contextData.fleets
 		end
 	end
 
-	local var_22_4 = "series_mode_flag" .. arg_22_0.contextData.seriesData.id
-
-	PlayerPrefs = var_5
-
-	var_5.SetInt(var_22_4, arg_22_1)
+	PlayerPrefs.SetInt("series_mode_flag" .. arg_22_0.contextData.seriesData.id, arg_22_1)
 
 	return
 end
 
-function var_0_1.openCommanderPanel(arg_23_0, arg_23_1, arg_23_2)
+function var_0_0.openCommanderPanel(arg_23_0, arg_23_1, arg_23_2)
 	local var_23_0 = arg_23_0.contextData.actId
-	local var_23_1 = arg_23_0
-	local var_23_2 = arg_23_0.addSubLayers
 
-	Context = var_1_10007
-
-	local var_23_3 = var_1_10007.New
-	local var_23_4 = {}
-
-	BossRushCMDFormationMediator = var_1_10010
-	var_23_4.mediator = var_1_10010
-	BossRushCMDFormationView = var_1_10010
-	var_23_4.viewComponent = var_1_10010
-	var_23_4.data = {
-		fleet = arg_23_1,
-		callback = function(arg_24_0)
-			local var_24_0 = arg_24_0.type
-
-			LevelUIConst = var_2_10002
-
-			if var_24_0 == var_2_10002.COMMANDER_OP_SHOW_SKILL then
-				local var_24_1 = arg_23_0.viewComponent
-
-				var_1.emit(var_24_1, var_0_1.ON_COMMANDER_SKILL, arg_24_0.skill)
-			else
-				local var_24_2 = arg_24_0.type
-
-				LevelUIConst = var_2
-
-				if var_24_2 == var_2.COMMANDER_OP_ADD then
-					local var_24_3 = arg_23_0
-
-					var_1.closeCommanderPanel(var_24_3)
-
-					local var_24_4 = arg_23_0.viewComponent
-
-					var_1.emit(var_24_4, var_0_1.ON_SELECT_COMMANDER, arg_23_2, arg_24_0.pos)
+	arg_23_0:addSubLayers(Context.New({
+		mediator = BossRushCMDFormationMediator,
+		viewComponent = BossRushCMDFormationView,
+		data = {
+			fleet = arg_23_1,
+			callback = function(arg_24_0)
+				if arg_24_0.type == LevelUIConst.COMMANDER_OP_SHOW_SKILL then
+					arg_23_0.viewComponent:emit(var_0_0.ON_COMMANDER_SKILL, arg_24_0.skill)
+				elseif arg_24_0.type == LevelUIConst.COMMANDER_OP_ADD then
+					arg_23_0:closeCommanderPanel()
+					arg_23_0.viewComponent:emit(var_0_0.ON_SELECT_COMMANDER, arg_23_2, arg_24_0.pos)
 				else
-					local var_24_5 = arg_23_0
-					local var_24_6 = var_1.sendNotification
-
-					GAME = var_2_10004
-
-					local var_24_7 = var_2_10004.COMMANDER_FORMATION_OP
-					local var_24_8 = {}
-					local var_24_9 = {}
-
-					LevelUIConst = var_2_10007
-					var_24_9.FleetType = var_2_10007.FLEET_TYPE_BOSSRUSH
-					var_24_9.data = arg_24_0
-					var_24_9.fleetId = arg_23_1.id
-					var_24_9.actId = var_23_0
-					var_24_9.fleets = arg_23_0.contextData.fleets
-					var_24_8.data = var_24_9
-
-					var_24_6(var_24_5, var_24_7, var_24_8)
+					arg_23_0:sendNotification(GAME.COMMANDER_FORMATION_OP, {
+						data = {
+							FleetType = LevelUIConst.FLEET_TYPE_BOSSRUSH,
+							data = arg_24_0,
+							fleetId = arg_23_1.id,
+							actId = var_23_0,
+							fleets = arg_23_0.contextData.fleets
+						}
+					})
 				end
+
+				return
 			end
-
-			return
-		end
-	}
-
-	var_23_2(var_23_1, var_23_3(var_23_4))
+		}
+	}))
 
 	return
 end
 
-function var_0_1.closeCommanderPanel(arg_25_0)
-	getProxy = var_1_10001
-	ContextProxy = var_1_10003
+function var_0_0.closeCommanderPanel(arg_25_0)
+	local var_25_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(BossRushCMDFormationMediator)
 
-	local var_25_0 = var_1_10001(var_1_10003)
-	local var_25_1 = var_1.getCurrentContext(var_25_0)
-	local var_25_2 = var_2.getContextByMediator
-
-	BossRushCMDFormationMediator = var_1_10006
-
-	if var_25_2(var_25_1, var_1_10006) then
-		local var_25_3 = arg_25_0
-		local var_25_4 = arg_25_0.sendNotification
-
-		GAME = var_1_10007
-
-		var_25_4(var_25_3, var_1_10007.REMOVE_LAYERS, {
-			context = var_3
+	if var_25_0 then
+		arg_25_0:sendNotification(GAME.REMOVE_LAYERS, {
+			context = var_25_0
 		})
 	end
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_26_0)
-	local var_26_0 = {}
-
-	GAME = var_1_10002
-	var_26_0[1] = var_1_10002.COMMANDER_ACTIVITY_FORMATION_OP_DONE
-	BossRushPreCombatMediator = var_2
-	var_26_0[2] = var_2.ON_FLEET_REFRESHED
-
-	return var_26_0
+function var_0_0.listNotificationInterests(arg_26_0)
+	return {
+		GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE,
+		BossRushPreCombatMediator.ON_FLEET_REFRESHED
+	}
 end
 
-function var_0_1.handleNotification(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_1
-	local var_27_1 = arg_27_1.getName(var_27_0)
-	local var_27_2 = arg_27_1:getBody()
+function var_0_0.handleNotification(arg_27_0, arg_27_1)
+	local var_27_0 = arg_27_1:getName()
+	local var_27_1 = arg_27_1:getBody()
 
-	if var_27_1 == nil then
+	if var_27_0 == nil then
 		-- block empty
-	else
-		GAME = var_27_0
-
-		if var_27_1 == var_27_0.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
-			local var_27_3 = arg_27_0.viewComponent
-
-			var_4.updateEliteFleets(var_27_3)
-		else
-			BossRushPreCombatMediator = var_4
-
-			if var_27_1 == var_4.ON_FLEET_REFRESHED then
-				local var_27_4 = arg_27_0.viewComponent
-
-				var_4.updateEliteFleets(var_27_4)
-			end
-		end
+	elseif var_27_0 == GAME.COMMANDER_ACTIVITY_FORMATION_OP_DONE then
+		arg_27_0.viewComponent:updateEliteFleets()
+	elseif var_27_0 == BossRushPreCombatMediator.ON_FLEET_REFRESHED then
+		arg_27_0.viewComponent:updateEliteFleets()
 	end
 
 	return
 end
 
-function var_0_1.remove(arg_28_0)
+function var_0_0.remove(arg_28_0)
 	return
 end
 
-function var_0_1.getDockCallbackFuncs(arg_29_0, arg_29_1, arg_29_2, arg_29_3, arg_29_4)
-	getProxy = var_1_10005
-	BayProxy = var_1_10007
+function var_0_0.getDockCallbackFuncs(arg_29_0, arg_29_1, arg_29_2, arg_29_3, arg_29_4)
+	local var_29_0 = getProxy(BayProxy)
 
-	local var_29_0 = var_1_10005(var_1_10007)
-
-	local function var_29_1(arg_30_0, arg_30_1)
-		ShipStatus = var_2_10002
-
-		local var_30_0, var_30_1 = var_2_10002.ShipStatusCheck("inActivity", arg_30_0, arg_30_1, {
+	return function(arg_30_0, arg_30_1)
+		local var_30_0, var_30_1 = ShipStatus.ShipStatusCheck("inActivity", arg_30_0, arg_30_1, {
 			inActivity = arg_29_4
 		})
 
@@ -745,81 +400,44 @@ function var_0_1.getDockCallbackFuncs(arg_29_0, arg_29_1, arg_29_2, arg_29_3, ar
 			return var_30_0, var_30_1
 		end
 
-		if arg_29_0 then
-			local var_30_2 = arg_29_0
-
-			if var_4.isSameKind(var_30_2, arg_30_0) then
-				return true
-			end
+		if arg_29_0 and arg_29_0:isSameKind(arg_30_0) then
+			return true
 		end
 
-		ipairs = var_4
-
-		for iter_30_0, iter_30_1 in var_4(arg_29_3) do
-			local var_30_3 = arg_30_0
-			local var_30_4 = arg_30_0.isSameKind
-			local var_30_5 = var_29_0
-
-			if var_30_4(var_30_3, var_12.getShipById(var_30_5, iter_30_1)) then
-				local var_30_6 = false
-
-				i18n = var_2_10010
-				var_2_10010 = var_2_10010("ship_formationMediator_changeNameError_sameShip")
+		for iter_30_0, iter_30_1 in ipairs(arg_29_3) do
+			if arg_30_0:isSameKind(var_29_0:getShipById(iter_30_1)) then
+				local var_30_3 = i18n("ship_formationMediator_changeNameError_sameShip")
 
 				return
 			end
 		end
 
 		return true
-	end
-
-	local function var_29_2(arg_31_0, arg_31_1, arg_31_2)
+	end, function(arg_31_0, arg_31_1, arg_31_2)
 		arg_31_1()
 
 		return
-	end
-
-	local function var_29_3(arg_32_0)
+	end, function(arg_32_0)
 		if arg_29_0 then
-			var_2_10003 = arg_29_1
-
-			var_1.removeShip(var_2_10003, arg_29_0)
+			arg_29_1:removeShip(arg_29_0)
 		end
-
-		local var_32_0
 
 		if #arg_32_0 > 0 then
-			var_2_10003 = var_29_0
-			var_32_0 = var_32_0.getShipById(var_2_10003, arg_32_0[1])
+			local var_32_0 = var_29_0:getShipById(arg_32_0[1])
 
-			local var_32_1 = arg_29_1
-
-			if not var_2.containShip(var_32_1, var_32_0) then
-				local var_32_2 = arg_29_1
-
-				var_2.insertShip(var_32_2, var_32_0, nil, arg_29_2)
+			if not arg_29_1:containShip(var_32_0) then
+				arg_29_1:insertShip(var_32_0, nil, arg_29_2)
 			elseif arg_29_0 then
-				local var_32_3 = arg_29_1
-
-				var_2.insertShip(var_32_3, arg_29_0, nil, arg_29_2)
+				arg_29_1:insertShip(arg_29_0, nil, arg_29_2)
 			end
 
-			local var_32_4 = arg_29_1
-
-			var_2.RemoveUnusedItems(var_32_4)
+			arg_29_1:RemoveUnusedItems()
 		end
 
-		getProxy = var_32_0
-		FleetProxy = var_2_10003
-
-		local var_32_5 = var_32_0(var_2_10003)
-
-		var_1.updateActivityFleet(var_32_5, arg_29_4, arg_29_1.id, arg_29_1)
+		getProxy(FleetProxy):updateActivityFleet(arg_29_4, arg_29_1.id, arg_29_1)
 
 		return
 	end
-
-	return var_29_1, var_29_2, var_29_3
 end
 
-return var_0_1
+return var_0_0

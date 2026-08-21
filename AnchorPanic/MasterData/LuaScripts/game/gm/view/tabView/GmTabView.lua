@@ -43,6 +43,9 @@ function configUI(self)
     self.mBtnMaxQuality = self:getChildGO("mBtnMaxQuality")
 
     self.mBtnFieldExploration = self:getChildGO("mBtnFieldExploration")
+
+    self.mBtnLastFashion = self:getChildGO("mBtnLastFashion")
+
 end
 
 function active(self)
@@ -52,6 +55,9 @@ function active(self)
 
     local cmd = StorageUtil:getString0('gmCmdLog')
     self.mInput.text = cmd or ''
+
+    self:setBtnLabel(self.mBtnFieldExploration, nil, "进入莉莉拉宿舍")
+
 end
 
 function deActive(self)
@@ -72,6 +78,8 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnVsSelf, self.onVsSelf)
     self:addUIEvent(self.mBtnPlayerPrefs, self.onClearPlayerPrefs)
     self:addUIEvent(self.mSaveButton, self.onSave)
+
+    self:addUIEvent(self.mBtnLastFashion, self.onLastFashion)
     -- self:addUIEvent(self.mToogleRuntimeInspector, self.onLoadInspectorHandler)
 
     local function onLoadInspectorHandler(value)
@@ -95,13 +103,37 @@ function addAllUIEvent(self)
 end
 
 function onFieldExploration(self)
-    -- GameDispatcher:dispatchEvent(EventName.OPEN_DANKE_STAGEPANEL)
+    bigHostel.BigHostelManager:setHostelData({
+        model_id = "1503_5_h",
+        heroTid = 1301,
+        main_type = BigHostelConst.SceneUI_Type.INTERACTIVE,
+    })
+    map.MapLoader:setIsForceLoad(true)
+    GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.BIG_HOSTEL)
+end
 
-    -- fieldExploration.FieldExplorationManager:setActivityId(220)
-    -- GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Gold, param = {activity_id = 220}})
+function onLastFashion(self)
+    local heroVoList = hero.HeroManager:getHeroList()
 
-    fieldExploration.FieldExplorationManager:setDupId(20001)
-    GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.FIELD_EXPLORATION)
+    for i = 1, #heroVoList, 1 do
+        local dic = fashion.FashionManager:getHeroFashionConfigDic(fashion.Type.CLOTHES, heroVoList[i].tid)
+        local maxId = 0
+        for k, v in pairs(dic) do
+            local isLock = fashion.FashionManager:getHeroFashionVo(fashion.Type.CLOTHES, heroVoList[i].id, v.fashionId)
+            if v.fashionId > maxId and isLock then
+                maxId = v.fashionId
+            end
+        end
+
+        --if maxId > 0 then
+        GameDispatcher:dispatchEvent(EventName.REQ_HERO_WEAR_FASHION, {
+            fashionType = fashion.Type.CLOTHES,
+            heroId = heroVoList[i].id,
+            fashionId = maxId
+        })
+        --end
+    end
+    gs.Message.Show("穿戴了拥有战员拥有的最大ID时装，还不谢谢我ヾ(･ω･`｡)")
 end
 
 function onSave(self)

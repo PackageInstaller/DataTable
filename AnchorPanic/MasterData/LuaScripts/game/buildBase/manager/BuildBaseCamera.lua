@@ -239,6 +239,9 @@ function updateCamera(self)
             self.cameraSpeed.y = gs.Mathf.Lerp(self.cameraSpeed.y, self.cameraSpeed.y + (abs * gs.Time.deltaTime * self.speedAddFloat * self.dir.y), 1)
             self.cameraSpeed.y = self:getCameraSpeed(self.dir.y, self.cameraSpeed.y)
         end
+
+        self.clickPos.x = self.curDrag_pos.x
+        self.clickPos.y = self.curDrag_pos.y
     else
         if math.abs(self.cameraSpeed.x) <= 0.05 and math.abs(self.cameraSpeed.y) <= 0.05 and not self.mouseDown then
             return true
@@ -261,9 +264,6 @@ function updateCamera(self)
     if math.abs(self.cameraSpeed.x) > 0 or math.abs(self.cameraSpeed.y) > 0 then
         gs.TransQuick:MoveTowardsrotation(self.sceneCameraTrans, self.mCamera_moveY, self.mCamera_moveX, 0, 0.1)
     end
-
-    self.clickPos.x = self.curDrag_pos.x
-    self.clickPos.y = self.curDrag_pos.y
 
     return false
 end

@@ -1,119 +1,42 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandGiveGiftCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandGiveGiftCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.itemId
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 21613, {
-		ship_id = var_1_0,
-		gift_id = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(21613, {
+		ship_id = var_1_0.id,
+		gift_id = var_1_0.itemId
 	}, 21614, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			IslandItem = var_2_0
+			local var_2_0 = IslandItem.StaticGetUsageArg(var_0)
+			local var_2_1 = getProxy(IslandProxy):GetIsland():GetCharacterAgency():GetShipById(var_0)
 
-			local var_2_0 = var_2_0.StaticGetUsageArg(var_1_1)
+			if var_2_1:IsFavoriteGift(var_0) then
+				local var_2_2 = IslandConst.GIFT_INDEX_FAVORITE or IslandConst.GIFT_INDEX_COMMON
 
-			getProxy = var_2_10002
-			IslandProxy = var_2_10004
-			var_2_10004 = var_2_10002(var_2_10004)
-			var_2_10004 = var_2.GetIsland(var_2_10004)
-
-			local var_2_1 = var_2.GetCharacterAgency(var_2_10004)
-			local var_2_2 = var_2.GetShipById(var_2_1, var_1_0)
-
-			if var_3.IsFavoriteGift(var_2_2, var_1_1) then
-				IslandConst = var_2_10004
-
-				if not var_2_10004.GIFT_INDEX_FAVORITE then
-					IslandConst = var_2_10004
-					var_2_10004 = var_2_10004.GIFT_INDEX_COMMON
-				end
-
-				ipairs = var_2_1
-
-				for iter_2_0, iter_2_1 in var_2_1(var_2_0) do
-					if var_2_10004 == iter_2_0 then
-						local var_2_3 = iter_2_1[1]
-						local var_2_4 = iter_2_1[2]
-
-						ipairs = var_2_10012
-
-						for iter_2_2, iter_2_3 in var_2_10012(var_2_4) do
-							IslandShipStatus = var_2_10017
-							var_2_10017 = var_2_10017.New
-
-							local var_2_5 = {
+				for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+					if var_2_2 == iter_2_0 then
+						for iter_2_2, iter_2_3 in ipairs(iter_2_1[2]) do
+							({
 								id = iter_2_3
-							}
+							}).start_time = pg.TimeMgr.GetInstance():GetServerTime()
 
-							pg = var_2_10020
-
-							local var_2_6 = var_2_10020.TimeMgr.GetInstance()
-
-							var_2_5.start_time = var_2_10020.GetServerTime(var_2_6)
-							var_2_10017 = var_2_10017(var_2_5)
-							var_2_10020 = var_3
-
-							var_3.AddStatus(var_2_10020, var_2_10017)
+							var_2_1:AddStatus((IslandShipStatus.New({
+								id = iter_2_3
+							})))
 						end
 
-						var_3:AddEnergy(var_2_3)
+						var_2_1:AddEnergy(iter_2_1[1])
 					end
 				end
 
-				getProxy = var_5
-				IslandProxy = var_7
-
-				local var_2_7 = var_5(var_7)
-				local var_2_8 = var_5.GetIsland(var_2_7)
-				local var_2_9 = var_5.GetInventoryAgency(var_2_8)
-
-				var_5.RemoveItem(var_2_9, var_1_1, 1)
-
-				local var_2_10 = arg_1_0
-				local var_2_11 = var_6.sendNotification
-
-				GAME = var_9
-
-				var_2_11(var_2_10, var_9.ISLAND_GIVE_GIFT_DONE)
-
-				pg = var_2_11
-
-				local var_2_12 = var_2_11.GameTrackerMgr.GetInstance()
-				local var_2_13 = var_6.Record
-
-				GameTrackerBuilder = var_9
-
-				var_2_13(var_2_12, var_9.BuildIslandShipGiveGift(var_1_0, var_1_1))
-
-				pg = var_2_13
-
-				local var_2_14 = var_2_13.TipsMgr.GetInstance()
-				local var_2_15 = var_6.ShowTips
-
-				i18n = var_9
-
-				var_2_15(var_2_14, var_9("island_give_gift_success"))
+				getProxy(IslandProxy):GetIsland():GetInventoryAgency():RemoveItem(var_0, 1)
+				arg_1_0:sendNotification(GAME.ISLAND_GIVE_GIFT_DONE)
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandShipGiveGift(var_0, var_0))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("island_give_gift_success"))
 
 				if false then
-					pg = var_2_0
-
-					local var_2_16 = var_2_0.TipsMgr.GetInstance()
-					local var_2_17 = var_1.ShowTips
-
-					ERROR_MESSAGE = var_2_10004
-
-					var_2_17(var_2_16, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 				end
 
 				return
@@ -124,4 +47,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

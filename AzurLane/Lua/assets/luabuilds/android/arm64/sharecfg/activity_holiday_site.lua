@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_holiday_site") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_holiday_site"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_holiday_site = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_holiday_site
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_holiday_site = rawget(pg, "activity_holiday_site") or setmetatable({
+	__name = "activity_holiday_site"
+}, confNEO)
+pg.activity_holiday_site.all = {
 	1,
 	2,
 	3,
@@ -84,25 +61,11 @@ var_0_3.all = {
 	60,
 	61
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_holiday_site = {}
+pg.base = pg.base or {}
+pg.base.activity_holiday_site = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_holiday_site
-
-	var_1_0[1] = {
+	pg.base.activity_holiday_site[1] = {
 		name = "货物码头区",
 		type = 4,
 		id = 1,
@@ -121,11 +84,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_holiday_site
-
-	var_1_1[2] = {
+	pg.base.activity_holiday_site[2] = {
 		name = "别墅生活区",
 		type = 4,
 		id = 2,
@@ -144,11 +103,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_holiday_site
-
-	var_1_2[3] = {
+	pg.base.activity_holiday_site[3] = {
 		name = "室内娱乐区",
 		type = 4,
 		id = 3,
@@ -167,11 +122,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_holiday_site
-
-	var_1_3[4] = {
+	pg.base.activity_holiday_site[4] = {
 		name = "室外娱乐区",
 		type = 4,
 		id = 4,
@@ -190,11 +141,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_holiday_site
-
-	var_1_4[5] = {
+	pg.base.activity_holiday_site[5] = {
 		name = "海滩区",
 		type = 4,
 		id = 5,
@@ -213,11 +160,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_holiday_site
-
-	var_1_5[6] = {
+	pg.base.activity_holiday_site[6] = {
 		name = "灯塔区",
 		type = 4,
 		id = 6,
@@ -236,11 +179,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_holiday_site
-
-	var_1_6[7] = {
+	pg.base.activity_holiday_site[7] = {
 		name = "货物码头区",
 		jumpto = "HolidayVillaWharfUI",
 		type = 2,
@@ -252,11 +191,7 @@ var_0_3.base.activity_holiday_site = {}
 			9999
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_holiday_site
-
-	var_1_7[8] = {
+	pg.base.activity_holiday_site[8] = {
 		name = "合成大舰船",
 		jumpto = "",
 		type = 2,
@@ -268,11 +203,7 @@ var_0_3.base.activity_holiday_site = {}
 			9999
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_holiday_site
-
-	var_1_8[9] = {
+	pg.base.activity_holiday_site[9] = {
 		name = "啾啾打捞团",
 		jumpto = "",
 		type = 2,
@@ -284,11 +215,7 @@ var_0_3.base.activity_holiday_site = {}
 			9999
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_holiday_site
-
-	var_1_9[10] = {
+	pg.base.activity_holiday_site[10] = {
 		name = "啾啾温泉",
 		jumpto = "",
 		type = 2,
@@ -300,11 +227,7 @@ var_0_3.base.activity_holiday_site = {}
 			9999
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_holiday_site
-
-	var_1_10[11] = {
+	pg.base.activity_holiday_site[11] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA2",
 		type = 1,
@@ -316,11 +239,7 @@ var_0_3.base.activity_holiday_site = {}
 			-317
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_holiday_site
-
-	var_1_11[12] = {
+	pg.base.activity_holiday_site[12] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA3",
 		type = 1,
@@ -332,11 +251,7 @@ var_0_3.base.activity_holiday_site = {}
 			344.7
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_holiday_site
-
-	var_1_12[13] = {
+	pg.base.activity_holiday_site[13] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA4",
 		type = 1,
@@ -348,11 +263,7 @@ var_0_3.base.activity_holiday_site = {}
 			-214.9
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_holiday_site
-
-	var_1_13[14] = {
+	pg.base.activity_holiday_site[14] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA5",
 		type = 1,
@@ -364,11 +275,7 @@ var_0_3.base.activity_holiday_site = {}
 			263.2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_holiday_site
-
-	var_1_14[15] = {
+	pg.base.activity_holiday_site[15] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA6",
 		type = 1,
@@ -380,11 +287,7 @@ var_0_3.base.activity_holiday_site = {}
 			526.7
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_holiday_site
-
-	var_1_15[16] = {
+	pg.base.activity_holiday_site[16] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA7",
 		type = 1,
@@ -396,11 +299,7 @@ var_0_3.base.activity_holiday_site = {}
 			713
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_holiday_site
-
-	var_1_16[17] = {
+	pg.base.activity_holiday_site[17] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA8",
 		type = 1,
@@ -412,11 +311,7 @@ var_0_3.base.activity_holiday_site = {}
 			-214.9
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_holiday_site
-
-	var_1_17[18] = {
+	pg.base.activity_holiday_site[18] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA9",
 		type = 1,
@@ -428,11 +323,7 @@ var_0_3.base.activity_holiday_site = {}
 			231.1
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_holiday_site
-
-	var_1_18[19] = {
+	pg.base.activity_holiday_site[19] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA10",
 		type = 1,
@@ -444,11 +335,7 @@ var_0_3.base.activity_holiday_site = {}
 			353.9
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_holiday_site
-
-	var_1_19[20] = {
+	pg.base.activity_holiday_site[20] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA11",
 		type = 1,
@@ -460,11 +347,7 @@ var_0_3.base.activity_holiday_site = {}
 			-9.9
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_holiday_site
-
-	var_1_20[21] = {
+	pg.base.activity_holiday_site[21] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA12",
 		type = 1,
@@ -476,11 +359,7 @@ var_0_3.base.activity_holiday_site = {}
 			-164.1
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_holiday_site
-
-	var_1_21[22] = {
+	pg.base.activity_holiday_site[22] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA13",
 		type = 1,
@@ -492,11 +371,7 @@ var_0_3.base.activity_holiday_site = {}
 			-472.2
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_holiday_site
-
-	var_1_22[23] = {
+	pg.base.activity_holiday_site[23] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA14",
 		type = 1,
@@ -508,11 +383,7 @@ var_0_3.base.activity_holiday_site = {}
 			0.7
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_holiday_site
-
-	var_1_23[24] = {
+	pg.base.activity_holiday_site[24] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA15",
 		type = 1,
@@ -524,11 +395,7 @@ var_0_3.base.activity_holiday_site = {}
 			-245.7
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_holiday_site
-
-	var_1_24[25] = {
+	pg.base.activity_holiday_site[25] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA16",
 		type = 1,
@@ -540,11 +407,7 @@ var_0_3.base.activity_holiday_site = {}
 			668.1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_holiday_site
-
-	var_1_25[26] = {
+	pg.base.activity_holiday_site[26] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA17",
 		type = 1,
@@ -556,11 +419,7 @@ var_0_3.base.activity_holiday_site = {}
 			532.7
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_holiday_site
-
-	var_1_26[27] = {
+	pg.base.activity_holiday_site[27] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA18",
 		type = 1,
@@ -572,11 +431,7 @@ var_0_3.base.activity_holiday_site = {}
 			713
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_holiday_site
-
-	var_1_27[28] = {
+	pg.base.activity_holiday_site[28] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA19",
 		type = 1,
@@ -588,11 +443,7 @@ var_0_3.base.activity_holiday_site = {}
 			177.8
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_holiday_site
-
-	var_1_28[29] = {
+	pg.base.activity_holiday_site[29] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA20",
 		type = 1,
@@ -604,11 +455,7 @@ var_0_3.base.activity_holiday_site = {}
 			-538.1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_holiday_site
-
-	var_1_29[30] = {
+	pg.base.activity_holiday_site[30] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA21",
 		type = 1,
@@ -620,11 +467,7 @@ var_0_3.base.activity_holiday_site = {}
 			139.7
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_holiday_site
-
-	var_1_30[31] = {
+	pg.base.activity_holiday_site[31] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA22",
 		type = 1,
@@ -636,11 +479,7 @@ var_0_3.base.activity_holiday_site = {}
 			44.9
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_holiday_site
-
-	var_1_31[32] = {
+	pg.base.activity_holiday_site[32] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA23",
 		type = 1,
@@ -652,11 +491,7 @@ var_0_3.base.activity_holiday_site = {}
 			451.9
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_holiday_site
-
-	var_1_32[33] = {
+	pg.base.activity_holiday_site[33] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA24",
 		type = 1,
@@ -668,11 +503,7 @@ var_0_3.base.activity_holiday_site = {}
 			526.7
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_holiday_site
-
-	var_1_33[34] = {
+	pg.base.activity_holiday_site[34] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA25",
 		type = 1,
@@ -684,11 +515,7 @@ var_0_3.base.activity_holiday_site = {}
 			303
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_holiday_site
-
-	var_1_34[35] = {
+	pg.base.activity_holiday_site[35] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA26",
 		type = 1,
@@ -700,11 +527,7 @@ var_0_3.base.activity_holiday_site = {}
 			682.1
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_holiday_site
-
-	var_1_35[36] = {
+	pg.base.activity_holiday_site[36] = {
 		name = "",
 		jumpto = "HAIDAOBIESHUDUJIAJIHUA27",
 		type = 1,
@@ -716,11 +539,7 @@ var_0_3.base.activity_holiday_site = {}
 			470.6
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_holiday_site
-
-	var_1_36[41] = {
+	pg.base.activity_holiday_site[41] = {
 		name = "",
 		type = 3,
 		id = 41,
@@ -742,11 +561,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_holiday_site
-
-	var_1_37[42] = {
+	pg.base.activity_holiday_site[42] = {
 		name = "",
 		type = 3,
 		id = 42,
@@ -768,11 +583,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_holiday_site
-
-	var_1_38[43] = {
+	pg.base.activity_holiday_site[43] = {
 		name = "",
 		type = 3,
 		id = 43,
@@ -794,11 +605,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_holiday_site
-
-	var_1_39[44] = {
+	pg.base.activity_holiday_site[44] = {
 		name = "",
 		type = 3,
 		id = 44,
@@ -820,11 +627,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_holiday_site
-
-	var_1_40[45] = {
+	pg.base.activity_holiday_site[45] = {
 		name = "",
 		type = 3,
 		id = 45,
@@ -846,11 +649,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_holiday_site
-
-	var_1_41[46] = {
+	pg.base.activity_holiday_site[46] = {
 		name = "",
 		type = 3,
 		id = 46,
@@ -872,11 +671,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_holiday_site
-
-	var_1_42[47] = {
+	pg.base.activity_holiday_site[47] = {
 		name = "",
 		type = 3,
 		id = 47,
@@ -898,11 +693,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_holiday_site
-
-	var_1_43[48] = {
+	pg.base.activity_holiday_site[48] = {
 		name = "",
 		type = 3,
 		id = 48,
@@ -924,11 +715,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_holiday_site
-
-	var_1_44[49] = {
+	pg.base.activity_holiday_site[49] = {
 		name = "",
 		type = 3,
 		id = 49,
@@ -950,11 +737,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_holiday_site
-
-	var_1_45[50] = {
+	pg.base.activity_holiday_site[50] = {
 		name = "",
 		type = 3,
 		id = 50,
@@ -976,11 +759,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_holiday_site
-
-	var_1_46[51] = {
+	pg.base.activity_holiday_site[51] = {
 		name = "",
 		type = 3,
 		id = 51,
@@ -1002,11 +781,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_holiday_site
-
-	var_1_47[52] = {
+	pg.base.activity_holiday_site[52] = {
 		name = "",
 		type = 3,
 		id = 52,
@@ -1028,11 +803,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_holiday_site
-
-	var_1_48[53] = {
+	pg.base.activity_holiday_site[53] = {
 		name = "",
 		type = 3,
 		id = 53,
@@ -1054,11 +825,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_holiday_site
-
-	var_1_49[54] = {
+	pg.base.activity_holiday_site[54] = {
 		name = "",
 		type = 3,
 		id = 54,
@@ -1080,11 +847,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_holiday_site
-
-	var_1_50[55] = {
+	pg.base.activity_holiday_site[55] = {
 		name = "",
 		type = 3,
 		id = 55,
@@ -1106,11 +869,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_holiday_site
-
-	var_1_51[56] = {
+	pg.base.activity_holiday_site[56] = {
 		name = "",
 		type = 3,
 		id = 56,
@@ -1132,11 +891,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_holiday_site
-
-	var_1_52[57] = {
+	pg.base.activity_holiday_site[57] = {
 		name = "",
 		type = 3,
 		id = 57,
@@ -1158,11 +913,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_holiday_site
-
-	var_1_53[58] = {
+	pg.base.activity_holiday_site[58] = {
 		name = "",
 		type = 3,
 		id = 58,
@@ -1184,11 +935,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_holiday_site
-
-	var_1_54[59] = {
+	pg.base.activity_holiday_site[59] = {
 		name = "",
 		type = 3,
 		id = 59,
@@ -1210,11 +957,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_holiday_site
-
-	var_1_55[60] = {
+	pg.base.activity_holiday_site[60] = {
 		name = "",
 		type = 3,
 		id = 60,
@@ -1236,8 +979,7 @@ var_0_3.base.activity_holiday_site = {}
 			}
 		}
 	}
-	pg = var_1_55
-	var_1_55.base.activity_holiday_site[61] = {
+	pg.base.activity_holiday_site[61] = {
 		name = "",
 		type = 3,
 		id = 61,

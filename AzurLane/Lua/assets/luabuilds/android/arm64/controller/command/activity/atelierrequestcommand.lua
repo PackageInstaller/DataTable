@@ -1,53 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AtelierRequestCommand", pm.SimpleCommand)
 
-local var_0_0 = "AtelierRequestCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.body
-
-	pg = var_1_10003
-
-	local var_1_1 = var_1_10003.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_1_1, 26051, {
-		act_id = var_1_0
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(26051, {
+		act_id = arg_1_1.body
 	}, 26052, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			ActivityProxy = var_2_10003
+			local var_2_0 = getProxy(ActivityProxy):getActivityById(var_0)
 
-			local var_2_0 = var_1(var_2_10003)
-
-			var_2_10004 = var_1.getActivityById(var_2_0, var_1_0)
-
-			var_1.InitItems(var_2_10004, arg_2_0.items)
-
-			var_2_10004 = var_1
-
-			var_1.InitFormulaUseCounts(var_2_10004, arg_2_0.recipes)
-
-			var_2_10004 = var_1
-
-			var_1.UpdateBuffSlots(var_2_10004, arg_2_0.slots)
-
-			getProxy = var_2
-			ActivityProxy = var_2_10004
-			var_2_10004 = var_2(var_2_10004)
-
-			var_2.updateActivity(var_2_10004, var_1)
+			var_2_0:InitItems(arg_2_0.items)
+			var_2_0:InitFormulaUseCounts(arg_2_0.recipes)
+			var_2_0:UpdateBuffSlots(arg_2_0.slots)
+			getProxy(ActivityProxy):updateActivity(var_2_0)
 		else
-			pg = var_1
-
-			local var_2_1 = var_1.TipsMgr.GetInstance()
-			local var_2_2 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -56,4 +21,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

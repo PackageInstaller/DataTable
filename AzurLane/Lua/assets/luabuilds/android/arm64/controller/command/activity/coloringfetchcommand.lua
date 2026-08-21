@@ -1,35 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ColoringFetchCommand", pm.SimpleCommand)
 
-local var_0_0 = "ColoringFetchCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).activityId
-
-	pg = var_1_0
-
-	local var_1_2 = var_1_0.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_2, 26008, {
-		act_id = var_1_1
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(26008, {
+		act_id = arg_1_1:getBody().activityId
 	}, 26001, function(arg_2_0)
-		getProxy = var_2_10001
-		ColoringProxy = var_2_10003
-
-		local var_2_0 = var_2_10001(var_2_10003)
-
-		var_1.netUpdateData(var_2_0, arg_2_0)
-
-		local var_2_1 = arg_1_0
-		local var_2_2 = var_2.sendNotification
-
-		GAME = var_5
-
-		var_2_2(var_2_1, var_5.COLORING_FETCH_DONE)
+		getProxy(ColoringProxy):netUpdateData(arg_2_0)
+		arg_1_0:sendNotification(GAME.COLORING_FETCH_DONE)
 
 		return
 	end)
@@ -37,4 +13,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

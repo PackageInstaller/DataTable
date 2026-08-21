@@ -1,31 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandInteractUnit", import(".IslandSceneUnit"))
 
-local var_0_0 = "IslandInteractUnit"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandSceneUnit"))
-
-function var_0_1.OnAttach(arg_1_0, arg_1_1)
+function var_0_0.OnAttach(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1 or arg_1_0._go
 
-	GetOrAddComponent = var_1_10003
-	arg_1_0.signalReceiver = var_1_10003(var_1_0, "DftCommonSignalReceiver")
+	arg_1_0.signalReceiver = GetOrAddComponent(arg_1_1 or arg_1_0._go, "DftCommonSignalReceiver")
 
-	local var_1_1 = arg_1_0.signalReceiver
-
-	var_3.SetCommonEvent(var_1_1, function(arg_2_0)
+	arg_1_0.signalReceiver:SetCommonEvent(function(arg_2_0)
 		if arg_1_0.ignoreSignal then
 			return
 		end
 
-		switch = var_1
-
-		var_1(arg_2_0.stringParameter, {
+		switch(arg_2_0.stringParameter, {
 			TimelineEnd = function()
-				local var_3_0 = arg_1_0
-
-				var_0.Op(var_3_0, "WorldObjectInterActionEnd", arg_1_0.id, arg_1_0.view.player.id)
+				arg_1_0:Op("WorldObjectInterActionEnd", arg_1_0.id, arg_1_0.view.player.id)
 
 				return
 			end
@@ -34,45 +21,35 @@ function var_0_1.OnAttach(arg_1_0, arg_1_1)
 		return
 	end)
 
-	GetOrAddComponent = var_3
-
-	local var_1_2 = var_1_0
-
-	typeof = var_6
-	UnityEngine = var_1_10008
-	arg_1_0.director = var_3(var_1_2, var_6(var_1_10008.Playables.PlayableDirector))
+	arg_1_0.director = GetOrAddComponent(var_1_0, typeof(UnityEngine.Playables.PlayableDirector))
 	arg_1_0.cachePlayerTransformInfoDic = {}
 
 	return
 end
 
-function var_0_1.SetTimelineDic(arg_4_0, arg_4_1)
+function var_0_0.SetTimelineDic(arg_4_0, arg_4_1)
 	arg_4_0.timelineDic = arg_4_1
 
 	return
 end
 
-function var_0_1.GetTargetRoot(arg_5_0)
+function var_0_0.GetTargetRoot(arg_5_0)
 	return arg_5_0._go.transform
 end
 
-function var_0_1.GetPlayerParent(arg_6_0)
+function var_0_0.GetPlayerParent(arg_6_0)
 	return arg_6_0:GetTargetRoot()
 end
 
-function var_0_1.StartInteract(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4, arg_7_5, arg_7_6, arg_7_7)
+function var_0_0.StartInteract(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4, arg_7_5, arg_7_6, arg_7_7)
 	if arg_7_6 then
-		local var_7_0 = arg_7_0.director
-
-		var_8.Stop(var_7_0)
+		arg_7_0.director:Stop()
 	end
 
 	arg_7_1:ActiveOrDisactive(false)
 
 	if arg_7_7 then
-		local var_7_1 = arg_7_0.behaviourTreeOwner.graph.blackboard
-
-		var_8.SetVariableValue(var_7_1, "inProgress", true)
+		arg_7_0.behaviourTreeOwner.graph.blackboard:SetVariableValue("inProgress", true)
 
 		arg_7_0.ignoreSignal = false
 	else
@@ -82,98 +59,64 @@ function var_0_1.StartInteract(arg_7_0, arg_7_1, arg_7_2, arg_7_3, arg_7_4, arg_
 	arg_7_0:SetPlayerTransform(arg_7_1, arg_7_0:GetPlayerParent())
 
 	if arg_7_5 and #arg_7_5 > 1 then
-		local var_7_2 = arg_7_0.behaviourTreeOwner.graph.blackboard
-
-		var_8.SetVariableValue(var_7_2, arg_7_5[1], arg_7_5[2])
+		arg_7_0.behaviourTreeOwner.graph.blackboard:SetVariableValue(arg_7_5[1], arg_7_5[2])
 	end
 
 	arg_7_0.director.playableAsset = arg_7_0.timelineDic[arg_7_3]
 
-	local var_7_3 = arg_7_0.director
+	local var_7_0 = arg_7_0.director
 
 	if arg_7_4.is_loop == 1 then
-		UnityEngine = var_7_4
-
-		local var_7_4
-
-		if not var_7_4.Playables.DirectorWrapMode.Loop then
-			UnityEngine = var_7_4
-			var_7_4 = var_7_4.Playables.DirectorWrapMode.None
-		end
-
-		var_7_3.extrapolationMode = var_7_4
+		var_7_0.extrapolationMode = UnityEngine.Playables.DirectorWrapMode.Loop or UnityEngine.Playables.DirectorWrapMode.None
 
 		arg_7_0:BindPlayer(arg_7_2, arg_7_1)
 		arg_7_0:BindSelf(arg_7_4)
 
 		arg_7_0.director.enabled = true
 
-		local var_7_5 = arg_7_0.director
-
-		var_8.Play(var_7_5)
+		arg_7_0.director:Play()
 
 		return
 	end
 end
 
-function var_0_1.EndInteract(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
+function var_0_0.EndInteract(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
 	if arg_8_3 then
 		local var_8_0 = arg_8_0.director
-		local var_8_1 = arg_8_0.director.extrapolationMode
 
-		UnityEngine = var_1_10007
+		if arg_8_0.director.extrapolationMode == UnityEngine.Playables.DirectorWrapMode.None then
+			var_8_0.time = arg_8_0.director.duration or 0
 
-		local var_8_2
+			arg_8_0.director:Evaluate()
+			arg_8_0.director:Stop()
 
-		if var_8_1 ~= var_1_10007.Playables.DirectorWrapMode.None or not arg_8_0.director.duration then
-			var_8_2 = 0
-		end
+			arg_8_0.director.enabled = false
 
-		var_8_0.time = var_8_2
+			arg_8_0:BindPlayer(arg_8_2, nil)
 
-		local var_8_3 = arg_8_0.director
+			if arg_8_1 then
+				arg_8_1:ActiveOrDisactive(true)
+			end
 
-		var_5.Evaluate(var_8_3)
+			if arg_8_4 then
+				arg_8_0.behaviourTreeOwner.graph.blackboard:SetVariableValue("inProgress", false)
+				onNextTick(function()
+					arg_8_0:RevertPlayerTransform(arg_8_1)
 
-		local var_8_4 = arg_8_0.director
-
-		var_5.Stop(var_8_4)
-
-		arg_8_0.director.enabled = false
-	end
-
-	arg_8_0:BindPlayer(arg_8_2, nil)
-
-	if arg_8_1 then
-		arg_8_1:ActiveOrDisactive(true)
-	end
-
-	if arg_8_4 then
-		local var_8_5 = arg_8_0.behaviourTreeOwner.graph.blackboard
-
-		var_5.SetVariableValue(var_8_5, "inProgress", false)
-
-		onNextTick = var_5
-
-		var_5(function()
-			local var_9_0 = arg_8_0
-
-			var_0.RevertPlayerTransform(var_9_0, arg_8_1)
+					return
+				end)
+			else
+				arg_8_0:RevertPlayerTransform(arg_8_1)
+			end
 
 			return
-		end)
-	else
-		arg_8_0:RevertPlayerTransform(arg_8_1)
+		end
 	end
-
-	return
 end
 
-function var_0_1.InitStatus(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+function var_0_0.InitStatus(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	if arg_10_3 and #arg_10_3 > 1 then
-		local var_10_0 = arg_10_0.behaviourTreeOwner.graph.blackboard
-
-		var_4.SetVariableValue(var_10_0, arg_10_3[1], arg_10_3[2])
+		arg_10_0.behaviourTreeOwner.graph.blackboard:SetVariableValue(arg_10_3[1], arg_10_3[2])
 	end
 
 	arg_10_0.director.playableAsset = arg_10_0.timelineDic[arg_10_1]
@@ -183,110 +126,52 @@ function var_0_1.InitStatus(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	arg_10_0.ignoreSignal = true
 	arg_10_0.director.enabled = true
 
-	local var_10_1 = arg_10_0.director
-
-	var_4.Play(var_10_1)
+	arg_10_0.director:Play()
 
 	arg_10_0.director.time = arg_10_0.director.duration
 
-	local var_10_2 = arg_10_0.director
-
-	var_4.Evaluate(var_10_2)
-
-	local var_10_3 = arg_10_0.director
-
-	var_4.Stop(var_10_3)
+	arg_10_0.director:Evaluate()
+	arg_10_0.director:Stop()
 
 	return
 end
 
-function var_0_1.BindSelf(arg_11_0, arg_11_1)
-	TimelineHelper = var_1_10002
+function var_0_0.BindSelf(arg_11_0, arg_11_1)
+	local var_11_0 = TimelineHelper.GetGroupTracks(arg_11_0.director):ToTable()
 
-	local var_11_0 = var_1_10002.GetGroupTracks(arg_11_0.director)
-	local var_11_1 = #var_2.ToTable(var_11_0)
+	if #var_11_0 > 0 then
+		local var_11_1 = TimelineHelper.GetChildTracks(var_11_0[1]):ToTable()
 
-	if 0 < var_11_1 then
-		TimelineHelper = var_11_1
-
-		local var_11_2 = var_11_1.GetChildTracks(var_2[1])
-		local var_11_3 = var_3.ToTable(var_11_2)
-
-		ipairs = var_4
-
-		for iter_11_0, iter_11_1 in var_4(var_11_3) do
-			table = var_1_10009
-
-			local var_11_4
-
-			var_1_10009, var_11_4 = var_1_10009.Find(arg_11_1.binding_track, function(arg_12_0, arg_12_1)
+		for iter_11_0, iter_11_1 in ipairs(var_11_1) do
+			local var_11_2, var_11_3 = table.Find(arg_11_1.binding_track, function(arg_12_0, arg_12_1)
 				return arg_12_1 == iter_11_0
 			end)
 
-			if var_11_4 ~= nil then
-				if arg_11_1.binding_path[var_11_4] == "" then
-					var_1_10014 = arg_11_0
+			if var_11_3 ~= nil then
+				if arg_11_1.binding_path[var_11_3] == "" then
+					local var_11_4 = arg_11_0:GetTargetRoot() or arg_11_0:GetTargetRoot():Find(arg_11_1.binding_path[var_11_3])
 
-					local var_11_5
-
-					if not arg_11_0.GetTargetRoot(var_1_10014) then
-						var_1_10014 = arg_11_0
-						var_1_10014 = arg_11_0.GetTargetRoot(var_1_10014)
-						var_11_5 = var_12.Find(var_1_10014, var_11)
-					end
-
-					if var_11_5 then
-						TimelineHelper = var_1_10013
-						var_1_10013 = var_1_10013.SetAutoBinding
-
-						local var_11_6 = arg_11_0.director
-						local var_11_7 = iter_11_1
-
-						go = var_1_10017
-
-						var_1_10013(var_11_6, var_11_7, var_1_10017(var_11_5))
+					if var_11_4 then
+						TimelineHelper.SetAutoBinding(arg_11_0.director, iter_11_1, go(var_11_4))
 					end
 				end
 			end
 		end
 
-		ipairs = var_4
+		local var_11_5 = arg_11_1.control_binding or {}
 
-		local var_11_8
+		for iter_11_2, iter_11_3 in ipairs(var_11_5) do
+			local var_11_6 = iter_11_3[2]
+			local var_11_7 = iter_11_3[3] or ""
+			local var_11_8 = var_11_1[iter_11_3[1]]
 
-		if not arg_11_1.control_binding then
-			var_11_8 = {}
-		end
+			if var_11_1[iter_11_3[1]] and var_11_6 and var_11_6 > 0 then
+				if var_11_7 == "" then
+					local var_11_9 = arg_11_0:GetTargetRoot() or arg_11_0:GetTargetRoot():Find(var_11_7)
 
-		for iter_11_2, iter_11_3 in var_4(var_11_8) do
-			local var_11_9 = iter_11_3[1]
-			local var_11_10 = iter_11_3[2]
-			local var_11_11
-
-			if not iter_11_3[3] then
-				var_11_11 = ""
-			end
-
-			if var_11_3[var_11_9] and var_11_10 and var_11_10 > 0 then
-				local var_11_13
-
-				if var_11_11 ~= "" or not arg_11_0:GetTargetRoot() then
-					local var_11_12 = arg_11_0:GetTargetRoot()
-
-					var_11_13 = var_13.Find(var_11_12, var_11_11)
-				end
-
-				if var_11_13 then
-					TimelineHelper = var_1_10014
-					var_1_10014 = var_1_10014.SetControlBinding
-
-					local var_11_14 = arg_11_0.director
-					local var_11_15 = var_12
-					local var_11_16 = var_11_10 - 1
-
-					go = var_1_10019
-
-					var_1_10014(var_11_14, var_11_15, var_11_16, var_1_10019(var_11_13))
+					if var_11_9 then
+						TimelineHelper.SetControlBinding(arg_11_0.director, var_11_8, var_11_6 - 1, go(var_11_9))
+					end
 				end
 			end
 		end
@@ -295,41 +180,17 @@ function var_0_1.BindSelf(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.BindPlayer(arg_13_0, arg_13_1, arg_13_2)
-	TimelineHelper = var_1_10003
+function var_0_0.BindPlayer(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = TimelineHelper.GetGroupTracks(arg_13_0.director):ToTable()
+	local var_13_1 = arg_13_2 and go(arg_13_2._go.transform:GetChild(0))
+	local var_13_2 = arg_13_2 and arg_13_2._go
 
-	local var_13_0 = var_1_10003.GetGroupTracks(arg_13_0.director)
-	local var_13_1 = var_3.ToTable(var_13_0)
-
-	if arg_13_2 then
-		::label_13_0::
-
-		go = var_1_10004
-
-		local var_13_2 = arg_13_2._go.transform
-
-		var_1_10004 = var_1_10004(var_6.GetChild(var_13_2, 0))
-	end
-
-	local var_13_3 = arg_13_2 and arg_13_2._go
-
-	if arg_13_1 < #var_13_1 then
-		TimelineHelper = var_6
-
-		local var_13_4 = var_6.GetChildTracks(var_13_1[arg_13_1 + 1])
-		local var_13_5 = var_6.ToTable(var_13_4)
-
-		ipairs = var_1_10007
-
-		for iter_13_0, iter_13_1 in var_1_10007(var_13_5) do
+	if arg_13_1 < #var_13_0 then
+		for iter_13_0, iter_13_1 in ipairs((TimelineHelper.GetChildTracks(var_13_0[arg_13_1 + 1]):ToTable())) do
 			if iter_13_0 == 1 then
-				TimelineHelper = var_1_10012
-
-				var_1_10012.SetAutoBinding(arg_13_0.director, iter_13_1, var_13_3)
+				TimelineHelper.SetAutoBinding(arg_13_0.director, iter_13_1, var_13_2)
 			else
-				TimelineHelper = var_1_10012
-
-				var_1_10012.SetAutoBinding(arg_13_0.director, iter_13_1, var_1_10004)
+				TimelineHelper.SetAutoBinding(arg_13_0.director, iter_13_1, var_13_1)
 			end
 		end
 	end
@@ -337,61 +198,34 @@ function var_0_1.BindPlayer(arg_13_0, arg_13_1, arg_13_2)
 	return
 end
 
-function var_0_1.SetPlayerTransform(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = arg_14_0.cachePlayerTransformInfoDic
-
-	var_14_0[arg_14_1.id] = {
+function var_0_0.SetPlayerTransform(arg_14_0, arg_14_1, arg_14_2)
+	arg_14_0.cachePlayerTransformInfoDic[arg_14_1.id] = {
 		position = arg_14_1._tf.position,
 		rotation = arg_14_1._tf.rotation
 	}
-	setParent = var_14_0
 
-	var_14_0(arg_14_1._tf, arg_14_2)
+	setParent(arg_14_1._tf, arg_14_2)
 
-	local var_14_1 = arg_14_1._tf
-
-	Vector3 = var_4
-	var_14_1.localPosition = var_4.zero
-
-	local var_14_2 = arg_14_1._tf
-
-	Quaternion = var_4
-	var_14_2.localRotation = var_4.identity
-	GetOrAddComponent = var_14_2
-
-	local var_14_3 = arg_14_1._go
-
-	typeof = var_6
-	UnityEngine = var_1_10008
-	var_14_2(var_14_3, var_6(var_1_10008.Animator)).enabled = true
+	arg_14_1._tf.localPosition = Vector3.zero
+	arg_14_1._tf.localRotation = Quaternion.identity
+	GetOrAddComponent(arg_14_1._go, typeof(UnityEngine.Animator)).enabled = true
 
 	return
 end
 
-function var_0_1.RevertPlayerTransform(arg_15_0, arg_15_1)
+function var_0_0.RevertPlayerTransform(arg_15_0, arg_15_1)
 	if not arg_15_1 or not arg_15_0.cachePlayerTransformInfoDic[arg_15_1.id] then
 		return
 	end
 
-	setParent = var_1_10002
-
-	var_1_10002(arg_15_1._tf, arg_15_0.view.root)
+	setParent(arg_15_1._tf, arg_15_0.view.root)
 
 	arg_15_1._tf.position = arg_15_0.cachePlayerTransformInfoDic[arg_15_1.id].position
-
-	local var_15_0 = arg_15_1._tf
-
-	var_15_0.rotation = arg_15_0.cachePlayerTransformInfoDic[arg_15_1.id].rotation
-	GetOrAddComponent = var_15_0
-
-	local var_15_1 = arg_15_1._go
-
-	typeof = var_5
-	UnityEngine = var_1_10007
-	var_15_0(var_15_1, var_5(var_1_10007.Animator)).enabled = false
+	arg_15_1._tf.rotation = arg_15_0.cachePlayerTransformInfoDic[arg_15_1.id].rotation
+	GetOrAddComponent(arg_15_1._go, typeof(UnityEngine.Animator)).enabled = false
 	arg_15_0.cachePlayerTransformInfoDic[arg_15_1.id] = nil
 
 	return
 end
 
-return var_0_1
+return var_0_0

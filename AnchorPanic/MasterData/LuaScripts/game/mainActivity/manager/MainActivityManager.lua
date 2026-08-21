@@ -58,7 +58,9 @@ end
 function parseMainActivityConfigData(self)
     self.mMainActivityList = {}
     self.mMainActivityDic = {}
+
     local baseData = RefMgr:getData("activity_data")
+
     for key, data in pairs(baseData) do
         local vo = mainActivity.MainActivityVo.new()
         vo:parseConfigData(key, data)
@@ -106,6 +108,21 @@ function parseActivityTaskConfigData(self)
     end
 end
 
+-- 解析主题活动主界面配置
+function getTrialConfigVo(self, dupId)
+    if not self.m_TrialConfigDic then
+        self.m_TrialConfigDic = {}
+        local baseData = RefMgr:getData("try_hero_data")
+        for key, config in pairs(baseData) do
+            local vo = LuaPoolMgr:poolGet(mainActivity.MainActivityTrialConfigVo)
+            vo:parseConfigData(key, config)
+            self.m_TrialConfigDic[key] = vo
+        end
+    end
+
+    return self.m_TrialConfigDic[dupId]
+end
+
 -- 解析活动签到服务端数据
 function parseActivitySignMsg(self, msg)
     if msg then
@@ -138,12 +155,6 @@ function parseTaskMsg(self, msg)
     GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_TASK_UPDATE)
 end
 
-function updateTrialStateMsg(self, msg)
-    self.mIsFirstPassTrial = msg.is_pass == 0
-
-    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
-end
-
 --获取是否是第一次播放
 function getIsFirstEnter(self)
     return self.mIsFirstEnter
@@ -151,10 +162,6 @@ end
 --修改第一次播放状态
 function setIsFirstEnter(self)
     self.mIsFirstEnter = false
-end
---是否显示红点
-function getIsShowTrial(self)
-    return self.mIsFirstPassTrial
 end
 
 -- 更新单个任务数据

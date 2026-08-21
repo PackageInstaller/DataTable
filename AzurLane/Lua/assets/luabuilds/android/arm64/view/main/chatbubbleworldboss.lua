@@ -1,57 +1,24 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChatBubbleWorldBoss")
+﻿local var_0_0 = class("ChatBubbleWorldBoss")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	tf = var_1_10003
-	arg_1_0.tf = var_1_10003(arg_1_1)
-	defaultValue = var_3
-	arg_1_0.interactable = var_3(arg_1_2, true)
-	findTF = var_3
+	arg_1_0.tf = tf(arg_1_1)
+	arg_1_0.interactable = defaultValue(arg_1_2, true)
+	arg_1_0.nameTF = findTF(arg_1_0.tf, "desc/name"):GetComponent("Text")
+	arg_1_0.face = findTF(arg_1_0.tf, "face/content")
+	arg_1_0.circle = findTF(arg_1_0.tf, "shipicon/frame")
+	arg_1_0.timeTF = findTF(arg_1_0.tf, "time"):GetComponent("Text")
+	arg_1_0.headTF = findTF(arg_1_0.tf, "shipicon/icon"):GetComponent("Image")
+	arg_1_0.stars = findTF(arg_1_0.tf, "shipicon/stars")
+	arg_1_0.star = findTF(arg_1_0.stars, "star")
+	arg_1_0.dutyTF = findTF(arg_1_0.tf, "desc/duty")
+	arg_1_0.channel = findTF(arg_1_0.tf, "desc/channel")
+	arg_1_0.chatframe = findTF(arg_1_0.tf, "chat_fram")
+	arg_1_0.chatContent = findTF(arg_1_0.tf, "chat_fram/Text"):GetComponent("Text")
+	arg_1_0.chatframeSel = findTF(arg_1_0.tf, "chat_fram/sel")
+	arg_1_0.chatframeUnsel = findTF(arg_1_0.tf, "chat_fram/unsel")
 
-	local var_1_0 = var_3(arg_1_0.tf, "desc/name")
-
-	arg_1_0.nameTF = var_3.GetComponent(var_1_0, "Text")
-	findTF = var_3
-	arg_1_0.face = var_3(arg_1_0.tf, "face/content")
-	findTF = var_3
-	arg_1_0.circle = var_3(arg_1_0.tf, "shipicon/frame")
-	findTF = var_3
-
-	local var_1_1 = var_3(arg_1_0.tf, "time")
-
-	arg_1_0.timeTF = var_3.GetComponent(var_1_1, "Text")
-	findTF = var_3
-
-	local var_1_2 = var_3(arg_1_0.tf, "shipicon/icon")
-
-	arg_1_0.headTF = var_3.GetComponent(var_1_2, "Image")
-	findTF = var_3
-	arg_1_0.stars = var_3(arg_1_0.tf, "shipicon/stars")
-	findTF = var_3
-	arg_1_0.star = var_3(arg_1_0.stars, "star")
-	findTF = var_3
-	arg_1_0.dutyTF = var_3(arg_1_0.tf, "desc/duty")
-	findTF = var_3
-	arg_1_0.channel = var_3(arg_1_0.tf, "desc/channel")
-	findTF = var_3
-	arg_1_0.chatframe = var_3(arg_1_0.tf, "chat_fram")
-	findTF = var_3
-
-	local var_1_3 = var_3(arg_1_0.tf, "chat_fram/Text")
-
-	arg_1_0.chatContent = var_3.GetComponent(var_1_3, "Text")
-	findTF = var_3
-	arg_1_0.chatframeSel = var_3(arg_1_0.tf, "chat_fram/sel")
-	findTF = var_3
-	arg_1_0.chatframeUnsel = var_3(arg_1_0.tf, "chat_fram/unsel")
-	setActive = var_3
-
-	var_3(arg_1_0.chatframeSel, true)
-
-	setActive = var_3
-
-	var_3(arg_1_0.chatframeUnsel, false)
+	setActive(arg_1_0.chatframeSel, true)
+	setActive(arg_1_0.chatframeUnsel, false)
 
 	return
 end
@@ -63,255 +30,117 @@ function var_0_0.update(arg_2_0, arg_2_1)
 
 	arg_2_0.data = arg_2_1
 
-	local var_2_0 = false
-
 	if arg_2_1.player.icon == 0 then
-		var_3.icon = 101171
+		arg_2_1.player.icon = 101171
 	end
 
-	local var_2_1 = var_3.propose
+	local var_2_0 = arg_2_1.player.propose
 
-	arg_2_0.nameTF.text = var_3.name
+	arg_2_0.nameTF.text = arg_2_1.player.name
+	arg_2_0.timeTF.text = getOfflineTimeStamp(arg_2_1.timestamp)
 
-	local var_2_2 = arg_2_1.timestamp
+	local var_2_1 = pg.ship_data_statistics[arg_2_1.player.icon]
 
-	getOfflineTimeStamp = var_6
-
-	local var_2_3
-
-	var_2_3.text, var_2_3 = var_6(var_2_2), arg_2_0.timeTF
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.ship_data_statistics[var_3.icon]
-
-	Ship = var_8
-
-	local var_2_5 = var_8.New({
-		configId = var_2_4.id
-	})
-	local var_2_6 = arg_2_0.stars.childCount
-	local var_2_7 = var_2_5:getStar()
-
-	for iter_2_0 = var_2_6, var_2_7 - 1 do
-		cloneTplTo = var_1_10015
-
-		var_1_10015(arg_2_0.star, arg_2_0.stars)
+	for iter_2_0 = arg_2_0.stars.childCount, Ship.New({
+		configId = pg.ship_data_statistics[arg_2_1.player.icon].id
+	}):getStar() - 1 do
+		cloneTplTo(arg_2_0.star, arg_2_0.stars)
 	end
 
-	local var_2_8 = arg_2_0.stars.childCount
-
-	for iter_2_1 = 0, var_2_8 - 1 do
-		local var_2_9 = arg_2_0.stars
-		local var_2_10 = var_15.GetChild(var_2_9, iter_2_1).gameObject
-
-		var_16.SetActive(var_2_10, iter_2_1 < var_2_4.star)
+	for iter_2_1 = 0, arg_2_0.stars.childCount - 1 do
+		arg_2_0.stars:GetChild(iter_2_1).gameObject:SetActive(iter_2_1 < var_2_1.star)
 	end
 
 	if arg_2_0.channel then
-		GetSpriteFromAtlas = var_11
-
-		local var_2_11 = "channel"
-
-		ChatConst = iter_2_1
-
-		local var_2_12 = var_11(var_2_11, iter_2_1.GetChannelSprite(arg_2_1.type) .. "_1920")
-
-		setImageSprite = var_12
-
-		var_12(arg_2_0.channel, var_2_12, true)
+		setImageSprite(arg_2_0.channel, GetSpriteFromAtlas("channel", ChatConst.GetChannelSprite(arg_2_1.type) .. "_1920"), true)
 	end
 
-	local var_2_13 = arg_2_0.headTF
+	arg_2_0.headTF.color = Color.New(1, 1, 1, 0)
 
-	Color = var_12
-	var_2_13.color = var_12.New(1, 1, 1, 0)
-	LoadSpriteAsync = var_2_13
-
-	var_2_13("qicon/" .. var_3:getPainting(), function(arg_3_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_2_0.headTF) then
-			local var_3_0 = arg_2_0.headTF
-
-			Color = var_2_10002
-			var_3_0.color = var_2_10002.white
-
-			local var_3_1 = arg_2_0.headTF
-			local var_3_2
-
-			if not arg_3_0 then
-				::label_3_0::
-
-				LoadSprite = var_3_2
-				var_3_2 = var_3_2("heroicon/unknown")
-			end
-
-			var_3_1.sprite = var_3_2
+	LoadSpriteAsync("qicon/" .. arg_2_1.player:getPainting(), function(arg_3_0)
+		if not IsNil(arg_2_0.headTF) then
+			arg_2_0.headTF.color = Color.white
+			arg_2_0.headTF.sprite = arg_3_0 or LoadSprite("heroicon/unknown")
 		end
 
 		return
 	end)
 
-	local var_2_14
-
 	if arg_2_0.dutyTF then
-		setActive = var_2_14
+		setActive(arg_2_0.dutyTF, arg_2_1.player.duty)
 
-		var_2_14(arg_2_0.dutyTF, var_3.duty)
-
-		if var_3.duty then
-			GetSpriteFromAtlas = var_2_14
-			var_2_14 = var_2_14("dutyicon", var_3.duty)
-			setImageSprite = var_12
-
-			var_12(arg_2_0.dutyTF, var_2_14, true)
+		if arg_2_1.player.duty then
+			setImageSprite(arg_2_0.dutyTF, GetSpriteFromAtlas("dutyicon", arg_2_1.player.duty), true)
 		end
 	end
 
-	AttireFrame = var_2_14
+	local var_2_2 = AttireFrame.attireFrameRes(arg_2_1.player, false, AttireConst.TYPE_ICON_FRAME, var_2_0)
 
-	local var_2_15 = var_2_14.attireFrameRes
-	local var_2_16 = var_3
-	local var_2_17 = var_2_0
-
-	AttireConst = var_15
-
-	local var_2_18 = var_2_15(var_2_16, var_2_17, var_15.TYPE_ICON_FRAME, var_2_1)
-
-	PoolMgr = var_12
-
-	local var_2_19 = var_12.GetInstance()
-
-	var_12.GetPrefab(var_2_19, "IconFrame/" .. var_2_18, var_2_18, true, function(arg_4_0)
-		IsNil = var_2_10001
-
-		if var_2_10001(arg_2_0.tf) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_2_2, var_2_2, true, function(arg_4_0)
+		if IsNil(arg_2_0.tf) then
 			return
 		end
 
 		if arg_2_0.circle and arg_2_0.data then
-			arg_4_0.name = var_2_18
-			findTF = var_1
+			arg_4_0.name = var_2_2
+			findTF(arg_4_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			local var_4_0 = var_1(arg_4_0.transform, "icon")
-			local var_4_1 = var_1.GetComponent
-
-			typeof = var_2_10005
-			Image = var_2_10007
-			var_4_1(var_4_0, var_2_10005(var_2_10007)).raycastTarget = false
-			setParent = var_3
-
-			var_3(arg_4_0, arg_2_0.circle, false)
+			setParent(arg_4_0, arg_2_0.circle, false)
 		else
-			PoolMgr = var_1
-
-			local var_4_2 = var_1.GetInstance()
-
-			var_1.ReturnPrefab(var_4_2, "IconFrame/" .. var_2_18, var_2_18, arg_4_0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_2_2, var_2_2, arg_4_0)
 		end
 
 		return
 	end)
 
-	local var_2_20 = arg_2_1.args.wordBossId
+	local var_2_3 = arg_2_1.args.wordBossId
 
-	onButton = var_2_16
-
-	local var_2_21
-	local var_2_22 = arg_2_0.chatframe
-
-	local function var_2_23()
+	onButton(nil, arg_2_0.chatframe, function()
 		if not arg_2_0.interactable then
-			pg = var_0
-
-			local var_5_0 = var_0.TipsMgr.GetInstance()
-			local var_5_1 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_5_1(var_5_0, var_2_10003("world_boss_inbattle"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_inbattle"))
 
 			return
 		end
-
-		local var_5_4
 
 		if arg_2_1.args.isDeath then
-			local var_5_2 = arg_2_0
-
-			var_5_4.SetGray(var_5_2)
-
-			pg = var_5_4
-
-			local var_5_3 = var_5_4.TipsMgr.GetInstance()
-
-			var_5_4 = var_5_4.ShowTips
-			i18n = var_2_10003
-
-			var_5_4(var_5_3, var_2_10003("world_boss_none"))
+			arg_2_0:SetGray()
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_none"))
 
 			return
 		end
 
-		pg = var_5_4
-
-		local var_5_5 = var_5_4.WorldBossTipMgr.GetInstance()
-
-		var_0.OnClick(var_5_5, "", var_2_20, arg_2_1.args.lastTime, function()
-			local var_6_0 = arg_2_0
-
-			var_0.SetGray(var_6_0)
+		pg.WorldBossTipMgr.GetInstance():OnClick("", var_2_3, arg_2_1.args.lastTime, function()
+			arg_2_0:SetGray()
 
 			return
 		end)
 
 		return
-	end
-
-	SFX_PANEL = var_18
-
-	var_2_16(var_2_21, var_2_22, var_2_23, var_18)
+	end, SFX_PANEL)
 
 	if arg_2_1.args.isDeath then
 		arg_2_0:SetGray()
 	end
 
-	local var_2_24 = arg_2_0.chatContent
-
-	i18n = var_2_19
-	var_2_24.text = var_2_19("world_boss_ad", arg_2_1.args.bossName, arg_2_1.args.level)
+	arg_2_0.chatContent.text = i18n("world_boss_ad", arg_2_1.args.bossName, arg_2_1.args.level)
 
 	return
 end
 
 function var_0_0.SetGray(arg_7_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_7_0.chatframeSel, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_7_0.chatframeUnsel, true)
+	setActive(arg_7_0.chatframeSel, false)
+	setActive(arg_7_0.chatframeUnsel, true)
 
 	return
 end
 
 function var_0_0.dispose(arg_8_0)
-	removeOnButton = var_1_10001
+	removeOnButton(arg_8_0.chatframe)
 
-	var_1_10001(arg_8_0.chatframe)
+	if arg_8_0.circle.childCount > 0 then
+		local var_8_0 = arg_8_0.circle:GetChild(0).gameObject
 
-	local var_8_0 = arg_8_0.circle.childCount
-
-	if 0 < var_8_0 then
-		local var_8_1 = arg_8_0.circle
-		local var_8_2 = var_1.GetChild(var_8_1, 0).gameObject
-
-		PoolMgr = var_2
-
-		local var_8_3 = var_2.GetInstance()
-
-		var_2.ReturnPrefab(var_8_3, "IconFrame/" .. var_8_2.name, var_8_2.name, var_8_2)
+		PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_8_0.name, var_8_0.name, var_8_0)
 	end
 
 	return

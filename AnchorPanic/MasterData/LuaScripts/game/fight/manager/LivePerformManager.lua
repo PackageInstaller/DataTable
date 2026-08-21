@@ -58,6 +58,9 @@ function playStandby(self, liveId)
         if showVo and showVo.standbySound and showVo.standbySound ~= "" then
             self:playSoundEff(liveId, showVo.standbySound)
         end
+        if showVo and showVo.standbyCv and showVo.standbyCv ~= "" then
+            self:playCv(liveId, showVo.standbyCv)
+        end
     end)
 end
 
@@ -74,10 +77,9 @@ function playEnter(self, liveId, type, finishCall)
         return
     end
 
-    local heroDic = fight.SceneManager:getSideThingIDs(1)
-    for i, id in ipairs(heroDic) do
-        local thingVo = fight.SceneManager:getThing(id)
-        if thingVo and not thingVo:isDead() then
+    local heroDic = fight.SceneManager:getAllThing()
+    for i, thingVo in pairs(heroDic) do
+        if thingVo and not thingVo:isDead() and liveId ~= thingVo.id then
             thingVo:setVisible(false)
         end
     end
@@ -85,17 +87,19 @@ function playEnter(self, liveId, type, finishCall)
     fight.FightCamera:focusOnLive(liveId)
 
     local function playComplete()
-        local heroDic = fight.SceneManager:getSideThingIDs(1)
-        for i, id in ipairs(heroDic) do
-            local thingVo = fight.SceneManager:getThing(id)
-            if thingVo and not thingVo:isDead() then
+        local heroDic = fight.SceneManager:getAllThing()
+        for i, thingVo in pairs(heroDic) do
+            if thingVo and not thingVo:isDead() and liveId ~= thingVo.id then
                 thingVo:setVisible(true)
             end
         end
-        if livething:getLiveVo():getModelID() == "6316_b_2" then
-            AudioManager:playMusicById(65)
-        end
 
+        local liveVo = livething:getLiveVo()
+        local modelId = liveVo:getModelID()
+        local showVo = self:getBossShowVo(modelId)
+        if showVo and showVo.enterMusic and showVo.enterMusic ~= "" then
+            self:playMusic(showVo.enterMusic)
+        end
 
         fight.FightCamera:checkReturnCamera()
         finishCall()
@@ -135,10 +139,9 @@ function playLeave(self, liveId, finishCall)
         return
     end
 
-    local heroDic = fight.SceneManager:getSideThingIDs(1)
-    for i, id in ipairs(heroDic) do
-        local thingVo = fight.SceneManager:getThing(id)
-        if thingVo and not thingVo:isDead() then
+    local heroDic = fight.SceneManager:getAllThing()
+    for i, thingVo in pairs(heroDic) do
+        if thingVo and not thingVo:isDead() and liveId ~= thingVo.id then
             thingVo:setVisible(false)
         end
     end
@@ -146,10 +149,9 @@ function playLeave(self, liveId, finishCall)
     fight.FightCamera:focusOnLive(liveId)
 
     local function playComplete()
-        local heroDic = fight.SceneManager:getSideThingIDs(1)
-        for i, id in ipairs(heroDic) do
-            local thingVo = fight.SceneManager:getThing(id)
-            if thingVo and not thingVo:isDead() then
+        local heroDic = fight.SceneManager:getAllThing()
+        for i, thingVo in pairs(heroDic) do
+            if thingVo and not thingVo:isDead() and liveId ~= thingVo.id then
                 thingVo:setVisible(true)
             end
         end
@@ -171,6 +173,10 @@ function playLeave(self, liveId, finishCall)
 
         if showVo and showVo.leaveSound and showVo.leaveSound ~= "" then
             self:playSoundEff(liveId, showVo.leaveSound)
+        end
+
+        if showVo and showVo.leveaCv and showVo.leveaCv ~= "" then
+            self:playCv(liveId, showVo.leveaCv)
         end
     end)
 end
@@ -226,6 +232,18 @@ function playEffTravel(self, liveId, point, effName, lenght)
     travel:setSimplePoint(point)
     travel:start()
     table.insert(self.m_travelDict, travel.mc_sn)
+end
+
+-- 播放CV
+function playCv(self, liveId, soundName)
+    AudioManager:playCvByCVPath(UrlManager:getCVSoundPath(soundName))
+end
+
+-- 播放bgm
+function playMusic(self, musicId)
+    if musicId > 0 then
+        AudioManager:playMusicById(musicId)
+    end
 end
 
 -- 播放音效

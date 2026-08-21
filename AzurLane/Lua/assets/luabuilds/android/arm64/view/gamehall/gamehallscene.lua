@@ -1,490 +1,227 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GameHallScene", import("..base.BaseUI"))
 
-local var_0_0 = "GameHallScene"
+var_0_0.open_with_list = false
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-var_0_1.open_with_list = false
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "GameHallUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0:initTopUI()
 	arg_3_0:initHomeUI()
 
-	findTF = var_1
+	local var_3_0 = findTF(arg_3_0._tf, "ad/container")
 
-	local var_3_0 = var_1(arg_3_0._tf, "ad/container")
+	arg_3_0.charController = GameHallContainerUI.New(var_3_0)
+	arg_3_0.freeCoinTf = findTF(var_3_0, "content/top/free")
 
-	GameHallContainerUI = var_1_10002
-	arg_3_0.charController = var_1_10002.New(var_3_0)
-	findTF = var_2
-	arg_3_0.freeCoinTf = var_2(var_3_0, "content/top/free")
-	onButton = var_2
+	onButton(arg_3_0, arg_3_0.freeCoinTf, function()
+		local var_4_9000
+		local var_4_0 = getProxy(GameRoomProxy)
 
-	local var_3_1 = arg_3_0
-	local var_3_2 = arg_3_0.freeCoinTf
+		if var_4_0 == 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("game_icon_max_full"))
+		elseif pg.gameset.game_coin_max.key_value - var_4_0.getCoin(var_4_9000) < pg.gameset.game_coin_initial.key_value then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("game_icon_max"),
+				onYes = function()
+					arg_3_0:emit(GameHallMediator.GET_WEEKLY_COIN)
 
-	local function var_3_3()
-		getProxy = var_2_10000
-		GameRoomProxy = var_2_10002
-
-		local var_4_0 = var_2_10000(var_2_10002)
-		local var_4_1 = var_0.getCoin(var_4_0)
-
-		pg = var_2_10001
-
-		local var_4_2 = var_2_10001.gameset.game_coin_max.key_value - var_4_1
-
-		pg = var_2_10003
-
-		local var_4_3 = var_2_10003.gameset.game_coin_initial.key_value
-
-		if var_4_2 == 0 then
-			pg = var_2_10004
-
-			local var_4_4 = var_2_10004.TipsMgr.GetInstance()
-
-			var_2_10004 = var_2_10004.ShowTips
-			i18n = var_2_10007
-
-			var_2_10004(var_4_4, var_2_10007("game_icon_max_full"))
-		elseif var_4_2 < var_4_3 then
-			pg = var_2_10004
-
-			local var_4_5 = var_2_10004.MsgboxMgr.GetInstance()
-			local var_4_6 = var_4.ShowMsgBox
-
-			var_2_10007 = {}
-			i18n = var_2_10008
-			var_2_10007.content = var_2_10008("game_icon_max")
-
-			function var_2_10007.onYes()
-				local var_5_0 = arg_3_0
-				local var_5_1 = var_0.emit
-
-				GameHallMediator = var_3_10003
-
-				var_5_1(var_5_0, var_3_10003.GET_WEEKLY_COIN)
-
-				return
-			end
-
-			function var_2_10007.onNo()
-				return
-			end
-
-			var_4_6(var_4_5, var_2_10007)
+					return
+				end,
+				onNo = function()
+					return
+				end
+			})
 		else
-			local var_4_7 = arg_3_0
-			local var_4_8 = var_4.emit
-
-			GameHallMediator = var_2_10007
-
-			var_4_8(var_4_7, var_2_10007.GET_WEEKLY_COIN)
+			arg_3_0:emit(GameHallMediator.GET_WEEKLY_COIN)
 		end
 
 		return
-	end
+	end, SFX_CONFIRM)
 
-	SFX_CONFIRM = var_1_10007
+	arg_3_0.listPanelTf = findTF(arg_3_0._tf, "ad/listPanel")
+	arg_3_0.listPanel = GameHallListPanel.New(arg_3_0.listPanelTf, arg_3_0)
 
-	var_2(var_3_1, var_3_2, var_3_3, var_1_10007)
+	arg_3_0.listPanel:setVisible(GameHallScene.open_with_list)
 
-	findTF = var_2
-	arg_3_0.listPanelTf = var_2(arg_3_0._tf, "ad/listPanel")
-	GameHallListPanel = var_2
-	arg_3_0.listPanel = var_2.New(arg_3_0.listPanelTf, arg_3_0)
-
-	local var_3_4 = arg_3_0.listPanel
-	local var_3_5 = var_2.setVisible
-
-	GameHallScene = var_5
-
-	var_3_5(var_3_4, var_5.open_with_list)
-
-	GameHallScene = var_3_5
-	var_3_5.open_with_list = false
-	findTF = var_3_5
-	arg_3_0.exchangePanelTf = var_3_5(arg_3_0._tf, "ad/exchangePanel")
-	findTF = var_2
-	arg_3_0.parentTf = var_2(arg_3_0._tf, "ad")
-	GameHallExchangePanel = var_2
-	arg_3_0.exchangePanel = var_2.New(arg_3_0.exchangePanelTf, arg_3_0.parentTf, arg_3_0)
+	GameHallScene.open_with_list = false
+	arg_3_0.exchangePanelTf = findTF(arg_3_0._tf, "ad/exchangePanel")
+	arg_3_0.parentTf = findTF(arg_3_0._tf, "ad")
+	arg_3_0.exchangePanel = GameHallExchangePanel.New(arg_3_0.exchangePanelTf, arg_3_0.parentTf, arg_3_0)
 
 	arg_3_0:openExchangePanel(false)
 	arg_3_0:changeTitle(false)
 
-	Application = var_2
+	local var_3_1 = Application.targetFrameRate or 60
 
-	local var_3_6
-
-	if not var_2.targetFrameRate then
-		var_3_6 = 60
+	if var_3_1 > 60 then
+		var_3_1 = 60
 	end
 
-	if 60 < var_3_6 then
-		var_3_6 = 60
-	end
-
-	Timer = var_3
-	arg_3_0.timer = var_3.New(function()
-		local var_7_0 = arg_3_0
-
-		var_0.onTimer(var_7_0)
+	arg_3_0.timer = Timer.New(function()
+		arg_3_0:onTimer()
 
 		return
-	end, 1 / var_3_6, -1)
+	end, 1 / var_3_1, -1)
 
-	local var_3_7 = arg_3_0.timer
-
-	var_3.Start(var_3_7)
+	arg_3_0.timer:Start()
 	arg_3_0:updateUI()
 
 	return
 end
 
-function var_0_1.initTopUI(arg_8_0)
-	findTF = var_1_10001
-	arg_8_0.btnBack = var_1_10001(arg_8_0._tf, "ad/topPanel/btnBack")
-	findTF = var_1
-	arg_8_0.btnHome = var_1(arg_8_0._tf, "ad/topPanel/btnHome")
-	findTF = var_1
-	arg_8_0.btnHelp = var_1(arg_8_0._tf, "ad/topPanel/btnHelp")
-	findTF = var_1
-	arg_8_0.btnCoin = var_1(arg_8_0._tf, "ad/topPanel/coin")
-	findTF = var_1
-	arg_8_0.textCoin = var_1(arg_8_0._tf, "ad/topPanel/coin/text")
-	pg = var_1
-	arg_8_0.coinMax = var_1.gameset.game_coin_max.key_value
-	findTF = var_1
-	arg_8_0.textCoinMaxTF = var_1(arg_8_0._tf, "ad/topPanel/coin/max")
-	setText = var_1
+function var_0_0.initTopUI(arg_8_0)
+	arg_8_0.btnBack = findTF(arg_8_0._tf, "ad/topPanel/btnBack")
+	arg_8_0.btnHome = findTF(arg_8_0._tf, "ad/topPanel/btnHome")
+	arg_8_0.btnHelp = findTF(arg_8_0._tf, "ad/topPanel/btnHelp")
+	arg_8_0.btnCoin = findTF(arg_8_0._tf, "ad/topPanel/coin")
+	arg_8_0.textCoin = findTF(arg_8_0._tf, "ad/topPanel/coin/text")
+	arg_8_0.coinMax = pg.gameset.game_coin_max.key_value
+	arg_8_0.textCoinMaxTF = findTF(arg_8_0._tf, "ad/topPanel/coin/max")
 
-	var_1(arg_8_0.textCoinMaxTF, "MAX:" .. arg_8_0.coinMax)
-
-	onButton = var_1
-
-	var_1(arg_8_0, arg_8_0.btnCoin, function()
-		local var_9_0 = arg_8_0
-
-		var_0.openExchangePanel(var_9_0, true)
+	setText(arg_8_0.textCoinMaxTF, "MAX:" .. arg_8_0.coinMax)
+	onButton(arg_8_0, arg_8_0.btnCoin, function()
+		arg_8_0:openExchangePanel(true)
 
 		return
 	end)
-
-	onButton = var_1
-
-	local var_8_0 = arg_8_0
-	local var_8_1 = arg_8_0.btnBack
-
-	local function var_8_2()
-		local var_10_0 = arg_8_0.listPanel
-
-		if var_0.getVisible(var_10_0) then
-			local var_10_1 = arg_8_0.listPanel
-
-			var_0.setVisible(var_10_1, false)
-
-			local var_10_2 = arg_8_0
-
-			var_0.changeTitle(var_10_2, false)
-
-			pg = var_0
-
-			local var_10_3 = var_0.SystemGuideMgr.GetInstance()
-
-			var_0.Play(var_10_3, arg_8_0)
+	onButton(arg_8_0, arg_8_0.btnBack, function()
+		if arg_8_0.listPanel:getVisible() then
+			arg_8_0.listPanel:setVisible(false)
+			arg_8_0:changeTitle(false)
+			pg.SystemGuideMgr.GetInstance():Play(arg_8_0)
 
 			return
 		end
 
-		local var_10_4 = arg_8_0
-
-		var_0.closeView(var_10_4)
+		arg_8_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_8_0, var_8_1, var_8_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_8_3 = arg_8_0
-	local var_8_4 = arg_8_0.btnHome
-
-	local function var_8_5()
-		local var_11_0 = arg_8_0
-
-		var_0.quickExitFunc(var_11_0)
+	end, SFX_CANCEL)
+	onButton(arg_8_0, arg_8_0.btnHome, function()
+		arg_8_0:quickExitFunc()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_8_3, var_8_4, var_8_5, var_1_10006)
-
-	onButton = var_1
-
-	local var_8_6 = arg_8_0
-	local var_8_7 = arg_8_0.btnHelp
-
-	local function var_8_8()
-		pg = var_2_10000
-
-		local var_12_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_12_1 = var_0.ShowMsgBox
-		local var_12_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_12_2.type = var_2_10004
-		pg = var_2_10004
-		var_12_2.helps = var_2_10004.gametip.game_room_help.tip
-
-		var_12_1(var_12_0, var_12_2)
+	end, SFX_CANCEL)
+	onButton(arg_8_0, arg_8_0.btnHelp, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.game_room_help.tip
+		})
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_8_6, var_8_7, var_8_8, var_1_10006)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.openExchangePanel(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.exchangePanel
-
-	var_2.setVisible(var_13_0, arg_13_1)
+function var_0_0.openExchangePanel(arg_13_0, arg_13_1)
+	arg_13_0.exchangePanel:setVisible(arg_13_1)
 
 	return
 end
 
-function var_0_1.ResUISettings(arg_14_0)
-	local var_14_0 = {}
-
-	bit = var_1_10002
-
-	local var_14_1 = var_1_10002.bor
-
-	PlayerResUI = var_1_10004
-
-	local var_14_2 = var_1_10004.TYPE_OIL
-
-	PlayerResUI = var_1_10005
-	var_14_0.showType = var_14_1(var_14_2, var_1_10005.TYPE_GOLD)
-
-	return var_14_0
+function var_0_0.ResUISettings(arg_14_0)
+	return {
+		showType = bit.bor(PlayerResUI.TYPE_OIL, PlayerResUI.TYPE_GOLD)
+	}
 end
 
-function var_0_1.initHomeUI(arg_15_0)
-	findTF = var_1_10001
-	arg_15_0.btnShop = var_1_10001(arg_15_0._tf, "ad/btnShop")
-	findTF = var_1
-	arg_15_0.btnPlay = var_1(arg_15_0._tf, "ad/btnPlay")
-	onButton = var_1
+function var_0_0.initHomeUI(arg_15_0)
+	arg_15_0.btnShop = findTF(arg_15_0._tf, "ad/btnShop")
+	arg_15_0.btnPlay = findTF(arg_15_0._tf, "ad/btnPlay")
 
-	local var_15_0 = arg_15_0
-	local var_15_1 = arg_15_0.btnPlay
-
-	local function var_15_2()
-		local var_16_0 = arg_15_0.listPanel
-
-		var_0.setVisible(var_16_0, true)
-
-		local var_16_1 = arg_15_0
-
-		var_0.changeTitle(var_16_1, true)
+	onButton(arg_15_0, arg_15_0.btnPlay, function()
+		arg_15_0.listPanel:setVisible(true)
+		arg_15_0:changeTitle(true)
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_15_0, var_15_1, var_15_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_15_3 = arg_15_0
-	local var_15_4 = arg_15_0.btnShop
-
-	local function var_15_5()
-		local var_17_0 = arg_15_0
-		local var_17_1 = var_0.emit
-
-		GameHallMediator = var_2_10003
-
-		var_17_1(var_17_0, var_2_10003.OPEN_GAME_SHOP)
+	end, SFX_CANCEL)
+	onButton(arg_15_0, arg_15_0.btnShop, function()
+		arg_15_0:emit(GameHallMediator.OPEN_GAME_SHOP)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_1_10006
+	arg_15_0.topShop = findTF(arg_15_0._tf, "ad/container/content/top/btnShop")
+	arg_15_0.topGame = findTF(arg_15_0._tf, "ad/container/content/top/btnGameList")
 
-	var_1(var_15_3, var_15_4, var_15_5, var_1_10006)
-
-	findTF = var_1
-	arg_15_0.topShop = var_1(arg_15_0._tf, "ad/container/content/top/btnShop")
-	findTF = var_1
-	arg_15_0.topGame = var_1(arg_15_0._tf, "ad/container/content/top/btnGameList")
-	onButton = var_1
-
-	local var_15_6 = arg_15_0
-	local var_15_7 = arg_15_0.topGame
-
-	local function var_15_8()
-		local var_18_0 = arg_15_0.listPanel
-
-		var_0.setVisible(var_18_0, true)
-
-		local var_18_1 = arg_15_0
-
-		var_0.changeTitle(var_18_1, true)
+	onButton(arg_15_0, arg_15_0.topGame, function()
+		arg_15_0.listPanel:setVisible(true)
+		arg_15_0:changeTitle(true)
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_15_6, var_15_7, var_15_8, var_1_10006)
-
-	onButton = var_1
-
-	local var_15_9 = arg_15_0
-	local var_15_10 = arg_15_0.topShop
-
-	local function var_15_11()
-		local var_19_0 = arg_15_0
-		local var_19_1 = var_0.emit
-
-		GameHallMediator = var_2_10003
-
-		var_19_1(var_19_0, var_2_10003.OPEN_GAME_SHOP)
+	end, SFX_CANCEL)
+	onButton(arg_15_0, arg_15_0.topShop, function()
+		arg_15_0:emit(GameHallMediator.OPEN_GAME_SHOP)
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_15_9, var_15_10, var_15_11, var_1_10006)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.updateUI(arg_20_0)
-	getProxy = var_1_10001
-	GameRoomProxy = var_1_10003
-
-	local var_20_0 = var_1_10001(var_1_10003)
-	local var_20_1 = var_1.getWeekly(var_20_0)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_20_0.freeCoinTf, var_20_1)
-
-	getProxy = var_1_10002
-	GameRoomProxy = var_4
-
-	local var_20_2 = var_1_10002(var_4)
-	local var_20_3 = var_2.getCoin(var_20_2)
-
-	setText = var_20_0
-
-	var_20_0(arg_20_0.textCoin, var_20_3)
+function var_0_0.updateUI(arg_20_0)
+	setActive(arg_20_0.freeCoinTf, (getProxy(GameRoomProxy):getWeekly()))
+	setText(arg_20_0.textCoin, (getProxy(GameRoomProxy):getCoin()))
 
 	return
 end
 
-function var_0_1.onTimer(arg_21_0)
-	local var_21_0 = arg_21_0.charController
-
-	var_1.step(var_21_0)
+function var_0_0.onTimer(arg_21_0)
+	arg_21_0.charController:step()
 
 	return
 end
 
-function var_0_1.changeTitle(arg_22_0, arg_22_1)
-	setActive = var_1_10002
-	findTF = var_1_10004
-
-	var_1_10002(var_1_10004(arg_22_0._tf, "ad/topPanel/title_list"), arg_22_1)
-
-	setActive = var_1_10002
-	findTF = var_4
-
-	var_1_10002(var_4(arg_22_0._tf, "ad/topPanel/title_main"), not arg_22_1)
+function var_0_0.changeTitle(arg_22_0, arg_22_1)
+	setActive(findTF(arg_22_0._tf, "ad/topPanel/title_list"), arg_22_1)
+	setActive(findTF(arg_22_0._tf, "ad/topPanel/title_main"), not arg_22_1)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_23_0)
-	local var_23_0 = arg_23_0.listPanel
-
-	if var_1.getVisible(var_23_0) then
-		local var_23_1 = arg_23_0.listPanel
-
-		var_1.setVisible(var_23_1, false)
+function var_0_0.onBackPressed(arg_23_0)
+	if arg_23_0.listPanel:getVisible() then
+		arg_23_0.listPanel:setVisible(false)
 		arg_23_0:changeTitle(false)
 
 		return
 	end
 
-	local var_23_2 = arg_23_0.exchangePanel
-
-	if var_1.getVisible(var_23_2) then
-		local var_23_3 = arg_23_0.exchangePanel
-
-		var_1.setVisible(var_23_3, false)
+	if arg_23_0.exchangePanel:getVisible() then
+		arg_23_0.exchangePanel:setVisible(false)
 
 		return
 	end
 
-	arg_23_0:emit(var_0_1.ON_BACK_PRESSED)
+	arg_23_0:emit(var_0_0.ON_BACK_PRESSED)
 
 	return
 end
 
-function var_0_1.willExit(arg_24_0)
-	local var_24_0 = arg_24_0.charController
-
-	var_1.Dispose(var_24_0)
+function var_0_0.willExit(arg_24_0)
+	arg_24_0.charController:Dispose()
 
 	if arg_24_0.timer then
-		local var_24_1 = arg_24_0.timer
-
-		var_1.Stop(var_24_1)
+		arg_24_0.timer:Stop()
 
 		arg_24_0.timer = nil
 	end
 
-	local var_24_2 = arg_24_0.listPanel
-
-	if var_1.getVisible(var_24_2) then
-		GameHallScene = var_1
-		var_1.open_with_list = true
+	if arg_24_0.listPanel:getVisible() then
+		GameHallScene.open_with_list = true
 	end
 
-	local var_24_3 = arg_24_0.exchangePanel
-
-	var_1.dispose(var_24_3)
-
-	local var_24_4 = arg_24_0.listPanel
-
-	var_1.dispose(var_24_4)
+	arg_24_0.exchangePanel:dispose()
+	arg_24_0.listPanel:dispose()
 
 	return
 end
 
-return var_0_1
+return var_0_0

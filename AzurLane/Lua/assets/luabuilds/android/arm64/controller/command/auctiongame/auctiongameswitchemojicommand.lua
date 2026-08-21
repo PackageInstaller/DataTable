@@ -1,49 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameSwitchEmojiCommand", pm.SimpleCommand)
 
-local var_0_0 = "AuctionGameSwitchEmojiCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(AuctionGameProxy)
 
-	getProxy = var_1_10003
-	AuctionGameProxy = var_1_10005
-
-	local var_1_1 = var_1_10003(var_1_10005)
-	local var_1_2 = var_3.GetSwitchEmojiFlag(var_1_1) == 0 and 1 or 0
-
-	pg = var_1_10005
-
-	local var_1_3 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_3, 23416, {
-		switch = var_1_2
+	pg.ConnectionMgr.GetInstance():Send(23416, {
+		switch = var_1_1:GetSwitchEmojiFlag() == 0 and 1 or 0
 	}, 23417, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_2.SetSwitchEmojiFlag(var_2_0, var_1_2)
-
-			local var_2_1 = arg_1_0
-
-			var_2_2 = var_2_2.sendNotification
-			GAME = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004.AUCTION_GAME_SWITCH_EMOJI_DONE)
+			var_1_1:SetSwitchEmojiFlag(var_0)
+			arg_1_0:sendNotification(GAME.AUCTION_GAME_SWITCH_EMOJI_DONE)
 		else
-			pg = var_2_2
-
-			local var_2_3 = var_2_2.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -52,4 +20,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

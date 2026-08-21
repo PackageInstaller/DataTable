@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_ending") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_ending"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_ending = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_ending
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_ending = rawget(pg, "child2_ending") or setmetatable({
+	__name = "child2_ending"
+}, confNEO)
+pg.child2_ending.all = {
 	1,
 	2,
 	3,
@@ -57,11 +34,7 @@ var_0_3.all = {
 	114,
 	115
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_ending
-
-var_0_4.get_id_list_by_character = {
+pg.child2_ending.get_id_list_by_character = {
 	{
 		1,
 		2,
@@ -97,25 +70,11 @@ var_0_4.get_id_list_by_character = {
 		115
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child2_ending = {}
+pg.base = pg.base or {}
+pg.base.child2_ending = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_ending
-
-	var_1_0[1] = {
+	pg.base.child2_ending[1] = {
 		pic_preview = "oceana_ending1",
 		name = "继续升学",
 		character = 1,
@@ -137,11 +96,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_ending
-
-	var_1_1[2] = {
+	pg.base.child2_ending[2] = {
 		pic_preview = "oceana_ending2",
 		name = "甜品能手",
 		character = 1,
@@ -170,11 +125,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_ending
-
-	var_1_2[3] = {
+	pg.base.child2_ending[3] = {
 		pic_preview = "oceana_ending3",
 		name = "调酒师",
 		character = 1,
@@ -203,11 +154,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_ending
-
-	var_1_3[4] = {
+	pg.base.child2_ending[4] = {
 		pic_preview = "oceana_ending4",
 		name = "自然摄影",
 		character = 1,
@@ -229,11 +176,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_ending
-
-	var_1_4[5] = {
+	pg.base.child2_ending[5] = {
 		pic_preview = "oceana_ending5",
 		name = "爆破大师",
 		character = 1,
@@ -255,11 +198,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_ending
-
-	var_1_5[6] = {
+	pg.base.child2_ending[6] = {
 		pic_preview = "oceana_ending6",
 		name = "心理咨询师",
 		character = 1,
@@ -288,11 +227,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_ending
-
-	var_1_6[7] = {
+	pg.base.child2_ending[7] = {
 		pic_preview = "oceana_ending7",
 		name = "安全专家",
 		character = 1,
@@ -314,11 +249,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_ending
-
-	var_1_7[8] = {
+	pg.base.child2_ending[8] = {
 		pic_preview = "oceana_ending8",
 		name = "露营指导",
 		character = 1,
@@ -347,11 +278,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_ending
-
-	var_1_8[9] = {
+	pg.base.child2_ending[9] = {
 		pic_preview = "oceana_ending9",
 		name = "摩托骑士",
 		character = 1,
@@ -380,11 +307,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_ending
-
-	var_1_9[10] = {
+	pg.base.child2_ending[10] = {
 		pic_preview = "oceana_ending10",
 		name = "宠物医生",
 		character = 1,
@@ -413,11 +336,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_ending
-
-	var_1_10[11] = {
+	pg.base.child2_ending[11] = {
 		pic_preview = "oceana_ending11",
 		name = "摇滚歌手",
 		character = 1,
@@ -446,11 +365,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_ending
-
-	var_1_11[12] = {
+	pg.base.child2_ending[12] = {
 		pic_preview = "oceana_ending12",
 		name = "闪耀明星",
 		character = 1,
@@ -479,11 +394,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_ending
-
-	var_1_12[13] = {
+	pg.base.child2_ending[13] = {
 		pic_preview = "oceana_ending13",
 		name = "见习护士",
 		character = 1,
@@ -519,11 +430,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_ending
-
-	var_1_13[14] = {
+	pg.base.child2_ending[14] = {
 		pic_preview = "oceana_ending14",
 		name = "动物园园长",
 		character = 1,
@@ -552,11 +459,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_ending
-
-	var_1_14[15] = {
+	pg.base.child2_ending[15] = {
 		pic_preview = "oceana_ending15",
 		name = "修理达人",
 		character = 1,
@@ -585,11 +488,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_ending
-
-	var_1_15[101] = {
+	pg.base.child2_ending[101] = {
 		pic_preview = "explorer_ending1",
 		name = "毕业升学之时",
 		character = 2,
@@ -611,11 +510,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_ending
-
-	var_1_16[102] = {
+	pg.base.child2_ending[102] = {
 		pic_preview = "explorer_ending2",
 		name = "专属生活顾问",
 		character = 2,
@@ -637,11 +532,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_ending
-
-	var_1_17[103] = {
+	pg.base.child2_ending[103] = {
 		pic_preview = "explorer_ending3",
 		name = "高定裁缝",
 		character = 2,
@@ -663,11 +554,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_ending
-
-	var_1_18[104] = {
+	pg.base.child2_ending[104] = {
 		pic_preview = "explorer_ending4",
 		name = "美食主播",
 		character = 2,
@@ -696,11 +583,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_ending
-
-	var_1_19[105] = {
+	pg.base.child2_ending[105] = {
 		pic_preview = "explorer_ending5",
 		name = "轻小说写手",
 		character = 2,
@@ -729,11 +612,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_ending
-
-	var_1_20[106] = {
+	pg.base.child2_ending[106] = {
 		pic_preview = "explorer_ending14",
 		name = "新闻记者",
 		character = 2,
@@ -755,11 +634,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_ending
-
-	var_1_21[107] = {
+	pg.base.child2_ending[107] = {
 		pic_preview = "explorer_ending15",
 		name = "玩偶扮演",
 		character = 2,
@@ -781,11 +656,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_ending
-
-	var_1_22[108] = {
+	pg.base.child2_ending[108] = {
 		pic_preview = "explorer_ending6",
 		name = "花店店长",
 		character = 2,
@@ -814,11 +685,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_ending
-
-	var_1_23[109] = {
+	pg.base.child2_ending[109] = {
 		pic_preview = "explorer_ending11",
 		name = "旅游达人",
 		character = 2,
@@ -840,11 +707,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_ending
-
-	var_1_24[110] = {
+	pg.base.child2_ending[110] = {
 		pic_preview = "explorer_ending8",
 		name = "钓鱼能手",
 		character = 2,
@@ -873,11 +736,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_ending
-
-	var_1_25[111] = {
+	pg.base.child2_ending[111] = {
 		pic_preview = "explorer_ending7",
 		name = "咖啡师",
 		character = 2,
@@ -906,11 +765,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_ending
-
-	var_1_26[112] = {
+	pg.base.child2_ending[112] = {
 		pic_preview = "explorer_ending9",
 		name = "街头占卜师",
 		character = 2,
@@ -939,11 +794,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_ending
-
-	var_1_27[113] = {
+	pg.base.child2_ending[113] = {
 		pic_preview = "explorer_ending10",
 		name = "书店店员",
 		character = 2,
@@ -965,11 +816,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_ending
-
-	var_1_28[114] = {
+	pg.base.child2_ending[114] = {
 		pic_preview = "explorer_ending12",
 		name = "钢琴演奏家",
 		character = 2,
@@ -996,8 +843,7 @@ var_0_4.base.child2_ending = {}
 			}
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.child2_ending[115] = {
+	pg.base.child2_ending[115] = {
 		pic_preview = "explorer_ending13",
 		name = "标本师",
 		character = 2,

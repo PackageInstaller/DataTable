@@ -50,6 +50,16 @@ function onBtnQuitClick(self)
         return
     end
 
+    if guild.GuildManager:getIsJoinGuildWar() then
+        gs.Message.Show(_TT(149195))
+        return
+    end
+
+     if guild.GuildManager:getIsJoinGuildWarTop() then
+        gs.Message.Show(_TT(149233))
+        return
+    end
+
     UIFactory:alertMessge(_TT(94527), true, function()
         GameDispatcher:dispatchEvent(EventName.REQ_LEAVE_GUILD)
     end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)

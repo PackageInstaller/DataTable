@@ -1,162 +1,69 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CourtYardRightPanel", import(".CourtYardBasePanel"))
 
-local var_0_0 = "CourtYardRightPanel"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".CourtYardBasePanel"))
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "main/rightPanel"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.buffBtn = var_1.Find(var_2_0, "buff")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.oneKeyBtn = var_1.Find(var_2_1, "onekey")
-	CourtYardBuffPage = var_1
-	arg_2_0.buffPage = var_1.New(arg_2_0._tf.parent.parent, arg_2_0.parent)
+function var_0_0.init(arg_2_0)
+	arg_2_0.buffBtn = arg_2_0._tf:Find("buff")
+	arg_2_0.oneKeyBtn = arg_2_0._tf:Find("onekey")
+	arg_2_0.buffPage = CourtYardBuffPage.New(arg_2_0._tf.parent.parent, arg_2_0.parent)
 
 	return
 end
 
-function var_0_1.GenBuffData(arg_3_0)
-	local var_3_0 = {}
-
-	ipairs = var_1_10002
-	BuffHelper = var_1_10004
-
-	for iter_3_0, iter_3_1 in var_1_10002(var_1_10004.GetBackYardPlayerBuffs()) do
+function var_0_0.GenBuffData(arg_3_0)
+	for iter_3_0, iter_3_1 in ipairs(BuffHelper.GetBackYardPlayerBuffs()) do
 		if iter_3_1:isActivate() then
-			table = var_7
-
-			var_7.insert(var_3_0, iter_3_1)
+			table.insert({}, iter_3_1)
 		end
 	end
 
-	return var_3_0
+	return {}
 end
 
-function var_0_1.OnRegister(arg_4_0)
-	onButton = var_1_10001
+function var_0_0.OnRegister(arg_4_0)
+	onButton(arg_4_0, arg_4_0.buffBtn, function()
+		local var_5_0 = arg_4_0.buffList or arg_4_0:GenBuffData()
 
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.buffBtn
-
-	local function var_4_2()
-		local var_5_1
-
-		if not arg_4_0.buffList then
-			local var_5_0 = arg_4_0
-
-			var_5_1 = var_0.GenBuffData(var_5_0)
-		end
-
-		if #var_5_1 > 0 then
-			local var_5_2 = arg_4_0.buffPage
-
-			var_1.ExecuteAction(var_5_2, "Show", var_5_1)
+		if #var_5_0 > 0 then
+			arg_4_0.buffPage:ExecuteAction("Show", var_5_0)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_4_0, var_4_1, var_4_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0.oneKeyBtn
-
-	local function var_4_5()
-		local var_6_0 = arg_4_0
-		local var_6_1 = var_0.emit
-
-		CourtYardMediator = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.ONE_KEY)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.oneKeyBtn, function()
+		arg_4_0:emit(CourtYardMediator.ONE_KEY)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_4_3, var_4_4, var_4_5, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnVisitRegister(arg_7_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_7_0._tf, false)
+function var_0_0.OnVisitRegister(arg_7_0)
+	setActive(arg_7_0._tf, false)
 
 	return
 end
 
-function var_0_1.OnFlush(arg_8_0, arg_8_1)
-	if not arg_8_1 then
-		bit = var_1_10002
+function var_0_0.OnFlush(arg_8_0, arg_8_1)
+	arg_8_1 = arg_8_1 or bit.bor(BackYardConst.DORM_UPDATE_TYPE_LEVEL, BackYardConst.DORM_UPDATE_TYPE_USEFOOD, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 
-		local var_8_0 = var_1_10002.bor
-
-		BackYardConst = var_1_10004
-
-		local var_8_1 = var_1_10004.DORM_UPDATE_TYPE_LEVEL
-
-		BackYardConst = var_1_10005
-
-		local var_8_2 = var_1_10005.DORM_UPDATE_TYPE_USEFOOD
-
-		BackYardConst = var_1_10006
-		arg_8_1 = var_8_0(var_8_1, var_8_2, var_1_10006.DORM_UPDATE_TYPE_SHIP)
-	end
-
-	local var_8_3 = arg_8_0.dorm
-
-	bit = var_1_10003
-
-	local var_8_4 = var_1_10003.band
-	local var_8_5 = arg_8_1
-
-	BackYardConst = var_1_10006
-
-	local var_8_7
-
-	if var_8_4(var_8_5, var_1_10006.DORM_UPDATE_TYPE_USEFOOD) > 0 and arg_8_0:IsInner() then
+	if bit.band(arg_8_1, BackYardConst.DORM_UPDATE_TYPE_USEFOOD) > 0 and arg_8_0:IsInner() then
 		arg_8_0.buffList = arg_8_0:GenBuffData()
-		setActive = var_3
 
-		local var_8_6 = arg_8_0.buffBtn
-
-		var_8_7 = #arg_8_0.buffList > 0
-
-		var_3(var_8_6, var_8_7)
+		setActive(arg_8_0.buffBtn, #arg_8_0.buffList > 0)
 	end
 
-	bit = var_3
-
-	local var_8_8 = var_3.band
-	local var_8_9 = arg_8_1
-
-	BackYardConst = var_8_7
-
-	if var_8_8(var_8_9, var_8_7.DORM_UPDATE_TYPE_SHIP) > 0 then
-		setActive = var_3
-
-		var_3(arg_8_0.oneKeyBtn, var_8_3:AnyShipExistIntimacyOrMoney())
+	if bit.band(arg_8_1, BackYardConst.DORM_UPDATE_TYPE_SHIP) > 0 then
+		setActive(arg_8_0.oneKeyBtn, var_8_0:AnyShipExistIntimacyOrMoney())
 	end
 
 	return
 end
 
-function var_0_1.GetMoveX(arg_9_0)
+function var_0_0.GetMoveX(arg_9_0)
 	return {
 		{
 			arg_9_0._tf,
@@ -165,11 +72,9 @@ function var_0_1.GetMoveX(arg_9_0)
 	}
 end
 
-function var_0_1.OnDispose(arg_10_0)
+function var_0_0.OnDispose(arg_10_0)
 	if arg_10_0.buffPage then
-		local var_10_0 = arg_10_0.buffPage
-
-		var_1.Destroy(var_10_0)
+		arg_10_0.buffPage:Destroy()
 
 		arg_10_0.buffPage = nil
 	end
@@ -177,4 +82,4 @@ function var_0_1.OnDispose(arg_10_0)
 	return
 end
 
-return var_0_1
+return var_0_0

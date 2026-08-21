@@ -29,6 +29,9 @@ function dtor(self)
 end
 
 function initData(self)
+
+    self.mTabList = {}
+
 end
 
 -- 初始化
@@ -38,16 +41,31 @@ function configUI(self)
 
     self.mEmptyStateItem = self:getChildGO("EmptyStateItem")
     self.mTxtEmptyTip = self:getChildGO("mTxtEmptyTip"):GetComponent(ty.Text)
+
+    self.mGroupTabItem = self:getChildTrans("mGroupTabItem")
+    self.mShopTabChildItem = self:getChildGO("mShopTabChildItem")
 end
 
 --激活
 function active(self, args)
     super.active(self, args)
 
-    self.heroId = args.heroId
+    self.selectId = args.selectId
+    if self.selectId then
+        self.mGuradType, self.id = role.RoleManager:getGuradTypeAndId(self.selectId)
+    else
+        self.mGuradType = role.GuradType.Gurad_hero
+    end
 
     GameDispatcher:addEventListener(EventName.HERO_GROUP_SELECT_ONE, self.onHeroGroupSelectOne, self)
-    self:updateView()
+
+    self.mIsShowSpine = role.RoleManager:getHeroGroupShowSpine()
+
+    table.insert(self.mTabList, { page = 1, nomalLan = "助理选择", nomalLanId = 84510 })
+    if self.mIsShowSpine == 1 then
+        table.insert(self.mTabList, { page = 2, nomalLan = "图册选择", nomalLanId = 84511 })
+    end
+    self:creatTab()
 end
 
 --反激活（销毁工作）
@@ -73,23 +91,40 @@ function addAllUIEvent(self)
     -- self:addUIEvent(self.aa,self.onClick)
 end
 
-function updateView(self)
+function updateView(self, cusIndex)
     local scrollList = {}
 
-    local isShowSpine = role.RoleManager:getHeroGroupShowSpine()
-    local heroList = hero.HeroManager:getHeroList()
-    for i, heroVo in ipairs(heroList) do
-        if isShowSpine == 0 or (isShowSpine == 1 and hero.HeroInteractManager:getModelIsDynamic(heroVo:getHeroModel())) then
+    if cusIndex == 1 then
+        local heroList = hero.HeroManager:getHeroList()
+        for i, heroVo in ipairs(heroList) do
+            if self.mIsShowSpine == 0 or (self.mIsShowSpine == 1 and hero.HeroInteractManager:getModelIsDynamic(heroVo:getHeroModel())) then
+
+                local scrollerVo = LuaPoolMgr:poolGet(LyScrollerSelectVo)
+                scrollerVo:setDataVo(heroVo)
+                scrollerVo:setSelect(tonumber(self.id) == heroVo.id)
+                scrollerVo:setArgs(role.GuradType.Gurad_hero)
+                table.insert(scrollList, scrollerVo)
+            end
+        end
+        self.mLyScroller.DataProvider = scrollList
+
+        self.mEmptyStateItem:SetActive(not scrollList or table.empty(scrollList))
+    else
+        local paintingList = purchase.FashionShopManager:getAllUnlockPatintingData()
+        for k, vo in pairs(paintingList) do
 
             local scrollerVo = LuaPoolMgr:poolGet(LyScrollerSelectVo)
-            scrollerVo:setDataVo(heroVo)
-            scrollerVo:setSelect(self.heroId == heroVo.id)
+            scrollerVo:setDataVo(vo)
+            scrollerVo:setSelect(tonumber(self.id) == vo.id)
+            scrollerVo:setArgs(role.GuradType.Gurad_painting)
             table.insert(scrollList, scrollerVo)
         end
-    end
-    self.mLyScroller.DataProvider = scrollList
 
-    self.mEmptyStateItem:SetActive(not scrollList or table.empty(scrollList))
+        self.mLyScroller.DataProvider = scrollList
+        self.mEmptyStateItem:SetActive(not scrollList or table.empty(scrollList))
+
+    end
+
 end
 
 function updateHeroItem(self)
@@ -98,6 +133,49 @@ end
 
 function onHeroGroupSelectOne(self, args)
     self:close()
+end
+
+
+function onClickChildItem(self, index)
+    for k, v in pairs(self.mSubViewItem) do
+        v:getChildGO("mBtnNomal"):SetActive(k ~= index)
+        v:getChildGO("mBtnSelect"):SetActive(k == index)
+    end
+
+    self.mLastIndex = index
+
+    self:updateView(index)
+end
+
+function creatTab(self)
+    self:clearTabItem()
+    for k, v in ipairs(self.mTabList) do
+        local item = SimpleInsItem:create(self.mShopTabChildItem, self.mGroupTabItem, "mFashionShopSub")
+        item:getChildGO("mTxtNomal"):GetComponent(ty.Text).text = v.nomalLan --_TT(v.nomalLanId)
+        item:getChildGO("mTxtSelect"):GetComponent(ty.Text).text = v.nomalLan --_TT(v.nomalLanId)
+        -- self:setBtnLabel(item:getChildGO("onClickChildItem"), v.nomalLanId)
+        item:addUIEvent("mBtnClick", function()
+            self:onClickChildItem(v.page)
+        end)
+        self.mSubViewItem[v.page] = item
+    end
+
+    if self.mGuradType == role.GuradType.Gurad_hero then
+        self:onClickChildItem(1)
+    else
+        self:onClickChildItem(2)
+    end
+
+end
+
+
+function clearTabItem(self)
+    if self.mSubViewItem then
+        for k, v in pairs(self.mSubViewItem) do
+            v:poolRecover()
+        end
+    end
+    self.mSubViewItem = {}
 end
 
 return _M

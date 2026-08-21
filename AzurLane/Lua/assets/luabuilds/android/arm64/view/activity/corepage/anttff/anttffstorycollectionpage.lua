@@ -1,31 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ANTTFFStoryCollectionPage", import("view.activity.CorePage.Helena.HelenaPTPage"))
 
-local var_0_0 = "ANTTFFStoryCollectionPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
+	arg_1_0.scenario = ANTTFFScenarioPage.New(arg_1_0._tf, arg_1_0.event)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.Helena.HelenaPTPage"))
+	arg_1_0.scenario:SetCoreStoryPage(arg_1_0)
+	arg_1_0.scenario:RegisterView(arg_1_0.coreActivityUI)
 
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	ANTTFFScenarioPage = var_1
-	arg_1_0.scenario = var_1.New(arg_1_0._tf, arg_1_0.event)
-
-	local var_1_0 = arg_1_0.scenario
-
-	var_1.SetCoreStoryPage(var_1_0, arg_1_0)
-
-	local var_1_1 = arg_1_0.scenario
-
-	var_1.RegisterView(var_1_1, arg_1_0.coreActivityUI)
-
-	AutoLoader = var_1
-	arg_1_0.loader = var_1.New()
+	arg_1_0.loader = AutoLoader.New()
 	arg_1_0.mapGroup = {}
 	arg_1_0.currentBG = nil
 
 	return
 end
 
-return var_0_1
+return var_0_0

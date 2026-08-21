@@ -1,15 +1,21 @@
 ﻿return {
 	effect_list = {
 		{
-			type = "BattleBuffCastSkill",
+			type = "BattleBuffAddBuff",
 			trigger = {
-				"onTeammateHpRatioUpdate"
+				"onStartGame"
 			},
 			arg_list = {
-				hpUpperBound = 0.2,
-				skill_id = 152020,
-				target = "TargetSelf",
-				quota = 1
+				buff_id = 152021
+			}
+		},
+		{
+			type = "BattleBuffField",
+			trigger = {},
+			arg_list = {
+				buff_id = 152022,
+				exceptCaster = true,
+				target = "TargetAllHelp"
 			}
 		}
 	},

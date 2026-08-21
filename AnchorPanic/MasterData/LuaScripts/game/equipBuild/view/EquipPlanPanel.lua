@@ -76,6 +76,8 @@ function configUI(self)
     self.mGroupSuit = self:getChildGO("mGroupSuit")
     self.mSuitContent = self:getChildTrans("mSuitContent")
     self.mSuitItem = self:getChildGO("mSuitItem")
+
+    self.mBtnAddPlan = self:getChildGO("mBtnAddPlan")
 end
 
 function initViewText(self)
@@ -92,6 +94,12 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnDelPlane, self.onClickDelPlanHandler)
     self:addUIEvent(self.mBtnRenamePlan, self.onClickRenamePlanHandler)
     self:addUIEvent(self.mBtnSavePlan, self.onClickSavePlanHandler)
+    self:addUIEvent(self.mBtnAddPlan, self.onClickAddPlanHandler)
+    
+end
+
+function onClickAddPlanHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_EQUIP_ADD_PLAN_PANEL)
 end
 
 function close(self)
@@ -113,6 +121,8 @@ end
 
 function active(self, args)
     super.active(self, args)
+
+  
     GameDispatcher:addEventListener(EventName.RES_EQUIP_PLANE_LIST_DATA, self.onEquipPlanListUpdateHandler, self)
     GameDispatcher:addEventListener(EventName.RES_EQUIP_PLANE_SAVE, self.onEquipPlanSaveHandler, self)
     GameDispatcher:addEventListener(EventName.RES_EQUIP_PLANE_CHANGE_NAME, self.onEquipPlanChangeNameHandler, self)
@@ -121,7 +131,7 @@ function active(self, args)
     equipBuild.EquipPlanManager:addEventListener(equipBuild.EquipPlanManager.EQUIP_PLAN_SELECT, self.onEquipPlanSelectHandler, self)
     -- UISceneBgUtil:create3DBg("arts/sceneModule/ui_mozu_01/prefabs/ui_mozu_01.prefab")
     -- PostHandler:setBloomValue(gs.CameraMgr:GetDefSceneCameraTrans(), 0.61, nil, 4.6, 1.5, 0.7, 0.236)
-
+    GameDispatcher:addEventListener(EventName.UPDATE_EQUIP_PLAN_COUNT,self.updateCount,self)
     self.mSelectHeroId = args
     self.mSelectEquipPlanId = nil
     equipBuild.EquipPlanManager:checkEmptyPlan()
@@ -135,6 +145,7 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.RES_EQUIP_PLANE_CHANGE_NAME, self.onEquipPlanChangeNameHandler, self)
     GameDispatcher:removeEventListener(EventName.RES_EQUIP_PLANE_DELETE, self.onEquipPlanDeleteHandler, self)
     GameDispatcher:removeEventListener(EventName.RES_EQUIP_PLANE_WEAR, self.onEquipPlanWearHandler, self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_EQUIP_PLAN_COUNT,self.updateCount,self)
     equipBuild.EquipPlanManager:removeEventListener(equipBuild.EquipPlanManager.EQUIP_PLAN_SELECT, self.onEquipPlanSelectHandler, self)
     if self.mScroll then
         self.mScroll:CleanAllItem(true)
@@ -176,7 +187,8 @@ function onClickRenamePlanHandler(self)
 end
 
 function onClickSavePlanHandler(self)
-    local maxCount = sysParam.SysParamManager:getValue(SysParamType.EQUIP_PLAN_MAX_COUNT)
+    local extraNum = equipBuild.EquipPlanManager:getExtraNum()
+    local maxCount = sysParam.SysParamManager:getValue(SysParamType.EQUIP_PLAN_MAX_COUNT) + extraNum
     if(#equipBuild.EquipPlanManager:getEquipPlanList() >= maxCount)then
         gs.Message.Show(_TT(1402))
     else
@@ -261,11 +273,16 @@ function updateView(self)
         self.mScroll:ReplaceAllDataProvider(scrollList)
     end
 
+    self.mBtnAddPlan:SetActive(equipBuild.EquipPlanManager:getExtraNum()< sysParam.SysParamManager:getValue(SysParamType.ADD_EQUIP_PLAN_COUNT))
     -- self.mTextPlanCount.text = string.format("模组方案<size=22> %s/%s</size>", #scrollDataList, 0)
-    self.mTextPlanCount.text = string.format(_TT(1414), #scrollDataList, sysParam.SysParamManager:getValue(SysParamType.EQUIP_PLAN_MAX_COUNT))
+    self.mTextPlanCount.text = string.format(_TT(1414), #scrollDataList, sysParam.SysParamManager:getValue(SysParamType.EQUIP_PLAN_MAX_COUNT) + equipBuild.EquipPlanManager:getExtraNum())
     self:updateSlotView()
     self:updateStateView()
     self:updateAttrView()
+end
+
+function updateCount(self)
+   self:updateView()
 end
 
 function getScrollList(self, scrollDataList)

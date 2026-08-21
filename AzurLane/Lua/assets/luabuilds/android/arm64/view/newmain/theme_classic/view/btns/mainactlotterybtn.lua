@@ -1,91 +1,41 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainActLotteryBtn", import(".MainBaseActivityBtn"))
 
-local var_0_0 = "MainActLotteryBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainBaseActivityBtn"))
-
-function var_0_1.GetEventName(arg_1_0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_LanternFestival"
 end
 
-function var_0_1.GetActivityID(arg_2_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.GetActivityID(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	local var_2_0 = var_1_10001(var_1_10003)
-	local var_2_1 = var_1.getActivityByType
-
-	ActivityConst = var_1_10004
-
-	return var_2_1(var_2_0, var_1_10004.ACTIVITY_TYPE_LOTTERY) and var_1.id
+	return var_2_0 and var_2_0.id
 end
 
-function var_0_1.OnInit(arg_3_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.OnInit(arg_3_0)
+	local var_3_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
+	local var_3_1 = var_3_0:getAwardInfos()
 
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.getActivityByType
-
-	ActivityConst = var_1_10004
-
-	local var_3_2 = var_3_1(var_3_0, var_1_10004.ACTIVITY_TYPE_LOTTERY)
-	local var_3_3 = var_1.getAwardInfos(var_3_2)
-	local var_3_4 = var_1
-	local var_3_5 = var_1.getConfig(var_3_4, "config_data")
-
-	_ = var_3_2
-
-	local var_3_6 = var_3_2.any(var_3_5, function(arg_4_0)
-		ActivityItemPool = var_2_10001
-
-		local var_4_0 = var_2_10001.New({
+	setActive(arg_3_0._tf:Find("Tip"), (_.any(var_3_0:getConfig("config_data"), function(arg_4_0)
+		local var_4_0 = ActivityItemPool.New({
 			id = arg_4_0,
-			awards = var_3_3[arg_4_0]
+			awards = var_3_1[arg_4_0]
 		})
-		local var_4_1 = var_1.getComsume(var_4_0)
+		local var_4_1 = var_4_0:getComsume()
+		local var_4_2 = getProxy(PlayerProxy):getRawData()[id2res(var_4_1.id)]
 
-		getProxy = var_3
-		PlayerProxy = var_2_10005
-
-		local var_4_2 = var_3(var_2_10005)
-		local var_4_3 = var_3.getRawData(var_4_2)
-
-		id2res = var_4_0
-
-		return var_4_3[var_4_0(var_4_1.id)] >= var_4_1.count and var_1:getleftItemCount() > 0
-	end)
-
-	setActive = var_3_4
-
-	local var_3_7 = arg_3_0._tf
-
-	var_3_4(var_7.Find(var_3_7, "Tip"), var_3_6)
+		return var_4_2 >= var_4_1.count and var_4_0:getleftItemCount() > 0
+	end)))
 
 	return
 end
 
-function var_0_1.CustomOnClick(arg_5_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.CustomOnClick(arg_5_0)
+	local var_5_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_LOTTERY)
 
-	local var_5_0 = var_1_10001(var_1_10003)
-	local var_5_1 = var_1.getActivityByType
-
-	ActivityConst = var_1_10004
-
-	if var_5_1(var_5_0, var_1_10004.ACTIVITY_TYPE_LOTTERY) then
-		local var_5_2 = arg_5_0
-		local var_5_3 = arg_5_0.emit
-
-		NewMainMediator = var_1_10005
-
-		var_5_3(var_5_2, var_1_10005.SKIP_LOTTERY, var_1.id)
+	if var_5_0 then
+		arg_5_0:emit(NewMainMediator.SKIP_LOTTERY, var_5_0.id)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainSettlementStoreView", import("view.base.BasePanel"))
 
-local var_0_0 = "AuctionGameMainSettlementStoreView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,55 +13,26 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
+function var_0_0.Init(arg_2_0)
 	arg_2_0.cellItemViewList = {}
 	arg_2_0.itemViewList = {}
-	getProxy = var_1
-	AuctionGameProxy = var_1_10003
 
-	local var_2_0 = var_1(var_1_10003)
-	local var_2_1 = var_1.GetMaxLineCnt(var_2_0)
+	for iter_2_0 = 1, getProxy(AuctionGameProxy):GetMaxLineCnt() * AuctionGameConst.CELL_COL_CNT do
+		arg_2_0.cellItemViewList[iter_2_0] = AuctionGameCellItem.New(tf(Instantiate(arg_2_0.uiCellItemTf, arg_2_0.uiCellParentTf)), arg_2_0._parentClass)
 
-	AuctionGameConst = var_1_10003
-
-	local var_2_2 = var_2_1 * var_1_10003.CELL_COL_CNT
-
-	for iter_2_0 = 1, var_2_2 do
-		local var_2_3 = arg_2_0.cellItemViewList
-
-		AuctionGameCellItem = var_1_10008
-		var_1_10008 = var_1_10008.New
-		tf = var_1_10010
-		Instantiate = var_1_10012
-		var_2_3[iter_2_0] = var_1_10008(var_1_10010(var_1_10012(arg_2_0.uiCellItemTf, arg_2_0.uiCellParentTf)), arg_2_0._parentClass)
-
-		local var_2_4 = arg_2_0.cellItemViewList[iter_2_0]
-
-		var_7.Show(var_2_4, true)
+		arg_2_0.cellItemViewList[iter_2_0]:Show(true)
 	end
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	getProxy = var_1_10001
-	AuctionGameProxy = var_1_10003
-
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.GetSettlementData(var_3_0)
-
-	arg_3_0.itemDataList = var_1.GetSortItemList(var_3_1)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.itemDataList = getProxy(AuctionGameProxy):GetSettlementData():GetSortItemList()
 	arg_3_0.showIndex = 1
-	onNextTick = var_1
 
-	var_1(function()
-		local var_4_0 = arg_3_0
-
-		var_0.ShowAllContour(var_4_0)
-
-		local var_4_1 = arg_3_0
-
-		var_0.RefreshNextItem(var_4_1)
+	onNextTick(function()
+		arg_3_0:ShowAllContour()
+		arg_3_0:RefreshNextItem()
 
 		return
 	end)
@@ -77,117 +42,63 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.ShowAllContour(arg_5_0)
-	ipairs = var_1_10001
-
-	for iter_5_0, iter_5_1 in var_1_10001(arg_5_0.itemDataList) do
-		local var_5_0 = arg_5_0.itemViewList
-
-		uid = var_1_10007
-
+function var_0_0.ShowAllContour(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.itemDataList) do
+		local var_5_0 = arg_5_0.itemViewList[uid]
 		local var_5_1
 
-		if not var_5_0[var_1_10007] then
-			AuctionGameStoreItem = var_5_1
-			var_5_1 = var_5_1.New
-			tf = var_1_10008
-			Instantiate = var_1_10010
-			var_5_1 = var_5_1(var_1_10008(var_1_10010(arg_5_0.uiItemTf, arg_5_0.uiCellParentTf)), arg_5_0._parentClass)
+		if not arg_5_0.itemViewList[uid] then
+			var_5_0 = AuctionGameStoreItem.New(tf(Instantiate(arg_5_0.uiItemTf, arg_5_0.uiCellParentTf)), arg_5_0._parentClass)
+			var_5_1 = var_5_0
 		end
 
-		AuctionGameConst = var_1_10007
-		var_1_10007 = var_1_10007.CELL_COL_CNT * (iter_5_1.position.y - 1) + iter_5_1.position.x
-		var_1_10010 = arg_5_0.cellItemViewList[var_1_10007]
-		var_1_10008 = var_1_10008.GetPosition(var_1_10010)
-
-		var_5_1:SetPosition(var_1_10008)
-		var_5_1:ShowSize(iter_5_1)
-		var_5_1:ShowContour({
+		var_5_0:SetPosition((arg_5_0.cellItemViewList[AuctionGameConst.CELL_COL_CNT * (iter_5_1.position.y - 1) + iter_5_1.position.x]:GetPosition()))
+		var_5_0:ShowSize(iter_5_1)
+		var_5_0:ShowContour({
 			contour = iter_5_1.contour
 		})
 
-		arg_5_0.itemViewList[iter_5_1.uid] = var_5_1
+		arg_5_0.itemViewList[iter_5_1.uid] = var_5_0
 	end
 
 	return
 end
 
-function var_0_1.RevealItem(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0.itemDataList[arg_6_1].id
-	local var_6_1 = var_2.uid
-	local var_6_2
+function var_0_0.RevealItem(arg_6_0, arg_6_1)
+	local var_6_1 = arg_6_0.itemViewList[arg_6_0.itemDataList[arg_6_1].uid] or AuctionGameStoreItem.New(tf(Instantiate(arg_6_0.uiItemTf, arg_6_0.uiCellParentTf)), arg_6_0._parentClass)
 
-	if not arg_6_0.itemViewList[var_6_1] then
-		AuctionGameStoreItem = var_6_2
-		var_6_2 = var_6_2.New
-		tf = var_1_10007
-		Instantiate = var_1_10009
-		var_6_2 = var_6_2(var_1_10007(var_1_10009(arg_6_0.uiItemTf, arg_6_0.uiCellParentTf)), arg_6_0._parentClass)
-	end
+	var_6_1:didEnter(arg_6_0.itemDataList[arg_6_1])
 
-	var_6_2:didEnter(var_2)
-
-	arg_6_0.itemViewList[var_6_1] = var_6_2
+	arg_6_0.itemViewList[arg_6_0.itemDataList[arg_6_1].uid] = var_6_1
 	arg_6_0.showIndex = arg_6_0.showIndex + 1
 
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.emit
-
-	AuctionGameMainSettlementScene = var_9
-
-	var_6_4(var_6_3, var_9.REVEAL_ITEM, var_2)
+	arg_6_0:emit(AuctionGameMainSettlementScene.REVEAL_ITEM, arg_6_0.itemDataList[arg_6_1])
 
 	return
 end
 
-function var_0_1.RefreshNextItem(arg_7_0)
+function var_0_0.RefreshNextItem(arg_7_0)
 	arg_7_0:RevealItem(arg_7_0.showIndex)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(AuctionGameConst.SOUND_EFFECT.REVEAL)
 
-	pg = var_1
-
-	local var_7_0 = var_1.CriMgr.GetInstance()
-	local var_7_1 = var_1.PlaySoundEffect_V3
-
-	AuctionGameConst = var_4
-
-	var_7_1(var_7_0, var_4.SOUND_EFFECT.REVEAL)
-
-	Timer = var_7_1
-
-	local var_7_2 = var_7_1.New
-
-	local function var_7_3()
-		local var_8_0 = arg_7_0
-
-		var_0.StopTimer(var_8_0)
+	arg_7_0.timer = Timer.New(function()
+		arg_7_0:StopTimer()
 
 		if arg_7_0.showIndex > #arg_7_0.itemDataList then
-			local var_8_1 = arg_7_0
-			local var_8_2 = var_0.emit
-
-			AuctionGameMainSettlementScene = var_2_10003
-
-			var_8_2(var_8_1, var_2_10003.REVEAL_OVER)
+			arg_7_0:emit(AuctionGameMainSettlementScene.REVEAL_OVER)
 		else
-			local var_8_3 = arg_7_0
-
-			var_0.RefreshNextItem(var_8_3)
+			arg_7_0:RefreshNextItem()
 		end
 
 		return
-	end
+	end, AuctionGameConst.REVEAL_ITEM_TIME, 1)
 
-	AuctionGameConst = var_4
-	arg_7_0.timer = var_7_2(var_7_3, var_4.REVEAL_ITEM_TIME, 1)
-
-	local var_7_4 = arg_7_0.timer
-
-	var_1.Start(var_7_4)
+	arg_7_0.timer:Start()
 
 	return
 end
 
-function var_0_1.RevealAllItem(arg_9_0)
+function var_0_0.RevealAllItem(arg_9_0)
 	if arg_9_0.showIndex > #arg_9_0.itemDataList then
 		return
 	end
@@ -200,21 +111,14 @@ function var_0_1.RevealAllItem(arg_9_0)
 
 	arg_9_0.showIndex = #arg_9_0.itemDataList + 1
 
-	local var_9_0 = arg_9_0
-	local var_9_1 = arg_9_0.emit
-
-	AuctionGameMainSettlementScene = iter_9_0
-
-	var_9_1(var_9_0, iter_9_0.REVEAL_OVER)
+	arg_9_0:emit(AuctionGameMainSettlementScene.REVEAL_OVER)
 
 	return
 end
 
-function var_0_1.StopTimer(arg_10_0)
+function var_0_0.StopTimer(arg_10_0)
 	if arg_10_0.timer then
-		local var_10_0 = arg_10_0.timer
-
-		var_1.Stop(var_10_0)
+		arg_10_0.timer:Stop()
 
 		arg_10_0.timer = nil
 	end
@@ -222,26 +126,22 @@ function var_0_1.StopTimer(arg_10_0)
 	return
 end
 
-function var_0_1.willExit(arg_11_0)
+function var_0_0.willExit(arg_11_0)
 	arg_11_0:StopTimer()
 
-	ipairs = var_1
-
-	for iter_11_0, iter_11_1 in var_1(arg_11_0.eventList) do
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.eventList) do
 		arg_11_0:disconnect(iter_11_1)
 	end
 
 	arg_11_0.eventList = nil
-	ipairs = var_1
 
-	for iter_11_2, iter_11_3 in var_1(arg_11_0.cellItemViewList) do
+	for iter_11_2, iter_11_3 in ipairs(arg_11_0.cellItemViewList) do
 		iter_11_3:willExit()
 	end
 
 	arg_11_0.cellItemViewList = nil
-	pairs = var_1
 
-	for iter_11_4, iter_11_5 in var_1(arg_11_0.itemViewList) do
+	for iter_11_4, iter_11_5 in pairs(arg_11_0.itemViewList) do
 		iter_11_5:willExit()
 	end
 
@@ -252,4 +152,4 @@ function var_0_1.willExit(arg_11_0)
 	return
 end
 
-return var_0_1
+return var_0_0

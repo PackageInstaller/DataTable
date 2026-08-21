@@ -1,13 +1,8 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("OrientedPathFinding", PathFinding)
 
-local var_0_0 = "OrientedPathFinding"
+OrientedPathFinding = var_0_0
 
-PathFinding = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003)
-local var_0_2 = OrientedPathFinding
-
-function var_0_2.Find(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Find(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_1 = {
 		row = arg_1_1.row,
 		column = arg_1_1.column
@@ -26,7 +21,7 @@ function var_0_2.Find(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-local var_0_3 = {
+local var_0_1 = {
 	{
 		1,
 		0
@@ -45,8 +40,8 @@ local var_0_3 = {
 	}
 }
 
-function var_0_2._Find(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = var_0_2.PrioForbidden
+function var_0_0._Find(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = var_0_0.PrioForbidden
 	local var_2_1 = {}
 	local var_2_2 = {
 		arg_2_1
@@ -61,83 +56,127 @@ function var_0_2._Find(arg_2_0, arg_2_1, arg_2_2)
 		}
 	}
 
-	while #var_2_2 > 0 do
-		table = var_8
+	while #{
+		arg_2_1
+	} > 0 do
+		local var_2_5 = table.remove({
+			arg_2_1
+		}, 1)
 
-		if var_8.remove(var_2_2, 1).row == arg_2_2.row and var_8.column == arg_2_2.column then
-			var_2_0 = var_2_4[var_8.row][var_8.column].priority
-			var_2_1 = var_9.path
+		if var_2_5.row == arg_2_2.row and var_2_5.column == arg_2_2.column then
+			var_2_0 = ({
+				[arg_2_1.row] = {
+					[arg_2_1.column] = {
+						priority = 0,
+						path = {}
+					}
+				}
+			})[var_2_5.row][var_2_5.column].priority
+			var_2_1 = ({
+				[arg_2_1.row] = {
+					[arg_2_1.column] = {
+						priority = 0,
+						path = {}
+					}
+				}
+			})[var_2_5.row][var_2_5.column].path
 
 			break
 		end
 
-		table = var_9
-
-		var_9.insert(var_2_3, var_8)
-
-		_ = var_9
-
-		var_9.each(var_0_3, function(arg_3_0)
+		table.insert({}, var_2_5)
+		_.each(var_0_1, function(arg_3_0)
 			local var_3_0 = {
-				row = var_0.row + arg_3_0[1],
-				column = var_0.column + arg_3_0[2]
+				row = var_2_5.row + arg_3_0[1],
+				column = var_2_5.column + arg_3_0[2]
 			}
-
-			_ = var_2
-
-			local var_3_1
-
-			if not var_2.any(var_2_2, function(arg_4_0)
+			local var_3_1 = _.any(var_2_2, function(arg_4_0)
 				return arg_4_0.row == var_3_0.row and arg_4_0.column == var_3_0.column
-			end) then
-				_ = var_3_1
-				var_3_1 = var_3_1.any(var_2_3, function(arg_5_0)
-					return arg_5_0.row == var_3_0.row and arg_5_0.column == var_3_0.column
-				end)
-			end
+			end) or _.any(var_2_3, function(arg_5_0)
+				return arg_5_0.row == var_3_0.row and arg_5_0.column == var_3_0.column
+			end)
 
-			if not var_3_1 and var_3_0.row >= 0 and var_3_0.row < arg_2_0.rows and var_3_0.column >= 0 and var_3_0.column < arg_2_0.columns and not var_0_2.IsDirectionForbidden(arg_2_0.cells[var_0.row][var_0.column], arg_3_0[1], arg_3_0[2]) then
-				local var_3_2
+			if not var_3_1 and ({
+				row = var_2_5.row + arg_3_0[1],
+				column = var_2_5.column + arg_3_0[2]
+			}).row >= 0 and ({
+				row = var_2_5.row + arg_3_0[1],
+				column = var_2_5.column + arg_3_0[2]
+			}).row < arg_2_0.rows and ({
+				row = var_2_5.row + arg_3_0[1],
+				column = var_2_5.column + arg_3_0[2]
+			}).column >= 0 and ({
+				row = var_2_5.row + arg_3_0[1],
+				column = var_2_5.column + arg_3_0[2]
+			}).column < arg_2_0.columns and not var_0_0.IsDirectionForbidden(arg_2_0.cells[var_2_5.row][var_2_5.column], arg_3_0[1], arg_3_0[2]) then
+				if var_2_4[var_2_5.row][var_2_5.column].priority + arg_2_0.cells[({
+					row = var_2_5.row + arg_3_0[1],
+					column = var_2_5.column + arg_3_0[2]
+				}).row][({
+					row = var_2_5.row + arg_3_0[1],
+					column = var_2_5.column + arg_3_0[2]
+				}).column].priority < var_0_0.PrioObstacle then
+					local var_3_2 = Clone(var_2_4[var_2_5.row][var_2_5.column])
 
-				if var_2_4[var_0.row][var_0.column].priority + arg_2_0.cells[var_3_0.row][var_3_0.column].priority < var_0_2.PrioObstacle then
-					Clone = var_3_2
-					var_3_2 = var_3_2(var_3)
-					table = var_6
+					table.insert(var_3_2.path, {
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					})
 
-					var_6.insert(var_3_2.path, var_3_0)
+					var_3_2.priority = var_2_4[var_2_5.row][var_2_5.column].priority + arg_2_0.cells[({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).row][({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).column].priority
 
-					var_3_2.priority = var_4
+					local var_3_3 = var_2_4[({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).row]
 
-					local var_3_3 = var_2_4
-					local var_3_4 = var_3_0.row
-					local var_3_5
-
-					if not var_2_4[var_3_0.row] then
-						var_3_5 = {}
+					if not var_2_4[({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).row] then
+						var_3_3 = {}
 					end
 
-					var_3_3[var_3_4] = var_3_5
-					var_2_4[var_3_0.row][var_3_0.column] = var_3_2
+					var_2_4[({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).row] = var_3_3
+					var_2_4[({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).row][({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).column] = var_3_2
 
-					local var_3_6 = 0
+					local var_3_4 = 0
 
 					for iter_3_0 = #var_2_2, 1, -1 do
-						local var_3_7 = var_2_2[iter_3_0]
-						local var_3_8 = var_2_4[var_3_7.row][var_3_7.column]
-
-						if var_3_2.priority >= var_3_8.priority then
-							var_3_6 = iter_3_0
+						if var_3_2.priority >= var_2_4[var_2_2[iter_3_0].row][var_2_2[iter_3_0].column].priority then
+							var_3_4 = iter_3_0
 
 							break
 						end
 					end
 
-					table = var_7
-
-					var_7.insert(var_2_2, var_3_6 + 1, var_3_0)
+					table.insert(var_2_2, var_3_4 + 1, {
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					})
 				else
-					math = var_3_2
-					var_2_0 = var_3_2.min(var_2_0, var_4)
+					var_2_0 = math.min(var_2_0, var_2_4[var_2_5.row][var_2_5.column].priority + arg_2_0.cells[({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).row][({
+						row = var_2_5.row + arg_3_0[1],
+						column = var_2_5.column + arg_3_0[2]
+					}).column].priority)
 				end
 			end
 
@@ -145,23 +184,24 @@ function var_0_2._Find(arg_2_0, arg_2_1, arg_2_2)
 		end)
 	end
 
-	if var_2_0 >= var_0_2.PrioObstacle then
-		local var_2_5 = 1000000
-		local var_2_6 = var_0_2.PrioForbidden
+	if var_2_0 >= var_0_0.PrioObstacle then
+		local var_2_6 = 1000000
 
-		pairs = var_10
+		for iter_2_0, iter_2_1 in pairs({
+			[arg_2_1.row] = {
+				[arg_2_1.column] = {
+					priority = 0,
+					path = {}
+				}
+			}
+		}) do
+			for iter_2_2, iter_2_3 in pairs(iter_2_1) do
+				local var_2_7 = math.abs(arg_2_2.row - iter_2_0) + math.abs(arg_2_2.column - iter_2_2)
+				local var_2_8
 
-		for iter_2_0, iter_2_1 in var_10(var_2_4) do
-			pairs = var_1_10015
-
-			for iter_2_2, iter_2_3 in var_1_10015(iter_2_1) do
-				math = var_1_10020
-				var_1_10020 = var_1_10020.abs(arg_2_2.row - iter_2_0)
-				math = var_1_10021
-
-				if var_1_10020 + var_1_10021.abs(arg_2_2.column - iter_2_2) < var_2_5 or var_1_10020 == var_2_5 and iter_2_3.priority < var_2_6 then
-					var_2_5 = var_1_10020
-					var_2_6 = iter_2_3.priority
+				if var_2_7 < var_2_6 or var_2_7 == var_2_6 and var_0_0.PrioForbidden > iter_2_3.priority then
+					var_2_6 = var_2_7
+					var_2_8 = iter_2_3.priority
 					var_2_1 = iter_2_3.path
 				end
 			end
@@ -171,48 +211,14 @@ function var_0_2._Find(arg_2_0, arg_2_1, arg_2_2)
 	return var_2_0, var_2_1
 end
 
-function var_0_2.IsDirectionForbidden(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_0.forbiddens
-
-	ChapterConst = var_1_10004
-
-	if var_6_0 == var_1_10004.ForbiddenNone then
+function var_0_0.IsDirectionForbidden(arg_6_0, arg_6_1, arg_6_2)
+	if arg_6_0.forbiddens == ChapterConst.ForbiddenNone then
 		return
 	end
 
-	local var_6_1
+	local var_6_0 = arg_6_1 ~= 0 and (arg_6_1 < 0 and ChapterConst.ForbiddenUp or ChapterConst.ForbiddenDown) or arg_6_2 < 0 and ChapterConst.ForbiddenLeft or ChapterConst.ForbiddenRight
 
-	if arg_6_1 ~= 0 then
-		if arg_6_1 < 0 then
-			ChapterConst = var_4
-
-			if not var_4.ForbiddenUp then
-				::label_6_0::
-
-				ChapterConst = var_4
-				var_6_1 = var_4.ForbiddenDown
-			end
-
-			goto label_6_2
-
-			if arg_6_2 < 0 then
-				ChapterConst = var_4
-
-				if not var_4.ForbiddenLeft then
-					::label_6_1::
-
-					ChapterConst = var_4
-					var_6_1 = var_4.ForbiddenRight
-				end
-
-				::label_6_2::
-
-				bit = var_4
-
-				return var_4.band(var_6_1, arg_6_0.forbiddens) > 0
-			end
-		end
-	end
+	return bit.band(var_6_0, arg_6_0.forbiddens) > 0
 end
 
-return var_0_2
+return var_0_0

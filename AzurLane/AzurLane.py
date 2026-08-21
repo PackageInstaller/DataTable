@@ -41,7 +41,7 @@ DEFAULT_MANIFESTS = [
     "$l2dhash$1522$120e2ce1a981ac61",
     "$cvhash$1415$d53050872f4174ea",
 ]
-DEFAULT_JOBS = 16
+DEFAULT_JOBS = os.cpu_count() or 1
 LUA_DIR = "Lua"
 STATE_FILE = "version.json"
 STATE_VERSION = 1
@@ -182,7 +182,9 @@ def is_script_package(path):
     base = os.path.basename(path).lower()
     if base.endswith(".ys"):
         base = base[:-3]
-    return base in ("scripts32", "scripts64")
+    # 必须用 ==。`base in ("scripts64")` 会变成子串判断,
+    # 把 auctionicon/4、emoji/6 这类资源包也当成脚本。
+    return base == "scripts64"
 
 
 def script_packages(manifest):
@@ -242,7 +244,7 @@ def sync_lua(out_root, manifest, jobs=8):
             console.print(f"[green]脚本已是最新: {path}[/green]")
             continue
 
-        console.print(f"[cyan]解密并反编译: {path} -> {lua_dir}[/cyan]")
+        console.print(f"[cyan]解密并反编译: {path} -> {lua_dir} ({jobs} 线程)[/cyan]")
         try:
             result = AzurLaneDecompile.decompile_bundle(src, lua_dir, jobs=jobs)
         except Exception as exc:
@@ -263,17 +265,26 @@ def sync_lua(out_root, manifest, jobs=8):
 def main():
     ap = argparse.ArgumentParser(description="碧蓝航线全资产下载/更新器")
     ap.add_argument("--assets", action="store_true", help="只下载资产, 不反编译脚本")
-    ap.add_argument("--lua", action="store_true", help="只下载 scripts32/64 并反编译到 Lua/")
+    ap.add_argument("--lua", action="store_true", help="只下载 scripts64 并反编译到 Lua/")
+    ap.add_argument("--painting", action="store_true", help="下载立绘与数据表并还原到 Painting/")
     ap.add_argument("--only", default=None, help="过滤关键字, 如 lua / hybridclr")
     ap.add_argument("--cdn", default=None, help="CDN 地址, 默认 OSS 源站")
     ap.add_argument("--platform", default=DEFAULT_PLATFORM, help="平台目录, 默认 android")
     ap.add_argument("--manifest", default=None, help="只下载指定清单, 默认自动获取全部清单")
-    ap.add_argument("--jobs", type=int, default=DEFAULT_JOBS, help="并发线程数")
+    ap.add_argument(
+        "-j",
+        "--jobs",
+        type=int,
+        default=DEFAULT_JOBS,
+        help=f"并发线程数, 默认 CPU 核心数 ({DEFAULT_JOBS})",
+    )
     ap.add_argument("--out", default=None, help="输出根目录, 默认当前目录")
     args = ap.parse_args()
 
     if args.assets and args.lua:
         ap.error("--assets 与 --lua 不能同时使用")
+    if args.painting and (args.assets or args.lua):
+        ap.error("--painting 不能与 --assets / --lua 同时使用")
 
     out_root = args.out or os.getcwd()
     assets_dir = os.path.join(out_root, "Assets")
@@ -305,13 +316,19 @@ def main():
     if args.lua:
         manifest = filter_lua(manifest)
         console.print(f"[cyan]脚本模式, 选中 {len(manifest)} 条[/cyan]")
+    elif args.painting:
+        keywords = ("painting/", "sharecfgdata/", "scripts64")
+        manifest = {
+            p: v for p, v in manifest.items() if any(k in p.lower() for k in keywords)
+        }
+        console.print(f"[cyan]立绘模式, 选中 {len(manifest)} 条[/cyan]")
     elif args.assets:
         do_lua = False
         console.print(f"[cyan]纯资产模式, 不反编译脚本[/cyan]")
     elif args.only:
         only = args.only.lower()
         if only == "lua":
-            keywords = ("scripts32", "scripts64", "hybridclr")
+            keywords = ("scripts64", "hybridclr")
         else:
             keywords = (only,)
         manifest = {
@@ -320,7 +337,7 @@ def main():
         console.print(f"[cyan]过滤后 {len(manifest)} 条[/cyan]")
 
     total_size = sum(v[0] for v in manifest.values())
-    console.print(f"[cyan]选中 {len(manifest)} 条, 约 {total_size / 1e9:.2f} GB[/cyan]")
+    console.print(f"[cyan]选中 {len(manifest)} 条, 约 {total_size / 1e9:.2f} GB, {args.jobs} 线程[/cyan]")
 
     meta = {
         "manifest": manifest_names[0] if manifest_names else None,
@@ -347,6 +364,9 @@ def main():
         console.print("[green]全部已是最新[/green]")
         if do_lua:
             sync_lua(out_root, manifest, jobs=args.jobs)
+        if args.painting:
+            import AzurLanePainting
+            AzurLanePainting.run(out_root, jobs=args.jobs)
         return
 
     console.print(f"[cyan]首次下载 {len(pending_assets)} 条 -> Assets[/cyan]")
@@ -379,6 +399,10 @@ def main():
 
     if do_lua:
         sync_lua(out_root, manifest, jobs=args.jobs)
+
+    if args.painting:
+        import AzurLanePainting
+        AzurLanePainting.run(out_root, jobs=args.jobs)
 
     console.print(f"[green]完成, 失败 {fail}[/green]")
     sys.exit(1 if fail else 0)

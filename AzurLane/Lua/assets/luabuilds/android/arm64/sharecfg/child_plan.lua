@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_plan") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_plan"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_plan = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_plan
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_plan = rawget(pg, "child_plan") or setmetatable({
+	__name = "child_plan"
+}, confNEO)
+pg.child_plan.all = {
 	1101,
 	1102,
 	1103,
@@ -116,25 +93,11 @@ var_0_3.all = {
 	1404,
 	1402
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_plan = {}
+pg.base = pg.base or {}
+pg.base.child_plan = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_plan
-
-	var_1_0[1101] = {
+	pg.base.child_plan[1101] = {
 		name = "吃饭",
 		type = 1,
 		cost_resource2 = 0,
@@ -193,11 +156,7 @@ var_0_3.base.child_plan = {}
 			110102
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_plan
-
-	var_1_1[1102] = {
+	pg.base.child_plan[1102] = {
 		name = "洗漱",
 		type = 1,
 		cost_resource2 = 0,
@@ -251,11 +210,7 @@ var_0_3.base.child_plan = {}
 			110202
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_plan
-
-	var_1_2[1103] = {
+	pg.base.child_plan[1103] = {
 		name = "读故事",
 		type = 1,
 		cost_resource2 = 0,
@@ -309,11 +264,7 @@ var_0_3.base.child_plan = {}
 			110302
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_plan
-
-	var_1_3[1104] = {
+	pg.base.child_plan[1104] = {
 		name = "搭积木",
 		type = 1,
 		cost_resource2 = 0,
@@ -367,11 +318,7 @@ var_0_3.base.child_plan = {}
 			110402
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_plan
-
-	var_1_4[1105] = {
+	pg.base.child_plan[1105] = {
 		name = "锻炼",
 		type = 1,
 		cost_resource2 = 0,
@@ -425,11 +372,7 @@ var_0_3.base.child_plan = {}
 			110502
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_plan
-
-	var_1_5[1106] = {
+	pg.base.child_plan[1106] = {
 		name = "洗澡",
 		type = 1,
 		cost_resource2 = 0,
@@ -488,11 +431,7 @@ var_0_3.base.child_plan = {}
 			110602
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_plan
-
-	var_1_6[1107] = {
+	pg.base.child_plan[1107] = {
 		name = "初级研修",
 		type = 1,
 		cost_resource2 = 1,
@@ -581,11 +520,7 @@ var_0_3.base.child_plan = {}
 			110702
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_plan
-
-	var_1_7[1108] = {
+	pg.base.child_plan[1108] = {
 		name = "中级研修",
 		type = 1,
 		cost_resource2 = 1,
@@ -683,11 +618,7 @@ var_0_3.base.child_plan = {}
 			110802
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_plan
-
-	var_1_8[1109] = {
+	pg.base.child_plan[1109] = {
 		name = "高级研修",
 		type = 1,
 		cost_resource2 = 2,
@@ -785,11 +716,7 @@ var_0_3.base.child_plan = {}
 			110902
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_plan
-
-	var_1_9[1110] = {
+	pg.base.child_plan[1110] = {
 		name = "初级体能",
 		type = 1,
 		cost_resource2 = 0,
@@ -878,11 +805,7 @@ var_0_3.base.child_plan = {}
 			111002
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_plan
-
-	var_1_10[1111] = {
+	pg.base.child_plan[1111] = {
 		name = "中级体能",
 		type = 1,
 		cost_resource2 = 0,
@@ -980,11 +903,7 @@ var_0_3.base.child_plan = {}
 			111102
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_plan
-
-	var_1_11[1112] = {
+	pg.base.child_plan[1112] = {
 		name = "高级体能",
 		type = 1,
 		cost_resource2 = 2,
@@ -1082,11 +1001,7 @@ var_0_3.base.child_plan = {}
 			111202
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_plan
-
-	var_1_12[1113] = {
+	pg.base.child_plan[1113] = {
 		name = "初级手工",
 		type = 1,
 		cost_resource2 = 0,
@@ -1175,11 +1090,7 @@ var_0_3.base.child_plan = {}
 			111302
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_plan
-
-	var_1_13[1114] = {
+	pg.base.child_plan[1114] = {
 		name = "中级手工",
 		type = 1,
 		cost_resource2 = 0,
@@ -1277,11 +1188,7 @@ var_0_3.base.child_plan = {}
 			111402
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_plan
-
-	var_1_14[1115] = {
+	pg.base.child_plan[1115] = {
 		name = "高级手工",
 		type = 1,
 		cost_resource2 = 2,
@@ -1379,11 +1286,7 @@ var_0_3.base.child_plan = {}
 			111502
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_plan
-
-	var_1_15[1116] = {
+	pg.base.child_plan[1116] = {
 		name = "初级声乐",
 		type = 1,
 		cost_resource2 = 0,
@@ -1472,11 +1375,7 @@ var_0_3.base.child_plan = {}
 			111602
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_plan
-
-	var_1_16[1117] = {
+	pg.base.child_plan[1117] = {
 		name = "中级声乐",
 		type = 1,
 		cost_resource2 = 1,
@@ -1574,11 +1473,7 @@ var_0_3.base.child_plan = {}
 			111702
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_plan
-
-	var_1_17[1118] = {
+	pg.base.child_plan[1118] = {
 		name = "高级声乐",
 		type = 1,
 		cost_resource2 = 2,
@@ -1676,11 +1571,7 @@ var_0_3.base.child_plan = {}
 			111802
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_plan
-
-	var_1_18[1119] = {
+	pg.base.child_plan[1119] = {
 		name = "初级美术",
 		type = 1,
 		cost_resource2 = 0,
@@ -1785,11 +1676,7 @@ var_0_3.base.child_plan = {}
 			111902
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_plan
-
-	var_1_19[1120] = {
+	pg.base.child_plan[1120] = {
 		name = "中级美术",
 		type = 1,
 		cost_resource2 = 1,
@@ -1897,11 +1784,7 @@ var_0_3.base.child_plan = {}
 			112002
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_plan
-
-	var_1_20[1121] = {
+	pg.base.child_plan[1121] = {
 		name = "高级美术",
 		type = 1,
 		cost_resource2 = 3,
@@ -2009,11 +1892,7 @@ var_0_3.base.child_plan = {}
 			112102
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_plan
-
-	var_1_21[1122] = {
+	pg.base.child_plan[1122] = {
 		name = "初级形体",
 		type = 1,
 		cost_resource2 = 0,
@@ -2118,11 +1997,7 @@ var_0_3.base.child_plan = {}
 			112202
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_plan
-
-	var_1_22[1123] = {
+	pg.base.child_plan[1123] = {
 		name = "中级形体",
 		type = 1,
 		cost_resource2 = 1,
@@ -2230,11 +2105,7 @@ var_0_3.base.child_plan = {}
 			112302
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_plan
-
-	var_1_23[1124] = {
+	pg.base.child_plan[1124] = {
 		name = "高级形体",
 		type = 1,
 		cost_resource2 = 3,
@@ -2342,11 +2213,7 @@ var_0_3.base.child_plan = {}
 			112402
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_plan
-
-	var_1_24[1125] = {
+	pg.base.child_plan[1125] = {
 		name = "初级表演",
 		type = 1,
 		cost_resource2 = 0,
@@ -2451,11 +2318,7 @@ var_0_3.base.child_plan = {}
 			112502
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_plan
-
-	var_1_25[1126] = {
+	pg.base.child_plan[1126] = {
 		name = "中级表演",
 		type = 1,
 		cost_resource2 = 2,
@@ -2563,11 +2426,7 @@ var_0_3.base.child_plan = {}
 			112602
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_plan
-
-	var_1_26[1127] = {
+	pg.base.child_plan[1127] = {
 		name = "高级表演",
 		type = 1,
 		cost_resource2 = 3,
@@ -2675,11 +2534,7 @@ var_0_3.base.child_plan = {}
 			112702
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_plan
-
-	var_1_27[1128] = {
+	pg.base.child_plan[1128] = {
 		name = "初级书法",
 		type = 1,
 		cost_resource2 = 1,
@@ -2784,11 +2639,7 @@ var_0_3.base.child_plan = {}
 			112802
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_plan
-
-	var_1_28[1129] = {
+	pg.base.child_plan[1129] = {
 		name = "中级书法",
 		type = 1,
 		cost_resource2 = 1,
@@ -2896,11 +2747,7 @@ var_0_3.base.child_plan = {}
 			112902
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child_plan
-
-	var_1_29[1130] = {
+	pg.base.child_plan[1130] = {
 		name = "高级书法",
 		type = 1,
 		cost_resource2 = 1,
@@ -3008,11 +2855,7 @@ var_0_3.base.child_plan = {}
 			113002
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child_plan
-
-	var_1_30[1201] = {
+	pg.base.child_plan[1201] = {
 		name = "初级烹饪",
 		type = 2,
 		cost_resource2 = 5,
@@ -3111,11 +2954,7 @@ var_0_3.base.child_plan = {}
 			120102
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child_plan
-
-	var_1_31[1202] = {
+	pg.base.child_plan[1202] = {
 		name = "中级烹饪",
 		type = 2,
 		cost_resource2 = 6,
@@ -3217,11 +3056,7 @@ var_0_3.base.child_plan = {}
 			120202
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child_plan
-
-	var_1_32[1203] = {
+	pg.base.child_plan[1203] = {
 		name = "高级烹饪",
 		type = 2,
 		cost_resource2 = 6,
@@ -3323,11 +3158,7 @@ var_0_3.base.child_plan = {}
 			120302
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child_plan
-
-	var_1_33[1204] = {
+	pg.base.child_plan[1204] = {
 		name = "初级园艺",
 		type = 2,
 		cost_resource2 = 5,
@@ -3426,11 +3257,7 @@ var_0_3.base.child_plan = {}
 			120402
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child_plan
-
-	var_1_34[1205] = {
+	pg.base.child_plan[1205] = {
 		name = "中级园艺",
 		type = 2,
 		cost_resource2 = 6,
@@ -3532,11 +3359,7 @@ var_0_3.base.child_plan = {}
 			120502
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child_plan
-
-	var_1_35[1206] = {
+	pg.base.child_plan[1206] = {
 		name = "高级园艺",
 		type = 2,
 		cost_resource2 = 7,
@@ -3638,11 +3461,7 @@ var_0_3.base.child_plan = {}
 			120602
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child_plan
-
-	var_1_36[1207] = {
+	pg.base.child_plan[1207] = {
 		name = "初级运动",
 		type = 2,
 		cost_resource2 = 6,
@@ -3736,11 +3555,7 @@ var_0_3.base.child_plan = {}
 			120702
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child_plan
-
-	var_1_37[1208] = {
+	pg.base.child_plan[1208] = {
 		name = "中级运动",
 		type = 2,
 		cost_resource2 = 7,
@@ -3837,11 +3652,7 @@ var_0_3.base.child_plan = {}
 			120802
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child_plan
-
-	var_1_38[1209] = {
+	pg.base.child_plan[1209] = {
 		name = "高级运动",
 		type = 2,
 		cost_resource2 = 8,
@@ -3938,11 +3749,7 @@ var_0_3.base.child_plan = {}
 			120902
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child_plan
-
-	var_1_39[1210] = {
+	pg.base.child_plan[1210] = {
 		name = "初级写生",
 		type = 2,
 		cost_resource2 = 4,
@@ -4041,11 +3848,7 @@ var_0_3.base.child_plan = {}
 			121002
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child_plan
-
-	var_1_40[1211] = {
+	pg.base.child_plan[1211] = {
 		name = "中级写生",
 		type = 2,
 		cost_resource2 = 5,
@@ -4147,11 +3950,7 @@ var_0_3.base.child_plan = {}
 			121102
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child_plan
-
-	var_1_41[1212] = {
+	pg.base.child_plan[1212] = {
 		name = "高级写生",
 		type = 2,
 		cost_resource2 = 5,
@@ -4253,11 +4052,7 @@ var_0_3.base.child_plan = {}
 			121202
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child_plan
-
-	var_1_42[1213] = {
+	pg.base.child_plan[1213] = {
 		name = "初级茶道",
 		type = 2,
 		cost_resource2 = 5,
@@ -4366,11 +4161,7 @@ var_0_3.base.child_plan = {}
 			121302
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child_plan
-
-	var_1_43[1214] = {
+	pg.base.child_plan[1214] = {
 		name = "中级茶道",
 		type = 2,
 		cost_resource2 = 6,
@@ -4482,11 +4273,7 @@ var_0_3.base.child_plan = {}
 			121402
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child_plan
-
-	var_1_44[1215] = {
+	pg.base.child_plan[1215] = {
 		name = "高级茶道",
 		type = 2,
 		cost_resource2 = 6,
@@ -4598,11 +4385,7 @@ var_0_3.base.child_plan = {}
 			121502
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child_plan
-
-	var_1_45[1216] = {
+	pg.base.child_plan[1216] = {
 		name = "初级戏剧",
 		type = 2,
 		cost_resource2 = 5,
@@ -4701,11 +4484,7 @@ var_0_3.base.child_plan = {}
 			121602
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child_plan
-
-	var_1_46[1217] = {
+	pg.base.child_plan[1217] = {
 		name = "中级戏剧",
 		type = 2,
 		cost_resource2 = 6,
@@ -4807,11 +4586,7 @@ var_0_3.base.child_plan = {}
 			121702
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child_plan
-
-	var_1_47[1218] = {
+	pg.base.child_plan[1218] = {
 		name = "高级戏剧",
 		type = 2,
 		cost_resource2 = 7,
@@ -4913,11 +4688,7 @@ var_0_3.base.child_plan = {}
 			121802
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child_plan
-
-	var_1_48[1219] = {
+	pg.base.child_plan[1219] = {
 		name = "初级演奏",
 		type = 2,
 		cost_resource2 = 5,
@@ -5016,11 +4787,7 @@ var_0_3.base.child_plan = {}
 			121902
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child_plan
-
-	var_1_49[1220] = {
+	pg.base.child_plan[1220] = {
 		name = "中级演奏",
 		type = 2,
 		cost_resource2 = 6,
@@ -5122,11 +4889,7 @@ var_0_3.base.child_plan = {}
 			122002
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child_plan
-
-	var_1_50[1221] = {
+	pg.base.child_plan[1221] = {
 		name = "高级演奏",
 		type = 2,
 		cost_resource2 = 6,
@@ -5228,11 +4991,7 @@ var_0_3.base.child_plan = {}
 			122102
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child_plan
-
-	var_1_51[1222] = {
+	pg.base.child_plan[1222] = {
 		name = "初级拓展",
 		type = 2,
 		cost_resource2 = 5,
@@ -5341,11 +5100,7 @@ var_0_3.base.child_plan = {}
 			122202
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child_plan
-
-	var_1_52[1223] = {
+	pg.base.child_plan[1223] = {
 		name = "中级拓展",
 		type = 2,
 		cost_resource2 = 6,
@@ -5457,11 +5212,7 @@ var_0_3.base.child_plan = {}
 			122302
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child_plan
-
-	var_1_53[1224] = {
+	pg.base.child_plan[1224] = {
 		name = "高级拓展",
 		type = 2,
 		cost_resource2 = 7,
@@ -5573,11 +5324,7 @@ var_0_3.base.child_plan = {}
 			122402
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child_plan
-
-	var_1_54[1225] = {
+	pg.base.child_plan[1225] = {
 		name = "初级音乐剧",
 		type = 2,
 		cost_resource2 = 4,
@@ -5686,11 +5433,7 @@ var_0_3.base.child_plan = {}
 			122502
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child_plan
-
-	var_1_55[1226] = {
+	pg.base.child_plan[1226] = {
 		name = "中级音乐剧",
 		type = 2,
 		cost_resource2 = 5,
@@ -5802,11 +5545,7 @@ var_0_3.base.child_plan = {}
 			122602
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child_plan
-
-	var_1_56[1227] = {
+	pg.base.child_plan[1227] = {
 		name = "高级音乐剧",
 		type = 2,
 		cost_resource2 = 6,
@@ -5918,11 +5657,7 @@ var_0_3.base.child_plan = {}
 			122702
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child_plan
-
-	var_1_57[1301] = {
+	pg.base.child_plan[1301] = {
 		name = "初级绘画",
 		type = 3,
 		cost_resource2 = 4,
@@ -6021,11 +5756,7 @@ var_0_3.base.child_plan = {}
 			130102
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child_plan
-
-	var_1_58[1302] = {
+	pg.base.child_plan[1302] = {
 		name = "初级书店店员",
 		type = 3,
 		cost_resource2 = 3,
@@ -6119,11 +5850,7 @@ var_0_3.base.child_plan = {}
 			130202
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child_plan
-
-	var_1_59[1303] = {
+	pg.base.child_plan[1303] = {
 		name = "初级庄园助手",
 		type = 3,
 		cost_resource2 = 4,
@@ -6222,11 +5949,7 @@ var_0_3.base.child_plan = {}
 			130302
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child_plan
-
-	var_1_60[1304] = {
+	pg.base.child_plan[1304] = {
 		name = "初级运动指导",
 		type = 3,
 		cost_resource2 = 4,
@@ -6320,11 +6043,7 @@ var_0_3.base.child_plan = {}
 			130402
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child_plan
-
-	var_1_61[1305] = {
+	pg.base.child_plan[1305] = {
 		name = "初级舞台表演",
 		type = 3,
 		cost_resource2 = 3,
@@ -6423,11 +6142,7 @@ var_0_3.base.child_plan = {}
 			130502
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child_plan
-
-	var_1_62[1306] = {
+	pg.base.child_plan[1306] = {
 		name = "初级歌手活动",
 		type = 3,
 		cost_resource2 = 3,
@@ -6521,11 +6236,7 @@ var_0_3.base.child_plan = {}
 			130602
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child_plan
-
-	var_1_63[1307] = {
+	pg.base.child_plan[1307] = {
 		name = "初级英雄表演",
 		type = 3,
 		cost_resource2 = 4,
@@ -6624,11 +6335,7 @@ var_0_3.base.child_plan = {}
 			130702
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child_plan
-
-	var_1_64[1308] = {
+	pg.base.child_plan[1308] = {
 		name = "初级促销专员",
 		type = 3,
 		cost_resource2 = 5,
@@ -6727,11 +6434,7 @@ var_0_3.base.child_plan = {}
 			130802
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child_plan
-
-	var_1_65[1310] = {
+	pg.base.child_plan[1310] = {
 		name = "初级便利店店员",
 		type = 3,
 		cost_resource2 = 3,
@@ -6819,11 +6522,7 @@ var_0_3.base.child_plan = {}
 			131002
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child_plan
-
-	var_1_66[1311] = {
+	pg.base.child_plan[1311] = {
 		name = "初级咖啡店店员",
 		type = 3,
 		cost_resource2 = 3,
@@ -6922,11 +6621,7 @@ var_0_3.base.child_plan = {}
 			131102
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child_plan
-
-	var_1_67[1312] = {
+	pg.base.child_plan[1312] = {
 		name = "中级绘画",
 		type = 3,
 		cost_resource2 = 4,
@@ -7028,11 +6723,7 @@ var_0_3.base.child_plan = {}
 			130102
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child_plan
-
-	var_1_68[1313] = {
+	pg.base.child_plan[1313] = {
 		name = "中级书店店员",
 		type = 3,
 		cost_resource2 = 3,
@@ -7129,11 +6820,7 @@ var_0_3.base.child_plan = {}
 			130202
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child_plan
-
-	var_1_69[1314] = {
+	pg.base.child_plan[1314] = {
 		name = "中级庄园助手",
 		type = 3,
 		cost_resource2 = 5,
@@ -7235,11 +6922,7 @@ var_0_3.base.child_plan = {}
 			130302
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child_plan
-
-	var_1_70[1315] = {
+	pg.base.child_plan[1315] = {
 		name = "中级运动指导",
 		type = 3,
 		cost_resource2 = 5,
@@ -7336,11 +7019,7 @@ var_0_3.base.child_plan = {}
 			130402
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child_plan
-
-	var_1_71[1316] = {
+	pg.base.child_plan[1316] = {
 		name = "中级舞台表演",
 		type = 3,
 		cost_resource2 = 4,
@@ -7442,11 +7121,7 @@ var_0_3.base.child_plan = {}
 			130502
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child_plan
-
-	var_1_72[1317] = {
+	pg.base.child_plan[1317] = {
 		name = "中级歌手活动",
 		type = 3,
 		cost_resource2 = 4,
@@ -7543,11 +7218,7 @@ var_0_3.base.child_plan = {}
 			130602
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child_plan
-
-	var_1_73[1318] = {
+	pg.base.child_plan[1318] = {
 		name = "中级英雄表演",
 		type = 3,
 		cost_resource2 = 5,
@@ -7649,11 +7320,7 @@ var_0_3.base.child_plan = {}
 			130702
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child_plan
-
-	var_1_74[1319] = {
+	pg.base.child_plan[1319] = {
 		name = "中级促销专员",
 		type = 3,
 		cost_resource2 = 6,
@@ -7755,11 +7422,7 @@ var_0_3.base.child_plan = {}
 			130802
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child_plan
-
-	var_1_75[1320] = {
+	pg.base.child_plan[1320] = {
 		name = "中级便利店店员",
 		type = 3,
 		cost_resource2 = 4,
@@ -7850,11 +7513,7 @@ var_0_3.base.child_plan = {}
 			131002
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child_plan
-
-	var_1_76[1321] = {
+	pg.base.child_plan[1321] = {
 		name = "中级咖啡店店员",
 		type = 3,
 		cost_resource2 = 4,
@@ -7956,11 +7615,7 @@ var_0_3.base.child_plan = {}
 			131102
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child_plan
-
-	var_1_77[1322] = {
+	pg.base.child_plan[1322] = {
 		name = "高级绘画",
 		type = 3,
 		cost_resource2 = 5,
@@ -8062,11 +7717,7 @@ var_0_3.base.child_plan = {}
 			130102
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child_plan
-
-	var_1_78[1323] = {
+	pg.base.child_plan[1323] = {
 		name = "高级书店店员",
 		type = 3,
 		cost_resource2 = 3,
@@ -8163,11 +7814,7 @@ var_0_3.base.child_plan = {}
 			130202
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child_plan
-
-	var_1_79[1324] = {
+	pg.base.child_plan[1324] = {
 		name = "高级庄园助手",
 		type = 3,
 		cost_resource2 = 5,
@@ -8269,11 +7916,7 @@ var_0_3.base.child_plan = {}
 			130302
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child_plan
-
-	var_1_80[1325] = {
+	pg.base.child_plan[1325] = {
 		name = "高级运动指导",
 		type = 3,
 		cost_resource2 = 6,
@@ -8370,11 +8013,7 @@ var_0_3.base.child_plan = {}
 			130402
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child_plan
-
-	var_1_81[1326] = {
+	pg.base.child_plan[1326] = {
 		name = "高级舞台表演",
 		type = 3,
 		cost_resource2 = 5,
@@ -8476,11 +8115,7 @@ var_0_3.base.child_plan = {}
 			130502
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child_plan
-
-	var_1_82[1327] = {
+	pg.base.child_plan[1327] = {
 		name = "高级歌手活动",
 		type = 3,
 		cost_resource2 = 4,
@@ -8577,11 +8212,7 @@ var_0_3.base.child_plan = {}
 			130602
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child_plan
-
-	var_1_83[1328] = {
+	pg.base.child_plan[1328] = {
 		name = "高级英雄表演",
 		type = 3,
 		cost_resource2 = 6,
@@ -8683,11 +8314,7 @@ var_0_3.base.child_plan = {}
 			130702
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child_plan
-
-	var_1_84[1329] = {
+	pg.base.child_plan[1329] = {
 		name = "高级促销专员",
 		type = 3,
 		cost_resource2 = 7,
@@ -8789,11 +8416,7 @@ var_0_3.base.child_plan = {}
 			130802
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child_plan
-
-	var_1_85[1330] = {
+	pg.base.child_plan[1330] = {
 		name = "高级便利店店员",
 		type = 3,
 		cost_resource2 = 5,
@@ -8884,11 +8507,7 @@ var_0_3.base.child_plan = {}
 			131002
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child_plan
-
-	var_1_86[1331] = {
+	pg.base.child_plan[1331] = {
 		name = "高级咖啡店店员",
 		type = 3,
 		cost_resource2 = 4,
@@ -8990,11 +8609,7 @@ var_0_3.base.child_plan = {}
 			131102
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child_plan
-
-	var_1_87[1404] = {
+	pg.base.child_plan[1404] = {
 		name = "做家务",
 		type = 5,
 		cost_resource2 = 2,
@@ -9099,8 +8714,7 @@ var_0_3.base.child_plan = {}
 			130902
 		}
 	}
-	pg = var_1_87
-	var_1_87.base.child_plan[1402] = {
+	pg.base.child_plan[1402] = {
 		name = "宅家睡觉",
 		type = 4,
 		cost_resource2 = 0,

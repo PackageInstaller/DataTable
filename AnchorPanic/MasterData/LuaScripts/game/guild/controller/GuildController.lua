@@ -21,6 +21,8 @@ end
 --模块间事件监听
 function listNotification(self)
 
+
+    GameDispatcher:addEventListener(EventName.REQ_GUILD_CHANGE_ICON,self.onReqGuildChangeIcon,self)
     GameDispatcher:addEventListener(EventName.REQ_GUILD_INFO, self.onReqGuldInfo, self)
     GameDispatcher:addEventListener(EventName.REQ_CREATE_GUILD, self.onReqCreateGuild, self)
 
@@ -59,6 +61,11 @@ function listNotification(self)
 
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_CHANGE_NAME_PANEL, self.onOpenChangeNamePanel, self)
     GameDispatcher:addEventListener(EventName.CLOSE_GUILD_CHANGE_NAME_PANEL, self.onCloseChangeNamePanel, self)
+
+    GameDispatcher:addEventListener(EventName.OPEN_GUILD_CHANGE_ICON_PANEL,self.onOpenChangeIconPanel,self)
+    GameDispatcher:addEventListener(EventName.CLOSE_GUILD_CHANGE_ICON_PANEL,self.onCloseChangeIconPanel,self)
+
+    
 
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_CHANGE_NOTICE_PANEL, self.onOpenChangeNoticePanel, self)
     GameDispatcher:addEventListener(EventName.CLOSE_GUILD_CHANGE_NOTICE_PANEL, self.onCloseChangeNoticePanel, self)
@@ -120,7 +127,12 @@ function listNotification(self)
 
     GameDispatcher:addEventListener(EventName.OPEN_GUILD_SEEEP_RESULT_VIEW, self.onOpenGuildSweepResultView, self)
     GameDispatcher:addEventListener(EventName.CLOSE_ALL_GUILD_SWEEP_PANEL, self.closeGuildSweepPanel, self)
+
+    GameDispatcher:addEventListener(EventName.UPDATE_GUILD_RED_INFO, self.updateGuildRed, self)
+    
 end
+
+
 
 function addGuildSweepViewToPool(self,cusView)
     table.insert(self.mMgr.mSweepViewList,cusView)
@@ -153,6 +165,7 @@ function closeAllGuildPanel(self)
 
     self.mMgr.mViewList = {}
     self.mMgr.mGuildBossViewList = {}
+    MoneyManager:setMoneyTidList({MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID})
 end
 
 function closeAllGuildBossPanel(self)
@@ -171,9 +184,14 @@ function closeGuildSweepPanel(self)
     self.mMgr.mSweepViewList = {}
 end
 
+function updateGuildRed(self)
+    guild.GuildManager:updateRedInfo()
+end
+
 --注册server发来的数据
 function registerMsgHandler(self)
     return {
+        SC_GUILD_CHANGE_COIN = self.onGuildChangeCoinHandler,
         SC_GUILD_PANEL = self.onGuildInfoHandler,
         SC_CREATE_GUILD = self.onGuildCreateHandler,
         SC_REFRESH_RECOMMEND_GUILDS = self.onRefreshGuildsHandler,
@@ -224,6 +242,21 @@ function registerMsgHandler(self)
     }
 end
 
+function onGuildChangeCoinHandler(self,msg)
+    if msg.result == 1 then
+        GameDispatcher:dispatchEvent(EventName.CLOSE_GUILD_CHANGE_ICON_PANEL)
+        GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_MAIN_PANEL)
+    -- elseif msg.result == 2 then
+    --     gs.Message.Show(_TT(149213))
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(26313))
+    -- elseif msg.result == 4 then
+    --     gs.Message.Show(_TT(149217))
+    -- elseif msg.result == 5 then
+    --     gs.Message.Show(_TT(149236))
+    end
+end
+
 function onGuildInfoHandler(self, msg)
     guild.GuildManager:guildInfoOption(msg)
 end
@@ -231,10 +264,15 @@ end
 function onGuildCreateHandler(self, msg)
     if msg.result == 1 then
         guild.GuildManager:guildCreateOption(msg)
-    elseif msg.result == 2 then
-        gs.Message.Show(_TT(94581))
-    else
-        gs.Message.Show("创建失败")
+        
+        local guildInfog = guild.GuildManager:getGuildInfo()
+        if(guildInfog)then
+            sdk.SdkManager:foreignNotifyJoinGuildSuc(guildInfog.show_id)
+        end
+    -- -- elseif msg.result == 2 then
+    -- --     gs.Message.Show(_TT(94581))
+    -- else
+    --     gs.Message.Show("创建失败")
     end
 end
 
@@ -244,15 +282,22 @@ function onRefreshGuildsHandler(self, msg)
     elseif msg.result == 0 then
         gs.Message.Show(_TT(94564))
     elseif msg.result == 2 then
-        gs.Message.Show(_TT(94571))
-    elseif msg.result == 3 then
-        gs.Message.Show(_TT(94572))
-    elseif msg.result == 4 then
-        gs.Message.Show(_TT(94573))
-    elseif msg.result == 5 then
-        GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_JOIN_ERROR_TAB_PANEL)
+         GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_JOIN_ERROR_TAB_PANEL)
         guild.GuildManager:refreshGuilds(msg)
         gs.Message.Show("联盟已解散")
+        --gs.Message.Show(_TT(94571))
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(94572))
+    -- elseif msg.result == 4 then
+    --     gs.Message.Show(_TT(94573))
+    -- elseif msg.result == 5 then
+       
+    -- elseif msg.result == 6 then
+    --     gs.Message.Show(_TT(149197))
+    -- elseif msg.result == 7 then
+    --     gs.Message.Show(_TT(94594))
+    -- elseif msg.result == 8 then
+    --     gs.Message.Show(_TT(149235))
     end
 end
 
@@ -268,10 +313,16 @@ end
 function onReNameGuildHandler(self, msg)
     if msg.result == 1 then
         guild.GuildManager:renameGuild(msg)
-    elseif msg.result == 2 then
-        gs.Message.Show(_TT(94581))
-    else
-        gs.Message.Show("改名失败")
+    -- elseif msg.result == 2 then
+    --     gs.Message.Show(_TT(94581))
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(149213))
+    -- elseif msg.result == 4 then
+    --     gs.Message.Show(_TT(26313))
+    -- elseif msg.result == 5 then
+    --     gs.Message.Show(_TT(149236))
+    -- else
+    --     gs.Message.Show("改名失败")
     end
 end
 
@@ -330,8 +381,12 @@ end
 function onRemoveMemberHandler(self, msg)
     if msg.result == 1 then
         guild.GuildManager:updateMemberInfo(msg)
-    else
-        gs.Message.Show("请求失败")
+    -- elseif msg.result == 2 then
+    --     gs.Message.Show(_TT(149196))
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(149234))
+    -- else
+    --     gs.Message.Show("请求失败")
     end
 end
 
@@ -354,8 +409,12 @@ end
 function onLeaveGuildHandler(self, msg)
     if msg.result == 1 then
         guild.GuildManager:leaveGuildInfo()
-    else
-        gs.Message.Show("退出失败")
+    -- elseif msg.result == 2 then
+    --     gs.Message.Show(_TT(149195))
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(149233))
+    -- else
+    --     gs.Message.Show("退出失败")
     end
 
     GameDispatcher:dispatchEvent(EventName.RECEIVE_LEAVEGUILD)
@@ -377,8 +436,12 @@ end
 function onUpdateImpeachHandler(self, msg)
     if msg.result == 1 then
         guild.GuildManager:updateImpeachMsgInfo(msg)
-    elseif msg.result == 2 then
-        gs.Message.Show(_TT(94613))
+    -- elseif msg.result == 2 then
+    --     gs.Message.Show(_TT(94613))
+    -- elseif msg.result == 3 then
+    --     gs.Message.Show(_TT(149212))
+    -- elseif msg.result == 4 then
+    --     gs.Message.Show(_TT(149211))
     end
 end
 
@@ -392,12 +455,17 @@ function onUpdateCommissionJobHandler(self, msg)
 end
 
 -------------------------------------------------req-----------------------------------------------
+
+function onReqGuildChangeIcon(self,args)
+    SOCKET_SEND(Protocol.CS_GUILD_CHANGE_COIN,{icon_id = args.iconId},Protocol.SC_GUILD_CHANGE_COIN)
+end
+
 function onReqGuldInfo(self)
     SOCKET_SEND(Protocol.CS_GUILD_PANEL)
 end
 
 function onReqCreateGuild(self, args)
-    SOCKET_SEND(Protocol.CS_CREATE_GUILD, {name = args.name, notice = args.notice})
+    SOCKET_SEND(Protocol.CS_CREATE_GUILD, {name = args.name, notice = args.notice,icon_id = args.iconId})
 end
 
 function onReqRefreshGuilds(self, args)
@@ -650,7 +718,6 @@ function onGuildGainOldPrepareAwardHandler(self,msg)
     end
 end
 
-
 function onOpenGuildTipsPanel(self, args)
     if self.mGuildTipsPanel == nil then
         self.mGuildTipsPanel = guild.GuildTipsPanel.new()
@@ -741,6 +808,28 @@ end
 function onCloseChangeNamePanel(self)
     if self.mGuildChangeNamePanel then
         self.mGuildChangeNamePanel:close()
+    end
+end
+
+
+function onOpenChangeIconPanel(self,args)
+    if self.mGuildChangeIconPanel == nil then
+        self.mGuildChangeIconPanel = guild.GuildChangeIconPanel.new()
+        self.mGuildChangeIconPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestoryGuildChangeIconPanelHandler, self)
+        self:addViewToPool(self.mGuildChangeIconPanel)
+    end
+    self.mGuildChangeIconPanel:open(args)
+end
+
+function onDestoryGuildChangeIconPanelHandler(self)
+    self:removeViewToPool(self.mGuildChangeIconPanel)
+    self.mGuildChangeIconPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestoryGuildChangeIconPanelHandler, self)
+    self.mGuildChangeIconPanel = nil
+end
+
+function onCloseChangeIconPanel(self)
+    if self.mGuildChangeIconPanel then
+        self.mGuildChangeIconPanel:close()
     end
 end
 
@@ -1174,5 +1263,8 @@ function onDestoryGuildSweepResultViewHandler(self)
     self.mGuildSweepResultView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestoryGuildSweepResultViewHandler, self)
     self.mGuildSweepResultView = nil
 end
+
+
+
 
 return _M

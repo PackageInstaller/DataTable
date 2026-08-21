@@ -15,7 +15,10 @@ manual.ManualMonsterItem = require('game/manual/manualBase/view/item/ManualMonst
 --战员
 manual.ManualHeroView = require('game/manual/manualHero/view/ManualHeroView')
 manual.ManualHeroPanel = require('game/manual/manualHero/view/ManualHeroPanel')
+manual.ManualMapView = require('game/manual/manualHero/view/ManualMapView')
+manual.ManualMapHeroView = require('game/manual/manualHero/view/ManualMapHeroView')
 manual.ManualHeroVo = require('game/manual/manualHero/manager/vo/ManualHeroVo')
+manual.ManualMapVo = require('game/manual/manualHero/manager/vo/ManualMapVo')
 manual.ManualHeroItem = require('game/manual/manualHero/view/item/ManualHeroItem')
 manual.ManualHeroConst = require('game/manual/manualHero/manager/ManualHeroConst')
 manual.ManualHeroManager = require('game/manual/manualHero/manager/ManualHeroManager').new()
@@ -53,7 +56,16 @@ manual.ManualModulePanel = require('game/manual/manualModule/view/ManualModulePa
 manual.ManualModuleManager = require('game/manual/manualModule/manager/ManualModuleManager')
 manual.ManualModuleItem = require('game/manual/manualModule/view/item/ManualModuleItem')
 manual.ManualModuleInfoView = require('game/manual/manualModule/view/ManualModuleInfoView')
-local module = { manual.ManualController, manual.ManualStoryController, manual.ManualWorldController, manual.ManualMusicController }
+
+--图集-时装
+
+manual.ManualFashionTabView = require('game/manual/manualFashion/view/ManualFashionTabView')
+manual.ManualFashionTabSubView = require('game/manual/manualFashion/view/ManualFashionTabSubView')
+manual.ManualFashionItem = require('game/manual/manualFashion/view/item/ManualFashionItem')
+manual.ManualFashionManager = require('game/manual/manualFashion/manager/ManualFashionManager').new()
+manual.ManualFashionController = require('game/manual/manualFashion/controller/ManualFashionController').new(manual.ManualFashionManager)
+
+local module = { manual.ManualController, manual.ManualStoryController, manual.ManualWorldController, manual.ManualMusicController,manual.ManualFashionController }
 return module
 
 --[[ 替换语言包自动生成，请勿修改！

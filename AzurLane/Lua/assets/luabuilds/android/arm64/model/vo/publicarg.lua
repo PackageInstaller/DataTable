@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PublicArg")
+﻿local var_0_0 = class("PublicArg")
 
 var_0_0.TypePlayerName = 1
 var_0_0.TypeShipId = 2

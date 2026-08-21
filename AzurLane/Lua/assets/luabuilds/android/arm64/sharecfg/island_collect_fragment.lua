@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_collect_fragment") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_collect_fragment"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_collect_fragment = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_collect_fragment
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_collect_fragment = rawget(pg, "island_collect_fragment") or setmetatable({
+	__name = "island_collect_fragment"
+}, confNEO)
+pg.island_collect_fragment.all = {
 	1001,
 	1002,
 	1003,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	1011,
 	1012
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_collect_fragment = {}
+pg.base = pg.base or {}
+pg.base.island_collect_fragment = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_collect_fragment
-
-	var_1_0[1001] = {
+	pg.base.island_collect_fragment[1001] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在晨露农场或许会有发现",
@@ -71,11 +34,7 @@ var_0_3.base.island_collect_fragment = {}
 			10010058
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_collect_fragment
-
-	var_1_1[1002] = {
+	pg.base.island_collect_fragment[1002] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在晨露农场或许会有发现",
@@ -89,11 +48,7 @@ var_0_3.base.island_collect_fragment = {}
 			10010059
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_collect_fragment
-
-	var_1_2[1003] = {
+	pg.base.island_collect_fragment[1003] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在晨露农场或许会有发现",
@@ -107,11 +62,7 @@ var_0_3.base.island_collect_fragment = {}
 			10010060
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_collect_fragment
-
-	var_1_3[1004] = {
+	pg.base.island_collect_fragment[1004] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在晨露农场或许会有发现",
@@ -125,11 +76,7 @@ var_0_3.base.island_collect_fragment = {}
 			10010061
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_collect_fragment
-
-	var_1_4[1005] = {
+	pg.base.island_collect_fragment[1005] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在晨露农场或许会有发现",
@@ -143,11 +90,7 @@ var_0_3.base.island_collect_fragment = {}
 			10010062
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_collect_fragment
-
-	var_1_5[1006] = {
+	pg.base.island_collect_fragment[1006] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在栖风原野或许会有发现",
@@ -161,11 +104,7 @@ var_0_3.base.island_collect_fragment = {}
 			10040046
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_collect_fragment
-
-	var_1_6[1007] = {
+	pg.base.island_collect_fragment[1007] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在栖风原野或许会有发现",
@@ -179,11 +118,7 @@ var_0_3.base.island_collect_fragment = {}
 			10040047
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_collect_fragment
-
-	var_1_7[1008] = {
+	pg.base.island_collect_fragment[1008] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在栖风原野或许会有发现",
@@ -197,11 +132,7 @@ var_0_3.base.island_collect_fragment = {}
 			10040048
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_collect_fragment
-
-	var_1_8[1009] = {
+	pg.base.island_collect_fragment[1009] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在栖风原野或许会有发现",
@@ -215,11 +146,7 @@ var_0_3.base.island_collect_fragment = {}
 			10040049
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_collect_fragment
-
-	var_1_9[1010] = {
+	pg.base.island_collect_fragment[1010] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在港口或许会有发现",
@@ -233,11 +160,7 @@ var_0_3.base.island_collect_fragment = {}
 			10020008
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_collect_fragment
-
-	var_1_10[1011] = {
+	pg.base.island_collect_fragment[1011] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在港口或许会有发现",
@@ -251,8 +174,7 @@ var_0_3.base.island_collect_fragment = {}
 			10020014
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.island_collect_fragment[1012] = {
+	pg.base.island_collect_fragment[1012] = {
 		name = "飞行器碎片",
 		time_taked = 10,
 		tip = "在港口或许会有发现",

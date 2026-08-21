@@ -5,6 +5,14 @@ local mon_data=
 {
 	[1015]={ tid=10151, level=1, star=0
 },
+	[1029]={ tid=10291, level=80, star=0
+},
+	[1034]={ tid=10341, level=80, star=0
+},
+	[1035]={ tid=10351, level=80, star=0
+},
+	[1041]={ tid=10411, level=80, star=0
+},
 	[2001]={ tid=3625, level=55, star=0
 },
 	[2011]={ tid=3625, level=65, star=0
@@ -151,6 +159,18 @@ local mon_data=
 },
 	[2203]={ tid=5162, level=115, star=0
 },
+	[2204]={ tid=5192, level=85, star=0
+},
+	[2205]={ tid=5192, level=90, star=0
+},
+	[2206]={ tid=5192, level=115, star=0
+},
+	[2207]={ tid=4953, level=85, star=0
+},
+	[2208]={ tid=4953, level=90, star=0
+},
+	[2209]={ tid=4953, level=115, star=0
+},
 	[2801]={ tid=4449, level=48, star=0
 },
 	[2802]={ tid=4450, level=52, star=0
@@ -206,6 +226,8 @@ local mon_data=
 	[2903]={ tid=9513, level=80, star=0
 },
 	[2905]={ tid=9514, level=80, star=0
+},
+	[2906]={ tid=9545, level=80, star=0
 },
 	[3001]={ tid=3407, level=1, star=0
 },
@@ -1259,6 +1281,126 @@ local mon_data=
 },
 	[3629]={ tid=5161, level=85, star=0
 },
+	[3630]={ tid=3422, level=78, star=0
+},
+	[3631]={ tid=3424, level=78, star=0
+},
+	[3632]={ tid=3418, level=78, star=0
+},
+	[3633]={ tid=4405, level=78, star=0
+},
+	[3634]={ tid=4402, level=78, star=0
+},
+	[3635]={ tid=3424, level=80, star=0
+},
+	[3636]={ tid=3410, level=80, star=0
+},
+	[3637]={ tid=3424, level=80, star=0
+},
+	[3638]={ tid=4414, level=80, star=0
+},
+	[3639]={ tid=4409, level=80, star=0
+},
+	[3640]={ tid=3422, level=80, star=0
+},
+	[3641]={ tid=3428, level=80, star=0
+},
+	[3642]={ tid=3414, level=80, star=0
+},
+	[3643]={ tid=4458, level=80, star=0
+},
+	[3644]={ tid=4448, level=80, star=0
+},
+	[3645]={ tid=3424, level=82, star=0
+},
+	[3646]={ tid=3408, level=82, star=0
+},
+	[3647]={ tid=4412, level=82, star=0
+},
+	[3648]={ tid=4450, level=82, star=0
+},
+	[3649]={ tid=4439, level=82, star=0
+},
+	[3650]={ tid=3428, level=82, star=0
+},
+	[3651]={ tid=3420, level=82, star=0
+},
+	[3652]={ tid=3436, level=82, star=0
+},
+	[3653]={ tid=4418, level=82, star=0
+},
+	[3654]={ tid=4458, level=82, star=0
+},
+	[3655]={ tid=3436, level=82, star=0
+},
+	[3656]={ tid=3422, level=82, star=0
+},
+	[3657]={ tid=4402, level=82, star=0
+},
+	[3658]={ tid=4402, level=82, star=0
+},
+	[3659]={ tid=4405, level=82, star=0
+},
+	[3660]={ tid=3436, level=82, star=0
+},
+	[3661]={ tid=3421, level=82, star=0
+},
+	[3662]={ tid=3424, level=82, star=0
+},
+	[3663]={ tid=4406, level=82, star=0
+},
+	[3664]={ tid=4439, level=82, star=0
+},
+	[3665]={ tid=3416, level=82, star=0
+},
+	[3666]={ tid=3421, level=82, star=0
+},
+	[3667]={ tid=4439, level=82, star=0
+},
+	[3668]={ tid=4430, level=82, star=0
+},
+	[3669]={ tid=4418, level=82, star=0
+},
+	[3670]={ tid=3408, level=84, star=0
+},
+	[3671]={ tid=3428, level=84, star=0
+},
+	[3672]={ tid=3404, level=84, star=0
+},
+	[3673]={ tid=4409, level=84, star=0
+},
+	[3674]={ tid=4409, level=84, star=0
+},
+	[3675]={ tid=3410, level=82, star=0
+},
+	[3676]={ tid=3420, level=82, star=0
+},
+	[3677]={ tid=4423, level=82, star=0
+},
+	[3678]={ tid=4424, level=82, star=0
+},
+	[3679]={ tid=4409, level=82, star=0
+},
+	[3680]={ tid=3420, level=85, star=0
+},
+	[3681]={ tid=3404, level=85, star=0
+},
+	[3682]={ tid=4412, level=85, star=0
+},
+	[3683]={ tid=4458, level=85, star=0
+},
+	[3684]={ tid=5111, level=85, star=0
+},
+	[4500]={ tid=1105, level=80, star=0
+},
+	[4501]={ tid=1105, level=80, star=0
+},
+	[4502]={ tid=4019, level=80, star=0
+},
+	[4503]={ tid=4402, level=80, star=0
+},
+	[4504]={ tid=4402, level=80, star=0
+},
 	[4801]={ tid=1110, level=80, star=0
 },
 	[4802]={ tid=3001, level=80, star=0
@@ -1387,11 +1529,11 @@ local mon_data=
 },
 	[4871]={ tid=1006, level=80, star=6
 },
-	[4872]={ tid=4209, level=80, star=6
+	[4872]={ tid=4403, level=80, star=6
 },
-	[4873]={ tid=4203, level=80, star=6
+	[4873]={ tid=3407, level=80, star=6
 },
-	[4874]={ tid=4239, level=80, star=6
+	[4874]={ tid=3407, level=80, star=6
 },
 	[4875]={ tid=1001, level=80, star=6
 },
@@ -1478,6 +1620,200 @@ local mon_data=
 	[4916]={ tid=4402, level=80, star=6
 },
 	[4917]={ tid=3413, level=80, star=6
+},
+	[4918]={ tid=1024, level=80, star=6
+},
+	[4919]={ tid=1104, level=80, star=6
+},
+	[4920]={ tid=4019, level=80, star=6
+},
+	[4921]={ tid=3014, level=80, star=6
+},
+	[4922]={ tid=3014, level=80, star=6
+},
+	[4923]={ tid=1020, level=80, star=6
+},
+	[4924]={ tid=1025, level=80, star=6
+},
+	[4925]={ tid=4019, level=80, star=6
+},
+	[4926]={ tid=3014, level=80, star=6
+},
+	[4927]={ tid=3014, level=80, star=6
+},
+	[4928]={ tid=1005, level=80, star=6
+},
+	[4929]={ tid=1026, level=80, star=6
+},
+	[4930]={ tid=4019, level=80, star=6
+},
+	[4931]={ tid=3014, level=80, star=6
+},
+	[4932]={ tid=3014, level=80, star=6
+},
+	[4933]={ tid=1007, level=80, star=6
+},
+	[4934]={ tid=1027, level=80, star=6
+},
+	[4935]={ tid=4019, level=80, star=6
+},
+	[4936]={ tid=3014, level=80, star=6
+},
+	[4937]={ tid=3014, level=80, star=6
+},
+	[4938]={ tid=1005, level=80, star=6
+},
+	[4939]={ tid=1008, level=80, star=6
+},
+	[4940]={ tid=4019, level=80, star=6
+},
+	[4941]={ tid=3014, level=80, star=6
+},
+	[4942]={ tid=3014, level=80, star=6
+},
+	[4943]={ tid=1028, level=80, star=6
+},
+	[4944]={ tid=1105, level=80, star=6
+},
+	[4945]={ tid=4019, level=80, star=6
+},
+	[4946]={ tid=4402, level=80, star=6
+},
+	[4947]={ tid=4402, level=80, star=6
+},
+	[4948]={ tid=1029, level=80, star=6
+},
+	[4949]={ tid=3014, level=80, star=6
+},
+	[4950]={ tid=3014, level=80, star=6
+},
+	[4951]={ tid=4402, level=80, star=6
+},
+	[4952]={ tid=3014, level=80, star=6
+},
+	[4953]={ tid=1030, level=80, star=6
+},
+	[4954]={ tid=1204, level=80, star=6
+},
+	[4955]={ tid=1005, level=80, star=6
+},
+	[4956]={ tid=1031, level=80, star=6
+},
+	[4957]={ tid=1026, level=80, star=6
+},
+	[4958]={ tid=3014, level=60, star=6
+},
+	[4959]={ tid=3014, level=60, star=6
+},
+	[4960]={ tid=4402, level=60, star=6
+},
+	[4961]={ tid=3014, level=60, star=6
+},
+	[4962]={ tid=1032, level=80, star=6
+},
+	[4963]={ tid=1015, level=80, star=6
+},
+	[4964]={ tid=3014, level=80, star=6
+},
+	[4965]={ tid=3014, level=80, star=6
+},
+	[4966]={ tid=4402, level=80, star=6
+},
+	[4967]={ tid=3014, level=80, star=6
+},
+	[4968]={ tid=4402, level=80, star=6
+},
+	[4969]={ tid=1013, level=80, star=6
+},
+	[4970]={ tid=1004, level=80, star=6
+},
+	[4971]={ tid=4402, level=80, star=0
+},
+	[4972]={ tid=3014, level=80, star=0
+},
+	[4973]={ tid=4402, level=80, star=0
+},
+	[4974]={ tid=1033, level=80, star=6
+},
+	[4975]={ tid=1002, level=80, star=6
+},
+	[4976]={ tid=4402, level=80, star=0
+},
+	[4977]={ tid=3014, level=80, star=0
+},
+	[4978]={ tid=3014, level=80, star=0
+},
+	[4979]={ tid=1034, level=80, star=6
+},
+	[4980]={ tid=1020, level=80, star=6
+},
+	[4981]={ tid=4402, level=80, star=0
+},
+	[4982]={ tid=3014, level=80, star=0
+},
+	[4983]={ tid=3014, level=80, star=0
+},
+	[4984]={ tid=1035, level=80, star=6
+},
+	[4985]={ tid=1113, level=80, star=6
+},
+	[4986]={ tid=4402, level=80, star=0
+},
+	[4987]={ tid=3014, level=80, star=0
+},
+	[4988]={ tid=3014, level=80, star=0
+},
+	[4989]={ tid=1036, level=80, star=6
+},
+	[4990]={ tid=1021, level=80, star=6
+},
+	[4991]={ tid=4403, level=80, star=6
+},
+	[4992]={ tid=3407, level=80, star=6
+},
+	[4993]={ tid=3014, level=80, star=6
+},
+	[4994]={ tid=1037, level=80, star=6
+},
+	[4995]={ tid=1011, level=80, star=0
+},
+	[4996]={ tid=4019, level=80, star=0
+},
+	[4997]={ tid=3014, level=80, star=0
+},
+	[4998]={ tid=3014, level=80, star=0
+},
+	[41000]={ tid=1038, level=80, star=6
+},
+	[41001]={ tid=1022, level=80, star=0
+},
+	[41002]={ tid=1111, level=80, star=0
+},
+	[41003]={ tid=3014, level=80, star=0
+},
+	[41004]={ tid=3014, level=80, star=0
+},
+	[41005]={ tid=4019, level=80, star=0
+},
+	[41006]={ tid=1039, level=80, star=0
+},
+	[41007]={ tid=1002, level=80, star=0
+},
+	[41008]={ tid=4019, level=80, star=0
+},
+	[41009]={ tid=4019, level=80, star=0
+},
+	[41010]={ tid=4019, level=80, star=0
+},
+	[41011]={ tid=1040, level=90, star=0
+},
+	[41012]={ tid=1041, level=90, star=0
+},
+	[41013]={ tid=1101, level=80, star=0
+},
+	[41014]={ tid=1007, level=90, star=0
+},
+	[41015]={ tid=1042, level=80, star=0
 },
 	[5001]={ tid=4402, level=40, star=0
 },
@@ -2335,6 +2671,106 @@ local mon_data=
 },
 	[5444]={ tid=5161, level=90, star=0
 },
+	[5445]={ tid=3408, level=79, star=0
+},
+	[5446]={ tid=3433, level=79, star=0
+},
+	[5447]={ tid=3433, level=79, star=0
+},
+	[5448]={ tid=4448, level=79, star=0
+},
+	[5449]={ tid=4423, level=79, star=0
+},
+	[5450]={ tid=3421, level=79, star=0
+},
+	[5451]={ tid=3421, level=79, star=0
+},
+	[5452]={ tid=3404, level=79, star=0
+},
+	[5453]={ tid=4409, level=79, star=0
+},
+	[5454]={ tid=4427, level=79, star=0
+},
+	[5455]={ tid=3421, level=80, star=0
+},
+	[5456]={ tid=3424, level=80, star=0
+},
+	[5457]={ tid=3406, level=80, star=0
+},
+	[5458]={ tid=4412, level=80, star=0
+},
+	[5459]={ tid=4430, level=80, star=0
+},
+	[5460]={ tid=3433, level=80, star=0
+},
+	[5461]={ tid=3412, level=80, star=0
+},
+	[5462]={ tid=4423, level=80, star=0
+},
+	[5463]={ tid=4444, level=80, star=0
+},
+	[5464]={ tid=4424, level=80, star=0
+},
+	[5465]={ tid=3421, level=82, star=0
+},
+	[5466]={ tid=3433, level=82, star=0
+},
+	[5467]={ tid=3422, level=82, star=0
+},
+	[5468]={ tid=4406, level=82, star=0
+},
+	[5469]={ tid=4444, level=82, star=0
+},
+	[5470]={ tid=3417, level=84, star=0
+},
+	[5471]={ tid=3416, level=84, star=0
+},
+	[5472]={ tid=3414, level=84, star=0
+},
+	[5473]={ tid=4418, level=84, star=0
+},
+	[5474]={ tid=4412, level=84, star=0
+},
+	[5475]={ tid=3424, level=86, star=0
+},
+	[5476]={ tid=3420, level=86, star=0
+},
+	[5477]={ tid=3422, level=86, star=0
+},
+	[5478]={ tid=4406, level=86, star=0
+},
+	[5479]={ tid=4423, level=86, star=0
+},
+	[5480]={ tid=3616, level=88, star=0
+},
+	[5481]={ tid=3634, level=88, star=0
+},
+	[5482]={ tid=4606, level=88, star=0
+},
+	[5483]={ tid=4624, level=88, star=0
+},
+	[5484]={ tid=4604, level=88, star=0
+},
+	[5485]={ tid=3417, level=88, star=0
+},
+	[5486]={ tid=3428, level=88, star=0
+},
+	[5487]={ tid=3418, level=88, star=0
+},
+	[5488]={ tid=4409, level=88, star=0
+},
+	[5489]={ tid=4438, level=88, star=0
+},
+	[5490]={ tid=3436, level=90, star=0
+},
+	[5491]={ tid=3428, level=90, star=0
+},
+	[5492]={ tid=4439, level=90, star=0
+},
+	[5493]={ tid=4424, level=90, star=0
+},
+	[5494]={ tid=5111, level=90, star=0
+},
 	[5501]={ tid=3413, level=75, star=0
 },
 	[5502]={ tid=4407, level=75, star=0
@@ -2858,6 +3294,66 @@ local mon_data=
 	[5765]={ tid=4604, level=110, star=0
 },
 	[5766]={ tid=5161, level=115, star=0
+},
+	[5767]={ tid=3418, level=96, star=0
+},
+	[5768]={ tid=3404, level=96, star=0
+},
+	[5769]={ tid=4439, level=96, star=0
+},
+	[5770]={ tid=4402, level=96, star=0
+},
+	[5771]={ tid=4439, level=96, star=0
+},
+	[5772]={ tid=3404, level=98, star=0
+},
+	[5773]={ tid=3406, level=98, star=0
+},
+	[5774]={ tid=4423, level=98, star=0
+},
+	[5775]={ tid=4442, level=98, star=0
+},
+	[5776]={ tid=4405, level=98, star=0
+},
+	[5777]={ tid=3412, level=98, star=0
+},
+	[5778]={ tid=3417, level=98, star=0
+},
+	[5779]={ tid=4406, level=98, star=0
+},
+	[5780]={ tid=4458, level=98, star=0
+},
+	[5781]={ tid=4414, level=98, star=0
+},
+	[5782]={ tid=3408, level=100, star=0
+},
+	[5783]={ tid=4409, level=100, star=0
+},
+	[5784]={ tid=4458, level=100, star=0
+},
+	[5785]={ tid=4418, level=100, star=0
+},
+	[5786]={ tid=4450, level=100, star=0
+},
+	[5787]={ tid=3404, level=112, star=0
+},
+	[5788]={ tid=3422, level=112, star=0
+},
+	[5789]={ tid=4438, level=112, star=0
+},
+	[5790]={ tid=4439, level=112, star=0
+},
+	[5791]={ tid=4458, level=112, star=0
+},
+	[5792]={ tid=3417, level=116, star=0
+},
+	[5793]={ tid=3412, level=116, star=0
+},
+	[5794]={ tid=4430, level=116, star=0
+},
+	[5795]={ tid=4427, level=116, star=0
+},
+	[5796]={ tid=5111, level=116, star=0
 },
 	[6001]={ tid=3409, level=10, star=0
 },
@@ -4425,7 +4921,7 @@ local mon_data=
 },
 	[10003]={ tid=3209, level=20, star=0
 },
-	[10004]={ tid=5161, level=120, star=0
+	[10004]={ tid=3209, level=20, star=0
 },
 	[10005]={ tid=3212, level=20, star=0
 },
@@ -12419,6 +12915,1006 @@ local mon_data=
 },
 	[14500]={ tid=1011, level=120, star=0
 },
+	[14501]={ tid=3004, level=60, star=0
+},
+	[14502]={ tid=4016, level=60, star=0
+},
+	[14503]={ tid=3014, level=60, star=0
+},
+	[14504]={ tid=4026, level=60, star=0
+},
+	[14505]={ tid=3617, level=60, star=0
+},
+	[14506]={ tid=4423, level=61, star=0
+},
+	[14507]={ tid=4447, level=61, star=0
+},
+	[14508]={ tid=3605, level=61, star=0
+},
+	[14509]={ tid=3407, level=61, star=0
+},
+	[14510]={ tid=3615, level=61, star=0
+},
+	[14511]={ tid=3617, level=62, star=0
+},
+	[14512]={ tid=4609, level=62, star=0
+},
+	[14513]={ tid=3418, level=62, star=0
+},
+	[14514]={ tid=4612, level=62, star=0
+},
+	[14515]={ tid=3607, level=62, star=0
+},
+	[14516]={ tid=3603, level=63, star=0
+},
+	[14517]={ tid=4604, level=63, star=0
+},
+	[14518]={ tid=4623, level=63, star=0
+},
+	[14519]={ tid=3007, level=63, star=0
+},
+	[14520]={ tid=3616, level=63, star=0
+},
+	[14521]={ tid=3626, level=64, star=0
+},
+	[14522]={ tid=3016, level=64, star=0
+},
+	[14523]={ tid=4634, level=64, star=0
+},
+	[14524]={ tid=3014, level=64, star=0
+},
+	[14525]={ tid=4626, level=64, star=0
+},
+	[14526]={ tid=3023, level=65, star=0
+},
+	[14527]={ tid=3016, level=65, star=0
+},
+	[14528]={ tid=4036, level=65, star=0
+},
+	[14529]={ tid=4018, level=65, star=0
+},
+	[14530]={ tid=4014, level=65, star=0
+},
+	[14531]={ tid=4642, level=65, star=0
+},
+	[14532]={ tid=3414, level=65, star=0
+},
+	[14533]={ tid=4604, level=65, star=0
+},
+	[14534]={ tid=3619, level=65, star=0
+},
+	[14535]={ tid=3630, level=65, star=0
+},
+	[14536]={ tid=4601, level=66, star=0
+},
+	[14537]={ tid=3410, level=66, star=0
+},
+	[14538]={ tid=4625, level=66, star=0
+},
+	[14539]={ tid=3619, level=66, star=0
+},
+	[14540]={ tid=3623, level=66, star=0
+},
+	[14541]={ tid=3607, level=67, star=0
+},
+	[14542]={ tid=4632, level=67, star=0
+},
+	[14543]={ tid=4609, level=67, star=0
+},
+	[14544]={ tid=3626, level=67, star=0
+},
+	[14545]={ tid=3624, level=67, star=0
+},
+	[14546]={ tid=3609, level=68, star=0
+},
+	[14547]={ tid=3620, level=68, star=0
+},
+	[14548]={ tid=4643, level=68, star=0
+},
+	[14549]={ tid=3631, level=68, star=0
+},
+	[14550]={ tid=4634, level=68, star=0
+},
+	[14551]={ tid=3615, level=69, star=0
+},
+	[14552]={ tid=3435, level=69, star=0
+},
+	[14553]={ tid=4644, level=69, star=0
+},
+	[14554]={ tid=3422, level=69, star=0
+},
+	[14555]={ tid=4608, level=69, star=0
+},
+	[14556]={ tid=4616, level=70, star=0
+},
+	[14557]={ tid=4619, level=70, star=0
+},
+	[14558]={ tid=3621, level=70, star=0
+},
+	[14559]={ tid=4618, level=70, star=0
+},
+	[14560]={ tid=3614, level=70, star=0
+},
+	[14561]={ tid=3009, level=70, star=0
+},
+	[14562]={ tid=4026, level=70, star=0
+},
+	[14563]={ tid=3018, level=70, star=0
+},
+	[14564]={ tid=4028, level=70, star=0
+},
+	[14565]={ tid=3622, level=70, star=0
+},
+	[14566]={ tid=3419, level=71, star=0
+},
+	[14567]={ tid=3610, level=71, star=0
+},
+	[14568]={ tid=4465, level=71, star=0
+},
+	[14569]={ tid=3618, level=71, star=0
+},
+	[14570]={ tid=4466, level=71, star=0
+},
+	[14571]={ tid=4404, level=72, star=0
+},
+	[14572]={ tid=4430, level=72, star=0
+},
+	[14573]={ tid=3615, level=72, star=0
+},
+	[14574]={ tid=3432, level=72, star=0
+},
+	[14575]={ tid=3633, level=72, star=0
+},
+	[14576]={ tid=4633, level=73, star=0
+},
+	[14577]={ tid=3603, level=73, star=0
+},
+	[14578]={ tid=4615, level=73, star=0
+},
+	[14579]={ tid=3620, level=73, star=0
+},
+	[14580]={ tid=3607, level=73, star=0
+},
+	[14581]={ tid=4036, level=74, star=0
+},
+	[14582]={ tid=3007, level=74, star=0
+},
+	[14583]={ tid=4015, level=74, star=0
+},
+	[14584]={ tid=3603, level=74, star=0
+},
+	[14585]={ tid=3627, level=74, star=0
+},
+	[14586]={ tid=4633, level=75, star=0
+},
+	[14587]={ tid=4620, level=75, star=0
+},
+	[14588]={ tid=3622, level=75, star=0
+},
+	[14589]={ tid=4604, level=75, star=0
+},
+	[14590]={ tid=3631, level=75, star=0
+},
+	[14591]={ tid=3628, level=75, star=0
+},
+	[14592]={ tid=4645, level=75, star=0
+},
+	[14593]={ tid=4609, level=75, star=0
+},
+	[14594]={ tid=3419, level=75, star=0
+},
+	[14595]={ tid=3617, level=75, star=0
+},
+	[14596]={ tid=4617, level=76, star=0
+},
+	[14597]={ tid=3616, level=76, star=0
+},
+	[14598]={ tid=4641, level=76, star=0
+},
+	[14599]={ tid=3601, level=76, star=0
+},
+	[14600]={ tid=3608, level=76, star=0
+},
+	[14601]={ tid=4019, level=77, star=0
+},
+	[14602]={ tid=4032, level=77, star=0
+},
+	[14603]={ tid=3625, level=77, star=0
+},
+	[14604]={ tid=3001, level=77, star=0
+},
+	[14605]={ tid=3604, level=77, star=0
+},
+	[14606]={ tid=4410, level=78, star=0
+},
+	[14607]={ tid=3629, level=78, star=0
+},
+	[14608]={ tid=4425, level=78, star=0
+},
+	[14609]={ tid=3402, level=78, star=0
+},
+	[14610]={ tid=3432, level=78, star=0
+},
+	[14611]={ tid=3403, level=79, star=0
+},
+	[14612]={ tid=3631, level=79, star=0
+},
+	[14613]={ tid=4405, level=79, star=0
+},
+	[14614]={ tid=3618, level=79, star=0
+},
+	[14615]={ tid=4404, level=79, star=0
+},
+	[14616]={ tid=4617, level=80, star=0
+},
+	[14617]={ tid=4615, level=80, star=0
+},
+	[14618]={ tid=3621, level=80, star=0
+},
+	[14619]={ tid=4639, level=80, star=0
+},
+	[14620]={ tid=3608, level=80, star=0
+},
+	[14621]={ tid=3619, level=80, star=0
+},
+	[14622]={ tid=4622, level=80, star=0
+},
+	[14623]={ tid=3402, level=80, star=0
+},
+	[14624]={ tid=4624, level=80, star=0
+},
+	[14625]={ tid=3419, level=80, star=0
+},
+	[14626]={ tid=3620, level=81, star=0
+},
+	[14627]={ tid=3436, level=81, star=0
+},
+	[14628]={ tid=4617, level=81, star=0
+},
+	[14629]={ tid=3420, level=81, star=0
+},
+	[14630]={ tid=4640, level=81, star=0
+},
+	[14631]={ tid=4019, level=82, star=0
+},
+	[14632]={ tid=3001, level=82, star=0
+},
+	[14633]={ tid=4032, level=82, star=0
+},
+	[14634]={ tid=3617, level=82, star=0
+},
+	[14635]={ tid=3626, level=82, star=0
+},
+	[14636]={ tid=4639, level=83, star=0
+},
+	[14637]={ tid=3614, level=83, star=0
+},
+	[14638]={ tid=4644, level=83, star=0
+},
+	[14639]={ tid=3007, level=83, star=0
+},
+	[14640]={ tid=3021, level=83, star=0
+},
+	[14641]={ tid=4606, level=84, star=0
+},
+	[14642]={ tid=3616, level=84, star=0
+},
+	[14643]={ tid=4617, level=84, star=0
+},
+	[14644]={ tid=3412, level=84, star=0
+},
+	[14645]={ tid=3433, level=84, star=0
+},
+	[14646]={ tid=4425, level=85, star=0
+},
+	[14647]={ tid=4446, level=85, star=0
+},
+	[14648]={ tid=4421, level=85, star=0
+},
+	[14649]={ tid=3418, level=85, star=0
+},
+	[14650]={ tid=3425, level=85, star=0
+},
+	[14651]={ tid=3016, level=85, star=0
+},
+	[14652]={ tid=4003, level=85, star=0
+},
+	[14653]={ tid=4031, level=85, star=0
+},
+	[14654]={ tid=3627, level=85, star=0
+},
+	[14655]={ tid=3008, level=85, star=0
+},
+	[14656]={ tid=3425, level=86, star=0
+},
+	[14657]={ tid=4407, level=86, star=0
+},
+	[14658]={ tid=4468, level=86, star=0
+},
+	[14659]={ tid=3604, level=86, star=0
+},
+	[14660]={ tid=3412, level=86, star=0
+},
+	[14661]={ tid=4421, level=87, star=0
+},
+	[14662]={ tid=3428, level=87, star=0
+},
+	[14663]={ tid=4466, level=87, star=0
+},
+	[14664]={ tid=3432, level=87, star=0
+},
+	[14665]={ tid=3605, level=87, star=0
+},
+	[14666]={ tid=3403, level=88, star=0
+},
+	[14667]={ tid=4457, level=88, star=0
+},
+	[14668]={ tid=4421, level=88, star=0
+},
+	[14669]={ tid=3634, level=88, star=0
+},
+	[14670]={ tid=3402, level=88, star=0
+},
+	[14671]={ tid=3404, level=89, star=0
+},
+	[14672]={ tid=3623, level=89, star=0
+},
+	[14673]={ tid=4404, level=89, star=0
+},
+	[14674]={ tid=3615, level=89, star=0
+},
+	[14675]={ tid=4463, level=89, star=0
+},
+	[14676]={ tid=3422, level=90, star=0
+},
+	[14677]={ tid=4445, level=90, star=0
+},
+	[14678]={ tid=4458, level=90, star=0
+},
+	[14679]={ tid=3436, level=90, star=0
+},
+	[14680]={ tid=4409, level=90, star=0
+},
+	[14681]={ tid=3430, level=90, star=0
+},
+	[14682]={ tid=4461, level=90, star=0
+},
+	[14683]={ tid=3604, level=90, star=0
+},
+	[14684]={ tid=4414, level=90, star=0
+},
+	[14685]={ tid=3610, level=90, star=0
+},
+	[14686]={ tid=3436, level=91, star=0
+},
+	[14687]={ tid=4445, level=91, star=0
+},
+	[14688]={ tid=3602, level=91, star=0
+},
+	[14689]={ tid=4458, level=91, star=0
+},
+	[14690]={ tid=3611, level=91, star=0
+},
+	[14691]={ tid=3617, level=92, star=0
+},
+	[14692]={ tid=4643, level=92, star=0
+},
+	[14693]={ tid=3623, level=92, star=0
+},
+	[14694]={ tid=4608, level=92, star=0
+},
+	[14695]={ tid=3624, level=92, star=0
+},
+	[14696]={ tid=4613, level=93, star=0
+},
+	[14697]={ tid=4629, level=93, star=0
+},
+	[14698]={ tid=3409, level=93, star=0
+},
+	[14699]={ tid=3621, level=93, star=0
+},
+	[14700]={ tid=3425, level=93, star=0
+},
+	[14701]={ tid=4643, level=94, star=0
+},
+	[14702]={ tid=4613, level=94, star=0
+},
+	[14703]={ tid=3605, level=94, star=0
+},
+	[14704]={ tid=3604, level=94, star=0
+},
+	[14705]={ tid=3610, level=94, star=0
+},
+	[14706]={ tid=3021, level=95, star=0
+},
+	[14707]={ tid=4017, level=95, star=0
+},
+	[14708]={ tid=4023, level=95, star=0
+},
+	[14709]={ tid=3009, level=95, star=0
+},
+	[14710]={ tid=4018, level=95, star=0
+},
+	[14711]={ tid=3419, level=95, star=0
+},
+	[14712]={ tid=4446, level=95, star=0
+},
+	[14713]={ tid=3435, level=95, star=0
+},
+	[14714]={ tid=4401, level=95, star=0
+},
+	[14715]={ tid=3615, level=95, star=0
+},
+	[14716]={ tid=3014, level=96, star=0
+},
+	[14717]={ tid=3630, level=96, star=0
+},
+	[14718]={ tid=4029, level=96, star=0
+},
+	[14719]={ tid=3634, level=96, star=0
+},
+	[14720]={ tid=4021, level=96, star=0
+},
+	[14721]={ tid=3620, level=97, star=0
+},
+	[14722]={ tid=4603, level=97, star=0
+},
+	[14723]={ tid=3615, level=97, star=0
+},
+	[14724]={ tid=4630, level=97, star=0
+},
+	[14725]={ tid=3425, level=97, star=0
+},
+	[14726]={ tid=3632, level=98, star=0
+},
+	[14727]={ tid=4625, level=98, star=0
+},
+	[14728]={ tid=3602, level=98, star=0
+},
+	[14729]={ tid=4619, level=98, star=0
+},
+	[14730]={ tid=3615, level=98, star=0
+},
+	[14731]={ tid=3404, level=99, star=0
+},
+	[14732]={ tid=4457, level=99, star=0
+},
+	[14733]={ tid=4464, level=99, star=0
+},
+	[14734]={ tid=3608, level=99, star=0
+},
+	[14735]={ tid=3409, level=99, star=0
+},
+	[14736]={ tid=3620, level=100, star=0
+},
+	[14737]={ tid=4645, level=100, star=0
+},
+	[14738]={ tid=4637, level=100, star=0
+},
+	[14739]={ tid=3633, level=100, star=0
+},
+	[14740]={ tid=4636, level=100, star=0
+},
+	[14741]={ tid=4018, level=100, star=0
+},
+	[14742]={ tid=3022, level=100, star=0
+},
+	[14743]={ tid=4021, level=100, star=0
+},
+	[14744]={ tid=3005, level=100, star=0
+},
+	[14745]={ tid=3613, level=100, star=0
+},
+	[14746]={ tid=3634, level=100, star=0
+},
+	[14747]={ tid=4639, level=100, star=0
+},
+	[14748]={ tid=3631, level=100, star=0
+},
+	[14749]={ tid=4614, level=100, star=0
+},
+	[14750]={ tid=3433, level=100, star=0
+},
+	[14751]={ tid=3607, level=100, star=0
+},
+	[14752]={ tid=4645, level=100, star=0
+},
+	[14753]={ tid=3611, level=100, star=0
+},
+	[14754]={ tid=4629, level=100, star=0
+},
+	[14755]={ tid=3433, level=100, star=0
+},
+	[14756]={ tid=3623, level=100, star=0
+},
+	[14757]={ tid=4646, level=100, star=0
+},
+	[14758]={ tid=4618, level=100, star=0
+},
+	[14759]={ tid=3012, level=100, star=0
+},
+	[14760]={ tid=3615, level=100, star=0
+},
+	[14761]={ tid=3624, level=100, star=0
+},
+	[14762]={ tid=4029, level=100, star=0
+},
+	[14763]={ tid=4011, level=100, star=0
+},
+	[14764]={ tid=3009, level=100, star=0
+},
+	[14765]={ tid=3601, level=100, star=0
+},
+	[14766]={ tid=4467, level=100, star=0
+},
+	[14767]={ tid=4463, level=100, star=0
+},
+	[14768]={ tid=3415, level=100, star=0
+},
+	[14769]={ tid=4443, level=100, star=0
+},
+	[14770]={ tid=3420, level=100, star=0
+},
+	[14771]={ tid=3629, level=100, star=0
+},
+	[14772]={ tid=4639, level=100, star=0
+},
+	[14773]={ tid=3602, level=100, star=0
+},
+	[14774]={ tid=4618, level=100, star=0
+},
+	[14775]={ tid=3603, level=100, star=0
+},
+	[14776]={ tid=3017, level=100, star=0
+},
+	[14777]={ tid=4008, level=100, star=0
+},
+	[14778]={ tid=3621, level=100, star=0
+},
+	[14779]={ tid=4014, level=100, star=0
+},
+	[14780]={ tid=3606, level=100, star=0
+},
+	[14781]={ tid=4009, level=100, star=0
+},
+	[14782]={ tid=3609, level=100, star=0
+},
+	[14783]={ tid=4006, level=100, star=0
+},
+	[14784]={ tid=3016, level=100, star=0
+},
+	[14785]={ tid=3018, level=100, star=0
+},
+	[14786]={ tid=4032, level=100, star=0
+},
+	[14787]={ tid=3006, level=100, star=0
+},
+	[14788]={ tid=4020, level=100, star=0
+},
+	[14789]={ tid=3014, level=100, star=0
+},
+	[14790]={ tid=3602, level=100, star=0
+},
+	[14791]={ tid=3601, level=100, star=0
+},
+	[14792]={ tid=4617, level=100, star=0
+},
+	[14793]={ tid=3006, level=100, star=0
+},
+	[14794]={ tid=4626, level=100, star=0
+},
+	[14795]={ tid=3005, level=100, star=0
+},
+	[14796]={ tid=4035, level=100, star=0
+},
+	[14797]={ tid=4017, level=100, star=0
+},
+	[14798]={ tid=4021, level=100, star=0
+},
+	[14799]={ tid=3007, level=100, star=0
+},
+	[14800]={ tid=3009, level=100, star=0
+},
+	[14801]={ tid=4405, level=101, star=0
+},
+	[14802]={ tid=4456, level=101, star=0
+},
+	[14803]={ tid=1015, level=101, star=0
+},
+	[14804]={ tid=3429, level=101, star=0
+},
+	[14805]={ tid=4422, level=101, star=0
+},
+	[14806]={ tid=3614, level=102, star=0
+},
+	[14807]={ tid=4630, level=102, star=0
+},
+	[14808]={ tid=4631, level=102, star=0
+},
+	[14809]={ tid=1019, level=102, star=0
+},
+	[14810]={ tid=4634, level=102, star=0
+},
+	[14811]={ tid=4018, level=103, star=0
+},
+	[14812]={ tid=4016, level=103, star=0
+},
+	[14813]={ tid=1007, level=103, star=0
+},
+	[14814]={ tid=3006, level=103, star=0
+},
+	[14815]={ tid=4013, level=103, star=0
+},
+	[14816]={ tid=4423, level=104, star=0
+},
+	[14817]={ tid=4426, level=104, star=0
+},
+	[14818]={ tid=1009, level=104, star=0
+},
+	[14819]={ tid=4415, level=104, star=0
+},
+	[14820]={ tid=3434, level=104, star=0
+},
+	[14821]={ tid=1014, level=105, star=0
+},
+	[14822]={ tid=4008, level=105, star=0
+},
+	[14823]={ tid=1002, level=105, star=0
+},
+	[14824]={ tid=4018, level=105, star=0
+},
+	[14825]={ tid=3013, level=105, star=0
+},
+	[14826]={ tid=4018, level=101, star=0
+},
+	[14827]={ tid=4014, level=101, star=0
+},
+	[14828]={ tid=1018, level=101, star=0
+},
+	[14829]={ tid=4006, level=101, star=0
+},
+	[14830]={ tid=3015, level=101, star=0
+},
+	[14831]={ tid=1015, level=102, star=0
+},
+	[14832]={ tid=4006, level=102, star=0
+},
+	[14833]={ tid=1010, level=102, star=0
+},
+	[14834]={ tid=3002, level=102, star=0
+},
+	[14835]={ tid=3020, level=102, star=0
+},
+	[14836]={ tid=4461, level=103, star=0
+},
+	[14837]={ tid=4440, level=103, star=0
+},
+	[14838]={ tid=1003, level=103, star=0
+},
+	[14839]={ tid=4408, level=103, star=0
+},
+	[14840]={ tid=3432, level=103, star=0
+},
+	[14841]={ tid=1004, level=104, star=0
+},
+	[14842]={ tid=4036, level=104, star=0
+},
+	[14843]={ tid=3021, level=104, star=0
+},
+	[14844]={ tid=4001, level=104, star=0
+},
+	[14845]={ tid=4021, level=104, star=0
+},
+	[14846]={ tid=1005, level=105, star=0
+},
+	[14847]={ tid=4018, level=105, star=0
+},
+	[14848]={ tid=1016, level=105, star=0
+},
+	[14849]={ tid=4002, level=105, star=0
+},
+	[14850]={ tid=3013, level=105, star=0
+},
+	[14851]={ tid=1004, level=106, star=0
+},
+	[14852]={ tid=3409, level=106, star=0
+},
+	[14853]={ tid=1004, level=106, star=0
+},
+	[14854]={ tid=4464, level=106, star=0
+},
+	[14855]={ tid=3436, level=106, star=0
+},
+	[14856]={ tid=4017, level=107, star=0
+},
+	[14857]={ tid=4031, level=107, star=0
+},
+	[14858]={ tid=1007, level=107, star=0
+},
+	[14859]={ tid=3001, level=107, star=0
+},
+	[14860]={ tid=4035, level=107, star=0
+},
+	[14861]={ tid=1015, level=108, star=0
+},
+	[14862]={ tid=4644, level=108, star=0
+},
+	[14863]={ tid=3621, level=108, star=0
+},
+	[14864]={ tid=4610, level=108, star=0
+},
+	[14865]={ tid=4629, level=108, star=0
+},
+	[14866]={ tid=4208, level=109, star=0
+},
+	[14867]={ tid=1006, level=109, star=0
+},
+	[14868]={ tid=3203, level=109, star=0
+},
+	[14869]={ tid=1014, level=109, star=0
+},
+	[14870]={ tid=3203, level=109, star=0
+},
+	[14871]={ tid=1010, level=110, star=0
+},
+	[14872]={ tid=4222, level=110, star=0
+},
+	[14873]={ tid=1002, level=110, star=0
+},
+	[14874]={ tid=4210, level=110, star=0
+},
+	[14875]={ tid=3202, level=110, star=0
+},
+	[14876]={ tid=3618, level=106, star=0
+},
+	[14877]={ tid=4642, level=106, star=0
+},
+	[14878]={ tid=4641, level=106, star=0
+},
+	[14879]={ tid=1010, level=106, star=0
+},
+	[14880]={ tid=4635, level=106, star=0
+},
+	[14881]={ tid=3614, level=107, star=0
+},
+	[14882]={ tid=4602, level=107, star=0
+},
+	[14883]={ tid=4646, level=107, star=0
+},
+	[14884]={ tid=1001, level=107, star=0
+},
+	[14885]={ tid=4644, level=107, star=0
+},
+	[14886]={ tid=4019, level=108, star=0
+},
+	[14887]={ tid=4019, level=108, star=0
+},
+	[14888]={ tid=1008, level=108, star=0
+},
+	[14889]={ tid=4015, level=108, star=0
+},
+	[14890]={ tid=3010, level=108, star=0
+},
+	[14891]={ tid=4444, level=109, star=0
+},
+	[14892]={ tid=4447, level=109, star=0
+},
+	[14893]={ tid=1008, level=109, star=0
+},
+	[14894]={ tid=3409, level=109, star=0
+},
+	[14895]={ tid=4415, level=109, star=0
+},
+	[14896]={ tid=4615, level=110, star=0
+},
+	[14897]={ tid=4611, level=110, star=0
+},
+	[14898]={ tid=4640, level=110, star=0
+},
+	[14899]={ tid=1010, level=110, star=0
+},
+	[14900]={ tid=4630, level=110, star=0
+},
+	[14901]={ tid=4645, level=111, star=0
+},
+	[14902]={ tid=1006, level=111, star=0
+},
+	[14903]={ tid=4616, level=111, star=0
+},
+	[14904]={ tid=4617, level=111, star=0
+},
+	[14905]={ tid=4627, level=111, star=0
+},
+	[14906]={ tid=4632, level=112, star=0
+},
+	[14907]={ tid=1301, level=112, star=0
+},
+	[14908]={ tid=4612, level=112, star=0
+},
+	[14909]={ tid=1007, level=112, star=0
+},
+	[14910]={ tid=3603, level=112, star=0
+},
+	[14911]={ tid=1008, level=113, star=0
+},
+	[14912]={ tid=4469, level=113, star=0
+},
+	[14913]={ tid=1005, level=113, star=0
+},
+	[14914]={ tid=4422, level=113, star=0
+},
+	[14915]={ tid=3416, level=113, star=0
+},
+	[14916]={ tid=1012, level=114, star=0
+},
+	[14917]={ tid=4029, level=114, star=0
+},
+	[14918]={ tid=1017, level=114, star=0
+},
+	[14919]={ tid=4019, level=114, star=0
+},
+	[14920]={ tid=3010, level=114, star=0
+},
+	[14921]={ tid=4013, level=115, star=0
+},
+	[14922]={ tid=1011, level=115, star=0
+},
+	[14923]={ tid=4011, level=115, star=0
+},
+	[14924]={ tid=1012, level=115, star=0
+},
+	[14925]={ tid=1010, level=115, star=0
+},
+	[14926]={ tid=4642, level=111, star=0
+},
+	[14927]={ tid=1014, level=111, star=0
+},
+	[14928]={ tid=4604, level=111, star=0
+},
+	[14929]={ tid=1014, level=111, star=0
+},
+	[14930]={ tid=3619, level=111, star=0
+},
+	[14931]={ tid=1007, level=112, star=0
+},
+	[14932]={ tid=4601, level=112, star=0
+},
+	[14933]={ tid=4643, level=112, star=0
+},
+	[14934]={ tid=4621, level=112, star=0
+},
+	[14935]={ tid=4610, level=112, star=0
+},
+	[14936]={ tid=4623, level=113, star=0
+},
+	[14937]={ tid=1001, level=113, star=0
+},
+	[14938]={ tid=4615, level=113, star=0
+},
+	[14939]={ tid=4613, level=113, star=0
+},
+	[14940]={ tid=4638, level=113, star=0
+},
+	[14941]={ tid=4204, level=114, star=0
+},
+	[14942]={ tid=3216, level=114, star=0
+},
+	[14943]={ tid=1008, level=114, star=0
+},
+	[14944]={ tid=4224, level=114, star=0
+},
+	[14945]={ tid=1015, level=114, star=0
+},
+	[14946]={ tid=4227, level=115, star=0
+},
+	[14947]={ tid=1005, level=115, star=0
+},
+	[14948]={ tid=1004, level=115, star=0
+},
+	[14949]={ tid=1002, level=115, star=0
+},
+	[14950]={ tid=4220, level=115, star=0
+},
+	[14951]={ tid=1018, level=116, star=0
+},
+	[14952]={ tid=4644, level=116, star=0
+},
+	[14953]={ tid=1301, level=116, star=0
+},
+	[14954]={ tid=4629, level=116, star=0
+},
+	[14955]={ tid=3607, level=116, star=0
+},
+	[14956]={ tid=4639, level=117, star=0
+},
+	[14957]={ tid=4608, level=117, star=0
+},
+	[14958]={ tid=4622, level=117, star=0
+},
+	[14959]={ tid=1018, level=117, star=0
+},
+	[14960]={ tid=4630, level=117, star=0
+},
+	[14961]={ tid=4601, level=118, star=0
+},
+	[14962]={ tid=1105, level=118, star=0
+},
+	[14963]={ tid=4636, level=118, star=0
+},
+	[14964]={ tid=4601, level=118, star=0
+},
+	[14965]={ tid=4630, level=118, star=0
+},
+	[14966]={ tid=1008, level=119, star=0
+},
+	[14967]={ tid=4616, level=119, star=0
+},
+	[14968]={ tid=4635, level=119, star=0
+},
+	[14969]={ tid=4607, level=119, star=0
+},
+	[14970]={ tid=4613, level=119, star=0
+},
+	[14971]={ tid=4238, level=120, star=0
+},
+	[14972]={ tid=1010, level=120, star=0
+},
+	[14973]={ tid=1012, level=120, star=0
+},
+	[14974]={ tid=1005, level=120, star=0
+},
+	[14975]={ tid=4227, level=120, star=0
+},
+	[14976]={ tid=4013, level=116, star=0
+},
+	[14977]={ tid=1010, level=116, star=0
+},
+	[14978]={ tid=3010, level=116, star=0
+},
+	[14979]={ tid=1015, level=116, star=0
+},
+	[14980]={ tid=4016, level=116, star=0
+},
+	[14981]={ tid=4635, level=117, star=0
+},
+	[14982]={ tid=1010, level=117, star=0
+},
+	[14983]={ tid=4629, level=117, star=0
+},
+	[14984]={ tid=4611, level=117, star=0
+},
+	[14985]={ tid=4646, level=117, star=0
+},
+	[14986]={ tid=4602, level=118, star=0
+},
+	[14987]={ tid=1015, level=118, star=0
+},
+	[14988]={ tid=4619, level=118, star=0
+},
+	[14989]={ tid=4620, level=118, star=0
+},
+	[14990]={ tid=4630, level=118, star=0
+},
+	[14991]={ tid=4614, level=119, star=0
+},
+	[14992]={ tid=4602, level=119, star=0
+},
+	[14993]={ tid=4614, level=119, star=0
+},
+	[14994]={ tid=1018, level=119, star=0
+},
+	[14995]={ tid=4620, level=119, star=0
+},
+	[14996]={ tid=1005, level=120, star=0
+},
+	[14997]={ tid=4034, level=120, star=0
+},
+	[14998]={ tid=1015, level=120, star=0
+},
+	[14999]={ tid=4023, level=120, star=0
+},
+	[15000]={ tid=1008, level=120, star=0
+},
 	[15001]={ tid=1101, level=20, star=0
 },
 	[15002]={ tid=1004, level=20, star=0
@@ -14856,6 +16352,3506 @@ local mon_data=
 	[17673]={ tid=4643, level=100, star=0
 },
 	[17674]={ tid=4612, level=100, star=0
+},
+	[17675]={ tid=3424, level=55, star=0
+},
+	[17676]={ tid=3429, level=55, star=0
+},
+	[17677]={ tid=3416, level=55, star=0
+},
+	[17678]={ tid=4428, level=55, star=0
+},
+	[17679]={ tid=4446, level=55, star=0
+},
+	[17680]={ tid=3215, level=56, star=0
+},
+	[17681]={ tid=3218, level=56, star=0
+},
+	[17682]={ tid=3218, level=56, star=0
+},
+	[17683]={ tid=4234, level=56, star=0
+},
+	[17684]={ tid=4212, level=56, star=0
+},
+	[17685]={ tid=3632, level=58, star=0
+},
+	[17686]={ tid=3632, level=58, star=0
+},
+	[17687]={ tid=4612, level=58, star=0
+},
+	[17688]={ tid=4646, level=58, star=0
+},
+	[17689]={ tid=4610, level=58, star=0
+},
+	[17690]={ tid=3621, level=58, star=0
+},
+	[17691]={ tid=3634, level=58, star=0
+},
+	[17692]={ tid=3632, level=58, star=0
+},
+	[17693]={ tid=4610, level=58, star=0
+},
+	[17694]={ tid=4614, level=58, star=0
+},
+	[17695]={ tid=3218, level=60, star=0
+},
+	[17696]={ tid=3215, level=60, star=0
+},
+	[17697]={ tid=3215, level=60, star=0
+},
+	[17698]={ tid=4219, level=60, star=0
+},
+	[17699]={ tid=4227, level=60, star=0
+},
+	[17700]={ tid=3431, level=62, star=0
+},
+	[17701]={ tid=3422, level=62, star=0
+},
+	[17702]={ tid=3432, level=62, star=0
+},
+	[17703]={ tid=4428, level=62, star=0
+},
+	[17704]={ tid=4469, level=62, star=0
+},
+	[17705]={ tid=3209, level=64, star=0
+},
+	[17706]={ tid=3215, level=64, star=0
+},
+	[17707]={ tid=4226, level=64, star=0
+},
+	[17708]={ tid=4209, level=64, star=0
+},
+	[17709]={ tid=4219, level=64, star=0
+},
+	[17710]={ tid=3209, level=64, star=0
+},
+	[17711]={ tid=3215, level=64, star=0
+},
+	[17712]={ tid=3218, level=64, star=0
+},
+	[17713]={ tid=4209, level=64, star=0
+},
+	[17714]={ tid=4225, level=64, star=0
+},
+	[17715]={ tid=3632, level=66, star=0
+},
+	[17716]={ tid=3631, level=66, star=0
+},
+	[17717]={ tid=3621, level=66, star=0
+},
+	[17718]={ tid=4602, level=66, star=0
+},
+	[17719]={ tid=4614, level=66, star=0
+},
+	[17720]={ tid=3631, level=68, star=0
+},
+	[17721]={ tid=3621, level=68, star=0
+},
+	[17722]={ tid=3631, level=68, star=0
+},
+	[17723]={ tid=4602, level=68, star=0
+},
+	[17724]={ tid=4643, level=68, star=0
+},
+	[17725]={ tid=3215, level=70, star=0
+},
+	[17726]={ tid=3215, level=70, star=0
+},
+	[17727]={ tid=4234, level=70, star=0
+},
+	[17728]={ tid=4227, level=70, star=0
+},
+	[17729]={ tid=4219, level=70, star=0
+},
+	[17730]={ tid=3634, level=72, star=0
+},
+	[17731]={ tid=3631, level=72, star=0
+},
+	[17732]={ tid=3631, level=72, star=0
+},
+	[17733]={ tid=4614, level=72, star=0
+},
+	[17734]={ tid=4612, level=72, star=0
+},
+	[17735]={ tid=3209, level=74, star=0
+},
+	[17736]={ tid=3218, level=74, star=0
+},
+	[17737]={ tid=3209, level=74, star=0
+},
+	[17738]={ tid=4234, level=74, star=0
+},
+	[17739]={ tid=4230, level=74, star=0
+},
+	[17740]={ tid=3432, level=75, star=0
+},
+	[17741]={ tid=3412, level=75, star=0
+},
+	[17742]={ tid=4437, level=75, star=0
+},
+	[17743]={ tid=4428, level=75, star=0
+},
+	[17744]={ tid=4428, level=75, star=0
+},
+	[17745]={ tid=3631, level=80, star=0
+},
+	[17746]={ tid=3621, level=80, star=0
+},
+	[17747]={ tid=4612, level=80, star=0
+},
+	[17748]={ tid=4602, level=80, star=0
+},
+	[17749]={ tid=5141, level=80, star=0
+},
+	[17750]={ tid=3631, level=70, star=0
+},
+	[17751]={ tid=3634, level=70, star=0
+},
+	[17752]={ tid=3621, level=70, star=0
+},
+	[17753]={ tid=4646, level=70, star=0
+},
+	[17754]={ tid=4643, level=70, star=0
+},
+	[17755]={ tid=3218, level=72, star=0
+},
+	[17756]={ tid=3215, level=72, star=0
+},
+	[17757]={ tid=3215, level=72, star=0
+},
+	[17758]={ tid=4209, level=72, star=0
+},
+	[17759]={ tid=4226, level=72, star=0
+},
+	[17760]={ tid=3430, level=74, star=0
+},
+	[17761]={ tid=3432, level=74, star=0
+},
+	[17762]={ tid=4443, level=74, star=0
+},
+	[17763]={ tid=4443, level=74, star=0
+},
+	[17764]={ tid=4433, level=74, star=0
+},
+	[17765]={ tid=3634, level=74, star=0
+},
+	[17766]={ tid=3632, level=74, star=0
+},
+	[17767]={ tid=3634, level=74, star=0
+},
+	[17768]={ tid=4610, level=74, star=0
+},
+	[17769]={ tid=4614, level=74, star=0
+},
+	[17770]={ tid=3432, level=76, star=0
+},
+	[17771]={ tid=3424, level=76, star=0
+},
+	[17772]={ tid=3431, level=76, star=0
+},
+	[17773]={ tid=4469, level=76, star=0
+},
+	[17774]={ tid=4433, level=76, star=0
+},
+	[17775]={ tid=3621, level=78, star=0
+},
+	[17776]={ tid=3632, level=78, star=0
+},
+	[17777]={ tid=4643, level=78, star=0
+},
+	[17778]={ tid=4644, level=78, star=0
+},
+	[17779]={ tid=4646, level=78, star=0
+},
+	[17780]={ tid=3430, level=78, star=0
+},
+	[17781]={ tid=3426, level=78, star=0
+},
+	[17782]={ tid=3432, level=78, star=0
+},
+	[17783]={ tid=4433, level=78, star=0
+},
+	[17784]={ tid=4469, level=78, star=0
+},
+	[17785]={ tid=3431, level=80, star=0
+},
+	[17786]={ tid=3422, level=80, star=0
+},
+	[17787]={ tid=3431, level=80, star=0
+},
+	[17788]={ tid=4469, level=80, star=0
+},
+	[17789]={ tid=4437, level=80, star=0
+},
+	[17790]={ tid=3426, level=85, star=0
+},
+	[17791]={ tid=3415, level=85, star=0
+},
+	[17792]={ tid=4433, level=85, star=0
+},
+	[17793]={ tid=4469, level=85, star=0
+},
+	[17794]={ tid=4443, level=85, star=0
+},
+	[17795]={ tid=4225, level=90, star=0
+},
+	[17796]={ tid=4204, level=90, star=0
+},
+	[17797]={ tid=4230, level=90, star=0
+},
+	[17798]={ tid=5141, level=90, star=0
+},
+	[17799]={ tid=3429, level=80, star=0
+},
+	[17800]={ tid=3431, level=80, star=0
+},
+	[17801]={ tid=4437, level=80, star=0
+},
+	[17802]={ tid=4428, level=80, star=0
+},
+	[17803]={ tid=4437, level=80, star=0
+},
+	[17804]={ tid=3209, level=84, star=0
+},
+	[17805]={ tid=3215, level=84, star=0
+},
+	[17806]={ tid=4228, level=84, star=0
+},
+	[17807]={ tid=4234, level=84, star=0
+},
+	[17808]={ tid=4228, level=84, star=0
+},
+	[17809]={ tid=3634, level=88, star=0
+},
+	[17810]={ tid=3631, level=88, star=0
+},
+	[17811]={ tid=4644, level=88, star=0
+},
+	[17812]={ tid=4614, level=88, star=0
+},
+	[17813]={ tid=4644, level=88, star=0
+},
+	[17814]={ tid=3422, level=92, star=0
+},
+	[17815]={ tid=3429, level=92, star=0
+},
+	[17816]={ tid=4446, level=92, star=0
+},
+	[17817]={ tid=4433, level=92, star=0
+},
+	[17818]={ tid=4433, level=92, star=0
+},
+	[17819]={ tid=3215, level=95, star=0
+},
+	[17820]={ tid=3215, level=95, star=0
+},
+	[17821]={ tid=4225, level=95, star=0
+},
+	[17822]={ tid=4234, level=95, star=0
+},
+	[17823]={ tid=4209, level=95, star=0
+},
+	[17824]={ tid=4226, level=100, star=0
+},
+	[17825]={ tid=4228, level=100, star=0
+},
+	[17826]={ tid=4226, level=100, star=0
+},
+	[17827]={ tid=4230, level=100, star=0
+},
+	[17828]={ tid=5141, level=100, star=0
+},
+	[17829]={ tid=3427, level=55, star=0
+},
+	[17830]={ tid=3404, level=55, star=0
+},
+	[17831]={ tid=3428, level=55, star=0
+},
+	[17832]={ tid=4419, level=55, star=0
+},
+	[17833]={ tid=4417, level=55, star=0
+},
+	[17834]={ tid=3428, level=56, star=0
+},
+	[17835]={ tid=3420, level=56, star=0
+},
+	[17836]={ tid=3404, level=56, star=0
+},
+	[17837]={ tid=4410, level=56, star=0
+},
+	[17838]={ tid=4425, level=56, star=0
+},
+	[17839]={ tid=3414, level=58, star=0
+},
+	[17840]={ tid=3430, level=58, star=0
+},
+	[17841]={ tid=4401, level=58, star=0
+},
+	[17842]={ tid=4430, level=58, star=0
+},
+	[17843]={ tid=4419, level=58, star=0
+},
+	[17844]={ tid=3427, level=58, star=0
+},
+	[17845]={ tid=3414, level=58, star=0
+},
+	[17846]={ tid=3435, level=58, star=0
+},
+	[17847]={ tid=4420, level=58, star=0
+},
+	[17848]={ tid=4420, level=58, star=0
+},
+	[17849]={ tid=3407, level=60, star=0
+},
+	[17850]={ tid=3423, level=60, star=0
+},
+	[17851]={ tid=3420, level=60, star=0
+},
+	[17852]={ tid=4426, level=60, star=0
+},
+	[17853]={ tid=4426, level=60, star=0
+},
+	[17854]={ tid=3414, level=62, star=0
+},
+	[17855]={ tid=3404, level=62, star=0
+},
+	[17856]={ tid=3420, level=62, star=0
+},
+	[17857]={ tid=4407, level=62, star=0
+},
+	[17858]={ tid=4420, level=62, star=0
+},
+	[17859]={ tid=3408, level=64, star=0
+},
+	[17860]={ tid=3423, level=64, star=0
+},
+	[17861]={ tid=4422, level=64, star=0
+},
+	[17862]={ tid=4413, level=64, star=0
+},
+	[17863]={ tid=4429, level=64, star=0
+},
+	[17864]={ tid=3402, level=64, star=0
+},
+	[17865]={ tid=3407, level=64, star=0
+},
+	[17866]={ tid=3414, level=64, star=0
+},
+	[17867]={ tid=4410, level=64, star=0
+},
+	[17868]={ tid=4407, level=64, star=0
+},
+	[17869]={ tid=3414, level=66, star=0
+},
+	[17870]={ tid=3430, level=66, star=0
+},
+	[17871]={ tid=3427, level=66, star=0
+},
+	[17872]={ tid=4413, level=66, star=0
+},
+	[17873]={ tid=4425, level=66, star=0
+},
+	[17874]={ tid=3420, level=68, star=0
+},
+	[17875]={ tid=3427, level=68, star=0
+},
+	[17876]={ tid=3413, level=68, star=0
+},
+	[17877]={ tid=4426, level=68, star=0
+},
+	[17878]={ tid=4413, level=68, star=0
+},
+	[17879]={ tid=3427, level=70, star=0
+},
+	[17880]={ tid=3435, level=70, star=0
+},
+	[17881]={ tid=4429, level=70, star=0
+},
+	[17882]={ tid=4408, level=70, star=0
+},
+	[17883]={ tid=4417, level=70, star=0
+},
+	[17884]={ tid=3435, level=72, star=0
+},
+	[17885]={ tid=3428, level=72, star=0
+},
+	[17886]={ tid=3423, level=72, star=0
+},
+	[17887]={ tid=4405, level=72, star=0
+},
+	[17888]={ tid=4422, level=72, star=0
+},
+	[17889]={ tid=3430, level=74, star=0
+},
+	[17890]={ tid=3407, level=74, star=0
+},
+	[17891]={ tid=3407, level=74, star=0
+},
+	[17892]={ tid=4426, level=74, star=0
+},
+	[17893]={ tid=4417, level=74, star=0
+},
+	[17894]={ tid=3404, level=75, star=0
+},
+	[17895]={ tid=3407, level=75, star=0
+},
+	[17896]={ tid=4416, level=75, star=0
+},
+	[17897]={ tid=4429, level=75, star=0
+},
+	[17898]={ tid=4420, level=75, star=0
+},
+	[17899]={ tid=3427, level=80, star=0
+},
+	[17900]={ tid=3427, level=80, star=0
+},
+	[17901]={ tid=4413, level=80, star=0
+},
+	[17902]={ tid=4402, level=80, star=0
+},
+	[17903]={ tid=5021, level=80, star=0
+},
+	[17904]={ tid=3428, level=70, star=0
+},
+	[17905]={ tid=3402, level=70, star=0
+},
+	[17906]={ tid=3427, level=70, star=0
+},
+	[17907]={ tid=4410, level=70, star=0
+},
+	[17908]={ tid=4420, level=70, star=0
+},
+	[17909]={ tid=3408, level=72, star=0
+},
+	[17910]={ tid=3404, level=72, star=0
+},
+	[17911]={ tid=3414, level=72, star=0
+},
+	[17912]={ tid=4430, level=72, star=0
+},
+	[17913]={ tid=4417, level=72, star=0
+},
+	[17914]={ tid=3405, level=74, star=0
+},
+	[17915]={ tid=3402, level=74, star=0
+},
+	[17916]={ tid=4429, level=74, star=0
+},
+	[17917]={ tid=4430, level=74, star=0
+},
+	[17918]={ tid=4407, level=74, star=0
+},
+	[17919]={ tid=3427, level=74, star=0
+},
+	[17920]={ tid=3435, level=74, star=0
+},
+	[17921]={ tid=3420, level=74, star=0
+},
+	[17922]={ tid=4402, level=74, star=0
+},
+	[17923]={ tid=4405, level=74, star=0
+},
+	[17924]={ tid=3405, level=76, star=0
+},
+	[17925]={ tid=3407, level=76, star=0
+},
+	[17926]={ tid=3413, level=76, star=0
+},
+	[17927]={ tid=4422, level=76, star=0
+},
+	[17928]={ tid=4410, level=76, star=0
+},
+	[17929]={ tid=3411, level=78, star=0
+},
+	[17930]={ tid=3404, level=78, star=0
+},
+	[17931]={ tid=4405, level=78, star=0
+},
+	[17932]={ tid=4402, level=78, star=0
+},
+	[17933]={ tid=4417, level=78, star=0
+},
+	[17934]={ tid=3402, level=78, star=0
+},
+	[17935]={ tid=3413, level=78, star=0
+},
+	[17936]={ tid=3427, level=78, star=0
+},
+	[17937]={ tid=4426, level=78, star=0
+},
+	[17938]={ tid=4416, level=78, star=0
+},
+	[17939]={ tid=3405, level=80, star=0
+},
+	[17940]={ tid=3423, level=80, star=0
+},
+	[17941]={ tid=3432, level=80, star=0
+},
+	[17942]={ tid=4430, level=80, star=0
+},
+	[17943]={ tid=4429, level=80, star=0
+},
+	[17944]={ tid=3420, level=85, star=0
+},
+	[17945]={ tid=3420, level=85, star=0
+},
+	[17946]={ tid=4407, level=85, star=0
+},
+	[17947]={ tid=4426, level=85, star=0
+},
+	[17948]={ tid=4426, level=85, star=0
+},
+	[17949]={ tid=4405, level=90, star=0
+},
+	[17950]={ tid=4414, level=90, star=0
+},
+	[17951]={ tid=4416, level=90, star=0
+},
+	[17952]={ tid=5021, level=90, star=0
+},
+	[17953]={ tid=3428, level=80, star=0
+},
+	[17954]={ tid=3405, level=80, star=0
+},
+	[17955]={ tid=4402, level=80, star=0
+},
+	[17956]={ tid=4408, level=80, star=0
+},
+	[17957]={ tid=4401, level=80, star=0
+},
+	[17958]={ tid=3414, level=84, star=0
+},
+	[17959]={ tid=3435, level=84, star=0
+},
+	[17960]={ tid=4414, level=84, star=0
+},
+	[17961]={ tid=4414, level=84, star=0
+},
+	[17962]={ tid=4425, level=84, star=0
+},
+	[17963]={ tid=3405, level=88, star=0
+},
+	[17964]={ tid=3432, level=88, star=0
+},
+	[17965]={ tid=4419, level=88, star=0
+},
+	[17966]={ tid=4425, level=88, star=0
+},
+	[17967]={ tid=4402, level=88, star=0
+},
+	[17968]={ tid=3408, level=92, star=0
+},
+	[17969]={ tid=3407, level=92, star=0
+},
+	[17970]={ tid=4407, level=92, star=0
+},
+	[17971]={ tid=4430, level=92, star=0
+},
+	[17972]={ tid=4417, level=92, star=0
+},
+	[17973]={ tid=3423, level=95, star=0
+},
+	[17974]={ tid=3413, level=95, star=0
+},
+	[17975]={ tid=4420, level=95, star=0
+},
+	[17976]={ tid=4417, level=95, star=0
+},
+	[17977]={ tid=4405, level=95, star=0
+},
+	[17978]={ tid=4426, level=100, star=0
+},
+	[17979]={ tid=4420, level=100, star=0
+},
+	[17980]={ tid=4416, level=100, star=0
+},
+	[17981]={ tid=4420, level=100, star=0
+},
+	[17982]={ tid=5021, level=100, star=0
+},
+	[17983]={ tid=3402, level=55, star=0
+},
+	[17984]={ tid=3423, level=55, star=0
+},
+	[17985]={ tid=3402, level=55, star=0
+},
+	[17986]={ tid=4425, level=55, star=0
+},
+	[17987]={ tid=4426, level=55, star=0
+},
+	[17988]={ tid=3404, level=56, star=0
+},
+	[17989]={ tid=3427, level=56, star=0
+},
+	[17990]={ tid=3413, level=56, star=0
+},
+	[17991]={ tid=4430, level=56, star=0
+},
+	[17992]={ tid=4410, level=56, star=0
+},
+	[17993]={ tid=3428, level=58, star=0
+},
+	[17994]={ tid=3411, level=58, star=0
+},
+	[17995]={ tid=4417, level=58, star=0
+},
+	[17996]={ tid=4413, level=58, star=0
+},
+	[17997]={ tid=4408, level=58, star=0
+},
+	[17998]={ tid=3407, level=58, star=0
+},
+	[17999]={ tid=3435, level=58, star=0
+},
+	[18000]={ tid=3435, level=58, star=0
+},
+	[18001]={ tid=4420, level=58, star=0
+},
+	[18002]={ tid=4405, level=58, star=0
+},
+	[18003]={ tid=3432, level=60, star=0
+},
+	[18004]={ tid=3427, level=60, star=0
+},
+	[18005]={ tid=3430, level=60, star=0
+},
+	[18006]={ tid=4422, level=60, star=0
+},
+	[18007]={ tid=4422, level=60, star=0
+},
+	[18008]={ tid=3408, level=62, star=0
+},
+	[18009]={ tid=3420, level=62, star=0
+},
+	[18010]={ tid=3435, level=62, star=0
+},
+	[18011]={ tid=4419, level=62, star=0
+},
+	[18012]={ tid=4407, level=62, star=0
+},
+	[18013]={ tid=3413, level=64, star=0
+},
+	[18014]={ tid=3404, level=64, star=0
+},
+	[18015]={ tid=4401, level=64, star=0
+},
+	[18016]={ tid=4429, level=64, star=0
+},
+	[18017]={ tid=4407, level=64, star=0
+},
+	[18018]={ tid=3405, level=64, star=0
+},
+	[18019]={ tid=3435, level=64, star=0
+},
+	[18020]={ tid=3432, level=64, star=0
+},
+	[18021]={ tid=4408, level=64, star=0
+},
+	[18022]={ tid=4422, level=64, star=0
+},
+	[18023]={ tid=3430, level=66, star=0
+},
+	[18024]={ tid=3430, level=66, star=0
+},
+	[18025]={ tid=3430, level=66, star=0
+},
+	[18026]={ tid=4430, level=66, star=0
+},
+	[18027]={ tid=4413, level=66, star=0
+},
+	[18028]={ tid=3435, level=68, star=0
+},
+	[18029]={ tid=3413, level=68, star=0
+},
+	[18030]={ tid=3408, level=68, star=0
+},
+	[18031]={ tid=4416, level=68, star=0
+},
+	[18032]={ tid=4410, level=68, star=0
+},
+	[18033]={ tid=3402, level=70, star=0
+},
+	[18034]={ tid=3423, level=70, star=0
+},
+	[18035]={ tid=4405, level=70, star=0
+},
+	[18036]={ tid=4401, level=70, star=0
+},
+	[18037]={ tid=4408, level=70, star=0
+},
+	[18038]={ tid=3414, level=72, star=0
+},
+	[18039]={ tid=3411, level=72, star=0
+},
+	[18040]={ tid=3405, level=72, star=0
+},
+	[18041]={ tid=4425, level=72, star=0
+},
+	[18042]={ tid=4414, level=72, star=0
+},
+	[18043]={ tid=3411, level=74, star=0
+},
+	[18044]={ tid=3435, level=74, star=0
+},
+	[18045]={ tid=3413, level=74, star=0
+},
+	[18046]={ tid=4417, level=74, star=0
+},
+	[18047]={ tid=4407, level=74, star=0
+},
+	[18048]={ tid=3405, level=75, star=0
+},
+	[18049]={ tid=3402, level=75, star=0
+},
+	[18050]={ tid=4402, level=75, star=0
+},
+	[18051]={ tid=4408, level=75, star=0
+},
+	[18052]={ tid=4410, level=75, star=0
+},
+	[18053]={ tid=3407, level=80, star=0
+},
+	[18054]={ tid=3435, level=80, star=0
+},
+	[18055]={ tid=4405, level=80, star=0
+},
+	[18056]={ tid=4417, level=80, star=0
+},
+	[18057]={ tid=5001, level=80, star=0
+},
+	[18058]={ tid=3407, level=70, star=0
+},
+	[18059]={ tid=3404, level=70, star=0
+},
+	[18060]={ tid=3402, level=70, star=0
+},
+	[18061]={ tid=4425, level=70, star=0
+},
+	[18062]={ tid=4426, level=70, star=0
+},
+	[18063]={ tid=3404, level=72, star=0
+},
+	[18064]={ tid=3404, level=72, star=0
+},
+	[18065]={ tid=3435, level=72, star=0
+},
+	[18066]={ tid=4430, level=72, star=0
+},
+	[18067]={ tid=4425, level=72, star=0
+},
+	[18068]={ tid=3427, level=74, star=0
+},
+	[18069]={ tid=3427, level=74, star=0
+},
+	[18070]={ tid=4407, level=74, star=0
+},
+	[18071]={ tid=4425, level=74, star=0
+},
+	[18072]={ tid=4429, level=74, star=0
+},
+	[18073]={ tid=3411, level=74, star=0
+},
+	[18074]={ tid=3432, level=74, star=0
+},
+	[18075]={ tid=3407, level=74, star=0
+},
+	[18076]={ tid=4410, level=74, star=0
+},
+	[18077]={ tid=4413, level=74, star=0
+},
+	[18078]={ tid=3420, level=76, star=0
+},
+	[18079]={ tid=3430, level=76, star=0
+},
+	[18080]={ tid=3407, level=76, star=0
+},
+	[18081]={ tid=4414, level=76, star=0
+},
+	[18082]={ tid=4413, level=76, star=0
+},
+	[18083]={ tid=3432, level=78, star=0
+},
+	[18084]={ tid=3408, level=78, star=0
+},
+	[18085]={ tid=4429, level=78, star=0
+},
+	[18086]={ tid=4429, level=78, star=0
+},
+	[18087]={ tid=4426, level=78, star=0
+},
+	[18088]={ tid=3414, level=78, star=0
+},
+	[18089]={ tid=3435, level=78, star=0
+},
+	[18090]={ tid=3423, level=78, star=0
+},
+	[18091]={ tid=4405, level=78, star=0
+},
+	[18092]={ tid=4405, level=78, star=0
+},
+	[18093]={ tid=3420, level=80, star=0
+},
+	[18094]={ tid=3427, level=80, star=0
+},
+	[18095]={ tid=3405, level=80, star=0
+},
+	[18096]={ tid=4405, level=80, star=0
+},
+	[18097]={ tid=4419, level=80, star=0
+},
+	[18098]={ tid=3427, level=85, star=0
+},
+	[18099]={ tid=3413, level=85, star=0
+},
+	[18100]={ tid=4407, level=85, star=0
+},
+	[18101]={ tid=4425, level=85, star=0
+},
+	[18102]={ tid=4408, level=85, star=0
+},
+	[18103]={ tid=4417, level=90, star=0
+},
+	[18104]={ tid=4410, level=90, star=0
+},
+	[18105]={ tid=4420, level=90, star=0
+},
+	[18106]={ tid=5001, level=90, star=0
+},
+	[18107]={ tid=3423, level=80, star=0
+},
+	[18108]={ tid=3420, level=80, star=0
+},
+	[18109]={ tid=4417, level=80, star=0
+},
+	[18110]={ tid=4402, level=80, star=0
+},
+	[18111]={ tid=4410, level=80, star=0
+},
+	[18112]={ tid=3423, level=84, star=0
+},
+	[18113]={ tid=3404, level=84, star=0
+},
+	[18114]={ tid=4422, level=84, star=0
+},
+	[18115]={ tid=4414, level=84, star=0
+},
+	[18116]={ tid=4408, level=84, star=0
+},
+	[18117]={ tid=3408, level=88, star=0
+},
+	[18118]={ tid=3414, level=88, star=0
+},
+	[18119]={ tid=4402, level=88, star=0
+},
+	[18120]={ tid=4430, level=88, star=0
+},
+	[18121]={ tid=4417, level=88, star=0
+},
+	[18122]={ tid=3404, level=92, star=0
+},
+	[18123]={ tid=3414, level=92, star=0
+},
+	[18124]={ tid=4413, level=92, star=0
+},
+	[18125]={ tid=4426, level=92, star=0
+},
+	[18126]={ tid=4402, level=92, star=0
+},
+	[18127]={ tid=3408, level=95, star=0
+},
+	[18128]={ tid=3427, level=95, star=0
+},
+	[18129]={ tid=4426, level=95, star=0
+},
+	[18130]={ tid=4430, level=95, star=0
+},
+	[18131]={ tid=4420, level=95, star=0
+},
+	[18132]={ tid=4407, level=100, star=0
+},
+	[18133]={ tid=4429, level=100, star=0
+},
+	[18134]={ tid=4405, level=100, star=0
+},
+	[18135]={ tid=4417, level=100, star=0
+},
+	[18136]={ tid=5001, level=100, star=0
+},
+	[18137]={ tid=3404, level=55, star=0
+},
+	[18138]={ tid=3433, level=55, star=0
+},
+	[18139]={ tid=3401, level=55, star=0
+},
+	[18140]={ tid=4443, level=55, star=0
+},
+	[18141]={ tid=4461, level=55, star=0
+},
+	[18142]={ tid=3422, level=56, star=0
+},
+	[18143]={ tid=3414, level=56, star=0
+},
+	[18144]={ tid=3430, level=56, star=0
+},
+	[18145]={ tid=4431, level=56, star=0
+},
+	[18146]={ tid=4409, level=56, star=0
+},
+	[18147]={ tid=3435, level=58, star=0
+},
+	[18148]={ tid=3426, level=58, star=0
+},
+	[18149]={ tid=4456, level=58, star=0
+},
+	[18150]={ tid=4423, level=58, star=0
+},
+	[18151]={ tid=4444, level=58, star=0
+},
+	[18152]={ tid=3433, level=58, star=0
+},
+	[18153]={ tid=3429, level=58, star=0
+},
+	[18154]={ tid=3423, level=58, star=0
+},
+	[18155]={ tid=4411, level=58, star=0
+},
+	[18156]={ tid=4416, level=58, star=0
+},
+	[18157]={ tid=3425, level=60, star=0
+},
+	[18158]={ tid=3413, level=60, star=0
+},
+	[18159]={ tid=3406, level=60, star=0
+},
+	[18160]={ tid=4415, level=60, star=0
+},
+	[18161]={ tid=4441, level=60, star=0
+},
+	[18162]={ tid=3419, level=62, star=0
+},
+	[18163]={ tid=3423, level=62, star=0
+},
+	[18164]={ tid=3413, level=62, star=0
+},
+	[18165]={ tid=4417, level=62, star=0
+},
+	[18166]={ tid=4420, level=62, star=0
+},
+	[18167]={ tid=3406, level=64, star=0
+},
+	[18168]={ tid=3403, level=64, star=0
+},
+	[18169]={ tid=4402, level=64, star=0
+},
+	[18170]={ tid=4443, level=64, star=0
+},
+	[18171]={ tid=4430, level=64, star=0
+},
+	[18172]={ tid=3433, level=64, star=0
+},
+	[18173]={ tid=3434, level=64, star=0
+},
+	[18174]={ tid=3427, level=64, star=0
+},
+	[18175]={ tid=4434, level=64, star=0
+},
+	[18176]={ tid=4434, level=64, star=0
+},
+	[18177]={ tid=3407, level=66, star=0
+},
+	[18178]={ tid=3414, level=66, star=0
+},
+	[18179]={ tid=3414, level=66, star=0
+},
+	[18180]={ tid=4420, level=66, star=0
+},
+	[18181]={ tid=4433, level=66, star=0
+},
+	[18182]={ tid=3414, level=68, star=0
+},
+	[18183]={ tid=3431, level=68, star=0
+},
+	[18184]={ tid=3411, level=68, star=0
+},
+	[18185]={ tid=4415, level=68, star=0
+},
+	[18186]={ tid=4458, level=68, star=0
+},
+	[18187]={ tid=3401, level=70, star=0
+},
+	[18188]={ tid=3415, level=70, star=0
+},
+	[18189]={ tid=4418, level=70, star=0
+},
+	[18190]={ tid=4444, level=70, star=0
+},
+	[18191]={ tid=4438, level=70, star=0
+},
+	[18192]={ tid=3422, level=72, star=0
+},
+	[18193]={ tid=3416, level=72, star=0
+},
+	[18194]={ tid=3436, level=72, star=0
+},
+	[18195]={ tid=4415, level=72, star=0
+},
+	[18196]={ tid=4417, level=72, star=0
+},
+	[18197]={ tid=3419, level=74, star=0
+},
+	[18198]={ tid=3413, level=74, star=0
+},
+	[18199]={ tid=3403, level=74, star=0
+},
+	[18200]={ tid=4439, level=74, star=0
+},
+	[18201]={ tid=4456, level=74, star=0
+},
+	[18202]={ tid=3411, level=75, star=0
+},
+	[18203]={ tid=3427, level=75, star=0
+},
+	[18204]={ tid=4421, level=75, star=0
+},
+	[18205]={ tid=4415, level=75, star=0
+},
+	[18206]={ tid=4422, level=75, star=0
+},
+	[18207]={ tid=3432, level=80, star=0
+},
+	[18208]={ tid=3412, level=80, star=0
+},
+	[18209]={ tid=4430, level=80, star=0
+},
+	[18210]={ tid=4413, level=80, star=0
+},
+	[18211]={ tid=5091, level=80, star=0
+},
+	[18212]={ tid=3428, level=70, star=0
+},
+	[18213]={ tid=3407, level=70, star=0
+},
+	[18214]={ tid=3401, level=70, star=0
+},
+	[18215]={ tid=4409, level=70, star=0
+},
+	[18216]={ tid=4462, level=70, star=0
+},
+	[18217]={ tid=3413, level=72, star=0
+},
+	[18218]={ tid=3422, level=72, star=0
+},
+	[18219]={ tid=3413, level=72, star=0
+},
+	[18220]={ tid=4419, level=72, star=0
+},
+	[18221]={ tid=4416, level=72, star=0
+},
+	[18222]={ tid=3434, level=74, star=0
+},
+	[18223]={ tid=3405, level=74, star=0
+},
+	[18224]={ tid=4424, level=74, star=0
+},
+	[18225]={ tid=4404, level=74, star=0
+},
+	[18226]={ tid=4428, level=74, star=0
+},
+	[18227]={ tid=3431, level=74, star=0
+},
+	[18228]={ tid=3425, level=74, star=0
+},
+	[18229]={ tid=3415, level=74, star=0
+},
+	[18230]={ tid=4448, level=74, star=0
+},
+	[18231]={ tid=4420, level=74, star=0
+},
+	[18232]={ tid=3433, level=76, star=0
+},
+	[18233]={ tid=3433, level=76, star=0
+},
+	[18234]={ tid=3434, level=76, star=0
+},
+	[18235]={ tid=4468, level=76, star=0
+},
+	[18236]={ tid=4457, level=76, star=0
+},
+	[18237]={ tid=3409, level=78, star=0
+},
+	[18238]={ tid=3411, level=78, star=0
+},
+	[18239]={ tid=4443, level=78, star=0
+},
+	[18240]={ tid=4407, level=78, star=0
+},
+	[18241]={ tid=4407, level=78, star=0
+},
+	[18242]={ tid=3404, level=78, star=0
+},
+	[18243]={ tid=3410, level=78, star=0
+},
+	[18244]={ tid=3418, level=78, star=0
+},
+	[18245]={ tid=4419, level=78, star=0
+},
+	[18246]={ tid=4407, level=78, star=0
+},
+	[18247]={ tid=3415, level=80, star=0
+},
+	[18248]={ tid=3422, level=80, star=0
+},
+	[18249]={ tid=3402, level=80, star=0
+},
+	[18250]={ tid=4461, level=80, star=0
+},
+	[18251]={ tid=4408, level=80, star=0
+},
+	[18252]={ tid=3409, level=85, star=0
+},
+	[18253]={ tid=3420, level=85, star=0
+},
+	[18254]={ tid=4419, level=85, star=0
+},
+	[18255]={ tid=4405, level=85, star=0
+},
+	[18256]={ tid=4416, level=85, star=0
+},
+	[18257]={ tid=4403, level=90, star=0
+},
+	[18258]={ tid=4438, level=90, star=0
+},
+	[18259]={ tid=4430, level=90, star=0
+},
+	[18260]={ tid=5091, level=90, star=0
+},
+	[18261]={ tid=3421, level=80, star=0
+},
+	[18262]={ tid=3422, level=80, star=0
+},
+	[18263]={ tid=4414, level=80, star=0
+},
+	[18264]={ tid=4434, level=80, star=0
+},
+	[18265]={ tid=4442, level=80, star=0
+},
+	[18266]={ tid=3402, level=84, star=0
+},
+	[18267]={ tid=3430, level=84, star=0
+},
+	[18268]={ tid=4465, level=84, star=0
+},
+	[18269]={ tid=4425, level=84, star=0
+},
+	[18270]={ tid=4450, level=84, star=0
+},
+	[18271]={ tid=3413, level=88, star=0
+},
+	[18272]={ tid=3418, level=88, star=0
+},
+	[18273]={ tid=4445, level=88, star=0
+},
+	[18274]={ tid=4415, level=88, star=0
+},
+	[18275]={ tid=4442, level=88, star=0
+},
+	[18276]={ tid=3425, level=92, star=0
+},
+	[18277]={ tid=3427, level=92, star=0
+},
+	[18278]={ tid=4429, level=92, star=0
+},
+	[18279]={ tid=4401, level=92, star=0
+},
+	[18280]={ tid=4445, level=92, star=0
+},
+	[18281]={ tid=3411, level=95, star=0
+},
+	[18282]={ tid=3407, level=95, star=0
+},
+	[18283]={ tid=4439, level=95, star=0
+},
+	[18284]={ tid=4426, level=95, star=0
+},
+	[18285]={ tid=4415, level=95, star=0
+},
+	[18286]={ tid=4412, level=100, star=0
+},
+	[18287]={ tid=4422, level=100, star=0
+},
+	[18288]={ tid=4416, level=100, star=0
+},
+	[18289]={ tid=4458, level=100, star=0
+},
+	[18290]={ tid=5091, level=100, star=0
+},
+	[18291]={ tid=3410, level=55, star=0
+},
+	[18292]={ tid=3409, level=55, star=0
+},
+	[18293]={ tid=3421, level=55, star=0
+},
+	[18294]={ tid=4426, level=55, star=0
+},
+	[18295]={ tid=4419, level=55, star=0
+},
+	[18296]={ tid=3420, level=56, star=0
+},
+	[18297]={ tid=3420, level=56, star=0
+},
+	[18298]={ tid=3413, level=56, star=0
+},
+	[18299]={ tid=4442, level=56, star=0
+},
+	[18300]={ tid=4449, level=56, star=0
+},
+	[18301]={ tid=3424, level=58, star=0
+},
+	[18302]={ tid=3410, level=58, star=0
+},
+	[18303]={ tid=4469, level=58, star=0
+},
+	[18304]={ tid=4432, level=58, star=0
+},
+	[18305]={ tid=4416, level=58, star=0
+},
+	[18306]={ tid=3409, level=58, star=0
+},
+	[18307]={ tid=3429, level=58, star=0
+},
+	[18308]={ tid=3416, level=58, star=0
+},
+	[18309]={ tid=4456, level=58, star=0
+},
+	[18310]={ tid=4410, level=58, star=0
+},
+	[18311]={ tid=3405, level=60, star=0
+},
+	[18312]={ tid=3421, level=60, star=0
+},
+	[18313]={ tid=3422, level=60, star=0
+},
+	[18314]={ tid=4427, level=60, star=0
+},
+	[18315]={ tid=4407, level=60, star=0
+},
+	[18316]={ tid=3408, level=62, star=0
+},
+	[18317]={ tid=3414, level=62, star=0
+},
+	[18318]={ tid=3412, level=62, star=0
+},
+	[18319]={ tid=4421, level=62, star=0
+},
+	[18320]={ tid=4466, level=62, star=0
+},
+	[18321]={ tid=3434, level=64, star=0
+},
+	[18322]={ tid=3418, level=64, star=0
+},
+	[18323]={ tid=4462, level=64, star=0
+},
+	[18324]={ tid=4422, level=64, star=0
+},
+	[18325]={ tid=4404, level=64, star=0
+},
+	[18326]={ tid=3403, level=64, star=0
+},
+	[18327]={ tid=3433, level=64, star=0
+},
+	[18328]={ tid=3414, level=64, star=0
+},
+	[18329]={ tid=4436, level=64, star=0
+},
+	[18330]={ tid=4432, level=64, star=0
+},
+	[18331]={ tid=3405, level=66, star=0
+},
+	[18332]={ tid=3412, level=66, star=0
+},
+	[18333]={ tid=3431, level=66, star=0
+},
+	[18334]={ tid=4447, level=66, star=0
+},
+	[18335]={ tid=4425, level=66, star=0
+},
+	[18336]={ tid=3417, level=68, star=0
+},
+	[18337]={ tid=3433, level=68, star=0
+},
+	[18338]={ tid=3423, level=68, star=0
+},
+	[18339]={ tid=4416, level=68, star=0
+},
+	[18340]={ tid=4450, level=68, star=0
+},
+	[18341]={ tid=3405, level=70, star=0
+},
+	[18342]={ tid=3415, level=70, star=0
+},
+	[18343]={ tid=4446, level=70, star=0
+},
+	[18344]={ tid=4461, level=70, star=0
+},
+	[18345]={ tid=4429, level=70, star=0
+},
+	[18346]={ tid=3402, level=72, star=0
+},
+	[18347]={ tid=3434, level=72, star=0
+},
+	[18348]={ tid=3411, level=72, star=0
+},
+	[18349]={ tid=4414, level=72, star=0
+},
+	[18350]={ tid=4426, level=72, star=0
+},
+	[18351]={ tid=3420, level=74, star=0
+},
+	[18352]={ tid=3405, level=74, star=0
+},
+	[18353]={ tid=3411, level=74, star=0
+},
+	[18354]={ tid=4444, level=74, star=0
+},
+	[18355]={ tid=4438, level=74, star=0
+},
+	[18356]={ tid=3407, level=75, star=0
+},
+	[18357]={ tid=3414, level=75, star=0
+},
+	[18358]={ tid=4447, level=75, star=0
+},
+	[18359]={ tid=4440, level=75, star=0
+},
+	[18360]={ tid=4446, level=75, star=0
+},
+	[18361]={ tid=3404, level=80, star=0
+},
+	[18362]={ tid=3416, level=80, star=0
+},
+	[18363]={ tid=4402, level=80, star=0
+},
+	[18364]={ tid=4413, level=80, star=0
+},
+	[18365]={ tid=5021, level=80, star=0
+},
+	[18366]={ tid=3426, level=70, star=0
+},
+	[18367]={ tid=3401, level=70, star=0
+},
+	[18368]={ tid=3409, level=70, star=0
+},
+	[18369]={ tid=4425, level=70, star=0
+},
+	[18370]={ tid=4405, level=70, star=0
+},
+	[18371]={ tid=3406, level=72, star=0
+},
+	[18372]={ tid=3405, level=72, star=0
+},
+	[18373]={ tid=3435, level=72, star=0
+},
+	[18374]={ tid=4419, level=72, star=0
+},
+	[18375]={ tid=4465, level=72, star=0
+},
+	[18376]={ tid=3430, level=74, star=0
+},
+	[18377]={ tid=3405, level=74, star=0
+},
+	[18378]={ tid=4428, level=74, star=0
+},
+	[18379]={ tid=4420, level=74, star=0
+},
+	[18380]={ tid=4465, level=74, star=0
+},
+	[18381]={ tid=3419, level=74, star=0
+},
+	[18382]={ tid=3433, level=74, star=0
+},
+	[18383]={ tid=3435, level=74, star=0
+},
+	[18384]={ tid=4467, level=74, star=0
+},
+	[18385]={ tid=4440, level=74, star=0
+},
+	[18386]={ tid=3429, level=76, star=0
+},
+	[18387]={ tid=3423, level=76, star=0
+},
+	[18388]={ tid=3409, level=76, star=0
+},
+	[18389]={ tid=4422, level=76, star=0
+},
+	[18390]={ tid=4421, level=76, star=0
+},
+	[18391]={ tid=3434, level=78, star=0
+},
+	[18392]={ tid=3401, level=78, star=0
+},
+	[18393]={ tid=4429, level=78, star=0
+},
+	[18394]={ tid=4411, level=78, star=0
+},
+	[18395]={ tid=4404, level=78, star=0
+},
+	[18396]={ tid=3430, level=78, star=0
+},
+	[18397]={ tid=3423, level=78, star=0
+},
+	[18398]={ tid=3403, level=78, star=0
+},
+	[18399]={ tid=4424, level=78, star=0
+},
+	[18400]={ tid=4417, level=78, star=0
+},
+	[18401]={ tid=3434, level=80, star=0
+},
+	[18402]={ tid=3422, level=80, star=0
+},
+	[18403]={ tid=3426, level=80, star=0
+},
+	[18404]={ tid=4442, level=80, star=0
+},
+	[18405]={ tid=4429, level=80, star=0
+},
+	[18406]={ tid=3410, level=85, star=0
+},
+	[18407]={ tid=3430, level=85, star=0
+},
+	[18408]={ tid=4435, level=85, star=0
+},
+	[18409]={ tid=4468, level=85, star=0
+},
+	[18410]={ tid=4463, level=85, star=0
+},
+	[18411]={ tid=4431, level=90, star=0
+},
+	[18412]={ tid=4415, level=90, star=0
+},
+	[18413]={ tid=4441, level=90, star=0
+},
+	[18414]={ tid=5021, level=90, star=0
+},
+	[18415]={ tid=3419, level=80, star=0
+},
+	[18416]={ tid=3417, level=80, star=0
+},
+	[18417]={ tid=4424, level=80, star=0
+},
+	[18418]={ tid=4429, level=80, star=0
+},
+	[18419]={ tid=4407, level=80, star=0
+},
+	[18420]={ tid=3423, level=84, star=0
+},
+	[18421]={ tid=3419, level=84, star=0
+},
+	[18422]={ tid=4406, level=84, star=0
+},
+	[18423]={ tid=4404, level=84, star=0
+},
+	[18424]={ tid=4402, level=84, star=0
+},
+	[18425]={ tid=3404, level=88, star=0
+},
+	[18426]={ tid=3429, level=88, star=0
+},
+	[18427]={ tid=4468, level=88, star=0
+},
+	[18428]={ tid=4428, level=88, star=0
+},
+	[18429]={ tid=4449, level=88, star=0
+},
+	[18430]={ tid=3415, level=92, star=0
+},
+	[18431]={ tid=3412, level=92, star=0
+},
+	[18432]={ tid=4410, level=92, star=0
+},
+	[18433]={ tid=4461, level=92, star=0
+},
+	[18434]={ tid=4448, level=92, star=0
+},
+	[18435]={ tid=3431, level=95, star=0
+},
+	[18436]={ tid=3435, level=95, star=0
+},
+	[18437]={ tid=4432, level=95, star=0
+},
+	[18438]={ tid=4449, level=95, star=0
+},
+	[18439]={ tid=4447, level=95, star=0
+},
+	[18440]={ tid=4433, level=100, star=0
+},
+	[18441]={ tid=4432, level=100, star=0
+},
+	[18442]={ tid=4433, level=100, star=0
+},
+	[18443]={ tid=4468, level=100, star=0
+},
+	[18444]={ tid=5021, level=100, star=0
+},
+	[18445]={ tid=3012, level=55, star=0
+},
+	[18446]={ tid=3634, level=55, star=0
+},
+	[18447]={ tid=3215, level=55, star=0
+},
+	[18448]={ tid=4614, level=55, star=0
+},
+	[18449]={ tid=4610, level=55, star=0
+},
+	[18450]={ tid=3002, level=56, star=0
+},
+	[18451]={ tid=3422, level=56, star=0
+},
+	[18452]={ tid=3016, level=56, star=0
+},
+	[18453]={ tid=4612, level=56, star=0
+},
+	[18454]={ tid=4614, level=56, star=0
+},
+	[18455]={ tid=3209, level=58, star=0
+},
+	[18456]={ tid=3002, level=58, star=0
+},
+	[18457]={ tid=4015, level=58, star=0
+},
+	[18458]={ tid=4612, level=58, star=0
+},
+	[18459]={ tid=4610, level=58, star=0
+},
+	[18460]={ tid=3012, level=58, star=0
+},
+	[18461]={ tid=3004, level=58, star=0
+},
+	[18462]={ tid=3429, level=58, star=0
+},
+	[18463]={ tid=4646, level=58, star=0
+},
+	[18464]={ tid=4602, level=58, star=0
+},
+	[18465]={ tid=3632, level=60, star=0
+},
+	[18466]={ tid=3634, level=60, star=0
+},
+	[18467]={ tid=3431, level=60, star=0
+},
+	[18468]={ tid=4644, level=60, star=0
+},
+	[18469]={ tid=4646, level=60, star=0
+},
+	[18470]={ tid=3024, level=62, star=0
+},
+	[18471]={ tid=3424, level=62, star=0
+},
+	[18472]={ tid=3012, level=62, star=0
+},
+	[18473]={ tid=4602, level=62, star=0
+},
+	[18474]={ tid=4614, level=62, star=0
+},
+	[18475]={ tid=3429, level=64, star=0
+},
+	[18476]={ tid=3024, level=64, star=0
+},
+	[18477]={ tid=4646, level=64, star=0
+},
+	[18478]={ tid=4614, level=64, star=0
+},
+	[18479]={ tid=4610, level=64, star=0
+},
+	[18480]={ tid=3429, level=64, star=0
+},
+	[18481]={ tid=3215, level=64, star=0
+},
+	[18482]={ tid=3218, level=64, star=0
+},
+	[18483]={ tid=4610, level=64, star=0
+},
+	[18484]={ tid=4643, level=64, star=0
+},
+	[18485]={ tid=3016, level=66, star=0
+},
+	[18486]={ tid=3634, level=66, star=0
+},
+	[18487]={ tid=3002, level=66, star=0
+},
+	[18488]={ tid=4644, level=66, star=0
+},
+	[18489]={ tid=4610, level=66, star=0
+},
+	[18490]={ tid=3429, level=68, star=0
+},
+	[18491]={ tid=3209, level=68, star=0
+},
+	[18492]={ tid=3016, level=68, star=0
+},
+	[18493]={ tid=4614, level=68, star=0
+},
+	[18494]={ tid=4602, level=68, star=0
+},
+	[18495]={ tid=3431, level=70, star=0
+},
+	[18496]={ tid=3432, level=70, star=0
+},
+	[18497]={ tid=4014, level=70, star=0
+},
+	[18498]={ tid=4614, level=70, star=0
+},
+	[18499]={ tid=4644, level=70, star=0
+},
+	[18500]={ tid=3632, level=72, star=0
+},
+	[18501]={ tid=3422, level=72, star=0
+},
+	[18502]={ tid=3412, level=72, star=0
+},
+	[18503]={ tid=4612, level=72, star=0
+},
+	[18504]={ tid=4610, level=72, star=0
+},
+	[18505]={ tid=3004, level=74, star=0
+},
+	[18506]={ tid=3632, level=74, star=0
+},
+	[18507]={ tid=3424, level=74, star=0
+},
+	[18508]={ tid=4610, level=74, star=0
+},
+	[18509]={ tid=4612, level=74, star=0
+},
+	[18510]={ tid=3631, level=75, star=0
+},
+	[18511]={ tid=3432, level=75, star=0
+},
+	[18512]={ tid=4446, level=75, star=0
+},
+	[18513]={ tid=4643, level=75, star=0
+},
+	[18514]={ tid=4612, level=75, star=0
+},
+	[18515]={ tid=3632, level=80, star=0
+},
+	[18516]={ tid=3632, level=80, star=0
+},
+	[18517]={ tid=4644, level=80, star=0
+},
+	[18518]={ tid=4612, level=80, star=0
+},
+	[18519]={ tid=5071, level=80, star=0
+},
+	[18520]={ tid=3002, level=70, star=0
+},
+	[18521]={ tid=3429, level=70, star=0
+},
+	[18522]={ tid=3426, level=70, star=0
+},
+	[18523]={ tid=4612, level=70, star=0
+},
+	[18524]={ tid=4643, level=70, star=0
+},
+	[18525]={ tid=3002, level=72, star=0
+},
+	[18526]={ tid=3416, level=72, star=0
+},
+	[18527]={ tid=3022, level=72, star=0
+},
+	[18528]={ tid=4643, level=72, star=0
+},
+	[18529]={ tid=4646, level=72, star=0
+},
+	[18530]={ tid=3415, level=74, star=0
+},
+	[18531]={ tid=3003, level=74, star=0
+},
+	[18532]={ tid=4610, level=74, star=0
+},
+	[18533]={ tid=4643, level=74, star=0
+},
+	[18534]={ tid=4610, level=74, star=0
+},
+	[18535]={ tid=3004, level=74, star=0
+},
+	[18536]={ tid=3004, level=74, star=0
+},
+	[18537]={ tid=3209, level=74, star=0
+},
+	[18538]={ tid=4610, level=74, star=0
+},
+	[18539]={ tid=4610, level=74, star=0
+},
+	[18540]={ tid=3632, level=76, star=0
+},
+	[18541]={ tid=3012, level=76, star=0
+},
+	[18542]={ tid=3012, level=76, star=0
+},
+	[18543]={ tid=4644, level=76, star=0
+},
+	[18544]={ tid=4612, level=76, star=0
+},
+	[18545]={ tid=3416, level=78, star=0
+},
+	[18546]={ tid=3621, level=78, star=0
+},
+	[18547]={ tid=4230, level=78, star=0
+},
+	[18548]={ tid=4644, level=78, star=0
+},
+	[18549]={ tid=4602, level=78, star=0
+},
+	[18550]={ tid=3634, level=78, star=0
+},
+	[18551]={ tid=3621, level=78, star=0
+},
+	[18552]={ tid=3003, level=78, star=0
+},
+	[18553]={ tid=4612, level=78, star=0
+},
+	[18554]={ tid=4602, level=78, star=0
+},
+	[18555]={ tid=3412, level=80, star=0
+},
+	[18556]={ tid=3012, level=80, star=0
+},
+	[18557]={ tid=3412, level=80, star=0
+},
+	[18558]={ tid=4644, level=80, star=0
+},
+	[18559]={ tid=4610, level=80, star=0
+},
+	[18560]={ tid=3631, level=85, star=0
+},
+	[18561]={ tid=3634, level=85, star=0
+},
+	[18562]={ tid=4602, level=85, star=0
+},
+	[18563]={ tid=4646, level=85, star=0
+},
+	[18564]={ tid=4610, level=85, star=0
+},
+	[18565]={ tid=4602, level=90, star=0
+},
+	[18566]={ tid=4643, level=90, star=0
+},
+	[18567]={ tid=4644, level=90, star=0
+},
+	[18568]={ tid=5071, level=90, star=0
+},
+	[18569]={ tid=3024, level=80, star=0
+},
+	[18570]={ tid=3415, level=80, star=0
+},
+	[18571]={ tid=4018, level=80, star=0
+},
+	[18572]={ tid=4646, level=80, star=0
+},
+	[18573]={ tid=4646, level=80, star=0
+},
+	[18574]={ tid=3631, level=84, star=0
+},
+	[18575]={ tid=3426, level=84, star=0
+},
+	[18576]={ tid=4209, level=84, star=0
+},
+	[18577]={ tid=4610, level=84, star=0
+},
+	[18578]={ tid=4646, level=84, star=0
+},
+	[18579]={ tid=3430, level=88, star=0
+},
+	[18580]={ tid=3002, level=88, star=0
+},
+	[18581]={ tid=4643, level=88, star=0
+},
+	[18582]={ tid=4614, level=88, star=0
+},
+	[18583]={ tid=4644, level=88, star=0
+},
+	[18584]={ tid=3634, level=92, star=0
+},
+	[18585]={ tid=3621, level=92, star=0
+},
+	[18586]={ tid=4646, level=92, star=0
+},
+	[18587]={ tid=4614, level=92, star=0
+},
+	[18588]={ tid=4643, level=92, star=0
+},
+	[18589]={ tid=3634, level=95, star=0
+},
+	[18590]={ tid=3631, level=95, star=0
+},
+	[18591]={ tid=4612, level=95, star=0
+},
+	[18592]={ tid=4602, level=95, star=0
+},
+	[18593]={ tid=4610, level=95, star=0
+},
+	[18594]={ tid=4646, level=100, star=0
+},
+	[18595]={ tid=4602, level=100, star=0
+},
+	[18596]={ tid=4610, level=100, star=0
+},
+	[18597]={ tid=4612, level=100, star=0
+},
+	[18598]={ tid=5071, level=100, star=0
+},
+	[18599]={ tid=3003, level=58, star=0
+},
+	[18600]={ tid=3411, level=58, star=0
+},
+	[18601]={ tid=3630, level=58, star=0
+},
+	[18602]={ tid=4633, level=58, star=0
+},
+	[18603]={ tid=4605, level=58, star=0
+},
+	[18604]={ tid=3214, level=60, star=0
+},
+	[18605]={ tid=3630, level=60, star=0
+},
+	[18606]={ tid=4607, level=60, star=0
+},
+	[18607]={ tid=4609, level=60, star=0
+},
+	[18608]={ tid=4615, level=60, star=0
+},
+	[18609]={ tid=3403, level=62, star=0
+},
+	[18610]={ tid=3431, level=62, star=0
+},
+	[18611]={ tid=3227, level=62, star=0
+},
+	[18612]={ tid=4627, level=62, star=0
+},
+	[18613]={ tid=4607, level=62, star=0
+},
+	[18614]={ tid=3425, level=64, star=0
+},
+	[18615]={ tid=3606, level=64, star=0
+},
+	[18616]={ tid=3425, level=64, star=0
+},
+	[18617]={ tid=4632, level=64, star=0
+},
+	[18618]={ tid=4617, level=64, star=0
+},
+	[18619]={ tid=3406, level=64, star=0
+},
+	[18620]={ tid=3401, level=64, star=0
+},
+	[18621]={ tid=3014, level=64, star=0
+},
+	[18622]={ tid=4633, level=64, star=0
+},
+	[18623]={ tid=4607, level=64, star=0
+},
+	[18624]={ tid=3017, level=66, star=0
+},
+	[18625]={ tid=3214, level=66, star=0
+},
+	[18626]={ tid=4242, level=66, star=0
+},
+	[18627]={ tid=4607, level=66, star=0
+},
+	[18628]={ tid=4603, level=66, star=0
+},
+	[18629]={ tid=3014, level=68, star=0
+},
+	[18630]={ tid=3214, level=68, star=0
+},
+	[18631]={ tid=3606, level=68, star=0
+},
+	[18632]={ tid=4632, level=68, star=0
+},
+	[18633]={ tid=4638, level=68, star=0
+},
+	[18634]={ tid=3226, level=70, star=0
+},
+	[18635]={ tid=3630, level=70, star=0
+},
+	[18636]={ tid=4627, level=70, star=0
+},
+	[18637]={ tid=4645, level=70, star=0
+},
+	[18638]={ tid=4609, level=70, star=0
+},
+	[18639]={ tid=3627, level=72, star=0
+},
+	[18640]={ tid=3434, level=72, star=0
+},
+	[18641]={ tid=3621, level=72, star=0
+},
+	[18642]={ tid=4603, level=72, star=0
+},
+	[18643]={ tid=4627, level=72, star=0
+},
+	[18644]={ tid=3009, level=74, star=0
+},
+	[18645]={ tid=3609, level=74, star=0
+},
+	[18646]={ tid=3014, level=74, star=0
+},
+	[18647]={ tid=4645, level=74, star=0
+},
+	[18648]={ tid=4639, level=74, star=0
+},
+	[18649]={ tid=3415, level=75, star=0
+},
+	[18650]={ tid=3609, level=75, star=0
+},
+	[18651]={ tid=4203, level=75, star=0
+},
+	[18652]={ tid=4605, level=75, star=0
+},
+	[18653]={ tid=4627, level=75, star=0
+},
+	[18654]={ tid=3406, level=80, star=0
+},
+	[18655]={ tid=3402, level=80, star=0
+},
+	[18656]={ tid=4621, level=80, star=0
+},
+	[18657]={ tid=4638, level=80, star=0
+},
+	[18658]={ tid=5091, level=80, star=0
+},
+	[18659]={ tid=3426, level=70, star=0
+},
+	[18660]={ tid=3227, level=70, star=0
+},
+	[18661]={ tid=3401, level=70, star=0
+},
+	[18662]={ tid=4603, level=70, star=0
+},
+	[18663]={ tid=4623, level=70, star=0
+},
+	[18664]={ tid=3627, level=72, star=0
+},
+	[18665]={ tid=3431, level=72, star=0
+},
+	[18666]={ tid=3411, level=72, star=0
+},
+	[18667]={ tid=4615, level=72, star=0
+},
+	[18668]={ tid=4639, level=72, star=0
+},
+	[18669]={ tid=3621, level=74, star=0
+},
+	[18670]={ tid=3603, level=74, star=0
+},
+	[18671]={ tid=4645, level=74, star=0
+},
+	[18672]={ tid=4621, level=74, star=0
+},
+	[18673]={ tid=4633, level=74, star=0
+},
+	[18674]={ tid=3630, level=74, star=0
+},
+	[18675]={ tid=3415, level=74, star=0
+},
+	[18676]={ tid=3623, level=74, star=0
+},
+	[18677]={ tid=4603, level=74, star=0
+},
+	[18678]={ tid=4607, level=74, star=0
+},
+	[18679]={ tid=3419, level=76, star=0
+},
+	[18680]={ tid=3627, level=76, star=0
+},
+	[18681]={ tid=3411, level=76, star=0
+},
+	[18682]={ tid=4607, level=76, star=0
+},
+	[18683]={ tid=4632, level=76, star=0
+},
+	[18684]={ tid=3227, level=78, star=0
+},
+	[18685]={ tid=3608, level=78, star=0
+},
+	[18686]={ tid=4445, level=78, star=0
+},
+	[18687]={ tid=4603, level=78, star=0
+},
+	[18688]={ tid=4633, level=78, star=0
+},
+	[18689]={ tid=3001, level=78, star=0
+},
+	[18690]={ tid=3621, level=78, star=0
+},
+	[18691]={ tid=3402, level=78, star=0
+},
+	[18692]={ tid=4621, level=78, star=0
+},
+	[18693]={ tid=4633, level=78, star=0
+},
+	[18694]={ tid=3630, level=80, star=0
+},
+	[18695]={ tid=3017, level=80, star=0
+},
+	[18696]={ tid=3023, level=80, star=0
+},
+	[18697]={ tid=4627, level=80, star=0
+},
+	[18698]={ tid=4623, level=80, star=0
+},
+	[18699]={ tid=3606, level=85, star=0
+},
+	[18700]={ tid=3623, level=85, star=0
+},
+	[18701]={ tid=4605, level=85, star=0
+},
+	[18702]={ tid=4627, level=85, star=0
+},
+	[18703]={ tid=4645, level=85, star=0
+},
+	[18704]={ tid=4639, level=90, star=0
+},
+	[18705]={ tid=4633, level=90, star=0
+},
+	[18706]={ tid=4617, level=90, star=0
+},
+	[18707]={ tid=5091, level=90, star=0
+},
+	[18708]={ tid=3402, level=80, star=0
+},
+	[18709]={ tid=3630, level=80, star=0
+},
+	[18710]={ tid=4024, level=80, star=0
+},
+	[18711]={ tid=4627, level=80, star=0
+},
+	[18712]={ tid=4638, level=80, star=0
+},
+	[18713]={ tid=3215, level=84, star=0
+},
+	[18714]={ tid=3217, level=84, star=0
+},
+	[18715]={ tid=4009, level=84, star=0
+},
+	[18716]={ tid=4617, level=84, star=0
+},
+	[18717]={ tid=4623, level=84, star=0
+},
+	[18718]={ tid=3409, level=88, star=0
+},
+	[18719]={ tid=3434, level=88, star=0
+},
+	[18720]={ tid=4627, level=88, star=0
+},
+	[18721]={ tid=4633, level=88, star=0
+},
+	[18722]={ tid=4607, level=88, star=0
+},
+	[18723]={ tid=3606, level=92, star=0
+},
+	[18724]={ tid=3615, level=92, star=0
+},
+	[18725]={ tid=4609, level=92, star=0
+},
+	[18726]={ tid=4617, level=92, star=0
+},
+	[18727]={ tid=4630, level=92, star=0
+},
+	[18728]={ tid=3621, level=95, star=0
+},
+	[18729]={ tid=3606, level=95, star=0
+},
+	[18730]={ tid=4632, level=95, star=0
+},
+	[18731]={ tid=4639, level=95, star=0
+},
+	[18732]={ tid=4603, level=95, star=0
+},
+	[18733]={ tid=4621, level=100, star=0
+},
+	[18734]={ tid=4617, level=100, star=0
+},
+	[18735]={ tid=4609, level=100, star=0
+},
+	[18736]={ tid=4627, level=100, star=0
+},
+	[18737]={ tid=5091, level=100, star=0
+},
+	[18738]={ tid=3604, level=58, star=0
+},
+	[18739]={ tid=3620, level=58, star=0
+},
+	[18740]={ tid=3609, level=58, star=0
+},
+	[18741]={ tid=4622, level=58, star=0
+},
+	[18742]={ tid=4619, level=58, star=0
+},
+	[18743]={ tid=3611, level=60, star=0
+},
+	[18744]={ tid=3620, level=60, star=0
+},
+	[18745]={ tid=3609, level=60, star=0
+},
+	[18746]={ tid=4609, level=60, star=0
+},
+	[18747]={ tid=4619, level=60, star=0
+},
+	[18748]={ tid=3609, level=62, star=0
+},
+	[18749]={ tid=3604, level=62, star=0
+},
+	[18750]={ tid=4615, level=62, star=0
+},
+	[18751]={ tid=4634, level=62, star=0
+},
+	[18752]={ tid=4639, level=62, star=0
+},
+	[18753]={ tid=3628, level=64, star=0
+},
+	[18754]={ tid=3620, level=64, star=0
+},
+	[18755]={ tid=3609, level=64, star=0
+},
+	[18756]={ tid=4616, level=64, star=0
+},
+	[18757]={ tid=4634, level=64, star=0
+},
+	[18758]={ tid=3620, level=64, star=0
+},
+	[18759]={ tid=3620, level=64, star=0
+},
+	[18760]={ tid=3609, level=64, star=0
+},
+	[18761]={ tid=4609, level=64, star=0
+},
+	[18762]={ tid=4619, level=64, star=0
+},
+	[18763]={ tid=3611, level=66, star=0
+},
+	[18764]={ tid=3633, level=66, star=0
+},
+	[18765]={ tid=4615, level=66, star=0
+},
+	[18766]={ tid=4615, level=66, star=0
+},
+	[18767]={ tid=4639, level=66, star=0
+},
+	[18768]={ tid=3628, level=68, star=0
+},
+	[18769]={ tid=3611, level=68, star=0
+},
+	[18770]={ tid=3622, level=68, star=0
+},
+	[18771]={ tid=4640, level=68, star=0
+},
+	[18772]={ tid=4634, level=68, star=0
+},
+	[18773]={ tid=3620, level=70, star=0
+},
+	[18774]={ tid=3611, level=70, star=0
+},
+	[18775]={ tid=3620, level=70, star=0
+},
+	[18776]={ tid=4615, level=70, star=0
+},
+	[18777]={ tid=4641, level=70, star=0
+},
+	[18778]={ tid=3633, level=72, star=0
+},
+	[18779]={ tid=3620, level=72, star=0
+},
+	[18780]={ tid=3611, level=72, star=0
+},
+	[18781]={ tid=4634, level=72, star=0
+},
+	[18782]={ tid=4639, level=72, star=0
+},
+	[18783]={ tid=3611, level=74, star=0
+},
+	[18784]={ tid=3633, level=74, star=0
+},
+	[18785]={ tid=4619, level=74, star=0
+},
+	[18786]={ tid=4622, level=74, star=0
+},
+	[18787]={ tid=4804, level=74, star=0
+},
+	[18788]={ tid=3633, level=75, star=0
+},
+	[18789]={ tid=3611, level=75, star=0
+},
+	[18790]={ tid=4804, level=75, star=0
+},
+	[18791]={ tid=4645, level=75, star=0
+},
+	[18792]={ tid=4621, level=75, star=0
+},
+	[18793]={ tid=3604, level=80, star=0
+},
+	[18794]={ tid=3622, level=80, star=0
+},
+	[18795]={ tid=4621, level=80, star=0
+},
+	[18796]={ tid=4619, level=80, star=0
+},
+	[18797]={ tid=5061, level=80, star=0
+},
+	[18798]={ tid=3620, level=70, star=0
+},
+	[18799]={ tid=3611, level=70, star=0
+},
+	[18800]={ tid=3625, level=70, star=0
+},
+	[18801]={ tid=4609, level=70, star=0
+},
+	[18802]={ tid=4608, level=70, star=0
+},
+	[18803]={ tid=3622, level=72, star=0
+},
+	[18804]={ tid=3609, level=72, star=0
+},
+	[18805]={ tid=3633, level=72, star=0
+},
+	[18806]={ tid=4639, level=72, star=0
+},
+	[18807]={ tid=4609, level=72, star=0
+},
+	[18808]={ tid=3609, level=74, star=0
+},
+	[18809]={ tid=3611, level=74, star=0
+},
+	[18810]={ tid=4616, level=74, star=0
+},
+	[18811]={ tid=4641, level=74, star=0
+},
+	[18812]={ tid=4621, level=74, star=0
+},
+	[18813]={ tid=3611, level=74, star=0
+},
+	[18814]={ tid=3622, level=74, star=0
+},
+	[18815]={ tid=3611, level=74, star=0
+},
+	[18816]={ tid=4626, level=74, star=0
+},
+	[18817]={ tid=4641, level=74, star=0
+},
+	[18818]={ tid=3609, level=76, star=0
+},
+	[18819]={ tid=3611, level=76, star=0
+},
+	[18820]={ tid=3633, level=76, star=0
+},
+	[18821]={ tid=4804, level=76, star=0
+},
+	[18822]={ tid=4641, level=76, star=0
+},
+	[18823]={ tid=3625, level=78, star=0
+},
+	[18824]={ tid=3633, level=78, star=0
+},
+	[18825]={ tid=4609, level=78, star=0
+},
+	[18826]={ tid=4619, level=78, star=0
+},
+	[18827]={ tid=4609, level=78, star=0
+},
+	[18828]={ tid=3625, level=78, star=0
+},
+	[18829]={ tid=3611, level=78, star=0
+},
+	[18830]={ tid=3620, level=78, star=0
+},
+	[18831]={ tid=4616, level=78, star=0
+},
+	[18832]={ tid=4645, level=78, star=0
+},
+	[18833]={ tid=3604, level=80, star=0
+},
+	[18834]={ tid=3609, level=80, star=0
+},
+	[18835]={ tid=3628, level=80, star=0
+},
+	[18836]={ tid=4616, level=80, star=0
+},
+	[18837]={ tid=4608, level=80, star=0
+},
+	[18838]={ tid=3622, level=85, star=0
+},
+	[18839]={ tid=3628, level=85, star=0
+},
+	[18840]={ tid=4609, level=85, star=0
+},
+	[18841]={ tid=4608, level=85, star=0
+},
+	[18842]={ tid=4634, level=85, star=0
+},
+	[18843]={ tid=4639, level=90, star=0
+},
+	[18844]={ tid=4640, level=90, star=0
+},
+	[18845]={ tid=4615, level=90, star=0
+},
+	[18846]={ tid=5061, level=90, star=0
+},
+	[18847]={ tid=3622, level=80, star=0
+},
+	[18848]={ tid=3611, level=80, star=0
+},
+	[18849]={ tid=4641, level=80, star=0
+},
+	[18850]={ tid=4619, level=80, star=0
+},
+	[18851]={ tid=4608, level=80, star=0
+},
+	[18852]={ tid=3628, level=84, star=0
+},
+	[18853]={ tid=3622, level=84, star=0
+},
+	[18854]={ tid=4621, level=84, star=0
+},
+	[18855]={ tid=4640, level=84, star=0
+},
+	[18856]={ tid=4622, level=84, star=0
+},
+	[18857]={ tid=3604, level=88, star=0
+},
+	[18858]={ tid=3604, level=88, star=0
+},
+	[18859]={ tid=4645, level=88, star=0
+},
+	[18860]={ tid=4619, level=88, star=0
+},
+	[18861]={ tid=4645, level=88, star=0
+},
+	[18862]={ tid=3611, level=92, star=0
+},
+	[18863]={ tid=3628, level=92, star=0
+},
+	[18864]={ tid=4621, level=92, star=0
+},
+	[18865]={ tid=4610, level=92, star=0
+},
+	[18866]={ tid=4626, level=92, star=0
+},
+	[18867]={ tid=3604, level=95, star=0
+},
+	[18868]={ tid=3604, level=95, star=0
+},
+	[18869]={ tid=4645, level=95, star=0
+},
+	[18870]={ tid=4626, level=95, star=0
+},
+	[18871]={ tid=4641, level=95, star=0
+},
+	[18872]={ tid=4641, level=100, star=0
+},
+	[18873]={ tid=4639, level=100, star=0
+},
+	[18874]={ tid=4608, level=100, star=0
+},
+	[18875]={ tid=4609, level=100, star=0
+},
+	[18876]={ tid=5061, level=100, star=0
+},
+	[18877]={ tid=3609, level=56, star=0
+},
+	[18878]={ tid=3625, level=56, star=0
+},
+	[18879]={ tid=3628, level=56, star=0
+},
+	[18880]={ tid=4622, level=56, star=0
+},
+	[18881]={ tid=4615, level=56, star=0
+},
+	[18882]={ tid=3622, level=58, star=0
+},
+	[18883]={ tid=3611, level=58, star=0
+},
+	[18884]={ tid=3604, level=58, star=0
+},
+	[18885]={ tid=4804, level=58, star=0
+},
+	[18886]={ tid=4634, level=58, star=0
+},
+	[18887]={ tid=3625, level=58, star=0
+},
+	[18888]={ tid=3622, level=58, star=0
+},
+	[18889]={ tid=4622, level=58, star=0
+},
+	[18890]={ tid=4804, level=58, star=0
+},
+	[18891]={ tid=4804, level=58, star=0
+},
+	[18892]={ tid=3611, level=60, star=0
+},
+	[18893]={ tid=3625, level=60, star=0
+},
+	[18894]={ tid=3633, level=60, star=0
+},
+	[18895]={ tid=4640, level=60, star=0
+},
+	[18896]={ tid=4640, level=60, star=0
+},
+	[18897]={ tid=3611, level=62, star=0
+},
+	[18898]={ tid=3611, level=62, star=0
+},
+	[18899]={ tid=3604, level=62, star=0
+},
+	[18900]={ tid=4621, level=62, star=0
+},
+	[18901]={ tid=4640, level=62, star=0
+},
+	[18902]={ tid=3633, level=64, star=0
+},
+	[18903]={ tid=3628, level=64, star=0
+},
+	[18904]={ tid=3625, level=64, star=0
+},
+	[18905]={ tid=4619, level=64, star=0
+},
+	[18906]={ tid=4804, level=64, star=0
+},
+	[18907]={ tid=3622, level=64, star=0
+},
+	[18908]={ tid=3625, level=64, star=0
+},
+	[18909]={ tid=4622, level=64, star=0
+},
+	[18910]={ tid=4610, level=64, star=0
+},
+	[18911]={ tid=4626, level=64, star=0
+},
+	[18912]={ tid=3622, level=66, star=0
+},
+	[18913]={ tid=3625, level=66, star=0
+},
+	[18914]={ tid=3611, level=66, star=0
+},
+	[18915]={ tid=4615, level=66, star=0
+},
+	[18916]={ tid=4609, level=66, star=0
+},
+	[18917]={ tid=3620, level=68, star=0
+},
+	[18918]={ tid=3628, level=68, star=0
+},
+	[18919]={ tid=3622, level=68, star=0
+},
+	[18920]={ tid=4645, level=68, star=0
+},
+	[18921]={ tid=4619, level=68, star=0
+},
+	[18922]={ tid=3622, level=70, star=0
+},
+	[18923]={ tid=3611, level=70, star=0
+},
+	[18924]={ tid=4645, level=70, star=0
+},
+	[18925]={ tid=4615, level=70, star=0
+},
+	[18926]={ tid=4639, level=70, star=0
+},
+	[18927]={ tid=3625, level=72, star=0
+},
+	[18928]={ tid=3633, level=72, star=0
+},
+	[18929]={ tid=3628, level=72, star=0
+},
+	[18930]={ tid=4619, level=72, star=0
+},
+	[18931]={ tid=4639, level=72, star=0
+},
+	[18932]={ tid=3609, level=74, star=0
+},
+	[18933]={ tid=3609, level=74, star=0
+},
+	[18934]={ tid=3620, level=74, star=0
+},
+	[18935]={ tid=4610, level=74, star=0
+},
+	[18936]={ tid=4640, level=74, star=0
+},
+	[18937]={ tid=3620, level=75, star=0
+},
+	[18938]={ tid=3622, level=75, star=0
+},
+	[18939]={ tid=4634, level=75, star=0
+},
+	[18940]={ tid=4640, level=75, star=0
+},
+	[18941]={ tid=4615, level=75, star=0
+},
+	[18942]={ tid=3609, level=80, star=0
+},
+	[18943]={ tid=3604, level=80, star=0
+},
+	[18944]={ tid=4622, level=80, star=0
+},
+	[18945]={ tid=4615, level=80, star=0
+},
+	[18946]={ tid=5061, level=80, star=0
+},
+	[18947]={ tid=3622, level=70, star=0
+},
+	[18948]={ tid=3622, level=70, star=0
+},
+	[18949]={ tid=3604, level=70, star=0
+},
+	[18950]={ tid=4640, level=70, star=0
+},
+	[18951]={ tid=4634, level=70, star=0
+},
+	[18952]={ tid=3622, level=72, star=0
+},
+	[18953]={ tid=3633, level=72, star=0
+},
+	[18954]={ tid=3609, level=72, star=0
+},
+	[18955]={ tid=4621, level=72, star=0
+},
+	[18956]={ tid=4645, level=72, star=0
+},
+	[18957]={ tid=3604, level=74, star=0
+},
+	[18958]={ tid=3622, level=74, star=0
+},
+	[18959]={ tid=4610, level=74, star=0
+},
+	[18960]={ tid=4804, level=74, star=0
+},
+	[18961]={ tid=4626, level=74, star=0
+},
+	[18962]={ tid=3628, level=74, star=0
+},
+	[18963]={ tid=3628, level=74, star=0
+},
+	[18964]={ tid=3604, level=74, star=0
+},
+	[18965]={ tid=4616, level=74, star=0
+},
+	[18966]={ tid=4622, level=74, star=0
+},
+	[18967]={ tid=3609, level=76, star=0
+},
+	[18968]={ tid=3609, level=76, star=0
+},
+	[18969]={ tid=3611, level=76, star=0
+},
+	[18970]={ tid=4619, level=76, star=0
+},
+	[18971]={ tid=4645, level=76, star=0
+},
+	[18972]={ tid=3609, level=78, star=0
+},
+	[18973]={ tid=3609, level=78, star=0
+},
+	[18974]={ tid=4641, level=78, star=0
+},
+	[18975]={ tid=4645, level=78, star=0
+},
+	[18976]={ tid=4640, level=78, star=0
+},
+	[18977]={ tid=3622, level=78, star=0
+},
+	[18978]={ tid=3609, level=78, star=0
+},
+	[18979]={ tid=3609, level=78, star=0
+},
+	[18980]={ tid=4619, level=78, star=0
+},
+	[18981]={ tid=4610, level=78, star=0
+},
+	[18982]={ tid=3609, level=80, star=0
+},
+	[18983]={ tid=3611, level=80, star=0
+},
+	[18984]={ tid=3622, level=80, star=0
+},
+	[18985]={ tid=4621, level=80, star=0
+},
+	[18986]={ tid=4641, level=80, star=0
+},
+	[18987]={ tid=3622, level=85, star=0
+},
+	[18988]={ tid=3633, level=85, star=0
+},
+	[18989]={ tid=4615, level=85, star=0
+},
+	[18990]={ tid=4615, level=85, star=0
+},
+	[18991]={ tid=4626, level=85, star=0
+},
+	[18992]={ tid=4641, level=90, star=0
+},
+	[18993]={ tid=4645, level=90, star=0
+},
+	[18994]={ tid=4639, level=90, star=0
+},
+	[18995]={ tid=5061, level=90, star=0
+},
+	[18996]={ tid=3609, level=80, star=0
+},
+	[18997]={ tid=3625, level=80, star=0
+},
+	[18998]={ tid=4641, level=80, star=0
+},
+	[18999]={ tid=4626, level=80, star=0
+},
+	[19000]={ tid=4621, level=80, star=0
+},
+	[19001]={ tid=3620, level=84, star=0
+},
+	[19002]={ tid=3604, level=84, star=0
+},
+	[19003]={ tid=4616, level=84, star=0
+},
+	[19004]={ tid=4645, level=84, star=0
+},
+	[19005]={ tid=4645, level=84, star=0
+},
+	[19006]={ tid=3609, level=88, star=0
+},
+	[19007]={ tid=3604, level=88, star=0
+},
+	[19008]={ tid=4645, level=88, star=0
+},
+	[19009]={ tid=4622, level=88, star=0
+},
+	[19010]={ tid=4616, level=88, star=0
+},
+	[19011]={ tid=3609, level=92, star=0
+},
+	[19012]={ tid=3628, level=92, star=0
+},
+	[19013]={ tid=4608, level=92, star=0
+},
+	[19014]={ tid=4645, level=92, star=0
+},
+	[19015]={ tid=4610, level=92, star=0
+},
+	[19016]={ tid=3633, level=95, star=0
+},
+	[19017]={ tid=3611, level=95, star=0
+},
+	[19018]={ tid=4634, level=95, star=0
+},
+	[19019]={ tid=4615, level=95, star=0
+},
+	[19020]={ tid=4609, level=95, star=0
+},
+	[19021]={ tid=4640, level=100, star=0
+},
+	[19022]={ tid=4640, level=100, star=0
+},
+	[19023]={ tid=4639, level=100, star=0
+},
+	[19024]={ tid=4641, level=100, star=0
+},
+	[19025]={ tid=5061, level=100, star=0
+},
+	[19026]={ tid=3626, level=60, star=0
+},
+	[19027]={ tid=3616, level=60, star=0
+},
+	[19028]={ tid=3629, level=60, star=0
+},
+	[19029]={ tid=4623, level=60, star=0
+},
+	[19030]={ tid=4612, level=60, star=0
+},
+	[19031]={ tid=3628, level=62, star=0
+},
+	[19032]={ tid=3624, level=62, star=0
+},
+	[19033]={ tid=3626, level=62, star=0
+},
+	[19034]={ tid=4624, level=62, star=0
+},
+	[19035]={ tid=4640, level=62, star=0
+},
+	[19036]={ tid=3606, level=64, star=0
+},
+	[19037]={ tid=3629, level=64, star=0
+},
+	[19038]={ tid=3612, level=64, star=0
+},
+	[19039]={ tid=4604, level=64, star=0
+},
+	[19040]={ tid=4646, level=64, star=0
+},
+	[19041]={ tid=3623, level=64, star=0
+},
+	[19042]={ tid=3634, level=64, star=0
+},
+	[19043]={ tid=4628, level=64, star=0
+},
+	[19044]={ tid=4640, level=64, star=0
+},
+	[19045]={ tid=4627, level=64, star=0
+},
+	[19046]={ tid=3618, level=66, star=0
+},
+	[19047]={ tid=3618, level=66, star=0
+},
+	[19048]={ tid=3626, level=66, star=0
+},
+	[19049]={ tid=4623, level=66, star=0
+},
+	[19050]={ tid=4629, level=66, star=0
+},
+	[19051]={ tid=3616, level=68, star=0
+},
+	[19052]={ tid=3604, level=68, star=0
+},
+	[19053]={ tid=3604, level=68, star=0
+},
+	[19054]={ tid=4623, level=68, star=0
+},
+	[19055]={ tid=4635, level=68, star=0
+},
+	[19056]={ tid=3618, level=70, star=0
+},
+	[19057]={ tid=3612, level=70, star=0
+},
+	[19058]={ tid=4618, level=70, star=0
+},
+	[19059]={ tid=4640, level=70, star=0
+},
+	[19060]={ tid=4612, level=70, star=0
+},
+	[19061]={ tid=3604, level=72, star=0
+},
+	[19062]={ tid=3606, level=72, star=0
+},
+	[19063]={ tid=3618, level=72, star=0
+},
+	[19064]={ tid=4640, level=72, star=0
+},
+	[19065]={ tid=4623, level=72, star=0
+},
+	[19066]={ tid=3604, level=74, star=0
+},
+	[19067]={ tid=3629, level=74, star=0
+},
+	[19068]={ tid=3618, level=74, star=0
+},
+	[19069]={ tid=4646, level=74, star=0
+},
+	[19070]={ tid=4623, level=74, star=0
+},
+	[19071]={ tid=3606, level=75, star=0
+},
+	[19072]={ tid=3612, level=75, star=0
+},
+	[19073]={ tid=4604, level=75, star=0
+},
+	[19074]={ tid=4612, level=75, star=0
+},
+	[19075]={ tid=4624, level=75, star=0
+},
+	[19076]={ tid=3604, level=80, star=0
+},
+	[19077]={ tid=3614, level=80, star=0
+},
+	[19078]={ tid=4627, level=80, star=0
+},
+	[19079]={ tid=4629, level=80, star=0
+},
+	[19080]={ tid=5012, level=80, star=0
+},
+	[19081]={ tid=3623, level=70, star=0
+},
+	[19082]={ tid=3623, level=70, star=0
+},
+	[19083]={ tid=3604, level=70, star=0
+},
+	[19084]={ tid=4630, level=70, star=0
+},
+	[19085]={ tid=4611, level=70, star=0
+},
+	[19086]={ tid=3628, level=72, star=0
+},
+	[19087]={ tid=3612, level=72, star=0
+},
+	[19088]={ tid=3604, level=72, star=0
+},
+	[19089]={ tid=4629, level=72, star=0
+},
+	[19090]={ tid=4628, level=72, star=0
+},
+	[19091]={ tid=3610, level=74, star=0
+},
+	[19092]={ tid=3604, level=74, star=0
+},
+	[19093]={ tid=4635, level=74, star=0
+},
+	[19094]={ tid=4646, level=74, star=0
+},
+	[19095]={ tid=4640, level=74, star=0
+},
+	[19096]={ tid=3604, level=74, star=0
+},
+	[19097]={ tid=3626, level=74, star=0
+},
+	[19098]={ tid=3606, level=74, star=0
+},
+	[19099]={ tid=4620, level=74, star=0
+},
+	[19100]={ tid=4642, level=74, star=0
+},
+	[19101]={ tid=3610, level=76, star=0
+},
+	[19102]={ tid=3628, level=76, star=0
+},
+	[19103]={ tid=3628, level=76, star=0
+},
+	[19104]={ tid=4646, level=76, star=0
+},
+	[19105]={ tid=4627, level=76, star=0
+},
+	[19106]={ tid=3604, level=78, star=0
+},
+	[19107]={ tid=3629, level=78, star=0
+},
+	[19108]={ tid=4635, level=78, star=0
+},
+	[19109]={ tid=4618, level=78, star=0
+},
+	[19110]={ tid=4612, level=78, star=0
+},
+	[19111]={ tid=3634, level=78, star=0
+},
+	[19112]={ tid=3624, level=78, star=0
+},
+	[19113]={ tid=3629, level=78, star=0
+},
+	[19114]={ tid=4604, level=78, star=0
+},
+	[19115]={ tid=4630, level=78, star=0
+},
+	[19116]={ tid=3634, level=80, star=0
+},
+	[19117]={ tid=3614, level=80, star=0
+},
+	[19118]={ tid=3623, level=80, star=0
+},
+	[19119]={ tid=4629, level=80, star=0
+},
+	[19120]={ tid=4604, level=80, star=0
+},
+	[19121]={ tid=3629, level=85, star=0
+},
+	[19122]={ tid=3616, level=85, star=0
+},
+	[19123]={ tid=4620, level=85, star=0
+},
+	[19124]={ tid=4606, level=85, star=0
+},
+	[19125]={ tid=4629, level=85, star=0
+},
+	[19126]={ tid=4611, level=90, star=0
+},
+	[19127]={ tid=4635, level=90, star=0
+},
+	[19128]={ tid=4629, level=90, star=0
+},
+	[19129]={ tid=5012, level=90, star=0
+},
+	[19130]={ tid=3612, level=80, star=0
+},
+	[19131]={ tid=3618, level=80, star=0
+},
+	[19132]={ tid=4629, level=80, star=0
+},
+	[19133]={ tid=4630, level=80, star=0
+},
+	[19134]={ tid=4627, level=80, star=0
+},
+	[19135]={ tid=3606, level=84, star=0
+},
+	[19136]={ tid=3616, level=84, star=0
+},
+	[19137]={ tid=4642, level=84, star=0
+},
+	[19138]={ tid=4640, level=84, star=0
+},
+	[19139]={ tid=4642, level=84, star=0
+},
+	[19140]={ tid=3612, level=88, star=0
+},
+	[19141]={ tid=3630, level=88, star=0
+},
+	[19142]={ tid=4606, level=88, star=0
+},
+	[19143]={ tid=4612, level=88, star=0
+},
+	[19144]={ tid=4629, level=88, star=0
+},
+	[19145]={ tid=3606, level=92, star=0
+},
+	[19146]={ tid=3618, level=92, star=0
+},
+	[19147]={ tid=4624, level=92, star=0
+},
+	[19148]={ tid=4627, level=92, star=0
+},
+	[19149]={ tid=4612, level=92, star=0
+},
+	[19150]={ tid=3614, level=95, star=0
+},
+	[19151]={ tid=3618, level=95, star=0
+},
+	[19152]={ tid=4636, level=95, star=0
+},
+	[19153]={ tid=4628, level=95, star=0
+},
+	[19154]={ tid=4640, level=95, star=0
+},
+	[19155]={ tid=4620, level=100, star=0
+},
+	[19156]={ tid=4623, level=100, star=0
+},
+	[19157]={ tid=4629, level=100, star=0
+},
+	[19158]={ tid=4624, level=100, star=0
+},
+	[19159]={ tid=5012, level=100, star=0
+},
+	[19161]={ tid=3609, level=60, star=0
+},
+	[19162]={ tid=3604, level=60, star=0
+},
+	[19163]={ tid=4621, level=60, star=0
+},
+	[19164]={ tid=3630, level=60, star=0
+},
+	[19165]={ tid=3625, level=60, star=0
+},
+	[19166]={ tid=3613, level=62, star=0
+},
+	[19167]={ tid=3625, level=62, star=0
+},
+	[19168]={ tid=4634, level=62, star=0
+},
+	[19169]={ tid=3624, level=62, star=0
+},
+	[19170]={ tid=3618, level=62, star=0
+},
+	[19171]={ tid=4632, level=64, star=0
+},
+	[19172]={ tid=3620, level=64, star=0
+},
+	[19173]={ tid=3626, level=64, star=0
+},
+	[19174]={ tid=4802, level=64, star=0
+},
+	[19175]={ tid=3621, level=64, star=0
+},
+	[19176]={ tid=3603, level=64, star=0
+},
+	[19177]={ tid=3618, level=64, star=0
+},
+	[19178]={ tid=3610, level=64, star=0
+},
+	[19179]={ tid=3633, level=64, star=0
+},
+	[19180]={ tid=4802, level=64, star=0
+},
+	[19181]={ tid=4613, level=66, star=0
+},
+	[19182]={ tid=3601, level=66, star=0
+},
+	[19183]={ tid=3634, level=66, star=0
+},
+	[19184]={ tid=3623, level=66, star=0
+},
+	[19185]={ tid=3602, level=66, star=0
+},
+	[19186]={ tid=3630, level=68, star=0
+},
+	[19187]={ tid=3616, level=68, star=0
+},
+	[19188]={ tid=3627, level=68, star=0
+},
+	[19189]={ tid=4601, level=68, star=0
+},
+	[19190]={ tid=4639, level=68, star=0
+},
+	[19191]={ tid=3602, level=70, star=0
+},
+	[19192]={ tid=4803, level=70, star=0
+},
+	[19193]={ tid=3602, level=70, star=0
+},
+	[19194]={ tid=3620, level=70, star=0
+},
+	[19195]={ tid=3629, level=70, star=0
+},
+	[19196]={ tid=4616, level=72, star=0
+},
+	[19197]={ tid=3605, level=72, star=0
+},
+	[19198]={ tid=3601, level=72, star=0
+},
+	[19199]={ tid=3630, level=72, star=0
+},
+	[19200]={ tid=3611, level=72, star=0
+},
+	[19201]={ tid=4632, level=74, star=0
+},
+	[19202]={ tid=3618, level=74, star=0
+},
+	[19203]={ tid=4606, level=74, star=0
+},
+	[19204]={ tid=3617, level=74, star=0
+},
+	[19205]={ tid=3616, level=74, star=0
+},
+	[19206]={ tid=3623, level=75, star=0
+},
+	[19207]={ tid=4619, level=75, star=0
+},
+	[19208]={ tid=3625, level=75, star=0
+},
+	[19209]={ tid=4624, level=75, star=0
+},
+	[19210]={ tid=5141, level=75, star=0
+},
+	[19211]={ tid=3605, level=80, star=0
+},
+	[19212]={ tid=4608, level=80, star=0
+},
+	[19213]={ tid=3629, level=80, star=0
+},
+	[19214]={ tid=3634, level=80, star=0
+},
+	[19215]={ tid=3612, level=80, star=0
+},
+	[19216]={ tid=4622, level=70, star=0
+},
+	[19217]={ tid=3626, level=70, star=0
+},
+	[19218]={ tid=3610, level=70, star=0
+},
+	[19219]={ tid=3610, level=70, star=0
+},
+	[19220]={ tid=3630, level=70, star=0
+},
+	[19221]={ tid=4604, level=72, star=0
+},
+	[19222]={ tid=3620, level=72, star=0
+},
+	[19223]={ tid=3620, level=72, star=0
+},
+	[19224]={ tid=3620, level=72, star=0
+},
+	[19225]={ tid=4642, level=72, star=0
+},
+	[19226]={ tid=3602, level=74, star=0
+},
+	[19227]={ tid=3606, level=74, star=0
+},
+	[19228]={ tid=4626, level=74, star=0
+},
+	[19229]={ tid=3627, level=74, star=0
+},
+	[19230]={ tid=3609, level=74, star=0
+},
+	[19231]={ tid=4619, level=74, star=0
+},
+	[19232]={ tid=3614, level=74, star=0
+},
+	[19233]={ tid=3623, level=74, star=0
+},
+	[19234]={ tid=3621, level=74, star=0
+},
+	[19235]={ tid=3624, level=74, star=0
+},
+	[19236]={ tid=3628, level=76, star=0
+},
+	[19237]={ tid=4625, level=76, star=0
+},
+	[19238]={ tid=4646, level=76, star=0
+},
+	[19239]={ tid=3625, level=76, star=0
+},
+	[19240]={ tid=3616, level=76, star=0
+},
+	[19241]={ tid=3621, level=78, star=0
+},
+	[19242]={ tid=3623, level=78, star=0
+},
+	[19243]={ tid=4628, level=78, star=0
+},
+	[19244]={ tid=3605, level=78, star=0
+},
+	[19245]={ tid=3630, level=78, star=0
+},
+	[19246]={ tid=3632, level=78, star=0
+},
+	[19247]={ tid=3612, level=78, star=0
+},
+	[19248]={ tid=3616, level=78, star=0
+},
+	[19249]={ tid=4636, level=78, star=0
+},
+	[19250]={ tid=3606, level=78, star=0
+},
+	[19251]={ tid=3623, level=80, star=0
+},
+	[19252]={ tid=3618, level=80, star=0
+},
+	[19253]={ tid=4622, level=80, star=0
+},
+	[19254]={ tid=4623, level=80, star=0
+},
+	[19255]={ tid=3619, level=80, star=0
+},
+	[19256]={ tid=3605, level=85, star=0
+},
+	[19257]={ tid=5141, level=85, star=0
+},
+	[19258]={ tid=4646, level=85, star=0
+},
+	[19259]={ tid=3623, level=85, star=0
+},
+	[19260]={ tid=4616, level=85, star=0
+},
+	[19261]={ tid=3618, level=90, star=0
+},
+	[19262]={ tid=4603, level=90, star=0
+},
+	[19263]={ tid=3629, level=90, star=0
+},
+	[19264]={ tid=4637, level=90, star=0
+},
+	[19265]={ tid=3615, level=80, star=0
+},
+	[19266]={ tid=3614, level=80, star=0
+},
+	[19267]={ tid=3631, level=80, star=0
+},
+	[19268]={ tid=4623, level=80, star=0
+},
+	[19269]={ tid=4623, level=80, star=0
+},
+	[19270]={ tid=3621, level=84, star=0
+},
+	[19271]={ tid=3623, level=84, star=0
+},
+	[19272]={ tid=4632, level=84, star=0
+},
+	[19273]={ tid=3603, level=84, star=0
+},
+	[19274]={ tid=3634, level=84, star=0
+},
+	[19275]={ tid=4607, level=88, star=0
+},
+	[19276]={ tid=3634, level=88, star=0
+},
+	[19277]={ tid=3601, level=88, star=0
+},
+	[19278]={ tid=4635, level=88, star=0
+},
+	[19279]={ tid=3624, level=88, star=0
+},
+	[19280]={ tid=4636, level=92, star=0
+},
+	[19281]={ tid=3602, level=92, star=0
+},
+	[19282]={ tid=3629, level=92, star=0
+},
+	[19283]={ tid=4803, level=92, star=0
+},
+	[19284]={ tid=3615, level=92, star=0
+},
+	[19285]={ tid=4611, level=95, star=0
+},
+	[19286]={ tid=4644, level=95, star=0
+},
+	[19287]={ tid=3628, level=95, star=0
+},
+	[19288]={ tid=5141, level=95, star=0
+},
+	[19289]={ tid=4607, level=95, star=0
+},
+	[19290]={ tid=3632, level=100, star=0
+},
+	[19296]={ tid=4015, level=61, star=0
+},
+	[19297]={ tid=4035, level=61, star=0
+},
+	[19298]={ tid=3006, level=61, star=0
+},
+	[19299]={ tid=3015, level=61, star=0
+},
+	[19300]={ tid=3023, level=61, star=0
+},
+	[19306]={ tid=3201, level=63, star=0
+},
+	[19307]={ tid=4223, level=63, star=0
+},
+	[19308]={ tid=4235, level=63, star=0
+},
+	[19309]={ tid=4221, level=63, star=0
+},
+	[19310]={ tid=3205, level=63, star=0
+},
+	[19316]={ tid=3433, level=65, star=0
+},
+	[19317]={ tid=3430, level=65, star=0
+},
+	[19318]={ tid=3411, level=65, star=0
+},
+	[19319]={ tid=4401, level=65, star=0
+},
+	[19320]={ tid=4422, level=65, star=0
+},
+	[19321]={ tid=3024, level=66, star=0
+},
+	[19322]={ tid=3024, level=66, star=0
+},
+	[19323]={ tid=4034, level=66, star=0
+},
+	[19324]={ tid=4031, level=66, star=0
+},
+	[19325]={ tid=4009, level=66, star=0
+},
+	[19331]={ tid=3003, level=68, star=0
+},
+	[19332]={ tid=4006, level=68, star=0
+},
+	[19333]={ tid=4013, level=68, star=0
+},
+	[19334]={ tid=3004, level=68, star=0
+},
+	[19335]={ tid=3010, level=68, star=0
+},
+	[19336]={ tid=3021, level=69, star=0
+},
+	[19337]={ tid=3013, level=69, star=0
+},
+	[19338]={ tid=4022, level=69, star=0
+},
+	[19339]={ tid=4008, level=69, star=0
+},
+	[19340]={ tid=3021, level=69, star=0
+},
+	[19341]={ tid=4416, level=70, star=0
+},
+	[19342]={ tid=4402, level=70, star=0
+},
+	[19343]={ tid=3423, level=70, star=0
+},
+	[19344]={ tid=4431, level=70, star=0
+},
+	[19345]={ tid=3419, level=70, star=0
+},
+	[19346]={ tid=4420, level=71, star=0
+},
+	[19347]={ tid=4434, level=71, star=0
+},
+	[19348]={ tid=3434, level=71, star=0
+},
+	[19349]={ tid=3425, level=71, star=0
+},
+	[19350]={ tid=3416, level=71, star=0
+},
+	[19351]={ tid=3434, level=72, star=0
+},
+	[19352]={ tid=4424, level=72, star=0
+},
+	[19353]={ tid=4422, level=72, star=0
+},
+	[19354]={ tid=3417, level=72, star=0
+},
+	[19355]={ tid=3420, level=72, star=0
+},
+	[19356]={ tid=3416, level=73, star=0
+},
+	[19357]={ tid=3429, level=73, star=0
+},
+	[19358]={ tid=4431, level=73, star=0
+},
+	[19359]={ tid=4433, level=73, star=0
+},
+	[19360]={ tid=4414, level=73, star=0
+},
+	[19361]={ tid=4421, level=74, star=0
+},
+	[19362]={ tid=4413, level=74, star=0
+},
+	[19363]={ tid=3433, level=74, star=0
+},
+	[19364]={ tid=5021, level=74, star=0
+},
+	[19365]={ tid=3409, level=74, star=0
+},
+	[19371]={ tid=3418, level=70, star=0
+},
+	[19372]={ tid=3412, level=70, star=0
+},
+	[19373]={ tid=3429, level=70, star=0
+},
+	[19374]={ tid=4418, level=70, star=0
+},
+	[19375]={ tid=4401, level=70, star=0
+},
+	[19376]={ tid=3417, level=72, star=0
+},
+	[19377]={ tid=3435, level=72, star=0
+},
+	[19378]={ tid=4436, level=72, star=0
+},
+	[19379]={ tid=3430, level=72, star=0
+},
+	[19380]={ tid=4430, level=72, star=0
+},
+	[19381]={ tid=4418, level=74, star=0
+},
+	[19382]={ tid=3427, level=74, star=0
+},
+	[19383]={ tid=4432, level=74, star=0
+},
+	[19384]={ tid=3436, level=74, star=0
+},
+	[19385]={ tid=4421, level=74, star=0
+},
+	[19386]={ tid=3407, level=74, star=0
+},
+	[19387]={ tid=4404, level=74, star=0
+},
+	[19388]={ tid=4401, level=74, star=0
+},
+	[19389]={ tid=3411, level=74, star=0
+},
+	[19390]={ tid=3432, level=74, star=0
+},
+	[19391]={ tid=3419, level=76, star=0
+},
+	[19392]={ tid=4417, level=76, star=0
+},
+	[19393]={ tid=4427, level=76, star=0
+},
+	[19394]={ tid=3407, level=76, star=0
+},
+	[19395]={ tid=3430, level=76, star=0
+},
+	[19396]={ tid=4413, level=78, star=0
+},
+	[19397]={ tid=4433, level=78, star=0
+},
+	[19398]={ tid=4413, level=78, star=0
+},
+	[19399]={ tid=3402, level=78, star=0
+},
+	[19400]={ tid=3421, level=78, star=0
+},
+	[19401]={ tid=3433, level=78, star=0
+},
+	[19402]={ tid=3421, level=78, star=0
+},
+	[19403]={ tid=3423, level=78, star=0
+},
+	[19404]={ tid=4416, level=78, star=0
+},
+	[19405]={ tid=4427, level=78, star=0
+},
+	[19406]={ tid=3411, level=80, star=0
+},
+	[19407]={ tid=3424, level=80, star=0
+},
+	[19408]={ tid=4423, level=80, star=0
+},
+	[19409]={ tid=4408, level=80, star=0
+},
+	[19410]={ tid=3433, level=80, star=0
+},
+	[19411]={ tid=3427, level=85, star=0
+},
+	[19412]={ tid=4421, level=85, star=0
+},
+	[19413]={ tid=3422, level=85, star=0
+},
+	[19414]={ tid=4411, level=85, star=0
+},
+	[19415]={ tid=4414, level=85, star=0
+},
+	[19416]={ tid=3434, level=90, star=0
+},
+	[19417]={ tid=4409, level=90, star=0
+},
+	[19418]={ tid=5021, level=90, star=0
+},
+	[19419]={ tid=3435, level=90, star=0
+},
+	[19420]={ tid=4430, level=90, star=0
+},
+	[19421]={ tid=4421, level=80, star=0
+},
+	[19422]={ tid=4421, level=80, star=0
+},
+	[19423]={ tid=3407, level=80, star=0
+},
+	[19424]={ tid=3420, level=80, star=0
+},
+	[19425]={ tid=4408, level=80, star=0
+},
+	[19426]={ tid=4423, level=84, star=0
+},
+	[19427]={ tid=3410, level=84, star=0
+},
+	[19428]={ tid=3412, level=84, star=0
+},
+	[19429]={ tid=4424, level=84, star=0
+},
+	[19430]={ tid=4412, level=84, star=0
+},
+	[19431]={ tid=4420, level=88, star=0
+},
+	[19432]={ tid=4407, level=88, star=0
+},
+	[19433]={ tid=3425, level=88, star=0
+},
+	[19434]={ tid=3423, level=88, star=0
+},
+	[19435]={ tid=4415, level=88, star=0
+},
+	[19436]={ tid=3421, level=92, star=0
+},
+	[19437]={ tid=4413, level=92, star=0
+},
+	[19438]={ tid=4429, level=92, star=0
+},
+	[19439]={ tid=4405, level=92, star=0
+},
+	[19440]={ tid=3428, level=92, star=0
+},
+	[19441]={ tid=3407, level=95, star=0
+},
+	[19442]={ tid=4426, level=95, star=0
+},
+	[19443]={ tid=3423, level=95, star=0
+},
+	[19444]={ tid=4413, level=95, star=0
+},
+	[19445]={ tid=4429, level=95, star=0
+},
+	[19446]={ tid=3416, level=100, star=0
+},
+	[19447]={ tid=5021, level=100, star=0
+},
+	[19448]={ tid=4414, level=100, star=0
+},
+	[19449]={ tid=4420, level=100, star=0
+},
+	[19450]={ tid=3428, level=100, star=0
 },
 	[24001]={ tid=4462, level=55, star=0
 },
@@ -17917,151 +22913,151 @@ local mon_data=
 },
 	[40265]={ tid=3425, level=80, star=0
 },
-	[42001]={ tid=5011, level=90, star=0
+	[42001]={ tid=5011, level=80, star=0
 },
-	[42002]={ tid=4601, level=90, star=0
+	[42002]={ tid=4601, level=80, star=0
 },
-	[42003]={ tid=4619, level=90, star=0
+	[42003]={ tid=4619, level=80, star=0
 },
-	[42004]={ tid=3601, level=90, star=0
+	[42004]={ tid=3601, level=80, star=0
 },
-	[42005]={ tid=3613, level=90, star=0
+	[42005]={ tid=3613, level=80, star=0
 },
-	[42006]={ tid=4425, level=90, star=0
+	[42006]={ tid=4425, level=80, star=0
 },
-	[42007]={ tid=4427, level=90, star=0
+	[42007]={ tid=4427, level=80, star=0
 },
-	[42008]={ tid=3414, level=90, star=0
+	[42008]={ tid=3414, level=80, star=0
 },
-	[42009]={ tid=3417, level=90, star=0
+	[42009]={ tid=3417, level=80, star=0
 },
-	[42010]={ tid=5021, level=90, star=0
+	[42010]={ tid=5021, level=80, star=0
 },
-	[42011]={ tid=3401, level=90, star=0
+	[42011]={ tid=3401, level=80, star=0
 },
-	[42012]={ tid=3408, level=90, star=0
+	[42012]={ tid=3408, level=80, star=0
 },
-	[42013]={ tid=5031, level=90, star=0
+	[42013]={ tid=5031, level=80, star=0
 },
-	[42014]={ tid=4413, level=90, star=0
+	[42014]={ tid=4413, level=80, star=0
 },
-	[42015]={ tid=4445, level=90, star=0
+	[42015]={ tid=4445, level=80, star=0
 },
-	[42016]={ tid=4033, level=90, star=0
+	[42016]={ tid=4033, level=80, star=0
 },
-	[42017]={ tid=3002, level=90, star=0
+	[42017]={ tid=3002, level=80, star=0
 },
-	[42018]={ tid=4009, level=90, star=0
+	[42018]={ tid=4009, level=80, star=0
 },
-	[42019]={ tid=5051, level=90, star=0
+	[42019]={ tid=5051, level=80, star=0
 },
-	[42020]={ tid=3012, level=90, star=0
+	[42020]={ tid=3012, level=80, star=0
 },
-	[42021]={ tid=3414, level=90, star=0
+	[42021]={ tid=3414, level=80, star=0
 },
-	[42022]={ tid=4413, level=90, star=0
+	[42022]={ tid=4413, level=80, star=0
 },
-	[42023]={ tid=3406, level=90, star=0
+	[42023]={ tid=3406, level=80, star=0
 },
-	[42024]={ tid=4445, level=90, star=0
+	[42024]={ tid=4445, level=80, star=0
 },
-	[42025]={ tid=5041, level=90, star=0
+	[42025]={ tid=5041, level=80, star=0
 },
-	[42026]={ tid=4401, level=80, star=0
+	[42026]={ tid=4401, level=60, star=0
 },
-	[42027]={ tid=4448, level=80, star=0
+	[42027]={ tid=4448, level=60, star=0
 },
-	[42028]={ tid=3408, level=80, star=0
+	[42028]={ tid=3408, level=60, star=0
 },
-	[42029]={ tid=3406, level=80, star=0
+	[42029]={ tid=3406, level=60, star=0
 },
-	[42030]={ tid=5031, level=80, star=0
+	[42030]={ tid=5031, level=60, star=0
 },
-	[42031]={ tid=4632, level=80, star=0
+	[42031]={ tid=4632, level=60, star=0
 },
-	[42032]={ tid=5071, level=80, star=0
+	[42032]={ tid=5071, level=60, star=0
 },
-	[42033]={ tid=4617, level=80, star=0
+	[42033]={ tid=4617, level=60, star=0
 },
-	[42034]={ tid=3606, level=80, star=0
+	[42034]={ tid=3606, level=60, star=0
 },
-	[42035]={ tid=3614, level=80, star=0
+	[42035]={ tid=3614, level=60, star=0
 },
-	[42036]={ tid=4630, level=80, star=0
+	[42036]={ tid=4630, level=60, star=0
 },
-	[42037]={ tid=3606, level=80, star=0
+	[42037]={ tid=3606, level=60, star=0
 },
-	[42038]={ tid=3615, level=80, star=0
+	[42038]={ tid=3615, level=60, star=0
 },
-	[42039]={ tid=5061, level=80, star=0
+	[42039]={ tid=5061, level=60, star=0
 },
-	[42040]={ tid=3602, level=80, star=0
+	[42040]={ tid=3602, level=60, star=0
 },
-	[42041]={ tid=4622, level=80, star=0
+	[42041]={ tid=4622, level=60, star=0
 },
-	[42042]={ tid=3601, level=80, star=0
+	[42042]={ tid=3601, level=60, star=0
 },
-	[42043]={ tid=4638, level=80, star=0
+	[42043]={ tid=4638, level=60, star=0
 },
-	[42044]={ tid=3603, level=80, star=0
+	[42044]={ tid=3603, level=60, star=0
 },
-	[42045]={ tid=5081, level=80, star=0
+	[42045]={ tid=5081, level=60, star=0
 },
-	[42046]={ tid=4002, level=80, star=0
+	[42046]={ tid=4002, level=60, star=0
 },
-	[42047]={ tid=5051, level=80, star=0
+	[42047]={ tid=5051, level=60, star=0
 },
-	[42048]={ tid=3011, level=80, star=0
+	[42048]={ tid=3011, level=60, star=0
 },
-	[42049]={ tid=4014, level=80, star=0
+	[42049]={ tid=4014, level=60, star=0
 },
-	[42050]={ tid=3007, level=80, star=0
+	[42050]={ tid=3007, level=60, star=0
 },
-	[42051]={ tid=3602, level=70, star=0
+	[42051]={ tid=3602, level=60, star=0
 },
-	[42052]={ tid=5061, level=70, star=0
+	[42052]={ tid=5061, level=60, star=0
 },
-	[42053]={ tid=4618, level=70, star=0
+	[42053]={ tid=4618, level=60, star=0
 },
-	[42054]={ tid=3620, level=70, star=0
+	[42054]={ tid=3620, level=60, star=0
 },
-	[42055]={ tid=4620, level=70, star=0
+	[42055]={ tid=4620, level=60, star=0
 },
-	[42056]={ tid=3017, level=70, star=0
+	[42056]={ tid=3017, level=60, star=0
 },
-	[42057]={ tid=4015, level=70, star=0
+	[42057]={ tid=4015, level=60, star=0
 },
-	[42058]={ tid=5051, level=70, star=0
+	[42058]={ tid=5051, level=60, star=0
 },
-	[42059]={ tid=4016, level=70, star=0
+	[42059]={ tid=4016, level=60, star=0
 },
-	[42060]={ tid=3013, level=70, star=0
+	[42060]={ tid=3013, level=60, star=0
 },
-	[42061]={ tid=5041, level=70, star=0
+	[42061]={ tid=5041, level=60, star=0
 },
-	[42062]={ tid=4439, level=70, star=0
+	[42062]={ tid=4439, level=60, star=0
 },
-	[42063]={ tid=3408, level=100, star=0
+	[42063]={ tid=3408, level=60, star=0
 },
-	[42066]={ tid=4620, level=70, star=0
+	[42066]={ tid=4620, level=60, star=0
 },
-	[42067]={ tid=4630, level=70, star=0
+	[42067]={ tid=4630, level=60, star=0
 },
-	[42068]={ tid=3629, level=70, star=0
+	[42068]={ tid=3629, level=60, star=0
 },
-	[42069]={ tid=3613, level=70, star=0
+	[42069]={ tid=3613, level=60, star=0
 },
-	[42070]={ tid=5071, level=70, star=0
+	[42070]={ tid=5071, level=60, star=0
 },
-	[42071]={ tid=3214, level=70, star=0
+	[42071]={ tid=3214, level=60, star=0
 },
-	[42072]={ tid=4224, level=70, star=0
+	[42072]={ tid=4224, level=60, star=0
 },
-	[42073]={ tid=5091, level=70, star=0
+	[42073]={ tid=5091, level=60, star=0
 },
-	[42074]={ tid=4228, level=70, star=0
+	[42074]={ tid=4228, level=60, star=0
 },
-	[42075]={ tid=3227, level=70, star=0
+	[42075]={ tid=3227, level=60, star=0
 },
 	[42076]={ tid=3413, level=90, star=0
 },
@@ -18113,105 +23109,105 @@ local mon_data=
 },
 	[42100]={ tid=3631, level=90, star=0
 },
-	[42101]={ tid=4616, level=85, star=0
+	[42101]={ tid=4616, level=70, star=0
 },
-	[42102]={ tid=3629, level=85, star=0
+	[42102]={ tid=3629, level=70, star=0
 },
-	[42103]={ tid=4624, level=85, star=0
+	[42103]={ tid=4624, level=70, star=0
 },
-	[42104]={ tid=5081, level=85, star=0
+	[42104]={ tid=5081, level=70, star=0
 },
-	[42105]={ tid=3608, level=85, star=0
+	[42105]={ tid=3608, level=70, star=0
 },
-	[42106]={ tid=4623, level=85, star=0
+	[42106]={ tid=4623, level=70, star=0
 },
-	[42107]={ tid=3623, level=85, star=0
+	[42107]={ tid=3623, level=70, star=0
 },
-	[42108]={ tid=4638, level=85, star=0
+	[42108]={ tid=4638, level=70, star=0
 },
-	[42109]={ tid=3629, level=85, star=0
+	[42109]={ tid=3629, level=70, star=0
 },
-	[42110]={ tid=5011, level=85, star=0
+	[42110]={ tid=5011, level=70, star=0
 },
-	[42111]={ tid=4009, level=85, star=0
+	[42111]={ tid=4009, level=70, star=0
 },
-	[42112]={ tid=3004, level=85, star=0
+	[42112]={ tid=3004, level=70, star=0
 },
-	[42113]={ tid=4033, level=85, star=0
+	[42113]={ tid=4033, level=70, star=0
 },
-	[42114]={ tid=3016, level=85, star=0
+	[42114]={ tid=3016, level=70, star=0
 },
-	[42115]={ tid=5051, level=85, star=0
+	[42115]={ tid=5051, level=70, star=0
 },
-	[42116]={ tid=4412, level=85, star=0
+	[42116]={ tid=4412, level=70, star=0
 },
-	[42117]={ tid=4426, level=85, star=0
+	[42117]={ tid=4426, level=70, star=0
 },
-	[42118]={ tid=3420, level=85, star=0
+	[42118]={ tid=3420, level=70, star=0
 },
-	[42119]={ tid=5041, level=85, star=0
+	[42119]={ tid=5041, level=70, star=0
 },
-	[42120]={ tid=3415, level=85, star=0
+	[42120]={ tid=3415, level=70, star=0
 },
-	[42121]={ tid=3433, level=85, star=0
+	[42121]={ tid=3433, level=70, star=0
 },
-	[42122]={ tid=4469, level=85, star=0
+	[42122]={ tid=4469, level=70, star=0
 },
-	[42123]={ tid=4466, level=85, star=0
+	[42123]={ tid=4466, level=70, star=0
 },
-	[42124]={ tid=3434, level=85, star=0
+	[42124]={ tid=3434, level=70, star=0
 },
-	[42125]={ tid=5111, level=85, star=0
+	[42125]={ tid=5111, level=70, star=0
 },
-	[42126]={ tid=4016, level=95, star=0
+	[42126]={ tid=4016, level=110, star=0
 },
-	[42127]={ tid=3020, level=95, star=0
+	[42127]={ tid=3020, level=110, star=0
 },
-	[42128]={ tid=5051, level=95, star=0
+	[42128]={ tid=5051, level=110, star=0
 },
-	[42129]={ tid=3023, level=95, star=0
+	[42129]={ tid=3023, level=110, star=0
 },
-	[42130]={ tid=4002, level=95, star=0
+	[42130]={ tid=4002, level=110, star=0
 },
-	[42131]={ tid=3403, level=95, star=0
+	[42131]={ tid=3403, level=110, star=0
 },
-	[42132]={ tid=4413, level=95, star=0
+	[42132]={ tid=4413, level=110, star=0
 },
-	[42133]={ tid=5031, level=95, star=0
+	[42133]={ tid=5031, level=110, star=0
 },
-	[42134]={ tid=3416, level=95, star=0
+	[42134]={ tid=3416, level=110, star=0
 },
-	[42135]={ tid=4433, level=95, star=0
+	[42135]={ tid=4433, level=110, star=0
 },
-	[42136]={ tid=4426, level=95, star=0
+	[42136]={ tid=4426, level=110, star=0
 },
-	[42137]={ tid=3403, level=95, star=0
+	[42137]={ tid=3403, level=110, star=0
 },
-	[42138]={ tid=4418, level=95, star=0
+	[42138]={ tid=4418, level=110, star=0
 },
-	[42139]={ tid=5021, level=95, star=0
+	[42139]={ tid=5021, level=110, star=0
 },
-	[42140]={ tid=3414, level=95, star=0
+	[42140]={ tid=3414, level=110, star=0
 },
-	[42141]={ tid=4633, level=95, star=0
+	[42141]={ tid=4633, level=110, star=0
 },
-	[42142]={ tid=4631, level=95, star=0
+	[42142]={ tid=4631, level=110, star=0
 },
-	[42143]={ tid=5081, level=95, star=0
+	[42143]={ tid=5081, level=110, star=0
 },
-	[42144]={ tid=3619, level=95, star=0
+	[42144]={ tid=3619, level=110, star=0
 },
-	[42145]={ tid=3627, level=95, star=0
+	[42145]={ tid=3627, level=110, star=0
 },
-	[42146]={ tid=5061, level=95, star=0
+	[42146]={ tid=5061, level=110, star=0
 },
-	[42147]={ tid=3617, level=95, star=0
+	[42147]={ tid=3617, level=110, star=0
 },
-	[42148]={ tid=4613, level=95, star=0
+	[42148]={ tid=4613, level=110, star=0
 },
-	[42149]={ tid=3608, level=95, star=0
+	[42149]={ tid=3608, level=110, star=0
 },
-	[42150]={ tid=4622, level=95, star=0
+	[42150]={ tid=4622, level=110, star=0
 },
 	[42151]={ tid=3617, level=100, star=0
 },
@@ -18263,155 +23259,155 @@ local mon_data=
 },
 	[42175]={ tid=4418, level=100, star=0
 },
-	[42176]={ tid=4426, level=60, star=0
+	[42176]={ tid=4426, level=90, star=0
 },
-	[42177]={ tid=3415, level=60, star=0
+	[42177]={ tid=3415, level=90, star=0
 },
-	[42178]={ tid=4418, level=60, star=0
+	[42178]={ tid=4418, level=90, star=0
 },
-	[42179]={ tid=5021, level=60, star=0
+	[42179]={ tid=5021, level=90, star=0
 },
-	[42180]={ tid=3420, level=60, star=0
+	[42180]={ tid=3420, level=90, star=0
 },
-	[42181]={ tid=4614, level=60, star=0
+	[42181]={ tid=4614, level=90, star=0
 },
-	[42182]={ tid=4617, level=60, star=0
+	[42182]={ tid=4617, level=90, star=0
 },
-	[42183]={ tid=5081, level=60, star=0
+	[42183]={ tid=5081, level=90, star=0
 },
-	[42184]={ tid=3607, level=60, star=0
+	[42184]={ tid=3607, level=90, star=0
 },
-	[42185]={ tid=3604, level=60, star=0
+	[42185]={ tid=3604, level=90, star=0
 },
-	[42186]={ tid=3014, level=60, star=0
+	[42186]={ tid=3014, level=90, star=0
 },
-	[42187]={ tid=4034, level=60, star=0
+	[42187]={ tid=4034, level=90, star=0
 },
-	[42188]={ tid=5051, level=60, star=0
+	[42188]={ tid=5051, level=90, star=0
 },
-	[42189]={ tid=4004, level=60, star=0
+	[42189]={ tid=4004, level=90, star=0
 },
-	[42190]={ tid=3008, level=60, star=0
+	[42190]={ tid=3008, level=90, star=0
 },
-	[42191]={ tid=4603, level=60, star=0
+	[42191]={ tid=4603, level=90, star=0
 },
-	[42192]={ tid=5071, level=60, star=0
+	[42192]={ tid=5071, level=90, star=0
 },
-	[42193]={ tid=3614, level=60, star=0
+	[42193]={ tid=3614, level=90, star=0
 },
-	[42194]={ tid=4631, level=60, star=0
+	[42194]={ tid=4631, level=90, star=0
 },
-	[42195]={ tid=3623, level=60, star=0
+	[42195]={ tid=3623, level=90, star=0
 },
-	[42196]={ tid=4426, level=60, star=0
+	[42196]={ tid=4426, level=90, star=0
 },
-	[42197]={ tid=3415, level=60, star=0
+	[42197]={ tid=3415, level=90, star=0
 },
-	[42198]={ tid=4418, level=60, star=0
+	[42198]={ tid=4418, level=90, star=0
 },
-	[42199]={ tid=5031, level=60, star=0
+	[42199]={ tid=5031, level=90, star=0
 },
-	[42200]={ tid=3414, level=60, star=0
+	[42200]={ tid=3414, level=90, star=0
 },
-	[42201]={ tid=4414, level=110, star=0
+	[42201]={ tid=4414, level=115, star=0
 },
-	[42202]={ tid=3407, level=110, star=0
+	[42202]={ tid=3407, level=115, star=0
 },
-	[42203]={ tid=4442, level=110, star=0
+	[42203]={ tid=4442, level=115, star=0
 },
-	[42204]={ tid=3402, level=110, star=0
+	[42204]={ tid=3402, level=115, star=0
 },
-	[42205]={ tid=5031, level=110, star=0
+	[42205]={ tid=5031, level=115, star=0
 },
-	[42206]={ tid=3016, level=110, star=0
+	[42206]={ tid=3016, level=115, star=0
 },
-	[42207]={ tid=4002, level=110, star=0
+	[42207]={ tid=4002, level=115, star=0
 },
-	[42208]={ tid=5051, level=110, star=0
+	[42208]={ tid=5051, level=115, star=0
 },
-	[42209]={ tid=4028, level=110, star=0
+	[42209]={ tid=4028, level=115, star=0
 },
-	[42210]={ tid=3008, level=110, star=0
+	[42210]={ tid=3008, level=115, star=0
 },
-	[42211]={ tid=4646, level=110, star=0
+	[42211]={ tid=4646, level=115, star=0
 },
-	[42212]={ tid=4637, level=110, star=0
+	[42212]={ tid=4637, level=115, star=0
 },
-	[42213]={ tid=5081, level=110, star=0
+	[42213]={ tid=5081, level=115, star=0
 },
 	[42214]={ tid=3601, level=115, star=0
 },
 	[42215]={ tid=3602, level=115, star=0
 },
-	[42216]={ tid=4640, level=110, star=0
+	[42216]={ tid=4640, level=115, star=0
 },
-	[42217]={ tid=4611, level=110, star=0
+	[42217]={ tid=4611, level=115, star=0
 },
-	[42218]={ tid=3621, level=110, star=0
+	[42218]={ tid=3621, level=115, star=0
 },
-	[42219]={ tid=5061, level=110, star=0
+	[42219]={ tid=5061, level=115, star=0
 },
-	[42220]={ tid=3627, level=110, star=0
+	[42220]={ tid=3627, level=115, star=0
 },
-	[42221]={ tid=3631, level=110, star=0
+	[42221]={ tid=3631, level=115, star=0
 },
-	[42222]={ tid=4644, level=110, star=0
+	[42222]={ tid=4644, level=115, star=0
 },
-	[42223]={ tid=5101, level=110, star=0
+	[42223]={ tid=5101, level=115, star=0
 },
-	[42224]={ tid=4623, level=110, star=0
+	[42224]={ tid=4623, level=115, star=0
 },
-	[42225]={ tid=3432, level=110, star=0
+	[42225]={ tid=3432, level=115, star=0
 },
-	[42226]={ tid=4028, level=105, star=0
+	[42226]={ tid=4028, level=80, star=0
 },
-	[42227]={ tid=4014, level=105, star=0
+	[42227]={ tid=4014, level=80, star=0
 },
-	[42228]={ tid=5051, level=105, star=0
+	[42228]={ tid=5051, level=80, star=0
 },
-	[42229]={ tid=3009, level=105, star=0
+	[42229]={ tid=3009, level=80, star=0
 },
-	[42230]={ tid=3013, level=105, star=0
+	[42230]={ tid=3013, level=80, star=0
 },
-	[42231]={ tid=3623, level=105, star=0
+	[42231]={ tid=3623, level=80, star=0
 },
-	[42232]={ tid=4603, level=105, star=0
+	[42232]={ tid=4603, level=80, star=0
 },
-	[42233]={ tid=5011, level=105, star=0
+	[42233]={ tid=5011, level=80, star=0
 },
-	[42234]={ tid=4605, level=105, star=0
+	[42234]={ tid=4605, level=80, star=0
 },
-	[42235]={ tid=3622, level=105, star=0
+	[42235]={ tid=3622, level=80, star=0
 },
-	[42236]={ tid=4424, level=105, star=0
+	[42236]={ tid=4424, level=80, star=0
 },
-	[42237]={ tid=3423, level=105, star=0
+	[42237]={ tid=3423, level=80, star=0
 },
-	[42238]={ tid=4426, level=105, star=0
+	[42238]={ tid=4426, level=80, star=0
 },
-	[42239]={ tid=3423, level=105, star=0
+	[42239]={ tid=3423, level=80, star=0
 },
-	[42240]={ tid=5041, level=105, star=0
+	[42240]={ tid=5041, level=80, star=0
 },
-	[42241]={ tid=4619, level=105, star=0
+	[42241]={ tid=4619, level=80, star=0
 },
-	[42242]={ tid=4620, level=105, star=0
+	[42242]={ tid=4620, level=80, star=0
 },
-	[42243]={ tid=3608, level=105, star=0
+	[42243]={ tid=3608, level=80, star=0
 },
-	[42244]={ tid=5071, level=105, star=0
+	[42244]={ tid=5071, level=80, star=0
 },
-	[42245]={ tid=3616, level=105, star=0
+	[42245]={ tid=3616, level=80, star=0
 },
-	[42246]={ tid=4632, level=105, star=0
+	[42246]={ tid=4632, level=80, star=0
 },
-	[42247]={ tid=3616, level=105, star=0
+	[42247]={ tid=3616, level=80, star=0
 },
-	[42248]={ tid=4601, level=105, star=0
+	[42248]={ tid=4601, level=80, star=0
 },
-	[42249]={ tid=3621, level=105, star=0
+	[42249]={ tid=3621, level=80, star=0
 },
-	[42250]={ tid=5111, level=105, star=0
+	[42250]={ tid=5111, level=80, star=0
 },
 	[42251]={ tid=4222, level=120, star=0
 },
@@ -18496,6 +23492,160 @@ local mon_data=
 	[42291]={ tid=4466, level=120, star=0
 },
 	[42292]={ tid=4466, level=120, star=0
+},
+	[42293]={ tid=3414, level=120, star=0
+},
+	[42294]={ tid=4608, level=120, star=0
+},
+	[42295]={ tid=3407, level=120, star=0
+},
+	[42296]={ tid=4609, level=120, star=0
+},
+	[42297]={ tid=5031, level=120, star=0
+},
+	[42298]={ tid=4608, level=120, star=0
+},
+	[42299]={ tid=4609, level=120, star=0
+},
+	[42300]={ tid=4426, level=120, star=0
+},
+	[42301]={ tid=3403, level=120, star=0
+},
+	[42302]={ tid=4418, level=120, star=0
+},
+	[42303]={ tid=5021, level=120, star=0
+},
+	[42304]={ tid=3414, level=120, star=0
+},
+	[42305]={ tid=4425, level=120, star=0
+},
+	[42306]={ tid=4425, level=120, star=0
+},
+	[42307]={ tid=4603, level=120, star=0
+},
+	[42308]={ tid=4619, level=120, star=0
+},
+	[42309]={ tid=5071, level=120, star=0
+},
+	[42310]={ tid=4631, level=120, star=0
+},
+	[42311]={ tid=3623, level=120, star=0
+},
+	[42312]={ tid=4621, level=120, star=0
+},
+	[42313]={ tid=4646, level=120, star=0
+},
+	[42314]={ tid=4637, level=120, star=0
+},
+	[42315]={ tid=5081, level=120, star=0
+},
+	[42316]={ tid=3601, level=120, star=0
+},
+	[42317]={ tid=3602, level=120, star=0
+},
+	[42318]={ tid=4626, level=120, star=0
+},
+	[42319]={ tid=3631, level=120, star=0
+},
+	[42320]={ tid=4645, level=120, star=0
+},
+	[42321]={ tid=5101, level=120, star=0
+},
+	[42322]={ tid=4645, level=120, star=0
+},
+	[42323]={ tid=3432, level=120, star=0
+},
+	[42324]={ tid=4645, level=120, star=0
+},
+	[42325]={ tid=4001, level=120, star=0
+},
+	[42326]={ tid=4007, level=120, star=0
+},
+	[42327]={ tid=5051, level=120, star=0
+},
+	[42328]={ tid=4019, level=120, star=0
+},
+	[42329]={ tid=4025, level=120, star=0
+},
+	[42330]={ tid=4013, level=120, star=0
+},
+	[42331]={ tid=3414, level=120, star=0
+},
+	[42332]={ tid=4608, level=120, star=0
+},
+	[42333]={ tid=3407, level=120, star=0
+},
+	[42334]={ tid=4609, level=120, star=0
+},
+	[42335]={ tid=5031, level=120, star=0
+},
+	[42336]={ tid=4443, level=120, star=0
+},
+	[42337]={ tid=5071, level=120, star=0
+},
+	[42338]={ tid=4607, level=120, star=0
+},
+	[42339]={ tid=4610, level=120, star=0
+},
+	[42340]={ tid=4611, level=120, star=0
+},
+	[42341]={ tid=4609, level=120, star=0
+},
+	[42342]={ tid=5041, level=120, star=0
+},
+	[42343]={ tid=4801, level=120, star=0
+},
+	[42344]={ tid=4802, level=120, star=0
+},
+	[42345]={ tid=4804, level=120, star=0
+},
+	[42346]={ tid=4803, level=120, star=0
+},
+	[42347]={ tid=5061, level=120, star=0
+},
+	[42348]={ tid=4614, level=120, star=0
+},
+	[42349]={ tid=4615, level=120, star=0
+},
+	[42350]={ tid=4616, level=120, star=0
+},
+	[42351]={ tid=4617, level=120, star=0
+},
+	[42352]={ tid=5016, level=120, star=0
+},
+	[42353]={ tid=4624, level=120, star=0
+},
+	[42354]={ tid=5071, level=120, star=0
+},
+	[42355]={ tid=4633, level=120, star=0
+},
+	[42356]={ tid=5141, level=120, star=0
+},
+	[42357]={ tid=4645, level=120, star=0
+},
+	[42358]={ tid=5081, level=120, star=0
+},
+	[42359]={ tid=4621, level=120, star=0
+},
+	[42360]={ tid=5131, level=120, star=0
+},
+	[42361]={ tid=4638, level=120, star=0
+},
+	[42362]={ tid=4638, level=120, star=0
+},
+	[42363]={ tid=4638, level=120, star=0
+},
+	[42364]={ tid=4638, level=120, star=0
+},
+	[42365]={ tid=5041, level=120, star=0
+},
+	[42366]={ tid=3014, level=120, star=0
+},
+	[42367]={ tid=4015, level=120, star=0
+},
+	[42368]={ tid=3010, level=120, star=0
+},
+	[42369]={ tid=4006, level=120, star=0
 },
 	[43001]={ tid=3622, level=70, star=0
 },
@@ -18916,6 +24066,306 @@ local mon_data=
 	[43209]={ tid=4446, level=120, star=0
 },
 	[43210]={ tid=5021, level=120, star=0
+},
+	[43500]={ tid=4033, level=60, star=0
+},
+	[43501]={ tid=3002, level=60, star=0
+},
+	[43502]={ tid=4009, level=60, star=0
+},
+	[43503]={ tid=5051, level=60, star=0
+},
+	[43504]={ tid=3012, level=60, star=0
+},
+	[43505]={ tid=3401, level=60, star=0
+},
+	[43506]={ tid=3408, level=60, star=0
+},
+	[43507]={ tid=5031, level=60, star=0
+},
+	[43508]={ tid=4413, level=60, star=0
+},
+	[43509]={ tid=4445, level=60, star=0
+},
+	[43510]={ tid=4425, level=60, star=0
+},
+	[43511]={ tid=4427, level=60, star=0
+},
+	[43512]={ tid=3414, level=60, star=0
+},
+	[43513]={ tid=3417, level=60, star=0
+},
+	[43514]={ tid=5021, level=60, star=0
+},
+	[43515]={ tid=4622, level=60, star=0
+},
+	[43516]={ tid=3601, level=60, star=0
+},
+	[43517]={ tid=4638, level=60, star=0
+},
+	[43518]={ tid=3603, level=60, star=0
+},
+	[43519]={ tid=5081, level=60, star=0
+},
+	[43520]={ tid=4466, level=60, star=0
+},
+	[43521]={ tid=3434, level=60, star=0
+},
+	[43522]={ tid=5111, level=60, star=0
+},
+	[43523]={ tid=3433, level=60, star=0
+},
+	[43524]={ tid=4469, level=60, star=0
+},
+	[43525]={ tid=5011, level=70, star=0
+},
+	[43526]={ tid=4601, level=70, star=0
+},
+	[43527]={ tid=4619, level=70, star=0
+},
+	[43528]={ tid=3601, level=70, star=0
+},
+	[43529]={ tid=3613, level=70, star=0
+},
+	[43530]={ tid=4632, level=70, star=0
+},
+	[43531]={ tid=5071, level=70, star=0
+},
+	[43532]={ tid=4617, level=70, star=0
+},
+	[43533]={ tid=3606, level=70, star=0
+},
+	[43534]={ tid=3614, level=70, star=0
+},
+	[43535]={ tid=5091, level=70, star=0
+},
+	[43536]={ tid=4228, level=70, star=0
+},
+	[43537]={ tid=3227, level=70, star=0
+},
+	[43538]={ tid=3214, level=70, star=0
+},
+	[43539]={ tid=4224, level=70, star=0
+},
+	[43540]={ tid=5101, level=70, star=0
+},
+	[43541]={ tid=4640, level=70, star=0
+},
+	[43542]={ tid=3631, level=70, star=0
+},
+	[43543]={ tid=4643, level=70, star=0
+},
+	[43544]={ tid=3429, level=70, star=0
+},
+	[43545]={ tid=3414, level=70, star=0
+},
+	[43546]={ tid=4413, level=70, star=0
+},
+	[43547]={ tid=3406, level=70, star=0
+},
+	[43548]={ tid=4445, level=70, star=0
+},
+	[43549]={ tid=5041, level=70, star=0
+},
+	[43550]={ tid=4425, level=80, star=0
+},
+	[43551]={ tid=4427, level=80, star=0
+},
+	[43552]={ tid=3414, level=80, star=0
+},
+	[43553]={ tid=3417, level=80, star=0
+},
+	[43554]={ tid=5021, level=80, star=0
+},
+	[43555]={ tid=4622, level=80, star=0
+},
+	[43556]={ tid=3601, level=80, star=0
+},
+	[43557]={ tid=4638, level=80, star=0
+},
+	[43558]={ tid=3603, level=80, star=0
+},
+	[43559]={ tid=5081, level=80, star=0
+},
+	[43560]={ tid=4630, level=80, star=0
+},
+	[43561]={ tid=3606, level=80, star=0
+},
+	[43562]={ tid=3615, level=80, star=0
+},
+	[43563]={ tid=5061, level=80, star=0
+},
+	[43564]={ tid=3602, level=80, star=0
+},
+	[43565]={ tid=3401, level=80, star=0
+},
+	[43566]={ tid=3408, level=80, star=0
+},
+	[43567]={ tid=5031, level=80, star=0
+},
+	[43568]={ tid=4413, level=80, star=0
+},
+	[43569]={ tid=4445, level=80, star=0
+},
+	[43570]={ tid=5101, level=80, star=0
+},
+	[43571]={ tid=4640, level=80, star=0
+},
+	[43572]={ tid=3631, level=80, star=0
+},
+	[43573]={ tid=4643, level=80, star=0
+},
+	[43574]={ tid=3429, level=80, star=0
+},
+	[43575]={ tid=3401, level=90, star=0
+},
+	[43576]={ tid=3408, level=90, star=0
+},
+	[43577]={ tid=5031, level=90, star=0
+},
+	[43578]={ tid=4413, level=90, star=0
+},
+	[43579]={ tid=4445, level=90, star=0
+},
+	[43580]={ tid=4033, level=90, star=0
+},
+	[43581]={ tid=3002, level=90, star=0
+},
+	[43582]={ tid=4009, level=90, star=0
+},
+	[43583]={ tid=5051, level=90, star=0
+},
+	[43584]={ tid=3012, level=90, star=0
+},
+	[43585]={ tid=4622, level=90, star=0
+},
+	[43586]={ tid=3601, level=90, star=0
+},
+	[43587]={ tid=4638, level=90, star=0
+},
+	[43588]={ tid=3603, level=90, star=0
+},
+	[43589]={ tid=5081, level=90, star=0
+},
+	[43590]={ tid=4630, level=90, star=0
+},
+	[43591]={ tid=3606, level=90, star=0
+},
+	[43592]={ tid=3615, level=90, star=0
+},
+	[43593]={ tid=5061, level=90, star=0
+},
+	[43594]={ tid=3602, level=90, star=0
+},
+	[43595]={ tid=5101, level=90, star=0
+},
+	[43596]={ tid=4640, level=90, star=0
+},
+	[43597]={ tid=3631, level=90, star=0
+},
+	[43598]={ tid=4643, level=90, star=0
+},
+	[43599]={ tid=3429, level=90, star=0
+},
+	[43600]={ tid=4632, level=100, star=0
+},
+	[43601]={ tid=5071, level=100, star=0
+},
+	[43602]={ tid=4617, level=100, star=0
+},
+	[43603]={ tid=3606, level=100, star=0
+},
+	[43604]={ tid=3614, level=100, star=0
+},
+	[43605]={ tid=5011, level=100, star=0
+},
+	[43606]={ tid=4601, level=100, star=0
+},
+	[43607]={ tid=4619, level=100, star=0
+},
+	[43608]={ tid=3601, level=100, star=0
+},
+	[43609]={ tid=3613, level=100, star=0
+},
+	[43610]={ tid=3414, level=100, star=0
+},
+	[43611]={ tid=4413, level=100, star=0
+},
+	[43612]={ tid=3406, level=100, star=0
+},
+	[43613]={ tid=4445, level=100, star=0
+},
+	[43614]={ tid=5041, level=100, star=0
+},
+	[43615]={ tid=4033, level=100, star=0
+},
+	[43616]={ tid=3002, level=100, star=0
+},
+	[43617]={ tid=4009, level=100, star=0
+},
+	[43618]={ tid=5051, level=100, star=0
+},
+	[43619]={ tid=3012, level=100, star=0
+},
+	[43620]={ tid=4466, level=100, star=0
+},
+	[43621]={ tid=3434, level=100, star=0
+},
+	[43622]={ tid=5111, level=100, star=0
+},
+	[43623]={ tid=3433, level=100, star=0
+},
+	[43624]={ tid=4469, level=100, star=0
+},
+	[43625]={ tid=4630, level=110, star=0
+},
+	[43626]={ tid=3606, level=110, star=0
+},
+	[43627]={ tid=3615, level=110, star=0
+},
+	[43628]={ tid=5061, level=110, star=0
+},
+	[43629]={ tid=3602, level=110, star=0
+},
+	[43630]={ tid=5011, level=110, star=0
+},
+	[43631]={ tid=4601, level=110, star=0
+},
+	[43632]={ tid=4619, level=110, star=0
+},
+	[43633]={ tid=3601, level=110, star=0
+},
+	[43634]={ tid=3613, level=110, star=0
+},
+	[43635]={ tid=3414, level=110, star=0
+},
+	[43636]={ tid=4413, level=110, star=0
+},
+	[43637]={ tid=3406, level=110, star=0
+},
+	[43638]={ tid=4445, level=110, star=0
+},
+	[43639]={ tid=5041, level=110, star=0
+},
+	[43640]={ tid=4632, level=110, star=0
+},
+	[43641]={ tid=5071, level=110, star=0
+},
+	[43642]={ tid=4617, level=110, star=0
+},
+	[43643]={ tid=3606, level=110, star=0
+},
+	[43644]={ tid=3614, level=110, star=0
+},
+	[43645]={ tid=5091, level=110, star=0
+},
+	[43646]={ tid=4228, level=110, star=0
+},
+	[43647]={ tid=3227, level=110, star=0
+},
+	[43648]={ tid=3214, level=110, star=0
+},
+	[43649]={ tid=4224, level=110, star=0
 },
 	[50001]={ tid=4449, level=64, star=0
 },
@@ -23397,25 +28847,3475 @@ local mon_data=
 },
 	[52400]={ tid=4637, level=110, star=0
 },
-	[60001]={ tid=5161, level=75, star=0
+	[52401]={ tid=3626, level=90, star=0
 },
-	[60002]={ tid=5161, level=80, star=0
+	[52402]={ tid=3623, level=90, star=0
 },
-	[60003]={ tid=5161, level=85, star=0
+	[52403]={ tid=3606, level=90, star=0
 },
-	[60004]={ tid=5161, level=90, star=0
+	[52404]={ tid=4449, level=90, star=0
 },
-	[60005]={ tid=5161, level=95, star=0
+	[52405]={ tid=4635, level=90, star=0
 },
-	[60006]={ tid=5161, level=100, star=0
+	[52406]={ tid=3618, level=92, star=0
 },
-	[60007]={ tid=5161, level=105, star=0
+	[52407]={ tid=3628, level=92, star=0
 },
-	[60008]={ tid=5161, level=110, star=0
+	[52408]={ tid=3606, level=92, star=0
 },
-	[60009]={ tid=5161, level=115, star=0
+	[52409]={ tid=4449, level=92, star=0
 },
-	[60010]={ tid=5161, level=120, star=0
+	[52410]={ tid=4646, level=92, star=0
+},
+	[52411]={ tid=3616, level=95, star=0
+},
+	[52412]={ tid=3614, level=95, star=0
+},
+	[52413]={ tid=4618, level=95, star=0
+},
+	[52414]={ tid=4449, level=95, star=0
+},
+	[52415]={ tid=4618, level=95, star=0
+},
+	[52416]={ tid=3616, level=97, star=0
+},
+	[52417]={ tid=3626, level=97, star=0
+},
+	[52418]={ tid=3604, level=97, star=0
+},
+	[52419]={ tid=4449, level=97, star=0
+},
+	[52420]={ tid=4628, level=97, star=0
+},
+	[52421]={ tid=3602, level=99, star=0
+},
+	[52422]={ tid=3630, level=99, star=0
+},
+	[52423]={ tid=3612, level=99, star=0
+},
+	[52424]={ tid=4449, level=99, star=0
+},
+	[52425]={ tid=4627, level=99, star=0
+},
+	[52426]={ tid=3612, level=100, star=0
+},
+	[52427]={ tid=3623, level=100, star=0
+},
+	[52428]={ tid=4611, level=100, star=0
+},
+	[52429]={ tid=4449, level=100, star=0
+},
+	[52430]={ tid=4640, level=100, star=0
+},
+	[52431]={ tid=3624, level=102, star=0
+},
+	[52432]={ tid=3602, level=102, star=0
+},
+	[52433]={ tid=3616, level=102, star=0
+},
+	[52434]={ tid=4449, level=102, star=0
+},
+	[52435]={ tid=4630, level=102, star=0
+},
+	[52436]={ tid=4618, level=105, star=0
+},
+	[52437]={ tid=4640, level=105, star=0
+},
+	[52438]={ tid=4606, level=105, star=0
+},
+	[52439]={ tid=4449, level=105, star=0
+},
+	[52440]={ tid=4611, level=105, star=0
+},
+	[52441]={ tid=4635, level=110, star=0
+},
+	[52442]={ tid=4612, level=110, star=0
+},
+	[52443]={ tid=4612, level=110, star=0
+},
+	[52444]={ tid=4449, level=110, star=0
+},
+	[52445]={ tid=4623, level=110, star=0
+},
+	[52446]={ tid=4618, level=115, star=0
+},
+	[52447]={ tid=4640, level=115, star=0
+},
+	[52448]={ tid=4627, level=115, star=0
+},
+	[52449]={ tid=4449, level=115, star=0
+},
+	[52450]={ tid=5012, level=120, star=0
+},
+	[52451]={ tid=3419, level=90, star=0
+},
+	[52452]={ tid=3429, level=90, star=0
+},
+	[52453]={ tid=3418, level=90, star=0
+},
+	[52454]={ tid=4449, level=90, star=0
+},
+	[52455]={ tid=4463, level=90, star=0
+},
+	[52456]={ tid=3401, level=92, star=0
+},
+	[52457]={ tid=3423, level=92, star=0
+},
+	[52458]={ tid=3419, level=92, star=0
+},
+	[52459]={ tid=4449, level=92, star=0
+},
+	[52460]={ tid=4407, level=92, star=0
+},
+	[52461]={ tid=3413, level=95, star=0
+},
+	[52462]={ tid=3429, level=95, star=0
+},
+	[52463]={ tid=4951, level=95, star=0
+},
+	[52464]={ tid=4449, level=95, star=0
+},
+	[52465]={ tid=4418, level=95, star=0
+},
+	[52466]={ tid=3423, level=97, star=0
+},
+	[52467]={ tid=3413, level=97, star=0
+},
+	[52468]={ tid=3425, level=97, star=0
+},
+	[52469]={ tid=4449, level=97, star=0
+},
+	[52470]={ tid=4418, level=97, star=0
+},
+	[52471]={ tid=3418, level=99, star=0
+},
+	[52472]={ tid=3423, level=99, star=0
+},
+	[52473]={ tid=3401, level=99, star=0
+},
+	[52474]={ tid=4449, level=99, star=0
+},
+	[52475]={ tid=4440, level=99, star=0
+},
+	[52476]={ tid=3429, level=100, star=0
+},
+	[52477]={ tid=3417, level=100, star=0
+},
+	[52478]={ tid=4455, level=100, star=0
+},
+	[52479]={ tid=4449, level=100, star=0
+},
+	[52480]={ tid=4425, level=100, star=0
+},
+	[52481]={ tid=3418, level=102, star=0
+},
+	[52482]={ tid=3401, level=102, star=0
+},
+	[52483]={ tid=3423, level=102, star=0
+},
+	[52484]={ tid=4449, level=102, star=0
+},
+	[52485]={ tid=4411, level=102, star=0
+},
+	[52486]={ tid=3413, level=105, star=0
+},
+	[52487]={ tid=3417, level=105, star=0
+},
+	[52488]={ tid=3413, level=105, star=0
+},
+	[52489]={ tid=4449, level=105, star=0
+},
+	[52490]={ tid=4406, level=105, star=0
+},
+	[52491]={ tid=3429, level=110, star=0
+},
+	[52492]={ tid=3418, level=110, star=0
+},
+	[52493]={ tid=4437, level=110, star=0
+},
+	[52494]={ tid=4449, level=110, star=0
+},
+	[52495]={ tid=4424, level=110, star=0
+},
+	[52496]={ tid=4415, level=115, star=0
+},
+	[52497]={ tid=4404, level=115, star=0
+},
+	[52498]={ tid=4467, level=115, star=0
+},
+	[52499]={ tid=4449, level=115, star=0
+},
+	[52500]={ tid=5021, level=120, star=0
+},
+	[52501]={ tid=3607, level=90, star=0
+},
+	[52502]={ tid=3617, level=90, star=0
+},
+	[52503]={ tid=3605, level=90, star=0
+},
+	[52504]={ tid=4449, level=90, star=0
+},
+	[52505]={ tid=4618, level=90, star=0
+},
+	[52506]={ tid=3626, level=92, star=0
+},
+	[52507]={ tid=3602, level=92, star=0
+},
+	[52508]={ tid=3613, level=92, star=0
+},
+	[52509]={ tid=4449, level=92, star=0
+},
+	[52510]={ tid=4638, level=92, star=0
+},
+	[52511]={ tid=3613, level=95, star=0
+},
+	[52512]={ tid=3618, level=95, star=0
+},
+	[52513]={ tid=4614, level=95, star=0
+},
+	[52514]={ tid=4449, level=95, star=0
+},
+	[52515]={ tid=4606, level=95, star=0
+},
+	[52516]={ tid=3624, level=97, star=0
+},
+	[52517]={ tid=3617, level=97, star=0
+},
+	[52518]={ tid=3629, level=97, star=0
+},
+	[52519]={ tid=4449, level=97, star=0
+},
+	[52520]={ tid=4625, level=97, star=0
+},
+	[52521]={ tid=3629, level=99, star=0
+},
+	[52522]={ tid=3602, level=99, star=0
+},
+	[52523]={ tid=3626, level=99, star=0
+},
+	[52524]={ tid=4449, level=99, star=0
+},
+	[52525]={ tid=4802, level=99, star=0
+},
+	[52526]={ tid=3610, level=100, star=0
+},
+	[52527]={ tid=3607, level=100, star=0
+},
+	[52528]={ tid=4601, level=100, star=0
+},
+	[52529]={ tid=4449, level=100, star=0
+},
+	[52530]={ tid=4632, level=100, star=0
+},
+	[52531]={ tid=3608, level=102, star=0
+},
+	[52532]={ tid=3601, level=102, star=0
+},
+	[52533]={ tid=3624, level=102, star=0
+},
+	[52534]={ tid=4449, level=102, star=0
+},
+	[52535]={ tid=4614, level=102, star=0
+},
+	[52536]={ tid=3607, level=105, star=0
+},
+	[52537]={ tid=3618, level=105, star=0
+},
+	[52538]={ tid=3605, level=105, star=0
+},
+	[52539]={ tid=4449, level=105, star=0
+},
+	[52540]={ tid=4608, level=105, star=0
+},
+	[52541]={ tid=3610, level=110, star=0
+},
+	[52542]={ tid=3605, level=110, star=0
+},
+	[52543]={ tid=4620, level=110, star=0
+},
+	[52544]={ tid=4449, level=110, star=0
+},
+	[52545]={ tid=4638, level=110, star=0
+},
+	[52546]={ tid=4624, level=115, star=0
+},
+	[52547]={ tid=4631, level=115, star=0
+},
+	[52548]={ tid=4625, level=115, star=0
+},
+	[52549]={ tid=4449, level=115, star=0
+},
+	[52550]={ tid=5071, level=120, star=0
+},
+	[52551]={ tid=3627, level=90, star=0
+},
+	[52552]={ tid=3609, level=90, star=0
+},
+	[52553]={ tid=3609, level=90, star=0
+},
+	[52554]={ tid=4449, level=90, star=0
+},
+	[52555]={ tid=4803, level=90, star=0
+},
+	[52556]={ tid=3608, level=92, star=0
+},
+	[52557]={ tid=3606, level=92, star=0
+},
+	[52558]={ tid=3606, level=92, star=0
+},
+	[52559]={ tid=4449, level=92, star=0
+},
+	[52560]={ tid=4617, level=92, star=0
+},
+	[52561]={ tid=3630, level=95, star=0
+},
+	[52562]={ tid=3615, level=95, star=0
+},
+	[52563]={ tid=4603, level=95, star=0
+},
+	[52564]={ tid=4449, level=95, star=0
+},
+	[52565]={ tid=4801, level=95, star=0
+},
+	[52566]={ tid=3627, level=97, star=0
+},
+	[52567]={ tid=3627, level=97, star=0
+},
+	[52568]={ tid=3603, level=97, star=0
+},
+	[52569]={ tid=4449, level=97, star=0
+},
+	[52570]={ tid=4621, level=97, star=0
+},
+	[52571]={ tid=3623, level=99, star=0
+},
+	[52572]={ tid=3615, level=99, star=0
+},
+	[52573]={ tid=3633, level=99, star=0
+},
+	[52574]={ tid=4449, level=99, star=0
+},
+	[52575]={ tid=4603, level=99, star=0
+},
+	[52576]={ tid=3621, level=100, star=0
+},
+	[52577]={ tid=3606, level=100, star=0
+},
+	[52578]={ tid=4630, level=100, star=0
+},
+	[52579]={ tid=4449, level=100, star=0
+},
+	[52580]={ tid=4633, level=100, star=0
+},
+	[52581]={ tid=3621, level=102, star=0
+},
+	[52582]={ tid=3623, level=102, star=0
+},
+	[52583]={ tid=3633, level=102, star=0
+},
+	[52584]={ tid=4449, level=102, star=0
+},
+	[52585]={ tid=4638, level=102, star=0
+},
+	[52586]={ tid=3621, level=105, star=0
+},
+	[52587]={ tid=3603, level=105, star=0
+},
+	[52588]={ tid=3630, level=105, star=0
+},
+	[52589]={ tid=4449, level=105, star=0
+},
+	[52590]={ tid=4609, level=105, star=0
+},
+	[52591]={ tid=3615, level=110, star=0
+},
+	[52592]={ tid=3609, level=110, star=0
+},
+	[52593]={ tid=4802, level=110, star=0
+},
+	[52594]={ tid=4449, level=110, star=0
+},
+	[52595]={ tid=4621, level=110, star=0
+},
+	[52596]={ tid=4802, level=115, star=0
+},
+	[52597]={ tid=4633, level=115, star=0
+},
+	[52598]={ tid=4632, level=115, star=0
+},
+	[52599]={ tid=4449, level=115, star=0
+},
+	[52600]={ tid=5141, level=120, star=0
+},
+	[52601]={ tid=3631, level=90, star=0
+},
+	[52602]={ tid=3634, level=90, star=0
+},
+	[52603]={ tid=3632, level=90, star=0
+},
+	[52604]={ tid=4449, level=90, star=0
+},
+	[52605]={ tid=4644, level=90, star=0
+},
+	[52606]={ tid=3621, level=92, star=0
+},
+	[52607]={ tid=3621, level=92, star=0
+},
+	[52608]={ tid=3631, level=92, star=0
+},
+	[52609]={ tid=4449, level=92, star=0
+},
+	[52610]={ tid=4646, level=92, star=0
+},
+	[52611]={ tid=3632, level=95, star=0
+},
+	[52612]={ tid=3634, level=95, star=0
+},
+	[52613]={ tid=4644, level=95, star=0
+},
+	[52614]={ tid=4449, level=95, star=0
+},
+	[52615]={ tid=4610, level=95, star=0
+},
+	[52616]={ tid=3621, level=97, star=0
+},
+	[52617]={ tid=3631, level=97, star=0
+},
+	[52618]={ tid=3621, level=97, star=0
+},
+	[52619]={ tid=4449, level=97, star=0
+},
+	[52620]={ tid=4602, level=97, star=0
+},
+	[52621]={ tid=3631, level=99, star=0
+},
+	[52622]={ tid=3632, level=99, star=0
+},
+	[52623]={ tid=3621, level=99, star=0
+},
+	[52624]={ tid=4449, level=99, star=0
+},
+	[52625]={ tid=4610, level=99, star=0
+},
+	[52626]={ tid=3621, level=100, star=0
+},
+	[52627]={ tid=3634, level=100, star=0
+},
+	[52628]={ tid=4644, level=100, star=0
+},
+	[52629]={ tid=4449, level=100, star=0
+},
+	[52630]={ tid=4602, level=100, star=0
+},
+	[52631]={ tid=3621, level=102, star=0
+},
+	[52632]={ tid=3631, level=102, star=0
+},
+	[52633]={ tid=3621, level=102, star=0
+},
+	[52634]={ tid=4449, level=102, star=0
+},
+	[52635]={ tid=4646, level=102, star=0
+},
+	[52636]={ tid=3631, level=105, star=0
+},
+	[52637]={ tid=3621, level=105, star=0
+},
+	[52638]={ tid=3632, level=105, star=0
+},
+	[52639]={ tid=4449, level=105, star=0
+},
+	[52640]={ tid=4643, level=105, star=0
+},
+	[52641]={ tid=3631, level=110, star=0
+},
+	[52642]={ tid=3631, level=110, star=0
+},
+	[52643]={ tid=4644, level=110, star=0
+},
+	[52644]={ tid=4449, level=110, star=0
+},
+	[52645]={ tid=4610, level=110, star=0
+},
+	[52646]={ tid=4646, level=115, star=0
+},
+	[52647]={ tid=4646, level=115, star=0
+},
+	[52648]={ tid=4614, level=115, star=0
+},
+	[52649]={ tid=4449, level=115, star=0
+},
+	[52650]={ tid=5131, level=120, star=0
+},
+	[52651]={ tid=3620, level=90, star=0
+},
+	[52652]={ tid=3609, level=90, star=0
+},
+	[52653]={ tid=3625, level=90, star=0
+},
+	[52654]={ tid=4449, level=90, star=0
+},
+	[52655]={ tid=4639, level=90, star=0
+},
+	[52656]={ tid=3633, level=92, star=0
+},
+	[52657]={ tid=3633, level=92, star=0
+},
+	[52658]={ tid=3611, level=92, star=0
+},
+	[52659]={ tid=4449, level=92, star=0
+},
+	[52660]={ tid=4609, level=92, star=0
+},
+	[52661]={ tid=3633, level=95, star=0
+},
+	[52662]={ tid=3604, level=95, star=0
+},
+	[52663]={ tid=4610, level=95, star=0
+},
+	[52664]={ tid=4449, level=95, star=0
+},
+	[52665]={ tid=4616, level=95, star=0
+},
+	[52666]={ tid=3604, level=97, star=0
+},
+	[52667]={ tid=3609, level=97, star=0
+},
+	[52668]={ tid=3611, level=97, star=0
+},
+	[52669]={ tid=4449, level=97, star=0
+},
+	[52670]={ tid=4622, level=97, star=0
+},
+	[52671]={ tid=3609, level=99, star=0
+},
+	[52672]={ tid=3620, level=99, star=0
+},
+	[52673]={ tid=3625, level=99, star=0
+},
+	[52674]={ tid=4449, level=99, star=0
+},
+	[52675]={ tid=4616, level=99, star=0
+},
+	[52676]={ tid=3620, level=100, star=0
+},
+	[52677]={ tid=3609, level=100, star=0
+},
+	[52678]={ tid=4622, level=100, star=0
+},
+	[52679]={ tid=4449, level=100, star=0
+},
+	[52680]={ tid=4622, level=100, star=0
+},
+	[52681]={ tid=3622, level=102, star=0
+},
+	[52682]={ tid=3628, level=102, star=0
+},
+	[52683]={ tid=3633, level=102, star=0
+},
+	[52684]={ tid=4449, level=102, star=0
+},
+	[52685]={ tid=4610, level=102, star=0
+},
+	[52686]={ tid=3625, level=105, star=0
+},
+	[52687]={ tid=3625, level=105, star=0
+},
+	[52688]={ tid=3625, level=105, star=0
+},
+	[52689]={ tid=4449, level=105, star=0
+},
+	[52690]={ tid=4616, level=105, star=0
+},
+	[52691]={ tid=3628, level=110, star=0
+},
+	[52692]={ tid=3622, level=110, star=0
+},
+	[52693]={ tid=4615, level=110, star=0
+},
+	[52694]={ tid=4449, level=110, star=0
+},
+	[52695]={ tid=4645, level=110, star=0
+},
+	[52696]={ tid=4609, level=115, star=0
+},
+	[52697]={ tid=4641, level=115, star=0
+},
+	[52698]={ tid=4804, level=115, star=0
+},
+	[52699]={ tid=4449, level=115, star=0
+},
+	[52700]={ tid=5121, level=120, star=0
+},
+	[52701]={ tid=3407, level=90, star=0
+},
+	[52702]={ tid=3418, level=90, star=0
+},
+	[52703]={ tid=3413, level=90, star=0
+},
+	[52704]={ tid=4449, level=90, star=0
+},
+	[52705]={ tid=4401, level=90, star=0
+},
+	[52706]={ tid=3425, level=92, star=0
+},
+	[52707]={ tid=3407, level=92, star=0
+},
+	[52708]={ tid=3419, level=92, star=0
+},
+	[52709]={ tid=4449, level=92, star=0
+},
+	[52710]={ tid=4411, level=92, star=0
+},
+	[52711]={ tid=3425, level=95, star=0
+},
+	[52712]={ tid=3409, level=95, star=0
+},
+	[52713]={ tid=4411, level=95, star=0
+},
+	[52714]={ tid=4449, level=95, star=0
+},
+	[52715]={ tid=4406, level=95, star=0
+},
+	[52716]={ tid=3429, level=97, star=0
+},
+	[52717]={ tid=3407, level=97, star=0
+},
+	[52718]={ tid=3401, level=97, star=0
+},
+	[52719]={ tid=4449, level=97, star=0
+},
+	[52720]={ tid=4415, level=97, star=0
+},
+	[52721]={ tid=3425, level=99, star=0
+},
+	[52722]={ tid=3409, level=99, star=0
+},
+	[52723]={ tid=3403, level=99, star=0
+},
+	[52724]={ tid=4449, level=99, star=0
+},
+	[52725]={ tid=4428, level=99, star=0
+},
+	[52726]={ tid=3409, level=100, star=0
+},
+	[52727]={ tid=3403, level=100, star=0
+},
+	[52728]={ tid=4446, level=100, star=0
+},
+	[52729]={ tid=4449, level=100, star=0
+},
+	[52730]={ tid=4466, level=100, star=0
+},
+	[52731]={ tid=3413, level=102, star=0
+},
+	[52732]={ tid=3405, level=102, star=0
+},
+	[52733]={ tid=3417, level=102, star=0
+},
+	[52734]={ tid=4449, level=102, star=0
+},
+	[52735]={ tid=4437, level=102, star=0
+},
+	[52736]={ tid=3407, level=105, star=0
+},
+	[52737]={ tid=3413, level=105, star=0
+},
+	[52738]={ tid=3418, level=105, star=0
+},
+	[52739]={ tid=4449, level=105, star=0
+},
+	[52740]={ tid=4403, level=105, star=0
+},
+	[52741]={ tid=3413, level=110, star=0
+},
+	[52742]={ tid=3409, level=110, star=0
+},
+	[52743]={ tid=4406, level=110, star=0
+},
+	[52744]={ tid=4449, level=110, star=0
+},
+	[52745]={ tid=4467, level=110, star=0
+},
+	[52746]={ tid=4467, level=115, star=0
+},
+	[52747]={ tid=4440, level=115, star=0
+},
+	[52748]={ tid=4424, level=115, star=0
+},
+	[52749]={ tid=4449, level=115, star=0
+},
+	[52750]={ tid=5021, level=120, star=0
+},
+	[52751]={ tid=3601, level=90, star=0
+},
+	[52752]={ tid=3607, level=90, star=0
+},
+	[52753]={ tid=3629, level=90, star=0
+},
+	[52754]={ tid=4449, level=90, star=0
+},
+	[52755]={ tid=4608, level=90, star=0
+},
+	[52756]={ tid=3618, level=92, star=0
+},
+	[52757]={ tid=3601, level=92, star=0
+},
+	[52758]={ tid=3608, level=92, star=0
+},
+	[52759]={ tid=4449, level=92, star=0
+},
+	[52760]={ tid=4618, level=92, star=0
+},
+	[52761]={ tid=3614, level=95, star=0
+},
+	[52762]={ tid=3632, level=95, star=0
+},
+	[52763]={ tid=4625, level=95, star=0
+},
+	[52764]={ tid=4449, level=95, star=0
+},
+	[52765]={ tid=4618, level=95, star=0
+},
+	[52766]={ tid=3602, level=97, star=0
+},
+	[52767]={ tid=3608, level=97, star=0
+},
+	[52768]={ tid=3601, level=97, star=0
+},
+	[52769]={ tid=4449, level=97, star=0
+},
+	[52770]={ tid=4802, level=97, star=0
+},
+	[52771]={ tid=3624, level=99, star=0
+},
+	[52772]={ tid=3602, level=99, star=0
+},
+	[52773]={ tid=3626, level=99, star=0
+},
+	[52774]={ tid=4449, level=99, star=0
+},
+	[52775]={ tid=4637, level=99, star=0
+},
+	[52776]={ tid=3605, level=100, star=0
+},
+	[52777]={ tid=3629, level=100, star=0
+},
+	[52778]={ tid=4634, level=100, star=0
+},
+	[52779]={ tid=4449, level=100, star=0
+},
+	[52780]={ tid=4618, level=100, star=0
+},
+	[52781]={ tid=3629, level=102, star=0
+},
+	[52782]={ tid=3607, level=102, star=0
+},
+	[52783]={ tid=3607, level=102, star=0
+},
+	[52784]={ tid=4449, level=102, star=0
+},
+	[52785]={ tid=4644, level=102, star=0
+},
+	[52786]={ tid=3610, level=105, star=0
+},
+	[52787]={ tid=3601, level=105, star=0
+},
+	[52788]={ tid=3632, level=105, star=0
+},
+	[52789]={ tid=4449, level=105, star=0
+},
+	[52790]={ tid=4613, level=105, star=0
+},
+	[52791]={ tid=3629, level=110, star=0
+},
+	[52792]={ tid=3608, level=110, star=0
+},
+	[52793]={ tid=4608, level=110, star=0
+},
+	[52794]={ tid=4449, level=110, star=0
+},
+	[52795]={ tid=4629, level=110, star=0
+},
+	[52796]={ tid=4624, level=115, star=0
+},
+	[52797]={ tid=4606, level=115, star=0
+},
+	[52798]={ tid=4449, level=115, star=0
+},
+	[52799]={ tid=4616, level=115, star=0
+},
+	[52800]={ tid=5071, level=120, star=0
+},
+	[52801]={ tid=3630, level=90, star=0
+},
+	[52802]={ tid=3608, level=90, star=0
+},
+	[52803]={ tid=3630, level=90, star=0
+},
+	[52804]={ tid=4449, level=90, star=0
+},
+	[52805]={ tid=4609, level=90, star=0
+},
+	[52806]={ tid=3623, level=92, star=0
+},
+	[52807]={ tid=3630, level=92, star=0
+},
+	[52808]={ tid=3606, level=92, star=0
+},
+	[52809]={ tid=4449, level=92, star=0
+},
+	[52810]={ tid=4639, level=92, star=0
+},
+	[52811]={ tid=3608, level=95, star=0
+},
+	[52812]={ tid=3630, level=95, star=0
+},
+	[52813]={ tid=4615, level=95, star=0
+},
+	[52814]={ tid=4449, level=95, star=0
+},
+	[52815]={ tid=4803, level=95, star=0
+},
+	[52816]={ tid=3603, level=97, star=0
+},
+	[52817]={ tid=3615, level=97, star=0
+},
+	[52818]={ tid=3608, level=97, star=0
+},
+	[52819]={ tid=4449, level=97, star=0
+},
+	[52820]={ tid=4633, level=97, star=0
+},
+	[52821]={ tid=3621, level=99, star=0
+},
+	[52822]={ tid=3606, level=99, star=0
+},
+	[52823]={ tid=3627, level=99, star=0
+},
+	[52824]={ tid=4449, level=99, star=0
+},
+	[52825]={ tid=4617, level=99, star=0
+},
+	[52826]={ tid=3606, level=100, star=0
+},
+	[52827]={ tid=3608, level=100, star=0
+},
+	[52828]={ tid=4609, level=100, star=0
+},
+	[52829]={ tid=4449, level=100, star=0
+},
+	[52830]={ tid=4623, level=100, star=0
+},
+	[52831]={ tid=3615, level=102, star=0
+},
+	[52832]={ tid=3621, level=102, star=0
+},
+	[52833]={ tid=3615, level=102, star=0
+},
+	[52834]={ tid=4449, level=102, star=0
+},
+	[52835]={ tid=4801, level=102, star=0
+},
+	[52836]={ tid=3630, level=105, star=0
+},
+	[52837]={ tid=3608, level=105, star=0
+},
+	[52838]={ tid=3615, level=105, star=0
+},
+	[52839]={ tid=4449, level=105, star=0
+},
+	[52840]={ tid=4617, level=105, star=0
+},
+	[52841]={ tid=3609, level=110, star=0
+},
+	[52842]={ tid=3608, level=110, star=0
+},
+	[52843]={ tid=4630, level=110, star=0
+},
+	[52844]={ tid=4449, level=110, star=0
+},
+	[52845]={ tid=4615, level=110, star=0
+},
+	[52846]={ tid=4621, level=115, star=0
+},
+	[52847]={ tid=4639, level=115, star=0
+},
+	[52848]={ tid=4639, level=115, star=0
+},
+	[52849]={ tid=4449, level=115, star=0
+},
+	[52850]={ tid=5091, level=120, star=0
+},
+	[52851]={ tid=3621, level=90, star=0
+},
+	[52852]={ tid=3631, level=90, star=0
+},
+	[52853]={ tid=3631, level=90, star=0
+},
+	[52854]={ tid=4449, level=90, star=0
+},
+	[52855]={ tid=4602, level=90, star=0
+},
+	[52856]={ tid=3631, level=92, star=0
+},
+	[52857]={ tid=3631, level=92, star=0
+},
+	[52858]={ tid=3631, level=92, star=0
+},
+	[52859]={ tid=4449, level=92, star=0
+},
+	[52860]={ tid=4643, level=92, star=0
+},
+	[52861]={ tid=3631, level=95, star=0
+},
+	[52862]={ tid=3634, level=95, star=0
+},
+	[52863]={ tid=4614, level=95, star=0
+},
+	[52864]={ tid=4449, level=95, star=0
+},
+	[52865]={ tid=4646, level=95, star=0
+},
+	[52866]={ tid=3634, level=97, star=0
+},
+	[52867]={ tid=3632, level=97, star=0
+},
+	[52868]={ tid=3634, level=97, star=0
+},
+	[52869]={ tid=4449, level=97, star=0
+},
+	[52870]={ tid=4614, level=97, star=0
+},
+	[52871]={ tid=3634, level=99, star=0
+},
+	[52872]={ tid=3631, level=99, star=0
+},
+	[52873]={ tid=3632, level=99, star=0
+},
+	[52874]={ tid=4449, level=99, star=0
+},
+	[52875]={ tid=4612, level=99, star=0
+},
+	[52876]={ tid=3631, level=100, star=0
+},
+	[52877]={ tid=3631, level=100, star=0
+},
+	[52878]={ tid=4646, level=100, star=0
+},
+	[52879]={ tid=4449, level=100, star=0
+},
+	[52880]={ tid=4614, level=100, star=0
+},
+	[52881]={ tid=3631, level=102, star=0
+},
+	[52882]={ tid=3631, level=102, star=0
+},
+	[52883]={ tid=3634, level=102, star=0
+},
+	[52884]={ tid=4449, level=102, star=0
+},
+	[52885]={ tid=4646, level=102, star=0
+},
+	[52886]={ tid=3621, level=105, star=0
+},
+	[52887]={ tid=3631, level=105, star=0
+},
+	[52888]={ tid=3632, level=105, star=0
+},
+	[52889]={ tid=4449, level=105, star=0
+},
+	[52890]={ tid=4614, level=105, star=0
+},
+	[52891]={ tid=3631, level=110, star=0
+},
+	[52892]={ tid=3632, level=110, star=0
+},
+	[52893]={ tid=4612, level=110, star=0
+},
+	[52894]={ tid=4449, level=110, star=0
+},
+	[52895]={ tid=4646, level=110, star=0
+},
+	[52896]={ tid=4614, level=115, star=0
+},
+	[52897]={ tid=4614, level=115, star=0
+},
+	[52898]={ tid=4643, level=115, star=0
+},
+	[52899]={ tid=4449, level=115, star=0
+},
+	[52900]={ tid=5101, level=120, star=0
+},
+	[52901]={ tid=3620, level=90, star=0
+},
+	[52902]={ tid=3633, level=90, star=0
+},
+	[52903]={ tid=3622, level=90, star=0
+},
+	[52904]={ tid=4449, level=90, star=0
+},
+	[52905]={ tid=4804, level=90, star=0
+},
+	[52906]={ tid=3628, level=92, star=0
+},
+	[52907]={ tid=3622, level=92, star=0
+},
+	[52908]={ tid=3625, level=92, star=0
+},
+	[52909]={ tid=4449, level=92, star=0
+},
+	[52910]={ tid=4615, level=92, star=0
+},
+	[52911]={ tid=3633, level=95, star=0
+},
+	[52912]={ tid=3633, level=95, star=0
+},
+	[52913]={ tid=4608, level=95, star=0
+},
+	[52914]={ tid=4449, level=95, star=0
+},
+	[52915]={ tid=4641, level=95, star=0
+},
+	[52916]={ tid=3604, level=97, star=0
+},
+	[52917]={ tid=3620, level=97, star=0
+},
+	[52918]={ tid=3625, level=97, star=0
+},
+	[52919]={ tid=4449, level=97, star=0
+},
+	[52920]={ tid=4645, level=97, star=0
+},
+	[52921]={ tid=3622, level=99, star=0
+},
+	[52922]={ tid=3609, level=99, star=0
+},
+	[52923]={ tid=3625, level=99, star=0
+},
+	[52924]={ tid=4449, level=99, star=0
+},
+	[52925]={ tid=4616, level=99, star=0
+},
+	[52926]={ tid=3620, level=100, star=0
+},
+	[52927]={ tid=3628, level=100, star=0
+},
+	[52928]={ tid=4622, level=100, star=0
+},
+	[52929]={ tid=4449, level=100, star=0
+},
+	[52930]={ tid=4621, level=100, star=0
+},
+	[52931]={ tid=3625, level=102, star=0
+},
+	[52932]={ tid=3625, level=102, star=0
+},
+	[52933]={ tid=3625, level=102, star=0
+},
+	[52934]={ tid=4449, level=102, star=0
+},
+	[52935]={ tid=4619, level=102, star=0
+},
+	[52936]={ tid=3609, level=105, star=0
+},
+	[52937]={ tid=3620, level=105, star=0
+},
+	[52938]={ tid=3628, level=105, star=0
+},
+	[52939]={ tid=4449, level=105, star=0
+},
+	[52940]={ tid=4615, level=105, star=0
+},
+	[52941]={ tid=3604, level=110, star=0
+},
+	[52942]={ tid=3609, level=110, star=0
+},
+	[52943]={ tid=4641, level=110, star=0
+},
+	[52944]={ tid=4449, level=110, star=0
+},
+	[52945]={ tid=4639, level=110, star=0
+},
+	[52946]={ tid=4641, level=115, star=0
+},
+	[52947]={ tid=4621, level=115, star=0
+},
+	[52948]={ tid=4626, level=115, star=0
+},
+	[52949]={ tid=4449, level=115, star=0
+},
+	[52950]={ tid=5121, level=120, star=0
+},
+	[52951]={ tid=3418, level=90, star=0
+},
+	[52952]={ tid=3401, level=90, star=0
+},
+	[52953]={ tid=3409, level=90, star=0
+},
+	[52954]={ tid=4449, level=90, star=0
+},
+	[52955]={ tid=4415, level=90, star=0
+},
+	[52956]={ tid=3417, level=92, star=0
+},
+	[52957]={ tid=3429, level=92, star=0
+},
+	[52958]={ tid=3403, level=92, star=0
+},
+	[52959]={ tid=4449, level=92, star=0
+},
+	[52960]={ tid=4455, level=92, star=0
+},
+	[52961]={ tid=3409, level=95, star=0
+},
+	[52962]={ tid=3425, level=95, star=0
+},
+	[52963]={ tid=4401, level=95, star=0
+},
+	[52964]={ tid=4449, level=95, star=0
+},
+	[52965]={ tid=4406, level=95, star=0
+},
+	[52966]={ tid=3425, level=97, star=0
+},
+	[52967]={ tid=3423, level=97, star=0
+},
+	[52968]={ tid=3407, level=97, star=0
+},
+	[52969]={ tid=4449, level=97, star=0
+},
+	[52970]={ tid=4442, level=97, star=0
+},
+	[52971]={ tid=3413, level=99, star=0
+},
+	[52972]={ tid=3403, level=99, star=0
+},
+	[52973]={ tid=3409, level=99, star=0
+},
+	[52974]={ tid=4449, level=99, star=0
+},
+	[52975]={ tid=4424, level=99, star=0
+},
+	[52976]={ tid=3403, level=100, star=0
+},
+	[52977]={ tid=3429, level=100, star=0
+},
+	[52978]={ tid=4449, level=100, star=0
+},
+	[52979]={ tid=4415, level=100, star=0
+},
+	[52980]={ tid=4461, level=100, star=0
+},
+	[52981]={ tid=3409, level=102, star=0
+},
+	[52982]={ tid=3423, level=102, star=0
+},
+	[52983]={ tid=3425, level=102, star=0
+},
+	[52984]={ tid=4449, level=102, star=0
+},
+	[52985]={ tid=4407, level=102, star=0
+},
+	[52986]={ tid=3409, level=105, star=0
+},
+	[52987]={ tid=3417, level=105, star=0
+},
+	[52988]={ tid=3419, level=105, star=0
+},
+	[52989]={ tid=4449, level=105, star=0
+},
+	[52990]={ tid=4442, level=105, star=0
+},
+	[52991]={ tid=3425, level=110, star=0
+},
+	[52992]={ tid=3409, level=110, star=0
+},
+	[52993]={ tid=4411, level=110, star=0
+},
+	[52994]={ tid=4449, level=110, star=0
+},
+	[52995]={ tid=4466, level=110, star=0
+},
+	[52996]={ tid=4466, level=115, star=0
+},
+	[52997]={ tid=4449, level=115, star=0
+},
+	[52998]={ tid=4455, level=115, star=0
+},
+	[52999]={ tid=4466, level=115, star=0
+},
+	[53000]={ tid=5031, level=120, star=0
+},
+	[53001]={ tid=3618, level=90, star=0
+},
+	[53002]={ tid=3610, level=90, star=0
+},
+	[53003]={ tid=3617, level=90, star=0
+},
+	[53004]={ tid=4449, level=90, star=0
+},
+	[53005]={ tid=4626, level=90, star=0
+},
+	[53006]={ tid=3626, level=92, star=0
+},
+	[53007]={ tid=3626, level=92, star=0
+},
+	[53008]={ tid=3610, level=92, star=0
+},
+	[53009]={ tid=4449, level=92, star=0
+},
+	[53010]={ tid=4602, level=92, star=0
+},
+	[53011]={ tid=3632, level=95, star=0
+},
+	[53012]={ tid=3619, level=95, star=0
+},
+	[53013]={ tid=4629, level=95, star=0
+},
+	[53014]={ tid=4449, level=95, star=0
+},
+	[53015]={ tid=4625, level=95, star=0
+},
+	[53016]={ tid=3620, level=97, star=0
+},
+	[53017]={ tid=3605, level=97, star=0
+},
+	[53018]={ tid=3601, level=97, star=0
+},
+	[53019]={ tid=4449, level=97, star=0
+},
+	[53020]={ tid=4614, level=97, star=0
+},
+	[53021]={ tid=3620, level=99, star=0
+},
+	[53022]={ tid=3629, level=99, star=0
+},
+	[53023]={ tid=3602, level=99, star=0
+},
+	[53024]={ tid=4449, level=99, star=0
+},
+	[53025]={ tid=4644, level=99, star=0
+},
+	[53026]={ tid=3601, level=100, star=0
+},
+	[53027]={ tid=3610, level=100, star=0
+},
+	[53028]={ tid=4637, level=100, star=0
+},
+	[53029]={ tid=4449, level=100, star=0
+},
+	[53030]={ tid=4629, level=100, star=0
+},
+	[53031]={ tid=3601, level=102, star=0
+},
+	[53032]={ tid=3619, level=102, star=0
+},
+	[53033]={ tid=3613, level=102, star=0
+},
+	[53034]={ tid=4449, level=102, star=0
+},
+	[53035]={ tid=4637, level=102, star=0
+},
+	[53036]={ tid=3613, level=105, star=0
+},
+	[53037]={ tid=3608, level=105, star=0
+},
+	[53038]={ tid=3629, level=105, star=0
+},
+	[53039]={ tid=4449, level=105, star=0
+},
+	[53040]={ tid=4616, level=105, star=0
+},
+	[53041]={ tid=3629, level=110, star=0
+},
+	[53042]={ tid=3607, level=110, star=0
+},
+	[53043]={ tid=4602, level=110, star=0
+},
+	[53044]={ tid=4449, level=110, star=0
+},
+	[53045]={ tid=4629, level=110, star=0
+},
+	[53046]={ tid=4624, level=115, star=0
+},
+	[53047]={ tid=4601, level=115, star=0
+},
+	[53048]={ tid=4638, level=115, star=0
+},
+	[53049]={ tid=4449, level=115, star=0
+},
+	[53050]={ tid=5071, level=120, star=0
+},
+	[53051]={ tid=3630, level=90, star=0
+},
+	[53052]={ tid=3621, level=90, star=0
+},
+	[53053]={ tid=3608, level=90, star=0
+},
+	[53054]={ tid=4449, level=90, star=0
+},
+	[53055]={ tid=4802, level=90, star=0
+},
+	[53056]={ tid=3623, level=92, star=0
+},
+	[53057]={ tid=3630, level=92, star=0
+},
+	[53058]={ tid=3608, level=92, star=0
+},
+	[53059]={ tid=4449, level=92, star=0
+},
+	[53060]={ tid=4638, level=92, star=0
+},
+	[53061]={ tid=3606, level=95, star=0
+},
+	[53062]={ tid=3627, level=95, star=0
+},
+	[53063]={ tid=4639, level=95, star=0
+},
+	[53064]={ tid=4449, level=95, star=0
+},
+	[53065]={ tid=4801, level=95, star=0
+},
+	[53066]={ tid=3603, level=97, star=0
+},
+	[53067]={ tid=3603, level=97, star=0
+},
+	[53068]={ tid=3603, level=97, star=0
+},
+	[53069]={ tid=4449, level=97, star=0
+},
+	[53070]={ tid=4633, level=97, star=0
+},
+	[53071]={ tid=3606, level=99, star=0
+},
+	[53072]={ tid=3608, level=99, star=0
+},
+	[53073]={ tid=3630, level=99, star=0
+},
+	[53074]={ tid=4449, level=99, star=0
+},
+	[53075]={ tid=4645, level=99, star=0
+},
+	[53076]={ tid=3630, level=100, star=0
+},
+	[53077]={ tid=3623, level=100, star=0
+},
+	[53078]={ tid=4627, level=100, star=0
+},
+	[53079]={ tid=4449, level=100, star=0
+},
+	[53080]={ tid=4638, level=100, star=0
+},
+	[53081]={ tid=3627, level=102, star=0
+},
+	[53082]={ tid=3615, level=102, star=0
+},
+	[53083]={ tid=3609, level=102, star=0
+},
+	[53084]={ tid=4449, level=102, star=0
+},
+	[53085]={ tid=4615, level=102, star=0
+},
+	[53086]={ tid=3621, level=105, star=0
+},
+	[53087]={ tid=3623, level=105, star=0
+},
+	[53088]={ tid=3630, level=105, star=0
+},
+	[53089]={ tid=4449, level=105, star=0
+},
+	[53090]={ tid=4609, level=105, star=0
+},
+	[53091]={ tid=3608, level=110, star=0
+},
+	[53092]={ tid=3603, level=110, star=0
+},
+	[53093]={ tid=4607, level=110, star=0
+},
+	[53094]={ tid=4449, level=110, star=0
+},
+	[53095]={ tid=4630, level=110, star=0
+},
+	[53096]={ tid=4801, level=115, star=0
+},
+	[53097]={ tid=4803, level=115, star=0
+},
+	[53098]={ tid=4617, level=115, star=0
+},
+	[53099]={ tid=4449, level=115, star=0
+},
+	[53100]={ tid=5013, level=120, star=0
+},
+	[53101]={ tid=3634, level=90, star=0
+},
+	[53102]={ tid=3632, level=90, star=0
+},
+	[53103]={ tid=3621, level=90, star=0
+},
+	[53104]={ tid=4449, level=90, star=0
+},
+	[53105]={ tid=4610, level=90, star=0
+},
+	[53106]={ tid=3632, level=92, star=0
+},
+	[53107]={ tid=3632, level=92, star=0
+},
+	[53108]={ tid=3632, level=92, star=0
+},
+	[53109]={ tid=4449, level=92, star=0
+},
+	[53110]={ tid=4610, level=92, star=0
+},
+	[53111]={ tid=3621, level=95, star=0
+},
+	[53112]={ tid=3632, level=95, star=0
+},
+	[53113]={ tid=4612, level=95, star=0
+},
+	[53114]={ tid=4449, level=95, star=0
+},
+	[53115]={ tid=4644, level=95, star=0
+},
+	[53116]={ tid=3634, level=97, star=0
+},
+	[53117]={ tid=3631, level=97, star=0
+},
+	[53118]={ tid=3634, level=97, star=0
+},
+	[53119]={ tid=4449, level=97, star=0
+},
+	[53120]={ tid=4602, level=97, star=0
+},
+	[53121]={ tid=3632, level=99, star=0
+},
+	[53122]={ tid=3632, level=99, star=0
+},
+	[53123]={ tid=3621, level=99, star=0
+},
+	[53124]={ tid=4449, level=99, star=0
+},
+	[53125]={ tid=4644, level=99, star=0
+},
+	[53126]={ tid=3621, level=100, star=0
+},
+	[53127]={ tid=3621, level=100, star=0
+},
+	[53128]={ tid=4449, level=100, star=0
+},
+	[53129]={ tid=4614, level=100, star=0
+},
+	[53130]={ tid=4643, level=100, star=0
+},
+	[53131]={ tid=3631, level=102, star=0
+},
+	[53132]={ tid=3621, level=102, star=0
+},
+	[53133]={ tid=3621, level=102, star=0
+},
+	[53134]={ tid=4449, level=102, star=0
+},
+	[53135]={ tid=4644, level=102, star=0
+},
+	[53136]={ tid=3621, level=105, star=0
+},
+	[53137]={ tid=3631, level=105, star=0
+},
+	[53138]={ tid=3621, level=105, star=0
+},
+	[53139]={ tid=4449, level=105, star=0
+},
+	[53140]={ tid=4644, level=105, star=0
+},
+	[53141]={ tid=3634, level=110, star=0
+},
+	[53142]={ tid=3621, level=110, star=0
+},
+	[53143]={ tid=4643, level=110, star=0
+},
+	[53144]={ tid=4449, level=110, star=0
+},
+	[53145]={ tid=4602, level=110, star=0
+},
+	[53146]={ tid=4614, level=115, star=0
+},
+	[53147]={ tid=4602, level=115, star=0
+},
+	[53148]={ tid=4602, level=115, star=0
+},
+	[53149]={ tid=4449, level=115, star=0
+},
+	[53150]={ tid=5083, level=120, star=0
+},
+	[60001]={ tid=5171, level=75, star=0
+},
+	[60002]={ tid=5171, level=80, star=0
+},
+	[60003]={ tid=5171, level=85, star=0
+},
+	[60004]={ tid=5171, level=90, star=0
+},
+	[60005]={ tid=5171, level=95, star=0
+},
+	[60006]={ tid=5171, level=100, star=0
+},
+	[60007]={ tid=5171, level=105, star=0
+},
+	[60008]={ tid=5171, level=110, star=0
+},
+	[60009]={ tid=5171, level=115, star=0
+},
+	[60010]={ tid=5171, level=120, star=0
+},
+	[60011]={ tid=5181, level=75, star=0
+},
+	[60012]={ tid=5181, level=80, star=0
+},
+	[60013]={ tid=5181, level=85, star=0
+},
+	[60014]={ tid=5181, level=90, star=0
+},
+	[60015]={ tid=5181, level=95, star=0
+},
+	[60016]={ tid=5181, level=100, star=0
+},
+	[60017]={ tid=5181, level=105, star=0
+},
+	[60018]={ tid=5181, level=120, star=0
+},
+	[60019]={ tid=5181, level=120, star=0
+},
+	[60020]={ tid=5181, level=120, star=0
+},
+	[60021]={ tid=5182, level=75, star=0
+},
+	[60022]={ tid=5182, level=80, star=0
+},
+	[60023]={ tid=5182, level=85, star=0
+},
+	[60024]={ tid=5182, level=90, star=0
+},
+	[60025]={ tid=5182, level=95, star=0
+},
+	[60026]={ tid=5182, level=100, star=0
+},
+	[60027]={ tid=5182, level=105, star=0
+},
+	[60028]={ tid=5182, level=120, star=0
+},
+	[60029]={ tid=5182, level=120, star=0
+},
+	[60030]={ tid=5182, level=120, star=0
+},
+	[60031]={ tid=5183, level=75, star=0
+},
+	[60032]={ tid=5183, level=80, star=0
+},
+	[60033]={ tid=5183, level=85, star=0
+},
+	[60034]={ tid=5183, level=90, star=0
+},
+	[60035]={ tid=5183, level=95, star=0
+},
+	[60036]={ tid=5183, level=100, star=0
+},
+	[60037]={ tid=5183, level=105, star=0
+},
+	[60038]={ tid=5183, level=120, star=0
+},
+	[60039]={ tid=5183, level=120, star=0
+},
+	[60040]={ tid=5183, level=120, star=0
+},
+	[60041]={ tid=5193, level=75, star=0
+},
+	[60042]={ tid=5193, level=80, star=0
+},
+	[60043]={ tid=5193, level=85, star=0
+},
+	[60044]={ tid=5193, level=90, star=0
+},
+	[60045]={ tid=5193, level=95, star=0
+},
+	[60046]={ tid=5193, level=100, star=0
+},
+	[60047]={ tid=5193, level=105, star=0
+},
+	[60048]={ tid=5193, level=110, star=0
+},
+	[60049]={ tid=5193, level=115, star=0
+},
+	[60050]={ tid=5193, level=120, star=0
+},
+	[65001]={ tid=3604, level=80, star=0
+},
+	[65002]={ tid=4616, level=80, star=0
+},
+	[65003]={ tid=3620, level=80, star=0
+},
+	[65004]={ tid=4632, level=80, star=0
+},
+	[65005]={ tid=3617, level=80, star=0
+},
+	[65006]={ tid=4223, level=80, star=0
+},
+	[65007]={ tid=4241, level=80, star=0
+},
+	[65008]={ tid=3605, level=80, star=0
+},
+	[65009]={ tid=3207, level=80, star=0
+},
+	[65010]={ tid=3615, level=80, star=0
+},
+	[65011]={ tid=3617, level=80, star=0
+},
+	[65012]={ tid=4209, level=80, star=0
+},
+	[65013]={ tid=3230, level=80, star=0
+},
+	[65014]={ tid=4612, level=80, star=0
+},
+	[65015]={ tid=3207, level=80, star=0
+},
+	[65016]={ tid=3203, level=80, star=0
+},
+	[65017]={ tid=3204, level=80, star=0
+},
+	[65018]={ tid=4229, level=80, star=0
+},
+	[65019]={ tid=3207, level=80, star=0
+},
+	[65020]={ tid=4222, level=80, star=0
+},
+	[65021]={ tid=4632, level=80, star=0
+},
+	[65022]={ tid=3622, level=80, star=0
+},
+	[65023]={ tid=4634, level=80, star=0
+},
+	[65024]={ tid=3614, level=80, star=0
+},
+	[65025]={ tid=3620, level=80, star=0
+},
+	[65026]={ tid=3629, level=80, star=0
+},
+	[65027]={ tid=4622, level=80, star=0
+},
+	[65028]={ tid=3230, level=80, star=0
+},
+	[65029]={ tid=4618, level=80, star=0
+},
+	[65030]={ tid=3608, level=80, star=0
+},
+	[65031]={ tid=3230, level=80, star=0
+},
+	[65032]={ tid=4220, level=80, star=0
+},
+	[65033]={ tid=3204, level=80, star=0
+},
+	[65034]={ tid=4225, level=80, star=0
+},
+	[65035]={ tid=3230, level=80, star=0
+},
+	[65036]={ tid=4601, level=80, star=0
+},
+	[65037]={ tid=3210, level=80, star=0
+},
+	[65038]={ tid=4625, level=80, star=0
+},
+	[65039]={ tid=3619, level=80, star=0
+},
+	[65040]={ tid=3623, level=80, star=0
+},
+	[65041]={ tid=4207, level=80, star=0
+},
+	[65042]={ tid=3226, level=80, star=0
+},
+	[65043]={ tid=4215, level=80, star=0
+},
+	[65044]={ tid=3626, level=80, star=0
+},
+	[65045]={ tid=3624, level=80, star=0
+},
+	[65046]={ tid=3609, level=80, star=0
+},
+	[65047]={ tid=4626, level=80, star=0
+},
+	[65048]={ tid=4643, level=80, star=0
+},
+	[65049]={ tid=3225, level=80, star=0
+},
+	[65050]={ tid=3622, level=80, star=0
+},
+	[65051]={ tid=3209, level=80, star=0
+},
+	[65052]={ tid=3605, level=80, star=0
+},
+	[65053]={ tid=4238, level=80, star=0
+},
+	[65054]={ tid=3622, level=80, star=0
+},
+	[65055]={ tid=4208, level=80, star=0
+},
+	[65056]={ tid=3216, level=80, star=0
+},
+	[65057]={ tid=4619, level=80, star=0
+},
+	[65058]={ tid=4233, level=80, star=0
+},
+	[65059]={ tid=3212, level=80, star=0
+},
+	[65060]={ tid=3214, level=80, star=0
+},
+	[65061]={ tid=3603, level=80, star=0
+},
+	[65062]={ tid=4232, level=80, star=0
+},
+	[65063]={ tid=3618, level=80, star=0
+},
+	[65064]={ tid=4634, level=80, star=0
+},
+	[65065]={ tid=3228, level=80, star=0
+},
+	[65066]={ tid=3213, level=80, star=0
+},
+	[65067]={ tid=3210, level=80, star=0
+},
+	[65068]={ tid=4211, level=80, star=0
+},
+	[65069]={ tid=3212, level=80, star=0
+},
+	[65070]={ tid=4641, level=80, star=0
+},
+	[65071]={ tid=4210, level=80, star=0
+},
+	[65072]={ tid=4224, level=80, star=0
+},
+	[65073]={ tid=3215, level=80, star=0
+},
+	[65074]={ tid=3205, level=80, star=0
+},
+	[65075]={ tid=3204, level=80, star=0
+},
+	[65076]={ tid=4233, level=80, star=0
+},
+	[65077]={ tid=3203, level=80, star=0
+},
+	[65078]={ tid=4221, level=80, star=0
+},
+	[65079]={ tid=3214, level=80, star=0
+},
+	[65080]={ tid=3607, level=80, star=0
+},
+	[65081]={ tid=4642, level=80, star=0
+},
+	[65082]={ tid=3613, level=80, star=0
+},
+	[65083]={ tid=4215, level=80, star=0
+},
+	[65084]={ tid=3603, level=80, star=0
+},
+	[65085]={ tid=3627, level=80, star=0
+},
+	[65086]={ tid=3627, level=80, star=0
+},
+	[65087]={ tid=4220, level=80, star=0
+},
+	[65088]={ tid=4234, level=80, star=0
+},
+	[65089]={ tid=3210, level=80, star=0
+},
+	[65090]={ tid=3631, level=80, star=0
+},
+	[65096]={ tid=3228, level=90, star=0
+},
+	[65097]={ tid=3204, level=90, star=0
+},
+	[65098]={ tid=4215, level=90, star=0
+},
+	[65099]={ tid=3213, level=90, star=0
+},
+	[65100]={ tid=4229, level=90, star=0
+},
+	[65101]={ tid=3217, level=90, star=0
+},
+	[65102]={ tid=3216, level=90, star=0
+},
+	[65103]={ tid=4241, level=90, star=0
+},
+	[65104]={ tid=3201, level=90, star=0
+},
+	[65105]={ tid=4608, level=90, star=0
+},
+	[65106]={ tid=4625, level=90, star=0
+},
+	[65107]={ tid=4644, level=90, star=0
+},
+	[65108]={ tid=3625, level=90, star=0
+},
+	[65109]={ tid=3601, level=90, star=0
+},
+	[65110]={ tid=3604, level=90, star=0
+},
+	[65111]={ tid=4210, level=90, star=0
+},
+	[65112]={ tid=3229, level=90, star=0
+},
+	[65113]={ tid=4619, level=90, star=0
+},
+	[65114]={ tid=3602, level=90, star=0
+},
+	[65115]={ tid=3205, level=90, star=0
+},
+	[65116]={ tid=3203, level=90, star=0
+},
+	[65117]={ tid=3631, level=90, star=0
+},
+	[65118]={ tid=4211, level=90, star=0
+},
+	[65119]={ tid=3618, level=90, star=0
+},
+	[65120]={ tid=4210, level=90, star=0
+},
+	[65121]={ tid=4223, level=90, star=0
+},
+	[65122]={ tid=3609, level=90, star=0
+},
+	[65123]={ tid=3621, level=90, star=0
+},
+	[65124]={ tid=4639, level=90, star=0
+},
+	[65125]={ tid=3608, level=90, star=0
+},
+	[65126]={ tid=3619, level=90, star=0
+},
+	[65127]={ tid=4622, level=90, star=0
+},
+	[65128]={ tid=3202, level=90, star=0
+},
+	[65129]={ tid=4624, level=90, star=0
+},
+	[65130]={ tid=3213, level=90, star=0
+},
+	[65131]={ tid=3620, level=90, star=0
+},
+	[65132]={ tid=3206, level=90, star=0
+},
+	[65133]={ tid=4617, level=90, star=0
+},
+	[65134]={ tid=3214, level=90, star=0
+},
+	[65135]={ tid=4640, level=90, star=0
+},
+	[65136]={ tid=3619, level=90, star=0
+},
+	[65137]={ tid=4607, level=90, star=0
+},
+	[65138]={ tid=4638, level=90, star=0
+},
+	[65139]={ tid=3617, level=90, star=0
+},
+	[65140]={ tid=3626, level=90, star=0
+},
+	[65141]={ tid=4239, level=90, star=0
+},
+	[65142]={ tid=3214, level=90, star=0
+},
+	[65143]={ tid=4644, level=90, star=0
+},
+	[65144]={ tid=3207, level=90, star=0
+},
+	[65145]={ tid=3227, level=90, star=0
+},
+	[65146]={ tid=4212, level=90, star=0
+},
+	[65147]={ tid=3216, level=90, star=0
+},
+	[65148]={ tid=4223, level=90, star=0
+},
+	[65149]={ tid=3618, level=90, star=0
+},
+	[65150]={ tid=3632, level=90, star=0
+},
+	[65151]={ tid=4619, level=90, star=0
+},
+	[65152]={ tid=3622, level=90, star=0
+},
+	[65153]={ tid=4221, level=90, star=0
+},
+	[65154]={ tid=3230, level=90, star=0
+},
+	[65155]={ tid=3213, level=90, star=0
+},
+	[65156]={ tid=3216, level=90, star=0
+},
+	[65157]={ tid=4203, level=90, star=0
+},
+	[65158]={ tid=4637, level=90, star=0
+},
+	[65159]={ tid=3627, level=90, star=0
+},
+	[65160]={ tid=3608, level=90, star=0
+},
+	[65161]={ tid=3625, level=90, star=0
+},
+	[65162]={ tid=3601, level=90, star=0
+},
+	[65163]={ tid=4644, level=90, star=0
+},
+	[65164]={ tid=3604, level=90, star=0
+},
+	[65165]={ tid=4624, level=90, star=0
+},
+	[65166]={ tid=4221, level=90, star=0
+},
+	[65167]={ tid=3206, level=90, star=0
+},
+	[65168]={ tid=4241, level=90, star=0
+},
+	[65169]={ tid=3205, level=90, star=0
+},
+	[65170]={ tid=3605, level=90, star=0
+},
+	[65171]={ tid=3203, level=90, star=0
+},
+	[65172]={ tid=3227, level=90, star=0
+},
+	[65173]={ tid=4221, level=90, star=0
+},
+	[65174]={ tid=3205, level=90, star=0
+},
+	[65175]={ tid=4202, level=90, star=0
+},
+	[65176]={ tid=3210, level=90, star=0
+},
+	[65177]={ tid=3623, level=90, star=0
+},
+	[65178]={ tid=4210, level=90, star=0
+},
+	[65179]={ tid=3615, level=90, star=0
+},
+	[65180]={ tid=4204, level=90, star=0
+},
+	[65181]={ tid=4234, level=90, star=0
+},
+	[65182]={ tid=3227, level=90, star=0
+},
+	[65183]={ tid=4205, level=90, star=0
+},
+	[65184]={ tid=3612, level=90, star=0
+},
+	[65185]={ tid=3603, level=90, star=0
+},
+	[65186]={ tid=3226, level=90, star=0
+},
+	[65187]={ tid=4237, level=90, star=0
+},
+	[65188]={ tid=4210, level=90, star=0
+},
+	[65189]={ tid=3208, level=90, star=0
+},
+	[65190]={ tid=3216, level=90, star=0
+},
+	[65191]={ tid=3212, level=90, star=0
+},
+	[65192]={ tid=4239, level=90, star=0
+},
+	[65193]={ tid=4208, level=90, star=0
+},
+	[65194]={ tid=3205, level=90, star=0
+},
+	[65195]={ tid=3211, level=90, star=0
+},
+	[65196]={ tid=4229, level=90, star=0
+},
+	[65197]={ tid=3631, level=90, star=0
+},
+	[65198]={ tid=4235, level=90, star=0
+},
+	[65199]={ tid=3202, level=90, star=0
+},
+	[65200]={ tid=3218, level=90, star=0
+},
+	[65201]={ tid=4613, level=90, star=0
+},
+	[65202]={ tid=4629, level=90, star=0
+},
+	[65203]={ tid=3209, level=90, star=0
+},
+	[65204]={ tid=3621, level=90, star=0
+},
+	[65205]={ tid=3213, level=90, star=0
+},
+	[65206]={ tid=3202, level=90, star=0
+},
+	[65207]={ tid=4613, level=90, star=0
+},
+	[65208]={ tid=4605, level=90, star=0
+},
+	[65209]={ tid=3604, level=90, star=0
+},
+	[65210]={ tid=3210, level=90, star=0
+},
+	[65211]={ tid=4233, level=90, star=0
+},
+	[65212]={ tid=3211, level=90, star=0
+},
+	[65213]={ tid=4223, level=90, star=0
+},
+	[65214]={ tid=3609, level=90, star=0
+},
+	[65215]={ tid=3612, level=90, star=0
+},
+	[65221]={ tid=3619, level=100, star=0
+},
+	[65222]={ tid=4234, level=100, star=0
+},
+	[65223]={ tid=3605, level=100, star=0
+},
+	[65224]={ tid=4601, level=100, star=0
+},
+	[65225]={ tid=3215, level=100, star=0
+},
+	[65226]={ tid=3620, level=100, star=0
+},
+	[65227]={ tid=3230, level=100, star=0
+},
+	[65228]={ tid=4629, level=100, star=0
+},
+	[65229]={ tid=3205, level=100, star=0
+},
+	[65230]={ tid=4621, level=100, star=0
+},
+	[65231]={ tid=3620, level=100, star=0
+},
+	[65232]={ tid=4203, level=100, star=0
+},
+	[65233]={ tid=3615, level=100, star=0
+},
+	[65234]={ tid=4630, level=100, star=0
+},
+	[65235]={ tid=3213, level=100, star=0
+},
+	[65236]={ tid=3632, level=100, star=0
+},
+	[65237]={ tid=4625, level=100, star=0
+},
+	[65238]={ tid=3602, level=100, star=0
+},
+	[65239]={ tid=4619, level=100, star=0
+},
+	[65240]={ tid=3615, level=100, star=0
+},
+	[65241]={ tid=3604, level=100, star=0
+},
+	[65242]={ tid=4639, level=100, star=0
+},
+	[65243]={ tid=4236, level=100, star=0
+},
+	[65244]={ tid=3208, level=100, star=0
+},
+	[65245]={ tid=3209, level=100, star=0
+},
+	[65246]={ tid=3620, level=100, star=0
+},
+	[65247]={ tid=4645, level=100, star=0
+},
+	[65248]={ tid=3625, level=100, star=0
+},
+	[65249]={ tid=4204, level=100, star=0
+},
+	[65250]={ tid=3624, level=100, star=0
+},
+	[65251]={ tid=4224, level=100, star=0
+},
+	[65252]={ tid=3228, level=100, star=0
+},
+	[65253]={ tid=4627, level=100, star=0
+},
+	[65254]={ tid=3634, level=100, star=0
+},
+	[65255]={ tid=3613, level=100, star=0
+},
+	[65256]={ tid=3634, level=100, star=0
+},
+	[65257]={ tid=4239, level=100, star=0
+},
+	[65258]={ tid=3631, level=100, star=0
+},
+	[65259]={ tid=4614, level=100, star=0
+},
+	[65260]={ tid=3226, level=100, star=0
+},
+	[65261]={ tid=3207, level=100, star=0
+},
+	[65262]={ tid=4645, level=100, star=0
+},
+	[65263]={ tid=3217, level=100, star=0
+},
+	[65264]={ tid=4235, level=100, star=0
+},
+	[65265]={ tid=3632, level=100, star=0
+},
+	[65266]={ tid=3623, level=100, star=0
+},
+	[65267]={ tid=3628, level=100, star=0
+},
+	[65268]={ tid=4618, level=100, star=0
+},
+	[65269]={ tid=3606, level=100, star=0
+},
+	[65270]={ tid=4621, level=100, star=0
+},
+	[65271]={ tid=3624, level=100, star=0
+},
+	[65272]={ tid=4235, level=100, star=0
+},
+	[65273]={ tid=4211, level=100, star=0
+},
+	[65274]={ tid=3209, level=100, star=0
+},
+	[65275]={ tid=3601, level=100, star=0
+},
+	[65276]={ tid=3631, level=100, star=0
+},
+	[65277]={ tid=4204, level=100, star=0
+},
+	[65278]={ tid=4221, level=100, star=0
+},
+	[65279]={ tid=3213, level=100, star=0
+},
+	[65280]={ tid=3620, level=100, star=0
+},
+	[65281]={ tid=4606, level=100, star=0
+},
+	[65282]={ tid=3227, level=100, star=0
+},
+	[65283]={ tid=4602, level=100, star=0
+},
+	[65284]={ tid=3612, level=100, star=0
+},
+	[65285]={ tid=3603, level=100, star=0
+},
+	[65286]={ tid=3617, level=100, star=0
+},
+	[65287]={ tid=4614, level=100, star=0
+},
+	[65288]={ tid=3215, level=100, star=0
+},
+	[65289]={ tid=4614, level=100, star=0
+},
+	[65290]={ tid=3212, level=100, star=0
+},
+	[65291]={ tid=4209, level=100, star=0
+},
+	[65292]={ tid=3609, level=100, star=0
+},
+	[65293]={ tid=4212, level=100, star=0
+},
+	[65294]={ tid=3216, level=100, star=0
+},
+	[65295]={ tid=3218, level=100, star=0
+},
+	[65296]={ tid=4644, level=100, star=0
+},
+	[65297]={ tid=3606, level=100, star=0
+},
+	[65298]={ tid=4620, level=100, star=0
+},
+	[65299]={ tid=3614, level=100, star=0
+},
+	[65300]={ tid=3202, level=100, star=0
+},
+	[65301]={ tid=3601, level=100, star=0
+},
+	[65302]={ tid=4617, level=100, star=0
+},
+	[65303]={ tid=4641, level=100, star=0
+},
+	[65304]={ tid=3620, level=100, star=0
+},
+	[65305]={ tid=3634, level=100, star=0
+},
+	[65306]={ tid=3229, level=100, star=0
+},
+	[65307]={ tid=3611, level=100, star=0
+},
+	[65308]={ tid=4227, level=100, star=0
+},
+	[65309]={ tid=3613, level=100, star=0
+},
+	[65310]={ tid=4221, level=100, star=0
+},
+	[65311]={ tid=3605, level=100, star=0
+},
+	[65312]={ tid=4638, level=100, star=0
+},
+	[65313]={ tid=3623, level=100, star=0
+},
+	[65314]={ tid=4237, level=100, star=0
+},
+	[65315]={ tid=3616, level=100, star=0
+},
+	[65316]={ tid=3208, level=100, star=0
+},
+	[65317]={ tid=4230, level=100, star=0
+},
+	[65318]={ tid=4631, level=100, star=0
+},
+	[65319]={ tid=3630, level=100, star=0
+},
+	[65320]={ tid=3622, level=100, star=0
+},
+	[65321]={ tid=4618, level=100, star=0
+},
+	[65322]={ tid=3610, level=100, star=0
+},
+	[65323]={ tid=4620, level=100, star=0
+},
+	[65324]={ tid=3606, level=100, star=0
+},
+	[65325]={ tid=3613, level=100, star=0
+},
+	[65326]={ tid=3611, level=100, star=0
+},
+	[65327]={ tid=3208, level=100, star=0
+},
+	[65328]={ tid=4609, level=100, star=0
+},
+	[65329]={ tid=3209, level=100, star=0
+},
+	[65330]={ tid=4604, level=100, star=0
+},
+	[65331]={ tid=4616, level=100, star=0
+},
+	[65332]={ tid=3608, level=100, star=0
+},
+	[65333]={ tid=4619, level=100, star=0
+},
+	[65334]={ tid=3212, level=100, star=0
+},
+	[65335]={ tid=3213, level=100, star=0
+},
+	[65336]={ tid=3212, level=100, star=0
+},
+	[65337]={ tid=4214, level=100, star=0
+},
+	[65338]={ tid=3218, level=100, star=0
+},
+	[65339]={ tid=4206, level=100, star=0
+},
+	[65340]={ tid=3215, level=100, star=0
+},
+	[65341]={ tid=4623, level=100, star=0
+},
+	[65342]={ tid=3629, level=100, star=0
+},
+	[65343]={ tid=4609, level=100, star=0
+},
+	[65344]={ tid=3602, level=100, star=0
+},
+	[65345]={ tid=3632, level=100, star=0
+},
+	[65346]={ tid=3631, level=100, star=0
+},
+	[65347]={ tid=3622, level=100, star=0
+},
+	[65348]={ tid=4625, level=100, star=0
+},
+	[65349]={ tid=3602, level=100, star=0
+},
+	[65350]={ tid=4211, level=100, star=0
+},
+	[65351]={ tid=4202, level=100, star=0
+},
+	[65352]={ tid=3230, level=100, star=0
+},
+	[65353]={ tid=4233, level=100, star=0
+},
+	[65354]={ tid=3201, level=100, star=0
+},
+	[65355]={ tid=3615, level=100, star=0
+},
+	[65356]={ tid=4617, level=100, star=0
+},
+	[65357]={ tid=3612, level=100, star=0
+},
+	[65358]={ tid=4635, level=100, star=0
+},
+	[65359]={ tid=3202, level=100, star=0
+},
+	[65360]={ tid=3213, level=100, star=0
+},
+	[65361]={ tid=4237, level=100, star=0
+},
+	[65362]={ tid=3603, level=100, star=0
+},
+	[65363]={ tid=3602, level=100, star=0
+},
+	[65364]={ tid=4642, level=100, star=0
+},
+	[65365]={ tid=3606, level=100, star=0
+},
+	[65366]={ tid=4611, level=100, star=0
+},
+	[65367]={ tid=3625, level=100, star=0
+},
+	[65368]={ tid=4620, level=100, star=0
+},
+	[65369]={ tid=3601, level=100, star=0
+},
+	[65370]={ tid=3229, level=100, star=0
+},
+	[65376]={ tid=4608, level=85, star=0
+},
+	[65377]={ tid=4608, level=85, star=0
+},
+	[65378]={ tid=4603, level=85, star=0
+},
+	[65379]={ tid=3610, level=85, star=0
+},
+	[65380]={ tid=3632, level=85, star=0
+},
+	[65381]={ tid=4221, level=85, star=0
+},
+	[65382]={ tid=3210, level=85, star=0
+},
+	[65383]={ tid=4213, level=85, star=0
+},
+	[65384]={ tid=3210, level=85, star=0
+},
+	[65385]={ tid=4608, level=85, star=0
+},
+	[65386]={ tid=3218, level=85, star=0
+},
+	[65387]={ tid=3230, level=85, star=0
+},
+	[65388]={ tid=4206, level=85, star=0
+},
+	[65389]={ tid=4221, level=85, star=0
+},
+	[65390]={ tid=4235, level=85, star=0
+},
+	[65391]={ tid=3214, level=85, star=0
+},
+	[65392]={ tid=4602, level=85, star=0
+},
+	[65393]={ tid=4211, level=85, star=0
+},
+	[65394]={ tid=3601, level=85, star=0
+},
+	[65395]={ tid=4644, level=85, star=0
+},
+	[65396]={ tid=4631, level=85, star=0
+},
+	[65397]={ tid=4631, level=85, star=0
+},
+	[65398]={ tid=4232, level=85, star=0
+},
+	[65399]={ tid=3209, level=85, star=0
+},
+	[65400]={ tid=3210, level=85, star=0
+},
+	[65401]={ tid=3226, level=85, star=0
+},
+	[65402]={ tid=4235, level=85, star=0
+},
+	[65403]={ tid=4238, level=85, star=0
+},
+	[65404]={ tid=3209, level=85, star=0
+},
+	[65405]={ tid=4215, level=85, star=0
+},
+	[65406]={ tid=3609, level=85, star=0
+},
+	[65407]={ tid=4217, level=85, star=0
+},
+	[65408]={ tid=4640, level=85, star=0
+},
+	[65409]={ tid=4221, level=85, star=0
+},
+	[65410]={ tid=3218, level=85, star=0
+},
+	[65411]={ tid=3633, level=85, star=0
+},
+	[65412]={ tid=4614, level=85, star=0
+},
+	[65413]={ tid=4616, level=85, star=0
+},
+	[65414]={ tid=4617, level=85, star=0
+},
+	[65415]={ tid=3621, level=85, star=0
+},
+	[65416]={ tid=3214, level=85, star=0
+},
+	[65417]={ tid=3205, level=85, star=0
+},
+	[65418]={ tid=4218, level=85, star=0
+},
+	[65419]={ tid=4226, level=85, star=0
+},
+	[65420]={ tid=4209, level=85, star=0
+},
+	[65421]={ tid=4232, level=85, star=0
+},
+	[65422]={ tid=4242, level=85, star=0
+},
+	[65423]={ tid=3611, level=85, star=0
+},
+	[65424]={ tid=3210, level=85, star=0
+},
+	[65425]={ tid=4622, level=85, star=0
+},
+	[65426]={ tid=4204, level=85, star=0
+},
+	[65427]={ tid=3229, level=85, star=0
+},
+	[65428]={ tid=4606, level=85, star=0
+},
+	[65429]={ tid=4625, level=85, star=0
+},
+	[65430]={ tid=3604, level=85, star=0
+},
+	[65431]={ tid=4619, level=85, star=0
+},
+	[65432]={ tid=3621, level=85, star=0
+},
+	[65433]={ tid=4211, level=85, star=0
+},
+	[65434]={ tid=3627, level=85, star=0
+},
+	[65435]={ tid=4615, level=85, star=0
+},
+	[65436]={ tid=3230, level=85, star=0
+},
+	[65437]={ tid=4222, level=85, star=0
+},
+	[65438]={ tid=4210, level=85, star=0
+},
+	[65439]={ tid=3616, level=85, star=0
+},
+	[65440]={ tid=4625, level=85, star=0
+},
+	[65441]={ tid=4632, level=85, star=0
+},
+	[65442]={ tid=4201, level=85, star=0
+},
+	[65443]={ tid=4237, level=85, star=0
+},
+	[65444]={ tid=3215, level=85, star=0
+},
+	[65445]={ tid=3604, level=85, star=0
+},
+	[65446]={ tid=4623, level=85, star=0
+},
+	[65447]={ tid=4607, level=85, star=0
+},
+	[65448]={ tid=4615, level=85, star=0
+},
+	[65449]={ tid=3613, level=85, star=0
+},
+	[65450]={ tid=3626, level=85, star=0
+},
+	[65451]={ tid=4204, level=85, star=0
+},
+	[65452]={ tid=4622, level=85, star=0
+},
+	[65453]={ tid=4238, level=85, star=0
+},
+	[65454]={ tid=3212, level=85, star=0
+},
+	[65455]={ tid=3217, level=85, star=0
+},
+	[65456]={ tid=4227, level=85, star=0
+},
+	[65457]={ tid=3211, level=85, star=0
+},
+	[65458]={ tid=4237, level=85, star=0
+},
+	[65459]={ tid=3207, level=85, star=0
+},
+	[65460]={ tid=4620, level=85, star=0
+},
+	[65461]={ tid=4630, level=85, star=0
+},
+	[65462]={ tid=4203, level=85, star=0
+},
+	[65463]={ tid=3205, level=85, star=0
+},
+	[65464]={ tid=4629, level=85, star=0
+},
+	[65465]={ tid=3607, level=85, star=0
+},
+	[65471]={ tid=3627, level=100, star=0
+},
+	[65472]={ tid=4608, level=100, star=0
+},
+	[65473]={ tid=4622, level=100, star=0
+},
+	[65474]={ tid=4618, level=100, star=0
+},
+	[65475]={ tid=3624, level=100, star=0
+},
+	[65476]={ tid=3601, level=100, star=0
+},
+	[65477]={ tid=4640, level=100, star=0
+},
+	[65478]={ tid=4636, level=100, star=0
+},
+	[65479]={ tid=4601, level=100, star=0
+},
+	[65480]={ tid=3624, level=100, star=0
+},
+	[65481]={ tid=4232, level=100, star=0
+},
+	[65482]={ tid=4222, level=100, star=0
+},
+	[65483]={ tid=3229, level=100, star=0
+},
+	[65484]={ tid=4207, level=100, star=0
+},
+	[65485]={ tid=3207, level=100, star=0
+},
+	[65486]={ tid=4238, level=100, star=0
+},
+	[65487]={ tid=3209, level=100, star=0
+},
+	[65488]={ tid=4204, level=100, star=0
+},
+	[65489]={ tid=3211, level=100, star=0
+},
+	[65490]={ tid=4627, level=100, star=0
+},
+	[65491]={ tid=3207, level=100, star=0
+},
+	[65492]={ tid=4615, level=100, star=0
+},
+	[65493]={ tid=3610, level=100, star=0
+},
+	[65494]={ tid=4229, level=100, star=0
+},
+	[65495]={ tid=4616, level=100, star=0
+},
+	[65496]={ tid=4235, level=100, star=0
+},
+	[65497]={ tid=4621, level=100, star=0
+},
+	[65498]={ tid=4235, level=100, star=0
+},
+	[65499]={ tid=3211, level=100, star=0
+},
+	[65500]={ tid=3205, level=100, star=0
+},
+	[65501]={ tid=4602, level=100, star=0
+},
+	[65502]={ tid=4229, level=100, star=0
+},
+	[65503]={ tid=3207, level=100, star=0
+},
+	[65504]={ tid=4620, level=100, star=0
+},
+	[65505]={ tid=3624, level=100, star=0
+},
+	[65506]={ tid=3208, level=100, star=0
+},
+	[65507]={ tid=3202, level=100, star=0
+},
+	[65508]={ tid=4214, level=100, star=0
+},
+	[65509]={ tid=4224, level=100, star=0
+},
+	[65510]={ tid=4220, level=100, star=0
+},
+	[65511]={ tid=3211, level=100, star=0
+},
+	[65512]={ tid=4240, level=100, star=0
+},
+	[65513]={ tid=4229, level=100, star=0
+},
+	[65514]={ tid=3217, level=100, star=0
+},
+	[65515]={ tid=4232, level=100, star=0
+},
+	[65516]={ tid=3605, level=100, star=0
+},
+	[65517]={ tid=4218, level=100, star=0
+},
+	[65518]={ tid=4614, level=100, star=0
+},
+	[65519]={ tid=4203, level=100, star=0
+},
+	[65520]={ tid=3210, level=100, star=0
+},
+	[65521]={ tid=3202, level=100, star=0
+},
+	[65522]={ tid=4222, level=100, star=0
+},
+	[65523]={ tid=4234, level=100, star=0
+},
+	[65524]={ tid=3225, level=100, star=0
+},
+	[65525]={ tid=4213, level=100, star=0
+},
+	[65526]={ tid=4641, level=100, star=0
+},
+	[65527]={ tid=4634, level=100, star=0
+},
+	[65528]={ tid=4221, level=100, star=0
+},
+	[65529]={ tid=3202, level=100, star=0
+},
+	[65530]={ tid=3227, level=100, star=0
+},
+	[65531]={ tid=3217, level=100, star=0
+},
+	[65532]={ tid=4209, level=100, star=0
+},
+	[65533]={ tid=4239, level=100, star=0
+},
+	[65534]={ tid=3604, level=100, star=0
+},
+	[65535]={ tid=4646, level=100, star=0
+},
+	[65536]={ tid=4240, level=100, star=0
+},
+	[65537]={ tid=4218, level=100, star=0
+},
+	[65538]={ tid=3203, level=100, star=0
+},
+	[65539]={ tid=4225, level=100, star=0
+},
+	[65540]={ tid=3215, level=100, star=0
+},
+	[65541]={ tid=3603, level=100, star=0
+},
+	[65542]={ tid=4615, level=100, star=0
+},
+	[65543]={ tid=4617, level=100, star=0
+},
+	[65544]={ tid=4627, level=100, star=0
+},
+	[65545]={ tid=3605, level=100, star=0
+},
+	[65546]={ tid=4643, level=100, star=0
+},
+	[65547]={ tid=4626, level=100, star=0
+},
+	[65548]={ tid=4625, level=100, star=0
+},
+	[65549]={ tid=3630, level=100, star=0
+},
+	[65550]={ tid=3620, level=100, star=0
+},
+	[65551]={ tid=4638, level=100, star=0
+},
+	[65552]={ tid=4606, level=100, star=0
+},
+	[65553]={ tid=4238, level=100, star=0
+},
+	[65554]={ tid=3229, level=100, star=0
+},
+	[65555]={ tid=3202, level=100, star=0
+},
+	[65556]={ tid=3613, level=100, star=0
+},
+	[65557]={ tid=4639, level=100, star=0
+},
+	[65558]={ tid=4627, level=100, star=0
+},
+	[65559]={ tid=3616, level=100, star=0
+},
+	[65560]={ tid=4607, level=100, star=0
+},
+	[65561]={ tid=3225, level=100, star=0
+},
+	[65562]={ tid=4238, level=100, star=0
+},
+	[65563]={ tid=4223, level=100, star=0
+},
+	[65564]={ tid=3228, level=100, star=0
+},
+	[65565]={ tid=4236, level=100, star=0
+},
+	[65566]={ tid=3604, level=100, star=0
+},
+	[65567]={ tid=4228, level=100, star=0
+},
+	[65568]={ tid=4602, level=100, star=0
+},
+	[65569]={ tid=4218, level=100, star=0
+},
+	[65570]={ tid=3226, level=100, star=0
+},
+	[65571]={ tid=3616, level=100, star=0
+},
+	[65572]={ tid=4623, level=100, star=0
+},
+	[65573]={ tid=4605, level=100, star=0
+},
+	[65574]={ tid=4646, level=100, star=0
+},
+	[65575]={ tid=3611, level=100, star=0
+},
+	[65576]={ tid=4216, level=100, star=0
+},
+	[65577]={ tid=3204, level=100, star=0
+},
+	[65578]={ tid=4616, level=100, star=0
+},
+	[65579]={ tid=4626, level=100, star=0
+},
+	[65580]={ tid=3615, level=100, star=0
+},
+	[65581]={ tid=3630, level=100, star=0
+},
+	[65582]={ tid=4645, level=100, star=0
+},
+	[65583]={ tid=4616, level=100, star=0
+},
+	[65584]={ tid=3621, level=100, star=0
+},
+	[65585]={ tid=4607, level=100, star=0
+},
+	[65586]={ tid=3225, level=100, star=0
+},
+	[65587]={ tid=4240, level=100, star=0
+},
+	[65588]={ tid=4237, level=100, star=0
+},
+	[65589]={ tid=3202, level=100, star=0
+},
+	[65590]={ tid=4209, level=100, star=0
+},
+	[65596]={ tid=4228, level=110, star=0
+},
+	[65597]={ tid=4605, level=110, star=0
+},
+	[65598]={ tid=3615, level=110, star=0
+},
+	[65599]={ tid=3215, level=110, star=0
+},
+	[65600]={ tid=4644, level=110, star=0
+},
+	[65601]={ tid=4608, level=110, star=0
+},
+	[65602]={ tid=4207, level=110, star=0
+},
+	[65603]={ tid=3212, level=110, star=0
+},
+	[65604]={ tid=4607, level=110, star=0
+},
+	[65605]={ tid=3621, level=110, star=0
+},
+	[65606]={ tid=4617, level=110, star=0
+},
+	[65607]={ tid=4241, level=110, star=0
+},
+	[65608]={ tid=3208, level=110, star=0
+},
+	[65609]={ tid=4233, level=110, star=0
+},
+	[65610]={ tid=3606, level=110, star=0
+},
+	[65611]={ tid=3609, level=110, star=0
+},
+	[65612]={ tid=4633, level=110, star=0
+},
+	[65613]={ tid=4603, level=110, star=0
+},
+	[65614]={ tid=4220, level=110, star=0
+},
+	[65615]={ tid=3229, level=110, star=0
+},
+	[65616]={ tid=4210, level=110, star=0
+},
+	[65617]={ tid=3228, level=110, star=0
+},
+	[65618]={ tid=4219, level=110, star=0
+},
+	[65619]={ tid=3211, level=110, star=0
+},
+	[65620]={ tid=4620, level=110, star=0
+},
+	[65621]={ tid=4226, level=110, star=0
+},
+	[65622]={ tid=4236, level=110, star=0
+},
+	[65623]={ tid=3226, level=110, star=0
+},
+	[65624]={ tid=4240, level=110, star=0
+},
+	[65625]={ tid=3203, level=110, star=0
+},
+	[65626]={ tid=3226, level=110, star=0
+},
+	[65627]={ tid=4214, level=110, star=0
+},
+	[65628]={ tid=3608, level=110, star=0
+},
+	[65629]={ tid=4221, level=110, star=0
+},
+	[65630]={ tid=4628, level=110, star=0
+},
+	[65631]={ tid=4205, level=110, star=0
+},
+	[65632]={ tid=3216, level=110, star=0
+},
+	[65633]={ tid=4622, level=110, star=0
+},
+	[65634]={ tid=4619, level=110, star=0
+},
+	[65635]={ tid=3607, level=110, star=0
+},
+	[65636]={ tid=4620, level=110, star=0
+},
+	[65637]={ tid=4215, level=110, star=0
+},
+	[65638]={ tid=4616, level=110, star=0
+},
+	[65639]={ tid=3214, level=110, star=0
+},
+	[65640]={ tid=3629, level=110, star=0
+},
+	[65641]={ tid=3633, level=110, star=0
+},
+	[65642]={ tid=4215, level=110, star=0
+},
+	[65643]={ tid=4601, level=110, star=0
+},
+	[65644]={ tid=4220, level=110, star=0
+},
+	[65645]={ tid=3225, level=110, star=0
+},
+	[65646]={ tid=4642, level=110, star=0
+},
+	[65647]={ tid=4638, level=110, star=0
+},
+	[65648]={ tid=4220, level=110, star=0
+},
+	[65649]={ tid=3212, level=110, star=0
+},
+	[65650]={ tid=3225, level=110, star=0
+},
+	[65651]={ tid=4228, level=110, star=0
+},
+	[65652]={ tid=4228, level=110, star=0
+},
+	[65653]={ tid=4211, level=110, star=0
+},
+	[65654]={ tid=3206, level=110, star=0
+},
+	[65655]={ tid=3213, level=110, star=0
+},
+	[65656]={ tid=3623, level=110, star=0
+},
+	[65657]={ tid=4626, level=110, star=0
+},
+	[65658]={ tid=4646, level=110, star=0
+},
+	[65659]={ tid=3609, level=110, star=0
+},
+	[65660]={ tid=4641, level=110, star=0
+},
+	[65661]={ tid=4641, level=110, star=0
+},
+	[65662]={ tid=3608, level=110, star=0
+},
+	[65663]={ tid=4217, level=110, star=0
+},
+	[65664]={ tid=3612, level=110, star=0
+},
+	[65665]={ tid=4614, level=110, star=0
+},
+	[65666]={ tid=3624, level=110, star=0
+},
+	[65667]={ tid=3606, level=110, star=0
+},
+	[65668]={ tid=4604, level=110, star=0
+},
+	[65669]={ tid=4634, level=110, star=0
+},
+	[65670]={ tid=4633, level=110, star=0
+},
+	[65671]={ tid=4634, level=110, star=0
+},
+	[65672]={ tid=4228, level=110, star=0
+},
+	[65673]={ tid=4206, level=110, star=0
+},
+	[65674]={ tid=3203, level=110, star=0
+},
+	[65675]={ tid=3607, level=110, star=0
+},
+	[65676]={ tid=4213, level=110, star=0
+},
+	[65677]={ tid=3203, level=110, star=0
+},
+	[65678]={ tid=4227, level=110, star=0
+},
+	[65679]={ tid=3226, level=110, star=0
+},
+	[65680]={ tid=4636, level=110, star=0
+},
+	[65681]={ tid=4240, level=110, star=0
+},
+	[65682]={ tid=4628, level=110, star=0
+},
+	[65683]={ tid=3604, level=110, star=0
+},
+	[65684]={ tid=3201, level=110, star=0
+},
+	[65685]={ tid=4605, level=110, star=0
+},
+	[65686]={ tid=3230, level=110, star=0
+},
+	[65687]={ tid=4632, level=110, star=0
+},
+	[65688]={ tid=3603, level=110, star=0
+},
+	[65689]={ tid=4238, level=110, star=0
+},
+	[65690]={ tid=4603, level=110, star=0
+},
+	[65691]={ tid=3216, level=110, star=0
+},
+	[65692]={ tid=4211, level=110, star=0
+},
+	[65693]={ tid=4226, level=110, star=0
+},
+	[65694]={ tid=3210, level=110, star=0
+},
+	[65695]={ tid=4222, level=110, star=0
+},
+	[65696]={ tid=3218, level=110, star=0
+},
+	[65697]={ tid=4620, level=110, star=0
+},
+	[65698]={ tid=4241, level=110, star=0
+},
+	[65699]={ tid=3617, level=110, star=0
+},
+	[65700]={ tid=4615, level=110, star=0
+},
+	[65701]={ tid=3627, level=110, star=0
+},
+	[65702]={ tid=4639, level=110, star=0
+},
+	[65703]={ tid=4637, level=110, star=0
+},
+	[65704]={ tid=4636, level=110, star=0
+},
+	[65705]={ tid=3602, level=110, star=0
+},
+	[65706]={ tid=4205, level=110, star=0
+},
+	[65707]={ tid=4225, level=110, star=0
+},
+	[65708]={ tid=4240, level=110, star=0
+},
+	[65709]={ tid=3211, level=110, star=0
+},
+	[65710]={ tid=3217, level=110, star=0
+},
+	[65711]={ tid=4219, level=110, star=0
+},
+	[65712]={ tid=4239, level=110, star=0
+},
+	[65713]={ tid=4222, level=110, star=0
+},
+	[65714]={ tid=3207, level=110, star=0
+},
+	[65715]={ tid=3209, level=110, star=0
+},
+	[65716]={ tid=4637, level=110, star=0
+},
+	[65717]={ tid=4238, level=110, star=0
+},
+	[65718]={ tid=4242, level=110, star=0
+},
+	[65719]={ tid=3216, level=110, star=0
+},
+	[65720]={ tid=3620, level=110, star=0
+},
+	[65721]={ tid=4633, level=110, star=0
+},
+	[65722]={ tid=4613, level=110, star=0
+},
+	[65723]={ tid=4633, level=110, star=0
+},
+	[65724]={ tid=3615, level=110, star=0
+},
+	[65725]={ tid=3624, level=110, star=0
+},
+	[65726]={ tid=4202, level=110, star=0
+},
+	[65727]={ tid=3204, level=110, star=0
+},
+	[65728]={ tid=4644, level=110, star=0
+},
+	[65729]={ tid=4645, level=110, star=0
+},
+	[65730]={ tid=3609, level=110, star=0
+},
+	[65731]={ tid=4213, level=110, star=0
+},
+	[65732]={ tid=3228, level=110, star=0
+},
+	[65733]={ tid=4209, level=110, star=0
+},
+	[65734]={ tid=4610, level=110, star=0
+},
+	[65735]={ tid=3606, level=110, star=0
+},
+	[65736]={ tid=4222, level=110, star=0
+},
+	[65737]={ tid=4209, level=110, star=0
+},
+	[65738]={ tid=4213, level=110, star=0
+},
+	[65739]={ tid=3213, level=110, star=0
+},
+	[65740]={ tid=3225, level=110, star=0
+},
+	[65741]={ tid=4617, level=110, star=0
+},
+	[65742]={ tid=4226, level=110, star=0
+},
+	[65743]={ tid=4637, level=110, star=0
+},
+	[65744]={ tid=3207, level=110, star=0
+},
+	[65745]={ tid=3634, level=110, star=0
+},
+	[65751]={ tid=4238, level=90, star=0
+},
+	[65752]={ tid=3620, level=90, star=0
+},
+	[65753]={ tid=4205, level=90, star=0
+},
+	[65754]={ tid=3209, level=90, star=0
+},
+	[65755]={ tid=5011, level=90, star=0
+},
+	[65756]={ tid=5081, level=110, star=0
+},
+	[65757]={ tid=4637, level=110, star=0
+},
+	[65758]={ tid=4615, level=110, star=0
+},
+	[65759]={ tid=3616, level=110, star=0
+},
+	[65760]={ tid=3604, level=110, star=0
+},
+	[65761]={ tid=4631, level=110, star=0
+},
+	[65762]={ tid=4238, level=110, star=0
+},
+	[65763]={ tid=5081, level=110, star=0
+},
+	[65764]={ tid=4229, level=110, star=0
+},
+	[65765]={ tid=3618, level=110, star=0
+},
+	[65766]={ tid=4614, level=120, star=0
+},
+	[65767]={ tid=3624, level=120, star=0
+},
+	[65768]={ tid=4202, level=120, star=0
+},
+	[65769]={ tid=3615, level=120, star=0
+},
+	[65770]={ tid=5071, level=120, star=0
+},
+	[65771]={ tid=3230, level=120, star=0
+},
+	[65772]={ tid=4222, level=120, star=0
+},
+	[65773]={ tid=5071, level=120, star=0
+},
+	[65774]={ tid=4231, level=120, star=0
+},
+	[65775]={ tid=4618, level=120, star=0
+},
+	[65776]={ tid=4235, level=130, star=0
+},
+	[65777]={ tid=4217, level=130, star=0
+},
+	[65778]={ tid=5101, level=130, star=0
+},
+	[65779]={ tid=3218, level=130, star=0
+},
+	[65780]={ tid=3227, level=130, star=0
+},
+	[65781]={ tid=5101, level=130, star=0
+},
+	[65782]={ tid=4214, level=130, star=0
+},
+	[65783]={ tid=4228, level=130, star=0
+},
+	[65784]={ tid=4216, level=130, star=0
+},
+	[65785]={ tid=3227, level=130, star=0
+},
+	[65791]={ tid=4636, level=85, star=0
+},
+	[65792]={ tid=4614, level=85, star=0
+},
+	[65793]={ tid=4644, level=85, star=0
+},
+	[65794]={ tid=3612, level=85, star=0
+},
+	[65795]={ tid=3627, level=85, star=0
+},
+	[65796]={ tid=3206, level=85, star=0
+},
+	[65797]={ tid=4213, level=85, star=0
+},
+	[65798]={ tid=4231, level=85, star=0
+},
+	[65799]={ tid=3230, level=85, star=0
+},
+	[65800]={ tid=4206, level=85, star=0
+},
+	[65801]={ tid=3630, level=85, star=0
+},
+	[65802]={ tid=4220, level=85, star=0
+},
+	[65803]={ tid=4640, level=85, star=0
+},
+	[65804]={ tid=4234, level=85, star=0
+},
+	[65805]={ tid=3230, level=85, star=0
+},
+	[65806]={ tid=4213, level=85, star=0
+},
+	[65807]={ tid=4212, level=85, star=0
+},
+	[65808]={ tid=4237, level=85, star=0
+},
+	[65809]={ tid=3208, level=85, star=0
+},
+	[65810]={ tid=3216, level=85, star=0
+},
+	[65811]={ tid=3633, level=85, star=0
+},
+	[65812]={ tid=4624, level=85, star=0
+},
+	[65813]={ tid=4610, level=85, star=0
+},
+	[65814]={ tid=3624, level=85, star=0
+},
+	[65815]={ tid=4623, level=85, star=0
+},
+	[65816]={ tid=4617, level=85, star=0
+},
+	[65817]={ tid=3610, level=85, star=0
+},
+	[65818]={ tid=4227, level=85, star=0
+},
+	[65819]={ tid=3607, level=85, star=0
+},
+	[65820]={ tid=4207, level=85, star=0
+},
+	[65821]={ tid=3615, level=85, star=0
+},
+	[65822]={ tid=4603, level=85, star=0
+},
+	[65823]={ tid=4634, level=85, star=0
+},
+	[65824]={ tid=3602, level=85, star=0
+},
+	[65825]={ tid=4621, level=85, star=0
+},
+	[65826]={ tid=4636, level=85, star=0
+},
+	[65827]={ tid=4626, level=85, star=0
+},
+	[65828]={ tid=3607, level=85, star=0
+},
+	[65829]={ tid=4635, level=85, star=0
+},
+	[65830]={ tid=3605, level=85, star=0
+},
+	[65836]={ tid=4235, level=100, star=0
+},
+	[65837]={ tid=3206, level=100, star=0
+},
+	[65838]={ tid=4242, level=100, star=0
+},
+	[65839]={ tid=4626, level=100, star=0
+},
+	[65840]={ tid=3621, level=100, star=0
+},
+	[65841]={ tid=3218, level=100, star=0
+},
+	[65842]={ tid=4645, level=100, star=0
+},
+	[65843]={ tid=4218, level=100, star=0
+},
+	[65844]={ tid=3610, level=100, star=0
+},
+	[65845]={ tid=4621, level=100, star=0
+},
+	[65846]={ tid=3605, level=100, star=0
+},
+	[65847]={ tid=3612, level=100, star=0
+},
+	[65848]={ tid=4643, level=100, star=0
+},
+	[65849]={ tid=4623, level=100, star=0
+},
+	[65850]={ tid=4640, level=100, star=0
+},
+	[65851]={ tid=3206, level=100, star=0
+},
+	[65852]={ tid=4229, level=100, star=0
+},
+	[65853]={ tid=4229, level=100, star=0
+},
+	[65854]={ tid=3627, level=100, star=0
+},
+	[65855]={ tid=4611, level=100, star=0
+},
+	[65856]={ tid=4237, level=100, star=0
+},
+	[65857]={ tid=3226, level=100, star=0
+},
+	[65858]={ tid=4633, level=100, star=0
+},
+	[65859]={ tid=3212, level=100, star=0
+},
+	[65860]={ tid=4606, level=100, star=0
+},
+	[65861]={ tid=3230, level=100, star=0
+},
+	[65862]={ tid=4204, level=100, star=0
+},
+	[65863]={ tid=4242, level=100, star=0
+},
+	[65864]={ tid=3215, level=100, star=0
+},
+	[65865]={ tid=4229, level=100, star=0
+},
+	[65866]={ tid=3207, level=100, star=0
+},
+	[65867]={ tid=4212, level=100, star=0
+},
+	[65868]={ tid=3610, level=100, star=0
+},
+	[65869]={ tid=4212, level=100, star=0
+},
+	[65870]={ tid=4635, level=100, star=0
+},
+	[65871]={ tid=3218, level=100, star=0
+},
+	[65872]={ tid=4213, level=100, star=0
+},
+	[65873]={ tid=4241, level=100, star=0
+},
+	[65874]={ tid=4214, level=100, star=0
+},
+	[65875]={ tid=3214, level=100, star=0
+},
+	[65876]={ tid=4218, level=100, star=0
+},
+	[65877]={ tid=4642, level=100, star=0
+},
+	[65878]={ tid=3614, level=100, star=0
+},
+	[65879]={ tid=3204, level=100, star=0
+},
+	[65880]={ tid=4644, level=100, star=0
+},
+	[65881]={ tid=4208, level=100, star=0
+},
+	[65882]={ tid=3225, level=100, star=0
+},
+	[65883]={ tid=4622, level=100, star=0
+},
+	[65884]={ tid=4616, level=100, star=0
+},
+	[65885]={ tid=3606, level=100, star=0
+},
+	[65886]={ tid=4208, level=100, star=0
+},
+	[65887]={ tid=4234, level=100, star=0
+},
+	[65888]={ tid=3227, level=100, star=0
+},
+	[65889]={ tid=4232, level=100, star=0
+},
+	[65890]={ tid=3206, level=100, star=0
+},
+	[65891]={ tid=3230, level=100, star=0
+},
+	[65892]={ tid=4215, level=100, star=0
+},
+	[65893]={ tid=4235, level=100, star=0
+},
+	[65894]={ tid=3229, level=100, star=0
+},
+	[65895]={ tid=4228, level=100, star=0
+},
+	[65901]={ tid=3216, level=110, star=0
+},
+	[65902]={ tid=4640, level=110, star=0
+},
+	[65903]={ tid=3610, level=110, star=0
+},
+	[65904]={ tid=4213, level=110, star=0
+},
+	[65905]={ tid=4641, level=110, star=0
+},
+	[65906]={ tid=4637, level=110, star=0
+},
+	[65907]={ tid=4638, level=110, star=0
+},
+	[65908]={ tid=3615, level=110, star=0
+},
+	[65909]={ tid=4621, level=110, star=0
+},
+	[65910]={ tid=3606, level=110, star=0
+},
+	[65911]={ tid=4218, level=110, star=0
+},
+	[65912]={ tid=4220, level=110, star=0
+},
+	[65913]={ tid=3207, level=110, star=0
+},
+	[65914]={ tid=4229, level=110, star=0
+},
+	[65915]={ tid=3201, level=110, star=0
+},
+	[65916]={ tid=4640, level=110, star=0
+},
+	[65917]={ tid=4226, level=110, star=0
+},
+	[65918]={ tid=4206, level=110, star=0
+},
+	[65919]={ tid=3208, level=110, star=0
+},
+	[65920]={ tid=3608, level=110, star=0
+},
+	[65921]={ tid=4628, level=110, star=0
+},
+	[65922]={ tid=4622, level=110, star=0
+},
+	[65923]={ tid=4625, level=110, star=0
+},
+	[65924]={ tid=3624, level=110, star=0
+},
+	[65925]={ tid=3609, level=110, star=0
+},
+	[65926]={ tid=3201, level=110, star=0
+},
+	[65927]={ tid=4218, level=110, star=0
+},
+	[65928]={ tid=4239, level=110, star=0
+},
+	[65929]={ tid=3209, level=110, star=0
+},
+	[65930]={ tid=4230, level=110, star=0
+},
+	[65931]={ tid=3210, level=110, star=0
+},
+	[65932]={ tid=4207, level=110, star=0
+},
+	[65933]={ tid=4241, level=110, star=0
+},
+	[65934]={ tid=3227, level=110, star=0
+},
+	[65935]={ tid=4210, level=110, star=0
+},
+	[65936]={ tid=3225, level=110, star=0
+},
+	[65937]={ tid=4217, level=110, star=0
+},
+	[65938]={ tid=4214, level=110, star=0
+},
+	[65939]={ tid=3208, level=110, star=0
+},
+	[65940]={ tid=4238, level=110, star=0
+},
+	[65941]={ tid=4223, level=110, star=0
+},
+	[65942]={ tid=4225, level=110, star=0
+},
+	[65943]={ tid=4227, level=110, star=0
+},
+	[65944]={ tid=3229, level=110, star=0
+},
+	[65945]={ tid=3210, level=110, star=0
+},
+	[65946]={ tid=3620, level=110, star=0
+},
+	[65947]={ tid=4619, level=110, star=0
+},
+	[65948]={ tid=4628, level=110, star=0
+},
+	[65949]={ tid=4645, level=110, star=0
+},
+	[65950]={ tid=3634, level=110, star=0
+},
+	[65951]={ tid=3228, level=110, star=0
+},
+	[65952]={ tid=4237, level=110, star=0
+},
+	[65953]={ tid=4224, level=110, star=0
+},
+	[65954]={ tid=3203, level=110, star=0
+},
+	[65955]={ tid=4241, level=110, star=0
+},
+	[65956]={ tid=4639, level=110, star=0
+},
+	[65957]={ tid=4207, level=110, star=0
+},
+	[65958]={ tid=4617, level=110, star=0
+},
+	[65959]={ tid=3206, level=110, star=0
+},
+	[65960]={ tid=3626, level=110, star=0
+},
+	[65961]={ tid=4645, level=110, star=0
+},
+	[65962]={ tid=3601, level=110, star=0
+},
+	[65963]={ tid=4240, level=110, star=0
+},
+	[65964]={ tid=3630, level=110, star=0
+},
+	[65965]={ tid=4219, level=110, star=0
+},
+	[65966]={ tid=4613, level=110, star=0
+},
+	[65967]={ tid=4236, level=110, star=0
+},
+	[65968]={ tid=3230, level=110, star=0
+},
+	[65969]={ tid=4205, level=110, star=0
+},
+	[65970]={ tid=3634, level=110, star=0
+},
+	[65971]={ tid=4602, level=110, star=0
+},
+	[65972]={ tid=4236, level=110, star=0
+},
+	[65973]={ tid=4211, level=110, star=0
+},
+	[65974]={ tid=3212, level=110, star=0
+},
+	[65975]={ tid=3625, level=110, star=0
+},
+	[65976]={ tid=4626, level=110, star=0
+},
+	[65977]={ tid=4607, level=110, star=0
+},
+	[65978]={ tid=3632, level=110, star=0
+},
+	[65979]={ tid=4618, level=110, star=0
+},
+	[65980]={ tid=3614, level=110, star=0
 },
 	[70000]={ tid=5146, level=60, star=0
 },
@@ -23464,6 +32364,2724 @@ local mon_data=
 	[70022]={ tid=5150, level=120, star=0
 },
 	[70023]={ tid=5151, level=120, star=0
+},
+	[70024]={ tid=4645, level=60, star=0
+},
+	[70025]={ tid=4645, level=80, star=0
+},
+	[70026]={ tid=4645, level=100, star=0
+},
+	[70027]={ tid=4645, level=120, star=0
+},
+	[70100]={ tid=3414, level=80, star=0
+},
+	[70101]={ tid=3418, level=80, star=0
+},
+	[70102]={ tid=3433, level=80, star=0
+},
+	[70103]={ tid=4450, level=80, star=0
+},
+	[70104]={ tid=4414, level=80, star=0
+},
+	[70105]={ tid=3433, level=80, star=0
+},
+	[70106]={ tid=3418, level=80, star=0
+},
+	[70107]={ tid=3436, level=80, star=0
+},
+	[70108]={ tid=4402, level=80, star=0
+},
+	[70109]={ tid=4448, level=80, star=0
+},
+	[70110]={ tid=3404, level=80, star=0
+},
+	[70111]={ tid=3417, level=80, star=0
+},
+	[70112]={ tid=3420, level=80, star=0
+},
+	[70113]={ tid=4418, level=80, star=0
+},
+	[70114]={ tid=4414, level=80, star=0
+},
+	[70115]={ tid=3414, level=80, star=0
+},
+	[70116]={ tid=3420, level=80, star=0
+},
+	[70117]={ tid=3414, level=80, star=0
+},
+	[70118]={ tid=4438, level=80, star=0
+},
+	[70119]={ tid=4414, level=80, star=0
+},
+	[70120]={ tid=3414, level=82, star=0
+},
+	[70121]={ tid=3433, level=82, star=0
+},
+	[70122]={ tid=4444, level=82, star=0
+},
+	[70123]={ tid=4438, level=82, star=0
+},
+	[70124]={ tid=4423, level=82, star=0
+},
+	[70125]={ tid=3416, level=80, star=0
+},
+	[70126]={ tid=3433, level=80, star=0
+},
+	[70127]={ tid=3433, level=80, star=0
+},
+	[70128]={ tid=4438, level=80, star=0
+},
+	[70129]={ tid=4409, level=80, star=0
+},
+	[70130]={ tid=3414, level=84, star=0
+},
+	[70131]={ tid=3404, level=84, star=0
+},
+	[70132]={ tid=3410, level=84, star=0
+},
+	[70133]={ tid=4427, level=84, star=0
+},
+	[70134]={ tid=4405, level=84, star=0
+},
+	[70135]={ tid=3418, level=84, star=0
+},
+	[70136]={ tid=3408, level=84, star=0
+},
+	[70137]={ tid=4448, level=84, star=0
+},
+	[70138]={ tid=4438, level=84, star=0
+},
+	[70139]={ tid=4458, level=84, star=0
+},
+	[70140]={ tid=3404, level=84, star=0
+},
+	[70141]={ tid=3406, level=84, star=0
+},
+	[70142]={ tid=3433, level=84, star=0
+},
+	[70143]={ tid=4405, level=84, star=0
+},
+	[70144]={ tid=4438, level=84, star=0
+},
+	[70145]={ tid=3417, level=84, star=0
+},
+	[70146]={ tid=3436, level=84, star=0
+},
+	[70147]={ tid=4438, level=84, star=0
+},
+	[70148]={ tid=4414, level=84, star=0
+},
+	[70149]={ tid=4412, level=84, star=0
+},
+	[70150]={ tid=3428, level=85, star=0
+},
+	[70151]={ tid=3414, level=85, star=0
+},
+	[70152]={ tid=4430, level=85, star=0
+},
+	[70153]={ tid=4439, level=85, star=0
+},
+	[70154]={ tid=5111, level=85, star=0
+},
+	[70155]={ tid=3412, level=79, star=0
+},
+	[70156]={ tid=3436, level=79, star=0
+},
+	[70157]={ tid=3436, level=79, star=0
+},
+	[70158]={ tid=4442, level=79, star=0
+},
+	[70159]={ tid=4448, level=79, star=0
+},
+	[70160]={ tid=3428, level=79, star=0
+},
+	[70161]={ tid=3414, level=79, star=0
+},
+	[70162]={ tid=3422, level=79, star=0
+},
+	[70163]={ tid=4423, level=79, star=0
+},
+	[70164]={ tid=4444, level=79, star=0
+},
+	[70165]={ tid=3424, level=80, star=0
+},
+	[70166]={ tid=3404, level=80, star=0
+},
+	[70167]={ tid=3418, level=80, star=0
+},
+	[70168]={ tid=4412, level=80, star=0
+},
+	[70169]={ tid=4442, level=80, star=0
+},
+	[70170]={ tid=3406, level=80, star=0
+},
+	[70171]={ tid=3436, level=80, star=0
+},
+	[70172]={ tid=4402, level=80, star=0
+},
+	[70173]={ tid=4448, level=80, star=0
+},
+	[70174]={ tid=4414, level=80, star=0
+},
+	[70175]={ tid=3421, level=82, star=0
+},
+	[70176]={ tid=3424, level=82, star=0
+},
+	[70177]={ tid=3436, level=82, star=0
+},
+	[70178]={ tid=4423, level=82, star=0
+},
+	[70179]={ tid=4418, level=82, star=0
+},
+	[70180]={ tid=3421, level=84, star=0
+},
+	[70181]={ tid=3428, level=84, star=0
+},
+	[70182]={ tid=4448, level=84, star=0
+},
+	[70183]={ tid=4409, level=84, star=0
+},
+	[70184]={ tid=4405, level=84, star=0
+},
+	[70185]={ tid=3410, level=86, star=0
+},
+	[70186]={ tid=3421, level=86, star=0
+},
+	[70187]={ tid=3428, level=86, star=0
+},
+	[70188]={ tid=4423, level=86, star=0
+},
+	[70189]={ tid=4430, level=86, star=0
+},
+	[70190]={ tid=3418, level=88, star=0
+},
+	[70191]={ tid=3420, level=88, star=0
+},
+	[70192]={ tid=3422, level=88, star=0
+},
+	[70193]={ tid=4405, level=88, star=0
+},
+	[70194]={ tid=4427, level=88, star=0
+},
+	[70195]={ tid=3418, level=88, star=0
+},
+	[70196]={ tid=3412, level=88, star=0
+},
+	[70197]={ tid=3418, level=88, star=0
+},
+	[70198]={ tid=4458, level=88, star=0
+},
+	[70199]={ tid=4458, level=88, star=0
+},
+	[70200]={ tid=3428, level=90, star=0
+},
+	[70201]={ tid=3410, level=90, star=0
+},
+	[70202]={ tid=4427, level=90, star=0
+},
+	[70203]={ tid=4424, level=90, star=0
+},
+	[70204]={ tid=5111, level=90, star=0
+},
+	[70205]={ tid=3418, level=96, star=0
+},
+	[70206]={ tid=3418, level=96, star=0
+},
+	[70207]={ tid=3414, level=96, star=0
+},
+	[70208]={ tid=4412, level=96, star=0
+},
+	[70209]={ tid=4414, level=96, star=0
+},
+	[70210]={ tid=3420, level=98, star=0
+},
+	[70211]={ tid=3428, level=98, star=0
+},
+	[70212]={ tid=3416, level=98, star=0
+},
+	[70213]={ tid=4427, level=98, star=0
+},
+	[70214]={ tid=4427, level=98, star=0
+},
+	[70215]={ tid=3424, level=100, star=0
+},
+	[70216]={ tid=3428, level=100, star=0
+},
+	[70217]={ tid=3424, level=100, star=0
+},
+	[70218]={ tid=4424, level=100, star=0
+},
+	[70219]={ tid=4406, level=100, star=0
+},
+	[70220]={ tid=3420, level=102, star=0
+},
+	[70221]={ tid=3416, level=102, star=0
+},
+	[70222]={ tid=4418, level=102, star=0
+},
+	[70223]={ tid=4414, level=102, star=0
+},
+	[70224]={ tid=4402, level=102, star=0
+},
+	[70225]={ tid=3433, level=114, star=0
+},
+	[70226]={ tid=3428, level=114, star=0
+},
+	[70227]={ tid=3416, level=114, star=0
+},
+	[70228]={ tid=4418, level=114, star=0
+},
+	[70229]={ tid=4423, level=114, star=0
+},
+	[70230]={ tid=3420, level=117, star=0
+},
+	[70231]={ tid=3410, level=117, star=0
+},
+	[70232]={ tid=4418, level=117, star=0
+},
+	[70233]={ tid=4448, level=117, star=0
+},
+	[70234]={ tid=5111, level=117, star=0
+},
+	[70235]={ tid=3417, level=80, star=0
+},
+	[70236]={ tid=3433, level=80, star=0
+},
+	[70237]={ tid=3410, level=80, star=0
+},
+	[70238]={ tid=4448, level=80, star=0
+},
+	[70239]={ tid=4423, level=80, star=0
+},
+	[70240]={ tid=3428, level=80, star=0
+},
+	[70241]={ tid=3417, level=80, star=0
+},
+	[70242]={ tid=3420, level=80, star=0
+},
+	[70243]={ tid=4406, level=80, star=0
+},
+	[70244]={ tid=4458, level=80, star=0
+},
+	[70245]={ tid=3433, level=80, star=0
+},
+	[70246]={ tid=3422, level=80, star=0
+},
+	[70247]={ tid=3428, level=80, star=0
+},
+	[70248]={ tid=4450, level=80, star=0
+},
+	[70249]={ tid=4405, level=80, star=0
+},
+	[70250]={ tid=3410, level=80, star=0
+},
+	[70251]={ tid=3412, level=80, star=0
+},
+	[70252]={ tid=3422, level=80, star=0
+},
+	[70253]={ tid=4444, level=80, star=0
+},
+	[70254]={ tid=4448, level=80, star=0
+},
+	[70255]={ tid=3433, level=82, star=0
+},
+	[70256]={ tid=3433, level=82, star=0
+},
+	[70257]={ tid=4414, level=82, star=0
+},
+	[70258]={ tid=4423, level=82, star=0
+},
+	[70259]={ tid=4414, level=82, star=0
+},
+	[70260]={ tid=3436, level=80, star=0
+},
+	[70261]={ tid=3410, level=80, star=0
+},
+	[70262]={ tid=3414, level=80, star=0
+},
+	[70263]={ tid=4406, level=80, star=0
+},
+	[70264]={ tid=4427, level=80, star=0
+},
+	[70265]={ tid=3436, level=84, star=0
+},
+	[70266]={ tid=3422, level=84, star=0
+},
+	[70267]={ tid=3406, level=84, star=0
+},
+	[70268]={ tid=4450, level=84, star=0
+},
+	[70269]={ tid=4424, level=84, star=0
+},
+	[70270]={ tid=3408, level=84, star=0
+},
+	[70271]={ tid=3404, level=84, star=0
+},
+	[70272]={ tid=4430, level=84, star=0
+},
+	[70273]={ tid=4450, level=84, star=0
+},
+	[70274]={ tid=4458, level=84, star=0
+},
+	[70275]={ tid=3428, level=84, star=0
+},
+	[70276]={ tid=3433, level=84, star=0
+},
+	[70277]={ tid=3414, level=84, star=0
+},
+	[70278]={ tid=4444, level=84, star=0
+},
+	[70279]={ tid=4444, level=84, star=0
+},
+	[70280]={ tid=3408, level=84, star=0
+},
+	[70281]={ tid=3436, level=84, star=0
+},
+	[70282]={ tid=3412, level=84, star=0
+},
+	[70283]={ tid=4438, level=84, star=0
+},
+	[70284]={ tid=4439, level=84, star=0
+},
+	[70285]={ tid=3424, level=85, star=0
+},
+	[70286]={ tid=3417, level=85, star=0
+},
+	[70287]={ tid=4438, level=85, star=0
+},
+	[70288]={ tid=4406, level=85, star=0
+},
+	[70289]={ tid=4458, level=85, star=0
+},
+	[70290]={ tid=3433, level=85, star=0
+},
+	[70291]={ tid=3417, level=85, star=0
+},
+	[70292]={ tid=4406, level=85, star=0
+},
+	[70293]={ tid=4444, level=85, star=0
+},
+	[70294]={ tid=5111, level=85, star=0
+},
+	[70295]={ tid=3412, level=80, star=0
+},
+	[70296]={ tid=3408, level=80, star=0
+},
+	[70297]={ tid=3421, level=80, star=0
+},
+	[70298]={ tid=4444, level=80, star=0
+},
+	[70299]={ tid=4414, level=80, star=0
+},
+	[70300]={ tid=3428, level=80, star=0
+},
+	[70301]={ tid=3406, level=80, star=0
+},
+	[70302]={ tid=3420, level=80, star=0
+},
+	[70303]={ tid=4427, level=80, star=0
+},
+	[70304]={ tid=4424, level=80, star=0
+},
+	[70305]={ tid=3408, level=80, star=0
+},
+	[70306]={ tid=3404, level=80, star=0
+},
+	[70307]={ tid=3436, level=80, star=0
+},
+	[70308]={ tid=4412, level=80, star=0
+},
+	[70309]={ tid=4424, level=80, star=0
+},
+	[70310]={ tid=3406, level=82, star=0
+},
+	[70311]={ tid=3433, level=82, star=0
+},
+	[70312]={ tid=4458, level=82, star=0
+},
+	[70313]={ tid=4409, level=82, star=0
+},
+	[70314]={ tid=4430, level=82, star=0
+},
+	[70315]={ tid=3417, level=82, star=0
+},
+	[70316]={ tid=3406, level=82, star=0
+},
+	[70317]={ tid=3408, level=82, star=0
+},
+	[70318]={ tid=4423, level=82, star=0
+},
+	[70319]={ tid=4444, level=82, star=0
+},
+	[70320]={ tid=3414, level=84, star=0
+},
+	[70321]={ tid=3424, level=84, star=0
+},
+	[70322]={ tid=4436, level=84, star=0
+},
+	[70323]={ tid=4406, level=84, star=0
+},
+	[70324]={ tid=4439, level=84, star=0
+},
+	[70325]={ tid=3417, level=86, star=0
+},
+	[70326]={ tid=3406, level=86, star=0
+},
+	[70327]={ tid=3410, level=86, star=0
+},
+	[70328]={ tid=4409, level=86, star=0
+},
+	[70329]={ tid=4427, level=86, star=0
+},
+	[70330]={ tid=3436, level=90, star=0
+},
+	[70331]={ tid=3421, level=90, star=0
+},
+	[70332]={ tid=4424, level=90, star=0
+},
+	[70333]={ tid=4448, level=90, star=0
+},
+	[70334]={ tid=4423, level=90, star=0
+},
+	[70335]={ tid=3421, level=88, star=0
+},
+	[70336]={ tid=3428, level=88, star=0
+},
+	[70337]={ tid=3404, level=88, star=0
+},
+	[70338]={ tid=4402, level=88, star=0
+},
+	[70339]={ tid=4427, level=88, star=0
+},
+	[70340]={ tid=3418, level=92, star=0
+},
+	[70341]={ tid=3422, level=92, star=0
+},
+	[70342]={ tid=4424, level=92, star=0
+},
+	[70343]={ tid=4424, level=92, star=0
+},
+	[70344]={ tid=5111, level=92, star=0
+},
+	[70345]={ tid=3418, level=98, star=0
+},
+	[70346]={ tid=3418, level=98, star=0
+},
+	[70347]={ tid=3414, level=98, star=0
+},
+	[70348]={ tid=4412, level=98, star=0
+},
+	[70349]={ tid=4414, level=98, star=0
+},
+	[70350]={ tid=3420, level=100, star=0
+},
+	[70351]={ tid=3428, level=100, star=0
+},
+	[70352]={ tid=3416, level=100, star=0
+},
+	[70353]={ tid=4427, level=100, star=0
+},
+	[70354]={ tid=4427, level=100, star=0
+},
+	[70355]={ tid=3424, level=100, star=0
+},
+	[70356]={ tid=3428, level=100, star=0
+},
+	[70357]={ tid=3424, level=100, star=0
+},
+	[70358]={ tid=4424, level=100, star=0
+},
+	[70359]={ tid=4406, level=100, star=0
+},
+	[70360]={ tid=3420, level=110, star=0
+},
+	[70361]={ tid=3416, level=110, star=0
+},
+	[70362]={ tid=4418, level=110, star=0
+},
+	[70363]={ tid=4414, level=110, star=0
+},
+	[70364]={ tid=4402, level=110, star=0
+},
+	[70365]={ tid=3433, level=112, star=0
+},
+	[70366]={ tid=3428, level=112, star=0
+},
+	[70367]={ tid=3416, level=112, star=0
+},
+	[70368]={ tid=4418, level=112, star=0
+},
+	[70369]={ tid=4423, level=112, star=0
+},
+	[70370]={ tid=3420, level=119, star=0
+},
+	[70371]={ tid=3410, level=119, star=0
+},
+	[70372]={ tid=4450, level=119, star=0
+},
+	[70373]={ tid=4448, level=119, star=0
+},
+	[70374]={ tid=5111, level=119, star=0
+},
+	[70375]={ tid=3410, level=80, star=0
+},
+	[70376]={ tid=3436, level=80, star=0
+},
+	[70377]={ tid=3418, level=80, star=0
+},
+	[70378]={ tid=4430, level=80, star=0
+},
+	[70379]={ tid=4444, level=80, star=0
+},
+	[70380]={ tid=3404, level=80, star=0
+},
+	[70381]={ tid=3406, level=80, star=0
+},
+	[70382]={ tid=3408, level=80, star=0
+},
+	[70383]={ tid=4427, level=80, star=0
+},
+	[70384]={ tid=4418, level=80, star=0
+},
+	[70385]={ tid=3433, level=80, star=0
+},
+	[70386]={ tid=3414, level=80, star=0
+},
+	[70387]={ tid=3410, level=80, star=0
+},
+	[70388]={ tid=4424, level=80, star=0
+},
+	[70389]={ tid=4458, level=80, star=0
+},
+	[70390]={ tid=3414, level=80, star=0
+},
+	[70391]={ tid=3424, level=80, star=0
+},
+	[70392]={ tid=3404, level=80, star=0
+},
+	[70393]={ tid=4448, level=80, star=0
+},
+	[70394]={ tid=4444, level=80, star=0
+},
+	[70395]={ tid=3412, level=82, star=0
+},
+	[70396]={ tid=3416, level=82, star=0
+},
+	[70397]={ tid=4402, level=82, star=0
+},
+	[70398]={ tid=4427, level=82, star=0
+},
+	[70399]={ tid=4412, level=82, star=0
+},
+	[70400]={ tid=3416, level=80, star=0
+},
+	[70401]={ tid=3404, level=80, star=0
+},
+	[70402]={ tid=3433, level=80, star=0
+},
+	[70403]={ tid=4448, level=80, star=0
+},
+	[70404]={ tid=4442, level=80, star=0
+},
+	[70405]={ tid=3436, level=84, star=0
+},
+	[70406]={ tid=3420, level=84, star=0
+},
+	[70407]={ tid=3428, level=84, star=0
+},
+	[70408]={ tid=4438, level=84, star=0
+},
+	[70409]={ tid=4423, level=84, star=0
+},
+	[70410]={ tid=3414, level=84, star=0
+},
+	[70411]={ tid=3416, level=84, star=0
+},
+	[70412]={ tid=4402, level=84, star=0
+},
+	[70413]={ tid=4450, level=84, star=0
+},
+	[70414]={ tid=4442, level=84, star=0
+},
+	[70415]={ tid=3406, level=84, star=0
+},
+	[70416]={ tid=3424, level=84, star=0
+},
+	[70417]={ tid=3417, level=84, star=0
+},
+	[70418]={ tid=4427, level=84, star=0
+},
+	[70419]={ tid=4412, level=84, star=0
+},
+	[70420]={ tid=3422, level=84, star=0
+},
+	[70421]={ tid=3414, level=84, star=0
+},
+	[70422]={ tid=3424, level=84, star=0
+},
+	[70423]={ tid=4418, level=84, star=0
+},
+	[70424]={ tid=4458, level=84, star=0
+},
+	[70425]={ tid=3424, level=85, star=0
+},
+	[70426]={ tid=3416, level=85, star=0
+},
+	[70427]={ tid=4414, level=85, star=0
+},
+	[70428]={ tid=4424, level=85, star=0
+},
+	[70429]={ tid=4412, level=85, star=0
+},
+	[70430]={ tid=3436, level=85, star=0
+},
+	[70431]={ tid=3428, level=85, star=0
+},
+	[70432]={ tid=4448, level=85, star=0
+},
+	[70433]={ tid=4430, level=85, star=0
+},
+	[70434]={ tid=5191, level=85, star=0
+},
+	[70435]={ tid=3417, level=80, star=0
+},
+	[70436]={ tid=3436, level=80, star=0
+},
+	[70437]={ tid=3418, level=80, star=0
+},
+	[70438]={ tid=4448, level=80, star=0
+},
+	[70439]={ tid=4424, level=80, star=0
+},
+	[70440]={ tid=3428, level=80, star=0
+},
+	[70441]={ tid=3428, level=80, star=0
+},
+	[70442]={ tid=3406, level=80, star=0
+},
+	[70443]={ tid=4406, level=80, star=0
+},
+	[70444]={ tid=4406, level=80, star=0
+},
+	[70445]={ tid=3418, level=80, star=0
+},
+	[70446]={ tid=3406, level=80, star=0
+},
+	[70447]={ tid=3421, level=80, star=0
+},
+	[70448]={ tid=4458, level=80, star=0
+},
+	[70449]={ tid=4442, level=80, star=0
+},
+	[70450]={ tid=3417, level=82, star=0
+},
+	[70451]={ tid=3420, level=82, star=0
+},
+	[70452]={ tid=4458, level=82, star=0
+},
+	[70453]={ tid=4444, level=82, star=0
+},
+	[70454]={ tid=4405, level=82, star=0
+},
+	[70455]={ tid=3428, level=82, star=0
+},
+	[70456]={ tid=3436, level=82, star=0
+},
+	[70457]={ tid=3406, level=82, star=0
+},
+	[70458]={ tid=4427, level=82, star=0
+},
+	[70459]={ tid=4405, level=82, star=0
+},
+	[70460]={ tid=3428, level=84, star=0
+},
+	[70461]={ tid=3416, level=84, star=0
+},
+	[70462]={ tid=4424, level=84, star=0
+},
+	[70463]={ tid=4448, level=84, star=0
+},
+	[70464]={ tid=4439, level=84, star=0
+},
+	[70465]={ tid=3417, level=86, star=0
+},
+	[70466]={ tid=3422, level=86, star=0
+},
+	[70467]={ tid=3404, level=86, star=0
+},
+	[70468]={ tid=4402, level=86, star=0
+},
+	[70469]={ tid=4412, level=86, star=0
+},
+	[70470]={ tid=3436, level=90, star=0
+},
+	[70471]={ tid=3421, level=90, star=0
+},
+	[70472]={ tid=4424, level=90, star=0
+},
+	[70473]={ tid=4448, level=90, star=0
+},
+	[70474]={ tid=4423, level=90, star=0
+},
+	[70475]={ tid=3416, level=88, star=0
+},
+	[70476]={ tid=3433, level=88, star=0
+},
+	[70477]={ tid=4430, level=88, star=0
+},
+	[70478]={ tid=4444, level=88, star=0
+},
+	[70479]={ tid=4458, level=88, star=0
+},
+	[70480]={ tid=3422, level=92, star=0
+},
+	[70481]={ tid=3406, level=92, star=0
+},
+	[70482]={ tid=4458, level=92, star=0
+},
+	[70483]={ tid=4430, level=92, star=0
+},
+	[70484]={ tid=5191, level=92, star=0
+},
+	[70485]={ tid=3433, level=98, star=0
+},
+	[70486]={ tid=3412, level=98, star=0
+},
+	[70487]={ tid=3433, level=98, star=0
+},
+	[70488]={ tid=4405, level=98, star=0
+},
+	[70489]={ tid=4430, level=98, star=0
+},
+	[70490]={ tid=3416, level=100, star=0
+},
+	[70491]={ tid=3422, level=100, star=0
+},
+	[70492]={ tid=3404, level=100, star=0
+},
+	[70493]={ tid=4424, level=100, star=0
+},
+	[70494]={ tid=4442, level=100, star=0
+},
+	[70495]={ tid=3424, level=100, star=0
+},
+	[70496]={ tid=3436, level=100, star=0
+},
+	[70497]={ tid=3436, level=100, star=0
+},
+	[70498]={ tid=4430, level=100, star=0
+},
+	[70499]={ tid=4412, level=100, star=0
+},
+	[70500]={ tid=3412, level=110, star=0
+},
+	[70501]={ tid=3428, level=110, star=0
+},
+	[70502]={ tid=4430, level=110, star=0
+},
+	[70503]={ tid=4430, level=110, star=0
+},
+	[70504]={ tid=4412, level=110, star=0
+},
+	[70505]={ tid=3433, level=112, star=0
+},
+	[70506]={ tid=3428, level=112, star=0
+},
+	[70507]={ tid=3414, level=112, star=0
+},
+	[70508]={ tid=4442, level=112, star=0
+},
+	[70509]={ tid=4412, level=112, star=0
+},
+	[70510]={ tid=3428, level=119, star=0
+},
+	[70511]={ tid=3412, level=119, star=0
+},
+	[70512]={ tid=4424, level=119, star=0
+},
+	[70513]={ tid=4438, level=119, star=0
+},
+	[70514]={ tid=5191, level=119, star=0
+},
+	[70515]={ tid=3436, level=80, star=0
+},
+	[70516]={ tid=3436, level=80, star=0
+},
+	[70517]={ tid=3436, level=80, star=0
+},
+	[70518]={ tid=4620, level=80, star=0
+},
+	[70519]={ tid=4623, level=80, star=0
+},
+	[70520]={ tid=3610, level=80, star=0
+},
+	[70521]={ tid=3612, level=80, star=0
+},
+	[70522]={ tid=3634, level=80, star=0
+},
+	[70523]={ tid=4620, level=80, star=0
+},
+	[70524]={ tid=4606, level=80, star=0
+},
+	[70525]={ tid=3629, level=80, star=0
+},
+	[70526]={ tid=3623, level=80, star=0
+},
+	[70527]={ tid=3433, level=80, star=0
+},
+	[70528]={ tid=4448, level=80, star=0
+},
+	[70529]={ tid=4458, level=80, star=0
+},
+	[70530]={ tid=3436, level=80, star=0
+},
+	[70531]={ tid=3628, level=80, star=0
+},
+	[70532]={ tid=4628, level=80, star=0
+},
+	[70533]={ tid=4450, level=80, star=0
+},
+	[70534]={ tid=4627, level=80, star=0
+},
+	[70535]={ tid=3630, level=82, star=0
+},
+	[70536]={ tid=3618, level=82, star=0
+},
+	[70537]={ tid=3606, level=82, star=0
+},
+	[70538]={ tid=4628, level=82, star=0
+},
+	[70539]={ tid=4612, level=82, star=0
+},
+	[70540]={ tid=3618, level=80, star=0
+},
+	[70541]={ tid=3610, level=80, star=0
+},
+	[70542]={ tid=4444, level=80, star=0
+},
+	[70543]={ tid=4620, level=80, star=0
+},
+	[70544]={ tid=4458, level=80, star=0
+},
+	[70545]={ tid=3618, level=84, star=0
+},
+	[70546]={ tid=3433, level=84, star=0
+},
+	[70547]={ tid=4623, level=84, star=0
+},
+	[70548]={ tid=4458, level=84, star=0
+},
+	[70549]={ tid=4623, level=84, star=0
+},
+	[70550]={ tid=3610, level=84, star=0
+},
+	[70551]={ tid=3614, level=84, star=0
+},
+	[70552]={ tid=3436, level=84, star=0
+},
+	[70553]={ tid=4623, level=84, star=0
+},
+	[70554]={ tid=4458, level=84, star=0
+},
+	[70555]={ tid=3628, level=84, star=0
+},
+	[70556]={ tid=3618, level=84, star=0
+},
+	[70557]={ tid=4458, level=84, star=0
+},
+	[70558]={ tid=4442, level=84, star=0
+},
+	[70559]={ tid=4627, level=84, star=0
+},
+	[70560]={ tid=3618, level=84, star=0
+},
+	[70561]={ tid=3629, level=84, star=0
+},
+	[70562]={ tid=4612, level=84, star=0
+},
+	[70563]={ tid=4627, level=84, star=0
+},
+	[70564]={ tid=5131, level=84, star=0
+},
+	[70565]={ tid=3606, level=80, star=0
+},
+	[70566]={ tid=3433, level=80, star=0
+},
+	[70567]={ tid=3612, level=80, star=0
+},
+	[70568]={ tid=4618, level=80, star=0
+},
+	[70569]={ tid=4450, level=80, star=0
+},
+	[70570]={ tid=3629, level=80, star=0
+},
+	[70571]={ tid=3433, level=80, star=0
+},
+	[70572]={ tid=3629, level=80, star=0
+},
+	[70573]={ tid=4442, level=80, star=0
+},
+	[70574]={ tid=4623, level=80, star=0
+},
+	[70575]={ tid=3629, level=80, star=0
+},
+	[70576]={ tid=3612, level=80, star=0
+},
+	[70577]={ tid=3616, level=80, star=0
+},
+	[70578]={ tid=4627, level=80, star=0
+},
+	[70579]={ tid=4618, level=80, star=0
+},
+	[70580]={ tid=3436, level=82, star=0
+},
+	[70581]={ tid=3436, level=82, star=0
+},
+	[70582]={ tid=4463, level=82, star=0
+},
+	[70583]={ tid=4464, level=82, star=0
+},
+	[70584]={ tid=4606, level=82, star=0
+},
+	[70585]={ tid=3634, level=82, star=0
+},
+	[70586]={ tid=3612, level=82, star=0
+},
+	[70587]={ tid=3624, level=82, star=0
+},
+	[70588]={ tid=4604, level=82, star=0
+},
+	[70589]={ tid=4620, level=82, star=0
+},
+	[70590]={ tid=3602, level=84, star=0
+},
+	[70591]={ tid=3436, level=84, star=0
+},
+	[70592]={ tid=4448, level=84, star=0
+},
+	[70593]={ tid=4448, level=84, star=0
+},
+	[70594]={ tid=4442, level=84, star=0
+},
+	[70595]={ tid=3628, level=86, star=0
+},
+	[70596]={ tid=3624, level=86, star=0
+},
+	[70597]={ tid=3630, level=86, star=0
+},
+	[70598]={ tid=4442, level=86, star=0
+},
+	[70599]={ tid=4624, level=86, star=0
+},
+	[70600]={ tid=3606, level=90, star=0
+},
+	[70601]={ tid=3624, level=90, star=0
+},
+	[70602]={ tid=4450, level=90, star=0
+},
+	[70603]={ tid=4627, level=90, star=0
+},
+	[70604]={ tid=4620, level=90, star=0
+},
+	[70605]={ tid=3606, level=88, star=0
+},
+	[70606]={ tid=3630, level=88, star=0
+},
+	[70607]={ tid=4618, level=88, star=0
+},
+	[70608]={ tid=4458, level=88, star=0
+},
+	[70609]={ tid=4618, level=88, star=0
+},
+	[70610]={ tid=3606, level=92, star=0
+},
+	[70611]={ tid=3602, level=92, star=0
+},
+	[70612]={ tid=4442, level=92, star=0
+},
+	[70613]={ tid=4620, level=92, star=0
+},
+	[70614]={ tid=5131, level=92, star=0
+},
+	[70615]={ tid=3623, level=98, star=0
+},
+	[70616]={ tid=3610, level=98, star=0
+},
+	[70617]={ tid=4606, level=98, star=0
+},
+	[70618]={ tid=4618, level=98, star=0
+},
+	[70619]={ tid=4623, level=98, star=0
+},
+	[70620]={ tid=3624, level=100, star=0
+},
+	[70621]={ tid=3618, level=100, star=0
+},
+	[70622]={ tid=4442, level=100, star=0
+},
+	[70623]={ tid=4624, level=100, star=0
+},
+	[70624]={ tid=4627, level=100, star=0
+},
+	[70625]={ tid=3626, level=100, star=0
+},
+	[70626]={ tid=3624, level=100, star=0
+},
+	[70627]={ tid=4618, level=100, star=0
+},
+	[70628]={ tid=4620, level=100, star=0
+},
+	[70629]={ tid=4444, level=100, star=0
+},
+	[70630]={ tid=3436, level=110, star=0
+},
+	[70631]={ tid=4624, level=110, star=0
+},
+	[70632]={ tid=4458, level=110, star=0
+},
+	[70633]={ tid=4450, level=110, star=0
+},
+	[70634]={ tid=4444, level=110, star=0
+},
+	[70635]={ tid=3623, level=112, star=0
+},
+	[70636]={ tid=3628, level=112, star=0
+},
+	[70637]={ tid=4627, level=112, star=0
+},
+	[70638]={ tid=4620, level=112, star=0
+},
+	[70639]={ tid=4604, level=112, star=0
+},
+	[70640]={ tid=3606, level=119, star=0
+},
+	[70641]={ tid=4620, level=119, star=0
+},
+	[70642]={ tid=4611, level=119, star=0
+},
+	[70643]={ tid=4604, level=119, star=0
+},
+	[70644]={ tid=5131, level=119, star=0
+},
+	[70645]={ tid=3623, level=80, star=2
+},
+	[70646]={ tid=3628, level=80, star=2
+},
+	[70647]={ tid=3626, level=80, star=3
+},
+	[70648]={ tid=4612, level=80, star=3
+},
+	[70649]={ tid=4620, level=80, star=3
+},
+	[70650]={ tid=3436, level=80, star=2
+},
+	[70651]={ tid=3629, level=80, star=2
+},
+	[70652]={ tid=4620, level=80, star=3
+},
+	[70653]={ tid=4623, level=80, star=3
+},
+	[70654]={ tid=4448, level=80, star=3
+},
+	[70655]={ tid=3626, level=80, star=2
+},
+	[70656]={ tid=3634, level=80, star=2
+},
+	[70657]={ tid=3610, level=80, star=3
+},
+	[70658]={ tid=4623, level=80, star=3
+},
+	[70659]={ tid=4628, level=80, star=3
+},
+	[70660]={ tid=3433, level=82, star=2
+},
+	[70661]={ tid=3610, level=82, star=2
+},
+	[70662]={ tid=4448, level=82, star=3
+},
+	[70663]={ tid=4444, level=82, star=3
+},
+	[70664]={ tid=4612, level=82, star=3
+},
+	[70665]={ tid=3629, level=82, star=2
+},
+	[70666]={ tid=3436, level=82, star=2
+},
+	[70667]={ tid=3612, level=82, star=3
+},
+	[70668]={ tid=4606, level=82, star=3
+},
+	[70669]={ tid=4611, level=82, star=3
+},
+	[70670]={ tid=3612, level=84, star=2
+},
+	[70671]={ tid=3630, level=84, star=2
+},
+	[70672]={ tid=3433, level=84, star=3
+},
+	[70673]={ tid=4448, level=84, star=3
+},
+	[70674]={ tid=4450, level=84, star=3
+},
+	[70675]={ tid=3618, level=84, star=2
+},
+	[70676]={ tid=3433, level=84, star=2
+},
+	[70677]={ tid=4624, level=84, star=3
+},
+	[70678]={ tid=4604, level=84, star=3
+},
+	[70679]={ tid=4458, level=84, star=3
+},
+	[70680]={ tid=3634, level=84, star=2
+},
+	[70681]={ tid=3616, level=84, star=2
+},
+	[70682]={ tid=3629, level=84, star=3
+},
+	[70683]={ tid=4618, level=84, star=3
+},
+	[70684]={ tid=4620, level=84, star=3
+},
+	[70685]={ tid=3628, level=86, star=2
+},
+	[70686]={ tid=3606, level=86, star=2
+},
+	[70687]={ tid=4450, level=86, star=3
+},
+	[70688]={ tid=4606, level=86, star=3
+},
+	[70689]={ tid=4604, level=86, star=3
+},
+	[70690]={ tid=3618, level=88, star=2
+},
+	[70691]={ tid=3610, level=88, star=2
+},
+	[70692]={ tid=4623, level=88, star=3
+},
+	[70693]={ tid=4620, level=88, star=3
+},
+	[70694]={ tid=5131, level=88, star=3
+},
+	[70710]={ tid=3629, level=80, star=2
+},
+	[70711]={ tid=3612, level=80, star=2
+},
+	[70712]={ tid=4442, level=80, star=3
+},
+	[70713]={ tid=4448, level=80, star=3
+},
+	[70714]={ tid=4612, level=80, star=3
+},
+	[70715]={ tid=3630, level=80, star=2
+},
+	[70716]={ tid=3612, level=80, star=2
+},
+	[70717]={ tid=4620, level=80, star=3
+},
+	[70718]={ tid=4612, level=80, star=3
+},
+	[70719]={ tid=4628, level=80, star=3
+},
+	[70720]={ tid=3436, level=80, star=2
+},
+	[70721]={ tid=3610, level=80, star=2
+},
+	[70722]={ tid=4606, level=80, star=3
+},
+	[70723]={ tid=4604, level=80, star=3
+},
+	[70724]={ tid=4623, level=80, star=3
+},
+	[70725]={ tid=3624, level=82, star=2
+},
+	[70726]={ tid=3618, level=82, star=2
+},
+	[70727]={ tid=4618, level=82, star=3
+},
+	[70728]={ tid=4442, level=82, star=3
+},
+	[70729]={ tid=4604, level=82, star=3
+},
+	[70730]={ tid=3624, level=82, star=2
+},
+	[70731]={ tid=3433, level=82, star=2
+},
+	[70732]={ tid=4624, level=82, star=3
+},
+	[70733]={ tid=4442, level=82, star=3
+},
+	[70734]={ tid=4448, level=82, star=3
+},
+	[70735]={ tid=3610, level=84, star=2
+},
+	[70736]={ tid=3630, level=84, star=2
+},
+	[70737]={ tid=4442, level=84, star=3
+},
+	[70738]={ tid=4618, level=84, star=3
+},
+	[70739]={ tid=4606, level=84, star=3
+},
+	[70740]={ tid=3628, level=86, star=2
+},
+	[70741]={ tid=3630, level=86, star=2
+},
+	[70742]={ tid=4442, level=86, star=3
+},
+	[70743]={ tid=4611, level=86, star=3
+},
+	[70744]={ tid=4606, level=86, star=3
+},
+	[70745]={ tid=3618, level=90, star=2
+},
+	[70746]={ tid=3616, level=90, star=2
+},
+	[70747]={ tid=4624, level=90, star=3
+},
+	[70748]={ tid=4623, level=90, star=3
+},
+	[70749]={ tid=4624, level=90, star=3
+},
+	[70750]={ tid=3626, level=92, star=2
+},
+	[70751]={ tid=3616, level=92, star=2
+},
+	[70752]={ tid=4612, level=92, star=3
+},
+	[70753]={ tid=4450, level=92, star=3
+},
+	[70754]={ tid=4628, level=92, star=3
+},
+	[70755]={ tid=3623, level=94, star=2
+},
+	[70756]={ tid=4604, level=94, star=3
+},
+	[70757]={ tid=4623, level=94, star=3
+},
+	[70758]={ tid=4444, level=94, star=3
+},
+	[70759]={ tid=5131, level=94, star=4
+},
+	[70760]={ tid=3602, level=98, star=2
+},
+	[70761]={ tid=3629, level=98, star=2
+},
+	[70762]={ tid=4606, level=98, star=3
+},
+	[70763]={ tid=4612, level=98, star=3
+},
+	[70764]={ tid=4620, level=98, star=3
+},
+	[70765]={ tid=3628, level=100, star=2
+},
+	[70766]={ tid=3612, level=100, star=2
+},
+	[70767]={ tid=4623, level=100, star=3
+},
+	[70768]={ tid=4458, level=100, star=3
+},
+	[70769]={ tid=4458, level=100, star=3
+},
+	[70770]={ tid=3612, level=100, star=2
+},
+	[70771]={ tid=3623, level=100, star=2
+},
+	[70772]={ tid=4606, level=100, star=3
+},
+	[70773]={ tid=4611, level=100, star=3
+},
+	[70774]={ tid=4618, level=100, star=3
+},
+	[70775]={ tid=3602, level=110, star=2
+},
+	[70776]={ tid=3623, level=110, star=2
+},
+	[70777]={ tid=4444, level=110, star=3
+},
+	[70778]={ tid=4444, level=110, star=3
+},
+	[70779]={ tid=4627, level=110, star=3
+},
+	[70780]={ tid=3436, level=115, star=2
+},
+	[70781]={ tid=3436, level=115, star=2
+},
+	[70782]={ tid=4620, level=115, star=3
+},
+	[70783]={ tid=4448, level=115, star=3
+},
+	[70784]={ tid=4618, level=115, star=3
+},
+	[70785]={ tid=3628, level=120, star=2
+},
+	[70786]={ tid=4606, level=120, star=3
+},
+	[70787]={ tid=4624, level=120, star=3
+},
+	[70788]={ tid=4442, level=120, star=3
+},
+	[70789]={ tid=5131, level=120, star=4
+},
+	[70796]={ tid=3020, level=80, star=0
+},
+	[70797]={ tid=4032, level=80, star=0
+},
+	[70798]={ tid=3009, level=80, star=0
+},
+	[70799]={ tid=4005, level=80, star=0
+},
+	[70800]={ tid=3003, level=80, star=0
+},
+	[70801]={ tid=3207, level=80, star=0
+},
+	[70802]={ tid=4213, level=80, star=0
+},
+	[70803]={ tid=3203, level=80, star=0
+},
+	[70804]={ tid=4219, level=80, star=0
+},
+	[70805]={ tid=3218, level=80, star=0
+},
+	[70811]={ tid=3424, level=80, star=0
+},
+	[70812]={ tid=4436, level=80, star=0
+},
+	[70813]={ tid=4413, level=80, star=0
+},
+	[70814]={ tid=4419, level=80, star=0
+},
+	[70815]={ tid=3430, level=80, star=0
+},
+	[70816]={ tid=3431, level=82, star=0
+},
+	[70817]={ tid=4412, level=82, star=0
+},
+	[70818]={ tid=4426, level=82, star=0
+},
+	[70819]={ tid=3433, level=82, star=0
+},
+	[70820]={ tid=3430, level=82, star=0
+},
+	[70821]={ tid=4026, level=82, star=0
+},
+	[70822]={ tid=3002, level=82, star=0
+},
+	[70823]={ tid=4033, level=82, star=0
+},
+	[70824]={ tid=3012, level=82, star=0
+},
+	[70825]={ tid=3004, level=82, star=0
+},
+	[70826]={ tid=3006, level=82, star=0
+},
+	[70827]={ tid=3012, level=82, star=0
+},
+	[70828]={ tid=4024, level=82, star=0
+},
+	[70829]={ tid=4021, level=82, star=0
+},
+	[70830]={ tid=4029, level=82, star=0
+},
+	[70836]={ tid=3006, level=84, star=0
+},
+	[70837]={ tid=3011, level=84, star=0
+},
+	[70838]={ tid=4011, level=84, star=0
+},
+	[70839]={ tid=4019, level=84, star=0
+},
+	[70840]={ tid=3005, level=84, star=0
+},
+	[70841]={ tid=3403, level=84, star=0
+},
+	[70842]={ tid=3405, level=84, star=0
+},
+	[70843]={ tid=4433, level=84, star=0
+},
+	[70844]={ tid=3414, level=84, star=0
+},
+	[70845]={ tid=4406, level=84, star=0
+},
+	[70846]={ tid=3418, level=84, star=0
+},
+	[70847]={ tid=3411, level=84, star=0
+},
+	[70848]={ tid=4433, level=84, star=0
+},
+	[70849]={ tid=4420, level=84, star=0
+},
+	[70850]={ tid=4426, level=84, star=0
+},
+	[70861]={ tid=3411, level=86, star=0
+},
+	[70862]={ tid=3405, level=86, star=0
+},
+	[70863]={ tid=4436, level=86, star=0
+},
+	[70864]={ tid=4404, level=86, star=0
+},
+	[70865]={ tid=3404, level=86, star=0
+},
+	[70866]={ tid=3409, level=86, star=0
+},
+	[70867]={ tid=3408, level=86, star=0
+},
+	[70868]={ tid=4407, level=86, star=0
+},
+	[70869]={ tid=4405, level=86, star=0
+},
+	[70870]={ tid=3423, level=86, star=0
+},
+	[70871]={ tid=3403, level=86, star=0
+},
+	[70872]={ tid=4410, level=86, star=0
+},
+	[70873]={ tid=4436, level=86, star=0
+},
+	[70874]={ tid=3419, level=86, star=0
+},
+	[70875]={ tid=3403, level=86, star=0
+},
+	[70876]={ tid=3432, level=88, star=0
+},
+	[70877]={ tid=3423, level=88, star=0
+},
+	[70878]={ tid=4432, level=88, star=0
+},
+	[70879]={ tid=4423, level=88, star=0
+},
+	[70880]={ tid=3417, level=88, star=0
+},
+	[70886]={ tid=4436, level=88, star=0
+},
+	[70887]={ tid=3403, level=88, star=0
+},
+	[70888]={ tid=4419, level=88, star=0
+},
+	[70889]={ tid=4411, level=88, star=0
+},
+	[70890]={ tid=3433, level=88, star=0
+},
+	[70891]={ tid=4423, level=88, star=0
+},
+	[70892]={ tid=3423, level=88, star=0
+},
+	[70893]={ tid=3415, level=88, star=0
+},
+	[70894]={ tid=4412, level=88, star=0
+},
+	[70895]={ tid=5201, level=88, star=0
+},
+	[70906]={ tid=4421, level=80, star=0
+},
+	[70907]={ tid=3422, level=80, star=0
+},
+	[70908]={ tid=3431, level=80, star=0
+},
+	[70909]={ tid=4412, level=80, star=0
+},
+	[70910]={ tid=3415, level=80, star=0
+},
+	[70911]={ tid=4402, level=80, star=0
+},
+	[70912]={ tid=3424, level=80, star=0
+},
+	[70913]={ tid=3424, level=80, star=0
+},
+	[70914]={ tid=4408, level=80, star=0
+},
+	[70915]={ tid=3416, level=80, star=0
+},
+	[70916]={ tid=3412, level=80, star=0
+},
+	[70917]={ tid=3428, level=80, star=0
+},
+	[70918]={ tid=4429, level=80, star=0
+},
+	[70919]={ tid=4431, level=80, star=0
+},
+	[70920]={ tid=4433, level=80, star=0
+},
+	[70921]={ tid=4432, level=82, star=0
+},
+	[70922]={ tid=3408, level=82, star=0
+},
+	[70923]={ tid=3436, level=82, star=0
+},
+	[70924]={ tid=4428, level=82, star=0
+},
+	[70925]={ tid=3433, level=82, star=0
+},
+	[70926]={ tid=4429, level=82, star=0
+},
+	[70927]={ tid=3434, level=82, star=0
+},
+	[70928]={ tid=4435, level=82, star=0
+},
+	[70929]={ tid=3432, level=82, star=0
+},
+	[70930]={ tid=3425, level=82, star=0
+},
+	[70931]={ tid=3419, level=84, star=0
+},
+	[70932]={ tid=4413, level=84, star=0
+},
+	[70933]={ tid=4427, level=84, star=0
+},
+	[70934]={ tid=3415, level=84, star=0
+},
+	[70935]={ tid=4403, level=84, star=0
+},
+	[70936]={ tid=4419, level=86, star=0
+},
+	[70937]={ tid=3406, level=86, star=0
+},
+	[70938]={ tid=3436, level=86, star=0
+},
+	[70939]={ tid=4430, level=86, star=0
+},
+	[70940]={ tid=3406, level=86, star=0
+},
+	[70941]={ tid=3416, level=90, star=0
+},
+	[70942]={ tid=3419, level=90, star=0
+},
+	[70943]={ tid=3430, level=90, star=0
+},
+	[70944]={ tid=4423, level=90, star=0
+},
+	[70945]={ tid=4436, level=90, star=0
+},
+	[70946]={ tid=4428, level=92, star=0
+},
+	[70947]={ tid=4413, level=92, star=0
+},
+	[70948]={ tid=3429, level=92, star=0
+},
+	[70949]={ tid=3429, level=92, star=0
+},
+	[70950]={ tid=4417, level=92, star=0
+},
+	[70951]={ tid=4419, level=94, star=0
+},
+	[70952]={ tid=3419, level=94, star=0
+},
+	[70953]={ tid=3417, level=94, star=0
+},
+	[70954]={ tid=4426, level=94, star=0
+},
+	[70955]={ tid=5202, level=94, star=0
+},
+	[70956]={ tid=3403, level=98, star=0
+},
+	[70957]={ tid=3424, level=98, star=0
+},
+	[70958]={ tid=3431, level=98, star=0
+},
+	[70959]={ tid=4424, level=98, star=0
+},
+	[70960]={ tid=4415, level=98, star=0
+},
+	[70961]={ tid=4402, level=100, star=0
+},
+	[70962]={ tid=3423, level=100, star=0
+},
+	[70963]={ tid=3401, level=100, star=0
+},
+	[70964]={ tid=4427, level=100, star=0
+},
+	[70965]={ tid=4415, level=100, star=0
+},
+	[70966]={ tid=3416, level=100, star=0
+},
+	[70967]={ tid=3436, level=100, star=0
+},
+	[70968]={ tid=3405, level=100, star=0
+},
+	[70969]={ tid=4414, level=100, star=0
+},
+	[70970]={ tid=4405, level=100, star=0
+},
+	[70971]={ tid=4424, level=110, star=0
+},
+	[70972]={ tid=3415, level=110, star=0
+},
+	[70973]={ tid=4435, level=110, star=0
+},
+	[70974]={ tid=4418, level=110, star=0
+},
+	[70975]={ tid=3419, level=110, star=0
+},
+	[70976]={ tid=4408, level=115, star=0
+},
+	[70977]={ tid=4412, level=115, star=0
+},
+	[70978]={ tid=4425, level=115, star=0
+},
+	[70979]={ tid=3407, level=115, star=0
+},
+	[70980]={ tid=3427, level=115, star=0
+},
+	[70981]={ tid=3401, level=120, star=0
+},
+	[70982]={ tid=3418, level=120, star=0
+},
+	[70983]={ tid=4436, level=120, star=0
+},
+	[70984]={ tid=4419, level=120, star=0
+},
+	[70985]={ tid=5203, level=120, star=0
+},
+	[80001]={ tid=8018, level=80, star=0
+},
+	[80002]={ tid=4002, level=80, star=0
+},
+	[80003]={ tid=4626, level=80, star=0
+},
+	[80004]={ tid=4019, level=80, star=0
+},
+	[80005]={ tid=3630, level=80, star=0
+},
+	[80006]={ tid=4228, level=80, star=0
+},
+	[80007]={ tid=4638, level=80, star=0
+},
+	[80008]={ tid=8030, level=80, star=0
+},
+	[80009]={ tid=4638, level=80, star=0
+},
+	[80010]={ tid=3623, level=80, star=0
+},
+	[80011]={ tid=4632, level=80, star=0
+},
+	[80012]={ tid=4219, level=80, star=0
+},
+	[80013]={ tid=8022, level=80, star=0
+},
+	[80014]={ tid=4233, level=80, star=0
+},
+	[80015]={ tid=3616, level=80, star=0
+},
+	[80016]={ tid=8301, level=80, star=0
+},
+	[80017]={ tid=4231, level=80, star=0
+},
+	[80018]={ tid=4644, level=80, star=0
+},
+	[80019]={ tid=4223, level=80, star=0
+},
+	[80020]={ tid=3622, level=80, star=0
+},
+	[80021]={ tid=4035, level=80, star=0
+},
+	[80022]={ tid=4610, level=80, star=0
+},
+	[80023]={ tid=8027, level=80, star=0
+},
+	[80024]={ tid=4602, level=80, star=0
+},
+	[80025]={ tid=3612, level=80, star=0
+},
+	[80026]={ tid=4228, level=85, star=0
+},
+	[80027]={ tid=4622, level=85, star=0
+},
+	[80028]={ tid=8027, level=85, star=0
+},
+	[80029]={ tid=4605, level=85, star=0
+},
+	[80030]={ tid=3634, level=85, star=0
+},
+	[80031]={ tid=8301, level=85, star=0
+},
+	[80032]={ tid=4010, level=85, star=0
+},
+	[80033]={ tid=4645, level=85, star=0
+},
+	[80034]={ tid=4016, level=85, star=0
+},
+	[80035]={ tid=3620, level=85, star=0
+},
+	[80036]={ tid=8301, level=85, star=0
+},
+	[80037]={ tid=4464, level=85, star=0
+},
+	[80038]={ tid=4645, level=85, star=0
+},
+	[80039]={ tid=4422, level=85, star=0
+},
+	[80040]={ tid=3621, level=85, star=0
+},
+	[80041]={ tid=8301, level=85, star=0
+},
+	[80042]={ tid=4231, level=85, star=0
+},
+	[80043]={ tid=4640, level=85, star=0
+},
+	[80044]={ tid=4237, level=85, star=0
+},
+	[80045]={ tid=3602, level=85, star=0
+},
+	[80046]={ tid=8001, level=85, star=0
+},
+	[80047]={ tid=4440, level=85, star=0
+},
+	[80048]={ tid=4605, level=85, star=0
+},
+	[80049]={ tid=4433, level=85, star=0
+},
+	[80050]={ tid=3615, level=85, star=0
+},
+	[80051]={ tid=8025, level=90, star=0
+},
+	[80052]={ tid=4414, level=90, star=0
+},
+	[80053]={ tid=4613, level=90, star=0
+},
+	[80054]={ tid=4418, level=90, star=0
+},
+	[80055]={ tid=3607, level=90, star=0
+},
+	[80056]={ tid=4611, level=90, star=0
+},
+	[80057]={ tid=4423, level=90, star=0
+},
+	[80058]={ tid=8030, level=90, star=0
+},
+	[80059]={ tid=4408, level=90, star=0
+},
+	[80060]={ tid=3621, level=90, star=0
+},
+	[80061]={ tid=4641, level=90, star=0
+},
+	[80062]={ tid=4015, level=90, star=0
+},
+	[80063]={ tid=8022, level=90, star=0
+},
+	[80064]={ tid=4003, level=90, star=0
+},
+	[80065]={ tid=3614, level=90, star=0
+},
+	[80066]={ tid=4610, level=90, star=0
+},
+	[80067]={ tid=4010, level=90, star=0
+},
+	[80068]={ tid=8027, level=90, star=0
+},
+	[80069]={ tid=4019, level=90, star=0
+},
+	[80070]={ tid=3605, level=90, star=0
+},
+	[80071]={ tid=4213, level=90, star=0
+},
+	[80072]={ tid=4626, level=90, star=0
+},
+	[80073]={ tid=8030, level=90, star=0
+},
+	[80074]={ tid=4644, level=90, star=0
+},
+	[80075]={ tid=3628, level=90, star=0
+},
+	[80076]={ tid=8301, level=90, star=0
+},
+	[80077]={ tid=4462, level=90, star=0
+},
+	[80078]={ tid=4608, level=90, star=0
+},
+	[80079]={ tid=8033, level=90, star=0
+},
+	[80080]={ tid=4427, level=90, star=0
+},
+	[80081]={ tid=4620, level=90, star=0
+},
+	[80082]={ tid=8021, level=90, star=0
+},
+	[80083]={ tid=4422, level=90, star=0
+},
+	[80084]={ tid=8027, level=90, star=0
+},
+	[80085]={ tid=4619, level=90, star=0
+},
+	[80086]={ tid=8001, level=90, star=0
+},
+	[80087]={ tid=4220, level=90, star=0
+},
+	[80088]={ tid=4615, level=90, star=0
+},
+	[80089]={ tid=8022, level=90, star=0
+},
+	[80090]={ tid=4232, level=90, star=0
+},
+	[80091]={ tid=8036, level=90, star=0
+},
+	[80092]={ tid=4004, level=90, star=0
+},
+	[80093]={ tid=8033, level=90, star=0
+},
+	[80094]={ tid=4601, level=90, star=0
+},
+	[80095]={ tid=4620, level=90, star=0
+},
+	[80096]={ tid=4634, level=90, star=0
+},
+	[80097]={ tid=8030, level=90, star=0
+},
+	[80098]={ tid=8007, level=90, star=0
+},
+	[80099]={ tid=4220, level=90, star=0
+},
+	[80100]={ tid=4212, level=90, star=0
+},
+	[80101]={ tid=4616, level=95, star=0
+},
+	[80102]={ tid=8027, level=95, star=0
+},
+	[80103]={ tid=8021, level=95, star=0
+},
+	[80104]={ tid=4211, level=95, star=0
+},
+	[80105]={ tid=4206, level=95, star=0
+},
+	[80106]={ tid=4615, level=95, star=0
+},
+	[80107]={ tid=8030, level=95, star=0
+},
+	[80108]={ tid=8007, level=95, star=0
+},
+	[80109]={ tid=4205, level=95, star=0
+},
+	[80110]={ tid=4215, level=95, star=0
+},
+	[80111]={ tid=8018, level=95, star=0
+},
+	[80112]={ tid=4006, level=95, star=0
+},
+	[80113]={ tid=8033, level=95, star=0
+},
+	[80114]={ tid=4611, level=95, star=0
+},
+	[80115]={ tid=4618, level=95, star=0
+},
+	[80116]={ tid=8036, level=95, star=0
+},
+	[80117]={ tid=4236, level=95, star=0
+},
+	[80118]={ tid=8030, level=95, star=0
+},
+	[80119]={ tid=4604, level=95, star=0
+},
+	[80120]={ tid=4634, level=95, star=0
+},
+	[80121]={ tid=4643, level=95, star=0
+},
+	[80122]={ tid=8027, level=95, star=0
+},
+	[80123]={ tid=8021, level=95, star=0
+},
+	[80124]={ tid=4406, level=95, star=0
+},
+	[80125]={ tid=4403, level=95, star=0
+},
+	[80126]={ tid=8018, level=90, star=0
+},
+	[80127]={ tid=4213, level=90, star=0
+},
+	[80128]={ tid=4609, level=90, star=0
+},
+	[80129]={ tid=8022, level=90, star=0
+},
+	[80130]={ tid=4232, level=90, star=0
+},
+	[80131]={ tid=4601, level=90, star=0
+},
+	[80132]={ tid=8021, level=90, star=0
+},
+	[80133]={ tid=4028, level=90, star=0
+},
+	[80134]={ tid=8022, level=90, star=0
+},
+	[80135]={ tid=4607, level=90, star=0
+},
+	[80136]={ tid=8301, level=90, star=0
+},
+	[80137]={ tid=4036, level=90, star=0
+},
+	[80138]={ tid=4632, level=90, star=0
+},
+	[80139]={ tid=8033, level=90, star=0
+},
+	[80140]={ tid=4032, level=90, star=0
+},
+	[80141]={ tid=8301, level=90, star=0
+},
+	[80142]={ tid=4422, level=90, star=0
+},
+	[80143]={ tid=4605, level=90, star=0
+},
+	[80144]={ tid=8033, level=90, star=0
+},
+	[80145]={ tid=4416, level=90, star=0
+},
+	[80146]={ tid=8036, level=90, star=0
+},
+	[80147]={ tid=4442, level=90, star=0
+},
+	[80148]={ tid=8033, level=90, star=0
+},
+	[80149]={ tid=4635, level=90, star=0
+},
+	[80150]={ tid=4623, level=90, star=0
+},
+	[80151]={ tid=8025, level=90, star=0
+},
+	[80152]={ tid=4457, level=90, star=0
+},
+	[80153]={ tid=4639, level=90, star=0
+},
+	[80154]={ tid=8035, level=90, star=0
+},
+	[80155]={ tid=4464, level=90, star=0
+},
+	[80156]={ tid=8018, level=90, star=0
+},
+	[80157]={ tid=4205, level=90, star=0
+},
+	[80158]={ tid=8035, level=90, star=0
+},
+	[80159]={ tid=4634, level=90, star=0
+},
+	[80160]={ tid=4611, level=90, star=0
+},
+	[80161]={ tid=4621, level=90, star=0
+},
+	[80162]={ tid=8035, level=90, star=0
+},
+	[80163]={ tid=8038, level=90, star=0
+},
+	[80164]={ tid=4016, level=90, star=0
+},
+	[80165]={ tid=4013, level=90, star=0
+},
+	[80166]={ tid=8001, level=90, star=0
+},
+	[80167]={ tid=4461, level=90, star=0
+},
+	[80168]={ tid=4638, level=90, star=0
+},
+	[80169]={ tid=8030, level=90, star=0
+},
+	[80170]={ tid=4428, level=90, star=0
+},
+	[80171]={ tid=4621, level=90, star=0
+},
+	[80172]={ tid=8038, level=90, star=0
+},
+	[80173]={ tid=4213, level=90, star=0
+},
+	[80174]={ tid=8022, level=90, star=0
+},
+	[80175]={ tid=4627, level=90, star=0
+},
+	[80176]={ tid=4626, level=95, star=0
+},
+	[80177]={ tid=8002, level=95, star=0
+},
+	[80178]={ tid=4004, level=95, star=0
+},
+	[80179]={ tid=8033, level=95, star=0
+},
+	[80180]={ tid=4645, level=95, star=0
+},
+	[80181]={ tid=8301, level=95, star=0
+},
+	[80182]={ tid=4419, level=95, star=0
+},
+	[80183]={ tid=4634, level=95, star=0
+},
+	[80184]={ tid=8033, level=95, star=0
+},
+	[80185]={ tid=4410, level=95, star=0
+},
+	[80186]={ tid=8018, level=95, star=0
+},
+	[80187]={ tid=4022, level=95, star=0
+},
+	[80188]={ tid=8033, level=95, star=0
+},
+	[80189]={ tid=4613, level=95, star=0
+},
+	[80190]={ tid=4631, level=95, star=0
+},
+	[80191]={ tid=4637, level=95, star=0
+},
+	[80192]={ tid=8027, level=95, star=0
+},
+	[80193]={ tid=8007, level=95, star=0
+},
+	[80194]={ tid=4231, level=95, star=0
+},
+	[80195]={ tid=4207, level=95, star=0
+},
+	[80196]={ tid=8036, level=95, star=0
+},
+	[80197]={ tid=4004, level=95, star=0
+},
+	[80198]={ tid=4629, level=95, star=0
+},
+	[80199]={ tid=8030, level=95, star=0
+},
+	[80200]={ tid=4004, level=95, star=0
+},
+	[80201]={ tid=8025, level=95, star=0
+},
+	[80202]={ tid=4238, level=95, star=0
+},
+	[80203]={ tid=4626, level=95, star=0
+},
+	[80204]={ tid=8027, level=95, star=0
+},
+	[80205]={ tid=4215, level=95, star=0
+},
+	[80206]={ tid=8301, level=95, star=0
+},
+	[80207]={ tid=4412, level=95, star=0
+},
+	[80208]={ tid=4637, level=95, star=0
+},
+	[80209]={ tid=8022, level=95, star=0
+},
+	[80210]={ tid=4428, level=95, star=0
+},
+	[80211]={ tid=8025, level=95, star=0
+},
+	[80212]={ tid=4455, level=95, star=0
+},
+	[80213]={ tid=8033, level=95, star=0
+},
+	[80214]={ tid=4601, level=95, star=0
+},
+	[80215]={ tid=4629, level=95, star=0
+},
+	[80216]={ tid=4632, level=95, star=0
+},
+	[80217]={ tid=8007, level=95, star=0
+},
+	[80218]={ tid=4030, level=95, star=0
+},
+	[80219]={ tid=8035, level=95, star=0
+},
+	[80220]={ tid=4621, level=95, star=0
+},
+	[80221]={ tid=8301, level=95, star=0
+},
+	[80222]={ tid=4464, level=95, star=0
+},
+	[80223]={ tid=4616, level=95, star=0
+},
+	[80224]={ tid=8022, level=95, star=0
+},
+	[80225]={ tid=4455, level=95, star=0
+},
+	[80226]={ tid=8001, level=100, star=0
+},
+	[80227]={ tid=4029, level=100, star=0
+},
+	[80228]={ tid=8027, level=100, star=0
+},
+	[80229]={ tid=4620, level=100, star=0
+},
+	[80230]={ tid=4630, level=100, star=0
+},
+	[80231]={ tid=4611, level=100, star=0
+},
+	[80232]={ tid=8033, level=100, star=0
+},
+	[80233]={ tid=8007, level=100, star=0
+},
+	[80234]={ tid=4428, level=100, star=0
+},
+	[80235]={ tid=4410, level=100, star=0
+},
+	[80236]={ tid=4634, level=100, star=0
+},
+	[80237]={ tid=8027, level=100, star=0
+},
+	[80238]={ tid=8002, level=100, star=0
+},
+	[80239]={ tid=4461, level=100, star=0
+},
+	[80240]={ tid=4437, level=100, star=0
+},
+	[80241]={ tid=8018, level=100, star=0
+},
+	[80242]={ tid=4236, level=100, star=0
+},
+	[80243]={ tid=4614, level=100, star=0
+},
+	[80244]={ tid=8033, level=100, star=0
+},
+	[80245]={ tid=4218, level=100, star=0
+},
+	[80246]={ tid=4614, level=100, star=0
+},
+	[80247]={ tid=8030, level=100, star=0
+},
+	[80248]={ tid=8002, level=100, star=0
+},
+	[80249]={ tid=4455, level=100, star=0
+},
+	[80250]={ tid=4448, level=100, star=0
+},
+	[80251]={ tid=8036, level=100, star=0
+},
+	[80252]={ tid=4036, level=100, star=0
+},
+	[80253]={ tid=8033, level=100, star=0
+},
+	[80254]={ tid=4640, level=100, star=0
+},
+	[80255]={ tid=4628, level=100, star=0
+},
+	[80256]={ tid=4621, level=100, star=0
+},
+	[80257]={ tid=8002, level=100, star=0
+},
+	[80258]={ tid=4012, level=100, star=0
+},
+	[80259]={ tid=8035, level=100, star=0
+},
+	[80260]={ tid=4620, level=100, star=0
+},
+	[80261]={ tid=4603, level=100, star=0
+},
+	[80262]={ tid=8038, level=100, star=0
+},
+	[80263]={ tid=4430, level=100, star=0
+},
+	[80264]={ tid=8022, level=100, star=0
+},
+	[80265]={ tid=4636, level=100, star=0
+},
+	[80266]={ tid=4615, level=100, star=0
+},
+	[80267]={ tid=8027, level=100, star=0
+},
+	[80268]={ tid=8038, level=100, star=0
+},
+	[80269]={ tid=4027, level=100, star=0
+},
+	[80270]={ tid=4007, level=100, star=0
+},
+	[80271]={ tid=8301, level=100, star=0
+},
+	[80272]={ tid=4221, level=100, star=0
+},
+	[80273]={ tid=4603, level=100, star=0
+},
+	[80274]={ tid=8027, level=100, star=0
+},
+	[80275]={ tid=4202, level=100, star=0
+},
+	[80276]={ tid=4643, level=105, star=0
+},
+	[80277]={ tid=8030, level=105, star=0
+},
+	[80278]={ tid=8007, level=105, star=0
+},
+	[80279]={ tid=8035, level=105, star=0
+},
+	[80280]={ tid=4441, level=105, star=0
+},
+	[80281]={ tid=8301, level=105, star=0
+},
+	[80282]={ tid=4029, level=105, star=0
+},
+	[80283]={ tid=4612, level=105, star=0
+},
+	[80284]={ tid=8034, level=105, star=0
+},
+	[80285]={ tid=8033, level=105, star=0
+},
+	[80286]={ tid=4618, level=105, star=0
+},
+	[80287]={ tid=8030, level=105, star=0
+},
+	[80288]={ tid=8038, level=105, star=0
+},
+	[80289]={ tid=8022, level=105, star=0
+},
+	[80290]={ tid=4427, level=105, star=0
+},
+	[80291]={ tid=8025, level=105, star=0
+},
+	[80292]={ tid=4018, level=105, star=0
+},
+	[80293]={ tid=8035, level=105, star=0
+},
+	[80294]={ tid=8021, level=105, star=0
+},
+	[80295]={ tid=4640, level=105, star=0
+},
+	[80296]={ tid=4641, level=105, star=0
+},
+	[80297]={ tid=8021, level=105, star=0
+},
+	[80298]={ tid=4023, level=105, star=0
+},
+	[80299]={ tid=8022, level=105, star=0
+},
+	[80300]={ tid=8038, level=105, star=0
+},
+	[80301]={ tid=8301, level=105, star=0
+},
+	[80302]={ tid=4233, level=105, star=0
+},
+	[80303]={ tid=8030, level=105, star=0
+},
+	[80304]={ tid=8034, level=105, star=0
+},
+	[80305]={ tid=4609, level=105, star=0
+},
+	[80306]={ tid=8018, level=105, star=0
+},
+	[80307]={ tid=8034, level=105, star=0
+},
+	[80308]={ tid=4027, level=105, star=0
+},
+	[80309]={ tid=4623, level=105, star=0
+},
+	[80310]={ tid=8033, level=105, star=0
+},
+	[80311]={ tid=4612, level=105, star=0
+},
+	[80312]={ tid=8022, level=105, star=0
+},
+	[80313]={ tid=8034, level=105, star=0
+},
+	[80314]={ tid=8030, level=105, star=0
+},
+	[80315]={ tid=4229, level=105, star=0
+},
+	[80316]={ tid=4613, level=105, star=0
+},
+	[80317]={ tid=8034, level=105, star=0
+},
+	[80318]={ tid=4014, level=105, star=0
+},
+	[80319]={ tid=8033, level=105, star=0
+},
+	[80320]={ tid=8002, level=105, star=0
+},
+	[80321]={ tid=4642, level=105, star=0
+},
+	[80322]={ tid=8007, level=105, star=0
+},
+	[80323]={ tid=4010, level=105, star=0
+},
+	[80324]={ tid=8033, level=105, star=0
+},
+	[80325]={ tid=8002, level=105, star=0
+},
+	[80326]={ tid=8018, level=115, star=0
+},
+	[80327]={ tid=8030, level=115, star=0
+},
+	[80328]={ tid=4437, level=115, star=0
+},
+	[80329]={ tid=4608, level=115, star=0
+},
+	[80330]={ tid=8021, level=115, star=0
+},
+	[80331]={ tid=4632, level=115, star=0
+},
+	[80332]={ tid=8030, level=115, star=0
+},
+	[80333]={ tid=8007, level=115, star=0
+},
+	[80334]={ tid=8033, level=115, star=0
+},
+	[80335]={ tid=4441, level=115, star=0
+},
+	[80336]={ tid=8025, level=115, star=0
+},
+	[80337]={ tid=4003, level=115, star=0
+},
+	[80338]={ tid=8022, level=115, star=0
+},
+	[80339]={ tid=8021, level=115, star=0
+},
+	[80340]={ tid=4616, level=115, star=0
+},
+	[80341]={ tid=8036, level=115, star=0
+},
+	[80342]={ tid=4213, level=115, star=0
+},
+	[80343]={ tid=4637, level=115, star=0
+},
+	[80344]={ tid=8007, level=115, star=0
+},
+	[80345]={ tid=8022, level=115, star=0
+},
+	[80346]={ tid=4606, level=115, star=0
+},
+	[80347]={ tid=8035, level=115, star=0
+},
+	[80348]={ tid=8034, level=115, star=0
+},
+	[80349]={ tid=8033, level=115, star=0
+},
+	[80350]={ tid=4413, level=115, star=0
+},
+	[80351]={ tid=4607, level=115, star=0
+},
+	[80352]={ tid=8035, level=115, star=0
+},
+	[80353]={ tid=8021, level=115, star=0
+},
+	[80354]={ tid=8033, level=115, star=0
+},
+	[80355]={ tid=4006, level=115, star=0
+},
+	[80356]={ tid=4614, level=115, star=0
+},
+	[80357]={ tid=8038, level=115, star=0
+},
+	[80358]={ tid=4234, level=115, star=0
+},
+	[80359]={ tid=8027, level=115, star=0
+},
+	[80360]={ tid=8002, level=115, star=0
+},
+	[80361]={ tid=8301, level=115, star=0
+},
+	[80362]={ tid=8007, level=115, star=0
+},
+	[80363]={ tid=4007, level=115, star=0
+},
+	[80364]={ tid=4612, level=115, star=0
+},
+	[80365]={ tid=8022, level=115, star=0
+},
+	[80366]={ tid=4624, level=115, star=0
+},
+	[80367]={ tid=8033, level=115, star=0
+},
+	[80368]={ tid=8038, level=115, star=0
+},
+	[80369]={ tid=8035, level=115, star=0
+},
+	[80370]={ tid=4447, level=115, star=0
+},
+	[80371]={ tid=8018, level=115, star=0
+},
+	[80372]={ tid=4409, level=115, star=0
+},
+	[80373]={ tid=8035, level=115, star=0
+},
+	[80374]={ tid=8021, level=115, star=0
+},
+	[80375]={ tid=4614, level=115, star=0
+},
+	[80376]={ tid=4638, level=125, star=0
+},
+	[80377]={ tid=8038, level=125, star=0
+},
+	[80378]={ tid=4223, level=125, star=0
+},
+	[80379]={ tid=8035, level=125, star=0
+},
+	[80380]={ tid=8034, level=125, star=0
+},
+	[80381]={ tid=4623, level=125, star=0
+},
+	[80382]={ tid=8007, level=125, star=0
+},
+	[80383]={ tid=4425, level=125, star=0
+},
+	[80384]={ tid=8027, level=125, star=0
+},
+	[80385]={ tid=8038, level=125, star=0
+},
+	[80386]={ tid=8301, level=125, star=0
+},
+	[80387]={ tid=4028, level=125, star=0
+},
+	[80388]={ tid=4643, level=125, star=0
+},
+	[80389]={ tid=8034, level=125, star=0
+},
+	[80390]={ tid=8033, level=125, star=0
+},
+	[80391]={ tid=8001, level=125, star=0
+},
+	[80392]={ tid=4033, level=125, star=0
+},
+	[80393]={ tid=8035, level=125, star=0
+},
+	[80394]={ tid=8021, level=125, star=0
+},
+	[80395]={ tid=4641, level=125, star=0
+},
+	[80396]={ tid=8018, level=125, star=0
+},
+	[80397]={ tid=8038, level=125, star=0
+},
+	[80398]={ tid=4201, level=125, star=0
+},
+	[80399]={ tid=4640, level=125, star=0
+},
+	[80400]={ tid=8030, level=125, star=0
+},
+	[80401]={ tid=4623, level=125, star=0
+},
+	[80402]={ tid=8035, level=125, star=0
+},
+	[80403]={ tid=8034, level=125, star=0
+},
+	[80404]={ tid=8030, level=125, star=0
+},
+	[80405]={ tid=4205, level=125, star=0
+},
+	[80406]={ tid=8001, level=125, star=0
+},
+	[80407]={ tid=4002, level=125, star=0
+},
+	[80408]={ tid=4636, level=125, star=0
+},
+	[80409]={ tid=8021, level=125, star=0
+},
+	[80410]={ tid=8030, level=125, star=0
+},
+	[80411]={ tid=4637, level=125, star=0
+},
+	[80412]={ tid=8033, level=125, star=0
+},
+	[80413]={ tid=8002, level=125, star=0
+},
+	[80414]={ tid=8030, level=125, star=0
+},
+	[80415]={ tid=4220, level=125, star=0
+},
+	[80416]={ tid=8036, level=125, star=0
+},
+	[80417]={ tid=4019, level=125, star=0
+},
+	[80418]={ tid=4635, level=125, star=0
+},
+	[80419]={ tid=8034, level=125, star=0
+},
+	[80420]={ tid=8033, level=125, star=0
+},
+	[80421]={ tid=4628, level=125, star=0
+},
+	[80422]={ tid=8035, level=125, star=0
+},
+	[80423]={ tid=8021, level=125, star=0
+},
+	[80424]={ tid=8022, level=125, star=0
+},
+	[80425]={ tid=4230, level=125, star=0
+},
+	[80426]={ tid=8301, level=125, star=0
+},
+	[80427]={ tid=4228, level=125, star=0
+},
+	[80428]={ tid=8033, level=125, star=0
+},
+	[80429]={ tid=8007, level=125, star=0
+},
+	[80430]={ tid=4625, level=125, star=0
+},
+	[80431]={ tid=8036, level=125, star=0
+},
+	[80432]={ tid=4217, level=125, star=0
+},
+	[80433]={ tid=4621, level=125, star=0
+},
+	[80434]={ tid=8038, level=125, star=0
+},
+	[80435]={ tid=8022, level=125, star=0
+},
+	[80436]={ tid=8018, level=125, star=0
+},
+	[80437]={ tid=4011, level=125, star=0
+},
+	[80438]={ tid=8033, level=125, star=0
+},
+	[80439]={ tid=8007, level=125, star=0
+},
+	[80440]={ tid=4614, level=125, star=0
+},
+	[80441]={ tid=4619, level=125, star=0
+},
+	[80442]={ tid=8021, level=125, star=0
+},
+	[80443]={ tid=4241, level=125, star=0
+},
+	[80444]={ tid=8033, level=125, star=0
+},
+	[80445]={ tid=8038, level=125, star=0
+},
+	[80446]={ tid=8025, level=125, star=0
+},
+	[80447]={ tid=8038, level=125, star=0
+},
+	[80448]={ tid=4006, level=125, star=0
+},
+	[80449]={ tid=4644, level=125, star=0
+},
+	[80450]={ tid=8035, level=125, star=0
+},
+	[80451]={ tid=4645, level=135, star=0
+},
+	[80452]={ tid=8021, level=135, star=0
+},
+	[80453]={ tid=4028, level=135, star=0
+},
+	[80454]={ tid=8033, level=135, star=0
+},
+	[80455]={ tid=8034, level=135, star=0
+},
+	[80456]={ tid=8301, level=135, star=0
+},
+	[80457]={ tid=4414, level=135, star=0
+},
+	[80458]={ tid=4623, level=135, star=0
+},
+	[80459]={ tid=8034, level=135, star=0
+},
+	[80460]={ tid=8035, level=135, star=0
+},
+	[80461]={ tid=4628, level=135, star=0
+},
+	[80462]={ tid=8034, level=135, star=0
+},
+	[80463]={ tid=4023, level=135, star=0
+},
+	[80464]={ tid=8033, level=135, star=0
+},
+	[80465]={ tid=8038, level=135, star=0
+},
+	[80466]={ tid=8001, level=135, star=0
+},
+	[80467]={ tid=4029, level=135, star=0
+},
+	[80468]={ tid=8022, level=135, star=0
+},
+	[80469]={ tid=8038, level=135, star=0
+},
+	[80470]={ tid=4619, level=135, star=0
+},
+	[80471]={ tid=8036, level=135, star=0
+},
+	[80472]={ tid=4242, level=135, star=0
+},
+	[80473]={ tid=4601, level=135, star=0
+},
+	[80474]={ tid=8021, level=135, star=0
+},
+	[80475]={ tid=8030, level=135, star=0
+},
+	[80476]={ tid=4609, level=135, star=0
+},
+	[80477]={ tid=8022, level=135, star=0
+},
+	[80478]={ tid=8034, level=135, star=0
+},
+	[80479]={ tid=8035, level=135, star=0
+},
+	[80480]={ tid=4241, level=135, star=0
+},
+	[80481]={ tid=8301, level=135, star=0
+},
+	[80482]={ tid=8035, level=135, star=0
+},
+	[80483]={ tid=4424, level=135, star=0
+},
+	[80484]={ tid=4639, level=135, star=0
+},
+	[80485]={ tid=8021, level=135, star=0
+},
+	[80486]={ tid=8001, level=135, star=0
+},
+	[80487]={ tid=4236, level=135, star=0
+},
+	[80488]={ tid=4608, level=135, star=0
+},
+	[80489]={ tid=8034, level=135, star=0
+},
+	[80490]={ tid=8022, level=135, star=0
+},
+	[80491]={ tid=8301, level=135, star=0
+},
+	[80492]={ tid=4223, level=135, star=0
+},
+	[80493]={ tid=8030, level=135, star=0
+},
+	[80494]={ tid=8007, level=135, star=0
+},
+	[80495]={ tid=4644, level=135, star=0
+},
+	[80496]={ tid=4606, level=135, star=0
+},
+	[80497]={ tid=8038, level=135, star=0
+},
+	[80498]={ tid=4022, level=135, star=0
+},
+	[80499]={ tid=8035, level=135, star=0
+},
+	[80500]={ tid=8034, level=135, star=0
+},
+	[80501]={ tid=4601, level=135, star=0
+},
+	[80502]={ tid=8007, level=135, star=0
+},
+	[80503]={ tid=4228, level=135, star=0
+},
+	[80504]={ tid=8033, level=135, star=0
+},
+	[80505]={ tid=8021, level=135, star=0
+},
+	[80506]={ tid=4605, level=135, star=0
+},
+	[80507]={ tid=8035, level=135, star=0
+},
+	[80508]={ tid=8002, level=135, star=0
+},
+	[80509]={ tid=8033, level=135, star=0
+},
+	[80510]={ tid=4008, level=135, star=0
+},
+	[80511]={ tid=8001, level=135, star=0
+},
+	[80512]={ tid=8021, level=135, star=0
+},
+	[80513]={ tid=4018, level=135, star=0
+},
+	[80514]={ tid=4626, level=135, star=0
+},
+	[80515]={ tid=8033, level=135, star=0
+},
+	[80516]={ tid=4617, level=135, star=0
+},
+	[80517]={ tid=8033, level=135, star=0
+},
+	[80518]={ tid=8002, level=135, star=0
+},
+	[80519]={ tid=8022, level=135, star=0
+},
+	[80520]={ tid=4025, level=135, star=0
+},
+	[80521]={ tid=8036, level=135, star=0
+},
+	[80522]={ tid=8021, level=135, star=0
+},
+	[80523]={ tid=4233, level=135, star=0
+},
+	[80524]={ tid=4616, level=135, star=0
+},
+	[80525]={ tid=8033, level=135, star=0
 }
 }
 

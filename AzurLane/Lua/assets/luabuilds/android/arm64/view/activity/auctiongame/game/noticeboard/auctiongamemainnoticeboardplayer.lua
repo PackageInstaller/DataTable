@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainNoticeBoardPlayer", import("view.base.BasePanel"))
 
-local var_0_0 = "AuctionGameMainNoticeBoardPlayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,132 +13,72 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
+function var_0_0.Init(arg_2_0)
 	arg_2_0.itemViewList = {}
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0, arg_3_1)
+function var_0_0.didEnter(arg_3_0, arg_3_1)
 	arg_3_0.index = arg_3_1
-	getProxy = var_1_10002
-	AuctionGameProxy = var_1_10004
 
-	local var_3_0 = var_1_10002(var_1_10004)
-	local var_3_1 = var_2.GetPlayerList(var_3_0)[arg_3_1]
+	local var_3_0 = getProxy(AuctionGameProxy)
+	local var_3_1 = var_3_0:GetPlayerList()[arg_3_1]
 
-	setScrollText = var_3_0
-
-	var_3_0(arg_3_0.uiNameText, var_3_1.name)
-
-	Ship = var_3_0
-
-	local var_3_2 = var_3_0.New({
+	setScrollText(arg_3_0.uiNameText, var_3_1.name)
+	LoadSpriteAsync("qicon/" .. Ship.New({
 		configId = var_3_1.icon,
 		skin_id = var_3_1.skinId
-	})
-
-	LoadSpriteAsync = var_1_10006
-
-	var_1_10006("qicon/" .. var_3_2:getPrefab(), function(arg_4_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_3_0.uiIconImage) then
+	}):getPrefab(), function(arg_4_0)
+		if not IsNil(arg_3_0.uiIconImage) then
 			arg_3_0.uiIconImage.sprite = arg_4_0
 		end
 
 		return
 	end)
 
-	AttireFrame = var_1_10006
+	local var_3_2 = AttireFrame.attireFrameRes(var_3_1, false, AttireConst.TYPE_ICON_FRAME, var_3_1.propose)
 
-	local var_3_3 = var_1_10006.attireFrameRes
-	local var_3_4 = var_3_1
-	local var_3_5 = false
-
-	AttireConst = var_1_10010
-
-	local var_3_6 = var_3_3(var_3_4, var_3_5, var_1_10010.TYPE_ICON_FRAME, var_3_1.propose)
-
-	PoolMgr = var_7
-
-	local var_3_7 = var_7.GetInstance()
-
-	var_7.GetPrefab(var_3_7, "IconFrame/" .. var_3_6, var_3_6, true, function(arg_5_0)
-		IsNil = var_2_10001
-
-		if var_2_10001(arg_3_0.uiFrameGo) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_3_2, var_3_2, true, function(arg_5_0)
+		if IsNil(arg_3_0.uiFrameGo) then
 			return
 		end
 
 		if arg_3_0.uiFrameGo then
-			arg_5_0.name = var_3_6
-			findTF = var_1
+			arg_5_0.name = var_3_2
+			findTF(arg_5_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			local var_5_0 = var_1(arg_5_0.transform, "icon")
-			local var_5_1 = var_1.GetComponent
-
-			typeof = var_2_10005
-			Image = var_2_10007
-			var_5_1(var_5_0, var_2_10005(var_2_10007)).raycastTarget = false
-			setParent = var_3
-
-			local var_5_2 = arg_5_0
-
-			tf = var_2_10006
-
-			var_3(var_5_2, var_2_10006(arg_3_0.uiFrameGo), false)
+			setParent(arg_5_0, tf(arg_3_0.uiFrameGo), false)
 		else
-			PoolMgr = var_1
-
-			local var_5_3 = var_1.GetInstance()
-
-			var_1.ReturnPrefab(var_5_3, "IconFrame/" .. var_3_6, var_3_6, arg_5_0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_3_2, var_3_2, arg_5_0)
 		end
 
 		return
 	end)
 
-	local var_3_8 = var_2:GetRoundEventAndBidInfoList()
+	local var_3_3 = var_3_0:GetRoundEventAndBidInfoList()
 
-	for iter_3_0 = 1, var_2:GetRound() - 1 do
-		local var_3_9 = var_3_8[iter_3_0][var_3_1.id]
-		local var_3_10 = arg_3_0.itemViewList
+	for iter_3_0 = 1, var_3_0:GetRound() - 1 do
+		arg_3_0.itemViewList[iter_3_0] = AuctionGameMainNoticeBoardItem.New(Instantiate(arg_3_0.uiItemTf, arg_3_0._tf), arg_3_0._parentClass)
 
-		AuctionGameMainNoticeBoardItem = var_1_10014
-		var_1_10014 = var_1_10014.New
-		Instantiate = var_1_10016
-		var_3_10[iter_3_0] = var_1_10014(var_1_10016(arg_3_0.uiItemTf, arg_3_0._tf), arg_3_0._parentClass)
-
-		local var_3_11 = arg_3_0.itemViewList[iter_3_0]
-
-		var_13.didEnter(var_3_11, var_3_9)
+		arg_3_0.itemViewList[iter_3_0]:didEnter(var_3_3[iter_3_0][var_3_1.id])
 	end
 
 	return
 end
 
-function var_0_1.willExit(arg_6_0)
-	IsNil = var_1_10001
+function var_0_0.willExit(arg_6_0)
+	if not IsNil(arg_6_0.uiFrameGo) then
+		local var_6_0 = tf(arg_6_0.uiFrameGo)
 
-	if not var_1_10001(arg_6_0.uiFrameGo) then
-		tf = var_1
+		if var_6_0.childCount > 0 then
+			local var_6_1 = var_6_0:GetChild(0)
 
-		if var_1(arg_6_0.uiFrameGo).childCount > 0 then
-			local var_6_0 = var_1
-			local var_6_1 = var_1.GetChild(var_6_0, 0).gameObject.name
-
-			PoolMgr = var_6_0
-
-			local var_6_2 = var_6_0.GetInstance()
-
-			var_4.ReturnPrefab(var_6_2, "IconFrame/" .. var_6_1, var_6_1, var_2.gameObject)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_6_1.gameObject.name, var_6_1.gameObject.name, var_6_1.gameObject)
 		end
 	end
 
-	ipairs = var_1
-
-	for iter_6_0, iter_6_1 in var_1(arg_6_0.itemViewList) do
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.itemViewList) do
 		iter_6_1:willExit()
 	end
 
@@ -155,4 +89,4 @@ function var_0_1.willExit(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

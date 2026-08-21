@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : DormitoryManager
 @Description    : 宿舍数据管理
@@ -51,7 +51,7 @@ function init(self)
     -- 是否编辑状态
     self.isEditState = false
 
-    --是否正在操作移动的战员ID    
+    --是否正在操作移动的战员ID
     self.mCurControllerLiveTid = nil
 
     --当前宿舍所有的家具（使用中的跟未使用中的,所有在场景上的家具）
@@ -108,18 +108,18 @@ end
 function parseDormitoryInfoMsg(self, msg)
     -- for i, dormitory_info in ipairs(msg.dormitory_list) do
 
-        local dormitory_Info = {}
-        dormitory_Info.dormitory_id = msg.dormitory_info.dormitory_id --宿舍id
-        dormitory_Info.furniture_list = {} --家具列表
-        dormitory_Info.comfort = msg.dormitory_info.comfort --舒适度
-        dormitory_Info.add_hero_stamina_speed = msg.dormitory_info.add_hero_stamina_speed --加成的战员疲劳恢复速度
+    local dormitory_Info = {}
+    dormitory_Info.dormitory_id = msg.dormitory_info.dormitory_id --宿舍id
+    dormitory_Info.furniture_list = {} --家具列表
+    dormitory_Info.comfort = msg.dormitory_info.comfort --舒适度
+    dormitory_Info.add_hero_stamina_speed = msg.dormitory_info.add_hero_stamina_speed --加成的战员疲劳恢复速度
 
-        for i, pt_furniture_info in ipairs(msg.dormitory_info.furniture_list) do
-            local vo = dormitory.DormitoryFurnitureVo.new()
-            vo:parseMsg(pt_furniture_info)
-            table.insert(dormitory_Info.furniture_list, vo)
-        end
-        self.mDormitoryData[msg.dormitory_info.dormitory_id] = dormitory_Info
+    for i, pt_furniture_info in ipairs(msg.dormitory_info.furniture_list) do
+        local vo = dormitory.DormitoryFurnitureVo.new()
+        vo:parseMsg(pt_furniture_info)
+        table.insert(dormitory_Info.furniture_list, vo)
+    end
+    self.mDormitoryData[msg.dormitory_info.dormitory_id] = dormitory_Info
     -- end
 
     self:dispatchEvent(self.EVENT_DORMITORY_INIT)
@@ -143,7 +143,7 @@ function getLiveBubbleText(self, liveTid, state)
     if table.empty(self.mLiveBubbleTxtConfig[liveTid]) then return nil end
 
     local textConfig = self.mLiveBubbleTxtConfig[liveTid][state]
-        if textConfig and not table.empty(textConfig) then
+    if textConfig and not table.empty(textConfig) then
         local random_index = math.random(1, #textConfig)
         return textConfig[random_index]
     end
@@ -203,7 +203,7 @@ end
 -------------------------------------------------
 
 function initAllFurnitureDic(self)
-   self.mAllFurnitureDic = {}
+    self.mAllFurnitureDic = {}
 
     local use_list = self:getFurnitureListByDormitory()
     if use_list then
@@ -214,7 +214,7 @@ function initAllFurnitureDic(self)
             if furnitureVo.move ~= 1 then
                 propsVo.useing = 1
             end
-            
+
             if not self.mAllFurnitureDic[propsVo.subType] then
                 self.mAllFurnitureDic[propsVo.subType] = {}
             end
@@ -224,18 +224,18 @@ function initAllFurnitureDic(self)
 end
 
 --获取指定页签的家具
-function getSubtypeFurniture(self,subType)
-    if not self.mAllFurnitureDic then 
+function getSubtypeFurniture(self, subType)
+    if not self.mAllFurnitureDic then
         self:initAllFurnitureDic()
     end
 
-    if not self.mAllFurnitureDic[subType] then 
+    if not self.mAllFurnitureDic[subType] then
         self.mAllFurnitureDic[subType] = {}
     end
 
     local propList = self:getAllTempBag()
     if propList then
-        for id,propsVo in pairs(propList) do
+        for id, propsVo in pairs(propList) do
             if propsVo.subType == subType and self.mAllFurnitureDic[subType][propsVo.id] == nil then
                 if not propsVo.useing then
                     propsVo.useing = 1
@@ -260,43 +260,51 @@ function getSubtypeFurniture(self,subType)
     return self.mAllFurnitureDic[subType]
 end
 --使用某个家具
-function useingFurniture(self,subType,useProp_id)
+function useingFurniture(self, subType, useProp_id)
     self:getSubtypeFurniture(subType)
 
     local propsVo = self.mAllFurnitureDic[subType][useProp_id]
-    if propsVo ~= nil then 
+    if propsVo ~= nil then
         propsVo.useing = 1
+
     end
 end
 
 --不使用某个家具
-function unUseingFurniture(self,subType,useProp_id)
+function unUseingFurniture(self, subType, useProp_id)
     self:getSubtypeFurniture(subType)
 
     local propsVo = self.mAllFurnitureDic[subType][useProp_id]
-    if propsVo ~= nil then 
+    if propsVo ~= nil then
         propsVo.useing = nil
     end
 end
 
 --获取所有的家具(使用中的，没使用中的)
 function getAllFurniture(self)
-    if not self.mAllFurnitureDic then 
+    if not self.mAllFurnitureDic then
         self:initAllFurnitureDic()
+
+        local menuList = self:getFunitureMenuList()
+        for i, v in ipairs(menuList) do
+            self:getSubtypeFurniture(v.type)
+        end
     end
     return self.mAllFurnitureDic
 end
 
 --清理所有家具
-function clearAllFurniture(self)
+function clearAllFurniture(self, notClear)
     if not self.mAllFurnitureDic then return end
 
-    for subtype,propList in pairs(self.mAllFurnitureDic) do
-        for k,propVo in pairs(propList) do
+    for subtype, propList in pairs(self.mAllFurnitureDic) do
+        for k, propVo in pairs(propList) do
             propVo.useing = nil
         end
     end
-    self.mAllFurnitureDic = nil
+    if not notClear then
+        self.mAllFurnitureDic = nil
+    end
 end
 
 -- 家具基础数据
@@ -308,7 +316,7 @@ function getDormitoryBaseVo(self, cusTid)
 end
 
 --获取宿舍数据
-function getDormitoryData(self,dormitoryId)
+function getDormitoryData(self, dormitoryId)
     dormitoryId = dormitoryId or self.m_CurDormitoryId
     return self.mDormitoryData[dormitoryId]
 end
@@ -317,8 +325,8 @@ end
 function getFurnitureListByDormitory(self, dormitoryId)
     dormitoryId = dormitoryId or self.m_CurDormitoryId
     local dormitoryData = self:getDormitoryData(dormitoryId)
-    if dormitoryData then 
-        return self.mDormitoryData[dormitoryId].furniture_list
+    if dormitoryData then
+        return dormitoryData.furniture_list
     end
 end
 
@@ -363,16 +371,24 @@ function getDormitoryWallData(self, tid)
     return self.mWallStyleData[tid]
 end
 
+function setCurDoorData(self, doordata)
+    self.mWallDoorData = doordata
+end
+
 -- 获取当前门的厚度
 function getCurDoorDeep(self)
-    local list = self:getFurnitureListByDormitory(self.m_CurDormitoryId)
-    for i, v in ipairs(list) do
-        local propsVo = props.PropsVo:poolGet()
-        propsVo:setTid(v.tid)
-        if propsVo.subType == DormitoryCost.WALL_SUBTYPE then
-            local wallData = dormitory.DormitoryManager:getDormitoryWallData(propsVo.tid)
-            return wallData.doorDeep
+    if self.mWallDoorData == nil then
+        local list = self:getFurnitureListByDormitory(self.m_CurDormitoryId)
+        for i, v in ipairs(list) do
+            local propsVo = props.PropsVo:poolGet()
+            propsVo:setTid(v.tid)
+            if propsVo.subType == DormitoryCost.WALL_SUBTYPE then
+                local wallData = self:getDormitoryWallData(propsVo.tid)
+                return wallData.doorDeep
+            end
         end
+    else
+        return self.mWallDoorData.doorDeep
     end
     return 2
 end
@@ -403,10 +419,10 @@ end
 
 -- 保存显示提示的格子位置
 function addTileTip(self, site, col, row)
-    local key = string.format("%s_%s_%s",site, col, row)
+    local key = string.format("%s_%s_%s", site, col, row)
 
     if self.mTileShowList[key] == nil then
-        self.mTileShowList[key] = { site = site, col = col, row = row}
+        self.mTileShowList[key] = {site = site, col = col, row = row}
     end
 end
 
@@ -420,15 +436,15 @@ end
 
 -- 保存家具移动信息
 function setMoveInfo(self, cusData)
-    if cusData.move == 1 then 
-        self:unUseingFurniture(cusData.subType,cusData.id)
+    if cusData.move == 1 then
+        self:unUseingFurniture(cusData.subType, cusData.id)
     elseif cusData.move == 2 or cusData.move == 0 then
-        self:useingFurniture(cusData.subType,cusData.id)
+        self:useingFurniture(cusData.subType, cusData.id)
     end
 
     local furnitureVo = nil
-    for k,_vo in pairs( self.mDormitoryData[self.m_CurDormitoryId].furniture_list) do
-        if _vo.id == cusData.id then 
+    for k, _vo in pairs(self.mDormitoryData[self.m_CurDormitoryId].furniture_list) do
+        if _vo.id == cusData.id then
             furnitureVo = _vo
             break
         end
@@ -455,7 +471,7 @@ function getMoveInfo(self, cusId)
     local info = nil
     local vo = self.mMoveInfo[cusId]
     if vo then
-        info = { tid = vo.tid, col = vo.put_info.columns, row = vo.put_info.row, dir = vo.put_info.direction }
+        info = {tid = vo.tid, col = vo.put_info.columns, row = vo.put_info.row, dir = vo.put_info.direction, move = vo.move}
     end
     return info
 end
@@ -574,7 +590,7 @@ function getFurnitureSubTypeRedPointState(self, sub)
 end
 
 --设置当前宿舍的房间id
-function setRoomId(self,roomId)
+function setRoomId(self, roomId)
     self.m_CurDormitoryId = roomId
 end
 
@@ -583,7 +599,129 @@ function getRoomId(self)
     return self.m_CurDormitoryId
 end
 
+--------------家具套装---------------
+function parseSuitConfigData(self)
+    if not gs.Application.isEditor then
+        if not self.mFurnitureSuitBaseList then
+            self.mFurnitureSuitBaseList = {}
+
+            local baseData = RefMgr:getData("dormitory_suit_data")
+            for key, data in pairs(baseData) do
+                self.mFurnitureSuitBaseList[key] = data
+            end
+        end
+    else
+        self.mFurnitureSuitBaseList = {}
+
+        local baseData = RefMgr:getData("dormitory_suit_data", true)
+        for key, data in pairs(baseData) do
+            self.mFurnitureSuitBaseList[key] = data
+        end
+    end
+end
+function getAllSuitCount(self)
+    return table.nums(self:getSuitDic())
+end
+
+function isHaveSuit(self, suit_id)
+    self:parseSuitConfigData()
+
+    local suitDic = self:getSuitDic()
+    return suitDic[suit_id] ~= nil
+end
+
+function getSuitDic(self)
+    self:parseSuitConfigData()
+
+    local list = {}
+    for suitId, suitConfig in pairs(self.mFurnitureSuitBaseList) do
+        local suitData =
+        {
+            id = suitId,
+            land_id = suitConfig.land_id,
+            icon_path = suitConfig.icon_path,
+            furniture_list = {},
+            aura = 0,
+            useing = 1,
+        }
+
+        local allHave = true
+
+        local furnitureList = self:getAllFurniture()
+
+        local copy_list = {}
+        for subtype, propList in pairs(furnitureList) do
+            for propsId, propVo in pairs(propList) do
+                copy_list[propsId] = {propVo = propVo, occupy_index = nil}
+            end
+        end
+
+        for index, furnitureConfigInfo in pairs(suitConfig.furniture_list) do
+            local furniture_info = nil
+
+            for propsId, copy in pairs(copy_list) do
+                if copy.occupy_index == nil or copy.occupy_index == index then
+                    if copy.propVo.tid == furnitureConfigInfo.tid then
+                        if furniture_info == nil or furniture_info.useing == nil then
+                            if furniture_info ~= nil then
+                                copy_list[furniture_info.id].occupy_index = nil
+                            end
+
+                            furniture_info =
+                            {
+                                tid = furnitureConfigInfo.tid,
+                                id = propsId,
+                                row = furnitureConfigInfo.row,
+                                col = furnitureConfigInfo.col,
+                                location = furnitureConfigInfo.location,
+                                dir = furnitureConfigInfo.direction,
+                                useing = copy.propVo.useing,
+                                sort = 0,
+                            }
+
+                            copy.occupy_index = index
+
+                            --优先墙壁地面
+                            if copy.propVo.subType == DormitoryCost.FLOOR_SUBTYPE or copy.propVo.subType == DormitoryCost.TOP_SUBTYPE or copy.propVo.subType == DormitoryCost.WALL_SUBTYPE then
+                                furniture_info.sort = 1
+                            end
+
+                            if furniture_info.useing == 1 then
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+
+            if furniture_info == nil then
+                allHave = false
+                break
+            else
+                if furniture_info.useing ~= 1 then
+                    suitData.useing = nil
+                end
+
+                local base_furnitureData = dormitory.DormitoryManager:getDormitoryBaseVo(furniture_info.tid)
+                suitData.aura = suitData.aura + base_furnitureData.aura
+
+                table.insert(suitData.furniture_list, furniture_info)
+            end
+        end
+
+        if allHave then
+            table.sort(suitData.furniture_list, function (a, b)
+                return a.sort > b.sort
+            end)
+
+            list[suitId] = suitData
+        end
+
+    end
+    return list
+end
+
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

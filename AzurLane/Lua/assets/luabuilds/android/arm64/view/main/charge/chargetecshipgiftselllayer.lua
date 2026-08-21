@@ -1,16 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ChargeTecShipGiftSellLayer", import("...base.BaseUI"))
 
-local var_0_0 = "ChargeTecShipGiftSellLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChargeTecShipGiftSellLayer"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:findUI()
 	arg_2_0:addListener()
@@ -19,40 +13,28 @@ function var_0_1.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	pg = var_1_10001
-
-	local var_3_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_3_0, arg_3_0._tf)
+function var_0_0.didEnter(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 	arg_3_0:updateGiftList()
 
 	return
 end
 
-function var_0_1.willExit(arg_4_0)
-	pg = var_1_10001
-
-	local var_4_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_4_0, arg_4_0._tf)
+function var_0_0.willExit(arg_4_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0._tf)
 
 	return
 end
 
-function var_0_1.initData(arg_5_0)
+function var_0_0.initData(arg_5_0)
 	arg_5_0.showGoodVO = arg_5_0.contextData.showGoodVO
 	arg_5_0.chargedList = arg_5_0.contextData.chargedList
-
-	local var_5_0 = arg_5_0.showGoodVO
-
-	arg_5_0.goodVOList = var_1.getSameLimitGroupTecGoods(var_5_0)
+	arg_5_0.goodVOList = arg_5_0.showGoodVO:getSameLimitGroupTecGoods()
 	arg_5_0.normalGoodVO = nil
 	arg_5_0.highGoodVO = nil
 	arg_5_0.upGoodVO = nil
-	ipairs = var_1
 
-	for iter_5_0, iter_5_1 in var_1(arg_5_0.goodVOList) do
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.goodVOList) do
 		if iter_5_1:getConfig("limit_arg") == 1 then
 			arg_5_0.highGoodVO = iter_5_1
 		elseif iter_5_1:getConfig("limit_arg") == 2 then
@@ -63,84 +45,42 @@ function var_0_1.initData(arg_5_0)
 	end
 
 	arg_5_0.goodVOShowList = {}
-	ChargeConst = var_1
 
-	local var_5_1 = var_1.getBuyCount(arg_5_0.chargedList, arg_5_0.normalGoodVO.id)
+	local var_5_0 = ChargeConst.getBuyCount(arg_5_0.chargedList, arg_5_0.normalGoodVO.id)
+	local var_5_1 = ChargeConst.getBuyCount(arg_5_0.chargedList, arg_5_0.highGoodVO.id)
+	local var_5_2 = ChargeConst.getBuyCount(arg_5_0.chargedList, arg_5_0.upGoodVO.id)
 
-	ChargeConst = var_2
-
-	local var_5_2 = var_2.getBuyCount(arg_5_0.chargedList, arg_5_0.highGoodVO.id)
-
-	ChargeConst = var_3
-
-	local var_5_3 = var_3.getBuyCount(arg_5_0.chargedList, arg_5_0.upGoodVO.id)
-
-	if var_5_1 == 0 and var_5_2 == 0 and var_5_3 == 0 then
-		table = var_4
-
-		var_4.insert(arg_5_0.goodVOShowList, arg_5_0.normalGoodVO)
-
-		table = var_4
-
-		var_4.insert(arg_5_0.goodVOShowList, arg_5_0.highGoodVO)
-	elseif 0 < var_5_1 and var_5_2 == 0 and var_5_3 == 0 then
-		table = var_4
-
-		var_4.insert(arg_5_0.goodVOShowList, arg_5_0.normalGoodVO)
-
-		table = var_4
-
-		var_4.insert(arg_5_0.goodVOShowList, arg_5_0.upGoodVO)
-	elseif (not (var_5_1 > 0) or not (var_5_3 > 0)) and var_5_2 > 0 then
+	if var_5_0 == 0 and var_5_1 == 0 and var_5_2 == 0 then
+		table.insert(arg_5_0.goodVOShowList, arg_5_0.normalGoodVO)
+		table.insert(arg_5_0.goodVOShowList, arg_5_0.highGoodVO)
+	elseif var_5_0 > 0 and var_5_1 == 0 and var_5_2 == 0 then
+		table.insert(arg_5_0.goodVOShowList, arg_5_0.normalGoodVO)
+		table.insert(arg_5_0.goodVOShowList, arg_5_0.upGoodVO)
+	elseif (var_5_0 <= 0 or var_5_2 <= 0) and var_5_1 > 0 then
 		-- block empty
 	end
 
 	return
 end
 
-function var_0_1.initUIText(arg_6_0)
-	local var_6_0 = arg_6_0._tf
-	local var_6_1
-
-	var_6_1, setText = var_1.Find(var_6_0, "Adapt/TipBG/Text"), var_1_10002
-	i18n = var_1_10005
-
-	var_1_10002(var_6_1, var_1_10005("tech_package_tip"))
+function var_0_0.initUIText(arg_6_0)
+	setText(arg_6_0._tf:Find("Adapt/TipBG/Text"), i18n("tech_package_tip"))
 
 	return
 end
 
-function var_0_1.findUI(arg_7_0)
-	local var_7_0 = arg_7_0._tf
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.bg = arg_7_0._tf:Find("BG")
+	arg_7_0.itemTpl = arg_7_0._tf:Find("ItemTpl")
+	arg_7_0.giftTpl = arg_7_0._tf:Find("GiftTpl")
+	arg_7_0.giftContainer = arg_7_0._tf:Find("List")
+	arg_7_0.giftUIItemList = UIItemList.New(arg_7_0.giftContainer, arg_7_0.giftTpl)
 
-	arg_7_0.bg = var_1.Find(var_7_0, "BG")
-
-	local var_7_1 = arg_7_0._tf
-
-	arg_7_0.itemTpl = var_1.Find(var_7_1, "ItemTpl")
-
-	local var_7_2 = arg_7_0._tf
-
-	arg_7_0.giftTpl = var_1.Find(var_7_2, "GiftTpl")
-
-	local var_7_3 = arg_7_0._tf
-
-	arg_7_0.giftContainer = var_1.Find(var_7_3, "List")
-	UIItemList = var_1
-	arg_7_0.giftUIItemList = var_1.New(arg_7_0.giftContainer, arg_7_0.giftTpl)
-
-	local var_7_4 = arg_7_0.giftUIItemList
-
-	var_1.make(var_7_4, function(arg_8_0, arg_8_1, arg_8_2)
-		UIItemList = var_2_10003
-
-		if arg_8_0 == var_2_10003.EventUpdate then
+	arg_7_0.giftUIItemList:make(function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 == UIItemList.EventUpdate then
 			arg_8_1 = arg_8_1 + 1
 
-			local var_8_0 = arg_7_0.goodVOShowList[arg_8_1]
-			local var_8_1 = arg_7_0
-
-			var_4.updateGiftTF(var_8_1, arg_8_2, var_8_0)
+			arg_7_0:updateGiftTF(arg_8_2, arg_7_0.goodVOShowList[arg_8_1])
 		end
 
 		return
@@ -149,237 +89,108 @@ function var_0_1.findUI(arg_7_0)
 	return
 end
 
-function var_0_1.addListener(arg_9_0)
-	onButton = var_1_10001
-
-	local var_9_0 = arg_9_0
-	local var_9_1 = arg_9_0.bg
-
-	local function var_9_2()
-		local var_10_0 = arg_9_0
-
-		var_0.closeView(var_10_0)
+function var_0_0.addListener(arg_9_0)
+	onButton(arg_9_0, arg_9_0.bg, function()
+		arg_9_0:closeView()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_9_0, var_9_1, var_9_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updateGiftTF(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = arg_11_1:Find("BG/Normal")
-	local var_11_1 = arg_11_1:Find("BG/Special")
-	local var_11_2 = arg_11_1:Find("Buy/Normal")
-	local var_11_3 = arg_11_1:Find("Buy/Special")
-	local var_11_4 = arg_11_1:Find("Buy/Up")
-	local var_11_5 = arg_11_1:Find("Buy/Disable")
-	local var_11_6 = arg_11_1:Find("Title")
-	local var_11_7 = arg_11_1:Find("GiftImage")
-	local var_11_8 = arg_11_1:Find("Desc1")
-	local var_11_9 = arg_11_1:Find("Desc2")
-	local var_11_10 = arg_11_1:Find("List")
-	local var_11_11 = arg_11_2:getConfig("limit_arg") == 1
-	local var_11_12 = arg_11_2
-	local var_11_13 = arg_11_2.getConfig(var_11_12, "limit_arg") == 2
-	local var_11_14 = arg_11_2:getConfig("limit_arg") == 3
+function var_0_0.updateGiftTF(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_1:Find("BG/Special")
+	local var_11_1 = arg_11_1:Find("Buy/Normal")
+	local var_11_2 = arg_11_1:Find("Buy/Special")
+	local var_11_3 = arg_11_1:Find("Buy/Up")
+	local var_11_4 = arg_11_1:Find("Buy/Disable")
+	local var_11_5 = arg_11_1:Find("Title")
+	local var_11_6 = arg_11_1:Find("GiftImage")
+	local var_11_7 = arg_11_1:Find("Desc1")
+	local var_11_8 = arg_11_1:Find("Desc2")
+	local var_11_9 = arg_11_1:Find("List")
+	local var_11_10 = arg_11_2:getConfig("limit_arg") == 1
+	local var_11_11 = arg_11_2:getConfig("limit_arg") == 2
+	local var_11_12 = arg_11_2:getConfig("limit_arg") == 3
+	local var_11_13 = ChargeConst.getBuyCount(arg_11_0.chargedList, arg_11_0.normalGoodVO.id) > 0
 
-	ChargeConst = var_11_12
+	setActive(arg_11_1:Find("BG/Normal"), var_11_11)
+	setActive(var_11_0, not var_11_11)
+	setActive(var_11_1, var_11_11 and not var_11_13)
+	setActive(var_11_2, var_11_10)
+	setActive(var_11_3, var_11_12)
+	setActive(var_11_4, var_11_11 and var_11_13)
 
-	local var_11_15 = var_11_12.getBuyCount(arg_11_0.chargedList, arg_11_0.normalGoodVO.id)
-	local var_11_16 = 0 < var_11_15
-
-	setActive = var_18
-
-	var_18(var_11_0, var_11_13)
-
-	setActive = var_18
-
-	var_18(var_11_1, not var_11_13)
-
-	setActive = var_18
-
-	var_18(var_11_2, var_11_13 and not var_11_16)
-
-	setActive = var_18
-
-	var_18(var_11_3, var_11_11)
-
-	setActive = var_18
-
-	var_18(var_11_4, var_11_14)
-
-	setActive = var_18
-
-	var_18(var_11_5, var_11_13 and var_11_16)
-
-	if var_11_13 and var_11_16 then
-		setGray = var_18
-
-		var_18(arg_11_1, true, true)
+	if var_11_11 and var_11_13 then
+		setGray(arg_11_1, true, true)
 	end
 
-	local function var_11_17()
-		pg = var_2_10000
-
-		local var_12_0 = var_2_10000.m02
-		local var_12_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_12_1(var_12_0, var_2_10003.CHARGE_OPERATION, {
+	local function var_11_14()
+		pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
 			shopId = arg_11_2.id
 		})
-
-		local var_12_2 = arg_11_0
-
-		var_0.closeView(var_12_2)
+		arg_11_0:closeView()
 
 		return
 	end
 
-	onButton = var_19
-
-	local var_11_18 = arg_11_0
-	local var_11_19 = var_11_2
-
-	local function var_11_20()
-		var_11_17()
+	onButton(arg_11_0, var_11_1, function()
+		var_11_14()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10024
-
-	var_19(var_11_18, var_11_19, var_11_20, var_1_10024)
-
-	onButton = var_19
-
-	local var_11_21 = arg_11_0
-	local var_11_22 = var_11_3
-
-	local function var_11_23()
-		var_11_17()
+	end, SFX_PANEL)
+	onButton(arg_11_0, var_11_2, function()
+		var_11_14()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10024
-
-	var_19(var_11_21, var_11_22, var_11_23, var_1_10024)
-
-	onButton = var_19
-
-	local var_11_24 = arg_11_0
-	local var_11_25 = var_11_4
-
-	local function var_11_26()
-		var_11_17()
+	end, SFX_PANEL)
+	onButton(arg_11_0, var_11_3, function()
+		var_11_14()
 
 		return
+	end, SFX_PANEL)
+	setText(var_11_5, arg_11_2:getConfig("name_display"))
+	setText(var_11_7, arg_11_2:getConfig("descrip"))
+	setText(var_11_8, arg_11_2:getConfig("descrip_extra"))
+	setImageSprite(var_11_6, LoadSprite("chargeicon/" .. arg_11_2:getConfig("picture")), true)
+
+	local var_11_15 = {}
+
+	for iter_11_0, iter_11_1 in ipairs(arg_11_2:getConfig("display")) do
+		table.insert({}, Drop.Create(iter_11_1))
 	end
 
-	SFX_PANEL = var_1_10024
+	local var_11_16 = UIItemList.New(var_11_9, arg_11_0.itemTpl)
 
-	var_19(var_11_24, var_11_25, var_11_26, var_1_10024)
-
-	setText = var_19
-
-	var_19(var_11_6, arg_11_2:getConfig("name_display"))
-
-	setText = var_19
-
-	var_19(var_11_8, arg_11_2:getConfig("descrip"))
-
-	setText = var_19
-
-	var_19(var_11_9, arg_11_2:getConfig("descrip_extra"))
-
-	setImageSprite = var_19
-
-	local var_11_27 = var_11_7
-
-	LoadSprite = var_22
-
-	var_19(var_11_27, var_22("chargeicon/" .. arg_11_2:getConfig("picture")), true)
-
-	local var_11_28 = {}
-
-	ipairs = var_20
-
-	for iter_11_0, iter_11_1 in var_20(arg_11_2:getConfig("display")) do
-		table = var_11_29
-
-		local var_11_29 = var_11_29.insert
-		local var_11_30 = var_11_28
-
-		Drop = var_28
-
-		var_11_29(var_11_30, var_28.Create(iter_11_1))
-	end
-
-	UIItemList = var_20
-
-	local var_11_31 = var_20.New(var_11_10, arg_11_0.itemTpl)
-
-	var_20.make(var_11_31, function(arg_16_0, arg_16_1, arg_16_2)
-		UIItemList = var_2_10003
-
-		if arg_16_0 == var_2_10003.EventUpdate then
-			local var_16_0 = arg_16_2:Find("Container")
-			local var_16_1 = var_3.GetChild(var_16_0, 0)
-			local var_16_2 = arg_16_2
-			local var_16_3 = arg_16_2.Find(var_16_2, "TextMask/Text")
+	var_11_16:make(function(arg_16_0, arg_16_1, arg_16_2)
+		if arg_16_0 == UIItemList.EventUpdate then
+			local var_16_0 = arg_16_2:Find("Container"):GetChild(0)
 
 			arg_16_1 = arg_16_1 + 1
 
-			local var_16_4 = var_11_28[arg_16_1]
+			local var_16_1 = var_11_15[arg_16_1]
 
-			updateDrop = var_16_2
-
-			var_16_2(var_16_1, var_16_4)
-
-			onButton = var_16_2
-
-			local var_16_5 = arg_11_0
-			local var_16_6 = var_16_1
-
-			local function var_16_7()
-				local var_17_0 = arg_11_0
-				local var_17_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_17_1(var_17_0, var_3_10003.ON_DROP, var_16_4)
+			updateDrop(var_16_0, var_11_15[arg_16_1])
+			onButton(arg_11_0, var_16_0, function()
+				arg_11_0:emit(BaseUI.ON_DROP, var_16_1)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10012
-
-			var_16_2(var_16_5, var_16_6, var_16_7, var_2_10012)
-
-			setScrollText = var_16_2
-
-			var_16_2(var_16_3, var_16_4:getName())
+			end, SFX_PANEL)
+			setScrollText(arg_16_2:Find("TextMask/Text"), var_11_15[arg_16_1]:getName())
 		end
 
 		return
 	end)
-	var_20:align(#var_11_28)
+	var_11_16:align(#{})
 
 	return
 end
 
-function var_0_1.updateGiftList(arg_18_0)
-	local var_18_0 = arg_18_0.giftUIItemList
-
-	var_1.align(var_18_0, #arg_18_0.goodVOShowList)
+function var_0_0.updateGiftList(arg_18_0)
+	arg_18_0.giftUIItemList:align(#arg_18_0.goodVOShowList)
 
 	return
 end
 
-return var_0_1
+return var_0_0

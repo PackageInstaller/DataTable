@@ -27,6 +27,7 @@ function parseStrengthInfoMsg(self,msg)
     self.mStrengthBuyTimes = msg.buy_times
     self.mStrengthLeftDays = msg.left_days
     self.mStrengthIsBuy = msg.is_buy
+    --GameDispatcher:dispatchEvent(EventName.ACTIVITY_NOVICE_UPDATE)
     GameDispatcher:dispatchEvent(EventName.UPDATE_STRENGTH_CARD_INFO)
 end
 

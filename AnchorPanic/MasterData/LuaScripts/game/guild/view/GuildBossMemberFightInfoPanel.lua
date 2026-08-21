@@ -82,7 +82,7 @@ function udpateView(self)
 
         item:getChildGO("mTextRank"):GetComponent(ty.Text).text = self.mRecordData[i].rank
         item:getChildGO("mTextName"):GetComponent(ty.Text).text = self.mRecordData[i].name
-        item:getChildGO("mTextDamage"):GetComponent(ty.Text).text = self.mRecordData[i].damage
+        item:getChildGO("mTextDamage"):GetComponent(ty.Text).text = string.formatChineseNumber(self.mRecordData[i].damage)
         item:getChildGO("mTextFightCount"):GetComponent(ty.Text).text = self.mRecordData[i].time
 
         table.insert(self.mItemList, item)

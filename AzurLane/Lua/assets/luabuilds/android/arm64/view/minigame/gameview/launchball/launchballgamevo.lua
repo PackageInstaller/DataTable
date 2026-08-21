@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("LaunchBallGameVo")
+﻿local var_0_0 = class("LaunchBallGameVo")
 
 var_0_0.game_id = nil
 var_0_0.hub_id = nil
@@ -9,15 +7,7 @@ var_0_0.drop = nil
 var_0_0.game_bgm = "cw-story"
 var_0_0.game_time = 60000
 var_0_0.rule_tip = "launchball_minigame_help"
-Application = var_1
-
-local var_0_1
-
-if not var_1.targetFrameRate then
-	var_0_1 = 60
-end
-
-var_0_0.frameRate = var_0_1
+var_0_0.frameRate = Application.targetFrameRate or 60
 var_0_0.ui_atlas = "ui/minigameui/launchballgameui_atlas"
 var_0_0.game_ui = "LaunchBallGameUI"
 var_0_0.game_room_ui = "GameRoomLaunchUI"
@@ -35,33 +25,15 @@ var_0_0.deltaTime = 0
 function var_0_0.Init(arg_1_0, arg_1_1)
 	var_0_0.game_id = arg_1_0
 	var_0_0.hub_id = arg_1_1
-
-	local var_1_0 = var_0_0
-
-	pg = var_1_10003
-	var_1_0.total_times = var_1_10003.mini_game_hub[var_0_0.hub_id]
-
-	local var_1_1 = var_0_0
-
-	pg = var_3
-	var_1_1.drop = var_3.mini_game[var_0_0.game_id].simple_config_data.drop_ids
-
-	local var_1_2 = var_0_0
-
-	pg = var_3
-	var_1_2.total_times = var_3.mini_game_hub[var_0_0.hub_id].reward_need
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id]
+	var_0_0.drop = pg.mini_game[var_0_0.game_id].simple_config_data.drop_ids
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id].reward_need
 
 	return
 end
 
 function var_0_0.initRoundData(arg_2_0, arg_2_1)
-	LaunchBallGameConst = var_1_10002
-
-	local var_2_0 = var_1_10002.game_round
-
-	pairs = var_1_10003
-
-	for iter_2_0, iter_2_1 in var_1_10003(var_2_0) do
+	for iter_2_0, iter_2_1 in pairs(LaunchBallGameConst.game_round) do
 		if iter_2_1.type == arg_2_0 and iter_2_1.type_index == arg_2_1 then
 			var_0_0.gameRoundData = iter_2_1
 
@@ -85,19 +57,14 @@ function var_0_0.GetGameTimes()
 end
 
 function var_0_0.GetGameUseTimes()
-	local var_5_0
-
-	if not var_0_0.GetMiniGameHubData().usedtime then
-		var_5_0 = 0
-	end
-
-	return var_5_0
+	return var_0_0.GetMiniGameHubData().usedtime or 0
 end
 
 function var_0_0.GetGameRound()
 	local var_6_0 = var_0_0.GetGameUseTimes()
+	local var_6_1 = var_0_0.GetGameTimes()
 
-	if var_0_0.GetGameTimes() and var_1 > 0 then
+	if var_6_1 and var_6_1 > 0 then
 		return var_6_0 + 1
 	else
 		return var_6_0
@@ -107,21 +74,11 @@ function var_0_0.GetGameRound()
 end
 
 function var_0_0.GetMiniGameData()
-	getProxy = var_1_10000
-	MiniGameProxy = var_1_10002
-
-	local var_7_0 = var_1_10000(var_1_10002)
-
-	return var_0.GetMiniGameData(var_7_0, var_0_0.game_id)
+	return getProxy(MiniGameProxy):GetMiniGameData(var_0_0.game_id)
 end
 
 function var_0_0.GetMiniGameHubData()
-	getProxy = var_1_10000
-	MiniGameProxy = var_1_10002
-
-	local var_8_0 = var_1_10000(var_1_10002)
-
-	return var_0.GetHubByHubId(var_8_0, var_0_0.hub_id)
+	return getProxy(MiniGameProxy):GetHubByHubId(var_0_0.hub_id)
 end
 
 var_0_0.scoreNum = 0
@@ -175,13 +132,10 @@ var_0_0.reuslt_double_skill_time = "double_skill_time"
 var_0_0.reuslt_double_pass_skill_time = "double_pass_skill_time"
 
 function var_0_0.UpdateGameResultData(arg_10_0, arg_10_1)
-	print = var_1_10002
-
-	var_1_10002(arg_10_0 .. "  update count  = " .. arg_10_1)
+	print(arg_10_0 .. "  update count  = " .. arg_10_1)
 
 	if arg_10_0 == var_0_0.reuslt_double_skill_time then
-		math = var_2
-		arg_10_1 = var_2.floor(arg_10_1)
+		arg_10_1 = math.floor(arg_10_1)
 
 		if var_0_0.gameResultData[arg_10_0] ~= 0 then
 			if arg_10_1 < var_0_0.gameResultData[arg_10_0] then
@@ -209,9 +163,7 @@ end
 
 function var_0_0.GetBuff(arg_12_0)
 	if var_0_0.buffs and #var_0_0.buffs > 0 then
-		ipairs = var_1
-
-		for iter_12_0, iter_12_1 in var_1(var_0_0.buffs) do
+		for iter_12_0, iter_12_1 in ipairs(var_0_0.buffs) do
 			if iter_12_1.data.type == arg_12_0 then
 				return iter_12_1
 			end
@@ -222,7 +174,6 @@ function var_0_0.GetBuff(arg_12_0)
 end
 
 function var_0_0.GetScore(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local var_13_0 = 0
 	local var_13_1 = arg_13_0 * var_0_0.base_score
 
 	if arg_13_3 and arg_13_3 > 0 then
@@ -249,20 +200,12 @@ function var_0_0.Sign(arg_14_0, arg_14_1, arg_14_2)
 end
 
 function var_0_0.PointInRect(arg_15_0, arg_15_1, arg_15_2, arg_15_3, arg_15_4)
-	local var_15_0
-	local var_15_1
-	local var_15_2
-	local var_15_3
-	local var_15_4
-	local var_15_5
-	local var_15_6 = var_0_0.Sign(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_7 = var_0_0.Sign(arg_15_0, arg_15_2, arg_15_3)
-	local var_15_8 = var_0_0.Sign(arg_15_0, arg_15_3, arg_15_4)
-	local var_15_9 = var_0_0.Sign(arg_15_0, arg_15_4, arg_15_1)
-	local var_15_10 = var_15_6 < 0 or var_15_7 < 0 or var_15_8 < 0 or var_15_9 < 0
-	local var_15_11 = var_15_6 > 0 or var_15_7 > 0 or var_15_8 > 0 or var_15_9 > 0
+	local var_15_2 = var_0_0.Sign(arg_15_0, arg_15_2, arg_15_3)
+	local var_15_3 = var_0_0.Sign(arg_15_0, arg_15_3, arg_15_4)
+	local var_15_4 = var_0_0.Sign(arg_15_0, arg_15_4, arg_15_1)
+	local var_15_5 = var_0_0.Sign(arg_15_0, arg_15_1, arg_15_2) > 0 or nil > 0 or nil > 0 or nil > 0
 
-	return not var_15_10 or not var_15_11
+	return not (nil < 0 or nil < 0 or nil < 0 or nil < 0) or not nil
 end
 
 return var_0_0

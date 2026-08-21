@@ -1,73 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("JoinQueueTechnologyCommand", pm.SimpleCommand)
 
-local var_0_0 = "JoinQueueTechnologyCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = getProxy(TechnologyProxy)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.pool_id
-
-	getProxy = var_1_10005
-	TechnologyProxy = var_1_10007
-
-	local var_1_2 = #var_1_10005(var_1_10007).queue
-
-	TechnologyConst = var_1_10007
-
-	if var_1_10007.QUEUE_TOTAL_COUNT <= var_1_2 then
+	if #var_1_2.queue >= TechnologyConst.QUEUE_TOTAL_COUNT then
 		return
 	end
 
-	if not var_5:getTechnologyById(var_1_0) or not var_6:isActivate() or not var_6:finishCondition() or var_6:isCompleted() then
+	local var_1_3 = var_1_2:getTechnologyById(var_1_0.id)
+
+	if not var_1_3 or not var_1_3:isActivate() or not var_1_3:finishCondition() or var_1_3:isCompleted() then
 		return
 	end
 
-	pg = var_7
-
-	local var_1_3 = var_7.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_3, 63013, {
-		tech_id = var_1_0,
-		refresh_id = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(63013, {
+		tech_id = var_1_0.id,
+		refresh_id = var_1_0.pool_id
 	}, 63014, function(arg_2_0)
-		local var_2_3
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_3.moveTechnologyToQueue(var_2_0, var_1_0)
-
-			local var_2_1 = var_0
-
-			var_2_3.updateTechnologys(var_2_1, arg_2_0.refresh_list)
-
-			local var_2_2 = arg_1_0
-
-			var_2_3 = var_2_3.sendNotification
-			GAME = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004.JOIN_QUEUE_TECHNOLOGY_DONE)
-
-			pg = var_2_3
-
-			local var_2_4 = var_2_3.TipsMgr.GetInstance()
-
-			var_2_3 = var_2_3.ShowTips
-			i18n = var_2_10004
-
-			var_2_3(var_2_4, var_2_10004("technology_queue_in_success"))
+			var_1_2:moveTechnologyToQueue(var_1_1)
+			var_1_2:updateTechnologys(arg_2_0.refresh_list)
+			arg_1_0:sendNotification(GAME.JOIN_QUEUE_TECHNOLOGY_DONE)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("technology_queue_in_success"))
 		else
-			pg = var_2_3
-
-			local var_2_5 = var_2_3.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004("blueprint_stop_erro") .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_stop_erro") .. arg_2_0.result)
 		end
 
 		return
@@ -76,4 +34,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

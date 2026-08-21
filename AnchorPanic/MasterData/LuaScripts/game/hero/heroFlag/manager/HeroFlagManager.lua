@@ -11,6 +11,9 @@ FLAG_HERO_ID_ROOT = "FLAG_HERO_ID_ROOT"
 FLAG_BTN_FASHION_CLOTHES = "FLAG_BTN_FASHION_CLOTHES"
 -- 英雄亲密度按钮入口
 FLAG_BTN_FAVORABLE = "FLAG_BTN_FAVORABLE"
+
+-- 英雄剧情
+FLAG_BTN_STORY = "FLAG_BTN_STORY"
 -- 英雄培养按钮入口
 FLAG_BTN_DEVELOP = "FLAG_BTN_DEVELOP"
 -- 英雄装备切卡
@@ -42,6 +45,8 @@ FLAG_CAN_MILITARY_RANK_UP = "FLAG_CAN_MILITARY_RANK_UP"
 FLAG_CAN_SKILL_UP = "FLAG_CAN_SKILL_UP"
 -- 英雄是否可领取等级目标奖励
 FLAG_CAN_LVL_TARGET_LIST = "FLAG_CAN_LVL_TARGET_LIST"
+-- 英雄是否可培养DNA蛋功能
+FLAG_CAN_DNA = "FLAG_CAN_DNA"
 -- 英雄是否可升品
 --FLAG_CAN_COLOR_UP = "FLAG_CAN_COLOR_UP"
 -- 英雄是否可进化
@@ -54,6 +59,8 @@ FLAG_CAN_WEAR_BRACELETS = "FLAG_CAN_WEAR_BRACELETS"
 FLAG_CAN_GROW = "FLAG_CAN_GROW"
 -- 英雄是否可碎片激活
 FLAG_CAN_FRAGMENT_COMPOSE = "FLAG_CAN_FRAGMENT_COMPOSE"
+--英雄是否可以结婚
+FLAG_CAN_MARRIAGE = "FLAG_CAN_MARRIAGE"
 --------------------------------------------------------------------------------------------------------------------------
 
 --构造函数
@@ -100,7 +107,11 @@ function addFlagTree(self, heroId)
         -- 好感度按钮入口
         heroIdTree[self.FLAG_BTN_FAVORABLE] = { parent = self.FLAG_TAB_LVL_UP }
 
+        heroIdTree[self.FLAG_BTN_STORY] = { parent = self.FLAG_TAB_LVL_UP }
+
         heroIdTree[self.FLAG_CAN_LVL_TARGET_LIST] = { parent = self.FLAG_BTN_DEVELOP }
+        heroIdTree[self.FLAG_CAN_DNA] = { parent = self.FLAG_BTN_DEVELOP }
+        heroIdTree[self.FLAG_CAN_MARRIAGE] = { parent = self.FLAG_BTN_DEVELOP }
         -- 升品切卡
         --heroIdTree[self.FLAG_TAB_COLOR_UP] = { parent = self.FLAG_BTN_DEVELOP }
         --heroIdTree[self.FLAG_CAN_COLOR_UP] = { parent = self.FLAG_TAB_COLOR_UP }
@@ -323,41 +334,72 @@ function isHeroCanSkillUp(self, heroVo)
                 skillVo = fight.SkillManager:getSkillRo(heroVo.fightSkillDic[skillPos].skillId)
             end
         end
-        local maxSkillLvl = sysParam.SysParamManager:getValue(SysParamType.SKILLREALYCEILING)
-        local skillLvl = (heroVo:getActiveSkill(skillVo:getRefID())) >= maxSkillLvl and maxSkillLvl or (heroVo:getActiveSkill(skillVo:getRefID()))
-        if skillLvl >= maxSkillLvl then
+        if not self:checkLvUpHandle(heroVo.baseSkillIdList[i], heroVo) then
             canUp = false
         else
+            local extraLv = heroVo:getExtraLv(heroVo.baseSkillIdList[i]) --附加等级
+            local activeSkillLv = heroVo:getActiveSkill(heroVo.baseSkillIdList[i]) --技能等级
+            local upLv =  activeSkillLv --技能养成等级
+            local tureSkillLv = upLv + extraLv --当前的实际等级
             -- 判断升级材料
-            local skillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(heroVo.tid, skillVo:getRefID(), skillLvl)
-            if heroVo.militaryRank < skillUpVo.needHeroRank or heroVo.evolutionLvl < skillUpVo.needStar then
+            local skillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(heroVo.tid, skillVo:getRefID(), tureSkillLv)
+            local costMoneyTid = skillUpVo.cost[1]
+            local costMoneyCount = skillUpVo.cost[2]
+            local costItem = skillUpVo.costItem
+            local mon = MoneyUtil.getMoneyCountByTid(costMoneyTid)
+            if mon < costMoneyCount then
                 canUp = false
-            else
-                local costMoneyTid = skillUpVo.cost[1]
-                local costMoneyCount = skillUpVo.cost[2]
-                local costItem = skillUpVo.costItem
-                local mon = MoneyUtil.getMoneyCountByTid(costMoneyTid)
-                if mon < costMoneyCount then
+            end
+            local canUpNum = 0
+            for i = 1, #costItem do
+                local needNum = costItem[i][2]
+                local hasNum = bag.BagManager:getPropsCountByTid(costItem[i][1])
+                if hasNum >= needNum then
+                    canUpNum = canUpNum + 1
+                else
                     canUp = false
                 end
-                local canUpNum = 0
-                for i = 1, #costItem do
-                    local needNum = costItem[i][2]
-                    local hasNum = bag.BagManager:getPropsCountByTid(costItem[i][1])
-                    if hasNum >= needNum then
-                        canUpNum = canUpNum + 1
-                    else
-                        canUp = false
-                    end
-                end
-                if canUpNum >= #costItem then
-                    return true
-                end
+            end
+            if canUpNum >= #costItem then
+                return true
             end
         end
     end
     -- local num = canUp and 1 or 0
     -- logInfo("战员" .. heroVo.name .. "技能是否可升级" .. num)
+    return canUp
+end
+
+
+function checkLvUpHandle(self, skillId,heroVo)
+    local canUp = false
+    local CurSkillVo = fight.SkillManager:getSkillRo(skillId)
+    local skillId = CurSkillVo:getRefID()
+    local extraLv = heroVo:getExtraLv(skillId) --附加等级
+    local realMax =  sysParam.SysParamManager:getValue(SysParamType.SKILLREALYCEILING) -- 所有技能的可养成最大等级
+    local maxLvl = realMax --技能最大等级
+    if CurSkillVo:getType() == fight.FightDef.SKILL_TYPE_NORMAL_ATTACK then --普工
+        if heroVo.color == hero.HeroColorType.R_CARD then
+            maxLvl = realMax + sysParam.SysParamManager:getValue(SysParamType.NORMALSKILLREALYCEILING)
+        end
+    elseif CurSkillVo:getType() ~= fight.FightDef.SKILL_TYPE_PASSIVE_SKILL then --除天赋普工外的技能
+        maxLvl = sysParam.SysParamManager:getValue(SysParamType.SKILLCEILING)
+    end
+    local isLock = true
+    local isLvEnough = false
+    local activeSkillLv = heroVo:getActiveSkill(skillId) --技能等级
+    local upLv =  activeSkillLv --技能养成等级
+    local tureSkillLv = upLv + extraLv --当前的实际等级
+    local skillUpVo = hero.HeroSkillUpManager:getSkillUpConfigVo(heroVo.tid, skillId, tureSkillLv)
+    isLvEnough = skillUpVo ~= nil and heroVo.militaryRank >= skillUpVo.needHeroRank--星级
+    isLock = skillUpVo ~= nil and heroVo.evolutionLvl < skillUpVo.needStar--等级
+    local isMaxLvl = tureSkillLv >= maxLvl
+    if (isMaxLvl or (upLv>=realMax)) then
+        return false
+    end
+    if (not isLock and isLvEnough) then
+        canUp = true
+    end
     return canUp
 end
 
@@ -417,6 +459,11 @@ end
 -- 英雄是否可以领取目标等级奖励
 function isHeroCanRecLvlTarget(self, heroVo)
     return hero.HeroLvlTargetManager:isHeroLvlTargetListBubble(heroVo)
+end
+
+-- 英雄是否有dna功能相关红点
+function isCanCultureDna(self, heroVo)
+    return dna.DnaManager:getHeroDnaFuncRedFlag(heroVo)
 end
 
 -- 英雄是否已领取完目标等级奖励

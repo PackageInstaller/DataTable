@@ -1,9 +1,4 @@
-﻿require = var_0_10000
-
-var_0_10000("Support/Network/SendWindow")
-
-require = var_0_10000
-
-var_0_10000("Support/Network/IPAddress")
+﻿require("Support/Network/SendWindow")
+require("Support/Network/IPAddress")
 
 return

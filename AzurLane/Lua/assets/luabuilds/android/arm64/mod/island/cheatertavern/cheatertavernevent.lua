@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CheaterTavernEvent")
+﻿local var_0_0 = class("CheaterTavernEvent")
 
 var_0_0.OPEN_SELECT_SHIP = "CheaterTavernEvent:OPEN_SELECT_SHIP"
 var_0_0.PLAY_ROOM_LOAD_ROOM_SCENE = "CheaterTavernEvent:PLAY_ROOM_LOAD_ROOM_SCENE"

@@ -1,82 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PlayRoomJoinRoomCommand", pm.SimpleCommand)
 
-local var_0_0 = "PlayRoomJoinRoomCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
-	pg = var_1_10003
-
-	local var_1_1 = var_1_10003.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_1_1, 23007, {
-		room_id = var_1_0.id
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(23007, {
+		room_id = arg_1_1:getBody().id
 	}, 23008, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			PlayRoomTools = var_1
+			PlayRoomTools.SetGameTypeID(var_0.gameType)
 
-			var_1.SetGameTypeID(var_1_0.gameType)
+			local var_2_0 = getProxy(PlayRoomProxy)
 
-			getProxy = var_1
-			PlayRoomProxy = var_3
-			var_2_10004 = var_1(var_3)
-
-			var_1.UpdateRoomData(var_2_10004, arg_2_0.room)
-
-			var_2_10004 = var_1
-
-			var_1.ClearInviteList(var_2_10004)
-
-			var_2_10004 = var_1
-
-			var_1.ClearInviteRecordList(var_2_10004)
-
-			var_2_10004 = arg_1_0
-
-			local var_2_0 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_0(var_2_10004, var_5.PLAY_ROOM_JOIN_ROOM_DONE, {
-				gameType = var_1_0.gameType
+			var_2_0:UpdateRoomData(arg_2_0.room)
+			var_2_0:ClearInviteList()
+			var_2_0:ClearInviteRecordList()
+			arg_1_0:sendNotification(GAME.PLAY_ROOM_JOIN_ROOM_DONE, {
+				gameType = var_0.gameType
 			})
-		elseif var_1_0.id == 0 and arg_2_0.result == 20 then
-			local var_2_1 = arg_1_0
-			local var_2_2 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004.PLAY_ROOM_JOIN_ROOM_QUICK_FAIL)
+		elseif var_0.id == 0 and arg_2_0.result == 20 then
+			arg_1_0:sendNotification(GAME.PLAY_ROOM_JOIN_ROOM_QUICK_FAIL)
 		elseif arg_2_0.result == 19 then
-			PlayRoomTools = var_1
-
-			var_1.ShowPunishementBox(arg_2_0.cd)
+			PlayRoomTools.ShowPunishementBox(arg_2_0.cd)
+		elseif arg_2_0.result == 6 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("match_room_full2"))
 		else
-			local var_2_4
-
-			if arg_2_0.result == 6 then
-				pg = var_2_4
-
-				local var_2_3 = var_2_4.TipsMgr.GetInstance()
-
-				var_2_4 = var_2_4.ShowTips
-				i18n = var_2_10004
-
-				var_2_4(var_2_3, var_2_10004("match_room_full2"))
-			else
-				pg = var_2_4
-
-				local var_2_5 = var_2_4.TipsMgr.GetInstance()
-				local var_2_6 = var_1.ShowTips
-
-				errorTip = var_2_10004
-
-				var_2_6(var_2_5, var_2_10004("", arg_2_0.result))
-			end
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -85,4 +31,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

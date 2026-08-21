@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : ***
 @Description    : ***
@@ -69,8 +69,7 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.ACCOUNT_RELOGIN_SUC, self.onRelogin, self)
 end
 
---[[
-    初始化界面的静态文本，图片字
+--[[    初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
 function initViewText(self)
@@ -137,8 +136,7 @@ function fightHeroList(self)
         end
         if next(randomeTable) then
             local ran = math.random(1, #randomeTable)
-            local mStrHelper = {"arenaInfoPanel/vs_pic_", randomeTable[ran], ".png"}
-            self.mImgHeroR:SetImg(UrlManager:getBgPath(table.concat(mStrHelper)), false)
+            self.mImgHeroR:SetImg(UrlManager:getArenaInfoVsPicPath(randomeTable[ran]), false)
         end
     else
         local enemyheroList = enemyVo:getFightHeroList()
@@ -163,8 +161,7 @@ function fightHeroList(self)
             end
             if next(randomeTable) then
                 local ran = math.random(1, #randomeTable)
-                local mStrHelper = {"arenaInfoPanel/vs_pic_", randomeTable[ran], ".png"}
-                self.mImgHeroR:SetImg(UrlManager:getBgPath(table.concat(mStrHelper)), false)
+                self.mImgHeroR:SetImg(UrlManager:getArenaInfoVsPicPath(randomeTable[ran]), false)
             end
         end
     end
@@ -187,8 +184,7 @@ function fightHeroList(self)
     end
     if next(randomeTable) then
         local ran = math.random(1, #randomeTable)
-        local mStrHelper = {"arenaInfoPanel/vs_pic_", randomeTable[ran], ".png"}
-        self.mImgHeroL:SetImg(UrlManager:getBgPath(table.concat(mStrHelper)), false)
+        self.mImgHeroL:SetImg(UrlManager:getArenaInfoVsPicPath(randomeTable[ran]), false)
     end
 end
 

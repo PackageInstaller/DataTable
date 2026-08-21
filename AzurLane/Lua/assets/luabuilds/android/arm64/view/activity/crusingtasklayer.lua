@@ -1,551 +1,238 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CrusingTaskLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "CrusingTaskLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "CrusingTaskUI"
 end
 
-function var_0_1.tempCache(arg_2_0)
+function var_0_0.tempCache(arg_2_0)
 	return true
 end
 
-function var_0_1.init(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.init(arg_3_0)
+	arg_3_0.rtBg = arg_3_0._tf:Find("bg")
 
-	arg_3_0.rtBg = var_1.Find(var_3_0, "bg")
+	local var_3_0 = arg_3_0._tf:Find("window")
 
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_1.Find(var_3_1, "window")
+	arg_3_0.itemQuick = var_3_0:Find("item_quick")
+	arg_3_0.btnBack = var_3_0:Find("btn_back")
+	arg_3_0.btnHelp = var_3_0:Find("btn_help")
+	arg_3_0.textPhase = var_3_0:Find("text_phase")
+	arg_3_0.sliderPt = var_3_0:Find("Slider")
+	arg_3_0.textComplete = var_3_0:Find("text_complete")
 
-	arg_3_0.itemQuick = var_1.Find(var_3_2, "item_quick")
-	arg_3_0.btnBack = var_1:Find("btn_back")
-	arg_3_0.btnHelp = var_1:Find("btn_help")
-	arg_3_0.textPhase = var_1:Find("text_phase")
-	arg_3_0.sliderPt = var_1:Find("Slider")
-	arg_3_0.textComplete = var_1:Find("text_complete")
+	local var_3_1 = var_3_0:Find("view/content")
 
-	local var_3_3 = var_1:Find("view/content")
+	arg_3_0.taskGroupItemList = UIItemList.New(var_3_1, var_3_1:Find("tpl"))
 
-	UIItemList = var_3_1
-	arg_3_0.taskGroupItemList = var_3_1.New(var_3_3, var_3_3:Find("tpl"))
-
-	local var_3_4 = arg_3_0.taskGroupItemList
-
-	var_3.make(var_3_4, function(arg_4_0, arg_4_1, arg_4_2)
+	arg_3_0.taskGroupItemList:make(function(arg_4_0, arg_4_1, arg_4_2)
 		arg_4_1 = arg_4_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_4_0 == var_2_10003.EventUpdate then
-			local var_4_0 = arg_3_0
-
-			var_3.updateTaskGroup(var_4_0, arg_4_2, arg_3_0.tempTaskGroup[arg_4_1])
+		if arg_4_0 == UIItemList.EventUpdate then
+			arg_3_0:updateTaskGroup(arg_4_2, arg_3_0.tempTaskGroup[arg_4_1])
 		end
 
 		return
 	end)
 
-	arg_3_0.rtWeekToggles = var_1:Find("week_list")
+	arg_3_0.rtWeekToggles = var_3_0:Find("week_list")
 
 	return
 end
 
-function var_0_1.didEnter(arg_5_0)
-	pg = var_1_10001
-
-	local var_5_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_5_0, arg_5_0._tf)
-
-	onButton = var_1
-
-	local var_5_1 = arg_5_0
-	local var_5_2 = arg_5_0.rtBg
-
-	local function var_5_3()
-		local var_6_0 = arg_5_0
-		local var_6_1 = var_0.emit
-
-		CrusingTaskMediator = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.ON_EXIT)
-
-		local var_6_2 = arg_5_0
-
-		var_0.closeView(var_6_2)
+function var_0_0.didEnter(arg_5_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
+	onButton(arg_5_0, arg_5_0.rtBg, function()
+		arg_5_0:emit(CrusingTaskMediator.ON_EXIT)
+		arg_5_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_5_1, var_5_2, var_5_3, var_1_10006)
-
-	onButton = var_1
-
-	local var_5_4 = arg_5_0
-	local var_5_5 = arg_5_0.btnBack
-
-	local function var_5_6()
-		local var_7_0 = arg_5_0
-		local var_7_1 = var_0.emit
-
-		CrusingTaskMediator = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.ON_EXIT)
-
-		local var_7_2 = arg_5_0
-
-		var_0.closeView(var_7_2)
+	end, SFX_CANCEL)
+	onButton(arg_5_0, arg_5_0.btnBack, function()
+		arg_5_0:emit(CrusingTaskMediator.ON_EXIT)
+		arg_5_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_5_4, var_5_5, var_5_6, var_1_10006)
-
-	onButton = var_1
-
-	local var_5_7 = arg_5_0
-	local var_5_8 = arg_5_0.btnHelp
-
-	local function var_5_9()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_8_1 = var_0.ShowMsgBox
-		local var_8_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_8_2.type = var_2_10004
-		i18n = var_2_10004
-
-		local var_8_3 = "cruise_task_help_"
-
-		pg = var_2_10007
-		var_8_2.helps = var_2_10004(var_8_3 .. var_2_10007.battlepass_event_pt[arg_5_0.activity.id].map_name)
-
-		var_8_1(var_8_0, var_8_2)
+	end, SFX_CANCEL)
+	onButton(arg_5_0, arg_5_0.btnHelp, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("cruise_task_help_" .. pg.battlepass_event_pt[arg_5_0.activity.id].map_name)
+		})
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
+	local var_5_0 = getProxy(TaskProxy)
 
-	var_1(var_5_7, var_5_8, var_5_9, var_1_10006)
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.taskGroupList) do
+		local var_5_1 = arg_5_0.rtWeekToggles:Find(iter_5_0)
 
-	getProxy = var_1
-	TaskProxy = var_5_7
-
-	local var_5_10 = var_1(var_5_7)
-
-	pairs = var_1_10002
-
-	for iter_5_0, iter_5_1 in var_1_10002(arg_5_0.taskGroupList) do
-		var_1_10009 = arg_5_0.rtWeekToggles
-
-		local var_5_11 = var_7.Find(var_1_10009, iter_5_0)
-
-		if 0 < iter_5_0 then
-			setText = var_8
-			var_1_10012 = var_5_11
-
-			local var_5_12 = var_5_11.Find(var_1_10012, "off/Text")
-
-			i18n = var_1_10011
-
-			var_8(var_5_12, var_1_10011("cruise_task_week", iter_5_0))
-
-			setText = var_8
-			var_1_10012 = var_5_11
-
-			local var_5_13 = var_5_11.Find(var_1_10012, "on/Text")
-
-			i18n = var_1_10011
-
-			var_8(var_5_13, var_1_10011("cruise_task_week", iter_5_0))
+		if iter_5_0 > 0 then
+			setText(var_5_1:Find("off/Text"), i18n("cruise_task_week", iter_5_0))
+			setText(var_5_1:Find("on/Text"), i18n("cruise_task_week", iter_5_0))
 		end
 
-		setActive = var_8
-		var_1_10012 = var_5_11
+		setActive(var_5_1:Find("tip"), not iter_5_1.isLock and PlayerPrefs.GetInt(string.format("cursing_%d_task_week_%d", arg_5_0.activity.id, iter_5_0), 0) == 0)
+		onToggle(arg_5_0, var_5_1, function(arg_9_0)
+			if arg_9_0 then
+				setActive(var_5_1:Find("tip"), false)
+				PlayerPrefs.SetInt(string.format("cursing_%d_task_week_%d", arg_5_0.activity.id, iter_5_0), 1)
 
-		local var_5_14 = var_5_11.Find(var_1_10012, "tip")
+				arg_5_0.weekToggle = iter_5_0
+				arg_5_0.contextData.weekToggle = iter_5_0
+				arg_5_0.tempTaskGroup = underscore.map(iter_5_1.task_group, function(arg_10_0)
+					return underscore.map(arg_10_0, function(arg_11_0)
+						assert(var_5_0:getTaskVO(arg_11_0), "without this task:" .. arg_11_0)
 
-		if not iter_5_1.isLock then
-			PlayerPrefs = var_1_10011
-			var_1_10011 = var_1_10011.GetInt
-			string = var_13
-
-			if var_1_10011(var_13.format("cursing_%d_task_week_%d", arg_5_0.activity.id, iter_5_0), 0) ~= 0 then
-				var_1_10011 = false
-			else
-				var_1_10011 = true
-			end
-
-			var_8(var_5_14, var_1_10011)
-
-			onToggle = var_8
-
-			local var_5_15 = arg_5_0
-
-			var_1_10011 = var_5_11
-
-			function var_1_10012(arg_9_0)
-				if arg_9_0 then
-					setActive = var_2_10001
-
-					local var_9_0 = var_5_11
-
-					var_2_10001(var_3.Find(var_9_0, "tip"), false)
-
-					PlayerPrefs = var_2_10001
-
-					local var_9_1 = var_2_10001.SetInt
-
-					string = var_3
-
-					var_9_1(var_3.format("cursing_%d_task_week_%d", arg_5_0.activity.id, iter_5_0), 1)
-
-					arg_5_0.weekToggle = iter_5_0
-					arg_5_0.contextData.weekToggle = iter_5_0
-
-					local var_9_2 = arg_5_0
-
-					underscore = var_2
-					var_9_2.tempTaskGroup = var_2.map(iter_5_1.task_group, function(arg_10_0)
-						underscore = var_3_10001
-
-						return var_3_10001.map(arg_10_0, function(arg_11_0)
-							assert = var_4_10001
-
-							local var_11_0 = var_5_10
-
-							var_4_10001(var_3.getTaskVO(var_11_0, arg_11_0), "without this task:" .. arg_11_0)
-
-							local var_11_1 = var_5_10
-
-							return var_1.getTaskVO(var_11_1, arg_11_0)
-						end)
+						return var_5_0:getTaskVO(arg_11_0)
 					end)
-					table = var_9_2
+				end)
 
-					local var_9_3 = var_9_2.sort
-					local var_9_4 = arg_5_0.tempTaskGroup
-
-					CompareFuncs = var_4
-
-					var_9_3(var_9_4, var_4({
-						function(arg_12_0)
-							underscore = var_3_10001
-
-							return var_3_10001.all(arg_12_0, function(arg_13_0)
-								return arg_13_0:isReceive()
-							end) and 1 or 0
-						end,
-						function(arg_14_0)
-							return arg_14_0[1].id
-						end
-					}))
-
-					local var_9_5 = arg_5_0.taskGroupItemList
-
-					var_1.align(var_9_5, #arg_5_0.tempTaskGroup)
-
-					local var_9_6 = arg_5_0
-
-					var_1.updateTaskInfo(var_9_6)
-				end
-
-				return
+				table.sort(arg_5_0.tempTaskGroup, CompareFuncs({
+					function(arg_12_0)
+						return underscore.all(arg_12_0, function(arg_13_0)
+							return arg_13_0:isReceive()
+						end) and 1 or 0
+					end,
+					function(arg_14_0)
+						return arg_14_0[1].id
+					end
+				}))
+				arg_5_0.taskGroupItemList:align(#arg_5_0.tempTaskGroup)
+				arg_5_0:updateTaskInfo()
 			end
 
-			SFX_PANEL = var_13
+			return
+		end, SFX_PANEL)
 
-			var_8(var_5_15, var_1_10011, var_1_10012, var_13)
-
-			if var_5_11:Find("mask") then
-				setActive = var_8
-				var_1_10012 = var_5_11
-
-				var_8(var_5_11.Find(var_1_10012, "mask"), iter_5_1.isLock)
-			end
+		if var_5_1:Find("mask") then
+			setActive(var_5_1:Find("mask"), iter_5_1.isLock)
 		end
 	end
 
-	underscore = var_2
+	local var_5_2 = underscore.keys(arg_5_0.taskGroupList)
 
-	local var_5_16 = var_2.keys(arg_5_0.taskGroupList)
-
-	table = var_3
-
-	var_3.sort(var_5_16, function(arg_15_0, arg_15_1)
+	table.sort(var_5_2, function(arg_15_0, arg_15_1)
 		return arg_15_0 < arg_15_1
 	end)
 
-	local var_5_17
-
 	if arg_5_0.contextData.weekToggle and not arg_5_0.taskGroupList[arg_5_0.contextData.weekToggle].isLock then
 		arg_5_0.weekToggle = arg_5_0.contextData.weekToggle
-		var_5_17 = arg_5_0.contextData
-		var_5_17.weekToggle = nil
+		arg_5_0.contextData.weekToggle = nil
 	else
-		table = var_5_17
-		arg_5_0.weekToggle = var_5_17.remove(var_5_16, 1)
-		ipairs = var_5_17
+		arg_5_0.weekToggle = table.remove(var_5_2, 1)
 
-		for iter_5_2, iter_5_3 in var_5_17(var_5_16) do
+		for iter_5_2, iter_5_3 in ipairs(var_5_2) do
 			if arg_5_0.taskGroupList[iter_5_3].isLock then
 				break
-			else
-				underscore = var_1_10009
-				var_1_10009 = var_1_10009.any
-				underscore = var_1_10011
+			elseif underscore.any(underscore.flatten(arg_5_0.taskGroupList[iter_5_3].task_group), function(arg_16_0)
+				local var_16_0 = var_5_0:getTaskVO(arg_16_0)
 
-				if var_1_10009(var_1_10011.flatten(var_8.task_group), function(arg_16_0)
-					local var_16_0 = var_5_10
+				return var_16_0 and not var_16_0:isReceive()
+			end) then
+				arg_5_0.weekToggle = iter_5_3
 
-					return var_1.getTaskVO(var_16_0, arg_16_0) and not var_1:isReceive()
-				end) then
-					arg_5_0.weekToggle = iter_5_3
-
-					break
-				end
+				break
 			end
 		end
 	end
 
-	triggerToggle = var_5_17
+	triggerToggle(arg_5_0.rtWeekToggles:Find(arg_5_0.weekToggle), true)
 
-	local var_5_18 = arg_5_0.rtWeekToggles
+	for iter_5_4, iter_5_5 in ipairs(arg_5_0.taskGroupList) do
+		local var_5_3 = arg_5_0.rtWeekToggles:Find(iter_5_4)
 
-	var_5_17(var_5.Find(var_5_18, arg_5_0.weekToggle), true)
-
-	ipairs = var_5_17
-
-	for iter_5_4, iter_5_5 in var_5_17(arg_5_0.taskGroupList) do
-		local var_5_19 = arg_5_0.rtWeekToggles
-		local var_5_20 = var_5_20.Find(var_5_19, iter_5_4)
-
-		SetCompomentEnabled = var_1_10009
-
-		local var_5_21 = var_5_20
-
-		typeof = var_1_10012
-		Toggle = var_1_10014
-
-		var_1_10009(var_5_21, var_1_10012(var_1_10014), not iter_5_5.isLock)
+		SetCompomentEnabled(var_5_3, typeof(Toggle), not iter_5_5.isLock)
 
 		if not iter_5_5.isLock then
-			setGray = var_1_10009
+			setGray(var_5_3, underscore.all(underscore.flatten(iter_5_5.task_group), function(arg_17_0)
+				local var_17_0 = var_5_0:getTaskVO(arg_17_0)
 
-			local var_5_22 = var_5_20
-
-			underscore = var_1_10012
-			var_1_10012 = var_1_10012.all
-			underscore = var_1_10014
-
-			var_1_10009(var_5_22, var_1_10012(var_1_10014.flatten(iter_5_5.task_group), function(arg_17_0)
-				local var_17_0 = var_5_10
-
-				return var_1.getTaskVO(var_17_0, arg_17_0) and var_1:isReceive()
+				return var_17_0 and var_17_0:isReceive()
 			end))
 		end
 	end
 
-	local var_5_23 = arg_5_0
-
-	arg_5_0.updatePhaseInfo(var_5_23)
-
-	LoadImageSpriteAtlasAsync = var_3
-	Drop = var_5_23
-
-	local var_5_24 = var_5_23.New
-	local var_5_25 = {}
-
-	DROP_TYPE_VITEM = var_5_20
-	var_5_25.type = var_5_20
-	var_5_25.id = arg_5_0.ptId
-
-	local var_5_26 = var_5_24(var_5_25)
-	local var_5_27 = var_5.getIcon(var_5_26)
-	local var_5_28 = ""
-	local var_5_29 = arg_5_0.sliderPt
-
-	var_3(var_5_27, var_5_28, var_7.Find(var_5_29, "icon"), true)
-
-	onButton = var_3
-
-	local var_5_30 = arg_5_0
-	local var_5_31 = arg_5_0.itemQuick
-
-	local function var_5_32()
-		local var_18_0 = arg_5_0
-		local var_18_1 = var_0.emit
-		local var_18_2 = var_0_1.ON_DROP
-		local var_18_3 = {
-			count = 1
-		}
-
-		DROP_TYPE_ITEM = var_2_10005
-		var_18_3.type = var_2_10005
-		Item = var_2_10005
-		var_18_3.id = var_2_10005.QUICK_TASK_PASS_TICKET_ID
-
-		var_18_1(var_18_0, var_18_2, var_18_3)
+	arg_5_0:updatePhaseInfo()
+	LoadImageSpriteAtlasAsync(Drop.New({
+		type = DROP_TYPE_VITEM,
+		id = arg_5_0.ptId
+	}):getIcon(), "", arg_5_0.sliderPt:Find("icon"), true)
+	onButton(arg_5_0, arg_5_0.itemQuick, function()
+		arg_5_0:emit(var_0_0.ON_DROP, {
+			count = 1,
+			type = DROP_TYPE_ITEM,
+			id = Item.QUICK_TASK_PASS_TICKET_ID
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_8
-
-	var_3(var_5_30, var_5_31, var_5_32, var_8)
-
-	LoadImageSpriteAtlasAsync = var_3
-	Drop = var_5_30
-
-	local var_5_33 = var_5_30.New
-	local var_5_34 = {}
-
-	DROP_TYPE_ITEM = var_8
-	var_5_34.type = var_8
-	Item = var_8
-	var_5_34.id = var_8.QUICK_TASK_PASS_TICKET_ID
-
-	local var_5_35 = var_5_33(var_5_34)
-	local var_5_36 = var_5.getIcon(var_5_35)
-	local var_5_37 = ""
-	local var_5_38 = arg_5_0.itemQuick
-
-	var_3(var_5_36, var_5_37, var_7.Find(var_5_38, "icon"), true)
-
-	onButton = var_3
-
-	local var_5_39 = arg_5_0
-	local var_5_40 = arg_5_0.itemQuick
-
-	var_3(var_5_39, var_6.Find(var_5_40, "plus"), function()
-		shoppingBatch = var_2_10000
-
-		local var_19_0 = 61017
-		local var_19_1 = {}
-
-		Item = var_2_10004
-		var_19_1.id = var_2_10004.QUICK_TASK_PASS_TICKET_ID
-
-		var_2_10000(var_19_0, var_19_1, 20, "build_ship_quickly_buy_stone")
+	end, SFX_PANEL)
+	LoadImageSpriteAtlasAsync(Drop.New({
+		type = DROP_TYPE_ITEM,
+		id = Item.QUICK_TASK_PASS_TICKET_ID
+	}):getIcon(), "", arg_5_0.itemQuick:Find("icon"), true)
+	onButton(arg_5_0, arg_5_0.itemQuick:Find("plus"), function()
+		shoppingBatch(61017, {
+			id = Item.QUICK_TASK_PASS_TICKET_ID
+		}, 20, "build_ship_quickly_buy_stone")
 
 		return
 	end)
 	arg_5_0:updateItemInfo()
-
-	setText = var_3
-
-	local var_5_41 = arg_5_0.textComplete
-	local var_5_42 = var_5.Find(var_5_41, "Text")
-
-	i18n = var_6
-
-	var_3(var_5_42, var_6("cruise_task_tips"))
+	setText(arg_5_0.textComplete:Find("Text"), i18n("cruise_task_tips"))
 
 	return
 end
 
-function var_0_1.willExit(arg_20_0)
-	pg = var_1_10001
-
-	local var_20_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_20_0, arg_20_0._tf)
+function var_0_0.willExit(arg_20_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_20_0._tf)
 
 	return
 end
 
-function var_0_1.setActivity(arg_21_0, arg_21_1)
+function var_0_0.setActivity(arg_21_0, arg_21_1)
 	arg_21_0.activity = arg_21_1
-	pairs = var_1_10002
 
-	for iter_21_0, iter_21_1 in var_1_10002(arg_21_1:GetCrusingInfo()) do
+	for iter_21_0, iter_21_1 in pairs(arg_21_1:GetCrusingInfo()) do
 		arg_21_0[iter_21_0] = iter_21_1
 	end
 
 	arg_21_0.taskGroupList = {}
-	pg = var_2
 
-	local var_21_0 = var_2.TimeMgr.GetInstance()
-	local var_21_1 = var_2.GetServerOverWeek(var_21_0, arg_21_1:getStartTime())
+	local var_21_0 = pg.TimeMgr.GetInstance():GetServerOverWeek(arg_21_1:getStartTime())
 
-	ipairs = var_3
-
-	for iter_21_2, iter_21_3 in var_3(arg_21_1:getConfig("config_data")) do
-		pg = var_21_2
-
-		local var_21_2 = var_21_2.battlepass_task_group[iter_21_3]
-
-		arg_21_0.taskGroupList[var_21_2.group_mask] = {
-			task_group = var_21_2.task_group,
-			isLock = var_21_1 < var_21_2.group_mask
+	for iter_21_2, iter_21_3 in ipairs(arg_21_1:getConfig("config_data")) do
+		arg_21_0.taskGroupList[pg.battlepass_task_group[iter_21_3].group_mask] = {
+			task_group = pg.battlepass_task_group[iter_21_3].task_group,
+			isLock = var_21_0 < pg.battlepass_task_group[iter_21_3].group_mask
 		}
 	end
 
 	return
 end
 
-function var_0_1.updatePhaseInfo(arg_22_0)
-	setText = var_1_10001
-
-	local var_22_0 = arg_22_0.textPhase
-
-	i18n = var_1_10004
-
-	var_1_10001(var_22_0, var_1_10004("cruise_task_phase", arg_22_0.phase))
-
-	local var_22_1
+function var_0_0.updatePhaseInfo(arg_22_0)
+	setText(arg_22_0.textPhase, i18n("cruise_task_phase", arg_22_0.phase))
 
 	if arg_22_0.phase < #arg_22_0.awardList then
-		var_22_1 = arg_22_0.phase == 0 and 0 or arg_22_0.awardList[arg_22_0.phase].pt
+		local var_22_0 = arg_22_0.pt - (arg_22_0.phase == 0 and 0 or arg_22_0.awardList[arg_22_0.phase].pt)
 
-		local var_22_2 = arg_22_0.pt - var_22_1
-		local var_22_3 = arg_22_0.awardList[arg_22_0.phase + 1].pt - var_22_1
-
-		setSlider = var_4
-
-		var_4(arg_22_0.sliderPt, 0, var_22_3, var_22_2)
-
-		setText = var_4
-
-		local var_22_4 = arg_22_0.sliderPt
-
-		var_4(var_6.Find(var_22_4, "Text"), var_22_2 .. "/" .. var_22_3)
+		setSlider(arg_22_0.sliderPt, 0, arg_22_0.awardList[arg_22_0.phase + 1].pt - (arg_22_0.phase == 0 and 0 or arg_22_0.awardList[arg_22_0.phase].pt), arg_22_0.pt - (arg_22_0.phase == 0 and 0 or arg_22_0.awardList[arg_22_0.phase].pt))
+		setText(arg_22_0.sliderPt:Find("Text"), var_22_0 .. "/" .. arg_22_0.awardList[arg_22_0.phase + 1].pt - (arg_22_0.phase == 0 and 0 or arg_22_0.awardList[arg_22_0.phase].pt))
 	else
-		setSlider = var_22_1
-
-		var_22_1(arg_22_0.sliderPt, 0, 1, 1)
-
-		setText = var_22_1
-
-		local var_22_5 = arg_22_0.sliderPt
-
-		var_22_1(var_3.Find(var_22_5, "Text"), "MAX")
+		setSlider(arg_22_0.sliderPt, 0, 1, 1)
+		setText(arg_22_0.sliderPt:Find("Text"), "MAX")
 	end
 
 	return
 end
 
-function var_0_1.updateTaskInfo(arg_23_0)
+function var_0_0.updateTaskInfo(arg_23_0)
 	local var_23_0 = 0
 	local var_23_1 = 0
 
-	underscore = var_1_10003
-
-	var_1_10003.each(arg_23_0.tempTaskGroup, function(arg_24_0)
-		underscore = var_2_10001
-
-		var_2_10001.each(arg_24_0, function(arg_25_0)
+	underscore.each(arg_23_0.tempTaskGroup, function(arg_24_0)
+		underscore.each(arg_24_0, function(arg_25_0)
 			var_23_1 = var_23_1 + 1
 
 			if arg_25_0:isReceive() then
@@ -557,314 +244,133 @@ function var_0_1.updateTaskInfo(arg_23_0)
 
 		return
 	end)
-
-	setText = var_3
-
-	var_3(arg_23_0.textComplete, var_23_0 .. "/" .. var_23_1)
+	setText(arg_23_0.textComplete, 0 .. "/" .. 0)
 
 	return
 end
 
-function var_0_1.updateItemInfo(arg_26_0)
-	setText = var_1_10001
-
-	local var_26_0 = arg_26_0.itemQuick
-
-	getProxy = var_1_10004
-	BagProxy = var_1_10006
-
-	local var_26_1 = var_1_10004(var_1_10006)
-	local var_26_2 = var_4.getItemCountById
-
-	Item = var_1_10007
-
-	var_1_10001(var_26_0, var_26_2(var_26_1, var_1_10007.QUICK_TASK_PASS_TICKET_ID))
+function var_0_0.updateItemInfo(arg_26_0)
+	setText(arg_26_0.itemQuick, getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID))
 
 	return
 end
 
-function var_0_1.updateTaskGroup(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = arg_27_1
-	local var_27_1 = arg_27_1.Find(var_27_0, "info")
+function var_0_0.updateTaskGroup(arg_27_0, arg_27_1, arg_27_2)
+	local var_27_0 = arg_27_1:Find("info")
 
-	LoadImageSpriteAtlasAsync = var_1_10004
+	LoadImageSpriteAtlasAsync("ui/crusingtaskui_atlas", tostring(arg_27_0.weekToggle), var_27_0:Find("week"), true)
 
-	local var_27_2 = "ui/crusingtaskui_atlas"
+	local var_27_1 = {}
 
-	tostring = var_1_10007
-
-	var_1_10004(var_27_2, var_1_10007(arg_27_0.weekToggle), var_27_1:Find("week"), true)
-
-	local var_27_3 = {}
-
-	ipairs = var_27_0
-
-	for iter_27_0, iter_27_1 in var_27_0(arg_27_2) do
+	for iter_27_0, iter_27_1 in ipairs(arg_27_2) do
 		if not iter_27_1:isReceive() then
-			table = var_10
-
-			var_10.insert(var_27_3, iter_27_1)
+			table.insert(var_27_1, iter_27_1)
 		end
 	end
 
-	triggerToggle = var_5
+	triggerToggle(var_27_0, false)
 
-	var_5(var_27_1, false)
+	local var_27_2 = #var_27_1 > 0 and table.remove(var_27_1, 1) or arg_27_2[#arg_27_2]
 
-	local var_27_4 = #var_27_3
+	SetCompomentEnabled(var_27_0, typeof(Toggle), #var_27_1 > 0)
+	arg_27_0:updateTaskDisplay(var_27_0, var_27_2)
+	setActive(var_27_0:Find("quick"), var_27_2:getConfig("quick_finish") > 0 and var_27_2:getTaskStatus() == 0)
+	onButton(arg_27_0, var_27_0:Find("quick"), function()
+		local var_28_0 = getProxy(BagProxy):getItemCountById(Item.QUICK_TASK_PASS_TICKET_ID)
+		local var_28_1 = var_27_2:getConfig("quick_finish")
 
-	if 0 < var_27_4 then
-		table = var_27_4
+		if var_28_0 < var_28_1 then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("battlepass_task_quickfinish2", var_28_1 - var_28_0),
+				onYes = function()
+					shoppingBatch(61017, {
+						id = Item.QUICK_TASK_PASS_TICKET_ID
+					}, 20, "build_ship_quickly_buy_stone")
 
-		local var_27_5
+					return
+				end
+			})
+		else
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("battlepass_task_quickfinish1", var_28_1, var_28_0),
+				onYes = function()
+					arg_27_0:emit(CrusingTaskMediator.ON_TASK_QUICK_SUBMIT, var_27_2)
 
-		if not var_27_4.remove(var_27_3, 1) then
-			var_27_5 = arg_27_2[#arg_27_2]
+					return
+				end
+			})
 		end
 
-		SetCompomentEnabled = var_6
+		return
+	end, SFX_CONFIRM)
+	setActive(var_27_0:Find("toggle_mark"), #var_27_1 > 0)
 
-		local var_27_6 = var_27_1
+	if #var_27_1 > 0 then
+		local var_27_3 = arg_27_1:Find("content")
+		local var_27_4 = UIItemList.New(var_27_3, var_27_3:Find("extend_tpl"))
 
-		typeof = iter_27_1
-		Toggle = var_11
+		var_27_4:make(function(arg_31_0, arg_31_1, arg_31_2)
+			arg_31_1 = arg_31_1 + 1
 
-		var_6(var_27_6, iter_27_1(var_11), #var_27_3 > 0)
-		arg_27_0:updateTaskDisplay(var_27_1, var_27_5)
-
-		setActive = var_6
-
-		var_6(var_27_1:Find("quick"), var_27_5:getConfig("quick_finish") > 0 and var_27_5:getTaskStatus() == 0)
-
-		onButton = var_6
-
-		local var_27_7 = arg_27_0
-		local var_27_8 = var_27_1
-		local var_27_9 = var_27_1.Find(var_27_8, "quick")
-
-		local function var_27_10()
-			getProxy = var_2_10000
-			BagProxy = var_2_10002
-
-			local var_28_0 = var_2_10000(var_2_10002)
-			local var_28_1 = var_0.getItemCountById
-
-			Item = var_2_10003
-
-			local var_28_2 = var_28_1(var_28_0, var_2_10003.QUICK_TASK_PASS_TICKET_ID)
-			local var_28_3 = var_27_5
-
-			if var_28_2 < var_1.getConfig(var_28_3, "quick_finish") then
-				pg = var_28_0
-
-				local var_28_4 = var_28_0.MsgboxMgr.GetInstance()
-
-				var_28_0 = var_28_0.ShowMsgBox
-
-				local var_28_5 = {}
-
-				i18n = var_2_10006
-				var_28_5.content = var_2_10006("battlepass_task_quickfinish2", var_1 - var_28_2)
-
-				function var_28_5.onYes()
-					shoppingBatch = var_3_10000
-
-					local var_29_0 = 61017
-					local var_29_1 = {}
-
-					Item = var_3_10004
-					var_29_1.id = var_3_10004.QUICK_TASK_PASS_TICKET_ID
-
-					var_3_10000(var_29_0, var_29_1, 20, "build_ship_quickly_buy_stone")
-
-					return
-				end
-
-				var_28_0(var_28_4, var_28_5)
-			else
-				pg = var_28_0
-
-				local var_28_6 = var_28_0.MsgboxMgr.GetInstance()
-				local var_28_7 = var_2.ShowMsgBox
-				local var_28_8 = {}
-
-				i18n = var_2_10006
-				var_28_8.content = var_2_10006("battlepass_task_quickfinish1", var_1, var_28_2)
-
-				function var_28_8.onYes()
-					local var_30_0 = arg_27_0
-					local var_30_1 = var_0.emit
-
-					CrusingTaskMediator = var_3_10003
-
-					var_30_1(var_30_0, var_3_10003.ON_TASK_QUICK_SUBMIT, var_27_5)
-
-					return
-				end
-
-				var_28_7(var_28_6, var_28_8)
+			if arg_31_0 == UIItemList.EventUpdate then
+				arg_27_0:updateTaskDisplay(arg_31_2, var_27_1[arg_31_1])
 			end
 
 			return
-		end
-
-		SFX_CONFIRM = var_27_8
-
-		var_6(var_27_7, var_27_9, var_27_10, var_27_8)
-
-		setActive = var_6
-
-		var_6(var_27_1:Find("toggle_mark"), #var_27_3 > 0)
-
-		local var_27_11 = #var_27_3
-
-		if 0 < var_27_11 then
-			local var_27_12 = arg_27_1:Find("content")
-
-			UIItemList = var_7
-
-			local var_27_13 = var_7.New(var_27_12, var_27_12:Find("extend_tpl"))
-
-			var_7.make(var_27_13, function(arg_31_0, arg_31_1, arg_31_2)
-				arg_31_1 = arg_31_1 + 1
-				UIItemList = var_2_10003
-
-				if arg_31_0 == var_2_10003.EventUpdate then
-					local var_31_0 = arg_27_0
-
-					var_3.updateTaskDisplay(var_31_0, arg_31_2, var_27_3[arg_31_1])
-				end
-
-				return
-			end)
-			var_7:align(#var_27_3)
-		end
-
-		return
+		end)
+		var_27_4:align(#var_27_1)
 	end
-end
-
-function var_0_1.updateTaskDisplay(arg_32_0, arg_32_1, arg_32_2)
-	setText = var_1_10003
-
-	var_1_10003(arg_32_1:Find("desc"), arg_32_2:getConfig("desc"))
-
-	local var_32_0 = arg_32_2
-	local var_32_1 = arg_32_2.getProgress(var_32_0)
-	local var_32_2 = arg_32_2:getConfig("target_num")
-
-	setSlider = var_32_0
-
-	var_32_0(arg_32_1:Find("Slider"), 0, var_32_2, var_32_1)
-
-	setText = var_32_0
-
-	var_32_0(arg_32_1:Find("Slider/Text"), var_32_1 .. "/" .. var_32_2)
-
-	local var_32_3 = arg_32_2:getConfig("award_display")[1]
-	local var_32_4 = {
-		type = var_32_3[1],
-		id = var_32_3[2],
-		count = var_32_3[3]
-	}
-
-	updateDrop = var_6
-
-	var_6(arg_32_1:Find("IconTpl"), var_32_4)
-
-	onButton = var_6
-
-	local var_32_5 = arg_32_0
-	local var_32_6 = arg_32_1
-	local var_32_7 = arg_32_1.Find(var_32_6, "IconTpl")
-
-	local function var_32_8()
-		local var_33_0 = arg_32_0
-
-		var_0.emit(var_33_0, var_0_1.ON_DROP, var_32_4)
-
-		return
-	end
-
-	SFX_PANEL = var_32_6
-
-	var_6(var_32_5, var_32_7, var_32_8, var_32_6)
-
-	local var_32_9 = arg_32_2:getTaskStatus()
-
-	setActive = var_7
-
-	var_7(arg_32_1:Find("go"), var_32_9 == 0)
-
-	setActive = var_7
-
-	var_7(arg_32_1:Find("get"), var_32_9 == 1)
-
-	setActive = var_7
-
-	var_7(arg_32_1:Find("got"), var_32_9 == 2)
-
-	setActive = var_7
-
-	var_7(arg_32_1:Find("IconTpl/mask"), var_32_9 == 2)
-
-	setActive = var_7
-
-	var_7(arg_32_1:Find("IconTpl/mark"), var_32_9 == 2)
-
-	onButton = var_7
-
-	local var_32_10 = arg_32_0
-	local var_32_11 = arg_32_1
-	local var_32_12 = arg_32_1.Find(var_32_11, "go")
-
-	local function var_32_13()
-		local var_34_0 = arg_32_0
-		local var_34_1 = var_0.emit
-
-		CrusingTaskMediator = var_2_10003
-
-		var_34_1(var_34_0, var_2_10003.ON_TASK_GO, arg_32_2)
-
-		return
-	end
-
-	SFX_PANEL = var_32_11
-
-	var_7(var_32_10, var_32_12, var_32_13, var_32_11)
-
-	onButton = var_7
-
-	local var_32_14 = arg_32_0
-	local var_32_15 = arg_32_1
-	local var_32_16 = arg_32_1.Find(var_32_15, "get")
-
-	local function var_32_17()
-		local var_35_0 = arg_32_0
-		local var_35_1 = var_0.emit
-
-		CrusingTaskMediator = var_2_10003
-
-		var_35_1(var_35_0, var_2_10003.ON_TASK_SUBMIT, arg_32_2)
-
-		return
-	end
-
-	SFX_CONFIRM = var_32_15
-
-	var_7(var_32_14, var_32_16, var_32_17, var_32_15)
 
 	return
 end
 
-function var_0_1.updateCurrentTaskGroup(arg_36_0)
-	triggerToggle = var_1_10001
+function var_0_0.updateTaskDisplay(arg_32_0, arg_32_1, arg_32_2)
+	setText(arg_32_1:Find("desc"), arg_32_2:getConfig("desc"))
 
-	local var_36_0 = arg_36_0.rtWeekToggles
+	local var_32_0 = arg_32_2:getProgress()
+	local var_32_1 = arg_32_2:getConfig("target_num")
 
-	var_1_10001(var_3.Find(var_36_0, arg_36_0.weekToggle), true)
+	setSlider(arg_32_1:Find("Slider"), 0, var_32_1, var_32_0)
+	setText(arg_32_1:Find("Slider/Text"), var_32_0 .. "/" .. var_32_1)
+
+	local var_32_2 = arg_32_2:getConfig("award_display")[1]
+
+	updateDrop(arg_32_1:Find("IconTpl"), {
+		type = var_32_2[1],
+		id = var_32_2[2],
+		count = var_32_2[3]
+	})
+	onButton(arg_32_0, arg_32_1:Find("IconTpl"), function()
+		arg_32_0:emit(var_0_0.ON_DROP, var_0)
+
+		return
+	end, SFX_PANEL)
+
+	local var_32_3 = arg_32_2:getTaskStatus()
+
+	setActive(arg_32_1:Find("go"), var_32_3 == 0)
+	setActive(arg_32_1:Find("get"), var_32_3 == 1)
+	setActive(arg_32_1:Find("got"), var_32_3 == 2)
+	setActive(arg_32_1:Find("IconTpl/mask"), var_32_3 == 2)
+	setActive(arg_32_1:Find("IconTpl/mark"), var_32_3 == 2)
+	onButton(arg_32_0, arg_32_1:Find("go"), function()
+		arg_32_0:emit(CrusingTaskMediator.ON_TASK_GO, arg_32_2)
+
+		return
+	end, SFX_PANEL)
+	onButton(arg_32_0, arg_32_1:Find("get"), function()
+		arg_32_0:emit(CrusingTaskMediator.ON_TASK_SUBMIT, arg_32_2)
+
+		return
+	end, SFX_CONFIRM)
 
 	return
 end
 
-return var_0_1
+function var_0_0.updateCurrentTaskGroup(arg_36_0)
+	triggerToggle(arg_36_0.rtWeekToggles:Find(arg_36_0.weekToggle), true)
+
+	return
+end
+
+return var_0_0

@@ -1,4 +1,4 @@
---[[
+--[[ 
 -----------------------------------------------------
 @filename       : RecruitShowAllView
 @Description    : 招募十连抽总览
@@ -68,8 +68,7 @@ function deActive(self)
     super.deActive(self)
 end
 
---[[
-    初始化界面的静态文本，图片字
+--[[    初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
 function initViewText(self)
@@ -93,7 +92,8 @@ end
 --再次链接
 function onOneTwoRecruit(self)
     UIFactory:alertMessge(_TT(28045), true, function()
-        GameDispatcher:dispatchEvent(EventName.REQ_RECRUIT_HERO, {type = recruit.RecruitType.RECRUIT_NEW_PLAYER, times = 10})
+        local recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        GameDispatcher:dispatchEvent(EventName.REQ_RECRUIT_HERO, { recruitId = recruit_id, times = 10 })
         self:close()
     end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, RemindConst.NEWPLAYRECRUITRESULT)
 end
@@ -105,6 +105,8 @@ function onClickClose(self)
 
         self:recoverItem()
         self:close()
+
+        GameDispatcher:dispatchEvent(EventName.RECRUIT_FINISH)
     end
 end
 
@@ -152,8 +154,6 @@ function close(self)
             super.close(self)
         end
     end
-
-    GameDispatcher:dispatchEvent(EventName.RECRUIT_FINISH)
 end
 
 function updateView(self)

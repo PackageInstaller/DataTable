@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "equip_skin_theme_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "equip_skin_theme_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.equip_skin_theme_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.equip_skin_theme_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.equip_skin_theme_template = rawget(pg, "equip_skin_theme_template") or setmetatable({
+	__name = "equip_skin_theme_template"
+}, confNEO)
+pg.equip_skin_theme_template.all = {
 	1,
 	2,
 	3,
@@ -112,6 +89,7 @@ var_0_3.all = {
 	85,
 	86,
 	87,
+	88,
 	101,
 	102,
 	103,
@@ -124,25 +102,11 @@ var_0_3.all = {
 	110,
 	199
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.equip_skin_theme_template = {}
+pg.base = pg.base or {}
+pg.base.equip_skin_theme_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.equip_skin_theme_template
-
-	var_1_0[1] = {
+	pg.base.equip_skin_theme_template[1] = {
 		id = 1,
 		name = "海豹系列",
 		ids = {
@@ -152,11 +116,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			12
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.equip_skin_theme_template
-
-	var_1_1[2] = {
+	pg.base.equip_skin_theme_template[2] = {
 		id = 2,
 		name = "咸鱼系列",
 		ids = {
@@ -166,11 +126,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			14
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.equip_skin_theme_template
-
-	var_1_2[3] = {
+	pg.base.equip_skin_theme_template[3] = {
 		id = 3,
 		name = "新年快乐",
 		ids = {
@@ -181,11 +137,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			17
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.equip_skin_theme_template
-
-	var_1_3[4] = {
+	pg.base.equip_skin_theme_template[4] = {
 		id = 4,
 		name = "圣诞快乐",
 		ids = {
@@ -199,11 +151,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			21
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.equip_skin_theme_template
-
-	var_1_4[5] = {
+	pg.base.equip_skin_theme_template[5] = {
 		id = 5,
 		name = "游戏业界",
 		ids = {
@@ -224,11 +172,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1015
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.equip_skin_theme_template
-
-	var_1_5[6] = {
+	pg.base.equip_skin_theme_template[6] = {
 		id = 6,
 		name = "小海豹",
 		ids = {
@@ -239,11 +183,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			26
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.equip_skin_theme_template
-
-	var_1_6[7] = {
+	pg.base.equip_skin_theme_template[7] = {
 		id = 7,
 		name = "恭贺新春",
 		ids = {
@@ -261,11 +201,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			38
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.equip_skin_theme_template
-
-	var_1_7[8] = {
+	pg.base.equip_skin_theme_template[8] = {
 		id = 8,
 		name = "开学季",
 		ids = {
@@ -288,11 +224,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			66
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.equip_skin_theme_template
-
-	var_1_8[9] = {
+	pg.base.equip_skin_theme_template[9] = {
 		id = 9,
 		name = "炎炎夏日",
 		ids = {
@@ -316,11 +248,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			118
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.equip_skin_theme_template
-
-	var_1_9[10] = {
+	pg.base.equip_skin_theme_template[10] = {
 		id = 10,
 		name = "猪突猛进",
 		ids = {
@@ -344,11 +272,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			137
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.equip_skin_theme_template
-
-	var_1_10[11] = {
+	pg.base.equip_skin_theme_template[11] = {
 		id = 11,
 		name = "皇家格调",
 		ids = {
@@ -372,11 +296,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			157
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.equip_skin_theme_template
-
-	var_1_11[12] = {
+	pg.base.equip_skin_theme_template[12] = {
 		id = 12,
 		name = "传颂之物",
 		ids = {
@@ -400,11 +320,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1068
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.equip_skin_theme_template
-
-	var_1_12[13] = {
+	pg.base.equip_skin_theme_template[13] = {
 		id = 13,
 		name = "绊爱系列",
 		ids = {
@@ -429,11 +345,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1119
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.equip_skin_theme_template
-
-	var_1_13[14] = {
+	pg.base.equip_skin_theme_template[14] = {
 		id = 14,
 		name = "撒丁风情",
 		ids = {
@@ -457,11 +369,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			177
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.equip_skin_theme_template
-
-	var_1_14[15] = {
+	pg.base.equip_skin_theme_template[15] = {
 		id = 15,
 		name = "激奏Live",
 		ids = {
@@ -485,11 +393,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			197
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.equip_skin_theme_template
-
-	var_1_15[16] = {
+	pg.base.equip_skin_theme_template[16] = {
 		id = 16,
 		name = "hololive",
 		ids = {
@@ -513,11 +417,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			217
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.equip_skin_theme_template
-
-	var_1_16[17] = {
+	pg.base.equip_skin_theme_template[17] = {
 		id = 17,
 		name = "北联风云",
 		ids = {
@@ -541,11 +441,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			237
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.equip_skin_theme_template
-
-	var_1_17[18] = {
+	pg.base.equip_skin_theme_template[18] = {
 		id = 18,
 		name = "白鹰风格",
 		ids = {
@@ -569,11 +465,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			257
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.equip_skin_theme_template
-
-	var_1_18[19] = {
+	pg.base.equip_skin_theme_template[19] = {
 		id = 19,
 		name = "鸢尾印象",
 		ids = {
@@ -597,11 +489,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			277
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.equip_skin_theme_template
-
-	var_1_19[20] = {
+	pg.base.equip_skin_theme_template[20] = {
 		id = 20,
 		name = "啾啾野战医院",
 		ids = {
@@ -625,11 +513,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			297
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.equip_skin_theme_template
-
-	var_1_20[21] = {
+	pg.base.equip_skin_theme_template[21] = {
 		id = 21,
 		name = "重樱匠心",
 		ids = {
@@ -653,11 +537,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			317
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.equip_skin_theme_template
-
-	var_1_21[22] = {
+	pg.base.equip_skin_theme_template[22] = {
 		id = 22,
 		name = "激唱Universe",
 		ids = {
@@ -681,11 +561,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			337
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.equip_skin_theme_template
-
-	var_1_22[23] = {
+	pg.base.equip_skin_theme_template[23] = {
 		id = 23,
 		name = "女神假期",
 		ids = {
@@ -709,11 +585,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			357
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.equip_skin_theme_template
-
-	var_1_23[24] = {
+	pg.base.equip_skin_theme_template[24] = {
 		id = 24,
 		name = "铁血风情",
 		ids = {
@@ -737,11 +609,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			377
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.equip_skin_theme_template
-
-	var_1_24[25] = {
+	pg.base.equip_skin_theme_template[25] = {
 		id = 25,
 		name = "敬贺新禧",
 		ids = {
@@ -765,11 +633,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			397
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.equip_skin_theme_template
-
-	var_1_25[26] = {
+	pg.base.equip_skin_theme_template[26] = {
 		id = 26,
 		name = "啾啾乐园 ",
 		ids = {
@@ -793,11 +657,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			417
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.equip_skin_theme_template
-
-	var_1_26[27] = {
+	pg.base.equip_skin_theme_template[27] = {
 		id = 27,
 		name = "偶像大师",
 		ids = {
@@ -821,11 +681,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			437
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.equip_skin_theme_template
-
-	var_1_27[28] = {
+	pg.base.equip_skin_theme_template[28] = {
 		id = 28,
 		name = "啾啾牛仔",
 		ids = {
@@ -849,11 +705,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			457
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.equip_skin_theme_template
-
-	var_1_28[29] = {
+	pg.base.equip_skin_theme_template[29] = {
 		id = 29,
 		name = "水上乐园",
 		ids = {
@@ -877,11 +729,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			477
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.equip_skin_theme_template
-
-	var_1_29[30] = {
+	pg.base.equip_skin_theme_template[30] = {
 		id = 30,
 		name = "SSSS",
 		ids = {
@@ -912,11 +760,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			806
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.equip_skin_theme_template
-
-	var_1_30[31] = {
+	pg.base.equip_skin_theme_template[31] = {
 		id = 31,
 		name = "女仆咖啡",
 		ids = {
@@ -940,11 +784,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			517
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.equip_skin_theme_template
-
-	var_1_31[32] = {
+	pg.base.equip_skin_theme_template[32] = {
 		id = 32,
 		name = "东煌意境",
 		ids = {
@@ -968,11 +808,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			537
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.equip_skin_theme_template
-
-	var_1_32[33] = {
+	pg.base.equip_skin_theme_template[33] = {
 		id = 33,
 		name = "红月之夜",
 		ids = {
@@ -996,11 +832,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			557
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.equip_skin_theme_template
-
-	var_1_33[34] = {
+	pg.base.equip_skin_theme_template[34] = {
 		id = 34,
 		name = "东煌时尚",
 		ids = {
@@ -1024,11 +856,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			577
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.equip_skin_theme_template
-
-	var_1_34[35] = {
+	pg.base.equip_skin_theme_template[35] = {
 		id = 35,
 		name = "童话世界",
 		ids = {
@@ -1052,11 +880,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			597
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.equip_skin_theme_template
-
-	var_1_35[36] = {
+	pg.base.equip_skin_theme_template[36] = {
 		id = 36,
 		name = "舞蹈空间",
 		ids = {
@@ -1080,11 +904,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			617
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.equip_skin_theme_template
-
-	var_1_36[37] = {
+	pg.base.equip_skin_theme_template[37] = {
 		id = 37,
 		name = "铁血之志",
 		ids = {
@@ -1108,11 +928,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			637
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.equip_skin_theme_template
-
-	var_1_37[38] = {
+	pg.base.equip_skin_theme_template[38] = {
 		id = 38,
 		name = "啾啾学园庆典",
 		ids = {
@@ -1136,11 +952,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			655
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.equip_skin_theme_template
-
-	var_1_38[39] = {
+	pg.base.equip_skin_theme_template[39] = {
 		id = 39,
 		name = "异世界冒险",
 		ids = {
@@ -1171,11 +983,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			947
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.equip_skin_theme_template
-
-	var_1_39[40] = {
+	pg.base.equip_skin_theme_template[40] = {
 		id = 40,
 		name = "幽灵狂欢",
 		ids = {
@@ -1199,11 +1007,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			687
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.equip_skin_theme_template
-
-	var_1_40[41] = {
+	pg.base.equip_skin_theme_template[41] = {
 		id = 41,
 		name = "炼金工房",
 		ids = {
@@ -1228,11 +1032,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1218
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.equip_skin_theme_template
-
-	var_1_41[42] = {
+	pg.base.equip_skin_theme_template[42] = {
 		id = 42,
 		name = "南方假日",
 		ids = {
@@ -1256,11 +1056,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			707
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.equip_skin_theme_template
-
-	var_1_42[43] = {
+	pg.base.equip_skin_theme_template[43] = {
 		id = 43,
 		name = "东煌美食",
 		ids = {
@@ -1284,22 +1080,14 @@ var_0_3.base.equip_skin_theme_template = {}
 			727
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.equip_skin_theme_template
-
-	var_1_43[44] = {
+	pg.base.equip_skin_theme_template[44] = {
 		id = 44,
 		name = "甜蜜之礼",
 		ids = {
 			1300
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.equip_skin_theme_template
-
-	var_1_44[45] = {
+	pg.base.equip_skin_theme_template[45] = {
 		id = 45,
 		name = "皇家教室",
 		ids = {
@@ -1323,11 +1111,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			747
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.equip_skin_theme_template
-
-	var_1_45[46] = {
+	pg.base.equip_skin_theme_template[46] = {
 		id = 46,
 		name = "海岛冒险",
 		ids = {
@@ -1351,11 +1135,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			767
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.equip_skin_theme_template
-
-	var_1_46[47] = {
+	pg.base.equip_skin_theme_template[47] = {
 		id = 47,
 		name = "精灵之森",
 		ids = {
@@ -1366,11 +1146,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			775
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.equip_skin_theme_template
-
-	var_1_47[48] = {
+	pg.base.equip_skin_theme_template[48] = {
 		id = 48,
 		name = "办公时光",
 		ids = {
@@ -1394,11 +1170,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			797
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.equip_skin_theme_template
-
-	var_1_48[49] = {
+	pg.base.equip_skin_theme_template[49] = {
 		id = 49,
 		name = "夏日梦幻",
 		ids = {
@@ -1422,11 +1194,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			827
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.equip_skin_theme_template
-
-	var_1_49[50] = {
+	pg.base.equip_skin_theme_template[50] = {
 		id = 50,
 		name = "常世夜游",
 		ids = {
@@ -1450,11 +1218,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			847
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.equip_skin_theme_template
-
-	var_1_50[51] = {
+	pg.base.equip_skin_theme_template[51] = {
 		id = 51,
 		name = "航海集结",
 		ids = {
@@ -1478,11 +1242,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			867
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.equip_skin_theme_template
-
-	var_1_51[52] = {
+	pg.base.equip_skin_theme_template[52] = {
 		id = 52,
 		name = "闪乱神乐",
 		ids = {
@@ -1506,11 +1266,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1417
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.equip_skin_theme_template
-
-	var_1_52[53] = {
+	pg.base.equip_skin_theme_template[53] = {
 		id = 53,
 		name = "港区喧嚣夜",
 		ids = {
@@ -1534,11 +1290,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			887
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.equip_skin_theme_template
-
-	var_1_53[54] = {
+	pg.base.equip_skin_theme_template[54] = {
 		id = 54,
 		name = "轩辕秘宝",
 		ids = {
@@ -1563,11 +1315,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			908
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.equip_skin_theme_template
-
-	var_1_54[55] = {
+	pg.base.equip_skin_theme_template[55] = {
 		id = 55,
 		name = "罪恶都市",
 		ids = {
@@ -1591,11 +1339,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			927
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.equip_skin_theme_template
-
-	var_1_55[56] = {
+	pg.base.equip_skin_theme_template[56] = {
 		id = 56,
 		name = "共鸣Passion",
 		ids = {
@@ -1619,11 +1363,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			967
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.equip_skin_theme_template
-
-	var_1_56[57] = {
+	pg.base.equip_skin_theme_template[57] = {
 		id = 57,
 		name = "邮轮假日",
 		ids = {
@@ -1647,11 +1387,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			987
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.equip_skin_theme_template
-
-	var_1_57[58] = {
+	pg.base.equip_skin_theme_template[58] = {
 		id = 58,
 		name = "童心学院",
 		ids = {
@@ -1676,11 +1412,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4019
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.equip_skin_theme_template
-
-	var_1_58[59] = {
+	pg.base.equip_skin_theme_template[59] = {
 		id = 59,
 		name = "西部往事",
 		ids = {
@@ -1704,11 +1436,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4038
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.equip_skin_theme_template
-
-	var_1_59[60] = {
+	pg.base.equip_skin_theme_template[60] = {
 		id = 60,
 		name = "梦幻乐园",
 		ids = {
@@ -1732,11 +1460,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4058
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.equip_skin_theme_template
-
-	var_1_60[61] = {
+	pg.base.equip_skin_theme_template[61] = {
 		id = 61,
 		name = "恐怖狂潮",
 		ids = {
@@ -1760,11 +1484,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4076
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.equip_skin_theme_template
-
-	var_1_61[62] = {
+	pg.base.equip_skin_theme_template[62] = {
 		id = 62,
 		name = "To LOVE-Ru ",
 		ids = {
@@ -1788,11 +1508,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1467
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.equip_skin_theme_template
-
-	var_1_62[63] = {
+	pg.base.equip_skin_theme_template[63] = {
 		id = 63,
 		name = "荒野力量",
 		ids = {
@@ -1816,11 +1532,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4094
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.equip_skin_theme_template
-
-	var_1_63[64] = {
+	pg.base.equip_skin_theme_template[64] = {
 		id = 64,
 		name = "瑞光迎岁 ",
 		ids = {
@@ -1844,11 +1556,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4112
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.equip_skin_theme_template
-
-	var_1_64[65] = {
+	pg.base.equip_skin_theme_template[65] = {
 		id = 65,
 		name = "黄金法老的秘器 ",
 		ids = {
@@ -1872,11 +1580,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4130
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.equip_skin_theme_template
-
-	var_1_65[66] = {
+	pg.base.equip_skin_theme_template[66] = {
 		id = 66,
 		name = "病院冒险",
 		ids = {
@@ -1900,11 +1604,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4148
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.equip_skin_theme_template
-
-	var_1_66[67] = {
+	pg.base.equip_skin_theme_template[67] = {
 		id = 67,
 		name = "郁金乡间",
 		ids = {
@@ -1928,11 +1628,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4166
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.equip_skin_theme_template
-
-	var_1_67[68] = {
+	pg.base.equip_skin_theme_template[68] = {
 		id = 68,
 		name = "假日海滨 ",
 		ids = {
@@ -1956,11 +1652,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4184
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.equip_skin_theme_template
-
-	var_1_68[69] = {
+	pg.base.equip_skin_theme_template[69] = {
 		id = 69,
 		name = "BLACK★ROCK SHOOTER",
 		ids = {
@@ -1976,11 +1668,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1480
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.equip_skin_theme_template
-
-	var_1_69[70] = {
+	pg.base.equip_skin_theme_template[70] = {
 		id = 70,
 		name = "铁道之旅",
 		ids = {
@@ -2004,11 +1692,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4203
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.equip_skin_theme_template
-
-	var_1_70[71] = {
+	pg.base.equip_skin_theme_template[71] = {
 		id = 71,
 		name = "炼金工房II",
 		ids = {
@@ -2033,11 +1717,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1499
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.equip_skin_theme_template
-
-	var_1_71[72] = {
+	pg.base.equip_skin_theme_template[72] = {
 		id = 72,
 		name = "奇渊奇境",
 		ids = {
@@ -2061,11 +1741,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4221
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.equip_skin_theme_template
-
-	var_1_72[73] = {
+	pg.base.equip_skin_theme_template[73] = {
 		id = 73,
 		name = "幻梦天原",
 		ids = {
@@ -2089,11 +1765,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4239
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.equip_skin_theme_template
-
-	var_1_73[74] = {
+	pg.base.equip_skin_theme_template[74] = {
 		id = 74,
 		name = "danmachi",
 		ids = {
@@ -2106,11 +1778,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1507
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.equip_skin_theme_template
-
-	var_1_74[75] = {
+	pg.base.equip_skin_theme_template[75] = {
 		id = 75,
 		name = "深海寻宝",
 		ids = {
@@ -2134,11 +1802,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4257
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.equip_skin_theme_template
-
-	var_1_75[77] = {
+	pg.base.equip_skin_theme_template[77] = {
 		id = 77,
 		name = "Date A Live",
 		ids = {
@@ -2162,11 +1826,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1528
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.equip_skin_theme_template
-
-	var_1_76[78] = {
+	pg.base.equip_skin_theme_template[78] = {
 		id = 78,
 		name = "玫粉女仆屋",
 		ids = {
@@ -2190,11 +1850,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4275
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.equip_skin_theme_template
-
-	var_1_77[79] = {
+	pg.base.equip_skin_theme_template[79] = {
 		id = 79,
 		name = "摄影视界",
 		ids = {
@@ -2218,11 +1874,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4293
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.equip_skin_theme_template
-
-	var_1_78[80] = {
+	pg.base.equip_skin_theme_template[80] = {
 		id = 80,
 		name = "新春拍卖会",
 		ids = {
@@ -2246,11 +1898,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4311
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.equip_skin_theme_template
-
-	var_1_79[81] = {
+	pg.base.equip_skin_theme_template[81] = {
 		id = 81,
 		name = "春满客栈",
 		ids = {
@@ -2274,11 +1922,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4329
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.equip_skin_theme_template
-
-	var_1_80[82] = {
+	pg.base.equip_skin_theme_template[82] = {
 		id = 82,
 		name = "夜都漫游者",
 		ids = {
@@ -2302,11 +1946,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4347
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.equip_skin_theme_template
-
-	var_1_81[83] = {
+	pg.base.equip_skin_theme_template[83] = {
 		id = 83,
 		name = "闪耀海滨",
 		ids = {
@@ -2330,11 +1970,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4365
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.equip_skin_theme_template
-
-	var_1_82[84] = {
+	pg.base.equip_skin_theme_template[84] = {
 		id = 84,
 		name = "璀璨珍宝",
 		ids = {
@@ -2358,11 +1994,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4383
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.equip_skin_theme_template
-
-	var_1_83[85] = {
+	pg.base.equip_skin_theme_template[85] = {
 		id = 85,
 		name = "童话乐园",
 		ids = {
@@ -2386,11 +2018,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			4401
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.equip_skin_theme_template
-
-	var_1_84[86] = {
+	pg.base.equip_skin_theme_template[86] = {
 		id = 86,
 		name = "NieR:Automata",
 		ids = {
@@ -2406,11 +2034,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			1538
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.equip_skin_theme_template
-
-	var_1_85[87] = {
+	pg.base.equip_skin_theme_template[87] = {
 		id = 87,
 		name = "怪谈病区",
 		ids = {
@@ -2434,11 +2058,31 @@ var_0_3.base.equip_skin_theme_template = {}
 			4419
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.equip_skin_theme_template
-
-	var_1_86[101] = {
+	pg.base.equip_skin_theme_template[88] = {
+		id = 88,
+		name = "滨海极速",
+		ids = {
+			4420,
+			4421,
+			4422,
+			4423,
+			4424,
+			4425,
+			4426,
+			4427,
+			4428,
+			4429,
+			4430,
+			4431,
+			4432,
+			4433,
+			4434,
+			4435,
+			4436,
+			4437
+		}
+	}
+	pg.base.equip_skin_theme_template[101] = {
 		id = 101,
 		name = "星辰无垠",
 		ids = {
@@ -2457,11 +2101,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2013
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.equip_skin_theme_template
-
-	var_1_87[102] = {
+	pg.base.equip_skin_theme_template[102] = {
 		id = 102,
 		name = "魔术剧场",
 		ids = {
@@ -2482,11 +2122,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2028
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.equip_skin_theme_template
-
-	var_1_88[103] = {
+	pg.base.equip_skin_theme_template[103] = {
 		id = 103,
 		name = "风云万象",
 		ids = {
@@ -2506,11 +2142,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2042
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.equip_skin_theme_template
-
-	var_1_89[104] = {
+	pg.base.equip_skin_theme_template[104] = {
 		id = 104,
 		name = "复古电玩",
 		ids = {
@@ -2530,11 +2162,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2056
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.equip_skin_theme_template
-
-	var_1_90[105] = {
+	pg.base.equip_skin_theme_template[105] = {
 		id = 105,
 		name = "魔力纪元 ",
 		ids = {
@@ -2554,11 +2182,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2074
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.equip_skin_theme_template
-
-	var_1_91[106] = {
+	pg.base.equip_skin_theme_template[106] = {
 		id = 106,
 		name = "赛博纪元",
 		ids = {
@@ -2578,11 +2202,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2088
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.equip_skin_theme_template
-
-	var_1_92[107] = {
+	pg.base.equip_skin_theme_template[107] = {
 		id = 107,
 		name = "光与暗",
 		ids = {
@@ -2600,11 +2220,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2100
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.equip_skin_theme_template
-
-	var_1_93[108] = {
+	pg.base.equip_skin_theme_template[108] = {
 		id = 108,
 		name = "墨色山河",
 		ids = {
@@ -2622,11 +2238,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2112
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.equip_skin_theme_template
-
-	var_1_94[109] = {
+	pg.base.equip_skin_theme_template[109] = {
 		id = 109,
 		name = "失落遗迹",
 		ids = {
@@ -2644,11 +2256,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2124
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.equip_skin_theme_template
-
-	var_1_95[110] = {
+	pg.base.equip_skin_theme_template[110] = {
 		id = 110,
 		name = "时代剪影",
 		ids = {
@@ -2658,8 +2266,7 @@ var_0_3.base.equip_skin_theme_template = {}
 			2128
 		}
 	}
-	pg = var_1_95
-	var_1_95.base.equip_skin_theme_template[199] = {
+	pg.base.equip_skin_theme_template[199] = {
 		id = 199,
 		name = "其他",
 		ids = {

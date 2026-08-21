@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NodeCanvasBaseObject")
+﻿local var_0_0 = class("NodeCanvasBaseObject")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0.args = {}
@@ -23,9 +21,7 @@ function var_0_0.SetArgs(arg_3_0, arg_3_1)
 	local var_3_0 = arg_3_1:GetEnumerator()
 
 	while var_3_0:MoveNext() do
-		local var_3_1 = var_3_0.Current
-
-		arg_3_0.args[var_3_1.Key] = var_3_1.Value
+		arg_3_0.args[var_3_0.Current.Key] = var_3_0.Current.Value
 	end
 
 	return
@@ -36,77 +32,88 @@ function var_0_0.GetNodeInstance(arg_4_0)
 end
 
 function var_0_0.GetRouter(arg_5_0)
-	if arg_5_0:GetNodeInstance() then
-		return var_1.router
+	local var_5_0 = arg_5_0:GetNodeInstance()
+
+	if var_5_0 then
+		return var_5_0.router
 	end
 
 	return
 end
 
 function var_0_0.GetElapsedTime(arg_6_0)
-	if arg_6_0:GetNodeInstance() then
-		return var_1.elapsedTime
+	local var_6_0 = arg_6_0:GetNodeInstance()
+
+	if var_6_0 then
+		return var_6_0.elapsedTime
 	end
 
 	return 0
 end
 
 function var_0_0.GetBlackboard(arg_7_0)
-	if not arg_7_0:GetNodeInstance() then
+	local var_7_0 = arg_7_0:GetNodeInstance()
+
+	if not var_7_0 then
 		return nil
 	end
 
-	return var_1.blackboard
+	return var_7_0.blackboard
 end
 
 function var_0_0.GetBlackboardVariable(arg_8_0, arg_8_1)
-	if not arg_8_0:GetBlackboard() then
+	local var_8_0 = arg_8_0:GetBlackboard()
+
+	if not var_8_0 then
 		return nil
 	end
 
-	local var_8_0 = arg_8_0:GetNodeInstance()
+	local var_8_1 = arg_8_0:GetNodeInstance()
+	local var_8_2 = var_8_0:GetVariable(arg_8_1)
 
-	return var_2:GetVariable(arg_8_1) and var_4.value
+	return var_8_2 and var_8_2.value
 end
 
 function var_0_0.SetBlackboardVariable(arg_9_0, arg_9_1, arg_9_2)
-	if not arg_9_0:GetBlackboard() then
+	local var_9_0 = arg_9_0:GetBlackboard()
+
+	if not var_9_0 then
 		return
 	end
 
-	var_3:SetVariableValue(arg_9_1, arg_9_2)
+	var_9_0:SetVariableValue(arg_9_1, arg_9_2)
 
 	return
 end
 
 function var_0_0.AddBlackboardVariable(arg_10_0, arg_10_1, arg_10_2)
-	if not arg_10_0:GetBlackboard() then
+	local var_10_0 = arg_10_0:GetBlackboard()
+
+	if not var_10_0 then
 		return
 	end
 
-	var_3:AddVariable(arg_10_1, arg_10_2)
+	var_10_0:AddVariable(arg_10_1, arg_10_2)
 
 	return
 end
 
 function var_0_0.GetAgent(arg_11_0)
-	if not arg_11_0:GetNodeInstance() then
+	local var_11_0 = arg_11_0:GetNodeInstance()
+
+	if not var_11_0 then
 		return nil
 	end
 
-	return var_1.agent
+	return var_11_0.agent
 end
 
 function var_0_0.GetComponent(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0:GetAgent()
-
-	return var_2.GetComponent(var_12_0, arg_12_1)
+	return arg_12_0:GetAgent():GetComponent(arg_12_1)
 end
 
 function var_0_0.ExistArg(arg_13_0, arg_13_1)
-	assert = var_1_10002
-
-	var_1_10002(arg_13_0.args[arg_13_1] ~= nil, "arg is null >>>>" .. arg_13_1)
+	assert(arg_13_0.args[arg_13_1] ~= nil, "arg is null >>>>" .. arg_13_1)
 
 	return arg_13_0.args[arg_13_1] ~= nil
 end
@@ -128,11 +135,7 @@ function var_0_0.GetFloatArg(arg_16_0, arg_16_1)
 		return 0
 	end
 
-	local var_16_0 = arg_16_0:GetArgByName(arg_16_1)
-
-	tonumber = var_1_10003
-
-	return var_1_10003(var_16_0)
+	return tonumber((arg_16_0:GetArgByName(arg_16_1)))
 end
 
 function var_0_0.GetBoolArg(arg_17_0, arg_17_1)
@@ -142,9 +145,7 @@ function var_0_0.GetBoolArg(arg_17_0, arg_17_1)
 
 	local var_17_0 = arg_17_0:GetArgByName(arg_17_1)
 
-	type = var_1_10003
-
-	if var_1_10003(var_17_0) == "string" then
+	if type(var_17_0) == "string" then
 		if var_17_0 == "true" then
 			return true
 		end

@@ -1,53 +1,25 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandGoFishingCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandGoFishingCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_2 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().poolId
-	local var_1_1 = var_2.baitId
-	local var_1_2 = var_2.islandId
-	local var_1_3 = var_2.callback
-
-	pg = var_1_10007
-
-	local var_1_4 = var_1_10007.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_4, 21060, {
-		island_id = var_1_2,
-		point_id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(21060, {
+		island_id = var_1_0.islandId,
+		point_id = var_1_0.poolId
 	}, 21061, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			if var_1_3 then
-				local var_2_0 = var_1_3
-				local var_2_1 = arg_2_0.fish_id
+			if var_1_2 then
+				local var_2_0 = arg_2_0.gold_state or 0
 
-				var_2_10004 = arg_2_0.weight
-
-				local var_2_2
-
-				if not arg_2_0.gold_state then
-					var_2_2 = 0
-				end
-
-				var_2_0(var_2_1, var_2_10004, var_2_2)
+				var_1_2(arg_2_0.fish_id, arg_2_0.weight, var_2_0)
 			end
 		else
-			if var_1_3 then
-				var_1_3(0, 0)
+			if var_1_2 then
+				var_1_2(0, 0)
 			end
 
-			pg = var_1
-
-			local var_2_3 = var_1.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -56,4 +28,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -17,7 +17,7 @@ end
 
 --游戏开始的回调
 function gameStartCallBack(self)
-
+    self.mMgr.StartGame = true
 end
 
 --模块间事件监听
@@ -28,6 +28,9 @@ function listNotification(self)
 
     GameDispatcher:addEventListener(EventName.OPEN_BIGHOSTEL_BLACKUI, self.onOpenBigHostelBlackView, self)
     GameDispatcher:addEventListener(EventName.CLOSE_BIGHOSTEL_BLACKUI, self.onCloseBigHostelBlackView, self)
+
+    GameDispatcher:addEventListener(EventName.OPEN_BIGHOSTEL_POSEUI, self.onOpenBigHostelPoseUI, self)
+
 end
 
 --注册server发来的数据
@@ -60,6 +63,20 @@ function onDestroyBigHostelSceneUI(self)
     self.mBigHostelSceneUI = nil
 end
 
+function onOpenBigHostelPoseUI(self, args)
+    if self.mBigHostelPoseUI == nil then
+        self.mBigHostelPoseUI = UI.new(bigHostel.BigHostelPoseUI)
+        self.mBigHostelPoseUI:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyBigHostelPoseUI, self)
+    end
+
+    self.mBigHostelPoseUI:open(args)
+end
+-- ui销毁
+function onDestroyBigHostelPoseUI(self)
+    self.mBigHostelPoseUI:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyBigHostelPoseUI, self)
+    self.mBigHostelPoseUI = nil
+end
+
 function onOpenBigHostelBlackView(self, args)
     if self.mBigHostelBlackView == nil then
         self.mBigHostelBlackView = UI.new(bigHostel.BigHostelBlackView)
@@ -83,18 +100,21 @@ end
 
 ---进入宿舍场景
 function openHostelScene(self, args)
-    local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(args.heroConfigVo.tid, args.model_id)
+    local sceneData = purchase.FashionShopManager:getFashionSceneDataByModelId(args.heroTid, args.model_id)
     if sceneData then
         args.main_type = args.main_type or BigHostelConst.SceneUI_Type.INTERACTIVE
-        
-        if args.main_type == BigHostelConst.SceneUI_Type.TRIAL or hero.HeroManager:getHeroSceneUnlock(args.heroConfigVo.tid, sceneData.id) then
-            if args.main_type == BigHostelConst.SceneUI_Type.MIANUI then
-                mainui.MainUIManager.isShowBigHostel = true
+
+        if args.main_type == BigHostelConst.SceneUI_Type.TRIAL or hero.HeroManager:getHeroSceneUnlock(args.heroTid, sceneData.id) then
+            local model_data = bigHostel.BigHostelManager:getHostelHero()
+            if model_data == nil or args.heroTid ~= model_data.heroTid or args.model_id ~= model_data.model_id or args.main_type ~= model_data.main_type or bigHostel.BigHostelSceneController:checkSceneActive() == false then
+                bigHostel.BigHostelManager:setHostelData(args)
+                map.MapLoader:setIsForceLoad(true)
+                GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.BIG_HOSTEL)
             end
 
-            bigHostel.BigHostelManager:setHostelData(args)
-            map.MapLoader:setIsForceLoad(true)
-            GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.BIG_HOSTEL)
+            if args.main_type == BigHostelConst.SceneUI_Type.MIANUI then
+                bigHostel.BigHostelManager:setMainUIShow({model_id = args.model_id, heroTid = args.heroTid})
+            end
         else
             UIFactory:alertMessge(_TT(84519), true, function()
                 GameDispatcher:dispatchEvent(EventName.OPEN_SHOPPING_PANEL, {type = ShopMainTabType.Recharge, subType = purchase.TabType.SKIN_SHOP, openFashionType = fashionShop.ShopType.SCENE})

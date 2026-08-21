@@ -1,12 +1,4 @@
-﻿local var_0_0 = {
-	"你就是新来的指挥官吗？欢迎您加入碧蓝航线，接下来我将指引你完成基本教学!",
-	"首先,我们来建造新角色吧",
-	"先建造一艘<color=#ffde38>轻型舰</color>试试吧！",
-	"点击<color=#ffde38>开始建造</color>",
-	"材料充足，点击<color=#ffde38>确定</color>建造！"
-}
-
-return {
+﻿return {
 	id = "S001",
 	events = {
 		{
@@ -16,7 +8,13 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"你就是新来的指挥官吗？欢迎您加入碧蓝航线，接下来我将指引你完成基本教学!",
+					"首先,我们来建造新角色吧",
+					"先建造一艘<color=#ffde38>轻型舰</color>试试吧！",
+					"点击<color=#ffde38>开始建造</color>",
+					"材料充足，点击<color=#ffde38>确定</color>建造！"
+				})[1]
 			}
 		},
 		{
@@ -26,17 +24,18 @@ return {
 				dir = 1,
 				posY = -152.6,
 				posX = 215.2,
-				text = var_0_0[2]
+				text = ({
+					"你就是新来的指挥官吗？欢迎您加入碧蓝航线，接下来我将指引你完成基本教学!",
+					"首先,我们来建造新角色吧",
+					"先建造一艘<color=#ffde38>轻型舰</color>试试吧！",
+					"点击<color=#ffde38>开始建造</color>",
+					"材料充足，点击<color=#ffde38>确定</color>建造！"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/build"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/buildButton"
@@ -61,17 +60,18 @@ return {
 				dir = 1,
 				posY = -46.82,
 				posX = -126.5,
-				text = var_0_0[3]
+				text = ({
+					"你就是新来的指挥官吗？欢迎您加入碧蓝航线，接下来我将指引你完成基本教学!",
+					"首先,我们来建造新角色吧",
+					"先建造一艘<color=#ffde38>轻型舰</color>试试吧！",
+					"点击<color=#ffde38>开始建造</color>",
+					"材料充足，点击<color=#ffde38>确定</color>建造！"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					BuildShipProxy = var_1_10002
-
-					local var_2_0 = var_1_10000(var_1_10002)
-
-					if #var_0.GetPoolsWithoutNewServer(var_2_0) > 4 then
+					if #getProxy(BuildShipProxy):GetPoolsWithoutNewServer() > 4 then
 						return "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/mask/bg/toggles/light/frame", 0.85
 					else
 						return "/UICamera/Canvas/UIMain/BuildShipUI(Clone)/BuildShipPoolsPageUI(Clone)/gallery/toggle_bg/bg/toggles/light/frame", 1
@@ -95,7 +95,13 @@ return {
 				dir = 1,
 				posY = -11.13,
 				posX = 301.54,
-				text = var_0_0[4]
+				text = ({
+					"你就是新来的指挥官吗？欢迎您加入碧蓝航线，接下来我将指引你完成基本教学!",
+					"首先,我们来建造新角色吧",
+					"先建造一艘<color=#ffde38>轻型舰</color>试试吧！",
+					"点击<color=#ffde38>开始建造</color>",
+					"材料充足，点击<color=#ffde38>确定</color>建造！"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,
@@ -116,7 +122,13 @@ return {
 				dir = 1,
 				posY = 65.31,
 				posX = 103.3,
-				text = var_0_0[5]
+				text = ({
+					"你就是新来的指挥官吗？欢迎您加入碧蓝航线，接下来我将指引你完成基本教学!",
+					"首先,我们来建造新角色吧",
+					"先建造一艘<color=#ffde38>轻型舰</color>试试吧！",
+					"点击<color=#ffde38>开始建造</color>",
+					"材料充足，点击<color=#ffde38>确定</color>建造！"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,

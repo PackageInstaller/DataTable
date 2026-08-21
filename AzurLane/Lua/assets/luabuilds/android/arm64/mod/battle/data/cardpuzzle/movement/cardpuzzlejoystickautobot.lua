@@ -1,23 +1,17 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.CardPuzzleJoyStickAutoBot = class("CardPuzzleJoyStickAutoBot")
 
-local var_0_1 = var_0.Battle
+local var_0_1 = ys.Battle.CardPuzzleJoyStickAutoBot
 
-class = var_0_10002
-var_0_1.CardPuzzleJoyStickAutoBot = var_0_10002("CardPuzzleJoyStickAutoBot")
+ys.Battle.CardPuzzleJoyStickAutoBot.__name = "CardPuzzleJoyStickAutoBot"
+ys.Battle.CardPuzzleJoyStickAutoBot.RANDOM = "RandomStrategy"
+ys.Battle.CardPuzzleJoyStickAutoBot.MOVE_TO = "RandomStrategy"
+ys.Battle.CardPuzzleJoyStickAutoBot.CARD_PUZZLE_CONTROL = "CardPuzzleControlStrategy"
 
-local var_0_2 = var_0.Battle.CardPuzzleJoyStickAutoBot
-
-var_0_2.__name = "CardPuzzleJoyStickAutoBot"
-var_0_2.RANDOM = "RandomStrategy"
-var_0_2.MOVE_TO = "RandomStrategy"
-var_0_2.CARD_PUZZLE_CONTROL = "CardPuzzleControlStrategy"
-
-function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function ys.Battle.CardPuzzleJoyStickAutoBot.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._dataProxy = arg_1_1
 	arg_1_0._fleetVO = arg_1_2
 
@@ -26,78 +20,55 @@ function var_0_2.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_2.UpdateFleetArea(arg_2_0)
+function ys.Battle.CardPuzzleJoyStickAutoBot.UpdateFleetArea(arg_2_0)
 	if arg_2_0._strategy then
-		local var_2_0 = arg_2_0._strategy
-		local var_2_1 = var_1.SetBoardBound
-		local var_2_2 = arg_2_0._fleetVO
-
-		var_2_1(var_2_0, var_4.GetFleetBound(var_2_2))
+		arg_2_0._strategy:SetBoardBound(arg_2_0._fleetVO:GetFleetBound())
 	end
 
 	return
 end
 
-function var_0_2.FleetFormationUpdate(arg_3_0)
+function ys.Battle.CardPuzzleJoyStickAutoBot.FleetFormationUpdate(arg_3_0)
 	return
 end
 
-function var_0_2.SetActive(arg_4_0, arg_4_1)
+function ys.Battle.CardPuzzleJoyStickAutoBot.SetActive(arg_4_0, arg_4_1)
 	arg_4_0._active = arg_4_1
 
 	if arg_4_1 then
-		local function var_4_0()
-			local var_5_0 = arg_4_0._strategy
-
-			return var_0.Output(var_5_0)
-		end
-
-		local var_4_1 = arg_4_0._fleetVO
-
-		var_3.SetMotionSource(var_4_1, var_4_0)
+		arg_4_0._fleetVO:SetMotionSource(function()
+			return arg_4_0._strategy:Output()
+		end)
 	else
-		local var_4_2 = arg_4_0._fleetVO
-
-		var_2.SetMotionSource(var_4_2)
+		arg_4_0._fleetVO:SetMotionSource()
 	end
 
 	return
 end
 
-function var_0_2.SwitchStrategy(arg_6_0, arg_6_1)
+function ys.Battle.CardPuzzleJoyStickAutoBot.SwitchStrategy(arg_6_0, arg_6_1)
 	if arg_6_0._strategy then
-		local var_6_0 = arg_6_0._strategy
-
-		var_2.Dispose(var_6_0)
+		arg_6_0._strategy:Dispose()
 	end
 
-	arg_6_1 = arg_6_1 or var_0_2.CARD_PUZZLE_CONTROL
-	arg_6_0._strategy = var_0.Battle[arg_6_1].New(arg_6_0._fleetVO)
+	arg_6_1 = arg_6_1 or var_0_1.CARD_PUZZLE_CONTROL
+	arg_6_0._strategy = var_0_0.Battle[arg_6_1].New(arg_6_0._fleetVO)
 
 	arg_6_0:UpdateFleetArea()
-
-	local var_6_1 = arg_6_0._strategy
-	local var_6_2 = var_2.Input
-	local var_6_3 = arg_6_0._dataProxy
-	local var_6_4 = var_5.GetFoeShipList(var_6_3)
-	local var_6_5 = arg_6_0._dataProxy
-
-	var_6_2(var_6_1, var_6_4, var_6.GetFoeAircraftList(var_6_5))
+	arg_6_0._strategy:Input(arg_6_0._dataProxy:GetFoeShipList(), arg_6_0._dataProxy:GetFoeAircraftList())
 
 	return
 end
 
-function var_0_2.init(arg_7_0)
+function ys.Battle.CardPuzzleJoyStickAutoBot.init(arg_7_0)
 	arg_7_0:SwitchStrategy()
 
 	return
 end
 
-function var_0_2.Dispose(arg_8_0)
+function ys.Battle.CardPuzzleJoyStickAutoBot.Dispose(arg_8_0)
 	if arg_8_0._strategy then
-		local var_8_0 = arg_8_0._strategy
-
-		var_1.Dispose(var_8_0)
+		arg_8_0._strategy:Dispose()
 	end
 
 	arg_8_0._dataProxy = nil

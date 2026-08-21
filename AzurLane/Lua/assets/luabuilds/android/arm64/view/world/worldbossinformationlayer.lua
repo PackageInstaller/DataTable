@@ -1,409 +1,150 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldBossInformationLayer", import("view.base.BaseUI"))
+local var_0_1 = 25
+local var_0_2 = 7.2
 
-local var_0_0 = "WorldBossInformationLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-local var_0_2 = 25
-local var_0_3 = 7.2
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldBossInformationUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0.bg = arg_2_0._tf:Find("bg")
+	arg_2_0.layer = arg_2_0._tf:Find("fixed")
+	arg_2_0.top = arg_2_0.layer:Find("top")
+	arg_2_0.backBtn = arg_2_0.top:Find("back_btn")
+	arg_2_0.homeBtn = arg_2_0.top:Find("option")
+	arg_2_0.playerResOb = arg_2_0.top:Find("playerRes")
+	arg_2_0.resPanel = WorldResource.New()
 
-	arg_2_0.bg = var_1.Find(var_2_0, "bg")
+	tf(arg_2_0.resPanel._go):SetParent(tf(arg_2_0.playerResOb), false)
 
-	local var_2_1 = arg_2_0._tf
+	arg_2_0.startBtn = arg_2_0.layer:Find("battle")
+	arg_2_0.retreatBtn = arg_2_0.layer:Find("retreat")
+	arg_2_0.hpbar = arg_2_0.layer:Find("hp")
 
-	arg_2_0.layer = var_1.Find(var_2_1, "fixed")
+	local var_2_0 = arg_2_0.layer:Find("drop")
 
-	local var_2_2 = arg_2_0.layer
-
-	arg_2_0.top = var_1.Find(var_2_2, "top")
-
-	local var_2_3 = arg_2_0.top
-
-	arg_2_0.backBtn = var_1.Find(var_2_3, "back_btn")
-
-	local var_2_4 = arg_2_0.top
-
-	arg_2_0.homeBtn = var_1.Find(var_2_4, "option")
-
-	local var_2_5 = arg_2_0.top
-
-	arg_2_0.playerResOb = var_1.Find(var_2_5, "playerRes")
-	WorldResource = var_1
-	arg_2_0.resPanel = var_1.New()
-	tf = var_1
-
-	local var_2_6 = var_1(arg_2_0.resPanel._go)
-	local var_2_7 = var_1.SetParent
-
-	tf = var_4
-
-	var_2_7(var_2_6, var_4(arg_2_0.playerResOb), false)
-
-	local var_2_8 = arg_2_0.layer
-
-	arg_2_0.startBtn = var_1.Find(var_2_8, "battle")
-
-	local var_2_9 = arg_2_0.layer
-
-	arg_2_0.retreatBtn = var_1.Find(var_2_9, "retreat")
-
-	local var_2_10 = arg_2_0.layer
-
-	arg_2_0.hpbar = var_1.Find(var_2_10, "hp")
-
-	local var_2_11 = arg_2_0.layer
-	local var_2_12 = var_1.Find(var_2_11, "drop")
-
-	CustomIndexLayer = var_1_10002
-	arg_2_0.dropitems = var_1_10002.Clone2Full(var_2_12:Find("items"), 5)
-	arg_2_0.dropright = var_2_12:Find("right")
-	arg_2_0.dropleft = var_2_12:Find("left")
-
-	local var_2_13 = arg_2_0.layer
-
-	arg_2_0.awardBtn = var_2.Find(var_2_13, "showAward")
-
-	local var_2_14 = arg_2_0.layer
-
-	arg_2_0.weaknesstext = var_2.Find(var_2_14, "text")
-
-	local var_2_15 = arg_2_0.layer
-
-	arg_2_0.weaknessbg = var_2.Find(var_2_15, "boss_ruodian")
-
-	local var_2_16 = arg_2_0.layer
-
-	arg_2_0.downBG = var_2.Find(var_2_16, "BlurBG")
-
-	local var_2_17 = arg_2_0.layer
-
-	arg_2_0.buffListTF = var_2.Find(var_2_17, "BuffList")
-
-	local var_2_18 = arg_2_0.buffListTF
-	local var_2_19 = var_2.GetComponent
-
-	typeof = var_5
-	Animator = var_7
-	arg_2_0.buffListAnimator = var_2_19(var_2_18, var_5(var_7))
-
-	local var_2_20 = arg_2_0.layer
-
-	arg_2_0.AdditionBuffTF = var_2.Find(var_2_20, "BuffList/tezhuangmokuai")
-
-	local var_2_21 = arg_2_0.AdditionBuffTF
-
-	arg_2_0.AdditionBuffContainer = var_2.Find(var_2_21, "buff")
-
-	local var_2_22 = arg_2_0.layer
-
-	arg_2_0.EquipmentBuffTF = var_2.Find(var_2_22, "BuffList/wuzhuangjiexi")
-
-	local var_2_23 = arg_2_0.EquipmentBuffTF
-
-	arg_2_0.EquipmentBuffContainer = var_2.Find(var_2_23, "buff")
-
-	local var_2_24 = arg_2_0.layer
-
-	arg_2_0.switchBuffBtn = var_2.Find(var_2_24, "BuffList/Switcher")
+	arg_2_0.dropitems = CustomIndexLayer.Clone2Full(var_2_0:Find("items"), 5)
+	arg_2_0.dropright = var_2_0:Find("right")
+	arg_2_0.dropleft = var_2_0:Find("left")
+	arg_2_0.awardBtn = arg_2_0.layer:Find("showAward")
+	arg_2_0.weaknesstext = arg_2_0.layer:Find("text")
+	arg_2_0.weaknessbg = arg_2_0.layer:Find("boss_ruodian")
+	arg_2_0.downBG = arg_2_0.layer:Find("BlurBG")
+	arg_2_0.buffListTF = arg_2_0.layer:Find("BuffList")
+	arg_2_0.buffListAnimator = arg_2_0.buffListTF:GetComponent(typeof(Animator))
+	arg_2_0.AdditionBuffTF = arg_2_0.layer:Find("BuffList/tezhuangmokuai")
+	arg_2_0.AdditionBuffContainer = arg_2_0.AdditionBuffTF:Find("buff")
+	arg_2_0.EquipmentBuffTF = arg_2_0.layer:Find("BuffList/wuzhuangjiexi")
+	arg_2_0.EquipmentBuffContainer = arg_2_0.EquipmentBuffTF:Find("buff")
+	arg_2_0.switchBuffBtn = arg_2_0.layer:Find("BuffList/Switcher")
 	arg_2_0.ShowBuffIndex = 0
-
-	local var_2_25 = arg_2_0.layer
-
-	arg_2_0.attributeRoot = var_2.Find(var_2_25, "attributes")
+	arg_2_0.attributeRoot = arg_2_0.layer:Find("attributes")
 	arg_2_0.attributeRootAnchorY = arg_2_0.attributeRoot.anchoredPosition.y
-	CustomIndexLayer = var_2
-
-	local var_2_26 = var_2.Clone2Full
-	local var_2_27 = arg_2_0.layer
-
-	arg_2_0.attributes = var_2_26(var_4.Find(var_2_27, "attributes"), 3)
+	arg_2_0.attributes = CustomIndexLayer.Clone2Full(arg_2_0.layer:Find("attributes"), 3)
 
 	for iter_2_0 = 1, #arg_2_0.attributes do
-		var_1_10008 = arg_2_0.attributes[iter_2_0]
-		var_1_10008 = var_6.Find(var_1_10008, "extra").gameObject
-
-		var_6.SetActive(var_1_10008, false)
-
-		setText = var_6
-
-		local var_2_28 = arg_2_0.attributes[iter_2_0]
-
-		var_1_10008 = var_1_10008.Find(var_2_28, "extra/desc")
-		i18n = var_9
-
-		var_6(var_1_10008, var_9("world_mapbuff_compare_txt") .. "：")
+		arg_2_0.attributes[iter_2_0]:Find("extra").gameObject:SetActive(false)
+		setText(arg_2_0.attributes[iter_2_0]:Find("extra/desc"), i18n("world_mapbuff_compare_txt") .. "：")
 	end
 
-	local var_2_29 = arg_2_0.layer
-	local var_2_30 = var_2.Find(var_2_29, "bossname")
-	local var_2_31 = var_2.Find(var_2_30, "name")
-	local var_2_32 = var_3.GetComponent
+	local var_2_1 = arg_2_0.layer:Find("bossname")
 
-	typeof = var_6
-	Text = var_1_10008
-	arg_2_0.bossnameText = var_2_32(var_2_31, var_6(var_1_10008))
-	arg_2_0.bossNameBanner = var_2:Find("name/banner")
-
-	local var_2_33 = arg_2_0.bossNameBanner
-
-	arg_2_0.bosslevel = var_3.Find(var_2_33, "level")
+	arg_2_0.bossnameText = var_2_1:Find("name"):GetComponent(typeof(Text))
+	arg_2_0.bossNameBanner = var_2_1:Find("name/banner")
+	arg_2_0.bosslevel = arg_2_0.bossNameBanner:Find("level")
 	arg_2_0.bosslogos = {
-		var_2:Find("name/bosslogo_01"),
-		(var_2:Find("name/bosslogo_02"))
+		var_2_1:Find("name/bosslogo_01"),
+		(var_2_1:Find("name/bosslogo_02"))
 	}
-
-	local var_2_34 = arg_2_0.bossNameBanner
-
-	arg_2_0.bossTypeIcon = var_3.Find(var_2_34, "Type/Icon")
-
-	local var_2_35 = arg_2_0.bossNameBanner
-
-	arg_2_0.bossArmorText = var_3.Find(var_2_35, "Type/Armor")
-
-	local var_2_36 = arg_2_0.layer
-
-	arg_2_0.saomiaoxian = var_3.Find(var_2_36, "saomiao")
-
-	local var_2_37 = arg_2_0.saomiaoxian
-
-	arg_2_0.bosssprite = var_3.Find(var_2_37, "qimage")
-
-	local var_2_38 = arg_2_0.layer
-
-	arg_2_0.dangerMark = var_3.Find(var_2_38, "danger_mark")
-	AutoLoader = var_3
-	arg_2_0.loader = var_3.New()
+	arg_2_0.bossTypeIcon = arg_2_0.bossNameBanner:Find("Type/Icon")
+	arg_2_0.bossArmorText = arg_2_0.bossNameBanner:Find("Type/Armor")
+	arg_2_0.saomiaoxian = arg_2_0.layer:Find("saomiao")
+	arg_2_0.bosssprite = arg_2_0.saomiaoxian:Find("qimage")
+	arg_2_0.dangerMark = arg_2_0.layer:Find("danger_mark")
+	arg_2_0.loader = AutoLoader.New()
 	arg_2_0.dungeonDict = {}
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.backBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.homeBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.quickExitFunc(var_5_0)
+	end, SFX_CANCEL)
+	onButton(arg_3_0, arg_3_0.homeBtn, function()
+		arg_3_0:quickExitFunc()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.startBtn
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-		local var_6_1 = var_0.emit
-
-		WorldBossInformationMediator = var_2_10003
-
-		local var_6_2 = var_2_10003.OnOpenSublayer
-
-		Context = var_2_10004
-
-		local var_6_3 = var_2_10004.New
-		local var_6_4 = {}
-
-		WorldPreCombatMediator = var_2_10007
-		var_6_4.mediator = var_2_10007
-		WorldPreCombatLayer = var_2_10007
-		var_6_4.viewComponent = var_2_10007
-
-		var_6_1(var_6_0, var_6_2, var_6_3(var_6_4), true, function()
-			local var_7_0 = arg_3_0
-
-			var_0.closeView(var_7_0)
+	end, SFX_CANCEL)
+	onButton(arg_3_0, arg_3_0.startBtn, function()
+		arg_3_0:emit(WorldBossInformationMediator.OnOpenSublayer, Context.New({
+			mediator = WorldPreCombatMediator,
+			viewComponent = WorldPreCombatLayer
+		}), true, function()
+			arg_3_0:closeView()
 
 			return
 		end)
 
 		return
-	end
-
-	SFX_UI_WEIGHANCHOR = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_9 = arg_3_0
-	local var_3_10 = arg_3_0.retreatBtn
-
-	local function var_3_11()
-		local var_8_0 = arg_3_0
-		local var_8_1 = var_0.emit
-
-		WorldBossInformationMediator = var_2_10003
-
-		var_8_1(var_8_0, var_2_10003.RETREAT_FLEET)
-
-		local var_8_2 = arg_3_0
-
-		var_0.closeView(var_8_2)
+	end, SFX_UI_WEIGHANCHOR)
+	onButton(arg_3_0, arg_3_0.retreatBtn, function()
+		arg_3_0:emit(WorldBossInformationMediator.RETREAT_FLEET)
+		arg_3_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_3_9, var_3_10, var_3_11, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_12 = arg_3_0
-	local var_3_13 = arg_3_0.switchBuffBtn
-
-	local function var_3_14()
+	end, SFX_CANCEL)
+	onButton(arg_3_0, arg_3_0.switchBuffBtn, function()
 		arg_3_0.ShowBuffIndex = 1 - arg_3_0.ShowBuffIndex
 
 		local var_9_0 = arg_3_0.ShowBuffIndex == 1 and "switchOn" or "switchOff"
-		local var_9_1 = arg_3_0.buffListAnimator
 
-		var_1.Play(var_9_1, var_9_0, -1, 0)
+		arg_3_0.buffListAnimator:Play(arg_3_0.ShowBuffIndex == 1 and "switchOn" or "switchOff", -1, 0)
 
 		if var_9_0 == "switchOn" then
-			local var_9_2 = arg_3_0.EquipmentBuffTF
-
-			var_1.SetAsLastSibling(var_9_2)
+			arg_3_0.EquipmentBuffTF:SetAsLastSibling()
 		else
-			local var_9_3 = arg_3_0.AdditionBuffTF
-
-			var_1.SetAsLastSibling(var_9_3)
+			arg_3_0.AdditionBuffTF:SetAsLastSibling()
 		end
 
-		local var_9_4 = arg_3_0.switchBuffBtn
-
-		var_1.SetAsLastSibling(var_9_4)
+		arg_3_0.switchBuffBtn:SetAsLastSibling()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_12, var_3_13, var_3_14, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_15 = arg_3_0
-	local var_3_16 = arg_3_0.awardBtn
-
-	local function var_3_17()
-		local var_10_0 = arg_3_0
-		local var_10_1 = var_0.GetAwardPanel(var_10_0).buffer
-		local var_10_2 = var_0.UpdateView
-		local var_10_3 = arg_3_0
-
-		var_10_2(var_10_1, var_3.GetCurrentAttachment(var_10_3))
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.awardBtn, function()
+		arg_3_0:GetAwardPanel().buffer:UpdateView(arg_3_0:GetCurrentAttachment())
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_15, var_3_16, var_3_17, var_1_10006)
+	end, SFX_PANEL)
 	arg_3_0:updateStageView()
+	arg_3_0.loader:LoadPrefab("ui/xuetiao01", "", nil, function(arg_11_0)
+		setParent(arg_11_0, arg_3_0.layer)
 
-	local var_3_18 = arg_3_0.loader
+		local var_11_0 = tf(arg_11_0):Find("qipao")
 
-	var_1.LoadPrefab(var_3_18, "ui/xuetiao01", "", nil, function(arg_11_0)
-		setParent = var_2_10001
-
-		var_2_10001(arg_11_0, arg_3_0.layer)
-
-		tf = var_2_10001
-
-		local var_11_0 = var_2_10001(arg_11_0)
-		local var_11_1 = var_1.Find(var_11_0, "qipao")
-
-		setParent = var_2_10002
-
-		local var_11_2 = var_11_1
-		local var_11_3 = arg_3_0.hpbar
-
-		var_2_10002(var_11_2, var_5.Find(var_11_3, "hp"), false)
-
-		setLocalPosition = var_2_10002
-
-		var_2_10002(var_11_1, {
+		setParent(var_11_0, arg_3_0.hpbar:Find("hp"), false)
+		setLocalPosition(var_11_0, {
 			x = 0,
 			y = 0
 		})
 
-		tf = var_2_10002
+		local var_11_1 = tf(arg_11_0):Find("xuetiao01")
 
-		local var_11_4 = var_2_10002(arg_11_0)
-		local var_11_5 = var_2.Find(var_11_4, "xuetiao01")
-		local var_11_6 = arg_3_0
-		local var_11_7 = var_11_5
-		local var_11_8 = var_11_5.GetComponent
+		arg_3_0.hpeffectmat = var_11_1:GetComponent(typeof(Renderer)).material
 
-		typeof = var_11_3
-		Renderer = var_2_10009
-		var_11_6.hpeffectmat = var_11_8(var_11_7, var_11_3(var_2_10009)).material
-		setParent = var_11_6
-
-		var_11_6(var_11_5, arg_3_0.hpbar, false)
-
-		setLocalPosition = var_11_6
-
-		var_11_6(var_11_5, {
+		setParent(var_11_1, arg_3_0.hpbar, false)
+		setLocalPosition(var_11_1, {
 			x = 0,
 			y = 0
 		})
-
-		local var_11_9 = arg_3_0
-
-		var_3.UpdateHpbar(var_11_9)
+		arg_3_0:UpdateHpbar()
 
 		return
 	end)
-
-	pg = var_1
-
-	local var_3_19 = var_1.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_3_19, arg_3_0._tf)
-
-	pg = var_1
-
-	local var_3_20 = var_1.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_3_20, arg_3_0.layer, {
+	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0.layer, {
 		pbList = {
 			arg_3_0.downBG,
 			arg_3_0.attributes[1],
@@ -418,60 +159,29 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.setPlayerInfo(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_0.resPanel
-
-	var_2.setPlayer(var_12_0, arg_12_1)
-
-	setActive = var_2
-
-	local var_12_1 = arg_12_0.resPanel._tf
-
-	nowWorld = var_5
-
-	local var_12_2 = var_5()
-	local var_12_3 = var_5.IsSystemOpen
-
-	WorldConst = var_1_10008
-
-	var_2(var_12_1, var_12_3(var_12_2, var_1_10008.SystemResource))
+function var_0_0.setPlayerInfo(arg_12_0, arg_12_1)
+	arg_12_0.resPanel:setPlayer(arg_12_1)
+	setActive(arg_12_0.resPanel._tf, nowWorld():IsSystemOpen(WorldConst.SystemResource))
 
 	return
 end
 
-function var_0_1.getCurrentFleet(arg_13_0)
-	nowWorld = var_1_10001
-
-	local var_13_0 = var_1_10001()
-
-	return var_1.GetFleet(var_13_0)
+function var_0_0.getCurrentFleet(arg_13_0)
+	return nowWorld():GetFleet()
 end
 
-function var_0_1.GetCurrentAttachment(arg_14_0)
-	nowWorld = var_1_10001
+function var_0_0.GetCurrentAttachment(arg_14_0)
+	local var_14_9000
+	local var_14_0 = nowWorld()
+	local var_14_1 = var_14_0.GetActiveMap(var_14_9000)
+	local var_14_2 = var_14_1:GetFleet()
 
-	local var_14_0 = var_1_10001()
-	local var_14_1 = var_1.GetActiveMap(var_14_0)
-	local var_14_2 = var_1.GetFleet(var_14_1)
-	local var_14_3 = var_1:GetCell(var_14_2.row, var_14_2.column)
-
-	return var_3.GetAliveAttachment(var_14_3), var_1.config.difficulty
+	return var_14_1:GetCell(var_14_2.row, var_14_2.column).GetAliveAttachment(var_14_0), var_14_1.config.difficulty
 end
 
-function var_0_1.GetEnemyLevel(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_1.difficulty
-
-	ys = var_1_10003
-
-	if var_15_0 == var_1_10003.Battle.BattleConst.Difficulty.WORLD then
-		nowWorld = var_15_0
-
-		local var_15_1 = var_15_0()
-		local var_15_2 = var_2.GetActiveMap(var_15_1)
-
-		WorldConst = var_3
-
-		return var_3.WorldLevelCorrect(var_15_2.config.expedition_level, arg_15_1.type)
+function var_0_0.GetEnemyLevel(arg_15_0, arg_15_1)
+	if arg_15_1.difficulty == ys.Battle.BattleConst.Difficulty.WORLD then
+		return WorldConst.WorldLevelCorrect(nowWorld():GetActiveMap().config.expedition_level, arg_15_1.type)
 	else
 		return arg_15_1.level
 	end
@@ -479,187 +189,90 @@ function var_0_1.GetEnemyLevel(arg_15_0, arg_15_1)
 	return
 end
 
-function var_0_1.UpdateHpbar(arg_16_0)
+function var_0_0.UpdateHpbar(arg_16_0)
 	local var_16_0 = arg_16_0:GetCurrentAttachment()
 	local var_16_1 = arg_16_0:GetDungeonBossData(var_16_0).bossData.hpBarNum
-	local var_16_2 = var_16_0
-	local var_16_3
+	local var_16_2 = var_16_0:GetHP() or 10000
+	local var_16_3 = math.ceil(var_16_1 * var_16_2 / 16)
 
-	if not var_16_0.GetHP(var_16_2) then
-		var_16_3 = 10000
-	end
+	setSlider(arg_16_0.hpbar, 0, var_16_1, var_16_3)
+	setText(arg_16_0.hpbar:Find("hpcur"), string.format("%d", var_16_3))
+	setText(arg_16_0.hpbar:Find("hpamount"), var_16_1)
 
-	local var_16_4 = var_16_1 * var_16_3 / 16
-
-	math = var_16_2
-
-	local var_16_5 = var_16_2.ceil(var_16_4)
-
-	setSlider = var_5
-
-	var_5(arg_16_0.hpbar, 0, var_16_1, var_16_5)
-
-	setText = var_5
-
-	local var_16_6 = arg_16_0.hpbar
-	local var_16_7 = var_7.Find(var_16_6, "hpcur")
-
-	string = var_8
-
-	var_5(var_16_7, var_8.format("%d", var_16_5))
-
-	setText = var_5
-
-	local var_16_8 = arg_16_0.hpbar
-
-	var_5(var_7.Find(var_16_8, "hpamount"), var_16_1)
-
-	local var_16_9 = arg_16_0.hpbar
-	local var_16_10 = var_5.Find(var_16_9, "hp/mask")
+	local var_16_4 = arg_16_0.hpbar:Find("hp/mask")
 
 	if arg_16_0.hpeffectmat then
-		local var_16_11 = arg_16_0.hpeffectmat
+		arg_16_0.hpeffectmat:SetFloat("_Mask", var_16_2 / 100)
 
-		var_6.SetFloat(var_16_11, "_Mask", var_16_3 / 100)
+		local var_16_5 = arg_16_0.hpbar:Find("hp").rect
 
-		local var_16_12 = arg_16_0.hpbar
-		local var_16_13 = var_6.Find(var_16_12, "hp").rect
+		var_16_4.localScale = Vector3(var_16_5.width * var_0_1, var_16_5.height * var_0_1, 1)
+		var_16_4.localPosition = Vector3.zero
 
-		Vector3 = var_16_9
-		var_16_10.localScale = var_16_9(var_16_13.width * var_0_2, var_16_13.height * var_0_2, 1)
-		Vector3 = var_7
-		var_16_10.localPosition = var_7.zero
-		math = var_7
-
-		local var_16_14 = var_7.clamp
-
-		Screen = var_9
-
-		local var_16_15 = var_9.width
-
-		Screen = var_10
-
-		local var_16_16 = var_16_14(var_16_15 / var_10.height, 1.7777777777777777, 2) / 1.7777777777777777
-
-		setLocalScale = var_9
-
-		local var_16_17 = arg_16_0.hpbar
-
-		var_9(var_11.Find(var_16_17, "xuetiao01"), {
-			x = var_16_16
+		setLocalScale(arg_16_0.hpbar:Find("xuetiao01"), {
+			x = math.clamp(Screen.width / Screen.height, 1.7777777777777777, 2) / 1.7777777777777777
 		})
 	end
 
-	local var_16_18 = arg_16_0.hpbar
-	local var_16_19 = var_6.Find(var_16_18, "rewards")
-	local var_16_20 = var_16_0:GetBattleStageId()
+	local var_16_6 = arg_16_0.hpbar:Find("rewards")
+	local var_16_7 = pg.world_expedition_data[var_16_0:GetBattleStageId()]
+	local var_16_8 = var_16_7 and var_16_7.phase_drop
 
-	pg = var_16_18
+	setActive(var_16_6, var_16_7 and var_16_7.phase_drop and #var_16_8 > 0)
 
-	local var_16_21 = var_16_18.world_expedition_data[var_16_20] and var_8.phase_drop
-
-	setActive = var_10
-
-	local var_16_22 = var_16_19
-	local var_16_24
-
-	if var_16_21 then
-		::label_16_0::
-
-		local var_16_23 = #var_16_21
-
-		var_16_24 = 0 < var_16_23
-	end
-
-	var_10(var_16_22, var_16_24)
-
-	local var_16_25 = var_16_3
-	local var_16_26
+	local var_16_9 = var_16_2
 
 	if var_16_0:IsPeriodEnemy() then
-		math = var_16_26
-		var_16_26 = var_16_26.min
-
-		local var_16_27 = var_16_25
-
-		nowWorld = var_1_10014
-
-		local var_16_28 = var_1_10014()
-
-		var_16_25 = var_16_26(var_16_27, var_14.GetHistoryLowestHP(var_16_28, var_16_0.id))
+		var_16_9 = math.min(var_16_2, nowWorld():GetHistoryLowestHP(var_16_0.id))
 	end
 
-	UIItemList = var_16_26
+	local var_16_11 = var_16_6
+	local var_16_12 = var_16_6:GetChild(0)
 
-	local var_16_29 = var_16_26.StaticAlign
-	local var_16_30 = var_16_19
-	local var_16_31 = var_16_19:GetChild(0)
-	local var_16_32
+	if var_16_8 then
+		local var_16_13 = #var_16_8 or 0
 
-	if not var_16_21 or not #var_16_21 then
-		var_16_32 = 0
-	end
+		var_16_10(var_16_11, var_16_12, var_16_13, function(arg_17_0, arg_17_1, arg_17_2)
+			if arg_17_0 ~= UIItemList.EventUpdate then
+				return
+			end
 
-	var_16_29(var_16_30, var_16_31, var_16_32, function(arg_17_0, arg_17_1, arg_17_2)
-		UIItemList = var_2_10003
+			local var_17_0 = var_16_8[arg_17_1 + 1]
 
-		if arg_17_0 ~= var_2_10003.EventUpdate then
+			arg_17_2.anchorMin = Vector2(var_16_8[arg_17_1 + 1][1] / 16, 0.5)
+			arg_17_2.anchorMax = Vector2(var_16_8[arg_17_1 + 1][1] / 16, 0.5)
+
+			setAnchoredPosition(arg_17_2, {
+				x = 0
+			})
+			arg_16_0.loader:GetSprite("ui/worldbossinformationui_atlas", var_16_9 <= var_17_0[1] and "reward_empty" or "reward", arg_17_2)
+
 			return
-		end
+		end)
 
-		local var_17_0 = var_16_21[arg_17_1 + 1][1] / 16
+		local var_16_14 = arg_16_0.hpbar:Find("kedu")
 
-		Vector2 = var_2_10005
-		arg_17_2.anchorMin = var_2_10005(var_17_0, 0.5)
-		Vector2 = var_5
-		arg_17_2.anchorMax = var_5(var_17_0, 0.5)
-		setAnchoredPosition = var_5
-
-		var_5(arg_17_2, {
-			x = 0
+		setLocalScale(var_16_14, {
+			x = arg_16_0.hpbar.rect.width / var_16_14.rect.width
 		})
 
-		local var_17_1 = var_16_25 <= var_3[1] and "reward_empty" or "reward"
-		local var_17_2 = arg_16_0.loader
-
-		var_6.GetSprite(var_17_2, "ui/worldbossinformationui_atlas", var_17_1, arg_17_2)
-
 		return
-	end)
-
-	local var_16_33 = arg_16_0.hpbar
-	local var_16_34 = var_11.Find(var_16_33, "kedu")
-
-	setLocalScale = var_16_22
-
-	var_16_22(var_16_34, {
-		x = arg_16_0.hpbar.rect.width / var_16_34.rect.width
-	})
-
-	return
+	end
 end
 
-function var_0_1.GetDungeonBossData(arg_18_0, arg_18_1)
-	assert = var_1_10002
+function var_0_0.GetDungeonBossData(arg_18_0, arg_18_1)
+	assert(arg_18_1, "Attachment is null")
 
-	var_1_10002(arg_18_1, "Attachment is null")
+	local var_18_0
 
-	local var_18_0 = arg_18_1.config.dungeon_id
-	local var_18_1 = arg_18_0:GetDungeonFile(var_18_0).stages[1].waves
-	local var_18_2
-
-	_ = var_6
-
-	var_6.any(var_18_1, function(arg_19_0)
+	_.any(arg_18_0:GetDungeonFile(arg_18_1.config.dungeon_id).stages[1].waves, function(arg_19_0)
 		if not arg_19_0.spawn then
 			return
 		end
 
-		_ = var_1
-
-		return var_1.any(arg_19_0.spawn, function(arg_20_0)
+		return _.any(arg_19_0.spawn, function(arg_20_0)
 			if arg_20_0.bossData then
-				var_18_2 = arg_20_0
+				var_18_0 = arg_20_0
 
 				return true
 			end
@@ -667,766 +280,408 @@ function var_0_1.GetDungeonBossData(arg_18_0, arg_18_1)
 			return
 		end)
 	end)
+	assert(nil, "Cant Find Boss Data in Dungeon: " .. (arg_18_1.config.dungeon_id or "NIL"))
 
-	assert = var_6
-
-	var_6(var_18_2, "Cant Find Boss Data in Dungeon: " .. (var_18_0 or "NIL"))
-
-	return var_18_2
+	return nil
 end
 
-function var_0_1.GetDungeonFile(arg_21_0, arg_21_1)
+function var_0_0.GetDungeonFile(arg_21_0, arg_21_1)
 	if arg_21_0.dungeonDict[arg_21_1] then
 		return arg_21_0.dungeonDict[arg_21_1]
 	end
 
-	ys = var_2
-
-	local var_21_0 = var_2.Battle.BattleDataFunction.GetDungeonTmpDataByID(arg_21_1)
+	local var_21_0 = ys.Battle.BattleDataFunction.GetDungeonTmpDataByID(arg_21_1)
 
 	arg_21_0.dungeonDict[arg_21_1] = var_21_0
 
 	return var_21_0
 end
 
-local var_0_4 = 212
-local var_0_5 = 40
-local var_0_6 = "fe2222"
-local var_0_7 = "92fc63"
-local var_0_8 = 70
+local var_0_3 = 212
+local var_0_4 = 40
+local var_0_5 = "fe2222"
+local var_0_6 = "92fc63"
+local var_0_7 = 70
 
-function var_0_1.updateStageView(arg_22_0)
+function var_0_0.updateStageView(arg_22_0)
 	local var_22_0, var_22_1 = arg_22_0:GetCurrentAttachment()
-	local var_22_2 = var_22_0
-	local var_22_3 = var_22_0.GetBattleStageId(var_22_2)
+	local var_22_2 = var_22_0:GetBattleStageId()
+	local var_22_3 = pg.expedition_data_template[var_22_2]
+	local var_22_4 = pg.world_expedition_data[var_22_2]
 
-	pg = var_1_10004
+	assert(pg.expedition_data_template[var_22_2], "expedition_data_template not exist: " .. var_22_2)
 
-	local var_22_4 = var_1_10004.expedition_data_template[var_22_3]
+	local var_22_5 = {}
 
-	pg = var_22_2
-
-	local var_22_5 = var_22_2.world_expedition_data[var_22_3]
-
-	assert = var_1_10006
-
-	var_1_10006(var_22_4, "expedition_data_template not exist: " .. var_22_3)
-
-	local var_22_6 = {}
-
-	ipairs = var_1_10007
-
-	for iter_22_0, iter_22_1 in var_1_10007(var_22_5.award_display_world) do
+	for iter_22_0, iter_22_1 in ipairs(var_22_4.award_display_world) do
 		if var_22_1 == iter_22_1[1] then
-			var_22_6 = iter_22_1[2]
+			var_22_5 = iter_22_1[2]
 		end
 	end
 
-	local var_22_7 = 0
+	local var_22_6 = 0
 
-	local function var_22_8()
+	local function var_22_7()
 		for iter_23_0 = 1, #arg_22_0.dropitems do
-			local var_23_0 = arg_22_0.dropitems[iter_23_0]
-			local var_23_1 = var_4.Find(var_23_0, "item_tpl")
-			local var_23_2 = var_22_6[iter_23_0 + var_22_7]
+			local var_23_0 = arg_22_0.dropitems[iter_23_0]:Find("item_tpl")
+			local var_23_1 = var_22_5[iter_23_0 + var_22_6]
 
-			setActive = var_6
+			setActive(var_23_0, var_22_5[iter_23_0 + var_22_6] ~= nil)
 
-			var_6(var_23_1, var_23_2 ~= nil)
+			if var_23_1 then
+				updateDrop(var_23_0, {
+					type = var_23_1[1],
+					id = var_23_1[2]
+				})
+				onButton(arg_22_0, var_23_0, function()
+					arg_22_0:emit(var_0_0.ON_DROP, var_0)
 
-			if var_23_2 then
-				local var_23_3 = {
-					type = var_23_2[1],
-					id = var_23_2[2]
-				}
+					return
+				end, SFX_PANEL)
+			end
+		end
 
-				updateDrop = var_7
+		setActive(arg_22_0.dropleft, var_22_6 > 0)
+		setActive(arg_22_0.dropright, #var_22_5 - var_22_6 > #arg_22_0.dropitems)
 
-				var_7(var_23_1, var_23_3)
+		return
+	end
 
-				onButton = var_7
+	onButton(arg_22_0, arg_22_0.dropright, function()
+		var_22_6 = var_22_6 + 1
 
-				local var_23_4 = arg_22_0
-				local var_23_5 = var_23_1
+		var_22_7()
 
-				local function var_23_6()
-					local var_24_0 = arg_22_0
+		return
+	end)
+	onButton(arg_22_0, arg_22_0.dropleft, function()
+		var_22_6 = var_22_6 - 1
 
-					var_0.emit(var_24_0, var_0_1.ON_DROP, var_23_3)
+		var_22_7()
 
+		return
+	end)
+	;(function()
+		for iter_23_0 = 1, #arg_22_0.dropitems do
+			local var_23_0 = arg_22_0.dropitems[iter_23_0]:Find("item_tpl")
+			local var_23_1 = var_22_5[iter_23_0 + var_22_6]
+
+			setActive(var_23_0, var_22_5[iter_23_0 + var_22_6] ~= nil)
+
+			if var_23_1 then
+				updateDrop(var_23_0, {
+					type = var_23_1[1],
+					id = var_23_1[2]
+				})
+				onButton(arg_22_0, var_23_0, function()
+					arg_22_0:emit(var_0_0.ON_DROP, var_0)
+
+					return
+				end, SFX_PANEL)
+			end
+		end
+
+		setActive(arg_22_0.dropleft, var_22_6 > 0)
+		setActive(arg_22_0.dropright, #var_22_5 - var_22_6 > #arg_22_0.dropitems)
+
+		return
+	end)()
+
+	local var_22_8 = var_22_4.phase_drop_display and #var_22_4.phase_drop_display > 0
+
+	setActive(arg_22_0.awardBtn, var_22_8)
+
+	local var_22_9 = pg.world_SLGbuff_data[var_22_0:GetWeaknessBuffId()]
+
+	setActive(arg_22_0.weaknesstext, var_22_9 ~= nil)
+	setActive(arg_22_0.weaknessbg, var_22_9 ~= nil)
+
+	if var_22_9 then
+		setText(arg_22_0.weaknesstext, i18n("word_weakness") .. ": " .. var_22_9.desc)
+	end
+
+	if var_22_9 == nil then
+		local var_22_10 = var_0_7 or 0
+
+		setAnchoredPosition(arg_22_0.attributeRoot, {
+			y = arg_22_0.attributeRootAnchorY - var_22_10
+		})
+		;(function()
+			UIItemList.StaticAlign(arg_22_0.AdditionBuffContainer, arg_22_0.AdditionBuffContainer:GetChild(0), #_.filter(table.mergeArray(var_22_0:GetBuffList(), nowWorld():GetActiveMap():GetBuffList(WorldMap.FactionEnemy, var_22_0)), function(arg_28_0)
+				return arg_28_0.id ~= var_0
+			end), function(arg_29_0, arg_29_1, arg_29_2)
+				if arg_29_0 ~= UIItemList.EventUpdate then
 					return
 				end
 
-				SFX_PANEL = var_2_10012
+				local var_29_0 = var_0[arg_29_1 + 1]
 
-				var_7(var_23_4, var_23_5, var_23_6, var_2_10012)
+				setActive(arg_29_2, var_0[arg_29_1 + 1])
+
+				if var_29_0 then
+					arg_22_0.loader:GetSprite("world/buff/" .. var_29_0.config.icon, "", arg_29_2:Find("icon"))
+					setText(arg_29_2:Find("desc"), var_29_0.config.desc)
+				end
+
+				return
+			end)
+
+			return
+		end)()
+		;(function()
+			local var_30_0 = var_22_4.special_buff_display
+
+			if not var_22_4.special_buff_display or #var_30_0 == 0 then
+				var_30_0 = nil
 			end
-		end
 
-		setActive = var_0
+			setActive(arg_22_0.EquipmentBuffTF, var_30_0)
+			setActive(arg_22_0.switchBuffBtn, var_30_0)
 
-		var_0(arg_22_0.dropleft, var_22_7 > 0)
-
-		setActive = var_0
-
-		var_0(arg_22_0.dropright, #var_22_6 - var_22_7 > #arg_22_0.dropitems)
-
-		return
-	end
-
-	onButton = var_9
-
-	var_9(arg_22_0, arg_22_0.dropright, function()
-		var_22_7 = var_22_7 + 1
-
-		var_22_8()
-
-		return
-	end)
-
-	onButton = var_9
-
-	var_9(arg_22_0, arg_22_0.dropleft, function()
-		var_22_7 = var_22_7 - 1
-
-		var_22_8()
-
-		return
-	end)
-	var_22_8()
-
-	setActive = var_9
-
-	local var_22_9 = arg_22_0.awardBtn
-	local var_22_10
-
-	if var_22_5.phase_drop_display then
-		var_22_10 = #var_22_5.phase_drop_display > 0
-	end
-
-	var_9(var_22_9, var_22_10)
-
-	local var_22_11 = var_22_0
-	local var_22_12 = var_22_0.GetWeaknessBuffId(var_22_11)
-
-	pg = iter_22_0
-
-	local var_22_13 = iter_22_0.world_SLGbuff_data[var_22_12]
-
-	setActive = var_22_11
-
-	var_22_11(arg_22_0.weaknesstext, var_22_13 ~= nil)
-
-	setActive = var_22_11
-
-	var_22_11(arg_22_0.weaknessbg, var_22_13 ~= nil)
-
-	if var_22_13 then
-		setText = var_22_11
-
-		local var_22_14 = arg_22_0.weaknesstext
-
-		i18n = var_14
-
-		var_22_11(var_22_14, var_14("word_weakness") .. ": " .. var_22_13.desc)
-	end
-
-	local var_22_15
-
-	if var_22_13 ~= nil or not var_0_8 then
-		var_22_15 = 0
-	end
-
-	setAnchoredPosition = var_22_10
-
-	var_22_10(arg_22_0.attributeRoot, {
-		y = arg_22_0.attributeRootAnchorY - var_22_15
-	})
-	;(function()
-		nowWorld = var_2_10000
-
-		local var_27_0 = var_2_10000()
-		local var_27_1 = var_0.GetActiveMap(var_27_0)
-
-		table = var_2_10001
-
-		local var_27_2 = var_2_10001.mergeArray
-		local var_27_3 = var_22_0
-		local var_27_4 = var_3.GetBuffList(var_27_3)
-		local var_27_5 = var_27_1
-		local var_27_6 = var_27_1.GetBuffList
-
-		WorldMap = var_2_10007
-
-		local var_27_7 = var_27_2(var_27_4, var_27_6(var_27_5, var_2_10007.FactionEnemy, var_22_0))
-
-		_ = var_27_0
-
-		local var_27_8 = var_27_0.filter(var_27_7, function(arg_28_0)
-			return arg_28_0.id ~= var_22_12
-		end)
-
-		UIItemList = var_2
-
-		local var_27_9 = var_2.StaticAlign
-		local var_27_10 = arg_22_0.AdditionBuffContainer
-		local var_27_11 = arg_22_0.AdditionBuffContainer
-
-		var_27_9(var_27_10, var_5.GetChild(var_27_11, 0), #var_27_8, function(arg_29_0, arg_29_1, arg_29_2)
-			UIItemList = var_3_10003
-
-			if arg_29_0 ~= var_3_10003.EventUpdate then
+			if not var_30_0 then
 				return
 			end
 
-			local var_29_0 = var_27_8[arg_29_1 + 1]
+			UIItemList.StaticAlign(arg_22_0.EquipmentBuffContainer, arg_22_0.EquipmentBuffContainer:GetChild(0), #_.map(var_30_0, function(arg_31_0)
+				assert("world_SLGbuff_data Missing ID: " .. (arg_31_0 or "NIL"))
 
-			setActive = var_4
+				return pg.world_SLGbuff_data[arg_31_0]
+			end), function(arg_32_0, arg_32_1, arg_32_2)
+				if arg_32_0 ~= UIItemList.EventUpdate then
+					return
+				end
 
-			var_4(arg_29_2, var_29_0)
+				local var_32_0 = var_0[arg_32_1 + 1]
 
-			if var_29_0 then
-				local var_29_1 = arg_22_0.loader
+				setActive(arg_32_2, var_0[arg_32_1 + 1])
 
-				var_4.GetSprite(var_29_1, "world/buff/" .. var_29_0.config.icon, "", arg_29_2:Find("icon"))
+				if var_32_0 then
+					arg_22_0.loader:GetSprite("world/buff/" .. var_32_0.icon, "", arg_32_2:Find("icon"))
+					setText(arg_32_2:Find("desc"), var_32_0.desc)
+				end
 
-				setText = var_4
-
-				var_4(arg_29_2:Find("desc"), var_29_0.config.desc)
-			end
-
-			return
-		end)
-
-		return
-	end)()
-	;(function()
-		local var_30_0
-
-		if not var_22_5.special_buff_display or #var_30_0 == 0 then
-			var_30_0 = nil
-		end
-
-		setActive = var_2_10001
-
-		var_2_10001(arg_22_0.EquipmentBuffTF, var_30_0)
-
-		setActive = var_2_10001
-
-		var_2_10001(arg_22_0.switchBuffBtn, var_30_0)
-
-		if not var_30_0 then
-			return
-		end
-
-		_ = var_2_10001
-
-		local var_30_1 = var_2_10001.map(var_30_0, function(arg_31_0)
-			assert = var_3_10001
-
-			var_3_10001("world_SLGbuff_data Missing ID: " .. (arg_31_0 or "NIL"))
-
-			pg = var_3_10001
-
-			return var_3_10001.world_SLGbuff_data[arg_31_0]
-		end)
-
-		UIItemList = var_2_10002
-
-		local var_30_2 = var_2_10002.StaticAlign
-		local var_30_3 = arg_22_0.EquipmentBuffContainer
-		local var_30_4 = arg_22_0.EquipmentBuffContainer
-
-		var_30_2(var_30_3, var_5.GetChild(var_30_4, 0), #var_30_1, function(arg_32_0, arg_32_1, arg_32_2)
-			UIItemList = var_3_10003
-
-			if arg_32_0 ~= var_3_10003.EventUpdate then
 				return
-			end
-
-			local var_32_0 = var_30_1[arg_32_1 + 1]
-
-			setActive = var_4
-
-			var_4(arg_32_2, var_32_0)
-
-			if var_32_0 then
-				local var_32_1 = arg_22_0.loader
-
-				var_4.GetSprite(var_32_1, "world/buff/" .. var_32_0.icon, "", arg_32_2:Find("icon"))
-
-				setText = var_4
-
-				var_4(arg_32_2:Find("desc"), var_32_0.desc)
-			end
+			end)
 
 			return
-		end)
+		end)()
+		Canvas.ForceUpdateCanvases()
 
-		return
-	end)()
+		arg_22_0.buffListTF.sizeDelta.y = math.max(arg_22_0.AdditionBuffTF.rect.height, arg_22_0.EquipmentBuffTF.rect.height) + 50
+		arg_22_0.buffListTF.sizeDelta = arg_22_0.buffListTF.sizeDelta
 
-	Canvas = var_14
+		arg_22_0:UpdateHpbar()
 
-	var_14.ForceUpdateCanvases()
+		local var_22_11 = nowWorld()
+		local var_22_12 = var_22_11:GetWorldMapDifficultyBuffLevel()
+		local var_22_13 = {
+			var_22_12[1] * (1 + var_22_4.expedition_sairenvalueA / 16),
+			var_22_12[2] * (1 + var_22_4.expedition_sairenvalueB / 16),
+			var_22_12[3] * (1 + var_22_4.expedition_sairenvalueC / 16)
+		}
+		local var_22_14 = var_22_11:GetWorldMapBuffLevel()
+		local var_22_15, var_22_16, var_22_17 = ys.Battle.BattleFormulas.WorldMapRewardAttrEnhance({
+			var_22_12[1] * (1 + var_22_4.expedition_sairenvalueA / 16),
+			var_22_12[2] * (1 + var_22_4.expedition_sairenvalueB / 16),
+			var_22_12[3] * (1 + var_22_4.expedition_sairenvalueC / 16)
+		}, var_22_14)
+		local var_22_18 = {
+			var_22_15,
+			var_22_16,
+			1 - ys.Battle.BattleFormulas.WorldMapRewardHealingRate(var_22_13, var_22_14)
+		}
 
-	local var_22_16 = arg_22_0.AdditionBuffTF.rect.height
-	local var_22_17 = arg_22_0.EquipmentBuffTF.rect.height
+		for iter_22_2 = 1, #arg_22_0.attributes do
+			local var_22_19 = arg_22_0.attributes[iter_22_2]
 
-	math = var_16
+			setText(arg_22_0.attributes[iter_22_2]:Find("digit"), string.format("%d", var_22_13[iter_22_2]))
 
-	local var_22_18
+			if iter_22_2 == 3 then
+				local var_22_20 = 1 - var_22_18[iter_22_2] or var_22_18[iter_22_2] + 1
 
-	var_22_18.y, var_22_18 = var_16.max(var_22_16, var_22_17) + 50, arg_22_0.buffListTF.sizeDelta
-	arg_22_0.buffListTF.sizeDelta = var_22_18
+				setText(var_22_19:Find("desc"), i18n("world_mapbuff_attrtxt_" .. iter_22_2) .. string.format(" %d%%", var_22_20 * 100))
 
-	arg_22_0:UpdateHpbar()
+				local var_22_21 = GetOrAddComponent(var_22_19, typeof(UILongPressTrigger))
 
-	ys = var_18
+				var_22_21.onPressed:RemoveAllListeners()
+				var_22_21.onReleased:RemoveAllListeners()
 
-	local var_22_19 = var_18.Battle.BattleFormulas
+				local var_22_22
+				local var_22_23
 
-	nowWorld = var_19
+				var_22_21.onPressed:AddListener(function()
+					var_22_22 = go(var_22_19:Find("extra")).activeSelf
 
-	local var_22_20 = var_19()
-	local var_22_21 = var_19.GetWorldMapDifficultyBuffLevel(var_22_20)
-	local var_22_22 = {
-		var_22_21[1] * (1 + var_22_5.expedition_sairenvalueA / 16),
-		var_22_21[2] * (1 + var_22_5.expedition_sairenvalueB / 16),
-		var_22_21[3] * (1 + var_22_5.expedition_sairenvalueC / 16)
-	}
-	local var_22_23 = var_19:GetWorldMapBuffLevel()
-	local var_22_24, var_22_25, var_22_26 = var_22_19.WorldMapRewardAttrEnhance(var_22_22, var_22_23)
-	local var_22_27 = 1 - var_22_19.WorldMapRewardHealingRate(var_22_22, var_22_23)
-	local var_22_28 = {
-		var_22_24,
-		var_22_25,
-		var_22_27
-	}
+					setActive(var_22_19:Find("extra"), true)
 
-	for iter_22_2 = 1, #arg_22_0.attributes do
-		local var_22_29 = arg_22_0.attributes[iter_22_2]
+					var_22_23 = Time.realtimeSinceStartup
 
-		setText = var_1_10033
+					return
+				end)
+				var_22_21.onReleased:AddListener(function()
+					if not var_22_23 or Time.realtimeSinceStartup - var_22_23 < 0.3 then
+						setActive(var_22_19:Find("extra"), not var_22_22)
+					else
+						setActive(var_22_19:Find("extra"), false)
+					end
 
-		local var_22_30 = var_22_29
+					return
+				end)
+				setText(var_22_19:Find("extra/enemy"), var_22_13[iter_22_2])
+				setText(var_22_19:Find("extra/ally"), var_22_14[iter_22_2])
+				setText(var_22_19:Find("extra/result"), string.format("%d%%", var_22_18[iter_22_2] * 100))
 
-		var_1_10035 = var_22_29.Find(var_22_30, "digit")
-		string = var_1_10036
+				local var_22_24 = var_22_18[iter_22_2] > 0 and arg_22_0.TransformColor(var_0_5) or arg_22_0.TransformColor(var_0_6)
 
-		var_1_10033(var_1_10035, var_1_10036.format("%d", var_22_22[iter_22_2]))
+				setTextColor(var_22_19:Find("extra/result"), var_22_24)
+				setText(var_22_19:Find("extra/result/arrow"), var_22_18[iter_22_2] == 0 and "" or var_22_18[iter_22_2] > 0 and "↑" or "↓")
 
-		if iter_22_2 ~= 3 or not (1 - var_22_28[iter_22_2]) then
-			var_1_10033 = var_22_28[iter_22_2] + 1
+				if var_22_18[iter_22_2] ~= 0 then
+					local var_22_25 = var_22_18[iter_22_2] > 0 and arg_22_0.TransformColor(var_0_5) or arg_22_0.TransformColor(var_0_6)
+
+					setTextColor(var_22_19:Find("extra/result/arrow"), var_22_25)
+				end
+
+				local var_22_26 = var_22_19:Find("extra/allybar")
+				local var_22_27 = var_22_19:Find("extra/enemybar")
+				local var_22_28 = math.clamp(1 + var_22_18[iter_22_2], 0.75, 3)
+				local var_22_29 = var_22_19:Find("extra").rect.width
+
+				var_22_27.sizeDelta = Vector2(var_22_28 * var_22_29 / (var_22_28 + 1) + var_0_2 * 0.5, var_22_27.sizeDelta.y)
+				var_22_26.sizeDelta = Vector2(1 * var_22_29 / (var_22_28 + 1) + var_0_2 * 0.5, var_22_26.sizeDelta.y)
+			end
 		end
 
-		setText = var_1_10034
-		var_1_10038 = var_22_29
-		var_1_10036 = var_22_29.Find(var_1_10038, "desc")
-		i18n = var_22_30
+		local var_22_30 = var_22_4.battle_character
+		local var_22_31 = var_22_4.battle_character and #var_22_30 > 0
 
-		local var_22_31 = var_22_30("world_mapbuff_attrtxt_" .. iter_22_2)
+		var_22_30 = var_22_4.battle_character and #var_22_30 > 0 and var_22_30 or "world_boss_0"
+		arg_22_0.bg:GetComponent(typeof(Image)).enabled = true
 
-		string = var_1_10038
+		setImageSprite(arg_22_0.bg, GetSpriteFromAtlas("commonbg/" .. var_22_30, var_22_30))
+		;(function()
+			arg_22_0.bossnameText.text = var_22_3.name
 
-		var_1_10034(var_1_10036, var_22_31 .. var_1_10038.format(" %d%%", var_1_10033 * 100))
+			local var_35_0 = false
 
-		GetOrAddComponent = var_1_10034
-		var_1_10036 = var_22_29
-		typeof = var_37
-		UILongPressTrigger = var_39
+			if arg_22_0.bossnameText.preferredWidth > arg_22_0.bossnameText.transform.rect.width then
+				arg_22_0.bossnameText.text = string.gsub(var_22_3.name, "「.-」", "\n%1")
+				var_35_0 = true
+			end
 
-		local var_22_32 = var_1_10034(var_1_10036, var_37(var_39)).onPressed
+			setAnchoredPosition(arg_22_0.bossNameBanner, {
+				y = var_35_0 and -18 or 0
+			})
 
-		var_1_10035.RemoveAllListeners(var_22_32)
+			local var_35_1 = arg_22_0:GetEnemyLevel(var_22_3) or 1
 
-		local var_22_33 = var_1_10034.onReleased
+			setText(arg_22_0.bosslevel, i18n("world_level_prefix", var_35_1))
+			setActive(arg_22_0.bosslogos[1], var_22_31)
+			setActive(arg_22_0.bosslogos[2], not var_22_31)
+			setActive(arg_22_0.saomiaoxian, not var_22_31)
 
-		var_1_10035.RemoveAllListeners(var_22_33)
+			local var_35_2 = ys.Battle.BattleDataFunction.GetMonsterTmpDataFromID(arg_22_0:GetDungeonBossData(var_22_0).monsterTemplateID)
 
-		var_1_10035 = nil
-		var_1_10036 = nil
-
-		local var_22_34 = var_1_10034.onPressed
-
-		var_37.AddListener(var_22_34, function()
-			go = var_2_10000
-
-			local var_33_0 = var_22_29
-
-			var_1_10035 = var_2_10000(var_2.Find(var_33_0, "extra")).activeSelf
-			setActive = var_0
-
-			local var_33_1 = var_22_29
-
-			var_0(var_2.Find(var_33_1, "extra"), true)
-
-			Time = var_0
-			var_1_10036 = var_0.realtimeSinceStartup
+			arg_22_0.loader:GetSprite("shiptype", ShipType.Type2BattlePrint(var_35_2.type), arg_22_0.bossTypeIcon, true)
+			setText(arg_22_0.bossArmorText, ArmorType.Type2Name(var_35_2.armor_type))
 
 			return
-		end)
+		end)()
 
-		local var_22_35 = var_1_10034.onReleased
+		local var_22_32 = ys.Battle.BattleAttr.IsWorldMapRewardAttrWarning(var_22_13, var_22_14)
 
-		var_37.AddListener(var_22_35, function()
-			if var_1_10036 then
-				Time = var_0
+		setActive(arg_22_0.dangerMark, var_22_32)
 
-				if var_0.realtimeSinceStartup - var_1_10036 < 0.3 then
-					setActive = var_0
+		if var_22_32 then
+			local var_22_34 = arg_22_0.dangerMark
+			local var_22_35 = {}
 
-					local var_34_0 = var_22_29
+			if var_22_31 then
+				var_22_35.x = var_0_4 or var_0_3
 
-					var_0(var_2.Find(var_34_0, "extra"), not var_1_10035)
-				else
-					setActive = var_0
+				var_22_33(var_22_34, var_22_35)
 
-					local var_34_1 = var_22_29
+				if not var_22_31 then
+					if var_22_3.icon_type == 1 then
+						arg_22_0.loader:GetSprite("enemies/" .. var_22_3.icon, nil, arg_22_0.bosssprite)
+					elseif var_22_3.icon_type == 2 then
+						arg_22_0.bosssprite:GetComponent(typeof(Image)).enabled = false
 
-					var_0(var_2.Find(var_34_1, "extra"), false)
+						arg_22_0.loader:GetSpine(var_22_3.icon, function(arg_36_0)
+							arg_36_0:SetLocalScale(Vector3(var_22_4.battle_spine_size * 0.01, var_22_4.battle_spine_size * 0.01, 1))
+							arg_36_0:SetAnchoredPosition(Vector3.New(0, -150, 0))
+							arg_36_0:SetAction(ChapterConst.ShipIdleAction, 0)
+
+							arg_36_0:GetSkeletonGraphic().raycastTarget = false
+
+							arg_36_0:SetParent(arg_22_0.bosssprite)
+
+							return
+						end, arg_22_0.bosssprite)
+					end
 				end
 
 				return
 			end
-		end)
-
-		setText = var_37
-
-		var_37(var_22_29:Find("extra/enemy"), var_22_22[iter_22_2])
-
-		setText = var_37
-
-		var_37(var_22_29:Find("extra/ally"), var_22_23[iter_22_2])
-
-		setText = var_37
-
-		local var_22_36 = var_22_29:Find("extra/result")
-
-		string = var_40
-
-		var_37(var_22_36, var_40.format("%d%%", var_22_28[iter_22_2] * 100))
-
-		setTextColor = var_37
-
-		local var_22_37 = var_22_29:Find("extra/result")
-		local var_22_38
-
-		if not (var_22_28[iter_22_2] > 0) or not arg_22_0.TransformColor(var_0_6) then
-			var_22_38 = arg_22_0.TransformColor(var_0_7)
 		end
-
-		var_37(var_22_37, var_22_38)
-
-		setText = var_37
-
-		var_37(var_22_29:Find("extra/result/arrow"), var_22_28[iter_22_2] == 0 and "" or var_22_28[iter_22_2] > 0 and "↑" or "↓")
-
-		if var_22_28[iter_22_2] ~= 0 then
-			setTextColor = var_37
-
-			local var_22_39 = var_22_29:Find("extra/result/arrow")
-			local var_22_40
-
-			if not (var_22_28[iter_22_2] > 0) or not arg_22_0.TransformColor(var_0_6) then
-				var_22_40 = arg_22_0.TransformColor(var_0_7)
-			end
-
-			var_37(var_22_39, var_22_40)
-		end
-
-		local var_22_41 = var_22_29
-		local var_22_42 = var_22_29.Find(var_22_41, "extra/allybar")
-
-		var_1_10038 = var_22_29:Find("extra/enemybar")
-		math = var_22_41
-
-		local var_22_43 = var_22_41.clamp(1 + var_22_28[iter_22_2], 0.75, 3)
-		local var_22_44 = var_22_29:Find("extra").rect.width
-
-		Vector2 = var_41
-		var_1_10038.sizeDelta = var_41(var_22_43 * var_22_44 / (var_22_43 + 1) + var_0_3 * 0.5, var_1_10038.sizeDelta.y)
-		Vector2 = var_41
-		var_22_42.sizeDelta = var_41(1 * var_22_44 / (var_22_43 + 1) + var_0_3 * 0.5, var_22_42.sizeDelta.y)
 	end
+end
 
-	local var_22_45 = var_22_5.battle_character and #var_22_45 > 0 and var_22_45 or "world_boss_0"
-	local var_22_46 = arg_22_0.bg
-	local var_22_47 = var_30.GetComponent
-
-	typeof = var_1_10033
-	Image = var_1_10035
-
-	local var_22_48 = var_22_47(var_22_46, var_1_10033(var_1_10035))
-
-	var_22_48.enabled = true
-	setImageSprite = var_22_48
-
-	local var_22_49 = arg_22_0.bg
-
-	GetSpriteFromAtlas = var_33
-
-	var_22_48(var_22_49, var_33("commonbg/" .. var_22_45, var_22_45))
-	;(function()
-		local var_35_0 = var_22_4.name
-
-		arg_22_0.bossnameText.text = var_35_0
-
-		local var_35_1 = false
-		local var_35_2 = arg_22_0.bossnameText.preferredWidth
-
-		if arg_22_0.bossnameText.transform.rect.width < var_35_2 then
-			string = var_35_2
-			var_35_2.text, var_35_2 = var_35_2.gsub(var_35_0, "「.-」", "\n%1"), arg_22_0.bossnameText
-			var_35_1 = true
-		end
-
-		setAnchoredPosition = var_35_2
-
-		var_35_2(arg_22_0.bossNameBanner, {
-			y = var_35_1 and -18 or 0
-		})
-
-		setText = var_35_2
-
-		local var_35_3 = arg_22_0.bosslevel
-
-		i18n = var_5
-
-		local var_35_4 = "world_level_prefix"
-		local var_35_5 = arg_22_0
-		local var_35_6
-
-		if not var_8.GetEnemyLevel(var_35_5, var_22_4) then
-			var_35_6 = 1
-		end
-
-		var_35_2(var_35_3, var_5(var_35_4, var_35_6))
-
-		setActive = var_35_2
-
-		var_35_2(arg_22_0.bosslogos[1], var_0)
-
-		setActive = var_35_2
-
-		var_35_2(arg_22_0.bosslogos[2], not var_0)
-
-		setActive = var_35_2
-
-		var_35_2(arg_22_0.saomiaoxian, not var_0)
-
-		local var_35_7 = arg_22_0
-		local var_35_8 = var_2.GetDungeonBossData(var_35_7, var_22_0).monsterTemplateID
-
-		ys = var_3
-
-		local var_35_9 = var_3.Battle.BattleDataFunction.GetMonsterTmpDataFromID(var_35_8)
-		local var_35_10 = arg_22_0.loader
-		local var_35_11 = var_4.GetSprite
-		local var_35_12 = "shiptype"
-
-		ShipType = var_35_6
-
-		var_35_11(var_35_10, var_35_12, var_35_6.Type2BattlePrint(var_35_9.type), arg_22_0.bossTypeIcon, true)
-
-		setText = var_35_11
-
-		local var_35_13 = arg_22_0.bossArmorText
-
-		ArmorType = var_35_12
-
-		var_35_11(var_35_13, var_35_12.Type2Name(var_35_9.armor_type))
+function var_0_0.onBackPressed(arg_37_0)
+	if arg_37_0.awardPanel and arg_37_0.awardPanel:isShowing() then
+		arg_37_0.awardPanel:Hide()
 
 		return
-	end)()
-
-	ys = var_31
-
-	local var_22_50 = var_31.Battle.BattleAttr.IsWorldMapRewardAttrWarning(var_22_22, var_22_23)
-
-	setActive = var_22_49
-
-	var_22_49(arg_22_0.dangerMark, var_22_50)
-
-	local var_22_53
-
-	if var_22_50 then
-		setAnchoredPosition = var_22_49
-
-		local var_22_51 = arg_22_0.dangerMark
-		local var_22_52 = {}
-
-		if not var_28 or not var_0_5 then
-			var_22_53 = var_0_4
-		end
-
-		var_22_52.x = var_22_53
-
-		var_22_49(var_22_51, var_22_52)
 	end
 
-	if not var_28 then
-		if var_22_4.icon_type == 1 then
-			local var_22_54 = arg_22_0.loader
-
-			var_33.GetSprite(var_22_54, "enemies/" .. var_22_4.icon, nil, arg_22_0.bosssprite)
-		elseif var_32 == 2 then
-			local var_22_55 = arg_22_0.bosssprite
-			local var_22_56 = var_33.GetComponent
-
-			typeof = var_22_53
-			Image = var_1_10038
-			var_22_56(var_22_55, var_22_53(var_1_10038)).enabled = false
-
-			local var_22_57 = arg_22_0.loader
-
-			var_33.GetSpine(var_22_57, var_22_4.icon, function(arg_36_0)
-				local var_36_0 = var_22_5.battle_spine_size * 0.01
-				local var_36_1 = arg_36_0
-				local var_36_2 = arg_36_0.SetLocalScale
-
-				Vector3 = var_2_10005
-
-				var_36_2(var_36_1, var_2_10005(var_36_0, var_36_0, 1))
-
-				local var_36_3 = arg_36_0
-				local var_36_4 = arg_36_0.SetAnchoredPosition
-
-				Vector3 = var_5
-
-				var_36_4(var_36_3, var_5.New(0, -150, 0))
-
-				local var_36_5 = arg_36_0
-				local var_36_6 = arg_36_0.SetAction
-
-				ChapterConst = var_5
-
-				var_36_6(var_36_5, var_5.ShipIdleAction, 0)
-
-				arg_36_0:GetSkeletonGraphic().raycastTarget = false
-
-				arg_36_0:SetParent(arg_22_0.bosssprite)
-
-				return
-			end, arg_22_0.bosssprite)
-		end
-	end
+	triggerButton(arg_37_0.backBtn)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_37_0)
-	if arg_37_0.awardPanel then
-		local var_37_0 = arg_37_0.awardPanel
-
-		if var_1.isShowing(var_37_0) then
-			local var_37_1 = arg_37_0.awardPanel
-
-			var_1.Hide(var_37_1)
-
-			return
-		end
-	end
-
-	triggerButton = var_1
-
-	var_1(arg_37_0.backBtn)
-
-	return
-end
-
-function var_0_1.willExit(arg_38_0)
+function var_0_0.willExit(arg_38_0)
 	arg_38_0:DestroyAwardPanel()
-
-	pg = var_1
-
-	local var_38_0 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_38_0, arg_38_0.layer, arg_38_0._tf)
-
-	pg = var_1
-
-	local var_38_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_38_1, arg_38_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_38_0.layer, arg_38_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_38_0._tf)
 
 	if arg_38_0.resPanel then
-		local var_38_2 = arg_38_0.resPanel
-
-		var_1.exit(var_38_2)
+		arg_38_0.resPanel:exit()
 
 		arg_38_0.resPanel = nil
 	end
 
-	pairs = var_1
-
-	for iter_38_0, iter_38_1 in var_1(arg_38_0.dungeonDict) do
-		ys = var_1_10006
-
-		var_1_10006.Battle.BattleDataFunction.ClearDungeonCfg(iter_38_0)
+	for iter_38_0, iter_38_1 in pairs(arg_38_0.dungeonDict) do
+		ys.Battle.BattleDataFunction.ClearDungeonCfg(iter_38_0)
 	end
 
-	table = var_1
-
-	var_1.clear(arg_38_0.dungeonDict)
-
-	local var_38_3 = arg_38_0.loader
-
-	var_1.Clear(var_38_3)
+	table.clear(arg_38_0.dungeonDict)
+	arg_38_0.loader:Clear()
 
 	return
 end
 
-function var_0_1.GetAwardPanel(arg_39_0)
-	local var_39_0
+function var_0_0.GetAwardPanel(arg_39_0)
+	arg_39_0.awardPanel = arg_39_0.awardPanel or WorldBossHPAwardPanel.New(arg_39_0._tf, arg_39_0.event, arg_39_0.contextData)
 
-	if not arg_39_0.awardPanel then
-		WorldBossHPAwardPanel = var_39_0
-		var_39_0 = var_39_0.New(arg_39_0._tf, arg_39_0.event, arg_39_0.contextData)
-	end
-
-	arg_39_0.awardPanel = var_39_0
-
-	local var_39_1 = arg_39_0.awardPanel
-
-	var_1.Load(var_39_1)
+	arg_39_0.awardPanel:Load()
 
 	return arg_39_0.awardPanel
 end
 
-function var_0_1.DestroyAwardPanel(arg_40_0)
+function var_0_0.DestroyAwardPanel(arg_40_0)
 	if not arg_40_0.awardPanel then
 		return
 	end
 
-	local var_40_0 = arg_40_0.awardPanel
-
-	var_1.Destroy(var_40_0)
+	arg_40_0.awardPanel:Destroy()
 
 	arg_40_0.awardPanel = nil
 
 	return
 end
 
-function var_0_1.TransformColor(arg_41_0)
-	tonumber = var_1_10001
-	string = var_1_10003
-
-	local var_41_0 = var_1_10001(var_1_10003.sub(arg_41_0, 1, 2), 16)
-
-	tonumber = var_1_10002
-	string = var_4
-
-	local var_41_1 = var_1_10002(var_4.sub(arg_41_0, 3, 4), 16)
-
-	tonumber = var_3
-	string = var_5
-
-	local var_41_2 = var_3(var_5.sub(arg_41_0, 5, 6), 16)
-
-	Color = var_4
-
-	return var_4.New(var_41_0 / 255, var_41_1 / 255, var_41_2 / 255)
+function var_0_0.TransformColor(arg_41_0)
+	return Color.New(tonumber(string.sub(arg_41_0, 1, 2), 16) / 255, tonumber(string.sub(arg_41_0, 3, 4), 16) / 255, tonumber(string.sub(arg_41_0, 5, 6), 16) / 255)
 end
 
-return var_0_1
+return var_0_0

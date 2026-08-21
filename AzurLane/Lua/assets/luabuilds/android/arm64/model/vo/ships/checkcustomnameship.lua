@@ -1,25 +1,13 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CheckCustomNameShip", import("model.vo.Ship"))
 
-local var_0_0 = "CheckCustomNameShip"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.Ship"))
-
-function var_0_1.getName(arg_1_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_1_0 = var_1_10001(var_1_10003)
-	local var_1_1 = var_1.getRawData(var_1_0)
-
-	if var_1.ShouldCheckCustomName(var_1_1) then
+function var_0_0.getName(arg_1_0)
+	if getProxy(PlayerProxy):getRawData():ShouldCheckCustomName() then
 		return arg_1_0:GetDefaultName()
 	else
-		return var_0_1.super.getName(arg_1_0)
+		return var_0_0.super.getName(arg_1_0)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

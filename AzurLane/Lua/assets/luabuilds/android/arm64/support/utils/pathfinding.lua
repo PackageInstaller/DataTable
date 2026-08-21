@@ -1,13 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PathFinding")
 
-local var_0_0 = var_0_10000("PathFinding")
-local var_0_1 = PathFinding
+PathFinding = var_0_0
+var_0_0.PrioNormal = 1
+var_0_0.PrioObstacle = 1000
+var_0_0.PrioForbidden = 1000000
 
-var_0_1.PrioNormal = 1
-var_0_1.PrioObstacle = 1000
-var_0_1.PrioForbidden = 1000000
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.cells = arg_1_1
 	arg_1_0.rows = arg_1_2
 	arg_1_0.columns = arg_1_3
@@ -15,7 +13,7 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	return
 end
 
-function var_0_1.Find(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.Find(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_1 = {
 		row = arg_2_1.row,
 		column = arg_2_1.column
@@ -34,7 +32,7 @@ function var_0_1.Find(arg_2_0, arg_2_1, arg_2_2)
 	return
 end
 
-local var_0_2 = {
+local var_0_1 = {
 	{
 		1,
 		0
@@ -53,8 +51,8 @@ local var_0_2 = {
 	}
 }
 
-function var_0_1._Find(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = var_0_1.PrioForbidden
+function var_0_0._Find(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = var_0_0.PrioForbidden
 	local var_3_1 = {}
 	local var_3_2 = {
 		arg_3_1
@@ -69,83 +67,127 @@ function var_0_1._Find(arg_3_0, arg_3_1, arg_3_2)
 		}
 	}
 
-	while #var_3_2 > 0 do
-		table = var_8
+	while #{
+		arg_3_1
+	} > 0 do
+		local var_3_5 = table.remove({
+			arg_3_1
+		}, 1)
 
-		if var_8.remove(var_3_2, 1).row == arg_3_2.row and var_8.column == arg_3_2.column then
-			var_3_0 = var_3_4[var_8.row][var_8.column].priority
-			var_3_1 = var_9.path
+		if var_3_5.row == arg_3_2.row and var_3_5.column == arg_3_2.column then
+			var_3_0 = ({
+				[arg_3_1.row] = {
+					[arg_3_1.column] = {
+						priority = 0,
+						path = {}
+					}
+				}
+			})[var_3_5.row][var_3_5.column].priority
+			var_3_1 = ({
+				[arg_3_1.row] = {
+					[arg_3_1.column] = {
+						priority = 0,
+						path = {}
+					}
+				}
+			})[var_3_5.row][var_3_5.column].path
 
 			break
 		end
 
-		table = var_9
-
-		var_9.insert(var_3_3, var_8)
-
-		_ = var_9
-
-		var_9.each(var_0_2, function(arg_4_0)
+		table.insert({}, var_3_5)
+		_.each(var_0_1, function(arg_4_0)
 			local var_4_0 = {
-				row = var_0.row + arg_4_0[1],
-				column = var_0.column + arg_4_0[2]
+				row = var_3_5.row + arg_4_0[1],
+				column = var_3_5.column + arg_4_0[2]
 			}
-
-			_ = var_2
-
-			local var_4_1
-
-			if not var_2.any(var_3_2, function(arg_5_0)
+			local var_4_1 = _.any(var_3_2, function(arg_5_0)
 				return arg_5_0.row == var_4_0.row and arg_5_0.column == var_4_0.column
-			end) then
-				_ = var_4_1
-				var_4_1 = var_4_1.any(var_3_3, function(arg_6_0)
-					return arg_6_0.row == var_4_0.row and arg_6_0.column == var_4_0.column
-				end)
-			end
+			end) or _.any(var_3_3, function(arg_6_0)
+				return arg_6_0.row == var_4_0.row and arg_6_0.column == var_4_0.column
+			end)
 
-			if not var_4_1 and var_4_0.row >= 0 and var_4_0.row < arg_3_0.rows and var_4_0.column >= 0 and var_4_0.column < arg_3_0.columns then
-				local var_4_2
+			if not var_4_1 and ({
+				row = var_3_5.row + arg_4_0[1],
+				column = var_3_5.column + arg_4_0[2]
+			}).row >= 0 and ({
+				row = var_3_5.row + arg_4_0[1],
+				column = var_3_5.column + arg_4_0[2]
+			}).row < arg_3_0.rows and ({
+				row = var_3_5.row + arg_4_0[1],
+				column = var_3_5.column + arg_4_0[2]
+			}).column >= 0 and ({
+				row = var_3_5.row + arg_4_0[1],
+				column = var_3_5.column + arg_4_0[2]
+			}).column < arg_3_0.columns then
+				if var_3_4[var_3_5.row][var_3_5.column].priority + arg_3_0.cells[({
+					row = var_3_5.row + arg_4_0[1],
+					column = var_3_5.column + arg_4_0[2]
+				}).row][({
+					row = var_3_5.row + arg_4_0[1],
+					column = var_3_5.column + arg_4_0[2]
+				}).column] < var_0_0.PrioObstacle then
+					local var_4_2 = Clone(var_3_4[var_3_5.row][var_3_5.column])
 
-				if var_3_4[var_0.row][var_0.column].priority + arg_3_0.cells[var_4_0.row][var_4_0.column] < var_0_1.PrioObstacle then
-					Clone = var_4_2
-					var_4_2 = var_4_2(var_3)
-					table = var_6
+					table.insert(var_4_2.path, {
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					})
 
-					var_6.insert(var_4_2.path, var_4_0)
+					var_4_2.priority = var_3_4[var_3_5.row][var_3_5.column].priority + arg_3_0.cells[({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).row][({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).column]
 
-					var_4_2.priority = var_4
+					local var_4_3 = var_3_4[({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).row]
 
-					local var_4_3 = var_3_4
-					local var_4_4 = var_4_0.row
-					local var_4_5
-
-					if not var_3_4[var_4_0.row] then
-						var_4_5 = {}
+					if not var_3_4[({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).row] then
+						var_4_3 = {}
 					end
 
-					var_4_3[var_4_4] = var_4_5
-					var_3_4[var_4_0.row][var_4_0.column] = var_4_2
+					var_3_4[({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).row] = var_4_3
+					var_3_4[({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).row][({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).column] = var_4_2
 
-					local var_4_6 = 0
+					local var_4_4 = 0
 
 					for iter_4_0 = #var_3_2, 1, -1 do
-						local var_4_7 = var_3_2[iter_4_0]
-						local var_4_8 = var_3_4[var_4_7.row][var_4_7.column]
-
-						if var_4_2.priority >= var_4_8.priority then
-							var_4_6 = iter_4_0
+						if var_4_2.priority >= var_3_4[var_3_2[iter_4_0].row][var_3_2[iter_4_0].column].priority then
+							var_4_4 = iter_4_0
 
 							break
 						end
 					end
 
-					table = var_7
-
-					var_7.insert(var_3_2, var_4_6 + 1, var_4_0)
+					table.insert(var_3_2, var_4_4 + 1, {
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					})
 				else
-					math = var_4_2
-					var_3_0 = var_4_2.min(var_3_0, var_4)
+					var_3_0 = math.min(var_3_0, var_3_4[var_3_5.row][var_3_5.column].priority + arg_3_0.cells[({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).row][({
+						row = var_3_5.row + arg_4_0[1],
+						column = var_3_5.column + arg_4_0[2]
+					}).column])
 				end
 			end
 
@@ -153,23 +195,24 @@ function var_0_1._Find(arg_3_0, arg_3_1, arg_3_2)
 		end)
 	end
 
-	if var_3_0 >= var_0_1.PrioObstacle then
-		local var_3_5 = 1000000
-		local var_3_6 = var_0_1.PrioForbidden
+	if var_3_0 >= var_0_0.PrioObstacle then
+		local var_3_6 = 1000000
 
-		pairs = var_10
+		for iter_3_0, iter_3_1 in pairs({
+			[arg_3_1.row] = {
+				[arg_3_1.column] = {
+					priority = 0,
+					path = {}
+				}
+			}
+		}) do
+			for iter_3_2, iter_3_3 in pairs(iter_3_1) do
+				local var_3_7 = math.abs(arg_3_2.row - iter_3_0) + math.abs(arg_3_2.column - iter_3_2)
+				local var_3_8
 
-		for iter_3_0, iter_3_1 in var_10(var_3_4) do
-			pairs = var_1_10015
-
-			for iter_3_2, iter_3_3 in var_1_10015(iter_3_1) do
-				math = var_1_10020
-				var_1_10020 = var_1_10020.abs(arg_3_2.row - iter_3_0)
-				math = var_1_10021
-
-				if var_1_10020 + var_1_10021.abs(arg_3_2.column - iter_3_2) < var_3_5 or var_1_10020 == var_3_5 and iter_3_3.priority < var_3_6 then
-					var_3_5 = var_1_10020
-					var_3_6 = iter_3_3.priority
+				if var_3_7 < var_3_6 or var_3_7 == var_3_6 and var_0_0.PrioForbidden > iter_3_3.priority then
+					var_3_6 = var_3_7
+					var_3_8 = iter_3_3.priority
 					var_3_1 = iter_3_3.path
 				end
 			end
@@ -179,4 +222,4 @@ function var_0_1._Find(arg_3_0, arg_3_1, arg_3_2)
 	return var_3_0, var_3_1
 end
 
-return var_0_1
+return var_0_0

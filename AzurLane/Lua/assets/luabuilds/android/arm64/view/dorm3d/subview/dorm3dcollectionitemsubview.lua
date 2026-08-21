@@ -1,331 +1,159 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dCollectionItemSubView", import("view.dorm3d.Game.Dorm3dGameBaseSubView"))
 
-local var_0_0 = "Dorm3dCollectionItemSubView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.dorm3d.Game.Dorm3dGameBaseSubView"))
-
-function var_0_1.Init(arg_1_0)
+function var_0_0.Init(arg_1_0)
 	arg_1_0:OnLoaded()
 	arg_1_0:OnInit()
 
 	return
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "list/container")
+function var_0_0.OnLoaded(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("list/container")
 
-	UIItemList = var_1_10002
-	arg_2_0.itemList = var_1_10002.New(var_2_1, var_2_1:Find("tpl"))
+	arg_2_0.itemList = UIItemList.New(var_2_0, var_2_0:Find("tpl"))
 
-	local var_2_2 = arg_2_0.itemList
-
-	var_2.make(var_2_2, function(arg_3_0, arg_3_1, arg_3_2)
+	arg_2_0.itemList:make(function(arg_3_0, arg_3_1, arg_3_2)
 		arg_3_1 = arg_3_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_3_0 == var_2_10003.EventUpdate then
-			local var_3_0 = arg_2_0.ids[arg_3_1]
-
-			pg = var_2_10004
-
-			local var_3_1 = var_2_10004.dorm3d_collection_template[var_3_0]
-			local var_3_2 = arg_2_0.unlockDic[var_3_0]
-
-			ApartmentProxy = var_2_10006
-
-			local var_3_3 = var_2_10006.CheckUnlockConfig(var_3_1.unlock)
-			local var_3_4 = arg_3_1
+		if arg_3_0 == UIItemList.EventUpdate then
+			local var_3_0 = arg_2_0.unlockDic[arg_2_0.ids[arg_3_1]]
+			local var_3_1 = ApartmentProxy.CheckUnlockConfig(pg.dorm3d_collection_template[arg_2_0.ids[arg_3_1]].unlock)
+			local var_3_2 = arg_3_1
 
 			for iter_3_0 = 1, 2 do
-				cloneTplTo = var_2_10012
+				cloneTplTo(arg_2_0.numContainer:Find("num_" .. arg_3_1 % 10), arg_3_2:Find("num"))
 
-				local var_3_5 = arg_2_0.numContainer
-
-				var_2_10012(var_2_10014.Find(var_3_5, "num_" .. var_3_4 % 10), arg_3_2:Find("num"))
-
-				math = var_2_10012
-				var_3_4 = var_2_10012.floor(var_3_4 / 10)
+				var_3_2 = math.floor(arg_3_1 / 10)
 			end
 
-			setActive = var_8
+			setActive(arg_3_2:Find("content/lock"), not var_3_1)
+			setActive(arg_3_2:Find("content/mark"), var_3_1 and not arg_2_0.unlockDic[arg_2_0.ids[arg_3_1]])
 
-			var_8(arg_3_2:Find("content/lock"), not var_3_3)
+			local var_3_4 = arg_3_2:Find("content/name")
 
-			setActive = var_8
+			if arg_2_0.unlockDic[arg_2_0.ids[arg_3_1]] then
+				local var_3_5 = pg.dorm3d_collection_template[arg_2_0.ids[arg_3_1]].name
 
-			var_8(arg_3_2:Find("content/mark"), var_3_3 and not var_3_2)
+				if not pg.dorm3d_collection_template[arg_2_0.ids[arg_3_1]].name then
+					if var_3_1 then
+						var_3_5 = i18n("dorm3d_collect_not_found", i18n(pg.dorm3d_collection_template[arg_2_0.ids[arg_3_1]].text)) or i18n("dorm3d_collect_locked", pg.dorm3d_collection_template[arg_2_0.ids[arg_3_1]].unlock[2])
 
-			setText = var_8
+						var_3_3(var_3_4, var_3_5)
 
-			local var_3_6 = arg_3_2:Find("content/name")
+						local function var_3_6(arg_4_0)
+							setTextColor(arg_3_2:Find("content/name"), Color.NewHex(not var_3_0 and "a9a9a9" or arg_4_0 and "2d1dfc" or "393a3c"))
+							eachChild(arg_3_2:Find("num"), function(arg_5_0)
+								setImageColor(arg_5_0, Color.NewHex(arg_4_0 and "2d1dfd" or "393a3c"))
 
-			if not var_3_2 or not var_3_1.name then
-				if var_3_3 then
-					i18n = var_3_8
-
-					local var_3_7 = "dorm3d_collect_not_found"
-
-					i18n = var_2_10014
-
-					local var_3_8
-
-					if not var_3_8(var_3_7, var_2_10014(var_3_1.text)) then
-						i18n = var_3_8
-						var_3_8 = var_3_8("dorm3d_collect_locked", var_3_1.unlock[2])
-					end
-
-					var_8(var_3_6, var_3_8)
-
-					local function var_3_9(arg_4_0)
-						setTextColor = var_3_10001
-
-						local var_4_0 = arg_3_2
-						local var_4_1 = var_3.Find(var_4_0, "content/name")
-
-						Color = var_3_10004
-
-						var_3_10001(var_4_1, var_3_10004.NewHex(not var_3_2 and "a9a9a9" or arg_4_0 and "2d1dfc" or "393a3c"))
-
-						eachChild = var_3_10001
-
-						local var_4_2 = arg_3_2
-
-						var_3_10001(var_3.Find(var_4_2, "num"), function(arg_5_0)
-							setImageColor = var_4_10001
-
-							local var_5_0 = arg_5_0
-
-							Color = var_4_10004
-
-							var_4_10001(var_5_0, var_4_10004.NewHex(arg_4_0 and "2d1dfd" or "393a3c"))
+								return
+							end)
 
 							return
-						end)
-
-						return
-					end
-
-					onToggle = var_9
-
-					local var_3_10 = arg_2_0
-					local var_3_11 = arg_3_2
-
-					local function var_3_12(arg_6_0)
-						if arg_6_0 then
-							local var_6_0 = arg_2_0
-
-							var_1.UpdateDisplay(var_6_0, arg_3_1, var_3_0)
 						end
 
-						var_3_9(arg_6_0)
+						onToggle(arg_2_0, arg_3_2, function(arg_6_0)
+							if arg_6_0 then
+								arg_2_0:UpdateDisplay(arg_3_1, var_0)
+							end
+
+							var_3_6(arg_6_0)
+
+							return
+						end, SFX_PANEL)
+						;(function(arg_4_0)
+							setTextColor(arg_3_2:Find("content/name"), Color.NewHex(not var_3_0 and "a9a9a9" or arg_4_0 and "2d1dfc" or "393a3c"))
+							eachChild(arg_3_2:Find("num"), function(arg_5_0)
+								setImageColor(arg_5_0, Color.NewHex(arg_4_0 and "2d1dfd" or "393a3c"))
+
+								return
+							end)
+
+							return
+						end)()
 
 						return
 					end
-
-					SFX_PANEL = var_2_10014
-
-					var_9(var_3_10, var_3_11, var_3_12, var_2_10014)
-					var_3_9()
-
-					return
 				end
 			end
 		end
 	end)
 
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.numContainer = var_2.Find(var_2_3, "list/number")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.rtInfo = var_2.Find(var_2_4, "info")
+	arg_2_0.numContainer = arg_2_0._tf:Find("list/number")
+	arg_2_0.rtInfo = arg_2_0._tf:Find("info")
 
 	return
 end
 
-function var_0_1.OnInit(arg_7_0)
-	pg = var_1_10001
+function var_0_0.OnInit(arg_7_0)
+	arg_7_0.dorm3dmainscene = pg.m02:retrieveMediator(Dorm3dRoomMediator.__cname):getViewComponent()
 
-	local var_7_0 = var_1_10001.m02
-	local var_7_1 = var_1.retrieveMediator
+	local var_7_0 = getProxy(ApartmentProxy):getRoom(arg_7_0.contextData.roomId)
 
-	Dorm3dRoomMediator = var_1_10004
+	arg_7_0.unlockDic = var_7_0.collectItemDic
 
-	local var_7_2 = var_7_1(var_7_0, var_1_10004.__cname)
+	local var_7_1 = pg.dorm3d_collection_template.get_id_list_by_room_id[var_7_0:GetConfigID()] or {}
 
-	arg_7_0.dorm3dmainscene = var_1.getViewComponent(var_7_2)
-	getProxy = var_2
-	ApartmentProxy = var_7_2
+	arg_7_0.ids = Clone(var_7_1)
 
-	local var_7_3 = var_2(var_7_2)
-
-	arg_7_0.unlockDic = var_2.getRoom(var_7_3, arg_7_0.contextData.roomId).collectItemDic
-	Clone = var_3
-	pg = var_5
-
-	local var_7_4
-
-	if not var_5.dorm3d_collection_template.get_id_list_by_room_id[var_2:GetConfigID()] then
-		var_7_4 = {}
-	end
-
-	arg_7_0.ids = var_3(var_7_4)
-	table = var_3
-
-	local var_7_5 = var_3.sort
-	local var_7_6 = arg_7_0.ids
-
-	CompareFuncs = var_6
-
-	var_7_5(var_7_6, var_6({
+	table.sort(arg_7_0.ids, CompareFuncs({
 		function(arg_8_0)
 			return arg_7_0.unlockDic[arg_8_0] and 0 or 1
 		end,
 		function(arg_9_0)
-			ApartmentProxy = var_2_10001
-
-			local var_9_0 = var_2_10001.CheckUnlockConfig
-
-			pg = var_2_10003
-
-			return var_9_0(var_2_10003.dorm3d_collection_template[arg_9_0].unlock) and 0 or 1
+			return ApartmentProxy.CheckUnlockConfig(pg.dorm3d_collection_template[arg_9_0].unlock) and 0 or 1
 		end,
 		function(arg_10_0)
 			return arg_10_0
 		end
 	}))
-
-	setText = var_7_5
-
-	local var_7_7 = arg_7_0.rtInfo
-	local var_7_8 = var_5.Find(var_7_7, "count")
-
-	string = var_6
-
-	local var_7_9 = var_6.format
-	local var_7_10 = "<color=#2d1dfc>%d</color>/%d"
-
-	table = var_9
-
-	var_7_5(var_7_8, var_7_9(var_7_10, var_9.getCount(arg_7_0.unlockDic), #arg_7_0.ids))
-
-	local var_7_11 = arg_7_0.itemList
-
-	var_3.align(var_7_11, #arg_7_0.ids)
-
-	triggerToggle = var_3
-
-	local var_7_12 = arg_7_0.itemList.container
-
-	var_3(var_5.GetChild(var_7_12, 0), true)
+	setText(arg_7_0.rtInfo:Find("count"), string.format("<color=#2d1dfc>%d</color>/%d", table.getCount(arg_7_0.unlockDic), #arg_7_0.ids))
+	arg_7_0.itemList:align(#arg_7_0.ids)
+	triggerToggle(arg_7_0.itemList.container:GetChild(0), true)
 
 	return
 end
 
-function var_0_1.UpdateDisplay(arg_11_0, arg_11_1, arg_11_2)
-	pg = var_1_10003
+function var_0_0.UpdateDisplay(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = pg.dorm3d_collection_template[arg_11_2]
 
-	local var_11_0 = var_1_10003.dorm3d_collection_template[arg_11_2]
-	local var_11_1 = arg_11_0.unlockDic[arg_11_2]
+	setActive(arg_11_0.rtInfo:Find("empty"), not arg_11_0.unlockDic[arg_11_2])
 
-	setActive = var_1_10005
+	if not arg_11_0.unlockDic[arg_11_2] then
+		local var_11_1
 
-	local var_11_2 = arg_11_0.rtInfo
+		if not _.any(var_11_0.model, function(arg_12_0)
+			local var_12_1, var_12_2 = arg_11_0.dorm3dmainscene:CheckSceneItemActiveByPath(arg_12_0)
 
-	var_1_10005(var_7.Find(var_11_2, "empty"), not var_11_1)
+			var_11_1 = var_12_2
 
-	if not var_11_1 then
-		local var_11_3
-
-		_ = var_1_10006
-
-		local var_11_5, var_11_7
-
-		if not var_1_10006.any(var_11_0.model, function(arg_12_0)
-			local var_12_0
-			local var_12_1 = arg_11_0.dorm3dmainscene
-			local var_12_2, var_12_3 = var_2.CheckSceneItemActiveByPath(var_12_1, arg_12_0)
-
-			var_11_3 = var_12_3
-
-			return var_12_2
+			return var_12_1
 		end) then
-			Dorm3dFurniture = var_11_5
-
-			local var_11_4 = var_11_5.New({
-				configId = var_11_3
-			})
-
-			var_11_5 = var_11_5.GetName(var_11_4)
-			setText = var_8
-
-			local var_11_6 = arg_11_0.rtInfo
-
-			var_11_7 = var_11_7.Find(var_11_6, "empty")
-			i18n = var_1_10011
-
-			var_8(var_11_7, var_1_10011("dorm3d_collect_block_by_furniture", var_11_5))
+			setText(arg_11_0.rtInfo:Find("empty"), i18n("dorm3d_collect_block_by_furniture", (Dorm3dFurniture.New({
+				configId = nil
+			}):GetName())))
 		else
-			setText = var_11_5
-
-			local var_11_8 = arg_11_0.rtInfo
-			local var_11_9 = var_9.Find(var_11_8, "empty")
-
-			i18n = var_11_7
-
-			var_11_5(var_11_9, var_11_7("dorm3d_collect_nothing"))
+			setText(arg_11_0.rtInfo:Find("empty"), i18n("dorm3d_collect_nothing"))
 		end
 	end
 
-	local var_11_10 = arg_11_0.rtInfo
-	local var_11_11 = var_5.Find(var_11_10, "content")
+	local var_11_2 = arg_11_0.rtInfo:Find("content")
 
-	setActive = var_1_10006
+	setActive(var_11_2, arg_11_0.unlockDic[arg_11_2])
 
-	var_1_10006(var_11_11, var_11_1)
-
-	if not var_11_1 then
+	if not arg_11_0.unlockDic[arg_11_2] then
 		return
 	end
 
-	GetImageSpriteFromAtlasAsync = var_1_10006
-
-	var_1_10006("dorm3dcollection/" .. var_11_0.icon, "", var_11_11:Find("icon"), true)
-
-	setText = var_1_10006
-
-	var_1_10006(var_11_11:Find("name/Text"), var_11_0.name)
-
-	setText = var_1_10006
-
-	var_1_10006(var_11_11:Find("desc"), var_11_0.desc)
-
-	setActive = var_1_10006
-
-	local var_11_12 = var_11_11:Find("favor")
-	local var_11_13 = var_11_0.award
-
-	var_1_10006(var_11_12, 0 < var_11_13)
+	GetImageSpriteFromAtlasAsync("dorm3dcollection/" .. var_11_0.icon, "", var_11_2:Find("icon"), true)
+	setText(var_11_2:Find("name/Text"), var_11_0.name)
+	setText(var_11_2:Find("desc"), var_11_0.desc)
+	setActive(var_11_2:Find("favor"), var_11_0.award > 0)
 
 	if var_11_0.award > 0 then
-		pg = var_6
-
-		local var_11_14 = var_6.dorm3d_favor_trigger[var_11_0.award].num
-
-		setText = var_7
-
-		local var_11_15 = var_11_11:Find("favor/Text")
-
-		i18n = var_10
-
-		var_7(var_11_15, var_10("dorm3d_collect_favor_plus") .. var_11_14)
+		setText(var_11_2:Find("favor/Text"), i18n("dorm3d_collect_favor_plus") .. pg.dorm3d_favor_trigger[var_11_0.award].num)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

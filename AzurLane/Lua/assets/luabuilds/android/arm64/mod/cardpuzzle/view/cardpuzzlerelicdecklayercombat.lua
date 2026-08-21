@@ -1,52 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CardPuzzleRelicDeckLayerCombat", CardPuzzleRelicDeckLayer)
 
-local var_0_0 = "CardPuzzleRelicDeckLayerCombat"
-
-CardPuzzleRelicDeckLayer = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003)
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "CardTowerGiftDeckCombat"
 end
 
-function var_0_1.init(arg_2_0)
-	var_0_1.super.init(arg_2_0)
-
-	onButton = var_1
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0._tf
-	local var_2_2 = var_4.Find(var_2_1, "backBtn")
-
-	local function var_2_3()
-		local var_3_0 = arg_2_0
-
-		var_0.OnBackward(var_3_0)
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
+	onButton(arg_2_0, arg_2_0._tf:Find("backBtn"), function()
+		arg_2_0:OnBackward()
 
 		return
-	end
-
-	SFX_PANEL = var_2_1
-
-	var_1(var_2_0, var_2_2, var_2_3, var_2_1)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnBackward(arg_4_0)
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.emit
+function var_0_0.OnBackward(arg_4_0)
+	arg_4_0:emit(CardPuzzleCardDeckMediator.CLOSE_LAYER)
 
-	CardPuzzleCardDeckMediator = var_1_10004
-
-	var_4_1(var_4_0, var_1_10004.CLOSE_LAYER)
-
-	return var_0_1.super.OnBackward(arg_4_0)
+	return var_0_0.super.OnBackward(arg_4_0)
 end
 
-function var_0_1.willExit(arg_5_0)
+function var_0_0.willExit(arg_5_0)
 	return
 end
 
-return var_0_1
+return var_0_0

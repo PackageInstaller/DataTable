@@ -92,24 +92,18 @@ function __onResHeroRobEquipHandler(self, msg)
     end
 end
 
---- 全部战员简易装备信息 13103
+-- --- 全部战员简易装备信息 13103
 function __onResAllHeroEquipHandler(self, msg)
-    local dic = {}
-    local list = msg.all_hero_equip_info
-    for i = 1, #list do
-        if (not dic[list[i].hero_id]) then
-            dic[list[i].hero_id] = {}
-        end
-        table.insert(dic[list[i].hero_id], list[i])
-    end
-    for heroId, equipMsgData in pairs(dic) do
+    for i = 1, #msg.all_hero_equip_info, 1 do
+        local heroId = msg.all_hero_equip_info[i].hero_id
+        local equipList =  msg.all_hero_equip_info[i].equip_list
         local heroVo = hero.HeroManager:getHeroVo(heroId)
         if (heroVo and (not heroVo.equipList or #heroVo.equipList <= 0)) then
-            heroVo:setEquipDetailList(equipMsgData)
+            heroVo:setEquipDetailList(equipList)
         end
     end
-    GameDispatcher:dispatchEvent(EventName.UPDATE_ALL_HERO_EQUIP, {})
-end
+     GameDispatcher:dispatchEvent(EventName.UPDATE_ALL_HERO_EQUIP, {})
+ end
 
 ---------------------------------------------------------------请求------------------------------------------------------------------
 -- 请求装备英雄装备

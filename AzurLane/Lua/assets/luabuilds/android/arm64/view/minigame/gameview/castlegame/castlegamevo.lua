@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CastleGameVo")
+﻿local var_0_0 = class("CastleGameVo")
 
 var_0_0.game_id = nil
 var_0_0.hub_id = nil
@@ -9,15 +7,7 @@ var_0_0.drop = nil
 var_0_0.game_bgm = "bar-soft"
 var_0_0.game_time = 90
 var_0_0.rule_tip = "uscastle2023_minigame_help"
-Application = var_1
-
-local var_0_1
-
-if not var_1.targetFrameRate then
-	var_0_1 = 60
-end
-
-var_0_0.frameRate = var_0_1
+var_0_0.frameRate = Application.targetFrameRate or 60
 var_0_0.ui_atlas = "ui/minigameui/castlegameui_atlas"
 var_0_0.game_ui = "CastleGameUI"
 var_0_0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
@@ -3849,21 +3839,9 @@ var_0_0.round_rule = {
 function var_0_0.Init(arg_1_0, arg_1_1)
 	var_0_0.game_id = arg_1_0
 	var_0_0.hub_id = arg_1_1
-
-	local var_1_0 = var_0_0
-
-	pg = var_1_10003
-	var_1_0.total_times = var_1_10003.mini_game_hub[var_0_0.hub_id]
-
-	local var_1_1 = var_0_0
-
-	pg = var_3
-	var_1_1.drop = var_3.mini_game[var_0_0.game_id].simple_config_data.drop_ids
-
-	local var_1_2 = var_0_0
-
-	pg = var_3
-	var_1_2.total_times = var_3.mini_game_hub[var_0_0.hub_id].reward_need
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id]
+	var_0_0.drop = pg.mini_game[var_0_0.game_id].simple_config_data.drop_ids
+	var_0_0.total_times = pg.mini_game_hub[var_0_0.hub_id].reward_need
 
 	return
 end
@@ -3874,15 +3852,8 @@ function var_0_0.Prepare()
 	var_0_0.scoreNum = 0
 
 	local var_2_0 = var_0_0.round_rule[var_0_0.GetGameRound()]
-	local var_2_1 = var_0_0
 
-	Clone = var_1_10002
-	CastleGameVo = var_1_10004
-
-	local var_2_2 = var_1_10004.round_data
-
-	math = var_1_10005
-	var_2_1.roundData = var_1_10002(var_2_2[var_2_0[var_1_10005.random(1, #var_2_0)]])
+	var_0_0.roundData = Clone(CastleGameVo.round_data[var_2_0[math.random(1, #var_2_0)]])
 
 	return
 end
@@ -3892,19 +3863,14 @@ function var_0_0.GetGameTimes()
 end
 
 function var_0_0.GetGameUseTimes()
-	local var_4_0
-
-	if not var_0_0.GetMiniGameHubData().usedtime then
-		var_4_0 = 0
-	end
-
-	return var_4_0
+	return var_0_0.GetMiniGameHubData().usedtime or 0
 end
 
 function var_0_0.GetGameRound()
 	local var_5_0 = var_0_0.GetGameUseTimes()
+	local var_5_1 = var_0_0.GetGameTimes()
 
-	if var_0_0.GetGameTimes() and var_1 > 0 then
+	if var_5_1 and var_5_1 > 0 then
 		return var_5_0 + 1
 	else
 		return var_5_0
@@ -3914,39 +3880,17 @@ function var_0_0.GetGameRound()
 end
 
 function var_0_0.GetMiniGameData()
-	getProxy = var_1_10000
-	MiniGameProxy = var_1_10002
-
-	local var_6_0 = var_1_10000(var_1_10002)
-
-	return var_0.GetMiniGameData(var_6_0, var_0_0.game_id)
+	return getProxy(MiniGameProxy):GetMiniGameData(var_0_0.game_id)
 end
 
 function var_0_0.GetMiniGameHubData()
-	getProxy = var_1_10000
-	MiniGameProxy = var_1_10002
-
-	local var_7_0 = var_1_10000(var_1_10002)
-
-	return var_0.GetHubByHubId(var_7_0, var_0_0.hub_id)
+	return getProxy(MiniGameProxy):GetHubByHubId(var_0_0.hub_id)
 end
 
 function var_0_0.LoadSkeletonData(arg_8_0, arg_8_1)
-	LoadAnyAsync = var_1_10002
-
-	local var_8_0 = var_0_0.ui_atlas
-	local var_8_1 = arg_8_0
-
-	typeof = var_1_10006
-	Object = var_1_10008
-
-	var_1_10002(var_8_0, var_8_1, var_1_10006(var_1_10008), function(arg_9_0)
+	LoadAnyAsync(var_0_0.ui_atlas, arg_8_0, typeof(Object), function(arg_9_0)
 		if arg_9_0 then
-			SpineAnimUI = var_2_10001
-
-			local var_9_0 = var_2_10001.AnimChar(arg_8_0, arg_9_0)
-
-			arg_8_1(var_9_0)
+			arg_8_1((SpineAnimUI.AnimChar(arg_8_0, arg_9_0)))
 		end
 
 		return
@@ -3956,17 +3900,11 @@ function var_0_0.LoadSkeletonData(arg_8_0, arg_8_1)
 end
 
 function var_0_0.getBeachMap(arg_10_0)
-	GetSpriteFromAtlas = var_1_10001
-	BeachGuardAsset = var_1_10003
-
-	return var_1_10001(var_1_10003.map_asset_path, arg_10_0)
+	return GetSpriteFromAtlas(BeachGuardAsset.map_asset_path, arg_10_0)
 end
 
 function var_0_0.getFloorImage(arg_11_0)
-	GetSpriteFromAtlas = var_1_10001
-	CastleGameVo = var_1_10003
-
-	return var_1_10001(var_1_10003.ui_atlas, arg_11_0)
+	return GetSpriteFromAtlas(CastleGameVo.ui_atlas, arg_11_0)
 end
 
 function var_0_0.Sign(arg_12_0, arg_12_1, arg_12_2)
@@ -3974,100 +3912,49 @@ function var_0_0.Sign(arg_12_0, arg_12_1, arg_12_2)
 end
 
 function var_0_0.PointInTriangle(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
-	local var_13_0
-	local var_13_1
-	local var_13_2
-	local var_13_3
-	local var_13_4
-	local var_13_5 = var_0_0.Sign(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_6 = var_0_0.Sign(arg_13_0, arg_13_2, arg_13_3)
-	local var_13_7 = var_0_0.Sign(arg_13_0, arg_13_3, arg_13_1)
-	local var_13_8 = var_13_5 < 0 or var_13_6 < 0 or var_13_7 < 0
-	local var_13_9 = var_13_5 > 0 or var_13_6 > 0 or var_13_7 > 0
+	local var_13_2 = var_0_0.Sign(arg_13_0, arg_13_2, arg_13_3)
+	local var_13_3 = var_0_0.Sign(arg_13_0, arg_13_3, arg_13_1)
+	local var_13_4 = var_0_0.Sign(arg_13_0, arg_13_1, arg_13_2) > 0 or nil > 0 or nil > 0
 
-	return not var_13_8 or not var_13_9
+	return not (nil < 0 or nil < 0 or nil < 0) or not nil
 end
 
 function var_0_0.PointLeftLine(arg_14_0, arg_14_1, arg_14_2)
 	return (arg_14_2.x - arg_14_1.x) * (arg_14_0.y - arg_14_1.y) - (arg_14_2.y - arg_14_1.y) * (arg_14_0.x - arg_14_1.x) > 0
 end
 
-local var_0_2 = 157
-local var_0_3 = 123
-local var_0_4 = 91
-local var_0_5 = 2
-local var_0_6 = -0.48
-
-Vector2 = var_0_10006
-
-local var_0_7 = var_0_10006(-671, -95)
+local var_0_1 = 157
+local var_0_2 = 123
+local var_0_3 = 91
+local var_0_4 = 2
+local var_0_5 = -0.48
+local var_0_6 = Vector2(-671, -95)
 
 function var_0_0.GetRotationPos(arg_15_0)
-	math = var_1_10001
+	local var_15_0 = math.cos(var_0_5)
+	local var_15_1 = math.sin(var_0_5)
+	local var_15_2 = math.floor(arg_15_0 / CastleGameVo.h_count)
 
-	local var_15_0 = var_1_10001.cos(var_0_6)
-
-	math = var_1_10002
-
-	local var_15_1 = var_1_10002.sin(var_0_6)
-
-	CastleGameVo = var_3
-
-	local var_15_2 = arg_15_0 % var_3.w_count
-
-	math = var_4
-
-	local var_15_3 = var_4.floor
-
-	CastleGameVo = var_1_10006
-
-	local var_15_4 = var_15_3(arg_15_0 / var_1_10006.h_count)
-	local var_15_5 = var_0_2 * var_15_2 + var_0_4 * var_15_4
-	local var_15_6 = var_0_3 * var_15_4 + var_0_5 * var_15_2
-	local var_15_7 = var_15_0 * var_15_5 - var_15_1 * var_15_6 + var_0_7.x
-	local var_15_8 = var_15_0 * var_15_6 + var_15_1 * var_15_5 + var_0_7.y
-
-	Vector2 = var_9
-
-	return var_9(var_15_7, var_15_8)
+	return Vector2(var_15_0 * (var_0_1 * (arg_15_0 % CastleGameVo.w_count) + var_0_3 * var_15_2) - var_15_1 * (var_0_2 * var_15_2 + var_0_4 * (arg_15_0 % CastleGameVo.w_count)) + var_0_6.x, var_15_0 * (var_0_2 * var_15_2 + var_0_4 * (arg_15_0 % CastleGameVo.w_count)) + var_15_1 * (var_0_1 * (arg_15_0 % CastleGameVo.w_count) + var_0_3 * var_15_2) + var_0_6.y)
 end
 
 function var_0_0.GetRotationPosByWH(arg_16_0, arg_16_1)
-	math = var_1_10002
+	local var_16_0 = math.cos(var_0_5)
+	local var_16_1 = math.sin(var_0_5)
 
-	local var_16_0 = var_1_10002.cos(var_0_6)
-
-	math = var_1_10003
-
-	local var_16_1 = var_1_10003.sin(var_0_6)
-	local var_16_2 = var_0_2 * arg_16_0 + var_0_4 * arg_16_1
-	local var_16_3 = var_0_3 * arg_16_1 + var_0_5 * arg_16_0
-	local var_16_4 = var_16_0 * var_16_2 - var_16_1 * var_16_3 + var_0_7.x
-	local var_16_5 = var_16_0 * var_16_3 + var_16_1 * var_16_2 + var_0_7.y
-
-	Vector2 = var_8
-
-	return var_8(var_16_4, var_16_5)
+	return Vector2(var_16_0 * (var_0_1 * arg_16_0 + var_0_3 * arg_16_1) - var_16_1 * (var_0_2 * arg_16_1 + var_0_4 * arg_16_0) + var_0_6.x, var_16_0 * (var_0_2 * arg_16_1 + var_0_4 * arg_16_0) + var_16_1 * (var_0_1 * arg_16_0 + var_0_3 * arg_16_1) + var_0_6.y)
 end
 
 function var_0_0.PointFootLine(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_0.x
-	local var_17_1 = arg_17_0.y
-	local var_17_2 = arg_17_1.x
-	local var_17_3 = arg_17_1.y
-	local var_17_4 = arg_17_2.x
-	local var_17_5 = arg_17_2.y
-	local var_17_6 = -((var_17_2 - var_17_0) * (var_17_4 - var_17_2) + (var_17_3 - var_17_1) * (var_17_5 - var_17_3)) / ((var_17_2 - var_17_4) * (var_17_2 - var_17_4) + (var_17_3 - var_17_5) * (var_17_3 - var_17_5)) * (var_17_4 - var_17_2) + var_17_2
-	local var_17_7 = var_9 * (var_17_5 - var_17_3) + var_17_3
-	local var_17_8 = true
+	local var_17_0 = -((arg_17_1.x - arg_17_0.x) * (arg_17_2.x - arg_17_1.x) + (arg_17_1.y - arg_17_0.y) * (arg_17_2.y - arg_17_1.y)) / ((arg_17_1.x - arg_17_2.x) * (arg_17_1.x - arg_17_2.x) + (arg_17_1.y - arg_17_2.y) * (arg_17_1.y - arg_17_2.y)) * (arg_17_2.x - arg_17_1.x) + arg_17_1.x
+	local var_17_1 = -((arg_17_1.x - arg_17_0.x) * (arg_17_2.x - arg_17_1.x) + (arg_17_1.y - arg_17_0.y) * (arg_17_2.y - arg_17_1.y)) / ((arg_17_1.x - arg_17_2.x) * (arg_17_1.x - arg_17_2.x) + (arg_17_1.y - arg_17_2.y) * (arg_17_1.y - arg_17_2.y)) * (arg_17_2.y - arg_17_1.y) + arg_17_1.y
+	local var_17_2 = true
 
-	if var_9 < 0 or 1 < var_9 then
-		var_17_8 = false
+	if -((arg_17_1.x - arg_17_0.x) * (arg_17_2.x - arg_17_1.x) + (arg_17_1.y - arg_17_0.y) * (arg_17_2.y - arg_17_1.y)) / ((arg_17_1.x - arg_17_2.x) * (arg_17_1.x - arg_17_2.x) + (arg_17_1.y - arg_17_2.y) * (arg_17_1.y - arg_17_2.y)) < 0 or -((arg_17_1.x - arg_17_0.x) * (arg_17_2.x - arg_17_1.x) + (arg_17_1.y - arg_17_0.y) * (arg_17_2.y - arg_17_1.y)) / ((arg_17_1.x - arg_17_2.x) * (arg_17_1.x - arg_17_2.x) + (arg_17_1.y - arg_17_2.y) * (arg_17_1.y - arg_17_2.y)) > 1 then
+		var_17_2 = false
 	end
 
-	Vector2 = var_13
-
-	return var_13(var_17_6, var_17_7), var_17_8
+	return Vector2(var_17_0, var_17_1), var_17_2
 end
 
 var_0_0.gameTime = 0

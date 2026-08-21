@@ -1,12 +1,4 @@
-﻿local var_0_0 = {
-	"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
-	"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
-	"哎呀~规避失败啦，只能硬着头皮上啦！",
-	"<color=#ff7d36>舰队的总机动值将影响规避的结果</color>，如果机动值不足，很容易出现规避失败的情况噢",
-	"点击<color=#ff7d36>出击</color>进行战斗！    出击需要<color=#ff7d36>消耗石油，消耗值取决于出战角色</color>"
-}
-
-return {
+﻿return {
 	id = "S008",
 	events = {
 		{
@@ -17,17 +9,18 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
+					"哎呀~规避失败啦，只能硬着头皮上啦！",
+					"<color=#ff7d36>舰队的总机动值将影响规避的结果</color>，如果机动值不足，很容易出现规避失败的情况噢",
+					"点击<color=#ff7d36>出击</color>进行战斗！    出击需要<color=#ff7d36>消耗石油，消耗值取决于出战角色</color>"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -51,7 +44,13 @@ return {
 				dir = 1,
 				posY = -351,
 				posX = -257,
-				text = var_0_0[2]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
+					"哎呀~规避失败啦，只能硬着头皮上啦！",
+					"<color=#ff7d36>舰队的总机动值将影响规避的结果</color>，如果机动值不足，很容易出现规避失败的情况噢",
+					"点击<color=#ff7d36>出击</color>进行战斗！    出击需要<color=#ff7d36>消耗石油，消耗值取决于出战角色</color>"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -77,7 +76,13 @@ return {
 				dir = 1,
 				posY = -295,
 				posX = -297,
-				text = var_0_0[3]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
+					"哎呀~规避失败啦，只能硬着头皮上啦！",
+					"<color=#ff7d36>舰队的总机动值将影响规避的结果</color>，如果机动值不足，很容易出现规避失败的情况噢",
+					"点击<color=#ff7d36>出击</color>进行战斗！    出击需要<color=#ff7d36>消耗石油，消耗值取决于出战角色</color>"
+				})[3]
 			}
 		},
 		{
@@ -88,7 +93,13 @@ return {
 				dir = 1,
 				posY = -295,
 				posX = -297,
-				text = var_0_0[4]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
+					"哎呀~规避失败啦，只能硬着头皮上啦！",
+					"<color=#ff7d36>舰队的总机动值将影响规避的结果</color>，如果机动值不足，很容易出现规避失败的情况噢",
+					"点击<color=#ff7d36>出击</color>进行战斗！    出击需要<color=#ff7d36>消耗石油，消耗值取决于出战角色</color>"
+				})[4]
 			}
 		},
 		{
@@ -98,7 +109,13 @@ return {
 				dir = 1,
 				posY = -68.93,
 				posX = 241.87,
-				text = var_0_0[5]
+				text = ({
+					"接下来我们的任务是支援白鹰航空舰队的作战演习    请点击<color=#ff7d36>出击</color>",
+					"索敌结果显示了大黄蜂可能出现的位置，让我们朝着目标点前进吧~",
+					"哎呀~规避失败啦，只能硬着头皮上啦！",
+					"<color=#ff7d36>舰队的总机动值将影响规避的结果</color>，如果机动值不足，很容易出现规避失败的情况噢",
+					"点击<color=#ff7d36>出击</color>进行战斗！    出击需要<color=#ff7d36>消耗石油，消耗值取决于出战角色</color>"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,

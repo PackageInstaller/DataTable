@@ -3,7 +3,7 @@ cycle = {}
 require("game/cycle/manager/CycleConst")
 
 ---------------------------------------------------------------- 数据 ----------------------------------------------------------------
-
+cycle.CycleMonthRewardVo = require("game/cycle/manager/vo/CycleMonthRewardVo")
 -- 难度
 cycle.CycleDifficultyVo = require("game/cycle/manager/vo/CycleDifficultyVo")
 -- 层数
@@ -94,7 +94,7 @@ cycle.CycleCollectionTargetItem = require("game/cycle/view/item/CycleCollectionT
 --剧情目标item
 cycle.CycleStoryTargetItem = require("game/cycle/view/item/CycleStoryTargetItem")
 ---------------------------------------------------------------- 界面 ----------------------------------------------------------------
-
+cycle.CycleMonthPanel = require("game/cycle/view/CycleMonthPanel")
 cycle.CycleTaskPanel = require("game/cycle/view/CycleTaskPanel")
 
 cycle.CycleTopPanel = require("game/cycle/view/CycleTopPanel")

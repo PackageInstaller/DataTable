@@ -1,53 +1,27 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EducateScheduleMediator", import(".base.EducateContextMediator"))
 
-local var_0_0 = "EducateScheduleMediator"
+var_0_0.GET_PLANS = "GET_PLANS"
+var_0_0.OPEN_FILTER_LAYER = "OPEN_FILTER_LAYER"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".base.EducateContextMediator"))
-
-var_0_1.GET_PLANS = "GET_PLANS"
-var_0_1.OPEN_FILTER_LAYER = "OPEN_FILTER_LAYER"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GET_PLANS, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		local var_2_2 = var_2_10005.EDUCATE_GET_PLANS
-		local var_2_3 = {}
-
-		EducatePlanProxy = var_2_10007
-		var_2_3.plans = var_2_10007.GridData2ProtData(arg_2_1.gridData)
-		var_2_3.isSkip = arg_2_1.isSkip
-		var_2_3.isSkipEvent = arg_2_1.isSkipEvent
-
-		function var_2_3.callback()
-			return
-		end
-
-		var_2_1(var_2_0, var_2_2, var_2_3)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GET_PLANS, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.EDUCATE_GET_PLANS, {
+			plans = EducatePlanProxy.GridData2ProtData(arg_2_1.gridData),
+			isSkip = arg_2_1.isSkip,
+			isSkipEvent = arg_2_1.isSkipEvent,
+			callback = function()
+				return
+			end
+		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_FILTER_LAYER, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_4_2 = var_2_10005.New
-		local var_4_3 = {}
-
-		EducateScheduleFilterLayer = var_2_10008
-		var_4_3.viewComponent = var_2_10008
-		EducateScheduleFilterMediator = var_2_10008
-		var_4_3.mediator = var_2_10008
-		var_4_3.data = arg_4_1
-
-		var_4_1(var_4_0, var_4_2(var_4_3))
+	arg_1_0:bind(var_0_0.OPEN_FILTER_LAYER, function(arg_4_0, arg_4_1)
+		arg_1_0:addSubLayers(Context.New({
+			viewComponent = EducateScheduleFilterLayer,
+			mediator = EducateScheduleFilterMediator,
+			data = arg_4_1
+		}))
 
 		return
 	end)
@@ -55,36 +29,20 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	GAME = var_1_10002
-	var_5_0[1] = var_1_10002.EDUCATE_REFRESH_DONE
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		GAME.EDUCATE_REFRESH_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1
-	local var_6_1 = arg_6_1.getName(var_6_0)
-	local var_6_2 = arg_6_1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getBody()
 
-	GAME = var_6_0
-
-	if var_6_1 == var_6_0.EDUCATE_REFRESH_DONE then
-		local var_6_3 = arg_6_0.viewComponent
-		local var_6_4 = var_4.emit
-
-		EducateBaseUI = var_1_10007
-
-		local var_6_5 = var_1_10007.EDUCATE_CHANGE_SCENE
-
-		SCENE = var_1_10008
-
-		var_6_4(var_6_3, var_6_5, var_1_10008.EDUCATE)
+	if arg_6_1:getName() == GAME.EDUCATE_REFRESH_DONE then
+		arg_6_0.viewComponent:emit(EducateBaseUI.EDUCATE_CHANGE_SCENE, SCENE.EDUCATE)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

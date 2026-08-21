@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_ik") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_ik"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_ik = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_ik
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_ik = rawget(pg, "dorm3d_ik") or setmetatable({
+	__name = "dorm3d_ik"
+}, confNEO)
+pg.dorm3d_ik.all = {
 	1001,
 	1002,
 	1011,
@@ -729,25 +706,11 @@ var_0_3.all = {
 	71044001,
 	71044002
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_ik = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_ik = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_ik
-
-	var_1_0[1001] = {
+	pg.base.dorm3d_ik[1001] = {
 		action_back_time = 0.2,
 		tip_offset = "",
 		tip_text = "",
@@ -798,11 +761,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_ik
-
-	var_1_1[1002] = {
+	pg.base.dorm3d_ik[1002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -867,11 +826,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_ik
-
-	var_1_2[1011] = {
+	pg.base.dorm3d_ik[1011] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -936,11 +891,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_ik
-
-	var_1_3[1012] = {
+	pg.base.dorm3d_ik[1012] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1005,11 +956,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_ik
-
-	var_1_4[1021] = {
+	pg.base.dorm3d_ik[1021] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1088,11 +1035,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_ik
-
-	var_1_5[1022] = {
+	pg.base.dorm3d_ik[1022] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1157,11 +1100,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_ik
-
-	var_1_6[1031] = {
+	pg.base.dorm3d_ik[1031] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1199,11 +1138,7 @@ var_0_3.base.dorm3d_ik = {}
 			800
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_ik
-
-	var_1_7[10011000] = {
+	pg.base.dorm3d_ik[10011000] = {
 		action_back_time = 0.2,
 		tip_offset = "",
 		tip_text = "",
@@ -1282,11 +1217,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_ik
-
-	var_1_8[10011001] = {
+	pg.base.dorm3d_ik[10011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1351,11 +1282,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_ik
-
-	var_1_9[10012000] = {
+	pg.base.dorm3d_ik[10012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1434,11 +1361,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_ik
-
-	var_1_10[10012001] = {
+	pg.base.dorm3d_ik[10012001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1503,11 +1426,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_ik
-
-	var_1_11[10013000] = {
+	pg.base.dorm3d_ik[10013000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1558,11 +1477,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_ik
-
-	var_1_12[10013001] = {
+	pg.base.dorm3d_ik[10013001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1627,11 +1542,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_ik
-
-	var_1_13[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1710,11 +1621,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_ik
-
-	var_1_14[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1793,11 +1700,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_ik
-
-	var_1_15[10022000] = {
+	pg.base.dorm3d_ik[10022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1862,11 +1765,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_ik
-
-	var_1_16[10023000] = {
+	pg.base.dorm3d_ik[10023000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1931,11 +1830,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_ik
-
-	var_1_17[10021100] = {
+	pg.base.dorm3d_ik[10021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -1986,11 +1881,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_ik
-
-	var_1_18[10022100] = {
+	pg.base.dorm3d_ik[10022100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2069,11 +1960,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_ik
-
-	var_1_19[10023100] = {
+	pg.base.dorm3d_ik[10023100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2138,11 +2025,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_ik
-
-	var_1_20[10025000] = {
+	pg.base.dorm3d_ik[10025000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2207,11 +2090,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_ik
-
-	var_1_21[10025001] = {
+	pg.base.dorm3d_ik[10025001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2290,11 +2169,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_ik
-
-	var_1_22[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2373,11 +2248,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_ik
-
-	var_1_23[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2442,11 +2313,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_ik
-
-	var_1_24[10027000] = {
+	pg.base.dorm3d_ik[10027000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2511,11 +2378,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_ik
-
-	var_1_25[10027001] = {
+	pg.base.dorm3d_ik[10027001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2580,11 +2443,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_ik
-
-	var_1_26[10028000] = {
+	pg.base.dorm3d_ik[10028000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2635,11 +2494,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_ik
-
-	var_1_27[10028001] = {
+	pg.base.dorm3d_ik[10028001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2718,11 +2573,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_ik
-
-	var_1_28[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2787,11 +2638,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_ik
-
-	var_1_29[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2856,11 +2703,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_ik
-
-	var_1_30[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -2925,11 +2768,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_ik
-
-	var_1_31[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0.2,
 		tip_offset = "",
 		tip_text = "",
@@ -2983,11 +2822,7 @@ var_0_3.base.dorm3d_ik = {}
 			23.8333
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_ik
-
-	var_1_32[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0.2,
 		tip_offset = "",
 		tip_text = "",
@@ -3069,11 +2904,7 @@ var_0_3.base.dorm3d_ik = {}
 			777
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_ik
-
-	var_1_33[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3138,11 +2969,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_ik
-
-	var_1_34[10033000] = {
+	pg.base.dorm3d_ik[10033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3193,11 +3020,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_ik
-
-	var_1_35[10033001] = {
+	pg.base.dorm3d_ik[10033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3262,11 +3085,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_ik
-
-	var_1_36[10041000] = {
+	pg.base.dorm3d_ik[10041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3331,11 +3150,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_ik
-
-	var_1_37[10041001] = {
+	pg.base.dorm3d_ik[10041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3400,11 +3215,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_ik
-
-	var_1_38[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3469,11 +3280,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_ik
-
-	var_1_39[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3538,11 +3345,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_ik
-
-	var_1_40[10043000] = {
+	pg.base.dorm3d_ik[10043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3607,11 +3410,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_ik
-
-	var_1_41[10043001] = {
+	pg.base.dorm3d_ik[10043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3676,11 +3475,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_ik
-
-	var_1_42[10071000] = {
+	pg.base.dorm3d_ik[10071000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3773,11 +3568,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_ik
-
-	var_1_43[10071001] = {
+	pg.base.dorm3d_ik[10071001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3856,11 +3647,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_ik
-
-	var_1_44[10071002] = {
+	pg.base.dorm3d_ik[10071002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -3945,11 +3732,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_ik
-
-	var_1_45[10072000] = {
+	pg.base.dorm3d_ik[10072000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4028,11 +3811,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_ik
-
-	var_1_46[10072001] = {
+	pg.base.dorm3d_ik[10072001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4097,11 +3876,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_ik
-
-	var_1_47[10073000] = {
+	pg.base.dorm3d_ik[10073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4208,11 +3983,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_ik
-
-	var_1_48[10071100] = {
+	pg.base.dorm3d_ik[10071100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4277,11 +4048,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_ik
-
-	var_1_49[10071101] = {
+	pg.base.dorm3d_ik[10071101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4346,11 +4113,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_ik
-
-	var_1_50[10072100] = {
+	pg.base.dorm3d_ik[10072100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4429,11 +4192,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_ik
-
-	var_1_51[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4498,11 +4257,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_ik
-
-	var_1_52[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4567,11 +4322,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_ik
-
-	var_1_53[11501001] = {
+	pg.base.dorm3d_ik[11501001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4636,11 +4387,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_ik
-
-	var_1_54[11501002] = {
+	pg.base.dorm3d_ik[11501002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4705,11 +4452,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_ik
-
-	var_1_55[11502001] = {
+	pg.base.dorm3d_ik[11502001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4774,11 +4517,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_ik
-
-	var_1_56[11502002] = {
+	pg.base.dorm3d_ik[11502002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4843,11 +4582,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_ik
-
-	var_1_57[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4912,11 +4647,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_ik
-
-	var_1_58[26] = {
+	pg.base.dorm3d_ik[26] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -4981,11 +4712,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_ik
-
-	var_1_59[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5050,11 +4777,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_ik
-
-	var_1_60[2] = {
+	pg.base.dorm3d_ik[2] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5119,11 +4842,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_ik
-
-	var_1_61[11505001] = {
+	pg.base.dorm3d_ik[11505001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5188,11 +4907,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_ik
-
-	var_1_62[11505002] = {
+	pg.base.dorm3d_ik[11505002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5257,11 +4972,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_ik
-
-	var_1_63[11506001] = {
+	pg.base.dorm3d_ik[11506001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5326,11 +5037,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_ik
-
-	var_1_64[11506002] = {
+	pg.base.dorm3d_ik[11506002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5395,11 +5102,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_ik
-
-	var_1_65[11507001] = {
+	pg.base.dorm3d_ik[11507001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5464,11 +5167,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_ik
-
-	var_1_66[11507002] = {
+	pg.base.dorm3d_ik[11507002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5533,11 +5232,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_ik
-
-	var_1_67[11508001] = {
+	pg.base.dorm3d_ik[11508001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5602,11 +5297,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_ik
-
-	var_1_68[11508002] = {
+	pg.base.dorm3d_ik[11508002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5671,11 +5362,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_ik
-
-	var_1_69[11011000] = {
+	pg.base.dorm3d_ik[11011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5754,11 +5441,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_ik
-
-	var_1_70[11011001] = {
+	pg.base.dorm3d_ik[11011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5823,11 +5506,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_ik
-
-	var_1_71[11012000] = {
+	pg.base.dorm3d_ik[11012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5906,11 +5585,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_ik
-
-	var_1_72[11012001] = {
+	pg.base.dorm3d_ik[11012001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -5975,11 +5650,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_ik
-
-	var_1_73[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6030,11 +5701,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_ik
-
-	var_1_74[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6099,11 +5766,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_ik
-
-	var_1_75[11031000] = {
+	pg.base.dorm3d_ik[11031000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6168,11 +5831,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_ik
-
-	var_1_76[11031001] = {
+	pg.base.dorm3d_ik[11031001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6237,11 +5896,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.dorm3d_ik
-
-	var_1_77[11032000] = {
+	pg.base.dorm3d_ik[11032000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6306,11 +5961,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.dorm3d_ik
-
-	var_1_78[11032001] = {
+	pg.base.dorm3d_ik[11032001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6375,11 +6026,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.dorm3d_ik
-
-	var_1_79[11033000] = {
+	pg.base.dorm3d_ik[11033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6430,11 +6077,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.dorm3d_ik
-
-	var_1_80[11033001] = {
+	pg.base.dorm3d_ik[11033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6499,11 +6142,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.dorm3d_ik
-
-	var_1_81[11041000] = {
+	pg.base.dorm3d_ik[11041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6568,11 +6207,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.dorm3d_ik
-
-	var_1_82[11041001] = {
+	pg.base.dorm3d_ik[11041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6637,11 +6272,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.dorm3d_ik
-
-	var_1_83[11042000] = {
+	pg.base.dorm3d_ik[11042000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6706,11 +6337,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.dorm3d_ik
-
-	var_1_84[11042001] = {
+	pg.base.dorm3d_ik[11042001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6775,11 +6402,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.dorm3d_ik
-
-	var_1_85[11043000] = {
+	pg.base.dorm3d_ik[11043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6844,11 +6467,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.dorm3d_ik
-
-	var_1_86[11043001] = {
+	pg.base.dorm3d_ik[11043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6913,11 +6532,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.dorm3d_ik
-
-	var_1_87[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -6996,11 +6611,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.dorm3d_ik
-
-	var_1_88[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7079,11 +6690,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.dorm3d_ik
-
-	var_1_89[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7162,11 +6769,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.dorm3d_ik
-
-	var_1_90[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7231,11 +6834,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.dorm3d_ik
-
-	var_1_91[11073000] = {
+	pg.base.dorm3d_ik[11073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7342,11 +6941,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.dorm3d_ik
-
-	var_1_92[11071100] = {
+	pg.base.dorm3d_ik[11071100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7411,11 +7006,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.dorm3d_ik
-
-	var_1_93[11071101] = {
+	pg.base.dorm3d_ik[11071101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7480,11 +7071,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.dorm3d_ik
-
-	var_1_94[11072100] = {
+	pg.base.dorm3d_ik[11072100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7563,11 +7150,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.dorm3d_ik
-
-	var_1_95[11073100] = {
+	pg.base.dorm3d_ik[11073100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7632,11 +7215,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.dorm3d_ik
-
-	var_1_96[11073101] = {
+	pg.base.dorm3d_ik[11073101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7701,11 +7280,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.dorm3d_ik
-
-	var_1_97[11021000] = {
+	pg.base.dorm3d_ik[11021000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7784,11 +7359,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.dorm3d_ik
-
-	var_1_98[11021001] = {
+	pg.base.dorm3d_ik[11021001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7867,8 +7438,7 @@ var_0_3.base.dorm3d_ik = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.dorm3d_ik[11022000] = {
+	pg.base.dorm3d_ik[11022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -7937,11 +7507,7 @@ var_0_3.base.dorm3d_ik = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.dorm3d_ik
-
-	var_2_0[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8006,11 +7572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.dorm3d_ik
-
-	var_2_1[11021100] = {
+	pg.base.dorm3d_ik[11021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8061,11 +7623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.dorm3d_ik
-
-	var_2_2[20] = {
+	pg.base.dorm3d_ik[20] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8144,11 +7702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.dorm3d_ik
-
-	var_2_3[11023100] = {
+	pg.base.dorm3d_ik[11023100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8213,11 +7767,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.dorm3d_ik
-
-	var_2_4[12011000] = {
+	pg.base.dorm3d_ik[12011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8296,11 +7846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.dorm3d_ik
-
-	var_2_5[12011001] = {
+	pg.base.dorm3d_ik[12011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8365,11 +7911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.dorm3d_ik
-
-	var_2_6[12012000] = {
+	pg.base.dorm3d_ik[12012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8448,11 +7990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.dorm3d_ik
-
-	var_2_7[12012001] = {
+	pg.base.dorm3d_ik[12012001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8517,11 +8055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.dorm3d_ik
-
-	var_2_8[12013000] = {
+	pg.base.dorm3d_ik[12013000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8572,11 +8106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.dorm3d_ik
-
-	var_2_9[12013001] = {
+	pg.base.dorm3d_ik[12013001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8641,11 +8171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.dorm3d_ik
-
-	var_2_10[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8710,11 +8236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.dorm3d_ik
-
-	var_2_11[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8765,11 +8287,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.dorm3d_ik
-
-	var_2_12[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8848,11 +8366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.dorm3d_ik
-
-	var_2_13[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8917,11 +8431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.dorm3d_ik
-
-	var_2_14[12033000] = {
+	pg.base.dorm3d_ik[12033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -8972,11 +8482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.dorm3d_ik
-
-	var_2_15[12033001] = {
+	pg.base.dorm3d_ik[12033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9041,11 +8547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.dorm3d_ik
-
-	var_2_16[12041000] = {
+	pg.base.dorm3d_ik[12041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9110,11 +8612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.dorm3d_ik
-
-	var_2_17[12041001] = {
+	pg.base.dorm3d_ik[12041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9179,11 +8677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.dorm3d_ik
-
-	var_2_18[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9248,11 +8742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.dorm3d_ik
-
-	var_2_19[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9317,11 +8807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.dorm3d_ik
-
-	var_2_20[12043000] = {
+	pg.base.dorm3d_ik[12043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9386,11 +8872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.dorm3d_ik
-
-	var_2_21[12043001] = {
+	pg.base.dorm3d_ik[12043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9455,11 +8937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.dorm3d_ik
-
-	var_2_22[12071000] = {
+	pg.base.dorm3d_ik[12071000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9552,11 +9030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.dorm3d_ik
-
-	var_2_23[12071001] = {
+	pg.base.dorm3d_ik[12071001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9635,11 +9109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.dorm3d_ik
-
-	var_2_24[12071002] = {
+	pg.base.dorm3d_ik[12071002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9724,11 +9194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.dorm3d_ik
-
-	var_2_25[12072000] = {
+	pg.base.dorm3d_ik[12072000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9807,11 +9273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.dorm3d_ik
-
-	var_2_26[12072001] = {
+	pg.base.dorm3d_ik[12072001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9876,11 +9338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.dorm3d_ik
-
-	var_2_27[12073000] = {
+	pg.base.dorm3d_ik[12073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -9987,11 +9445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.dorm3d_ik
-
-	var_2_28[12071100] = {
+	pg.base.dorm3d_ik[12071100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10056,11 +9510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.dorm3d_ik
-
-	var_2_29[12071101] = {
+	pg.base.dorm3d_ik[12071101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10125,11 +9575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.dorm3d_ik
-
-	var_2_30[12072100] = {
+	pg.base.dorm3d_ik[12072100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10208,11 +9654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.dorm3d_ik
-
-	var_2_31[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10277,11 +9719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.dorm3d_ik
-
-	var_2_32[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10346,11 +9784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.dorm3d_ik
-
-	var_2_33[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10429,11 +9863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.dorm3d_ik
-
-	var_2_34[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10512,11 +9942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.dorm3d_ik
-
-	var_2_35[12022000] = {
+	pg.base.dorm3d_ik[12022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10581,11 +10007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.dorm3d_ik
-
-	var_2_36[12023000] = {
+	pg.base.dorm3d_ik[12023000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10650,11 +10072,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.dorm3d_ik
-
-	var_2_37[12021100] = {
+	pg.base.dorm3d_ik[12021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10705,11 +10123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.dorm3d_ik
-
-	var_2_38[12022100] = {
+	pg.base.dorm3d_ik[12022100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10788,11 +10202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.dorm3d_ik
-
-	var_2_39[12023100] = {
+	pg.base.dorm3d_ik[12023100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10857,11 +10267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.dorm3d_ik
-
-	var_2_40[12025000] = {
+	pg.base.dorm3d_ik[12025000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -10926,11 +10332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.dorm3d_ik
-
-	var_2_41[12025001] = {
+	pg.base.dorm3d_ik[12025001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11009,11 +10411,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.dorm3d_ik
-
-	var_2_42[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11092,11 +10490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.dorm3d_ik
-
-	var_2_43[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11161,11 +10555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.dorm3d_ik
-
-	var_2_44[12027000] = {
+	pg.base.dorm3d_ik[12027000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11230,11 +10620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.dorm3d_ik
-
-	var_2_45[12027001] = {
+	pg.base.dorm3d_ik[12027001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11299,11 +10685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.dorm3d_ik
-
-	var_2_46[12028000] = {
+	pg.base.dorm3d_ik[12028000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11354,11 +10736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.dorm3d_ik
-
-	var_2_47[12028001] = {
+	pg.base.dorm3d_ik[12028001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11437,11 +10815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.dorm3d_ik
-
-	var_2_48[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11506,11 +10880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.dorm3d_ik
-
-	var_2_49[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11575,11 +10945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.dorm3d_ik
-
-	var_2_50[12081000] = {
+	pg.base.dorm3d_ik[12081000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11644,11 +11010,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.dorm3d_ik
-
-	var_2_51[12081001] = {
+	pg.base.dorm3d_ik[12081001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11727,11 +11089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.dorm3d_ik
-
-	var_2_52[12082000] = {
+	pg.base.dorm3d_ik[12082000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11810,11 +11168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.dorm3d_ik
-
-	var_2_53[12082001] = {
+	pg.base.dorm3d_ik[12082001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11879,11 +11233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.dorm3d_ik
-
-	var_2_54[20011000] = {
+	pg.base.dorm3d_ik[20011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -11948,11 +11298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.dorm3d_ik
-
-	var_2_55[20011001] = {
+	pg.base.dorm3d_ik[20011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12045,11 +11391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.dorm3d_ik
-
-	var_2_56[20012000] = {
+	pg.base.dorm3d_ik[20012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12128,11 +11470,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.dorm3d_ik
-
-	var_2_57[20012001] = {
+	pg.base.dorm3d_ik[20012001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12225,11 +11563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.dorm3d_ik
-
-	var_2_58[20013000] = {
+	pg.base.dorm3d_ik[20013000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12294,11 +11628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.dorm3d_ik
-
-	var_2_59[20013001] = {
+	pg.base.dorm3d_ik[20013001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12363,11 +11693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.dorm3d_ik
-
-	var_2_60[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12446,11 +11772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.dorm3d_ik
-
-	var_2_61[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12529,11 +11851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.dorm3d_ik
-
-	var_2_62[20022000] = {
+	pg.base.dorm3d_ik[20022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12598,11 +11916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.dorm3d_ik
-
-	var_2_63[20023000] = {
+	pg.base.dorm3d_ik[20023000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12681,11 +11995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.dorm3d_ik
-
-	var_2_64[20023001] = {
+	pg.base.dorm3d_ik[20023001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12750,11 +12060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.dorm3d_ik
-
-	var_2_65[20023002] = {
+	pg.base.dorm3d_ik[20023002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12819,11 +12125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.dorm3d_ik
-
-	var_2_66[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12902,11 +12204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.dorm3d_ik
-
-	var_2_67[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -12985,11 +12283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.dorm3d_ik
-
-	var_2_68[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13054,11 +12348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.dorm3d_ik
-
-	var_2_69[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13123,11 +12413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.dorm3d_ik
-
-	var_2_70[20033000] = {
+	pg.base.dorm3d_ik[20033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13192,11 +12478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.dorm3d_ik
-
-	var_2_71[20033001] = {
+	pg.base.dorm3d_ik[20033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13275,11 +12557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.dorm3d_ik
-
-	var_2_72[20041000] = {
+	pg.base.dorm3d_ik[20041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13358,11 +12636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.dorm3d_ik
-
-	var_2_73[20041001] = {
+	pg.base.dorm3d_ik[20041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13427,11 +12701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.dorm3d_ik
-
-	var_2_74[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13510,11 +12780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.dorm3d_ik
-
-	var_2_75[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13579,11 +12845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.dorm3d_ik
-
-	var_2_76[20043000] = {
+	pg.base.dorm3d_ik[20043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13648,11 +12910,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.dorm3d_ik
-
-	var_2_77[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13731,11 +12989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.dorm3d_ik
-
-	var_2_78[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13800,11 +13054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.dorm3d_ik
-
-	var_2_79[14] = {
+	pg.base.dorm3d_ik[14] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13869,11 +13119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.dorm3d_ik
-
-	var_2_80[20043001] = {
+	pg.base.dorm3d_ik[20043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -13938,11 +13184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.dorm3d_ik
-
-	var_2_81[20051000] = {
+	pg.base.dorm3d_ik[20051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14021,11 +13263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.dorm3d_ik
-
-	var_2_82[20051001] = {
+	pg.base.dorm3d_ik[20051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14104,11 +13342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.dorm3d_ik
-
-	var_2_83[20052000] = {
+	pg.base.dorm3d_ik[20052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14187,11 +13421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.dorm3d_ik
-
-	var_2_84[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14256,11 +13486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.dorm3d_ik
-
-	var_2_85[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14325,11 +13551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.dorm3d_ik
-
-	var_2_86[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14408,11 +13630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.dorm3d_ik
-
-	var_2_87[29] = {
+	pg.base.dorm3d_ik[29] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14491,11 +13709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.dorm3d_ik
-
-	var_2_88[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14560,11 +13774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.dorm3d_ik
-
-	var_2_89[20052200] = {
+	pg.base.dorm3d_ik[20052200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14629,11 +13839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.dorm3d_ik
-
-	var_2_90[20054000] = {
+	pg.base.dorm3d_ik[20054000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14698,11 +13904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.dorm3d_ik
-
-	var_2_91[20054001] = {
+	pg.base.dorm3d_ik[20054001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14781,11 +13983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.dorm3d_ik
-
-	var_2_92[20061000] = {
+	pg.base.dorm3d_ik[20061000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14850,11 +14048,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.dorm3d_ik
-
-	var_2_93[20062000] = {
+	pg.base.dorm3d_ik[20062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -14933,11 +14127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.dorm3d_ik
-
-	var_2_94[20062001] = {
+	pg.base.dorm3d_ik[20062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15002,11 +14192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.dorm3d_ik
-
-	var_2_95[20062002] = {
+	pg.base.dorm3d_ik[20062002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15085,11 +14271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.dorm3d_ik
-
-	var_2_96[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15165,11 +14347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.dorm3d_ik
-
-	var_2_97[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15248,11 +14426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.dorm3d_ik
-
-	var_2_98[26] = {
+	pg.base.dorm3d_ik[26] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15331,8 +14505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.dorm3d_ik[20061100] = {
+	pg.base.dorm3d_ik[20061100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15401,11 +14574,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.dorm3d_ik
-
-	var_3_0[20061101] = {
+	pg.base.dorm3d_ik[20061101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15470,11 +14639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.dorm3d_ik
-
-	var_3_1[20] = {
+	pg.base.dorm3d_ik[20] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15553,11 +14718,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.dorm3d_ik
-
-	var_3_2[20063100] = {
+	pg.base.dorm3d_ik[20063100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15622,11 +14783,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.dorm3d_ik
-
-	var_3_3[20071000] = {
+	pg.base.dorm3d_ik[20071000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15691,11 +14848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.dorm3d_ik
-
-	var_3_4[20071001] = {
+	pg.base.dorm3d_ik[20071001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15788,11 +14941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.dorm3d_ik
-
-	var_3_5[20072000] = {
+	pg.base.dorm3d_ik[20072000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15857,11 +15006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.dorm3d_ik
-
-	var_3_6[20072001] = {
+	pg.base.dorm3d_ik[20072001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15912,11 +15057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.dorm3d_ik
-
-	var_3_7[20073000] = {
+	pg.base.dorm3d_ik[20073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -15981,11 +15122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.dorm3d_ik
-
-	var_3_8[20073001] = {
+	pg.base.dorm3d_ik[20073001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16064,11 +15201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.dorm3d_ik
-
-	var_3_9[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16119,11 +15252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.dorm3d_ik
-
-	var_3_10[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16202,11 +15331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.dorm3d_ik
-
-	var_3_11[21011000] = {
+	pg.base.dorm3d_ik[21011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16271,11 +15396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.dorm3d_ik
-
-	var_3_12[21011001] = {
+	pg.base.dorm3d_ik[21011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16368,11 +15489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.dorm3d_ik
-
-	var_3_13[21012000] = {
+	pg.base.dorm3d_ik[21012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16451,11 +15568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.dorm3d_ik
-
-	var_3_14[21012001] = {
+	pg.base.dorm3d_ik[21012001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16548,11 +15661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.dorm3d_ik
-
-	var_3_15[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16617,11 +15726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.dorm3d_ik
-
-	var_3_16[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16686,11 +15791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.dorm3d_ik
-
-	var_3_17[21021000] = {
+	pg.base.dorm3d_ik[21021000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16769,11 +15870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.dorm3d_ik
-
-	var_3_18[21021001] = {
+	pg.base.dorm3d_ik[21021001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16852,11 +15949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.dorm3d_ik
-
-	var_3_19[21022000] = {
+	pg.base.dorm3d_ik[21022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -16921,11 +16014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.dorm3d_ik
-
-	var_3_20[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17004,11 +16093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.dorm3d_ik
-
-	var_3_21[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17073,11 +16158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.dorm3d_ik
-
-	var_3_22[26] = {
+	pg.base.dorm3d_ik[26] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17142,11 +16223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.dorm3d_ik
-
-	var_3_23[21031000] = {
+	pg.base.dorm3d_ik[21031000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17225,11 +16302,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.dorm3d_ik
-
-	var_3_24[21031001] = {
+	pg.base.dorm3d_ik[21031001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17308,11 +16381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.dorm3d_ik
-
-	var_3_25[21032000] = {
+	pg.base.dorm3d_ik[21032000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17377,11 +16446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.dorm3d_ik
-
-	var_3_26[21032001] = {
+	pg.base.dorm3d_ik[21032001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17446,11 +16511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.dorm3d_ik
-
-	var_3_27[21033000] = {
+	pg.base.dorm3d_ik[21033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17515,11 +16576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.dorm3d_ik
-
-	var_3_28[21033001] = {
+	pg.base.dorm3d_ik[21033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17598,11 +16655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.dorm3d_ik
-
-	var_3_29[21041000] = {
+	pg.base.dorm3d_ik[21041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17681,11 +16734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.dorm3d_ik
-
-	var_3_30[21041001] = {
+	pg.base.dorm3d_ik[21041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17750,11 +16799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.dorm3d_ik
-
-	var_3_31[21042000] = {
+	pg.base.dorm3d_ik[21042000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17833,11 +16878,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.dorm3d_ik
-
-	var_3_32[21042001] = {
+	pg.base.dorm3d_ik[21042001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17902,11 +16943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.dorm3d_ik
-
-	var_3_33[21043000] = {
+	pg.base.dorm3d_ik[21043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -17971,11 +17008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.dorm3d_ik
-
-	var_3_34[21041100] = {
+	pg.base.dorm3d_ik[21041100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18054,11 +17087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.dorm3d_ik
-
-	var_3_35[21041101] = {
+	pg.base.dorm3d_ik[21041101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18123,11 +17152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.dorm3d_ik
-
-	var_3_36[21041102] = {
+	pg.base.dorm3d_ik[21041102] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18192,11 +17217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.dorm3d_ik
-
-	var_3_37[21043001] = {
+	pg.base.dorm3d_ik[21043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18261,11 +17282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.dorm3d_ik
-
-	var_3_38[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18330,11 +17347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.dorm3d_ik
-
-	var_3_39[21062000] = {
+	pg.base.dorm3d_ik[21062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18413,11 +17426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.dorm3d_ik
-
-	var_3_40[21062001] = {
+	pg.base.dorm3d_ik[21062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18482,11 +17491,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.dorm3d_ik
-
-	var_3_41[21062002] = {
+	pg.base.dorm3d_ik[21062002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18565,11 +17570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.dorm3d_ik
-
-	var_3_42[21063000] = {
+	pg.base.dorm3d_ik[21063000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18634,11 +17635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.dorm3d_ik
-
-	var_3_43[21063001] = {
+	pg.base.dorm3d_ik[21063001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18717,11 +17714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.dorm3d_ik
-
-	var_3_44[21063002] = {
+	pg.base.dorm3d_ik[21063002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18800,11 +17793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.dorm3d_ik
-
-	var_3_45[21061100] = {
+	pg.base.dorm3d_ik[21061100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18869,11 +17858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.dorm3d_ik
-
-	var_3_46[21061101] = {
+	pg.base.dorm3d_ik[21061101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -18938,11 +17923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.dorm3d_ik
-
-	var_3_47[21062100] = {
+	pg.base.dorm3d_ik[21062100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19021,11 +18002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.dorm3d_ik
-
-	var_3_48[21063100] = {
+	pg.base.dorm3d_ik[21063100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19090,11 +18067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.dorm3d_ik
-
-	var_3_49[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19159,11 +18132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.dorm3d_ik
-
-	var_3_50[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19256,11 +18225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.dorm3d_ik
-
-	var_3_51[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19325,11 +18290,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.dorm3d_ik
-
-	var_3_52[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19380,11 +18341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.dorm3d_ik
-
-	var_3_53[21073000] = {
+	pg.base.dorm3d_ik[21073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19449,11 +18406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.dorm3d_ik
-
-	var_3_54[21073001] = {
+	pg.base.dorm3d_ik[21073001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19532,11 +18485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.dorm3d_ik
-
-	var_3_55[21074000] = {
+	pg.base.dorm3d_ik[21074000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19587,11 +18536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.dorm3d_ik
-
-	var_3_56[21074001] = {
+	pg.base.dorm3d_ik[21074001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19670,11 +18615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.dorm3d_ik
-
-	var_3_57[21511000] = {
+	pg.base.dorm3d_ik[21511000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19725,11 +18666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.dorm3d_ik
-
-	var_3_58[21511001] = {
+	pg.base.dorm3d_ik[21511001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19808,11 +18745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.dorm3d_ik
-
-	var_3_59[21512000] = {
+	pg.base.dorm3d_ik[21512000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19891,11 +18824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.dorm3d_ik
-
-	var_3_60[21513000] = {
+	pg.base.dorm3d_ik[21513000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -19974,11 +18903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.dorm3d_ik
-
-	var_3_61[11025000] = {
+	pg.base.dorm3d_ik[11025000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20043,11 +18968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.dorm3d_ik
-
-	var_3_62[11025001] = {
+	pg.base.dorm3d_ik[11025001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20126,11 +19047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.dorm3d_ik
-
-	var_3_63[11026000] = {
+	pg.base.dorm3d_ik[11026000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20209,11 +19126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.dorm3d_ik
-
-	var_3_64[11026001] = {
+	pg.base.dorm3d_ik[11026001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20278,11 +19191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.dorm3d_ik
-
-	var_3_65[11027000] = {
+	pg.base.dorm3d_ik[11027000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20347,11 +19256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.dorm3d_ik
-
-	var_3_66[11027001] = {
+	pg.base.dorm3d_ik[11027001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20416,11 +19321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.dorm3d_ik
-
-	var_3_67[11028000] = {
+	pg.base.dorm3d_ik[11028000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20471,11 +19372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.dorm3d_ik
-
-	var_3_68[11028001] = {
+	pg.base.dorm3d_ik[11028001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20554,11 +19451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.dorm3d_ik
-
-	var_3_69[11025100] = {
+	pg.base.dorm3d_ik[11025100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20623,11 +19516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.dorm3d_ik
-
-	var_3_70[11025101] = {
+	pg.base.dorm3d_ik[11025101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20692,11 +19581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.dorm3d_ik
-
-	var_3_71[29999100] = {
+	pg.base.dorm3d_ik[29999100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "rightfoot",
@@ -20764,11 +19649,7 @@ end)()
 			777
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.dorm3d_ik
-
-	var_3_72[29999101] = {
+	pg.base.dorm3d_ik[29999101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20836,11 +19717,7 @@ end)()
 			777
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.dorm3d_ik
-
-	var_3_73[29999200] = {
+	pg.base.dorm3d_ik[29999200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "ankle",
@@ -20908,11 +19785,7 @@ end)()
 			777
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.dorm3d_ik
-
-	var_3_74[29999300] = {
+	pg.base.dorm3d_ik[29999300] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -20980,11 +19853,7 @@ end)()
 			777
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.dorm3d_ik
-
-	var_3_75[29999301] = {
+	pg.base.dorm3d_ik[29999301] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21052,11 +19921,7 @@ end)()
 			777
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.dorm3d_ik
-
-	var_3_76[21051000] = {
+	pg.base.dorm3d_ik[21051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21135,11 +20000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.dorm3d_ik
-
-	var_3_77[21051001] = {
+	pg.base.dorm3d_ik[21051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21218,11 +20079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.dorm3d_ik
-
-	var_3_78[21052000] = {
+	pg.base.dorm3d_ik[21052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21301,11 +20158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.dorm3d_ik
-
-	var_3_79[21053000] = {
+	pg.base.dorm3d_ik[21053000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21370,11 +20223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.dorm3d_ik
-
-	var_3_80[21053001] = {
+	pg.base.dorm3d_ik[21053001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21439,11 +20288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.dorm3d_ik
-
-	var_3_81[21051100] = {
+	pg.base.dorm3d_ik[21051100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21522,11 +20367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.dorm3d_ik
-
-	var_3_82[21051101] = {
+	pg.base.dorm3d_ik[21051101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21605,11 +20446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.dorm3d_ik
-
-	var_3_83[21051200] = {
+	pg.base.dorm3d_ik[21051200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21674,11 +20511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.dorm3d_ik
-
-	var_3_84[21052200] = {
+	pg.base.dorm3d_ik[21052200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21743,11 +20576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.dorm3d_ik
-
-	var_3_85[21054000] = {
+	pg.base.dorm3d_ik[21054000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21812,11 +20641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.dorm3d_ik
-
-	var_3_86[21054001] = {
+	pg.base.dorm3d_ik[21054001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21895,11 +20720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.dorm3d_ik
-
-	var_3_87[30011000] = {
+	pg.base.dorm3d_ik[30011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -21964,11 +20785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.dorm3d_ik
-
-	var_3_88[30011001] = {
+	pg.base.dorm3d_ik[30011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22047,11 +20864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.dorm3d_ik
-
-	var_3_89[30011100] = {
+	pg.base.dorm3d_ik[30011100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22116,11 +20929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.dorm3d_ik
-
-	var_3_90[30011200] = {
+	pg.base.dorm3d_ik[30011200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22199,11 +21008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.dorm3d_ik
-
-	var_3_91[30011201] = {
+	pg.base.dorm3d_ik[30011201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22268,11 +21073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.dorm3d_ik
-
-	var_3_92[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22351,11 +21152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.dorm3d_ik
-
-	var_3_93[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22434,11 +21231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.dorm3d_ik
-
-	var_3_94[30021100] = {
+	pg.base.dorm3d_ik[30021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22517,11 +21310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.dorm3d_ik
-
-	var_3_95[30021101] = {
+	pg.base.dorm3d_ik[30021101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22586,11 +21375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.dorm3d_ik
-
-	var_3_96[30021200] = {
+	pg.base.dorm3d_ik[30021200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22669,11 +21454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.dorm3d_ik
-
-	var_3_97[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22752,11 +21533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.dorm3d_ik
-
-	var_3_98[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22821,8 +21598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.dorm3d_ik[30031100] = {
+	pg.base.dorm3d_ik[30031100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22905,11 +21681,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.dorm3d_ik
-
-	var_4_0[30031101] = {
+	pg.base.dorm3d_ik[30031101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -22974,11 +21746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.dorm3d_ik
-
-	var_4_1[30031200] = {
+	pg.base.dorm3d_ik[30031200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23057,11 +21825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.dorm3d_ik
-
-	var_4_2[30031201] = {
+	pg.base.dorm3d_ik[30031201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23126,11 +21890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.dorm3d_ik
-
-	var_4_3[30041000] = {
+	pg.base.dorm3d_ik[30041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23195,11 +21955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.dorm3d_ik
-
-	var_4_4[30041001] = {
+	pg.base.dorm3d_ik[30041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23264,11 +22020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.dorm3d_ik
-
-	var_4_5[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23333,11 +22085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.dorm3d_ik
-
-	var_4_6[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23413,11 +22161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.dorm3d_ik
-
-	var_4_7[30041200] = {
+	pg.base.dorm3d_ik[30041200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23496,11 +22240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.dorm3d_ik
-
-	var_4_8[30041201] = {
+	pg.base.dorm3d_ik[30041201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23565,11 +22305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.dorm3d_ik
-
-	var_4_9[30051000] = {
+	pg.base.dorm3d_ik[30051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23634,11 +22370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.dorm3d_ik
-
-	var_4_10[30051001] = {
+	pg.base.dorm3d_ik[30051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23717,11 +22449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.dorm3d_ik
-
-	var_4_11[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23800,11 +22528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.dorm3d_ik
-
-	var_4_12[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23883,11 +22607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.dorm3d_ik
-
-	var_4_13[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -23966,11 +22686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.dorm3d_ik
-
-	var_4_14[2] = {
+	pg.base.dorm3d_ik[2] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24035,11 +22751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.dorm3d_ik
-
-	var_4_15[30051300] = {
+	pg.base.dorm3d_ik[30051300] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24118,11 +22830,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.dorm3d_ik
-
-	var_4_16[30051301] = {
+	pg.base.dorm3d_ik[30051301] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24187,11 +22895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.dorm3d_ik
-
-	var_4_17[30061000] = {
+	pg.base.dorm3d_ik[30061000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24256,11 +22960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.dorm3d_ik
-
-	var_4_18[30061001] = {
+	pg.base.dorm3d_ik[30061001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24339,11 +23039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.dorm3d_ik
-
-	var_4_19[30062000] = {
+	pg.base.dorm3d_ik[30062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24422,11 +23118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.dorm3d_ik
-
-	var_4_20[30062001] = {
+	pg.base.dorm3d_ik[30062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24505,11 +23197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.dorm3d_ik
-
-	var_4_21[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24588,11 +23276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.dorm3d_ik
-
-	var_4_22[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24657,11 +23341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.dorm3d_ik
-
-	var_4_23[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24726,11 +23406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.dorm3d_ik
-
-	var_4_24[30071000] = {
+	pg.base.dorm3d_ik[30071000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24809,11 +23485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.dorm3d_ik
-
-	var_4_25[30071001] = {
+	pg.base.dorm3d_ik[30071001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24878,11 +23550,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.dorm3d_ik
-
-	var_4_26[30072000] = {
+	pg.base.dorm3d_ik[30072000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -24947,11 +23615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.dorm3d_ik
-
-	var_4_27[30072001] = {
+	pg.base.dorm3d_ik[30072001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25030,11 +23694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.dorm3d_ik
-
-	var_4_28[30072002] = {
+	pg.base.dorm3d_ik[30072002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25113,11 +23773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.dorm3d_ik
-
-	var_4_29[30073000] = {
+	pg.base.dorm3d_ik[30073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25196,11 +23852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.dorm3d_ik
-
-	var_4_30[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25279,11 +23931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.dorm3d_ik
-
-	var_4_31[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25348,11 +23996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.dorm3d_ik
-
-	var_4_32[31011000] = {
+	pg.base.dorm3d_ik[31011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25417,11 +24061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.dorm3d_ik
-
-	var_4_33[31011001] = {
+	pg.base.dorm3d_ik[31011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25500,11 +24140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.dorm3d_ik
-
-	var_4_34[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25569,11 +24205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.dorm3d_ik
-
-	var_4_35[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25652,11 +24284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.dorm3d_ik
-
-	var_4_36[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25721,11 +24349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.dorm3d_ik
-
-	var_4_37[31021000] = {
+	pg.base.dorm3d_ik[31021000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25804,11 +24428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.dorm3d_ik
-
-	var_4_38[31021001] = {
+	pg.base.dorm3d_ik[31021001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25887,11 +24507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.dorm3d_ik
-
-	var_4_39[31021100] = {
+	pg.base.dorm3d_ik[31021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -25970,11 +24586,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.dorm3d_ik
-
-	var_4_40[31021101] = {
+	pg.base.dorm3d_ik[31021101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26039,11 +24651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.dorm3d_ik
-
-	var_4_41[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26122,11 +24730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.dorm3d_ik
-
-	var_4_42[31031000] = {
+	pg.base.dorm3d_ik[31031000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26205,11 +24809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.dorm3d_ik
-
-	var_4_43[31031001] = {
+	pg.base.dorm3d_ik[31031001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26274,11 +24874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.dorm3d_ik
-
-	var_4_44[31031100] = {
+	pg.base.dorm3d_ik[31031100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26357,11 +24953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.dorm3d_ik
-
-	var_4_45[31031101] = {
+	pg.base.dorm3d_ik[31031101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26426,11 +25018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.dorm3d_ik
-
-	var_4_46[31031200] = {
+	pg.base.dorm3d_ik[31031200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26509,11 +25097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.dorm3d_ik
-
-	var_4_47[31031201] = {
+	pg.base.dorm3d_ik[31031201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26578,11 +25162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.dorm3d_ik
-
-	var_4_48[31041000] = {
+	pg.base.dorm3d_ik[31041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26647,11 +25227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.dorm3d_ik
-
-	var_4_49[31041001] = {
+	pg.base.dorm3d_ik[31041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26716,11 +25292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.dorm3d_ik
-
-	var_4_50[31041100] = {
+	pg.base.dorm3d_ik[31041100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26785,11 +25357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.dorm3d_ik
-
-	var_4_51[31041101] = {
+	pg.base.dorm3d_ik[31041101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26854,11 +25422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.dorm3d_ik
-
-	var_4_52[31041200] = {
+	pg.base.dorm3d_ik[31041200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -26937,11 +25501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.dorm3d_ik
-
-	var_4_53[31041201] = {
+	pg.base.dorm3d_ik[31041201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27006,11 +25566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.dorm3d_ik
-
-	var_4_54[31051000] = {
+	pg.base.dorm3d_ik[31051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27075,11 +25631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.dorm3d_ik
-
-	var_4_55[31051001] = {
+	pg.base.dorm3d_ik[31051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27158,11 +25710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.dorm3d_ik
-
-	var_4_56[31051100] = {
+	pg.base.dorm3d_ik[31051100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27241,11 +25789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.dorm3d_ik
-
-	var_4_57[31051200] = {
+	pg.base.dorm3d_ik[31051200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27324,11 +25868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.dorm3d_ik
-
-	var_4_58[31051201] = {
+	pg.base.dorm3d_ik[31051201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27407,11 +25947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.dorm3d_ik
-
-	var_4_59[31051202] = {
+	pg.base.dorm3d_ik[31051202] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27476,11 +26012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.dorm3d_ik
-
-	var_4_60[31051300] = {
+	pg.base.dorm3d_ik[31051300] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27559,11 +26091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.dorm3d_ik
-
-	var_4_61[31051301] = {
+	pg.base.dorm3d_ik[31051301] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27628,11 +26156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.dorm3d_ik
-
-	var_4_62[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27697,11 +26221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.dorm3d_ik
-
-	var_4_63[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27780,11 +26300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.dorm3d_ik
-
-	var_4_64[31062000] = {
+	pg.base.dorm3d_ik[31062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27863,11 +26379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.dorm3d_ik
-
-	var_4_65[31062001] = {
+	pg.base.dorm3d_ik[31062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -27946,11 +26458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.dorm3d_ik
-
-	var_4_66[31063000] = {
+	pg.base.dorm3d_ik[31063000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28029,11 +26537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.dorm3d_ik
-
-	var_4_67[31063001] = {
+	pg.base.dorm3d_ik[31063001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28098,11 +26602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.dorm3d_ik
-
-	var_4_68[31064000] = {
+	pg.base.dorm3d_ik[31064000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28167,11 +26667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.dorm3d_ik
-
-	var_4_69[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28250,11 +26746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.dorm3d_ik
-
-	var_4_70[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28319,11 +26811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.dorm3d_ik
-
-	var_4_71[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28388,11 +26876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.dorm3d_ik
-
-	var_4_72[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28471,11 +26955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.dorm3d_ik
-
-	var_4_73[2] = {
+	pg.base.dorm3d_ik[2] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28554,11 +27034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.dorm3d_ik
-
-	var_4_74[31073000] = {
+	pg.base.dorm3d_ik[31073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28637,11 +27113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.dorm3d_ik
-
-	var_4_75[31074000] = {
+	pg.base.dorm3d_ik[31074000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28720,11 +27192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.dorm3d_ik
-
-	var_4_76[31074001] = {
+	pg.base.dorm3d_ik[31074001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28789,11 +27257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.dorm3d_ik
-
-	var_4_77[32011000] = {
+	pg.base.dorm3d_ik[32011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28858,11 +27322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.dorm3d_ik
-
-	var_4_78[32011001] = {
+	pg.base.dorm3d_ik[32011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -28941,11 +27401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.dorm3d_ik
-
-	var_4_79[32011100] = {
+	pg.base.dorm3d_ik[32011100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29010,11 +27466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.dorm3d_ik
-
-	var_4_80[32011200] = {
+	pg.base.dorm3d_ik[32011200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29093,11 +27545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.dorm3d_ik
-
-	var_4_81[32011201] = {
+	pg.base.dorm3d_ik[32011201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29162,11 +27610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.dorm3d_ik
-
-	var_4_82[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29245,11 +27689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.dorm3d_ik
-
-	var_4_83[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29328,11 +27768,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.dorm3d_ik
-
-	var_4_84[32021100] = {
+	pg.base.dorm3d_ik[32021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29411,11 +27847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.dorm3d_ik
-
-	var_4_85[32021101] = {
+	pg.base.dorm3d_ik[32021101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29480,11 +27912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.dorm3d_ik
-
-	var_4_86[32021200] = {
+	pg.base.dorm3d_ik[32021200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29563,11 +27991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.dorm3d_ik
-
-	var_4_87[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29646,11 +28070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.dorm3d_ik
-
-	var_4_88[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29715,11 +28135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.dorm3d_ik
-
-	var_4_89[32031100] = {
+	pg.base.dorm3d_ik[32031100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29798,11 +28214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.dorm3d_ik
-
-	var_4_90[32031101] = {
+	pg.base.dorm3d_ik[32031101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29867,11 +28279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.dorm3d_ik
-
-	var_4_91[32031200] = {
+	pg.base.dorm3d_ik[32031200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -29950,11 +28358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.dorm3d_ik
-
-	var_4_92[32031201] = {
+	pg.base.dorm3d_ik[32031201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30019,11 +28423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.dorm3d_ik
-
-	var_4_93[32041000] = {
+	pg.base.dorm3d_ik[32041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30088,11 +28488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.dorm3d_ik
-
-	var_4_94[32041001] = {
+	pg.base.dorm3d_ik[32041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30157,11 +28553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.dorm3d_ik
-
-	var_4_95[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30226,11 +28618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.dorm3d_ik
-
-	var_4_96[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30295,11 +28683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.dorm3d_ik
-
-	var_4_97[32041200] = {
+	pg.base.dorm3d_ik[32041200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30378,11 +28762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.dorm3d_ik
-
-	var_4_98[32041201] = {
+	pg.base.dorm3d_ik[32041201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30447,8 +28827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.dorm3d_ik[32051000] = {
+	pg.base.dorm3d_ik[32051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30517,11 +28896,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.dorm3d_ik
-
-	var_5_0[32051001] = {
+	pg.base.dorm3d_ik[32051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30600,11 +28975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.dorm3d_ik
-
-	var_5_1[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30683,11 +29054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.dorm3d_ik
-
-	var_5_2[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30766,11 +29133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.dorm3d_ik
-
-	var_5_3[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30849,11 +29212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.dorm3d_ik
-
-	var_5_4[2] = {
+	pg.base.dorm3d_ik[2] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -30918,11 +29277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.dorm3d_ik
-
-	var_5_5[32051300] = {
+	pg.base.dorm3d_ik[32051300] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31001,11 +29356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.dorm3d_ik
-
-	var_5_6[32051301] = {
+	pg.base.dorm3d_ik[32051301] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31070,11 +29421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.dorm3d_ik
-
-	var_5_7[32061000] = {
+	pg.base.dorm3d_ik[32061000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31139,11 +29486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.dorm3d_ik
-
-	var_5_8[32061001] = {
+	pg.base.dorm3d_ik[32061001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31222,11 +29565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.dorm3d_ik
-
-	var_5_9[32062000] = {
+	pg.base.dorm3d_ik[32062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31305,11 +29644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.dorm3d_ik
-
-	var_5_10[32062001] = {
+	pg.base.dorm3d_ik[32062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31388,11 +29723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.dorm3d_ik
-
-	var_5_11[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31471,11 +29802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.dorm3d_ik
-
-	var_5_12[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31540,11 +29867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.dorm3d_ik
-
-	var_5_13[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31609,11 +29932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.dorm3d_ik
-
-	var_5_14[32071000] = {
+	pg.base.dorm3d_ik[32071000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31692,11 +30011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.dorm3d_ik
-
-	var_5_15[32071001] = {
+	pg.base.dorm3d_ik[32071001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31761,11 +30076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.dorm3d_ik
-
-	var_5_16[32072000] = {
+	pg.base.dorm3d_ik[32072000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31830,11 +30141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.dorm3d_ik
-
-	var_5_17[32072001] = {
+	pg.base.dorm3d_ik[32072001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31913,11 +30220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.dorm3d_ik
-
-	var_5_18[32072002] = {
+	pg.base.dorm3d_ik[32072002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -31996,11 +30299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.dorm3d_ik
-
-	var_5_19[32073000] = {
+	pg.base.dorm3d_ik[32073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32079,11 +30378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.dorm3d_ik
-
-	var_5_20[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32162,11 +30457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.dorm3d_ik
-
-	var_5_21[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32231,11 +30522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.dorm3d_ik
-
-	var_5_22[30091000] = {
+	pg.base.dorm3d_ik[30091000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32317,11 +30604,7 @@ end)()
 			777
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.dorm3d_ik
-
-	var_5_23[30091001] = {
+	pg.base.dorm3d_ik[30091001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32389,11 +30672,7 @@ end)()
 			777
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.dorm3d_ik
-
-	var_5_24[31091000] = {
+	pg.base.dorm3d_ik[31091000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32458,11 +30737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.dorm3d_ik
-
-	var_5_25[31091001] = {
+	pg.base.dorm3d_ik[31091001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32541,11 +30816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.dorm3d_ik
-
-	var_5_26[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32624,11 +30895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.dorm3d_ik
-
-	var_5_27[29] = {
+	pg.base.dorm3d_ik[29] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32707,11 +30974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.dorm3d_ik
-
-	var_5_28[40011000] = {
+	pg.base.dorm3d_ik[40011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32790,11 +31053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.dorm3d_ik
-
-	var_5_29[40011001] = {
+	pg.base.dorm3d_ik[40011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32859,11 +31118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.dorm3d_ik
-
-	var_5_30[40011100] = {
+	pg.base.dorm3d_ik[40011100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -32942,11 +31197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.dorm3d_ik
-
-	var_5_31[40011200] = {
+	pg.base.dorm3d_ik[40011200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33022,11 +31273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.dorm3d_ik
-
-	var_5_32[40011201] = {
+	pg.base.dorm3d_ik[40011201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33105,11 +31352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.dorm3d_ik
-
-	var_5_33[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33174,11 +31417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.dorm3d_ik
-
-	var_5_34[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33257,11 +31496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.dorm3d_ik
-
-	var_5_35[40021100] = {
+	pg.base.dorm3d_ik[40021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33326,11 +31561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.dorm3d_ik
-
-	var_5_36[40021200] = {
+	pg.base.dorm3d_ik[40021200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33409,11 +31640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.dorm3d_ik
-
-	var_5_37[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33492,11 +31719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.dorm3d_ik
-
-	var_5_38[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33575,11 +31798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.dorm3d_ik
-
-	var_5_39[40031100] = {
+	pg.base.dorm3d_ik[40031100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33655,11 +31874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.dorm3d_ik
-
-	var_5_40[40031200] = {
+	pg.base.dorm3d_ik[40031200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33738,11 +31953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.dorm3d_ik
-
-	var_5_41[40041000] = {
+	pg.base.dorm3d_ik[40041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33807,11 +32018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.dorm3d_ik
-
-	var_5_42[40041001] = {
+	pg.base.dorm3d_ik[40041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33890,11 +32097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.dorm3d_ik
-
-	var_5_43[12] = {
+	pg.base.dorm3d_ik[12] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -33973,11 +32176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.dorm3d_ik
-
-	var_5_44[13] = {
+	pg.base.dorm3d_ik[13] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34042,11 +32241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.dorm3d_ik
-
-	var_5_45[40041200] = {
+	pg.base.dorm3d_ik[40041200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34125,11 +32320,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.dorm3d_ik
-
-	var_5_46[40041201] = {
+	pg.base.dorm3d_ik[40041201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34208,11 +32399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.dorm3d_ik
-
-	var_5_47[40041202] = {
+	pg.base.dorm3d_ik[40041202] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34277,11 +32464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.dorm3d_ik
-
-	var_5_48[40041203] = {
+	pg.base.dorm3d_ik[40041203] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34346,11 +32529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.dorm3d_ik
-
-	var_5_49[40051000] = {
+	pg.base.dorm3d_ik[40051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34429,11 +32608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.dorm3d_ik
-
-	var_5_50[40051001] = {
+	pg.base.dorm3d_ik[40051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34512,11 +32687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.dorm3d_ik
-
-	var_5_51[40052000] = {
+	pg.base.dorm3d_ik[40052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34581,11 +32752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.dorm3d_ik
-
-	var_5_52[40052001] = {
+	pg.base.dorm3d_ik[40052001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34650,11 +32817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.dorm3d_ik
-
-	var_5_53[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34733,11 +32896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.dorm3d_ik
-
-	var_5_54[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34816,11 +32975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.dorm3d_ik
-
-	var_5_55[40054000] = {
+	pg.base.dorm3d_ik[40054000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34899,11 +33054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.dorm3d_ik
-
-	var_5_56[40071000] = {
+	pg.base.dorm3d_ik[40071000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -34982,11 +33133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.dorm3d_ik
-
-	var_5_57[40071001] = {
+	pg.base.dorm3d_ik[40071001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35051,11 +33198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.dorm3d_ik
-
-	var_5_58[40072000] = {
+	pg.base.dorm3d_ik[40072000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35134,11 +33277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.dorm3d_ik
-
-	var_5_59[40072001] = {
+	pg.base.dorm3d_ik[40072001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35203,11 +33342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.dorm3d_ik
-
-	var_5_60[40073000] = {
+	pg.base.dorm3d_ik[40073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35286,11 +33421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.dorm3d_ik
-
-	var_5_61[40073001] = {
+	pg.base.dorm3d_ik[40073001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35355,11 +33486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.dorm3d_ik
-
-	var_5_62[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35438,11 +33565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.dorm3d_ik
-
-	var_5_63[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35507,11 +33630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.dorm3d_ik
-
-	var_5_64[40075000] = {
+	pg.base.dorm3d_ik[40075000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35590,11 +33709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.dorm3d_ik
-
-	var_5_65[40075001] = {
+	pg.base.dorm3d_ik[40075001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35673,11 +33788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.dorm3d_ik
-
-	var_5_66[40082000] = {
+	pg.base.dorm3d_ik[40082000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35742,11 +33853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.dorm3d_ik
-
-	var_5_67[40081000] = {
+	pg.base.dorm3d_ik[40081000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35825,11 +33932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.dorm3d_ik
-
-	var_5_68[40083000] = {
+	pg.base.dorm3d_ik[40083000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35908,11 +34011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.dorm3d_ik
-
-	var_5_69[40083001] = {
+	pg.base.dorm3d_ik[40083001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -35991,11 +34090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.dorm3d_ik
-
-	var_5_70[40084000] = {
+	pg.base.dorm3d_ik[40084000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36060,11 +34155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.dorm3d_ik
-
-	var_5_71[40084001] = {
+	pg.base.dorm3d_ik[40084001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36143,11 +34234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.dorm3d_ik
-
-	var_5_72[41011000] = {
+	pg.base.dorm3d_ik[41011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36226,11 +34313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.dorm3d_ik
-
-	var_5_73[41011001] = {
+	pg.base.dorm3d_ik[41011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36295,11 +34378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.dorm3d_ik
-
-	var_5_74[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36378,11 +34457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.dorm3d_ik
-
-	var_5_75[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36447,11 +34522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.dorm3d_ik
-
-	var_5_76[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36530,11 +34601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.dorm3d_ik
-
-	var_5_77[41021000] = {
+	pg.base.dorm3d_ik[41021000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36599,11 +34666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.dorm3d_ik
-
-	var_5_78[41021001] = {
+	pg.base.dorm3d_ik[41021001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36682,11 +34745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.dorm3d_ik
-
-	var_5_79[41021100] = {
+	pg.base.dorm3d_ik[41021100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36751,11 +34810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.dorm3d_ik
-
-	var_5_80[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36834,11 +34889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.dorm3d_ik
-
-	var_5_81[41031000] = {
+	pg.base.dorm3d_ik[41031000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -36917,11 +34968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.dorm3d_ik
-
-	var_5_82[41031001] = {
+	pg.base.dorm3d_ik[41031001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37000,11 +35047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.dorm3d_ik
-
-	var_5_83[41031100] = {
+	pg.base.dorm3d_ik[41031100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37080,11 +35123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.dorm3d_ik
-
-	var_5_84[41031200] = {
+	pg.base.dorm3d_ik[41031200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37163,11 +35202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.dorm3d_ik
-
-	var_5_85[41041000] = {
+	pg.base.dorm3d_ik[41041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37232,11 +35267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.dorm3d_ik
-
-	var_5_86[41041001] = {
+	pg.base.dorm3d_ik[41041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37315,11 +35346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.dorm3d_ik
-
-	var_5_87[41041100] = {
+	pg.base.dorm3d_ik[41041100] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37398,11 +35425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.dorm3d_ik
-
-	var_5_88[41041101] = {
+	pg.base.dorm3d_ik[41041101] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37467,11 +35490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.dorm3d_ik
-
-	var_5_89[41041200] = {
+	pg.base.dorm3d_ik[41041200] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37550,11 +35569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.dorm3d_ik
-
-	var_5_90[41041201] = {
+	pg.base.dorm3d_ik[41041201] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37633,11 +35648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.dorm3d_ik
-
-	var_5_91[41041202] = {
+	pg.base.dorm3d_ik[41041202] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37702,11 +35713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.dorm3d_ik
-
-	var_5_92[41041203] = {
+	pg.base.dorm3d_ik[41041203] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37771,11 +35778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.dorm3d_ik
-
-	var_5_93[41051000] = {
+	pg.base.dorm3d_ik[41051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37854,11 +35857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.dorm3d_ik
-
-	var_5_94[41051001] = {
+	pg.base.dorm3d_ik[41051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -37937,11 +35936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.dorm3d_ik
-
-	var_5_95[41052000] = {
+	pg.base.dorm3d_ik[41052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38006,11 +36001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.dorm3d_ik
-
-	var_5_96[41052001] = {
+	pg.base.dorm3d_ik[41052001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38075,11 +36066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.dorm3d_ik
-
-	var_5_97[41053000] = {
+	pg.base.dorm3d_ik[41053000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38158,11 +36145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.dorm3d_ik
-
-	var_5_98[41053001] = {
+	pg.base.dorm3d_ik[41053001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38241,8 +36224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.dorm3d_ik[41054000] = {
+	pg.base.dorm3d_ik[41054000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38325,11 +36307,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.dorm3d_ik
-
-	var_6_0[41091000] = {
+	pg.base.dorm3d_ik[41091000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38408,11 +36386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.dorm3d_ik
-
-	var_6_1[41091001] = {
+	pg.base.dorm3d_ik[41091001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38491,11 +36465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.dorm3d_ik
-
-	var_6_2[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38560,11 +36530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.dorm3d_ik
-
-	var_6_3[29] = {
+	pg.base.dorm3d_ik[29] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38643,11 +36609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.dorm3d_ik
-
-	var_6_4[40099000] = {
+	pg.base.dorm3d_ik[40099000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38729,11 +36691,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.dorm3d_ik
-
-	var_6_5[40099001] = {
+	pg.base.dorm3d_ik[40099001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38801,11 +36759,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.dorm3d_ik
-
-	var_6_6[40099002] = {
+	pg.base.dorm3d_ik[40099002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38887,11 +36841,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.dorm3d_ik
-
-	var_6_7[40099010] = {
+	pg.base.dorm3d_ik[40099010] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -38959,11 +36909,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.dorm3d_ik
-
-	var_6_8[40099011] = {
+	pg.base.dorm3d_ik[40099011] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39045,11 +36991,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.dorm3d_ik
-
-	var_6_9[40099012] = {
+	pg.base.dorm3d_ik[40099012] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39131,11 +37073,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.dorm3d_ik
-
-	var_6_10[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39214,11 +37152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.dorm3d_ik
-
-	var_6_11[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39283,11 +37217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.dorm3d_ik
-
-	var_6_12[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39366,11 +37296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.dorm3d_ik
-
-	var_6_13[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39435,11 +37361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.dorm3d_ik
-
-	var_6_14[41073000] = {
+	pg.base.dorm3d_ik[41073000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39518,11 +37440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.dorm3d_ik
-
-	var_6_15[41073001] = {
+	pg.base.dorm3d_ik[41073001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39587,11 +37505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.dorm3d_ik
-
-	var_6_16[41074000] = {
+	pg.base.dorm3d_ik[41074000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39670,11 +37584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.dorm3d_ik
-
-	var_6_17[41074001] = {
+	pg.base.dorm3d_ik[41074001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39739,11 +37649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.dorm3d_ik
-
-	var_6_18[41075000] = {
+	pg.base.dorm3d_ik[41075000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39822,11 +37728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.dorm3d_ik
-
-	var_6_19[41075001] = {
+	pg.base.dorm3d_ik[41075001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39905,11 +37807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.dorm3d_ik
-
-	var_6_20[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -39974,11 +37872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.dorm3d_ik
-
-	var_6_21[41081000] = {
+	pg.base.dorm3d_ik[41081000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40057,11 +37951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.dorm3d_ik
-
-	var_6_22[41083000] = {
+	pg.base.dorm3d_ik[41083000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40140,11 +38030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.dorm3d_ik
-
-	var_6_23[41083001] = {
+	pg.base.dorm3d_ik[41083001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40223,11 +38109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.dorm3d_ik
-
-	var_6_24[41084000] = {
+	pg.base.dorm3d_ik[41084000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40292,11 +38174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.dorm3d_ik
-
-	var_6_25[41084001] = {
+	pg.base.dorm3d_ik[41084001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40375,11 +38253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.dorm3d_ik
-
-	var_6_26[50011000] = {
+	pg.base.dorm3d_ik[50011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40458,11 +38332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.dorm3d_ik
-
-	var_6_27[50011001] = {
+	pg.base.dorm3d_ik[50011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40527,11 +38397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.dorm3d_ik
-
-	var_6_28[50012000] = {
+	pg.base.dorm3d_ik[50012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40610,11 +38476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.dorm3d_ik
-
-	var_6_29[50013000] = {
+	pg.base.dorm3d_ik[50013000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40693,11 +38555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.dorm3d_ik
-
-	var_6_30[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40762,11 +38620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.dorm3d_ik
-
-	var_6_31[50022000] = {
+	pg.base.dorm3d_ik[50022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40845,11 +38699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.dorm3d_ik
-
-	var_6_32[50023000] = {
+	pg.base.dorm3d_ik[50023000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40928,11 +38778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.dorm3d_ik
-
-	var_6_33[50023001] = {
+	pg.base.dorm3d_ik[50023001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -40997,11 +38843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.dorm3d_ik
-
-	var_6_34[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41066,11 +38908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.dorm3d_ik
-
-	var_6_35[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41135,11 +38973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.dorm3d_ik
-
-	var_6_36[50033000] = {
+	pg.base.dorm3d_ik[50033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41218,11 +39052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.dorm3d_ik
-
-	var_6_37[50033001] = {
+	pg.base.dorm3d_ik[50033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41287,11 +39117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.dorm3d_ik
-
-	var_6_38[50041000] = {
+	pg.base.dorm3d_ik[50041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41356,11 +39182,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.dorm3d_ik
-
-	var_6_39[50041001] = {
+	pg.base.dorm3d_ik[50041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41425,11 +39247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.dorm3d_ik
-
-	var_6_40[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41494,11 +39312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.dorm3d_ik
-
-	var_6_41[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41577,11 +39391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.dorm3d_ik
-
-	var_6_42[50043000] = {
+	pg.base.dorm3d_ik[50043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41660,11 +39470,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.dorm3d_ik
-
-	var_6_43[50051000] = {
+	pg.base.dorm3d_ik[50051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41743,11 +39549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.dorm3d_ik
-
-	var_6_44[50051001] = {
+	pg.base.dorm3d_ik[50051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41812,11 +39614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.dorm3d_ik
-
-	var_6_45[50051002] = {
+	pg.base.dorm3d_ik[50051002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41881,11 +39679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.dorm3d_ik
-
-	var_6_46[50052000] = {
+	pg.base.dorm3d_ik[50052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -41964,11 +39758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.dorm3d_ik
-
-	var_6_47[50052001] = {
+	pg.base.dorm3d_ik[50052001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42047,11 +39837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.dorm3d_ik
-
-	var_6_48[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42130,11 +39916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.dorm3d_ik
-
-	var_6_49[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42199,11 +39981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.dorm3d_ik
-
-	var_6_50[50054000] = {
+	pg.base.dorm3d_ik[50054000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42282,11 +40060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.dorm3d_ik
-
-	var_6_51[50061000] = {
+	pg.base.dorm3d_ik[50061000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42351,11 +40125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.dorm3d_ik
-
-	var_6_52[50062000] = {
+	pg.base.dorm3d_ik[50062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42434,11 +40204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.dorm3d_ik
-
-	var_6_53[50062001] = {
+	pg.base.dorm3d_ik[50062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42517,11 +40283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.dorm3d_ik
-
-	var_6_54[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42600,11 +40362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.dorm3d_ik
-
-	var_6_55[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42669,11 +40427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.dorm3d_ik
-
-	var_6_56[26] = {
+	pg.base.dorm3d_ik[26] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42752,11 +40506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.dorm3d_ik
-
-	var_6_57[51011000] = {
+	pg.base.dorm3d_ik[51011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42835,11 +40585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.dorm3d_ik
-
-	var_6_58[51011001] = {
+	pg.base.dorm3d_ik[51011001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42904,11 +40650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.dorm3d_ik
-
-	var_6_59[51012000] = {
+	pg.base.dorm3d_ik[51012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -42987,11 +40729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.dorm3d_ik
-
-	var_6_60[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43070,11 +40808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.dorm3d_ik
-
-	var_6_61[51021000] = {
+	pg.base.dorm3d_ik[51021000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43139,11 +40873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.dorm3d_ik
-
-	var_6_62[51022000] = {
+	pg.base.dorm3d_ik[51022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43222,11 +40952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.dorm3d_ik
-
-	var_6_63[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43305,11 +41031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.dorm3d_ik
-
-	var_6_64[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43374,11 +41096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.dorm3d_ik
-
-	var_6_65[51031000] = {
+	pg.base.dorm3d_ik[51031000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43443,11 +41161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.dorm3d_ik
-
-	var_6_66[51032000] = {
+	pg.base.dorm3d_ik[51032000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43512,11 +41226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.dorm3d_ik
-
-	var_6_67[51033000] = {
+	pg.base.dorm3d_ik[51033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43595,11 +41305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.dorm3d_ik
-
-	var_6_68[51033001] = {
+	pg.base.dorm3d_ik[51033001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43664,11 +41370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.dorm3d_ik
-
-	var_6_69[51041000] = {
+	pg.base.dorm3d_ik[51041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43733,11 +41435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.dorm3d_ik
-
-	var_6_70[51041001] = {
+	pg.base.dorm3d_ik[51041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43802,11 +41500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.dorm3d_ik
-
-	var_6_71[51042000] = {
+	pg.base.dorm3d_ik[51042000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43871,11 +41565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.dorm3d_ik
-
-	var_6_72[51042001] = {
+	pg.base.dorm3d_ik[51042001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -43954,11 +41644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.dorm3d_ik
-
-	var_6_73[51043000] = {
+	pg.base.dorm3d_ik[51043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44037,11 +41723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.dorm3d_ik
-
-	var_6_74[51091000] = {
+	pg.base.dorm3d_ik[51091000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44106,11 +41788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.dorm3d_ik
-
-	var_6_75[51091001] = {
+	pg.base.dorm3d_ik[51091001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44189,11 +41867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.dorm3d_ik
-
-	var_6_76[51092000] = {
+	pg.base.dorm3d_ik[51092000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44258,11 +41932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.dorm3d_ik
-
-	var_6_77[51092001] = {
+	pg.base.dorm3d_ik[51092001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44341,11 +42011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.dorm3d_ik
-
-	var_6_78[28] = {
+	pg.base.dorm3d_ik[28] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44427,11 +42093,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.dorm3d_ik
-
-	var_6_79[29] = {
+	pg.base.dorm3d_ik[29] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44513,11 +42175,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.dorm3d_ik
-
-	var_6_80[30] = {
+	pg.base.dorm3d_ik[30] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44599,11 +42257,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.dorm3d_ik
-
-	var_6_81[59999910] = {
+	pg.base.dorm3d_ik[59999910] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44685,11 +42339,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.dorm3d_ik
-
-	var_6_82[59999911] = {
+	pg.base.dorm3d_ik[59999911] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44757,11 +42407,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.dorm3d_ik
-
-	var_6_83[59999912] = {
+	pg.base.dorm3d_ik[59999912] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44829,11 +42475,7 @@ end)()
 			777
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.dorm3d_ik
-
-	var_6_84[51051000] = {
+	pg.base.dorm3d_ik[51051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44912,11 +42554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.dorm3d_ik
-
-	var_6_85[51051001] = {
+	pg.base.dorm3d_ik[51051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -44981,11 +42619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.dorm3d_ik
-
-	var_6_86[51051002] = {
+	pg.base.dorm3d_ik[51051002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45050,11 +42684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.dorm3d_ik
-
-	var_6_87[51052000] = {
+	pg.base.dorm3d_ik[51052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45133,11 +42763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.dorm3d_ik
-
-	var_6_88[51052001] = {
+	pg.base.dorm3d_ik[51052001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45216,11 +42842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.dorm3d_ik
-
-	var_6_89[51053000] = {
+	pg.base.dorm3d_ik[51053000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45299,11 +42921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.dorm3d_ik
-
-	var_6_90[51053001] = {
+	pg.base.dorm3d_ik[51053001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45368,11 +42986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.dorm3d_ik
-
-	var_6_91[51054000] = {
+	pg.base.dorm3d_ik[51054000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45451,11 +43065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.dorm3d_ik
-
-	var_6_92[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45520,11 +43130,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.dorm3d_ik
-
-	var_6_93[51062000] = {
+	pg.base.dorm3d_ik[51062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45603,11 +43209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.dorm3d_ik
-
-	var_6_94[51062001] = {
+	pg.base.dorm3d_ik[51062001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45686,11 +43288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.dorm3d_ik
-
-	var_6_95[51063000] = {
+	pg.base.dorm3d_ik[51063000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45769,11 +43367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.dorm3d_ik
-
-	var_6_96[51063001] = {
+	pg.base.dorm3d_ik[51063001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45838,11 +43432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.dorm3d_ik
-
-	var_6_97[51063002] = {
+	pg.base.dorm3d_ik[51063002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45921,11 +43511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.dorm3d_ik
-
-	var_6_98[60011000] = {
+	pg.base.dorm3d_ik[60011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -45990,8 +43576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.dorm3d_ik[60012000] = {
+	pg.base.dorm3d_ik[60012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46074,11 +43659,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.dorm3d_ik
-
-	var_7_0[60013000] = {
+	pg.base.dorm3d_ik[60013000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46143,11 +43724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.dorm3d_ik
-
-	var_7_1[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46226,11 +43803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.dorm3d_ik
-
-	var_7_2[60022000] = {
+	pg.base.dorm3d_ik[60022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46295,11 +43868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.dorm3d_ik
-
-	var_7_3[60023000] = {
+	pg.base.dorm3d_ik[60023000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46364,11 +43933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.dorm3d_ik
-
-	var_7_4[60023001] = {
+	pg.base.dorm3d_ik[60023001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46447,11 +44012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.dorm3d_ik
-
-	var_7_5[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46530,11 +44091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.dorm3d_ik
-
-	var_7_6[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46599,11 +44156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.dorm3d_ik
-
-	var_7_7[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46668,11 +44221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.dorm3d_ik
-
-	var_7_8[60033000] = {
+	pg.base.dorm3d_ik[60033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46751,11 +44300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.dorm3d_ik
-
-	var_7_9[60041000] = {
+	pg.base.dorm3d_ik[60041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46834,11 +44379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.dorm3d_ik
-
-	var_7_10[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46917,11 +44458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.dorm3d_ik
-
-	var_7_11[60043000] = {
+	pg.base.dorm3d_ik[60043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -46986,11 +44523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.dorm3d_ik
-
-	var_7_12[60043001] = {
+	pg.base.dorm3d_ik[60043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47055,11 +44588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.dorm3d_ik
-
-	var_7_13[60043002] = {
+	pg.base.dorm3d_ik[60043002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47138,11 +44667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.dorm3d_ik
-
-	var_7_14[60051000] = {
+	pg.base.dorm3d_ik[60051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47207,11 +44732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.dorm3d_ik
-
-	var_7_15[60051001] = {
+	pg.base.dorm3d_ik[60051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47290,11 +44811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.dorm3d_ik
-
-	var_7_16[60052000] = {
+	pg.base.dorm3d_ik[60052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47359,11 +44876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.dorm3d_ik
-
-	var_7_17[60052002] = {
+	pg.base.dorm3d_ik[60052002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47442,11 +44955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.dorm3d_ik
-
-	var_7_18[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47511,11 +45020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.dorm3d_ik
-
-	var_7_19[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47594,11 +45099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.dorm3d_ik
-
-	var_7_20[10] = {
+	pg.base.dorm3d_ik[10] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47663,11 +45164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.dorm3d_ik
-
-	var_7_21[11] = {
+	pg.base.dorm3d_ik[11] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47746,11 +45243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.dorm3d_ik
-
-	var_7_22[60061000] = {
+	pg.base.dorm3d_ik[60061000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47815,11 +45308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.dorm3d_ik
-
-	var_7_23[60061001] = {
+	pg.base.dorm3d_ik[60061001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47898,11 +45387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.dorm3d_ik
-
-	var_7_24[60062000] = {
+	pg.base.dorm3d_ik[60062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -47981,11 +45466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.dorm3d_ik
-
-	var_7_25[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48064,11 +45545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.dorm3d_ik
-
-	var_7_26[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48133,11 +45610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.dorm3d_ik
-
-	var_7_27[61011000] = {
+	pg.base.dorm3d_ik[61011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48202,11 +45675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.dorm3d_ik
-
-	var_7_28[61012000] = {
+	pg.base.dorm3d_ik[61012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48285,11 +45754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.dorm3d_ik
-
-	var_7_29[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48354,11 +45819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.dorm3d_ik
-
-	var_7_30[61021000] = {
+	pg.base.dorm3d_ik[61021000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48437,11 +45898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.dorm3d_ik
-
-	var_7_31[61022000] = {
+	pg.base.dorm3d_ik[61022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48506,11 +45963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.dorm3d_ik
-
-	var_7_32[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48575,11 +46028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.dorm3d_ik
-
-	var_7_33[25] = {
+	pg.base.dorm3d_ik[25] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48658,11 +46107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.dorm3d_ik
-
-	var_7_34[61031000] = {
+	pg.base.dorm3d_ik[61031000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48741,11 +46186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.dorm3d_ik
-
-	var_7_35[61032000] = {
+	pg.base.dorm3d_ik[61032000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48810,11 +46251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.dorm3d_ik
-
-	var_7_36[61032001] = {
+	pg.base.dorm3d_ik[61032001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48879,11 +46316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.dorm3d_ik
-
-	var_7_37[61033000] = {
+	pg.base.dorm3d_ik[61033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -48962,11 +46395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.dorm3d_ik
-
-	var_7_38[61041000] = {
+	pg.base.dorm3d_ik[61041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49045,11 +46474,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.dorm3d_ik
-
-	var_7_39[61042000] = {
+	pg.base.dorm3d_ik[61042000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49128,11 +46553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.dorm3d_ik
-
-	var_7_40[61043000] = {
+	pg.base.dorm3d_ik[61043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49197,11 +46618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.dorm3d_ik
-
-	var_7_41[61043001] = {
+	pg.base.dorm3d_ik[61043001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49266,11 +46683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.dorm3d_ik
-
-	var_7_42[61043002] = {
+	pg.base.dorm3d_ik[61043002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49349,11 +46762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.dorm3d_ik
-
-	var_7_43[61051000] = {
+	pg.base.dorm3d_ik[61051000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49418,11 +46827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.dorm3d_ik
-
-	var_7_44[61051001] = {
+	pg.base.dorm3d_ik[61051001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49501,11 +46906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.dorm3d_ik
-
-	var_7_45[61052000] = {
+	pg.base.dorm3d_ik[61052000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49570,11 +46971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.dorm3d_ik
-
-	var_7_46[61052002] = {
+	pg.base.dorm3d_ik[61052002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49653,11 +47050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.dorm3d_ik
-
-	var_7_47[61053000] = {
+	pg.base.dorm3d_ik[61053000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49722,11 +47115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.dorm3d_ik
-
-	var_7_48[61053001] = {
+	pg.base.dorm3d_ik[61053001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49805,11 +47194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.dorm3d_ik
-
-	var_7_49[61053002] = {
+	pg.base.dorm3d_ik[61053002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49874,11 +47259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.dorm3d_ik
-
-	var_7_50[61053003] = {
+	pg.base.dorm3d_ik[61053003] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -49957,11 +47338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.dorm3d_ik
-
-	var_7_51[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50026,11 +47403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.dorm3d_ik
-
-	var_7_52[9] = {
+	pg.base.dorm3d_ik[9] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50109,11 +47482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.dorm3d_ik
-
-	var_7_53[61062000] = {
+	pg.base.dorm3d_ik[61062000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50192,11 +47561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.dorm3d_ik
-
-	var_7_54[61063000] = {
+	pg.base.dorm3d_ik[61063000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50275,11 +47640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.dorm3d_ik
-
-	var_7_55[61063001] = {
+	pg.base.dorm3d_ik[61063001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50344,11 +47705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.dorm3d_ik
-
-	var_7_56[61091000] = {
+	pg.base.dorm3d_ik[61091000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50427,11 +47784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.dorm3d_ik
-
-	var_7_57[61091001] = {
+	pg.base.dorm3d_ik[61091001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50510,11 +47863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.dorm3d_ik
-
-	var_7_58[61092000] = {
+	pg.base.dorm3d_ik[61092000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50579,11 +47928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.dorm3d_ik
-
-	var_7_59[61092001] = {
+	pg.base.dorm3d_ik[61092001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50662,11 +48007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.dorm3d_ik
-
-	var_7_60[29] = {
+	pg.base.dorm3d_ik[29] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50748,11 +48089,7 @@ end)()
 			777
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.dorm3d_ik
-
-	var_7_61[30] = {
+	pg.base.dorm3d_ik[30] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50820,11 +48157,7 @@ end)()
 			777
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.dorm3d_ik
-
-	var_7_62[31] = {
+	pg.base.dorm3d_ik[31] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50906,11 +48239,7 @@ end)()
 			777
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.dorm3d_ik
-
-	var_7_63[70011000] = {
+	pg.base.dorm3d_ik[70011000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -50989,11 +48318,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.dorm3d_ik
-
-	var_7_64[70012000] = {
+	pg.base.dorm3d_ik[70012000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51072,11 +48397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.dorm3d_ik
-
-	var_7_65[70013000] = {
+	pg.base.dorm3d_ik[70013000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51155,11 +48476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.dorm3d_ik
-
-	var_7_66[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51224,11 +48541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.dorm3d_ik
-
-	var_7_67[70022000] = {
+	pg.base.dorm3d_ik[70022000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51307,11 +48620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.dorm3d_ik
-
-	var_7_68[70023000] = {
+	pg.base.dorm3d_ik[70023000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51376,11 +48685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.dorm3d_ik
-
-	var_7_69[70023001] = {
+	pg.base.dorm3d_ik[70023001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51459,11 +48764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.dorm3d_ik
-
-	var_7_70[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51542,11 +48843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.dorm3d_ik
-
-	var_7_71[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51625,11 +48922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.dorm3d_ik
-
-	var_7_72[1] = {
+	pg.base.dorm3d_ik[1] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51694,11 +48987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.dorm3d_ik
-
-	var_7_73[70033000] = {
+	pg.base.dorm3d_ik[70033000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51777,11 +49066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.dorm3d_ik
-
-	var_7_74[70041000] = {
+	pg.base.dorm3d_ik[70041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51860,11 +49145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.dorm3d_ik
-
-	var_7_75[70041001] = {
+	pg.base.dorm3d_ik[70041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -51943,11 +49224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.dorm3d_ik
-
-	var_7_76[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52012,11 +49289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.dorm3d_ik
-
-	var_7_77[17] = {
+	pg.base.dorm3d_ik[17] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52095,11 +49368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.dorm3d_ik
-
-	var_7_78[70043000] = {
+	pg.base.dorm3d_ik[70043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52164,11 +49433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.dorm3d_ik
-
-	var_7_79[70044001] = {
+	pg.base.dorm3d_ik[70044001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52233,11 +49498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.dorm3d_ik
-
-	var_7_80[70044002] = {
+	pg.base.dorm3d_ik[70044002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52316,11 +49577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.dorm3d_ik
-
-	var_7_81[29] = {
+	pg.base.dorm3d_ik[29] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52402,11 +49659,7 @@ end)()
 			777
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.dorm3d_ik
-
-	var_7_82[30] = {
+	pg.base.dorm3d_ik[30] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52488,11 +49741,7 @@ end)()
 			777
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.dorm3d_ik
-
-	var_7_83[31] = {
+	pg.base.dorm3d_ik[31] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52574,11 +49823,7 @@ end)()
 			777
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.dorm3d_ik
-
-	var_7_84[24] = {
+	pg.base.dorm3d_ik[24] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52657,11 +49902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.dorm3d_ik
-
-	var_7_85[0] = {
+	pg.base.dorm3d_ik[0] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52740,11 +49981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.dorm3d_ik
-
-	var_7_86[70113000] = {
+	pg.base.dorm3d_ik[70113000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52823,11 +50060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.dorm3d_ik
-
-	var_7_87[70121000] = {
+	pg.base.dorm3d_ik[70121000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52892,11 +50125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.dorm3d_ik
-
-	var_7_88[16] = {
+	pg.base.dorm3d_ik[16] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -52975,11 +50204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.dorm3d_ik
-
-	var_7_89[70123000] = {
+	pg.base.dorm3d_ik[70123000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53044,11 +50269,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.dorm3d_ik
-
-	var_7_90[70123001] = {
+	pg.base.dorm3d_ik[70123001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53127,11 +50348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.dorm3d_ik
-
-	var_7_91[70131000] = {
+	pg.base.dorm3d_ik[70131000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53210,11 +50427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.dorm3d_ik
-
-	var_7_92[70132000] = {
+	pg.base.dorm3d_ik[70132000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53293,11 +50506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.dorm3d_ik
-
-	var_7_93[70132001] = {
+	pg.base.dorm3d_ik[70132001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53362,11 +50571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.dorm3d_ik
-
-	var_7_94[8] = {
+	pg.base.dorm3d_ik[8] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53445,11 +50650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.dorm3d_ik
-
-	var_7_95[71041000] = {
+	pg.base.dorm3d_ik[71041000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53528,11 +50729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.dorm3d_ik
-
-	var_7_96[71041001] = {
+	pg.base.dorm3d_ik[71041001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53611,11 +50808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.dorm3d_ik
-
-	var_7_97[71042000] = {
+	pg.base.dorm3d_ik[71042000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53680,11 +50873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.dorm3d_ik
-
-	var_7_98[71042001] = {
+	pg.base.dorm3d_ik[71042001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53763,8 +50952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.dorm3d_ik[71043000] = {
+	pg.base.dorm3d_ik[71043000] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53833,11 +51021,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.dorm3d_ik
-
-	var_8_0[71044001] = {
+	pg.base.dorm3d_ik[71044001] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",
@@ -53902,8 +51086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_0
-	var_8_0.base.dorm3d_ik[71044002] = {
+	pg.base.dorm3d_ik[71044002] = {
 		action_back_time = 0,
 		tip_offset = "",
 		tip_text = "",

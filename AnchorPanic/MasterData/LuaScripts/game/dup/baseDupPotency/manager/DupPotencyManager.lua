@@ -17,6 +17,8 @@ function ctor(self)
     self:setDupType(DupType.DUP_CAVITATION_POTENCY, PreFightBattleType.DupCavitationPotency)
     --潜能副本-生蕴潜能副本
     self:setDupType(DupType.DUP_LIFE_POTENCY, PreFightBattleType.DupLifePotency)
+    --虚黯潜能副
+    self:setDupType(DupType.Dup_Dark_Potential, PreFightBattleType.Dup_Darkpotential)
 end
 
 -- 战斗结算面板显示的名字

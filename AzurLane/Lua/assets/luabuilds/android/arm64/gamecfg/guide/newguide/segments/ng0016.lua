@@ -1,8 +1,4 @@
-﻿local var_0_0 = {
-	"防御作战相关的内容可以点击帮助按钮查看详细说明"
-}
-
-return {
+﻿return {
 	id = "NG0016",
 	events = {
 		{
@@ -12,7 +8,9 @@ return {
 				dir = -1,
 				posY = 172,
 				posX = -337,
-				text = var_0_0[1]
+				text = ({
+					"防御作战相关的内容可以点击帮助按钮查看详细说明"
+				})[1]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/top/LevelStageView(Clone)/bottom_stage/Normal/help_button"

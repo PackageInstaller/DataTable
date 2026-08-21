@@ -1,71 +1,41 @@
-﻿local var_0_0 = {}
+﻿AssetBundleHelper = {}
 
-AssetBundleHelper = AssetBundleHelper
+local var_0_0 = AssetBundleHelper
 
-function var_0.GetClass()
-	EDITOR_TOOL = var_1_10000
-
-	if var_1_10000 then
-		pg = var_1_10000
-
-		return var_1_10000.AssetBundleEditor
+function AssetBundleHelper.GetClass()
+	if EDITOR_TOOL then
+		return pg.AssetBundleEditor
 	else
-		pg = var_1_10000
-
-		return var_1_10000.AssetBundle
+		return pg.AssetBundle
 	end
 
 	return
 end
 
-function var_0.LoadAssetBundle(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = var_0.GetClass().New
+function AssetBundleHelper.LoadAssetBundle(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = var_0_0.GetClass().New(string.lower(arg_2_0))
 
-	string = var_1_10006
+	var_2_0:Load(arg_2_1, arg_2_2, arg_2_3)
 
-	local var_2_1 = var_2_0(var_1_10006.lower(arg_2_0))
-
-	var_4.Load(var_2_1, arg_2_1, arg_2_2, arg_2_3)
-
-	return var_4
+	return var_2_0
 end
 
-function var_0.UnloadAssetBundle(arg_3_0, arg_3_1, arg_3_2)
-	EDITOR_TOOL = var_1_10003
-
-	if var_1_10003 then
+function AssetBundleHelper.UnloadAssetBundle(arg_3_0, arg_3_1, arg_3_2)
+	if EDITOR_TOOL then
 		-- block empty
 	else
-		ResourceMgr = var_1_10003
-
-		local var_3_0 = var_1_10003.Inst
-		local var_3_1 = var_3.ClearBundleRef
-		local var_3_2 = arg_3_0
-
-		defaultValue = var_1_10007
-
-		local var_3_3 = var_1_10007(arg_3_1, false)
-
-		defaultValue = var_1_10008
-
-		var_3_1(var_3_0, var_3_2, var_3_3, var_1_10008(arg_3_2, false))
+		ResourceMgr.Inst:ClearBundleRef(arg_3_0, defaultValue(arg_3_1, false), defaultValue(arg_3_2, false))
 	end
 
 	return
 end
 
-function var_0.AutoUnloadAssetBundle(arg_4_0, arg_4_1)
-	onNextTick = var_1_10002
-
-	var_1_10002(function()
+function AssetBundleHelper.AutoUnloadAssetBundle(arg_4_0, arg_4_1)
+	onNextTick(function()
 		if arg_4_1 then
-			local var_5_0 = arg_4_0
-
-			var_0.Dispose(var_5_0)
+			arg_4_0:Dispose()
 		else
-			local var_5_1 = arg_4_0
-
-			var_0.ClearDependenciesBundle(var_5_1)
+			arg_4_0:ClearDependenciesBundle()
 		end
 
 		return
@@ -74,14 +44,12 @@ function var_0.AutoUnloadAssetBundle(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0.LoadAsset(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4, arg_6_5)
+function AssetBundleHelper.LoadAsset(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4, arg_6_5)
 	if arg_6_3 then
-		AssetBundleHelper = var_1_10006
-
-		var_1_10006.LoadAssetBundle(arg_6_0, arg_6_3, true, function(arg_7_0)
+		AssetBundleHelper.LoadAssetBundle(arg_6_0, arg_6_3, true, function(arg_7_0)
 			arg_7_0:LoadAssetAsync(arg_6_1, arg_6_2, function(arg_8_0)
 				arg_6_4(arg_8_0)
-				var_0.AutoUnloadAssetBundle(arg_7_0, arg_6_5)
+				var_0_0.AutoUnloadAssetBundle(arg_7_0, arg_6_5)
 
 				return
 			end, false, false)
@@ -89,15 +57,11 @@ function var_0.LoadAsset(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4, arg_6_5)
 			return
 		end)
 	else
-		AssetBundleHelper = var_1_10006
+		local var_6_0 = AssetBundleHelper.LoadAssetBundle(arg_6_0, arg_6_3, true)
+		local var_6_1 = var_6_0:LoadAssetSync(arg_6_1, arg_6_2, false, false)
 
-		local var_6_0 = var_1_10006.LoadAssetBundle(arg_6_0, arg_6_3, true)
-		local var_6_1 = var_6.LoadAssetSync(var_6_0, arg_6_1, arg_6_2, false, false)
-
-		existCall = var_8
-
-		var_8(arg_6_4, var_6_1)
-		var_0.AutoUnloadAssetBundle(var_6, arg_6_5)
+		existCall(arg_6_4, var_6_1)
+		var_0_0.AutoUnloadAssetBundle(var_6_0, arg_6_5)
 
 		return var_6_1
 	end
@@ -105,21 +69,14 @@ function var_0.LoadAsset(arg_6_0, arg_6_1, arg_6_2, arg_6_3, arg_6_4, arg_6_5)
 	return
 end
 
-function var_0.LoadManyAssets(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
+function AssetBundleHelper.LoadManyAssets(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
 	local var_9_0 = {}
 
 	if arg_9_3 then
-		AssetBundleHelper = var_1_10007
-
-		var_1_10007.LoadAssetBundle(arg_9_0, arg_9_3, true, function(arg_10_0)
-			parallelAsync = var_2_10001
-			underscore = var_2_10003
-
-			var_2_10001(var_2_10003.map(arg_9_1, function(arg_11_0)
+		AssetBundleHelper.LoadAssetBundle(arg_9_0, arg_9_3, true, function(arg_10_0)
+			parallelAsync(underscore.map(arg_9_1, function(arg_11_0)
 				return function(arg_12_0)
-					local var_12_0 = arg_10_0
-
-					var_1.LoadAssetAsync(var_12_0, arg_11_0, arg_9_2, function(arg_13_0)
+					arg_10_0:LoadAssetAsync(arg_11_0, arg_9_2, function(arg_13_0)
 						var_9_0[arg_11_0] = arg_13_0
 
 						arg_12_0()
@@ -131,7 +88,7 @@ function var_0.LoadManyAssets(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9
 				end
 			end), function()
 				arg_9_4(var_9_0)
-				var_0.AutoUnloadAssetBundle(arg_10_0, arg_9_5)
+				var_0_0.AutoUnloadAssetBundle(arg_10_0, arg_9_5)
 
 				return
 			end)
@@ -139,22 +96,16 @@ function var_0.LoadManyAssets(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9
 			return
 		end)
 	else
-		AssetBundleHelper = var_1_10007
+		local var_9_1 = AssetBundleHelper.LoadAssetBundle(arg_9_0, arg_9_3, true)
 
-		local var_9_1 = var_1_10007.LoadAssetBundle(arg_9_0, arg_9_3, true)
-
-		ipairs = var_1_10008
-
-		for iter_9_0, iter_9_1 in var_1_10008(arg_9_1) do
-			var_9_0[iter_9_1] = var_9_1:LoadAssetSync(iter_9_1, arg_9_2, false, false)
+		for iter_9_0, iter_9_1 in ipairs(arg_9_1) do
+			({})[iter_9_1] = var_9_1:LoadAssetSync(iter_9_1, arg_9_2, false, false)
 		end
 
-		existCall = var_8
+		existCall(arg_9_4, {})
+		var_0_0.AutoUnloadAssetBundle(var_9_1, arg_9_5)
 
-		var_8(arg_9_4, var_9_0)
-		var_0.AutoUnloadAssetBundle(var_9_1, arg_9_5)
-
-		return var_9_0
+		return {}
 	end
 
 	return
@@ -162,96 +113,72 @@ end
 
 local var_0_1 = {}
 
-function var_0.StoreAssetBundle(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	local var_15_0 = var_0_1
-	local var_15_1
+function AssetBundleHelper.StoreAssetBundle(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
+	var_0_1[arg_15_0] = var_0_1[arg_15_0] or {}
 
-	if not var_0_1[arg_15_0] then
-		var_15_1 = {}
-	end
-
-	var_15_0[arg_15_0] = var_15_1
-	table = var_15_0
-
-	var_15_0.insert(var_0_1[arg_15_0], var_0.LoadAssetBundle(arg_15_0, arg_15_1, arg_15_2, arg_15_3))
+	table.insert(var_0_1[arg_15_0], var_0_0.LoadAssetBundle(arg_15_0, arg_15_1, arg_15_2, arg_15_3))
 
 	return
 end
 
-function var_0.UnstoreAssetBundle(arg_16_0, arg_16_1)
-	table = var_1_10002
-
-	local var_16_0 = var_1_10002.remove(var_0_1[arg_16_0])
-
-	var_2.Dispose(var_16_0, arg_16_1)
+function AssetBundleHelper.UnstoreAssetBundle(arg_16_0, arg_16_1)
+	table.remove(var_0_1[arg_16_0]):Dispose(arg_16_1)
 
 	return
 end
 
-var_0.bundleDic = {}
-var_0.bundleCount = 0
+AssetBundleHelper.bundleDic = {}
+AssetBundleHelper.bundleCount = 0
 
-function var_0.BuildAssetNameDic(arg_17_0, arg_17_1)
-	if var_0.bundleDic[arg_17_0] then
+function AssetBundleHelper.BuildAssetNameDic(arg_17_0, arg_17_1)
+	if var_0_0.bundleDic[arg_17_0] then
 		return
 	end
 
 	local var_17_0 = {}
 
-	ipairs = var_1_10003
-
-	for iter_17_0, iter_17_1 in var_1_10003(arg_17_1) do
+	for iter_17_0, iter_17_1 in ipairs(arg_17_1) do
 		var_17_0[iter_17_1] = iter_17_1
-		string = var_1_10009
-		var_17_0[var_1_10009.lower(var_8)] = iter_17_1
-		GetFileName = var_1_10009
-		var_17_0[var_1_10009(var_8)] = iter_17_1
-		string = var_1_10009
-		var_17_0[var_1_10009.lower(var_8)] = iter_17_1
-		string = var_1_10009
+		var_17_0[string.lower(iter_17_1)] = iter_17_1
 
-		if var_1_10009.split(var_8, ".")[1] then
-			var_17_0[var_8] = iter_17_1
-			string = var_1_10009
-			var_17_0[var_1_10009.lower(var_8)] = iter_17_1
+		local var_17_2 = GetFileName(iter_17_1)
+
+		var_17_0[var_17_2] = iter_17_1
+		var_17_0[string.lower(var_17_2)] = iter_17_1
+
+		local var_17_3 = string.split(var_17_2, ".")[1]
+
+		if var_17_3 then
+			var_17_0[var_17_3] = iter_17_1
+			var_17_0[string.lower(var_17_3)] = iter_17_1
 		end
 	end
 
-	if var_0.bundleCount > 500 then
-		var_0.bundleCount = 0
-		var_0.bundleDic = {}
+	if var_0_0.bundleCount > 500 then
+		var_0_0.bundleCount = 0
+		var_0_0.bundleDic = {}
 	end
 
-	var_0.bundleCount = var_0.bundleCount + 1
-	var_0.bundleDic[arg_17_0] = var_17_0
+	var_0_0.bundleCount = var_0_0.bundleCount + 1
+	var_0_0.bundleDic[arg_17_0] = var_17_0
 
 	return
 end
 
-function var_0.GetTotalRefList(arg_18_0)
+function AssetBundleHelper.GetTotalRefList(arg_18_0)
 	if not arg_18_0 or #arg_18_0 == 0 then
 		return {}
 	end
 
-	ResourceMgr = var_1_10001
+	local var_18_0 = ResourceMgr.Inst:GetFullDependencies(arg_18_0)
 
-	local var_18_0 = var_1_10001.Inst
-	local var_18_1 = var_1.GetFullDependencies(var_18_0, arg_18_0)
-	local var_18_2 = {}
-
-	for iter_18_0 = 0, var_18_1.Length - 1 do
-		local var_18_3 = var_18_1[iter_18_0]
-
-		table = var_1_10008
-
-		if not var_1_10008.contains(var_18_2, var_18_3) then
-			table = var_1_10008
-
-			var_1_10008.insert(var_18_2, var_18_1[iter_18_0])
+	for iter_18_0 = 0, var_18_0.Length - 1 do
+		if not table.contains({}, var_18_0[iter_18_0]) then
+			table.insert({}, var_18_0[iter_18_0])
 		end
 	end
 
-	return var_18_2
+	return {}
 end
 
-return var_0
+return AssetBundleHelper

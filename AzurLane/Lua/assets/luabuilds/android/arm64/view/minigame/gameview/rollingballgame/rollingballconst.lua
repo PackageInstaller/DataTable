@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RollingBallConst")
+﻿local var_0_0 = class("RollingBallConst")
 
 var_0_0.grid_width = 143
 var_0_0.grid_height = 134

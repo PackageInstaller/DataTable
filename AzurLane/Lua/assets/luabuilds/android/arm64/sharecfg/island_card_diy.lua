@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_card_diy") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_card_diy"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_card_diy = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_card_diy
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_card_diy
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_card_diy = rawget(pg, "island_card_diy") or setmetatable({
+	__name = "island_card_diy"
+}, confNEO)
+pg.island_card_diy.__namecode__ = true
+pg.island_card_diy.all = {
 	4001,
 	4002,
 	4003,
@@ -50,25 +23,11 @@ var_0_4.all = {
 	4017,
 	4018
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_card_diy = {}
+pg.base = pg.base or {}
+pg.base.island_card_diy = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_card_diy
-
-	var_1_0[4001] = {
+	pg.base.island_card_diy[4001] = {
 		resource = "islandphoto/4001",
 		name = "默认形象",
 		type = 4,
@@ -78,11 +37,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "默认形象",
 		jump_page = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_card_diy
-
-	var_1_1[4002] = {
+	pg.base.island_card_diy[4002] = {
 		resource = "islandphoto/4002",
 		name = "{namecode:199}形象照",
 		type = 4,
@@ -92,11 +47,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "{namecode:199}形象照",
 		jump_page = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_card_diy
-
-	var_1_2[4003] = {
+	pg.base.island_card_diy[4003] = {
 		resource = "islandphoto/4003",
 		name = "萨拉托加形象照",
 		type = 4,
@@ -106,11 +57,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "萨拉托加形象照",
 		jump_page = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_card_diy
-
-	var_1_3[4004] = {
+	pg.base.island_card_diy[4004] = {
 		resource = "islandphoto/4004",
 		name = "胡德形象照",
 		type = 4,
@@ -120,11 +67,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "胡德形象照",
 		jump_page = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_card_diy
-
-	var_1_4[4005] = {
+	pg.base.island_card_diy[4005] = {
 		resource = "islandphoto/4005",
 		name = "独角兽形象照",
 		type = 4,
@@ -134,11 +77,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "独角兽形象照",
 		jump_page = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_card_diy
-
-	var_1_5[4006] = {
+	pg.base.island_card_diy[4006] = {
 		resource = "islandphoto/4006",
 		name = "柴郡形象照",
 		type = 4,
@@ -148,11 +87,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "柴郡形象照",
 		jump_page = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_card_diy
-
-	var_1_6[4007] = {
+	pg.base.island_card_diy[4007] = {
 		resource = "islandphoto/4007",
 		name = "{namecode:18}形象照",
 		type = 4,
@@ -162,11 +97,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "{namecode:18}形象照",
 		jump_page = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_card_diy
-
-	var_1_7[4008] = {
+	pg.base.island_card_diy[4008] = {
 		resource = "islandphoto/4008",
 		name = "{namecode:193}形象照",
 		type = 4,
@@ -176,11 +107,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "{namecode:193}形象照",
 		jump_page = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_card_diy
-
-	var_1_8[4009] = {
+	pg.base.island_card_diy[4009] = {
 		resource = "islandphoto/4009",
 		name = "{namecode:97}形象照",
 		type = 4,
@@ -190,11 +117,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "{namecode:97}形象照",
 		jump_page = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_card_diy
-
-	var_1_9[4010] = {
+	pg.base.island_card_diy[4010] = {
 		resource = "islandphoto/4010",
 		name = "{namecode:98}形象照",
 		type = 4,
@@ -204,11 +127,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "{namecode:98}形象照",
 		jump_page = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_card_diy
-
-	var_1_10[4011] = {
+	pg.base.island_card_diy[4011] = {
 		resource = "islandphoto/4011",
 		name = "{namecode:427}形象照",
 		type = 4,
@@ -218,11 +137,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "{namecode:427}形象照",
 		jump_page = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_card_diy
-
-	var_1_11[4012] = {
+	pg.base.island_card_diy[4012] = {
 		resource = "islandphoto/4012",
 		name = "应瑞形象照",
 		type = 4,
@@ -232,11 +147,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "应瑞形象照",
 		jump_page = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_card_diy
-
-	var_1_12[4013] = {
+	pg.base.island_card_diy[4013] = {
 		resource = "islandphoto/4013",
 		name = "肇和形象照",
 		type = 4,
@@ -246,11 +157,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "肇和形象照",
 		jump_page = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_card_diy
-
-	var_1_13[4014] = {
+	pg.base.island_card_diy[4014] = {
 		resource = "islandphoto/4014",
 		name = "莱昂纳多·达·芬奇形象照",
 		type = 4,
@@ -260,11 +167,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "莱昂纳多·达·芬奇形象照",
 		jump_page = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_card_diy
-
-	var_1_14[4015] = {
+	pg.base.island_card_diy[4015] = {
 		resource = "islandphoto/4015",
 		name = "塔什干形象照",
 		type = 4,
@@ -274,11 +177,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "塔什干形象照",
 		jump_page = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_card_diy
-
-	var_1_15[4016] = {
+	pg.base.island_card_diy[4016] = {
 		resource = "islandphoto/4016",
 		name = "恶毒形象照",
 		type = 4,
@@ -288,11 +187,7 @@ var_0_4.base.island_card_diy = {}
 		desc = "恶毒形象照",
 		jump_page = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_card_diy
-
-	var_1_16[4017] = {
+	pg.base.island_card_diy[4017] = {
 		resource = "islandphoto/4017",
 		name = "精锐推演师",
 		type = 4,
@@ -307,8 +202,7 @@ var_0_4.base.island_card_diy = {}
 			}
 		}
 	}
-	pg = var_1_16
-	var_1_16.base.island_card_diy[4018] = {
+	pg.base.island_card_diy[4018] = {
 		resource = "islandphoto/4018",
 		name = "王牌推演师",
 		type = 4,

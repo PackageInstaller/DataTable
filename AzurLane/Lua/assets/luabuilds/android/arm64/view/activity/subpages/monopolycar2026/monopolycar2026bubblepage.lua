@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MonopolyCar2026BubblePage", import("..MonopolyCar2024.MonopolyCar2024BubblePage"))
 
-local var_0_0 = "MonopolyCar2026BubblePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..MonopolyCar2024.MonopolyCar2024BubblePage"))
-
-function var_0_1.GetUiAtlas(arg_1_0)
+function var_0_0.GetUiAtlas(arg_1_0)
 	return "ui/MonopolyCar2026_atlas"
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_resource") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_resource"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_resource = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_resource
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_resource = rawget(pg, "child2_resource") or setmetatable({
+	__name = "child2_resource"
+}, confNEO)
+pg.child2_resource.all = {
 	1,
 	2,
 	3,
@@ -37,11 +14,7 @@ var_0_3.all = {
 	305,
 	306
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_resource
-
-var_0_4.get_id_list_by_character = {
+pg.child2_resource.get_id_list_by_character = {
 	{
 		1,
 		2,
@@ -57,25 +30,11 @@ var_0_4.get_id_list_by_character = {
 		306
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child2_resource = {}
+pg.base = pg.base or {}
+pg.base.child2_resource = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_resource
-
-	var_1_0[1] = {
+	pg.base.child2_resource[1] = {
 		item_icon = "res_jinqian2",
 		name = "金钱",
 		min_value = 0,
@@ -87,11 +46,7 @@ var_0_4.base.child2_resource = {}
 		id = 1,
 		icon = "res_jinqian"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_resource
-
-	var_1_1[2] = {
+	pg.base.child2_resource[2] = {
 		item_icon = "res_xinqing2",
 		name = "心情",
 		min_value = 0,
@@ -103,11 +58,7 @@ var_0_4.base.child2_resource = {}
 		id = 2,
 		icon = "res_xinqing"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_resource
-
-	var_1_2[3] = {
+	pg.base.child2_resource[3] = {
 		item_icon = "res_xingdongli2",
 		name = "行动力",
 		min_value = 0,
@@ -119,11 +70,7 @@ var_0_4.base.child2_resource = {}
 		id = 3,
 		icon = "res_xingdongli"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_resource
-
-	var_1_3[4] = {
+	pg.base.child2_resource[4] = {
 		item_icon = "res_haogandu2",
 		name = "好感度",
 		min_value = 0,
@@ -135,11 +82,7 @@ var_0_4.base.child2_resource = {}
 		id = 4,
 		icon = "res_haogandu"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_resource
-
-	var_1_4[301] = {
+	pg.base.child2_resource[301] = {
 		item_icon = "res_jinqian2",
 		name = "金钱",
 		min_value = 0,
@@ -151,11 +94,7 @@ var_0_4.base.child2_resource = {}
 		id = 301,
 		icon = "res_jinqian"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_resource
-
-	var_1_5[302] = {
+	pg.base.child2_resource[302] = {
 		item_icon = "res_xinqing2",
 		name = "心情",
 		min_value = 0,
@@ -167,11 +106,7 @@ var_0_4.base.child2_resource = {}
 		id = 302,
 		icon = "res_xinqing"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_resource
-
-	var_1_6[303] = {
+	pg.base.child2_resource[303] = {
 		item_icon = "res_xingdongli2",
 		name = "行动力",
 		min_value = 0,
@@ -183,11 +118,7 @@ var_0_4.base.child2_resource = {}
 		id = 303,
 		icon = "res_xingdongli"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_resource
-
-	var_1_7[304] = {
+	pg.base.child2_resource[304] = {
 		item_icon = "res_haogandu2",
 		name = "好感度",
 		min_value = 0,
@@ -199,11 +130,7 @@ var_0_4.base.child2_resource = {}
 		id = 304,
 		icon = "res_haogandu"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_resource
-
-	var_1_8[305] = {
+	pg.base.child2_resource[305] = {
 		item_icon = "res_refresh1",
 		name = "占星馆刷新次数",
 		min_value = 0,
@@ -215,8 +142,7 @@ var_0_4.base.child2_resource = {}
 		id = 305,
 		icon = "res_refresh1"
 	}
-	pg = var_1_8
-	var_1_8.base.child2_resource[306] = {
+	pg.base.child2_resource[306] = {
 		item_icon = "res_refresh2",
 		name = "重抽次数",
 		min_value = 0,

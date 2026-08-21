@@ -1,10 +1,4 @@
-﻿local var_0_0 = {
-	"前往<color=#ff7d36>仓库</color>界面",
-	"点击<color=#ff7d36>选择科技箱</color>",
-	"点击<color=#ff7d36>使用</color>打开科技箱"
-}
-
-return {
+﻿return {
 	id = "S013",
 	events = {
 		{
@@ -14,17 +8,16 @@ return {
 				dir = -1,
 				posY = -50.56,
 				posX = -163.2,
-				text = var_0_0[1]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"点击<color=#ff7d36>选择科技箱</color>",
+					"点击<color=#ff7d36>使用</color>打开科技箱"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/storage"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/equipButton"
@@ -49,7 +42,11 @@ return {
 				dir = 1,
 				posY = 65,
 				posX = -93.8,
-				text = var_0_0[2]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"点击<color=#ff7d36>选择科技箱</color>",
+					"点击<color=#ff7d36>使用</color>打开科技箱"
+				})[2]
 			},
 			spriteui = {
 				pathIndex = "#",
@@ -75,7 +72,11 @@ return {
 				dir = 1,
 				posY = -252,
 				posX = -393,
-				text = var_0_0[3]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"点击<color=#ff7d36>选择科技箱</color>",
+					"点击<color=#ff7d36>使用</color>打开科技箱"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -96,7 +97,11 @@ return {
 				dir = 1,
 				posY = -252,
 				posX = -393,
-				text = var_0_0[3]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"点击<color=#ff7d36>选择科技箱</color>",
+					"点击<color=#ff7d36>使用</color>打开科技箱"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,

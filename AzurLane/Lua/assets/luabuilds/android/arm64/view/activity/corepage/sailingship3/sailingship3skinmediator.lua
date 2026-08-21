@@ -1,32 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SailingShip3SkinMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "SailingShip3SkinMediator"
+var_0_0.ON_TASK_SUBMIT = "SailingShip3SkinMediator.eventOnTaskSubmit"
+var_0_0.ON_TASK_GO = "SailingShip3SkinMediator.eventOnTaskGo"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_TASK_SUBMIT = "SailingShip3SkinMediator.eventOnTaskSubmit"
-var_0_1.ON_TASK_GO = "SailingShip3SkinMediator.eventOnTaskGo"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_TASK_SUBMIT, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_1(var_2_0, var_2_10006.SUBMIT_TASK, arg_2_1.id, arg_2_2)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_TASK_SUBMIT, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_2_1.id, arg_2_2)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_TASK_GO, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.TASK_GO, {
+	arg_1_0:bind(var_0_0.ON_TASK_GO, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.TASK_GO, {
 			taskVO = arg_3_1
 		})
 
@@ -36,63 +20,31 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_4_0)
-	local var_4_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_4_0[1] = var_1_10002.ACTIVITY_UPDATED
-	GAME = var_2
-	var_4_0[2] = var_2.SUBMIT_TASK_DONE
-	GAME = var_2
-	var_4_0[3] = var_2.SUBMIT_ACTIVITY_TASK_DONE
-	GAME = var_2
-	var_4_0[4] = var_2.ACTIVITY_STORYUNLOCKED_DONE
-
-	return var_4_0
+function var_0_0.listNotificationInterests(arg_4_0)
+	return {
+		ActivityProxy.ACTIVITY_UPDATED,
+		GAME.SUBMIT_TASK_DONE,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE,
+		GAME.ACTIVITY_STORYUNLOCKED_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1
-	local var_5_1 = arg_5_1.getName(var_5_0)
-	local var_5_2 = arg_5_1
-	local var_5_3 = arg_5_1.getBody(var_5_2)
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	GAME = var_5_0
-
-	if var_5_1 == var_5_0.ACTIVITY_STORYUNLOCKED_DONE then
-		local var_5_4 = arg_5_0.viewComponent
-
-		var_4.UpdataStoryState(var_5_4, var_5_3)
-	else
-		ActivityProxy = var_4
-
-		local var_5_5
-
-		if var_5_1 == var_4.ACTIVITY_UPDATED then
-			var_5_5 = var_5_3:getConfig("type")
-			ActivityConst = var_5_2
-
-			if var_5_5 == var_5_2.ACTIVITY_TYPE_TownSkinStory then
-				local var_5_6 = arg_5_0.viewComponent
-
-				var_5_5.UpdateItemView(var_5_6, var_5_3)
-			end
-		else
-			GAME = var_5_5
-
-			if var_5_1 == var_5_5.SUBMIT_ACTIVITY_TASK_DONE then
-				local var_5_7 = arg_5_0.viewComponent
-
-				var_4.OnUpdateFlush(var_5_7, var_5_3)
-
-				local var_5_8 = arg_5_0.viewComponent
-
-				var_4.DisplayBigTask(var_5_8)
-			end
+	if var_5_0 == GAME.ACTIVITY_STORYUNLOCKED_DONE then
+		arg_5_0.viewComponent:UpdataStoryState(var_5_1)
+	elseif var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TownSkinStory then
+			arg_5_0.viewComponent:UpdateItemView(var_5_1)
 		end
+	elseif var_5_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		arg_5_0.viewComponent:OnUpdateFlush(var_5_1)
+		arg_5_0.viewComponent:DisplayBigTask()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

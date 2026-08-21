@@ -1,44 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandTicketExpiredMsgBoxWindow", import(".IslandCommonMsgboxWindow"))
 
-local var_0_0 = "IslandTicketExpiredMsgBoxWindow"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandCommonMsgboxWindow"))
-
-var_0_1.TYPES = {
+var_0_0.TYPES = {
 	EXPIRED = 1,
 	REMIND = 2
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandCommonMsgBoxForTicketExpired"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	var_0_1.super.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
+	var_0_0.super.OnLoaded(arg_2_0)
 
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.contentText = var_1.Find(var_2_0, "Text")
-
-	local var_2_1 = arg_2_0._tf
-	local var_2_2 = var_1.Find(var_2_1, "scrollrect")
-
-	arg_2_0.scrollRect = var_1.GetComponent(var_2_2, "LScrollRect")
+	arg_2_0.contentText = arg_2_0._tf:Find("Text")
+	arg_2_0.scrollRect = arg_2_0._tf:Find("scrollrect"):GetComponent("LScrollRect")
 
 	function arg_2_0.scrollRect.onInitItem(arg_3_0)
-		local var_3_0 = arg_2_0
-
-		var_1.OnInitItem(var_3_0, arg_3_0)
+		arg_2_0:OnInitItem(arg_3_0)
 
 		return
 	end
 
 	function arg_2_0.scrollRect.onUpdateItem(arg_4_0, arg_4_1)
-		local var_4_0 = arg_2_0
-
-		var_2.OnUpdateItem(var_4_0, arg_4_0, arg_4_1)
+		arg_2_0:OnUpdateItem(arg_4_0, arg_4_1)
 
 		return
 	end
@@ -48,93 +32,59 @@ function var_0_1.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.OnShow(arg_5_0)
-	var_0_1.super.OnShow(arg_5_0)
+function var_0_0.OnShow(arg_5_0)
+	var_0_0.super.OnShow(arg_5_0)
 	arg_5_0:FlushInfo()
 
 	return
 end
 
-function var_0_1.FlushBtn(arg_6_0, arg_6_1)
-	setActive = var_1_10002
+function var_0_0.FlushBtn(arg_6_0, arg_6_1)
+	setActive(arg_6_0.cancelBtn, false)
+	setActive(arg_6_0.confirmBtn, true)
 
-	var_1_10002(arg_6_0.cancelBtn, false)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_6_0.confirmBtn, true)
-
-	local var_6_0 = arg_6_0.confirmTxt
-
-	i18n = var_1_10003
-	var_6_0.text = var_1_10003("word_ok")
+	arg_6_0.confirmTxt.text = i18n("word_ok")
 
 	return
 end
 
-function var_0_1.OnInitItem(arg_7_0, arg_7_1)
-	IslandTicketCard = var_1_10002
-
-	local var_7_0 = var_1_10002.New(arg_7_1)
-
-	arg_7_0.cards[arg_7_1] = var_7_0
+function var_0_0.OnInitItem(arg_7_0, arg_7_1)
+	arg_7_0.cards[arg_7_1] = IslandTicketCard.New(arg_7_1)
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0
-
+function var_0_0.OnUpdateItem(arg_8_0, arg_8_1, arg_8_2)
 	if not arg_8_0.cards[arg_8_2] then
 		arg_8_0:OnInitItem(arg_8_2)
-
-		var_8_0 = arg_8_0.cards[arg_8_2]
 	end
 
-	local var_8_1 = arg_8_0.displays[arg_8_1 + 1]
-
-	var_8_0:Update(var_8_1)
+	arg_8_0.cards[arg_8_2]:Update(arg_8_0.displays[arg_8_1 + 1])
 
 	return
 end
 
-function var_0_1.FlushInfo(arg_9_0)
-	if arg_9_0.settings.body.type == var_0_1.TYPES.EXPIRED then
-		setText = var_2
+function var_0_0.FlushInfo(arg_9_0)
+	local var_9_0 = arg_9_0.settings.body
 
-		local var_9_0 = arg_9_0.contentText
-
-		i18n = var_1_10005
-
-		var_2(var_9_0, var_1_10005("island_ticket_expiration_tip2"))
-	elseif var_1.type == var_0_1.TYPES.REMIND then
-		setText = var_2
-
-		local var_9_1 = arg_9_0.contentText
-
-		i18n = var_1_10005
-
-		var_2(var_9_1, var_1_10005("island_ticket_expiration_tip1"))
+	if arg_9_0.settings.body.type == var_0_0.TYPES.EXPIRED then
+		setText(arg_9_0.contentText, i18n("island_ticket_expiration_tip2"))
+	elseif var_9_0.type == var_0_0.TYPES.REMIND then
+		setText(arg_9_0.contentText, i18n("island_ticket_expiration_tip1"))
 	end
 
-	arg_9_0.displays = var_1.tickets
+	arg_9_0.displays = var_9_0.tickets
 
-	local var_9_2 = arg_9_0.scrollRect
-
-	var_2.SetTotalCount(var_9_2, #arg_9_0.displays, -1)
+	arg_9_0.scrollRect:SetTotalCount(#arg_9_0.displays, -1)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_10_0)
-	ClearLScrollrect = var_1_10001
-
-	var_1_10001(arg_10_0.scrollRect)
+function var_0_0.OnDestroy(arg_10_0)
+	ClearLScrollrect(arg_10_0.scrollRect)
 
 	if arg_10_0.cards then
-		pairs = var_1
-
-		for iter_10_0, iter_10_1 in var_1(arg_10_0.cards) do
+		for iter_10_0, iter_10_1 in pairs(arg_10_0.cards) do
 			iter_10_1:Dispose()
 		end
 
@@ -144,4 +94,4 @@ function var_0_1.OnDestroy(arg_10_0)
 	return
 end
 
-return var_0_1
+return var_0_0

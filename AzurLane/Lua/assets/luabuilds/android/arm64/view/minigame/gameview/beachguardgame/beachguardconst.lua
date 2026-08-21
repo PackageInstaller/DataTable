@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BeachGuardAsset")
+﻿local var_0_0 = class("BeachGuardAsset")
 
 var_0_0.ignore_damage = false
 var_0_0.ignore_enemy_skill = false
@@ -34,231 +32,172 @@ function var_0_0.getRid()
 	return var_0_0.rid_index
 end
 
-local var_0_1 = {}
-local var_0_2 = {
-	name = "Manjuu_Atk",
-	distance = 9,
-	hp = 300,
-	id = 3001,
-	desc = "黄鸡射手"
+var_0_0.chars = {
+	[3001] = {
+		name = "Manjuu_Atk",
+		distance = 9,
+		hp = 300,
+		id = 3001,
+		desc = "黄鸡射手",
+		move = Vector2(0, 0),
+		skill = {
+			1006
+		}
+	},
+	[3002] = {
+		name = "Manjuu_Craft",
+		distance = 0,
+		hp = 300,
+		id = 3002,
+		desc = "黄鸡资源",
+		move = Vector2(0, 0),
+		skill = {
+			1000
+		}
+	},
+	[3003] = {
+		name = "Manjuu_Def",
+		distance = 0,
+		hp = 1000,
+		id = 3003,
+		def = 1000,
+		desc = "黄鸡守卫",
+		move = Vector2(0, 0),
+		skill = {}
+	},
+	[3004] = {
+		name = "P1_Cheshire",
+		distance = 9,
+		hp = 500,
+		id = 3004,
+		desc = "柴郡",
+		move = Vector2(0, 0),
+		skill = {
+			1001
+		}
+	},
+	[3005] = {
+		name = "P2_Kashino",
+		distance = 7,
+		hp = 500,
+		id = 3005,
+		desc = "牛牛",
+		move = Vector2(0, 0),
+		skill = {
+			1002
+		}
+	},
+	[3006] = {
+		name = "P3_Littorio",
+		distance = 9,
+		hp = 500,
+		id = 3006,
+		desc = "利奥里托",
+		move = Vector2(0, 0),
+		skill = {
+			1003
+		}
+	},
+	[3007] = {
+		name = "P4_Birmingham",
+		distance = 4,
+		hp = 500,
+		id = 3007,
+		desc = "伯明翰",
+		move = Vector2(0, 0),
+		skill = {
+			1004
+		}
+	},
+	[3008] = {
+		name = "P5_Noshiro",
+		distance = 9,
+		hp = 500,
+		id = 3008,
+		desc = "能代",
+		move = Vector2(0, 0),
+		skill = {
+			1005
+		}
+	},
+	[3009] = {
+		score = 100,
+		name = "E1_Scavenger",
+		hp = 270,
+		id = 3009,
+		desc = "探索",
+		move = Vector2(-30, 0),
+		skill = {
+			1007
+		}
+	},
+	[3010] = {
+		score = 150,
+		name = "E2_Chaser",
+		hp = 270,
+		id = 3010,
+		desc = "追迹",
+		move = Vector2(-40, 0),
+		skill = {
+			1008
+		}
+	},
+	[3011] = {
+		score = 200,
+		name = "E3_Navigator",
+		hp = 270,
+		id = 3011,
+		desc = "领洋",
+		move = Vector2(-35, 0),
+		skill = {
+			1009
+		}
+	},
+	[3012] = {
+		score = 300,
+		name = "E4_Smasher",
+		hp = 500,
+		id = 3012,
+		desc = "破局",
+		move = Vector2(-25, 0),
+		skill = {
+			1010
+		}
+	},
+	[3013] = {
+		score = 350,
+		name = "E5_Conductor",
+		hp = 400,
+		id = 3013,
+		desc = "执棋",
+		move = Vector2(-35, 0),
+		skill = {
+			1011
+		}
+	},
+	[3014] = {
+		score = 500,
+		name = "E6_Tester",
+		hp = 600,
+		id = 3014,
+		desc = "测试",
+		move = Vector2(-40, 0),
+		skill = {
+			1012
+		}
+	},
+	[3015] = {
+		score = 500,
+		name = "E7_Purifier",
+		hp = 600,
+		id = 3015,
+		desc = "净化",
+		move = Vector2(-40, 0),
+		skill = {
+			1013
+		}
+	}
 }
-
-Vector2 = var_0_10003
-var_0_2.move = var_0_10003(0, 0)
-var_0_2.skill = {
-	1006
-}
-var_0_1[3001] = var_0_2
-
-local var_0_3 = {
-	name = "Manjuu_Craft",
-	distance = 0,
-	hp = 300,
-	id = 3002,
-	desc = "黄鸡资源"
-}
-
-Vector2 = var_3
-var_0_3.move = var_3(0, 0)
-var_0_3.skill = {
-	1000
-}
-var_0_1[3002] = var_0_3
-
-local var_0_4 = {
-	name = "Manjuu_Def",
-	distance = 0,
-	hp = 1000,
-	id = 3003,
-	def = 1000,
-	desc = "黄鸡守卫"
-}
-
-Vector2 = var_3
-var_0_4.move = var_3(0, 0)
-var_0_4.skill = {}
-var_0_1[3003] = var_0_4
-
-local var_0_5 = {
-	name = "P1_Cheshire",
-	distance = 9,
-	hp = 500,
-	id = 3004,
-	desc = "柴郡"
-}
-
-Vector2 = var_3
-var_0_5.move = var_3(0, 0)
-var_0_5.skill = {
-	1001
-}
-var_0_1[3004] = var_0_5
-
-local var_0_6 = {
-	name = "P2_Kashino",
-	distance = 7,
-	hp = 500,
-	id = 3005,
-	desc = "牛牛"
-}
-
-Vector2 = var_3
-var_0_6.move = var_3(0, 0)
-var_0_6.skill = {
-	1002
-}
-var_0_1[3005] = var_0_6
-
-local var_0_7 = {
-	name = "P3_Littorio",
-	distance = 9,
-	hp = 500,
-	id = 3006,
-	desc = "利奥里托"
-}
-
-Vector2 = var_3
-var_0_7.move = var_3(0, 0)
-var_0_7.skill = {
-	1003
-}
-var_0_1[3006] = var_0_7
-
-local var_0_8 = {
-	name = "P4_Birmingham",
-	distance = 4,
-	hp = 500,
-	id = 3007,
-	desc = "伯明翰"
-}
-
-Vector2 = var_3
-var_0_8.move = var_3(0, 0)
-var_0_8.skill = {
-	1004
-}
-var_0_1[3007] = var_0_8
-
-local var_0_9 = {
-	name = "P5_Noshiro",
-	distance = 9,
-	hp = 500,
-	id = 3008,
-	desc = "能代"
-}
-
-Vector2 = var_3
-var_0_9.move = var_3(0, 0)
-var_0_9.skill = {
-	1005
-}
-var_0_1[3008] = var_0_9
-
-local var_0_10 = {
-	score = 100,
-	name = "E1_Scavenger",
-	hp = 270,
-	id = 3009,
-	desc = "探索"
-}
-
-Vector2 = var_3
-var_0_10.move = var_3(-30, 0)
-var_0_10.skill = {
-	1007
-}
-var_0_1[3009] = var_0_10
-
-local var_0_11 = {
-	score = 150,
-	name = "E2_Chaser",
-	hp = 270,
-	id = 3010,
-	desc = "追迹"
-}
-
-Vector2 = var_3
-var_0_11.move = var_3(-40, 0)
-var_0_11.skill = {
-	1008
-}
-var_0_1[3010] = var_0_11
-
-local var_0_12 = {
-	score = 200,
-	name = "E3_Navigator",
-	hp = 270,
-	id = 3011,
-	desc = "领洋"
-}
-
-Vector2 = var_3
-var_0_12.move = var_3(-35, 0)
-var_0_12.skill = {
-	1009
-}
-var_0_1[3011] = var_0_12
-
-local var_0_13 = {
-	score = 300,
-	name = "E4_Smasher",
-	hp = 500,
-	id = 3012,
-	desc = "破局"
-}
-
-Vector2 = var_3
-var_0_13.move = var_3(-25, 0)
-var_0_13.skill = {
-	1010
-}
-var_0_1[3012] = var_0_13
-
-local var_0_14 = {
-	score = 350,
-	name = "E5_Conductor",
-	hp = 400,
-	id = 3013,
-	desc = "执棋"
-}
-
-Vector2 = var_3
-var_0_14.move = var_3(-35, 0)
-var_0_14.skill = {
-	1011
-}
-var_0_1[3013] = var_0_14
-
-local var_0_15 = {
-	score = 500,
-	name = "E6_Tester",
-	hp = 600,
-	id = 3014,
-	desc = "测试"
-}
-
-Vector2 = var_3
-var_0_15.move = var_3(-40, 0)
-var_0_15.skill = {
-	1012
-}
-var_0_1[3014] = var_0_15
-
-local var_0_16 = {
-	score = 500,
-	name = "E7_Purifier",
-	hp = 600,
-	id = 3015,
-	desc = "净化"
-}
-
-Vector2 = var_3
-var_0_16.move = var_3(-40, 0)
-var_0_16.skill = {
-	1013
-}
-var_0_1[3015] = var_0_16
-var_0_0.chars = var_0_1
 var_0_0.skill = {
 	[1000] = {
 		auto = true,
@@ -428,8 +367,7 @@ var_0_0.skill = {
 		anim_type = var_0_0.anim_atk
 	}
 }
-
-local var_0_17 = {
+var_0_0.bullet = {
 	[5001] = {
 		name = "Bullet_p1",
 		damage = 8002,
@@ -490,23 +428,19 @@ local var_0_17 = {
 			600,
 			0
 		}
+	},
+	[5007] = {
+		name = "Bullet_p5",
+		damage = 8001,
+		point_able = false,
+		id = 5007,
+		speed = {
+			600,
+			0
+		},
+		offset = Vector2(10, 5)
 	}
 }
-local var_0_18 = {
-	name = "Bullet_p5",
-	damage = 8001,
-	point_able = false,
-	id = 5007,
-	speed = {
-		600,
-		0
-	}
-}
-
-Vector2 = var_3
-var_0_18.offset = var_3(10, 5)
-var_0_17[5007] = var_0_18
-var_0_0.bullet = var_0_17
 var_0_0.damage = {
 	[8001] = {
 		damage = 25,

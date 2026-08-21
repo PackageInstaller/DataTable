@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_challenge") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_challenge"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_challenge = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_challenge
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_challenge = rawget(pg, "activity_event_challenge") or setmetatable({
+	__name = "activity_event_challenge"
+}, confNEO)
+pg.activity_event_challenge.all = {
 	1,
 	2,
 	3,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_challenge = {}
+pg.base = pg.base or {}
+pg.base.activity_event_challenge = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_challenge
-
-	var_1_0[1] = {
+	pg.base.activity_event_challenge[1] = {
 		id = 1,
 		reset_time = 7,
 		infinite_stage = {
@@ -313,11 +276,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_challenge
-
-	var_1_1[2] = {
+	pg.base.activity_event_challenge[2] = {
 		id = 2,
 		reset_time = 7,
 		infinite_stage = {
@@ -573,11 +532,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_challenge
-
-	var_1_2[3] = {
+	pg.base.activity_event_challenge[3] = {
 		id = 3,
 		reset_time = 7,
 		infinite_stage = {
@@ -863,11 +818,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_challenge
-
-	var_1_3[4] = {
+	pg.base.activity_event_challenge[4] = {
 		id = 4,
 		reset_time = 7,
 		infinite_stage = {
@@ -1333,11 +1284,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_challenge
-
-	var_1_4[5] = {
+	pg.base.activity_event_challenge[5] = {
 		id = 5,
 		reset_time = 7,
 		infinite_stage = {
@@ -1743,11 +1690,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_challenge
-
-	var_1_5[6] = {
+	pg.base.activity_event_challenge[6] = {
 		id = 6,
 		reset_time = 7,
 		infinite_stage = {
@@ -2153,11 +2096,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_challenge
-
-	var_1_6[7] = {
+	pg.base.activity_event_challenge[7] = {
 		id = 7,
 		reset_time = 7,
 		infinite_stage = {
@@ -2593,11 +2532,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_challenge
-
-	var_1_7[8] = {
+	pg.base.activity_event_challenge[8] = {
 		id = 8,
 		reset_time = 7,
 		infinite_stage = {
@@ -3003,11 +2938,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_challenge
-
-	var_1_8[9] = {
+	pg.base.activity_event_challenge[9] = {
 		id = 9,
 		reset_time = 7,
 		infinite_stage = {
@@ -3413,11 +3344,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_challenge
-
-	var_1_9[10] = {
+	pg.base.activity_event_challenge[10] = {
 		id = 10,
 		reset_time = 7,
 		infinite_stage = {
@@ -3823,11 +3750,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_event_challenge
-
-	var_1_10[11] = {
+	pg.base.activity_event_challenge[11] = {
 		id = 11,
 		reset_time = 7,
 		infinite_stage = {
@@ -4233,8 +4156,7 @@ var_0_3.base.activity_event_challenge = {}
 			5
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.activity_event_challenge[12] = {
+	pg.base.activity_event_challenge[12] = {
 		id = 12,
 		reset_time = 7,
 		infinite_stage = {

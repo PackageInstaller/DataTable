@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_liner_event") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_liner_event"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_liner_event = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_liner_event
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_liner_event = rawget(pg, "activity_liner_event") or setmetatable({
+	__name = "activity_liner_event"
+}, confNEO)
+pg.activity_liner_event.all = {
 	1,
 	2,
 	3,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_liner_event = {}
+pg.base = pg.base or {}
+pg.base.activity_liner_event = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_liner_event
-
-	var_1_0[1] = {
+	pg.base.activity_liner_event[1] = {
 		option_desc = "收到{namecode:427}的联络后来到了女仆咖啡厅。\n据悉，{namecode:446}在本日闭店前，于这张餐桌的餐盘下发现了这张奇怪的字条。\n字条上的字迹被水晕开了，只能勉强看清部分内容——“遥远”以及“敬上”\n一同抵达现场的埃塞克斯表示，从墨迹的状态判断，这张字条应该是在本日邮轮启航后才写下的。\n虽然不清楚她是如何得出这一结论的，不过她的一身侦探装为该结论增加了不少可信度。",
 		option_desc_2 = "在咖啡厅的餐盘下发现了一张被打湿的字条。纸条上只能辨认出“遥远”与“敬上”。",
 		option = "和{namecode:427}打招呼",
@@ -84,11 +47,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_liner_event
-
-	var_1_1[2] = {
+	pg.base.activity_liner_event[2] = {
 		option_desc = "露天公园中，布里斯托尔似乎正调查着什么。\n在提灯的光束下仔细观察，确实在地上发现了明显的碾压痕迹。\n布里斯托尔表示，土地的湿度似乎也不太正常，她还需要在这里深入调查一下。",
 		option_desc_2 = "露天公园中，灌木丛出现了一个三十公分左右被重物碾压后形成的痕迹。",
 		option = "前去搭话",
@@ -118,11 +77,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_liner_event
-
-	var_1_2[3] = {
+	pg.base.activity_liner_event[3] = {
 		option_desc = "在路过运动场时，听到了重物拖过地板的声音。\n当准备离开运动场时，拖动声再次出现了。经过辨认，这次声音是从运动场的室内部分传出的。\n跑向室内运动场时，踩到走廊上的积水，险些滑了一跤。和从拐角奔跑来的埃塞克斯侦探相撞。\n之后，与埃塞克斯侦探一同打扫了室内运动场走廊上的积水。\n辛苦劳动后，邀请埃塞克斯在睡前去露天水吧喝一杯，不过被她以继续调查拖动声为由拒绝了。",
 		option_desc_2 = "运动场中，出现了数次位置来源不同的疑似重物拖动声。",
 		option = "进入调查",
@@ -158,11 +113,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_liner_event
-
-	var_1_3[4] = {
+	pg.base.activity_liner_event[4] = {
 		option_desc = "收到龙武的联络后来到了中央厨房。\n根据龙武所说，她和其他东煌同伴原本正在为几个小时后的早餐准备包子，可是盛放包子馅儿的容器却不见了。\n联系警卫室调取监控后，却发现原本放置包子馅容器的位置正好处于监控死角中。\n……真是令人毫不意外的结果。",
 		option_desc_2 = "厨房中的肉包子馅在一转眼间就全部消失了。",
 		option = "听取龙武的汇报",
@@ -192,11 +143,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_liner_event
-
-	var_1_4[5] = {
+	pg.base.activity_liner_event[5] = {
 		option_desc = "收到纽卡斯尔的联络来到了宴会厅的储藏室。\n纽卡斯尔表示，皇家女仆队为明日早茶所预制好的点心在此处遭到了洗劫。\n经过评估，点心的损失情况不算特别严重，不过十分有特点。\n所有含有肉类的点心都被拿走了，不含有肉类的点心被拿走了一部分，而所有含有蔬菜的点心都被留下了。\n联系警卫室调取监控后，却发现此处的监控器在案发时遭受到了干扰，出现了十秒左右的空档。\n……真是令人毫不意外的结果。",
 		option_desc_2 = "宴会厅储藏室中的点心遭到了洗劫，其中含肉的点心损失情况最为严重。",
 		option = "听取纽卡斯尔的汇报",
@@ -223,11 +170,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_liner_event
-
-	var_1_5[6] = {
+	pg.base.activity_liner_event[6] = {
 		option_desc = "两起事件都与食物有关，而说到食物保有量最大的地方，无疑就是仓库了。\n检查仓库大门后发现，仓库的大门紧闭，门上的锁孔完好，没有发现任何被人试图以非正常手段开启的痕迹。\n联系警卫室调取监控后，这一次顺利调取到了监控录像。监控无死角地覆盖了仓库大门。\n录像中，监控器无死角覆盖了仓库的各个角落，也没有出现任何遭受干扰的现象。",
 		option_desc_2 = "保有食物量最大的仓库在今夜没有遭受到任何入侵。",
 		option = "检查仓库大门",
@@ -254,11 +197,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_liner_event
-
-	var_1_6[7] = {
+	pg.base.activity_liner_event[7] = {
 		option_desc = "根据抚顺收集到的情报来到了居住船舱（A区）的某条走廊中。\n据情报所称，这里在临近午夜之时总会出现一组规律的脚步声，可是却没人见到过脚步声的主人。\n时间一分一秒地过去，我与抚顺屏气凝神等待着。\n啪嗒，啪嗒——一串脚步声居然真的凭空出现在走廊中。\n抚顺大吼一声，扑向声音传出的位置。然而，走廊之中空无一人，脚步声也消失了。\n联系警卫室调取监控后，监控录像中除了我与抚顺，走廊上确实不曾出现过第三个人。",
 		option_desc_2 = "居住区的某条走廊在午夜会传来神秘的脚步声。",
 		option = "开始调查",
@@ -291,11 +230,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_liner_event
-
-	var_1_7[8] = {
+	pg.base.activity_liner_event[8] = {
 		option_desc = "接到记者兼调查员阿尔弗雷多的联络，来到了居住船舱（B区）。\n阿尔弗雷多兴奋地向我展示了一张照片。照片的背景一片漆黑，唯有在角落处出现了一个惨白的身影。\n根据背景中出现的房号可以判定，照片是在居住船舱A区拍摄的，而那个惨白的身影确实漂浮在半空中。\n这确实是一份十分有价值的线索，或许和走廊午夜的脚步声存在某种关联。\n在狠狠夸奖了阿尔弗雷多一番后，我将照片收入了档案袋。",
 		option_desc_2 = "阿尔弗雷多得到了一张走廊中的鬼影照片。",
 		option = "了解情况",
@@ -322,11 +257,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_liner_event
-
-	var_1_8[9] = {
+	pg.base.activity_liner_event[9] = {
 		option_desc = "路过居住船舱（C区）的走廊时，看见了一个鬼鬼祟祟的身影。——是侦探埃塞克斯。\n根据埃塞克斯所述，她正在调查一个“无法逃离的走廊”的传闻。据说，只要有两个人在深夜来到这条走廊内，就再也别想离开了。\n疑惑之中，我与埃塞克斯穿过本应是走廊出口的地方。然而，我们并没有穿越走廊。房号显示，我们又回到了走廊的入口之处。\n一段时间后，我与埃塞克斯都成功走出了走廊，看来也没有传闻中那么夸张嘛。",
 		option_desc_2 = "居住区的某条走廊会出现使人迷失方向的浓雾。",
 		option = "准备战斗",
@@ -362,11 +293,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_liner_event
-
-	var_1_9[10] = {
+	pg.base.activity_liner_event[10] = {
 		option_desc = "路过电影院时，听到了一声凄惨的尖叫，紧接着是一连串细小的爆炸声。\n进入后，在电影院中发现了缩成一团瑟瑟发抖的伊丽莎白、在一旁服侍的贝尔法斯特和维持警戒状态的谢菲尔德。\n放眼望去，放映机已经被子弹摧毁，电影停止了播放。\n立刻前往放映室，在机器残骸中找到了被替换的电影带。\n埃塞克斯侦探发现电影带像是卡萨布兰卡的珍贵收藏，布里斯托尔因此认定卡萨布兰卡就是制造事件的人。\n不过抚顺与阿尔萨斯随即提出反对意见。最终四票比一票，布里斯托尔的结论被打回。",
 		option_desc_2 = "伊丽莎白在看电影时，喜剧片突然变成了恐怖片。",
 		option = "进入电影院",
@@ -399,11 +326,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_liner_event
-
-	var_1_10[11] = {
+	pg.base.activity_liner_event[11] = {
 		option_desc = "收到佩萨格诺的联络，大浴场中举行的撒丁派对出现了一场极其严重的危机事件。\n推门进入后，身裹浴巾、一脸愤怒的的里雅斯特介绍了事情的经过。\n原来就在不久前，撒丁众人发现，自己为派对准备的披萨上出现了菠萝片。\n“是今晚为派对准备的所有披萨，所有！披萨！都被放上了菠萝片！”的里雅斯特包含情绪地纠正道。\n“其实菠萝披萨……还蛮好吃的哦？”同样闻讯而来的侦探埃塞克斯开心地说道，然后拿了一块披萨放入口中，“嗯~美味！”\n在事态进一步升级之前，以继续调查为名拉着侦探埃塞克斯一同离开了大浴场。",
 		option_desc_2 = "撒丁众人在开派对时，准备的所有披萨都变成了菠萝披萨。",
 		option = "迅速推门进入",
@@ -430,8 +353,7 @@ var_0_3.base.activity_liner_event = {}
 			}
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.activity_liner_event[12] = {
+	pg.base.activity_liner_event[12] = {
 		option_desc = "路过大商场时，埃塞克斯突然提出要去商场里购买纪念品。\n进入商场后，埃塞克斯立刻选好了自己的目标——一个大章鱼玩偶。\n在确认结账的瞬间，自动收银机突然吐出了与玩偶标价相等的物资。埃塞克斯兴奋地抓起了最大的购物袋。\n正当我以利用系统故障占便宜不太好为理由制止埃塞克斯时，埃塞克斯指了指店铺的牌子——“{namecode:98}的假日玩具店”。\n最后，与埃塞克斯一同满载而归了。",
 		option_desc_2 = "与埃塞克斯一同购物时，收银机突然开始主动吐钱。",
 		option = "进入商场",

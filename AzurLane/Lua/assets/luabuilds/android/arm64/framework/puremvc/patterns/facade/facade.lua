@@ -1,28 +1,12 @@
-﻿import = var_0_10000
-
-local var_0_0 = var_0_10000("...core.Controller")
-
-import = var_0_10001
-
-local var_0_1 = var_0_10001("...core.Model")
-
-import = var_2
-
-local var_0_2 = var_2("...core.View")
-
-import = var_3
-
-local var_0_3 = var_3("..observer.Notification")
-
-class = var_4
-
-local var_0_4 = var_4("Facade")
+﻿local var_0_0 = import("...core.Controller")
+local var_0_1 = import("...core.Model")
+local var_0_2 = import("...core.View")
+local var_0_3 = import("..observer.Notification")
+local var_0_4 = class("Facade")
 
 function var_0_4.Ctor(arg_1_0, arg_1_1)
 	if var_0_4.instanceMap[arg_1_1] ~= nil then
-		error = var_2
-
-		var_2(var_0_4.MULTITON_MSG)
+		error(var_0_4.MULTITON_MSG)
 	end
 
 	arg_1_0:initializeNotifier(arg_1_1)
@@ -85,95 +69,70 @@ function var_0_4.initializeView(arg_6_0)
 end
 
 function var_0_4.registerCommand(arg_7_0, arg_7_1, arg_7_2)
-	assert = var_1_10003
-
-	var_1_10003(arg_7_2)
-
-	local var_7_0 = arg_7_0.controller
-
-	var_3.registerCommand(var_7_0, arg_7_1, arg_7_2)
+	assert(arg_7_2)
+	arg_7_0.controller:registerCommand(arg_7_1, arg_7_2)
 
 	return
 end
 
 function var_0_4.removeCommand(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0.controller
-
-	var_2.removeCommand(var_8_0, arg_8_1)
+	arg_8_0.controller:removeCommand(arg_8_1)
 
 	return
 end
 
 function var_0_4.hasCommand(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0.controller
-
-	return var_2.hasCommand(var_9_0, arg_9_1)
+	return arg_9_0.controller:hasCommand(arg_9_1)
 end
 
 function var_0_4.registerProxy(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.model
-
-	var_2.registerProxy(var_10_0, arg_10_1)
+	arg_10_0.model:registerProxy(arg_10_1)
 
 	return
 end
 
 function var_0_4.retrieveProxy(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0.model
-
-	return var_2.retrieveProxy(var_11_0, arg_11_1)
+	return arg_11_0.model:retrieveProxy(arg_11_1)
 end
 
 function var_0_4.removeProxy(arg_12_0, arg_12_1)
 	local var_12_0
 
 	if arg_12_0.model ~= nil then
-		local var_12_1 = arg_12_0.model
-
-		var_12_0 = var_3.removeProxy(var_12_1, arg_12_1)
+		var_12_0 = arg_12_0.model:removeProxy(arg_12_1)
 	end
 
 	return var_12_0
 end
 
 function var_0_4.hasProxy(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_0.model
-
-	return var_2.hasProxy(var_13_0, arg_13_1)
+	return arg_13_0.model:hasProxy(arg_13_1)
 end
 
 function var_0_4.registerMediator(arg_14_0, arg_14_1)
 	if arg_14_0.view ~= nil then
-		local var_14_0 = arg_14_0.view
-
-		var_2.registerMediator(var_14_0, arg_14_1)
+		arg_14_0.view:registerMediator(arg_14_1)
 	end
 
 	return
 end
 
 function var_0_4.retrieveMediator(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_0.view
-
-	return var_2.retrieveMediator(var_15_0, arg_15_1)
+	return arg_15_0.view:retrieveMediator(arg_15_1)
 end
 
 function var_0_4.removeMediator(arg_16_0, arg_16_1)
 	local var_16_0
 
 	if arg_16_0.view ~= nil then
-		local var_16_1 = arg_16_0.view
-
-		var_16_0 = var_3.removeMediator(var_16_1, arg_16_1)
+		var_16_0 = arg_16_0.view:removeMediator(arg_16_1)
 	end
 
 	return var_16_0
 end
 
 function var_0_4.hasMediator(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_0.view
-
-	return var_2.hasMediator(var_17_0, arg_17_1)
+	return arg_17_0.view:hasMediator(arg_17_1)
 end
 
 function var_0_4.sendNotification(arg_18_0, arg_18_1, arg_18_2, arg_18_3)
@@ -184,9 +143,7 @@ end
 
 function var_0_4.notifyObservers(arg_19_0, arg_19_1)
 	if arg_19_0.view ~= nil then
-		local var_19_0 = arg_19_0.view
-
-		var_2.notifyObservers(var_19_0, arg_19_1)
+		arg_19_0.view:notifyObservers(arg_19_1)
 	end
 
 	return

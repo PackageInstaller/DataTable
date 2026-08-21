@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_production_slot") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_production_slot"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_production_slot = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_production_slot
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_production_slot = rawget(pg, "island_production_slot") or setmetatable({
+	__name = "island_production_slot"
+}, confNEO)
+pg.island_production_slot.all = {
 	1001,
 	1002,
 	1003,
@@ -150,11 +127,7 @@ var_0_3.all = {
 	70201,
 	70202
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_production_slot
-
-var_0_4.get_id_list_by_place = {
+pg.island_production_slot.get_id_list_by_place = {
 	[101] = {
 		1001,
 		1002,
@@ -313,25 +286,11 @@ var_0_4.get_id_list_by_place = {
 		9042
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_production_slot = {}
+pg.base = pg.base or {}
+pg.base.island_production_slot = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_production_slot
-
-	var_1_0[1001] = {
+	pg.base.island_production_slot[1001] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -353,11 +312,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_production_slot
-
-	var_1_1[1002] = {
+	pg.base.island_production_slot[1002] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -379,11 +334,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_production_slot
-
-	var_1_2[1003] = {
+	pg.base.island_production_slot[1003] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -405,11 +356,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_production_slot
-
-	var_1_3[1004] = {
+	pg.base.island_production_slot[1004] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -431,11 +378,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_production_slot
-
-	var_1_4[1005] = {
+	pg.base.island_production_slot[1005] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -457,11 +400,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_production_slot
-
-	var_1_5[1006] = {
+	pg.base.island_production_slot[1006] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -483,11 +422,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_production_slot
-
-	var_1_6[1007] = {
+	pg.base.island_production_slot[1007] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -509,11 +444,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_production_slot
-
-	var_1_7[1008] = {
+	pg.base.island_production_slot[1008] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -535,11 +466,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_production_slot
-
-	var_1_8[1009] = {
+	pg.base.island_production_slot[1009] = {
 		unlock_type = 0,
 		type = 1,
 		place = 101,
@@ -561,11 +488,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_production_slot
-
-	var_1_9[1010] = {
+	pg.base.island_production_slot[1010] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -587,11 +510,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_production_slot
-
-	var_1_10[1011] = {
+	pg.base.island_production_slot[1011] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -613,11 +532,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_production_slot
-
-	var_1_11[1012] = {
+	pg.base.island_production_slot[1012] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -639,11 +554,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_production_slot
-
-	var_1_12[1013] = {
+	pg.base.island_production_slot[1013] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -665,11 +576,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_production_slot
-
-	var_1_13[1014] = {
+	pg.base.island_production_slot[1014] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -691,11 +598,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_production_slot
-
-	var_1_14[1015] = {
+	pg.base.island_production_slot[1015] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -717,11 +620,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_production_slot
-
-	var_1_15[1016] = {
+	pg.base.island_production_slot[1016] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -743,11 +642,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_production_slot
-
-	var_1_16[1017] = {
+	pg.base.island_production_slot[1017] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -769,11 +664,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_production_slot
-
-	var_1_17[1018] = {
+	pg.base.island_production_slot[1018] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -795,11 +686,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_production_slot
-
-	var_1_18[1019] = {
+	pg.base.island_production_slot[1019] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -821,11 +708,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_production_slot
-
-	var_1_19[1020] = {
+	pg.base.island_production_slot[1020] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -847,11 +730,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_production_slot
-
-	var_1_20[1021] = {
+	pg.base.island_production_slot[1021] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -873,11 +752,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_production_slot
-
-	var_1_21[1022] = {
+	pg.base.island_production_slot[1022] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -899,11 +774,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_production_slot
-
-	var_1_22[1023] = {
+	pg.base.island_production_slot[1023] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -925,11 +796,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_production_slot
-
-	var_1_23[1024] = {
+	pg.base.island_production_slot[1024] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -951,11 +818,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_production_slot
-
-	var_1_24[1025] = {
+	pg.base.island_production_slot[1025] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -977,11 +840,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_production_slot
-
-	var_1_25[1026] = {
+	pg.base.island_production_slot[1026] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1003,11 +862,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_production_slot
-
-	var_1_26[1027] = {
+	pg.base.island_production_slot[1027] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1029,11 +884,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_production_slot
-
-	var_1_27[1028] = {
+	pg.base.island_production_slot[1028] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1055,11 +906,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_production_slot
-
-	var_1_28[1029] = {
+	pg.base.island_production_slot[1029] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1081,11 +928,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_production_slot
-
-	var_1_29[1030] = {
+	pg.base.island_production_slot[1030] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1107,11 +950,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_production_slot
-
-	var_1_30[1031] = {
+	pg.base.island_production_slot[1031] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1133,11 +972,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_production_slot
-
-	var_1_31[1032] = {
+	pg.base.island_production_slot[1032] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1159,11 +994,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_production_slot
-
-	var_1_32[1033] = {
+	pg.base.island_production_slot[1033] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1185,11 +1016,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_production_slot
-
-	var_1_33[1034] = {
+	pg.base.island_production_slot[1034] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1211,11 +1038,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_production_slot
-
-	var_1_34[1035] = {
+	pg.base.island_production_slot[1035] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1237,11 +1060,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_production_slot
-
-	var_1_35[1036] = {
+	pg.base.island_production_slot[1036] = {
 		unlock_type = 1,
 		type = 1,
 		place = 101,
@@ -1263,11 +1082,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_production_slot
-
-	var_1_36[1101] = {
+	pg.base.island_production_slot[1101] = {
 		unlock_type = 0,
 		type = 1,
 		place = 501,
@@ -1296,11 +1111,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_production_slot
-
-	var_1_37[1102] = {
+	pg.base.island_production_slot[1102] = {
 		unlock_type = 0,
 		type = 1,
 		place = 501,
@@ -1329,11 +1140,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_production_slot
-
-	var_1_38[1103] = {
+	pg.base.island_production_slot[1103] = {
 		unlock_type = 0,
 		type = 1,
 		place = 501,
@@ -1362,11 +1169,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_production_slot
-
-	var_1_39[1104] = {
+	pg.base.island_production_slot[1104] = {
 		unlock_type = 0,
 		type = 1,
 		place = 501,
@@ -1395,11 +1198,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_production_slot
-
-	var_1_40[1105] = {
+	pg.base.island_production_slot[1105] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1428,11 +1227,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_production_slot
-
-	var_1_41[1106] = {
+	pg.base.island_production_slot[1106] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1461,11 +1256,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_production_slot
-
-	var_1_42[1107] = {
+	pg.base.island_production_slot[1107] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1494,11 +1285,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_production_slot
-
-	var_1_43[1108] = {
+	pg.base.island_production_slot[1108] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1527,11 +1314,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_production_slot
-
-	var_1_44[1109] = {
+	pg.base.island_production_slot[1109] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1560,11 +1343,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_production_slot
-
-	var_1_45[1110] = {
+	pg.base.island_production_slot[1110] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1593,11 +1372,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_production_slot
-
-	var_1_46[1111] = {
+	pg.base.island_production_slot[1111] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1626,11 +1401,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_production_slot
-
-	var_1_47[1112] = {
+	pg.base.island_production_slot[1112] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1659,11 +1430,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_production_slot
-
-	var_1_48[1113] = {
+	pg.base.island_production_slot[1113] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1692,11 +1459,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_production_slot
-
-	var_1_49[1114] = {
+	pg.base.island_production_slot[1114] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1725,11 +1488,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_production_slot
-
-	var_1_50[1115] = {
+	pg.base.island_production_slot[1115] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1758,11 +1517,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_production_slot
-
-	var_1_51[1116] = {
+	pg.base.island_production_slot[1116] = {
 		unlock_type = 1,
 		type = 1,
 		place = 501,
@@ -1791,11 +1546,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_production_slot
-
-	var_1_52[1201] = {
+	pg.base.island_production_slot[1201] = {
 		unlock_type = 0,
 		type = 1,
 		place = 502,
@@ -1816,11 +1567,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_production_slot
-
-	var_1_53[1202] = {
+	pg.base.island_production_slot[1202] = {
 		unlock_type = 0,
 		type = 1,
 		place = 502,
@@ -1841,11 +1588,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_production_slot
-
-	var_1_54[1203] = {
+	pg.base.island_production_slot[1203] = {
 		unlock_type = 1,
 		type = 1,
 		place = 502,
@@ -1866,11 +1609,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_production_slot
-
-	var_1_55[1204] = {
+	pg.base.island_production_slot[1204] = {
 		unlock_type = 1,
 		type = 1,
 		place = 502,
@@ -1891,11 +1630,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_production_slot
-
-	var_1_56[1205] = {
+	pg.base.island_production_slot[1205] = {
 		unlock_type = 1,
 		type = 1,
 		place = 502,
@@ -1916,11 +1651,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_production_slot
-
-	var_1_57[1206] = {
+	pg.base.island_production_slot[1206] = {
 		unlock_type = 1,
 		type = 1,
 		place = 502,
@@ -1941,11 +1672,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_production_slot
-
-	var_1_58[2001] = {
+	pg.base.island_production_slot[2001] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -1958,11 +1685,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_production_slot
-
-	var_1_59[2002] = {
+	pg.base.island_production_slot[2002] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -1975,11 +1698,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_production_slot
-
-	var_1_60[2003] = {
+	pg.base.island_production_slot[2003] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -1992,11 +1711,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_production_slot
-
-	var_1_61[2004] = {
+	pg.base.island_production_slot[2004] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2009,11 +1724,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_production_slot
-
-	var_1_62[2005] = {
+	pg.base.island_production_slot[2005] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2026,11 +1737,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_production_slot
-
-	var_1_63[2006] = {
+	pg.base.island_production_slot[2006] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2043,11 +1750,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_production_slot
-
-	var_1_64[2007] = {
+	pg.base.island_production_slot[2007] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2060,11 +1763,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_production_slot
-
-	var_1_65[2008] = {
+	pg.base.island_production_slot[2008] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2077,11 +1776,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_production_slot
-
-	var_1_66[2009] = {
+	pg.base.island_production_slot[2009] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2094,11 +1789,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_production_slot
-
-	var_1_67[2010] = {
+	pg.base.island_production_slot[2010] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2111,11 +1802,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_production_slot
-
-	var_1_68[2011] = {
+	pg.base.island_production_slot[2011] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2128,11 +1815,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_production_slot
-
-	var_1_69[2012] = {
+	pg.base.island_production_slot[2012] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2145,11 +1828,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_production_slot
-
-	var_1_70[2013] = {
+	pg.base.island_production_slot[2013] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2162,11 +1841,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_production_slot
-
-	var_1_71[2014] = {
+	pg.base.island_production_slot[2014] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2179,11 +1854,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_production_slot
-
-	var_1_72[2015] = {
+	pg.base.island_production_slot[2015] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2196,11 +1867,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_production_slot
-
-	var_1_73[2016] = {
+	pg.base.island_production_slot[2016] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2213,11 +1880,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_production_slot
-
-	var_1_74[2017] = {
+	pg.base.island_production_slot[2017] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2230,11 +1893,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_production_slot
-
-	var_1_75[2018] = {
+	pg.base.island_production_slot[2018] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2247,11 +1906,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_production_slot
-
-	var_1_76[2019] = {
+	pg.base.island_production_slot[2019] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2264,11 +1919,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_production_slot
-
-	var_1_77[2020] = {
+	pg.base.island_production_slot[2020] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 2,
@@ -2281,11 +1932,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_production_slot
-
-	var_1_78[9001] = {
+	pg.base.island_production_slot[9001] = {
 		unlock_type = 1,
 		type = 9,
 		place = 101,
@@ -2315,11 +1962,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_production_slot
-
-	var_1_79[9002] = {
+	pg.base.island_production_slot[9002] = {
 		unlock_type = 1,
 		type = 9,
 		place = 101,
@@ -2349,11 +1992,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_production_slot
-
-	var_1_80[9003] = {
+	pg.base.island_production_slot[9003] = {
 		unlock_type = 1,
 		type = 9,
 		place = 101,
@@ -2383,11 +2022,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_production_slot
-
-	var_1_81[9004] = {
+	pg.base.island_production_slot[9004] = {
 		unlock_type = 1,
 		type = 9,
 		place = 101,
@@ -2417,11 +2052,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_production_slot
-
-	var_1_82[9011] = {
+	pg.base.island_production_slot[9011] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2439,11 +2070,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_production_slot
-
-	var_1_83[9012] = {
+	pg.base.island_production_slot[9012] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2461,11 +2088,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_production_slot
-
-	var_1_84[9013] = {
+	pg.base.island_production_slot[9013] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2483,11 +2106,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_production_slot
-
-	var_1_85[9014] = {
+	pg.base.island_production_slot[9014] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2505,11 +2124,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_production_slot
-
-	var_1_86[9021] = {
+	pg.base.island_production_slot[9021] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2525,11 +2140,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_production_slot
-
-	var_1_87[9022] = {
+	pg.base.island_production_slot[9022] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2545,11 +2156,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_production_slot
-
-	var_1_88[9023] = {
+	pg.base.island_production_slot[9023] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2565,11 +2172,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_production_slot
-
-	var_1_89[9024] = {
+	pg.base.island_production_slot[9024] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2585,11 +2188,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_production_slot
-
-	var_1_90[9031] = {
+	pg.base.island_production_slot[9031] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 3,
@@ -2615,11 +2214,7 @@ var_0_4.base.island_production_slot = {}
 			22
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_production_slot
-
-	var_1_91[9032] = {
+	pg.base.island_production_slot[9032] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 3,
@@ -2641,11 +2236,7 @@ var_0_4.base.island_production_slot = {}
 			8
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_production_slot
-
-	var_1_92[9033] = {
+	pg.base.island_production_slot[9033] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 3,
@@ -2667,11 +2258,7 @@ var_0_4.base.island_production_slot = {}
 			38
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_production_slot
-
-	var_1_93[9034] = {
+	pg.base.island_production_slot[9034] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 3,
@@ -2693,11 +2280,7 @@ var_0_4.base.island_production_slot = {}
 			48
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_production_slot
-
-	var_1_94[9041] = {
+	pg.base.island_production_slot[9041] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -2718,11 +2301,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_production_slot
-
-	var_1_95[9042] = {
+	pg.base.island_production_slot[9042] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2743,11 +2322,7 @@ var_0_4.base.island_production_slot = {}
 		},
 		activity_formula = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_production_slot
-
-	var_1_96[9061] = {
+	pg.base.island_production_slot[9061] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -2777,11 +2352,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_production_slot
-
-	var_1_97[9062] = {
+	pg.base.island_production_slot[9062] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2811,11 +2382,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_production_slot
-
-	var_1_98[9071] = {
+	pg.base.island_production_slot[9071] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -2844,8 +2411,7 @@ var_0_4.base.island_production_slot = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_production_slot[9072] = {
+	pg.base.island_production_slot[9072] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2878,11 +2444,7 @@ var_0_4.base.island_production_slot = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_production_slot
-
-	var_2_0[9081] = {
+	pg.base.island_production_slot[9081] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -2904,11 +2466,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_production_slot
-
-	var_2_1[9082] = {
+	pg.base.island_production_slot[9082] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2930,11 +2488,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_production_slot
-
-	var_2_2[9091] = {
+	pg.base.island_production_slot[9091] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -2955,11 +2509,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_production_slot
-
-	var_2_3[9092] = {
+	pg.base.island_production_slot[9092] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -2980,11 +2530,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_production_slot
-
-	var_2_4[9101] = {
+	pg.base.island_production_slot[9101] = {
 		unlock_type = 1,
 		type = 9,
 		place = 501,
@@ -3016,11 +2562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_production_slot
-
-	var_2_5[9102] = {
+	pg.base.island_production_slot[9102] = {
 		unlock_type = 1,
 		type = 9,
 		place = 501,
@@ -3052,11 +2594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_production_slot
-
-	var_2_6[9103] = {
+	pg.base.island_production_slot[9103] = {
 		unlock_type = 1,
 		type = 9,
 		place = 501,
@@ -3088,11 +2626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_production_slot
-
-	var_2_7[9104] = {
+	pg.base.island_production_slot[9104] = {
 		unlock_type = 1,
 		type = 9,
 		place = 501,
@@ -3124,11 +2658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_production_slot
-
-	var_2_8[9111] = {
+	pg.base.island_production_slot[9111] = {
 		unlock_type = 1,
 		type = 9,
 		place = 502,
@@ -3151,11 +2681,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_production_slot
-
-	var_2_9[9112] = {
+	pg.base.island_production_slot[9112] = {
 		unlock_type = 1,
 		type = 9,
 		place = 502,
@@ -3178,11 +2704,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_production_slot
-
-	var_2_10[9201] = {
+	pg.base.island_production_slot[9201] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -3200,11 +2722,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_production_slot
-
-	var_2_11[9202] = {
+	pg.base.island_production_slot[9202] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -3222,11 +2740,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_production_slot
-
-	var_2_12[9203] = {
+	pg.base.island_production_slot[9203] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -3244,11 +2758,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_production_slot
-
-	var_2_13[9204] = {
+	pg.base.island_production_slot[9204] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -3266,11 +2776,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_production_slot
-
-	var_2_14[9205] = {
+	pg.base.island_production_slot[9205] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -3286,11 +2792,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_production_slot
-
-	var_2_15[9206] = {
+	pg.base.island_production_slot[9206] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -3306,11 +2808,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_production_slot
-
-	var_2_16[9207] = {
+	pg.base.island_production_slot[9207] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -3337,11 +2835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_production_slot
-
-	var_2_17[9208] = {
+	pg.base.island_production_slot[9208] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -3368,11 +2862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_production_slot
-
-	var_2_18[9211] = {
+	pg.base.island_production_slot[9211] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -3400,11 +2890,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_production_slot
-
-	var_2_19[9212] = {
+	pg.base.island_production_slot[9212] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -3432,11 +2918,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_production_slot
-
-	var_2_20[9213] = {
+	pg.base.island_production_slot[9213] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,
@@ -3464,11 +2946,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_production_slot
-
-	var_2_21[70201] = {
+	pg.base.island_production_slot[70201] = {
 		exclusion_slot = "",
 		unlock_type = 0,
 		type = 9,
@@ -3687,8 +3165,7 @@ end)()
 		},
 		activity_formula = {}
 	}
-	pg = var_2_21
-	var_2_21.base.island_production_slot[70202] = {
+	pg.base.island_production_slot[70202] = {
 		exclusion_slot = "",
 		unlock_type = 1,
 		type = 9,

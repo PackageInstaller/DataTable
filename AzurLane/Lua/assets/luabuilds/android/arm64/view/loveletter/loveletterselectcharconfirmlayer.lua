@@ -1,190 +1,92 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LoveLetterSelectCharConfirmLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "LoveLetterSelectCharConfirmLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "LoveLetterGroupSelectUI"
 end
 
-var_0_1.optionsPath = {}
+var_0_0.optionsPath = {}
 
-function var_0_1.init(arg_2_0)
-	setText = var_1_10001
-
-	local var_2_0 = arg_2_0.btnCancel
-	local var_2_1 = var_3.Find(var_2_0, "cancel")
-
-	i18n = var_1_10004
-
-	var_1_10001(var_2_1, var_1_10004("text_cancel"))
-
-	setText = var_1_10001
-
-	local var_2_2 = arg_2_0.btnConfirm
-	local var_2_3 = var_3.Find(var_2_2, "confirm")
-
-	i18n = var_4
-
-	var_1_10001(var_2_3, var_4("text_confirm"))
-
-	onButton = var_1_10001
-
-	local var_2_4 = arg_2_0
-	local var_2_5 = arg_2_0.btnCancel
-
-	local function var_2_6()
-		local var_3_0 = arg_2_0
-
-		var_0.closeView(var_3_0)
+function var_0_0.init(arg_2_0)
+	setText(arg_2_0.btnCancel:Find("cancel"), i18n("text_cancel"))
+	setText(arg_2_0.btnConfirm:Find("confirm"), i18n("text_confirm"))
+	onButton(arg_2_0, arg_2_0.btnCancel, function()
+		arg_2_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1_10001(var_2_4, var_2_5, var_2_6, var_6)
-
-	onButton = var_1_10001
-
-	local var_2_7 = arg_2_0
-	local var_2_8 = arg_2_0.btnConfirm
-
-	local function var_2_9()
-		local var_4_0 = arg_2_0
-		local var_4_1 = var_0.emit
-
-		LoveLetterSelectCharConfirmMediator = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.SELECT_CHAR, arg_2_0.ll.groupId)
+	end, SFX_CANCEL)
+	onButton(arg_2_0, arg_2_0.btnConfirm, function()
+		arg_2_0:emit(LoveLetterSelectCharConfirmMediator.SELECT_CHAR, arg_2_0.ll.groupId)
 
 		return
-	end
-
-	SFX_CONFIRM = var_6
-
-	var_1_10001(var_2_7, var_2_8, var_2_9, var_6)
+	end, SFX_CONFIRM)
 	arg_2_0:BlurPanel(arg_2_0._tf)
 
 	return
 end
 
-function var_0_1.SetLoveLetter(arg_5_0, arg_5_1)
-	getProxy = var_1_10002
-	LoveLetterProxy = var_1_10004
-
-	local var_5_0 = var_1_10002(var_1_10004)
-
-	arg_5_0.ll = var_2.GetGroupData(var_5_0, arg_5_1)
+function var_0_0.SetLoveLetter(arg_5_0, arg_5_1)
+	arg_5_0.ll = getProxy(LoveLetterProxy):GetGroupData(arg_5_1)
 
 	return
 end
 
-function var_0_1.SetActivity(arg_6_0, arg_6_1)
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
-
-	local var_6_0 = var_1_10002(var_1_10004)
-
-	arg_6_0.activity = var_2.getActivityById(var_6_0, arg_6_1)
+function var_0_0.SetActivity(arg_6_0, arg_6_1)
+	arg_6_0.activity = getProxy(ActivityProxy):getActivityById(arg_6_1)
 
 	if arg_6_0.contextData.isRepair then
-		setText = var_2
-
-		local var_6_1 = arg_6_0.textHelp
-
-		i18n = var_5
-
-		var_2(var_6_1, var_5("loveletter2018_ui_3"))
+		setText(arg_6_0.textHelp, i18n("loveletter2018_ui_3"))
 	else
-		local var_6_2 = arg_6_0.activity
-		local var_6_3, var_6_4 = var_2.GetChangeCount(var_6_2)
+		local var_6_0, var_6_1 = arg_6_0.activity:GetChangeCount()
 
-		setText = var_6_2
-
-		local var_6_5 = arg_6_0.textHelp
-
-		i18n = var_1_10007
-
-		var_6_2(var_6_5, var_1_10007("loveactivity_ui_12", var_6_4 - var_6_3, var_6_4))
+		setText(arg_6_0.textHelp, i18n("loveactivity_ui_12", var_6_1 - var_6_0, var_6_1))
 	end
 
 	return
 end
 
-function var_0_1.didEnter(arg_7_0)
+function var_0_0.didEnter(arg_7_0)
 	arg_7_0:UpdateDisplay()
 
 	return
 end
 
-function var_0_1.UpdateDisplay(arg_8_0)
+function var_0_0.UpdateDisplay(arg_8_0)
 	arg_8_0:UpdatePainting()
 
 	if arg_8_0.contextData.isRepair then
-		setText = var_1
-
-		local var_8_0 = arg_8_0.textInfo
-
-		i18n = var_1_10004
-
-		local var_8_1 = "loveletter2018_ui_2"
-		local var_8_2 = arg_8_0.ll
-
-		var_1(var_8_0, var_1_10004(var_8_1, var_1_10007.GetName(var_8_2)))
+		setText(arg_8_0.textInfo, i18n("loveletter2018_ui_2", arg_8_0.ll:GetName()))
 	else
-		setText = var_1
-
-		local var_8_3 = arg_8_0.textInfo
-
-		i18n = var_1_10004
-
-		local var_8_4 = "loveactivity_ui_11"
-
-		setColorStr = var_1_10007
-
-		local var_8_5 = arg_8_0.ll
-
-		var_1(var_8_3, var_1_10004(var_8_4, var_1_10007(var_9.GetName(var_8_5), "#f3709e")))
+		setText(arg_8_0.textInfo, i18n("loveactivity_ui_11", setColorStr(arg_8_0.ll:GetName(), "#f3709e")))
 	end
 
 	return
 end
 
-function var_0_1.UpdatePainting(arg_9_0)
-	local var_9_0 = arg_9_0.ll
-	local var_9_1 = var_1.GetPainting(var_9_0)
+function var_0_0.UpdatePainting(arg_9_0)
+	local var_9_0 = arg_9_0.ll:GetPainting()
 
-	if arg_9_0.paint == var_9_1 then
+	if arg_9_0.paint == var_9_0 then
 		return
 	end
 
 	if arg_9_0.paint then
-		retPaintingPrefab = var_2
-
-		var_2(arg_9_0.rtPainting, arg_9_0.paint)
+		retPaintingPrefab(arg_9_0.rtPainting, arg_9_0.paint)
 
 		arg_9_0.paint = nil
 	end
 
-	arg_9_0.paint = var_9_1
-	setPaintingPrefabAsync = var_2
+	arg_9_0.paint = var_9_0
 
-	var_2(arg_9_0.rtPainting, arg_9_0.paint, "biandui")
+	setPaintingPrefabAsync(arg_9_0.rtPainting, arg_9_0.paint, "biandui")
 
 	return
 end
 
-function var_0_1.willExit(arg_10_0)
+function var_0_0.willExit(arg_10_0)
 	arg_10_0:UnOverlayPanel(arg_10_0._tf)
 
 	if arg_10_0.paint then
-		retPaintingPrefab = var_1
-
-		var_1(arg_10_0.rtPainting, arg_10_0.paint)
+		retPaintingPrefab(arg_10_0.rtPainting, arg_10_0.paint)
 
 		arg_10_0.paint = nil
 	end
@@ -192,4 +94,4 @@ function var_0_1.willExit(arg_10_0)
 	return
 end
 
-return var_0_1
+return var_0_0

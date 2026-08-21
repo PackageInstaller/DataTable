@@ -1,154 +1,50 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandGetNpcActionAwardCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandGetNpcActionAwardCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().npcId
-	local var_1_1 = var_2.actionId
-	local var_1_2 = var_2.shipId
-
-	pg = var_1_10006
-
-	local var_1_3 = var_1_10006.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_3, 21702, {
-		npc_id = var_1_0,
-		ship_id = var_1_2,
-		action_feedback_id = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(21702, {
+		npc_id = var_1_0.npcId,
+		ship_id = var_1_0.shipId,
+		action_feedback_id = var_1_0.actionId
 	}, 21703, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			getProxy = var_2_1
-			IslandProxy = var_2_10003
+			local var_2_0 = getProxy(IslandProxy):GetIsland()
 
-			local var_2_0 = var_2_1(var_2_10003)
-
-			var_2_1 = var_2_1.GetIsland(var_2_0)
-
-			if var_1_0 ~= 0 then
-				var_2_10004 = var_2_1
-
-				local var_2_2 = var_2_1.GetNpcFeedbackAgency(var_2_10004)
-
-				var_2.AddNpc(var_2_2, var_1_0)
+			if var_0 ~= 0 then
+				var_2_0:GetNpcFeedbackAgency():AddNpc(var_0)
 			end
 
-			var_2_10004 = var_2_1
+			local var_2_1 = var_2_0:GetCharacterAgency()
+			local var_2_2 = var_2_1:GetShipById(var_0)
 
-			local var_2_3 = var_2_1.GetCharacterAgency(var_2_10004)
+			if var_2_2 and var_2_2:HasGreetingSkill() then
+				local var_2_3 = var_2_2:GetSkill()
 
-			if var_2.GetShipById(var_2_3, var_1_2) and var_3:HasGreetingSkill() then
-				local var_2_4 = var_3:GetSkill()
-				local var_2_5 = var_2_10004.CanUse4Ship
-
-				var_2_10008 = var_3
-
-				local var_2_6 = {}
-
-				IslandBuffType = var_2_10010
-				var_2_6[1] = var_2_10010.SHIP_POWER_RECOVER_BY_GREETING
-
-				local var_2_12
-
-				if var_2_5(var_2_4, var_2_10008, var_2_6) then
-					local var_2_7 = var_3:GetCurrentEnergy()
-
-					var_2_10008 = var_3
-
-					local var_2_8 = var_3.ApplySkill
-
-					IslandBuffType = var_2_6
-
-					var_2_8(var_2_10008, var_2_6.SHIP_POWER_RECOVER_BY_GREETING)
-
-					var_2_10008 = var_3
-
-					local var_2_9 = var_3.GetCurrentEnergy(var_2_10008)
-					local var_2_10 = var_2_1
-					local var_2_11 = var_2_1.DispatchEvent
-
-					IslandProxy = var_2_12
-					var_2_12 = var_2_12.LINK_CORE
-					ISLAND_EVT = var_2_10011
-
-					local var_2_13 = var_2_10011.PLAY_EFFECT
-					local var_2_14 = var_1_2
-					local var_2_15 = {
-						value = var_2_9 - var_2_7
-					}
-
-					IslandRecEnergyEffect = var_14
-
-					var_2_11(var_2_10, var_2_12, var_2_13, var_2_14, var_2_15, var_14.TYPE)
-
-					local var_2_16 = var_2
-					local var_2_17 = var_2.DispatchEvent
-
-					IslandCharacterAgency = var_2_12
-
-					var_2_17(var_2_16, var_2_12.SHIP_SKILL_STATE_CHANGE, var_1_2, false)
+				if var_2_3:CanUse4Ship(var_2_2, {
+					IslandBuffType.SHIP_POWER_RECOVER_BY_GREETING
+				}) then
+					var_2_2:ApplySkill(IslandBuffType.SHIP_POWER_RECOVER_BY_GREETING)
+					var_2_0:DispatchEvent(IslandProxy.LINK_CORE, ISLAND_EVT.PLAY_EFFECT, var_0, {
+						value = var_2_2:GetCurrentEnergy() - var_2_2:GetCurrentEnergy()
+					}, IslandRecEnergyEffect.TYPE)
+					var_2_1:DispatchEvent(IslandCharacterAgency.SHIP_SKILL_STATE_CHANGE, var_0, false)
 				end
 
-				local var_2_18 = var_2_10004
-				local var_2_19 = var_2_10004.CanUse4Ship
-
-				var_2_10008 = var_3
-
-				local var_2_20 = {}
-
-				IslandBuffType = var_2_12
-				var_2_20[1] = var_2_12.SHIP_AWARD_BY_GREETING
-
-				if var_2_19(var_2_18, var_2_10008, var_2_20) then
-					local var_2_21 = var_3
-					local var_2_22 = var_3.ApplySkill
-
-					IslandBuffType = var_2_10008
-
-					var_2_22(var_2_21, var_2_10008.SHIP_AWARD_BY_GREETING)
-
-					local var_2_23 = var_2
-					local var_2_24 = var_2.DispatchEvent
-
-					IslandCharacterAgency = var_2_10008
-
-					var_2_24(var_2_23, var_2_10008.SHIP_SKILL_STATE_CHANGE, var_1_2, false)
+				if var_2_3:CanUse4Ship(var_2_2, {
+					IslandBuffType.SHIP_AWARD_BY_GREETING
+				}) then
+					var_2_2:ApplySkill(IslandBuffType.SHIP_AWARD_BY_GREETING)
+					var_2_1:DispatchEvent(IslandCharacterAgency.SHIP_SKILL_STATE_CHANGE, var_0, false)
 				end
 			end
 
-			IslandDropHelper = var_2_10004
-			var_2_10004 = var_2_10004.AddItems(arg_2_0)
+			;({}).dropData = IslandDropHelper.AddItems(arg_2_0)
 
-			local var_2_25 = arg_1_0
-			local var_2_26 = var_5.sendNotification
-
-			GAME = var_2_10008
-
-			var_2_26(var_2_25, var_2_10008.ISLAND_GET_NPC_ACTION_AWARD_DONE, {
-				dropData = var_2_10004
-			})
-
-			IslandTaskHelper = var_2_26
-
-			local var_2_27 = var_2_26.UpdateRuntimeTaskByTargetType
-
-			IslandTaskTargetType = var_2_25
-
-			var_2_27(var_2_25.ACTION_HELLO_DAILY)
+			arg_1_0:sendNotification(GAME.ISLAND_GET_NPC_ACTION_AWARD_DONE, {})
+			IslandTaskHelper.UpdateRuntimeTaskByTargetType(IslandTaskTargetType.ACTION_HELLO_DAILY)
 		else
-			pg = var_2_1
-
-			local var_2_28 = var_2_1.TipsMgr.GetInstance()
-			local var_2_29 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_29(var_2_28, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -157,4 +53,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

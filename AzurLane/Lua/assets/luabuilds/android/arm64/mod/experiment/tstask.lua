@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TSTask")
+﻿local var_0_0 = class("TSTask")
 
 function var_0_0.SetJob(arg_1_0, arg_1_1)
 	arg_1_0.job = arg_1_1
@@ -9,15 +7,9 @@ function var_0_0.SetJob(arg_1_0, arg_1_1)
 end
 
 function var_0_0.Execute(arg_2_0)
-	os = var_1_10001
-
-	local var_2_0 = var_1_10001.clock()
-
 	arg_2_0.job()
 
-	os = var_2
-
-	return var_2.clock() - var_2_0
+	return os.clock() - os.clock()
 end
 
 function var_0_0.Clear(arg_3_0)

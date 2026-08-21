@@ -96,6 +96,26 @@ local emoji_data=
 	[46]={ type=1, data=115, unlock_type=0, unlock_list={0}, subtype=2
 },
 	[47]={ type=1, data=116, unlock_type=0, unlock_list={0}, subtype=2
+},
+	[48]={ type=1, data=201, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[49]={ type=1, data=202, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[50]={ type=1, data=203, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[51]={ type=1, data=204, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[52]={ type=1, data=205, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[53]={ type=1, data=206, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[54]={ type=1, data=207, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[55]={ type=1, data=208, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[56]={ type=1, data=209, unlock_type=1, unlock_list={23001}, subtype=3
+},
+	[57]={ type=1, data=210, unlock_type=1, unlock_list={23001}, subtype=3
 }
 }
 

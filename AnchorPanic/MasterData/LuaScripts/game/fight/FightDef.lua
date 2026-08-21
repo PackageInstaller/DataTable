@@ -156,6 +156,13 @@ FightDef.BATTLE_TYPE_CHANGE_POS = 71
 FightDef.BATTLE_TYPE_MAX_HIT_STUN = 72
 --73)。% 副本boss承受伤害值 (公会战用)
 FightDef.BATTLE_TYPE_BOSS_SUFFER_DAMAGE = 73
+--75)。% 战斗加场地护盾值(值)
+FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD = 74
+--75)。% 战斗伤害扣场地护盾值(值)
+FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD = 75
+
+--77).    % 闪蝶静电球放电
+FightDef.BATTLE_TYPE_SHANDIE_ELE_CAMERA = 77
 
 -- 战斗效果类型 END
 
@@ -170,6 +177,8 @@ FightDef.ATTR_ELE_HURT_ICE = 403
 FightDef.ATTR_ELE_HURT_NATURE = 404
 -- 405).   % 光
 FightDef.ATTR_ELE_HURT_LIGHT = 405
+-- 405).   % 虚黯
+FightDef.ATTR_ELE_HURT_DRAK = 406
 
 -- 战斗回放的返回类型
 -- 没有找到回放
@@ -184,7 +193,7 @@ FightDef.DAMAGE_TYPE_SET = {
     [FightDef.BATTLE_TYPE_ELE_DAMAGE] = true,
     [FightDef.BATTLE_TYPE_BURST] = true,
     [FightDef.BATTLE_TYPE_DIRECT_DAMAGE] = true,
-    [FightDef.BATTLE_TYPE_ANTI_INJURY] = true,
+    -- [FightDef.BATTLE_TYPE_ANTI_INJURY] = true,
     [FightDef.BATTLE_TYPE_CLEAR_ELECTROCUTE] = true,
     [FightDef.BATTLE_TYPE_BLEED] = true,
     [FightDef.BATTLE_TYPE_BURN] = true,
@@ -218,6 +227,8 @@ FightDef.FLY_TEXT_ACTION_SET = {
     [FightDef.BATTLE_TYPE_CURE] = true,
     [FightDef.BATTLE_TYPE_SHIELD_ADD] = true,
     [FightDef.BATTLE_TYPE_HURT_ON_SHIELD] = true,
+    [FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD] = true,
+    [FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD] = true,
 }
 
 -- 模型动作枚举
@@ -226,6 +237,10 @@ FightDef.ACT_ATTACK_2 = gs.Animator.StringToHash("atk02")
 FightDef.ACT_SKILL_1 = gs.Animator.StringToHash("skill01")
 FightDef.ACT_SKILL_2 = gs.Animator.StringToHash("skill02")
 FightDef.ACT_SKILL_3 = gs.Animator.StringToHash("skill03")
+FightDef.ACT_SKILL_4 = gs.Animator.StringToHash("skill04")
+FightDef.ACT_SKILL_5 = gs.Animator.StringToHash("skill05")
+FightDef.ACT_SKILL_6 = gs.Animator.StringToHash("skill06")
+FightDef.ACT_SKILL_7 = gs.Animator.StringToHash("skill07")
 FightDef.ACT_SKILL_MIX = gs.Animator.StringToHash("skillmix")
 FightDef.ACT_SKILL_MAX = gs.Animator.StringToHash("skillmax")
 
@@ -362,6 +377,10 @@ FightDef.TRANS_ATK02 = gs.Animator.StringToHash("ATK02")
 FightDef.TRANS_SKILL01 = gs.Animator.StringToHash("SKILL01")
 FightDef.TRANS_SKILL02 = gs.Animator.StringToHash("SKILL02")
 FightDef.TRANS_SKILL03 = gs.Animator.StringToHash("SKILL03")
+FightDef.TRANS_SKILL04 = gs.Animator.StringToHash("SKILL04")
+FightDef.TRANS_SKILL05 = gs.Animator.StringToHash("SKILL05")
+FightDef.TRANS_SKILL06 = gs.Animator.StringToHash("SKILL06")
+FightDef.TRANS_SKILL07 = gs.Animator.StringToHash("SKILL07")
 FightDef.TRANS_SKILLMIX = gs.Animator.StringToHash("SKILLMIX")
 FightDef.TRANS_SKILLMAX = gs.Animator.StringToHash("SKILLMAX")
 
@@ -378,6 +397,10 @@ FightDef.TRANS_STATES = {
     [FightDef.TRANS_SKILL01] = FightDef.ACT_SKILL_1,
     [FightDef.TRANS_SKILL02] = FightDef.ACT_SKILL_2,
     [FightDef.TRANS_SKILL03] = FightDef.ACT_SKILL_3,
+    [FightDef.TRANS_SKILL04] = FightDef.ACT_SKILL_4,
+    [FightDef.TRANS_SKILL05] = FightDef.ACT_SKILL_5,
+    [FightDef.TRANS_SKILL06] = FightDef.ACT_SKILL_6,
+    [FightDef.TRANS_SKILL07] = FightDef.ACT_SKILL_7,
     [FightDef.TRANS_SKILLMIX] = FightDef.ACT_SKILL_MIX,
     [FightDef.TRANS_SKILLMAX] = FightDef.ACT_SKILL_MAX,
     [FightDef.ANI_TRIGGER_TO_STAND] = FightDef.ACT_STAND,
@@ -449,6 +472,10 @@ FightDef.ACTION_NAMEs = {
     [FightDef.ACT_SKILL_1] = "skill01",
     [FightDef.ACT_SKILL_2] = "skill02",
     [FightDef.ACT_SKILL_3] = "skill03",
+    [FightDef.ACT_SKILL_4] = "skill04",
+    [FightDef.ACT_SKILL_5] = "skill05",
+    [FightDef.ACT_SKILL_6] = "skill06",
+    [FightDef.ACT_SKILL_7] = "skill07",
     [FightDef.ACT_SKILL_MIX] = "skillmix",
     [FightDef.ACT_SKILL_MAX] = "skillmax",
     [FightDef.ACT_SHOW_STAND] = "showstand",
@@ -480,8 +507,12 @@ FightDef.EDIT_ATK2HASH = {
     [3] = FightDef.TRANS_SKILL01,
     [4] = FightDef.TRANS_SKILL02,
     [5] = FightDef.TRANS_SKILL03,
-    [6] = FightDef.TRANS_SKILLMIX,
-    [7] = FightDef.TRANS_SKILLMAX,
+    [6] = FightDef.TRANS_SKILL04,
+    [7] = FightDef.TRANS_SKILL05,
+    [8] = FightDef.TRANS_SKILL06,
+    [9] = FightDef.TRANS_SKILL07,
+    [10] = FightDef.TRANS_SKILLMIX,
+    [11] = FightDef.TRANS_SKILLMAX,
 }
 -- 配置表字段到真实数据的转换
 FightDef.TABLE_ATK2HASH = {
@@ -490,6 +521,10 @@ FightDef.TABLE_ATK2HASH = {
     ["skill01"] = FightDef.TRANS_SKILL01,
     ["skill02"] = FightDef.TRANS_SKILL02,
     ["skill03"] = FightDef.TRANS_SKILL03,
+    ["skill04"] = FightDef.TRANS_SKILL04,
+    ["skill05"] = FightDef.TRANS_SKILL05,
+    ["skill06"] = FightDef.TRANS_SKILL06,
+    ["skill07"] = FightDef.TRANS_SKILL07,
     ["skillmix"] = FightDef.TRANS_SKILLMIX,
     ["skillmax"] = FightDef.TRANS_SKILLMAX,
 }
@@ -515,6 +550,14 @@ FightDef.POINT_RFIRE = 8
 FightDef.POINT_HIT = 9
 -- 头部
 FightDef.POINT_HEAD = 10
+
+
+-- 跟随相机旋转挂点
+FightDef.POINT_CAMERA_RT = 50
+-- 跟随相机轨道挂点
+FightDef.POINT_CAMERA_DT = 51
+-- 跟随相机翻转挂点
+FightDef.POINT_CAMERA_FT = 52
 
 -------------- 技能主类型
 -- 普攻
@@ -588,11 +631,21 @@ FightDef.AUTO_FIGHT_ORDER = 0
 FightDef.AUTO_FIGHT_SKILL_1 = 2
 -- 自动释放2技能
 FightDef.AUTO_FIGHT_SKILL_2 = 3
+--奥义开关
+FightDef.AUTO_AOYI_OFF = 1
+FightDef.AUTO_AOYI_ON = 0
+
 -- 自动释放2技能
 FightDef.AUTO_FIGHT_SKILL_RULE = {
     [FightDef.AUTO_FIGHT_ORDER] = 3,
     [FightDef.AUTO_FIGHT_SKILL_1] = 1,
     [FightDef.AUTO_FIGHT_SKILL_2] = 2
+}
+
+--奥义自动开关
+FightDef.AUTO_AOYI_RULE = {
+    [FightDef.AUTO_AOYI_OFF] = 1,
+    [FightDef.AUTO_AOYI_ON] = 0,
 }
 
 -------------- 技能类型名字
@@ -626,6 +679,9 @@ FightDef.CAMERA_MOVE_NEAR = 4
 FightDef.CAMERA_MOVE_LEFT_ROTATION = 5
 FightDef.CAMERA_MOVE_RIGHT_ROTATION = 6
 FightDef.CAMERA_MOVE_CENTER = 7
+
+--自动分解
+FightDef.AUTODECOMPOSING = 11
 
 -- GM POST 的DEBUG功能
 FightDef.GM_POST1 = {txt = "POST脚本是否可用", val = nil}

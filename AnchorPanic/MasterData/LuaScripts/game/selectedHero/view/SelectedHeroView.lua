@@ -57,6 +57,9 @@ function active(self, args)
     self.id = vo.id
     self.effect = args.effectType
     selectedHero.SelectedHeroManager:setInit(vo)
+
+    self.m_propsVo = vo
+
     self:__setContex()
     self:__updateInfo()
 end
@@ -92,7 +95,14 @@ function __updateInfo(self)
     local current = selectedHero.SelectedHeroManager:getCurrentCount()
     local max = selectedHero.SelectedHeroManager:getMaxCount()
 
-    self.titleCount.text = string.substitute(_TT(4041), max)
+    local have = self.m_propsVo.id ~= nil and self.m_propsVo.id ~= 0
+    if have then
+        self.titleCount.text = string.substitute(_TT(4041), max)
+    else
+        self.titleCount.text = _TT(149009)
+    end
+
+    self.confirmBtn:SetActive(have)
 
     -- if (current == max) then
     --     self.selectedCountTxt.text = string.substitute(_TT(4042), current, max)
@@ -112,19 +122,20 @@ end
 function __setContex(self)
     local list = selectedHero.SelectedHeroManager:getDataList()
 
-    if self.effect == 20 then
+    if self.effect == UseEffectType.ADD_FREE_HEROGIFT then
+        local canSelect = self.m_propsVo.id ~= nil and self.m_propsVo.id ~= 0
         self.base_childGos["gTxtTitle"]:GetComponent(ty.Text).text = _TT(1394)
         for i = 1, #list do
             local vo = props.PropsManager:getPropsConfigVo(list[i].tid)
-       
-                local item = selectedHero.SelectedItem:poolGet()
-    
-            item:setData(self.mScrollContent, { vo, i })
-    
+
+            local item = selectedHero.SelectedHeroItem:poolGet()
+
+            item:setData(self.mScrollContent, {vo, i, canSelect})
+
             table.insert(self.itemList, item)
         end
     else
-        self.base_childGos["gTxtTitle"]:GetComponent(ty.Text).text =_TT(1363)
+        self.base_childGos["gTxtTitle"]:GetComponent(ty.Text).text = _TT(1363)
         table.sort(list, function(a, b)
             local isObtainA, _ = hero.HeroManager:getIsObtain(a.tid)
             local isObtainB, _ = hero.HeroManager:getIsObtain(b.tid)
@@ -142,27 +153,26 @@ function __setContex(self)
         end)
         for i = 1, #list do
             local vo = props.PropsManager:getPropsConfigVo(list[i].tid)
-       
-                local item = selectedHero.SelectedHeroItem:poolGet()
-    
-            item:setData(self.mScrollContent, { vo, i })
-    
+
+            local item = selectedHero.SelectedHeroItem:poolGet()
+
+            item:setData(self.mScrollContent, {vo, i})
+
             table.insert(self.itemList, item)
         end
     end
-   
 
     if #list > 7 then
         gs.TransQuick:Pivot(self.mScrollContent, 0, 1)
         gs.TransQuick:Anchor(self.mScrollContent, 0, 1, 0, 1)
         gs.TransQuick:UIPos(self.mScrollContent, 0, 0)
-        self.mScrollContent:GetComponent(ty.ContentSizeFitter).horizontalFit =         gs.ContentSizeFitter.FitMode.PreferredSize
+        self.mScrollContent:GetComponent(ty.ContentSizeFitter).horizontalFit = gs.ContentSizeFitter.FitMode.PreferredSize
         self.mScrollContent:GetComponent(ty.HorizontalLayoutGroup).childAlignment = gs.TextAnchor.MiddleLeft
     else
         gs.TransQuick:Pivot(self.mScrollContent, 0.5, 0.5)
         gs.TransQuick:Anchor(self.mScrollContent, 0, 1, 1, 1)
         gs.TransQuick:UIPos(self.mScrollContent, 0, -90)
-        self.mScrollContent:GetComponent(ty.ContentSizeFitter).horizontalFit =         gs.ContentSizeFitter.FitMode.Unconstrained
+        self.mScrollContent:GetComponent(ty.ContentSizeFitter).horizontalFit = gs.ContentSizeFitter.FitMode.Unconstrained
         self.mScrollContent:GetComponent(ty.HorizontalLayoutGroup).childAlignment = gs.TextAnchor.MiddleCenter
     end
 
@@ -194,9 +204,8 @@ function __onConfirmBtnClick(self)
     else
         local args = selectedHero.SelectedHeroManager:getSelectHero()
         GameDispatcher:dispatchEvent(
-        EventName.USE_PROPS_BY_ID,
-        { id = self.id, targetId = 0, count = 1, use_args = args }
-        )
+            EventName.USE_PROPS_BY_ID,
+        {id = self.id, targetId = 0, count = 1, use_args = args})
         self:onClickClose()
     end
 end

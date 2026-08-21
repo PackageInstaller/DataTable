@@ -1,12 +1,4 @@
-﻿local var_0_0 = {
-	"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
-	"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
-	"这样我们的第一支潜艇舰队就诞生了！",
-	"不过，为了应对敌方也有可能出现潜艇的情况，请指挥官为舰娘配备反潜设备",
-	"反潜设备的相关内容可以点击帮助按钮查看详细内容哦"
-}
-
-return {
+﻿return {
 	id = "NG002",
 	events = {
 		{
@@ -22,7 +14,13 @@ return {
 				dir = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[1]
+				text = ({
+					"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
+					"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
+					"这样我们的第一支潜艇舰队就诞生了！",
+					"不过，为了应对敌方也有可能出现潜艇的情况，请指挥官为舰娘配备反潜设备",
+					"反潜设备的相关内容可以点击帮助按钮查看详细内容哦"
+				})[1]
 			}
 		},
 		{
@@ -34,12 +32,7 @@ return {
 		{
 			ui = {
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/task"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/taskButton"
@@ -96,7 +89,13 @@ return {
 				dir = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[2]
+				text = ({
+					"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
+					"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
+					"这样我们的第一支潜艇舰队就诞生了！",
+					"不过，为了应对敌方也有可能出现潜艇的情况，请指挥官为舰娘配备反潜设备",
+					"反潜设备的相关内容可以点击帮助按钮查看详细内容哦"
+				})[2]
 			}
 		},
 		{
@@ -107,12 +106,7 @@ return {
 		{
 			ui = {
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_2_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_2_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/formation"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/formationButton"
@@ -155,7 +149,13 @@ return {
 				dir = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[3]
+				text = ({
+					"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
+					"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
+					"这样我们的第一支潜艇舰队就诞生了！",
+					"不过，为了应对敌方也有可能出现潜艇的情况，请指挥官为舰娘配备反潜设备",
+					"反潜设备的相关内容可以点击帮助按钮查看详细内容哦"
+				})[3]
 			}
 		},
 		{
@@ -165,7 +165,13 @@ return {
 				dir = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[4]
+				text = ({
+					"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
+					"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
+					"这样我们的第一支潜艇舰队就诞生了！",
+					"不过，为了应对敌方也有可能出现潜艇的情况，请指挥官为舰娘配备反潜设备",
+					"反潜设备的相关内容可以点击帮助按钮查看详细内容哦"
+				})[4]
 			}
 		},
 		{
@@ -176,12 +182,7 @@ return {
 		{
 			ui = {
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_3_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_3_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/dock"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/dockBtn"
@@ -210,7 +211,13 @@ return {
 				dir = 1,
 				posY = -110,
 				posX = 200,
-				text = var_0_0[5]
+				text = ({
+					"指挥官，军部为港区派遣了能够在水下作战的舰娘协助我们，快去迎接一下新的伙伴吧",
+					"欢迎港区的第一个潜艇！给我们的新伙伴编队吧，指挥官！",
+					"这样我们的第一支潜艇舰队就诞生了！",
+					"不过，为了应对敌方也有可能出现潜艇的情况，请指挥官为舰娘配备反潜设备",
+					"反潜设备的相关内容可以点击帮助按钮查看详细内容哦"
+				})[5]
 			}
 		},
 		{

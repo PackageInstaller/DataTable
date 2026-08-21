@@ -3,73 +3,61 @@
 local activity_task_data=
 
 {
-	[345]={ time=1, describe=90601, title=0, rewards={{28,80}}
+	[1083]={ time=1, describe=90602, title=0, rewards={{28,120}}
 },
-	[346]={ time=1, describe=90602, title=0, rewards={{28,80}}
+	[1084]={ time=1, describe=90603, title=0, rewards={{28,120}}
 },
-	[347]={ time=1, describe=90603, title=0, rewards={{28,80}}
+	[1085]={ time=1, describe=90605, title=0, rewards={{28,120}}
 },
-	[348]={ time=1, describe=90604, title=0, rewards={{28,80}}
+	[1086]={ time=1, describe=90606, title=0, rewards={{28,120}}
 },
-	[349]={ time=1, describe=90605, title=0, rewards={{28,80}}
+	[1087]={ time=1, describe=90607, title=0, rewards={{28,120}}
 },
-	[350]={ time=1, describe=90606, title=0, rewards={{28,80}}
+	[1088]={ time=1, describe=90608, title=0, rewards={{28,120}}
 },
-	[351]={ time=1, describe=90607, title=0, rewards={{28,80}}
+	[1089]={ time=1, describe=90610, title=0, rewards={{28,120}}
 },
-	[352]={ time=1, describe=90608, title=0, rewards={{28,80}}
+	[1090]={ time=1, describe=90611, title=0, rewards={{28,120}}
 },
-	[353]={ time=1, describe=90609, title=0, rewards={{28,80}}
+	[1091]={ time=1, describe=90612, title=0, rewards={{28,120}}
 },
-	[354]={ time=1, describe=90610, title=0, rewards={{28,80}}
+	[1092]={ time=1, describe=90615, title=0, rewards={{28,120}}
 },
-	[355]={ time=1, describe=90611, title=0, rewards={{28,80}}
+	[1093]={ time=1, describe=90616, title=0, rewards={{28,120}}
 },
-	[356]={ time=1, describe=90612, title=0, rewards={{28,80}}
+	[1094]={ time=1, describe=90617, title=0, rewards={{28,120}}
 },
-	[357]={ time=1, describe=90613, title=0, rewards={{28,80}}
+	[1095]={ time=1, describe=90618, title=0, rewards={{28,120}}
 },
-	[358]={ time=1, describe=90614, title=0, rewards={{28,80}}
+	[1096]={ time=1, describe=90619, title=0, rewards={{28,120}}
 },
-	[359]={ time=1, describe=90615, title=0, rewards={{28,80}}
+	[1097]={ time=1, describe=90620, title=0, rewards={{28,120}}
 },
-	[360]={ time=1, describe=90616, title=0, rewards={{28,100}}
+	[1098]={ time=1, describe=90621, title=0, rewards={{28,160}}
 },
-	[361]={ time=1, describe=90617, title=0, rewards={{28,100}}
+	[1099]={ time=1, describe=90622, title=0, rewards={{28,160}}
 },
-	[362]={ time=1, describe=90618, title=0, rewards={{28,100}}
+	[1100]={ time=1, describe=90623, title=0, rewards={{28,160}}
 },
-	[363]={ time=1, describe=90619, title=0, rewards={{28,100}}
+	[1101]={ time=1, describe=90624, title=0, rewards={{28,160}}
 },
-	[364]={ time=1, describe=90620, title=0, rewards={{28,100}}
+	[1102]={ time=1, describe=90625, title=0, rewards={{28,160}}
 },
-	[365]={ time=1, describe=90621, title=0, rewards={{28,100}}
+	[1103]={ time=1, describe=90626, title=0, rewards={{28,160}}
 },
-	[366]={ time=1, describe=90622, title=0, rewards={{28,100}}
+	[1104]={ time=1, describe=90627, title=0, rewards={{28,160}}
 },
-	[367]={ time=1, describe=90623, title=0, rewards={{28,100}}
+	[1105]={ time=1, describe=90628, title=0, rewards={{28,160}}
 },
-	[368]={ time=1, describe=90624, title=0, rewards={{28,100}}
+	[1106]={ time=1, describe=90629, title=0, rewards={{28,160}}
 },
-	[369]={ time=1, describe=90625, title=0, rewards={{28,100}}
+	[1107]={ time=1, describe=90630, title=0, rewards={{28,160}}
 },
-	[370]={ time=1, describe=90626, title=0, rewards={{28,160}}
+	[1108]={ time=5000, describe=90651, title=0, rewards={{28,200}}
 },
-	[371]={ time=1, describe=90627, title=0, rewards={{28,160}}
+	[1109]={ time=10000, describe=90652, title=0, rewards={{28,360}}
 },
-	[372]={ time=1, describe=90628, title=0, rewards={{28,160}}
-},
-	[373]={ time=1, describe=90629, title=0, rewards={{28,160}}
-},
-	[374]={ time=1, describe=90630, title=0, rewards={{28,160}}
-},
-	[375]={ time=1, describe=90631, title=0, rewards={{28,160}}
-},
-	[376]={ time=5000, describe=90632, title=0, rewards={{28,200}}
-},
-	[377]={ time=10000, describe=90633, title=0, rewards={{28,360}}
-},
-	[378]={ time=18000, describe=90634, title=0, rewards={{28,1000}}
+	[1110]={ time=18000, describe=90653, title=0, rewards={{28,1000}}
 }
 }
 

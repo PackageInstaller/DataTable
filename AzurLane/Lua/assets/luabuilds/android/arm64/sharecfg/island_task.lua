@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_task") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_task"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_task = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_task
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_task
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_task = rawget(pg, "island_task") or setmetatable({
+	__name = "island_task"
+}, confNEO)
+pg.island_task.__namecode__ = true
+pg.island_task.all = {
 	10001000,
 	10001010,
 	10001020,
@@ -535,11 +508,7 @@ var_0_4.all = {
 	90002006,
 	90002007
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.island_task
-
-var_0_5.get_id_list_by_type = {
+pg.island_task.get_id_list_by_type = {
 	{
 		10001000,
 		10001010,
@@ -1058,25 +1027,11 @@ var_0_5.get_id_list_by_type = {
 		90002007
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.island_task = {}
+pg.base = pg.base or {}
+pg.base.island_task = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_task
-
-	var_1_0[10001000] = {
+	pg.base.island_task[10001000] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "原野之上",
@@ -1109,11 +1064,7 @@ var_0_5.base.island_task = {}
 			100010001
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_task
-
-	var_1_1[10001010] = {
+	pg.base.island_task[10001010] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "重逢之时",
@@ -1148,11 +1099,7 @@ var_0_5.base.island_task = {}
 			100010101
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_task
-
-	var_1_2[10001020] = {
+	pg.base.island_task[10001020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "乔安的修复计划",
@@ -1196,11 +1143,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_task
-
-	var_1_3[6] = {
+	pg.base.island_task[6] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "镐下煤炭",
@@ -1244,11 +1187,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_task
-
-	var_1_4[16] = {
+	pg.base.island_task[16] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "斧上林木",
@@ -1292,11 +1231,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_task
-
-	var_1_5[26] = {
+	pg.base.island_task[26] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "原野上的协力",
@@ -1337,11 +1272,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_task
-
-	var_1_6[10001060] = {
+	pg.base.island_task[10001060] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "向着远方",
@@ -1382,11 +1313,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_task
-
-	var_1_7[10001070] = {
+	pg.base.island_task[10001070] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "原野的馈赠",
@@ -1424,11 +1351,7 @@ var_0_5.base.island_task = {}
 			100010701
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_task
-
-	var_1_8[10001071] = {
+	pg.base.island_task[10001071] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "原野的馈赠",
@@ -1463,11 +1386,7 @@ var_0_5.base.island_task = {}
 			100010711
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_task
-
-	var_1_9[10001080] = {
+	pg.base.island_task[10001080] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "港口寻踪",
@@ -1511,11 +1430,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_task
-
-	var_1_10[10001090] = {
+	pg.base.island_task[10001090] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "神秘的啾咖啡",
@@ -1556,11 +1471,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_task
-
-	var_1_11[10001100] = {
+	pg.base.island_task[10001100] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "警报之围",
@@ -1604,11 +1515,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_task
-
-	var_1_12[10001110] = {
+	pg.base.island_task[10001110] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "消失的{namecode:98:明石}",
@@ -1649,11 +1556,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_task
-
-	var_1_13[10001120] = {
+	pg.base.island_task[10001120] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秘密基地？",
@@ -1702,11 +1605,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_task
-
-	var_1_14[10001130] = {
+	pg.base.island_task[10001130] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "把握权限",
@@ -1741,11 +1640,7 @@ var_0_5.base.island_task = {}
 			100011301
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_task
-
-	var_1_15[10001140] = {
+	pg.base.island_task[10001140] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿科技",
@@ -1789,11 +1684,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_task
-
-	var_1_16[10001141] = {
+	pg.base.island_task[10001141] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿科技",
@@ -1837,11 +1728,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_task
-
-	var_1_17[10001150] = {
+	pg.base.island_task[10001150] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "权限认证装置",
@@ -1885,11 +1772,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_task
-
-	var_1_18[10001151] = {
+	pg.base.island_task[10001151] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "权限认证装置",
@@ -1924,11 +1807,7 @@ var_0_5.base.island_task = {}
 			100011511
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_task
-
-	var_1_19[8] = {
+	pg.base.island_task[8] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "远帆来港",
@@ -1969,11 +1848,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_task
-
-	var_1_20[18] = {
+	pg.base.island_task[18] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "生活经验指南",
@@ -2027,11 +1902,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_task
-
-	var_1_21[28] = {
+	pg.base.island_task[28] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -2066,11 +1937,7 @@ var_0_5.base.island_task = {}
 			100011801
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_task
-
-	var_1_22[10002010] = {
+	pg.base.island_task[10002010] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "忙碌是一件好事",
@@ -2116,11 +1983,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_task
-
-	var_1_23[10002020] = {
+	pg.base.island_task[10002020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "宝藏的传闻",
@@ -2164,11 +2027,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_task
-
-	var_1_24[10002030] = {
+	pg.base.island_task[10002030] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "斯蒂芬妮的踪迹",
@@ -2203,11 +2062,7 @@ var_0_5.base.island_task = {}
 			100020301
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_task
-
-	var_1_25[10002031] = {
+	pg.base.island_task[10002031] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "斯蒂芬妮的踪迹",
@@ -2242,11 +2097,7 @@ var_0_5.base.island_task = {}
 			100020311
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_task
-
-	var_1_26[10002032] = {
+	pg.base.island_task[10002032] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "斯蒂芬妮的踪迹",
@@ -2295,11 +2146,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_task
-
-	var_1_27[10002040] = {
+	pg.base.island_task[10002040] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "劳逸结合不了",
@@ -2334,11 +2181,7 @@ var_0_5.base.island_task = {}
 			100020401
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_task
-
-	var_1_28[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "勤劳有什么用？",
@@ -2376,11 +2219,7 @@ var_0_5.base.island_task = {}
 			100020501
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_task
-
-	var_1_29[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -2415,11 +2254,7 @@ var_0_5.base.island_task = {}
 			100020511
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_task
-
-	var_1_30[12] = {
+	pg.base.island_task[12] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "晨露农场",
@@ -2463,11 +2298,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_task
-
-	var_1_31[22] = {
+	pg.base.island_task[22] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "农田里的守望",
@@ -2508,11 +2339,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_task
-
-	var_1_32[10002080] = {
+	pg.base.island_task[10002080] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "生长的作物",
@@ -2547,11 +2374,7 @@ var_0_5.base.island_task = {}
 			100020801
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_task
-
-	var_1_33[10002081] = {
+	pg.base.island_task[10002081] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "生长的作物",
@@ -2595,11 +2418,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_task
-
-	var_1_34[10002090] = {
+	pg.base.island_task[10002090] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "牧场的宝藏",
@@ -2640,11 +2459,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_task
-
-	var_1_35[10002100] = {
+	pg.base.island_task[10002100] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "追捕时间到！",
@@ -2688,11 +2503,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_task
-
-	var_1_36[10002110] = {
+	pg.base.island_task[10002110] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "咯咯鸡的饲料",
@@ -2733,11 +2544,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_task
-
-	var_1_37[10002120] = {
+	pg.base.island_task[10002120] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "制作饲料",
@@ -2781,11 +2588,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_task
-
-	var_1_38[10002130] = {
+	pg.base.island_task[10002130] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物之礼",
@@ -2826,11 +2629,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_task
-
-	var_1_39[10002131] = {
+	pg.base.island_task[10002131] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物之礼",
@@ -2871,11 +2670,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_task
-
-	var_1_40[10002140] = {
+	pg.base.island_task[10002140] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "欣欣向荣",
@@ -2921,11 +2716,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_task
-
-	var_1_41[10002141] = {
+	pg.base.island_task[10002141] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -2960,11 +2751,7 @@ var_0_5.base.island_task = {}
 			100021411
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_task
-
-	var_1_42[10002150] = {
+	pg.base.island_task[10002150] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "小憩时光",
@@ -3005,11 +2792,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_task
-
-	var_1_43[10002160] = {
+	pg.base.island_task[10002160] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "暖炉里的蛋香",
@@ -3050,11 +2833,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_task
-
-	var_1_44[10002170] = {
+	pg.base.island_task[10002170] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "美味欧姆蛋！",
@@ -3098,11 +2877,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_task
-
-	var_1_45[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "港口速递",
@@ -3146,11 +2921,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_task
-
-	var_1_46[14] = {
+	pg.base.island_task[14] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "购得到的美味",
@@ -3191,11 +2962,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_task
-
-	var_1_47[24] = {
+	pg.base.island_task[24] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "第一位顾客",
@@ -3239,11 +3006,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_task
-
-	var_1_48[10002210] = {
+	pg.base.island_task[10002210] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "限时优选-{namecode:98:明石}",
@@ -3294,11 +3057,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_task
-
-	var_1_49[10002211] = {
+	pg.base.island_task[10002211] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -3333,11 +3092,7 @@ var_0_5.base.island_task = {}
 			100022111
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_task
-
-	var_1_50[10002220] = {
+	pg.base.island_task[10002220] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "宝藏岛？",
@@ -3378,11 +3133,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_task
-
-	var_1_51[10002230] = {
+	pg.base.island_task[10002230] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "飞行器的新生-港口",
@@ -3428,11 +3179,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_task
-
-	var_1_52[10002240] = {
+	pg.base.island_task[10002240] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "飞行器的新生-栖风原野",
@@ -3479,11 +3226,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_task
-
-	var_1_53[10002250] = {
+	pg.base.island_task[10002250] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "飞行器的新生-晨露农场",
@@ -3531,11 +3274,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_task
-
-	var_1_54[10002251] = {
+	pg.base.island_task[10002251] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "飞行器的新生-晨露农场",
@@ -3576,11 +3315,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_task
-
-	var_1_55[10002260] = {
+	pg.base.island_task[10002260] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "碧空待航",
@@ -3621,11 +3356,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_task
-
-	var_1_56[10002270] = {
+	pg.base.island_task[10002270] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "出发，宝藏岛！",
@@ -3663,11 +3394,7 @@ var_0_5.base.island_task = {}
 			100022701
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_task
-
-	var_1_57[10002271] = {
+	pg.base.island_task[10002271] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "出发，宝藏岛！",
@@ -3708,11 +3435,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_task
-
-	var_1_58[10002280] = {
+	pg.base.island_task[10002280] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "所谓宝藏",
@@ -3756,11 +3479,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_task
-
-	var_1_59[10002290] = {
+	pg.base.island_task[10002290] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "日常补给",
@@ -3804,11 +3523,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_task
-
-	var_1_60[10002300] = {
+	pg.base.island_task[10002300] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "集会岛上的浪漫休憩",
@@ -3849,11 +3564,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_task
-
-	var_1_61[6] = {
+	pg.base.island_task[6] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "集会岛的宝藏",
@@ -3897,11 +3608,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_task
-
-	var_1_62[16] = {
+	pg.base.island_task[16] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "最棒的集会岛",
@@ -3945,11 +3652,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_task
-
-	var_1_63[26] = {
+	pg.base.island_task[26] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物邻居",
@@ -3993,11 +3696,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_task
-
-	var_1_64[10002340] = {
+	pg.base.island_task[10002340] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "飞行器大升级",
@@ -4042,11 +3741,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_task
-
-	var_1_65[10002350] = {
+	pg.base.island_task[10002350] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "神秘专家",
@@ -4087,11 +3782,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_task
-
-	var_1_66[10002360] = {
+	pg.base.island_task[10002360] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "奇妙集会岛",
@@ -4132,11 +3823,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_task
-
-	var_1_67[10002370] = {
+	pg.base.island_task[10002370] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "闪亮的未来",
@@ -4185,11 +3872,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_task
-
-	var_1_68[10002380] = {
+	pg.base.island_task[10002380] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -4224,11 +3907,7 @@ var_0_5.base.island_task = {}
 			100023801
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_task
-
-	var_1_69[10003010] = {
+	pg.base.island_task[10003010] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "开发区的生活",
@@ -4263,11 +3942,7 @@ var_0_5.base.island_task = {}
 			100030101
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_task
-
-	var_1_70[10003011] = {
+	pg.base.island_task[10003011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开发区的生活",
@@ -4311,11 +3986,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_task
-
-	var_1_71[10003020] = {
+	pg.base.island_task[10003020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区建设",
@@ -4356,11 +4027,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_task
-
-	var_1_72[10003030] = {
+	pg.base.island_task[10003030] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区美食",
@@ -4404,11 +4071,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_task
-
-	var_1_73[10003040] = {
+	pg.base.island_task[10003040] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "百业烟火",
@@ -4452,11 +4115,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_task
-
-	var_1_74[10003050] = {
+	pg.base.island_task[10003050] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "繁荫之下",
@@ -4494,11 +4153,7 @@ var_0_5.base.island_task = {}
 			100030501
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_task
-
-	var_1_75[10003051] = {
+	pg.base.island_task[10003051] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "繁荫之下",
@@ -4539,11 +4194,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_task
-
-	var_1_76[10003060] = {
+	pg.base.island_task[10003060] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "野地寻蜂",
@@ -4587,11 +4238,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_task
-
-	var_1_77[10003070] = {
+	pg.base.island_task[10003070] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "蜜蜂与蜂蜜",
@@ -4640,11 +4287,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_task
-
-	var_1_78[8] = {
+	pg.base.island_task[8] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "苹果树",
@@ -4688,11 +4331,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_task
-
-	var_1_79[18] = {
+	pg.base.island_task[18] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "丰收的苹果",
@@ -4730,11 +4369,7 @@ var_0_5.base.island_task = {}
 			100030901
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_task
-
-	var_1_80[19] = {
+	pg.base.island_task[19] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "丰收的苹果",
@@ -4778,11 +4413,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_task
-
-	var_1_81[28] = {
+	pg.base.island_task[28] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开拓苗圃",
@@ -4836,11 +4467,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_task
-
-	var_1_82[10003110] = {
+	pg.base.island_task[10003110] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -4875,11 +4502,7 @@ var_0_5.base.island_task = {}
 			100031101
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_task
-
-	var_1_83[10004010] = {
+	pg.base.island_task[10004010] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "奇怪的{namecode:98:明石}",
@@ -4920,11 +4543,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_task
-
-	var_1_84[10004020] = {
+	pg.base.island_task[10004020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "工业化的开端",
@@ -4968,11 +4587,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_task
-
-	var_1_85[10004030] = {
+	pg.base.island_task[10004030] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿工厂",
@@ -5021,11 +4636,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_task
-
-	var_1_86[31] = {
+	pg.base.island_task[31] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "繁荣与债务",
@@ -5074,11 +4685,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_task
-
-	var_1_87[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "优化进行中",
@@ -5144,11 +4751,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_task
-
-	var_1_88[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "新季度，新气象！",
@@ -5214,11 +4817,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_task
-
-	var_1_89[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "夏日奇遇",
@@ -5284,11 +4883,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_task
-
-	var_1_90[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "极限秋游",
@@ -5354,11 +4949,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_task
-
-	var_1_91[51001000] = {
+	pg.base.island_task[51001000] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "养成登岛邀约",
@@ -5388,11 +4979,7 @@ var_0_5.base.island_task = {}
 		},
 		reward_show = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_task
-
-	var_1_92[51001001] = {
+	pg.base.island_task[51001001] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "数据接入中Ⅰ",
@@ -5437,11 +5024,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_task
-
-	var_1_93[51001002] = {
+	pg.base.island_task[51001002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "数据接入中Ⅱ",
@@ -5482,11 +5065,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_task
-
-	var_1_94[51001003] = {
+	pg.base.island_task[51001003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "数据接入中Ⅲ",
@@ -5528,11 +5107,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_task
-
-	var_1_95[16] = {
+	pg.base.island_task[16] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "捣蛋鬼来袭",
@@ -5562,11 +5137,7 @@ var_0_5.base.island_task = {}
 		},
 		reward_show = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_task
-
-	var_1_96[17] = {
+	pg.base.island_task[17] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "捣蛋鬼来袭Ⅰ",
@@ -5611,11 +5182,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_task
-
-	var_1_97[18] = {
+	pg.base.island_task[18] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "捣蛋鬼来袭Ⅱ",
@@ -5656,11 +5223,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_task
-
-	var_1_98[19] = {
+	pg.base.island_task[19] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "捣蛋鬼来袭Ⅲ",
@@ -5702,8 +5265,7 @@ var_0_5.base.island_task = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_task[51003000] = {
+	pg.base.island_task[51003000] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "静悄悄访客",
@@ -5737,11 +5299,7 @@ var_0_5.base.island_task = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_task
-
-	var_2_0[51003001] = {
+	pg.base.island_task[51003001] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "静悄悄访客Ⅰ",
@@ -5786,11 +5344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_task
-
-	var_2_1[51003002] = {
+	pg.base.island_task[51003002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "静悄悄访客Ⅱ",
@@ -5831,11 +5385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_task
-
-	var_2_2[51003003] = {
+	pg.base.island_task[51003003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "静悄悄访客Ⅲ",
@@ -5877,11 +5427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_task
-
-	var_2_3[50001001] = {
+	pg.base.island_task[50001001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（1/7）",
@@ -5952,11 +5498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_task
-
-	var_2_4[50001002] = {
+	pg.base.island_task[50001002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（2/7）",
@@ -6029,11 +5571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_task
-
-	var_2_5[50001003] = {
+	pg.base.island_task[50001003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（3/7）",
@@ -6106,11 +5644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_task
-
-	var_2_6[50001004] = {
+	pg.base.island_task[50001004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（4/7）",
@@ -6183,11 +5717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_task
-
-	var_2_7[50001005] = {
+	pg.base.island_task[50001005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（5/7）",
@@ -6265,11 +5795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_task
-
-	var_2_8[50001006] = {
+	pg.base.island_task[50001006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（6/7）",
@@ -6347,11 +5873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_task
-
-	var_2_9[50001007] = {
+	pg.base.island_task[50001007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（7/7）",
@@ -6429,11 +5951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_task
-
-	var_2_10[50001008] = {
+	pg.base.island_task[50001008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（1/7）",
@@ -6504,11 +6022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_task
-
-	var_2_11[50001009] = {
+	pg.base.island_task[50001009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（2/7）",
@@ -6581,11 +6095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_task
-
-	var_2_12[50001010] = {
+	pg.base.island_task[50001010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（3/7）",
@@ -6658,11 +6168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_task
-
-	var_2_13[50001011] = {
+	pg.base.island_task[50001011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（4/7）",
@@ -6735,11 +6241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_task
-
-	var_2_14[50001012] = {
+	pg.base.island_task[50001012] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（5/7）",
@@ -6817,11 +6319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_task
-
-	var_2_15[50001013] = {
+	pg.base.island_task[50001013] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（6/7）",
@@ -6899,11 +6397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_task
-
-	var_2_16[50001014] = {
+	pg.base.island_task[50001014] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产采集（7/7）",
@@ -6981,11 +6475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_task
-
-	var_2_17[50001015] = {
+	pg.base.island_task[50001015] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（1/7）",
@@ -7056,11 +6546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_task
-
-	var_2_18[50001016] = {
+	pg.base.island_task[50001016] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（2/7）",
@@ -7133,11 +6619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_task
-
-	var_2_19[50001017] = {
+	pg.base.island_task[50001017] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（3/7）",
@@ -7210,11 +6692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_task
-
-	var_2_20[50001018] = {
+	pg.base.island_task[50001018] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（4/7）",
@@ -7287,11 +6765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_task
-
-	var_2_21[50001019] = {
+	pg.base.island_task[50001019] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（5/7）",
@@ -7369,11 +6843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_task
-
-	var_2_22[50001020] = {
+	pg.base.island_task[50001020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（6/7）",
@@ -7451,11 +6921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_task
-
-	var_2_23[50001021] = {
+	pg.base.island_task[50001021] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产采集（7/7）",
@@ -7533,11 +6999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_task
-
-	var_2_24[50001022] = {
+	pg.base.island_task[50001022] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（1/7）",
@@ -7608,11 +7070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_task
-
-	var_2_25[50001023] = {
+	pg.base.island_task[50001023] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（2/7）",
@@ -7685,11 +7143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_task
-
-	var_2_26[0] = {
+	pg.base.island_task[0] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（3/7）",
@@ -7762,11 +7216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_task
-
-	var_2_27[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（4/7）",
@@ -7839,11 +7289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_task
-
-	var_2_28[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（5/7）",
@@ -7921,11 +7367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_task
-
-	var_2_29[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（6/7）",
@@ -8003,11 +7445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_task
-
-	var_2_30[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产采集（7/7）",
@@ -8085,11 +7523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_task
-
-	var_2_31[50002001] = {
+	pg.base.island_task[50002001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（1/7）",
@@ -8160,11 +7594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_task
-
-	var_2_32[50002002] = {
+	pg.base.island_task[50002002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（2/7）",
@@ -8237,11 +7667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_task
-
-	var_2_33[50002003] = {
+	pg.base.island_task[50002003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（3/7）",
@@ -8314,11 +7740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_task
-
-	var_2_34[50002004] = {
+	pg.base.island_task[50002004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（4/7）",
@@ -8391,11 +7813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_task
-
-	var_2_35[50002005] = {
+	pg.base.island_task[50002005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（5/7）",
@@ -8473,11 +7891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_task
-
-	var_2_36[50002006] = {
+	pg.base.island_task[50002006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（6/7）",
@@ -8555,11 +7969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_task
-
-	var_2_37[50002007] = {
+	pg.base.island_task[50002007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（7/7）",
@@ -8637,11 +8047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_task
-
-	var_2_38[50002008] = {
+	pg.base.island_task[50002008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（1/7）",
@@ -8712,11 +8118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_task
-
-	var_2_39[50002009] = {
+	pg.base.island_task[50002009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（2/7）",
@@ -8789,11 +8191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_task
-
-	var_2_40[50002010] = {
+	pg.base.island_task[50002010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（3/7）",
@@ -8866,11 +8264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_task
-
-	var_2_41[50002011] = {
+	pg.base.island_task[50002011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（4/7）",
@@ -8943,11 +8337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_task
-
-	var_2_42[50002012] = {
+	pg.base.island_task[50002012] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（5/7）",
@@ -9025,11 +8415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_task
-
-	var_2_43[50002013] = {
+	pg.base.island_task[50002013] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（6/7）",
@@ -9107,11 +8493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_task
-
-	var_2_44[50002014] = {
+	pg.base.island_task[50002014] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产制作（7/7）",
@@ -9189,11 +8571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_task
-
-	var_2_45[50002015] = {
+	pg.base.island_task[50002015] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（1/7）",
@@ -9264,11 +8642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_task
-
-	var_2_46[50002016] = {
+	pg.base.island_task[50002016] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（2/7）",
@@ -9341,11 +8715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_task
-
-	var_2_47[50002017] = {
+	pg.base.island_task[50002017] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（3/7）",
@@ -9418,11 +8788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_task
-
-	var_2_48[50002018] = {
+	pg.base.island_task[50002018] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（4/7）",
@@ -9495,11 +8861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_task
-
-	var_2_49[50002019] = {
+	pg.base.island_task[50002019] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（5/7）",
@@ -9577,11 +8939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_task
-
-	var_2_50[50002020] = {
+	pg.base.island_task[50002020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（6/7）",
@@ -9659,11 +9017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_task
-
-	var_2_51[50002021] = {
+	pg.base.island_task[50002021] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产制作（7/7）",
@@ -9741,11 +9095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_task
-
-	var_2_52[50002022] = {
+	pg.base.island_task[50002022] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（1/7）",
@@ -9816,11 +9166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_task
-
-	var_2_53[50002023] = {
+	pg.base.island_task[50002023] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（2/7）",
@@ -9893,11 +9239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_task
-
-	var_2_54[50002024] = {
+	pg.base.island_task[50002024] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（3/7）",
@@ -9970,11 +9312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_task
-
-	var_2_55[50002025] = {
+	pg.base.island_task[50002025] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（4/7）",
@@ -10047,11 +9385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_task
-
-	var_2_56[50002026] = {
+	pg.base.island_task[50002026] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（5/7）",
@@ -10129,11 +9463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_task
-
-	var_2_57[50002027] = {
+	pg.base.island_task[50002027] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（6/7）",
@@ -10211,11 +9541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_task
-
-	var_2_58[50002028] = {
+	pg.base.island_task[50002028] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产制作（7/7）",
@@ -10293,11 +9619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_task
-
-	var_2_59[50003001] = {
+	pg.base.island_task[50003001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（1/4）",
@@ -10368,11 +9690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_task
-
-	var_2_60[50003002] = {
+	pg.base.island_task[50003002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（2/4）",
@@ -10445,11 +9763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_task
-
-	var_2_61[50003003] = {
+	pg.base.island_task[50003003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（3/4）",
@@ -10522,11 +9836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_task
-
-	var_2_62[50003004] = {
+	pg.base.island_task[50003004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（4/4）",
@@ -10599,11 +9909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_task
-
-	var_2_63[50003005] = {
+	pg.base.island_task[50003005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产订单（1/4）",
@@ -10674,11 +9980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_task
-
-	var_2_64[50003006] = {
+	pg.base.island_task[50003006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产订单（2/4）",
@@ -10751,11 +10053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_task
-
-	var_2_65[50003007] = {
+	pg.base.island_task[50003007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产订单（3/4）",
@@ -10828,11 +10126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_task
-
-	var_2_66[50003008] = {
+	pg.base.island_task[50003008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "春季特产订单（4/4）",
@@ -10905,11 +10199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_task
-
-	var_2_67[50003009] = {
+	pg.base.island_task[50003009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产订单（1/4）",
@@ -10980,11 +10270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_task
-
-	var_2_68[50003010] = {
+	pg.base.island_task[50003010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产订单（2/4）",
@@ -11057,11 +10343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_task
-
-	var_2_69[50003011] = {
+	pg.base.island_task[50003011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产订单（3/4）",
@@ -11134,11 +10416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_task
-
-	var_2_70[50003012] = {
+	pg.base.island_task[50003012] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "夏季特产订单（4/4）",
@@ -11211,11 +10489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_task
-
-	var_2_71[50003013] = {
+	pg.base.island_task[50003013] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（1/4）",
@@ -11286,11 +10560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_task
-
-	var_2_72[50003014] = {
+	pg.base.island_task[50003014] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（2/4）",
@@ -11363,11 +10633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_task
-
-	var_2_73[50003015] = {
+	pg.base.island_task[50003015] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（3/4）",
@@ -11440,11 +10706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_task
-
-	var_2_74[50003016] = {
+	pg.base.island_task[50003016] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "秋季特产订单（4/4）",
@@ -11517,11 +10779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_task
-
-	var_2_75[80001001] = {
+	pg.base.island_task[80001001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "麦田守望",
@@ -11567,11 +10825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_task
-
-	var_2_76[80001002] = {
+	pg.base.island_task[80001002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物食品",
@@ -11617,11 +10871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_task
-
-	var_2_77[80001003] = {
+	pg.base.island_task[80001003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开拓豆源",
@@ -11667,11 +10917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_task
-
-	var_2_78[80001004] = {
+	pg.base.island_task[80001004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稻米供应",
@@ -11717,11 +10963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_task
-
-	var_2_79[80001005] = {
+	pg.base.island_task[80001005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "黄金粮仓",
@@ -11767,11 +11009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_task
-
-	var_2_80[80001006] = {
+	pg.base.island_task[80001006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "橙色活力",
@@ -11817,11 +11055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_task
-
-	var_2_81[80001007] = {
+	pg.base.island_task[80001007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "乳品补给",
@@ -11867,11 +11101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_task
-
-	var_2_82[80001008] = {
+	pg.base.island_task[80001008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜蜜引擎",
@@ -11917,11 +11147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_task
-
-	var_2_83[80001009] = {
+	pg.base.island_task[80001009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "咖啡供应",
@@ -11967,11 +11193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_task
-
-	var_2_84[80001010] = {
+	pg.base.island_task[80001010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "烤肉能量",
@@ -12017,11 +11239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_task
-
-	var_2_85[80001011] = {
+	pg.base.island_task[80001011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "调味基础",
@@ -12067,11 +11285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_task
-
-	var_2_86[80001012] = {
+	pg.base.island_task[80001012] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "健康饮食",
@@ -12117,11 +11331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_task
-
-	var_2_87[80001013] = {
+	pg.base.island_task[80001013] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "营养组合",
@@ -12167,11 +11377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_task
-
-	var_2_88[80001014] = {
+	pg.base.island_task[80001014] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "拿铁时光",
@@ -12217,11 +11423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_task
-
-	var_2_89[80001015] = {
+	pg.base.island_task[80001015] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "禽肉快炒",
@@ -12267,11 +11469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_task
-
-	var_2_90[80001016] = {
+	pg.base.island_task[80001016] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "便携快餐",
@@ -12317,11 +11515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_task
-
-	var_2_91[80001017] = {
+	pg.base.island_task[80001017] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "首次接收",
@@ -12357,11 +11551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_task
-
-	var_2_92[80001018] = {
+	pg.base.island_task[80001018] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定入库",
@@ -12402,11 +11592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_task
-
-	var_2_93[80001019] = {
+	pg.base.island_task[80001019] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "定期补给",
@@ -12447,11 +11633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_task
-
-	var_2_94[80001020] = {
+	pg.base.island_task[80001020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "高效接收",
@@ -12492,11 +11674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_task
-
-	var_2_95[80001021] = {
+	pg.base.island_task[80001021] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "补给充足",
@@ -12537,11 +11715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_task
-
-	var_2_96[80001022] = {
+	pg.base.island_task[80001022] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "永续储备",
@@ -12582,11 +11756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_task
-
-	var_2_97[80001023] = {
+	pg.base.island_task[80001023] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展根基",
@@ -12632,11 +11802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_task
-
-	var_2_98[0] = {
+	pg.base.island_task[0] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "初识订单",
@@ -12672,8 +11838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.island_task[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定交付",
@@ -12718,11 +11883,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_task
-
-	var_3_0[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "坚实后盾",
@@ -12763,11 +11924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_task
-
-	var_3_1[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "订单专家",
@@ -12808,11 +11965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.island_task
-
-	var_3_2[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展支柱",
@@ -12853,11 +12006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.island_task
-
-	var_3_3[5] = {
+	pg.base.island_task[5] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开发核心",
@@ -12903,11 +12052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.island_task
-
-	var_3_4[6] = {
+	pg.base.island_task[6] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "繁荣之基",
@@ -12953,11 +12098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.island_task
-
-	var_3_5[80001101] = {
+	pg.base.island_task[80001101] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "麦田守望",
@@ -13003,11 +12144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.island_task
-
-	var_3_6[80001102] = {
+	pg.base.island_task[80001102] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物食品",
@@ -13053,11 +12190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.island_task
-
-	var_3_7[80001103] = {
+	pg.base.island_task[80001103] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开拓豆源",
@@ -13103,11 +12236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.island_task
-
-	var_3_8[80001104] = {
+	pg.base.island_task[80001104] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稻米供应",
@@ -13153,11 +12282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.island_task
-
-	var_3_9[80001105] = {
+	pg.base.island_task[80001105] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "黄金粮仓",
@@ -13203,11 +12328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.island_task
-
-	var_3_10[80001106] = {
+	pg.base.island_task[80001106] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "橙色活力",
@@ -13253,11 +12374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.island_task
-
-	var_3_11[80001107] = {
+	pg.base.island_task[80001107] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "乳品补给",
@@ -13303,11 +12420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.island_task
-
-	var_3_12[80001108] = {
+	pg.base.island_task[80001108] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜蜜引擎",
@@ -13353,11 +12466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.island_task
-
-	var_3_13[80001109] = {
+	pg.base.island_task[80001109] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "咖啡供应",
@@ -13403,11 +12512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.island_task
-
-	var_3_14[80001110] = {
+	pg.base.island_task[80001110] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "烤肉能量",
@@ -13453,11 +12558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.island_task
-
-	var_3_15[80001111] = {
+	pg.base.island_task[80001111] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "调味基础",
@@ -13503,11 +12604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.island_task
-
-	var_3_16[80001112] = {
+	pg.base.island_task[80001112] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "健康饮食",
@@ -13553,11 +12650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.island_task
-
-	var_3_17[80001113] = {
+	pg.base.island_task[80001113] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "营养组合",
@@ -13603,11 +12696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.island_task
-
-	var_3_18[80001114] = {
+	pg.base.island_task[80001114] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "拿铁时光",
@@ -13653,11 +12742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.island_task
-
-	var_3_19[80001115] = {
+	pg.base.island_task[80001115] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "禽肉快炒",
@@ -13703,11 +12788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.island_task
-
-	var_3_20[80001116] = {
+	pg.base.island_task[80001116] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "便携快餐",
@@ -13753,11 +12834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.island_task
-
-	var_3_21[80001117] = {
+	pg.base.island_task[80001117] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "首次接收",
@@ -13793,11 +12870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.island_task
-
-	var_3_22[80001118] = {
+	pg.base.island_task[80001118] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定入库",
@@ -13838,11 +12911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.island_task
-
-	var_3_23[80001119] = {
+	pg.base.island_task[80001119] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "定期补给",
@@ -13883,11 +12952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.island_task
-
-	var_3_24[80001120] = {
+	pg.base.island_task[80001120] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "高效接收",
@@ -13928,11 +12993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.island_task
-
-	var_3_25[80001121] = {
+	pg.base.island_task[80001121] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "补给充足",
@@ -13973,11 +13034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.island_task
-
-	var_3_26[80001122] = {
+	pg.base.island_task[80001122] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "永续储备",
@@ -14018,11 +13075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.island_task
-
-	var_3_27[80001123] = {
+	pg.base.island_task[80001123] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展根基",
@@ -14068,11 +13121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.island_task
-
-	var_3_28[80001124] = {
+	pg.base.island_task[80001124] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "初识订单",
@@ -14108,11 +13157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.island_task
-
-	var_3_29[80001125] = {
+	pg.base.island_task[80001125] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定交付",
@@ -14153,11 +13198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.island_task
-
-	var_3_30[80001126] = {
+	pg.base.island_task[80001126] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "坚实后盾",
@@ -14198,11 +13239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.island_task
-
-	var_3_31[80001127] = {
+	pg.base.island_task[80001127] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "订单专家",
@@ -14243,11 +13280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.island_task
-
-	var_3_32[80001128] = {
+	pg.base.island_task[80001128] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展支柱",
@@ -14288,11 +13321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.island_task
-
-	var_3_33[80001129] = {
+	pg.base.island_task[80001129] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开发核心",
@@ -14338,11 +13367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.island_task
-
-	var_3_34[80001130] = {
+	pg.base.island_task[80001130] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "繁荣之基",
@@ -14388,11 +13413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.island_task
-
-	var_3_35[80001201] = {
+	pg.base.island_task[80001201] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "田野坚盾",
@@ -14438,11 +13459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.island_task
-
-	var_3_36[80001202] = {
+	pg.base.island_task[80001202] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提神饮品",
@@ -14488,11 +13505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.island_task
-
-	var_3_37[80001203] = {
+	pg.base.island_task[80001203] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "蔬菜供给",
@@ -14538,11 +13551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.island_task
-
-	var_3_38[80001204] = {
+	pg.base.island_task[80001204] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜蜜果味",
@@ -14588,11 +13597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.island_task
-
-	var_3_39[80001205] = {
+	pg.base.island_task[80001205] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "纺织原料",
@@ -14638,11 +13643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.island_task
-
-	var_3_40[80001206] = {
+	pg.base.island_task[80001206] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "水果补给",
@@ -14688,11 +13689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.island_task
-
-	var_3_41[80001207] = {
+	pg.base.island_task[80001207] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "清爽活力",
@@ -14738,11 +13735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.island_task
-
-	var_3_42[80001208] = {
+	pg.base.island_task[80001208] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "便携快餐",
@@ -14788,11 +13781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.island_task
-
-	var_3_43[80001209] = {
+	pg.base.island_task[80001209] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "清淡风味",
@@ -14838,11 +13827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.island_task
-
-	var_3_44[80001210] = {
+	pg.base.island_task[80001210] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜味动力",
@@ -14888,11 +13873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.island_task
-
-	var_3_45[80001211] = {
+	pg.base.island_task[80001211] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "果香醒神",
@@ -14938,11 +13919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.island_task
-
-	var_3_46[80001212] = {
+	pg.base.island_task[80001212] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "清新菜式",
@@ -14988,11 +13965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.island_task
-
-	var_3_47[80001213] = {
+	pg.base.island_task[80001213] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "海鲜美味",
@@ -15038,11 +14011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.island_task
-
-	var_3_48[80001214] = {
+	pg.base.island_task[80001214] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "麻辣激情",
@@ -15088,11 +14057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.island_task
-
-	var_3_49[80001215] = {
+	pg.base.island_task[80001215] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "艺术点缀",
@@ -15138,11 +14103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.island_task
-
-	var_3_50[80001216] = {
+	pg.base.island_task[80001216] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "珍馐汇聚",
@@ -15188,11 +14149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.island_task
-
-	var_3_51[80001217] = {
+	pg.base.island_task[80001217] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "首次接收",
@@ -15228,11 +14185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.island_task
-
-	var_3_52[80001218] = {
+	pg.base.island_task[80001218] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定入库",
@@ -15273,11 +14226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.island_task
-
-	var_3_53[80001219] = {
+	pg.base.island_task[80001219] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "定期补给",
@@ -15318,11 +14267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.island_task
-
-	var_3_54[80001220] = {
+	pg.base.island_task[80001220] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "高效接收",
@@ -15363,11 +14308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.island_task
-
-	var_3_55[80001221] = {
+	pg.base.island_task[80001221] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "补给充足",
@@ -15408,11 +14349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.island_task
-
-	var_3_56[80001222] = {
+	pg.base.island_task[80001222] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "永续储备",
@@ -15453,11 +14390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.island_task
-
-	var_3_57[80001223] = {
+	pg.base.island_task[80001223] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展根基",
@@ -15503,11 +14436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.island_task
-
-	var_3_58[80001224] = {
+	pg.base.island_task[80001224] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "初识订单",
@@ -15543,11 +14472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.island_task
-
-	var_3_59[80001225] = {
+	pg.base.island_task[80001225] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定交付",
@@ -15588,11 +14513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.island_task
-
-	var_3_60[80001226] = {
+	pg.base.island_task[80001226] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "坚实后盾",
@@ -15633,11 +14554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.island_task
-
-	var_3_61[80001227] = {
+	pg.base.island_task[80001227] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "订单专家",
@@ -15678,11 +14595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.island_task
-
-	var_3_62[80001228] = {
+	pg.base.island_task[80001228] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展支柱",
@@ -15723,11 +14636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.island_task
-
-	var_3_63[80001229] = {
+	pg.base.island_task[80001229] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开发核心",
@@ -15773,11 +14682,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.island_task
-
-	var_3_64[80001230] = {
+	pg.base.island_task[80001230] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "繁荣之基",
@@ -15823,11 +14728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.island_task
-
-	var_3_65[21] = {
+	pg.base.island_task[21] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "主粮储备",
@@ -15873,11 +14774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.island_task
-
-	var_3_66[22] = {
+	pg.base.island_task[22] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "营养蛋白",
@@ -15923,11 +14820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.island_task
-
-	var_3_67[23] = {
+	pg.base.island_task[23] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "田野坚盾",
@@ -15973,11 +14866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.island_task
-
-	var_3_68[24] = {
+	pg.base.island_task[24] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "工业血脉",
@@ -16023,11 +14912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.island_task
-
-	var_3_69[25] = {
+	pg.base.island_task[25] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "香甜活力",
@@ -16073,11 +14958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.island_task
-
-	var_3_70[26] = {
+	pg.base.island_task[26] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "纤维补给",
@@ -16123,11 +15004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.island_task
-
-	var_3_71[27] = {
+	pg.base.island_task[27] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "芳香疗愈",
@@ -16173,11 +15050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.island_task
-
-	var_3_72[28] = {
+	pg.base.island_task[28] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "便携快餐",
@@ -16223,11 +15096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.island_task
-
-	var_3_73[29] = {
+	pg.base.island_task[29] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "热带双响",
@@ -16273,11 +15142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.island_task
-
-	var_3_74[30] = {
+	pg.base.island_task[30] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜味动力",
@@ -16323,11 +15188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.island_task
-
-	var_3_75[31] = {
+	pg.base.island_task[31] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "粉红奶香",
@@ -16373,11 +15234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.island_task
-
-	var_3_76[80001312] = {
+	pg.base.island_task[80001312] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "经典正餐",
@@ -16423,11 +15280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.island_task
-
-	var_3_77[80001313] = {
+	pg.base.island_task[80001313] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "白玉凝脂",
@@ -16473,11 +15326,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.island_task
-
-	var_3_78[80001314] = {
+	pg.base.island_task[80001314] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "炙烤香气",
@@ -16523,11 +15372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.island_task
-
-	var_3_79[80001315] = {
+	pg.base.island_task[80001315] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "安神茶饮",
@@ -16573,11 +15418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.island_task
-
-	var_3_80[80001316] = {
+	pg.base.island_task[80001316] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "净水耗材",
@@ -16623,11 +15464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.island_task
-
-	var_3_81[80001317] = {
+	pg.base.island_task[80001317] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "首次接收",
@@ -16663,11 +15500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.island_task
-
-	var_3_82[80001318] = {
+	pg.base.island_task[80001318] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定入库",
@@ -16708,11 +15541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.island_task
-
-	var_3_83[80001319] = {
+	pg.base.island_task[80001319] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "定期补给",
@@ -16753,11 +15582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.island_task
-
-	var_3_84[80001320] = {
+	pg.base.island_task[80001320] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "高效接收",
@@ -16798,11 +15623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.island_task
-
-	var_3_85[80001321] = {
+	pg.base.island_task[80001321] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "补给充足",
@@ -16843,11 +15664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.island_task
-
-	var_3_86[80001322] = {
+	pg.base.island_task[80001322] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "永续储备",
@@ -16888,11 +15705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.island_task
-
-	var_3_87[80001323] = {
+	pg.base.island_task[80001323] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展根基",
@@ -16938,11 +15751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.island_task
-
-	var_3_88[80001324] = {
+	pg.base.island_task[80001324] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "初识订单",
@@ -16978,11 +15787,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.island_task
-
-	var_3_89[80001325] = {
+	pg.base.island_task[80001325] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定交付",
@@ -17023,11 +15828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.island_task
-
-	var_3_90[80001326] = {
+	pg.base.island_task[80001326] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "坚实后盾",
@@ -17068,11 +15869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.island_task
-
-	var_3_91[80001327] = {
+	pg.base.island_task[80001327] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "订单专家",
@@ -17113,11 +15910,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.island_task
-
-	var_3_92[80001328] = {
+	pg.base.island_task[80001328] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展支柱",
@@ -17158,11 +15951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.island_task
-
-	var_3_93[80001329] = {
+	pg.base.island_task[80001329] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开发核心",
@@ -17208,11 +15997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.island_task
-
-	var_3_94[80001330] = {
+	pg.base.island_task[80001330] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "繁荣之基",
@@ -17258,11 +16043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.island_task
-
-	var_3_95[80001401] = {
+	pg.base.island_task[80001401] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "麦田守望",
@@ -17308,11 +16089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.island_task
-
-	var_3_96[80001402] = {
+	pg.base.island_task[80001402] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物食品",
@@ -17358,11 +16135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.island_task
-
-	var_3_97[80001403] = {
+	pg.base.island_task[80001403] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开拓豆源",
@@ -17408,11 +16181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.island_task
-
-	var_3_98[80001404] = {
+	pg.base.island_task[80001404] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稻米供应",
@@ -17458,8 +16227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.island_task[80001405] = {
+	pg.base.island_task[80001405] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "黄金粮仓",
@@ -17509,11 +16277,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.island_task
-
-	var_4_0[80001406] = {
+	pg.base.island_task[80001406] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "橙色活力",
@@ -17559,11 +16323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.island_task
-
-	var_4_1[80001407] = {
+	pg.base.island_task[80001407] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "乳品补给",
@@ -17609,11 +16369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.island_task
-
-	var_4_2[0] = {
+	pg.base.island_task[0] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜蜜引擎",
@@ -17659,11 +16415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.island_task
-
-	var_4_3[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "咖啡供应",
@@ -17709,11 +16461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.island_task
-
-	var_4_4[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "烤肉能量",
@@ -17759,11 +16507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.island_task
-
-	var_4_5[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "调味基础",
@@ -17809,11 +16553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.island_task
-
-	var_4_6[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "健康饮食",
@@ -17859,11 +16599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.island_task
-
-	var_4_7[5] = {
+	pg.base.island_task[5] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "营养组合",
@@ -17909,11 +16645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.island_task
-
-	var_4_8[6] = {
+	pg.base.island_task[6] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "拿铁时光",
@@ -17959,11 +16691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.island_task
-
-	var_4_9[7] = {
+	pg.base.island_task[7] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "禽肉快炒",
@@ -18009,11 +16737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.island_task
-
-	var_4_10[8] = {
+	pg.base.island_task[8] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "便携快餐",
@@ -18059,11 +16783,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.island_task
-
-	var_4_11[9] = {
+	pg.base.island_task[9] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "首次接收",
@@ -18099,11 +16819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.island_task
-
-	var_4_12[10] = {
+	pg.base.island_task[10] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定入库",
@@ -18144,11 +16860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.island_task
-
-	var_4_13[11] = {
+	pg.base.island_task[11] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "定期补给",
@@ -18189,11 +16901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.island_task
-
-	var_4_14[12] = {
+	pg.base.island_task[12] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "高效接收",
@@ -18234,11 +16942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.island_task
-
-	var_4_15[13] = {
+	pg.base.island_task[13] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "补给充足",
@@ -18279,11 +16983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.island_task
-
-	var_4_16[14] = {
+	pg.base.island_task[14] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "永续储备",
@@ -18324,11 +17024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.island_task
-
-	var_4_17[15] = {
+	pg.base.island_task[15] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展根基",
@@ -18374,11 +17070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.island_task
-
-	var_4_18[16] = {
+	pg.base.island_task[16] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "初识订单",
@@ -18414,11 +17106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.island_task
-
-	var_4_19[17] = {
+	pg.base.island_task[17] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "稳定交付",
@@ -18459,11 +17147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.island_task
-
-	var_4_20[18] = {
+	pg.base.island_task[18] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "坚实后盾",
@@ -18504,11 +17188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.island_task
-
-	var_4_21[19] = {
+	pg.base.island_task[19] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "订单专家",
@@ -18549,11 +17229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.island_task
-
-	var_4_22[20] = {
+	pg.base.island_task[20] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "发展支柱",
@@ -18594,11 +17270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.island_task
-
-	var_4_23[21] = {
+	pg.base.island_task[21] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开发核心",
@@ -18644,11 +17316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.island_task
-
-	var_4_24[22] = {
+	pg.base.island_task[22] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "繁荣之基",
@@ -18694,11 +17362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.island_task
-
-	var_4_25[20001001] = {
+	pg.base.island_task[20001001] = {
 		trigger_data = 10040002,
 		trigger_tips = 1,
 		name = "森林里的声音",
@@ -18736,11 +17400,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.island_task
-
-	var_4_26[20001002] = {
+	pg.base.island_task[20001002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "效率致胜",
@@ -18789,11 +17449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.island_task
-
-	var_4_27[20001003] = {
+	pg.base.island_task[20001003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "效率致胜",
@@ -18828,11 +17484,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.island_task
-
-	var_4_28[20001004] = {
+	pg.base.island_task[20001004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "叮咚——嘭！",
@@ -18867,11 +17519,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.island_task
-
-	var_4_29[20001005] = {
+	pg.base.island_task[20001005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "折断的铁轨",
@@ -18906,11 +17554,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.island_task
-
-	var_4_30[20001006] = {
+	pg.base.island_task[20001006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "临时轨道",
@@ -18959,11 +17603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.island_task
-
-	var_4_31[20001007] = {
+	pg.base.island_task[20001007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "今天必须完成",
@@ -18998,11 +17638,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.island_task
-
-	var_4_32[20001008] = {
+	pg.base.island_task[20001008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "最后的矿石",
@@ -19051,11 +17687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.island_task
-
-	var_4_33[20001009] = {
+	pg.base.island_task[20001009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "河岸音符",
@@ -19114,11 +17746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.island_task
-
-	var_4_34[20002001] = {
+	pg.base.island_task[20002001] = {
 		trigger_data = 10020009,
 		trigger_tips = 1,
 		name = "装饰画",
@@ -19153,11 +17781,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.island_task
-
-	var_4_35[20002002] = {
+	pg.base.island_task[20002002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "写生内容",
@@ -19192,11 +17816,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.island_task
-
-	var_4_36[20002003] = {
+	pg.base.island_task[20002003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "收集建议",
@@ -19234,11 +17854,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.island_task
-
-	var_4_37[20002004] = {
+	pg.base.island_task[20002004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "画笔制作",
@@ -19276,11 +17892,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.island_task
-
-	var_4_38[20002005] = {
+	pg.base.island_task[20002005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "画框制作",
@@ -19318,11 +17930,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.island_task
-
-	var_4_39[20002006] = {
+	pg.base.island_task[20002006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "报酬",
@@ -19378,11 +17986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.island_task
-
-	var_4_40[20003001] = {
+	pg.base.island_task[20003001] = {
 		trigger_data = 10070025,
 		trigger_tips = 1,
 		name = "服务器的焦香味",
@@ -19417,11 +18021,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.island_task
-
-	var_4_41[20003002] = {
+	pg.base.island_task[20003002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "修复的原材料",
@@ -19459,11 +18059,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.island_task
-
-	var_4_42[20003003] = {
+	pg.base.island_task[20003003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "寻找零件",
@@ -19501,11 +18097,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.island_task
-
-	var_4_43[20003004] = {
+	pg.base.island_task[20003004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "开服！",
@@ -19561,11 +18153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.island_task
-
-	var_4_44[20004000] = {
+	pg.base.island_task[20004000] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -19606,11 +18194,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.island_task
-
-	var_4_45[20004001] = {
+	pg.base.island_task[20004001] = {
 		trigger_data = 10060002,
 		trigger_tips = 1,
 		name = "来自管理员的问候",
@@ -19645,11 +18229,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.island_task
-
-	var_4_46[20004002] = {
+	pg.base.island_task[20004002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "新品研发要诀",
@@ -19687,11 +18267,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.island_task
-
-	var_4_47[20004003] = {
+	pg.base.island_task[20004003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区的新招牌",
@@ -19747,11 +18323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.island_task
-
-	var_4_48[9] = {
+	pg.base.island_task[9] = {
 		trigger_data = 10090008,
 		trigger_tips = 1,
 		name = "闹鬼传闻",
@@ -19786,11 +18358,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.island_task
-
-	var_4_49[10] = {
+	pg.base.island_task[10] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "深夜的铃铛",
@@ -19828,11 +18396,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.island_task
-
-	var_4_50[11] = {
+	pg.base.island_task[11] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "深夜的铃铛",
@@ -19867,11 +18431,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.island_task
-
-	var_4_51[12] = {
+	pg.base.island_task[12] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "另一阵怪声",
@@ -19906,11 +18466,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.island_task
-
-	var_4_52[13] = {
+	pg.base.island_task[13] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "是谁在深夜敲打？",
@@ -19948,11 +18504,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.island_task
-
-	var_4_53[14] = {
+	pg.base.island_task[14] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "短腿鬼影",
@@ -19987,11 +18539,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.island_task
-
-	var_4_54[15] = {
+	pg.base.island_task[15] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "捉鬼专家",
@@ -20026,11 +18574,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.island_task
-
-	var_4_55[16] = {
+	pg.base.island_task[16] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "捉鬼专家",
@@ -20068,11 +18612,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.island_task
-
-	var_4_56[17] = {
+	pg.base.island_task[17] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "捉鬼专家",
@@ -20128,11 +18668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.island_task
-
-	var_4_57[20006001] = {
+	pg.base.island_task[20006001] = {
 		trigger_data = 10010003,
 		trigger_tips = 1,
 		name = "羊丢了！！",
@@ -20167,11 +18703,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.island_task
-
-	var_4_58[20006002] = {
+	pg.base.island_task[20006002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "仔细调查",
@@ -20206,11 +18738,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.island_task
-
-	var_4_59[20006003] = {
+	pg.base.island_task[20006003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "仔细调查",
@@ -20248,11 +18776,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.island_task
-
-	var_4_60[20006004] = {
+	pg.base.island_task[20006004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "找到你了！",
@@ -20290,11 +18814,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.island_task
-
-	var_4_61[20006005] = {
+	pg.base.island_task[20006005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "目击者",
@@ -20329,11 +18849,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.island_task
-
-	var_4_62[20006006] = {
+	pg.base.island_task[20006006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "追到了！！",
@@ -20371,11 +18887,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.island_task
-
-	var_4_63[20006007] = {
+	pg.base.island_task[20006007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "追到了！！",
@@ -20415,11 +18927,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.island_task
-
-	var_4_64[20006008] = {
+	pg.base.island_task[20006008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "追到了！！",
@@ -20454,11 +18962,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.island_task
-
-	var_4_65[20006009] = {
+	pg.base.island_task[20006009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "加固围栏",
@@ -20512,11 +19016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.island_task
-
-	var_4_66[20007001] = {
+	pg.base.island_task[20007001] = {
 		trigger_data = 10040057,
 		trigger_tips = 1,
 		name = "被困墙内的无名氏",
@@ -20565,11 +19065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.island_task
-
-	var_4_67[20007002] = {
+	pg.base.island_task[20007002] = {
 		trigger_data = 10020026,
 		trigger_tips = 1,
 		name = "港口的蜜蜂防治",
@@ -20618,11 +19114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.island_task
-
-	var_4_68[20007003] = {
+	pg.base.island_task[20007003] = {
 		trigger_data = 10010087,
 		trigger_tips = 1,
 		name = "农场的蜜蜂防治",
@@ -20671,11 +19163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.island_task
-
-	var_4_69[20007004] = {
+	pg.base.island_task[20007004] = {
 		trigger_data = 10040057,
 		trigger_tips = 1,
 		name = "消除疲劳的蜂蜜水",
@@ -20710,11 +19198,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.island_task
-
-	var_4_70[20007005] = {
+	pg.base.island_task[20007005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "超美味蜂蜜水配方",
@@ -20752,11 +19236,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.island_task
-
-	var_4_71[20007006] = {
+	pg.base.island_task[20007006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "食材告急！",
@@ -20795,11 +19275,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.island_task
-
-	var_4_72[20007007] = {
+	pg.base.island_task[20007007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "寻找迷迭香",
@@ -20834,11 +19310,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.island_task
-
-	var_4_73[20007008] = {
+	pg.base.island_task[20007008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "寻找迷迭香",
@@ -20876,11 +19348,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.island_task
-
-	var_4_74[20007009] = {
+	pg.base.island_task[20007009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "新鲜的食材",
@@ -20915,11 +19383,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.island_task
-
-	var_4_75[20007010] = {
+	pg.base.island_task[20007010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "无名之人",
@@ -20970,11 +19434,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.island_task
-
-	var_4_76[20008001] = {
+	pg.base.island_task[20008001] = {
 		trigger_data = 10020009,
 		trigger_tips = 1,
 		name = "紧急订单",
@@ -21009,11 +19469,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.island_task
-
-	var_4_77[20008002] = {
+	pg.base.island_task[20008002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "意外发生",
@@ -21051,11 +19507,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.island_task
-
-	var_4_78[20008003] = {
+	pg.base.island_task[20008003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "风险处理",
@@ -21093,11 +19545,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.island_task
-
-	var_4_79[20008004] = {
+	pg.base.island_task[20008004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "订单完成",
@@ -21148,11 +19596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.island_task
-
-	var_4_80[20009001] = {
+	pg.base.island_task[20009001] = {
 		trigger_data = 10020004,
 		trigger_tips = 1,
 		name = "神秘委托",
@@ -21194,11 +19638,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.island_task
-
-	var_4_81[20009002] = {
+	pg.base.island_task[20009002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "矿石运输",
@@ -21233,11 +19673,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.island_task
-
-	var_4_82[20009003] = {
+	pg.base.island_task[20009003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "{namecode:98:明石}的计划",
@@ -21272,11 +19708,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.island_task
-
-	var_4_83[20009004] = {
+	pg.base.island_task[20009004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "真相大白",
@@ -21327,11 +19759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.island_task
-
-	var_4_84[17] = {
+	pg.base.island_task[17] = {
 		trigger_data = 10020009,
 		trigger_tips = 1,
 		name = "给帕特莉的礼物",
@@ -21366,11 +19794,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.island_task
-
-	var_4_85[18] = {
+	pg.base.island_task[18] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "倾听心声",
@@ -21408,11 +19832,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.island_task
-
-	var_4_86[19] = {
+	pg.base.island_task[19] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "元气的秘诀！",
@@ -21450,11 +19870,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.island_task
-
-	var_4_87[20] = {
+	pg.base.island_task[20] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "能量特饮制作中~",
@@ -21489,11 +19905,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.island_task
-
-	var_4_88[21] = {
+	pg.base.island_task[21] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "寻找胡萝卜",
@@ -21531,11 +19943,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.island_task
-
-	var_4_89[22] = {
+	pg.base.island_task[22] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "睡得更香了~",
@@ -21573,11 +19981,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.island_task
-
-	var_4_90[23] = {
+	pg.base.island_task[23] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "甜甜蛋白霜",
@@ -21615,11 +20019,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.island_task
-
-	var_4_91[24] = {
+	pg.base.island_task[24] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "心意送达",
@@ -21683,11 +20083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.island_task
-
-	var_4_92[20011001] = {
+	pg.base.island_task[20011001] = {
 		trigger_data = 10060002,
 		trigger_tips = 1,
 		name = "孤零零的餐馆",
@@ -21722,11 +20118,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.island_task
-
-	var_4_93[20011002] = {
+	pg.base.island_task[20011002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "喜爱的美食",
@@ -21764,11 +20156,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.island_task
-
-	var_4_94[20011003] = {
+	pg.base.island_task[20011003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "可别忘了自己",
@@ -21803,11 +20191,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.island_task
-
-	var_4_95[20011004] = {
+	pg.base.island_task[20011004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "店铺建设中",
@@ -21857,11 +20241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.island_task
-
-	var_4_96[20011005] = {
+	pg.base.island_task[20011005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "大家的商区",
@@ -21916,11 +20296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.island_task
-
-	var_4_97[20012001] = {
+	pg.base.island_task[20012001] = {
 		trigger_data = 10050002,
 		trigger_tips = 1,
 		name = "事已至此，先借一个吧",
@@ -21955,11 +20331,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.island_task
-
-	var_4_98[20012002] = {
+	pg.base.island_task[20012002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "得赶紧买个新的才行",
@@ -21997,8 +20369,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_4_98
-	var_4_98.base.island_task[20012003] = {
+	pg.base.island_task[20012003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "果树当然也是要施肥的",
@@ -22037,11 +20408,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.island_task
-
-	var_5_0[20012004] = {
+	pg.base.island_task[20012004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "果树当然也是要施肥的",
@@ -22079,11 +20446,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.island_task
-
-	var_5_1[20012005] = {
+	pg.base.island_task[20012005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "丰收的喜悦精简版",
@@ -22132,11 +20495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.island_task
-
-	var_5_2[20012006] = {
+	pg.base.island_task[20012006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "礼尚往来",
@@ -22171,11 +20530,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.island_task
-
-	var_5_3[20012007] = {
+	pg.base.island_task[20012007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "确认订单数量",
@@ -22210,11 +20565,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.island_task
-
-	var_5_4[20012008] = {
+	pg.base.island_task[20012008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "还有“意外收获”？",
@@ -22249,11 +20600,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.island_task
-
-	var_5_5[20012009] = {
+	pg.base.island_task[20012009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "不是我喜欢的虫子，直接拒绝",
@@ -22288,11 +20635,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.island_task
-
-	var_5_6[20012010] = {
+	pg.base.island_task[20012010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "不是我喜欢的虫子，直接拒绝",
@@ -22346,11 +20689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.island_task
-
-	var_5_7[20013000] = {
+	pg.base.island_task[20013000] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "提升开发等级",
@@ -22387,11 +20726,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.island_task
-
-	var_5_8[20013001] = {
+	pg.base.island_task[20013001] = {
 		trigger_data = 10050003,
 		trigger_tips = 1,
 		name = "杳无音讯的肥料",
@@ -22426,11 +20761,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.island_task
-
-	var_5_9[20013002] = {
+	pg.base.island_task[20013002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "散落的货物",
@@ -22465,11 +20796,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.island_task
-
-	var_5_10[20013003] = {
+	pg.base.island_task[20013003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "重新订购……",
@@ -22504,11 +20831,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.island_task
-
-	var_5_11[20013004] = {
+	pg.base.island_task[20013004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "寻找肥料中……",
@@ -22543,11 +20866,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.island_task
-
-	var_5_12[20013005] = {
+	pg.base.island_task[20013005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "得救了！",
@@ -22582,11 +20901,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.island_task
-
-	var_5_13[20013006] = {
+	pg.base.island_task[20013006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "一起播种吧",
@@ -22624,11 +20939,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.island_task
-
-	var_5_14[20013007] = {
+	pg.base.island_task[20013007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "收获时间",
@@ -22666,11 +20977,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.island_task
-
-	var_5_15[20013008] = {
+	pg.base.island_task[20013008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "薰衣草包裹派送中！",
@@ -22721,11 +21028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.island_task
-
-	var_5_16[20014001] = {
+	pg.base.island_task[20014001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "拼合的秘密",
@@ -22773,11 +21076,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.island_task
-
-	var_5_17[20014002] = {
+	pg.base.island_task[20014002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "拼合的秘密",
@@ -22815,11 +21114,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.island_task
-
-	var_5_18[20014003] = {
+	pg.base.island_task[20014003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "猫的报恩",
@@ -22868,11 +21163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.island_task
-
-	var_5_19[25] = {
+	pg.base.island_task[25] = {
 		trigger_data = 10020025,
 		trigger_tips = 0,
 		name = "启动时刻！",
@@ -22918,11 +21209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.island_task
-
-	var_5_20[26] = {
+	pg.base.island_task[26] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿大开发",
@@ -22971,11 +21258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.island_task
-
-	var_5_21[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "布莉缇的渔场",
@@ -23016,11 +21299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.island_task
-
-	var_5_22[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "钓鱼！钓鱼！",
@@ -23058,11 +21337,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.island_task
-
-	var_5_23[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "钓鱼！钓鱼！",
@@ -23097,11 +21372,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.island_task
-
-	var_5_24[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "布莉缇的渔场",
@@ -23144,11 +21415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.island_task
-
-	var_5_25[20017001] = {
+	pg.base.island_task[20017001] = {
 		trigger_data = 0,
 		trigger_tips = 1,
 		name = "珍珠大调研！",
@@ -23183,11 +21450,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.island_task
-
-	var_5_26[20017002] = {
+	pg.base.island_task[20017002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "珍珠大调研！",
@@ -23225,11 +21488,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.island_task
-
-	var_5_27[20017003] = {
+	pg.base.island_task[20017003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "珍珠大调研！",
@@ -23270,11 +21529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.island_task
-
-	var_5_28[20018001] = {
+	pg.base.island_task[20018001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "经营大师",
@@ -23315,11 +21570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.island_task
-
-	var_5_29[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "矿物储备",
@@ -23364,11 +21615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.island_task
-
-	var_5_30[2] = {
+	pg.base.island_task[2] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "生长的树木",
@@ -23413,11 +21660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.island_task
-
-	var_5_31[3] = {
+	pg.base.island_task[3] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿订单",
@@ -23462,11 +21705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.island_task
-
-	var_5_32[4] = {
+	pg.base.island_task[4] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "科研计划",
@@ -23511,11 +21750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.island_task
-
-	var_5_33[5] = {
+	pg.base.island_task[5] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "愿此刻永存！",
@@ -23560,11 +21795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.island_task
-
-	var_5_34[6] = {
+	pg.base.island_task[6] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -23603,11 +21834,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.island_task
-
-	var_5_35[7] = {
+	pg.base.island_task[7] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -23653,11 +21880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.island_task
-
-	var_5_36[8] = {
+	pg.base.island_task[8] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "喵不可言",
@@ -23702,11 +21925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.island_task
-
-	var_5_37[9] = {
+	pg.base.island_task[9] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "劳动光荣",
@@ -23751,11 +21970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.island_task
-
-	var_5_38[30201001] = {
+	pg.base.island_task[30201001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "管理有方",
@@ -23800,11 +22015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.island_task
-
-	var_5_39[30301001] = {
+	pg.base.island_task[30301001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "货运委托",
@@ -23849,11 +22060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.island_task
-
-	var_5_40[30401001] = {
+	pg.base.island_task[30401001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿订单",
@@ -23898,11 +22105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.island_task
-
-	var_5_41[9] = {
+	pg.base.island_task[9] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -23941,11 +22144,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.island_task
-
-	var_5_42[10] = {
+	pg.base.island_task[10] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -23992,11 +22191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.island_task
-
-	var_5_43[19] = {
+	pg.base.island_task[19] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -24035,11 +22230,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.island_task
-
-	var_5_44[20] = {
+	pg.base.island_task[20] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -24086,11 +22277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.island_task
-
-	var_5_45[29] = {
+	pg.base.island_task[29] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -24133,11 +22320,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.island_task
-
-	var_5_46[30] = {
+	pg.base.island_task[30] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -24184,11 +22367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.island_task
-
-	var_5_47[30501031] = {
+	pg.base.island_task[30501031] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -24231,11 +22410,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.island_task
-
-	var_5_48[30501032] = {
+	pg.base.island_task[30501032] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "JUU'速运",
@@ -24282,11 +22457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.island_task
-
-	var_5_49[30502001] = {
+	pg.base.island_task[30502001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24329,11 +22500,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.island_task
-
-	var_5_50[30502002] = {
+	pg.base.island_task[30502002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24380,11 +22547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.island_task
-
-	var_5_51[30502011] = {
+	pg.base.island_task[30502011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24427,11 +22590,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.island_task
-
-	var_5_52[30502012] = {
+	pg.base.island_task[30502012] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24478,11 +22637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.island_task
-
-	var_5_53[5] = {
+	pg.base.island_task[5] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24525,11 +22680,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.island_task
-
-	var_5_54[6] = {
+	pg.base.island_task[6] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24576,11 +22727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.island_task
-
-	var_5_55[15] = {
+	pg.base.island_task[15] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24623,11 +22770,7 @@ end)()
 		},
 		reward_show = {}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.island_task
-
-	var_5_56[16] = {
+	pg.base.island_task[16] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区外送服务",
@@ -24674,11 +22817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.island_task
-
-	var_5_57[30504001] = {
+	pg.base.island_task[30504001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "喵不可言",
@@ -24723,11 +22862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.island_task
-
-	var_5_58[30505001] = {
+	pg.base.island_task[30505001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "愿此刻永存！",
@@ -24772,11 +22907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.island_task
-
-	var_5_59[30508001] = {
+	pg.base.island_task[30508001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "美好的一天",
@@ -24821,11 +22952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.island_task
-
-	var_5_60[30601001] = {
+	pg.base.island_task[30601001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "日常补给",
@@ -24870,11 +22997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.island_task
-
-	var_5_61[30701001] = {
+	pg.base.island_task[30701001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "餐品制作",
@@ -24919,11 +23042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.island_task
-
-	var_5_62[30702001] = {
+	pg.base.island_task[30702001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "灶台上的烟火",
@@ -24968,11 +23087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.island_task
-
-	var_5_63[25] = {
+	pg.base.island_task[25] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "商区里的甜蜜",
@@ -25021,11 +23136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.island_task
-
-	var_5_64[1] = {
+	pg.base.island_task[1] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "简餐救援",
@@ -25074,11 +23185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.island_task
-
-	var_5_65[30705001] = {
+	pg.base.island_task[30705001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "炭火美食",
@@ -25127,11 +23234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.island_task
-
-	var_5_66[30706001] = {
+	pg.base.island_task[30706001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "啾啾时光",
@@ -25180,11 +23283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.island_task
-
-	var_5_67[9] = {
+	pg.base.island_task[9] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "更多的储备",
@@ -25229,11 +23328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.island_task
-
-	var_5_68[40102001] = {
+	pg.base.island_task[40102001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "源源不断的木材",
@@ -25278,11 +23373,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.island_task
-
-	var_5_69[40103001] = {
+	pg.base.island_task[40103001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "丰收一日",
@@ -25331,11 +23422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.island_task
-
-	var_5_70[40104001] = {
+	pg.base.island_task[40104001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "苗圃的帮手",
@@ -25384,11 +23471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.island_task
-
-	var_5_71[40105001] = {
+	pg.base.island_task[40105001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "缤纷果园计划",
@@ -25437,11 +23520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.island_task
-
-	var_5_72[17] = {
+	pg.base.island_task[17] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "动物之友",
@@ -25490,11 +23569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.island_task
-
-	var_5_73[40107001] = {
+	pg.base.island_task[40107001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "手工制作设备检修",
@@ -25543,11 +23618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.island_task
-
-	var_5_74[40108001] = {
+	pg.base.island_task[40108001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "工业生产设备检修",
@@ -25596,11 +23667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.island_task
-
-	var_5_75[40109001] = {
+	pg.base.island_task[40109001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "木料加工设备检修",
@@ -25649,11 +23716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.island_task
-
-	var_5_76[40110001] = {
+	pg.base.island_task[40110001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "电子加工设备检修",
@@ -25702,11 +23765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.island_task
-
-	var_5_77[25] = {
+	pg.base.island_task[25] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "啾啾渔场水产养殖",
@@ -25755,11 +23814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.island_task
-
-	var_5_78[40201001] = {
+	pg.base.island_task[40201001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "套餐制作",
@@ -25804,11 +23859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.island_task
-
-	var_5_79[40301001] = {
+	pg.base.island_task[40301001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "热销商品补货中",
@@ -25853,11 +23904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.island_task
-
-	var_5_80[40401001] = {
+	pg.base.island_task[40401001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "岛屿印象",
@@ -25902,11 +23949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.island_task
-
-	var_5_81[9] = {
+	pg.base.island_task[9] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "勤勉每一天",
@@ -25956,11 +23999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.island_task
-
-	var_5_82[40601001] = {
+	pg.base.island_task[40601001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "每周小目标",
@@ -26005,11 +24044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.island_task
-
-	var_5_83[90001001] = {
+	pg.base.island_task[90001001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演入门I",
@@ -26070,11 +24105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.island_task
-
-	var_5_84[90001002] = {
+	pg.base.island_task[90001002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演入门II",
@@ -26135,11 +24166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.island_task
-
-	var_5_85[90001003] = {
+	pg.base.island_task[90001003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演入门III",
@@ -26200,11 +24227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.island_task
-
-	var_5_86[90001004] = {
+	pg.base.island_task[90001004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演入门IV",
@@ -26265,11 +24288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.island_task
-
-	var_5_87[90001005] = {
+	pg.base.island_task[90001005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演进阶I",
@@ -26330,11 +24349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.island_task
-
-	var_5_88[90001006] = {
+	pg.base.island_task[90001006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演进阶II",
@@ -26395,11 +24410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.island_task
-
-	var_5_89[90001007] = {
+	pg.base.island_task[90001007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演进阶III",
@@ -26460,11 +24471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.island_task
-
-	var_5_90[90001008] = {
+	pg.base.island_task[90001008] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演进阶IV",
@@ -26525,11 +24532,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.island_task
-
-	var_5_91[90001009] = {
+	pg.base.island_task[90001009] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演专精I",
@@ -26590,11 +24593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.island_task
-
-	var_5_92[90001010] = {
+	pg.base.island_task[90001010] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演专精II",
@@ -26655,11 +24654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.island_task
-
-	var_5_93[90001011] = {
+	pg.base.island_task[90001011] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演专精III",
@@ -26720,11 +24715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.island_task
-
-	var_5_94[90001012] = {
+	pg.base.island_task[90001012] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演专精IV",
@@ -26785,11 +24776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.island_task
-
-	var_5_95[90001020] = {
+	pg.base.island_task[90001020] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "推演大师",
@@ -26850,11 +24837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.island_task
-
-	var_5_96[90002001] = {
+	pg.base.island_task[90002001] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "抚摸猫咪",
@@ -26915,11 +24898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.island_task
-
-	var_5_97[90002002] = {
+	pg.base.island_task[90002002] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "获得任意农田作物个数*30",
@@ -26980,11 +24959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.island_task
-
-	var_5_98[90002003] = {
+	pg.base.island_task[90002003] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "交付任意岛屿订单",
@@ -27045,8 +25020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.island_task[90002004] = {
+	pg.base.island_task[90002004] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "委派生产任意资材",
@@ -27111,11 +25085,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.island_task
-
-	var_6_0[90002005] = {
+	pg.base.island_task[90002005] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "和角色进行一次互动",
@@ -27176,11 +25146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.island_task
-
-	var_6_1[90002006] = {
+	pg.base.island_task[90002006] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "完成任意货运委托",
@@ -27241,8 +25207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-	var_6_1.base.island_task[90002007] = {
+	pg.base.island_task[90002007] = {
 		trigger_data = 0,
 		trigger_tips = 0,
 		name = "获得任意餐品三次",

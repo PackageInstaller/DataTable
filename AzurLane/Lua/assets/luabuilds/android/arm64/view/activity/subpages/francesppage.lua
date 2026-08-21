@@ -1,258 +1,97 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FranceSpPage", import("...base.BaseActivityPage"))
 
-local var_0_0 = "FranceSpPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-	local var_1_2 = var_1.Find(var_1_1, "slider")
-	local var_1_3 = var_1.GetComponent
-
-	typeof = var_4
-	Slider = var_1_10006
-	arg_1_0.slider = var_1_3(var_1_2, var_4(var_1_10006))
-
-	local var_1_4 = arg_1_0.bg
-	local var_1_5 = var_1.Find(var_1_4, "step")
-	local var_1_6 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.step = var_1_6(var_1_5, var_4(var_1_10006))
-
-	local var_1_7 = arg_1_0.bg
-	local var_1_8 = var_1.Find(var_1_7, "progress")
-	local var_1_9 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.progress = var_1_9(var_1_8, var_4(var_1_10006))
-
-	local var_1_10 = arg_1_0.bg
-	local var_1_11 = var_1.Find(var_1_10, "desc")
-	local var_1_12 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.desc = var_1_12(var_1_11, var_4(var_1_10006))
-
-	local var_1_13 = arg_1_0.bg
-
-	arg_1_0.awardTF = var_1.Find(var_1_13, "award")
-
-	local var_1_14 = arg_1_0.bg
-
-	arg_1_0.battleBtn = var_1.Find(var_1_14, "battle_btn")
-
-	local var_1_15 = arg_1_0.bg
-
-	arg_1_0.getBtn = var_1.Find(var_1_15, "get_btn")
-
-	local var_1_16 = arg_1_0.bg
-
-	arg_1_0.gotBtn = var_1.Find(var_1_16, "got_btn")
-
-	local var_1_17 = arg_1_0.bg
-
-	arg_1_0.buildBtn = var_1.Find(var_1_17, "build_btn")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.slider = arg_1_0.bg:Find("slider"):GetComponent(typeof(Slider))
+	arg_1_0.step = arg_1_0.bg:Find("step"):GetComponent(typeof(Text))
+	arg_1_0.progress = arg_1_0.bg:Find("progress"):GetComponent(typeof(Text))
+	arg_1_0.desc = arg_1_0.bg:Find("desc"):GetComponent(typeof(Text))
+	arg_1_0.awardTF = arg_1_0.bg:Find("award")
+	arg_1_0.battleBtn = arg_1_0.bg:Find("battle_btn")
+	arg_1_0.getBtn = arg_1_0.bg:Find("get_btn")
+	arg_1_0.gotBtn = arg_1_0.bg:Find("got_btn")
+	arg_1_0.buildBtn = arg_1_0.bg:Find("build_btn")
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
-	getProxy = var_1_10001
-	TaskProxy = var_1_10003
+function var_0_0.OnDataSetting(arg_2_0)
+	local var_2_0 = getProxy(TaskProxy)
 
-	local var_2_0 = var_1_10001(var_1_10003)
-	local var_2_2
+	arg_2_0.taskList = arg_2_0.taskList or arg_2_0.activity:getConfig("config_data")
 
-	if not arg_2_0.taskList then
-		local var_2_1 = arg_2_0.activity
-
-		var_2_2 = var_2.getConfig(var_2_1, "config_data")
-	end
-
-	arg_2_0.taskList = var_2_2
-	ipairs = var_2_2
-
-	for iter_2_0, iter_2_1 in var_2_2(arg_2_0.taskList) do
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0.taskList) do
 		arg_2_0.taskIndex = iter_2_0
 		arg_2_0.taskVO = var_2_0:getTaskVO(iter_2_1)
 
-		local var_2_3 = arg_2_0.taskVO
-
-		if not var_7.isReceive(var_2_3) then
+		if not arg_2_0.taskVO:isReceive() then
 			break
 		end
 	end
 
-	assert = var_2
-
-	var_2(arg_2_0.taskVO, "without any taskVO!!!")
+	assert(arg_2_0.taskVO, "without any taskVO!!!")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.battleBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.BATTLE_OPERA)
+function var_0_0.OnFirstFlush(arg_3_0)
+	onButton(arg_3_0, arg_3_0.battleBtn, function()
+		arg_3_0:emit(ActivityMediator.BATTLE_OPERA)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.getBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-		local var_5_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_5_1(var_5_0, var_2_10003.ON_TASK_SUBMIT, arg_3_0.taskVO)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.getBtn, function()
+		arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, arg_3_0.taskVO)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.buildBtn
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-		local var_6_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_6_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		local var_6_3 = var_2_10004.GETBOAT
-		local var_6_4 = {}
-
-		BuildShipScene = var_2_10006
-		var_6_4.projectName = var_2_10006.PROJECTS.LIGHT
-
-		var_6_1(var_6_0, var_6_2, var_6_3, var_6_4)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.buildBtn, function()
+		arg_3_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+			projectName = BuildShipScene.PROJECTS.LIGHT
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_7_0)
-	local var_7_0 = arg_7_0.taskVO
-	local var_7_1 = var_1.getConfig(var_7_0, "award_display")[1]
-	local var_7_2 = {
-		type = var_7_1[1],
-		id = var_7_1[2],
-		count = var_7_1[3]
-	}
+function var_0_0.OnUpdateFlush(arg_7_0)
+	local var_7_0 = arg_7_0.taskVO:getConfig("award_display")[1]
 
-	updateDrop = var_3
-
-	var_3(arg_7_0.awardTF, var_7_2)
-
-	onButton = var_3
-
-	local var_7_3 = arg_7_0
-	local var_7_4 = arg_7_0.awardTF
-
-	local function var_7_5()
-		local var_8_0 = arg_7_0
-		local var_8_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_8_1(var_8_0, var_2_10003.ON_DROP, var_7_2)
+	updateDrop(arg_7_0.awardTF, {
+		type = var_7_0[1],
+		id = var_7_0[2],
+		count = var_7_0[3]
+	})
+	onButton(arg_7_0, arg_7_0.awardTF, function()
+		arg_7_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_3(var_7_3, var_7_4, var_7_5, var_1_10008)
+	end, SFX_PANEL)
 
 	if arg_7_0.step then
-		setText = var_3
-
-		var_3(arg_7_0.step, arg_7_0.taskIndex .. "/" .. #arg_7_0.taskList)
+		setText(arg_7_0.step, arg_7_0.taskIndex .. "/" .. #arg_7_0.taskList)
 	end
 
-	local var_7_6 = arg_7_0.taskVO
-	local var_7_7 = var_3.getProgress(var_7_6)
-	local var_7_8 = arg_7_0.taskVO
-	local var_7_9 = var_4.getConfig(var_7_8, "target_num")
+	local var_7_1 = arg_7_0.taskVO:getProgress()
+	local var_7_2 = arg_7_0.taskVO:getConfig("target_num")
 
-	setText = var_7_6
+	setText(arg_7_0.desc, arg_7_0.taskVO:getConfig("desc"))
+	setText(arg_7_0.progress, var_7_1 .. "/" .. var_7_2)
+	setSlider(arg_7_0.slider, 0, var_7_2, var_7_1)
 
-	local var_7_10 = arg_7_0.desc
-	local var_7_11 = arg_7_0.taskVO
+	local var_7_3 = arg_7_0.taskVO:getTaskStatus()
 
-	var_7_6(var_7_10, var_8.getConfig(var_7_11, "desc"))
-
-	setText = var_7_6
-
-	var_7_6(arg_7_0.progress, var_7_7 .. "/" .. var_7_9)
-
-	setSlider = var_7_6
-
-	var_7_6(arg_7_0.slider, 0, var_7_9, var_7_7)
-
-	local var_7_12 = arg_7_0.taskVO
-	local var_7_13 = var_5.getTaskStatus(var_7_12)
-
-	setActive = var_7_8
-
-	var_7_8(arg_7_0.battleBtn, var_7_13 == 0)
-
-	setActive = var_7_8
-
-	var_7_8(arg_7_0.getBtn, var_7_13 == 1)
-
-	setActive = var_7_8
-
-	var_7_8(arg_7_0.gotBtn, var_7_13 == 2)
+	setActive(arg_7_0.battleBtn, var_7_3 == 0)
+	setActive(arg_7_0.getBtn, var_7_3 == 1)
+	setActive(arg_7_0.gotBtn, var_7_3 == 2)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_9_0)
+function var_0_0.OnDestroy(arg_9_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,170 +1,69 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainVoteEntranceBtn", import(".MainBaseSpcailActBtn"))
 
-local var_0_0 = "MainVoteEntranceBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainBaseSpcailActBtn"))
-
-function var_0_1.GetContainer(arg_1_0)
-	local var_1_0 = arg_1_0.root.parent
-
-	return var_1.Find(var_1_0, "eventPanel")
+function var_0_0.GetContainer(arg_1_0)
+	return arg_1_0.root.parent:Find("eventPanel")
 end
 
-function var_0_1.InShowTime(arg_2_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.InShowTime(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID)
 
-	local var_2_0 = var_1_10001(var_1_10003)
-	local var_2_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10004
-
-	return var_2_1(var_2_0, var_1_10004.VOTE_ENTRANCE_ACT_ID) and not var_1:isEnd()
+	return var_2_0 and not var_2_0:isEnd()
 end
 
-function var_0_1.GetUIName(arg_3_0)
+function var_0_0.GetUIName(arg_3_0)
 	return "MainUIVoteActBtn"
 end
 
-function var_0_1.OnClick(arg_4_0)
-	local var_4_0 = arg_4_0.event
-	local var_4_1 = var_1.emit
-
-	NewMainMediator = var_1_10004
-
-	local var_4_2 = var_1_10004.GO_SCENE
-
-	SCENE = var_1_10005
-
-	var_4_1(var_4_0, var_4_2, var_1_10005.VOTEENTRANCE)
+function var_0_0.OnClick(arg_4_0)
+	arg_4_0.event:emit(NewMainMediator.GO_SCENE, SCENE.VOTEENTRANCE)
 
 	return
 end
 
-function var_0_1.OnInit(arg_5_0)
-	setActive = var_1_10001
+function var_0_0.OnInit(arg_5_0)
+	local var_5_0 = arg_5_0:ShouldTipNewRace() or arg_5_0:ShouldTipVotes() or arg_5_0:ShouldTipAward() or arg_5_0:ShouldTipFinalAward()
 
-	local var_5_0 = arg_5_0._tf
-	local var_5_1 = var_3.Find(var_5_0, "tip")
-	local var_5_2
+	setActive(arg_5_0._tf:Find("tip"), var_5_0)
 
-	if not arg_5_0:ShouldTipNewRace() and not arg_5_0:ShouldTipVotes() and not arg_5_0:ShouldTipAward() then
-		var_5_2 = arg_5_0:ShouldTipFinalAward()
-	end
+	local var_5_1 = getProxy(VoteProxy):IsAllRaceEnd()
+	local var_5_2 = arg_5_0:AnyVoteActIsOpening()
 
-	var_1_10001(var_5_1, var_5_2)
+	setActive(arg_5_0._tf:Find("unopen"), not var_5_1 and var_5_2)
+	setActive(arg_5_0._tf:Find("end"), var_5_1)
 
-	getProxy = var_1_10001
-	VoteProxy = var_5_1
-
-	local var_5_3 = var_1_10001(var_5_1)
-	local var_5_4 = var_1.IsAllRaceEnd(var_5_3)
-	local var_5_5 = arg_5_0:AnyVoteActIsOpening()
-
-	setActive = var_5_3
-
-	local var_5_6 = arg_5_0._tf
-
-	var_5_3(var_5.Find(var_5_6, "unopen"), not var_5_4 and var_5_5)
-
-	setActive = var_5_3
-
-	local var_5_7 = arg_5_0._tf
-
-	var_5_3(var_5.Find(var_5_7, "end"), var_5_4)
-
-	local var_5_8 = arg_5_0._tf
-	local var_5_9 = var_3.GetComponent
-
-	typeof = var_6
-	Image = var_8
-	var_5_9(var_5_8, var_6(var_8)).enabled = not var_5_4 and not var_5_5
+	arg_5_0._tf:GetComponent(typeof(Image)).enabled = not var_5_1 and not var_5_2
 
 	return
 end
 
-function var_0_1.AnyVoteActIsOpening(arg_6_0)
-	getProxy = var_1_10001
-	VoteProxy = var_1_10003
-
-	local var_6_0 = var_1_10001(var_1_10003)
-
-	return var_1.AnyVoteActIsOpening(var_6_0)
+function var_0_0.AnyVoteActIsOpening(arg_6_0)
+	return getProxy(VoteProxy):AnyVoteActIsOpening()
 end
 
-function var_0_1.ShouldTipFinalAward(arg_7_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.ShouldTipFinalAward(arg_7_0)
+	local var_7_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.VOTE_ENTRANCE_ACT_ID)
 
-	local var_7_0 = var_1_10001(var_1_10003)
-	local var_7_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10004
-
-	if not var_7_1(var_7_0, var_1_10004.VOTE_ENTRANCE_ACT_ID) or var_1:isEnd() then
+	if not var_7_0 or var_7_0:isEnd() then
 		return false
 	end
 
-	local var_7_2
+	local var_7_1 = var_7_0:getConfig("config_client")[2] or -1
+	local var_7_2 = getProxy(TaskProxy):getTaskById(var_7_1)
 
-	if not var_1:getConfig("config_client")[2] then
-		var_7_2 = -1
-	end
+	var_7_2 = var_7_2 or getProxy(TaskProxy):getFinishTaskById(var_7_1)
 
-	getProxy = var_7_0
-	TaskProxy = var_5
-
-	local var_7_3 = var_7_0(var_5)
-	local var_7_5
-
-	if not var_3.getTaskById(var_7_3, var_7_2) then
-		getProxy = var_7_5
-		TaskProxy = var_7_3
-
-		local var_7_4 = var_7_5(var_7_3)
-
-		var_7_5 = var_7_5.getFinishTaskById(var_7_4, var_7_2)
-	end
-
-	local var_7_6
-
-	if var_7_5 and var_7_5:isFinish() then
-		var_7_6 = not var_7_5:isReceive()
-	end
-
-	return var_7_6
+	return var_7_2 and var_7_2:isFinish() and not var_7_2:isReceive()
 end
 
-function var_0_1.ShouldTipNewRace(arg_8_0)
-	getProxy = var_1_10001
-	VoteProxy = var_1_10003
+function var_0_0.ShouldTipNewRace(arg_8_0)
+	local var_8_0 = getProxy(PlayerProxy):getRawData().id
 
-	local var_8_0 = var_1_10001(var_1_10003)
-	local var_8_1 = var_1.GetVoteGroupList(var_8_0)
+	for iter_8_0, iter_8_1 in ipairs((getProxy(VoteProxy):GetVoteGroupList())) do
+		if iter_8_1 and iter_8_1:IsOpening() then
+			local var_8_1 = getProxy(VoteProxy)
 
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
-
-	local var_8_2 = var_1_10002(var_1_10004)
-	local var_8_3 = var_2.getRawData(var_8_2).id
-
-	ipairs = var_8_0
-
-	for iter_8_0, iter_8_1 in var_8_0(var_8_1) do
-		if iter_8_1 then
-			local var_8_4 = iter_8_1
-
-			if iter_8_1.IsOpening(var_8_4) then
-				getProxy = var_8
-				VoteProxy = var_8_4
-
-				local var_8_5 = var_8(var_8_4)
-
-				if var_8.IsNewRace(var_8_5, iter_8_1) then
-					return true
-				end
+			if var_8_1:IsNewRace(iter_8_1) then
+				return true
 			end
 		end
 	end
@@ -172,21 +71,11 @@ function var_0_1.ShouldTipNewRace(arg_8_0)
 	return false
 end
 
-function var_0_1.ShouldTipVotes(arg_9_0)
-	getProxy = var_1_10001
-	VoteProxy = var_1_10003
+function var_0_0.ShouldTipVotes(arg_9_0)
+	for iter_9_0, iter_9_1 in ipairs((getProxy(VoteProxy):GetVoteGroupList())) do
+		local var_9_0 = getProxy(VoteProxy)
 
-	local var_9_0 = var_1_10001(var_1_10003)
-	local var_9_1 = var_1.GetVoteGroupList(var_9_0)
-
-	ipairs = var_1_10002
-
-	for iter_9_0, iter_9_1 in var_1_10002(var_9_1) do
-		getProxy = var_1_10007
-		VoteProxy = var_1_10009
-		var_1_10009 = var_1_10007(var_1_10009)
-
-		if var_1_10007.GetVotesByConfigId(var_1_10009, iter_9_1.configId) > 0 then
+		if var_9_0:GetVotesByConfigId(iter_9_1.configId) > 0 then
 			return true
 		end
 	end
@@ -194,13 +83,8 @@ function var_0_1.ShouldTipVotes(arg_9_0)
 	return false
 end
 
-function var_0_1.ShouldTipAward(arg_10_0)
-	getProxy = var_1_10001
-	VoteProxy = var_1_10003
-
-	local var_10_0 = var_1_10001(var_1_10003)
-
-	return var_1.ExistPastVoteAward(var_10_0)
+function var_0_0.ShouldTipAward(arg_10_0)
+	return getProxy(VoteProxy):ExistPastVoteAward()
 end
 
-return var_0_1
+return var_0_0

@@ -27,12 +27,18 @@ function ctor(self)
 
     -- 是否动作中断强制回调endCall
     self.m_isForceEndCall = {}
+
+    self.standComplete = nil
 end
 
 --删除
 function destroy(self)
     super.destroy(self)
-
+    if self.posTweener then
+        self.posTweener:Kill()
+        self.posTweener = nil
+    end
+    self.standComplete = nil
     self:clearStartEndCall()
 end
 
@@ -84,7 +90,7 @@ function loadFinish(self, go, finishCall, sorceId)
 end
 
 -- 设置改变材质
-function updateMaterial(self, posList, mats)
+function updateMaterial(self, posList, mats, dissolves, posY)
     if not self.m_modelMaterials or gs.GoUtil.IsCompNull(self.m_modelMaterials) then
         return
     end
@@ -97,6 +103,39 @@ function updateMaterial(self, posList, mats)
 
     if not table.empty(matList) then
         self.m_modelMaterials:ChangeMaterial(posList, matList)
+        self:_restoreCharacterState()
+    end
+    local seed = math.random(0, 1000) / 10000
+    local num = math.random(-seed, seed)
+    if not table.empty(dissolves) then
+        self.m_modelMaterials.DissolveValue0 = dissolves[1] + num
+        self.m_modelMaterials.DissolveValue1 = dissolves[2] + num
+        self.m_modelMaterials.DissolveValue2 = dissolves[3] + num
+        self.m_modelMaterials.DissolveValue3 = dissolves[4] + num
+        self.m_modelMaterials.DissolveValue4 = dissolves[5] + num
+        self.m_modelMaterials.DissolveValue5 = dissolves[6] + num
+
+        self.m_modelMaterials.DissolveValue6 = (dissolves[7] or 99.9) + num
+        self.m_modelMaterials.DissolveValue7 = (dissolves[8] or 99.9) + num
+        self.m_modelMaterials.DissolveValue8 = (dissolves[9] or 99.9) + num
+        self.m_modelMaterials.DissolveValue9 = (dissolves[10] or 99.9) + num
+        self.m_modelMaterials.DissolveValue10 = (dissolves[11] or 99.9) + num
+    end
+
+    -- if posY then
+    --     gs.TransQuick:LPosY(self.m_trans, posY)
+    -- end
+    self:updateShoePos(posY)
+end
+-- 更新拖鞋后的模型高度
+function updateShoePos(self, posY)
+    if self.m_trans and posY and self.standComplete then
+        if self.posTweener then
+            self.posTweener:Kill()
+            self.posTweener = nil
+        end
+        -- gs.TransQuick:LPosY(self.m_trans, posY)
+        self.posTweener = TweenFactory:move2LPosY(self.m_trans, posY, 0.4)
     end
 end
 
@@ -436,13 +475,14 @@ function setWeaponLoadFightAni(self, beLoad, loadAni_Tab)
     self.m_beWeaponLoadFightAni = beLoad
     self.m_LoadAni_Tab = loadAni_Tab
     if self.m_LoadAni_Tab == nil then
-        self.m_LoadAni_Tab = {"stand", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skillmix", "skillmax", "win"}
+        self.m_LoadAni_Tab = { "stand", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skillmix", "skillmax", "win" }
     end
 end
 
 function _addWeapon(self, weaponPath, parent, beAlwayEft, finishCall)
     local liveWeapon = model.modelWeapon.new()
     table.insert(self.m_weaponList, liveWeapon)
+
     local function _resultCall(beSucss)
         if beSucss then
             -- 武器动画
@@ -457,6 +497,10 @@ function _addWeapon(self, weaponPath, parent, beAlwayEft, finishCall)
             self.m_points[fight.FightDef.POINT_RFIRE] = gs.GoUtil.FindNameInChilds(liveWeapon:getTrans(), "Firepoint_R_node")
             self.m_points[fight.FightDef.POINT_LFIRE] = gs.GoUtil.FindNameInChilds(liveWeapon:getTrans(), "Firepoint_L_node")
             liveWeapon:setVisible(self.m_isVisible)
+
+            if self.m_isBlackEnable then
+                liveWeapon:setBlackEnable(true)
+            end
         else
             for i, v in ipairs(self.m_weaponList) do
                 if liveWeapon == v then
@@ -466,6 +510,7 @@ function _addWeapon(self, weaponPath, parent, beAlwayEft, finishCall)
             end
             liveWeapon:destroy()
         end
+
     end
 
     liveWeapon:setToParent(parent)
@@ -489,6 +534,10 @@ function addAssembly(self, prefabPath, beAlwayEft, finishCall)
             end
             if finishCall then
                 finishCall()
+            end
+
+            if self.m_isBlackEnable then
+                liveAssembly:setBlackEnable(true)
             end
         else
             self:removeAssembly(prefabPath)
@@ -587,7 +636,7 @@ function playShowItem(self, aniHash, callFun)
             --移除上次遗留的跟这次不重复的道具
             if not table.empty(tmpDict) then
                 for itemPath, _ in pairs(tmpDict) do
-                    self:removeAssembly(UrlManager:getShowItemPath(itemPath))
+                    self:removeAssembly(itemPath)
                 end
             end
 
@@ -615,6 +664,10 @@ function getSetUpCallAniHash(self)
         fight.FightDef.ACT_SKILL_1,
         fight.FightDef.ACT_SKILL_2,
         fight.FightDef.ACT_SKILL_3,
+        fight.FightDef.ACT_SKILL_4,
+        fight.FightDef.ACT_SKILL_5,
+        fight.FightDef.ACT_SKILL_6,
+        fight.FightDef.ACT_SKILL_7,
         fight.FightDef.ACT_SKILL_MIX,
         fight.FightDef.ACT_SKILL_MAX,
         fight.FightDef.ACT_DIE,
@@ -663,6 +716,10 @@ function setupAniCallSys(self)
     local function _endCall(aniHash)
         local eventCalls = self.m_aniEndDisposableCallDict[aniHash]
         if eventCalls then
+            local endCall = self.m_isForceEndCall[aniHash]
+            if endCall then
+                self.m_isForceEndCall[self.m_curAniHash] = nil
+            end
             self.m_aniEndDisposableCallDict[aniHash] = nil
             for _, v in ipairs(eventCalls) do
                 v(aniHash)
@@ -736,7 +793,7 @@ function setupAniStartEndCall(self, aniHash, startCall, endCall)
         end
     end
     local sn = SnMgr:getSn()
-    dict[sn] = {startCall = startCall, endCall = endCall}
+    dict[sn] = { startCall = startCall, endCall = endCall }
 
     return sn
 end
@@ -829,6 +886,20 @@ function setTranparency(self, value)
     for _, liveAssembly in pairs(self.m_assemblylist) do
         if liveAssembly ~= false then
             liveAssembly:setTranparency(value)
+        end
+    end
+end
+
+-- 黑化效果
+function setBlackEnable(self, isEnable)
+    super.setBlackEnable(self, isEnable)
+
+    for _, weapon in ipairs(self.m_weaponList) do
+        weapon:setBlackEnable(isEnable)
+    end
+    for _, liveAssembly in pairs(self.m_assemblylist) do
+        if liveAssembly ~= false then
+            liveAssembly:setBlackEnable(isEnable)
         end
     end
 end

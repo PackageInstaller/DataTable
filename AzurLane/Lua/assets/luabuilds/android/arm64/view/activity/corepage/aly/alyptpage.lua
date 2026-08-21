@@ -1,138 +1,62 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ALYPtPage", import("..CorePageNewPtTemplatePage"))
 
-local var_0_0 = "ALYPtPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
+	arg_1_0.anim = arg_1_0._tf:Find("bg/Image_back"):GetComponent(typeof(Animation))
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..CorePageNewPtTemplatePage"))
+	arg_1_0.anim:Play("anim_AlyptPage_BackImage")
 
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
+	arg_1_0.animEvent = arg_1_0.anim:GetComponent(typeof(DftAniEvent))
 
-	local var_1_0 = arg_1_0._tf
-	local var_1_1 = var_1.Find(var_1_0, "bg/Image_back")
-	local var_1_2 = var_1.GetComponent
-
-	typeof = var_4
-	Animation = var_1_10006
-	arg_1_0.anim = var_1_2(var_1_1, var_4(var_1_10006))
-
-	local var_1_3 = arg_1_0.anim
-
-	var_1.Play(var_1_3, "anim_AlyptPage_BackImage")
-
-	local var_1_4 = arg_1_0.anim
-	local var_1_5 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_1_0.animEvent = var_1_5(var_1_4, var_4(var_1_10006))
-
-	local var_1_6 = arg_1_0.animEvent
-
-	var_1.SetStartEvent(var_1_6, function()
-		local var_2_0 = arg_1_0._tf
-		local var_2_1 = var_0.GetComponent
-
-		typeof = var_2_10003
-		Animation = var_2_10005
-
-		local var_2_2 = var_2_1(var_2_0, var_2_10003(var_2_10005))
-
-		var_0.Play(var_2_2, "anim_AlyptPage_In")
+	arg_1_0.animEvent:SetStartEvent(function()
+		arg_1_0._tf:GetComponent(typeof(Animation)):Play("anim_AlyptPage_In")
 
 		return
 	end)
 
-	local var_1_7 = arg_1_0._tf
-	local var_1_8 = var_1.GetComponent
+	arg_1_0._tfanim = arg_1_0._tf:GetComponent(typeof(Animation))
+	arg_1_0._tfanimEvent = arg_1_0._tfanim:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_4
-	Animation = var_1_10006
-	arg_1_0._tfanim = var_1_8(var_1_7, var_4(var_1_10006))
-
-	local var_1_9 = arg_1_0._tfanim
-	local var_1_10 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_1_0._tfanimEvent = var_1_10(var_1_9, var_4(var_1_10006))
-
-	local var_1_11 = arg_1_0._tfanimEvent
-
-	var_1.SetEndEvent(var_1_11, function()
-		setActive = var_2_10000
-
-		local var_3_0 = arg_1_0._tf
-
-		var_2_10000(var_2.Find(var_3_0, "bg/Image_back_Loop"), true)
-
-		setActive = var_2_10000
-
-		local var_3_1 = arg_1_0._tf
-
-		var_2_10000(var_2.Find(var_3_1, "bg/VX"), true)
+	arg_1_0._tfanimEvent:SetEndEvent(function()
+		setActive(arg_1_0._tf:Find("bg/Image_back_Loop"), true)
+		setActive(arg_1_0._tf:Find("bg/VX"), true)
 
 		return
 	end)
 
 	arg_1_0.itemAlpha = 0
-	setCanvasGroupAlpha = var_1
 
-	var_1(arg_1_0.awardTpl, arg_1_0.itemAlpha)
+	setCanvasGroupAlpha(arg_1_0.awardTpl, arg_1_0.itemAlpha)
 
-	local var_1_12 = arg_1_0._tf
-	local var_1_13 = var_1.GetComponent
+	arg_1_0.awardanimEvent = arg_1_0._tf:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_1_0.awardanimEvent = var_1_13(var_1_12, var_4(var_1_10006))
+	arg_1_0.awardanimEvent:SetTriggerEvent(function(arg_4_0)
+		arg_1_0.itemAlpha = 1
 
-	local var_1_14 = arg_1_0.awardanimEvent
+		setCanvasGroupAlpha(arg_1_0.awardTpl, arg_1_0.itemAlpha)
 
-	var_1.SetTriggerEvent(var_1_14, function(arg_4_0)
-		local var_4_0 = arg_1_0
+		for iter_4_0 = 0, arg_1_0.content.transform.childCount - 1 do
+			local var_4_0 = arg_1_0.content:GetChild(iter_4_0)
 
-		var_4_0.itemAlpha = 1
-		setCanvasGroupAlpha = var_4_0
-
-		var_4_0(arg_1_0.awardTpl, arg_1_0.itemAlpha)
-
-		local var_4_1 = arg_1_0.content.transform.childCount
-
-		for iter_4_0 = 0, var_4_1 - 1 do
-			local var_4_2 = arg_1_0.content
-			local var_4_3 = var_6.GetChild(var_4_2, iter_4_0)
-
-			onDelayTick = var_2_10007
-
-			var_2_10007(function()
-				if arg_1_0._state == var_0_1.STATES.DESTROY then
+			onDelayTick(function()
+				if arg_1_0._state == var_0_0.STATES.DESTROY then
 					return
 				end
 
-				setCanvasGroupAlpha = var_0
-
-				var_0(var_4_3, arg_1_0.itemAlpha)
-
-				quickPlayAnimation = var_0
-
-				var_0(var_4_3, "anim_AlyptPage_awardtpl_In")
+				setCanvasGroupAlpha(var_4_0, arg_1_0.itemAlpha)
+				quickPlayAnimation(var_4_0, "anim_AlyptPage_awardtpl_In")
 
 				return
 			end, 0.08)
 		end
 
-		onDelayTick = var_2
-
-		var_2(function()
-			if arg_1_0._state == var_0_1.STATES.DESTROY then
+		onDelayTick(function()
+			if arg_1_0._state == var_0_0.STATES.DESTROY then
 				return
 			end
 
-			quickPlayAnimation = var_0
-
-			var_0(arg_1_0.sptf, "anim_AlyptPage_sp_award_In")
+			quickPlayAnimation(arg_1_0.sptf, "anim_AlyptPage_sp_award_In")
 
 			return
 		end, 0.08)
@@ -143,125 +67,42 @@ function var_0_1.OnInit(arg_1_0)
 	return
 end
 
-function var_0_1.UpdateAward(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = arg_7_1 + 1
-	local var_7_1 = arg_7_0.awardList[var_7_0].drop
+function var_0_0.UpdateAward(arg_7_0, arg_7_1, arg_7_2)
+	updateDrop(arg_7_2:Find("icon"), arg_7_0.awardList[arg_7_1 + 1].drop)
+	setText(arg_7_2:Find("pt"), arg_7_0.awardList[arg_7_1 + 1].target)
 
-	updateDrop = var_1_10005
+	local var_7_0 = arg_7_1 + 1 <= arg_7_0.ptData:GetLevel()
+	local var_7_1 = not var_7_0 and arg_7_1 + 1 <= arg_7_0.ptData:GetMaxAvailableTargetIndex()
+	local var_7_2 = not var_7_0 and not var_7_1
 
-	var_1_10005(arg_7_2:Find("icon"), var_7_1)
-
-	setText = var_1_10005
-
-	var_1_10005(arg_7_2:Find("pt"), arg_7_0.awardList[var_7_0].target)
-
-	local var_7_2 = arg_7_0.ptData
-
-	if not (var_7_0 <= var_5.GetLevel(var_7_2)) then
-		local var_7_3 = arg_7_0.ptData
-		local var_7_4
-
-		if not (var_7_0 <= var_6.GetMaxAvailableTargetIndex(var_7_3)) then
-			var_7_4 = false
-		else
-			var_7_4 = true
-		end
-
-		local var_7_5 = not var_5 and not var_7_4
-
-		setText = var_7_3
-
-		local var_7_6 = arg_7_2:Find("got/got_text")
-
-		i18n = var_1_10011
-
-		var_7_3(var_7_6, var_1_10011("yumia_pt_4"))
-
-		setActive = var_7_3
-
-		var_7_3(arg_7_2:Find("got"), var_5)
-
-		setActive = var_7_3
-
-		var_7_3(arg_7_2:Find("get"), var_7_4)
-
-		setActive = var_7_3
-
-		var_7_3(arg_7_2:Find("lock"), var_7_5)
-
-		onButton = var_7_3
-
-		local var_7_7 = arg_7_0
-		local var_7_8 = arg_7_2
-
-		local function var_7_9()
-			local var_8_0 = arg_7_0
-			local var_8_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_8_1(var_8_0, var_2_10003.ON_DROP, var_7_1)
-
-			return
-		end
-
-		SFX_PANEL = var_13
-
-		var_7_3(var_7_7, var_7_8, var_7_9, var_13)
+	setText(arg_7_2:Find("got/got_text"), i18n("yumia_pt_4"))
+	setActive(arg_7_2:Find("got"), var_7_0)
+	setActive(arg_7_2:Find("get"), var_7_1)
+	setActive(arg_7_2:Find("lock"), var_7_2)
+	onButton(arg_7_0, arg_7_2, function()
+		arg_7_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
-end
-
-function var_0_1.OnFirstFlush(arg_9_0)
-	var_0_1.super.OnFirstFlush(arg_9_0)
-
-	setText = var_1
-
-	local var_9_0 = arg_9_0._tf
-	local var_9_1 = var_3.Find(var_9_0, "Text (Legacy)", arg_9_0.shopBtn)
-
-	i18n = var_1_10004
-
-	var_1(var_9_1, var_1_10004("yumia_pt_3"))
-
-	setText = var_1
-
-	local var_9_2 = arg_9_0._tf
-	local var_9_3 = var_3.Find(var_9_2, "Text (Legacy)", arg_9_0.getBtn)
-
-	i18n = var_4
-
-	var_1(var_9_3, var_4("yumia_pt_2"))
-
-	setText = var_1
-
-	local var_9_4 = arg_9_0.bg
-	local var_9_5 = var_3.Find(var_9_4, "rule_bg/rule_text")
-
-	i18n = var_4
-
-	var_1(var_9_5, var_4("yumia_pt_1"))
-
-	setText = var_1
-
-	local var_9_6 = arg_9_0._tf
-	local var_9_7 = var_3.Find(var_9_6, "pt_bg/Text (Legacy)", arg_9_0.bg)
-
-	i18n = var_4
-
-	var_1(var_9_7, var_4("yumia_pt_tip"))
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.UpdateNextAward(arg_10_0, arg_10_1)
-	math = var_1_10002
-	arg_10_1 = var_1_10002.min(arg_10_1, 1)
-	pairs = var_2
+function var_0_0.OnFirstFlush(arg_9_0)
+	var_0_0.super.OnFirstFlush(arg_9_0)
+	setText(arg_9_0._tf:Find("Text (Legacy)", arg_9_0.shopBtn), i18n("yumia_pt_3"))
+	setText(arg_9_0._tf:Find("Text (Legacy)", arg_9_0.getBtn), i18n("yumia_pt_2"))
+	setText(arg_9_0.bg:Find("rule_bg/rule_text"), i18n("yumia_pt_1"))
+	setText(arg_9_0._tf:Find("pt_bg/Text (Legacy)", arg_9_0.bg), i18n("yumia_pt_tip"))
 
-	for iter_10_0, iter_10_1 in var_2(arg_10_0.importantPos) do
-		if arg_10_1 + var_0_1.AWARD_OFFSET < iter_10_1.pos then
+	return
+end
+
+function var_0_0.UpdateNextAward(arg_10_0, arg_10_1)
+	arg_10_1 = math.min(arg_10_1, 1)
+
+	for iter_10_0, iter_10_1 in pairs(arg_10_0.importantPos) do
+		if arg_10_1 + var_0_0.AWARD_OFFSET < iter_10_1.pos then
 			arg_10_0:UpdateAward(iter_10_1.index - 1, arg_10_0.spAward)
 
 			break
@@ -273,76 +114,28 @@ function var_0_1.UpdateNextAward(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_11_0)
-	local var_11_0 = var_0_1.OFFSET
-	local var_11_1 = arg_11_0.ptData
-	local var_11_2 = var_11_0 * var_2.GetLevel(var_11_1)
-
-	isActive = var_2
-
-	local var_11_4
-
-	if var_2(arg_11_0._tf) then
-		local var_11_3 = arg_11_0.scrollCom
-
-		var_11_4 = var_11_4.ScrollTo
-		math = var_1_10005
-		var_1_10005 = var_1_10005.clamp
-
-		local var_11_5 = arg_11_0.scrollCom
-		local var_11_6 = var_7.HeadIndexToValue
-		local var_11_7 = arg_11_0.ptData
-
-		var_11_4(var_11_3, var_1_10005(var_11_6(var_11_5, var_10.GetLevel(var_11_7)) / arg_11_0.impTotalPos + var_11_2, 0, 1), true)
+function var_0_0.OnUpdateFlush(arg_11_0)
+	if isActive(arg_11_0._tf) then
+		arg_11_0.scrollCom:ScrollTo(math.clamp(arg_11_0.scrollCom:HeadIndexToValue(arg_11_0.ptData:GetLevel()) / arg_11_0.impTotalPos + var_0_0.OFFSET * arg_11_0.ptData:GetLevel(), 0, 1), true)
 	end
 
-	setText = var_11_4
-
-	local var_11_8 = arg_11_0.get
-
-	i18n = var_1_10005
-
-	var_11_4(var_11_8, var_1_10005("word_got_pt"))
-
-	setText = var_11_4
-
-	var_11_4(arg_11_0.ptCount, arg_11_0.ptData.count)
+	setText(arg_11_0.get, i18n("word_got_pt"))
+	setText(arg_11_0.ptCount, arg_11_0.ptData.count)
 
 	return
 end
 
-function var_0_1.OnHideFlush(arg_12_0)
-	onDelayTick = var_1_10001
-
-	var_1_10001(function()
+function var_0_0.OnHideFlush(arg_12_0)
+	onDelayTick(function()
 		for iter_13_0 = 0, arg_12_0.content.transform.childCount - 1 do
-			local var_13_0 = arg_12_0.content
-			local var_13_1 = var_4.GetChild(var_13_0, iter_13_0)
-			local var_13_2 = var_4.GetComponent
-
-			typeof = var_7
-			Animation = var_2_10009
-
-			local var_13_3 = var_13_2(var_13_1, var_7(var_2_10009))
-
-			var_4.Stop(var_13_3)
-
-			setCanvasGroupAlpha = var_4
-
-			local var_13_4 = arg_12_0.content
-
-			var_4(var_6.GetChild(var_13_4, iter_13_0), 0)
+			arg_12_0.content:GetChild(iter_13_0):GetComponent(typeof(Animation)):Stop()
+			setCanvasGroupAlpha(arg_12_0.content:GetChild(iter_13_0), 0)
 		end
 
 		return
 	end, 0.08)
-
-	onDelayTick = var_1_10001
-
-	var_1_10001(function()
-		setCanvasGroupAlpha = var_2_10000
-
-		var_2_10000(arg_12_0.sptf, 0)
+	onDelayTick(function()
+		setCanvasGroupAlpha(arg_12_0.sptf, 0)
 
 		return
 	end, 0.08)
@@ -350,4 +143,4 @@ function var_0_1.OnHideFlush(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

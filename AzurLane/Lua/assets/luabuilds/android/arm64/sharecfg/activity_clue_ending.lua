@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_clue_ending") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_clue_ending"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_clue_ending = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_clue_ending
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_clue_ending
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.activity_clue_ending = rawget(pg, "activity_clue_ending") or setmetatable({
+	__name = "activity_clue_ending"
+}, confNEO)
+pg.activity_clue_ending.__namecode__ = true
+pg.activity_clue_ending.all = {
 	1,
 	2,
 	3,
@@ -48,25 +21,11 @@ var_0_4.all = {
 	15,
 	16
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_clue_ending = {}
+pg.base = pg.base or {}
+pg.base.activity_clue_ending = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_clue_ending
-
-	var_1_0[1] = {
+	pg.base.activity_clue_ending[1] = {
 		title = "破局记录-1",
 		type = 1,
 		group = 1,
@@ -125,11 +84,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_clue_ending
-
-	var_1_1[2] = {
+	pg.base.activity_clue_ending[2] = {
 		title = "破局记录-2",
 		type = 1,
 		group = 1,
@@ -170,11 +125,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_clue_ending
-
-	var_1_2[3] = {
+	pg.base.activity_clue_ending[3] = {
 		title = "破局记录-3",
 		type = 1,
 		group = 1,
@@ -224,11 +175,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_clue_ending
-
-	var_1_3[4] = {
+	pg.base.activity_clue_ending[4] = {
 		title = "结局",
 		type = 2,
 		group = 1,
@@ -269,11 +216,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_clue_ending
-
-	var_1_4[5] = {
+	pg.base.activity_clue_ending[5] = {
 		title = "破局记录-1",
 		type = 1,
 		group = 2,
@@ -341,11 +284,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_clue_ending
-
-	var_1_5[6] = {
+	pg.base.activity_clue_ending[6] = {
 		title = "破局记录-2",
 		type = 1,
 		group = 2,
@@ -395,11 +334,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_clue_ending
-
-	var_1_6[7] = {
+	pg.base.activity_clue_ending[7] = {
 		title = "破局记录-3",
 		type = 1,
 		group = 2,
@@ -530,11 +465,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_clue_ending
-
-	var_1_7[8] = {
+	pg.base.activity_clue_ending[8] = {
 		title = "结局",
 		type = 2,
 		group = 2,
@@ -575,11 +506,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_clue_ending
-
-	var_1_8[9] = {
+	pg.base.activity_clue_ending[9] = {
 		title = "破局记录-1",
 		type = 1,
 		group = 3,
@@ -647,11 +574,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_clue_ending
-
-	var_1_9[10] = {
+	pg.base.activity_clue_ending[10] = {
 		title = "破局记录-2",
 		type = 1,
 		group = 3,
@@ -701,11 +624,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_clue_ending
-
-	var_1_10[11] = {
+	pg.base.activity_clue_ending[11] = {
 		title = "破局记录-3",
 		type = 1,
 		group = 3,
@@ -791,11 +710,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_clue_ending
-
-	var_1_11[12] = {
+	pg.base.activity_clue_ending[12] = {
 		title = "结局",
 		type = 2,
 		group = 3,
@@ -836,11 +751,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_clue_ending
-
-	var_1_12[13] = {
+	pg.base.activity_clue_ending[13] = {
 		title = "破局记录-1",
 		type = 1,
 		group = 4,
@@ -935,11 +846,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_clue_ending
-
-	var_1_13[14] = {
+	pg.base.activity_clue_ending[14] = {
 		title = "破局记录-2",
 		type = 1,
 		group = 4,
@@ -1043,11 +950,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_clue_ending
-
-	var_1_14[15] = {
+	pg.base.activity_clue_ending[15] = {
 		title = "破局记录-3",
 		type = 1,
 		group = 4,
@@ -1133,8 +1036,7 @@ var_0_4.base.activity_clue_ending = {}
 			}
 		}
 	}
-	pg = var_1_14
-	var_1_14.base.activity_clue_ending[16] = {
+	pg.base.activity_clue_ending[16] = {
 		title = "结局",
 		type = 2,
 		group = 4,

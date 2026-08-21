@@ -1,283 +1,106 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LogoutCommand", pm.SimpleCommand)
 
-local var_0_0 = "LogoutCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0)
-
-	pg = var_1_10003
-
-	if not var_1_10003.proxyRegister then
+	if not pg.proxyRegister then
 		return
 	end
 
-	local var_1_2 = arg_1_0
-	local var_1_3 = arg_1_0.sendNotification
+	arg_1_0:sendNotification(GAME.WILL_LOGOUT)
 
-	GAME = var_1_10006
+	if PLATFORM ~= PLATFORM_WINDOWSEDITOR and PLATFORM_CHT == PLATFORM_CODE and var_1_0.code ~= SDK_EXIT_CODE then
+		pg.SdkMgr.GetInstance():LogoutSDK()
 
-	var_1_3(var_1_2, var_1_10006.WILL_LOGOUT)
-
-	PLATFORM = var_1_3
-	PLATFORM_WINDOWSEDITOR = var_1_0
-
-	if var_1_3 ~= var_1_0 then
-		PLATFORM_CHT = var_1_3
-		PLATFORM_CODE = var_1_0
-
-		if var_1_3 == var_1_0 then
-			var_1_3 = var_1_1.code
-			SDK_EXIT_CODE = var_1_0
-
-			if var_1_3 ~= var_1_0 then
-				pg = var_1_3
-
-				local var_1_4 = var_1_3.SdkMgr.GetInstance()
-
-				var_1_3.LogoutSDK(var_1_4)
-
-				return
-			end
-		end
+		return
 	end
 
-	LOCK_ISLAND_DISPLAY = var_1_3
-
-	if not var_1_3 then
-		pg = var_1_3
-
-		local var_1_5 = var_1_3.IslandVisitorNotificationMgr.GetInstance()
-
-		var_1_3.Quit(var_1_5)
+	if not LOCK_ISLAND_DISPLAY then
+		pg.IslandVisitorNotificationMgr.GetInstance():Quit()
 	end
 
-	pg = var_1_3
+	pg.TrackerMgr.GetInstance():Tracking(TRACKING_ROLE_LOGOUT)
+	pg.GameTrackerMgr.GetInstance():Synchronization()
 
-	local var_1_6 = var_1_3.TrackerMgr.GetInstance()
-	local var_1_7 = var_3.Tracking
+	local var_1_1 = ys.Battle.BattleState.GetInstance()
 
-	TRACKING_ROLE_LOGOUT = var_6
-
-	var_1_7(var_1_6, var_6)
-
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.GameTrackerMgr.GetInstance()
-
-	var_3.Synchronization(var_1_8)
-
-	ys = var_3
-
-	local var_1_9 = var_3.Battle.BattleState.GetInstance()
-	local var_1_10 = var_3.GetState(var_1_9)
-
-	ys = var_1_8
-
-	if var_1_10 ~= var_1_8.Battle.BattleState.BATTLE_STATE_IDLE then
-		warning = var_5
-
-		var_5("stop and clean battle.")
-		var_3:Stop("kick")
+	if var_1_1:GetState() ~= ys.Battle.BattleState.BATTLE_STATE_IDLE then
+		warning("stop and clean battle.")
+		var_1_1:Stop("kick")
 	end
 
-	local var_1_11 = arg_1_0
-	local var_1_12 = arg_1_0.sendNotification
+	arg_1_0:sendNotification(GAME.STOP_BATTLE_LOADING, {})
+	pg.NewStoryMgr.GetInstance():Quit()
+	pg.PerformMgr.GetInstance():Quit()
 
-	GAME = var_1_10008
-
-	var_1_12(var_1_11, var_1_10008.STOP_BATTLE_LOADING, {})
-
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.NewStoryMgr.GetInstance()
-
-	var_5.Quit(var_1_13)
-
-	pg = var_5
-
-	local var_1_14 = var_5.PerformMgr.GetInstance()
-
-	var_5.Quit(var_1_14)
-
-	pg = var_5
-
-	if var_5.MsgboxMgr.GetInstance()._go.activeSelf then
-		pg = var_5
-		var_1_14 = var_5.MsgboxMgr.GetInstance()
-
-		var_5.hide(var_1_14)
+	if pg.MsgboxMgr.GetInstance()._go.activeSelf then
+		pg.MsgboxMgr.GetInstance():hide()
 	end
 
-	getProxy = var_5
-	SettingsProxy = var_1_14
+	getProxy(SettingsProxy):Reset()
+	originalPrint("disconnect from server...-" .. tostring(var_1_0.code))
+	pg.ConnectionMgr.GetInstance():Disconnect()
 
-	local var_1_15 = var_5(var_1_14)
+	BillboardMediator.time = nil
+	Map.lastMap = nil
+	Map.lastMapForActivity = nil
+	BuildShipScene.projectName = nil
+	DockyardScene.selectAsc = nil
+	DockyardScene.sortIndex = nil
+	DockyardScene.typeIndex = nil
+	DockyardScene.campIndex = nil
+	DockyardScene.rarityIndex = nil
+	DockyardScene.extraIndex = nil
+	DockyardScene.commonTag = nil
+	LevelMediator2.prevRefreshBossTimeTime = nil
+	ActivityMainScene.FetchReturnersTime = nil
+	ActivityMainScene.Data2Time = nil
+	MainSkinDiscountItemTipSequence.TipFlag = nil
+	COMBAT_SKIN_KEY = nil
 
-	var_5.Reset(var_1_15)
+	pg.BrightnessMgr.GetInstance():ExitManualMode()
+	pg.SeriesGuideMgr.GetInstance():dispose()
+	pg.NewGuideMgr.GetInstance():Exit()
+	PoolMgr.GetInstance():DestroyAllPrefab()
+	pg.GuildMsgBoxMgr.GetInstance():Hide()
 
-	originalPrint = var_6
+	local var_1_2 = getProxy(UserProxy)
 
-	local var_1_16 = "disconnect from server...-"
+	if var_1_2 then
+		local var_1_3 = var_1_2:getRawData()
 
-	tostring = var_9
-
-	var_6(var_1_16 .. var_9(var_1_1.code))
-
-	pg = var_6
-
-	local var_1_17 = var_6.ConnectionMgr.GetInstance()
-
-	var_6.Disconnect(var_1_17)
-
-	BillboardMediator = var_6
-	var_6.time = nil
-	Map = var_6
-	var_6.lastMap = nil
-	Map = var_6
-	var_6.lastMapForActivity = nil
-	BuildShipScene = var_6
-	var_6.projectName = nil
-	DockyardScene = var_6
-	var_6.selectAsc = nil
-	DockyardScene = var_6
-	var_6.sortIndex = nil
-	DockyardScene = var_6
-	var_6.typeIndex = nil
-	DockyardScene = var_6
-	var_6.campIndex = nil
-	DockyardScene = var_6
-	var_6.rarityIndex = nil
-	DockyardScene = var_6
-	var_6.extraIndex = nil
-	DockyardScene = var_6
-	var_6.commonTag = nil
-	LevelMediator2 = var_6
-	var_6.prevRefreshBossTimeTime = nil
-	ActivityMainScene = var_6
-	var_6.FetchReturnersTime = nil
-	ActivityMainScene = var_6
-	var_6.Data2Time = nil
-	MainSkinDiscountItemTipSequence = var_6
-	var_6.TipFlag = nil
-
-	local var_1_18
-
-	pg = COMBAT_SKIN_KEY
-
-	local var_1_19 = var_6.BrightnessMgr.GetInstance()
-
-	var_6.ExitManualMode(var_1_19)
-
-	pg = var_6
-
-	local var_1_20 = var_6.SeriesGuideMgr.GetInstance()
-
-	var_6.dispose(var_1_20)
-
-	pg = var_6
-
-	local var_1_21 = var_6.NewGuideMgr.GetInstance()
-
-	var_6.Exit(var_1_21)
-
-	PoolMgr = var_6
-
-	local var_1_22 = var_6.GetInstance()
-
-	var_6.DestroyAllPrefab(var_1_22)
-
-	pg = var_6
-
-	local var_1_23 = var_6.GuildMsgBoxMgr.GetInstance()
-
-	var_6.Hide(var_1_23)
-
-	getProxy = var_6
-	UserProxy = var_1_23
-
-	local var_1_24
-
-	if var_6(var_1_23) then
-		var_1_24 = var_6
-
-		if var_6.getRawData(var_1_24) then
-			var_7:clear()
+		if var_1_3 then
+			var_1_3:clear()
 		end
 
-		var_6:SetLoginedFlag(false)
+		var_1_2:SetLoginedFlag(false)
 	end
 
-	Context = var_7
+	local var_1_4 = Context.New()
 
-	local var_1_25 = var_7.New()
-
-	var_7.extendData(var_1_25, var_1_1)
-
-	SCENE = var_8
-
-	local var_1_26 = var_8.SetSceneInfo
-	local var_1_27 = var_7
-
-	SCENE = var_11
-
-	var_1_26(var_1_27, var_11.LOGIN)
-
-	local var_1_28 = arg_1_0
-	local var_1_29 = arg_1_0.sendNotification
-
-	GAME = var_11
-
-	var_1_29(var_1_28, var_11.LOAD_SCENE, {
-		context = var_7,
+	var_1_4:extendData(var_1_0)
+	SCENE.SetSceneInfo(var_1_4, SCENE.LOGIN)
+	arg_1_0:sendNotification(GAME.LOAD_SCENE, {
+		context = var_1_4,
 		callback = function()
-			pg = var_2_10000
+			if pg.proxyRegister then
+				pg.proxyRegister:Stop()
+				pg.proxyRegister:RemoveProxy(arg_1_0.facade)
 
-			if var_2_10000.proxyRegister then
-				pg = var_0
-
-				local var_2_0 = var_0.proxyRegister
-
-				var_0.Stop(var_2_0)
-
-				pg = var_0
-
-				local var_2_1 = var_0.proxyRegister
-
-				var_0.RemoveProxy(var_2_1, arg_1_0.facade)
-
-				pg = var_0
-				var_0.proxyRegister = nil
+				pg.proxyRegister = nil
 			end
 
-			local var_2_2 = arg_1_0.facade
-			local var_2_3 = var_0.removeCommand
-
-			GAME = var_2_10003
-
-			var_2_3(var_2_2, var_2_10003.LOAD_SCENE_DONE)
+			arg_1_0.facade:removeCommand(GAME.LOAD_SCENE_DONE)
 
 			return
 		end
 	})
 
-	local var_1_30 = var_1_1.code
-
-	SDK_EXIT_CODE = var_1_24
-
-	if var_1_30 ~= var_1_24 then
-		pg = var_1_30
-
-		local var_1_31 = var_1_30.SdkMgr.GetInstance()
-
-		var_8.LogoutSDK(var_1_31, var_1_1.code)
+	if var_1_0.code ~= SDK_EXIT_CODE then
+		pg.SdkMgr.GetInstance():LogoutSDK(var_1_0.code)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

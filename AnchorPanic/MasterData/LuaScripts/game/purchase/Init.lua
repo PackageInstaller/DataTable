@@ -8,10 +8,32 @@ purchase.MonthCardPanel = require("game/purchase/monthCard/view/MonthCardView")
 purchase.StrengthCardPanel = require("game/purchase/monthCard/view/StrengthCardView")
 -- 皮肤商店
 require("game/purchase/fashionShop/manager/FashionShopConst")
+
+purchase.FashionSceneChildVo = require("game/purchase/fashionShop/manager/vo/FashionSceneChildVo")
+purchase.FashionSceneVo = require("game/purchase/fashionShop/manager/vo/FashionSceneVo")
+purchase.FashionPairtsItem = require("game/purchase/fashionShop/view/item/FashionPairtsItem")
+
+purchase.FashionComboConfigVo = require("game/purchase/fashionShop/manager/vo/FashionComboConfigVo")
+purchase.FashionComboVo = require("game/purchase/fashionShop/manager/vo/FashionComboVo")
+purchase.FashionComboItem = require("game/purchase/fashionShop/view/item/FashionComboItem")
+purchase.FashionSceneItem = require("game/purchase/fashionShop/view/item/FashionSceneItem")
+purchase.FashionShopSubView = require("game/purchase/fashionShop/view/FashionShopSubView")
+purchase.FashionShopComboView = require("game/purchase/fashionShop/view/FashionShopComboView")
+purchase.FashionShowOneBuyView = require("game/purchase/fashionShop/view/FashionShowOneBuyView")
+purchase.FashionPairtsShowItem = require("game/purchase/fashionShop/view/item/FashionPairtsShowItem")
+purchase.FashionPaintingItem = require("game/purchase/fashionShop/view/item/FashionPaintingItem")
+purchase.PaintingDataVo = require("game/purchase/fashionShop/manager/vo/PaintingDataVo")
+
+
+purchase.FashionFightItem = require("game/purchase/fashionShop/view/item/FashionFightItem")   
+
+
+
 purchase.FashionShopView = require("game/purchase/fashionShop/view/FashionShopView")
 purchase.FashionShowView = require("game/purchase/fashionShop/view/FashionShowView")
 purchase.FashionShowOneView = require("game/purchase/fashionShop/view/FashionShowOneView")
 purchase.FashionShopVo = require("game/purchase/fashionShop/manager/vo/FashionShopVo")
+purchase.PaintingMsgDataVo = require("game/purchase/fashionShop/manager/vo/PaintingMsgDataVo")
 purchase.FashionShow3DView = require("game/purchase/fashionShop/view/FashionShow3DView")
 purchase.FashionShopItem = require("game/purchase/fashionShop/view/item/FashionShopItem")
 purchase.FashionShowItem = require("game/purchase/fashionShop/view/item/FashionShowItem")
@@ -37,8 +59,10 @@ purchase.DirectBuyManager = require("game/purchase/directBuy/manager/DirectBuyMa
 purchase.DirectBuyController = require("game/purchase/directBuy/controller/DirectBuyController").new()
 purchase.DirectBuyItem = require("game/purchase/directBuy/view/item/DirectBuyItem")
 purchase.DirectBuyPanel = require("game/purchase/directBuy/view/DirectBuyView")
+purchase.LimitShopBuyItem = require("game/purchase/directBuy/view/item/LimitShopBuyItem")
 purchase.DirectBuyMoneyView = require("game/purchase/directBuy/view/DirectBuyMoneyView")
 purchase.DirectBuySubView_1 = "game/purchase/directBuy/view/DirectBuySubView_1"
+
 purchase.DirectBuyVo = require("game/purchase/directBuy/manager/vo/DirectBuyVo")
 purchase.DirectBuyTypeConfigVo = require("game/purchase/directBuy/manager/vo/DirectBuyTypeConfigVo")
 

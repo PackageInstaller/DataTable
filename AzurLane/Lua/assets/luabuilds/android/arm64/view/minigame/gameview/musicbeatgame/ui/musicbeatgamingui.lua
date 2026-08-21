@@ -1,85 +1,37 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MusicBeatGamingUI")
+﻿local var_0_0 = class("MusicBeatGamingUI")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
 	arg_1_0._gameVo = arg_1_3
-	findTF = var_1_10004
-	arg_1_0._gameUI = var_1_10004(arg_1_0._tf, "ui/gamingUI")
-	findTF = var_4
-	arg_1_0.btnBack = var_4(arg_1_0._gameUI, "back")
-	findTF = var_4
-	arg_1_0.btnPause = var_4(arg_1_0._gameUI, "pause")
-	onButton = var_4
+	arg_1_0._gameUI = findTF(arg_1_0._tf, "ui/gamingUI")
+	arg_1_0.btnBack = findTF(arg_1_0._gameUI, "back")
+	arg_1_0.btnPause = findTF(arg_1_0._gameUI, "pause")
 
-	local var_1_0 = arg_1_0._event
-	local var_1_1 = arg_1_0.btnBack
-
-	local function var_1_2()
+	onButton(arg_1_0._event, arg_1_0.btnBack, function()
 		if not arg_1_0._gameVo.startSettlement then
-			local var_2_0 = arg_1_0._event
-			local var_2_1 = var_0.emit
-
-			MusicBeatGameEvent = var_2_10003
-
-			var_2_1(var_2_0, var_2_10003.PAUSE_GAME, true)
-
-			local var_2_2 = arg_1_0._event
-			local var_2_3 = var_0.emit
-
-			MusicBeatGameEvent = var_3
-
-			var_2_3(var_2_2, var_3.OPEN_LEVEL_UI)
+			arg_1_0._event:emit(MusicBeatGameEvent.PAUSE_GAME, true)
+			arg_1_0._event:emit(MusicBeatGameEvent.OPEN_LEVEL_UI)
 		end
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10009
-
-	var_4(var_1_0, var_1_1, var_1_2, var_1_10009)
-
-	onButton = var_4
-
-	local var_1_3 = arg_1_0._event
-	local var_1_4 = arg_1_0.btnPause
-
-	local function var_1_5()
+	end, SFX_CONFIRM)
+	onButton(arg_1_0._event, arg_1_0.btnPause, function()
 		if not arg_1_0._gameVo.startSettlement then
-			local var_3_0 = arg_1_0._event
-			local var_3_1 = var_0.emit
-
-			MusicBeatGameEvent = var_2_10003
-
-			var_3_1(var_3_0, var_2_10003.PAUSE_GAME, true)
-
-			local var_3_2 = arg_1_0._event
-			local var_3_3 = var_0.emit
-
-			MusicBeatGameEvent = var_3
-
-			var_3_3(var_3_2, var_3.OPEN_PAUSE_UI)
+			arg_1_0._event:emit(MusicBeatGameEvent.PAUSE_GAME, true)
+			arg_1_0._event:emit(MusicBeatGameEvent.OPEN_PAUSE_UI)
 		end
 
 		return
-	end
+	end, SFX_CONFIRM)
 
-	SFX_CONFIRM = var_1_10009
-
-	var_4(var_1_3, var_1_4, var_1_5, var_1_10009)
-
-	findTF = var_4
-	arg_1_0.scoreCurrent = var_4(arg_1_0._gameUI, "score/text")
+	arg_1_0.scoreCurrent = findTF(arg_1_0._gameUI, "score/text")
 
 	return
 end
 
 function var_0_0.show(arg_4_0, arg_4_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_4_0._gameUI, arg_4_1)
+	setActive(arg_4_0._gameUI, arg_4_1)
 
 	return
 end
@@ -91,67 +43,42 @@ end
 function var_0_0.start(arg_6_0)
 	arg_6_0.subGameStepTime = 0
 
-	local var_6_0 = arg_6_0
+	arg_6_0:show(true)
 
-	arg_6_0.show(var_6_0, true)
+	local var_6_0 = getProxy(MiniGameProxy):GetHighScore(arg_6_0._gameVo.gameId)
 
-	getProxy = var_1
-	MiniGameProxy = var_6_0
-
-	local var_6_1 = var_1(var_6_0)
-
-	if var_1.GetHighScore(var_6_1, arg_6_0._gameVo.gameId) then
-		local var_6_2 = #var_1
-
-		if not (0 < var_6_2) or not var_1[1] then
-			local var_6_3 = 0
-		end
-
-		setText = var_6_1
-
-		var_6_1(arg_6_0.scoreCurrent, 0)
-
-		return
+	if not var_6_0 or #var_6_0 <= 0 or not var_6_0[1] then
+		-- block empty
 	end
+
+	setText(arg_6_0.scoreCurrent, 0)
+
+	return
 end
 
 function var_0_0.addScore(arg_7_0, arg_7_1)
-	setText = var_1_10002
-
-	var_1_10002(arg_7_0.scoreCurrent, arg_7_0._gameVo.scoreNum)
+	setText(arg_7_0.scoreCurrent, arg_7_0._gameVo.scoreNum)
 
 	return
 end
 
 function var_0_0.step(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0._gameVo.gameTime
-
 	return
 end
 
 function var_0_0.setChildVisible(arg_9_0, arg_9_1, arg_9_2)
 	for iter_9_0 = 1, arg_9_1.childCount do
-		local var_9_0 = arg_9_1:GetChild(iter_9_0 - 1)
-
-		setActive = var_1_10008
-
-		var_1_10008(var_9_0, arg_9_2)
+		setActive(arg_9_1:GetChild(iter_9_0 - 1), arg_9_2)
 	end
 
 	return
 end
 
 function var_0_0.press(arg_10_0, arg_10_1, arg_10_2)
-	KeyCode = var_1_10003
-
-	if arg_10_1 == var_1_10003.A then
+	if arg_10_1 == KeyCode.A then
 		-- block empty
-	else
-		KeyCode = var_3
-
-		if arg_10_1 == var_3.D then
-			-- block empty
-		end
+	elseif arg_10_1 == KeyCode.D then
+		-- block empty
 	end
 
 	return

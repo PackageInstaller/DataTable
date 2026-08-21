@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NewEducateBenefitCounter")
+﻿local var_0_0 = class("NewEducateBenefitCounter")
 
 var_0_0.TYPE = {
 	GAIN = 1,
@@ -17,13 +15,9 @@ end
 
 function var_0_0.InitData(arg_2_0, arg_2_1)
 	arg_2_0.data = {}
-	ipairs = var_2
 
-	for iter_2_0, iter_2_1 in var_2(arg_2_1) do
-		if not arg_2_0.data[iter_2_1.drop_type] then
-			arg_2_0.data[iter_2_1.drop_type] = {}
-		end
-
+	for iter_2_0, iter_2_1 in ipairs(arg_2_1) do
+		arg_2_0.data[iter_2_1.drop_type] = arg_2_0.data[iter_2_1.drop_type] or {}
 		arg_2_0.data[iter_2_1.drop_type][iter_2_1.drop_id] = {
 			[var_0_0.TYPE.GAIN] = iter_2_1.positive_counter,
 			[var_0_0.TYPE.COST] = iter_2_1.negative_counter
@@ -34,35 +28,29 @@ function var_0_0.InitData(arg_2_0, arg_2_1)
 end
 
 function var_0_0.UpdateData(arg_3_0, arg_3_1)
-	ipairs = var_1_10002
-
-	for iter_3_0, iter_3_1 in var_1_10002(arg_3_1) do
-		if not arg_3_0.data[iter_3_1.drop_type] then
-			arg_3_0.data[iter_3_1.drop_type] = {}
-		end
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
+		arg_3_0.data[iter_3_1.drop_type] = arg_3_0.data[iter_3_1.drop_type] or {}
 
 		local var_3_0 = arg_3_0.data[iter_3_1.drop_type][iter_3_1.drop_id]
 		local var_3_1 = arg_3_0.data[iter_3_1.drop_type]
 		local var_3_2 = iter_3_1.drop_id
 		local var_3_3 = {}
 		local var_3_4 = var_0_0.TYPE.GAIN
-		local var_3_5
 
-		if not var_3_0 or not var_3_0[var_0_0.TYPE.GAIN] then
-			var_3_5 = 0
+		if arg_3_0.data[iter_3_1.drop_type][iter_3_1.drop_id] then
+			local var_3_5 = var_3_0[var_0_0.TYPE.GAIN] or 0
+
+			var_3_3[var_3_4] = var_3_5 + iter_3_1.positive_counter
+
+			local var_3_6 = var_0_0.TYPE.COST
+
+			if var_3_0 then
+				local var_3_7 = var_3_0[var_0_0.TYPE.COST] or 0
+
+				var_3_3[var_3_6] = var_3_7 + iter_3_1.negative_counter
+				var_3_1[var_3_2] = var_3_3
+			end
 		end
-
-		var_3_3[var_3_4] = var_3_5 + iter_3_1.positive_counter
-
-		local var_3_6 = var_0_0.TYPE.COST
-		local var_3_7
-
-		if not var_3_0 or not var_3_0[var_0_0.TYPE.COST] then
-			var_3_7 = 0
-		end
-
-		var_3_3[var_3_6] = var_3_7 + iter_3_1.negative_counter
-		var_3_1[var_3_2] = var_3_3
 	end
 
 	return

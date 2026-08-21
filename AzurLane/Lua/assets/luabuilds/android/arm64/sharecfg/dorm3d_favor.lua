@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_favor") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_favor"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_favor = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_favor
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_favor = rawget(pg, "dorm3d_favor") or setmetatable({
+	__name = "dorm3d_favor"
+}, confNEO)
+pg.dorm3d_favor.all = {
 	1001,
 	1002,
 	1003,
@@ -132,11 +109,7 @@ var_0_3.all = {
 	21014,
 	21015
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_favor
-
-var_0_4.get_id_list_by_char_id = {
+pg.dorm3d_favor.get_id_list_by_char_id = {
 	[10517] = {
 		11001,
 		11002,
@@ -257,25 +230,11 @@ var_0_4.get_id_list_by_char_id = {
 		21015
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_favor = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_favor = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_favor
-
-	var_1_0[1001] = {
+	pg.base.dorm3d_favor[1001] = {
 		char_id = 20220,
 		levelup_trigger_type = 1,
 		id = 1001,
@@ -297,11 +256,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_favor
-
-	var_1_1[1002] = {
+	pg.base.dorm3d_favor[1002] = {
 		char_id = 20220,
 		levelup_trigger_type = 2,
 		id = 1002,
@@ -317,11 +272,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_favor
-
-	var_1_2[1003] = {
+	pg.base.dorm3d_favor[1003] = {
 		char_id = 20220,
 		levelup_trigger_type = 2,
 		id = 1003,
@@ -337,11 +288,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_favor
-
-	var_1_3[1004] = {
+	pg.base.dorm3d_favor[1004] = {
 		char_id = 20220,
 		levelup_trigger_type = 2,
 		id = 1004,
@@ -363,11 +310,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_favor
-
-	var_1_4[1005] = {
+	pg.base.dorm3d_favor[1005] = {
 		char_id = 20220,
 		levelup_trigger_type = 1,
 		id = 1005,
@@ -383,11 +326,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_favor
-
-	var_1_5[1006] = {
+	pg.base.dorm3d_favor[1006] = {
 		char_id = 20220,
 		levelup_trigger_type = 2,
 		id = 1006,
@@ -403,11 +342,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_favor
-
-	var_1_6[1007] = {
+	pg.base.dorm3d_favor[1007] = {
 		char_id = 20220,
 		levelup_trigger_type = 1,
 		id = 1007,
@@ -428,11 +363,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_favor
-
-	var_1_7[1008] = {
+	pg.base.dorm3d_favor[1008] = {
 		char_id = 20220,
 		levelup_trigger_type = 1,
 		id = 1008,
@@ -448,11 +379,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_favor
-
-	var_1_8[1009] = {
+	pg.base.dorm3d_favor[1009] = {
 		char_id = 20220,
 		levelup_trigger_type = 3,
 		id = 1009,
@@ -468,11 +395,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_favor
-
-	var_1_9[1010] = {
+	pg.base.dorm3d_favor[1010] = {
 		char_id = 20220,
 		levelup_trigger_type = 3,
 		id = 1010,
@@ -494,11 +417,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_favor
-
-	var_1_10[1011] = {
+	pg.base.dorm3d_favor[1011] = {
 		char_id = 20220,
 		levelup_trigger_type = 3,
 		id = 1011,
@@ -514,11 +433,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_favor
-
-	var_1_11[1012] = {
+	pg.base.dorm3d_favor[1012] = {
 		char_id = 20220,
 		levelup_trigger_type = 1,
 		id = 1012,
@@ -534,11 +449,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_favor
-
-	var_1_12[1013] = {
+	pg.base.dorm3d_favor[1013] = {
 		char_id = 20220,
 		levelup_trigger_type = 1,
 		id = 1013,
@@ -559,11 +470,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_favor
-
-	var_1_13[1014] = {
+	pg.base.dorm3d_favor[1014] = {
 		char_id = 20220,
 		levelup_trigger_type = 4,
 		id = 1014,
@@ -579,11 +486,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_favor
-
-	var_1_14[1015] = {
+	pg.base.dorm3d_favor[1015] = {
 		char_id = 20220,
 		levelup_trigger_type = 3,
 		id = 1015,
@@ -599,11 +502,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_favor
-
-	var_1_15[2001] = {
+	pg.base.dorm3d_favor[2001] = {
 		char_id = 30221,
 		levelup_trigger_type = 1,
 		id = 2001,
@@ -613,11 +512,7 @@ var_0_4.base.dorm3d_favor = {}
 		levelup_item = {},
 		levelup_client_item = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_favor
-
-	var_1_16[2002] = {
+	pg.base.dorm3d_favor[2002] = {
 		char_id = 30221,
 		levelup_trigger_type = 2,
 		id = 2002,
@@ -638,11 +533,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_favor
-
-	var_1_17[2003] = {
+	pg.base.dorm3d_favor[2003] = {
 		char_id = 30221,
 		levelup_trigger_type = 2,
 		id = 2003,
@@ -658,11 +549,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_favor
-
-	var_1_18[2004] = {
+	pg.base.dorm3d_favor[2004] = {
 		char_id = 30221,
 		levelup_trigger_type = 2,
 		id = 2004,
@@ -684,11 +571,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_favor
-
-	var_1_19[2005] = {
+	pg.base.dorm3d_favor[2005] = {
 		char_id = 30221,
 		levelup_trigger_type = 1,
 		id = 2005,
@@ -704,11 +587,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_favor
-
-	var_1_20[2006] = {
+	pg.base.dorm3d_favor[2006] = {
 		char_id = 30221,
 		levelup_trigger_type = 2,
 		id = 2006,
@@ -724,11 +603,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_favor
-
-	var_1_21[2007] = {
+	pg.base.dorm3d_favor[2007] = {
 		char_id = 30221,
 		levelup_trigger_type = 1,
 		id = 2007,
@@ -744,11 +619,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_favor
-
-	var_1_22[2008] = {
+	pg.base.dorm3d_favor[2008] = {
 		char_id = 30221,
 		levelup_trigger_type = 1,
 		id = 2008,
@@ -770,11 +641,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_favor
-
-	var_1_23[2009] = {
+	pg.base.dorm3d_favor[2009] = {
 		char_id = 30221,
 		levelup_trigger_type = 3,
 		id = 2009,
@@ -790,11 +657,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_favor
-
-	var_1_24[2010] = {
+	pg.base.dorm3d_favor[2010] = {
 		char_id = 30221,
 		levelup_trigger_type = 3,
 		id = 2010,
@@ -810,11 +673,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_favor
-
-	var_1_25[2011] = {
+	pg.base.dorm3d_favor[2011] = {
 		char_id = 30221,
 		levelup_trigger_type = 3,
 		id = 2011,
@@ -830,11 +689,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_favor
-
-	var_1_26[2012] = {
+	pg.base.dorm3d_favor[2012] = {
 		char_id = 30221,
 		levelup_trigger_type = 1,
 		id = 2012,
@@ -856,11 +711,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_favor
-
-	var_1_27[2013] = {
+	pg.base.dorm3d_favor[2013] = {
 		char_id = 30221,
 		levelup_trigger_type = 1,
 		id = 2013,
@@ -876,11 +727,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_favor
-
-	var_1_28[2014] = {
+	pg.base.dorm3d_favor[2014] = {
 		char_id = 30221,
 		levelup_trigger_type = 4,
 		id = 2014,
@@ -896,11 +743,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_favor
-
-	var_1_29[2015] = {
+	pg.base.dorm3d_favor[2015] = {
 		char_id = 30221,
 		levelup_trigger_type = 3,
 		id = 2015,
@@ -916,11 +759,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_favor
-
-	var_1_30[3001] = {
+	pg.base.dorm3d_favor[3001] = {
 		char_id = 19903,
 		levelup_trigger_type = 1,
 		id = 3001,
@@ -930,11 +769,7 @@ var_0_4.base.dorm3d_favor = {}
 		levelup_item = {},
 		levelup_client_item = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_favor
-
-	var_1_31[3002] = {
+	pg.base.dorm3d_favor[3002] = {
 		char_id = 19903,
 		levelup_trigger_type = 2,
 		id = 3002,
@@ -955,11 +790,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_favor
-
-	var_1_32[3003] = {
+	pg.base.dorm3d_favor[3003] = {
 		char_id = 19903,
 		levelup_trigger_type = 2,
 		id = 3003,
@@ -975,11 +806,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_favor
-
-	var_1_33[3004] = {
+	pg.base.dorm3d_favor[3004] = {
 		char_id = 19903,
 		levelup_trigger_type = 2,
 		id = 3004,
@@ -1001,11 +828,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_favor
-
-	var_1_34[3005] = {
+	pg.base.dorm3d_favor[3005] = {
 		char_id = 19903,
 		levelup_trigger_type = 1,
 		id = 3005,
@@ -1021,11 +844,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_favor
-
-	var_1_35[3006] = {
+	pg.base.dorm3d_favor[3006] = {
 		char_id = 19903,
 		levelup_trigger_type = 2,
 		id = 3006,
@@ -1041,11 +860,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_favor
-
-	var_1_36[3007] = {
+	pg.base.dorm3d_favor[3007] = {
 		char_id = 19903,
 		levelup_trigger_type = 1,
 		id = 3007,
@@ -1061,11 +876,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_favor
-
-	var_1_37[3008] = {
+	pg.base.dorm3d_favor[3008] = {
 		char_id = 19903,
 		levelup_trigger_type = 1,
 		id = 3008,
@@ -1087,11 +898,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_favor
-
-	var_1_38[3009] = {
+	pg.base.dorm3d_favor[3009] = {
 		char_id = 19903,
 		levelup_trigger_type = 3,
 		id = 3009,
@@ -1107,11 +914,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_favor
-
-	var_1_39[3010] = {
+	pg.base.dorm3d_favor[3010] = {
 		char_id = 19903,
 		levelup_trigger_type = 3,
 		id = 3010,
@@ -1127,11 +930,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_favor
-
-	var_1_40[3011] = {
+	pg.base.dorm3d_favor[3011] = {
 		char_id = 19903,
 		levelup_trigger_type = 3,
 		id = 3011,
@@ -1147,11 +946,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_favor
-
-	var_1_41[3012] = {
+	pg.base.dorm3d_favor[3012] = {
 		char_id = 19903,
 		levelup_trigger_type = 1,
 		id = 3012,
@@ -1173,11 +968,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_favor
-
-	var_1_42[3013] = {
+	pg.base.dorm3d_favor[3013] = {
 		char_id = 19903,
 		levelup_trigger_type = 1,
 		id = 3013,
@@ -1193,11 +984,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_favor
-
-	var_1_43[3014] = {
+	pg.base.dorm3d_favor[3014] = {
 		char_id = 19903,
 		levelup_trigger_type = 4,
 		id = 3014,
@@ -1213,11 +1000,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_favor
-
-	var_1_44[3015] = {
+	pg.base.dorm3d_favor[3015] = {
 		char_id = 19903,
 		levelup_trigger_type = 3,
 		id = 3015,
@@ -1233,11 +1016,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_favor
-
-	var_1_45[11001] = {
+	pg.base.dorm3d_favor[11001] = {
 		char_id = 10517,
 		levelup_trigger_type = 1,
 		id = 11001,
@@ -1247,11 +1026,7 @@ var_0_4.base.dorm3d_favor = {}
 		levelup_item = {},
 		levelup_client_item = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_favor
-
-	var_1_46[11002] = {
+	pg.base.dorm3d_favor[11002] = {
 		char_id = 10517,
 		levelup_trigger_type = 2,
 		id = 11002,
@@ -1272,11 +1047,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_favor
-
-	var_1_47[11003] = {
+	pg.base.dorm3d_favor[11003] = {
 		char_id = 10517,
 		levelup_trigger_type = 2,
 		id = 11003,
@@ -1292,11 +1063,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_favor
-
-	var_1_48[11004] = {
+	pg.base.dorm3d_favor[11004] = {
 		char_id = 10517,
 		levelup_trigger_type = 2,
 		id = 11004,
@@ -1318,11 +1085,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_favor
-
-	var_1_49[11005] = {
+	pg.base.dorm3d_favor[11005] = {
 		char_id = 10517,
 		levelup_trigger_type = 1,
 		id = 11005,
@@ -1338,11 +1101,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_favor
-
-	var_1_50[11006] = {
+	pg.base.dorm3d_favor[11006] = {
 		char_id = 10517,
 		levelup_trigger_type = 2,
 		id = 11006,
@@ -1358,11 +1117,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_favor
-
-	var_1_51[11007] = {
+	pg.base.dorm3d_favor[11007] = {
 		char_id = 10517,
 		levelup_trigger_type = 1,
 		id = 11007,
@@ -1378,11 +1133,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_favor
-
-	var_1_52[11008] = {
+	pg.base.dorm3d_favor[11008] = {
 		char_id = 10517,
 		levelup_trigger_type = 1,
 		id = 11008,
@@ -1404,11 +1155,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_favor
-
-	var_1_53[11009] = {
+	pg.base.dorm3d_favor[11009] = {
 		char_id = 10517,
 		levelup_trigger_type = 3,
 		id = 11009,
@@ -1424,11 +1171,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_favor
-
-	var_1_54[11010] = {
+	pg.base.dorm3d_favor[11010] = {
 		char_id = 10517,
 		levelup_trigger_type = 3,
 		id = 11010,
@@ -1444,11 +1187,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_favor
-
-	var_1_55[11011] = {
+	pg.base.dorm3d_favor[11011] = {
 		char_id = 10517,
 		levelup_trigger_type = 3,
 		id = 11011,
@@ -1464,11 +1203,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_favor
-
-	var_1_56[11012] = {
+	pg.base.dorm3d_favor[11012] = {
 		char_id = 10517,
 		levelup_trigger_type = 1,
 		id = 11012,
@@ -1490,11 +1225,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_favor
-
-	var_1_57[11013] = {
+	pg.base.dorm3d_favor[11013] = {
 		char_id = 10517,
 		levelup_trigger_type = 1,
 		id = 11013,
@@ -1510,11 +1241,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_favor
-
-	var_1_58[11014] = {
+	pg.base.dorm3d_favor[11014] = {
 		char_id = 10517,
 		levelup_trigger_type = 4,
 		id = 11014,
@@ -1530,11 +1257,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_favor
-
-	var_1_59[11015] = {
+	pg.base.dorm3d_favor[11015] = {
 		char_id = 10517,
 		levelup_trigger_type = 3,
 		id = 11015,
@@ -1550,11 +1273,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_favor
-
-	var_1_60[12001] = {
+	pg.base.dorm3d_favor[12001] = {
 		char_id = 30707,
 		levelup_trigger_type = 1,
 		id = 12001,
@@ -1564,11 +1283,7 @@ var_0_4.base.dorm3d_favor = {}
 		levelup_item = {},
 		levelup_client_item = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_favor
-
-	var_1_61[12002] = {
+	pg.base.dorm3d_favor[12002] = {
 		char_id = 30707,
 		levelup_trigger_type = 2,
 		id = 12002,
@@ -1589,11 +1304,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_favor
-
-	var_1_62[12003] = {
+	pg.base.dorm3d_favor[12003] = {
 		char_id = 30707,
 		levelup_trigger_type = 2,
 		id = 12003,
@@ -1609,11 +1320,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_favor
-
-	var_1_63[12004] = {
+	pg.base.dorm3d_favor[12004] = {
 		char_id = 30707,
 		levelup_trigger_type = 2,
 		id = 12004,
@@ -1635,11 +1342,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_favor
-
-	var_1_64[12005] = {
+	pg.base.dorm3d_favor[12005] = {
 		char_id = 30707,
 		levelup_trigger_type = 1,
 		id = 12005,
@@ -1655,11 +1358,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_favor
-
-	var_1_65[12006] = {
+	pg.base.dorm3d_favor[12006] = {
 		char_id = 30707,
 		levelup_trigger_type = 2,
 		id = 12006,
@@ -1675,11 +1374,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_favor
-
-	var_1_66[12007] = {
+	pg.base.dorm3d_favor[12007] = {
 		char_id = 30707,
 		levelup_trigger_type = 1,
 		id = 12007,
@@ -1695,11 +1390,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_favor
-
-	var_1_67[12008] = {
+	pg.base.dorm3d_favor[12008] = {
 		char_id = 30707,
 		levelup_trigger_type = 1,
 		id = 12008,
@@ -1721,11 +1412,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_favor
-
-	var_1_68[12009] = {
+	pg.base.dorm3d_favor[12009] = {
 		char_id = 30707,
 		levelup_trigger_type = 3,
 		id = 12009,
@@ -1741,11 +1428,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_favor
-
-	var_1_69[12010] = {
+	pg.base.dorm3d_favor[12010] = {
 		char_id = 30707,
 		levelup_trigger_type = 3,
 		id = 12010,
@@ -1761,11 +1444,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_favor
-
-	var_1_70[12011] = {
+	pg.base.dorm3d_favor[12011] = {
 		char_id = 30707,
 		levelup_trigger_type = 3,
 		id = 12011,
@@ -1781,11 +1460,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_favor
-
-	var_1_71[12012] = {
+	pg.base.dorm3d_favor[12012] = {
 		char_id = 30707,
 		levelup_trigger_type = 1,
 		id = 12012,
@@ -1807,11 +1482,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_favor
-
-	var_1_72[12013] = {
+	pg.base.dorm3d_favor[12013] = {
 		char_id = 30707,
 		levelup_trigger_type = 1,
 		id = 12013,
@@ -1827,11 +1498,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_favor
-
-	var_1_73[12014] = {
+	pg.base.dorm3d_favor[12014] = {
 		char_id = 30707,
 		levelup_trigger_type = 4,
 		id = 12014,
@@ -1847,11 +1514,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_favor
-
-	var_1_74[12015] = {
+	pg.base.dorm3d_favor[12015] = {
 		char_id = 30707,
 		levelup_trigger_type = 3,
 		id = 12015,
@@ -1867,11 +1530,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_favor
-
-	var_1_75[14001] = {
+	pg.base.dorm3d_favor[14001] = {
 		char_id = 49905,
 		levelup_trigger_type = 1,
 		id = 14001,
@@ -1881,11 +1540,7 @@ var_0_4.base.dorm3d_favor = {}
 		levelup_item = {},
 		levelup_client_item = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_favor
-
-	var_1_76[14002] = {
+	pg.base.dorm3d_favor[14002] = {
 		char_id = 49905,
 		levelup_trigger_type = 2,
 		id = 14002,
@@ -1906,11 +1561,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.dorm3d_favor
-
-	var_1_77[14003] = {
+	pg.base.dorm3d_favor[14003] = {
 		char_id = 49905,
 		levelup_trigger_type = 2,
 		id = 14003,
@@ -1926,11 +1577,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.dorm3d_favor
-
-	var_1_78[14004] = {
+	pg.base.dorm3d_favor[14004] = {
 		char_id = 49905,
 		levelup_trigger_type = 2,
 		id = 14004,
@@ -1952,11 +1599,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.dorm3d_favor
-
-	var_1_79[14005] = {
+	pg.base.dorm3d_favor[14005] = {
 		char_id = 49905,
 		levelup_trigger_type = 1,
 		id = 14005,
@@ -1972,11 +1615,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.dorm3d_favor
-
-	var_1_80[14006] = {
+	pg.base.dorm3d_favor[14006] = {
 		char_id = 49905,
 		levelup_trigger_type = 2,
 		id = 14006,
@@ -1992,11 +1631,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.dorm3d_favor
-
-	var_1_81[14007] = {
+	pg.base.dorm3d_favor[14007] = {
 		char_id = 49905,
 		levelup_trigger_type = 1,
 		id = 14007,
@@ -2012,11 +1647,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.dorm3d_favor
-
-	var_1_82[14008] = {
+	pg.base.dorm3d_favor[14008] = {
 		char_id = 49905,
 		levelup_trigger_type = 1,
 		id = 14008,
@@ -2038,11 +1669,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.dorm3d_favor
-
-	var_1_83[14009] = {
+	pg.base.dorm3d_favor[14009] = {
 		char_id = 49905,
 		levelup_trigger_type = 3,
 		id = 14009,
@@ -2058,11 +1685,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.dorm3d_favor
-
-	var_1_84[14010] = {
+	pg.base.dorm3d_favor[14010] = {
 		char_id = 49905,
 		levelup_trigger_type = 3,
 		id = 14010,
@@ -2078,11 +1701,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.dorm3d_favor
-
-	var_1_85[14011] = {
+	pg.base.dorm3d_favor[14011] = {
 		char_id = 49905,
 		levelup_trigger_type = 3,
 		id = 14011,
@@ -2098,11 +1717,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.dorm3d_favor
-
-	var_1_86[14012] = {
+	pg.base.dorm3d_favor[14012] = {
 		char_id = 49905,
 		levelup_trigger_type = 1,
 		id = 14012,
@@ -2124,11 +1739,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.dorm3d_favor
-
-	var_1_87[14013] = {
+	pg.base.dorm3d_favor[14013] = {
 		char_id = 49905,
 		levelup_trigger_type = 1,
 		id = 14013,
@@ -2144,11 +1755,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.dorm3d_favor
-
-	var_1_88[14014] = {
+	pg.base.dorm3d_favor[14014] = {
 		char_id = 49905,
 		levelup_trigger_type = 4,
 		id = 14014,
@@ -2164,11 +1771,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.dorm3d_favor
-
-	var_1_89[14015] = {
+	pg.base.dorm3d_favor[14015] = {
 		char_id = 49905,
 		levelup_trigger_type = 3,
 		id = 14015,
@@ -2184,11 +1787,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.dorm3d_favor
-
-	var_1_90[21001] = {
+	pg.base.dorm3d_favor[21001] = {
 		char_id = 79902,
 		levelup_trigger_type = 1,
 		id = 21001,
@@ -2198,11 +1797,7 @@ var_0_4.base.dorm3d_favor = {}
 		levelup_item = {},
 		levelup_client_item = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.dorm3d_favor
-
-	var_1_91[21002] = {
+	pg.base.dorm3d_favor[21002] = {
 		char_id = 79902,
 		levelup_trigger_type = 2,
 		id = 21002,
@@ -2223,11 +1818,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.dorm3d_favor
-
-	var_1_92[21003] = {
+	pg.base.dorm3d_favor[21003] = {
 		char_id = 79902,
 		levelup_trigger_type = 2,
 		id = 21003,
@@ -2243,11 +1834,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.dorm3d_favor
-
-	var_1_93[21004] = {
+	pg.base.dorm3d_favor[21004] = {
 		char_id = 79902,
 		levelup_trigger_type = 2,
 		id = 21004,
@@ -2269,11 +1856,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.dorm3d_favor
-
-	var_1_94[21005] = {
+	pg.base.dorm3d_favor[21005] = {
 		char_id = 79902,
 		levelup_trigger_type = 1,
 		id = 21005,
@@ -2289,11 +1872,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.dorm3d_favor
-
-	var_1_95[21006] = {
+	pg.base.dorm3d_favor[21006] = {
 		char_id = 79902,
 		levelup_trigger_type = 2,
 		id = 21006,
@@ -2309,11 +1888,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.dorm3d_favor
-
-	var_1_96[21007] = {
+	pg.base.dorm3d_favor[21007] = {
 		char_id = 79902,
 		levelup_trigger_type = 1,
 		id = 21007,
@@ -2329,11 +1904,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.dorm3d_favor
-
-	var_1_97[21008] = {
+	pg.base.dorm3d_favor[21008] = {
 		char_id = 79902,
 		levelup_trigger_type = 1,
 		id = 21008,
@@ -2355,11 +1926,7 @@ var_0_4.base.dorm3d_favor = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.dorm3d_favor
-
-	var_1_98[21009] = {
+	pg.base.dorm3d_favor[21009] = {
 		char_id = 79902,
 		levelup_trigger_type = 3,
 		id = 21009,
@@ -2375,8 +1942,7 @@ var_0_4.base.dorm3d_favor = {}
 		},
 		levelup_client_item = {}
 	}
-	pg = var_1_98
-	var_1_98.base.dorm3d_favor[21010] = {
+	pg.base.dorm3d_favor[21010] = {
 		char_id = 79902,
 		levelup_trigger_type = 3,
 		id = 21010,
@@ -2396,11 +1962,7 @@ var_0_4.base.dorm3d_favor = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.dorm3d_favor
-
-	var_2_0[21011] = {
+	pg.base.dorm3d_favor[21011] = {
 		char_id = 79902,
 		levelup_trigger_type = 3,
 		id = 21011,
@@ -2416,11 +1978,7 @@ end)()
 		},
 		levelup_client_item = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.dorm3d_favor
-
-	var_2_1[21012] = {
+	pg.base.dorm3d_favor[21012] = {
 		char_id = 79902,
 		levelup_trigger_type = 1,
 		id = 21012,
@@ -2442,11 +2000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.dorm3d_favor
-
-	var_2_2[21013] = {
+	pg.base.dorm3d_favor[21013] = {
 		char_id = 79902,
 		levelup_trigger_type = 1,
 		id = 21013,
@@ -2462,11 +2016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.dorm3d_favor
-
-	var_2_3[21014] = {
+	pg.base.dorm3d_favor[21014] = {
 		char_id = 79902,
 		levelup_trigger_type = 4,
 		id = 21014,
@@ -2482,8 +2032,7 @@ end)()
 		},
 		levelup_client_item = {}
 	}
-	pg = var_2_3
-	var_2_3.base.dorm3d_favor[21015] = {
+	pg.base.dorm3d_favor[21015] = {
 		char_id = 79902,
 		levelup_trigger_type = 3,
 		id = 21015,

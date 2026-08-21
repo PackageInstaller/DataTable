@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_camera_anim_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_camera_anim_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_camera_anim_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_camera_anim_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_camera_anim_template = rawget(pg, "dorm3d_camera_anim_template") or setmetatable({
+	__name = "dorm3d_camera_anim_template"
+}, confNEO)
+pg.dorm3d_camera_anim_template.all = {
 	1001,
 	1002,
 	1003,
@@ -393,11 +370,7 @@ var_0_3.all = {
 	26004,
 	26005
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_camera_anim_template
-
-var_0_4.get_id_list_by_furniture_id = {
+pg.dorm3d_camera_anim_template.get_id_list_by_furniture_id = {
 	[0] = {
 		1001,
 		1002,
@@ -853,25 +826,11 @@ var_0_4.get_id_list_by_furniture_id = {
 		21405
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_camera_anim_template = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_camera_anim_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_camera_anim_template
-
-	var_1_0[1001] = {
+	pg.base.dorm3d_camera_anim_template[1001] = {
 		anim_time = 0,
 		finish_anim = 1001,
 		pre_anim = 0,
@@ -889,11 +848,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_camera_anim_template
-
-	var_1_1[1002] = {
+	pg.base.dorm3d_camera_anim_template[1002] = {
 		anim_time = 3.333,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -911,11 +866,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_camera_anim_template
-
-	var_1_2[1003] = {
+	pg.base.dorm3d_camera_anim_template[1003] = {
 		anim_time = 9,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -933,11 +884,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_camera_anim_template
-
-	var_1_3[1004] = {
+	pg.base.dorm3d_camera_anim_template[1004] = {
 		anim_time = 9.833,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -955,11 +902,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_camera_anim_template
-
-	var_1_4[1005] = {
+	pg.base.dorm3d_camera_anim_template[1005] = {
 		anim_time = 5.7,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -977,11 +920,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_camera_anim_template
-
-	var_1_5[1006] = {
+	pg.base.dorm3d_camera_anim_template[1006] = {
 		anim_time = 7.533,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -999,11 +938,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_camera_anim_template
-
-	var_1_6[1007] = {
+	pg.base.dorm3d_camera_anim_template[1007] = {
 		anim_time = 8.333,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -1021,11 +956,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_camera_anim_template
-
-	var_1_7[1008] = {
+	pg.base.dorm3d_camera_anim_template[1008] = {
 		anim_time = 6.5,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -1043,11 +974,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_camera_anim_template
-
-	var_1_8[1009] = {
+	pg.base.dorm3d_camera_anim_template[1009] = {
 		anim_time = 7.333,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -1065,11 +992,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_camera_anim_template
-
-	var_1_9[1010] = {
+	pg.base.dorm3d_camera_anim_template[1010] = {
 		anim_time = 6.33,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -1087,11 +1010,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_camera_anim_template
-
-	var_1_10[1011] = {
+	pg.base.dorm3d_camera_anim_template[1011] = {
 		anim_time = 9.5,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -1109,11 +1028,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_camera_anim_template
-
-	var_1_11[1012] = {
+	pg.base.dorm3d_camera_anim_template[1012] = {
 		anim_time = 6.333,
 		finish_anim = 1001,
 		pre_anim = 1001,
@@ -1131,11 +1046,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_camera_anim_template
-
-	var_1_12[1101] = {
+	pg.base.dorm3d_camera_anim_template[1101] = {
 		anim_time = 0,
 		finish_anim = 1101,
 		pre_anim = 0,
@@ -1153,11 +1064,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_camera_anim_template
-
-	var_1_13[1102] = {
+	pg.base.dorm3d_camera_anim_template[1102] = {
 		anim_time = 6,
 		finish_anim = 1101,
 		pre_anim = 1101,
@@ -1175,11 +1082,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_camera_anim_template
-
-	var_1_14[1103] = {
+	pg.base.dorm3d_camera_anim_template[1103] = {
 		anim_time = 9.167,
 		finish_anim = 1101,
 		pre_anim = 1101,
@@ -1197,11 +1100,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_camera_anim_template
-
-	var_1_15[1104] = {
+	pg.base.dorm3d_camera_anim_template[1104] = {
 		anim_time = 7.5,
 		finish_anim = 1101,
 		pre_anim = 1101,
@@ -1219,11 +1118,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_camera_anim_template
-
-	var_1_16[1201] = {
+	pg.base.dorm3d_camera_anim_template[1201] = {
 		anim_time = 0,
 		finish_anim = 1201,
 		pre_anim = 0,
@@ -1241,11 +1136,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_camera_anim_template
-
-	var_1_17[1202] = {
+	pg.base.dorm3d_camera_anim_template[1202] = {
 		anim_time = 8,
 		finish_anim = 1201,
 		pre_anim = 1201,
@@ -1263,11 +1154,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_camera_anim_template
-
-	var_1_18[1203] = {
+	pg.base.dorm3d_camera_anim_template[1203] = {
 		anim_time = 6,
 		finish_anim = 1201,
 		pre_anim = 1201,
@@ -1285,11 +1172,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_camera_anim_template
-
-	var_1_19[1301] = {
+	pg.base.dorm3d_camera_anim_template[1301] = {
 		anim_time = 0,
 		finish_anim = 1301,
 		pre_anim = 0,
@@ -1307,11 +1190,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_camera_anim_template
-
-	var_1_20[1302] = {
+	pg.base.dorm3d_camera_anim_template[1302] = {
 		anim_time = 9.667,
 		finish_anim = 1301,
 		pre_anim = 1301,
@@ -1329,11 +1208,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_camera_anim_template
-
-	var_1_21[1303] = {
+	pg.base.dorm3d_camera_anim_template[1303] = {
 		anim_time = 7.133,
 		finish_anim = 1301,
 		pre_anim = 1301,
@@ -1351,11 +1226,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_camera_anim_template
-
-	var_1_22[1304] = {
+	pg.base.dorm3d_camera_anim_template[1304] = {
 		anim_time = 0,
 		finish_anim = 1304,
 		pre_anim = 0,
@@ -1373,11 +1244,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_camera_anim_template
-
-	var_1_23[1305] = {
+	pg.base.dorm3d_camera_anim_template[1305] = {
 		anim_time = 11.833,
 		finish_anim = 1304,
 		pre_anim = 1304,
@@ -1395,11 +1262,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_camera_anim_template
-
-	var_1_24[1306] = {
+	pg.base.dorm3d_camera_anim_template[1306] = {
 		anim_time = 10.333,
 		finish_anim = 1304,
 		pre_anim = 1304,
@@ -1417,11 +1280,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_camera_anim_template
-
-	var_1_25[1307] = {
+	pg.base.dorm3d_camera_anim_template[1307] = {
 		anim_time = 7.633,
 		finish_anim = 1304,
 		pre_anim = 1304,
@@ -1439,11 +1298,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_camera_anim_template
-
-	var_1_26[1308] = {
+	pg.base.dorm3d_camera_anim_template[1308] = {
 		anim_time = 0,
 		finish_anim = 1308,
 		pre_anim = 0,
@@ -1461,11 +1316,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_camera_anim_template
-
-	var_1_27[1309] = {
+	pg.base.dorm3d_camera_anim_template[1309] = {
 		anim_time = 11,
 		finish_anim = 1308,
 		pre_anim = 1308,
@@ -1483,11 +1334,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_camera_anim_template
-
-	var_1_28[1310] = {
+	pg.base.dorm3d_camera_anim_template[1310] = {
 		anim_time = 9.667,
 		finish_anim = 1308,
 		pre_anim = 1308,
@@ -1505,11 +1352,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_camera_anim_template
-
-	var_1_29[1311] = {
+	pg.base.dorm3d_camera_anim_template[1311] = {
 		anim_time = 10,
 		finish_anim = 1308,
 		pre_anim = 1308,
@@ -1527,11 +1370,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_camera_anim_template
-
-	var_1_30[1312] = {
+	pg.base.dorm3d_camera_anim_template[1312] = {
 		anim_time = 0,
 		finish_anim = 1312,
 		pre_anim = 0,
@@ -1549,11 +1388,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_camera_anim_template
-
-	var_1_31[1313] = {
+	pg.base.dorm3d_camera_anim_template[1313] = {
 		anim_time = 4.75,
 		finish_anim = 1312,
 		pre_anim = 1312,
@@ -1571,11 +1406,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_camera_anim_template
-
-	var_1_32[1314] = {
+	pg.base.dorm3d_camera_anim_template[1314] = {
 		anim_time = 12.1666666666667,
 		finish_anim = 1312,
 		pre_anim = 1312,
@@ -1593,11 +1424,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_camera_anim_template
-
-	var_1_33[1317] = {
+	pg.base.dorm3d_camera_anim_template[1317] = {
 		anim_time = 0,
 		finish_anim = 1317,
 		pre_anim = 0,
@@ -1615,11 +1442,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_camera_anim_template
-
-	var_1_34[1318] = {
+	pg.base.dorm3d_camera_anim_template[1318] = {
 		anim_time = 5.83333333333333,
 		finish_anim = 1317,
 		pre_anim = 1317,
@@ -1637,11 +1460,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_camera_anim_template
-
-	var_1_35[1319] = {
+	pg.base.dorm3d_camera_anim_template[1319] = {
 		anim_time = 5.5,
 		finish_anim = 1317,
 		pre_anim = 1317,
@@ -1659,11 +1478,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_camera_anim_template
-
-	var_1_36[2001] = {
+	pg.base.dorm3d_camera_anim_template[2001] = {
 		anim_time = 0,
 		finish_anim = 2001,
 		pre_anim = 0,
@@ -1681,11 +1496,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_camera_anim_template
-
-	var_1_37[2002] = {
+	pg.base.dorm3d_camera_anim_template[2002] = {
 		anim_time = 6.5,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1703,11 +1514,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_camera_anim_template
-
-	var_1_38[2003] = {
+	pg.base.dorm3d_camera_anim_template[2003] = {
 		anim_time = 5.33333333333333,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1725,11 +1532,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_camera_anim_template
-
-	var_1_39[2004] = {
+	pg.base.dorm3d_camera_anim_template[2004] = {
 		anim_time = 5.83333333333333,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1747,11 +1550,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_camera_anim_template
-
-	var_1_40[2005] = {
+	pg.base.dorm3d_camera_anim_template[2005] = {
 		anim_time = 7.33333333333333,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1769,11 +1568,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_camera_anim_template
-
-	var_1_41[2006] = {
+	pg.base.dorm3d_camera_anim_template[2006] = {
 		anim_time = 5.16666666666667,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1791,11 +1586,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_camera_anim_template
-
-	var_1_42[2007] = {
+	pg.base.dorm3d_camera_anim_template[2007] = {
 		anim_time = 5.16666666666667,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1813,11 +1604,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_camera_anim_template
-
-	var_1_43[2008] = {
+	pg.base.dorm3d_camera_anim_template[2008] = {
 		anim_time = 6.66666666666667,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1835,11 +1622,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_camera_anim_template
-
-	var_1_44[2009] = {
+	pg.base.dorm3d_camera_anim_template[2009] = {
 		anim_time = 5,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1857,11 +1640,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_camera_anim_template
-
-	var_1_45[2010] = {
+	pg.base.dorm3d_camera_anim_template[2010] = {
 		anim_time = 6.33333333333333,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1879,11 +1658,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_camera_anim_template
-
-	var_1_46[2011] = {
+	pg.base.dorm3d_camera_anim_template[2011] = {
 		anim_time = 2,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1901,11 +1676,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_camera_anim_template
-
-	var_1_47[2012] = {
+	pg.base.dorm3d_camera_anim_template[2012] = {
 		anim_time = 4.33333333333333,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1923,11 +1694,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_camera_anim_template
-
-	var_1_48[2013] = {
+	pg.base.dorm3d_camera_anim_template[2013] = {
 		anim_time = 8,
 		finish_anim = 2001,
 		pre_anim = 2001,
@@ -1945,11 +1712,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_camera_anim_template
-
-	var_1_49[2101] = {
+	pg.base.dorm3d_camera_anim_template[2101] = {
 		anim_time = 0,
 		finish_anim = 2101,
 		pre_anim = 0,
@@ -1967,11 +1730,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_camera_anim_template
-
-	var_1_50[2102] = {
+	pg.base.dorm3d_camera_anim_template[2102] = {
 		anim_time = 10,
 		finish_anim = 2101,
 		pre_anim = 2101,
@@ -1989,11 +1748,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_camera_anim_template
-
-	var_1_51[2103] = {
+	pg.base.dorm3d_camera_anim_template[2103] = {
 		anim_time = 6.5,
 		finish_anim = 2101,
 		pre_anim = 2101,
@@ -2011,11 +1766,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_camera_anim_template
-
-	var_1_52[2104] = {
+	pg.base.dorm3d_camera_anim_template[2104] = {
 		anim_time = 6.83333333333333,
 		finish_anim = 2101,
 		pre_anim = 2101,
@@ -2033,11 +1784,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_camera_anim_template
-
-	var_1_53[2201] = {
+	pg.base.dorm3d_camera_anim_template[2201] = {
 		anim_time = 0,
 		finish_anim = 2201,
 		pre_anim = 0,
@@ -2055,11 +1802,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_camera_anim_template
-
-	var_1_54[2202] = {
+	pg.base.dorm3d_camera_anim_template[2202] = {
 		anim_time = 6.5,
 		finish_anim = 2201,
 		pre_anim = 2201,
@@ -2077,11 +1820,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_camera_anim_template
-
-	var_1_55[2203] = {
+	pg.base.dorm3d_camera_anim_template[2203] = {
 		anim_time = 7.5,
 		finish_anim = 2201,
 		pre_anim = 2201,
@@ -2099,11 +1838,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.dorm3d_camera_anim_template
-
-	var_1_56[2204] = {
+	pg.base.dorm3d_camera_anim_template[2204] = {
 		anim_time = 6.5,
 		finish_anim = 2201,
 		pre_anim = 2201,
@@ -2121,11 +1856,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.dorm3d_camera_anim_template
-
-	var_1_57[2301] = {
+	pg.base.dorm3d_camera_anim_template[2301] = {
 		anim_time = 0,
 		finish_anim = 2301,
 		pre_anim = 0,
@@ -2143,11 +1874,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.dorm3d_camera_anim_template
-
-	var_1_58[2302] = {
+	pg.base.dorm3d_camera_anim_template[2302] = {
 		anim_time = 7.66666666666667,
 		finish_anim = 2301,
 		pre_anim = 2301,
@@ -2165,11 +1892,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.dorm3d_camera_anim_template
-
-	var_1_59[2303] = {
+	pg.base.dorm3d_camera_anim_template[2303] = {
 		anim_time = 8.33333333333333,
 		finish_anim = 2301,
 		pre_anim = 2301,
@@ -2187,11 +1910,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.dorm3d_camera_anim_template
-
-	var_1_60[2304] = {
+	pg.base.dorm3d_camera_anim_template[2304] = {
 		anim_time = 9.5,
 		finish_anim = 2301,
 		pre_anim = 2301,
@@ -2209,11 +1928,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.dorm3d_camera_anim_template
-
-	var_1_61[2401] = {
+	pg.base.dorm3d_camera_anim_template[2401] = {
 		anim_time = 0,
 		finish_anim = 2401,
 		pre_anim = 0,
@@ -2231,11 +1946,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.dorm3d_camera_anim_template
-
-	var_1_62[2402] = {
+	pg.base.dorm3d_camera_anim_template[2402] = {
 		anim_time = 5.76666666666667,
 		finish_anim = 2401,
 		pre_anim = 2401,
@@ -2253,11 +1964,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.dorm3d_camera_anim_template
-
-	var_1_63[2403] = {
+	pg.base.dorm3d_camera_anim_template[2403] = {
 		anim_time = 12.4666666666667,
 		finish_anim = 2401,
 		pre_anim = 2401,
@@ -2275,11 +1982,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.dorm3d_camera_anim_template
-
-	var_1_64[2404] = {
+	pg.base.dorm3d_camera_anim_template[2404] = {
 		anim_time = 0,
 		finish_anim = 2404,
 		pre_anim = 0,
@@ -2297,11 +2000,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.dorm3d_camera_anim_template
-
-	var_1_65[2405] = {
+	pg.base.dorm3d_camera_anim_template[2405] = {
 		anim_time = 14,
 		finish_anim = 2404,
 		pre_anim = 2401,
@@ -2319,11 +2018,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.dorm3d_camera_anim_template
-
-	var_1_66[2501] = {
+	pg.base.dorm3d_camera_anim_template[2501] = {
 		anim_time = 0,
 		finish_anim = 2501,
 		pre_anim = 0,
@@ -2341,11 +2036,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.dorm3d_camera_anim_template
-
-	var_1_67[2502] = {
+	pg.base.dorm3d_camera_anim_template[2502] = {
 		anim_time = 0,
 		finish_anim = 2502,
 		pre_anim = 0,
@@ -2363,11 +2054,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.dorm3d_camera_anim_template
-
-	var_1_68[2503] = {
+	pg.base.dorm3d_camera_anim_template[2503] = {
 		anim_time = 8.1667,
 		finish_anim = 2502,
 		pre_anim = 2502,
@@ -2385,11 +2072,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.dorm3d_camera_anim_template
-
-	var_1_69[2504] = {
+	pg.base.dorm3d_camera_anim_template[2504] = {
 		anim_time = 0,
 		finish_anim = 2504,
 		pre_anim = 0,
@@ -2407,11 +2090,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.dorm3d_camera_anim_template
-
-	var_1_70[2505] = {
+	pg.base.dorm3d_camera_anim_template[2505] = {
 		anim_time = 13.667,
 		finish_anim = 2504,
 		pre_anim = 2504,
@@ -2429,11 +2108,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.dorm3d_camera_anim_template
-
-	var_1_71[2601] = {
+	pg.base.dorm3d_camera_anim_template[2601] = {
 		anim_time = 0,
 		finish_anim = 2601,
 		pre_anim = 0,
@@ -2451,11 +2126,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.dorm3d_camera_anim_template
-
-	var_1_72[2602] = {
+	pg.base.dorm3d_camera_anim_template[2602] = {
 		anim_time = 7.8666,
 		finish_anim = 2601,
 		pre_anim = 2601,
@@ -2473,11 +2144,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.dorm3d_camera_anim_template
-
-	var_1_73[2603] = {
+	pg.base.dorm3d_camera_anim_template[2603] = {
 		anim_time = 11.5333,
 		finish_anim = 2601,
 		pre_anim = 2601,
@@ -2495,11 +2162,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.dorm3d_camera_anim_template
-
-	var_1_74[2604] = {
+	pg.base.dorm3d_camera_anim_template[2604] = {
 		anim_time = 15.7333,
 		finish_anim = 2601,
 		pre_anim = 2601,
@@ -2517,11 +2180,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.dorm3d_camera_anim_template
-
-	var_1_75[2605] = {
+	pg.base.dorm3d_camera_anim_template[2605] = {
 		anim_time = 4.8333,
 		finish_anim = 2606,
 		pre_anim = 2601,
@@ -2539,11 +2198,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.dorm3d_camera_anim_template
-
-	var_1_76[2606] = {
+	pg.base.dorm3d_camera_anim_template[2606] = {
 		anim_time = 0,
 		finish_anim = 2606,
 		pre_anim = 0,
@@ -2561,11 +2216,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.dorm3d_camera_anim_template
-
-	var_1_77[2607] = {
+	pg.base.dorm3d_camera_anim_template[2607] = {
 		anim_time = 10.3333,
 		finish_anim = 2606,
 		pre_anim = 2606,
@@ -2583,11 +2234,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.dorm3d_camera_anim_template
-
-	var_1_78[3001] = {
+	pg.base.dorm3d_camera_anim_template[3001] = {
 		anim_time = 0,
 		finish_anim = 3001,
 		pre_anim = 0,
@@ -2605,11 +2252,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.dorm3d_camera_anim_template
-
-	var_1_79[3002] = {
+	pg.base.dorm3d_camera_anim_template[3002] = {
 		anim_time = 10.1666666666667,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2627,11 +2270,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.dorm3d_camera_anim_template
-
-	var_1_80[3003] = {
+	pg.base.dorm3d_camera_anim_template[3003] = {
 		anim_time = 6.83333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2649,11 +2288,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.dorm3d_camera_anim_template
-
-	var_1_81[3005] = {
+	pg.base.dorm3d_camera_anim_template[3005] = {
 		anim_time = 6.33333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2671,11 +2306,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.dorm3d_camera_anim_template
-
-	var_1_82[3006] = {
+	pg.base.dorm3d_camera_anim_template[3006] = {
 		anim_time = 6.5,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2693,11 +2324,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.dorm3d_camera_anim_template
-
-	var_1_83[3007] = {
+	pg.base.dorm3d_camera_anim_template[3007] = {
 		anim_time = 7.33333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2715,11 +2342,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.dorm3d_camera_anim_template
-
-	var_1_84[3008] = {
+	pg.base.dorm3d_camera_anim_template[3008] = {
 		anim_time = 5.33333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2737,11 +2360,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.dorm3d_camera_anim_template
-
-	var_1_85[3010] = {
+	pg.base.dorm3d_camera_anim_template[3010] = {
 		anim_time = 4.93333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2759,11 +2378,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.dorm3d_camera_anim_template
-
-	var_1_86[3011] = {
+	pg.base.dorm3d_camera_anim_template[3011] = {
 		anim_time = 6.33333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2781,11 +2396,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.dorm3d_camera_anim_template
-
-	var_1_87[3012] = {
+	pg.base.dorm3d_camera_anim_template[3012] = {
 		anim_time = 5.33333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2803,11 +2414,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.dorm3d_camera_anim_template
-
-	var_1_88[3013] = {
+	pg.base.dorm3d_camera_anim_template[3013] = {
 		anim_time = 5.16666666666667,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2825,11 +2432,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.dorm3d_camera_anim_template
-
-	var_1_89[3014] = {
+	pg.base.dorm3d_camera_anim_template[3014] = {
 		anim_time = 5.16666666666667,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2847,11 +2450,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.dorm3d_camera_anim_template
-
-	var_1_90[3015] = {
+	pg.base.dorm3d_camera_anim_template[3015] = {
 		anim_time = 6.33333333333333,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2869,11 +2468,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.dorm3d_camera_anim_template
-
-	var_1_91[3016] = {
+	pg.base.dorm3d_camera_anim_template[3016] = {
 		anim_time = 4.3,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2891,11 +2486,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.dorm3d_camera_anim_template
-
-	var_1_92[3017] = {
+	pg.base.dorm3d_camera_anim_template[3017] = {
 		anim_time = 4.16666666666667,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2913,11 +2504,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.dorm3d_camera_anim_template
-
-	var_1_93[3018] = {
+	pg.base.dorm3d_camera_anim_template[3018] = {
 		anim_time = 8,
 		finish_anim = 3001,
 		pre_anim = 3001,
@@ -2935,11 +2522,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.dorm3d_camera_anim_template
-
-	var_1_94[3101] = {
+	pg.base.dorm3d_camera_anim_template[3101] = {
 		anim_time = 0,
 		finish_anim = 3101,
 		pre_anim = 0,
@@ -2957,11 +2540,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.dorm3d_camera_anim_template
-
-	var_1_95[3102] = {
+	pg.base.dorm3d_camera_anim_template[3102] = {
 		anim_time = 7,
 		finish_anim = 3101,
 		pre_anim = 3101,
@@ -2979,11 +2558,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.dorm3d_camera_anim_template
-
-	var_1_96[3103] = {
+	pg.base.dorm3d_camera_anim_template[3103] = {
 		anim_time = 7,
 		finish_anim = 3101,
 		pre_anim = 3101,
@@ -3001,11 +2576,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.dorm3d_camera_anim_template
-
-	var_1_97[3104] = {
+	pg.base.dorm3d_camera_anim_template[3104] = {
 		anim_time = 7,
 		finish_anim = 3101,
 		pre_anim = 3101,
@@ -3023,11 +2594,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.dorm3d_camera_anim_template
-
-	var_1_98[3201] = {
+	pg.base.dorm3d_camera_anim_template[3201] = {
 		anim_time = 7,
 		finish_anim = 3201,
 		pre_anim = 0,
@@ -3045,8 +2612,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_1_98
-	var_1_98.base.dorm3d_camera_anim_template[3202] = {
+	pg.base.dorm3d_camera_anim_template[3202] = {
 		anim_time = 7,
 		finish_anim = 3201,
 		pre_anim = 3201,
@@ -3068,11 +2634,7 @@ var_0_4.base.dorm3d_camera_anim_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.dorm3d_camera_anim_template
-
-	var_2_0[3203] = {
+	pg.base.dorm3d_camera_anim_template[3203] = {
 		anim_time = 7,
 		finish_anim = 3201,
 		pre_anim = 3201,
@@ -3090,11 +2652,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.dorm3d_camera_anim_template
-
-	var_2_1[3204] = {
+	pg.base.dorm3d_camera_anim_template[3204] = {
 		anim_time = 7,
 		finish_anim = 3201,
 		pre_anim = 3201,
@@ -3112,11 +2670,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.dorm3d_camera_anim_template
-
-	var_2_2[3301] = {
+	pg.base.dorm3d_camera_anim_template[3301] = {
 		anim_time = 0,
 		finish_anim = 3301,
 		pre_anim = 0,
@@ -3134,11 +2688,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.dorm3d_camera_anim_template
-
-	var_2_3[3302] = {
+	pg.base.dorm3d_camera_anim_template[3302] = {
 		anim_time = 7,
 		finish_anim = 3301,
 		pre_anim = 3301,
@@ -3156,11 +2706,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.dorm3d_camera_anim_template
-
-	var_2_4[3303] = {
+	pg.base.dorm3d_camera_anim_template[3303] = {
 		anim_time = 7,
 		finish_anim = 3301,
 		pre_anim = 3301,
@@ -3178,11 +2724,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.dorm3d_camera_anim_template
-
-	var_2_5[3304] = {
+	pg.base.dorm3d_camera_anim_template[3304] = {
 		anim_time = 7,
 		finish_anim = 3301,
 		pre_anim = 3301,
@@ -3200,11 +2742,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.dorm3d_camera_anim_template
-
-	var_2_6[3401] = {
+	pg.base.dorm3d_camera_anim_template[3401] = {
 		anim_time = 0,
 		finish_anim = 3401,
 		pre_anim = 0,
@@ -3222,11 +2760,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.dorm3d_camera_anim_template
-
-	var_2_7[3402] = {
+	pg.base.dorm3d_camera_anim_template[3402] = {
 		anim_time = 7,
 		finish_anim = 3401,
 		pre_anim = 3401,
@@ -3244,11 +2778,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.dorm3d_camera_anim_template
-
-	var_2_8[3403] = {
+	pg.base.dorm3d_camera_anim_template[3403] = {
 		anim_time = 7,
 		finish_anim = 3403,
 		pre_anim = 0,
@@ -3266,11 +2796,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.dorm3d_camera_anim_template
-
-	var_2_9[3404] = {
+	pg.base.dorm3d_camera_anim_template[3404] = {
 		anim_time = 7,
 		finish_anim = 3403,
 		pre_anim = 3403,
@@ -3288,11 +2814,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.dorm3d_camera_anim_template
-
-	var_2_10[3405] = {
+	pg.base.dorm3d_camera_anim_template[3405] = {
 		anim_time = 7,
 		finish_anim = 3403,
 		pre_anim = 3403,
@@ -3310,11 +2832,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.dorm3d_camera_anim_template
-
-	var_2_11[3501] = {
+	pg.base.dorm3d_camera_anim_template[3501] = {
 		anim_time = 0,
 		finish_anim = 3501,
 		pre_anim = 0,
@@ -3332,11 +2850,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.dorm3d_camera_anim_template
-
-	var_2_12[3502] = {
+	pg.base.dorm3d_camera_anim_template[3502] = {
 		anim_time = 7,
 		finish_anim = 3501,
 		pre_anim = 3501,
@@ -3354,11 +2868,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.dorm3d_camera_anim_template
-
-	var_2_13[3503] = {
+	pg.base.dorm3d_camera_anim_template[3503] = {
 		anim_time = 7,
 		finish_anim = 3501,
 		pre_anim = 3501,
@@ -3376,11 +2886,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.dorm3d_camera_anim_template
-
-	var_2_14[3504] = {
+	pg.base.dorm3d_camera_anim_template[3504] = {
 		anim_time = 0,
 		finish_anim = 3504,
 		pre_anim = 0,
@@ -3398,11 +2904,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.dorm3d_camera_anim_template
-
-	var_2_15[3505] = {
+	pg.base.dorm3d_camera_anim_template[3505] = {
 		anim_time = 7,
 		finish_anim = 3504,
 		pre_anim = 3504,
@@ -3420,11 +2922,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.dorm3d_camera_anim_template
-
-	var_2_16[3601] = {
+	pg.base.dorm3d_camera_anim_template[3601] = {
 		anim_time = 0,
 		finish_anim = 3601,
 		pre_anim = 0,
@@ -3463,11 +2961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.dorm3d_camera_anim_template
-
-	var_2_17[3602] = {
+	pg.base.dorm3d_camera_anim_template[3602] = {
 		anim_time = 15,
 		finish_anim = 3601,
 		pre_anim = 3601,
@@ -3506,11 +3000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.dorm3d_camera_anim_template
-
-	var_2_18[3603] = {
+	pg.base.dorm3d_camera_anim_template[3603] = {
 		anim_time = 0,
 		finish_anim = 3603,
 		pre_anim = 0,
@@ -3533,11 +3023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.dorm3d_camera_anim_template
-
-	var_2_19[3604] = {
+	pg.base.dorm3d_camera_anim_template[3604] = {
 		anim_time = 8.666,
 		finish_anim = 3603,
 		pre_anim = 3603,
@@ -3560,11 +3046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.dorm3d_camera_anim_template
-
-	var_2_20[3605] = {
+	pg.base.dorm3d_camera_anim_template[3605] = {
 		anim_time = 12.5,
 		finish_anim = 3603,
 		pre_anim = 3603,
@@ -3587,11 +3069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.dorm3d_camera_anim_template
-
-	var_2_21[3701] = {
+	pg.base.dorm3d_camera_anim_template[3701] = {
 		anim_time = 2,
 		finish_anim = 3701,
 		pre_anim = 0,
@@ -3626,11 +3104,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.dorm3d_camera_anim_template
-
-	var_2_22[3702] = {
+	pg.base.dorm3d_camera_anim_template[3702] = {
 		anim_time = 13.967,
 		finish_anim = 3701,
 		pre_anim = 3701,
@@ -3665,11 +3139,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.dorm3d_camera_anim_template
-
-	var_2_23[3703] = {
+	pg.base.dorm3d_camera_anim_template[3703] = {
 		anim_time = 22.5,
 		finish_anim = 3701,
 		pre_anim = 3701,
@@ -3704,11 +3174,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.dorm3d_camera_anim_template
-
-	var_2_24[3704] = {
+	pg.base.dorm3d_camera_anim_template[3704] = {
 		anim_time = 2,
 		finish_anim = 3704,
 		pre_anim = 0,
@@ -3743,11 +3209,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.dorm3d_camera_anim_template
-
-	var_2_25[3705] = {
+	pg.base.dorm3d_camera_anim_template[3705] = {
 		anim_time = 18.933,
 		finish_anim = 3704,
 		pre_anim = 3704,
@@ -3782,11 +3244,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.dorm3d_camera_anim_template
-
-	var_2_26[3706] = {
+	pg.base.dorm3d_camera_anim_template[3706] = {
 		anim_time = 20,
 		finish_anim = 3704,
 		pre_anim = 3704,
@@ -3821,11 +3279,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.dorm3d_camera_anim_template
-
-	var_2_27[3707] = {
+	pg.base.dorm3d_camera_anim_template[3707] = {
 		anim_time = 2,
 		finish_anim = 3707,
 		pre_anim = 0,
@@ -3860,11 +3314,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.dorm3d_camera_anim_template
-
-	var_2_28[3708] = {
+	pg.base.dorm3d_camera_anim_template[3708] = {
 		anim_time = 18.667,
 		finish_anim = 3707,
 		pre_anim = 3707,
@@ -3899,11 +3349,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.dorm3d_camera_anim_template
-
-	var_2_29[3709] = {
+	pg.base.dorm3d_camera_anim_template[3709] = {
 		anim_time = 19.167,
 		finish_anim = 3707,
 		pre_anim = 3707,
@@ -3938,11 +3384,7 @@ end)()
 			"fbx/no_bake/pre_db_anchoragehostel01_lamp01_night"
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.dorm3d_camera_anim_template
-
-	var_2_30[4001] = {
+	pg.base.dorm3d_camera_anim_template[4001] = {
 		anim_time = 0,
 		finish_anim = 4001,
 		pre_anim = 0,
@@ -3960,11 +3402,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.dorm3d_camera_anim_template
-
-	var_2_31[4002] = {
+	pg.base.dorm3d_camera_anim_template[4002] = {
 		anim_time = 9,
 		finish_anim = 4001,
 		pre_anim = 4001,
@@ -3982,11 +3420,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.dorm3d_camera_anim_template
-
-	var_2_32[4003] = {
+	pg.base.dorm3d_camera_anim_template[4003] = {
 		anim_time = 5.7,
 		finish_anim = 4001,
 		pre_anim = 4001,
@@ -4004,11 +3438,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.dorm3d_camera_anim_template
-
-	var_2_33[4004] = {
+	pg.base.dorm3d_camera_anim_template[4004] = {
 		anim_time = 6.5,
 		finish_anim = 4001,
 		pre_anim = 4001,
@@ -4026,11 +3456,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.dorm3d_camera_anim_template
-
-	var_2_34[4005] = {
+	pg.base.dorm3d_camera_anim_template[4005] = {
 		anim_time = 6.333,
 		finish_anim = 4001,
 		pre_anim = 4001,
@@ -4048,11 +3474,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.dorm3d_camera_anim_template
-
-	var_2_35[4201] = {
+	pg.base.dorm3d_camera_anim_template[4201] = {
 		anim_time = 0,
 		finish_anim = 4201,
 		pre_anim = 0,
@@ -4070,11 +3492,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.dorm3d_camera_anim_template
-
-	var_2_36[4202] = {
+	pg.base.dorm3d_camera_anim_template[4202] = {
 		anim_time = 5.333,
 		finish_anim = 4201,
 		pre_anim = 4201,
@@ -4092,11 +3510,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.dorm3d_camera_anim_template
-
-	var_2_37[4203] = {
+	pg.base.dorm3d_camera_anim_template[4203] = {
 		anim_time = 7.333,
 		finish_anim = 4201,
 		pre_anim = 4201,
@@ -4114,11 +3528,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.dorm3d_camera_anim_template
-
-	var_2_38[4204] = {
+	pg.base.dorm3d_camera_anim_template[4204] = {
 		anim_time = 2,
 		finish_anim = 4201,
 		pre_anim = 4201,
@@ -4136,11 +3546,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.dorm3d_camera_anim_template
-
-	var_2_39[4205] = {
+	pg.base.dorm3d_camera_anim_template[4205] = {
 		anim_time = 4.333,
 		finish_anim = 4201,
 		pre_anim = 4201,
@@ -4158,11 +3564,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.dorm3d_camera_anim_template
-
-	var_2_40[4301] = {
+	pg.base.dorm3d_camera_anim_template[4301] = {
 		anim_time = 0,
 		finish_anim = 4301,
 		pre_anim = 0,
@@ -4180,11 +3582,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.dorm3d_camera_anim_template
-
-	var_2_41[4302] = {
+	pg.base.dorm3d_camera_anim_template[4302] = {
 		anim_time = 0,
 		finish_anim = 4302,
 		pre_anim = 0,
@@ -4202,11 +3600,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.dorm3d_camera_anim_template
-
-	var_2_42[4303] = {
+	pg.base.dorm3d_camera_anim_template[4303] = {
 		anim_time = 0,
 		finish_anim = 4303,
 		pre_anim = 0,
@@ -4224,11 +3618,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.dorm3d_camera_anim_template
-
-	var_2_43[4304] = {
+	pg.base.dorm3d_camera_anim_template[4304] = {
 		anim_time = 0,
 		finish_anim = 4304,
 		pre_anim = 0,
@@ -4246,11 +3636,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.dorm3d_camera_anim_template
-
-	var_2_44[4401] = {
+	pg.base.dorm3d_camera_anim_template[4401] = {
 		anim_time = 0,
 		finish_anim = 4401,
 		pre_anim = 0,
@@ -4268,11 +3654,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.dorm3d_camera_anim_template
-
-	var_2_45[4402] = {
+	pg.base.dorm3d_camera_anim_template[4402] = {
 		anim_time = 7,
 		finish_anim = 4401,
 		pre_anim = 4401,
@@ -4290,11 +3672,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.dorm3d_camera_anim_template
-
-	var_2_46[4403] = {
+	pg.base.dorm3d_camera_anim_template[4403] = {
 		anim_time = 7,
 		finish_anim = 4401,
 		pre_anim = 4401,
@@ -4312,11 +3690,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.dorm3d_camera_anim_template
-
-	var_2_47[4404] = {
+	pg.base.dorm3d_camera_anim_template[4404] = {
 		anim_time = 7,
 		finish_anim = 4401,
 		pre_anim = 4401,
@@ -4334,11 +3708,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.dorm3d_camera_anim_template
-
-	var_2_48[4405] = {
+	pg.base.dorm3d_camera_anim_template[4405] = {
 		anim_time = 7,
 		finish_anim = 4401,
 		pre_anim = 4401,
@@ -4356,11 +3726,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.dorm3d_camera_anim_template
-
-	var_2_49[11001] = {
+	pg.base.dorm3d_camera_anim_template[11001] = {
 		anim_time = 0,
 		finish_anim = 11001,
 		pre_anim = 0,
@@ -4378,11 +3744,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.dorm3d_camera_anim_template
-
-	var_2_50[11002] = {
+	pg.base.dorm3d_camera_anim_template[11002] = {
 		anim_time = 5,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4400,11 +3762,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.dorm3d_camera_anim_template
-
-	var_2_51[11003] = {
+	pg.base.dorm3d_camera_anim_template[11003] = {
 		anim_time = 5,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4422,11 +3780,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.dorm3d_camera_anim_template
-
-	var_2_52[11004] = {
+	pg.base.dorm3d_camera_anim_template[11004] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4444,11 +3798,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.dorm3d_camera_anim_template
-
-	var_2_53[11005] = {
+	pg.base.dorm3d_camera_anim_template[11005] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4466,11 +3816,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.dorm3d_camera_anim_template
-
-	var_2_54[11006] = {
+	pg.base.dorm3d_camera_anim_template[11006] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4488,11 +3834,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.dorm3d_camera_anim_template
-
-	var_2_55[11007] = {
+	pg.base.dorm3d_camera_anim_template[11007] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4510,11 +3852,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.dorm3d_camera_anim_template
-
-	var_2_56[11008] = {
+	pg.base.dorm3d_camera_anim_template[11008] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4532,11 +3870,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.dorm3d_camera_anim_template
-
-	var_2_57[11009] = {
+	pg.base.dorm3d_camera_anim_template[11009] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4554,11 +3888,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.dorm3d_camera_anim_template
-
-	var_2_58[11010] = {
+	pg.base.dorm3d_camera_anim_template[11010] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4576,11 +3906,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.dorm3d_camera_anim_template
-
-	var_2_59[11011] = {
+	pg.base.dorm3d_camera_anim_template[11011] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4598,11 +3924,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.dorm3d_camera_anim_template
-
-	var_2_60[11012] = {
+	pg.base.dorm3d_camera_anim_template[11012] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4620,11 +3942,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.dorm3d_camera_anim_template
-
-	var_2_61[11013] = {
+	pg.base.dorm3d_camera_anim_template[11013] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4642,11 +3960,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.dorm3d_camera_anim_template
-
-	var_2_62[11014] = {
+	pg.base.dorm3d_camera_anim_template[11014] = {
 		anim_time = 7,
 		finish_anim = 11001,
 		pre_anim = 11001,
@@ -4664,11 +3978,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.dorm3d_camera_anim_template
-
-	var_2_63[11101] = {
+	pg.base.dorm3d_camera_anim_template[11101] = {
 		anim_time = 5,
 		finish_anim = 11101,
 		pre_anim = 0,
@@ -4686,11 +3996,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.dorm3d_camera_anim_template
-
-	var_2_64[11102] = {
+	pg.base.dorm3d_camera_anim_template[11102] = {
 		anim_time = 5,
 		finish_anim = 11101,
 		pre_anim = 11101,
@@ -4708,11 +4014,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.dorm3d_camera_anim_template
-
-	var_2_65[11103] = {
+	pg.base.dorm3d_camera_anim_template[11103] = {
 		anim_time = 5,
 		finish_anim = 11101,
 		pre_anim = 11101,
@@ -4730,11 +4032,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.dorm3d_camera_anim_template
-
-	var_2_66[11104] = {
+	pg.base.dorm3d_camera_anim_template[11104] = {
 		anim_time = 5,
 		finish_anim = 11101,
 		pre_anim = 11101,
@@ -4752,11 +4050,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.dorm3d_camera_anim_template
-
-	var_2_67[11201] = {
+	pg.base.dorm3d_camera_anim_template[11201] = {
 		anim_time = 5,
 		finish_anim = 11201,
 		pre_anim = 0,
@@ -4774,11 +4068,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.dorm3d_camera_anim_template
-
-	var_2_68[11202] = {
+	pg.base.dorm3d_camera_anim_template[11202] = {
 		anim_time = 5,
 		finish_anim = 11201,
 		pre_anim = 11201,
@@ -4796,11 +4086,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.dorm3d_camera_anim_template
-
-	var_2_69[11203] = {
+	pg.base.dorm3d_camera_anim_template[11203] = {
 		anim_time = 5,
 		finish_anim = 11201,
 		pre_anim = 11201,
@@ -4818,11 +4104,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.dorm3d_camera_anim_template
-
-	var_2_70[11204] = {
+	pg.base.dorm3d_camera_anim_template[11204] = {
 		anim_time = 5,
 		finish_anim = 11201,
 		pre_anim = 11201,
@@ -4840,11 +4122,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.dorm3d_camera_anim_template
-
-	var_2_71[11301] = {
+	pg.base.dorm3d_camera_anim_template[11301] = {
 		anim_time = 5,
 		finish_anim = 11301,
 		pre_anim = 0,
@@ -4862,11 +4140,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.dorm3d_camera_anim_template
-
-	var_2_72[11302] = {
+	pg.base.dorm3d_camera_anim_template[11302] = {
 		anim_time = 5,
 		finish_anim = 11301,
 		pre_anim = 11301,
@@ -4884,11 +4158,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.dorm3d_camera_anim_template
-
-	var_2_73[11303] = {
+	pg.base.dorm3d_camera_anim_template[11303] = {
 		anim_time = 5,
 		finish_anim = 11301,
 		pre_anim = 11301,
@@ -4906,11 +4176,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.dorm3d_camera_anim_template
-
-	var_2_74[11304] = {
+	pg.base.dorm3d_camera_anim_template[11304] = {
 		anim_time = 5,
 		finish_anim = 11301,
 		pre_anim = 11301,
@@ -4928,11 +4194,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.dorm3d_camera_anim_template
-
-	var_2_75[11401] = {
+	pg.base.dorm3d_camera_anim_template[11401] = {
 		anim_time = 5,
 		finish_anim = 11401,
 		pre_anim = 0,
@@ -4950,11 +4212,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.dorm3d_camera_anim_template
-
-	var_2_76[11402] = {
+	pg.base.dorm3d_camera_anim_template[11402] = {
 		anim_time = 5,
 		finish_anim = 11401,
 		pre_anim = 11401,
@@ -4972,11 +4230,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.dorm3d_camera_anim_template
-
-	var_2_77[11403] = {
+	pg.base.dorm3d_camera_anim_template[11403] = {
 		anim_time = 5,
 		finish_anim = 11401,
 		pre_anim = 11401,
@@ -4994,11 +4248,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.dorm3d_camera_anim_template
-
-	var_2_78[11404] = {
+	pg.base.dorm3d_camera_anim_template[11404] = {
 		anim_time = 5,
 		finish_anim = 11401,
 		pre_anim = 11401,
@@ -5016,11 +4266,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.dorm3d_camera_anim_template
-
-	var_2_79[11405] = {
+	pg.base.dorm3d_camera_anim_template[11405] = {
 		anim_time = 5,
 		finish_anim = 11405,
 		pre_anim = 0,
@@ -5038,11 +4284,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.dorm3d_camera_anim_template
-
-	var_2_80[11406] = {
+	pg.base.dorm3d_camera_anim_template[11406] = {
 		anim_time = 5,
 		finish_anim = 11405,
 		pre_anim = 11405,
@@ -5060,11 +4302,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.dorm3d_camera_anim_template
-
-	var_2_81[11407] = {
+	pg.base.dorm3d_camera_anim_template[11407] = {
 		anim_time = 5,
 		finish_anim = 11405,
 		pre_anim = 11405,
@@ -5082,11 +4320,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.dorm3d_camera_anim_template
-
-	var_2_82[11408] = {
+	pg.base.dorm3d_camera_anim_template[11408] = {
 		anim_time = 5,
 		finish_anim = 11405,
 		pre_anim = 11405,
@@ -5104,11 +4338,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.dorm3d_camera_anim_template
-
-	var_2_83[11501] = {
+	pg.base.dorm3d_camera_anim_template[11501] = {
 		anim_time = 0,
 		finish_anim = 11501,
 		pre_anim = 0,
@@ -5126,11 +4356,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.dorm3d_camera_anim_template
-
-	var_2_84[11502] = {
+	pg.base.dorm3d_camera_anim_template[11502] = {
 		anim_time = 8.0333,
 		finish_anim = 11501,
 		pre_anim = 11501,
@@ -5148,11 +4374,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.dorm3d_camera_anim_template
-
-	var_2_85[11503] = {
+	pg.base.dorm3d_camera_anim_template[11503] = {
 		anim_time = 4.5,
 		finish_anim = 11501,
 		pre_anim = 11501,
@@ -5170,11 +4392,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.dorm3d_camera_anim_template
-
-	var_2_86[11504] = {
+	pg.base.dorm3d_camera_anim_template[11504] = {
 		anim_time = 9.3,
 		finish_anim = 11501,
 		pre_anim = 11501,
@@ -5192,11 +4410,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.dorm3d_camera_anim_template
-
-	var_2_87[11505] = {
+	pg.base.dorm3d_camera_anim_template[11505] = {
 		anim_time = 0,
 		finish_anim = 11505,
 		pre_anim = 0,
@@ -5214,11 +4428,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.dorm3d_camera_anim_template
-
-	var_2_88[11506] = {
+	pg.base.dorm3d_camera_anim_template[11506] = {
 		anim_time = 14.0666,
 		finish_anim = 11505,
 		pre_anim = 11505,
@@ -5236,11 +4446,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.dorm3d_camera_anim_template
-
-	var_2_89[11507] = {
+	pg.base.dorm3d_camera_anim_template[11507] = {
 		anim_time = 16,
 		finish_anim = 11505,
 		pre_anim = 11505,
@@ -5258,11 +4464,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.dorm3d_camera_anim_template
-
-	var_2_90[11508] = {
+	pg.base.dorm3d_camera_anim_template[11508] = {
 		anim_time = 0,
 		finish_anim = 11508,
 		pre_anim = 0,
@@ -5280,11 +4482,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.dorm3d_camera_anim_template
-
-	var_2_91[11509] = {
+	pg.base.dorm3d_camera_anim_template[11509] = {
 		anim_time = 12,
 		finish_anim = 11508,
 		pre_anim = 11508,
@@ -5302,11 +4500,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.dorm3d_camera_anim_template
-
-	var_2_92[11510] = {
+	pg.base.dorm3d_camera_anim_template[11510] = {
 		anim_time = 17.1666,
 		finish_anim = 11508,
 		pre_anim = 11508,
@@ -5324,11 +4518,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.dorm3d_camera_anim_template
-
-	var_2_93[11701] = {
+	pg.base.dorm3d_camera_anim_template[11701] = {
 		anim_time = 2,
 		finish_anim = 11701,
 		pre_anim = 0,
@@ -5351,11 +4541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.dorm3d_camera_anim_template
-
-	var_2_94[11702] = {
+	pg.base.dorm3d_camera_anim_template[11702] = {
 		anim_time = 16.767,
 		finish_anim = 11701,
 		pre_anim = 11701,
@@ -5378,11 +4564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.dorm3d_camera_anim_template
-
-	var_2_95[11703] = {
+	pg.base.dorm3d_camera_anim_template[11703] = {
 		anim_time = 15.667,
 		finish_anim = 11701,
 		pre_anim = 11701,
@@ -5405,11 +4587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.dorm3d_camera_anim_template
-
-	var_2_96[11704] = {
+	pg.base.dorm3d_camera_anim_template[11704] = {
 		anim_time = 2,
 		finish_anim = 11704,
 		pre_anim = 0,
@@ -5432,11 +4610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.dorm3d_camera_anim_template
-
-	var_2_97[11705] = {
+	pg.base.dorm3d_camera_anim_template[11705] = {
 		anim_time = 15.333,
 		finish_anim = 11704,
 		pre_anim = 11704,
@@ -5459,11 +4633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.dorm3d_camera_anim_template
-
-	var_2_98[11706] = {
+	pg.base.dorm3d_camera_anim_template[11706] = {
 		anim_time = 14.333,
 		finish_anim = 11704,
 		pre_anim = 11704,
@@ -5486,8 +4656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.dorm3d_camera_anim_template[11707] = {
+	pg.base.dorm3d_camera_anim_template[11707] = {
 		anim_time = 14.667,
 		finish_anim = 11704,
 		pre_anim = 11704,
@@ -5514,11 +4683,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.dorm3d_camera_anim_template
-
-	var_3_0[12001] = {
+	pg.base.dorm3d_camera_anim_template[12001] = {
 		anim_time = 0,
 		finish_anim = 12001,
 		pre_anim = 0,
@@ -5536,11 +4701,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.dorm3d_camera_anim_template
-
-	var_3_1[12002] = {
+	pg.base.dorm3d_camera_anim_template[12002] = {
 		anim_time = 2.3,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5558,11 +4719,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.dorm3d_camera_anim_template
-
-	var_3_2[12003] = {
+	pg.base.dorm3d_camera_anim_template[12003] = {
 		anim_time = 2.4,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5580,11 +4737,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.dorm3d_camera_anim_template
-
-	var_3_3[12004] = {
+	pg.base.dorm3d_camera_anim_template[12004] = {
 		anim_time = 6.1,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5602,11 +4755,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.dorm3d_camera_anim_template
-
-	var_3_4[12005] = {
+	pg.base.dorm3d_camera_anim_template[12005] = {
 		anim_time = 7.334,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5624,11 +4773,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.dorm3d_camera_anim_template
-
-	var_3_5[12006] = {
+	pg.base.dorm3d_camera_anim_template[12006] = {
 		anim_time = 26.6,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5646,11 +4791,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.dorm3d_camera_anim_template
-
-	var_3_6[12007] = {
+	pg.base.dorm3d_camera_anim_template[12007] = {
 		anim_time = 5.6,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5668,11 +4809,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.dorm3d_camera_anim_template
-
-	var_3_7[12008] = {
+	pg.base.dorm3d_camera_anim_template[12008] = {
 		anim_time = 9.1666,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5690,11 +4827,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.dorm3d_camera_anim_template
-
-	var_3_8[12009] = {
+	pg.base.dorm3d_camera_anim_template[12009] = {
 		anim_time = 7.567,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5712,11 +4845,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.dorm3d_camera_anim_template
-
-	var_3_9[12010] = {
+	pg.base.dorm3d_camera_anim_template[12010] = {
 		anim_time = 7.667,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5734,11 +4863,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.dorm3d_camera_anim_template
-
-	var_3_10[12011] = {
+	pg.base.dorm3d_camera_anim_template[12011] = {
 		anim_time = 5.0666,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5756,11 +4881,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.dorm3d_camera_anim_template
-
-	var_3_11[12012] = {
+	pg.base.dorm3d_camera_anim_template[12012] = {
 		anim_time = 7.933,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5778,11 +4899,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.dorm3d_camera_anim_template
-
-	var_3_12[12013] = {
+	pg.base.dorm3d_camera_anim_template[12013] = {
 		anim_time = 5.266,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5800,11 +4917,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.dorm3d_camera_anim_template
-
-	var_3_13[12014] = {
+	pg.base.dorm3d_camera_anim_template[12014] = {
 		anim_time = 5.2,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5822,11 +4935,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.dorm3d_camera_anim_template
-
-	var_3_14[12015] = {
+	pg.base.dorm3d_camera_anim_template[12015] = {
 		anim_time = 4.1667,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5844,11 +4953,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.dorm3d_camera_anim_template
-
-	var_3_15[12016] = {
+	pg.base.dorm3d_camera_anim_template[12016] = {
 		anim_time = 5.667,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5866,11 +4971,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.dorm3d_camera_anim_template
-
-	var_3_16[12017] = {
+	pg.base.dorm3d_camera_anim_template[12017] = {
 		anim_time = 5.167,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5888,11 +4989,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.dorm3d_camera_anim_template
-
-	var_3_17[12018] = {
+	pg.base.dorm3d_camera_anim_template[12018] = {
 		anim_time = 5.767,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5910,11 +5007,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.dorm3d_camera_anim_template
-
-	var_3_18[12019] = {
+	pg.base.dorm3d_camera_anim_template[12019] = {
 		anim_time = 5,
 		finish_anim = 12001,
 		pre_anim = 12001,
@@ -5932,11 +5025,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.dorm3d_camera_anim_template
-
-	var_3_19[12101] = {
+	pg.base.dorm3d_camera_anim_template[12101] = {
 		anim_time = 0,
 		finish_anim = 12101,
 		pre_anim = 0,
@@ -5954,11 +5043,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.dorm3d_camera_anim_template
-
-	var_3_20[12102] = {
+	pg.base.dorm3d_camera_anim_template[12102] = {
 		anim_time = 8.933,
 		finish_anim = 12101,
 		pre_anim = 12101,
@@ -5976,11 +5061,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.dorm3d_camera_anim_template
-
-	var_3_21[12103] = {
+	pg.base.dorm3d_camera_anim_template[12103] = {
 		anim_time = 8.533,
 		finish_anim = 12101,
 		pre_anim = 12101,
@@ -5998,11 +5079,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.dorm3d_camera_anim_template
-
-	var_3_22[12104] = {
+	pg.base.dorm3d_camera_anim_template[12104] = {
 		anim_time = 13.067,
 		finish_anim = 12101,
 		pre_anim = 12101,
@@ -6020,11 +5097,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.dorm3d_camera_anim_template
-
-	var_3_23[12201] = {
+	pg.base.dorm3d_camera_anim_template[12201] = {
 		anim_time = 0,
 		finish_anim = 12201,
 		pre_anim = 0,
@@ -6058,11 +5131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.dorm3d_camera_anim_template
-
-	var_3_24[12202] = {
+	pg.base.dorm3d_camera_anim_template[12202] = {
 		anim_time = 13.333,
 		finish_anim = 12201,
 		pre_anim = 12201,
@@ -6096,11 +5165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.dorm3d_camera_anim_template
-
-	var_3_25[12203] = {
+	pg.base.dorm3d_camera_anim_template[12203] = {
 		anim_time = 12.633,
 		finish_anim = 12201,
 		pre_anim = 12201,
@@ -6118,11 +5183,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.dorm3d_camera_anim_template
-
-	var_3_26[12204] = {
+	pg.base.dorm3d_camera_anim_template[12204] = {
 		anim_time = 9,
 		finish_anim = 12201,
 		pre_anim = 12201,
@@ -6140,11 +5201,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.dorm3d_camera_anim_template
-
-	var_3_27[12301] = {
+	pg.base.dorm3d_camera_anim_template[12301] = {
 		anim_time = 0,
 		finish_anim = 12301,
 		pre_anim = 0,
@@ -6167,11 +5224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.dorm3d_camera_anim_template
-
-	var_3_28[12302] = {
+	pg.base.dorm3d_camera_anim_template[12302] = {
 		anim_time = 19.567,
 		finish_anim = 12301,
 		pre_anim = 12301,
@@ -6194,11 +5247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.dorm3d_camera_anim_template
-
-	var_3_29[12303] = {
+	pg.base.dorm3d_camera_anim_template[12303] = {
 		anim_time = 14.7,
 		finish_anim = 12301,
 		pre_anim = 12301,
@@ -6221,11 +5270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.dorm3d_camera_anim_template
-
-	var_3_30[12304] = {
+	pg.base.dorm3d_camera_anim_template[12304] = {
 		anim_time = 12.5,
 		finish_anim = 12301,
 		pre_anim = 12301,
@@ -6248,11 +5293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.dorm3d_camera_anim_template
-
-	var_3_31[12401] = {
+	pg.base.dorm3d_camera_anim_template[12401] = {
 		anim_time = 0,
 		finish_anim = 12401,
 		pre_anim = 0,
@@ -6286,11 +5327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.dorm3d_camera_anim_template
-
-	var_3_32[12402] = {
+	pg.base.dorm3d_camera_anim_template[12402] = {
 		anim_time = 11.267,
 		finish_anim = 12401,
 		pre_anim = 12401,
@@ -6324,11 +5361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.dorm3d_camera_anim_template
-
-	var_3_33[12403] = {
+	pg.base.dorm3d_camera_anim_template[12403] = {
 		anim_time = 16.667,
 		finish_anim = 12401,
 		pre_anim = 12401,
@@ -6346,11 +5379,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.dorm3d_camera_anim_template
-
-	var_3_34[12404] = {
+	pg.base.dorm3d_camera_anim_template[12404] = {
 		anim_time = 11.433,
 		finish_anim = 12401,
 		pre_anim = 12401,
@@ -6368,11 +5397,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.dorm3d_camera_anim_template
-
-	var_3_35[12405] = {
+	pg.base.dorm3d_camera_anim_template[12405] = {
 		anim_time = 0,
 		finish_anim = 12405,
 		pre_anim = 0,
@@ -6390,11 +5415,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.dorm3d_camera_anim_template
-
-	var_3_36[12406] = {
+	pg.base.dorm3d_camera_anim_template[12406] = {
 		anim_time = 10,
 		finish_anim = 12405,
 		pre_anim = 12405,
@@ -6412,11 +5433,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.dorm3d_camera_anim_template
-
-	var_3_37[12407] = {
+	pg.base.dorm3d_camera_anim_template[12407] = {
 		anim_time = 15.633,
 		finish_anim = 12405,
 		pre_anim = 12405,
@@ -6434,11 +5451,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.dorm3d_camera_anim_template
-
-	var_3_38[11601] = {
+	pg.base.dorm3d_camera_anim_template[11601] = {
 		anim_time = 0,
 		finish_anim = 11501,
 		pre_anim = 0,
@@ -6456,11 +5469,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.dorm3d_camera_anim_template
-
-	var_3_39[11602] = {
+	pg.base.dorm3d_camera_anim_template[11602] = {
 		anim_time = 16.3,
 		finish_anim = 11601,
 		pre_anim = 11601,
@@ -6478,11 +5487,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.dorm3d_camera_anim_template
-
-	var_3_40[11603] = {
+	pg.base.dorm3d_camera_anim_template[11603] = {
 		anim_time = 13.2,
 		finish_anim = 11601,
 		pre_anim = 11601,
@@ -6500,11 +5505,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.dorm3d_camera_anim_template
-
-	var_3_41[11604] = {
+	pg.base.dorm3d_camera_anim_template[11604] = {
 		anim_time = 9,
 		finish_anim = 11601,
 		pre_anim = 11601,
@@ -6522,11 +5523,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.dorm3d_camera_anim_template
-
-	var_3_42[11605] = {
+	pg.base.dorm3d_camera_anim_template[11605] = {
 		anim_time = 0,
 		finish_anim = 11605,
 		pre_anim = 0,
@@ -6544,11 +5541,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.dorm3d_camera_anim_template
-
-	var_3_43[11606] = {
+	pg.base.dorm3d_camera_anim_template[11606] = {
 		anim_time = 17.367,
 		finish_anim = 11605,
 		pre_anim = 11605,
@@ -6566,11 +5559,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.dorm3d_camera_anim_template
-
-	var_3_44[11607] = {
+	pg.base.dorm3d_camera_anim_template[11607] = {
 		anim_time = 0,
 		finish_anim = 11607,
 		pre_anim = 0,
@@ -6588,11 +5577,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.dorm3d_camera_anim_template
-
-	var_3_45[11608] = {
+	pg.base.dorm3d_camera_anim_template[11608] = {
 		anim_time = 14.7,
 		finish_anim = 11607,
 		pre_anim = 11607,
@@ -6610,11 +5595,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.dorm3d_camera_anim_template
-
-	var_3_46[12501] = {
+	pg.base.dorm3d_camera_anim_template[12501] = {
 		anim_time = 0,
 		finish_anim = 12501,
 		pre_anim = 0,
@@ -6650,11 +5631,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.dorm3d_camera_anim_template
-
-	var_3_47[12502] = {
+	pg.base.dorm3d_camera_anim_template[12502] = {
 		anim_time = 23.667,
 		finish_anim = 12501,
 		pre_anim = 12501,
@@ -6690,11 +5667,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.dorm3d_camera_anim_template
-
-	var_3_48[12503] = {
+	pg.base.dorm3d_camera_anim_template[12503] = {
 		anim_time = 17.7,
 		finish_anim = 12501,
 		pre_anim = 12501,
@@ -6730,11 +5703,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.dorm3d_camera_anim_template
-
-	var_3_49[12504] = {
+	pg.base.dorm3d_camera_anim_template[12504] = {
 		anim_time = 0,
 		finish_anim = 12504,
 		pre_anim = 0,
@@ -6770,11 +5739,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.dorm3d_camera_anim_template
-
-	var_3_50[12505] = {
+	pg.base.dorm3d_camera_anim_template[12505] = {
 		anim_time = 12.7,
 		finish_anim = 12504,
 		pre_anim = 12504,
@@ -6810,11 +5775,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.dorm3d_camera_anim_template
-
-	var_3_51[12506] = {
+	pg.base.dorm3d_camera_anim_template[12506] = {
 		anim_time = 12.9,
 		finish_anim = 12504,
 		pre_anim = 12504,
@@ -6850,11 +5811,7 @@ end)()
 			"no_bake_pay_prop/livingroom/pre_db_df_livingroom01_0"
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.dorm3d_camera_anim_template
-
-	var_3_52[12507] = {
+	pg.base.dorm3d_camera_anim_template[12507] = {
 		anim_time = 0,
 		finish_anim = 12507,
 		pre_anim = 0,
@@ -6890,11 +5847,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.dorm3d_camera_anim_template
-
-	var_3_53[12508] = {
+	pg.base.dorm3d_camera_anim_template[12508] = {
 		anim_time = 9.133,
 		finish_anim = 12507,
 		pre_anim = 12507,
@@ -6930,11 +5883,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.dorm3d_camera_anim_template
-
-	var_3_54[12509] = {
+	pg.base.dorm3d_camera_anim_template[12509] = {
 		anim_time = 11.1,
 		finish_anim = 12507,
 		pre_anim = 12507,
@@ -6970,11 +5919,7 @@ end)()
 			"FurnitureSlots/1120304/pre_db_df_tedian01(Clone)/pre_db_df_chair01/fbx_db_df_chair01"
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.dorm3d_camera_anim_template
-
-	var_3_55[12601] = {
+	pg.base.dorm3d_camera_anim_template[12601] = {
 		anim_time = 2,
 		finish_anim = 12601,
 		pre_anim = 0,
@@ -6997,11 +5942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.dorm3d_camera_anim_template
-
-	var_3_56[12602] = {
+	pg.base.dorm3d_camera_anim_template[12602] = {
 		anim_time = 14.8,
 		finish_anim = 12601,
 		pre_anim = 12601,
@@ -7024,11 +5965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.dorm3d_camera_anim_template
-
-	var_3_57[12603] = {
+	pg.base.dorm3d_camera_anim_template[12603] = {
 		anim_time = 14.133,
 		finish_anim = 12601,
 		pre_anim = 12601,
@@ -7051,11 +5988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.dorm3d_camera_anim_template
-
-	var_3_58[12604] = {
+	pg.base.dorm3d_camera_anim_template[12604] = {
 		anim_time = 13.5,
 		finish_anim = 12601,
 		pre_anim = 12601,
@@ -7078,11 +6011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.dorm3d_camera_anim_template
-
-	var_3_59[12605] = {
+	pg.base.dorm3d_camera_anim_template[12605] = {
 		anim_time = 2,
 		finish_anim = 12605,
 		pre_anim = 0,
@@ -7105,11 +6034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.dorm3d_camera_anim_template
-
-	var_3_60[12606] = {
+	pg.base.dorm3d_camera_anim_template[12606] = {
 		anim_time = 11.867,
 		finish_anim = 12605,
 		pre_anim = 12605,
@@ -7132,11 +6057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.dorm3d_camera_anim_template
-
-	var_3_61[12607] = {
+	pg.base.dorm3d_camera_anim_template[12607] = {
 		anim_time = 10.033,
 		finish_anim = 12605,
 		pre_anim = 12605,
@@ -7159,11 +6080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.dorm3d_camera_anim_template
-
-	var_3_62[14001] = {
+	pg.base.dorm3d_camera_anim_template[14001] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7181,11 +6098,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.dorm3d_camera_anim_template
-
-	var_3_63[14002] = {
+	pg.base.dorm3d_camera_anim_template[14002] = {
 		anim_time = 4,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7203,11 +6116,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.dorm3d_camera_anim_template
-
-	var_3_64[14003] = {
+	pg.base.dorm3d_camera_anim_template[14003] = {
 		anim_time = 6,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7225,11 +6134,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.dorm3d_camera_anim_template
-
-	var_3_65[14004] = {
+	pg.base.dorm3d_camera_anim_template[14004] = {
 		anim_time = 12.133,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7247,11 +6152,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.dorm3d_camera_anim_template
-
-	var_3_66[14005] = {
+	pg.base.dorm3d_camera_anim_template[14005] = {
 		anim_time = 10,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7269,11 +6170,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.dorm3d_camera_anim_template
-
-	var_3_67[14006] = {
+	pg.base.dorm3d_camera_anim_template[14006] = {
 		anim_time = 6.733,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7291,11 +6188,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.dorm3d_camera_anim_template
-
-	var_3_68[14007] = {
+	pg.base.dorm3d_camera_anim_template[14007] = {
 		anim_time = 5.833,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7313,11 +6206,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.dorm3d_camera_anim_template
-
-	var_3_69[14008] = {
+	pg.base.dorm3d_camera_anim_template[14008] = {
 		anim_time = 8.4,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7335,11 +6224,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.dorm3d_camera_anim_template
-
-	var_3_70[14009] = {
+	pg.base.dorm3d_camera_anim_template[14009] = {
 		anim_time = 8.667,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7357,11 +6242,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.dorm3d_camera_anim_template
-
-	var_3_71[14010] = {
+	pg.base.dorm3d_camera_anim_template[14010] = {
 		anim_time = 8.833,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7379,11 +6260,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.dorm3d_camera_anim_template
-
-	var_3_72[14011] = {
+	pg.base.dorm3d_camera_anim_template[14011] = {
 		anim_time = 6.833,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7401,11 +6278,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.dorm3d_camera_anim_template
-
-	var_3_73[14012] = {
+	pg.base.dorm3d_camera_anim_template[14012] = {
 		anim_time = 10.033,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7423,11 +6296,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.dorm3d_camera_anim_template
-
-	var_3_74[14013] = {
+	pg.base.dorm3d_camera_anim_template[14013] = {
 		anim_time = 8.767,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7445,11 +6314,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.dorm3d_camera_anim_template
-
-	var_3_75[14014] = {
+	pg.base.dorm3d_camera_anim_template[14014] = {
 		anim_time = 6.23,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7467,11 +6332,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.dorm3d_camera_anim_template
-
-	var_3_76[14015] = {
+	pg.base.dorm3d_camera_anim_template[14015] = {
 		anim_time = 8.333,
 		finish_anim = 14001,
 		pre_anim = 14001,
@@ -7489,11 +6350,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.dorm3d_camera_anim_template
-
-	var_3_77[14101] = {
+	pg.base.dorm3d_camera_anim_template[14101] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7511,11 +6368,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.dorm3d_camera_anim_template
-
-	var_3_78[14102] = {
+	pg.base.dorm3d_camera_anim_template[14102] = {
 		anim_time = 16,
 		finish_anim = 14101,
 		pre_anim = 14101,
@@ -7533,11 +6386,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.dorm3d_camera_anim_template
-
-	var_3_79[14103] = {
+	pg.base.dorm3d_camera_anim_template[14103] = {
 		anim_time = 16.33,
 		finish_anim = 14101,
 		pre_anim = 14101,
@@ -7555,11 +6404,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.dorm3d_camera_anim_template
-
-	var_3_80[14104] = {
+	pg.base.dorm3d_camera_anim_template[14104] = {
 		anim_time = 16,
 		finish_anim = 14101,
 		pre_anim = 14101,
@@ -7577,11 +6422,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.dorm3d_camera_anim_template
-
-	var_3_81[14201] = {
+	pg.base.dorm3d_camera_anim_template[14201] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7601,11 +6442,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.dorm3d_camera_anim_template
-
-	var_3_82[14202] = {
+	pg.base.dorm3d_camera_anim_template[14202] = {
 		anim_time = 12.8,
 		finish_anim = 14201,
 		pre_anim = 14201,
@@ -7625,11 +6462,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.dorm3d_camera_anim_template
-
-	var_3_83[14203] = {
+	pg.base.dorm3d_camera_anim_template[14203] = {
 		anim_time = 14.767,
 		finish_anim = 14201,
 		pre_anim = 14201,
@@ -7649,11 +6482,7 @@ end)()
 			"no_bake_pay_prop/study/pre_db_aijier_study01_0/pre_db_drink13"
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.dorm3d_camera_anim_template
-
-	var_3_84[14204] = {
+	pg.base.dorm3d_camera_anim_template[14204] = {
 		anim_time = 14.367,
 		finish_anim = 14201,
 		pre_anim = 14201,
@@ -7671,11 +6500,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.dorm3d_camera_anim_template
-
-	var_3_85[14301] = {
+	pg.base.dorm3d_camera_anim_template[14301] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7693,11 +6518,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.dorm3d_camera_anim_template
-
-	var_3_86[14302] = {
+	pg.base.dorm3d_camera_anim_template[14302] = {
 		anim_time = 10.8,
 		finish_anim = 14301,
 		pre_anim = 14301,
@@ -7715,11 +6536,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.dorm3d_camera_anim_template
-
-	var_3_87[14303] = {
+	pg.base.dorm3d_camera_anim_template[14303] = {
 		anim_time = 10,
 		finish_anim = 14301,
 		pre_anim = 14301,
@@ -7737,11 +6554,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.dorm3d_camera_anim_template
-
-	var_3_88[14304] = {
+	pg.base.dorm3d_camera_anim_template[14304] = {
 		anim_time = 12.333,
 		finish_anim = 14301,
 		pre_anim = 14301,
@@ -7759,11 +6572,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.dorm3d_camera_anim_template
-
-	var_3_89[14401] = {
+	pg.base.dorm3d_camera_anim_template[14401] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7781,11 +6590,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.dorm3d_camera_anim_template
-
-	var_3_90[14402] = {
+	pg.base.dorm3d_camera_anim_template[14402] = {
 		anim_time = 16.8,
 		finish_anim = 14401,
 		pre_anim = 14401,
@@ -7803,11 +6608,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.dorm3d_camera_anim_template
-
-	var_3_91[14403] = {
+	pg.base.dorm3d_camera_anim_template[14403] = {
 		anim_time = 19.667,
 		finish_anim = 14401,
 		pre_anim = 14401,
@@ -7825,11 +6626,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.dorm3d_camera_anim_template
-
-	var_3_92[14404] = {
+	pg.base.dorm3d_camera_anim_template[14404] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7847,11 +6644,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.dorm3d_camera_anim_template
-
-	var_3_93[14405] = {
+	pg.base.dorm3d_camera_anim_template[14405] = {
 		anim_time = 13.5,
 		finish_anim = 14404,
 		pre_anim = 14404,
@@ -7869,11 +6662,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.dorm3d_camera_anim_template
-
-	var_3_94[14406] = {
+	pg.base.dorm3d_camera_anim_template[14406] = {
 		anim_time = 18,
 		finish_anim = 14404,
 		pre_anim = 14404,
@@ -7891,11 +6680,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.dorm3d_camera_anim_template
-
-	var_3_95[14501] = {
+	pg.base.dorm3d_camera_anim_template[14501] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -7934,11 +6719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.dorm3d_camera_anim_template
-
-	var_3_96[14502] = {
+	pg.base.dorm3d_camera_anim_template[14502] = {
 		anim_time = 23.9,
 		finish_anim = 14501,
 		pre_anim = 14501,
@@ -7977,11 +6758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.dorm3d_camera_anim_template
-
-	var_3_97[14503] = {
+	pg.base.dorm3d_camera_anim_template[14503] = {
 		anim_time = 15.567,
 		finish_anim = 14501,
 		pre_anim = 14501,
@@ -8020,11 +6797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.dorm3d_camera_anim_template
-
-	var_3_98[14504] = {
+	pg.base.dorm3d_camera_anim_template[14504] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -8047,8 +6820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.dorm3d_camera_anim_template[14505] = {
+	pg.base.dorm3d_camera_anim_template[14505] = {
 		anim_time = 11.333,
 		finish_anim = 14504,
 		pre_anim = 14504,
@@ -8075,11 +6847,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.dorm3d_camera_anim_template
-
-	var_4_0[14506] = {
+	pg.base.dorm3d_camera_anim_template[14506] = {
 		anim_time = 24.533,
 		finish_anim = 14504,
 		pre_anim = 14504,
@@ -8102,11 +6870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.dorm3d_camera_anim_template
-
-	var_4_1[14507] = {
+	pg.base.dorm3d_camera_anim_template[14507] = {
 		anim_time = 23.667,
 		finish_anim = 14504,
 		pre_anim = 14504,
@@ -8129,11 +6893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.dorm3d_camera_anim_template
-
-	var_4_2[14601] = {
+	pg.base.dorm3d_camera_anim_template[14601] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -8172,11 +6932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.dorm3d_camera_anim_template
-
-	var_4_3[14602] = {
+	pg.base.dorm3d_camera_anim_template[14602] = {
 		anim_time = 25,
 		finish_anim = 14601,
 		pre_anim = 14601,
@@ -8215,11 +6971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.dorm3d_camera_anim_template
-
-	var_4_4[14603] = {
+	pg.base.dorm3d_camera_anim_template[14603] = {
 		anim_time = 26.667,
 		finish_anim = 14601,
 		pre_anim = 14601,
@@ -8258,11 +7010,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.dorm3d_camera_anim_template
-
-	var_4_5[14604] = {
+	pg.base.dorm3d_camera_anim_template[14604] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -8301,11 +7049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.dorm3d_camera_anim_template
-
-	var_4_6[14605] = {
+	pg.base.dorm3d_camera_anim_template[14605] = {
 		anim_time = 15.667,
 		finish_anim = 14604,
 		pre_anim = 14604,
@@ -8344,11 +7088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.dorm3d_camera_anim_template
-
-	var_4_7[14606] = {
+	pg.base.dorm3d_camera_anim_template[14606] = {
 		anim_time = 14.533,
 		finish_anim = 14604,
 		pre_anim = 14604,
@@ -8387,11 +7127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.dorm3d_camera_anim_template
-
-	var_4_8[14607] = {
+	pg.base.dorm3d_camera_anim_template[14607] = {
 		anim_time = 12,
 		finish_anim = 14604,
 		pre_anim = 14604,
@@ -8430,11 +7166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.dorm3d_camera_anim_template
-
-	var_4_9[16001] = {
+	pg.base.dorm3d_camera_anim_template[16001] = {
 		anim_time = 0,
 		finish_anim = 16001,
 		pre_anim = 0,
@@ -8452,11 +7184,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.dorm3d_camera_anim_template
-
-	var_4_10[16002] = {
+	pg.base.dorm3d_camera_anim_template[16002] = {
 		anim_time = 5,
 		finish_anim = 16001,
 		pre_anim = 16001,
@@ -8474,11 +7202,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.dorm3d_camera_anim_template
-
-	var_4_11[16003] = {
+	pg.base.dorm3d_camera_anim_template[16003] = {
 		anim_time = 5,
 		finish_anim = 16001,
 		pre_anim = 16001,
@@ -8496,11 +7220,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.dorm3d_camera_anim_template
-
-	var_4_12[16004] = {
+	pg.base.dorm3d_camera_anim_template[16004] = {
 		anim_time = 7,
 		finish_anim = 16001,
 		pre_anim = 16001,
@@ -8518,11 +7238,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.dorm3d_camera_anim_template
-
-	var_4_13[16005] = {
+	pg.base.dorm3d_camera_anim_template[16005] = {
 		anim_time = 7,
 		finish_anim = 16001,
 		pre_anim = 16001,
@@ -8540,11 +7256,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.dorm3d_camera_anim_template
-
-	var_4_14[16006] = {
+	pg.base.dorm3d_camera_anim_template[16006] = {
 		anim_time = 0,
 		finish_anim = 16006,
 		pre_anim = 0,
@@ -8562,11 +7274,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.dorm3d_camera_anim_template
-
-	var_4_15[16007] = {
+	pg.base.dorm3d_camera_anim_template[16007] = {
 		anim_time = 2.3,
 		finish_anim = 16006,
 		pre_anim = 16006,
@@ -8584,11 +7292,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.dorm3d_camera_anim_template
-
-	var_4_16[16008] = {
+	pg.base.dorm3d_camera_anim_template[16008] = {
 		anim_time = 2.4,
 		finish_anim = 16006,
 		pre_anim = 16006,
@@ -8606,11 +7310,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.dorm3d_camera_anim_template
-
-	var_4_17[16009] = {
+	pg.base.dorm3d_camera_anim_template[16009] = {
 		anim_time = 6.1,
 		finish_anim = 16006,
 		pre_anim = 16006,
@@ -8628,11 +7328,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.dorm3d_camera_anim_template
-
-	var_4_18[16010] = {
+	pg.base.dorm3d_camera_anim_template[16010] = {
 		anim_time = 7.334,
 		finish_anim = 16006,
 		pre_anim = 16006,
@@ -8650,11 +7346,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.dorm3d_camera_anim_template
-
-	var_4_19[16011] = {
+	pg.base.dorm3d_camera_anim_template[16011] = {
 		anim_time = 0,
 		finish_anim = 0,
 		pre_anim = 0,
@@ -8672,11 +7364,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.dorm3d_camera_anim_template
-
-	var_4_20[16012] = {
+	pg.base.dorm3d_camera_anim_template[16012] = {
 		anim_time = 4,
 		finish_anim = 16011,
 		pre_anim = 16011,
@@ -8694,11 +7382,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.dorm3d_camera_anim_template
-
-	var_4_21[16013] = {
+	pg.base.dorm3d_camera_anim_template[16013] = {
 		anim_time = 6,
 		finish_anim = 16011,
 		pre_anim = 16011,
@@ -8716,11 +7400,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.dorm3d_camera_anim_template
-
-	var_4_22[16014] = {
+	pg.base.dorm3d_camera_anim_template[16014] = {
 		anim_time = 12.133,
 		finish_anim = 16011,
 		pre_anim = 16011,
@@ -8738,11 +7418,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.dorm3d_camera_anim_template
-
-	var_4_23[16015] = {
+	pg.base.dorm3d_camera_anim_template[16015] = {
 		anim_time = 10,
 		finish_anim = 16011,
 		pre_anim = 16011,
@@ -8760,11 +7436,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.dorm3d_camera_anim_template
-
-	var_4_24[16016] = {
+	pg.base.dorm3d_camera_anim_template[16016] = {
 		anim_time = 0,
 		finish_anim = 16016,
 		pre_anim = 0,
@@ -8782,11 +7454,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.dorm3d_camera_anim_template
-
-	var_4_25[16017] = {
+	pg.base.dorm3d_camera_anim_template[16017] = {
 		anim_time = 1.533,
 		finish_anim = 16016,
 		pre_anim = 16016,
@@ -8804,11 +7472,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.dorm3d_camera_anim_template
-
-	var_4_26[16018] = {
+	pg.base.dorm3d_camera_anim_template[16018] = {
 		anim_time = 5.267,
 		finish_anim = 16016,
 		pre_anim = 16016,
@@ -8826,11 +7490,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.dorm3d_camera_anim_template
-
-	var_4_27[16019] = {
+	pg.base.dorm3d_camera_anim_template[16019] = {
 		anim_time = 9,
 		finish_anim = 16016,
 		pre_anim = 16016,
@@ -8848,11 +7508,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.dorm3d_camera_anim_template
-
-	var_4_28[16020] = {
+	pg.base.dorm3d_camera_anim_template[16020] = {
 		anim_time = 5.7,
 		finish_anim = 16016,
 		pre_anim = 16016,
@@ -8870,11 +7526,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.dorm3d_camera_anim_template
-
-	var_4_29[21001] = {
+	pg.base.dorm3d_camera_anim_template[21001] = {
 		anim_time = 0,
 		finish_anim = 21001,
 		pre_anim = 0,
@@ -8892,11 +7544,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.dorm3d_camera_anim_template
-
-	var_4_30[21002] = {
+	pg.base.dorm3d_camera_anim_template[21002] = {
 		anim_time = 5.667,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -8914,11 +7562,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.dorm3d_camera_anim_template
-
-	var_4_31[21003] = {
+	pg.base.dorm3d_camera_anim_template[21003] = {
 		anim_time = 4.667,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -8936,11 +7580,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.dorm3d_camera_anim_template
-
-	var_4_32[21004] = {
+	pg.base.dorm3d_camera_anim_template[21004] = {
 		anim_time = 5.833,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -8958,11 +7598,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.dorm3d_camera_anim_template
-
-	var_4_33[21005] = {
+	pg.base.dorm3d_camera_anim_template[21005] = {
 		anim_time = 5.833,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -8980,11 +7616,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.dorm3d_camera_anim_template
-
-	var_4_34[21006] = {
+	pg.base.dorm3d_camera_anim_template[21006] = {
 		anim_time = 5.667,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9002,11 +7634,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.dorm3d_camera_anim_template
-
-	var_4_35[21007] = {
+	pg.base.dorm3d_camera_anim_template[21007] = {
 		anim_time = 5,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9024,11 +7652,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.dorm3d_camera_anim_template
-
-	var_4_36[21008] = {
+	pg.base.dorm3d_camera_anim_template[21008] = {
 		anim_time = 4.833,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9046,11 +7670,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.dorm3d_camera_anim_template
-
-	var_4_37[21009] = {
+	pg.base.dorm3d_camera_anim_template[21009] = {
 		anim_time = 6.433,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9068,11 +7688,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.dorm3d_camera_anim_template
-
-	var_4_38[21010] = {
+	pg.base.dorm3d_camera_anim_template[21010] = {
 		anim_time = 10.3333,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9090,11 +7706,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.dorm3d_camera_anim_template
-
-	var_4_39[21011] = {
+	pg.base.dorm3d_camera_anim_template[21011] = {
 		anim_time = 6.766,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9112,11 +7724,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.dorm3d_camera_anim_template
-
-	var_4_40[21012] = {
+	pg.base.dorm3d_camera_anim_template[21012] = {
 		anim_time = 7.333,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9134,11 +7742,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.dorm3d_camera_anim_template
-
-	var_4_41[21013] = {
+	pg.base.dorm3d_camera_anim_template[21013] = {
 		anim_time = 6.33,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9156,11 +7760,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.dorm3d_camera_anim_template
-
-	var_4_42[21014] = {
+	pg.base.dorm3d_camera_anim_template[21014] = {
 		anim_time = 9.133,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9178,11 +7778,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.dorm3d_camera_anim_template
-
-	var_4_43[21015] = {
+	pg.base.dorm3d_camera_anim_template[21015] = {
 		anim_time = 5.833,
 		finish_anim = 21001,
 		pre_anim = 21001,
@@ -9200,11 +7796,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.dorm3d_camera_anim_template
-
-	var_4_44[21101] = {
+	pg.base.dorm3d_camera_anim_template[21101] = {
 		anim_time = 0,
 		finish_anim = 21101,
 		pre_anim = 0,
@@ -9227,11 +7819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.dorm3d_camera_anim_template
-
-	var_4_45[21102] = {
+	pg.base.dorm3d_camera_anim_template[21102] = {
 		anim_time = 9.533,
 		finish_anim = 21101,
 		pre_anim = 21101,
@@ -9254,11 +7842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.dorm3d_camera_anim_template
-
-	var_4_46[21103] = {
+	pg.base.dorm3d_camera_anim_template[21103] = {
 		anim_time = 24.033,
 		finish_anim = 21101,
 		pre_anim = 21101,
@@ -9281,11 +7865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.dorm3d_camera_anim_template
-
-	var_4_47[21104] = {
+	pg.base.dorm3d_camera_anim_template[21104] = {
 		anim_time = 10.833,
 		finish_anim = 21101,
 		pre_anim = 21101,
@@ -9308,11 +7888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.dorm3d_camera_anim_template
-
-	var_4_48[21201] = {
+	pg.base.dorm3d_camera_anim_template[21201] = {
 		anim_time = 0,
 		finish_anim = 21201,
 		pre_anim = 0,
@@ -9335,11 +7911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.dorm3d_camera_anim_template
-
-	var_4_49[21202] = {
+	pg.base.dorm3d_camera_anim_template[21202] = {
 		anim_time = 17.6,
 		finish_anim = 21201,
 		pre_anim = 21201,
@@ -9362,11 +7934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.dorm3d_camera_anim_template
-
-	var_4_50[21203] = {
+	pg.base.dorm3d_camera_anim_template[21203] = {
 		anim_time = 16.33,
 		finish_anim = 21201,
 		pre_anim = 21201,
@@ -9389,11 +7957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.dorm3d_camera_anim_template
-
-	var_4_51[21204] = {
+	pg.base.dorm3d_camera_anim_template[21204] = {
 		anim_time = 21.267,
 		finish_anim = 21201,
 		pre_anim = 21201,
@@ -9416,11 +7980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.dorm3d_camera_anim_template
-
-	var_4_52[21301] = {
+	pg.base.dorm3d_camera_anim_template[21301] = {
 		anim_time = 0,
 		finish_anim = 21301,
 		pre_anim = 0,
@@ -9443,11 +8003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.dorm3d_camera_anim_template
-
-	var_4_53[21302] = {
+	pg.base.dorm3d_camera_anim_template[21302] = {
 		anim_time = 16.333,
 		finish_anim = 21301,
 		pre_anim = 21301,
@@ -9470,11 +8026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.dorm3d_camera_anim_template
-
-	var_4_54[21303] = {
+	pg.base.dorm3d_camera_anim_template[21303] = {
 		anim_time = 10,
 		finish_anim = 21301,
 		pre_anim = 21301,
@@ -9497,11 +8049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.dorm3d_camera_anim_template
-
-	var_4_55[21304] = {
+	pg.base.dorm3d_camera_anim_template[21304] = {
 		anim_time = 22.1,
 		finish_anim = 21301,
 		pre_anim = 21301,
@@ -9524,11 +8072,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.dorm3d_camera_anim_template
-
-	var_4_56[21401] = {
+	pg.base.dorm3d_camera_anim_template[21401] = {
 		anim_time = 0,
 		finish_anim = 21401,
 		pre_anim = 0,
@@ -9555,11 +8099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.dorm3d_camera_anim_template
-
-	var_4_57[21402] = {
+	pg.base.dorm3d_camera_anim_template[21402] = {
 		anim_time = 24.1,
 		finish_anim = 21401,
 		pre_anim = 21401,
@@ -9586,11 +8126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.dorm3d_camera_anim_template
-
-	var_4_58[21403] = {
+	pg.base.dorm3d_camera_anim_template[21403] = {
 		anim_time = 0,
 		finish_anim = 21403,
 		pre_anim = 0,
@@ -9617,11 +8153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.dorm3d_camera_anim_template
-
-	var_4_59[21404] = {
+	pg.base.dorm3d_camera_anim_template[21404] = {
 		anim_time = 13.033,
 		finish_anim = 21403,
 		pre_anim = 21403,
@@ -9648,11 +8180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.dorm3d_camera_anim_template
-
-	var_4_60[21405] = {
+	pg.base.dorm3d_camera_anim_template[21405] = {
 		anim_time = 16.267,
 		finish_anim = 21403,
 		pre_anim = 21403,
@@ -9679,11 +8207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.dorm3d_camera_anim_template
-
-	var_4_61[26001] = {
+	pg.base.dorm3d_camera_anim_template[26001] = {
 		anim_time = 0,
 		finish_anim = 26001,
 		pre_anim = 0,
@@ -9701,11 +8225,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.dorm3d_camera_anim_template
-
-	var_4_62[26002] = {
+	pg.base.dorm3d_camera_anim_template[26002] = {
 		anim_time = 6.6,
 		finish_anim = 26001,
 		pre_anim = 26001,
@@ -9723,11 +8243,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.dorm3d_camera_anim_template
-
-	var_4_63[26003] = {
+	pg.base.dorm3d_camera_anim_template[26003] = {
 		anim_time = 8.167,
 		finish_anim = 26001,
 		pre_anim = 26001,
@@ -9745,11 +8261,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.dorm3d_camera_anim_template
-
-	var_4_64[26004] = {
+	pg.base.dorm3d_camera_anim_template[26004] = {
 		anim_time = 6.9,
 		finish_anim = 26001,
 		pre_anim = 26001,
@@ -9767,8 +8279,7 @@ end)()
 		hide_scene_item = "",
 		enter_scene_anim = ""
 	}
-	pg = var_4_64
-	var_4_64.base.dorm3d_camera_anim_template[26005] = {
+	pg.base.dorm3d_camera_anim_template[26005] = {
 		anim_time = 9.133,
 		finish_anim = 26001,
 		pre_anim = 26001,

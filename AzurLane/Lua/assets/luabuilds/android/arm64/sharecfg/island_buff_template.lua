@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_buff_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_buff_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_buff_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_buff_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_buff_template = rawget(pg, "island_buff_template") or setmetatable({
+	__name = "island_buff_template"
+}, confNEO)
+pg.island_buff_template.all = {
 	1,
 	2,
 	3,
@@ -398,25 +375,11 @@ var_0_3.all = {
 	100039,
 	999990
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_buff_template = {}
+pg.base = pg.base or {}
+pg.base.island_buff_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_buff_template
-
-	var_1_0[1] = {
+	pg.base.island_buff_template[1] = {
 		name = "全能力提升",
 		buff_group = 1,
 		buff_desc = "角色全能力提高3%，持续8小时",
@@ -454,11 +417,7 @@ var_0_3.base.island_buff_template = {}
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_buff_template
-
-	var_1_1[2] = {
+	pg.base.island_buff_template[2] = {
 		name = "生产效率提升",
 		buff_group = 1,
 		buff_desc = "角色生产基础资材时，工作速度提高5%，持续8小时",
@@ -482,11 +441,7 @@ var_0_3.base.island_buff_template = {}
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_buff_template
-
-	var_1_2[3] = {
+	pg.base.island_buff_template[3] = {
 		name = "制造效率提升",
 		buff_group = 1,
 		buff_desc = "角色在基地工厂制作产品时，工作速度提高5%，持续8小时",
@@ -507,11 +462,7 @@ var_0_3.base.island_buff_template = {}
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_buff_template
-
-	var_1_3[4] = {
+	pg.base.island_buff_template[4] = {
 		name = "烹饪效率提升",
 		buff_group = 1,
 		buff_desc = "角色制作店铺餐品时，工作速度提高5%，持续8小时",
@@ -533,11 +484,7 @@ var_0_3.base.island_buff_template = {}
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_buff_template
-
-	var_1_4[5] = {
+	pg.base.island_buff_template[5] = {
 		name = "销售额提升",
 		buff_group = 1,
 		buff_desc = "角色经营店铺时，销售额提高5%，持续8小时",
@@ -559,11 +506,7 @@ var_0_3.base.island_buff_template = {}
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_buff_template
-
-	var_1_5[10000] = {
+	pg.base.island_buff_template[10000] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -583,11 +526,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_buff_template
-
-	var_1_6[10001] = {
+	pg.base.island_buff_template[10001] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -607,11 +546,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_buff_template
-
-	var_1_7[10002] = {
+	pg.base.island_buff_template[10002] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -631,11 +566,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_buff_template
-
-	var_1_8[10003] = {
+	pg.base.island_buff_template[10003] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -655,11 +586,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_buff_template
-
-	var_1_9[10004] = {
+	pg.base.island_buff_template[10004] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -679,11 +606,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_buff_template
-
-	var_1_10[10005] = {
+	pg.base.island_buff_template[10005] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -703,11 +626,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_buff_template
-
-	var_1_11[10006] = {
+	pg.base.island_buff_template[10006] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -727,11 +646,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_buff_template
-
-	var_1_12[10007] = {
+	pg.base.island_buff_template[10007] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -751,11 +666,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_buff_template
-
-	var_1_13[10008] = {
+	pg.base.island_buff_template[10008] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -775,11 +686,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_buff_template
-
-	var_1_14[10009] = {
+	pg.base.island_buff_template[10009] = {
 		name = "制造技艺",
 		buff_group = 1000,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -799,11 +706,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_buff_template
-
-	var_1_15[10010] = {
+	pg.base.island_buff_template[10010] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -824,11 +727,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_buff_template
-
-	var_1_16[10011] = {
+	pg.base.island_buff_template[10011] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -849,11 +748,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_buff_template
-
-	var_1_17[10012] = {
+	pg.base.island_buff_template[10012] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -874,11 +769,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_buff_template
-
-	var_1_18[10013] = {
+	pg.base.island_buff_template[10013] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -899,11 +790,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_buff_template
-
-	var_1_19[10014] = {
+	pg.base.island_buff_template[10014] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -924,11 +811,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_buff_template
-
-	var_1_20[10015] = {
+	pg.base.island_buff_template[10015] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -949,11 +832,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_buff_template
-
-	var_1_21[10016] = {
+	pg.base.island_buff_template[10016] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -974,11 +853,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_buff_template
-
-	var_1_22[10017] = {
+	pg.base.island_buff_template[10017] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -999,11 +874,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_buff_template
-
-	var_1_23[10018] = {
+	pg.base.island_buff_template[10018] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1024,11 +895,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_buff_template
-
-	var_1_24[10019] = {
+	pg.base.island_buff_template[10019] = {
 		name = "餐品销售",
 		buff_group = 1001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1049,11 +916,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_buff_template
-
-	var_1_25[10020] = {
+	pg.base.island_buff_template[10020] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1074,11 +937,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_buff_template
-
-	var_1_26[10021] = {
+	pg.base.island_buff_template[10021] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1099,11 +958,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_buff_template
-
-	var_1_27[10022] = {
+	pg.base.island_buff_template[10022] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1124,11 +979,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_buff_template
-
-	var_1_28[10023] = {
+	pg.base.island_buff_template[10023] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1149,11 +1000,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_buff_template
-
-	var_1_29[10024] = {
+	pg.base.island_buff_template[10024] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1174,11 +1021,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_buff_template
-
-	var_1_30[10025] = {
+	pg.base.island_buff_template[10025] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1199,11 +1042,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_buff_template
-
-	var_1_31[10026] = {
+	pg.base.island_buff_template[10026] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1224,11 +1063,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_buff_template
-
-	var_1_32[10027] = {
+	pg.base.island_buff_template[10027] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1249,11 +1084,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_buff_template
-
-	var_1_33[10028] = {
+	pg.base.island_buff_template[10028] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1274,11 +1105,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_buff_template
-
-	var_1_34[10029] = {
+	pg.base.island_buff_template[10029] = {
 		name = "饮品销售",
 		buff_group = 1002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1299,11 +1126,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_buff_template
-
-	var_1_35[10030] = {
+	pg.base.island_buff_template[10030] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1323,11 +1146,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_buff_template
-
-	var_1_36[10031] = {
+	pg.base.island_buff_template[10031] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1347,11 +1166,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_buff_template
-
-	var_1_37[10032] = {
+	pg.base.island_buff_template[10032] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1371,11 +1186,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_buff_template
-
-	var_1_38[10033] = {
+	pg.base.island_buff_template[10033] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1395,11 +1206,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_buff_template
-
-	var_1_39[10034] = {
+	pg.base.island_buff_template[10034] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1419,11 +1226,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_buff_template
-
-	var_1_40[10035] = {
+	pg.base.island_buff_template[10035] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1443,11 +1246,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_buff_template
-
-	var_1_41[10036] = {
+	pg.base.island_buff_template[10036] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1467,11 +1266,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_buff_template
-
-	var_1_42[10037] = {
+	pg.base.island_buff_template[10037] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1491,11 +1286,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_buff_template
-
-	var_1_43[10038] = {
+	pg.base.island_buff_template[10038] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1515,11 +1306,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_buff_template
-
-	var_1_44[10039] = {
+	pg.base.island_buff_template[10039] = {
 		name = "育果技艺",
 		buff_group = 1003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1539,11 +1326,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_buff_template
-
-	var_1_45[10040] = {
+	pg.base.island_buff_template[10040] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1563,11 +1346,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_buff_template
-
-	var_1_46[10041] = {
+	pg.base.island_buff_template[10041] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1587,11 +1366,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_buff_template
-
-	var_1_47[10042] = {
+	pg.base.island_buff_template[10042] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1611,11 +1386,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_buff_template
-
-	var_1_48[10043] = {
+	pg.base.island_buff_template[10043] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1635,11 +1406,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_buff_template
-
-	var_1_49[10044] = {
+	pg.base.island_buff_template[10044] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1659,11 +1426,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_buff_template
-
-	var_1_50[10045] = {
+	pg.base.island_buff_template[10045] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1683,11 +1446,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_buff_template
-
-	var_1_51[10046] = {
+	pg.base.island_buff_template[10046] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1707,11 +1466,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_buff_template
-
-	var_1_52[10047] = {
+	pg.base.island_buff_template[10047] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1731,11 +1486,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_buff_template
-
-	var_1_53[10048] = {
+	pg.base.island_buff_template[10048] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1755,11 +1506,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_buff_template
-
-	var_1_54[10049] = {
+	pg.base.island_buff_template[10049] = {
 		name = "伐木技艺",
 		buff_group = 1004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1779,11 +1526,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_buff_template
-
-	var_1_55[10050] = {
+	pg.base.island_buff_template[10050] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1803,11 +1546,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_buff_template
-
-	var_1_56[10051] = {
+	pg.base.island_buff_template[10051] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1827,11 +1566,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_buff_template
-
-	var_1_57[10052] = {
+	pg.base.island_buff_template[10052] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1851,11 +1586,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_buff_template
-
-	var_1_58[10053] = {
+	pg.base.island_buff_template[10053] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1875,11 +1606,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_buff_template
-
-	var_1_59[10054] = {
+	pg.base.island_buff_template[10054] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1899,11 +1626,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_buff_template
-
-	var_1_60[10055] = {
+	pg.base.island_buff_template[10055] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1923,11 +1646,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_buff_template
-
-	var_1_61[10056] = {
+	pg.base.island_buff_template[10056] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1947,11 +1666,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_buff_template
-
-	var_1_62[10057] = {
+	pg.base.island_buff_template[10057] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1971,11 +1686,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_buff_template
-
-	var_1_63[10058] = {
+	pg.base.island_buff_template[10058] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -1995,11 +1706,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_buff_template
-
-	var_1_64[10059] = {
+	pg.base.island_buff_template[10059] = {
 		name = "畜牧技艺",
 		buff_group = 1005,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2019,11 +1726,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_buff_template
-
-	var_1_65[10060] = {
+	pg.base.island_buff_template[10060] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2043,11 +1746,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_buff_template
-
-	var_1_66[10061] = {
+	pg.base.island_buff_template[10061] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2067,11 +1766,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_buff_template
-
-	var_1_67[10062] = {
+	pg.base.island_buff_template[10062] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2091,11 +1786,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_buff_template
-
-	var_1_68[10063] = {
+	pg.base.island_buff_template[10063] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2115,11 +1806,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_buff_template
-
-	var_1_69[10064] = {
+	pg.base.island_buff_template[10064] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2139,11 +1826,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_buff_template
-
-	var_1_70[10065] = {
+	pg.base.island_buff_template[10065] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2163,11 +1846,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_buff_template
-
-	var_1_71[10066] = {
+	pg.base.island_buff_template[10066] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2187,11 +1866,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_buff_template
-
-	var_1_72[10067] = {
+	pg.base.island_buff_template[10067] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2211,11 +1886,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_buff_template
-
-	var_1_73[10068] = {
+	pg.base.island_buff_template[10068] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2235,11 +1906,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_buff_template
-
-	var_1_74[10069] = {
+	pg.base.island_buff_template[10069] = {
 		name = "烹饪技艺",
 		buff_group = 1006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2259,11 +1926,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_buff_template
-
-	var_1_75[10070] = {
+	pg.base.island_buff_template[10070] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2283,11 +1946,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_buff_template
-
-	var_1_76[10071] = {
+	pg.base.island_buff_template[10071] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2307,11 +1966,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_buff_template
-
-	var_1_77[10072] = {
+	pg.base.island_buff_template[10072] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2331,11 +1986,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_buff_template
-
-	var_1_78[10073] = {
+	pg.base.island_buff_template[10073] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2355,11 +2006,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_buff_template
-
-	var_1_79[10074] = {
+	pg.base.island_buff_template[10074] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2379,11 +2026,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_buff_template
-
-	var_1_80[10075] = {
+	pg.base.island_buff_template[10075] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2403,11 +2046,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_buff_template
-
-	var_1_81[10076] = {
+	pg.base.island_buff_template[10076] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2427,11 +2066,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_buff_template
-
-	var_1_82[10077] = {
+	pg.base.island_buff_template[10077] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2451,11 +2086,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_buff_template
-
-	var_1_83[10078] = {
+	pg.base.island_buff_template[10078] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2475,11 +2106,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_buff_template
-
-	var_1_84[10079] = {
+	pg.base.island_buff_template[10079] = {
 		name = "研发技艺",
 		buff_group = 1007,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2499,11 +2126,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_buff_template
-
-	var_1_85[10080] = {
+	pg.base.island_buff_template[10080] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2523,11 +2146,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_buff_template
-
-	var_1_86[10081] = {
+	pg.base.island_buff_template[10081] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2547,11 +2166,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_buff_template
-
-	var_1_87[10082] = {
+	pg.base.island_buff_template[10082] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2571,11 +2186,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_buff_template
-
-	var_1_88[10083] = {
+	pg.base.island_buff_template[10083] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2595,11 +2206,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_buff_template
-
-	var_1_89[10084] = {
+	pg.base.island_buff_template[10084] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2619,11 +2226,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_buff_template
-
-	var_1_90[10085] = {
+	pg.base.island_buff_template[10085] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2643,11 +2246,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_buff_template
-
-	var_1_91[10086] = {
+	pg.base.island_buff_template[10086] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2667,11 +2266,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_buff_template
-
-	var_1_92[10087] = {
+	pg.base.island_buff_template[10087] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2691,11 +2286,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_buff_template
-
-	var_1_93[10088] = {
+	pg.base.island_buff_template[10088] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2715,11 +2306,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_buff_template
-
-	var_1_94[10089] = {
+	pg.base.island_buff_template[10089] = {
 		name = "采矿技艺",
 		buff_group = 1008,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2739,11 +2326,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_buff_template
-
-	var_1_95[10090] = {
+	pg.base.island_buff_template[10090] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2763,11 +2346,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_buff_template
-
-	var_1_96[10091] = {
+	pg.base.island_buff_template[10091] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2787,11 +2366,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_buff_template
-
-	var_1_97[10092] = {
+	pg.base.island_buff_template[10092] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2811,11 +2386,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_buff_template
-
-	var_1_98[10093] = {
+	pg.base.island_buff_template[10093] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2835,8 +2406,7 @@ var_0_3.base.island_buff_template = {}
 		},
 		buff_duel = {}
 	}
-	pg = var_1_98
-	var_1_98.base.island_buff_template[10094] = {
+	pg.base.island_buff_template[10094] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2860,11 +2430,7 @@ var_0_3.base.island_buff_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_buff_template
-
-	var_2_0[10095] = {
+	pg.base.island_buff_template[10095] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2884,11 +2450,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_buff_template
-
-	var_2_1[10096] = {
+	pg.base.island_buff_template[10096] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2908,11 +2470,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_buff_template
-
-	var_2_2[10097] = {
+	pg.base.island_buff_template[10097] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2932,11 +2490,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_buff_template
-
-	var_2_3[10098] = {
+	pg.base.island_buff_template[10098] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2956,11 +2510,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_buff_template
-
-	var_2_4[10099] = {
+	pg.base.island_buff_template[10099] = {
 		name = "耕作技艺",
 		buff_group = 1009,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -2980,11 +2530,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_buff_template
-
-	var_2_5[10100] = {
+	pg.base.island_buff_template[10100] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3001,11 +2547,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_buff_template
-
-	var_2_6[10101] = {
+	pg.base.island_buff_template[10101] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3022,11 +2564,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_buff_template
-
-	var_2_7[10102] = {
+	pg.base.island_buff_template[10102] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3043,11 +2581,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_buff_template
-
-	var_2_8[10103] = {
+	pg.base.island_buff_template[10103] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3064,11 +2598,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_buff_template
-
-	var_2_9[10104] = {
+	pg.base.island_buff_template[10104] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3085,11 +2615,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_buff_template
-
-	var_2_10[10105] = {
+	pg.base.island_buff_template[10105] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3106,11 +2632,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_buff_template
-
-	var_2_11[10106] = {
+	pg.base.island_buff_template[10106] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3127,11 +2649,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_buff_template
-
-	var_2_12[10107] = {
+	pg.base.island_buff_template[10107] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3148,11 +2666,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_buff_template
-
-	var_2_13[10108] = {
+	pg.base.island_buff_template[10108] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3169,11 +2683,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_buff_template
-
-	var_2_14[10109] = {
+	pg.base.island_buff_template[10109] = {
 		name = "高效回复",
 		buff_group = 1010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3190,11 +2700,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_buff_template
-
-	var_2_15[10110] = {
+	pg.base.island_buff_template[10110] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3214,11 +2720,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_buff_template
-
-	var_2_16[10111] = {
+	pg.base.island_buff_template[10111] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3238,11 +2740,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_buff_template
-
-	var_2_17[10112] = {
+	pg.base.island_buff_template[10112] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3262,11 +2760,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_buff_template
-
-	var_2_18[10113] = {
+	pg.base.island_buff_template[10113] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3286,11 +2780,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_buff_template
-
-	var_2_19[10114] = {
+	pg.base.island_buff_template[10114] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3310,11 +2800,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_buff_template
-
-	var_2_20[10115] = {
+	pg.base.island_buff_template[10115] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3334,11 +2820,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_buff_template
-
-	var_2_21[10116] = {
+	pg.base.island_buff_template[10116] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3358,11 +2840,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_buff_template
-
-	var_2_22[10117] = {
+	pg.base.island_buff_template[10117] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3382,11 +2860,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_buff_template
-
-	var_2_23[10118] = {
+	pg.base.island_buff_template[10118] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3406,11 +2880,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_buff_template
-
-	var_2_24[10119] = {
+	pg.base.island_buff_template[10119] = {
 		name = "培育技艺",
 		buff_group = 1011,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3430,11 +2900,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_buff_template
-
-	var_2_25[10120] = {
+	pg.base.island_buff_template[10120] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3454,11 +2920,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_buff_template
-
-	var_2_26[10121] = {
+	pg.base.island_buff_template[10121] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3478,11 +2940,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_buff_template
-
-	var_2_27[10122] = {
+	pg.base.island_buff_template[10122] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3502,11 +2960,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_buff_template
-
-	var_2_28[10123] = {
+	pg.base.island_buff_template[10123] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3526,11 +2980,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_buff_template
-
-	var_2_29[10124] = {
+	pg.base.island_buff_template[10124] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3550,11 +3000,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_buff_template
-
-	var_2_30[10125] = {
+	pg.base.island_buff_template[10125] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3574,11 +3020,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_buff_template
-
-	var_2_31[10126] = {
+	pg.base.island_buff_template[10126] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3598,11 +3040,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_buff_template
-
-	var_2_32[10127] = {
+	pg.base.island_buff_template[10127] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3622,11 +3060,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_buff_template
-
-	var_2_33[10128] = {
+	pg.base.island_buff_template[10128] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3646,11 +3080,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_buff_template
-
-	var_2_34[10129] = {
+	pg.base.island_buff_template[10129] = {
 		name = "餐馆专销",
 		buff_group = 1012,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3670,11 +3100,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_buff_template
-
-	var_2_35[10130] = {
+	pg.base.island_buff_template[10130] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3695,11 +3121,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_buff_template
-
-	var_2_36[10131] = {
+	pg.base.island_buff_template[10131] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3720,11 +3142,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_buff_template
-
-	var_2_37[10132] = {
+	pg.base.island_buff_template[10132] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3745,11 +3163,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_buff_template
-
-	var_2_38[10133] = {
+	pg.base.island_buff_template[10133] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3770,11 +3184,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_buff_template
-
-	var_2_39[10134] = {
+	pg.base.island_buff_template[10134] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3795,11 +3205,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_buff_template
-
-	var_2_40[10135] = {
+	pg.base.island_buff_template[10135] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3820,11 +3226,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_buff_template
-
-	var_2_41[10136] = {
+	pg.base.island_buff_template[10136] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3845,11 +3247,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_buff_template
-
-	var_2_42[10137] = {
+	pg.base.island_buff_template[10137] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3870,11 +3268,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_buff_template
-
-	var_2_43[10138] = {
+	pg.base.island_buff_template[10138] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3895,11 +3289,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_buff_template
-
-	var_2_44[10139] = {
+	pg.base.island_buff_template[10139] = {
 		name = "修枝技艺",
 		buff_group = 1013,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3920,11 +3310,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_buff_template
-
-	var_2_45[10140] = {
+	pg.base.island_buff_template[10140] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3944,11 +3330,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_buff_template
-
-	var_2_46[10141] = {
+	pg.base.island_buff_template[10141] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3968,11 +3350,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_buff_template
-
-	var_2_47[10142] = {
+	pg.base.island_buff_template[10142] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -3992,11 +3370,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_buff_template
-
-	var_2_48[10143] = {
+	pg.base.island_buff_template[10143] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4016,11 +3390,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_buff_template
-
-	var_2_49[10144] = {
+	pg.base.island_buff_template[10144] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4040,11 +3410,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_buff_template
-
-	var_2_50[10145] = {
+	pg.base.island_buff_template[10145] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4064,11 +3430,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_buff_template
-
-	var_2_51[10146] = {
+	pg.base.island_buff_template[10146] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4088,11 +3450,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_buff_template
-
-	var_2_52[10147] = {
+	pg.base.island_buff_template[10147] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4112,11 +3470,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_buff_template
-
-	var_2_53[10148] = {
+	pg.base.island_buff_template[10148] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4136,11 +3490,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_buff_template
-
-	var_2_54[10149] = {
+	pg.base.island_buff_template[10149] = {
 		name = "高效研发",
 		buff_group = 1014,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4160,11 +3510,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_buff_template
-
-	var_2_55[10150] = {
+	pg.base.island_buff_template[10150] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4185,11 +3531,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_buff_template
-
-	var_2_56[10151] = {
+	pg.base.island_buff_template[10151] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4210,11 +3552,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_buff_template
-
-	var_2_57[10152] = {
+	pg.base.island_buff_template[10152] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4235,11 +3573,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_buff_template
-
-	var_2_58[10153] = {
+	pg.base.island_buff_template[10153] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4260,11 +3594,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_buff_template
-
-	var_2_59[10154] = {
+	pg.base.island_buff_template[10154] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4285,11 +3615,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_buff_template
-
-	var_2_60[10155] = {
+	pg.base.island_buff_template[10155] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4310,11 +3636,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_buff_template
-
-	var_2_61[10156] = {
+	pg.base.island_buff_template[10156] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4335,11 +3657,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_buff_template
-
-	var_2_62[10157] = {
+	pg.base.island_buff_template[10157] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4360,11 +3678,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_buff_template
-
-	var_2_63[10158] = {
+	pg.base.island_buff_template[10158] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4385,11 +3699,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_buff_template
-
-	var_2_64[10159] = {
+	pg.base.island_buff_template[10159] = {
 		name = "威廉D波特",
 		buff_group = 1015,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4410,11 +3720,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_buff_template
-
-	var_2_65[10160] = {
+	pg.base.island_buff_template[10160] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4435,11 +3741,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_buff_template
-
-	var_2_66[10161] = {
+	pg.base.island_buff_template[10161] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4460,11 +3762,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_buff_template
-
-	var_2_67[10162] = {
+	pg.base.island_buff_template[10162] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4485,11 +3783,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_buff_template
-
-	var_2_68[10163] = {
+	pg.base.island_buff_template[10163] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4510,11 +3804,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_buff_template
-
-	var_2_69[10164] = {
+	pg.base.island_buff_template[10164] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4535,11 +3825,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_buff_template
-
-	var_2_70[10165] = {
+	pg.base.island_buff_template[10165] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4560,11 +3846,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_buff_template
-
-	var_2_71[10166] = {
+	pg.base.island_buff_template[10166] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4585,11 +3867,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_buff_template
-
-	var_2_72[10167] = {
+	pg.base.island_buff_template[10167] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4610,11 +3888,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_buff_template
-
-	var_2_73[10168] = {
+	pg.base.island_buff_template[10168] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4635,11 +3909,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_buff_template
-
-	var_2_74[10169] = {
+	pg.base.island_buff_template[10169] = {
 		name = "镇海",
 		buff_group = 1016,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4660,11 +3930,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_buff_template
-
-	var_2_75[10170] = {
+	pg.base.island_buff_template[10170] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4684,11 +3950,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_buff_template
-
-	var_2_76[10171] = {
+	pg.base.island_buff_template[10171] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4708,11 +3970,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_buff_template
-
-	var_2_77[10172] = {
+	pg.base.island_buff_template[10172] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4732,11 +3990,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_buff_template
-
-	var_2_78[10173] = {
+	pg.base.island_buff_template[10173] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4756,11 +4010,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_buff_template
-
-	var_2_79[10174] = {
+	pg.base.island_buff_template[10174] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4780,11 +4030,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_buff_template
-
-	var_2_80[10175] = {
+	pg.base.island_buff_template[10175] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4804,11 +4050,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_buff_template
-
-	var_2_81[10176] = {
+	pg.base.island_buff_template[10176] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4828,11 +4070,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_buff_template
-
-	var_2_82[10177] = {
+	pg.base.island_buff_template[10177] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4852,11 +4090,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_buff_template
-
-	var_2_83[10178] = {
+	pg.base.island_buff_template[10178] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4876,11 +4110,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_buff_template
-
-	var_2_84[10179] = {
+	pg.base.island_buff_template[10179] = {
 		name = "爱宕",
 		buff_group = 1017,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4900,11 +4130,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_buff_template
-
-	var_2_85[10180] = {
+	pg.base.island_buff_template[10180] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4924,11 +4150,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_buff_template
-
-	var_2_86[10181] = {
+	pg.base.island_buff_template[10181] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4948,11 +4170,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_buff_template
-
-	var_2_87[10182] = {
+	pg.base.island_buff_template[10182] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4972,11 +4190,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_buff_template
-
-	var_2_88[10183] = {
+	pg.base.island_buff_template[10183] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -4996,11 +4210,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_buff_template
-
-	var_2_89[10184] = {
+	pg.base.island_buff_template[10184] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5020,11 +4230,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_buff_template
-
-	var_2_90[10185] = {
+	pg.base.island_buff_template[10185] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5044,11 +4250,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_buff_template
-
-	var_2_91[10186] = {
+	pg.base.island_buff_template[10186] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5068,11 +4270,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_buff_template
-
-	var_2_92[10187] = {
+	pg.base.island_buff_template[10187] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5092,11 +4290,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_buff_template
-
-	var_2_93[10188] = {
+	pg.base.island_buff_template[10188] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5116,11 +4310,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_buff_template
-
-	var_2_94[10189] = {
+	pg.base.island_buff_template[10189] = {
 		name = "海伦娜",
 		buff_group = 1018,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5140,11 +4330,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_buff_template
-
-	var_2_95[10190] = {
+	pg.base.island_buff_template[10190] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5165,11 +4351,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_buff_template
-
-	var_2_96[10191] = {
+	pg.base.island_buff_template[10191] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5190,11 +4372,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_buff_template
-
-	var_2_97[10192] = {
+	pg.base.island_buff_template[10192] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5215,11 +4393,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_buff_template
-
-	var_2_98[10193] = {
+	pg.base.island_buff_template[10193] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5240,8 +4414,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_2_98
-	var_2_98.base.island_buff_template[10194] = {
+	pg.base.island_buff_template[10194] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5266,11 +4439,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_buff_template
-
-	var_3_0[10195] = {
+	pg.base.island_buff_template[10195] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5291,11 +4460,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_buff_template
-
-	var_3_1[10196] = {
+	pg.base.island_buff_template[10196] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5316,11 +4481,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.island_buff_template
-
-	var_3_2[10197] = {
+	pg.base.island_buff_template[10197] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5341,11 +4502,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.island_buff_template
-
-	var_3_3[10198] = {
+	pg.base.island_buff_template[10198] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5366,11 +4523,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.island_buff_template
-
-	var_3_4[10199] = {
+	pg.base.island_buff_template[10199] = {
 		name = "修枝技艺",
 		buff_group = 1019,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5391,11 +4544,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.island_buff_template
-
-	var_3_5[10200] = {
+	pg.base.island_buff_template[10200] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5416,11 +4565,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.island_buff_template
-
-	var_3_6[10201] = {
+	pg.base.island_buff_template[10201] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5441,11 +4586,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.island_buff_template
-
-	var_3_7[10202] = {
+	pg.base.island_buff_template[10202] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5466,11 +4607,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.island_buff_template
-
-	var_3_8[10203] = {
+	pg.base.island_buff_template[10203] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5491,11 +4628,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.island_buff_template
-
-	var_3_9[10204] = {
+	pg.base.island_buff_template[10204] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5516,11 +4649,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.island_buff_template
-
-	var_3_10[10205] = {
+	pg.base.island_buff_template[10205] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5541,11 +4670,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.island_buff_template
-
-	var_3_11[10206] = {
+	pg.base.island_buff_template[10206] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5566,11 +4691,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.island_buff_template
-
-	var_3_12[10207] = {
+	pg.base.island_buff_template[10207] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5591,11 +4712,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.island_buff_template
-
-	var_3_13[10208] = {
+	pg.base.island_buff_template[10208] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5616,11 +4733,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.island_buff_template
-
-	var_3_14[10209] = {
+	pg.base.island_buff_template[10209] = {
 		name = "采集技艺",
 		buff_group = 1020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5641,11 +4754,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.island_buff_template
-
-	var_3_15[10210] = {
+	pg.base.island_buff_template[10210] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5662,11 +4771,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.island_buff_template
-
-	var_3_16[10211] = {
+	pg.base.island_buff_template[10211] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5683,11 +4788,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.island_buff_template
-
-	var_3_17[10212] = {
+	pg.base.island_buff_template[10212] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5704,11 +4805,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.island_buff_template
-
-	var_3_18[10213] = {
+	pg.base.island_buff_template[10213] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5725,11 +4822,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.island_buff_template
-
-	var_3_19[10214] = {
+	pg.base.island_buff_template[10214] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5746,11 +4839,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.island_buff_template
-
-	var_3_20[10215] = {
+	pg.base.island_buff_template[10215] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5767,11 +4856,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.island_buff_template
-
-	var_3_21[10216] = {
+	pg.base.island_buff_template[10216] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5788,11 +4873,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.island_buff_template
-
-	var_3_22[10217] = {
+	pg.base.island_buff_template[10217] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5809,11 +4890,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.island_buff_template
-
-	var_3_23[10218] = {
+	pg.base.island_buff_template[10218] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5830,11 +4907,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.island_buff_template
-
-	var_3_24[10219] = {
+	pg.base.island_buff_template[10219] = {
 		name = "加速回复",
 		buff_group = 1021,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5851,11 +4924,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.island_buff_template
-
-	var_3_25[10220] = {
+	pg.base.island_buff_template[10220] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5877,11 +4946,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.island_buff_template
-
-	var_3_26[10221] = {
+	pg.base.island_buff_template[10221] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5903,11 +4968,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.island_buff_template
-
-	var_3_27[10222] = {
+	pg.base.island_buff_template[10222] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5929,11 +4990,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.island_buff_template
-
-	var_3_28[10223] = {
+	pg.base.island_buff_template[10223] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5955,11 +5012,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.island_buff_template
-
-	var_3_29[10224] = {
+	pg.base.island_buff_template[10224] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -5981,11 +5034,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.island_buff_template
-
-	var_3_30[10225] = {
+	pg.base.island_buff_template[10225] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6007,11 +5056,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.island_buff_template
-
-	var_3_31[10226] = {
+	pg.base.island_buff_template[10226] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6033,11 +5078,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.island_buff_template
-
-	var_3_32[10227] = {
+	pg.base.island_buff_template[10227] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6059,11 +5100,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.island_buff_template
-
-	var_3_33[10228] = {
+	pg.base.island_buff_template[10228] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6085,11 +5122,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.island_buff_template
-
-	var_3_34[10229] = {
+	pg.base.island_buff_template[10229] = {
 		name = "农作技艺",
 		buff_group = 1022,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6111,11 +5144,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.island_buff_template
-
-	var_3_35[10230] = {
+	pg.base.island_buff_template[10230] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6132,11 +5161,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.island_buff_template
-
-	var_3_36[10231] = {
+	pg.base.island_buff_template[10231] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6153,11 +5178,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.island_buff_template
-
-	var_3_37[10232] = {
+	pg.base.island_buff_template[10232] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6174,11 +5195,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.island_buff_template
-
-	var_3_38[10233] = {
+	pg.base.island_buff_template[10233] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6195,11 +5212,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.island_buff_template
-
-	var_3_39[10234] = {
+	pg.base.island_buff_template[10234] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6216,11 +5229,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.island_buff_template
-
-	var_3_40[10235] = {
+	pg.base.island_buff_template[10235] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6237,11 +5246,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.island_buff_template
-
-	var_3_41[10236] = {
+	pg.base.island_buff_template[10236] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6258,11 +5263,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.island_buff_template
-
-	var_3_42[10237] = {
+	pg.base.island_buff_template[10237] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6279,11 +5280,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.island_buff_template
-
-	var_3_43[10238] = {
+	pg.base.island_buff_template[10238] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6300,11 +5297,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.island_buff_template
-
-	var_3_44[10239] = {
+	pg.base.island_buff_template[10239] = {
 		name = "全力专注",
 		buff_group = 1023,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6321,11 +5314,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.island_buff_template
-
-	var_3_45[10240] = {
+	pg.base.island_buff_template[10240] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6346,11 +5335,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.island_buff_template
-
-	var_3_46[10241] = {
+	pg.base.island_buff_template[10241] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6371,11 +5356,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.island_buff_template
-
-	var_3_47[10242] = {
+	pg.base.island_buff_template[10242] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6396,11 +5377,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.island_buff_template
-
-	var_3_48[10243] = {
+	pg.base.island_buff_template[10243] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6421,11 +5398,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.island_buff_template
-
-	var_3_49[10244] = {
+	pg.base.island_buff_template[10244] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6446,11 +5419,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.island_buff_template
-
-	var_3_50[10245] = {
+	pg.base.island_buff_template[10245] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6471,11 +5440,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.island_buff_template
-
-	var_3_51[10246] = {
+	pg.base.island_buff_template[10246] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6496,11 +5461,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.island_buff_template
-
-	var_3_52[10247] = {
+	pg.base.island_buff_template[10247] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6521,11 +5482,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.island_buff_template
-
-	var_3_53[10248] = {
+	pg.base.island_buff_template[10248] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6546,11 +5503,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.island_buff_template
-
-	var_3_54[10249] = {
+	pg.base.island_buff_template[10249] = {
 		name = "采收技艺",
 		buff_group = 1024,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6571,11 +5524,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.island_buff_template
-
-	var_3_55[10250] = {
+	pg.base.island_buff_template[10250] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6596,11 +5545,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.island_buff_template
-
-	var_3_56[10251] = {
+	pg.base.island_buff_template[10251] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6621,11 +5566,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.island_buff_template
-
-	var_3_57[10252] = {
+	pg.base.island_buff_template[10252] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6646,11 +5587,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.island_buff_template
-
-	var_3_58[10253] = {
+	pg.base.island_buff_template[10253] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6671,11 +5608,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.island_buff_template
-
-	var_3_59[10254] = {
+	pg.base.island_buff_template[10254] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6696,11 +5629,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.island_buff_template
-
-	var_3_60[10255] = {
+	pg.base.island_buff_template[10255] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6721,11 +5650,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.island_buff_template
-
-	var_3_61[10256] = {
+	pg.base.island_buff_template[10256] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6746,11 +5671,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.island_buff_template
-
-	var_3_62[10257] = {
+	pg.base.island_buff_template[10257] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6771,11 +5692,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.island_buff_template
-
-	var_3_63[10258] = {
+	pg.base.island_buff_template[10258] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6796,11 +5713,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.island_buff_template
-
-	var_3_64[10259] = {
+	pg.base.island_buff_template[10259] = {
 		name = "爆破技艺",
 		buff_group = 1025,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6821,11 +5734,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.island_buff_template
-
-	var_3_65[10260] = {
+	pg.base.island_buff_template[10260] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6845,11 +5754,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.island_buff_template
-
-	var_3_66[10261] = {
+	pg.base.island_buff_template[10261] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6869,11 +5774,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.island_buff_template
-
-	var_3_67[10262] = {
+	pg.base.island_buff_template[10262] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6893,11 +5794,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.island_buff_template
-
-	var_3_68[10263] = {
+	pg.base.island_buff_template[10263] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6917,11 +5814,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.island_buff_template
-
-	var_3_69[10264] = {
+	pg.base.island_buff_template[10264] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6941,11 +5834,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.island_buff_template
-
-	var_3_70[10265] = {
+	pg.base.island_buff_template[10265] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6965,11 +5854,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.island_buff_template
-
-	var_3_71[10266] = {
+	pg.base.island_buff_template[10266] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -6989,11 +5874,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.island_buff_template
-
-	var_3_72[10267] = {
+	pg.base.island_buff_template[10267] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7013,11 +5894,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.island_buff_template
-
-	var_3_73[10268] = {
+	pg.base.island_buff_template[10268] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7037,11 +5914,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.island_buff_template
-
-	var_3_74[10269] = {
+	pg.base.island_buff_template[10269] = {
 		name = "烧烤精通",
 		buff_group = 1026,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7061,11 +5934,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.island_buff_template
-
-	var_3_75[10270] = {
+	pg.base.island_buff_template[10270] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7085,11 +5954,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.island_buff_template
-
-	var_3_76[10271] = {
+	pg.base.island_buff_template[10271] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7109,11 +5974,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.island_buff_template
-
-	var_3_77[10272] = {
+	pg.base.island_buff_template[10272] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7133,11 +5994,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.island_buff_template
-
-	var_3_78[10273] = {
+	pg.base.island_buff_template[10273] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7157,11 +6014,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.island_buff_template
-
-	var_3_79[10274] = {
+	pg.base.island_buff_template[10274] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7181,11 +6034,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.island_buff_template
-
-	var_3_80[10275] = {
+	pg.base.island_buff_template[10275] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7205,11 +6054,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.island_buff_template
-
-	var_3_81[10276] = {
+	pg.base.island_buff_template[10276] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7229,11 +6074,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.island_buff_template
-
-	var_3_82[10277] = {
+	pg.base.island_buff_template[10277] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7253,11 +6094,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.island_buff_template
-
-	var_3_83[10278] = {
+	pg.base.island_buff_template[10278] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7277,11 +6114,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.island_buff_template
-
-	var_3_84[10279] = {
+	pg.base.island_buff_template[10279] = {
 		name = "木工技艺",
 		buff_group = 1027,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7301,11 +6134,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.island_buff_template
-
-	var_3_85[10280] = {
+	pg.base.island_buff_template[10280] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7326,11 +6155,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.island_buff_template
-
-	var_3_86[10281] = {
+	pg.base.island_buff_template[10281] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7351,11 +6176,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.island_buff_template
-
-	var_3_87[10282] = {
+	pg.base.island_buff_template[10282] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7376,11 +6197,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.island_buff_template
-
-	var_3_88[10283] = {
+	pg.base.island_buff_template[10283] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7401,11 +6218,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.island_buff_template
-
-	var_3_89[10284] = {
+	pg.base.island_buff_template[10284] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7426,11 +6239,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.island_buff_template
-
-	var_3_90[10285] = {
+	pg.base.island_buff_template[10285] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7451,11 +6260,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.island_buff_template
-
-	var_3_91[10286] = {
+	pg.base.island_buff_template[10286] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7476,11 +6281,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.island_buff_template
-
-	var_3_92[10287] = {
+	pg.base.island_buff_template[10287] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7501,11 +6302,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.island_buff_template
-
-	var_3_93[10288] = {
+	pg.base.island_buff_template[10288] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7526,11 +6323,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.island_buff_template
-
-	var_3_94[10289] = {
+	pg.base.island_buff_template[10289] = {
 		name = "手工技艺",
 		buff_group = 1028,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7551,11 +6344,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.island_buff_template
-
-	var_3_95[10290] = {
+	pg.base.island_buff_template[10290] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7573,11 +6362,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.island_buff_template
-
-	var_3_96[10291] = {
+	pg.base.island_buff_template[10291] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7595,11 +6380,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.island_buff_template
-
-	var_3_97[10292] = {
+	pg.base.island_buff_template[10292] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7617,11 +6398,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.island_buff_template
-
-	var_3_98[10293] = {
+	pg.base.island_buff_template[10293] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7639,8 +6416,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_3_98
-	var_3_98.base.island_buff_template[10294] = {
+	pg.base.island_buff_template[10294] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7662,11 +6438,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.island_buff_template
-
-	var_4_0[10295] = {
+	pg.base.island_buff_template[10295] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7684,11 +6456,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.island_buff_template
-
-	var_4_1[10296] = {
+	pg.base.island_buff_template[10296] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7706,11 +6474,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.island_buff_template
-
-	var_4_2[10297] = {
+	pg.base.island_buff_template[10297] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7728,11 +6492,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.island_buff_template
-
-	var_4_3[10298] = {
+	pg.base.island_buff_template[10298] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7750,11 +6510,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.island_buff_template
-
-	var_4_4[10299] = {
+	pg.base.island_buff_template[10299] = {
 		name = "元气满满 ",
 		buff_group = 1029,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7772,11 +6528,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.island_buff_template
-
-	var_4_5[10300] = {
+	pg.base.island_buff_template[10300] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7800,11 +6552,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.island_buff_template
-
-	var_4_6[10301] = {
+	pg.base.island_buff_template[10301] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7828,11 +6576,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.island_buff_template
-
-	var_4_7[10302] = {
+	pg.base.island_buff_template[10302] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7856,11 +6600,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.island_buff_template
-
-	var_4_8[10303] = {
+	pg.base.island_buff_template[10303] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7884,11 +6624,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.island_buff_template
-
-	var_4_9[10304] = {
+	pg.base.island_buff_template[10304] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7912,11 +6648,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.island_buff_template
-
-	var_4_10[10305] = {
+	pg.base.island_buff_template[10305] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7940,11 +6672,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.island_buff_template
-
-	var_4_11[10306] = {
+	pg.base.island_buff_template[10306] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7968,11 +6696,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.island_buff_template
-
-	var_4_12[10307] = {
+	pg.base.island_buff_template[10307] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -7996,11 +6720,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.island_buff_template
-
-	var_4_13[10308] = {
+	pg.base.island_buff_template[10308] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8024,11 +6744,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.island_buff_template
-
-	var_4_14[10309] = {
+	pg.base.island_buff_template[10309] = {
 		name = "店务精通",
 		buff_group = 1030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8052,11 +6768,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.island_buff_template
-
-	var_4_15[10310] = {
+	pg.base.island_buff_template[10310] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8073,11 +6785,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.island_buff_template
-
-	var_4_16[10311] = {
+	pg.base.island_buff_template[10311] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8094,11 +6802,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.island_buff_template
-
-	var_4_17[10312] = {
+	pg.base.island_buff_template[10312] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8115,11 +6819,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.island_buff_template
-
-	var_4_18[10313] = {
+	pg.base.island_buff_template[10313] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8136,11 +6836,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.island_buff_template
-
-	var_4_19[10314] = {
+	pg.base.island_buff_template[10314] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8157,11 +6853,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.island_buff_template
-
-	var_4_20[10315] = {
+	pg.base.island_buff_template[10315] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8178,11 +6870,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.island_buff_template
-
-	var_4_21[10316] = {
+	pg.base.island_buff_template[10316] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8199,11 +6887,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.island_buff_template
-
-	var_4_22[10317] = {
+	pg.base.island_buff_template[10317] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8220,11 +6904,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.island_buff_template
-
-	var_4_23[10318] = {
+	pg.base.island_buff_template[10318] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8241,11 +6921,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.island_buff_template
-
-	var_4_24[10319] = {
+	pg.base.island_buff_template[10319] = {
 		name = "幸运问候",
 		buff_group = 1031,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8262,11 +6938,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.island_buff_template
-
-	var_4_25[10320] = {
+	pg.base.island_buff_template[10320] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8287,11 +6959,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.island_buff_template
-
-	var_4_26[10321] = {
+	pg.base.island_buff_template[10321] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8312,11 +6980,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.island_buff_template
-
-	var_4_27[10322] = {
+	pg.base.island_buff_template[10322] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8337,11 +7001,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.island_buff_template
-
-	var_4_28[10323] = {
+	pg.base.island_buff_template[10323] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8362,11 +7022,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.island_buff_template
-
-	var_4_29[10324] = {
+	pg.base.island_buff_template[10324] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8387,11 +7043,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.island_buff_template
-
-	var_4_30[10325] = {
+	pg.base.island_buff_template[10325] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8412,11 +7064,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.island_buff_template
-
-	var_4_31[10326] = {
+	pg.base.island_buff_template[10326] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8437,11 +7085,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.island_buff_template
-
-	var_4_32[10327] = {
+	pg.base.island_buff_template[10327] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8462,11 +7106,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.island_buff_template
-
-	var_4_33[10328] = {
+	pg.base.island_buff_template[10328] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8487,11 +7127,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.island_buff_template
-
-	var_4_34[10329] = {
+	pg.base.island_buff_template[10329] = {
 		name = "调饮精通",
 		buff_group = 1032,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8512,11 +7148,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.island_buff_template
-
-	var_4_35[100001] = {
+	pg.base.island_buff_template[100001] = {
 		name = "饮品销售",
 		buff_group = 100001,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8535,11 +7167,7 @@ end)()
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.island_buff_template
-
-	var_4_36[100002] = {
+	pg.base.island_buff_template[100002] = {
 		name = "餐馆专销",
 		buff_group = 100002,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8557,11 +7185,7 @@ end)()
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.island_buff_template
-
-	var_4_37[100003] = {
+	pg.base.island_buff_template[100003] = {
 		name = "海伦娜技能",
 		buff_group = 100003,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8579,11 +7203,7 @@ end)()
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.island_buff_template
-
-	var_4_38[100004] = {
+	pg.base.island_buff_template[100004] = {
 		name = "烧烤精通",
 		buff_group = 100004,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8601,11 +7221,7 @@ end)()
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.island_buff_template
-
-	var_4_39[100006] = {
+	pg.base.island_buff_template[100006] = {
 		name = "店务精通",
 		buff_group = 100006,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8627,11 +7243,7 @@ end)()
 		type_duel = {},
 		buff_duel = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.island_buff_template
-
-	var_4_40[100010] = {
+	pg.base.island_buff_template[100010] = {
 		name = "拉菲技能效率1",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8667,11 +7279,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.island_buff_template
-
-	var_4_41[100011] = {
+	pg.base.island_buff_template[100011] = {
 		name = "拉菲技能效率2",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8707,11 +7315,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.island_buff_template
-
-	var_4_42[100012] = {
+	pg.base.island_buff_template[100012] = {
 		name = "拉菲技能效率3",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8747,11 +7351,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.island_buff_template
-
-	var_4_43[100013] = {
+	pg.base.island_buff_template[100013] = {
 		name = "拉菲技能效率4",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8787,11 +7387,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.island_buff_template
-
-	var_4_44[100014] = {
+	pg.base.island_buff_template[100014] = {
 		name = "拉菲技能效率5",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8827,11 +7423,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.island_buff_template
-
-	var_4_45[100015] = {
+	pg.base.island_buff_template[100015] = {
 		name = "拉菲技能效率6",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8867,11 +7459,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.island_buff_template
-
-	var_4_46[100016] = {
+	pg.base.island_buff_template[100016] = {
 		name = "拉菲技能效率7",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8907,11 +7495,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.island_buff_template
-
-	var_4_47[100017] = {
+	pg.base.island_buff_template[100017] = {
 		name = "拉菲技能效率8",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8947,11 +7531,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.island_buff_template
-
-	var_4_48[100018] = {
+	pg.base.island_buff_template[100018] = {
 		name = "拉菲技能效率9",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -8987,11 +7567,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.island_buff_template
-
-	var_4_49[100019] = {
+	pg.base.island_buff_template[100019] = {
 		name = "拉菲技能效率10",
 		buff_group = 100010,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9027,11 +7603,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.island_buff_template
-
-	var_4_50[100020] = {
+	pg.base.island_buff_template[100020] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9051,11 +7623,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.island_buff_template
-
-	var_4_51[100021] = {
+	pg.base.island_buff_template[100021] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9075,11 +7643,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.island_buff_template
-
-	var_4_52[100022] = {
+	pg.base.island_buff_template[100022] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9099,11 +7663,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.island_buff_template
-
-	var_4_53[100023] = {
+	pg.base.island_buff_template[100023] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9123,11 +7683,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.island_buff_template
-
-	var_4_54[100024] = {
+	pg.base.island_buff_template[100024] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9147,11 +7703,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.island_buff_template
-
-	var_4_55[100025] = {
+	pg.base.island_buff_template[100025] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9171,11 +7723,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.island_buff_template
-
-	var_4_56[100026] = {
+	pg.base.island_buff_template[100026] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9195,11 +7743,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.island_buff_template
-
-	var_4_57[100027] = {
+	pg.base.island_buff_template[100027] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9219,11 +7763,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.island_buff_template
-
-	var_4_58[100028] = {
+	pg.base.island_buff_template[100028] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9243,11 +7783,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.island_buff_template
-
-	var_4_59[100029] = {
+	pg.base.island_buff_template[100029] = {
 		name = "元气满满伐木",
 		buff_group = 100020,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9267,11 +7803,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.island_buff_template
-
-	var_4_60[100030] = {
+	pg.base.island_buff_template[100030] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9291,11 +7823,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.island_buff_template
-
-	var_4_61[100031] = {
+	pg.base.island_buff_template[100031] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9315,11 +7843,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.island_buff_template
-
-	var_4_62[100032] = {
+	pg.base.island_buff_template[100032] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9339,11 +7863,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.island_buff_template
-
-	var_4_63[100033] = {
+	pg.base.island_buff_template[100033] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9363,11 +7883,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.island_buff_template
-
-	var_4_64[100034] = {
+	pg.base.island_buff_template[100034] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9387,11 +7903,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.island_buff_template
-
-	var_4_65[100035] = {
+	pg.base.island_buff_template[100035] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9411,11 +7923,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.island_buff_template
-
-	var_4_66[100036] = {
+	pg.base.island_buff_template[100036] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9435,11 +7943,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.island_buff_template
-
-	var_4_67[100037] = {
+	pg.base.island_buff_template[100037] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9459,11 +7963,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.island_buff_template
-
-	var_4_68[100038] = {
+	pg.base.island_buff_template[100038] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9483,11 +7983,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.island_buff_template
-
-	var_4_69[100039] = {
+	pg.base.island_buff_template[100039] = {
 		name = "调饮精通 利润",
 		buff_group = 100030,
 		buff_desc = "无需本地化，角色技能读skill表",
@@ -9507,8 +8003,7 @@ end)()
 		},
 		buff_duel = {}
 	}
-	pg = var_4_69
-	var_4_69.base.island_buff_template[999990] = {
+	pg.base.island_buff_template[999990] = {
 		type_use = "0",
 		name = "无限体力",
 		buff_group = 99999,

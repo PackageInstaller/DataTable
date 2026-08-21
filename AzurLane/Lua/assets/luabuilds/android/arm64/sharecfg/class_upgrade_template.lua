@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "class_upgrade_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "class_upgrade_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.class_upgrade_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.class_upgrade_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.class_upgrade_template = rawget(pg, "class_upgrade_template") or setmetatable({
+	__name = "class_upgrade_template"
+}, confNEO)
+pg.class_upgrade_template.all = {
 	1,
 	2,
 	3,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.class_upgrade_template = {}
+pg.base = pg.base or {}
+pg.base.class_upgrade_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.class_upgrade_template
-
-	var_1_0[1] = {
+	pg.base.class_upgrade_template[1] = {
 		store = 100000,
 		proficency_cost_per_min = 55,
 		time = 900,
@@ -72,11 +35,7 @@ var_0_3.base.class_upgrade_template = {}
 			6000
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.class_upgrade_template
-
-	var_1_1[2] = {
+	pg.base.class_upgrade_template[2] = {
 		store = 110000,
 		proficency_cost_per_min = 60,
 		time = 3600,
@@ -91,11 +50,7 @@ var_0_3.base.class_upgrade_template = {}
 			8000
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.class_upgrade_template
-
-	var_1_2[3] = {
+	pg.base.class_upgrade_template[3] = {
 		store = 120000,
 		proficency_cost_per_min = 65,
 		time = 7200,
@@ -110,11 +65,7 @@ var_0_3.base.class_upgrade_template = {}
 			10000
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.class_upgrade_template
-
-	var_1_3[4] = {
+	pg.base.class_upgrade_template[4] = {
 		store = 130000,
 		proficency_cost_per_min = 70,
 		time = 14400,
@@ -129,11 +80,7 @@ var_0_3.base.class_upgrade_template = {}
 			12000
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.class_upgrade_template
-
-	var_1_4[5] = {
+	pg.base.class_upgrade_template[5] = {
 		store = 140000,
 		proficency_cost_per_min = 75,
 		time = 28800,
@@ -148,11 +95,7 @@ var_0_3.base.class_upgrade_template = {}
 			15000
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.class_upgrade_template
-
-	var_1_5[6] = {
+	pg.base.class_upgrade_template[6] = {
 		store = 150000,
 		proficency_cost_per_min = 80,
 		time = 43200,
@@ -167,11 +110,7 @@ var_0_3.base.class_upgrade_template = {}
 			18000
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.class_upgrade_template
-
-	var_1_6[7] = {
+	pg.base.class_upgrade_template[7] = {
 		store = 160000,
 		proficency_cost_per_min = 85,
 		time = 64800,
@@ -186,11 +125,7 @@ var_0_3.base.class_upgrade_template = {}
 			21000
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.class_upgrade_template
-
-	var_1_7[8] = {
+	pg.base.class_upgrade_template[8] = {
 		store = 170000,
 		proficency_cost_per_min = 90,
 		time = 86400,
@@ -205,11 +140,7 @@ var_0_3.base.class_upgrade_template = {}
 			25000
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.class_upgrade_template
-
-	var_1_8[9] = {
+	pg.base.class_upgrade_template[9] = {
 		store = 180000,
 		proficency_cost_per_min = 95,
 		time = 172800,
@@ -224,11 +155,7 @@ var_0_3.base.class_upgrade_template = {}
 			30000
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.class_upgrade_template
-
-	var_1_9[10] = {
+	pg.base.class_upgrade_template[10] = {
 		store = 200000,
 		proficency_cost_per_min = 100,
 		time = 7200,
@@ -243,11 +170,7 @@ var_0_3.base.class_upgrade_template = {}
 			17500
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.class_upgrade_template
-
-	var_1_10[11] = {
+	pg.base.class_upgrade_template[11] = {
 		store = 210000,
 		proficency_cost_per_min = 105,
 		time = 7200,
@@ -262,8 +185,7 @@ var_0_3.base.class_upgrade_template = {}
 			20000
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.class_upgrade_template[12] = {
+	pg.base.class_upgrade_template[12] = {
 		store = 220000,
 		proficency_cost_per_min = 110,
 		time = 0,

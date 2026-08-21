@@ -1,110 +1,44 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainActInsBtnMellowAdapt", import(".MainDifferentStyleSpActBtnAdapt"))
 
-local var_0_0 = "MainActInsBtnMellowAdapt"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainDifferentStyleSpActBtnAdapt"))
-
-function var_0_1.GetContainer(arg_1_0)
-	local var_1_0 = arg_1_0.root
-
-	return var_1.Find(var_1_0, "left")
+function var_0_0.GetContainer(arg_1_0)
+	return arg_1_0.root:Find("left")
 end
 
-function var_0_1.OnInit(arg_2_0)
-	getProxy = var_1_10001
-	InstagramProxy = var_1_10003
+function var_0_0.OnInit(arg_2_0)
+	local var_2_0 = getProxy(InstagramProxy):ShouldShowTip()
 
-	local var_2_0 = var_1_10001(var_1_10003)
-	local var_2_1
-
-	if not var_1.ShouldShowTip(var_2_0) then
-		getProxy = var_2_1
-		InstagramProxy = var_2_0
-		var_2_0 = var_2_1(var_2_0)
-
-		if not var_2_1.ShouldShowTip(var_2_0) then
-			getProxy = var_2_1
-			InstagramChatProxy = var_2_0
-			var_2_0 = var_2_1(var_2_0)
-			var_2_1 = var_2_1.ShouldShowTip(var_2_0)
-		end
+	if not var_2_0 then
+		var_2_0 = getProxy(InstagramProxy):ShouldShowTip()
+		var_2_0 = var_2_0 or getProxy(InstagramChatProxy):ShouldShowTip()
 	end
 
-	setActive = var_1_10002
+	setActive(arg_2_0._tf:Find("tip"), var_2_0)
 
-	local var_2_2 = arg_2_0._tf
-
-	var_1_10002(var_4.Find(var_2_2, "tip"), var_2_1)
-
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_2.Find(var_2_3, "Text")
-	local var_2_5 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_7
-	arg_2_0.textTr = var_2_5(var_2_4, var_5(var_7))
-
-	local var_2_6
-
-	if not arg_2_0.systemTimeUtil then
-		SystemTimeUtil = var_2_6
-		var_2_6 = var_2_6.New()
-	end
-
-	arg_2_0.systemTimeUtil = var_2_6
+	arg_2_0.textTr = arg_2_0._tf:Find("Text"):GetComponent(typeof(Text))
+	arg_2_0.systemTimeUtil = arg_2_0.systemTimeUtil or SystemTimeUtil.New()
 
 	arg_2_0:AddTimer()
 
-	local var_2_7 = arg_2_0._tf
-	local var_2_8 = var_2.GetComponent
+	local var_2_1 = arg_2_0._tf:GetComponent(typeof(Animation))
 
-	typeof = var_5
-	Animation = var_7
-
-	local var_2_9 = var_2_8(var_2_7, var_5(var_7))
-	local var_2_10
-
-	if var_2_1 then
-		var_2_10 = var_2_9
-
-		var_2_9.Play(var_2_10, "shake")
+	if var_2_0 then
+		var_2_1:Play("shake")
 	else
-		var_2_10 = var_2_9
+		var_2_1:Stop()
 
-		var_2_9.Stop(var_2_10)
-
-		var_2_0 = arg_2_0._tf
-		Vector3 = var_2_7
-		var_2_0.localEulerAngles = var_2_7.zero
+		arg_2_0._tf.localEulerAngles = Vector3.zero
 	end
 
-	getProxy = var_2_0
-	AppreciateProxy = var_2_10
+	local var_2_2 = getProxy(AppreciateProxy):CanPlayMainMusicPlayer()
 
-	local var_2_11 = var_2_0(var_2_10)
-	local var_2_12 = var_3.CanPlayMainMusicPlayer(var_2_11)
-
-	setActive = var_2_7
-
-	local var_2_13 = arg_2_0._tf
-
-	var_2_7(var_6.Find(var_2_13, "base"), not var_2_12)
-
-	setActive = var_2_7
-
-	local var_2_14 = arg_2_0._tf
-
-	var_2_7(var_6.Find(var_2_14, "music"), var_2_12)
+	setActive(arg_2_0._tf:Find("base"), not var_2_2)
+	setActive(arg_2_0._tf:Find("music"), var_2_2)
 
 	return
 end
 
-function var_0_1.AddTimer(arg_3_0)
-	local var_3_0 = arg_3_0.systemTimeUtil
-
-	var_1.SetUp(var_3_0, function(arg_4_0, arg_4_1, arg_4_2)
+function var_0_0.AddTimer(arg_3_0)
+	arg_3_0.systemTimeUtil:SetUp(function(arg_4_0, arg_4_1, arg_4_2)
 		arg_3_0.textTr.text = arg_4_0 .. ":" .. arg_4_1
 
 		return
@@ -113,11 +47,9 @@ function var_0_1.AddTimer(arg_3_0)
 	return
 end
 
-function var_0_1.RemoveTimer(arg_5_0)
+function var_0_0.RemoveTimer(arg_5_0)
 	if arg_5_0.systemTimeUtil then
-		local var_5_0 = arg_5_0.systemTimeUtil
-
-		var_1.Dispose(var_5_0)
+		arg_5_0.systemTimeUtil:Dispose()
 
 		arg_5_0.systemTimeUtil = nil
 	end
@@ -125,16 +57,16 @@ function var_0_1.RemoveTimer(arg_5_0)
 	return
 end
 
-function var_0_1.OnClear(arg_6_0)
+function var_0_0.OnClear(arg_6_0)
 	arg_6_0:RemoveTimer()
 
 	return
 end
 
-function var_0_1.OnDisable(arg_7_0)
+function var_0_0.OnDisable(arg_7_0)
 	arg_7_0:RemoveTimer()
 
 	return
 end
 
-return var_0_1
+return var_0_0

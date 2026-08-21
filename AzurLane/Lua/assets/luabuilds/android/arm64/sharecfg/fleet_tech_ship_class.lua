@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "fleet_tech_ship_class") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "fleet_tech_ship_class"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.fleet_tech_ship_class = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.fleet_tech_ship_class
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.fleet_tech_ship_class = rawget(pg, "fleet_tech_ship_class") or setmetatable({
+	__name = "fleet_tech_ship_class"
+}, confNEO)
+pg.fleet_tech_ship_class.all = {
 	10101,
 	10102,
 	10103,
@@ -425,25 +402,11 @@ var_0_3.all = {
 	971201,
 	971301
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.fleet_tech_ship_class = {}
+pg.base = pg.base or {}
+pg.base.fleet_tech_ship_class = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.fleet_tech_ship_class
-
-	var_1_0[10101] = {
+	pg.base.fleet_tech_ship_class[10101] = {
 		shiptype = 1,
 		name = "法拉格特级",
 		t_level = 3,
@@ -455,11 +418,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10140
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.fleet_tech_ship_class
-
-	var_1_1[10102] = {
+	pg.base.fleet_tech_ship_class[10102] = {
 		shiptype = 1,
 		name = "马汉级",
 		t_level = 4,
@@ -471,11 +430,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10104
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.fleet_tech_ship_class
-
-	var_1_2[10103] = {
+	pg.base.fleet_tech_ship_class[10103] = {
 		shiptype = 1,
 		name = "格里德利级",
 		t_level = 5,
@@ -489,11 +444,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10108
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.fleet_tech_ship_class
-
-	var_1_3[10104] = {
+	pg.base.fleet_tech_ship_class[10104] = {
 		shiptype = 1,
 		name = "弗莱彻级",
 		t_level = 8,
@@ -524,14 +475,12 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10143,
 			10155,
 			19905,
-			10110
+			10110,
+			10157,
+			10158
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.fleet_tech_ship_class
-
-	var_1_4[10105] = {
+	pg.base.fleet_tech_ship_class[10105] = {
 		shiptype = 1,
 		name = "本森级",
 		t_level = 7,
@@ -546,11 +495,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10137
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.fleet_tech_ship_class
-
-	var_1_5[10106] = {
+	pg.base.fleet_tech_ship_class[10106] = {
 		shiptype = 1,
 		name = "西姆斯级",
 		t_level = 6,
@@ -562,11 +507,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10125
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.fleet_tech_ship_class
-
-	var_1_6[10107] = {
+	pg.base.fleet_tech_ship_class[10107] = {
 		shiptype = 1,
 		name = "坎农级",
 		t_level = 4,
@@ -577,11 +518,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10126
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.fleet_tech_ship_class
-
-	var_1_7[10108] = {
+	pg.base.fleet_tech_ship_class[10108] = {
 		shiptype = 1,
 		name = "艾伦·萨姆纳级",
 		t_level = 9,
@@ -593,14 +530,11 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10144,
 			10148,
 			10149,
-			10151
+			10151,
+			10156
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.fleet_tech_ship_class
-
-	var_1_8[10109] = {
+	pg.base.fleet_tech_ship_class[10109] = {
 		shiptype = 1,
 		name = "埃德索尔级",
 		t_level = 4,
@@ -611,11 +545,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10150
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.fleet_tech_ship_class
-
-	var_1_9[10201] = {
+	pg.base.fleet_tech_ship_class[10201] = {
 		shiptype = 2,
 		name = "亚特兰大级",
 		t_level = 5,
@@ -630,11 +560,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10226
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.fleet_tech_ship_class
-
-	var_1_10[10202] = {
+	pg.base.fleet_tech_ship_class[10202] = {
 		shiptype = 2,
 		name = "克利夫兰级",
 		t_level = 7,
@@ -650,14 +576,11 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10225,
 			10231,
 			10234,
-			10235
+			10235,
+			10236
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.fleet_tech_ship_class
-
-	var_1_11[10203] = {
+	pg.base.fleet_tech_ship_class[10203] = {
 		shiptype = 2,
 		name = "奥马哈级",
 		t_level = 3,
@@ -673,11 +596,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10227
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.fleet_tech_ship_class
-
-	var_1_12[10204] = {
+	pg.base.fleet_tech_ship_class[10204] = {
 		shiptype = 2,
 		name = "布鲁克林级",
 		t_level = 6,
@@ -693,11 +612,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10205
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.fleet_tech_ship_class
-
-	var_1_13[10205] = {
+	pg.base.fleet_tech_ship_class[10205] = {
 		shiptype = 2,
 		name = "西雅图",
 		t_level = 8,
@@ -708,11 +623,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			19901
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.fleet_tech_ship_class
-
-	var_1_14[10206] = {
+	pg.base.fleet_tech_ship_class[10206] = {
 		shiptype = 2,
 		name = "法戈级",
 		t_level = 9,
@@ -723,11 +634,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10233
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.fleet_tech_ship_class
-
-	var_1_15[10301] = {
+	pg.base.fleet_tech_ship_class[10301] = {
 		shiptype = 3,
 		name = "彭萨科拉级",
 		t_level = 4,
@@ -739,11 +646,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10302
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.fleet_tech_ship_class
-
-	var_1_16[10302] = {
+	pg.base.fleet_tech_ship_class[10302] = {
 		shiptype = 3,
 		name = "北安普顿级",
 		t_level = 5,
@@ -757,11 +660,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10327
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.fleet_tech_ship_class
-
-	var_1_17[10303] = {
+	pg.base.fleet_tech_ship_class[10303] = {
 		shiptype = 3,
 		name = "波特兰级",
 		t_level = 6,
@@ -773,11 +672,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10307
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.fleet_tech_ship_class
-
-	var_1_18[10304] = {
+	pg.base.fleet_tech_ship_class[10304] = {
 		shiptype = 3,
 		name = "威奇塔",
 		t_level = 7,
@@ -788,11 +683,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10311
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.fleet_tech_ship_class
-
-	var_1_19[10305] = {
+	pg.base.fleet_tech_ship_class[10305] = {
 		shiptype = 3,
 		name = "新奥尔良级",
 		t_level = 6,
@@ -808,11 +699,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10312
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.fleet_tech_ship_class
-
-	var_1_20[10306] = {
+	pg.base.fleet_tech_ship_class[10306] = {
 		shiptype = 3,
 		name = "巴尔的摩级",
 		t_level = 8,
@@ -825,11 +712,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10328
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.fleet_tech_ship_class
-
-	var_1_21[10307] = {
+	pg.base.fleet_tech_ship_class[10307] = {
 		shiptype = 3,
 		name = "安克雷奇",
 		t_level = 8,
@@ -840,11 +723,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			19903
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.fleet_tech_ship_class
-
-	var_1_22[10308] = {
+	pg.base.fleet_tech_ship_class[10308] = {
 		shiptype = 3,
 		name = "俄勒冈城级",
 		t_level = 9,
@@ -855,11 +734,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10326
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.fleet_tech_ship_class
-
-	var_1_23[10401] = {
+	pg.base.fleet_tech_ship_class[10401] = {
 		shiptype = 4,
 		name = "列克星敦级",
 		t_level = 6,
@@ -870,11 +745,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10401
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.fleet_tech_ship_class
-
-	var_1_24[10501] = {
+	pg.base.fleet_tech_ship_class[10501] = {
 		shiptype = 5,
 		name = "内华达级",
 		t_level = 3,
@@ -886,11 +757,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10502
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.fleet_tech_ship_class
-
-	var_1_25[10502] = {
+	pg.base.fleet_tech_ship_class[10502] = {
 		shiptype = 5,
 		name = "宾夕法尼亚级",
 		t_level = 4,
@@ -902,11 +769,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10504
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.fleet_tech_ship_class
-
-	var_1_26[10503] = {
+	pg.base.fleet_tech_ship_class[10503] = {
 		shiptype = 5,
 		name = "田纳西级",
 		t_level = 5,
@@ -918,11 +781,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10508
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.fleet_tech_ship_class
-
-	var_1_27[10504] = {
+	pg.base.fleet_tech_ship_class[10504] = {
 		shiptype = 5,
 		name = "科罗拉多级",
 		t_level = 6,
@@ -935,11 +794,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10511
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.fleet_tech_ship_class
-
-	var_1_28[10505] = {
+	pg.base.fleet_tech_ship_class[10505] = {
 		shiptype = 5,
 		name = "北卡罗来纳级",
 		t_level = 7,
@@ -951,11 +806,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10513
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.fleet_tech_ship_class
-
-	var_1_29[10506] = {
+	pg.base.fleet_tech_ship_class[10506] = {
 		shiptype = 5,
 		name = "南达科他级",
 		t_level = 7,
@@ -969,11 +820,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10520
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.fleet_tech_ship_class
-
-	var_1_30[10507] = {
+	pg.base.fleet_tech_ship_class[10507] = {
 		shiptype = 5,
 		name = "佐治亚",
 		t_level = 9,
@@ -984,11 +831,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			19902
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.fleet_tech_ship_class
-
-	var_1_31[10508] = {
+	pg.base.fleet_tech_ship_class[10508] = {
 		shiptype = 5,
 		name = "衣阿华级",
 		t_level = 9,
@@ -999,11 +842,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10517
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.fleet_tech_ship_class
-
-	var_1_32[10509] = {
+	pg.base.fleet_tech_ship_class[10509] = {
 		shiptype = 5,
 		name = "堪萨斯",
 		t_level = 8,
@@ -1014,11 +853,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			19906
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.fleet_tech_ship_class
-
-	var_1_33[10601] = {
+	pg.base.fleet_tech_ship_class[10601] = {
 		shiptype = 6,
 		name = "长岛级",
 		t_level = 2,
@@ -1029,11 +864,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10601
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.fleet_tech_ship_class
-
-	var_1_34[10602] = {
+	pg.base.fleet_tech_ship_class[10602] = {
 		shiptype = 6,
 		name = "博格级",
 		t_level = 3,
@@ -1044,11 +875,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10602
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.fleet_tech_ship_class
-
-	var_1_35[10604] = {
+	pg.base.fleet_tech_ship_class[10604] = {
 		shiptype = 6,
 		name = "兰利",
 		t_level = 2,
@@ -1059,11 +886,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10701
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.fleet_tech_ship_class
-
-	var_1_36[10605] = {
+	pg.base.fleet_tech_ship_class[10605] = {
 		shiptype = 6,
 		name = "突击者",
 		t_level = 5,
@@ -1074,11 +897,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10704
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.fleet_tech_ship_class
-
-	var_1_37[10606] = {
+	pg.base.fleet_tech_ship_class[10606] = {
 		shiptype = 6,
 		name = "独立级",
 		t_level = 4,
@@ -1094,11 +913,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10730
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.fleet_tech_ship_class
-
-	var_1_38[10607] = {
+	pg.base.fleet_tech_ship_class[10607] = {
 		shiptype = 6,
 		name = "卡萨布兰卡级",
 		t_level = 3,
@@ -1109,11 +924,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10655
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.fleet_tech_ship_class
-
-	var_1_39[10701] = {
+	pg.base.fleet_tech_ship_class[10701] = {
 		shiptype = 7,
 		name = "列克星敦级",
 		t_level = 7,
@@ -1125,11 +936,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10703
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.fleet_tech_ship_class
-
-	var_1_40[10702] = {
+	pg.base.fleet_tech_ship_class[10702] = {
 		shiptype = 7,
 		name = "约克城级",
 		t_level = 6,
@@ -1142,11 +949,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10707
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.fleet_tech_ship_class
-
-	var_1_41[10703] = {
+	pg.base.fleet_tech_ship_class[10703] = {
 		shiptype = 7,
 		name = "胡蜂级",
 		t_level = 5,
@@ -1157,11 +960,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10708
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.fleet_tech_ship_class
-
-	var_1_42[10705] = {
+	pg.base.fleet_tech_ship_class[10705] = {
 		shiptype = 7,
 		name = "埃塞克斯级",
 		t_level = 8,
@@ -1177,14 +976,11 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10714,
 			10716,
 			10717,
+			10720,
 			10738
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.fleet_tech_ship_class
-
-	var_1_43[10801] = {
+	pg.base.fleet_tech_ship_class[10801] = {
 		shiptype = 8,
 		name = "猫鲨级",
 		t_level = 6,
@@ -1200,11 +996,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10808
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.fleet_tech_ship_class
-
-	var_1_44[10802] = {
+	pg.base.fleet_tech_ship_class[10802] = {
 		shiptype = 8,
 		name = "巴劳鱵级",
 		t_level = 7,
@@ -1215,11 +1007,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10806
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.fleet_tech_ship_class
-
-	var_1_45[10803] = {
+	pg.base.fleet_tech_ship_class[10803] = {
 		shiptype = 8,
 		name = "独角鲸级",
 		t_level = 3,
@@ -1230,11 +1018,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			10807
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.fleet_tech_ship_class
-
-	var_1_46[11001] = {
+	pg.base.fleet_tech_ship_class[11001] = {
 		shiptype = 10,
 		name = "奇尔沙治",
 		t_level = 9,
@@ -1245,11 +1029,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			19904
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.fleet_tech_ship_class
-
-	var_1_47[11201] = {
+	pg.base.fleet_tech_ship_class[11201] = {
 		shiptype = 12,
 		name = "女灶神",
 		t_level = 5,
@@ -1260,11 +1040,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			11201
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.fleet_tech_ship_class
-
-	var_1_48[11801] = {
+	pg.base.fleet_tech_ship_class[11801] = {
 		shiptype = 18,
 		name = "阿拉斯加级",
 		t_level = 9,
@@ -1275,11 +1051,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			11802
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.fleet_tech_ship_class
-
-	var_1_49[20101] = {
+	pg.base.fleet_tech_ship_class[20101] = {
 		shiptype = 1,
 		name = "A级",
 		t_level = 3,
@@ -1291,11 +1063,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20103
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.fleet_tech_ship_class
-
-	var_1_50[20102] = {
+	pg.base.fleet_tech_ship_class[20102] = {
 		shiptype = 1,
 		name = "B级",
 		t_level = 3,
@@ -1307,11 +1075,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20107
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.fleet_tech_ship_class
-
-	var_1_51[20103] = {
+	pg.base.fleet_tech_ship_class[20103] = {
 		shiptype = 1,
 		name = "C级",
 		t_level = 3,
@@ -1324,11 +1088,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20110
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.fleet_tech_ship_class
-
-	var_1_52[20104] = {
+	pg.base.fleet_tech_ship_class[20104] = {
 		shiptype = 1,
 		name = "F级",
 		t_level = 4,
@@ -1340,11 +1100,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20112
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.fleet_tech_ship_class
-
-	var_1_53[20105] = {
+	pg.base.fleet_tech_ship_class[20105] = {
 		shiptype = 1,
 		name = "G级",
 		t_level = 4,
@@ -1358,11 +1114,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20139
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.fleet_tech_ship_class
-
-	var_1_54[20106] = {
+	pg.base.fleet_tech_ship_class[20106] = {
 		shiptype = 1,
 		name = "H级",
 		t_level = 4,
@@ -1375,11 +1127,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20136
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.fleet_tech_ship_class
-
-	var_1_55[20107] = {
+	pg.base.fleet_tech_ship_class[20107] = {
 		shiptype = 1,
 		name = "旧V级",
 		t_level = 1,
@@ -1390,11 +1138,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20123
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.fleet_tech_ship_class
-
-	var_1_56[20108] = {
+	pg.base.fleet_tech_ship_class[20108] = {
 		shiptype = 1,
 		name = "J级",
 		t_level = 5,
@@ -1410,11 +1154,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20135
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.fleet_tech_ship_class
-
-	var_1_57[20109] = {
+	pg.base.fleet_tech_ship_class[20109] = {
 		shiptype = 1,
 		name = "M级",
 		t_level = 7,
@@ -1426,11 +1166,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20127
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.fleet_tech_ship_class
-
-	var_1_58[20110] = {
+	pg.base.fleet_tech_ship_class[20110] = {
 		shiptype = 1,
 		name = "A级实验型",
 		t_level = 2,
@@ -1441,11 +1177,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20101
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.fleet_tech_ship_class
-
-	var_1_59[20111] = {
+	pg.base.fleet_tech_ship_class[20111] = {
 		shiptype = 1,
 		name = "E级",
 		t_level = 4,
@@ -1456,11 +1188,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20129
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.fleet_tech_ship_class
-
-	var_1_60[20112] = {
+	pg.base.fleet_tech_ship_class[20112] = {
 		shiptype = 1,
 		name = "部族级",
 		t_level = 5,
@@ -1472,11 +1200,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20137
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.fleet_tech_ship_class
-
-	var_1_61[20113] = {
+	pg.base.fleet_tech_ship_class[20113] = {
 		shiptype = 1,
 		name = "I级",
 		t_level = 4,
@@ -1487,11 +1211,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20133
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.fleet_tech_ship_class
-
-	var_1_62[20114] = {
+	pg.base.fleet_tech_ship_class[20114] = {
 		shiptype = 1,
 		name = "战斗级",
 		t_level = 8,
@@ -1502,11 +1222,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20138
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.fleet_tech_ship_class
-
-	var_1_63[20201] = {
+	pg.base.fleet_tech_ship_class[20201] = {
 		shiptype = 2,
 		name = "利安得级",
 		t_level = 5,
@@ -1519,11 +1235,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20203
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.fleet_tech_ship_class
-
-	var_1_64[20202] = {
+	pg.base.fleet_tech_ship_class[20202] = {
 		shiptype = 2,
 		name = "南安普顿级",
 		t_level = 7,
@@ -1537,11 +1249,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20226
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.fleet_tech_ship_class
-
-	var_1_65[20203] = {
+	pg.base.fleet_tech_ship_class[20203] = {
 		shiptype = 2,
 		name = "阿瑞托莎级",
 		t_level = 3,
@@ -1555,11 +1263,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20229
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.fleet_tech_ship_class
-
-	var_1_66[20204] = {
+	pg.base.fleet_tech_ship_class[20204] = {
 		shiptype = 2,
 		name = "斐济级",
 		t_level = 6,
@@ -1572,11 +1276,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20236
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.fleet_tech_ship_class
-
-	var_1_67[20205] = {
+	pg.base.fleet_tech_ship_class[20205] = {
 		shiptype = 2,
 		name = "爱丁堡级",
 		t_level = 7,
@@ -1588,11 +1288,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20212
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.fleet_tech_ship_class
-
-	var_1_68[20206] = {
+	pg.base.fleet_tech_ship_class[20206] = {
 		shiptype = 2,
 		name = "黛朵级",
 		t_level = 6,
@@ -1610,11 +1306,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20235
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.fleet_tech_ship_class
-
-	var_1_69[20207] = {
+	pg.base.fleet_tech_ship_class[20207] = {
 		shiptype = 2,
 		name = "谷物女神级",
 		t_level = 2,
@@ -1626,11 +1318,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20222
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.fleet_tech_ship_class
-
-	var_1_70[20208] = {
+	pg.base.fleet_tech_ship_class[20208] = {
 		shiptype = 2,
 		name = "海王星级",
 		t_level = 8,
@@ -1641,11 +1329,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			29901
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.fleet_tech_ship_class
-
-	var_1_71[20209] = {
+	pg.base.fleet_tech_ship_class[20209] = {
 		shiptype = 2,
 		name = "确捷级",
 		t_level = 7,
@@ -1657,11 +1341,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20237
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.fleet_tech_ship_class
-
-	var_1_72[20210] = {
+	pg.base.fleet_tech_ship_class[20210] = {
 		shiptype = 2,
 		name = "格罗斯特级",
 		t_level = 7,
@@ -1674,11 +1354,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20234
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.fleet_tech_ship_class
-
-	var_1_73[20211] = {
+	pg.base.fleet_tech_ship_class[20211] = {
 		shiptype = 2,
 		name = "翡翠级",
 		t_level = 3,
@@ -1689,11 +1365,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20232
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.fleet_tech_ship_class
-
-	var_1_74[20212] = {
+	pg.base.fleet_tech_ship_class[20212] = {
 		shiptype = 2,
 		name = "普利茅斯",
 		t_level = 9,
@@ -1704,11 +1376,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			29905
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.fleet_tech_ship_class
-
-	var_1_75[20301] = {
+	pg.base.fleet_tech_ship_class[20301] = {
 		shiptype = 3,
 		name = "伦敦级",
 		t_level = 4,
@@ -1722,11 +1390,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20313
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.fleet_tech_ship_class
-
-	var_1_76[20302] = {
+	pg.base.fleet_tech_ship_class[20302] = {
 		shiptype = 3,
 		name = "肯特级",
 		t_level = 4,
@@ -1738,11 +1402,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20304
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.fleet_tech_ship_class
-
-	var_1_77[20303] = {
+	pg.base.fleet_tech_ship_class[20303] = {
 		shiptype = 3,
 		name = "诺福克级",
 		t_level = 5,
@@ -1754,11 +1414,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20306
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.fleet_tech_ship_class
-
-	var_1_78[20304] = {
+	pg.base.fleet_tech_ship_class[20304] = {
 		shiptype = 3,
 		name = "约克级",
 		t_level = 5,
@@ -1770,11 +1426,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20308
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.fleet_tech_ship_class
-
-	var_1_79[20305] = {
+	pg.base.fleet_tech_ship_class[20305] = {
 		shiptype = 3,
 		name = "柴郡",
 		t_level = 8,
@@ -1785,11 +1437,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			29903
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.fleet_tech_ship_class
-
-	var_1_80[20306] = {
+	pg.base.fleet_tech_ship_class[20306] = {
 		shiptype = 3,
 		name = "德雷克",
 		t_level = 9,
@@ -1800,11 +1448,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			29904
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.fleet_tech_ship_class
-
-	var_1_81[20307] = {
+	pg.base.fleet_tech_ship_class[20307] = {
 		shiptype = 3,
 		name = "萨里级",
 		t_level = 7,
@@ -1815,11 +1459,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20314
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.fleet_tech_ship_class
-
-	var_1_82[20401] = {
+	pg.base.fleet_tech_ship_class[20401] = {
 		shiptype = 4,
 		name = "声望级",
 		t_level = 4,
@@ -1831,11 +1471,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20402
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.fleet_tech_ship_class
-
-	var_1_83[20402] = {
+	pg.base.fleet_tech_ship_class[20402] = {
 		shiptype = 4,
 		name = "海军上将级",
 		t_level = 6,
@@ -1846,11 +1482,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20403
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.fleet_tech_ship_class
-
-	var_1_84[20403] = {
+	pg.base.fleet_tech_ship_class[20403] = {
 		shiptype = 4,
 		name = "邓肯",
 		t_level = 9,
@@ -1861,11 +1493,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			29906
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.fleet_tech_ship_class
-
-	var_1_85[20501] = {
+	pg.base.fleet_tech_ship_class[20501] = {
 		shiptype = 5,
 		name = "伊丽莎白女王级",
 		t_level = 5,
@@ -1878,11 +1506,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20510
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.fleet_tech_ship_class
-
-	var_1_86[20502] = {
+	pg.base.fleet_tech_ship_class[20502] = {
 		shiptype = 5,
 		name = "纳尔逊级",
 		t_level = 6,
@@ -1894,11 +1518,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20504
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.fleet_tech_ship_class
-
-	var_1_87[20503] = {
+	pg.base.fleet_tech_ship_class[20503] = {
 		shiptype = 5,
 		name = "乔治五世级",
 		t_level = 6,
@@ -1912,11 +1532,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20509
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.fleet_tech_ship_class
-
-	var_1_88[20504] = {
+	pg.base.fleet_tech_ship_class[20504] = {
 		shiptype = 5,
 		name = "君主",
 		t_level = 7,
@@ -1927,11 +1543,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			29902
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.fleet_tech_ship_class
-
-	var_1_89[20505] = {
+	pg.base.fleet_tech_ship_class[20505] = {
 		shiptype = 5,
 		name = "复仇级",
 		t_level = 6,
@@ -1943,11 +1555,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20514
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.fleet_tech_ship_class
-
-	var_1_90[20506] = {
+	pg.base.fleet_tech_ship_class[20506] = {
 		shiptype = 5,
 		name = "前卫",
 		t_level = 9,
@@ -1958,11 +1566,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20513
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.fleet_tech_ship_class
-
-	var_1_91[20507] = {
+	pg.base.fleet_tech_ship_class[20507] = {
 		shiptype = 5,
 		name = "狮级",
 		t_level = 9,
@@ -1973,11 +1577,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20516
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.fleet_tech_ship_class
-
-	var_1_92[20601] = {
+	pg.base.fleet_tech_ship_class[20601] = {
 		shiptype = 6,
 		name = "竞技神",
 		t_level = 3,
@@ -1988,11 +1588,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20601
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.fleet_tech_ship_class
-
-	var_1_93[20602] = {
+	pg.base.fleet_tech_ship_class[20602] = {
 		shiptype = 6,
 		name = "独角兽",
 		t_level = 5,
@@ -2003,11 +1599,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20603
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.fleet_tech_ship_class
-
-	var_1_94[20603] = {
+	pg.base.fleet_tech_ship_class[20603] = {
 		shiptype = 6,
 		name = "攻击者级",
 		t_level = 4,
@@ -2018,11 +1610,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20605
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.fleet_tech_ship_class
-
-	var_1_95[20604] = {
+	pg.base.fleet_tech_ship_class[20604] = {
 		shiptype = 6,
 		name = "半人马级",
 		t_level = 7,
@@ -2034,11 +1622,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20607
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.fleet_tech_ship_class
-
-	var_1_96[20605] = {
+	pg.base.fleet_tech_ship_class[20605] = {
 		shiptype = 6,
 		name = "巨像级",
 		t_level = 6,
@@ -2050,11 +1634,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20608
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.fleet_tech_ship_class
-
-	var_1_97[20607] = {
+	pg.base.fleet_tech_ship_class[20607] = {
 		shiptype = 6,
 		name = "百眼巨人",
 		t_level = 3,
@@ -2065,11 +1645,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20602
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.fleet_tech_ship_class
-
-	var_1_98[20701] = {
+	pg.base.fleet_tech_ship_class[20701] = {
 		shiptype = 7,
 		name = "光辉级",
 		t_level = 8,
@@ -2083,8 +1659,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 			20712
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.fleet_tech_ship_class[20702] = {
+	pg.base.fleet_tech_ship_class[20702] = {
 		shiptype = 7,
 		name = "勇敢级",
 		t_level = 6,
@@ -2099,11 +1674,7 @@ var_0_3.base.fleet_tech_ship_class = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.fleet_tech_ship_class
-
-	var_2_0[20703] = {
+	pg.base.fleet_tech_ship_class[20703] = {
 		shiptype = 7,
 		name = "皇家方舟",
 		t_level = 7,
@@ -2114,11 +1685,7 @@ end)()
 			20702
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.fleet_tech_ship_class
-
-	var_2_1[20704] = {
+	pg.base.fleet_tech_ship_class[20704] = {
 		shiptype = 7,
 		name = "鹰",
 		t_level = 3,
@@ -2129,11 +1696,7 @@ end)()
 			20701
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.fleet_tech_ship_class
-
-	var_2_2[20705] = {
+	pg.base.fleet_tech_ship_class[20705] = {
 		shiptype = 7,
 		name = "怨仇级",
 		t_level = 8,
@@ -2144,11 +1707,7 @@ end)()
 			20707
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.fleet_tech_ship_class
-
-	var_2_3[21301] = {
+	pg.base.fleet_tech_ship_class[21301] = {
 		shiptype = 13,
 		name = "黑暗界级",
 		t_level = 2,
@@ -2160,11 +1719,7 @@ end)()
 			21302
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.fleet_tech_ship_class
-
-	var_2_4[21302] = {
+	pg.base.fleet_tech_ship_class[21302] = {
 		shiptype = 13,
 		name = "罗伯茨级",
 		t_level = 4,
@@ -2175,11 +1730,7 @@ end)()
 			21304
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.fleet_tech_ship_class
-
-	var_2_5[30101] = {
+	pg.base.fleet_tech_ship_class[30101] = {
 		shiptype = 1,
 		name = "特I型吹雪级",
 		t_level = 4,
@@ -2193,11 +1744,7 @@ end)()
 			30104
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.fleet_tech_ship_class
-
-	var_2_6[30102] = {
+	pg.base.fleet_tech_ship_class[30102] = {
 		shiptype = 1,
 		name = "特II型绫波级",
 		t_level = 4,
@@ -2208,11 +1755,7 @@ end)()
 			30105
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.fleet_tech_ship_class
-
-	var_2_7[30103] = {
+	pg.base.fleet_tech_ship_class[30103] = {
 		shiptype = 1,
 		name = "特III型晓级",
 		t_level = 5,
@@ -2226,11 +1769,7 @@ end)()
 			30112
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.fleet_tech_ship_class
-
-	var_2_8[30104] = {
+	pg.base.fleet_tech_ship_class[30104] = {
 		shiptype = 1,
 		name = "白露级",
 		t_level = 5,
@@ -2246,11 +1785,7 @@ end)()
 			30148
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.fleet_tech_ship_class
-
-	var_2_9[30105] = {
+	pg.base.fleet_tech_ship_class[30105] = {
 		shiptype = 1,
 		name = "阳炎级",
 		t_level = 7,
@@ -2270,11 +1805,7 @@ end)()
 			30120
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.fleet_tech_ship_class
-
-	var_2_10[30106] = {
+	pg.base.fleet_tech_ship_class[30106] = {
 		shiptype = 1,
 		name = "初春级",
 		t_level = 4,
@@ -2289,11 +1820,7 @@ end)()
 			30126
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.fleet_tech_ship_class
-
-	var_2_11[30107] = {
+	pg.base.fleet_tech_ship_class[30107] = {
 		shiptype = 1,
 		name = "神风级",
 		t_level = 2,
@@ -2308,11 +1835,7 @@ end)()
 			30190
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.fleet_tech_ship_class
-
-	var_2_12[30108] = {
+	pg.base.fleet_tech_ship_class[30108] = {
 		shiptype = 1,
 		name = "睦月级",
 		t_level = 3,
@@ -2329,11 +1852,7 @@ end)()
 			30141
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.fleet_tech_ship_class
-
-	var_2_13[30109] = {
+	pg.base.fleet_tech_ship_class[30109] = {
 		shiptype = 1,
 		name = "秋月级",
 		t_level = 8,
@@ -2350,11 +1869,7 @@ end)()
 			30189
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.fleet_tech_ship_class
-
-	var_2_14[30110] = {
+	pg.base.fleet_tech_ship_class[30110] = {
 		shiptype = 1,
 		name = "朝潮级",
 		t_level = 6,
@@ -2369,11 +1884,7 @@ end)()
 			30181
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.fleet_tech_ship_class
-
-	var_2_15[30111] = {
+	pg.base.fleet_tech_ship_class[30111] = {
 		shiptype = 1,
 		name = "夕云级",
 		t_level = 8,
@@ -2390,11 +1901,7 @@ end)()
 			30192
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.fleet_tech_ship_class
-
-	var_2_16[30112] = {
+	pg.base.fleet_tech_ship_class[30112] = {
 		shiptype = 1,
 		name = "北风级",
 		t_level = 9,
@@ -2405,11 +1912,7 @@ end)()
 			39903
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.fleet_tech_ship_class
-
-	var_2_17[30113] = {
+	pg.base.fleet_tech_ship_class[30113] = {
 		shiptype = 1,
 		name = "岛风级",
 		t_level = 10,
@@ -2420,11 +1923,7 @@ end)()
 			30129
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.fleet_tech_ship_class
-
-	var_2_18[30201] = {
+	pg.base.fleet_tech_ship_class[30201] = {
 		shiptype = 2,
 		name = "夕张",
 		t_level = 3,
@@ -2435,11 +1934,7 @@ end)()
 			30201
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.fleet_tech_ship_class
-
-	var_2_19[30202] = {
+	pg.base.fleet_tech_ship_class[30202] = {
 		shiptype = 2,
 		name = "长良级",
 		t_level = 3,
@@ -2455,11 +1950,7 @@ end)()
 			30209
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.fleet_tech_ship_class
-
-	var_2_20[30203] = {
+	pg.base.fleet_tech_ship_class[30203] = {
 		shiptype = 2,
 		name = "最上级",
 		t_level = 7,
@@ -2473,11 +1964,7 @@ end)()
 			30318
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.fleet_tech_ship_class
-
-	var_2_21[30204] = {
+	pg.base.fleet_tech_ship_class[30204] = {
 		shiptype = 2,
 		name = "川内级",
 		t_level = 4,
@@ -2494,11 +1981,7 @@ end)()
 			30229
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.fleet_tech_ship_class
-
-	var_2_22[30205] = {
+	pg.base.fleet_tech_ship_class[30205] = {
 		shiptype = 2,
 		name = "阿贺野级",
 		t_level = 5,
@@ -2511,11 +1994,7 @@ end)()
 			30223
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.fleet_tech_ship_class
-
-	var_2_23[30206] = {
+	pg.base.fleet_tech_ship_class[30206] = {
 		shiptype = 2,
 		name = "四万十",
 		t_level = 8,
@@ -2526,11 +2005,7 @@ end)()
 			39906
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.fleet_tech_ship_class
-
-	var_2_24[30207] = {
+	pg.base.fleet_tech_ship_class[30207] = {
 		shiptype = 2,
 		name = "渡良濑",
 		t_level = 6,
@@ -2541,11 +2016,7 @@ end)()
 			30225
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.fleet_tech_ship_class
-
-	var_2_25[30208] = {
+	pg.base.fleet_tech_ship_class[30208] = {
 		shiptype = 2,
 		name = "高梁",
 		t_level = 9,
@@ -2556,11 +2027,7 @@ end)()
 			39908
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.fleet_tech_ship_class
-
-	var_2_26[30301] = {
+	pg.base.fleet_tech_ship_class[30301] = {
 		shiptype = 3,
 		name = "古鹰级",
 		t_level = 4,
@@ -2572,11 +2039,7 @@ end)()
 			30302
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.fleet_tech_ship_class
-
-	var_2_27[30302] = {
+	pg.base.fleet_tech_ship_class[30302] = {
 		shiptype = 3,
 		name = "青叶级",
 		t_level = 5,
@@ -2588,11 +2051,7 @@ end)()
 			30304
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.fleet_tech_ship_class
-
-	var_2_28[30303] = {
+	pg.base.fleet_tech_ship_class[30303] = {
 		shiptype = 3,
 		name = "妙高级",
 		t_level = 6,
@@ -2606,11 +2065,7 @@ end)()
 			30310
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.fleet_tech_ship_class
-
-	var_2_29[30304] = {
+	pg.base.fleet_tech_ship_class[30304] = {
 		shiptype = 3,
 		name = "高雄级",
 		t_level = 7,
@@ -2624,11 +2079,7 @@ end)()
 			30314
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.fleet_tech_ship_class
-
-	var_2_30[30305] = {
+	pg.base.fleet_tech_ship_class[30305] = {
 		shiptype = 3,
 		name = "伊吹级",
 		t_level = 8,
@@ -2640,11 +2091,7 @@ end)()
 			30320
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.fleet_tech_ship_class
-
-	var_2_31[30306] = {
+	pg.base.fleet_tech_ship_class[30306] = {
 		shiptype = 3,
 		name = "利根级",
 		t_level = 7,
@@ -2655,11 +2102,7 @@ end)()
 			30306
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.fleet_tech_ship_class
-
-	var_2_32[30307] = {
+	pg.base.fleet_tech_ship_class[30307] = {
 		shiptype = 3,
 		name = "云仙级",
 		t_level = 10,
@@ -2670,11 +2113,7 @@ end)()
 			30319
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.fleet_tech_ship_class
-
-	var_2_33[30401] = {
+	pg.base.fleet_tech_ship_class[30401] = {
 		shiptype = 4,
 		name = "金刚级",
 		t_level = 3,
@@ -2688,11 +2127,7 @@ end)()
 			30404
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.fleet_tech_ship_class
-
-	var_2_34[30402] = {
+	pg.base.fleet_tech_ship_class[30402] = {
 		shiptype = 4,
 		name = "天城级",
 		t_level = 7,
@@ -2703,11 +2138,7 @@ end)()
 			30405
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.fleet_tech_ship_class
-
-	var_2_35[30501] = {
+	pg.base.fleet_tech_ship_class[30501] = {
 		shiptype = 5,
 		name = "扶桑级",
 		t_level = 4,
@@ -2719,11 +2150,7 @@ end)()
 			30502
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.fleet_tech_ship_class
-
-	var_2_36[30502] = {
+	pg.base.fleet_tech_ship_class[30502] = {
 		shiptype = 5,
 		name = "伊势级",
 		t_level = 5,
@@ -2735,11 +2162,7 @@ end)()
 			30504
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.fleet_tech_ship_class
-
-	var_2_37[30503] = {
+	pg.base.fleet_tech_ship_class[30503] = {
 		shiptype = 5,
 		name = "长门级",
 		t_level = 6,
@@ -2751,11 +2174,7 @@ end)()
 			30506
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.fleet_tech_ship_class
-
-	var_2_38[30504] = {
+	pg.base.fleet_tech_ship_class[30504] = {
 		shiptype = 5,
 		name = "加贺级",
 		t_level = 7,
@@ -2767,11 +2186,7 @@ end)()
 			30508
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.fleet_tech_ship_class
-
-	var_2_39[30505] = {
+	pg.base.fleet_tech_ship_class[30505] = {
 		shiptype = 5,
 		name = "敷岛级",
 		t_level = 1,
@@ -2782,11 +2197,7 @@ end)()
 			30511
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.fleet_tech_ship_class
-
-	var_2_40[30506] = {
+	pg.base.fleet_tech_ship_class[30506] = {
 		shiptype = 5,
 		name = "出云",
 		t_level = 9,
@@ -2797,11 +2208,7 @@ end)()
 			39902
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.fleet_tech_ship_class
-
-	var_2_41[30507] = {
+	pg.base.fleet_tech_ship_class[30507] = {
 		shiptype = 5,
 		name = "纪伊级",
 		t_level = 8,
@@ -2815,11 +2222,7 @@ end)()
 			30516
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.fleet_tech_ship_class
-
-	var_2_42[30508] = {
+	pg.base.fleet_tech_ship_class[30508] = {
 		shiptype = 5,
 		name = "大和级",
 		t_level = 10,
@@ -2830,11 +2233,7 @@ end)()
 			30510
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.fleet_tech_ship_class
-
-	var_2_43[30509] = {
+	pg.base.fleet_tech_ship_class[30509] = {
 		shiptype = 5,
 		name = "大山",
 		t_level = 9,
@@ -2845,11 +2244,7 @@ end)()
 			39907
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.fleet_tech_ship_class
-
-	var_2_44[30601] = {
+	pg.base.fleet_tech_ship_class[30601] = {
 		shiptype = 6,
 		name = "飞鹰级",
 		t_level = 4,
@@ -2861,11 +2256,7 @@ end)()
 			30602
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.fleet_tech_ship_class
-
-	var_2_45[30602] = {
+	pg.base.fleet_tech_ship_class[30602] = {
 		shiptype = 6,
 		name = "祥凤级",
 		t_level = 3,
@@ -2876,11 +2267,7 @@ end)()
 			30605
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.fleet_tech_ship_class
-
-	var_2_46[30603] = {
+	pg.base.fleet_tech_ship_class[30603] = {
 		shiptype = 6,
 		name = "凤翔",
 		t_level = 2,
@@ -2891,11 +2278,7 @@ end)()
 			30603
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.fleet_tech_ship_class
-
-	var_2_47[30604] = {
+	pg.base.fleet_tech_ship_class[30604] = {
 		shiptype = 6,
 		name = "龙骧",
 		t_level = 4,
@@ -2906,11 +2289,7 @@ end)()
 			30606
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.fleet_tech_ship_class
-
-	var_2_48[30605] = {
+	pg.base.fleet_tech_ship_class[30605] = {
 		shiptype = 6,
 		name = "瑞凤级",
 		t_level = 4,
@@ -2924,11 +2303,7 @@ end)()
 			30609
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.fleet_tech_ship_class
-
-	var_2_49[30701] = {
+	pg.base.fleet_tech_ship_class[30701] = {
 		shiptype = 7,
 		name = "赤城",
 		t_level = 7,
@@ -2939,11 +2314,7 @@ end)()
 			30701
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.fleet_tech_ship_class
-
-	var_2_50[30702] = {
+	pg.base.fleet_tech_ship_class[30702] = {
 		shiptype = 7,
 		name = "加贺",
 		t_level = 7,
@@ -2954,11 +2325,7 @@ end)()
 			30702
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.fleet_tech_ship_class
-
-	var_2_51[30703] = {
+	pg.base.fleet_tech_ship_class[30703] = {
 		shiptype = 7,
 		name = "苍龙",
 		t_level = 5,
@@ -2969,11 +2336,7 @@ end)()
 			30703
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.fleet_tech_ship_class
-
-	var_2_52[30704] = {
+	pg.base.fleet_tech_ship_class[30704] = {
 		shiptype = 7,
 		name = "飞龙",
 		t_level = 5,
@@ -2984,11 +2347,7 @@ end)()
 			30704
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.fleet_tech_ship_class
-
-	var_2_53[30705] = {
+	pg.base.fleet_tech_ship_class[30705] = {
 		shiptype = 7,
 		name = "翔鹤级",
 		t_level = 8,
@@ -3000,11 +2359,7 @@ end)()
 			30706
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.fleet_tech_ship_class
-
-	var_2_54[30706] = {
+	pg.base.fleet_tech_ship_class[30706] = {
 		shiptype = 7,
 		name = "大凤",
 		t_level = 9,
@@ -3015,11 +2370,7 @@ end)()
 			30707
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.fleet_tech_ship_class
-
-	var_2_55[30707] = {
+	pg.base.fleet_tech_ship_class[30707] = {
 		shiptype = 7,
 		name = "大和级",
 		t_level = 10,
@@ -3030,11 +2381,7 @@ end)()
 			30708
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.fleet_tech_ship_class
-
-	var_2_56[30708] = {
+	pg.base.fleet_tech_ship_class[30708] = {
 		shiptype = 7,
 		name = "白龙",
 		t_level = 10,
@@ -3045,11 +2392,7 @@ end)()
 			39905
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.fleet_tech_ship_class
-
-	var_2_57[30709] = {
+	pg.base.fleet_tech_ship_class[30709] = {
 		shiptype = 7,
 		name = "云龙级",
 		t_level = 6,
@@ -3061,11 +2404,7 @@ end)()
 			30712
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.fleet_tech_ship_class
-
-	var_2_58[30710] = {
+	pg.base.fleet_tech_ship_class[30710] = {
 		shiptype = 7,
 		name = "天城",
 		t_level = 7,
@@ -3076,11 +2415,7 @@ end)()
 			30715
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.fleet_tech_ship_class
-
-	var_2_59[30711] = {
+	pg.base.fleet_tech_ship_class[30711] = {
 		shiptype = 7,
 		name = "白凤",
 		t_level = 10,
@@ -3091,11 +2426,7 @@ end)()
 			30716
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.fleet_tech_ship_class
-
-	var_2_60[30801] = {
+	pg.base.fleet_tech_ship_class[30801] = {
 		shiptype = 8,
 		name = "巡潜乙型",
 		t_level = 7,
@@ -3110,11 +2441,7 @@ end)()
 			30805
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.fleet_tech_ship_class
-
-	var_2_61[30802] = {
+	pg.base.fleet_tech_ship_class[30802] = {
 		shiptype = 8,
 		name = "海大型",
 		t_level = 7,
@@ -3125,11 +2452,7 @@ end)()
 			30806
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.fleet_tech_ship_class
-
-	var_2_62[31201] = {
+	pg.base.fleet_tech_ship_class[31201] = {
 		shiptype = 12,
 		name = "明石",
 		t_level = 5,
@@ -3140,11 +2463,7 @@ end)()
 			31201
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.fleet_tech_ship_class
-
-	var_2_63[31701] = {
+	pg.base.fleet_tech_ship_class[31701] = {
 		shiptype = 17,
 		name = "巡潜甲型改二型",
 		t_level = 7,
@@ -3155,11 +2474,7 @@ end)()
 			31701
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.fleet_tech_ship_class
-
-	var_2_64[31702] = {
+	pg.base.fleet_tech_ship_class[31702] = {
 		shiptype = 17,
 		name = "潜特型",
 		t_level = 10,
@@ -3170,11 +2485,7 @@ end)()
 			31702
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.fleet_tech_ship_class
-
-	var_2_65[31801] = {
+	pg.base.fleet_tech_ship_class[31801] = {
 		shiptype = 18,
 		name = "吾妻",
 		t_level = 9,
@@ -3185,11 +2496,7 @@ end)()
 			39904
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.fleet_tech_ship_class
-
-	var_2_66[31901] = {
+	pg.base.fleet_tech_ship_class[31901] = {
 		shiptype = 19,
 		name = "樫野",
 		t_level = 5,
@@ -3200,11 +2507,7 @@ end)()
 			31901
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.fleet_tech_ship_class
-
-	var_2_67[40101] = {
+	pg.base.fleet_tech_ship_class[40101] = {
 		shiptype = 1,
 		name = "1934型",
 		t_level = 4,
@@ -3216,11 +2519,7 @@ end)()
 			40102
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.fleet_tech_ship_class
-
-	var_2_68[40102] = {
+	pg.base.fleet_tech_ship_class[40102] = {
 		shiptype = 1,
 		name = "1936型",
 		t_level = 5,
@@ -3234,11 +2533,7 @@ end)()
 			40121
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.fleet_tech_ship_class
-
-	var_2_69[40103] = {
+	pg.base.fleet_tech_ship_class[40103] = {
 		shiptype = 1,
 		name = "1936A型",
 		t_level = 6,
@@ -3253,11 +2548,7 @@ end)()
 			40128
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.fleet_tech_ship_class
-
-	var_2_70[40104] = {
+	pg.base.fleet_tech_ship_class[40104] = {
 		shiptype = 1,
 		name = "1936B型",
 		t_level = 7,
@@ -3270,11 +2561,7 @@ end)()
 			40143
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.fleet_tech_ship_class
-
-	var_2_71[40105] = {
+	pg.base.fleet_tech_ship_class[40105] = {
 		shiptype = 1,
 		name = "1936C型",
 		t_level = 8,
@@ -3286,11 +2573,7 @@ end)()
 			40147
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.fleet_tech_ship_class
-
-	var_2_72[40106] = {
+	pg.base.fleet_tech_ship_class[40106] = {
 		shiptype = 1,
 		name = "1934A型",
 		t_level = 4,
@@ -3306,11 +2589,7 @@ end)()
 			40116
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.fleet_tech_ship_class
-
-	var_2_73[40107] = {
+	pg.base.fleet_tech_ship_class[40107] = {
 		shiptype = 1,
 		name = "1937J型",
 		t_level = 6,
@@ -3321,11 +2600,7 @@ end)()
 			40199
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.fleet_tech_ship_class
-
-	var_2_74[40108] = {
+	pg.base.fleet_tech_ship_class[40108] = {
 		shiptype = 1,
 		name = "菲利克斯·舒尔茨",
 		t_level = 8,
@@ -3336,11 +2611,7 @@ end)()
 			49908
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.fleet_tech_ship_class
-
-	var_2_75[40109] = {
+	pg.base.fleet_tech_ship_class[40109] = {
 		shiptype = 1,
 		name = "1944型",
 		t_level = 10,
@@ -3351,11 +2622,7 @@ end)()
 			40152
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.fleet_tech_ship_class
-
-	var_2_76[9] = {
+	pg.base.fleet_tech_ship_class[9] = {
 		shiptype = 2,
 		name = "柯尼斯堡级",
 		t_level = 3,
@@ -3368,11 +2635,7 @@ end)()
 			40203
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.fleet_tech_ship_class
-
-	var_2_77[10] = {
+	pg.base.fleet_tech_ship_class[10] = {
 		shiptype = 2,
 		name = "莱比锡级",
 		t_level = 4,
@@ -3384,11 +2647,7 @@ end)()
 			40205
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.fleet_tech_ship_class
-
-	var_2_78[11] = {
+	pg.base.fleet_tech_ship_class[11] = {
 		shiptype = 2,
 		name = "美因茨",
 		t_level = 8,
@@ -3399,11 +2658,7 @@ end)()
 			49903
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.fleet_tech_ship_class
-
-	var_2_79[12] = {
+	pg.base.fleet_tech_ship_class[12] = {
 		shiptype = 2,
 		name = "M级",
 		t_level = 6,
@@ -3416,11 +2671,7 @@ end)()
 			40211
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.fleet_tech_ship_class
-
-	var_2_80[13] = {
+	pg.base.fleet_tech_ship_class[13] = {
 		shiptype = 2,
 		name = "德累斯顿级",
 		t_level = 1,
@@ -3431,11 +2682,7 @@ end)()
 			40207
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.fleet_tech_ship_class
-
-	var_2_81[14] = {
+	pg.base.fleet_tech_ship_class[14] = {
 		shiptype = 2,
 		name = "皮劳级",
 		t_level = 1,
@@ -3446,11 +2693,7 @@ end)()
 			40208
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.fleet_tech_ship_class
-
-	var_2_82[40301] = {
+	pg.base.fleet_tech_ship_class[40301] = {
 		shiptype = 3,
 		name = "希佩尔海军上将级",
 		t_level = 7,
@@ -3463,11 +2706,7 @@ end)()
 			40302
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.fleet_tech_ship_class
-
-	var_2_83[40302] = {
+	pg.base.fleet_tech_ship_class[40302] = {
 		shiptype = 3,
 		name = "德意志级",
 		t_level = 5,
@@ -3479,11 +2718,7 @@ end)()
 			40305
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.fleet_tech_ship_class
-
-	var_2_84[40303] = {
+	pg.base.fleet_tech_ship_class[40303] = {
 		shiptype = 3,
 		name = "罗恩",
 		t_level = 9,
@@ -3494,11 +2729,7 @@ end)()
 			49901
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.fleet_tech_ship_class
-
-	var_2_85[40304] = {
+	pg.base.fleet_tech_ship_class[40304] = {
 		shiptype = 3,
 		name = "P级",
 		t_level = 5,
@@ -3512,11 +2743,7 @@ end)()
 			40317
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.fleet_tech_ship_class
-
-	var_2_86[40305] = {
+	pg.base.fleet_tech_ship_class[40305] = {
 		shiptype = 3,
 		name = "罗恩级",
 		t_level = 1,
@@ -3527,11 +2754,7 @@ end)()
 			40311
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.fleet_tech_ship_class
-
-	var_2_87[40306] = {
+	pg.base.fleet_tech_ship_class[40306] = {
 		shiptype = 3,
 		name = "兴登堡",
 		t_level = 10,
@@ -3542,11 +2765,7 @@ end)()
 			49909
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.fleet_tech_ship_class
-
-	var_2_88[40401] = {
+	pg.base.fleet_tech_ship_class[40401] = {
 		shiptype = 4,
 		name = "沙恩霍斯特级",
 		t_level = 6,
@@ -3558,11 +2777,7 @@ end)()
 			40402
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.fleet_tech_ship_class
-
-	var_2_89[40402] = {
+	pg.base.fleet_tech_ship_class[40402] = {
 		shiptype = 4,
 		name = "奥丁",
 		t_level = 8,
@@ -3573,11 +2788,7 @@ end)()
 			49904
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.fleet_tech_ship_class
-
-	var_2_90[40403] = {
+	pg.base.fleet_tech_ship_class[40403] = {
 		shiptype = 4,
 		name = "塞德利茨",
 		t_level = 1,
@@ -3588,11 +2799,7 @@ end)()
 			40403
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.fleet_tech_ship_class
-
-	var_2_91[40404] = {
+	pg.base.fleet_tech_ship_class[40404] = {
 		shiptype = 4,
 		name = "德弗林格尔级",
 		t_level = 1,
@@ -3603,11 +2810,7 @@ end)()
 			40404
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.fleet_tech_ship_class
-
-	var_2_92[40405] = {
+	pg.base.fleet_tech_ship_class[40405] = {
 		shiptype = 4,
 		name = "鲁普雷希特",
 		t_level = 9,
@@ -3618,11 +2821,7 @@ end)()
 			49907
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.fleet_tech_ship_class
-
-	var_2_93[40406] = {
+	pg.base.fleet_tech_ship_class[40406] = {
 		shiptype = 4,
 		name = "O级",
 		t_level = 7,
@@ -3634,11 +2833,7 @@ end)()
 			40406
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.fleet_tech_ship_class
-
-	var_2_94[40407] = {
+	pg.base.fleet_tech_ship_class[40407] = {
 		shiptype = 4,
 		name = "曾克海军上将",
 		t_level = 5,
@@ -3649,11 +2844,7 @@ end)()
 			40407
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.fleet_tech_ship_class
-
-	var_2_95[40501] = {
+	pg.base.fleet_tech_ship_class[40501] = {
 		shiptype = 5,
 		name = "俾斯麦级",
 		t_level = 7,
@@ -3665,11 +2856,7 @@ end)()
 			40502
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.fleet_tech_ship_class
-
-	var_2_96[40502] = {
+	pg.base.fleet_tech_ship_class[40502] = {
 		shiptype = 5,
 		name = "腓特烈大帝",
 		t_level = 9,
@@ -3680,11 +2867,7 @@ end)()
 			49902
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.fleet_tech_ship_class
-
-	var_2_97[40503] = {
+	pg.base.fleet_tech_ship_class[40503] = {
 		shiptype = 5,
 		name = "乌尔里希·冯·胡滕",
 		t_level = 9,
@@ -3696,11 +2879,7 @@ end)()
 			40507
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.fleet_tech_ship_class
-
-	var_2_98[40504] = {
+	pg.base.fleet_tech_ship_class[40504] = {
 		shiptype = 5,
 		name = "赫尔戈兰级",
 		t_level = 1,
@@ -3711,8 +2890,7 @@ end)()
 			40504
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.fleet_tech_ship_class[40505] = {
+	pg.base.fleet_tech_ship_class[40505] = {
 		shiptype = 5,
 		name = "俾斯麦Zwei",
 		t_level = 9,
@@ -3727,11 +2905,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.fleet_tech_ship_class
-
-	var_3_0[40506] = {
+	pg.base.fleet_tech_ship_class[40506] = {
 		shiptype = 5,
 		name = "梅克伦堡",
 		t_level = 10,
@@ -3742,11 +2916,7 @@ end)()
 			49910
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.fleet_tech_ship_class
-
-	var_3_1[25] = {
+	pg.base.fleet_tech_ship_class[25] = {
 		shiptype = 6,
 		name = "威悉",
 		t_level = 4,
@@ -3757,11 +2927,7 @@ end)()
 			40601
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.fleet_tech_ship_class
-
-	var_3_2[26] = {
+	pg.base.fleet_tech_ship_class[26] = {
 		shiptype = 6,
 		name = "亚德级",
 		t_level = 4,
@@ -3773,11 +2939,7 @@ end)()
 			40603
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.fleet_tech_ship_class
-
-	var_3_3[40701] = {
+	pg.base.fleet_tech_ship_class[40701] = {
 		shiptype = 7,
 		name = "齐柏林级",
 		t_level = 6,
@@ -3789,11 +2951,7 @@ end)()
 			40703
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.fleet_tech_ship_class
-
-	var_3_4[40702] = {
+	pg.base.fleet_tech_ship_class[40702] = {
 		shiptype = 7,
 		name = "奥古斯特·冯·帕塞瓦尔",
 		t_level = 7,
@@ -3804,11 +2962,7 @@ end)()
 			49906
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.fleet_tech_ship_class
-
-	var_3_5[40703] = {
+	pg.base.fleet_tech_ship_class[40703] = {
 		shiptype = 7,
 		name = "弗里茨·鲁梅",
 		t_level = 8,
@@ -3819,11 +2973,7 @@ end)()
 			40704
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.fleet_tech_ship_class
-
-	var_3_6[0] = {
+	pg.base.fleet_tech_ship_class[0] = {
 		shiptype = 7,
 		name = "马克斯·殷麦曼",
 		t_level = 10,
@@ -3834,11 +2984,7 @@ end)()
 			49911
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.fleet_tech_ship_class
-
-	var_3_7[40801] = {
+	pg.base.fleet_tech_ship_class[40801] = {
 		shiptype = 8,
 		name = "VIIB型",
 		t_level = 6,
@@ -3851,11 +2997,7 @@ end)()
 			40806
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.fleet_tech_ship_class
-
-	var_3_8[40802] = {
+	pg.base.fleet_tech_ship_class[40802] = {
 		shiptype = 8,
 		name = "VIIC型",
 		t_level = 7,
@@ -3872,11 +3014,7 @@ end)()
 			40814
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.fleet_tech_ship_class
-
-	var_3_9[40803] = {
+	pg.base.fleet_tech_ship_class[40803] = {
 		shiptype = 8,
 		name = "IXC型",
 		t_level = 7,
@@ -3887,11 +3025,7 @@ end)()
 			40807
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.fleet_tech_ship_class
-
-	var_3_10[40804] = {
+	pg.base.fleet_tech_ship_class[40804] = {
 		shiptype = 8,
 		name = "IXB型",
 		t_level = 7,
@@ -3902,11 +3036,7 @@ end)()
 			40808
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.fleet_tech_ship_class
-
-	var_3_11[40805] = {
+	pg.base.fleet_tech_ship_class[40805] = {
 		shiptype = 8,
 		name = "IXA型",
 		t_level = 7,
@@ -3917,11 +3047,7 @@ end)()
 			40810
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.fleet_tech_ship_class
-
-	var_3_12[40806] = {
+	pg.base.fleet_tech_ship_class[40806] = {
 		shiptype = 8,
 		name = "VIIA型",
 		t_level = 6,
@@ -3932,11 +3058,7 @@ end)()
 			40813
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.fleet_tech_ship_class
-
-	var_3_13[40807] = {
+	pg.base.fleet_tech_ship_class[40807] = {
 		shiptype = 8,
 		name = "XXI型",
 		t_level = 10,
@@ -3947,11 +3069,7 @@ end)()
 			40815
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.fleet_tech_ship_class
-
-	var_3_14[41801] = {
+	pg.base.fleet_tech_ship_class[41801] = {
 		shiptype = 18,
 		name = "埃吉尔",
 		t_level = 9,
@@ -3962,11 +3080,7 @@ end)()
 			49905
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.fleet_tech_ship_class
-
-	var_3_15[50101] = {
+	pg.base.fleet_tech_ship_class[50101] = {
 		shiptype = 1,
 		name = "鞍山级",
 		t_level = 4,
@@ -3980,11 +3094,7 @@ end)()
 			50104
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.fleet_tech_ship_class
-
-	var_3_16[50102] = {
+	pg.base.fleet_tech_ship_class[50102] = {
 		shiptype = 1,
 		name = "长风级",
 		t_level = 1,
@@ -3997,11 +3107,7 @@ end)()
 			50107
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.fleet_tech_ship_class
-
-	var_3_17[50103] = {
+	pg.base.fleet_tech_ship_class[50103] = {
 		shiptype = 1,
 		name = "龙武级",
 		t_level = 1,
@@ -4013,11 +3119,7 @@ end)()
 			50106
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.fleet_tech_ship_class
-
-	var_3_18[25] = {
+	pg.base.fleet_tech_ship_class[25] = {
 		shiptype = 2,
 		name = "宁海级",
 		t_level = 3,
@@ -4029,11 +3131,7 @@ end)()
 			50203
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.fleet_tech_ship_class
-
-	var_3_19[26] = {
+	pg.base.fleet_tech_ship_class[26] = {
 		shiptype = 2,
 		name = "逸仙",
 		t_level = 2,
@@ -4044,11 +3142,7 @@ end)()
 			50201
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.fleet_tech_ship_class
-
-	var_3_20[27] = {
+	pg.base.fleet_tech_ship_class[27] = {
 		shiptype = 2,
 		name = "肇和级",
 		t_level = 1,
@@ -4060,11 +3154,7 @@ end)()
 			50204
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.fleet_tech_ship_class
-
-	var_3_21[28] = {
+	pg.base.fleet_tech_ship_class[28] = {
 		shiptype = 2,
 		name = "海天级",
 		t_level = 1,
@@ -4076,11 +3166,7 @@ end)()
 			50208
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.fleet_tech_ship_class
-
-	var_3_22[29] = {
+	pg.base.fleet_tech_ship_class[29] = {
 		shiptype = 2,
 		name = "哈尔滨",
 		t_level = 7,
@@ -4091,11 +3177,7 @@ end)()
 			59901
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.fleet_tech_ship_class
-
-	var_3_23[30] = {
+	pg.base.fleet_tech_ship_class[30] = {
 		shiptype = 2,
 		name = "济安",
 		t_level = 1,
@@ -4106,11 +3188,7 @@ end)()
 			50209
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.fleet_tech_ship_class
-
-	var_3_24[31] = {
+	pg.base.fleet_tech_ship_class[31] = {
 		shiptype = 2,
 		name = "海容级",
 		t_level = 1,
@@ -4122,11 +3200,7 @@ end)()
 			50212
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.fleet_tech_ship_class
-
-	var_3_25[50301] = {
+	pg.base.fleet_tech_ship_class[50301] = {
 		shiptype = 3,
 		name = "建武",
 		t_level = 1,
@@ -4137,11 +3211,7 @@ end)()
 			50301
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.fleet_tech_ship_class
-
-	var_3_26[50302] = {
+	pg.base.fleet_tech_ship_class[50302] = {
 		shiptype = 3,
 		name = "彰武",
 		t_level = 4,
@@ -4152,11 +3222,7 @@ end)()
 			50302
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.fleet_tech_ship_class
-
-	var_3_27[50401] = {
+	pg.base.fleet_tech_ship_class[50401] = {
 		shiptype = 4,
 		name = "寰昌",
 		t_level = 1,
@@ -4167,11 +3233,7 @@ end)()
 			50401
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.fleet_tech_ship_class
-
-	var_3_28[50601] = {
+	pg.base.fleet_tech_ship_class[50601] = {
 		shiptype = 6,
 		name = "镇海",
 		t_level = 1,
@@ -4182,11 +3244,7 @@ end)()
 			50601
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.fleet_tech_ship_class
-
-	var_3_29[50602] = {
+	pg.base.fleet_tech_ship_class[50602] = {
 		shiptype = 6,
 		name = "华甲",
 		t_level = 1,
@@ -4197,11 +3255,7 @@ end)()
 			50602
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.fleet_tech_ship_class
-
-	var_3_30[51901] = {
+	pg.base.fleet_tech_ship_class[51901] = {
 		shiptype = 19,
 		name = "定安",
 		t_level = 1,
@@ -4212,11 +3266,7 @@ end)()
 			51901
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.fleet_tech_ship_class
-
-	var_3_31[60101] = {
+	pg.base.fleet_tech_ship_class[60101] = {
 		shiptype = 1,
 		name = "索尔达蒂级",
 		t_level = 6,
@@ -4227,11 +3277,7 @@ end)()
 			60102
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.fleet_tech_ship_class
-
-	var_3_32[60102] = {
+	pg.base.fleet_tech_ship_class[60102] = {
 		shiptype = 1,
 		name = "诗人级",
 		t_level = 5,
@@ -4244,11 +3290,7 @@ end)()
 			60111
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.fleet_tech_ship_class
-
-	var_3_33[60103] = {
+	pg.base.fleet_tech_ship_class[60103] = {
 		shiptype = 1,
 		name = "西北风级",
 		t_level = 5,
@@ -4260,11 +3302,7 @@ end)()
 			60105
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.fleet_tech_ship_class
-
-	var_3_34[60104] = {
+	pg.base.fleet_tech_ship_class[60104] = {
 		shiptype = 1,
 		name = "航海家级",
 		t_level = 4,
@@ -4277,11 +3315,7 @@ end)()
 			60112
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.fleet_tech_ship_class
-
-	var_3_35[60105] = {
+	pg.base.fleet_tech_ship_class[60105] = {
 		shiptype = 1,
 		name = "罗马统帅级",
 		t_level = 10,
@@ -4293,11 +3327,7 @@ end)()
 			60110
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.fleet_tech_ship_class
-
-	var_3_36[60106] = {
+	pg.base.fleet_tech_ship_class[60106] = {
 		shiptype = 1,
 		name = "维托里奥·库尼贝尔蒂",
 		t_level = 7,
@@ -4308,11 +3338,7 @@ end)()
 			69903
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.fleet_tech_ship_class
-
-	var_3_37[60201] = {
+	pg.base.fleet_tech_ship_class[60201] = {
 		shiptype = 2,
 		name = "阿布鲁齐公爵级",
 		t_level = 7,
@@ -4324,11 +3350,7 @@ end)()
 			60202
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.fleet_tech_ship_class
-
-	var_3_38[60202] = {
+	pg.base.fleet_tech_ship_class[60202] = {
 		shiptype = 2,
 		name = "朱塞诺级",
 		t_level = 7,
@@ -4340,11 +3362,7 @@ end)()
 			60204
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.fleet_tech_ship_class
-
-	var_3_39[13] = {
+	pg.base.fleet_tech_ship_class[13] = {
 		shiptype = 3,
 		name = "扎拉级",
 		t_level = 7,
@@ -4357,11 +3375,7 @@ end)()
 			60306
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.fleet_tech_ship_class
-
-	var_3_40[14] = {
+	pg.base.fleet_tech_ship_class[14] = {
 		shiptype = 3,
 		name = "特伦托级",
 		t_level = 5,
@@ -4373,11 +3387,7 @@ end)()
 			60304
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.fleet_tech_ship_class
-
-	var_3_41[15] = {
+	pg.base.fleet_tech_ship_class[15] = {
 		shiptype = 3,
 		name = "博尔扎诺",
 		t_level = 6,
@@ -4388,11 +3398,7 @@ end)()
 			60305
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.fleet_tech_ship_class
-
-	var_3_42[16] = {
+	pg.base.fleet_tech_ship_class[16] = {
 		shiptype = 3,
 		name = "那不勒斯",
 		t_level = 10,
@@ -4403,11 +3409,7 @@ end)()
 			69902
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.fleet_tech_ship_class
-
-	var_3_43[60501] = {
+	pg.base.fleet_tech_ship_class[60501] = {
 		shiptype = 5,
 		name = "维内托级",
 		t_level = 7,
@@ -4420,11 +3422,7 @@ end)()
 			60503
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.fleet_tech_ship_class
-
-	var_3_44[60502] = {
+	pg.base.fleet_tech_ship_class[60502] = {
 		shiptype = 5,
 		name = "加富尔伯爵级",
 		t_level = 4,
@@ -4436,11 +3434,7 @@ end)()
 			60506
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.fleet_tech_ship_class
-
-	var_3_45[60503] = {
+	pg.base.fleet_tech_ship_class[60503] = {
 		shiptype = 5,
 		name = "马可波罗",
 		t_level = 8,
@@ -4451,11 +3445,7 @@ end)()
 			69901
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.fleet_tech_ship_class
-
-	var_3_46[60504] = {
+	pg.base.fleet_tech_ship_class[60504] = {
 		shiptype = 5,
 		name = "安德烈亚·多利亚级",
 		t_level = 5,
@@ -4466,11 +3456,7 @@ end)()
 			60507
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.fleet_tech_ship_class
-
-	var_3_47[60505] = {
+	pg.base.fleet_tech_ship_class[60505] = {
 		shiptype = 5,
 		name = "拉斐尔",
 		t_level = 8,
@@ -4481,11 +3467,7 @@ end)()
 			60508
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.fleet_tech_ship_class
-
-	var_3_48[60506] = {
+	pg.base.fleet_tech_ship_class[60506] = {
 		shiptype = 5,
 		name = "弗朗西斯科·卡拉乔洛级",
 		t_level = 6,
@@ -4496,11 +3478,7 @@ end)()
 			60509
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.fleet_tech_ship_class
-
-	var_3_49[29] = {
+	pg.base.fleet_tech_ship_class[29] = {
 		shiptype = 7,
 		name = "天鹰",
 		t_level = 6,
@@ -4511,11 +3489,7 @@ end)()
 			60701
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.fleet_tech_ship_class
-
-	var_3_50[30] = {
+	pg.base.fleet_tech_ship_class[30] = {
 		shiptype = 7,
 		name = "维内托级",
 		t_level = 7,
@@ -4526,11 +3500,7 @@ end)()
 			60702
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.fleet_tech_ship_class
-
-	var_3_51[1] = {
+	pg.base.fleet_tech_ship_class[1] = {
 		shiptype = 8,
 		name = "布林级",
 		t_level = 6,
@@ -4541,11 +3511,7 @@ end)()
 			60801
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.fleet_tech_ship_class
-
-	var_3_52[2] = {
+	pg.base.fleet_tech_ship_class[2] = {
 		shiptype = 8,
 		name = "马可尼级",
 		t_level = 7,
@@ -4557,11 +3523,7 @@ end)()
 			60803
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.fleet_tech_ship_class
-
-	var_3_53[70101] = {
+	pg.base.fleet_tech_ship_class[70101] = {
 		shiptype = 1,
 		name = "愤怒级",
 		t_level = 4,
@@ -4575,11 +3537,7 @@ end)()
 			70108
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.fleet_tech_ship_class
-
-	var_3_54[70102] = {
+	pg.base.fleet_tech_ship_class[70102] = {
 		shiptype = 1,
 		name = "列宁格勒级",
 		t_level = 5,
@@ -4590,11 +3548,7 @@ end)()
 			70103
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.fleet_tech_ship_class
-
-	var_3_55[70103] = {
+	pg.base.fleet_tech_ship_class[70103] = {
 		shiptype = 1,
 		name = "塔什干级",
 		t_level = 8,
@@ -4605,11 +3559,7 @@ end)()
 			70104
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.fleet_tech_ship_class
-
-	var_3_56[70104] = {
+	pg.base.fleet_tech_ship_class[70104] = {
 		shiptype = 1,
 		name = "基辅级",
 		t_level = 8,
@@ -4620,11 +3570,7 @@ end)()
 			70110
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.fleet_tech_ship_class
-
-	var_3_57[70105] = {
+	pg.base.fleet_tech_ship_class[70105] = {
 		shiptype = 1,
 		name = "前哨级",
 		t_level = 4,
@@ -4636,11 +3582,7 @@ end)()
 			70112
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.fleet_tech_ship_class
-
-	var_3_58[70106] = {
+	pg.base.fleet_tech_ship_class[70106] = {
 		shiptype = 1,
 		name = "火力级",
 		t_level = 6,
@@ -4652,11 +3594,7 @@ end)()
 			70113
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.fleet_tech_ship_class
-
-	var_3_59[70201] = {
+	pg.base.fleet_tech_ship_class[70201] = {
 		shiptype = 2,
 		name = "帕拉达级",
 		t_level = 1,
@@ -4667,11 +3605,7 @@ end)()
 			70201
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.fleet_tech_ship_class
-
-	var_3_60[70202] = {
+	pg.base.fleet_tech_ship_class[70202] = {
 		shiptype = 2,
 		name = "博加特里级",
 		t_level = 1,
@@ -4684,11 +3618,7 @@ end)()
 			70208
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.fleet_tech_ship_class
-
-	var_3_61[70203] = {
+	pg.base.fleet_tech_ship_class[70203] = {
 		shiptype = 2,
 		name = "恰巴耶夫级",
 		t_level = 7,
@@ -4700,11 +3630,7 @@ end)()
 			70205
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.fleet_tech_ship_class
-
-	var_3_62[70204] = {
+	pg.base.fleet_tech_ship_class[70204] = {
 		shiptype = 2,
 		name = "基洛夫级",
 		t_level = 6,
@@ -4716,11 +3642,7 @@ end)()
 			70207
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.fleet_tech_ship_class
-
-	var_3_63[70205] = {
+	pg.base.fleet_tech_ship_class[70205] = {
 		shiptype = 2,
 		name = "奥马哈级",
 		t_level = 3,
@@ -4731,11 +3653,7 @@ end)()
 			70206
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.fleet_tech_ship_class
-
-	var_3_64[70206] = {
+	pg.base.fleet_tech_ship_class[70206] = {
 		shiptype = 2,
 		name = "迪米特里·顿斯科伊",
 		t_level = 9,
@@ -4746,11 +3664,7 @@ end)()
 			79903
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.fleet_tech_ship_class
-
-	var_3_65[70207] = {
+	pg.base.fleet_tech_ship_class[70207] = {
 		shiptype = 2,
 		name = "纳希莫夫海军上将级",
 		t_level = 5,
@@ -4761,11 +3675,7 @@ end)()
 			70209
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.fleet_tech_ship_class
-
-	var_3_66[29] = {
+	pg.base.fleet_tech_ship_class[29] = {
 		shiptype = 3,
 		name = "塔林",
 		t_level = 7,
@@ -4776,11 +3686,7 @@ end)()
 			70301
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.fleet_tech_ship_class
-
-	var_3_67[30] = {
+	pg.base.fleet_tech_ship_class[30] = {
 		shiptype = 3,
 		name = "库尔斯克",
 		t_level = 8,
@@ -4791,11 +3697,7 @@ end)()
 			70302
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.fleet_tech_ship_class
-
-	var_3_68[31] = {
+	pg.base.fleet_tech_ship_class[31] = {
 		shiptype = 3,
 		name = "莫斯科",
 		t_level = 10,
@@ -4806,11 +3708,7 @@ end)()
 			70303
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.fleet_tech_ship_class
-
-	var_3_69[70501] = {
+	pg.base.fleet_tech_ship_class[70501] = {
 		shiptype = 5,
 		name = "甘古特级",
 		t_level = 5,
@@ -4823,11 +3721,7 @@ end)()
 			70508
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.fleet_tech_ship_class
-
-	var_3_70[70502] = {
+	pg.base.fleet_tech_ship_class[70502] = {
 		shiptype = 5,
 		name = "苏维埃同盟级",
 		t_level = 8,
@@ -4840,11 +3734,7 @@ end)()
 			70505
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.fleet_tech_ship_class
-
-	var_3_71[70503] = {
+	pg.base.fleet_tech_ship_class[70503] = {
 		shiptype = 5,
 		name = "阿尔汉格尔斯克",
 		t_level = 6,
@@ -4855,11 +3745,7 @@ end)()
 			70506
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.fleet_tech_ship_class
-
-	var_3_72[70504] = {
+	pg.base.fleet_tech_ship_class[70504] = {
 		shiptype = 5,
 		name = "喀山",
 		t_level = 8,
@@ -4870,11 +3756,7 @@ end)()
 			70509
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.fleet_tech_ship_class
-
-	var_3_73[70701] = {
+	pg.base.fleet_tech_ship_class[70701] = {
 		shiptype = 7,
 		name = "伏尔加",
 		t_level = 8,
@@ -4885,11 +3767,7 @@ end)()
 			70701
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.fleet_tech_ship_class
-
-	var_3_74[70702] = {
+	pg.base.fleet_tech_ship_class[70702] = {
 		shiptype = 7,
 		name = "契卡洛夫",
 		t_level = 8,
@@ -4900,11 +3778,7 @@ end)()
 			79901
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.fleet_tech_ship_class
-
-	var_3_75[70703] = {
+	pg.base.fleet_tech_ship_class[70703] = {
 		shiptype = 7,
 		name = "纳希莫夫海军上将",
 		t_level = 10,
@@ -4915,11 +3789,7 @@ end)()
 			79902
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.fleet_tech_ship_class
-
-	var_3_76[71801] = {
+	pg.base.fleet_tech_ship_class[71801] = {
 		shiptype = 18,
 		name = "喀琅施塔得",
 		t_level = 9,
@@ -4930,11 +3800,7 @@ end)()
 			71801
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.fleet_tech_ship_class
-
-	var_3_77[80101] = {
+	pg.base.fleet_tech_ship_class[80101] = {
 		shiptype = 1,
 		name = "空想级",
 		t_level = 8,
@@ -4946,11 +3812,7 @@ end)()
 			80107
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.fleet_tech_ship_class
-
-	var_3_78[80102] = {
+	pg.base.fleet_tech_ship_class[80102] = {
 		shiptype = 1,
 		name = "大胆级",
 		t_level = 6,
@@ -4964,11 +3826,7 @@ end)()
 			80106
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.fleet_tech_ship_class
-
-	var_3_79[80103] = {
+	pg.base.fleet_tech_ship_class[80103] = {
 		shiptype = 1,
 		name = "机敏级",
 		t_level = 4,
@@ -4979,11 +3837,7 @@ end)()
 			80102
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.fleet_tech_ship_class
-
-	var_3_80[80104] = {
+	pg.base.fleet_tech_ship_class[80104] = {
 		shiptype = 1,
 		name = "沃克兰级",
 		t_level = 7,
@@ -4994,11 +3848,7 @@ end)()
 			80108
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.fleet_tech_ship_class
-
-	var_3_81[80105] = {
+	pg.base.fleet_tech_ship_class[80105] = {
 		shiptype = 1,
 		name = "暴风雨",
 		t_level = 9,
@@ -5009,11 +3859,7 @@ end)()
 			89905
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.fleet_tech_ship_class
-
-	var_3_82[80201] = {
+	pg.base.fleet_tech_ship_class[80201] = {
 		shiptype = 2,
 		name = "埃米尔贝尔汀",
 		t_level = 4,
@@ -5024,11 +3870,7 @@ end)()
 			80201
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.fleet_tech_ship_class
-
-	var_3_83[80202] = {
+	pg.base.fleet_tech_ship_class[80202] = {
 		shiptype = 2,
 		name = "圣女贞德",
 		t_level = 3,
@@ -5039,11 +3881,7 @@ end)()
 			80202
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.fleet_tech_ship_class
-
-	var_3_84[80203] = {
+	pg.base.fleet_tech_ship_class[80203] = {
 		shiptype = 2,
 		name = "德格拉斯级",
 		t_level = 6,
@@ -5054,11 +3892,7 @@ end)()
 			80203
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.fleet_tech_ship_class
-
-	var_3_85[80204] = {
+	pg.base.fleet_tech_ship_class[80204] = {
 		shiptype = 2,
 		name = "贝亚德",
 		t_level = 8,
@@ -5069,11 +3903,7 @@ end)()
 			89904
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.fleet_tech_ship_class
-
-	var_3_86[80205] = {
+	pg.base.fleet_tech_ship_class[80205] = {
 		shiptype = 2,
 		name = "迪盖·特鲁因级",
 		t_level = 2,
@@ -5084,11 +3914,7 @@ end)()
 			80204
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.fleet_tech_ship_class
-
-	var_3_87[80301] = {
+	pg.base.fleet_tech_ship_class[80301] = {
 		shiptype = 3,
 		name = "路易九世",
 		t_level = 8,
@@ -5099,11 +3925,7 @@ end)()
 			89901
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.fleet_tech_ship_class
-
-	var_3_88[80302] = {
+	pg.base.fleet_tech_ship_class[80302] = {
 		shiptype = 3,
 		name = "絮弗伦级",
 		t_level = 5,
@@ -5114,11 +3936,7 @@ end)()
 			80301
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.fleet_tech_ship_class
-
-	var_3_89[80303] = {
+	pg.base.fleet_tech_ship_class[80303] = {
 		shiptype = 3,
 		name = "布伦努斯",
 		t_level = 8,
@@ -5129,11 +3947,7 @@ end)()
 			80302
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.fleet_tech_ship_class
-
-	var_3_90[80304] = {
+	pg.base.fleet_tech_ship_class[80304] = {
 		shiptype = 3,
 		name = "迪凯纳级",
 		t_level = 5,
@@ -5144,11 +3958,7 @@ end)()
 			80303
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.fleet_tech_ship_class
-
-	var_3_91[17] = {
+	pg.base.fleet_tech_ship_class[17] = {
 		shiptype = 4,
 		name = "马塞纳",
 		t_level = 3,
@@ -5159,11 +3969,7 @@ end)()
 			80401
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.fleet_tech_ship_class
-
-	var_3_92[80501] = {
+	pg.base.fleet_tech_ship_class[80501] = {
 		shiptype = 5,
 		name = "黎塞留级",
 		t_level = 7,
@@ -5174,11 +3980,7 @@ end)()
 			80501
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.fleet_tech_ship_class
-
-	var_3_93[80502] = {
+	pg.base.fleet_tech_ship_class[80502] = {
 		shiptype = 5,
 		name = "香槟",
 		t_level = 9,
@@ -5189,11 +3991,7 @@ end)()
 			89902
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.fleet_tech_ship_class
-
-	var_3_94[80503] = {
+	pg.base.fleet_tech_ship_class[80503] = {
 		shiptype = 5,
 		name = "里昂级",
 		t_level = 4,
@@ -5204,11 +4002,7 @@ end)()
 			80502
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.fleet_tech_ship_class
-
-	var_3_95[80504] = {
+	pg.base.fleet_tech_ship_class[80504] = {
 		shiptype = 5,
 		name = "阿尔萨斯级",
 		t_level = 9,
@@ -5219,11 +4013,7 @@ end)()
 			80503
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.fleet_tech_ship_class
-
-	var_3_96[80601] = {
+	pg.base.fleet_tech_ship_class[80601] = {
 		shiptype = 6,
 		name = "贝劳森林",
 		t_level = 4,
@@ -5234,11 +4024,7 @@ end)()
 			80601
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.fleet_tech_ship_class
-
-	var_3_97[80602] = {
+	pg.base.fleet_tech_ship_class[80602] = {
 		shiptype = 6,
 		name = "阿罗芒什",
 		t_level = 6,
@@ -5249,11 +4035,7 @@ end)()
 			80602
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.fleet_tech_ship_class
-
-	var_3_98[80701] = {
+	pg.base.fleet_tech_ship_class[80701] = {
 		shiptype = 7,
 		name = "贝亚恩",
 		t_level = 4,
@@ -5264,8 +4046,7 @@ end)()
 			80701
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.fleet_tech_ship_class[80702] = {
+	pg.base.fleet_tech_ship_class[80702] = {
 		shiptype = 7,
 		name = "霞飞级",
 		t_level = 6,
@@ -5280,11 +4061,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.fleet_tech_ship_class
-
-	var_4_0[80801] = {
+	pg.base.fleet_tech_ship_class[80801] = {
 		shiptype = 8,
 		name = "絮库夫",
 		t_level = 7,
@@ -5295,11 +4072,7 @@ end)()
 			80801
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.fleet_tech_ship_class
-
-	var_4_1[9] = {
+	pg.base.fleet_tech_ship_class[9] = {
 		shiptype = 18,
 		name = "布雷斯特",
 		t_level = 9,
@@ -5310,11 +4083,7 @@ end)()
 			89903
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.fleet_tech_ship_class
-
-	var_4_2[10] = {
+	pg.base.fleet_tech_ship_class[10] = {
 		shiptype = 18,
 		name = "瑟堡",
 		t_level = 4,
@@ -5325,11 +4094,7 @@ end)()
 			81801
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.fleet_tech_ship_class
-
-	var_4_3[90101] = {
+	pg.base.fleet_tech_ship_class[90101] = {
 		shiptype = 1,
 		name = "空想级",
 		t_level = 8,
@@ -5342,11 +4107,7 @@ end)()
 			90114
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.fleet_tech_ship_class
-
-	var_4_4[90103] = {
+	pg.base.fleet_tech_ship_class[90103] = {
 		shiptype = 1,
 		name = "机敏级",
 		t_level = 4,
@@ -5357,11 +4118,7 @@ end)()
 			90101
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.fleet_tech_ship_class
-
-	var_4_5[90104] = {
+	pg.base.fleet_tech_ship_class[90104] = {
 		shiptype = 1,
 		name = "沃克兰级",
 		t_level = 7,
@@ -5374,11 +4131,7 @@ end)()
 			90104
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.fleet_tech_ship_class
-
-	var_4_6[90105] = {
+	pg.base.fleet_tech_ship_class[90105] = {
 		shiptype = 1,
 		name = "莫加多尔级",
 		t_level = 9,
@@ -5389,11 +4142,7 @@ end)()
 			90107
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.fleet_tech_ship_class
-
-	var_4_7[90106] = {
+	pg.base.fleet_tech_ship_class[90106] = {
 		shiptype = 1,
 		name = "大胆级",
 		t_level = 6,
@@ -5405,11 +4154,7 @@ end)()
 			90106
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.fleet_tech_ship_class
-
-	var_4_8[90201] = {
+	pg.base.fleet_tech_ship_class[90201] = {
 		shiptype = 2,
 		name = "拉·加利索尼埃",
 		t_level = 5,
@@ -5421,11 +4166,7 @@ end)()
 			90202
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.fleet_tech_ship_class
-
-	var_4_9[90301] = {
+	pg.base.fleet_tech_ship_class[90301] = {
 		shiptype = 3,
 		name = "阿尔及利亚",
 		t_level = 7,
@@ -5436,11 +4177,7 @@ end)()
 			90302
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.fleet_tech_ship_class
-
-	var_4_10[90302] = {
+	pg.base.fleet_tech_ship_class[90302] = {
 		shiptype = 3,
 		name = "絮弗伦级",
 		t_level = 5,
@@ -5452,11 +4189,7 @@ end)()
 			90303
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.fleet_tech_ship_class
-
-	var_4_11[90401] = {
+	pg.base.fleet_tech_ship_class[90401] = {
 		shiptype = 4,
 		name = "敦刻尔克级",
 		t_level = 5,
@@ -5468,11 +4201,7 @@ end)()
 			90402
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.fleet_tech_ship_class
-
-	var_4_12[5] = {
+	pg.base.fleet_tech_ship_class[5] = {
 		shiptype = 5,
 		name = "黎塞留级",
 		t_level = 7,
@@ -5485,11 +4214,7 @@ end)()
 			99901
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.fleet_tech_ship_class
-
-	var_4_13[6] = {
+	pg.base.fleet_tech_ship_class[6] = {
 		shiptype = 5,
 		name = "阿尔萨斯级",
 		t_level = 9,
@@ -5500,11 +4225,7 @@ end)()
 			99902
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.fleet_tech_ship_class
-
-	var_4_14[90701] = {
+	pg.base.fleet_tech_ship_class[90701] = {
 		shiptype = 7,
 		name = "霞飞级",
 		t_level = 6,
@@ -5515,11 +4236,7 @@ end)()
 			90701
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.fleet_tech_ship_class
-
-	var_4_15[21] = {
+	pg.base.fleet_tech_ship_class[21] = {
 		shiptype = 1,
 		name = "海军上将级",
 		t_level = 3,
@@ -5530,11 +4247,7 @@ end)()
 			110101
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.fleet_tech_ship_class
-
-	var_4_16[110201] = {
+	pg.base.fleet_tech_ship_class[110201] = {
 		shiptype = 2,
 		name = "七省级",
 		t_level = 8,
@@ -5545,11 +4258,7 @@ end)()
 			110201
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.fleet_tech_ship_class
-
-	var_4_17[110301] = {
+	pg.base.fleet_tech_ship_class[110301] = {
 		shiptype = 3,
 		name = "金狮",
 		t_level = 10,
@@ -5560,11 +4269,7 @@ end)()
 			119901
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.fleet_tech_ship_class
-
-	var_4_18[120501] = {
+	pg.base.fleet_tech_ship_class[120501] = {
 		shiptype = 5,
 		name = "瓦尔帕莱索",
 		t_level = 9,
@@ -5575,11 +4280,7 @@ end)()
 			129901
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.fleet_tech_ship_class
-
-	var_4_19[1] = {
+	pg.base.fleet_tech_ship_class[1] = {
 		shiptype = 22,
 		name = "皇家财富号",
 		t_level = 1,
@@ -5590,11 +4291,7 @@ end)()
 			960001
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.fleet_tech_ship_class
-
-	var_4_20[2] = {
+	pg.base.fleet_tech_ship_class[2] = {
 		shiptype = 24,
 		name = "圣马丁号",
 		t_level = 2,
@@ -5605,11 +4302,7 @@ end)()
 			960002
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.fleet_tech_ship_class
-
-	var_4_21[3] = {
+	pg.base.fleet_tech_ship_class[3] = {
 		shiptype = 23,
 		name = "金鹿号",
 		t_level = 1,
@@ -5620,11 +4313,7 @@ end)()
 			960003
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.fleet_tech_ship_class
-
-	var_4_22[4] = {
+	pg.base.fleet_tech_ship_class[4] = {
 		shiptype = 22,
 		name = "玛丽·西莱斯特号",
 		t_level = 1,
@@ -5635,11 +4324,7 @@ end)()
 			960004
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.fleet_tech_ship_class
-
-	var_4_23[5] = {
+	pg.base.fleet_tech_ship_class[5] = {
 		shiptype = 22,
 		name = "维达号",
 		t_level = 1,
@@ -5650,11 +4335,7 @@ end)()
 			960005
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.fleet_tech_ship_class
-
-	var_4_24[6] = {
+	pg.base.fleet_tech_ship_class[6] = {
 		shiptype = 23,
 		name = "加里冒险号",
 		t_level = 1,
@@ -5665,11 +4346,7 @@ end)()
 			960006
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.fleet_tech_ship_class
-
-	var_4_25[7] = {
+	pg.base.fleet_tech_ship_class[7] = {
 		shiptype = 24,
 		name = "冈依沙瓦号",
 		t_level = 2,
@@ -5680,11 +4357,7 @@ end)()
 			960007
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.fleet_tech_ship_class
-
-	var_4_26[8] = {
+	pg.base.fleet_tech_ship_class[8] = {
 		shiptype = 23,
 		name = "幻想号",
 		t_level = 1,
@@ -5695,11 +4368,7 @@ end)()
 			960008
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.fleet_tech_ship_class
-
-	var_4_27[9] = {
+	pg.base.fleet_tech_ship_class[9] = {
 		shiptype = 22,
 		name = "和睦号",
 		t_level = 1,
@@ -5710,11 +4379,7 @@ end)()
 			960009
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.fleet_tech_ship_class
-
-	var_4_28[10] = {
+	pg.base.fleet_tech_ship_class[10] = {
 		shiptype = 23,
 		name = "朴茨茅斯冒险号",
 		t_level = 1,
@@ -5725,11 +4390,7 @@ end)()
 			960010
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.fleet_tech_ship_class
-
-	var_4_29[11] = {
+	pg.base.fleet_tech_ship_class[11] = {
 		shiptype = 22,
 		name = "海豚号",
 		t_level = 1,
@@ -5740,11 +4401,7 @@ end)()
 			960011
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.fleet_tech_ship_class
-
-	var_4_30[12] = {
+	pg.base.fleet_tech_ship_class[12] = {
 		shiptype = 24,
 		name = "安妮女王复仇号",
 		t_level = 1,
@@ -5755,11 +4412,7 @@ end)()
 			960012
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.fleet_tech_ship_class
-
-	var_4_31[13] = {
+	pg.base.fleet_tech_ship_class[13] = {
 		shiptype = 23,
 		name = "莱姆号",
 		t_level = 2,
@@ -5770,11 +4423,7 @@ end)()
 			960013
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.fleet_tech_ship_class
-
-	var_4_32[14] = {
+	pg.base.fleet_tech_ship_class[14] = {
 		shiptype = 24,
 		name = "珍珠号",
 		t_level = 2,
@@ -5785,11 +4434,7 @@ end)()
 			960014
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.fleet_tech_ship_class
-
-	var_4_33[15] = {
+	pg.base.fleet_tech_ship_class[15] = {
 		shiptype = 23,
 		name = "皇家詹姆斯号",
 		t_level = 1,
@@ -5800,11 +4445,7 @@ end)()
 			960015
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.fleet_tech_ship_class
-
-	var_4_34[16] = {
+	pg.base.fleet_tech_ship_class[16] = {
 		shiptype = 22,
 		name = "冒险号",
 		t_level = 1,
@@ -5815,11 +4456,7 @@ end)()
 			960016
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.fleet_tech_ship_class
-
-	var_4_35[970101] = {
+	pg.base.fleet_tech_ship_class[970101] = {
 		shiptype = 1,
 		name = "猎人·META",
 		t_level = 3,
@@ -5830,11 +4467,7 @@ end)()
 			970101
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.fleet_tech_ship_class
-
-	var_4_36[970102] = {
+	pg.base.fleet_tech_ship_class[970102] = {
 		shiptype = 1,
 		name = "命运女神·META",
 		t_level = 3,
@@ -5845,11 +4478,7 @@ end)()
 			970102
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.fleet_tech_ship_class
-
-	var_4_37[970103] = {
+	pg.base.fleet_tech_ship_class[970103] = {
 		shiptype = 1,
 		name = "旗风·META",
 		t_level = 5,
@@ -5860,11 +4489,7 @@ end)()
 			970103
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.fleet_tech_ship_class
-
-	var_4_38[970104] = {
+	pg.base.fleet_tech_ship_class[970104] = {
 		shiptype = 1,
 		name = "金伯利·META",
 		t_level = 1,
@@ -5875,11 +4500,7 @@ end)()
 			970104
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.fleet_tech_ship_class
-
-	var_4_39[970105] = {
+	pg.base.fleet_tech_ship_class[970105] = {
 		shiptype = 1,
 		name = "吸血鬼·META",
 		t_level = 3,
@@ -5890,11 +4511,7 @@ end)()
 			970105
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.fleet_tech_ship_class
-
-	var_4_40[970106] = {
+	pg.base.fleet_tech_ship_class[970106] = {
 		shiptype = 1,
 		name = "霞·META",
 		t_level = 2,
@@ -5905,11 +4522,7 @@ end)()
 			970106
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.fleet_tech_ship_class
-
-	var_4_41[970107] = {
+	pg.base.fleet_tech_ship_class[970107] = {
 		shiptype = 1,
 		name = "格伦维尔·META",
 		t_level = 3,
@@ -5920,11 +4533,7 @@ end)()
 			970107
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.fleet_tech_ship_class
-
-	var_4_42[970108] = {
+	pg.base.fleet_tech_ship_class[970108] = {
 		shiptype = 1,
 		name = "江风·META",
 		t_level = 5,
@@ -5935,11 +4544,7 @@ end)()
 			970108
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.fleet_tech_ship_class
-
-	var_4_43[970109] = {
+	pg.base.fleet_tech_ship_class[970109] = {
 		shiptype = 1,
 		name = "夕立·META",
 		t_level = 1,
@@ -5950,11 +4555,7 @@ end)()
 			970109
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.fleet_tech_ship_class
-
-	var_4_44[970110] = {
+	pg.base.fleet_tech_ship_class[970110] = {
 		shiptype = 1,
 		name = "杜威·META",
 		t_level = 1,
@@ -5965,11 +4566,7 @@ end)()
 			970110
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.fleet_tech_ship_class
-
-	var_4_45[970111] = {
+	pg.base.fleet_tech_ship_class[970111] = {
 		shiptype = 1,
 		name = "龙骑兵·META",
 		t_level = 3,
@@ -5980,11 +4577,7 @@ end)()
 			970111
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.fleet_tech_ship_class
-
-	var_4_46[0] = {
+	pg.base.fleet_tech_ship_class[0] = {
 		shiptype = 1,
 		name = "布里斯托尔·META",
 		t_level = 3,
@@ -5995,11 +4588,7 @@ end)()
 			970112
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.fleet_tech_ship_class
-
-	var_4_47[970201] = {
+	pg.base.fleet_tech_ship_class[970201] = {
 		shiptype = 2,
 		name = "海伦娜·META",
 		t_level = 1,
@@ -6010,11 +4599,7 @@ end)()
 			970201
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.fleet_tech_ship_class
-
-	var_4_48[970202] = {
+	pg.base.fleet_tech_ship_class[970202] = {
 		shiptype = 2,
 		name = "孟菲斯·META",
 		t_level = 2,
@@ -6025,11 +4610,7 @@ end)()
 			970202
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.fleet_tech_ship_class
-
-	var_4_49[970203] = {
+	pg.base.fleet_tech_ship_class[970203] = {
 		shiptype = 2,
 		name = "谢菲尔德·META",
 		t_level = 1,
@@ -6040,11 +4621,7 @@ end)()
 			970203
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.fleet_tech_ship_class
-
-	var_4_50[970204] = {
+	pg.base.fleet_tech_ship_class[970204] = {
 		shiptype = 2,
 		name = "拉·加利索尼埃·META",
 		t_level = 3,
@@ -6055,11 +4632,7 @@ end)()
 			970204
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.fleet_tech_ship_class
-
-	var_4_51[970205] = {
+	pg.base.fleet_tech_ship_class[970205] = {
 		shiptype = 2,
 		name = "神通·META",
 		t_level = 2,
@@ -6070,11 +4643,7 @@ end)()
 			970205
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.fleet_tech_ship_class
-
-	var_4_52[970206] = {
+	pg.base.fleet_tech_ship_class[970206] = {
 		shiptype = 2,
 		name = "基洛夫·META",
 		t_level = 3,
@@ -6085,11 +4654,7 @@ end)()
 			970206
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.fleet_tech_ship_class
-
-	var_4_53[970207] = {
+	pg.base.fleet_tech_ship_class[970207] = {
 		shiptype = 2,
 		name = "水星纪念·META",
 		t_level = 4,
@@ -6100,11 +4665,7 @@ end)()
 			970207
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.fleet_tech_ship_class
-
-	var_4_54[970208] = {
+	pg.base.fleet_tech_ship_class[970208] = {
 		shiptype = 2,
 		name = "博伊西·META",
 		t_level = 2,
@@ -6115,11 +4676,7 @@ end)()
 			970208
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.fleet_tech_ship_class
-
-	var_4_55[970209] = {
+	pg.base.fleet_tech_ship_class[970209] = {
 		shiptype = 2,
 		name = "克利夫兰·META",
 		t_level = 1,
@@ -6130,11 +4687,7 @@ end)()
 			970209
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.fleet_tech_ship_class
-
-	var_4_56[970210] = {
+	pg.base.fleet_tech_ship_class[970210] = {
 		shiptype = 2,
 		name = "科隆·META",
 		t_level = 3,
@@ -6145,11 +4698,7 @@ end)()
 			970210
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.fleet_tech_ship_class
-
-	var_4_57[970211] = {
+	pg.base.fleet_tech_ship_class[970211] = {
 		shiptype = 2,
 		name = "雷根斯堡·META",
 		t_level = 3,
@@ -6160,11 +4709,7 @@ end)()
 			970211
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.fleet_tech_ship_class
-
-	var_4_58[970212] = {
+	pg.base.fleet_tech_ship_class[970212] = {
 		shiptype = 2,
 		name = "柯尼斯堡·META",
 		t_level = 3,
@@ -6175,11 +4720,7 @@ end)()
 			970212
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.fleet_tech_ship_class
-
-	var_4_59[970213] = {
+	pg.base.fleet_tech_ship_class[970213] = {
 		shiptype = 2,
 		name = "纽伦堡·META",
 		t_level = 3,
@@ -6190,11 +4731,7 @@ end)()
 			970213
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.fleet_tech_ship_class
-
-	var_4_60[970301] = {
+	pg.base.fleet_tech_ship_class[970301] = {
 		shiptype = 3,
 		name = "特伦托·META",
 		t_level = 4,
@@ -6205,11 +4742,7 @@ end)()
 			970301
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.fleet_tech_ship_class
-
-	var_4_61[970302] = {
+	pg.base.fleet_tech_ship_class[970302] = {
 		shiptype = 3,
 		name = "阿尔及利亚·META",
 		t_level = 3,
@@ -6220,11 +4753,7 @@ end)()
 			970302
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.fleet_tech_ship_class
-
-	var_4_62[970303] = {
+	pg.base.fleet_tech_ship_class[970303] = {
 		shiptype = 3,
 		name = "福煦·META",
 		t_level = 3,
@@ -6235,11 +4764,7 @@ end)()
 			970303
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.fleet_tech_ship_class
-
-	var_4_63[970304] = {
+	pg.base.fleet_tech_ship_class[970304] = {
 		shiptype = 3,
 		name = "威奇塔·META",
 		t_level = 1,
@@ -6250,11 +4775,7 @@ end)()
 			970304
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.fleet_tech_ship_class
-
-	var_4_64[970305] = {
+	pg.base.fleet_tech_ship_class[970305] = {
 		shiptype = 3,
 		name = "希佩尔海军上将·META",
 		t_level = 3,
@@ -6265,11 +4786,7 @@ end)()
 			970305
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.fleet_tech_ship_class
-
-	var_4_65[970306] = {
+	pg.base.fleet_tech_ship_class[970306] = {
 		shiptype = 3,
 		name = "博尔扎诺·META",
 		t_level = 3,
@@ -6280,11 +4797,7 @@ end)()
 			970306
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.fleet_tech_ship_class
-
-	var_4_66[970401] = {
+	pg.base.fleet_tech_ship_class[970401] = {
 		shiptype = 4,
 		name = "格奈森瑙·META",
 		t_level = 3,
@@ -6295,11 +4808,7 @@ end)()
 			970401
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.fleet_tech_ship_class
-
-	var_4_67[970402] = {
+	pg.base.fleet_tech_ship_class[970402] = {
 		shiptype = 4,
 		name = "沙恩霍斯特·META",
 		t_level = 1,
@@ -6310,11 +4819,7 @@ end)()
 			970402
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.fleet_tech_ship_class
-
-	var_4_68[970403] = {
+	pg.base.fleet_tech_ship_class[970403] = {
 		shiptype = 4,
 		name = "反击·META",
 		t_level = 1,
@@ -6325,11 +4830,7 @@ end)()
 			970403
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.fleet_tech_ship_class
-
-	var_4_69[970404] = {
+	pg.base.fleet_tech_ship_class[970404] = {
 		shiptype = 4,
 		name = "声望·META",
 		t_level = 1,
@@ -6340,11 +4841,7 @@ end)()
 			970404
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.fleet_tech_ship_class
-
-	var_4_70[970405] = {
+	pg.base.fleet_tech_ship_class[970405] = {
 		shiptype = 4,
 		name = "比叡·META",
 		t_level = 3,
@@ -6355,11 +4852,7 @@ end)()
 			970405
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.fleet_tech_ship_class
-
-	var_4_71[970406] = {
+	pg.base.fleet_tech_ship_class[970406] = {
 		shiptype = 4,
 		name = "敦刻尔克·META",
 		t_level = 3,
@@ -6370,11 +4863,7 @@ end)()
 			970406
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.fleet_tech_ship_class
-
-	var_4_72[5] = {
+	pg.base.fleet_tech_ship_class[5] = {
 		shiptype = 5,
 		name = "扶桑·META",
 		t_level = 1,
@@ -6385,11 +4874,7 @@ end)()
 			970501
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.fleet_tech_ship_class
-
-	var_4_73[6] = {
+	pg.base.fleet_tech_ship_class[6] = {
 		shiptype = 5,
 		name = "山城·META",
 		t_level = 4,
@@ -6400,11 +4885,7 @@ end)()
 			970502
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.fleet_tech_ship_class
-
-	var_4_74[7] = {
+	pg.base.fleet_tech_ship_class[7] = {
 		shiptype = 5,
 		name = "亚利桑那·META",
 		t_level = 2,
@@ -6415,11 +4896,7 @@ end)()
 			970503
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.fleet_tech_ship_class
-
-	var_4_75[8] = {
+	pg.base.fleet_tech_ship_class[8] = {
 		shiptype = 5,
 		name = "伊丽莎白女王·META",
 		t_level = 3,
@@ -6430,11 +4907,7 @@ end)()
 			970504
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.fleet_tech_ship_class
-
-	var_4_76[9] = {
+	pg.base.fleet_tech_ship_class[9] = {
 		shiptype = 5,
 		name = "罗德尼·META",
 		t_level = 2,
@@ -6445,11 +4918,7 @@ end)()
 			970505
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.fleet_tech_ship_class
-
-	var_4_77[10] = {
+	pg.base.fleet_tech_ship_class[10] = {
 		shiptype = 5,
 		name = "长门·META",
 		t_level = 5,
@@ -6460,11 +4929,7 @@ end)()
 			970506
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.fleet_tech_ship_class
-
-	var_4_78[11] = {
+	pg.base.fleet_tech_ship_class[11] = {
 		shiptype = 5,
 		name = "朱利奥·凯撒·META",
 		t_level = 3,
@@ -6475,11 +4940,7 @@ end)()
 			970507
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.fleet_tech_ship_class
-
-	var_4_79[12] = {
+	pg.base.fleet_tech_ship_class[12] = {
 		shiptype = 5,
 		name = "安德烈亚·多利亚·META",
 		t_level = 3,
@@ -6490,11 +4951,7 @@ end)()
 			970508
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.fleet_tech_ship_class
-
-	var_4_80[13] = {
+	pg.base.fleet_tech_ship_class[13] = {
 		shiptype = 5,
 		name = "内华达·META",
 		t_level = 1,
@@ -6505,11 +4962,7 @@ end)()
 			970509
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.fleet_tech_ship_class
-
-	var_4_81[14] = {
+	pg.base.fleet_tech_ship_class[14] = {
 		shiptype = 5,
 		name = "甘古特·META",
 		t_level = 3,
@@ -6520,11 +4973,7 @@ end)()
 			970510
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.fleet_tech_ship_class
-
-	var_4_82[970601] = {
+	pg.base.fleet_tech_ship_class[970601] = {
 		shiptype = 6,
 		name = "飞鹰·META",
 		t_level = 1,
@@ -6535,11 +4984,7 @@ end)()
 			970601
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.fleet_tech_ship_class
-
-	var_4_83[970602] = {
+	pg.base.fleet_tech_ship_class[970602] = {
 		shiptype = 6,
 		name = "隼鹰·META",
 		t_level = 1,
@@ -6550,11 +4995,7 @@ end)()
 			970602
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.fleet_tech_ship_class
-
-	var_4_84[970603] = {
+	pg.base.fleet_tech_ship_class[970603] = {
 		shiptype = 6,
 		name = "普林斯顿·META",
 		t_level = 1,
@@ -6565,11 +5006,7 @@ end)()
 			970603
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.fleet_tech_ship_class
-
-	var_4_85[970604] = {
+	pg.base.fleet_tech_ship_class[970604] = {
 		shiptype = 6,
 		name = "凤翔·META",
 		t_level = 5,
@@ -6580,11 +5017,7 @@ end)()
 			970604
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.fleet_tech_ship_class
-
-	var_4_86[970605] = {
+	pg.base.fleet_tech_ship_class[970605] = {
 		shiptype = 6,
 		name = "易北·META",
 		t_level = 3,
@@ -6595,11 +5028,7 @@ end)()
 			970605
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.fleet_tech_ship_class
-
-	var_4_87[970701] = {
+	pg.base.fleet_tech_ship_class[970701] = {
 		shiptype = 7,
 		name = "飞龙·META",
 		t_level = 1,
@@ -6610,11 +5039,7 @@ end)()
 			970701
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.fleet_tech_ship_class
-
-	var_4_88[970702] = {
+	pg.base.fleet_tech_ship_class[970702] = {
 		shiptype = 7,
 		name = "皇家方舟·META",
 		t_level = 1,
@@ -6625,11 +5050,7 @@ end)()
 			970702
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.fleet_tech_ship_class
-
-	var_4_89[970703] = {
+	pg.base.fleet_tech_ship_class[970703] = {
 		shiptype = 7,
 		name = "苍龙·META",
 		t_level = 4,
@@ -6640,11 +5061,7 @@ end)()
 			970703
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.fleet_tech_ship_class
-
-	var_4_90[970704] = {
+	pg.base.fleet_tech_ship_class[970704] = {
 		shiptype = 7,
 		name = "贝亚恩·META",
 		t_level = 4,
@@ -6655,11 +5072,7 @@ end)()
 			970704
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.fleet_tech_ship_class
-
-	var_4_91[970705] = {
+	pg.base.fleet_tech_ship_class[970705] = {
 		shiptype = 7,
 		name = "大凤·META",
 		t_level = 4,
@@ -6670,11 +5083,7 @@ end)()
 			970705
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.fleet_tech_ship_class
-
-	var_4_92[970706] = {
+	pg.base.fleet_tech_ship_class[970706] = {
 		shiptype = 7,
 		name = "大黄蜂·META",
 		t_level = 1,
@@ -6685,11 +5094,7 @@ end)()
 			970706
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.fleet_tech_ship_class
-
-	var_4_93[970707] = {
+	pg.base.fleet_tech_ship_class[970707] = {
 		shiptype = 7,
 		name = "光荣·META",
 		t_level = 3,
@@ -6700,11 +5105,7 @@ end)()
 			970707
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.fleet_tech_ship_class
-
-	var_4_94[970708] = {
+	pg.base.fleet_tech_ship_class[970708] = {
 		shiptype = 7,
 		name = "约克城·META",
 		t_level = 2,
@@ -6715,11 +5116,7 @@ end)()
 			970708
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.fleet_tech_ship_class
-
-	var_4_95[970801] = {
+	pg.base.fleet_tech_ship_class[970801] = {
 		shiptype = 8,
 		name = "U-556·META",
 		t_level = 4,
@@ -6730,11 +5127,7 @@ end)()
 			970801
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.fleet_tech_ship_class
-
-	var_4_96[971201] = {
+	pg.base.fleet_tech_ship_class[971201] = {
 		shiptype = 12,
 		name = "女灶神·META",
 		t_level = 2,
@@ -6745,8 +5138,7 @@ end)()
 			971201
 		}
 	}
-	pg = var_4_96
-	var_4_96.base.fleet_tech_ship_class[971301] = {
+	pg.base.fleet_tech_ship_class[971301] = {
 		shiptype = 13,
 		name = "黑暗界·META",
 		t_level = 3,

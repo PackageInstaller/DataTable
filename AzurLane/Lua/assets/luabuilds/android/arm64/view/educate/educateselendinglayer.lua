@@ -1,98 +1,47 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EducateSelEndingLayer", import(".base.EducateBaseUI"))
 
-local var_0_0 = "EducateSelEndingLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".base.EducateBaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "EducateSelEndingUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0.rootTF = arg_2_0._tf:Find("root")
+	arg_2_0.blurPanel = arg_2_0.rootTF:Find("bg")
+	arg_2_0.scrollrect = arg_2_0.blurPanel:Find("window/view")
 
-	arg_2_0.rootTF = var_1.Find(var_2_0, "root")
+	local var_2_0 = arg_2_0.blurPanel:Find("window/view/content")
 
-	local var_2_1 = arg_2_0.rootTF
+	arg_2_0.uiList = UIItemList.New(var_2_0, var_2_0:Find("tpl"))
 
-	arg_2_0.blurPanel = var_1.Find(var_2_1, "bg")
-
-	local var_2_2 = arg_2_0.blurPanel
-
-	arg_2_0.scrollrect = var_1.Find(var_2_2, "window/view")
-
-	local var_2_3 = arg_2_0.blurPanel
-	local var_2_4 = var_1.Find(var_2_3, "window/view/content")
-
-	UIItemList = var_1_10002
-	arg_2_0.uiList = var_1_10002.New(var_2_4, var_2_4:Find("tpl"))
-
-	local var_2_5 = arg_2_0.uiList
-
-	var_2.make(var_2_5, function(arg_3_0, arg_3_1, arg_3_2)
-		UIItemList = var_2_10003
-
-		if arg_3_0 == var_2_10003.EventInit then
-			local var_3_0 = arg_2_0
-
-			var_3.InitItem(var_3_0, arg_3_1, arg_3_2)
-		else
-			UIItemList = var_3
-
-			if arg_3_0 == var_3.EventUpdate then
-				setActive = var_3
-
-				var_3(arg_3_2:Find("selected"), arg_2_0.selectedIdx == arg_3_1 + 1)
-			end
+	arg_2_0.uiList:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventInit then
+			arg_2_0:InitItem(arg_3_1, arg_3_2)
+		elseif arg_3_0 == UIItemList.EventUpdate then
+			setActive(arg_3_2:Find("selected"), arg_2_0.selectedIdx == arg_3_1 + 1)
 		end
 
 		return
 	end)
 
-	local var_2_6 = arg_2_0.blurPanel
+	arg_2_0.sureBtn = arg_2_0.blurPanel:Find("window/sure_btn")
 
-	arg_2_0.sureBtn = var_2.Find(var_2_6, "window/sure_btn")
-	setText = var_2
-
-	local var_2_7 = arg_2_0.sureBtn
-	local var_2_8 = var_4.Find(var_2_7, "Image")
-
-	i18n = var_5
-
-	var_2(var_2_8, var_5("word_ok"))
+	setText(arg_2_0.sureBtn:Find("Image"), i18n("word_ok"))
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0)
+function var_0_0.didEnter(arg_4_0)
 	arg_4_0:OverlayPanel(arg_4_0.blurPanel, {
 		groupDelta = 1,
 		pbList = {
 			arg_4_0.blurPanel
 		}
 	})
-
-	onButton = var_1
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.sureBtn
-
-	local function var_4_2()
-		local var_5_0 = arg_4_0
-		local var_5_1 = var_0.emit
-
-		EducateSelEndingMediator = var_2_10003
-
-		var_5_1(var_5_0, var_2_10003.ON_SELECT_ENDING, arg_4_0.endingList[arg_4_0.selectedIdx], arg_4_0.endingList)
+	onButton(arg_4_0, arg_4_0.sureBtn, function()
+		arg_4_0:emit(EducateSelEndingMediator.ON_SELECT_ENDING, arg_4_0.endingList[arg_4_0.selectedIdx], arg_4_0.endingList)
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_4_0, var_4_1, var_4_2, var_6)
+	end, SFX_PANEL)
 
 	arg_4_0.selectedIdx = 1
 
@@ -101,105 +50,48 @@ function var_0_1.didEnter(arg_4_0)
 	return
 end
 
-function var_0_1.InitItem(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = arg_6_1 + 1
-	local var_6_1 = arg_6_0.endingList[var_6_0]
+function var_0_0.InitItem(arg_6_0, arg_6_1, arg_6_2)
+	setScrollText(arg_6_2:Find("name_mask/name"), pg.child_ending[arg_6_0.endingList[arg_6_1 + 1]].name)
+	LoadImageSpriteAsync("educatepicture/" .. pg.child_ending[arg_6_0.endingList[arg_6_1 + 1]].pic_preview, arg_6_2:Find("Image"))
+	setActive(arg_6_2:Find("complete"), table.contains(arg_6_0.completeList, arg_6_0.endingList[arg_6_1 + 1]))
+	onButton(arg_6_0, arg_6_2, function()
+		arg_6_0.selectedIdx = var_0
 
-	pg = var_1_10005
-
-	local var_6_2 = var_1_10005.child_ending[var_6_1]
-
-	setScrollText = var_1_10006
-
-	var_1_10006(arg_6_2:Find("name_mask/name"), var_6_2.name)
-
-	LoadImageSpriteAsync = var_1_10006
-
-	var_1_10006("educatepicture/" .. var_6_2.pic_preview, arg_6_2:Find("Image"))
-
-	setActive = var_1_10006
-
-	local var_6_3 = arg_6_2:Find("complete")
-
-	table = var_9
-
-	var_1_10006(var_6_3, var_9.contains(arg_6_0.completeList, var_6_1))
-
-	onButton = var_1_10006
-
-	local var_6_4 = arg_6_0
-	local var_6_5 = arg_6_2
-
-	local function var_6_6()
-		arg_6_0.selectedIdx = var_6_0
-
-		local var_7_0 = arg_6_0.uiList
-
-		var_0.align(var_7_0, #arg_6_0.endingList)
+		arg_6_0.uiList:align(#arg_6_0.endingList)
 
 		return
-	end
-
-	SFX_PANEL = var_11
-
-	var_1_10006(var_6_4, var_6_5, var_6_6, var_11)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.RefreshView(arg_8_0)
-	getProxy = var_1_10001
-	EducateProxy = var_1_10003
+function var_0_0.RefreshView(arg_8_0)
+	arg_8_0.endingList = getProxy(EducateProxy):GetEndingResult()
+	arg_8_0.completeList = getProxy(EducateProxy):GetCompleteEndings()
 
-	local var_8_0 = var_1_10001(var_1_10003)
-
-	arg_8_0.endingList = var_1.GetEndingResult(var_8_0)
-	getProxy = var_1
-	EducateProxy = var_8_0
-
-	local var_8_1 = var_1(var_8_0)
-
-	arg_8_0.completeList = var_1.GetCompleteEndings(var_8_1)
-	table = var_1
-
-	local var_8_2 = var_1.sort
-	local var_8_3 = arg_8_0.endingList
-
-	CompareFuncs = var_1_10004
-
-	var_8_2(var_8_3, var_1_10004({
+	table.sort(arg_8_0.endingList, CompareFuncs({
 		function(arg_9_0)
-			table = var_2_10001
-
-			return var_2_10001.contains(arg_8_0.completeList, arg_9_0) and 1 or 0
+			return table.contains(arg_8_0.completeList, arg_9_0) and 1 or 0
 		end,
 		function(arg_10_0)
 			return -arg_10_0
 		end
 	}))
-
-	local var_8_4 = arg_8_0.uiList
-
-	var_1.align(var_8_4, #arg_8_0.endingList)
-
-	scrollTo = var_1
-
-	var_1(arg_8_0.scrollrect, arg_8_0.uiList.container.rect.width / 2, 0)
+	arg_8_0.uiList:align(#arg_8_0.endingList)
+	scrollTo(arg_8_0.scrollrect, arg_8_0.uiList.container.rect.width / 2, 0)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_11_0)
+function var_0_0.onBackPressed(arg_11_0)
 	return
 end
 
-function var_0_1.willExit(arg_12_0)
-	existCall = var_1_10001
-
-	var_1_10001(arg_12_0.contextData.onExit)
+function var_0_0.willExit(arg_12_0)
+	existCall(arg_12_0.contextData.onExit)
 	arg_12_0:UnOverlayPanel(arg_12_0.blurPanel, arg_12_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

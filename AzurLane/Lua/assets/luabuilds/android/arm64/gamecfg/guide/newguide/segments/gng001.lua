@@ -1,11 +1,4 @@
-﻿local var_0_0 = {
-	"攻坚队可以协助大舰队成员进行首领战",
-	"让我们试着派遣一名角色前往攻坚队吧！",
-	"点击此处编辑攻坚队",
-	"点击添加前往攻坚队的角色"
-}
-
-return {
+﻿return {
 	id = "GNG001",
 	events = {
 		{
@@ -15,7 +8,12 @@ return {
 				dir = 1,
 				posY = -223,
 				posX = 495.2,
-				text = var_0_0[1]
+				text = ({
+					"攻坚队可以协助大舰队成员进行首领战",
+					"让我们试着派遣一名角色前往攻坚队吧！",
+					"点击此处编辑攻坚队",
+					"点击添加前往攻坚队的角色"
+				})[1]
 			}
 		},
 		{
@@ -25,7 +23,12 @@ return {
 				dir = 1,
 				posY = -223,
 				posX = 495.2,
-				text = var_0_0[2]
+				text = ({
+					"攻坚队可以协助大舰队成员进行首领战",
+					"让我们试着派遣一名角色前往攻坚队吧！",
+					"点击此处编辑攻坚队",
+					"点击添加前往攻坚队的角色"
+				})[2]
 			}
 		},
 		{
@@ -35,7 +38,12 @@ return {
 				dir = 1,
 				posY = -223,
 				posX = 495.2,
-				text = var_0_0[3]
+				text = ({
+					"攻坚队可以协助大舰队成员进行首领战",
+					"让我们试着派遣一名角色前往攻坚队吧！",
+					"点击此处编辑攻坚队",
+					"点击添加前往攻坚队的角色"
+				})[3]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/GuildEmptyUI(Clone)/GuildEventPage(Clone)/formation_btn",
@@ -58,7 +66,12 @@ return {
 				dir = 1,
 				posY = 267.65,
 				posX = 17.53,
-				text = var_0_0[4]
+				text = ({
+					"攻坚队可以协助大舰队成员进行首领战",
+					"让我们试着派遣一名角色前往攻坚队吧！",
+					"点击此处编辑攻坚队",
+					"点击添加前往攻坚队的角色"
+				})[4]
 			},
 			ui = {
 				path = "/OverlayCamera/Overlay/UIMain/GuildEventFormationUI(Clone)/frame/ship1",

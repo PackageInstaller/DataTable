@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "black_friday_battlepass_event_pt") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "black_friday_battlepass_event_pt"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.black_friday_battlepass_event_pt = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.black_friday_battlepass_event_pt
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.black_friday_battlepass_event_pt = rawget(pg, "black_friday_battlepass_event_pt") or setmetatable({
+	__name = "black_friday_battlepass_event_pt"
+}, confNEO)
+pg.black_friday_battlepass_event_pt.all = {
 	7301,
 	7302,
 	7303,
 	7304
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.black_friday_battlepass_event_pt = {}
+pg.base = pg.base or {}
+pg.base.black_friday_battlepass_event_pt = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.black_friday_battlepass_event_pt
-
-	var_1_0[7301] = {
+	pg.base.black_friday_battlepass_event_pt[7301] = {
 		map_name = "1113",
 		type = 1,
 		equip_skin = "",
@@ -113,11 +76,7 @@ var_0_3.base.black_friday_battlepass_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.black_friday_battlepass_event_pt
-
-	var_1_1[7302] = {
+	pg.base.black_friday_battlepass_event_pt[7302] = {
 		map_name = "1211",
 		type = 1,
 		equip_skin = "",
@@ -181,11 +140,7 @@ var_0_3.base.black_friday_battlepass_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.black_friday_battlepass_event_pt
-
-	var_1_2[7303] = {
+	pg.base.black_friday_battlepass_event_pt[7303] = {
 		map_name = "226",
 		type = 1,
 		equip_skin = "",
@@ -249,8 +204,7 @@ var_0_3.base.black_friday_battlepass_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.black_friday_battlepass_event_pt[7304] = {
+	pg.base.black_friday_battlepass_event_pt[7304] = {
 		map_name = "226",
 		type = 1,
 		equip_skin = "",

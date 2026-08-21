@@ -9,6 +9,9 @@ gud.ALERT_CANCEL=2
 gud.SLAYER_FLOAT = 1
 -- 血条HUD层
 gud.SLAYER_BAR = 2
+-- Spine后面的黑布
+gud.SPINE_BLACK = 3
+gud.SPINE_IMG_HAR = 4
 
 gud.LIVE_HP = 1
 gud.LIVE_RAGE = 2

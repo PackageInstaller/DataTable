@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BuffUsageConst")
+﻿local var_0_0 = class("BuffUsageConst")
 
 var_0_0.DORM_EXP = "dorm_exp"
 var_0_0.DORM_ENERGY = "dorm_energy"

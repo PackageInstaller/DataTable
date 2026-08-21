@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_series_enemy") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_series_enemy"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_series_enemy = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_series_enemy
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_series_enemy = rawget(pg, "activity_series_enemy") or setmetatable({
+	__name = "activity_series_enemy"
+}, confNEO)
+pg.activity_series_enemy.all = {
 	1001,
 	1002,
 	1003,
@@ -67,25 +44,11 @@ var_0_3.all = {
 	1001002,
 	1001003
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_series_enemy = {}
+pg.base = pg.base or {}
+pg.base.activity_series_enemy = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_series_enemy
-
-	var_1_0[1001] = {
+	pg.base.activity_series_enemy[1001] = {
 		oil = 0,
 		name = "压制：格陵兰 ",
 		type = 1,
@@ -141,11 +104,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_series_enemy
-
-	var_1_1[1002] = {
+	pg.base.activity_series_enemy[1002] = {
 		oil = 0,
 		name = "夺回：北地群岛",
 		type = 1,
@@ -216,11 +175,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_series_enemy
-
-	var_1_2[1003] = {
+	pg.base.activity_series_enemy[1003] = {
 		oil = 0,
 		name = "侦察：北极点",
 		type = 1,
@@ -296,11 +251,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_series_enemy
-
-	var_1_3[1004] = {
+	pg.base.activity_series_enemy[1004] = {
 		oil = 0,
 		name = "突破：楚科奇海 ",
 		type = 2,
@@ -371,11 +322,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_series_enemy
-
-	var_1_4[1005] = {
+	pg.base.activity_series_enemy[1005] = {
 		oil = 0,
 		name = "牵制：王冠",
 		type = 3,
@@ -434,11 +381,7 @@ var_0_3.base.activity_series_enemy = {}
 			0.8
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_series_enemy
-
-	var_1_5[2001] = {
+	pg.base.activity_series_enemy[2001] = {
 		oil = 0,
 		name = "理性办公楼",
 		type = 1,
@@ -492,11 +435,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_series_enemy
-
-	var_1_6[2002] = {
+	pg.base.activity_series_enemy[2002] = {
 		oil = 0,
 		name = "童心教学楼",
 		type = 1,
@@ -566,11 +505,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_series_enemy
-
-	var_1_7[2003] = {
+	pg.base.activity_series_enemy[2003] = {
 		oil = 0,
 		name = "童趣艺术楼",
 		type = 1,
@@ -645,11 +580,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_series_enemy
-
-	var_1_8[2004] = {
+	pg.base.activity_series_enemy[2004] = {
 		oil = 0,
 		name = "健康活力操场",
 		type = 2,
@@ -729,11 +660,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_series_enemy
-
-	var_1_9[2005] = {
+	pg.base.activity_series_enemy[2005] = {
 		oil = 0,
 		name = "童真森林",
 		type = 3,
@@ -792,11 +719,7 @@ var_0_3.base.activity_series_enemy = {}
 			0.8
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_series_enemy
-
-	var_1_10[3001] = {
+	pg.base.activity_series_enemy[3001] = {
 		oil = 0,
 		name = "拍摄地：主干道",
 		type = 1,
@@ -850,11 +773,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_series_enemy
-
-	var_1_11[3002] = {
+	pg.base.activity_series_enemy[3002] = {
 		oil = 0,
 		name = "拍摄地：商业街",
 		type = 1,
@@ -924,11 +843,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_series_enemy
-
-	var_1_12[3003] = {
+	pg.base.activity_series_enemy[3003] = {
 		oil = 0,
 		name = "拍摄地：轨道车",
 		type = 1,
@@ -1003,11 +918,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_series_enemy
-
-	var_1_13[3004] = {
+	pg.base.activity_series_enemy[3004] = {
 		oil = 0,
 		name = "拍摄地：闹市区",
 		type = 2,
@@ -1076,11 +987,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_series_enemy
-
-	var_1_14[3005] = {
+	pg.base.activity_series_enemy[3005] = {
 		oil = 0,
 		name = "拍摄地：警视厅",
 		type = 3,
@@ -1139,11 +1046,7 @@ var_0_3.base.activity_series_enemy = {}
 			0.8
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_series_enemy
-
-	var_1_15[4001] = {
+	pg.base.activity_series_enemy[4001] = {
 		oil = 0,
 		name = "普通难度（LV 20）",
 		type = 1,
@@ -1223,11 +1126,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_series_enemy
-
-	var_1_16[4002] = {
+	pg.base.activity_series_enemy[4002] = {
 		oil = 0,
 		name = "困难难度（LV 35）",
 		type = 1,
@@ -1307,11 +1206,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_series_enemy
-
-	var_1_17[4011] = {
+	pg.base.activity_series_enemy[4011] = {
 		oil = 0,
 		name = "普通难度（LV 50）",
 		type = 1,
@@ -1396,11 +1291,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_series_enemy
-
-	var_1_18[4012] = {
+	pg.base.activity_series_enemy[4012] = {
 		oil = 0,
 		name = "困难难度（LV 65）",
 		type = 1,
@@ -1485,11 +1376,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_series_enemy
-
-	var_1_19[4021] = {
+	pg.base.activity_series_enemy[4021] = {
 		oil = 0,
 		name = "普通难度（LV 50）",
 		type = 1,
@@ -1574,11 +1461,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_series_enemy
-
-	var_1_20[4022] = {
+	pg.base.activity_series_enemy[4022] = {
 		oil = 0,
 		name = "困难难度（LV 65）",
 		type = 1,
@@ -1663,11 +1546,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_series_enemy
-
-	var_1_21[4031] = {
+	pg.base.activity_series_enemy[4031] = {
 		oil = 0,
 		name = "普通难度（LV 50）",
 		type = 1,
@@ -1752,11 +1631,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_series_enemy
-
-	var_1_22[4032] = {
+	pg.base.activity_series_enemy[4032] = {
 		oil = 0,
 		name = "困难难度（LV 65）",
 		type = 1,
@@ -1841,11 +1716,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_series_enemy
-
-	var_1_23[4041] = {
+	pg.base.activity_series_enemy[4041] = {
 		oil = 0,
 		name = "普通难度（LV 50）",
 		type = 1,
@@ -1930,11 +1801,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_series_enemy
-
-	var_1_24[4042] = {
+	pg.base.activity_series_enemy[4042] = {
 		oil = 0,
 		name = "困难难度（LV 65）",
 		type = 1,
@@ -2019,11 +1886,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_series_enemy
-
-	var_1_25[4051] = {
+	pg.base.activity_series_enemy[4051] = {
 		oil = 0,
 		name = "普通难度（LV 80）",
 		type = 1,
@@ -2113,11 +1976,7 @@ var_0_3.base.activity_series_enemy = {}
 			15
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_series_enemy
-
-	var_1_26[4052] = {
+	pg.base.activity_series_enemy[4052] = {
 		oil = 0,
 		name = "困难难度（LV 100）",
 		type = 1,
@@ -2207,11 +2066,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_series_enemy
-
-	var_1_27[5001] = {
+	pg.base.activity_series_enemy[5001] = {
 		oil = 0,
 		name = "蝶舞之约",
 		type = 1,
@@ -2265,11 +2120,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_series_enemy
-
-	var_1_28[5002] = {
+	pg.base.activity_series_enemy[5002] = {
 		oil = 0,
 		name = "暖绒奇境",
 		type = 1,
@@ -2339,11 +2190,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_series_enemy
-
-	var_1_29[5003] = {
+	pg.base.activity_series_enemy[5003] = {
 		oil = 0,
 		name = "心之窗",
 		type = 1,
@@ -2418,11 +2265,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_series_enemy
-
-	var_1_30[5004] = {
+	pg.base.activity_series_enemy[5004] = {
 		oil = 0,
 		name = "纯白之心",
 		type = 2,
@@ -2491,11 +2334,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_series_enemy
-
-	var_1_31[5005] = {
+	pg.base.activity_series_enemy[5005] = {
 		oil = 0,
 		name = "夜阑私语",
 		type = 3,
@@ -2554,11 +2393,7 @@ var_0_3.base.activity_series_enemy = {}
 			0.8
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_series_enemy
-
-	var_1_32[6001] = {
+	pg.base.activity_series_enemy[6001] = {
 		oil = 0,
 		name = "单人病房",
 		type = 1,
@@ -2612,11 +2447,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_series_enemy
-
-	var_1_33[6002] = {
+	pg.base.activity_series_enemy[6002] = {
 		oil = 0,
 		name = "ICU病房",
 		type = 1,
@@ -2686,11 +2517,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_series_enemy
-
-	var_1_34[6003] = {
+	pg.base.activity_series_enemy[6003] = {
 		oil = 0,
 		name = "护士办公室",
 		type = 1,
@@ -2765,11 +2592,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_series_enemy
-
-	var_1_35[6004] = {
+	pg.base.activity_series_enemy[6004] = {
 		oil = 0,
 		name = "地下室",
 		type = 2,
@@ -2838,11 +2661,7 @@ var_0_3.base.activity_series_enemy = {}
 			16
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_series_enemy
-
-	var_1_36[6005] = {
+	pg.base.activity_series_enemy[6005] = {
 		oil = 0,
 		name = "停机坪",
 		type = 3,
@@ -2901,11 +2720,7 @@ var_0_3.base.activity_series_enemy = {}
 			0.8
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_series_enemy
-
-	var_1_37[1001001] = {
+	pg.base.activity_series_enemy[1001001] = {
 		oil = 0,
 		name = "压制：格陵兰 ",
 		type = 1,
@@ -2951,11 +2766,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_series_enemy
-
-	var_1_38[1001002] = {
+	pg.base.activity_series_enemy[1001002] = {
 		oil = 0,
 		name = "夺回：北地群岛",
 		type = 1,
@@ -3011,8 +2822,7 @@ var_0_3.base.activity_series_enemy = {}
 			0
 		}
 	}
-	pg = var_1_38
-	var_1_38.base.activity_series_enemy[1001003] = {
+	pg.base.activity_series_enemy[1001003] = {
 		oil = 0,
 		name = "侦察：北极点",
 		type = 1,

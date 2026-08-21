@@ -18,6 +18,7 @@ function parseConfigData(self, key, cusData)
     self.funcId = cusData.function_id
     self.uiCode = cusData.ui_code
 end
+
 function getFuncId(self)
     return self.funcId
 end

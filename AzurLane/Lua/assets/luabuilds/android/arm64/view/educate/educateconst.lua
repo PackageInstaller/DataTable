@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("EducateConst")
+﻿local var_0_0 = class("EducateConst")
 
 var_0_0.PLANS_DATA_KEY = "EDUCATE_PLAN_"
 var_0_0.SKIP_PLANS_ANIM_KEY = "EDUCATE_PLAN_SKIP"
@@ -118,26 +116,13 @@ var_0_0.SECRETARY_TYPE_SP = 7
 
 function var_0_0.CheckAllCollectionTrack()
 	local var_1_0 = 0
-	local var_1_1 = {}
 
-	ipairs = var_1_10002
-	getProxy = var_1_10004
-	EducateProxy = var_1_10006
-
-	local var_1_2 = var_1_10004(var_1_10006)
-
-	for iter_1_0, iter_1_1 in var_1_10002(var_4.GetMemories(var_1_2)) do
-		var_1_1[iter_1_1] = true
+	for iter_1_0, iter_1_1 in ipairs(getProxy(EducateProxy):GetMemories()) do
+		({})[iter_1_1] = true
 	end
 
-	ipairs = var_2
-	pg = var_4
-
-	for iter_1_2, iter_1_3 in var_2(var_4.child_memory.all) do
-		pg = var_1_10007
-		var_1_10007 = var_1_10007.child_memory[iter_1_3]
-
-		if not var_1_1[iter_1_3] then
+	for iter_1_2, iter_1_3 in ipairs(pg.child_memory.all) do
+		if not ({})[iter_1_3] then
 			var_1_0 = -1
 
 			break
@@ -150,18 +135,10 @@ function var_0_0.CheckAllCollectionTrack()
 		return
 	end
 
-	pg = var_2
+	local var_1_2 = pg.NewStoryMgr.GetInstance()
 
-	local var_1_3 = var_2.NewStoryMgr.GetInstance()
-
-	ipairs = var_3
-	pg = iter_1_2
-
-	for iter_1_4, iter_1_5 in var_3(iter_1_2.child2_memory.all) do
-		pg = var_1_10008
-		var_1_10008 = var_1_10008.child2_memory[iter_1_5]
-
-		if not var_1_3:IsPlayed(var_1_10008.lua) then
+	for iter_1_4, iter_1_5 in ipairs(pg.child2_memory.all) do
+		if not var_1_2:IsPlayed(pg.child2_memory[iter_1_5].lua) then
 			var_1_0 = -1
 
 			break
@@ -170,27 +147,12 @@ function var_0_0.CheckAllCollectionTrack()
 		end
 	end
 
-	getProxy = var_3
-	PlayerProxy = var_5
+	local var_1_3 = getProxy(PlayerProxy)
+	local var_1_4 = var_1_3:getRawData().id
 
-	local var_1_4 = var_3(var_5)
-	local var_1_5 = var_3.getRawData(var_1_4).id
-
-	PlayerPrefs = var_4
-
-	if var_4.GetInt("EDUCATE_ALL_COLLECTION:" .. var_1_5, 0) < var_1_0 then
-		PlayerPrefs = var_4
-
-		var_4.SetInt("EDUCATE_ALL_COLLECTION:" .. var_1_5, var_1_0)
-
-		pg = var_4
-
-		local var_1_6 = var_4.GameTrackerMgr.GetInstance()
-		local var_1_7 = var_4.Record
-
-		GameTrackerBuilder = var_7
-
-		var_1_7(var_1_6, var_7.BuildAllCollection(20003, var_1_0))
+	if var_1_0 > PlayerPrefs.GetInt("EDUCATE_ALL_COLLECTION:" .. var_1_4, 0) then
+		PlayerPrefs.SetInt("EDUCATE_ALL_COLLECTION:" .. var_1_4, var_1_0)
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildAllCollection(20003, var_1_0))
 	end
 
 	return

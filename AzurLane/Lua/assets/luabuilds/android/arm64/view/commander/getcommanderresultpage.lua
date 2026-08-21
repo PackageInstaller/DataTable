@@ -1,223 +1,118 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GetCommanderResultPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "GetCommanderResultPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "GetCommanderResultUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	CommanderTreePage = var_1_10001
-	arg_2_0.treePanel = var_1_10001.New(arg_2_0._tf, arg_2_0.event)
-	UIItemList = var_1
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.treePanel = CommanderTreePage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.uiList = UIItemList.New(arg_2_0._tf:Find("frame/list"), arg_2_0._tf:Find("frame/list/tpl"))
+	arg_2_0.uiList1 = UIItemList.New(arg_2_0._tf:Find("frame/list1"), arg_2_0._tf:Find("frame/list/tpl"))
 
-	local var_2_0 = var_1.New
-	local var_2_1 = arg_2_0._tf
-	local var_2_2 = var_3.Find(var_2_1, "frame/list")
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.uiList = var_2_0(var_2_2, var_4.Find(var_2_3, "frame/list/tpl"))
-	UIItemList = var_1
-
-	local var_2_4 = var_1.New
-	local var_2_5 = arg_2_0._tf
-	local var_2_6 = var_3.Find(var_2_5, "frame/list1")
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.uiList1 = var_2_4(var_2_6, var_4.Find(var_2_7, "frame/list/tpl"))
-	setText = var_1
-
-	local var_2_8 = arg_2_0._tf
-	local var_2_9 = var_3.Find(var_2_8, "frame/Text")
-
-	i18n = var_4
-
-	var_1(var_2_9, var_4("word_click_to_close"))
+	setText(arg_2_0._tf:Find("frame/Text"), i18n("word_click_to_close"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
+function var_0_0.OnInit(arg_3_0)
 	arg_3_0.paintings = {}
-	onButton = var_1
 
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_0, var_3_1, var_3_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_5_0, arg_5_1)
-	var_0_1.super.Show(arg_5_0)
+function var_0_0.Show(arg_5_0, arg_5_1)
+	var_0_0.super.Show(arg_5_0)
 	arg_5_0:UpdateCommanders(arg_5_1)
 
 	return
 end
 
-function var_0_1.UpdateCommanders(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0.uiList
+function var_0_0.UpdateCommanders(arg_6_0, arg_6_1)
+	arg_6_0.uiList:align(0)
+	arg_6_0.uiList1:align(0)
 
-	var_2.align(var_6_0, 0)
+	if #arg_6_1 <= 5 then
+		var_6_0:make(function(arg_7_0, arg_7_1, arg_7_2)
+			if arg_7_0 == UIItemList.EventUpdate then
+				arg_6_0:UpdateCommander(arg_6_1[arg_7_1 + 1], arg_7_2)
+			end
 
-	local var_6_1 = arg_6_0.uiList1
+			return
+		end)
 
-	var_2.align(var_6_1, 0)
+		if #arg_6_1 <= 5 then
+			local var_6_1 = #arg_6_1 or 10
 
-	local var_6_2
+			var_6_0:align(var_6_1)
 
-	if not (#arg_6_1 <= 5) or not arg_6_0.uiList1 then
-		var_6_2 = arg_6_0.uiList
-	end
-
-	var_6_2:make(function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			local var_7_0 = arg_6_0
-
-			var_3.UpdateCommander(var_7_0, arg_6_1[arg_7_1 + 1], arg_7_2)
+			return
 		end
-
-		return
-	end)
-
-	local var_6_3
-
-	if not (#arg_6_1 <= 5) or not #arg_6_1 then
-		var_6_3 = 10
 	end
-
-	var_6_2:align(var_6_3)
-
-	return
 end
 
-function var_0_1.UpdateCommander(arg_8_0, arg_8_1, arg_8_2)
+function var_0_0.UpdateCommander(arg_8_0, arg_8_1, arg_8_2)
 	if arg_8_1 then
-		var_1_10003 = {
+		local var_8_0 = arg_8_1:getPainting()
+		local var_8_1 = arg_8_2:Find("info/mask/paint")
+
+		arg_8_2:Find("info/frame"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/CommanderBuildResultUI_atlas", ({
 			"",
 			"",
 			"R",
 			"SR",
 			"SSR"
-		}
+		})[arg_8_1:getRarity()])
 
-		local var_8_0 = arg_8_1:getRarity()
-
-		GetSpriteFromAtlas = var_1_10005
-
-		local var_8_1 = var_1_10005("ui/CommanderBuildResultUI_atlas", var_1_10003[var_8_0])
-		local var_8_2 = arg_8_1:getPainting()
-		local var_8_3 = arg_8_2:Find("info/mask/paint")
-		local var_8_4 = arg_8_2:Find("info/frame")
-		local var_8_5 = var_8.GetComponent
-
-		typeof = var_11
-		Image = var_1_10013
-
-		local var_8_6 = var_8_5(var_8_4, var_11(var_1_10013))
-
-		var_8_6.sprite = var_8_1
-		setCommanderPaintingPrefab = var_8_6
-
-		var_8_6(var_8_3, var_8_2, "result2")
+		setCommanderPaintingPrefab(var_8_1, var_8_0, "result2")
 		arg_8_0:UpdateTalent(arg_8_1, arg_8_2)
 
-		local var_8_7 = arg_8_0.paintings
+		arg_8_0.paintings[var_8_0] = var_8_1
 
-		var_8_7[var_8_2] = var_8_3
-		setText = var_8_7
-
-		var_8_7(arg_8_2:Find("info/Text"), arg_8_1:getName())
+		setText(arg_8_2:Find("info/Text"), arg_8_1:getName())
 	end
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_8_2:Find("empty"), arg_8_1 == nil)
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_8_2:Find("info"), arg_8_1)
+	setActive(arg_8_2:Find("empty"), arg_8_1 == nil)
+	setActive(arg_8_2:Find("info"), arg_8_1)
 
 	return
 end
 
-function var_0_1.UpdateTalent(arg_9_0, arg_9_1, arg_9_2)
+function var_0_0.UpdateTalent(arg_9_0, arg_9_1, arg_9_2)
 	local var_9_0 = arg_9_1:getTalents()
+	local var_9_1 = UIItemList.New(arg_9_2:Find("info/talent"), arg_9_2:Find("info/talent/tpl"))
 
-	UIItemList = var_1_10004
-
-	local var_9_1 = var_1_10004.New(arg_9_2:Find("info/talent"), arg_9_2:Find("info/talent/tpl"))
-
-	var_4.make(var_9_1, function(arg_10_0, arg_10_1, arg_10_2)
-		UIItemList = var_2_10003
-
-		if arg_10_0 == var_2_10003.EventUpdate then
-			local var_10_0 = var_9_0[arg_10_1 + 1]
-
-			GetImageSpriteFromAtlasAsync = var_4
-
-			local var_10_1 = "CommanderTalentIcon/"
-			local var_10_2 = var_10_0
-
-			var_4(var_10_1 .. var_10_0.getConfig(var_10_2, "icon"), "", arg_10_2)
-
-			onButton = var_4
-
-			local var_10_3 = arg_9_0
-			local var_10_4 = arg_10_2
-
-			local function var_10_5()
-				local var_11_0 = arg_9_0.treePanel
-
-				var_0.ExecuteAction(var_11_0, "Show", var_10_0)
+	var_9_1:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			GetImageSpriteFromAtlasAsync("CommanderTalentIcon/" .. var_9_0[arg_10_1 + 1]:getConfig("icon"), "", arg_10_2)
+			onButton(arg_9_0, arg_10_2, function()
+				arg_9_0.treePanel:ExecuteAction("Show", var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_10_2
-
-			var_4(var_10_3, var_10_4, var_10_5, var_10_2)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
-	var_4:align(#var_9_0)
+	var_9_1:align(#arg_9_1:getTalents())
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_12_0)
+function var_0_0.OnDestroy(arg_12_0)
 	if arg_12_0.treePanel then
-		local var_12_0 = arg_12_0.treePanel
-
-		var_1.Destroy(var_12_0)
+		arg_12_0.treePanel:Destroy()
 
 		arg_12_0.treePanel = nil
 	end
 
-	ipairs = var_1
-
-	for iter_12_0, iter_12_1 in var_1(arg_12_0.paintings) do
-		retCommanderPaintingPrefab = var_1_10006
-
-		var_1_10006(iter_12_1, iter_12_0)
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.paintings) do
+		retCommanderPaintingPrefab(iter_12_1, iter_12_0)
 	end
 
 	arg_12_0.paintings = {}
@@ -225,4 +120,4 @@ function var_0_1.OnDestroy(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

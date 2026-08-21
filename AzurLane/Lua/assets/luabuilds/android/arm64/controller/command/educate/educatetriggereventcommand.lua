@@ -1,56 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EducateTriggerEventCommand", pm.SimpleCommand)
 
-local var_0_0 = "EducateTriggerEventCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0 and var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody() and var_2.callback
-	local var_1_1 = var_2.eventId
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 27016, {
-		eventid = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(27016, {
+		eventid = var_1_0.eventId
 	}, 27017, function(arg_2_0)
-		local var_2_3
-
 		if arg_2_0.result == 0 then
-			EducateHelper = var_2_3
-
-			var_2_3.UpdateDropsData(arg_2_0.drops)
-
-			getProxy = var_2_3
-			EducateProxy = var_3
-
-			local var_2_0 = var_2_3(var_3)
-			local var_2_1 = var_2_3.GetEventProxy(var_2_0)
-
-			var_2_3.RemoveEvent(var_2_1, var_1_1)
-
-			local var_2_2 = arg_1_0
-
-			var_2_3 = var_2_3.sendNotification
-			GAME = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004.EDUCATE_TRIGGER_EVENT_DONE, {
-				id = var_1_1,
+			EducateHelper.UpdateDropsData(arg_2_0.drops)
+			getProxy(EducateProxy):GetEventProxy():RemoveEvent(var_0)
+			arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_EVENT_DONE, {
+				id = var_0,
 				drops = arg_2_0.drops,
-				cb = var_1_0
+				cb = var_1_1
 			})
 		else
-			pg = var_2_3
-
-			local var_2_4 = var_2_3.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004("educate trigger event error: ", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("educate trigger event error: ", arg_2_0.result))
 		end
 
 		return
@@ -59,4 +25,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

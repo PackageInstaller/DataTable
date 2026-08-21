@@ -1,27 +1,20 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleScaleBulletFactory = singletonClass("BattleScaleBulletFactory", ys.Battle.BattleCannonBulletFactory)
+ys.Battle.BattleScaleBulletFactory.__name = "BattleScaleBulletFactory"
 
-local var_0_1 = var_0.Battle.BattleConst.UnitType
-local var_0_2 = var_0.Battle
+local var_0_2 = ys.Battle.BattleScaleBulletFactory
 
-singletonClass = var_0_10003
-var_0_2.BattleScaleBulletFactory = var_0_10003("BattleScaleBulletFactory", var_0.Battle.BattleCannonBulletFactory)
-var_0.Battle.BattleScaleBulletFactory.__name = "BattleScaleBulletFactory"
-
-local var_0_3 = var_0.Battle.BattleScaleBulletFactory
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function ys.Battle.BattleScaleBulletFactory.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
 
 	return
 end
 
-function var_0_3.MakeBullet(arg_2_0)
-	return var_0.Battle.BattleScaleBullet.New()
+function ys.Battle.BattleScaleBulletFactory.MakeBullet(arg_2_0)
+	return var_0_0.Battle.BattleScaleBullet.New()
 end
 
 return

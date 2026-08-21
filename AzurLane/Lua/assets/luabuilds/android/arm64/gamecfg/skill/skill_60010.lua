@@ -20,9 +20,7 @@
 				time = 1,
 				effect = "feijiyingzi",
 				posFun = function(arg_1_0, arg_1_1, arg_1_2)
-					Vector3 = var_1_10003
-
-					return var_1_10003(-100, 0, arg_1_1.z) - arg_1_0
+					return Vector3(-100, 0, arg_1_1.z) - arg_1_0
 				end
 			}
 		},

@@ -54,7 +54,7 @@ end
 
 -- UI事件管理(关闭界面会自动移除)
 function addAllUIEvent(self)
-    self:addUIEvent(self.UIObject, self.onClickHandler)
+    -- self:addUIEvent(self.UIObject, self.onClickHandler)
 end
 
 -- 设置数据

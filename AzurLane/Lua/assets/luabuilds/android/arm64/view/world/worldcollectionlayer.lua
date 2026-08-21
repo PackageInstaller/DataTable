@@ -1,138 +1,48 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldCollectionLayer", import("..base.BaseUI"))
 
-local var_0_0 = "WorldCollectionLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldCollectionUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.top = var_1.Find(var_2_0, "top")
-
-	local var_2_1 = arg_2_0.top
-
-	arg_2_0.backBtn = var_1.Find(var_2_1, "back_btn")
-
-	local var_2_2 = arg_2_0.top
-
-	arg_2_0.topToggles = var_1.Find(var_2_2, "toggles")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.rtMain = var_1.Find(var_2_3, "main")
-
-	local var_2_4 = arg_2_0.rtMain
-
-	arg_2_0.entranceContainer = var_1.Find(var_2_4, "list_bg/map_list/content")
-
-	local var_2_5 = arg_2_0.rtMain
-
-	arg_2_0.btnGetAll = var_1.Find(var_2_5, "list_bg/btn_get_all")
-	GetComponent = var_1
-	arg_2_0.scrollEntrance = var_1(arg_2_0.entranceContainer, "LScrollRect")
+function var_0_0.init(arg_2_0)
+	arg_2_0.top = arg_2_0._tf:Find("top")
+	arg_2_0.backBtn = arg_2_0.top:Find("back_btn")
+	arg_2_0.topToggles = arg_2_0.top:Find("toggles")
+	arg_2_0.rtMain = arg_2_0._tf:Find("main")
+	arg_2_0.entranceContainer = arg_2_0.rtMain:Find("list_bg/map_list/content")
+	arg_2_0.btnGetAll = arg_2_0.rtMain:Find("list_bg/btn_get_all")
+	arg_2_0.scrollEntrance = GetComponent(arg_2_0.entranceContainer, "LScrollRect")
 
 	function arg_2_0.scrollEntrance.onUpdateItem(arg_3_0, arg_3_1)
 		arg_3_0 = arg_3_0 + 1
-		tf = var_2_10002
 
-		local var_3_0 = var_2_10002(arg_3_1)
+		local var_3_0 = tf(arg_3_1)
 		local var_3_1 = arg_2_0.achEntranceList[arg_3_0]
-		local var_3_2 = arg_2_0.entranceOjbecDic
 
-		var_3_2[arg_3_0] = var_3_0
-		setText = var_3_2
+		arg_2_0.entranceOjbecDic[arg_3_0] = var_3_0
 
-		var_3_2(var_3_0:Find("icon/deco_id"), var_3_1.config.serial_number)
-
-		setText = var_3_2
-
-		local var_3_3 = var_3_0:Find("icon/name")
-		local var_3_4 = var_3_1:GetBaseMap()
-
-		var_3_2(var_3_3, var_7.GetName(var_3_4))
-
-		setActive = var_3_2
-
-		local var_3_5 = var_3_0:Find("icon/tip")
-
-		nowWorld = var_7
-
-		local var_3_6 = var_7()
-
-		var_3_2(var_3_5, var_7.AnyUnachievedAchievement(var_3_6, var_3_1))
-
-		onButton = var_3_2
-
-		local var_3_7 = arg_2_0
-		local var_3_8 = var_3_0
-
-		local function var_3_9()
-			local var_4_0 = arg_2_0
-
-			var_0.UpdateAchievement(var_4_0, arg_3_0)
+		setText(var_3_0:Find("icon/deco_id"), arg_2_0.achEntranceList[arg_3_0].config.serial_number)
+		setText(var_3_0:Find("icon/name"), arg_2_0.achEntranceList[arg_3_0]:GetBaseMap():GetName())
+		setActive(var_3_0:Find("icon/tip"), nowWorld():AnyUnachievedAchievement(arg_2_0.achEntranceList[arg_3_0]))
+		onButton(arg_2_0, var_3_0, function()
+			arg_2_0:UpdateAchievement(arg_3_0)
 
 			return
-		end
+		end, SFX_PANEL)
 
-		SFX_PANEL = var_3_6
+		local var_3_2 = var_3_0:Find("icon")
 
-		var_3_2(var_3_7, var_3_8, var_3_9, var_3_6)
-
-		local var_3_10 = var_3_0:Find("icon")
-
-		setAnchoredPosition = var_2_10005
-
-		local var_3_11 = var_3_10
-		local var_3_12 = {}
-		local var_3_13 = 1 - arg_3_0 % 2 * 2
-
-		math = var_10
-		var_3_12.y = var_3_13 * var_10.abs(var_3_10.anchoredPosition.y)
-
-		var_2_10005(var_3_11, var_3_12)
-
-		setActive = var_2_10005
-
-		var_2_10005(var_3_10:Find("select"), arg_2_0.selectedIndex == arg_3_0)
-
-		setText = var_2_10005
-
-		local var_3_14 = var_3_10:Find("select/gomap/Text")
-
-		i18n = var_8
-
-		var_2_10005(var_3_14, var_8("world_target_goto"))
-
-		onButton = var_2_10005
-
-		local var_3_15 = arg_2_0
-		local var_3_16 = var_3_10
-		local var_3_17 = var_3_10.Find(var_3_16, "select/gomap")
-
-		local function var_3_18()
-			local var_5_0 = arg_2_0
-			local var_5_1 = var_0.emit
-
-			WorldCollectionMediator = var_3_10003
-
-			var_5_1(var_5_0, var_3_10003.ON_MAP, var_3_1)
-
-			local var_5_2 = arg_2_0
-
-			var_0.closeView(var_5_2)
+		setAnchoredPosition(var_3_2, {
+			y = (1 - arg_3_0 % 2 * 2) * math.abs(var_3_2.anchoredPosition.y)
+		})
+		setActive(var_3_2:Find("select"), arg_2_0.selectedIndex == arg_3_0)
+		setText(var_3_2:Find("select/gomap/Text"), i18n("world_target_goto"))
+		onButton(arg_2_0, var_3_2:Find("select/gomap"), function()
+			arg_2_0:emit(WorldCollectionMediator.ON_MAP, var_3_1)
+			arg_2_0:closeView()
 
 			return
-		end
-
-		SFX_PANEL = var_3_16
-
-		var_2_10005(var_3_15, var_3_17, var_3_18, var_3_16)
+		end, SFX_PANEL)
 
 		return
 	end
@@ -142,652 +52,279 @@ function var_0_1.init(arg_2_0)
 			return
 		end
 
-		local var_6_0 = arg_2_0.entranceOjbecDic
+		arg_2_0.entranceOjbecDic[arg_6_0 + 1] = nil
 
-		var_6_0[arg_6_0 + 1] = nil
-		removeOnButton = var_6_0
-
-		var_6_0(arg_6_1)
+		removeOnButton(arg_6_1)
 
 		return
 	end
 
-	local var_2_6 = arg_2_0.scrollEntrance.onValueChanged
-
-	var_1.AddListener(var_2_6, function(arg_7_0)
-		local var_7_0 = arg_2_0
-
-		var_1.UpdateJumpBtn(var_7_0)
+	arg_2_0.scrollEntrance.onValueChanged:AddListener(function(arg_7_0)
+		arg_2_0:UpdateJumpBtn()
 
 		return
 	end)
 
-	local var_2_7 = arg_2_0.rtMain
+	arg_2_0.entrancePanel = arg_2_0.rtMain:Find("map")
+	arg_2_0.entranceTitle = arg_2_0.entrancePanel:Find("target_rect/title")
+	arg_2_0.targetContainer = arg_2_0.entrancePanel:Find("target_rect/target_list/content")
+	arg_2_0.targetItemList = UIItemList.New(arg_2_0.targetContainer, arg_2_0.targetContainer:Find("item"))
 
-	arg_2_0.entrancePanel = var_1.Find(var_2_7, "map")
-
-	local var_2_8 = arg_2_0.entrancePanel
-
-	arg_2_0.entranceTitle = var_1.Find(var_2_8, "target_rect/title")
-
-	local var_2_9 = arg_2_0.entrancePanel
-
-	arg_2_0.targetContainer = var_1.Find(var_2_9, "target_rect/target_list/content")
-	UIItemList = var_1
-
-	local var_2_10 = var_1.New
-	local var_2_11 = arg_2_0.targetContainer
-	local var_2_12 = arg_2_0.targetContainer
-
-	arg_2_0.targetItemList = var_2_10(var_2_11, var_4.Find(var_2_12, "item"))
-
-	local var_2_13 = arg_2_0.targetItemList
-
-	var_1.make(var_2_13, function(arg_8_0, arg_8_1, arg_8_2)
+	arg_2_0.targetItemList:make(function(arg_8_0, arg_8_1, arg_8_2)
 		arg_8_1 = arg_8_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_8_0 == var_2_10003.EventUpdate then
+		if arg_8_0 == UIItemList.EventUpdate then
 			local var_8_0 = arg_8_1 > #arg_2_0.achEntranceList[arg_2_0.selectedIndex].config.normal_target
 			local var_8_1 = arg_8_2:Find("bg")
 
-			setActive = var_2_10006
-
-			var_2_10006(var_8_1:Find("normal"), not var_8_0)
-
-			setActive = var_2_10006
-
-			var_2_10006(var_8_1:Find("hidden"), var_8_0)
+			setActive(var_8_1:Find("normal"), not (arg_8_1 > #arg_2_0.achEntranceList[arg_2_0.selectedIndex].config.normal_target))
+			setActive(var_8_1:Find("hidden"), var_8_0)
 
 			local var_8_2 = arg_2_0.targetList[arg_8_1]
-			local var_8_3 = var_6.IsAchieved(var_8_2)
+			local var_8_3 = arg_2_0.targetList[arg_8_1]:IsAchieved()
 			local var_8_4 = not var_8_0 or var_8_3 or arg_2_0.showHiddenDesc
+			local var_8_6 = var_8_1:Find("desc")
 
-			setText = var_8_2
+			if not var_8_0 or var_8_3 or arg_2_0.showHiddenDesc then
+				local var_8_7 = var_8_2.config.target_desc or "???"
 
-			local var_8_5 = var_8_1:Find("desc")
-			local var_8_6
+				var_8_5(var_8_6, var_8_7)
 
-			if not var_8_4 or not var_6.config.target_desc then
-				var_8_6 = "???"
-			end
+				local var_8_8 = var_8_4 and var_8_2:GetProgress() .. "/" .. var_8_2:GetMaxProgress() or ""
 
-			var_8_2(var_8_5, var_8_6)
+				setText(var_8_1:Find("progress"), var_8_8)
+				setActive(var_8_1:Find("finish_mark/Image"), var_8_3)
 
-			setText = var_8_2
+				local var_8_9 = arg_8_2:Find("pop")
+				local var_8_10 = var_8_2:GetTriggers()
+				local var_8_11 = var_8_4 and #var_8_10 > 1
 
-			local var_8_7 = var_8_1:Find("progress")
-			local var_8_8
+				if var_8_4 and #var_8_10 > 1 then
+					local var_8_13 = var_8_9:Find("Text")
 
-			if not var_8_4 or not (var_6:GetProgress() .. "/" .. var_6:GetMaxProgress()) then
-				var_8_8 = ""
-			end
+					for iter_8_0 = #var_8_10, var_8_9.childCount - 1 do
+						setActive(var_8_9:GetChild(iter_8_0), false)
+					end
 
-			var_8_2(var_8_7, var_8_8)
+					for iter_8_1 = var_8_9.childCount, #var_8_10 - 1 do
+						cloneTplTo(var_8_13, var_8_9)
+					end
 
-			setActive = var_8_2
+					for iter_8_2 = 0, #var_8_10 - 1 do
+						(function(arg_9_0, arg_9_1)
+							setText(arg_9_1, var_8_10[arg_9_0]:GetDesc())
 
-			var_8_2(var_8_1:Find("finish_mark/Image"), var_8_3)
+							local var_9_0 = var_8_10[arg_9_0]:IsAchieved() and Color.New(0.3686274509803922, 0.6078431372549019, 1) or Color.New(0.4745098039215686, 0.4745098039215686, 0.4745098039215686)
 
-			local var_8_9 = arg_8_2:Find("pop")
-			local var_8_10 = var_6
-			local var_8_11 = var_6.GetTriggers(var_8_10)
-			local var_8_13
+							setTextColor(arg_9_1, var_9_0)
+							setActive(arg_9_1, true)
 
-			if var_8_4 then
-				::label_8_0::
-
-				local var_8_12 = #var_8_11
-
-				var_8_13 = 1 < var_8_12
-			end
-
-			if var_8_13 then
-				var_8_10 = var_8_9
-
-				local var_8_14 = var_8_9:Find("Text")
-				local var_8_15 = var_8_10.childCount
-
-				local function var_8_16(arg_9_0, arg_9_1)
-					local var_9_0 = var_8_11[arg_9_0]
-
-					setText = var_3_10003
-
-					var_3_10003(arg_9_1, var_9_0:GetDesc())
-
-					setTextColor = var_3_10003
-
-					local var_9_1 = arg_9_1
-
-					if var_9_0:IsAchieved() then
-						Color = var_9_2
-
-						local var_9_2
-
-						if not var_9_2.New(0.3686274509803922, 0.6078431372549019, 1) then
-							Color = var_9_2
-							var_9_2 = var_9_2.New(0.4745098039215686, 0.4745098039215686, 0.4745098039215686)
-						end
-
-						var_3_10003(var_9_1, var_9_2)
-
-						setActive = var_3_10003
-
-						var_3_10003(arg_9_1, true)
-
-						return
+							return
+						end)(iter_8_2 + 1, var_8_9:GetChild(iter_8_2))
 					end
 				end
 
-				for iter_8_0 = #var_8_11, var_8_15 - 1 do
-					setActive = var_2_10020
-
-					var_2_10020(var_8_10:GetChild(iter_8_0), false)
-				end
-
-				for iter_8_1 = var_8_15, #var_8_11 - 1 do
-					cloneTplTo = var_2_10020
-
-					var_2_10020(var_8_14, var_8_10)
-				end
-
-				for iter_8_2 = 0, #var_8_11 - 1 do
-					var_8_16(iter_8_2 + 1, var_8_10:GetChild(iter_8_2))
-				end
-			end
-
-			triggerToggle = var_8_10
-
-			var_8_10(arg_8_2, false)
-
-			setToggleEnabled = var_8_10
-
-			var_8_10(arg_8_2, var_8_13)
-
-			setActive = var_8_10
-
-			var_8_10(var_8_1:Find("arrow"), var_8_13)
-		end
-
-		return
-	end)
-
-	local var_2_14 = arg_2_0.entrancePanel
-
-	arg_2_0.achAwardRect = var_1.Find(var_2_14, "award_rect")
-
-	local var_2_15 = arg_2_0.achAwardRect
-
-	arg_2_0.achAchieveBtn = var_1.Find(var_2_15, "btn_achieve")
-
-	local var_2_16 = arg_2_0.entrancePanel
-
-	arg_2_0.overviewBtn = var_1.Find(var_2_16, "btn_overview")
-	WorldAchAwardSubview = var_1
-	arg_2_0.subviewAchAward = var_1.New(arg_2_0._tf, arg_2_0.event)
-
-	local var_2_17 = arg_2_0
-	local var_2_18 = arg_2_0.bind
-
-	WorldAchAwardSubview = var_4
-
-	var_2_18(var_2_17, var_4.ShowDrop, function(arg_10_0, arg_10_1)
-		local var_10_0 = arg_2_0
-
-		var_2.emit(var_10_0, var_0_1.ON_DROP, arg_10_1)
-
-		return
-	end)
-
-	return
-end
-
-function var_0_1.onBackPressed(arg_11_0)
-	local var_11_0 = arg_11_0.subviewAchAward
-
-	if var_1.isShowing(var_11_0) then
-		local var_11_1 = arg_11_0.subviewAchAward
-
-		var_1.ActionInvoke(var_11_1, "Hide")
-	else
-		var_0_1.super.onBackPressed(arg_11_0)
-	end
-
-	return
-end
-
-function var_0_1.didEnter(arg_12_0)
-	pg = var_1_10001
-
-	local var_12_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_12_0, arg_12_0._tf)
-
-	onButton = var_1
-
-	local var_12_1 = arg_12_0
-	local var_12_2 = arg_12_0.backBtn
-
-	local function var_12_3()
-		local var_13_0 = arg_12_0
-
-		var_0.closeView(var_13_0)
-
-		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_12_1, var_12_2, var_12_3, var_1_10006)
-
-	onToggle = var_1
-
-	local var_12_4 = arg_12_0
-	local var_12_5 = arg_12_0.topToggles
-	local var_12_6 = var_4.Find(var_12_5, "all")
-
-	local function var_12_7(arg_14_0)
-		if arg_14_0 then
-			local var_14_0 = arg_12_0
-
-			var_1.UpdateEntranceFilter(var_14_0, false)
-		end
-
-		return
-	end
-
-	SFX_PANEL = var_12_5
-
-	var_1(var_12_4, var_12_6, var_12_7, var_12_5)
-
-	setText = var_1
-
-	local var_12_8 = arg_12_0.topToggles
-	local var_12_9 = var_3.Find(var_12_8, "all/Text")
-
-	i18n = var_12_6
-
-	var_1(var_12_9, var_12_6("world_target_filter_tip1"))
-
-	setText = var_1
-
-	local var_12_10 = arg_12_0.topToggles
-	local var_12_11 = var_3.Find(var_12_10, "all/Image/Text")
-
-	i18n = var_4
-
-	var_1(var_12_11, var_4("world_target_filter_tip1"))
-
-	onToggle = var_1
-
-	local var_12_12 = arg_12_0
-	local var_12_13 = arg_12_0.topToggles
-	local var_12_14 = var_4.Find(var_12_13, "unfinish")
-
-	local function var_12_15(arg_15_0)
-		if arg_15_0 then
-			local var_15_0 = arg_12_0
-
-			var_1.UpdateEntranceFilter(var_15_0, true)
-		end
-
-		return
-	end
-
-	SFX_PANEL = var_12_13
-
-	var_1(var_12_12, var_12_14, var_12_15, var_12_13)
-
-	setText = var_1
-
-	local var_12_16 = arg_12_0.topToggles
-	local var_12_17 = var_3.Find(var_12_16, "unfinish/Text")
-
-	i18n = var_12_14
-
-	var_1(var_12_17, var_12_14("world_target_filter_tip2"))
-
-	setText = var_1
-
-	local var_12_18 = arg_12_0.topToggles
-	local var_12_19 = var_3.Find(var_12_18, "unfinish/Image/Text")
-
-	i18n = var_4
-
-	var_1(var_12_19, var_4("world_target_filter_tip2"))
-
-	onButton = var_1
-
-	local var_12_20 = arg_12_0
-	local var_12_21 = arg_12_0.rtMain
-	local var_12_22 = var_4.Find(var_12_21, "list_bg/jump_icon_left")
-
-	local function var_12_23()
-		local var_16_0 = arg_12_0
-		local var_16_1 = var_0.ScrollAndSelectEntrance
-		local var_16_2 = arg_12_0
-
-		var_16_1(var_16_0, var_3.GetAwardIndex(var_16_2, false))
-
-		return
-	end
-
-	SFX_PANEL = var_12_21
-
-	var_1(var_12_20, var_12_22, var_12_23, var_12_21)
-
-	onButton = var_1
-
-	local var_12_24 = arg_12_0
-	local var_12_25 = arg_12_0.rtMain
-	local var_12_26 = var_4.Find(var_12_25, "list_bg/jump_icon_right")
-
-	local function var_12_27()
-		local var_17_0 = arg_12_0
-		local var_17_1 = var_0.ScrollAndSelectEntrance
-		local var_17_2 = arg_12_0
-
-		var_17_1(var_17_0, var_3.GetAwardIndex(var_17_2, true))
-
-		return
-	end
-
-	SFX_PANEL = var_12_25
-
-	var_1(var_12_24, var_12_26, var_12_27, var_12_25)
-
-	onButton = var_1
-
-	local var_12_28 = arg_12_0
-	local var_12_29 = arg_12_0.btnGetAll
-
-	local function var_12_30()
-		nowWorld = var_2_10000
-
-		local var_18_0 = var_2_10000()
-		local var_18_1, var_18_2 = var_0.GetFinishAchievements(var_18_0, arg_12_0.achEntranceList)
-		local var_18_4
-
-		if #var_18_1 > 0 then
-			pg = var_18_4
-
-			local var_18_3 = var_18_4.MsgboxMgr.GetInstance()
-
-			var_18_4 = var_18_4.ShowMsgBox
-
-			local var_18_5 = {}
-
-			i18n = var_2_10006
-			var_18_5.content = var_2_10006("world_target_get_all")
-
-			function var_18_5.onYes()
-				local var_19_0 = arg_12_0
-				local var_19_1 = var_0.emit
-
-				WorldCollectionMediator = var_3_10003
-
-				var_19_1(var_19_0, var_3_10003.ON_ACHIEVE_STAR, var_18_1)
+				triggerToggle(arg_8_2, false)
+				setToggleEnabled(arg_8_2, var_8_11)
+				setActive(var_8_1:Find("arrow"), var_8_11)
 
 				return
 			end
+		end
+	end)
 
-			var_18_4(var_18_3, var_18_5)
-		else
-			pg = var_18_4
+	arg_2_0.achAwardRect = arg_2_0.entrancePanel:Find("award_rect")
+	arg_2_0.achAchieveBtn = arg_2_0.achAwardRect:Find("btn_achieve")
+	arg_2_0.overviewBtn = arg_2_0.entrancePanel:Find("btn_overview")
+	arg_2_0.subviewAchAward = WorldAchAwardSubview.New(arg_2_0._tf, arg_2_0.event)
 
-			local var_18_6 = var_18_4.TipsMgr.GetInstance()
+	arg_2_0:bind(WorldAchAwardSubview.ShowDrop, function(arg_10_0, arg_10_1)
+		arg_2_0:emit(var_0_0.ON_DROP, arg_10_1)
 
-			var_2.ShowTips(var_18_6, "without any award")
+		return
+	end)
+
+	return
+end
+
+function var_0_0.onBackPressed(arg_11_0)
+	if arg_11_0.subviewAchAward:isShowing() then
+		arg_11_0.subviewAchAward:ActionInvoke("Hide")
+	else
+		var_0_0.super.onBackPressed(arg_11_0)
+	end
+
+	return
+end
+
+function var_0_0.didEnter(arg_12_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_12_0._tf)
+	onButton(arg_12_0, arg_12_0.backBtn, function()
+		arg_12_0:closeView()
+
+		return
+	end, SFX_CANCEL)
+	onToggle(arg_12_0, arg_12_0.topToggles:Find("all"), function(arg_14_0)
+		if arg_14_0 then
+			arg_12_0:UpdateEntranceFilter(false)
 		end
 
 		return
-	end
+	end, SFX_PANEL)
+	setText(arg_12_0.topToggles:Find("all/Text"), i18n("world_target_filter_tip1"))
+	setText(arg_12_0.topToggles:Find("all/Image/Text"), i18n("world_target_filter_tip1"))
+	onToggle(arg_12_0, arg_12_0.topToggles:Find("unfinish"), function(arg_15_0)
+		if arg_15_0 then
+			arg_12_0:UpdateEntranceFilter(true)
+		end
 
-	SFX_CONFIRM = var_12_25
+		return
+	end, SFX_PANEL)
+	setText(arg_12_0.topToggles:Find("unfinish/Text"), i18n("world_target_filter_tip2"))
+	setText(arg_12_0.topToggles:Find("unfinish/Image/Text"), i18n("world_target_filter_tip2"))
+	onButton(arg_12_0, arg_12_0.rtMain:Find("list_bg/jump_icon_left"), function()
+		arg_12_0:ScrollAndSelectEntrance(arg_12_0:GetAwardIndex(false))
 
-	var_1(var_12_28, var_12_29, var_12_30, var_12_25)
+		return
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.rtMain:Find("list_bg/jump_icon_right"), function()
+		arg_12_0:ScrollAndSelectEntrance(arg_12_0:GetAwardIndex(true))
 
-	onButton = var_1
+		return
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.btnGetAll, function()
+		local var_18_0, var_18_1 = nowWorld():GetFinishAchievements(arg_12_0.achEntranceList)
 
-	local var_12_31 = arg_12_0
-	local var_12_32 = arg_12_0.achAchieveBtn
+		if #var_18_0 > 0 then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("world_target_get_all"),
+				onYes = function()
+					arg_12_0:emit(WorldCollectionMediator.ON_ACHIEVE_STAR, var_18_0)
 
-	local function var_12_33()
-		nowWorld = var_2_10000
+					return
+				end
+			})
+		else
+			pg.TipsMgr.GetInstance():ShowTips("without any award")
+		end
 
-		local var_20_0 = var_2_10000()
-		local var_20_1, var_20_2 = var_0.AnyUnachievedAchievement(var_20_0, arg_12_0.entrance)
+		return
+	end, SFX_CONFIRM)
+	onButton(arg_12_0, arg_12_0.achAchieveBtn, function()
+		local var_20_0, var_20_1 = nowWorld():AnyUnachievedAchievement(arg_12_0.entrance)
 
-		if var_20_1 then
-			local var_20_3 = arg_12_0
-			local var_20_4 = var_2.emit
-
-			WorldCollectionMediator = var_2_10005
-
-			var_20_4(var_20_3, var_2_10005.ON_ACHIEVE_STAR, {
+		if var_20_0 then
+			arg_12_0:emit(WorldCollectionMediator.ON_ACHIEVE_STAR, {
 				{
 					id = arg_12_0.entrance.id,
 					star_list = {
-						var_20_2.star
+						var_20_1.star
 					}
 				}
 			})
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_12_25
-
-	var_1(var_12_31, var_12_32, var_12_33, var_12_25)
-
-	onButton = var_1
-
-	local var_12_34 = arg_12_0
-	local var_12_35 = arg_12_0.entrancePanel
-	local var_12_36 = var_4.Find(var_12_35, "page_left")
-
-	local function var_12_37()
-		local var_21_0 = arg_12_0
-
-		var_0.ScrollAndSelectEntrance(var_21_0, arg_12_0.selectedIndex - 1)
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.entrancePanel:Find("page_left"), function()
+		arg_12_0:ScrollAndSelectEntrance(arg_12_0.selectedIndex - 1)
 
 		return
-	end
-
-	SFX_PANEL = var_12_35
-
-	var_1(var_12_34, var_12_36, var_12_37, var_12_35)
-
-	onButton = var_1
-
-	local var_12_38 = arg_12_0
-	local var_12_39 = arg_12_0.entrancePanel
-	local var_12_40 = var_4.Find(var_12_39, "page_right")
-
-	local function var_12_41()
-		local var_22_0 = arg_12_0
-
-		var_0.ScrollAndSelectEntrance(var_22_0, arg_12_0.selectedIndex + 1)
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.entrancePanel:Find("page_right"), function()
+		arg_12_0:ScrollAndSelectEntrance(arg_12_0.selectedIndex + 1)
 
 		return
-	end
-
-	SFX_PANEL = var_12_39
-
-	var_1(var_12_38, var_12_40, var_12_41, var_12_39)
-
-	onButton = var_1
-
-	local var_12_42 = arg_12_0
-	local var_12_43 = arg_12_0.overviewBtn
-
-	local function var_12_44()
-		local var_23_0 = arg_12_0
-		local var_23_1 = var_0.emit
-
-		WorldCollectionMediator = var_2_10003
-
-		var_23_1(var_23_0, var_2_10003.ON_ACHIEVE_OVERVIEW)
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.overviewBtn, function()
+		arg_12_0:emit(WorldCollectionMediator.ON_ACHIEVE_OVERVIEW)
 
 		return
-	end
-
-	SFX_PANEL = var_12_39
-
-	var_1(var_12_42, var_12_43, var_12_44, var_12_39)
-
-	triggerToggle = var_1
-
-	local var_12_45 = arg_12_0.topToggles
-
-	var_1(var_3.Find(var_12_45, "all"), true)
+	end, SFX_PANEL)
+	triggerToggle(arg_12_0.topToggles:Find("all"), true)
 
 	return
 end
 
-function var_0_1.willExit(arg_24_0)
-	local var_24_0 = arg_24_0.subviewAchAward
-
-	var_1.Destroy(var_24_0)
-
-	pg = var_1
-
-	local var_24_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_24_1, arg_24_0._tf)
+function var_0_0.willExit(arg_24_0)
+	arg_24_0.subviewAchAward:Destroy()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_24_0._tf)
 
 	return
 end
 
-function var_0_1.SetAchievementList(arg_25_0, arg_25_1)
+function var_0_0.SetAchievementList(arg_25_0, arg_25_1)
 	arg_25_0.baseEntranceList = arg_25_1
 
 	return
 end
 
-function var_0_1.BuildEntranceScrollPos(arg_26_0)
+function var_0_0.BuildEntranceScrollPos(arg_26_0)
 	arg_26_0.entrancePos = {}
 	arg_26_0.entranceIndexDic = {}
-	ipairs = var_1
 
-	for iter_26_0, iter_26_1 in var_1(arg_26_0.achEntranceList) do
-		table = var_1_10006
-		var_1_10006 = var_1_10006.insert
+	for iter_26_0, iter_26_1 in ipairs(arg_26_0.achEntranceList) do
+		table.insert(arg_26_0.entrancePos, arg_26_0.scrollEntrance:HeadIndexToValue(iter_26_0 - 1))
 
-		local var_26_0 = arg_26_0.entrancePos
-		local var_26_1 = arg_26_0.scrollEntrance
+		arg_26_0.entranceIndexDic[iter_26_1.id] = iter_26_0
 
-		var_1_10006(var_26_0, var_9.HeadIndexToValue(var_26_1, iter_26_0 - 1))
+		local var_26_0 = nowWorld()
 
-		var_1_10006 = arg_26_0.entranceIndexDic
-		var_1_10006[iter_26_1.id] = iter_26_0
-		nowWorld = var_1_10006
-
-		local var_26_2 = var_1_10006()
-
-		if var_1_10006.AnyUnachievedAchievement(var_26_2, iter_26_1) then
-			table = var_1_10006
-
-			var_1_10006.insert(arg_26_0.achAwardIndexList, iter_26_0)
+		if var_26_0:AnyUnachievedAchievement(iter_26_1) then
+			table.insert(arg_26_0.achAwardIndexList, iter_26_0)
 		end
 	end
 
 	return
 end
 
-function var_0_1.UpdateEntranceFilter(arg_27_0, arg_27_1)
-	if arg_27_1 then
-		underscore = var_1_10002
-		arg_27_0.achEntranceList = var_1_10002.filter(arg_27_0.baseEntranceList, function(arg_28_0)
-			nowWorld = var_2_10001
+function var_0_0.UpdateEntranceFilter(arg_27_0, arg_27_1)
+	arg_27_0.achEntranceList = arg_27_1 and underscore.filter(arg_27_0.baseEntranceList, function(arg_28_0)
+		local var_28_0, var_28_1, var_28_2 = nowWorld():CountAchievements(arg_28_0)
 
-			local var_28_0 = var_2_10001()
-			local var_28_1, var_28_2, var_28_3 = var_1.CountAchievements(var_28_0, arg_28_0)
-
-			return var_28_3 > var_28_1 + var_28_2
-		end)
-	else
-		underscore = var_1_10002
-		arg_27_0.achEntranceList = var_1_10002.rest(arg_27_0.baseEntranceList, 1)
-	end
+		return var_28_2 > var_28_0 + var_28_1
+	end) or underscore.rest(arg_27_0.baseEntranceList, 1)
 
 	arg_27_0:UpdateGetAllAwardBtn()
 
 	arg_27_0.achAwardIndexList = {}
 	arg_27_0.entranceOjbecDic = {}
 
-	local var_27_0 = arg_27_0.scrollEntrance
-
-	var_2.SetTotalCount(var_27_0, #arg_27_0.achEntranceList)
+	arg_27_0.scrollEntrance:SetTotalCount(#arg_27_0.achEntranceList)
 	arg_27_0:BuildEntranceScrollPos()
 
-	local var_27_1 = arg_27_0.contextData
+	arg_27_0.contextData.entranceId = defaultValue(arg_27_0.contextData.entranceId, 0)
 
-	defaultValue = var_1_10003
-	var_27_1.entranceId = var_1_10003(arg_27_0.contextData.entranceId, 0)
-	defaultValue = var_27_1
+	local var_27_0 = defaultValue(arg_27_0.entranceIndexDic[arg_27_0.contextData.entranceId], 1)
 
-	local var_27_2 = var_27_1(arg_27_0.entranceIndexDic[arg_27_0.contextData.entranceId], 1)
-
-	if arg_27_0.achEntranceList[var_27_2] then
-		arg_27_0:ScrollAndSelectEntrance(var_27_2)
+	if arg_27_0.achEntranceList[var_27_0] then
+		arg_27_0:ScrollAndSelectEntrance(var_27_0)
 	else
-		setActive = var_3
-
-		local var_27_3 = arg_27_0.entrancePanel
-
-		var_3(var_5.Find(var_27_3, "page_left"), false)
-
-		setActive = var_3
-
-		local var_27_4 = arg_27_0.entrancePanel
-
-		var_3(var_5.Find(var_27_4, "page_right"), false)
+		setActive(arg_27_0.entrancePanel:Find("page_left"), false)
+		setActive(arg_27_0.entrancePanel:Find("page_right"), false)
 	end
 
 	return
 end
 
-function var_0_1.UpdateGetAllAwardBtn(arg_29_0)
-	nowWorld = var_1_10001
+function var_0_0.UpdateGetAllAwardBtn(arg_29_0)
+	local var_29_0, var_29_1 = nowWorld():GetFinishAchievements(arg_29_0.achEntranceList)
 
-	local var_29_0 = var_1_10001()
-	local var_29_1, var_29_2 = var_1.GetFinishAchievements(var_29_0, arg_29_0.achEntranceList)
-
-	pg = var_29_0
-
-	local var_29_3 = var_29_0.gameset.world_target_obtain.key_value
-
-	setActive = var_4
-
-	var_4(arg_29_0.btnGetAll, var_29_3 <= #var_29_1)
+	setActive(arg_29_0.btnGetAll, pg.gameset.world_target_obtain.key_value <= #var_29_0)
 
 	return
 end
 
-function var_0_1.FlushEntranceItem(arg_30_0, arg_30_1)
-	ipairs = var_1_10002
+function var_0_0.FlushEntranceItem(arg_30_0, arg_30_1)
+	for iter_30_0, iter_30_1 in ipairs(arg_30_1) do
+		local var_30_0 = nowWorld()
 
-	for iter_30_0, iter_30_1 in var_1_10002(arg_30_1) do
-		local var_30_0 = arg_30_0.entranceIndexDic[iter_30_1.id]
-
-		nowWorld = var_8
-
-		local var_30_1 = var_8()
-
-		if not var_8.AnyUnachievedAchievement(var_30_1, arg_30_0.achEntranceList[var_30_0]) then
-			if arg_30_0.entranceOjbecDic[var_30_0] then
-				setActive = var_8
-
-				local var_30_2 = arg_30_0.entranceOjbecDic[var_30_0]
-
-				var_8(var_10.Find(var_30_2, "icon/tip"), false)
+		if not var_30_0:AnyUnachievedAchievement(arg_30_0.achEntranceList[arg_30_0.entranceIndexDic[iter_30_1.id]]) then
+			if arg_30_0.entranceOjbecDic[arg_30_0.entranceIndexDic[iter_30_1.id]] then
+				setActive(arg_30_0.entranceOjbecDic[arg_30_0.entranceIndexDic[iter_30_1.id]]:Find("icon/tip"), false)
 			end
 
-			table = var_8
-
-			var_8.removebyvalue(arg_30_0.achAwardIndexList, var_30_0)
+			table.removebyvalue(arg_30_0.achAwardIndexList, arg_30_0.entranceIndexDic[iter_30_1.id])
 		end
 	end
 
@@ -796,22 +333,18 @@ function var_0_1.FlushEntranceItem(arg_30_0, arg_30_1)
 	return
 end
 
-function var_0_1.UpdateAchievement(arg_31_0, arg_31_1, arg_31_2)
+function var_0_0.UpdateAchievement(arg_31_0, arg_31_1, arg_31_2)
+	local var_31_9000
+
 	if arg_31_2 or arg_31_0.selectedIndex ~= arg_31_1 then
-		local var_31_0 = arg_31_0.selectedIndex
+		arg_31_1, arg_31_0.selectedIndex = arg_31_0.selectedIndex, arg_31_1
 
-		arg_31_0.selectedIndex = arg_31_1
-		arg_31_1 = var_31_0
-		ipairs = var_31_0
-
-		for iter_31_0, iter_31_1 in var_31_0({
-			arg_31_1,
+		for iter_31_0, iter_31_1 in ipairs({
+			var_31_9000,
 			arg_31_0.selectedIndex
 		}) do
 			if arg_31_0.entranceOjbecDic[iter_31_1] then
-				setActive = var_1_10009
-
-				var_1_10009(var_8:Find("icon/select"), arg_31_0.selectedIndex == iter_31_1)
+				setActive(var_31_0:Find("icon/select"), arg_31_0.selectedIndex == iter_31_1)
 			end
 		end
 
@@ -823,7 +356,7 @@ function var_0_1.UpdateAchievement(arg_31_0, arg_31_1, arg_31_2)
 	return
 end
 
-function var_0_1.GetAwardIndex(arg_32_0, arg_32_1)
+function var_0_0.GetAwardIndex(arg_32_0, arg_32_1)
 	if #arg_32_0.achEntranceList == 0 then
 		return nil
 	end
@@ -831,20 +364,18 @@ function var_0_1.GetAwardIndex(arg_32_0, arg_32_1)
 	local var_32_0 = arg_32_0.entrancePos[#arg_32_0.achEntranceList] - 1
 
 	if arg_32_1 then
-		local var_32_1 = arg_32_0.scrollEntrance.value + var_32_0
-
 		for iter_32_0 = 1, #arg_32_0.achAwardIndexList do
-			if var_32_1 < arg_32_0.entrancePos[arg_32_0.achAwardIndexList[iter_32_0]] then
+			if arg_32_0.scrollEntrance.value + var_32_0 < arg_32_0.entrancePos[arg_32_0.achAwardIndexList[iter_32_0]] then
 				return arg_32_0.achAwardIndexList[iter_32_0]
 			end
 		end
 
 		return nil
 	else
-		local var_32_2 = arg_32_0.scrollEntrance.value
+		local var_32_1 = arg_32_0.scrollEntrance.value
 
 		for iter_32_1 = #arg_32_0.achAwardIndexList, 1, -1 do
-			if var_32_2 > arg_32_0.entrancePos[arg_32_0.achAwardIndexList[iter_32_1]] then
+			if var_32_1 > arg_32_0.entrancePos[arg_32_0.achAwardIndexList[iter_32_1]] then
 				return arg_32_0.achAwardIndexList[iter_32_1]
 			end
 		end
@@ -855,177 +386,82 @@ function var_0_1.GetAwardIndex(arg_32_0, arg_32_1)
 	return
 end
 
-function var_0_1.ScrollAndSelectEntrance(arg_33_0, arg_33_1)
+function var_0_0.ScrollAndSelectEntrance(arg_33_0, arg_33_1)
 	arg_33_0:UpdateAchievement(arg_33_1, true)
-
-	local var_33_0 = arg_33_0.entrancePos[#arg_33_0.achEntranceList] - 1
-	local var_33_1 = arg_33_0.scrollEntrance
-	local var_33_2 = var_3.ScrollTo
-
-	math = var_6
-
-	var_33_2(var_33_1, var_6.clamp(arg_33_0.entrancePos[arg_33_1] - var_33_0 / 2, 0, 1))
+	arg_33_0.scrollEntrance:ScrollTo(math.clamp(arg_33_0.entrancePos[arg_33_1] - (arg_33_0.entrancePos[#arg_33_0.achEntranceList] - 1) / 2, 0, 1))
 
 	return
 end
 
-function var_0_1.UpdateJumpBtn(arg_34_0)
-	setActive = var_1_10001
-
-	local var_34_0 = arg_34_0.rtMain
-
-	var_1_10001(var_3.Find(var_34_0, "list_bg/jump_icon_left"), arg_34_0:GetAwardIndex(false))
-
-	setActive = var_1_10001
-
-	local var_34_1 = arg_34_0.rtMain
-
-	var_1_10001(var_3.Find(var_34_1, "list_bg/jump_icon_right"), arg_34_0:GetAwardIndex(true))
+function var_0_0.UpdateJumpBtn(arg_34_0)
+	setActive(arg_34_0.rtMain:Find("list_bg/jump_icon_left"), arg_34_0:GetAwardIndex(false))
+	setActive(arg_34_0.rtMain:Find("list_bg/jump_icon_right"), arg_34_0:GetAwardIndex(true))
 
 	return
 end
 
-function var_0_1.FlushAchievement(arg_35_0)
-	local var_35_0 = arg_35_0
+function var_0_0.FlushAchievement(arg_35_0)
+	arg_35_0:UpdateJumpBtn()
 
-	arg_35_0.UpdateJumpBtn(var_35_0)
+	local var_35_0 = nowWorld()
 
-	nowWorld = var_1
+	arg_35_0.showHiddenDesc = var_35_0:IsNormalAchievementAchieved(arg_35_0.entrance)
+	arg_35_0.targetList = var_35_0:GetAchievements(arg_35_0.entrance)
 
-	local var_35_1 = var_1()
+	arg_35_0.targetItemList:align(#arg_35_0.targetList)
 
-	arg_35_0.showHiddenDesc = var_1.IsNormalAchievementAchieved(var_35_1, arg_35_0.entrance)
-	arg_35_0.targetList = var_1:GetAchievements(arg_35_0.entrance)
+	local var_35_1 = arg_35_0.entrance:GetBaseMap()
 
-	local var_35_2 = arg_35_0.targetItemList
+	GetImageSpriteFromAtlasAsync("world/targeticon/" .. var_35_1.config.entrance_mapicon, "", arg_35_0.entranceTitle)
+	setText(arg_35_0.entranceTitle:Find("name"), var_35_1:GetName(arg_35_0.entrance))
+	setText(arg_35_0.entranceTitle:Find("deco_id"), arg_35_0.entrance.config.serial_number)
 
-	var_2.align(var_35_2, #arg_35_0.targetList)
+	local var_35_2, var_35_3, var_35_4 = var_35_0:CountAchievements(arg_35_0.entrance)
 
-	local var_35_3 = arg_35_0.entrance
-	local var_35_4 = var_2.GetBaseMap(var_35_3)
+	setText(arg_35_0.entranceTitle:Find("progress_text"), var_35_2 + var_35_3 .. "/" .. var_35_4)
 
-	GetImageSpriteFromAtlasAsync = var_35_0
+	local var_35_5, var_35_6 = var_35_0:AnyUnachievedAchievement(arg_35_0.entrance)
+	local var_35_7 = arg_35_0.achAwardRect:Find("award")
 
-	var_35_0("world/targeticon/" .. var_35_4.config.entrance_mapicon, "", arg_35_0.entranceTitle)
-
-	setText = var_35_0
-
-	local var_35_5 = arg_35_0.entranceTitle
-
-	var_35_0(var_5.Find(var_35_5, "name"), var_35_4:GetName(arg_35_0.entrance))
-
-	setText = var_35_0
-
-	local var_35_6 = arg_35_0.entranceTitle
-
-	var_35_0(var_5.Find(var_35_6, "deco_id"), arg_35_0.entrance.config.serial_number)
-
-	local var_35_7, var_35_8, var_35_9 = var_1:CountAchievements(arg_35_0.entrance)
-
-	setText = var_6
-
-	local var_35_10 = arg_35_0.entranceTitle
-
-	var_6(var_8.Find(var_35_10, "progress_text"), var_35_7 + var_35_8 .. "/" .. var_35_9)
-
-	local var_35_11, var_35_12 = var_1:AnyUnachievedAchievement(arg_35_0.entrance)
-	local var_35_13 = arg_35_0.achAwardRect
-	local var_35_14 = var_8.Find(var_35_13, "award")
-
-	if var_35_12 then
-		setActive = var_9
-
-		local var_35_15 = arg_35_0.achAwardRect
-
-		var_9(var_11.Find(var_35_15, "get_mask"), var_35_11)
-
-		setActive = var_9
-
-		local var_35_16 = arg_35_0.achAwardRect
-
-		var_9(var_11.Find(var_35_16, "got_mask"), false)
+	if var_35_6 then
+		setActive(arg_35_0.achAwardRect:Find("get_mask"), var_35_5)
+		setActive(arg_35_0.achAwardRect:Find("got_mask"), false)
 	else
-		local var_35_17 = arg_35_0.entrance
+		local var_35_8 = arg_35_0.entrance:GetAchievementAwards()
 
-		var_35_12 = var_9[#var_9.GetAchievementAwards(var_35_17)]
-		setActive = var_10
-		var_1_10014 = arg_35_0.achAwardRect
+		var_35_6 = var_35_8[#var_35_8]
 
-		var_10(var_12.Find(var_1_10014, "get_mask"), false)
-
-		setActive = var_10
-		var_1_10014 = arg_35_0.achAwardRect
-
-		var_10(var_12.Find(var_1_10014, "got_mask"), true)
+		setActive(arg_35_0.achAwardRect:Find("get_mask"), false)
+		setActive(arg_35_0.achAwardRect:Find("got_mask"), true)
 	end
 
-	updateDrop = var_9
-
-	var_9(var_35_14, var_35_12.drop)
-
-	onButton = var_9
-
-	local var_35_18 = arg_35_0
-	local var_35_19 = var_35_14
-
-	local function var_35_20()
-		local var_36_0 = arg_35_0
-
-		var_0.showAchAwardPanel(var_36_0, arg_35_0.entrance)
+	updateDrop(var_35_7, var_35_6.drop)
+	onButton(arg_35_0, var_35_7, function()
+		arg_35_0:showAchAwardPanel(arg_35_0.entrance)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10014
-
-	var_9(var_35_18, var_35_19, var_35_20, var_1_10014)
-
-	setText = var_9
-
-	local var_35_21 = arg_35_0.achAwardRect
-
-	var_9(var_11.Find(var_35_21, "star_count/Text"), var_35_7 + var_35_8 .. "/" .. var_35_12.star)
-
-	setActive = var_9
-
-	var_9(arg_35_0.achAchieveBtn, var_35_11)
-
-	setActive = var_9
-
-	local var_35_22 = arg_35_0.entrancePanel
-
-	var_9(var_11.Find(var_35_22, "page_left"), arg_35_0.selectedIndex > 1)
-
-	setActive = var_9
-
-	local var_35_23 = arg_35_0.entrancePanel
-
-	var_9(var_11.Find(var_35_23, "page_right"), arg_35_0.selectedIndex < #arg_35_0.achEntranceList)
+	end, SFX_PANEL)
+	setText(arg_35_0.achAwardRect:Find("star_count/Text"), var_35_2 + var_35_3 .. "/" .. var_35_6.star)
+	setActive(arg_35_0.achAchieveBtn, var_35_5)
+	setActive(arg_35_0.entrancePanel:Find("page_left"), arg_35_0.selectedIndex > 1)
+	setActive(arg_35_0.entrancePanel:Find("page_right"), arg_35_0.selectedIndex < #arg_35_0.achEntranceList)
 
 	return
 end
 
-function var_0_1.flushAchieveUpdate(arg_37_0, arg_37_1)
+function var_0_0.flushAchieveUpdate(arg_37_0, arg_37_1)
 	arg_37_0:FlushEntranceItem(arg_37_1)
 	arg_37_0:FlushAchievement()
 
 	return
 end
 
-function var_0_1.showAchAwardPanel(arg_38_0, arg_38_1)
-	local var_38_0 = arg_38_0.subviewAchAward
-
-	var_2.Load(var_38_0)
-
-	local var_38_1 = arg_38_0.subviewAchAward
-
-	var_2.ActionInvoke(var_38_1, "Setup", arg_38_1)
-
-	local var_38_2 = arg_38_0.subviewAchAward
-
-	var_2.ActionInvoke(var_38_2, "Show")
+function var_0_0.showAchAwardPanel(arg_38_0, arg_38_1)
+	arg_38_0.subviewAchAward:Load()
+	arg_38_0.subviewAchAward:ActionInvoke("Setup", arg_38_1)
+	arg_38_0.subviewAchAward:ActionInvoke("Show")
 
 	return
 end
 
-return var_0_1
+return var_0_0

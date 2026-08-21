@@ -1,27 +1,13 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandBlackWhitListCard", import(".IslandFriendCard"))
 
-local var_0_0 = "IslandBlackWhitListCard"
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-import = var_0_10003
+	arg_1_0.removeBtn = arg_1_1.transform:Find("remove")
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandFriendCard"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
-
-	local var_1_0 = arg_1_1.transform
-
-	arg_1_0.removeBtn = var_2.Find(var_1_0, "remove")
-	setText = var_2
-
-	local var_1_1 = arg_1_0.removeBtn
-	local var_1_2 = var_4.Find(var_1_1, "Text")
-
-	i18n = var_5
-
-	var_2(var_1_2, var_5("island_btn_label_remove"))
+	setText(arg_1_0.removeBtn:Find("Text"), i18n("island_btn_label_remove"))
 
 	return
 end
 
-return var_0_1
+return var_0_0

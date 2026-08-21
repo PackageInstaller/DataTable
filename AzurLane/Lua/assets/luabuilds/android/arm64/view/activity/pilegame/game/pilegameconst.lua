@@ -1,16 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PileGameConst")
+﻿local var_0_0 = class("PileGameConst")
 
 var_0_0.INDEX_WIDTH = 150
 var_0_0.SAFE_INDEX_WIDTH = 45
 var_0_0.DEATH_INDEX_WIDTH = 87
-Vector2 = var_1
-var_0_0.ITEM_PIVOT = var_1(0.5, 0)
-Vector2 = var_1
-var_0_0.GROUND_SIZE = var_1(1300, 20)
-Vector2 = var_1
-var_0_0.GROUND_PIVOT = var_1(0.5, 1)
+var_0_0.ITEM_PIVOT = Vector2(0.5, 0)
+var_0_0.GROUND_SIZE = Vector2(1300, 20)
+var_0_0.GROUND_PIVOT = Vector2(0.5, 1)
 var_0_0.RATIO = 2
 var_0_0.START_Y = 150
 var_0_0.MAX_SLIDE_DISTANCE = var_0_0.INDEX_WIDTH * var_0_0.RATIO

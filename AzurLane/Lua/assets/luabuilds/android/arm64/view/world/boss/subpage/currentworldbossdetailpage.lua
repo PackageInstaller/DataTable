@@ -1,241 +1,119 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CurrentWorldBossDetailPage", import(".BaseWorldBossDetailPage"))
 
-local var_0_0 = "CurrentWorldBossDetailPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BaseWorldBossDetailPage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "CurrentWorldBossDetailUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	var_0_1.super.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
+	var_0_0.super.OnLoaded(arg_2_0)
 
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.listBtn = var_1.Find(var_2_0, "list_btn")
-	MetaWorldbossBtn = var_1
-
-	local var_2_1 = var_1.New
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.metaWorldbossBtn = var_2_1(var_3.Find(var_2_2, "archives_btn"), arg_2_0.event)
-	WorldBossHelpPage = var_1
-	arg_2_0.helpWindow = var_1.New(arg_2_0._tf, arg_2_0.event)
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.currProgressTr = var_1.Find(var_2_3, "progress")
-
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_1.Find(var_2_4, "progress/value")
-	local var_2_6 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_6
-	arg_2_0.currProgressTxt = var_2_6(var_2_5, var_4(var_6))
-	WorldbossPtBtn = var_1
-
-	local var_2_7 = var_1.New
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.ptBtn = var_2_7(var_3.Find(var_2_8, "point"))
+	arg_2_0.listBtn = arg_2_0._tf:Find("list_btn")
+	arg_2_0.metaWorldbossBtn = MetaWorldbossBtn.New(arg_2_0._tf:Find("archives_btn"), arg_2_0.event)
+	arg_2_0.helpWindow = WorldBossHelpPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.currProgressTr = arg_2_0._tf:Find("progress")
+	arg_2_0.currProgressTxt = arg_2_0._tf:Find("progress/value"):GetComponent(typeof(Text))
+	arg_2_0.ptBtn = WorldbossPtBtn.New(arg_2_0._tf:Find("point"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	var_0_1.super.OnInit(arg_3_0)
-
-	onButton = var_1
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.listBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.emit
-
-		WorldBossScene = var_2_10003
-
-		local var_4_2 = var_2_10003.ON_SWITCH
-
-		WorldBossScene = var_2_10004
-
-		var_4_1(var_4_0, var_4_2, var_2_10004.PAGE_CHALLENGE)
+function var_0_0.OnInit(arg_3_0)
+	var_0_0.super.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.listBtn, function()
+		arg_3_0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_CHALLENGE)
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.currProgressTr, function()
+		local var_5_0 = WorldBossConst.GetCurrBossItemInfo()
 
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.currProgressTr
-
-	local function var_3_5()
-		WorldBossConst = var_2_10000
-
-		local var_5_0 = var_2_10000.GetCurrBossItemInfo()
-
-		pg = var_2_10001
-
-		local var_5_1 = var_2_10001.MsgboxMgr.GetInstance()
-		local var_5_2 = var_1.ShowMsgBox
-		local var_5_3 = {
-			hideNo = true
-		}
-
-		MSGBOX_TYPE_DROP_ITEM = var_2_10005
-		var_5_3.type = var_2_10005
-		var_5_3.name = var_5_0.name
-		var_5_3.content = var_5_0.display
-		var_5_3.iconPath = var_5_0.icon
-		var_5_3.frame = var_5_0.rarity
-
-		var_5_2(var_5_1, var_5_3)
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			hideNo = true,
+			type = MSGBOX_TYPE_DROP_ITEM,
+			name = var_5_0.name,
+			content = var_5_0.display,
+			iconPath = var_5_0.icon,
+			frame = var_5_0.rarity
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0._tf
-	local var_3_8 = var_4.Find(var_3_7, "point/help")
-
-	local function var_3_9()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_6_1 = var_0.ShowMsgBox
-		local var_6_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_6_2.type = var_2_10004
-		pg = var_2_10004
-		var_6_2.helps = var_2_10004.gametip.world_boss_help_meta.tip
-
-		var_6_1(var_6_0, var_6_2)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("point/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.world_boss_help_meta.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_3_7
-
-	var_1(var_3_6, var_3_8, var_3_9, var_3_7)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateRes(arg_7_0)
-	WorldBossConst = var_1_10001
+function var_0_0.OnUpdateRes(arg_7_0)
+	local var_7_0, var_7_1, var_7_2 = WorldBossConst.GetCurrBossConsume()
 
-	local var_7_0, var_7_1, var_7_2 = var_1_10001.GetCurrBossConsume()
-
-	WorldBossConst = var_1_10004
-
-	local var_7_3 = var_1_10004.GetCurrBossItemProgress()
-
-	arg_7_0.currProgressTxt.text = var_7_3 .. "/" .. var_7_2
+	arg_7_0.currProgressTxt.text = WorldBossConst.GetCurrBossItemProgress() .. "/" .. var_7_2
 
 	return
 end
 
-function var_0_1.OnUpdatePt(arg_8_0)
+function var_0_0.OnUpdatePt(arg_8_0)
 	if arg_8_0.ptBtn then
-		local var_8_0 = arg_8_0.ptBtn
-
-		var_1.Update(var_8_0)
+		arg_8_0.ptBtn:Update()
 	end
 
 	return
 end
 
-function var_0_1.OnRescue(arg_9_0)
+function var_0_0.OnRescue(arg_9_0)
 	if arg_9_0.helpWindow then
-		local var_9_0 = arg_9_0.helpWindow
-
-		var_1.ExecuteAction(var_9_0, "Update", arg_9_0.boss)
+		arg_9_0.helpWindow:ExecuteAction("Update", arg_9_0.boss)
 	end
 
 	return
 end
 
-function var_0_1.Show(arg_10_0)
-	var_0_1.super.Show(arg_10_0)
+function var_0_0.Show(arg_10_0)
+	var_0_0.super.Show(arg_10_0)
 	arg_10_0:TryPlayGuide()
 
 	return
 end
 
-function var_0_1.TryPlayGuide(arg_11_0)
-	pg = var_1_10001
-
-	local var_11_0 = var_1_10001.NewStoryMgr.GetInstance()
-
-	if var_1.IsPlayed(var_11_0, "WorldG191") then
-		WorldGuider = var_1
-
-		local var_11_1 = var_1.GetInstance()
-
-		var_1.PlayGuide(var_11_1, "WorldG191_1")
+function var_0_0.TryPlayGuide(arg_11_0)
+	if pg.NewStoryMgr.GetInstance():IsPlayed("WorldG191") then
+		WorldGuider.GetInstance():PlayGuide("WorldG191_1")
 	end
 
-	pg = var_1
+	local var_11_0 = pg.NewStoryMgr.GetInstance()
 
-	local var_11_2 = var_1.NewStoryMgr.GetInstance()
-
-	if var_1.IsPlayed(var_11_2, "WorldG191_1") then
-		CurrentWorldBossDetailPage = var_1
-
-		if not var_1.formDock then
-			WorldGuider = var_1
-
-			local var_11_3 = var_1.GetInstance()
-
-			var_1.PlayGuide(var_11_3, "WorldG192")
-		end
+	if var_11_0:IsPlayed("WorldG191_1") and not CurrentWorldBossDetailPage.formDock then
+		WorldGuider.GetInstance():PlayGuide("WorldG192")
 	end
 
-	CurrentWorldBossDetailPage = var_1
-	var_1.formDock = false
+	CurrentWorldBossDetailPage.formDock = false
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_12_0)
-	var_0_1.super.OnDestroy(arg_12_0)
+function var_0_0.OnDestroy(arg_12_0)
+	var_0_0.super.OnDestroy(arg_12_0)
 
 	if arg_12_0.helpWindow then
-		local var_12_0 = arg_12_0.helpWindow
-
-		var_1.Destroy(var_12_0)
+		arg_12_0.helpWindow:Destroy()
 
 		arg_12_0.helpWindow = nil
 	end
 
 	if arg_12_0.metaWorldbossBtn then
-		local var_12_1 = arg_12_0.metaWorldbossBtn
-
-		var_1.Dispose(var_12_1)
+		arg_12_0.metaWorldbossBtn:Dispose()
 
 		arg_12_0.metaWorldbossBtn = nil
 	end
 
 	if arg_12_0.ptBtn then
-		local var_12_2 = arg_12_0.ptBtn
-
-		var_1.Dispose(var_12_2)
+		arg_12_0.ptBtn:Dispose()
 
 		arg_12_0.ptBtn = nil
 	end
@@ -243,4 +121,4 @@ function var_0_1.OnDestroy(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

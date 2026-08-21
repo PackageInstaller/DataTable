@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_site") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_site"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_site = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_site
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_site = rawget(pg, "child_site") or setmetatable({
+	__name = "child_site"
+}, confNEO)
+pg.child_site.all = {
 	110,
 	111,
 	120,
@@ -38,25 +15,11 @@ var_0_3.all = {
 	160,
 	170
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_site = {}
+pg.base = pg.base or {}
+pg.base.child_site = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_site
-
-	var_1_0[110] = {
+	pg.base.child_site[110] = {
 		name = "美食坊",
 		type = 1,
 		name_pic = "child_icon_food_name",
@@ -94,11 +57,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_site
-
-	var_1_1[111] = {
+	pg.base.child_site[111] = {
 		name = "好味餐厅",
 		type = 2,
 		name_pic = "",
@@ -131,11 +90,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_site
-
-	var_1_2[120] = {
+	pg.base.child_site[120] = {
 		name = "度假庄园",
 		type = 1,
 		name_pic = "child_icon_manor_name",
@@ -170,11 +125,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_site
-
-	var_1_3[121] = {
+	pg.base.child_site[121] = {
 		name = "静谧之峰",
 		type = 2,
 		name_pic = "",
@@ -210,11 +161,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_site
-
-	var_1_4[130] = {
+	pg.base.child_site[130] = {
 		name = "商业街",
 		type = 1,
 		name_pic = "child_icon_shopping_name",
@@ -255,11 +202,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_site
-
-	var_1_5[131] = {
+	pg.base.child_site[131] = {
 		name = "影像工作室",
 		type = 2,
 		name_pic = "",
@@ -367,11 +310,7 @@ var_0_3.base.child_site = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_site
-
-	var_1_6[140] = {
+	pg.base.child_site[140] = {
 		name = "海滨公园",
 		type = 1,
 		name_pic = "child_icon_park_name",
@@ -406,11 +345,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_site
-
-	var_1_7[141] = {
+	pg.base.child_site[141] = {
 		name = "星光舞台",
 		type = 2,
 		name_pic = "",
@@ -518,11 +453,7 @@ var_0_3.base.child_site = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_site
-
-	var_1_8[150] = {
+	pg.base.child_site[150] = {
 		name = "游乐场",
 		type = 1,
 		name_pic = "child_icon_amusement_name",
@@ -553,11 +484,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_site
-
-	var_1_9[160] = {
+	pg.base.child_site[160] = {
 		name = "体育馆",
 		type = 1,
 		name_pic = "child_icon_gym_name",
@@ -597,8 +524,7 @@ var_0_3.base.child_site = {}
 		},
 		option_random = {}
 	}
-	pg = var_1_9
-	var_1_9.base.child_site[170] = {
+	pg.base.child_site[170] = {
 		name = "学院",
 		type = 1,
 		name_pic = "child_icon_school_name",

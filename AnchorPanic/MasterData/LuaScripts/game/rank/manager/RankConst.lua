@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : RankConst
 @Description    : 排行榜常量
@@ -18,7 +18,7 @@ module('game.rank.manager.vo.RankConst', Class.impl())
 -- -- 使徒之战
 -- RANK_APOSTLES = 4
 -- -- 无限城
-RANK_CYCLE = 1 
+RANK_CYCLE = 1
 -- 爬塔
 RANK_CLIMBTOWER = 2
 -- 肉鸽
@@ -27,12 +27,33 @@ RANK_CLIMBTOWER = 2
 -- 挖矿
 RANK_MINING = 9
 
+--大西瓜
+WATERMELON = 11
+--1024
+GHOST = 12
+
+--六边形方块
+BLOCK = 13
+--泡泡龙
+BULLE = 14
+--捡金币
+PICKGOLD = 15
+--像素鸟
+BIRD = 16
+--分类
+SPLIT = 17
+--甜品大作战
+DESSERT = 18
+--盖楼大作战
+BUILD = 19
+--盖楼大作战(drop 副本)
+DROP = 20
+
 ---------------------（不在排行榜列表上）---------------------
 
 -- 无限城
 RANK_INFINITE_CITY = 101
 -- 肉鸽
-
 
 -- 排行榜图标
 rank.getPageIcon = function(cusPageType)
@@ -56,8 +77,7 @@ end
 
 ---------------------（不在排行榜列表上）---------------------
 
-
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

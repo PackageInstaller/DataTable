@@ -1,5 +1,6 @@
 module("game.storyTalk.view.StoryTalkSceneView", Class.impl())
 
+local storyCgUrlCache = {}
 
 function dtor(self)
     self:Destroy()
@@ -59,6 +60,9 @@ function initData(self, go)
     self.m_storyAniName = { "eye", "idle_eye", "mouth", "idle_mouth" }
     -- 剧情单独的表情
     self.m_storyOtherName = { "talk_mouth", "talk_mouth_large", "talk_mouth_Medium", "talk_mouth_Samll" }
+
+    --是否是小屏
+    self.isSmall = ScreenUtil:isSmallScreen()
 end
 
 function hideRenderCamera(self)
@@ -67,7 +71,11 @@ function hideRenderCamera(self)
 end
 
 function loadAni(self, pos, name)
-    self.mDataDic[pos].liveView:loadClip(gs.Animator.StringToHash(name))
+    if self.mDataDic[pos] == nil and self.mDataDic[pos+1] ~= nil then
+        self.mDataDic[pos + 1].liveView:loadClip(gs.Animator.StringToHash(name))
+    else
+        self.mDataDic[pos].liveView:loadClip(gs.Animator.StringToHash(name))
+    end
 end
 
 -- 回调C#通知剧情被跳过
@@ -162,8 +170,46 @@ function stopShake(self)
     self.mStoryBGComponent:SetStart(false, 0)
 end
 
+-- 是否和谐渠道
+function isStoryChannelHarmonious(self)
+    return RefMgr and RefMgr:getSpecialConfig() and sdk and sdk.ChannelData and sdk.ChannelData:getIsChannelHarmonious()
+end
+
+-- 获取CG的和谐版路径（将 cg/ 替换为 cg_Har/）
+function getStoryCgHarUrl(self, url)
+    return UrlManager:getStoryCgHarUrl(url)
+end
+
+function getStoryCgLymdenUrl(self, url)
+    return UrlManager:getStoryCgLymdenUrl(url)
+end
+
+-- 获取CG实际加载路径（和谐渠道优先加载cg_Har，不存在则回退cg）
+function getStoryCgUrl(self, url)
+    local isHar = self:isStoryChannelHarmonious()
+    local cacheKey = tostring(isHar) .. url
+    local cached = storyCgUrlCache[cacheKey]
+    if cached then
+        return cached
+    end
+
+    local storyCgUrl = UrlManager:getStoryCgUrl(url)
+    storyCgUrlCache[cacheKey] = storyCgUrl
+    return storyCgUrl
+end
+
+-- 判断url是否为CG路径
+function isCgUrl(self, url)
+    return string.find(url, UrlManager:getStoryCgConfigPath()) ~= nil or string.find(url, UrlManager:getStoryCgPath()) ~= nil or string.find(url, UrlManager:getStoryCgHarPath()) ~= nil
+end
+
 -- 更换背景图
 function changeSceneBG(self, url)
+    -- CG路径和谐版替换
+    if self:isCgUrl(url) then
+        url = self:getStoryCgUrl(url)
+    end
+
     if self.url ~= url then
         local sprite = gs.ResMgr:Load(url)
         if sprite then
@@ -177,6 +223,16 @@ function changeSceneBG(self, url)
         end
         -- self.mStoryBGComponent:SetAdapt()
         self.url = url
+
+
+        if self.isSmall then
+            if self:isCgUrl(url) then
+                self.mStoryBGComponent.state = 2
+            else
+                self.mStoryBGComponent.state = 1
+            end
+            self.mStoryBGComponent:SetAdapt()
+        end
     end
 end
 
@@ -206,10 +262,17 @@ function updateSceneBGBegin(self, curData, flashEff, finishCall)
 
         if showEffects then
             local bright = showEffects[storyTalk.PageShowEffect.bright]
+            -- C# 导出端未对 brightness 做 0→1 兜底，策划未填时会被写成 0；
+            -- Lua 侧把 0 视为"未配置"，保持默认亮度 1
+            if not bright or bright == 0 then bright = 1 end
             -- local disappearType = showEffects[storyTalk.PageShowEffect.disappearType]
             local appearType = showEffects[storyTalk.PageShowEffect.appearType]
             local splashCount = showEffects[storyTalk.PageShowEffect.splashCount]
             local splashTime = showEffects[storyTalk.PageShowEffect.splashTime]
+            local saturation = showEffects[storyTalk.PageShowEffect.saturation]
+            if saturation then
+                self:setSaturation(saturation)
+            end
             -- local shakeTopDownDis = showEffects[storyTalk.PageShowEffect.shakeTopDownDis]
             -- local shakeLeftRightDis = showEffects[storyTalk.PageShowEffect.shakeLeftRightDis]
             -- local shakeTime = showEffects[storyTalk.PageShowEffect.shakeTime]
@@ -242,8 +305,9 @@ function updateSceneBGBegin(self, curData, flashEff, finishCall)
                     LoopManager:setTimeout(halfTime + splashTime * i, self, flashFinishCall)
                 end
             end
-        else -- 恢复默认值
+        else
             self:setBright(1)
+            -- 沿用上一帧的 saturation，如果策划想"恢复原色"，请在该页 page_show_effect 里显式填 saturation=1。
         end
     end
 
@@ -258,11 +322,26 @@ function updateSceneBGEnd(self, curData, finishCall)
     if showEffects then
         local delayTime = 0
         local bright = showEffects[storyTalk.PageShowEffect.bright]
+        -- C# 导出端未对 brightness 做 0→1 兜底，策划未填时会被写成 0；
+        -- Lua 侧把 0 视为"未配置"，保持默认亮度 1
+        if not bright or bright == 0 then bright = 1 end
         local disappearType = showEffects[storyTalk.PageShowEffect.disappearType]
-        -- 背景淡出
-        if disappearType and disappearType ~= storyTalk.DisappearType.None then
-            delayTime = self:setFadeOut(disappearType, bright)
+        local backgroundStartEffects = showEffects[storyTalk.PageShowEffect.backgroundStartEffects]
+        local backgroundStopEffects = showEffects[storyTalk.PageShowEffect.backgroundStopEffects]
+        -- 如果有背景特效，则不进行淡出（会冲突）
+        if backgroundStartEffects and #backgroundStartEffects > 0 then
+        elseif backgroundStopEffects and #backgroundStopEffects > 0 then
+        else
+            -- 背景淡出
+            if disappearType and disappearType ~= storyTalk.DisappearType.None then
+                delayTime = self:setFadeOut(disappearType, bright)
+            elseif bright and bright ~= 1 then -- 背景图亮度调节
+                self.mBGMat:DOFloat(bright, "_Value", delayTime)
+            else
+                self.mBGMat:DOFloat(1, "_Value", delayTime)
+            end
         end
+        
         if finishCall then
             LoopManager:setTimeout(delayTime, nil, finishCall)
         end
@@ -280,6 +359,13 @@ function setBright(self, bright)
         curBright = bright
     end
     self.mBGMat:SetFloat("_Value", curBright) -- 设置明度
+end
+
+-- 设置背景图饱和度（0~1，0=完全去色，1=原色），对应 BG shader 的 _Saturation float 参数
+-- nil 视为"未配置"，回落到默认 1（保持原色）
+function setSaturation(self, value)
+    if value == nil then value = 1 end
+    self.mBGMat:SetFloat("_Saturation", value)
 end
 
 -- 设置淡入效果

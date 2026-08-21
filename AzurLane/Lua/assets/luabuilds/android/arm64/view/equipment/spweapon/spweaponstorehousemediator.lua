@@ -1,185 +1,81 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SpWeaponStoreHouseMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "SpWeaponStoreHouseMediator"
+var_0_0.ON_COMPOSITE = "SpWeaponStoreHouseMediator:ON_COMPOSITE"
+var_0_0.ON_UNEQUIP = "SpWeaponStoreHouseMediator:ON_UNEQUIP"
+var_0_0.OPEN_EQUIPMENT_INDEX = "OPEN_EQUIPMENT_INDEX"
 
-import = var_0_10003
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
+	local var_1_0 = getProxy(BayProxy):getShipById(arg_1_0.contextData.shipId)
 
-var_0_1.ON_COMPOSITE = "SpWeaponStoreHouseMediator:ON_COMPOSITE"
-var_0_1.ON_UNEQUIP = "SpWeaponStoreHouseMediator:ON_UNEQUIP"
-var_0_1.OPEN_EQUIPMENT_INDEX = "OPEN_EQUIPMENT_INDEX"
+	arg_1_0.viewComponent:setShip(var_1_0)
 
-function var_0_1.register(arg_1_0)
-	local var_1_0 = arg_1_0
-
-	arg_1_0.BindEvent(var_1_0)
-
-	getProxy = var_1
-	BayProxy = var_1_0
-
-	local var_1_1 = var_1(var_1_0)
-	local var_1_2 = var_1.getShipById(var_1_1, arg_1_0.contextData.shipId)
-	local var_1_3 = arg_1_0.viewComponent
-
-	var_3.setShip(var_1_3, var_1_2)
-
-	local var_1_6
-
-	if var_1_2 then
-		local var_1_4 = arg_1_0.contextData.mode
-
-		StoreHouseConst = var_1_1
-
-		if var_1_4 == var_1_1.EQUIPMENT then
-			local var_1_5 = arg_1_0.contextData
-
-			var_1_6 = var_1_2
-			var_1_5.qiutBtn = var_1_2.GetSpWeapon(var_1_6)
-		end
+	if var_1_0 and arg_1_0.contextData.mode == StoreHouseConst.EQUIPMENT then
+		arg_1_0.contextData.qiutBtn = var_1_0:GetSpWeapon()
 	end
 
-	local var_1_7 = {}
+	local var_1_1 = {}
 
-	_ = var_1_1
-
-	local var_1_8 = var_1_1.each
-
-	SpWeapon = var_1_6
-
-	var_1_8(var_1_6.bindConfigTable().all, function(arg_2_0)
-		SpWeapon = var_2_10001
-
-		local var_2_0 = var_2_10001.New({
+	_.each(SpWeapon.bindConfigTable().all, function(arg_2_0)
+		local var_2_0 = SpWeapon.New({
 			id = arg_2_0
 		})
 
-		if var_1.IsCraftable(var_2_0) then
-			if var_1_2 then
-				local var_2_1 = var_1_2
-
-				if not var_2.IsSpWeaponForbidden(var_2_1, var_1) then
-					table = var_2
-
-					var_2.insert(var_1_7, var_1)
-				end
-
-				return
-			end
+		if var_2_0:IsCraftable() and (not var_1_0 or not var_1_0:IsSpWeaponForbidden(var_2_0)) then
+			table.insert(var_1_1, var_2_0)
 		end
+
+		return
 	end)
-
-	local var_1_9 = arg_1_0.viewComponent
-
-	var_4.SetCraftList(var_1_9, var_1_7)
-
-	local var_1_10 = arg_1_0
-
-	arg_1_0.UpdateSpWeapons(var_1_10)
-
-	getProxy = var_4
-	PlayerProxy = var_1_10
-
-	local var_1_11 = var_4(var_1_10)
-	local var_1_12 = var_4.getData(var_1_11)
-	local var_1_13 = arg_1_0.viewComponent
-
-	var_5.setPlayer(var_1_13, var_1_12)
+	arg_1_0.viewComponent:SetCraftList(var_1_1)
+	arg_1_0:UpdateSpWeapons()
+	arg_1_0.viewComponent:setPlayer((getProxy(PlayerProxy):getData()))
 
 	return
 end
 
-function var_0_1.UpdateSpWeapons(arg_3_0)
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
+function var_0_0.UpdateSpWeapons(arg_3_0)
+	local var_3_0 = getProxy(BayProxy):RawGetShipById(arg_3_0.contextData.shipId)
+	local var_3_1 = getProxy(BayProxy):GetSpWeaponsInShips(var_3_0)
 
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.RawGetShipById(var_3_0, arg_3_0.contextData.shipId)
-
-	getProxy = var_1_10002
-	BayProxy = var_4
-
-	local var_3_2 = var_1_10002(var_4)
-	local var_3_3 = var_2.GetSpWeaponsInShips(var_3_2, var_3_1)
-
-	_ = var_3_0
-
-	local var_3_4 = var_3_0.values
-
-	getProxy = var_5
-	EquipmentProxy = var_1_10007
-
-	local var_3_5 = var_5(var_1_10007)
-	local var_3_6 = var_3_4(var_5.GetSpWeapons(var_3_5))
-
-	ipairs = var_3_2
-
-	for iter_3_0, iter_3_1 in var_3_2(var_3_6) do
-		if not var_3_1 or not var_3_1:IsSpWeaponForbidden(iter_3_1) then
-			table = var_1_10009
-
-			var_1_10009.insert(var_3_3, iter_3_1)
+	for iter_3_0, iter_3_1 in ipairs((_.values(getProxy(EquipmentProxy):GetSpWeapons()))) do
+		if not var_3_0 or not var_3_0:IsSpWeaponForbidden(iter_3_1) then
+			table.insert(var_3_1, iter_3_1)
 		end
 	end
 
-	local var_3_7 = arg_3_0.viewComponent
-
-	var_4.setEquipments(var_3_7, var_3_3)
+	arg_3_0.viewComponent:setEquipments(var_3_1)
 
 	return
 end
 
-function var_0_1.BindEvent(arg_4_0)
-	arg_4_0:bind(var_0_1.ON_UNEQUIP, function(arg_5_0)
-		local var_5_0 = arg_4_0
-		local var_5_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_5_1(var_5_0, var_2_10004.EQUIP_SPWEAPON_TO_SHIP, {
+function var_0_0.BindEvent(arg_4_0)
+	arg_4_0:bind(var_0_0.ON_UNEQUIP, function(arg_5_0)
+		arg_4_0:sendNotification(GAME.EQUIP_SPWEAPON_TO_SHIP, {
 			shipId = arg_4_0.contextData.shipId
 		})
 
 		return
 	end)
-	arg_4_0:bind(var_0_1.OPEN_EQUIPMENT_INDEX, function(arg_6_0, arg_6_1)
-		local var_6_0 = arg_4_0
-		local var_6_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_6_2 = var_2_10005.New
-		local var_6_3 = {}
-
-		CustomIndexLayer = var_2_10008
-		var_6_3.viewComponent = var_2_10008
-		CustomIndexMediator = var_2_10008
-		var_6_3.mediator = var_2_10008
-		var_6_3.data = arg_6_1
-
-		var_6_1(var_6_0, var_6_2(var_6_3))
+	arg_4_0:bind(var_0_0.OPEN_EQUIPMENT_INDEX, function(arg_6_0, arg_6_1)
+		arg_4_0:addSubLayers(Context.New({
+			viewComponent = CustomIndexLayer,
+			mediator = CustomIndexMediator,
+			data = arg_6_1
+		}))
 
 		return
 	end)
-	arg_4_0:bind(var_0_1.ON_COMPOSITE, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_4_0
-		local var_7_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_7_2 = var_2_10005.New
-		local var_7_3 = {}
-
-		SpWeaponUpgradeMediator = var_2_10008
-		var_7_3.mediator = var_2_10008
-		SpWeaponUpgradeLayer = var_2_10008
-		var_7_3.viewComponent = var_2_10008
-		var_7_3.data = {
-			spWeaponConfigId = arg_7_1,
-			shipId = arg_4_0.contextData.shipId
-		}
-
-		var_7_1(var_7_0, var_7_2(var_7_3))
+	arg_4_0:bind(var_0_0.ON_COMPOSITE, function(arg_7_0, arg_7_1)
+		arg_4_0:addSubLayers(Context.New({
+			mediator = SpWeaponUpgradeMediator,
+			viewComponent = SpWeaponUpgradeLayer,
+			data = {
+				spWeaponConfigId = arg_7_1,
+				shipId = arg_4_0.contextData.shipId
+			}
+		}))
 
 		return
 	end)
@@ -187,68 +83,33 @@ function var_0_1.BindEvent(arg_4_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_8_0)
-	local var_8_0 = {}
-
-	PlayerProxy = var_1_10002
-	var_8_0[1] = var_1_10002.UPDATED
-	BayProxy = var_2
-	var_8_0[2] = var_2.SHIP_UPDATED
-	GAME = var_2
-	var_8_0[3] = var_2.EQUIP_SPWEAPON_TO_SHIP_DONE
-	EquipmentProxy = var_2
-	var_8_0[4] = var_2.SPWEAPONS_UPDATED
-
-	return var_8_0
+function var_0_0.listNotificationInterests(arg_8_0)
+	return {
+		PlayerProxy.UPDATED,
+		BayProxy.SHIP_UPDATED,
+		GAME.EQUIP_SPWEAPON_TO_SHIP_DONE,
+		EquipmentProxy.SPWEAPONS_UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1
-	local var_9_1 = arg_9_1.getName(var_9_0)
-	local var_9_2 = arg_9_1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-	BayProxy = var_9_0
-
-	if var_9_1 == var_9_0.SHIP_UPDATED then
-		if var_9_2.id == arg_9_0.contextData.shipId then
-			local var_9_3 = arg_9_0.viewComponent
-
-			var_4.setShip(var_9_3, var_9_2)
+	if var_9_0 == BayProxy.SHIP_UPDATED then
+		if var_9_1.id == arg_9_0.contextData.shipId then
+			arg_9_0.viewComponent:setShip(var_9_1)
 		end
-	else
-		PlayerProxy = var_4
-
-		if var_9_1 == var_4.UPDATED then
-			local var_9_4 = arg_9_0.viewComponent
-
-			var_4.setPlayer(var_9_4, var_9_2)
-		else
-			GAME = var_4
-
-			local var_9_6
-
-			if var_9_1 == var_4.EQUIP_SPWEAPON_TO_SHIP_DONE then
-				local var_9_5 = arg_9_0.viewComponent
-
-				var_9_6 = var_9_6.emit
-				BaseUI = var_1_10007
-
-				var_9_6(var_9_5, var_1_10007.ON_BACK)
-			else
-				EquipmentProxy = var_9_6
-
-				if var_9_1 == var_9_6.SPWEAPONS_UPDATED then
-					arg_9_0:UpdateSpWeapons()
-
-					local var_9_7 = arg_9_0.viewComponent
-
-					var_4.setEquipmentUpdate(var_9_7)
-				end
-			end
-		end
+	elseif var_9_0 == PlayerProxy.UPDATED then
+		arg_9_0.viewComponent:setPlayer(var_9_1)
+	elseif var_9_0 == GAME.EQUIP_SPWEAPON_TO_SHIP_DONE then
+		arg_9_0.viewComponent:emit(BaseUI.ON_BACK)
+	elseif var_9_0 == EquipmentProxy.SPWEAPONS_UPDATED then
+		arg_9_0:UpdateSpWeapons()
+		arg_9_0.viewComponent:setEquipmentUpdate()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,40 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateGetChooseCommand", pm.SimpleCommand)
 
-local var_0_0 = "NewEducateGetChooseCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.callback
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 29126, {
-		id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(29126, {
+		id = var_1_0.id
 	}, 29127, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			NewEducateProxy = var_2_10003
-
-			local var_2_0 = var_1(var_2_10003)
-			local var_2_1 = var_1.GetCurChar(var_2_0)
-
-			var_1.InitFSM(var_2_1, arg_2_0.fsm)
-
-			existCall = var_1
-
-			var_1(var_1_1)
+			getProxy(NewEducateProxy):GetCurChar():InitFSM(arg_2_0.fsm)
+			existCall(var_1_1)
 		else
-			pg = var_1
-
-			local var_2_2 = var_1.TipsMgr.GetInstance()
-
-			var_1.ShowTips(var_2_2, "NewEducate_GetChoose: " .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("NewEducate_GetChoose: " .. arg_2_0.result)
 		end
 
 		return
@@ -43,4 +20,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

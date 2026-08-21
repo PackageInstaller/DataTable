@@ -1,101 +1,47 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Settings3DPage", import("...base.BaseSubView"))
 
-local var_0_0 = "Settings3DPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SettingsCombinationPage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0:OnBindEvent()
 
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.panelContainer = var_1.Find(var_2_0, "content")
-
-	local var_2_1 = arg_2_0:GetPanels()
-
+	arg_2_0.panelContainer = arg_2_0._tf:Find("content")
 	arg_2_0.panels = {}
-	ipairs = var_2
 
-	for iter_2_0, iter_2_1 in var_2(var_2_1) do
-		table = var_1_10007
-
-		var_1_10007.insert(arg_2_0.panels, iter_2_1.New(arg_2_0.panelContainer))
+	for iter_2_0, iter_2_1 in ipairs((arg_2_0:GetPanels())) do
+		table.insert(arg_2_0.panels, iter_2_1.New(arg_2_0.panelContainer))
 	end
 
-	local var_2_2 = arg_2_0.panelContainer
-	local var_2_3 = var_2.GetComponent
-
-	typeof = iter_2_0
-	ContentSizeFitter = var_1_10007
-	arg_2_0.contentSizeFitter = var_2_3(var_2_2, iter_2_0(var_1_10007))
-
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_2.GetComponent
-
-	typeof = var_5
-	CanvasGroup = var_1_10007
-	arg_2_0.cg = var_2_5(var_2_4, var_5(var_1_10007))
-
-	local var_2_6 = arg_2_0.panelContainer
-	local var_2_7 = var_2.GetComponent
-
-	typeof = var_5
-	ScrollRect = var_1_10007
-	arg_2_0.scrollrect = var_2_7(var_2_6, var_5(var_1_10007))
+	arg_2_0.contentSizeFitter = arg_2_0.panelContainer:GetComponent(typeof(ContentSizeFitter))
+	arg_2_0.cg = arg_2_0._tf:GetComponent(typeof(CanvasGroup))
+	arg_2_0.scrollrect = arg_2_0.panelContainer:GetComponent(typeof(ScrollRect))
 
 	arg_2_0:InitPanels()
-
-	setActive = var_2
-
-	var_2(arg_2_0._tf, true)
+	setActive(arg_2_0._tf, true)
 
 	return
 end
 
-function var_0_1.OnBindEvent(arg_3_0)
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.bind
+function var_0_0.OnBindEvent(arg_3_0)
+	arg_3_0:bind(SettingsOtherGraphicsPanle.EVT_UPDTAE, function()
+		local var_4_0 = arg_3_0:GetPanel(SettingsOtherGraphicsPanle)
 
-	SettingsOtherGraphicsPanle = var_1_10004
-
-	var_3_1(var_3_0, var_1_10004.EVT_UPDTAE, function()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.GetPanel
-
-		SettingsOtherGraphicsPanle = var_2_10003
-
-		if var_4_1(var_4_0, var_2_10003) then
-			var_0:RefreshPanelByGraphcLevel()
-
-			local var_4_2 = arg_3_0
-
-			var_1.RebuildLayout(var_4_2, function()
+		if var_4_0 then
+			var_4_0:RefreshPanelByGraphcLevel()
+			arg_3_0:RebuildLayout(function()
 				return
 			end)
 		end
 
 		return
 	end)
+	arg_3_0:bind(SettingsGraphicsPanle.EVT_UPDTAE, function()
+		local var_6_0 = arg_3_0:GetPanel(SettingsGraphicsPanle)
 
-	local var_3_2 = arg_3_0
-	local var_3_3 = arg_3_0.bind
-
-	SettingsGraphicsPanle = var_4
-
-	var_3_3(var_3_2, var_4.EVT_UPDTAE, function()
-		local var_6_0 = arg_3_0
-		local var_6_1 = var_0.GetPanel
-
-		SettingsGraphicsPanle = var_2_10003
-
-		if var_6_1(var_6_0, var_2_10003) then
-			var_0:OnUpdate()
+		if var_6_0 then
+			var_6_0:OnUpdate()
 		end
 
 		return
@@ -104,93 +50,51 @@ function var_0_1.OnBindEvent(arg_3_0)
 	return
 end
 
-function var_0_1.GetPanels(arg_7_0)
-	local var_7_0 = {}
-
-	SettingsGraphicsPanle = var_1_10002
-	var_7_0[1] = var_1_10002
-	SettingsOtherGraphicsPanle = var_1_10002
-	var_7_0[2] = var_1_10002
-
+function var_0_0.GetPanels(arg_7_0)
 	if arg_7_0:NeedAdjustScreen() then
-		table = var_2
-
-		local var_7_1 = var_2.insert
-		local var_7_2 = var_7_0
-		local var_7_3 = 1
-
-		SettingsAdjustScreenPanle = var_1_10006
-
-		var_7_1(var_7_2, var_7_3, var_1_10006)
+		table.insert({
+			SettingsGraphicsPanle,
+			SettingsOtherGraphicsPanle
+		}, 1, SettingsAdjustScreenPanle)
 	end
 
-	return var_7_0
+	return {
+		SettingsGraphicsPanle,
+		SettingsOtherGraphicsPanle
+	}
 end
 
-function var_0_1.NeedAdjustScreen(arg_8_0)
-	Screen = var_1_10001
-
-	local var_8_0 = var_1_10001.width
-
-	Screen = var_1_10002
-
-	local var_8_1 = var_8_0 / var_1_10002.height - 0.001
-
-	ADAPT_NOTICE = var_2
-
-	return var_2 < var_8_1
+function var_0_0.NeedAdjustScreen(arg_8_0)
+	return Screen.width / Screen.height - 0.001 > ADAPT_NOTICE
 end
 
-function var_0_1.GetPanel(arg_9_0, arg_9_1)
+function var_0_0.GetPanel(arg_9_0, arg_9_1)
 	if not arg_9_0.panels then
 		return nil
 	end
 
-	_ = var_2
-
-	return var_2.detect(arg_9_0.panels, function(arg_10_0)
-		isa = var_2_10001
-
-		return var_2_10001(arg_10_0, arg_9_1)
+	return _.detect(arg_9_0.panels, function(arg_10_0)
+		return isa(arg_10_0, arg_9_1)
 	end)
 end
 
-function var_0_1.InitPanels(arg_11_0)
-	local var_11_0 = {}
+function var_0_0.InitPanels(arg_11_0)
+	local var_11_0 = GetOrAddComponent(arg_11_0.contentSizeFitter, typeof(CanvasGroup))
 
-	GetOrAddComponent = var_1_10002
+	arg_11_0.scrollrect.enabled = false
 
-	local var_11_1 = arg_11_0.contentSizeFitter
-
-	typeof = var_1_10005
-	CanvasGroup = var_1_10007
-
-	local var_11_2 = var_1_10002(var_11_1, var_1_10005(var_1_10007))
-	local var_11_3 = arg_11_0.scrollrect
-
-	var_11_3.enabled = false
-	ipairs = var_11_3
-
-	for iter_11_0, iter_11_1 in var_11_3(arg_11_0.panels) do
-		table = var_1_10008
-
-		var_1_10008.insert(var_11_0, function(arg_12_0)
-			local var_12_0 = iter_11_1
-
-			var_1.Init(var_12_0, arg_12_0)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.panels) do
+		table.insert({}, function(arg_12_0)
+			iter_11_1:Init(arg_12_0)
 
 			return
 		end)
 	end
 
-	seriesAsync = var_3
-
-	var_3(var_11_0, function()
+	seriesAsync({}, function()
 		arg_11_0.scrollrect.enabled = true
 
-		local var_13_0 = arg_11_0
-
-		var_0.OnInitPanle(var_13_0)
+		arg_11_0:OnInitPanle()
 
 		return
 	end)
@@ -198,10 +102,8 @@ function var_0_1.InitPanels(arg_11_0)
 	return
 end
 
-function var_0_1.RebuildLayout(arg_14_0, arg_14_1)
-	onDelayTick = var_1_10002
-
-	var_1_10002(function()
+function var_0_0.RebuildLayout(arg_14_0, arg_14_1)
+	onDelayTick(function()
 		arg_14_0.contentSizeFitter.enabled = false
 		arg_14_0.contentSizeFitter.enabled = true
 
@@ -213,46 +115,29 @@ function var_0_1.RebuildLayout(arg_14_0, arg_14_1)
 	return
 end
 
-function var_0_1.OnInitPanle(arg_16_0)
+function var_0_0.OnInitPanle(arg_16_0)
 	if arg_16_0.contextData.scroll then
-		local var_16_0
+		local var_16_1 = arg_16_0.contextData.scroll == "world_settings" and arg_16_0:GetPanel(SettingsWorldPanle) or arg_16_0:GetPanel(arg_16_0.contextData.scroll)
+		local var_16_2 = arg_16_0:GetPanel(arg_16_0.contextData.scroll)
 
-		if arg_16_0.contextData.scroll == "world_settings" then
-			local var_16_1 = arg_16_0
-			local var_16_2 = arg_16_0.GetPanel
-
-			SettingsWorldPanle = var_1_10005
-
-			local var_16_3 = var_16_2(var_16_1, var_1_10005)
-		else
-			local var_16_4 = arg_16_0:GetPanel(arg_16_0.contextData.scroll)
-		end
-
-		if arg_16_0:GetPanel(arg_16_0.contextData.scroll) then
-			arg_16_0:ScrollToPanel(var_1)
+		if var_16_2 then
+			arg_16_0:ScrollToPanel(var_16_2)
 		end
 	end
 
 	return
 end
 
-function var_0_1.ScrollToPanel(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_0.panelContainer
-	local var_17_1 = var_2.InverseTransformPoint(var_17_0, arg_17_1._tf.position)
-
-	setAnchoredPosition = var_1_10003
-
-	var_1_10003(arg_17_0.panelContainer, {
-		y = -var_17_1.y
+function var_0_0.ScrollToPanel(arg_17_0, arg_17_1)
+	setAnchoredPosition(arg_17_0.panelContainer, {
+		y = -arg_17_0.panelContainer:InverseTransformPoint(arg_17_1._tf.position).y
 	})
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_18_0)
-	ipairs = var_1_10001
-
-	for iter_18_0, iter_18_1 in var_1_10001(arg_18_0.panels) do
+function var_0_0.OnDestroy(arg_18_0)
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.panels) do
 		iter_18_1:Dispose()
 	end
 
@@ -261,18 +146,18 @@ function var_0_1.OnDestroy(arg_18_0)
 	return
 end
 
-function var_0_1.Show(arg_19_0)
+function var_0_0.Show(arg_19_0)
 	arg_19_0.cg.blocksRaycasts = true
 	arg_19_0.cg.alpha = 1
 
 	return
 end
 
-function var_0_1.Hide(arg_20_0)
+function var_0_0.Hide(arg_20_0)
 	arg_20_0.cg.blocksRaycasts = false
 	arg_20_0.cg.alpha = 0
 
 	return
 end
 
-return var_0_1
+return var_0_0

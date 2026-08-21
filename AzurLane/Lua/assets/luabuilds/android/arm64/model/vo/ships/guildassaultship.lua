@@ -1,45 +1,23 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildAssaultShip", import(".CheckCustomNameShip"))
 
-local var_0_0 = "GuildAssaultShip"
+function var_0_0.IsOwner(arg_1_0)
+	local var_1_0 = getProxy(PlayerProxy)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".CheckCustomNameShip"))
-
-function var_0_1.IsOwner(arg_1_0)
-	tonumber = var_1_10001
-	GuildAssaultFleet = var_1_10003
-
-	local var_1_0 = var_1_10001(var_1_10003.GetUserId(arg_1_0.id))
-
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
-
-	local var_1_1 = var_1_10002(var_1_10004)
-
-	return var_1_0 == var_2.getRawData(var_1_1).id
+	return tonumber(GuildAssaultFleet.GetUserId(arg_1_0.id)) == var_1_0:getRawData().id
 end
 
-function var_0_1.GetUniqueId(arg_2_0)
-	GuildAssaultFleet = var_1_10001
-
-	return var_1_10001.GetRealId(arg_2_0.id)
+function var_0_0.GetUniqueId(arg_2_0)
+	return GuildAssaultFleet.GetRealId(arg_2_0.id)
 end
 
-function var_0_1.ConverteFromShip(arg_3_0)
-	setmetatable = var_1_10001
-
-	return var_1_10001({}, {
+function var_0_0.ConverteFromShip(arg_3_0)
+	return setmetatable({}, {
 		__index = function(arg_4_0, arg_4_1)
-			local var_4_0
-
-			if not var_0_1[arg_4_1] or not var_0_1[arg_4_1] then
-				var_4_0 = arg_3_0[arg_4_1]
+			if var_0_0[arg_4_1] then
+				return var_0_0[arg_4_1] or arg_3_0[arg_4_1]
 			end
-
-			return var_4_0
 		end
 	})
 end
 
-return var_0_1
+return var_0_0

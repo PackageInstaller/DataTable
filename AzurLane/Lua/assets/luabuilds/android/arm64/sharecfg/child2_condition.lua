@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_condition") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_condition"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_condition = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_condition
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_condition = rawget(pg, "child2_condition") or setmetatable({
+	__name = "child2_condition"
+}, confNEO)
+pg.child2_condition.all = {
 	1,
 	2,
 	3,
@@ -949,25 +926,11 @@ var_0_3.all = {
 	38214311,
 	38214511
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child2_condition = {}
+pg.base = pg.base or {}
+pg.base.child2_condition = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_condition
-
-	var_1_0[1] = {
+	pg.base.child2_condition[1] = {
 		id = 1,
 		type = 1,
 		param = {
@@ -977,11 +940,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_condition
-
-	var_1_1[2] = {
+	pg.base.child2_condition[2] = {
 		id = 2,
 		type = 1,
 		param = {
@@ -991,11 +950,7 @@ var_0_3.base.child2_condition = {}
 			800
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_condition
-
-	var_1_2[3] = {
+	pg.base.child2_condition[3] = {
 		id = 3,
 		type = 1,
 		param = {
@@ -1005,11 +960,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_condition
-
-	var_1_3[4] = {
+	pg.base.child2_condition[4] = {
 		id = 4,
 		type = 1,
 		param = {
@@ -1019,11 +970,7 @@ var_0_3.base.child2_condition = {}
 			800
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_condition
-
-	var_1_4[5] = {
+	pg.base.child2_condition[5] = {
 		id = 5,
 		type = 1,
 		param = {
@@ -1033,11 +980,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_condition
-
-	var_1_5[6] = {
+	pg.base.child2_condition[6] = {
 		id = 6,
 		type = 1,
 		param = {
@@ -1047,11 +990,7 @@ var_0_3.base.child2_condition = {}
 			800
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_condition
-
-	var_1_6[7] = {
+	pg.base.child2_condition[7] = {
 		id = 7,
 		type = 1,
 		param = {
@@ -1061,11 +1000,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_condition
-
-	var_1_7[8] = {
+	pg.base.child2_condition[8] = {
 		id = 8,
 		type = 1,
 		param = {
@@ -1075,11 +1010,7 @@ var_0_3.base.child2_condition = {}
 			800
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_condition
-
-	var_1_8[9] = {
+	pg.base.child2_condition[9] = {
 		id = 9,
 		type = 1,
 		param = {
@@ -1089,11 +1020,7 @@ var_0_3.base.child2_condition = {}
 			1000
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_condition
-
-	var_1_9[10] = {
+	pg.base.child2_condition[10] = {
 		id = 10,
 		type = 1,
 		param = {
@@ -1103,11 +1030,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_condition
-
-	var_1_10[11] = {
+	pg.base.child2_condition[11] = {
 		id = 11,
 		type = 1,
 		param = {
@@ -1117,11 +1040,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_condition
-
-	var_1_11[12] = {
+	pg.base.child2_condition[12] = {
 		id = 12,
 		type = 2,
 		param = {
@@ -1129,11 +1048,7 @@ var_0_3.base.child2_condition = {}
 			100
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_condition
-
-	var_1_12[13] = {
+	pg.base.child2_condition[13] = {
 		id = 13,
 		type = 3,
 		param = {
@@ -1142,11 +1057,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_condition
-
-	var_1_13[14] = {
+	pg.base.child2_condition[14] = {
 		id = 14,
 		type = 4,
 		param = {
@@ -1154,11 +1065,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_condition
-
-	var_1_14[15] = {
+	pg.base.child2_condition[15] = {
 		id = 15,
 		type = 1,
 		param = {
@@ -1168,11 +1075,7 @@ var_0_3.base.child2_condition = {}
 			500
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_condition
-
-	var_1_15[16] = {
+	pg.base.child2_condition[16] = {
 		id = 16,
 		type = 1,
 		param = {
@@ -1182,11 +1085,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_condition
-
-	var_1_16[17] = {
+	pg.base.child2_condition[17] = {
 		id = 17,
 		type = 1,
 		param = {
@@ -1196,11 +1095,7 @@ var_0_3.base.child2_condition = {}
 			150
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_condition
-
-	var_1_17[18] = {
+	pg.base.child2_condition[18] = {
 		id = 18,
 		type = 1,
 		param = {
@@ -1210,11 +1105,7 @@ var_0_3.base.child2_condition = {}
 			150
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_condition
-
-	var_1_18[19] = {
+	pg.base.child2_condition[19] = {
 		id = 19,
 		type = 1,
 		param = {
@@ -1224,11 +1115,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_condition
-
-	var_1_19[20] = {
+	pg.base.child2_condition[20] = {
 		id = 20,
 		type = 5,
 		param = {
@@ -1239,11 +1126,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_condition
-
-	var_1_20[21] = {
+	pg.base.child2_condition[21] = {
 		id = 21,
 		type = 5,
 		param = {
@@ -1254,11 +1137,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_condition
-
-	var_1_21[22] = {
+	pg.base.child2_condition[22] = {
 		id = 22,
 		type = 4,
 		param = {
@@ -1266,11 +1145,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_condition
-
-	var_1_22[23] = {
+	pg.base.child2_condition[23] = {
 		id = 23,
 		type = 5,
 		param = {
@@ -1281,11 +1156,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_condition
-
-	var_1_23[24] = {
+	pg.base.child2_condition[24] = {
 		id = 24,
 		type = 5,
 		param = {
@@ -1296,11 +1167,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_condition
-
-	var_1_24[25] = {
+	pg.base.child2_condition[25] = {
 		id = 25,
 		type = 1,
 		param = {
@@ -1310,11 +1177,7 @@ var_0_3.base.child2_condition = {}
 			80
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_condition
-
-	var_1_25[26] = {
+	pg.base.child2_condition[26] = {
 		id = 26,
 		type = 2,
 		param = {
@@ -1322,11 +1185,7 @@ var_0_3.base.child2_condition = {}
 			0
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_condition
-
-	var_1_26[27] = {
+	pg.base.child2_condition[27] = {
 		id = 27,
 		type = 10,
 		param = {
@@ -1344,42 +1203,26 @@ var_0_3.base.child2_condition = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_condition
-
-	var_1_27[28] = {
+	pg.base.child2_condition[28] = {
 		id = 28,
 		type = 14,
 		param = {
 			1001
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_condition
-
-	var_1_28[29] = {
+	pg.base.child2_condition[29] = {
 		id = 29,
 		type = 12,
 		param = {
 			1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_condition
-
-	var_1_29[60] = {
+	pg.base.child2_condition[60] = {
 		id = 60,
 		type = 14,
 		param = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_condition
-
-	var_1_30[30] = {
+	pg.base.child2_condition[30] = {
 		id = 30,
 		type = 8,
 		param = {
@@ -1390,11 +1233,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_condition
-
-	var_1_31[31] = {
+	pg.base.child2_condition[31] = {
 		id = 31,
 		type = 8,
 		param = {
@@ -1405,11 +1244,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_condition
-
-	var_1_32[10000] = {
+	pg.base.child2_condition[10000] = {
 		id = 10000,
 		type = 1,
 		param = {
@@ -1419,11 +1254,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_condition
-
-	var_1_33[10001] = {
+	pg.base.child2_condition[10001] = {
 		id = 10001,
 		type = 1,
 		param = {
@@ -1433,22 +1264,14 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_condition
-
-	var_1_34[10002] = {
+	pg.base.child2_condition[10002] = {
 		id = 10002,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_condition
-
-	var_1_35[10003] = {
+	pg.base.child2_condition[10003] = {
 		id = 10003,
 		type = 1,
 		param = {
@@ -1458,11 +1281,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_condition
-
-	var_1_36[10004] = {
+	pg.base.child2_condition[10004] = {
 		id = 10004,
 		type = 1,
 		param = {
@@ -1472,11 +1291,7 @@ var_0_3.base.child2_condition = {}
 			100
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_condition
-
-	var_1_37[10005] = {
+	pg.base.child2_condition[10005] = {
 		id = 10005,
 		type = 1,
 		param = {
@@ -1486,11 +1301,7 @@ var_0_3.base.child2_condition = {}
 			50
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_condition
-
-	var_1_38[10006] = {
+	pg.base.child2_condition[10006] = {
 		id = 10006,
 		type = 1,
 		param = {
@@ -1500,11 +1311,7 @@ var_0_3.base.child2_condition = {}
 			20
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_condition
-
-	var_1_39[10007] = {
+	pg.base.child2_condition[10007] = {
 		id = 10007,
 		type = 1,
 		param = {
@@ -1514,11 +1321,7 @@ var_0_3.base.child2_condition = {}
 			3
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_condition
-
-	var_1_40[10008] = {
+	pg.base.child2_condition[10008] = {
 		id = 10008,
 		type = 1,
 		param = {
@@ -1528,11 +1331,7 @@ var_0_3.base.child2_condition = {}
 			100
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_condition
-
-	var_1_41[10009] = {
+	pg.base.child2_condition[10009] = {
 		id = 10009,
 		type = 4,
 		param = {
@@ -1540,11 +1339,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_condition
-
-	var_1_42[10010] = {
+	pg.base.child2_condition[10010] = {
 		id = 10010,
 		type = 7,
 		param = {
@@ -1554,11 +1349,7 @@ var_0_3.base.child2_condition = {}
 			100
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_condition
-
-	var_1_43[10011] = {
+	pg.base.child2_condition[10011] = {
 		id = 10011,
 		type = 8,
 		param = {
@@ -1569,33 +1360,21 @@ var_0_3.base.child2_condition = {}
 			3
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_condition
-
-	var_1_44[10012] = {
+	pg.base.child2_condition[10012] = {
 		id = 10012,
 		type = 9,
 		param = {
 			3
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_condition
-
-	var_1_45[565] = {
+	pg.base.child2_condition[565] = {
 		id = 565,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_condition
-
-	var_1_46[566] = {
+	pg.base.child2_condition[566] = {
 		id = 566,
 		type = 8,
 		param = {
@@ -1612,11 +1391,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_condition
-
-	var_1_47[567] = {
+	pg.base.child2_condition[567] = {
 		id = 567,
 		type = 7,
 		param = {
@@ -1626,11 +1401,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_condition
-
-	var_1_48[568] = {
+	pg.base.child2_condition[568] = {
 		id = 568,
 		type = 7,
 		param = {
@@ -1640,66 +1411,42 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_condition
-
-	var_1_49[569] = {
+	pg.base.child2_condition[569] = {
 		id = 569,
 		type = 12,
 		param = {
 			1
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_condition
-
-	var_1_50[570] = {
+	pg.base.child2_condition[570] = {
 		id = 570,
 		type = 12,
 		param = {
 			2
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_condition
-
-	var_1_51[571] = {
+	pg.base.child2_condition[571] = {
 		id = 571,
 		type = 12,
 		param = {
 			3
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_condition
-
-	var_1_52[572] = {
+	pg.base.child2_condition[572] = {
 		id = 572,
 		type = 12,
 		param = {
 			4
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_condition
-
-	var_1_53[573] = {
+	pg.base.child2_condition[573] = {
 		id = 573,
 		type = 12,
 		param = {
 			5
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_condition
-
-	var_1_54[574] = {
+	pg.base.child2_condition[574] = {
 		id = 574,
 		type = 15,
 		param = {
@@ -1713,11 +1460,7 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_condition
-
-	var_1_55[575] = {
+	pg.base.child2_condition[575] = {
 		id = 575,
 		type = 15,
 		param = {
@@ -1731,22 +1474,14 @@ var_0_3.base.child2_condition = {}
 			1
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_condition
-
-	var_1_56[576] = {
+	pg.base.child2_condition[576] = {
 		id = 576,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_condition
-
-	var_1_57[2001] = {
+	pg.base.child2_condition[2001] = {
 		id = 2001,
 		type = 1,
 		param = {
@@ -1756,11 +1491,7 @@ var_0_3.base.child2_condition = {}
 			360
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_condition
-
-	var_1_58[2002] = {
+	pg.base.child2_condition[2002] = {
 		id = 2002,
 		type = 1,
 		param = {
@@ -1770,11 +1501,7 @@ var_0_3.base.child2_condition = {}
 			120
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_condition
-
-	var_1_59[2003] = {
+	pg.base.child2_condition[2003] = {
 		id = 2003,
 		type = 1,
 		param = {
@@ -1784,11 +1511,7 @@ var_0_3.base.child2_condition = {}
 			360
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_condition
-
-	var_1_60[2004] = {
+	pg.base.child2_condition[2004] = {
 		id = 2004,
 		type = 1,
 		param = {
@@ -1798,11 +1521,7 @@ var_0_3.base.child2_condition = {}
 			120
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_condition
-
-	var_1_61[2005] = {
+	pg.base.child2_condition[2005] = {
 		id = 2005,
 		type = 1,
 		param = {
@@ -1812,11 +1531,7 @@ var_0_3.base.child2_condition = {}
 			360
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_condition
-
-	var_1_62[2006] = {
+	pg.base.child2_condition[2006] = {
 		id = 2006,
 		type = 1,
 		param = {
@@ -1826,11 +1541,7 @@ var_0_3.base.child2_condition = {}
 			120
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_condition
-
-	var_1_63[2007] = {
+	pg.base.child2_condition[2007] = {
 		id = 2007,
 		type = 1,
 		param = {
@@ -1840,11 +1551,7 @@ var_0_3.base.child2_condition = {}
 			360
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_condition
-
-	var_1_64[2008] = {
+	pg.base.child2_condition[2008] = {
 		id = 2008,
 		type = 1,
 		param = {
@@ -1854,11 +1561,7 @@ var_0_3.base.child2_condition = {}
 			120
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_condition
-
-	var_1_65[2009] = {
+	pg.base.child2_condition[2009] = {
 		id = 2009,
 		type = 1,
 		param = {
@@ -1868,11 +1571,7 @@ var_0_3.base.child2_condition = {}
 			720
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_condition
-
-	var_1_66[2010] = {
+	pg.base.child2_condition[2010] = {
 		id = 2010,
 		type = 1,
 		param = {
@@ -1882,11 +1581,7 @@ var_0_3.base.child2_condition = {}
 			240
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_condition
-
-	var_1_67[2011] = {
+	pg.base.child2_condition[2011] = {
 		id = 2011,
 		type = 1,
 		param = {
@@ -1896,11 +1591,7 @@ var_0_3.base.child2_condition = {}
 			720
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_condition
-
-	var_1_68[2012] = {
+	pg.base.child2_condition[2012] = {
 		id = 2012,
 		type = 1,
 		param = {
@@ -1910,11 +1601,7 @@ var_0_3.base.child2_condition = {}
 			240
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child2_condition
-
-	var_1_69[2013] = {
+	pg.base.child2_condition[2013] = {
 		id = 2013,
 		type = 1,
 		param = {
@@ -1924,11 +1611,7 @@ var_0_3.base.child2_condition = {}
 			720
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child2_condition
-
-	var_1_70[2014] = {
+	pg.base.child2_condition[2014] = {
 		id = 2014,
 		type = 1,
 		param = {
@@ -1938,11 +1621,7 @@ var_0_3.base.child2_condition = {}
 			240
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child2_condition
-
-	var_1_71[2015] = {
+	pg.base.child2_condition[2015] = {
 		id = 2015,
 		type = 1,
 		param = {
@@ -1952,11 +1631,7 @@ var_0_3.base.child2_condition = {}
 			720
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child2_condition
-
-	var_1_72[2016] = {
+	pg.base.child2_condition[2016] = {
 		id = 2016,
 		type = 1,
 		param = {
@@ -1966,11 +1641,7 @@ var_0_3.base.child2_condition = {}
 			240
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child2_condition
-
-	var_1_73[3001] = {
+	pg.base.child2_condition[3001] = {
 		id = 3001,
 		type = 2,
 		param = {
@@ -1978,11 +1649,7 @@ var_0_3.base.child2_condition = {}
 			500
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child2_condition
-
-	var_1_74[3002] = {
+	pg.base.child2_condition[3002] = {
 		id = 3002,
 		type = 4,
 		param = {
@@ -1990,11 +1657,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child2_condition
-
-	var_1_75[3003] = {
+	pg.base.child2_condition[3003] = {
 		id = 3003,
 		type = 5,
 		param = {
@@ -2005,11 +1668,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child2_condition
-
-	var_1_76[3004] = {
+	pg.base.child2_condition[3004] = {
 		id = 3004,
 		type = 2,
 		param = {
@@ -2017,11 +1676,7 @@ var_0_3.base.child2_condition = {}
 			1500
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child2_condition
-
-	var_1_77[3005] = {
+	pg.base.child2_condition[3005] = {
 		id = 3005,
 		type = 4,
 		param = {
@@ -2029,11 +1684,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child2_condition
-
-	var_1_78[3006] = {
+	pg.base.child2_condition[3006] = {
 		id = 3006,
 		type = 5,
 		param = {
@@ -2044,11 +1695,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child2_condition
-
-	var_1_79[3007] = {
+	pg.base.child2_condition[3007] = {
 		id = 3007,
 		type = 2,
 		param = {
@@ -2056,11 +1703,7 @@ var_0_3.base.child2_condition = {}
 			500
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child2_condition
-
-	var_1_80[3008] = {
+	pg.base.child2_condition[3008] = {
 		id = 3008,
 		type = 4,
 		param = {
@@ -2068,11 +1711,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child2_condition
-
-	var_1_81[3009] = {
+	pg.base.child2_condition[3009] = {
 		id = 3009,
 		type = 5,
 		param = {
@@ -2083,11 +1722,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child2_condition
-
-	var_1_82[3010] = {
+	pg.base.child2_condition[3010] = {
 		id = 3010,
 		type = 2,
 		param = {
@@ -2095,11 +1730,7 @@ var_0_3.base.child2_condition = {}
 			1500
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child2_condition
-
-	var_1_83[3011] = {
+	pg.base.child2_condition[3011] = {
 		id = 3011,
 		type = 4,
 		param = {
@@ -2107,11 +1738,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child2_condition
-
-	var_1_84[3012] = {
+	pg.base.child2_condition[3012] = {
 		id = 3012,
 		type = 5,
 		param = {
@@ -2122,11 +1749,7 @@ var_0_3.base.child2_condition = {}
 			5
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child2_condition
-
-	var_1_85[4001] = {
+	pg.base.child2_condition[4001] = {
 		id = 4001,
 		type = 4,
 		param = {
@@ -2134,11 +1757,7 @@ var_0_3.base.child2_condition = {}
 			10
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child2_condition
-
-	var_1_86[4002] = {
+	pg.base.child2_condition[4002] = {
 		id = 4002,
 		type = 4,
 		param = {
@@ -2146,11 +1765,7 @@ var_0_3.base.child2_condition = {}
 			15
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child2_condition
-
-	var_1_87[20000] = {
+	pg.base.child2_condition[20000] = {
 		id = 20000,
 		type = 1,
 		param = {
@@ -2160,11 +1775,7 @@ var_0_3.base.child2_condition = {}
 			60
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child2_condition
-
-	var_1_88[20001] = {
+	pg.base.child2_condition[20001] = {
 		id = 20001,
 		type = 1,
 		param = {
@@ -2174,11 +1785,7 @@ var_0_3.base.child2_condition = {}
 			60
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child2_condition
-
-	var_1_89[20002] = {
+	pg.base.child2_condition[20002] = {
 		id = 20002,
 		type = 1,
 		param = {
@@ -2188,11 +1795,7 @@ var_0_3.base.child2_condition = {}
 			40
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child2_condition
-
-	var_1_90[20003] = {
+	pg.base.child2_condition[20003] = {
 		id = 20003,
 		type = 1,
 		param = {
@@ -2202,11 +1805,7 @@ var_0_3.base.child2_condition = {}
 			40
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child2_condition
-
-	var_1_91[20004] = {
+	pg.base.child2_condition[20004] = {
 		id = 20004,
 		type = 1,
 		param = {
@@ -2216,11 +1815,7 @@ var_0_3.base.child2_condition = {}
 			20
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child2_condition
-
-	var_1_92[20005] = {
+	pg.base.child2_condition[20005] = {
 		id = 20005,
 		type = 1,
 		param = {
@@ -2230,11 +1825,7 @@ var_0_3.base.child2_condition = {}
 			20
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child2_condition
-
-	var_1_93[20010] = {
+	pg.base.child2_condition[20010] = {
 		id = 20010,
 		type = 1,
 		param = {
@@ -2244,11 +1835,7 @@ var_0_3.base.child2_condition = {}
 			300
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child2_condition
-
-	var_1_94[20011] = {
+	pg.base.child2_condition[20011] = {
 		id = 20011,
 		type = 1,
 		param = {
@@ -2258,11 +1845,7 @@ var_0_3.base.child2_condition = {}
 			1000
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child2_condition
-
-	var_1_95[20020] = {
+	pg.base.child2_condition[20020] = {
 		id = 20020,
 		type = 1,
 		param = {
@@ -2272,11 +1855,7 @@ var_0_3.base.child2_condition = {}
 			300
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child2_condition
-
-	var_1_96[20021] = {
+	pg.base.child2_condition[20021] = {
 		id = 20021,
 		type = 1,
 		param = {
@@ -2286,11 +1865,7 @@ var_0_3.base.child2_condition = {}
 			1000
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child2_condition
-
-	var_1_97[20030] = {
+	pg.base.child2_condition[20030] = {
 		id = 20030,
 		type = 1,
 		param = {
@@ -2300,11 +1875,7 @@ var_0_3.base.child2_condition = {}
 			300
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child2_condition
-
-	var_1_98[20031] = {
+	pg.base.child2_condition[20031] = {
 		id = 20031,
 		type = 1,
 		param = {
@@ -2314,8 +1885,7 @@ var_0_3.base.child2_condition = {}
 			1000
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child2_condition[20040] = {
+	pg.base.child2_condition[20040] = {
 		id = 20040,
 		type = 1,
 		param = {
@@ -2329,11 +1899,7 @@ var_0_3.base.child2_condition = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child2_condition
-
-	var_2_0[20041] = {
+	pg.base.child2_condition[20041] = {
 		id = 20041,
 		type = 1,
 		param = {
@@ -2343,11 +1909,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child2_condition
-
-	var_2_1[20050] = {
+	pg.base.child2_condition[20050] = {
 		id = 20050,
 		type = 2,
 		param = {
@@ -2355,11 +1917,7 @@ end)()
 			600
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child2_condition
-
-	var_2_2[20051] = {
+	pg.base.child2_condition[20051] = {
 		id = 20051,
 		type = 2,
 		param = {
@@ -2367,11 +1925,7 @@ end)()
 			1800
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child2_condition
-
-	var_2_3[20060] = {
+	pg.base.child2_condition[20060] = {
 		id = 20060,
 		type = 1,
 		param = {
@@ -2381,11 +1935,7 @@ end)()
 			60
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child2_condition
-
-	var_2_4[20061] = {
+	pg.base.child2_condition[20061] = {
 		id = 20061,
 		type = 1,
 		param = {
@@ -2395,11 +1945,7 @@ end)()
 			60
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child2_condition
-
-	var_2_5[20062] = {
+	pg.base.child2_condition[20062] = {
 		id = 20062,
 		type = 1,
 		param = {
@@ -2409,11 +1955,7 @@ end)()
 			40
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child2_condition
-
-	var_2_6[20063] = {
+	pg.base.child2_condition[20063] = {
 		id = 20063,
 		type = 1,
 		param = {
@@ -2423,11 +1965,7 @@ end)()
 			40
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child2_condition
-
-	var_2_7[20064] = {
+	pg.base.child2_condition[20064] = {
 		id = 20064,
 		type = 1,
 		param = {
@@ -2437,11 +1975,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child2_condition
-
-	var_2_8[20065] = {
+	pg.base.child2_condition[20065] = {
 		id = 20065,
 		type = 1,
 		param = {
@@ -2451,11 +1985,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child2_condition
-
-	var_2_9[1001] = {
+	pg.base.child2_condition[1001] = {
 		id = 1001,
 		type = 1,
 		param = {
@@ -2465,11 +1995,7 @@ end)()
 			70
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child2_condition
-
-	var_2_10[1002] = {
+	pg.base.child2_condition[1002] = {
 		id = 1002,
 		type = 1,
 		param = {
@@ -2479,11 +2005,7 @@ end)()
 			150
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child2_condition
-
-	var_2_11[1003] = {
+	pg.base.child2_condition[1003] = {
 		id = 1003,
 		type = 1,
 		param = {
@@ -2493,11 +2015,7 @@ end)()
 			600
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child2_condition
-
-	var_2_12[1004] = {
+	pg.base.child2_condition[1004] = {
 		id = 1004,
 		type = 1,
 		param = {
@@ -2507,11 +2025,7 @@ end)()
 			300
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child2_condition
-
-	var_2_13[1011] = {
+	pg.base.child2_condition[1011] = {
 		id = 1011,
 		type = 1,
 		param = {
@@ -2521,11 +2035,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child2_condition
-
-	var_2_14[1012] = {
+	pg.base.child2_condition[1012] = {
 		id = 1012,
 		type = 1,
 		param = {
@@ -2535,11 +2045,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child2_condition
-
-	var_2_15[1013] = {
+	pg.base.child2_condition[1013] = {
 		id = 1013,
 		type = 1,
 		param = {
@@ -2549,11 +2055,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child2_condition
-
-	var_2_16[1014] = {
+	pg.base.child2_condition[1014] = {
 		id = 1014,
 		type = 1,
 		param = {
@@ -2563,11 +2065,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child2_condition
-
-	var_2_17[1015] = {
+	pg.base.child2_condition[1015] = {
 		id = 1015,
 		type = 1,
 		param = {
@@ -2577,11 +2075,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child2_condition
-
-	var_2_18[1016] = {
+	pg.base.child2_condition[1016] = {
 		id = 1016,
 		type = 1,
 		param = {
@@ -2591,11 +2085,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child2_condition
-
-	var_2_19[1017] = {
+	pg.base.child2_condition[1017] = {
 		id = 1017,
 		type = 1,
 		param = {
@@ -2605,11 +2095,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child2_condition
-
-	var_2_20[1018] = {
+	pg.base.child2_condition[1018] = {
 		id = 1018,
 		type = 1,
 		param = {
@@ -2619,11 +2105,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child2_condition
-
-	var_2_21[1019] = {
+	pg.base.child2_condition[1019] = {
 		id = 1019,
 		type = 1,
 		param = {
@@ -2633,11 +2115,7 @@ end)()
 			500
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child2_condition
-
-	var_2_22[1020] = {
+	pg.base.child2_condition[1020] = {
 		id = 1020,
 		type = 1,
 		param = {
@@ -2647,11 +2125,7 @@ end)()
 			500
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child2_condition
-
-	var_2_23[1021] = {
+	pg.base.child2_condition[1021] = {
 		id = 1021,
 		type = 1,
 		param = {
@@ -2661,11 +2135,7 @@ end)()
 			500
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child2_condition
-
-	var_2_24[1022] = {
+	pg.base.child2_condition[1022] = {
 		id = 1022,
 		type = 1,
 		param = {
@@ -2675,11 +2145,7 @@ end)()
 			500
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child2_condition
-
-	var_2_25[1023] = {
+	pg.base.child2_condition[1023] = {
 		id = 1023,
 		type = 1,
 		param = {
@@ -2689,11 +2155,7 @@ end)()
 			900
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child2_condition
-
-	var_2_26[1024] = {
+	pg.base.child2_condition[1024] = {
 		id = 1024,
 		type = 1,
 		param = {
@@ -2703,11 +2165,7 @@ end)()
 			900
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child2_condition
-
-	var_2_27[1025] = {
+	pg.base.child2_condition[1025] = {
 		id = 1025,
 		type = 1,
 		param = {
@@ -2717,11 +2175,7 @@ end)()
 			900
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child2_condition
-
-	var_2_28[1026] = {
+	pg.base.child2_condition[1026] = {
 		id = 1026,
 		type = 1,
 		param = {
@@ -2731,11 +2185,7 @@ end)()
 			900
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child2_condition
-
-	var_2_29[1027] = {
+	pg.base.child2_condition[1027] = {
 		id = 1027,
 		type = 1,
 		param = {
@@ -2745,33 +2195,21 @@ end)()
 			1
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child2_condition
-
-	var_2_30[1028] = {
+	pg.base.child2_condition[1028] = {
 		id = 1028,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child2_condition
-
-	var_2_31[1029] = {
+	pg.base.child2_condition[1029] = {
 		id = 1029,
 		type = 6,
 		param = {
 			4000
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child2_condition
-
-	var_2_32[1030] = {
+	pg.base.child2_condition[1030] = {
 		id = 1030,
 		type = 12,
 		param = {
@@ -2780,11 +2218,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child2_condition
-
-	var_2_33[1031] = {
+	pg.base.child2_condition[1031] = {
 		id = 1031,
 		type = 12,
 		param = {
@@ -2792,22 +2226,14 @@ end)()
 			4
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child2_condition
-
-	var_2_34[1032] = {
+	pg.base.child2_condition[1032] = {
 		id = 1032,
 		type = 12,
 		param = {
 			1
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child2_condition
-
-	var_2_35[1033] = {
+	pg.base.child2_condition[1033] = {
 		id = 1033,
 		type = 8,
 		param = {
@@ -2824,11 +2250,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child2_condition
-
-	var_2_36[1034] = {
+	pg.base.child2_condition[1034] = {
 		id = 1034,
 		type = 8,
 		param = {
@@ -2845,11 +2267,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child2_condition
-
-	var_2_37[1035] = {
+	pg.base.child2_condition[1035] = {
 		id = 1035,
 		type = 8,
 		param = {
@@ -2866,11 +2284,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child2_condition
-
-	var_2_38[1036] = {
+	pg.base.child2_condition[1036] = {
 		id = 1036,
 		type = 8,
 		param = {
@@ -2887,11 +2301,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child2_condition
-
-	var_2_39[1037] = {
+	pg.base.child2_condition[1037] = {
 		id = 1037,
 		type = 8,
 		param = {
@@ -2921,11 +2331,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.child2_condition
-
-	var_2_40[1038] = {
+	pg.base.child2_condition[1038] = {
 		id = 1038,
 		type = 8,
 		param = {
@@ -2942,11 +2348,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.child2_condition
-
-	var_2_41[1039] = {
+	pg.base.child2_condition[1039] = {
 		id = 1039,
 		type = 8,
 		param = {
@@ -2963,11 +2365,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.child2_condition
-
-	var_2_42[1040] = {
+	pg.base.child2_condition[1040] = {
 		id = 1040,
 		type = 8,
 		param = {
@@ -2984,11 +2382,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.child2_condition
-
-	var_2_43[1041] = {
+	pg.base.child2_condition[1041] = {
 		id = 1041,
 		type = 8,
 		param = {
@@ -3005,11 +2399,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.child2_condition
-
-	var_2_44[1042] = {
+	pg.base.child2_condition[1042] = {
 		id = 1042,
 		type = 8,
 		param = {
@@ -3026,11 +2416,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.child2_condition
-
-	var_2_45[1043] = {
+	pg.base.child2_condition[1043] = {
 		id = 1043,
 		type = 8,
 		param = {
@@ -3047,11 +2433,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.child2_condition
-
-	var_2_46[1044] = {
+	pg.base.child2_condition[1044] = {
 		id = 1044,
 		type = 8,
 		param = {
@@ -3068,11 +2450,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.child2_condition
-
-	var_2_47[1045] = {
+	pg.base.child2_condition[1045] = {
 		id = 1045,
 		type = 8,
 		param = {
@@ -3089,11 +2467,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.child2_condition
-
-	var_2_48[1046] = {
+	pg.base.child2_condition[1046] = {
 		id = 1046,
 		type = 8,
 		param = {
@@ -3110,11 +2484,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.child2_condition
-
-	var_2_49[1047] = {
+	pg.base.child2_condition[1047] = {
 		id = 1047,
 		type = 8,
 		param = {
@@ -3131,11 +2501,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.child2_condition
-
-	var_2_50[1048] = {
+	pg.base.child2_condition[1048] = {
 		id = 1048,
 		type = 8,
 		param = {
@@ -3152,11 +2518,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.child2_condition
-
-	var_2_51[1049] = {
+	pg.base.child2_condition[1049] = {
 		id = 1049,
 		type = 8,
 		param = {
@@ -3173,11 +2535,7 @@ end)()
 			4
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.child2_condition
-
-	var_2_52[1050] = {
+	pg.base.child2_condition[1050] = {
 		id = 1050,
 		type = 8,
 		param = {
@@ -3194,11 +2552,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.child2_condition
-
-	var_2_53[1051] = {
+	pg.base.child2_condition[1051] = {
 		id = 1051,
 		type = 8,
 		param = {
@@ -3215,11 +2569,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.child2_condition
-
-	var_2_54[1052] = {
+	pg.base.child2_condition[1052] = {
 		id = 1052,
 		type = 8,
 		param = {
@@ -3236,11 +2586,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.child2_condition
-
-	var_2_55[1053] = {
+	pg.base.child2_condition[1053] = {
 		id = 1053,
 		type = 8,
 		param = {
@@ -3257,11 +2603,7 @@ end)()
 			5
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.child2_condition
-
-	var_2_56[1054] = {
+	pg.base.child2_condition[1054] = {
 		id = 1054,
 		type = 1,
 		param = {
@@ -3271,11 +2613,7 @@ end)()
 			70
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.child2_condition
-
-	var_2_57[1055] = {
+	pg.base.child2_condition[1055] = {
 		id = 1055,
 		type = 1,
 		param = {
@@ -3285,11 +2623,7 @@ end)()
 			70
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.child2_condition
-
-	var_2_58[1056] = {
+	pg.base.child2_condition[1056] = {
 		id = 1056,
 		type = 8,
 		param = {
@@ -3336,11 +2670,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.child2_condition
-
-	var_2_59[1057] = {
+	pg.base.child2_condition[1057] = {
 		id = 1057,
 		type = 8,
 		param = {
@@ -3357,11 +2687,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.child2_condition
-
-	var_2_60[1058] = {
+	pg.base.child2_condition[1058] = {
 		id = 1058,
 		type = 8,
 		param = {
@@ -3378,11 +2704,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.child2_condition
-
-	var_2_61[1059] = {
+	pg.base.child2_condition[1059] = {
 		id = 1059,
 		type = 8,
 		param = {
@@ -3399,11 +2721,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.child2_condition
-
-	var_2_62[1060] = {
+	pg.base.child2_condition[1060] = {
 		id = 1060,
 		type = 8,
 		param = {
@@ -3420,11 +2738,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.child2_condition
-
-	var_2_63[1061] = {
+	pg.base.child2_condition[1061] = {
 		id = 1061,
 		type = 15,
 		param = {
@@ -3441,11 +2755,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.child2_condition
-
-	var_2_64[1062] = {
+	pg.base.child2_condition[1062] = {
 		id = 1062,
 		type = 15,
 		param = {
@@ -3462,11 +2772,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.child2_condition
-
-	var_2_65[1063] = {
+	pg.base.child2_condition[1063] = {
 		id = 1063,
 		type = 15,
 		param = {
@@ -3483,11 +2789,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.child2_condition
-
-	var_2_66[1064] = {
+	pg.base.child2_condition[1064] = {
 		id = 1064,
 		type = 15,
 		param = {
@@ -3504,11 +2806,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.child2_condition
-
-	var_2_67[300000] = {
+	pg.base.child2_condition[300000] = {
 		id = 300000,
 		type = 2,
 		param = {
@@ -3516,11 +2814,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.child2_condition
-
-	var_2_68[300001] = {
+	pg.base.child2_condition[300001] = {
 		id = 300001,
 		type = 2,
 		param = {
@@ -3528,11 +2822,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.child2_condition
-
-	var_2_69[300002] = {
+	pg.base.child2_condition[300002] = {
 		id = 300002,
 		type = 1,
 		param = {
@@ -3542,11 +2832,7 @@ end)()
 			150
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.child2_condition
-
-	var_2_70[300003] = {
+	pg.base.child2_condition[300003] = {
 		id = 300003,
 		type = 1,
 		param = {
@@ -3556,11 +2842,7 @@ end)()
 			150
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.child2_condition
-
-	var_2_71[300004] = {
+	pg.base.child2_condition[300004] = {
 		id = 300004,
 		type = 1,
 		param = {
@@ -3570,11 +2852,7 @@ end)()
 			70
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.child2_condition
-
-	var_2_72[300005] = {
+	pg.base.child2_condition[300005] = {
 		id = 300005,
 		type = 1,
 		param = {
@@ -3584,11 +2862,7 @@ end)()
 			230
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.child2_condition
-
-	var_2_73[300006] = {
+	pg.base.child2_condition[300006] = {
 		id = 300006,
 		type = 1,
 		param = {
@@ -3598,11 +2872,7 @@ end)()
 			3600
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.child2_condition
-
-	var_2_74[300007] = {
+	pg.base.child2_condition[300007] = {
 		id = 300007,
 		type = 1,
 		param = {
@@ -3612,11 +2882,7 @@ end)()
 			2400
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.child2_condition
-
-	var_2_75[300008] = {
+	pg.base.child2_condition[300008] = {
 		id = 300008,
 		type = 1,
 		param = {
@@ -3626,11 +2892,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.child2_condition
-
-	var_2_76[300009] = {
+	pg.base.child2_condition[300009] = {
 		id = 300009,
 		type = 1,
 		param = {
@@ -3640,11 +2902,7 @@ end)()
 			3600
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.child2_condition
-
-	var_2_77[300010] = {
+	pg.base.child2_condition[300010] = {
 		id = 300010,
 		type = 1,
 		param = {
@@ -3654,11 +2912,7 @@ end)()
 			3600
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.child2_condition
-
-	var_2_78[300011] = {
+	pg.base.child2_condition[300011] = {
 		id = 300011,
 		type = 1,
 		param = {
@@ -3668,11 +2922,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.child2_condition
-
-	var_2_79[300012] = {
+	pg.base.child2_condition[300012] = {
 		id = 300012,
 		type = 1,
 		param = {
@@ -3682,11 +2932,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.child2_condition
-
-	var_2_80[300013] = {
+	pg.base.child2_condition[300013] = {
 		id = 300013,
 		type = 1,
 		param = {
@@ -3696,11 +2942,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.child2_condition
-
-	var_2_81[300014] = {
+	pg.base.child2_condition[300014] = {
 		id = 300014,
 		type = 1,
 		param = {
@@ -3710,11 +2952,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.child2_condition
-
-	var_2_82[300015] = {
+	pg.base.child2_condition[300015] = {
 		id = 300015,
 		type = 1,
 		param = {
@@ -3724,11 +2962,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.child2_condition
-
-	var_2_83[300016] = {
+	pg.base.child2_condition[300016] = {
 		id = 300016,
 		type = 1,
 		param = {
@@ -3738,11 +2972,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.child2_condition
-
-	var_2_84[300017] = {
+	pg.base.child2_condition[300017] = {
 		id = 300017,
 		type = 1,
 		param = {
@@ -3752,11 +2982,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.child2_condition
-
-	var_2_85[300018] = {
+	pg.base.child2_condition[300018] = {
 		id = 300018,
 		type = 1,
 		param = {
@@ -3766,11 +2992,7 @@ end)()
 			800
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.child2_condition
-
-	var_2_86[300019] = {
+	pg.base.child2_condition[300019] = {
 		id = 300019,
 		type = 1,
 		param = {
@@ -3780,11 +3002,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.child2_condition
-
-	var_2_87[300020] = {
+	pg.base.child2_condition[300020] = {
 		id = 300020,
 		type = 1,
 		param = {
@@ -3794,11 +3012,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.child2_condition
-
-	var_2_88[300021] = {
+	pg.base.child2_condition[300021] = {
 		id = 300021,
 		type = 1,
 		param = {
@@ -3808,11 +3022,7 @@ end)()
 			800
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.child2_condition
-
-	var_2_89[300022] = {
+	pg.base.child2_condition[300022] = {
 		id = 300022,
 		type = 1,
 		param = {
@@ -3822,11 +3032,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.child2_condition
-
-	var_2_90[300023] = {
+	pg.base.child2_condition[300023] = {
 		id = 300023,
 		type = 1,
 		param = {
@@ -3836,11 +3042,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.child2_condition
-
-	var_2_91[300024] = {
+	pg.base.child2_condition[300024] = {
 		id = 300024,
 		type = 5,
 		param = {
@@ -3853,11 +3055,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.child2_condition
-
-	var_2_92[300025] = {
+	pg.base.child2_condition[300025] = {
 		id = 300025,
 		type = 2,
 		param = {
@@ -3865,11 +3063,7 @@ end)()
 			3000
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.child2_condition
-
-	var_2_93[300026] = {
+	pg.base.child2_condition[300026] = {
 		id = 300026,
 		type = 2,
 		param = {
@@ -3877,11 +3071,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.child2_condition
-
-	var_2_94[300027] = {
+	pg.base.child2_condition[300027] = {
 		id = 300027,
 		type = 1,
 		param = {
@@ -3891,11 +3081,7 @@ end)()
 			6000
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.child2_condition
-
-	var_2_95[300028] = {
+	pg.base.child2_condition[300028] = {
 		id = 300028,
 		type = 1,
 		param = {
@@ -3905,11 +3091,7 @@ end)()
 			7200
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.child2_condition
-
-	var_2_96[300029] = {
+	pg.base.child2_condition[300029] = {
 		id = 300029,
 		type = 1,
 		param = {
@@ -3919,11 +3101,7 @@ end)()
 			6000
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.child2_condition
-
-	var_2_97[300030] = {
+	pg.base.child2_condition[300030] = {
 		id = 300030,
 		type = 1,
 		param = {
@@ -3933,11 +3111,7 @@ end)()
 			6000
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.child2_condition
-
-	var_2_98[300031] = {
+	pg.base.child2_condition[300031] = {
 		id = 300031,
 		type = 2,
 		param = {
@@ -3945,8 +3119,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.child2_condition[0] = {
+	pg.base.child2_condition[0] = {
 		id = 300032,
 		type = 2,
 		param = {
@@ -3958,11 +3131,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.child2_condition
-
-	var_3_0[1] = {
+	pg.base.child2_condition[1] = {
 		id = 300033,
 		type = 1,
 		param = {
@@ -3972,11 +3141,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.child2_condition
-
-	var_3_1[2] = {
+	pg.base.child2_condition[2] = {
 		id = 300034,
 		type = 1,
 		param = {
@@ -3986,11 +3151,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.child2_condition
-
-	var_3_2[3] = {
+	pg.base.child2_condition[3] = {
 		id = 300035,
 		type = 1,
 		param = {
@@ -4000,11 +3161,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.child2_condition
-
-	var_3_3[4] = {
+	pg.base.child2_condition[4] = {
 		id = 300036,
 		type = 1,
 		param = {
@@ -4014,11 +3171,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.child2_condition
-
-	var_3_4[5] = {
+	pg.base.child2_condition[5] = {
 		id = 300037,
 		type = 1,
 		param = {
@@ -4028,11 +3181,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.child2_condition
-
-	var_3_5[6] = {
+	pg.base.child2_condition[6] = {
 		id = 300038,
 		type = 1,
 		param = {
@@ -4042,11 +3191,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.child2_condition
-
-	var_3_6[9] = {
+	pg.base.child2_condition[9] = {
 		id = 300041,
 		type = 1,
 		param = {
@@ -4056,11 +3201,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.child2_condition
-
-	var_3_7[13] = {
+	pg.base.child2_condition[13] = {
 		id = 412301,
 		type = 1,
 		param = {
@@ -4070,11 +3211,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.child2_condition
-
-	var_3_8[14] = {
+	pg.base.child2_condition[14] = {
 		id = 412302,
 		type = 1,
 		param = {
@@ -4084,11 +3221,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.child2_condition
-
-	var_3_9[412401] = {
+	pg.base.child2_condition[412401] = {
 		id = 412401,
 		type = 1,
 		param = {
@@ -4098,11 +3231,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.child2_condition
-
-	var_3_10[412402] = {
+	pg.base.child2_condition[412402] = {
 		id = 412402,
 		type = 1,
 		param = {
@@ -4112,11 +3241,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.child2_condition
-
-	var_3_11[412501] = {
+	pg.base.child2_condition[412501] = {
 		id = 412501,
 		type = 1,
 		param = {
@@ -4126,11 +3251,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.child2_condition
-
-	var_3_12[412502] = {
+	pg.base.child2_condition[412502] = {
 		id = 412502,
 		type = 1,
 		param = {
@@ -4140,11 +3261,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.child2_condition
-
-	var_3_13[412601] = {
+	pg.base.child2_condition[412601] = {
 		id = 412601,
 		type = 1,
 		param = {
@@ -4154,11 +3271,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.child2_condition
-
-	var_3_14[412602] = {
+	pg.base.child2_condition[412602] = {
 		id = 412602,
 		type = 1,
 		param = {
@@ -4168,11 +3281,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.child2_condition
-
-	var_3_15[412901] = {
+	pg.base.child2_condition[412901] = {
 		id = 412901,
 		type = 1,
 		param = {
@@ -4182,11 +3291,7 @@ end)()
 			32
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.child2_condition
-
-	var_3_16[412902] = {
+	pg.base.child2_condition[412902] = {
 		id = 412902,
 		type = 1,
 		param = {
@@ -4196,11 +3301,7 @@ end)()
 			16
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.child2_condition
-
-	var_3_17[17] = {
+	pg.base.child2_condition[17] = {
 		id = 413201,
 		type = 1,
 		param = {
@@ -4210,11 +3311,7 @@ end)()
 			150
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.child2_condition
-
-	var_3_18[18] = {
+	pg.base.child2_condition[18] = {
 		id = 413202,
 		type = 1,
 		param = {
@@ -4224,11 +3321,7 @@ end)()
 			32
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.child2_condition
-
-	var_3_19[19] = {
+	pg.base.child2_condition[19] = {
 		id = 413203,
 		type = 1,
 		param = {
@@ -4238,11 +3331,7 @@ end)()
 			16
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.child2_condition
-
-	var_3_20[21] = {
+	pg.base.child2_condition[21] = {
 		id = 414101,
 		type = 1,
 		param = {
@@ -4252,11 +3341,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.child2_condition
-
-	var_3_21[414401] = {
+	pg.base.child2_condition[414401] = {
 		id = 414401,
 		type = 1,
 		param = {
@@ -4266,11 +3351,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.child2_condition
-
-	var_3_22[29] = {
+	pg.base.child2_condition[29] = {
 		id = 422301,
 		type = 1,
 		param = {
@@ -4280,11 +3361,7 @@ end)()
 			240
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.child2_condition
-
-	var_3_23[30] = {
+	pg.base.child2_condition[30] = {
 		id = 422302,
 		type = 1,
 		param = {
@@ -4294,11 +3371,7 @@ end)()
 			120
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.child2_condition
-
-	var_3_24[1] = {
+	pg.base.child2_condition[1] = {
 		id = 422401,
 		type = 1,
 		param = {
@@ -4308,11 +3381,7 @@ end)()
 			240
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.child2_condition
-
-	var_3_25[2] = {
+	pg.base.child2_condition[2] = {
 		id = 422402,
 		type = 1,
 		param = {
@@ -4322,11 +3391,7 @@ end)()
 			120
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.child2_condition
-
-	var_3_26[422501] = {
+	pg.base.child2_condition[422501] = {
 		id = 422501,
 		type = 1,
 		param = {
@@ -4336,11 +3401,7 @@ end)()
 			240
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.child2_condition
-
-	var_3_27[422502] = {
+	pg.base.child2_condition[422502] = {
 		id = 422502,
 		type = 1,
 		param = {
@@ -4350,11 +3411,7 @@ end)()
 			120
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.child2_condition
-
-	var_3_28[422601] = {
+	pg.base.child2_condition[422601] = {
 		id = 422601,
 		type = 1,
 		param = {
@@ -4364,11 +3421,7 @@ end)()
 			240
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.child2_condition
-
-	var_3_29[422602] = {
+	pg.base.child2_condition[422602] = {
 		id = 422602,
 		type = 1,
 		param = {
@@ -4378,11 +3431,7 @@ end)()
 			120
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.child2_condition
-
-	var_3_30[422901] = {
+	pg.base.child2_condition[422901] = {
 		id = 422901,
 		type = 1,
 		param = {
@@ -4392,11 +3441,7 @@ end)()
 			160
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.child2_condition
-
-	var_3_31[422902] = {
+	pg.base.child2_condition[422902] = {
 		id = 422902,
 		type = 1,
 		param = {
@@ -4406,11 +3451,7 @@ end)()
 			80
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.child2_condition
-
-	var_3_32[423201] = {
+	pg.base.child2_condition[423201] = {
 		id = 423201,
 		type = 1,
 		param = {
@@ -4420,11 +3461,7 @@ end)()
 			150
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.child2_condition
-
-	var_3_33[423202] = {
+	pg.base.child2_condition[423202] = {
 		id = 423202,
 		type = 1,
 		param = {
@@ -4434,11 +3471,7 @@ end)()
 			160
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.child2_condition
-
-	var_3_34[423203] = {
+	pg.base.child2_condition[423203] = {
 		id = 423203,
 		type = 1,
 		param = {
@@ -4448,11 +3481,7 @@ end)()
 			80
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.child2_condition
-
-	var_3_35[424101] = {
+	pg.base.child2_condition[424101] = {
 		id = 424101,
 		type = 1,
 		param = {
@@ -4462,11 +3491,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.child2_condition
-
-	var_3_36[424401] = {
+	pg.base.child2_condition[424401] = {
 		id = 424401,
 		type = 1,
 		param = {
@@ -4476,11 +3501,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.child2_condition
-
-	var_3_37[432301] = {
+	pg.base.child2_condition[432301] = {
 		id = 432301,
 		type = 1,
 		param = {
@@ -4490,11 +3511,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.child2_condition
-
-	var_3_38[432302] = {
+	pg.base.child2_condition[432302] = {
 		id = 432302,
 		type = 1,
 		param = {
@@ -4504,11 +3521,7 @@ end)()
 			300
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.child2_condition
-
-	var_3_39[17] = {
+	pg.base.child2_condition[17] = {
 		id = 432401,
 		type = 1,
 		param = {
@@ -4518,11 +3531,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.child2_condition
-
-	var_3_40[18] = {
+	pg.base.child2_condition[18] = {
 		id = 432402,
 		type = 1,
 		param = {
@@ -4532,11 +3541,7 @@ end)()
 			300
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.child2_condition
-
-	var_3_41[432501] = {
+	pg.base.child2_condition[432501] = {
 		id = 432501,
 		type = 1,
 		param = {
@@ -4546,11 +3551,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.child2_condition
-
-	var_3_42[432502] = {
+	pg.base.child2_condition[432502] = {
 		id = 432502,
 		type = 1,
 		param = {
@@ -4560,11 +3561,7 @@ end)()
 			300
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.child2_condition
-
-	var_3_43[432601] = {
+	pg.base.child2_condition[432601] = {
 		id = 432601,
 		type = 1,
 		param = {
@@ -4574,11 +3571,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.child2_condition
-
-	var_3_44[432602] = {
+	pg.base.child2_condition[432602] = {
 		id = 432602,
 		type = 1,
 		param = {
@@ -4588,11 +3581,7 @@ end)()
 			300
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.child2_condition
-
-	var_3_45[5] = {
+	pg.base.child2_condition[5] = {
 		id = 432901,
 		type = 1,
 		param = {
@@ -4602,11 +3591,7 @@ end)()
 			400
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.child2_condition
-
-	var_3_46[6] = {
+	pg.base.child2_condition[6] = {
 		id = 432902,
 		type = 1,
 		param = {
@@ -4616,11 +3601,7 @@ end)()
 			200
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.child2_condition
-
-	var_3_47[433201] = {
+	pg.base.child2_condition[433201] = {
 		id = 433201,
 		type = 1,
 		param = {
@@ -4630,11 +3611,7 @@ end)()
 			150
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.child2_condition
-
-	var_3_48[433202] = {
+	pg.base.child2_condition[433202] = {
 		id = 433202,
 		type = 1,
 		param = {
@@ -4644,11 +3621,7 @@ end)()
 			400
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.child2_condition
-
-	var_3_49[433203] = {
+	pg.base.child2_condition[433203] = {
 		id = 433203,
 		type = 1,
 		param = {
@@ -4658,11 +3631,7 @@ end)()
 			200
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.child2_condition
-
-	var_3_50[434101] = {
+	pg.base.child2_condition[434101] = {
 		id = 434101,
 		type = 1,
 		param = {
@@ -4672,11 +3641,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.child2_condition
-
-	var_3_51[434401] = {
+	pg.base.child2_condition[434401] = {
 		id = 434401,
 		type = 1,
 		param = {
@@ -4686,11 +3651,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.child2_condition
-
-	var_3_52[442301] = {
+	pg.base.child2_condition[442301] = {
 		id = 442301,
 		type = 1,
 		param = {
@@ -4700,11 +3661,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.child2_condition
-
-	var_3_53[442302] = {
+	pg.base.child2_condition[442302] = {
 		id = 442302,
 		type = 1,
 		param = {
@@ -4714,11 +3671,7 @@ end)()
 			800
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.child2_condition
-
-	var_3_54[442401] = {
+	pg.base.child2_condition[442401] = {
 		id = 442401,
 		type = 1,
 		param = {
@@ -4728,11 +3681,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.child2_condition
-
-	var_3_55[442402] = {
+	pg.base.child2_condition[442402] = {
 		id = 442402,
 		type = 1,
 		param = {
@@ -4742,11 +3691,7 @@ end)()
 			800
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.child2_condition
-
-	var_3_56[5] = {
+	pg.base.child2_condition[5] = {
 		id = 442501,
 		type = 1,
 		param = {
@@ -4756,11 +3701,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.child2_condition
-
-	var_3_57[6] = {
+	pg.base.child2_condition[6] = {
 		id = 442502,
 		type = 1,
 		param = {
@@ -4770,11 +3711,7 @@ end)()
 			800
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.child2_condition
-
-	var_3_58[442601] = {
+	pg.base.child2_condition[442601] = {
 		id = 442601,
 		type = 1,
 		param = {
@@ -4784,11 +3721,7 @@ end)()
 			1600
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.child2_condition
-
-	var_3_59[442602] = {
+	pg.base.child2_condition[442602] = {
 		id = 442602,
 		type = 1,
 		param = {
@@ -4798,11 +3731,7 @@ end)()
 			800
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.child2_condition
-
-	var_3_60[21] = {
+	pg.base.child2_condition[21] = {
 		id = 442901,
 		type = 1,
 		param = {
@@ -4812,11 +3741,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.child2_condition
-
-	var_3_61[22] = {
+	pg.base.child2_condition[22] = {
 		id = 442902,
 		type = 1,
 		param = {
@@ -4826,11 +3751,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.child2_condition
-
-	var_3_62[443201] = {
+	pg.base.child2_condition[443201] = {
 		id = 443201,
 		type = 1,
 		param = {
@@ -4840,11 +3761,7 @@ end)()
 			150
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.child2_condition
-
-	var_3_63[443202] = {
+	pg.base.child2_condition[443202] = {
 		id = 443202,
 		type = 1,
 		param = {
@@ -4854,11 +3771,7 @@ end)()
 			1200
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.child2_condition
-
-	var_3_64[443203] = {
+	pg.base.child2_condition[443203] = {
 		id = 443203,
 		type = 1,
 		param = {
@@ -4868,11 +3781,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.child2_condition
-
-	var_3_65[444101] = {
+	pg.base.child2_condition[444101] = {
 		id = 444101,
 		type = 1,
 		param = {
@@ -4882,11 +3791,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.child2_condition
-
-	var_3_66[444401] = {
+	pg.base.child2_condition[444401] = {
 		id = 444401,
 		type = 1,
 		param = {
@@ -4896,11 +3801,7 @@ end)()
 			1500
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.child2_condition
-
-	var_3_67[99701] = {
+	pg.base.child2_condition[99701] = {
 		id = 99701,
 		type = 1,
 		param = {
@@ -4910,11 +3811,7 @@ end)()
 			150
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.child2_condition
-
-	var_3_68[99702] = {
+	pg.base.child2_condition[99702] = {
 		id = 99702,
 		type = 1,
 		param = {
@@ -4924,11 +3821,7 @@ end)()
 			150
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.child2_condition
-
-	var_3_69[99800] = {
+	pg.base.child2_condition[99800] = {
 		id = 99800,
 		type = 2,
 		param = {
@@ -4936,11 +3829,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.child2_condition
-
-	var_3_70[99801] = {
+	pg.base.child2_condition[99801] = {
 		id = 99801,
 		type = 2,
 		param = {
@@ -4948,11 +3837,7 @@ end)()
 			400
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.child2_condition
-
-	var_3_71[99802] = {
+	pg.base.child2_condition[99802] = {
 		id = 99802,
 		type = 2,
 		param = {
@@ -4960,11 +3845,7 @@ end)()
 			400
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.child2_condition
-
-	var_3_72[99803] = {
+	pg.base.child2_condition[99803] = {
 		id = 99803,
 		type = 2,
 		param = {
@@ -4972,11 +3853,7 @@ end)()
 			500
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.child2_condition
-
-	var_3_73[99804] = {
+	pg.base.child2_condition[99804] = {
 		id = 99804,
 		type = 2,
 		param = {
@@ -4984,11 +3861,7 @@ end)()
 			600
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.child2_condition
-
-	var_3_74[99805] = {
+	pg.base.child2_condition[99805] = {
 		id = 99805,
 		type = 2,
 		param = {
@@ -4996,11 +3869,7 @@ end)()
 			700
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.child2_condition
-
-	var_3_75[99806] = {
+	pg.base.child2_condition[99806] = {
 		id = 99806,
 		type = 2,
 		param = {
@@ -5008,11 +3877,7 @@ end)()
 			800
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.child2_condition
-
-	var_3_76[99807] = {
+	pg.base.child2_condition[99807] = {
 		id = 99807,
 		type = 2,
 		param = {
@@ -5020,11 +3885,7 @@ end)()
 			900
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.child2_condition
-
-	var_3_77[99808] = {
+	pg.base.child2_condition[99808] = {
 		id = 99808,
 		type = 2,
 		param = {
@@ -5032,11 +3893,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.child2_condition
-
-	var_3_78[99809] = {
+	pg.base.child2_condition[99809] = {
 		id = 99809,
 		type = 2,
 		param = {
@@ -5044,11 +3901,7 @@ end)()
 			1100
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.child2_condition
-
-	var_3_79[99901] = {
+	pg.base.child2_condition[99901] = {
 		id = 99901,
 		type = 1,
 		param = {
@@ -5058,11 +3911,7 @@ end)()
 			100
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.child2_condition
-
-	var_3_80[99902] = {
+	pg.base.child2_condition[99902] = {
 		id = 99902,
 		type = 1,
 		param = {
@@ -5072,11 +3921,7 @@ end)()
 			100
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.child2_condition
-
-	var_3_81[99903] = {
+	pg.base.child2_condition[99903] = {
 		id = 99903,
 		type = 1,
 		param = {
@@ -5086,11 +3931,7 @@ end)()
 			100
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.child2_condition
-
-	var_3_82[99904] = {
+	pg.base.child2_condition[99904] = {
 		id = 99904,
 		type = 1,
 		param = {
@@ -5100,11 +3941,7 @@ end)()
 			100
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.child2_condition
-
-	var_3_83[99905] = {
+	pg.base.child2_condition[99905] = {
 		id = 99905,
 		type = 1,
 		param = {
@@ -5114,11 +3951,7 @@ end)()
 			200
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.child2_condition
-
-	var_3_84[99906] = {
+	pg.base.child2_condition[99906] = {
 		id = 99906,
 		type = 1,
 		param = {
@@ -5128,11 +3961,7 @@ end)()
 			200
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.child2_condition
-
-	var_3_85[99907] = {
+	pg.base.child2_condition[99907] = {
 		id = 99907,
 		type = 1,
 		param = {
@@ -5142,11 +3971,7 @@ end)()
 			200
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.child2_condition
-
-	var_3_86[99908] = {
+	pg.base.child2_condition[99908] = {
 		id = 99908,
 		type = 1,
 		param = {
@@ -5156,11 +3981,7 @@ end)()
 			200
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.child2_condition
-
-	var_3_87[16] = {
+	pg.base.child2_condition[16] = {
 		id = 99600,
 		type = 1,
 		param = {
@@ -5170,11 +3991,7 @@ end)()
 			60
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.child2_condition
-
-	var_3_88[17] = {
+	pg.base.child2_condition[17] = {
 		id = 99601,
 		type = 1,
 		param = {
@@ -5184,11 +4001,7 @@ end)()
 			60
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.child2_condition
-
-	var_3_89[18] = {
+	pg.base.child2_condition[18] = {
 		id = 99602,
 		type = 1,
 		param = {
@@ -5198,11 +4011,7 @@ end)()
 			40
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.child2_condition
-
-	var_3_90[19] = {
+	pg.base.child2_condition[19] = {
 		id = 99603,
 		type = 1,
 		param = {
@@ -5212,11 +4021,7 @@ end)()
 			40
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.child2_condition
-
-	var_3_91[20] = {
+	pg.base.child2_condition[20] = {
 		id = 99604,
 		type = 1,
 		param = {
@@ -5226,11 +4031,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.child2_condition
-
-	var_3_92[21] = {
+	pg.base.child2_condition[21] = {
 		id = 99605,
 		type = 1,
 		param = {
@@ -5240,11 +4041,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.child2_condition
-
-	var_3_93[22] = {
+	pg.base.child2_condition[22] = {
 		id = 99606,
 		type = 1,
 		param = {
@@ -5254,11 +4051,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.child2_condition
-
-	var_3_94[205] = {
+	pg.base.child2_condition[205] = {
 		id = 205,
 		type = 20,
 		param = {
@@ -5268,11 +4061,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.child2_condition
-
-	var_3_95[206] = {
+	pg.base.child2_condition[206] = {
 		id = 206,
 		type = 20,
 		param = {
@@ -5282,11 +4071,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.child2_condition
-
-	var_3_96[207] = {
+	pg.base.child2_condition[207] = {
 		id = 207,
 		type = 21,
 		param = {
@@ -5306,11 +4091,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.child2_condition
-
-	var_3_97[208] = {
+	pg.base.child2_condition[208] = {
 		id = 208,
 		type = 1,
 		param = {
@@ -5320,11 +4101,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.child2_condition
-
-	var_3_98[209] = {
+	pg.base.child2_condition[209] = {
 		id = 209,
 		type = 1,
 		param = {
@@ -5334,8 +4111,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.child2_condition[210] = {
+	pg.base.child2_condition[210] = {
 		id = 210,
 		type = 1,
 		param = {
@@ -5349,22 +4125,14 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.child2_condition
-
-	var_4_0[21000] = {
+	pg.base.child2_condition[21000] = {
 		id = 21000,
 		type = 16,
 		param = {
 			3
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.child2_condition
-
-	var_4_1[211] = {
+	pg.base.child2_condition[211] = {
 		id = 211,
 		type = 1,
 		param = {
@@ -5374,31 +4142,19 @@ end)()
 			100
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.child2_condition
-
-	var_4_2[21100] = {
+	pg.base.child2_condition[21100] = {
 		id = 21100,
 		type = 16,
 		param = {
 			100
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.child2_condition
-
-	var_4_3[212] = {
+	pg.base.child2_condition[212] = {
 		id = 212,
 		type = 18,
 		param = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.child2_condition
-
-	var_4_4[21200] = {
+	pg.base.child2_condition[21200] = {
 		id = 21200,
 		type = 17,
 		param = {
@@ -5408,20 +4164,12 @@ end)()
 			100
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.child2_condition
-
-	var_4_5[213] = {
+	pg.base.child2_condition[213] = {
 		id = 213,
 		type = 19,
 		param = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.child2_condition
-
-	var_4_6[21300] = {
+	pg.base.child2_condition[21300] = {
 		id = 21300,
 		type = 17,
 		param = {
@@ -5431,11 +4179,7 @@ end)()
 			33
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.child2_condition
-
-	var_4_7[21301] = {
+	pg.base.child2_condition[21301] = {
 		id = 21301,
 		type = 1,
 		param = {
@@ -5445,22 +4189,14 @@ end)()
 			0
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.child2_condition
-
-	var_4_8[21302] = {
+	pg.base.child2_condition[21302] = {
 		id = 21302,
 		type = 16,
 		param = {
 			33
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.child2_condition
-
-	var_4_9[3100101] = {
+	pg.base.child2_condition[3100101] = {
 		id = 3100101,
 		type = 1,
 		param = {
@@ -5470,11 +4206,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.child2_condition
-
-	var_4_10[21] = {
+	pg.base.child2_condition[21] = {
 		id = 3102101,
 		type = 1,
 		param = {
@@ -5484,11 +4216,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.child2_condition
-
-	var_4_11[3600101] = {
+	pg.base.child2_condition[3600101] = {
 		id = 3600101,
 		type = 4,
 		param = {
@@ -5496,11 +4224,7 @@ end)()
 			5
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.child2_condition
-
-	var_4_12[3600102] = {
+	pg.base.child2_condition[3600102] = {
 		id = 3600102,
 		type = 4,
 		param = {
@@ -5508,11 +4232,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.child2_condition
-
-	var_4_13[3700010] = {
+	pg.base.child2_condition[3700010] = {
 		id = 3700010,
 		type = 1,
 		param = {
@@ -5522,11 +4242,7 @@ end)()
 			300
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.child2_condition
-
-	var_4_14[3700011] = {
+	pg.base.child2_condition[3700011] = {
 		id = 3700011,
 		type = 1,
 		param = {
@@ -5536,11 +4252,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.child2_condition
-
-	var_4_15[3700020] = {
+	pg.base.child2_condition[3700020] = {
 		id = 3700020,
 		type = 1,
 		param = {
@@ -5550,11 +4262,7 @@ end)()
 			300
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.child2_condition
-
-	var_4_16[3700021] = {
+	pg.base.child2_condition[3700021] = {
 		id = 3700021,
 		type = 1,
 		param = {
@@ -5564,11 +4272,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.child2_condition
-
-	var_4_17[3700030] = {
+	pg.base.child2_condition[3700030] = {
 		id = 3700030,
 		type = 1,
 		param = {
@@ -5578,11 +4282,7 @@ end)()
 			300
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.child2_condition
-
-	var_4_18[3700031] = {
+	pg.base.child2_condition[3700031] = {
 		id = 3700031,
 		type = 1,
 		param = {
@@ -5592,11 +4292,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.child2_condition
-
-	var_4_19[3700040] = {
+	pg.base.child2_condition[3700040] = {
 		id = 3700040,
 		type = 1,
 		param = {
@@ -5606,11 +4302,7 @@ end)()
 			300
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.child2_condition
-
-	var_4_20[3700041] = {
+	pg.base.child2_condition[3700041] = {
 		id = 3700041,
 		type = 1,
 		param = {
@@ -5620,11 +4312,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.child2_condition
-
-	var_4_21[3700050] = {
+	pg.base.child2_condition[3700050] = {
 		id = 3700050,
 		type = 2,
 		param = {
@@ -5632,11 +4320,7 @@ end)()
 			600
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.child2_condition
-
-	var_4_22[3700051] = {
+	pg.base.child2_condition[3700051] = {
 		id = 3700051,
 		type = 2,
 		param = {
@@ -5644,22 +4328,14 @@ end)()
 			1800
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.child2_condition
-
-	var_4_23[3800101] = {
+	pg.base.child2_condition[3800101] = {
 		id = 3800101,
 		type = 6,
 		param = {
 			10000
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.child2_condition
-
-	var_4_24[9] = {
+	pg.base.child2_condition[9] = {
 		id = 3800201,
 		type = 2,
 		param = {
@@ -5667,11 +4343,7 @@ end)()
 			3000
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.child2_condition
-
-	var_4_25[3800301] = {
+	pg.base.child2_condition[3800301] = {
 		id = 3800301,
 		type = 2,
 		param = {
@@ -5679,11 +4351,7 @@ end)()
 			6000
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.child2_condition
-
-	var_4_26[3800401] = {
+	pg.base.child2_condition[3800401] = {
 		id = 3800401,
 		type = 1,
 		param = {
@@ -5693,11 +4361,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.child2_condition
-
-	var_4_27[3800402] = {
+	pg.base.child2_condition[3800402] = {
 		id = 3800402,
 		type = 2,
 		param = {
@@ -5705,11 +4369,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.child2_condition
-
-	var_4_28[3800501] = {
+	pg.base.child2_condition[3800501] = {
 		id = 3800501,
 		type = 1,
 		param = {
@@ -5719,11 +4379,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.child2_condition
-
-	var_4_29[3800502] = {
+	pg.base.child2_condition[3800502] = {
 		id = 3800502,
 		type = 2,
 		param = {
@@ -5731,11 +4387,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.child2_condition
-
-	var_4_30[25] = {
+	pg.base.child2_condition[25] = {
 		id = 3800601,
 		type = 1,
 		param = {
@@ -5745,11 +4397,7 @@ end)()
 			230
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.child2_condition
-
-	var_4_31[3800701] = {
+	pg.base.child2_condition[3800701] = {
 		id = 3800701,
 		type = 1,
 		param = {
@@ -5759,11 +4407,7 @@ end)()
 			70
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.child2_condition
-
-	var_4_32[3800801] = {
+	pg.base.child2_condition[3800801] = {
 		id = 3800801,
 		type = 1,
 		param = {
@@ -5773,11 +4417,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.child2_condition
-
-	var_4_33[3800802] = {
+	pg.base.child2_condition[3800802] = {
 		id = 3800802,
 		type = 2,
 		param = {
@@ -5785,11 +4425,7 @@ end)()
 			12000
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.child2_condition
-
-	var_4_34[3800901] = {
+	pg.base.child2_condition[3800901] = {
 		id = 3800901,
 		type = 5,
 		param = {
@@ -5802,11 +4438,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.child2_condition
-
-	var_4_35[3801001] = {
+	pg.base.child2_condition[3801001] = {
 		id = 3801001,
 		type = 1,
 		param = {
@@ -5816,11 +4448,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.child2_condition
-
-	var_4_36[3801002] = {
+	pg.base.child2_condition[3801002] = {
 		id = 3801002,
 		type = 2,
 		param = {
@@ -5828,11 +4456,7 @@ end)()
 			12000
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.child2_condition
-
-	var_4_37[13] = {
+	pg.base.child2_condition[13] = {
 		id = 3801101,
 		type = 1,
 		param = {
@@ -5842,11 +4466,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.child2_condition
-
-	var_4_38[14] = {
+	pg.base.child2_condition[14] = {
 		id = 3801102,
 		type = 2,
 		param = {
@@ -5854,11 +4474,7 @@ end)()
 			12000
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.child2_condition
-
-	var_4_39[3801201] = {
+	pg.base.child2_condition[3801201] = {
 		id = 3801201,
 		type = 1,
 		param = {
@@ -5868,11 +4484,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.child2_condition
-
-	var_4_40[3801202] = {
+	pg.base.child2_condition[3801202] = {
 		id = 3801202,
 		type = 2,
 		param = {
@@ -5880,11 +4492,7 @@ end)()
 			12000
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.child2_condition
-
-	var_4_41[3801301] = {
+	pg.base.child2_condition[3801301] = {
 		id = 3801301,
 		type = 5,
 		param = {
@@ -5897,11 +4505,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.child2_condition
-
-	var_4_42[3801401] = {
+	pg.base.child2_condition[3801401] = {
 		id = 3801401,
 		type = 3,
 		param = {
@@ -5910,11 +4514,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.child2_condition
-
-	var_4_43[3801402] = {
+	pg.base.child2_condition[3801402] = {
 		id = 3801402,
 		type = 3,
 		param = {
@@ -5923,11 +4523,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.child2_condition
-
-	var_4_44[3801403] = {
+	pg.base.child2_condition[3801403] = {
 		id = 3801403,
 		type = 3,
 		param = {
@@ -5936,11 +4532,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.child2_condition
-
-	var_4_45[3801404] = {
+	pg.base.child2_condition[3801404] = {
 		id = 3801404,
 		type = 3,
 		param = {
@@ -5949,11 +4541,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.child2_condition
-
-	var_4_46[3801405] = {
+	pg.base.child2_condition[3801405] = {
 		id = 3801405,
 		type = 3,
 		param = {
@@ -5962,11 +4550,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.child2_condition
-
-	var_4_47[3801406] = {
+	pg.base.child2_condition[3801406] = {
 		id = 3801406,
 		type = 3,
 		param = {
@@ -5975,11 +4559,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.child2_condition
-
-	var_4_48[29] = {
+	pg.base.child2_condition[29] = {
 		id = 3801501,
 		type = 3,
 		param = {
@@ -5988,11 +4568,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.child2_condition
-
-	var_4_49[30] = {
+	pg.base.child2_condition[30] = {
 		id = 3801502,
 		type = 3,
 		param = {
@@ -6001,11 +4577,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.child2_condition
-
-	var_4_50[31] = {
+	pg.base.child2_condition[31] = {
 		id = 3801503,
 		type = 3,
 		param = {
@@ -6014,11 +4586,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.child2_condition
-
-	var_4_51[3801504] = {
+	pg.base.child2_condition[3801504] = {
 		id = 3801504,
 		type = 3,
 		param = {
@@ -6027,11 +4595,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.child2_condition
-
-	var_4_52[3801505] = {
+	pg.base.child2_condition[3801505] = {
 		id = 3801505,
 		type = 3,
 		param = {
@@ -6040,11 +4604,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.child2_condition
-
-	var_4_53[3801506] = {
+	pg.base.child2_condition[3801506] = {
 		id = 3801506,
 		type = 3,
 		param = {
@@ -6053,11 +4613,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.child2_condition
-
-	var_4_54[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32005011,
 		type = 1,
 		param = {
@@ -6067,11 +4623,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.child2_condition
-
-	var_4_55[32008011] = {
+	pg.base.child2_condition[32008011] = {
 		id = 32008011,
 		type = 1,
 		param = {
@@ -6081,11 +4633,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.child2_condition
-
-	var_4_56[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32010011,
 		type = 1,
 		param = {
@@ -6095,11 +4643,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.child2_condition
-
-	var_4_57[28] = {
+	pg.base.child2_condition[28] = {
 		id = 32010012,
 		type = 1,
 		param = {
@@ -6109,11 +4653,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.child2_condition
-
-	var_4_58[32012011] = {
+	pg.base.child2_condition[32012011] = {
 		id = 32012011,
 		type = 1,
 		param = {
@@ -6123,11 +4663,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.child2_condition
-
-	var_4_59[32014011] = {
+	pg.base.child2_condition[32014011] = {
 		id = 32014011,
 		type = 1,
 		param = {
@@ -6137,11 +4673,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.child2_condition
-
-	var_4_60[32014012] = {
+	pg.base.child2_condition[32014012] = {
 		id = 32014012,
 		type = 1,
 		param = {
@@ -6151,11 +4683,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.child2_condition
-
-	var_4_61[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32016011,
 		type = 1,
 		param = {
@@ -6165,11 +4693,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.child2_condition
-
-	var_4_62[12] = {
+	pg.base.child2_condition[12] = {
 		id = 32016012,
 		type = 1,
 		param = {
@@ -6179,11 +4703,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.child2_condition
-
-	var_4_63[13] = {
+	pg.base.child2_condition[13] = {
 		id = 32016013,
 		type = 1,
 		param = {
@@ -6193,11 +4713,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.child2_condition
-
-	var_4_64[32017011] = {
+	pg.base.child2_condition[32017011] = {
 		id = 32017011,
 		type = 1,
 		param = {
@@ -6207,11 +4723,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.child2_condition
-
-	var_4_65[32018011] = {
+	pg.base.child2_condition[32018011] = {
 		id = 32018011,
 		type = 1,
 		param = {
@@ -6221,11 +4733,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.child2_condition
-
-	var_4_66[32020011] = {
+	pg.base.child2_condition[32020011] = {
 		id = 32020011,
 		type = 1,
 		param = {
@@ -6235,11 +4743,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.child2_condition
-
-	var_4_67[32020012] = {
+	pg.base.child2_condition[32020012] = {
 		id = 32020012,
 		type = 1,
 		param = {
@@ -6249,11 +4753,7 @@ end)()
 			60
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.child2_condition
-
-	var_4_68[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32021011,
 		type = 1,
 		param = {
@@ -6263,11 +4763,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.child2_condition
-
-	var_4_69[32022011] = {
+	pg.base.child2_condition[32022011] = {
 		id = 32022011,
 		type = 1,
 		param = {
@@ -6277,11 +4773,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.child2_condition
-
-	var_4_70[32022012] = {
+	pg.base.child2_condition[32022012] = {
 		id = 32022012,
 		type = 1,
 		param = {
@@ -6291,11 +4783,7 @@ end)()
 			80
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.child2_condition
-
-	var_4_71[32023011] = {
+	pg.base.child2_condition[32023011] = {
 		id = 32023011,
 		type = 1,
 		param = {
@@ -6305,11 +4793,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.child2_condition
-
-	var_4_72[32024011] = {
+	pg.base.child2_condition[32024011] = {
 		id = 32024011,
 		type = 1,
 		param = {
@@ -6319,11 +4803,7 @@ end)()
 			60
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.child2_condition
-
-	var_4_73[32024012] = {
+	pg.base.child2_condition[32024012] = {
 		id = 32024012,
 		type = 1,
 		param = {
@@ -6333,11 +4813,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.child2_condition
-
-	var_4_74[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32026011,
 		type = 1,
 		param = {
@@ -6347,11 +4823,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.child2_condition
-
-	var_4_75[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32027011,
 		type = 1,
 		param = {
@@ -6361,11 +4833,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.child2_condition
-
-	var_4_76[32028011] = {
+	pg.base.child2_condition[32028011] = {
 		id = 32028011,
 		type = 1,
 		param = {
@@ -6375,11 +4843,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.child2_condition
-
-	var_4_77[32028012] = {
+	pg.base.child2_condition[32028012] = {
 		id = 32028012,
 		type = 1,
 		param = {
@@ -6389,11 +4853,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.child2_condition
-
-	var_4_78[32029011] = {
+	pg.base.child2_condition[32029011] = {
 		id = 32029011,
 		type = 1,
 		param = {
@@ -6403,11 +4863,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.child2_condition
-
-	var_4_79[32030011] = {
+	pg.base.child2_condition[32030011] = {
 		id = 32030011,
 		type = 1,
 		param = {
@@ -6417,11 +4873,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.child2_condition
-
-	var_4_80[32030012] = {
+	pg.base.child2_condition[32030012] = {
 		id = 32030012,
 		type = 1,
 		param = {
@@ -6431,11 +4883,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.child2_condition
-
-	var_4_81[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32032011,
 		type = 1,
 		param = {
@@ -6445,11 +4893,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.child2_condition
-
-	var_4_82[32033011] = {
+	pg.base.child2_condition[32033011] = {
 		id = 32033011,
 		type = 1,
 		param = {
@@ -6459,11 +4903,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.child2_condition
-
-	var_4_83[32034011] = {
+	pg.base.child2_condition[32034011] = {
 		id = 32034011,
 		type = 1,
 		param = {
@@ -6473,11 +4913,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.child2_condition
-
-	var_4_84[32034012] = {
+	pg.base.child2_condition[32034012] = {
 		id = 32034012,
 		type = 1,
 		param = {
@@ -6487,11 +4923,7 @@ end)()
 			60
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.child2_condition
-
-	var_4_85[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32037011,
 		type = 1,
 		param = {
@@ -6501,11 +4933,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.child2_condition
-
-	var_4_86[32038011] = {
+	pg.base.child2_condition[32038011] = {
 		id = 32038011,
 		type = 1,
 		param = {
@@ -6515,11 +4943,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.child2_condition
-
-	var_4_87[32038012] = {
+	pg.base.child2_condition[32038012] = {
 		id = 32038012,
 		type = 1,
 		param = {
@@ -6529,11 +4953,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.child2_condition
-
-	var_4_88[32041011] = {
+	pg.base.child2_condition[32041011] = {
 		id = 32041011,
 		type = 1,
 		param = {
@@ -6543,11 +4963,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.child2_condition
-
-	var_4_89[32041012] = {
+	pg.base.child2_condition[32041012] = {
 		id = 32041012,
 		type = 1,
 		param = {
@@ -6557,11 +4973,7 @@ end)()
 			150
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.child2_condition
-
-	var_4_90[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32042011,
 		type = 1,
 		param = {
@@ -6571,11 +4983,7 @@ end)()
 			60
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.child2_condition
-
-	var_4_91[28] = {
+	pg.base.child2_condition[28] = {
 		id = 32042012,
 		type = 1,
 		param = {
@@ -6585,11 +4993,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.child2_condition
-
-	var_4_92[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32043011,
 		type = 1,
 		param = {
@@ -6599,11 +5003,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.child2_condition
-
-	var_4_93[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32048011,
 		type = 1,
 		param = {
@@ -6613,11 +5013,7 @@ end)()
 			60
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.child2_condition
-
-	var_4_94[32049011] = {
+	pg.base.child2_condition[32049011] = {
 		id = 32049011,
 		type = 1,
 		param = {
@@ -6627,11 +5023,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.child2_condition
-
-	var_4_95[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32053011,
 		type = 1,
 		param = {
@@ -6641,11 +5033,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.child2_condition
-
-	var_4_96[20] = {
+	pg.base.child2_condition[20] = {
 		id = 32053012,
 		type = 1,
 		param = {
@@ -6655,11 +5043,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.child2_condition
-
-	var_4_97[32055011] = {
+	pg.base.child2_condition[32055011] = {
 		id = 32055011,
 		type = 1,
 		param = {
@@ -6669,11 +5053,7 @@ end)()
 			100
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.child2_condition
-
-	var_4_98[32056011] = {
+	pg.base.child2_condition[32056011] = {
 		id = 32056011,
 		type = 1,
 		param = {
@@ -6683,8 +5063,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.child2_condition[32056012] = {
+	pg.base.child2_condition[32056012] = {
 		id = 32056012,
 		type = 1,
 		param = {
@@ -6698,11 +5077,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.child2_condition
-
-	var_5_0[32062011] = {
+	pg.base.child2_condition[32062011] = {
 		id = 32062011,
 		type = 1,
 		param = {
@@ -6712,11 +5087,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.child2_condition
-
-	var_5_1[32062012] = {
+	pg.base.child2_condition[32062012] = {
 		id = 32062012,
 		type = 1,
 		param = {
@@ -6726,11 +5097,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.child2_condition
-
-	var_5_2[32063011] = {
+	pg.base.child2_condition[32063011] = {
 		id = 32063011,
 		type = 1,
 		param = {
@@ -6740,11 +5107,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.child2_condition
-
-	var_5_3[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32064011,
 		type = 1,
 		param = {
@@ -6754,11 +5117,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.child2_condition
-
-	var_5_4[32065011] = {
+	pg.base.child2_condition[32065011] = {
 		id = 32065011,
 		type = 1,
 		param = {
@@ -6768,11 +5127,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.child2_condition
-
-	var_5_5[32068011] = {
+	pg.base.child2_condition[32068011] = {
 		id = 32068011,
 		type = 1,
 		param = {
@@ -6782,11 +5137,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.child2_condition
-
-	var_5_6[32070011] = {
+	pg.base.child2_condition[32070011] = {
 		id = 32070011,
 		type = 1,
 		param = {
@@ -6796,11 +5147,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.child2_condition
-
-	var_5_7[32071011] = {
+	pg.base.child2_condition[32071011] = {
 		id = 32071011,
 		type = 1,
 		param = {
@@ -6810,11 +5157,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.child2_condition
-
-	var_5_8[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32074011,
 		type = 1,
 		param = {
@@ -6824,11 +5167,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.child2_condition
-
-	var_5_9[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32075011,
 		type = 1,
 		param = {
@@ -6838,11 +5177,7 @@ end)()
 			45
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.child2_condition
-
-	var_5_10[4] = {
+	pg.base.child2_condition[4] = {
 		id = 32075012,
 		type = 1,
 		param = {
@@ -6852,11 +5187,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.child2_condition
-
-	var_5_11[32079011] = {
+	pg.base.child2_condition[32079011] = {
 		id = 32079011,
 		type = 2,
 		param = {
@@ -6864,11 +5195,7 @@ end)()
 			600
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.child2_condition
-
-	var_5_12[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32080011,
 		type = 1,
 		param = {
@@ -6878,11 +5205,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.child2_condition
-
-	var_5_13[12] = {
+	pg.base.child2_condition[12] = {
 		id = 32080012,
 		type = 1,
 		param = {
@@ -6892,11 +5215,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.child2_condition
-
-	var_5_14[32088011] = {
+	pg.base.child2_condition[32088011] = {
 		id = 32088011,
 		type = 1,
 		param = {
@@ -6906,11 +5225,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.child2_condition
-
-	var_5_15[32105011] = {
+	pg.base.child2_condition[32105011] = {
 		id = 32105011,
 		type = 1,
 		param = {
@@ -6920,11 +5235,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.child2_condition
-
-	var_5_16[32108011] = {
+	pg.base.child2_condition[32108011] = {
 		id = 32108011,
 		type = 1,
 		param = {
@@ -6934,11 +5245,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.child2_condition
-
-	var_5_17[32110011] = {
+	pg.base.child2_condition[32110011] = {
 		id = 32110011,
 		type = 1,
 		param = {
@@ -6948,11 +5255,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.child2_condition
-
-	var_5_18[32110012] = {
+	pg.base.child2_condition[32110012] = {
 		id = 32110012,
 		type = 1,
 		param = {
@@ -6962,11 +5265,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.child2_condition
-
-	var_5_19[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32112011,
 		type = 1,
 		param = {
@@ -6976,11 +5275,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.child2_condition
-
-	var_5_20[32114011] = {
+	pg.base.child2_condition[32114011] = {
 		id = 32114011,
 		type = 1,
 		param = {
@@ -6990,11 +5285,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.child2_condition
-
-	var_5_21[32114012] = {
+	pg.base.child2_condition[32114012] = {
 		id = 32114012,
 		type = 1,
 		param = {
@@ -7004,11 +5295,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.child2_condition
-
-	var_5_22[32116011] = {
+	pg.base.child2_condition[32116011] = {
 		id = 32116011,
 		type = 1,
 		param = {
@@ -7018,11 +5305,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.child2_condition
-
-	var_5_23[32116012] = {
+	pg.base.child2_condition[32116012] = {
 		id = 32116012,
 		type = 1,
 		param = {
@@ -7032,11 +5315,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.child2_condition
-
-	var_5_24[32116013] = {
+	pg.base.child2_condition[32116013] = {
 		id = 32116013,
 		type = 1,
 		param = {
@@ -7046,11 +5325,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.child2_condition
-
-	var_5_25[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32117011,
 		type = 1,
 		param = {
@@ -7060,11 +5335,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.child2_condition
-
-	var_5_26[32118011] = {
+	pg.base.child2_condition[32118011] = {
 		id = 32118011,
 		type = 1,
 		param = {
@@ -7074,11 +5345,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.child2_condition
-
-	var_5_27[32120011] = {
+	pg.base.child2_condition[32120011] = {
 		id = 32120011,
 		type = 1,
 		param = {
@@ -7088,11 +5355,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.child2_condition
-
-	var_5_28[32120012] = {
+	pg.base.child2_condition[32120012] = {
 		id = 32120012,
 		type = 1,
 		param = {
@@ -7102,11 +5365,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.child2_condition
-
-	var_5_29[32121011] = {
+	pg.base.child2_condition[32121011] = {
 		id = 32121011,
 		type = 1,
 		param = {
@@ -7116,11 +5375,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.child2_condition
-
-	var_5_30[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32122011,
 		type = 1,
 		param = {
@@ -7130,11 +5385,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.child2_condition
-
-	var_5_31[28] = {
+	pg.base.child2_condition[28] = {
 		id = 32122012,
 		type = 1,
 		param = {
@@ -7144,11 +5395,7 @@ end)()
 			80
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.child2_condition
-
-	var_5_32[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32123011,
 		type = 1,
 		param = {
@@ -7158,11 +5405,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.child2_condition
-
-	var_5_33[32124011] = {
+	pg.base.child2_condition[32124011] = {
 		id = 32124011,
 		type = 1,
 		param = {
@@ -7172,11 +5415,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.child2_condition
-
-	var_5_34[32124012] = {
+	pg.base.child2_condition[32124012] = {
 		id = 32124012,
 		type = 1,
 		param = {
@@ -7186,11 +5425,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.child2_condition
-
-	var_5_35[32126011] = {
+	pg.base.child2_condition[32126011] = {
 		id = 32126011,
 		type = 1,
 		param = {
@@ -7200,11 +5435,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.child2_condition
-
-	var_5_36[32127011] = {
+	pg.base.child2_condition[32127011] = {
 		id = 32127011,
 		type = 1,
 		param = {
@@ -7214,11 +5445,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.child2_condition
-
-	var_5_37[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32128011,
 		type = 1,
 		param = {
@@ -7228,11 +5455,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.child2_condition
-
-	var_5_38[12] = {
+	pg.base.child2_condition[12] = {
 		id = 32128012,
 		type = 1,
 		param = {
@@ -7242,11 +5465,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.child2_condition
-
-	var_5_39[32129011] = {
+	pg.base.child2_condition[32129011] = {
 		id = 32129011,
 		type = 1,
 		param = {
@@ -7256,11 +5475,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.child2_condition
-
-	var_5_40[32130011] = {
+	pg.base.child2_condition[32130011] = {
 		id = 32130011,
 		type = 1,
 		param = {
@@ -7270,11 +5485,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.child2_condition
-
-	var_5_41[32130012] = {
+	pg.base.child2_condition[32130012] = {
 		id = 32130012,
 		type = 1,
 		param = {
@@ -7284,11 +5495,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.child2_condition
-
-	var_5_42[32132011] = {
+	pg.base.child2_condition[32132011] = {
 		id = 32132011,
 		type = 1,
 		param = {
@@ -7298,11 +5505,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.child2_condition
-
-	var_5_43[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32133011,
 		type = 1,
 		param = {
@@ -7312,11 +5515,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.child2_condition
-
-	var_5_44[32134011] = {
+	pg.base.child2_condition[32134011] = {
 		id = 32134011,
 		type = 1,
 		param = {
@@ -7326,11 +5525,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.child2_condition
-
-	var_5_45[32134012] = {
+	pg.base.child2_condition[32134012] = {
 		id = 32134012,
 		type = 1,
 		param = {
@@ -7340,11 +5535,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.child2_condition
-
-	var_5_46[32137011] = {
+	pg.base.child2_condition[32137011] = {
 		id = 32137011,
 		type = 1,
 		param = {
@@ -7354,11 +5545,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.child2_condition
-
-	var_5_47[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32138011,
 		type = 1,
 		param = {
@@ -7368,11 +5555,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.child2_condition
-
-	var_5_48[28] = {
+	pg.base.child2_condition[28] = {
 		id = 32138012,
 		type = 1,
 		param = {
@@ -7382,11 +5565,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.child2_condition
-
-	var_5_49[32141011] = {
+	pg.base.child2_condition[32141011] = {
 		id = 32141011,
 		type = 1,
 		param = {
@@ -7396,11 +5575,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.child2_condition
-
-	var_5_50[32141012] = {
+	pg.base.child2_condition[32141012] = {
 		id = 32141012,
 		type = 1,
 		param = {
@@ -7410,11 +5585,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.child2_condition
-
-	var_5_51[32142011] = {
+	pg.base.child2_condition[32142011] = {
 		id = 32142011,
 		type = 1,
 		param = {
@@ -7424,11 +5595,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.child2_condition
-
-	var_5_52[32142012] = {
+	pg.base.child2_condition[32142012] = {
 		id = 32142012,
 		type = 1,
 		param = {
@@ -7438,11 +5605,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.child2_condition
-
-	var_5_53[32143011] = {
+	pg.base.child2_condition[32143011] = {
 		id = 32143011,
 		type = 1,
 		param = {
@@ -7452,11 +5615,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.child2_condition
-
-	var_5_54[32148011] = {
+	pg.base.child2_condition[32148011] = {
 		id = 32148011,
 		type = 1,
 		param = {
@@ -7466,11 +5625,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.child2_condition
-
-	var_5_55[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32149011,
 		type = 1,
 		param = {
@@ -7480,11 +5635,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.child2_condition
-
-	var_5_56[32153011] = {
+	pg.base.child2_condition[32153011] = {
 		id = 32153011,
 		type = 1,
 		param = {
@@ -7494,11 +5645,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.child2_condition
-
-	var_5_57[32153012] = {
+	pg.base.child2_condition[32153012] = {
 		id = 32153012,
 		type = 1,
 		param = {
@@ -7508,11 +5655,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.child2_condition
-
-	var_5_58[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32155011,
 		type = 1,
 		param = {
@@ -7522,11 +5665,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.child2_condition
-
-	var_5_59[32156011] = {
+	pg.base.child2_condition[32156011] = {
 		id = 32156011,
 		type = 1,
 		param = {
@@ -7536,11 +5675,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.child2_condition
-
-	var_5_60[32156012] = {
+	pg.base.child2_condition[32156012] = {
 		id = 32156012,
 		type = 1,
 		param = {
@@ -7550,11 +5685,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.child2_condition
-
-	var_5_61[32162011] = {
+	pg.base.child2_condition[32162011] = {
 		id = 32162011,
 		type = 1,
 		param = {
@@ -7564,11 +5695,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.child2_condition
-
-	var_5_62[32162012] = {
+	pg.base.child2_condition[32162012] = {
 		id = 32162012,
 		type = 1,
 		param = {
@@ -7578,11 +5705,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.child2_condition
-
-	var_5_63[32163011] = {
+	pg.base.child2_condition[32163011] = {
 		id = 32163011,
 		type = 1,
 		param = {
@@ -7592,11 +5715,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.child2_condition
-
-	var_5_64[32164011] = {
+	pg.base.child2_condition[32164011] = {
 		id = 32164011,
 		type = 1,
 		param = {
@@ -7606,11 +5725,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.child2_condition
-
-	var_5_65[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32165011,
 		type = 1,
 		param = {
@@ -7620,11 +5735,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.child2_condition
-
-	var_5_66[32168011] = {
+	pg.base.child2_condition[32168011] = {
 		id = 32168011,
 		type = 1,
 		param = {
@@ -7634,11 +5745,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.child2_condition
-
-	var_5_67[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32170011,
 		type = 1,
 		param = {
@@ -7648,11 +5755,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.child2_condition
-
-	var_5_68[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32171011,
 		type = 1,
 		param = {
@@ -7662,11 +5765,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.child2_condition
-
-	var_5_69[32174011] = {
+	pg.base.child2_condition[32174011] = {
 		id = 32174011,
 		type = 1,
 		param = {
@@ -7676,11 +5775,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.child2_condition
-
-	var_5_70[32175011] = {
+	pg.base.child2_condition[32175011] = {
 		id = 32175011,
 		type = 1,
 		param = {
@@ -7690,11 +5785,7 @@ end)()
 			45
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.child2_condition
-
-	var_5_71[32175012] = {
+	pg.base.child2_condition[32175012] = {
 		id = 32175012,
 		type = 1,
 		param = {
@@ -7704,11 +5795,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.child2_condition
-
-	var_5_72[32179011] = {
+	pg.base.child2_condition[32179011] = {
 		id = 32179011,
 		type = 2,
 		param = {
@@ -7716,11 +5803,7 @@ end)()
 			600
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.child2_condition
-
-	var_5_73[32180011] = {
+	pg.base.child2_condition[32180011] = {
 		id = 32180011,
 		type = 1,
 		param = {
@@ -7730,11 +5813,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.child2_condition
-
-	var_5_74[32180012] = {
+	pg.base.child2_condition[32180012] = {
 		id = 32180012,
 		type = 1,
 		param = {
@@ -7744,11 +5823,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.child2_condition
-
-	var_5_75[32188011] = {
+	pg.base.child2_condition[32188011] = {
 		id = 32188011,
 		type = 1,
 		param = {
@@ -7758,11 +5833,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.child2_condition
-
-	var_5_76[32205011] = {
+	pg.base.child2_condition[32205011] = {
 		id = 32205011,
 		type = 1,
 		param = {
@@ -7772,11 +5843,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.child2_condition
-
-	var_5_77[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32208011,
 		type = 1,
 		param = {
@@ -7786,11 +5853,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.child2_condition
-
-	var_5_78[32210011] = {
+	pg.base.child2_condition[32210011] = {
 		id = 32210011,
 		type = 1,
 		param = {
@@ -7800,11 +5863,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.child2_condition
-
-	var_5_79[32210012] = {
+	pg.base.child2_condition[32210012] = {
 		id = 32210012,
 		type = 1,
 		param = {
@@ -7814,11 +5873,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.child2_condition
-
-	var_5_80[32212011] = {
+	pg.base.child2_condition[32212011] = {
 		id = 32212011,
 		type = 1,
 		param = {
@@ -7828,11 +5883,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.child2_condition
-
-	var_5_81[32214011] = {
+	pg.base.child2_condition[32214011] = {
 		id = 32214011,
 		type = 1,
 		param = {
@@ -7842,11 +5893,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.child2_condition
-
-	var_5_82[32214012] = {
+	pg.base.child2_condition[32214012] = {
 		id = 32214012,
 		type = 1,
 		param = {
@@ -7856,11 +5903,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.child2_condition
-
-	var_5_83[32216011] = {
+	pg.base.child2_condition[32216011] = {
 		id = 32216011,
 		type = 1,
 		param = {
@@ -7870,11 +5913,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.child2_condition
-
-	var_5_84[32216012] = {
+	pg.base.child2_condition[32216012] = {
 		id = 32216012,
 		type = 1,
 		param = {
@@ -7884,11 +5923,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.child2_condition
-
-	var_5_85[32216013] = {
+	pg.base.child2_condition[32216013] = {
 		id = 32216013,
 		type = 1,
 		param = {
@@ -7898,11 +5933,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.child2_condition
-
-	var_5_86[32217011] = {
+	pg.base.child2_condition[32217011] = {
 		id = 32217011,
 		type = 1,
 		param = {
@@ -7912,11 +5943,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.child2_condition
-
-	var_5_87[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32218011,
 		type = 1,
 		param = {
@@ -7926,11 +5953,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.child2_condition
-
-	var_5_88[32220011] = {
+	pg.base.child2_condition[32220011] = {
 		id = 32220011,
 		type = 1,
 		param = {
@@ -7940,11 +5963,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.child2_condition
-
-	var_5_89[32220012] = {
+	pg.base.child2_condition[32220012] = {
 		id = 32220012,
 		type = 1,
 		param = {
@@ -7954,11 +5973,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.child2_condition
-
-	var_5_90[32221011] = {
+	pg.base.child2_condition[32221011] = {
 		id = 32221011,
 		type = 1,
 		param = {
@@ -7968,11 +5983,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.child2_condition
-
-	var_5_91[32222011] = {
+	pg.base.child2_condition[32222011] = {
 		id = 32222011,
 		type = 1,
 		param = {
@@ -7982,11 +5993,7 @@ end)()
 			150
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.child2_condition
-
-	var_5_92[32222012] = {
+	pg.base.child2_condition[32222012] = {
 		id = 32222012,
 		type = 1,
 		param = {
@@ -7996,11 +6003,7 @@ end)()
 			80
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.child2_condition
-
-	var_5_93[32223011] = {
+	pg.base.child2_condition[32223011] = {
 		id = 32223011,
 		type = 1,
 		param = {
@@ -8010,11 +6013,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.child2_condition
-
-	var_5_94[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32224011,
 		type = 1,
 		param = {
@@ -8024,11 +6023,7 @@ end)()
 			60
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.child2_condition
-
-	var_5_95[12] = {
+	pg.base.child2_condition[12] = {
 		id = 32224012,
 		type = 1,
 		param = {
@@ -8038,11 +6033,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.child2_condition
-
-	var_5_96[32226011] = {
+	pg.base.child2_condition[32226011] = {
 		id = 32226011,
 		type = 1,
 		param = {
@@ -8052,11 +6043,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.child2_condition
-
-	var_5_97[32227011] = {
+	pg.base.child2_condition[32227011] = {
 		id = 32227011,
 		type = 1,
 		param = {
@@ -8066,11 +6053,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.child2_condition
-
-	var_5_98[32228011] = {
+	pg.base.child2_condition[32228011] = {
 		id = 32228011,
 		type = 1,
 		param = {
@@ -8080,8 +6063,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.child2_condition[32228012] = {
+	pg.base.child2_condition[32228012] = {
 		id = 32228012,
 		type = 1,
 		param = {
@@ -8095,11 +6077,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.child2_condition
-
-	var_6_0[19] = {
+	pg.base.child2_condition[19] = {
 		id = 32229011,
 		type = 1,
 		param = {
@@ -8109,11 +6087,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.child2_condition
-
-	var_6_1[32230011] = {
+	pg.base.child2_condition[32230011] = {
 		id = 32230011,
 		type = 1,
 		param = {
@@ -8123,11 +6097,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.child2_condition
-
-	var_6_2[32230012] = {
+	pg.base.child2_condition[32230012] = {
 		id = 32230012,
 		type = 1,
 		param = {
@@ -8137,11 +6107,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.child2_condition
-
-	var_6_3[32232011] = {
+	pg.base.child2_condition[32232011] = {
 		id = 32232011,
 		type = 1,
 		param = {
@@ -8151,11 +6117,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.child2_condition
-
-	var_6_4[32233011] = {
+	pg.base.child2_condition[32233011] = {
 		id = 32233011,
 		type = 1,
 		param = {
@@ -8165,11 +6127,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.child2_condition
-
-	var_6_5[27] = {
+	pg.base.child2_condition[27] = {
 		id = 32234011,
 		type = 1,
 		param = {
@@ -8179,11 +6137,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.child2_condition
-
-	var_6_6[28] = {
+	pg.base.child2_condition[28] = {
 		id = 32234012,
 		type = 1,
 		param = {
@@ -8193,11 +6147,7 @@ end)()
 			60
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.child2_condition
-
-	var_6_7[32237011] = {
+	pg.base.child2_condition[32237011] = {
 		id = 32237011,
 		type = 1,
 		param = {
@@ -8207,11 +6157,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.child2_condition
-
-	var_6_8[32238011] = {
+	pg.base.child2_condition[32238011] = {
 		id = 32238011,
 		type = 1,
 		param = {
@@ -8221,11 +6167,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.child2_condition
-
-	var_6_9[32238012] = {
+	pg.base.child2_condition[32238012] = {
 		id = 32238012,
 		type = 1,
 		param = {
@@ -8235,11 +6177,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.child2_condition
-
-	var_6_10[32241011] = {
+	pg.base.child2_condition[32241011] = {
 		id = 32241011,
 		type = 1,
 		param = {
@@ -8249,11 +6187,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.child2_condition
-
-	var_6_11[32241012] = {
+	pg.base.child2_condition[32241012] = {
 		id = 32241012,
 		type = 1,
 		param = {
@@ -8263,11 +6197,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.child2_condition
-
-	var_6_12[32242011] = {
+	pg.base.child2_condition[32242011] = {
 		id = 32242011,
 		type = 1,
 		param = {
@@ -8277,11 +6207,7 @@ end)()
 			60
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.child2_condition
-
-	var_6_13[32242012] = {
+	pg.base.child2_condition[32242012] = {
 		id = 32242012,
 		type = 1,
 		param = {
@@ -8291,11 +6217,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.child2_condition
-
-	var_6_14[32243011] = {
+	pg.base.child2_condition[32243011] = {
 		id = 32243011,
 		type = 1,
 		param = {
@@ -8305,11 +6227,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.child2_condition
-
-	var_6_15[32248011] = {
+	pg.base.child2_condition[32248011] = {
 		id = 32248011,
 		type = 1,
 		param = {
@@ -8319,11 +6237,7 @@ end)()
 			60
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.child2_condition
-
-	var_6_16[32249011] = {
+	pg.base.child2_condition[32249011] = {
 		id = 32249011,
 		type = 1,
 		param = {
@@ -8333,11 +6247,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.child2_condition
-
-	var_6_17[32253011] = {
+	pg.base.child2_condition[32253011] = {
 		id = 32253011,
 		type = 1,
 		param = {
@@ -8347,11 +6257,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.child2_condition
-
-	var_6_18[32253012] = {
+	pg.base.child2_condition[32253012] = {
 		id = 32253012,
 		type = 1,
 		param = {
@@ -8361,11 +6267,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.child2_condition
-
-	var_6_19[32255011] = {
+	pg.base.child2_condition[32255011] = {
 		id = 32255011,
 		type = 1,
 		param = {
@@ -8375,11 +6277,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.child2_condition
-
-	var_6_20[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32256011,
 		type = 1,
 		param = {
@@ -8389,11 +6287,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.child2_condition
-
-	var_6_21[12] = {
+	pg.base.child2_condition[12] = {
 		id = 32256012,
 		type = 1,
 		param = {
@@ -8403,11 +6297,7 @@ end)()
 			60
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.child2_condition
-
-	var_6_22[32262011] = {
+	pg.base.child2_condition[32262011] = {
 		id = 32262011,
 		type = 1,
 		param = {
@@ -8417,11 +6307,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.child2_condition
-
-	var_6_23[32262012] = {
+	pg.base.child2_condition[32262012] = {
 		id = 32262012,
 		type = 1,
 		param = {
@@ -8431,11 +6317,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.child2_condition
-
-	var_6_24[32263011] = {
+	pg.base.child2_condition[32263011] = {
 		id = 32263011,
 		type = 1,
 		param = {
@@ -8445,11 +6327,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.child2_condition
-
-	var_6_25[32264011] = {
+	pg.base.child2_condition[32264011] = {
 		id = 32264011,
 		type = 1,
 		param = {
@@ -8459,11 +6337,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.child2_condition
-
-	var_6_26[32265011] = {
+	pg.base.child2_condition[32265011] = {
 		id = 32265011,
 		type = 1,
 		param = {
@@ -8473,11 +6347,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.child2_condition
-
-	var_6_27[32268011] = {
+	pg.base.child2_condition[32268011] = {
 		id = 32268011,
 		type = 1,
 		param = {
@@ -8487,11 +6357,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.child2_condition
-
-	var_6_28[32270011] = {
+	pg.base.child2_condition[32270011] = {
 		id = 32270011,
 		type = 1,
 		param = {
@@ -8501,11 +6367,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.child2_condition
-
-	var_6_29[32271011] = {
+	pg.base.child2_condition[32271011] = {
 		id = 32271011,
 		type = 1,
 		param = {
@@ -8515,11 +6377,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.child2_condition
-
-	var_6_30[32274011] = {
+	pg.base.child2_condition[32274011] = {
 		id = 32274011,
 		type = 1,
 		param = {
@@ -8529,11 +6387,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.child2_condition
-
-	var_6_31[32275011] = {
+	pg.base.child2_condition[32275011] = {
 		id = 32275011,
 		type = 1,
 		param = {
@@ -8543,11 +6397,7 @@ end)()
 			45
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.child2_condition
-
-	var_6_32[32275012] = {
+	pg.base.child2_condition[32275012] = {
 		id = 32275012,
 		type = 1,
 		param = {
@@ -8557,11 +6407,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.child2_condition
-
-	var_6_33[32279011] = {
+	pg.base.child2_condition[32279011] = {
 		id = 32279011,
 		type = 2,
 		param = {
@@ -8569,11 +6415,7 @@ end)()
 			600
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.child2_condition
-
-	var_6_34[32280011] = {
+	pg.base.child2_condition[32280011] = {
 		id = 32280011,
 		type = 1,
 		param = {
@@ -8583,11 +6425,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.child2_condition
-
-	var_6_35[32280012] = {
+	pg.base.child2_condition[32280012] = {
 		id = 32280012,
 		type = 1,
 		param = {
@@ -8597,11 +6435,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.child2_condition
-
-	var_6_36[11] = {
+	pg.base.child2_condition[11] = {
 		id = 32288011,
 		type = 1,
 		param = {
@@ -8611,11 +6445,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.child2_condition
-
-	var_6_37[1] = {
+	pg.base.child2_condition[1] = {
 		id = 32400001,
 		type = 15,
 		param = {
@@ -8632,11 +6462,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.child2_condition
-
-	var_6_38[2] = {
+	pg.base.child2_condition[2] = {
 		id = 32400002,
 		type = 15,
 		param = {
@@ -8653,11 +6479,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.child2_condition
-
-	var_6_39[3] = {
+	pg.base.child2_condition[3] = {
 		id = 32400003,
 		type = 15,
 		param = {
@@ -8674,11 +6496,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.child2_condition
-
-	var_6_40[4] = {
+	pg.base.child2_condition[4] = {
 		id = 32400004,
 		type = 15,
 		param = {
@@ -8695,11 +6513,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.child2_condition
-
-	var_6_41[5] = {
+	pg.base.child2_condition[5] = {
 		id = 32400005,
 		type = 1,
 		param = {
@@ -8709,11 +6523,7 @@ end)()
 			70
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.child2_condition
-
-	var_6_42[6] = {
+	pg.base.child2_condition[6] = {
 		id = 32400006,
 		type = 1,
 		param = {
@@ -8723,20 +6533,12 @@ end)()
 			70
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.child2_condition
-
-	var_6_43[3] = {
+	pg.base.child2_condition[3] = {
 		id = 38107011,
 		type = 18,
 		param = {}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.child2_condition
-
-	var_6_44[4] = {
+	pg.base.child2_condition[4] = {
 		id = 38107012,
 		type = 17,
 		param = {
@@ -8746,11 +6548,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.child2_condition
-
-	var_6_45[5] = {
+	pg.base.child2_condition[5] = {
 		id = 38107013,
 		type = 21,
 		param = {
@@ -8761,11 +6559,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.child2_condition
-
-	var_6_46[38107811] = {
+	pg.base.child2_condition[38107811] = {
 		id = 38107811,
 		type = 17,
 		param = {
@@ -8775,11 +6569,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.child2_condition
-
-	var_6_47[38107812] = {
+	pg.base.child2_condition[38107812] = {
 		id = 38107812,
 		type = 17,
 		param = {
@@ -8789,11 +6579,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.child2_condition
-
-	var_6_48[38107813] = {
+	pg.base.child2_condition[38107813] = {
 		id = 38107813,
 		type = 17,
 		param = {
@@ -8803,11 +6589,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.child2_condition
-
-	var_6_49[38107814] = {
+	pg.base.child2_condition[38107814] = {
 		id = 38107814,
 		type = 17,
 		param = {
@@ -8817,11 +6599,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.child2_condition
-
-	var_6_50[38107816] = {
+	pg.base.child2_condition[38107816] = {
 		id = 38107816,
 		type = 17,
 		param = {
@@ -8831,11 +6609,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.child2_condition
-
-	var_6_51[38107817] = {
+	pg.base.child2_condition[38107817] = {
 		id = 38107817,
 		type = 21,
 		param = {
@@ -8850,29 +6624,17 @@ end)()
 			4
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.child2_condition
-
-	var_6_52[38107815] = {
+	pg.base.child2_condition[38107815] = {
 		id = 38107815,
 		type = 18,
 		param = {}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.child2_condition
-
-	var_6_53[38103211] = {
+	pg.base.child2_condition[38103211] = {
 		id = 38103211,
 		type = 18,
 		param = {}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.child2_condition
-
-	var_6_54[38103212] = {
+	pg.base.child2_condition[38103212] = {
 		id = 38103212,
 		type = 17,
 		param = {
@@ -8882,22 +6644,14 @@ end)()
 			0
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.child2_condition
-
-	var_6_55[38103213] = {
+	pg.base.child2_condition[38103213] = {
 		id = 38103213,
 		type = 16,
 		param = {
 			50
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.child2_condition
-
-	var_6_56[38108211] = {
+	pg.base.child2_condition[38108211] = {
 		id = 38108211,
 		type = 17,
 		param = {
@@ -8907,11 +6661,7 @@ end)()
 			-2
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.child2_condition
-
-	var_6_57[38108212] = {
+	pg.base.child2_condition[38108212] = {
 		id = 38108212,
 		type = 17,
 		param = {
@@ -8921,11 +6671,7 @@ end)()
 			-4
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.child2_condition
-
-	var_6_58[38108213] = {
+	pg.base.child2_condition[38108213] = {
 		id = 38108213,
 		type = 17,
 		param = {
@@ -8935,11 +6681,7 @@ end)()
 			-6
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.child2_condition
-
-	var_6_59[38108214] = {
+	pg.base.child2_condition[38108214] = {
 		id = 38108214,
 		type = 17,
 		param = {
@@ -8949,20 +6691,12 @@ end)()
 			-8
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.child2_condition
-
-	var_6_60[38108215] = {
+	pg.base.child2_condition[38108215] = {
 		id = 38108215,
 		type = 18,
 		param = {}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.child2_condition
-
-	var_6_61[27] = {
+	pg.base.child2_condition[27] = {
 		id = 38109211,
 		type = 21,
 		param = {
@@ -9002,31 +6736,19 @@ end)()
 			1
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.child2_condition
-
-	var_6_62[28] = {
+	pg.base.child2_condition[28] = {
 		id = 38109212,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.child2_condition
-
-	var_6_63[38105811] = {
+	pg.base.child2_condition[38105811] = {
 		id = 38105811,
 		type = 19,
 		param = {}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.child2_condition
-
-	var_6_64[38105812] = {
+	pg.base.child2_condition[38105812] = {
 		id = 38105812,
 		type = 17,
 		param = {
@@ -9036,22 +6758,14 @@ end)()
 			0
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.child2_condition
-
-	var_6_65[38105813] = {
+	pg.base.child2_condition[38105813] = {
 		id = 38105813,
 		type = 16,
 		param = {
 			4
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.child2_condition
-
-	var_6_66[19] = {
+	pg.base.child2_condition[19] = {
 		id = 38107411,
 		type = 1,
 		param = {
@@ -9061,11 +6775,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.child2_condition
-
-	var_6_67[38105411] = {
+	pg.base.child2_condition[38105411] = {
 		id = 38105411,
 		type = 20,
 		param = {
@@ -9075,22 +6785,14 @@ end)()
 			3
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.child2_condition
-
-	var_6_68[38105412] = {
+	pg.base.child2_condition[38105412] = {
 		id = 38105412,
 		type = 16,
 		param = {
 			3
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.child2_condition
-
-	var_6_69[38105413] = {
+	pg.base.child2_condition[38105413] = {
 		id = 38105413,
 		type = 20,
 		param = {
@@ -9100,11 +6802,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.child2_condition
-
-	var_6_70[38105414] = {
+	pg.base.child2_condition[38105414] = {
 		id = 38105414,
 		type = 20,
 		param = {
@@ -9114,11 +6812,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.child2_condition
-
-	var_6_71[38105415] = {
+	pg.base.child2_condition[38105415] = {
 		id = 38105415,
 		type = 20,
 		param = {
@@ -9128,11 +6822,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.child2_condition
-
-	var_6_72[38105416] = {
+	pg.base.child2_condition[38105416] = {
 		id = 38105416,
 		type = 20,
 		param = {
@@ -9142,11 +6832,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.child2_condition
-
-	var_6_73[38105417] = {
+	pg.base.child2_condition[38105417] = {
 		id = 38105417,
 		type = 20,
 		param = {
@@ -9156,11 +6842,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.child2_condition
-
-	var_6_74[38105418] = {
+	pg.base.child2_condition[38105418] = {
 		id = 38105418,
 		type = 20,
 		param = {
@@ -9170,11 +6852,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.child2_condition
-
-	var_6_75[38105419] = {
+	pg.base.child2_condition[38105419] = {
 		id = 38105419,
 		type = 20,
 		param = {
@@ -9184,11 +6862,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.child2_condition
-
-	var_6_76[38105420] = {
+	pg.base.child2_condition[38105420] = {
 		id = 38105420,
 		type = 20,
 		param = {
@@ -9198,11 +6872,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.child2_condition
-
-	var_6_77[38105421] = {
+	pg.base.child2_condition[38105421] = {
 		id = 38105421,
 		type = 20,
 		param = {
@@ -9212,11 +6882,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.child2_condition
-
-	var_6_78[38105422] = {
+	pg.base.child2_condition[38105422] = {
 		id = 38105422,
 		type = 20,
 		param = {
@@ -9226,11 +6892,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.child2_condition
-
-	var_6_79[38105423] = {
+	pg.base.child2_condition[38105423] = {
 		id = 38105423,
 		type = 20,
 		param = {
@@ -9240,11 +6902,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.child2_condition
-
-	var_6_80[38105424] = {
+	pg.base.child2_condition[38105424] = {
 		id = 38105424,
 		type = 20,
 		param = {
@@ -9254,11 +6912,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.child2_condition
-
-	var_6_81[38105425] = {
+	pg.base.child2_condition[38105425] = {
 		id = 38105425,
 		type = 20,
 		param = {
@@ -9268,11 +6922,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.child2_condition
-
-	var_6_82[38105426] = {
+	pg.base.child2_condition[38105426] = {
 		id = 38105426,
 		type = 20,
 		param = {
@@ -9282,11 +6932,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.child2_condition
-
-	var_6_83[38105427] = {
+	pg.base.child2_condition[38105427] = {
 		id = 38105427,
 		type = 20,
 		param = {
@@ -9296,11 +6942,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.child2_condition
-
-	var_6_84[38105428] = {
+	pg.base.child2_condition[38105428] = {
 		id = 38105428,
 		type = 20,
 		param = {
@@ -9310,11 +6952,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.child2_condition
-
-	var_6_85[38105429] = {
+	pg.base.child2_condition[38105429] = {
 		id = 38105429,
 		type = 20,
 		param = {
@@ -9324,11 +6962,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.child2_condition
-
-	var_6_86[38105430] = {
+	pg.base.child2_condition[38105430] = {
 		id = 38105430,
 		type = 20,
 		param = {
@@ -9338,11 +6972,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.child2_condition
-
-	var_6_87[38105431] = {
+	pg.base.child2_condition[38105431] = {
 		id = 38105431,
 		type = 20,
 		param = {
@@ -9352,11 +6982,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.child2_condition
-
-	var_6_88[38105432] = {
+	pg.base.child2_condition[38105432] = {
 		id = 38105432,
 		type = 20,
 		param = {
@@ -9366,11 +6992,7 @@ end)()
 			999
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.child2_condition
-
-	var_6_89[38104411] = {
+	pg.base.child2_condition[38104411] = {
 		id = 38104411,
 		type = 21,
 		param = {
@@ -9406,31 +7028,19 @@ end)()
 			0
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.child2_condition
-
-	var_6_90[38104412] = {
+	pg.base.child2_condition[38104412] = {
 		id = 38104412,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.child2_condition
-
-	var_6_91[3] = {
+	pg.base.child2_condition[3] = {
 		id = 38103811,
 		type = 19,
 		param = {}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.child2_condition
-
-	var_6_92[4] = {
+	pg.base.child2_condition[4] = {
 		id = 38103812,
 		type = 17,
 		param = {
@@ -9440,22 +7050,14 @@ end)()
 			0
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.child2_condition
-
-	var_6_93[5] = {
+	pg.base.child2_condition[5] = {
 		id = 38103813,
 		type = 16,
 		param = {
 			5
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.child2_condition
-
-	var_6_94[38110811] = {
+	pg.base.child2_condition[38110811] = {
 		id = 38110811,
 		type = 21,
 		param = {
@@ -9521,11 +7123,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.child2_condition
-
-	var_6_95[38150202] = {
+	pg.base.child2_condition[38150202] = {
 		id = 38150202,
 		type = 21,
 		param = {
@@ -9591,11 +7189,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.child2_condition
-
-	var_6_96[38150203] = {
+	pg.base.child2_condition[38150203] = {
 		id = 38150203,
 		type = 21,
 		param = {
@@ -9661,11 +7255,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.child2_condition
-
-	var_6_97[38150204] = {
+	pg.base.child2_condition[38150204] = {
 		id = 38150204,
 		type = 21,
 		param = {
@@ -9731,11 +7321,7 @@ end)()
 			4
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.child2_condition
-
-	var_6_98[38150205] = {
+	pg.base.child2_condition[38150205] = {
 		id = 38150205,
 		type = 21,
 		param = {
@@ -9801,8 +7387,7 @@ end)()
 			5
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.child2_condition[38150206] = {
+	pg.base.child2_condition[38150206] = {
 		id = 38150206,
 		type = 21,
 		param = {
@@ -9872,11 +7457,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.child2_condition
-
-	var_7_0[38150207] = {
+	pg.base.child2_condition[38150207] = {
 		id = 38150207,
 		type = 21,
 		param = {
@@ -9942,11 +7523,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.child2_condition
-
-	var_7_1[38150208] = {
+	pg.base.child2_condition[38150208] = {
 		id = 38150208,
 		type = 21,
 		param = {
@@ -10012,11 +7589,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.child2_condition
-
-	var_7_2[38150209] = {
+	pg.base.child2_condition[38150209] = {
 		id = 38150209,
 		type = 21,
 		param = {
@@ -10082,11 +7655,7 @@ end)()
 			9
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.child2_condition
-
-	var_7_3[38150210] = {
+	pg.base.child2_condition[38150210] = {
 		id = 38150210,
 		type = 21,
 		param = {
@@ -10152,11 +7721,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.child2_condition
-
-	var_7_4[38150211] = {
+	pg.base.child2_condition[38150211] = {
 		id = 38150211,
 		type = 21,
 		param = {
@@ -10222,11 +7787,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.child2_condition
-
-	var_7_5[38150212] = {
+	pg.base.child2_condition[38150212] = {
 		id = 38150212,
 		type = 21,
 		param = {
@@ -10292,11 +7853,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.child2_condition
-
-	var_7_6[38150213] = {
+	pg.base.child2_condition[38150213] = {
 		id = 38150213,
 		type = 21,
 		param = {
@@ -10362,11 +7919,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.child2_condition
-
-	var_7_7[38150214] = {
+	pg.base.child2_condition[38150214] = {
 		id = 38150214,
 		type = 21,
 		param = {
@@ -10432,11 +7985,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.child2_condition
-
-	var_7_8[38150215] = {
+	pg.base.child2_condition[38150215] = {
 		id = 38150215,
 		type = 21,
 		param = {
@@ -10502,11 +8051,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.child2_condition
-
-	var_7_9[38150216] = {
+	pg.base.child2_condition[38150216] = {
 		id = 38150216,
 		type = 21,
 		param = {
@@ -10572,11 +8117,7 @@ end)()
 			16
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.child2_condition
-
-	var_7_10[38150217] = {
+	pg.base.child2_condition[38150217] = {
 		id = 38150217,
 		type = 21,
 		param = {
@@ -10642,11 +8183,7 @@ end)()
 			17
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.child2_condition
-
-	var_7_11[38150218] = {
+	pg.base.child2_condition[38150218] = {
 		id = 38150218,
 		type = 21,
 		param = {
@@ -10712,11 +8249,7 @@ end)()
 			18
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.child2_condition
-
-	var_7_12[38150219] = {
+	pg.base.child2_condition[38150219] = {
 		id = 38150219,
 		type = 21,
 		param = {
@@ -10782,11 +8315,7 @@ end)()
 			19
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.child2_condition
-
-	var_7_13[38150220] = {
+	pg.base.child2_condition[38150220] = {
 		id = 38150220,
 		type = 21,
 		param = {
@@ -10852,11 +8381,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.child2_condition
-
-	var_7_14[38150221] = {
+	pg.base.child2_condition[38150221] = {
 		id = 38150221,
 		type = 21,
 		param = {
@@ -10922,11 +8447,7 @@ end)()
 			21
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.child2_condition
-
-	var_7_15[38150222] = {
+	pg.base.child2_condition[38150222] = {
 		id = 38150222,
 		type = 21,
 		param = {
@@ -10992,11 +8513,7 @@ end)()
 			22
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.child2_condition
-
-	var_7_16[38150223] = {
+	pg.base.child2_condition[38150223] = {
 		id = 38150223,
 		type = 21,
 		param = {
@@ -11062,11 +8579,7 @@ end)()
 			23
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.child2_condition
-
-	var_7_17[38150224] = {
+	pg.base.child2_condition[38150224] = {
 		id = 38150224,
 		type = 21,
 		param = {
@@ -11132,11 +8645,7 @@ end)()
 			24
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.child2_condition
-
-	var_7_18[38150225] = {
+	pg.base.child2_condition[38150225] = {
 		id = 38150225,
 		type = 21,
 		param = {
@@ -11202,11 +8711,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.child2_condition
-
-	var_7_19[38150226] = {
+	pg.base.child2_condition[38150226] = {
 		id = 38150226,
 		type = 21,
 		param = {
@@ -11272,11 +8777,7 @@ end)()
 			26
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.child2_condition
-
-	var_7_20[38150227] = {
+	pg.base.child2_condition[38150227] = {
 		id = 38150227,
 		type = 21,
 		param = {
@@ -11342,11 +8843,7 @@ end)()
 			27
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.child2_condition
-
-	var_7_21[38150228] = {
+	pg.base.child2_condition[38150228] = {
 		id = 38150228,
 		type = 21,
 		param = {
@@ -11412,11 +8909,7 @@ end)()
 			28
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.child2_condition
-
-	var_7_22[38150229] = {
+	pg.base.child2_condition[38150229] = {
 		id = 38150229,
 		type = 21,
 		param = {
@@ -11482,11 +8975,7 @@ end)()
 			29
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.child2_condition
-
-	var_7_23[38150230] = {
+	pg.base.child2_condition[38150230] = {
 		id = 38150230,
 		type = 21,
 		param = {
@@ -11552,31 +9041,19 @@ end)()
 			30
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.child2_condition
-
-	var_7_24[38110812] = {
+	pg.base.child2_condition[38110812] = {
 		id = 38110812,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.child2_condition
-
-	var_7_25[15] = {
+	pg.base.child2_condition[15] = {
 		id = 38100111,
 		type = 18,
 		param = {}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.child2_condition
-
-	var_7_26[16] = {
+	pg.base.child2_condition[16] = {
 		id = 38100112,
 		type = 17,
 		param = {
@@ -11586,22 +9063,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.child2_condition
-
-	var_7_27[17] = {
+	pg.base.child2_condition[17] = {
 		id = 38100113,
 		type = 16,
 		param = {
 			3
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.child2_condition
-
-	var_7_28[38102611] = {
+	pg.base.child2_condition[38102611] = {
 		id = 38102611,
 		type = 21,
 		param = {
@@ -11621,11 +9090,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.child2_condition
-
-	var_7_29[38150231] = {
+	pg.base.child2_condition[38150231] = {
 		id = 38150231,
 		type = 21,
 		param = {
@@ -11645,11 +9110,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.child2_condition
-
-	var_7_30[38150232] = {
+	pg.base.child2_condition[38150232] = {
 		id = 38150232,
 		type = 21,
 		param = {
@@ -11669,11 +9130,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.child2_condition
-
-	var_7_31[38150233] = {
+	pg.base.child2_condition[38150233] = {
 		id = 38150233,
 		type = 21,
 		param = {
@@ -11693,11 +9150,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.child2_condition
-
-	var_7_32[38150234] = {
+	pg.base.child2_condition[38150234] = {
 		id = 38150234,
 		type = 21,
 		param = {
@@ -11717,11 +9170,7 @@ end)()
 			5
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.child2_condition
-
-	var_7_33[38150235] = {
+	pg.base.child2_condition[38150235] = {
 		id = 38150235,
 		type = 21,
 		param = {
@@ -11741,11 +9190,7 @@ end)()
 			6
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.child2_condition
-
-	var_7_34[38150236] = {
+	pg.base.child2_condition[38150236] = {
 		id = 38150236,
 		type = 21,
 		param = {
@@ -11765,11 +9210,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.child2_condition
-
-	var_7_35[38150237] = {
+	pg.base.child2_condition[38150237] = {
 		id = 38150237,
 		type = 21,
 		param = {
@@ -11789,11 +9230,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.child2_condition
-
-	var_7_36[38150238] = {
+	pg.base.child2_condition[38150238] = {
 		id = 38150238,
 		type = 21,
 		param = {
@@ -11813,11 +9250,7 @@ end)()
 			9
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.child2_condition
-
-	var_7_37[38150239] = {
+	pg.base.child2_condition[38150239] = {
 		id = 38150239,
 		type = 21,
 		param = {
@@ -11837,22 +9270,14 @@ end)()
 			10
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.child2_condition
-
-	var_7_38[38102612] = {
+	pg.base.child2_condition[38102612] = {
 		id = 38102612,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.child2_condition
-
-	var_7_39[23] = {
+	pg.base.child2_condition[23] = {
 		id = 38101911,
 		type = 21,
 		param = {
@@ -11888,22 +9313,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.child2_condition
-
-	var_7_40[24] = {
+	pg.base.child2_condition[24] = {
 		id = 38101912,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.child2_condition
-
-	var_7_41[38101311] = {
+	pg.base.child2_condition[38101311] = {
 		id = 38101311,
 		type = 10,
 		param = {
@@ -14189,11 +11606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.child2_condition
-
-	var_7_42[38108611] = {
+	pg.base.child2_condition[38108611] = {
 		id = 38108611,
 		type = 1,
 		param = {
@@ -14203,11 +11616,7 @@ end)()
 			45
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.child2_condition
-
-	var_7_43[38108612] = {
+	pg.base.child2_condition[38108612] = {
 		id = 38108612,
 		type = 1,
 		param = {
@@ -14217,11 +11626,7 @@ end)()
 			245
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.child2_condition
-
-	var_7_44[38100711] = {
+	pg.base.child2_condition[38100711] = {
 		id = 38100711,
 		type = 21,
 		param = {
@@ -14489,22 +11894,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.child2_condition
-
-	var_7_45[38100712] = {
+	pg.base.child2_condition[38100712] = {
 		id = 38100712,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.child2_condition
-
-	var_7_46[38109811] = {
+	pg.base.child2_condition[38109811] = {
 		id = 38109811,
 		type = 21,
 		param = {
@@ -14524,22 +11921,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.child2_condition
-
-	var_7_47[38109812] = {
+	pg.base.child2_condition[38109812] = {
 		id = 38109812,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.child2_condition
-
-	var_7_48[38104811] = {
+	pg.base.child2_condition[38104811] = {
 		id = 38104811,
 		type = 20,
 		param = {
@@ -14549,11 +11938,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.child2_condition
-
-	var_7_49[38104812] = {
+	pg.base.child2_condition[38104812] = {
 		id = 38104812,
 		type = 21,
 		param = {
@@ -14573,20 +11958,12 @@ end)()
 			3
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.child2_condition
-
-	var_7_50[38100211] = {
+	pg.base.child2_condition[38100211] = {
 		id = 38100211,
 		type = 19,
 		param = {}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.child2_condition
-
-	var_7_51[38100212] = {
+	pg.base.child2_condition[38100212] = {
 		id = 38100212,
 		type = 17,
 		param = {
@@ -14596,42 +11973,26 @@ end)()
 			0
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.child2_condition
-
-	var_7_52[38100213] = {
+	pg.base.child2_condition[38100213] = {
 		id = 38100213,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.child2_condition
-
-	var_7_53[38100214] = {
+	pg.base.child2_condition[38100214] = {
 		id = 38100214,
 		type = 6,
 		param = {
 			2500
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.child2_condition
-
-	var_7_54[38100311] = {
+	pg.base.child2_condition[38100311] = {
 		id = 38100311,
 		type = 19,
 		param = {}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.child2_condition
-
-	var_7_55[38100312] = {
+	pg.base.child2_condition[38100312] = {
 		id = 38100312,
 		type = 17,
 		param = {
@@ -14641,33 +12002,21 @@ end)()
 			0
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.child2_condition
-
-	var_7_56[38100313] = {
+	pg.base.child2_condition[38100313] = {
 		id = 38100313,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.child2_condition
-
-	var_7_57[38100314] = {
+	pg.base.child2_condition[38100314] = {
 		id = 38100314,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.child2_condition
-
-	var_7_58[38100411] = {
+	pg.base.child2_condition[38100411] = {
 		id = 38100411,
 		type = 1,
 		param = {
@@ -14677,11 +12026,7 @@ end)()
 			80
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.child2_condition
-
-	var_7_59[38100412] = {
+	pg.base.child2_condition[38100412] = {
 		id = 38100412,
 		type = 1,
 		param = {
@@ -14691,11 +12036,7 @@ end)()
 			80
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.child2_condition
-
-	var_7_60[31] = {
+	pg.base.child2_condition[31] = {
 		id = 38100511,
 		type = 17,
 		param = {
@@ -14705,11 +12046,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.child2_condition
-
-	var_7_61[38100512] = {
+	pg.base.child2_condition[38100512] = {
 		id = 38100512,
 		type = 17,
 		param = {
@@ -14719,11 +12056,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.child2_condition
-
-	var_7_62[38100513] = {
+	pg.base.child2_condition[38100513] = {
 		id = 38100513,
 		type = 17,
 		param = {
@@ -14733,11 +12066,7 @@ end)()
 			0
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.child2_condition
-
-	var_7_63[3] = {
+	pg.base.child2_condition[3] = {
 		id = 38100611,
 		type = 1,
 		param = {
@@ -14747,22 +12076,14 @@ end)()
 			60
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.child2_condition
-
-	var_7_64[38100811] = {
+	pg.base.child2_condition[38100811] = {
 		id = 38100811,
 		type = 6,
 		param = {
 			3000
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.child2_condition
-
-	var_7_65[38100911] = {
+	pg.base.child2_condition[38100911] = {
 		id = 38100911,
 		type = 21,
 		param = {
@@ -15038,11 +12359,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.child2_condition
-
-	var_7_66[19] = {
+	pg.base.child2_condition[19] = {
 		id = 38101011,
 		type = 20,
 		param = {
@@ -15052,11 +12369,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.child2_condition
-
-	var_7_67[20] = {
+	pg.base.child2_condition[20] = {
 		id = 38101012,
 		type = 20,
 		param = {
@@ -15066,11 +12379,7 @@ end)()
 			61
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.child2_condition
-
-	var_7_68[38101111] = {
+	pg.base.child2_condition[38101111] = {
 		id = 38101111,
 		type = 20,
 		param = {
@@ -15080,11 +12389,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.child2_condition
-
-	var_7_69[38101112] = {
+	pg.base.child2_condition[38101112] = {
 		id = 38101112,
 		type = 21,
 		param = {
@@ -15360,11 +12665,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.child2_condition
-
-	var_7_70[38101113] = {
+	pg.base.child2_condition[38101113] = {
 		id = 38101113,
 		type = 20,
 		param = {
@@ -15374,11 +12675,7 @@ end)()
 			61
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.child2_condition
-
-	var_7_71[38101411] = {
+	pg.base.child2_condition[38101411] = {
 		id = 38101411,
 		type = 10,
 		param = {
@@ -17664,11 +14961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.child2_condition
-
-	var_7_72[7] = {
+	pg.base.child2_condition[7] = {
 		id = 38101511,
 		type = 10,
 		param = {
@@ -19954,22 +17247,14 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.child2_condition
-
-	var_7_73[8] = {
+	pg.base.child2_condition[8] = {
 		id = 38101512,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.child2_condition
-
-	var_7_74[38101811] = {
+	pg.base.child2_condition[38101811] = {
 		id = 38101811,
 		type = 10,
 		param = {
@@ -22255,11 +19540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.child2_condition
-
-	var_7_75[38102011] = {
+	pg.base.child2_condition[38102011] = {
 		id = 38102011,
 		type = 8,
 		param = {
@@ -22304,11 +19585,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.child2_condition
-
-	var_7_76[38102111] = {
+	pg.base.child2_condition[38102111] = {
 		id = 38102111,
 		type = 10,
 		param = {
@@ -22326,11 +19603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.child2_condition
-
-	var_7_77[38102211] = {
+	pg.base.child2_condition[38102211] = {
 		id = 38102211,
 		type = 10,
 		param = {
@@ -22348,20 +19621,12 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.child2_condition
-
-	var_7_78[38102212] = {
+	pg.base.child2_condition[38102212] = {
 		id = 38102212,
 		type = 19,
 		param = {}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.child2_condition
-
-	var_7_79[38102213] = {
+	pg.base.child2_condition[38102213] = {
 		id = 38102213,
 		type = 5,
 		param = {
@@ -22374,11 +19639,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.child2_condition
-
-	var_7_80[38102214] = {
+	pg.base.child2_condition[38102214] = {
 		id = 38102214,
 		type = 5,
 		param = {
@@ -22391,22 +19652,14 @@ end)()
 			1
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.child2_condition
-
-	var_7_81[38102215] = {
+	pg.base.child2_condition[38102215] = {
 		id = 38102215,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.child2_condition
-
-	var_7_82[38102311] = {
+	pg.base.child2_condition[38102311] = {
 		id = 38102311,
 		type = 17,
 		param = {
@@ -22416,40 +19669,24 @@ end)()
 			0
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.child2_condition
-
-	var_7_83[38102312] = {
+	pg.base.child2_condition[38102312] = {
 		id = 38102312,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.child2_condition
-
-	var_7_84[38102313] = {
+	pg.base.child2_condition[38102313] = {
 		id = 38102313,
 		type = 19,
 		param = {}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.child2_condition
-
-	var_7_85[11] = {
+	pg.base.child2_condition[11] = {
 		id = 38102411,
 		type = 19,
 		param = {}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.child2_condition
-
-	var_7_86[12] = {
+	pg.base.child2_condition[12] = {
 		id = 38102412,
 		type = 17,
 		param = {
@@ -22459,22 +19696,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.child2_condition
-
-	var_7_87[13] = {
+	pg.base.child2_condition[13] = {
 		id = 38102413,
 		type = 16,
 		param = {
 			300
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.child2_condition
-
-	var_7_88[38102511] = {
+	pg.base.child2_condition[38102511] = {
 		id = 38102511,
 		type = 21,
 		param = {
@@ -22520,22 +19749,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.child2_condition
-
-	var_7_89[38102512] = {
+	pg.base.child2_condition[38102512] = {
 		id = 38102512,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.child2_condition
-
-	var_7_90[38102711] = {
+	pg.base.child2_condition[38102711] = {
 		id = 38102711,
 		type = 21,
 		param = {
@@ -22555,11 +19776,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.child2_condition
-
-	var_7_91[38102712] = {
+	pg.base.child2_condition[38102712] = {
 		id = 38102712,
 		type = 21,
 		param = {
@@ -22579,11 +19796,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.child2_condition
-
-	var_7_92[38102713] = {
+	pg.base.child2_condition[38102713] = {
 		id = 38102713,
 		type = 21,
 		param = {
@@ -22603,11 +19816,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.child2_condition
-
-	var_7_93[38102714] = {
+	pg.base.child2_condition[38102714] = {
 		id = 38102714,
 		type = 21,
 		param = {
@@ -22627,11 +19836,7 @@ end)()
 			4
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.child2_condition
-
-	var_7_94[38102715] = {
+	pg.base.child2_condition[38102715] = {
 		id = 38102715,
 		type = 21,
 		param = {
@@ -22651,20 +19856,12 @@ end)()
 			5
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.child2_condition
-
-	var_7_95[38102911] = {
+	pg.base.child2_condition[38102911] = {
 		id = 38102911,
 		type = 19,
 		param = {}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.child2_condition
-
-	var_7_96[0] = {
+	pg.base.child2_condition[0] = {
 		id = 38102912,
 		type = 17,
 		param = {
@@ -22674,11 +19871,7 @@ end)()
 			0
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.child2_condition
-
-	var_7_97[1] = {
+	pg.base.child2_condition[1] = {
 		id = 38102913,
 		type = 17,
 		param = {
@@ -22688,19 +19881,14 @@ end)()
 			0
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.child2_condition
-
-	var_7_98[38103011] = {
+	pg.base.child2_condition[38103011] = {
 		id = 38103011,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.child2_condition[38103012] = {
+	pg.base.child2_condition[38103012] = {
 		id = 38103012,
 		type = 10,
 		param = {
@@ -24990,11 +22178,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.child2_condition
-
-	var_8_0[38103013] = {
+	pg.base.child2_condition[38103013] = {
 		id = 38103013,
 		type = 17,
 		param = {
@@ -25004,20 +22188,12 @@ end)()
 			0
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.child2_condition
-
-	var_8_1[38103111] = {
+	pg.base.child2_condition[38103111] = {
 		id = 38103111,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.child2_condition
-
-	var_8_2[38103112] = {
+	pg.base.child2_condition[38103112] = {
 		id = 38103112,
 		type = 17,
 		param = {
@@ -25027,42 +22203,26 @@ end)()
 			0
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.child2_condition
-
-	var_8_3[38103113] = {
+	pg.base.child2_condition[38103113] = {
 		id = 38103113,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.child2_condition
-
-	var_8_4[38103114] = {
+	pg.base.child2_condition[38103114] = {
 		id = 38103114,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.child2_condition
-
-	var_8_5[15] = {
+	pg.base.child2_condition[15] = {
 		id = 38103311,
 		type = 18,
 		param = {}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.child2_condition
-
-	var_8_6[16] = {
+	pg.base.child2_condition[16] = {
 		id = 38103312,
 		type = 17,
 		param = {
@@ -25072,42 +22232,26 @@ end)()
 			0
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.child2_condition
-
-	var_8_7[17] = {
+	pg.base.child2_condition[17] = {
 		id = 38103313,
 		type = 16,
 		param = {
 			100
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.child2_condition
-
-	var_8_8[18] = {
+	pg.base.child2_condition[18] = {
 		id = 38103314,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.child2_condition
-
-	var_8_9[38103411] = {
+	pg.base.child2_condition[38103411] = {
 		id = 38103411,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.child2_condition
-
-	var_8_10[38103412] = {
+	pg.base.child2_condition[38103412] = {
 		id = 38103412,
 		type = 1,
 		param = {
@@ -25117,31 +22261,19 @@ end)()
 			0
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.child2_condition
-
-	var_8_11[38103413] = {
+	pg.base.child2_condition[38103413] = {
 		id = 38103413,
 		type = 16,
 		param = {
 			100
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.child2_condition
-
-	var_8_12[38103511] = {
+	pg.base.child2_condition[38103511] = {
 		id = 38103511,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.child2_condition
-
-	var_8_13[38103512] = {
+	pg.base.child2_condition[38103512] = {
 		id = 38103512,
 		type = 17,
 		param = {
@@ -25151,31 +22283,19 @@ end)()
 			0
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.child2_condition
-
-	var_8_14[38103513] = {
+	pg.base.child2_condition[38103513] = {
 		id = 38103513,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.child2_condition
-
-	var_8_15[31] = {
+	pg.base.child2_condition[31] = {
 		id = 38103711,
 		type = 18,
 		param = {}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.child2_condition
-
-	var_8_16[38103712] = {
+	pg.base.child2_condition[38103712] = {
 		id = 38103712,
 		type = 17,
 		param = {
@@ -25185,185 +22305,117 @@ end)()
 			0
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.child2_condition
-
-	var_8_17[38103713] = {
+	pg.base.child2_condition[38103713] = {
 		id = 38103713,
 		type = 16,
 		param = {
 			100
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.child2_condition
-
-	var_8_18[38103714] = {
+	pg.base.child2_condition[38103714] = {
 		id = 38103714,
 		type = 16,
 		param = {
 			200
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.child2_condition
-
-	var_8_19[38103715] = {
+	pg.base.child2_condition[38103715] = {
 		id = 38103715,
 		type = 16,
 		param = {
 			300
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.child2_condition
-
-	var_8_20[38103716] = {
+	pg.base.child2_condition[38103716] = {
 		id = 38103716,
 		type = 16,
 		param = {
 			400
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.child2_condition
-
-	var_8_21[38103717] = {
+	pg.base.child2_condition[38103717] = {
 		id = 38103717,
 		type = 16,
 		param = {
 			500
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.child2_condition
-
-	var_8_22[38103718] = {
+	pg.base.child2_condition[38103718] = {
 		id = 38103718,
 		type = 16,
 		param = {
 			600
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.child2_condition
-
-	var_8_23[38103719] = {
+	pg.base.child2_condition[38103719] = {
 		id = 38103719,
 		type = 16,
 		param = {
 			700
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.child2_condition
-
-	var_8_24[38103720] = {
+	pg.base.child2_condition[38103720] = {
 		id = 38103720,
 		type = 16,
 		param = {
 			800
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.child2_condition
-
-	var_8_25[38103721] = {
+	pg.base.child2_condition[38103721] = {
 		id = 38103721,
 		type = 16,
 		param = {
 			900
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.child2_condition
-
-	var_8_26[38103722] = {
+	pg.base.child2_condition[38103722] = {
 		id = 38103722,
 		type = 16,
 		param = {
 			1000
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.child2_condition
-
-	var_8_27[38103723] = {
+	pg.base.child2_condition[38103723] = {
 		id = 38103723,
 		type = 16,
 		param = {
 			1100
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.child2_condition
-
-	var_8_28[38103724] = {
+	pg.base.child2_condition[38103724] = {
 		id = 38103724,
 		type = 16,
 		param = {
 			1200
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.child2_condition
-
-	var_8_29[38103725] = {
+	pg.base.child2_condition[38103725] = {
 		id = 38103725,
 		type = 16,
 		param = {
 			1300
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.child2_condition
-
-	var_8_30[38103726] = {
+	pg.base.child2_condition[38103726] = {
 		id = 38103726,
 		type = 16,
 		param = {
 			1400
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.child2_condition
-
-	var_8_31[38103737] = {
+	pg.base.child2_condition[38103737] = {
 		id = 38103737,
 		type = 16,
 		param = {
 			1500
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.child2_condition
-
-	var_8_32[38104111] = {
+	pg.base.child2_condition[38104111] = {
 		id = 38104111,
 		type = 18,
 		param = {}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.child2_condition
-
-	var_8_33[38104112] = {
+	pg.base.child2_condition[38104112] = {
 		id = 38104112,
 		type = 17,
 		param = {
@@ -25373,31 +22425,19 @@ end)()
 			0
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.child2_condition
-
-	var_8_34[38104113] = {
+	pg.base.child2_condition[38104113] = {
 		id = 38104113,
 		type = 16,
 		param = {
 			100
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.child2_condition
-
-	var_8_35[38104311] = {
+	pg.base.child2_condition[38104311] = {
 		id = 38104311,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.child2_condition
-
-	var_8_36[38104312] = {
+	pg.base.child2_condition[38104312] = {
 		id = 38104312,
 		type = 17,
 		param = {
@@ -25407,22 +22447,14 @@ end)()
 			0
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.child2_condition
-
-	var_8_37[38104313] = {
+	pg.base.child2_condition[38104313] = {
 		id = 38104313,
 		type = 16,
 		param = {
 			1000
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.child2_condition
-
-	var_8_38[38103727] = {
+	pg.base.child2_condition[38103727] = {
 		id = 38103727,
 		type = 17,
 		param = {
@@ -25432,11 +22464,7 @@ end)()
 			-1000
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.child2_condition
-
-	var_8_39[38103728] = {
+	pg.base.child2_condition[38103728] = {
 		id = 38103728,
 		type = 17,
 		param = {
@@ -25446,11 +22474,7 @@ end)()
 			-2000
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.child2_condition
-
-	var_8_40[38103729] = {
+	pg.base.child2_condition[38103729] = {
 		id = 38103729,
 		type = 17,
 		param = {
@@ -25460,11 +22484,7 @@ end)()
 			-3000
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.child2_condition
-
-	var_8_41[38103730] = {
+	pg.base.child2_condition[38103730] = {
 		id = 38103730,
 		type = 17,
 		param = {
@@ -25474,11 +22494,7 @@ end)()
 			-4000
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.child2_condition
-
-	var_8_42[38103731] = {
+	pg.base.child2_condition[38103731] = {
 		id = 38103731,
 		type = 17,
 		param = {
@@ -25488,11 +22504,7 @@ end)()
 			-5000
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.child2_condition
-
-	var_8_43[38103732] = {
+	pg.base.child2_condition[38103732] = {
 		id = 38103732,
 		type = 17,
 		param = {
@@ -25502,11 +22514,7 @@ end)()
 			-6000
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.child2_condition
-
-	var_8_44[38103733] = {
+	pg.base.child2_condition[38103733] = {
 		id = 38103733,
 		type = 17,
 		param = {
@@ -25516,11 +22524,7 @@ end)()
 			-7000
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.child2_condition
-
-	var_8_45[38103734] = {
+	pg.base.child2_condition[38103734] = {
 		id = 38103734,
 		type = 17,
 		param = {
@@ -25530,11 +22534,7 @@ end)()
 			-8000
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.child2_condition
-
-	var_8_46[38103735] = {
+	pg.base.child2_condition[38103735] = {
 		id = 38103735,
 		type = 17,
 		param = {
@@ -25544,11 +22544,7 @@ end)()
 			-9000
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.child2_condition
-
-	var_8_47[38103736] = {
+	pg.base.child2_condition[38103736] = {
 		id = 38103736,
 		type = 17,
 		param = {
@@ -25558,11 +22554,7 @@ end)()
 			-10000
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.child2_condition
-
-	var_8_48[38104511] = {
+	pg.base.child2_condition[38104511] = {
 		id = 38104511,
 		type = 20,
 		param = {
@@ -25572,20 +22564,12 @@ end)()
 			2
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.child2_condition
-
-	var_8_49[38104611] = {
+	pg.base.child2_condition[38104611] = {
 		id = 38104611,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.child2_condition
-
-	var_8_50[38104612] = {
+	pg.base.child2_condition[38104612] = {
 		id = 38104612,
 		type = 17,
 		param = {
@@ -25595,22 +22579,14 @@ end)()
 			0
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.child2_condition
-
-	var_8_51[38104613] = {
+	pg.base.child2_condition[38104613] = {
 		id = 38104613,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.child2_condition
-
-	var_8_52[38104614] = {
+	pg.base.child2_condition[38104614] = {
 		id = 38104614,
 		type = 20,
 		param = {
@@ -25620,20 +22596,12 @@ end)()
 			2
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.child2_condition
-
-	var_8_53[7] = {
+	pg.base.child2_condition[7] = {
 		id = 38104711,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.child2_condition
-
-	var_8_54[8] = {
+	pg.base.child2_condition[8] = {
 		id = 38104712,
 		type = 17,
 		param = {
@@ -25643,22 +22611,14 @@ end)()
 			0
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.child2_condition
-
-	var_8_55[9] = {
+	pg.base.child2_condition[9] = {
 		id = 38104713,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.child2_condition
-
-	var_8_56[10] = {
+	pg.base.child2_condition[10] = {
 		id = 38104714,
 		type = 20,
 		param = {
@@ -25668,11 +22628,7 @@ end)()
 			2
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.child2_condition
-
-	var_8_57[38104911] = {
+	pg.base.child2_condition[38104911] = {
 		id = 38104911,
 		type = 20,
 		param = {
@@ -25682,11 +22638,7 @@ end)()
 			6
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.child2_condition
-
-	var_8_58[38105011] = {
+	pg.base.child2_condition[38105011] = {
 		id = 38105011,
 		type = 20,
 		param = {
@@ -25696,11 +22648,7 @@ end)()
 			9
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.child2_condition
-
-	var_8_59[23] = {
+	pg.base.child2_condition[23] = {
 		id = 38105111,
 		type = 20,
 		param = {
@@ -25710,11 +22658,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.child2_condition
-
-	var_8_60[38105211] = {
+	pg.base.child2_condition[38105211] = {
 		id = 38105211,
 		type = 21,
 		param = {
@@ -25725,11 +22669,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.child2_condition
-
-	var_8_61[38105311] = {
+	pg.base.child2_condition[38105311] = {
 		id = 38105311,
 		type = 21,
 		param = {
@@ -25740,11 +22680,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.child2_condition
-
-	var_8_62[38105711] = {
+	pg.base.child2_condition[38105711] = {
 		id = 38105711,
 		type = 21,
 		param = {
@@ -25804,22 +22740,14 @@ end)()
 			0
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.child2_condition
-
-	var_8_63[38105712] = {
+	pg.base.child2_condition[38105712] = {
 		id = 38105712,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.child2_condition
-
-	var_8_64[38105911] = {
+	pg.base.child2_condition[38105911] = {
 		id = 38105911,
 		type = 21,
 		param = {
@@ -25837,33 +22765,21 @@ end)()
 			0
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.child2_condition
-
-	var_8_65[38105912] = {
+	pg.base.child2_condition[38105912] = {
 		id = 38105912,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.child2_condition
-
-	var_8_66[38106411] = {
+	pg.base.child2_condition[38106411] = {
 		id = 38106411,
 		type = 6,
 		param = {
 			3000
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.child2_condition
-
-	var_8_67[38106711] = {
+	pg.base.child2_condition[38106711] = {
 		id = 38106711,
 		type = 10,
 		param = {
@@ -25881,11 +22797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.child2_condition
-
-	var_8_68[38106712] = {
+	pg.base.child2_condition[38106712] = {
 		id = 38106712,
 		type = 10,
 		param = {
@@ -25903,20 +22815,12 @@ end)()
 			}
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.child2_condition
-
-	var_8_69[38107111] = {
+	pg.base.child2_condition[38107111] = {
 		id = 38107111,
 		type = 19,
 		param = {}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.child2_condition
-
-	var_8_70[38107112] = {
+	pg.base.child2_condition[38107112] = {
 		id = 38107112,
 		type = 17,
 		param = {
@@ -25926,53 +22830,33 @@ end)()
 			0
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.child2_condition
-
-	var_8_71[38107113] = {
+	pg.base.child2_condition[38107113] = {
 		id = 38107113,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.child2_condition
-
-	var_8_72[38107114] = {
+	pg.base.child2_condition[38107114] = {
 		id = 38107114,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.child2_condition
-
-	var_8_73[38107211] = {
+	pg.base.child2_condition[38107211] = {
 		id = 38107211,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.child2_condition
-
-	var_8_74[38107311] = {
+	pg.base.child2_condition[38107311] = {
 		id = 38107311,
 		type = 18,
 		param = {}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.child2_condition
-
-	var_8_75[38107312] = {
+	pg.base.child2_condition[38107312] = {
 		id = 38107312,
 		type = 17,
 		param = {
@@ -25982,33 +22866,21 @@ end)()
 			0
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.child2_condition
-
-	var_8_76[38107313] = {
+	pg.base.child2_condition[38107313] = {
 		id = 38107313,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.child2_condition
-
-	var_8_77[38107314] = {
+	pg.base.child2_condition[38107314] = {
 		id = 38107314,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.child2_condition
-
-	var_8_78[38107511] = {
+	pg.base.child2_condition[38107511] = {
 		id = 38107511,
 		type = 1,
 		param = {
@@ -26018,11 +22890,7 @@ end)()
 			1
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.child2_condition
-
-	var_8_79[38107611] = {
+	pg.base.child2_condition[38107611] = {
 		id = 38107611,
 		type = 10,
 		param = {
@@ -26040,22 +22908,14 @@ end)()
 			}
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.child2_condition
-
-	var_8_80[38107612] = {
+	pg.base.child2_condition[38107612] = {
 		id = 38107612,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.child2_condition
-
-	var_8_81[38107711] = {
+	pg.base.child2_condition[38107711] = {
 		id = 38107711,
 		type = 10,
 		param = {
@@ -26073,31 +22933,19 @@ end)()
 			}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.child2_condition
-
-	var_8_82[38107712] = {
+	pg.base.child2_condition[38107712] = {
 		id = 38107712,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.child2_condition
-
-	var_8_83[7] = {
+	pg.base.child2_condition[7] = {
 		id = 38107911,
 		type = 18,
 		param = {}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.child2_condition
-
-	var_8_84[8] = {
+	pg.base.child2_condition[8] = {
 		id = 38107912,
 		type = 17,
 		param = {
@@ -26107,22 +22955,14 @@ end)()
 			0
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.child2_condition
-
-	var_8_85[9] = {
+	pg.base.child2_condition[9] = {
 		id = 38107913,
 		type = 16,
 		param = {
 			250
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.child2_condition
-
-	var_8_86[38108011] = {
+	pg.base.child2_condition[38108011] = {
 		id = 38108011,
 		type = 1,
 		param = {
@@ -26132,22 +22972,14 @@ end)()
 			100
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.child2_condition
-
-	var_8_87[38108012] = {
+	pg.base.child2_condition[38108012] = {
 		id = 38108012,
 		type = 6,
 		param = {
 			4000
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.child2_condition
-
-	var_8_88[38108111] = {
+	pg.base.child2_condition[38108111] = {
 		id = 38108111,
 		type = 1,
 		param = {
@@ -26157,22 +22989,14 @@ end)()
 			100
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.child2_condition
-
-	var_8_89[38108112] = {
+	pg.base.child2_condition[38108112] = {
 		id = 38108112,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.child2_condition
-
-	var_8_90[23] = {
+	pg.base.child2_condition[23] = {
 		id = 38108311,
 		type = 22,
 		param = {
@@ -26190,11 +23014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.child2_condition
-
-	var_8_91[24] = {
+	pg.base.child2_condition[24] = {
 		id = 38108312,
 		type = 22,
 		param = {
@@ -26212,20 +23032,12 @@ end)()
 			}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.child2_condition
-
-	var_8_92[38108411] = {
+	pg.base.child2_condition[38108411] = {
 		id = 38108411,
 		type = 18,
 		param = {}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.child2_condition
-
-	var_8_93[38108412] = {
+	pg.base.child2_condition[38108412] = {
 		id = 38108412,
 		type = 17,
 		param = {
@@ -26235,11 +23047,7 @@ end)()
 			-2
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.child2_condition
-
-	var_8_94[38108413] = {
+	pg.base.child2_condition[38108413] = {
 		id = 38108413,
 		type = 17,
 		param = {
@@ -26249,11 +23057,7 @@ end)()
 			-4
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.child2_condition
-
-	var_8_95[38108414] = {
+	pg.base.child2_condition[38108414] = {
 		id = 38108414,
 		type = 17,
 		param = {
@@ -26263,11 +23067,7 @@ end)()
 			-6
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.child2_condition
-
-	var_8_96[38108415] = {
+	pg.base.child2_condition[38108415] = {
 		id = 38108415,
 		type = 17,
 		param = {
@@ -26277,11 +23077,7 @@ end)()
 			-8
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.child2_condition
-
-	var_8_97[0] = {
+	pg.base.child2_condition[0] = {
 		id = 38108416,
 		type = 17,
 		param = {
@@ -26291,11 +23087,7 @@ end)()
 			-10
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.child2_condition
-
-	var_8_98[1] = {
+	pg.base.child2_condition[1] = {
 		id = 38108417,
 		type = 17,
 		param = {
@@ -26305,8 +23097,7 @@ end)()
 			-12
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.child2_condition[2] = {
+	pg.base.child2_condition[2] = {
 		id = 38108418,
 		type = 16,
 		param = {
@@ -26317,11 +23108,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.child2_condition
-
-	var_9_0[38108711] = {
+	pg.base.child2_condition[38108711] = {
 		id = 38108711,
 		type = 1,
 		param = {
@@ -26331,11 +23118,7 @@ end)()
 			155
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.child2_condition
-
-	var_9_1[11] = {
+	pg.base.child2_condition[11] = {
 		id = 38108811,
 		type = 1,
 		param = {
@@ -26345,20 +23128,12 @@ end)()
 			155
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.child2_condition
-
-	var_9_2[38108911] = {
+	pg.base.child2_condition[38108911] = {
 		id = 38108911,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.child2_condition
-
-	var_9_3[38108912] = {
+	pg.base.child2_condition[38108912] = {
 		id = 38108912,
 		type = 17,
 		param = {
@@ -26368,31 +23143,19 @@ end)()
 			0
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.child2_condition
-
-	var_9_4[38108913] = {
+	pg.base.child2_condition[38108913] = {
 		id = 38108913,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.child2_condition
-
-	var_9_5[38109011] = {
+	pg.base.child2_condition[38109011] = {
 		id = 38109011,
 		type = 18,
 		param = {}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.child2_condition
-
-	var_9_6[38109012] = {
+	pg.base.child2_condition[38109012] = {
 		id = 38109012,
 		type = 17,
 		param = {
@@ -26402,31 +23165,19 @@ end)()
 			0
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.child2_condition
-
-	var_9_7[38109013] = {
+	pg.base.child2_condition[38109013] = {
 		id = 38109013,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.child2_condition
-
-	var_9_8[38109111] = {
+	pg.base.child2_condition[38109111] = {
 		id = 38109111,
 		type = 18,
 		param = {}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.child2_condition
-
-	var_9_9[38109112] = {
+	pg.base.child2_condition[38109112] = {
 		id = 38109112,
 		type = 17,
 		param = {
@@ -26436,22 +23187,14 @@ end)()
 			0
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.child2_condition
-
-	var_9_10[38109113] = {
+	pg.base.child2_condition[38109113] = {
 		id = 38109113,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.child2_condition
-
-	var_9_11[38109311] = {
+	pg.base.child2_condition[38109311] = {
 		id = 38109311,
 		type = 21,
 		param = {
@@ -26471,42 +23214,26 @@ end)()
 			0
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.child2_condition
-
-	var_9_12[0] = {
+	pg.base.child2_condition[0] = {
 		id = 38109312,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.child2_condition
-
-	var_9_13[1] = {
+	pg.base.child2_condition[1] = {
 		id = 38109313,
 		type = 6,
 		param = {
 			3000
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.child2_condition
-
-	var_9_14[38109411] = {
+	pg.base.child2_condition[38109411] = {
 		id = 38109411,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.child2_condition
-
-	var_9_15[38109412] = {
+	pg.base.child2_condition[38109412] = {
 		id = 38109412,
 		type = 17,
 		param = {
@@ -26516,42 +23243,26 @@ end)()
 			0
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.child2_condition
-
-	var_9_16[38109413] = {
+	pg.base.child2_condition[38109413] = {
 		id = 38109413,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.child2_condition
-
-	var_9_17[38109414] = {
+	pg.base.child2_condition[38109414] = {
 		id = 38109414,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.child2_condition
-
-	var_9_18[38109511] = {
+	pg.base.child2_condition[38109511] = {
 		id = 38109511,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.child2_condition
-
-	var_9_19[38109512] = {
+	pg.base.child2_condition[38109512] = {
 		id = 38109512,
 		type = 17,
 		param = {
@@ -26561,22 +23272,14 @@ end)()
 			0
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.child2_condition
-
-	var_9_20[38109513] = {
+	pg.base.child2_condition[38109513] = {
 		id = 38109513,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.child2_condition
-
-	var_9_21[38109611] = {
+	pg.base.child2_condition[38109611] = {
 		id = 38109611,
 		type = 20,
 		param = {
@@ -26586,11 +23289,7 @@ end)()
 			5
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.child2_condition
-
-	var_9_22[38110511] = {
+	pg.base.child2_condition[38110511] = {
 		id = 38110511,
 		type = 1,
 		param = {
@@ -26600,33 +23299,21 @@ end)()
 			90
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.child2_condition
-
-	var_9_23[19] = {
+	pg.base.child2_condition[19] = {
 		id = 38110611,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.child2_condition
-
-	var_9_24[38110711] = {
+	pg.base.child2_condition[38110711] = {
 		id = 38110711,
 		type = 6,
 		param = {
 			3000
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.child2_condition
-
-	var_9_25[38110911] = {
+	pg.base.child2_condition[38110911] = {
 		id = 38110911,
 		type = 21,
 		param = {
@@ -26902,11 +23589,7 @@ end)()
 			13
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.child2_condition
-
-	var_9_26[38111011] = {
+	pg.base.child2_condition[38111011] = {
 		id = 38111011,
 		type = 20,
 		param = {
@@ -26916,20 +23599,12 @@ end)()
 			13
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.child2_condition
-
-	var_9_27[7] = {
+	pg.base.child2_condition[7] = {
 		id = 38111111,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.child2_condition
-
-	var_9_28[8] = {
+	pg.base.child2_condition[8] = {
 		id = 38111112,
 		type = 17,
 		param = {
@@ -26939,22 +23614,14 @@ end)()
 			0
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.child2_condition
-
-	var_9_29[9] = {
+	pg.base.child2_condition[9] = {
 		id = 38111113,
 		type = 16,
 		param = {
 			13
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.child2_condition
-
-	var_9_30[23] = {
+	pg.base.child2_condition[23] = {
 		id = 38111511,
 		type = 10,
 		param = {
@@ -26972,11 +23639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.child2_condition
-
-	var_9_31[38111611] = {
+	pg.base.child2_condition[38111611] = {
 		id = 38111611,
 		type = 10,
 		param = {
@@ -29262,11 +25925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.child2_condition
-
-	var_9_32[38111911] = {
+	pg.base.child2_condition[38111911] = {
 		id = 38111911,
 		type = 10,
 		param = {
@@ -29284,11 +25943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.child2_condition
-
-	var_9_33[38112111] = {
+	pg.base.child2_condition[38112111] = {
 		id = 38112111,
 		type = 21,
 		param = {
@@ -29318,31 +25973,19 @@ end)()
 			0
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.child2_condition
-
-	var_9_34[38112112] = {
+	pg.base.child2_condition[38112112] = {
 		id = 38112112,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.child2_condition
-
-	var_9_35[38112211] = {
+	pg.base.child2_condition[38112211] = {
 		id = 38112211,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.child2_condition
-
-	var_9_36[38112212] = {
+	pg.base.child2_condition[38112212] = {
 		id = 38112212,
 		type = 17,
 		param = {
@@ -29352,42 +25995,26 @@ end)()
 			0
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.child2_condition
-
-	var_9_37[38112213] = {
+	pg.base.child2_condition[38112213] = {
 		id = 38112213,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.child2_condition
-
-	var_9_38[38112214] = {
+	pg.base.child2_condition[38112214] = {
 		id = 38112214,
 		type = 6,
 		param = {
 			2500
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.child2_condition
-
-	var_9_39[38112311] = {
+	pg.base.child2_condition[38112311] = {
 		id = 38112311,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.child2_condition
-
-	var_9_40[38112312] = {
+	pg.base.child2_condition[38112312] = {
 		id = 38112312,
 		type = 17,
 		param = {
@@ -29397,33 +26024,21 @@ end)()
 			0
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.child2_condition
-
-	var_9_41[38112313] = {
+	pg.base.child2_condition[38112313] = {
 		id = 38112313,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.child2_condition
-
-	var_9_42[38112314] = {
+	pg.base.child2_condition[38112314] = {
 		id = 38112314,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.child2_condition
-
-	var_9_43[27] = {
+	pg.base.child2_condition[27] = {
 		id = 38112411,
 		type = 10,
 		param = {
@@ -29441,22 +26056,14 @@ end)()
 			}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.child2_condition
-
-	var_9_44[28] = {
+	pg.base.child2_condition[28] = {
 		id = 38112412,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.child2_condition
-
-	var_9_45[38112511] = {
+	pg.base.child2_condition[38112511] = {
 		id = 38112511,
 		type = 10,
 		param = {
@@ -29474,22 +26081,14 @@ end)()
 			}
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.child2_condition
-
-	var_9_46[0] = {
+	pg.base.child2_condition[0] = {
 		id = 38112512,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.child2_condition
-
-	var_9_47[38112611] = {
+	pg.base.child2_condition[38112611] = {
 		id = 38112611,
 		type = 10,
 		param = {
@@ -29591,31 +26190,19 @@ end)()
 			}
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.child2_condition
-
-	var_9_48[38112612] = {
+	pg.base.child2_condition[38112612] = {
 		id = 38112612,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.child2_condition
-
-	var_9_49[38112711] = {
+	pg.base.child2_condition[38112711] = {
 		id = 38112711,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.child2_condition
-
-	var_9_50[38112712] = {
+	pg.base.child2_condition[38112712] = {
 		id = 38112712,
 		type = 17,
 		param = {
@@ -29625,31 +26212,19 @@ end)()
 			0
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.child2_condition
-
-	var_9_51[38112713] = {
+	pg.base.child2_condition[38112713] = {
 		id = 38112713,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.child2_condition
-
-	var_9_52[38112811] = {
+	pg.base.child2_condition[38112811] = {
 		id = 38112811,
 		type = 18,
 		param = {}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.child2_condition
-
-	var_9_53[38112812] = {
+	pg.base.child2_condition[38112812] = {
 		id = 38112812,
 		type = 17,
 		param = {
@@ -29659,31 +26234,19 @@ end)()
 			0
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.child2_condition
-
-	var_9_54[38112813] = {
+	pg.base.child2_condition[38112813] = {
 		id = 38112813,
 		type = 16,
 		param = {
 			3
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.child2_condition
-
-	var_9_55[15] = {
+	pg.base.child2_condition[15] = {
 		id = 38112911,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.child2_condition
-
-	var_9_56[16] = {
+	pg.base.child2_condition[16] = {
 		id = 38112912,
 		type = 17,
 		param = {
@@ -29693,31 +26256,19 @@ end)()
 			0
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.child2_condition
-
-	var_9_57[17] = {
+	pg.base.child2_condition[17] = {
 		id = 38112913,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.child2_condition
-
-	var_9_58[38113011] = {
+	pg.base.child2_condition[38113011] = {
 		id = 38113011,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.child2_condition
-
-	var_9_59[38113012] = {
+	pg.base.child2_condition[38113012] = {
 		id = 38113012,
 		type = 17,
 		param = {
@@ -29727,33 +26278,21 @@ end)()
 			0
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.child2_condition
-
-	var_9_60[38113013] = {
+	pg.base.child2_condition[38113013] = {
 		id = 38113013,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.child2_condition
-
-	var_9_61[38113014] = {
+	pg.base.child2_condition[38113014] = {
 		id = 38113014,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.child2_condition
-
-	var_9_62[38113111] = {
+	pg.base.child2_condition[38113111] = {
 		id = 38113111,
 		type = 21,
 		param = {
@@ -29783,22 +26322,14 @@ end)()
 			0
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.child2_condition
-
-	var_9_63[38113112] = {
+	pg.base.child2_condition[38113112] = {
 		id = 38113112,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.child2_condition
-
-	var_9_64[38113211] = {
+	pg.base.child2_condition[38113211] = {
 		id = 38113211,
 		type = 1,
 		param = {
@@ -29808,11 +26339,7 @@ end)()
 			155
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.child2_condition
-
-	var_9_65[31] = {
+	pg.base.child2_condition[31] = {
 		id = 38113311,
 		type = 1,
 		param = {
@@ -29822,20 +26349,12 @@ end)()
 			155
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.child2_condition
-
-	var_9_66[3] = {
+	pg.base.child2_condition[3] = {
 		id = 38113411,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.child2_condition
-
-	var_9_67[4] = {
+	pg.base.child2_condition[4] = {
 		id = 38113412,
 		type = 17,
 		param = {
@@ -29845,22 +26364,14 @@ end)()
 			0
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.child2_condition
-
-	var_9_68[5] = {
+	pg.base.child2_condition[5] = {
 		id = 38113413,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.child2_condition
-
-	var_9_69[19] = {
+	pg.base.child2_condition[19] = {
 		id = 38113811,
 		type = 1,
 		param = {
@@ -29870,11 +26381,7 @@ end)()
 			195
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.child2_condition
-
-	var_9_70[20] = {
+	pg.base.child2_condition[20] = {
 		id = 38113812,
 		type = 1,
 		param = {
@@ -29884,20 +26391,12 @@ end)()
 			95
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.child2_condition
-
-	var_9_71[38113911] = {
+	pg.base.child2_condition[38113911] = {
 		id = 38113911,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.child2_condition
-
-	var_9_72[38113912] = {
+	pg.base.child2_condition[38113912] = {
 		id = 38113912,
 		type = 17,
 		param = {
@@ -29907,42 +26406,26 @@ end)()
 			0
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.child2_condition
-
-	var_9_73[38113913] = {
+	pg.base.child2_condition[38113913] = {
 		id = 38113913,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.child2_condition
-
-	var_9_74[38113914] = {
+	pg.base.child2_condition[38113914] = {
 		id = 38113914,
 		type = 6,
 		param = {
 			2500
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.child2_condition
-
-	var_9_75[38114011] = {
+	pg.base.child2_condition[38114011] = {
 		id = 38114011,
 		type = 19,
 		param = {}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.child2_condition
-
-	var_9_76[38114012] = {
+	pg.base.child2_condition[38114012] = {
 		id = 38114012,
 		type = 17,
 		param = {
@@ -29952,33 +26435,21 @@ end)()
 			0
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.child2_condition
-
-	var_9_77[38114013] = {
+	pg.base.child2_condition[38114013] = {
 		id = 38114013,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.child2_condition
-
-	var_9_78[38114014] = {
+	pg.base.child2_condition[38114014] = {
 		id = 38114014,
 		type = 6,
 		param = {
 			2500
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.child2_condition
-
-	var_9_79[38114111] = {
+	pg.base.child2_condition[38114111] = {
 		id = 38114111,
 		type = 21,
 		param = {
@@ -30008,53 +26479,33 @@ end)()
 			0
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.child2_condition
-
-	var_9_80[38114112] = {
+	pg.base.child2_condition[38114112] = {
 		id = 38114112,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.child2_condition
-
-	var_9_81[38114211] = {
+	pg.base.child2_condition[38114211] = {
 		id = 38114211,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.child2_condition
-
-	var_9_82[38114511] = {
+	pg.base.child2_condition[38114511] = {
 		id = 38114511,
 		type = 6,
 		param = {
 			100
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.child2_condition
-
-	var_9_83[38114611] = {
+	pg.base.child2_condition[38114611] = {
 		id = 38114611,
 		type = 18,
 		param = {}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.child2_condition
-
-	var_9_84[38114612] = {
+	pg.base.child2_condition[38114612] = {
 		id = 38114612,
 		type = 17,
 		param = {
@@ -30064,33 +26515,21 @@ end)()
 			0
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.child2_condition
-
-	var_9_85[38114613] = {
+	pg.base.child2_condition[38114613] = {
 		id = 38114613,
 		type = 16,
 		param = {
 			300
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.child2_condition
-
-	var_9_86[38114911] = {
+	pg.base.child2_condition[38114911] = {
 		id = 38114911,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.child2_condition
-
-	var_9_87[38115111] = {
+	pg.base.child2_condition[38115111] = {
 		id = 38115111,
 		type = 21,
 		param = {
@@ -30120,22 +26559,14 @@ end)()
 			0
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.child2_condition
-
-	var_9_88[38115112] = {
+	pg.base.child2_condition[38115112] = {
 		id = 38115112,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.child2_condition
-
-	var_9_89[38115113] = {
+	pg.base.child2_condition[38115113] = {
 		id = 38115113,
 		type = 17,
 		param = {
@@ -30145,11 +26576,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.child2_condition
-
-	var_9_90[38115114] = {
+	pg.base.child2_condition[38115114] = {
 		id = 38115114,
 		type = 17,
 		param = {
@@ -30159,53 +26586,33 @@ end)()
 			0
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.child2_condition
-
-	var_9_91[38115115] = {
+	pg.base.child2_condition[38115115] = {
 		id = 38115115,
 		type = 16,
 		param = {
 			1
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.child2_condition
-
-	var_9_92[38115116] = {
+	pg.base.child2_condition[38115116] = {
 		id = 38115116,
 		type = 18,
 		param = {}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.child2_condition
-
-	var_9_93[1] = {
+	pg.base.child2_condition[1] = {
 		id = 38113921,
 		type = 6,
 		param = {
 			2500
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.child2_condition
-
-	var_9_94[38114021] = {
+	pg.base.child2_condition[38114021] = {
 		id = 38114021,
 		type = 6,
 		param = {
 			2500
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.child2_condition
-
-	var_9_95[7] = {
+	pg.base.child2_condition[7] = {
 		id = 38114311,
 		type = 20,
 		param = {
@@ -30215,11 +26622,7 @@ end)()
 			3
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.child2_condition
-
-	var_9_96[23] = {
+	pg.base.child2_condition[23] = {
 		id = 38114711,
 		type = 20,
 		param = {
@@ -30229,11 +26632,7 @@ end)()
 			2
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.child2_condition
-
-	var_9_97[38109141] = {
+	pg.base.child2_condition[38109141] = {
 		id = 38109141,
 		type = 21,
 		param = {
@@ -30244,11 +26643,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.child2_condition
-
-	var_9_98[38109151] = {
+	pg.base.child2_condition[38109151] = {
 		id = 38109151,
 		type = 21,
 		param = {
@@ -30259,8 +26654,7 @@ end)()
 			1
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.child2_condition[22] = {
+	pg.base.child2_condition[22] = {
 		id = 38200214,
 		type = 6,
 		param = {
@@ -30271,22 +26665,14 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.child2_condition
-
-	var_10_0[38200314] = {
+	pg.base.child2_condition[38200314] = {
 		id = 38200314,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.child2_condition
-
-	var_10_1[38200911] = {
+	pg.base.child2_condition[38200911] = {
 		id = 38200911,
 		type = 21,
 		param = {
@@ -30562,121 +26948,77 @@ end)()
 			10
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.child2_condition
-
-	var_10_2[38201512] = {
+	pg.base.child2_condition[38201512] = {
 		id = 38201512,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.child2_condition
-
-	var_10_3[3] = {
+	pg.base.child2_condition[3] = {
 		id = 38203011,
 		type = 6,
 		param = {
 			1000
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.child2_condition
-
-	var_10_4[38203114] = {
+	pg.base.child2_condition[38203114] = {
 		id = 38203114,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.child2_condition
-
-	var_10_5[10] = {
+	pg.base.child2_condition[10] = {
 		id = 38207114,
 		type = 6,
 		param = {
 			3000
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.child2_condition
-
-	var_10_6[38207211] = {
+	pg.base.child2_condition[38207211] = {
 		id = 38207211,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.child2_condition
-
-	var_10_7[38207314] = {
+	pg.base.child2_condition[38207314] = {
 		id = 38207314,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.child2_condition
-
-	var_10_8[38207612] = {
+	pg.base.child2_condition[38207612] = {
 		id = 38207612,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.child2_condition
-
-	var_10_9[38207712] = {
+	pg.base.child2_condition[38207712] = {
 		id = 38207712,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.child2_condition
-
-	var_10_10[12] = {
+	pg.base.child2_condition[12] = {
 		id = 38208012,
 		type = 6,
 		param = {
 			6000
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.child2_condition
-
-	var_10_11[6] = {
+	pg.base.child2_condition[6] = {
 		id = 38209414,
 		type = 6,
 		param = {
 			4000
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.child2_condition
-
-	var_10_12[38209611] = {
+	pg.base.child2_condition[38209611] = {
 		id = 38209611,
 		type = 20,
 		param = {
@@ -30686,11 +27028,7 @@ end)()
 			3
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.child2_condition
-
-	var_10_13[38210511] = {
+	pg.base.child2_condition[38210511] = {
 		id = 38210511,
 		type = 1,
 		param = {
@@ -30700,77 +27038,49 @@ end)()
 			50
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.child2_condition
-
-	var_10_14[38210611] = {
+	pg.base.child2_condition[38210611] = {
 		id = 38210611,
 		type = 6,
 		param = {
 			2000
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.child2_condition
-
-	var_10_15[23] = {
+	pg.base.child2_condition[23] = {
 		id = 38210711,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.child2_condition
-
-	var_10_16[38212214] = {
+	pg.base.child2_condition[38212214] = {
 		id = 38212214,
 		type = 6,
 		param = {
 			5000
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.child2_condition
-
-	var_10_17[38212314] = {
+	pg.base.child2_condition[38212314] = {
 		id = 38212314,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.child2_condition
-
-	var_10_18[4] = {
+	pg.base.child2_condition[4] = {
 		id = 38212612,
 		type = 6,
 		param = {
 			3000
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.child2_condition
-
-	var_10_19[21] = {
+	pg.base.child2_condition[21] = {
 		id = 38213013,
 		type = 6,
 		param = {
 			1500
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.child2_condition
-
-	var_10_20[38214311] = {
+	pg.base.child2_condition[38214311] = {
 		id = 38214311,
 		type = 20,
 		param = {
@@ -30780,8 +27090,7 @@ end)()
 			2
 		}
 	}
-	pg = var_10_20
-	var_10_20.base.child2_condition[38214511] = {
+	pg.base.child2_condition[38214511] = {
 		id = 38214511,
 		type = 6,
 		param = {

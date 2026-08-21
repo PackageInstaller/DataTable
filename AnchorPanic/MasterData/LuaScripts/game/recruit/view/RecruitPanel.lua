@@ -23,7 +23,7 @@ end
 -- 初始化数据
 function initData(self)
     super.initData(self)
-    self.m_curTabType = nil
+    self.m_curTabId = nil
     self.m_tabDic = nil
 
     self.isSetTran = false
@@ -66,20 +66,30 @@ end
 
 -- 玩家关闭所有窗口的c#回调
 function __onPlayerClose(self)
-    self.m_curTabType = nil
+    self.m_curTabId = nil
 end
 
 function active(self, args)
     super.active(self, args)
     GameView.UINode["GUIDE"]:GetComponent(ty.Canvas).sortingOrder = 1700
 
-    self.m_curTabType = self.m_curTabType or args.type
+    self.m_curTabId = self.m_curTabId or args.recruitId
 
     if recruit.RecruitManager:isOpenRulePanel() then
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, {type = self.m_curTabType})
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_RULE_PANEL, {recruitId = self.m_curTabId})
     end
 
-    self:updateMoneyBar(self.m_curTabType)
+    local appType = recruit.RecruitManager:getOpenAppSelectPanel()
+    if appType ~= nil then
+        local recruitType = recruit.RecruitManager:getRecruitTypeById(self.m_curTabId)
+
+        if recruitType == recruit.RecruitType.RECRUIT_APP_ACTTOP or recruitType == recruit.RecruitType.RECRUIT_APP_BRACELETS then
+            GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_APP_SELECTPANEL, {recruitId = self.m_curTabId, type = appType})
+        else
+            GameDispatcher:dispatchEvent(EventName.CLOSE_RECRUIT_APP_SELECTPANEL)
+            recruit.RecruitManager:SetOpenAppSelectPanel(nil)
+        end
+    end
 
     self:updateTab()
     if not self.updateTabTimer then
@@ -111,6 +121,10 @@ function deActive(self)
     self:removeEvent()
 end
 
+function autoSetype(self, args)
+
+end
+
 function initViewText(self)
 
 end
@@ -123,6 +137,7 @@ end
 function addEvent(self)
     GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.updateTab, self)
     GameDispatcher:addEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.updataRedState, self)
+    read.ReadManager:addEventListener(read.ReadManager.UPDATE_MODULE_READ, self.updataRedState, self)
 
     --背包数据更新
     bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.updataRedState, self)
@@ -131,6 +146,7 @@ end
 function removeEvent(self)
     GameDispatcher:removeEventListener(EventName.UPDATE_RECRUIT_PANEL, self.updateTab, self)
     GameDispatcher:removeEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.updataRedState, self)
+    read.ReadManager:removeEventListener(read.ReadManager.UPDATE_MODULE_READ, self.updataRedState, self)
 
     bag.BagManager:removeEventListener(bag.BagManager.BAG_UPDATE, self.updataRedState, self)
 
@@ -161,22 +177,22 @@ function onTimer(self)
 end
 
 function updateTab(self)
-    local menuList = recruit.RecruitManager:getRecruitMenuList()
+    local menuList = recruit.RecruitManager:getRecruitMenuDic()
 
     local list = {}
     -- 一键页签tab
-    for i, v in ipairs(menuList) do
+    for i, v in pairs(menuList) do
         if v:isOpenTime() then
             if funcopen.FuncOpenManager:isOpen(v.funcId) then
-                local RecruitInfo = recruit.RecruitManager:getRecruitInfo(v.type)
-                local RecruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(v.type)
+                local RecruitInfo = recruit.RecruitManager:getRecruitInfo(v.id)
+                local RecruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(v.id)
                 local isFree = RecruitInfo.free_times < RecruitConfigVo.free_times
 
                 if (v.type == recruit.RecruitType.RECRUIT_NEW_PLAYER and RecruitInfo.recruit_daily_times >= sysParam.SysParamManager:getValue(SysParamType.RECRUIT_NEW_PLAYER_TIMES)) then
                 elseif v.type == recruit.RecruitType.RECRUIT_ACTIVITY_3 and RecruitInfo.recruit_daily_times > 0 then
                 else
-                    local iconPath = string.format("arts/ui/pack/recruit/recruit_pnl_%s.png", v.type)
-                    table.insert(list, {id = v.id, page = v.type, nomalIcon = iconPath, nomalLanEnId = v.subLang, sign = isFree})
+                    local iconPath = string.format("arts/ui/pack/recruit/recruit_tab_%s_%s.png", v.type, v.id)
+                    table.insert(list, {page = v.id, nomalIcon = iconPath, nomalLanEnId = v.subLang, sign = isFree, sort = v.sort})
                 end
             end
         end
@@ -205,7 +221,7 @@ function updateTab(self)
 
     self.mCurMenuList = list
     table.sort(self.mCurMenuList, function(a, b)
-        return a.id < b.id
+        return a.sort < b.sort
     end)
     if not self.tabBar then
         self.tabBar = CustomTabBar:create(self:getChildGO("GroupTabItem"), self.m_content, self.setSubPage, self, self.mCurMenuList, "RecruitPanelTabItem")
@@ -225,9 +241,9 @@ function onSelectPage(self)
 end
 
 function refreshCurSelectIndex(self)
-    if self.m_curTabType then
+    if self.m_curTabId then
         for i = 1, #self.mCurMenuList do
-            if self.mCurMenuList[i].page == self.m_curTabType then
+            if self.mCurMenuList[i].page == self.m_curTabId then
                 self.mCurSelectIndex = i
                 break
             end
@@ -235,25 +251,35 @@ function refreshCurSelectIndex(self)
     end
 end
 
-function scrollToIndex(self, tabType)
+function scrollToIndex(self, tabId)
     if self.isInit then
-        self:_scrollToIndex(tabType)
+        self:_scrollToIndex(tabId)
     else
         self:setTimeout(0.2, function ()
-            self:_scrollToIndex(tabType)
+            self:_scrollToIndex(tabId)
             self.isInit = true
         end)
     end
 end
 
-function _scrollToIndex(self, tabType)
+function _scrollToIndex(self, tabId)
     if self.mContentRect.rect.width < self.mScrollRectTran.rect.width then
         return
     end
 
-    tabType = tabType or self.m_curTabType
+    local guideRo = guide.GuideManager:getCurGuideRo()
+    if guideRo then
+        if guideRo:getRefID() == 1021 then
+            tabId = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_TOP)
+        elseif guideRo:getRefID() == 2003 then
+            tabId = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_BRACELETS)
+        end
+    else
+        tabId = tabId or self.m_curTabId
+    end
+
     if self.tabBar then
-        local itemGO = self.tabBar.btnMap[tabType].m_go
+        local itemGO = self.tabBar.btnMap[tabId].m_go
         if itemGO then
             local itemRect = itemGO:GetComponent(ty.RectTransform)
             local itemAnchoredPosition_X = itemRect.anchoredPosition.x + (itemRect.rect.width / 2) --item 的中心位置
@@ -274,10 +300,16 @@ function _scrollToIndex(self, tabType)
     end
 end
 
-function setSubPage(self, cusPage)
-    self.m_curTabType = cusPage
+function setSubPage(self, cusId)
+    local tabType = recruit.RecruitManager:getRecruitTypeById(cusId)
+    if (tabType == recruit.RecruitType.RECRUIT_APP_ACTTOP or tabType == recruit.RecruitType.RECRUIT_APP_BRACELETS)and subPack.SubDownLoadController:isExistNeedUpdate() then
+        gs.Message.Show("请等待资源下载完成获得最佳体验")
+        return
+    end
 
-    self:setType(cusPage)
+    self.m_curTabId = cusId
+
+    self:setType(cusId)
     self:refreshCurSelectIndex()
     self:scrollToIndex()
 
@@ -285,13 +317,37 @@ function setSubPage(self, cusPage)
     self.mBtnRight:SetActive(self.mCurSelectIndex < #self.mCurMenuList)
 end
 
-function setType(self, cusTabType, cusArgs)
-    super.setType(self, cusTabType, cusArgs)
-    self:updateMoneyBar(cusTabType)
+function setType(self, curTabId, cusArgs)
+    super.setType(self, curTabId, cusArgs)
+
+    self:updateMoneyBar(curTabId)
 end
 
-function updateMoneyBar(self, cusTabType)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(cusTabType)
+function getClassInsByType(self, curTabId)
+    local tabType = recruit.RecruitManager:getRecruitTypeById(curTabId)
+
+    local instance = self.m_classInsDic[tabType]
+    if (not instance) then
+        local tabClass = self:getTabClass()[tabType]
+        if type(tabClass) == "table" then
+            instance = tabClass.new(curTabId)
+        else
+            instance = UI.new(tabClass)
+        end
+
+        if instance.subName ~= "TabSubView" then
+            logWarn('TabView', instance._NAME .. ' 请尽量继承TabSubView ')
+        end
+
+        instance:setParentTrans(self:getTabViewParent())
+
+        self.m_classInsDic[curTabId] = instance
+    end
+    return instance
+end
+
+function updateMoneyBar(self, curTabId)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(curTabId)
     local costMoneyTid_one = configVo:getCostOneId()
     local costMoneyTid_ten = configVo:getCostTenId()
     if costMoneyTid_one ~= 0 and costMoneyTid_ten ~= 0 then
@@ -314,42 +370,84 @@ function getTabClass(self)
     self.tabClassDic[recruit.RecruitType.RECRUIT_ACTIVITY_1] = recruit.RecruitActTopTabView
     self.tabClassDic[recruit.RecruitType.RECRUIT_ACTIVITY_2] = recruit.RecruitActBraceletsTabView
     self.tabClassDic[recruit.RecruitType.RECRUIT_ACTIVITY_3] = recruit.RecruitActPlayerTabView
+    self.tabClassDic[recruit.RecruitType.RECRUIT_APP_ACTTOP] = recruit.RecruitAppTopTabView
+    self.tabClassDic[recruit.RecruitType.RECRUIT_APP_BRACELETS] = recruit.RecruitAppBraceletsTabView
+
     return self.tabClassDic
 end
 
 function updataRedState(self)
+    local recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+
+    --新手
     local newPlayRedState = recruit.RecruitManager:updateNewPlayRedState()
     if newPlayRedState then
-        self.tabBar:addBubble(recruit.RecruitType.RECRUIT_NEW_PLAYER, 81.5, 31.5)
+        self.tabBar:addBubble(recruit_id, 81.5, 31.5)
     else
-        self.tabBar:removeBubble(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        self.tabBar:removeBubble(recruit_id)
     end
 
-    local trial_RedState = mainActivity.MainActivityManager:getIsShowTrial()
-    if trial_RedState then
-        self.tabBar:addBubble(recruit.RecruitType.RECRUIT_ACTIVITY_1, 81.5, 31.5)
-    else
-        self.tabBar:removeBubble(recruit.RecruitType.RECRUIT_ACTIVITY_1)
+    --UP站员
+    local actTopRecruitList = recruit.RecruitManager:getRecruitConfigListByType(recruit.RecruitType.RECRUIT_ACTIVITY_1)
+    for _, configVo in pairs(actTopRecruitList) do
+        local menuVo = recruit.RecruitManager:getRecruitMenuVo(configVo.id)
+        if menuVo:isOpenTime() then
+            if funcopen.FuncOpenManager:isOpen(menuVo.funcId) then
+                if recruit.RecruitManager:getIsShowTrial(configVo:getTry_hero()) then
+                    self.tabBar:addBubble(configVo.id, 81.5, 31.5)
+                else
+                    self.tabBar:removeBubble(configVo.id)
+                end
+            end
+        end
+    end
 
+    --UP 烙哼
+    local actBraceletsShopRedState = recruit.RecruitManager:updateActBraceletsShopRedState()
+    local recruitList = recruit.RecruitManager:getRecruitConfigListByType(recruit.RecruitType.RECRUIT_ACTIVITY_2)
+    for _, configVo in pairs(recruitList) do
+        if recruit.RecruitManager:updateActBraceletsShopBuyRedState(configVo.id) or actBraceletsShopRedState then
+            self.tabBar:addBubble(configVo.id, 81.5, 31.5)
+        else
+            self.tabBar:removeBubble(configVo.id)
+        end
+    end
+
+    --定向烙哼
+    recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_APP_BRACELETS)
+    local appBraceletsRedState = recruit.RecruitManager:updateAppBraceletsShopRedState()
+    if appBraceletsRedState or recruit.RecruitManager:updateAppBraceletsShopBuyRedState(recruit_id) or recruit.RecruitManager:updateSeniorAppBraceletsRedState() then
+        self.tabBar:addBubble(recruit_id, 81.5, 31.5)
+    else
+        self.tabBar:removeBubble(recruit_id)
+    end
+
+    --定向站员
+    recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_APP_ACTTOP)
+    local redState = recruit.RecruitManager:updateSeniorAppActRedState()
+    if redState then
+        self.tabBar:addBubble(recruit_id, 81.5, 31.5)
+    else
+        self.tabBar:removeBubble(recruit_id)
     end
 end
 
 function updateGuide(self)
     local nextStepData = guide.GuideManager:getNextStepData()
     if nextStepData and nextStepData.next_need_id ~= 0 then
-        local tabType = 1
+        local tabId = 1
         for i = 1, #self.mCurMenuList do
-            if self.mCurMenuList[i].id == nextStepData.next_need_id then
-                tabType = self.mCurMenuList[i].page
+            if self.mCurMenuList[i].page == nextStepData.next_need_id then
+                tabId = self.mCurMenuList[i].page
                 break
             end
         end
-        self:scrollToIndex(tabType)
+        self:scrollToIndex(tabId)
     end
 
     if self.tabBar.btnList then
         for i = 1, #self.tabBar.btnList do
-            self:setGuideTrans("guide_recruit_tabItem_" .. self.mCurMenuList[i].id, self.tabBar.btnList[i]:getChildTrans("mBtnNomal"))
+            self:setGuideTrans("guide_recruit_tabItem_" .. self.mCurMenuList[i].page, self.tabBar.btnList[i]:getChildTrans("mBtnNomal"))
         end
     end
 

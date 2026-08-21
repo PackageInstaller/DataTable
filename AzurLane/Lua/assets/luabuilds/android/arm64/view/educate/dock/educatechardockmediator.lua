@@ -1,55 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EducateCharDockMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "EducateCharDockMediator"
+var_0_0.GO_PROFILE = "EducateCharDockMediator:GO_PROFILE"
+var_0_0.ON_SELECTED = "EducateCharDockMediator:ON_SELECTED"
+var_0_0.ON_SKIN_SHOP = "EducateCharDockMediator.ON_SKIN_SHOP"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.GO_PROFILE = "EducateCharDockMediator:GO_PROFILE"
-var_0_1.ON_SELECTED = "EducateCharDockMediator:ON_SELECTED"
-var_0_1.ON_SKIN_SHOP = "EducateCharDockMediator.ON_SKIN_SHOP"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_SELECTED, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.CHANGE_EDUCATE, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_SELECTED, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.CHANGE_EDUCATE, {
 			id = arg_2_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.GO_PROFILE, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		local var_3_2 = var_2_10005.GO_SCENE
-
-		SCENE = var_2_10006
-
-		var_3_1(var_3_0, var_3_2, var_2_10006.EDUCATE_PROFILE, {
+	arg_1_0:bind(var_0_0.GO_PROFILE, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EDUCATE_PROFILE, {
 			selectedCharacterId = arg_3_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_SKIN_SHOP, function(arg_4_0)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		local var_4_2 = var_2_10004.GO_SCENE
-
-		SCENE = var_2_10005
-
-		var_4_1(var_4_0, var_4_2, var_2_10005.SKINSHOP, {
+	arg_1_0:bind(var_0_0.ON_SKIN_SHOP, function(arg_4_0)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP, {
 			skinId = arg_4_0
 		})
 
@@ -59,32 +30,18 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	GAME = var_1_10002
-	var_5_0[1] = var_1_10002.CLEAR_EDUCATE_TIP
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		GAME.CLEAR_EDUCATE_TIP
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1
-	local var_6_1 = arg_6_1.getName(var_6_0)
-	local var_6_2 = arg_6_1:getBody()
-
-	GAME = var_6_0
-
-	if var_6_1 == var_6_0.CLEAR_EDUCATE_TIP then
-		local var_6_3 = arg_6_0.viewComponent
-		local var_6_4 = var_4.emit
-
-		EducateCharDockScene = var_1_10007
-
-		var_6_4(var_6_3, var_1_10007.MSG_CLEAR_TIP, var_6_2.id)
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	if arg_6_1:getName() == GAME.CLEAR_EDUCATE_TIP then
+		arg_6_0.viewComponent:emit(EducateCharDockScene.MSG_CLEAR_TIP, arg_6_1:getBody().id)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

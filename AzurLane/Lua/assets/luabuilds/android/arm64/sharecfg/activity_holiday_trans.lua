@@ -1,41 +1,14 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_holiday_trans") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_holiday_trans"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_holiday_trans = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_holiday_trans
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_holiday_trans = rawget(pg, "activity_holiday_trans") or setmetatable({
+	__name = "activity_holiday_trans"
+}, confNEO)
+pg.activity_holiday_trans.all = {
 	1,
 	2,
 	3,
 	4
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_holiday_trans
-
-var_0_4.get_id_list_by_type = {
+pg.activity_holiday_trans.get_id_list_by_type = {
 	{
 		1,
 		2,
@@ -45,25 +18,11 @@ var_0_4.get_id_list_by_type = {
 		4
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_holiday_trans = {}
+pg.base = pg.base or {}
+pg.base.activity_holiday_trans = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_holiday_trans
-
-	var_1_0[1] = {
+	pg.base.activity_holiday_trans[1] = {
 		cost_task_id = 23727,
 		name = "小型运输船队",
 		type = 1,
@@ -84,11 +43,7 @@ var_0_4.base.activity_holiday_trans = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_holiday_trans
-
-	var_1_1[2] = {
+	pg.base.activity_holiday_trans[2] = {
 		cost_task_id = 23728,
 		name = "中型运输船队",
 		type = 1,
@@ -104,11 +59,7 @@ var_0_4.base.activity_holiday_trans = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_holiday_trans
-
-	var_1_2[3] = {
+	pg.base.activity_holiday_trans[3] = {
 		cost_task_id = 23729,
 		name = "大型运输船队",
 		type = 1,
@@ -124,8 +75,7 @@ var_0_4.base.activity_holiday_trans = {}
 			}
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.activity_holiday_trans[4] = {
+	pg.base.activity_holiday_trans[4] = {
 		cost_task_id = 23730,
 		name = "邮轮观光船队",
 		type = 2,

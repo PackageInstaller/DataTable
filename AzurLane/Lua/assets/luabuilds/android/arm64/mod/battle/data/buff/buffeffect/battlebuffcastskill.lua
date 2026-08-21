@@ -1,22 +1,16 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleBuffCastSkill = class("BattleBuffCastSkill", ys.Battle.BattleBuffEffect)
+ys.Battle.BattleBuffCastSkill.__name = "BattleBuffCastSkill"
 
-local var_0_1 = var_0.Battle
+local var_0_1 = ys.Battle.BattleBuffCastSkill
 
-class = var_0_10002
-var_0_1.BattleBuffCastSkill = var_0_10002("BattleBuffCastSkill", var_0.Battle.BattleBuffEffect)
-var_0.Battle.BattleBuffCastSkill.__name = "BattleBuffCastSkill"
+ys.Battle.BattleBuffCastSkill.FX_TYPE = ys.Battle.BattleBuffEffect.FX_TYPE_CASTER
 
-local var_0_2 = var_0.Battle.BattleBuffCastSkill
-
-var_0_2.FX_TYPE = var_0.Battle.BattleBuffEffect.FX_TYPE_CASTER
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.BattleBuffCastSkill.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 
 	arg_1_0._castCount = 0
 	arg_1_0._fireSkillDMGSum = 0
@@ -24,219 +18,140 @@ function var_0_2.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_2.GetEffectType(arg_2_0)
-	return var_0_2.FX_TYPE
+function ys.Battle.BattleBuffCastSkill.GetEffectType(arg_2_0)
+	return var_0_1.FX_TYPE
 end
 
-function var_0_2.GetGroupData(arg_3_0)
+function ys.Battle.BattleBuffCastSkill.GetGroupData(arg_3_0)
 	return arg_3_0._group
 end
 
-function var_0_2.SetArgs(arg_4_0, arg_4_1, arg_4_2)
+function ys.Battle.BattleBuffCastSkill.SetArgs(arg_4_0, arg_4_1, arg_4_2)
 	arg_4_0._level = arg_4_2:GetLv()
+
+	local var_4_0 = arg_4_0._tempData.arg_list
+
 	arg_4_0._skill_id = arg_4_0._tempData.arg_list.skill_id
+	arg_4_0._target = var_4_0.target or "TargetSelf"
+	arg_4_0._check_target = var_4_0.check_target
+	arg_4_0._check_weapon = var_4_0.check_weapon
+	arg_4_0._check_spweapon = var_4_0.check_spweapon
+	arg_4_0._check_target_gap = var_4_0.check_target_gap
+	arg_4_0._time = var_4_0.time or 0
 
-	local var_4_0
+	local var_4_1 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	if not var_3.target then
-		var_4_0 = "TargetSelf"
-	end
-
-	arg_4_0._target = var_4_0
-	arg_4_0._check_target = var_3.check_target
-	arg_4_0._check_weapon = var_3.check_weapon
-	arg_4_0._check_spweapon = var_3.check_spweapon
-	arg_4_0._check_target_gap = var_3.check_target_gap
-
-	local var_4_1
-
-	if not var_3.time then
-		var_4_1 = 0
-	end
-
-	arg_4_0._time = var_4_1
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.TimeMgr.GetInstance()
-	local var_4_3 = var_4.GetCombatTime(var_4_2)
-
-	if var_3.initialCD then
-		arg_4_0._nextEffectTime = var_4_3
-	else
-		arg_4_0._nextEffectTime = var_4_3 + arg_4_0._time
-	end
-
-	local var_4_4
-
-	if not var_3.minTargetNumber then
-		var_4_4 = 0
-	end
-
-	arg_4_0._minTargetNumber = var_4_4
-
-	local var_4_5
-
-	if not var_3.maxTargetNumber then
-		var_4_5 = 10000
-	end
-
-	arg_4_0._maxTargetNumber = var_4_5
-
-	local var_4_6
-
-	if not var_3.minWeaponNumber then
-		var_4_6 = 0
-	end
-
-	arg_4_0._minWeaponNumber = var_4_6
-
-	local var_4_7
-
-	if not var_3.maxWeaponNumber then
-		var_4_7 = 10000
-	end
-
-	arg_4_0._maxWeaponNumber = var_4_7
-
-	local var_4_8
-
-	if not var_3.rant then
-		var_4_8 = 10000
-	end
-
-	arg_4_0._rant = var_4_8
-	arg_4_0._streak = var_3.streakRange
-	arg_4_0._dungeonTypeList = var_3.dungeonTypeList
-	arg_4_0._effectAttachData = var_3.effectAttachData
-
-	local var_4_9
-
-	if not var_3.repeat_count then
-		var_4_9 = 1
-	end
-
-	arg_4_0._repeatCount = var_4_9
-	arg_4_0._attrConsumeRepeat = var_3.fleetAttrConsume
-	arg_4_0._group = var_3.group
+	arg_4_0._nextEffectTime = var_4_0.initialCD and var_4_1 or var_4_1 + arg_4_0._time
+	arg_4_0._minTargetNumber = var_4_0.minTargetNumber or 0
+	arg_4_0._maxTargetNumber = var_4_0.maxTargetNumber or 10000
+	arg_4_0._minWeaponNumber = var_4_0.minWeaponNumber or 0
+	arg_4_0._maxWeaponNumber = var_4_0.maxWeaponNumber or 10000
+	arg_4_0._rant = var_4_0.rant or 10000
+	arg_4_0._streak = var_4_0.streakRange
+	arg_4_0._dungeonTypeList = var_4_0.dungeonTypeList
+	arg_4_0._effectAttachData = var_4_0.effectAttachData
+	arg_4_0._repeatCount = var_4_0.repeat_count or 1
+	arg_4_0._attrConsumeRepeat = var_4_0.fleetAttrConsume
+	arg_4_0._group = var_4_0.group
 	arg_4_0._srcBuff = arg_4_2
 
 	return
 end
 
-function var_0_2.onBulletCreate(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+function ys.Battle.BattleBuffCastSkill.onBulletCreate(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
 	if not arg_5_0:equipIndexRequire(arg_5_3.equipIndex) then
 		return
 	end
 
-	local var_5_0 = arg_5_3._bullet
-	local var_5_1 = arg_5_0._tempData.arg_list.bulletTrigger
-
-	local function var_5_2(arg_6_0, arg_6_1)
+	arg_5_3._bullet:SetBuffFun(arg_5_0._tempData.arg_list.bulletTrigger, function(arg_6_0, arg_6_1)
 		if arg_6_0 and arg_6_0:IsAlive() then
-			local var_6_0 = arg_5_0
-
-			var_2.castSkill(var_6_0, arg_6_0, arg_6_1)
+			arg_5_0:castSkill(arg_6_0, arg_6_1)
 		end
 
 		return
-	end
-
-	var_5_0:SetBuffFun(var_5_1, var_5_2)
+	end)
 
 	return
 end
 
-function var_0_2.onTrigger(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+function ys.Battle.BattleBuffCastSkill.onTrigger(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 	return (arg_7_0:castSkill(arg_7_1, arg_7_3, arg_7_2))
 end
 
-function var_0_2.castSkill(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	pg = var_1_10004
+function ys.Battle.BattleBuffCastSkill.castSkill(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+	local var_8_0 = pg.TimeMgr.GetInstance():GetCombatTime()
 
-	local var_8_0 = var_1_10004.TimeMgr.GetInstance()
-	local var_8_1 = var_4.GetCombatTime(var_8_0)
-
-	if arg_8_0:IsInCD(var_8_1) then
+	if arg_8_0:IsInCD(var_8_0) then
 		return "overheat"
 	end
 
-	if not var_0.Battle.BattleFormulas.IsHappen(arg_8_0._rant) then
+	if not var_0_0.Battle.BattleFormulas.IsHappen(arg_8_0._rant) then
 		return "chance"
 	end
 
 	if arg_8_0._check_target then
-		if not arg_8_0:getTargetList(arg_8_1, arg_8_0._check_target, arg_8_0._tempData.arg_list) then
+		local var_8_1 = arg_8_0:getTargetList(arg_8_1, arg_8_0._check_target, arg_8_0._tempData.arg_list)
+
+		if not var_8_1 then
 			return "check target none"
 		end
 
-		if #var_5 < arg_8_0._minTargetNumber then
+		local var_8_2 = #var_8_1
+
+		if #var_8_1 < arg_8_0._minTargetNumber then
 			return "check target min"
 		end
 
-		if var_6 > arg_8_0._maxTargetNumber then
+		if var_8_2 > arg_8_0._maxTargetNumber then
 			return "check target max"
 		end
 	end
 
 	if arg_8_0._check_target_gap then
-		local var_8_2 = arg_8_0
-		local var_8_3 = arg_8_0.getTargetList(var_8_2, arg_8_1, arg_8_0._check_target_gap[1].target, arg_8_0._check_target_gap[1].arg)
-		local var_8_4 = arg_8_0:getTargetList(arg_8_1, arg_8_0._check_target_gap[2].target, arg_8_0._check_target_gap[2].arg)
+		local var_8_3 = math.abs(#arg_8_0:getTargetList(arg_8_1, arg_8_0._check_target_gap[1].target, arg_8_0._check_target_gap[1].arg) - #arg_8_0:getTargetList(arg_8_1, arg_8_0._check_target_gap[2].target, arg_8_0._check_target_gap[2].arg))
 
-		math = var_8_2
-
-		if var_8_2.abs(#var_8_3 - #var_8_4) < arg_8_0._minTargetNumber then
+		if var_8_3 < arg_8_0._minTargetNumber then
 			return "check target gap min"
 		end
 
-		if var_7 > arg_8_0._maxTargetNumber then
+		if var_8_3 > arg_8_0._maxTargetNumber then
 			return "check target gap max"
 		end
 	end
 
 	if arg_8_0._check_weapon then
-		if #var_0_2.GetEquipmentList(arg_8_1, arg_8_0._tempData.arg_list) < arg_8_0._minWeaponNumber then
+		local var_8_4 = #var_0_1.GetEquipmentList(arg_8_1, arg_8_0._tempData.arg_list)
+
+		if var_8_4 < arg_8_0._minWeaponNumber then
 			return "check weapon min"
 		end
 
-		if var_6 > arg_8_0._maxWeaponNumber then
+		if var_8_4 > arg_8_0._maxWeaponNumber then
 			return "check weapon max"
 		end
 	end
 
-	if arg_8_0._check_spweapon and not var_0_2.FilterSpWeapon(arg_8_1, arg_8_0._tempData.arg_list) then
+	if arg_8_0._check_spweapon and not var_0_1.FilterSpWeapon(arg_8_1, arg_8_0._tempData.arg_list) then
 		return "check spweapon"
 	end
 
 	if arg_8_0._hpUpperBound or arg_8_0._hpLowerBound then
-		local var_8_5
-
-		if not arg_8_2 or not arg_8_2.unit then
-			var_8_5 = arg_8_1:GetHPRate()
-		else
-			local var_8_6 = arg_8_2.unit
-
-			var_8_5 = var_6.GetHPRate(var_8_6)
-		end
+		local var_8_5 = (not arg_8_2 or not arg_8_2.unit) and arg_8_1:GetHPRate() or arg_8_2.unit:GetHPRate()
 
 		if not arg_8_0:hpIntervalRequire(var_8_5) then
 			return "check hp"
 		end
 	end
 
-	if arg_8_0._attrInterval then
-		local var_8_7 = var_0.Battle.BattleAttr.GetBase(arg_8_1, arg_8_0._attrInterval)
-
-		if not arg_8_0:attrIntervalRequire(var_8_7) then
-			return "check interval"
-		end
+	if arg_8_0._attrInterval and not arg_8_0:attrIntervalRequire((var_0_0.Battle.BattleAttr.GetBase(arg_8_1, arg_8_0._attrInterval))) then
+		return "check interval"
 	end
 
-	if arg_8_0._streak and not var_0_2.GetWinningStreak(arg_8_0._streak) then
+	if arg_8_0._streak and not var_0_1.GetWinningStreak(arg_8_0._streak) then
 		return "check winning streak"
 	end
 
-	if arg_8_0._dungeonTypeList and not var_0_2.GetDungeonType(arg_8_0._dungeonTypeList) then
+	if arg_8_0._dungeonTypeList and not var_0_1.GetDungeonType(arg_8_0._dungeonTypeList) then
 		return "check dungeon"
 	end
 
@@ -266,96 +181,68 @@ function var_0_2.castSkill(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 		return "check buff stack"
 	end
 
-	local var_8_8 = arg_8_0:getTargetList(arg_8_1, arg_8_0._target, arg_8_0._tempData.arg_list)
+	local var_8_6 = arg_8_0:getTargetList(arg_8_1, arg_8_0._target, arg_8_0._tempData.arg_list)
 
-	var_0_2.super.onTrigger(arg_8_0, arg_8_1)
+	var_0_1.super.onTrigger(arg_8_0, arg_8_1)
 
-	ipairs = var_6
-
-	for iter_8_0, iter_8_1 in var_6(var_8_8) do
-		local var_8_9 = true
+	for iter_8_0, iter_8_1 in ipairs(var_8_6) do
+		local var_8_7 = true
 
 		if arg_8_0._group then
-			local var_8_10 = iter_8_1:GetBuffList()
+			for iter_8_2, iter_8_3 in pairs((iter_8_1:GetBuffList())) do
+				for iter_8_4, iter_8_5 in ipairs(iter_8_3._effectList) do
+					if iter_8_5:GetEffectType() == var_0_1.FX_TYPE and iter_8_5:GetGroupData() then
+						local var_8_8 = iter_8_5:GetGroupData()
 
-			pairs = var_1_10013
+						if var_8_8.id == arg_8_0._group.id and var_8_8.level > arg_8_0._group.level then
+							var_8_7 = false
 
-			for iter_8_2, iter_8_3 in var_1_10013(var_8_10) do
-				ipairs = var_1_10018
-
-				for iter_8_4, iter_8_5 in var_1_10018(iter_8_3._effectList) do
-					if iter_8_5:GetEffectType() == var_0_2.FX_TYPE and iter_8_5:GetGroupData() and iter_8_5:GetGroupData().id == arg_8_0._group.id and var_23.level > arg_8_0._group.level then
-						var_8_9 = false
-
-						break
+							break
+						end
 					end
 				end
 			end
 		end
 
-		if var_8_9 then
-			local var_8_11
+		if var_8_7 then
+			local var_8_9 = arg_8_0._attrConsumeRepeat and arg_8_0:fleetAttrRepeatConsume(arg_8_0._attrConsumeRepeat) or arg_8_0:repeatCountParse(arg_8_0._repeatCount)
 
-			if arg_8_0._attrConsumeRepeat then
-				var_8_11 = arg_8_0:fleetAttrRepeatConsume(arg_8_0._attrConsumeRepeat)
-			else
-				var_8_11 = arg_8_0:repeatCountParse(arg_8_0._repeatCount)
+			if var_8_9 == -1 then
+				var_8_9 = srcBuff:GetStack()
 			end
 
-			if var_8_11 == -1 then
-				srcBuff = var_1_10013
-				var_8_11 = var_1_10013:GetStack()
-			end
-
-			for iter_8_6 = 1, var_8_11 do
+			for iter_8_6 = 1, var_8_9 do
 				arg_8_0:spell(iter_8_1, arg_8_2)
 			end
 		end
 	end
 
-	arg_8_0:enterCoolDown(var_8_1)
+	arg_8_0:enterCoolDown(var_8_0)
 
 	return
 end
 
-function var_0_2.IsInCD(arg_9_0, arg_9_1)
+function ys.Battle.BattleBuffCastSkill.IsInCD(arg_9_0, arg_9_1)
 	return arg_9_1 < arg_9_0._nextEffectTime
 end
 
-function var_0_2.spell(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0
-
-	if not arg_10_0._skill then
-		var_10_0 = var_0.Battle.BattleSkillUnit.GenerateSpell
-
-		local var_10_1 = arg_10_0._skill_id
-		local var_10_2 = arg_10_0._level
-		local var_10_3 = arg_10_1
-
-		attData = var_1_10008
-		var_10_0 = var_10_0(var_10_1, var_10_2, var_10_3, var_1_10008)
-	end
-
-	arg_10_0._skill = var_10_0
+function ys.Battle.BattleBuffCastSkill.spell(arg_10_0, arg_10_1, arg_10_2)
+	arg_10_0._skill = arg_10_0._skill or var_0_0.Battle.BattleSkillUnit.GenerateSpell(arg_10_0._skill_id, arg_10_0._level, arg_10_1, attData)
 
 	if arg_10_2 and arg_10_2.target then
-		local var_10_4 = arg_10_0._skill
-
-		var_3.SetTarget(var_10_4, {
+		arg_10_0._skill:SetTarget({
 			arg_10_2.target
 		})
 	end
 
-	local var_10_5 = arg_10_0._skill
-
-	var_3.Cast(var_10_5, arg_10_1, arg_10_0._commander)
+	arg_10_0._skill:Cast(arg_10_1, arg_10_0._commander)
 
 	arg_10_0._castCount = arg_10_0._castCount + 1
 
 	return
 end
 
-function var_0_2.enterCoolDown(arg_11_0, arg_11_1)
+function ys.Battle.BattleBuffCastSkill.enterCoolDown(arg_11_0, arg_11_1)
 	if arg_11_0._time and arg_11_0._time > 0 then
 		arg_11_0._nextEffectTime = arg_11_1 + arg_11_0._time
 	end
@@ -363,25 +250,21 @@ function var_0_2.enterCoolDown(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_2.Interrupt(arg_12_0)
-	var_0_2.super.Interrupt(arg_12_0)
+function ys.Battle.BattleBuffCastSkill.Interrupt(arg_12_0)
+	var_0_1.super.Interrupt(arg_12_0)
 
 	if arg_12_0._skill then
-		local var_12_0 = arg_12_0._skill
-
-		var_1.Interrupt(var_12_0)
+		arg_12_0._skill:Interrupt()
 	end
 
 	return
 end
 
-function var_0_2.Clear(arg_13_0)
-	var_0_2.super.Clear(arg_13_0)
+function ys.Battle.BattleBuffCastSkill.Clear(arg_13_0)
+	var_0_1.super.Clear(arg_13_0)
 
 	if arg_13_0._skill then
-		local var_13_0 = arg_13_0._skill
-
-		var_1.Clear(var_13_0)
+		arg_13_0._skill:Clear()
 
 		arg_13_0._skill = nil
 	end
@@ -389,103 +272,66 @@ function var_0_2.Clear(arg_13_0)
 	return
 end
 
-function var_0_2.BuffAttachDataCondition(arg_14_0, arg_14_1)
+function ys.Battle.BattleBuffCastSkill.BuffAttachDataCondition(arg_14_0, arg_14_1)
 	local var_14_0 = true
-	local var_14_1 = arg_14_1:GetEffectList()
 
-	ipairs = var_1_10004
+	for iter_14_0, iter_14_1 in ipairs((arg_14_1:GetEffectList())) do
+		for iter_14_2, iter_14_3 in ipairs(arg_14_0._effectAttachData) do
+			local var_14_1 = var_0_0.Battle.BattleFormulas.parseCompareBuffAttachData(iter_14_3, iter_14_1)
 
-	for iter_14_0, iter_14_1 in var_1_10004(var_14_1) do
-		ipairs = var_1_10009
-
-		for iter_14_2, iter_14_3 in var_1_10009(arg_14_0._effectAttachData) do
-			local var_14_2 = var_0.Battle.BattleFormulas.parseCompareBuffAttachData(iter_14_3, iter_14_1)
-
-			var_14_0 = var_14_0 and var_14_2
+			var_14_0 = var_14_0 and var_14_1
 		end
 	end
 
 	return var_14_0
 end
 
-function var_0_2.GetWinningStreak(arg_15_0)
-	local var_15_0 = var_0.Battle.BattleDataProxy.GetInstance()
-	local var_15_1 = var_1.GetWinningStreak(var_15_0)
-	local var_15_2 = arg_15_0[1]
-	local var_15_3 = arg_15_0[2]
+function ys.Battle.BattleBuffCastSkill.GetWinningStreak(arg_15_0)
+	local var_15_0 = var_0_0.Battle.BattleDataProxy.GetInstance():GetWinningStreak()
+	local var_15_1 = arg_15_0[2]
 
-	return var_15_2 <= var_15_1 and var_15_1 < var_15_3
+	return arg_15_0[1] <= var_15_0 and var_15_0 < var_15_1
 end
 
-function var_0_2.GetDungeonType(arg_16_0)
-	local var_16_0 = var_0.Battle.BattleDataProxy.GetInstance()
-	local var_16_1 = var_1.GetInitData(var_16_0).StageTmpId
-
-	pg = var_1_10002
-
-	local var_16_2 = var_1_10002.expedition_data_template[var_16_1].type
-
-	table = var_16_0
-
-	return var_16_0.contains(arg_16_0, var_16_2)
+function ys.Battle.BattleBuffCastSkill.GetDungeonType(arg_16_0)
+	return table.contains(arg_16_0, pg.expedition_data_template[var_0_0.Battle.BattleDataProxy.GetInstance():GetInitData().StageTmpId].type)
 end
 
-function var_0_2.GetEquipmentList(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_0
-	local var_17_1 = arg_17_0.GetEquipment(var_17_0)
-	local var_17_2 = {}
+function ys.Battle.BattleBuffCastSkill.GetEquipmentList(arg_17_0, arg_17_1)
+	local var_17_0 = {}
 
-	ipairs = var_17_0
-
-	for iter_17_0, iter_17_1 in var_17_0(var_17_1) do
-		var_17_2[iter_17_0] = iter_17_1
+	for iter_17_0, iter_17_1 in ipairs((arg_17_0:GetEquipment())) do
+		var_17_0[iter_17_0] = iter_17_1
 	end
 
-	local var_17_3 = #var_17_2
+	local var_17_1 = #var_17_0
 
-	while var_17_3 > 0 do
-		local var_17_4 = var_17_2[var_17_3].equipment
-		local var_17_5 = true
+	while var_17_1 > 0 do
+		local var_17_2 = true
 
-		if not var_17_4 then
-			var_17_5 = false
+		if not var_17_0[var_17_1].equipment then
+			var_17_2 = false
 		else
-			iter_17_0 = var_0.Battle.BattleDataFunction.GetEquipDataTemplate(var_17_4.id)
+			local var_17_3 = var_0_0.Battle.BattleDataFunction.GetEquipDataTemplate(var_17_0[var_17_1].equipment.id)
 
-			if arg_17_1.weapon_group then
-				table = var_8
-
-				if not var_8.contains(arg_17_1.weapon_group, iter_17_0.group) then
-					var_17_5 = false
-				end
+			if arg_17_1.weapon_group and not table.contains(arg_17_1.weapon_group, var_17_3.group) then
+				var_17_2 = false
 			end
 
-			if arg_17_1.index then
-				table = var_8
-
-				if not var_8.contains(arg_17_1.index, var_17_3) then
-					var_17_5 = false
-				end
+			if arg_17_1.index and not table.contains(arg_17_1.index, var_17_1) then
+				var_17_2 = false
 			end
 
-			if arg_17_1.type then
-				table = var_8
-
-				if not var_8.contains(arg_17_1.type, iter_17_0.type) then
-					var_17_5 = false
-				end
+			if arg_17_1.type and not table.contains(arg_17_1.type, var_17_3.type) then
+				var_17_2 = false
 			end
 
 			if arg_17_1.label then
-				local var_17_6 = var_0.Battle.BattleDataFunction.GetWeaponDataFromID(var_17_4.id).label
+				local var_17_4 = var_0_0.Battle.BattleDataFunction.GetWeaponDataFromID(var_17_0[var_17_1].equipment.id).label
 
-				ipairs = var_9
-
-				for iter_17_2, iter_17_3 in var_9(arg_17_1.label) do
-					table = var_1_10014
-
-					if not var_1_10014.contains(var_17_6, iter_17_3) then
-						var_17_5 = false
+				for iter_17_2, iter_17_3 in ipairs(arg_17_1.label) do
+					if not table.contains(var_17_4, iter_17_3) then
+						var_17_2 = false
 
 						break
 					end
@@ -493,19 +339,17 @@ function var_0_2.GetEquipmentList(arg_17_0, arg_17_1)
 			end
 		end
 
-		if not var_17_5 then
-			table = iter_17_0
-
-			iter_17_0.remove(var_17_2, var_17_3)
+		if not var_17_2 then
+			table.remove(var_17_0, var_17_1)
 		end
 
-		var_17_3 = var_17_3 - 1
+		var_17_1 = var_17_1 - 1
 	end
 
-	return var_17_2
+	return var_17_0
 end
 
-function var_0_2.FilterSpWeapon(arg_18_0, arg_18_1)
+function ys.Battle.BattleBuffCastSkill.FilterSpWeapon(arg_18_0, arg_18_1)
 	local var_18_0 = arg_18_0:GetSpWeapon()
 	local var_18_1 = true
 
@@ -516,25 +360,15 @@ function var_0_2.FilterSpWeapon(arg_18_0, arg_18_1)
 			return
 		end
 
-		local var_19_0 = var_0.Battle.BattleDataFunction.GetSpWeaponDataFromID
-		local var_19_1 = var_18_0
-		local var_19_2 = var_19_0(var_2.GetConfigID(var_19_1))
+		local var_19_0 = var_0_0.Battle.BattleDataFunction.GetSpWeaponDataFromID(var_18_0:GetConfigID())
 
-		if arg_18_1.type then
-			table = var_1
-
-			if not var_1.contains(arg_18_1.type, var_19_2.type) then
-				var_18_1 = false
-			end
+		if arg_18_1.type and not table.contains(arg_18_1.type, var_19_0.type) then
+			var_18_1 = false
 		end
 
 		if arg_18_1.label then
-			ipairs = var_1
-
-			for iter_19_0, iter_19_1 in var_1(arg_18_1.label) do
-				table = var_2_10006
-
-				if not var_2_10006.contains(var_19_2.label, iter_19_1) then
+			for iter_19_0, iter_19_1 in ipairs(arg_18_1.label) do
+				if not table.contains(var_19_0.label, iter_19_1) then
 					var_18_1 = false
 
 					return
@@ -548,27 +382,16 @@ function var_0_2.FilterSpWeapon(arg_18_0, arg_18_1)
 	return var_18_1 and var_18_0 or nil
 end
 
-function var_0_2.GetCastCount(arg_20_0)
+function ys.Battle.BattleBuffCastSkill.GetCastCount(arg_20_0)
 	return arg_20_0._castCount
 end
 
-function var_0_2.GetSkillFireDamageSum(arg_21_0)
-	math = var_1_10001
+function ys.Battle.BattleBuffCastSkill.GetSkillFireDamageSum(arg_21_0)
+	local var_21_0 = arg_21_0._skill and arg_21_0._skill:GetDamageSum() or 0
 
-	local var_21_0 = var_1_10001.max
+	arg_21_0._fireSkillDMGSum = math.max(var_21_0, arg_21_0._fireSkillDMGSum)
 
-	if arg_21_0._skill then
-		local var_21_1 = arg_21_0._skill
-		local var_21_2
-
-		if not var_3.GetDamageSum(var_21_1) then
-			var_21_2 = 0
-		end
-
-		arg_21_0._fireSkillDMGSum = var_21_0(var_21_2, arg_21_0._fireSkillDMGSum)
-
-		return arg_21_0._fireSkillDMGSum
-	end
+	return arg_21_0._fireSkillDMGSum
 end
 
 return

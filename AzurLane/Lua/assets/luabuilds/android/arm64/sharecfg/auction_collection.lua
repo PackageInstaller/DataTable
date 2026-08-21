@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "auction_collection") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "auction_collection"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.auction_collection = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.auction_collection
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.auction_collection = rawget(pg, "auction_collection") or setmetatable({
+	__name = "auction_collection"
+}, confNEO)
+pg.auction_collection.all = {
 	1,
 	2,
 	3,
@@ -147,11 +124,7 @@ var_0_3.all = {
 	119,
 	120
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.auction_collection
-
-var_0_4.get_id_list_by_rarity = {
+pg.auction_collection.get_id_list_by_rarity = {
 	{
 		106,
 		107,
@@ -283,25 +256,11 @@ var_0_4.get_id_list_by_rarity = {
 		40
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.auction_collection = {}
+pg.base = pg.base or {}
+pg.base.auction_collection = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.auction_collection
-
-	var_1_0[1] = {
+	pg.base.auction_collection[1] = {
 		name = "Z旗",
 		rarity = 5,
 		value = 2685114,
@@ -312,11 +271,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.auction_collection
-
-	var_1_1[2] = {
+	pg.base.auction_collection[2] = {
 		name = "幽蓝矢车菊",
 		rarity = 5,
 		value = 1307336,
@@ -327,11 +282,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.auction_collection
-
-	var_1_2[3] = {
+	pg.base.auction_collection[3] = {
 		name = "珍珠",
 		rarity = 5,
 		value = 886532,
@@ -342,11 +293,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.auction_collection
-
-	var_1_3[4] = {
+	pg.base.auction_collection[4] = {
 		name = "炫彩游戏手柄",
 		rarity = 5,
 		value = 799999,
@@ -357,11 +304,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.auction_collection
-
-	var_1_4[5] = {
+	pg.base.auction_collection[5] = {
 		name = "魔法☆面包",
 		rarity = 5,
 		value = 452757,
@@ -372,11 +315,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.auction_collection
-
-	var_1_5[6] = {
+	pg.base.auction_collection[6] = {
 		name = "特殊装备规划书",
 		rarity = 5,
 		value = 364855,
@@ -387,11 +326,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.auction_collection
-
-	var_1_6[7] = {
+	pg.base.auction_collection[7] = {
 		name = "特装型部件",
 		rarity = 5,
 		value = 283538,
@@ -402,11 +337,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.auction_collection
-
-	var_1_7[8] = {
+	pg.base.auction_collection[8] = {
 		name = "全息投影面罩",
 		rarity = 5,
 		value = 195426,
@@ -417,11 +348,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.auction_collection
-
-	var_1_8[9] = {
+	pg.base.auction_collection[9] = {
 		name = "九三式纯氧鱼雷",
 		rarity = 5,
 		value = 878245,
@@ -432,11 +359,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.auction_collection
-
-	var_1_9[10] = {
+	pg.base.auction_collection[10] = {
 		name = "魔法扫帚",
 		rarity = 5,
 		value = 1561430,
@@ -447,11 +370,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.auction_collection
-
-	var_1_10[11] = {
+	pg.base.auction_collection[11] = {
 		name = "深空体重计",
 		rarity = 5,
 		value = 1635681,
@@ -462,11 +381,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.auction_collection
-
-	var_1_11[12] = {
+	pg.base.auction_collection[12] = {
 		name = "高级定向蓝图",
 		rarity = 5,
 		value = 706471,
@@ -477,11 +392,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.auction_collection
-
-	var_1_12[13] = {
+	pg.base.auction_collection[13] = {
 		name = "特殊实验计划",
 		rarity = 5,
 		value = 489972,
@@ -492,11 +403,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.auction_collection
-
-	var_1_13[14] = {
+	pg.base.auction_collection[14] = {
 		name = "昏睡抱枕",
 		rarity = 5,
 		value = 2539483,
@@ -507,11 +414,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.auction_collection
-
-	var_1_14[15] = {
+	pg.base.auction_collection[15] = {
 		name = "神秘魔法筒",
 		rarity = 5,
 		value = 1733281,
@@ -522,11 +425,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.auction_collection
-
-	var_1_15[16] = {
+	pg.base.auction_collection[16] = {
 		name = "时空沙漏",
 		rarity = 5,
 		value = 1293299,
@@ -537,11 +436,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.auction_collection
-
-	var_1_16[17] = {
+	pg.base.auction_collection[17] = {
 		name = "太师椅",
 		rarity = 5,
 		value = 1083805,
@@ -552,11 +447,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.auction_collection
-
-	var_1_17[18] = {
+	pg.base.auction_collection[18] = {
 		name = "啾狱马桶",
 		rarity = 5,
 		value = 776546,
@@ -567,11 +458,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.auction_collection
-
-	var_1_18[19] = {
+	pg.base.auction_collection[19] = {
 		name = "风滚草木雕",
 		rarity = 5,
 		value = 630423,
@@ -582,11 +469,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.auction_collection
-
-	var_1_19[20] = {
+	pg.base.auction_collection[20] = {
 		name = "魔豆之树",
 		rarity = 5,
 		value = 438654,
@@ -597,11 +480,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.auction_collection
-
-	var_1_20[21] = {
+	pg.base.auction_collection[21] = {
 		name = "传说宝藏",
 		rarity = 5,
 		value = 284912,
@@ -612,11 +491,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.auction_collection
-
-	var_1_21[22] = {
+	pg.base.auction_collection[22] = {
 		name = "啾啾石雕",
 		rarity = 5,
 		value = 202368,
@@ -627,11 +502,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.auction_collection
-
-	var_1_22[23] = {
+	pg.base.auction_collection[23] = {
 		name = "艺术石膏像",
 		rarity = 5,
 		value = 2557820,
@@ -642,11 +513,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.auction_collection
-
-	var_1_23[24] = {
+	pg.base.auction_collection[24] = {
 		name = "胡桃夹子近卫兵",
 		rarity = 5,
 		value = 2394967,
@@ -657,11 +524,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.auction_collection
-
-	var_1_24[25] = {
+	pg.base.auction_collection[25] = {
 		name = "谜之电话亭",
 		rarity = 5,
 		value = 1956574,
@@ -672,11 +535,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.auction_collection
-
-	var_1_25[26] = {
+	pg.base.auction_collection[26] = {
 		name = "士兵啾雕塑",
 		rarity = 5,
 		value = 971708,
@@ -687,11 +546,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.auction_collection
-
-	var_1_26[27] = {
+	pg.base.auction_collection[27] = {
 		name = "胡桃夹子火枪手",
 		rarity = 5,
 		value = 385956,
@@ -702,11 +557,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.auction_collection
-
-	var_1_27[28] = {
+	pg.base.auction_collection[28] = {
 		name = "极光之翼",
 		rarity = 5,
 		value = 1680426,
@@ -717,11 +568,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.auction_collection
-
-	var_1_28[29] = {
+	pg.base.auction_collection[29] = {
 		name = "试作型双联装457mm主炮MkA",
 		rarity = 5,
 		value = 540336,
@@ -732,11 +579,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.auction_collection
-
-	var_1_29[30] = {
+	pg.base.auction_collection[30] = {
 		name = "神殿画像",
 		rarity = 5,
 		value = 2999999,
@@ -747,11 +590,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.auction_collection
-
-	var_1_30[31] = {
+	pg.base.auction_collection[31] = {
 		name = "高精度火控系统",
 		rarity = 5,
 		value = 1878833,
@@ -762,11 +601,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.auction_collection
-
-	var_1_31[32] = {
+	pg.base.auction_collection[32] = {
 		name = "名画地毯",
 		rarity = 5,
 		value = 1080961,
@@ -777,11 +612,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.auction_collection
-
-	var_1_32[33] = {
+	pg.base.auction_collection[33] = {
 		name = "双联装138.6mm主炮Mle1934",
 		rarity = 5,
 		value = 713390,
@@ -792,11 +623,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.auction_collection
-
-	var_1_33[34] = {
+	pg.base.auction_collection[34] = {
 		name = "试做舰载型天雷",
 		rarity = 5,
 		value = 499425,
@@ -807,11 +634,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.auction_collection
-
-	var_1_34[35] = {
+	pg.base.auction_collection[35] = {
 		name = "小海狸挂画",
 		rarity = 5,
 		value = 381262,
@@ -822,11 +645,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.auction_collection
-
-	var_1_35[36] = {
+	pg.base.auction_collection[36] = {
 		name = "460mm三联装炮",
 		rarity = 5,
 		value = 3061687,
@@ -837,11 +656,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.auction_collection
-
-	var_1_36[37] = {
+	pg.base.auction_collection[37] = {
 		name = "仰望星空派",
 		rarity = 5,
 		value = 1587435,
@@ -852,11 +667,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.auction_collection
-
-	var_1_37[38] = {
+	pg.base.auction_collection[38] = {
 		name = "白色圆塔",
 		rarity = 5,
 		value = 1486670,
@@ -867,11 +678,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.auction_collection
-
-	var_1_38[39] = {
+	pg.base.auction_collection[39] = {
 		name = "艺术展纪念品",
 		rarity = 5,
 		value = 992601,
@@ -882,11 +689,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.auction_collection
-
-	var_1_39[40] = {
+	pg.base.auction_collection[40] = {
 		name = "沉思者雕塑",
 		rarity = 5,
 		value = 659511,
@@ -897,11 +700,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.auction_collection
-
-	var_1_40[41] = {
+	pg.base.auction_collection[41] = {
 		name = "小海狸中队徽章",
 		rarity = 4,
 		value = 226538,
@@ -912,11 +711,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.auction_collection
-
-	var_1_41[42] = {
+	pg.base.auction_collection[42] = {
 		name = "珍珠之泪",
 		rarity = 4,
 		value = 183981,
@@ -927,11 +722,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.auction_collection
-
-	var_1_42[43] = {
+	pg.base.auction_collection[43] = {
 		name = "啾绒玩偶",
 		rarity = 4,
 		value = 142861,
@@ -942,11 +733,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.auction_collection
-
-	var_1_43[44] = {
+	pg.base.auction_collection[44] = {
 		name = "探险家眼镜",
 		rarity = 4,
 		value = 102347,
@@ -957,11 +744,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.auction_collection
-
-	var_1_44[45] = {
+	pg.base.auction_collection[45] = {
 		name = "美梦睡帽",
 		rarity = 4,
 		value = 51756,
@@ -972,11 +755,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.auction_collection
-
-	var_1_45[46] = {
+	pg.base.auction_collection[46] = {
 		name = "高端定制鲜花束",
 		rarity = 4,
 		value = 220529,
@@ -987,11 +766,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.auction_collection
-
-	var_1_46[47] = {
+	pg.base.auction_collection[47] = {
 		name = "游戏机套组",
 		rarity = 4,
 		value = 182546,
@@ -1002,11 +777,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.auction_collection
-
-	var_1_47[48] = {
+	pg.base.auction_collection[48] = {
 		name = "穿甲弹",
 		rarity = 4,
 		value = 124560,
@@ -1017,11 +788,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.auction_collection
-
-	var_1_48[49] = {
+	pg.base.auction_collection[49] = {
 		name = "仪式剑",
 		rarity = 4,
 		value = 85093,
@@ -1032,11 +799,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.auction_collection
-
-	var_1_49[50] = {
+	pg.base.auction_collection[50] = {
 		name = "超重弹",
 		rarity = 4,
 		value = 60018,
@@ -1047,11 +810,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.auction_collection
-
-	var_1_50[51] = {
+	pg.base.auction_collection[51] = {
 		name = "妖刀",
 		rarity = 4,
 		value = 221819,
@@ -1062,11 +821,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.auction_collection
-
-	var_1_51[52] = {
+	pg.base.auction_collection[52] = {
 		name = "爆裂法杖",
 		rarity = 4,
 		value = 175056,
@@ -1077,11 +832,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.auction_collection
-
-	var_1_52[53] = {
+	pg.base.auction_collection[53] = {
 		name = "骑士的誓约长剑",
 		rarity = 4,
 		value = 141764,
@@ -1092,11 +843,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.auction_collection
-
-	var_1_53[54] = {
+	pg.base.auction_collection[54] = {
 		name = "召唤法杖",
 		rarity = 4,
 		value = 70278,
@@ -1107,11 +854,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.auction_collection
-
-	var_1_54[55] = {
+	pg.base.auction_collection[55] = {
 		name = "高强钛合金",
 		rarity = 4,
 		value = 247007,
@@ -1122,11 +865,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.auction_collection
-
-	var_1_55[56] = {
+	pg.base.auction_collection[56] = {
 		name = "超导铜",
 		rarity = 4,
 		value = 188499,
@@ -1137,11 +876,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.auction_collection
-
-	var_1_56[57] = {
+	pg.base.auction_collection[57] = {
 		name = "高性能对空雷达",
 		rarity = 4,
 		value = 138522,
@@ -1152,11 +887,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.auction_collection
-
-	var_1_57[58] = {
+	pg.base.auction_collection[58] = {
 		name = "珍贵藏宝箱",
 		rarity = 4,
 		value = 225664,
@@ -1167,11 +898,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.auction_collection
-
-	var_1_58[59] = {
+	pg.base.auction_collection[59] = {
 		name = "高速速运无人机",
 		rarity = 4,
 		value = 153238,
@@ -1182,11 +909,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.auction_collection
-
-	var_1_59[60] = {
+	pg.base.auction_collection[60] = {
 		name = "高性能舵机",
 		rarity = 4,
 		value = 115115,
@@ -1197,11 +920,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.auction_collection
-
-	var_1_60[61] = {
+	pg.base.auction_collection[61] = {
 		name = "勇者之盾",
 		rarity = 4,
 		value = 240927,
@@ -1212,11 +931,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.auction_collection
-
-	var_1_61[62] = {
+	pg.base.auction_collection[62] = {
 		name = "紫霞巨毫",
 		rarity = 4,
 		value = 136295,
@@ -1227,11 +942,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.auction_collection
-
-	var_1_62[63] = {
+	pg.base.auction_collection[63] = {
 		name = "冬日权杖剑",
 		rarity = 4,
 		value = 96819,
@@ -1242,11 +953,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.auction_collection
-
-	var_1_63[64] = {
+	pg.base.auction_collection[64] = {
 		name = "冒险者之杖",
 		rarity = 4,
 		value = 281034,
@@ -1257,11 +964,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.auction_collection
-
-	var_1_64[65] = {
+	pg.base.auction_collection[65] = {
 		name = "机构权杖",
 		rarity = 4,
 		value = 198487,
@@ -1272,11 +975,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.auction_collection
-
-	var_1_65[66] = {
+	pg.base.auction_collection[66] = {
 		name = "雕花木刀",
 		rarity = 4,
 		value = 123460,
@@ -1287,11 +986,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.auction_collection
-
-	var_1_66[67] = {
+	pg.base.auction_collection[67] = {
 		name = "命运舵盘",
 		rarity = 4,
 		value = 302326,
@@ -1302,11 +997,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.auction_collection
-
-	var_1_67[68] = {
+	pg.base.auction_collection[68] = {
 		name = "液压弹射装置",
 		rarity = 4,
 		value = 224110,
@@ -1317,11 +1008,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.auction_collection
-
-	var_1_68[69] = {
+	pg.base.auction_collection[69] = {
 		name = "VH钢装甲板",
 		rarity = 4,
 		value = 168340,
@@ -1332,11 +1019,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.auction_collection
-
-	var_1_69[70] = {
+	pg.base.auction_collection[70] = {
 		name = "超重弹药箱",
 		rarity = 4,
 		value = 93012,
@@ -1347,11 +1030,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.auction_collection
-
-	var_1_70[71] = {
+	pg.base.auction_collection[71] = {
 		name = "工业级电子元件",
 		rarity = 3,
 		value = 98067,
@@ -1362,11 +1041,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.auction_collection
-
-	var_1_71[72] = {
+	pg.base.auction_collection[72] = {
 		name = "十字胸针",
 		rarity = 3,
 		value = 61123,
@@ -1377,11 +1052,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.auction_collection
-
-	var_1_72[73] = {
+	pg.base.auction_collection[73] = {
 		name = "高级燃油滤清器",
 		rarity = 3,
 		value = 36824,
@@ -1392,11 +1063,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.auction_collection
-
-	var_1_73[74] = {
+	pg.base.auction_collection[74] = {
 		name = "高压氧气瓶",
 		rarity = 3,
 		value = 73106,
@@ -1407,11 +1074,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.auction_collection
-
-	var_1_74[75] = {
+	pg.base.auction_collection[75] = {
 		name = "勇者之剑",
 		rarity = 3,
 		value = 110503,
@@ -1422,11 +1085,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.auction_collection
-
-	var_1_75[76] = {
+	pg.base.auction_collection[76] = {
 		name = "优质铝合金板",
 		rarity = 3,
 		value = 67435,
@@ -1437,11 +1096,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.auction_collection
-
-	var_1_76[77] = {
+	pg.base.auction_collection[77] = {
 		name = "航海望远镜",
 		rarity = 3,
 		value = 44974,
@@ -1452,11 +1107,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.auction_collection
-
-	var_1_77[78] = {
+	pg.base.auction_collection[78] = {
 		name = "维修工具",
 		rarity = 3,
 		value = 106949,
@@ -1467,11 +1118,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.auction_collection
-
-	var_1_78[79] = {
+	pg.base.auction_collection[79] = {
 		name = "航海日志",
 		rarity = 3,
 		value = 119697,
@@ -1482,11 +1129,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.auction_collection
-
-	var_1_79[80] = {
+	pg.base.auction_collection[80] = {
 		name = "海图文件",
 		rarity = 3,
 		value = 69744,
@@ -1497,11 +1140,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.auction_collection
-
-	var_1_80[81] = {
+	pg.base.auction_collection[81] = {
 		name = "改良锅炉",
 		rarity = 3,
 		value = 42261,
@@ -1512,11 +1151,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.auction_collection
-
-	var_1_81[82] = {
+	pg.base.auction_collection[82] = {
 		name = "帆索组件",
 		rarity = 3,
 		value = 92730,
@@ -1527,11 +1162,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.auction_collection
-
-	var_1_82[83] = {
+	pg.base.auction_collection[83] = {
 		name = "狩猎长弓",
 		rarity = 3,
 		value = 71497,
@@ -1542,11 +1173,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.auction_collection
-
-	var_1_83[84] = {
+	pg.base.auction_collection[84] = {
 		name = "双手大剑",
 		rarity = 3,
 		value = 47954,
@@ -1557,11 +1184,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.auction_collection
-
-	var_1_84[85] = {
+	pg.base.auction_collection[85] = {
 		name = "仪仗队指挥刀",
 		rarity = 3,
 		value = 96008,
@@ -1572,11 +1195,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.auction_collection
-
-	var_1_85[86] = {
+	pg.base.auction_collection[86] = {
 		name = "双刃长剑",
 		rarity = 3,
 		value = 79737,
@@ -1587,11 +1206,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.auction_collection
-
-	var_1_86[87] = {
+	pg.base.auction_collection[87] = {
 		name = "骑士长枪",
 		rarity = 3,
 		value = 36887,
@@ -1602,11 +1217,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.auction_collection
-
-	var_1_87[88] = {
+	pg.base.auction_collection[88] = {
 		name = "航空副油箱",
 		rarity = 3,
 		value = 131792,
@@ -1617,11 +1228,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.auction_collection
-
-	var_1_88[89] = {
+	pg.base.auction_collection[89] = {
 		name = "火控雷达",
 		rarity = 3,
 		value = 109576,
@@ -1632,11 +1239,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.auction_collection
-
-	var_1_89[90] = {
+	pg.base.auction_collection[90] = {
 		name = "链式装弹机",
 		rarity = 3,
 		value = 60614,
@@ -1647,11 +1250,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.auction_collection
-
-	var_1_90[91] = {
+	pg.base.auction_collection[91] = {
 		name = "防潮火药",
 		rarity = 2,
 		value = 24847,
@@ -1662,11 +1261,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.auction_collection
-
-	var_1_91[92] = {
+	pg.base.auction_collection[92] = {
 		name = "限量版可乐",
 		rarity = 2,
 		value = 21495,
@@ -1677,11 +1272,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.auction_collection
-
-	var_1_92[93] = {
+	pg.base.auction_collection[93] = {
 		name = "通常电子元件",
 		rarity = 2,
 		value = 11916,
@@ -1692,11 +1283,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.auction_collection
-
-	var_1_93[94] = {
+	pg.base.auction_collection[94] = {
 		name = "通用部件",
 		rarity = 2,
 		value = 8661,
@@ -1707,11 +1294,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.auction_collection
-
-	var_1_94[95] = {
+	pg.base.auction_collection[95] = {
 		name = "优质烹调油",
 		rarity = 2,
 		value = 34181,
@@ -1722,11 +1305,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.auction_collection
-
-	var_1_95[96] = {
+	pg.base.auction_collection[96] = {
 		name = "优质钢材",
 		rarity = 2,
 		value = 30819,
@@ -1737,11 +1316,7 @@ var_0_4.base.auction_collection = {}
 			2
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.auction_collection
-
-	var_1_96[97] = {
+	pg.base.auction_collection[97] = {
 		name = "仿制仪式权杖",
 		rarity = 2,
 		value = 2446,
@@ -1752,11 +1327,7 @@ var_0_4.base.auction_collection = {}
 			3
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.auction_collection
-
-	var_1_97[98] = {
+	pg.base.auction_collection[98] = {
 		name = "天然橡胶",
 		rarity = 2,
 		value = 28058,
@@ -1767,11 +1338,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.auction_collection
-
-	var_1_98[99] = {
+	pg.base.auction_collection[99] = {
 		name = "优质皮革",
 		rarity = 2,
 		value = 12932,
@@ -1782,8 +1349,7 @@ var_0_4.base.auction_collection = {}
 			1
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.auction_collection[100] = {
+	pg.base.auction_collection[100] = {
 		name = "陀螺仪",
 		rarity = 2,
 		value = 16164,
@@ -1798,11 +1364,7 @@ var_0_4.base.auction_collection = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.auction_collection
-
-	var_2_0[101] = {
+	pg.base.auction_collection[101] = {
 		name = "旧式重火炮",
 		rarity = 2,
 		value = 10078,
@@ -1813,11 +1375,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.auction_collection
-
-	var_2_1[102] = {
+	pg.base.auction_collection[102] = {
 		name = "12磅长管炮",
 		rarity = 2,
 		value = 11087,
@@ -1828,11 +1386,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.auction_collection
-
-	var_2_2[103] = {
+	pg.base.auction_collection[103] = {
 		name = "双联380mmSKC主炮",
 		rarity = 2,
 		value = 15862,
@@ -1843,11 +1397,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.auction_collection
-
-	var_2_3[104] = {
+	pg.base.auction_collection[104] = {
 		name = "装饰画",
 		rarity = 2,
 		value = 28317,
@@ -1858,11 +1408,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.auction_collection
-
-	var_2_4[105] = {
+	pg.base.auction_collection[105] = {
 		name = "木制桌椅",
 		rarity = 2,
 		value = 20376,
@@ -1873,11 +1419,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.auction_collection
-
-	var_2_5[106] = {
+	pg.base.auction_collection[106] = {
 		name = "打印机墨盒",
 		rarity = 1,
 		value = 9053,
@@ -1888,11 +1430,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.auction_collection
-
-	var_2_6[107] = {
+	pg.base.auction_collection[107] = {
 		name = "空白笔记本",
 		rarity = 1,
 		value = 7279,
@@ -1903,11 +1441,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.auction_collection
-
-	var_2_7[108] = {
+	pg.base.auction_collection[108] = {
 		name = "六角螺母",
 		rarity = 1,
 		value = 3844,
@@ -1918,11 +1452,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.auction_collection
-
-	var_2_8[109] = {
+	pg.base.auction_collection[109] = {
 		name = "医用硫酸",
 		rarity = 1,
 		value = 1814,
@@ -1933,11 +1463,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.auction_collection
-
-	var_2_9[110] = {
+	pg.base.auction_collection[110] = {
 		name = "基础深弹投射器",
 		rarity = 1,
 		value = 7982,
@@ -1948,11 +1474,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.auction_collection
-
-	var_2_10[111] = {
+	pg.base.auction_collection[111] = {
 		name = "灭火器",
 		rarity = 1,
 		value = 1420,
@@ -1963,11 +1485,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.auction_collection
-
-	var_2_11[112] = {
+	pg.base.auction_collection[112] = {
 		name = "海滩贝壳",
 		rarity = 1,
 		value = 8454,
@@ -1978,11 +1496,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.auction_collection
-
-	var_2_12[113] = {
+	pg.base.auction_collection[113] = {
 		name = "空白纸张",
 		rarity = 1,
 		value = 6685,
@@ -1993,11 +1507,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.auction_collection
-
-	var_2_13[114] = {
+	pg.base.auction_collection[114] = {
 		name = "铁锭",
 		rarity = 1,
 		value = 4507,
@@ -2008,11 +1518,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.auction_collection
-
-	var_2_14[115] = {
+	pg.base.auction_collection[115] = {
 		name = "电动扬弹机",
 		rarity = 1,
 		value = 12171,
@@ -2023,11 +1529,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.auction_collection
-
-	var_2_15[116] = {
+	pg.base.auction_collection[116] = {
 		name = "迷彩涂装",
 		rarity = 1,
 		value = 6271,
@@ -2038,11 +1540,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.auction_collection
-
-	var_2_16[117] = {
+	pg.base.auction_collection[117] = {
 		name = "液压舵机",
 		rarity = 1,
 		value = 3797,
@@ -2053,11 +1551,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.auction_collection
-
-	var_2_17[118] = {
+	pg.base.auction_collection[118] = {
 		name = "小号",
 		rarity = 1,
 		value = 5567,
@@ -2068,11 +1562,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.auction_collection
-
-	var_2_18[119] = {
+	pg.base.auction_collection[119] = {
 		name = "小提琴",
 		rarity = 1,
 		value = 3747,
@@ -2083,8 +1573,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_18
-	var_2_18.base.auction_collection[120] = {
+	pg.base.auction_collection[120] = {
 		name = "实用木料",
 		rarity = 1,
 		value = 2360,

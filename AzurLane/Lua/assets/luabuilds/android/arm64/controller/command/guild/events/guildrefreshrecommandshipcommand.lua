@@ -1,22 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildRefreshRecommandShipCommand", pm.SimpleCommand)
 
-local var_0_0 = "GuildRefreshRecommandShipCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody().callback
-	local var_1_1
 
-	if var_0_1.TIME then
-		var_1_1 = var_0_1.TIME
-		pg = var_1_10005
-
-		local var_1_2 = var_1_10005.TimeMgr.GetInstance()
-
-		if var_1_1 > var_5.GetServerTime(var_1_2) then
+	if var_0_0.TIME then
+		if var_0_0.TIME > pg.TimeMgr.GetInstance():GetServerTime() then
 			if var_1_0 then
 				var_1_0()
 			end
@@ -25,69 +13,36 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 		end
 	end
 
-	pg = var_1_1
-
-	local var_1_3 = var_1_1.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_3, 61035, {
+	pg.ConnectionMgr.GetInstance():Send(61035, {
 		type = 0
 	}, 61036, function(arg_2_0)
-		local var_2_0 = {}
+		local var_2_0 = arg_2_0.recommends or {}
 
-		ipairs = var_2_10002
-
-		local var_2_1
-
-		if not arg_2_0.recommends then
-			var_2_1 = {}
-		end
-
-		for iter_2_0, iter_2_1 in var_2_10002(var_2_1) do
-			if not var_2_0[iter_2_1.user_id] then
-				var_2_0[iter_2_1.user_id] = {}
+		for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+			if not ({})[iter_2_1.user_id] then
+				({})[iter_2_1.user_id] = {}
 			end
 
-			table = var_7
-
-			var_7.insert(var_2_0[iter_2_1.user_id], iter_2_1.ship_id)
+			table.insert(({})[iter_2_1.user_id], iter_2_1.ship_id)
 		end
 
-		getProxy = var_2
-		GuildProxy = var_4
+		local var_2_1 = getProxy(GuildProxy)
+		local var_2_2 = var_2_1:getData()
 
-		local var_2_2 = var_2(var_4)
-		local var_2_3 = var_2.getData(var_2_2)
-		local var_2_4 = var_3.GetMembers(var_2_3)
+		for iter_2_2, iter_2_3 in ipairs((var_2_2:GetMembers())) do
+			local var_2_3 = iter_2_3:GetAssaultFleet()
 
-		ipairs = var_2_2
+			var_2_3:ClearAllRecommandShip()
 
-		for iter_2_2, iter_2_3 in var_2_2(var_2_4) do
-			local var_2_5 = var_2_0[iter_2_3.id]
-			local var_2_6 = iter_2_3:GetAssaultFleet()
-
-			var_11.ClearAllRecommandShip(var_2_6)
-
-			if var_2_5 then
-				var_11:SetRecommendList(var_2_5)
+			if ({})[iter_2_3.id] then
+				var_2_3:SetRecommendList(({})[iter_2_3.id])
 			end
 		end
 
-		var_2:updateGuild(var_3)
+		var_2_1:updateGuild(var_2_2)
+		arg_1_0:sendNotification(GAME.REFRESH_ALL_ASSULT_SHIP_RECOMMAND_STATE_DONE)
 
-		local var_2_7 = arg_1_0
-		local var_2_8 = var_5.sendNotification
-
-		GAME = var_8
-
-		var_2_8(var_2_7, var_8.REFRESH_ALL_ASSULT_SHIP_RECOMMAND_STATE_DONE)
-
-		local var_2_9 = var_0_1
-
-		pg = var_6
-
-		local var_2_10 = var_6.TimeMgr.GetInstance()
-
-		var_2_9.TIME = var_6.GetServerTime(var_2_10) + 3
+		var_0_0.TIME = pg.TimeMgr.GetInstance():GetServerTime() + 3
 
 		if var_1_0 then
 			var_1_0()
@@ -99,4 +54,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

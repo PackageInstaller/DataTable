@@ -1,131 +1,51 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LivingAreaCoverPage", import("...base.BaseSubView"))
 
-local var_0_0 = "LivingAreaCoverPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "LivingAreaCoverUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.tpl = arg_2_0._tf:Find("bg/tpl")
 
-	arg_2_0.tpl = var_1.Find(var_2_0, "bg/tpl")
-	setActive = var_1
+	setActive(arg_2_0.tpl, false)
 
-	var_1(arg_2_0.tpl, false)
+	arg_2_0.frameTF = arg_2_0._tf:Find("bg/frame")
+	arg_2_0.contentTF = arg_2_0.frameTF:Find("view/content")
+	arg_2_0.unlockTF = arg_2_0.contentTF:Find("unlock")
 
-	local var_2_1 = arg_2_0._tf
+	setText(arg_2_0.unlockTF:Find("title/Text"), i18n("word_unlock"))
 
-	arg_2_0.frameTF = var_1.Find(var_2_1, "bg/frame")
+	arg_2_0.unlockUIList = UIItemList.New(arg_2_0.unlockTF:Find("list"), arg_2_0.tpl)
+	arg_2_0.lockTF = arg_2_0.contentTF:Find("lock")
 
-	local var_2_2 = arg_2_0.frameTF
+	setText(arg_2_0.lockTF:Find("title/Text"), i18n("word_lock"))
 
-	arg_2_0.contentTF = var_1.Find(var_2_2, "view/content")
-
-	local var_2_3 = arg_2_0.contentTF
-
-	arg_2_0.unlockTF = var_1.Find(var_2_3, "unlock")
-	setText = var_1
-
-	local var_2_4 = arg_2_0.unlockTF
-	local var_2_5 = var_3.Find(var_2_4, "title/Text")
-
-	i18n = var_4
-
-	var_1(var_2_5, var_4("word_unlock"))
-
-	UIItemList = var_1
-
-	local var_2_6 = var_1.New
-	local var_2_7 = arg_2_0.unlockTF
-
-	arg_2_0.unlockUIList = var_2_6(var_3.Find(var_2_7, "list"), arg_2_0.tpl)
-
-	local var_2_8 = arg_2_0.contentTF
-
-	arg_2_0.lockTF = var_1.Find(var_2_8, "lock")
-	setText = var_1
-
-	local var_2_9 = arg_2_0.lockTF
-	local var_2_10 = var_3.Find(var_2_9, "title/Text")
-
-	i18n = var_4
-
-	var_1(var_2_10, var_4("word_lock"))
-
-	UIItemList = var_1
-
-	local var_2_11 = var_1.New
-	local var_2_12 = arg_2_0.lockTF
-
-	arg_2_0.lockUIList = var_2_11(var_3.Find(var_2_12, "list"), arg_2_0.tpl)
+	arg_2_0.lockUIList = UIItemList.New(arg_2_0.lockTF:Find("list"), arg_2_0.tpl)
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.CheckSet(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:CheckSet()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.frameTF
-	local var_3_5 = var_4.Find(var_3_4, "close")
-
-	local function var_3_6()
-		local var_5_0 = arg_3_0
-
-		var_0.CheckSet(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.frameTF:Find("close"), function()
+		arg_3_0:CheckSet()
 
 		return
-	end
-
-	SFX_PANEL = var_3_4
-
-	var_1_10001(var_3_3, var_3_5, var_3_6, var_3_4)
-
-	local var_3_7 = arg_3_0.unlockUIList
-
-	var_1.make(var_3_7, function(arg_6_0, arg_6_1, arg_6_2)
-		UIItemList = var_2_10003
-
-		if arg_6_0 == var_2_10003.EventUpdate then
-			local var_6_0 = arg_3_0
-
-			var_3.updateItem(var_6_0, arg_6_1, arg_6_2, "unlock")
+	end, SFX_PANEL)
+	arg_3_0.unlockUIList:make(function(arg_6_0, arg_6_1, arg_6_2)
+		if arg_6_0 == UIItemList.EventUpdate then
+			arg_3_0:updateItem(arg_6_1, arg_6_2, "unlock")
 		end
 
 		return
 	end)
-
-	local var_3_8 = arg_3_0.lockUIList
-
-	var_1.make(var_3_8, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			local var_7_0 = arg_3_0
-
-			var_3.updateItem(var_7_0, arg_7_1, arg_7_2, "lock")
+	arg_3_0.lockUIList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_3_0:updateItem(arg_7_1, arg_7_2, "lock")
 		end
 
 		return
@@ -134,125 +54,68 @@ function var_0_1.OnInit(arg_3_0)
 	return
 end
 
-function var_0_1.updateItem(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+function var_0_0.updateItem(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 	local var_8_0 = arg_8_1 + 1
-	local var_8_1
+	local var_8_1 = arg_8_3 == "unlock"
 
-	if not (arg_8_3 == "unlock") or not arg_8_0.unlockList[var_8_0] then
-		var_8_1 = arg_8_0.lockList[var_8_0]
-	end
+	if arg_8_3 == "unlock" then
+		local var_8_2 = arg_8_0.unlockList[arg_8_1 + 1] or arg_8_0.lockList[arg_8_1 + 1]
 
-	LoadImageSpriteAsync = var_1_10007
+		LoadImageSpriteAsync(var_8_2:GetIcon(), arg_8_2:Find("icon"), true)
+		setText(arg_8_2:Find("lock/Image/Text"), var_8_2:GetUnlockText())
+		setActive(arg_8_2:Find("lock"), not var_8_1)
+		setActive(arg_8_2:Find("selected"), var_8_1)
+		onButton(arg_8_0, arg_8_2, function()
+			if not var_8_1 then
+				return
+			end
 
-	var_1_10007(var_8_1:GetIcon(), arg_8_2:Find("icon"), true)
+			if arg_8_0.selectedIdx ~= var_8_0 then
+				if var_8_2:IsNew() then
+					var_8_2:ClearNew()
+					getProxy(LivingAreaCoverProxy):UpdateCover(var_8_2)
+				end
 
-	setText = var_1_10007
+				arg_8_0.selectedIdx = var_8_0
 
-	var_1_10007(arg_8_2:Find("lock/Image/Text"), var_8_1:GetUnlockText())
+				arg_8_0.unlockUIList:align(#arg_8_0.unlockList)
 
-	setActive = var_1_10007
+				if arg_8_0.contextData and arg_8_0.contextData.onSelected then
+					arg_8_0.contextData.onSelected(var_8_2)
+				end
+			end
 
-	var_1_10007(arg_8_2:Find("lock"), not var_5)
-
-	setActive = var_1_10007
-
-	var_1_10007(arg_8_2:Find("selected"), var_5)
-
-	onButton = var_1_10007
-
-	local var_8_2 = arg_8_0
-	local var_8_3 = arg_8_2
-
-	local function var_8_4()
-		if not var_0 then
 			return
-		end
-
-		if arg_8_0.selectedIdx ~= var_8_0 then
-			local var_9_0 = var_8_1
-
-			if var_0.IsNew(var_9_0) then
-				local var_9_1 = var_8_1
-
-				var_0.ClearNew(var_9_1)
-
-				getProxy = var_0
-				LivingAreaCoverProxy = var_9_1
-
-				local var_9_2 = var_0(var_9_1)
-
-				var_0.UpdateCover(var_9_2, var_8_1)
-			end
-
-			arg_8_0.selectedIdx = var_8_0
-
-			local var_9_3 = arg_8_0.unlockUIList
-
-			var_0.align(var_9_3, #arg_8_0.unlockList)
-
-			if arg_8_0.contextData and arg_8_0.contextData.onSelected then
-				arg_8_0.contextData.onSelected(var_8_1)
-			end
-		end
+		end, SFX_CONFIRM)
+		setActive(arg_8_2:Find("new"), var_8_2:IsNew())
+		setActive(arg_8_2:Find("selected"), var_8_1 and arg_8_0.selectedIdx == arg_8_1 + 1)
 
 		return
 	end
-
-	SFX_CONFIRM = var_12
-
-	var_1_10007(var_8_2, var_8_3, var_8_4, var_12)
-
-	setActive = var_1_10007
-
-	var_1_10007(arg_8_2:Find("new"), var_8_1:IsNew())
-
-	setActive = var_1_10007
-
-	var_1_10007(arg_8_2:Find("selected"), var_5 and arg_8_0.selectedIdx == var_8_0)
-
-	return
 end
 
-function var_0_1.Show(arg_10_0)
-	var_0_1.super.Show(arg_10_0)
+function var_0_0.Show(arg_10_0)
+	var_0_0.super.Show(arg_10_0)
 
-	getProxy = var_1
-	LivingAreaCoverProxy = var_3
+	local var_10_0 = getProxy(LivingAreaCoverProxy)
 
-	local var_10_0 = var_1(var_3)
-
-	arg_10_0.coverId = var_1.GetCoverId(var_10_0)
-	arg_10_0.unlockList = var_1:GetUnlockList()
-	arg_10_0.lockList = var_1:GetLockList()
+	arg_10_0.coverId = var_10_0:GetCoverId()
+	arg_10_0.unlockList = var_10_0:GetUnlockList()
+	arg_10_0.lockList = var_10_0:GetLockList()
 
 	arg_10_0:Sort()
 
 	arg_10_0.selectedIdx = 1
 
-	local var_10_1 = arg_10_0.unlockUIList
-
-	var_2.align(var_10_1, #arg_10_0.unlockList)
-
-	local var_10_2 = arg_10_0.lockUIList
-
-	var_2.align(var_10_2, #arg_10_0.lockList)
-
-	quickPlayAnimation = var_2
-
-	var_2(arg_10_0._tf, "anim_dorm3d_areacover_in")
+	arg_10_0.unlockUIList:align(#arg_10_0.unlockList)
+	arg_10_0.lockUIList:align(#arg_10_0.lockList)
+	quickPlayAnimation(arg_10_0._tf, "anim_dorm3d_areacover_in")
 
 	return
 end
 
-function var_0_1.Sort(arg_11_0)
-	table = var_1_10001
-
-	local var_11_0 = var_1_10001.sort
-	local var_11_1 = arg_11_0.unlockList
-
-	CompareFuncs = var_1_10004
-
-	var_11_0(var_11_1, var_1_10004({
+function var_0_0.Sort(arg_11_0)
+	table.sort(arg_11_0.unlockList, CompareFuncs({
 		function(arg_12_0)
 			return arg_12_0.id == arg_11_0.coverId and 0 or 1
 		end,
@@ -260,15 +123,7 @@ function var_0_1.Sort(arg_11_0)
 			return arg_13_0.id
 		end
 	}))
-
-	table = var_11_0
-
-	local var_11_2 = var_11_0.sort
-	local var_11_3 = arg_11_0.lockList
-
-	CompareFuncs = var_4
-
-	var_11_2(var_11_3, var_4({
+	table.sort(arg_11_0.lockList, CompareFuncs({
 		function(arg_14_0)
 			return arg_14_0.id
 		end
@@ -277,21 +132,12 @@ function var_0_1.Sort(arg_11_0)
 	return
 end
 
-function var_0_1.CheckSet(arg_15_0)
+function var_0_0.CheckSet(arg_15_0)
 	if arg_15_0.unlockList[arg_15_0.selectedIdx].id ~= arg_15_0.coverId then
-		pg = var_2
-
-		local var_15_0 = var_2.m02
-		local var_15_1 = var_2.sendNotification
-
-		GAME = var_1_10005
-
-		var_15_1(var_15_0, var_1_10005.CHANGE_LIVINGAREA_COVER, {
-			coverId = var_1,
+		pg.m02:sendNotification(GAME.CHANGE_LIVINGAREA_COVER, {
+			coverId = arg_15_0.unlockList[arg_15_0.selectedIdx].id,
 			callback = function()
-				local var_16_0 = arg_15_0
-
-				var_0.Hide(var_16_0)
+				arg_15_0:Hide()
 
 				return
 			end
@@ -303,23 +149,19 @@ function var_0_1.CheckSet(arg_15_0)
 	return
 end
 
-function var_0_1.Hide(arg_17_0)
+function var_0_0.Hide(arg_17_0)
 	if arg_17_0:isShowing() and not arg_17_0.inExitAnim then
 		arg_17_0.inExitAnim = nil
-		quickPlayAnimation = var_1
 
-		var_1(arg_17_0._tf, "anim_dorm3d_areacover_out")
-
-		onDelayTick = var_1
-
-		var_1(function()
+		quickPlayAnimation(arg_17_0._tf, "anim_dorm3d_areacover_out")
+		onDelayTick(function()
 			arg_17_0.inExitAnim = nil
 
 			if arg_17_0.contextData and arg_17_0.contextData.onHide then
 				arg_17_0.contextData.onHide()
 			end
 
-			var_0_1.super.Hide(arg_17_0)
+			var_0_0.super.Hide(arg_17_0)
 
 			return
 		end, 0.2)
@@ -328,10 +170,10 @@ function var_0_1.Hide(arg_17_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_19_0)
+function var_0_0.OnDestroy(arg_19_0)
 	arg_19_0:Hide()
 
 	return
 end
 
-return var_0_1
+return var_0_0

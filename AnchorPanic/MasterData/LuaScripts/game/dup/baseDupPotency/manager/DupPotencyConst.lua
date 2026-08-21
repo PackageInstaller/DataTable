@@ -23,4 +23,9 @@ DupPontencyDupId = {
     Cavitation_1 = 2011,
     Cavitation_2 = 2012,
     Cavitation_3 = 2013,
+
+    --暗 难度1、2、3
+    Dark_1 = 2021,
+    Dark_2 = 2022,
+    Dark_3 = 2023,
 }

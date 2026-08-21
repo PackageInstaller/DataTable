@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : ShowAwardItem
 @Description    : 通用奖励展示item
@@ -17,7 +17,7 @@ function ctor(self)
     super.ctor(self)
 end
 
---析构  
+--析构
 function dtor(self)
 end
 
@@ -41,7 +41,7 @@ function deActive(self)
     self:clean()
 end
 
---[[ 
+--[[
     初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
@@ -54,24 +54,26 @@ function addAllUIEvent(self)
 end
 
 function setData(self, cusParent, propsVo)
-    self:setParentTrans(cusParent, 0)
-    self.parent = cusParent
+    if cusParent then
+        self:setParentTrans(cusParent, 0)
+        self.parent = cusParent
+    end
+    
     self.propsVo = propsVo
     self:updateView()
 end
-
 
 function updateView(self)
     self:clean()
     if self.propsVo.type == PropsType.EQUIP then
         if self.propsVo.subType == PropsEquipSubType.SLOT_7 then
-            self.mGrid = BraceletsGrid2:createByData({ tid = self.propsVo.tid, num = self.propsVo.count, parent = self.mGroup.transform, isTween = true, showUseInTip = false ,vo = self.propsVo})
+            self.mGrid = BraceletsGrid2:createByData({tid = self.propsVo.tid, num = self.propsVo.count, parent = self.mGroup.transform, isTween = true, showUseInTip = false, vo = self.propsVo})
         else
-             self.mGrid = EquipGrid2:createByData({ tid = self.propsVo.tid, num = self.propsVo.count, parent = self.mGroup.transform, isTween = true, showUseInTip = false ,vo = self.propsVo})
+            self.mGrid = EquipGrid2:createByData({tid = self.propsVo.tid, num = self.propsVo.count, parent = self.mGroup.transform, isTween = true, showUseInTip = false, vo = self.propsVo})
         end
     else
         -- self.mGrid = PropsGrid:create(self.mGroup.transform, self.propsVo)
-        self.mGrid = PropsGrid:createByData({ tid = self.propsVo.tid, num = self.propsVo.count, parent = self.mGroup.transform, isTween = true, showUseInTip = false })
+        self.mGrid = PropsGrid:createByData({tid = self.propsVo.tid, num = self.propsVo.count, parent = self.mGroup.transform, isTween = true, showUseInTip = false})
 
     end
     -- self.mGrid:setIsShowName(true)

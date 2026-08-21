@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ChapterTransportFleet", import(".ChapterFleet"))
 
-local var_0_0 = "ChapterTransportFleet"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".ChapterFleet"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.line = {
 		row = arg_1_1.pos.row,
 		column = arg_1_1.pos.column
@@ -14,28 +8,30 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.id = arg_1_2
 	arg_1_0.configId = arg_1_1.item_id
 	arg_1_0.restHp = arg_1_1.item_data
-	Quaternion = var_3
-	arg_1_0.rotation = var_3.identity
+	arg_1_0.rotation = Quaternion.identity
 
 	arg_1_0:updateShips({})
 
 	return
 end
 
-function var_0_1.bindConfigTable(arg_2_0)
-	pg = var_1_10001
-
-	return var_1_10001.friendly_data_template
+function var_0_0.bindConfigTable(arg_2_0)
+	return pg.friendly_data_template
 end
 
-function var_0_1.getFleetType(arg_3_0)
-	FleetType = var_1_10001
-
-	return var_1_10001.Transport
+function var_0_0.getFleetType(arg_3_0)
+	return FleetType.Transport
 end
 
-function var_0_1.getPrefab(arg_4_0)
-	local var_4_0 = {
+function var_0_0.getPrefab(arg_4_0)
+	local var_4_0 = ({
+		"merchant",
+		"merchant_1",
+		"merchant_2",
+		"merchant_d"
+	})[1]
+
+	for iter_4_0, iter_4_1 in ipairs({
 		{
 			20,
 			16
@@ -52,43 +48,38 @@ function var_0_1.getPrefab(arg_4_0)
 			0,
 			0
 		}
-	}
-	local var_4_1 = ({
-		"merchant",
-		"merchant_1",
-		"merchant_2",
-		"merchant_d"
-	})[1]
-
-	ipairs = var_1_10004
-
-	for iter_4_0, iter_4_1 in var_1_10004(var_4_0) do
+	}) do
 		if arg_4_0:getRestHp() >= iter_4_1[2] and arg_4_0:getRestHp() <= iter_4_1[1] then
-			var_4_1 = var_2[iter_4_0]
+			var_4_0 = ({
+				"merchant",
+				"merchant_1",
+				"merchant_2",
+				"merchant_d"
+			})[iter_4_0]
 
 			break
 		end
 	end
 
-	return var_4_1
+	return var_4_0
 end
 
-function var_0_1.getRestHp(arg_5_0)
+function var_0_0.getRestHp(arg_5_0)
 	return arg_5_0.restHp
 end
 
-function var_0_1.setRestHp(arg_6_0, arg_6_1)
+function var_0_0.setRestHp(arg_6_0, arg_6_1)
 	arg_6_0.restHp = arg_6_1
 
 	return
 end
 
-function var_0_1.getTotalHp(arg_7_0)
+function var_0_0.getTotalHp(arg_7_0)
 	return arg_7_0:getConfig("hp")
 end
 
-function var_0_1.isValid(arg_8_0)
+function var_0_0.isValid(arg_8_0)
 	return arg_8_0.restHp > 0
 end
 
-return var_0_1
+return var_0_0

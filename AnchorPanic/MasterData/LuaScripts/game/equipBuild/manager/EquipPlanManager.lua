@@ -42,9 +42,21 @@ function parseMsgEquipPlanListData(self, msg)
         equipPlanVo:parseData(msg.chip_plan_list[i])
         table.insert(self.mEquipPlanList, equipPlanVo)
     end
-    table.sort(self.mEquipPlanList, function(equipPlanVo1, equipPlanVo2) return equipPlanVo1.id > equipPlanVo2.id end)
+    self.extraNum = msg.extra_num
+    table.sort(self.mEquipPlanList, function(equipPlanVo1, equipPlanVo2) return equipPlanVo1.sort > equipPlanVo2.sort end)
     GameDispatcher:dispatchEvent(EventName.RES_EQUIP_PLANE_LIST_DATA)
     self:updateAllEquipPlanIdList()
+end
+
+function parseMsgAddPlanResult(self,msg)
+    self.extraNum = self.extraNum + msg.buy_num
+    GameDispatcher:dispatchEvent(EventName.UPDATE_EQUIP_PLAN_COUNT)
+    --self:updateAllEquipPlanIdList()
+end
+
+--获取额外模组方案数量
+function getExtraNum(self)
+    return self.extraNum or 0
 end
 
 --- 更新保存模组方案 12193

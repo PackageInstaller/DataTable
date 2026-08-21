@@ -1,54 +1,25 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ObjectRockB", import("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
 
-local var_0_0 = "ObjectRockB"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.miniGame.gameView.RyzaMiniGame.object.ObjectBreakable"))
-
-function var_0_1.FirePassability(arg_1_0)
+function var_0_0.FirePassability(arg_1_0)
 	return arg_1_0.isWater and 2 or 1
 end
 
-function var_0_1.InTimeRiver(arg_2_0)
+function var_0_0.InTimeRiver(arg_2_0)
 	return true
 end
 
-function var_0_1.InitUI(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0._tf
-	local var_3_1 = var_2.Find(var_3_0, "Image")
-	local var_3_2 = arg_3_0._tf
-	local var_3_3 = var_3.Find(var_3_2, "Image")
-	local var_3_4 = var_3.GetComponent
+function var_0_0.InitUI(arg_3_0, arg_3_1)
+	arg_3_0.comAnimator = arg_3_0._tf:Find("Image"):GetComponent(typeof(Animator))
 
-	typeof = var_6
-	Animator = var_1_10008
-	arg_3_0.comAnimator = var_3_4(var_3_3, var_6(var_1_10008))
+	local var_3_0 = arg_3_0._tf:Find("Image"):GetComponent(typeof(DftAniEvent))
 
-	local var_3_5 = var_3_1
-	local var_3_6 = var_3_1.GetComponent
-
-	typeof = var_6
-	DftAniEvent = var_1_10008
-
-	local var_3_7 = var_3_6(var_3_5, var_6(var_1_10008))
-
-	var_3.SetTriggerEvent(var_3_7, function()
-		local var_4_0 = arg_3_0
-		local var_4_1
-
-		if not arg_3_1.waterTime then
-			var_4_1 = 4
-		end
-
-		var_4_0.waterTime = var_4_1
+	var_3_0:SetTriggerEvent(function()
+		arg_3_0.waterTime = arg_3_1.waterTime or 4
 
 		return
 	end)
-	var_3:SetEndEvent(function()
-		local var_5_0 = arg_3_0
-
-		var_0.Destroy(var_5_0)
+	var_3_0:SetEndEvent(function()
+		arg_3_0:Destroy()
 
 		return
 	end)
@@ -58,28 +29,23 @@ function var_0_1.InitUI(arg_3_0, arg_3_1)
 	return
 end
 
-function var_0_1.Break(arg_6_0)
+function var_0_0.Break(arg_6_0)
 	arg_6_0:DeregisterAll()
-
-	local var_6_0 = arg_6_0.comAnimator
-
-	var_1.Play(var_6_0, "B2")
+	arg_6_0.comAnimator:Play("B2")
 
 	return
 end
 
-function var_0_1.TimeUpdate(arg_7_0, arg_7_1)
+function var_0_0.TimeUpdate(arg_7_0, arg_7_1)
 	if arg_7_0.waterTime > 0 then
 		arg_7_0.waterTime = arg_7_0.waterTime - arg_7_1
 
 		if arg_7_0.waterTime <= 0 then
-			local var_7_0 = arg_7_0.comAnimator
-
-			var_2.Play(var_7_0, "B4")
+			arg_7_0.comAnimator:Play("B4")
 		end
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

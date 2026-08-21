@@ -56,6 +56,8 @@ function configUI(self)
 
     self.mTxtData = self:getChildGO("mTxtData"):GetComponent(ty.Text)
     self.mDebugUpInfo = self:getChildGO("mDebugUpInfo")
+
+    self.mImgHeroHar = self:getChildGO("mImgHeroHar"):GetComponent(ty.AutoRefImage)
 end
 
 function active(self)
@@ -275,13 +277,18 @@ function updateView(self)
             if heroConfigVo then
                 self:clearHeroSpine()
 
+                local isHar = (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())
+                self.mImgHeroHar.gameObject:SetActive(isHar)
+                local fashionData = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, heroConfigVo.tid, 1)
+                self.mImgHeroHar:SetImg(UrlManager:getHeroRecoedUrlByDetail(fashionData:getUrlBody()))
+
                 local showModel = heroConfigVo.showModel
                 self.m_heroSpinePath = string.format("arts/fx/spine/%s/RecruitSpine_%s.prefab", showModel, showModel)
                 self.m_heroSpineGo = gs.GOPoolMgr:Get(self.m_heroSpinePath)
                 if not self.m_heroSpineGo then
                     logError("该站员缺少 Spine id = " .. select_id)
                 end
-
+                self.m_heroSpineGo.gameObject:SetActive(not isHar)
                 gs.TransQuick:SetParentOrg(self.m_heroSpineGo.transform, self.mSpineNode)
 
                 local titleColor =

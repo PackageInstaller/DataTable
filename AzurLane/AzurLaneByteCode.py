@@ -24,17 +24,19 @@ class BCOp:
     IFORL = 15
     JFORL = 16
     ITERL = 17
-    # 18-23: 比较 (含元方法回退)
-    ISEQN = 22
-    ISNEN = 23
+    # 18-23: 比较 (含元方法回退) / 跳转载体
+    ISEQV_MM = 22  # 带元方法, 罕见
+    JMP = 23
     ISLT = 24
     ISGE = 25
     ISLE = 26
     ISGT = 27
-    ISEQS = 28
-    ISNES = 29
-    ISEQP = 30
-    ISNEP = 31
+    ISEQS = 30
+    ISNES = 31
+    ISEQN = 32
+    ISNEN = 33
+    ISEQP = 34
+    ISNEP = 35
     # 36-43: 调用/变参/返回
     CALLM = 36
     CALL = 37
@@ -71,28 +73,27 @@ class BCOp:
     MODVV = 66
     POW = 67
     CAT = 68
-    # 69-78: 上值/函数/表/全局
+    # 69-79: 上值/函数/表/全局
     UGET = 69
     USETV = 70
-    USETN = 71
-    USETP = 72
-    UCLO = 73
-    FNEW = 74
-    TNEW = 75
-    TDUP = 76
-    GGET = 77
-    GSET = 78
-    # 79-87: 表读写
-    TGETB = 79
-    TGETR = 80
-    TGETV = 81
-    TGETS = 82
-    TSETS = 83
-    TSETV = 84
-    TSETM = 85
-    TSETB = 86
-    TSETR = 87
-    JMP = 88
+    USETS = 71
+    USETN = 72
+    USETP = 73
+    UCLO = 74
+    FNEW = 75
+    TNEW = 76
+    TDUP = 77
+    GGET = 78
+    GSET = 79
+    # 80-88: 表读写
+    TGETV = 80
+    TGETS = 81
+    TGETB = 82
+    TGETR = 83
+    TSETV = 85
+    TSETS = 86
+    TSETB = 87
+    TSETM = 88
     LOOP = 90
     FUNCF = 93
     FUNCV = 95

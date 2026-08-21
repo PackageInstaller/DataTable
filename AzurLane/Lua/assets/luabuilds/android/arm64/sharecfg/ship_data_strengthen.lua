@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_data_strengthen") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_data_strengthen"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_data_strengthen = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_data_strengthen
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_data_strengthen = rawget(pg, "ship_data_strengthen") or setmetatable({
+	__name = "ship_data_strengthen"
+}, confNEO)
+pg.ship_data_strengthen.all = {
 	10000,
 	10001,
 	10002,
@@ -74,6 +51,9 @@ var_0_3.all = {
 	10152,
 	10153,
 	10155,
+	10156,
+	10157,
+	10158,
 	10199,
 	10201,
 	10202,
@@ -110,6 +90,7 @@ var_0_3.all = {
 	10233,
 	10234,
 	10235,
+	10236,
 	10301,
 	10302,
 	10303,
@@ -167,6 +148,7 @@ var_0_3.all = {
 	10714,
 	10716,
 	10717,
+	10720,
 	10722,
 	10723,
 	10725,
@@ -253,6 +235,7 @@ var_0_3.all = {
 	20235,
 	20236,
 	20237,
+	20299,
 	20301,
 	20302,
 	20303,
@@ -877,25 +860,11 @@ var_0_3.all = {
 	39908,
 	89905
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_data_strengthen = {}
+pg.base = pg.base or {}
+pg.base.ship_data_strengthen = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_data_strengthen
-
-	var_1_0[10000] = {
+	pg.base.ship_data_strengthen[10000] = {
 		id = 10000,
 		durability = {
 			0,
@@ -919,11 +888,7 @@ var_0_3.base.ship_data_strengthen = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_data_strengthen
-
-	var_1_1[10001] = {
+	pg.base.ship_data_strengthen[10001] = {
 		id = 10001,
 		durability = {
 			0,
@@ -947,11 +912,7 @@ var_0_3.base.ship_data_strengthen = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_data_strengthen
-
-	var_1_2[10002] = {
+	pg.base.ship_data_strengthen[10002] = {
 		id = 10002,
 		durability = {
 			0,
@@ -975,11 +936,7 @@ var_0_3.base.ship_data_strengthen = {}
 			0
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_data_strengthen
-
-	var_1_3[10102] = {
+	pg.base.ship_data_strengthen[10102] = {
 		id = 10102,
 		durability = {
 			14,
@@ -1003,11 +960,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_data_strengthen
-
-	var_1_4[10103] = {
+	pg.base.ship_data_strengthen[10103] = {
 		id = 10103,
 		durability = {
 			14,
@@ -1031,11 +984,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_data_strengthen
-
-	var_1_5[10104] = {
+	pg.base.ship_data_strengthen[10104] = {
 		id = 10104,
 		durability = {
 			14,
@@ -1059,11 +1008,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_data_strengthen
-
-	var_1_6[10105] = {
+	pg.base.ship_data_strengthen[10105] = {
 		id = 10105,
 		durability = {
 			13,
@@ -1087,11 +1032,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_data_strengthen
-
-	var_1_7[10106] = {
+	pg.base.ship_data_strengthen[10106] = {
 		id = 10106,
 		durability = {
 			13,
@@ -1115,11 +1056,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_data_strengthen
-
-	var_1_8[10107] = {
+	pg.base.ship_data_strengthen[10107] = {
 		id = 10107,
 		durability = {
 			13,
@@ -1143,11 +1080,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_data_strengthen
-
-	var_1_9[10108] = {
+	pg.base.ship_data_strengthen[10108] = {
 		id = 10108,
 		durability = {
 			14,
@@ -1171,11 +1104,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_data_strengthen
-
-	var_1_10[10109] = {
+	pg.base.ship_data_strengthen[10109] = {
 		id = 10109,
 		durability = {
 			16,
@@ -1199,11 +1128,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_data_strengthen
-
-	var_1_11[10110] = {
+	pg.base.ship_data_strengthen[10110] = {
 		id = 10110,
 		durability = {
 			24,
@@ -1227,11 +1152,7 @@ var_0_3.base.ship_data_strengthen = {}
 			17
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_data_strengthen
-
-	var_1_12[10111] = {
+	pg.base.ship_data_strengthen[10111] = {
 		id = 10111,
 		durability = {
 			16,
@@ -1255,11 +1176,7 @@ var_0_3.base.ship_data_strengthen = {}
 			15
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_data_strengthen
-
-	var_1_13[10112] = {
+	pg.base.ship_data_strengthen[10112] = {
 		id = 10112,
 		durability = {
 			16,
@@ -1283,11 +1200,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_data_strengthen
-
-	var_1_14[10113] = {
+	pg.base.ship_data_strengthen[10113] = {
 		id = 10113,
 		durability = {
 			15,
@@ -1311,11 +1224,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_data_strengthen
-
-	var_1_15[10114] = {
+	pg.base.ship_data_strengthen[10114] = {
 		id = 10114,
 		durability = {
 			15,
@@ -1339,11 +1248,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_data_strengthen
-
-	var_1_16[10115] = {
+	pg.base.ship_data_strengthen[10115] = {
 		id = 10115,
 		durability = {
 			15,
@@ -1367,11 +1272,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_data_strengthen
-
-	var_1_17[10116] = {
+	pg.base.ship_data_strengthen[10116] = {
 		id = 10116,
 		durability = {
 			16,
@@ -1395,11 +1296,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_data_strengthen
-
-	var_1_18[10117] = {
+	pg.base.ship_data_strengthen[10117] = {
 		id = 10117,
 		durability = {
 			18,
@@ -1423,11 +1320,7 @@ var_0_3.base.ship_data_strengthen = {}
 			15
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_data_strengthen
-
-	var_1_19[10124] = {
+	pg.base.ship_data_strengthen[10124] = {
 		id = 10124,
 		durability = {
 			15,
@@ -1451,11 +1344,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_data_strengthen
-
-	var_1_20[10125] = {
+	pg.base.ship_data_strengthen[10125] = {
 		id = 10125,
 		durability = {
 			15,
@@ -1479,11 +1368,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_data_strengthen
-
-	var_1_21[10126] = {
+	pg.base.ship_data_strengthen[10126] = {
 		id = 10126,
 		durability = {
 			15,
@@ -1507,11 +1392,7 @@ var_0_3.base.ship_data_strengthen = {}
 			16
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_data_strengthen
-
-	var_1_22[10127] = {
+	pg.base.ship_data_strengthen[10127] = {
 		id = 10127,
 		durability = {
 			16,
@@ -1535,11 +1416,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_data_strengthen
-
-	var_1_23[10129] = {
+	pg.base.ship_data_strengthen[10129] = {
 		id = 10129,
 		durability = {
 			16,
@@ -1563,11 +1440,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_data_strengthen
-
-	var_1_24[10130] = {
+	pg.base.ship_data_strengthen[10130] = {
 		id = 10130,
 		durability = {
 			16,
@@ -1591,11 +1464,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_data_strengthen
-
-	var_1_25[10131] = {
+	pg.base.ship_data_strengthen[10131] = {
 		id = 10131,
 		durability = {
 			16,
@@ -1619,11 +1488,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_data_strengthen
-
-	var_1_26[10133] = {
+	pg.base.ship_data_strengthen[10133] = {
 		id = 10133,
 		durability = {
 			16,
@@ -1647,11 +1512,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_data_strengthen
-
-	var_1_27[10134] = {
+	pg.base.ship_data_strengthen[10134] = {
 		id = 10134,
 		durability = {
 			16,
@@ -1675,11 +1536,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_data_strengthen
-
-	var_1_28[10135] = {
+	pg.base.ship_data_strengthen[10135] = {
 		id = 10135,
 		durability = {
 			14,
@@ -1703,11 +1560,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_data_strengthen
-
-	var_1_29[10136] = {
+	pg.base.ship_data_strengthen[10136] = {
 		id = 10136,
 		durability = {
 			16,
@@ -1731,11 +1584,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_data_strengthen
-
-	var_1_30[10137] = {
+	pg.base.ship_data_strengthen[10137] = {
 		id = 10137,
 		durability = {
 			16,
@@ -1759,11 +1608,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_data_strengthen
-
-	var_1_31[10138] = {
+	pg.base.ship_data_strengthen[10138] = {
 		id = 10138,
 		durability = {
 			15,
@@ -1787,11 +1632,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_data_strengthen
-
-	var_1_32[10139] = {
+	pg.base.ship_data_strengthen[10139] = {
 		id = 10139,
 		durability = {
 			16,
@@ -1815,11 +1656,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_data_strengthen
-
-	var_1_33[10140] = {
+	pg.base.ship_data_strengthen[10140] = {
 		id = 10140,
 		durability = {
 			15,
@@ -1843,11 +1680,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_data_strengthen
-
-	var_1_34[10141] = {
+	pg.base.ship_data_strengthen[10141] = {
 		id = 10141,
 		durability = {
 			16,
@@ -1871,11 +1704,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_data_strengthen
-
-	var_1_35[10142] = {
+	pg.base.ship_data_strengthen[10142] = {
 		id = 10142,
 		durability = {
 			16,
@@ -1899,11 +1728,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_data_strengthen
-
-	var_1_36[10143] = {
+	pg.base.ship_data_strengthen[10143] = {
 		id = 10143,
 		durability = {
 			15,
@@ -1927,11 +1752,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_data_strengthen
-
-	var_1_37[10144] = {
+	pg.base.ship_data_strengthen[10144] = {
 		id = 10144,
 		durability = {
 			23,
@@ -1955,11 +1776,7 @@ var_0_3.base.ship_data_strengthen = {}
 			15
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_data_strengthen
-
-	var_1_38[10145] = {
+	pg.base.ship_data_strengthen[10145] = {
 		id = 10145,
 		durability = {
 			26,
@@ -1983,11 +1800,7 @@ var_0_3.base.ship_data_strengthen = {}
 			16
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_data_strengthen
-
-	var_1_39[10146] = {
+	pg.base.ship_data_strengthen[10146] = {
 		id = 10146,
 		durability = {
 			16,
@@ -2011,11 +1824,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_data_strengthen
-
-	var_1_40[10147] = {
+	pg.base.ship_data_strengthen[10147] = {
 		id = 10147,
 		durability = {
 			15,
@@ -2039,11 +1848,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_data_strengthen
-
-	var_1_41[10148] = {
+	pg.base.ship_data_strengthen[10148] = {
 		id = 10148,
 		durability = {
 			25,
@@ -2067,11 +1872,7 @@ var_0_3.base.ship_data_strengthen = {}
 			16
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_data_strengthen
-
-	var_1_42[10149] = {
+	pg.base.ship_data_strengthen[10149] = {
 		id = 10149,
 		durability = {
 			25,
@@ -2095,11 +1896,7 @@ var_0_3.base.ship_data_strengthen = {}
 			16
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_data_strengthen
-
-	var_1_43[10150] = {
+	pg.base.ship_data_strengthen[10150] = {
 		id = 10150,
 		durability = {
 			15,
@@ -2123,11 +1920,7 @@ var_0_3.base.ship_data_strengthen = {}
 			15
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_data_strengthen
-
-	var_1_44[10151] = {
+	pg.base.ship_data_strengthen[10151] = {
 		id = 10151,
 		durability = {
 			28,
@@ -2151,11 +1944,7 @@ var_0_3.base.ship_data_strengthen = {}
 			17
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_data_strengthen
-
-	var_1_45[10152] = {
+	pg.base.ship_data_strengthen[10152] = {
 		id = 10152,
 		durability = {
 			16,
@@ -2179,11 +1968,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_data_strengthen
-
-	var_1_46[10153] = {
+	pg.base.ship_data_strengthen[10153] = {
 		id = 10153,
 		durability = {
 			17,
@@ -2207,11 +1992,7 @@ var_0_3.base.ship_data_strengthen = {}
 			15
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_data_strengthen
-
-	var_1_47[10155] = {
+	pg.base.ship_data_strengthen[10155] = {
 		id = 10155,
 		durability = {
 			17,
@@ -2235,11 +2016,79 @@ var_0_3.base.ship_data_strengthen = {}
 			15
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_data_strengthen
-
-	var_1_48[10199] = {
+	pg.base.ship_data_strengthen[10156] = {
+		id = 10156,
+		durability = {
+			26,
+			69,
+			0,
+			0,
+			63
+		},
+		level_exp = {
+			35,
+			15,
+			0,
+			0,
+			10
+		},
+		attr_exp = {
+			9,
+			23,
+			0,
+			0,
+			16
+		}
+	}
+	pg.base.ship_data_strengthen[10157] = {
+		id = 10157,
+		durability = {
+			18,
+			69,
+			0,
+			0,
+			60
+		},
+		level_exp = {
+			35,
+			15,
+			0,
+			0,
+			10
+		},
+		attr_exp = {
+			6,
+			23,
+			0,
+			0,
+			15
+		}
+	}
+	pg.base.ship_data_strengthen[10158] = {
+		id = 10158,
+		durability = {
+			18,
+			68,
+			0,
+			0,
+			60
+		},
+		level_exp = {
+			35,
+			15,
+			0,
+			0,
+			10
+		},
+		attr_exp = {
+			6,
+			23,
+			0,
+			0,
+			15
+		}
+	}
+	pg.base.ship_data_strengthen[10199] = {
 		id = 10199,
 		durability = {
 			15,
@@ -2263,11 +2112,7 @@ var_0_3.base.ship_data_strengthen = {}
 			16
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_data_strengthen
-
-	var_1_49[10201] = {
+	pg.base.ship_data_strengthen[10201] = {
 		id = 10201,
 		durability = {
 			26,
@@ -2291,11 +2136,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_data_strengthen
-
-	var_1_50[10202] = {
+	pg.base.ship_data_strengthen[10202] = {
 		id = 10202,
 		durability = {
 			26,
@@ -2319,11 +2160,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_data_strengthen
-
-	var_1_51[10203] = {
+	pg.base.ship_data_strengthen[10203] = {
 		id = 10203,
 		durability = {
 			30,
@@ -2347,11 +2184,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_data_strengthen
-
-	var_1_52[10204] = {
+	pg.base.ship_data_strengthen[10204] = {
 		id = 10204,
 		durability = {
 			30,
@@ -2375,11 +2208,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_data_strengthen
-
-	var_1_53[10205] = {
+	pg.base.ship_data_strengthen[10205] = {
 		id = 10205,
 		durability = {
 			31,
@@ -2403,11 +2232,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_data_strengthen
-
-	var_1_54[10206] = {
+	pg.base.ship_data_strengthen[10206] = {
 		id = 10206,
 		durability = {
 			24,
@@ -2431,11 +2256,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_data_strengthen
-
-	var_1_55[10207] = {
+	pg.base.ship_data_strengthen[10207] = {
 		id = 10207,
 		durability = {
 			24,
@@ -2459,11 +2280,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_data_strengthen
-
-	var_1_56[10208] = {
+	pg.base.ship_data_strengthen[10208] = {
 		id = 10208,
 		durability = {
 			25,
@@ -2487,11 +2304,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_data_strengthen
-
-	var_1_57[10209] = {
+	pg.base.ship_data_strengthen[10209] = {
 		id = 10209,
 		durability = {
 			30,
@@ -2515,11 +2328,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_data_strengthen
-
-	var_1_58[10210] = {
+	pg.base.ship_data_strengthen[10210] = {
 		id = 10210,
 		durability = {
 			31,
@@ -2543,11 +2352,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_data_strengthen
-
-	var_1_59[10211] = {
+	pg.base.ship_data_strengthen[10211] = {
 		id = 10211,
 		durability = {
 			26,
@@ -2571,11 +2376,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_data_strengthen
-
-	var_1_60[10212] = {
+	pg.base.ship_data_strengthen[10212] = {
 		id = 10212,
 		durability = {
 			30,
@@ -2599,11 +2400,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_data_strengthen
-
-	var_1_61[10213] = {
+	pg.base.ship_data_strengthen[10213] = {
 		id = 10213,
 		durability = {
 			31,
@@ -2627,11 +2424,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_data_strengthen
-
-	var_1_62[10214] = {
+	pg.base.ship_data_strengthen[10214] = {
 		id = 10214,
 		durability = {
 			31,
@@ -2655,11 +2448,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_data_strengthen
-
-	var_1_63[10215] = {
+	pg.base.ship_data_strengthen[10215] = {
 		id = 10215,
 		durability = {
 			29,
@@ -2683,11 +2472,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_data_strengthen
-
-	var_1_64[10216] = {
+	pg.base.ship_data_strengthen[10216] = {
 		id = 10216,
 		durability = {
 			27,
@@ -2711,11 +2496,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_data_strengthen
-
-	var_1_65[10217] = {
+	pg.base.ship_data_strengthen[10217] = {
 		id = 10217,
 		durability = {
 			25,
@@ -2739,11 +2520,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_data_strengthen
-
-	var_1_66[10218] = {
+	pg.base.ship_data_strengthen[10218] = {
 		id = 10218,
 		durability = {
 			27,
@@ -2767,11 +2544,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_data_strengthen
-
-	var_1_67[10219] = {
+	pg.base.ship_data_strengthen[10219] = {
 		id = 10219,
 		durability = {
 			30,
@@ -2795,11 +2568,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_data_strengthen
-
-	var_1_68[10220] = {
+	pg.base.ship_data_strengthen[10220] = {
 		id = 10220,
 		durability = {
 			30,
@@ -2823,11 +2592,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_data_strengthen
-
-	var_1_69[10221] = {
+	pg.base.ship_data_strengthen[10221] = {
 		id = 10221,
 		durability = {
 			24,
@@ -2851,11 +2616,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_data_strengthen
-
-	var_1_70[10222] = {
+	pg.base.ship_data_strengthen[10222] = {
 		id = 10222,
 		durability = {
 			24,
@@ -2879,11 +2640,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_data_strengthen
-
-	var_1_71[10223] = {
+	pg.base.ship_data_strengthen[10223] = {
 		id = 10223,
 		durability = {
 			31,
@@ -2907,11 +2664,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_data_strengthen
-
-	var_1_72[10224] = {
+	pg.base.ship_data_strengthen[10224] = {
 		id = 10224,
 		durability = {
 			30,
@@ -2935,11 +2688,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_data_strengthen
-
-	var_1_73[10225] = {
+	pg.base.ship_data_strengthen[10225] = {
 		id = 10225,
 		durability = {
 			28,
@@ -2963,11 +2712,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_data_strengthen
-
-	var_1_74[10226] = {
+	pg.base.ship_data_strengthen[10226] = {
 		id = 10226,
 		durability = {
 			27,
@@ -2991,11 +2736,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_data_strengthen
-
-	var_1_75[10227] = {
+	pg.base.ship_data_strengthen[10227] = {
 		id = 10227,
 		durability = {
 			25,
@@ -3019,11 +2760,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_data_strengthen
-
-	var_1_76[10228] = {
+	pg.base.ship_data_strengthen[10228] = {
 		id = 10228,
 		durability = {
 			31,
@@ -3047,11 +2784,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_data_strengthen
-
-	var_1_77[10229] = {
+	pg.base.ship_data_strengthen[10229] = {
 		id = 10229,
 		durability = {
 			30,
@@ -3075,11 +2808,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_data_strengthen
-
-	var_1_78[10230] = {
+	pg.base.ship_data_strengthen[10230] = {
 		id = 10230,
 		durability = {
 			24,
@@ -3103,11 +2832,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_data_strengthen
-
-	var_1_79[10231] = {
+	pg.base.ship_data_strengthen[10231] = {
 		id = 10231,
 		durability = {
 			31,
@@ -3131,11 +2856,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_data_strengthen
-
-	var_1_80[10232] = {
+	pg.base.ship_data_strengthen[10232] = {
 		id = 10232,
 		durability = {
 			30,
@@ -3159,11 +2880,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_data_strengthen
-
-	var_1_81[10233] = {
+	pg.base.ship_data_strengthen[10233] = {
 		id = 10233,
 		durability = {
 			32,
@@ -3187,11 +2904,7 @@ var_0_3.base.ship_data_strengthen = {}
 			14
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_data_strengthen
-
-	var_1_82[10234] = {
+	pg.base.ship_data_strengthen[10234] = {
 		id = 10234,
 		durability = {
 			32,
@@ -3215,11 +2928,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_data_strengthen
-
-	var_1_83[10235] = {
+	pg.base.ship_data_strengthen[10235] = {
 		id = 10235,
 		durability = {
 			30,
@@ -3243,11 +2952,31 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_data_strengthen
-
-	var_1_84[10301] = {
+	pg.base.ship_data_strengthen[10236] = {
+		id = 10236,
+		durability = {
+			31,
+			0,
+			0,
+			0,
+			53
+		},
+		level_exp = {
+			20,
+			0,
+			0,
+			0,
+			25
+		},
+		attr_exp = {
+			13,
+			0,
+			0,
+			0,
+			13
+		}
+	}
+	pg.base.ship_data_strengthen[10301] = {
 		id = 10301,
 		durability = {
 			42,
@@ -3271,11 +3000,7 @@ var_0_3.base.ship_data_strengthen = {}
 			11
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_data_strengthen
-
-	var_1_85[10302] = {
+	pg.base.ship_data_strengthen[10302] = {
 		id = 10302,
 		durability = {
 			42,
@@ -3299,11 +3024,7 @@ var_0_3.base.ship_data_strengthen = {}
 			11
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_data_strengthen
-
-	var_1_86[10303] = {
+	pg.base.ship_data_strengthen[10303] = {
 		id = 10303,
 		durability = {
 			44,
@@ -3327,11 +3048,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_data_strengthen
-
-	var_1_87[10304] = {
+	pg.base.ship_data_strengthen[10304] = {
 		id = 10304,
 		durability = {
 			44,
@@ -3355,11 +3072,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_data_strengthen
-
-	var_1_88[10305] = {
+	pg.base.ship_data_strengthen[10305] = {
 		id = 10305,
 		durability = {
 			45,
@@ -3383,11 +3096,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_data_strengthen
-
-	var_1_89[10306] = {
+	pg.base.ship_data_strengthen[10306] = {
 		id = 10306,
 		durability = {
 			37,
@@ -3411,11 +3120,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_data_strengthen
-
-	var_1_90[10307] = {
+	pg.base.ship_data_strengthen[10307] = {
 		id = 10307,
 		durability = {
 			38,
@@ -3439,11 +3144,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_data_strengthen
-
-	var_1_91[10308] = {
+	pg.base.ship_data_strengthen[10308] = {
 		id = 10308,
 		durability = {
 			40,
@@ -3467,11 +3168,7 @@ var_0_3.base.ship_data_strengthen = {}
 			11
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_data_strengthen
-
-	var_1_92[10309] = {
+	pg.base.ship_data_strengthen[10309] = {
 		id = 10309,
 		durability = {
 			40,
@@ -3495,11 +3192,7 @@ var_0_3.base.ship_data_strengthen = {}
 			11
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_data_strengthen
-
-	var_1_93[10310] = {
+	pg.base.ship_data_strengthen[10310] = {
 		id = 10310,
 		durability = {
 			40,
@@ -3523,11 +3216,7 @@ var_0_3.base.ship_data_strengthen = {}
 			11
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_data_strengthen
-
-	var_1_94[10311] = {
+	pg.base.ship_data_strengthen[10311] = {
 		id = 10311,
 		durability = {
 			49,
@@ -3551,11 +3240,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_data_strengthen
-
-	var_1_95[10312] = {
+	pg.base.ship_data_strengthen[10312] = {
 		id = 10312,
 		durability = {
 			44,
@@ -3579,11 +3264,11 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_95
 
-	local var_1_96 = var_1_95.base.ship_data_strengthen
-
-	var_1_96[10313] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[10313] = {
 		id = 10313,
 		durability = {
 			47,
@@ -3607,11 +3292,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_data_strengthen
-
-	var_1_97[10314] = {
+	pg.base.ship_data_strengthen[10314] = {
 		id = 10314,
 		durability = {
 			47,
@@ -3635,11 +3316,7 @@ var_0_3.base.ship_data_strengthen = {}
 			12
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_data_strengthen
-
-	var_1_98[10316] = {
+	pg.base.ship_data_strengthen[10316] = {
 		id = 10316,
 		durability = {
 			50,
@@ -3663,8 +3340,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_data_strengthen[10324] = {
+	pg.base.ship_data_strengthen[10324] = {
 		id = 10324,
 		durability = {
 			49,
@@ -3688,15 +3364,7 @@ var_0_3.base.ship_data_strengthen = {}
 			13
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_data_strengthen
-
-	var_2_0[10325] = {
+	pg.base.ship_data_strengthen[10325] = {
 		id = 10325,
 		durability = {
 			48,
@@ -3720,11 +3388,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_data_strengthen
-
-	var_2_1[10326] = {
+	pg.base.ship_data_strengthen[10326] = {
 		id = 10326,
 		durability = {
 			47,
@@ -3748,11 +3412,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_data_strengthen
-
-	var_2_2[10327] = {
+	pg.base.ship_data_strengthen[10327] = {
 		id = 10327,
 		durability = {
 			49,
@@ -3776,11 +3436,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_data_strengthen
-
-	var_2_3[10328] = {
+	pg.base.ship_data_strengthen[10328] = {
 		id = 10328,
 		durability = {
 			46,
@@ -3804,11 +3460,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_data_strengthen
-
-	var_2_4[10329] = {
+	pg.base.ship_data_strengthen[10329] = {
 		id = 10329,
 		durability = {
 			45,
@@ -3832,11 +3484,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_data_strengthen
-
-	var_2_5[10401] = {
+	pg.base.ship_data_strengthen[10401] = {
 		id = 10401,
 		durability = {
 			79,
@@ -3860,11 +3508,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_data_strengthen
-
-	var_2_6[10501] = {
+	pg.base.ship_data_strengthen[10501] = {
 		id = 10501,
 		durability = {
 			71,
@@ -3888,11 +3532,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_data_strengthen
-
-	var_2_7[10502] = {
+	pg.base.ship_data_strengthen[10502] = {
 		id = 10502,
 		durability = {
 			71,
@@ -3916,11 +3556,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_data_strengthen
-
-	var_2_8[10503] = {
+	pg.base.ship_data_strengthen[10503] = {
 		id = 10503,
 		durability = {
 			73,
@@ -3944,11 +3580,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_data_strengthen
-
-	var_2_9[10504] = {
+	pg.base.ship_data_strengthen[10504] = {
 		id = 10504,
 		durability = {
 			75,
@@ -3972,11 +3604,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_data_strengthen
-
-	var_2_10[10507] = {
+	pg.base.ship_data_strengthen[10507] = {
 		id = 10507,
 		durability = {
 			74,
@@ -4000,11 +3628,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_data_strengthen
-
-	var_2_11[10508] = {
+	pg.base.ship_data_strengthen[10508] = {
 		id = 10508,
 		durability = {
 			74,
@@ -4028,11 +3652,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_data_strengthen
-
-	var_2_12[10509] = {
+	pg.base.ship_data_strengthen[10509] = {
 		id = 10509,
 		durability = {
 			77,
@@ -4056,11 +3676,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_data_strengthen
-
-	var_2_13[10510] = {
+	pg.base.ship_data_strengthen[10510] = {
 		id = 10510,
 		durability = {
 			76,
@@ -4084,11 +3700,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_data_strengthen
-
-	var_2_14[10511] = {
+	pg.base.ship_data_strengthen[10511] = {
 		id = 10511,
 		durability = {
 			77,
@@ -4112,11 +3724,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_data_strengthen
-
-	var_2_15[10512] = {
+	pg.base.ship_data_strengthen[10512] = {
 		id = 10512,
 		durability = {
 			81,
@@ -4140,11 +3748,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_data_strengthen
-
-	var_2_16[10513] = {
+	pg.base.ship_data_strengthen[10513] = {
 		id = 10513,
 		durability = {
 			81,
@@ -4168,11 +3772,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_data_strengthen
-
-	var_2_17[10514] = {
+	pg.base.ship_data_strengthen[10514] = {
 		id = 10514,
 		durability = {
 			80,
@@ -4196,11 +3796,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_data_strengthen
-
-	var_2_18[10515] = {
+	pg.base.ship_data_strengthen[10515] = {
 		id = 10515,
 		durability = {
 			81,
@@ -4224,11 +3820,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_data_strengthen
-
-	var_2_19[10517] = {
+	pg.base.ship_data_strengthen[10517] = {
 		id = 10517,
 		durability = {
 			86,
@@ -4252,11 +3844,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_data_strengthen
-
-	var_2_20[10519] = {
+	pg.base.ship_data_strengthen[10519] = {
 		id = 10519,
 		durability = {
 			80,
@@ -4280,11 +3868,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_data_strengthen
-
-	var_2_21[10520] = {
+	pg.base.ship_data_strengthen[10520] = {
 		id = 10520,
 		durability = {
 			80,
@@ -4308,11 +3892,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_data_strengthen
-
-	var_2_22[10601] = {
+	pg.base.ship_data_strengthen[10601] = {
 		id = 10601,
 		durability = {
 			0,
@@ -4336,11 +3916,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_data_strengthen
-
-	var_2_23[10602] = {
+	pg.base.ship_data_strengthen[10602] = {
 		id = 10602,
 		durability = {
 			0,
@@ -4364,11 +3940,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_data_strengthen
-
-	var_2_24[10655] = {
+	pg.base.ship_data_strengthen[10655] = {
 		id = 10655,
 		durability = {
 			0,
@@ -4392,11 +3964,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_data_strengthen
-
-	var_2_25[10701] = {
+	pg.base.ship_data_strengthen[10701] = {
 		id = 10701,
 		durability = {
 			0,
@@ -4420,11 +3988,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_data_strengthen
-
-	var_2_26[10702] = {
+	pg.base.ship_data_strengthen[10702] = {
 		id = 10702,
 		durability = {
 			0,
@@ -4448,11 +4012,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_data_strengthen
-
-	var_2_27[10703] = {
+	pg.base.ship_data_strengthen[10703] = {
 		id = 10703,
 		durability = {
 			0,
@@ -4476,11 +4036,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_data_strengthen
-
-	var_2_28[10704] = {
+	pg.base.ship_data_strengthen[10704] = {
 		id = 10704,
 		durability = {
 			0,
@@ -4504,11 +4060,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_data_strengthen
-
-	var_2_29[10705] = {
+	pg.base.ship_data_strengthen[10705] = {
 		id = 10705,
 		durability = {
 			0,
@@ -4532,11 +4084,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_data_strengthen
-
-	var_2_30[10706] = {
+	pg.base.ship_data_strengthen[10706] = {
 		id = 10706,
 		durability = {
 			0,
@@ -4560,11 +4108,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_data_strengthen
-
-	var_2_31[10707] = {
+	pg.base.ship_data_strengthen[10707] = {
 		id = 10707,
 		durability = {
 			0,
@@ -4588,11 +4132,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_data_strengthen
-
-	var_2_32[10708] = {
+	pg.base.ship_data_strengthen[10708] = {
 		id = 10708,
 		durability = {
 			0,
@@ -4616,11 +4156,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_data_strengthen
-
-	var_2_33[10709] = {
+	pg.base.ship_data_strengthen[10709] = {
 		id = 10709,
 		durability = {
 			0,
@@ -4644,11 +4180,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_data_strengthen
-
-	var_2_34[10710] = {
+	pg.base.ship_data_strengthen[10710] = {
 		id = 10710,
 		durability = {
 			0,
@@ -4672,11 +4204,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_data_strengthen
-
-	var_2_35[10711] = {
+	pg.base.ship_data_strengthen[10711] = {
 		id = 10711,
 		durability = {
 			0,
@@ -4700,11 +4228,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_data_strengthen
-
-	var_2_36[10712] = {
+	pg.base.ship_data_strengthen[10712] = {
 		id = 10712,
 		durability = {
 			0,
@@ -4728,11 +4252,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_data_strengthen
-
-	var_2_37[10713] = {
+	pg.base.ship_data_strengthen[10713] = {
 		id = 10713,
 		durability = {
 			0,
@@ -4756,11 +4276,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_data_strengthen
-
-	var_2_38[10714] = {
+	pg.base.ship_data_strengthen[10714] = {
 		id = 10714,
 		durability = {
 			0,
@@ -4784,11 +4300,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_data_strengthen
-
-	var_2_39[10716] = {
+	pg.base.ship_data_strengthen[10716] = {
 		id = 10716,
 		durability = {
 			0,
@@ -4812,11 +4324,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_data_strengthen
-
-	var_2_40[10717] = {
+	pg.base.ship_data_strengthen[10717] = {
 		id = 10717,
 		durability = {
 			0,
@@ -4840,11 +4348,31 @@ end)()
 			9
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_data_strengthen
-
-	var_2_41[10722] = {
+	pg.base.ship_data_strengthen[10720] = {
+		id = 10720,
+		durability = {
+			0,
+			0,
+			0,
+			83,
+			36
+		},
+		level_exp = {
+			0,
+			0,
+			0,
+			20,
+			40
+		},
+		attr_exp = {
+			0,
+			0,
+			0,
+			69,
+			9
+		}
+	}
+	pg.base.ship_data_strengthen[10722] = {
 		id = 10722,
 		durability = {
 			0,
@@ -4868,11 +4396,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_data_strengthen
-
-	var_2_42[10723] = {
+	pg.base.ship_data_strengthen[10723] = {
 		id = 10723,
 		durability = {
 			0,
@@ -4896,11 +4420,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_data_strengthen
-
-	var_2_43[10725] = {
+	pg.base.ship_data_strengthen[10725] = {
 		id = 10725,
 		durability = {
 			0,
@@ -4924,11 +4444,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_data_strengthen
-
-	var_2_44[10727] = {
+	pg.base.ship_data_strengthen[10727] = {
 		id = 10727,
 		durability = {
 			0,
@@ -4952,11 +4468,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_data_strengthen
-
-	var_2_45[10729] = {
+	pg.base.ship_data_strengthen[10729] = {
 		id = 10729,
 		durability = {
 			0,
@@ -4980,11 +4492,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_data_strengthen
-
-	var_2_46[10730] = {
+	pg.base.ship_data_strengthen[10730] = {
 		id = 10730,
 		durability = {
 			0,
@@ -5008,11 +4516,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_data_strengthen
-
-	var_2_47[10738] = {
+	pg.base.ship_data_strengthen[10738] = {
 		id = 10738,
 		durability = {
 			0,
@@ -5036,11 +4540,7 @@ end)()
 			9
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_data_strengthen
-
-	var_2_48[10798] = {
+	pg.base.ship_data_strengthen[10798] = {
 		id = 10798,
 		durability = {
 			0,
@@ -5064,11 +4564,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_data_strengthen
-
-	var_2_49[10799] = {
+	pg.base.ship_data_strengthen[10799] = {
 		id = 10799,
 		durability = {
 			0,
@@ -5092,11 +4588,7 @@ end)()
 			8
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_data_strengthen
-
-	var_2_50[10801] = {
+	pg.base.ship_data_strengthen[10801] = {
 		id = 10801,
 		durability = {
 			13,
@@ -5120,11 +4612,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_data_strengthen
-
-	var_2_51[10802] = {
+	pg.base.ship_data_strengthen[10802] = {
 		id = 10802,
 		durability = {
 			11,
@@ -5148,11 +4636,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_data_strengthen
-
-	var_2_52[10803] = {
+	pg.base.ship_data_strengthen[10803] = {
 		id = 10803,
 		durability = {
 			12,
@@ -5176,11 +4660,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_data_strengthen
-
-	var_2_53[10804] = {
+	pg.base.ship_data_strengthen[10804] = {
 		id = 10804,
 		durability = {
 			13,
@@ -5204,11 +4684,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_data_strengthen
-
-	var_2_54[10805] = {
+	pg.base.ship_data_strengthen[10805] = {
 		id = 10805,
 		durability = {
 			11,
@@ -5232,11 +4708,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_data_strengthen
-
-	var_2_55[10806] = {
+	pg.base.ship_data_strengthen[10806] = {
 		id = 10806,
 		durability = {
 			12,
@@ -5260,11 +4732,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_data_strengthen
-
-	var_2_56[10807] = {
+	pg.base.ship_data_strengthen[10807] = {
 		id = 10807,
 		durability = {
 			21,
@@ -5288,11 +4756,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_data_strengthen
-
-	var_2_57[10808] = {
+	pg.base.ship_data_strengthen[10808] = {
 		id = 10808,
 		durability = {
 			11,
@@ -5316,11 +4780,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_data_strengthen
-
-	var_2_58[10809] = {
+	pg.base.ship_data_strengthen[10809] = {
 		id = 10809,
 		durability = {
 			13,
@@ -5344,11 +4804,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_data_strengthen
-
-	var_2_59[11201] = {
+	pg.base.ship_data_strengthen[11201] = {
 		id = 11201,
 		durability = {
 			9,
@@ -5372,11 +4828,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_data_strengthen
-
-	var_2_60[11802] = {
+	pg.base.ship_data_strengthen[11802] = {
 		id = 11802,
 		durability = {
 			55,
@@ -5400,11 +4852,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_data_strengthen
-
-	var_2_61[20101] = {
+	pg.base.ship_data_strengthen[20101] = {
 		id = 20101,
 		durability = {
 			12,
@@ -5428,11 +4876,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_data_strengthen
-
-	var_2_62[20102] = {
+	pg.base.ship_data_strengthen[20102] = {
 		id = 20102,
 		durability = {
 			12,
@@ -5456,11 +4900,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_data_strengthen
-
-	var_2_63[20103] = {
+	pg.base.ship_data_strengthen[20103] = {
 		id = 20103,
 		durability = {
 			12,
@@ -5484,11 +4924,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_data_strengthen
-
-	var_2_64[20106] = {
+	pg.base.ship_data_strengthen[20106] = {
 		id = 20106,
 		durability = {
 			12,
@@ -5512,11 +4948,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_data_strengthen
-
-	var_2_65[20107] = {
+	pg.base.ship_data_strengthen[20107] = {
 		id = 20107,
 		durability = {
 			12,
@@ -5540,11 +4972,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_data_strengthen
-
-	var_2_66[20108] = {
+	pg.base.ship_data_strengthen[20108] = {
 		id = 20108,
 		durability = {
 			12,
@@ -5568,11 +4996,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_data_strengthen
-
-	var_2_67[20109] = {
+	pg.base.ship_data_strengthen[20109] = {
 		id = 20109,
 		durability = {
 			12,
@@ -5596,11 +5020,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_data_strengthen
-
-	var_2_68[20110] = {
+	pg.base.ship_data_strengthen[20110] = {
 		id = 20110,
 		durability = {
 			12,
@@ -5624,11 +5044,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_data_strengthen
-
-	var_2_69[20111] = {
+	pg.base.ship_data_strengthen[20111] = {
 		id = 20111,
 		durability = {
 			13,
@@ -5652,11 +5068,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_data_strengthen
-
-	var_2_70[20112] = {
+	pg.base.ship_data_strengthen[20112] = {
 		id = 20112,
 		durability = {
 			13,
@@ -5680,11 +5092,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_data_strengthen
-
-	var_2_71[20113] = {
+	pg.base.ship_data_strengthen[20113] = {
 		id = 20113,
 		durability = {
 			16,
@@ -5708,11 +5116,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_data_strengthen
-
-	var_2_72[20114] = {
+	pg.base.ship_data_strengthen[20114] = {
 		id = 20114,
 		durability = {
 			14,
@@ -5736,11 +5140,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_data_strengthen
-
-	var_2_73[20115] = {
+	pg.base.ship_data_strengthen[20115] = {
 		id = 20115,
 		durability = {
 			16,
@@ -5764,11 +5164,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_data_strengthen
-
-	var_2_74[20116] = {
+	pg.base.ship_data_strengthen[20116] = {
 		id = 20116,
 		durability = {
 			15,
@@ -5792,11 +5188,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_data_strengthen
-
-	var_2_75[20120] = {
+	pg.base.ship_data_strengthen[20120] = {
 		id = 20120,
 		durability = {
 			14,
@@ -5820,11 +5212,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_data_strengthen
-
-	var_2_76[20121] = {
+	pg.base.ship_data_strengthen[20121] = {
 		id = 20121,
 		durability = {
 			15,
@@ -5848,11 +5236,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_data_strengthen
-
-	var_2_77[20122] = {
+	pg.base.ship_data_strengthen[20122] = {
 		id = 20122,
 		durability = {
 			14,
@@ -5876,11 +5260,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_data_strengthen
-
-	var_2_78[20123] = {
+	pg.base.ship_data_strengthen[20123] = {
 		id = 20123,
 		durability = {
 			13,
@@ -5904,11 +5284,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_data_strengthen
-
-	var_2_79[20124] = {
+	pg.base.ship_data_strengthen[20124] = {
 		id = 20124,
 		durability = {
 			14,
@@ -5932,11 +5308,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_data_strengthen
-
-	var_2_80[20125] = {
+	pg.base.ship_data_strengthen[20125] = {
 		id = 20125,
 		durability = {
 			14,
@@ -5960,11 +5332,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_data_strengthen
-
-	var_2_81[20126] = {
+	pg.base.ship_data_strengthen[20126] = {
 		id = 20126,
 		durability = {
 			14,
@@ -5988,11 +5356,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_data_strengthen
-
-	var_2_82[20127] = {
+	pg.base.ship_data_strengthen[20127] = {
 		id = 20127,
 		durability = {
 			14,
@@ -6016,11 +5380,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_data_strengthen
-
-	var_2_83[20129] = {
+	pg.base.ship_data_strengthen[20129] = {
 		id = 20129,
 		durability = {
 			13,
@@ -6044,11 +5404,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_data_strengthen
-
-	var_2_84[20132] = {
+	pg.base.ship_data_strengthen[20132] = {
 		id = 20132,
 		durability = {
 			16,
@@ -6072,11 +5428,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_data_strengthen
-
-	var_2_85[20133] = {
+	pg.base.ship_data_strengthen[20133] = {
 		id = 20133,
 		durability = {
 			14,
@@ -6100,11 +5452,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_data_strengthen
-
-	var_2_86[20134] = {
+	pg.base.ship_data_strengthen[20134] = {
 		id = 20134,
 		durability = {
 			22,
@@ -6128,11 +5476,7 @@ end)()
 			16
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_data_strengthen
-
-	var_2_87[20135] = {
+	pg.base.ship_data_strengthen[20135] = {
 		id = 20135,
 		durability = {
 			22,
@@ -6156,11 +5500,7 @@ end)()
 			16
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_data_strengthen
-
-	var_2_88[20136] = {
+	pg.base.ship_data_strengthen[20136] = {
 		id = 20136,
 		durability = {
 			16,
@@ -6184,11 +5524,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_data_strengthen
-
-	var_2_89[20137] = {
+	pg.base.ship_data_strengthen[20137] = {
 		id = 20137,
 		durability = {
 			18,
@@ -6212,11 +5548,7 @@ end)()
 			16
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_data_strengthen
-
-	var_2_90[20138] = {
+	pg.base.ship_data_strengthen[20138] = {
 		id = 20138,
 		durability = {
 			24,
@@ -6240,11 +5572,7 @@ end)()
 			17
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_data_strengthen
-
-	var_2_91[20139] = {
+	pg.base.ship_data_strengthen[20139] = {
 		id = 20139,
 		durability = {
 			16,
@@ -6268,11 +5596,7 @@ end)()
 			14
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_data_strengthen
-
-	var_2_92[20201] = {
+	pg.base.ship_data_strengthen[20201] = {
 		id = 20201,
 		durability = {
 			27,
@@ -6296,11 +5620,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_data_strengthen
-
-	var_2_93[20202] = {
+	pg.base.ship_data_strengthen[20202] = {
 		id = 20202,
 		durability = {
 			30,
@@ -6324,11 +5644,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_data_strengthen
-
-	var_2_94[20203] = {
+	pg.base.ship_data_strengthen[20203] = {
 		id = 20203,
 		durability = {
 			30,
@@ -6352,11 +5668,11 @@ end)()
 			12
 		}
 	}
-	pg = var_2_94
 
-	local var_2_95 = var_2_94.base.ship_data_strengthen
-
-	var_2_95[20204] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[20204] = {
 		id = 20204,
 		durability = {
 			29,
@@ -6380,11 +5696,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_data_strengthen
-
-	var_2_96[20207] = {
+	pg.base.ship_data_strengthen[20207] = {
 		id = 20207,
 		durability = {
 			28,
@@ -6408,11 +5720,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_data_strengthen
-
-	var_2_97[20208] = {
+	pg.base.ship_data_strengthen[20208] = {
 		id = 20208,
 		durability = {
 			28,
@@ -6436,11 +5744,7 @@ end)()
 			13
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_data_strengthen
-
-	var_2_98[20209] = {
+	pg.base.ship_data_strengthen[20209] = {
 		id = 20209,
 		durability = {
 			26,
@@ -6464,8 +5768,7 @@ end)()
 			12
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_data_strengthen[20210] = {
+	pg.base.ship_data_strengthen[20210] = {
 		id = 20210,
 		durability = {
 			28,
@@ -6489,15 +5792,7 @@ end)()
 			12
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_data_strengthen
-
-	var_3_0[20211] = {
+	pg.base.ship_data_strengthen[20211] = {
 		id = 20211,
 		durability = {
 			29,
@@ -6521,11 +5816,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_data_strengthen
-
-	var_3_1[20212] = {
+	pg.base.ship_data_strengthen[20212] = {
 		id = 20212,
 		durability = {
 			33,
@@ -6549,11 +5840,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_data_strengthen
-
-	var_3_2[20213] = {
+	pg.base.ship_data_strengthen[20213] = {
 		id = 20213,
 		durability = {
 			28,
@@ -6577,11 +5864,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_data_strengthen
-
-	var_3_3[20214] = {
+	pg.base.ship_data_strengthen[20214] = {
 		id = 20214,
 		durability = {
 			28,
@@ -6605,11 +5888,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_data_strengthen
-
-	var_3_4[20215] = {
+	pg.base.ship_data_strengthen[20215] = {
 		id = 20215,
 		durability = {
 			30,
@@ -6633,11 +5912,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_data_strengthen
-
-	var_3_5[20216] = {
+	pg.base.ship_data_strengthen[20216] = {
 		id = 20216,
 		durability = {
 			29,
@@ -6661,11 +5936,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_data_strengthen
-
-	var_3_6[20217] = {
+	pg.base.ship_data_strengthen[20217] = {
 		id = 20217,
 		durability = {
 			29,
@@ -6689,11 +5960,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_data_strengthen
-
-	var_3_7[20218] = {
+	pg.base.ship_data_strengthen[20218] = {
 		id = 20218,
 		durability = {
 			29,
@@ -6717,11 +5984,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_data_strengthen
-
-	var_3_8[20219] = {
+	pg.base.ship_data_strengthen[20219] = {
 		id = 20219,
 		durability = {
 			26,
@@ -6745,11 +6008,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_data_strengthen
-
-	var_3_9[20221] = {
+	pg.base.ship_data_strengthen[20221] = {
 		id = 20221,
 		durability = {
 			24,
@@ -6773,11 +6032,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_data_strengthen
-
-	var_3_10[20222] = {
+	pg.base.ship_data_strengthen[20222] = {
 		id = 20222,
 		durability = {
 			23,
@@ -6801,11 +6056,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_data_strengthen
-
-	var_3_11[20220] = {
+	pg.base.ship_data_strengthen[20220] = {
 		id = 20220,
 		durability = {
 			28,
@@ -6829,11 +6080,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_data_strengthen
-
-	var_3_12[20223] = {
+	pg.base.ship_data_strengthen[20223] = {
 		id = 20223,
 		durability = {
 			30,
@@ -6857,11 +6104,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_data_strengthen
-
-	var_3_13[20224] = {
+	pg.base.ship_data_strengthen[20224] = {
 		id = 20224,
 		durability = {
 			26,
@@ -6885,11 +6128,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_data_strengthen
-
-	var_3_14[20225] = {
+	pg.base.ship_data_strengthen[20225] = {
 		id = 20225,
 		durability = {
 			28,
@@ -6913,11 +6152,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_data_strengthen
-
-	var_3_15[20226] = {
+	pg.base.ship_data_strengthen[20226] = {
 		id = 20226,
 		durability = {
 			28,
@@ -6941,11 +6176,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_data_strengthen
-
-	var_3_16[20227] = {
+	pg.base.ship_data_strengthen[20227] = {
 		id = 20227,
 		durability = {
 			29,
@@ -6969,11 +6200,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_data_strengthen
-
-	var_3_17[20228] = {
+	pg.base.ship_data_strengthen[20228] = {
 		id = 20228,
 		durability = {
 			27,
@@ -6997,11 +6224,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_data_strengthen
-
-	var_3_18[20229] = {
+	pg.base.ship_data_strengthen[20229] = {
 		id = 20229,
 		durability = {
 			29,
@@ -7025,11 +6248,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_data_strengthen
-
-	var_3_19[20230] = {
+	pg.base.ship_data_strengthen[20230] = {
 		id = 20230,
 		durability = {
 			25,
@@ -7053,11 +6272,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_data_strengthen
-
-	var_3_20[20231] = {
+	pg.base.ship_data_strengthen[20231] = {
 		id = 20231,
 		durability = {
 			27,
@@ -7081,11 +6296,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_data_strengthen
-
-	var_3_21[20232] = {
+	pg.base.ship_data_strengthen[20232] = {
 		id = 20232,
 		durability = {
 			28,
@@ -7109,11 +6320,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_data_strengthen
-
-	var_3_22[20233] = {
+	pg.base.ship_data_strengthen[20233] = {
 		id = 20233,
 		durability = {
 			27,
@@ -7137,11 +6344,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_data_strengthen
-
-	var_3_23[20234] = {
+	pg.base.ship_data_strengthen[20234] = {
 		id = 20234,
 		durability = {
 			28,
@@ -7165,11 +6368,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_data_strengthen
-
-	var_3_24[20235] = {
+	pg.base.ship_data_strengthen[20235] = {
 		id = 20235,
 		durability = {
 			29,
@@ -7193,11 +6392,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_data_strengthen
-
-	var_3_25[20236] = {
+	pg.base.ship_data_strengthen[20236] = {
 		id = 20236,
 		durability = {
 			31,
@@ -7221,11 +6416,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_data_strengthen
-
-	var_3_26[20237] = {
+	pg.base.ship_data_strengthen[20237] = {
 		id = 20237,
 		durability = {
 			30,
@@ -7249,11 +6440,31 @@ end)()
 			13
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_data_strengthen
-
-	var_3_27[20301] = {
+	pg.base.ship_data_strengthen[20299] = {
+		id = 20299,
+		durability = {
+			33,
+			63,
+			0,
+			0,
+			50
+		},
+		level_exp = {
+			30,
+			25,
+			0,
+			0,
+			15
+		},
+		attr_exp = {
+			14,
+			21,
+			0,
+			0,
+			13
+		}
+	}
+	pg.base.ship_data_strengthen[20301] = {
 		id = 20301,
 		durability = {
 			41,
@@ -7277,11 +6488,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_data_strengthen
-
-	var_3_28[20302] = {
+	pg.base.ship_data_strengthen[20302] = {
 		id = 20302,
 		durability = {
 			40,
@@ -7305,11 +6512,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_data_strengthen
-
-	var_3_29[20303] = {
+	pg.base.ship_data_strengthen[20303] = {
 		id = 20303,
 		durability = {
 			40,
@@ -7333,11 +6536,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_data_strengthen
-
-	var_3_30[20304] = {
+	pg.base.ship_data_strengthen[20304] = {
 		id = 20304,
 		durability = {
 			40,
@@ -7361,11 +6560,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_data_strengthen
-
-	var_3_31[20305] = {
+	pg.base.ship_data_strengthen[20305] = {
 		id = 20305,
 		durability = {
 			32,
@@ -7389,11 +6584,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_data_strengthen
-
-	var_3_32[20306] = {
+	pg.base.ship_data_strengthen[20306] = {
 		id = 20306,
 		durability = {
 			33,
@@ -7417,11 +6608,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_data_strengthen
-
-	var_3_33[20307] = {
+	pg.base.ship_data_strengthen[20307] = {
 		id = 20307,
 		durability = {
 			41,
@@ -7445,11 +6632,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_data_strengthen
-
-	var_3_34[20308] = {
+	pg.base.ship_data_strengthen[20308] = {
 		id = 20308,
 		durability = {
 			41,
@@ -7473,11 +6656,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_data_strengthen
-
-	var_3_35[20309] = {
+	pg.base.ship_data_strengthen[20309] = {
 		id = 20309,
 		durability = {
 			37,
@@ -7501,11 +6680,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_data_strengthen
-
-	var_3_36[20310] = {
+	pg.base.ship_data_strengthen[20310] = {
 		id = 20310,
 		durability = {
 			46,
@@ -7529,11 +6704,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_data_strengthen
-
-	var_3_37[20313] = {
+	pg.base.ship_data_strengthen[20313] = {
 		id = 20313,
 		durability = {
 			42,
@@ -7557,11 +6728,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_data_strengthen
-
-	var_3_38[20314] = {
+	pg.base.ship_data_strengthen[20314] = {
 		id = 20314,
 		durability = {
 			46,
@@ -7585,11 +6752,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_data_strengthen
-
-	var_3_39[20401] = {
+	pg.base.ship_data_strengthen[20401] = {
 		id = 20401,
 		durability = {
 			70,
@@ -7613,11 +6776,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_data_strengthen
-
-	var_3_40[20402] = {
+	pg.base.ship_data_strengthen[20402] = {
 		id = 20402,
 		durability = {
 			66,
@@ -7641,11 +6800,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_data_strengthen
-
-	var_3_41[20403] = {
+	pg.base.ship_data_strengthen[20403] = {
 		id = 20403,
 		durability = {
 			66,
@@ -7669,11 +6824,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_data_strengthen
-
-	var_3_42[20404] = {
+	pg.base.ship_data_strengthen[20404] = {
 		id = 20404,
 		durability = {
 			64,
@@ -7697,11 +6848,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_data_strengthen
-
-	var_3_43[20501] = {
+	pg.base.ship_data_strengthen[20501] = {
 		id = 20501,
 		durability = {
 			77,
@@ -7725,11 +6872,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_data_strengthen
-
-	var_3_44[20502] = {
+	pg.base.ship_data_strengthen[20502] = {
 		id = 20502,
 		durability = {
 			83,
@@ -7753,11 +6896,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_data_strengthen
-
-	var_3_45[20503] = {
+	pg.base.ship_data_strengthen[20503] = {
 		id = 20503,
 		durability = {
 			78,
@@ -7781,11 +6920,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_data_strengthen
-
-	var_3_46[20504] = {
+	pg.base.ship_data_strengthen[20504] = {
 		id = 20504,
 		durability = {
 			78,
@@ -7809,11 +6944,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_data_strengthen
-
-	var_3_47[20505] = {
+	pg.base.ship_data_strengthen[20505] = {
 		id = 20505,
 		durability = {
 			81,
@@ -7837,11 +6968,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_data_strengthen
-
-	var_3_48[20506] = {
+	pg.base.ship_data_strengthen[20506] = {
 		id = 20506,
 		durability = {
 			81,
@@ -7865,11 +6992,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_data_strengthen
-
-	var_3_49[20507] = {
+	pg.base.ship_data_strengthen[20507] = {
 		id = 20507,
 		durability = {
 			81,
@@ -7893,11 +7016,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_data_strengthen
-
-	var_3_50[20509] = {
+	pg.base.ship_data_strengthen[20509] = {
 		id = 20509,
 		durability = {
 			80,
@@ -7921,11 +7040,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_data_strengthen
-
-	var_3_51[20510] = {
+	pg.base.ship_data_strengthen[20510] = {
 		id = 20510,
 		durability = {
 			78,
@@ -7949,11 +7064,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_data_strengthen
-
-	var_3_52[20511] = {
+	pg.base.ship_data_strengthen[20511] = {
 		id = 20511,
 		durability = {
 			76,
@@ -7977,11 +7088,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_data_strengthen
-
-	var_3_53[20513] = {
+	pg.base.ship_data_strengthen[20513] = {
 		id = 20513,
 		durability = {
 			80,
@@ -8005,11 +7112,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_data_strengthen
-
-	var_3_54[20514] = {
+	pg.base.ship_data_strengthen[20514] = {
 		id = 20514,
 		durability = {
 			80,
@@ -8033,11 +7136,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_data_strengthen
-
-	var_3_55[20516] = {
+	pg.base.ship_data_strengthen[20516] = {
 		id = 20516,
 		durability = {
 			87,
@@ -8061,11 +7160,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_data_strengthen
-
-	var_3_56[20601] = {
+	pg.base.ship_data_strengthen[20601] = {
 		id = 20601,
 		durability = {
 			0,
@@ -8089,11 +7184,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_data_strengthen
-
-	var_3_57[20602] = {
+	pg.base.ship_data_strengthen[20602] = {
 		id = 20602,
 		durability = {
 			0,
@@ -8117,11 +7208,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_data_strengthen
-
-	var_3_58[20603] = {
+	pg.base.ship_data_strengthen[20603] = {
 		id = 20603,
 		durability = {
 			0,
@@ -8145,11 +7232,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_data_strengthen
-
-	var_3_59[20604] = {
+	pg.base.ship_data_strengthen[20604] = {
 		id = 20604,
 		durability = {
 			0,
@@ -8173,11 +7256,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_data_strengthen
-
-	var_3_60[20605] = {
+	pg.base.ship_data_strengthen[20605] = {
 		id = 20605,
 		durability = {
 			0,
@@ -8201,11 +7280,7 @@ end)()
 			13
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_data_strengthen
-
-	var_3_61[20606] = {
+	pg.base.ship_data_strengthen[20606] = {
 		id = 20606,
 		durability = {
 			0,
@@ -8229,11 +7304,7 @@ end)()
 			12
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_data_strengthen
-
-	var_3_62[20607] = {
+	pg.base.ship_data_strengthen[20607] = {
 		id = 20607,
 		durability = {
 			0,
@@ -8257,11 +7328,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_data_strengthen
-
-	var_3_63[20608] = {
+	pg.base.ship_data_strengthen[20608] = {
 		id = 20608,
 		durability = {
 			0,
@@ -8285,11 +7352,7 @@ end)()
 			11
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_data_strengthen
-
-	var_3_64[20701] = {
+	pg.base.ship_data_strengthen[20701] = {
 		id = 20701,
 		durability = {
 			39,
@@ -8313,11 +7376,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_data_strengthen
-
-	var_3_65[20702] = {
+	pg.base.ship_data_strengthen[20702] = {
 		id = 20702,
 		durability = {
 			0,
@@ -8341,11 +7400,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_data_strengthen
-
-	var_3_66[20703] = {
+	pg.base.ship_data_strengthen[20703] = {
 		id = 20703,
 		durability = {
 			0,
@@ -8369,11 +7424,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_data_strengthen
-
-	var_3_67[20704] = {
+	pg.base.ship_data_strengthen[20704] = {
 		id = 20704,
 		durability = {
 			0,
@@ -8397,11 +7448,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_data_strengthen
-
-	var_3_68[20705] = {
+	pg.base.ship_data_strengthen[20705] = {
 		id = 20705,
 		durability = {
 			0,
@@ -8425,11 +7472,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_data_strengthen
-
-	var_3_69[20706] = {
+	pg.base.ship_data_strengthen[20706] = {
 		id = 20706,
 		durability = {
 			0,
@@ -8453,11 +7496,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_data_strengthen
-
-	var_3_70[20707] = {
+	pg.base.ship_data_strengthen[20707] = {
 		id = 20707,
 		durability = {
 			0,
@@ -8481,11 +7520,7 @@ end)()
 			9
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_data_strengthen
-
-	var_3_71[20709] = {
+	pg.base.ship_data_strengthen[20709] = {
 		id = 20709,
 		durability = {
 			0,
@@ -8509,11 +7544,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_data_strengthen
-
-	var_3_72[20711] = {
+	pg.base.ship_data_strengthen[20711] = {
 		id = 20711,
 		durability = {
 			0,
@@ -8537,11 +7568,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_data_strengthen
-
-	var_3_73[20712] = {
+	pg.base.ship_data_strengthen[20712] = {
 		id = 20712,
 		durability = {
 			0,
@@ -8565,11 +7592,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_data_strengthen
-
-	var_3_74[20713] = {
+	pg.base.ship_data_strengthen[20713] = {
 		id = 20713,
 		durability = {
 			0,
@@ -8593,11 +7616,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_data_strengthen
-
-	var_3_75[20714] = {
+	pg.base.ship_data_strengthen[20714] = {
 		id = 20714,
 		durability = {
 			0,
@@ -8621,11 +7640,7 @@ end)()
 			8
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_data_strengthen
-
-	var_3_76[21301] = {
+	pg.base.ship_data_strengthen[21301] = {
 		id = 21301,
 		durability = {
 			52,
@@ -8649,11 +7664,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_data_strengthen
-
-	var_3_77[21302] = {
+	pg.base.ship_data_strengthen[21302] = {
 		id = 21302,
 		durability = {
 			52,
@@ -8677,11 +7688,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_data_strengthen
-
-	var_3_78[21304] = {
+	pg.base.ship_data_strengthen[21304] = {
 		id = 21304,
 		durability = {
 			53,
@@ -8705,11 +7712,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_data_strengthen
-
-	var_3_79[30101] = {
+	pg.base.ship_data_strengthen[30101] = {
 		id = 30101,
 		durability = {
 			11,
@@ -8733,11 +7736,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_data_strengthen
-
-	var_3_80[30102] = {
+	pg.base.ship_data_strengthen[30102] = {
 		id = 30102,
 		durability = {
 			12,
@@ -8761,11 +7760,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_data_strengthen
-
-	var_3_81[30104] = {
+	pg.base.ship_data_strengthen[30104] = {
 		id = 30104,
 		durability = {
 			12,
@@ -8789,11 +7784,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_data_strengthen
-
-	var_3_82[30105] = {
+	pg.base.ship_data_strengthen[30105] = {
 		id = 30105,
 		durability = {
 			12,
@@ -8817,11 +7808,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_data_strengthen
-
-	var_3_83[30109] = {
+	pg.base.ship_data_strengthen[30109] = {
 		id = 30109,
 		durability = {
 			11,
@@ -8845,11 +7832,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_data_strengthen
-
-	var_3_84[30110] = {
+	pg.base.ship_data_strengthen[30110] = {
 		id = 30110,
 		durability = {
 			11,
@@ -8873,11 +7856,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_data_strengthen
-
-	var_3_85[30111] = {
+	pg.base.ship_data_strengthen[30111] = {
 		id = 30111,
 		durability = {
 			11,
@@ -8901,11 +7880,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_data_strengthen
-
-	var_3_86[30112] = {
+	pg.base.ship_data_strengthen[30112] = {
 		id = 30112,
 		durability = {
 			11,
@@ -8929,11 +7904,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_data_strengthen
-
-	var_3_87[30113] = {
+	pg.base.ship_data_strengthen[30113] = {
 		id = 30113,
 		durability = {
 			12,
@@ -8957,11 +7928,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_data_strengthen
-
-	var_3_88[30114] = {
+	pg.base.ship_data_strengthen[30114] = {
 		id = 30114,
 		durability = {
 			13,
@@ -8985,11 +7952,7 @@ end)()
 			16
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_data_strengthen
-
-	var_3_89[30115] = {
+	pg.base.ship_data_strengthen[30115] = {
 		id = 30115,
 		durability = {
 			12,
@@ -9013,11 +7976,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_data_strengthen
-
-	var_3_90[30116] = {
+	pg.base.ship_data_strengthen[30116] = {
 		id = 30116,
 		durability = {
 			12,
@@ -9041,11 +8000,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_data_strengthen
-
-	var_3_91[30117] = {
+	pg.base.ship_data_strengthen[30117] = {
 		id = 30117,
 		durability = {
 			12,
@@ -9069,11 +8024,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_data_strengthen
-
-	var_3_92[30118] = {
+	pg.base.ship_data_strengthen[30118] = {
 		id = 30118,
 		durability = {
 			12,
@@ -9097,11 +8048,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_data_strengthen
-
-	var_3_93[30120] = {
+	pg.base.ship_data_strengthen[30120] = {
 		id = 30120,
 		durability = {
 			12,
@@ -9125,11 +8072,11 @@ end)()
 			15
 		}
 	}
-	pg = var_3_93
 
-	local var_3_94 = var_3_93.base.ship_data_strengthen
-
-	var_3_94[30121] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[30121] = {
 		id = 30121,
 		durability = {
 			11,
@@ -9153,11 +8100,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_data_strengthen
-
-	var_3_95[30123] = {
+	pg.base.ship_data_strengthen[30123] = {
 		id = 30123,
 		durability = {
 			11,
@@ -9181,11 +8124,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_data_strengthen
-
-	var_3_96[30124] = {
+	pg.base.ship_data_strengthen[30124] = {
 		id = 30124,
 		durability = {
 			11,
@@ -9209,11 +8148,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_data_strengthen
-
-	var_3_97[30125] = {
+	pg.base.ship_data_strengthen[30125] = {
 		id = 30125,
 		durability = {
 			11,
@@ -9237,11 +8172,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_data_strengthen
-
-	var_3_98[30126] = {
+	pg.base.ship_data_strengthen[30126] = {
 		id = 30126,
 		durability = {
 			11,
@@ -9265,8 +8196,7 @@ end)()
 			14
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.ship_data_strengthen[30127] = {
+	pg.base.ship_data_strengthen[30127] = {
 		id = 30127,
 		durability = {
 			12,
@@ -9290,15 +8220,7 @@ end)()
 			14
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_data_strengthen
-
-	var_4_0[30128] = {
+	pg.base.ship_data_strengthen[30128] = {
 		id = 30128,
 		durability = {
 			12,
@@ -9322,11 +8244,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_data_strengthen
-
-	var_4_1[30129] = {
+	pg.base.ship_data_strengthen[30129] = {
 		id = 30129,
 		durability = {
 			14,
@@ -9350,11 +8268,7 @@ end)()
 			16
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_data_strengthen
-
-	var_4_2[30130] = {
+	pg.base.ship_data_strengthen[30130] = {
 		id = 30130,
 		durability = {
 			11,
@@ -9378,11 +8292,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_data_strengthen
-
-	var_4_3[30131] = {
+	pg.base.ship_data_strengthen[30131] = {
 		id = 30131,
 		durability = {
 			11,
@@ -9406,11 +8316,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_data_strengthen
-
-	var_4_4[30132] = {
+	pg.base.ship_data_strengthen[30132] = {
 		id = 30132,
 		durability = {
 			11,
@@ -9434,11 +8340,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_data_strengthen
-
-	var_4_5[30133] = {
+	pg.base.ship_data_strengthen[30133] = {
 		id = 30133,
 		durability = {
 			11,
@@ -9462,11 +8364,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_data_strengthen
-
-	var_4_6[30135] = {
+	pg.base.ship_data_strengthen[30135] = {
 		id = 30135,
 		durability = {
 			11,
@@ -9490,11 +8388,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_data_strengthen
-
-	var_4_7[30137] = {
+	pg.base.ship_data_strengthen[30137] = {
 		id = 30137,
 		durability = {
 			11,
@@ -9518,11 +8412,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_data_strengthen
-
-	var_4_8[30138] = {
+	pg.base.ship_data_strengthen[30138] = {
 		id = 30138,
 		durability = {
 			11,
@@ -9546,11 +8436,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_data_strengthen
-
-	var_4_9[30139] = {
+	pg.base.ship_data_strengthen[30139] = {
 		id = 30139,
 		durability = {
 			11,
@@ -9574,11 +8460,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_data_strengthen
-
-	var_4_10[30141] = {
+	pg.base.ship_data_strengthen[30141] = {
 		id = 30141,
 		durability = {
 			11,
@@ -9602,11 +8484,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_data_strengthen
-
-	var_4_11[30147] = {
+	pg.base.ship_data_strengthen[30147] = {
 		id = 30147,
 		durability = {
 			12,
@@ -9630,11 +8508,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_data_strengthen
-
-	var_4_12[30148] = {
+	pg.base.ship_data_strengthen[30148] = {
 		id = 30148,
 		durability = {
 			12,
@@ -9658,11 +8532,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_data_strengthen
-
-	var_4_13[30149] = {
+	pg.base.ship_data_strengthen[30149] = {
 		id = 30149,
 		durability = {
 			13,
@@ -9686,11 +8556,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_data_strengthen
-
-	var_4_14[30153] = {
+	pg.base.ship_data_strengthen[30153] = {
 		id = 30153,
 		durability = {
 			12,
@@ -9714,11 +8580,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_data_strengthen
-
-	var_4_15[30154] = {
+	pg.base.ship_data_strengthen[30154] = {
 		id = 30154,
 		durability = {
 			11,
@@ -9742,11 +8604,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_data_strengthen
-
-	var_4_16[30156] = {
+	pg.base.ship_data_strengthen[30156] = {
 		id = 30156,
 		durability = {
 			14,
@@ -9770,11 +8628,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_data_strengthen
-
-	var_4_17[30157] = {
+	pg.base.ship_data_strengthen[30157] = {
 		id = 30157,
 		durability = {
 			14,
@@ -9798,11 +8652,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_data_strengthen
-
-	var_4_18[30158] = {
+	pg.base.ship_data_strengthen[30158] = {
 		id = 30158,
 		durability = {
 			14,
@@ -9826,11 +8676,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_data_strengthen
-
-	var_4_19[30159] = {
+	pg.base.ship_data_strengthen[30159] = {
 		id = 30159,
 		durability = {
 			12,
@@ -9854,11 +8700,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_data_strengthen
-
-	var_4_20[30160] = {
+	pg.base.ship_data_strengthen[30160] = {
 		id = 30160,
 		durability = {
 			12,
@@ -9882,11 +8724,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_data_strengthen
-
-	var_4_21[30161] = {
+	pg.base.ship_data_strengthen[30161] = {
 		id = 30161,
 		durability = {
 			12,
@@ -9910,11 +8748,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_data_strengthen
-
-	var_4_22[30162] = {
+	pg.base.ship_data_strengthen[30162] = {
 		id = 30162,
 		durability = {
 			12,
@@ -9938,11 +8772,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_data_strengthen
-
-	var_4_23[30163] = {
+	pg.base.ship_data_strengthen[30163] = {
 		id = 30163,
 		durability = {
 			11,
@@ -9966,11 +8796,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_data_strengthen
-
-	var_4_24[30164] = {
+	pg.base.ship_data_strengthen[30164] = {
 		id = 30164,
 		durability = {
 			11,
@@ -9994,11 +8820,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_data_strengthen
-
-	var_4_25[30165] = {
+	pg.base.ship_data_strengthen[30165] = {
 		id = 30165,
 		durability = {
 			11,
@@ -10022,11 +8844,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_data_strengthen
-
-	var_4_26[30166] = {
+	pg.base.ship_data_strengthen[30166] = {
 		id = 30166,
 		durability = {
 			11,
@@ -10050,11 +8868,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_data_strengthen
-
-	var_4_27[30172] = {
+	pg.base.ship_data_strengthen[30172] = {
 		id = 30172,
 		durability = {
 			12,
@@ -10078,11 +8892,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_data_strengthen
-
-	var_4_28[30179] = {
+	pg.base.ship_data_strengthen[30179] = {
 		id = 30179,
 		durability = {
 			11,
@@ -10106,11 +8916,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_data_strengthen
-
-	var_4_29[30180] = {
+	pg.base.ship_data_strengthen[30180] = {
 		id = 30180,
 		durability = {
 			13,
@@ -10134,11 +8940,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_data_strengthen
-
-	var_4_30[30181] = {
+	pg.base.ship_data_strengthen[30181] = {
 		id = 30181,
 		durability = {
 			12,
@@ -10162,11 +8964,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_data_strengthen
-
-	var_4_31[30182] = {
+	pg.base.ship_data_strengthen[30182] = {
 		id = 30182,
 		durability = {
 			14,
@@ -10190,11 +8988,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_data_strengthen
-
-	var_4_32[30183] = {
+	pg.base.ship_data_strengthen[30183] = {
 		id = 30183,
 		durability = {
 			12,
@@ -10218,11 +9012,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_data_strengthen
-
-	var_4_33[30184] = {
+	pg.base.ship_data_strengthen[30184] = {
 		id = 30184,
 		durability = {
 			15,
@@ -10246,11 +9036,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_data_strengthen
-
-	var_4_34[30185] = {
+	pg.base.ship_data_strengthen[30185] = {
 		id = 30185,
 		durability = {
 			11,
@@ -10274,11 +9060,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_data_strengthen
-
-	var_4_35[30186] = {
+	pg.base.ship_data_strengthen[30186] = {
 		id = 30186,
 		durability = {
 			14,
@@ -10302,11 +9084,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_data_strengthen
-
-	var_4_36[30187] = {
+	pg.base.ship_data_strengthen[30187] = {
 		id = 30187,
 		durability = {
 			13,
@@ -10330,11 +9108,7 @@ end)()
 			16
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_data_strengthen
-
-	var_4_37[30188] = {
+	pg.base.ship_data_strengthen[30188] = {
 		id = 30188,
 		durability = {
 			16,
@@ -10358,11 +9132,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_data_strengthen
-
-	var_4_38[30189] = {
+	pg.base.ship_data_strengthen[30189] = {
 		id = 30189,
 		durability = {
 			16,
@@ -10386,11 +9156,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_data_strengthen
-
-	var_4_39[30190] = {
+	pg.base.ship_data_strengthen[30190] = {
 		id = 30190,
 		durability = {
 			13,
@@ -10414,11 +9180,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_data_strengthen
-
-	var_4_40[30191] = {
+	pg.base.ship_data_strengthen[30191] = {
 		id = 30191,
 		durability = {
 			13,
@@ -10442,11 +9204,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_data_strengthen
-
-	var_4_41[30192] = {
+	pg.base.ship_data_strengthen[30192] = {
 		id = 30192,
 		durability = {
 			12,
@@ -10470,11 +9228,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_data_strengthen
-
-	var_4_42[30193] = {
+	pg.base.ship_data_strengthen[30193] = {
 		id = 30193,
 		durability = {
 			12,
@@ -10498,11 +9252,7 @@ end)()
 			14
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_data_strengthen
-
-	var_4_43[30194] = {
+	pg.base.ship_data_strengthen[30194] = {
 		id = 30194,
 		durability = {
 			13,
@@ -10526,11 +9276,7 @@ end)()
 			16
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_data_strengthen
-
-	var_4_44[30201] = {
+	pg.base.ship_data_strengthen[30201] = {
 		id = 30201,
 		durability = {
 			24,
@@ -10554,11 +9300,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_data_strengthen
-
-	var_4_45[30204] = {
+	pg.base.ship_data_strengthen[30204] = {
 		id = 30204,
 		durability = {
 			26,
@@ -10582,11 +9324,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_data_strengthen
-
-	var_4_46[30205] = {
+	pg.base.ship_data_strengthen[30205] = {
 		id = 30205,
 		durability = {
 			22,
@@ -10610,11 +9348,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_data_strengthen
-
-	var_4_47[30206] = {
+	pg.base.ship_data_strengthen[30206] = {
 		id = 30206,
 		durability = {
 			27,
@@ -10638,11 +9372,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_data_strengthen
-
-	var_4_48[30207] = {
+	pg.base.ship_data_strengthen[30207] = {
 		id = 30207,
 		durability = {
 			27,
@@ -10666,11 +9396,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_data_strengthen
-
-	var_4_49[30208] = {
+	pg.base.ship_data_strengthen[30208] = {
 		id = 30208,
 		durability = {
 			27,
@@ -10694,11 +9420,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_data_strengthen
-
-	var_4_50[30209] = {
+	pg.base.ship_data_strengthen[30209] = {
 		id = 30209,
 		durability = {
 			26,
@@ -10722,11 +9444,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_data_strengthen
-
-	var_4_51[30210] = {
+	pg.base.ship_data_strengthen[30210] = {
 		id = 30210,
 		durability = {
 			37,
@@ -10750,11 +9468,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_data_strengthen
-
-	var_4_52[30211] = {
+	pg.base.ship_data_strengthen[30211] = {
 		id = 30211,
 		durability = {
 			37,
@@ -10778,11 +9492,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_data_strengthen
-
-	var_4_53[30212] = {
+	pg.base.ship_data_strengthen[30212] = {
 		id = 30212,
 		durability = {
 			27,
@@ -10806,11 +9516,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_data_strengthen
-
-	var_4_54[30213] = {
+	pg.base.ship_data_strengthen[30213] = {
 		id = 30213,
 		durability = {
 			28,
@@ -10834,11 +9540,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_data_strengthen
-
-	var_4_55[30214] = {
+	pg.base.ship_data_strengthen[30214] = {
 		id = 30214,
 		durability = {
 			28,
@@ -10862,11 +9564,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_data_strengthen
-
-	var_4_56[30226] = {
+	pg.base.ship_data_strengthen[30226] = {
 		id = 30226,
 		durability = {
 			28,
@@ -10890,11 +9588,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_data_strengthen
-
-	var_4_57[30227] = {
+	pg.base.ship_data_strengthen[30227] = {
 		id = 30227,
 		durability = {
 			29,
@@ -10918,11 +9612,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_data_strengthen
-
-	var_4_58[30228] = {
+	pg.base.ship_data_strengthen[30228] = {
 		id = 30228,
 		durability = {
 			30,
@@ -10946,11 +9636,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_data_strengthen
-
-	var_4_59[30229] = {
+	pg.base.ship_data_strengthen[30229] = {
 		id = 30229,
 		durability = {
 			29,
@@ -10974,11 +9660,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_data_strengthen
-
-	var_4_60[30220] = {
+	pg.base.ship_data_strengthen[30220] = {
 		id = 30220,
 		durability = {
 			27,
@@ -11002,11 +9684,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_data_strengthen
-
-	var_4_61[30221] = {
+	pg.base.ship_data_strengthen[30221] = {
 		id = 30221,
 		durability = {
 			32,
@@ -11030,11 +9708,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_data_strengthen
-
-	var_4_62[30223] = {
+	pg.base.ship_data_strengthen[30223] = {
 		id = 30223,
 		durability = {
 			31,
@@ -11058,11 +9732,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_data_strengthen
-
-	var_4_63[30224] = {
+	pg.base.ship_data_strengthen[30224] = {
 		id = 30224,
 		durability = {
 			33,
@@ -11086,11 +9756,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_data_strengthen
-
-	var_4_64[30225] = {
+	pg.base.ship_data_strengthen[30225] = {
 		id = 30225,
 		durability = {
 			34,
@@ -11114,11 +9780,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_data_strengthen
-
-	var_4_65[30301] = {
+	pg.base.ship_data_strengthen[30301] = {
 		id = 30301,
 		durability = {
 			39,
@@ -11142,11 +9804,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_data_strengthen
-
-	var_4_66[30302] = {
+	pg.base.ship_data_strengthen[30302] = {
 		id = 30302,
 		durability = {
 			39,
@@ -11170,11 +9828,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_data_strengthen
-
-	var_4_67[30303] = {
+	pg.base.ship_data_strengthen[30303] = {
 		id = 30303,
 		durability = {
 			39,
@@ -11198,11 +9852,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_data_strengthen
-
-	var_4_68[30304] = {
+	pg.base.ship_data_strengthen[30304] = {
 		id = 30304,
 		durability = {
 			39,
@@ -11226,11 +9876,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_data_strengthen
-
-	var_4_69[30306] = {
+	pg.base.ship_data_strengthen[30306] = {
 		id = 30306,
 		durability = {
 			48,
@@ -11254,11 +9900,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_data_strengthen
-
-	var_4_70[30307] = {
+	pg.base.ship_data_strengthen[30307] = {
 		id = 30307,
 		durability = {
 			36,
@@ -11282,11 +9924,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_data_strengthen
-
-	var_4_71[30308] = {
+	pg.base.ship_data_strengthen[30308] = {
 		id = 30308,
 		durability = {
 			36,
@@ -11310,11 +9948,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_data_strengthen
-
-	var_4_72[30309] = {
+	pg.base.ship_data_strengthen[30309] = {
 		id = 30309,
 		durability = {
 			43,
@@ -11338,11 +9972,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_data_strengthen
-
-	var_4_73[30310] = {
+	pg.base.ship_data_strengthen[30310] = {
 		id = 30310,
 		durability = {
 			44,
@@ -11366,11 +9996,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_data_strengthen
-
-	var_4_74[30311] = {
+	pg.base.ship_data_strengthen[30311] = {
 		id = 30311,
 		durability = {
 			50,
@@ -11394,11 +10020,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_data_strengthen
-
-	var_4_75[30312] = {
+	pg.base.ship_data_strengthen[30312] = {
 		id = 30312,
 		durability = {
 			50,
@@ -11422,11 +10044,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_data_strengthen
-
-	var_4_76[30313] = {
+	pg.base.ship_data_strengthen[30313] = {
 		id = 30313,
 		durability = {
 			50,
@@ -11450,11 +10068,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_data_strengthen
-
-	var_4_77[30314] = {
+	pg.base.ship_data_strengthen[30314] = {
 		id = 30314,
 		durability = {
 			48,
@@ -11478,11 +10092,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_data_strengthen
-
-	var_4_78[30315] = {
+	pg.base.ship_data_strengthen[30315] = {
 		id = 30315,
 		durability = {
 			37,
@@ -11506,11 +10116,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_data_strengthen
-
-	var_4_79[30317] = {
+	pg.base.ship_data_strengthen[30317] = {
 		id = 30317,
 		durability = {
 			43,
@@ -11534,11 +10140,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_data_strengthen
-
-	var_4_80[30318] = {
+	pg.base.ship_data_strengthen[30318] = {
 		id = 30318,
 		durability = {
 			43,
@@ -11562,11 +10164,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_data_strengthen
-
-	var_4_81[30319] = {
+	pg.base.ship_data_strengthen[30319] = {
 		id = 30319,
 		durability = {
 			54,
@@ -11590,11 +10188,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_data_strengthen
-
-	var_4_82[30320] = {
+	pg.base.ship_data_strengthen[30320] = {
 		id = 30320,
 		durability = {
 			54,
@@ -11618,11 +10212,7 @@ end)()
 			13
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_data_strengthen
-
-	var_4_83[30321] = {
+	pg.base.ship_data_strengthen[30321] = {
 		id = 30321,
 		durability = {
 			50,
@@ -11646,11 +10236,7 @@ end)()
 			12
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_data_strengthen
-
-	var_4_84[30401] = {
+	pg.base.ship_data_strengthen[30401] = {
 		id = 30401,
 		durability = {
 			69,
@@ -11674,11 +10260,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_data_strengthen
-
-	var_4_85[30402] = {
+	pg.base.ship_data_strengthen[30402] = {
 		id = 30402,
 		durability = {
 			69,
@@ -11702,11 +10284,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_data_strengthen
-
-	var_4_86[30403] = {
+	pg.base.ship_data_strengthen[30403] = {
 		id = 30403,
 		durability = {
 			67,
@@ -11730,11 +10308,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_data_strengthen
-
-	var_4_87[30404] = {
+	pg.base.ship_data_strengthen[30404] = {
 		id = 30404,
 		durability = {
 			69,
@@ -11758,11 +10332,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_data_strengthen
-
-	var_4_88[30405] = {
+	pg.base.ship_data_strengthen[30405] = {
 		id = 30405,
 		durability = {
 			80,
@@ -11786,11 +10356,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_data_strengthen
-
-	var_4_89[30406] = {
+	pg.base.ship_data_strengthen[30406] = {
 		id = 30406,
 		durability = {
 			68,
@@ -11814,11 +10380,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_data_strengthen
-
-	var_4_90[30407] = {
+	pg.base.ship_data_strengthen[30407] = {
 		id = 30407,
 		durability = {
 			69,
@@ -11842,11 +10404,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_data_strengthen
-
-	var_4_91[30408] = {
+	pg.base.ship_data_strengthen[30408] = {
 		id = 30408,
 		durability = {
 			70,
@@ -11870,11 +10428,7 @@ end)()
 			11
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_data_strengthen
-
-	var_4_92[30501] = {
+	pg.base.ship_data_strengthen[30501] = {
 		id = 30501,
 		durability = {
 			73,
@@ -11898,11 +10452,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_data_strengthen
-
-	var_4_93[30502] = {
+	pg.base.ship_data_strengthen[30502] = {
 		id = 30502,
 		durability = {
 			73,
@@ -11926,11 +10476,11 @@ end)()
 			10
 		}
 	}
-	pg = var_4_93
 
-	local var_4_94 = var_4_93.base.ship_data_strengthen
-
-	var_4_94[30503] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[30503] = {
 		id = 30503,
 		durability = {
 			75,
@@ -11954,11 +10504,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_data_strengthen
-
-	var_4_95[30504] = {
+	pg.base.ship_data_strengthen[30504] = {
 		id = 30504,
 		durability = {
 			75,
@@ -11982,11 +10528,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_data_strengthen
-
-	var_4_96[30505] = {
+	pg.base.ship_data_strengthen[30505] = {
 		id = 30505,
 		durability = {
 			79,
@@ -12010,11 +10552,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_data_strengthen
-
-	var_4_97[30506] = {
+	pg.base.ship_data_strengthen[30506] = {
 		id = 30506,
 		durability = {
 			77,
@@ -12038,11 +10576,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_data_strengthen
-
-	var_4_98[30507] = {
+	pg.base.ship_data_strengthen[30507] = {
 		id = 30507,
 		durability = {
 			80,
@@ -12066,8 +10600,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.ship_data_strengthen[30508] = {
+	pg.base.ship_data_strengthen[30508] = {
 		id = 30508,
 		durability = {
 			80,
@@ -12091,15 +10624,7 @@ end)()
 			10
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_data_strengthen
-
-	var_5_0[30510] = {
+	pg.base.ship_data_strengthen[30510] = {
 		id = 30510,
 		durability = {
 			91,
@@ -12123,11 +10648,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_data_strengthen
-
-	var_5_1[30511] = {
+	pg.base.ship_data_strengthen[30511] = {
 		id = 30511,
 		durability = {
 			62,
@@ -12151,11 +10672,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_data_strengthen
-
-	var_5_2[30512] = {
+	pg.base.ship_data_strengthen[30512] = {
 		id = 30512,
 		durability = {
 			80,
@@ -12179,11 +10696,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_data_strengthen
-
-	var_5_3[30513] = {
+	pg.base.ship_data_strengthen[30513] = {
 		id = 30513,
 		durability = {
 			80,
@@ -12207,11 +10720,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_data_strengthen
-
-	var_5_4[30514] = {
+	pg.base.ship_data_strengthen[30514] = {
 		id = 30514,
 		durability = {
 			80,
@@ -12235,11 +10744,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_data_strengthen
-
-	var_5_5[30516] = {
+	pg.base.ship_data_strengthen[30516] = {
 		id = 30516,
 		durability = {
 			83,
@@ -12263,11 +10768,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_data_strengthen
-
-	var_5_6[30517] = {
+	pg.base.ship_data_strengthen[30517] = {
 		id = 30517,
 		durability = {
 			79,
@@ -12291,11 +10792,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_data_strengthen
-
-	var_5_7[30601] = {
+	pg.base.ship_data_strengthen[30601] = {
 		id = 30601,
 		durability = {
 			0,
@@ -12319,11 +10816,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_data_strengthen
-
-	var_5_8[30602] = {
+	pg.base.ship_data_strengthen[30602] = {
 		id = 30602,
 		durability = {
 			0,
@@ -12347,11 +10840,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_data_strengthen
-
-	var_5_9[30603] = {
+	pg.base.ship_data_strengthen[30603] = {
 		id = 30603,
 		durability = {
 			0,
@@ -12375,11 +10864,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_data_strengthen
-
-	var_5_10[30604] = {
+	pg.base.ship_data_strengthen[30604] = {
 		id = 30604,
 		durability = {
 			0,
@@ -12403,11 +10888,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_data_strengthen
-
-	var_5_11[30605] = {
+	pg.base.ship_data_strengthen[30605] = {
 		id = 30605,
 		durability = {
 			0,
@@ -12431,11 +10912,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_data_strengthen
-
-	var_5_12[30606] = {
+	pg.base.ship_data_strengthen[30606] = {
 		id = 30606,
 		durability = {
 			0,
@@ -12459,11 +10936,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_data_strengthen
-
-	var_5_13[30607] = {
+	pg.base.ship_data_strengthen[30607] = {
 		id = 30607,
 		durability = {
 			0,
@@ -12487,11 +10960,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_data_strengthen
-
-	var_5_14[30608] = {
+	pg.base.ship_data_strengthen[30608] = {
 		id = 30608,
 		durability = {
 			0,
@@ -12515,11 +10984,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_data_strengthen
-
-	var_5_15[30609] = {
+	pg.base.ship_data_strengthen[30609] = {
 		id = 30609,
 		durability = {
 			0,
@@ -12543,11 +11008,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_data_strengthen
-
-	var_5_16[30701] = {
+	pg.base.ship_data_strengthen[30701] = {
 		id = 30701,
 		durability = {
 			0,
@@ -12571,11 +11032,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_data_strengthen
-
-	var_5_17[30702] = {
+	pg.base.ship_data_strengthen[30702] = {
 		id = 30702,
 		durability = {
 			0,
@@ -12599,11 +11056,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_data_strengthen
-
-	var_5_18[30703] = {
+	pg.base.ship_data_strengthen[30703] = {
 		id = 30703,
 		durability = {
 			0,
@@ -12627,11 +11080,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_data_strengthen
-
-	var_5_19[30704] = {
+	pg.base.ship_data_strengthen[30704] = {
 		id = 30704,
 		durability = {
 			0,
@@ -12655,11 +11104,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_data_strengthen
-
-	var_5_20[30705] = {
+	pg.base.ship_data_strengthen[30705] = {
 		id = 30705,
 		durability = {
 			0,
@@ -12683,11 +11128,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_data_strengthen
-
-	var_5_21[30706] = {
+	pg.base.ship_data_strengthen[30706] = {
 		id = 30706,
 		durability = {
 			0,
@@ -12711,11 +11152,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_data_strengthen
-
-	var_5_22[30707] = {
+	pg.base.ship_data_strengthen[30707] = {
 		id = 30707,
 		durability = {
 			0,
@@ -12739,11 +11176,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_data_strengthen
-
-	var_5_23[30708] = {
+	pg.base.ship_data_strengthen[30708] = {
 		id = 30708,
 		durability = {
 			0,
@@ -12767,11 +11200,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_data_strengthen
-
-	var_5_24[30709] = {
+	pg.base.ship_data_strengthen[30709] = {
 		id = 30709,
 		durability = {
 			0,
@@ -12795,11 +11224,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_data_strengthen
-
-	var_5_25[30710] = {
+	pg.base.ship_data_strengthen[30710] = {
 		id = 30710,
 		durability = {
 			0,
@@ -12823,11 +11248,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_data_strengthen
-
-	var_5_26[30711] = {
+	pg.base.ship_data_strengthen[30711] = {
 		id = 30711,
 		durability = {
 			0,
@@ -12851,11 +11272,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_data_strengthen
-
-	var_5_27[30712] = {
+	pg.base.ship_data_strengthen[30712] = {
 		id = 30712,
 		durability = {
 			0,
@@ -12879,11 +11296,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_data_strengthen
-
-	var_5_28[30713] = {
+	pg.base.ship_data_strengthen[30713] = {
 		id = 30713,
 		durability = {
 			0,
@@ -12907,11 +11320,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_data_strengthen
-
-	var_5_29[30714] = {
+	pg.base.ship_data_strengthen[30714] = {
 		id = 30714,
 		durability = {
 			0,
@@ -12935,11 +11344,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_data_strengthen
-
-	var_5_30[30715] = {
+	pg.base.ship_data_strengthen[30715] = {
 		id = 30715,
 		durability = {
 			0,
@@ -12963,11 +11368,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_data_strengthen
-
-	var_5_31[30716] = {
+	pg.base.ship_data_strengthen[30716] = {
 		id = 30716,
 		durability = {
 			0,
@@ -12991,11 +11392,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_data_strengthen
-
-	var_5_32[30717] = {
+	pg.base.ship_data_strengthen[30717] = {
 		id = 30717,
 		durability = {
 			0,
@@ -13019,11 +11416,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_data_strengthen
-
-	var_5_33[30801] = {
+	pg.base.ship_data_strengthen[30801] = {
 		id = 30801,
 		durability = {
 			11,
@@ -13047,11 +11440,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_data_strengthen
-
-	var_5_34[30802] = {
+	pg.base.ship_data_strengthen[30802] = {
 		id = 30802,
 		durability = {
 			11,
@@ -13075,11 +11464,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.ship_data_strengthen
-
-	var_5_35[30803] = {
+	pg.base.ship_data_strengthen[30803] = {
 		id = 30803,
 		durability = {
 			11,
@@ -13103,11 +11488,7 @@ end)()
 			6
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.ship_data_strengthen
-
-	var_5_36[30804] = {
+	pg.base.ship_data_strengthen[30804] = {
 		id = 30804,
 		durability = {
 			12,
@@ -13131,11 +11512,7 @@ end)()
 			5
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.ship_data_strengthen
-
-	var_5_37[30805] = {
+	pg.base.ship_data_strengthen[30805] = {
 		id = 30805,
 		durability = {
 			11,
@@ -13159,11 +11536,7 @@ end)()
 			4
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.ship_data_strengthen
-
-	var_5_38[30806] = {
+	pg.base.ship_data_strengthen[30806] = {
 		id = 30806,
 		durability = {
 			12,
@@ -13187,11 +11560,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.ship_data_strengthen
-
-	var_5_39[31001] = {
+	pg.base.ship_data_strengthen[31001] = {
 		id = 31001,
 		durability = {
 			73,
@@ -13215,11 +11584,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.ship_data_strengthen
-
-	var_5_40[31002] = {
+	pg.base.ship_data_strengthen[31002] = {
 		id = 31002,
 		durability = {
 			73,
@@ -13243,11 +11608,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.ship_data_strengthen
-
-	var_5_41[31003] = {
+	pg.base.ship_data_strengthen[31003] = {
 		id = 31003,
 		durability = {
 			75,
@@ -13271,11 +11632,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.ship_data_strengthen
-
-	var_5_42[31004] = {
+	pg.base.ship_data_strengthen[31004] = {
 		id = 31004,
 		durability = {
 			75,
@@ -13299,11 +11656,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.ship_data_strengthen
-
-	var_5_43[31201] = {
+	pg.base.ship_data_strengthen[31201] = {
 		id = 31201,
 		durability = {
 			8,
@@ -13327,11 +11680,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.ship_data_strengthen
-
-	var_5_44[31701] = {
+	pg.base.ship_data_strengthen[31701] = {
 		id = 31701,
 		durability = {
 			9,
@@ -13355,11 +11704,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.ship_data_strengthen
-
-	var_5_45[31702] = {
+	pg.base.ship_data_strengthen[31702] = {
 		id = 31702,
 		durability = {
 			10,
@@ -13383,11 +11728,7 @@ end)()
 			8
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.ship_data_strengthen
-
-	var_5_46[31901] = {
+	pg.base.ship_data_strengthen[31901] = {
 		id = 31901,
 		durability = {
 			13,
@@ -13411,11 +11752,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.ship_data_strengthen
-
-	var_5_47[40001] = {
+	pg.base.ship_data_strengthen[40001] = {
 		id = 40001,
 		durability = {
 			68,
@@ -13439,11 +11776,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.ship_data_strengthen
-
-	var_5_48[40002] = {
+	pg.base.ship_data_strengthen[40002] = {
 		id = 40002,
 		durability = {
 			68,
@@ -13467,11 +11800,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.ship_data_strengthen
-
-	var_5_49[40101] = {
+	pg.base.ship_data_strengthen[40101] = {
 		id = 40101,
 		durability = {
 			12,
@@ -13495,11 +11824,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.ship_data_strengthen
-
-	var_5_50[40102] = {
+	pg.base.ship_data_strengthen[40102] = {
 		id = 40102,
 		durability = {
 			15,
@@ -13523,11 +11848,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.ship_data_strengthen
-
-	var_5_51[40109] = {
+	pg.base.ship_data_strengthen[40109] = {
 		id = 40109,
 		durability = {
 			14,
@@ -13551,11 +11872,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.ship_data_strengthen
-
-	var_5_52[40111] = {
+	pg.base.ship_data_strengthen[40111] = {
 		id = 40111,
 		durability = {
 			12,
@@ -13579,11 +11896,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.ship_data_strengthen
-
-	var_5_53[40113] = {
+	pg.base.ship_data_strengthen[40113] = {
 		id = 40113,
 		durability = {
 			15,
@@ -13607,11 +11920,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.ship_data_strengthen
-
-	var_5_54[40114] = {
+	pg.base.ship_data_strengthen[40114] = {
 		id = 40114,
 		durability = {
 			16,
@@ -13635,11 +11944,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.ship_data_strengthen
-
-	var_5_55[40115] = {
+	pg.base.ship_data_strengthen[40115] = {
 		id = 40115,
 		durability = {
 			15,
@@ -13663,11 +11968,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.ship_data_strengthen
-
-	var_5_56[40116] = {
+	pg.base.ship_data_strengthen[40116] = {
 		id = 40116,
 		durability = {
 			12,
@@ -13691,11 +11992,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.ship_data_strengthen
-
-	var_5_57[40118] = {
+	pg.base.ship_data_strengthen[40118] = {
 		id = 40118,
 		durability = {
 			12,
@@ -13719,11 +12016,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.ship_data_strengthen
-
-	var_5_58[40119] = {
+	pg.base.ship_data_strengthen[40119] = {
 		id = 40119,
 		durability = {
 			12,
@@ -13747,11 +12040,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.ship_data_strengthen
-
-	var_5_59[40120] = {
+	pg.base.ship_data_strengthen[40120] = {
 		id = 40120,
 		durability = {
 			12,
@@ -13775,11 +12064,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.ship_data_strengthen
-
-	var_5_60[40121] = {
+	pg.base.ship_data_strengthen[40121] = {
 		id = 40121,
 		durability = {
 			12,
@@ -13803,11 +12088,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.ship_data_strengthen
-
-	var_5_61[40123] = {
+	pg.base.ship_data_strengthen[40123] = {
 		id = 40123,
 		durability = {
 			22,
@@ -13831,11 +12112,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.ship_data_strengthen
-
-	var_5_62[40124] = {
+	pg.base.ship_data_strengthen[40124] = {
 		id = 40124,
 		durability = {
 			22,
@@ -13859,11 +12136,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.ship_data_strengthen
-
-	var_5_63[40125] = {
+	pg.base.ship_data_strengthen[40125] = {
 		id = 40125,
 		durability = {
 			22,
@@ -13887,11 +12160,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.ship_data_strengthen
-
-	var_5_64[40126] = {
+	pg.base.ship_data_strengthen[40126] = {
 		id = 40126,
 		durability = {
 			22,
@@ -13915,11 +12184,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.ship_data_strengthen
-
-	var_5_65[40128] = {
+	pg.base.ship_data_strengthen[40128] = {
 		id = 40128,
 		durability = {
 			14,
@@ -13943,11 +12208,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.ship_data_strengthen
-
-	var_5_66[40135] = {
+	pg.base.ship_data_strengthen[40135] = {
 		id = 40135,
 		durability = {
 			15,
@@ -13971,11 +12232,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.ship_data_strengthen
-
-	var_5_67[40136] = {
+	pg.base.ship_data_strengthen[40136] = {
 		id = 40136,
 		durability = {
 			15,
@@ -13999,11 +12256,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.ship_data_strengthen
-
-	var_5_68[40143] = {
+	pg.base.ship_data_strengthen[40143] = {
 		id = 40143,
 		durability = {
 			16,
@@ -14027,11 +12280,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.ship_data_strengthen
-
-	var_5_69[40146] = {
+	pg.base.ship_data_strengthen[40146] = {
 		id = 40146,
 		durability = {
 			16,
@@ -14055,11 +12304,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.ship_data_strengthen
-
-	var_5_70[40147] = {
+	pg.base.ship_data_strengthen[40147] = {
 		id = 40147,
 		durability = {
 			17,
@@ -14083,11 +12328,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.ship_data_strengthen
-
-	var_5_71[40152] = {
+	pg.base.ship_data_strengthen[40152] = {
 		id = 40152,
 		durability = {
 			22,
@@ -14111,11 +12352,7 @@ end)()
 			16
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.ship_data_strengthen
-
-	var_5_72[7] = {
+	pg.base.ship_data_strengthen[7] = {
 		id = 40199,
 		durability = {
 			23,
@@ -14139,11 +12376,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.ship_data_strengthen
-
-	var_5_73[9] = {
+	pg.base.ship_data_strengthen[9] = {
 		id = 40201,
 		durability = {
 			28,
@@ -14167,11 +12400,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.ship_data_strengthen
-
-	var_5_74[10] = {
+	pg.base.ship_data_strengthen[10] = {
 		id = 40202,
 		durability = {
 			28,
@@ -14195,11 +12424,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.ship_data_strengthen
-
-	var_5_75[11] = {
+	pg.base.ship_data_strengthen[11] = {
 		id = 40203,
 		durability = {
 			28,
@@ -14223,11 +12448,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.ship_data_strengthen
-
-	var_5_76[21] = {
+	pg.base.ship_data_strengthen[21] = {
 		id = 40213,
 		durability = {
 			28,
@@ -14251,11 +12472,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.ship_data_strengthen
-
-	var_5_77[12] = {
+	pg.base.ship_data_strengthen[12] = {
 		id = 40204,
 		durability = {
 			27,
@@ -14279,11 +12496,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.ship_data_strengthen
-
-	var_5_78[13] = {
+	pg.base.ship_data_strengthen[13] = {
 		id = 40205,
 		durability = {
 			32,
@@ -14307,11 +12520,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.ship_data_strengthen
-
-	var_5_79[14] = {
+	pg.base.ship_data_strengthen[14] = {
 		id = 40206,
 		durability = {
 			34,
@@ -14335,11 +12544,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.ship_data_strengthen
-
-	var_5_80[15] = {
+	pg.base.ship_data_strengthen[15] = {
 		id = 40207,
 		durability = {
 			29,
@@ -14363,11 +12568,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.ship_data_strengthen
-
-	var_5_81[16] = {
+	pg.base.ship_data_strengthen[16] = {
 		id = 40208,
 		durability = {
 			23,
@@ -14391,11 +12592,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.ship_data_strengthen
-
-	var_5_82[18] = {
+	pg.base.ship_data_strengthen[18] = {
 		id = 40210,
 		durability = {
 			31,
@@ -14419,11 +12616,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.ship_data_strengthen
-
-	var_5_83[19] = {
+	pg.base.ship_data_strengthen[19] = {
 		id = 40211,
 		durability = {
 			33,
@@ -14447,11 +12640,7 @@ end)()
 			14
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.ship_data_strengthen
-
-	var_5_84[40301] = {
+	pg.base.ship_data_strengthen[40301] = {
 		id = 40301,
 		durability = {
 			46,
@@ -14475,11 +12664,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.ship_data_strengthen
-
-	var_5_85[40302] = {
+	pg.base.ship_data_strengthen[40302] = {
 		id = 40302,
 		durability = {
 			53,
@@ -14503,11 +12688,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.ship_data_strengthen
-
-	var_5_86[40303] = {
+	pg.base.ship_data_strengthen[40303] = {
 		id = 40303,
 		durability = {
 			36,
@@ -14531,11 +12712,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.ship_data_strengthen
-
-	var_5_87[40304] = {
+	pg.base.ship_data_strengthen[40304] = {
 		id = 40304,
 		durability = {
 			56,
@@ -14559,11 +12736,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.ship_data_strengthen
-
-	var_5_88[40305] = {
+	pg.base.ship_data_strengthen[40305] = {
 		id = 40305,
 		durability = {
 			56,
@@ -14587,11 +12760,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.ship_data_strengthen
-
-	var_5_89[40307] = {
+	pg.base.ship_data_strengthen[40307] = {
 		id = 40307,
 		durability = {
 			46,
@@ -14615,11 +12784,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.ship_data_strengthen
-
-	var_5_90[40308] = {
+	pg.base.ship_data_strengthen[40308] = {
 		id = 40308,
 		durability = {
 			52,
@@ -14643,11 +12808,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.ship_data_strengthen
-
-	var_5_91[40309] = {
+	pg.base.ship_data_strengthen[40309] = {
 		id = 40309,
 		durability = {
 			57,
@@ -14671,11 +12832,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.ship_data_strengthen
-
-	var_5_92[40310] = {
+	pg.base.ship_data_strengthen[40310] = {
 		id = 40310,
 		durability = {
 			55,
@@ -14699,11 +12856,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.ship_data_strengthen
-
-	var_5_93[40311] = {
+	pg.base.ship_data_strengthen[40311] = {
 		id = 40311,
 		durability = {
 			42,
@@ -14727,11 +12880,11 @@ end)()
 			12
 		}
 	}
-	pg = var_5_93
 
-	local var_5_94 = var_5_93.base.ship_data_strengthen
-
-	var_5_94[40312] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[40312] = {
 		id = 40312,
 		durability = {
 			41,
@@ -14755,11 +12908,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.ship_data_strengthen
-
-	var_5_95[40313] = {
+	pg.base.ship_data_strengthen[40313] = {
 		id = 40313,
 		durability = {
 			55,
@@ -14783,11 +12932,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.ship_data_strengthen
-
-	var_5_96[40314] = {
+	pg.base.ship_data_strengthen[40314] = {
 		id = 40314,
 		durability = {
 			55,
@@ -14811,11 +12956,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.ship_data_strengthen
-
-	var_5_97[40315] = {
+	pg.base.ship_data_strengthen[40315] = {
 		id = 40315,
 		durability = {
 			52,
@@ -14839,11 +12980,7 @@ end)()
 			13
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.ship_data_strengthen
-
-	var_5_98[40316] = {
+	pg.base.ship_data_strengthen[40316] = {
 		id = 40316,
 		durability = {
 			39,
@@ -14867,8 +13004,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.ship_data_strengthen[40317] = {
+	pg.base.ship_data_strengthen[40317] = {
 		id = 40317,
 		durability = {
 			57,
@@ -14892,15 +13028,7 @@ end)()
 			13
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.ship_data_strengthen
-
-	var_6_0[40399] = {
+	pg.base.ship_data_strengthen[40399] = {
 		id = 40399,
 		durability = {
 			46,
@@ -14924,11 +13052,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.ship_data_strengthen
-
-	var_6_1[40401] = {
+	pg.base.ship_data_strengthen[40401] = {
 		id = 40401,
 		durability = {
 			68,
@@ -14952,11 +13076,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.ship_data_strengthen
-
-	var_6_2[40402] = {
+	pg.base.ship_data_strengthen[40402] = {
 		id = 40402,
 		durability = {
 			68,
@@ -14980,11 +13100,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.ship_data_strengthen
-
-	var_6_3[40403] = {
+	pg.base.ship_data_strengthen[40403] = {
 		id = 40403,
 		durability = {
 			72,
@@ -15008,11 +13124,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.ship_data_strengthen
-
-	var_6_4[40404] = {
+	pg.base.ship_data_strengthen[40404] = {
 		id = 40404,
 		durability = {
 			73,
@@ -15036,11 +13148,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.ship_data_strengthen
-
-	var_6_5[40405] = {
+	pg.base.ship_data_strengthen[40405] = {
 		id = 40405,
 		durability = {
 			70,
@@ -15064,11 +13172,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.ship_data_strengthen
-
-	var_6_6[40406] = {
+	pg.base.ship_data_strengthen[40406] = {
 		id = 40406,
 		durability = {
 			71,
@@ -15092,11 +13196,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.ship_data_strengthen
-
-	var_6_7[40407] = {
+	pg.base.ship_data_strengthen[40407] = {
 		id = 40407,
 		durability = {
 			69,
@@ -15120,11 +13220,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.ship_data_strengthen
-
-	var_6_8[40501] = {
+	pg.base.ship_data_strengthen[40501] = {
 		id = 40501,
 		durability = {
 			81,
@@ -15148,11 +13244,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.ship_data_strengthen
-
-	var_6_9[40502] = {
+	pg.base.ship_data_strengthen[40502] = {
 		id = 40502,
 		durability = {
 			81,
@@ -15176,11 +13268,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.ship_data_strengthen
-
-	var_6_10[40503] = {
+	pg.base.ship_data_strengthen[40503] = {
 		id = 40503,
 		durability = {
 			85,
@@ -15204,11 +13292,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.ship_data_strengthen
-
-	var_6_11[40504] = {
+	pg.base.ship_data_strengthen[40504] = {
 		id = 40504,
 		durability = {
 			75,
@@ -15232,11 +13316,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.ship_data_strengthen
-
-	var_6_12[40505] = {
+	pg.base.ship_data_strengthen[40505] = {
 		id = 40505,
 		durability = {
 			84,
@@ -15260,11 +13340,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.ship_data_strengthen
-
-	var_6_13[40506] = {
+	pg.base.ship_data_strengthen[40506] = {
 		id = 40506,
 		durability = {
 			78,
@@ -15288,11 +13364,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.ship_data_strengthen
-
-	var_6_14[40507] = {
+	pg.base.ship_data_strengthen[40507] = {
 		id = 40507,
 		durability = {
 			90,
@@ -15316,11 +13388,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.ship_data_strengthen
-
-	var_6_15[25] = {
+	pg.base.ship_data_strengthen[25] = {
 		id = 40601,
 		durability = {
 			0,
@@ -15344,11 +13412,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.ship_data_strengthen
-
-	var_6_16[26] = {
+	pg.base.ship_data_strengthen[26] = {
 		id = 40602,
 		durability = {
 			0,
@@ -15372,11 +13436,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.ship_data_strengthen
-
-	var_6_17[27] = {
+	pg.base.ship_data_strengthen[27] = {
 		id = 40603,
 		durability = {
 			0,
@@ -15400,11 +13460,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.ship_data_strengthen
-
-	var_6_18[40701] = {
+	pg.base.ship_data_strengthen[40701] = {
 		id = 40701,
 		durability = {
 			0,
@@ -15428,11 +13484,7 @@ end)()
 			9
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.ship_data_strengthen
-
-	var_6_19[40702] = {
+	pg.base.ship_data_strengthen[40702] = {
 		id = 40702,
 		durability = {
 			32,
@@ -15456,11 +13508,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.ship_data_strengthen
-
-	var_6_20[40703] = {
+	pg.base.ship_data_strengthen[40703] = {
 		id = 40703,
 		durability = {
 			0,
@@ -15484,11 +13532,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.ship_data_strengthen
-
-	var_6_21[0] = {
+	pg.base.ship_data_strengthen[0] = {
 		id = 40704,
 		durability = {
 			40,
@@ -15512,11 +13556,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.ship_data_strengthen
-
-	var_6_22[40801] = {
+	pg.base.ship_data_strengthen[40801] = {
 		id = 40801,
 		durability = {
 			9,
@@ -15540,11 +13580,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.ship_data_strengthen
-
-	var_6_23[40802] = {
+	pg.base.ship_data_strengthen[40802] = {
 		id = 40802,
 		durability = {
 			9,
@@ -15568,11 +13604,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.ship_data_strengthen
-
-	var_6_24[40803] = {
+	pg.base.ship_data_strengthen[40803] = {
 		id = 40803,
 		durability = {
 			8,
@@ -15596,11 +13628,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.ship_data_strengthen
-
-	var_6_25[40804] = {
+	pg.base.ship_data_strengthen[40804] = {
 		id = 40804,
 		durability = {
 			7,
@@ -15624,11 +13652,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.ship_data_strengthen
-
-	var_6_26[40805] = {
+	pg.base.ship_data_strengthen[40805] = {
 		id = 40805,
 		durability = {
 			8,
@@ -15652,11 +13676,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.ship_data_strengthen
-
-	var_6_27[40806] = {
+	pg.base.ship_data_strengthen[40806] = {
 		id = 40806,
 		durability = {
 			9,
@@ -15680,11 +13700,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.ship_data_strengthen
-
-	var_6_28[40807] = {
+	pg.base.ship_data_strengthen[40807] = {
 		id = 40807,
 		durability = {
 			8,
@@ -15708,11 +13724,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.ship_data_strengthen
-
-	var_6_29[40808] = {
+	pg.base.ship_data_strengthen[40808] = {
 		id = 40808,
 		durability = {
 			9,
@@ -15736,11 +13748,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.ship_data_strengthen
-
-	var_6_30[40809] = {
+	pg.base.ship_data_strengthen[40809] = {
 		id = 40809,
 		durability = {
 			10,
@@ -15764,11 +13772,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.ship_data_strengthen
-
-	var_6_31[40810] = {
+	pg.base.ship_data_strengthen[40810] = {
 		id = 40810,
 		durability = {
 			8,
@@ -15792,11 +13796,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.ship_data_strengthen
-
-	var_6_32[40811] = {
+	pg.base.ship_data_strengthen[40811] = {
 		id = 40811,
 		durability = {
 			8,
@@ -15820,11 +13820,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.ship_data_strengthen
-
-	var_6_33[40812] = {
+	pg.base.ship_data_strengthen[40812] = {
 		id = 40812,
 		durability = {
 			8,
@@ -15848,11 +13844,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.ship_data_strengthen
-
-	var_6_34[40813] = {
+	pg.base.ship_data_strengthen[40813] = {
 		id = 40813,
 		durability = {
 			8,
@@ -15876,11 +13868,7 @@ end)()
 			6
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.ship_data_strengthen
-
-	var_6_35[40814] = {
+	pg.base.ship_data_strengthen[40814] = {
 		id = 40814,
 		durability = {
 			11,
@@ -15904,11 +13892,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.ship_data_strengthen
-
-	var_6_36[40815] = {
+	pg.base.ship_data_strengthen[40815] = {
 		id = 40815,
 		durability = {
 			0,
@@ -15932,11 +13916,7 @@ end)()
 			8
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.ship_data_strengthen
-
-	var_6_37[50101] = {
+	pg.base.ship_data_strengthen[50101] = {
 		id = 50101,
 		durability = {
 			24,
@@ -15960,11 +13940,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.ship_data_strengthen
-
-	var_6_38[50102] = {
+	pg.base.ship_data_strengthen[50102] = {
 		id = 50102,
 		durability = {
 			23,
@@ -15988,11 +13964,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.ship_data_strengthen
-
-	var_6_39[50103] = {
+	pg.base.ship_data_strengthen[50103] = {
 		id = 50103,
 		durability = {
 			24,
@@ -16016,11 +13988,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.ship_data_strengthen
-
-	var_6_40[50104] = {
+	pg.base.ship_data_strengthen[50104] = {
 		id = 50104,
 		durability = {
 			23,
@@ -16044,11 +14012,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.ship_data_strengthen
-
-	var_6_41[50105] = {
+	pg.base.ship_data_strengthen[50105] = {
 		id = 50105,
 		durability = {
 			16,
@@ -16072,11 +14036,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.ship_data_strengthen
-
-	var_6_42[50106] = {
+	pg.base.ship_data_strengthen[50106] = {
 		id = 50106,
 		durability = {
 			16,
@@ -16100,11 +14060,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.ship_data_strengthen
-
-	var_6_43[50107] = {
+	pg.base.ship_data_strengthen[50107] = {
 		id = 50107,
 		durability = {
 			18,
@@ -16128,11 +14084,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.ship_data_strengthen
-
-	var_6_44[50108] = {
+	pg.base.ship_data_strengthen[50108] = {
 		id = 50108,
 		durability = {
 			18,
@@ -16156,11 +14108,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.ship_data_strengthen
-
-	var_6_45[50109] = {
+	pg.base.ship_data_strengthen[50109] = {
 		id = 50109,
 		durability = {
 			18,
@@ -16184,11 +14132,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.ship_data_strengthen
-
-	var_6_46[25] = {
+	pg.base.ship_data_strengthen[25] = {
 		id = 50201,
 		durability = {
 			22,
@@ -16212,11 +14156,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.ship_data_strengthen
-
-	var_6_47[50211] = {
+	pg.base.ship_data_strengthen[50211] = {
 		id = 50211,
 		durability = {
 			22,
@@ -16240,11 +14180,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.ship_data_strengthen
-
-	var_6_48[26] = {
+	pg.base.ship_data_strengthen[26] = {
 		id = 50202,
 		durability = {
 			27,
@@ -16268,11 +14204,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.ship_data_strengthen
-
-	var_6_49[27] = {
+	pg.base.ship_data_strengthen[27] = {
 		id = 50203,
 		durability = {
 			27,
@@ -16296,11 +14228,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.ship_data_strengthen
-
-	var_6_50[28] = {
+	pg.base.ship_data_strengthen[28] = {
 		id = 50204,
 		durability = {
 			13,
@@ -16324,11 +14252,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.ship_data_strengthen
-
-	var_6_51[50298] = {
+	pg.base.ship_data_strengthen[50298] = {
 		id = 50298,
 		durability = {
 			13,
@@ -16352,11 +14276,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.ship_data_strengthen
-
-	var_6_52[29] = {
+	pg.base.ship_data_strengthen[29] = {
 		id = 50205,
 		durability = {
 			13,
@@ -16380,11 +14300,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.ship_data_strengthen
-
-	var_6_53[50299] = {
+	pg.base.ship_data_strengthen[50299] = {
 		id = 50299,
 		durability = {
 			13,
@@ -16408,11 +14324,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.ship_data_strengthen
-
-	var_6_54[31] = {
+	pg.base.ship_data_strengthen[31] = {
 		id = 50207,
 		durability = {
 			18,
@@ -16436,11 +14348,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.ship_data_strengthen
-
-	var_6_55[50208] = {
+	pg.base.ship_data_strengthen[50208] = {
 		id = 50208,
 		durability = {
 			17,
@@ -16464,11 +14372,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.ship_data_strengthen
-
-	var_6_56[50209] = {
+	pg.base.ship_data_strengthen[50209] = {
 		id = 50209,
 		durability = {
 			14,
@@ -16492,11 +14396,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.ship_data_strengthen
-
-	var_6_57[50210] = {
+	pg.base.ship_data_strengthen[50210] = {
 		id = 50210,
 		durability = {
 			17,
@@ -16520,11 +14420,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.ship_data_strengthen
-
-	var_6_58[50212] = {
+	pg.base.ship_data_strengthen[50212] = {
 		id = 50212,
 		durability = {
 			17,
@@ -16548,11 +14444,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.ship_data_strengthen
-
-	var_6_59[50301] = {
+	pg.base.ship_data_strengthen[50301] = {
 		id = 50301,
 		durability = {
 			26,
@@ -16576,11 +14468,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.ship_data_strengthen
-
-	var_6_60[50302] = {
+	pg.base.ship_data_strengthen[50302] = {
 		id = 50302,
 		durability = {
 			35,
@@ -16604,11 +14492,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.ship_data_strengthen
-
-	var_6_61[50401] = {
+	pg.base.ship_data_strengthen[50401] = {
 		id = 50401,
 		durability = {
 			66,
@@ -16632,11 +14516,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.ship_data_strengthen
-
-	var_6_62[50601] = {
+	pg.base.ship_data_strengthen[50601] = {
 		id = 50601,
 		durability = {
 			28,
@@ -16660,11 +14540,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.ship_data_strengthen
-
-	var_6_63[50611] = {
+	pg.base.ship_data_strengthen[50611] = {
 		id = 50611,
 		durability = {
 			28,
@@ -16688,11 +14564,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.ship_data_strengthen
-
-	var_6_64[50602] = {
+	pg.base.ship_data_strengthen[50602] = {
 		id = 50602,
 		durability = {
 			0,
@@ -16716,11 +14588,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.ship_data_strengthen
-
-	var_6_65[51901] = {
+	pg.base.ship_data_strengthen[51901] = {
 		id = 51901,
 		durability = {
 			0,
@@ -16744,11 +14612,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.ship_data_strengthen
-
-	var_6_66[52001] = {
+	pg.base.ship_data_strengthen[52001] = {
 		id = 52001,
 		durability = {
 			24,
@@ -16772,11 +14636,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.ship_data_strengthen
-
-	var_6_67[52002] = {
+	pg.base.ship_data_strengthen[52002] = {
 		id = 52002,
 		durability = {
 			23,
@@ -16800,11 +14660,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.ship_data_strengthen
-
-	var_6_68[52003] = {
+	pg.base.ship_data_strengthen[52003] = {
 		id = 52003,
 		durability = {
 			24,
@@ -16828,11 +14684,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.ship_data_strengthen
-
-	var_6_69[52004] = {
+	pg.base.ship_data_strengthen[52004] = {
 		id = 52004,
 		durability = {
 			23,
@@ -16856,11 +14708,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.ship_data_strengthen
-
-	var_6_70[5] = {
+	pg.base.ship_data_strengthen[5] = {
 		id = 52101,
 		durability = {
 			24,
@@ -16884,11 +14732,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.ship_data_strengthen
-
-	var_6_71[6] = {
+	pg.base.ship_data_strengthen[6] = {
 		id = 52102,
 		durability = {
 			23,
@@ -16912,11 +14756,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.ship_data_strengthen
-
-	var_6_72[7] = {
+	pg.base.ship_data_strengthen[7] = {
 		id = 52103,
 		durability = {
 			24,
@@ -16940,11 +14780,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.ship_data_strengthen
-
-	var_6_73[8] = {
+	pg.base.ship_data_strengthen[8] = {
 		id = 52104,
 		durability = {
 			23,
@@ -16968,11 +14804,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.ship_data_strengthen
-
-	var_6_74[60102] = {
+	pg.base.ship_data_strengthen[60102] = {
 		id = 60102,
 		durability = {
 			23,
@@ -16996,11 +14828,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.ship_data_strengthen
-
-	var_6_75[60103] = {
+	pg.base.ship_data_strengthen[60103] = {
 		id = 60103,
 		durability = {
 			21,
@@ -17024,11 +14852,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.ship_data_strengthen
-
-	var_6_76[60104] = {
+	pg.base.ship_data_strengthen[60104] = {
 		id = 60104,
 		durability = {
 			20,
@@ -17052,11 +14876,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.ship_data_strengthen
-
-	var_6_77[60105] = {
+	pg.base.ship_data_strengthen[60105] = {
 		id = 60105,
 		durability = {
 			21,
@@ -17080,11 +14900,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.ship_data_strengthen
-
-	var_6_78[60106] = {
+	pg.base.ship_data_strengthen[60106] = {
 		id = 60106,
 		durability = {
 			21,
@@ -17108,11 +14924,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.ship_data_strengthen
-
-	var_6_79[60107] = {
+	pg.base.ship_data_strengthen[60107] = {
 		id = 60107,
 		durability = {
 			20,
@@ -17136,11 +14948,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.ship_data_strengthen
-
-	var_6_80[60108] = {
+	pg.base.ship_data_strengthen[60108] = {
 		id = 60108,
 		durability = {
 			21,
@@ -17164,11 +14972,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.ship_data_strengthen
-
-	var_6_81[60109] = {
+	pg.base.ship_data_strengthen[60109] = {
 		id = 60109,
 		durability = {
 			22,
@@ -17192,11 +14996,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.ship_data_strengthen
-
-	var_6_82[60110] = {
+	pg.base.ship_data_strengthen[60110] = {
 		id = 60110,
 		durability = {
 			23,
@@ -17220,11 +15020,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.ship_data_strengthen
-
-	var_6_83[60111] = {
+	pg.base.ship_data_strengthen[60111] = {
 		id = 60111,
 		durability = {
 			21,
@@ -17248,11 +15044,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.ship_data_strengthen
-
-	var_6_84[60112] = {
+	pg.base.ship_data_strengthen[60112] = {
 		id = 60112,
 		durability = {
 			21,
@@ -17276,11 +15068,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.ship_data_strengthen
-
-	var_6_85[60201] = {
+	pg.base.ship_data_strengthen[60201] = {
 		id = 60201,
 		durability = {
 			29,
@@ -17304,11 +15092,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.ship_data_strengthen
-
-	var_6_86[60202] = {
+	pg.base.ship_data_strengthen[60202] = {
 		id = 60202,
 		durability = {
 			33,
@@ -17332,11 +15116,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.ship_data_strengthen
-
-	var_6_87[60203] = {
+	pg.base.ship_data_strengthen[60203] = {
 		id = 60203,
 		durability = {
 			28,
@@ -17360,11 +15140,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.ship_data_strengthen
-
-	var_6_88[60204] = {
+	pg.base.ship_data_strengthen[60204] = {
 		id = 60204,
 		durability = {
 			30,
@@ -17388,11 +15164,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.ship_data_strengthen
-
-	var_6_89[13] = {
+	pg.base.ship_data_strengthen[13] = {
 		id = 60301,
 		durability = {
 			42,
@@ -17416,11 +15188,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.ship_data_strengthen
-
-	var_6_90[14] = {
+	pg.base.ship_data_strengthen[14] = {
 		id = 60302,
 		durability = {
 			46,
@@ -17444,11 +15212,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.ship_data_strengthen
-
-	var_6_91[15] = {
+	pg.base.ship_data_strengthen[15] = {
 		id = 60303,
 		durability = {
 			46,
@@ -17472,11 +15236,7 @@ end)()
 			13
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.ship_data_strengthen
-
-	var_6_92[16] = {
+	pg.base.ship_data_strengthen[16] = {
 		id = 60304,
 		durability = {
 			44,
@@ -17500,11 +15260,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.ship_data_strengthen
-
-	var_6_93[17] = {
+	pg.base.ship_data_strengthen[17] = {
 		id = 60305,
 		durability = {
 			42,
@@ -17528,11 +15284,11 @@ end)()
 			12
 		}
 	}
-	pg = var_6_93
 
-	local var_6_94 = var_6_93.base.ship_data_strengthen
-
-	var_6_94[18] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[18] = {
 		id = 60306,
 		durability = {
 			46,
@@ -17556,11 +15312,7 @@ end)()
 			12
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.ship_data_strengthen
-
-	var_6_95[60501] = {
+	pg.base.ship_data_strengthen[60501] = {
 		id = 60501,
 		durability = {
 			81,
@@ -17584,11 +15336,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.ship_data_strengthen
-
-	var_6_96[60502] = {
+	pg.base.ship_data_strengthen[60502] = {
 		id = 60502,
 		durability = {
 			80,
@@ -17612,11 +15360,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.ship_data_strengthen
-
-	var_6_97[60503] = {
+	pg.base.ship_data_strengthen[60503] = {
 		id = 60503,
 		durability = {
 			81,
@@ -17640,11 +15384,7 @@ end)()
 			11
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.ship_data_strengthen
-
-	var_6_98[60505] = {
+	pg.base.ship_data_strengthen[60505] = {
 		id = 60505,
 		durability = {
 			64,
@@ -17668,8 +15408,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.ship_data_strengthen[60506] = {
+	pg.base.ship_data_strengthen[60506] = {
 		id = 60506,
 		durability = {
 			66,
@@ -17693,15 +15432,7 @@ end)()
 			10
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.ship_data_strengthen
-
-	var_7_0[60507] = {
+	pg.base.ship_data_strengthen[60507] = {
 		id = 60507,
 		durability = {
 			69,
@@ -17725,11 +15456,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.ship_data_strengthen
-
-	var_7_1[60508] = {
+	pg.base.ship_data_strengthen[60508] = {
 		id = 60508,
 		durability = {
 			87,
@@ -17753,11 +15480,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.ship_data_strengthen
-
-	var_7_2[60509] = {
+	pg.base.ship_data_strengthen[60509] = {
 		id = 60509,
 		durability = {
 			81,
@@ -17781,11 +15504,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.ship_data_strengthen
-
-	var_7_3[29] = {
+	pg.base.ship_data_strengthen[29] = {
 		id = 60701,
 		durability = {
 			0,
@@ -17809,11 +15528,7 @@ end)()
 			9
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.ship_data_strengthen
-
-	var_7_4[30] = {
+	pg.base.ship_data_strengthen[30] = {
 		id = 60702,
 		durability = {
 			0,
@@ -17837,11 +15552,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.ship_data_strengthen
-
-	var_7_5[1] = {
+	pg.base.ship_data_strengthen[1] = {
 		id = 60801,
 		durability = {
 			7,
@@ -17865,11 +15576,7 @@ end)()
 			6
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.ship_data_strengthen
-
-	var_7_6[2] = {
+	pg.base.ship_data_strengthen[2] = {
 		id = 60802,
 		durability = {
 			9,
@@ -17893,11 +15600,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.ship_data_strengthen
-
-	var_7_7[3] = {
+	pg.base.ship_data_strengthen[3] = {
 		id = 60803,
 		durability = {
 			8,
@@ -17921,11 +15624,7 @@ end)()
 			7
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.ship_data_strengthen
-
-	var_7_8[70102] = {
+	pg.base.ship_data_strengthen[70102] = {
 		id = 70102,
 		durability = {
 			23,
@@ -17949,11 +15648,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.ship_data_strengthen
-
-	var_7_9[70103] = {
+	pg.base.ship_data_strengthen[70103] = {
 		id = 70103,
 		durability = {
 			26,
@@ -17977,11 +15672,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.ship_data_strengthen
-
-	var_7_10[70104] = {
+	pg.base.ship_data_strengthen[70104] = {
 		id = 70104,
 		durability = {
 			33,
@@ -18005,11 +15696,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.ship_data_strengthen
-
-	var_7_11[70105] = {
+	pg.base.ship_data_strengthen[70105] = {
 		id = 70105,
 		durability = {
 			27,
@@ -18033,11 +15720,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.ship_data_strengthen
-
-	var_7_12[70106] = {
+	pg.base.ship_data_strengthen[70106] = {
 		id = 70106,
 		durability = {
 			24,
@@ -18061,11 +15744,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.ship_data_strengthen
-
-	var_7_13[70107] = {
+	pg.base.ship_data_strengthen[70107] = {
 		id = 70107,
 		durability = {
 			26,
@@ -18089,11 +15768,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.ship_data_strengthen
-
-	var_7_14[70108] = {
+	pg.base.ship_data_strengthen[70108] = {
 		id = 70108,
 		durability = {
 			24,
@@ -18117,11 +15792,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.ship_data_strengthen
-
-	var_7_15[70109] = {
+	pg.base.ship_data_strengthen[70109] = {
 		id = 70109,
 		durability = {
 			25,
@@ -18145,11 +15816,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.ship_data_strengthen
-
-	var_7_16[70110] = {
+	pg.base.ship_data_strengthen[70110] = {
 		id = 70110,
 		durability = {
 			31,
@@ -18173,11 +15840,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.ship_data_strengthen
-
-	var_7_17[70111] = {
+	pg.base.ship_data_strengthen[70111] = {
 		id = 70111,
 		durability = {
 			27,
@@ -18201,11 +15864,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.ship_data_strengthen
-
-	var_7_18[70112] = {
+	pg.base.ship_data_strengthen[70112] = {
 		id = 70112,
 		durability = {
 			25,
@@ -18229,11 +15888,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.ship_data_strengthen
-
-	var_7_19[70113] = {
+	pg.base.ship_data_strengthen[70113] = {
 		id = 70113,
 		durability = {
 			27,
@@ -18257,11 +15912,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.ship_data_strengthen
-
-	var_7_20[70201] = {
+	pg.base.ship_data_strengthen[70201] = {
 		id = 70201,
 		durability = {
 			19,
@@ -18285,11 +15936,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.ship_data_strengthen
-
-	var_7_21[70202] = {
+	pg.base.ship_data_strengthen[70202] = {
 		id = 70202,
 		durability = {
 			15,
@@ -18313,11 +15960,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.ship_data_strengthen
-
-	var_7_22[70203] = {
+	pg.base.ship_data_strengthen[70203] = {
 		id = 70203,
 		durability = {
 			31,
@@ -18341,11 +15984,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.ship_data_strengthen
-
-	var_7_23[70204] = {
+	pg.base.ship_data_strengthen[70204] = {
 		id = 70204,
 		durability = {
 			33,
@@ -18369,11 +16008,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.ship_data_strengthen
-
-	var_7_24[70205] = {
+	pg.base.ship_data_strengthen[70205] = {
 		id = 70205,
 		durability = {
 			32,
@@ -18397,11 +16032,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.ship_data_strengthen
-
-	var_7_25[70206] = {
+	pg.base.ship_data_strengthen[70206] = {
 		id = 70206,
 		durability = {
 			29,
@@ -18425,11 +16056,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.ship_data_strengthen
-
-	var_7_26[70207] = {
+	pg.base.ship_data_strengthen[70207] = {
 		id = 70207,
 		durability = {
 			27,
@@ -18453,11 +16080,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.ship_data_strengthen
-
-	var_7_27[70208] = {
+	pg.base.ship_data_strengthen[70208] = {
 		id = 70208,
 		durability = {
 			15,
@@ -18481,11 +16104,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.ship_data_strengthen
-
-	var_7_28[70209] = {
+	pg.base.ship_data_strengthen[70209] = {
 		id = 70209,
 		durability = {
 			29,
@@ -18509,11 +16128,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.ship_data_strengthen
-
-	var_7_29[70210] = {
+	pg.base.ship_data_strengthen[70210] = {
 		id = 70210,
 		durability = {
 			23,
@@ -18537,11 +16152,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.ship_data_strengthen
-
-	var_7_30[70212] = {
+	pg.base.ship_data_strengthen[70212] = {
 		id = 70212,
 		durability = {
 			15,
@@ -18565,11 +16176,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.ship_data_strengthen
-
-	var_7_31[29] = {
+	pg.base.ship_data_strengthen[29] = {
 		id = 70301,
 		durability = {
 			48,
@@ -18593,11 +16200,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.ship_data_strengthen
-
-	var_7_32[30] = {
+	pg.base.ship_data_strengthen[30] = {
 		id = 70302,
 		durability = {
 			51,
@@ -18621,11 +16224,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.ship_data_strengthen
-
-	var_7_33[31] = {
+	pg.base.ship_data_strengthen[31] = {
 		id = 70303,
 		durability = {
 			53,
@@ -18649,11 +16248,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.ship_data_strengthen
-
-	var_7_34[70501] = {
+	pg.base.ship_data_strengthen[70501] = {
 		id = 70501,
 		durability = {
 			61,
@@ -18677,11 +16272,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.ship_data_strengthen
-
-	var_7_35[70502] = {
+	pg.base.ship_data_strengthen[70502] = {
 		id = 70502,
 		durability = {
 			86,
@@ -18705,11 +16296,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.ship_data_strengthen
-
-	var_7_36[70504] = {
+	pg.base.ship_data_strengthen[70504] = {
 		id = 70504,
 		durability = {
 			81,
@@ -18733,11 +16320,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.ship_data_strengthen
-
-	var_7_37[70505] = {
+	pg.base.ship_data_strengthen[70505] = {
 		id = 70505,
 		durability = {
 			81,
@@ -18761,11 +16344,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.ship_data_strengthen
-
-	var_7_38[70506] = {
+	pg.base.ship_data_strengthen[70506] = {
 		id = 70506,
 		durability = {
 			78,
@@ -18789,11 +16368,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.ship_data_strengthen
-
-	var_7_39[70507] = {
+	pg.base.ship_data_strengthen[70507] = {
 		id = 70507,
 		durability = {
 			61,
@@ -18817,11 +16392,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.ship_data_strengthen
-
-	var_7_40[70508] = {
+	pg.base.ship_data_strengthen[70508] = {
 		id = 70508,
 		durability = {
 			61,
@@ -18845,11 +16416,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.ship_data_strengthen
-
-	var_7_41[70509] = {
+	pg.base.ship_data_strengthen[70509] = {
 		id = 70509,
 		durability = {
 			82,
@@ -18873,11 +16440,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.ship_data_strengthen
-
-	var_7_42[70701] = {
+	pg.base.ship_data_strengthen[70701] = {
 		id = 70701,
 		durability = {
 			0,
@@ -18901,11 +16464,7 @@ end)()
 			9
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.ship_data_strengthen
-
-	var_7_43[71801] = {
+	pg.base.ship_data_strengthen[71801] = {
 		id = 71801,
 		durability = {
 			57,
@@ -18929,11 +16488,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.ship_data_strengthen
-
-	var_7_44[80101] = {
+	pg.base.ship_data_strengthen[80101] = {
 		id = 80101,
 		durability = {
 			24,
@@ -18957,11 +16512,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.ship_data_strengthen
-
-	var_7_45[80102] = {
+	pg.base.ship_data_strengthen[80102] = {
 		id = 80102,
 		durability = {
 			13,
@@ -18985,11 +16536,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.ship_data_strengthen
-
-	var_7_46[80103] = {
+	pg.base.ship_data_strengthen[80103] = {
 		id = 80103,
 		durability = {
 			17,
@@ -19013,11 +16560,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.ship_data_strengthen
-
-	var_7_47[80104] = {
+	pg.base.ship_data_strengthen[80104] = {
 		id = 80104,
 		durability = {
 			19,
@@ -19041,11 +16584,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.ship_data_strengthen
-
-	var_7_48[80105] = {
+	pg.base.ship_data_strengthen[80105] = {
 		id = 80105,
 		durability = {
 			23,
@@ -19069,11 +16608,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.ship_data_strengthen
-
-	var_7_49[80106] = {
+	pg.base.ship_data_strengthen[80106] = {
 		id = 80106,
 		durability = {
 			19,
@@ -19097,11 +16632,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.ship_data_strengthen
-
-	var_7_50[80107] = {
+	pg.base.ship_data_strengthen[80107] = {
 		id = 80107,
 		durability = {
 			26,
@@ -19125,11 +16656,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.ship_data_strengthen
-
-	var_7_51[80108] = {
+	pg.base.ship_data_strengthen[80108] = {
 		id = 80108,
 		durability = {
 			20,
@@ -19153,11 +16680,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.ship_data_strengthen
-
-	var_7_52[80109] = {
+	pg.base.ship_data_strengthen[80109] = {
 		id = 80109,
 		durability = {
 			22,
@@ -19181,11 +16704,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.ship_data_strengthen
-
-	var_7_53[80201] = {
+	pg.base.ship_data_strengthen[80201] = {
 		id = 80201,
 		durability = {
 			29,
@@ -19209,11 +16728,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.ship_data_strengthen
-
-	var_7_54[80202] = {
+	pg.base.ship_data_strengthen[80202] = {
 		id = 80202,
 		durability = {
 			28,
@@ -19237,11 +16752,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.ship_data_strengthen
-
-	var_7_55[80203] = {
+	pg.base.ship_data_strengthen[80203] = {
 		id = 80203,
 		durability = {
 			35,
@@ -19265,11 +16776,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.ship_data_strengthen
-
-	var_7_56[80204] = {
+	pg.base.ship_data_strengthen[80204] = {
 		id = 80204,
 		durability = {
 			33,
@@ -19293,11 +16800,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.ship_data_strengthen
-
-	var_7_57[80301] = {
+	pg.base.ship_data_strengthen[80301] = {
 		id = 80301,
 		durability = {
 			45,
@@ -19321,11 +16824,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.ship_data_strengthen
-
-	var_7_58[80302] = {
+	pg.base.ship_data_strengthen[80302] = {
 		id = 80302,
 		durability = {
 			52,
@@ -19349,11 +16848,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.ship_data_strengthen
-
-	var_7_59[80303] = {
+	pg.base.ship_data_strengthen[80303] = {
 		id = 80303,
 		durability = {
 			47,
@@ -19377,11 +16872,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.ship_data_strengthen
-
-	var_7_60[17] = {
+	pg.base.ship_data_strengthen[17] = {
 		id = 80401,
 		durability = {
 			66,
@@ -19405,11 +16896,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.ship_data_strengthen
-
-	var_7_61[80501] = {
+	pg.base.ship_data_strengthen[80501] = {
 		id = 80501,
 		durability = {
 			85,
@@ -19433,11 +16920,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.ship_data_strengthen
-
-	var_7_62[80502] = {
+	pg.base.ship_data_strengthen[80502] = {
 		id = 80502,
 		durability = {
 			77,
@@ -19461,11 +16944,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.ship_data_strengthen
-
-	var_7_63[80503] = {
+	pg.base.ship_data_strengthen[80503] = {
 		id = 80503,
 		durability = {
 			86,
@@ -19489,11 +16968,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.ship_data_strengthen
-
-	var_7_64[80601] = {
+	pg.base.ship_data_strengthen[80601] = {
 		id = 80601,
 		durability = {
 			0,
@@ -19517,11 +16992,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.ship_data_strengthen
-
-	var_7_65[80602] = {
+	pg.base.ship_data_strengthen[80602] = {
 		id = 80602,
 		durability = {
 			0,
@@ -19545,11 +17016,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.ship_data_strengthen
-
-	var_7_66[80701] = {
+	pg.base.ship_data_strengthen[80701] = {
 		id = 80701,
 		durability = {
 			32,
@@ -19573,11 +17040,7 @@ end)()
 			8
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.ship_data_strengthen
-
-	var_7_67[80702] = {
+	pg.base.ship_data_strengthen[80702] = {
 		id = 80702,
 		durability = {
 			0,
@@ -19601,11 +17064,7 @@ end)()
 			9
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.ship_data_strengthen
-
-	var_7_68[80801] = {
+	pg.base.ship_data_strengthen[80801] = {
 		id = 80801,
 		durability = {
 			25,
@@ -19629,11 +17088,7 @@ end)()
 			5
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.ship_data_strengthen
-
-	var_7_69[9] = {
+	pg.base.ship_data_strengthen[9] = {
 		id = 81801,
 		durability = {
 			52,
@@ -19657,11 +17112,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.ship_data_strengthen
-
-	var_7_70[90101] = {
+	pg.base.ship_data_strengthen[90101] = {
 		id = 90101,
 		durability = {
 			13,
@@ -19685,11 +17136,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.ship_data_strengthen
-
-	var_7_71[90102] = {
+	pg.base.ship_data_strengthen[90102] = {
 		id = 90102,
 		durability = {
 			22,
@@ -19713,11 +17160,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.ship_data_strengthen
-
-	var_7_72[90103] = {
+	pg.base.ship_data_strengthen[90103] = {
 		id = 90103,
 		durability = {
 			21,
@@ -19741,11 +17184,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.ship_data_strengthen
-
-	var_7_73[90104] = {
+	pg.base.ship_data_strengthen[90104] = {
 		id = 90104,
 		durability = {
 			20,
@@ -19769,11 +17208,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.ship_data_strengthen
-
-	var_7_74[90105] = {
+	pg.base.ship_data_strengthen[90105] = {
 		id = 90105,
 		durability = {
 			18,
@@ -19797,11 +17232,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.ship_data_strengthen
-
-	var_7_75[90106] = {
+	pg.base.ship_data_strengthen[90106] = {
 		id = 90106,
 		durability = {
 			19,
@@ -19825,11 +17256,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.ship_data_strengthen
-
-	var_7_76[90107] = {
+	pg.base.ship_data_strengthen[90107] = {
 		id = 90107,
 		durability = {
 			28,
@@ -19853,11 +17280,7 @@ end)()
 			16
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.ship_data_strengthen
-
-	var_7_77[90111] = {
+	pg.base.ship_data_strengthen[90111] = {
 		id = 90111,
 		durability = {
 			25,
@@ -19881,11 +17304,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.ship_data_strengthen
-
-	var_7_78[0] = {
+	pg.base.ship_data_strengthen[0] = {
 		id = 90112,
 		durability = {
 			25,
@@ -19909,11 +17328,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.ship_data_strengthen
-
-	var_7_79[1] = {
+	pg.base.ship_data_strengthen[1] = {
 		id = 90113,
 		durability = {
 			26,
@@ -19937,11 +17352,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.ship_data_strengthen
-
-	var_7_80[2] = {
+	pg.base.ship_data_strengthen[2] = {
 		id = 90114,
 		durability = {
 			28,
@@ -19965,11 +17376,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.ship_data_strengthen
-
-	var_7_81[90201] = {
+	pg.base.ship_data_strengthen[90201] = {
 		id = 90201,
 		durability = {
 			31,
@@ -19993,11 +17400,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.ship_data_strengthen
-
-	var_7_82[90202] = {
+	pg.base.ship_data_strengthen[90202] = {
 		id = 90202,
 		durability = {
 			32,
@@ -20021,11 +17424,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.ship_data_strengthen
-
-	var_7_83[90301] = {
+	pg.base.ship_data_strengthen[90301] = {
 		id = 90301,
 		durability = {
 			43,
@@ -20049,11 +17448,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.ship_data_strengthen
-
-	var_7_84[90302] = {
+	pg.base.ship_data_strengthen[90302] = {
 		id = 90302,
 		durability = {
 			51,
@@ -20077,11 +17472,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.ship_data_strengthen
-
-	var_7_85[90303] = {
+	pg.base.ship_data_strengthen[90303] = {
 		id = 90303,
 		durability = {
 			45,
@@ -20105,11 +17496,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.ship_data_strengthen
-
-	var_7_86[90401] = {
+	pg.base.ship_data_strengthen[90401] = {
 		id = 90401,
 		durability = {
 			67,
@@ -20133,11 +17520,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.ship_data_strengthen
-
-	var_7_87[90402] = {
+	pg.base.ship_data_strengthen[90402] = {
 		id = 90402,
 		durability = {
 			70,
@@ -20161,11 +17544,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.ship_data_strengthen
-
-	var_7_88[5] = {
+	pg.base.ship_data_strengthen[5] = {
 		id = 90501,
 		durability = {
 			79,
@@ -20189,11 +17568,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.ship_data_strengthen
-
-	var_7_89[6] = {
+	pg.base.ship_data_strengthen[6] = {
 		id = 90502,
 		durability = {
 			86,
@@ -20217,11 +17592,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.ship_data_strengthen
-
-	var_7_90[7] = {
+	pg.base.ship_data_strengthen[7] = {
 		id = 90503,
 		durability = {
 			81,
@@ -20245,11 +17616,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.ship_data_strengthen
-
-	var_7_91[90701] = {
+	pg.base.ship_data_strengthen[90701] = {
 		id = 90701,
 		durability = {
 			0,
@@ -20273,11 +17640,7 @@ end)()
 			9
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.ship_data_strengthen
-
-	var_7_92[21] = {
+	pg.base.ship_data_strengthen[21] = {
 		id = 110101,
 		durability = {
 			15,
@@ -20301,11 +17664,7 @@ end)()
 			14
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.ship_data_strengthen
-
-	var_7_93[110201] = {
+	pg.base.ship_data_strengthen[110201] = {
 		id = 110201,
 		durability = {
 			31,
@@ -20329,11 +17688,11 @@ end)()
 			15
 		}
 	}
-	pg = var_7_93
 
-	local var_7_94 = var_7_93.base.ship_data_strengthen
-
-	var_7_94[1] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[1] = {
 		id = 960001,
 		durability = {
 			36,
@@ -20357,11 +17716,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.ship_data_strengthen
-
-	var_7_95[2] = {
+	pg.base.ship_data_strengthen[2] = {
 		id = 960002,
 		durability = {
 			80,
@@ -20385,11 +17740,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.ship_data_strengthen
-
-	var_7_96[3] = {
+	pg.base.ship_data_strengthen[3] = {
 		id = 960003,
 		durability = {
 			32,
@@ -20413,11 +17764,7 @@ end)()
 			12
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.ship_data_strengthen
-
-	var_7_97[4] = {
+	pg.base.ship_data_strengthen[4] = {
 		id = 960004,
 		durability = {
 			34,
@@ -20441,11 +17788,7 @@ end)()
 			11
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.ship_data_strengthen
-
-	var_7_98[5] = {
+	pg.base.ship_data_strengthen[5] = {
 		id = 960005,
 		durability = {
 			34,
@@ -20469,8 +17812,7 @@ end)()
 			13
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.ship_data_strengthen[6] = {
+	pg.base.ship_data_strengthen[6] = {
 		id = 960006,
 		durability = {
 			40,
@@ -20494,15 +17836,7 @@ end)()
 			12
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.ship_data_strengthen
-
-	var_8_0[7] = {
+	pg.base.ship_data_strengthen[7] = {
 		id = 960007,
 		durability = {
 			84,
@@ -20526,11 +17860,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.ship_data_strengthen
-
-	var_8_1[8] = {
+	pg.base.ship_data_strengthen[8] = {
 		id = 960008,
 		durability = {
 			45,
@@ -20554,11 +17884,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.ship_data_strengthen
-
-	var_8_2[9] = {
+	pg.base.ship_data_strengthen[9] = {
 		id = 960009,
 		durability = {
 			35,
@@ -20582,11 +17908,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.ship_data_strengthen
-
-	var_8_3[10] = {
+	pg.base.ship_data_strengthen[10] = {
 		id = 960010,
 		durability = {
 			30,
@@ -20610,11 +17932,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.ship_data_strengthen
-
-	var_8_4[11] = {
+	pg.base.ship_data_strengthen[11] = {
 		id = 960011,
 		durability = {
 			38,
@@ -20638,11 +17956,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.ship_data_strengthen
-
-	var_8_5[12] = {
+	pg.base.ship_data_strengthen[12] = {
 		id = 960012,
 		durability = {
 			86,
@@ -20666,11 +17980,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.ship_data_strengthen
-
-	var_8_6[13] = {
+	pg.base.ship_data_strengthen[13] = {
 		id = 960013,
 		durability = {
 			46,
@@ -20694,11 +18004,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.ship_data_strengthen
-
-	var_8_7[14] = {
+	pg.base.ship_data_strengthen[14] = {
 		id = 960014,
 		durability = {
 			84,
@@ -20722,11 +18028,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.ship_data_strengthen
-
-	var_8_8[15] = {
+	pg.base.ship_data_strengthen[15] = {
 		id = 960015,
 		durability = {
 			30,
@@ -20750,11 +18052,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.ship_data_strengthen
-
-	var_8_9[16] = {
+	pg.base.ship_data_strengthen[16] = {
 		id = 960016,
 		durability = {
 			33,
@@ -20778,11 +18076,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.ship_data_strengthen
-
-	var_8_10[1010001] = {
+	pg.base.ship_data_strengthen[1010001] = {
 		id = 1010001,
 		durability = {
 			28,
@@ -20806,11 +18100,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.ship_data_strengthen
-
-	var_8_11[1010002] = {
+	pg.base.ship_data_strengthen[1010002] = {
 		id = 1010002,
 		durability = {
 			43,
@@ -20834,11 +18124,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.ship_data_strengthen
-
-	var_8_12[1010003] = {
+	pg.base.ship_data_strengthen[1010003] = {
 		id = 1010003,
 		durability = {
 			13,
@@ -20862,11 +18148,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.ship_data_strengthen
-
-	var_8_13[1010004] = {
+	pg.base.ship_data_strengthen[1010004] = {
 		id = 1010004,
 		durability = {
 			0,
@@ -20890,11 +18172,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.ship_data_strengthen
-
-	var_8_14[1010005] = {
+	pg.base.ship_data_strengthen[1010005] = {
 		id = 1010005,
 		durability = {
 			30,
@@ -20918,11 +18196,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.ship_data_strengthen
-
-	var_8_15[1010006] = {
+	pg.base.ship_data_strengthen[1010006] = {
 		id = 1010006,
 		durability = {
 			46,
@@ -20946,11 +18220,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.ship_data_strengthen
-
-	var_8_16[1010007] = {
+	pg.base.ship_data_strengthen[1010007] = {
 		id = 1010007,
 		durability = {
 			14,
@@ -20974,11 +18244,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.ship_data_strengthen
-
-	var_8_17[1010008] = {
+	pg.base.ship_data_strengthen[1010008] = {
 		id = 1010008,
 		durability = {
 			0,
@@ -21002,11 +18268,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.ship_data_strengthen
-
-	var_8_18[1020001] = {
+	pg.base.ship_data_strengthen[1020001] = {
 		id = 1020001,
 		durability = {
 			10,
@@ -21030,11 +18292,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.ship_data_strengthen
-
-	var_8_19[1020002] = {
+	pg.base.ship_data_strengthen[1020002] = {
 		id = 1020002,
 		durability = {
 			7,
@@ -21058,11 +18316,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.ship_data_strengthen
-
-	var_8_20[1030001] = {
+	pg.base.ship_data_strengthen[1030001] = {
 		id = 1030001,
 		durability = {
 			43,
@@ -21086,11 +18340,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.ship_data_strengthen
-
-	var_8_21[1030002] = {
+	pg.base.ship_data_strengthen[1030002] = {
 		id = 1030002,
 		durability = {
 			18,
@@ -21114,11 +18364,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.ship_data_strengthen
-
-	var_8_22[1030003] = {
+	pg.base.ship_data_strengthen[1030003] = {
 		id = 1030003,
 		durability = {
 			28,
@@ -21142,11 +18388,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.ship_data_strengthen
-
-	var_8_23[1030004] = {
+	pg.base.ship_data_strengthen[1030004] = {
 		id = 1030004,
 		durability = {
 			0,
@@ -21170,11 +18412,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.ship_data_strengthen
-
-	var_8_24[1030005] = {
+	pg.base.ship_data_strengthen[1030005] = {
 		id = 1030005,
 		durability = {
 			0,
@@ -21198,11 +18436,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.ship_data_strengthen
-
-	var_8_25[1030006] = {
+	pg.base.ship_data_strengthen[1030006] = {
 		id = 1030006,
 		durability = {
 			0,
@@ -21226,11 +18460,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.ship_data_strengthen
-
-	var_8_26[1] = {
+	pg.base.ship_data_strengthen[1] = {
 		id = 1040001,
 		durability = {
 			14,
@@ -21254,11 +18484,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.ship_data_strengthen
-
-	var_8_27[2] = {
+	pg.base.ship_data_strengthen[2] = {
 		id = 1040002,
 		durability = {
 			47,
@@ -21282,11 +18508,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.ship_data_strengthen
-
-	var_8_28[3] = {
+	pg.base.ship_data_strengthen[3] = {
 		id = 1040003,
 		durability = {
 			0,
@@ -21310,11 +18532,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.ship_data_strengthen
-
-	var_8_29[4] = {
+	pg.base.ship_data_strengthen[4] = {
 		id = 1040004,
 		durability = {
 			77,
@@ -21338,11 +18556,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.ship_data_strengthen
-
-	var_8_30[17] = {
+	pg.base.ship_data_strengthen[17] = {
 		id = 1050001,
 		durability = {
 			14,
@@ -21366,11 +18580,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.ship_data_strengthen
-
-	var_8_31[18] = {
+	pg.base.ship_data_strengthen[18] = {
 		id = 1050002,
 		durability = {
 			0,
@@ -21394,11 +18604,7 @@ end)()
 			9
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.ship_data_strengthen
-
-	var_8_32[19] = {
+	pg.base.ship_data_strengthen[19] = {
 		id = 1050003,
 		durability = {
 			12,
@@ -21422,11 +18628,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.ship_data_strengthen
-
-	var_8_33[20] = {
+	pg.base.ship_data_strengthen[20] = {
 		id = 1050004,
 		durability = {
 			13,
@@ -21450,11 +18652,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.ship_data_strengthen
-
-	var_8_34[21] = {
+	pg.base.ship_data_strengthen[21] = {
 		id = 1050005,
 		durability = {
 			43,
@@ -21478,11 +18676,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.ship_data_strengthen
-
-	var_8_35[22] = {
+	pg.base.ship_data_strengthen[22] = {
 		id = 1050006,
 		durability = {
 			0,
@@ -21506,11 +18700,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.ship_data_strengthen
-
-	var_8_36[23] = {
+	pg.base.ship_data_strengthen[23] = {
 		id = 1050007,
 		durability = {
 			0,
@@ -21534,11 +18724,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.ship_data_strengthen
-
-	var_8_37[1060001] = {
+	pg.base.ship_data_strengthen[1060001] = {
 		id = 1060001,
 		durability = {
 			17,
@@ -21562,11 +18748,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.ship_data_strengthen
-
-	var_8_38[1060002] = {
+	pg.base.ship_data_strengthen[1060002] = {
 		id = 1060002,
 		durability = {
 			76,
@@ -21590,11 +18772,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.ship_data_strengthen
-
-	var_8_39[1060003] = {
+	pg.base.ship_data_strengthen[1060003] = {
 		id = 1060003,
 		durability = {
 			48,
@@ -21618,11 +18796,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.ship_data_strengthen
-
-	var_8_40[1060004] = {
+	pg.base.ship_data_strengthen[1060004] = {
 		id = 1060004,
 		durability = {
 			31,
@@ -21646,11 +18820,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.ship_data_strengthen
-
-	var_8_41[1060005] = {
+	pg.base.ship_data_strengthen[1060005] = {
 		id = 1060005,
 		durability = {
 			72,
@@ -21674,11 +18844,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.ship_data_strengthen
-
-	var_8_42[1060006] = {
+	pg.base.ship_data_strengthen[1060006] = {
 		id = 1060006,
 		durability = {
 			0,
@@ -21702,11 +18868,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.ship_data_strengthen
-
-	var_8_43[1060007] = {
+	pg.base.ship_data_strengthen[1060007] = {
 		id = 1060007,
 		durability = {
 			27,
@@ -21730,11 +18892,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.ship_data_strengthen
-
-	var_8_44[1060008] = {
+	pg.base.ship_data_strengthen[1060008] = {
 		id = 1060008,
 		durability = {
 			0,
@@ -21758,11 +18916,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.ship_data_strengthen
-
-	var_8_45[1060009] = {
+	pg.base.ship_data_strengthen[1060009] = {
 		id = 1060009,
 		durability = {
 			77,
@@ -21786,11 +18940,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.ship_data_strengthen
-
-	var_8_46[1060010] = {
+	pg.base.ship_data_strengthen[1060010] = {
 		id = 1060010,
 		durability = {
 			0,
@@ -21814,11 +18964,7 @@ end)()
 			9
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.ship_data_strengthen
-
-	var_8_47[1060011] = {
+	pg.base.ship_data_strengthen[1060011] = {
 		id = 1060011,
 		durability = {
 			77,
@@ -21842,11 +18988,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.ship_data_strengthen
-
-	var_8_48[1060012] = {
+	pg.base.ship_data_strengthen[1060012] = {
 		id = 1060012,
 		durability = {
 			46,
@@ -21870,11 +19012,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.ship_data_strengthen
-
-	var_8_49[1060013] = {
+	pg.base.ship_data_strengthen[1060013] = {
 		id = 1060013,
 		durability = {
 			18,
@@ -21898,11 +19036,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.ship_data_strengthen
-
-	var_8_50[1060014] = {
+	pg.base.ship_data_strengthen[1060014] = {
 		id = 1060014,
 		durability = {
 			11,
@@ -21926,11 +19060,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.ship_data_strengthen
-
-	var_8_51[1060015] = {
+	pg.base.ship_data_strengthen[1060015] = {
 		id = 1060015,
 		durability = {
 			32,
@@ -21954,11 +19084,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.ship_data_strengthen
-
-	var_8_52[1070001] = {
+	pg.base.ship_data_strengthen[1070001] = {
 		id = 1070001,
 		durability = {
 			30,
@@ -21982,11 +19108,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.ship_data_strengthen
-
-	var_8_53[1070002] = {
+	pg.base.ship_data_strengthen[1070002] = {
 		id = 1070002,
 		durability = {
 			0,
@@ -22010,11 +19132,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.ship_data_strengthen
-
-	var_8_54[1070003] = {
+	pg.base.ship_data_strengthen[1070003] = {
 		id = 1070003,
 		durability = {
 			80,
@@ -22038,11 +19156,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.ship_data_strengthen
-
-	var_8_55[1070004] = {
+	pg.base.ship_data_strengthen[1070004] = {
 		id = 1070004,
 		durability = {
 			44,
@@ -22066,11 +19180,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.ship_data_strengthen
-
-	var_8_56[1070005] = {
+	pg.base.ship_data_strengthen[1070005] = {
 		id = 1070005,
 		durability = {
 			13,
@@ -22094,11 +19204,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.ship_data_strengthen
-
-	var_8_57[1070006] = {
+	pg.base.ship_data_strengthen[1070006] = {
 		id = 1070006,
 		durability = {
 			9,
@@ -22122,11 +19228,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.ship_data_strengthen
-
-	var_8_58[1070007] = {
+	pg.base.ship_data_strengthen[1070007] = {
 		id = 1070007,
 		durability = {
 			9,
@@ -22150,11 +19252,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.ship_data_strengthen
-
-	var_8_59[1080001] = {
+	pg.base.ship_data_strengthen[1080001] = {
 		id = 1080001,
 		durability = {
 			33,
@@ -22178,11 +19276,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.ship_data_strengthen
-
-	var_8_60[1080002] = {
+	pg.base.ship_data_strengthen[1080002] = {
 		id = 1080002,
 		durability = {
 			81,
@@ -22206,11 +19300,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.ship_data_strengthen
-
-	var_8_61[1080003] = {
+	pg.base.ship_data_strengthen[1080003] = {
 		id = 1080003,
 		durability = {
 			26,
@@ -22234,11 +19324,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.ship_data_strengthen
-
-	var_8_62[1080004] = {
+	pg.base.ship_data_strengthen[1080004] = {
 		id = 1080004,
 		durability = {
 			43,
@@ -22262,11 +19348,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.ship_data_strengthen
-
-	var_8_63[1080005] = {
+	pg.base.ship_data_strengthen[1080005] = {
 		id = 1080005,
 		durability = {
 			45,
@@ -22290,11 +19372,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.ship_data_strengthen
-
-	var_8_64[1080006] = {
+	pg.base.ship_data_strengthen[1080006] = {
 		id = 1080006,
 		durability = {
 			0,
@@ -22318,11 +19396,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.ship_data_strengthen
-
-	var_8_65[1080007] = {
+	pg.base.ship_data_strengthen[1080007] = {
 		id = 1080007,
 		durability = {
 			74,
@@ -22346,11 +19420,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.ship_data_strengthen
-
-	var_8_66[1080008] = {
+	pg.base.ship_data_strengthen[1080008] = {
 		id = 1080008,
 		durability = {
 			74,
@@ -22374,11 +19444,7 @@ end)()
 			9
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.ship_data_strengthen
-
-	var_8_67[1080009] = {
+	pg.base.ship_data_strengthen[1080009] = {
 		id = 1080009,
 		durability = {
 			13,
@@ -22402,11 +19468,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.ship_data_strengthen
-
-	var_8_68[1090001] = {
+	pg.base.ship_data_strengthen[1090001] = {
 		id = 1090001,
 		durability = {
 			26,
@@ -22430,11 +19492,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.ship_data_strengthen
-
-	var_8_69[1090002] = {
+	pg.base.ship_data_strengthen[1090002] = {
 		id = 1090002,
 		durability = {
 			0,
@@ -22458,11 +19516,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.ship_data_strengthen
-
-	var_8_70[1090003] = {
+	pg.base.ship_data_strengthen[1090003] = {
 		id = 1090003,
 		durability = {
 			83,
@@ -22486,11 +19540,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.ship_data_strengthen
-
-	var_8_71[1090004] = {
+	pg.base.ship_data_strengthen[1090004] = {
 		id = 1090004,
 		durability = {
 			50,
@@ -22514,11 +19564,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.ship_data_strengthen
-
-	var_8_72[1090005] = {
+	pg.base.ship_data_strengthen[1090005] = {
 		id = 1090005,
 		durability = {
 			0,
@@ -22542,11 +19588,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.ship_data_strengthen
-
-	var_8_73[1090006] = {
+	pg.base.ship_data_strengthen[1090006] = {
 		id = 1090006,
 		durability = {
 			51,
@@ -22570,11 +19612,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.ship_data_strengthen
-
-	var_8_74[1100001] = {
+	pg.base.ship_data_strengthen[1100001] = {
 		id = 1100001,
 		durability = {
 			33,
@@ -22598,11 +19636,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.ship_data_strengthen
-
-	var_8_75[1100002] = {
+	pg.base.ship_data_strengthen[1100002] = {
 		id = 1100002,
 		durability = {
 			50,
@@ -22626,11 +19660,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.ship_data_strengthen
-
-	var_8_76[1100003] = {
+	pg.base.ship_data_strengthen[1100003] = {
 		id = 1100003,
 		durability = {
 			9,
@@ -22654,11 +19684,7 @@ end)()
 			7
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.ship_data_strengthen
-
-	var_8_77[1100004] = {
+	pg.base.ship_data_strengthen[1100004] = {
 		id = 1100004,
 		durability = {
 			0,
@@ -22682,11 +19708,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.ship_data_strengthen
-
-	var_8_78[1100005] = {
+	pg.base.ship_data_strengthen[1100005] = {
 		id = 1100005,
 		durability = {
 			83,
@@ -22710,11 +19732,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.ship_data_strengthen
-
-	var_8_79[1100006] = {
+	pg.base.ship_data_strengthen[1100006] = {
 		id = 1100006,
 		durability = {
 			0,
@@ -22738,11 +19756,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.ship_data_strengthen
-
-	var_8_80[1100007] = {
+	pg.base.ship_data_strengthen[1100007] = {
 		id = 1100007,
 		durability = {
 			42,
@@ -22766,11 +19780,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.ship_data_strengthen
-
-	var_8_81[1110001] = {
+	pg.base.ship_data_strengthen[1110001] = {
 		id = 1110001,
 		durability = {
 			47,
@@ -22794,11 +19804,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.ship_data_strengthen
-
-	var_8_82[1110002] = {
+	pg.base.ship_data_strengthen[1110002] = {
 		id = 1110002,
 		durability = {
 			18,
@@ -22822,11 +19828,7 @@ end)()
 			16
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.ship_data_strengthen
-
-	var_8_83[1110003] = {
+	pg.base.ship_data_strengthen[1110003] = {
 		id = 1110003,
 		durability = {
 			31,
@@ -22850,11 +19852,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.ship_data_strengthen
-
-	var_8_84[1110004] = {
+	pg.base.ship_data_strengthen[1110004] = {
 		id = 1110004,
 		durability = {
 			81,
@@ -22878,11 +19876,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.ship_data_strengthen
-
-	var_8_85[1110005] = {
+	pg.base.ship_data_strengthen[1110005] = {
 		id = 1110005,
 		durability = {
 			64,
@@ -22906,11 +19900,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.ship_data_strengthen
-
-	var_8_86[1110006] = {
+	pg.base.ship_data_strengthen[1110006] = {
 		id = 1110006,
 		durability = {
 			0,
@@ -22934,11 +19924,7 @@ end)()
 			8
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.ship_data_strengthen
-
-	var_8_87[1] = {
+	pg.base.ship_data_strengthen[1] = {
 		id = 1120001,
 		durability = {
 			67,
@@ -22962,11 +19948,7 @@ end)()
 			12
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.ship_data_strengthen
-
-	var_8_88[2] = {
+	pg.base.ship_data_strengthen[2] = {
 		id = 1120002,
 		durability = {
 			0,
@@ -22990,11 +19972,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.ship_data_strengthen
-
-	var_8_89[17] = {
+	pg.base.ship_data_strengthen[17] = {
 		id = 1130001,
 		durability = {
 			0,
@@ -23018,11 +19996,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.ship_data_strengthen
-
-	var_8_90[18] = {
+	pg.base.ship_data_strengthen[18] = {
 		id = 1130002,
 		durability = {
 			33,
@@ -23046,11 +20020,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.ship_data_strengthen
-
-	var_8_91[19] = {
+	pg.base.ship_data_strengthen[19] = {
 		id = 1130003,
 		durability = {
 			79,
@@ -23074,11 +20044,7 @@ end)()
 			11
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.ship_data_strengthen
-
-	var_8_92[20] = {
+	pg.base.ship_data_strengthen[20] = {
 		id = 1130004,
 		durability = {
 			18,
@@ -23102,11 +20068,7 @@ end)()
 			17
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.ship_data_strengthen
-
-	var_8_93[1140001] = {
+	pg.base.ship_data_strengthen[1140001] = {
 		id = 1140001,
 		durability = {
 			9,
@@ -23130,11 +20092,11 @@ end)()
 			12
 		}
 	}
-	pg = var_8_93
 
-	local var_8_94 = var_8_93.base.ship_data_strengthen
-
-	var_8_94[1140002] = {
+	return
+end)()
+;(function()
+	pg.base.ship_data_strengthen[1140002] = {
 		id = 1140002,
 		durability = {
 			34,
@@ -23158,11 +20120,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.ship_data_strengthen
-
-	var_8_95[1150001] = {
+	pg.base.ship_data_strengthen[1150001] = {
 		id = 1150001,
 		durability = {
 			51,
@@ -23186,11 +20144,7 @@ end)()
 			14
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.ship_data_strengthen
-
-	var_8_96[1150002] = {
+	pg.base.ship_data_strengthen[1150002] = {
 		id = 1150002,
 		durability = {
 			0,
@@ -23214,11 +20168,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.ship_data_strengthen
-
-	var_8_97[1150003] = {
+	pg.base.ship_data_strengthen[1150003] = {
 		id = 1150003,
 		durability = {
 			85,
@@ -23242,11 +20192,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.ship_data_strengthen
-
-	var_8_98[1150004] = {
+	pg.base.ship_data_strengthen[1150004] = {
 		id = 1150004,
 		durability = {
 			0,
@@ -23270,8 +20216,7 @@ end)()
 			13
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.ship_data_strengthen[1150005] = {
+	pg.base.ship_data_strengthen[1150005] = {
 		id = 1150005,
 		durability = {
 			30,
@@ -23295,15 +20240,7 @@ end)()
 			14
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.ship_data_strengthen
-
-	var_9_0[1150006] = {
+	pg.base.ship_data_strengthen[1150006] = {
 		id = 1150006,
 		durability = {
 			35,
@@ -23327,11 +20264,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.ship_data_strengthen
-
-	var_9_1[1170001] = {
+	pg.base.ship_data_strengthen[1170001] = {
 		id = 1170001,
 		durability = {
 			52,
@@ -23355,11 +20288,7 @@ end)()
 			14
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.ship_data_strengthen
-
-	var_9_2[1170002] = {
+	pg.base.ship_data_strengthen[1170002] = {
 		id = 1170002,
 		durability = {
 			29,
@@ -23383,11 +20312,7 @@ end)()
 			13
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.ship_data_strengthen
-
-	var_9_3[29901] = {
+	pg.base.ship_data_strengthen[29901] = {
 		id = 29901,
 		durability = {
 			47,
@@ -23411,11 +20336,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.ship_data_strengthen
-
-	var_9_4[29902] = {
+	pg.base.ship_data_strengthen[29902] = {
 		id = 29902,
 		durability = {
 			122,
@@ -23439,11 +20360,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.ship_data_strengthen
-
-	var_9_5[39901] = {
+	pg.base.ship_data_strengthen[39901] = {
 		id = 39901,
 		durability = {
 			74,
@@ -23467,11 +20384,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.ship_data_strengthen
-
-	var_9_6[39902] = {
+	pg.base.ship_data_strengthen[39902] = {
 		id = 39902,
 		durability = {
 			123,
@@ -23495,11 +20408,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.ship_data_strengthen
-
-	var_9_7[49901] = {
+	pg.base.ship_data_strengthen[49901] = {
 		id = 49901,
 		durability = {
 			78,
@@ -23523,11 +20432,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.ship_data_strengthen
-
-	var_9_8[89901] = {
+	pg.base.ship_data_strengthen[89901] = {
 		id = 89901,
 		durability = {
 			76,
@@ -23551,11 +20456,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.ship_data_strengthen
-
-	var_9_9[19901] = {
+	pg.base.ship_data_strengthen[19901] = {
 		id = 19901,
 		durability = {
 			49,
@@ -23579,11 +20480,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.ship_data_strengthen
-
-	var_9_10[19902] = {
+	pg.base.ship_data_strengthen[19902] = {
 		id = 19902,
 		durability = {
 			124,
@@ -23607,11 +20504,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.ship_data_strengthen
-
-	var_9_11[39903] = {
+	pg.base.ship_data_strengthen[39903] = {
 		id = 39903,
 		durability = {
 			24,
@@ -23635,11 +20528,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.ship_data_strengthen
-
-	var_9_12[39904] = {
+	pg.base.ship_data_strengthen[39904] = {
 		id = 39904,
 		durability = {
 			85,
@@ -23663,11 +20552,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.ship_data_strengthen
-
-	var_9_13[49902] = {
+	pg.base.ship_data_strengthen[49902] = {
 		id = 49902,
 		durability = {
 			128,
@@ -23691,11 +20576,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.ship_data_strengthen
-
-	var_9_14[99901] = {
+	pg.base.ship_data_strengthen[99901] = {
 		id = 99901,
 		durability = {
 			122,
@@ -23719,11 +20600,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.ship_data_strengthen
-
-	var_9_15[29903] = {
+	pg.base.ship_data_strengthen[29903] = {
 		id = 29903,
 		durability = {
 			78,
@@ -23747,11 +20624,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.ship_data_strengthen
-
-	var_9_16[29904] = {
+	pg.base.ship_data_strengthen[29904] = {
 		id = 29904,
 		durability = {
 			80,
@@ -23775,11 +20648,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.ship_data_strengthen
-
-	var_9_17[49903] = {
+	pg.base.ship_data_strengthen[49903] = {
 		id = 49903,
 		durability = {
 			46,
@@ -23803,11 +20672,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.ship_data_strengthen
-
-	var_9_18[49904] = {
+	pg.base.ship_data_strengthen[49904] = {
 		id = 49904,
 		durability = {
 			101,
@@ -23831,11 +20696,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.ship_data_strengthen
-
-	var_9_19[89902] = {
+	pg.base.ship_data_strengthen[89902] = {
 		id = 89902,
 		durability = {
 			130,
@@ -23859,11 +20720,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.ship_data_strengthen
-
-	var_9_20[19903] = {
+	pg.base.ship_data_strengthen[19903] = {
 		id = 19903,
 		durability = {
 			69,
@@ -23887,11 +20744,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.ship_data_strengthen
-
-	var_9_21[39905] = {
+	pg.base.ship_data_strengthen[39905] = {
 		id = 39905,
 		durability = {
 			0,
@@ -23915,11 +20768,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.ship_data_strengthen
-
-	var_9_22[49905] = {
+	pg.base.ship_data_strengthen[49905] = {
 		id = 49905,
 		durability = {
 			78,
@@ -23943,11 +20792,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.ship_data_strengthen
-
-	var_9_23[49906] = {
+	pg.base.ship_data_strengthen[49906] = {
 		id = 49906,
 		durability = {
 			0,
@@ -23971,11 +20816,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.ship_data_strengthen
-
-	var_9_24[13] = {
+	pg.base.ship_data_strengthen[13] = {
 		id = 69901,
 		durability = {
 			123,
@@ -23999,11 +20840,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.ship_data_strengthen
-
-	var_9_25[29905] = {
+	pg.base.ship_data_strengthen[29905] = {
 		id = 29905,
 		durability = {
 			0,
@@ -24027,11 +20864,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.ship_data_strengthen
-
-	var_9_26[49907] = {
+	pg.base.ship_data_strengthen[49907] = {
 		id = 49907,
 		durability = {
 			0,
@@ -24055,11 +20888,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.ship_data_strengthen
-
-	var_9_27[59901] = {
+	pg.base.ship_data_strengthen[59901] = {
 		id = 59901,
 		durability = {
 			0,
@@ -24083,11 +20912,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.ship_data_strengthen
-
-	var_9_28[29] = {
+	pg.base.ship_data_strengthen[29] = {
 		id = 79901,
 		durability = {
 			0,
@@ -24111,11 +20936,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.ship_data_strengthen
-
-	var_9_29[89903] = {
+	pg.base.ship_data_strengthen[89903] = {
 		id = 89903,
 		durability = {
 			0,
@@ -24139,11 +20960,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.ship_data_strengthen
-
-	var_9_30[19904] = {
+	pg.base.ship_data_strengthen[19904] = {
 		id = 19904,
 		durability = {
 			0,
@@ -24167,11 +20984,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.ship_data_strengthen
-
-	var_9_31[39906] = {
+	pg.base.ship_data_strengthen[39906] = {
 		id = 39906,
 		durability = {
 			0,
@@ -24195,11 +21008,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.ship_data_strengthen
-
-	var_9_32[49908] = {
+	pg.base.ship_data_strengthen[49908] = {
 		id = 49908,
 		durability = {
 			0,
@@ -24223,11 +21032,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.ship_data_strengthen
-
-	var_9_33[49909] = {
+	pg.base.ship_data_strengthen[49909] = {
 		id = 49909,
 		durability = {
 			0,
@@ -24251,11 +21056,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.ship_data_strengthen
-
-	var_9_34[99902] = {
+	pg.base.ship_data_strengthen[99902] = {
 		id = 99902,
 		durability = {
 			0,
@@ -24279,11 +21080,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.ship_data_strengthen
-
-	var_9_35[19905] = {
+	pg.base.ship_data_strengthen[19905] = {
 		id = 19905,
 		durability = {
 			0,
@@ -24307,11 +21104,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.ship_data_strengthen
-
-	var_9_36[39907] = {
+	pg.base.ship_data_strengthen[39907] = {
 		id = 39907,
 		durability = {
 			0,
@@ -24335,11 +21128,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.ship_data_strengthen
-
-	var_9_37[14] = {
+	pg.base.ship_data_strengthen[14] = {
 		id = 69902,
 		durability = {
 			0,
@@ -24363,11 +21152,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.ship_data_strengthen
-
-	var_9_38[30] = {
+	pg.base.ship_data_strengthen[30] = {
 		id = 79902,
 		durability = {
 			0,
@@ -24391,11 +21176,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.ship_data_strengthen
-
-	var_9_39[89904] = {
+	pg.base.ship_data_strengthen[89904] = {
 		id = 89904,
 		durability = {
 			0,
@@ -24419,11 +21200,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.ship_data_strengthen
-
-	var_9_40[19906] = {
+	pg.base.ship_data_strengthen[19906] = {
 		id = 19906,
 		durability = {
 			0,
@@ -24447,11 +21224,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.ship_data_strengthen
-
-	var_9_41[49910] = {
+	pg.base.ship_data_strengthen[49910] = {
 		id = 49910,
 		durability = {
 			0,
@@ -24475,11 +21248,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.ship_data_strengthen
-
-	var_9_42[15] = {
+	pg.base.ship_data_strengthen[15] = {
 		id = 69903,
 		durability = {
 			0,
@@ -24503,11 +21272,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.ship_data_strengthen
-
-	var_9_43[31] = {
+	pg.base.ship_data_strengthen[31] = {
 		id = 79903,
 		durability = {
 			0,
@@ -24531,11 +21296,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.ship_data_strengthen
-
-	var_9_44[119901] = {
+	pg.base.ship_data_strengthen[119901] = {
 		id = 119901,
 		durability = {
 			0,
@@ -24559,11 +21320,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.ship_data_strengthen
-
-	var_9_45[49911] = {
+	pg.base.ship_data_strengthen[49911] = {
 		id = 49911,
 		durability = {
 			0,
@@ -24587,11 +21344,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.ship_data_strengthen
-
-	var_9_46[129901] = {
+	pg.base.ship_data_strengthen[129901] = {
 		id = 129901,
 		durability = {
 			0,
@@ -24615,11 +21368,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.ship_data_strengthen
-
-	var_9_47[29906] = {
+	pg.base.ship_data_strengthen[29906] = {
 		id = 29906,
 		durability = {
 			0,
@@ -24643,11 +21392,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.ship_data_strengthen
-
-	var_9_48[39908] = {
+	pg.base.ship_data_strengthen[39908] = {
 		id = 39908,
 		durability = {
 			0,
@@ -24671,8 +21416,7 @@ end)()
 			0
 		}
 	}
-	pg = var_9_48
-	var_9_48.base.ship_data_strengthen[89905] = {
+	pg.base.ship_data_strengthen[89905] = {
 		id = 89905,
 		durability = {
 			0,

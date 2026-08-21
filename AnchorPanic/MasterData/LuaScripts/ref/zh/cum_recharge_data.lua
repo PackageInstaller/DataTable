@@ -30,6 +30,10 @@ local cum_recharge_data=
 	[13]={ get_num=30000, drop_id=1613
 },
 	[14]={ get_num=40000, drop_id=1614
+},
+	[15]={ get_num=60000, drop_id=1615
+},
+	[16]={ get_num=80000, drop_id=1616
 }
 }
 

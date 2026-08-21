@@ -1,65 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GalleryLikeCommand", pm.SimpleCommand)
 
-local var_0_0 = "GalleryLikeCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.likeCBFunc
+	local var_1_2 = getProxy(AppreciateProxy)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().picID
-	local var_1_1 = var_2.isAdd
-	local var_1_2 = var_2.likeCBFunc
-
-	getProxy = var_1_10006
-	AppreciateProxy = var_1_10008
-
-	local var_1_3 = var_1_10006(var_1_10008)
-
-	pg = var_1_10007
-
-	local var_1_4 = var_1_10007.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_4, 17505, {
-		id = var_1_0,
-		action = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(17505, {
+		id = var_1_0.picID,
+		action = var_1_0.isAdd
 	}, 17506, function(arg_2_0)
-		local var_2_3
-
 		if arg_2_0.result == 0 then
-			if var_1_1 == 0 then
-				local var_2_0 = var_1_3
-
-				var_2_3.addPicIDToLikeList(var_2_0, var_1_0)
-			elseif var_1_1 == 1 then
-				local var_2_1 = var_1_3
-
-				var_2_3.removePicIDFromLikeList(var_2_1, var_1_0)
+			if var_0 == 0 then
+				var_1_2:addPicIDToLikeList(var_0)
+			elseif var_0 == 1 then
+				var_1_2:removePicIDFromLikeList(var_0)
 			end
 
-			if var_1_2 then
-				var_1_2()
+			if var_1_1 then
+				var_1_1()
 			end
 
-			local var_2_2 = arg_1_0
-
-			var_2_3 = var_2_3.sendNotification
-			GAME = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004.APPRECIATE_GALLERY_LIKE_DONE, {
-				picID = var_1_0,
-				action = var_1_1
+			arg_1_0:sendNotification(GAME.APPRECIATE_GALLERY_LIKE_DONE, {
+				picID = var_0,
+				action = var_0
 			})
 		else
-			pg = var_2_3
-
-			local var_2_4 = var_2_3.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-			local var_2_6 = "Like Fail"
-
-			tostring = var_2_10005
-
-			var_2_5(var_2_4, var_2_6 .. var_2_10005(arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips("Like Fail" .. tostring(arg_2_0.result))
 		end
 
 		return
@@ -68,4 +34,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

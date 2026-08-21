@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandAchievementType")
+﻿local var_0_0 = class("IslandAchievementType")
 
 var_0_0.ISLAND_LV = 1
 var_0_0.FINISH_TYPE_TASK = 2

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_skin_newmainui_shift") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_skin_newmainui_shift"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_skin_newmainui_shift = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_skin_newmainui_shift
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_skin_newmainui_shift = rawget(pg, "ship_skin_newmainui_shift") or setmetatable({
+	__name = "ship_skin_newmainui_shift"
+}, confNEO)
+pg.ship_skin_newmainui_shift.all = {
 	403101,
 	206072,
 	203081,
@@ -227,27 +204,23 @@ var_0_3.all = {
 	203141,
 	9600072,
 	299052,
-	201150
+	201150,
+	101560,
+	107201,
+	102361,
+	101561,
+	207122,
+	305103,
+	101581,
+	137090,
+	407042,
+	102362
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_skin_newmainui_shift = {}
+pg.base = pg.base or {}
+pg.base.ship_skin_newmainui_shift = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_skin_newmainui_shift
-
-	var_1_0[29] = {
+	pg.base.ship_skin_newmainui_shift[29] = {
 		skin = 403101,
 		skin_shift = {
 			-200,
@@ -294,11 +267,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_skin_newmainui_shift
-
-	var_1_1[206072] = {
+	pg.base.ship_skin_newmainui_shift[206072] = {
 		skin = 206072,
 		skin_shift = {
 			-50,
@@ -345,11 +314,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_skin_newmainui_shift
-
-	var_1_2[203081] = {
+	pg.base.ship_skin_newmainui_shift[203081] = {
 		skin = 203081,
 		skin_shift = {
 			-30,
@@ -396,11 +361,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_skin_newmainui_shift
-
-	var_1_3[101450] = {
+	pg.base.ship_skin_newmainui_shift[101450] = {
 		skin = 101450,
 		skin_shift = {
 			-115,
@@ -447,11 +408,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_skin_newmainui_shift
-
-	var_1_4[101451] = {
+	pg.base.ship_skin_newmainui_shift[101451] = {
 		skin = 101451,
 		skin_shift = {
 			90,
@@ -498,11 +455,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_skin_newmainui_shift
-
-	var_1_5[101452] = {
+	pg.base.ship_skin_newmainui_shift[101452] = {
 		skin = 101452,
 		skin_shift = {
 			-170,
@@ -549,11 +502,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_skin_newmainui_shift
-
-	var_1_6[24] = {
+	pg.base.ship_skin_newmainui_shift[24] = {
 		skin = 402072,
 		skin_shift = {
 			-170,
@@ -600,11 +549,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_skin_newmainui_shift
-
-	var_1_7[199030] = {
+	pg.base.ship_skin_newmainui_shift[199030] = {
 		skin = 199030,
 		skin_shift = {
 			0,
@@ -651,11 +596,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_skin_newmainui_shift
-
-	var_1_8[199032] = {
+	pg.base.ship_skin_newmainui_shift[199032] = {
 		skin = 199032,
 		skin_shift = {
 			-140,
@@ -702,11 +643,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_skin_newmainui_shift
-
-	var_1_9[499060] = {
+	pg.base.ship_skin_newmainui_shift[499060] = {
 		skin = 499060,
 		skin_shift = {
 			22,
@@ -753,11 +690,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_skin_newmainui_shift
-
-	var_1_10[401991] = {
+	pg.base.ship_skin_newmainui_shift[401991] = {
 		skin = 401991,
 		skin_shift = {
 			0,
@@ -804,11 +737,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_skin_newmainui_shift
-
-	var_1_11[103164] = {
+	pg.base.ship_skin_newmainui_shift[103164] = {
 		skin = 103164,
 		skin_shift = {
 			-120,
@@ -855,11 +784,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_skin_newmainui_shift
-
-	var_1_12[301611] = {
+	pg.base.ship_skin_newmainui_shift[301611] = {
 		skin = 301611,
 		skin_shift = {
 			0,
@@ -906,11 +831,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_skin_newmainui_shift
-
-	var_1_13[14] = {
+	pg.base.ship_skin_newmainui_shift[14] = {
 		skin = 202126,
 		skin_shift = {
 			-70,
@@ -957,11 +878,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_skin_newmainui_shift
-
-	var_1_14[102253] = {
+	pg.base.ship_skin_newmainui_shift[102253] = {
 		skin = 102253,
 		skin_shift = {
 			-70,
@@ -1008,11 +925,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_skin_newmainui_shift
-
-	var_1_15[20] = {
+	pg.base.ship_skin_newmainui_shift[20] = {
 		skin = 102292,
 		skin_shift = {
 			-50,
@@ -1059,11 +972,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_skin_newmainui_shift
-
-	var_1_16[404050] = {
+	pg.base.ship_skin_newmainui_shift[404050] = {
 		skin = 404050,
 		skin_shift = {
 			-67,
@@ -1110,11 +1019,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_skin_newmainui_shift
-
-	var_1_17[403022] = {
+	pg.base.ship_skin_newmainui_shift[403022] = {
 		skin = 403022,
 		skin_shift = {
 			-104,
@@ -1161,11 +1066,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_skin_newmainui_shift
-
-	var_1_18[8] = {
+	pg.base.ship_skin_newmainui_shift[8] = {
 		skin = 301832,
 		skin_shift = {
 			-327,
@@ -1212,11 +1113,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_skin_newmainui_shift
-
-	var_1_19[3] = {
+	pg.base.ship_skin_newmainui_shift[3] = {
 		skin = 307075,
 		skin_shift = {
 			-209,
@@ -1263,11 +1160,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_skin_newmainui_shift
-
-	var_1_20[107121] = {
+	pg.base.ship_skin_newmainui_shift[107121] = {
 		skin = 107121,
 		skin_shift = {
 			-50,
@@ -1314,11 +1207,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_skin_newmainui_shift
-
-	var_1_21[301294] = {
+	pg.base.ship_skin_newmainui_shift[301294] = {
 		skin = 301294,
 		skin_shift = {
 			-80,
@@ -1365,11 +1254,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_skin_newmainui_shift
-
-	var_1_22[519011] = {
+	pg.base.ship_skin_newmainui_shift[519011] = {
 		skin = 519011,
 		skin_shift = {
 			-90,
@@ -1416,11 +1301,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_skin_newmainui_shift
-
-	var_1_23[707011] = {
+	pg.base.ship_skin_newmainui_shift[707011] = {
 		skin = 707011,
 		skin_shift = {
 			-150,
@@ -1467,11 +1348,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_skin_newmainui_shift
-
-	var_1_24[605051] = {
+	pg.base.ship_skin_newmainui_shift[605051] = {
 		skin = 605051,
 		skin_shift = {
 			-100,
@@ -1518,11 +1395,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_skin_newmainui_shift
-
-	var_1_25[12] = {
+	pg.base.ship_skin_newmainui_shift[12] = {
 		skin = 304012,
 		skin_shift = {
 			-100,
@@ -1569,11 +1442,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_skin_newmainui_shift
-
-	var_1_26[103141] = {
+	pg.base.ship_skin_newmainui_shift[103141] = {
 		skin = 103141,
 		skin_shift = {
 			103,
@@ -1620,11 +1489,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_skin_newmainui_shift
-
-	var_1_27[207053] = {
+	pg.base.ship_skin_newmainui_shift[207053] = {
 		skin = 207053,
 		skin_shift = {
 			-80,
@@ -1671,11 +1536,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_skin_newmainui_shift
-
-	var_1_28[131171] = {
+	pg.base.ship_skin_newmainui_shift[131171] = {
 		skin = 131171,
 		skin_shift = {
 			-150,
@@ -1722,11 +1583,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_skin_newmainui_shift
-
-	var_1_29[0] = {
+	pg.base.ship_skin_newmainui_shift[0] = {
 		skin = 102272,
 		skin_shift = {
 			80,
@@ -1773,11 +1630,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_skin_newmainui_shift
-
-	var_1_30[102132] = {
+	pg.base.ship_skin_newmainui_shift[102132] = {
 		skin = 102132,
 		skin_shift = {
 			80,
@@ -1824,11 +1677,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_skin_newmainui_shift
-
-	var_1_31[29] = {
+	pg.base.ship_skin_newmainui_shift[29] = {
 		skin = 108061,
 		skin_shift = {
 			70,
@@ -1875,11 +1724,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_skin_newmainui_shift
-
-	var_1_32[406012] = {
+	pg.base.ship_skin_newmainui_shift[406012] = {
 		skin = 406012,
 		skin_shift = {
 			0,
@@ -1926,11 +1771,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_skin_newmainui_shift
-
-	var_1_33[11000061] = {
+	pg.base.ship_skin_newmainui_shift[11000061] = {
 		skin = 11000061,
 		skin_shift = {
 			-106,
@@ -1977,11 +1818,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_skin_newmainui_shift
-
-	var_1_34[102134] = {
+	pg.base.ship_skin_newmainui_shift[102134] = {
 		skin = 102134,
 		skin_shift = {
 			0,
@@ -2028,11 +1865,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_skin_newmainui_shift
-
-	var_1_35[401230] = {
+	pg.base.ship_skin_newmainui_shift[401230] = {
 		skin = 401230,
 		skin_shift = {
 			0,
@@ -2079,11 +1912,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_skin_newmainui_shift
-
-	var_1_36[201210] = {
+	pg.base.ship_skin_newmainui_shift[201210] = {
 		skin = 201210,
 		skin_shift = {
 			0,
@@ -2130,11 +1959,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_skin_newmainui_shift
-
-	var_1_37[408131] = {
+	pg.base.ship_skin_newmainui_shift[408131] = {
 		skin = 408131,
 		skin_shift = {
 			-140,
@@ -2181,11 +2006,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_skin_newmainui_shift
-
-	var_1_38[401471] = {
+	pg.base.ship_skin_newmainui_shift[401471] = {
 		skin = 401471,
 		skin_shift = {
 			-70,
@@ -2232,11 +2053,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_skin_newmainui_shift
-
-	var_1_39[207037] = {
+	pg.base.ship_skin_newmainui_shift[207037] = {
 		skin = 207037,
 		skin_shift = {
 			-70,
@@ -2283,11 +2100,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_skin_newmainui_shift
-
-	var_1_40[18] = {
+	pg.base.ship_skin_newmainui_shift[18] = {
 		skin = 205074,
 		skin_shift = {
 			-30,
@@ -2334,11 +2147,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_skin_newmainui_shift
-
-	var_1_41[5] = {
+	pg.base.ship_skin_newmainui_shift[5] = {
 		skin = 907013,
 		skin_shift = {
 			-160,
@@ -2385,11 +2194,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_skin_newmainui_shift
-
-	var_1_42[29] = {
+	pg.base.ship_skin_newmainui_shift[29] = {
 		skin = 408093,
 		skin_shift = {
 			0,
@@ -2436,11 +2241,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_skin_newmainui_shift
-
-	var_1_43[904021] = {
+	pg.base.ship_skin_newmainui_shift[904021] = {
 		skin = 904021,
 		skin_shift = {
 			-203,
@@ -2487,11 +2288,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_skin_newmainui_shift
-
-	var_1_44[499022] = {
+	pg.base.ship_skin_newmainui_shift[499022] = {
 		skin = 499022,
 		skin_shift = {
 			-180,
@@ -2538,11 +2335,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_skin_newmainui_shift
-
-	var_1_45[107096] = {
+	pg.base.ship_skin_newmainui_shift[107096] = {
 		skin = 107096,
 		skin_shift = {
 			-200,
@@ -2589,11 +2382,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_skin_newmainui_shift
-
-	var_1_46[103245] = {
+	pg.base.ship_skin_newmainui_shift[103245] = {
 		skin = 103245,
 		skin_shift = {
 			-30,
@@ -2640,11 +2429,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_skin_newmainui_shift
-
-	var_1_47[11] = {
+	pg.base.ship_skin_newmainui_shift[11] = {
 		skin = 307083,
 		skin_shift = {
 			0,
@@ -2691,11 +2476,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_skin_newmainui_shift
-
-	var_1_48[499033] = {
+	pg.base.ship_skin_newmainui_shift[499033] = {
 		skin = 499033,
 		skin_shift = {
 			-165,
@@ -2742,11 +2523,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_skin_newmainui_shift
-
-	var_1_49[602031] = {
+	pg.base.ship_skin_newmainui_shift[602031] = {
 		skin = 602031,
 		skin_shift = {
 			-257,
@@ -2793,11 +2570,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_skin_newmainui_shift
-
-	var_1_50[702072] = {
+	pg.base.ship_skin_newmainui_shift[702072] = {
 		skin = 702072,
 		skin_shift = {
 			-55.41,
@@ -2844,11 +2617,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_skin_newmainui_shift
-
-	var_1_51[403141] = {
+	pg.base.ship_skin_newmainui_shift[403141] = {
 		skin = 403141,
 		skin_shift = {
 			-340,
@@ -2895,11 +2664,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_skin_newmainui_shift
-
-	var_1_52[1102011] = {
+	pg.base.ship_skin_newmainui_shift[1102011] = {
 		skin = 1102011,
 		skin_shift = {
 			-255,
@@ -2947,11 +2712,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_skin_newmainui_shift
-
-	var_1_53[501042] = {
+	pg.base.ship_skin_newmainui_shift[501042] = {
 		skin = 501042,
 		skin_shift = {
 			-45,
@@ -2998,11 +2759,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_skin_newmainui_shift
-
-	var_1_54[605011] = {
+	pg.base.ship_skin_newmainui_shift[605011] = {
 		skin = 605011,
 		skin_shift = {
 			-159,
@@ -3049,11 +2806,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_skin_newmainui_shift
-
-	var_1_55[4] = {
+	pg.base.ship_skin_newmainui_shift[4] = {
 		skin = 307076,
 		skin_shift = {
 			-280,
@@ -3100,11 +2853,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_skin_newmainui_shift
-
-	var_1_56[237030] = {
+	pg.base.ship_skin_newmainui_shift[237030] = {
 		skin = 237030,
 		skin_shift = {
 			-50,
@@ -3151,11 +2900,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_skin_newmainui_shift
-
-	var_1_57[205161] = {
+	pg.base.ship_skin_newmainui_shift[205161] = {
 		skin = 205161,
 		skin_shift = {
 			-50,
@@ -3203,11 +2948,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			88.39999
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_skin_newmainui_shift
-
-	var_1_58[399063] = {
+	pg.base.ship_skin_newmainui_shift[399063] = {
 		skin = 399063,
 		skin_shift = {
 			-160,
@@ -3254,11 +2995,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_skin_newmainui_shift
-
-	var_1_59[14] = {
+	pg.base.ship_skin_newmainui_shift[14] = {
 		skin = 105102,
 		skin_shift = {
 			-256,
@@ -3305,11 +3042,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_skin_newmainui_shift
-
-	var_1_60[16] = {
+	pg.base.ship_skin_newmainui_shift[16] = {
 		skin = 299024,
 		skin_shift = {
 			-340,
@@ -3356,11 +3089,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_skin_newmainui_shift
-
-	var_1_61[18] = {
+	pg.base.ship_skin_newmainui_shift[18] = {
 		skin = 705042,
 		skin_shift = {
 			-71,
@@ -3407,11 +3136,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_skin_newmainui_shift
-
-	var_1_62[403142] = {
+	pg.base.ship_skin_newmainui_shift[403142] = {
 		skin = 403142,
 		skin_shift = {
 			-106,
@@ -3458,11 +3183,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_skin_newmainui_shift
-
-	var_1_63[301892] = {
+	pg.base.ship_skin_newmainui_shift[301892] = {
 		skin = 301892,
 		skin_shift = {
 			-42,
@@ -3509,11 +3230,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_skin_newmainui_shift
-
-	var_1_64[11] = {
+	pg.base.ship_skin_newmainui_shift[11] = {
 		skin = 11200011,
 		skin_shift = {
 			-49,
@@ -3560,11 +3277,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_skin_newmainui_shift
-
-	var_1_65[0] = {
+	pg.base.ship_skin_newmainui_shift[0] = {
 		skin = 103168,
 		skin_shift = {
 			-40,
@@ -3611,11 +3324,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_skin_newmainui_shift
-
-	var_1_66[408140] = {
+	pg.base.ship_skin_newmainui_shift[408140] = {
 		skin = 408140,
 		skin_shift = {
 			-155,
@@ -3663,11 +3372,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			280
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_skin_newmainui_shift
-
-	var_1_67[401131] = {
+	pg.base.ship_skin_newmainui_shift[401131] = {
 		skin = 401131,
 		skin_shift = {
 			0,
@@ -3715,11 +3420,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_skin_newmainui_shift
-
-	var_1_68[3] = {
+	pg.base.ship_skin_newmainui_shift[3] = {
 		skin = 601091,
 		skin_shift = {
 			-195,
@@ -3767,11 +3468,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_skin_newmainui_shift
-
-	var_1_69[201121] = {
+	pg.base.ship_skin_newmainui_shift[201121] = {
 		skin = 201121,
 		skin_shift = {
 			-85,
@@ -3819,11 +3516,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_skin_newmainui_shift
-
-	var_1_70[11300031] = {
+	pg.base.ship_skin_newmainui_shift[11300031] = {
 		skin = 11300031,
 		skin_shift = {
 			-131,
@@ -3871,11 +3564,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_skin_newmainui_shift
-
-	var_1_71[11300041] = {
+	pg.base.ship_skin_newmainui_shift[11300041] = {
 		skin = 11300041,
 		skin_shift = {
 			-249,
@@ -3923,11 +3612,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_skin_newmainui_shift
-
-	var_1_72[10900012] = {
+	pg.base.ship_skin_newmainui_shift[10900012] = {
 		skin = 10900012,
 		skin_shift = {
 			-433.7,
@@ -3975,11 +3660,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_skin_newmainui_shift
-
-	var_1_73[10900061] = {
+	pg.base.ship_skin_newmainui_shift[10900061] = {
 		skin = 10900061,
 		skin_shift = {
 			-223,
@@ -4027,11 +3708,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_skin_newmainui_shift
-
-	var_1_74[102143] = {
+	pg.base.ship_skin_newmainui_shift[102143] = {
 		skin = 102143,
 		skin_shift = {
 			-360,
@@ -4079,11 +3756,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			261.02
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_skin_newmainui_shift
-
-	var_1_75[804011] = {
+	pg.base.ship_skin_newmainui_shift[804011] = {
 		skin = 804011,
 		skin_shift = {
 			-211,
@@ -4131,11 +3804,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_skin_newmainui_shift
-
-	var_1_76[803031] = {
+	pg.base.ship_skin_newmainui_shift[803031] = {
 		skin = 803031,
 		skin_shift = {
 			-137,
@@ -4183,11 +3852,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_skin_newmainui_shift
-
-	var_1_77[27] = {
+	pg.base.ship_skin_newmainui_shift[27] = {
 		skin = 801051,
 		skin_shift = {
 			-180.1,
@@ -4235,11 +3900,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_skin_newmainui_shift
-
-	var_1_78[802041] = {
+	pg.base.ship_skin_newmainui_shift[802041] = {
 		skin = 802041,
 		skin_shift = {
 			-245,
@@ -4287,11 +3948,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_skin_newmainui_shift
-
-	var_1_79[7] = {
+	pg.base.ship_skin_newmainui_shift[7] = {
 		skin = 102151,
 		skin_shift = {
 			39,
@@ -4339,11 +3996,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			93.3
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_skin_newmainui_shift
-
-	var_1_80[199033] = {
+	pg.base.ship_skin_newmainui_shift[199033] = {
 		skin = 199033,
 		skin_shift = {
 			-226.54,
@@ -4391,11 +4044,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_skin_newmainui_shift
-
-	var_1_81[137061] = {
+	pg.base.ship_skin_newmainui_shift[137061] = {
 		skin = 137061,
 		skin_shift = {
 			-413.9,
@@ -4443,11 +4092,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_skin_newmainui_shift
-
-	var_1_82[499018] = {
+	pg.base.ship_skin_newmainui_shift[499018] = {
 		skin = 499018,
 		skin_shift = {
 			122.3,
@@ -4495,11 +4140,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_skin_newmainui_shift
-
-	var_1_83[317020] = {
+	pg.base.ship_skin_newmainui_shift[317020] = {
 		skin = 317020,
 		skin_shift = {
 			0,
@@ -4547,11 +4188,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			32.92999
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_skin_newmainui_shift
-
-	var_1_84[317021] = {
+	pg.base.ship_skin_newmainui_shift[317021] = {
 		skin = 317021,
 		skin_shift = {
 			0,
@@ -4599,11 +4236,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_skin_newmainui_shift
-
-	var_1_85[9] = {
+	pg.base.ship_skin_newmainui_shift[9] = {
 		skin = 305161,
 		skin_shift = {
 			-409.2,
@@ -4651,11 +4284,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			335.87
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_skin_newmainui_shift
-
-	var_1_86[302271] = {
+	pg.base.ship_skin_newmainui_shift[302271] = {
 		skin = 302271,
 		skin_shift = {
 			-196.9,
@@ -4703,11 +4332,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			332.6
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_skin_newmainui_shift
-
-	var_1_87[301921] = {
+	pg.base.ship_skin_newmainui_shift[301921] = {
 		skin = 301921,
 		skin_shift = {
 			-243.38,
@@ -4755,11 +4380,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			294.08
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_skin_newmainui_shift
-
-	var_1_88[101472] = {
+	pg.base.ship_skin_newmainui_shift[101472] = {
 		skin = 101472,
 		skin_shift = {
 			-169.63,
@@ -4807,11 +4428,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_skin_newmainui_shift
-
-	var_1_89[705022] = {
+	pg.base.ship_skin_newmainui_shift[705022] = {
 		skin = 705022,
 		skin_shift = {
 			0,
@@ -4859,11 +4476,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			90.37
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_skin_newmainui_shift
-
-	var_1_90[705023] = {
+	pg.base.ship_skin_newmainui_shift[705023] = {
 		skin = 705023,
 		skin_shift = {
 			-271,
@@ -4911,11 +4524,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_skin_newmainui_shift
-
-	var_1_91[307161] = {
+	pg.base.ship_skin_newmainui_shift[307161] = {
 		skin = 307161,
 		skin_shift = {
 			0,
@@ -4963,11 +4572,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_skin_newmainui_shift
-
-	var_1_92[805032] = {
+	pg.base.ship_skin_newmainui_shift[805032] = {
 		skin = 805032,
 		skin_shift = {
 			-362.54,
@@ -5015,11 +4620,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_skin_newmainui_shift
-
-	var_1_93[8] = {
+	pg.base.ship_skin_newmainui_shift[8] = {
 		skin = 101512,
 		skin_shift = {
 			-40.17,
@@ -5067,11 +4668,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_skin_newmainui_shift
-
-	var_1_94[6] = {
+	pg.base.ship_skin_newmainui_shift[6] = {
 		skin = 118022,
 		skin_shift = {
 			-209.9,
@@ -5119,11 +4716,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_skin_newmainui_shift
-
-	var_1_95[803022] = {
+	pg.base.ship_skin_newmainui_shift[803022] = {
 		skin = 803022,
 		skin_shift = {
 			-315.6,
@@ -5171,11 +4764,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_skin_newmainui_shift
-
-	var_1_96[307158] = {
+	pg.base.ship_skin_newmainui_shift[307158] = {
 		skin = 307158,
 		skin_shift = {
 			-62.10001,
@@ -5223,11 +4812,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_skin_newmainui_shift
-
-	var_1_97[8] = {
+	pg.base.ship_skin_newmainui_shift[8] = {
 		skin = 202248,
 		skin_shift = {
 			-175.6,
@@ -5275,11 +4860,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			0
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_skin_newmainui_shift
-
-	var_1_98[9600121] = {
+	pg.base.ship_skin_newmainui_shift[9600121] = {
 		skin = 9600121,
 		skin_shift = {
 			0,
@@ -5327,8 +4908,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 			36.4
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_skin_newmainui_shift[3] = {
+	pg.base.ship_skin_newmainui_shift[3] = {
 		skin = 9600131,
 		skin_shift = {
 			-178.96,
@@ -5380,11 +4960,7 @@ var_0_3.base.ship_skin_newmainui_shift = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_skin_newmainui_shift
-
-	var_2_0[23] = {
+	pg.base.ship_skin_newmainui_shift[23] = {
 		skin = 9600151,
 		skin_shift = {
 			-140.14,
@@ -5432,11 +5008,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_skin_newmainui_shift
-
-	var_2_1[399022] = {
+	pg.base.ship_skin_newmainui_shift[399022] = {
 		skin = 399022,
 		skin_shift = {
 			-211.75,
@@ -5484,11 +5056,7 @@ end)()
 			321.96
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_skin_newmainui_shift
-
-	var_2_2[4] = {
+	pg.base.ship_skin_newmainui_shift[4] = {
 		skin = 301572,
 		skin_shift = {
 			-164.49,
@@ -5536,11 +5104,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_skin_newmainui_shift
-
-	var_2_3[799023] = {
+	pg.base.ship_skin_newmainui_shift[799023] = {
 		skin = 799023,
 		skin_shift = {
 			-145.8,
@@ -5588,11 +5152,7 @@ end)()
 			341
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_skin_newmainui_shift
-
-	var_2_4[2] = {
+	pg.base.ship_skin_newmainui_shift[2] = {
 		skin = 307074,
 		skin_shift = {
 			0,
@@ -5640,11 +5200,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_skin_newmainui_shift
-
-	var_2_5[301891] = {
+	pg.base.ship_skin_newmainui_shift[301891] = {
 		skin = 301891,
 		skin_shift = {
 			0,
@@ -5692,11 +5248,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_skin_newmainui_shift
-
-	var_2_6[303191] = {
+	pg.base.ship_skin_newmainui_shift[303191] = {
 		skin = 303191,
 		skin_shift = {
 			-64.75999,
@@ -5744,11 +5296,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_skin_newmainui_shift
-
-	var_2_7[18] = {
+	pg.base.ship_skin_newmainui_shift[18] = {
 		skin = 11500050,
 		skin_shift = {
 			0,
@@ -5796,11 +5344,7 @@ end)()
 			338
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_skin_newmainui_shift
-
-	var_2_8[11500011] = {
+	pg.base.ship_skin_newmainui_shift[11500011] = {
 		skin = 11500011,
 		skin_shift = {
 			0,
@@ -5848,11 +5392,7 @@ end)()
 			26
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_skin_newmainui_shift
-
-	var_2_9[11500021] = {
+	pg.base.ship_skin_newmainui_shift[11500021] = {
 		skin = 11500021,
 		skin_shift = {
 			140,
@@ -5900,11 +5440,7 @@ end)()
 			22.2
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_skin_newmainui_shift
-
-	var_2_10[11500031] = {
+	pg.base.ship_skin_newmainui_shift[11500031] = {
 		skin = 11500031,
 		skin_shift = {
 			-172.5,
@@ -5952,11 +5488,7 @@ end)()
 			335
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_skin_newmainui_shift
-
-	var_2_11[9] = {
+	pg.base.ship_skin_newmainui_shift[9] = {
 		skin = 11500041,
 		skin_shift = {
 			-80.39999,
@@ -6004,11 +5536,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_skin_newmainui_shift
-
-	var_2_12[29] = {
+	pg.base.ship_skin_newmainui_shift[29] = {
 		skin = 11500061,
 		skin_shift = {
 			0,
@@ -6056,11 +5584,7 @@ end)()
 			321.3
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_skin_newmainui_shift
-
-	var_2_13[101100] = {
+	pg.base.ship_skin_newmainui_shift[101100] = {
 		skin = 101100,
 		skin_shift = {
 			0,
@@ -6108,11 +5632,7 @@ end)()
 			340.1
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_skin_newmainui_shift
-
-	var_2_14[107102] = {
+	pg.base.ship_skin_newmainui_shift[107102] = {
 		skin = 107102,
 		skin_shift = {
 			-218,
@@ -6160,11 +5680,7 @@ end)()
 			71.19999
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_skin_newmainui_shift
-
-	var_2_15[101089] = {
+	pg.base.ship_skin_newmainui_shift[101089] = {
 		skin = 101089,
 		skin_shift = {
 			0,
@@ -6212,11 +5728,7 @@ end)()
 			331.65
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_skin_newmainui_shift
-
-	var_2_16[107103] = {
+	pg.base.ship_skin_newmainui_shift[107103] = {
 		skin = 107103,
 		skin_shift = {
 			-368,
@@ -6264,11 +5776,7 @@ end)()
 			348.8
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_skin_newmainui_shift
-
-	var_2_17[101101] = {
+	pg.base.ship_skin_newmainui_shift[101101] = {
 		skin = 101101,
 		skin_shift = {
 			40,
@@ -6316,11 +5824,7 @@ end)()
 			11.74
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_skin_newmainui_shift
-
-	var_2_18[101551] = {
+	pg.base.ship_skin_newmainui_shift[101551] = {
 		skin = 101551,
 		skin_shift = {
 			0,
@@ -6368,11 +5872,7 @@ end)()
 			74.37
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_skin_newmainui_shift
-
-	var_2_19[102351] = {
+	pg.base.ship_skin_newmainui_shift[102351] = {
 		skin = 102351,
 		skin_shift = {
 			0,
@@ -6420,11 +5920,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_skin_newmainui_shift
-
-	var_2_20[102234] = {
+	pg.base.ship_skin_newmainui_shift[102234] = {
 		skin = 102234,
 		skin_shift = {
 			0,
@@ -6472,11 +5968,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_skin_newmainui_shift
-
-	var_2_21[101502] = {
+	pg.base.ship_skin_newmainui_shift[101502] = {
 		skin = 101502,
 		skin_shift = {
 			-173.9,
@@ -6524,11 +6016,7 @@ end)()
 			343.32
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_skin_newmainui_shift
-
-	var_2_22[405052] = {
+	pg.base.ship_skin_newmainui_shift[405052] = {
 		skin = 405052,
 		skin_shift = {
 			-298,
@@ -6576,11 +6064,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_skin_newmainui_shift
-
-	var_2_23[802032] = {
+	pg.base.ship_skin_newmainui_shift[802032] = {
 		skin = 802032,
 		skin_shift = {
 			-312.19,
@@ -6628,11 +6112,7 @@ end)()
 			343.31
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_skin_newmainui_shift
-
-	var_2_24[802033] = {
+	pg.base.ship_skin_newmainui_shift[802033] = {
 		skin = 802033,
 		skin_shift = {
 			-312.19,
@@ -6680,11 +6160,7 @@ end)()
 			343.31
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_skin_newmainui_shift
-
-	var_2_25[401992] = {
+	pg.base.ship_skin_newmainui_shift[401992] = {
 		skin = 401992,
 		skin_shift = {
 			-396.5,
@@ -6732,11 +6208,7 @@ end)()
 			308.1
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_skin_newmainui_shift
-
-	var_2_26[702052] = {
+	pg.base.ship_skin_newmainui_shift[702052] = {
 		skin = 702052,
 		skin_shift = {
 			-94.83,
@@ -6784,11 +6256,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_skin_newmainui_shift
-
-	var_2_27[1199011] = {
+	pg.base.ship_skin_newmainui_shift[1199011] = {
 		skin = 1199011,
 		skin_shift = {
 			-236.9,
@@ -6836,11 +6304,7 @@ end)()
 			309.3
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_skin_newmainui_shift
-
-	var_2_28[23] = {
+	pg.base.ship_skin_newmainui_shift[23] = {
 		skin = 699031,
 		skin_shift = {
 			0,
@@ -6888,11 +6352,7 @@ end)()
 			52.39
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_skin_newmainui_shift
-
-	var_2_29[799031] = {
+	pg.base.ship_skin_newmainui_shift[799031] = {
 		skin = 799031,
 		skin_shift = {
 			0,
@@ -6940,11 +6400,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_skin_newmainui_shift
-
-	var_2_30[403037] = {
+	pg.base.ship_skin_newmainui_shift[403037] = {
 		skin = 403037,
 		skin_shift = {
 			0,
@@ -6992,11 +6448,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_skin_newmainui_shift
-
-	var_2_31[605091] = {
+	pg.base.ship_skin_newmainui_shift[605091] = {
 		skin = 605091,
 		skin_shift = {
 			0,
@@ -7044,11 +6496,7 @@ end)()
 			336.15
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_skin_newmainui_shift
-
-	var_2_32[602041] = {
+	pg.base.ship_skin_newmainui_shift[602041] = {
 		skin = 602041,
 		skin_shift = {
 			-217.66,
@@ -7096,11 +6544,7 @@ end)()
 			334.2
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_skin_newmainui_shift
-
-	var_2_33[301295] = {
+	pg.base.ship_skin_newmainui_shift[301295] = {
 		skin = 301295,
 		skin_shift = {
 			0,
@@ -7148,11 +6592,7 @@ end)()
 			24.5
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_skin_newmainui_shift
-
-	var_2_34[105202] = {
+	pg.base.ship_skin_newmainui_shift[105202] = {
 		skin = 105202,
 		skin_shift = {
 			0,
@@ -7200,11 +6640,7 @@ end)()
 			350.05
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_skin_newmainui_shift
-
-	var_2_35[301941] = {
+	pg.base.ship_skin_newmainui_shift[301941] = {
 		skin = 301941,
 		skin_shift = {
 			0,
@@ -7252,11 +6688,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_skin_newmainui_shift
-
-	var_2_36[502049] = {
+	pg.base.ship_skin_newmainui_shift[502049] = {
 		skin = 502049,
 		skin_shift = {
 			0,
@@ -7304,11 +6736,7 @@ end)()
 			344.31
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_skin_newmainui_shift
-
-	var_2_37[499024] = {
+	pg.base.ship_skin_newmainui_shift[499024] = {
 		skin = 499024,
 		skin_shift = {
 			-146.43,
@@ -7356,11 +6784,7 @@ end)()
 			311.69
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_skin_newmainui_shift
-
-	var_2_38[503021] = {
+	pg.base.ship_skin_newmainui_shift[503021] = {
 		skin = 503021,
 		skin_shift = {
 			0,
@@ -7408,11 +6832,7 @@ end)()
 			337.69
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_skin_newmainui_shift
-
-	var_2_39[407012] = {
+	pg.base.ship_skin_newmainui_shift[407012] = {
 		skin = 407012,
 		skin_shift = {
 			0,
@@ -7460,11 +6880,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_skin_newmainui_shift
-
-	var_2_40[13] = {
+	pg.base.ship_skin_newmainui_shift[13] = {
 		skin = 307085,
 		skin_shift = {
 			-96.33,
@@ -7512,11 +6928,7 @@ end)()
 			329.1
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_skin_newmainui_shift
-
-	var_2_41[501072] = {
+	pg.base.ship_skin_newmainui_shift[501072] = {
 		skin = 501072,
 		skin_shift = {
 			0,
@@ -7564,11 +6976,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_skin_newmainui_shift
-
-	var_2_42[31] = {
+	pg.base.ship_skin_newmainui_shift[31] = {
 		skin = 106015,
 		skin_shift = {
 			-22.88,
@@ -7616,11 +7024,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_skin_newmainui_shift
-
-	var_2_43[2] = {
+	pg.base.ship_skin_newmainui_shift[2] = {
 		skin = 431234,
 		skin_shift = {
 			-35.3,
@@ -7668,11 +7072,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_skin_newmainui_shift
-
-	var_2_44[703031] = {
+	pg.base.ship_skin_newmainui_shift[703031] = {
 		skin = 703031,
 		skin_shift = {
 			0,
@@ -7720,11 +7120,7 @@ end)()
 			16.65999
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_skin_newmainui_shift
-
-	var_2_45[11] = {
+	pg.base.ship_skin_newmainui_shift[11] = {
 		skin = 702091,
 		skin_shift = {
 			0,
@@ -7772,11 +7168,7 @@ end)()
 			55.05
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_skin_newmainui_shift
-
-	var_2_46[21] = {
+	pg.base.ship_skin_newmainui_shift[21] = {
 		skin = 702101,
 		skin_shift = {
 			0,
@@ -7824,11 +7216,7 @@ end)()
 			345.8
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_skin_newmainui_shift
-
-	var_2_47[20] = {
+	pg.base.ship_skin_newmainui_shift[20] = {
 		skin = 499092,
 		skin_shift = {
 			-159.2,
@@ -7876,11 +7264,7 @@ end)()
 			28.45
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_skin_newmainui_shift
-
-	var_2_48[306092] = {
+	pg.base.ship_skin_newmainui_shift[306092] = {
 		skin = 306092,
 		skin_shift = {
 			0,
@@ -7928,11 +7312,7 @@ end)()
 			47.7
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_skin_newmainui_shift
-
-	var_2_49[306083] = {
+	pg.base.ship_skin_newmainui_shift[306083] = {
 		skin = 306083,
 		skin_shift = {
 			-244.4,
@@ -7980,11 +7360,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_skin_newmainui_shift
-
-	var_2_50[27] = {
+	pg.base.ship_skin_newmainui_shift[27] = {
 		skin = 303131,
 		skin_shift = {
 			0,
@@ -8032,11 +7408,7 @@ end)()
 			344.34
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_skin_newmainui_shift
-
-	var_2_51[603062] = {
+	pg.base.ship_skin_newmainui_shift[603062] = {
 		skin = 603062,
 		skin_shift = {
 			-362.92,
@@ -8084,11 +7456,7 @@ end)()
 			271.98
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_skin_newmainui_shift
-
-	var_2_52[302281] = {
+	pg.base.ship_skin_newmainui_shift[302281] = {
 		skin = 302281,
 		skin_shift = {
 			0,
@@ -8136,11 +7504,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_skin_newmainui_shift
-
-	var_2_53[301043] = {
+	pg.base.ship_skin_newmainui_shift[301043] = {
 		skin = 301043,
 		skin_shift = {
 			-191.99,
@@ -8188,11 +7552,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_skin_newmainui_shift
-
-	var_2_54[302291] = {
+	pg.base.ship_skin_newmainui_shift[302291] = {
 		skin = 302291,
 		skin_shift = {
 			-151.6,
@@ -8240,11 +7600,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_skin_newmainui_shift
-
-	var_2_55[307172] = {
+	pg.base.ship_skin_newmainui_shift[307172] = {
 		skin = 307172,
 		skin_shift = {
 			2,
@@ -8292,11 +7648,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_skin_newmainui_shift
-
-	var_2_56[702013] = {
+	pg.base.ship_skin_newmainui_shift[702013] = {
 		skin = 702013,
 		skin_shift = {
 			-265,
@@ -8344,11 +7696,7 @@ end)()
 			302.24
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_skin_newmainui_shift
-
-	var_2_57[401522] = {
+	pg.base.ship_skin_newmainui_shift[401522] = {
 		skin = 401522,
 		skin_shift = {
 			-222,
@@ -8396,11 +7744,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_skin_newmainui_shift
-
-	var_2_58[10600101] = {
+	pg.base.ship_skin_newmainui_shift[10600101] = {
 		skin = 10600101,
 		skin_shift = {
 			59,
@@ -8448,11 +7792,7 @@ end)()
 			17.42
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_skin_newmainui_shift
-
-	var_2_59[10600111] = {
+	pg.base.ship_skin_newmainui_shift[10600111] = {
 		skin = 10600111,
 		skin_shift = {
 			77,
@@ -8500,11 +7840,7 @@ end)()
 			29.27
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_skin_newmainui_shift
-
-	var_2_60[10600121] = {
+	pg.base.ship_skin_newmainui_shift[10600121] = {
 		skin = 10600121,
 		skin_shift = {
 			-201.9,
@@ -8552,11 +7888,7 @@ end)()
 			326.9
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_skin_newmainui_shift
-
-	var_2_61[10600131] = {
+	pg.base.ship_skin_newmainui_shift[10600131] = {
 		skin = 10600131,
 		skin_shift = {
 			-262.21,
@@ -8604,11 +7936,7 @@ end)()
 			289.96
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_skin_newmainui_shift
-
-	var_2_62[10600141] = {
+	pg.base.ship_skin_newmainui_shift[10600141] = {
 		skin = 10600141,
 		skin_shift = {
 			-289,
@@ -8656,11 +7984,7 @@ end)()
 			283.4
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_skin_newmainui_shift
-
-	var_2_63[10600151] = {
+	pg.base.ship_skin_newmainui_shift[10600151] = {
 		skin = 10600151,
 		skin_shift = {
 			-356.77,
@@ -8708,11 +8032,7 @@ end)()
 			290.4
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_skin_newmainui_shift
-
-	var_2_64[10600042] = {
+	pg.base.ship_skin_newmainui_shift[10600042] = {
 		skin = 10600042,
 		skin_shift = {
 			-277.4,
@@ -8760,11 +8080,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_skin_newmainui_shift
-
-	var_2_65[206023] = {
+	pg.base.ship_skin_newmainui_shift[206023] = {
 		skin = 206023,
 		skin_shift = {
 			-164.5,
@@ -8812,11 +8128,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_skin_newmainui_shift
-
-	var_2_66[105122] = {
+	pg.base.ship_skin_newmainui_shift[105122] = {
 		skin = 105122,
 		skin_shift = {
 			0,
@@ -8864,11 +8176,7 @@ end)()
 			325.01
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_skin_newmainui_shift
-
-	var_2_67[399015] = {
+	pg.base.ship_skin_newmainui_shift[399015] = {
 		skin = 399015,
 		skin_shift = {
 			-142.5,
@@ -8916,11 +8224,7 @@ end)()
 			337.48
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_skin_newmainui_shift
-
-	var_2_68[899013] = {
+	pg.base.ship_skin_newmainui_shift[899013] = {
 		skin = 899013,
 		skin_shift = {
 			-394.28,
@@ -8968,11 +8272,7 @@ end)()
 			336.3
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_skin_newmainui_shift
-
-	var_2_69[11] = {
+	pg.base.ship_skin_newmainui_shift[11] = {
 		skin = 201355,
 		skin_shift = {
 			-375.7,
@@ -9020,11 +8320,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_skin_newmainui_shift
-
-	var_2_70[502013] = {
+	pg.base.ship_skin_newmainui_shift[502013] = {
 		skin = 502013,
 		skin_shift = {
 			-326,
@@ -9072,11 +8368,7 @@ end)()
 			339.75
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_skin_newmainui_shift
-
-	var_2_71[107225] = {
+	pg.base.ship_skin_newmainui_shift[107225] = {
 		skin = 107225,
 		skin_shift = {
 			-357.9,
@@ -9124,11 +8416,7 @@ end)()
 			10.72999
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_skin_newmainui_shift
-
-	var_2_72[506022] = {
+	pg.base.ship_skin_newmainui_shift[506022] = {
 		skin = 506022,
 		skin_shift = {
 			35,
@@ -9176,11 +8464,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_skin_newmainui_shift
-
-	var_2_73[26] = {
+	pg.base.ship_skin_newmainui_shift[26] = {
 		skin = 402074,
 		skin_shift = {
 			-237.39,
@@ -9228,11 +8512,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_skin_newmainui_shift
-
-	var_2_74[9706050] = {
+	pg.base.ship_skin_newmainui_shift[9706050] = {
 		skin = 9706050,
 		skin_shift = {
 			0,
@@ -9280,11 +8560,7 @@ end)()
 			334.7
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_skin_newmainui_shift
-
-	var_2_75[405071] = {
+	pg.base.ship_skin_newmainui_shift[405071] = {
 		skin = 405071,
 		skin_shift = {
 			0,
@@ -9332,11 +8608,7 @@ end)()
 			139.34
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_skin_newmainui_shift
-
-	var_2_76[403171] = {
+	pg.base.ship_skin_newmainui_shift[403171] = {
 		skin = 403171,
 		skin_shift = {
 			0,
@@ -9384,11 +8656,7 @@ end)()
 			11.84
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_skin_newmainui_shift
-
-	var_2_77[401151] = {
+	pg.base.ship_skin_newmainui_shift[401151] = {
 		skin = 401151,
 		skin_shift = {
 			-212.89,
@@ -9436,11 +8704,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_skin_newmainui_shift
-
-	var_2_78[901073] = {
+	pg.base.ship_skin_newmainui_shift[901073] = {
 		skin = 901073,
 		skin_shift = {
 			-130.7,
@@ -9488,11 +8752,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_skin_newmainui_shift
-
-	var_2_79[901074] = {
+	pg.base.ship_skin_newmainui_shift[901074] = {
 		skin = 901074,
 		skin_shift = {
 			0,
@@ -9540,11 +8800,7 @@ end)()
 			21.9
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_skin_newmainui_shift
-
-	var_2_80[401141] = {
+	pg.base.ship_skin_newmainui_shift[401141] = {
 		skin = 401141,
 		skin_shift = {
 			0,
@@ -9592,11 +8848,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_skin_newmainui_shift
-
-	var_2_81[307152] = {
+	pg.base.ship_skin_newmainui_shift[307152] = {
 		skin = 307152,
 		skin_shift = {
 			-53,
@@ -9644,11 +8896,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_skin_newmainui_shift
-
-	var_2_82[499013] = {
+	pg.base.ship_skin_newmainui_shift[499013] = {
 		skin = 499013,
 		skin_shift = {
 			0,
@@ -9696,11 +8944,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_skin_newmainui_shift
-
-	var_2_83[0] = {
+	pg.base.ship_skin_newmainui_shift[0] = {
 		skin = 9701120,
 		skin_shift = {
 			0,
@@ -9748,11 +8992,7 @@ end)()
 			23.10999
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_skin_newmainui_shift
-
-	var_2_84[301898] = {
+	pg.base.ship_skin_newmainui_shift[301898] = {
 		skin = 301898,
 		skin_shift = {
 			-190.9,
@@ -9800,11 +9040,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_skin_newmainui_shift
-
-	var_2_85[818010] = {
+	pg.base.ship_skin_newmainui_shift[818010] = {
 		skin = 818010,
 		skin_shift = {
 			0,
@@ -9852,11 +9088,7 @@ end)()
 			26.4
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_skin_newmainui_shift
-
-	var_2_86[818011] = {
+	pg.base.ship_skin_newmainui_shift[818011] = {
 		skin = 818011,
 		skin_shift = {
 			-51.7,
@@ -9904,11 +9136,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_skin_newmainui_shift
-
-	var_2_87[5] = {
+	pg.base.ship_skin_newmainui_shift[5] = {
 		skin = 806021,
 		skin_shift = {
 			3,
@@ -9956,11 +9184,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_skin_newmainui_shift
-
-	var_2_88[801061] = {
+	pg.base.ship_skin_newmainui_shift[801061] = {
 		skin = 801061,
 		skin_shift = {
 			0,
@@ -10008,11 +9232,7 @@ end)()
 			308.53
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_skin_newmainui_shift
-
-	var_2_89[26] = {
+	pg.base.ship_skin_newmainui_shift[26] = {
 		skin = 605082,
 		skin_shift = {
 			0,
@@ -10060,11 +9280,7 @@ end)()
 			18.99999
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_skin_newmainui_shift
-
-	var_2_90[4] = {
+	pg.base.ship_skin_newmainui_shift[4] = {
 		skin = 699012,
 		skin_shift = {
 			-154.63,
@@ -10112,11 +9328,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_skin_newmainui_shift
-
-	var_2_91[31] = {
+	pg.base.ship_skin_newmainui_shift[31] = {
 		skin = 403103,
 		skin_shift = {
 			0,
@@ -10164,11 +9376,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_skin_newmainui_shift
-
-	var_2_92[22] = {
+	pg.base.ship_skin_newmainui_shift[22] = {
 		skin = 608022,
 		skin_shift = {
 			-186.79,
@@ -10216,11 +9424,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_skin_newmainui_shift
-
-	var_2_93[299060] = {
+	pg.base.ship_skin_newmainui_shift[299060] = {
 		skin = 299060,
 		skin_shift = {
 			0,
@@ -10268,11 +9472,7 @@ end)()
 			31.46999
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_skin_newmainui_shift
-
-	var_2_94[399080] = {
+	pg.base.ship_skin_newmainui_shift[399080] = {
 		skin = 399080,
 		skin_shift = {
 			0,
@@ -10320,11 +9520,7 @@ end)()
 			332.4
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_skin_newmainui_shift
-
-	var_2_95[11700011] = {
+	pg.base.ship_skin_newmainui_shift[11700011] = {
 		skin = 11700011,
 		skin_shift = {
 			-287.72,
@@ -10372,11 +9568,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_skin_newmainui_shift
-
-	var_2_96[11700021] = {
+	pg.base.ship_skin_newmainui_shift[11700021] = {
 		skin = 11700021,
 		skin_shift = {
 			-207.4,
@@ -10424,11 +9616,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_skin_newmainui_shift
-
-	var_2_97[3] = {
+	pg.base.ship_skin_newmainui_shift[3] = {
 		skin = 202371,
 		skin_shift = {
 			-217.18,
@@ -10476,11 +9664,7 @@ end)()
 			329.61
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_skin_newmainui_shift
-
-	var_2_98[5] = {
+	pg.base.ship_skin_newmainui_shift[5] = {
 		skin = 203141,
 		skin_shift = {
 			-226,
@@ -10528,8 +9712,7 @@ end)()
 			265.3
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_skin_newmainui_shift[9600072] = {
+	pg.base.ship_skin_newmainui_shift[9600072] = {
 		skin = 9600072,
 		skin_shift = {
 			-15.17999,
@@ -10581,11 +9764,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_skin_newmainui_shift
-
-	var_3_0[299052] = {
+	pg.base.ship_skin_newmainui_shift[299052] = {
 		skin = 299052,
 		skin_shift = {
 			-83.8,
@@ -10633,8 +9812,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_0
-	var_3_0.base.ship_skin_newmainui_shift[201150] = {
+	pg.base.ship_skin_newmainui_shift[201150] = {
 		skin = 201150,
 		skin_shift = {
 			0,
@@ -10664,6 +9842,486 @@ end)()
 		skin_shop_shift = {
 			0,
 			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[101560] = {
+		skin = 101560,
+		skin_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			0,
+			0,
+			1,
+			322.2
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			318.32
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			314.95
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[107201] = {
+		skin = 107201,
+		skin_shift = {
+			-309.33,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			309.33,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			-57.99996,
+			0,
+			1,
+			0
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[102361] = {
+		skin = 102361,
+		skin_shift = {
+			-147.1,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			147.1,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			0,
+			0,
+			1,
+			341.3
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			336.7
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			334.7
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[101561] = {
+		skin = 101561,
+		skin_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			0,
+			0,
+			1,
+			346.55
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			346.34
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			345.9
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[18] = {
+		skin = 207122,
+		skin_shift = {
+			-146.2,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			146.2,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			75.00004,
+			0,
+			1.12,
+			331.66
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			337.89
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			339.11
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[305103] = {
+		skin = 305103,
+		skin_shift = {
+			-163.6,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			163.6,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[101581] = {
+		skin = 101581,
+		skin_shift = {
+			-127,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[2] = {
+		skin = 137090,
+		skin_shift = {
+			-74.10001,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			74.10001,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			345.16
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			346
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[2] = {
+		skin = 407042,
+		skin_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			57.33,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_shop_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		formation_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		},
+		skin_card_shift = {
+			0,
+			0,
+			0,
+			1,
+			0
+		}
+	}
+	pg.base.ship_skin_newmainui_shift[102362] = {
+		skin = 102362,
+		skin_shift = {
+			-216.85,
+			0,
+			0,
+			1
+		},
+		l2d_shift = {
+			0,
+			0,
+			0,
+			1
+		},
+		spine_shift = {
+			216.85,
+			0,
+			0,
+			1
+		},
+		battle_result_display_shift = {
+			0,
+			-39.29996,
+			0,
+			1.37,
+			0
+		},
+		skin_shop_shift = {
+			-157,
+			-47.4,
 			0,
 			1
 		},

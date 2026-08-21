@@ -1,6 +1,8 @@
 guild = {}
 require("game/guild/manager/GuildConst")
 
+
+guild.GuildIconVo = require("game/guild/manager/vo/GuildIconVo")
 guild.GuildExpDataVo = require("game/guild/manager/vo/GuildExpDataVo")
 guild.GuildPrepareDataVo = require("game/guild/manager/vo/GuildPrepareDataVo")
 guild.GuildBossStageDupConfigVo = require("game/guild/manager/vo/GuildBossStageDupConfigVo")
@@ -52,6 +54,8 @@ guild.GuildTipsPanel = require("game/guild/view/GuildTipsPanel")
 
 guild.GuildSkillPanel = require("game/guild/view/GuildSkillPanel")
 
+guild.GuildChangeIconPanel = require("game/guild/view/GuildChangeIconPanel")
+
 -------------------GuildBosss
 guild.GuildBossMainUI = require("game/guild/view/GuildBossMainUI")
 guild.GuildBossRankPanel = require("game/guild/view/GuildBossRankPanel")
@@ -78,6 +82,12 @@ guild.GuildSweepBossPanel = require("game/guild/view/GuildSweepBossPanel")
 guild.GuildSweepLogPanel = require("game/guild/view/GuildSweepLogPanel")
 
 guild.GuildSweepResultView = require("game/guild/view/GuildSweepResultView")
+
+
+-------------------GuildWar----------------------------------
+
+
+
 
 guild.GuildManager = require("game/guild/manager/GuildManager").new()
 guild.GuildController = require("game/guild/controller/GuildController").new(guild.GuildManager)

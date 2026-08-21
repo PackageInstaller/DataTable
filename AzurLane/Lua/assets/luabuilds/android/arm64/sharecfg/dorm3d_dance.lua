@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_dance") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_dance"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_dance = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_dance
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_dance = rawget(pg, "dorm3d_dance") or setmetatable({
+	__name = "dorm3d_dance"
+}, confNEO)
+pg.dorm3d_dance.all = {
 	10517,
 	30707,
 	49905,
 	20220
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_dance = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_dance = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_dance
-
-	var_1_0[10517] = {
+	pg.base.dorm3d_dance[10517] = {
 		default_camera = "dance_camera1",
 		song_name = "迷乱奇遇",
 		director_name = "[sequence]",
@@ -84,11 +47,7 @@ var_0_3.base.dorm3d_dance = {}
 			"镜头3"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_dance
-
-	var_1_1[30707] = {
+	pg.base.dorm3d_dance[30707] = {
 		default_camera = "dance_camera1",
 		song_name = "今日之凤_shade",
 		director_name = "[sequence]",
@@ -123,11 +82,7 @@ var_0_3.base.dorm3d_dance = {}
 			"镜头3"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_dance
-
-	var_1_2[49905] = {
+	pg.base.dorm3d_dance[49905] = {
 		default_camera = "dance_camera1",
 		song_name = "深渊的期待",
 		director_name = "[sequence]",
@@ -162,8 +117,7 @@ var_0_3.base.dorm3d_dance = {}
 			"镜头3"
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.dorm3d_dance[20220] = {
+	pg.base.dorm3d_dance[20220] = {
 		default_camera = "dance_camera1",
 		song_name = "舞池旋律3",
 		director_name = "[sequence]",

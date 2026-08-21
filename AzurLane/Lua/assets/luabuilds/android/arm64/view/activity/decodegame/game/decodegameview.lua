@@ -1,11 +1,7 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("DecodeGameView")
+﻿local var_0_0 = class("DecodeGameView")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg = var_1_10002
-
-	var_1_10002.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
 	arg_1_0.controller = arg_1_1
 
@@ -14,467 +10,163 @@ end
 
 function var_0_0.SetUI(arg_2_0, arg_2_1)
 	arg_2_0._tf = arg_2_1
-	go = var_1_10002
-	arg_2_0._go = var_1_10002(arg_2_1)
-
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.mapItemContainer = var_2.Find(var_2_0, "game/container")
-	UIItemList = var_2
-
-	local var_2_1 = var_2.New
-	local var_2_2 = arg_2_0.mapItemContainer
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.itemList = var_2_1(var_2_2, var_5.Find(var_2_3, "game/container/tpl"))
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.mapLine = var_2.Find(var_2_4, "game/line")
-	setActive = var_2
-
-	var_2(arg_2_0.mapLine, false)
-
-	local var_2_5 = {}
-	local var_2_6 = arg_2_0._tf
-
-	var_2_5[1] = var_3.Find(var_2_6, "btn/btn1")
-
-	local var_2_7 = arg_2_0._tf
-
-	var_2_5[2] = var_3.Find(var_2_7, "btn/btn2")
-
-	local var_2_8 = arg_2_0._tf
-
-	var_2_5[3] = var_3.Find(var_2_8, "btn/btn3")
-	arg_2_0.mapBtns = var_2_5
-
-	local var_2_9 = {}
-	local var_2_10 = arg_2_0._tf
-
-	var_2_9[1] = var_3.Find(var_2_10, "tuitong/1")
-
-	local var_2_11 = arg_2_0._tf
-
-	var_2_9[2] = var_3.Find(var_2_11, "tuitong/2")
-
-	local var_2_12 = arg_2_0._tf
-
-	var_2_9[3] = var_3.Find(var_2_12, "tuitong/3")
-	arg_2_0.engines = var_2_9
-
-	local var_2_13 = arg_2_0._tf
-
-	arg_2_0.engineBottom = var_2.Find(var_2_13, "tuitong/4")
-
-	local var_2_14 = arg_2_0._tf
-	local var_2_15 = var_2.Find(var_2_14, "shuzi/1")
-	local var_2_16 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_2_3
-	arg_2_0.number1 = var_2_16(var_2_15, var_5(var_2_3))
-
-	local var_2_17 = arg_2_0._tf
-	local var_2_18 = var_2.Find(var_2_17, "shuzi/2")
-	local var_2_19 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_2_3
-	arg_2_0.number2 = var_2_19(var_2_18, var_5(var_2_3))
-
-	local var_2_20 = arg_2_0._tf
-
-	arg_2_0.awardProgressTF = var_2.Find(var_2_20, "zhuanpanxinxi/jindu")
-
-	local var_2_21 = arg_2_0._tf
-
-	arg_2_0.awardProgress1TF = var_2.Find(var_2_21, "zhuanpanxinxi/jindu/zhuanpan")
-
-	local var_2_22 = {}
-	local var_2_23 = arg_2_0._tf
-
-	var_2_22[1] = var_3.Find(var_2_23, "zhuanpanxinxi/deng1")
-
-	local var_2_24 = arg_2_0._tf
-
-	var_2_22[2] = var_3.Find(var_2_24, "zhuanpanxinxi/deng2")
-
-	local var_2_25 = arg_2_0._tf
-
-	var_2_22[3] = var_3.Find(var_2_25, "zhuanpanxinxi/deng3")
-	arg_2_0.mapProgreeses = var_2_22
-
-	local var_2_26 = {}
-	local var_2_27 = arg_2_0._tf
-
-	var_2_26[1] = var_3.Find(var_2_27, "dengguang/code1/1")
-
-	local var_2_28 = arg_2_0._tf
-
-	var_2_26[2] = var_3.Find(var_2_28, "dengguang/code1/2")
-
-	local var_2_29 = arg_2_0._tf
-
-	var_2_26[3] = var_3.Find(var_2_29, "dengguang/code1/3")
-
-	local var_2_30 = arg_2_0._tf
-
-	var_2_26[4] = var_3.Find(var_2_30, "dengguang/code1/4")
-
-	local var_2_31 = arg_2_0._tf
-
-	var_2_26[5] = var_3.Find(var_2_31, "dengguang/code1/5")
-
-	local var_2_32 = arg_2_0._tf
-
-	var_2_26[6] = var_3.Find(var_2_32, "dengguang/code1/6")
-	arg_2_0.mapPasswords = var_2_26
-
-	local var_2_33 = arg_2_0._tf
-
-	arg_2_0.encodingPanel = var_2.Find(var_2_33, "encoding")
-
-	local var_2_34 = arg_2_0._tf
-
-	arg_2_0.encodingSlider = var_2.Find(var_2_34, "encoding/slider/bar")
-	setActive = var_2
-
-	var_2(arg_2_0.encodingPanel, false)
-
-	local var_2_35 = arg_2_0._tf
-
-	arg_2_0.enterAnim = var_2.Find(var_2_35, "enter_anim")
-
-	local var_2_36 = arg_2_0._tf
-
-	arg_2_0.enterAnimTop = var_2.Find(var_2_36, "enter_anim/top")
-
-	local var_2_37 = arg_2_0._tf
-
-	arg_2_0.enterAnimBottom = var_2.Find(var_2_37, "enter_anim/bottom")
-	setActive = var_2
-
-	var_2(arg_2_0.enterAnim, false)
-
-	local var_2_38 = arg_2_0._tf
-
-	arg_2_0.bookBtn = var_2.Find(var_2_38, "btn/mima/unlock")
-
-	local var_2_39 = arg_2_0._tf
-
-	arg_2_0.mimaLockBtn = var_2.Find(var_2_39, "btn/mima/lock")
-
-	local var_2_40 = arg_2_0._tf
-
-	arg_2_0.mimaLockBlink = var_2.Find(var_2_40, "btn/mima/blink")
-
-	local var_2_41 = arg_2_0._tf
-
-	arg_2_0.code1Panel = var_2.Find(var_2_41, "dengguang/code1")
-
-	local var_2_42 = arg_2_0._tf
-
-	arg_2_0.code2Panel = var_2.Find(var_2_42, "dengguang/code2")
-
-	local var_2_43 = arg_2_0._tf
-
-	arg_2_0.passWordTF = var_2.Find(var_2_43, "game/password")
+	arg_2_0._go = go(arg_2_1)
+	arg_2_0.mapItemContainer = arg_2_0._tf:Find("game/container")
+	arg_2_0.itemList = UIItemList.New(arg_2_0.mapItemContainer, arg_2_0._tf:Find("game/container/tpl"))
+	arg_2_0.mapLine = arg_2_0._tf:Find("game/line")
+
+	setActive(arg_2_0.mapLine, false)
+
+	arg_2_0.mapBtns = {
+		arg_2_0._tf:Find("btn/btn1"),
+		arg_2_0._tf:Find("btn/btn2"),
+		arg_2_0._tf:Find("btn/btn3")
+	}
+	arg_2_0.engines = {
+		arg_2_0._tf:Find("tuitong/1"),
+		arg_2_0._tf:Find("tuitong/2"),
+		arg_2_0._tf:Find("tuitong/3")
+	}
+	arg_2_0.engineBottom = arg_2_0._tf:Find("tuitong/4")
+	arg_2_0.number1 = arg_2_0._tf:Find("shuzi/1"):GetComponent(typeof(Image))
+	arg_2_0.number2 = arg_2_0._tf:Find("shuzi/2"):GetComponent(typeof(Image))
+	arg_2_0.awardProgressTF = arg_2_0._tf:Find("zhuanpanxinxi/jindu")
+	arg_2_0.awardProgress1TF = arg_2_0._tf:Find("zhuanpanxinxi/jindu/zhuanpan")
+	arg_2_0.mapProgreeses = {
+		arg_2_0._tf:Find("zhuanpanxinxi/deng1"),
+		arg_2_0._tf:Find("zhuanpanxinxi/deng2"),
+		arg_2_0._tf:Find("zhuanpanxinxi/deng3")
+	}
+	arg_2_0.mapPasswords = {
+		arg_2_0._tf:Find("dengguang/code1/1"),
+		arg_2_0._tf:Find("dengguang/code1/2"),
+		arg_2_0._tf:Find("dengguang/code1/3"),
+		arg_2_0._tf:Find("dengguang/code1/4"),
+		arg_2_0._tf:Find("dengguang/code1/5"),
+		arg_2_0._tf:Find("dengguang/code1/6")
+	}
+	arg_2_0.encodingPanel = arg_2_0._tf:Find("encoding")
+	arg_2_0.encodingSlider = arg_2_0._tf:Find("encoding/slider/bar")
+
+	setActive(arg_2_0.encodingPanel, false)
+
+	arg_2_0.enterAnim = arg_2_0._tf:Find("enter_anim")
+	arg_2_0.enterAnimTop = arg_2_0._tf:Find("enter_anim/top")
+	arg_2_0.enterAnimBottom = arg_2_0._tf:Find("enter_anim/bottom")
+
+	setActive(arg_2_0.enterAnim, false)
+
+	arg_2_0.bookBtn = arg_2_0._tf:Find("btn/mima/unlock")
+	arg_2_0.mimaLockBtn = arg_2_0._tf:Find("btn/mima/lock")
+	arg_2_0.mimaLockBlink = arg_2_0._tf:Find("btn/mima/blink")
+	arg_2_0.code1Panel = arg_2_0._tf:Find("dengguang/code1")
+	arg_2_0.code2Panel = arg_2_0._tf:Find("dengguang/code2")
+	arg_2_0.passWordTF = arg_2_0._tf:Find("game/password")
 	arg_2_0.containerSize = arg_2_0.mapItemContainer.sizeDelta
-
-	local var_2_44 = arg_2_0._tf
-
-	arg_2_0.mosaic = var_2.Find(var_2_44, "game/Mosaic")
-
-	local var_2_45 = arg_2_0._tf
-
-	arg_2_0.lines = var_2.Find(var_2_45, "game/grids")
-
-	local var_2_46 = {}
-	local var_2_47 = arg_2_0._tf
-
-	var_2_46[1] = var_3.Find(var_2_47, "dengguang/code2/1")
-
-	local var_2_48 = arg_2_0._tf
-
-	var_2_46[2] = var_3.Find(var_2_48, "dengguang/code2/2")
-
-	local var_2_49 = arg_2_0._tf
-
-	var_2_46[3] = var_3.Find(var_2_49, "dengguang/code2/3")
-
-	local var_2_50 = arg_2_0._tf
-
-	var_2_46[4] = var_3.Find(var_2_50, "dengguang/code2/4")
-
-	local var_2_51 = arg_2_0._tf
-
-	var_2_46[5] = var_3.Find(var_2_51, "dengguang/code2/5")
-
-	local var_2_52 = arg_2_0._tf
-
-	var_2_46[6] = var_3.Find(var_2_52, "dengguang/code2/6")
-
-	local var_2_53 = arg_2_0._tf
-
-	var_2_46[7] = var_3.Find(var_2_53, "dengguang/code2/7")
-
-	local var_2_54 = arg_2_0._tf
-
-	var_2_46[8] = var_3.Find(var_2_54, "dengguang/code2/8")
-
-	local var_2_55 = arg_2_0._tf
-
-	var_2_46[9] = var_3.Find(var_2_55, "dengguang/code2/9")
-	arg_2_0.code2 = var_2_46
-
-	local var_2_56 = arg_2_0._tf
-
-	arg_2_0.lightRight = var_2.Find(var_2_56, "dengguang/code2/light_right")
-
-	local var_2_57 = arg_2_0._tf
-
-	arg_2_0.lightLeft = var_2.Find(var_2_57, "dengguang/code2/light_left")
-
-	local var_2_58 = arg_2_0._tf
-
-	arg_2_0.awardLock = var_2.Find(var_2_58, "zhuanpanxinxi/item/lock")
-
-	local var_2_59 = arg_2_0._tf
-
-	arg_2_0.awardGot = var_2.Find(var_2_59, "zhuanpanxinxi/item/got")
+	arg_2_0.mosaic = arg_2_0._tf:Find("game/Mosaic")
+	arg_2_0.lines = arg_2_0._tf:Find("game/grids")
+	arg_2_0.code2 = {
+		arg_2_0._tf:Find("dengguang/code2/1"),
+		arg_2_0._tf:Find("dengguang/code2/2"),
+		arg_2_0._tf:Find("dengguang/code2/3"),
+		arg_2_0._tf:Find("dengguang/code2/4"),
+		arg_2_0._tf:Find("dengguang/code2/5"),
+		arg_2_0._tf:Find("dengguang/code2/6"),
+		arg_2_0._tf:Find("dengguang/code2/7"),
+		arg_2_0._tf:Find("dengguang/code2/8"),
+		arg_2_0._tf:Find("dengguang/code2/9")
+	}
+	arg_2_0.lightRight = arg_2_0._tf:Find("dengguang/code2/light_right")
+	arg_2_0.lightLeft = arg_2_0._tf:Find("dengguang/code2/light_left")
+	arg_2_0.awardLock = arg_2_0._tf:Find("zhuanpanxinxi/item/lock")
+	arg_2_0.awardGot = arg_2_0._tf:Find("zhuanpanxinxi/item/got")
 	arg_2_0.screenHeight = arg_2_0._tf.rect.height
-
-	local var_2_60 = arg_2_0.engineBottom
-
-	Vector3 = var_3
-	var_2_60.localPosition = var_3(arg_2_0.engineBottom.localPosition.x, -arg_2_0.screenHeight / 2, 0)
-
-	local var_2_61 = arg_2_0.code2Panel
-
-	Vector3 = var_3
-	var_2_61.localPosition = var_3(arg_2_0.code2Panel.localPosition.x, arg_2_0.screenHeight / 2, 0)
-
-	local var_2_62 = arg_2_0._tf
-
-	arg_2_0.line1 = var_2.Find(var_2_62, "game/lines/line1")
+	arg_2_0.engineBottom.localPosition = Vector3(arg_2_0.engineBottom.localPosition.x, -arg_2_0.screenHeight / 2, 0)
+	arg_2_0.code2Panel.localPosition = Vector3(arg_2_0.code2Panel.localPosition.x, arg_2_0.screenHeight / 2, 0)
+	arg_2_0.line1 = arg_2_0._tf:Find("game/lines/line1")
 	arg_2_0.blinkFlag = false
-
-	local var_2_63 = arg_2_0._tf
-
-	arg_2_0.helperTF = var_2.Find(var_2_63, "helper")
-
-	local var_2_64 = arg_2_0._tf
-
-	arg_2_0.tips = var_2.Find(var_2_64, "btn/tips")
+	arg_2_0.helperTF = arg_2_0._tf:Find("helper")
+	arg_2_0.tips = arg_2_0._tf:Find("btn/tips")
 	arg_2_0.animCallbacks = {}
+	arg_2_0.decodeTV = arg_2_0._tf:Find("game/zhezhao/DecodeTV")
+	arg_2_0.anim = arg_2_0.decodeTV:GetComponent(typeof(Animator))
+	arg_2_0.dftAniEvent = arg_2_0.decodeTV:GetComponent(typeof(DftAniEvent))
 
-	local var_2_65 = arg_2_0._tf
-
-	arg_2_0.decodeTV = var_2.Find(var_2_65, "game/zhezhao/DecodeTV")
-
-	local var_2_66 = arg_2_0.decodeTV
-	local var_2_67 = var_2.GetComponent
-
-	typeof = var_5
-	Animator = var_7
-	arg_2_0.anim = var_2_67(var_2_66, var_5(var_7))
-
-	local var_2_68 = arg_2_0.decodeTV
-	local var_2_69 = var_2.GetComponent
-
-	typeof = var_5
-	DftAniEvent = var_7
-	arg_2_0.dftAniEvent = var_2_69(var_2_68, var_5(var_7))
-
-	local var_2_70 = arg_2_0.dftAniEvent
-
-	var_2.SetEndEvent(var_2_70, function(arg_3_0)
-		ipairs = var_2_10001
-
-		for iter_3_0, iter_3_1 in var_2_10001(arg_2_0.animCallbacks) do
+	arg_2_0.dftAniEvent:SetEndEvent(function(arg_3_0)
+		for iter_3_0, iter_3_1 in ipairs(arg_2_0.animCallbacks) do
 			iter_3_1()
 		end
 
-		local var_3_0 = arg_2_0
+		arg_2_0.animCallbacks = {}
 
-		var_3_0.animCallbacks = {}
-		setActive = var_3_0
-
-		var_3_0(arg_2_0.decodeTV, false)
+		setActive(arg_2_0.decodeTV, false)
 
 		return
 	end)
 
 	arg_2_0.codeHeight = arg_2_0.screenHeight / 2 - arg_2_0.code1Panel.anchoredPosition.y
-
-	local var_2_71 = arg_2_0.code2Panel
-
-	Vector2 = var_3
-	var_2_71.sizeDelta = var_3(arg_2_0.code2Panel.sizeDelta.x, arg_2_0.codeHeight)
-
-	local var_2_72 = arg_2_0.code1Panel
-
-	Vector2 = var_3
-	var_2_72.sizeDelta = var_3(arg_2_0.code1Panel.sizeDelta.x, arg_2_0.codeHeight)
+	arg_2_0.code2Panel.sizeDelta = Vector2(arg_2_0.code2Panel.sizeDelta.x, arg_2_0.codeHeight)
+	arg_2_0.code1Panel.sizeDelta = Vector2(arg_2_0.code1Panel.sizeDelta.x, arg_2_0.codeHeight)
 
 	return
 end
 
 function var_0_0.DoEnterAnim(arg_4_0, arg_4_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_4_0.enterAnim, true)
-
-	LeanTween = var_1_10002
-
-	local var_4_0 = var_1_10002.moveLocalY
-
-	go = var_4
-
-	local var_4_1 = var_4_0(var_4(arg_4_0.enterAnimTop), arg_4_0.screenHeight / 2, 1)
-	local var_4_2 = var_2.setFrom(var_4_1, -75)
-	local var_4_3 = var_2.setDelay
-
-	DecodeGameConst = var_5
-
-	var_4_3(var_4_2, var_5.OPEN_DOOR_DELAY)
-
-	LeanTween = var_4_3
-
-	local var_4_4 = var_4_3.moveLocalY
-
-	go = var_4_2
-
-	local var_4_5 = var_4_4(var_4_2(arg_4_0.enterAnimBottom), -arg_4_0.screenHeight / 2, 1)
-	local var_4_6 = var_2.setFrom(var_4_5, 75)
-	local var_4_7 = var_2.setDelay
-
-	DecodeGameConst = var_5
-
-	local var_4_8 = var_4_7(var_4_6, var_5.OPEN_DOOR_DELAY)
-	local var_4_9 = var_2.setOnComplete
-
-	System = var_5
-
-	var_4_9(var_4_8, var_5.Action(function()
+	setActive(arg_4_0.enterAnim, true)
+	LeanTween.moveLocalY(go(arg_4_0.enterAnimTop), arg_4_0.screenHeight / 2, 1):setFrom(-75):setDelay(DecodeGameConst.OPEN_DOOR_DELAY)
+	LeanTween.moveLocalY(go(arg_4_0.enterAnimBottom), -arg_4_0.screenHeight / 2, 1):setFrom(75):setDelay(DecodeGameConst.OPEN_DOOR_DELAY):setOnComplete(System.Action(function()
 		arg_4_1()
-
-		setActive = var_0
-
-		var_0(arg_4_0.enterAnim, false)
+		setActive(arg_4_0.enterAnim, false)
 
 		return
 	end))
-
-	updateDrop = var_4_9
-
-	local var_4_10 = arg_4_0._tf
-	local var_4_11 = var_4.Find(var_4_10, "zhuanpanxinxi/item")
-	local var_4_12 = {}
-
-	DecodeGameConst = var_4_10
-	var_4_12.id = var_4_10.AWARD[2]
-	DecodeGameConst = var_6
-	var_4_12.type = var_6.AWARD[1]
-	DecodeGameConst = var_6
-	var_4_12.count = var_6.AWARD[3]
-
-	var_4_9(var_4_11, var_4_12)
+	updateDrop(arg_4_0._tf:Find("zhuanpanxinxi/item"), {
+		id = DecodeGameConst.AWARD[2],
+		type = DecodeGameConst.AWARD[1],
+		count = DecodeGameConst.AWARD[3]
+	})
 
 	return
 end
 
 function var_0_0.Inited(arg_6_0, arg_6_1)
-	onButton = var_1_10002
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0._tf
-	local var_6_2 = var_5.Find(var_6_1, "btn/back")
-
-	local function var_6_3()
-		local var_7_0 = arg_6_0.controller
-
-		var_0.ExitGame(var_7_0)
+	onButton(arg_6_0, arg_6_0._tf:Find("btn/back"), function()
+		arg_6_0.controller:ExitGame()
 
 		return
-	end
-
-	SFX_CANCEL = var_6_1
-
-	var_1_10002(var_6_0, var_6_2, var_6_3, var_6_1)
-
-	onButton = var_1_10002
-
-	local var_6_4 = arg_6_0
-	local var_6_5 = arg_6_0._tf
-	local var_6_6 = var_5.Find(var_6_5, "btn/help")
-
-	local function var_6_7()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_8_1 = var_0.ShowMsgBox
-		local var_8_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_8_2.type = var_2_10004
-		pg = var_2_10004
-		var_8_2.helps = var_2_10004.gametip.decodegame_gametip.tip
-
-		var_8_1(var_8_0, var_8_2)
+	end, SFX_CANCEL)
+	onButton(arg_6_0, arg_6_0._tf:Find("btn/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.decodegame_gametip.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_6_5
-
-	var_1_10002(var_6_4, var_6_6, var_6_7, var_6_5)
+	end, SFX_PANEL)
 
 	arg_6_0.ison = false
-	onButton = var_2
 
-	var_2(arg_6_0, arg_6_0.bookBtn, function()
-		local var_9_0 = arg_6_0.controller
-
-		if var_0.CanSwitch(var_9_0) then
+	onButton(arg_6_0, arg_6_0.bookBtn, function()
+		if arg_6_0.controller:CanSwitch() then
 			arg_6_0.ison = not arg_6_0.ison
 
-			local var_9_1 = arg_6_0.controller
-
-			var_0.SwitchToDecodeMap(var_9_1, arg_6_0.ison)
-
-			setActive = var_0
-
-			local var_9_2 = arg_6_0.bookBtn
-
-			var_0(var_2.Find(var_9_2, "Image"), arg_6_0.ison)
+			arg_6_0.controller:SwitchToDecodeMap(arg_6_0.ison)
+			setActive(arg_6_0.bookBtn:Find("Image"), arg_6_0.ison)
 		end
 
 		return
 	end)
 
-	ipairs = var_2
-
-	for iter_6_0, iter_6_1 in var_2(arg_6_0.mapBtns) do
-		onButton = var_6_5
-
-		var_6_5(arg_6_0, iter_6_1, function()
-			local var_10_0 = arg_6_0.controller
-
-			var_0.SwitchMap(var_10_0, iter_6_0)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.mapBtns) do
+		onButton(arg_6_0, iter_6_1, function()
+			arg_6_0.controller:SwitchMap(iter_6_0)
 
 			return
 		end)
 	end
 
-	setActive = var_2
-
-	var_2(arg_6_0.awardLock, not arg_6_1)
-
-	setActive = var_2
-
-	var_2(arg_6_0.awardGot, arg_6_1)
+	setActive(arg_6_0.awardLock, not arg_6_1)
+	setActive(arg_6_0.awardGot, arg_6_1)
 
 	return
 end
@@ -482,123 +174,53 @@ end
 function var_0_0.UpdateMap(arg_11_0, arg_11_1)
 	arg_11_0.mapItems = {}
 
-	local var_11_0 = arg_11_0.itemList
-
-	var_2.make(var_11_0, function(arg_12_0, arg_12_1, arg_12_2)
-		UIItemList = var_2_10003
-
-		if arg_12_0 == var_2_10003.EventUpdate then
-			local var_12_0 = arg_11_1.items[arg_12_1 + 1]
-			local var_12_1 = arg_11_0
-
-			var_4.UpdateMapItem(var_12_1, arg_12_2, arg_11_1, var_12_0, arg_12_1 + 1)
+	arg_11_0.itemList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			arg_11_0:UpdateMapItem(arg_12_2, arg_11_1, arg_11_1.items[arg_12_1 + 1], arg_12_1 + 1)
 		end
 
 		return
 	end)
+	arg_11_0.itemList:align(#arg_11_1.items)
 
-	local var_11_1 = arg_11_0.itemList
+	local var_11_0 = _.flatten(arg_11_1.password)
 
-	var_2.align(var_11_1, #arg_11_1.items)
-
-	_ = var_2
-
-	local var_11_2 = var_2.flatten(arg_11_1.password)
-
-	ipairs = var_1_10003
-
-	for iter_11_0, iter_11_1 in var_1_10003(arg_11_0.mapPasswords) do
-		local var_11_3 = "-"
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.mapPasswords) do
+		local var_11_1 = "-"
 
 		if arg_11_1.isUnlock then
-			var_11_3 = var_11_2[iter_11_0]
+			var_11_1 = var_11_0[iter_11_0]
 		end
 
-		local var_11_4 = iter_11_1
-		local var_11_5 = iter_11_1.GetComponent
-
-		typeof = var_1_10012
-		Image = var_1_10014
-
-		local var_11_6 = var_11_5(var_11_4, var_1_10012(var_1_10014))
-
-		GetSpriteFromAtlas = var_1_10010
-		var_11_6.sprite = var_1_10010("ui/DecodeGameNumber_atlas", var_11_3 .. "-1")
+		iter_11_1:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", var_11_1 .. "-1")
 	end
 
-	setActive = var_3
-
-	var_3(arg_11_0.mosaic, not arg_11_1.isUnlock)
+	setActive(arg_11_0.mosaic, not arg_11_1.isUnlock)
 
 	return
 end
 
 function var_0_0.UpdateMapItem(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
-	local var_13_0 = arg_13_2.id
-
 	arg_13_1.localPosition = arg_13_3.position
-	go = var_6
-	var_6(arg_13_1).name = arg_13_3.index
+	go(arg_13_1).name = arg_13_3.index
 
-	local var_13_1 = arg_13_1:Find("rect/icon")
-	local var_13_2 = var_6.GetComponent
+	local var_13_0 = arg_13_1:Find("rect/icon")
+	local var_13_1 = var_13_0:GetComponent(typeof(Image))
 
-	typeof = var_1_10010
-	Image = var_1_10012
+	var_13_1.sprite = GetSpriteFromAtlas("puzzla/bg_" .. arg_13_2.id + DecodeGameConst.MAP_NAME_OFFSET, arg_13_2.id .. "-" .. (arg_13_2.isUnlock and arg_13_4 or DecodeGameConst.DISORDER[arg_13_4]))
 
-	local var_13_3 = var_13_2(var_13_1, var_1_10010(var_1_10012))
-	local var_13_4
+	var_13_1:SetNativeSize()
 
-	if not arg_13_2.isUnlock or not arg_13_4 then
-		::label_13_0::
+	var_13_0:GetComponent(typeof(CanvasGroup)).alpha = arg_13_3.isUnlock and 1 or 0
 
-		DecodeGameConst = var_13_4
-		var_13_4 = var_13_4.DISORDER[arg_13_4]
-	end
-
-	GetSpriteFromAtlas = var_13_1
-
-	local var_13_5 = "puzzla/bg_"
-
-	DecodeGameConst = var_1_10012
-	var_13_3.sprite = var_13_1(var_13_5 .. var_13_0 + var_1_10012.MAP_NAME_OFFSET, var_13_0 .. "-" .. var_13_4)
-
-	var_13_3:SetNativeSize()
-
-	local var_13_6 = var_6
-	local var_13_7 = var_6.GetComponent
-
-	typeof = var_12
-	CanvasGroup = var_14
-	var_13_7(var_13_6, var_12(var_14)).alpha = arg_13_3.isUnlock and 1 or 0
-	setActive = var_10
-
-	var_10(arg_13_1:Find("rays"), false)
-
-	setActive = var_10
-
-	var_10(arg_13_1:Find("rays/yellow"), false)
-
-	setActive = var_10
-
-	var_10(arg_13_1:Find("rays/blue"), false)
-
-	onButton = var_10
-
-	local var_13_8 = arg_13_0
-	local var_13_9 = arg_13_1
-
-	local function var_13_10()
-		local var_14_0 = arg_13_0.controller
-
-		var_0.Unlock(var_14_0, arg_13_3.index)
+	setActive(arg_13_1:Find("rays"), false)
+	setActive(arg_13_1:Find("rays/yellow"), false)
+	setActive(arg_13_1:Find("rays/blue"), false)
+	onButton(arg_13_0, arg_13_1, function()
+		arg_13_0.controller:Unlock(arg_13_3.index)
 
 		return
-	end
-
-	SFX_PANEL = var_15
-
-	var_10(var_13_8, var_13_9, var_13_10, var_15)
+	end, SFX_PANEL)
 
 	arg_13_0.mapItems[arg_13_3.index] = arg_13_1
 
@@ -606,54 +228,15 @@ function var_0_0.UpdateMapItem(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
 end
 
 function var_0_0.OnMapRepairing(arg_15_0, arg_15_1)
-	pg = var_1_10002
-
-	local var_15_0 = var_1_10002.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_15_0, arg_15_0.encodingPanel)
-
-	setActive = var_2
-
-	var_2(arg_15_0.encodingPanel, true)
-
-	LeanTween = var_2
-
-	local var_15_1 = var_2.value
-
-	go = var_4
-
-	local var_15_2 = var_4(arg_15_0.encodingSlider)
-	local var_15_3 = 0
-	local var_15_4 = 1
-
-	DecodeGameConst = var_1_10007
-
-	local var_15_5 = var_15_1(var_15_2, var_15_3, var_15_4, var_1_10007.DECODE_MAP_TIME)
-	local var_15_6 = var_2.setOnUpdate
-
-	System = var_15_3
-
-	local var_15_7 = var_15_6(var_15_5, var_15_3.Action_float(function(arg_16_0)
-		setFillAmount = var_2_10001
-
-		var_2_10001(arg_15_0.encodingSlider, arg_16_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_15_0.encodingPanel)
+	setActive(arg_15_0.encodingPanel, true)
+	LeanTween.value(go(arg_15_0.encodingSlider), 0, 1, DecodeGameConst.DECODE_MAP_TIME):setOnUpdate(System.Action_float(function(arg_16_0)
+		setFillAmount(arg_15_0.encodingSlider, arg_16_0)
 
 		return
-	end))
-	local var_15_8 = var_2.setOnComplete
-
-	System = var_5
-
-	var_15_8(var_15_7, var_5.Action(function()
-		pg = var_2_10000
-
-		local var_17_0 = var_2_10000.UIMgr.GetInstance()
-
-		var_0.UnOverlayPanel(var_17_0, arg_15_0.encodingPanel, arg_15_0._tf)
-
-		setActive = var_0
-
-		var_0(arg_15_0.encodingPanel, false)
+	end)):setOnComplete(System.Action(function()
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_15_0.encodingPanel, arg_15_0._tf)
+		setActive(arg_15_0.encodingPanel, false)
 		arg_15_1()
 
 		return
@@ -663,84 +246,25 @@ function var_0_0.OnMapRepairing(arg_15_0, arg_15_1)
 end
 
 function var_0_0.OnSwitch(arg_18_0, arg_18_1, arg_18_2, arg_18_3, arg_18_4, arg_18_5, arg_18_6, arg_18_7)
-	local var_18_0 = arg_18_0.mapBtns[arg_18_1]
-	local var_18_1 = arg_18_0.engines[arg_18_1]
+	assert(arg_18_0.engines[arg_18_1], arg_18_1)
 
-	assert = var_1_10010
+	local var_18_0 = arg_18_0.engines[arg_18_1]:Find("tui")
+	local var_18_1 = var_18_0.sizeDelta.y
 
-	var_1_10010(var_18_1, arg_18_1)
-
-	go = var_1_10010
-
-	local var_18_2 = var_1_10010(var_18_1:Find("xinx"))
-	local var_18_3 = var_18_1
-	local var_18_4 = var_18_1.Find(var_18_3, "tui").sizeDelta.y
-
-	LeanTween = var_18_3
-
-	local var_18_5 = var_18_3.moveLocalX
-	local var_18_6 = var_18_2
-	local var_18_7 = arg_18_2
-
-	DecodeGameConst = var_1_10017
-
-	local var_18_8 = var_18_5(var_18_6, var_18_7, var_1_10017.SWITCH_MAP)
-
-	var_13.setFrom(var_18_8, arg_18_3)
-
-	LeanTween = var_13
-
-	local var_18_9 = var_13.value
-
-	go = var_18_8
-
-	local var_18_10 = var_18_8(var_11)
-	local var_18_11 = arg_18_4
-	local var_18_12 = arg_18_5
-
-	DecodeGameConst = var_1_10018
-
-	local var_18_13 = var_18_9(var_18_10, var_18_11, var_18_12, var_1_10018.SWITCH_MAP)
-	local var_18_14 = var_13.setOnUpdate
-
-	System = var_18_11
-
-	var_18_14(var_18_13, var_18_11.Action_float(function(arg_19_0)
-		local var_19_0 = var_0
-
-		Vector2 = var_2_10002
-		var_19_0.sizeDelta = var_2_10002(arg_19_0, var_18_4)
+	LeanTween.moveLocalX(go(arg_18_0.engines[arg_18_1]:Find("xinx")), arg_18_2, DecodeGameConst.SWITCH_MAP):setFrom(arg_18_3)
+	LeanTween.value(go(var_18_0), arg_18_4, arg_18_5, DecodeGameConst.SWITCH_MAP):setOnUpdate(System.Action_float(function(arg_19_0)
+		var_18_0.sizeDelta = Vector2(arg_19_0, var_18_1)
 
 		return
 	end))
-
-	LeanTween = var_18_14
-
-	local var_18_15 = var_18_14.rotateZ
-
-	go = var_18_13
-
-	local var_18_16 = var_18_13(var_18_0)
-	local var_18_17 = arg_18_6
-
-	DecodeGameConst = var_17
-
-	local var_18_18 = var_18_15(var_18_16, var_18_17, var_17.SWITCH_MAP)
-	local var_18_19 = var_13.setOnComplete
-
-	System = var_18_17
-
-	var_18_19(var_18_18, var_18_17.Action(arg_18_7))
+	LeanTween.rotateZ(go(arg_18_0.mapBtns[arg_18_1]), arg_18_6, DecodeGameConst.SWITCH_MAP):setOnComplete(System.Action(arg_18_7))
 
 	return
 end
 
 function var_0_0.OnExitMap(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
 	if arg_20_2 then
-		local var_20_0 = arg_20_0.mapItemContainer
-
-		Vector2 = var_1_10005
-		var_20_0.sizeDelta = var_1_10005(arg_20_0.containerSize.x, 0)
+		arg_20_0.mapItemContainer.sizeDelta = Vector2(arg_20_0.containerSize.x, 0)
 	end
 
 	arg_20_0:OnSwitch(arg_20_1, -11, -150, 158, 23, 0, arg_20_3)
@@ -749,13 +273,9 @@ function var_0_0.OnExitMap(arg_20_0, arg_20_1, arg_20_2, arg_20_3)
 end
 
 function var_0_0.OnEnterMap(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
-	parallelAsync = var_1_10004
-
-	var_1_10004({
+	parallelAsync({
 		function(arg_22_0)
-			local var_22_0 = arg_21_0
-
-			var_1.OnSwitch(var_22_0, arg_21_1, -150, -11, 23, 158, 90, function()
+			arg_21_0:OnSwitch(arg_21_1, -150, -11, 23, 158, 90, function()
 				arg_22_0()
 
 				return
@@ -770,70 +290,19 @@ function var_0_0.OnEnterMap(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
 				return
 			end
 
-			setActive = var_1
-
-			var_1(arg_21_0.mapLine, true)
-
-			LeanTween = var_1
-
-			local var_24_0 = var_1.value
-
-			go = var_3
-
-			local var_24_1 = var_3(arg_21_0.mapItemContainer)
-			local var_24_2 = 0
-			local var_24_3 = arg_21_0.containerSize.y
-
-			DecodeGameConst = var_2_10006
-
-			local var_24_4 = var_24_0(var_24_1, var_24_2, var_24_3, var_2_10006.SCAN_MAP_TIME)
-			local var_24_5 = var_1.setOnUpdate
-
-			System = var_24_2
-
-			local var_24_6 = var_24_5(var_24_4, var_24_2.Action_float(function(arg_25_0)
-				local var_25_0 = arg_21_0.mapItemContainer
-
-				Vector2 = var_3_10002
-				var_25_0.sizeDelta = var_3_10002(arg_21_0.containerSize.x, arg_25_0)
+			setActive(arg_21_0.mapLine, true)
+			LeanTween.value(go(arg_21_0.mapItemContainer), 0, arg_21_0.containerSize.y, DecodeGameConst.SCAN_MAP_TIME):setOnUpdate(System.Action_float(function(arg_25_0)
+				arg_21_0.mapItemContainer.sizeDelta = Vector2(arg_21_0.containerSize.x, arg_25_0)
 
 				return
-			end))
-			local var_24_7 = var_1.setOnComplete
-
-			System = var_4
-
-			var_24_7(var_24_6, var_4.Action(function()
-				setActive = var_3_10000
-
-				var_3_10000(arg_21_0.mapLine, false)
+			end)):setOnComplete(System.Action(function()
+				setActive(arg_21_0.mapLine, false)
 				arg_24_0()
 
 				return
 			end))
-
-			LeanTween = var_24_7
-
-			local var_24_8 = var_24_7.value
-
-			go = var_24_6
-
-			local var_24_9 = var_24_6(arg_21_0.mapLine)
-			local var_24_10 = 286
-			local var_24_11 = 30 - arg_21_0.containerSize.y
-
-			DecodeGameConst = var_6
-
-			local var_24_12 = var_24_8(var_24_9, var_24_10, var_24_11, var_6.SCAN_MAP_TIME)
-			local var_24_13 = var_1.setOnUpdate
-
-			System = var_24_10
-
-			var_24_13(var_24_12, var_24_10.Action_float(function(arg_27_0)
-				local var_27_0 = arg_21_0.mapLine
-
-				Vector2 = var_3_10002
-				var_27_0.localPosition = var_3_10002(arg_21_0.mapLine.localPosition.x, arg_27_0, 0)
+			LeanTween.value(go(arg_21_0.mapLine), 286, 30 - arg_21_0.containerSize.y, DecodeGameConst.SCAN_MAP_TIME):setOnUpdate(System.Action_float(function(arg_27_0)
+				arg_21_0.mapLine.localPosition = Vector2(arg_21_0.mapLine.localPosition.x, arg_27_0, 0)
 
 				return
 			end))
@@ -846,181 +315,57 @@ function var_0_0.OnEnterMap(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
 end
 
 function var_0_0.UnlockMapItem(arg_28_0, arg_28_1, arg_28_2)
-	local var_28_0 = arg_28_0.mapItems[arg_28_1]
+	assert(arg_28_0.mapItems[arg_28_1])
 
-	assert = var_1_10004
+	local var_28_0 = arg_28_0.mapItems[arg_28_1]:Find("rect/icon")
+	local var_28_1 = var_28_0:GetComponent(typeof(CanvasGroup))
 
-	var_1_10004(var_28_0)
-
-	local var_28_1 = var_28_0
-	local var_28_2 = var_28_0.Find(var_28_1, "rect/icon")
-	local var_28_3 = var_4.GetComponent
-
-	typeof = var_1_10008
-	CanvasGroup = var_1_10010
-
-	local var_28_4 = var_28_3(var_28_2, var_1_10008(var_1_10010))
-
-	LeanTween = var_28_1
-
-	local var_28_5 = var_28_1.value
-
-	go = var_8
-
-	local var_28_6 = var_28_5(var_8(var_4), 0, 1, 0.3)
-	local var_28_7 = var_6.setOnUpdate
-
-	System = var_9
-
-	local var_28_8 = var_28_7(var_28_6, var_9.Action_float(function(arg_29_0)
-		var_28_4.alpha = arg_29_0
+	LeanTween.value(go(var_28_0), 0, 1, 0.3):setOnUpdate(System.Action_float(function(arg_29_0)
+		var_28_1.alpha = arg_29_0
 
 		return
-	end))
-	local var_28_9 = var_6.setOnComplete
-
-	System = var_9
-
-	var_28_9(var_28_8, var_9.Action(arg_28_2))
+	end)):setOnComplete(System.Action(arg_28_2))
 
 	return
 end
 
 function var_0_0.UpdateCanUseCnt(arg_30_0, arg_30_1)
-	math = var_1_10002
-
-	local var_30_0 = var_1_10002.floor(arg_30_1 / 10)
+	local var_30_0 = math.floor(arg_30_1 / 10)
 	local var_30_1 = arg_30_1 % 10
-	local var_30_2 = arg_30_0.number1
 
-	GetSpriteFromAtlas = var_1_10005
-	var_30_2.sprite = var_1_10005("ui/DecodeGameNumber_atlas", var_30_0)
+	arg_30_0.number1.sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", var_30_0)
+	arg_30_0.number2.sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", var_30_1)
 
-	local var_30_3 = arg_30_0.number2
+	local var_30_2 = tf(arg_30_0.number1)
 
-	GetSpriteFromAtlas = var_5
-	var_30_3.sprite = var_5("ui/DecodeGameNumber_atlas", var_30_1)
-	tf = var_30_3
+	var_30_2.localPosition = var_30_0 == 1 and Vector3(-625, -17) or Vector3(-660, -17)
 
-	local var_30_4 = var_30_3(arg_30_0.number1)
+	local var_30_3 = tf(arg_30_0.number2)
 
-	if var_30_0 == 1 then
-		Vector3 = var_30_5
+	var_30_3.localPosition = var_30_1 == 1 and Vector3(-516.8, -17) or Vector3(-546.3, -17)
 
-		local var_30_5
-
-		if not var_30_5(-625, -17) then
-			Vector3 = var_30_5
-			var_30_5 = var_30_5(-660, -17)
-		end
-
-		var_30_4.localPosition = var_30_5
-		tf = var_30_4
-
-		local var_30_6 = var_30_4(arg_30_0.number2)
-
-		if var_30_1 == 1 then
-			Vector3 = var_30_5
-
-			if not var_30_5(-516.8, -17) then
-				Vector3 = var_30_5
-				var_30_5 = var_30_5(-546.3, -17)
-			end
-
-			var_30_6.localPosition = var_30_5
-
-			return
-		end
-	end
+	return
 end
 
 function var_0_0.UpdateProgress(arg_31_0, arg_31_1, arg_31_2, arg_31_3, arg_31_4)
-	local var_31_0 = arg_31_1
-
-	DecodeGameConst = var_1_10006
-
-	local var_31_1 = var_1_10006.MAP_ROW
-
-	DecodeGameConst = var_1_10007
-
-	local var_31_2 = var_31_1 * var_1_10007.MAP_COLUMN
-
-	DecodeGameConst = var_7
-
-	if var_31_0 < var_31_2 * var_7.MAX_MAP_COUNT then
-		setFillAmount = var_6
-
-		local var_31_3 = arg_31_0.awardProgressTF
-
-		DecodeGameConst = var_1_10009
-
-		var_6(var_31_3, var_31_0 * var_1_10009.PROGRESS2FILLAMOUMT)
+	if arg_31_1 < DecodeGameConst.MAP_ROW * DecodeGameConst.MAP_COLUMN * DecodeGameConst.MAX_MAP_COUNT then
+		setFillAmount(arg_31_0.awardProgressTF, arg_31_1 * DecodeGameConst.PROGRESS2FILLAMOUMT)
 	else
-		setFillAmount = var_6
-
-		var_6(arg_31_0.awardProgressTF, 1)
+		setFillAmount(arg_31_0.awardProgressTF, 1)
 	end
 
-	local var_31_4 = arg_31_0.awardProgress1TF
+	arg_31_0.awardProgress1TF.eulerAngles = Vector3(0, 0, 180 - arg_31_1 * DecodeGameConst.PROGRESS2ANGLE)
 
-	Vector3 = var_7
+	setActive(arg_31_0.bookBtn, arg_31_2 == DecodeGameConst.MAX_MAP_COUNT)
+	setActive(arg_31_0.mapProgreeses[1], arg_31_3[1])
+	setActive(arg_31_0.mapProgreeses[2], arg_31_3[2])
+	setActive(arg_31_0.mapProgreeses[3], arg_31_3[3])
 
-	local var_31_5 = 0
-	local var_31_6 = 0
-
-	DecodeGameConst = var_1_10011
-	var_31_4.eulerAngles = var_7(var_31_5, var_31_6, 180 - var_31_0 * var_1_10011.PROGRESS2ANGLE)
-	setActive = var_31_4
-
-	local var_31_7 = arg_31_0.bookBtn
-
-	DecodeGameConst = var_31_5
-
-	var_31_4(var_31_7, arg_31_2 == var_31_5.MAX_MAP_COUNT)
-
-	setActive = var_31_4
-
-	var_31_4(arg_31_0.mapProgreeses[1], arg_31_3[1])
-
-	setActive = var_31_4
-
-	var_31_4(arg_31_0.mapProgreeses[2], arg_31_3[2])
-
-	setActive = var_31_4
-
-	var_31_4(arg_31_0.mapProgreeses[3], arg_31_3[3])
-
-	DecodeGameConst = var_31_4
-
-	local var_31_8
-
-	if arg_31_2 == var_31_4.MAX_MAP_COUNT and not arg_31_0.blinkFlag then
-		LeanTween = var_31_8
-		var_31_8 = var_31_8.moveLocalX
-		go = var_8
-
-		local var_31_9 = var_31_8(var_8(arg_31_0.mimaLockBtn), 150, 0.3)
-
-		var_31_8 = var_31_8.setOnComplete
-		System = var_9
-
-		var_31_8(var_31_9, var_9.Action(function()
-			setActive = var_2_10000
-
-			var_2_10000(arg_31_0.mimaLockBlink, true)
-
-			blinkAni = var_2_10000
-			go = var_2
-
-			local var_32_0 = var_2_10000(var_2(arg_31_0.mimaLockBlink), 0.2, 2)
-			local var_32_1 = var_0.setOnComplete
-
-			System = var_3
-
-			var_32_1(var_32_0, var_3.Action(function()
-				setActive = var_3_10000
-
-				var_3_10000(arg_31_0.mimaLockBlink, false)
+	if arg_31_2 == DecodeGameConst.MAX_MAP_COUNT and not arg_31_0.blinkFlag then
+		LeanTween.moveLocalX(go(arg_31_0.mimaLockBtn), 150, 0.3):setOnComplete(System.Action(function()
+			setActive(arg_31_0.mimaLockBlink, true)
+			blinkAni(go(arg_31_0.mimaLockBlink), 0.2, 2):setOnComplete(System.Action(function()
+				setActive(arg_31_0.mimaLockBlink, false)
 				arg_31_4()
 
 				return
@@ -1030,128 +375,49 @@ function var_0_0.UpdateProgress(arg_31_0, arg_31_1, arg_31_2, arg_31_3, arg_31_4
 		end))
 
 		arg_31_0.blinkFlag = true
+	elseif arg_31_2 == DecodeGameConst.MAX_MAP_COUNT then
+		arg_31_0.mimaLockBtn.localPosition = Vector3(150, 0, 0)
+
+		setActive(arg_31_0.mimaLockBlink, false)
 	else
-		DecodeGameConst = var_31_8
+		arg_31_0.mimaLockBtn.localPosition = Vector3(0, 0, 0)
 
-		if arg_31_2 == var_31_8.MAX_MAP_COUNT then
-			local var_31_10 = arg_31_0.mimaLockBtn
-
-			Vector3 = var_7
-			var_31_10.localPosition = var_7(150, 0, 0)
-			setActive = var_31_10
-
-			var_31_10(arg_31_0.mimaLockBlink, false)
-		else
-			local var_31_11 = arg_31_0.mimaLockBtn
-
-			Vector3 = var_7
-			var_31_11.localPosition = var_7(0, 0, 0)
-
-			arg_31_4()
-		end
+		arg_31_4()
 	end
 
 	return
 end
 
 function var_0_0.OnEnterDecodeMapBefore(arg_34_0, arg_34_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_34_0.mosaic, true)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_34_0.lines, false)
-
-	LeanTween = var_1_10002
-
-	local var_34_0 = var_1_10002.moveLocalY
-
-	go = var_4
-
-	local var_34_1 = var_4(arg_34_0.code1Panel)
-	local var_34_2 = arg_34_0.screenHeight / 2
-
-	DecodeGameConst = var_6
-
-	local var_34_3 = var_34_0(var_34_1, var_34_2, var_6.SWITCH_TO_DECODE_TIME / 2)
-	local var_34_4 = var_2.setOnComplete
-
-	System = var_34_2
-
-	var_34_4(var_34_3, var_34_2.Action(arg_34_1))
+	setActive(arg_34_0.mosaic, true)
+	setActive(arg_34_0.lines, false)
+	LeanTween.moveLocalY(go(arg_34_0.code1Panel), arg_34_0.screenHeight / 2, DecodeGameConst.SWITCH_TO_DECODE_TIME / 2):setOnComplete(System.Action(arg_34_1))
 
 	return
 end
 
 function var_0_0.OnEnterDecodeMap(arg_35_0, arg_35_1, arg_35_2)
-	parallelAsync = var_1_10003
-
-	var_1_10003({
+	parallelAsync({
 		function(arg_36_0)
-			_ = var_2_10001
-
-			var_2_10001.each(arg_35_0.code2, function(arg_37_0)
-				setActive = var_3_10001
-
-				var_3_10001(arg_37_0, false)
+			_.each(arg_35_0.code2, function(arg_37_0)
+				setActive(arg_37_0, false)
 
 				return
 			end)
-
-			LeanTween = var_1
-
-			local var_36_0 = var_1.moveLocalY
-
-			go = var_3
-
-			local var_36_1 = var_3(arg_35_0.engineBottom)
-			local var_36_2 = -500
-
-			DecodeGameConst = var_5
-
-			var_36_0(var_36_1, var_36_2, var_5.SWITCH_TO_DECODE_TIME / 2)
-
-			LeanTween = var_36_0
-
-			local var_36_3 = var_36_0.moveLocalY
-
-			go = var_36_1
-
-			local var_36_4 = var_36_1(arg_35_0.code2Panel)
-			local var_36_5 = 303
-
-			DecodeGameConst = var_5
-
-			local var_36_6 = var_36_3(var_36_4, var_36_5, var_5.SWITCH_TO_DECODE_TIME / 2)
-			local var_36_7 = var_1.setOnComplete
-
-			System = var_36_5
-
-			var_36_7(var_36_6, var_36_5.Action(arg_36_0))
+			LeanTween.moveLocalY(go(arg_35_0.engineBottom), -500, DecodeGameConst.SWITCH_TO_DECODE_TIME / 2)
+			LeanTween.moveLocalY(go(arg_35_0.code2Panel), 303, DecodeGameConst.SWITCH_TO_DECODE_TIME / 2):setOnComplete(System.Action(arg_36_0))
 
 			return
 		end
 	}, function()
-		setActive = var_2_10000
+		setActive(arg_35_0.mosaic, false)
+		setActive(arg_35_0.lines, false)
 
-		var_2_10000(arg_35_0.mosaic, false)
-
-		setActive = var_2_10000
-
-		var_2_10000(arg_35_0.lines, false)
-
-		ipairs = var_2_10000
-
-		for iter_38_0, iter_38_1 in var_2_10000(arg_35_1) do
-			local var_38_0 = arg_35_0
-
-			var_5.UpdatePassWord(var_38_0, iter_38_1, iter_38_0)
+		for iter_38_0, iter_38_1 in ipairs(arg_35_1) do
+			arg_35_0:UpdatePassWord(iter_38_1, iter_38_0)
 		end
 
-		setActive = var_0
-
-		var_0(arg_35_0.passWordTF, true)
+		setActive(arg_35_0.passWordTF, true)
 		arg_35_2()
 
 		return
@@ -1161,48 +427,14 @@ function var_0_0.OnEnterDecodeMap(arg_35_0, arg_35_1, arg_35_2)
 end
 
 function var_0_0.OnEnterNormalMapBefore(arg_39_0, arg_39_1)
-	parallelAsync = var_1_10002
-
-	var_1_10002({
+	parallelAsync({
 		function(arg_40_0)
-			LeanTween = var_2_10001
-
-			local var_40_0 = var_2_10001.moveLocalY
-
-			go = var_2_10003
-
-			local var_40_1 = var_2_10003(arg_39_0.code2Panel)
-			local var_40_2 = arg_39_0.screenHeight / 2
-
-			DecodeGameConst = var_5
-
-			local var_40_3 = var_40_0(var_40_1, var_40_2, var_5.SWITCH_TO_DECODE_TIME / 2)
-			local var_40_4 = var_1.setOnComplete
-
-			System = var_40_2
-
-			var_40_4(var_40_3, var_40_2.Action(arg_40_0))
+			LeanTween.moveLocalY(go(arg_39_0.code2Panel), arg_39_0.screenHeight / 2, DecodeGameConst.SWITCH_TO_DECODE_TIME / 2):setOnComplete(System.Action(arg_40_0))
 
 			return
 		end,
 		function(arg_41_0)
-			LeanTween = var_2_10001
-
-			local var_41_0 = var_2_10001.moveLocalY
-
-			go = var_2_10003
-
-			local var_41_1 = var_2_10003(arg_39_0.engineBottom)
-			local var_41_2 = -arg_39_0.screenHeight / 2
-
-			DecodeGameConst = var_5
-
-			local var_41_3 = var_41_0(var_41_1, var_41_2, var_5.SWITCH_TO_DECODE_TIME / 2)
-			local var_41_4 = var_1.setOnComplete
-
-			System = var_41_2
-
-			var_41_4(var_41_3, var_41_2.Action(arg_41_0))
+			LeanTween.moveLocalY(go(arg_39_0.engineBottom), -arg_39_0.screenHeight / 2, DecodeGameConst.SWITCH_TO_DECODE_TIME / 2):setOnComplete(System.Action(arg_41_0))
 
 			return
 		end
@@ -1212,58 +444,27 @@ function var_0_0.OnEnterNormalMapBefore(arg_39_0, arg_39_1)
 end
 
 function var_0_0.OnEnterNormalMap(arg_42_0, arg_42_1, arg_42_2)
-	seriesAsync = var_1_10003
-
-	var_1_10003({
+	seriesAsync({
 		function(arg_43_0)
-			LeanTween = var_2_10001
-
-			local var_43_0 = var_2_10001.moveLocalY
-
-			go = var_2_10003
-
-			local var_43_1 = var_2_10003(arg_42_0.code1Panel)
-			local var_43_2 = 303
-
-			DecodeGameConst = var_5
-
-			local var_43_3 = var_43_0(var_43_1, var_43_2, var_5.SWITCH_TO_DECODE_TIME / 2)
-			local var_43_4 = var_1.setOnComplete
-
-			System = var_43_2
-
-			var_43_4(var_43_3, var_43_2.Action(arg_43_0))
+			LeanTween.moveLocalY(go(arg_42_0.code1Panel), 303, DecodeGameConst.SWITCH_TO_DECODE_TIME / 2):setOnComplete(System.Action(arg_43_0))
 
 			return
 		end,
 		function(arg_44_0)
-			setActive = var_2_10001
-
-			var_2_10001(arg_42_0.passWordTF, false)
+			setActive(arg_42_0.passWordTF, false)
 			arg_44_0()
 
 			return
 		end,
 		function(arg_45_0)
-			local var_45_0 = arg_42_0.mapItemContainer
+			arg_42_0.mapItemContainer.sizeDelta = arg_42_0.containerSize
 
-			var_45_0.sizeDelta = arg_42_0.containerSize
-			ipairs = var_45_0
+			for iter_45_0, iter_45_1 in ipairs(arg_42_1.passwordIndexs) do
+				local var_45_0 = arg_42_0.mapItems[iter_45_1]:Find("rect/icon")
 
-			for iter_45_0, iter_45_1 in var_45_0(arg_42_1.passwordIndexs) do
-				local var_45_1 = arg_42_0.mapItems[iter_45_1]
-				local var_45_2 = var_6.Find(var_45_1, "rect/icon")
-				local var_45_3 = var_7.GetComponent
+				var_45_0:GetComponent(typeof(CanvasGroup)).alpha = 1
 
-				typeof = var_10
-				CanvasGroup = var_2_10012
-
-				local var_45_4 = var_45_3(var_45_2, var_10(var_2_10012))
-
-				var_45_4.alpha = 1
-				setActive = var_45_4
-
-				var_45_4(var_6:Find("rays"), false)
+				setActive(arg_42_0.mapItems[iter_45_1]:Find("rays"), false)
 			end
 
 			arg_45_0()
@@ -1278,144 +479,62 @@ end
 function var_0_0.OnDecodeMap(arg_46_0, arg_46_1, arg_46_2)
 	local var_46_0 = {}
 
-	local function var_46_1(arg_47_0)
-		ipairs = var_2_10001
+	for iter_46_0, iter_46_1 in ipairs(arg_46_1.passwordIndexs) do
+		local var_46_1 = arg_46_0.mapItems[iter_46_1]:Find("rect").sizeDelta
+		local var_46_2 = Vector2(arg_46_0.mapItems[iter_46_1].localPosition.x + var_46_1.x / 2, arg_46_0.mapItems[iter_46_1].localPosition.y - var_46_1.y / 2)
+		local var_46_3 = Vector2(arg_46_0.mapItems[iter_46_1].localPosition.x - var_46_1.x / 2, arg_46_0.mapItems[iter_46_1].localPosition.y + var_46_1.y / 2)
 
-		for iter_47_0, iter_47_1 in var_2_10001(arg_46_1.items) do
-			if iter_47_1.index == arg_47_0 then
-				return iter_47_1
-			end
-		end
+		arg_46_0.mapItems[iter_46_1]:SetAsLastSibling()
+		table.insert({}, {
+			target = arg_46_0.mapItems[iter_46_1],
+			sizeDelta = var_46_1,
+			starPosition = var_46_2,
+			endPosition = var_46_3,
+			item = (function(arg_47_0)
+				for iter_47_0, iter_47_1 in ipairs(arg_46_1.items) do
+					if iter_47_1.index == arg_47_0 then
+						return iter_47_1
+					end
+				end
 
-		return
-	end
-
-	ipairs = var_1_10005
-
-	for iter_46_0, iter_46_1 in var_1_10005(arg_46_1.passwordIndexs) do
-		local var_46_2 = arg_46_0.mapItems[iter_46_1]
-		local var_46_3 = var_10.Find(var_46_2, "rect").sizeDelta
-
-		var_1_10012 = var_10.localPosition
-		Vector2 = var_46_2
-
-		local var_46_4 = var_46_2(var_1_10012.x + var_46_3.x / 2, var_1_10012.y - var_46_3.y / 2)
-
-		Vector2 = var_14
-
-		local var_46_5 = var_14(var_1_10012.x - var_46_3.x / 2, var_1_10012.y + var_46_3.y / 2)
-
-		var_10:SetAsLastSibling()
-
-		table = var_15
-
-		var_15.insert(var_46_0, {
-			target = var_10,
-			sizeDelta = var_46_3,
-			starPosition = var_46_4,
-			endPosition = var_46_5,
-			item = var_46_1(iter_46_1)
+				return
+			end)(iter_46_1)
 		})
 	end
 
-	local function var_46_6()
-		Vector2 = var_2_10000
+	local function var_46_4()
+		local var_48_0 = Vector2(0, arg_46_0.line1.localPosition.y)
 
-		local var_48_0 = var_2_10000(0, arg_46_0.line1.localPosition.y)
+		for iter_48_0, iter_48_1 in ipairs(var_46_0) do
+			local var_48_1 = iter_48_1.target:Find("rect")
 
-		ipairs = var_2_10001
-
-		for iter_48_0, iter_48_1 in var_2_10001(var_46_0) do
-			local var_48_1 = iter_48_1.target
-			local var_48_2 = iter_48_1.starPosition
-			local var_48_3 = iter_48_1.endPosition
-			local var_48_4 = var_48_1:Find("rect").sizeDelta
-
-			if var_48_0.y >= var_48_2.y and var_48_0.y <= var_48_3.y then
-				local var_48_5 = var_48_0.y - var_48_2.y
-
-				Vector2 = var_12
-				var_9.sizeDelta = var_12(var_48_4.x, iter_48_1.sizeDelta.y - var_48_5)
+			if var_48_0.y >= iter_48_1.starPosition.y and var_48_0.y <= iter_48_1.endPosition.y then
+				var_48_1.sizeDelta = Vector2(var_48_1.sizeDelta.x, iter_48_1.sizeDelta.y - (var_48_0.y - iter_48_1.starPosition.y))
 			end
 		end
 
 		return
 	end
 
-	setActive = var_6
-
-	var_6(arg_46_0.line1, true)
-
-	DecodeGameConst = var_6
-
-	local var_46_7 = var_6.BLOCK_SIZE[1]
-
-	DecodeGameConst = var_7
-
-	local var_46_8 = var_46_7 * var_7.MAP_ROW
-
-	LeanTween = var_7
-
-	local var_46_9 = var_7.value
-
-	go = var_9
-
-	local var_46_10 = var_9(arg_46_0.line1)
-	local var_46_11 = 0
-	local var_46_12 = var_46_8
-
-	DecodeGameConst = var_1_10012
-
-	local var_46_13 = var_46_9(var_46_10, var_46_11, var_46_12, var_1_10012.SCAN_GRID_TIME)
-	local var_46_14 = var_7.setOnUpdate
-
-	System = var_46_11
-
-	local var_46_15 = var_46_14(var_46_13, var_46_11.Action_float(function(arg_49_0)
-		setAnchoredPosition = var_2_10001
-
-		var_2_10001(arg_46_0.line1, {
+	setActive(arg_46_0.line1, true)
+	LeanTween.value(go(arg_46_0.line1), 0, DecodeGameConst.BLOCK_SIZE[1] * DecodeGameConst.MAP_ROW, DecodeGameConst.SCAN_GRID_TIME):setOnUpdate(System.Action_float(function(arg_49_0)
+		setAnchoredPosition(arg_46_0.line1, {
 			y = arg_49_0
 		})
-		var_46_6()
+		var_46_4()
 
 		return
-	end))
-	local var_46_16 = var_7.setOnComplete
+	end)):setOnComplete(System.Action(function()
+		setActive(arg_46_0.line1, false)
 
-	System = var_10
+		for iter_50_0, iter_50_1 in ipairs(var_46_0) do
+			local var_50_0 = iter_50_1.target:Find("rect/icon")
 
-	var_46_16(var_46_15, var_10.Action(function()
-		setActive = var_2_10000
+			var_50_0:GetComponent(typeof(CanvasGroup)).alpha = 0
+			iter_50_1.target:Find("rect").sizeDelta = iter_50_1.sizeDelta
 
-		var_2_10000(arg_46_0.line1, false)
-
-		ipairs = var_2_10000
-
-		for iter_50_0, iter_50_1 in var_2_10000(var_46_0) do
-			local var_50_0 = iter_50_1.target
-			local var_50_1 = var_5.Find(var_50_0, "rect/icon")
-			local var_50_2 = var_5.GetComponent
-
-			typeof = var_8
-			CanvasGroup = var_2_10010
-			var_50_2(var_50_1, var_8(var_2_10010)).alpha = 0
-
-			local var_50_3 = iter_50_1.target
-			local var_50_4 = var_5.Find(var_50_3, "rect")
-
-			var_50_4.sizeDelta = iter_50_1.sizeDelta
-			setActive = var_50_4
-
-			local var_50_5 = iter_50_1.target
-
-			var_50_4(var_7.Find(var_50_5, "rays"), true)
-
-			setActive = var_50_4
-
-			local var_50_6 = iter_50_1.target
-
-			var_50_4(var_7.Find(var_50_6, "rays/blue"), iter_50_1.item.isUsed)
+			setActive(iter_50_1.target:Find("rays"), true)
+			setActive(iter_50_1.target:Find("rays/blue"), iter_50_1.item.isUsed)
 		end
 
 		arg_46_2()
@@ -1432,89 +551,47 @@ function var_0_0.UpdatePassWord(arg_51_0, arg_51_1, arg_51_2)
 	end
 
 	local var_51_0 = arg_51_0.code2[arg_51_2]
-	local var_51_1 = var_3.GetComponent
 
-	typeof = var_1_10007
-	Image = var_1_10009
+	arg_51_0.code2[arg_51_2]:GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/DecodeGameNumber_atlas", arg_51_1 .. "-1")
 
-	local var_51_2 = var_51_1(var_51_0, var_1_10007(var_1_10009))
-
-	GetSpriteFromAtlas = var_1_10005
-	var_51_2.sprite = var_1_10005("ui/DecodeGameNumber_atlas", arg_51_1 .. "-1")
-	setActive = var_51_2
-
-	var_51_2(var_3, true)
+	setActive(var_51_0, true)
 
 	return
 end
 
 function var_0_0.OnRightCode(arg_52_0, arg_52_1, arg_52_2, arg_52_3)
 	arg_52_0:UpdatePassWord(arg_52_2, arg_52_3)
+	setActive(arg_52_0.mapItems[arg_52_1]:Find("rays/blue"), true)
+	setActive(arg_52_0.lightRight, true)
 
-	local var_52_0 = arg_52_0.mapItems[arg_52_1]
-
-	setActive = var_1_10005
-
-	var_1_10005(var_52_0:Find("rays/blue"), true)
-
-	setActive = var_1_10005
-
-	var_1_10005(arg_52_0.lightRight, true)
-
-	Timer = var_1_10005
-	arg_52_0.timer2 = var_1_10005.New(function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_52_0.lightRight, false)
+	arg_52_0.timer2 = Timer.New(function()
+		setActive(arg_52_0.lightRight, false)
 
 		return
 	end, 1, 1)
 
-	local var_52_1 = arg_52_0.timer2
-
-	var_5.Start(var_52_1)
+	arg_52_0.timer2:Start()
 
 	return
 end
 
 function var_0_0.OnFalseCode(arg_54_0, arg_54_1)
 	arg_54_0:RemoveTimers()
+	setActive(arg_54_0.lightLeft, true)
 
-	setActive = var_2
-
-	var_2(arg_54_0.lightLeft, true)
-
-	Timer = var_2
-	arg_54_0.timer1 = var_2.New(function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_54_0.lightLeft, false)
+	arg_54_0.timer1 = Timer.New(function()
+		setActive(arg_54_0.lightLeft, false)
 
 		return
 	end, 1, 1)
 
-	local var_54_0 = arg_54_0.timer1
+	arg_54_0.timer1:Start()
 
-	var_2.Start(var_54_0)
+	local var_54_0 = arg_54_0.mapItems[arg_54_1]:Find("rays/yellow")
 
-	local var_54_1 = arg_54_0.mapItems[arg_54_1]
-	local var_54_2 = var_2.Find(var_54_1, "rays/yellow")
-
-	setActive = var_54_0
-
-	var_54_0(var_54_2, true)
-
-	blinkAni = var_54_0
-
-	local var_54_3 = var_54_0(var_54_2, 0.2, 2)
-	local var_54_4 = var_4.setOnComplete
-
-	System = var_7
-
-	var_54_4(var_54_3, var_7.Action(function(...)
-		setActive = var_2_10000
-
-		var_2_10000(var_54_2, false)
+	setActive(var_54_0, true)
+	blinkAni(var_54_0, 0.2, 2):setOnComplete(System.Action(function(...)
+		setActive(var_54_0, false)
 
 		return
 	end))
@@ -1524,17 +601,13 @@ end
 
 function var_0_0.RemoveTimers(arg_57_0)
 	if arg_57_0.timer1 then
-		local var_57_0 = arg_57_0.timer1
-
-		var_1.Stop(var_57_0)
+		arg_57_0.timer1:Stop()
 
 		arg_57_0.timer1 = nil
 	end
 
 	if arg_57_0.timer2 then
-		local var_57_1 = arg_57_0.timer2
-
-		var_1.Stop(var_57_1)
+		arg_57_0.timer2:Stop()
 
 		arg_57_0.timer2 = nil
 	end
@@ -1543,62 +616,14 @@ function var_0_0.RemoveTimers(arg_57_0)
 end
 
 function var_0_0.OnSuccess(arg_58_0, arg_58_1)
-	go = var_1_10002
-
-	local var_58_0 = arg_58_0.awardLock
-	local var_58_1 = var_1_10002(var_4.Find(var_58_0, "icon"))
-
-	LeanTween = var_1_10003
-
-	local var_58_2 = var_1_10003.value
-	local var_58_3 = var_58_1
-	local var_58_4 = 0
-	local var_58_5 = -140
-
-	DecodeGameConst = var_1_10008
-
-	local var_58_6 = var_58_2(var_58_3, var_58_4, var_58_5, var_1_10008.GET_AWARD_ANIM_TIME / 2)
-	local var_58_7 = var_3.setOnUpdate
-
-	System = var_58_4
-
-	local var_58_8 = var_58_7(var_58_6, var_58_4.Action_float(function(arg_59_0)
-		tf = var_2_10001
-
-		local var_59_0 = var_2_10001(var_58_1)
-
-		Vector3 = var_2_10002
-		var_59_0.eulerAngles = var_2_10002(0, 0, arg_59_0)
+	LeanTween.value(go(arg_58_0.awardLock:Find("icon")), 0, -140, DecodeGameConst.GET_AWARD_ANIM_TIME / 2):setOnUpdate(System.Action_float(function(arg_59_0)
+		tf(var_0).eulerAngles = Vector3(0, 0, arg_59_0)
 
 		return
-	end))
-	local var_58_9 = var_3.setOnComplete
-
-	System = var_6
-
-	var_58_9(var_58_8, var_6.Action(function()
-		LeanTween = var_2_10000
-
-		local var_60_0 = var_2_10000.moveLocalX
-		local var_60_1 = var_58_1
-		local var_60_2 = 132
-
-		DecodeGameConst = var_2_10004
-
-		local var_60_3 = var_60_0(var_60_1, var_60_2, var_2_10004.GET_AWARD_ANIM_TIME / 2)
-		local var_60_4 = var_0.setFrom(var_60_3, 0)
-		local var_60_5 = var_0.setOnComplete
-
-		System = var_3
-
-		var_60_5(var_60_4, var_3.Action(function()
-			setActive = var_3_10000
-
-			var_3_10000(arg_58_0.awardLock, false)
-
-			setActive = var_3_10000
-
-			var_3_10000(arg_58_0.awardGot, true)
+	end)):setOnComplete(System.Action(function()
+		LeanTween.moveLocalX(var_0, 132, DecodeGameConst.GET_AWARD_ANIM_TIME / 2):setFrom(0):setOnComplete(System.Action(function()
+			setActive(arg_58_0.awardLock, false)
+			setActive(arg_58_0.awardGot, true)
 			arg_58_1()
 
 			return
@@ -1611,89 +636,38 @@ function var_0_0.OnSuccess(arg_58_0, arg_58_1)
 end
 
 function var_0_0.ShowHelper(arg_62_0, arg_62_1, arg_62_2)
-	getProxy = var_1_10003
-	PlayerProxy = var_1_10005
+	local var_62_0 = getProxy(PlayerProxy):getRawData().id
 
-	local var_62_0 = var_1_10003(var_1_10005)
-	local var_62_1 = var_3.getRawData(var_62_0).id
-
-	PlayerPrefs = var_1_10004
-
-	local var_62_2 = var_1_10004.GetInt("DecodeGameHelpBg" .. var_62_1 .. arg_62_1, 0)
-
-	if 0 < var_62_2 then
+	if PlayerPrefs.GetInt("DecodeGameHelpBg" .. var_62_0 .. arg_62_1, 0) > 0 then
 		arg_62_2()
 
 		return
 	end
 
-	PlayerPrefs = var_5
+	PlayerPrefs.SetInt("DecodeGameHelpBg" .. var_62_0 .. arg_62_1, 1)
+	PlayerPrefs.Save()
+	setActive(arg_62_0.helperTF, true)
 
-	var_5.SetInt("DecodeGameHelpBg" .. var_62_1 .. arg_62_1, 1)
+	local var_62_1 = arg_62_0.helperTF:Find("Image")
 
-	PlayerPrefs = var_5
+	setImageSprite(var_62_1, (LoadSprite("helpbg/" .. DecodeGameConst.HELP_BGS[arg_62_1][1], "")))
 
-	var_5.Save()
+	var_62_1.sizeDelta = Vector2(DecodeGameConst.HELP_BGS[arg_62_1][2][1], DecodeGameConst.HELP_BGS[arg_62_1][2][2])
+	var_62_1.localPosition = Vector3(DecodeGameConst.HELP_BGS[arg_62_1][3][1], DecodeGameConst.HELP_BGS[arg_62_1][3][2], 0)
 
-	setActive = var_5
-
-	var_5(arg_62_0.helperTF, true)
-
-	local var_62_3 = arg_62_0.helperTF
-	local var_62_4 = var_5.Find(var_62_3, "Image")
-
-	DecodeGameConst = var_6
-
-	local var_62_5 = var_6.HELP_BGS[arg_62_1][1]
-
-	LoadSprite = var_8
-
-	local var_62_6 = var_8("helpbg/" .. var_62_5, "")
-
-	setImageSprite = var_9
-
-	var_9(var_62_4, var_62_6)
-
-	Vector2 = var_9
-	var_62_4.sizeDelta = var_9(var_6[2][1], var_6[2][2])
-	Vector3 = var_9
-	var_62_4.localPosition = var_9(var_6[3][1], var_6[3][2], 0)
-	onButton = var_9
-
-	local var_62_7 = arg_62_0
-	local var_62_8 = arg_62_0.helperTF
-
-	local function var_62_9()
-		setActive = var_2_10000
-
-		var_2_10000(arg_62_0.helperTF, false)
+	onButton(arg_62_0, arg_62_0.helperTF, function()
+		setActive(arg_62_0.helperTF, false)
 		arg_62_2()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10014
-
-	var_9(var_62_7, var_62_8, var_62_9, var_1_10014)
+	end, SFX_PANEL)
 
 	return
 end
 
 function var_0_0.ShowTip(arg_64_0, arg_64_1)
-	eachChild = var_1_10002
-
-	var_1_10002(arg_64_0.tips, function(arg_65_0)
-		setActive = var_2_10001
-
-		local var_65_0 = arg_65_0
-
-		go = var_2_10004
-
-		local var_65_1 = var_2_10004(arg_65_0).name
-
-		tostring = var_2_10005
-
-		var_2_10001(var_65_0, var_65_1 == var_2_10005(arg_64_1))
+	eachChild(arg_64_0.tips, function(arg_65_0)
+		setActive(arg_65_0, go(arg_65_0).name == tostring(arg_64_1))
 
 		return
 	end)
@@ -1702,11 +676,7 @@ function var_0_0.ShowTip(arg_64_0, arg_64_1)
 end
 
 function var_0_0.PlayVoice(arg_66_0, arg_66_1)
-	pg = var_1_10002
-
-	local var_66_0 = var_1_10002.CriMgr.GetInstance()
-
-	var_2.PlaySoundEffect_V3(var_66_0, arg_66_1)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_66_1)
 
 	return
 end
@@ -1718,33 +688,20 @@ function var_0_0.OnSwitchMap(arg_67_0, arg_67_1)
 end
 
 function var_0_0.PlayerMapStartAnim(arg_68_0, arg_68_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_68_0.decodeTV, true)
-
-	table = var_1_10002
-
-	var_1_10002.insert(arg_68_0.animCallbacks, arg_68_1)
-
-	local var_68_0 = arg_68_0.anim
-
-	var_2.SetTrigger(var_68_0, "trigger")
+	setActive(arg_68_0.decodeTV, true)
+	table.insert(arg_68_0.animCallbacks, arg_68_1)
+	arg_68_0.anim:SetTrigger("trigger")
 
 	return
 end
 
 function var_0_0.Dispose(arg_69_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_69_0)
+	pg.DelegateInfo.Dispose(arg_69_0)
 
 	arg_69_0.mapItems = nil
 
 	arg_69_0:RemoveTimers()
-
-	local var_69_0 = arg_69_0.dftAniEvent
-
-	var_1.SetEndEvent(var_69_0, nil)
+	arg_69_0.dftAniEvent:SetEndEvent(nil)
 
 	arg_69_0.animCallbacks = nil
 

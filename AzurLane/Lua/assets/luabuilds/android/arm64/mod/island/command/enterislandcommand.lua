@@ -1,82 +1,40 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EnterIslandCommand", pm.SimpleCommand)
 
-local var_0_0 = "EnterIslandCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(PlayerProxy):getRawData()
 
-pm = var_0_10003
+	if var_1_1 then
+		local var_1_2, var_1_3 = pg.SystemOpenMgr.GetInstance():isOpenSystem(var_1_1.level, IslandMediator.__cname)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.code
-	local var_1_2 = var_2.reconnect
-
-	getProxy = var_1_10006
-	PlayerProxy = var_1_10008
-
-	local var_1_3 = var_1_10006(var_1_10008)
-
-	if var_6.getRawData(var_1_3) then
-		pg = var_1_10008
-
-		local var_1_4 = var_1_10008.SystemOpenMgr.GetInstance()
-		local var_1_5 = var_8.isOpenSystem
-		local var_1_6 = var_7.level
-
-		IslandMediator = var_1_10012
-
-		local var_1_7, var_1_8 = var_1_5(var_1_4, var_1_6, var_1_10012.__cname)
-
-		if not var_1_7 then
-			pg = var_1_4
-
-			local var_1_9 = var_1_4.TipsMgr.GetInstance()
-
-			var_10.ShowTips(var_1_9, var_1_8)
+		if not var_1_2 then
+			pg.TipsMgr.GetInstance():ShowTips(var_1_3)
 
 			return
 		end
 	end
 
-	if var_1_1 and var_1_1 ~= "" then
-		arg_1_0:Send(0, var_1_1, var_1_2)
+	if var_1_0.code and var_1_0.code ~= "" then
+		arg_1_0:Send(0, var_1_0.code, var_1_0.reconnect)
 	else
-		arg_1_0:Send(var_1_0, 0, var_1_2)
+		arg_1_0:Send(var_1_0.id, 0, var_1_0.reconnect)
 	end
 
 	return
 end
 
-function var_0_1.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	pg = var_1_10004
+function var_0_0.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	pg.ConnectionMgr.GetInstance():Send(21202, {
+		island_id = arg_2_1,
+		code = tostring(arg_2_2)
+	}, 21203, function(arg_3_0)
+		local var_3_9000
 
-	local var_2_0 = var_1_10004.ConnectionMgr.GetInstance()
-	local var_2_1 = var_4.Send
-	local var_2_2 = 21202
-	local var_2_3 = {
-		island_id = arg_2_1
-	}
-
-	tostring = var_1_10009
-	var_2_3.code = var_1_10009(arg_2_2)
-
-	var_2_1(var_2_0, var_2_2, var_2_3, 21203, function(arg_3_0)
 		if arg_3_0.result == 0 then
-			local var_3_0 = {}
+			local var_3_0 = arg_2_0:IsSelf(arg_2_1)
 
-			var_2_10004 = arg_2_0
-
-			local var_3_1 = var_2.IsSelf(var_2_10004, arg_2_1)
-
-			table = var_2_10003
-
-			var_2_10003.insert(var_3_0, function(arg_4_0)
-				local var_4_0 = arg_2_0
-				local var_4_1 = var_1.sendNotification
-
-				GAME = var_3_10004
-
-				var_4_1(var_4_0, var_3_10004.ISLAND_GET_DATA, {
+			table.insert({}, function(arg_4_0)
+				arg_2_0:sendNotification(GAME.ISLAND_GET_DATA, {
 					id = arg_3_0.island_id,
 					list = arg_3_0.player_list,
 					reconnect = arg_2_3,
@@ -86,28 +44,14 @@ function var_0_1.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 				return
 			end)
 
-			local var_3_2 = false
+			local var_3_1 = false
 
-			table = var_2_10004
+			table.insert({}, function(arg_5_0)
+				if var_3_0 then
+					var_3_1 = getProxy(IslandProxy):GetIsland():GetSeasonAgency():NeedReset()
 
-			var_2_10004.insert(var_3_0, function(arg_5_0)
-				if var_3_1 then
-					getProxy = var_1
-					IslandProxy = var_3_10003
-
-					local var_5_0 = var_1(var_3_10003)
-					local var_5_1 = var_1.GetIsland(var_5_0)
-					local var_5_2 = var_1.GetSeasonAgency(var_5_1)
-
-					var_3_2 = var_2.NeedReset(var_5_2)
-
-					if var_3_2 then
-						local var_5_3 = arg_2_0
-						local var_5_4 = var_2.sendNotification
-
-						GAME = var_3_10005
-
-						var_5_4(var_5_3, var_3_10005.ISLAND_RESET_SEASON, {
+					if var_3_1 then
+						arg_2_0:sendNotification(GAME.ISLAND_RESET_SEASON, {
 							callback = arg_5_0
 						})
 					else
@@ -119,17 +63,9 @@ function var_0_1.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
 				return
 			end)
-
-			table = var_2_10004
-
-			var_2_10004.insert(var_3_0, function(arg_6_0)
-				if var_3_2 then
-					local var_6_0 = arg_2_0
-					local var_6_1 = var_1.sendNotification
-
-					GAME = var_3_10004
-
-					var_6_1(var_6_0, var_3_10004.ISLAND_GET_DATA, {
+			table.insert({}, function(arg_6_0)
+				if var_3_1 then
+					arg_2_0:sendNotification(GAME.ISLAND_GET_DATA, {
 						id = arg_3_0.island_id,
 						list = arg_3_0.player_list,
 						reconnect = arg_2_3,
@@ -141,123 +77,41 @@ function var_0_1.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
 				return
 			end)
+			seriesAsync({}, function()
+				if var_3_0 then
+					local var_7_0 = getProxy(IslandProxy):GetIsland() or getProxy(IslandProxy):GetSharedIsland()
 
-			seriesAsync = var_2_10004
-
-			var_2_10004(var_3_0, function()
-				if var_3_1 then
-					getProxy = var_7_1
-					IslandProxy = var_3_10002
-					var_3_10002 = var_7_1(var_3_10002)
-
-					local var_7_1
-
-					if not var_7_1.GetIsland(var_3_10002) then
-						getProxy = var_7_1
-						IslandProxy = var_3_10002
-
-						local var_7_0 = var_7_1(var_3_10002)
-
-						var_7_1 = var_7_1.GetSharedIsland(var_7_0)
-					end
-
-					local var_7_2 = arg_2_0
-					local var_7_3 = var_1.sendNotification
-
-					GAME = var_3_10004
-
-					var_7_3(var_7_2, var_3_10004.ISLAND_ENTER_MAP, {
+					arg_2_0:sendNotification(GAME.ISLAND_ENTER_MAP, {
 						islandId = arg_3_0.island_id,
-						mapId = var_7_1:GetMapId(),
+						mapId = var_7_0:GetMapId(),
 						callback = function()
-							local var_8_0 = arg_2_0
-
-							var_0.GoScene(var_8_0, arg_3_0.island_id)
+							arg_2_0:GoScene(arg_3_0.island_id)
 
 							return
 						end
 					})
-
-					getProxy = var_7_3
-					IslandProxy = var_7_2
-
-					local var_7_4 = var_7_3(var_7_2)
-
-					var_1.EnterIsland(var_7_4, arg_3_0.island_id)
+					getProxy(IslandProxy):EnterIsland(arg_3_0.island_id)
 
 					return
 				end
 			end)
 		elseif arg_3_0.result == 6 then
-			local var_3_3 = arg_2_0
-			local var_3_4 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_3_4(var_3_3, var_2_10004.ISLAND_QUEUE_UP, {
+			arg_2_0:sendNotification(GAME.ISLAND_QUEUE_UP, {
 				pos = arg_3_0.pos,
 				id = arg_3_0.island_id
 			})
 		elseif arg_3_0.result == 19 then
-			pg = var_1
+			local var_3_2 = pg.TipsMgr.GetInstance()
 
-			local var_3_5 = var_1.TimeMgr.GetInstance()
-			local var_3_6 = var_1.GetServerTime(var_3_5)
-			local var_3_7 = arg_3_0.cd - var_3_6
-
-			pg = var_3_5
-
-			local var_3_8 = var_3_5.TimeMgr.GetInstance()
-			local var_3_9 = var_3.DescCDTime(var_3_8, var_3_7)
-
-			pg = var_2_10004
-
-			local var_3_10 = var_2_10004.TipsMgr.GetInstance()
-
-			var_2_10004 = var_2_10004.ShowTips
-			i18n = var_2_10007
-
-			var_2_10004(var_3_10, var_2_10007("island_visit_tip5", var_3_9))
+			var_3_2.ShowTips(arg_3_0.cd - pg.TimeMgr.GetInstance().GetServerTime(var_3_9000), i18n("island_visit_tip5", (pg.TimeMgr.GetInstance():DescCDTime(var_3_2))))
 		elseif arg_3_0.result == 1 then
-			pg = var_1
-
-			local var_3_11 = var_1.TipsMgr.GetInstance()
-			local var_3_12 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_3_12(var_3_11, var_2_10004("island_visit_tip1"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip1"))
 		elseif arg_3_0.result == 20 or arg_3_0.result == 40 then
-			pg = var_1
-
-			local var_3_13 = var_1.TipsMgr.GetInstance()
-			local var_3_14 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_3_14(var_3_13, var_2_10004("island_visit_tip2"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip2"))
+		elseif arg_3_0.result == 9 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("island_visit_tip3"))
 		else
-			local var_3_16
-
-			if arg_3_0.result == 9 then
-				pg = var_3_16
-
-				local var_3_15 = var_3_16.TipsMgr.GetInstance()
-
-				var_3_16 = var_3_16.ShowTips
-				i18n = var_2_10004
-
-				var_3_16(var_3_15, var_2_10004("island_visit_tip3"))
-			else
-				pg = var_3_16
-
-				local var_3_17 = var_3_16.TipsMgr.GetInstance()
-				local var_3_18 = var_1.ShowTips
-
-				ERROR_MESSAGE = var_2_10004
-
-				var_3_18(var_3_17, var_2_10004[arg_3_0.result] .. arg_3_0.result)
-			end
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_3_0.result] .. arg_3_0.result)
 		end
 
 		return
@@ -266,40 +120,19 @@ function var_0_1.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	return
 end
 
-function var_0_1.IsSelf(arg_9_0, arg_9_1)
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
+function var_0_0.IsSelf(arg_9_0, arg_9_1)
+	local var_9_0 = getProxy(PlayerProxy)
 
-	local var_9_0 = var_1_10002(var_1_10004)
-
-	return var_2.getRawData(var_9_0).id == arg_9_1
+	return var_9_0:getRawData().id == arg_9_1
 end
 
-function var_0_1.GoScene(arg_10_0, arg_10_1)
-	local var_10_2
-
+function var_0_0.GoScene(arg_10_0, arg_10_1)
 	if arg_10_0:IsSelf(arg_10_1) then
-		local var_10_0 = arg_10_0
-		local var_10_1 = arg_10_0.sendNotification
-
-		GAME = var_10_2
-		var_10_2 = var_10_2.GO_SCENE
-		SCENE = var_1_10006
-
-		var_10_1(var_10_0, var_10_2, var_1_10006.ISLAND, {
+		arg_10_0:sendNotification(GAME.GO_SCENE, SCENE.ISLAND, {
 			id = arg_10_1
 		})
 	else
-		local var_10_3 = arg_10_0
-		local var_10_4 = arg_10_0.sendNotification
-
-		GAME = var_10_2
-
-		local var_10_5 = var_10_2.GO_SCENE
-
-		SCENE = var_1_10006
-
-		var_10_4(var_10_3, var_10_5, var_1_10006.SHARED_ISLAND, {
+		arg_10_0:sendNotification(GAME.GO_SCENE, SCENE.SHARED_ISLAND, {
 			id = arg_10_1
 		})
 	end
@@ -307,4 +140,4 @@ function var_0_1.GoScene(arg_10_0, arg_10_1)
 	return
 end
 
-return var_0_1
+return var_0_0

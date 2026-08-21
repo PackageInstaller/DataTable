@@ -25,6 +25,8 @@ manual.ManualType = {
     CG = 7,
     --音乐
     Music = 8,
+    --时装
+    Fashion = 9, 
 }
 manual.MonsterType = {
     Human = 1, --未变异体
@@ -59,6 +61,10 @@ manual.getTabList = function(tabType)
         tab[2] = { page = 2, nomalLan = _TT(601301), nomalLanEn = "", colorType = 4 }
         tab[3] = { page = 3, nomalLan = _TT(601303), nomalLanEn = "", colorType = 3 }
         tab[4] = { page = 4, nomalLan = _TT(601302), nomalLanEn = "", colorType = 2 }
+    elseif tabType == manual.ManualType.Fashion then
+        tab[1] = { page = 1, nomalLan = "全部", nomalLanEn = "", colorType = 1 }
+        tab[2] = { page = 2, nomalLan = _TT(80037), nomalLanEn = "", colorType = 4 }
+        tab[3] = { page = 3, nomalLan = _TT(80038), nomalLanEn = "", colorType = 3 }
     end
     return tab
 end
@@ -73,6 +79,7 @@ manual.getMainBtnList = function()
     tab[manual.ManualType.World] = { btnName = "mBtnWorld", nomalLan = "世界", progress = manual.ManualWorldManager:getCurProgresstByType(1), funcopen_id = funcopen.FuncOpenConst.FUNC_ID_MANUAL_WORLD, isNew = manual.ManualWorldManager:getAllHaveNew() }--
     --tab[manual.ManualType.CG] = { btnName = "mBtnCG", nomalLan = "CG", progress = 0, funcopen_id = "" }
     tab[manual.ManualType.Music] = { btnName = "mBtnMusic", nomalLan = "音乐", progress = manual.ManualMusicManager:getUnlockNum(), funcopen_id = funcopen.FuncOpenConst.FUNC_ID_MANUAL_MUSIC, isNew = manual.ManualMusicManager:getAllHaveNew() }
+    tab[manual.ManualType.Fashion] = { btnName = "mBtnFashion", nomalLan = "时装", progress = manual.ManualFashionManager:getUnlockNum(), funcopen_id = funcopen.FuncOpenConst.FUNC_ID_MANUAL_FASHION, isNew = manual.ManualFashionManager:getAllHaveNew() }
     return tab
 end
 

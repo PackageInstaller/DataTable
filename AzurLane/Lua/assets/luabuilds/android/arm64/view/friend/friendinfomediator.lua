@@ -1,57 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FriendInfoMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "FriendInfoMediator"
+var_0_0.OPEND_FRIEND = "FriendInfoMediator:OPEND_FRIEND"
+var_0_0.OPEN_RESUME = "FriendInfoMediator:OPEN_RESUME"
+var_0_0.OPEN_BACKYARD = "FriendInfoMediator:OPEN_BACKYARD"
+var_0_0.TOGGLE_BLACK = "FriendInfoMediator:TOGGLE_BLACK"
+var_0_0.INFORM = "FriendInfoMediator:INFORM"
+var_0_0.INFORM_BACKYARD = "FriendInfoMediator:INFORM_BACKYARD"
+var_0_0.OPEN_ISLAND_CARD = "FriendInfoMediator:OPEN_ISLAND_CARD"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.OPEND_FRIEND = "FriendInfoMediator:OPEND_FRIEND"
-var_0_1.OPEN_RESUME = "FriendInfoMediator:OPEN_RESUME"
-var_0_1.OPEN_BACKYARD = "FriendInfoMediator:OPEN_BACKYARD"
-var_0_1.TOGGLE_BLACK = "FriendInfoMediator:TOGGLE_BLACK"
-var_0_1.INFORM = "FriendInfoMediator:INFORM"
-var_0_1.INFORM_BACKYARD = "FriendInfoMediator:INFORM_BACKYARD"
-var_0_1.OPEN_ISLAND_CARD = "FriendInfoMediator:OPEN_ISLAND_CARD"
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	local var_1_0 = arg_1_0.contextData.friend
 
-	assert = var_1_10002
-
-	var_1_10002(var_1_0, "friend is nil")
-
-	local var_1_1 = arg_1_0.viewComponent
-
-	var_2.setFriend(var_1_1, var_1_0)
-	arg_1_0:bind(var_0_1.OPEN_ISLAND_CARD, function(arg_2_0)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_1.addSubLayers
-
-		Context = var_2_10004
-
-		local var_2_2 = var_2_10004.New
-		local var_2_3 = {}
-
-		IslandOtherCardMediator = var_2_10007
-		var_2_3.mediator = var_2_10007
-		IslandOtherCardLayer = var_2_10007
-		var_2_3.viewComponent = var_2_10007
-		var_2_3.data = {
-			userId = arg_1_0.contextData.friend.id
-		}
-
-		var_2_1(var_2_0, var_2_2(var_2_3))
+	assert(arg_1_0.contextData.friend, "friend is nil")
+	arg_1_0.viewComponent:setFriend(arg_1_0.contextData.friend)
+	arg_1_0:bind(var_0_0.OPEN_ISLAND_CARD, function(arg_2_0)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = IslandOtherCardMediator,
+			viewComponent = IslandOtherCardLayer,
+			data = {
+				userId = arg_1_0.contextData.friend.id
+			}
+		}))
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.INFORM_BACKYARD, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_5.sendNotification
-
-		GAME = var_2_10008
-
-		var_3_1(var_3_0, var_2_10008.INFORM_THEME_TEMPLATE, {
+	arg_1_0:bind(var_0_0.INFORM_BACKYARD, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+		arg_1_0:sendNotification(GAME.INFORM_THEME_TEMPLATE, {
 			uid = arg_3_1,
 			content = arg_3_2,
 			tid = arg_3_3,
@@ -60,126 +34,65 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEND_FRIEND, function(arg_4_0)
-		pg = var_2_10001
-
-		local var_4_0 = var_2_10001.MsgboxMgr.GetInstance()
-		local var_4_1 = var_1.ShowMsgBox
-		local var_4_2 = {
+	arg_1_0:bind(var_0_0.OPEND_FRIEND, function(arg_4_0)
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
 			yesText = "text_apply",
-			limit = 20
-		}
-
-		MSGBOX_TYPE_INPUT = var_2_10005
-		var_4_2.type = var_2_10005
-		i18n = var_2_10005
-		var_4_2.placeholder = var_2_10005("friend_request_msg_placeholder")
-		i18n = var_5
-		var_4_2.title = var_5("friend_request_msg_title")
-
-		function var_4_2.onYes(arg_5_0)
-			local var_5_0 = arg_1_0
-			local var_5_1 = var_1.sendNotification
-
-			GAME = var_3_10004
-
-			var_5_1(var_5_0, var_3_10004.FRIEND_SEND_REQUEST, {
-				id = var_1_0.id,
-				msg = arg_5_0
-			})
-
-			return
-		end
-
-		var_4_1(var_4_0, var_4_2)
-
-		return
-	end)
-	arg_1_0:bind(var_0_1.OPEN_RESUME, function(arg_6_0)
-		local var_6_0 = arg_1_0
-		local var_6_1 = var_1.addSubLayers
-
-		Context = var_2_10004
-
-		local var_6_2 = var_2_10004.New
-		local var_6_3 = {}
-
-		resumeMediator = var_2_10007
-		var_6_3.mediator = var_2_10007
-		resumeLayer = var_2_10007
-		var_6_3.viewComponent = var_2_10007
-		var_6_3.data = {
-			player = var_1_0,
-			parent = arg_1_0.contextData.parent
-		}
-
-		var_6_1(var_6_0, var_6_2(var_6_3))
-
-		return
-	end)
-	arg_1_0:bind(var_0_1.OPEN_BACKYARD, function(arg_7_0)
-		local var_7_0 = arg_1_0
-		local var_7_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_7_1(var_7_0, var_2_10004.VISIT_BACKYARD, var_1_0.id)
-
-		return
-	end)
-	arg_1_0:bind(var_0_1.TOGGLE_BLACK, function(arg_8_0)
-		getProxy = var_2_10001
-		FriendProxy = var_2_10003
-
-		local var_8_0 = var_2_10001(var_2_10003)
-		local var_8_1 = var_1_0.id
-
-		if var_8_0:getBlackPlayerById(var_8_1) ~= nil then
-			local var_8_2 = arg_1_0
-
-			var_2_10004 = var_2_10004.sendNotification
-			GAME = var_2_10007
-
-			var_2_10004(var_8_2, var_2_10007.FRIEND_RELIEVE_BLACKLIST, var_8_1)
-		else
-			pg = var_2_10004
-
-			local var_8_3 = var_2_10004.MsgboxMgr.GetInstance()
-			local var_8_4 = var_4.ShowMsgBox
-			local var_8_5 = {
-				hideNo = false
-			}
-
-			i18n = var_2_10008
-			var_8_5.content = var_2_10008("friend_confirm_add_blacklist", var_1_0.name)
-
-			function var_8_5.onYes()
-				local var_9_0 = arg_1_0
-				local var_9_1 = var_0.sendNotification
-
-				GAME = var_3_10003
-
-				var_9_1(var_9_0, var_3_10003.FRIEND_ADD_BLACKLIST, var_1_0)
+			limit = 20,
+			type = MSGBOX_TYPE_INPUT,
+			placeholder = i18n("friend_request_msg_placeholder"),
+			title = i18n("friend_request_msg_title"),
+			onYes = function(arg_5_0)
+				arg_1_0:sendNotification(GAME.FRIEND_SEND_REQUEST, {
+					id = var_1_0.id,
+					msg = arg_5_0
+				})
 
 				return
 			end
+		})
 
-			var_8_4(var_8_3, var_8_5)
+		return
+	end)
+	arg_1_0:bind(var_0_0.OPEN_RESUME, function(arg_6_0)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = resumeMediator,
+			viewComponent = resumeLayer,
+			data = {
+				player = var_1_0,
+				parent = arg_1_0.contextData.parent
+			}
+		}))
+
+		return
+	end)
+	arg_1_0:bind(var_0_0.OPEN_BACKYARD, function(arg_7_0)
+		arg_1_0:sendNotification(GAME.VISIT_BACKYARD, var_1_0.id)
+
+		return
+	end)
+	arg_1_0:bind(var_0_0.TOGGLE_BLACK, function(arg_8_0)
+		local var_8_0 = getProxy(FriendProxy)
+		local var_8_1 = var_1_0.id
+
+		if var_8_0:getBlackPlayerById(var_1_0.id) ~= nil then
+			arg_1_0:sendNotification(GAME.FRIEND_RELIEVE_BLACKLIST, var_8_1)
+		else
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				hideNo = false,
+				content = i18n("friend_confirm_add_blacklist", var_1_0.name),
+				onYes = function()
+					arg_1_0:sendNotification(GAME.FRIEND_ADD_BLACKLIST, var_1_0)
+
+					return
+				end
+			})
 		end
 
 		return
 	end)
-
-	local var_1_2 = arg_1_0
-
-	arg_1_0.bind(var_1_2, var_0_1.INFORM, function(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
-		local var_10_0 = arg_1_0
-		local var_10_1 = var_4.sendNotification
-
-		GAME = var_2_10007
-
-		var_10_1(var_10_0, var_2_10007.INFORM, {
+	arg_1_0:bind(var_0_0.INFORM, function(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+		arg_1_0:sendNotification(GAME.INFORM, {
 			playerId = arg_10_1,
 			info = arg_10_2,
 			content = arg_10_3
@@ -188,149 +101,54 @@ function var_0_1.register(arg_1_0)
 		return
 	end)
 
-	getProxy = var_2
-	FriendProxy = var_1_2
+	local var_1_1 = getProxy(FriendProxy)
 
-	local var_1_3 = var_2(var_1_2)
-
-	if not var_2.getBlackList(var_1_3) then
-		local var_1_4 = arg_1_0
-		local var_1_5 = arg_1_0.sendNotification
-
-		GAME = var_1_10007
-
-		var_1_5(var_1_4, var_1_10007.GET_BLACK_LIST)
+	if not var_1_1:getBlackList() then
+		arg_1_0:sendNotification(GAME.GET_BLACK_LIST)
 	end
 
-	local var_1_6 = arg_1_0.viewComponent
-
-	var_4.setFriendProxy(var_1_6, var_2)
+	arg_1_0.viewComponent:setFriendProxy(var_1_1)
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_11_0)
-	local var_11_0 = {}
-
-	GAME = var_1_10002
-	var_11_0[1] = var_1_10002.VISIT_BACKYARD_DONE
-	GAME = var_2
-	var_11_0[2] = var_2.GET_BLACK_LIST_DONE
-	GAME = var_2
-	var_11_0[3] = var_2.FRIEND_ADD_BLACKLIST_DONE
-	GAME = var_2
-	var_11_0[4] = var_2.FRIEND_RELIEVE_BLACKLIST_DONE
-	GAME = var_2
-	var_11_0[5] = var_2.INFORM_DONE
-	GAME = var_2
-	var_11_0[6] = var_2.INFORM_THEME_TEMPLATE_DONE
-	GAME = var_2
-	var_11_0[7] = var_2.FINISH_STAGE
-
-	return var_11_0
+function var_0_0.listNotificationInterests(arg_11_0)
+	return {
+		GAME.VISIT_BACKYARD_DONE,
+		GAME.GET_BLACK_LIST_DONE,
+		GAME.FRIEND_ADD_BLACKLIST_DONE,
+		GAME.FRIEND_RELIEVE_BLACKLIST_DONE,
+		GAME.INFORM_DONE,
+		GAME.INFORM_THEME_TEMPLATE_DONE,
+		GAME.FINISH_STAGE
+	}
 end
 
-function var_0_1.handleNotification(arg_12_0, arg_12_1)
-	local var_12_0 = arg_12_1
-	local var_12_1 = arg_12_1.getName(var_12_0)
-	local var_12_2 = arg_12_1:getBody()
+function var_0_0.handleNotification(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1:getName()
+	local var_12_1 = arg_12_1:getBody()
 
-	GAME = var_12_0
-
-	local var_12_4
-
-	if var_12_1 == var_12_0.VISIT_BACKYARD_DONE then
-		local var_12_3 = arg_12_0.viewComponent
-
-		var_12_4 = var_12_4.emit
-		BaseUI = var_1_10007
-
-		var_12_4(var_12_3, var_1_10007.ON_CLOSE)
-
-		local var_12_5 = arg_12_0
-
-		var_12_4 = arg_12_0.sendNotification
-		GAME = var_7
-
-		local var_12_6 = var_7.GO_SCENE
-
-		SCENE = var_1_10008
-
-		local var_12_7 = var_1_10008.COURTYARD
-		local var_12_8 = {
-			player = var_12_2.player,
-			dorm = var_12_2.dorm
-		}
-
-		CourtYardConst = var_10
-		var_12_8.mode = var_10.SYSTEM_VISIT
-
-		var_12_4(var_12_5, var_12_6, var_12_7, var_12_8)
-
-		goto label_12_0
+	if var_12_0 == GAME.VISIT_BACKYARD_DONE then
+		arg_12_0.viewComponent:emit(BaseUI.ON_CLOSE)
+		arg_12_0:sendNotification(GAME.GO_SCENE, SCENE.COURTYARD, {
+			player = var_12_1.player,
+			dorm = var_12_1.dorm,
+			mode = CourtYardConst.SYSTEM_VISIT
+		})
+	elseif var_12_0 == GAME.GET_BLACK_LIST_DONE or var_12_0 == GAME.FRIEND_ADD_BLACKLIST_DONE or var_12_0 == GAME.FRIEND_RELIEVE_BLACKLIST_DONE then
+		arg_12_0.viewComponent:updateBlack()
+	elseif var_12_0 == GAME.INFORM_DONE or var_12_0 == GAME.INFORM_THEME_TEMPLATE_DONE then
+		arg_12_0.viewComponent:closeInfromPanel()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			hideNo = true,
+			parent = arg_12_0.contextData.parent,
+			content = i18n("inform_sueecss_tip")
+		})
+	elseif var_12_0 == GAME.FINISH_STAGE then
+		arg_12_0.viewComponent:closeView()
 	end
 
-	GAME = var_12_4
-
-	if var_12_1 ~= var_12_4.GET_BLACK_LIST_DONE then
-		GAME = var_4
-
-		if var_12_1 ~= var_4.FRIEND_ADD_BLACKLIST_DONE then
-			GAME = var_4
-
-			if var_12_1 == var_4.FRIEND_RELIEVE_BLACKLIST_DONE then
-				local var_12_9 = arg_12_0.viewComponent
-
-				var_4.updateBlack(var_12_9)
-
-				goto label_12_0
-			end
-
-			GAME = var_4
-
-			if var_12_1 ~= var_4.INFORM_DONE then
-				GAME = var_12_12
-
-				do
-					local var_12_12
-
-					if var_12_1 == var_12_12.INFORM_THEME_TEMPLATE_DONE then
-						local var_12_10 = arg_12_0.viewComponent
-
-						var_12_12.closeInfromPanel(var_12_10)
-
-						pg = var_12_12
-
-						local var_12_11 = var_12_12.MsgboxMgr.GetInstance()
-
-						var_12_12 = var_12_12.ShowMsgBox
-
-						local var_12_13 = {
-							hideNo = true,
-							parent = arg_12_0.contextData.parent
-						}
-
-						i18n = var_8
-						var_12_13.content = var_8("inform_sueecss_tip")
-
-						var_12_12(var_12_11, var_12_13)
-					else
-						GAME = var_12_12
-
-						if var_12_1 == var_12_12.FINISH_STAGE then
-							local var_12_14 = arg_12_0.viewComponent
-
-							var_4.closeView(var_12_14)
-						end
-					end
-				end
-
-				::label_12_0::
-
-				return
-			end
-		end
-	end
+	return
 end
 
-return var_0_1
+return var_0_0

@@ -3,6 +3,7 @@ module("fashion.FashionController", Class.impl(Controller))
 --构造函数
 function ctor(self, cusMgr)
     super.ctor(self, cusMgr)
+    self.receiveFashionSuccessMsgCache = {}
 end
 
 --析构函数
@@ -12,6 +13,7 @@ end
 -- Override 重新登录
 function reLogin(self)
     super.reLogin(self)
+    self.receiveFashionSuccessMsgCache = {}
 end
 
 --游戏开始的回调
@@ -32,6 +34,8 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_WEAR_FASHION_COLOR, self.onReqWearFashionColor, self)
     -- 请求战员当前皮肤对应部位信息
     GameDispatcher:addEventListener(EventName.REQ_LOOK_FASHION_COLOR, self.onReqLookFashionColor, self)
+    -- 获得时装界面点击跳过
+    GameDispatcher:addEventListener(EventName.SKIP_RECEIVE_FASHION_SUCCESS, self.onSkipReceiveFashionSuccessHandler, self)
 end
 
 --注册server发来的数据
@@ -53,7 +57,10 @@ function registerMsgHandler(self)
         SC_LOOK_FASHION_COLOR = self.__onParseLookFashionColor,
         --- *s2c* 解锁时装炫彩 13346
         SC_UNLOCK_FASHION_COLOR = self.__onPareseUnlockFashionColor,
-
+        --- *s2c* 时装拥有信息 13350
+        SC_HERO_FASHION_HAVE_INFO = self.__onParseHeroFashionHaveInfo,
+        --- *s2c* 所有战员炫彩推送 13420
+        SC_ALL_HERO_FASHION_COLOR_INFO = self.__onParseAllHeroFashionColorInfo,
     }
 end
 
@@ -83,7 +90,11 @@ end
 
 --- *c2s* 查看战员时装的炫彩 13344
 function onReqLookFashionColor(self, args)
-    SOCKET_SEND(Protocol.CS_LOOK_FASHION_COLOR, { hero_id = args.heroId, fashion_id = args.fashionId })
+    SOCKET_SEND(Protocol.CS_LOOK_FASHION_COLOR, { hero_tid = args.heroTid, fashion_id = args.fashionId })
+end
+
+function onSkipReceiveFashionSuccessHandler(self)
+    self.receiveFashionSuccessMsgCache = {}
 end
 
 ---------------------------------------------------------------响应------------------------------------------------------------------
@@ -109,12 +120,13 @@ end
 -- 返回战员时装解锁结果
 function __onResHeroFashionUnlockHandler(self, msg)
     if (msg.result == 1) then
-        if self.ReceiveFashionSuccess == nil then
-            self.ReceiveFashionSuccess = fashion.ReceiveFashionSuccess.new()
-            self.ReceiveFashionSuccess:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyReceiveFashionSuccessHandler, self)
+        self:addReceiveFashionSuccessMsgCaches(msg)
+        fashion.FashionManager:parseHeroFashionAddHaveInfo(msg.fashion_type, msg.hero_tid, msg.fashion_id)
+        if msg.fashion_coin_num <= 0 then
+            fashion.FashionManager:parseMsgWearFashionUnlock(msg.fashion_type, msg.hero_tid, msg.fashion_id)
         end
-        self.ReceiveFashionSuccess:open(msg)
-        fashion.FashionManager:parseMsgWearFashionUnlock(msg.fashion_type, msg.hero_tid, msg.fashion_id)
+
+
     else
         print("解锁失败：", msg.hero_tid, msg.fashion_type, msg.fashion_id)
     end
@@ -141,9 +153,19 @@ function __onParseLookFashionColor(self, msg)
 end
 --- *s2c* 解锁时装炫彩 13346
 function __onPareseUnlockFashionColor(self, msg)
-
+    if msg.result == 1 then
+        fashion.FashionManager:updateAllHeroFashionColorInfo(msg.hero_tid, msg.fashion_id, msg.color_id, msg.fashion_coin_num)
+    end
 end
 
+--- *s2c* 时装拥有信息 13350
+function __onParseHeroFashionHaveInfo(self, msg)
+    fashion.FashionManager:parseHeroFashionHaveInfo(msg)
+end
+
+function __onParseAllHeroFashionColorInfo(self, msg)
+    fashion.FashionManager:parseAllHeroFashionColorInfo(msg)
+end
 ------------------------------------------------------------------------ 时装面板 ------------------------------------------------------------------------
 function __onOpenFashionPanelHandler(self, args)
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_FASHION, true) == false then
@@ -182,7 +204,36 @@ function onDestroyFashionPanelHandler(self)
     self.m_fashionPanel = nil
 end
 
+function addReceiveFashionSuccessMsgCaches(self, msg)
+    table.insert(self.receiveFashionSuccessMsgCache, msg)
+    self:checkOpenReceiveFashionSuccessView(self)
+end
+
+function checkOpenReceiveFashionSuccessView(self)
+    if self.ReceiveFashionSuccess and self.ReceiveFashionSuccess.isPop == 1 then
+        self.ReceiveFashionSuccess:updateSkipBtn(table.nums(self.receiveFashionSuccessMsgCache) > 0)
+        return
+    end
+    if next(self.receiveFashionSuccessMsgCache) == nil then
+        return
+    end
+    local singleMsg = table.remove(self.receiveFashionSuccessMsgCache, 1)
+    if self.ReceiveFashionSuccess == nil then
+        self.ReceiveFashionSuccess = fashion.ReceiveFashionSuccess.new()
+        self.ReceiveFashionSuccess:addEventListener(View.EVENT_CLOSE, self.onCloseReceiveFashionSuccessHandler, self)
+        self.ReceiveFashionSuccess:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyReceiveFashionSuccessHandler, self)
+    end
+
+    self.ReceiveFashionSuccess:open(singleMsg)
+    self.ReceiveFashionSuccess:updateSkipBtn(table.nums(self.receiveFashionSuccessMsgCache) > 0)
+end
+
+function onCloseReceiveFashionSuccessHandler(self)
+    self:checkOpenReceiveFashionSuccessView()
+end
+
 function onDestroyReceiveFashionSuccessHandler(self)
+    self.ReceiveFashionSuccess:removeEventListener(View.EVENT_CLOSE, self.onCloseReceiveFashionSuccessHandler, self)
     self.ReceiveFashionSuccess:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyReceiveFashionSuccessHandler, self)
     self.ReceiveFashionSuccess = nil
 end

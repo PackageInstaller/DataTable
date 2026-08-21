@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "gameroom_shop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "gameroom_shop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.gameroom_shop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.gameroom_shop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.gameroom_shop_template = rawget(pg, "gameroom_shop_template") or setmetatable({
+	__name = "gameroom_shop_template"
+}, confNEO)
+pg.gameroom_shop_template.all = {
 	1,
 	2,
 	3,
@@ -68,25 +45,11 @@ var_0_3.all = {
 	40,
 	41
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.gameroom_shop_template = {}
+pg.base = pg.base or {}
+pg.base.gameroom_shop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.gameroom_shop_template
-
-	var_1_0[1] = {
+	pg.base.gameroom_shop_template[1] = {
 		goods_purchase_limit = 1,
 		type = 6,
 		price = 7500,
@@ -130,11 +93,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.gameroom_shop_template
-
-	var_1_1[2] = {
+	pg.base.gameroom_shop_template[2] = {
 		goods_purchase_limit = 1,
 		type = 6,
 		price = 7500,
@@ -178,11 +137,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.gameroom_shop_template
-
-	var_1_2[3] = {
+	pg.base.gameroom_shop_template[3] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -226,11 +181,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.gameroom_shop_template
-
-	var_1_3[4] = {
+	pg.base.gameroom_shop_template[4] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -274,11 +225,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.gameroom_shop_template
-
-	var_1_4[5] = {
+	pg.base.gameroom_shop_template[5] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -322,11 +269,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.gameroom_shop_template
-
-	var_1_5[6] = {
+	pg.base.gameroom_shop_template[6] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -370,11 +313,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.gameroom_shop_template
-
-	var_1_6[7] = {
+	pg.base.gameroom_shop_template[7] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -418,11 +357,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.gameroom_shop_template
-
-	var_1_7[8] = {
+	pg.base.gameroom_shop_template[8] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -466,11 +401,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.gameroom_shop_template
-
-	var_1_8[9] = {
+	pg.base.gameroom_shop_template[9] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -514,11 +445,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.gameroom_shop_template
-
-	var_1_9[10] = {
+	pg.base.gameroom_shop_template[10] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -562,11 +489,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.gameroom_shop_template
-
-	var_1_10[11] = {
+	pg.base.gameroom_shop_template[11] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -610,11 +533,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.gameroom_shop_template
-
-	var_1_11[12] = {
+	pg.base.gameroom_shop_template[12] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -658,11 +577,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.gameroom_shop_template
-
-	var_1_12[13] = {
+	pg.base.gameroom_shop_template[13] = {
 		goods_purchase_limit = 1,
 		type = 6,
 		price = 7500,
@@ -706,11 +621,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.gameroom_shop_template
-
-	var_1_13[14] = {
+	pg.base.gameroom_shop_template[14] = {
 		goods_purchase_limit = 1,
 		type = 6,
 		price = 7500,
@@ -754,11 +665,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.gameroom_shop_template
-
-	var_1_14[15] = {
+	pg.base.gameroom_shop_template[15] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -802,11 +709,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.gameroom_shop_template
-
-	var_1_15[16] = {
+	pg.base.gameroom_shop_template[16] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -850,11 +753,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.gameroom_shop_template
-
-	var_1_16[17] = {
+	pg.base.gameroom_shop_template[17] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -898,11 +797,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.gameroom_shop_template
-
-	var_1_17[18] = {
+	pg.base.gameroom_shop_template[18] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -946,11 +841,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.gameroom_shop_template
-
-	var_1_18[19] = {
+	pg.base.gameroom_shop_template[19] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -994,11 +885,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.gameroom_shop_template
-
-	var_1_19[20] = {
+	pg.base.gameroom_shop_template[20] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1042,11 +929,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.gameroom_shop_template
-
-	var_1_20[21] = {
+	pg.base.gameroom_shop_template[21] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1090,11 +973,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.gameroom_shop_template
-
-	var_1_21[22] = {
+	pg.base.gameroom_shop_template[22] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1138,11 +1017,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.gameroom_shop_template
-
-	var_1_22[23] = {
+	pg.base.gameroom_shop_template[23] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1186,11 +1061,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.gameroom_shop_template
-
-	var_1_23[24] = {
+	pg.base.gameroom_shop_template[24] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1234,11 +1105,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.gameroom_shop_template
-
-	var_1_24[25] = {
+	pg.base.gameroom_shop_template[25] = {
 		goods_purchase_limit = 1,
 		type = 6,
 		price = 7500,
@@ -1282,11 +1149,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.gameroom_shop_template
-
-	var_1_25[26] = {
+	pg.base.gameroom_shop_template[26] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1330,11 +1193,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.gameroom_shop_template
-
-	var_1_26[27] = {
+	pg.base.gameroom_shop_template[27] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1378,11 +1237,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.gameroom_shop_template
-
-	var_1_27[28] = {
+	pg.base.gameroom_shop_template[28] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1426,11 +1281,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.gameroom_shop_template
-
-	var_1_28[29] = {
+	pg.base.gameroom_shop_template[29] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1474,11 +1325,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.gameroom_shop_template
-
-	var_1_29[30] = {
+	pg.base.gameroom_shop_template[30] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1522,11 +1369,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.gameroom_shop_template
-
-	var_1_30[31] = {
+	pg.base.gameroom_shop_template[31] = {
 		goods_purchase_limit = 1,
 		type = 5,
 		price = 7500,
@@ -1570,11 +1413,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.gameroom_shop_template
-
-	var_1_31[32] = {
+	pg.base.gameroom_shop_template[32] = {
 		goods_purchase_limit = 1,
 		type = 5,
 		price = 7500,
@@ -1618,11 +1457,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.gameroom_shop_template
-
-	var_1_32[33] = {
+	pg.base.gameroom_shop_template[33] = {
 		goods_purchase_limit = 1,
 		type = 5,
 		price = 7500,
@@ -1666,11 +1501,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.gameroom_shop_template
-
-	var_1_33[34] = {
+	pg.base.gameroom_shop_template[34] = {
 		goods_purchase_limit = 1,
 		type = 5,
 		price = 7500,
@@ -1714,11 +1545,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.gameroom_shop_template
-
-	var_1_34[35] = {
+	pg.base.gameroom_shop_template[35] = {
 		goods_purchase_limit = 1,
 		type = 5,
 		price = 7500,
@@ -1762,11 +1589,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.gameroom_shop_template
-
-	var_1_35[36] = {
+	pg.base.gameroom_shop_template[36] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1810,11 +1633,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.gameroom_shop_template
-
-	var_1_36[37] = {
+	pg.base.gameroom_shop_template[37] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1858,11 +1677,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.gameroom_shop_template
-
-	var_1_37[38] = {
+	pg.base.gameroom_shop_template[38] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1906,11 +1721,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.gameroom_shop_template
-
-	var_1_38[39] = {
+	pg.base.gameroom_shop_template[39] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -1954,11 +1765,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.gameroom_shop_template
-
-	var_1_39[40] = {
+	pg.base.gameroom_shop_template[40] = {
 		goods_purchase_limit = 10,
 		type = 2,
 		price = 1200,
@@ -2002,8 +1809,7 @@ var_0_3.base.gameroom_shop_template = {}
 		},
 		limit_args = {}
 	}
-	pg = var_1_39
-	var_1_39.base.gameroom_shop_template[41] = {
+	pg.base.gameroom_shop_template[41] = {
 		goods_purchase_limit = 1,
 		type = 14,
 		price = 7500,

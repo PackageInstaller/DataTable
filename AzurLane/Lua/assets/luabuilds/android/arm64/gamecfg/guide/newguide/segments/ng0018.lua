@@ -1,10 +1,4 @@
-﻿local var_0_0 = {
-	"点击这里可以对这条动态进行点赞",
-	"点击这里可以分享这条动态",
-	"点击这里可以对这条动态进行评论"
-}
-
-return {
+﻿return {
 	id = "NG0018",
 	events = {
 		{
@@ -14,7 +8,11 @@ return {
 				dir = -1,
 				posY = -184.2,
 				posX = -666.5,
-				text = var_0_0[1],
+				text = ({
+					"点击这里可以对这条动态进行点赞",
+					"点击这里可以分享这条动态",
+					"点击这里可以对这条动态进行评论"
+				})[1],
 				ui = {
 					path = "/OverlayCamera/Overlay/UIMain/InstagramUI(Clone)/main/left_panel/heart"
 				}
@@ -27,7 +25,11 @@ return {
 				dir = 1,
 				posY = -184.2,
 				posX = 49.6,
-				text = var_0_0[2],
+				text = ({
+					"点击这里可以对这条动态进行点赞",
+					"点击这里可以分享这条动态",
+					"点击这里可以对这条动态进行评论"
+				})[2],
 				ui = {
 					path = "/OverlayCamera/Overlay/UIMain/InstagramUI(Clone)/main/left_panel/plane"
 				}
@@ -40,7 +42,11 @@ return {
 				dir = 1,
 				posY = -209.9,
 				posX = 309.3,
-				text = var_0_0[3],
+				text = ({
+					"点击这里可以对这条动态进行点赞",
+					"点击这里可以分享这条动态",
+					"点击这里可以对这条动态进行评论"
+				})[3],
 				ui = {
 					path = "/OverlayCamera/Overlay/UIMain/InstagramUI(Clone)/main/right_panel/last/bg2"
 				}

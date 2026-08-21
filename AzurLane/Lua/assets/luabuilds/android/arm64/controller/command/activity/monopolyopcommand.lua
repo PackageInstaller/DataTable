@@ -1,385 +1,227 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MonopolyOPCommand", pm.SimpleCommand)
 
-local var_0_0 = "MonopolyOPCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.autoFlag
+	local var_1_2 = var_1_0.awardCollector
+	local var_1_3 = getProxy(ActivityProxy)
+	local var_1_4 = getProxy(ActivityProxy):getActivityById(var_1_0.activity_id)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().autoFlag
-	local var_1_1 = var_2.awardCollector
-
-	getProxy = var_1_10005
-	ActivityProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.getActivityById(var_1_2, var_2.activity_id) or var_6:isEnd() then
+	if not var_1_4 or var_1_4:isEnd() then
 		return
 	end
 
-	local var_1_3 = var_2.cmd
-
-	ActivityConst = var_1_2
-
-	if var_1_3 == var_1_2.MONOPOLY_OP_DIALOGUE and arg_1_0:IsReadDialogue(var_6, var_2.arg1) then
+	if var_1_0.cmd == ActivityConst.MONOPOLY_OP_DIALOGUE and arg_1_0:IsReadDialogue(var_1_4, var_1_0.arg1) then
 		return
 	end
 
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_4, 11202, {
-		activity_id = var_2.activity_id,
-		cmd = var_2.cmd,
-		arg1 = var_2.arg1,
-		arg2 = var_2.arg2,
+	pg.ConnectionMgr.GetInstance():Send(11202, {
+		activity_id = var_1_0.activity_id,
+		cmd = var_1_0.cmd,
+		arg1 = var_1_0.arg1,
+		arg2 = var_1_0.arg2,
 		arg_list = {}
 	}, 11203, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-			local var_2_1 = var_1.getActivityById(var_2_0, var_0.activity_id)
+			local var_2_0 = var_1_3:getActivityById(var_1_0.activity_id)
+			local var_2_1 = PlayerConst.addTranDrop(arg_2_0.award_list)
 
-			PlayerConst = var_2_10002
-
-			local var_2_2 = var_2_10002.addTranDrop(arg_2_0.award_list)
-
-			if var_1_1 then
-				local var_2_3 = var_1_1
-
-				var_3.Add(var_2_3, var_2_2)
+			if var_1_2 then
+				var_1_2:Add(var_2_1)
 			end
 
-			local var_2_4 = var_0.cmd
+			local var_2_2 = var_1_0.cmd
+			local var_2_3 = {}
+			local var_2_4 = ""
+			local var_2_5 = arg_2_0.number[1]
+			local var_2_6 = arg_2_0.number[2]
 
-			ActivityConst = var_4
+			if var_1_0.cmd == ActivityConst.MONOPOLY_OP_AWARD then
+				var_2_0.data2_list[2] = var_2_0.data2_list[2] + 1
 
-			local var_2_5
-
-			if var_2_4 == var_4.MONOPOLY_OP_AWARD then
-				var_2_5 = var_2_1.data2_list
-				var_2_5[2] = var_2_1.data2_list[2] + 1
-				var_2_10006 = var_0
-
-				var_2_5.updateActivity(var_2_10006, var_2_1)
-
-				var_2_10006 = arg_1_0
-				var_2_5 = var_2_5.sendNotification
-				GAME = var_2_10007
-
-				var_2_5(var_2_10006, var_2_10007.MONOPOLY_AWARD_DONE, {
-					awards = var_2_2,
-					autoFlag = var_1_0
+				var_1_3:updateActivity(var_2_0)
+				arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+					awards = var_2_1,
+					autoFlag = var_1_1
 				})
-			else
-				ActivityConst = var_2_5
 
-				if var_2_4 == var_2_5.MONOPOLY_OP_LAST then
-					var_2_1.data2_list[3] = 1
+				goto label_2_0
+			end
 
-					if #var_2_2 > 0 then
-						var_2_10006 = arg_1_0
+			if var_2_2 == ActivityConst.MONOPOLY_OP_LAST then
+				var_2_0.data2_list[3] = 1
 
-						local var_2_6 = var_4.sendNotification
-
-						GAME = var_2_10007
-
-						var_2_6(var_2_10006, var_2_10007.MONOPOLY_AWARD_DONE, {
-							awards = var_2_2,
-							autoFlag = var_1_0,
-							callback = function()
-								return
-							end
-						})
-					end
-
-					if var_0.callback then
-						var_0.callback()
-					end
+				if #var_2_1 > 0 then
+					arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+						awards = var_2_1,
+						autoFlag = var_1_1,
+						callback = function()
+							return
+						end
+					})
 				end
 
-				local var_2_7 = {}
-				local var_2_8 = ""
-
-				ipairs = var_2_10006
-
-				for iter_2_0, iter_2_1 in var_2_10006(arg_2_0.number) do
-					if 2 < iter_2_0 then
-						table = var_11
-
-						var_11.insert(var_2_7, iter_2_1)
-
-						var_2_8 = var_2_8 .. "-" .. iter_2_1
-					end
+				if var_1_0.callback then
+					var_1_0.callback()
 				end
+			end
 
-				local var_2_9 = arg_2_0.number[1]
-				local var_2_10 = arg_2_0.number[2]
-				local var_2_11 = #var_2_7
-				local var_2_12
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.number) do
+				if iter_2_0 > 2 then
+					table.insert(var_2_3, iter_2_1)
 
-				if not (0 < var_2_11) or not var_2_7[#var_2_7] then
-					var_2_12 = var_2_1.data2
+					var_2_4 = var_2_4 .. "-" .. iter_2_1
 				end
+			end
 
-				table = var_9
+			::label_2_0::
 
-				local var_2_13
+			if #var_2_3 > 0 then
+				do
+					local var_2_7 = var_2_3[#var_2_3] or var_2_0.data2
 
-				if var_9.contains(var_2_7, 1) then
-					var_2_13 = var_2_1.data1_list
-					var_2_13[3] = var_2_1.data1_list[3] + 1
-				end
+					print(var_2_2, "--", var_2_5, "-", var_2_6, "-", var_2_7, "-", #var_2_3)
 
-				ActivityConst = var_2_13
+					local var_2_8 = false
 
-				local var_2_14
-
-				if var_2_4 == var_2_13.MONOPOLY_OP_THROW then
-					print = var_2_14
-
-					var_2_14("点数 : ", var_2_9)
-
-					var_2_1.data3 = var_2_9
-					var_2_14 = var_2_1.data1_list
-					var_2_14[2] = var_2_1.data1_list[2] + 1
-					var_2_14 = var_2_1:getDataConfig("reward_time")
-
-					local var_2_15 = var_2_1
-					local var_2_16
-
-					if not var_2_1.getDataConfig(var_2_15, "effective_times") then
-						var_2_16 = 0
+					if table.contains(var_2_3, 1) then
+						var_2_0.data1_list[3] = var_2_0.data1_list[3] + 1
+						var_2_8 = true
 					end
 
-					local var_2_17
+					if var_2_2 == ActivityConst.MONOPOLY_OP_THROW then
+						print("点数 : ", var_2_5)
 
-					if var_2_16 ~= 0 then
-						math = var_2_15
-						var_2_17 = var_2_15.min(var_2_1.data1_list[2], var_2_16)
-					else
-						var_2_17 = var_2_1.data1_list[2]
-					end
+						var_2_0.data3 = var_2_5
+						var_2_0.data1_list[2] = var_2_0.data1_list[2] + 1
 
-					if var_2_14 > 0 then
-						local var_2_18 = var_2_1.data2_list
+						local var_2_9 = var_2_0:getDataConfig("reward_time")
+						local var_2_10 = var_2_0:getDataConfig("effective_times") or 0
+						local var_2_11 = var_2_10 ~= 0 and math.min(var_2_0.data1_list[2], var_2_10) or var_2_0.data1_list[2]
 
-						math = var_13
-						var_2_18[1] = var_13.floor(var_2_17 / var_2_14)
-					else
-						var_2_1.data2_list[1] = 0
-					end
+						var_2_0.data2_list[1] = var_2_9 > 0 and math.floor(var_2_11 / var_2_9) or 0
 
-					local var_2_19 = var_0
+						var_1_3:updateActivity(var_2_0)
 
-					var_12.updateActivity(var_2_19, var_2_1)
+						if var_1_0.callback then
+							var_1_0.callback(var_2_5)
+						end
+					elseif var_2_2 == ActivityConst.MONOPOLY_OP_MOVE then
+						var_2_0.data3 = var_2_5
+						var_2_0.data2 = var_2_7
+						var_2_0.data4 = var_2_6
 
-					if var_0.callback then
-						var_0.callback(var_2_9)
-					end
-				else
-					ActivityConst = var_2_14
-
-					local var_2_20
-
-					if var_2_4 == var_2_14.MONOPOLY_OP_MOVE then
-						var_2_1.data3 = var_2_9
-						var_2_1.data2 = var_2_12
-						var_2_1.data4 = var_2_10
-
-						if var_2_12 <= 1 then
-							var_2_20 = var_2_1.data1_list
-							var_2_20[4] = 0
+						if var_2_8 then
+							var_2_0.data1_list[4] = 0
 						end
 
-						local var_2_21 = var_0
+						var_1_3:updateActivity(var_2_0)
 
-						var_2_20.updateActivity(var_2_21, var_2_1)
-
-						if var_0.callback then
-							var_0.callback(var_2_9, var_2_7, var_2_10)
+						if var_1_0.callback then
+							var_1_0.callback(var_2_5, var_2_3, var_2_6)
 						end
-					else
-						ActivityConst = var_2_20
+					elseif var_2_2 == ActivityConst.MONOPOLY_OP_TRIGGER then
+						local var_2_12 = var_1_0.callback or function(arg_4_0, arg_4_1)
+							return
+						end
 
-						local var_2_22
+						var_2_0.data3 = var_2_5
+						var_2_0.data2 = var_2_7
+						var_2_0.data4 = var_2_6 or 0
 
-						if var_2_4 == var_2_20.MONOPOLY_OP_TRIGGER then
-							if not var_0.callback then
-								function var_2_22(arg_4_0, arg_4_1)
+						if var_2_8 then
+							var_2_0.data1_list[4] = 0
+						end
+
+						var_1_3:updateActivity(var_2_0)
+
+						if #var_2_1 > 0 then
+							arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+								awards = var_2_1,
+								autoFlag = var_1_1,
+								callback = function()
+									var_2_12(var_2_3, var_2_6)
+
 									return
 								end
-							end
-
-							var_2_1.data3 = var_2_9
-							var_2_1.data2 = var_2_12
-							var_2_1.data4 = var_2_10 or 0
-
-							local var_2_23 = var_0
-
-							var_10.updateActivity(var_2_23, var_2_1)
-
-							if #var_2_2 > 0 then
-								local var_2_24 = arg_1_0
-								local var_2_25 = var_10.sendNotification
-
-								GAME = var_13
-
-								var_2_25(var_2_24, var_13.MONOPOLY_AWARD_DONE, {
-									awards = var_2_2,
-									autoFlag = var_1_0,
-									callback = function()
-										var_2_22(var_2_7, var_2_10)
-
-										return
-									end
-								})
-							else
-								var_2_22(var_2_7, var_2_10)
-							end
+							})
 						else
-							ActivityConst = var_2_22
-
-							local var_2_26
-
-							if var_2_4 == var_2_22.MONOPOLY_OP_PICK then
-								if not var_0.callback then
-									function var_2_26(arg_6_0, arg_6_1)
-										return
-									end
-								end
-
-								local var_2_27 = var_2_1.data1_list
-
-								var_2_27[4] = var_0.arg1
-								table = var_2_27
-
-								if not var_2_27.contains(var_2_1.data3_list, var_0.arg1) then
-									table = var_10
-
-									var_10.insert(var_2_1.data3_list, var_0.arg1)
-								end
-
-								local var_2_28 = var_0
-
-								var_10.updateActivity(var_2_28, var_2_1)
-
-								local var_2_30
-
-								if #var_2_2 > 0 then
-									local var_2_29 = arg_1_0
-
-									var_2_30 = var_2_30.sendNotification
-									GAME = var_13
-
-									var_2_30(var_2_29, var_13.MONOPOLY_AWARD_DONE, {
-										awards = var_2_2,
-										autoFlag = var_1_0,
-										callback = function()
-											var_2_26(var_2_7, var_2_10)
-
-											return
-										end
-									})
-								else
-									var_2_26(var_2_7, var_2_10)
-								end
-
-								print = var_2_30
-
-								var_2_30("cmd : 6", " 路径 ： ", var_2_8, "  剩余步数 ： ", var_2_9)
-							else
-								ActivityConst = var_2_26
-
-								if var_2_4 == var_2_26.MONOPOLY_OP_DIALOGUE then
-									table = var_9
-
-									if not var_9.contains(var_2_1.data4_list, var_0.arg1) then
-										table = var_9
-
-										var_9.insert(var_2_1.data4_list, var_0.arg1)
-									end
-
-									local var_2_31 = var_0
-
-									var_9.updateActivity(var_2_31, var_2_1)
-
-									print = var_9
-
-									var_9("cmd : 8", " 路径 ： ", var_2_8, "  剩余步数 ： ", var_2_9)
-								else
-									ActivityConst = var_9
-
-									local var_2_32
-
-									if var_2_4 == var_9.MONOPOLY_OP_AUTO then
-										var_2_32 = var_2_1.data1_list
-										var_2_32[5] = var_0.arg1
-
-										local var_2_33 = var_0
-
-										var_2_32.updateActivity(var_2_33, var_2_1)
-
-										print = var_2_32
-
-										var_2_32("cmd : 7", " 路径 ： ", var_2_8, "  剩余步数 ： ", var_2_9)
-									else
-										ActivityConst = var_2_32
-
-										if var_2_4 == var_2_32.MONOPOLY_OP_ROUND_AWD then
-											var_2_1.data1_list[6] = var_0.arg1
-
-											local var_2_34 = var_0
-
-											var_9.updateActivity(var_2_34, var_2_1)
-
-											local var_2_36
-
-											if #var_2_2 > 0 then
-												local var_2_35 = arg_1_0
-
-												var_2_36 = var_2_36.sendNotification
-												GAME = var_12
-
-												var_2_36(var_2_35, var_12.MONOPOLY_AWARD_DONE, {
-													awards = var_2_2,
-													autoFlag = var_1_0
-												})
-											end
-
-											print = var_2_36
-
-											var_2_36("cmd : 9", " 路径 ： ", var_2_8, "  剩余步数 ： ", var_2_9)
-										end
-									end
-								end
-							end
+							var_2_12(var_2_3, var_2_6)
 						end
+					elseif var_2_2 == ActivityConst.MONOPOLY_OP_PICK then
+						local var_2_13 = var_1_0.callback or function(arg_6_0, arg_6_1)
+							return
+						end
+
+						var_2_0.data1_list[4] = var_1_0.arg1
+
+						if not table.contains(var_2_0.data3_list, var_1_0.arg1) then
+							table.insert(var_2_0.data3_list, var_1_0.arg1)
+						end
+
+						var_1_3:updateActivity(var_2_0)
+
+						if #var_2_1 > 0 then
+							arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+								awards = var_2_1,
+								autoFlag = var_1_1,
+								callback = function()
+									var_2_13(var_2_3, var_2_6)
+
+									return
+								end
+							})
+						else
+							var_2_13(var_2_3, var_2_6)
+						end
+
+						print("cmd : 6", " 路径 ： ", var_2_4, "  剩余步数 ： ", var_2_5)
+					elseif var_2_2 == ActivityConst.MONOPOLY_OP_DIALOGUE then
+						if not table.contains(var_2_0.data4_list, var_1_0.arg1) then
+							table.insert(var_2_0.data4_list, var_1_0.arg1)
+						end
+
+						var_1_3:updateActivity(var_2_0)
+						print("cmd : 8", " 路径 ： ", var_2_4, "  剩余步数 ： ", var_2_5)
+					elseif var_2_2 == ActivityConst.MONOPOLY_OP_AUTO then
+						var_2_0.data1_list[5] = var_1_0.arg1
+
+						var_1_3:updateActivity(var_2_0)
+						print("cmd : 7", " 路径 ： ", var_2_4, "  剩余步数 ： ", var_2_5)
+					elseif var_2_2 == ActivityConst.MONOPOLY_OP_ROUND_AWD then
+						var_2_0.data1_list[6] = var_1_0.arg1
+
+						var_1_3:updateActivity(var_2_0)
+
+						if #var_2_1 > 0 then
+							arg_1_0:sendNotification(GAME.MONOPOLY_AWARD_DONE, {
+								awards = var_2_1,
+								autoFlag = var_1_1
+							})
+						end
+
+						print("cmd : 9", " 路径 ： ", var_2_4, "  剩余步数 ： ", var_2_5)
+					end
+
+					if false then
+						if var_1_0.callback then
+							var_1_0.callback()
+						end
+
+						originalPrint("Monopoly Activity erro code" .. arg_2_0.result .. " cmd:" .. var_1_0.cmd)
 					end
 				end
-			end
-		else
-			if var_0.callback then
-				var_0.callback()
-			end
 
-			originalPrint = var_1
-
-			var_1("Monopoly Activity erro code" .. arg_2_0.result .. " cmd:" .. var_0.cmd)
+				return
+			end
 		end
-
-		return
 	end)
 
 	return
 end
 
-function var_0_1.IsReadDialogue(arg_8_0, arg_8_1, arg_8_2)
-	table = var_1_10003
-
-	return var_1_10003.contains(arg_8_1.data4_list, arg_8_2)
+function var_0_0.IsReadDialogue(arg_8_0, arg_8_1, arg_8_2)
+	return table.contains(arg_8_1.data4_list, arg_8_2)
 end
 
-return var_0_1
+return var_0_0

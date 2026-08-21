@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChangeSkinLink")
+﻿local var_0_0 = class("ChangeSkinLink")
 
 var_0_0.L2D_SAVE_TEMPLATE_DISPOSE = {
 	705022,
@@ -16,39 +14,22 @@ var_0_0.change_parameter_link_slot = 2
 
 function var_0_0.GetSaveL2dData(arg_1_0, arg_1_1)
 	local var_1_0 = {}
-	local var_1_1 = {}
 
-	pg = var_1_10004
-
-	if var_1_10004.ship_skin_template[arg_1_1].ship_l2d_id then
-		pg = var_4
-
-		if #var_4.ship_skin_template[arg_1_1].ship_l2d_id > 0 then
-			pg = var_4
-			var_1_1 = var_4.ship_skin_template[arg_1_1].ship_l2d_id
-		end
+	if pg.ship_skin_template[arg_1_1].ship_l2d_id and #pg.ship_skin_template[arg_1_1].ship_l2d_id > 0 then
+		var_1_0 = pg.ship_skin_template[arg_1_1].ship_l2d_id
 	end
 
-	ipairs = var_4
-
-	for iter_1_0, iter_1_1 in var_4(var_1_1) do
-		pg = var_1_10009
-
-		if var_1_10009.ship_l2d[iter_1_1] then
-			pg = var_1_10009
-
-			if var_1_10009.ship_l2d[iter_1_1].parameter and #var_1_10009 > 0 then
-				Live2dConst = var_10
-				var_1_0[var_1_10009] = var_10.GetDragData(iter_1_1, arg_1_1, arg_1_0)
+	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+		if pg.ship_l2d[iter_1_1] then
+			if pg.ship_l2d[iter_1_1].parameter and #pg.ship_l2d[iter_1_1].parameter > 0 then
+				({})[pg.ship_l2d[iter_1_1].parameter] = Live2dConst.GetDragData(iter_1_1, arg_1_1, arg_1_0)
 			end
 		else
-			print = var_1_10009
-
-			var_1_10009(iter_1_1 == "not exit dragId")
+			print(iter_1_1 == "not exit dragId")
 		end
 	end
 
-	return var_1_0
+	return {}
 end
 
 var_0_0.CHANGE_SKIN_LINK_DATA = {

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_dress_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_dress_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_dress_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_dress_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_dress_template = rawget(pg, "island_dress_template") or setmetatable({
+	__name = "island_dress_template"
+}, confNEO)
+pg.island_dress_template.all = {
 	1010001,
 	1010002,
 	1010003,
@@ -147,11 +124,7 @@ var_0_3.all = {
 	2030009,
 	2030010
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_dress_template
-
-var_0_4.get_id_list_by_type = {
+pg.island_dress_template.get_id_list_by_type = {
 	{
 		1010001,
 		1010002,
@@ -287,11 +260,7 @@ var_0_4.get_id_list_by_type = {
 		1070016
 	}
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.island_dress_template
-
-var_0_5.get_id_list_by_related_dress = {
+pg.island_dress_template.get_id_list_by_related_dress = {
 	[0] = {
 		1010001,
 		1010002,
@@ -443,25 +412,11 @@ var_0_5.get_id_list_by_related_dress = {
 		1070016
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.island_dress_template = {}
+pg.base = pg.base or {}
+pg.base.island_dress_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_dress_template
-
-	var_1_0[1010001] = {
+	pg.base.island_dress_template[1010001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -502,11 +457,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_dress_template
-
-	var_1_1[1010002] = {
+	pg.base.island_dress_template[1010002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -552,11 +503,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_dress_template
-
-	var_1_2[1010003] = {
+	pg.base.island_dress_template[1010003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -600,11 +547,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_dress_template
-
-	var_1_3[1010004] = {
+	pg.base.island_dress_template[1010004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -645,11 +588,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_dress_template
-
-	var_1_4[1010005] = {
+	pg.base.island_dress_template[1010005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -688,11 +627,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_dress_template
-
-	var_1_5[1010006] = {
+	pg.base.island_dress_template[1010006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -736,11 +671,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_dress_template
-
-	var_1_6[1010007] = {
+	pg.base.island_dress_template[1010007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -786,11 +717,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_dress_template
-
-	var_1_7[1010008] = {
+	pg.base.island_dress_template[1010008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -834,11 +761,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_dress_template
-
-	var_1_8[1010009] = {
+	pg.base.island_dress_template[1010009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -884,11 +807,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_dress_template
-
-	var_1_9[1010010] = {
+	pg.base.island_dress_template[1010010] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -934,11 +853,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_dress_template
-
-	var_1_10[1010011] = {
+	pg.base.island_dress_template[1010011] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -977,11 +892,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_dress_template
-
-	var_1_11[1010012] = {
+	pg.base.island_dress_template[1010012] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1025,11 +936,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_dress_template
-
-	var_1_12[1010013] = {
+	pg.base.island_dress_template[1010013] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1073,11 +980,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_dress_template
-
-	var_1_13[1010014] = {
+	pg.base.island_dress_template[1010014] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1121,11 +1024,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_dress_template
-
-	var_1_14[1010015] = {
+	pg.base.island_dress_template[1010015] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1169,11 +1068,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_dress_template
-
-	var_1_15[1010016] = {
+	pg.base.island_dress_template[1010016] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1219,11 +1114,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_dress_template
-
-	var_1_16[1010017] = {
+	pg.base.island_dress_template[1010017] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1267,11 +1158,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_dress_template
-
-	var_1_17[1010018] = {
+	pg.base.island_dress_template[1010018] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -1315,11 +1202,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_dress_template
-
-	var_1_18[1020001] = {
+	pg.base.island_dress_template[1020001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1363,11 +1246,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_dress_template
-
-	var_1_19[1020002] = {
+	pg.base.island_dress_template[1020002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1411,11 +1290,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_dress_template
-
-	var_1_20[1020003] = {
+	pg.base.island_dress_template[1020003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1459,11 +1334,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_dress_template
-
-	var_1_21[1020004] = {
+	pg.base.island_dress_template[1020004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1502,11 +1373,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_dress_template
-
-	var_1_22[1020005] = {
+	pg.base.island_dress_template[1020005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1545,11 +1412,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_dress_template
-
-	var_1_23[1020006] = {
+	pg.base.island_dress_template[1020006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1593,11 +1456,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_dress_template
-
-	var_1_24[1020007] = {
+	pg.base.island_dress_template[1020007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1641,11 +1500,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_dress_template
-
-	var_1_25[1020008] = {
+	pg.base.island_dress_template[1020008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1689,11 +1544,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_dress_template
-
-	var_1_26[1020009] = {
+	pg.base.island_dress_template[1020009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1737,11 +1588,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_dress_template
-
-	var_1_27[1020010] = {
+	pg.base.island_dress_template[1020010] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1780,11 +1627,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_dress_template
-
-	var_1_28[1020011] = {
+	pg.base.island_dress_template[1020011] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1824,11 +1667,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_dress_template
-
-	var_1_29[1020012] = {
+	pg.base.island_dress_template[1020012] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1872,11 +1711,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_dress_template
-
-	var_1_30[1020013] = {
+	pg.base.island_dress_template[1020013] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1916,11 +1751,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_dress_template
-
-	var_1_31[1020014] = {
+	pg.base.island_dress_template[1020014] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -1962,11 +1793,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_dress_template
-
-	var_1_32[1020015] = {
+	pg.base.island_dress_template[1020015] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2010,11 +1837,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_dress_template
-
-	var_1_33[1020016] = {
+	pg.base.island_dress_template[1020016] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2058,11 +1881,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_dress_template
-
-	var_1_34[1020017] = {
+	pg.base.island_dress_template[1020017] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2106,11 +1925,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_dress_template
-
-	var_1_35[1030001] = {
+	pg.base.island_dress_template[1030001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2141,11 +1956,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_dress_template
-
-	var_1_36[1030002] = {
+	pg.base.island_dress_template[1030002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2181,11 +1992,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_dress_template
-
-	var_1_37[1030003] = {
+	pg.base.island_dress_template[1030003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2221,11 +2028,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_dress_template
-
-	var_1_38[1030004] = {
+	pg.base.island_dress_template[1030004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2256,11 +2059,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_dress_template
-
-	var_1_39[1030005] = {
+	pg.base.island_dress_template[1030005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2291,11 +2090,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_dress_template
-
-	var_1_40[1030006] = {
+	pg.base.island_dress_template[1030006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2331,11 +2126,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_dress_template
-
-	var_1_41[1030007] = {
+	pg.base.island_dress_template[1030007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2371,11 +2162,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_dress_template
-
-	var_1_42[1030008] = {
+	pg.base.island_dress_template[1030008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2411,11 +2198,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_dress_template
-
-	var_1_43[1030009] = {
+	pg.base.island_dress_template[1030009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2451,11 +2234,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_dress_template
-
-	var_1_44[1030010] = {
+	pg.base.island_dress_template[1030010] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2486,11 +2265,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_dress_template
-
-	var_1_45[1030011] = {
+	pg.base.island_dress_template[1030011] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2526,11 +2301,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_dress_template
-
-	var_1_46[1030012] = {
+	pg.base.island_dress_template[1030012] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2566,11 +2337,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_dress_template
-
-	var_1_47[1030013] = {
+	pg.base.island_dress_template[1030013] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2606,11 +2373,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_dress_template
-
-	var_1_48[1030014] = {
+	pg.base.island_dress_template[1030014] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2646,11 +2409,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_dress_template
-
-	var_1_49[1030015] = {
+	pg.base.island_dress_template[1030015] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2686,11 +2445,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_dress_template
-
-	var_1_50[0] = {
+	pg.base.island_dress_template[0] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2726,11 +2481,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_dress_template
-
-	var_1_51[1] = {
+	pg.base.island_dress_template[1] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2766,11 +2517,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_dress_template
-
-	var_1_52[1] = {
+	pg.base.island_dress_template[1] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2801,11 +2548,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_dress_template
-
-	var_1_53[2] = {
+	pg.base.island_dress_template[2] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2836,11 +2579,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_dress_template
-
-	var_1_54[3] = {
+	pg.base.island_dress_template[3] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2871,11 +2610,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_dress_template
-
-	var_1_55[17] = {
+	pg.base.island_dress_template[17] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2906,11 +2641,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "face_3",
 		jump_page = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_dress_template
-
-	var_1_56[18] = {
+	pg.base.island_dress_template[18] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2941,11 +2672,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "face_2",
 		jump_page = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_dress_template
-
-	var_1_57[19] = {
+	pg.base.island_dress_template[19] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -2976,11 +2703,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "face_1",
 		jump_page = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_dress_template
-
-	var_1_58[20] = {
+	pg.base.island_dress_template[20] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3011,11 +2734,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_dress_template
-
-	var_1_59[21] = {
+	pg.base.island_dress_template[21] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3046,11 +2765,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_dress_template
-
-	var_1_60[22] = {
+	pg.base.island_dress_template[22] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3081,11 +2796,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_dress_template
-
-	var_1_61[1060001] = {
+	pg.base.island_dress_template[1060001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3116,11 +2827,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_dress_template
-
-	var_1_62[1060002] = {
+	pg.base.island_dress_template[1060002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3151,11 +2858,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_dress_template
-
-	var_1_63[1060003] = {
+	pg.base.island_dress_template[1060003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3191,11 +2894,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_dress_template
-
-	var_1_64[1060004] = {
+	pg.base.island_dress_template[1060004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3231,11 +2930,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_dress_template
-
-	var_1_65[1060005] = {
+	pg.base.island_dress_template[1060005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3271,11 +2966,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_dress_template
-
-	var_1_66[1060006] = {
+	pg.base.island_dress_template[1060006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3311,11 +3002,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_dress_template
-
-	var_1_67[1060007] = {
+	pg.base.island_dress_template[1060007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3351,11 +3038,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_dress_template
-
-	var_1_68[1060008] = {
+	pg.base.island_dress_template[1060008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3391,11 +3074,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_dress_template
-
-	var_1_69[1060009] = {
+	pg.base.island_dress_template[1060009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3431,11 +3110,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_dress_template
-
-	var_1_70[1060010] = {
+	pg.base.island_dress_template[1060010] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3471,11 +3146,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_dress_template
-
-	var_1_71[1060011] = {
+	pg.base.island_dress_template[1060011] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3511,11 +3182,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_dress_template
-
-	var_1_72[1060012] = {
+	pg.base.island_dress_template[1060012] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3551,11 +3218,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_dress_template
-
-	var_1_73[1060013] = {
+	pg.base.island_dress_template[1060013] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3591,11 +3254,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_dress_template
-
-	var_1_74[1060014] = {
+	pg.base.island_dress_template[1060014] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3631,11 +3290,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_dress_template
-
-	var_1_75[1060015] = {
+	pg.base.island_dress_template[1060015] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3674,11 +3329,7 @@ var_0_5.base.island_dress_template = {}
 			2
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_dress_template
-
-	var_1_76[1060016] = {
+	pg.base.island_dress_template[1060016] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3714,11 +3365,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_dress_template
-
-	var_1_77[1060017] = {
+	pg.base.island_dress_template[1060017] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3754,11 +3401,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_dress_template
-
-	var_1_78[1060018] = {
+	pg.base.island_dress_template[1060018] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -3794,11 +3437,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_dress_template
-
-	var_1_79[1070001] = {
+	pg.base.island_dress_template[1070001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060001,
 		attachmentPoint = "",
@@ -3829,11 +3468,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_dress_template
-
-	var_1_80[1070002] = {
+	pg.base.island_dress_template[1070002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060002,
 		attachmentPoint = "",
@@ -3864,11 +3499,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_dress_template
-
-	var_1_81[1070003] = {
+	pg.base.island_dress_template[1070003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060003,
 		attachmentPoint = "",
@@ -3904,11 +3535,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_dress_template
-
-	var_1_82[1070004] = {
+	pg.base.island_dress_template[1070004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060004,
 		attachmentPoint = "",
@@ -3944,11 +3571,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_dress_template
-
-	var_1_83[1070005] = {
+	pg.base.island_dress_template[1070005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060005,
 		attachmentPoint = "",
@@ -3984,11 +3607,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_dress_template
-
-	var_1_84[1070006] = {
+	pg.base.island_dress_template[1070006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060006,
 		attachmentPoint = "",
@@ -4024,11 +3643,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_dress_template
-
-	var_1_85[1070007] = {
+	pg.base.island_dress_template[1070007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060007,
 		attachmentPoint = "",
@@ -4064,11 +3679,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_dress_template
-
-	var_1_86[1070008] = {
+	pg.base.island_dress_template[1070008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060008,
 		attachmentPoint = "",
@@ -4104,11 +3715,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_dress_template
-
-	var_1_87[1070009] = {
+	pg.base.island_dress_template[1070009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060009,
 		attachmentPoint = "",
@@ -4144,11 +3751,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_dress_template
-
-	var_1_88[1070010] = {
+	pg.base.island_dress_template[1070010] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060010,
 		attachmentPoint = "",
@@ -4184,11 +3787,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_dress_template
-
-	var_1_89[1070011] = {
+	pg.base.island_dress_template[1070011] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060011,
 		attachmentPoint = "",
@@ -4224,11 +3823,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_dress_template
-
-	var_1_90[1070012] = {
+	pg.base.island_dress_template[1070012] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060012,
 		attachmentPoint = "",
@@ -4264,11 +3859,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_dress_template
-
-	var_1_91[1070015] = {
+	pg.base.island_dress_template[1070015] = {
 		takeoff_btn_is_hide = 1,
 		related_dress = 1060015,
 		attachmentPoint = "",
@@ -4299,11 +3890,7 @@ var_0_5.base.island_dress_template = {}
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_dress_template
-
-	var_1_92[1070016] = {
+	pg.base.island_dress_template[1070016] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 1060016,
 		attachmentPoint = "",
@@ -4339,11 +3926,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_dress_template
-
-	var_1_93[17] = {
+	pg.base.island_dress_template[17] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4387,11 +3970,7 @@ var_0_5.base.island_dress_template = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_dress_template
-
-	var_1_94[18] = {
+	pg.base.island_dress_template[18] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4440,11 +4019,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_dress_template
-
-	var_1_95[19] = {
+	pg.base.island_dress_template[19] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4513,11 +4088,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_dress_template
-
-	var_1_96[20] = {
+	pg.base.island_dress_template[20] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4570,11 +4141,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_dress_template
-
-	var_1_97[21] = {
+	pg.base.island_dress_template[21] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4632,11 +4199,7 @@ var_0_5.base.island_dress_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_dress_template
-
-	var_1_98[22] = {
+	pg.base.island_dress_template[22] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4704,8 +4267,7 @@ var_0_5.base.island_dress_template = {}
 			99000302
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_dress_template[23] = {
+	pg.base.island_dress_template[23] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4758,11 +4320,7 @@ var_0_5.base.island_dress_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_dress_template
-
-	var_2_0[24] = {
+	pg.base.island_dress_template[24] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "Bip001 Spine1",
@@ -4811,11 +4369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_dress_template
-
-	var_2_1[2020001] = {
+	pg.base.island_dress_template[2020001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -4850,11 +4404,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_dress_template
-
-	var_2_2[2020002] = {
+	pg.base.island_dress_template[2020002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -4894,11 +4444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_dress_template
-
-	var_2_3[2020003] = {
+	pg.base.island_dress_template[2020003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -4933,11 +4479,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_dress_template
-
-	var_2_4[2020004] = {
+	pg.base.island_dress_template[2020004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -4977,11 +4519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_dress_template
-
-	var_2_5[2020005] = {
+	pg.base.island_dress_template[2020005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5025,11 +4563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_dress_template
-
-	var_2_6[2020006] = {
+	pg.base.island_dress_template[2020006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5069,11 +4603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_dress_template
-
-	var_2_7[2020007] = {
+	pg.base.island_dress_template[2020007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5108,11 +4638,7 @@ end)()
 		},
 		jump_page = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_dress_template
-
-	var_2_8[2020008] = {
+	pg.base.island_dress_template[2020008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5156,11 +4682,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_dress_template
-
-	var_2_9[2020009] = {
+	pg.base.island_dress_template[2020009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5204,11 +4726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_dress_template
-
-	var_2_10[2030001] = {
+	pg.base.island_dress_template[2030001] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5239,11 +4757,7 @@ end)()
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_dress_template
-
-	var_2_11[2030002] = {
+	pg.base.island_dress_template[2030002] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5274,11 +4788,7 @@ end)()
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_dress_template
-
-	var_2_12[2030003] = {
+	pg.base.island_dress_template[2030003] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5309,11 +4819,7 @@ end)()
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_dress_template
-
-	var_2_13[2030004] = {
+	pg.base.island_dress_template[2030004] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5344,11 +4850,7 @@ end)()
 		face_clip = "",
 		jump_page = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_dress_template
-
-	var_2_14[2030005] = {
+	pg.base.island_dress_template[2030005] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5384,11 +4886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_dress_template
-
-	var_2_15[2030006] = {
+	pg.base.island_dress_template[2030006] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5424,11 +4922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_dress_template
-
-	var_2_16[2030007] = {
+	pg.base.island_dress_template[2030007] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5464,11 +4958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_dress_template
-
-	var_2_17[2030008] = {
+	pg.base.island_dress_template[2030008] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5499,11 +4989,7 @@ end)()
 		scale = "",
 		face_clip = ""
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_dress_template
-
-	var_2_18[2030009] = {
+	pg.base.island_dress_template[2030009] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",
@@ -5539,8 +5025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-	var_2_18.base.island_dress_template[2030010] = {
+	pg.base.island_dress_template[2030010] = {
 		takeoff_btn_is_hide = 0,
 		related_dress = 0,
 		attachmentPoint = "",

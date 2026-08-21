@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "item_lack") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "item_lack"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.item_lack = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.item_lack
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.item_lack = rawget(pg, "item_lack") or setmetatable({
+	__name = "item_lack"
+}, confNEO)
+pg.item_lack.all = {
 	1,
 	2,
 	3,
@@ -84,11 +61,7 @@ var_0_3.all = {
 	234,
 	235
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.item_lack
-
-var_0_4.get_id_list_by_drop_type = {
+pg.item_lack.get_id_list_by_drop_type = {
 	[2] = {
 		1,
 		2,
@@ -149,25 +122,11 @@ var_0_4.get_id_list_by_drop_type = {
 		235
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.item_lack = {}
+pg.base = pg.base or {}
+pg.base.item_lack = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.item_lack
-
-	var_1_0[1] = {
+	pg.base.item_lack[1] = {
 		config_client = "",
 		id = 1,
 		drop_type = 2,
@@ -187,11 +146,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.item_lack
-
-	var_1_1[2] = {
+	pg.base.item_lack[2] = {
 		config_client = "",
 		id = 2,
 		drop_type = 2,
@@ -208,11 +163,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.item_lack
-
-	var_1_2[3] = {
+	pg.base.item_lack[3] = {
 		config_client = "",
 		id = 3,
 		drop_type = 2,
@@ -277,11 +228,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.item_lack
-
-	var_1_3[4] = {
+	pg.base.item_lack[4] = {
 		config_client = "",
 		id = 4,
 		drop_type = 2,
@@ -303,11 +250,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.item_lack
-
-	var_1_4[5] = {
+	pg.base.item_lack[5] = {
 		config_client = "",
 		id = 5,
 		drop_type = 2,
@@ -355,11 +298,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.item_lack
-
-	var_1_5[6] = {
+	pg.base.item_lack[6] = {
 		config_client = "",
 		id = 6,
 		drop_type = 2,
@@ -421,11 +360,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.item_lack
-
-	var_1_6[7] = {
+	pg.base.item_lack[7] = {
 		config_client = "",
 		id = 7,
 		drop_type = 2,
@@ -487,11 +422,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.item_lack
-
-	var_1_7[8] = {
+	pg.base.item_lack[8] = {
 		config_client = "",
 		id = 8,
 		drop_type = 2,
@@ -525,11 +456,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.item_lack
-
-	var_1_8[51] = {
+	pg.base.item_lack[51] = {
 		config_client = "",
 		id = 51,
 		drop_type = 2,
@@ -561,11 +488,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.item_lack
-
-	var_1_9[52] = {
+	pg.base.item_lack[52] = {
 		config_client = "",
 		id = 52,
 		drop_type = 2,
@@ -597,11 +520,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.item_lack
-
-	var_1_10[53] = {
+	pg.base.item_lack[53] = {
 		config_client = "",
 		id = 53,
 		drop_type = 2,
@@ -632,11 +551,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.item_lack
-
-	var_1_11[54] = {
+	pg.base.item_lack[54] = {
 		config_client = "",
 		id = 54,
 		drop_type = 2,
@@ -667,11 +582,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.item_lack
-
-	var_1_12[55] = {
+	pg.base.item_lack[55] = {
 		config_client = "",
 		id = 55,
 		drop_type = 2,
@@ -702,11 +613,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.item_lack
-
-	var_1_13[56] = {
+	pg.base.item_lack[56] = {
 		config_client = "",
 		id = 56,
 		drop_type = 2,
@@ -747,11 +654,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.item_lack
-
-	var_1_14[101] = {
+	pg.base.item_lack[101] = {
 		config_client = "",
 		id = 101,
 		drop_type = 2,
@@ -799,11 +702,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.item_lack
-
-	var_1_15[102] = {
+	pg.base.item_lack[102] = {
 		config_client = "",
 		id = 102,
 		drop_type = 2,
@@ -851,11 +750,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.item_lack
-
-	var_1_16[103] = {
+	pg.base.item_lack[103] = {
 		config_client = "",
 		id = 103,
 		drop_type = 2,
@@ -903,11 +798,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.item_lack
-
-	var_1_17[104] = {
+	pg.base.item_lack[104] = {
 		config_client = "",
 		id = 104,
 		drop_type = 2,
@@ -955,11 +846,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.item_lack
-
-	var_1_18[111] = {
+	pg.base.item_lack[111] = {
 		config_client = "",
 		id = 111,
 		drop_type = 2,
@@ -999,11 +886,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.item_lack
-
-	var_1_19[112] = {
+	pg.base.item_lack[112] = {
 		config_client = "",
 		id = 112,
 		drop_type = 2,
@@ -1043,11 +926,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.item_lack
-
-	var_1_20[113] = {
+	pg.base.item_lack[113] = {
 		config_client = "",
 		id = 113,
 		drop_type = 2,
@@ -1087,11 +966,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.item_lack
-
-	var_1_21[114] = {
+	pg.base.item_lack[114] = {
 		config_client = "",
 		id = 114,
 		drop_type = 2,
@@ -1131,11 +1006,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.item_lack
-
-	var_1_22[201] = {
+	pg.base.item_lack[201] = {
 		config_client = "",
 		id = 201,
 		drop_type = 2,
@@ -1162,11 +1033,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.item_lack
-
-	var_1_23[202] = {
+	pg.base.item_lack[202] = {
 		config_client = "",
 		id = 202,
 		drop_type = 2,
@@ -1193,11 +1060,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.item_lack
-
-	var_1_24[203] = {
+	pg.base.item_lack[203] = {
 		config_client = "",
 		id = 203,
 		drop_type = 2,
@@ -1224,11 +1087,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.item_lack
-
-	var_1_25[204] = {
+	pg.base.item_lack[204] = {
 		config_client = "",
 		id = 204,
 		drop_type = 2,
@@ -1255,11 +1114,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.item_lack
-
-	var_1_26[205] = {
+	pg.base.item_lack[205] = {
 		config_client = "",
 		id = 205,
 		drop_type = 2,
@@ -1286,11 +1141,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.item_lack
-
-	var_1_27[206] = {
+	pg.base.item_lack[206] = {
 		config_client = "",
 		id = 206,
 		drop_type = 2,
@@ -1307,11 +1158,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.item_lack
-
-	var_1_28[207] = {
+	pg.base.item_lack[207] = {
 		config_client = "",
 		id = 207,
 		drop_type = 2,
@@ -1328,11 +1175,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.item_lack
-
-	var_1_29[208] = {
+	pg.base.item_lack[208] = {
 		config_client = "",
 		id = 208,
 		drop_type = 2,
@@ -1349,11 +1192,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.item_lack
-
-	var_1_30[209] = {
+	pg.base.item_lack[209] = {
 		config_client = "",
 		id = 209,
 		drop_type = 2,
@@ -1370,11 +1209,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.item_lack
-
-	var_1_31[210] = {
+	pg.base.item_lack[210] = {
 		config_client = "",
 		id = 210,
 		drop_type = 2,
@@ -1391,11 +1226,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.item_lack
-
-	var_1_32[211] = {
+	pg.base.item_lack[211] = {
 		config_client = "",
 		id = 211,
 		drop_type = 2,
@@ -1412,11 +1243,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.item_lack
-
-	var_1_33[212] = {
+	pg.base.item_lack[212] = {
 		config_client = "",
 		id = 212,
 		drop_type = 2,
@@ -1433,11 +1260,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.item_lack
-
-	var_1_34[213] = {
+	pg.base.item_lack[213] = {
 		config_client = "",
 		id = 213,
 		drop_type = 2,
@@ -1454,11 +1277,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.item_lack
-
-	var_1_35[214] = {
+	pg.base.item_lack[214] = {
 		config_client = "",
 		id = 214,
 		drop_type = 2,
@@ -1475,11 +1294,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.item_lack
-
-	var_1_36[215] = {
+	pg.base.item_lack[215] = {
 		config_client = "",
 		id = 215,
 		drop_type = 2,
@@ -1496,11 +1311,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.item_lack
-
-	var_1_37[216] = {
+	pg.base.item_lack[216] = {
 		config_client = "",
 		id = 216,
 		drop_type = 2,
@@ -1517,11 +1328,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.item_lack
-
-	var_1_38[217] = {
+	pg.base.item_lack[217] = {
 		config_client = "",
 		id = 217,
 		drop_type = 2,
@@ -1538,11 +1345,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.item_lack
-
-	var_1_39[218] = {
+	pg.base.item_lack[218] = {
 		config_client = "",
 		id = 218,
 		drop_type = 2,
@@ -1559,11 +1362,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.item_lack
-
-	var_1_40[219] = {
+	pg.base.item_lack[219] = {
 		config_client = "",
 		id = 219,
 		drop_type = 2,
@@ -1580,11 +1379,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.item_lack
-
-	var_1_41[220] = {
+	pg.base.item_lack[220] = {
 		config_client = "",
 		id = 220,
 		drop_type = 2,
@@ -1601,11 +1396,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.item_lack
-
-	var_1_42[221] = {
+	pg.base.item_lack[221] = {
 		config_client = "",
 		id = 221,
 		drop_type = 2,
@@ -1622,11 +1413,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.item_lack
-
-	var_1_43[222] = {
+	pg.base.item_lack[222] = {
 		config_client = "",
 		id = 222,
 		drop_type = 2,
@@ -1643,11 +1430,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.item_lack
-
-	var_1_44[223] = {
+	pg.base.item_lack[223] = {
 		config_client = "",
 		id = 223,
 		drop_type = 2,
@@ -1664,11 +1447,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.item_lack
-
-	var_1_45[224] = {
+	pg.base.item_lack[224] = {
 		config_client = "",
 		id = 224,
 		drop_type = 2,
@@ -1685,11 +1464,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.item_lack
-
-	var_1_46[225] = {
+	pg.base.item_lack[225] = {
 		config_client = "",
 		id = 225,
 		drop_type = 2,
@@ -1706,11 +1481,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.item_lack
-
-	var_1_47[226] = {
+	pg.base.item_lack[226] = {
 		config_client = "",
 		id = 226,
 		drop_type = 2,
@@ -1727,11 +1498,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.item_lack
-
-	var_1_48[227] = {
+	pg.base.item_lack[227] = {
 		config_client = "",
 		id = 227,
 		drop_type = 2,
@@ -1748,11 +1515,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.item_lack
-
-	var_1_49[228] = {
+	pg.base.item_lack[228] = {
 		config_client = "",
 		id = 228,
 		drop_type = 2,
@@ -1769,11 +1532,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.item_lack
-
-	var_1_50[229] = {
+	pg.base.item_lack[229] = {
 		config_client = "",
 		id = 229,
 		drop_type = 2,
@@ -1790,11 +1549,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.item_lack
-
-	var_1_51[230] = {
+	pg.base.item_lack[230] = {
 		config_client = "",
 		id = 230,
 		drop_type = 2,
@@ -1811,11 +1566,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.item_lack
-
-	var_1_52[231] = {
+	pg.base.item_lack[231] = {
 		config_client = "",
 		id = 231,
 		drop_type = 2,
@@ -1832,11 +1583,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.item_lack
-
-	var_1_53[232] = {
+	pg.base.item_lack[232] = {
 		config_client = "",
 		id = 232,
 		drop_type = 2,
@@ -1853,11 +1600,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.item_lack
-
-	var_1_54[233] = {
+	pg.base.item_lack[233] = {
 		config_client = "",
 		id = 233,
 		drop_type = 2,
@@ -1874,11 +1617,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.item_lack
-
-	var_1_55[234] = {
+	pg.base.item_lack[234] = {
 		config_client = "",
 		id = 234,
 		drop_type = 2,
@@ -1895,8 +1634,7 @@ var_0_4.base.item_lack = {}
 			}
 		}
 	}
-	pg = var_1_55
-	var_1_55.base.item_lack[235] = {
+	pg.base.item_lack[235] = {
 		config_client = "",
 		id = 235,
 		drop_type = 2,

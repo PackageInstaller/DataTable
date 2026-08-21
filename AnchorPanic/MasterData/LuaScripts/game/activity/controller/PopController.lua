@@ -131,13 +131,35 @@ function onActivityPromoOpenHandler(self, args)
     activity.ActivityManager:setPromoIsShow(true)
     -- 首次回到主界面则会弹出 1元超值链接补给包推荐购买 （优先弹出签到，签到界面关闭后再弹出推广页），
     -- 若1元超值礼包已被购买则会弹出 首充弹窗界面，若首充已购买则会弹出月卡推荐界面，若月卡已激活则会弹出成长礼遇推荐购买界面
+    self.rechargeVo = purchase.DirectBuyManager:getDirectBuyVoById(recharge.rechargeDirectId.thirtyYuanGift)
+    local clientTime = GameManager:getClientTime()
+    local activityVo = activity.ActivityManager:getActivityVoById(activity.ActivityId.TwoAnniversary)
+    --if
+      
+    -- elseif not recharge.RechargeManager:getIsBuySuperGift() and activityVo ~= nil and activityVo:getTimeRemaining() > 0 then
+    --     self:openPopView(activity.ActivityPromoView5)
+    
     if not recharge.RechargeManager:getIsBuyOneGift() then
+        if self:checkThisLoginHadPop(activity.ActivityPromoView1) then
+            return  
+        end
         self:openPopView(activity.ActivityPromoView1)
+    elseif  not recharge.RechargeManager:getIsBuyThirtyGift() and self.rechargeVo ~= nil and self.rechargeVo.end_time - clientTime > 0  then
+        self:openPopView(firstCharge.FirstChargePanelTwo)
     elseif not firstCharge.FirstChargeManager:getIsReCharge() then
+        if self:checkThisLoginHadPop(firstCharge.FirstChargePanel) then
+            return  
+        end
         self:openPopView(firstCharge.FirstChargePanel, { isShowToggle = true })
     elseif not purchase.MonthCardManager:getIsBuyMonthlyed() and not purchase.MonthCardManager:getIsPurchased() then
+        if self:checkThisLoginHadPop(activity.ActivityPromoView2) then
+            return  
+        end
         self:openPopView(activity.ActivityPromoView2)
     elseif not purchase.GrowthFundManager:getIsGrowthFundMoney() then
+        if self:checkThisLoginHadPop(activity.ActivityPromoView3) then
+            return  
+        end
         self:openPopView(activity.ActivityPromoView3)
     else
         return false
@@ -147,6 +169,14 @@ end
 
 --时装商店弹窗
 function onFashionShopPopOpenHandler(self)
+    if subPack.SubDownLoadController:isExistNeedUpdate() then
+        return
+    end
+
+    -- if 0 < 3.4 then
+    --     return --版本结束
+    -- end
+
     if not self.isReceiveUpdateFashionedInfoMsg then
         --时装商店未初始化完毕
        return 

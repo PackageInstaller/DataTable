@@ -11,6 +11,8 @@ sandPlay.SandPlayFishConfigVo = require("game/sandPlay/manager/configVo/SandPlay
 sandPlay.SandPlayFishRewardConfigVo = require("game/sandPlay/manager/configVo/SandPlayFishRewardConfigVo")
 sandPlay.SandPlayFishTaskConfigVo = require("game/sandPlay/manager/configVo/SandPlayFishTaskConfigVo")
 sandPlay.SandPlayStageConfigVo = require("game/sandPlay/manager/configVo/SandPlayStageConfigVo")
+sandPlay.SandPlayHappyFarmSeedConfigVo = require("game/sandPlay/manager/configVo/SandPlayHappyFarmSeedConfigVo")
+sandPlay.SandPlayHappyFarmTaskConfigVo = require("game/sandPlay/manager/configVo/SandPlayHappyFarmTaskConfigVo")
 
 ----UI
 sandPlay.SandPlaySceneUI = "game/sandPlay/view/SandPlaySceneUI"
@@ -23,11 +25,20 @@ sandPlay.SandPlayDupInfoPanel = "game/sandPlay/view/SandPlayDupInfoPanel"
 sandPlay.SandPlayFishingAtlasPanel = "game/sandPlay/view/SandPlayFishingAtlasPanel"
 sandPlay.SandPlayFishingResultPanel = "game/sandPlay/view/SandPlayFishingResultPanel"
 
+sandPlay.SandPlayHappyFarmTaskPanel = "game/sandPlay/view/SandPlayHappyFarmTaskPanel"
+sandPlay.SandPlayHappyFarmShopPanel = "game/sandPlay/view/SandPlayHappyFarmShopPanel"
+sandPlay.SandPlayHappyFarmField = "game/sandPlay/view/SandPlayHappyFarmField"
+sandPlay.SandPlayHappyFarmBreedPanel = "game/sandPlay/view/SandPlayHappyFarmBreedPanel"
+
 sandPlay.SandPlayJoystickView = require("game/sandPlay/view/SandPlayJoystickView")
 sandPlay.SandPlayMinMap = require("game/sandPlay/view/SandPlayMinMap")
+
 sandPlay.SandPlayFishingBaitItem = require("game/sandPlay/view/item/SandPlayFishingBaitItem")
 sandPlay.SandPlayFishRewardItem = require("game/sandPlay/view/item/SandPlayFishRewardItem")
 sandPlay.SandPlayFishAchieveItem = require("game/sandPlay/view/item/SandPlayFishAchieveItem")
+sandPlay.SandPlayHappyFarmShopItem = require("game/sandPlay/view/item/SandPlayHappyFarmShopItem")
+sandPlay.SandPlayHappyFarmFieldItem = require("game/sandPlay/view/item/SandPlayHappyFarmFieldItem")
+sandPlay.SandPlayHappyFarmTaskItem = require("game/sandPlay/view/item/SandPlayHappyFarmTaskItem")
 
 sandPlay.SandPlayFishingAwardTab = require("game/sandPlay/view/tab/SandPlayFishingAwardTab")
 sandPlay.SandPlayFishingAchieveTab = require("game/sandPlay/view/tab/SandPlayFishingAchieveTab")
@@ -43,10 +54,18 @@ sandPlay.SandPlayRoleNPCThing = require("game/sandPlay/manager/thing/SandPlayRol
 sandPlay.SandPlayOtherNPCThing = require("game/sandPlay/manager/thing/SandPlayOtherNPCThing")
 sandPlay.SandPlayTreasureBoxThing = require("game/sandPlay/manager/thing/SandPlayTreasureBoxThing")
 sandPlay.SandPlayDoorThing = require("game/sandPlay/manager/thing/SandPlayDoorThing")
+sandPlay.SandPlayFieldThing = require("game/sandPlay/manager/thing/SandPlayFieldThing")
+sandPlay.SandPlayBreedThing = require("game/sandPlay/manager/thing/SandPlayBreedThing")
+sandPlay.SandPlayPoultryReapThing = require("game/sandPlay/manager/thing/SandPlayPoultryReapThing")
+
+sandPlay.SandPlayPoultryThing = require("game/sandPlay/manager/thing/SandPlayPoultryThing")
+sandPlay.SandPlayChickenThing = require("game/sandPlay/manager/thing/SandPlayChickenThing")
+sandPlay.SandPlaySheepThing = require("game/sandPlay/manager/thing/SandPlaySheepThing")
 
 sandPlay.SandPlayPlayerThing = require("game/sandPlay/manager/thing/SandPlayPlayerThing")
 
 --管理器
+sandPlay.SandPlayHappyFarmFieldVo = require("game/sandPlay/manager/SandPlayHappyFarmFieldVo")
 sandPlay.SandPlayCamera = require("game/sandPlay/manager/SandPlayCamera")
 sandPlay.SandPlayFishingUtil = require("game/sandPlay/manager/SandPlayFishingUtil")
 sandPlay.SandPlay_effect = require("game/sandPlay/manager/SandPlay_effect")

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_town_collection_2") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_town_collection_2"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_town_collection_2 = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_town_collection_2
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_town_collection_2 = rawget(pg, "activity_town_collection_2") or setmetatable({
+	__name = "activity_town_collection_2"
+}, confNEO)
+pg.activity_town_collection_2.all = {
 	1,
 	2,
 	3,
@@ -47,25 +24,11 @@ var_0_3.all = {
 	19,
 	20
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_town_collection_2 = {}
+pg.base = pg.base or {}
+pg.base.activity_town_collection_2 = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_town_collection_2
-
-	var_1_0[1] = {
+	pg.base.activity_town_collection_2[1] = {
 		id = 1,
 		name = "春满之日",
 		type = 1,
@@ -77,11 +40,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_town_collection_2
-
-	var_1_1[2] = {
+	pg.base.activity_town_collection_2[2] = {
 		id = 2,
 		name = "客栈潜入大作战",
 		type = 1,
@@ -93,11 +52,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			3
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_town_collection_2
-
-	var_1_2[3] = {
+	pg.base.activity_town_collection_2[3] = {
 		id = 3,
 		name = "测试环节需测试",
 		type = 1,
@@ -109,11 +64,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			6
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_town_collection_2
-
-	var_1_3[4] = {
+	pg.base.activity_town_collection_2[4] = {
 		id = 4,
 		name = "底层修复日志",
 		type = 1,
@@ -125,11 +76,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			9
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_town_collection_2
-
-	var_1_4[5] = {
+	pg.base.activity_town_collection_2[5] = {
 		id = 5,
 		name = "喜气洋洋的庆典时光",
 		type = 1,
@@ -141,11 +88,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			12
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_town_collection_2
-
-	var_1_5[6] = {
+	pg.base.activity_town_collection_2[6] = {
 		id = 6,
 		name = "踢馆！厨艺切磋赛！",
 		type = 2,
@@ -157,11 +100,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			6
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_town_collection_2
-
-	var_1_6[7] = {
+	pg.base.activity_town_collection_2[7] = {
 		id = 7,
 		name = "各怀心思的牌局",
 		type = 2,
@@ -173,11 +112,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			10
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_town_collection_2
-
-	var_1_7[8] = {
+	pg.base.activity_town_collection_2[8] = {
 		id = 8,
 		name = "争厢斗艳",
 		type = 2,
@@ -189,11 +124,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			5
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_town_collection_2
-
-	var_1_8[9] = {
+	pg.base.activity_town_collection_2[9] = {
 		id = 9,
 		name = "幸运之人与幸运锦鲤",
 		type = 2,
@@ -205,11 +136,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			6
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_town_collection_2
-
-	var_1_9[10] = {
+	pg.base.activity_town_collection_2[10] = {
 		id = 10,
 		name = "写生奇遇",
 		type = 2,
@@ -221,11 +148,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			6
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_town_collection_2
-
-	var_1_10[11] = {
+	pg.base.activity_town_collection_2[11] = {
 		id = 11,
 		name = "棋局未了",
 		type = 3,
@@ -237,11 +160,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			3
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_town_collection_2
-
-	var_1_11[12] = {
+	pg.base.activity_town_collection_2[12] = {
 		id = 12,
 		name = "深阁舞戏",
 		type = 3,
@@ -253,11 +172,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			6
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_town_collection_2
-
-	var_1_12[13] = {
+	pg.base.activity_town_collection_2[13] = {
 		id = 13,
 		name = "共醉之夜",
 		type = 3,
@@ -269,11 +184,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			9
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_town_collection_2
-
-	var_1_13[14] = {
+	pg.base.activity_town_collection_2[14] = {
 		id = 14,
 		name = "盲打练习~触觉麻将",
 		type = 3,
@@ -285,11 +196,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			6
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_town_collection_2
-
-	var_1_14[15] = {
+	pg.base.activity_town_collection_2[15] = {
 		id = 15,
 		name = "今夜，你哪也不许去",
 		type = 3,
@@ -301,11 +208,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			8
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_town_collection_2
-
-	var_1_15[16] = {
+	pg.base.activity_town_collection_2[16] = {
 		id = 16,
 		name = "顽皮的实用防身教学",
 		type = 3,
@@ -317,11 +220,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			4
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_town_collection_2
-
-	var_1_16[17] = {
+	pg.base.activity_town_collection_2[17] = {
 		id = 17,
 		name = "服务器维护中",
 		type = 3,
@@ -333,11 +232,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			8
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_town_collection_2
-
-	var_1_17[18] = {
+	pg.base.activity_town_collection_2[18] = {
 		id = 18,
 		name = "厨娘的休假日",
 		type = 3,
@@ -349,11 +244,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			8
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_town_collection_2
-
-	var_1_18[19] = {
+	pg.base.activity_town_collection_2[19] = {
 		id = 19,
 		name = "宵夜的正确食用方式",
 		type = 3,
@@ -365,8 +256,7 @@ var_0_3.base.activity_town_collection_2 = {}
 			12
 		}
 	}
-	pg = var_1_18
-	var_1_18.base.activity_town_collection_2[20] = {
+	pg.base.activity_town_collection_2[20] = {
 		id = 20,
 		name = "满园灯火",
 		type = 3,

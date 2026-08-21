@@ -1,170 +1,60 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PlayerVitaeRenamePage", import("...base.BaseSubView"))
 
-local var_0_0 = "PlayerVitaeRenamePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "PlayerVitaeRenamePage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "frame/border/tip")
-	local var_2_2 = var_1.GetComponent
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.content = arg_2_0._tf:Find("frame/border/tip"):GetComponent(typeof(Text))
+	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/queren")
+	arg_2_0.cancelBtn = arg_2_0._tf:Find("frame/cancel")
+	arg_2_0.inputField = arg_2_0._tf:Find("frame/name_field")
 
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.content = var_2_2(var_2_1, var_4(var_1_10006))
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.confirmBtn = var_1.Find(var_2_3, "frame/queren")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.cancelBtn = var_1.Find(var_2_4, "frame/cancel")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.inputField = var_1.Find(var_2_5, "frame/name_field")
-	setText = var_1
-
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_3.Find(var_2_6, "frame/top/title_list/infomation/title")
-
-	i18n = var_4
-
-	var_1(var_2_7, var_4("change_player_name_title"))
-
-	setText = var_1
-
-	local var_2_8 = arg_2_0._tf
-	local var_2_9 = var_3.Find(var_2_8, "frame/border/prompt")
-
-	i18n = var_4
-
-	var_1(var_2_9, var_4("change_player_name_subtitle"))
-
-	setText = var_1
-
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_3.Find(var_2_10, "frame/name_field/Placeholder")
-
-	i18n = var_4
-
-	var_1(var_2_11, var_4("change_player_name_input_tip"))
-
-	setText = var_1
-
-	local var_2_12 = arg_2_0.confirmBtn
-	local var_2_13 = var_3.Find(var_2_12, "Image")
-
-	i18n = var_4
-
-	var_1(var_2_13, var_4("word_ok"))
-
-	setText = var_1
-
-	local var_2_14 = arg_2_0.cancelBtn
-	local var_2_15 = var_3.Find(var_2_14, "Image")
-
-	i18n = var_4
-
-	var_1(var_2_15, var_4("word_cancel"))
+	setText(arg_2_0._tf:Find("frame/top/title_list/infomation/title"), i18n("change_player_name_title"))
+	setText(arg_2_0._tf:Find("frame/border/prompt"), i18n("change_player_name_subtitle"))
+	setText(arg_2_0._tf:Find("frame/name_field/Placeholder"), i18n("change_player_name_input_tip"))
+	setText(arg_2_0.confirmBtn:Find("Image"), i18n("word_ok"))
+	setText(arg_2_0.cancelBtn:Find("Image"), i18n("word_cancel"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.confirmBtn
-
-	local function var_3_2()
-		getInputText = var_2_10000
-
-		local var_4_0 = var_2_10000(arg_3_0.inputField)
-		local var_4_1 = arg_3_0
-		local var_4_2 = var_1.emit
-
-		PlayerVitaeMediator = var_2_10004
-
-		var_4_2(var_4_1, var_2_10004.ON_CHANGE_PLAYER_NAME, var_4_0)
-
-		setInputText = var_4_2
-
-		var_4_2(arg_3_0.inputField, "")
-
-		local var_4_3 = arg_3_0
-
-		var_1.Hide(var_4_3)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		arg_3_0:emit(PlayerVitaeMediator.ON_CHANGE_PLAYER_NAME, (getInputText(arg_3_0.inputField)))
+		setInputText(arg_3_0.inputField, "")
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.cancelBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0._tf
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-
-		var_0.Hide(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_7_0, arg_7_1)
-	var_0_1.super.Show(arg_7_0)
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
 
-	Drop = var_2
+	local var_7_0 = Drop.Create(arg_7_1:getModifyNameComsume())
 
-	local var_7_0 = var_2.Create(arg_7_1:getModifyNameComsume())
-	local var_7_1 = arg_7_0.content
-
-	i18n = var_4
-	var_7_1.text = var_4("player_name_change_windows_tip", var_7_0:getName(), var_7_0:getOwnedCount() .. "/" .. var_7_0.count)
+	arg_7_0.content.text = i18n("player_name_change_windows_tip", var_7_0:getName(), var_7_0:getOwnedCount() .. "/" .. var_7_0.count)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_8_0)
+function var_0_0.OnDestroy(arg_8_0)
 	arg_8_0:Hide()
 
 	return
 end
 
-return var_0_1
+return var_0_0

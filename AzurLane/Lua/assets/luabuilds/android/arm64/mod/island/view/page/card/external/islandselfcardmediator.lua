@@ -1,67 +1,36 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSelfCardMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "IslandSelfCardMediator"
+var_0_0.SET_CARD_NAME = "IslandSelfCardMediator.SET_CARD_NAME"
+var_0_0.SET_CARD_PHOTO = "IslandSelfCardMediator.SET_CARD_PHOTO"
+var_0_0.SET_CARD_WORD = "IslandSelfCardMediator.SET_CARD_WORD"
+var_0_0.SET_CARD_ACHVS = "IslandSelfCardMediator.SET_CARD_ACHVS"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.SET_CARD_NAME = "IslandSelfCardMediator.SET_CARD_NAME"
-var_0_1.SET_CARD_PHOTO = "IslandSelfCardMediator.SET_CARD_PHOTO"
-var_0_1.SET_CARD_WORD = "IslandSelfCardMediator.SET_CARD_WORD"
-var_0_1.SET_CARD_ACHVS = "IslandSelfCardMediator.SET_CARD_ACHVS"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.SET_CARD_NAME, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.ISLAND_SET_NAME, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SET_CARD_NAME, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ISLAND_SET_NAME, {
 			currency = 1,
 			name = arg_2_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.SET_CARD_WORD, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.ISLAND_SET_CARD_WORD, {
+	arg_1_0:bind(var_0_0.SET_CARD_WORD, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.ISLAND_SET_CARD_WORD, {
 			word = arg_3_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.SET_CARD_PHOTO, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		local var_4_2 = var_2_10005.ISLAND_SET_CARD_PHOTO
-		local var_4_3 = {}
-
-		IslandCard = var_2_10007
-		var_4_3.type = var_2_10007.PHOTO_TYPE_ID
-		tostring = var_7
-		var_4_3.photo = var_7(arg_4_1)
-
-		var_4_1(var_4_0, var_4_2, var_4_3)
+	arg_1_0:bind(var_0_0.SET_CARD_PHOTO, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.ISLAND_SET_CARD_PHOTO, {
+			type = IslandCard.PHOTO_TYPE_ID,
+			photo = tostring(arg_4_1)
+		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.SET_CARD_ACHVS, function(arg_5_0, arg_5_1)
-		local var_5_0 = arg_1_0
-		local var_5_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_5_1(var_5_0, var_2_10005.ISLAND_SET_CARD_ACHVS, {
+	arg_1_0:bind(var_0_0.SET_CARD_ACHVS, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.ISLAND_SET_CARD_ACHVS, {
 			achvIds = arg_5_1
 		})
 
@@ -71,59 +40,30 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_6_0)
-	local var_6_0 = {}
-
-	GAME = var_1_10002
-	var_6_0[1] = var_1_10002.ISLAND_SET_NAME_DONE
-	GAME = var_2
-	var_6_0[2] = var_2.ISLAND_SET_CARD_WORD_DONE
-	GAME = var_2
-	var_6_0[3] = var_2.ISLAND_SET_CARD_PHOTO_DONE
-	GAME = var_2
-	var_6_0[4] = var_2.ISLAND_SET_CARD_ACHVS_DONE
-
-	return var_6_0
+function var_0_0.listNotificationInterests(arg_6_0)
+	return {
+		GAME.ISLAND_SET_NAME_DONE,
+		GAME.ISLAND_SET_CARD_WORD_DONE,
+		GAME.ISLAND_SET_CARD_PHOTO_DONE,
+		GAME.ISLAND_SET_CARD_ACHVS_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1
-	local var_7_1 = arg_7_1.getName(var_7_0)
-	local var_7_2 = arg_7_1:getBody()
+function var_0_0.handleNotification(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:getName()
+	local var_7_1 = arg_7_1:getBody()
 
-	GAME = var_7_0
-
-	if var_7_1 == var_7_0.ISLAND_SET_NAME_DONE then
-		local var_7_3 = arg_7_0.viewComponent
-
-		var_4.OnSetNameDone(var_7_3, var_7_2.name)
-	else
-		GAME = var_4
-
-		if var_7_1 == var_4.ISLAND_SET_CARD_WORD_DONE then
-			local var_7_4 = arg_7_0.viewComponent
-
-			var_4.OnSetWordDone(var_7_4, var_7_2.word)
-		else
-			GAME = var_4
-
-			if var_7_1 == var_4.ISLAND_SET_CARD_PHOTO_DONE then
-				local var_7_5 = arg_7_0.viewComponent
-
-				var_4.OnSetPhotoDone(var_7_5, var_7_2.photo)
-			else
-				GAME = var_4
-
-				if var_7_1 == var_4.ISLAND_SET_CARD_ACHVS_DONE then
-					local var_7_6 = arg_7_0.viewComponent
-
-					var_4.OnSetAchvsDone(var_7_6, var_7_2.achvIds)
-				end
-			end
-		end
+	if var_7_0 == GAME.ISLAND_SET_NAME_DONE then
+		arg_7_0.viewComponent:OnSetNameDone(var_7_1.name)
+	elseif var_7_0 == GAME.ISLAND_SET_CARD_WORD_DONE then
+		arg_7_0.viewComponent:OnSetWordDone(var_7_1.word)
+	elseif var_7_0 == GAME.ISLAND_SET_CARD_PHOTO_DONE then
+		arg_7_0.viewComponent:OnSetPhotoDone(var_7_1.photo)
+	elseif var_7_0 == GAME.ISLAND_SET_CARD_ACHVS_DONE then
+		arg_7_0.viewComponent:OnSetAchvsDone(var_7_1.achvIds)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,84 +1,41 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandCheaterTavernMonitor", import("...Core.Net.IslandBaseMonitor"))
 
-local var_0_0 = "IslandCheaterTavernMonitor"
+var_0_0.ADD_CHEATERTAVERN_PLAYER = "IslandCheaterTavernMonitor:ADD_CHEATERTAVERN_PLAYER"
+var_0_0.INIT_PLAYER_DATA_DONE = "IslandCheaterTavernMonitor:INIT_PLAYER_DATA_DONE"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...Core.Net.IslandBaseMonitor"))
-
-var_0_1.ADD_CHEATERTAVERN_PLAYER = "IslandCheaterTavernMonitor:ADD_CHEATERTAVERN_PLAYER"
-var_0_1.INIT_PLAYER_DATA_DONE = "IslandCheaterTavernMonitor:INIT_PLAYER_DATA_DONE"
-
-function var_0_1.register(arg_1_0)
-	local var_1_0 = arg_1_0:GetIsland()
-
-	arg_1_0.cheaterTavernAgency = var_1.GetCheaterTavernAgency(var_1_0)
+function var_0_0.register(arg_1_0)
+	arg_1_0.cheaterTavernAgency = arg_1_0:GetIsland():GetCheaterTavernAgency()
 
 	arg_1_0:on(23101, function(arg_2_0)
-		local var_2_0 = arg_1_0.cheaterTavernAgency
+		arg_1_0.cheaterTavernAgency:SetIsConnecting(true)
 
-		var_1.SetIsConnecting(var_2_0, true)
+		if IslandCheaterTavernConst.changeSeat then
+			local var_2_0
 
-		IslandCheaterTavernConst = var_1
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.player_list) do
+				local var_2_1 = getProxy(PlayerProxy)
 
-		if var_1.changeSeat then
-			local var_2_1
-
-			ipairs = var_2_10002
-
-			for iter_2_0, iter_2_1 in var_2_10002(arg_2_0.player_list) do
-				local var_2_2 = iter_2_1.user_id
-
-				getProxy = var_2_10008
-				PlayerProxy = var_2_10010
-				var_2_10010 = var_2_10008(var_2_10010)
-
-				if var_2_2 == var_2_10008.getRawData(var_2_10010).id then
-					var_2_1 = iter_2_1.seat
+				if iter_2_1.user_id == var_2_1:getRawData().id then
+					var_2_0 = iter_2_1.seat
 				end
 			end
 
-			local function var_2_3(arg_3_0, arg_3_1, arg_3_2)
-				return (arg_3_0 - arg_3_1 + arg_3_2 - 1) % 4 + 1
-			end
-
-			ipairs = var_3
-
-			for iter_2_2, iter_2_3 in var_3(arg_2_0.player_list) do
-				local var_2_4 = var_2_3
-				local var_2_5 = iter_2_3.seat
-				local var_2_6 = var_2_1
-
-				IslandCheaterTavernConst = var_2_10012
-				iter_2_3.seat = var_2_4(var_2_5, var_2_6, var_2_10012.currentMainSeat)
+			for iter_2_2, iter_2_3 in ipairs(arg_2_0.player_list) do
+				iter_2_3.seat = (function(arg_3_0, arg_3_1, arg_3_2)
+					return (arg_3_0 - arg_3_1 + arg_3_2 - 1) % 4 + 1
+				end)(iter_2_3.seat, var_2_0, IslandCheaterTavernConst.currentMainSeat)
 			end
 		end
 
-		local var_2_7 = arg_1_0.cheaterTavernAgency
+		arg_1_0.cheaterTavernAgency:SetStartGameData(arg_2_0)
 
-		var_1.SetStartGameData(var_2_7, arg_2_0)
-
-		local var_2_8 = arg_1_0.cheaterTavernAgency
-
-		if var_1.IsUILoadOver(var_2_8) then
-			local var_2_9 = arg_1_0
-
-			var_1.StartCheaterTevernGame(var_2_9, arg_2_0)
-
-			local var_2_10 = arg_1_0
-
-			var_1.InitPlayerDate(var_2_10, arg_2_0)
+		if arg_1_0.cheaterTavernAgency:IsUILoadOver() then
+			arg_1_0:StartCheaterTevernGame(arg_2_0)
+			arg_1_0:InitPlayerDate(arg_2_0)
 		else
-			local var_2_11 = arg_1_0.cheaterTavernAgency
-
-			var_1.AddCacheFunc(var_2_11, function()
-				local var_4_0 = arg_1_0
-
-				var_0.StartCheaterTevernGame(var_4_0, arg_2_0)
-
-				local var_4_1 = arg_1_0
-
-				var_0.InitPlayerDate(var_4_1, arg_2_0)
+			arg_1_0.cheaterTavernAgency:AddCacheFunc(function()
+				arg_1_0:StartCheaterTevernGame(arg_2_0)
+				arg_1_0:InitPlayerDate(arg_2_0)
 
 				return
 			end)
@@ -87,38 +44,24 @@ function var_0_1.register(arg_1_0)
 		return
 	end)
 	arg_1_0:on(23102, function(arg_5_0)
-		local var_5_0 = arg_1_0.cheaterTavernAgency
-
-		if not var_1.IsConnecting(var_5_0) then
+		if not arg_1_0.cheaterTavernAgency:IsConnecting() then
 			return
 		end
 
-		local var_5_1 = arg_1_0
-
-		var_1.CheaterTevernGameEveryRound(var_5_1, arg_5_0)
+		arg_1_0:CheaterTevernGameEveryRound(arg_5_0)
 
 		return
 	end)
 	arg_1_0:on(23105, function(arg_6_0)
-		local var_6_0 = arg_1_0.cheaterTavernAgency
-
-		if not var_1.IsConnecting(var_6_0) then
+		if not arg_1_0.cheaterTavernAgency:IsConnecting() then
 			return
 		end
 
-		local var_6_1 = arg_1_0.cheaterTavernAgency
-
-		if var_1.IsUILoadOver(var_6_1) then
-			local var_6_2 = arg_1_0
-
-			var_1.PlayOperateHandle(var_6_2, arg_6_0)
+		if arg_1_0.cheaterTavernAgency:IsUILoadOver() then
+			arg_1_0:PlayOperateHandle(arg_6_0)
 		else
-			local var_6_3 = arg_1_0.cheaterTavernAgency
-
-			var_1.AddCacheFunc(var_6_3, function()
-				local var_7_0 = arg_1_0
-
-				var_0.PlayOperateHandle(var_7_0, arg_6_0)
+			arg_1_0.cheaterTavernAgency:AddCacheFunc(function()
+				arg_1_0:PlayOperateHandle(arg_6_0)
 
 				return
 			end)
@@ -127,146 +70,65 @@ function var_0_1.register(arg_1_0)
 		return
 	end)
 	arg_1_0:on(23108, function(arg_8_0)
-		local var_8_0 = arg_1_0.cheaterTavernAgency
-
-		if not var_1.IsConnecting(var_8_0) then
+		if not arg_1_0.cheaterTavernAgency:IsConnecting() then
 			return
 		end
 
-		getProxy = var_1
-		ActivityProxy = var_8_0
+		local var_8_0 = getProxy(ActivityProxy)
+		local var_8_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND_CHEAT_BAR)
+		local var_8_2
 
-		local var_8_1 = var_1(var_8_0)
-
-		getProxy = var_2_10002
-		ActivityProxy = var_2_10004
-
-		local var_8_2 = var_2_10002(var_2_10004)
-		local var_8_3 = var_2.getActivityByType
-
-		ActivityConst = var_2_10005
-
-		local var_8_4 = var_8_3(var_8_2, var_2_10005.ACTIVITY_TYPE_ISLAND_CHEAT_BAR)
-		local var_8_5
-		local var_8_6 = arg_1_0.cheaterTavernAgency
-
-		if var_4.GetRoomType(var_8_6) == 1 then
-			var_8_5 = 0
+		if arg_1_0.cheaterTavernAgency:GetRoomType() == 1 then
+			var_8_2 = 0
 		else
-			var_8_5 = arg_8_0.cur_score - var_8_4.data1
-			var_8_4.data1 = arg_8_0.cur_score
-			math = var_4
-			var_8_4.data2 = var_4.max(arg_8_0.cur_score, var_8_4.data2)
+			var_8_2 = arg_8_0.cur_score - var_8_1.data1
+			var_8_1.data1 = arg_8_0.cur_score
+			var_8_1.data2 = math.max(arg_8_0.cur_score, var_8_1.data2)
 
-			var_8_1:updateActivity(var_8_4)
+			var_8_0:updateActivity(var_8_1)
 		end
 
-		local var_8_7 = arg_1_0.cheaterTavernAgency
-		local var_8_8 = var_4.GetMainPlayer(var_8_7)
+		arg_1_0.cheaterTavernAgency:GetMainPlayer():SetGameData(arg_8_0.rank, var_8_2)
+		pg.m02:sendNotification(GAME.ISLAND_CHEATER_END_SCORE_NOTIFY, arg_8_0)
 
-		var_4.SetGameData(var_8_8, arg_8_0.rank, var_8_5)
+		local var_8_3 = getProxy(ActivityTaskProxy):getTaskById(ActivityConst.ISLAND_BAR_SIGN_ACT_ID)
 
-		pg = var_5
-
-		local var_8_9 = var_5.m02
-		local var_8_10 = var_5.sendNotification
-
-		GAME = var_8
-
-		var_8_10(var_8_9, var_8.ISLAND_CHEATER_END_SCORE_NOTIFY, arg_8_0)
-
-		getProxy = var_8_10
-		ActivityTaskProxy = var_8_9
-
-		local var_8_11 = var_8_10(var_8_9)
-		local var_8_12 = var_5.getTaskById
-
-		ActivityConst = var_8
-
-		if var_8_12(var_8_11, var_8.ISLAND_BAR_SIGN_ACT_ID)[1] then
-			pg = var_6
-
-			local var_8_13 = var_6.m02
-			local var_8_14 = var_6.sendNotification
-
-			GAME = var_9
-
-			local var_8_15 = var_9.MINI_GAME_TASK_PROGRESS_UPDATE
-			local var_8_16 = {
-				progressAdd = 1
-			}
-
-			ActivityConst = var_2_10011
-			var_8_16.actId = var_2_10011.ISLAND_BAR_SIGN_ACT_ID
-			var_8_16.taskId = var_5[1].id
-
-			var_8_14(var_8_13, var_8_15, var_8_16)
+		if var_8_3[1] then
+			pg.m02:sendNotification(GAME.MINI_GAME_TASK_PROGRESS_UPDATE, {
+				progressAdd = 1,
+				actId = ActivityConst.ISLAND_BAR_SIGN_ACT_ID,
+				taskId = var_8_3[1].id
+			})
 		end
 
 		return
 	end)
 	arg_1_0:on(23116, function(arg_9_0)
-		local var_9_0 = arg_1_0.cheaterTavernAgency
-
-		if not var_1.IsConnecting(var_9_0) then
+		if not arg_1_0.cheaterTavernAgency:IsConnecting() then
 			return
 		end
 
-		pg = var_1
-
-		local var_9_1 = var_1.m02
-		local var_9_2 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_9_2(var_9_1, var_2_10004.ISLAND_CHEATER_REAL_END_NOTIFY, arg_9_0)
+		pg.m02:sendNotification(GAME.ISLAND_CHEATER_REAL_END_NOTIFY, arg_9_0)
 
 		return
 	end)
 	arg_1_0:on(23115, function(arg_10_0)
-		local var_10_0 = arg_1_0.cheaterTavernAgency
-
-		if not var_1.IsConnecting(var_10_0) then
+		if not arg_1_0.cheaterTavernAgency:IsConnecting() then
 			return
 		end
 
-		local var_10_1 = arg_1_0.cheaterTavernAgency
-
-		var_1.UpdatePlayerDelegateState(var_10_1, arg_10_0.user_id, arg_10_0.state)
-
-		pg = var_1
-
-		local var_10_2 = var_1.m02
-		local var_10_3 = var_1.sendNotification
-
-		GAME = var_4
-
-		var_10_3(var_10_2, var_4.ISLAND_CHEATER_DELEGATE_NOTIFY)
+		arg_1_0.cheaterTavernAgency:UpdatePlayerDelegateState(arg_10_0.user_id, arg_10_0.state)
+		pg.m02:sendNotification(GAME.ISLAND_CHEATER_DELEGATE_NOTIFY)
 
 		return
 	end)
 	arg_1_0:on(23117, function(arg_11_0)
-		getProxy = var_2_10001
-		ActivityProxy = var_2_10003
+		local var_11_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ISLAND_CHEAT_BAR)
 
-		local var_11_0 = var_2_10001(var_2_10003)
+		var_11_0.data1 = arg_11_0.cur_score
+		var_11_0.data2 = math.max(arg_11_0.cur_score, var_11_0.data2)
 
-		getProxy = var_2_10002
-		ActivityProxy = var_2_10004
-
-		local var_11_1 = var_2_10002(var_2_10004)
-		local var_11_2 = var_2.getActivityByType
-
-		ActivityConst = var_2_10005
-
-		local var_11_3 = var_11_2(var_11_1, var_2_10005.ACTIVITY_TYPE_ISLAND_CHEAT_BAR)
-		local var_11_4 = arg_11_0.cur_score - var_11_3.data1
-
-		var_11_3.data1 = arg_11_0.cur_score
-		math = var_4
-		var_11_3.data2 = var_4.max(arg_11_0.cur_score, var_11_3.data2)
-
-		var_11_0:updateActivity(var_11_3)
+		getProxy(ActivityProxy):updateActivity(var_11_0)
 
 		return
 	end)
@@ -274,194 +136,96 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.InitPlayerDate(arg_12_0, arg_12_1)
-	ipairs = var_1_10002
+function var_0_0.InitPlayerDate(arg_12_0, arg_12_1)
+	local var_12_0 = arg_12_1.player_list or {}
 
-	local var_12_0
-
-	if not arg_12_1.player_list then
-		var_12_0 = {}
+	for iter_12_0, iter_12_1 in ipairs(var_12_0) do
+		arg_12_0:GetIsland():DispatchEvent(IslandCheaterTavernMonitor.ADD_CHEATERTAVERN_PLAYER, {
+			user_view = PlayRoomTools.GetGameViewID(iter_12_1.player_info.user_view),
+			seat = iter_12_1.seat,
+			id = iter_12_1.player_info.id
+		})
 	end
 
-	for iter_12_0, iter_12_1 in var_1_10002(var_12_0) do
-		local var_12_1 = iter_12_1.seat
-		local var_12_2 = iter_12_1.player_info
-		local var_12_3 = {}
-
-		PlayRoomTools = var_1_10010
-		var_12_3.user_view = var_1_10010.GetGameViewID(var_12_2.user_view)
-		var_12_3.seat = var_12_1
-		var_12_3.id = var_12_2.id
-
-		local var_12_4 = arg_12_0:GetIsland()
-
-		var_1_10010 = var_1_10010.DispatchEvent
-		IslandCheaterTavernMonitor = var_1_10013
-
-		var_1_10010(var_12_4, var_1_10013.ADD_CHEATERTAVERN_PLAYER, var_12_3)
-	end
-
-	local var_12_5 = arg_12_0:GetIsland()
-	local var_12_6 = var_2.DispatchEvent
-
-	IslandCheaterTavernMonitor = iter_12_0
-
-	var_12_6(var_12_5, iter_12_0.INIT_PLAYER_DATA_DONE)
+	arg_12_0:GetIsland():DispatchEvent(IslandCheaterTavernMonitor.INIT_PLAYER_DATA_DONE)
 
 	return
 end
 
-function var_0_1.Init(arg_13_0)
+function var_0_0.Init(arg_13_0)
 	return
 end
 
-function var_0_1.StartCheaterTevernGame(arg_14_0, arg_14_1)
-	local var_14_0 = {
-		user_id = arg_14_1.user_id
-	}
-
-	IslandCheaterTavernConst = var_3
-	var_14_0.operationType = var_3.PlayerCurrentOperateType.PutCard
-	var_14_0.auto_time = arg_14_1.auto_time
-	pg = var_3
-
-	local var_14_1 = var_3.m02
-	local var_14_2 = var_3.sendNotification
-
-	GAME = var_1_10006
-
-	var_14_2(var_14_1, var_1_10006.ISLAND_CHEATER_FIRSTROND_START, {
-		operation = var_14_0
+function var_0_0.StartCheaterTevernGame(arg_14_0, arg_14_1)
+	pg.m02:sendNotification(GAME.ISLAND_CHEATER_FIRSTROND_START, {
+		operation = {
+			user_id = arg_14_1.user_id,
+			operationType = IslandCheaterTavernConst.PlayerCurrentOperateType.PutCard,
+			auto_time = arg_14_1.auto_time
+		}
 	})
 
 	return
 end
 
-function var_0_1.CheaterTevernGameEveryRound(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_0.cheaterTavernAgency
-
-	var_2.UpdateGameDataEveryRound(var_15_0, arg_15_1)
-
-	local var_15_1 = {
-		user_id = arg_15_1.user_id
-	}
-
-	IslandCheaterTavernConst = var_3
-	var_15_1.operationType = var_3.PlayerCurrentOperateType.PutCard
-	var_15_1.auto_time = arg_15_1.auto_time
-	pg = var_3
-
-	local var_15_2 = var_3.m02
-	local var_15_3 = var_3.sendNotification
-
-	GAME = var_1_10006
-
-	var_15_3(var_15_2, var_1_10006.ISLAND_CHEATER_FIRSTROND_START, {
-		operation = var_15_1
+function var_0_0.CheaterTevernGameEveryRound(arg_15_0, arg_15_1)
+	arg_15_0.cheaterTavernAgency:UpdateGameDataEveryRound(arg_15_1)
+	pg.m02:sendNotification(GAME.ISLAND_CHEATER_FIRSTROND_START, {
+		operation = {
+			user_id = arg_15_1.user_id,
+			operationType = IslandCheaterTavernConst.PlayerCurrentOperateType.PutCard,
+			auto_time = arg_15_1.auto_time
+		}
 	})
 
 	return
 end
 
-function var_0_1.PlayOperateHandle(arg_16_0, arg_16_1)
+function var_0_0.PlayOperateHandle(arg_16_0, arg_16_1)
 	local var_16_0 = arg_16_1.user_id
 	local var_16_1 = arg_16_1.return_list
+	local var_16_2 = getProxy(PlayerProxy):getRawData().id
+	local var_16_3
 
-	getProxy = var_1_10004
-	PlayerProxy = var_1_10006
+	switch(arg_16_1.type, {
+		[IslandCheaterTavernConst.PlayerOperateType.PutCard] = function()
+			local var_17_0 = var_16_1[2]
 
-	local var_16_2 = var_1_10004(var_1_10006)
-	local var_16_3 = var_4.getRawData(var_16_2).id
-	local var_16_4
+			if var_16_1[1] == 1 then
+				if var_16_0 == getProxy(PlayerProxy):getRawData().id then
+					var_16_3 = arg_16_0.cheaterTavernAgency:GetMainPlayerAutoPutCard(var_17_0)
 
-	switch = var_16_2
-
-	local var_16_5 = arg_16_1.type
-	local var_16_6 = {}
-
-	IslandCheaterTavernConst = var_1_10010
-	var_16_6[var_1_10010.PlayerOperateType.PutCard] = function()
-		local var_17_0 = var_16_1[1] == 1
-		local var_17_1 = var_16_1[2]
-
-		if var_17_0 then
-			local var_17_2 = var_16_0
-
-			getProxy = var_2_10003
-			PlayerProxy = var_2_10005
-
-			local var_17_3 = var_2_10003(var_2_10005)
-
-			if var_17_2 == var_3.getRawData(var_17_3).id then
-				local var_17_4 = arg_16_0.cheaterTavernAgency
-
-				var_16_4 = var_2.GetMainPlayerAutoPutCard(var_17_4, var_17_1)
-
-				local var_17_5 = arg_16_0.cheaterTavernAgency
-
-				var_2.MainPlayerPutCard(var_17_5, var_16_4)
+					arg_16_0.cheaterTavernAgency:MainPlayerPutCard(var_16_3)
+				end
 			end
+
+			arg_16_0.cheaterTavernAgency:ReducePlayerCardNum(var_16_0, var_17_0)
+
+			if var_16_0 == var_16_2 then
+				IslandCheaterTavernRecordTools.AddRoundCnt()
+				IslandCheaterTavernRecordTools.StopPutCardTime()
+			end
+
+			return
+		end,
+		[IslandCheaterTavernConst.PlayerOperateType.Query] = function()
+			return
+		end,
+		[IslandCheaterTavernConst.PlayerOperateType.Shoot] = function()
+			warning(tostring(var_16_0) .. "PlayOperateHandle" .. tostring(var_16_1[1]))
+			arg_16_0.cheaterTavernAgency:UpdatePlayerBombState(var_16_0, var_16_1[1], var_16_1[2])
+
+			return
 		end
-
-		local var_17_6 = arg_16_0.cheaterTavernAgency
-
-		var_2.ReducePlayerCardNum(var_17_6, var_16_0, var_17_1)
-
-		if var_16_0 == var_16_3 then
-			IslandCheaterTavernRecordTools = var_2
-
-			var_2.AddRoundCnt()
-
-			IslandCheaterTavernRecordTools = var_2
-
-			var_2.StopPutCardTime()
-		end
-
-		return
-	end
-	IslandCheaterTavernConst = var_10
-	var_16_6[var_10.PlayerOperateType.Query] = function()
-		return
-	end
-	IslandCheaterTavernConst = var_10
-	var_16_6[var_10.PlayerOperateType.Shoot] = function()
-		local var_19_0 = var_16_1[1]
-		local var_19_1 = var_16_1[2]
-
-		warning = var_2_10002
-		tostring = var_2_10004
-
-		local var_19_2 = var_2_10004(var_16_0)
-		local var_19_3 = "PlayOperateHandle"
-
-		tostring = var_6
-
-		var_2_10002(var_19_2 .. var_19_3 .. var_6(var_19_0))
-
-		local var_19_4 = arg_16_0.cheaterTavernAgency
-
-		var_2.UpdatePlayerBombState(var_19_4, var_16_0, var_19_0, var_19_1)
-
-		return
-	end
-
-	var_16_2(var_16_5, var_16_6, function()
+	}, function()
 		return
 	end)
-
-	pg = var_16_2
-
-	local var_16_7 = var_16_2.m02
-	local var_16_8 = var_6.sendNotification
-
-	GAME = var_16_6
-
-	var_16_8(var_16_7, var_16_6.ISLAND_CHEATER_OPERATE_DONE_NOTIFY, {
+	pg.m02:sendNotification(GAME.ISLAND_CHEATER_OPERATE_DONE_NOTIFY, {
 		data = arg_16_1,
-		putCard = var_16_4
+		putCard = nil
 	})
 
 	return
 end
 
-return var_0_1
+return var_0_0

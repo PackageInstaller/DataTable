@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_newshop_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_newshop_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_newshop_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_newshop_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_newshop_data = rawget(pg, "world_newshop_data") or setmetatable({
+	__name = "world_newshop_data"
+}, confNEO)
+pg.world_newshop_data.all = {
 	10101,
 	10102,
 	10103,
@@ -111,25 +88,11 @@ var_0_3.all = {
 	40404,
 	40405
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_newshop_data = {}
+pg.base = pg.base or {}
+pg.base.world_newshop_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_newshop_data
-
-	var_1_0[10101] = {
+	pg.base.world_newshop_data[10101] = {
 		item_type = 12,
 		priority = 1,
 		price_id = 100,
@@ -142,11 +105,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1000,
 		price_type = 12
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_newshop_data
-
-	var_1_1[10102] = {
+	pg.base.world_newshop_data[10102] = {
 		item_type = 12,
 		priority = 2,
 		price_id = 100,
@@ -159,11 +118,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 3000,
 		price_type = 12
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_newshop_data
-
-	var_1_2[10103] = {
+	pg.base.world_newshop_data[10103] = {
 		item_type = 12,
 		priority = 3,
 		price_id = 101,
@@ -176,11 +131,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 10,
 		price_type = 12
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_newshop_data
-
-	var_1_3[10104] = {
+	pg.base.world_newshop_data[10104] = {
 		item_type = 12,
 		priority = 4,
 		price_id = 101,
@@ -193,11 +144,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 10,
 		price_type = 12
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_newshop_data
-
-	var_1_4[10105] = {
+	pg.base.world_newshop_data[10105] = {
 		item_type = 12,
 		priority = 5,
 		price_id = 101,
@@ -210,11 +157,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 10,
 		price_type = 12
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_newshop_data
-
-	var_1_5[10106] = {
+	pg.base.world_newshop_data[10106] = {
 		item_type = 12,
 		priority = 6,
 		price_id = 100,
@@ -227,11 +170,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 500,
 		price_type = 12
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_newshop_data
-
-	var_1_6[10201] = {
+	pg.base.world_newshop_data[10201] = {
 		item_type = 12,
 		priority = 7,
 		price_id = 100,
@@ -244,11 +183,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 3000,
 		price_type = 12
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_newshop_data
-
-	var_1_7[10202] = {
+	pg.base.world_newshop_data[10202] = {
 		item_type = 12,
 		priority = 8,
 		price_id = 100,
@@ -261,11 +196,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 9000,
 		price_type = 12
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_newshop_data
-
-	var_1_8[10203] = {
+	pg.base.world_newshop_data[10203] = {
 		item_type = 12,
 		priority = 9,
 		price_id = 101,
@@ -278,11 +209,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 10,
 		price_type = 12
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_newshop_data
-
-	var_1_9[10204] = {
+	pg.base.world_newshop_data[10204] = {
 		item_type = 12,
 		priority = 10,
 		price_id = 101,
@@ -295,11 +222,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 10,
 		price_type = 12
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_newshop_data
-
-	var_1_10[10205] = {
+	pg.base.world_newshop_data[10205] = {
 		item_type = 12,
 		priority = 11,
 		price_id = 101,
@@ -312,11 +235,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 10,
 		price_type = 12
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_newshop_data
-
-	var_1_11[10206] = {
+	pg.base.world_newshop_data[10206] = {
 		item_type = 12,
 		priority = 12,
 		price_id = 100,
@@ -329,11 +248,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 500,
 		price_type = 12
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_newshop_data
-
-	var_1_12[10301] = {
+	pg.base.world_newshop_data[10301] = {
 		item_type = 12,
 		priority = 13,
 		price_id = 100,
@@ -346,11 +261,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 9000,
 		price_type = 12
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_newshop_data
-
-	var_1_13[10302] = {
+	pg.base.world_newshop_data[10302] = {
 		item_type = 12,
 		priority = 14,
 		price_id = 100,
@@ -363,11 +274,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 15000,
 		price_type = 12
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_newshop_data
-
-	var_1_14[10303] = {
+	pg.base.world_newshop_data[10303] = {
 		item_type = 12,
 		priority = 15,
 		price_id = 100,
@@ -380,11 +287,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 36000,
 		price_type = 12
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_newshop_data
-
-	var_1_15[10304] = {
+	pg.base.world_newshop_data[10304] = {
 		item_type = 12,
 		priority = 16,
 		price_id = 101,
@@ -397,11 +300,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_newshop_data
-
-	var_1_16[10305] = {
+	pg.base.world_newshop_data[10305] = {
 		item_type = 12,
 		priority = 17,
 		price_id = 101,
@@ -414,11 +313,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_newshop_data
-
-	var_1_17[10306] = {
+	pg.base.world_newshop_data[10306] = {
 		item_type = 12,
 		priority = 18,
 		price_id = 101,
@@ -431,11 +326,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_newshop_data
-
-	var_1_18[10401] = {
+	pg.base.world_newshop_data[10401] = {
 		item_type = 12,
 		priority = 19,
 		price_id = 100,
@@ -448,11 +339,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 30000,
 		price_type = 12
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_newshop_data
-
-	var_1_19[10402] = {
+	pg.base.world_newshop_data[10402] = {
 		item_type = 12,
 		priority = 20,
 		price_id = 100,
@@ -465,11 +352,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 60000,
 		price_type = 12
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_newshop_data
-
-	var_1_20[10403] = {
+	pg.base.world_newshop_data[10403] = {
 		item_type = 12,
 		priority = 21,
 		price_id = 100,
@@ -482,11 +365,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100000,
 		price_type = 12
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_newshop_data
-
-	var_1_21[20101] = {
+	pg.base.world_newshop_data[20101] = {
 		item_type = 12,
 		priority = 1,
 		price_id = 100,
@@ -499,11 +378,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1000,
 		price_type = 12
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_newshop_data
-
-	var_1_22[20102] = {
+	pg.base.world_newshop_data[20102] = {
 		item_type = 12,
 		priority = 2,
 		price_id = 101,
@@ -516,11 +391,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1,
 		price_type = 12
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_newshop_data
-
-	var_1_23[20103] = {
+	pg.base.world_newshop_data[20103] = {
 		item_type = 12,
 		priority = 3,
 		price_id = 101,
@@ -533,11 +404,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_newshop_data
-
-	var_1_24[20104] = {
+	pg.base.world_newshop_data[20104] = {
 		item_type = 12,
 		priority = 4,
 		price_id = 101,
@@ -550,11 +417,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_newshop_data
-
-	var_1_25[20105] = {
+	pg.base.world_newshop_data[20105] = {
 		item_type = 12,
 		priority = 5,
 		price_id = 100,
@@ -567,11 +430,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_newshop_data
-
-	var_1_26[20201] = {
+	pg.base.world_newshop_data[20201] = {
 		item_type = 12,
 		priority = 6,
 		price_id = 100,
@@ -584,11 +443,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 2500,
 		price_type = 12
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_newshop_data
-
-	var_1_27[20202] = {
+	pg.base.world_newshop_data[20202] = {
 		item_type = 12,
 		priority = 7,
 		price_id = 101,
@@ -601,11 +456,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1,
 		price_type = 12
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_newshop_data
-
-	var_1_28[20203] = {
+	pg.base.world_newshop_data[20203] = {
 		item_type = 12,
 		priority = 8,
 		price_id = 101,
@@ -618,11 +469,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_newshop_data
-
-	var_1_29[20204] = {
+	pg.base.world_newshop_data[20204] = {
 		item_type = 12,
 		priority = 9,
 		price_id = 101,
@@ -635,11 +482,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_newshop_data
-
-	var_1_30[20205] = {
+	pg.base.world_newshop_data[20205] = {
 		item_type = 12,
 		priority = 10,
 		price_id = 100,
@@ -652,11 +495,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_newshop_data
-
-	var_1_31[20301] = {
+	pg.base.world_newshop_data[20301] = {
 		item_type = 12,
 		priority = 11,
 		price_id = 100,
@@ -669,11 +508,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5000,
 		price_type = 12
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_newshop_data
-
-	var_1_32[20302] = {
+	pg.base.world_newshop_data[20302] = {
 		item_type = 12,
 		priority = 12,
 		price_id = 101,
@@ -686,11 +521,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1,
 		price_type = 12
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_newshop_data
-
-	var_1_33[20303] = {
+	pg.base.world_newshop_data[20303] = {
 		item_type = 12,
 		priority = 13,
 		price_id = 101,
@@ -703,11 +534,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_newshop_data
-
-	var_1_34[20304] = {
+	pg.base.world_newshop_data[20304] = {
 		item_type = 12,
 		priority = 14,
 		price_id = 101,
@@ -720,11 +547,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_newshop_data
-
-	var_1_35[20305] = {
+	pg.base.world_newshop_data[20305] = {
 		item_type = 12,
 		priority = 15,
 		price_id = 100,
@@ -737,11 +560,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_newshop_data
-
-	var_1_36[20401] = {
+	pg.base.world_newshop_data[20401] = {
 		item_type = 12,
 		priority = 16,
 		price_id = 101,
@@ -754,11 +573,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1,
 		price_type = 12
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_newshop_data
-
-	var_1_37[20402] = {
+	pg.base.world_newshop_data[20402] = {
 		item_type = 12,
 		priority = 17,
 		price_id = 101,
@@ -771,11 +586,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_newshop_data
-
-	var_1_38[20403] = {
+	pg.base.world_newshop_data[20403] = {
 		item_type = 12,
 		priority = 18,
 		price_id = 101,
@@ -788,11 +599,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_newshop_data
-
-	var_1_39[20404] = {
+	pg.base.world_newshop_data[20404] = {
 		item_type = 12,
 		priority = 19,
 		price_id = 100,
@@ -805,11 +612,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_newshop_data
-
-	var_1_40[30101] = {
+	pg.base.world_newshop_data[30101] = {
 		item_type = 12,
 		priority = 1,
 		price_id = 101,
@@ -822,11 +625,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_newshop_data
-
-	var_1_41[30102] = {
+	pg.base.world_newshop_data[30102] = {
 		item_type = 12,
 		priority = 2,
 		price_id = 101,
@@ -839,11 +638,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_newshop_data
-
-	var_1_42[30103] = {
+	pg.base.world_newshop_data[30103] = {
 		item_type = 12,
 		priority = 3,
 		price_id = 101,
@@ -856,11 +651,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_newshop_data
-
-	var_1_43[30104] = {
+	pg.base.world_newshop_data[30104] = {
 		item_type = 12,
 		priority = 4,
 		price_id = 101,
@@ -873,11 +664,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_newshop_data
-
-	var_1_44[30105] = {
+	pg.base.world_newshop_data[30105] = {
 		item_type = 2,
 		priority = 5,
 		price_id = 101,
@@ -890,11 +677,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1,
 		price_type = 12
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_newshop_data
-
-	var_1_45[30201] = {
+	pg.base.world_newshop_data[30201] = {
 		item_type = 12,
 		priority = 6,
 		price_id = 101,
@@ -907,11 +690,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_newshop_data
-
-	var_1_46[30202] = {
+	pg.base.world_newshop_data[30202] = {
 		item_type = 12,
 		priority = 7,
 		price_id = 101,
@@ -924,11 +703,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_newshop_data
-
-	var_1_47[30203] = {
+	pg.base.world_newshop_data[30203] = {
 		item_type = 12,
 		priority = 8,
 		price_id = 101,
@@ -941,11 +716,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_newshop_data
-
-	var_1_48[30204] = {
+	pg.base.world_newshop_data[30204] = {
 		item_type = 12,
 		priority = 9,
 		price_id = 101,
@@ -958,11 +729,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_newshop_data
-
-	var_1_49[30205] = {
+	pg.base.world_newshop_data[30205] = {
 		item_type = 2,
 		priority = 10,
 		price_id = 101,
@@ -975,11 +742,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1,
 		price_type = 12
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_newshop_data
-
-	var_1_50[30301] = {
+	pg.base.world_newshop_data[30301] = {
 		item_type = 12,
 		priority = 11,
 		price_id = 101,
@@ -992,11 +755,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_newshop_data
-
-	var_1_51[30302] = {
+	pg.base.world_newshop_data[30302] = {
 		item_type = 12,
 		priority = 12,
 		price_id = 101,
@@ -1009,11 +768,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_newshop_data
-
-	var_1_52[30303] = {
+	pg.base.world_newshop_data[30303] = {
 		item_type = 12,
 		priority = 13,
 		price_id = 101,
@@ -1026,11 +781,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_newshop_data
-
-	var_1_53[30304] = {
+	pg.base.world_newshop_data[30304] = {
 		item_type = 12,
 		priority = 14,
 		price_id = 101,
@@ -1043,11 +794,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_newshop_data
-
-	var_1_54[30305] = {
+	pg.base.world_newshop_data[30305] = {
 		item_type = 2,
 		priority = 15,
 		price_id = 101,
@@ -1060,11 +807,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_newshop_data
-
-	var_1_55[30401] = {
+	pg.base.world_newshop_data[30401] = {
 		item_type = 12,
 		priority = 16,
 		price_id = 101,
@@ -1077,11 +820,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_newshop_data
-
-	var_1_56[30402] = {
+	pg.base.world_newshop_data[30402] = {
 		item_type = 12,
 		priority = 17,
 		price_id = 101,
@@ -1094,11 +833,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_newshop_data
-
-	var_1_57[30403] = {
+	pg.base.world_newshop_data[30403] = {
 		item_type = 12,
 		priority = 18,
 		price_id = 101,
@@ -1111,11 +846,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_newshop_data
-
-	var_1_58[30404] = {
+	pg.base.world_newshop_data[30404] = {
 		item_type = 12,
 		priority = 19,
 		price_id = 101,
@@ -1128,11 +859,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_newshop_data
-
-	var_1_59[30405] = {
+	pg.base.world_newshop_data[30405] = {
 		item_type = 2,
 		priority = 20,
 		price_id = 101,
@@ -1145,11 +872,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 5,
 		price_type = 12
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_newshop_data
-
-	var_1_60[40101] = {
+	pg.base.world_newshop_data[40101] = {
 		item_type = 12,
 		priority = 1,
 		price_id = 100,
@@ -1162,11 +885,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 150,
 		price_type = 12
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_newshop_data
-
-	var_1_61[40102] = {
+	pg.base.world_newshop_data[40102] = {
 		item_type = 12,
 		priority = 2,
 		price_id = 100,
@@ -1179,11 +898,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 500,
 		price_type = 12
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_newshop_data
-
-	var_1_62[40103] = {
+	pg.base.world_newshop_data[40103] = {
 		item_type = 2,
 		priority = 3,
 		price_id = 101,
@@ -1196,11 +911,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 50,
 		price_type = 12
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_newshop_data
-
-	var_1_63[40104] = {
+	pg.base.world_newshop_data[40104] = {
 		item_type = 12,
 		priority = 4,
 		price_id = 101,
@@ -1213,11 +924,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_newshop_data
-
-	var_1_64[40105] = {
+	pg.base.world_newshop_data[40105] = {
 		item_type = 12,
 		priority = 5,
 		price_id = 101,
@@ -1230,11 +937,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_newshop_data
-
-	var_1_65[9] = {
+	pg.base.world_newshop_data[9] = {
 		item_type = 12,
 		priority = 6,
 		price_id = 100,
@@ -1247,11 +950,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 250,
 		price_type = 12
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_newshop_data
-
-	var_1_66[10] = {
+	pg.base.world_newshop_data[10] = {
 		item_type = 12,
 		priority = 7,
 		price_id = 100,
@@ -1264,11 +963,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 750,
 		price_type = 12
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_newshop_data
-
-	var_1_67[11] = {
+	pg.base.world_newshop_data[11] = {
 		item_type = 2,
 		priority = 8,
 		price_id = 101,
@@ -1281,11 +976,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 50,
 		price_type = 12
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_newshop_data
-
-	var_1_68[12] = {
+	pg.base.world_newshop_data[12] = {
 		item_type = 12,
 		priority = 9,
 		price_id = 101,
@@ -1298,11 +989,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_newshop_data
-
-	var_1_69[13] = {
+	pg.base.world_newshop_data[13] = {
 		item_type = 12,
 		priority = 10,
 		price_id = 101,
@@ -1315,11 +1002,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_newshop_data
-
-	var_1_70[14] = {
+	pg.base.world_newshop_data[14] = {
 		item_type = 12,
 		priority = 11,
 		price_id = 101,
@@ -1332,11 +1015,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_newshop_data
-
-	var_1_71[15] = {
+	pg.base.world_newshop_data[15] = {
 		item_type = 12,
 		priority = 12,
 		price_id = 101,
@@ -1349,11 +1028,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_newshop_data
-
-	var_1_72[40301] = {
+	pg.base.world_newshop_data[40301] = {
 		item_type = 12,
 		priority = 13,
 		price_id = 100,
@@ -1366,11 +1041,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 1000,
 		price_type = 12
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_newshop_data
-
-	var_1_73[40302] = {
+	pg.base.world_newshop_data[40302] = {
 		item_type = 12,
 		priority = 14,
 		price_id = 100,
@@ -1383,11 +1054,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 2500,
 		price_type = 12
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_newshop_data
-
-	var_1_74[40303] = {
+	pg.base.world_newshop_data[40303] = {
 		item_type = 2,
 		priority = 15,
 		price_id = 101,
@@ -1400,11 +1067,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 50,
 		price_type = 12
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_newshop_data
-
-	var_1_75[40304] = {
+	pg.base.world_newshop_data[40304] = {
 		item_type = 2,
 		priority = 16,
 		price_id = 101,
@@ -1417,11 +1080,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 300,
 		price_type = 12
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_newshop_data
-
-	var_1_76[40305] = {
+	pg.base.world_newshop_data[40305] = {
 		item_type = 12,
 		priority = 17,
 		price_id = 101,
@@ -1434,11 +1093,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_newshop_data
-
-	var_1_77[40306] = {
+	pg.base.world_newshop_data[40306] = {
 		item_type = 12,
 		priority = 18,
 		price_id = 101,
@@ -1451,11 +1106,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_newshop_data
-
-	var_1_78[40307] = {
+	pg.base.world_newshop_data[40307] = {
 		item_type = 12,
 		priority = 19,
 		price_id = 101,
@@ -1468,11 +1119,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 300,
 		price_type = 12
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_newshop_data
-
-	var_1_79[40401] = {
+	pg.base.world_newshop_data[40401] = {
 		item_type = 2,
 		priority = 20,
 		price_id = 101,
@@ -1485,11 +1132,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 300,
 		price_type = 12
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.world_newshop_data
-
-	var_1_80[40402] = {
+	pg.base.world_newshop_data[40402] = {
 		item_type = 12,
 		priority = 21,
 		price_id = 101,
@@ -1502,11 +1145,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 500,
 		price_type = 12
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.world_newshop_data
-
-	var_1_81[40403] = {
+	pg.base.world_newshop_data[40403] = {
 		item_type = 12,
 		priority = 22,
 		price_id = 101,
@@ -1519,11 +1158,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 20,
 		price_type = 12
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.world_newshop_data
-
-	var_1_82[40404] = {
+	pg.base.world_newshop_data[40404] = {
 		item_type = 12,
 		priority = 23,
 		price_id = 101,
@@ -1536,8 +1171,7 @@ var_0_3.base.world_newshop_data = {}
 		price_num = 100,
 		price_type = 12
 	}
-	pg = var_1_82
-	var_1_82.base.world_newshop_data[40405] = {
+	pg.base.world_newshop_data[40405] = {
 		item_type = 12,
 		priority = 24,
 		price_id = 101,

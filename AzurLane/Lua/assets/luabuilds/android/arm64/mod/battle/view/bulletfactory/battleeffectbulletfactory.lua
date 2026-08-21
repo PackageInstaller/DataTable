@@ -1,88 +1,64 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleEffectBulletFactory = singletonClass("BattleEffectBulletFactory", ys.Battle.BattleBulletFactory)
+ys.Battle.BattleEffectBulletFactory.__name = "BattleEffectBulletFactory"
 
-local var_0_1 = var_0.Battle
+local var_0_1 = ys.Battle.BattleEffectBulletFactory
 
-singletonClass = var_0_10002
-var_0_1.BattleEffectBulletFactory = var_0_10002("BattleEffectBulletFactory", var_0.Battle.BattleBulletFactory)
-var_0.Battle.BattleEffectBulletFactory.__name = "BattleEffectBulletFactory"
-
-local var_0_2 = var_0.Battle.BattleEffectBulletFactory
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0)
+function ys.Battle.BattleEffectBulletFactory.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 
 	return
 end
 
-function var_0_2.MakeBullet(arg_2_0)
-	return var_0.Battle.BattleTorpedoBullet.New()
+function ys.Battle.BattleEffectBulletFactory.MakeBullet(arg_2_0)
+	return var_0_0.Battle.BattleTorpedoBullet.New()
 end
 
-function var_0_2.onBulletHitFunc(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = var_0_2.GetDataProxy()
-	local var_3_1 = arg_3_0:GetBulletData()
-	local var_3_2 = var_4.GetTemplate(var_3_1)
+function ys.Battle.BattleEffectBulletFactory.onBulletHitFunc(arg_3_0, arg_3_1, arg_3_2)
+	local var_3_0 = arg_3_0:GetBulletData()
+	local var_3_1 = var_3_0:GetTemplate()
 
-	var_0.Battle.PlayBattleSFX(var_4:GetHitSFX())
+	var_0_0.Battle.PlayBattleSFX(var_3_0:GetHitSFX())
 
-	if not var_4:IsFlare() then
-		var_4:spawnArea()
+	if not var_3_0:IsFlare() then
+		var_3_0:spawnArea()
 	end
 
-	local var_3_3 = var_0_2.GetFXPool()
-	local var_3_4, var_3_5 = var_6.GetFX(var_3_3, arg_3_0:GetFXID())
-	local var_3_6 = arg_3_0:GetTf().localPosition
+	local var_3_2, var_3_3 = var_0_1.GetFXPool():GetFX(arg_3_0:GetFXID())
 
-	pg = var_9
+	pg.EffectMgr.GetInstance():PlayBattleEffect(var_3_2, var_3_3:Add(arg_3_0:GetTf().localPosition), true)
 
-	local var_3_7 = var_9.EffectMgr.GetInstance()
-
-	var_9.PlayBattleEffect(var_3_7, var_3_4, var_3_5:Add(var_3_6), true)
-
-	if var_4:GetPierceCount() <= 0 then
-		var_3_0:RemoveBulletUnit(var_4:GetUniqueID())
+	if var_3_0:GetPierceCount() <= 0 then
+		var_0_1.GetDataProxy():RemoveBulletUnit(var_3_0:GetUniqueID())
 	end
 
 	return
 end
 
-function var_0_2.onBulletMissFunc(arg_4_0)
-	var_0_2.onBulletHitFunc(arg_4_0)
+function ys.Battle.BattleEffectBulletFactory.onBulletMissFunc(arg_4_0)
+	var_0_1.onBulletHitFunc(arg_4_0)
 
 	return
 end
 
-function var_0_2.MakeModel(arg_5_0, arg_5_1, arg_5_2)
-	local var_5_0 = arg_5_1:GetBulletData()
-	local var_5_1 = var_3.GetTemplate(var_5_0)
-	local var_5_2 = arg_5_0:GetDataProxy()
-	local var_5_3 = arg_5_0:GetBulletPool()
+function ys.Battle.BattleEffectBulletFactory.MakeModel(arg_5_0, arg_5_1, arg_5_2)
+	local var_5_0 = arg_5_1:GetBulletData():GetTemplate()
+	local var_5_1 = arg_5_0:GetDataProxy()
 
-	if not var_6.InstBullet(var_5_3, arg_5_1:GetModleID(), function(arg_6_0)
-		local var_6_0 = arg_5_1
-
-		var_1.AddModel(var_6_0, arg_6_0)
+	if not arg_5_0:GetBulletPool():InstBullet(arg_5_1:GetModleID(), function(arg_6_0)
+		arg_5_1:AddModel(arg_6_0)
 
 		return
 	end) then
-		local var_5_4 = arg_5_1
-		local var_5_5 = arg_5_1.AddTempModel
-		local var_5_6 = arg_5_0:GetTempGOPool()
-
-		var_5_5(var_5_4, var_10.GetObject(var_5_6))
+		arg_5_1:AddTempModel(arg_5_0:GetTempGOPool():GetObject())
 	end
 
 	arg_5_1:SetSpawn(arg_5_2)
 	arg_5_1:SetFXFunc(arg_5_0.onBulletHitFunc, arg_5_0.onBulletMissFunc)
-
-	local var_5_7 = arg_5_0:GetSceneMediator()
-
-	var_7.AddBullet(var_5_7, arg_5_1)
+	arg_5_0:GetSceneMediator():AddBullet(arg_5_1)
 
 	return
 end

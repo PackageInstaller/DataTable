@@ -1,45 +1,12 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_skin_expression") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_skin_expression"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_skin_expression = var_0_2
-pg = var_0
-pg = var_0_2
-
-local var_0_3
-
-if not var_0_2.base then
-	var_0_3 = {}
-end
-
-var_0.base = var_0_3
-pg = var_0
-var_0.base.ship_skin_expression = {}
+﻿pg = pg or {}
+pg.ship_skin_expression = rawget(pg, "ship_skin_expression") or setmetatable({
+	__name = "ship_skin_expression"
+}, confNEO)
+pg.base = pg.base or {}
+pg.base.ship_skin_expression = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_skin_expression
-
-	var_1_0.dunkeerke = {
+	pg.base.ship_skin_expression.dunkeerke = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -93,11 +60,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "1"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_skin_expression
-
-	var_1_1.masazhusai = {
+	pg.base.ship_skin_expression.masazhusai = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -151,11 +114,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = ""
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_skin_expression
-
-	var_1_2.xixuegui_3 = {
+	pg.base.ship_skin_expression.xixuegui_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -209,11 +168,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "1"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_skin_expression
-
-	var_1_3.safuke = {
+	pg.base.ship_skin_expression.safuke = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -267,11 +222,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "13"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_skin_expression
-
-	var_1_4.bushi = {
+	pg.base.ship_skin_expression.bushi = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -325,11 +276,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_skin_expression
-
-	var_1_5.banrenma = {
+	pg.base.ship_skin_expression.banrenma = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -383,11 +330,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "4"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_skin_expression
-
-	var_1_6.birui_2 = {
+	pg.base.ship_skin_expression.birui_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -441,11 +384,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "2"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_skin_expression
-
-	var_1_7.sanli_2 = {
+	pg.base.ship_skin_expression.sanli_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -499,11 +438,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "1"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_skin_expression
-
-	var_1_8.bangfeng_2 = {
+	pg.base.ship_skin_expression.bangfeng_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -557,11 +492,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_skin_expression
-
-	var_1_9.luodeni_3 = {
+	pg.base.ship_skin_expression.luodeni_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -615,11 +546,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_skin_expression
-
-	var_1_10.zaoshen_2 = {
+	pg.base.ship_skin_expression.zaoshen_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -673,11 +600,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "1"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_skin_expression
-
-	var_1_11.ajiakesi_2 = {
+	pg.base.ship_skin_expression.ajiakesi_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -731,11 +654,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_skin_expression
-
-	var_1_12.daqinghuayu = {
+	pg.base.ship_skin_expression.daqinghuayu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -789,11 +708,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_skin_expression
-
-	var_1_13.U81_2 = {
+	pg.base.ship_skin_expression.U81_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -847,11 +762,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "3"
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_skin_expression
-
-	var_1_14.aisaikesi = {
+	pg.base.ship_skin_expression.aisaikesi = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -905,11 +816,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_skin_expression
-
-	var_1_15.chuixue_3 = {
+	pg.base.ship_skin_expression.chuixue_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -963,11 +870,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_skin_expression
-
-	var_1_16.guanghui_3 = {
+	pg.base.ship_skin_expression.guanghui_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1021,11 +924,7 @@ var_0.base.ship_skin_expression = {}
 		login = "4",
 		detail = "1"
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_skin_expression
-
-	var_1_17.junzhu_2 = {
+	pg.base.ship_skin_expression.junzhu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1079,11 +978,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_skin_expression
-
-	var_1_18.lumang = {
+	pg.base.ship_skin_expression.lumang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1137,11 +1032,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "2"
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_skin_expression
-
-	var_1_19.mingshi_3 = {
+	pg.base.ship_skin_expression.mingshi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -1195,11 +1086,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "4"
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_skin_expression
-
-	var_1_20.nvjiang_2 = {
+	pg.base.ship_skin_expression.nvjiang_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -1253,11 +1140,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_skin_expression
-
-	var_1_21.ouruola_3 = {
+	pg.base.ship_skin_expression.ouruola_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -1311,11 +1194,7 @@ var_0.base.ship_skin_expression = {}
 		login = "4",
 		detail = "3"
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_skin_expression
-
-	var_1_22.yilishabai_2 = {
+	pg.base.ship_skin_expression.yilishabai_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -1369,11 +1248,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "3"
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_skin_expression
-
-	var_1_23.nandaketa_2 = {
+	pg.base.ship_skin_expression.nandaketa_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1427,11 +1302,7 @@ var_0.base.ship_skin_expression = {}
 		login = "4",
 		detail = "2"
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_skin_expression
-
-	var_1_24.dafeng = {
+	pg.base.ship_skin_expression.dafeng = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -1485,11 +1356,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_skin_expression
-
-	var_1_25.dafeng_2 = {
+	pg.base.ship_skin_expression.dafeng_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -1543,11 +1410,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "2"
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_skin_expression
-
-	var_1_26.huangchao = {
+	pg.base.ship_skin_expression.huangchao = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1601,11 +1464,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_skin_expression
-
-	var_1_27.gaoxiong_h = {
+	pg.base.ship_skin_expression.gaoxiong_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1659,11 +1518,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "3"
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_skin_expression
-
-	var_1_28.jiahe_h = {
+	pg.base.ship_skin_expression.jiahe_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -1717,11 +1572,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "2"
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_skin_expression
-
-	var_1_29.lingbo_h = {
+	pg.base.ship_skin_expression.lingbo_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -1775,11 +1626,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_skin_expression
-
-	var_1_30.shancheng_4 = {
+	pg.base.ship_skin_expression.shancheng_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1833,11 +1680,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_skin_expression
-
-	var_1_31.xili_h = {
+	pg.base.ship_skin_expression.xili_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -1891,11 +1734,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "1"
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_skin_expression
-
-	var_1_32.xiao_2 = {
+	pg.base.ship_skin_expression.xiao_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -1949,11 +1788,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_skin_expression
-
-	var_1_33.shengdiyage_g = {
+	pg.base.ship_skin_expression.shengdiyage_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2007,11 +1842,7 @@ var_0.base.ship_skin_expression = {}
 		login = "4",
 		detail = "3"
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_skin_expression
-
-	var_1_34.shentong_2 = {
+	pg.base.ship_skin_expression.shentong_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -2065,11 +1896,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_skin_expression
-
-	var_1_35.huobi = {
+	pg.base.ship_skin_expression.huobi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2123,11 +1950,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "1"
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_skin_expression
-
-	var_1_36.huobi_2 = {
+	pg.base.ship_skin_expression.huobi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -2181,11 +2004,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "1"
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_skin_expression
-
-	var_1_37.keerke = {
+	pg.base.ship_skin_expression.keerke = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2239,11 +2058,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "2"
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_skin_expression
-
-	var_1_38.keerke_2 = {
+	pg.base.ship_skin_expression.keerke_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2297,11 +2112,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_skin_expression
-
-	var_1_39.keluoladuo = {
+	pg.base.ship_skin_expression.keluoladuo = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2355,11 +2166,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "3"
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_skin_expression
-
-	var_1_40.malilan = {
+	pg.base.ship_skin_expression.malilan = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2413,11 +2220,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "3"
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_skin_expression
-
-	var_1_41.mingniabolisi = {
+	pg.base.ship_skin_expression.mingniabolisi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2471,11 +2274,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "1"
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_skin_expression
-
-	var_1_42.mingniabolisi_2 = {
+	pg.base.ship_skin_expression.mingniabolisi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -2529,11 +2328,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_skin_expression
-
-	var_1_43.xifujiniya = {
+	pg.base.ship_skin_expression.xifujiniya = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2587,11 +2382,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "3"
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_skin_expression
-
-	var_1_44.mengfeisi = {
+	pg.base.ship_skin_expression.mengfeisi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -2645,11 +2436,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_skin_expression
-
-	var_1_45.beili_2 = {
+	pg.base.ship_skin_expression.beili_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2703,11 +2490,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "2"
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_skin_expression
-
-	var_1_46.kongbu_2 = {
+	pg.base.ship_skin_expression.kongbu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2761,11 +2544,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_skin_expression
-
-	var_1_47.naerxun_2 = {
+	pg.base.ship_skin_expression.naerxun_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -2819,11 +2598,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "3"
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_skin_expression
-
-	var_1_48.wushiling_2 = {
+	pg.base.ship_skin_expression.wushiling_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -2877,11 +2652,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_skin_expression
-
-	var_1_49.heizewude = {
+	pg.base.ship_skin_expression.heizewude = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -2935,11 +2706,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "1"
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_skin_expression
-
-	var_1_50.kangkede = {
+	pg.base.ship_skin_expression.kangkede = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -2993,11 +2760,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_skin_expression
-
-	var_1_51.kangkede_2 = {
+	pg.base.ship_skin_expression.kangkede_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -3051,11 +2814,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_skin_expression
-
-	var_1_52.fumilulu = {
+	pg.base.ship_skin_expression.fumilulu = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -3109,11 +2868,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "2"
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_skin_expression
-
-	var_1_53.jiuyuan = {
+	pg.base.ship_skin_expression.jiuyuan = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -3167,11 +2922,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_skin_expression
-
-	var_1_54.lulutiye = {
+	pg.base.ship_skin_expression.lulutiye = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -3225,11 +2976,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_skin_expression
-
-	var_1_55.maoyin = {
+	pg.base.ship_skin_expression.maoyin = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -3283,11 +3030,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "2"
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_skin_expression
-
-	var_1_56.salana = {
+	pg.base.ship_skin_expression.salana = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -3341,11 +3084,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "3"
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_skin_expression
-
-	var_1_57.wululu = {
+	pg.base.ship_skin_expression.wululu = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -3399,11 +3138,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "2"
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_skin_expression
-
-	var_1_58.longxiang = {
+	pg.base.ship_skin_expression.longxiang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -3457,11 +3192,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "1"
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_skin_expression
-
-	var_1_59.longxiang_2 = {
+	pg.base.ship_skin_expression.longxiang_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -3515,11 +3246,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "1"
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_skin_expression
-
-	var_1_60.sipeibojue_3 = {
+	pg.base.ship_skin_expression.sipeibojue_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -3573,11 +3300,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_skin_expression
-
-	var_1_61.yanzhan_2 = {
+	pg.base.ship_skin_expression.yanzhan_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -3631,11 +3354,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_skin_expression
-
-	var_1_62.nigulasi_3 = {
+	pg.base.ship_skin_expression.nigulasi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -3689,11 +3408,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "1"
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_skin_expression
-
-	var_1_63.huonululu_4 = {
+	pg.base.ship_skin_expression.huonululu_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -3747,11 +3462,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_skin_expression
-
-	var_1_64.pufeng_2 = {
+	pg.base.ship_skin_expression.pufeng_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -3805,11 +3516,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_skin_expression
-
-	var_1_65.dachao_2 = {
+	pg.base.ship_skin_expression.dachao_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -3863,11 +3570,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "3"
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_skin_expression
-
-	var_1_66.yueke_g = {
+	pg.base.ship_skin_expression.yueke_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -3921,11 +3624,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_skin_expression
-
-	var_1_67.canglong_g = {
+	pg.base.ship_skin_expression.canglong_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -3979,11 +3678,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "1"
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_skin_expression
-
-	var_1_68.feilong_g = {
+	pg.base.ship_skin_expression.feilong_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -4037,11 +3732,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_skin_expression
-
-	var_1_69.tiancheng = {
+	pg.base.ship_skin_expression.tiancheng = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -4095,11 +3786,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "2"
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_skin_expression
-
-	var_1_70.jiahezhanlie = {
+	pg.base.ship_skin_expression.jiahezhanlie = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -4153,11 +3840,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "2"
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_skin_expression
-
-	var_1_71.zubing = {
+	pg.base.ship_skin_expression.zubing = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -4211,11 +3894,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "5"
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_skin_expression
-
-	var_1_72.juanbo = {
+	pg.base.ship_skin_expression.juanbo = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -4269,11 +3948,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_skin_expression
-
-	var_1_73.qifeng = {
+	pg.base.ship_skin_expression.qifeng = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -4327,11 +4002,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_skin_expression
-
-	var_1_74.kelifulan_h = {
+	pg.base.ship_skin_expression.kelifulan_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -4385,11 +4056,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "1"
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_skin_expression
-
-	var_1_75.xiaotiane_5 = {
+	pg.base.ship_skin_expression.xiaotiane_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -4443,11 +4110,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "3"
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_skin_expression
-
-	var_1_76.aierdeliqi_4 = {
+	pg.base.ship_skin_expression.aierdeliqi_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -4501,11 +4164,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_skin_expression
-
-	var_1_77.yichui_2 = {
+	pg.base.ship_skin_expression.yichui_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -4559,11 +4218,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_skin_expression
-
-	var_1_78.chuyun_2 = {
+	pg.base.ship_skin_expression.chuyun_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -4617,11 +4272,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "3"
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_skin_expression
-
-	var_1_79.weiershiqinwang_4 = {
+	pg.base.ship_skin_expression.weiershiqinwang_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -4675,11 +4326,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = ""
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_skin_expression
-
-	var_1_80.shengluyisi_3 = {
+	pg.base.ship_skin_expression.shengluyisi_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -4733,11 +4380,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_skin_expression
-
-	var_1_81.jifeng_2 = {
+	pg.base.ship_skin_expression.jifeng_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -4791,11 +4434,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = ""
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_skin_expression
-
-	var_1_82.hailunna_2 = {
+	pg.base.ship_skin_expression.hailunna_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -4849,11 +4488,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = ""
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_skin_expression
-
-	var_1_83.mengbiliai_2 = {
+	pg.base.ship_skin_expression.mengbiliai_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -4907,11 +4542,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_skin_expression
-
-	var_1_84.zubing_2 = {
+	pg.base.ship_skin_expression.zubing_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -4965,11 +4596,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_skin_expression
-
-	var_1_85.nake = {
+	pg.base.ship_skin_expression.nake = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5023,11 +4650,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "3"
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_skin_expression
-
-	var_1_86.aidang_h = {
+	pg.base.ship_skin_expression.aidang_h = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5081,11 +4704,7 @@ var_0.base.ship_skin_expression = {}
 		login = "4",
 		detail = "4"
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_skin_expression
-
-	var_1_87.xili_3 = {
+	pg.base.ship_skin_expression.xili_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -5139,11 +4758,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_skin_expression
-
-	var_1_88.chuchun_2 = {
+	pg.base.ship_skin_expression.chuchun_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5197,11 +4812,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "2"
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_skin_expression
-
-	var_1_89.wensensi_2 = {
+	pg.base.ship_skin_expression.wensensi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -5255,11 +4866,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "1"
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_skin_expression
-
-	var_1_90.shengli_2 = {
+	pg.base.ship_skin_expression.shengli_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -5313,11 +4920,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "3"
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_skin_expression
-
-	var_1_91.tianlangxing = {
+	pg.base.ship_skin_expression.tianlangxing = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -5371,11 +4974,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = ""
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_skin_expression
-
-	var_1_92.yamaijia_2 = {
+	pg.base.ship_skin_expression.yamaijia_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -5429,11 +5028,7 @@ var_0.base.ship_skin_expression = {}
 		login = "3",
 		detail = "1"
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_skin_expression
-
-	var_1_93.yuekegongjue_3 = {
+	pg.base.ship_skin_expression.yuekegongjue_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5487,11 +5082,7 @@ var_0.base.ship_skin_expression = {}
 		login = "2",
 		detail = "3"
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_skin_expression
-
-	var_1_94.tianlangxing_2 = {
+	pg.base.ship_skin_expression.tianlangxing_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -5545,11 +5136,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "1"
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_skin_expression
-
-	var_1_95.xiefeierde_2 = {
+	pg.base.ship_skin_expression.xiefeierde_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5603,11 +5190,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "3"
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_skin_expression
-
-	var_1_96.changyue = {
+	pg.base.ship_skin_expression.changyue = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5661,11 +5244,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = ""
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_skin_expression
-
-	var_1_97.gelunweier = {
+	pg.base.ship_skin_expression.gelunweier = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -5719,11 +5298,7 @@ var_0.base.ship_skin_expression = {}
 		login = "1",
 		detail = "5"
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_skin_expression
-
-	var_1_98.jinboli = {
+	pg.base.ship_skin_expression.jinboli = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -5777,8 +5352,7 @@ var_0.base.ship_skin_expression = {}
 		login = "",
 		detail = "3"
 	}
-	pg = var_1_98
-	var_1_98.base.ship_skin_expression.jinboli_3 = {
+	pg.base.ship_skin_expression.jinboli_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -5836,11 +5410,7 @@ var_0.base.ship_skin_expression = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_skin_expression
-
-	var_2_0.malani = {
+	pg.base.ship_skin_expression.malani = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -5894,11 +5464,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_skin_expression
-
-	var_2_1.malani_3 = {
+	pg.base.ship_skin_expression.malani_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -5952,11 +5518,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_skin_expression
-
-	var_2_2.zhuiganzhe = {
+	pg.base.ship_skin_expression.zhuiganzhe = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -6010,11 +5572,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_skin_expression
-
-	var_2_3.zhuiganzhe_2 = {
+	pg.base.ship_skin_expression.zhuiganzhe_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6068,11 +5626,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_skin_expression
-
-	var_2_4.kulasuo = {
+	pg.base.ship_skin_expression.kulasuo = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -6126,11 +5680,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_skin_expression
-
-	var_2_5.kulasuo_2 = {
+	pg.base.ship_skin_expression.kulasuo_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -6184,11 +5734,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_skin_expression
-
-	var_2_6.biaoyu = {
+	pg.base.ship_skin_expression.biaoyu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6242,11 +5788,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_skin_expression
-
-	var_2_7.biaoyu_2 = {
+	pg.base.ship_skin_expression.biaoyu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6300,11 +5842,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_skin_expression
-
-	var_2_8.yanzhan_g = {
+	pg.base.ship_skin_expression.yanzhan_g = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -6358,11 +5896,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_skin_expression
-
-	var_2_9.qiye_3 = {
+	pg.base.ship_skin_expression.qiye_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -6416,11 +5950,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_skin_expression
-
-	var_2_10.banrenma_3 = {
+	pg.base.ship_skin_expression.banrenma_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -6474,11 +6004,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_skin_expression
-
-	var_2_11.lafei_4 = {
+	pg.base.ship_skin_expression.lafei_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6532,11 +6058,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_skin_expression
-
-	var_2_12.lingbo_5 = {
+	pg.base.ship_skin_expression.lingbo_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -6590,11 +6112,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_skin_expression
-
-	var_2_13.taiyuan_2 = {
+	pg.base.ship_skin_expression.taiyuan_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -6648,11 +6166,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_skin_expression
-
-	var_2_14.liekexingdun_2 = {
+	pg.base.ship_skin_expression.liekexingdun_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -6706,11 +6220,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_skin_expression
-
-	var_2_15.junzhu_3 = {
+	pg.base.ship_skin_expression.junzhu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6764,11 +6274,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_skin_expression
-
-	var_2_16.beierfasite_2 = {
+	pg.base.ship_skin_expression.beierfasite_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6822,11 +6328,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_skin_expression
-
-	var_2_17.ximu_3 = {
+	pg.base.ship_skin_expression.ximu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -6880,11 +6382,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_skin_expression
-
-	var_2_18.xuefeng_h = {
+	pg.base.ship_skin_expression.xuefeng_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -6938,11 +6436,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_skin_expression
-
-	var_2_19.biaoqiang_h = {
+	pg.base.ship_skin_expression.biaoqiang_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -6996,11 +6490,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_skin_expression
-
-	var_2_20.dujiaoshou_4 = {
+	pg.base.ship_skin_expression.dujiaoshou_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -7054,11 +6544,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_skin_expression
-
-	var_2_21.fusang_3 = {
+	pg.base.ship_skin_expression.fusang_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7112,11 +6598,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_skin_expression
-
-	var_2_22.shancheng_h = {
+	pg.base.ship_skin_expression.shancheng_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -7170,11 +6652,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_skin_expression
-
-	var_2_23.ximusi_g = {
+	pg.base.ship_skin_expression.ximusi_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -7228,11 +6706,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_skin_expression
-
-	var_2_24.duli = {
+	pg.base.ship_skin_expression.duli = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -7286,11 +6760,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_skin_expression
-
-	var_2_25.duli_2 = {
+	pg.base.ship_skin_expression.duli_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -7344,11 +6814,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_skin_expression
-
-	var_2_26.xianggelila = {
+	pg.base.ship_skin_expression.xianggelila = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7402,11 +6868,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_skin_expression
-
-	var_2_27.xianggelila_2 = {
+	pg.base.ship_skin_expression.xianggelila_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -7460,11 +6922,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_skin_expression
-
-	var_2_28.botelan_2 = {
+	pg.base.ship_skin_expression.botelan_2 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -7518,11 +6976,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_skin_expression
-
-	var_2_29.bolisi_2 = {
+	pg.base.ship_skin_expression.bolisi_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -7576,11 +7030,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_skin_expression
-
-	var_2_30.lieren = {
+	pg.base.ship_skin_expression.lieren = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7634,11 +7084,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_skin_expression
-
-	var_2_31.yonggan = {
+	pg.base.ship_skin_expression.yonggan = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7692,11 +7138,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_skin_expression
-
-	var_2_32.z2 = {
+	pg.base.ship_skin_expression.z2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7750,11 +7192,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_skin_expression
-
-	var_2_33.chuixue_4 = {
+	pg.base.ship_skin_expression.chuixue_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7808,11 +7246,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_skin_expression
-
-	var_2_34.duwei = {
+	pg.base.ship_skin_expression.duwei = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -7866,11 +7300,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_skin_expression
-
-	var_2_35.bangkeshan = {
+	pg.base.ship_skin_expression.bangkeshan = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -7924,11 +7354,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_skin_expression
-
-	var_2_36.xiaotiane_4 = {
+	pg.base.ship_skin_expression.xiaotiane_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -7982,11 +7408,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_skin_expression
-
-	var_2_37.changmen_2 = {
+	pg.base.ship_skin_expression.changmen_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -8040,11 +7462,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_skin_expression
-
-	var_2_38.guanghui_4 = {
+	pg.base.ship_skin_expression.guanghui_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8098,11 +7516,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_skin_expression
-
-	var_2_39.salatuojia_3 = {
+	pg.base.ship_skin_expression.salatuojia_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -8156,11 +7570,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_skin_expression
-
-	var_2_40.luao_2 = {
+	pg.base.ship_skin_expression.luao_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8214,11 +7624,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_skin_expression
-
-	var_2_41.linggu = {
+	pg.base.ship_skin_expression.linggu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8272,11 +7678,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_skin_expression
-
-	var_2_42.xiaoyue_2 = {
+	pg.base.ship_skin_expression.xiaoyue_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8330,11 +7732,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_skin_expression
-
-	var_2_43.sanli_4 = {
+	pg.base.ship_skin_expression.sanli_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8388,11 +7786,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_skin_expression
-
-	var_2_44.xizhang_g = {
+	pg.base.ship_skin_expression.xizhang_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -8446,11 +7840,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_skin_expression
-
-	var_2_45.I13 = {
+	pg.base.ship_skin_expression.I13 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -8504,11 +7894,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_skin_expression
-
-	var_2_46.jingang_2 = {
+	pg.base.ship_skin_expression.jingang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8562,11 +7948,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_skin_expression
-
-	var_2_47.beifeng = {
+	pg.base.ship_skin_expression.beifeng = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8620,11 +8002,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_skin_expression
-
-	var_2_48.feiteliedadi = {
+	pg.base.ship_skin_expression.feiteliedadi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -8678,11 +8056,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_skin_expression
-
-	var_2_49.xiyatu = {
+	pg.base.ship_skin_expression.xiyatu = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -8736,11 +8110,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_skin_expression
-
-	var_2_50.zuozhiya = {
+	pg.base.ship_skin_expression.zuozhiya = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8794,11 +8164,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_skin_expression
-
-	var_2_51.jiasikenie = {
+	pg.base.ship_skin_expression.jiasikenie = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -8852,11 +8218,7 @@ end)()
 		login = "7",
 		detail = ""
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_skin_expression
-
-	var_2_52.wuqi = {
+	pg.base.ship_skin_expression.wuqi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8910,11 +8272,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_skin_expression
-
-	var_2_53.aijiangDD = {
+	pg.base.ship_skin_expression.aijiangDD = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -8968,11 +8326,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_skin_expression
-
-	var_2_54.aijiangDD_2 = {
+	pg.base.ship_skin_expression.aijiangDD_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -9026,11 +8380,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_skin_expression
-
-	var_2_55.aijiangCL = {
+	pg.base.ship_skin_expression.aijiangCL = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -9084,11 +8434,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_skin_expression
-
-	var_2_56.aijiangBB = {
+	pg.base.ship_skin_expression.aijiangBB = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -9142,11 +8488,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_skin_expression
-
-	var_2_57.aijiangCV = {
+	pg.base.ship_skin_expression.aijiangCV = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -9200,11 +8542,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_skin_expression
-
-	var_2_58.qibolin_younv = {
+	pg.base.ship_skin_expression.qibolin_younv = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -9258,11 +8596,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_skin_expression
-
-	var_2_59.birui_younv = {
+	pg.base.ship_skin_expression.birui_younv = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -9316,11 +8650,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_skin_expression
-
-	var_2_60.salatuojia_4 = {
+	pg.base.ship_skin_expression.salatuojia_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -9374,11 +8704,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_skin_expression
-
-	var_2_61.lingbo_6 = {
+	pg.base.ship_skin_expression.lingbo_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -9432,11 +8758,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_skin_expression
-
-	var_2_62.z23_4 = {
+	pg.base.ship_skin_expression.z23_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -9490,11 +8812,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_skin_expression
-
-	var_2_63.lafei_5 = {
+	pg.base.ship_skin_expression.lafei_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -9548,11 +8866,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_skin_expression
-
-	var_2_64.biaoqiang_4 = {
+	pg.base.ship_skin_expression.biaoqiang_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -9606,11 +8920,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_skin_expression
-
-	var_2_65.ruyue_g = {
+	pg.base.ship_skin_expression.ruyue_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -9664,11 +8974,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_skin_expression
-
-	var_2_66.anshan_2 = {
+	pg.base.ship_skin_expression.anshan_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -9722,11 +9028,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_skin_expression
-
-	var_2_67.chicheng_younv = {
+	pg.base.ship_skin_expression.chicheng_younv = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -9780,11 +9082,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_skin_expression
-
-	var_2_68.bushi_2 = {
+	pg.base.ship_skin_expression.bushi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -9838,11 +9136,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_skin_expression
-
-	var_2_69.jingjishen_g = {
+	pg.base.ship_skin_expression.jingjishen_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -9896,11 +9190,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_skin_expression
-
-	var_2_70.mengfeisi_2 = {
+	pg.base.ship_skin_expression.mengfeisi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -9954,11 +9244,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_skin_expression
-
-	var_2_71.mingshi_4 = {
+	pg.base.ship_skin_expression.mingshi_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -10012,11 +9298,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_skin_expression
-
-	var_2_72.bisimai = {
+	pg.base.ship_skin_expression.bisimai = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -10070,11 +9352,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_skin_expression
-
-	var_2_73.qiaozhiwushi = {
+	pg.base.ship_skin_expression.qiaozhiwushi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10128,11 +9406,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_skin_expression
-
-	var_2_74.huisheng = {
+	pg.base.ship_skin_expression.huisheng = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10186,11 +9460,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_skin_expression
-
-	var_2_75.U556 = {
+	pg.base.ship_skin_expression.U556 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10244,11 +9514,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_skin_expression
-
-	var_2_76.U556_2 = {
+	pg.base.ship_skin_expression.U556_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10302,11 +9568,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_skin_expression
-
-	var_2_77.U73 = {
+	pg.base.ship_skin_expression.U73 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -10360,11 +9622,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_skin_expression
-
-	var_2_78.U73_3 = {
+	pg.base.ship_skin_expression.U73_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10418,11 +9676,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_skin_expression
-
-	var_2_79.Z36 = {
+	pg.base.ship_skin_expression.Z36 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10476,11 +9730,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_skin_expression
-
-	var_2_80.kelong_g = {
+	pg.base.ship_skin_expression.kelong_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -10534,11 +9784,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_skin_expression
-
-	var_2_81.hailunna_3 = {
+	pg.base.ship_skin_expression.hailunna_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -10592,11 +9838,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_skin_expression
-
-	var_2_82.yuekecheng_2 = {
+	pg.base.ship_skin_expression.yuekecheng_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -10650,11 +9892,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_skin_expression
-
-	var_2_83.dahuangfeng_2 = {
+	pg.base.ship_skin_expression.dahuangfeng_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -10708,11 +9946,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_skin_expression
-
-	var_2_84.qiaozhiwushi_2 = {
+	pg.base.ship_skin_expression.qiaozhiwushi_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -10766,11 +10000,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_skin_expression
-
-	var_2_85.huangjiafangzhou_3 = {
+	pg.base.ship_skin_expression.huangjiafangzhou_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10824,11 +10054,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_skin_expression
-
-	var_2_86.shiyu_3 = {
+	pg.base.ship_skin_expression.shiyu_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -10882,11 +10108,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_skin_expression
-
-	var_2_87.z23_3 = {
+	pg.base.ship_skin_expression.z23_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -10940,11 +10162,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_skin_expression
-
-	var_2_88.sipeibojue_4 = {
+	pg.base.ship_skin_expression.sipeibojue_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -10998,11 +10216,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_skin_expression
-
-	var_2_89.bisimai_2 = {
+	pg.base.ship_skin_expression.bisimai_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11056,11 +10270,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_skin_expression
-
-	var_2_90.zuozhiya_2 = {
+	pg.base.ship_skin_expression.zuozhiya_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -11114,11 +10324,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_skin_expression
-
-	var_2_91.ximu_4 = {
+	pg.base.ship_skin_expression.ximu_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11172,11 +10378,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_skin_expression
-
-	var_2_92.hailunna_younv = {
+	pg.base.ship_skin_expression.hailunna_younv = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -11230,11 +10432,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_skin_expression
-
-	var_2_93.kelifulan_younv = {
+	pg.base.ship_skin_expression.kelifulan_younv = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11288,11 +10486,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_skin_expression
-
-	var_2_94.shengdiyage_younv = {
+	pg.base.ship_skin_expression.shengdiyage_younv = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11346,11 +10540,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_skin_expression
-
-	var_2_95.Z1_g = {
+	pg.base.ship_skin_expression.Z1_g = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -11404,11 +10594,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_skin_expression
-
-	var_2_96.laibixi_g = {
+	pg.base.ship_skin_expression.laibixi_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -11462,11 +10648,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_skin_expression
-
-	var_2_97.feiji_2 = {
+	pg.base.ship_skin_expression.feiji_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11520,11 +10702,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_skin_expression
-
-	var_2_98.tianlangxing_3 = {
+	pg.base.ship_skin_expression.tianlangxing_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -11578,8 +10756,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_2_98
-	var_2_98.base.ship_skin_expression.quejie = {
+	pg.base.ship_skin_expression.quejie = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -11637,11 +10814,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_skin_expression
-
-	var_3_0.quejie_2 = {
+	pg.base.ship_skin_expression.quejie_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11695,11 +10868,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_skin_expression
-
-	var_3_1.nananpudun = {
+	pg.base.ship_skin_expression.nananpudun = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -11753,11 +10922,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_skin_expression
-
-	var_3_2.zhuiganzhe_3 = {
+	pg.base.ship_skin_expression.zhuiganzhe_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -11811,11 +10976,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_skin_expression
-
-	var_3_3.biaoyu_g = {
+	pg.base.ship_skin_expression.biaoyu_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11869,11 +11030,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_skin_expression
-
-	var_3_4.kulasuo_g = {
+	pg.base.ship_skin_expression.kulasuo_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -11927,11 +11084,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_skin_expression
-
-	var_3_5.wudi_2 = {
+	pg.base.ship_skin_expression.wudi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -11985,11 +11138,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_skin_expression
-
-	var_3_6.dunkeerke_3 = {
+	pg.base.ship_skin_expression.dunkeerke_3 = {
 		default = "0",
 		feeling3 = "8",
 		main3_replace = "",
@@ -12043,11 +11192,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_skin_expression
-
-	var_3_7.biaoqiang_5 = {
+	pg.base.ship_skin_expression.biaoqiang_5 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -12101,11 +11246,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_skin_expression
-
-	var_3_8.edu = {
+	pg.base.ship_skin_expression.edu = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -12159,11 +11300,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_skin_expression
-
-	var_3_9.edu_2 = {
+	pg.base.ship_skin_expression.edu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -12217,11 +11354,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_skin_expression
-
-	var_3_10.fuerban_3 = {
+	pg.base.ship_skin_expression.fuerban_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -12275,11 +11408,7 @@ end)()
 		login = "3",
 		detail = "7"
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_skin_expression
-
-	var_3_11.lemaer_3 = {
+	pg.base.ship_skin_expression.lemaer_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -12333,11 +11462,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_skin_expression
-
-	var_3_12.juejiang = {
+	pg.base.ship_skin_expression.juejiang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -12391,11 +11516,7 @@ end)()
 		login = "3",
 		detail = "10"
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_skin_expression
-
-	var_3_13.juejiang_2 = {
+	pg.base.ship_skin_expression.juejiang_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -12449,11 +11570,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_skin_expression
-
-	var_3_14.aimierbeierding_g = {
+	pg.base.ship_skin_expression.aimierbeierding_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -12507,11 +11624,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_skin_expression
-
-	var_3_15.I168 = {
+	pg.base.ship_skin_expression.I168 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -12565,11 +11678,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_skin_expression
-
-	var_3_16.I25 = {
+	pg.base.ship_skin_expression.I25 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -12623,11 +11732,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_skin_expression
-
-	var_3_17.U522 = {
+	pg.base.ship_skin_expression.U522 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -12681,11 +11786,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_skin_expression
-
-	var_3_18.U101 = {
+	pg.base.ship_skin_expression.U101 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -12739,11 +11840,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_skin_expression
-
-	var_3_19.I56 = {
+	pg.base.ship_skin_expression.I56 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -12797,11 +11894,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_skin_expression
-
-	var_3_20.U101_2 = {
+	pg.base.ship_skin_expression.U101_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -12855,11 +11948,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_skin_expression
-
-	var_3_21.lundun_g = {
+	pg.base.ship_skin_expression.lundun_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -12913,11 +12002,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_skin_expression
-
-	var_3_22.I168_2 = {
+	pg.base.ship_skin_expression.I168_2 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -12971,11 +12056,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_skin_expression
-
-	var_3_23.I25_2 = {
+	pg.base.ship_skin_expression.I25_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -13029,11 +12110,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_skin_expression
-
-	var_3_24.I56_2 = {
+	pg.base.ship_skin_expression.I56_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -13087,11 +12164,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_skin_expression
-
-	var_3_25.baerdimo = {
+	pg.base.ship_skin_expression.baerdimo = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -13145,11 +12218,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_skin_expression
-
-	var_3_26.baerdimo_2 = {
+	pg.base.ship_skin_expression.baerdimo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -13203,11 +12272,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_skin_expression
-
-	var_3_27.aierwen = {
+	pg.base.ship_skin_expression.aierwen = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -13261,11 +12326,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_skin_expression
-
-	var_3_28.aierwen_2 = {
+	pg.base.ship_skin_expression.aierwen_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -13319,11 +12380,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_skin_expression
-
-	var_3_29.bominghan = {
+	pg.base.ship_skin_expression.bominghan = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -13377,11 +12434,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_skin_expression
-
-	var_3_30.jiqi = {
+	pg.base.ship_skin_expression.jiqi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -13435,11 +12488,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_skin_expression
-
-	var_3_31.jiqi_2 = {
+	pg.base.ship_skin_expression.jiqi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -13493,11 +12542,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_skin_expression
-
-	var_3_32.shenghuan = {
+	pg.base.ship_skin_expression.shenghuan = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -13551,11 +12596,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_skin_expression
-
-	var_3_33.badan = {
+	pg.base.ship_skin_expression.badan = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -13609,11 +12650,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_skin_expression
-
-	var_3_34.bominghan_2 = {
+	pg.base.ship_skin_expression.bominghan_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -13667,11 +12704,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_skin_expression
-
-	var_3_35.alabama = {
+	pg.base.ship_skin_expression.alabama = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -13725,11 +12758,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_skin_expression
-
-	var_3_36.badan_2 = {
+	pg.base.ship_skin_expression.badan_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -13783,11 +12812,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_skin_expression
-
-	var_3_37.salatuojia_5 = {
+	pg.base.ship_skin_expression.salatuojia_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -13841,11 +12866,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_skin_expression
-
-	var_3_38.duwei_2 = {
+	pg.base.ship_skin_expression.duwei_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -13899,11 +12920,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_skin_expression
-
-	var_3_39.susaikesi_2 = {
+	pg.base.ship_skin_expression.susaikesi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -13957,11 +12974,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_skin_expression
-
-	var_3_40.zuozhiya_4 = {
+	pg.base.ship_skin_expression.zuozhiya_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14015,11 +13028,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_skin_expression
-
-	var_3_41.jiasikenie_2 = {
+	pg.base.ship_skin_expression.jiasikenie_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -14073,11 +13082,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_skin_expression
-
-	var_3_42.tianhou_2 = {
+	pg.base.ship_skin_expression.tianhou_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14131,11 +13136,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_skin_expression
-
-	var_3_43.qiye_4 = {
+	pg.base.ship_skin_expression.qiye_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -14189,11 +13190,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_skin_expression
-
-	var_3_44.xixuegui_4 = {
+	pg.base.ship_skin_expression.xixuegui_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14247,11 +13244,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_skin_expression
-
-	var_3_45.huonululu_5 = {
+	pg.base.ship_skin_expression.huonululu_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -14305,11 +13298,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_skin_expression
-
-	var_3_46.lei_3 = {
+	pg.base.ship_skin_expression.lei_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14363,11 +13352,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_skin_expression
-
-	var_3_47.beifeng_2 = {
+	pg.base.ship_skin_expression.beifeng_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -14421,11 +13406,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_skin_expression
-
-	var_3_48.ruihe_2 = {
+	pg.base.ship_skin_expression.ruihe_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14479,11 +13460,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_skin_expression
-
-	var_3_49.muyue_3 = {
+	pg.base.ship_skin_expression.muyue_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14537,11 +13514,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_skin_expression
-
-	var_3_50.I26_3 = {
+	pg.base.ship_skin_expression.I26_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14595,11 +13568,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_skin_expression
-
-	var_3_51.beiqi = {
+	pg.base.ship_skin_expression.beiqi = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -14653,11 +13622,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_skin_expression
-
-	var_3_52.xiefeierde_3 = {
+	pg.base.ship_skin_expression.xiefeierde_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14711,11 +13676,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_skin_expression
-
-	var_3_53.dian_3 = {
+	pg.base.ship_skin_expression.dian_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -14769,11 +13730,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_skin_expression
-
-	var_3_54.heitaizi = {
+	pg.base.ship_skin_expression.heitaizi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14827,11 +13784,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_skin_expression
-
-	var_3_55.sitanli = {
+	pg.base.ship_skin_expression.sitanli = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -14885,11 +13838,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_skin_expression
-
-	var_3_56.heitaizi_2 = {
+	pg.base.ship_skin_expression.heitaizi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -14943,11 +13892,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_skin_expression
-
-	var_3_57.wudao_3 = {
+	pg.base.ship_skin_expression.wudao_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15001,11 +13946,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_skin_expression
-
-	var_3_58.zhala = {
+	pg.base.ship_skin_expression.zhala = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -15059,11 +14000,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_skin_expression
-
-	var_3_59.zhala_2 = {
+	pg.base.ship_skin_expression.zhala_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -15117,11 +14054,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_skin_expression
-
-	var_3_60.longqibing = {
+	pg.base.ship_skin_expression.longqibing = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15175,11 +14108,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_skin_expression
-
-	var_3_61.longqibing_2 = {
+	pg.base.ship_skin_expression.longqibing_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15233,11 +14162,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_skin_expression
-
-	var_3_62.buzhihuo_2 = {
+	pg.base.ship_skin_expression.buzhihuo_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -15291,11 +14216,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_skin_expression
-
-	var_3_63.jiafuerbojue = {
+	pg.base.ship_skin_expression.jiafuerbojue = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15349,11 +14270,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_skin_expression
-
-	var_3_64.kewei = {
+	pg.base.ship_skin_expression.kewei = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -15407,11 +14324,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_skin_expression
-
-	var_3_65.kaisa = {
+	pg.base.ship_skin_expression.kaisa = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -15465,11 +14378,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_skin_expression
-
-	var_3_66.kaisa_2 = {
+	pg.base.ship_skin_expression.kaisa_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -15523,11 +14432,7 @@ end)()
 		login = "5",
 		detail = "7"
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_skin_expression
-
-	var_3_67.teluntuo = {
+	pg.base.ship_skin_expression.teluntuo = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -15581,11 +14486,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_skin_expression
-
-	var_3_68.kewei_2 = {
+	pg.base.ship_skin_expression.kewei_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -15639,11 +14540,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_skin_expression
-
-	var_3_69.lituoliao = {
+	pg.base.ship_skin_expression.lituoliao = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15697,11 +14594,7 @@ end)()
 		login = "",
 		detail = "8"
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_skin_expression
-
-	var_3_70.teluntuo_2 = {
+	pg.base.ship_skin_expression.teluntuo_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15755,11 +14648,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_skin_expression
-
-	var_3_71.lituoliao_2 = {
+	pg.base.ship_skin_expression.lituoliao_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -15813,11 +14702,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_skin_expression
-
-	var_3_72.beierfasite_3 = {
+	pg.base.ship_skin_expression.beierfasite_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15871,11 +14756,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_skin_expression
-
-	var_3_73.dachao_3 = {
+	pg.base.ship_skin_expression.dachao_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -15929,11 +14810,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_skin_expression
-
-	var_3_74.deyizhi_4 = {
+	pg.base.ship_skin_expression.deyizhi_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -15987,11 +14864,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_skin_expression
-
-	var_3_75.luoen_2 = {
+	pg.base.ship_skin_expression.luoen_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16045,11 +14918,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_skin_expression
-
-	var_3_76.ougen_4 = {
+	pg.base.ship_skin_expression.ougen_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -16103,11 +14972,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_skin_expression
-
-	var_3_77.rangbaer_2 = {
+	pg.base.ship_skin_expression.rangbaer_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16161,11 +15026,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_skin_expression
-
-	var_3_78.tierbici_3 = {
+	pg.base.ship_skin_expression.tierbici_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16219,11 +15080,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_skin_expression
-
-	var_3_79.xianghe_2 = {
+	pg.base.ship_skin_expression.xianghe_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -16277,11 +15134,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_skin_expression
-
-	var_3_80.xili_4 = {
+	pg.base.ship_skin_expression.xili_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16335,11 +15188,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_skin_expression
-
-	var_3_81.xiyatu_2 = {
+	pg.base.ship_skin_expression.xiyatu_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -16393,11 +15242,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_skin_expression
-
-	var_3_82.yichui_3 = {
+	pg.base.ship_skin_expression.yichui_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16451,11 +15296,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_skin_expression
-
-	var_3_83.U47_3 = {
+	pg.base.ship_skin_expression.U47_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -16509,11 +15350,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_skin_expression
-
-	var_3_84.qingbo = {
+	pg.base.ship_skin_expression.qingbo = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -16567,11 +15404,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_skin_expression
-
-	var_3_85.shancheng_7 = {
+	pg.base.ship_skin_expression.shancheng_7 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -16625,11 +15458,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_skin_expression
-
-	var_3_86.kelifulan_4 = {
+	pg.base.ship_skin_expression.kelifulan_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -16683,11 +15512,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_skin_expression
-
-	var_3_87.aisaikesi_3 = {
+	pg.base.ship_skin_expression.aisaikesi_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -16741,11 +15566,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_skin_expression
-
-	var_3_88.beiqi_2 = {
+	pg.base.ship_skin_expression.beiqi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16799,11 +15620,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_skin_expression
-
-	var_3_89.qiubite_2 = {
+	pg.base.ship_skin_expression.qiubite_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -16857,11 +15674,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_skin_expression
-
-	var_3_90.shiyu_g = {
+	pg.base.ship_skin_expression.shiyu_g = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -16915,11 +15728,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_skin_expression
-
-	var_3_91.ximu_g = {
+	pg.base.ship_skin_expression.ximu_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -16973,11 +15782,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_skin_expression
-
-	var_3_92.xiao_3 = {
+	pg.base.ship_skin_expression.xiao_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -17031,11 +15836,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_skin_expression
-
-	var_3_93.yamaijia_3 = {
+	pg.base.ship_skin_expression.yamaijia_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -17089,11 +15890,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.ship_skin_expression
-
-	var_3_94.xukufu_2 = {
+	pg.base.ship_skin_expression.xukufu_2 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -17147,11 +15944,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_skin_expression
-
-	var_3_95.yueke_2 = {
+	pg.base.ship_skin_expression.yueke_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -17205,11 +15998,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_skin_expression
-
-	var_3_96.shancheng_6 = {
+	pg.base.ship_skin_expression.shancheng_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -17263,11 +16052,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_skin_expression
-
-	var_3_97.shancheng_8 = {
+	pg.base.ship_skin_expression.shancheng_8 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -17321,11 +16106,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_skin_expression
-
-	var_3_98.U110 = {
+	pg.base.ship_skin_expression.U110 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -17379,8 +16160,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_3_98
-	var_3_98.base.ship_skin_expression.U110_2 = {
+	pg.base.ship_skin_expression.U110_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -17438,11 +16218,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_skin_expression
-
-	var_4_0.abeikelongbi_2 = {
+	pg.base.ship_skin_expression.abeikelongbi_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -17496,11 +16272,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_skin_expression
-
-	var_4_1.aidingbao_3 = {
+	pg.base.ship_skin_expression.aidingbao_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -17554,11 +16326,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_skin_expression
-
-	var_4_2.genaisennao_2 = {
+	pg.base.ship_skin_expression.genaisennao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -17612,11 +16380,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_skin_expression
-
-	var_4_3.heianjie_3 = {
+	pg.base.ship_skin_expression.heianjie_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -17670,11 +16434,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_skin_expression
-
-	var_4_4.mengfeisi_3 = {
+	pg.base.ship_skin_expression.mengfeisi_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -17728,11 +16488,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_skin_expression
-
-	var_4_5.sanriyue_2 = {
+	pg.base.ship_skin_expression.sanriyue_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -17786,11 +16542,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_skin_expression
-
-	var_4_6.simoli = {
+	pg.base.ship_skin_expression.simoli = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -17844,11 +16596,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_skin_expression
-
-	var_4_7.simoli_3 = {
+	pg.base.ship_skin_expression.simoli_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -17902,11 +16650,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_skin_expression
-
-	var_4_8.sipeibojue_5 = {
+	pg.base.ship_skin_expression.sipeibojue_5 = {
 		default = "1",
 		feeling3 = "2",
 		main3_replace = "",
@@ -17960,11 +16704,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_skin_expression
-
-	var_4_9.xipeier_idol = {
+	pg.base.ship_skin_expression.xipeier_idol = {
 		default = "1",
 		feeling3 = "3",
 		main3_replace = "",
@@ -18018,11 +16758,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_skin_expression
-
-	var_4_10.aierdeliqi_5 = {
+	pg.base.ship_skin_expression.aierdeliqi_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -18076,11 +16812,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_skin_expression
-
-	var_4_11.biaoqiang_6 = {
+	pg.base.ship_skin_expression.biaoqiang_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -18134,11 +16866,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_skin_expression
-
-	var_4_12.lafei_6 = {
+	pg.base.ship_skin_expression.lafei_6 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -18192,11 +16920,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_skin_expression
-
-	var_4_13.z23_5 = {
+	pg.base.ship_skin_expression.z23_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -18250,11 +16974,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_skin_expression
-
-	var_4_14.lingbo_7 = {
+	pg.base.ship_skin_expression.lingbo_7 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -18308,11 +17028,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_skin_expression
-
-	var_4_15.chuixue_5 = {
+	pg.base.ship_skin_expression.chuixue_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -18366,11 +17082,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_skin_expression
-
-	var_4_16.chicheng_idol = {
+	pg.base.ship_skin_expression.chicheng_idol = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -18424,11 +17136,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_skin_expression
-
-	var_4_17.jiasikenie_idol = {
+	pg.base.ship_skin_expression.jiasikenie_idol = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -18482,11 +17190,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_skin_expression
-
-	var_4_18.kelifulan_idol = {
+	pg.base.ship_skin_expression.kelifulan_idol = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -18540,11 +17244,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_skin_expression
-
-	var_4_19.ninghai_4 = {
+	pg.base.ship_skin_expression.ninghai_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -18598,11 +17298,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_skin_expression
-
-	var_4_20.pinghai_4 = {
+	pg.base.ship_skin_expression.pinghai_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -18656,11 +17352,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_skin_expression
-
-	var_4_21.xiefeierde_idol = {
+	pg.base.ship_skin_expression.xiefeierde_idol = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -18714,11 +17406,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_skin_expression
-
-	var_4_22.xipeier_idolns = {
+	pg.base.ship_skin_expression.xipeier_idolns = {
 		default = "1",
 		feeling3 = "",
 		main3_replace = "",
@@ -18772,11 +17460,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_skin_expression
-
-	var_4_23.beierfasite_4 = {
+	pg.base.ship_skin_expression.beierfasite_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -18830,11 +17514,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_skin_expression
-
-	var_4_24.gelasige = {
+	pg.base.ship_skin_expression.gelasige = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -18888,11 +17568,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_skin_expression
-
-	var_4_25.gelasige_2 = {
+	pg.base.ship_skin_expression.gelasige_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -18946,11 +17622,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_skin_expression
-
-	var_4_26.vtuber_shion = {
+	pg.base.ship_skin_expression.vtuber_shion = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19004,11 +17676,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_skin_expression
-
-	var_4_27.vtuber_shion_2 = {
+	pg.base.ship_skin_expression.vtuber_shion_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19062,11 +17730,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_skin_expression
-
-	var_4_28.vtuber_sora = {
+	pg.base.ship_skin_expression.vtuber_sora = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19120,11 +17784,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_skin_expression
-
-	var_4_29.vtuber_sora_2 = {
+	pg.base.ship_skin_expression.vtuber_sora_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19178,11 +17838,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_skin_expression
-
-	var_4_30.vtuber_fubuki = {
+	pg.base.ship_skin_expression.vtuber_fubuki = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19236,11 +17892,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_skin_expression
-
-	var_4_31.vtuber_fubuki_2 = {
+	pg.base.ship_skin_expression.vtuber_fubuki_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19294,11 +17946,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_skin_expression
-
-	var_4_32.vtuber_matsuri = {
+	pg.base.ship_skin_expression.vtuber_matsuri = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19352,11 +18000,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_skin_expression
-
-	var_4_33.vtuber_matsuri_2 = {
+	pg.base.ship_skin_expression.vtuber_matsuri_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -19410,11 +18054,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_skin_expression
-
-	var_4_34.vtuber_ayame = {
+	pg.base.ship_skin_expression.vtuber_ayame = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -19468,11 +18108,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_skin_expression
-
-	var_4_35.vtuber_ayame_2 = {
+	pg.base.ship_skin_expression.vtuber_ayame_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -19526,11 +18162,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_skin_expression
-
-	var_4_36.vtuber_aqua = {
+	pg.base.ship_skin_expression.vtuber_aqua = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19584,11 +18216,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_skin_expression
-
-	var_4_37.vtuber_aqua_2 = {
+	pg.base.ship_skin_expression.vtuber_aqua_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19642,11 +18270,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_skin_expression
-
-	var_4_38.vtuber_mio = {
+	pg.base.ship_skin_expression.vtuber_mio = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -19700,11 +18324,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_skin_expression
-
-	var_4_39.vtuber_mio_2 = {
+	pg.base.ship_skin_expression.vtuber_mio_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -19758,11 +18378,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_skin_expression
-
-	var_4_40.qiye_5 = {
+	pg.base.ship_skin_expression.qiye_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -19816,11 +18432,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_skin_expression
-
-	var_4_41.haiwangxing_2 = {
+	pg.base.ship_skin_expression.haiwangxing_2 = {
 		default = "1",
 		feeling3 = "0",
 		main3_replace = "",
@@ -19874,11 +18486,7 @@ end)()
 		login = "0",
 		detail = "4"
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_skin_expression
-
-	var_4_42.qingbo_3 = {
+	pg.base.ship_skin_expression.qingbo_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -19932,11 +18540,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_skin_expression
-
-	var_4_43.aheye_3 = {
+	pg.base.ship_skin_expression.aheye_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -19990,11 +18594,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_skin_expression
-
-	var_4_44.kangkede_3 = {
+	pg.base.ship_skin_expression.kangkede_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -20048,11 +18648,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_skin_expression
-
-	var_4_45.ruoye_2 = {
+	pg.base.ship_skin_expression.ruoye_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20106,11 +18702,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_skin_expression
-
-	var_4_46.wushiling_3 = {
+	pg.base.ship_skin_expression.wushiling_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -20164,11 +18756,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_skin_expression
-
-	var_4_47.xiyatu_3 = {
+	pg.base.ship_skin_expression.xiyatu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20222,11 +18810,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_skin_expression
-
-	var_4_48.duwei_3 = {
+	pg.base.ship_skin_expression.duwei_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -20280,11 +18864,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_skin_expression
-
-	var_4_49.dujiaoshou_5 = {
+	pg.base.ship_skin_expression.dujiaoshou_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20338,11 +18918,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_skin_expression
-
-	var_4_50.guinu = {
+	pg.base.ship_skin_expression.guinu = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -20396,11 +18972,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_skin_expression
-
-	var_4_51.guinu_g = {
+	pg.base.ship_skin_expression.guinu_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -20454,11 +19026,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_skin_expression
-
-	var_4_52.guinu_2 = {
+	pg.base.ship_skin_expression.guinu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20512,11 +19080,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_skin_expression
-
-	var_4_53.jiangfeng_h = {
+	pg.base.ship_skin_expression.jiangfeng_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20570,11 +19134,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_skin_expression
-
-	var_4_54.kelifulan_5 = {
+	pg.base.ship_skin_expression.kelifulan_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20628,11 +19188,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_skin_expression
-
-	var_4_55.lingbo_8 = {
+	pg.base.ship_skin_expression.lingbo_8 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -20686,11 +19242,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_skin_expression
-
-	var_4_56.nengdai = {
+	pg.base.ship_skin_expression.nengdai = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20744,11 +19296,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_skin_expression
-
-	var_4_57.nengdai_2 = {
+	pg.base.ship_skin_expression.nengdai_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -20802,11 +19350,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_skin_expression
-
-	var_4_58.xiang = {
+	pg.base.ship_skin_expression.xiang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20860,11 +19404,7 @@ end)()
 		login = "7",
 		detail = "4"
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_skin_expression
-
-	var_4_59.xiang_2 = {
+	pg.base.ship_skin_expression.xiang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20918,11 +19458,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_skin_expression
-
-	var_4_60.feiteliedadi_2 = {
+	pg.base.ship_skin_expression.feiteliedadi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -20976,11 +19512,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_skin_expression
-
-	var_4_61.changmen_3 = {
+	pg.base.ship_skin_expression.changmen_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -21034,11 +19566,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_skin_expression
-
-	var_4_62.chuchun_g = {
+	pg.base.ship_skin_expression.chuchun_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -21092,11 +19620,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_skin_expression
-
-	var_4_63.huangjiafangzhou_4 = {
+	pg.base.ship_skin_expression.huangjiafangzhou_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -21150,11 +19674,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_skin_expression
-
-	var_4_64.junhe = {
+	pg.base.ship_skin_expression.junhe = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -21208,11 +19728,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_skin_expression
-
-	var_4_65.junhe_5 = {
+	pg.base.ship_skin_expression.junhe_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -21266,11 +19782,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_skin_expression
-
-	var_4_66.lafei_h = {
+	pg.base.ship_skin_expression.lafei_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -21324,11 +19836,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_skin_expression
-
-	var_4_67.longfeng = {
+	pg.base.ship_skin_expression.longfeng = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -21382,11 +19890,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_skin_expression
-
-	var_4_68.longfeng_2 = {
+	pg.base.ship_skin_expression.longfeng_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -21440,11 +19944,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_skin_expression
-
-	var_4_69.nananpudun_2 = {
+	pg.base.ship_skin_expression.nananpudun_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -21498,11 +19998,7 @@ end)()
 		login = "8",
 		detail = "1"
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_skin_expression
-
-	var_4_70.wudao_4 = {
+	pg.base.ship_skin_expression.wudao_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -21556,11 +20052,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_skin_expression
-
-	var_4_71.xia = {
+	pg.base.ship_skin_expression.xia = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -21614,11 +20106,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_skin_expression
-
-	var_4_72.xia_2 = {
+	pg.base.ship_skin_expression.xia_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -21672,11 +20160,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_skin_expression
-
-	var_4_73.z35_2 = {
+	pg.base.ship_skin_expression.z35_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -21730,11 +20214,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_skin_expression
-
-	var_4_74.aheye_2 = {
+	pg.base.ship_skin_expression.aheye_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -21788,11 +20268,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_skin_expression
-
-	var_4_75.xuefeng_3 = {
+	pg.base.ship_skin_expression.xuefeng_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -21846,11 +20322,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_skin_expression
-
-	var_4_76.dafeng_4 = {
+	pg.base.ship_skin_expression.dafeng_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -21904,11 +20376,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_skin_expression
-
-	var_4_77.muyue_4 = {
+	pg.base.ship_skin_expression.muyue_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -21962,11 +20430,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_skin_expression
-
-	var_4_78.deyizhi_5 = {
+	pg.base.ship_skin_expression.deyizhi_5 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -22020,11 +20484,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_skin_expression
-
-	var_4_79.birui_4 = {
+	pg.base.ship_skin_expression.birui_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -22078,11 +20538,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_skin_expression
-
-	var_4_80.guanghui_5 = {
+	pg.base.ship_skin_expression.guanghui_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -22136,11 +20592,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_skin_expression
-
-	var_4_81.ninghai_5 = {
+	pg.base.ship_skin_expression.ninghai_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -22194,11 +20646,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_skin_expression
-
-	var_4_82.pinghai_5 = {
+	pg.base.ship_skin_expression.pinghai_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -22252,11 +20700,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_skin_expression
-
-	var_4_83.quejie_3 = {
+	pg.base.ship_skin_expression.quejie_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -22310,11 +20754,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_skin_expression
-
-	var_4_84.haerxibaoweier = {
+	pg.base.ship_skin_expression.haerxibaoweier = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -22368,11 +20808,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_skin_expression
-
-	var_4_85.haerxibaoweier_3 = {
+	pg.base.ship_skin_expression.haerxibaoweier_3 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -22426,11 +20862,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_skin_expression
-
-	var_4_86.heitaizi_3 = {
+	pg.base.ship_skin_expression.heitaizi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -22484,11 +20916,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_skin_expression
-
-	var_4_87.nvjiang_g = {
+	pg.base.ship_skin_expression.nvjiang_g = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -22542,11 +20970,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_skin_expression
-
-	var_4_88.geluosite_2 = {
+	pg.base.ship_skin_expression.geluosite_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -22600,11 +21024,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_skin_expression
-
-	var_4_89.pubo = {
+	pg.base.ship_skin_expression.pubo = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -22658,11 +21078,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_skin_expression
-
-	var_4_90.shaenhuosite_2 = {
+	pg.base.ship_skin_expression.shaenhuosite_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -22716,11 +21132,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_skin_expression
-
-	var_4_91.biluokexi = {
+	pg.base.ship_skin_expression.biluokexi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -22774,11 +21186,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_skin_expression
-
-	var_4_92.tianlangxing_4 = {
+	pg.base.ship_skin_expression.tianlangxing_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -22832,11 +21240,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_skin_expression
-
-	var_4_93.wuqi_2 = {
+	pg.base.ship_skin_expression.wuqi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -22890,11 +21294,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.ship_skin_expression
-
-	var_4_94.changliang_2 = {
+	pg.base.ship_skin_expression.changliang_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -22948,11 +21348,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_skin_expression
-
-	var_4_95.yichui_4 = {
+	pg.base.ship_skin_expression.yichui_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -23006,11 +21402,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_skin_expression
-
-	var_4_96.biluokexi_2 = {
+	pg.base.ship_skin_expression.biluokexi_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -23064,11 +21456,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_skin_expression
-
-	var_4_97.daiduo = {
+	pg.base.ship_skin_expression.daiduo = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -23122,11 +21510,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_skin_expression
-
-	var_4_98.yixian_h = {
+	pg.base.ship_skin_expression.yixian_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -23180,8 +21564,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_4_98
-	var_4_98.base.ship_skin_expression.beierfasite_5 = {
+	pg.base.ship_skin_expression.beierfasite_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -23239,11 +21622,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_skin_expression
-
-	var_5_0.geluosite = {
+	pg.base.ship_skin_expression.geluosite = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -23297,11 +21676,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_skin_expression
-
-	var_5_1.ouruola_4 = {
+	pg.base.ship_skin_expression.ouruola_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -23355,11 +21730,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_skin_expression
-
-	var_5_2.changyue_2 = {
+	pg.base.ship_skin_expression.changyue_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -23413,11 +21784,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_skin_expression
-
-	var_5_3.pubo_2 = {
+	pg.base.ship_skin_expression.pubo_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -23471,11 +21838,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_skin_expression
-
-	var_5_4.biaoqiang_7 = {
+	pg.base.ship_skin_expression.biaoqiang_7 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -23529,11 +21892,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_skin_expression
-
-	var_5_5.akasita_3 = {
+	pg.base.ship_skin_expression.akasita_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -23587,11 +21946,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_skin_expression
-
-	var_5_6.gelunbiya_2 = {
+	pg.base.ship_skin_expression.gelunbiya_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -23645,11 +22000,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_skin_expression
-
-	var_5_7.rexin_2 = {
+	pg.base.ship_skin_expression.rexin_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -23703,11 +22054,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_skin_expression
-
-	var_5_8.weiyan = {
+	pg.base.ship_skin_expression.weiyan = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -23761,11 +22108,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_skin_expression
-
-	var_5_9.weiyan_2 = {
+	pg.base.ship_skin_expression.weiyan_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -23819,11 +22162,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_skin_expression
-
-	var_5_10.mingsike = {
+	pg.base.ship_skin_expression.mingsike = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -23877,11 +22216,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_skin_expression
-
-	var_5_11.mingsike_2 = {
+	pg.base.ship_skin_expression.mingsike_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -23935,11 +22270,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_skin_expression
-
-	var_5_12.tashigan = {
+	pg.base.ship_skin_expression.tashigan = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -23993,11 +22324,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_skin_expression
-
-	var_5_13.afuleer_2 = {
+	pg.base.ship_skin_expression.afuleer_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -24051,11 +22378,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_skin_expression
-
-	var_5_14.shuixingjinian = {
+	pg.base.ship_skin_expression.shuixingjinian = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -24109,11 +22432,7 @@ end)()
 		login = "4",
 		detail = "7"
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_skin_expression
-
-	var_5_15.shuixingjinian_2 = {
+	pg.base.ship_skin_expression.shuixingjinian_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -24167,11 +22486,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_skin_expression
-
-	var_5_16.qiabayefu = {
+	pg.base.ship_skin_expression.qiabayefu = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -24225,11 +22540,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_skin_expression
-
-	var_5_17.qiabayefu_2 = {
+	pg.base.ship_skin_expression.qiabayefu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -24283,11 +22594,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_skin_expression
-
-	var_5_18.gangute = {
+	pg.base.ship_skin_expression.gangute = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -24341,11 +22648,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_skin_expression
-
-	var_5_19.gangute_2 = {
+	pg.base.ship_skin_expression.gangute_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -24399,11 +22702,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_skin_expression
-
-	var_5_20.suweiailuoxiya = {
+	pg.base.ship_skin_expression.suweiailuoxiya = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -24457,11 +22756,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_skin_expression
-
-	var_5_21.suweiailuoxiya_2 = {
+	pg.base.ship_skin_expression.suweiailuoxiya_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -24515,11 +22810,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_skin_expression
-
-	var_5_22.salatuojia = {
+	pg.base.ship_skin_expression.salatuojia = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -24573,11 +22864,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_skin_expression
-
-	var_5_23.kelifulan = {
+	pg.base.ship_skin_expression.kelifulan = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -24631,11 +22918,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_skin_expression
-
-	var_5_24.dahuangfeng = {
+	pg.base.ship_skin_expression.dahuangfeng = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -24689,11 +22972,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_skin_expression
-
-	var_5_25.gelunbiya = {
+	pg.base.ship_skin_expression.gelunbiya = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -24747,11 +23026,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_skin_expression
-
-	var_5_26.tashigan_2 = {
+	pg.base.ship_skin_expression.tashigan_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -24805,11 +23080,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_skin_expression
-
-	var_5_27.z23_6 = {
+	pg.base.ship_skin_expression.z23_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -24863,11 +23134,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_skin_expression
-
-	var_5_28.mingshi_5 = {
+	pg.base.ship_skin_expression.mingshi_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -24921,11 +23188,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_skin_expression
-
-	var_5_29.lingbo_9 = {
+	pg.base.ship_skin_expression.lingbo_9 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -24979,11 +23242,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_skin_expression
-
-	var_5_30.qiye = {
+	pg.base.ship_skin_expression.qiye = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -25037,11 +23296,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_skin_expression
-
-	var_5_31.hailunna = {
+	pg.base.ship_skin_expression.hailunna = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -25095,11 +23350,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_skin_expression
-
-	var_5_32.Z46_3 = {
+	pg.base.ship_skin_expression.Z46_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -25153,11 +23404,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_skin_expression
-
-	var_5_33.beiqi_3 = {
+	pg.base.ship_skin_expression.beiqi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -25211,11 +23458,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_skin_expression
-
-	var_5_34.bulaimodun = {
+	pg.base.ship_skin_expression.bulaimodun = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -25269,11 +23512,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.ship_skin_expression
-
-	var_5_35.bulaimodun_3 = {
+	pg.base.ship_skin_expression.bulaimodun_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -25327,11 +23566,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.ship_skin_expression
-
-	var_5_36.kasabulanka = {
+	pg.base.ship_skin_expression.kasabulanka = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -25385,11 +23620,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.ship_skin_expression
-
-	var_5_37.kasabulanka_2 = {
+	pg.base.ship_skin_expression.kasabulanka_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -25443,11 +23674,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.ship_skin_expression
-
-	var_5_38.kubo = {
+	pg.base.ship_skin_expression.kubo = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -25501,11 +23728,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.ship_skin_expression
-
-	var_5_39.kubo_2 = {
+	pg.base.ship_skin_expression.kubo_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -25559,11 +23782,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.ship_skin_expression
-
-	var_5_40.lansaiyu = {
+	pg.base.ship_skin_expression.lansaiyu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -25617,11 +23836,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.ship_skin_expression
-
-	var_5_41.lansaiyu_2 = {
+	pg.base.ship_skin_expression.lansaiyu_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -25675,11 +23890,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.ship_skin_expression
-
-	var_5_42.linuo = {
+	pg.base.ship_skin_expression.linuo = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -25733,11 +23944,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.ship_skin_expression
-
-	var_5_43.linuo_2 = {
+	pg.base.ship_skin_expression.linuo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -25791,11 +23998,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.ship_skin_expression
-
-	var_5_44.mabuerheide = {
+	pg.base.ship_skin_expression.mabuerheide = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -25849,11 +24052,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.ship_skin_expression
-
-	var_5_45.mabuerheide_2 = {
+	pg.base.ship_skin_expression.mabuerheide_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -25907,11 +24106,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.ship_skin_expression
-
-	var_5_46.wuwei = {
+	pg.base.ship_skin_expression.wuwei = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -25965,11 +24160,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.ship_skin_expression
-
-	var_5_47.wuwei_2 = {
+	pg.base.ship_skin_expression.wuwei_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -26023,11 +24214,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.ship_skin_expression
-
-	var_5_48.xiaotiane_6 = {
+	pg.base.ship_skin_expression.xiaotiane_6 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -26081,11 +24268,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.ship_skin_expression
-
-	var_5_49.baerdimo_4 = {
+	pg.base.ship_skin_expression.baerdimo_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -26139,11 +24322,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.ship_skin_expression
-
-	var_5_50.huangjiafangzhou = {
+	pg.base.ship_skin_expression.huangjiafangzhou = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -26197,11 +24376,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.ship_skin_expression
-
-	var_5_51.mingniabolisi_3 = {
+	pg.base.ship_skin_expression.mingniabolisi_3 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -26255,11 +24430,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.ship_skin_expression
-
-	var_5_52.gin_2 = {
+	pg.base.ship_skin_expression.gin_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -26313,11 +24484,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.ship_skin_expression
-
-	var_5_53.lafei_8 = {
+	pg.base.ship_skin_expression.lafei_8 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -26371,11 +24538,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.ship_skin_expression
-
-	var_5_54.huayue = {
+	pg.base.ship_skin_expression.huayue = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -26429,11 +24592,7 @@ end)()
 		login = "8",
 		detail = "7"
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.ship_skin_expression
-
-	var_5_55.huayue_3 = {
+	pg.base.ship_skin_expression.huayue_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -26487,11 +24646,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.ship_skin_expression
-
-	var_5_56.juanbo_2 = {
+	pg.base.ship_skin_expression.juanbo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -26545,11 +24700,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.ship_skin_expression
-
-	var_5_57.nake_2 = {
+	pg.base.ship_skin_expression.nake_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -26603,11 +24754,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.ship_skin_expression
-
-	var_5_58.wushiling_g = {
+	pg.base.ship_skin_expression.wushiling_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -26661,11 +24808,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.ship_skin_expression
-
-	var_5_59.changbo = {
+	pg.base.ship_skin_expression.changbo = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -26719,11 +24862,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.ship_skin_expression
-
-	var_5_60.changbo_2 = {
+	pg.base.ship_skin_expression.changbo_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -26777,11 +24916,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.ship_skin_expression
-
-	var_5_61.zubing_3 = {
+	pg.base.ship_skin_expression.zubing_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -26835,11 +24970,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.ship_skin_expression
-
-	var_5_62.birui_5 = {
+	pg.base.ship_skin_expression.birui_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -26893,11 +25024,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.ship_skin_expression
-
-	var_5_63.tuzuo = {
+	pg.base.ship_skin_expression.tuzuo = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -26951,11 +25078,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.ship_skin_expression
-
-	var_5_64.shengwang_younv = {
+	pg.base.ship_skin_expression.shengwang_younv = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -27009,11 +25132,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.ship_skin_expression
-
-	var_5_65.jingang = {
+	pg.base.ship_skin_expression.jingang = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -27067,11 +25186,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.ship_skin_expression
-
-	var_5_66.zhenming = {
+	pg.base.ship_skin_expression.zhenming = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -27125,11 +25240,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.ship_skin_expression
-
-	var_5_67.tuzuo_2 = {
+	pg.base.ship_skin_expression.tuzuo_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -27183,11 +25294,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.ship_skin_expression
-
-	var_5_68.taertu = {
+	pg.base.ship_skin_expression.taertu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -27241,11 +25348,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.ship_skin_expression
-
-	var_5_69.taertu_2 = {
+	pg.base.ship_skin_expression.taertu_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -27299,11 +25402,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.ship_skin_expression
-
-	var_5_70.lumang_2 = {
+	pg.base.ship_skin_expression.lumang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -27357,11 +25456,7 @@ end)()
 		login = "2",
 		detail = "8"
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.ship_skin_expression
-
-	var_5_71.z23_8 = {
+	pg.base.ship_skin_expression.z23_8 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -27415,11 +25510,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.ship_skin_expression
-
-	var_5_72.lisailiu = {
+	pg.base.ship_skin_expression.lisailiu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -27473,11 +25564,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.ship_skin_expression
-
-	var_5_73.aerjiliya = {
+	pg.base.ship_skin_expression.aerjiliya = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -27531,11 +25618,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.ship_skin_expression
-
-	var_5_74.shengnvzhende = {
+	pg.base.ship_skin_expression.shengnvzhende = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -27589,11 +25672,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.ship_skin_expression
-
-	var_5_75.shengnvzhende_2 = {
+	pg.base.ship_skin_expression.shengnvzhende_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -27647,11 +25726,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.ship_skin_expression
-
-	var_5_76.jialisuoniye = {
+	pg.base.ship_skin_expression.jialisuoniye = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -27705,11 +25780,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.ship_skin_expression
-
-	var_5_77.z23_7 = {
+	pg.base.ship_skin_expression.z23_7 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -27763,11 +25834,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.ship_skin_expression
-
-	var_5_78.wokelan = {
+	pg.base.ship_skin_expression.wokelan = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -27821,11 +25888,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.ship_skin_expression
-
-	var_5_79.wokelan_2 = {
+	pg.base.ship_skin_expression.wokelan_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -27879,11 +25942,7 @@ end)()
 		login = "8",
 		detail = "2"
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.ship_skin_expression
-
-	var_5_80.beiyaen = {
+	pg.base.ship_skin_expression.beiyaen = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -27937,11 +25996,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.ship_skin_expression
-
-	var_5_81.edu_3 = {
+	pg.base.ship_skin_expression.edu_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -27995,11 +26050,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.ship_skin_expression
-
-	var_5_82.aimierbeierding_3 = {
+	pg.base.ship_skin_expression.aimierbeierding_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -28053,11 +26104,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.ship_skin_expression
-
-	var_5_83.chuixue_6 = {
+	pg.base.ship_skin_expression.chuixue_6 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -28111,11 +26158,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.ship_skin_expression
-
-	var_5_84.beierfasite_7 = {
+	pg.base.ship_skin_expression.beierfasite_7 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -28169,11 +26212,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.ship_skin_expression
-
-	var_5_85.beiyaen_2 = {
+	pg.base.ship_skin_expression.beiyaen_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -28227,11 +26266,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.ship_skin_expression
-
-	var_5_86.jialisuoniye_2 = {
+	pg.base.ship_skin_expression.jialisuoniye_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -28285,11 +26320,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.ship_skin_expression
-
-	var_5_87.lisailiu_2 = {
+	pg.base.ship_skin_expression.lisailiu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -28343,11 +26374,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.ship_skin_expression
-
-	var_5_88.aerjiliya_2 = {
+	pg.base.ship_skin_expression.aerjiliya_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -28401,11 +26428,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.ship_skin_expression
-
-	var_5_89.rangbaer_3 = {
+	pg.base.ship_skin_expression.rangbaer_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -28459,11 +26482,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.ship_skin_expression
-
-	var_5_90.daqinghuayu_4 = {
+	pg.base.ship_skin_expression.daqinghuayu_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -28517,11 +26536,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.ship_skin_expression
-
-	var_5_91.fuerban_4 = {
+	pg.base.ship_skin_expression.fuerban_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -28575,11 +26590,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.ship_skin_expression
-
-	var_5_92.guanghui_younv = {
+	pg.base.ship_skin_expression.guanghui_younv = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -28633,11 +26644,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.ship_skin_expression
-
-	var_5_93.haman_3 = {
+	pg.base.ship_skin_expression.haman_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -28691,11 +26698,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.ship_skin_expression
-
-	var_5_94.pinghai_6 = {
+	pg.base.ship_skin_expression.pinghai_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -28749,11 +26752,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.ship_skin_expression
-
-	var_5_95.ninghai_6 = {
+	pg.base.ship_skin_expression.ninghai_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -28807,11 +26806,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.ship_skin_expression
-
-	var_5_96.lituoliao_3 = {
+	pg.base.ship_skin_expression.lituoliao_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -28865,11 +26860,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.ship_skin_expression
-
-	var_5_97.masazhusai_2 = {
+	pg.base.ship_skin_expression.masazhusai_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -28923,11 +26914,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.ship_skin_expression
-
-	var_5_98.susaikesi_3 = {
+	pg.base.ship_skin_expression.susaikesi_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -28981,8 +26968,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_5_98
-	var_5_98.base.ship_skin_expression.shengluyisi_4 = {
+	pg.base.ship_skin_expression.shengluyisi_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29040,11 +27026,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.ship_skin_expression
-
-	var_6_0.aheye_4 = {
+	pg.base.ship_skin_expression.aheye_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29098,11 +27080,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.ship_skin_expression
-
-	var_6_1.daiduo_2 = {
+	pg.base.ship_skin_expression.daiduo_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -29156,11 +27134,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.ship_skin_expression
-
-	var_6_2.biluokexi_4 = {
+	pg.base.ship_skin_expression.biluokexi_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29214,11 +27188,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.ship_skin_expression
-
-	var_6_3.qiye_6 = {
+	pg.base.ship_skin_expression.qiye_6 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -29272,11 +27242,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.ship_skin_expression
-
-	var_6_4.jiqi_3 = {
+	pg.base.ship_skin_expression.jiqi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29330,11 +27296,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.ship_skin_expression
-
-	var_6_5.hailunna_g = {
+	pg.base.ship_skin_expression.hailunna_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29388,11 +27350,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.ship_skin_expression
-
-	var_6_6.shengdiyage_h = {
+	pg.base.ship_skin_expression.shengdiyage_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29446,11 +27404,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.ship_skin_expression
-
-	var_6_7.mingniabolisi_h = {
+	pg.base.ship_skin_expression.mingniabolisi_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -29504,11 +27458,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.ship_skin_expression
-
-	var_6_8.dujiaoshou_h = {
+	pg.base.ship_skin_expression.dujiaoshou_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -29562,11 +27512,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.ship_skin_expression
-
-	var_6_9.chushuang_g = {
+	pg.base.ship_skin_expression.chushuang_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -29620,11 +27566,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.ship_skin_expression
-
-	var_6_10.aisijimo = {
+	pg.base.ship_skin_expression.aisijimo = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -29678,11 +27620,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.ship_skin_expression
-
-	var_6_11.aisijimo_2 = {
+	pg.base.ship_skin_expression.aisijimo_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -29736,11 +27674,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.ship_skin_expression
-
-	var_6_12.feiteliedadi_h = {
+	pg.base.ship_skin_expression.feiteliedadi_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -29794,11 +27728,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.ship_skin_expression
-
-	var_6_13.aidang_5 = {
+	pg.base.ship_skin_expression.aidang_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -29852,11 +27782,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.ship_skin_expression
-
-	var_6_14.dafeng_5 = {
+	pg.base.ship_skin_expression.dafeng_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -29910,11 +27836,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.ship_skin_expression
-
-	var_6_15.gaoxiong_5 = {
+	pg.base.ship_skin_expression.gaoxiong_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -29968,11 +27890,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.ship_skin_expression
-
-	var_6_16.I19_3 = {
+	pg.base.ship_skin_expression.I19_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -30026,11 +27944,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.ship_skin_expression
-
-	var_6_17.ruihe_3 = {
+	pg.base.ship_skin_expression.ruihe_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -30084,11 +27998,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.ship_skin_expression
-
-	var_6_18.xianghe_3 = {
+	pg.base.ship_skin_expression.xianghe_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -30142,11 +28052,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.ship_skin_expression
-
-	var_6_19.gaoxiong = {
+	pg.base.ship_skin_expression.gaoxiong = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -30200,11 +28106,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.ship_skin_expression
-
-	var_6_20.weiershiqinwang = {
+	pg.base.ship_skin_expression.weiershiqinwang = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -30258,11 +28160,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.ship_skin_expression
-
-	var_6_21.weiershiqinwang_3 = {
+	pg.base.ship_skin_expression.weiershiqinwang_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -30316,11 +28214,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.ship_skin_expression
-
-	var_6_22.xianggelila_3 = {
+	pg.base.ship_skin_expression.xianggelila_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -30374,11 +28268,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.ship_skin_expression
-
-	var_6_23.yuekegongjue_2 = {
+	pg.base.ship_skin_expression.yuekegongjue_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -30432,11 +28322,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.ship_skin_expression
-
-	var_6_24.aoding = {
+	pg.base.ship_skin_expression.aoding = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -30490,11 +28376,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.ship_skin_expression
-
-	var_6_25.chaijun = {
+	pg.base.ship_skin_expression.chaijun = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -30548,11 +28430,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.ship_skin_expression
-
-	var_6_26.deleike = {
+	pg.base.ship_skin_expression.deleike = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -30606,11 +28484,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.ship_skin_expression
-
-	var_6_27.meiyinci = {
+	pg.base.ship_skin_expression.meiyinci = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -30664,11 +28538,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.ship_skin_expression
-
-	var_6_28.xiyatu_4 = {
+	pg.base.ship_skin_expression.xiyatu_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -30722,11 +28592,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.ship_skin_expression
-
-	var_6_29.xiangbin = {
+	pg.base.ship_skin_expression.xiangbin = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -30780,11 +28646,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.ship_skin_expression
-
-	var_6_30.yingyong = {
+	pg.base.ship_skin_expression.yingyong = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -30838,11 +28700,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.ship_skin_expression
-
-	var_6_31.yingyong_2 = {
+	pg.base.ship_skin_expression.yingyong_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -30896,11 +28754,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.ship_skin_expression
-
-	var_6_32.ying = {
+	pg.base.ship_skin_expression.ying = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -30954,11 +28808,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.ship_skin_expression
-
-	var_6_33.ying_2 = {
+	pg.base.ship_skin_expression.ying_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -31012,11 +28862,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.ship_skin_expression
-
-	var_6_34.yikaluosi = {
+	pg.base.ship_skin_expression.yikaluosi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -31070,11 +28916,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.ship_skin_expression
-
-	var_6_35.yikaluosi_3 = {
+	pg.base.ship_skin_expression.yikaluosi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -31128,11 +28970,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.ship_skin_expression
-
-	var_6_36.hemin = {
+	pg.base.ship_skin_expression.hemin = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -31186,11 +29024,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.ship_skin_expression
-
-	var_6_37.hemin_3 = {
+	pg.base.ship_skin_expression.hemin_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -31244,11 +29078,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.ship_skin_expression
-
-	var_6_38.jingang_3 = {
+	pg.base.ship_skin_expression.jingang_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -31302,11 +29132,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.ship_skin_expression
-
-	var_6_39.hao = {
+	pg.base.ship_skin_expression.hao = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -31360,11 +29186,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.ship_skin_expression
-
-	var_6_40.hao_2 = {
+	pg.base.ship_skin_expression.hao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -31418,11 +29240,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.ship_skin_expression
-
-	var_6_41.yingxianzuo = {
+	pg.base.ship_skin_expression.yingxianzuo = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -31476,11 +29294,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.ship_skin_expression
-
-	var_6_42.yingxianzuo_2 = {
+	pg.base.ship_skin_expression.yingxianzuo_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -31534,11 +29348,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.ship_skin_expression
-
-	var_6_43.z23_h = {
+	pg.base.ship_skin_expression.z23_h = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -31592,11 +29402,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.ship_skin_expression
-
-	var_6_44.bolisi_3 = {
+	pg.base.ship_skin_expression.bolisi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -31650,11 +29456,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.ship_skin_expression
-
-	var_6_45.duli_5 = {
+	pg.base.ship_skin_expression.duli_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -31708,11 +29510,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.ship_skin_expression
-
-	var_6_46.bolisi = {
+	pg.base.ship_skin_expression.bolisi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -31766,11 +29564,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.ship_skin_expression
-
-	var_6_47.chaijun_2 = {
+	pg.base.ship_skin_expression.chaijun_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -31824,11 +29618,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.ship_skin_expression
-
-	var_6_48.deleike_2 = {
+	pg.base.ship_skin_expression.deleike_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -31882,11 +29672,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.ship_skin_expression
-
-	var_6_49.U96 = {
+	pg.base.ship_skin_expression.U96 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -31940,11 +29726,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.ship_skin_expression
-
-	var_6_50.U96_2 = {
+	pg.base.ship_skin_expression.U96_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -31998,11 +29780,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.ship_skin_expression
-
-	var_6_51.yueke_3 = {
+	pg.base.ship_skin_expression.yueke_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -32056,11 +29834,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.ship_skin_expression
-
-	var_6_52.Z26 = {
+	pg.base.ship_skin_expression.Z26 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -32114,11 +29888,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.ship_skin_expression
-
-	var_6_53.Z26_2 = {
+	pg.base.ship_skin_expression.Z26_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -32172,11 +29942,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.ship_skin_expression
-
-	var_6_54.tiancheng_2 = {
+	pg.base.ship_skin_expression.tiancheng_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32230,11 +29996,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.ship_skin_expression
-
-	var_6_55.buli_super = {
+	pg.base.ship_skin_expression.buli_super = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -32288,11 +30050,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.ship_skin_expression
-
-	var_6_56.hemin_2 = {
+	pg.base.ship_skin_expression.hemin_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32346,11 +30104,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.ship_skin_expression
-
-	var_6_57.jianye = {
+	pg.base.ship_skin_expression.jianye = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -32404,11 +30158,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.ship_skin_expression
-
-	var_6_58.jianye_2 = {
+	pg.base.ship_skin_expression.jianye_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -32462,11 +30212,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.ship_skin_expression
-
-	var_6_59.jiyi = {
+	pg.base.ship_skin_expression.jiyi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32520,11 +30266,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.ship_skin_expression
-
-	var_6_60.jiyi_2 = {
+	pg.base.ship_skin_expression.jiyi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32578,11 +30320,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.ship_skin_expression
-
-	var_6_61.liangyue = {
+	pg.base.ship_skin_expression.liangyue = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32636,11 +30374,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.ship_skin_expression
-
-	var_6_62.liangyue_2 = {
+	pg.base.ship_skin_expression.liangyue_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -32694,11 +30428,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.ship_skin_expression
-
-	var_6_63.linuo_4 = {
+	pg.base.ship_skin_expression.linuo_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -32752,11 +30482,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.ship_skin_expression
-
-	var_6_64.nigulasi_4 = {
+	pg.base.ship_skin_expression.nigulasi_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -32810,11 +30536,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.ship_skin_expression
-
-	var_6_65.xiongye = {
+	pg.base.ship_skin_expression.xiongye = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32868,11 +30590,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.ship_skin_expression
-
-	var_6_66.xukufu_3 = {
+	pg.base.ship_skin_expression.xukufu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -32926,11 +30644,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.ship_skin_expression
-
-	var_6_67.yikaluosi_2 = {
+	pg.base.ship_skin_expression.yikaluosi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -32984,11 +30698,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.ship_skin_expression
-
-	var_6_68.xiongye_2 = {
+	pg.base.ship_skin_expression.xiongye_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -33042,11 +30752,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.ship_skin_expression
-
-	var_6_69.qiandaitian = {
+	pg.base.ship_skin_expression.qiandaitian = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -33100,11 +30806,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.ship_skin_expression
-
-	var_6_70.qiandaitian_2 = {
+	pg.base.ship_skin_expression.qiandaitian_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -33158,11 +30860,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.ship_skin_expression
-
-	var_6_71.qiansui = {
+	pg.base.ship_skin_expression.qiansui = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -33216,11 +30914,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.ship_skin_expression
-
-	var_6_72.qiansui_2 = {
+	pg.base.ship_skin_expression.qiansui_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -33274,11 +30968,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.ship_skin_expression
-
-	var_6_73.xinnong = {
+	pg.base.ship_skin_expression.xinnong = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -33332,11 +31022,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.ship_skin_expression
-
-	var_6_74.quejie_4 = {
+	pg.base.ship_skin_expression.quejie_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -33390,11 +31076,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.ship_skin_expression
-
-	var_6_75.mingshi_h = {
+	pg.base.ship_skin_expression.mingshi_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -33448,11 +31130,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.ship_skin_expression
-
-	var_6_76.sanli_h = {
+	pg.base.ship_skin_expression.sanli_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -33506,11 +31184,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.ship_skin_expression
-
-	var_6_77.youming_g = {
+	pg.base.ship_skin_expression.youming_g = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -33564,11 +31238,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.ship_skin_expression
-
-	var_6_78.aisaikesi_4 = {
+	pg.base.ship_skin_expression.aisaikesi_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -33622,11 +31292,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.ship_skin_expression
-
-	var_6_79.baerdimo_5 = {
+	pg.base.ship_skin_expression.baerdimo_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -33680,11 +31346,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.ship_skin_expression
-
-	var_6_80.Chicheng_4 = {
+	pg.base.ship_skin_expression.Chicheng_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -33738,11 +31400,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.ship_skin_expression
-
-	var_6_81.Jiahe_5 = {
+	pg.base.ship_skin_expression.Jiahe_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -33796,11 +31454,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.ship_skin_expression
-
-	var_6_82.lei_4 = {
+	pg.base.ship_skin_expression.lei_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -33854,11 +31508,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.ship_skin_expression
-
-	var_6_83.dian_4 = {
+	pg.base.ship_skin_expression.dian_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -33912,11 +31562,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.ship_skin_expression
-
-	var_6_84.lingbo_10 = {
+	pg.base.ship_skin_expression.lingbo_10 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -33970,11 +31616,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.ship_skin_expression
-
-	var_6_85.luyijiushi_2 = {
+	pg.base.ship_skin_expression.luyijiushi_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -34028,11 +31670,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.ship_skin_expression
-
-	var_6_86.nengdai_4 = {
+	pg.base.ship_skin_expression.nengdai_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -34086,11 +31724,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.ship_skin_expression
-
-	var_6_87.U110_3 = {
+	pg.base.ship_skin_expression.U110_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -34144,11 +31778,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.ship_skin_expression
-
-	var_6_88.chushuang_2 = {
+	pg.base.ship_skin_expression.chushuang_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -34202,11 +31832,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.ship_skin_expression
-
-	var_6_89.weiqita_2 = {
+	pg.base.ship_skin_expression.weiqita_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -34260,11 +31886,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.ship_skin_expression
-
-	var_6_90.xinnong_2 = {
+	pg.base.ship_skin_expression.xinnong_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -34318,11 +31940,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.ship_skin_expression
-
-	var_6_91.Zhenming_3 = {
+	pg.base.ship_skin_expression.Zhenming_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -34376,11 +31994,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.ship_skin_expression
-
-	var_6_92.xiefeierde_4 = {
+	pg.base.ship_skin_expression.xiefeierde_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -34434,11 +32048,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.ship_skin_expression
-
-	var_6_93.youming_2 = {
+	pg.base.ship_skin_expression.youming_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -34492,11 +32102,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.ship_skin_expression
-
-	var_6_94.pulinsidun = {
+	pg.base.ship_skin_expression.pulinsidun = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -34550,11 +32156,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.ship_skin_expression
-
-	var_6_95.pulinsidun_2 = {
+	pg.base.ship_skin_expression.pulinsidun_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -34608,11 +32210,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.ship_skin_expression
-
-	var_6_96.changdao_3 = {
+	pg.base.ship_skin_expression.changdao_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -34666,11 +32264,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.ship_skin_expression
-
-	var_6_97.ladefute_3 = {
+	pg.base.ship_skin_expression.ladefute_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -34724,11 +32318,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.ship_skin_expression
-
-	var_6_98.weiqita_3 = {
+	pg.base.ship_skin_expression.weiqita_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -34782,8 +32372,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_6_98
-	var_6_98.base.ship_skin_expression.bensen_2 = {
+	pg.base.ship_skin_expression.bensen_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -34841,11 +32430,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.ship_skin_expression
-
-	var_7_0.haman_4 = {
+	pg.base.ship_skin_expression.haman_4 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -34899,11 +32484,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.ship_skin_expression
-
-	var_7_1.daqinghuayu_idol = {
+	pg.base.ship_skin_expression.daqinghuayu_idol = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -34957,11 +32538,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.ship_skin_expression
-
-	var_7_2.Z46_4 = {
+	pg.base.ship_skin_expression.Z46_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35015,11 +32592,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.ship_skin_expression
-
-	var_7_3.U110_4 = {
+	pg.base.ship_skin_expression.U110_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -35073,11 +32646,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.ship_skin_expression
-
-	var_7_4.dujiaoshou_6 = {
+	pg.base.ship_skin_expression.dujiaoshou_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35131,11 +32700,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.ship_skin_expression
-
-	var_7_5.guanghui_idol = {
+	pg.base.ship_skin_expression.guanghui_idol = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -35189,11 +32754,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.ship_skin_expression
-
-	var_7_6.tashigan_idol = {
+	pg.base.ship_skin_expression.tashigan_idol = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35247,11 +32808,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.ship_skin_expression
-
-	var_7_7.luoen_idol = {
+	pg.base.ship_skin_expression.luoen_idol = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35305,11 +32862,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.ship_skin_expression
-
-	var_7_8.baerdimo_idol = {
+	pg.base.ship_skin_expression.baerdimo_idol = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -35363,11 +32916,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.ship_skin_expression
-
-	var_7_9.dafeng_idol = {
+	pg.base.ship_skin_expression.dafeng_idol = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -35421,11 +32970,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.ship_skin_expression
-
-	var_7_10.daiduo_idol = {
+	pg.base.ship_skin_expression.daiduo_idol = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -35479,11 +33024,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.ship_skin_expression
-
-	var_7_11.edu_idol = {
+	pg.base.ship_skin_expression.edu_idol = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -35537,11 +33078,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.ship_skin_expression
-
-	var_7_12.xixuegui_5 = {
+	pg.base.ship_skin_expression.xixuegui_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -35595,11 +33132,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.ship_skin_expression
-
-	var_7_13.yanzhan_3 = {
+	pg.base.ship_skin_expression.yanzhan_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -35653,11 +33186,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.ship_skin_expression
-
-	var_7_14.yilishabai_3 = {
+	pg.base.ship_skin_expression.yilishabai_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -35711,11 +33240,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.ship_skin_expression
-
-	var_7_15.yilishabai_4 = {
+	pg.base.ship_skin_expression.yilishabai_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35769,11 +33294,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.ship_skin_expression
-
-	var_7_16.z2_2 = {
+	pg.base.ship_skin_expression.z2_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35827,11 +33348,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.ship_skin_expression
-
-	var_7_17.maliluosi_doa = {
+	pg.base.ship_skin_expression.maliluosi_doa = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35885,11 +33402,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.ship_skin_expression
-
-	var_7_18.maliluosi_2_DOA = {
+	pg.base.ship_skin_expression.maliluosi_2_DOA = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -35943,11 +33456,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.ship_skin_expression
-
-	var_7_19.suixiang_doa = {
+	pg.base.ship_skin_expression.suixiang_doa = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -36001,11 +33510,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.ship_skin_expression
-
-	var_7_20.suixiang_2_doa = {
+	pg.base.ship_skin_expression.suixiang_2_doa = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -36059,11 +33564,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.ship_skin_expression
-
-	var_7_21.xia_DOA = {
+	pg.base.ship_skin_expression.xia_DOA = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -36117,11 +33618,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.ship_skin_expression
-
-	var_7_22.xia_2_DOA = {
+	pg.base.ship_skin_expression.xia_2_DOA = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -36175,11 +33672,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.ship_skin_expression
-
-	var_7_23.haixiao_DOA = {
+	pg.base.ship_skin_expression.haixiao_DOA = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -36233,11 +33726,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.ship_skin_expression
-
-	var_7_24.haixiao_2_DOA = {
+	pg.base.ship_skin_expression.haixiao_2_DOA = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -36291,11 +33780,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.ship_skin_expression
-
-	var_7_25.zhixiao_DOA = {
+	pg.base.ship_skin_expression.zhixiao_DOA = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -36349,11 +33834,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.ship_skin_expression
-
-	var_7_26.zhixiao_2_DOA = {
+	pg.base.ship_skin_expression.zhixiao_2_DOA = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -36407,11 +33888,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.ship_skin_expression
-
-	var_7_27.nvtiangou_DOA = {
+	pg.base.ship_skin_expression.nvtiangou_DOA = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -36465,11 +33942,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.ship_skin_expression
-
-	var_7_28.nvtiangou_2_DOA = {
+	pg.base.ship_skin_expression.nvtiangou_2_DOA = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -36523,11 +33996,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.ship_skin_expression
-
-	var_7_29.monika_DOA = {
+	pg.base.ship_skin_expression.monika_DOA = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -36581,11 +34050,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.ship_skin_expression
-
-	var_7_30.monika_2_DOA = {
+	pg.base.ship_skin_expression.monika_2_DOA = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -36639,11 +34104,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.ship_skin_expression
-
-	var_7_31.feilong_alter = {
+	pg.base.ship_skin_expression.feilong_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -36697,11 +34158,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.ship_skin_expression
-
-	var_7_32.haman_5 = {
+	pg.base.ship_skin_expression.haman_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -36755,11 +34212,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.ship_skin_expression
-
-	var_7_33.jiejinsi_3 = {
+	pg.base.ship_skin_expression.jiejinsi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -36813,11 +34266,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.ship_skin_expression
-
-	var_7_34.kubo_3 = {
+	pg.base.ship_skin_expression.kubo_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -36871,11 +34320,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.ship_skin_expression
-
-	var_7_35.mabuerheide_3 = {
+	pg.base.ship_skin_expression.mabuerheide_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -36929,11 +34374,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.ship_skin_expression
-
-	var_7_36.mingniabolisi_4 = {
+	pg.base.ship_skin_expression.mingniabolisi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -36987,11 +34428,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.ship_skin_expression
-
-	var_7_37.xili_5 = {
+	pg.base.ship_skin_expression.xili_5 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -37045,11 +34482,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.ship_skin_expression
-
-	var_7_38.salatuojia_6 = {
+	pg.base.ship_skin_expression.salatuojia_6 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -37103,11 +34536,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.ship_skin_expression
-
-	var_7_39.aoding_2 = {
+	pg.base.ship_skin_expression.aoding_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -37161,11 +34590,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.ship_skin_expression
-
-	var_7_40.beierfasite_8 = {
+	pg.base.ship_skin_expression.beierfasite_8 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -37219,11 +34644,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.ship_skin_expression
-
-	var_7_41.biluokexi_5 = {
+	pg.base.ship_skin_expression.biluokexi_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -37277,11 +34698,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.ship_skin_expression
-
-	var_7_42.chunyue_2 = {
+	pg.base.ship_skin_expression.chunyue_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -37335,11 +34752,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.ship_skin_expression
-
-	var_7_43.haiyinlixi = {
+	pg.base.ship_skin_expression.haiyinlixi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -37393,11 +34806,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.ship_skin_expression
-
-	var_7_44.haiyinlixi_3 = {
+	pg.base.ship_skin_expression.haiyinlixi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -37451,11 +34860,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.ship_skin_expression
-
-	var_7_45.liangyue_3 = {
+	pg.base.ship_skin_expression.liangyue_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -37509,11 +34914,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.ship_skin_expression
-
-	var_7_46.lisailiu_3 = {
+	pg.base.ship_skin_expression.lisailiu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -37567,11 +34968,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.ship_skin_expression
-
-	var_7_47.niulunbao = {
+	pg.base.ship_skin_expression.niulunbao = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -37625,11 +35022,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.ship_skin_expression
-
-	var_7_48.niulunbao_2 = {
+	pg.base.ship_skin_expression.niulunbao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -37683,11 +35076,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.ship_skin_expression
-
-	var_7_49.rangbaer_4 = {
+	pg.base.ship_skin_expression.rangbaer_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -37741,11 +35130,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.ship_skin_expression
-
-	var_7_50.shitelasai = {
+	pg.base.ship_skin_expression.shitelasai = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -37799,11 +35184,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.ship_skin_expression
-
-	var_7_51.shitelasai_2 = {
+	pg.base.ship_skin_expression.shitelasai_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -37857,11 +35238,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.ship_skin_expression
-
-	var_7_52.tierbici_4 = {
+	pg.base.ship_skin_expression.tierbici_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -37915,11 +35292,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.ship_skin_expression
-
-	var_7_53.U37 = {
+	pg.base.ship_skin_expression.U37 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -37973,11 +35346,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.ship_skin_expression
-
-	var_7_54.U37_2 = {
+	pg.base.ship_skin_expression.U37_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -38031,11 +35400,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.ship_skin_expression
-
-	var_7_55.U110_5 = {
+	pg.base.ship_skin_expression.U110_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -38089,11 +35454,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.ship_skin_expression
-
-	var_7_56.weixi = {
+	pg.base.ship_skin_expression.weixi = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -38147,11 +35508,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.ship_skin_expression
-
-	var_7_57.weixi_3 = {
+	pg.base.ship_skin_expression.weixi_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -38205,11 +35562,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.ship_skin_expression
-
-	var_7_58.Z24 = {
+	pg.base.ship_skin_expression.Z24 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -38263,11 +35616,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.ship_skin_expression
-
-	var_7_59.Z24_2 = {
+	pg.base.ship_skin_expression.Z24_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -38321,11 +35670,7 @@ end)()
 		login = "1",
 		detail = "10"
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.ship_skin_expression
-
-	var_7_60.Z28 = {
+	pg.base.ship_skin_expression.Z28 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -38379,11 +35724,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.ship_skin_expression
-
-	var_7_61.Z28_3 = {
+	pg.base.ship_skin_expression.Z28_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -38437,11 +35778,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.ship_skin_expression
-
-	var_7_62.zhaochao_4 = {
+	pg.base.ship_skin_expression.zhaochao_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -38495,11 +35832,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.ship_skin_expression
-
-	var_7_63.Zhenming_4 = {
+	pg.base.ship_skin_expression.Zhenming_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -38553,11 +35886,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.ship_skin_expression
-
-	var_7_64.zuozhiya_6 = {
+	pg.base.ship_skin_expression.zuozhiya_6 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -38611,11 +35940,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.ship_skin_expression
-
-	var_7_65.xiangbin_2 = {
+	pg.base.ship_skin_expression.xiangbin_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -38669,11 +35994,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.ship_skin_expression
-
-	var_7_66.dahuangfeng_3 = {
+	pg.base.ship_skin_expression.dahuangfeng_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -38727,11 +36048,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.ship_skin_expression
-
-	var_7_67.bola = {
+	pg.base.ship_skin_expression.bola = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -38785,11 +36102,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.ship_skin_expression
-
-	var_7_68.wenqinzuojiaobeidi = {
+	pg.base.ship_skin_expression.wenqinzuojiaobeidi = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -38843,11 +36156,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.ship_skin_expression
-
-	var_7_69.aisaikesi_5 = {
+	pg.base.ship_skin_expression.aisaikesi_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -38901,11 +36210,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.ship_skin_expression
-
-	var_7_70.bominghan_4 = {
+	pg.base.ship_skin_expression.bominghan_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -38959,11 +36264,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.ship_skin_expression
-
-	var_7_71.bulaimodun_4 = {
+	pg.base.ship_skin_expression.bulaimodun_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -39017,11 +36318,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.ship_skin_expression
-
-	var_7_72.guangrong_3 = {
+	pg.base.ship_skin_expression.guangrong_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -39075,11 +36372,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.ship_skin_expression
-
-	var_7_73.I25_3 = {
+	pg.base.ship_skin_expression.I25_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -39133,11 +36426,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.ship_skin_expression
-
-	var_7_74.jialisuoniye_4 = {
+	pg.base.ship_skin_expression.jialisuoniye_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -39191,11 +36480,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.ship_skin_expression
-
-	var_7_75.nengdai_6 = {
+	pg.base.ship_skin_expression.nengdai_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -39249,11 +36534,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.ship_skin_expression
-
-	var_7_76.peineiluopo = {
+	pg.base.ship_skin_expression.peineiluopo = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -39307,11 +36588,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.ship_skin_expression
-
-	var_7_77.peineiluopo_2 = {
+	pg.base.ship_skin_expression.peineiluopo_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -39365,11 +36642,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.ship_skin_expression
-
-	var_7_78.salatuojia_7 = {
+	pg.base.ship_skin_expression.salatuojia_7 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -39423,11 +36696,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.ship_skin_expression
-
-	var_7_79.U410 = {
+	pg.base.ship_skin_expression.U410 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -39481,11 +36750,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.ship_skin_expression
-
-	var_7_80.U410_2 = {
+	pg.base.ship_skin_expression.U410_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -39539,11 +36804,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.ship_skin_expression
-
-	var_7_81.wudao_5 = {
+	pg.base.ship_skin_expression.wudao_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -39597,11 +36858,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.ship_skin_expression
-
-	var_7_82.yinghuochong_2 = {
+	pg.base.ship_skin_expression.yinghuochong_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -39655,11 +36912,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.ship_skin_expression
-
-	var_7_83.yingrui = {
+	pg.base.ship_skin_expression.yingrui = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -39713,11 +36966,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.ship_skin_expression
-
-	var_7_84.Z46_5 = {
+	pg.base.ship_skin_expression.Z46_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -39771,11 +37020,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.ship_skin_expression
-
-	var_7_85.zhaohe = {
+	pg.base.ship_skin_expression.zhaohe = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -39829,11 +37074,7 @@ end)()
 		login = "6",
 		detail = "1"
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.ship_skin_expression
-
-	var_7_86.ajiakesi_3 = {
+	pg.base.ship_skin_expression.ajiakesi_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -39887,11 +37128,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.ship_skin_expression
-
-	var_7_87.chaijun_3 = {
+	pg.base.ship_skin_expression.chaijun_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -39945,11 +37182,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.ship_skin_expression
-
-	var_7_88.dachao_4 = {
+	pg.base.ship_skin_expression.dachao_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -40003,11 +37236,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.ship_skin_expression
-
-	var_7_89.luyijiushi_3 = {
+	pg.base.ship_skin_expression.luyijiushi_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -40061,11 +37290,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.ship_skin_expression
-
-	var_7_90.nigulasi_5 = {
+	pg.base.ship_skin_expression.nigulasi_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -40119,11 +37344,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.ship_skin_expression
-
-	var_7_91.shengli_3 = {
+	pg.base.ship_skin_expression.shengli_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -40177,11 +37398,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.ship_skin_expression
-
-	var_7_92.yilishabai_5 = {
+	pg.base.ship_skin_expression.yilishabai_5 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -40235,11 +37452,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.ship_skin_expression
-
-	var_7_93.yingrui_2 = {
+	pg.base.ship_skin_expression.yingrui_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -40293,11 +37506,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.ship_skin_expression
-
-	var_7_94.zhaohe_2 = {
+	pg.base.ship_skin_expression.zhaohe_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -40351,11 +37560,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.ship_skin_expression
-
-	var_7_95.ouruola_h = {
+	pg.base.ship_skin_expression.ouruola_h = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -40409,11 +37614,7 @@ end)()
 		login = "2",
 		detail = "7"
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.ship_skin_expression
-
-	var_7_96.pulinsidun_3 = {
+	pg.base.ship_skin_expression.pulinsidun_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -40467,11 +37668,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.ship_skin_expression
-
-	var_7_97.shensu = {
+	pg.base.ship_skin_expression.shensu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -40525,11 +37722,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.ship_skin_expression
-
-	var_7_98.moermansike = {
+	pg.base.ship_skin_expression.moermansike = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -40583,8 +37776,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_7_98
-	var_7_98.base.ship_skin_expression.moermansike_2 = {
+	pg.base.ship_skin_expression.moermansike_2 = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -40642,11 +37834,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.ship_skin_expression
-
-	var_8_0.gangute_3 = {
+	pg.base.ship_skin_expression.gangute_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -40700,11 +37888,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.ship_skin_expression
-
-	var_8_1.hongliang = {
+	pg.base.ship_skin_expression.hongliang = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -40758,11 +37942,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.ship_skin_expression
-
-	var_8_2.hongliang_2 = {
+	pg.base.ship_skin_expression.hongliang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -40816,11 +37996,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.ship_skin_expression
-
-	var_8_3.jiluofu = {
+	pg.base.ship_skin_expression.jiluofu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -40874,11 +38050,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.ship_skin_expression
-
-	var_8_4.jiluofu_2 = {
+	pg.base.ship_skin_expression.jiluofu_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -40932,11 +38104,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.ship_skin_expression
-
-	var_8_5.qiabayefu_3 = {
+	pg.base.ship_skin_expression.qiabayefu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -40990,11 +38158,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.ship_skin_expression
-
-	var_8_6.shensu_2 = {
+	pg.base.ship_skin_expression.shensu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -41048,11 +38212,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.ship_skin_expression
-
-	var_8_7.shuixingjinian_4 = {
+	pg.base.ship_skin_expression.shuixingjinian_4 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -41106,11 +38266,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.ship_skin_expression
-
-	var_8_8.talin = {
+	pg.base.ship_skin_expression.talin = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -41164,11 +38320,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.ship_skin_expression
-
-	var_8_9.weiyan_3 = {
+	pg.base.ship_skin_expression.weiyan_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -41222,11 +38374,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.ship_skin_expression
-
-	var_8_10.leiming = {
+	pg.base.ship_skin_expression.leiming = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -41280,11 +38428,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.ship_skin_expression
-
-	var_8_11.leiming_2 = {
+	pg.base.ship_skin_expression.leiming_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -41338,11 +38482,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.ship_skin_expression
-
-	var_8_12.suweiaibeilaluosi = {
+	pg.base.ship_skin_expression.suweiaibeilaluosi = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -41396,11 +38536,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.ship_skin_expression
-
-	var_8_13.suweiaibeilaluosi_2 = {
+	pg.base.ship_skin_expression.suweiaibeilaluosi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -41454,11 +38590,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.ship_skin_expression
-
-	var_8_14.shuixingjinian_g = {
+	pg.base.ship_skin_expression.shuixingjinian_g = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -41512,11 +38644,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.ship_skin_expression
-
-	var_8_15.tashigan_3 = {
+	pg.base.ship_skin_expression.tashigan_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -41570,11 +38698,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.ship_skin_expression
-
-	var_8_16.talin_3 = {
+	pg.base.ship_skin_expression.talin_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -41628,11 +38752,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.ship_skin_expression
-
-	var_8_17.ninghai_7 = {
+	pg.base.ship_skin_expression.ninghai_7 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -41686,11 +38806,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.ship_skin_expression
-
-	var_8_18.pinghai_7 = {
+	pg.base.ship_skin_expression.pinghai_7 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -41744,11 +38860,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.ship_skin_expression
-
-	var_8_19.changmen_4 = {
+	pg.base.ship_skin_expression.changmen_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -41802,11 +38914,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.ship_skin_expression
-
-	var_8_20.lumang_3 = {
+	pg.base.ship_skin_expression.lumang_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -41860,11 +38968,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.ship_skin_expression
-
-	var_8_21.sanli_5 = {
+	pg.base.ship_skin_expression.sanli_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -41918,11 +39022,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.ship_skin_expression
-
-	var_8_22.duli_6 = {
+	pg.base.ship_skin_expression.duli_6 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -41976,11 +39076,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.ship_skin_expression
-
-	var_8_23.huangjiafangzhou_alter = {
+	pg.base.ship_skin_expression.huangjiafangzhou_alter = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -42034,11 +39130,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.ship_skin_expression
-
-	var_8_24.shidifenbote = {
+	pg.base.ship_skin_expression.shidifenbote = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -42092,11 +39184,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.ship_skin_expression
-
-	var_8_25.ailunsamuna = {
+	pg.base.ship_skin_expression.ailunsamuna = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -42150,11 +39238,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.ship_skin_expression
-
-	var_8_26.baerdimo_3 = {
+	pg.base.ship_skin_expression.baerdimo_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -42208,11 +39292,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.ship_skin_expression
-
-	var_8_27.asituoliya_2 = {
+	pg.base.ship_skin_expression.asituoliya_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -42266,11 +39346,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.ship_skin_expression
-
-	var_8_28.bangkeshan_2 = {
+	pg.base.ship_skin_expression.bangkeshan_2 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -42324,11 +39400,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.ship_skin_expression
-
-	var_8_29.bangkeshan_2_hx = {
+	pg.base.ship_skin_expression.bangkeshan_2_hx = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -42382,11 +39454,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.ship_skin_expression
-
-	var_8_30.zhuifeng = {
+	pg.base.ship_skin_expression.zhuifeng = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -42440,11 +39508,7 @@ end)()
 		login = "8",
 		detail = "7"
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.ship_skin_expression
-
-	var_8_31.abuluqi = {
+	pg.base.ship_skin_expression.abuluqi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -42498,11 +39562,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.ship_skin_expression
-
-	var_8_32.bola_2 = {
+	pg.base.ship_skin_expression.bola_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -42556,11 +39616,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.ship_skin_expression
-
-	var_8_33.daleike = {
+	pg.base.ship_skin_expression.daleike = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -42614,11 +39670,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.ship_skin_expression
-
-	var_8_34.daleike_2 = {
+	pg.base.ship_skin_expression.daleike_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -42672,11 +39724,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.ship_skin_expression
-
-	var_8_35.jiafuerbojue_2 = {
+	pg.base.ship_skin_expression.jiafuerbojue_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -42730,11 +39778,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.ship_skin_expression
-
-	var_8_36.kaisa_3 = {
+	pg.base.ship_skin_expression.kaisa_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -42788,11 +39832,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.ship_skin_expression
-
-	var_8_37.tiancheng_younv = {
+	pg.base.ship_skin_expression.tiancheng_younv = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -42846,11 +39886,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.ship_skin_expression
-
-	var_8_38.tianying = {
+	pg.base.ship_skin_expression.tianying = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -42904,11 +39940,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.ship_skin_expression
-
-	var_8_39.tianying_2 = {
+	pg.base.ship_skin_expression.tianying_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -42962,11 +39994,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.ship_skin_expression
-
-	var_8_40.tuolichaili = {
+	pg.base.ship_skin_expression.tuolichaili = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -43020,11 +40048,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.ship_skin_expression
-
-	var_8_41.tuolichaili_2 = {
+	pg.base.ship_skin_expression.tuolichaili_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -43078,11 +40102,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.ship_skin_expression
-
-	var_8_42.weineituo = {
+	pg.base.ship_skin_expression.weineituo = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -43136,11 +40156,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.ship_skin_expression
-
-	var_8_43.weineituo_2 = {
+	pg.base.ship_skin_expression.weineituo_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -43194,11 +40210,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.ship_skin_expression
-
-	var_8_44.xibeifeng = {
+	pg.base.ship_skin_expression.xibeifeng = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -43252,11 +40264,7 @@ end)()
 		login = "6",
 		detail = "1"
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.ship_skin_expression
-
-	var_8_45.xibeifeng_2 = {
+	pg.base.ship_skin_expression.xibeifeng_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -43310,11 +40318,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.ship_skin_expression
-
-	var_8_46.xinanfeng = {
+	pg.base.ship_skin_expression.xinanfeng = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -43368,11 +40372,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.ship_skin_expression
-
-	var_8_47.xinanfeng_2 = {
+	pg.base.ship_skin_expression.xinanfeng_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -43426,11 +40426,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.ship_skin_expression
-
-	var_8_48.zhuifeng_3 = {
+	pg.base.ship_skin_expression.zhuifeng_3 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -43484,11 +40480,7 @@ end)()
 		login = "11",
 		detail = "9"
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.ship_skin_expression
-
-	var_8_49.abuluqi_2 = {
+	pg.base.ship_skin_expression.abuluqi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -43542,11 +40534,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.ship_skin_expression
-
-	var_8_50.hude_3 = {
+	pg.base.ship_skin_expression.hude_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -43600,11 +40588,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.ship_skin_expression
-
-	var_8_51.jiahe_4 = {
+	pg.base.ship_skin_expression.jiahe_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -43658,11 +40642,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.ship_skin_expression
-
-	var_8_52.lingbo_11 = {
+	pg.base.ship_skin_expression.lingbo_11 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -43716,11 +40696,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.ship_skin_expression
-
-	var_8_53.U81 = {
+	pg.base.ship_skin_expression.U81 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -43774,11 +40750,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.ship_skin_expression
-
-	var_8_54.yuekecheng = {
+	pg.base.ship_skin_expression.yuekecheng = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -43832,11 +40804,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.ship_skin_expression
-
-	var_8_55.molisen = {
+	pg.base.ship_skin_expression.molisen = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -43890,11 +40858,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.ship_skin_expression
-
-	var_8_56.molisen_2 = {
+	pg.base.ship_skin_expression.molisen_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -43948,11 +40912,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.ship_skin_expression
-
-	var_8_57.salatuojia_8 = {
+	pg.base.ship_skin_expression.salatuojia_8 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -44006,11 +40966,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.ship_skin_expression
-
-	var_8_58.sheshuiyu = {
+	pg.base.ship_skin_expression.sheshuiyu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -44064,11 +41020,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.ship_skin_expression
-
-	var_8_59.sheshuiyu_3 = {
+	pg.base.ship_skin_expression.sheshuiyu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -44122,11 +41074,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.ship_skin_expression
-
-	var_8_60.tikangdeluojia = {
+	pg.base.ship_skin_expression.tikangdeluojia = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -44180,11 +41128,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.ship_skin_expression
-
-	var_8_61.tikangdeluojia_2 = {
+	pg.base.ship_skin_expression.tikangdeluojia_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -44238,11 +41182,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.ship_skin_expression
-
-	var_8_62.xinzexi = {
+	pg.base.ship_skin_expression.xinzexi = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -44296,11 +41236,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.ship_skin_expression
-
-	var_8_63.xinzexi_2 = {
+	pg.base.ship_skin_expression.xinzexi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -44354,11 +41290,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.ship_skin_expression
-
-	var_8_64.ailunsamuna_2 = {
+	pg.base.ship_skin_expression.ailunsamuna_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -44412,11 +41344,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.ship_skin_expression
-
-	var_8_65.akasita_4 = {
+	pg.base.ship_skin_expression.akasita_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -44470,11 +41398,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.ship_skin_expression
-
-	var_8_66.boyixi = {
+	pg.base.ship_skin_expression.boyixi = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -44528,11 +41452,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.ship_skin_expression
-
-	var_8_67.boyixi_2 = {
+	pg.base.ship_skin_expression.boyixi_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -44586,11 +41506,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.ship_skin_expression
-
-	var_8_68.chicheng = {
+	pg.base.ship_skin_expression.chicheng = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -44644,11 +41560,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.ship_skin_expression
-
-	var_8_69.dujiaoshou_7 = {
+	pg.base.ship_skin_expression.dujiaoshou_7 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -44702,11 +41614,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.ship_skin_expression
-
-	var_8_70.duli_g = {
+	pg.base.ship_skin_expression.duli_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -44760,11 +41668,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.ship_skin_expression
-
-	var_8_71.guinu_3 = {
+	pg.base.ship_skin_expression.guinu_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -44818,11 +41722,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.ship_skin_expression
-
-	var_8_72.i19_4 = {
+	pg.base.ship_skin_expression.i19_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -44876,11 +41776,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.ship_skin_expression
-
-	var_8_73.jiujinshan = {
+	pg.base.ship_skin_expression.jiujinshan = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -44934,11 +41830,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.ship_skin_expression
-
-	var_8_74.jiujinshan_3 = {
+	pg.base.ship_skin_expression.jiujinshan_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -44992,11 +41884,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.ship_skin_expression
-
-	var_8_75.luodeni = {
+	pg.base.ship_skin_expression.luodeni = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -45050,11 +41938,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.ship_skin_expression
-
-	var_8_76.qiye_younv = {
+	pg.base.ship_skin_expression.qiye_younv = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -45108,11 +41992,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.ship_skin_expression
-
-	var_8_77.shidifenbote_2 = {
+	pg.base.ship_skin_expression.shidifenbote_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -45166,11 +42046,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.ship_skin_expression
-
-	var_8_78.changbo_3 = {
+	pg.base.ship_skin_expression.changbo_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -45224,11 +42100,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.ship_skin_expression
-
-	var_8_79.chuchun_3 = {
+	pg.base.ship_skin_expression.chuchun_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -45282,11 +42154,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.ship_skin_expression
-
-	var_8_80.heitaizi_4 = {
+	pg.base.ship_skin_expression.heitaizi_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -45340,11 +42208,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.ship_skin_expression
-
-	var_8_81.hemin_4 = {
+	pg.base.ship_skin_expression.hemin_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -45398,11 +42262,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.ship_skin_expression
-
-	var_8_82.hude_4 = {
+	pg.base.ship_skin_expression.hude_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -45456,11 +42316,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.ship_skin_expression
-
-	var_8_83.kewei_3 = {
+	pg.base.ship_skin_expression.kewei_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -45514,11 +42370,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.ship_skin_expression
-
-	var_8_84.mengbiliai_3 = {
+	pg.base.ship_skin_expression.mengbiliai_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -45572,11 +42424,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.ship_skin_expression
-
-	var_8_85.weixi_2 = {
+	pg.base.ship_skin_expression.weixi_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -45630,11 +42478,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.ship_skin_expression
-
-	var_8_86.yingyong_3 = {
+	pg.base.ship_skin_expression.yingyong_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -45688,11 +42532,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.ship_skin_expression
-
-	var_8_87.huangjiafangzhou_h = {
+	pg.base.ship_skin_expression.huangjiafangzhou_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -45746,11 +42586,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.ship_skin_expression
-
-	var_8_88.luodeni_h = {
+	pg.base.ship_skin_expression.luodeni_h = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -45804,11 +42640,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.ship_skin_expression
-
-	var_8_89.wuqi_h = {
+	pg.base.ship_skin_expression.wuqi_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -45862,11 +42694,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.ship_skin_expression
-
-	var_8_90.hailunna_alter = {
+	pg.base.ship_skin_expression.hailunna_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -45920,11 +42748,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.ship_skin_expression
-
-	var_8_91.shengluyisi = {
+	pg.base.ship_skin_expression.shengluyisi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -45978,11 +42802,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.ship_skin_expression
-
-	var_8_92.baixue = {
+	pg.base.ship_skin_expression.baixue = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -46036,11 +42856,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.ship_skin_expression
-
-	var_8_93.baixue_2 = {
+	pg.base.ship_skin_expression.baixue_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -46094,11 +42910,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.ship_skin_expression
-
-	var_8_94.fengyun = {
+	pg.base.ship_skin_expression.fengyun = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -46152,11 +42964,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.ship_skin_expression
-
-	var_8_95.fengyun_3 = {
+	pg.base.ship_skin_expression.fengyun_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -46210,11 +43018,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.ship_skin_expression
-
-	var_8_96.kaxin_2 = {
+	pg.base.ship_skin_expression.kaxin_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -46268,11 +43072,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.ship_skin_expression
-
-	var_8_97.longxiang_3 = {
+	pg.base.ship_skin_expression.longxiang_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -46326,11 +43126,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.ship_skin_expression
-
-	var_8_98.mengfeisi_4 = {
+	pg.base.ship_skin_expression.mengfeisi_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -46384,8 +43180,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_8_98
-	var_8_98.base.ship_skin_expression.pufeng_3 = {
+	pg.base.ship_skin_expression.pufeng_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -46443,11 +43238,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.ship_skin_expression
-
-	var_9_0.tangsi_2 = {
+	pg.base.ship_skin_expression.tangsi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -46501,11 +43292,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.ship_skin_expression
-
-	var_9_1.xia_3 = {
+	pg.base.ship_skin_expression.xia_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -46559,11 +43346,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.ship_skin_expression
-
-	var_9_2.xia_g = {
+	pg.base.ship_skin_expression.xia_g = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -46617,11 +43400,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.ship_skin_expression
-
-	var_9_3.lafei_9 = {
+	pg.base.ship_skin_expression.lafei_9 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -46675,11 +43454,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.ship_skin_expression
-
-	var_9_4.z23_9 = {
+	pg.base.ship_skin_expression.z23_9 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -46733,11 +43508,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.ship_skin_expression
-
-	var_9_5.aijier = {
+	pg.base.ship_skin_expression.aijier = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -46791,11 +43562,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.ship_skin_expression
-
-	var_9_6.ankeleiqi = {
+	pg.base.ship_skin_expression.ankeleiqi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -46849,11 +43616,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.ship_skin_expression
-
-	var_9_7.aogusite = {
+	pg.base.ship_skin_expression.aogusite = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -46907,11 +43670,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.ship_skin_expression
-
-	var_9_8.bailong = {
+	pg.base.ship_skin_expression.bailong = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -46965,11 +43724,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.ship_skin_expression
-
-	var_9_9.junhe_3 = {
+	pg.base.ship_skin_expression.junhe_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -47023,11 +43778,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.ship_skin_expression
-
-	var_9_10.makeboluo = {
+	pg.base.ship_skin_expression.makeboluo = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -47081,11 +43832,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.ship_skin_expression
-
-	var_9_11.chunxiang = {
+	pg.base.ship_skin_expression.chunxiang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -47139,11 +43886,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.ship_skin_expression
-
-	var_9_12.chunxiang_2 = {
+	pg.base.ship_skin_expression.chunxiang_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -47197,11 +43940,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.ship_skin_expression
-
-	var_9_13.huangchao_3 = {
+	pg.base.ship_skin_expression.huangchao_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -47255,11 +43994,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.ship_skin_expression
-
-	var_9_14.lvzi = {
+	pg.base.ship_skin_expression.lvzi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -47313,11 +44048,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.ship_skin_expression
-
-	var_9_15.lvzi_2 = {
+	pg.base.ship_skin_expression.lvzi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -47371,11 +44102,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.ship_skin_expression
-
-	var_9_16.qianzao = {
+	pg.base.ship_skin_expression.qianzao = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -47429,11 +44156,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.ship_skin_expression
-
-	var_9_17.qianzao_2 = {
+	pg.base.ship_skin_expression.qianzao_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -47487,11 +44210,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.ship_skin_expression
-
-	var_9_18.ximu_6 = {
+	pg.base.ship_skin_expression.ximu_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -47545,11 +44264,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.ship_skin_expression
-
-	var_9_19.yamei = {
+	pg.base.ship_skin_expression.yamei = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -47603,11 +44318,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.ship_skin_expression
-
-	var_9_20.yamei_2 = {
+	pg.base.ship_skin_expression.yamei_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -47661,11 +44372,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.ship_skin_expression
-
-	var_9_21.yizhi = {
+	pg.base.ship_skin_expression.yizhi = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -47719,11 +44426,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.ship_skin_expression
-
-	var_9_22.yizhi_2 = {
+	pg.base.ship_skin_expression.yizhi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -47777,11 +44480,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.ship_skin_expression
-
-	var_9_23.z2_3 = {
+	pg.base.ship_skin_expression.z2_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -47835,11 +44534,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.ship_skin_expression
-
-	var_9_24.zhenmei = {
+	pg.base.ship_skin_expression.zhenmei = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -47893,11 +44588,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.ship_skin_expression
-
-	var_9_25.zhenmei_2 = {
+	pg.base.ship_skin_expression.zhenmei_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -47951,11 +44642,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.ship_skin_expression
-
-	var_9_26.zi = {
+	pg.base.ship_skin_expression.zi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -48009,11 +44696,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.ship_skin_expression
-
-	var_9_27.zi_2 = {
+	pg.base.ship_skin_expression.zi_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -48067,11 +44750,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.ship_skin_expression
-
-	var_9_28.abeikelongbi_3 = {
+	pg.base.ship_skin_expression.abeikelongbi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -48125,11 +44804,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.ship_skin_expression
-
-	var_9_29.beikaluolaina_2 = {
+	pg.base.ship_skin_expression.beikaluolaina_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -48183,11 +44858,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.ship_skin_expression
-
-	var_9_30.huangjiafangzhou_g = {
+	pg.base.ship_skin_expression.huangjiafangzhou_g = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -48241,11 +44912,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.ship_skin_expression
-
-	var_9_31.jifeng_3 = {
+	pg.base.ship_skin_expression.jifeng_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -48299,11 +44966,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.ship_skin_expression
-
-	var_9_32.linuo_3 = {
+	pg.base.ship_skin_expression.linuo_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -48357,11 +45020,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.ship_skin_expression
-
-	var_9_33.rexin_3 = {
+	pg.base.ship_skin_expression.rexin_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -48415,11 +45074,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.ship_skin_expression
-
-	var_9_34.yinggelahan = {
+	pg.base.ship_skin_expression.yinggelahan = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -48473,11 +45128,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.ship_skin_expression
-
-	var_9_35.yinggelahan_2 = {
+	pg.base.ship_skin_expression.yinggelahan_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -48531,11 +45182,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.ship_skin_expression
-
-	var_9_36.yingwuluo = {
+	pg.base.ship_skin_expression.yingwuluo = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -48589,11 +45236,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.ship_skin_expression
-
-	var_9_37.yingwuluo_2 = {
+	pg.base.ship_skin_expression.yingwuluo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -48647,11 +45290,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.ship_skin_expression
-
-	var_9_38.canglong_alter = {
+	pg.base.ship_skin_expression.canglong_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -48705,11 +45344,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.ship_skin_expression
-
-	var_9_39.salatuojia_9 = {
+	pg.base.ship_skin_expression.salatuojia_9 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -48763,11 +45398,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.ship_skin_expression
-
-	var_9_40.shanfeng = {
+	pg.base.ship_skin_expression.shanfeng = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -48821,11 +45452,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.ship_skin_expression
-
-	var_9_41.shanfeng_2 = {
+	pg.base.ship_skin_expression.shanfeng_2 = {
 		default = "1",
 		feeling3 = "",
 		main3_replace = "",
@@ -48879,11 +45506,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.ship_skin_expression
-
-	var_9_42.daofeng = {
+	pg.base.ship_skin_expression.daofeng = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -48937,11 +45560,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.ship_skin_expression
-
-	var_9_43.daofeng_4 = {
+	pg.base.ship_skin_expression.daofeng_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -48995,11 +45614,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.ship_skin_expression
-
-	var_9_44.gecheng = {
+	pg.base.ship_skin_expression.gecheng = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -49053,11 +45668,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.ship_skin_expression
-
-	var_9_45.gecheng_2 = {
+	pg.base.ship_skin_expression.gecheng_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -49111,11 +45722,7 @@ end)()
 		login = "8",
 		detail = "5"
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.ship_skin_expression
-
-	var_9_46.haifeng = {
+	pg.base.ship_skin_expression.haifeng = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49169,11 +45776,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.ship_skin_expression
-
-	var_9_47.haifeng_2 = {
+	pg.base.ship_skin_expression.haifeng_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49227,11 +45830,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.ship_skin_expression
-
-	var_9_48.youliang = {
+	pg.base.ship_skin_expression.youliang = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -49285,11 +45884,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.ship_skin_expression
-
-	var_9_49.youliang_2 = {
+	pg.base.ship_skin_expression.youliang_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -49343,11 +45938,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.ship_skin_expression
-
-	var_9_50.zhumo = {
+	pg.base.ship_skin_expression.zhumo = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49401,11 +45992,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.ship_skin_expression
-
-	var_9_51.edu_4 = {
+	pg.base.ship_skin_expression.edu_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -49459,11 +46046,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.ship_skin_expression
-
-	var_9_52.heitaizi_5 = {
+	pg.base.ship_skin_expression.heitaizi_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49517,11 +46100,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.ship_skin_expression
-
-	var_9_53.wushiling_5 = {
+	pg.base.ship_skin_expression.wushiling_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -49575,11 +46154,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.ship_skin_expression
-
-	var_9_54.mabuerheide_4 = {
+	pg.base.ship_skin_expression.mabuerheide_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -49633,11 +46208,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.ship_skin_expression
-
-	var_9_55.aierdeliqi_7 = {
+	pg.base.ship_skin_expression.aierdeliqi_7 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49691,11 +46262,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.ship_skin_expression
-
-	var_9_56.chaijun_4 = {
+	pg.base.ship_skin_expression.chaijun_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49749,11 +46316,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.ship_skin_expression
-
-	var_9_57.mingyunnvshen_2 = {
+	pg.base.ship_skin_expression.mingyunnvshen_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -49807,11 +46370,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.ship_skin_expression
-
-	var_9_58.shitelasai_3 = {
+	pg.base.ship_skin_expression.shitelasai_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -49865,11 +46424,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.ship_skin_expression
-
-	var_9_59.aikesaite_2 = {
+	pg.base.ship_skin_expression.aikesaite_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -49923,11 +46478,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.ship_skin_expression
-
-	var_9_60.aimierbeierding_4 = {
+	pg.base.ship_skin_expression.aimierbeierding_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -49981,11 +46532,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.ship_skin_expression
-
-	var_9_61.manchao_2 = {
+	pg.base.ship_skin_expression.manchao_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -50039,11 +46586,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.ship_skin_expression
-
-	var_9_62.shenghuan_2 = {
+	pg.base.ship_skin_expression.shenghuan_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -50097,11 +46640,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.ship_skin_expression
-
-	var_9_63.tianying_3 = {
+	pg.base.ship_skin_expression.tianying_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -50155,11 +46694,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.ship_skin_expression
-
-	var_9_64.wenqinzuojiaobeidi_3 = {
+	pg.base.ship_skin_expression.wenqinzuojiaobeidi_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -50213,11 +46748,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.ship_skin_expression
-
-	var_9_65.wokelan_3 = {
+	pg.base.ship_skin_expression.wokelan_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -50271,11 +46802,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.ship_skin_expression
-
-	var_9_66.dafeng_h = {
+	pg.base.ship_skin_expression.dafeng_h = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -50329,11 +46856,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.ship_skin_expression
-
-	var_9_67.nengdai_h = {
+	pg.base.ship_skin_expression.nengdai_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -50387,11 +46910,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.ship_skin_expression
-
-	var_9_68.yueke_h = {
+	pg.base.ship_skin_expression.yueke_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -50445,11 +46964,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.ship_skin_expression
-
-	var_9_69.fusang_alter = {
+	pg.base.ship_skin_expression.fusang_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -50503,11 +47018,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.ship_skin_expression
-
-	var_9_70.xili_g = {
+	pg.base.ship_skin_expression.xili_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -50561,11 +47072,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.ship_skin_expression
-
-	var_9_71.yuekecheng_3 = {
+	pg.base.ship_skin_expression.yuekecheng_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -50619,11 +47126,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.ship_skin_expression
-
-	var_9_72.xinaoerliang = {
+	pg.base.ship_skin_expression.xinaoerliang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -50677,11 +47180,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.ship_skin_expression
-
-	var_9_73.boyixi_3 = {
+	pg.base.ship_skin_expression.boyixi_3 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -50735,11 +47234,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.ship_skin_expression
-
-	var_9_74.jialisuoniye_3 = {
+	pg.base.ship_skin_expression.jialisuoniye_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -50793,11 +47288,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.ship_skin_expression
-
-	var_9_75.kebu = {
+	pg.base.ship_skin_expression.kebu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -50851,11 +47342,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.ship_skin_expression
-
-	var_9_76.kebu_3 = {
+	pg.base.ship_skin_expression.kebu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -50909,11 +47396,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.ship_skin_expression
-
-	var_9_77.lituoliao_4 = {
+	pg.base.ship_skin_expression.lituoliao_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -50967,11 +47450,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.ship_skin_expression
-
-	var_9_78.mayebuleize = {
+	pg.base.ship_skin_expression.mayebuleize = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -51025,11 +47504,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.ship_skin_expression
-
-	var_9_79.mayebuleize_3 = {
+	pg.base.ship_skin_expression.mayebuleize_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -51083,11 +47558,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.ship_skin_expression
-
-	var_9_80.nengdai_5 = {
+	pg.base.ship_skin_expression.nengdai_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -51141,11 +47612,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.ship_skin_expression
-
-	var_9_81.xiongye_3 = {
+	pg.base.ship_skin_expression.xiongye_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -51199,11 +47666,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.ship_skin_expression
-
-	var_9_82.yichui_5 = {
+	pg.base.ship_skin_expression.yichui_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -51257,11 +47720,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.ship_skin_expression
-
-	var_9_83.fuxu = {
+	pg.base.ship_skin_expression.fuxu = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -51315,11 +47774,7 @@ end)()
 		login = "1",
 		detail = "9"
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.ship_skin_expression
-
-	var_9_84.fuxu_2 = {
+	pg.base.ship_skin_expression.fuxu_2 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -51373,11 +47828,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.ship_skin_expression
-
-	var_9_85.ougen_5 = {
+	pg.base.ship_skin_expression.ougen_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -51431,11 +47882,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.ship_skin_expression
-
-	var_9_86.qiye_7 = {
+	pg.base.ship_skin_expression.qiye_7 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -51489,11 +47936,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.ship_skin_expression
-
-	var_9_87.baoduoliuhua = {
+	pg.base.ship_skin_expression.baoduoliuhua = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -51547,11 +47990,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.ship_skin_expression
-
-	var_9_88.baoduoliuhua_2 = {
+	pg.base.ship_skin_expression.baoduoliuhua_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -51605,11 +48044,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.ship_skin_expression
-
-	var_9_89.he = {
+	pg.base.ship_skin_expression.he = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -51663,11 +48098,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.ship_skin_expression
-
-	var_9_90.he_2 = {
+	pg.base.ship_skin_expression.he_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -51721,11 +48152,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.ship_skin_expression
-
-	var_9_91.lian = {
+	pg.base.ship_skin_expression.lian = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -51779,11 +48206,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.ship_skin_expression
-
-	var_9_92.lian_2 = {
+	pg.base.ship_skin_expression.lian_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -51837,11 +48260,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.ship_skin_expression
-
-	var_9_93.mengya = {
+	pg.base.ship_skin_expression.mengya = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -51895,11 +48314,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.ship_skin_expression
-
-	var_9_94.mengya_2 = {
+	pg.base.ship_skin_expression.mengya_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -51953,11 +48368,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.ship_skin_expression
-
-	var_9_95.naimeizi = {
+	pg.base.ship_skin_expression.naimeizi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -52011,11 +48422,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.ship_skin_expression
-
-	var_9_96.naimeizi_2 = {
+	pg.base.ship_skin_expression.naimeizi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52069,11 +48476,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.ship_skin_expression
-
-	var_9_97.qian = {
+	pg.base.ship_skin_expression.qian = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52127,11 +48530,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.ship_skin_expression
-
-	var_9_98.qian_2 = {
+	pg.base.ship_skin_expression.qian_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52185,8 +48584,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_9_98
-	var_9_98.base.ship_skin_expression.qianlai = {
+	pg.base.ship_skin_expression.qianlai = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -52244,11 +48642,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.ship_skin_expression
-
-	var_10_0.qianlai_2 = {
+	pg.base.ship_skin_expression.qianlai_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -52302,11 +48696,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.ship_skin_expression
-
-	var_10_1.bulaimodun_2 = {
+	pg.base.ship_skin_expression.bulaimodun_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52360,11 +48750,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.ship_skin_expression
-
-	var_10_2.feiying_alter = {
+	pg.base.ship_skin_expression.feiying_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -52418,11 +48804,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.ship_skin_expression
-
-	var_10_3.duli_3 = {
+	pg.base.ship_skin_expression.duli_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -52476,11 +48858,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.ship_skin_expression
-
-	var_10_4.keluoladuo_3 = {
+	pg.base.ship_skin_expression.keluoladuo_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -52534,11 +48912,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.ship_skin_expression
-
-	var_10_5.genaisennao_alter = {
+	pg.base.ship_skin_expression.genaisennao_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52592,11 +48966,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.ship_skin_expression
-
-	var_10_6.xinaoerliang_2 = {
+	pg.base.ship_skin_expression.xinaoerliang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52650,11 +49020,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.ship_skin_expression
-
-	var_10_7.xiao_4 = {
+	pg.base.ship_skin_expression.xiao_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52708,11 +49074,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.ship_skin_expression
-
-	var_10_8.junhe_4 = {
+	pg.base.ship_skin_expression.junhe_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52766,11 +49128,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.ship_skin_expression
-
-	var_10_9.adaerbote = {
+	pg.base.ship_skin_expression.adaerbote = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -52824,11 +49182,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.ship_skin_expression
-
-	var_10_10.adaerbote_2 = {
+	pg.base.ship_skin_expression.adaerbote_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -52882,11 +49236,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.ship_skin_expression
-
-	var_10_11.aogusite_2 = {
+	pg.base.ship_skin_expression.aogusite_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -52940,11 +49290,7 @@ end)()
 		login = "8",
 		detail = "3"
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.ship_skin_expression
-
-	var_10_12.bailong_2 = {
+	pg.base.ship_skin_expression.bailong_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -52998,11 +49344,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.ship_skin_expression
-
-	var_10_13.bisimai_3 = {
+	pg.base.ship_skin_expression.bisimai_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -53056,11 +49398,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.ship_skin_expression
-
-	var_10_14.daqinghuayu_3 = {
+	pg.base.ship_skin_expression.daqinghuayu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -53114,11 +49452,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.ship_skin_expression
-
-	var_10_15.hao_4 = {
+	pg.base.ship_skin_expression.hao_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -53172,11 +49506,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.ship_skin_expression
-
-	var_10_16.laibixi_2 = {
+	pg.base.ship_skin_expression.laibixi_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -53230,11 +49560,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.ship_skin_expression
-
-	var_10_17.magedebao = {
+	pg.base.ship_skin_expression.magedebao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -53288,11 +49614,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.ship_skin_expression
-
-	var_10_18.magedebao_3 = {
+	pg.base.ship_skin_expression.magedebao_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -53346,11 +49668,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.ship_skin_expression
-
-	var_10_19.makeboluo_2 = {
+	pg.base.ship_skin_expression.makeboluo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -53404,11 +49722,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.ship_skin_expression
-
-	var_10_20.nananpudun_3 = {
+	pg.base.ship_skin_expression.nananpudun_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -53462,11 +49776,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.ship_skin_expression
-
-	var_10_21.nengdai_7 = {
+	pg.base.ship_skin_expression.nengdai_7 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -53520,11 +49830,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.ship_skin_expression
-
-	var_10_22.niaohai_2 = {
+	pg.base.ship_skin_expression.niaohai_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -53578,11 +49884,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.ship_skin_expression
-
-	var_10_23.peineiluopo_3 = {
+	pg.base.ship_skin_expression.peineiluopo_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -53636,11 +49938,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.ship_skin_expression
-
-	var_10_24.u47_4 = {
+	pg.base.ship_skin_expression.u47_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -53694,11 +49992,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.ship_skin_expression
-
-	var_10_25.u1206 = {
+	pg.base.ship_skin_expression.u1206 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -53752,11 +50046,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.ship_skin_expression
-
-	var_10_26.u1206_2 = {
+	pg.base.ship_skin_expression.u1206_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -53810,11 +50100,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.ship_skin_expression
-
-	var_10_27.wuerlixi = {
+	pg.base.ship_skin_expression.wuerlixi = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -53868,11 +50154,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.ship_skin_expression
-
-	var_10_28.wuerlixi_2 = {
+	pg.base.ship_skin_expression.wuerlixi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -53926,11 +50208,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.ship_skin_expression
-
-	var_10_29.yibei = {
+	pg.base.ship_skin_expression.yibei = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -53984,11 +50262,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.ship_skin_expression
-
-	var_10_30.yibei_2 = {
+	pg.base.ship_skin_expression.yibei_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -54042,11 +50316,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.ship_skin_expression
-
-	var_10_31.yikaluosi_4 = {
+	pg.base.ship_skin_expression.yikaluosi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -54100,11 +50370,7 @@ end)()
 		login = "6",
 		detail = "5"
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.ship_skin_expression
-
-	var_10_32.yilishabai_6 = {
+	pg.base.ship_skin_expression.yilishabai_6 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -54158,11 +50424,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.ship_skin_expression
-
-	var_10_33.z46_6 = {
+	pg.base.ship_skin_expression.z46_6 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -54216,11 +50478,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.ship_skin_expression
-
-	var_10_34.anshan_g = {
+	pg.base.ship_skin_expression.anshan_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -54274,11 +50532,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.ship_skin_expression
-
-	var_10_35.binxifaniya_2 = {
+	pg.base.ship_skin_expression.binxifaniya_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -54332,11 +50586,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.ship_skin_expression
-
-	var_10_36.bulisituoer = {
+	pg.base.ship_skin_expression.bulisituoer = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -54390,11 +50640,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.ship_skin_expression
-
-	var_10_37.bulisituoer_2 = {
+	pg.base.ship_skin_expression.bulisituoer_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -54448,11 +50694,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.ship_skin_expression
-
-	var_10_38.changbo_4 = {
+	pg.base.ship_skin_expression.changbo_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -54506,11 +50748,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.ship_skin_expression
-
-	var_10_39.changchun_g = {
+	pg.base.ship_skin_expression.changchun_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -54564,11 +50802,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.ship_skin_expression
-
-	var_10_40.chicheng_5 = {
+	pg.base.ship_skin_expression.chicheng_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -54622,11 +50856,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.ship_skin_expression
-
-	var_10_41.gelunbiya_3 = {
+	pg.base.ship_skin_expression.gelunbiya_3 = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -54680,11 +50910,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.ship_skin_expression
-
-	var_10_42.haiqi = {
+	pg.base.ship_skin_expression.haiqi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -54738,11 +50964,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.ship_skin_expression
-
-	var_10_43.haiqi_2 = {
+	pg.base.ship_skin_expression.haiqi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -54796,11 +51018,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.ship_skin_expression
-
-	var_10_44.hemin_5 = {
+	pg.base.ship_skin_expression.hemin_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -54854,11 +51072,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.ship_skin_expression
-
-	var_10_45.huayue_4 = {
+	pg.base.ship_skin_expression.huayue_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -54912,11 +51126,7 @@ end)()
 		login = "3",
 		detail = "10"
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.ship_skin_expression
-
-	var_10_46.jiahe_6 = {
+	pg.base.ship_skin_expression.jiahe_6 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -54970,11 +51180,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.ship_skin_expression
-
-	var_10_47.kalvbudisi = {
+	pg.base.ship_skin_expression.kalvbudisi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -55028,11 +51234,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.ship_skin_expression
-
-	var_10_48.kalvbudisi_2 = {
+	pg.base.ship_skin_expression.kalvbudisi_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -55086,11 +51288,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.ship_skin_expression
-
-	var_10_49.lingbo_13 = {
+	pg.base.ship_skin_expression.lingbo_13 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -55144,11 +51342,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.ship_skin_expression
-
-	var_10_50.linuo_5 = {
+	pg.base.ship_skin_expression.linuo_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -55202,11 +51396,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.ship_skin_expression
-
-	var_10_51.luodeni_4 = {
+	pg.base.ship_skin_expression.luodeni_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -55260,11 +51450,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.ship_skin_expression
-
-	var_10_52.sunying_alter = {
+	pg.base.ship_skin_expression.sunying_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -55318,11 +51504,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.ship_skin_expression
-
-	var_10_53.u73_4 = {
+	pg.base.ship_skin_expression.u73_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -55376,11 +51558,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.ship_skin_expression
-
-	var_10_54.xiaoyue_3 = {
+	pg.base.ship_skin_expression.xiaoyue_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -55434,11 +51612,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.ship_skin_expression
-
-	var_10_55.yalisangna_2 = {
+	pg.base.ship_skin_expression.yalisangna_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -55492,11 +51666,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.ship_skin_expression
-
-	var_10_56.zhaochao_5 = {
+	pg.base.ship_skin_expression.zhaochao_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -55550,11 +51720,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.ship_skin_expression
-
-	var_10_57.zhenhai = {
+	pg.base.ship_skin_expression.zhenhai = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -55608,11 +51774,7 @@ end)()
 		login = "2",
 		detail = "7"
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.ship_skin_expression
-
-	var_10_58.zhenhai_2 = {
+	pg.base.ship_skin_expression.zhenhai_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -55666,11 +51828,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.ship_skin_expression
-
-	var_10_59.zhuifeng_2 = {
+	pg.base.ship_skin_expression.zhuifeng_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -55724,11 +51882,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.ship_skin_expression
-
-	var_10_60.haitian = {
+	pg.base.ship_skin_expression.haitian = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -55782,11 +51936,7 @@ end)()
 		login = "9",
 		detail = "2"
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.ship_skin_expression
-
-	var_10_61.haitian_2 = {
+	pg.base.ship_skin_expression.haitian_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -55840,11 +51990,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.ship_skin_expression
-
-	var_10_62.shiyu_4 = {
+	pg.base.ship_skin_expression.shiyu_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -55898,11 +52044,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.ship_skin_expression
-
-	var_10_63.anshan_3 = {
+	pg.base.ship_skin_expression.anshan_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -55956,11 +52098,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.ship_skin_expression
-
-	var_10_64.aerhangeersike = {
+	pg.base.ship_skin_expression.aerhangeersike = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -56014,11 +52152,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.ship_skin_expression
-
-	var_10_65.aerhangeersike_2 = {
+	pg.base.ship_skin_expression.aerhangeersike_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -56072,11 +52206,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.ship_skin_expression
-
-	var_10_66.afuleer_3 = {
+	pg.base.ship_skin_expression.afuleer_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -56130,11 +52260,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.ship_skin_expression
-
-	var_10_67.fuerjia = {
+	pg.base.ship_skin_expression.fuerjia = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -56188,11 +52314,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.ship_skin_expression
-
-	var_10_68.fuerjia_2 = {
+	pg.base.ship_skin_expression.fuerjia_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -56246,11 +52368,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.ship_skin_expression
-
-	var_10_69.jifu = {
+	pg.base.ship_skin_expression.jifu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -56304,11 +52422,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.ship_skin_expression
-
-	var_10_70.jifu_2 = {
+	pg.base.ship_skin_expression.jifu_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -56362,11 +52476,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.ship_skin_expression
-
-	var_10_71.jiluofu_3 = {
+	pg.base.ship_skin_expression.jiluofu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -56420,11 +52530,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.ship_skin_expression
-
-	var_10_72.kalangshitade = {
+	pg.base.ship_skin_expression.kalangshitade = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -56478,11 +52584,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.ship_skin_expression
-
-	var_10_73.kalangshitade_2 = {
+	pg.base.ship_skin_expression.kalangshitade_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -56536,11 +52638,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.ship_skin_expression
-
-	var_10_74.lingmin = {
+	pg.base.ship_skin_expression.lingmin = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -56594,11 +52692,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.ship_skin_expression
-
-	var_10_75.lingmin_2 = {
+	pg.base.ship_skin_expression.lingmin_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -56652,11 +52746,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.ship_skin_expression
-
-	var_10_76.talin_2 = {
+	pg.base.ship_skin_expression.talin_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -56710,11 +52800,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.ship_skin_expression
-
-	var_10_77.weiyan_4 = {
+	pg.base.ship_skin_expression.weiyan_4 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -56768,11 +52854,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.ship_skin_expression
-
-	var_10_78.shaenhuosite_alter = {
+	pg.base.ship_skin_expression.shaenhuosite_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -56826,11 +52908,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.ship_skin_expression
-
-	var_10_79.dachao_5 = {
+	pg.base.ship_skin_expression.dachao_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -56884,11 +52962,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.ship_skin_expression
-
-	var_10_80.diguo = {
+	pg.base.ship_skin_expression.diguo = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -56942,11 +53016,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.ship_skin_expression
-
-	var_10_81.diguo_2 = {
+	pg.base.ship_skin_expression.diguo_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -57000,11 +53070,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.ship_skin_expression
-
-	var_10_82.diliyasite = {
+	pg.base.ship_skin_expression.diliyasite = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -57058,11 +53124,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.ship_skin_expression
-
-	var_10_83.diliyasite_2 = {
+	pg.base.ship_skin_expression.diliyasite_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -57116,11 +53178,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.ship_skin_expression
-
-	var_10_84.jingang_4 = {
+	pg.base.ship_skin_expression.jingang_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -57174,11 +53232,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.ship_skin_expression
-
-	var_10_85.pangpeimagenuo = {
+	pg.base.ship_skin_expression.pangpeimagenuo = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -57232,11 +53286,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.ship_skin_expression
-
-	var_10_86.pangpeimagenuo_2 = {
+	pg.base.ship_skin_expression.pangpeimagenuo_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -57290,11 +53340,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.ship_skin_expression
-
-	var_10_87.qiye_8 = {
+	pg.base.ship_skin_expression.qiye_8 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -57348,11 +53394,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.ship_skin_expression
-
-	var_10_88.ruoye_3 = {
+	pg.base.ship_skin_expression.ruoye_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -57406,11 +53448,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.ship_skin_expression
-
-	var_10_89.shancheng_alter = {
+	pg.base.ship_skin_expression.shancheng_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -57464,11 +53502,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.ship_skin_expression
-
-	var_10_90.sheshuiyu_2 = {
+	pg.base.ship_skin_expression.sheshuiyu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -57522,11 +53556,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.ship_skin_expression
-
-	var_10_91.aierbin = {
+	pg.base.ship_skin_expression.aierbin = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -57580,11 +53610,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.ship_skin_expression
-
-	var_10_92.aierbin_2 = {
+	pg.base.ship_skin_expression.aierbin_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -57638,11 +53664,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.ship_skin_expression
-
-	var_10_93.aimudeng = {
+	pg.base.ship_skin_expression.aimudeng = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -57696,11 +53718,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.ship_skin_expression
-
-	var_10_94.aimudeng_2 = {
+	pg.base.ship_skin_expression.aimudeng_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -57754,11 +53772,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.ship_skin_expression
-
-	var_10_95.lvzuofu = {
+	pg.base.ship_skin_expression.lvzuofu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -57812,11 +53826,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.ship_skin_expression
-
-	var_10_96.lvzuofu_2 = {
+	pg.base.ship_skin_expression.lvzuofu_2 = {
 		default = "",
 		feeling3 = "11",
 		main3_replace = "",
@@ -57870,11 +53880,7 @@ end)()
 		login = "8",
 		detail = "14"
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.ship_skin_expression
-
-	var_10_97.naerxun_3 = {
+	pg.base.ship_skin_expression.naerxun_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -57928,11 +53934,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.ship_skin_expression
-
-	var_10_98.ougen_younv = {
+	pg.base.ship_skin_expression.ougen_younv = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -57986,8 +53988,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_10_98
-	var_10_98.base.ship_skin_expression.qiabayefu_4 = {
+	pg.base.ship_skin_expression.qiabayefu_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -58045,11 +54046,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.ship_skin_expression
-
-	var_11_0.saidelici = {
+	pg.base.ship_skin_expression.saidelici = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -58103,11 +54100,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.ship_skin_expression
-
-	var_11_1.saidelici_4 = {
+	pg.base.ship_skin_expression.saidelici_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -58161,11 +54154,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.ship_skin_expression
-
-	var_11_2.tulingen = {
+	pg.base.ship_skin_expression.tulingen = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -58219,11 +54208,7 @@ end)()
 		login = "6",
 		detail = "1"
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.ship_skin_expression
-
-	var_11_3.tulingen_2 = {
+	pg.base.ship_skin_expression.tulingen_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -58277,11 +54262,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.ship_skin_expression
-
-	var_11_4.u47_5 = {
+	pg.base.ship_skin_expression.u47_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -58335,11 +54316,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.ship_skin_expression
-
-	var_11_5.xiefeierde_5 = {
+	pg.base.ship_skin_expression.xiefeierde_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -58393,11 +54370,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.ship_skin_expression
-
-	var_11_6.xipeierhaijunshangjiang_3 = {
+	pg.base.ship_skin_expression.xipeierhaijunshangjiang_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -58451,11 +54424,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.ship_skin_expression
-
-	var_11_7.yueke_ger = {
+	pg.base.ship_skin_expression.yueke_ger = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -58509,11 +54478,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.ship_skin_expression
-
-	var_11_8.yueke_ger_2 = {
+	pg.base.ship_skin_expression.yueke_ger_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -58567,11 +54532,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.ship_skin_expression
-
-	var_11_9.bunao = {
+	pg.base.ship_skin_expression.bunao = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -58625,11 +54586,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.ship_skin_expression
-
-	var_11_10.bunao_2 = {
+	pg.base.ship_skin_expression.bunao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -58683,11 +54640,7 @@ end)()
 		login = "8",
 		detail = "3"
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.ship_skin_expression
-
-	var_11_11.chaijun_younv = {
+	pg.base.ship_skin_expression.chaijun_younv = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -58741,11 +54694,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.ship_skin_expression
-
-	var_11_12.dujiaoshou_g = {
+	pg.base.ship_skin_expression.dujiaoshou_g = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -58799,11 +54748,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.ship_skin_expression
-
-	var_11_13.fuchou = {
+	pg.base.ship_skin_expression.fuchou = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -58857,11 +54802,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.ship_skin_expression
-
-	var_11_14.fuchou_2 = {
+	pg.base.ship_skin_expression.fuchou_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -58915,11 +54856,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.ship_skin_expression
-
-	var_11_15.jiaweisi = {
+	pg.base.ship_skin_expression.jiaweisi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -58973,11 +54910,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.ship_skin_expression
-
-	var_11_16.jiaweisi_2 = {
+	pg.base.ship_skin_expression.jiaweisi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -59031,11 +54964,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.ship_skin_expression
-
-	var_11_17.kebu_2 = {
+	pg.base.ship_skin_expression.kebu_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -59089,11 +55018,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.ship_skin_expression
-
-	var_11_18.ougen_6 = {
+	pg.base.ship_skin_expression.ougen_6 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -59147,11 +55072,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.ship_skin_expression
-
-	var_11_19.qianwei = {
+	pg.base.ship_skin_expression.qianwei = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -59205,11 +55126,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.ship_skin_expression
-
-	var_11_20.qianwei_2 = {
+	pg.base.ship_skin_expression.qianwei_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -59263,11 +55180,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.ship_skin_expression
-
-	var_11_21.sizhannvshen = {
+	pg.base.ship_skin_expression.sizhannvshen = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -59321,11 +55234,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.ship_skin_expression
-
-	var_11_22.sizhannvshen_2 = {
+	pg.base.ship_skin_expression.sizhannvshen_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -59379,11 +55288,7 @@ end)()
 		login = "7",
 		detail = "6"
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.ship_skin_expression
-
-	var_11_23.xiao_5 = {
+	pg.base.ship_skin_expression.xiao_5 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -59437,11 +55342,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.ship_skin_expression
-
-	var_11_24.huangjiafangzhou_5 = {
+	pg.base.ship_skin_expression.huangjiafangzhou_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -59495,11 +55396,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.ship_skin_expression
-
-	var_11_25.mengfeisi_alter = {
+	pg.base.ship_skin_expression.mengfeisi_alter = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -59553,11 +55450,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.ship_skin_expression
-
-	var_11_26.aijier_2 = {
+	pg.base.ship_skin_expression.aijier_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -59611,11 +55504,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.ship_skin_expression
-
-	var_11_27.weiyan_5 = {
+	pg.base.ship_skin_expression.weiyan_5 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -59669,11 +55558,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.ship_skin_expression
-
-	var_11_28.hao_5 = {
+	pg.base.ship_skin_expression.hao_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -59727,11 +55612,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.ship_skin_expression
-
-	var_11_29.boyixi_4 = {
+	pg.base.ship_skin_expression.boyixi_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -59785,11 +55666,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.ship_skin_expression
-
-	var_11_30.luoen_4 = {
+	pg.base.ship_skin_expression.luoen_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -59843,11 +55720,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.ship_skin_expression
-
-	var_11_31.tierbici_5 = {
+	pg.base.ship_skin_expression.tierbici_5 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -59901,11 +55774,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.ship_skin_expression
-
-	var_11_32.qiansui_3 = {
+	pg.base.ship_skin_expression.qiansui_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -59959,11 +55828,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.ship_skin_expression
-
-	var_11_33.lemaer_4 = {
+	pg.base.ship_skin_expression.lemaer_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -60017,11 +55882,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.ship_skin_expression
-
-	var_11_34.huashengdun_2 = {
+	pg.base.ship_skin_expression.huashengdun_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -60075,11 +55936,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.ship_skin_expression
-
-	var_11_35.fanji_alter = {
+	pg.base.ship_skin_expression.fanji_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -60133,11 +55990,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.ship_skin_expression
-
-	var_11_36.salatuojia_h = {
+	pg.base.ship_skin_expression.salatuojia_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -60191,11 +56044,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.ship_skin_expression
-
-	var_11_37.xinzexi_h = {
+	pg.base.ship_skin_expression.xinzexi_h = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -60249,11 +56098,7 @@ end)()
 		login = "3",
 		detail = "8"
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.ship_skin_expression
-
-	var_11_38.fuerban_h = {
+	pg.base.ship_skin_expression.fuerban_h = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -60307,11 +56152,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.ship_skin_expression
-
-	var_11_39.buqu = {
+	pg.base.ship_skin_expression.buqu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -60365,11 +56206,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.ship_skin_expression
-
-	var_11_40.buqu_2 = {
+	pg.base.ship_skin_expression.buqu_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -60423,11 +56260,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.ship_skin_expression
-
-	var_11_41.daofeng_5 = {
+	pg.base.ship_skin_expression.daofeng_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -60481,11 +56314,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.ship_skin_expression
-
-	var_11_42.jinqu = {
+	pg.base.ship_skin_expression.jinqu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -60539,11 +56368,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.ship_skin_expression
-
-	var_11_43.shentong_4 = {
+	pg.base.ship_skin_expression.shentong_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -60597,11 +56422,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.ship_skin_expression
-
-	var_11_44.biluokexi_6 = {
+	pg.base.ship_skin_expression.biluokexi_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -60655,11 +56476,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.ship_skin_expression
-
-	var_11_45.xiafei = {
+	pg.base.ship_skin_expression.xiafei = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -60713,11 +56530,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.ship_skin_expression
-
-	var_11_46.xiafei_2 = {
+	pg.base.ship_skin_expression.xiafei_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -60771,11 +56584,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.ship_skin_expression
-
-	var_11_47.z23_11 = {
+	pg.base.ship_skin_expression.z23_11 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -60829,11 +56638,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.ship_skin_expression
-
-	var_11_48.aerjiliya_3 = {
+	pg.base.ship_skin_expression.aerjiliya_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -60887,11 +56692,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.ship_skin_expression
-
-	var_11_49.buleisite = {
+	pg.base.ship_skin_expression.buleisite = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -60945,11 +56746,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.ship_skin_expression
-
-	var_11_50.pulimaosi = {
+	pg.base.ship_skin_expression.pulimaosi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -61003,11 +56800,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.ship_skin_expression
-
-	var_11_51.qikaluofu = {
+	pg.base.ship_skin_expression.qikaluofu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -61061,11 +56854,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.ship_skin_expression
-
-	var_11_52.haerbin = {
+	pg.base.ship_skin_expression.haerbin = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -61119,11 +56908,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.ship_skin_expression
-
-	var_11_53.lupuleixite = {
+	pg.base.ship_skin_expression.lupuleixite = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -61177,11 +56962,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.ship_skin_expression
-
-	var_11_54.luoma = {
+	pg.base.ship_skin_expression.luoma = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -61235,11 +57016,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.ship_skin_expression
-
-	var_11_55.luoma_2 = {
+	pg.base.ship_skin_expression.luoma_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -61293,11 +57070,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.ship_skin_expression
-
-	var_11_56.zhusaipei = {
+	pg.base.ship_skin_expression.zhusaipei = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -61351,11 +57124,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.ship_skin_expression
-
-	var_11_57.zhusaipei_2 = {
+	pg.base.ship_skin_expression.zhusaipei_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -61409,11 +57178,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.ship_skin_expression
-
-	var_11_58.dafenqi = {
+	pg.base.ship_skin_expression.dafenqi = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -61467,11 +57232,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.ship_skin_expression
-
-	var_11_59.dafenqi_2 = {
+	pg.base.ship_skin_expression.dafenqi_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -61525,11 +57286,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.ship_skin_expression
-
-	var_11_60.aimannuaier = {
+	pg.base.ship_skin_expression.aimannuaier = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -61583,11 +57340,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.ship_skin_expression
-
-	var_11_61.aerfuleiduo = {
+	pg.base.ship_skin_expression.aerfuleiduo = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -61641,11 +57394,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.ship_skin_expression
-
-	var_11_62.aerfuleiduo_2 = {
+	pg.base.ship_skin_expression.aerfuleiduo_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -61699,11 +57448,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.ship_skin_expression
-
-	var_11_63.boerzhanuo = {
+	pg.base.ship_skin_expression.boerzhanuo = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -61757,11 +57502,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.ship_skin_expression
-
-	var_11_64.boerzhanuo_2 = {
+	pg.base.ship_skin_expression.boerzhanuo_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -61815,11 +57556,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.ship_skin_expression
-
-	var_11_65.teluntuo_alter = {
+	pg.base.ship_skin_expression.teluntuo_alter = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -61873,11 +57610,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.ship_skin_expression
-
-	var_11_66.dafeng_3 = {
+	pg.base.ship_skin_expression.dafeng_3 = {
 		default = "",
 		feeling3 = "11",
 		main3_replace = "",
@@ -61931,11 +57664,7 @@ end)()
 		login = "11",
 		detail = ""
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.ship_skin_expression
-
-	var_11_67.jiujinshan_4 = {
+	pg.base.ship_skin_expression.jiujinshan_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -61989,11 +57718,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.ship_skin_expression
-
-	var_11_68.sanwei_2 = {
+	pg.base.ship_skin_expression.sanwei_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -62047,11 +57772,7 @@ end)()
 		login = "7",
 		detail = "4"
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.ship_skin_expression
-
-	var_11_69.xiongye_4 = {
+	pg.base.ship_skin_expression.xiongye_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -62105,11 +57826,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.ship_skin_expression
-
-	var_11_70.beifeng_4 = {
+	pg.base.ship_skin_expression.beifeng_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -62163,11 +57880,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.ship_skin_expression
-
-	var_11_71.aimannuaier_2 = {
+	pg.base.ship_skin_expression.aimannuaier_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -62221,11 +57934,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.ship_skin_expression
-
-	var_11_72.bulunxierde = {
+	pg.base.ship_skin_expression.bulunxierde = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -62279,11 +57988,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.ship_skin_expression
-
-	var_11_73.bulunxierde_2 = {
+	pg.base.ship_skin_expression.bulunxierde_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -62337,11 +58042,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.ship_skin_expression
-
-	var_11_74.bulvxieer = {
+	pg.base.ship_skin_expression.bulvxieer = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -62395,11 +58096,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.ship_skin_expression
-
-	var_11_75.bulvxieer_2 = {
+	pg.base.ship_skin_expression.bulvxieer_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -62453,11 +58150,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.ship_skin_expression
-
-	var_11_76.z16 = {
+	pg.base.ship_skin_expression.z16 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -62511,11 +58204,7 @@ end)()
 		login = "4",
 		detail = "9"
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.ship_skin_expression
-
-	var_11_77.z16_2 = {
+	pg.base.ship_skin_expression.z16_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -62569,11 +58258,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.ship_skin_expression
-
-	var_11_78.aosiben_g = {
+	pg.base.ship_skin_expression.aosiben_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -62627,11 +58312,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.ship_skin_expression
-
-	var_11_79.u96_3 = {
+	pg.base.ship_skin_expression.u96_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -62685,11 +58366,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.ship_skin_expression
-
-	var_11_80.z24_3 = {
+	pg.base.ship_skin_expression.z24_3 = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -62743,11 +58420,7 @@ end)()
 		login = "2",
 		detail = "7"
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.ship_skin_expression
-
-	var_11_81.wushiling_6 = {
+	pg.base.ship_skin_expression.wushiling_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -62801,11 +58474,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.ship_skin_expression
-
-	var_11_82.dahuangfeng_4 = {
+	pg.base.ship_skin_expression.dahuangfeng_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -62859,11 +58528,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.ship_skin_expression
-
-	var_11_83.jiluofu_4 = {
+	pg.base.ship_skin_expression.jiluofu_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -62917,11 +58582,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.ship_skin_expression
-
-	var_11_84.aisaikesi_6 = {
+	pg.base.ship_skin_expression.aisaikesi_6 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -62975,11 +58636,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.ship_skin_expression
-
-	var_11_85.magedebao_2 = {
+	pg.base.ship_skin_expression.magedebao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -63033,11 +58690,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.ship_skin_expression
-
-	var_11_86.weixi_4 = {
+	pg.base.ship_skin_expression.weixi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -63091,11 +58744,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.ship_skin_expression
-
-	var_11_87.hailunna_h = {
+	pg.base.ship_skin_expression.hailunna_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -63149,11 +58798,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.ship_skin_expression
-
-	var_11_88.shengwang_alter = {
+	pg.base.ship_skin_expression.shengwang_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -63207,11 +58852,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.ship_skin_expression
-
-	var_11_89.lafei_11 = {
+	pg.base.ship_skin_expression.lafei_11 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -63265,11 +58906,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.ship_skin_expression
-
-	var_11_90.lingbo_14 = {
+	pg.base.ship_skin_expression.lingbo_14 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -63323,11 +58960,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.ship_skin_expression
-
-	var_11_91.changmen = {
+	pg.base.ship_skin_expression.changmen = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -63381,11 +59014,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.ship_skin_expression
-
-	var_11_92.jiahe = {
+	pg.base.ship_skin_expression.jiahe = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -63439,11 +59068,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.ship_skin_expression
-
-	var_11_93.lei = {
+	pg.base.ship_skin_expression.lei = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -63497,11 +59122,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.ship_skin_expression
-
-	var_11_94.sanli = {
+	pg.base.ship_skin_expression.sanli = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -63555,11 +59176,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.ship_skin_expression
-
-	var_11_95.aimudeng_3 = {
+	pg.base.ship_skin_expression.aimudeng_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -63613,11 +59230,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.ship_skin_expression
-
-	var_11_96.u81_3 = {
+	pg.base.ship_skin_expression.u81_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -63671,11 +59284,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.ship_skin_expression
-
-	var_11_97.guanghui = {
+	pg.base.ship_skin_expression.guanghui = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -63729,11 +59338,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.ship_skin_expression
-
-	var_11_98.hude = {
+	pg.base.ship_skin_expression.hude = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -63787,8 +59392,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_11_98
-	var_11_98.base.ship_skin_expression.ougen = {
+	pg.base.ship_skin_expression.ougen = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -63846,11 +59450,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.ship_skin_expression
-
-	var_12_0.xipeierhaijunshangjiang = {
+	pg.base.ship_skin_expression.xipeierhaijunshangjiang = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -63904,11 +59504,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.ship_skin_expression
-
-	var_12_1.wuzang = {
+	pg.base.ship_skin_expression.wuzang = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -63962,11 +59558,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.ship_skin_expression
-
-	var_12_2.wuzang_2 = {
+	pg.base.ship_skin_expression.wuzang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -64020,11 +59612,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.ship_skin_expression
-
-	var_12_3.ruoyue = {
+	pg.base.ship_skin_expression.ruoyue = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -64078,11 +59666,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.ship_skin_expression
-
-	var_12_4.ruoyue_2 = {
+	pg.base.ship_skin_expression.ruoyue_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -64136,11 +59720,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.ship_skin_expression
-
-	var_12_5.jiuyun = {
+	pg.base.ship_skin_expression.jiuyun = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -64194,11 +59774,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.ship_skin_expression
-
-	var_12_6.jiuyun_2 = {
+	pg.base.ship_skin_expression.jiuyun_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -64252,11 +59828,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.ship_skin_expression
-
-	var_12_7.yuhei = {
+	pg.base.ship_skin_expression.yuhei = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -64310,11 +59882,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.ship_skin_expression
-
-	var_12_8.yuhei_2 = {
+	pg.base.ship_skin_expression.yuhei_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -64368,11 +59936,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.ship_skin_expression
-
-	var_12_9.shenxue = {
+	pg.base.ship_skin_expression.shenxue = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -64426,11 +59990,7 @@ end)()
 		login = "6",
 		detail = "9"
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.ship_skin_expression
-
-	var_12_10.shenxue_2 = {
+	pg.base.ship_skin_expression.shenxue_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -64484,11 +60044,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.ship_skin_expression
-
-	var_12_11.luao_3 = {
+	pg.base.ship_skin_expression.luao_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -64542,11 +60098,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.ship_skin_expression
-
-	var_12_12.sanli_3 = {
+	pg.base.ship_skin_expression.sanli_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -64600,11 +60152,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.ship_skin_expression
-
-	var_12_13.shiluopujun_g = {
+	pg.base.ship_skin_expression.shiluopujun_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -64658,11 +60206,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.ship_skin_expression
-
-	var_12_14.zhunuo_g = {
+	pg.base.ship_skin_expression.zhunuo_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -64716,11 +60260,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.ship_skin_expression
-
-	var_12_15.bangfeng_4 = {
+	pg.base.ship_skin_expression.bangfeng_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -64774,11 +60314,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.ship_skin_expression
-
-	var_12_16.gufeng_4 = {
+	pg.base.ship_skin_expression.gufeng_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -64832,11 +60368,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.ship_skin_expression
-
-	var_12_17.saidelici_6 = {
+	pg.base.ship_skin_expression.saidelici_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -64890,11 +60422,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.ship_skin_expression
-
-	var_12_18.mayebuleize_2 = {
+	pg.base.ship_skin_expression.mayebuleize_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -64948,11 +60476,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.ship_skin_expression
-
-	var_12_19.kalvbudisi_3 = {
+	pg.base.ship_skin_expression.kalvbudisi_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -65006,11 +60530,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.ship_skin_expression
-
-	var_12_20.haiwangxing_3 = {
+	pg.base.ship_skin_expression.haiwangxing_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -65064,11 +60584,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.ship_skin_expression
-
-	var_12_21.zhunuo_2 = {
+	pg.base.ship_skin_expression.zhunuo_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -65122,11 +60638,7 @@ end)()
 		login = "6",
 		detail = "7"
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.ship_skin_expression
-
-	var_12_22.z28_4 = {
+	pg.base.ship_skin_expression.z28_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -65180,11 +60692,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.ship_skin_expression
-
-	var_12_23.zhenhai_3 = {
+	pg.base.ship_skin_expression.zhenhai_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -65238,11 +60746,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.ship_skin_expression
-
-	var_12_24.changmen_5 = {
+	pg.base.ship_skin_expression.changmen_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -65296,11 +60800,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.ship_skin_expression
-
-	var_12_25.jianye_3 = {
+	pg.base.ship_skin_expression.jianye_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -65354,11 +60854,7 @@ end)()
 		login = "5",
 		detail = "7"
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.ship_skin_expression
-
-	var_12_26.neihuada_2 = {
+	pg.base.ship_skin_expression.neihuada_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -65412,11 +60908,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.ship_skin_expression
-
-	var_12_27.changbo_h = {
+	pg.base.ship_skin_expression.changbo_h = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -65470,11 +60962,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.ship_skin_expression
-
-	var_12_28.nananpudun_h = {
+	pg.base.ship_skin_expression.nananpudun_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -65528,11 +61016,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.ship_skin_expression
-
-	var_12_29.lundun_h = {
+	pg.base.ship_skin_expression.lundun_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -65586,11 +61070,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.ship_skin_expression
-
-	var_12_30.xinnong_3 = {
+	pg.base.ship_skin_expression.xinnong_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -65644,11 +61124,7 @@ end)()
 		login = "10",
 		detail = "2"
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.ship_skin_expression
-
-	var_12_31.baerdimo_6 = {
+	pg.base.ship_skin_expression.baerdimo_6 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -65702,11 +61178,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.ship_skin_expression
-
-	var_12_32.shuixingjinian_3 = {
+	pg.base.ship_skin_expression.shuixingjinian_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -65760,11 +61232,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.ship_skin_expression
-
-	var_12_33.lieren_alter = {
+	pg.base.ship_skin_expression.lieren_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -65818,11 +61286,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.ship_skin_expression
-
-	var_12_34.biaoqiang_8 = {
+	pg.base.ship_skin_expression.biaoqiang_8 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -65876,11 +61340,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.ship_skin_expression
-
-	var_12_35.z23_10 = {
+	pg.base.ship_skin_expression.z23_10 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -65934,11 +61394,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.ship_skin_expression
-
-	var_12_36.lingbo_15 = {
+	pg.base.ship_skin_expression.lingbo_15 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -65992,11 +61448,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.ship_skin_expression
-
-	var_12_37.lafei_10 = {
+	pg.base.ship_skin_expression.lafei_10 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -66050,11 +61502,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.ship_skin_expression
-
-	var_12_38.sipeibojue_younv = {
+	pg.base.ship_skin_expression.sipeibojue_younv = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -66108,11 +61556,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.ship_skin_expression
-
-	var_12_39.aerbien = {
+	pg.base.ship_skin_expression.aerbien = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -66166,11 +61610,7 @@ end)()
 		login = "10",
 		detail = "1"
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.ship_skin_expression
-
-	var_12_40.aerbien_2 = {
+	pg.base.ship_skin_expression.aerbien_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -66224,11 +61664,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.ship_skin_expression
-
-	var_12_41.yanusi = {
+	pg.base.ship_skin_expression.yanusi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -66282,11 +61718,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.ship_skin_expression
-
-	var_12_42.yanusi_3 = {
+	pg.base.ship_skin_expression.yanusi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -66340,11 +61772,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.ship_skin_expression
-
-	var_12_43.manchesite = {
+	pg.base.ship_skin_expression.manchesite = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -66398,11 +61826,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.ship_skin_expression
-
-	var_12_44.manchesite_3 = {
+	pg.base.ship_skin_expression.manchesite_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -66456,11 +61880,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.ship_skin_expression
-
-	var_12_45.huangjiacaifu = {
+	pg.base.ship_skin_expression.huangjiacaifu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -66514,11 +61934,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.ship_skin_expression
-
-	var_12_46.huangjiacaifu_2 = {
+	pg.base.ship_skin_expression.huangjiacaifu_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -66572,11 +61988,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.ship_skin_expression
-
-	var_12_47.ekelahema_2 = {
+	pg.base.ship_skin_expression.ekelahema_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -66630,11 +62042,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.ship_skin_expression
-
-	var_12_48.laisha = {
+	pg.base.ship_skin_expression.laisha = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -66688,11 +62096,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.ship_skin_expression
-
-	var_12_49.laisha_2 = {
+	pg.base.ship_skin_expression.laisha_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -66746,11 +62150,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.ship_skin_expression
-
-	var_12_50.keluodiya = {
+	pg.base.ship_skin_expression.keluodiya = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -66804,11 +62204,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.ship_skin_expression
-
-	var_12_51.keluodiya_2 = {
+	pg.base.ship_skin_expression.keluodiya_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -66862,11 +62258,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.ship_skin_expression
-
-	var_12_52.patelixia = {
+	pg.base.ship_skin_expression.patelixia = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -66920,11 +62312,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.ship_skin_expression
-
-	var_12_53.patelixia_2 = {
+	pg.base.ship_skin_expression.patelixia_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -66978,11 +62366,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.ship_skin_expression
-
-	var_12_54.lila = {
+	pg.base.ship_skin_expression.lila = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -67036,11 +62420,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.ship_skin_expression
-
-	var_12_55.lila_2 = {
+	pg.base.ship_skin_expression.lila_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -67094,11 +62474,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.ship_skin_expression
-
-	var_12_56.saili = {
+	pg.base.ship_skin_expression.saili = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -67152,11 +62528,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.ship_skin_expression
-
-	var_12_57.saili_2 = {
+	pg.base.ship_skin_expression.saili_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -67210,11 +62582,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.ship_skin_expression
-
-	var_12_58.kala = {
+	pg.base.ship_skin_expression.kala = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -67268,11 +62636,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.ship_skin_expression
-
-	var_12_59.aierbin_3 = {
+	pg.base.ship_skin_expression.aierbin_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -67326,11 +62690,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.ship_skin_expression
-
-	var_12_60.bulaimodun_5 = {
+	pg.base.ship_skin_expression.bulaimodun_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -67384,11 +62744,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.ship_skin_expression
-
-	var_12_61.kelifulan_6 = {
+	pg.base.ship_skin_expression.kelifulan_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -67442,11 +62798,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.ship_skin_expression
-
-	var_12_62.mingyunnvshen_alter = {
+	pg.base.ship_skin_expression.mingyunnvshen_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -67500,11 +62852,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.ship_skin_expression
-
-	var_12_63.yalisangna_alter = {
+	pg.base.ship_skin_expression.yalisangna_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -67558,11 +62906,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.ship_skin_expression
-
-	var_12_64.zaoshen = {
+	pg.base.ship_skin_expression.zaoshen = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -67616,11 +62960,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.ship_skin_expression
-
-	var_12_65.yuekechengII = {
+	pg.base.ship_skin_expression.yuekechengII = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -67674,11 +63014,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.ship_skin_expression
-
-	var_12_66.yuekechengII_2 = {
+	pg.base.ship_skin_expression.yuekechengII_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -67732,11 +63068,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.ship_skin_expression
-
-	var_12_67.dahuangfengII = {
+	pg.base.ship_skin_expression.dahuangfengII = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -67790,11 +63122,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.ship_skin_expression
-
-	var_12_68.dahuangfengII_2 = {
+	pg.base.ship_skin_expression.dahuangfengII_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -67848,11 +63176,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.ship_skin_expression
-
-	var_12_69.beianpudunII = {
+	pg.base.ship_skin_expression.beianpudunII = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -67906,11 +63230,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.ship_skin_expression
-
-	var_12_70.beianpudunII_2 = {
+	pg.base.ship_skin_expression.beianpudunII_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -67964,11 +63284,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.ship_skin_expression
-
-	var_12_71.hamanII = {
+	pg.base.ship_skin_expression.hamanII = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -68022,11 +63338,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.ship_skin_expression
-
-	var_12_72.hamanII_2 = {
+	pg.base.ship_skin_expression.hamanII_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -68080,11 +63392,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.ship_skin_expression
-
-	var_12_73.lanliII = {
+	pg.base.ship_skin_expression.lanliII = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -68138,11 +63446,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.ship_skin_expression
-
-	var_12_74.lanliII_2 = {
+	pg.base.ship_skin_expression.lanliII_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -68196,11 +63500,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.ship_skin_expression
-
-	var_12_75.buleisite_2 = {
+	pg.base.ship_skin_expression.buleisite_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -68254,11 +63554,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.ship_skin_expression
-
-	var_12_76.pulimaosi_2 = {
+	pg.base.ship_skin_expression.pulimaosi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -68312,11 +63608,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.ship_skin_expression
-
-	var_12_77.qikaluofu_2 = {
+	pg.base.ship_skin_expression.qikaluofu_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -68370,11 +63662,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.ship_skin_expression
-
-	var_12_78.haerbin_2 = {
+	pg.base.ship_skin_expression.haerbin_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -68428,11 +63716,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.ship_skin_expression
-
-	var_12_79.haiyinlixi_2 = {
+	pg.base.ship_skin_expression.haiyinlixi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -68486,11 +63770,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.ship_skin_expression
-
-	var_12_80.daofeng_3 = {
+	pg.base.ship_skin_expression.daofeng_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -68544,11 +63824,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.ship_skin_expression
-
-	var_12_81.kalvbudisi_4 = {
+	pg.base.ship_skin_expression.kalvbudisi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -68602,11 +63878,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.ship_skin_expression
-
-	var_12_82.bominghan_3 = {
+	pg.base.ship_skin_expression.bominghan_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -68660,11 +63932,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.ship_skin_expression
-
-	var_12_83.boerzhanuo_3 = {
+	pg.base.ship_skin_expression.boerzhanuo_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -68718,11 +63986,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.ship_skin_expression
-
-	var_12_84.fengyun_2 = {
+	pg.base.ship_skin_expression.fengyun_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -68776,11 +64040,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.ship_skin_expression
-
-	var_12_85.nengdai_3 = {
+	pg.base.ship_skin_expression.nengdai_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -68834,11 +64094,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.ship_skin_expression
-
-	var_12_86.beili_3 = {
+	pg.base.ship_skin_expression.beili_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -68892,11 +64148,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.ship_skin_expression
-
-	var_12_87.pulinsidun_4 = {
+	pg.base.ship_skin_expression.pulinsidun_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -68950,11 +64202,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.ship_skin_expression
-
-	var_12_88.dujiaoshou_8 = {
+	pg.base.ship_skin_expression.dujiaoshou_8 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -69008,11 +64256,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.ship_skin_expression
-
-	var_12_89.gubixuefu = {
+	pg.base.ship_skin_expression.gubixuefu = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -69066,11 +64310,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.ship_skin_expression
-
-	var_12_90.gubixuefu_2 = {
+	pg.base.ship_skin_expression.gubixuefu_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -69124,11 +64364,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.ship_skin_expression
-
-	var_12_91.texiusi = {
+	pg.base.ship_skin_expression.texiusi = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -69182,11 +64418,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.ship_skin_expression
-
-	var_12_92.texiusi_2 = {
+	pg.base.ship_skin_expression.texiusi_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -69240,11 +64472,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.ship_skin_expression
-
-	var_12_93.dingan = {
+	pg.base.ship_skin_expression.dingan = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -69298,11 +64526,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.ship_skin_expression
-
-	var_12_94.dingan_2 = {
+	pg.base.ship_skin_expression.dingan_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -69356,11 +64580,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.ship_skin_expression
-
-	var_12_95.huajia = {
+	pg.base.ship_skin_expression.huajia = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -69414,11 +64634,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.ship_skin_expression
-
-	var_12_96.huajia_2 = {
+	pg.base.ship_skin_expression.huajia_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -69472,11 +64688,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.ship_skin_expression
-
-	var_12_97.yixian_2 = {
+	pg.base.ship_skin_expression.yixian_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -69530,11 +64742,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.ship_skin_expression
-
-	var_12_98.yixian_g = {
+	pg.base.ship_skin_expression.yixian_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -69588,8 +64796,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_12_98
-	var_12_98.base.ship_skin_expression.u110_6 = {
+	pg.base.ship_skin_expression.u110_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -69647,11 +64854,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.ship_skin_expression
-
-	var_13_0.yingrui_3 = {
+	pg.base.ship_skin_expression.yingrui_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -69705,11 +64908,7 @@ end)()
 		login = "8",
 		detail = "8"
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.ship_skin_expression
-
-	var_13_1.zhaohe_3 = {
+	pg.base.ship_skin_expression.zhaohe_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -69763,11 +64962,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.ship_skin_expression
-
-	var_13_2.lvzuofu_3 = {
+	pg.base.ship_skin_expression.lvzuofu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -69821,11 +65016,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.ship_skin_expression
-
-	var_13_3.lupuleixite_2 = {
+	pg.base.ship_skin_expression.lupuleixite_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -69879,11 +65070,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.ship_skin_expression
-
-	var_13_4.aijier_3 = {
+	pg.base.ship_skin_expression.aijier_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -69937,11 +65124,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.ship_skin_expression
-
-	var_13_5.buqu_3 = {
+	pg.base.ship_skin_expression.buqu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -69995,11 +65178,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.ship_skin_expression
-
-	var_13_6.fushun_2 = {
+	pg.base.ship_skin_expression.fushun_2 = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -70053,11 +65232,7 @@ end)()
 		login = "8",
 		detail = "10"
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.ship_skin_expression
-
-	var_13_7.alabama_2 = {
+	pg.base.ship_skin_expression.alabama_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -70111,11 +65286,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.ship_skin_expression
-
-	var_13_8.changchun_3 = {
+	pg.base.ship_skin_expression.changchun_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -70169,11 +65340,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.ship_skin_expression
-
-	var_13_9.u47_6 = {
+	pg.base.ship_skin_expression.u47_6 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -70227,11 +65394,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.ship_skin_expression
-
-	var_13_10.xiefeierde_alter = {
+	pg.base.ship_skin_expression.xiefeierde_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -70285,11 +65448,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.ship_skin_expression
-
-	var_13_11.ximu_5 = {
+	pg.base.ship_skin_expression.ximu_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -70343,11 +65502,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.ship_skin_expression
-
-	var_13_12.yibei_3 = {
+	pg.base.ship_skin_expression.yibei_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -70401,11 +65556,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.ship_skin_expression
-
-	var_13_13.yuhei_3 = {
+	pg.base.ship_skin_expression.yuhei_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -70459,11 +65610,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.ship_skin_expression
-
-	var_13_14.shuixingjinian_5 = {
+	pg.base.ship_skin_expression.shuixingjinian_5 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -70517,11 +65664,7 @@ end)()
 		login = "9",
 		detail = "4"
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.ship_skin_expression
-
-	var_13_15.yuanchou = {
+	pg.base.ship_skin_expression.yuanchou = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -70575,11 +65718,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.ship_skin_expression
-
-	var_13_16.yuanchou_2 = {
+	pg.base.ship_skin_expression.yuanchou_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -70633,11 +65772,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.ship_skin_expression
-
-	var_13_17.sikula = {
+	pg.base.ship_skin_expression.sikula = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -70691,11 +65826,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.ship_skin_expression
-
-	var_13_18.sikula_2 = {
+	pg.base.ship_skin_expression.sikula_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -70749,11 +65880,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.ship_skin_expression
-
-	var_13_19.huangjiaxiangshu = {
+	pg.base.ship_skin_expression.huangjiaxiangshu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -70807,11 +65934,7 @@ end)()
 		login = "7",
 		detail = "4"
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.ship_skin_expression
-
-	var_13_20.huangjiaxiangshu_2 = {
+	pg.base.ship_skin_expression.huangjiaxiangshu_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -70865,11 +65988,7 @@ end)()
 		login = "5",
 		detail = "8"
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.ship_skin_expression
-
-	var_13_21.yingxiong = {
+	pg.base.ship_skin_expression.yingxiong = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -70923,11 +66042,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.ship_skin_expression
-
-	var_13_22.yingxiong_2 = {
+	pg.base.ship_skin_expression.yingxiong_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -70981,11 +66096,7 @@ end)()
 		login = "6",
 		detail = "8"
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.ship_skin_expression
-
-	var_13_23.baiyanjuren = {
+	pg.base.ship_skin_expression.baiyanjuren = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -71039,11 +66150,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.ship_skin_expression
-
-	var_13_24.baiyanjuren_2 = {
+	pg.base.ship_skin_expression.baiyanjuren_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -71097,11 +66204,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.ship_skin_expression
-
-	var_13_25.haifeng_3 = {
+	pg.base.ship_skin_expression.haifeng_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -71155,11 +66258,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.ship_skin_expression
-
-	var_13_26.yanusi_4 = {
+	pg.base.ship_skin_expression.yanusi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -71213,11 +66312,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.ship_skin_expression
-
-	var_13_27.mabuerheide_5 = {
+	pg.base.ship_skin_expression.mabuerheide_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -71271,11 +66366,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.ship_skin_expression
-
-	var_13_28.haiyinlixi_5 = {
+	pg.base.ship_skin_expression.haiyinlixi_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -71329,11 +66420,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.ship_skin_expression
-
-	var_13_29.yilishabai_alter = {
+	pg.base.ship_skin_expression.yilishabai_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -71387,11 +66474,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.ship_skin_expression
-
-	var_13_30.fuluoxiluofu = {
+	pg.base.ship_skin_expression.fuluoxiluofu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -71445,11 +66528,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.ship_skin_expression
-
-	var_13_31.fuluoxiluofu_2 = {
+	pg.base.ship_skin_expression.fuluoxiluofu_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -71503,11 +66582,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.ship_skin_expression
-
-	var_13_32.kuersike = {
+	pg.base.ship_skin_expression.kuersike = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -71561,11 +66636,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.ship_skin_expression
-
-	var_13_33.kuersike_2 = {
+	pg.base.ship_skin_expression.kuersike_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -71619,11 +66690,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.ship_skin_expression
-
-	var_13_34.saiwasituoboer = {
+	pg.base.ship_skin_expression.saiwasituoboer = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -71677,11 +66744,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.ship_skin_expression
-
-	var_13_35.saiwasituoboer_2 = {
+	pg.base.ship_skin_expression.saiwasituoboer_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -71735,11 +66798,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.ship_skin_expression
-
-	var_13_36.weiyan_6 = {
+	pg.base.ship_skin_expression.weiyan_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -71793,11 +66852,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.ship_skin_expression
-
-	var_13_37.diliyasite_3 = {
+	pg.base.ship_skin_expression.diliyasite_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -71851,11 +66906,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.ship_skin_expression
-
-	var_13_38.xiafei_3 = {
+	pg.base.ship_skin_expression.xiafei_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -71909,11 +66960,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.ship_skin_expression
-
-	var_13_39.meiyinci_2 = {
+	pg.base.ship_skin_expression.meiyinci_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -71967,11 +67014,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.ship_skin_expression
-
-	var_13_40.jialisuoniye_alter = {
+	pg.base.ship_skin_expression.jialisuoniye_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -72025,11 +67068,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.ship_skin_expression
-
-	var_13_41.wokelan_4 = {
+	pg.base.ship_skin_expression.wokelan_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -72083,11 +67122,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.ship_skin_expression
-
-	var_13_42.huan_doa = {
+	pg.base.ship_skin_expression.huan_doa = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -72141,11 +67176,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.ship_skin_expression
-
-	var_13_43.huan_2_doa = {
+	pg.base.ship_skin_expression.huan_2_doa = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -72199,11 +67230,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.ship_skin_expression
-
-	var_13_44.luna_doa = {
+	pg.base.ship_skin_expression.luna_doa = {
 		default = "",
 		feeling3 = "11",
 		main3_replace = "",
@@ -72257,11 +67284,7 @@ end)()
 		login = "4",
 		detail = "8"
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.ship_skin_expression
-
-	var_13_45.luna_2_doa = {
+	pg.base.ship_skin_expression.luna_2_doa = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -72315,11 +67338,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.ship_skin_expression
-
-	var_13_46.maliluosi_3_doa = {
+	pg.base.ship_skin_expression.maliluosi_3_doa = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -72373,11 +67392,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.ship_skin_expression
-
-	var_13_47.chicheng_6 = {
+	pg.base.ship_skin_expression.chicheng_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -72431,11 +67446,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.ship_skin_expression
-
-	var_13_48.sanli_6 = {
+	pg.base.ship_skin_expression.sanli_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -72489,11 +67500,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.ship_skin_expression
-
-	var_13_49.kewei_younv = {
+	pg.base.ship_skin_expression.kewei_younv = {
 		default = "0",
 		feeling3 = "9",
 		main3_replace = "",
@@ -72547,11 +67554,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.ship_skin_expression
-
-	var_13_50.bisimaiz = {
+	pg.base.ship_skin_expression.bisimaiz = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -72605,11 +67608,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.ship_skin_expression
-
-	var_13_51.bisimaiz_2 = {
+	pg.base.ship_skin_expression.bisimaiz_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -72663,11 +67662,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.ship_skin_expression
-
-	var_13_52.leigensibao = {
+	pg.base.ship_skin_expression.leigensibao = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -72721,11 +67716,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.ship_skin_expression
-
-	var_13_53.leigensibao_2 = {
+	pg.base.ship_skin_expression.leigensibao_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -72779,11 +67770,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.ship_skin_expression
-
-	var_13_54.yade = {
+	pg.base.ship_skin_expression.yade = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -72837,11 +67824,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.ship_skin_expression
-
-	var_13_55.yade_2 = {
+	pg.base.ship_skin_expression.yade_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -72895,11 +67878,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.ship_skin_expression
-
-	var_13_56.aotuo = {
+	pg.base.ship_skin_expression.aotuo = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -72953,11 +67932,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.ship_skin_expression
-
-	var_13_57.aotuo_2 = {
+	pg.base.ship_skin_expression.aotuo_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -73011,11 +67986,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.ship_skin_expression
-
-	var_13_58.u556_alter = {
+	pg.base.ship_skin_expression.u556_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -73069,11 +68040,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.ship_skin_expression
-
-	var_13_59.xinzexi_3 = {
+	pg.base.ship_skin_expression.xinzexi_3 = {
 		default = "",
 		feeling3 = "11",
 		main3_replace = "",
@@ -73127,11 +68094,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.ship_skin_expression
-
-	var_13_60.dafeng_6 = {
+	pg.base.ship_skin_expression.dafeng_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -73185,11 +68148,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.ship_skin_expression
-
-	var_13_61.ankeleiqi_2 = {
+	pg.base.ship_skin_expression.ankeleiqi_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -73243,11 +68202,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.ship_skin_expression
-
-	var_13_62.jiuyun_3 = {
+	pg.base.ship_skin_expression.jiuyun_3 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -73301,11 +68256,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.ship_skin_expression
-
-	var_13_63.huangjiacaifu_3 = {
+	pg.base.ship_skin_expression.huangjiacaifu_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -73359,11 +68310,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.ship_skin_expression
-
-	var_13_64.manchesite_2 = {
+	pg.base.ship_skin_expression.manchesite_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -73417,11 +68364,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.ship_skin_expression
-
-	var_13_65.tikangdeluojia_3 = {
+	pg.base.ship_skin_expression.tikangdeluojia_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -73475,11 +68418,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.ship_skin_expression
-
-	var_13_66.yixian_3 = {
+	pg.base.ship_skin_expression.yixian_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -73533,11 +68472,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.ship_skin_expression
-
-	var_13_67.zaoshen_alter = {
+	pg.base.ship_skin_expression.zaoshen_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -73591,11 +68526,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.ship_skin_expression
-
-	var_13_68.jiahe_7 = {
+	pg.base.ship_skin_expression.jiahe_7 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -73649,11 +68580,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.ship_skin_expression
-
-	var_13_69.naerxun_g = {
+	pg.base.ship_skin_expression.naerxun_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -73707,11 +68634,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.ship_skin_expression
-
-	var_13_70.guanghui_6 = {
+	pg.base.ship_skin_expression.guanghui_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -73765,11 +68688,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.ship_skin_expression
-
-	var_13_71.lafei_12 = {
+	pg.base.ship_skin_expression.lafei_12 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -73823,11 +68742,7 @@ end)()
 		login = "7",
 		detail = "8"
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.ship_skin_expression
-
-	var_13_72.lingbo_16 = {
+	pg.base.ship_skin_expression.lingbo_16 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -73881,11 +68796,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.ship_skin_expression
-
-	var_13_73.haiyinlixi_4 = {
+	pg.base.ship_skin_expression.haiyinlixi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -73939,11 +68850,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.ship_skin_expression
-
-	var_13_74.dujiaoshou_9 = {
+	pg.base.ship_skin_expression.dujiaoshou_9 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -73997,11 +68904,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.ship_skin_expression
-
-	var_13_75.qiabayefu_5 = {
+	pg.base.ship_skin_expression.qiabayefu_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -74055,11 +68958,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.ship_skin_expression
-
-	var_13_76.kelifulan_7 = {
+	pg.base.ship_skin_expression.kelifulan_7 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -74113,11 +69012,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.ship_skin_expression
-
-	var_13_77.tiancheng_3 = {
+	pg.base.ship_skin_expression.tiancheng_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -74171,11 +69066,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.ship_skin_expression
-
-	var_13_78.dafeng_younv = {
+	pg.base.ship_skin_expression.dafeng_younv = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -74229,11 +69120,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.ship_skin_expression
-
-	var_13_79.xiangbin_h = {
+	pg.base.ship_skin_expression.xiangbin_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -74287,11 +69174,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.ship_skin_expression
-
-	var_13_80.hemin_h = {
+	pg.base.ship_skin_expression.hemin_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -74345,11 +69228,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.ship_skin_expression
-
-	var_13_81.haerbin_h = {
+	pg.base.ship_skin_expression.haerbin_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -74403,11 +69282,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.ship_skin_expression
-
-	var_13_82.haitian_3 = {
+	pg.base.ship_skin_expression.haitian_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -74461,11 +69336,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.ship_skin_expression
-
-	var_13_83.aerjiliya_alter = {
+	pg.base.ship_skin_expression.aerjiliya_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -74519,11 +69390,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.ship_skin_expression
-
-	var_13_84.liekexingdun = {
+	pg.base.ship_skin_expression.liekexingdun = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -74577,11 +69444,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.ship_skin_expression
-
-	var_13_85.mingshi = {
+	pg.base.ship_skin_expression.mingshi = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -74635,11 +69498,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.ship_skin_expression
-
-	var_13_86.shengli = {
+	pg.base.ship_skin_expression.shengli = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -74693,11 +69552,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.ship_skin_expression
-
-	var_13_87.geliqiya = {
+	pg.base.ship_skin_expression.geliqiya = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -74751,11 +69606,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.ship_skin_expression
-
-	var_13_88.geliqiya_2 = {
+	pg.base.ship_skin_expression.geliqiya_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -74809,11 +69660,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.ship_skin_expression
-
-	var_13_89.adiliao = {
+	pg.base.ship_skin_expression.adiliao = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -74867,11 +69714,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.ship_skin_expression
-
-	var_13_90.adiliao_2 = {
+	pg.base.ship_skin_expression.adiliao_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -74925,11 +69768,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.ship_skin_expression
-
-	var_13_91.andelieyaduoliya = {
+	pg.base.ship_skin_expression.andelieyaduoliya = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -74983,11 +69822,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.ship_skin_expression
-
-	var_13_92.andelieyaduoliya_2 = {
+	pg.base.ship_skin_expression.andelieyaduoliya_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -75041,11 +69876,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.ship_skin_expression
-
-	var_13_93.lundun_3 = {
+	pg.base.ship_skin_expression.lundun_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -75099,11 +69930,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.ship_skin_expression
-
-	var_13_94.aisaikesi_7 = {
+	pg.base.ship_skin_expression.aisaikesi_7 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -75157,11 +69984,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.ship_skin_expression
-
-	var_13_95.hude_5 = {
+	pg.base.ship_skin_expression.hude_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -75215,11 +70038,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.ship_skin_expression
-
-	var_13_96.lituoliao_5 = {
+	pg.base.ship_skin_expression.lituoliao_5 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -75273,11 +70092,7 @@ end)()
 		login = "6",
 		detail = "5"
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.ship_skin_expression
-
-	var_13_97.qiershazhi = {
+	pg.base.ship_skin_expression.qiershazhi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -75331,11 +70146,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.ship_skin_expression
-
-	var_13_98.xingdengbao = {
+	pg.base.ship_skin_expression.xingdengbao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -75389,8 +70200,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_13_98
-	var_13_98.base.ship_skin_expression.siwanshi = {
+	pg.base.ship_skin_expression.siwanshi = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -75448,11 +70258,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.ship_skin_expression
-
-	var_14_0.feilikesishuerci = {
+	pg.base.ship_skin_expression.feilikesishuerci = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -75506,11 +70312,7 @@ end)()
 		login = "4",
 		detail = "10"
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.ship_skin_expression
-
-	var_14_1.fulandeer = {
+	pg.base.ship_skin_expression.fulandeer = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -75564,11 +70366,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.ship_skin_expression
-
-	var_14_2.yilishabai_7 = {
+	pg.base.ship_skin_expression.yilishabai_7 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -75622,11 +70420,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.ship_skin_expression
-
-	var_14_3.gongzhu = {
+	pg.base.ship_skin_expression.gongzhu = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -75680,11 +70474,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.ship_skin_expression
-
-	var_14_4.gongzhu_2 = {
+	pg.base.ship_skin_expression.gongzhu_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -75738,11 +70528,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.ship_skin_expression
-
-	var_14_5.erdaimu = {
+	pg.base.ship_skin_expression.erdaimu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -75796,11 +70582,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.ship_skin_expression
-
-	var_14_6.erdaimu_2 = {
+	pg.base.ship_skin_expression.erdaimu_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -75854,11 +70636,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.ship_skin_expression
-
-	var_14_7.baoduoliuhua_3 = {
+	pg.base.ship_skin_expression.baoduoliuhua_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -75912,11 +70690,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.ship_skin_expression
-
-	var_14_8.mengya_3 = {
+	pg.base.ship_skin_expression.mengya_3 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -75970,11 +70744,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.ship_skin_expression
-
-	var_14_9.qian_3 = {
+	pg.base.ship_skin_expression.qian_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -76028,11 +70798,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.ship_skin_expression
-
-	var_14_10.qianlai_3 = {
+	pg.base.ship_skin_expression.qianlai_3 = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -76086,11 +70852,7 @@ end)()
 		login = "2",
 		detail = "7"
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.ship_skin_expression
-
-	var_14_11.qifeng_alter = {
+	pg.base.ship_skin_expression.qifeng_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -76144,11 +70906,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.ship_skin_expression
-
-	var_14_12.fuxu_3 = {
+	pg.base.ship_skin_expression.fuxu_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -76202,11 +70960,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.ship_skin_expression
-
-	var_14_13.masaiqu = {
+	pg.base.ship_skin_expression.masaiqu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -76260,11 +71014,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.ship_skin_expression
-
-	var_14_14.masaiqu_2 = {
+	pg.base.ship_skin_expression.masaiqu_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -76318,11 +71068,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.ship_skin_expression
-
-	var_14_15.kelaimengsuo = {
+	pg.base.ship_skin_expression.kelaimengsuo = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -76376,11 +71122,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.ship_skin_expression
-
-	var_14_16.kelaimengsuo_2 = {
+	pg.base.ship_skin_expression.kelaimengsuo_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -76434,11 +71176,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.ship_skin_expression
-
-	var_14_17.jishang = {
+	pg.base.ship_skin_expression.jishang = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -76492,11 +71230,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.ship_skin_expression
-
-	var_14_18.jishang_2 = {
+	pg.base.ship_skin_expression.jishang_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -76550,11 +71284,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.ship_skin_expression
-
-	var_14_19.liang = {
+	pg.base.ship_skin_expression.liang = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -76608,11 +71338,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.ship_skin_expression
-
-	var_14_20.liang_2 = {
+	pg.base.ship_skin_expression.liang_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -76666,11 +71392,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.ship_skin_expression
-
-	var_14_21.xufulun = {
+	pg.base.ship_skin_expression.xufulun = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -76724,11 +71446,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.ship_skin_expression
-
-	var_14_22.xufulun_2 = {
+	pg.base.ship_skin_expression.xufulun_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -76782,11 +71500,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.ship_skin_expression
-
-	var_14_23.kaiersheng = {
+	pg.base.ship_skin_expression.kaiersheng = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -76840,11 +71554,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.ship_skin_expression
-
-	var_14_24.kaiersheng_2 = {
+	pg.base.ship_skin_expression.kaiersheng_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -76898,11 +71608,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.ship_skin_expression
-
-	var_14_25.xifujiniya_g = {
+	pg.base.ship_skin_expression.xifujiniya_g = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -76956,11 +71662,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.ship_skin_expression
-
-	var_14_26.xifujiniya_3 = {
+	pg.base.ship_skin_expression.xifujiniya_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -77014,11 +71716,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.ship_skin_expression
-
-	var_14_27.jifu_3 = {
+	pg.base.ship_skin_expression.jifu_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -77072,11 +71770,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.ship_skin_expression
-
-	var_14_28.qiye_9 = {
+	pg.base.ship_skin_expression.qiye_9 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -77130,11 +71824,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.ship_skin_expression
-
-	var_14_29.hailunna_4 = {
+	pg.base.ship_skin_expression.hailunna_4 = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -77188,11 +71878,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.ship_skin_expression
-
-	var_14_30.yuekecheng_h = {
+	pg.base.ship_skin_expression.yuekecheng_h = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -77246,11 +71932,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.ship_skin_expression
-
-	var_14_31.banerwei = {
+	pg.base.ship_skin_expression.banerwei = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -77304,11 +71986,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.ship_skin_expression
-
-	var_14_32.banerwei_2 = {
+	pg.base.ship_skin_expression.banerwei_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -77362,11 +72040,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.ship_skin_expression
-
-	var_14_33.shentong_alter = {
+	pg.base.ship_skin_expression.shentong_alter = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -77420,11 +72094,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.ship_skin_expression
-
-	var_14_34.weizhang = {
+	pg.base.ship_skin_expression.weizhang = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -77478,11 +72148,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.ship_skin_expression
-
-	var_14_35.weizhang_2 = {
+	pg.base.ship_skin_expression.weizhang_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -77536,11 +72202,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.ship_skin_expression
-
-	var_14_36.yunxian = {
+	pg.base.ship_skin_expression.yunxian = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -77594,11 +72256,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.ship_skin_expression
-
-	var_14_37.chuyue = {
+	pg.base.ship_skin_expression.chuyue = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -77652,11 +72310,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.ship_skin_expression
-
-	var_14_38.chuyue_2 = {
+	pg.base.ship_skin_expression.chuyue_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -77710,11 +72364,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.ship_skin_expression
-
-	var_14_39.mingqu = {
+	pg.base.ship_skin_expression.mingqu = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -77768,11 +72418,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.ship_skin_expression
-
-	var_14_40.mingqu_2 = {
+	pg.base.ship_skin_expression.mingqu_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -77826,11 +72472,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.ship_skin_expression
-
-	var_14_41.zhaozhi = {
+	pg.base.ship_skin_expression.zhaozhi = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -77884,11 +72526,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.ship_skin_expression
-
-	var_14_42.zhaozhi_2 = {
+	pg.base.ship_skin_expression.zhaozhi_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -77942,11 +72580,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.ship_skin_expression
-
-	var_14_43.jianye_4 = {
+	pg.base.ship_skin_expression.jianye_4 = {
 		default = "0",
 		feeling3 = "7",
 		main3_replace = "",
@@ -78000,11 +72634,7 @@ end)()
 		login = "7",
 		detail = "8"
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.ship_skin_expression
-
-	var_14_44.bailong_3 = {
+	pg.base.ship_skin_expression.bailong_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -78058,11 +72688,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.ship_skin_expression
-
-	var_14_45.yingwuluo_3 = {
+	pg.base.ship_skin_expression.yingwuluo_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -78116,11 +72742,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.ship_skin_expression
-
-	var_14_46.gecheng_3 = {
+	pg.base.ship_skin_expression.gecheng_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -78174,11 +72796,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.ship_skin_expression
-
-	var_14_47.nazhi_g = {
+	pg.base.ship_skin_expression.nazhi_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -78232,11 +72850,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.ship_skin_expression
-
-	var_14_48.yunxian_2 = {
+	pg.base.ship_skin_expression.yunxian_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -78290,11 +72904,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.ship_skin_expression
-
-	var_14_49.baiyanjuren_3 = {
+	pg.base.ship_skin_expression.baiyanjuren_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -78348,11 +72958,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.ship_skin_expression
-
-	var_14_50.biaoqiang_9 = {
+	pg.base.ship_skin_expression.biaoqiang_9 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -78406,11 +73012,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.ship_skin_expression
-
-	var_14_51.jiuyun_4 = {
+	pg.base.ship_skin_expression.jiuyun_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -78464,11 +73066,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.ship_skin_expression
-
-	var_14_52.weiershiqinwang_5 = {
+	pg.base.ship_skin_expression.weiershiqinwang_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -78522,11 +73120,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.ship_skin_expression
-
-	var_14_53.xinnong_4 = {
+	pg.base.ship_skin_expression.xinnong_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -78580,11 +73174,7 @@ end)()
 		login = "6",
 		detail = "9"
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.ship_skin_expression
-
-	var_14_54.z23_12 = {
+	pg.base.ship_skin_expression.z23_12 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -78638,11 +73228,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.ship_skin_expression
-
-	var_14_55.pulinsidun_alter = {
+	pg.base.ship_skin_expression.pulinsidun_alter = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -78696,11 +73282,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.ship_skin_expression
-
-	var_14_56.wuerlixi_3 = {
+	pg.base.ship_skin_expression.wuerlixi_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -78754,11 +73336,7 @@ end)()
 		login = "7",
 		detail = "9"
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.ship_skin_expression
-
-	var_14_57.aisaikesi_8 = {
+	pg.base.ship_skin_expression.aisaikesi_8 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -78812,11 +73390,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.ship_skin_expression
-
-	var_14_58.daofeng_6 = {
+	pg.base.ship_skin_expression.daofeng_6 = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -78870,11 +73444,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.ship_skin_expression
-
-	var_14_59.u410_3 = {
+	pg.base.ship_skin_expression.u410_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -78928,11 +73498,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.ship_skin_expression
-
-	var_14_60.bulaimodun_h = {
+	pg.base.ship_skin_expression.bulaimodun_h = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -78986,11 +73552,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.ship_skin_expression
-
-	var_14_61.lvzuofu_h = {
+	pg.base.ship_skin_expression.lvzuofu_h = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -79044,11 +73606,7 @@ end)()
 		login = "7",
 		detail = "6"
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.ship_skin_expression
-
-	var_14_62.xiusidunII = {
+	pg.base.ship_skin_expression.xiusidunII = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -79102,11 +73660,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.ship_skin_expression
-
-	var_14_63.shengmading = {
+	pg.base.ship_skin_expression.shengmading = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -79160,11 +73714,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.ship_skin_expression
-
-	var_14_64.shengmading_2 = {
+	pg.base.ship_skin_expression.shengmading_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -79218,11 +73768,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.ship_skin_expression
-
-	var_14_65.jinluhao = {
+	pg.base.ship_skin_expression.jinluhao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -79276,11 +73822,7 @@ end)()
 		login = "3",
 		detail = "8"
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.ship_skin_expression
-
-	var_14_66.jinluhao_2 = {
+	pg.base.ship_skin_expression.jinluhao_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -79334,11 +73876,7 @@ end)()
 		login = "7",
 		detail = "6"
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.ship_skin_expression
-
-	var_14_67.mali = {
+	pg.base.ship_skin_expression.mali = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -79392,11 +73930,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.ship_skin_expression
-
-	var_14_68.mali_2 = {
+	pg.base.ship_skin_expression.mali_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -79450,11 +73984,7 @@ end)()
 		login = "6",
 		detail = "1"
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.ship_skin_expression
-
-	var_14_69.weida = {
+	pg.base.ship_skin_expression.weida = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -79508,11 +74038,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.ship_skin_expression
-
-	var_14_70.weida_2 = {
+	pg.base.ship_skin_expression.weida_2 = {
 		default = "0",
 		feeling3 = "8",
 		main3_replace = "",
@@ -79566,11 +74092,7 @@ end)()
 		login = "10",
 		detail = "2"
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.ship_skin_expression
-
-	var_14_71.jialimaoxian = {
+	pg.base.ship_skin_expression.jialimaoxian = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -79624,11 +74146,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.ship_skin_expression
-
-	var_14_72.jialimaoxian_2 = {
+	pg.base.ship_skin_expression.jialimaoxian_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -79682,11 +74200,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.ship_skin_expression
-
-	var_14_73.haitian_4 = {
+	pg.base.ship_skin_expression.haitian_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -79740,11 +74254,7 @@ end)()
 		login = "9",
 		detail = "10"
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.ship_skin_expression
-
-	var_14_74.z24_4 = {
+	pg.base.ship_skin_expression.z24_4 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -79798,11 +74308,7 @@ end)()
 		login = "9",
 		detail = "3"
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.ship_skin_expression
-
-	var_14_75.shengli_4 = {
+	pg.base.ship_skin_expression.shengli_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -79856,11 +74362,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.ship_skin_expression
-
-	var_14_76.feiniao = {
+	pg.base.ship_skin_expression.feiniao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -79914,11 +74416,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.ship_skin_expression
-
-	var_14_77.feiniao_2 = {
+	pg.base.ship_skin_expression.feiniao_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -79972,11 +74470,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.ship_skin_expression
-
-	var_14_78.banjiu = {
+	pg.base.ship_skin_expression.banjiu = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -80030,11 +74524,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.ship_skin_expression
-
-	var_14_79.banjiu_2 = {
+	pg.base.ship_skin_expression.banjiu_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -80088,11 +74578,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.ship_skin_expression
-
-	var_14_80.yan = {
+	pg.base.ship_skin_expression.yan = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -80146,11 +74632,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.ship_skin_expression
-
-	var_14_81.yan_2 = {
+	pg.base.ship_skin_expression.yan_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -80204,11 +74686,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.ship_skin_expression
-
-	var_14_82.xuequan = {
+	pg.base.ship_skin_expression.xuequan = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -80262,11 +74740,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.ship_skin_expression
-
-	var_14_83.xuequan_2 = {
+	pg.base.ship_skin_expression.xuequan_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -80320,11 +74794,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.ship_skin_expression
-
-	var_14_84.xuebugui = {
+	pg.base.ship_skin_expression.xuebugui = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -80378,11 +74848,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.ship_skin_expression
-
-	var_14_85.xuebugui_2 = {
+	pg.base.ship_skin_expression.xuebugui_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -80436,11 +74902,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.ship_skin_expression
-
-	var_14_86.zi_shanluan = {
+	pg.base.ship_skin_expression.zi_shanluan = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -80494,11 +74956,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.ship_skin_expression
-
-	var_14_87.zi_2_shanluan = {
+	pg.base.ship_skin_expression.zi_2_shanluan = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -80552,11 +75010,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.ship_skin_expression
-
-	var_14_88.xishao = {
+	pg.base.ship_skin_expression.xishao = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -80610,11 +75064,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.ship_skin_expression
-
-	var_14_89.xishao_2 = {
+	pg.base.ship_skin_expression.xishao_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -80668,11 +75118,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.ship_skin_expression
-
-	var_14_90.heianjie_alter = {
+	pg.base.ship_skin_expression.heianjie_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -80726,11 +75172,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.ship_skin_expression
-
-	var_14_91.gaoxiong_6 = {
+	pg.base.ship_skin_expression.gaoxiong_6 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -80784,11 +75226,7 @@ end)()
 		login = "7",
 		detail = "7"
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.ship_skin_expression
-
-	var_14_92.chuchun_4 = {
+	pg.base.ship_skin_expression.chuchun_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -80842,11 +75280,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.ship_skin_expression
-
-	var_14_93.jiluofu_alter = {
+	pg.base.ship_skin_expression.jiluofu_alter = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -80900,11 +75334,7 @@ end)()
 		login = "3",
 		detail = "9"
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.ship_skin_expression
-
-	var_14_94.guandao = {
+	pg.base.ship_skin_expression.guandao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -80958,11 +75388,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.ship_skin_expression
-
-	var_14_95.guandao_2 = {
+	pg.base.ship_skin_expression.guandao_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -81016,11 +75442,7 @@ end)()
 		login = "3",
 		detail = "8"
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.ship_skin_expression
-
-	var_14_96.lafeiII = {
+	pg.base.ship_skin_expression.lafeiII = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -81074,11 +75496,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.ship_skin_expression
-
-	var_14_97.lafeiII_3 = {
+	pg.base.ship_skin_expression.lafeiII_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -81132,11 +75550,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.ship_skin_expression
-
-	var_14_98.xingzuo = {
+	pg.base.ship_skin_expression.xingzuo = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -81190,8 +75604,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_14_98
-	var_14_98.base.ship_skin_expression.xingzuo_2 = {
+	pg.base.ship_skin_expression.xingzuo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -81249,11 +75662,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.ship_skin_expression
-
-	var_15_0.songdiao = {
+	pg.base.ship_skin_expression.songdiao = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -81307,11 +75716,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.ship_skin_expression
-
-	var_15_1.songdiao_2 = {
+	pg.base.ship_skin_expression.songdiao_2 = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -81365,11 +75770,7 @@ end)()
 		login = "8",
 		detail = "5"
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.ship_skin_expression
-
-	var_15_2.shenghaxintuo = {
+	pg.base.ship_skin_expression.shenghaxintuo = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -81423,11 +75824,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.ship_skin_expression
-
-	var_15_3.shenghaxintuo_2 = {
+	pg.base.ship_skin_expression.shenghaxintuo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -81481,11 +75878,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.ship_skin_expression
-
-	var_15_4.luyisiweier = {
+	pg.base.ship_skin_expression.luyisiweier = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -81539,11 +75932,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.ship_skin_expression
-
-	var_15_5.luyisiweier_2 = {
+	pg.base.ship_skin_expression.luyisiweier_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -81597,11 +75986,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.ship_skin_expression
-
-	var_15_6.z35_3 = {
+	pg.base.ship_skin_expression.z35_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -81655,11 +76040,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.ship_skin_expression
-
-	var_15_7.kelifulan_8 = {
+	pg.base.ship_skin_expression.kelifulan_8 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -81713,11 +76094,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.ship_skin_expression
-
-	var_15_8.xiusidunII_2 = {
+	pg.base.ship_skin_expression.xiusidunII_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -81771,11 +76148,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.ship_skin_expression
-
-	var_15_9.xixuegui_6 = {
+	pg.base.ship_skin_expression.xixuegui_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -81829,11 +76202,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.ship_skin_expression
-
-	var_15_10.qiershazhi_2 = {
+	pg.base.ship_skin_expression.qiershazhi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -81887,11 +76256,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.ship_skin_expression
-
-	var_15_11.xingdengbao_2 = {
+	pg.base.ship_skin_expression.xingdengbao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -81945,11 +76310,7 @@ end)()
 		login = "8",
 		detail = "8"
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.ship_skin_expression
-
-	var_15_12.siwanshi_2 = {
+	pg.base.ship_skin_expression.siwanshi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -82003,11 +76364,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.ship_skin_expression
-
-	var_15_13.feilikesishuerci_2 = {
+	pg.base.ship_skin_expression.feilikesishuerci_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -82061,11 +76418,7 @@ end)()
 		login = "9",
 		detail = "7"
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.ship_skin_expression
-
-	var_15_14.fulandeer_2 = {
+	pg.base.ship_skin_expression.fulandeer_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -82119,11 +76472,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.ship_skin_expression
-
-	var_15_15.fengyun_4 = {
+	pg.base.ship_skin_expression.fengyun_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -82177,11 +76526,7 @@ end)()
 		login = "9",
 		detail = "3"
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.ship_skin_expression
-
-	var_15_16.yanusi_5 = {
+	pg.base.ship_skin_expression.yanusi_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -82235,11 +76580,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.ship_skin_expression
-
-	var_15_17.huanchang = {
+	pg.base.ship_skin_expression.huanchang = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -82293,11 +76634,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.ship_skin_expression
-
-	var_15_18.huanchang_2 = {
+	pg.base.ship_skin_expression.huanchang_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -82351,11 +76688,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.ship_skin_expression
-
-	var_15_19.jian = {
+	pg.base.ship_skin_expression.jian = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -82409,11 +76742,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.ship_skin_expression
-
-	var_15_20.jian_2 = {
+	pg.base.ship_skin_expression.jian_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -82467,11 +76796,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.ship_skin_expression
-
-	var_15_21.longwu = {
+	pg.base.ship_skin_expression.longwu = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -82525,11 +76850,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.ship_skin_expression
-
-	var_15_22.longwu_2 = {
+	pg.base.ship_skin_expression.longwu_2 = {
 		default = "0",
 		feeling3 = "13",
 		main3_replace = "",
@@ -82583,11 +76904,7 @@ end)()
 		login = "18",
 		detail = "3"
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.ship_skin_expression
-
-	var_15_23.huben = {
+	pg.base.ship_skin_expression.huben = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -82641,11 +76958,7 @@ end)()
 		login = "3",
 		detail = "12"
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.ship_skin_expression
-
-	var_15_24.huben_2 = {
+	pg.base.ship_skin_expression.huben_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -82699,11 +77012,7 @@ end)()
 		login = "11",
 		detail = "10"
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.ship_skin_expression
-
-	var_15_25.feiyun = {
+	pg.base.ship_skin_expression.feiyun = {
 		default = "0",
 		feeling3 = "12",
 		main3_replace = "",
@@ -82757,11 +77066,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.ship_skin_expression
-
-	var_15_26.feiyun_2 = {
+	pg.base.ship_skin_expression.feiyun_2 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -82815,11 +77120,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.ship_skin_expression
-
-	var_15_27.beianpudunII_3 = {
+	pg.base.ship_skin_expression.beianpudunII_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -82873,11 +77174,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.ship_skin_expression
-
-	var_15_28.aierbin_4 = {
+	pg.base.ship_skin_expression.aierbin_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -82931,11 +77228,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.ship_skin_expression
-
-	var_15_29.jinboli_alter = {
+	pg.base.ship_skin_expression.jinboli_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -82989,11 +77282,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.ship_skin_expression
-
-	var_15_30.shenxue_3 = {
+	pg.base.ship_skin_expression.shenxue_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -83047,11 +77336,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.ship_skin_expression
-
-	var_15_31.taiyuan_g = {
+	pg.base.ship_skin_expression.taiyuan_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -83105,11 +77390,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.ship_skin_expression
-
-	var_15_32.zhenhai_g = {
+	pg.base.ship_skin_expression.zhenhai_g = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -83163,11 +77444,7 @@ end)()
 		login = "7",
 		detail = "7"
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.ship_skin_expression
-
-	var_15_33.ruoyue_3 = {
+	pg.base.ship_skin_expression.ruoyue_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -83221,11 +77498,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.ship_skin_expression
-
-	var_15_34.aerbien_3 = {
+	pg.base.ship_skin_expression.aerbien_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -83279,11 +77552,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.ship_skin_expression
-
-	var_15_35.yingxianzuo_3 = {
+	pg.base.ship_skin_expression.yingxianzuo_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -83337,11 +77606,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.ship_skin_expression
-
-	var_15_36.shengwang_2 = {
+	pg.base.ship_skin_expression.shengwang_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -83395,11 +77660,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.ship_skin_expression
-
-	var_15_37.shitelasai_4 = {
+	pg.base.ship_skin_expression.shitelasai_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -83453,11 +77714,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.ship_skin_expression
-
-	var_15_38.ankeleiqi_3 = {
+	pg.base.ship_skin_expression.ankeleiqi_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -83511,11 +77768,7 @@ end)()
 		login = "14",
 		detail = "5"
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.ship_skin_expression
-
-	var_15_39.hemin_6 = {
+	pg.base.ship_skin_expression.hemin_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -83569,11 +77822,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.ship_skin_expression
-
-	var_15_40.lei_5 = {
+	pg.base.ship_skin_expression.lei_5 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -83627,11 +77876,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.ship_skin_expression
-
-	var_15_41.pinghai_8 = {
+	pg.base.ship_skin_expression.pinghai_8 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -83685,11 +77930,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.ship_skin_expression
-
-	var_15_42.ninghai_8 = {
+	pg.base.ship_skin_expression.ninghai_8 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -83743,11 +77984,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.ship_skin_expression
-
-	var_15_43.suweiaitongmengNew = {
+	pg.base.ship_skin_expression.suweiaitongmengNew = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -83801,11 +78038,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.ship_skin_expression
-
-	var_15_44.suweiaitongmeng_2 = {
+	pg.base.ship_skin_expression.suweiaitongmeng_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -83859,11 +78092,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.ship_skin_expression
-
-	var_15_45.huoli = {
+	pg.base.ship_skin_expression.huoli = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -83917,11 +78146,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.ship_skin_expression
-
-	var_15_46.huoli_2 = {
+	pg.base.ship_skin_expression.huoli_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -83975,11 +78200,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.ship_skin_expression
-
-	var_15_47.boertawa = {
+	pg.base.ship_skin_expression.boertawa = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -84033,11 +78254,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.ship_skin_expression
-
-	var_15_48.boertawa_2 = {
+	pg.base.ship_skin_expression.boertawa_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -84091,11 +78308,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.ship_skin_expression
-
-	var_15_49.xiongmeng = {
+	pg.base.ship_skin_expression.xiongmeng = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -84149,11 +78362,7 @@ end)()
 		login = "2",
 		detail = "9"
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.ship_skin_expression
-
-	var_15_50.xiongmeng_2 = {
+	pg.base.ship_skin_expression.xiongmeng_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -84207,11 +78416,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.ship_skin_expression
-
-	var_15_51.shuixingjinian_alter = {
+	pg.base.ship_skin_expression.shuixingjinian_alter = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -84265,11 +78470,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.ship_skin_expression
-
-	var_15_52.abeikelongbi_4 = {
+	pg.base.ship_skin_expression.abeikelongbi_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -84323,11 +78524,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.ship_skin_expression
-
-	var_15_53.ailunsamuna_3 = {
+	pg.base.ship_skin_expression.ailunsamuna_3 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -84381,11 +78578,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.ship_skin_expression
-
-	var_15_54.junzhu_4 = {
+	pg.base.ship_skin_expression.junzhu_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -84439,11 +78632,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.ship_skin_expression
-
-	var_15_55.luodeni_alter = {
+	pg.base.ship_skin_expression.luodeni_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -84497,11 +78686,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.ship_skin_expression
-
-	var_15_56.z46_7 = {
+	pg.base.ship_skin_expression.z46_7 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -84555,11 +78740,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.ship_skin_expression
-
-	var_15_57.nubiyaren = {
+	pg.base.ship_skin_expression.nubiyaren = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -84613,11 +78794,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.ship_skin_expression
-
-	var_15_58.nubiyaren_2 = {
+	pg.base.ship_skin_expression.nubiyaren_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -84671,11 +78848,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.ship_skin_expression
-
-	var_15_59.liwupu = {
+	pg.base.ship_skin_expression.liwupu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -84729,11 +78902,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.ship_skin_expression
-
-	var_15_60.liwupu_2 = {
+	pg.base.ship_skin_expression.liwupu_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -84787,11 +78956,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.ship_skin_expression
-
-	var_15_61.dewenjun = {
+	pg.base.ship_skin_expression.dewenjun = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -84845,11 +79010,7 @@ end)()
 		login = "5",
 		detail = "8"
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.ship_skin_expression
-
-	var_15_62.dewenjun_2 = {
+	pg.base.ship_skin_expression.dewenjun_2 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -84903,11 +79064,7 @@ end)()
 		login = "2",
 		detail = "8"
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.ship_skin_expression
-
-	var_15_63.xixuegui_alter = {
+	pg.base.ship_skin_expression.xixuegui_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -84961,11 +79118,7 @@ end)()
 		login = "5",
 		detail = "7"
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.ship_skin_expression
-
-	var_15_64.dujiaoshou_10 = {
+	pg.base.ship_skin_expression.dujiaoshou_10 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -85019,11 +79172,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.ship_skin_expression
-
-	var_15_65.aerhangeersike_3 = {
+	pg.base.ship_skin_expression.aerhangeersike_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -85077,11 +79226,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.ship_skin_expression
-
-	var_15_66.bulvxieer_3 = {
+	pg.base.ship_skin_expression.bulvxieer_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -85135,11 +79280,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.ship_skin_expression
-
-	var_15_67.yade_3 = {
+	pg.base.ship_skin_expression.yade_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -85193,11 +79334,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.ship_skin_expression
-
-	var_15_68.dian_5 = {
+	pg.base.ship_skin_expression.dian_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -85251,11 +79388,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.ship_skin_expression
-
-	var_15_69.feiteliekaer = {
+	pg.base.ship_skin_expression.feiteliekaer = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -85309,11 +79442,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.ship_skin_expression
-
-	var_15_70.feiteliekaer_2 = {
+	pg.base.ship_skin_expression.feiteliekaer_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -85367,11 +79496,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.ship_skin_expression
-
-	var_15_71.kin_2 = {
+	pg.base.ship_skin_expression.kin_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -85425,11 +79550,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.ship_skin_expression
-
-	var_15_72.kewei_idol = {
+	pg.base.ship_skin_expression.kewei_idol = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -85483,11 +79604,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.ship_skin_expression
-
-	var_15_73.kewei_4 = {
+	pg.base.ship_skin_expression.kewei_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -85541,11 +79658,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.ship_skin_expression
-
-	var_15_74.ougen_idol = {
+	pg.base.ship_skin_expression.ougen_idol = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -85599,11 +79712,7 @@ end)()
 		login = "6",
 		detail = "5"
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.ship_skin_expression
-
-	var_15_75.ougen_7 = {
+	pg.base.ship_skin_expression.ougen_7 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -85657,11 +79766,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.ship_skin_expression
-
-	var_15_76.nengdai_idol = {
+	pg.base.ship_skin_expression.nengdai_idol = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -85715,11 +79820,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.ship_skin_expression
-
-	var_15_77.nengdai_8 = {
+	pg.base.ship_skin_expression.nengdai_8 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -85773,11 +79874,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.ship_skin_expression
-
-	var_15_78.jingang_idol = {
+	pg.base.ship_skin_expression.jingang_idol = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -85831,11 +79928,7 @@ end)()
 		login = "8",
 		detail = "9"
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.ship_skin_expression
-
-	var_15_79.jingang_5 = {
+	pg.base.ship_skin_expression.jingang_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -85889,11 +79982,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.ship_skin_expression
-
-	var_15_80.lumang_idol = {
+	pg.base.ship_skin_expression.lumang_idol = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -85947,11 +80036,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.ship_skin_expression
-
-	var_15_81.lumang_4 = {
+	pg.base.ship_skin_expression.lumang_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86005,11 +80090,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.ship_skin_expression
-
-	var_15_82.boyixi_idol = {
+	pg.base.ship_skin_expression.boyixi_idol = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -86063,11 +80144,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.ship_skin_expression
-
-	var_15_83.boyixi_5 = {
+	pg.base.ship_skin_expression.boyixi_5 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86121,11 +80198,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.ship_skin_expression
-
-	var_15_84.xinnong_younv = {
+	pg.base.ship_skin_expression.xinnong_younv = {
 		default = "0",
 		feeling3 = "7",
 		main3_replace = "",
@@ -86179,11 +80252,7 @@ end)()
 		login = "11",
 		detail = "3"
 	}
-	pg = var_15_84
-
-	local var_15_85 = var_15_84.base.ship_skin_expression
-
-	var_15_85.saidelici_7 = {
+	pg.base.ship_skin_expression.saidelici_7 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86237,11 +80306,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.ship_skin_expression
-
-	var_15_86.yueke_ger_3 = {
+	pg.base.ship_skin_expression.yueke_ger_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -86295,11 +80360,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.ship_skin_expression
-
-	var_15_87.changdao_4 = {
+	pg.base.ship_skin_expression.changdao_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -86353,11 +80414,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.ship_skin_expression
-
-	var_15_88.aersasi = {
+	pg.base.ship_skin_expression.aersasi = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86411,11 +80468,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.ship_skin_expression
-
-	var_15_89.aersasi_2 = {
+	pg.base.ship_skin_expression.aersasi_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -86469,11 +80522,7 @@ end)()
 		login = "6",
 		detail = "11"
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.ship_skin_expression
-
-	var_15_90.mojiaduoer = {
+	pg.base.ship_skin_expression.mojiaduoer = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -86527,11 +80576,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.ship_skin_expression
-
-	var_15_91.mojiaduoer_2 = {
+	pg.base.ship_skin_expression.mojiaduoer_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -86585,11 +80630,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.ship_skin_expression
-
-	var_15_92.bulunnusi = {
+	pg.base.ship_skin_expression.bulunnusi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -86643,11 +80684,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.ship_skin_expression
-
-	var_15_93.bulunnusi_2 = {
+	pg.base.ship_skin_expression.bulunnusi_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -86701,11 +80738,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.ship_skin_expression
-
-	var_15_94.huajian = {
+	pg.base.ship_skin_expression.huajian = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86759,11 +80792,7 @@ end)()
 		login = "7",
 		detail = "7"
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.ship_skin_expression
-
-	var_15_95.huajian_2 = {
+	pg.base.ship_skin_expression.huajian_2 = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -86817,11 +80846,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.ship_skin_expression
-
-	var_15_96.zhongjian = {
+	pg.base.ship_skin_expression.zhongjian = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86875,11 +80900,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.ship_skin_expression
-
-	var_15_97.zhongjian_2 = {
+	pg.base.ship_skin_expression.zhongjian_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86933,11 +80954,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.ship_skin_expression
-
-	var_15_98.keluoladuo_g = {
+	pg.base.ship_skin_expression.keluoladuo_g = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -86991,8 +81008,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_15_98
-	var_15_98.base.ship_skin_expression.beiyaen_alter = {
+	pg.base.ship_skin_expression.beiyaen_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -87050,11 +81066,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.ship_skin_expression
-
-	var_16_0.aimudeng_4 = {
+	pg.base.ship_skin_expression.aimudeng_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -87108,11 +81120,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.ship_skin_expression
-
-	var_16_1.haerbin_3 = {
+	pg.base.ship_skin_expression.haerbin_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -87166,11 +81174,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.ship_skin_expression
-
-	var_16_2.shengluyisi_5 = {
+	pg.base.ship_skin_expression.shengluyisi_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -87224,11 +81228,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.ship_skin_expression
-
-	var_16_3.feiteliedadi_younv = {
+	pg.base.ship_skin_expression.feiteliedadi_younv = {
 		default = "",
 		feeling3 = "14",
 		main3_replace = "",
@@ -87282,11 +81282,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.ship_skin_expression
-
-	var_16_4.fuxu_alter = {
+	pg.base.ship_skin_expression.fuxu_alter = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -87340,11 +81336,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.ship_skin_expression
-
-	var_16_5.adiliao_3 = {
+	pg.base.ship_skin_expression.adiliao_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -87398,11 +81390,7 @@ end)()
 		login = "7",
 		detail = "8"
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.ship_skin_expression
-
-	var_16_6.sikula_3 = {
+	pg.base.ship_skin_expression.sikula_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -87456,11 +81444,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.ship_skin_expression
-
-	var_16_7.mingqu_3 = {
+	pg.base.ship_skin_expression.mingqu_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -87514,11 +81498,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.ship_skin_expression
-
-	var_16_8.tashigan_4 = {
+	pg.base.ship_skin_expression.tashigan_4 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -87572,11 +81552,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.ship_skin_expression
-
-	var_16_9.chaijun_5 = {
+	pg.base.ship_skin_expression.chaijun_5 = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -87630,11 +81606,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.ship_skin_expression
-
-	var_16_10.salatuojia_10 = {
+	pg.base.ship_skin_expression.salatuojia_10 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -87688,11 +81660,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.ship_skin_expression
-
-	var_16_11.kuersike_3 = {
+	pg.base.ship_skin_expression.kuersike_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -87746,11 +81714,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.ship_skin_expression
-
-	var_16_12.adaerbote_3 = {
+	pg.base.ship_skin_expression.adaerbote_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -87804,11 +81768,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.ship_skin_expression
-
-	var_16_13.tuzuo_3 = {
+	pg.base.ship_skin_expression.tuzuo_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -87862,11 +81822,7 @@ end)()
 		login = "4",
 		detail = "1"
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.ship_skin_expression
-
-	var_16_14.zhenhai_4 = {
+	pg.base.ship_skin_expression.zhenhai_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -87920,11 +81876,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.ship_skin_expression
-
-	var_16_15.longwu_3 = {
+	pg.base.ship_skin_expression.longwu_3 = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -87978,11 +81930,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.ship_skin_expression
-
-	var_16_16.wuzang_h = {
+	pg.base.ship_skin_expression.wuzang_h = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -88036,11 +81984,7 @@ end)()
 		login = "3",
 		detail = "7"
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.ship_skin_expression
-
-	var_16_17.aierdeliqi_h = {
+	pg.base.ship_skin_expression.aierdeliqi_h = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -88094,11 +82038,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.ship_skin_expression
-
-	var_16_18.haitian_h = {
+	pg.base.ship_skin_expression.haitian_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -88152,11 +82092,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.ship_skin_expression
-
-	var_16_19.weiqita_alter = {
+	pg.base.ship_skin_expression.weiqita_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -88210,11 +82146,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.ship_skin_expression
-
-	var_16_20.yaerweite = {
+	pg.base.ship_skin_expression.yaerweite = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -88268,11 +82200,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.ship_skin_expression
-
-	var_16_21.yaerweite_2 = {
+	pg.base.ship_skin_expression.yaerweite_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -88326,11 +82254,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.ship_skin_expression
-
-	var_16_22.z47 = {
+	pg.base.ship_skin_expression.z47 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -88384,11 +82308,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.ship_skin_expression
-
-	var_16_23.z47_2 = {
+	pg.base.ship_skin_expression.z47_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -88442,11 +82362,7 @@ end)()
 		login = "7",
 		detail = "5"
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.ship_skin_expression
-
-	var_16_24.u31 = {
+	pg.base.ship_skin_expression.u31 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -88500,11 +82416,7 @@ end)()
 		login = "18",
 		detail = "8"
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.ship_skin_expression
-
-	var_16_25.u31_2 = {
+	pg.base.ship_skin_expression.u31_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -88558,11 +82470,7 @@ end)()
 		login = "7",
 		detail = "6"
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.ship_skin_expression
-
-	var_16_26.z43 = {
+	pg.base.ship_skin_expression.z43 = {
 		default = "0",
 		feeling3 = "9",
 		main3_replace = "",
@@ -88616,11 +82524,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.ship_skin_expression
-
-	var_16_27.z43_2 = {
+	pg.base.ship_skin_expression.z43_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -88674,11 +82578,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.ship_skin_expression
-
-	var_16_28.aierdeliqi_8 = {
+	pg.base.ship_skin_expression.aierdeliqi_8 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -88732,11 +82632,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.ship_skin_expression
-
-	var_16_29.yuekegongjue_4 = {
+	pg.base.ship_skin_expression.yuekegongjue_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -88790,11 +82686,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.ship_skin_expression
-
-	var_16_30.guanghui_7 = {
+	pg.base.ship_skin_expression.guanghui_7 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -88848,11 +82740,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.ship_skin_expression
-
-	var_16_31.nabulesi = {
+	pg.base.ship_skin_expression.nabulesi = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -88906,11 +82794,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.ship_skin_expression
-
-	var_16_32.naximofu = {
+	pg.base.ship_skin_expression.naximofu = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -88964,11 +82848,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.ship_skin_expression
-
-	var_16_33.haerfude = {
+	pg.base.ship_skin_expression.haerfude = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -89022,11 +82902,7 @@ end)()
 		login = "8",
 		detail = ""
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.ship_skin_expression
-
-	var_16_34.beiyade = {
+	pg.base.ship_skin_expression.beiyade = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -89080,11 +82956,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.ship_skin_expression
-
-	var_16_35.dashan = {
+	pg.base.ship_skin_expression.dashan = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -89138,11 +83010,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.ship_skin_expression
-
-	var_16_36.haitian_5 = {
+	pg.base.ship_skin_expression.haitian_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -89196,11 +83064,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.ship_skin_expression
-
-	var_16_37.sitelasibao = {
+	pg.base.ship_skin_expression.sitelasibao = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -89254,11 +83118,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.ship_skin_expression
-
-	var_16_38.sitelasibao_2 = {
+	pg.base.ship_skin_expression.sitelasibao_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -89312,11 +83172,7 @@ end)()
 		login = "7",
 		detail = "5"
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.ship_skin_expression
-
-	var_16_39.guogan = {
+	pg.base.ship_skin_expression.guogan = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -89370,11 +83226,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.ship_skin_expression
-
-	var_16_40.guogan_2 = {
+	pg.base.ship_skin_expression.guogan_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -89428,11 +83280,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.ship_skin_expression
-
-	var_16_41.dipulaikesi = {
+	pg.base.ship_skin_expression.dipulaikesi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -89486,11 +83334,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.ship_skin_expression
-
-	var_16_42.dipulaikesi_2 = {
+	pg.base.ship_skin_expression.dipulaikesi_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -89544,11 +83388,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.ship_skin_expression
-
-	var_16_43.u96_4 = {
+	pg.base.ship_skin_expression.u96_4 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -89602,11 +83442,7 @@ end)()
 		login = "9",
 		detail = "4"
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.ship_skin_expression
-
-	var_16_44.ruihe_4 = {
+	pg.base.ship_skin_expression.ruihe_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -89660,11 +83496,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.ship_skin_expression
-
-	var_16_45.xiafei_4 = {
+	pg.base.ship_skin_expression.xiafei_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -89718,11 +83550,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.ship_skin_expression
-
-	var_16_46.haman_6 = {
+	pg.base.ship_skin_expression.haman_6 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -89776,11 +83604,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.ship_skin_expression
-
-	var_16_47.xia_alter = {
+	pg.base.ship_skin_expression.xia_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -89834,11 +83658,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.ship_skin_expression
-
-	var_16_48.luoma_4 = {
+	pg.base.ship_skin_expression.luoma_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -89892,11 +83712,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.ship_skin_expression
-
-	var_16_49.pizibao = {
+	pg.base.ship_skin_expression.pizibao = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -89950,11 +83766,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.ship_skin_expression
-
-	var_16_50.pizibao_2 = {
+	pg.base.ship_skin_expression.pizibao_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -90008,11 +83820,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.ship_skin_expression
-
-	var_16_51.yindianna = {
+	pg.base.ship_skin_expression.yindianna = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -90066,11 +83874,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.ship_skin_expression
-
-	var_16_52.yindianna_2 = {
+	pg.base.ship_skin_expression.yindianna_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -90124,11 +83928,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.ship_skin_expression
-
-	var_16_53.fage = {
+	pg.base.ship_skin_expression.fage = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -90182,11 +83982,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.ship_skin_expression
-
-	var_16_54.fage_2 = {
+	pg.base.ship_skin_expression.fage_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -90240,11 +84036,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.ship_skin_expression
-
-	var_16_55.feiyu = {
+	pg.base.ship_skin_expression.feiyu = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -90298,11 +84090,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.ship_skin_expression
-
-	var_16_56.feiyu_2 = {
+	pg.base.ship_skin_expression.feiyu_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -90356,11 +84144,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.ship_skin_expression
-
-	var_16_57.beier = {
+	pg.base.ship_skin_expression.beier = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -90414,11 +84198,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.ship_skin_expression
-
-	var_16_58.beier_2 = {
+	pg.base.ship_skin_expression.beier_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -90472,11 +84252,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.ship_skin_expression
-
-	var_16_59.aierdeliqi_g = {
+	pg.base.ship_skin_expression.aierdeliqi_g = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -90530,11 +84306,7 @@ end)()
 		login = "10",
 		detail = ""
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.ship_skin_expression
-
-	var_16_60.kaiersheng_3 = {
+	pg.base.ship_skin_expression.kaiersheng_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -90588,11 +84360,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.ship_skin_expression
-
-	var_16_61.u556_3 = {
+	pg.base.ship_skin_expression.u556_3 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -90646,11 +84414,7 @@ end)()
 		login = "9",
 		detail = "7"
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.ship_skin_expression
-
-	var_16_62.banerwei_3 = {
+	pg.base.ship_skin_expression.banerwei_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -90704,11 +84468,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.ship_skin_expression
-
-	var_16_63.feiteliedadi_3 = {
+	pg.base.ship_skin_expression.feiteliedadi_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -90762,11 +84522,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.ship_skin_expression
-
-	var_16_64.ankeleiqi_h = {
+	pg.base.ship_skin_expression.ankeleiqi_h = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -90820,11 +84576,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.ship_skin_expression
-
-	var_16_65.dujiaoshou_11 = {
+	pg.base.ship_skin_expression.dujiaoshou_11 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -90878,11 +84630,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.ship_skin_expression
-
-	var_16_66.ruifeng = {
+	pg.base.ship_skin_expression.ruifeng = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -90936,11 +84684,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.ship_skin_expression
-
-	var_16_67.ruifeng_2 = {
+	pg.base.ship_skin_expression.ruifeng_2 = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -90994,11 +84738,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.ship_skin_expression
-
-	var_16_68.changmen_alter = {
+	pg.base.ship_skin_expression.changmen_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91052,11 +84792,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.ship_skin_expression
-
-	var_16_69.muyue_5 = {
+	pg.base.ship_skin_expression.muyue_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -91110,11 +84846,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.ship_skin_expression
-
-	var_16_70.tiancheng_cv = {
+	pg.base.ship_skin_expression.tiancheng_cv = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91168,11 +84900,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.ship_skin_expression
-
-	var_16_71.tiancheng_cv_2 = {
+	pg.base.ship_skin_expression.tiancheng_cv_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -91226,11 +84954,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.ship_skin_expression
-
-	var_16_72.dulianglai = {
+	pg.base.ship_skin_expression.dulianglai = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -91284,11 +85008,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.ship_skin_expression
-
-	var_16_73.dulianglai_2 = {
+	pg.base.ship_skin_expression.dulianglai_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -91342,11 +85062,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.ship_skin_expression
-
-	var_16_74.birui_alter = {
+	pg.base.ship_skin_expression.birui_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91400,11 +85116,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.ship_skin_expression
-
-	var_16_75.linglai = {
+	pg.base.ship_skin_expression.linglai = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -91458,11 +85170,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.ship_skin_expression
-
-	var_16_76.linglai_2 = {
+	pg.base.ship_skin_expression.linglai_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -91516,11 +85224,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.ship_skin_expression
-
-	var_16_77.liangbo = {
+	pg.base.ship_skin_expression.liangbo = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -91574,11 +85278,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.ship_skin_expression
-
-	var_16_78.liangbo_2 = {
+	pg.base.ship_skin_expression.liangbo_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -91632,11 +85332,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.ship_skin_expression
-
-	var_16_79.malilan_g = {
+	pg.base.ship_skin_expression.malilan_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91690,11 +85386,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.ship_skin_expression
-
-	var_16_80.beierfasite_9 = {
+	pg.base.ship_skin_expression.beierfasite_9 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91748,11 +85440,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.ship_skin_expression
-
-	var_16_81.huangjiafangzhou_6 = {
+	pg.base.ship_skin_expression.huangjiafangzhou_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91806,11 +85494,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_16_81
-
-	local var_16_82 = var_16_81.base.ship_skin_expression
-
-	var_16_82.z35_4 = {
+	pg.base.ship_skin_expression.z35_4 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -91864,11 +85548,7 @@ end)()
 		login = "2",
 		detail = "8"
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.ship_skin_expression
-
-	var_16_83.xiefeierde_6 = {
+	pg.base.ship_skin_expression.xiefeierde_6 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -91922,11 +85602,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.ship_skin_expression
-
-	var_16_84.chuixue_7 = {
+	pg.base.ship_skin_expression.chuixue_7 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -91980,11 +85656,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_16_84
-
-	local var_16_85 = var_16_84.base.ship_skin_expression
-
-	var_16_85.dingan_3 = {
+	pg.base.ship_skin_expression.dingan_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -92038,11 +85710,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.ship_skin_expression
-
-	var_16_86.lupuleixite_3 = {
+	pg.base.ship_skin_expression.lupuleixite_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -92096,11 +85764,7 @@ end)()
 		login = "5",
 		detail = "8"
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.ship_skin_expression
-
-	var_16_87.bulaimodun_6 = {
+	pg.base.ship_skin_expression.bulaimodun_6 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -92154,11 +85818,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.ship_skin_expression
-
-	var_16_88.tianlangxing_5 = {
+	pg.base.ship_skin_expression.tianlangxing_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -92212,11 +85872,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.ship_skin_expression
-
-	var_16_89.jianye_5 = {
+	pg.base.ship_skin_expression.jianye_5 = {
 		default = "",
 		feeling3 = "14",
 		main3_replace = "",
@@ -92270,11 +85926,7 @@ end)()
 		login = "1",
 		detail = "11"
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.ship_skin_expression
-
-	var_16_90.longxiang_4 = {
+	pg.base.ship_skin_expression.longxiang_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -92328,11 +85980,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.ship_skin_expression
-
-	var_16_91.geluosite_3 = {
+	pg.base.ship_skin_expression.geluosite_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -92386,11 +86034,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.ship_skin_expression
-
-	var_16_92.wuzang_3 = {
+	pg.base.ship_skin_expression.wuzang_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -92444,11 +86088,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.ship_skin_expression
-
-	var_16_93.fengxiang_alter = {
+	pg.base.ship_skin_expression.fengxiang_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -92502,11 +86142,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.ship_skin_expression
-
-	var_16_94.xufulun_3 = {
+	pg.base.ship_skin_expression.xufulun_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -92560,11 +86196,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.ship_skin_expression
-
-	var_16_95.xianghe_h = {
+	pg.base.ship_skin_expression.xianghe_h = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -92618,11 +86250,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.ship_skin_expression
-
-	var_16_96.bisimai_h = {
+	pg.base.ship_skin_expression.bisimai_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -92676,11 +86304,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.ship_skin_expression
-
-	var_16_97.fusang_h = {
+	pg.base.ship_skin_expression.fusang_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -92734,11 +86358,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.ship_skin_expression
-
-	var_16_98.bailong_4 = {
+	pg.base.ship_skin_expression.bailong_4 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -92792,8 +86412,7 @@ end)()
 		login = "8",
 		detail = "1"
 	}
-	pg = var_16_98
-	var_16_98.base.ship_skin_expression.gangyishawa = {
+	pg.base.ship_skin_expression.gangyishawa = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -92851,11 +86470,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.ship_skin_expression
-
-	var_17_0.gangyishawa_2 = {
+	pg.base.ship_skin_expression.gangyishawa_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -92909,11 +86524,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.ship_skin_expression
-
-	var_17_1.huanxianghao = {
+	pg.base.ship_skin_expression.huanxianghao = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -92967,11 +86578,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.ship_skin_expression
-
-	var_17_2.huanxianghao_2 = {
+	pg.base.ship_skin_expression.huanxianghao_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -93025,11 +86632,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.ship_skin_expression
-
-	var_17_3.hemuhao = {
+	pg.base.ship_skin_expression.hemuhao = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -93083,11 +86686,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.ship_skin_expression
-
-	var_17_4.hemuhao_2 = {
+	pg.base.ship_skin_expression.hemuhao_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -93141,11 +86740,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.ship_skin_expression
-
-	var_17_5.pucimaosi = {
+	pg.base.ship_skin_expression.pucimaosi = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -93199,11 +86794,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.ship_skin_expression
-
-	var_17_6.pucimaosi_2 = {
+	pg.base.ship_skin_expression.pucimaosi_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -93257,11 +86848,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.ship_skin_expression
-
-	var_17_7.haitunhao = {
+	pg.base.ship_skin_expression.haitunhao = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -93315,11 +86902,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.ship_skin_expression
-
-	var_17_8.haitunhao_2 = {
+	pg.base.ship_skin_expression.haitunhao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -93373,11 +86956,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.ship_skin_expression
-
-	var_17_9.weizhang_3 = {
+	pg.base.ship_skin_expression.weizhang_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -93431,11 +87010,7 @@ end)()
 		login = "3",
 		detail = "7"
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.ship_skin_expression
-
-	var_17_10.bulisituoer_3 = {
+	pg.base.ship_skin_expression.bulisituoer_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -93489,11 +87064,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.ship_skin_expression
-
-	var_17_11.aidang_6 = {
+	pg.base.ship_skin_expression.aidang_6 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -93547,11 +87118,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.ship_skin_expression
-
-	var_17_12.lala_tolove = {
+	pg.base.ship_skin_expression.lala_tolove = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -93605,11 +87172,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.ship_skin_expression
-
-	var_17_13.lala_2_tolove = {
+	pg.base.ship_skin_expression.lala_2_tolove = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -93663,11 +87226,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.ship_skin_expression
-
-	var_17_14.nana_tolove = {
+	pg.base.ship_skin_expression.nana_tolove = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -93721,11 +87280,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.ship_skin_expression
-
-	var_17_15.nana_2_tolove = {
+	pg.base.ship_skin_expression.nana_2_tolove = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -93779,11 +87334,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.ship_skin_expression
-
-	var_17_16.mengmeng_tolove = {
+	pg.base.ship_skin_expression.mengmeng_tolove = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -93837,11 +87388,7 @@ end)()
 		login = "9",
 		detail = "11"
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.ship_skin_expression
-
-	var_17_17.mengmeng_2_tolove = {
+	pg.base.ship_skin_expression.mengmeng_2_tolove = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -93895,11 +87442,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.ship_skin_expression
-
-	var_17_18.jinseanying_tolove = {
+	pg.base.ship_skin_expression.jinseanying_tolove = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -93953,11 +87496,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.ship_skin_expression
-
-	var_17_19.jinseanying_2_tolove = {
+	pg.base.ship_skin_expression.jinseanying_2_tolove = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -94011,11 +87550,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.ship_skin_expression
-
-	var_17_20.xiliansi_tolove = {
+	pg.base.ship_skin_expression.xiliansi_tolove = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -94069,11 +87604,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.ship_skin_expression
-
-	var_17_21.xiliansi_2_tolove = {
+	pg.base.ship_skin_expression.xiliansi_2_tolove = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -94127,11 +87658,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.ship_skin_expression
-
-	var_17_22.gushouchuan_tolove = {
+	pg.base.ship_skin_expression.gushouchuan_tolove = {
 		default = "",
 		feeling3 = "11",
 		main3_replace = "",
@@ -94185,11 +87712,7 @@ end)()
 		login = "1",
 		detail = "10"
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.ship_skin_expression
-
-	var_17_23.gushouchuan_2_tolove = {
+	pg.base.ship_skin_expression.gushouchuan_2_tolove = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -94243,11 +87766,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.ship_skin_expression
-
-	var_17_24.kaisa_alter = {
+	pg.base.ship_skin_expression.kaisa_alter = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -94301,11 +87820,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.ship_skin_expression
-
-	var_17_25.wuerlixi_4 = {
+	pg.base.ship_skin_expression.wuerlixi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -94359,11 +87874,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.ship_skin_expression
-
-	var_17_26.weixi_5 = {
+	pg.base.ship_skin_expression.weixi_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -94417,11 +87928,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.ship_skin_expression
-
-	var_17_27.aogusite_3 = {
+	pg.base.ship_skin_expression.aogusite_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -94475,11 +87982,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.ship_skin_expression
-
-	var_17_28.dafeng_alter = {
+	pg.base.ship_skin_expression.dafeng_alter = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -94533,11 +88036,7 @@ end)()
 		login = "8",
 		detail = "4"
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.ship_skin_expression
-
-	var_17_29.fulici = {
+	pg.base.ship_skin_expression.fulici = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -94591,11 +88090,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.ship_skin_expression
-
-	var_17_30.fulici_2 = {
+	pg.base.ship_skin_expression.fulici_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -94649,11 +88144,7 @@ end)()
 		login = "5",
 		detail = "8"
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.ship_skin_expression
-
-	var_17_31.z52 = {
+	pg.base.ship_skin_expression.z52 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -94707,11 +88198,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.ship_skin_expression
-
-	var_17_32.z52_2 = {
+	pg.base.ship_skin_expression.z52_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -94765,11 +88252,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_17_32
-
-	local var_17_33 = var_17_32.base.ship_skin_expression
-
-	var_17_33.duyisibao = {
+	pg.base.ship_skin_expression.duyisibao = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -94823,11 +88306,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_17_33
-
-	local var_17_34 = var_17_33.base.ship_skin_expression
-
-	var_17_34.duyisibao_2 = {
+	pg.base.ship_skin_expression.duyisibao_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -94881,11 +88360,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_17_34
-
-	local var_17_35 = var_17_34.base.ship_skin_expression
-
-	var_17_35.z9 = {
+	pg.base.ship_skin_expression.z9 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -94939,11 +88414,7 @@ end)()
 		login = "8",
 		detail = "8"
 	}
-	pg = var_17_35
-
-	local var_17_36 = var_17_35.base.ship_skin_expression
-
-	var_17_36.z9_2 = {
+	pg.base.ship_skin_expression.z9_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -94997,11 +88468,7 @@ end)()
 		login = "7",
 		detail = "6"
 	}
-	pg = var_17_36
-
-	local var_17_37 = var_17_36.base.ship_skin_expression
-
-	var_17_37.z11 = {
+	pg.base.ship_skin_expression.z11 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -95055,11 +88522,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_17_37
-
-	local var_17_38 = var_17_37.base.ship_skin_expression
-
-	var_17_38.z11_2 = {
+	pg.base.ship_skin_expression.z11_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -95113,11 +88576,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_17_38
-
-	local var_17_39 = var_17_38.base.ship_skin_expression
-
-	var_17_39.xipeierhaijunshangjiang_alter = {
+	pg.base.ship_skin_expression.xipeierhaijunshangjiang_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -95171,11 +88630,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_17_39
-
-	local var_17_40 = var_17_39.base.ship_skin_expression
-
-	var_17_40.bisimai_4 = {
+	pg.base.ship_skin_expression.bisimai_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -95229,11 +88684,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_17_40
-
-	local var_17_41 = var_17_40.base.ship_skin_expression
-
-	var_17_41.aijier_4 = {
+	pg.base.ship_skin_expression.aijier_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -95287,11 +88738,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_17_41
-
-	local var_17_42 = var_17_41.base.ship_skin_expression
-
-	var_17_42.kewei_5 = {
+	pg.base.ship_skin_expression.kewei_5 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -95345,11 +88792,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_17_42
-
-	local var_17_43 = var_17_42.base.ship_skin_expression
-
-	var_17_43.yanusi_6 = {
+	pg.base.ship_skin_expression.yanusi_6 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -95403,11 +88846,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_17_43
-
-	local var_17_44 = var_17_43.base.ship_skin_expression
-
-	var_17_44.xinnong_5 = {
+	pg.base.ship_skin_expression.xinnong_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -95461,11 +88900,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_17_44
-
-	local var_17_45 = var_17_44.base.ship_skin_expression
-
-	var_17_45.nabulesi_2 = {
+	pg.base.ship_skin_expression.nabulesi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -95519,11 +88954,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_17_45
-
-	local var_17_46 = var_17_45.base.ship_skin_expression
-
-	var_17_46.naximofu_2 = {
+	pg.base.ship_skin_expression.naximofu_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -95577,11 +89008,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_17_46
-
-	local var_17_47 = var_17_46.base.ship_skin_expression
-
-	var_17_47.haerfude_2 = {
+	pg.base.ship_skin_expression.haerfude_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -95635,11 +89062,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_17_47
-
-	local var_17_48 = var_17_47.base.ship_skin_expression
-
-	var_17_48.beiyade_2 = {
+	pg.base.ship_skin_expression.beiyade_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -95693,11 +89116,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_17_48
-
-	local var_17_49 = var_17_48.base.ship_skin_expression
-
-	var_17_49.dashan_2 = {
+	pg.base.ship_skin_expression.dashan_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -95751,11 +89170,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_17_49
-
-	local var_17_50 = var_17_49.base.ship_skin_expression
-
-	var_17_50.leigensibao_3 = {
+	pg.base.ship_skin_expression.leigensibao_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -95809,11 +89224,7 @@ end)()
 		login = "6",
 		detail = "10"
 	}
-	pg = var_17_50
-
-	local var_17_51 = var_17_50.base.ship_skin_expression
-
-	var_17_51.zhumo_2 = {
+	pg.base.ship_skin_expression.zhumo_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -95867,11 +89278,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_17_51
-
-	local var_17_52 = var_17_51.base.ship_skin_expression
-
-	var_17_52.jianwu = {
+	pg.base.ship_skin_expression.jianwu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -95925,11 +89332,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_17_52
-
-	local var_17_53 = var_17_52.base.ship_skin_expression
-
-	var_17_53.jianwu_2 = {
+	pg.base.ship_skin_expression.jianwu_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -95983,11 +89386,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_17_53
-
-	local var_17_54 = var_17_53.base.ship_skin_expression
-
-	var_17_54.jianwu_3 = {
+	pg.base.ship_skin_expression.jianwu_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -96041,11 +89440,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_17_54
-
-	local var_17_55 = var_17_54.base.ship_skin_expression
-
-	var_17_55.hairong = {
+	pg.base.ship_skin_expression.hairong = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -96099,11 +89494,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_17_55
-
-	local var_17_56 = var_17_55.base.ship_skin_expression
-
-	var_17_56.hairong_2 = {
+	pg.base.ship_skin_expression.hairong_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -96157,11 +89548,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_17_56
-
-	local var_17_57 = var_17_56.base.ship_skin_expression
-
-	var_17_57.changfeng = {
+	pg.base.ship_skin_expression.changfeng = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -96215,11 +89602,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_17_57
-
-	local var_17_58 = var_17_57.base.ship_skin_expression
-
-	var_17_58.changfeng_2 = {
+	pg.base.ship_skin_expression.changfeng_2 = {
 		default = "0",
 		feeling3 = "7",
 		main3_replace = "",
@@ -96273,11 +89656,7 @@ end)()
 		login = "1",
 		detail = "9"
 	}
-	pg = var_17_58
-
-	local var_17_59 = var_17_58.base.ship_skin_expression
-
-	var_17_59.fubo = {
+	pg.base.ship_skin_expression.fubo = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -96331,11 +89710,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_17_59
-
-	local var_17_60 = var_17_59.base.ship_skin_expression
-
-	var_17_60.fubo_2 = {
+	pg.base.ship_skin_expression.fubo_2 = {
 		default = "0",
 		feeling3 = "6",
 		main3_replace = "",
@@ -96389,11 +89764,7 @@ end)()
 		login = "7",
 		detail = "9"
 	}
-	pg = var_17_60
-
-	local var_17_61 = var_17_60.base.ship_skin_expression
-
-	var_17_61.buleisite_3 = {
+	pg.base.ship_skin_expression.buleisite_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -96447,11 +89818,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_17_61
-
-	local var_17_62 = var_17_61.base.ship_skin_expression
-
-	var_17_62.qiershazhi_3 = {
+	pg.base.ship_skin_expression.qiershazhi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -96505,11 +89872,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_17_62
-
-	local var_17_63 = var_17_62.base.ship_skin_expression
-
-	var_17_63.changmen_6 = {
+	pg.base.ship_skin_expression.changmen_6 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -96563,11 +89926,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_63
-
-	local var_17_64 = var_17_63.base.ship_skin_expression
-
-	var_17_64.fushun_g = {
+	pg.base.ship_skin_expression.fushun_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -96621,11 +89980,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_17_64
-
-	local var_17_65 = var_17_64.base.ship_skin_expression
-
-	var_17_65.huajia_g = {
+	pg.base.ship_skin_expression.huajia_g = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -96679,11 +90034,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_17_65
-
-	local var_17_66 = var_17_65.base.ship_skin_expression
-
-	var_17_66.meiyinci_3 = {
+	pg.base.ship_skin_expression.meiyinci_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -96737,11 +90088,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_17_66
-
-	local var_17_67 = var_17_66.base.ship_skin_expression
-
-	var_17_67.rangbaer_5 = {
+	pg.base.ship_skin_expression.rangbaer_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -96795,11 +90142,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_17_67
-
-	local var_17_68 = var_17_67.base.ship_skin_expression
-
-	var_17_68.xinzexi_4 = {
+	pg.base.ship_skin_expression.xinzexi_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -96853,11 +90196,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_17_68
-
-	local var_17_69 = var_17_68.base.ship_skin_expression
-
-	var_17_69.moermansike_3 = {
+	pg.base.ship_skin_expression.moermansike_3 = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -96911,11 +90250,7 @@ end)()
 		login = "10",
 		detail = "5"
 	}
-	pg = var_17_69
-
-	local var_17_70 = var_17_69.base.ship_skin_expression
-
-	var_17_70.diliyasite_4 = {
+	pg.base.ship_skin_expression.diliyasite_4 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -96969,11 +90304,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_17_70
-
-	local var_17_71 = var_17_70.base.ship_skin_expression
-
-	var_17_71.bailu_3 = {
+	pg.base.ship_skin_expression.bailu_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -97027,11 +90358,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_17_71
-
-	local var_17_72 = var_17_71.base.ship_skin_expression
-
-	var_17_72.shengnvzhende_3 = {
+	pg.base.ship_skin_expression.shengnvzhende_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -97085,11 +90412,7 @@ end)()
 		login = "2",
 		detail = "7"
 	}
-	pg = var_17_72
-
-	local var_17_73 = var_17_72.base.ship_skin_expression
-
-	var_17_73.boerzhanuo_alter = {
+	pg.base.ship_skin_expression.boerzhanuo_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -97143,11 +90466,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_17_73
-
-	local var_17_74 = var_17_73.base.ship_skin_expression
-
-	var_17_74.fanji_3 = {
+	pg.base.ship_skin_expression.fanji_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -97201,11 +90520,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_17_74
-
-	local var_17_75 = var_17_74.base.ship_skin_expression
-
-	var_17_75.nubiyaren_3 = {
+	pg.base.ship_skin_expression.nubiyaren_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -97259,11 +90574,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_17_75
-
-	local var_17_76 = var_17_75.base.ship_skin_expression
-
-	var_17_76.changbo_5 = {
+	pg.base.ship_skin_expression.changbo_5 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -97317,11 +90628,7 @@ end)()
 		login = "4",
 		detail = "7"
 	}
-	pg = var_17_76
-
-	local var_17_77 = var_17_76.base.ship_skin_expression
-
-	var_17_77.lafeier = {
+	pg.base.ship_skin_expression.lafeier = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -97375,11 +90682,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_17_77
-
-	local var_17_78 = var_17_77.base.ship_skin_expression
-
-	var_17_78.lafeier_2 = {
+	pg.base.ship_skin_expression.lafeier_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -97433,11 +90736,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_17_78
-
-	local var_17_79 = var_17_78.base.ship_skin_expression
-
-	var_17_79.balaka = {
+	pg.base.ship_skin_expression.balaka = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -97491,11 +90790,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_17_79
-
-	local var_17_80 = var_17_79.base.ship_skin_expression
-
-	var_17_80.balaka_2 = {
+	pg.base.ship_skin_expression.balaka_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -97549,11 +90844,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_17_80
-
-	local var_17_81 = var_17_80.base.ship_skin_expression
-
-	var_17_81.jiaosuai = {
+	pg.base.ship_skin_expression.jiaosuai = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -97607,11 +90898,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_17_81
-
-	local var_17_82 = var_17_81.base.ship_skin_expression
-
-	var_17_82.jiaosuai_2 = {
+	pg.base.ship_skin_expression.jiaosuai_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -97665,11 +90952,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_17_82
-
-	local var_17_83 = var_17_82.base.ship_skin_expression
-
-	var_17_83.batuoluomeiao = {
+	pg.base.ship_skin_expression.batuoluomeiao = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -97723,11 +91006,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_17_83
-
-	local var_17_84 = var_17_83.base.ship_skin_expression
-
-	var_17_84.batuoluomeiao_2 = {
+	pg.base.ship_skin_expression.batuoluomeiao_2 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -97781,11 +91060,7 @@ end)()
 		login = "10",
 		detail = "5"
 	}
-	pg = var_17_84
-
-	local var_17_85 = var_17_84.base.ship_skin_expression
-
-	var_17_85.andelieyaduoliya_alter = {
+	pg.base.ship_skin_expression.andelieyaduoliya_alter = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -97839,11 +91114,7 @@ end)()
 		login = "8",
 		detail = "1"
 	}
-	pg = var_17_85
-
-	local var_17_86 = var_17_85.base.ship_skin_expression
-
-	var_17_86.jian_3 = {
+	pg.base.ship_skin_expression.jian_3 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -97897,11 +91168,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_17_86
-
-	local var_17_87 = var_17_86.base.ship_skin_expression
-
-	var_17_87.sikula_4 = {
+	pg.base.ship_skin_expression.sikula_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -97955,11 +91222,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_17_87
-
-	local var_17_88 = var_17_87.base.ship_skin_expression
-
-	var_17_88.dahuangfeng_alter = {
+	pg.base.ship_skin_expression.dahuangfeng_alter = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -98013,11 +91276,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_17_88
-
-	local var_17_89 = var_17_88.base.ship_skin_expression
-
-	var_17_89.fulankelin = {
+	pg.base.ship_skin_expression.fulankelin = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -98071,11 +91330,7 @@ end)()
 		login = "4",
 		detail = "6"
 	}
-	pg = var_17_89
-
-	local var_17_90 = var_17_89.base.ship_skin_expression
-
-	var_17_90.fulankelin_2 = {
+	pg.base.ship_skin_expression.fulankelin_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -98129,11 +91384,7 @@ end)()
 		login = "3",
 		detail = "7"
 	}
-	pg = var_17_90
-
-	local var_17_91 = var_17_90.base.ship_skin_expression
-
-	var_17_91.shengtafei = {
+	pg.base.ship_skin_expression.shengtafei = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -98187,11 +91438,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_17_91
-
-	local var_17_92 = var_17_91.base.ship_skin_expression
-
-	var_17_92.shengtafei_2 = {
+	pg.base.ship_skin_expression.shengtafei_2 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -98245,11 +91492,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_17_92
-
-	local var_17_93 = var_17_92.base.ship_skin_expression
-
-	var_17_93.mile = {
+	pg.base.ship_skin_expression.mile = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -98303,11 +91546,7 @@ end)()
 		login = "6",
 		detail = "1"
 	}
-	pg = var_17_93
-
-	local var_17_94 = var_17_93.base.ship_skin_expression
-
-	var_17_94.mile_2 = {
+	pg.base.ship_skin_expression.mile_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -98361,11 +91600,7 @@ end)()
 		login = "5",
 		detail = "4"
 	}
-	pg = var_17_94
-
-	local var_17_95 = var_17_94.base.ship_skin_expression
-
-	var_17_95.neihuada_alter = {
+	pg.base.ship_skin_expression.neihuada_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -98419,11 +91654,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_17_95
-
-	local var_17_96 = var_17_95.base.ship_skin_expression
-
-	var_17_96.fuluoxiluofu_3 = {
+	pg.base.ship_skin_expression.fuluoxiluofu_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -98477,11 +91708,7 @@ end)()
 		login = "6",
 		detail = "3"
 	}
-	pg = var_17_96
-
-	local var_17_97 = var_17_96.base.ship_skin_expression
-
-	var_17_97.mojiaduoer_3 = {
+	pg.base.ship_skin_expression.mojiaduoer_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -98535,11 +91762,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_17_97
-
-	local var_17_98 = var_17_97.base.ship_skin_expression
-
-	var_17_98.mojiaduoer_3_ex = {
+	pg.base.ship_skin_expression.mojiaduoer_3_ex = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -98593,8 +91816,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_17_98
-	var_17_98.base.ship_skin_expression.linggu_3 = {
+	pg.base.ship_skin_expression.linggu_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -98652,11 +91874,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_18_0 = var_1_10000.base.ship_skin_expression
-
-	var_18_0.huashengdun_3 = {
+	pg.base.ship_skin_expression.huashengdun_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -98710,11 +91928,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_18_0
-
-	local var_18_1 = var_18_0.base.ship_skin_expression
-
-	var_18_1.shensu_4 = {
+	pg.base.ship_skin_expression.shensu_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -98768,11 +91982,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_18_1
-
-	local var_18_2 = var_18_1.base.ship_skin_expression
-
-	var_18_2.buli_super_2 = {
+	pg.base.ship_skin_expression.buli_super_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -98826,11 +92036,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_18_2
-
-	local var_18_3 = var_18_2.base.ship_skin_expression
-
-	var_18_3.qisheng = {
+	pg.base.ship_skin_expression.qisheng = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -98884,11 +92090,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_18_3
-
-	local var_18_4 = var_18_3.base.ship_skin_expression
-
-	var_18_4.qisheng_2 = {
+	pg.base.ship_skin_expression.qisheng_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -98942,11 +92144,7 @@ end)()
 		login = "1",
 		detail = "9"
 	}
-	pg = var_18_4
-
-	local var_18_5 = var_18_4.base.ship_skin_expression
-
-	var_18_5.kashan = {
+	pg.base.ship_skin_expression.kashan = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -99000,11 +92198,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_5
-
-	local var_18_6 = var_18_5.base.ship_skin_expression
-
-	var_18_6.kashan_2 = {
+	pg.base.ship_skin_expression.kashan_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -99058,11 +92252,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_6
-
-	local var_18_7 = var_18_6.base.ship_skin_expression
-
-	var_18_7.aifosen = {
+	pg.base.ship_skin_expression.aifosen = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -99116,11 +92306,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_7
-
-	local var_18_8 = var_18_7.base.ship_skin_expression
-
-	var_18_8.aifosen_2 = {
+	pg.base.ship_skin_expression.aifosen_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -99174,11 +92360,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_18_8
-
-	local var_18_9 = var_18_8.base.ship_skin_expression
-
-	var_18_9.aoliege = {
+	pg.base.ship_skin_expression.aoliege = {
 		default = "0",
 		feeling3 = "8",
 		main3_replace = "",
@@ -99232,11 +92414,7 @@ end)()
 		login = "7",
 		detail = "7"
 	}
-	pg = var_18_9
-
-	local var_18_10 = var_18_9.base.ship_skin_expression
-
-	var_18_10.aoliege_2 = {
+	pg.base.ship_skin_expression.aoliege_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -99290,11 +92468,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_18_10
-
-	local var_18_11 = var_18_10.base.ship_skin_expression
-
-	var_18_11.ankeleiqi_younv = {
+	pg.base.ship_skin_expression.ankeleiqi_younv = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -99348,11 +92522,7 @@ end)()
 		login = "4",
 		detail = "7"
 	}
-	pg = var_18_11
-
-	local var_18_12 = var_18_11.base.ship_skin_expression
-
-	var_18_12.bailong_5 = {
+	pg.base.ship_skin_expression.bailong_5 = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -99406,11 +92576,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_18_12
-
-	local var_18_13 = var_18_12.base.ship_skin_expression
-
-	var_18_13.taiyuan_3 = {
+	pg.base.ship_skin_expression.taiyuan_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -99464,11 +92630,7 @@ end)()
 		login = "9",
 		detail = "1"
 	}
-	pg = var_18_13
-
-	local var_18_14 = var_18_13.base.ship_skin_expression
-
-	var_18_14.aerbien_4 = {
+	pg.base.ship_skin_expression.aerbien_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -99522,11 +92684,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_18_14
-
-	local var_18_15 = var_18_14.base.ship_skin_expression
-
-	var_18_15.shuixingjinian_6 = {
+	pg.base.ship_skin_expression.shuixingjinian_6 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -99580,11 +92738,7 @@ end)()
 		login = "4",
 		detail = "7"
 	}
-	pg = var_18_15
-
-	local var_18_16 = var_18_15.base.ship_skin_expression
-
-	var_18_16.yongqi = {
+	pg.base.ship_skin_expression.yongqi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -99638,11 +92792,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_18_16
-
-	local var_18_17 = var_18_16.base.ship_skin_expression
-
-	var_18_17.yongqi_2 = {
+	pg.base.ship_skin_expression.yongqi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -99696,11 +92846,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_18_17
-
-	local var_18_18 = var_18_17.base.ship_skin_expression
-
-	var_18_18.shi = {
+	pg.base.ship_skin_expression.shi = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -99754,11 +92900,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_18
-
-	local var_18_19 = var_18_18.base.ship_skin_expression
-
-	var_18_19.shi_2 = {
+	pg.base.ship_skin_expression.shi_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -99812,11 +92954,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_18_19
-
-	local var_18_20 = var_18_19.base.ship_skin_expression
-
-	var_18_20.telafaerjia = {
+	pg.base.ship_skin_expression.telafaerjia = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -99870,11 +93008,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_20
-
-	local var_18_21 = var_18_20.base.ship_skin_expression
-
-	var_18_21.telafaerjia_2 = {
+	pg.base.ship_skin_expression.telafaerjia_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -99928,11 +93062,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_21
-
-	local var_18_22 = var_18_21.base.ship_skin_expression
-
-	var_18_22.keliaopeitela = {
+	pg.base.ship_skin_expression.keliaopeitela = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -99986,11 +93116,7 @@ end)()
 		login = "2",
 		detail = "4"
 	}
-	pg = var_18_22
-
-	local var_18_23 = var_18_22.base.ship_skin_expression
-
-	var_18_23.keliaopeitela_2 = {
+	pg.base.ship_skin_expression.keliaopeitela_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -100044,11 +93170,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_18_23
-
-	local var_18_24 = var_18_23.base.ship_skin_expression
-
-	var_18_24.telinida = {
+	pg.base.ship_skin_expression.telinida = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -100102,11 +93224,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_24
-
-	local var_18_25 = var_18_24.base.ship_skin_expression
-
-	var_18_25.telinida_2 = {
+	pg.base.ship_skin_expression.telinida_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -100160,11 +93278,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_18_25
-
-	local var_18_26 = var_18_25.base.ship_skin_expression
-
-	var_18_26.guangrong_alter = {
+	pg.base.ship_skin_expression.guangrong_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -100218,11 +93332,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_18_26
-
-	local var_18_27 = var_18_26.base.ship_skin_expression
-
-	var_18_27.yinghuochong_g = {
+	pg.base.ship_skin_expression.yinghuochong_g = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -100276,11 +93386,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_18_27
-
-	local var_18_28 = var_18_27.base.ship_skin_expression
-
-	var_18_28.dafeng_7 = {
+	pg.base.ship_skin_expression.dafeng_7 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -100334,11 +93440,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_28
-
-	local var_18_29 = var_18_28.base.ship_skin_expression
-
-	var_18_29.guanghui_8 = {
+	pg.base.ship_skin_expression.guanghui_8 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -100392,11 +93494,7 @@ end)()
 		login = "4",
 		detail = "7"
 	}
-	pg = var_18_29
-
-	local var_18_30 = var_18_29.base.ship_skin_expression
-
-	var_18_30.siwanshi_3 = {
+	pg.base.ship_skin_expression.siwanshi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -100450,11 +93548,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_18_30
-
-	local var_18_31 = var_18_30.base.ship_skin_expression
-
-	var_18_31.siwanshi_4 = {
+	pg.base.ship_skin_expression.siwanshi_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -100508,11 +93602,7 @@ end)()
 		login = "7",
 		detail = ""
 	}
-	pg = var_18_31
-
-	local var_18_32 = var_18_31.base.ship_skin_expression
-
-	var_18_32.aijier_younv = {
+	pg.base.ship_skin_expression.aijier_younv = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -100566,11 +93656,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_18_32
-
-	local var_18_33 = var_18_32.base.ship_skin_expression
-
-	var_18_33.gelunweier_alter = {
+	pg.base.ship_skin_expression.gelunweier_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -100624,11 +93710,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_33
-
-	local var_18_34 = var_18_33.base.ship_skin_expression
-
-	var_18_34.changfeng_3 = {
+	pg.base.ship_skin_expression.changfeng_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -100682,11 +93764,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_18_34
-
-	local var_18_35 = var_18_34.base.ship_skin_expression
-
-	var_18_35.malilan_3 = {
+	pg.base.ship_skin_expression.malilan_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -100740,11 +93818,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_18_35
-
-	local var_18_36 = var_18_35.base.ship_skin_expression
-
-	var_18_36.keluoladuo_4 = {
+	pg.base.ship_skin_expression.keluoladuo_4 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -100798,11 +93872,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_18_36
-
-	local var_18_37 = var_18_36.base.ship_skin_expression
-
-	var_18_37.yingrui_4 = {
+	pg.base.ship_skin_expression.yingrui_4 = {
 		default = "0",
 		feeling3 = "11",
 		main3_replace = "",
@@ -100856,11 +93926,7 @@ end)()
 		login = "",
 		detail = "10"
 	}
-	pg = var_18_37
-
-	local var_18_38 = var_18_37.base.ship_skin_expression
-
-	var_18_38.junzhu_5 = {
+	pg.base.ship_skin_expression.junzhu_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -100914,11 +93980,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_18_38
-
-	local var_18_39 = var_18_38.base.ship_skin_expression
-
-	var_18_39.suweiaibeilaluosi_3 = {
+	pg.base.ship_skin_expression.suweiaibeilaluosi_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -100972,11 +94034,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_18_39
-
-	local var_18_40 = var_18_39.base.ship_skin_expression
-
-	var_18_40.feiteliekaer_3 = {
+	pg.base.ship_skin_expression.feiteliekaer_3 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -101030,11 +94088,7 @@ end)()
 		login = "6",
 		detail = "4"
 	}
-	pg = var_18_40
-
-	local var_18_41 = var_18_40.base.ship_skin_expression
-
-	var_18_41.kewei_6 = {
+	pg.base.ship_skin_expression.kewei_6 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -101088,11 +94142,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_18_41
-
-	local var_18_42 = var_18_41.base.ship_skin_expression
-
-	var_18_42.chuyue_3 = {
+	pg.base.ship_skin_expression.chuyue_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -101146,11 +94196,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_42
-
-	local var_18_43 = var_18_42.base.ship_skin_expression
-
-	var_18_43.npcfeiteliekaer_3 = {
+	pg.base.ship_skin_expression.npcfeiteliekaer_3 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -101204,11 +94250,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_43
-
-	local var_18_44 = var_18_43.base.ship_skin_expression
-
-	var_18_44.jiangfeng_alter = {
+	pg.base.ship_skin_expression.jiangfeng_alter = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -101262,11 +94304,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_18_44
-
-	local var_18_45 = var_18_44.base.ship_skin_expression
-
-	var_18_45.heiyansheshou = {
+	pg.base.ship_skin_expression.heiyansheshou = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -101320,11 +94358,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_18_45
-
-	local var_18_46 = var_18_45.base.ship_skin_expression
-
-	var_18_46.heiyansheshou_2 = {
+	pg.base.ship_skin_expression.heiyansheshou_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -101378,11 +94412,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_18_46
-
-	local var_18_47 = var_18_46.base.ship_skin_expression
-
-	var_18_47.siwangzhuzai = {
+	pg.base.ship_skin_expression.siwangzhuzai = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -101436,11 +94466,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_47
-
-	local var_18_48 = var_18_47.base.ship_skin_expression
-
-	var_18_48.siwangzhuzai_2 = {
+	pg.base.ship_skin_expression.siwangzhuzai_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -101494,11 +94520,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_18_48
-
-	local var_18_49 = var_18_48.base.ship_skin_expression
-
-	var_18_49.naximofu_3 = {
+	pg.base.ship_skin_expression.naximofu_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -101552,11 +94574,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_18_49
-
-	local var_18_50 = var_18_49.base.ship_skin_expression
-
-	var_18_50.chaijun_h = {
+	pg.base.ship_skin_expression.chaijun_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -101610,11 +94628,7 @@ end)()
 		login = "2",
 		detail = "5"
 	}
-	pg = var_18_50
-
-	local var_18_51 = var_18_50.base.ship_skin_expression
-
-	var_18_51.baerdimo_h = {
+	pg.base.ship_skin_expression.baerdimo_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -101668,11 +94682,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_18_51
-
-	local var_18_52 = var_18_51.base.ship_skin_expression
-
-	var_18_52.yanusi_h = {
+	pg.base.ship_skin_expression.yanusi_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -101726,11 +94736,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_18_52
-
-	local var_18_53 = var_18_52.base.ship_skin_expression
-
-	var_18_53.zengkehaijunshangjiang = {
+	pg.base.ship_skin_expression.zengkehaijunshangjiang = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -101784,11 +94790,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_18_53
-
-	local var_18_54 = var_18_53.base.ship_skin_expression
-
-	var_18_54.zengkehaijunshangjiang_2 = {
+	pg.base.ship_skin_expression.zengkehaijunshangjiang_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -101842,11 +94844,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_18_54
-
-	local var_18_55 = var_18_54.base.ship_skin_expression
-
-	var_18_55.u552 = {
+	pg.base.ship_skin_expression.u552 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -101900,11 +94898,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_18_55
-
-	local var_18_56 = var_18_55.base.ship_skin_expression
-
-	var_18_56.u552_2 = {
+	pg.base.ship_skin_expression.u552_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -101958,11 +94952,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_18_56
-
-	local var_18_57 = var_18_56.base.ship_skin_expression
-
-	var_18_57.z13 = {
+	pg.base.ship_skin_expression.z13 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -102016,11 +95006,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_18_57
-
-	local var_18_58 = var_18_57.base.ship_skin_expression
-
-	var_18_58.z13_2 = {
+	pg.base.ship_skin_expression.z13_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -102074,11 +95060,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_58
-
-	local var_18_59 = var_18_58.base.ship_skin_expression
-
-	var_18_59.wuqi_3 = {
+	pg.base.ship_skin_expression.wuqi_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -102132,11 +95114,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_18_59
-
-	local var_18_60 = var_18_59.base.ship_skin_expression
-
-	var_18_60.diguo_3 = {
+	pg.base.ship_skin_expression.diguo_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -102190,11 +95168,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_60
-
-	local var_18_61 = var_18_60.base.ship_skin_expression
-
-	var_18_61.u37_3 = {
+	pg.base.ship_skin_expression.u37_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -102248,11 +95222,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_61
-
-	local var_18_62 = var_18_61.base.ship_skin_expression
-
-	var_18_62.haiwangxing_4 = {
+	pg.base.ship_skin_expression.haiwangxing_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -102306,11 +95276,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_18_62
-
-	local var_18_63 = var_18_62.base.ship_skin_expression
-
-	var_18_63.jinshi = {
+	pg.base.ship_skin_expression.jinshi = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -102364,11 +95330,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_18_63
-
-	local var_18_64 = var_18_63.base.ship_skin_expression
-
-	var_18_64.meikelunbao = {
+	pg.base.ship_skin_expression.meikelunbao = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -102422,11 +95384,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_18_64
-
-	local var_18_65 = var_18_64.base.ship_skin_expression
-
-	var_18_65.dimiteli = {
+	pg.base.ship_skin_expression.dimiteli = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -102480,11 +95438,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_18_65
-
-	local var_18_66 = var_18_65.base.ship_skin_expression
-
-	var_18_66.kansasi = {
+	pg.base.ship_skin_expression.kansasi = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -102538,11 +95492,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_66
-
-	local var_18_67 = var_18_66.base.ship_skin_expression
-
-	var_18_67.kunibeierdi = {
+	pg.base.ship_skin_expression.kunibeierdi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -102596,11 +95546,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_67
-
-	local var_18_68 = var_18_67.base.ship_skin_expression
-
-	var_18_68.bulvxieer_4 = {
+	pg.base.ship_skin_expression.bulvxieer_4 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -102654,11 +95600,7 @@ end)()
 		login = "4",
 		detail = "3"
 	}
-	pg = var_18_68
-
-	local var_18_69 = var_18_68.base.ship_skin_expression
-
-	var_18_69.youmiya = {
+	pg.base.ship_skin_expression.youmiya = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -102712,11 +95654,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_18_69
-
-	local var_18_70 = var_18_69.base.ship_skin_expression
-
-	var_18_70.youmiya_2 = {
+	pg.base.ship_skin_expression.youmiya_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -102770,11 +95708,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_18_70
-
-	local var_18_71 = var_18_70.base.ship_skin_expression
-
-	var_18_71.aila = {
+	pg.base.ship_skin_expression.aila = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -102828,11 +95762,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_18_71
-
-	local var_18_72 = var_18_71.base.ship_skin_expression
-
-	var_18_72.aila_2 = {
+	pg.base.ship_skin_expression.aila_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -102886,11 +95816,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_18_72
-
-	local var_18_73 = var_18_72.base.ship_skin_expression
-
-	var_18_73.nina = {
+	pg.base.ship_skin_expression.nina = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -102944,11 +95870,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_18_73
-
-	local var_18_74 = var_18_73.base.ship_skin_expression
-
-	var_18_74.nina_2 = {
+	pg.base.ship_skin_expression.nina_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103002,11 +95924,7 @@ end)()
 		login = "3",
 		detail = "4"
 	}
-	pg = var_18_74
-
-	local var_18_75 = var_18_74.base.ship_skin_expression
-
-	var_18_75.leiniya = {
+	pg.base.ship_skin_expression.leiniya = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -103060,11 +95978,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_18_75
-
-	local var_18_76 = var_18_75.base.ship_skin_expression
-
-	var_18_76.leiniya_2 = {
+	pg.base.ship_skin_expression.leiniya_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -103118,11 +96032,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_18_76
-
-	local var_18_77 = var_18_76.base.ship_skin_expression
-
-	var_18_77.zhaohe_4 = {
+	pg.base.ship_skin_expression.zhaohe_4 = {
 		default = "0",
 		feeling3 = "9",
 		main3_replace = "",
@@ -103176,11 +96086,7 @@ end)()
 		login = "7",
 		detail = "10"
 	}
-	pg = var_18_77
-
-	local var_18_78 = var_18_77.base.ship_skin_expression
-
-	var_18_78.laisha_3 = {
+	pg.base.ship_skin_expression.laisha_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -103234,11 +96140,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_18_78
-
-	local var_18_79 = var_18_78.base.ship_skin_expression
-
-	var_18_79.kala_2 = {
+	pg.base.ship_skin_expression.kala_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -103292,11 +96194,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_18_79
-
-	local var_18_80 = var_18_79.base.ship_skin_expression
-
-	var_18_80.dunkeerke_alter = {
+	pg.base.ship_skin_expression.dunkeerke_alter = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103350,11 +96248,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_18_80
-
-	local var_18_81 = var_18_80.base.ship_skin_expression
-
-	var_18_81.mengbiliai_4 = {
+	pg.base.ship_skin_expression.mengbiliai_4 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103408,11 +96302,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_18_81
-
-	local var_18_82 = var_18_81.base.ship_skin_expression
-
-	var_18_82.masaina = {
+	pg.base.ship_skin_expression.masaina = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103466,11 +96356,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_18_82
-
-	local var_18_83 = var_18_82.base.ship_skin_expression
-
-	var_18_83.masaina_2 = {
+	pg.base.ship_skin_expression.masaina_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -103524,11 +96410,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_18_83
-
-	local var_18_84 = var_18_83.base.ship_skin_expression
-
-	var_18_84.beilaosenlin = {
+	pg.base.ship_skin_expression.beilaosenlin = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103582,11 +96464,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_18_84
-
-	local var_18_85 = var_18_84.base.ship_skin_expression
-
-	var_18_85.beilaosenlin_2 = {
+	pg.base.ship_skin_expression.beilaosenlin_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -103640,11 +96518,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_18_85
-
-	local var_18_86 = var_18_85.base.ship_skin_expression
-
-	var_18_86.dikaina = {
+	pg.base.ship_skin_expression.dikaina = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103698,11 +96572,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_18_86
-
-	local var_18_87 = var_18_86.base.ship_skin_expression
-
-	var_18_87.dikaina_2 = {
+	pg.base.ship_skin_expression.dikaina_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -103756,11 +96626,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_18_87
-
-	local var_18_88 = var_18_87.base.ship_skin_expression
-
-	var_18_88.digaiteluyin = {
+	pg.base.ship_skin_expression.digaiteluyin = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103814,11 +96680,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_18_88
-
-	local var_18_89 = var_18_88.base.ship_skin_expression
-
-	var_18_89.digaiteluyin_2 = {
+	pg.base.ship_skin_expression.digaiteluyin_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -103872,11 +96734,7 @@ end)()
 		login = "6",
 		detail = "7"
 	}
-	pg = var_18_89
-
-	local var_18_90 = var_18_89.base.ship_skin_expression
-
-	var_18_90.dadan = {
+	pg.base.ship_skin_expression.dadan = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -103930,11 +96788,7 @@ end)()
 		login = "6",
 		detail = "2"
 	}
-	pg = var_18_90
-
-	local var_18_91 = var_18_90.base.ship_skin_expression
-
-	var_18_91.dadan_2 = {
+	pg.base.ship_skin_expression.dadan_2 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -103988,11 +96842,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_18_91
-
-	local var_18_92 = var_18_91.base.ship_skin_expression
-
-	var_18_92.aisaikesi_g = {
+	pg.base.ship_skin_expression.aisaikesi_g = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -104046,11 +96896,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_18_92
-
-	local var_18_93 = var_18_92.base.ship_skin_expression
-
-	var_18_93.luoen_h = {
+	pg.base.ship_skin_expression.luoen_h = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -104104,11 +96950,7 @@ end)()
 		login = "8",
 		detail = "6"
 	}
-	pg = var_18_93
-
-	local var_18_94 = var_18_93.base.ship_skin_expression
-
-	var_18_94.nengdai_9 = {
+	pg.base.ship_skin_expression.nengdai_9 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -104162,11 +97004,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_18_94
-
-	local var_18_95 = var_18_94.base.ship_skin_expression
-
-	var_18_95.hailunna_5 = {
+	pg.base.ship_skin_expression.hailunna_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -104220,11 +97058,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_18_95
-
-	local var_18_96 = var_18_95.base.ship_skin_expression
-
-	var_18_96.ankeleiqi_4 = {
+	pg.base.ship_skin_expression.ankeleiqi_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -104278,11 +97112,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_18_96
-
-	local var_18_97 = var_18_96.base.ship_skin_expression
-
-	var_18_97.danfo_2 = {
+	pg.base.ship_skin_expression.danfo_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -104336,11 +97166,7 @@ end)()
 		login = "5",
 		detail = "8"
 	}
-	pg = var_18_97
-
-	local var_18_98 = var_18_97.base.ship_skin_expression
-
-	var_18_98.qiye_10 = {
+	pg.base.ship_skin_expression.qiye_10 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -104394,8 +97220,7 @@ end)()
 		login = "8",
 		detail = ""
 	}
-	pg = var_18_98
-	var_18_98.base.ship_skin_expression.xili_alter = {
+	pg.base.ship_skin_expression.xili_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -104453,11 +97278,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_19_0 = var_1_10000.base.ship_skin_expression
-
-	var_19_0.baifeng = {
+	pg.base.ship_skin_expression.baifeng = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -104511,11 +97332,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_0
-
-	local var_19_1 = var_19_0.base.ship_skin_expression
-
-	var_19_1.baifeng_2 = {
+	pg.base.ship_skin_expression.baifeng_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -104569,11 +97386,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_1
-
-	local var_19_2 = var_19_1.base.ship_skin_expression
-
-	var_19_2.I404 = {
+	pg.base.ship_skin_expression.I404 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -104627,11 +97440,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_19_2
-
-	local var_19_3 = var_19_2.base.ship_skin_expression
-
-	var_19_3.I404_2 = {
+	pg.base.ship_skin_expression.I404_2 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -104685,11 +97494,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_19_3
-
-	local var_19_4 = var_19_3.base.ship_skin_expression
-
-	var_19_4.I404_3 = {
+	pg.base.ship_skin_expression.I404_3 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -104743,11 +97548,7 @@ end)()
 		login = "4",
 		detail = "2"
 	}
-	pg = var_19_4
-
-	local var_19_5 = var_19_4.base.ship_skin_expression
-
-	var_19_5.jinjiang = {
+	pg.base.ship_skin_expression.jinjiang = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -104801,11 +97602,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_19_5
-
-	local var_19_6 = var_19_5.base.ship_skin_expression
-
-	var_19_6.jinjiang_2 = {
+	pg.base.ship_skin_expression.jinjiang_2 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -104859,11 +97656,7 @@ end)()
 		login = "7",
 		detail = "2"
 	}
-	pg = var_19_6
-
-	local var_19_7 = var_19_6.base.ship_skin_expression
-
-	var_19_7.qianjian = {
+	pg.base.ship_skin_expression.qianjian = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -104917,11 +97710,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_19_7
-
-	local var_19_8 = var_19_7.base.ship_skin_expression
-
-	var_19_8.qianjian_2 = {
+	pg.base.ship_skin_expression.qianjian_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -104975,11 +97764,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_19_8
-
-	local var_19_9 = var_19_8.base.ship_skin_expression
-
-	var_19_9.shuiwulai = {
+	pg.base.ship_skin_expression.shuiwulai = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -105033,11 +97818,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_19_9
-
-	local var_19_10 = var_19_9.base.ship_skin_expression
-
-	var_19_10.shuiwulai_2 = {
+	pg.base.ship_skin_expression.shuiwulai_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -105091,11 +97872,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_19_10
-
-	local var_19_11 = var_19_10.base.ship_skin_expression
-
-	var_19_11.miaofeng = {
+	pg.base.ship_skin_expression.miaofeng = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -105149,11 +97926,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_11
-
-	local var_19_12 = var_19_11.base.ship_skin_expression
-
-	var_19_12.miaofeng_2 = {
+	pg.base.ship_skin_expression.miaofeng_2 = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -105207,11 +97980,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_19_12
-
-	local var_19_13 = var_19_12.base.ship_skin_expression
-
-	var_19_13.molisen_3 = {
+	pg.base.ship_skin_expression.molisen_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -105265,11 +98034,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_19_13
-
-	local var_19_14 = var_19_13.base.ship_skin_expression
-
-	var_19_14.suweiaitongmeng_3 = {
+	pg.base.ship_skin_expression.suweiaitongmeng_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -105323,11 +98088,7 @@ end)()
 		login = "7",
 		detail = ""
 	}
-	pg = var_19_14
-
-	local var_19_15 = var_19_14.base.ship_skin_expression
-
-	var_19_15.suweiaitongmeng_4 = {
+	pg.base.ship_skin_expression.suweiaitongmeng_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -105381,11 +98142,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_15
-
-	local var_19_16 = var_19_15.base.ship_skin_expression
-
-	var_19_16.bailu_g = {
+	pg.base.ship_skin_expression.bailu_g = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -105439,11 +98196,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_16
-
-	local var_19_17 = var_19_16.base.ship_skin_expression
-
-	var_19_17.aersasi_3 = {
+	pg.base.ship_skin_expression.aersasi_3 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -105497,11 +98250,7 @@ end)()
 		login = "5",
 		detail = "1"
 	}
-	pg = var_19_17
-
-	local var_19_18 = var_19_17.base.ship_skin_expression
-
-	var_19_18.lafeiII_4 = {
+	pg.base.ship_skin_expression.lafeiII_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -105555,11 +98304,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_18
-
-	local var_19_19 = var_19_18.base.ship_skin_expression
-
-	var_19_19.yunxian_3 = {
+	pg.base.ship_skin_expression.yunxian_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -105613,11 +98358,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_19_19
-
-	local var_19_20 = var_19_19.base.ship_skin_expression
-
-	var_19_20.guandao_3 = {
+	pg.base.ship_skin_expression.guandao_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -105671,11 +98412,7 @@ end)()
 		login = "7",
 		detail = "11"
 	}
-	pg = var_19_20
-
-	local var_19_21 = var_19_20.base.ship_skin_expression
-
-	var_19_21.bulunnusi_3 = {
+	pg.base.ship_skin_expression.bulunnusi_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -105729,11 +98466,7 @@ end)()
 		login = "",
 		detail = "8"
 	}
-	pg = var_19_21
-
-	local var_19_22 = var_19_21.base.ship_skin_expression
-
-	var_19_22.jiasikenie_3 = {
+	pg.base.ship_skin_expression.jiasikenie_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -105787,11 +98520,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_19_22
-
-	local var_19_23 = var_19_22.base.ship_skin_expression
-
-	var_19_23.yanzhan_4 = {
+	pg.base.ship_skin_expression.yanzhan_4 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -105845,11 +98574,7 @@ end)()
 		login = "6",
 		detail = "7"
 	}
-	pg = var_19_23
-
-	local var_19_24 = var_19_23.base.ship_skin_expression
-
-	var_19_24.boerzhanuo_4 = {
+	pg.base.ship_skin_expression.boerzhanuo_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -105903,11 +98628,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_19_24
-
-	local var_19_25 = var_19_24.base.ship_skin_expression
-
-	var_19_25.talin_4 = {
+	pg.base.ship_skin_expression.talin_4 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -105961,11 +98682,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_19_25
-
-	local var_19_26 = var_19_25.base.ship_skin_expression
-
-	var_19_26.tiancheng_cv_h = {
+	pg.base.ship_skin_expression.tiancheng_cv_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -106019,11 +98736,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_19_26
-
-	local var_19_27 = var_19_26.base.ship_skin_expression
-
-	var_19_27.wuerlixi_h = {
+	pg.base.ship_skin_expression.wuerlixi_h = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -106077,11 +98790,7 @@ end)()
 		login = "6",
 		detail = "8"
 	}
-	pg = var_19_27
-
-	local var_19_28 = var_19_27.base.ship_skin_expression
-
-	var_19_28.heitaizi_h = {
+	pg.base.ship_skin_expression.heitaizi_h = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -106135,11 +98844,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_19_28
-
-	local var_19_29 = var_19_28.base.ship_skin_expression
-
-	var_19_29.duwei_alter = {
+	pg.base.ship_skin_expression.duwei_alter = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -106193,11 +98898,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_19_29
-
-	local var_19_30 = var_19_29.base.ship_skin_expression
-
-	var_19_30.jiangfeng_3 = {
+	pg.base.ship_skin_expression.jiangfeng_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -106251,11 +98952,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_19_30
-
-	local var_19_31 = var_19_30.base.ship_skin_expression
-
-	var_19_31.hesitiya = {
+	pg.base.ship_skin_expression.hesitiya = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -106309,11 +99006,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_19_31
-
-	local var_19_32 = var_19_31.base.ship_skin_expression
-
-	var_19_32.hesitiya_2 = {
+	pg.base.ship_skin_expression.hesitiya_2 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -106367,11 +99060,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_19_32
-
-	local var_19_33 = var_19_32.base.ship_skin_expression
-
-	var_19_33.liuliang = {
+	pg.base.ship_skin_expression.liuliang = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -106425,11 +99114,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_19_33
-
-	local var_19_34 = var_19_33.base.ship_skin_expression
-
-	var_19_34.liuliang_2 = {
+	pg.base.ship_skin_expression.liuliang_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -106483,11 +99168,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_19_34
-
-	local var_19_35 = var_19_34.base.ship_skin_expression
-
-	var_19_35.anninvwang = {
+	pg.base.ship_skin_expression.anninvwang = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -106541,11 +99222,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_19_35
-
-	local var_19_36 = var_19_35.base.ship_skin_expression
-
-	var_19_36.anninvwang_2 = {
+	pg.base.ship_skin_expression.anninvwang_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -106599,11 +99276,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_19_36
-
-	local var_19_37 = var_19_36.base.ship_skin_expression
-
-	var_19_37.laimuhao = {
+	pg.base.ship_skin_expression.laimuhao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -106657,11 +99330,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_19_37
-
-	local var_19_38 = var_19_37.base.ship_skin_expression
-
-	var_19_38.laimuhao_2 = {
+	pg.base.ship_skin_expression.laimuhao_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -106715,11 +99384,7 @@ end)()
 		login = "",
 		detail = "9"
 	}
-	pg = var_19_38
-
-	local var_19_39 = var_19_38.base.ship_skin_expression
-
-	var_19_39.zhenzhuhao = {
+	pg.base.ship_skin_expression.zhenzhuhao = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -106773,11 +99438,7 @@ end)()
 		login = "2",
 		detail = "1"
 	}
-	pg = var_19_39
-
-	local var_19_40 = var_19_39.base.ship_skin_expression
-
-	var_19_40.zhenzhuhao_2 = {
+	pg.base.ship_skin_expression.zhenzhuhao_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -106831,11 +99492,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_40
-
-	local var_19_41 = var_19_40.base.ship_skin_expression
-
-	var_19_41.huangjiazhanmusi = {
+	pg.base.ship_skin_expression.huangjiazhanmusi = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -106889,11 +99546,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_41
-
-	local var_19_42 = var_19_41.base.ship_skin_expression
-
-	var_19_42.huangjiazhanmusi_2 = {
+	pg.base.ship_skin_expression.huangjiazhanmusi_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -106947,11 +99600,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_19_42
-
-	local var_19_43 = var_19_42.base.ship_skin_expression
-
-	var_19_43.maoxianhao = {
+	pg.base.ship_skin_expression.maoxianhao = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -107005,11 +99654,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_19_43
-
-	local var_19_44 = var_19_43.base.ship_skin_expression
-
-	var_19_44.maoxianhao_2 = {
+	pg.base.ship_skin_expression.maoxianhao_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -107063,11 +99708,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_44
-
-	local var_19_45 = var_19_44.base.ship_skin_expression
-
-	var_19_45.chuyun_3 = {
+	pg.base.ship_skin_expression.chuyun_3 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -107121,11 +99762,7 @@ end)()
 		login = "2",
 		detail = "9"
 	}
-	pg = var_19_45
-
-	local var_19_46 = var_19_45.base.ship_skin_expression
-
-	var_19_46.kalangshitade_3 = {
+	pg.base.ship_skin_expression.kalangshitade_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -107179,11 +99816,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_19_46
-
-	local var_19_47 = var_19_46.base.ship_skin_expression
-
-	var_19_47.chunyue_3 = {
+	pg.base.ship_skin_expression.chunyue_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -107237,11 +99870,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_47
-
-	local var_19_48 = var_19_47.base.ship_skin_expression
-
-	var_19_48.xinzexi_5 = {
+	pg.base.ship_skin_expression.xinzexi_5 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -107295,11 +99924,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_48
-
-	local var_19_49 = var_19_48.base.ship_skin_expression
-
-	var_19_49.naximofu_4 = {
+	pg.base.ship_skin_expression.naximofu_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -107353,11 +99978,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_19_49
-
-	local var_19_50 = var_19_49.base.ship_skin_expression
-
-	var_19_50.aisaikesi_9 = {
+	pg.base.ship_skin_expression.aisaikesi_9 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -107411,11 +100032,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_19_50
-
-	local var_19_51 = var_19_50.base.ship_skin_expression
-
-	var_19_51.tierbici_6 = {
+	pg.base.ship_skin_expression.tierbici_6 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -107469,11 +100086,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_19_51
-
-	local var_19_52 = var_19_51.base.ship_skin_expression
-
-	var_19_52.shixiang = {
+	pg.base.ship_skin_expression.shixiang = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -107527,11 +100140,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_19_52
-
-	local var_19_53 = var_19_52.base.ship_skin_expression
-
-	var_19_53.shixiang_2 = {
+	pg.base.ship_skin_expression.shixiang_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -107585,11 +100194,7 @@ end)()
 		login = "8",
 		detail = "2"
 	}
-	pg = var_19_53
-
-	local var_19_54 = var_19_53.base.ship_skin_expression
-
-	var_19_54.zhezhi = {
+	pg.base.ship_skin_expression.zhezhi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -107643,11 +100248,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_54
-
-	local var_19_55 = var_19_54.base.ship_skin_expression
-
-	var_19_55.zhezhi_2 = {
+	pg.base.ship_skin_expression.zhezhi_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -107701,11 +100302,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_19_55
-
-	local var_19_56 = var_19_55.base.ship_skin_expression
-
-	var_19_56.qinli = {
+	pg.base.ship_skin_expression.qinli = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -107759,11 +100356,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_56
-
-	local var_19_57 = var_19_56.base.ship_skin_expression
-
-	var_19_57.qinli_2 = {
+	pg.base.ship_skin_expression.qinli_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -107817,11 +100410,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_57
-
-	local var_19_58 = var_19_57.base.ship_skin_expression
-
-	var_19_58.sisinai = {
+	pg.base.ship_skin_expression.sisinai = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -107875,11 +100464,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_19_58
-
-	local var_19_59 = var_19_58.base.ship_skin_expression
-
-	var_19_59.sisinai_2 = {
+	pg.base.ship_skin_expression.sisinai_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -107933,11 +100518,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_19_59
-
-	local var_19_60 = var_19_59.base.ship_skin_expression
-
-	var_19_60.kuangsan = {
+	pg.base.ship_skin_expression.kuangsan = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -107991,11 +100572,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_19_60
-
-	local var_19_61 = var_19_60.base.ship_skin_expression
-
-	var_19_61.kuangsan_2 = {
+	pg.base.ship_skin_expression.kuangsan_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -108049,11 +100626,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_61
-
-	local var_19_62 = var_19_61.base.ship_skin_expression
-
-	var_19_62.bawu = {
+	pg.base.ship_skin_expression.bawu = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -108107,11 +100680,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_19_62
-
-	local var_19_63 = var_19_62.base.ship_skin_expression
-
-	var_19_63.bawu_2 = {
+	pg.base.ship_skin_expression.bawu_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -108165,11 +100734,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_19_63
-
-	local var_19_64 = var_19_63.base.ship_skin_expression
-
-	var_19_64.boyixi_alter = {
+	pg.base.ship_skin_expression.boyixi_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -108223,11 +100788,7 @@ end)()
 		login = "6",
 		detail = "1"
 	}
-	pg = var_19_64
-
-	local var_19_65 = var_19_64.base.ship_skin_expression
-
-	var_19_65.I13_3 = {
+	pg.base.ship_skin_expression.I13_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -108281,11 +100842,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_19_65
-
-	local var_19_66 = var_19_65.base.ship_skin_expression
-
-	var_19_66.yuekecheng_alter = {
+	pg.base.ship_skin_expression.yuekecheng_alter = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -108339,11 +100896,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_19_66
-
-	local var_19_67 = var_19_66.base.ship_skin_expression
-
-	var_19_67.liekexingdunII = {
+	pg.base.ship_skin_expression.liekexingdunII = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -108397,11 +100950,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_19_67
-
-	local var_19_68 = var_19_67.base.ship_skin_expression
-
-	var_19_68.liekexingdunII_2 = {
+	pg.base.ship_skin_expression.liekexingdunII_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -108455,11 +101004,7 @@ end)()
 		login = "12",
 		detail = "13"
 	}
-	pg = var_19_68
-
-	local var_19_69 = var_19_68.base.ship_skin_expression
-
-	var_19_69.bote = {
+	pg.base.ship_skin_expression.bote = {
 		default = "0",
 		feeling3 = "9",
 		main3_replace = "",
@@ -108513,11 +101058,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_69
-
-	local var_19_70 = var_19_69.base.ship_skin_expression
-
-	var_19_70.bote_2 = {
+	pg.base.ship_skin_expression.bote_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -108571,11 +101112,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_19_70
-
-	local var_19_71 = var_19_70.base.ship_skin_expression
-
-	var_19_71.kelifulan_alter = {
+	pg.base.ship_skin_expression.kelifulan_alter = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -108629,11 +101166,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_19_71
-
-	local var_19_72 = var_19_71.base.ship_skin_expression
-
-	var_19_72.kelalunsi = {
+	pg.base.ship_skin_expression.kelalunsi = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -108687,11 +101220,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_19_72
-
-	local var_19_73 = var_19_72.base.ship_skin_expression
-
-	var_19_73.kelalunsi_2 = {
+	pg.base.ship_skin_expression.kelalunsi_2 = {
 		default = "0",
 		feeling3 = "7",
 		main3_replace = "",
@@ -108745,11 +101274,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_19_73
-
-	local var_19_74 = var_19_73.base.ship_skin_expression
-
-	var_19_74.pasadina = {
+	pg.base.ship_skin_expression.pasadina = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -108803,11 +101328,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_74
-
-	local var_19_75 = var_19_74.base.ship_skin_expression
-
-	var_19_75.pasadina_2 = {
+	pg.base.ship_skin_expression.pasadina_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -108861,11 +101382,7 @@ end)()
 		login = "8",
 		detail = "8"
 	}
-	pg = var_19_75
-
-	local var_19_76 = var_19_75.base.ship_skin_expression
-
-	var_19_76.kebensi = {
+	pg.base.ship_skin_expression.kebensi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -108919,11 +101436,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_76
-
-	local var_19_77 = var_19_76.base.ship_skin_expression
-
-	var_19_77.kebensi_2 = {
+	pg.base.ship_skin_expression.kebensi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -108977,11 +101490,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_77
-
-	local var_19_78 = var_19_77.base.ship_skin_expression
-
-	var_19_78.moli_g = {
+	pg.base.ship_skin_expression.moli_g = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -109035,11 +101544,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_19_78
-
-	local var_19_79 = var_19_78.base.ship_skin_expression
-
-	var_19_79.yuekechengII_3 = {
+	pg.base.ship_skin_expression.yuekechengII_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -109093,11 +101598,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_19_79
-
-	local var_19_80 = var_19_79.base.ship_skin_expression
-
-	var_19_80.yuekechengII_4 = {
+	pg.base.ship_skin_expression.yuekechengII_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -109151,11 +101652,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_19_80
-
-	local var_19_81 = var_19_80.base.ship_skin_expression
-
-	var_19_81.bominghan_5 = {
+	pg.base.ship_skin_expression.bominghan_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -109209,11 +101706,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_81
-
-	local var_19_82 = var_19_81.base.ship_skin_expression
-
-	var_19_82.bisimaiz_3 = {
+	pg.base.ship_skin_expression.bisimaiz_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -109267,11 +101760,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_19_82
-
-	local var_19_83 = var_19_82.base.ship_skin_expression
-
-	var_19_83.hamanII_3 = {
+	pg.base.ship_skin_expression.hamanII_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -109325,11 +101814,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_19_83
-
-	local var_19_84 = var_19_83.base.ship_skin_expression
-
-	var_19_84.jishang_3 = {
+	pg.base.ship_skin_expression.jishang_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -109383,11 +101868,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_84
-
-	local var_19_85 = var_19_84.base.ship_skin_expression
-
-	var_19_85.aotuo_3 = {
+	pg.base.ship_skin_expression.aotuo_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -109441,11 +101922,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_19_85
-
-	local var_19_86 = var_19_85.base.ship_skin_expression
-
-	var_19_86.gubixuefu_3 = {
+	pg.base.ship_skin_expression.gubixuefu_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -109499,11 +101976,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_19_86
-
-	local var_19_87 = var_19_86.base.ship_skin_expression
-
-	var_19_87.jinshi_2 = {
+	pg.base.ship_skin_expression.jinshi_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -109557,11 +102030,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_19_87
-
-	local var_19_88 = var_19_87.base.ship_skin_expression
-
-	var_19_88.meikelunbao_2 = {
+	pg.base.ship_skin_expression.meikelunbao_2 = {
 		default = "",
 		feeling3 = "12",
 		main3_replace = "",
@@ -109615,11 +102084,7 @@ end)()
 		login = "9",
 		detail = "12"
 	}
-	pg = var_19_88
-
-	local var_19_89 = var_19_88.base.ship_skin_expression
-
-	var_19_89.kansasi_2 = {
+	pg.base.ship_skin_expression.kansasi_2 = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -109673,11 +102138,7 @@ end)()
 		login = "8",
 		detail = "3"
 	}
-	pg = var_19_89
-
-	local var_19_90 = var_19_89.base.ship_skin_expression
-
-	var_19_90.dimiteli_2 = {
+	pg.base.ship_skin_expression.dimiteli_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -109731,11 +102192,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_19_90
-
-	local var_19_91 = var_19_90.base.ship_skin_expression
-
-	var_19_91.kunibeierdi_2 = {
+	pg.base.ship_skin_expression.kunibeierdi_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -109789,11 +102246,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_19_91
-
-	local var_19_92 = var_19_91.base.ship_skin_expression
-
-	var_19_92.ougen_8 = {
+	pg.base.ship_skin_expression.ougen_8 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -109847,11 +102300,7 @@ end)()
 		login = "2",
 		detail = "9"
 	}
-	pg = var_19_92
-
-	local var_19_93 = var_19_92.base.ship_skin_expression
-
-	var_19_93.tengbo = {
+	pg.base.ship_skin_expression.tengbo = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -109905,11 +102354,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_19_93
-
-	local var_19_94 = var_19_93.base.ship_skin_expression
-
-	var_19_94.fulangxisike = {
+	pg.base.ship_skin_expression.fulangxisike = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -109963,11 +102408,7 @@ end)()
 		login = "1",
 		detail = "6"
 	}
-	pg = var_19_94
-
-	local var_19_95 = var_19_94.base.ship_skin_expression
-
-	var_19_95.fulangxisike_2 = {
+	pg.base.ship_skin_expression.fulangxisike_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -110021,11 +102462,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_19_95
-
-	local var_19_96 = var_19_95.base.ship_skin_expression
-
-	var_19_96.wugelini = {
+	pg.base.ship_skin_expression.wugelini = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -110079,11 +102516,7 @@ end)()
 		login = "8",
 		detail = ""
 	}
-	pg = var_19_96
-
-	local var_19_97 = var_19_96.base.ship_skin_expression
-
-	var_19_97.wugelini_2 = {
+	pg.base.ship_skin_expression.wugelini_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -110137,11 +102570,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_19_97
-
-	local var_19_98 = var_19_97.base.ship_skin_expression
-
-	var_19_98.aerbeituo = {
+	pg.base.ship_skin_expression.aerbeituo = {
 		default = "0",
 		feeling3 = "2",
 		main3_replace = "",
@@ -110195,8 +102624,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_19_98
-	var_19_98.base.ship_skin_expression.aerbeituo_2 = {
+	pg.base.ship_skin_expression.aerbeituo_2 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -110254,11 +102682,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_20_0 = var_1_10000.base.ship_skin_expression
-
-	var_20_0.tengbo_2 = {
+	pg.base.ship_skin_expression.tengbo_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -110312,11 +102736,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_0
-
-	local var_20_1 = var_20_0.base.ship_skin_expression
-
-	var_20_1.gaoxiong_7 = {
+	pg.base.ship_skin_expression.gaoxiong_7 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -110370,11 +102790,7 @@ end)()
 		login = "",
 		detail = "8"
 	}
-	pg = var_20_1
-
-	local var_20_2 = var_20_1.base.ship_skin_expression
-
-	var_20_2.daofeng_7 = {
+	pg.base.ship_skin_expression.daofeng_7 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -110428,11 +102844,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_2
-
-	local var_20_3 = var_20_2.base.ship_skin_expression
-
-	var_20_3.alabama_3 = {
+	pg.base.ship_skin_expression.alabama_3 = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -110486,11 +102898,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_20_3
-
-	local var_20_4 = var_20_3.base.ship_skin_expression
-
-	var_20_4.jianwu_4 = {
+	pg.base.ship_skin_expression.jianwu_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -110544,11 +102952,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_20_4
-
-	local var_20_5 = var_20_4.base.ship_skin_expression
-
-	var_20_5.longqibing_alter = {
+	pg.base.ship_skin_expression.longqibing_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -110602,11 +103006,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_20_5
-
-	local var_20_6 = var_20_5.base.ship_skin_expression
-
-	var_20_6.z47_3 = {
+	pg.base.ship_skin_expression.z47_3 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -110660,11 +103060,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_20_6
-
-	local var_20_7 = var_20_6.base.ship_skin_expression
-
-	var_20_7.zhangwu = {
+	pg.base.ship_skin_expression.zhangwu = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -110718,11 +103114,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_20_7
-
-	local var_20_8 = var_20_7.base.ship_skin_expression
-
-	var_20_8.zhangwu_2 = {
+	pg.base.ship_skin_expression.zhangwu_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -110776,11 +103168,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_20_8
-
-	local var_20_9 = var_20_8.base.ship_skin_expression
-
-	var_20_9.haichou = {
+	pg.base.ship_skin_expression.haichou = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -110834,11 +103222,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_20_9
-
-	local var_20_10 = var_20_9.base.ship_skin_expression
-
-	var_20_10.haichou_2 = {
+	pg.base.ship_skin_expression.haichou_2 = {
 		default = "",
 		feeling3 = "15",
 		main3_replace = "",
@@ -110892,11 +103276,7 @@ end)()
 		login = "2",
 		detail = "8"
 	}
-	pg = var_20_10
-
-	local var_20_11 = var_20_10.base.ship_skin_expression
-
-	var_20_11.feiteliedadi_4 = {
+	pg.base.ship_skin_expression.feiteliedadi_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -110950,11 +103330,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_20_11
-
-	local var_20_12 = var_20_11.base.ship_skin_expression
-
-	var_20_12.feiteliedadi_5 = {
+	pg.base.ship_skin_expression.feiteliedadi_5 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -111008,11 +103384,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_20_12
-
-	local var_20_13 = var_20_12.base.ship_skin_expression
-
-	var_20_13.xinnong_6 = {
+	pg.base.ship_skin_expression.xinnong_6 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -111066,11 +103438,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_20_13
-
-	local var_20_14 = var_20_13.base.ship_skin_expression
-
-	var_20_14.z23_13 = {
+	pg.base.ship_skin_expression.z23_13 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -111124,11 +103492,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_20_14
-
-	local var_20_15 = var_20_14.base.ship_skin_expression
-
-	var_20_15.feiyun_3 = {
+	pg.base.ship_skin_expression.feiyun_3 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -111182,11 +103546,7 @@ end)()
 		login = "4",
 		detail = "7"
 	}
-	pg = var_20_15
-
-	local var_20_16 = var_20_15.base.ship_skin_expression
-
-	var_20_16.qibolin_3 = {
+	pg.base.ship_skin_expression.qibolin_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -111240,11 +103600,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_16
-
-	local var_20_17 = var_20_16.base.ship_skin_expression
-
-	var_20_17.changdao_5 = {
+	pg.base.ship_skin_expression.changdao_5 = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -111298,11 +103654,7 @@ end)()
 		login = "4",
 		detail = "4"
 	}
-	pg = var_20_17
-
-	local var_20_18 = var_20_17.base.ship_skin_expression
-
-	var_20_18.zhaohe_g = {
+	pg.base.ship_skin_expression.zhaohe_g = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -111356,11 +103708,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_20_18
-
-	local var_20_19 = var_20_18.base.ship_skin_expression
-
-	var_20_19.yingrui_g = {
+	pg.base.ship_skin_expression.yingrui_g = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -111414,11 +103762,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_19
-
-	local var_20_20 = var_20_19.base.ship_skin_expression
-
-	var_20_20.mosike = {
+	pg.base.ship_skin_expression.mosike = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -111472,11 +103816,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_20_20
-
-	local var_20_21 = var_20_20.base.ship_skin_expression
-
-	var_20_21.mosike_2 = {
+	pg.base.ship_skin_expression.mosike_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -111530,11 +103870,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_20_21
-
-	local var_20_22 = var_20_21.base.ship_skin_expression
-
-	var_20_22.wanpi = {
+	pg.base.ship_skin_expression.wanpi = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -111588,11 +103924,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_22
-
-	local var_20_23 = var_20_22.base.ship_skin_expression
-
-	var_20_23.wanpi_2 = {
+	pg.base.ship_skin_expression.wanpi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -111646,11 +103978,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_20_23
-
-	local var_20_24 = var_20_23.base.ship_skin_expression
-
-	var_20_24.hongseshanmai = {
+	pg.base.ship_skin_expression.hongseshanmai = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -111704,11 +104032,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_20_24
-
-	local var_20_25 = var_20_24.base.ship_skin_expression
-
-	var_20_25.hongseshanmai_2 = {
+	pg.base.ship_skin_expression.hongseshanmai_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -111762,11 +104086,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_25
-
-	local var_20_26 = var_20_25.base.ship_skin_expression
-
-	var_20_26.bojiateli = {
+	pg.base.ship_skin_expression.bojiateli = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -111820,11 +104140,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_20_26
-
-	local var_20_27 = var_20_26.base.ship_skin_expression
-
-	var_20_27.bojiateli_2 = {
+	pg.base.ship_skin_expression.bojiateli_2 = {
 		default = "0",
 		feeling3 = "4",
 		main3_replace = "",
@@ -111878,11 +104194,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_20_27
-
-	local var_20_28 = var_20_27.base.ship_skin_expression
-
-	var_20_28.gangute_alter = {
+	pg.base.ship_skin_expression.gangute_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -111936,11 +104248,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_28
-
-	local var_20_29 = var_20_28.base.ship_skin_expression
-
-	var_20_29.xingdengbao_3 = {
+	pg.base.ship_skin_expression.xingdengbao_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -111994,11 +104302,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_20_29
-
-	local var_20_30 = var_20_29.base.ship_skin_expression
-
-	var_20_30.yuanchou_3 = {
+	pg.base.ship_skin_expression.yuanchou_3 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -112052,11 +104356,7 @@ end)()
 		login = "7",
 		detail = "8"
 	}
-	pg = var_20_30
-
-	local var_20_31 = var_20_30.base.ship_skin_expression
-
-	var_20_31.qiansui_4 = {
+	pg.base.ship_skin_expression.qiansui_4 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -112110,11 +104410,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_31
-
-	local var_20_32 = var_20_31.base.ship_skin_expression
-
-	var_20_32.qiandaitian_3 = {
+	pg.base.ship_skin_expression.qiandaitian_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -112168,11 +104464,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_20_32
-
-	local var_20_33 = var_20_32.base.ship_skin_expression
-
-	var_20_33.gin_3 = {
+	pg.base.ship_skin_expression.gin_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -112226,11 +104518,7 @@ end)()
 		login = "3",
 		detail = "8"
 	}
-	pg = var_20_33
-
-	local var_20_34 = var_20_33.base.ship_skin_expression
-
-	var_20_34.mingji = {
+	pg.base.ship_skin_expression.mingji = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -112284,11 +104572,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_20_34
-
-	local var_20_35 = var_20_34.base.ship_skin_expression
-
-	var_20_35.mingji_2 = {
+	pg.base.ship_skin_expression.mingji_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -112342,11 +104626,7 @@ end)()
 		login = "3",
 		detail = "2"
 	}
-	pg = var_20_35
-
-	local var_20_36 = var_20_35.base.ship_skin_expression
-
-	var_20_36.mujin = {
+	pg.base.ship_skin_expression.mujin = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -112400,11 +104680,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_20_36
-
-	local var_20_37 = var_20_36.base.ship_skin_expression
-
-	var_20_37.mujin_2 = {
+	pg.base.ship_skin_expression.mujin_2 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -112458,11 +104734,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_20_37
-
-	local var_20_38 = var_20_37.base.ship_skin_expression
-
-	var_20_38.yunlong = {
+	pg.base.ship_skin_expression.yunlong = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -112516,11 +104788,7 @@ end)()
 		login = "1",
 		detail = "9"
 	}
-	pg = var_20_38
-
-	local var_20_39 = var_20_38.base.ship_skin_expression
-
-	var_20_39.yunlong_2 = {
+	pg.base.ship_skin_expression.yunlong_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -112574,11 +104842,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_20_39
-
-	local var_20_40 = var_20_39.base.ship_skin_expression
-
-	var_20_40.yunlong_3 = {
+	pg.base.ship_skin_expression.yunlong_3 = {
 		default = "0",
 		feeling3 = "",
 		main3_replace = "",
@@ -112632,11 +104896,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_40
-
-	local var_20_41 = var_20_40.base.ship_skin_expression
-
-	var_20_41.kelong_alter = {
+	pg.base.ship_skin_expression.kelong_alter = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -112690,11 +104950,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_20_41
-
-	local var_20_42 = var_20_41.base.ship_skin_expression
-
-	var_20_42.niaohai_3 = {
+	pg.base.ship_skin_expression.niaohai_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -112748,11 +105004,7 @@ end)()
 		login = "1",
 		detail = "5"
 	}
-	pg = var_20_42
-
-	local var_20_43 = var_20_42.base.ship_skin_expression
-
-	var_20_43.moye_2 = {
+	pg.base.ship_skin_expression.moye_2 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -112806,11 +105058,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_43
-
-	local var_20_44 = var_20_43.base.ship_skin_expression
-
-	var_20_44.saidelici_8 = {
+	pg.base.ship_skin_expression.saidelici_8 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -112864,11 +105112,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_20_44
-
-	local var_20_45 = var_20_44.base.ship_skin_expression
-
-	var_20_45.geliqiya_3 = {
+	pg.base.ship_skin_expression.geliqiya_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -112922,11 +105166,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_20_45
-
-	local var_20_46 = var_20_45.base.ship_skin_expression
-
-	var_20_46.buqu_4 = {
+	pg.base.ship_skin_expression.buqu_4 = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -112980,11 +105220,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_46
-
-	local var_20_47 = var_20_46.base.ship_skin_expression
-
-	var_20_47.leigensibao_alter = {
+	pg.base.ship_skin_expression.leigensibao_alter = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -113038,11 +105274,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_47
-
-	local var_20_48 = var_20_47.base.ship_skin_expression
-
-	var_20_48.afuleer_4 = {
+	pg.base.ship_skin_expression.afuleer_4 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -113096,11 +105328,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_20_48
-
-	local var_20_49 = var_20_48.base.ship_skin_expression
-
-	var_20_49.z52_3 = {
+	pg.base.ship_skin_expression.z52_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -113154,11 +105382,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_20_49
-
-	local var_20_50 = var_20_49.base.ship_skin_expression
-
-	var_20_50.yilisi_DOA = {
+	pg.base.ship_skin_expression.yilisi_DOA = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -113212,11 +105436,7 @@ end)()
 		login = "",
 		detail = "8"
 	}
-	pg = var_20_50
-
-	local var_20_51 = var_20_50.base.ship_skin_expression
-
-	var_20_51.yilisi_2_DOA = {
+	pg.base.ship_skin_expression.yilisi_2_DOA = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -113270,11 +105490,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_20_51
-
-	local var_20_52 = var_20_51.base.ship_skin_expression
-
-	var_20_52.na_DOA = {
+	pg.base.ship_skin_expression.na_DOA = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -113328,11 +105544,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_20_52
-
-	local var_20_53 = var_20_52.base.ship_skin_expression
-
-	var_20_53.na_2_DOA = {
+	pg.base.ship_skin_expression.na_2_DOA = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -113386,11 +105598,7 @@ end)()
 		login = "2",
 		detail = "10"
 	}
-	pg = var_20_53
-
-	local var_20_54 = var_20_53.base.ship_skin_expression
-
-	var_20_54.xiangdi_DOA = {
+	pg.base.ship_skin_expression.xiangdi_DOA = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -113444,11 +105652,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_54
-
-	local var_20_55 = var_20_54.base.ship_skin_expression
-
-	var_20_55.xiangdi_2_DOA = {
+	pg.base.ship_skin_expression.xiangdi_2_DOA = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -113502,11 +105706,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_20_55
-
-	local var_20_56 = var_20_55.base.ship_skin_expression
-
-	var_20_56.zhuzi_DOA = {
+	pg.base.ship_skin_expression.zhuzi_DOA = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -113560,11 +105760,7 @@ end)()
 		login = "8",
 		detail = "1"
 	}
-	pg = var_20_56
-
-	local var_20_57 = var_20_56.base.ship_skin_expression
-
-	var_20_57.zhuzi_2_DOA = {
+	pg.base.ship_skin_expression.zhuzi_2_DOA = {
 		default = "0",
 		feeling3 = "1",
 		main3_replace = "",
@@ -113618,11 +105814,7 @@ end)()
 		login = "6",
 		detail = ""
 	}
-	pg = var_20_57
-
-	local var_20_58 = var_20_57.base.ship_skin_expression
-
-	var_20_58.paidi_DOA = {
+	pg.base.ship_skin_expression.paidi_DOA = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -113676,11 +105868,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_58
-
-	local var_20_59 = var_20_58.base.ship_skin_expression
-
-	var_20_59.paidi_2_DOA = {
+	pg.base.ship_skin_expression.paidi_2_DOA = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -113734,11 +105922,7 @@ end)()
 		login = "6",
 		detail = "5"
 	}
-	pg = var_20_59
-
-	local var_20_60 = var_20_59.base.ship_skin_expression
-
-	var_20_60.qiannai_DOA = {
+	pg.base.ship_skin_expression.qiannai_DOA = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -113792,11 +105976,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_60
-
-	local var_20_61 = var_20_60.base.ship_skin_expression
-
-	var_20_61.qiannai_2_DOA = {
+	pg.base.ship_skin_expression.qiannai_2_DOA = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -113850,11 +106030,7 @@ end)()
 		login = "7",
 		detail = "3"
 	}
-	pg = var_20_61
-
-	local var_20_62 = var_20_61.base.ship_skin_expression
-
-	var_20_62.haixiao_3_DOA = {
+	pg.base.ship_skin_expression.haixiao_3_DOA = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -113908,11 +106084,7 @@ end)()
 		login = "8",
 		detail = "4"
 	}
-	pg = var_20_62
-
-	local var_20_63 = var_20_62.base.ship_skin_expression
-
-	var_20_63.baiyanjuren_4 = {
+	pg.base.ship_skin_expression.baiyanjuren_4 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -113966,11 +106138,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_20_63
-
-	local var_20_64 = var_20_63.base.ship_skin_expression
-
-	var_20_64.yichui_7 = {
+	pg.base.ship_skin_expression.yichui_7 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -114024,11 +106192,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_20_64
-
-	local var_20_65 = var_20_64.base.ship_skin_expression
-
-	var_20_65.beikaluolaina_3 = {
+	pg.base.ship_skin_expression.beikaluolaina_3 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -114082,11 +106246,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_65
-
-	local var_20_66 = var_20_65.base.ship_skin_expression
-
-	var_20_66.yunxian_younv = {
+	pg.base.ship_skin_expression.yunxian_younv = {
 		default = "",
 		feeling3 = "10",
 		main3_replace = "",
@@ -114140,11 +106300,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_20_66
-
-	local var_20_67 = var_20_66.base.ship_skin_expression
-
-	var_20_67.kenisibao_alter = {
+	pg.base.ship_skin_expression.kenisibao_alter = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -114198,11 +106354,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_67
-
-	local var_20_68 = var_20_67.base.ship_skin_expression
-
-	var_20_68.aimudeng_5 = {
+	pg.base.ship_skin_expression.aimudeng_5 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -114256,11 +106408,7 @@ end)()
 		login = "5",
 		detail = "5"
 	}
-	pg = var_20_68
-
-	local var_20_69 = var_20_68.base.ship_skin_expression
-
-	var_20_69.luyijiushi_4 = {
+	pg.base.ship_skin_expression.luyijiushi_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -114314,11 +106462,7 @@ end)()
 		login = "2",
 		detail = "3"
 	}
-	pg = var_20_69
-
-	local var_20_70 = var_20_69.base.ship_skin_expression
-
-	var_20_70.yixian_4 = {
+	pg.base.ship_skin_expression.yixian_4 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -114372,11 +106516,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_20_70
-
-	local var_20_71 = var_20_70.base.ship_skin_expression
-
-	var_20_71.duli_7 = {
+	pg.base.ship_skin_expression.duli_7 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -114430,11 +106570,7 @@ end)()
 		login = "5",
 		detail = "3"
 	}
-	pg = var_20_71
-
-	local var_20_72 = var_20_71.base.ship_skin_expression
-
-	var_20_72.yanusi_7 = {
+	pg.base.ship_skin_expression.yanusi_7 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -114488,11 +106624,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_72
-
-	local var_20_73 = var_20_72.base.ship_skin_expression
-
-	var_20_73.aogusite_4 = {
+	pg.base.ship_skin_expression.aogusite_4 = {
 		default = "",
 		feeling3 = "9",
 		main3_replace = "",
@@ -114546,11 +106678,7 @@ end)()
 		login = "9",
 		detail = "8"
 	}
-	pg = var_20_73
-
-	local var_20_74 = var_20_73.base.ship_skin_expression
-
-	var_20_74.huajia_3 = {
+	pg.base.ship_skin_expression.huajia_3 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -114604,11 +106732,7 @@ end)()
 		login = "1",
 		detail = "3"
 	}
-	pg = var_20_74
-
-	local var_20_75 = var_20_74.base.ship_skin_expression
-
-	var_20_75.shenxue_4 = {
+	pg.base.ship_skin_expression.shenxue_4 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -114662,11 +106786,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_75
-
-	local var_20_76 = var_20_75.base.ship_skin_expression
-
-	var_20_76.wuzang_younv = {
+	pg.base.ship_skin_expression.wuzang_younv = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -114720,11 +106840,7 @@ end)()
 		login = "4",
 		detail = ""
 	}
-	pg = var_20_76
-
-	local var_20_77 = var_20_76.base.ship_skin_expression
-
-	var_20_77.gezi = {
+	pg.base.ship_skin_expression.gezi = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -114778,11 +106894,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_77
-
-	local var_20_78 = var_20_77.base.ship_skin_expression
-
-	var_20_78.gezi_2 = {
+	pg.base.ship_skin_expression.gezi_2 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -114836,11 +106948,7 @@ end)()
 		login = "3",
 		detail = ""
 	}
-	pg = var_20_78
-
-	local var_20_79 = var_20_78.base.ship_skin_expression
-
-	var_20_79.u2501 = {
+	pg.base.ship_skin_expression.u2501 = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -114894,11 +107002,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_20_79
-
-	local var_20_80 = var_20_79.base.ship_skin_expression
-
-	var_20_80.u2501_2 = {
+	pg.base.ship_skin_expression.u2501_2 = {
 		default = "0",
 		feeling3 = "5",
 		main3_replace = "",
@@ -114952,11 +107056,7 @@ end)()
 		login = "2",
 		detail = "13"
 	}
-	pg = var_20_80
-
-	local var_20_81 = var_20_80.base.ship_skin_expression
-
-	var_20_81.molici = {
+	pg.base.ship_skin_expression.molici = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -115010,11 +107110,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_20_81
-
-	local var_20_82 = var_20_81.base.ship_skin_expression
-
-	var_20_82.molici_2 = {
+	pg.base.ship_skin_expression.molici_2 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -115068,11 +107164,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_20_82
-
-	local var_20_83 = var_20_82.base.ship_skin_expression
-
-	var_20_83.z14 = {
+	pg.base.ship_skin_expression.z14 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -115126,11 +107218,7 @@ end)()
 		login = "5",
 		detail = "6"
 	}
-	pg = var_20_83
-
-	local var_20_84 = var_20_83.base.ship_skin_expression
-
-	var_20_84.z14_2 = {
+	pg.base.ship_skin_expression.z14_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -115184,11 +107272,7 @@ end)()
 		login = "",
 		detail = "5"
 	}
-	pg = var_20_84
-
-	local var_20_85 = var_20_84.base.ship_skin_expression
-
-	var_20_85.z15 = {
+	pg.base.ship_skin_expression.z15 = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -115242,11 +107326,7 @@ end)()
 		login = "5",
 		detail = ""
 	}
-	pg = var_20_85
-
-	local var_20_86 = var_20_85.base.ship_skin_expression
-
-	var_20_86.z15_2 = {
+	pg.base.ship_skin_expression.z15_2 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -115300,11 +107380,7 @@ end)()
 		login = "6",
 		detail = "9"
 	}
-	pg = var_20_86
-
-	local var_20_87 = var_20_86.base.ship_skin_expression
-
-	var_20_87.yibei_alter = {
+	pg.base.ship_skin_expression.yibei_alter = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -115358,11 +107434,7 @@ end)()
 		login = "8",
 		detail = "1"
 	}
-	pg = var_20_87
-
-	local var_20_88 = var_20_87.base.ship_skin_expression
-
-	var_20_88.xipeierhaijunshangjiang_g = {
+	pg.base.ship_skin_expression.xipeierhaijunshangjiang_g = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -115416,11 +107488,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_88
-
-	local var_20_89 = var_20_88.base.ship_skin_expression
-
-	var_20_89.tiancheng_cv_3 = {
+	pg.base.ship_skin_expression.tiancheng_cv_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -115474,11 +107542,7 @@ end)()
 		login = "2",
 		detail = "9"
 	}
-	pg = var_20_89
-
-	local var_20_90 = var_20_89.base.ship_skin_expression
-
-	var_20_90.luoen_5 = {
+	pg.base.ship_skin_expression.luoen_5 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -115532,11 +107596,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_20_90
-
-	local var_20_91 = var_20_90.base.ship_skin_expression
-
-	var_20_91.mojiaduoer_4 = {
+	pg.base.ship_skin_expression.mojiaduoer_4 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -115590,11 +107650,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_91
-
-	local var_20_92 = var_20_91.base.ship_skin_expression
-
-	var_20_92.mojiaduoer_5 = {
+	pg.base.ship_skin_expression.mojiaduoer_5 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -115648,11 +107704,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_20_92
-
-	local var_20_93 = var_20_92.base.ship_skin_expression
-
-	var_20_93.hude_6 = {
+	pg.base.ship_skin_expression.hude_6 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -115706,11 +107758,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_93
-
-	local var_20_94 = var_20_93.base.ship_skin_expression
-
-	var_20_94.aifosen_3 = {
+	pg.base.ship_skin_expression.aifosen_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -115764,11 +107812,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_20_94
-
-	local var_20_95 = var_20_94.base.ship_skin_expression
-
-	var_20_95.zhenhai_h = {
+	pg.base.ship_skin_expression.zhenhai_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -115822,11 +107866,7 @@ end)()
 		login = "3",
 		detail = "3"
 	}
-	pg = var_20_95
-
-	local var_20_96 = var_20_95.base.ship_skin_expression
-
-	var_20_96.tianlangxing_h = {
+	pg.base.ship_skin_expression.tianlangxing_h = {
 		default = "0",
 		feeling3 = "3",
 		main3_replace = "",
@@ -115880,11 +107920,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_20_96
-
-	local var_20_97 = var_20_96.base.ship_skin_expression
-
-	var_20_97.chuyue_h = {
+	pg.base.ship_skin_expression.chuyue_h = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -115938,11 +107974,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_20_97
-
-	local var_20_98 = var_20_97.base.ship_skin_expression
-
-	var_20_98.bulisituoer_alter = {
+	pg.base.ship_skin_expression.bulisituoer_alter = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -115996,8 +108028,7 @@ end)()
 		login = "",
 		detail = "7"
 	}
-	pg = var_20_98
-	var_20_98.base.ship_skin_expression.sebao = {
+	pg.base.ship_skin_expression.sebao = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -116055,11 +108086,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_21_0 = var_1_10000.base.ship_skin_expression
-
-	var_21_0.sebao_2 = {
+	pg.base.ship_skin_expression.sebao_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -116113,11 +108140,7 @@ end)()
 		login = "5",
 		detail = "2"
 	}
-	pg = var_21_0
-
-	local var_21_1 = var_21_0.base.ship_skin_expression
-
-	var_21_1.aluomangshi = {
+	pg.base.ship_skin_expression.aluomangshi = {
 		default = "",
 		feeling3 = "8",
 		main3_replace = "",
@@ -116171,11 +108194,7 @@ end)()
 		login = "",
 		detail = "2"
 	}
-	pg = var_21_1
-
-	local var_21_2 = var_21_1.base.ship_skin_expression
-
-	var_21_2.aluomangshi_2 = {
+	pg.base.ship_skin_expression.aluomangshi_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -116229,11 +108248,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_21_2
-
-	local var_21_3 = var_21_2.base.ship_skin_expression
-
-	var_21_3.wuju = {
+	pg.base.ship_skin_expression.wuju = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -116287,11 +108302,7 @@ end)()
 		login = "2",
 		detail = "6"
 	}
-	pg = var_21_3
-
-	local var_21_4 = var_21_3.base.ship_skin_expression
-
-	var_21_4.wuju_2 = {
+	pg.base.ship_skin_expression.wuju_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -116345,11 +108356,7 @@ end)()
 		login = "1",
 		detail = ""
 	}
-	pg = var_21_4
-
-	local var_21_5 = var_21_4.base.ship_skin_expression
-
-	var_21_5.lafeier_3 = {
+	pg.base.ship_skin_expression.lafeier_3 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -116403,11 +108410,7 @@ end)()
 		login = "1",
 		detail = "7"
 	}
-	pg = var_21_5
-
-	local var_21_6 = var_21_5.base.ship_skin_expression
-
-	var_21_6.dafenqi_3 = {
+	pg.base.ship_skin_expression.dafenqi_3 = {
 		default = "",
 		feeling3 = "",
 		main3_replace = "",
@@ -116461,11 +108464,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_21_6
-
-	local var_21_7 = var_21_6.base.ship_skin_expression
-
-	var_21_7.makeboluo_3 = {
+	pg.base.ship_skin_expression.makeboluo_3 = {
 		default = "",
 		feeling3 = "7",
 		main3_replace = "",
@@ -116519,11 +108518,7 @@ end)()
 		login = "1",
 		detail = "8"
 	}
-	pg = var_21_7
-
-	local var_21_8 = var_21_7.base.ship_skin_expression
-
-	var_21_8.adaerbote_4 = {
+	pg.base.ship_skin_expression.adaerbote_4 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -116577,11 +108572,7 @@ end)()
 		login = "6",
 		detail = "6"
 	}
-	pg = var_21_8
-
-	local var_21_9 = var_21_8.base.ship_skin_expression
-
-	var_21_9.makesi = {
+	pg.base.ship_skin_expression.makesi = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -116635,11 +108626,7 @@ end)()
 		login = "1",
 		detail = "4"
 	}
-	pg = var_21_9
-
-	local var_21_10 = var_21_9.base.ship_skin_expression
-
-	var_21_10.waerpalaisuo = {
+	pg.base.ship_skin_expression.waerpalaisuo = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -116693,11 +108680,7 @@ end)()
 		login = "1",
 		detail = "1"
 	}
-	pg = var_21_10
-
-	local var_21_11 = var_21_10.base.ship_skin_expression
-
-	var_21_11.dengken = {
+	pg.base.ship_skin_expression.dengken = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -116751,11 +108734,7 @@ end)()
 		login = "3",
 		detail = "5"
 	}
-	pg = var_21_11
-
-	local var_21_12 = var_21_11.base.ship_skin_expression
-
-	var_21_12.gaoliang = {
+	pg.base.ship_skin_expression.gaoliang = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -116809,11 +108788,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_21_12
-
-	local var_21_13 = var_21_12.base.ship_skin_expression
-
-	var_21_13.baofengyu = {
+	pg.base.ship_skin_expression.baofengyu = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -116867,11 +108842,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_21_13
-
-	local var_21_14 = var_21_13.base.ship_skin_expression
-
-	var_21_14.niulunbao_alter = {
+	pg.base.ship_skin_expression.niulunbao_alter = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -116925,11 +108896,7 @@ end)()
 		login = "2",
 		detail = ""
 	}
-	pg = var_21_14
-
-	local var_21_15 = var_21_14.base.ship_skin_expression
-
-	var_21_15.kunxi_4 = {
+	pg.base.ship_skin_expression.kunxi_4 = {
 		default = "",
 		feeling3 = "6",
 		main3_replace = "",
@@ -116983,11 +108950,7 @@ end)()
 		login = "3",
 		detail = "1"
 	}
-	pg = var_21_15
-
-	local var_21_16 = var_21_15.base.ship_skin_expression
-
-	var_21_16.A2 = {
+	pg.base.ship_skin_expression.A2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -117041,11 +109004,7 @@ end)()
 		login = "",
 		detail = "6"
 	}
-	pg = var_21_16
-
-	local var_21_17 = var_21_16.base.ship_skin_expression
-
-	var_21_17.A2_2 = {
+	pg.base.ship_skin_expression.A2_2 = {
 		default = "",
 		feeling3 = "5",
 		main3_replace = "",
@@ -117099,11 +109058,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_21_17
-
-	local var_21_18 = var_21_17.base.ship_skin_expression
-
-	var_21_18["2B"] = {
+	pg.base.ship_skin_expression["2B"] = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -117157,11 +109112,7 @@ end)()
 		login = "",
 		detail = ""
 	}
-	pg = var_21_18
-
-	local var_21_19 = var_21_18.base.ship_skin_expression
-
-	var_21_19["2B_2"] = {
+	pg.base.ship_skin_expression["2B_2"] = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -117215,11 +109166,7 @@ end)()
 		login = "",
 		detail = "1"
 	}
-	pg = var_21_19
-
-	local var_21_20 = var_21_19.base.ship_skin_expression
-
-	var_21_20.gelifen = {
+	pg.base.ship_skin_expression.gelifen = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -117273,11 +109220,7 @@ end)()
 		login = "7",
 		detail = "1"
 	}
-	pg = var_21_20
-
-	local var_21_21 = var_21_20.base.ship_skin_expression
-
-	var_21_21.gelifen_2 = {
+	pg.base.ship_skin_expression.gelifen_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -117331,11 +109274,7 @@ end)()
 		login = "3",
 		detail = "6"
 	}
-	pg = var_21_21
-
-	local var_21_22 = var_21_21.base.ship_skin_expression
-
-	var_21_22.huali = {
+	pg.base.ship_skin_expression.huali = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -117389,11 +109328,7 @@ end)()
 		login = "",
 		detail = "3"
 	}
-	pg = var_21_22
-
-	local var_21_23 = var_21_22.base.ship_skin_expression
-
-	var_21_23.huali_2 = {
+	pg.base.ship_skin_expression.huali_2 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -117447,11 +109382,7 @@ end)()
 		login = "1",
 		detail = "2"
 	}
-	pg = var_21_23
-
-	local var_21_24 = var_21_23.base.ship_skin_expression
-
-	var_21_24.sali = {
+	pg.base.ship_skin_expression.sali = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -117505,11 +109436,7 @@ end)()
 		login = "",
 		detail = "4"
 	}
-	pg = var_21_24
-
-	local var_21_25 = var_21_24.base.ship_skin_expression
-
-	var_21_25.sali_2 = {
+	pg.base.ship_skin_expression.sali_2 = {
 		default = "",
 		feeling3 = "1",
 		main3_replace = "",
@@ -117563,11 +109490,7 @@ end)()
 		login = "4",
 		detail = "5"
 	}
-	pg = var_21_25
-
-	local var_21_26 = var_21_25.base.ship_skin_expression
-
-	var_21_26.z11_3 = {
+	pg.base.ship_skin_expression.z11_3 = {
 		default = "",
 		feeling3 = "4",
 		main3_replace = "",
@@ -117621,11 +109544,7 @@ end)()
 		login = "2",
 		detail = "2"
 	}
-	pg = var_21_26
-
-	local var_21_27 = var_21_26.base.ship_skin_expression
-
-	var_21_27.gangyishawa_3 = {
+	pg.base.ship_skin_expression.gangyishawa_3 = {
 		default = "",
 		feeling3 = "3",
 		main3_replace = "",
@@ -117679,8 +109598,7 @@ end)()
 		login = "8",
 		detail = "1"
 	}
-	pg = var_21_27
-	var_21_27.base.ship_skin_expression.pulimaosi_3 = {
+	pg.base.ship_skin_expression.pulimaosi_3 = {
 		default = "",
 		feeling3 = "2",
 		main3_replace = "",
@@ -117733,6 +109651,924 @@ end)()
 		mission_complete_replace = "",
 		login = "1",
 		detail = "1"
+	}
+	pg.base.ship_skin_expression.benningdun = {
+		default = "",
+		feeling3 = "4",
+		main3_replace = "",
+		profile = "",
+		expedition = "10",
+		win_mvp = "7",
+		home = "1",
+		mission = "3",
+		touch2 = "2",
+		touch = "7",
+		painting = "benningdun",
+		unlock_replace = "",
+		propose = "10",
+		feeling1 = "6",
+		lose = "9",
+		mail = "3",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "10",
+		expedition_replace = "",
+		battle = "4",
+		skill = "5",
+		mission_complete = "9",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "2",
+		main2_replace = "",
+		feeling4 = "8",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "8",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "4",
+		main_3 = "1",
+		gift_prefer = "1",
+		upgrade = "7",
+		main4_replace = "",
+		headtouch = "3",
+		feeling2 = "3",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "1",
+		detail = "8"
+	}
+	pg.base.ship_skin_expression.benningdun_2 = {
+		default = "",
+		feeling3 = "3",
+		main3_replace = "",
+		profile = "",
+		expedition = "14",
+		win_mvp = "4",
+		home = "3",
+		mission = "4",
+		touch2 = "2",
+		touch = "10",
+		painting = "benningdun_2",
+		unlock_replace = "",
+		propose = "4",
+		feeling1 = "13",
+		lose = "8",
+		mail = "7",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "14",
+		expedition_replace = "",
+		battle = "4",
+		skill = "12",
+		mission_complete = "14",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "9",
+		main2_replace = "",
+		feeling4 = "5",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "6",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "10",
+		main_3 = "4",
+		gift_prefer = "",
+		upgrade = "12",
+		main4_replace = "",
+		headtouch = "10",
+		feeling2 = "11",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "1",
+		detail = "11"
+	}
+	pg.base.ship_skin_expression.weikesibao = {
+		default = "",
+		feeling3 = "3",
+		main3_replace = "",
+		profile = "",
+		expedition = "1",
+		win_mvp = "4",
+		home = "1",
+		mission = "1",
+		touch2 = "8",
+		touch = "5",
+		painting = "weikesibao",
+		unlock_replace = "",
+		propose = "2",
+		feeling1 = "7",
+		lose = "3",
+		mail = "1",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "8",
+		expedition_replace = "",
+		battle = "4",
+		skill = "9",
+		mission_complete = "3",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "6",
+		main2_replace = "",
+		feeling4 = "4",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "4",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "2",
+		main_3 = "3",
+		gift_prefer = "1",
+		upgrade = "4",
+		main4_replace = "",
+		headtouch = "5",
+		feeling2 = "6",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "2",
+		detail = "3"
+	}
+	pg.base.ship_skin_expression.weikesibao_2 = {
+		default = "",
+		feeling3 = "4",
+		main3_replace = "",
+		profile = "",
+		expedition = "4",
+		win_mvp = "4",
+		home = "4",
+		mission = "2",
+		touch2 = "8",
+		touch = "4",
+		painting = "weikesibao_2",
+		unlock_replace = "",
+		propose = "8",
+		feeling1 = "6",
+		lose = "3",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "4",
+		expedition_replace = "",
+		battle = "4",
+		skill = "4",
+		mission_complete = "4",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "7",
+		main2_replace = "",
+		feeling4 = "9",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "1",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "4",
+		main_3 = "5",
+		gift_prefer = "",
+		upgrade = "4",
+		main4_replace = "",
+		headtouch = "2",
+		feeling2 = "1",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "4",
+		detail = "1"
+	}
+	pg.base.ship_skin_expression.weikesibao_3 = {
+		default = "",
+		feeling3 = "",
+		main3_replace = "",
+		profile = "",
+		expedition = "3",
+		win_mvp = "3",
+		home = "3",
+		mission = "2",
+		touch2 = "3",
+		touch = "2",
+		painting = "weikesibao_3",
+		unlock_replace = "",
+		propose = "3",
+		feeling1 = "5",
+		lose = "4",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "3",
+		expedition_replace = "",
+		battle = "3",
+		skill = "3",
+		mission_complete = "3",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "5",
+		main2_replace = "",
+		feeling4 = "3",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "3",
+		main_3 = "1",
+		gift_prefer = "",
+		upgrade = "3",
+		main4_replace = "",
+		headtouch = "3",
+		feeling2 = "5",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "3",
+		detail = "3"
+	}
+	pg.base.ship_skin_expression.kelaite = {
+		default = "",
+		feeling3 = "2",
+		main3_replace = "",
+		profile = "",
+		expedition = "1",
+		win_mvp = "8",
+		home = "1",
+		mission = "4",
+		touch2 = "6",
+		touch = "6",
+		painting = "kelaite",
+		unlock_replace = "",
+		propose = "5",
+		feeling1 = "3",
+		lose = "4",
+		mail = "1",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "8",
+		expedition_replace = "",
+		battle = "2",
+		skill = "2",
+		mission_complete = "5",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "4",
+		main2_replace = "",
+		feeling4 = "6",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "1",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "1",
+		main_3 = "8",
+		gift_prefer = "5",
+		upgrade = "7",
+		main4_replace = "",
+		headtouch = "4",
+		feeling2 = "1",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "1",
+		detail = "1"
+	}
+	pg.base.ship_skin_expression.kelaite_2 = {
+		default = "",
+		feeling3 = "8",
+		main3_replace = "",
+		profile = "",
+		expedition = "2",
+		win_mvp = "7",
+		home = "2",
+		mission = "5",
+		touch2 = "4",
+		touch = "3",
+		painting = "kelaite_2",
+		unlock_replace = "",
+		propose = "2",
+		feeling1 = "3",
+		lose = "4",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "2",
+		expedition_replace = "",
+		battle = "3",
+		skill = "8",
+		mission_complete = "2",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "8",
+		main2_replace = "",
+		feeling4 = "6",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "2",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "4",
+		main_3 = "6",
+		gift_prefer = "",
+		upgrade = "6",
+		main4_replace = "",
+		headtouch = "6",
+		feeling2 = "1",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "5",
+		detail = "2"
+	}
+	pg.base.ship_skin_expression.halisen = {
+		default = "",
+		feeling3 = "8",
+		main3_replace = "",
+		profile = "",
+		expedition = "9",
+		win_mvp = "8",
+		home = "1",
+		mission = "1",
+		touch2 = "2",
+		touch = "8",
+		painting = "halisen",
+		unlock_replace = "",
+		propose = "7",
+		feeling1 = "4",
+		lose = "3",
+		mail = "1",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "2",
+		expedition_replace = "",
+		battle = "1",
+		skill = "5",
+		mission_complete = "8",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "3",
+		main2_replace = "",
+		feeling4 = "6",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "8",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "1",
+		main_3 = "5",
+		gift_prefer = "8",
+		upgrade = "8",
+		main4_replace = "",
+		headtouch = "5",
+		feeling2 = "2",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "1",
+		detail = "4"
+	}
+	pg.base.ship_skin_expression.halisen_2 = {
+		default = "",
+		feeling3 = "9",
+		main3_replace = "",
+		profile = "",
+		expedition = "9",
+		win_mvp = "4",
+		home = "4",
+		mission = "5",
+		touch2 = "6",
+		touch = "3",
+		painting = "halisen_2",
+		unlock_replace = "",
+		propose = "3",
+		feeling1 = "8",
+		lose = "7",
+		mail = "3",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "4",
+		expedition_replace = "",
+		battle = "3",
+		skill = "4",
+		mission_complete = "9",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "6",
+		main2_replace = "",
+		feeling4 = "3",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "7",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "1",
+		main_3 = "2",
+		gift_prefer = "",
+		upgrade = "9",
+		main4_replace = "",
+		headtouch = "2",
+		feeling2 = "2",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "7",
+		detail = "5"
+	}
+	pg.base.ship_skin_expression.yuehanluojiesi = {
+		default = "",
+		feeling3 = "1",
+		main3_replace = "",
+		profile = "",
+		expedition = "1",
+		win_mvp = "1",
+		home = "2",
+		mission = "2",
+		touch2 = "3",
+		touch = "4",
+		painting = "yuehanluojiesi",
+		unlock_replace = "",
+		propose = "6",
+		feeling1 = "2",
+		lose = "4",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "3",
+		expedition_replace = "",
+		battle = "1",
+		skill = "1",
+		mission_complete = "1",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "4",
+		main2_replace = "",
+		feeling4 = "7",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "2",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "2",
+		main_3 = "1",
+		gift_prefer = "1",
+		upgrade = "5",
+		main4_replace = "",
+		headtouch = "6",
+		feeling2 = "5",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "2",
+		detail = "1"
+	}
+	pg.base.ship_skin_expression.yuehanluojiesi_2 = {
+		default = "",
+		feeling3 = "4",
+		main3_replace = "",
+		profile = "",
+		expedition = "5",
+		win_mvp = "5",
+		home = "8",
+		mission = "1",
+		touch2 = "8",
+		touch = "8",
+		painting = "yuehanluojiesi_2",
+		unlock_replace = "",
+		propose = "8",
+		feeling1 = "4",
+		lose = "3",
+		mail = "1",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "8",
+		expedition_replace = "",
+		battle = "1",
+		skill = "1",
+		mission_complete = "5",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "2",
+		main2_replace = "",
+		feeling4 = "1",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "1",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "7",
+		main_3 = "2",
+		gift_prefer = "",
+		upgrade = "7",
+		main4_replace = "",
+		headtouch = "7",
+		feeling2 = "7",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "8",
+		detail = "5"
+	}
+	pg.base.ship_skin_expression.beierfasite_g = {
+		default = "",
+		feeling3 = "2",
+		main3_replace = "",
+		profile = "",
+		expedition = "2",
+		win_mvp = "3",
+		home = "2",
+		mission = "7",
+		touch2 = "4",
+		touch = "7",
+		painting = "beierfasite_g",
+		unlock_replace = "",
+		propose = "9",
+		feeling1 = "8",
+		lose = "2",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "4",
+		expedition_replace = "",
+		battle = "3",
+		skill = "6",
+		mission_complete = "1",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "8",
+		main2_replace = "",
+		feeling4 = "4",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "4",
+		main_1 = "3",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "2",
+		main_3 = "2",
+		gift_prefer = "",
+		upgrade = "3",
+		main4_replace = "",
+		headtouch = "5",
+		feeling2 = "1",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "1",
+		detail = "1"
+	}
+	pg.base.ship_skin_expression.fulici_3 = {
+		default = "",
+		feeling3 = "6",
+		main3_replace = "",
+		profile = "",
+		expedition = "6",
+		win_mvp = "2",
+		home = "7",
+		mission = "2",
+		touch2 = "4",
+		touch = "3",
+		painting = "fulici_3",
+		unlock_replace = "",
+		propose = "7",
+		feeling1 = "1",
+		lose = "2",
+		mail = "2",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "7",
+		expedition_replace = "",
+		battle = "2",
+		skill = "2",
+		mission_complete = "6",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "5",
+		main2_replace = "",
+		feeling4 = "4",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "6",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "6",
+		main_3 = "7",
+		gift_prefer = "",
+		upgrade = "6",
+		main4_replace = "",
+		headtouch = "8",
+		feeling2 = "2",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "6",
+		detail = "6"
+	}
+	pg.base.ship_skin_expression.bunao_3 = {
+		default = "",
+		feeling3 = "5",
+		main3_replace = "",
+		profile = "",
+		expedition = "2",
+		win_mvp = "3",
+		home = "2",
+		mission = "6",
+		touch2 = "8",
+		touch = "9",
+		painting = "bunao_3",
+		unlock_replace = "",
+		propose = "6",
+		feeling1 = "1",
+		lose = "1",
+		mail = "4",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "5",
+		expedition_replace = "",
+		battle = "2",
+		skill = "4",
+		mission_complete = "3",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "8",
+		main2_replace = "",
+		feeling4 = "3",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "6",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "7",
+		main_3 = "1",
+		gift_prefer = "",
+		upgrade = "1",
+		main4_replace = "",
+		headtouch = "5",
+		feeling2 = "2",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "1",
+		detail = "6"
+	}
+	pg.base.ship_skin_expression.wuzang_4 = {
+		default = "",
+		feeling3 = "5",
+		main3_replace = "",
+		profile = "",
+		expedition = "3",
+		win_mvp = "2",
+		home = "5",
+		mission = "1",
+		touch2 = "7",
+		touch = "4",
+		painting = "wuzang_4",
+		unlock_replace = "",
+		propose = "7",
+		feeling1 = "2",
+		lose = "6",
+		mail = "1",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "7",
+		expedition_replace = "",
+		battle = "1",
+		skill = "1",
+		mission_complete = "3",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "2",
+		main2_replace = "",
+		feeling4 = "5",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "7",
+		main_1 = "3",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "5",
+		main_3 = "3",
+		gift_prefer = "",
+		upgrade = "1",
+		main4_replace = "",
+		headtouch = "3",
+		feeling2 = "1",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "3",
+		detail = "5"
+	}
+	pg.base.ship_skin_expression.aisaikesi_10 = {
+		default = "",
+		feeling3 = "2",
+		main3_replace = "",
+		profile = "",
+		expedition = "4",
+		win_mvp = "4",
+		home = "5",
+		mission = "5",
+		touch2 = "6",
+		touch = "5",
+		painting = "aisaikesi_10",
+		unlock_replace = "",
+		propose = "5",
+		feeling1 = "6",
+		lose = "6",
+		mail = "3",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "5",
+		expedition_replace = "",
+		battle = "3",
+		skill = "1",
+		mission_complete = "4",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "1",
+		main2_replace = "",
+		feeling4 = "5",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "",
+		main_1 = "6",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "5",
+		main_3 = "5",
+		gift_prefer = "",
+		upgrade = "1",
+		main4_replace = "",
+		headtouch = "4",
+		feeling2 = "3",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "5",
+		detail = "3"
+	}
+	pg.base.ship_skin_expression.qiershazhi_h = {
+		default = "",
+		feeling3 = "2",
+		main3_replace = "",
+		profile = "",
+		expedition = "1",
+		win_mvp = "1",
+		home = "6",
+		mission = "4",
+		touch2 = "7",
+		touch = "2",
+		painting = "qiershazhi_h",
+		unlock_replace = "",
+		propose = "6",
+		feeling1 = "3",
+		lose = "3",
+		mail = "1",
+		main_6 = "",
+		main_7 = "",
+		feeling5 = "7",
+		expedition_replace = "",
+		battle = "1",
+		skill = "3",
+		mission_complete = "1",
+		unlock = "",
+		login_replace = "",
+		headtouch_replace = "",
+		detail_replace = "",
+		hp_warning = "3",
+		main2_replace = "",
+		feeling4 = "1",
+		main5_replace = "",
+		main6_replace = "",
+		touch_replace = "",
+		main_4 = "8",
+		main_1 = "6",
+		mission_replace = "",
+		mail_replace = "",
+		gift_dislike = "",
+		touch2_replace = "",
+		main7_replace = "",
+		main1_replace = "",
+		main_2 = "5",
+		main_3 = "6",
+		gift_prefer = "",
+		upgrade = "1",
+		main4_replace = "",
+		headtouch = "1",
+		feeling2 = "1",
+		main_5 = "",
+		mission_complete_replace = "",
+		login = "7",
+		detail = "7"
 	}
 
 	return

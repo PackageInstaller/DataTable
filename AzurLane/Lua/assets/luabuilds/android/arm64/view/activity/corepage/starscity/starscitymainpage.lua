@@ -1,443 +1,272 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("StarsCityMainPage", import("view.activity.CorePage.CoreActivityPage"))
 
-local var_0_0 = "StarsCityMainPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.CoreActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.AD = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.AD
-
-	arg_1_0.btnManual = var_1.Find(var_1_1, "TopPage/top/manual")
-
-	local var_1_2 = arg_1_0.btnManual
-
-	arg_1_0.Txtmanual = var_1.Find(var_1_2, "Text")
-
-	local var_1_3 = arg_1_0.btnManual
-
-	arg_1_0.redMalPoint = var_1.Find(var_1_3, "tip")
-
-	local var_1_4 = arg_1_0.AD
-
-	arg_1_0.btnGroup = var_1.Find(var_1_4, "btn_list")
-
-	local var_1_5 = arg_1_0.btnGroup
-
-	arg_1_0.btnBuild = var_1.Find(var_1_5, "build")
-
-	local var_1_6 = arg_1_0.btnGroup
-
-	arg_1_0.btnFight = var_1.Find(var_1_6, "fight")
-
-	local var_1_7 = arg_1_0.btnGroup
-
-	arg_1_0.btnShop = var_1.Find(var_1_7, "shop")
-
-	local var_1_8 = arg_1_0.btnBuild
-
-	arg_1_0.resTimeBuild = var_1.Find(var_1_8, "resTime/Text")
-
-	local var_1_9 = arg_1_0.btnShop
-
-	arg_1_0.resTimeShop = var_1.Find(var_1_9, "resTime/Text")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.AD = arg_1_0._tf:Find("AD")
+	arg_1_0.btnManual = arg_1_0.AD:Find("TopPage/top/manual")
+	arg_1_0.Txtmanual = arg_1_0.btnManual:Find("Text")
+	arg_1_0.redMalPoint = arg_1_0.btnManual:Find("tip")
+	arg_1_0.btnGroup = arg_1_0.AD:Find("btn_list")
+	arg_1_0.btnBuild = arg_1_0.btnGroup:Find("build")
+	arg_1_0.btnFight = arg_1_0.btnGroup:Find("fight")
+	arg_1_0.btnShop = arg_1_0.btnGroup:Find("shop")
+	arg_1_0.resTimeBuild = arg_1_0.btnBuild:Find("resTime/Text")
+	arg_1_0.resTimeShop = arg_1_0.btnShop:Find("resTime/Text")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	local var_2_0 = arg_2_0.activity
-	local var_2_1 = var_1.getConfig(var_2_0, "config_client")
+function var_0_0.OnFirstFlush(arg_2_0)
+	local var_2_0 = arg_2_0.activity:getConfig("config_client")
 
-	type = var_1_10002
-	var_2_1 = var_1_10002(var_2_1) == "table" and var_2_1 or {}
+	var_2_0 = type(var_2_0) == "table" and var_2_0 or {}
 
-	local function var_2_2(arg_3_0)
+	local function var_2_1(arg_3_0)
 		if not arg_3_0 then
 			return false
 		end
 
-		getProxy = var_2_10001
-		ActivityProxy = var_2_10003
+		local var_3_0 = getProxy(ActivityProxy):getActivityById(arg_3_0)
 
-		local var_3_0 = var_2_10001(var_2_10003)
-
-		return not var_1.getActivityById(var_3_0, arg_3_0) or var_1:isEnd()
+		return not var_3_0 or var_3_0:isEnd()
 	end
 
-	onButton = var_2_0
-
-	local var_2_3 = arg_2_0
-	local var_2_4 = arg_2_0.btnBuild
-
-	local function var_2_5()
-		if var_2_2(var_2_1.buildLinkActID) then
-			pg = var_0
-
-			local var_4_0 = var_0.TipsMgr.GetInstance()
-			local var_4_1 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_4_1(var_4_0, var_2_10003("common_activity_end"))
+	onButton(arg_2_0, arg_2_0.btnBuild, function()
+		if var_2_1(var_2_0.buildLinkActID) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		local var_4_2 = arg_2_0
-		local var_4_3 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_4_4 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		local var_4_5 = var_2_10004.GETBOAT
-		local var_4_6 = {}
-
-		BuildShipScene = var_2_10006
-		var_4_6.page = var_2_10006.PAGE_BUILD
-		BuildShipScene = var_6
-		var_4_6.projectName = var_6.PROJECTS.ACTIVITY
-
-		var_4_3(var_4_2, var_4_4, var_4_5, var_4_6)
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+			page = BuildShipScene.PAGE_BUILD,
+			projectName = BuildShipScene.PROJECTS.ACTIVITY
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_2_0(var_2_3, var_2_4, var_2_5, var_1_10008)
-
-	onButton = var_2_0
-
-	local var_2_6 = arg_2_0
-	local var_2_7 = arg_2_0.btnFight
-
-	local function var_2_8()
-		if var_2_1.fightLinkActID and var_2_2(var_0) then
-			pg = var_1
-
-			local var_5_0 = var_1.TipsMgr.GetInstance()
-			local var_5_1 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_5_1(var_5_0, var_2_10004("common_activity_end"))
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.btnFight, function()
+		if var_2_0.fightLinkActID and var_2_1(var_2_0.fightLinkActID) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
 			return
 		end
 
-		if var_0 then
-			local var_5_2 = arg_2_0
-			local var_5_3 = var_1.emit
-
-			ActivityMediator = var_2_10004
-
-			var_5_3(var_5_2, var_2_10004.SKIP_ACTIVITY_MAP, var_0)
+		if var_2_0.fightLinkActID then
+			arg_2_0:emit(ActivityMediator.SKIP_ACTIVITY_MAP, var_2_0.fightLinkActID)
 		else
-			local var_5_4 = arg_2_0
-			local var_5_5 = var_1.emit
-
-			ActivityMediator = var_2_10004
-
-			var_5_5(var_5_4, var_2_10004.BATTLE_OPERA)
+			arg_2_0:emit(ActivityMediator.BATTLE_OPERA)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_2_0(var_2_6, var_2_7, var_2_8, var_1_10008)
-
-	onButton = var_2_0
-
-	local var_2_9 = arg_2_0
-	local var_2_10 = arg_2_0.btnShop
-
-	local function var_2_11()
-		if var_2_1.shopLinkActID and var_2_2(var_0) then
-			pg = var_1
-
-			local var_6_0 = var_1.TipsMgr.GetInstance()
-			local var_6_1 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_6_1(var_6_0, var_2_10004("common_activity_end"))
-
-			return
-		end
-
-		if var_0 then
-			local var_6_2 = arg_2_0
-			local var_6_3 = var_1.emit
-
-			ActivityMediator = var_2_10004
-			var_2_10004 = var_2_10004.GO_SHOPS_LAYER
-
-			local var_6_4 = {}
-
-			NewShopsScene = var_2_10006
-			var_6_4.warp = var_2_10006.TYPE_ACTIVITY
-			var_6_4.actId = var_0
-
-			var_6_3(var_6_2, var_2_10004, var_6_4)
-		else
-			local var_6_5 = arg_2_0
-			local var_6_6 = var_1.emit
-
-			ActivityMediator = var_2_10004
-
-			var_6_6(var_6_5, var_2_10004.GO_CHANGE_SHOP)
-		end
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.btnShop, function()
+		arg_2_0:emit(ActivityMediator.GO_CHANGE_SHOP)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_2_0(var_2_9, var_2_10, var_2_11, var_1_10008)
-
-	onButton = var_2_0
-
-	local var_2_12 = arg_2_0
-	local var_2_13 = arg_2_0.btnManual
-
-	local function var_2_14()
-		Context = var_2_10000
-
-		local var_7_0 = var_2_10000.New
-		local var_7_1 = {}
-
-		MedalAlbumTemplateMediator = var_2_10003
-		var_7_1.mediator = var_2_10003
-		StarsCityMedalAlbumView = var_2_10003
-		var_7_1.viewComponent = var_2_10003
-
-		local var_7_2 = var_7_0(var_7_1)
-		local var_7_3 = arg_2_0
-		local var_7_4 = var_1.emit
-
-		ActivityMediator = var_2_10004
-
-		var_7_4(var_7_3, var_2_10004.ON_ADD_SUBLAYER, var_7_2)
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.btnManual, function()
+		arg_2_0:emit(ActivityMediator.ON_ADD_SUBLAYER, (Context.New({
+			mediator = MedalAlbumTemplateMediator,
+			viewComponent = StarsCityMedalAlbumView
+		})))
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_2_0(var_2_12, var_2_13, var_2_14, var_1_10008)
-
-	setText = var_2_0
-
-	local var_2_15 = arg_2_0.Txtmanual
-
-	i18n = var_2_13
-
-	var_2_0(var_2_15, var_2_13("anniversary_nine_main_page"))
+	end, SFX_PANEL)
+	setText(arg_2_0.Txtmanual, i18n("anniversary_nine_main_page"))
 	arg_2_0:refreshBtnResTime()
 	arg_2_0:refreshRed()
 
 	return
 end
 
-function var_0_1.refreshBtnResTime(arg_8_0)
-	local var_8_0 = arg_8_0.activity
-	local var_8_1 = var_1.getConfig(var_8_0, "config_client")
+function var_0_0.refreshBtnResTime(arg_8_0)
+	local var_8_0 = arg_8_0.activity:getConfig("config_client")
 
-	type = var_1_10002
-	var_8_1 = var_1_10002(var_8_1) == "table" and var_8_1 or {}
-	pg = var_2
+	var_8_0 = type(var_8_0) == "table" and var_8_0 or {}
 
-	local var_8_2 = var_2.TimeMgr.GetInstance()
-	local var_8_3 = var_2.GetServerTime(var_8_2)
+	local var_8_1 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	;(function(arg_9_0, arg_9_1)
+	;(function(arg_9_0, arg_9_1, arg_9_2)
 		if not arg_9_0 then
 			return
 		end
 
-		if arg_9_1 then
-			getProxy = var_2_10002
-			ActivityProxy = var_2_10004
-			var_2_10004 = var_2_10002(var_2_10004)
+		local var_9_1 = 0
+		local var_9_2 = false
 
-			local var_9_0
+		if arg_9_2 == 1 then
+			if arg_9_1 then
+				local var_9_3 = getProxy(ActivityProxy):getActivityById(arg_9_1) or nil
 
-			if not var_2.getActivityById(var_2_10004, arg_9_1) then
-				var_9_0 = nil
-			end
+				if var_9_3 then
+					::label_9_0::
 
-			if var_9_0 then
-				::label_9_0::
+					if not var_9_3:isEnd() then
+						if var_9_3.stopTime then
+							::label_9_1::
 
-				if not var_9_0:isEnd() then
-					local var_9_2
-
-					if var_9_0.stopTime then
-						local var_9_1 = var_9_0.stopTime
-
-						if not (var_8_3 < var_9_1) then
-							var_9_2 = false
-						else
-							var_9_2 = true
+							var_9_2 = var_9_3.stopTime > var_8_1
 						end
-					end
 
-					if var_9_2 then
-						var_2_10004 = var_9_0.stopTime - var_8_3
-						math = var_5
+						var_9_1 = math.floor((var_9_3.stopTime - var_8_1) / 16)
 
-						local var_9_3 = var_5.floor(var_2_10004 / 0)
+						goto label_9_2
 
-						math = var_2_10006
+						do
+							local var_9_4 = pg.TimeMgr.GetInstance():parseTimeFromConfig(pg.shop_template[arg_9_1].time[2]) - var_8_1
 
-						local var_9_4 = var_2_10006.floor(var_2_10004 % 0 / 16)
-
-						setActive = var_7
-
-						var_7(arg_9_0.parent, true)
-
-						if 2 <= var_9_4 then
-							setText = var_7
-
-							local var_9_5 = arg_9_0
-
-							i18n = var_10
-
-							var_7(var_9_5, var_10("StarsCityMainPage_res_day_time", var_9_3, var_9_4))
-						else
-							setText = var_7
-
-							local var_9_6 = arg_9_0
-
-							i18n = var_10
-
-							var_7(var_9_6, var_10("StarsCityMainPage_no_time"))
+							var_9_1 = math.floor(var_9_4 / 16)
+							var_9_2 = var_9_4 > 0
 						end
-					else
-						setActive = var_2_10004
 
-						var_2_10004(arg_9_0.parent, false)
+						::label_9_2::
 
-						setText = var_2_10004
+						if var_9_2 and var_9_1 <= 24 then
+							setActive(arg_9_0.parent, true)
 
-						var_2_10004(arg_9_0, "")
+							if arg_9_2 == 1 then
+								setText(arg_9_0, i18n("StarsCityMainPage_no_time"))
+							else
+								setText(arg_9_0, i18n("StarsCityMainPage_res_day_time", var_9_1))
+							end
+						else
+							setActive(arg_9_0.parent, false)
+							setText(arg_9_0, "")
+						end
+
+						return
 					end
-
-					return
 				end
 			end
 		end
-	end)(arg_8_0.resTimeBuild, var_8_1.buildLinkActID)
-	var_4(arg_8_0.resTimeShop, var_8_1.shopLinkActID)
+	end)(arg_8_0.resTimeBuild, var_8_0.buildLinkActID, 1)
+	;(function(arg_9_0, arg_9_1, arg_9_2)
+		if not arg_9_0 then
+			return
+		end
+
+		local var_9_1 = 0
+		local var_9_2 = false
+
+		if arg_9_2 == 1 then
+			if arg_9_1 then
+				local var_9_3 = getProxy(ActivityProxy):getActivityById(arg_9_1) or nil
+
+				if var_9_3 then
+					::label_9_0::
+
+					if not var_9_3:isEnd() then
+						if var_9_3.stopTime then
+							::label_9_1::
+
+							var_9_2 = var_9_3.stopTime > var_8_1
+						end
+
+						var_9_1 = math.floor((var_9_3.stopTime - var_8_1) / 16)
+
+						goto label_9_2
+
+						do
+							local var_9_4 = pg.TimeMgr.GetInstance():parseTimeFromConfig(pg.shop_template[arg_9_1].time[2]) - var_8_1
+
+							var_9_1 = math.floor(var_9_4 / 16)
+							var_9_2 = var_9_4 > 0
+						end
+
+						::label_9_2::
+
+						if var_9_2 and var_9_1 <= 24 then
+							setActive(arg_9_0.parent, true)
+
+							if arg_9_2 == 1 then
+								setText(arg_9_0, i18n("StarsCityMainPage_no_time"))
+							else
+								setText(arg_9_0, i18n("StarsCityMainPage_res_day_time", var_9_1))
+							end
+						else
+							setActive(arg_9_0.parent, false)
+							setText(arg_9_0, "")
+						end
+
+						return
+					end
+				end
+			end
+		end
+	end)(arg_8_0.resTimeShop, var_8_0.shopItemID, 2)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_10_0)
+function var_0_0.OnUpdateFlush(arg_10_0)
 	arg_10_0:refreshRed()
 	arg_10_0:refreshBtnResTime()
 
 	return
 end
 
-function var_0_1.refreshRed(arg_11_0)
-	local var_11_0, var_11_1 = var_0_1.GetFujinBayMedalTaskCount()
+function var_0_0.refreshRed(arg_11_0)
+	local var_11_0, var_11_1 = var_0_0.GetFujinBayMedalTaskCount()
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_11_0.redMalPoint, var_11_1 > 0)
+	setActive(arg_11_0.redMalPoint, var_11_1 > 0)
 
 	return
 end
 
-function var_0_1.IsShowReminder(arg_12_0)
-	return var_0_1.IsTip()
+function var_0_0.IsShowReminder(arg_12_0)
+	return var_0_0.IsTip()
 end
 
-function var_0_1.IsTip()
-	return var_0_1.IsFujinBayMedalTaskTip()
+function var_0_0.IsTip()
+	return var_0_0.IsFujinBayMedalTaskTip()
 end
 
-function var_0_1.IsFujinBayMedalTaskTip()
-	local var_14_0, var_14_1 = var_0_1.GetFujinBayMedalTaskCount()
+function var_0_0.IsFujinBayMedalTaskTip()
+	local var_14_0, var_14_1 = var_0_0.GetFujinBayMedalTaskCount()
 
 	return var_14_1 > 0
 end
 
-function var_0_1.GetFujinBayMedalTaskCount()
-	StarsCityMedalAlbumView = var_1_10000
+function var_0_0.GetFujinBayMedalTaskCount()
+	if pg.activity_medal_group[StarsCityMedalAlbumView.GROUP_ID] then
+		local var_15_0 = pg.activity_medal_group[StarsCityMedalAlbumView.GROUP_ID].activity_link or {}
+		local var_15_1
 
-	local var_15_0 = var_1_10000.GROUP_ID
+		for iter_15_0, iter_15_1 in ipairs(var_15_0) do
+			local var_15_2 = getProxy(ActivityProxy):getActivityById(iter_15_1[2])
 
-	pg = var_1_10001
+			if var_15_2 and not var_15_2:isEnd() then
+				var_15_1 = iter_15_1[3]
 
-	local var_15_1
-
-	if not var_1_10001.activity_medal_group[var_15_0] or not var_1.activity_link then
-		var_15_1 = {}
-	end
-
-	local var_15_2
-
-	ipairs = var_1_10004
-
-	for iter_15_0, iter_15_1 in var_1_10004(var_15_1) do
-		local var_15_3 = iter_15_1[2]
-
-		getProxy = var_1_10010
-		ActivityProxy = var_1_10012
-		var_1_10012 = var_1_10010(var_1_10012)
-
-		if var_1_10010.getActivityById(var_1_10012, var_15_3) and not var_1_10010:isEnd() then
-			var_15_2 = iter_15_1[3]
-
-			break
-		end
-	end
-
-	if not var_15_2 then
-		return 0, 0, 0
-	end
-
-	getProxy = var_4
-	TaskProxy = var_6
-
-	local var_15_4 = var_4(var_6)
-	local var_15_5 = 0
-	local var_15_6 = 0
-	local var_15_7 = #var_15_2
-
-	ipairs = iter_15_1
-
-	for iter_15_2, iter_15_3 in iter_15_1(var_15_2) do
-		local var_15_8
-
-		if not var_15_4:getTaskById(iter_15_3) then
-			var_15_8 = var_15_4:getFinishTaskById(iter_15_3)
-		end
-
-		if var_15_8 then
-			if var_15_8:getTaskStatus() == 1 then
-				var_15_6 = var_15_6 + 1
-				var_15_5 = var_15_5 + 1
-			elseif var_14 == 2 then
-				var_15_5 = var_15_5 + 1
+				break
 			end
 		end
-	end
 
-	return var_15_5, var_15_6, var_15_7
+		if not var_15_1 then
+			return 0, 0, 0
+		end
+
+		local var_15_3 = getProxy(TaskProxy)
+		local var_15_4 = 0
+		local var_15_5 = 0
+
+		for iter_15_2, iter_15_3 in ipairs(var_15_1) do
+			local var_15_6 = var_15_3:getTaskById(iter_15_3) or var_15_3:getFinishTaskById(iter_15_3)
+
+			if var_15_6 then
+				local var_15_7 = var_15_6:getTaskStatus()
+
+				if var_15_7 == 1 then
+					var_15_5 = var_15_5 + 1
+					var_15_4 = var_15_4 + 1
+				elseif var_15_7 == 2 then
+					var_15_4 = var_15_4 + 1
+				end
+			end
+		end
+
+		return var_15_4, var_15_5, #var_15_1
+	end
 end
 
-return var_0_1
+return var_0_0

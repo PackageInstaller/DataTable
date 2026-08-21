@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_expup_ship") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_expup_ship"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_expup_ship = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_expup_ship
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_expup_ship = rawget(pg, "activity_expup_ship") or setmetatable({
+	__name = "activity_expup_ship"
+}, confNEO)
+pg.activity_expup_ship.all = {
 	1,
 	2,
 	3,
@@ -69,25 +46,11 @@ var_0_3.all = {
 	5001,
 	5002
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_expup_ship = {}
+pg.base = pg.base or {}
+pg.base.activity_expup_ship = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_expup_ship
-
-	var_1_0[1] = {
+	pg.base.activity_expup_ship[1] = {
 		id = 1,
 		expup = {
 			{
@@ -108,11 +71,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_expup_ship
-
-	var_1_1[2] = {
+	pg.base.activity_expup_ship[2] = {
 		id = 2,
 		expup = {
 			{
@@ -133,11 +92,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_expup_ship
-
-	var_1_2[3] = {
+	pg.base.activity_expup_ship[3] = {
 		id = 3,
 		expup = {
 			{
@@ -158,11 +113,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_expup_ship
-
-	var_1_3[4] = {
+	pg.base.activity_expup_ship[4] = {
 		id = 4,
 		expup = {
 			{
@@ -183,11 +134,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_expup_ship
-
-	var_1_4[5] = {
+	pg.base.activity_expup_ship[5] = {
 		id = 5,
 		expup = {
 			{
@@ -208,11 +155,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_expup_ship
-
-	var_1_5[6] = {
+	pg.base.activity_expup_ship[6] = {
 		id = 6,
 		expup = {
 			{
@@ -233,11 +176,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_expup_ship
-
-	var_1_6[7] = {
+	pg.base.activity_expup_ship[7] = {
 		id = 7,
 		expup = {
 			{
@@ -258,11 +197,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_expup_ship
-
-	var_1_7[8] = {
+	pg.base.activity_expup_ship[8] = {
 		id = 8,
 		expup = {
 			{
@@ -283,11 +218,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_expup_ship
-
-	var_1_8[9] = {
+	pg.base.activity_expup_ship[9] = {
 		id = 9,
 		expup = {
 			{
@@ -308,11 +239,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_expup_ship
-
-	var_1_9[10] = {
+	pg.base.activity_expup_ship[10] = {
 		id = 10,
 		expup = {
 			{
@@ -333,11 +260,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_expup_ship
-
-	var_1_10[11] = {
+	pg.base.activity_expup_ship[11] = {
 		id = 11,
 		expup = {
 			{
@@ -358,11 +281,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_expup_ship
-
-	var_1_11[12] = {
+	pg.base.activity_expup_ship[12] = {
 		id = 12,
 		expup = {
 			{
@@ -383,11 +302,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_expup_ship
-
-	var_1_12[13] = {
+	pg.base.activity_expup_ship[13] = {
 		id = 13,
 		expup = {
 			{
@@ -408,11 +323,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_expup_ship
-
-	var_1_13[14] = {
+	pg.base.activity_expup_ship[14] = {
 		id = 14,
 		expup = {
 			{
@@ -433,11 +344,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_expup_ship
-
-	var_1_14[15] = {
+	pg.base.activity_expup_ship[15] = {
 		id = 15,
 		expup = {
 			{
@@ -458,11 +365,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_expup_ship
-
-	var_1_15[16] = {
+	pg.base.activity_expup_ship[16] = {
 		id = 16,
 		expup = {
 			{
@@ -483,11 +386,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_expup_ship
-
-	var_1_16[17] = {
+	pg.base.activity_expup_ship[17] = {
 		id = 17,
 		expup = {
 			{
@@ -508,11 +407,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_expup_ship
-
-	var_1_17[18] = {
+	pg.base.activity_expup_ship[18] = {
 		id = 18,
 		expup = {
 			{
@@ -533,11 +428,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_expup_ship
-
-	var_1_18[19] = {
+	pg.base.activity_expup_ship[19] = {
 		id = 19,
 		expup = {
 			{
@@ -562,11 +453,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_expup_ship
-
-	var_1_19[20] = {
+	pg.base.activity_expup_ship[20] = {
 		id = 20,
 		expup = {
 			{
@@ -591,11 +478,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_expup_ship
-
-	var_1_20[21] = {
+	pg.base.activity_expup_ship[21] = {
 		id = 21,
 		expup = {
 			{
@@ -616,11 +499,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_expup_ship
-
-	var_1_21[22] = {
+	pg.base.activity_expup_ship[22] = {
 		id = 22,
 		expup = {
 			{
@@ -649,11 +528,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_expup_ship
-
-	var_1_22[23] = {
+	pg.base.activity_expup_ship[23] = {
 		id = 23,
 		expup = {
 			{
@@ -674,11 +549,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_expup_ship
-
-	var_1_23[24] = {
+	pg.base.activity_expup_ship[24] = {
 		id = 24,
 		expup = {
 			{
@@ -703,11 +574,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_expup_ship
-
-	var_1_24[25] = {
+	pg.base.activity_expup_ship[25] = {
 		id = 25,
 		expup = {
 			{
@@ -732,11 +599,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_expup_ship
-
-	var_1_25[26] = {
+	pg.base.activity_expup_ship[26] = {
 		id = 26,
 		expup = {
 			{
@@ -757,11 +620,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_expup_ship
-
-	var_1_26[27] = {
+	pg.base.activity_expup_ship[27] = {
 		id = 27,
 		expup = {
 			{
@@ -782,11 +641,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_expup_ship
-
-	var_1_27[28] = {
+	pg.base.activity_expup_ship[28] = {
 		id = 28,
 		expup = {
 			{
@@ -807,11 +662,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_expup_ship
-
-	var_1_28[29] = {
+	pg.base.activity_expup_ship[29] = {
 		id = 29,
 		expup = {
 			{
@@ -836,11 +687,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_expup_ship
-
-	var_1_29[30] = {
+	pg.base.activity_expup_ship[30] = {
 		id = 30,
 		expup = {
 			{
@@ -869,11 +716,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_expup_ship
-
-	var_1_30[31] = {
+	pg.base.activity_expup_ship[31] = {
 		id = 31,
 		expup = {
 			{
@@ -902,11 +745,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_expup_ship
-
-	var_1_31[32] = {
+	pg.base.activity_expup_ship[32] = {
 		id = 32,
 		expup = {
 			{
@@ -931,11 +770,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_expup_ship
-
-	var_1_32[33] = {
+	pg.base.activity_expup_ship[33] = {
 		id = 33,
 		expup = {
 			{
@@ -960,11 +795,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_expup_ship
-
-	var_1_33[34] = {
+	pg.base.activity_expup_ship[34] = {
 		id = 34,
 		expup = {
 			{
@@ -993,11 +824,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_expup_ship
-
-	var_1_34[35] = {
+	pg.base.activity_expup_ship[35] = {
 		id = 35,
 		expup = {
 			{
@@ -1022,11 +849,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_expup_ship
-
-	var_1_35[36] = {
+	pg.base.activity_expup_ship[36] = {
 		id = 36,
 		expup = {
 			{
@@ -1047,11 +870,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_expup_ship
-
-	var_1_36[37] = {
+	pg.base.activity_expup_ship[37] = {
 		id = 37,
 		expup = {
 			{
@@ -1076,11 +895,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_expup_ship
-
-	var_1_37[38] = {
+	pg.base.activity_expup_ship[38] = {
 		id = 38,
 		expup = {
 			{
@@ -1105,11 +920,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_expup_ship
-
-	var_1_38[41] = {
+	pg.base.activity_expup_ship[41] = {
 		id = 41,
 		expup = {
 			{
@@ -1134,11 +945,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_expup_ship
-
-	var_1_39[42] = {
+	pg.base.activity_expup_ship[42] = {
 		id = 42,
 		expup = {
 			{
@@ -1163,11 +970,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_expup_ship
-
-	var_1_40[5001] = {
+	pg.base.activity_expup_ship[5001] = {
 		id = 5001,
 		expup = {
 			{
@@ -1188,8 +991,7 @@ var_0_3.base.activity_expup_ship = {}
 			}
 		}
 	}
-	pg = var_1_40
-	var_1_40.base.activity_expup_ship[5002] = {
+	pg.base.activity_expup_ship[5002] = {
 		id = 5002,
 		expup = {
 			{

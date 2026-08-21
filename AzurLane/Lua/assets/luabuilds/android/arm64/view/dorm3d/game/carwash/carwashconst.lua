@@ -1,33 +1,18 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CarWashConst")
+﻿local var_0_0 = class("CarWashConst")
 
 var_0_0.DEFAULT_RAY_DISTANCE = 3
 var_0_0.DEFAULT_DECAL_RENDER_QUEUE = 2600
 var_0_0.CAR_LAYER = 26
-bit = var_1
-var_0_0.CAR_LAYER_MASK = var_1.lshift(1, var_0_0.CAR_LAYER)
-LayerMask = var_1
-var_0_0.LADY_LAYER = var_1.NameToLayer("Character3D")
-bit = var_1
-var_0_0.LADY_LAYER_MASK = var_1.lshift(1, var_0_0.LADY_LAYER)
-LayerMask = var_1
-var_0_0.PLAYER_LAYER = var_1.NameToLayer("Player")
-bit = var_1
-var_0_0.PLAYER_LAYER_MASK = var_1.lshift(1, var_0_0.PLAYER_LAYER)
+var_0_0.CAR_LAYER_MASK = bit.lshift(1, var_0_0.CAR_LAYER)
+var_0_0.LADY_LAYER = LayerMask.NameToLayer("Character3D")
+var_0_0.LADY_LAYER_MASK = bit.lshift(1, var_0_0.LADY_LAYER)
+var_0_0.PLAYER_LAYER = LayerMask.NameToLayer("Player")
+var_0_0.PLAYER_LAYER_MASK = bit.lshift(1, var_0_0.PLAYER_LAYER)
 var_0_0.DEFAULT_LADY_DECAL_SIZE = 0.1
-bit = var_1
-var_0_0.LAYER_MASK = var_1.bor(var_0_0.CAR_LAYER_MASK, var_0_0.LADY_LAYER_MASK)
-LayerMask = var_1
-var_0_0.DECAL_LAYER = var_1.NameToLayer("CameraRT")
-bit = var_1
-var_0_0.DECAL_LAYER_MASK = var_1.lshift(1, var_0_0.DECAL_LAYER)
-bit = var_1
-
-local var_0_1 = var_1.bnot
-
-bit = var_3
-var_0_0.EFFECT_LAYER_MASK = var_0_1(var_3.bor(var_0_0.DECAL_LAYER_MASK, var_0_0.PLAYER_LAYER_MASK))
+var_0_0.LAYER_MASK = bit.bor(var_0_0.CAR_LAYER_MASK, var_0_0.LADY_LAYER_MASK)
+var_0_0.DECAL_LAYER = LayerMask.NameToLayer("CameraRT")
+var_0_0.DECAL_LAYER_MASK = bit.lshift(1, var_0_0.DECAL_LAYER)
+var_0_0.EFFECT_LAYER_MASK = bit.bnot(bit.bor(var_0_0.DECAL_LAYER_MASK, var_0_0.PLAYER_LAYER_MASK))
 var_0_0.HIDDEN_REACTION_TRIGGER_TIME = 2
 var_0_0.GAME_DURATION = 300
 var_0_0.ORTHOGRAPHIC_SIZE_RANGE = {
@@ -43,14 +28,11 @@ var_0_0.GUN_TYPE = {
 	WASHER = 1,
 	HIGH_PRESSURE_WASHER = 3
 }
-setmetatable = var_1
-var_0_0.GUN_CONFIG = var_1({}, {
+var_0_0.GUN_CONFIG = setmetatable({}, {
 	__index = function(arg_1_0, arg_1_1)
 		var_0_0.InitGunConfig(arg_1_0)
 
-		rawget = var_2
-
-		return var_2(arg_1_0, arg_1_1)
+		return rawget(arg_1_0, arg_1_1)
 	end
 })
 var_0_0.GAME_STATE = {
@@ -74,9 +56,8 @@ var_0_0.SCORE_RANK_ORDER = {
 
 function var_0_0.GetScoreRank(arg_2_0)
 	arg_2_0 = arg_2_0 or 0
-	ipairs = var_1_10001
 
-	for iter_2_0, iter_2_1 in var_1_10001(var_0_0.SCORE_RANK_ORDER) do
+	for iter_2_0, iter_2_1 in ipairs(var_0_0.SCORE_RANK_ORDER) do
 		if arg_2_0 >= var_0_0.SCORE_RANK[iter_2_1] then
 			return iter_2_1
 		end
@@ -85,58 +66,37 @@ function var_0_0.GetScoreRank(arg_2_0)
 	return "C"
 end
 
-setmetatable = var_1
-var_0_0.DECAL_CONFIG = var_1({}, {
+var_0_0.DECAL_CONFIG = setmetatable({}, {
 	__index = function(arg_3_0, arg_3_1)
 		var_0_0.InitDecalConfig(arg_3_0)
 
-		rawget = var_2
-
-		return var_2(arg_3_0, arg_3_1)
+		return rawget(arg_3_0, arg_3_1)
 	end
 })
-setmetatable = var_1
-var_0_0.STAINS_CONFIG = var_1({}, {
+var_0_0.STAINS_CONFIG = setmetatable({}, {
 	__index = function(arg_4_0, arg_4_1)
 		var_0_0.InitStainsConfig(arg_4_0)
 
-		rawget = var_2
-
-		return var_2(arg_4_0, arg_4_1)
+		return rawget(arg_4_0, arg_4_1)
 	end
 })
 
 function var_0_0.GetDefaultSystemClasses()
-	table = var_1_10000
-
-	local var_5_0 = var_1_10000.mergeArray
-	local var_5_1 = {}
-
-	CarWashGameFlowSystem = var_1_10003
-	var_5_1[1] = var_1_10003
-
-	return var_5_0(var_5_1, var_0_0.GetGameplaySystemClasses())
+	return table.mergeArray({
+		CarWashGameFlowSystem
+	}, var_0_0.GetGameplaySystemClasses())
 end
 
 function var_0_0.GetGameplaySystemClasses()
-	local var_6_0 = {}
-
-	CarWashTimelineSystem = var_1_10001
-	var_6_0[1] = var_1_10001
-	CarWashPovControlSystem = var_1_10001
-	var_6_0[2] = var_1_10001
-	CarWashRaycastSystem = var_1_10001
-	var_6_0[3] = var_1_10001
-	CarWashMuzzleEffect = var_1_10001
-	var_6_0[4] = var_1_10001
-	CarWashDecalSystem = var_1_10001
-	var_6_0[5] = var_1_10001
-	CarWashGlassMaterialFix = var_1_10001
-	var_6_0[6] = var_1_10001
-	CarWashLadySystem = var_1_10001
-	var_6_0[7] = var_1_10001
-
-	return var_6_0
+	return {
+		CarWashTimelineSystem,
+		CarWashPovControlSystem,
+		CarWashRaycastSystem,
+		CarWashMuzzleEffect,
+		CarWashDecalSystem,
+		CarWashGlassMaterialFix,
+		CarWashLadySystem
+	}
 end
 
 function var_0_0.GetDecalConfig(arg_7_0)
@@ -153,73 +113,47 @@ end
 
 function var_0_0.InitGunConfig(arg_10_0)
 	arg_10_0 = arg_10_0 or var_0_0.GUN_CONFIG
-	rawget = var_1_10001
 
-	if var_1_10001(arg_10_0, var_0_0.GUN_TYPE.WASHER) then
+	if rawget(arg_10_0, var_0_0.GUN_TYPE.WASHER) then
 		return
 	end
 
-	local var_10_0 = var_0_0.GUN_TYPE.WASHER
-	local var_10_1 = {
+	arg_10_0[var_0_0.GUN_TYPE.WASHER] = {
 		force = 1,
-		name = "pre_db_nozzle_01_group02"
+		name = "pre_db_nozzle_01_group02",
+		decalType = {
+			onCar = DecalType.WATER,
+			onLady = DecalType.WATER_ON_LADY
+		}
 	}
-	local var_10_2 = {}
-
-	DecalType = var_4
-	var_10_2.onCar = var_4.WATER
-	DecalType = var_4
-	var_10_2.onLady = var_4.WATER_ON_LADY
-	var_10_1.decalType = var_10_2
-	arg_10_0[var_10_0] = var_10_1
-
-	local var_10_3 = var_0_0.GUN_TYPE.FOAM_SPRAYER
-	local var_10_4 = {
+	arg_10_0[var_0_0.GUN_TYPE.FOAM_SPRAYER] = {
 		force = 0.5,
-		name = "pre_db_nozzle_01_group01"
+		name = "pre_db_nozzle_01_group01",
+		decalType = {
+			onCar = DecalType.BUBBLE,
+			onLady = DecalType.BUBBLE_ON_LADY
+		}
 	}
-	local var_10_5 = {}
-
-	DecalType = var_4
-	var_10_5.onCar = var_4.BUBBLE
-	DecalType = var_4
-	var_10_5.onLady = var_4.BUBBLE_ON_LADY
-	var_10_4.decalType = var_10_5
-	arg_10_0[var_10_3] = var_10_4
-
-	local var_10_6 = var_0_0.GUN_TYPE.HIGH_PRESSURE_WASHER
-	local var_10_7 = {
+	arg_10_0[var_0_0.GUN_TYPE.HIGH_PRESSURE_WASHER] = {
 		force = 2,
-		name = "pre_db_nozzle_01a_group01"
+		name = "pre_db_nozzle_01a_group01",
+		decalType = {
+			onCar = DecalType.WATER,
+			onLady = DecalType.WATER_ON_LADY
+		}
 	}
-	local var_10_8 = {}
-
-	DecalType = var_4
-	var_10_8.onCar = var_4.WATER
-	DecalType = var_4
-	var_10_8.onLady = var_4.WATER_ON_LADY
-	var_10_7.decalType = var_10_8
-	arg_10_0[var_10_6] = var_10_7
 
 	return
 end
 
 function var_0_0.InitDecalConfig(arg_11_0)
 	arg_11_0 = arg_11_0 or var_0_0.DECAL_CONFIG
-	rawget = var_1_10001
 
-	local var_11_0 = arg_11_0
-
-	DecalType = var_1_10004
-
-	if var_1_10001(var_11_0, var_1_10004.BUBBLE) then
+	if rawget(arg_11_0, DecalType.BUBBLE) then
 		return
 	end
 
-	DecalType = var_1
-
-	local var_11_1 = var_1.BUBBLE
-	local var_11_2 = {
+	arg_11_0[DecalType.BUBBLE] = {
 		autoFadeStartTime = 10,
 		aspectRatio = 1,
 		useAutoFade = true,
@@ -227,16 +161,10 @@ function var_0_0.InitDecalConfig(arg_11_0)
 		sourceMaterial = {
 			0
 		},
-		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 10
+		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 10,
+		decalType = DecalType.BUBBLE
 	}
-
-	DecalType = var_3
-	var_11_2.decalType = var_3.BUBBLE
-	arg_11_0[var_11_1] = var_11_2
-	DecalType = var_11_1
-
-	local var_11_3 = var_11_1.WATER
-	local var_11_4 = {
+	arg_11_0[DecalType.WATER] = {
 		autoFadeStartTime = 8,
 		aspectRatio = 1,
 		useAutoFade = true,
@@ -244,16 +172,10 @@ function var_0_0.InitDecalConfig(arg_11_0)
 		sourceMaterial = {
 			1
 		},
-		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 11
+		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 11,
+		decalType = DecalType.WATER
 	}
-
-	DecalType = var_3
-	var_11_4.decalType = var_3.WATER
-	arg_11_0[var_11_3] = var_11_4
-	DecalType = var_11_3
-
-	local var_11_5 = var_11_3.WATER_ON_LADY
-	local var_11_6 = {
+	arg_11_0[DecalType.WATER_ON_LADY] = {
 		autoFadeStartTime = 5,
 		aspectRatio = 1,
 		useAutoFade = true,
@@ -264,16 +186,10 @@ function var_0_0.InitDecalConfig(arg_11_0)
 			4,
 			5
 		},
-		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 11
+		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 11,
+		decalType = DecalType.WATER_ON_LADY
 	}
-
-	DecalType = var_3
-	var_11_6.decalType = var_3.WATER_ON_LADY
-	arg_11_0[var_11_5] = var_11_6
-	DecalType = var_11_5
-
-	local var_11_7 = var_11_5.BUBBLE_ON_LADY
-	local var_11_8 = {
+	arg_11_0[DecalType.BUBBLE_ON_LADY] = {
 		autoFadeStartTime = 5,
 		aspectRatio = 1,
 		useAutoFade = true,
@@ -284,47 +200,31 @@ function var_0_0.InitDecalConfig(arg_11_0)
 			8,
 			9
 		},
-		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 10
+		renderQueue = var_0_0.DEFAULT_DECAL_RENDER_QUEUE + 10,
+		decalType = DecalType.BUBBLE_ON_LADY
 	}
-
-	DecalType = var_3
-	var_11_8.decalType = var_3.BUBBLE_ON_LADY
-	arg_11_0[var_11_7] = var_11_8
 
 	return
 end
 
 function var_0_0.InitStainsConfig(arg_12_0)
 	arg_12_0 = arg_12_0 or var_0_0.STAINS_CONFIG
-	rawget = var_1_10001
 
-	local var_12_0 = arg_12_0
-
-	DecalType = var_1_10004
-
-	if var_1_10001(var_12_0, var_1_10004.DIRT) then
+	if rawget(arg_12_0, DecalType.DIRT) then
 		return
 	end
 
-	DecalType = var_1
-	arg_12_0[var_1.DUST] = {
+	arg_12_0[DecalType.DUST] = {
 		fadePerSec = 0.5,
 		targetGunType = var_0_0.GUN_TYPE.WASHER
 	}
-	DecalType = var_1
-
-	local var_12_1 = var_1.GRAFFITI
-	local var_12_2 = {
+	arg_12_0[DecalType.GRAFFITI] = {
 		fadePerSec = 0,
 		coverBuff = 0.5,
-		targetGunType = var_0_0.GUN_TYPE.HIGH_PRESSURE_WASHER
+		targetGunType = var_0_0.GUN_TYPE.HIGH_PRESSURE_WASHER,
+		coverDecal = DecalType.BUBBLE
 	}
-
-	DecalType = var_3
-	var_12_2.coverDecal = var_3.BUBBLE
-	arg_12_0[var_12_1] = var_12_2
-	DecalType = var_12_1
-	arg_12_0[var_12_1.DIRT] = {
+	arg_12_0[DecalType.DIRT] = {
 		fadePerSec = 0.5,
 		targetGunType = var_0_0.GUN_TYPE.HIGH_PRESSURE_WASHER
 	}

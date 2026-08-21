@@ -1,53 +1,16 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "puzzle_ship_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "puzzle_ship_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.puzzle_ship_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.puzzle_ship_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.puzzle_ship_template = rawget(pg, "puzzle_ship_template") or setmetatable({
+	__name = "puzzle_ship_template"
+}, confNEO)
+pg.puzzle_ship_template.all = {
 	202124,
 	905014
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.puzzle_ship_template = {}
+pg.base = pg.base or {}
+pg.base.puzzle_ship_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.puzzle_ship_template
-
-	var_1_0[12] = {
+	pg.base.puzzle_ship_template[12] = {
 		cannon = 100,
 		name = "贝尔法斯特",
 		antisub = 0,
@@ -118,8 +81,7 @@ var_0_3.base.puzzle_ship_template = {}
 		default_relics = {},
 		default_card = {}
 	}
-	pg = var_1_0
-	var_1_0.base.puzzle_ship_template[905014] = {
+	pg.base.puzzle_ship_template[905014] = {
 		cannon = 400,
 		name = "让巴尔",
 		antisub = 0,

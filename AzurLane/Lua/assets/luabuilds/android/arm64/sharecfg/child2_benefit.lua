@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_benefit") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_benefit"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_benefit = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_benefit
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_benefit = rawget(pg, "child2_benefit") or setmetatable({
+	__name = "child2_benefit"
+}, confNEO)
+pg.child2_benefit.all = {
 	400011,
 	400021,
 	400111,
@@ -1742,25 +1719,11 @@ var_0_3.all = {
 	38400271,
 	38400281
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child2_benefit = {}
+pg.base = pg.base or {}
+pg.base.child2_benefit = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_benefit
-
-	var_1_0[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 400011,
 		trigger = 13,
 		condition = {},
@@ -1775,11 +1738,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_benefit
-
-	var_1_1[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 400021,
 		trigger = 13,
 		condition = {},
@@ -1794,11 +1753,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_benefit
-
-	var_1_2[400111] = {
+	pg.base.child2_benefit[400111] = {
 		id = 400111,
 		trigger = 13,
 		condition = {},
@@ -1813,11 +1768,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_benefit
-
-	var_1_3[400121] = {
+	pg.base.child2_benefit[400121] = {
 		id = 400121,
 		trigger = 13,
 		condition = {},
@@ -1832,11 +1783,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_benefit
-
-	var_1_4[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 400131,
 		trigger = 13,
 		condition = {},
@@ -1875,11 +1822,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_benefit
-
-	var_1_5[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 400141,
 		trigger = 13,
 		condition = {},
@@ -1918,11 +1861,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_benefit
-
-	var_1_6[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 400151,
 		trigger = 1,
 		condition = {},
@@ -1961,11 +1900,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_benefit
-
-	var_1_7[400211] = {
+	pg.base.child2_benefit[400211] = {
 		id = 400211,
 		trigger = 13,
 		condition = {},
@@ -1980,11 +1915,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_benefit
-
-	var_1_8[400221] = {
+	pg.base.child2_benefit[400221] = {
 		id = 400221,
 		trigger = 13,
 		condition = {},
@@ -1999,11 +1930,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_benefit
-
-	var_1_9[400231] = {
+	pg.base.child2_benefit[400231] = {
 		id = 400231,
 		trigger = 13,
 		condition = {},
@@ -2042,11 +1969,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_benefit
-
-	var_1_10[400241] = {
+	pg.base.child2_benefit[400241] = {
 		id = 400241,
 		trigger = 13,
 		condition = {},
@@ -2085,11 +2008,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_benefit
-
-	var_1_11[400251] = {
+	pg.base.child2_benefit[400251] = {
 		id = 400251,
 		trigger = 1,
 		condition = {},
@@ -2128,11 +2047,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_benefit
-
-	var_1_12[400311] = {
+	pg.base.child2_benefit[400311] = {
 		id = 400311,
 		trigger = 13,
 		condition = {},
@@ -2147,11 +2062,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_benefit
-
-	var_1_13[400321] = {
+	pg.base.child2_benefit[400321] = {
 		id = 400321,
 		trigger = 13,
 		condition = {},
@@ -2166,11 +2077,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_benefit
-
-	var_1_14[400331] = {
+	pg.base.child2_benefit[400331] = {
 		id = 400331,
 		trigger = 13,
 		condition = {},
@@ -2209,11 +2116,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_benefit
-
-	var_1_15[400341] = {
+	pg.base.child2_benefit[400341] = {
 		id = 400341,
 		trigger = 13,
 		condition = {},
@@ -2252,11 +2155,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_benefit
-
-	var_1_16[400351] = {
+	pg.base.child2_benefit[400351] = {
 		id = 400351,
 		trigger = 1,
 		condition = {},
@@ -2295,11 +2194,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_benefit
-
-	var_1_17[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 400411,
 		trigger = 13,
 		condition = {},
@@ -2314,11 +2209,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_benefit
-
-	var_1_18[400421] = {
+	pg.base.child2_benefit[400421] = {
 		id = 400421,
 		trigger = 13,
 		condition = {},
@@ -2333,11 +2224,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_benefit
-
-	var_1_19[400431] = {
+	pg.base.child2_benefit[400431] = {
 		id = 400431,
 		trigger = 13,
 		condition = {},
@@ -2376,11 +2263,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_benefit
-
-	var_1_20[400441] = {
+	pg.base.child2_benefit[400441] = {
 		id = 400441,
 		trigger = 13,
 		condition = {},
@@ -2419,11 +2302,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_benefit
-
-	var_1_21[400451] = {
+	pg.base.child2_benefit[400451] = {
 		id = 400451,
 		trigger = 1,
 		condition = {},
@@ -2462,11 +2341,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_benefit
-
-	var_1_22[410211] = {
+	pg.base.child2_benefit[410211] = {
 		id = 410211,
 		trigger = 13,
 		condition = {},
@@ -2481,11 +2356,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_benefit
-
-	var_1_23[410221] = {
+	pg.base.child2_benefit[410221] = {
 		id = 410221,
 		trigger = 13,
 		condition = {},
@@ -2500,11 +2371,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_benefit
-
-	var_1_24[410231] = {
+	pg.base.child2_benefit[410231] = {
 		id = 410231,
 		trigger = 13,
 		condition = {},
@@ -2519,11 +2386,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_benefit
-
-	var_1_25[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 410241,
 		trigger = 13,
 		condition = {},
@@ -2538,11 +2401,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_benefit
-
-	var_1_26[410611] = {
+	pg.base.child2_benefit[410611] = {
 		id = 410611,
 		trigger = 13,
 		condition = {},
@@ -2557,11 +2416,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_benefit
-
-	var_1_27[410621] = {
+	pg.base.child2_benefit[410621] = {
 		id = 410621,
 		trigger = 13,
 		condition = {},
@@ -2576,11 +2431,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_benefit
-
-	var_1_28[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 410631,
 		trigger = 13,
 		condition = {},
@@ -2595,11 +2446,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_benefit
-
-	var_1_29[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 410641,
 		trigger = 13,
 		condition = {},
@@ -2614,11 +2461,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_benefit
-
-	var_1_30[410711] = {
+	pg.base.child2_benefit[410711] = {
 		id = 410711,
 		trigger = 13,
 		condition = {},
@@ -2633,11 +2476,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_benefit
-
-	var_1_31[410721] = {
+	pg.base.child2_benefit[410721] = {
 		id = 410721,
 		trigger = 13,
 		condition = {},
@@ -2652,11 +2491,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_benefit
-
-	var_1_32[410731] = {
+	pg.base.child2_benefit[410731] = {
 		id = 410731,
 		trigger = 13,
 		condition = {},
@@ -2671,11 +2506,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_benefit
-
-	var_1_33[410741] = {
+	pg.base.child2_benefit[410741] = {
 		id = 410741,
 		trigger = 13,
 		condition = {},
@@ -2690,11 +2521,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_benefit
-
-	var_1_34[410811] = {
+	pg.base.child2_benefit[410811] = {
 		id = 410811,
 		trigger = 13,
 		condition = {},
@@ -2709,11 +2536,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_benefit
-
-	var_1_35[410821] = {
+	pg.base.child2_benefit[410821] = {
 		id = 410821,
 		trigger = 13,
 		condition = {},
@@ -2728,11 +2551,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_benefit
-
-	var_1_36[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 410911,
 		trigger = 13,
 		condition = {},
@@ -2771,11 +2590,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_benefit
-
-	var_1_37[410921] = {
+	pg.base.child2_benefit[410921] = {
 		id = 410921,
 		trigger = 13,
 		condition = {},
@@ -2790,11 +2605,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_benefit
-
-	var_1_38[410931] = {
+	pg.base.child2_benefit[410931] = {
 		id = 410931,
 		trigger = 13,
 		condition = {},
@@ -2809,11 +2620,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_benefit
-
-	var_1_39[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 411011,
 		trigger = 13,
 		condition = {},
@@ -2828,11 +2635,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_benefit
-
-	var_1_40[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 411021,
 		trigger = 13,
 		condition = {},
@@ -2847,11 +2650,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_benefit
-
-	var_1_41[411111] = {
+	pg.base.child2_benefit[411111] = {
 		id = 411111,
 		trigger = 13,
 		condition = {},
@@ -2890,11 +2689,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_benefit
-
-	var_1_42[411121] = {
+	pg.base.child2_benefit[411121] = {
 		id = 411121,
 		trigger = 13,
 		condition = {},
@@ -2909,11 +2704,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_benefit
-
-	var_1_43[411131] = {
+	pg.base.child2_benefit[411131] = {
 		id = 411131,
 		trigger = 13,
 		condition = {},
@@ -2928,11 +2719,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_benefit
-
-	var_1_44[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 411141,
 		trigger = 13,
 		condition = {},
@@ -2947,11 +2734,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_benefit
-
-	var_1_45[411211] = {
+	pg.base.child2_benefit[411211] = {
 		id = 411211,
 		trigger = 13,
 		condition = {},
@@ -2966,11 +2749,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_benefit
-
-	var_1_46[411221] = {
+	pg.base.child2_benefit[411221] = {
 		id = 411221,
 		trigger = 13,
 		condition = {},
@@ -2985,11 +2764,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_benefit
-
-	var_1_47[411311] = {
+	pg.base.child2_benefit[411311] = {
 		id = 411311,
 		trigger = 13,
 		condition = {},
@@ -3028,11 +2803,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_benefit
-
-	var_1_48[411321] = {
+	pg.base.child2_benefit[411321] = {
 		id = 411321,
 		trigger = 13,
 		condition = {},
@@ -3047,11 +2818,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_benefit
-
-	var_1_49[411331] = {
+	pg.base.child2_benefit[411331] = {
 		id = 411331,
 		trigger = 13,
 		condition = {},
@@ -3066,11 +2833,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_benefit
-
-	var_1_50[411341] = {
+	pg.base.child2_benefit[411341] = {
 		id = 411341,
 		trigger = 13,
 		condition = {},
@@ -3085,11 +2848,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_benefit
-
-	var_1_51[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 411411,
 		trigger = 13,
 		condition = {},
@@ -3120,11 +2879,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_benefit
-
-	var_1_52[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 411421,
 		trigger = 13,
 		condition = {},
@@ -3155,11 +2910,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_benefit
-
-	var_1_53[411511] = {
+	pg.base.child2_benefit[411511] = {
 		id = 411511,
 		trigger = 13,
 		condition = {},
@@ -3206,11 +2957,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_benefit
-
-	var_1_54[411611] = {
+	pg.base.child2_benefit[411611] = {
 		id = 411611,
 		trigger = 1,
 		condition = {},
@@ -3225,11 +2972,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_benefit
-
-	var_1_55[411621] = {
+	pg.base.child2_benefit[411621] = {
 		id = 411621,
 		trigger = 13,
 		condition = {},
@@ -3244,11 +2987,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_benefit
-
-	var_1_56[411711] = {
+	pg.base.child2_benefit[411711] = {
 		id = 411711,
 		trigger = 1,
 		condition = {},
@@ -3263,11 +3002,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_benefit
-
-	var_1_57[411721] = {
+	pg.base.child2_benefit[411721] = {
 		id = 411721,
 		trigger = 13,
 		condition = {},
@@ -3282,11 +3017,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_benefit
-
-	var_1_58[411811] = {
+	pg.base.child2_benefit[411811] = {
 		id = 411811,
 		trigger = 1,
 		condition = {},
@@ -3309,11 +3040,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_benefit
-
-	var_1_59[411821] = {
+	pg.base.child2_benefit[411821] = {
 		id = 411821,
 		trigger = 13,
 		condition = {},
@@ -3328,11 +3055,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_benefit
-
-	var_1_60[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 411911,
 		trigger = 1,
 		condition = {},
@@ -3347,11 +3070,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_benefit
-
-	var_1_61[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 411921,
 		trigger = 13,
 		condition = {},
@@ -3366,11 +3085,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_benefit
-
-	var_1_62[412011] = {
+	pg.base.child2_benefit[412011] = {
 		id = 412011,
 		trigger = 1,
 		condition = {},
@@ -3385,11 +3100,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_benefit
-
-	var_1_63[412021] = {
+	pg.base.child2_benefit[412021] = {
 		id = 412021,
 		trigger = 1,
 		condition = {},
@@ -3404,11 +3115,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_benefit
-
-	var_1_64[412031] = {
+	pg.base.child2_benefit[412031] = {
 		id = 412031,
 		trigger = 1,
 		condition = {},
@@ -3423,11 +3130,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_benefit
-
-	var_1_65[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 412041,
 		trigger = 1,
 		condition = {},
@@ -3442,11 +3145,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_benefit
-
-	var_1_66[412111] = {
+	pg.base.child2_benefit[412111] = {
 		id = 412111,
 		trigger = 1,
 		condition = {},
@@ -3501,11 +3200,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_benefit
-
-	var_1_67[412121] = {
+	pg.base.child2_benefit[412121] = {
 		id = 412121,
 		trigger = 13,
 		condition = {},
@@ -3520,11 +3215,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_benefit
-
-	var_1_68[412211] = {
+	pg.base.child2_benefit[412211] = {
 		id = 412211,
 		trigger = 13,
 		condition = {},
@@ -3539,11 +3230,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child2_benefit
-
-	var_1_69[412221] = {
+	pg.base.child2_benefit[412221] = {
 		id = 412221,
 		trigger = 13,
 		condition = {},
@@ -3558,11 +3245,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child2_benefit
-
-	var_1_70[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 412311,
 		trigger = 1,
 		condition = {},
@@ -3577,11 +3260,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child2_benefit
-
-	var_1_71[412321] = {
+	pg.base.child2_benefit[412321] = {
 		id = 412321,
 		trigger = 13,
 		condition = {},
@@ -3596,11 +3275,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child2_benefit
-
-	var_1_72[412331] = {
+	pg.base.child2_benefit[412331] = {
 		id = 412331,
 		trigger = 13,
 		condition = {},
@@ -3615,11 +3290,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child2_benefit
-
-	var_1_73[412341] = {
+	pg.base.child2_benefit[412341] = {
 		id = 412341,
 		trigger = 13,
 		condition = {},
@@ -3634,11 +3305,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child2_benefit
-
-	var_1_74[412411] = {
+	pg.base.child2_benefit[412411] = {
 		id = 412411,
 		trigger = 1,
 		condition = {},
@@ -3653,11 +3320,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child2_benefit
-
-	var_1_75[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 412421,
 		trigger = 13,
 		condition = {},
@@ -3672,11 +3335,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child2_benefit
-
-	var_1_76[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 412431,
 		trigger = 13,
 		condition = {},
@@ -3691,11 +3350,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child2_benefit
-
-	var_1_77[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 412441,
 		trigger = 13,
 		condition = {},
@@ -3710,11 +3365,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child2_benefit
-
-	var_1_78[412511] = {
+	pg.base.child2_benefit[412511] = {
 		id = 412511,
 		trigger = 1,
 		condition = {},
@@ -3729,11 +3380,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child2_benefit
-
-	var_1_79[412521] = {
+	pg.base.child2_benefit[412521] = {
 		id = 412521,
 		trigger = 13,
 		condition = {},
@@ -3748,11 +3395,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child2_benefit
-
-	var_1_80[412531] = {
+	pg.base.child2_benefit[412531] = {
 		id = 412531,
 		trigger = 13,
 		condition = {},
@@ -3767,11 +3410,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child2_benefit
-
-	var_1_81[412541] = {
+	pg.base.child2_benefit[412541] = {
 		id = 412541,
 		trigger = 13,
 		condition = {},
@@ -3786,11 +3425,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child2_benefit
-
-	var_1_82[412611] = {
+	pg.base.child2_benefit[412611] = {
 		id = 412611,
 		trigger = 1,
 		condition = {},
@@ -3805,11 +3440,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child2_benefit
-
-	var_1_83[412621] = {
+	pg.base.child2_benefit[412621] = {
 		id = 412621,
 		trigger = 13,
 		condition = {},
@@ -3824,11 +3455,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child2_benefit
-
-	var_1_84[412631] = {
+	pg.base.child2_benefit[412631] = {
 		id = 412631,
 		trigger = 13,
 		condition = {},
@@ -3843,11 +3470,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child2_benefit
-
-	var_1_85[412641] = {
+	pg.base.child2_benefit[412641] = {
 		id = 412641,
 		trigger = 13,
 		condition = {},
@@ -3862,11 +3485,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child2_benefit
-
-	var_1_86[412711] = {
+	pg.base.child2_benefit[412711] = {
 		id = 412711,
 		trigger = 13,
 		condition = {},
@@ -3881,11 +3500,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child2_benefit
-
-	var_1_87[412721] = {
+	pg.base.child2_benefit[412721] = {
 		id = 412721,
 		trigger = 13,
 		condition = {},
@@ -3900,11 +3515,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child2_benefit
-
-	var_1_88[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 412811,
 		trigger = 3,
 		condition = {},
@@ -3933,11 +3544,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child2_benefit
-
-	var_1_89[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 412821,
 		trigger = 13,
 		condition = {},
@@ -3952,11 +3559,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child2_benefit
-
-	var_1_90[412911] = {
+	pg.base.child2_benefit[412911] = {
 		id = 412911,
 		trigger = 1,
 		condition = {
@@ -3977,11 +3580,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child2_benefit
-
-	var_1_91[412921] = {
+	pg.base.child2_benefit[412921] = {
 		id = 412921,
 		trigger = 1,
 		condition = {
@@ -4002,11 +3601,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child2_benefit
-
-	var_1_92[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 412931,
 		trigger = 13,
 		condition = {},
@@ -4021,11 +3616,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child2_benefit
-
-	var_1_93[413011] = {
+	pg.base.child2_benefit[413011] = {
 		id = 413011,
 		trigger = 1,
 		condition = {},
@@ -4048,11 +3639,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child2_benefit
-
-	var_1_94[413021] = {
+	pg.base.child2_benefit[413021] = {
 		id = 413021,
 		trigger = 13,
 		condition = {},
@@ -4067,11 +3654,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child2_benefit
-
-	var_1_95[413111] = {
+	pg.base.child2_benefit[413111] = {
 		id = 413111,
 		trigger = 1,
 		condition = {},
@@ -4094,11 +3677,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child2_benefit
-
-	var_1_96[413121] = {
+	pg.base.child2_benefit[413121] = {
 		id = 413121,
 		trigger = 13,
 		condition = {},
@@ -4113,11 +3692,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child2_benefit
-
-	var_1_97[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 413211,
 		trigger = 2,
 		condition = {
@@ -4137,11 +3712,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child2_benefit
-
-	var_1_98[413221] = {
+	pg.base.child2_benefit[413221] = {
 		id = 413221,
 		trigger = 2,
 		condition = {
@@ -4161,8 +3732,7 @@ var_0_3.base.child2_benefit = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child2_benefit[413231] = {
+	pg.base.child2_benefit[413231] = {
 		id = 413231,
 		trigger = 13,
 		condition = {},
@@ -4181,11 +3751,7 @@ var_0_3.base.child2_benefit = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child2_benefit
-
-	var_2_0[413311] = {
+	pg.base.child2_benefit[413311] = {
 		id = 413311,
 		trigger = 13,
 		condition = {},
@@ -4208,11 +3774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child2_benefit
-
-	var_2_1[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 413321,
 		trigger = 13,
 		condition = {},
@@ -4227,11 +3789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child2_benefit
-
-	var_2_2[413411] = {
+	pg.base.child2_benefit[413411] = {
 		id = 413411,
 		trigger = 13,
 		condition = {},
@@ -4254,11 +3812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child2_benefit
-
-	var_2_3[413421] = {
+	pg.base.child2_benefit[413421] = {
 		id = 413421,
 		trigger = 13,
 		condition = {},
@@ -4273,11 +3827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child2_benefit
-
-	var_2_4[413511] = {
+	pg.base.child2_benefit[413511] = {
 		id = 413511,
 		trigger = 5,
 		condition = {},
@@ -4295,11 +3845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child2_benefit
-
-	var_2_5[413611] = {
+	pg.base.child2_benefit[413611] = {
 		id = 413611,
 		trigger = 13,
 		condition = {},
@@ -4322,11 +3868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child2_benefit
-
-	var_2_6[413621] = {
+	pg.base.child2_benefit[413621] = {
 		id = 413621,
 		trigger = 13,
 		condition = {},
@@ -4341,11 +3883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child2_benefit
-
-	var_2_7[413631] = {
+	pg.base.child2_benefit[413631] = {
 		id = 413631,
 		trigger = 13,
 		condition = {},
@@ -4368,11 +3906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child2_benefit
-
-	var_2_8[413641] = {
+	pg.base.child2_benefit[413641] = {
 		id = 413641,
 		trigger = 13,
 		condition = {},
@@ -4387,11 +3921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child2_benefit
-
-	var_2_9[413651] = {
+	pg.base.child2_benefit[413651] = {
 		id = 413651,
 		trigger = 3,
 		condition = {},
@@ -4410,11 +3940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child2_benefit
-
-	var_2_10[413661] = {
+	pg.base.child2_benefit[413661] = {
 		id = 413661,
 		trigger = 13,
 		condition = {},
@@ -4437,11 +3963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child2_benefit
-
-	var_2_11[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 413711,
 		trigger = 1,
 		condition = {},
@@ -4496,11 +4018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child2_benefit
-
-	var_2_12[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 413721,
 		trigger = 13,
 		condition = {},
@@ -4515,11 +4033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child2_benefit
-
-	var_2_13[413811] = {
+	pg.base.child2_benefit[413811] = {
 		id = 413811,
 		trigger = 1,
 		condition = {},
@@ -4542,11 +4056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child2_benefit
-
-	var_2_14[413821] = {
+	pg.base.child2_benefit[413821] = {
 		id = 413821,
 		trigger = 1,
 		condition = {},
@@ -4569,11 +4079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child2_benefit
-
-	var_2_15[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 413831,
 		trigger = 1,
 		condition = {},
@@ -4596,11 +4102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child2_benefit
-
-	var_2_16[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 413841,
 		trigger = 1,
 		condition = {},
@@ -4623,11 +4125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child2_benefit
-
-	var_2_17[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 413851,
 		trigger = 1,
 		condition = {},
@@ -4650,11 +4148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child2_benefit
-
-	var_2_18[413861] = {
+	pg.base.child2_benefit[413861] = {
 		id = 413861,
 		trigger = 1,
 		condition = {},
@@ -4677,11 +4171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child2_benefit
-
-	var_2_19[413871] = {
+	pg.base.child2_benefit[413871] = {
 		id = 413871,
 		trigger = 1,
 		condition = {},
@@ -4704,11 +4194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child2_benefit
-
-	var_2_20[413881] = {
+	pg.base.child2_benefit[413881] = {
 		id = 413881,
 		trigger = 1,
 		condition = {},
@@ -4731,11 +4217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child2_benefit
-
-	var_2_21[413891] = {
+	pg.base.child2_benefit[413891] = {
 		id = 413891,
 		trigger = 1,
 		condition = {},
@@ -4774,11 +4256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child2_benefit
-
-	var_2_22[413911] = {
+	pg.base.child2_benefit[413911] = {
 		id = 413911,
 		trigger = 13,
 		condition = {},
@@ -4793,11 +4271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child2_benefit
-
-	var_2_23[413921] = {
+	pg.base.child2_benefit[413921] = {
 		id = 413921,
 		trigger = 13,
 		condition = {},
@@ -4820,11 +4294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child2_benefit
-
-	var_2_24[414011] = {
+	pg.base.child2_benefit[414011] = {
 		id = 414011,
 		trigger = 13,
 		condition = {},
@@ -4839,11 +4309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child2_benefit
-
-	var_2_25[414021] = {
+	pg.base.child2_benefit[414021] = {
 		id = 414021,
 		trigger = 13,
 		condition = {},
@@ -4866,11 +4332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child2_benefit
-
-	var_2_26[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 414111,
 		trigger = 1,
 		condition = {
@@ -4891,11 +4353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child2_benefit
-
-	var_2_27[414112] = {
+	pg.base.child2_benefit[414112] = {
 		id = 414112,
 		trigger = 1,
 		condition = {
@@ -4916,11 +4374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child2_benefit
-
-	var_2_28[414113] = {
+	pg.base.child2_benefit[414113] = {
 		id = 414113,
 		trigger = 1,
 		condition = {
@@ -4941,11 +4395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child2_benefit
-
-	var_2_29[414114] = {
+	pg.base.child2_benefit[414114] = {
 		id = 414114,
 		trigger = 1,
 		condition = {
@@ -4966,11 +4416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child2_benefit
-
-	var_2_30[414115] = {
+	pg.base.child2_benefit[414115] = {
 		id = 414115,
 		trigger = 1,
 		condition = {
@@ -4991,11 +4437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child2_benefit
-
-	var_2_31[414121] = {
+	pg.base.child2_benefit[414121] = {
 		id = 414121,
 		trigger = 13,
 		condition = {},
@@ -5042,11 +4484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child2_benefit
-
-	var_2_32[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 414211,
 		trigger = 13,
 		condition = {},
@@ -5069,11 +4507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child2_benefit
-
-	var_2_33[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 414221,
 		trigger = 13,
 		condition = {},
@@ -5088,11 +4522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child2_benefit
-
-	var_2_34[414311] = {
+	pg.base.child2_benefit[414311] = {
 		id = 414311,
 		trigger = 13,
 		condition = {},
@@ -5115,11 +4545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child2_benefit
-
-	var_2_35[414321] = {
+	pg.base.child2_benefit[414321] = {
 		id = 414321,
 		trigger = 13,
 		condition = {},
@@ -5134,11 +4560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child2_benefit
-
-	var_2_36[414411] = {
+	pg.base.child2_benefit[414411] = {
 		id = 414411,
 		trigger = 1,
 		condition = {
@@ -5159,11 +4581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child2_benefit
-
-	var_2_37[414412] = {
+	pg.base.child2_benefit[414412] = {
 		id = 414412,
 		trigger = 1,
 		condition = {
@@ -5184,11 +4602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child2_benefit
-
-	var_2_38[414413] = {
+	pg.base.child2_benefit[414413] = {
 		id = 414413,
 		trigger = 1,
 		condition = {
@@ -5209,11 +4623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child2_benefit
-
-	var_2_39[414414] = {
+	pg.base.child2_benefit[414414] = {
 		id = 414414,
 		trigger = 1,
 		condition = {
@@ -5234,11 +4644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.child2_benefit
-
-	var_2_40[414415] = {
+	pg.base.child2_benefit[414415] = {
 		id = 414415,
 		trigger = 1,
 		condition = {
@@ -5259,11 +4665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.child2_benefit
-
-	var_2_41[414421] = {
+	pg.base.child2_benefit[414421] = {
 		id = 414421,
 		trigger = 13,
 		condition = {},
@@ -5310,11 +4712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.child2_benefit
-
-	var_2_42[414511] = {
+	pg.base.child2_benefit[414511] = {
 		id = 414511,
 		trigger = 13,
 		condition = {},
@@ -5337,11 +4735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.child2_benefit
-
-	var_2_43[414521] = {
+	pg.base.child2_benefit[414521] = {
 		id = 414521,
 		trigger = 13,
 		condition = {},
@@ -5356,11 +4750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.child2_benefit
-
-	var_2_44[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 414611,
 		trigger = 13,
 		condition = {},
@@ -5375,11 +4765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.child2_benefit
-
-	var_2_45[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 414621,
 		trigger = 5,
 		condition = {},
@@ -5394,11 +4780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.child2_benefit
-
-	var_2_46[414631] = {
+	pg.base.child2_benefit[414631] = {
 		id = 414631,
 		trigger = 13,
 		condition = {},
@@ -5413,11 +4795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.child2_benefit
-
-	var_2_47[414641] = {
+	pg.base.child2_benefit[414641] = {
 		id = 414641,
 		trigger = 13,
 		condition = {},
@@ -5432,11 +4810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.child2_benefit
-
-	var_2_48[414651] = {
+	pg.base.child2_benefit[414651] = {
 		id = 414651,
 		trigger = 13,
 		condition = {},
@@ -5451,11 +4825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.child2_benefit
-
-	var_2_49[414661] = {
+	pg.base.child2_benefit[414661] = {
 		id = 414661,
 		trigger = 13,
 		condition = {},
@@ -5470,11 +4840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.child2_benefit
-
-	var_2_50[414671] = {
+	pg.base.child2_benefit[414671] = {
 		id = 414671,
 		trigger = 5,
 		condition = {},
@@ -5485,11 +4851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.child2_benefit
-
-	var_2_51[414681] = {
+	pg.base.child2_benefit[414681] = {
 		id = 414681,
 		trigger = 5,
 		condition = {},
@@ -5500,11 +4862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.child2_benefit
-
-	var_2_52[414691] = {
+	pg.base.child2_benefit[414691] = {
 		id = 414691,
 		trigger = 5,
 		condition = {},
@@ -5515,11 +4873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.child2_benefit
-
-	var_2_53[414701] = {
+	pg.base.child2_benefit[414701] = {
 		id = 414701,
 		trigger = 5,
 		condition = {},
@@ -5530,11 +4884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.child2_benefit
-
-	var_2_54[414711] = {
+	pg.base.child2_benefit[414711] = {
 		id = 414711,
 		trigger = 1,
 		condition = {},
@@ -5549,11 +4899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.child2_benefit
-
-	var_2_55[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 414721,
 		trigger = 1,
 		condition = {},
@@ -5568,11 +4914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.child2_benefit
-
-	var_2_56[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 414731,
 		trigger = 1,
 		condition = {},
@@ -5587,11 +4929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.child2_benefit
-
-	var_2_57[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 414741,
 		trigger = 1,
 		condition = {},
@@ -5606,11 +4944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.child2_benefit
-
-	var_2_58[420211] = {
+	pg.base.child2_benefit[420211] = {
 		id = 420211,
 		trigger = 13,
 		condition = {},
@@ -5625,11 +4959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.child2_benefit
-
-	var_2_59[420221] = {
+	pg.base.child2_benefit[420221] = {
 		id = 420221,
 		trigger = 13,
 		condition = {},
@@ -5644,11 +4974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.child2_benefit
-
-	var_2_60[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 420231,
 		trigger = 13,
 		condition = {},
@@ -5663,11 +4989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.child2_benefit
-
-	var_2_61[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 420241,
 		trigger = 13,
 		condition = {},
@@ -5682,11 +5004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.child2_benefit
-
-	var_2_62[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 420611,
 		trigger = 13,
 		condition = {},
@@ -5701,11 +5019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.child2_benefit
-
-	var_2_63[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 420621,
 		trigger = 13,
 		condition = {},
@@ -5720,11 +5034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.child2_benefit
-
-	var_2_64[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 420631,
 		trigger = 13,
 		condition = {},
@@ -5739,11 +5049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.child2_benefit
-
-	var_2_65[420641] = {
+	pg.base.child2_benefit[420641] = {
 		id = 420641,
 		trigger = 13,
 		condition = {},
@@ -5758,11 +5064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.child2_benefit
-
-	var_2_66[420711] = {
+	pg.base.child2_benefit[420711] = {
 		id = 420711,
 		trigger = 13,
 		condition = {},
@@ -5777,11 +5079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.child2_benefit
-
-	var_2_67[420721] = {
+	pg.base.child2_benefit[420721] = {
 		id = 420721,
 		trigger = 13,
 		condition = {},
@@ -5796,11 +5094,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.child2_benefit
-
-	var_2_68[420731] = {
+	pg.base.child2_benefit[420731] = {
 		id = 420731,
 		trigger = 13,
 		condition = {},
@@ -5815,11 +5109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.child2_benefit
-
-	var_2_69[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 420741,
 		trigger = 13,
 		condition = {},
@@ -5834,11 +5124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.child2_benefit
-
-	var_2_70[420811] = {
+	pg.base.child2_benefit[420811] = {
 		id = 420811,
 		trigger = 13,
 		condition = {},
@@ -5853,11 +5139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.child2_benefit
-
-	var_2_71[420821] = {
+	pg.base.child2_benefit[420821] = {
 		id = 420821,
 		trigger = 13,
 		condition = {},
@@ -5872,11 +5154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.child2_benefit
-
-	var_2_72[420911] = {
+	pg.base.child2_benefit[420911] = {
 		id = 420911,
 		trigger = 13,
 		condition = {},
@@ -5915,11 +5193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.child2_benefit
-
-	var_2_73[420921] = {
+	pg.base.child2_benefit[420921] = {
 		id = 420921,
 		trigger = 13,
 		condition = {},
@@ -5934,11 +5208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.child2_benefit
-
-	var_2_74[420931] = {
+	pg.base.child2_benefit[420931] = {
 		id = 420931,
 		trigger = 13,
 		condition = {},
@@ -5953,11 +5223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.child2_benefit
-
-	var_2_75[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 421011,
 		trigger = 13,
 		condition = {},
@@ -5972,11 +5238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.child2_benefit
-
-	var_2_76[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 421021,
 		trigger = 13,
 		condition = {},
@@ -5991,11 +5253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.child2_benefit
-
-	var_2_77[421111] = {
+	pg.base.child2_benefit[421111] = {
 		id = 421111,
 		trigger = 13,
 		condition = {},
@@ -6034,11 +5292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.child2_benefit
-
-	var_2_78[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 421121,
 		trigger = 13,
 		condition = {},
@@ -6053,11 +5307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.child2_benefit
-
-	var_2_79[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 421131,
 		trigger = 13,
 		condition = {},
@@ -6072,11 +5322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.child2_benefit
-
-	var_2_80[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 421141,
 		trigger = 13,
 		condition = {},
@@ -6091,11 +5337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.child2_benefit
-
-	var_2_81[421211] = {
+	pg.base.child2_benefit[421211] = {
 		id = 421211,
 		trigger = 13,
 		condition = {},
@@ -6110,11 +5352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.child2_benefit
-
-	var_2_82[421221] = {
+	pg.base.child2_benefit[421221] = {
 		id = 421221,
 		trigger = 13,
 		condition = {},
@@ -6129,11 +5367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.child2_benefit
-
-	var_2_83[421311] = {
+	pg.base.child2_benefit[421311] = {
 		id = 421311,
 		trigger = 13,
 		condition = {},
@@ -6172,11 +5406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.child2_benefit
-
-	var_2_84[421321] = {
+	pg.base.child2_benefit[421321] = {
 		id = 421321,
 		trigger = 13,
 		condition = {},
@@ -6191,11 +5421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.child2_benefit
-
-	var_2_85[421331] = {
+	pg.base.child2_benefit[421331] = {
 		id = 421331,
 		trigger = 13,
 		condition = {},
@@ -6210,11 +5436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.child2_benefit
-
-	var_2_86[421341] = {
+	pg.base.child2_benefit[421341] = {
 		id = 421341,
 		trigger = 13,
 		condition = {},
@@ -6229,11 +5451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.child2_benefit
-
-	var_2_87[421411] = {
+	pg.base.child2_benefit[421411] = {
 		id = 421411,
 		trigger = 13,
 		condition = {},
@@ -6264,11 +5482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.child2_benefit
-
-	var_2_88[421421] = {
+	pg.base.child2_benefit[421421] = {
 		id = 421421,
 		trigger = 13,
 		condition = {},
@@ -6299,11 +5513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.child2_benefit
-
-	var_2_89[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 421511,
 		trigger = 13,
 		condition = {},
@@ -6350,11 +5560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.child2_benefit
-
-	var_2_90[421611] = {
+	pg.base.child2_benefit[421611] = {
 		id = 421611,
 		trigger = 1,
 		condition = {},
@@ -6369,11 +5575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.child2_benefit
-
-	var_2_91[421621] = {
+	pg.base.child2_benefit[421621] = {
 		id = 421621,
 		trigger = 13,
 		condition = {},
@@ -6388,11 +5590,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.child2_benefit
-
-	var_2_92[421711] = {
+	pg.base.child2_benefit[421711] = {
 		id = 421711,
 		trigger = 1,
 		condition = {},
@@ -6407,11 +5605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.child2_benefit
-
-	var_2_93[421721] = {
+	pg.base.child2_benefit[421721] = {
 		id = 421721,
 		trigger = 13,
 		condition = {},
@@ -6426,11 +5620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.child2_benefit
-
-	var_2_94[421811] = {
+	pg.base.child2_benefit[421811] = {
 		id = 421811,
 		trigger = 1,
 		condition = {},
@@ -6453,11 +5643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.child2_benefit
-
-	var_2_95[421821] = {
+	pg.base.child2_benefit[421821] = {
 		id = 421821,
 		trigger = 13,
 		condition = {},
@@ -6472,11 +5658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.child2_benefit
-
-	var_2_96[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 421911,
 		trigger = 1,
 		condition = {},
@@ -6491,11 +5673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.child2_benefit
-
-	var_2_97[421921] = {
+	pg.base.child2_benefit[421921] = {
 		id = 421921,
 		trigger = 13,
 		condition = {},
@@ -6510,11 +5688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.child2_benefit
-
-	var_2_98[422011] = {
+	pg.base.child2_benefit[422011] = {
 		id = 422011,
 		trigger = 1,
 		condition = {},
@@ -6529,8 +5703,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.child2_benefit[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 422021,
 		trigger = 1,
 		condition = {},
@@ -6549,11 +5722,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.child2_benefit
-
-	var_3_0[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 422031,
 		trigger = 1,
 		condition = {},
@@ -6568,11 +5737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.child2_benefit
-
-	var_3_1[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 422041,
 		trigger = 1,
 		condition = {},
@@ -6587,11 +5752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.child2_benefit
-
-	var_3_2[422111] = {
+	pg.base.child2_benefit[422111] = {
 		id = 422111,
 		trigger = 1,
 		condition = {},
@@ -6646,11 +5807,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.child2_benefit
-
-	var_3_3[422121] = {
+	pg.base.child2_benefit[422121] = {
 		id = 422121,
 		trigger = 13,
 		condition = {},
@@ -6665,11 +5822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.child2_benefit
-
-	var_3_4[422211] = {
+	pg.base.child2_benefit[422211] = {
 		id = 422211,
 		trigger = 13,
 		condition = {},
@@ -6684,11 +5837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.child2_benefit
-
-	var_3_5[422221] = {
+	pg.base.child2_benefit[422221] = {
 		id = 422221,
 		trigger = 13,
 		condition = {},
@@ -6703,11 +5852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.child2_benefit
-
-	var_3_6[422311] = {
+	pg.base.child2_benefit[422311] = {
 		id = 422311,
 		trigger = 1,
 		condition = {},
@@ -6722,11 +5867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.child2_benefit
-
-	var_3_7[422321] = {
+	pg.base.child2_benefit[422321] = {
 		id = 422321,
 		trigger = 13,
 		condition = {},
@@ -6741,11 +5882,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.child2_benefit
-
-	var_3_8[422331] = {
+	pg.base.child2_benefit[422331] = {
 		id = 422331,
 		trigger = 13,
 		condition = {},
@@ -6760,11 +5897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.child2_benefit
-
-	var_3_9[422341] = {
+	pg.base.child2_benefit[422341] = {
 		id = 422341,
 		trigger = 13,
 		condition = {},
@@ -6779,11 +5912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.child2_benefit
-
-	var_3_10[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 422411,
 		trigger = 1,
 		condition = {},
@@ -6798,11 +5927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.child2_benefit
-
-	var_3_11[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 422421,
 		trigger = 13,
 		condition = {},
@@ -6817,11 +5942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.child2_benefit
-
-	var_3_12[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 422431,
 		trigger = 13,
 		condition = {},
@@ -6836,11 +5957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.child2_benefit
-
-	var_3_13[422441] = {
+	pg.base.child2_benefit[422441] = {
 		id = 422441,
 		trigger = 13,
 		condition = {},
@@ -6855,11 +5972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.child2_benefit
-
-	var_3_14[422511] = {
+	pg.base.child2_benefit[422511] = {
 		id = 422511,
 		trigger = 1,
 		condition = {},
@@ -6874,11 +5987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.child2_benefit
-
-	var_3_15[422521] = {
+	pg.base.child2_benefit[422521] = {
 		id = 422521,
 		trigger = 13,
 		condition = {},
@@ -6893,11 +6002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.child2_benefit
-
-	var_3_16[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 422531,
 		trigger = 13,
 		condition = {},
@@ -6912,11 +6017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.child2_benefit
-
-	var_3_17[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 422541,
 		trigger = 13,
 		condition = {},
@@ -6931,11 +6032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.child2_benefit
-
-	var_3_18[422611] = {
+	pg.base.child2_benefit[422611] = {
 		id = 422611,
 		trigger = 1,
 		condition = {},
@@ -6950,11 +6047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.child2_benefit
-
-	var_3_19[422621] = {
+	pg.base.child2_benefit[422621] = {
 		id = 422621,
 		trigger = 13,
 		condition = {},
@@ -6969,11 +6062,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.child2_benefit
-
-	var_3_20[422631] = {
+	pg.base.child2_benefit[422631] = {
 		id = 422631,
 		trigger = 13,
 		condition = {},
@@ -6988,11 +6077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.child2_benefit
-
-	var_3_21[422641] = {
+	pg.base.child2_benefit[422641] = {
 		id = 422641,
 		trigger = 13,
 		condition = {},
@@ -7007,11 +6092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.child2_benefit
-
-	var_3_22[422711] = {
+	pg.base.child2_benefit[422711] = {
 		id = 422711,
 		trigger = 13,
 		condition = {},
@@ -7026,11 +6107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.child2_benefit
-
-	var_3_23[422721] = {
+	pg.base.child2_benefit[422721] = {
 		id = 422721,
 		trigger = 13,
 		condition = {},
@@ -7045,11 +6122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.child2_benefit
-
-	var_3_24[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 422811,
 		trigger = 3,
 		condition = {},
@@ -7078,11 +6151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.child2_benefit
-
-	var_3_25[422821] = {
+	pg.base.child2_benefit[422821] = {
 		id = 422821,
 		trigger = 13,
 		condition = {},
@@ -7097,11 +6166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.child2_benefit
-
-	var_3_26[422911] = {
+	pg.base.child2_benefit[422911] = {
 		id = 422911,
 		trigger = 1,
 		condition = {
@@ -7122,11 +6187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.child2_benefit
-
-	var_3_27[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 422921,
 		trigger = 1,
 		condition = {
@@ -7147,11 +6208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.child2_benefit
-
-	var_3_28[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 422931,
 		trigger = 13,
 		condition = {},
@@ -7166,11 +6223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.child2_benefit
-
-	var_3_29[423011] = {
+	pg.base.child2_benefit[423011] = {
 		id = 423011,
 		trigger = 1,
 		condition = {},
@@ -7193,11 +6246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.child2_benefit
-
-	var_3_30[423021] = {
+	pg.base.child2_benefit[423021] = {
 		id = 423021,
 		trigger = 13,
 		condition = {},
@@ -7212,11 +6261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.child2_benefit
-
-	var_3_31[423111] = {
+	pg.base.child2_benefit[423111] = {
 		id = 423111,
 		trigger = 1,
 		condition = {},
@@ -7239,11 +6284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.child2_benefit
-
-	var_3_32[423121] = {
+	pg.base.child2_benefit[423121] = {
 		id = 423121,
 		trigger = 13,
 		condition = {},
@@ -7258,11 +6299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.child2_benefit
-
-	var_3_33[423211] = {
+	pg.base.child2_benefit[423211] = {
 		id = 423211,
 		trigger = 2,
 		condition = {
@@ -7282,11 +6319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.child2_benefit
-
-	var_3_34[423221] = {
+	pg.base.child2_benefit[423221] = {
 		id = 423221,
 		trigger = 2,
 		condition = {
@@ -7306,11 +6339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.child2_benefit
-
-	var_3_35[423231] = {
+	pg.base.child2_benefit[423231] = {
 		id = 423231,
 		trigger = 13,
 		condition = {},
@@ -7325,11 +6354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.child2_benefit
-
-	var_3_36[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 423311,
 		trigger = 13,
 		condition = {},
@@ -7352,11 +6377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.child2_benefit
-
-	var_3_37[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 423321,
 		trigger = 13,
 		condition = {},
@@ -7371,11 +6392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.child2_benefit
-
-	var_3_38[423411] = {
+	pg.base.child2_benefit[423411] = {
 		id = 423411,
 		trigger = 13,
 		condition = {},
@@ -7398,11 +6415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.child2_benefit
-
-	var_3_39[423421] = {
+	pg.base.child2_benefit[423421] = {
 		id = 423421,
 		trigger = 13,
 		condition = {},
@@ -7417,11 +6430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.child2_benefit
-
-	var_3_40[423511] = {
+	pg.base.child2_benefit[423511] = {
 		id = 423511,
 		trigger = 5,
 		condition = {},
@@ -7439,11 +6448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.child2_benefit
-
-	var_3_41[423611] = {
+	pg.base.child2_benefit[423611] = {
 		id = 423611,
 		trigger = 13,
 		condition = {},
@@ -7466,11 +6471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.child2_benefit
-
-	var_3_42[423621] = {
+	pg.base.child2_benefit[423621] = {
 		id = 423621,
 		trigger = 13,
 		condition = {},
@@ -7485,11 +6486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.child2_benefit
-
-	var_3_43[423631] = {
+	pg.base.child2_benefit[423631] = {
 		id = 423631,
 		trigger = 13,
 		condition = {},
@@ -7512,11 +6509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.child2_benefit
-
-	var_3_44[423641] = {
+	pg.base.child2_benefit[423641] = {
 		id = 423641,
 		trigger = 13,
 		condition = {},
@@ -7531,11 +6524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.child2_benefit
-
-	var_3_45[423651] = {
+	pg.base.child2_benefit[423651] = {
 		id = 423651,
 		trigger = 3,
 		condition = {},
@@ -7554,11 +6543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.child2_benefit
-
-	var_3_46[423661] = {
+	pg.base.child2_benefit[423661] = {
 		id = 423661,
 		trigger = 13,
 		condition = {},
@@ -7581,11 +6566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.child2_benefit
-
-	var_3_47[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 423711,
 		trigger = 1,
 		condition = {},
@@ -7640,11 +6621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.child2_benefit
-
-	var_3_48[423721] = {
+	pg.base.child2_benefit[423721] = {
 		id = 423721,
 		trigger = 13,
 		condition = {},
@@ -7659,11 +6636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.child2_benefit
-
-	var_3_49[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 423811,
 		trigger = 1,
 		condition = {},
@@ -7686,11 +6659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.child2_benefit
-
-	var_3_50[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 423821,
 		trigger = 1,
 		condition = {},
@@ -7713,11 +6682,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.child2_benefit
-
-	var_3_51[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 423831,
 		trigger = 1,
 		condition = {},
@@ -7740,11 +6705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.child2_benefit
-
-	var_3_52[423841] = {
+	pg.base.child2_benefit[423841] = {
 		id = 423841,
 		trigger = 1,
 		condition = {},
@@ -7767,11 +6728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.child2_benefit
-
-	var_3_53[423851] = {
+	pg.base.child2_benefit[423851] = {
 		id = 423851,
 		trigger = 1,
 		condition = {},
@@ -7794,11 +6751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.child2_benefit
-
-	var_3_54[423861] = {
+	pg.base.child2_benefit[423861] = {
 		id = 423861,
 		trigger = 1,
 		condition = {},
@@ -7821,11 +6774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.child2_benefit
-
-	var_3_55[423871] = {
+	pg.base.child2_benefit[423871] = {
 		id = 423871,
 		trigger = 1,
 		condition = {},
@@ -7848,11 +6797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.child2_benefit
-
-	var_3_56[423881] = {
+	pg.base.child2_benefit[423881] = {
 		id = 423881,
 		trigger = 1,
 		condition = {},
@@ -7875,11 +6820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.child2_benefit
-
-	var_3_57[423891] = {
+	pg.base.child2_benefit[423891] = {
 		id = 423891,
 		trigger = 1,
 		condition = {},
@@ -7918,11 +6859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.child2_benefit
-
-	var_3_58[423911] = {
+	pg.base.child2_benefit[423911] = {
 		id = 423911,
 		trigger = 13,
 		condition = {},
@@ -7937,11 +6874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.child2_benefit
-
-	var_3_59[423921] = {
+	pg.base.child2_benefit[423921] = {
 		id = 423921,
 		trigger = 13,
 		condition = {},
@@ -7964,11 +6897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.child2_benefit
-
-	var_3_60[424011] = {
+	pg.base.child2_benefit[424011] = {
 		id = 424011,
 		trigger = 13,
 		condition = {},
@@ -7983,11 +6912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.child2_benefit
-
-	var_3_61[424021] = {
+	pg.base.child2_benefit[424021] = {
 		id = 424021,
 		trigger = 13,
 		condition = {},
@@ -8010,11 +6935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.child2_benefit
-
-	var_3_62[424111] = {
+	pg.base.child2_benefit[424111] = {
 		id = 424111,
 		trigger = 1,
 		condition = {
@@ -8035,11 +6956,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.child2_benefit
-
-	var_3_63[424112] = {
+	pg.base.child2_benefit[424112] = {
 		id = 424112,
 		trigger = 1,
 		condition = {
@@ -8060,11 +6977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.child2_benefit
-
-	var_3_64[424113] = {
+	pg.base.child2_benefit[424113] = {
 		id = 424113,
 		trigger = 1,
 		condition = {
@@ -8085,11 +6998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.child2_benefit
-
-	var_3_65[424114] = {
+	pg.base.child2_benefit[424114] = {
 		id = 424114,
 		trigger = 1,
 		condition = {
@@ -8110,11 +7019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.child2_benefit
-
-	var_3_66[424115] = {
+	pg.base.child2_benefit[424115] = {
 		id = 424115,
 		trigger = 1,
 		condition = {
@@ -8135,11 +7040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.child2_benefit
-
-	var_3_67[424121] = {
+	pg.base.child2_benefit[424121] = {
 		id = 424121,
 		trigger = 13,
 		condition = {},
@@ -8186,11 +7087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.child2_benefit
-
-	var_3_68[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 424211,
 		trigger = 13,
 		condition = {},
@@ -8213,11 +7110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.child2_benefit
-
-	var_3_69[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 424221,
 		trigger = 13,
 		condition = {},
@@ -8232,11 +7125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.child2_benefit
-
-	var_3_70[424311] = {
+	pg.base.child2_benefit[424311] = {
 		id = 424311,
 		trigger = 13,
 		condition = {},
@@ -8259,11 +7148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.child2_benefit
-
-	var_3_71[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 424321,
 		trigger = 13,
 		condition = {},
@@ -8278,11 +7163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.child2_benefit
-
-	var_3_72[424411] = {
+	pg.base.child2_benefit[424411] = {
 		id = 424411,
 		trigger = 1,
 		condition = {
@@ -8303,11 +7184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.child2_benefit
-
-	var_3_73[424412] = {
+	pg.base.child2_benefit[424412] = {
 		id = 424412,
 		trigger = 1,
 		condition = {
@@ -8328,11 +7205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.child2_benefit
-
-	var_3_74[424413] = {
+	pg.base.child2_benefit[424413] = {
 		id = 424413,
 		trigger = 1,
 		condition = {
@@ -8353,11 +7226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.child2_benefit
-
-	var_3_75[424414] = {
+	pg.base.child2_benefit[424414] = {
 		id = 424414,
 		trigger = 1,
 		condition = {
@@ -8378,11 +7247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.child2_benefit
-
-	var_3_76[424415] = {
+	pg.base.child2_benefit[424415] = {
 		id = 424415,
 		trigger = 1,
 		condition = {
@@ -8403,11 +7268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.child2_benefit
-
-	var_3_77[424511] = {
+	pg.base.child2_benefit[424511] = {
 		id = 424511,
 		trigger = 13,
 		condition = {},
@@ -8430,11 +7291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.child2_benefit
-
-	var_3_78[424521] = {
+	pg.base.child2_benefit[424521] = {
 		id = 424521,
 		trigger = 13,
 		condition = {},
@@ -8449,11 +7306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.child2_benefit
-
-	var_3_79[424611] = {
+	pg.base.child2_benefit[424611] = {
 		id = 424611,
 		trigger = 13,
 		condition = {},
@@ -8468,11 +7321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.child2_benefit
-
-	var_3_80[424621] = {
+	pg.base.child2_benefit[424621] = {
 		id = 424621,
 		trigger = 5,
 		condition = {},
@@ -8487,11 +7336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.child2_benefit
-
-	var_3_81[424421] = {
+	pg.base.child2_benefit[424421] = {
 		id = 424421,
 		trigger = 13,
 		condition = {},
@@ -8538,11 +7383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.child2_benefit
-
-	var_3_82[424631] = {
+	pg.base.child2_benefit[424631] = {
 		id = 424631,
 		trigger = 13,
 		condition = {},
@@ -8557,11 +7398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.child2_benefit
-
-	var_3_83[424641] = {
+	pg.base.child2_benefit[424641] = {
 		id = 424641,
 		trigger = 13,
 		condition = {},
@@ -8576,11 +7413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.child2_benefit
-
-	var_3_84[424651] = {
+	pg.base.child2_benefit[424651] = {
 		id = 424651,
 		trigger = 13,
 		condition = {},
@@ -8595,11 +7428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.child2_benefit
-
-	var_3_85[424661] = {
+	pg.base.child2_benefit[424661] = {
 		id = 424661,
 		trigger = 13,
 		condition = {},
@@ -8614,11 +7443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.child2_benefit
-
-	var_3_86[424671] = {
+	pg.base.child2_benefit[424671] = {
 		id = 424671,
 		trigger = 5,
 		condition = {},
@@ -8629,11 +7454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.child2_benefit
-
-	var_3_87[424681] = {
+	pg.base.child2_benefit[424681] = {
 		id = 424681,
 		trigger = 5,
 		condition = {},
@@ -8644,11 +7465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.child2_benefit
-
-	var_3_88[424691] = {
+	pg.base.child2_benefit[424691] = {
 		id = 424691,
 		trigger = 5,
 		condition = {},
@@ -8659,11 +7476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.child2_benefit
-
-	var_3_89[424701] = {
+	pg.base.child2_benefit[424701] = {
 		id = 424701,
 		trigger = 5,
 		condition = {},
@@ -8674,11 +7487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.child2_benefit
-
-	var_3_90[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 424711,
 		trigger = 1,
 		condition = {},
@@ -8693,11 +7502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.child2_benefit
-
-	var_3_91[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 424721,
 		trigger = 1,
 		condition = {},
@@ -8712,11 +7517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.child2_benefit
-
-	var_3_92[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 424731,
 		trigger = 1,
 		condition = {},
@@ -8731,11 +7532,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.child2_benefit
-
-	var_3_93[424741] = {
+	pg.base.child2_benefit[424741] = {
 		id = 424741,
 		trigger = 1,
 		condition = {},
@@ -8750,11 +7547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.child2_benefit
-
-	var_3_94[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 430211,
 		trigger = 13,
 		condition = {},
@@ -8769,11 +7562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.child2_benefit
-
-	var_3_95[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 430221,
 		trigger = 13,
 		condition = {},
@@ -8788,11 +7577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.child2_benefit
-
-	var_3_96[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 430231,
 		trigger = 13,
 		condition = {},
@@ -8807,11 +7592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.child2_benefit
-
-	var_3_97[430241] = {
+	pg.base.child2_benefit[430241] = {
 		id = 430241,
 		trigger = 13,
 		condition = {},
@@ -8826,11 +7607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.child2_benefit
-
-	var_3_98[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 430611,
 		trigger = 13,
 		condition = {},
@@ -8845,8 +7622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.child2_benefit[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 430621,
 		trigger = 13,
 		condition = {},
@@ -8865,11 +7641,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.child2_benefit
-
-	var_4_0[430631] = {
+	pg.base.child2_benefit[430631] = {
 		id = 430631,
 		trigger = 13,
 		condition = {},
@@ -8884,11 +7656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.child2_benefit
-
-	var_4_1[430641] = {
+	pg.base.child2_benefit[430641] = {
 		id = 430641,
 		trigger = 13,
 		condition = {},
@@ -8903,11 +7671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.child2_benefit
-
-	var_4_2[430711] = {
+	pg.base.child2_benefit[430711] = {
 		id = 430711,
 		trigger = 13,
 		condition = {},
@@ -8922,11 +7686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.child2_benefit
-
-	var_4_3[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 430721,
 		trigger = 13,
 		condition = {},
@@ -8941,11 +7701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.child2_benefit
-
-	var_4_4[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 430731,
 		trigger = 13,
 		condition = {},
@@ -8960,11 +7716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.child2_benefit
-
-	var_4_5[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 430741,
 		trigger = 13,
 		condition = {},
@@ -8979,11 +7731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.child2_benefit
-
-	var_4_6[430811] = {
+	pg.base.child2_benefit[430811] = {
 		id = 430811,
 		trigger = 13,
 		condition = {},
@@ -8998,11 +7746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.child2_benefit
-
-	var_4_7[430821] = {
+	pg.base.child2_benefit[430821] = {
 		id = 430821,
 		trigger = 13,
 		condition = {},
@@ -9017,11 +7761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.child2_benefit
-
-	var_4_8[430911] = {
+	pg.base.child2_benefit[430911] = {
 		id = 430911,
 		trigger = 13,
 		condition = {},
@@ -9060,11 +7800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.child2_benefit
-
-	var_4_9[430921] = {
+	pg.base.child2_benefit[430921] = {
 		id = 430921,
 		trigger = 13,
 		condition = {},
@@ -9079,11 +7815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.child2_benefit
-
-	var_4_10[430931] = {
+	pg.base.child2_benefit[430931] = {
 		id = 430931,
 		trigger = 13,
 		condition = {},
@@ -9098,11 +7830,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.child2_benefit
-
-	var_4_11[431011] = {
+	pg.base.child2_benefit[431011] = {
 		id = 431011,
 		trigger = 13,
 		condition = {},
@@ -9117,11 +7845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.child2_benefit
-
-	var_4_12[431021] = {
+	pg.base.child2_benefit[431021] = {
 		id = 431021,
 		trigger = 13,
 		condition = {},
@@ -9136,11 +7860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.child2_benefit
-
-	var_4_13[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 431111,
 		trigger = 13,
 		condition = {},
@@ -9179,11 +7899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.child2_benefit
-
-	var_4_14[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 431121,
 		trigger = 13,
 		condition = {},
@@ -9198,11 +7914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.child2_benefit
-
-	var_4_15[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 431131,
 		trigger = 13,
 		condition = {},
@@ -9217,11 +7929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.child2_benefit
-
-	var_4_16[431141] = {
+	pg.base.child2_benefit[431141] = {
 		id = 431141,
 		trigger = 13,
 		condition = {},
@@ -9236,11 +7944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.child2_benefit
-
-	var_4_17[431211] = {
+	pg.base.child2_benefit[431211] = {
 		id = 431211,
 		trigger = 13,
 		condition = {},
@@ -9255,11 +7959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.child2_benefit
-
-	var_4_18[431221] = {
+	pg.base.child2_benefit[431221] = {
 		id = 431221,
 		trigger = 13,
 		condition = {},
@@ -9274,11 +7974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.child2_benefit
-
-	var_4_19[431311] = {
+	pg.base.child2_benefit[431311] = {
 		id = 431311,
 		trigger = 13,
 		condition = {},
@@ -9317,11 +8013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.child2_benefit
-
-	var_4_20[431321] = {
+	pg.base.child2_benefit[431321] = {
 		id = 431321,
 		trigger = 13,
 		condition = {},
@@ -9336,11 +8028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.child2_benefit
-
-	var_4_21[431331] = {
+	pg.base.child2_benefit[431331] = {
 		id = 431331,
 		trigger = 13,
 		condition = {},
@@ -9355,11 +8043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.child2_benefit
-
-	var_4_22[431341] = {
+	pg.base.child2_benefit[431341] = {
 		id = 431341,
 		trigger = 13,
 		condition = {},
@@ -9374,11 +8058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.child2_benefit
-
-	var_4_23[431411] = {
+	pg.base.child2_benefit[431411] = {
 		id = 431411,
 		trigger = 13,
 		condition = {},
@@ -9409,11 +8089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.child2_benefit
-
-	var_4_24[431421] = {
+	pg.base.child2_benefit[431421] = {
 		id = 431421,
 		trigger = 13,
 		condition = {},
@@ -9444,11 +8120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.child2_benefit
-
-	var_4_25[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 431511,
 		trigger = 13,
 		condition = {},
@@ -9495,11 +8167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.child2_benefit
-
-	var_4_26[431611] = {
+	pg.base.child2_benefit[431611] = {
 		id = 431611,
 		trigger = 1,
 		condition = {},
@@ -9514,11 +8182,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.child2_benefit
-
-	var_4_27[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 431621,
 		trigger = 13,
 		condition = {},
@@ -9533,11 +8197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.child2_benefit
-
-	var_4_28[431711] = {
+	pg.base.child2_benefit[431711] = {
 		id = 431711,
 		trigger = 1,
 		condition = {},
@@ -9552,11 +8212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.child2_benefit
-
-	var_4_29[431721] = {
+	pg.base.child2_benefit[431721] = {
 		id = 431721,
 		trigger = 13,
 		condition = {},
@@ -9571,11 +8227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.child2_benefit
-
-	var_4_30[431811] = {
+	pg.base.child2_benefit[431811] = {
 		id = 431811,
 		trigger = 1,
 		condition = {},
@@ -9598,11 +8250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.child2_benefit
-
-	var_4_31[431821] = {
+	pg.base.child2_benefit[431821] = {
 		id = 431821,
 		trigger = 13,
 		condition = {},
@@ -9617,11 +8265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.child2_benefit
-
-	var_4_32[431911] = {
+	pg.base.child2_benefit[431911] = {
 		id = 431911,
 		trigger = 1,
 		condition = {},
@@ -9636,11 +8280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.child2_benefit
-
-	var_4_33[431921] = {
+	pg.base.child2_benefit[431921] = {
 		id = 431921,
 		trigger = 13,
 		condition = {},
@@ -9655,11 +8295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.child2_benefit
-
-	var_4_34[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 432011,
 		trigger = 1,
 		condition = {},
@@ -9674,11 +8310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.child2_benefit
-
-	var_4_35[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 432021,
 		trigger = 1,
 		condition = {},
@@ -9693,11 +8325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.child2_benefit
-
-	var_4_36[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 432031,
 		trigger = 1,
 		condition = {},
@@ -9712,11 +8340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.child2_benefit
-
-	var_4_37[432041] = {
+	pg.base.child2_benefit[432041] = {
 		id = 432041,
 		trigger = 1,
 		condition = {},
@@ -9731,11 +8355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.child2_benefit
-
-	var_4_38[432111] = {
+	pg.base.child2_benefit[432111] = {
 		id = 432111,
 		trigger = 1,
 		condition = {},
@@ -9790,11 +8410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.child2_benefit
-
-	var_4_39[432121] = {
+	pg.base.child2_benefit[432121] = {
 		id = 432121,
 		trigger = 13,
 		condition = {},
@@ -9809,11 +8425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.child2_benefit
-
-	var_4_40[432211] = {
+	pg.base.child2_benefit[432211] = {
 		id = 432211,
 		trigger = 13,
 		condition = {},
@@ -9828,11 +8440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.child2_benefit
-
-	var_4_41[432221] = {
+	pg.base.child2_benefit[432221] = {
 		id = 432221,
 		trigger = 13,
 		condition = {},
@@ -9847,11 +8455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.child2_benefit
-
-	var_4_42[432311] = {
+	pg.base.child2_benefit[432311] = {
 		id = 432311,
 		trigger = 1,
 		condition = {},
@@ -9866,11 +8470,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.child2_benefit
-
-	var_4_43[432321] = {
+	pg.base.child2_benefit[432321] = {
 		id = 432321,
 		trigger = 13,
 		condition = {},
@@ -9885,11 +8485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.child2_benefit
-
-	var_4_44[432331] = {
+	pg.base.child2_benefit[432331] = {
 		id = 432331,
 		trigger = 13,
 		condition = {},
@@ -9904,11 +8500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.child2_benefit
-
-	var_4_45[432341] = {
+	pg.base.child2_benefit[432341] = {
 		id = 432341,
 		trigger = 13,
 		condition = {},
@@ -9923,11 +8515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.child2_benefit
-
-	var_4_46[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 432411,
 		trigger = 1,
 		condition = {},
@@ -9942,11 +8530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.child2_benefit
-
-	var_4_47[432421] = {
+	pg.base.child2_benefit[432421] = {
 		id = 432421,
 		trigger = 13,
 		condition = {},
@@ -9961,11 +8545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.child2_benefit
-
-	var_4_48[432431] = {
+	pg.base.child2_benefit[432431] = {
 		id = 432431,
 		trigger = 13,
 		condition = {},
@@ -9980,11 +8560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.child2_benefit
-
-	var_4_49[432441] = {
+	pg.base.child2_benefit[432441] = {
 		id = 432441,
 		trigger = 13,
 		condition = {},
@@ -9999,11 +8575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.child2_benefit
-
-	var_4_50[432511] = {
+	pg.base.child2_benefit[432511] = {
 		id = 432511,
 		trigger = 1,
 		condition = {},
@@ -10018,11 +8590,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.child2_benefit
-
-	var_4_51[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 432521,
 		trigger = 13,
 		condition = {},
@@ -10037,11 +8605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.child2_benefit
-
-	var_4_52[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 432531,
 		trigger = 13,
 		condition = {},
@@ -10056,11 +8620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.child2_benefit
-
-	var_4_53[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 432541,
 		trigger = 13,
 		condition = {},
@@ -10075,11 +8635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.child2_benefit
-
-	var_4_54[432611] = {
+	pg.base.child2_benefit[432611] = {
 		id = 432611,
 		trigger = 1,
 		condition = {},
@@ -10094,11 +8650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.child2_benefit
-
-	var_4_55[432621] = {
+	pg.base.child2_benefit[432621] = {
 		id = 432621,
 		trigger = 13,
 		condition = {},
@@ -10113,11 +8665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.child2_benefit
-
-	var_4_56[432631] = {
+	pg.base.child2_benefit[432631] = {
 		id = 432631,
 		trigger = 13,
 		condition = {},
@@ -10132,11 +8680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.child2_benefit
-
-	var_4_57[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 432641,
 		trigger = 13,
 		condition = {},
@@ -10151,11 +8695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.child2_benefit
-
-	var_4_58[432711] = {
+	pg.base.child2_benefit[432711] = {
 		id = 432711,
 		trigger = 13,
 		condition = {},
@@ -10170,11 +8710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.child2_benefit
-
-	var_4_59[432721] = {
+	pg.base.child2_benefit[432721] = {
 		id = 432721,
 		trigger = 13,
 		condition = {},
@@ -10189,11 +8725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.child2_benefit
-
-	var_4_60[432811] = {
+	pg.base.child2_benefit[432811] = {
 		id = 432811,
 		trigger = 3,
 		condition = {},
@@ -10222,11 +8754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.child2_benefit
-
-	var_4_61[432821] = {
+	pg.base.child2_benefit[432821] = {
 		id = 432821,
 		trigger = 13,
 		condition = {},
@@ -10241,11 +8769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.child2_benefit
-
-	var_4_62[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 432911,
 		trigger = 1,
 		condition = {
@@ -10266,11 +8790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.child2_benefit
-
-	var_4_63[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 432921,
 		trigger = 1,
 		condition = {
@@ -10291,11 +8811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.child2_benefit
-
-	var_4_64[432931] = {
+	pg.base.child2_benefit[432931] = {
 		id = 432931,
 		trigger = 13,
 		condition = {},
@@ -10310,11 +8826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.child2_benefit
-
-	var_4_65[433011] = {
+	pg.base.child2_benefit[433011] = {
 		id = 433011,
 		trigger = 1,
 		condition = {},
@@ -10337,11 +8849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.child2_benefit
-
-	var_4_66[433021] = {
+	pg.base.child2_benefit[433021] = {
 		id = 433021,
 		trigger = 13,
 		condition = {},
@@ -10356,11 +8864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.child2_benefit
-
-	var_4_67[433111] = {
+	pg.base.child2_benefit[433111] = {
 		id = 433111,
 		trigger = 1,
 		condition = {},
@@ -10383,11 +8887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.child2_benefit
-
-	var_4_68[433121] = {
+	pg.base.child2_benefit[433121] = {
 		id = 433121,
 		trigger = 13,
 		condition = {},
@@ -10402,11 +8902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.child2_benefit
-
-	var_4_69[433211] = {
+	pg.base.child2_benefit[433211] = {
 		id = 433211,
 		trigger = 2,
 		condition = {
@@ -10426,11 +8922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.child2_benefit
-
-	var_4_70[433221] = {
+	pg.base.child2_benefit[433221] = {
 		id = 433221,
 		trigger = 2,
 		condition = {
@@ -10450,11 +8942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.child2_benefit
-
-	var_4_71[433231] = {
+	pg.base.child2_benefit[433231] = {
 		id = 433231,
 		trigger = 13,
 		condition = {},
@@ -10469,11 +8957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.child2_benefit
-
-	var_4_72[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 433311,
 		trigger = 13,
 		condition = {},
@@ -10496,11 +8980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.child2_benefit
-
-	var_4_73[433321] = {
+	pg.base.child2_benefit[433321] = {
 		id = 433321,
 		trigger = 13,
 		condition = {},
@@ -10515,11 +8995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.child2_benefit
-
-	var_4_74[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 433411,
 		trigger = 13,
 		condition = {},
@@ -10542,11 +9018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.child2_benefit
-
-	var_4_75[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 433421,
 		trigger = 13,
 		condition = {},
@@ -10561,11 +9033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.child2_benefit
-
-	var_4_76[433511] = {
+	pg.base.child2_benefit[433511] = {
 		id = 433511,
 		trigger = 5,
 		condition = {},
@@ -10583,11 +9051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.child2_benefit
-
-	var_4_77[433611] = {
+	pg.base.child2_benefit[433611] = {
 		id = 433611,
 		trigger = 13,
 		condition = {},
@@ -10610,11 +9074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.child2_benefit
-
-	var_4_78[433621] = {
+	pg.base.child2_benefit[433621] = {
 		id = 433621,
 		trigger = 13,
 		condition = {},
@@ -10629,11 +9089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.child2_benefit
-
-	var_4_79[433631] = {
+	pg.base.child2_benefit[433631] = {
 		id = 433631,
 		trigger = 13,
 		condition = {},
@@ -10656,11 +9112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.child2_benefit
-
-	var_4_80[433641] = {
+	pg.base.child2_benefit[433641] = {
 		id = 433641,
 		trigger = 13,
 		condition = {},
@@ -10675,11 +9127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.child2_benefit
-
-	var_4_81[433651] = {
+	pg.base.child2_benefit[433651] = {
 		id = 433651,
 		trigger = 3,
 		condition = {},
@@ -10698,11 +9146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.child2_benefit
-
-	var_4_82[433661] = {
+	pg.base.child2_benefit[433661] = {
 		id = 433661,
 		trigger = 13,
 		condition = {},
@@ -10725,11 +9169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.child2_benefit
-
-	var_4_83[433711] = {
+	pg.base.child2_benefit[433711] = {
 		id = 433711,
 		trigger = 1,
 		condition = {},
@@ -10784,11 +9224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.child2_benefit
-
-	var_4_84[433721] = {
+	pg.base.child2_benefit[433721] = {
 		id = 433721,
 		trigger = 13,
 		condition = {},
@@ -10803,11 +9239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.child2_benefit
-
-	var_4_85[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 433811,
 		trigger = 1,
 		condition = {},
@@ -10830,11 +9262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.child2_benefit
-
-	var_4_86[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 433821,
 		trigger = 1,
 		condition = {},
@@ -10857,11 +9285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.child2_benefit
-
-	var_4_87[433831] = {
+	pg.base.child2_benefit[433831] = {
 		id = 433831,
 		trigger = 1,
 		condition = {},
@@ -10884,11 +9308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.child2_benefit
-
-	var_4_88[433841] = {
+	pg.base.child2_benefit[433841] = {
 		id = 433841,
 		trigger = 1,
 		condition = {},
@@ -10911,11 +9331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.child2_benefit
-
-	var_4_89[433851] = {
+	pg.base.child2_benefit[433851] = {
 		id = 433851,
 		trigger = 1,
 		condition = {},
@@ -10938,11 +9354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.child2_benefit
-
-	var_4_90[433861] = {
+	pg.base.child2_benefit[433861] = {
 		id = 433861,
 		trigger = 1,
 		condition = {},
@@ -10965,11 +9377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.child2_benefit
-
-	var_4_91[433871] = {
+	pg.base.child2_benefit[433871] = {
 		id = 433871,
 		trigger = 1,
 		condition = {},
@@ -10992,11 +9400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.child2_benefit
-
-	var_4_92[433881] = {
+	pg.base.child2_benefit[433881] = {
 		id = 433881,
 		trigger = 1,
 		condition = {},
@@ -11019,11 +9423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.child2_benefit
-
-	var_4_93[433891] = {
+	pg.base.child2_benefit[433891] = {
 		id = 433891,
 		trigger = 1,
 		condition = {},
@@ -11062,11 +9462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.child2_benefit
-
-	var_4_94[433911] = {
+	pg.base.child2_benefit[433911] = {
 		id = 433911,
 		trigger = 13,
 		condition = {},
@@ -11081,11 +9477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.child2_benefit
-
-	var_4_95[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 433921,
 		trigger = 13,
 		condition = {},
@@ -11108,11 +9500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.child2_benefit
-
-	var_4_96[434011] = {
+	pg.base.child2_benefit[434011] = {
 		id = 434011,
 		trigger = 13,
 		condition = {},
@@ -11127,11 +9515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.child2_benefit
-
-	var_4_97[434021] = {
+	pg.base.child2_benefit[434021] = {
 		id = 434021,
 		trigger = 13,
 		condition = {},
@@ -11154,11 +9538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.child2_benefit
-
-	var_4_98[434111] = {
+	pg.base.child2_benefit[434111] = {
 		id = 434111,
 		trigger = 1,
 		condition = {
@@ -11179,8 +9559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.child2_benefit[434112] = {
+	pg.base.child2_benefit[434112] = {
 		id = 434112,
 		trigger = 1,
 		condition = {
@@ -11205,11 +9584,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.child2_benefit
-
-	var_5_0[434113] = {
+	pg.base.child2_benefit[434113] = {
 		id = 434113,
 		trigger = 1,
 		condition = {
@@ -11230,11 +9605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.child2_benefit
-
-	var_5_1[434114] = {
+	pg.base.child2_benefit[434114] = {
 		id = 434114,
 		trigger = 1,
 		condition = {
@@ -11255,11 +9626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.child2_benefit
-
-	var_5_2[434115] = {
+	pg.base.child2_benefit[434115] = {
 		id = 434115,
 		trigger = 1,
 		condition = {
@@ -11280,11 +9647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.child2_benefit
-
-	var_5_3[434121] = {
+	pg.base.child2_benefit[434121] = {
 		id = 434121,
 		trigger = 13,
 		condition = {},
@@ -11331,11 +9694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.child2_benefit
-
-	var_5_4[434211] = {
+	pg.base.child2_benefit[434211] = {
 		id = 434211,
 		trigger = 13,
 		condition = {},
@@ -11358,11 +9717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.child2_benefit
-
-	var_5_5[434221] = {
+	pg.base.child2_benefit[434221] = {
 		id = 434221,
 		trigger = 13,
 		condition = {},
@@ -11377,11 +9732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.child2_benefit
-
-	var_5_6[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 434311,
 		trigger = 13,
 		condition = {},
@@ -11404,11 +9755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.child2_benefit
-
-	var_5_7[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 434321,
 		trigger = 13,
 		condition = {},
@@ -11423,11 +9770,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.child2_benefit
-
-	var_5_8[434411] = {
+	pg.base.child2_benefit[434411] = {
 		id = 434411,
 		trigger = 1,
 		condition = {
@@ -11448,11 +9791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.child2_benefit
-
-	var_5_9[434412] = {
+	pg.base.child2_benefit[434412] = {
 		id = 434412,
 		trigger = 1,
 		condition = {
@@ -11473,11 +9812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.child2_benefit
-
-	var_5_10[434413] = {
+	pg.base.child2_benefit[434413] = {
 		id = 434413,
 		trigger = 1,
 		condition = {
@@ -11498,11 +9833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.child2_benefit
-
-	var_5_11[434414] = {
+	pg.base.child2_benefit[434414] = {
 		id = 434414,
 		trigger = 1,
 		condition = {
@@ -11523,11 +9854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.child2_benefit
-
-	var_5_12[434415] = {
+	pg.base.child2_benefit[434415] = {
 		id = 434415,
 		trigger = 1,
 		condition = {
@@ -11548,11 +9875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.child2_benefit
-
-	var_5_13[434511] = {
+	pg.base.child2_benefit[434511] = {
 		id = 434511,
 		trigger = 13,
 		condition = {},
@@ -11575,11 +9898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.child2_benefit
-
-	var_5_14[434521] = {
+	pg.base.child2_benefit[434521] = {
 		id = 434521,
 		trigger = 13,
 		condition = {},
@@ -11594,11 +9913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.child2_benefit
-
-	var_5_15[434611] = {
+	pg.base.child2_benefit[434611] = {
 		id = 434611,
 		trigger = 13,
 		condition = {},
@@ -11613,11 +9928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.child2_benefit
-
-	var_5_16[434621] = {
+	pg.base.child2_benefit[434621] = {
 		id = 434621,
 		trigger = 5,
 		condition = {},
@@ -11632,11 +9943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.child2_benefit
-
-	var_5_17[434421] = {
+	pg.base.child2_benefit[434421] = {
 		id = 434421,
 		trigger = 13,
 		condition = {},
@@ -11683,11 +9990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.child2_benefit
-
-	var_5_18[434631] = {
+	pg.base.child2_benefit[434631] = {
 		id = 434631,
 		trigger = 13,
 		condition = {},
@@ -11702,11 +10005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.child2_benefit
-
-	var_5_19[434641] = {
+	pg.base.child2_benefit[434641] = {
 		id = 434641,
 		trigger = 13,
 		condition = {},
@@ -11721,11 +10020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.child2_benefit
-
-	var_5_20[434651] = {
+	pg.base.child2_benefit[434651] = {
 		id = 434651,
 		trigger = 13,
 		condition = {},
@@ -11740,11 +10035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.child2_benefit
-
-	var_5_21[434661] = {
+	pg.base.child2_benefit[434661] = {
 		id = 434661,
 		trigger = 13,
 		condition = {},
@@ -11759,11 +10050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.child2_benefit
-
-	var_5_22[434671] = {
+	pg.base.child2_benefit[434671] = {
 		id = 434671,
 		trigger = 5,
 		condition = {},
@@ -11774,11 +10061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.child2_benefit
-
-	var_5_23[434681] = {
+	pg.base.child2_benefit[434681] = {
 		id = 434681,
 		trigger = 5,
 		condition = {},
@@ -11789,11 +10072,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.child2_benefit
-
-	var_5_24[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 434691,
 		trigger = 5,
 		condition = {},
@@ -11804,11 +10083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.child2_benefit
-
-	var_5_25[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 434701,
 		trigger = 5,
 		condition = {},
@@ -11819,11 +10094,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.child2_benefit
-
-	var_5_26[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 434711,
 		trigger = 1,
 		condition = {},
@@ -11838,11 +10109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.child2_benefit
-
-	var_5_27[434721] = {
+	pg.base.child2_benefit[434721] = {
 		id = 434721,
 		trigger = 1,
 		condition = {},
@@ -11857,11 +10124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.child2_benefit
-
-	var_5_28[434731] = {
+	pg.base.child2_benefit[434731] = {
 		id = 434731,
 		trigger = 1,
 		condition = {},
@@ -11876,11 +10139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.child2_benefit
-
-	var_5_29[434741] = {
+	pg.base.child2_benefit[434741] = {
 		id = 434741,
 		trigger = 1,
 		condition = {},
@@ -11895,11 +10154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.child2_benefit
-
-	var_5_30[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 440211,
 		trigger = 13,
 		condition = {},
@@ -11914,11 +10169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.child2_benefit
-
-	var_5_31[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 440221,
 		trigger = 13,
 		condition = {},
@@ -11933,11 +10184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.child2_benefit
-
-	var_5_32[440231] = {
+	pg.base.child2_benefit[440231] = {
 		id = 440231,
 		trigger = 13,
 		condition = {},
@@ -11952,11 +10199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.child2_benefit
-
-	var_5_33[440241] = {
+	pg.base.child2_benefit[440241] = {
 		id = 440241,
 		trigger = 13,
 		condition = {},
@@ -11971,11 +10214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.child2_benefit
-
-	var_5_34[440611] = {
+	pg.base.child2_benefit[440611] = {
 		id = 440611,
 		trigger = 13,
 		condition = {},
@@ -11990,11 +10229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.child2_benefit
-
-	var_5_35[440621] = {
+	pg.base.child2_benefit[440621] = {
 		id = 440621,
 		trigger = 13,
 		condition = {},
@@ -12009,11 +10244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.child2_benefit
-
-	var_5_36[440631] = {
+	pg.base.child2_benefit[440631] = {
 		id = 440631,
 		trigger = 13,
 		condition = {},
@@ -12028,11 +10259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.child2_benefit
-
-	var_5_37[440641] = {
+	pg.base.child2_benefit[440641] = {
 		id = 440641,
 		trigger = 13,
 		condition = {},
@@ -12047,11 +10274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.child2_benefit
-
-	var_5_38[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 440711,
 		trigger = 13,
 		condition = {},
@@ -12066,11 +10289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.child2_benefit
-
-	var_5_39[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 440721,
 		trigger = 13,
 		condition = {},
@@ -12085,11 +10304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.child2_benefit
-
-	var_5_40[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 440731,
 		trigger = 13,
 		condition = {},
@@ -12104,11 +10319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.child2_benefit
-
-	var_5_41[440741] = {
+	pg.base.child2_benefit[440741] = {
 		id = 440741,
 		trigger = 13,
 		condition = {},
@@ -12123,11 +10334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.child2_benefit
-
-	var_5_42[440811] = {
+	pg.base.child2_benefit[440811] = {
 		id = 440811,
 		trigger = 13,
 		condition = {},
@@ -12142,11 +10349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.child2_benefit
-
-	var_5_43[440821] = {
+	pg.base.child2_benefit[440821] = {
 		id = 440821,
 		trigger = 13,
 		condition = {},
@@ -12161,11 +10364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.child2_benefit
-
-	var_5_44[440911] = {
+	pg.base.child2_benefit[440911] = {
 		id = 440911,
 		trigger = 13,
 		condition = {},
@@ -12204,11 +10403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.child2_benefit
-
-	var_5_45[440921] = {
+	pg.base.child2_benefit[440921] = {
 		id = 440921,
 		trigger = 13,
 		condition = {},
@@ -12223,11 +10418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.child2_benefit
-
-	var_5_46[440931] = {
+	pg.base.child2_benefit[440931] = {
 		id = 440931,
 		trigger = 13,
 		condition = {},
@@ -12242,11 +10433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.child2_benefit
-
-	var_5_47[441011] = {
+	pg.base.child2_benefit[441011] = {
 		id = 441011,
 		trigger = 13,
 		condition = {},
@@ -12261,11 +10448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.child2_benefit
-
-	var_5_48[441021] = {
+	pg.base.child2_benefit[441021] = {
 		id = 441021,
 		trigger = 13,
 		condition = {},
@@ -12280,11 +10463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.child2_benefit
-
-	var_5_49[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 441111,
 		trigger = 13,
 		condition = {},
@@ -12323,11 +10502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.child2_benefit
-
-	var_5_50[441121] = {
+	pg.base.child2_benefit[441121] = {
 		id = 441121,
 		trigger = 13,
 		condition = {},
@@ -12342,11 +10517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.child2_benefit
-
-	var_5_51[441131] = {
+	pg.base.child2_benefit[441131] = {
 		id = 441131,
 		trigger = 13,
 		condition = {},
@@ -12361,11 +10532,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.child2_benefit
-
-	var_5_52[441141] = {
+	pg.base.child2_benefit[441141] = {
 		id = 441141,
 		trigger = 13,
 		condition = {},
@@ -12380,11 +10547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.child2_benefit
-
-	var_5_53[441211] = {
+	pg.base.child2_benefit[441211] = {
 		id = 441211,
 		trigger = 13,
 		condition = {},
@@ -12399,11 +10562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.child2_benefit
-
-	var_5_54[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 441221,
 		trigger = 13,
 		condition = {},
@@ -12418,11 +10577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.child2_benefit
-
-	var_5_55[441311] = {
+	pg.base.child2_benefit[441311] = {
 		id = 441311,
 		trigger = 13,
 		condition = {},
@@ -12461,11 +10616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.child2_benefit
-
-	var_5_56[441321] = {
+	pg.base.child2_benefit[441321] = {
 		id = 441321,
 		trigger = 13,
 		condition = {},
@@ -12480,11 +10631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.child2_benefit
-
-	var_5_57[441331] = {
+	pg.base.child2_benefit[441331] = {
 		id = 441331,
 		trigger = 13,
 		condition = {},
@@ -12499,11 +10646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.child2_benefit
-
-	var_5_58[441341] = {
+	pg.base.child2_benefit[441341] = {
 		id = 441341,
 		trigger = 13,
 		condition = {},
@@ -12518,11 +10661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.child2_benefit
-
-	var_5_59[441411] = {
+	pg.base.child2_benefit[441411] = {
 		id = 441411,
 		trigger = 13,
 		condition = {},
@@ -12553,11 +10692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.child2_benefit
-
-	var_5_60[441421] = {
+	pg.base.child2_benefit[441421] = {
 		id = 441421,
 		trigger = 13,
 		condition = {},
@@ -12588,11 +10723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.child2_benefit
-
-	var_5_61[441511] = {
+	pg.base.child2_benefit[441511] = {
 		id = 441511,
 		trigger = 13,
 		condition = {},
@@ -12639,11 +10770,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.child2_benefit
-
-	var_5_62[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 441611,
 		trigger = 1,
 		condition = {},
@@ -12658,11 +10785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.child2_benefit
-
-	var_5_63[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 441621,
 		trigger = 13,
 		condition = {},
@@ -12677,11 +10800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.child2_benefit
-
-	var_5_64[441711] = {
+	pg.base.child2_benefit[441711] = {
 		id = 441711,
 		trigger = 1,
 		condition = {},
@@ -12696,11 +10815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.child2_benefit
-
-	var_5_65[441721] = {
+	pg.base.child2_benefit[441721] = {
 		id = 441721,
 		trigger = 13,
 		condition = {},
@@ -12715,11 +10830,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.child2_benefit
-
-	var_5_66[441811] = {
+	pg.base.child2_benefit[441811] = {
 		id = 441811,
 		trigger = 1,
 		condition = {},
@@ -12742,11 +10853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.child2_benefit
-
-	var_5_67[441821] = {
+	pg.base.child2_benefit[441821] = {
 		id = 441821,
 		trigger = 13,
 		condition = {},
@@ -12761,11 +10868,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.child2_benefit
-
-	var_5_68[441911] = {
+	pg.base.child2_benefit[441911] = {
 		id = 441911,
 		trigger = 1,
 		condition = {},
@@ -12780,11 +10883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.child2_benefit
-
-	var_5_69[441921] = {
+	pg.base.child2_benefit[441921] = {
 		id = 441921,
 		trigger = 13,
 		condition = {},
@@ -12799,11 +10898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.child2_benefit
-
-	var_5_70[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 442011,
 		trigger = 1,
 		condition = {},
@@ -12818,11 +10913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.child2_benefit
-
-	var_5_71[442021] = {
+	pg.base.child2_benefit[442021] = {
 		id = 442021,
 		trigger = 1,
 		condition = {},
@@ -12837,11 +10928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.child2_benefit
-
-	var_5_72[442031] = {
+	pg.base.child2_benefit[442031] = {
 		id = 442031,
 		trigger = 1,
 		condition = {},
@@ -12856,11 +10943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.child2_benefit
-
-	var_5_73[442041] = {
+	pg.base.child2_benefit[442041] = {
 		id = 442041,
 		trigger = 1,
 		condition = {},
@@ -12875,11 +10958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.child2_benefit
-
-	var_5_74[442111] = {
+	pg.base.child2_benefit[442111] = {
 		id = 442111,
 		trigger = 1,
 		condition = {},
@@ -12934,11 +11013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.child2_benefit
-
-	var_5_75[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 442121,
 		trigger = 13,
 		condition = {},
@@ -12953,11 +11028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.child2_benefit
-
-	var_5_76[442211] = {
+	pg.base.child2_benefit[442211] = {
 		id = 442211,
 		trigger = 13,
 		condition = {},
@@ -12972,11 +11043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.child2_benefit
-
-	var_5_77[442221] = {
+	pg.base.child2_benefit[442221] = {
 		id = 442221,
 		trigger = 13,
 		condition = {},
@@ -12991,11 +11058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.child2_benefit
-
-	var_5_78[442311] = {
+	pg.base.child2_benefit[442311] = {
 		id = 442311,
 		trigger = 1,
 		condition = {},
@@ -13010,11 +11073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.child2_benefit
-
-	var_5_79[442321] = {
+	pg.base.child2_benefit[442321] = {
 		id = 442321,
 		trigger = 13,
 		condition = {},
@@ -13029,11 +11088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.child2_benefit
-
-	var_5_80[442331] = {
+	pg.base.child2_benefit[442331] = {
 		id = 442331,
 		trigger = 13,
 		condition = {},
@@ -13048,11 +11103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.child2_benefit
-
-	var_5_81[442341] = {
+	pg.base.child2_benefit[442341] = {
 		id = 442341,
 		trigger = 13,
 		condition = {},
@@ -13067,11 +11118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.child2_benefit
-
-	var_5_82[442411] = {
+	pg.base.child2_benefit[442411] = {
 		id = 442411,
 		trigger = 1,
 		condition = {},
@@ -13086,11 +11133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.child2_benefit
-
-	var_5_83[442421] = {
+	pg.base.child2_benefit[442421] = {
 		id = 442421,
 		trigger = 13,
 		condition = {},
@@ -13105,11 +11148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.child2_benefit
-
-	var_5_84[442431] = {
+	pg.base.child2_benefit[442431] = {
 		id = 442431,
 		trigger = 13,
 		condition = {},
@@ -13124,11 +11163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.child2_benefit
-
-	var_5_85[442441] = {
+	pg.base.child2_benefit[442441] = {
 		id = 442441,
 		trigger = 13,
 		condition = {},
@@ -13143,11 +11178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.child2_benefit
-
-	var_5_86[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 442511,
 		trigger = 1,
 		condition = {},
@@ -13162,11 +11193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.child2_benefit
-
-	var_5_87[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 442521,
 		trigger = 13,
 		condition = {},
@@ -13181,11 +11208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.child2_benefit
-
-	var_5_88[442531] = {
+	pg.base.child2_benefit[442531] = {
 		id = 442531,
 		trigger = 13,
 		condition = {},
@@ -13200,11 +11223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.child2_benefit
-
-	var_5_89[442541] = {
+	pg.base.child2_benefit[442541] = {
 		id = 442541,
 		trigger = 13,
 		condition = {},
@@ -13219,11 +11238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.child2_benefit
-
-	var_5_90[442611] = {
+	pg.base.child2_benefit[442611] = {
 		id = 442611,
 		trigger = 1,
 		condition = {},
@@ -13238,11 +11253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.child2_benefit
-
-	var_5_91[442621] = {
+	pg.base.child2_benefit[442621] = {
 		id = 442621,
 		trigger = 13,
 		condition = {},
@@ -13257,11 +11268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.child2_benefit
-
-	var_5_92[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 442631,
 		trigger = 13,
 		condition = {},
@@ -13276,11 +11283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.child2_benefit
-
-	var_5_93[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 442641,
 		trigger = 13,
 		condition = {},
@@ -13295,11 +11298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.child2_benefit
-
-	var_5_94[442711] = {
+	pg.base.child2_benefit[442711] = {
 		id = 442711,
 		trigger = 13,
 		condition = {},
@@ -13314,11 +11313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.child2_benefit
-
-	var_5_95[442721] = {
+	pg.base.child2_benefit[442721] = {
 		id = 442721,
 		trigger = 13,
 		condition = {},
@@ -13333,11 +11328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.child2_benefit
-
-	var_5_96[442811] = {
+	pg.base.child2_benefit[442811] = {
 		id = 442811,
 		trigger = 3,
 		condition = {},
@@ -13366,11 +11357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.child2_benefit
-
-	var_5_97[442821] = {
+	pg.base.child2_benefit[442821] = {
 		id = 442821,
 		trigger = 13,
 		condition = {},
@@ -13385,11 +11372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.child2_benefit
-
-	var_5_98[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 442911,
 		trigger = 1,
 		condition = {
@@ -13410,8 +11393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.child2_benefit[442921] = {
+	pg.base.child2_benefit[442921] = {
 		id = 442921,
 		trigger = 1,
 		condition = {
@@ -13436,11 +11418,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.child2_benefit
-
-	var_6_0[442931] = {
+	pg.base.child2_benefit[442931] = {
 		id = 442931,
 		trigger = 13,
 		condition = {},
@@ -13455,11 +11433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.child2_benefit
-
-	var_6_1[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 443011,
 		trigger = 1,
 		condition = {},
@@ -13482,11 +11456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.child2_benefit
-
-	var_6_2[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 443021,
 		trigger = 13,
 		condition = {},
@@ -13501,11 +11471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.child2_benefit
-
-	var_6_3[443111] = {
+	pg.base.child2_benefit[443111] = {
 		id = 443111,
 		trigger = 1,
 		condition = {},
@@ -13528,11 +11494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.child2_benefit
-
-	var_6_4[443121] = {
+	pg.base.child2_benefit[443121] = {
 		id = 443121,
 		trigger = 13,
 		condition = {},
@@ -13547,11 +11509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.child2_benefit
-
-	var_6_5[443211] = {
+	pg.base.child2_benefit[443211] = {
 		id = 443211,
 		trigger = 2,
 		condition = {
@@ -13571,11 +11529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.child2_benefit
-
-	var_6_6[443221] = {
+	pg.base.child2_benefit[443221] = {
 		id = 443221,
 		trigger = 2,
 		condition = {
@@ -13595,11 +11549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.child2_benefit
-
-	var_6_7[443231] = {
+	pg.base.child2_benefit[443231] = {
 		id = 443231,
 		trigger = 13,
 		condition = {},
@@ -13614,11 +11564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.child2_benefit
-
-	var_6_8[443311] = {
+	pg.base.child2_benefit[443311] = {
 		id = 443311,
 		trigger = 13,
 		condition = {},
@@ -13641,11 +11587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.child2_benefit
-
-	var_6_9[443321] = {
+	pg.base.child2_benefit[443321] = {
 		id = 443321,
 		trigger = 13,
 		condition = {},
@@ -13660,11 +11602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.child2_benefit
-
-	var_6_10[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 443411,
 		trigger = 13,
 		condition = {},
@@ -13687,11 +11625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.child2_benefit
-
-	var_6_11[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 443421,
 		trigger = 13,
 		condition = {},
@@ -13706,11 +11640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.child2_benefit
-
-	var_6_12[443511] = {
+	pg.base.child2_benefit[443511] = {
 		id = 443511,
 		trigger = 5,
 		condition = {},
@@ -13728,11 +11658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.child2_benefit
-
-	var_6_13[443611] = {
+	pg.base.child2_benefit[443611] = {
 		id = 443611,
 		trigger = 13,
 		condition = {},
@@ -13755,11 +11681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.child2_benefit
-
-	var_6_14[443621] = {
+	pg.base.child2_benefit[443621] = {
 		id = 443621,
 		trigger = 13,
 		condition = {},
@@ -13774,11 +11696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.child2_benefit
-
-	var_6_15[443631] = {
+	pg.base.child2_benefit[443631] = {
 		id = 443631,
 		trigger = 13,
 		condition = {},
@@ -13801,11 +11719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.child2_benefit
-
-	var_6_16[443641] = {
+	pg.base.child2_benefit[443641] = {
 		id = 443641,
 		trigger = 13,
 		condition = {},
@@ -13820,11 +11734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.child2_benefit
-
-	var_6_17[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 443651,
 		trigger = 3,
 		condition = {},
@@ -13843,11 +11753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.child2_benefit
-
-	var_6_18[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 443661,
 		trigger = 13,
 		condition = {},
@@ -13870,11 +11776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.child2_benefit
-
-	var_6_19[443711] = {
+	pg.base.child2_benefit[443711] = {
 		id = 443711,
 		trigger = 1,
 		condition = {},
@@ -13929,11 +11831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.child2_benefit
-
-	var_6_20[443721] = {
+	pg.base.child2_benefit[443721] = {
 		id = 443721,
 		trigger = 13,
 		condition = {},
@@ -13948,11 +11846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.child2_benefit
-
-	var_6_21[443811] = {
+	pg.base.child2_benefit[443811] = {
 		id = 443811,
 		trigger = 1,
 		condition = {},
@@ -13975,11 +11869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.child2_benefit
-
-	var_6_22[443821] = {
+	pg.base.child2_benefit[443821] = {
 		id = 443821,
 		trigger = 1,
 		condition = {},
@@ -14002,11 +11892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.child2_benefit
-
-	var_6_23[443831] = {
+	pg.base.child2_benefit[443831] = {
 		id = 443831,
 		trigger = 1,
 		condition = {},
@@ -14029,11 +11915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.child2_benefit
-
-	var_6_24[443841] = {
+	pg.base.child2_benefit[443841] = {
 		id = 443841,
 		trigger = 1,
 		condition = {},
@@ -14056,11 +11938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.child2_benefit
-
-	var_6_25[443851] = {
+	pg.base.child2_benefit[443851] = {
 		id = 443851,
 		trigger = 1,
 		condition = {},
@@ -14083,11 +11961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.child2_benefit
-
-	var_6_26[443861] = {
+	pg.base.child2_benefit[443861] = {
 		id = 443861,
 		trigger = 1,
 		condition = {},
@@ -14110,11 +11984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.child2_benefit
-
-	var_6_27[443871] = {
+	pg.base.child2_benefit[443871] = {
 		id = 443871,
 		trigger = 1,
 		condition = {},
@@ -14137,11 +12007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.child2_benefit
-
-	var_6_28[443881] = {
+	pg.base.child2_benefit[443881] = {
 		id = 443881,
 		trigger = 1,
 		condition = {},
@@ -14164,11 +12030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.child2_benefit
-
-	var_6_29[443891] = {
+	pg.base.child2_benefit[443891] = {
 		id = 443891,
 		trigger = 1,
 		condition = {},
@@ -14207,11 +12069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.child2_benefit
-
-	var_6_30[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 443911,
 		trigger = 13,
 		condition = {},
@@ -14226,11 +12084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.child2_benefit
-
-	var_6_31[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 443921,
 		trigger = 13,
 		condition = {},
@@ -14253,11 +12107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.child2_benefit
-
-	var_6_32[444011] = {
+	pg.base.child2_benefit[444011] = {
 		id = 444011,
 		trigger = 13,
 		condition = {},
@@ -14272,11 +12122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.child2_benefit
-
-	var_6_33[444021] = {
+	pg.base.child2_benefit[444021] = {
 		id = 444021,
 		trigger = 13,
 		condition = {},
@@ -14299,11 +12145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.child2_benefit
-
-	var_6_34[444111] = {
+	pg.base.child2_benefit[444111] = {
 		id = 444111,
 		trigger = 1,
 		condition = {
@@ -14324,11 +12166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.child2_benefit
-
-	var_6_35[444112] = {
+	pg.base.child2_benefit[444112] = {
 		id = 444112,
 		trigger = 1,
 		condition = {
@@ -14349,11 +12187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.child2_benefit
-
-	var_6_36[444113] = {
+	pg.base.child2_benefit[444113] = {
 		id = 444113,
 		trigger = 1,
 		condition = {
@@ -14374,11 +12208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.child2_benefit
-
-	var_6_37[444114] = {
+	pg.base.child2_benefit[444114] = {
 		id = 444114,
 		trigger = 1,
 		condition = {
@@ -14399,11 +12229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.child2_benefit
-
-	var_6_38[444115] = {
+	pg.base.child2_benefit[444115] = {
 		id = 444115,
 		trigger = 1,
 		condition = {
@@ -14424,11 +12250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.child2_benefit
-
-	var_6_39[444121] = {
+	pg.base.child2_benefit[444121] = {
 		id = 444121,
 		trigger = 13,
 		condition = {},
@@ -14475,11 +12297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.child2_benefit
-
-	var_6_40[444211] = {
+	pg.base.child2_benefit[444211] = {
 		id = 444211,
 		trigger = 13,
 		condition = {},
@@ -14502,11 +12320,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.child2_benefit
-
-	var_6_41[444221] = {
+	pg.base.child2_benefit[444221] = {
 		id = 444221,
 		trigger = 13,
 		condition = {},
@@ -14521,11 +12335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.child2_benefit
-
-	var_6_42[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 444311,
 		trigger = 13,
 		condition = {},
@@ -14548,11 +12358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.child2_benefit
-
-	var_6_43[444321] = {
+	pg.base.child2_benefit[444321] = {
 		id = 444321,
 		trigger = 13,
 		condition = {},
@@ -14567,11 +12373,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.child2_benefit
-
-	var_6_44[444411] = {
+	pg.base.child2_benefit[444411] = {
 		id = 444411,
 		trigger = 1,
 		condition = {
@@ -14592,11 +12394,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.child2_benefit
-
-	var_6_45[444412] = {
+	pg.base.child2_benefit[444412] = {
 		id = 444412,
 		trigger = 1,
 		condition = {
@@ -14617,11 +12415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.child2_benefit
-
-	var_6_46[444413] = {
+	pg.base.child2_benefit[444413] = {
 		id = 444413,
 		trigger = 1,
 		condition = {
@@ -14642,11 +12436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.child2_benefit
-
-	var_6_47[444414] = {
+	pg.base.child2_benefit[444414] = {
 		id = 444414,
 		trigger = 1,
 		condition = {
@@ -14667,11 +12457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.child2_benefit
-
-	var_6_48[444415] = {
+	pg.base.child2_benefit[444415] = {
 		id = 444415,
 		trigger = 1,
 		condition = {
@@ -14692,11 +12478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.child2_benefit
-
-	var_6_49[444511] = {
+	pg.base.child2_benefit[444511] = {
 		id = 444511,
 		trigger = 13,
 		condition = {},
@@ -14719,11 +12501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.child2_benefit
-
-	var_6_50[444521] = {
+	pg.base.child2_benefit[444521] = {
 		id = 444521,
 		trigger = 13,
 		condition = {},
@@ -14738,11 +12516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.child2_benefit
-
-	var_6_51[444611] = {
+	pg.base.child2_benefit[444611] = {
 		id = 444611,
 		trigger = 13,
 		condition = {},
@@ -14757,11 +12531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.child2_benefit
-
-	var_6_52[444621] = {
+	pg.base.child2_benefit[444621] = {
 		id = 444621,
 		trigger = 5,
 		condition = {},
@@ -14776,11 +12546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.child2_benefit
-
-	var_6_53[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 444421,
 		trigger = 13,
 		condition = {},
@@ -14827,11 +12593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.child2_benefit
-
-	var_6_54[444631] = {
+	pg.base.child2_benefit[444631] = {
 		id = 444631,
 		trigger = 13,
 		condition = {},
@@ -14846,11 +12608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.child2_benefit
-
-	var_6_55[444641] = {
+	pg.base.child2_benefit[444641] = {
 		id = 444641,
 		trigger = 13,
 		condition = {},
@@ -14865,11 +12623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.child2_benefit
-
-	var_6_56[444651] = {
+	pg.base.child2_benefit[444651] = {
 		id = 444651,
 		trigger = 13,
 		condition = {},
@@ -14884,11 +12638,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.child2_benefit
-
-	var_6_57[444661] = {
+	pg.base.child2_benefit[444661] = {
 		id = 444661,
 		trigger = 13,
 		condition = {},
@@ -14903,11 +12653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.child2_benefit
-
-	var_6_58[444671] = {
+	pg.base.child2_benefit[444671] = {
 		id = 444671,
 		trigger = 5,
 		condition = {},
@@ -14918,11 +12664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.child2_benefit
-
-	var_6_59[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 444681,
 		trigger = 5,
 		condition = {},
@@ -14933,11 +12675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.child2_benefit
-
-	var_6_60[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 444691,
 		trigger = 5,
 		condition = {},
@@ -14948,11 +12686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.child2_benefit
-
-	var_6_61[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 444701,
 		trigger = 5,
 		condition = {},
@@ -14963,11 +12697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.child2_benefit
-
-	var_6_62[444711] = {
+	pg.base.child2_benefit[444711] = {
 		id = 444711,
 		trigger = 1,
 		condition = {},
@@ -14982,11 +12712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.child2_benefit
-
-	var_6_63[444721] = {
+	pg.base.child2_benefit[444721] = {
 		id = 444721,
 		trigger = 1,
 		condition = {},
@@ -15001,11 +12727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.child2_benefit
-
-	var_6_64[444731] = {
+	pg.base.child2_benefit[444731] = {
 		id = 444731,
 		trigger = 1,
 		condition = {},
@@ -15020,11 +12742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.child2_benefit
-
-	var_6_65[444741] = {
+	pg.base.child2_benefit[444741] = {
 		id = 444741,
 		trigger = 1,
 		condition = {},
@@ -15039,11 +12757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.child2_benefit
-
-	var_6_66[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 1,
 		trigger = 5,
 		condition = {
@@ -15071,11 +12785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.child2_benefit
-
-	var_6_67[2] = {
+	pg.base.child2_benefit[2] = {
 		id = 2,
 		trigger = 5,
 		condition = {
@@ -15104,11 +12814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.child2_benefit
-
-	var_6_68[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 3,
 		trigger = 3,
 		condition = {
@@ -15137,11 +12843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.child2_benefit
-
-	var_6_69[4] = {
+	pg.base.child2_benefit[4] = {
 		id = 4,
 		trigger = 13,
 		condition = {},
@@ -15156,11 +12858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.child2_benefit
-
-	var_6_70[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 5,
 		trigger = 13,
 		condition = {},
@@ -15178,11 +12876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.child2_benefit
-
-	var_6_71[6] = {
+	pg.base.child2_benefit[6] = {
 		id = 6,
 		trigger = 13,
 		condition = {},
@@ -15197,11 +12891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.child2_benefit
-
-	var_6_72[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 7,
 		trigger = 13,
 		condition = {
@@ -15221,11 +12911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.child2_benefit
-
-	var_6_73[8] = {
+	pg.base.child2_benefit[8] = {
 		id = 8,
 		trigger = 1,
 		condition = {},
@@ -15240,11 +12926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.child2_benefit
-
-	var_6_74[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 9,
 		trigger = 1,
 		condition = {},
@@ -15259,11 +12941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.child2_benefit
-
-	var_6_75[10] = {
+	pg.base.child2_benefit[10] = {
 		id = 10,
 		trigger = 3,
 		condition = {},
@@ -15282,11 +12960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.child2_benefit
-
-	var_6_76[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 11,
 		trigger = 2,
 		condition = {},
@@ -15305,11 +12979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.child2_benefit
-
-	var_6_77[12] = {
+	pg.base.child2_benefit[12] = {
 		id = 12,
 		trigger = 2,
 		condition = {},
@@ -15324,11 +12994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.child2_benefit
-
-	var_6_78[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 13,
 		trigger = 2,
 		condition = {
@@ -15348,11 +13014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.child2_benefit
-
-	var_6_79[14] = {
+	pg.base.child2_benefit[14] = {
 		id = 14,
 		trigger = 2,
 		condition = {
@@ -15373,11 +13035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.child2_benefit
-
-	var_6_80[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 15,
 		trigger = 5,
 		condition = {},
@@ -15392,11 +13050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.child2_benefit
-
-	var_6_81[16] = {
+	pg.base.child2_benefit[16] = {
 		id = 16,
 		trigger = 5,
 		condition = {
@@ -15416,11 +13070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.child2_benefit
-
-	var_6_82[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 17,
 		trigger = 6,
 		condition = {
@@ -15440,11 +13090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.child2_benefit
-
-	var_6_83[18] = {
+	pg.base.child2_benefit[18] = {
 		id = 18,
 		trigger = 7,
 		condition = {
@@ -15464,11 +13110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.child2_benefit
-
-	var_6_84[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 19,
 		trigger = 8,
 		condition = {},
@@ -15483,11 +13125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.child2_benefit
-
-	var_6_85[20] = {
+	pg.base.child2_benefit[20] = {
 		id = 20,
 		trigger = 9,
 		condition = {},
@@ -15502,11 +13140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.child2_benefit
-
-	var_6_86[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 21,
 		trigger = 10,
 		condition = {},
@@ -15545,11 +13179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.child2_benefit
-
-	var_6_87[22] = {
+	pg.base.child2_benefit[22] = {
 		id = 22,
 		trigger = 11,
 		condition = {},
@@ -15588,11 +13218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.child2_benefit
-
-	var_6_88[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 23,
 		trigger = 1,
 		condition = {
@@ -15612,11 +13238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.child2_benefit
-
-	var_6_89[24] = {
+	pg.base.child2_benefit[24] = {
 		id = 24,
 		trigger = 3,
 		condition = {
@@ -15640,11 +13262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.child2_benefit
-
-	var_6_90[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 25,
 		trigger = 4,
 		condition = {
@@ -15664,11 +13282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.child2_benefit
-
-	var_6_91[26] = {
+	pg.base.child2_benefit[26] = {
 		id = 26,
 		trigger = 4,
 		condition = {
@@ -15688,11 +13302,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.child2_benefit
-
-	var_6_92[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 27,
 		trigger = 4,
 		condition = {
@@ -15712,11 +13322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.child2_benefit
-
-	var_6_93[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 31,
 		trigger = 13,
 		condition = {},
@@ -15731,11 +13337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.child2_benefit
-
-	var_6_94[32] = {
+	pg.base.child2_benefit[32] = {
 		id = 32,
 		trigger = 13,
 		condition = {},
@@ -15750,11 +13352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.child2_benefit
-
-	var_6_95[33] = {
+	pg.base.child2_benefit[33] = {
 		id = 33,
 		trigger = 13,
 		condition = {},
@@ -15772,11 +13370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.child2_benefit
-
-	var_6_96[34] = {
+	pg.base.child2_benefit[34] = {
 		id = 34,
 		trigger = 1,
 		condition = {},
@@ -15789,11 +13383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.child2_benefit
-
-	var_6_97[35] = {
+	pg.base.child2_benefit[35] = {
 		id = 35,
 		trigger = 5,
 		condition = {},
@@ -15804,11 +13394,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.child2_benefit
-
-	var_6_98[41] = {
+	pg.base.child2_benefit[41] = {
 		id = 41,
 		trigger = 3,
 		condition = {},
@@ -15827,8 +13413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.child2_benefit[42] = {
+	pg.base.child2_benefit[42] = {
 		id = 42,
 		trigger = 2,
 		condition = {},
@@ -15851,11 +13436,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.child2_benefit
-
-	var_7_0[43] = {
+	pg.base.child2_benefit[43] = {
 		id = 43,
 		trigger = 1,
 		condition = {},
@@ -15869,11 +13450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.child2_benefit
-
-	var_7_1[44] = {
+	pg.base.child2_benefit[44] = {
 		id = 44,
 		trigger = 5,
 		condition = {},
@@ -15884,11 +13461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.child2_benefit
-
-	var_7_2[45] = {
+	pg.base.child2_benefit[45] = {
 		id = 45,
 		trigger = 5,
 		condition = {},
@@ -15899,11 +13472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.child2_benefit
-
-	var_7_3[46] = {
+	pg.base.child2_benefit[46] = {
 		id = 46,
 		trigger = 15,
 		condition = {
@@ -15923,11 +13492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.child2_benefit
-
-	var_7_4[47] = {
+	pg.base.child2_benefit[47] = {
 		id = 47,
 		trigger = 2,
 		condition = {
@@ -15948,11 +13513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.child2_benefit
-
-	var_7_5[48] = {
+	pg.base.child2_benefit[48] = {
 		id = 48,
 		trigger = 2,
 		condition = {
@@ -15973,11 +13534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.child2_benefit
-
-	var_7_6[49] = {
+	pg.base.child2_benefit[49] = {
 		id = 49,
 		trigger = 2,
 		condition = {
@@ -15998,11 +13555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.child2_benefit
-
-	var_7_7[60] = {
+	pg.base.child2_benefit[60] = {
 		id = 60,
 		trigger = 15,
 		condition = {
@@ -16018,11 +13571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.child2_benefit
-
-	var_7_8[61] = {
+	pg.base.child2_benefit[61] = {
 		id = 61,
 		trigger = 15,
 		condition = {
@@ -16038,11 +13587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.child2_benefit
-
-	var_7_9[62] = {
+	pg.base.child2_benefit[62] = {
 		id = 62,
 		trigger = 1,
 		condition = {},
@@ -16053,11 +13598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.child2_benefit
-
-	var_7_10[50] = {
+	pg.base.child2_benefit[50] = {
 		id = 50,
 		trigger = 2,
 		condition = {
@@ -16078,11 +13619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.child2_benefit
-
-	var_7_11[51] = {
+	pg.base.child2_benefit[51] = {
 		id = 51,
 		trigger = 2,
 		condition = {},
@@ -16097,11 +13634,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.child2_benefit
-
-	var_7_12[52] = {
+	pg.base.child2_benefit[52] = {
 		id = 52,
 		trigger = 2,
 		condition = {
@@ -16120,11 +13653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.child2_benefit
-
-	var_7_13[53] = {
+	pg.base.child2_benefit[53] = {
 		id = 53,
 		trigger = 2,
 		condition = {
@@ -16143,11 +13672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.child2_benefit
-
-	var_7_14[54] = {
+	pg.base.child2_benefit[54] = {
 		id = 54,
 		trigger = 1,
 		condition = {},
@@ -16161,11 +13686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.child2_benefit
-
-	var_7_15[55] = {
+	pg.base.child2_benefit[55] = {
 		id = 55,
 		trigger = 1,
 		condition = {},
@@ -16179,11 +13700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.child2_benefit
-
-	var_7_16[10001] = {
+	pg.base.child2_benefit[10001] = {
 		id = 10001,
 		trigger = 1,
 		condition = {
@@ -16235,11 +13752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.child2_benefit
-
-	var_7_17[10002] = {
+	pg.base.child2_benefit[10002] = {
 		id = 10002,
 		trigger = 1,
 		condition = {
@@ -16251,11 +13764,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.child2_benefit
-
-	var_7_18[10003] = {
+	pg.base.child2_benefit[10003] = {
 		id = 10003,
 		trigger = 1,
 		condition = {
@@ -16308,11 +13817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.child2_benefit
-
-	var_7_19[10004] = {
+	pg.base.child2_benefit[10004] = {
 		id = 10004,
 		trigger = 1,
 		condition = {
@@ -16364,11 +13869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.child2_benefit
-
-	var_7_20[10005] = {
+	pg.base.child2_benefit[10005] = {
 		id = 10005,
 		trigger = 1,
 		condition = {
@@ -16420,11 +13921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.child2_benefit
-
-	var_7_21[10006] = {
+	pg.base.child2_benefit[10006] = {
 		id = 10006,
 		trigger = 1,
 		condition = {
@@ -16436,11 +13933,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.child2_benefit
-
-	var_7_22[10007] = {
+	pg.base.child2_benefit[10007] = {
 		id = 10007,
 		trigger = 1,
 		condition = {
@@ -16493,11 +13986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.child2_benefit
-
-	var_7_23[10008] = {
+	pg.base.child2_benefit[10008] = {
 		id = 10008,
 		trigger = 1,
 		condition = {
@@ -16549,11 +14038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.child2_benefit
-
-	var_7_24[1001] = {
+	pg.base.child2_benefit[1001] = {
 		id = 1001,
 		trigger = 5,
 		condition = {},
@@ -16568,11 +14053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.child2_benefit
-
-	var_7_25[1002] = {
+	pg.base.child2_benefit[1002] = {
 		id = 1002,
 		trigger = 5,
 		condition = {},
@@ -16587,11 +14068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.child2_benefit
-
-	var_7_26[1003] = {
+	pg.base.child2_benefit[1003] = {
 		id = 1003,
 		trigger = 5,
 		condition = {
@@ -16611,11 +14088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.child2_benefit
-
-	var_7_27[1004] = {
+	pg.base.child2_benefit[1004] = {
 		id = 1004,
 		trigger = 5,
 		condition = {
@@ -16635,11 +14108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.child2_benefit
-
-	var_7_28[1005] = {
+	pg.base.child2_benefit[1005] = {
 		id = 1005,
 		trigger = 5,
 		condition = {},
@@ -16662,11 +14131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.child2_benefit
-
-	var_7_29[1006] = {
+	pg.base.child2_benefit[1006] = {
 		id = 1006,
 		trigger = 5,
 		condition = {},
@@ -16681,11 +14146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.child2_benefit
-
-	var_7_30[1007] = {
+	pg.base.child2_benefit[1007] = {
 		id = 1007,
 		trigger = 5,
 		condition = {},
@@ -16700,11 +14161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.child2_benefit
-
-	var_7_31[1008] = {
+	pg.base.child2_benefit[1008] = {
 		id = 1008,
 		trigger = 5,
 		condition = {
@@ -16732,11 +14189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.child2_benefit
-
-	var_7_32[1009] = {
+	pg.base.child2_benefit[1009] = {
 		id = 1009,
 		trigger = 5,
 		condition = {
@@ -16764,11 +14217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.child2_benefit
-
-	var_7_33[1010] = {
+	pg.base.child2_benefit[1010] = {
 		id = 1010,
 		trigger = 5,
 		condition = {
@@ -16792,11 +14241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.child2_benefit
-
-	var_7_34[1011] = {
+	pg.base.child2_benefit[1011] = {
 		id = 1011,
 		trigger = 2,
 		condition = {},
@@ -16811,11 +14256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.child2_benefit
-
-	var_7_35[1012] = {
+	pg.base.child2_benefit[1012] = {
 		id = 1012,
 		trigger = 2,
 		condition = {},
@@ -16830,11 +14271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.child2_benefit
-
-	var_7_36[1013] = {
+	pg.base.child2_benefit[1013] = {
 		id = 1013,
 		trigger = 2,
 		condition = {},
@@ -16849,11 +14286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.child2_benefit
-
-	var_7_37[1014] = {
+	pg.base.child2_benefit[1014] = {
 		id = 1014,
 		trigger = 2,
 		condition = {},
@@ -16868,271 +14301,163 @@ end)()
 			}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.child2_benefit
-
-	var_7_38[1015] = {
+	pg.base.child2_benefit[1015] = {
 		id = 1015,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.child2_benefit
-
-	var_7_39[1016] = {
+	pg.base.child2_benefit[1016] = {
 		id = 1016,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.child2_benefit
-
-	var_7_40[1017] = {
+	pg.base.child2_benefit[1017] = {
 		id = 1017,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.child2_benefit
-
-	var_7_41[1018] = {
+	pg.base.child2_benefit[1018] = {
 		id = 1018,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.child2_benefit
-
-	var_7_42[1019] = {
+	pg.base.child2_benefit[1019] = {
 		id = 1019,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.child2_benefit
-
-	var_7_43[1020] = {
+	pg.base.child2_benefit[1020] = {
 		id = 1020,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.child2_benefit
-
-	var_7_44[1021] = {
+	pg.base.child2_benefit[1021] = {
 		id = 1021,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.child2_benefit
-
-	var_7_45[1022] = {
+	pg.base.child2_benefit[1022] = {
 		id = 1022,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.child2_benefit
-
-	var_7_46[1023] = {
+	pg.base.child2_benefit[1023] = {
 		id = 1023,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.child2_benefit
-
-	var_7_47[1024] = {
+	pg.base.child2_benefit[1024] = {
 		id = 1024,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.child2_benefit
-
-	var_7_48[1025] = {
+	pg.base.child2_benefit[1025] = {
 		id = 1025,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.child2_benefit
-
-	var_7_49[1026] = {
+	pg.base.child2_benefit[1026] = {
 		id = 1026,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.child2_benefit
-
-	var_7_50[1027] = {
+	pg.base.child2_benefit[1027] = {
 		id = 1027,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.child2_benefit
-
-	var_7_51[1028] = {
+	pg.base.child2_benefit[1028] = {
 		id = 1028,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.child2_benefit
-
-	var_7_52[1029] = {
+	pg.base.child2_benefit[1029] = {
 		id = 1029,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.child2_benefit
-
-	var_7_53[1030] = {
+	pg.base.child2_benefit[1030] = {
 		id = 1030,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.child2_benefit
-
-	var_7_54[1031] = {
+	pg.base.child2_benefit[1031] = {
 		id = 1031,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.child2_benefit
-
-	var_7_55[1032] = {
+	pg.base.child2_benefit[1032] = {
 		id = 1032,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.child2_benefit
-
-	var_7_56[1033] = {
+	pg.base.child2_benefit[1033] = {
 		id = 1033,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.child2_benefit
-
-	var_7_57[1034] = {
+	pg.base.child2_benefit[1034] = {
 		id = 1034,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.child2_benefit
-
-	var_7_58[1035] = {
+	pg.base.child2_benefit[1035] = {
 		id = 1035,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.child2_benefit
-
-	var_7_59[1036] = {
+	pg.base.child2_benefit[1036] = {
 		id = 1036,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.child2_benefit
-
-	var_7_60[1037] = {
+	pg.base.child2_benefit[1037] = {
 		id = 1037,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.child2_benefit
-
-	var_7_61[1038] = {
+	pg.base.child2_benefit[1038] = {
 		id = 1038,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.child2_benefit
-
-	var_7_62[1039] = {
+	pg.base.child2_benefit[1039] = {
 		id = 1039,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.child2_benefit
-
-	var_7_63[1040] = {
+	pg.base.child2_benefit[1040] = {
 		id = 1040,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.child2_benefit
-
-	var_7_64[1041] = {
+	pg.base.child2_benefit[1041] = {
 		id = 1041,
 		trigger = 2,
 		condition = {},
@@ -17171,11 +14496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.child2_benefit
-
-	var_7_65[1042] = {
+	pg.base.child2_benefit[1042] = {
 		id = 1042,
 		trigger = 2,
 		condition = {},
@@ -17214,11 +14535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.child2_benefit
-
-	var_7_66[1043] = {
+	pg.base.child2_benefit[1043] = {
 		id = 1043,
 		trigger = 2,
 		condition = {},
@@ -17257,11 +14574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.child2_benefit
-
-	var_7_67[1044] = {
+	pg.base.child2_benefit[1044] = {
 		id = 1044,
 		trigger = 2,
 		condition = {},
@@ -17300,11 +14613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.child2_benefit
-
-	var_7_68[1045] = {
+	pg.base.child2_benefit[1045] = {
 		id = 1045,
 		trigger = 7,
 		condition = {},
@@ -17319,11 +14628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.child2_benefit
-
-	var_7_69[1046] = {
+	pg.base.child2_benefit[1046] = {
 		id = 1046,
 		trigger = 7,
 		condition = {},
@@ -17346,11 +14651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.child2_benefit
-
-	var_7_70[1047] = {
+	pg.base.child2_benefit[1047] = {
 		id = 1047,
 		trigger = 7,
 		condition = {},
@@ -17373,11 +14674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.child2_benefit
-
-	var_7_71[1048] = {
+	pg.base.child2_benefit[1048] = {
 		id = 1048,
 		trigger = 5,
 		condition = {
@@ -17428,11 +14725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.child2_benefit
-
-	var_7_72[1049] = {
+	pg.base.child2_benefit[1049] = {
 		id = 1049,
 		trigger = 5,
 		condition = {
@@ -17483,11 +14776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.child2_benefit
-
-	var_7_73[1050] = {
+	pg.base.child2_benefit[1050] = {
 		id = 1050,
 		trigger = 5,
 		condition = {
@@ -17538,11 +14827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.child2_benefit
-
-	var_7_74[1051] = {
+	pg.base.child2_benefit[1051] = {
 		id = 1051,
 		trigger = 5,
 		condition = {
@@ -17597,11 +14882,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.child2_benefit
-
-	var_7_75[1052] = {
+	pg.base.child2_benefit[1052] = {
 		id = 1052,
 		trigger = 6,
 		condition = {
@@ -17622,11 +14903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.child2_benefit
-
-	var_7_76[1053] = {
+	pg.base.child2_benefit[1053] = {
 		id = 1053,
 		trigger = 6,
 		condition = {
@@ -17647,11 +14924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.child2_benefit
-
-	var_7_77[1054] = {
+	pg.base.child2_benefit[1054] = {
 		id = 1054,
 		trigger = 5,
 		condition = {},
@@ -17662,11 +14935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.child2_benefit
-
-	var_7_78[1055] = {
+	pg.base.child2_benefit[1055] = {
 		id = 1055,
 		trigger = 5,
 		condition = {},
@@ -17677,11 +14946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.child2_benefit
-
-	var_7_79[1056] = {
+	pg.base.child2_benefit[1056] = {
 		id = 1056,
 		trigger = 1,
 		condition = {},
@@ -17696,11 +14961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.child2_benefit
-
-	var_7_80[1057] = {
+	pg.base.child2_benefit[1057] = {
 		id = 1057,
 		trigger = 1,
 		condition = {},
@@ -17715,11 +14976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.child2_benefit
-
-	var_7_81[1058] = {
+	pg.base.child2_benefit[1058] = {
 		id = 1058,
 		trigger = 1,
 		condition = {},
@@ -17734,11 +14991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.child2_benefit
-
-	var_7_82[1059] = {
+	pg.base.child2_benefit[1059] = {
 		id = 1059,
 		trigger = 1,
 		condition = {},
@@ -17753,11 +15006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.child2_benefit
-
-	var_7_83[1060] = {
+	pg.base.child2_benefit[1060] = {
 		id = 1060,
 		trigger = 1,
 		condition = {},
@@ -17772,11 +15021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.child2_benefit
-
-	var_7_84[1061] = {
+	pg.base.child2_benefit[1061] = {
 		id = 1061,
 		trigger = 1,
 		condition = {},
@@ -17791,11 +15036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.child2_benefit
-
-	var_7_85[1062] = {
+	pg.base.child2_benefit[1062] = {
 		id = 1062,
 		trigger = 1,
 		condition = {},
@@ -17810,11 +15051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.child2_benefit
-
-	var_7_86[1063] = {
+	pg.base.child2_benefit[1063] = {
 		id = 1063,
 		trigger = 1,
 		condition = {},
@@ -17829,11 +15066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.child2_benefit
-
-	var_7_87[1064] = {
+	pg.base.child2_benefit[1064] = {
 		id = 1064,
 		trigger = 2,
 		condition = {
@@ -17877,11 +15110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.child2_benefit
-
-	var_7_88[1065] = {
+	pg.base.child2_benefit[1065] = {
 		id = 1065,
 		trigger = 2,
 		condition = {
@@ -17925,11 +15154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.child2_benefit
-
-	var_7_89[1066] = {
+	pg.base.child2_benefit[1066] = {
 		id = 1066,
 		trigger = 2,
 		condition = {
@@ -17973,11 +15198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.child2_benefit
-
-	var_7_90[1067] = {
+	pg.base.child2_benefit[1067] = {
 		id = 1067,
 		trigger = 2,
 		condition = {
@@ -18021,11 +15242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.child2_benefit
-
-	var_7_91[1068] = {
+	pg.base.child2_benefit[1068] = {
 		id = 1068,
 		trigger = 2,
 		condition = {
@@ -18069,11 +15286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.child2_benefit
-
-	var_7_92[1069] = {
+	pg.base.child2_benefit[1069] = {
 		id = 1069,
 		trigger = 2,
 		condition = {
@@ -18117,11 +15330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.child2_benefit
-
-	var_7_93[10701] = {
+	pg.base.child2_benefit[10701] = {
 		id = 10701,
 		trigger = 2,
 		condition = {
@@ -18143,11 +15352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.child2_benefit
-
-	var_7_94[10702] = {
+	pg.base.child2_benefit[10702] = {
 		id = 10702,
 		trigger = 2,
 		condition = {
@@ -18169,11 +15374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.child2_benefit
-
-	var_7_95[10703] = {
+	pg.base.child2_benefit[10703] = {
 		id = 10703,
 		trigger = 2,
 		condition = {
@@ -18195,11 +15396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.child2_benefit
-
-	var_7_96[10704] = {
+	pg.base.child2_benefit[10704] = {
 		id = 10704,
 		trigger = 2,
 		condition = {
@@ -18221,11 +15418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.child2_benefit
-
-	var_7_97[10705] = {
+	pg.base.child2_benefit[10705] = {
 		id = 10705,
 		trigger = 2,
 		condition = {
@@ -18247,11 +15440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.child2_benefit
-
-	var_7_98[10711] = {
+	pg.base.child2_benefit[10711] = {
 		id = 10711,
 		trigger = 2,
 		condition = {
@@ -18273,8 +15462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.child2_benefit[10712] = {
+	pg.base.child2_benefit[10712] = {
 		id = 10712,
 		trigger = 2,
 		condition = {
@@ -18300,11 +15488,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.child2_benefit
-
-	var_8_0[10713] = {
+	pg.base.child2_benefit[10713] = {
 		id = 10713,
 		trigger = 2,
 		condition = {
@@ -18326,11 +15510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.child2_benefit
-
-	var_8_1[10714] = {
+	pg.base.child2_benefit[10714] = {
 		id = 10714,
 		trigger = 2,
 		condition = {
@@ -18352,11 +15532,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.child2_benefit
-
-	var_8_2[10715] = {
+	pg.base.child2_benefit[10715] = {
 		id = 10715,
 		trigger = 2,
 		condition = {
@@ -18378,11 +15554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.child2_benefit
-
-	var_8_3[10721] = {
+	pg.base.child2_benefit[10721] = {
 		id = 10721,
 		trigger = 2,
 		condition = {
@@ -18404,11 +15576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.child2_benefit
-
-	var_8_4[10722] = {
+	pg.base.child2_benefit[10722] = {
 		id = 10722,
 		trigger = 2,
 		condition = {
@@ -18430,11 +15598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.child2_benefit
-
-	var_8_5[10723] = {
+	pg.base.child2_benefit[10723] = {
 		id = 10723,
 		trigger = 2,
 		condition = {
@@ -18456,11 +15620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.child2_benefit
-
-	var_8_6[10724] = {
+	pg.base.child2_benefit[10724] = {
 		id = 10724,
 		trigger = 2,
 		condition = {
@@ -18482,11 +15642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.child2_benefit
-
-	var_8_7[10725] = {
+	pg.base.child2_benefit[10725] = {
 		id = 10725,
 		trigger = 2,
 		condition = {
@@ -18508,11 +15664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.child2_benefit
-
-	var_8_8[10731] = {
+	pg.base.child2_benefit[10731] = {
 		id = 10731,
 		trigger = 2,
 		condition = {
@@ -18534,11 +15686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.child2_benefit
-
-	var_8_9[10732] = {
+	pg.base.child2_benefit[10732] = {
 		id = 10732,
 		trigger = 2,
 		condition = {
@@ -18560,11 +15708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.child2_benefit
-
-	var_8_10[10733] = {
+	pg.base.child2_benefit[10733] = {
 		id = 10733,
 		trigger = 2,
 		condition = {
@@ -18586,11 +15730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.child2_benefit
-
-	var_8_11[10734] = {
+	pg.base.child2_benefit[10734] = {
 		id = 10734,
 		trigger = 2,
 		condition = {
@@ -18612,11 +15752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.child2_benefit
-
-	var_8_12[10735] = {
+	pg.base.child2_benefit[10735] = {
 		id = 10735,
 		trigger = 2,
 		condition = {
@@ -18638,11 +15774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.child2_benefit
-
-	var_8_13[10741] = {
+	pg.base.child2_benefit[10741] = {
 		id = 10741,
 		trigger = 2,
 		condition = {
@@ -18664,11 +15796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.child2_benefit
-
-	var_8_14[10742] = {
+	pg.base.child2_benefit[10742] = {
 		id = 10742,
 		trigger = 2,
 		condition = {
@@ -18690,11 +15818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.child2_benefit
-
-	var_8_15[10743] = {
+	pg.base.child2_benefit[10743] = {
 		id = 10743,
 		trigger = 2,
 		condition = {
@@ -18716,11 +15840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.child2_benefit
-
-	var_8_16[10744] = {
+	pg.base.child2_benefit[10744] = {
 		id = 10744,
 		trigger = 2,
 		condition = {
@@ -18742,11 +15862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.child2_benefit
-
-	var_8_17[10745] = {
+	pg.base.child2_benefit[10745] = {
 		id = 10745,
 		trigger = 2,
 		condition = {
@@ -18768,11 +15884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.child2_benefit
-
-	var_8_18[10751] = {
+	pg.base.child2_benefit[10751] = {
 		id = 10751,
 		trigger = 2,
 		condition = {
@@ -18794,11 +15906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.child2_benefit
-
-	var_8_19[10752] = {
+	pg.base.child2_benefit[10752] = {
 		id = 10752,
 		trigger = 2,
 		condition = {
@@ -18820,11 +15928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.child2_benefit
-
-	var_8_20[10753] = {
+	pg.base.child2_benefit[10753] = {
 		id = 10753,
 		trigger = 2,
 		condition = {
@@ -18846,11 +15950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.child2_benefit
-
-	var_8_21[10754] = {
+	pg.base.child2_benefit[10754] = {
 		id = 10754,
 		trigger = 2,
 		condition = {
@@ -18872,11 +15972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.child2_benefit
-
-	var_8_22[10755] = {
+	pg.base.child2_benefit[10755] = {
 		id = 10755,
 		trigger = 2,
 		condition = {
@@ -18898,11 +15994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.child2_benefit
-
-	var_8_23[10761] = {
+	pg.base.child2_benefit[10761] = {
 		id = 10761,
 		trigger = 2,
 		condition = {
@@ -18924,11 +16016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.child2_benefit
-
-	var_8_24[10762] = {
+	pg.base.child2_benefit[10762] = {
 		id = 10762,
 		trigger = 2,
 		condition = {
@@ -18950,11 +16038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.child2_benefit
-
-	var_8_25[10763] = {
+	pg.base.child2_benefit[10763] = {
 		id = 10763,
 		trigger = 2,
 		condition = {
@@ -18976,11 +16060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.child2_benefit
-
-	var_8_26[10764] = {
+	pg.base.child2_benefit[10764] = {
 		id = 10764,
 		trigger = 2,
 		condition = {
@@ -19002,11 +16082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.child2_benefit
-
-	var_8_27[10765] = {
+	pg.base.child2_benefit[10765] = {
 		id = 10765,
 		trigger = 2,
 		condition = {
@@ -19028,11 +16104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.child2_benefit
-
-	var_8_28[10771] = {
+	pg.base.child2_benefit[10771] = {
 		id = 10771,
 		trigger = 2,
 		condition = {
@@ -19054,11 +16126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.child2_benefit
-
-	var_8_29[10772] = {
+	pg.base.child2_benefit[10772] = {
 		id = 10772,
 		trigger = 2,
 		condition = {
@@ -19080,11 +16148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.child2_benefit
-
-	var_8_30[10773] = {
+	pg.base.child2_benefit[10773] = {
 		id = 10773,
 		trigger = 2,
 		condition = {
@@ -19106,11 +16170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.child2_benefit
-
-	var_8_31[10774] = {
+	pg.base.child2_benefit[10774] = {
 		id = 10774,
 		trigger = 2,
 		condition = {
@@ -19132,11 +16192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.child2_benefit
-
-	var_8_32[10775] = {
+	pg.base.child2_benefit[10775] = {
 		id = 10775,
 		trigger = 2,
 		condition = {
@@ -19158,11 +16214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.child2_benefit
-
-	var_8_33[1078] = {
+	pg.base.child2_benefit[1078] = {
 		id = 1078,
 		trigger = 2,
 		condition = {
@@ -19183,11 +16235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.child2_benefit
-
-	var_8_34[1079] = {
+	pg.base.child2_benefit[1079] = {
 		id = 1079,
 		trigger = 2,
 		condition = {
@@ -19208,11 +16256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.child2_benefit
-
-	var_8_35[1080] = {
+	pg.base.child2_benefit[1080] = {
 		id = 1080,
 		trigger = 2,
 		condition = {
@@ -19233,11 +16277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.child2_benefit
-
-	var_8_36[1081] = {
+	pg.base.child2_benefit[1081] = {
 		id = 1081,
 		trigger = 1,
 		condition = {},
@@ -19276,11 +16316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.child2_benefit
-
-	var_8_37[1082] = {
+	pg.base.child2_benefit[1082] = {
 		id = 1082,
 		trigger = 5,
 		condition = {},
@@ -19291,11 +16327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.child2_benefit
-
-	var_8_38[1083] = {
+	pg.base.child2_benefit[1083] = {
 		id = 1083,
 		trigger = 1,
 		condition = {},
@@ -19318,11 +16350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.child2_benefit
-
-	var_8_39[1084] = {
+	pg.base.child2_benefit[1084] = {
 		id = 1084,
 		trigger = 5,
 		condition = {},
@@ -19333,51 +16361,31 @@ end)()
 			}
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.child2_benefit
-
-	var_8_40[1085] = {
+	pg.base.child2_benefit[1085] = {
 		id = 1085,
 		trigger = 5,
 		condition = {},
 		effect = {}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.child2_benefit
-
-	var_8_41[1086] = {
+	pg.base.child2_benefit[1086] = {
 		id = 1086,
 		trigger = 5,
 		condition = {},
 		effect = {}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.child2_benefit
-
-	var_8_42[1087] = {
+	pg.base.child2_benefit[1087] = {
 		id = 1087,
 		trigger = 5,
 		condition = {},
 		effect = {}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.child2_benefit
-
-	var_8_43[1088] = {
+	pg.base.child2_benefit[1088] = {
 		id = 1088,
 		trigger = 5,
 		condition = {},
 		effect = {}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.child2_benefit
-
-	var_8_44[10881] = {
+	pg.base.child2_benefit[10881] = {
 		id = 10881,
 		trigger = 3,
 		condition = {
@@ -19397,11 +16405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.child2_benefit
-
-	var_8_45[10882] = {
+	pg.base.child2_benefit[10882] = {
 		id = 10882,
 		trigger = 3,
 		condition = {
@@ -19421,11 +16425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.child2_benefit
-
-	var_8_46[10883] = {
+	pg.base.child2_benefit[10883] = {
 		id = 10883,
 		trigger = 3,
 		condition = {
@@ -19445,11 +16445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.child2_benefit
-
-	var_8_47[10884] = {
+	pg.base.child2_benefit[10884] = {
 		id = 10884,
 		trigger = 3,
 		condition = {
@@ -19469,11 +16465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.child2_benefit
-
-	var_8_48[10885] = {
+	pg.base.child2_benefit[10885] = {
 		id = 10885,
 		trigger = 3,
 		condition = {
@@ -19493,11 +16485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.child2_benefit
-
-	var_8_49[10891] = {
+	pg.base.child2_benefit[10891] = {
 		id = 10891,
 		trigger = 3,
 		condition = {
@@ -19517,11 +16505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.child2_benefit
-
-	var_8_50[10892] = {
+	pg.base.child2_benefit[10892] = {
 		id = 10892,
 		trigger = 3,
 		condition = {
@@ -19541,11 +16525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.child2_benefit
-
-	var_8_51[10893] = {
+	pg.base.child2_benefit[10893] = {
 		id = 10893,
 		trigger = 3,
 		condition = {
@@ -19565,11 +16545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.child2_benefit
-
-	var_8_52[10894] = {
+	pg.base.child2_benefit[10894] = {
 		id = 10894,
 		trigger = 3,
 		condition = {
@@ -19589,11 +16565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.child2_benefit
-
-	var_8_53[10895] = {
+	pg.base.child2_benefit[10895] = {
 		id = 10895,
 		trigger = 3,
 		condition = {
@@ -19613,11 +16585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.child2_benefit
-
-	var_8_54[10901] = {
+	pg.base.child2_benefit[10901] = {
 		id = 10901,
 		trigger = 3,
 		condition = {
@@ -19637,11 +16605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.child2_benefit
-
-	var_8_55[10902] = {
+	pg.base.child2_benefit[10902] = {
 		id = 10902,
 		trigger = 3,
 		condition = {
@@ -19661,11 +16625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.child2_benefit
-
-	var_8_56[10903] = {
+	pg.base.child2_benefit[10903] = {
 		id = 10903,
 		trigger = 3,
 		condition = {
@@ -19685,11 +16645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.child2_benefit
-
-	var_8_57[10904] = {
+	pg.base.child2_benefit[10904] = {
 		id = 10904,
 		trigger = 3,
 		condition = {
@@ -19709,11 +16665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.child2_benefit
-
-	var_8_58[10905] = {
+	pg.base.child2_benefit[10905] = {
 		id = 10905,
 		trigger = 3,
 		condition = {
@@ -19733,11 +16685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.child2_benefit
-
-	var_8_59[10911] = {
+	pg.base.child2_benefit[10911] = {
 		id = 10911,
 		trigger = 3,
 		condition = {
@@ -19757,11 +16705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.child2_benefit
-
-	var_8_60[10912] = {
+	pg.base.child2_benefit[10912] = {
 		id = 10912,
 		trigger = 3,
 		condition = {
@@ -19781,11 +16725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.child2_benefit
-
-	var_8_61[10913] = {
+	pg.base.child2_benefit[10913] = {
 		id = 10913,
 		trigger = 3,
 		condition = {
@@ -19805,11 +16745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.child2_benefit
-
-	var_8_62[10914] = {
+	pg.base.child2_benefit[10914] = {
 		id = 10914,
 		trigger = 3,
 		condition = {
@@ -19829,11 +16765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.child2_benefit
-
-	var_8_63[10915] = {
+	pg.base.child2_benefit[10915] = {
 		id = 10915,
 		trigger = 3,
 		condition = {
@@ -19853,11 +16785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.child2_benefit
-
-	var_8_64[10961] = {
+	pg.base.child2_benefit[10961] = {
 		id = 10961,
 		trigger = 3,
 		condition = {},
@@ -19876,11 +16804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.child2_benefit
-
-	var_8_65[10971] = {
+	pg.base.child2_benefit[10971] = {
 		id = 10971,
 		trigger = 3,
 		condition = {},
@@ -19899,11 +16823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.child2_benefit
-
-	var_8_66[10981] = {
+	pg.base.child2_benefit[10981] = {
 		id = 10981,
 		trigger = 3,
 		condition = {},
@@ -19922,11 +16842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.child2_benefit
-
-	var_8_67[10991] = {
+	pg.base.child2_benefit[10991] = {
 		id = 10991,
 		trigger = 3,
 		condition = {},
@@ -19945,11 +16861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.child2_benefit
-
-	var_8_68[11001] = {
+	pg.base.child2_benefit[11001] = {
 		id = 11001,
 		trigger = 3,
 		condition = {},
@@ -19988,11 +16900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.child2_benefit
-
-	var_8_69[11011] = {
+	pg.base.child2_benefit[11011] = {
 		id = 11011,
 		trigger = 3,
 		condition = {},
@@ -20031,11 +16939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.child2_benefit
-
-	var_8_70[11021] = {
+	pg.base.child2_benefit[11021] = {
 		id = 11021,
 		trigger = 3,
 		condition = {},
@@ -20074,11 +16978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.child2_benefit
-
-	var_8_71[2001] = {
+	pg.base.child2_benefit[2001] = {
 		id = 2001,
 		trigger = 2,
 		condition = {},
@@ -20093,11 +16993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.child2_benefit
-
-	var_8_72[2002] = {
+	pg.base.child2_benefit[2002] = {
 		id = 2002,
 		trigger = 2,
 		condition = {},
@@ -20112,11 +17008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.child2_benefit
-
-	var_8_73[2003] = {
+	pg.base.child2_benefit[2003] = {
 		id = 2003,
 		trigger = 2,
 		condition = {},
@@ -20131,11 +17023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.child2_benefit
-
-	var_8_74[2004] = {
+	pg.base.child2_benefit[2004] = {
 		id = 2004,
 		trigger = 2,
 		condition = {},
@@ -20150,11 +17038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.child2_benefit
-
-	var_8_75[2005] = {
+	pg.base.child2_benefit[2005] = {
 		id = 2005,
 		trigger = 13,
 		condition = {},
@@ -20172,11 +17056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.child2_benefit
-
-	var_8_76[2006] = {
+	pg.base.child2_benefit[2006] = {
 		id = 2006,
 		trigger = 3,
 		condition = {},
@@ -20194,11 +17074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.child2_benefit
-
-	var_8_77[2007] = {
+	pg.base.child2_benefit[2007] = {
 		id = 2007,
 		trigger = 3,
 		condition = {},
@@ -20216,11 +17092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.child2_benefit
-
-	var_8_78[2008] = {
+	pg.base.child2_benefit[2008] = {
 		id = 2008,
 		trigger = 3,
 		condition = {},
@@ -20238,11 +17110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.child2_benefit
-
-	var_8_79[2009] = {
+	pg.base.child2_benefit[2009] = {
 		id = 2009,
 		trigger = 3,
 		condition = {},
@@ -20260,11 +17128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.child2_benefit
-
-	var_8_80[2010] = {
+	pg.base.child2_benefit[2010] = {
 		id = 2010,
 		trigger = 3,
 		condition = {},
@@ -20282,11 +17146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.child2_benefit
-
-	var_8_81[2011] = {
+	pg.base.child2_benefit[2011] = {
 		id = 2011,
 		trigger = 3,
 		condition = {},
@@ -20304,11 +17164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.child2_benefit
-
-	var_8_82[2012] = {
+	pg.base.child2_benefit[2012] = {
 		id = 2012,
 		trigger = 3,
 		condition = {},
@@ -20326,11 +17182,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.child2_benefit
-
-	var_8_83[2013] = {
+	pg.base.child2_benefit[2013] = {
 		id = 2013,
 		trigger = 3,
 		condition = {},
@@ -20348,11 +17200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.child2_benefit
-
-	var_8_84[2014] = {
+	pg.base.child2_benefit[2014] = {
 		id = 2014,
 		trigger = 5,
 		condition = {},
@@ -20363,11 +17211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.child2_benefit
-
-	var_8_85[2015] = {
+	pg.base.child2_benefit[2015] = {
 		id = 2015,
 		trigger = 5,
 		condition = {},
@@ -20378,11 +17222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.child2_benefit
-
-	var_8_86[2016] = {
+	pg.base.child2_benefit[2016] = {
 		id = 2016,
 		trigger = 5,
 		condition = {},
@@ -20393,11 +17233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.child2_benefit
-
-	var_8_87[2017] = {
+	pg.base.child2_benefit[2017] = {
 		id = 2017,
 		trigger = 5,
 		condition = {},
@@ -20408,11 +17244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.child2_benefit
-
-	var_8_88[2018] = {
+	pg.base.child2_benefit[2018] = {
 		id = 2018,
 		trigger = 5,
 		condition = {},
@@ -20430,11 +17262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.child2_benefit
-
-	var_8_89[2019] = {
+	pg.base.child2_benefit[2019] = {
 		id = 2019,
 		trigger = 5,
 		condition = {},
@@ -20452,11 +17280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.child2_benefit
-
-	var_8_90[2020] = {
+	pg.base.child2_benefit[2020] = {
 		id = 2020,
 		trigger = 5,
 		condition = {},
@@ -20474,11 +17298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.child2_benefit
-
-	var_8_91[2021] = {
+	pg.base.child2_benefit[2021] = {
 		id = 2021,
 		trigger = 5,
 		condition = {},
@@ -20496,11 +17316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.child2_benefit
-
-	var_8_92[2022] = {
+	pg.base.child2_benefit[2022] = {
 		id = 2022,
 		trigger = 13,
 		condition = {},
@@ -20515,11 +17331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.child2_benefit
-
-	var_8_93[2023] = {
+	pg.base.child2_benefit[2023] = {
 		id = 2023,
 		trigger = 13,
 		condition = {},
@@ -20534,11 +17346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.child2_benefit
-
-	var_8_94[2024] = {
+	pg.base.child2_benefit[2024] = {
 		id = 2024,
 		trigger = 13,
 		condition = {},
@@ -20553,11 +17361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.child2_benefit
-
-	var_8_95[2025] = {
+	pg.base.child2_benefit[2025] = {
 		id = 2025,
 		trigger = 13,
 		condition = {},
@@ -20572,11 +17376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.child2_benefit
-
-	var_8_96[2026] = {
+	pg.base.child2_benefit[2026] = {
 		id = 2026,
 		trigger = 13,
 		condition = {},
@@ -20591,11 +17391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.child2_benefit
-
-	var_8_97[2027] = {
+	pg.base.child2_benefit[2027] = {
 		id = 2027,
 		trigger = 13,
 		condition = {},
@@ -20610,11 +17406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.child2_benefit
-
-	var_8_98[2028] = {
+	pg.base.child2_benefit[2028] = {
 		id = 2028,
 		trigger = 13,
 		condition = {},
@@ -20629,8 +17421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.child2_benefit[2029] = {
+	pg.base.child2_benefit[2029] = {
 		id = 2029,
 		trigger = 13,
 		condition = {},
@@ -20649,11 +17440,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.child2_benefit
-
-	var_9_0[2030] = {
+	pg.base.child2_benefit[2030] = {
 		id = 2030,
 		trigger = 13,
 		condition = {},
@@ -20668,11 +17455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.child2_benefit
-
-	var_9_1[2031] = {
+	pg.base.child2_benefit[2031] = {
 		id = 2031,
 		trigger = 13,
 		condition = {},
@@ -20687,11 +17470,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.child2_benefit
-
-	var_9_2[2032] = {
+	pg.base.child2_benefit[2032] = {
 		id = 2032,
 		trigger = 13,
 		condition = {},
@@ -20706,11 +17485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.child2_benefit
-
-	var_9_3[2033] = {
+	pg.base.child2_benefit[2033] = {
 		id = 2033,
 		trigger = 13,
 		condition = {},
@@ -20725,11 +17500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.child2_benefit
-
-	var_9_4[2034] = {
+	pg.base.child2_benefit[2034] = {
 		id = 2034,
 		trigger = 13,
 		condition = {},
@@ -20744,11 +17515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.child2_benefit
-
-	var_9_5[2035] = {
+	pg.base.child2_benefit[2035] = {
 		id = 2035,
 		trigger = 13,
 		condition = {},
@@ -20763,11 +17530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.child2_benefit
-
-	var_9_6[2036] = {
+	pg.base.child2_benefit[2036] = {
 		id = 2036,
 		trigger = 13,
 		condition = {},
@@ -20782,11 +17545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.child2_benefit
-
-	var_9_7[2037] = {
+	pg.base.child2_benefit[2037] = {
 		id = 2037,
 		trigger = 2,
 		condition = {},
@@ -20809,11 +17568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.child2_benefit
-
-	var_9_8[2038] = {
+	pg.base.child2_benefit[2038] = {
 		id = 2038,
 		trigger = 2,
 		condition = {},
@@ -20836,11 +17591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.child2_benefit
-
-	var_9_9[2039] = {
+	pg.base.child2_benefit[2039] = {
 		id = 2039,
 		trigger = 2,
 		condition = {},
@@ -20863,11 +17614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.child2_benefit
-
-	var_9_10[2040] = {
+	pg.base.child2_benefit[2040] = {
 		id = 2040,
 		trigger = 2,
 		condition = {},
@@ -20890,11 +17637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.child2_benefit
-
-	var_9_11[2041] = {
+	pg.base.child2_benefit[2041] = {
 		id = 2041,
 		trigger = 15,
 		condition = {
@@ -20910,11 +17653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.child2_benefit
-
-	var_9_12[2042] = {
+	pg.base.child2_benefit[2042] = {
 		id = 2042,
 		trigger = 15,
 		condition = {
@@ -20930,11 +17669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.child2_benefit
-
-	var_9_13[2043] = {
+	pg.base.child2_benefit[2043] = {
 		id = 2043,
 		trigger = 15,
 		condition = {
@@ -20950,11 +17685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.child2_benefit
-
-	var_9_14[2044] = {
+	pg.base.child2_benefit[2044] = {
 		id = 2044,
 		trigger = 15,
 		condition = {
@@ -20970,11 +17701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.child2_benefit
-
-	var_9_15[2045] = {
+	pg.base.child2_benefit[2045] = {
 		id = 2045,
 		trigger = 15,
 		condition = {
@@ -20990,11 +17717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.child2_benefit
-
-	var_9_16[2046] = {
+	pg.base.child2_benefit[2046] = {
 		id = 2046,
 		trigger = 15,
 		condition = {
@@ -21010,11 +17733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.child2_benefit
-
-	var_9_17[2047] = {
+	pg.base.child2_benefit[2047] = {
 		id = 2047,
 		trigger = 15,
 		condition = {
@@ -21030,11 +17749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.child2_benefit
-
-	var_9_18[2048] = {
+	pg.base.child2_benefit[2048] = {
 		id = 2048,
 		trigger = 15,
 		condition = {
@@ -21050,11 +17765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.child2_benefit
-
-	var_9_19[2049] = {
+	pg.base.child2_benefit[2049] = {
 		id = 2049,
 		trigger = 15,
 		condition = {
@@ -21070,11 +17781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.child2_benefit
-
-	var_9_20[2050] = {
+	pg.base.child2_benefit[2050] = {
 		id = 2050,
 		trigger = 15,
 		condition = {
@@ -21090,11 +17797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.child2_benefit
-
-	var_9_21[2051] = {
+	pg.base.child2_benefit[2051] = {
 		id = 2051,
 		trigger = 15,
 		condition = {
@@ -21110,11 +17813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.child2_benefit
-
-	var_9_22[2052] = {
+	pg.base.child2_benefit[2052] = {
 		id = 2052,
 		trigger = 15,
 		condition = {
@@ -21130,11 +17829,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.child2_benefit
-
-	var_9_23[2053] = {
+	pg.base.child2_benefit[2053] = {
 		id = 2053,
 		trigger = 15,
 		condition = {
@@ -21150,11 +17845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.child2_benefit
-
-	var_9_24[2054] = {
+	pg.base.child2_benefit[2054] = {
 		id = 2054,
 		trigger = 15,
 		condition = {
@@ -21170,11 +17861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.child2_benefit
-
-	var_9_25[2055] = {
+	pg.base.child2_benefit[2055] = {
 		id = 2055,
 		trigger = 15,
 		condition = {
@@ -21190,11 +17877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.child2_benefit
-
-	var_9_26[2056] = {
+	pg.base.child2_benefit[2056] = {
 		id = 2056,
 		trigger = 15,
 		condition = {
@@ -21210,11 +17893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.child2_benefit
-
-	var_9_27[2057] = {
+	pg.base.child2_benefit[2057] = {
 		id = 2057,
 		trigger = 15,
 		condition = {
@@ -21230,11 +17909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.child2_benefit
-
-	var_9_28[2058] = {
+	pg.base.child2_benefit[2058] = {
 		id = 2058,
 		trigger = 15,
 		condition = {
@@ -21250,11 +17925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.child2_benefit
-
-	var_9_29[2059] = {
+	pg.base.child2_benefit[2059] = {
 		id = 2059,
 		trigger = 15,
 		condition = {
@@ -21270,11 +17941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.child2_benefit
-
-	var_9_30[2060] = {
+	pg.base.child2_benefit[2060] = {
 		id = 2060,
 		trigger = 15,
 		condition = {
@@ -21290,11 +17957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.child2_benefit
-
-	var_9_31[2061] = {
+	pg.base.child2_benefit[2061] = {
 		id = 2061,
 		trigger = 15,
 		condition = {
@@ -21310,11 +17973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.child2_benefit
-
-	var_9_32[2062] = {
+	pg.base.child2_benefit[2062] = {
 		id = 2062,
 		trigger = 15,
 		condition = {
@@ -21330,11 +17989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.child2_benefit
-
-	var_9_33[2063] = {
+	pg.base.child2_benefit[2063] = {
 		id = 2063,
 		trigger = 15,
 		condition = {
@@ -21350,11 +18005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.child2_benefit
-
-	var_9_34[2064] = {
+	pg.base.child2_benefit[2064] = {
 		id = 2064,
 		trigger = 15,
 		condition = {
@@ -21370,11 +18021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.child2_benefit
-
-	var_9_35[2065] = {
+	pg.base.child2_benefit[2065] = {
 		id = 2065,
 		trigger = 1,
 		condition = {},
@@ -21389,11 +18036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.child2_benefit
-
-	var_9_36[2066] = {
+	pg.base.child2_benefit[2066] = {
 		id = 2066,
 		trigger = 1,
 		condition = {},
@@ -21408,11 +18051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.child2_benefit
-
-	var_9_37[2067] = {
+	pg.base.child2_benefit[2067] = {
 		id = 2067,
 		trigger = 1,
 		condition = {},
@@ -21427,11 +18066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.child2_benefit
-
-	var_9_38[2068] = {
+	pg.base.child2_benefit[2068] = {
 		id = 2068,
 		trigger = 1,
 		condition = {},
@@ -21446,11 +18081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.child2_benefit
-
-	var_9_39[2069] = {
+	pg.base.child2_benefit[2069] = {
 		id = 2069,
 		trigger = 1,
 		condition = {},
@@ -21465,11 +18096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.child2_benefit
-
-	var_9_40[2070] = {
+	pg.base.child2_benefit[2070] = {
 		id = 2070,
 		trigger = 1,
 		condition = {},
@@ -21484,11 +18111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.child2_benefit
-
-	var_9_41[2071] = {
+	pg.base.child2_benefit[2071] = {
 		id = 2071,
 		trigger = 1,
 		condition = {},
@@ -21503,11 +18126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.child2_benefit
-
-	var_9_42[2072] = {
+	pg.base.child2_benefit[2072] = {
 		id = 2072,
 		trigger = 1,
 		condition = {},
@@ -21522,11 +18141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.child2_benefit
-
-	var_9_43[2073] = {
+	pg.base.child2_benefit[2073] = {
 		id = 2073,
 		trigger = 1,
 		condition = {},
@@ -21541,11 +18156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.child2_benefit
-
-	var_9_44[2074] = {
+	pg.base.child2_benefit[2074] = {
 		id = 2074,
 		trigger = 1,
 		condition = {},
@@ -21560,11 +18171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.child2_benefit
-
-	var_9_45[2075] = {
+	pg.base.child2_benefit[2075] = {
 		id = 2075,
 		trigger = 1,
 		condition = {},
@@ -21579,11 +18186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.child2_benefit
-
-	var_9_46[2076] = {
+	pg.base.child2_benefit[2076] = {
 		id = 2076,
 		trigger = 1,
 		condition = {},
@@ -21598,11 +18201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.child2_benefit
-
-	var_9_47[2077] = {
+	pg.base.child2_benefit[2077] = {
 		id = 2077,
 		trigger = 1,
 		condition = {},
@@ -21617,11 +18216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.child2_benefit
-
-	var_9_48[2078] = {
+	pg.base.child2_benefit[2078] = {
 		id = 2078,
 		trigger = 1,
 		condition = {},
@@ -21636,11 +18231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.child2_benefit
-
-	var_9_49[2079] = {
+	pg.base.child2_benefit[2079] = {
 		id = 2079,
 		trigger = 1,
 		condition = {},
@@ -21655,11 +18246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.child2_benefit
-
-	var_9_50[2080] = {
+	pg.base.child2_benefit[2080] = {
 		id = 2080,
 		trigger = 1,
 		condition = {},
@@ -21674,11 +18261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.child2_benefit
-
-	var_9_51[2081] = {
+	pg.base.child2_benefit[2081] = {
 		id = 2081,
 		trigger = 1,
 		condition = {},
@@ -21693,11 +18276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.child2_benefit
-
-	var_9_52[2082] = {
+	pg.base.child2_benefit[2082] = {
 		id = 2082,
 		trigger = 1,
 		condition = {},
@@ -21712,11 +18291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.child2_benefit
-
-	var_9_53[2083] = {
+	pg.base.child2_benefit[2083] = {
 		id = 2083,
 		trigger = 1,
 		condition = {},
@@ -21731,11 +18306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.child2_benefit
-
-	var_9_54[2084] = {
+	pg.base.child2_benefit[2084] = {
 		id = 2084,
 		trigger = 1,
 		condition = {},
@@ -21750,11 +18321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.child2_benefit
-
-	var_9_55[2085] = {
+	pg.base.child2_benefit[2085] = {
 		id = 2085,
 		trigger = 1,
 		condition = {},
@@ -21769,11 +18336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.child2_benefit
-
-	var_9_56[2086] = {
+	pg.base.child2_benefit[2086] = {
 		id = 2086,
 		trigger = 1,
 		condition = {},
@@ -21788,11 +18351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.child2_benefit
-
-	var_9_57[2087] = {
+	pg.base.child2_benefit[2087] = {
 		id = 2087,
 		trigger = 1,
 		condition = {},
@@ -21807,11 +18366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.child2_benefit
-
-	var_9_58[2088] = {
+	pg.base.child2_benefit[2088] = {
 		id = 2088,
 		trigger = 1,
 		condition = {},
@@ -21826,11 +18381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.child2_benefit
-
-	var_9_59[2089] = {
+	pg.base.child2_benefit[2089] = {
 		id = 2089,
 		trigger = 2,
 		condition = {
@@ -21874,11 +18425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.child2_benefit
-
-	var_9_60[2090] = {
+	pg.base.child2_benefit[2090] = {
 		id = 2090,
 		trigger = 2,
 		condition = {
@@ -21922,11 +18469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.child2_benefit
-
-	var_9_61[2091] = {
+	pg.base.child2_benefit[2091] = {
 		id = 2091,
 		trigger = 2,
 		condition = {
@@ -21970,11 +18513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.child2_benefit
-
-	var_9_62[2092] = {
+	pg.base.child2_benefit[2092] = {
 		id = 2092,
 		trigger = 2,
 		condition = {
@@ -22018,11 +18557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.child2_benefit
-
-	var_9_63[2093] = {
+	pg.base.child2_benefit[2093] = {
 		id = 2093,
 		trigger = 2,
 		condition = {
@@ -22066,11 +18601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.child2_benefit
-
-	var_9_64[2094] = {
+	pg.base.child2_benefit[2094] = {
 		id = 2094,
 		trigger = 2,
 		condition = {
@@ -22114,11 +18645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.child2_benefit
-
-	var_9_65[2095] = {
+	pg.base.child2_benefit[2095] = {
 		id = 2095,
 		trigger = 2,
 		condition = {
@@ -22162,11 +18689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.child2_benefit
-
-	var_9_66[2096] = {
+	pg.base.child2_benefit[2096] = {
 		id = 2096,
 		trigger = 2,
 		condition = {
@@ -22210,11 +18733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.child2_benefit
-
-	var_9_67[2097] = {
+	pg.base.child2_benefit[2097] = {
 		id = 2097,
 		trigger = 2,
 		condition = {
@@ -22258,11 +18777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.child2_benefit
-
-	var_9_68[2098] = {
+	pg.base.child2_benefit[2098] = {
 		id = 2098,
 		trigger = 3,
 		condition = {},
@@ -22280,11 +18795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.child2_benefit
-
-	var_9_69[2099] = {
+	pg.base.child2_benefit[2099] = {
 		id = 2099,
 		trigger = 3,
 		condition = {},
@@ -22302,11 +18813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.child2_benefit
-
-	var_9_70[2100] = {
+	pg.base.child2_benefit[2100] = {
 		id = 2100,
 		trigger = 3,
 		condition = {},
@@ -22324,11 +18831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.child2_benefit
-
-	var_9_71[2101] = {
+	pg.base.child2_benefit[2101] = {
 		id = 2101,
 		trigger = 3,
 		condition = {},
@@ -22346,11 +18849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.child2_benefit
-
-	var_9_72[30011] = {
+	pg.base.child2_benefit[30011] = {
 		id = 30011,
 		trigger = 13,
 		condition = {},
@@ -22365,11 +18864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.child2_benefit
-
-	var_9_73[30021] = {
+	pg.base.child2_benefit[30021] = {
 		id = 30021,
 		trigger = 13,
 		condition = {},
@@ -22384,11 +18879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.child2_benefit
-
-	var_9_74[30031] = {
+	pg.base.child2_benefit[30031] = {
 		id = 30031,
 		trigger = 2,
 		condition = {
@@ -22410,11 +18901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.child2_benefit
-
-	var_9_75[30032] = {
+	pg.base.child2_benefit[30032] = {
 		id = 30032,
 		trigger = 2,
 		condition = {
@@ -22436,11 +18923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.child2_benefit
-
-	var_9_76[30033] = {
+	pg.base.child2_benefit[30033] = {
 		id = 30033,
 		trigger = 2,
 		condition = {
@@ -22462,11 +18945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.child2_benefit
-
-	var_9_77[30034] = {
+	pg.base.child2_benefit[30034] = {
 		id = 30034,
 		trigger = 2,
 		condition = {
@@ -22488,11 +18967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.child2_benefit
-
-	var_9_78[30035] = {
+	pg.base.child2_benefit[30035] = {
 		id = 30035,
 		trigger = 2,
 		condition = {
@@ -22514,11 +18989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.child2_benefit
-
-	var_9_79[30041] = {
+	pg.base.child2_benefit[30041] = {
 		id = 30041,
 		trigger = 13,
 		condition = {},
@@ -22533,11 +19004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.child2_benefit
-
-	var_9_80[30051] = {
+	pg.base.child2_benefit[30051] = {
 		id = 30051,
 		trigger = 13,
 		condition = {},
@@ -22552,11 +19019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.child2_benefit
-
-	var_9_81[30061] = {
+	pg.base.child2_benefit[30061] = {
 		id = 30061,
 		trigger = 1,
 		condition = {},
@@ -22572,11 +19035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.child2_benefit
-
-	var_9_82[30071] = {
+	pg.base.child2_benefit[30071] = {
 		id = 30071,
 		trigger = 13,
 		condition = {},
@@ -22591,11 +19050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.child2_benefit
-
-	var_9_83[30081] = {
+	pg.base.child2_benefit[30081] = {
 		id = 30081,
 		trigger = 13,
 		condition = {},
@@ -22610,11 +19065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.child2_benefit
-
-	var_9_84[30091] = {
+	pg.base.child2_benefit[30091] = {
 		id = 30091,
 		trigger = 5,
 		condition = {
@@ -22634,11 +19085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.child2_benefit
-
-	var_9_85[30092] = {
+	pg.base.child2_benefit[30092] = {
 		id = 30092,
 		trigger = 5,
 		condition = {
@@ -22654,11 +19101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.child2_benefit
-
-	var_9_86[30101] = {
+	pg.base.child2_benefit[30101] = {
 		id = 30101,
 		trigger = 13,
 		condition = {},
@@ -22673,11 +19116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.child2_benefit
-
-	var_9_87[30111] = {
+	pg.base.child2_benefit[30111] = {
 		id = 30111,
 		trigger = 13,
 		condition = {},
@@ -22692,11 +19131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.child2_benefit
-
-	var_9_88[30121] = {
+	pg.base.child2_benefit[30121] = {
 		id = 30121,
 		trigger = 2,
 		condition = {
@@ -22718,11 +19153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.child2_benefit
-
-	var_9_89[30122] = {
+	pg.base.child2_benefit[30122] = {
 		id = 30122,
 		trigger = 2,
 		condition = {
@@ -22744,11 +19175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.child2_benefit
-
-	var_9_90[30123] = {
+	pg.base.child2_benefit[30123] = {
 		id = 30123,
 		trigger = 2,
 		condition = {
@@ -22770,11 +19197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.child2_benefit
-
-	var_9_91[30124] = {
+	pg.base.child2_benefit[30124] = {
 		id = 30124,
 		trigger = 2,
 		condition = {
@@ -22796,11 +19219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.child2_benefit
-
-	var_9_92[30125] = {
+	pg.base.child2_benefit[30125] = {
 		id = 30125,
 		trigger = 2,
 		condition = {
@@ -22822,11 +19241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.child2_benefit
-
-	var_9_93[30131] = {
+	pg.base.child2_benefit[30131] = {
 		id = 30131,
 		trigger = 13,
 		condition = {},
@@ -22841,11 +19256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.child2_benefit
-
-	var_9_94[30141] = {
+	pg.base.child2_benefit[30141] = {
 		id = 30141,
 		trigger = 13,
 		condition = {},
@@ -22860,11 +19271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.child2_benefit
-
-	var_9_95[30151] = {
+	pg.base.child2_benefit[30151] = {
 		id = 30151,
 		trigger = 2,
 		condition = {
@@ -22886,11 +19293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.child2_benefit
-
-	var_9_96[30152] = {
+	pg.base.child2_benefit[30152] = {
 		id = 30152,
 		trigger = 2,
 		condition = {
@@ -22912,11 +19315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.child2_benefit
-
-	var_9_97[30153] = {
+	pg.base.child2_benefit[30153] = {
 		id = 30153,
 		trigger = 2,
 		condition = {
@@ -22938,11 +19337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.child2_benefit
-
-	var_9_98[30154] = {
+	pg.base.child2_benefit[30154] = {
 		id = 30154,
 		trigger = 2,
 		condition = {
@@ -22964,8 +19359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.child2_benefit[30155] = {
+	pg.base.child2_benefit[30155] = {
 		id = 30155,
 		trigger = 2,
 		condition = {
@@ -22991,11 +19385,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.child2_benefit
-
-	var_10_0[30161] = {
+	pg.base.child2_benefit[30161] = {
 		id = 30161,
 		trigger = 13,
 		condition = {},
@@ -23010,11 +19400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.child2_benefit
-
-	var_10_1[30171] = {
+	pg.base.child2_benefit[30171] = {
 		id = 30171,
 		trigger = 13,
 		condition = {},
@@ -23029,11 +19415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.child2_benefit
-
-	var_10_2[30181] = {
+	pg.base.child2_benefit[30181] = {
 		id = 30181,
 		trigger = 2,
 		condition = {
@@ -23055,11 +19437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.child2_benefit
-
-	var_10_3[30182] = {
+	pg.base.child2_benefit[30182] = {
 		id = 30182,
 		trigger = 2,
 		condition = {
@@ -23081,11 +19459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.child2_benefit
-
-	var_10_4[30183] = {
+	pg.base.child2_benefit[30183] = {
 		id = 30183,
 		trigger = 2,
 		condition = {
@@ -23107,11 +19481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.child2_benefit
-
-	var_10_5[30184] = {
+	pg.base.child2_benefit[30184] = {
 		id = 30184,
 		trigger = 2,
 		condition = {
@@ -23133,11 +19503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.child2_benefit
-
-	var_10_6[30185] = {
+	pg.base.child2_benefit[30185] = {
 		id = 30185,
 		trigger = 2,
 		condition = {
@@ -23159,11 +19525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.child2_benefit
-
-	var_10_7[30511] = {
+	pg.base.child2_benefit[30511] = {
 		id = 30511,
 		trigger = 13,
 		condition = {},
@@ -23178,11 +19540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.child2_benefit
-
-	var_10_8[30521] = {
+	pg.base.child2_benefit[30521] = {
 		id = 30521,
 		trigger = 13,
 		condition = {},
@@ -23197,11 +19555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.child2_benefit
-
-	var_10_9[30531] = {
+	pg.base.child2_benefit[30531] = {
 		id = 30531,
 		trigger = 13,
 		condition = {},
@@ -23216,11 +19570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.child2_benefit
-
-	var_10_10[30541] = {
+	pg.base.child2_benefit[30541] = {
 		id = 30541,
 		trigger = 13,
 		condition = {},
@@ -23235,11 +19585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.child2_benefit
-
-	var_10_11[35011] = {
+	pg.base.child2_benefit[35011] = {
 		id = 35011,
 		trigger = 13,
 		condition = {},
@@ -23278,11 +19624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.child2_benefit
-
-	var_10_12[35021] = {
+	pg.base.child2_benefit[35021] = {
 		id = 35021,
 		trigger = 13,
 		condition = {},
@@ -23321,11 +19663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.child2_benefit
-
-	var_10_13[35031] = {
+	pg.base.child2_benefit[35031] = {
 		id = 35031,
 		trigger = 13,
 		condition = {},
@@ -23364,11 +19702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.child2_benefit
-
-	var_10_14[35041] = {
+	pg.base.child2_benefit[35041] = {
 		id = 35041,
 		trigger = 13,
 		condition = {},
@@ -23407,11 +19741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.child2_benefit
-
-	var_10_15[35051] = {
+	pg.base.child2_benefit[35051] = {
 		id = 35051,
 		trigger = 13,
 		condition = {},
@@ -23426,11 +19756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.child2_benefit
-
-	var_10_16[35061] = {
+	pg.base.child2_benefit[35061] = {
 		id = 35061,
 		trigger = 13,
 		condition = {},
@@ -23445,11 +19771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.child2_benefit
-
-	var_10_17[35071] = {
+	pg.base.child2_benefit[35071] = {
 		id = 35071,
 		trigger = 13,
 		condition = {},
@@ -23464,11 +19786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.child2_benefit
-
-	var_10_18[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 35081,
 		trigger = 13,
 		condition = {},
@@ -23491,11 +19809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.child2_benefit
-
-	var_10_19[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 35091,
 		trigger = 13,
 		condition = {},
@@ -23510,11 +19824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.child2_benefit
-
-	var_10_20[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 35101,
 		trigger = 13,
 		condition = {},
@@ -23529,11 +19839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.child2_benefit
-
-	var_10_21[35111] = {
+	pg.base.child2_benefit[35111] = {
 		id = 35111,
 		trigger = 13,
 		condition = {},
@@ -23548,11 +19854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.child2_benefit
-
-	var_10_22[35121] = {
+	pg.base.child2_benefit[35121] = {
 		id = 35121,
 		trigger = 13,
 		condition = {},
@@ -23575,11 +19877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.child2_benefit
-
-	var_10_23[35131] = {
+	pg.base.child2_benefit[35131] = {
 		id = 35131,
 		trigger = 13,
 		condition = {},
@@ -23594,11 +19892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.child2_benefit
-
-	var_10_24[35141] = {
+	pg.base.child2_benefit[35141] = {
 		id = 35141,
 		trigger = 13,
 		condition = {},
@@ -23613,11 +19907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.child2_benefit
-
-	var_10_25[35151] = {
+	pg.base.child2_benefit[35151] = {
 		id = 35151,
 		trigger = 13,
 		condition = {},
@@ -23632,11 +19922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.child2_benefit
-
-	var_10_26[35161] = {
+	pg.base.child2_benefit[35161] = {
 		id = 35161,
 		trigger = 13,
 		condition = {},
@@ -23659,11 +19945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.child2_benefit
-
-	var_10_27[36011] = {
+	pg.base.child2_benefit[36011] = {
 		id = 36011,
 		trigger = 13,
 		condition = {},
@@ -23678,11 +19960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.child2_benefit
-
-	var_10_28[36021] = {
+	pg.base.child2_benefit[36021] = {
 		id = 36021,
 		trigger = 13,
 		condition = {},
@@ -23697,11 +19975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.child2_benefit
-
-	var_10_29[36031] = {
+	pg.base.child2_benefit[36031] = {
 		id = 36031,
 		trigger = 13,
 		condition = {},
@@ -23716,11 +19990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.child2_benefit
-
-	var_10_30[36041] = {
+	pg.base.child2_benefit[36041] = {
 		id = 36041,
 		trigger = 13,
 		condition = {},
@@ -23735,11 +20005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.child2_benefit
-
-	var_10_31[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 90001,
 		trigger = 13,
 		condition = {},
@@ -23794,11 +20060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.child2_benefit
-
-	var_10_32[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 90011,
 		trigger = 1,
 		condition = {
@@ -23850,11 +20112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.child2_benefit
-
-	var_10_33[28] = {
+	pg.base.child2_benefit[28] = {
 		id = 90012,
 		trigger = 1,
 		condition = {
@@ -23866,11 +20124,7 @@ end)()
 		},
 		effect = {}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.child2_benefit
-
-	var_10_34[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 90013,
 		trigger = 1,
 		condition = {
@@ -23923,11 +20177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.child2_benefit
-
-	var_10_35[30] = {
+	pg.base.child2_benefit[30] = {
 		id = 90014,
 		trigger = 1,
 		condition = {
@@ -23979,11 +20229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.child2_benefit
-
-	var_10_36[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 90015,
 		trigger = 13,
 		condition = {},
@@ -23998,11 +20244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.child2_benefit
-
-	var_10_37[90016] = {
+	pg.base.child2_benefit[90016] = {
 		id = 90016,
 		trigger = 13,
 		condition = {},
@@ -24017,11 +20259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.child2_benefit
-
-	var_10_38[90017] = {
+	pg.base.child2_benefit[90017] = {
 		id = 90017,
 		trigger = 13,
 		condition = {},
@@ -24036,11 +20274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.child2_benefit
-
-	var_10_39[90018] = {
+	pg.base.child2_benefit[90018] = {
 		id = 90018,
 		trigger = 13,
 		condition = {},
@@ -24055,11 +20289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.child2_benefit
-
-	var_10_40[201] = {
+	pg.base.child2_benefit[201] = {
 		id = 201,
 		trigger = 16,
 		condition = {},
@@ -24074,11 +20304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.child2_benefit
-
-	var_10_41[202] = {
+	pg.base.child2_benefit[202] = {
 		id = 202,
 		trigger = 17,
 		condition = {},
@@ -24093,11 +20319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.child2_benefit
-
-	var_10_42[203] = {
+	pg.base.child2_benefit[203] = {
 		id = 203,
 		trigger = 18,
 		condition = {},
@@ -24112,11 +20334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.child2_benefit
-
-	var_10_43[204] = {
+	pg.base.child2_benefit[204] = {
 		id = 204,
 		trigger = 19,
 		condition = {},
@@ -24131,11 +20349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.child2_benefit
-
-	var_10_44[205] = {
+	pg.base.child2_benefit[205] = {
 		id = 205,
 		trigger = 5,
 		condition = {
@@ -24155,11 +20369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.child2_benefit
-
-	var_10_45[206] = {
+	pg.base.child2_benefit[206] = {
 		id = 206,
 		trigger = 5,
 		condition = {
@@ -24179,11 +20389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.child2_benefit
-
-	var_10_46[207] = {
+	pg.base.child2_benefit[207] = {
 		id = 207,
 		trigger = 5,
 		condition = {
@@ -24203,11 +20409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.child2_benefit
-
-	var_10_47[208] = {
+	pg.base.child2_benefit[208] = {
 		id = 208,
 		trigger = 3,
 		condition = {
@@ -24223,11 +20425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.child2_benefit
-
-	var_10_48[209] = {
+	pg.base.child2_benefit[209] = {
 		id = 209,
 		trigger = 3,
 		condition = {
@@ -24243,11 +20441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.child2_benefit
-
-	var_10_49[210] = {
+	pg.base.child2_benefit[210] = {
 		id = 210,
 		trigger = 3,
 		condition = {
@@ -24269,11 +20463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.child2_benefit
-
-	var_10_50[211] = {
+	pg.base.child2_benefit[211] = {
 		id = 211,
 		trigger = 3,
 		condition = {
@@ -24308,11 +20498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.child2_benefit
-
-	var_10_51[212] = {
+	pg.base.child2_benefit[212] = {
 		id = 212,
 		trigger = 19,
 		condition = {
@@ -24333,11 +20519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.child2_benefit
-
-	var_10_52[213] = {
+	pg.base.child2_benefit[213] = {
 		id = 213,
 		trigger = 19,
 		condition = {
@@ -24361,11 +20543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.child2_benefit
-
-	var_10_53[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 32400011,
 		trigger = 13,
 		condition = {},
@@ -24380,11 +20558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.child2_benefit
-
-	var_10_54[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 32400021,
 		trigger = 13,
 		condition = {},
@@ -24399,11 +20573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.child2_benefit
-
-	var_10_55[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 32400031,
 		trigger = 2,
 		condition = {
@@ -24425,11 +20595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.child2_benefit
-
-	var_10_56[32400032] = {
+	pg.base.child2_benefit[32400032] = {
 		id = 32400032,
 		trigger = 2,
 		condition = {
@@ -24451,11 +20617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.child2_benefit
-
-	var_10_57[32400033] = {
+	pg.base.child2_benefit[32400033] = {
 		id = 32400033,
 		trigger = 2,
 		condition = {
@@ -24477,11 +20639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.child2_benefit
-
-	var_10_58[32400034] = {
+	pg.base.child2_benefit[32400034] = {
 		id = 32400034,
 		trigger = 2,
 		condition = {
@@ -24503,11 +20661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.child2_benefit
-
-	var_10_59[32400035] = {
+	pg.base.child2_benefit[32400035] = {
 		id = 32400035,
 		trigger = 2,
 		condition = {
@@ -24529,11 +20683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.child2_benefit
-
-	var_10_60[32400041] = {
+	pg.base.child2_benefit[32400041] = {
 		id = 32400041,
 		trigger = 13,
 		condition = {},
@@ -24548,11 +20698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.child2_benefit
-
-	var_10_61[32400051] = {
+	pg.base.child2_benefit[32400051] = {
 		id = 32400051,
 		trigger = 13,
 		condition = {},
@@ -24567,11 +20713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.child2_benefit
-
-	var_10_62[32400061] = {
+	pg.base.child2_benefit[32400061] = {
 		id = 32400061,
 		trigger = 1,
 		condition = {},
@@ -24587,11 +20729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.child2_benefit
-
-	var_10_63[32400071] = {
+	pg.base.child2_benefit[32400071] = {
 		id = 32400071,
 		trigger = 13,
 		condition = {},
@@ -24606,11 +20744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.child2_benefit
-
-	var_10_64[32400081] = {
+	pg.base.child2_benefit[32400081] = {
 		id = 32400081,
 		trigger = 13,
 		condition = {},
@@ -24625,11 +20759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.child2_benefit
-
-	var_10_65[32400091] = {
+	pg.base.child2_benefit[32400091] = {
 		id = 32400091,
 		trigger = 5,
 		condition = {
@@ -24649,11 +20779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.child2_benefit
-
-	var_10_66[32400092] = {
+	pg.base.child2_benefit[32400092] = {
 		id = 32400092,
 		trigger = 5,
 		condition = {
@@ -24669,11 +20795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.child2_benefit
-
-	var_10_67[32400101] = {
+	pg.base.child2_benefit[32400101] = {
 		id = 32400101,
 		trigger = 13,
 		condition = {},
@@ -24688,11 +20810,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.child2_benefit
-
-	var_10_68[32400111] = {
+	pg.base.child2_benefit[32400111] = {
 		id = 32400111,
 		trigger = 13,
 		condition = {},
@@ -24707,11 +20825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.child2_benefit
-
-	var_10_69[32400121] = {
+	pg.base.child2_benefit[32400121] = {
 		id = 32400121,
 		trigger = 2,
 		condition = {
@@ -24733,11 +20847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.child2_benefit
-
-	var_10_70[32400122] = {
+	pg.base.child2_benefit[32400122] = {
 		id = 32400122,
 		trigger = 2,
 		condition = {
@@ -24759,11 +20869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.child2_benefit
-
-	var_10_71[32400123] = {
+	pg.base.child2_benefit[32400123] = {
 		id = 32400123,
 		trigger = 2,
 		condition = {
@@ -24785,11 +20891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.child2_benefit
-
-	var_10_72[32400124] = {
+	pg.base.child2_benefit[32400124] = {
 		id = 32400124,
 		trigger = 2,
 		condition = {
@@ -24811,11 +20913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.child2_benefit
-
-	var_10_73[32400125] = {
+	pg.base.child2_benefit[32400125] = {
 		id = 32400125,
 		trigger = 2,
 		condition = {
@@ -24837,11 +20935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.child2_benefit
-
-	var_10_74[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 32400131,
 		trigger = 13,
 		condition = {},
@@ -24856,11 +20950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.child2_benefit
-
-	var_10_75[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 32400141,
 		trigger = 13,
 		condition = {},
@@ -24875,11 +20965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.child2_benefit
-
-	var_10_76[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 32400151,
 		trigger = 2,
 		condition = {
@@ -24901,11 +20987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.child2_benefit
-
-	var_10_77[24] = {
+	pg.base.child2_benefit[24] = {
 		id = 32400152,
 		trigger = 2,
 		condition = {
@@ -24927,11 +21009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.child2_benefit
-
-	var_10_78[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 32400153,
 		trigger = 2,
 		condition = {
@@ -24953,11 +21031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.child2_benefit
-
-	var_10_79[26] = {
+	pg.base.child2_benefit[26] = {
 		id = 32400154,
 		trigger = 2,
 		condition = {
@@ -24979,11 +21053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.child2_benefit
-
-	var_10_80[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 32400155,
 		trigger = 2,
 		condition = {
@@ -25005,11 +21075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.child2_benefit
-
-	var_10_81[32400161] = {
+	pg.base.child2_benefit[32400161] = {
 		id = 32400161,
 		trigger = 13,
 		condition = {},
@@ -25024,11 +21090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.child2_benefit
-
-	var_10_82[32400171] = {
+	pg.base.child2_benefit[32400171] = {
 		id = 32400171,
 		trigger = 13,
 		condition = {},
@@ -25043,11 +21105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.child2_benefit
-
-	var_10_83[32400181] = {
+	pg.base.child2_benefit[32400181] = {
 		id = 32400181,
 		trigger = 2,
 		condition = {
@@ -25069,11 +21127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.child2_benefit
-
-	var_10_84[32400182] = {
+	pg.base.child2_benefit[32400182] = {
 		id = 32400182,
 		trigger = 2,
 		condition = {
@@ -25095,11 +21149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.child2_benefit
-
-	var_10_85[32400183] = {
+	pg.base.child2_benefit[32400183] = {
 		id = 32400183,
 		trigger = 2,
 		condition = {
@@ -25121,11 +21171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.child2_benefit
-
-	var_10_86[32400184] = {
+	pg.base.child2_benefit[32400184] = {
 		id = 32400184,
 		trigger = 2,
 		condition = {
@@ -25147,11 +21193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.child2_benefit
-
-	var_10_87[32400185] = {
+	pg.base.child2_benefit[32400185] = {
 		id = 32400185,
 		trigger = 2,
 		condition = {
@@ -25173,11 +21215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.child2_benefit
-
-	var_10_88[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 36400011,
 		trigger = 13,
 		condition = {},
@@ -25192,11 +21230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.child2_benefit
-
-	var_10_89[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 36400021,
 		trigger = 13,
 		condition = {},
@@ -25211,11 +21245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.child2_benefit
-
-	var_10_90[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 36400031,
 		trigger = 2,
 		condition = {
@@ -25237,11 +21267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.child2_benefit
-
-	var_10_91[36400032] = {
+	pg.base.child2_benefit[36400032] = {
 		id = 36400032,
 		trigger = 2,
 		condition = {
@@ -25263,11 +21289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.child2_benefit
-
-	var_10_92[36400033] = {
+	pg.base.child2_benefit[36400033] = {
 		id = 36400033,
 		trigger = 2,
 		condition = {
@@ -25289,11 +21311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.child2_benefit
-
-	var_10_93[36400034] = {
+	pg.base.child2_benefit[36400034] = {
 		id = 36400034,
 		trigger = 2,
 		condition = {
@@ -25315,11 +21333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.child2_benefit
-
-	var_10_94[36400035] = {
+	pg.base.child2_benefit[36400035] = {
 		id = 36400035,
 		trigger = 2,
 		condition = {
@@ -25341,11 +21355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.child2_benefit
-
-	var_10_95[36400041] = {
+	pg.base.child2_benefit[36400041] = {
 		id = 36400041,
 		trigger = 13,
 		condition = {},
@@ -25360,11 +21370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.child2_benefit
-
-	var_10_96[36400051] = {
+	pg.base.child2_benefit[36400051] = {
 		id = 36400051,
 		trigger = 13,
 		condition = {},
@@ -25379,11 +21385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.child2_benefit
-
-	var_10_97[36400061] = {
+	pg.base.child2_benefit[36400061] = {
 		id = 36400061,
 		trigger = 1,
 		condition = {},
@@ -25399,11 +21401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.child2_benefit
-
-	var_10_98[36400071] = {
+	pg.base.child2_benefit[36400071] = {
 		id = 36400071,
 		trigger = 13,
 		condition = {},
@@ -25418,8 +21416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.child2_benefit[36400081] = {
+	pg.base.child2_benefit[36400081] = {
 		id = 36400081,
 		trigger = 13,
 		condition = {},
@@ -25438,11 +21435,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.child2_benefit
-
-	var_11_0[36400091] = {
+	pg.base.child2_benefit[36400091] = {
 		id = 36400091,
 		trigger = 5,
 		condition = {
@@ -25462,11 +21455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.child2_benefit
-
-	var_11_1[36400092] = {
+	pg.base.child2_benefit[36400092] = {
 		id = 36400092,
 		trigger = 5,
 		condition = {
@@ -25482,11 +21471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.child2_benefit
-
-	var_11_2[36400101] = {
+	pg.base.child2_benefit[36400101] = {
 		id = 36400101,
 		trigger = 13,
 		condition = {},
@@ -25501,11 +21486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.child2_benefit
-
-	var_11_3[36400111] = {
+	pg.base.child2_benefit[36400111] = {
 		id = 36400111,
 		trigger = 13,
 		condition = {},
@@ -25520,11 +21501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.child2_benefit
-
-	var_11_4[36400121] = {
+	pg.base.child2_benefit[36400121] = {
 		id = 36400121,
 		trigger = 2,
 		condition = {
@@ -25546,11 +21523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.child2_benefit
-
-	var_11_5[36400122] = {
+	pg.base.child2_benefit[36400122] = {
 		id = 36400122,
 		trigger = 2,
 		condition = {
@@ -25572,11 +21545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.child2_benefit
-
-	var_11_6[36400123] = {
+	pg.base.child2_benefit[36400123] = {
 		id = 36400123,
 		trigger = 2,
 		condition = {
@@ -25598,11 +21567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.child2_benefit
-
-	var_11_7[36400124] = {
+	pg.base.child2_benefit[36400124] = {
 		id = 36400124,
 		trigger = 2,
 		condition = {
@@ -25624,11 +21589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.child2_benefit
-
-	var_11_8[36400125] = {
+	pg.base.child2_benefit[36400125] = {
 		id = 36400125,
 		trigger = 2,
 		condition = {
@@ -25650,11 +21611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.child2_benefit
-
-	var_11_9[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 36400131,
 		trigger = 13,
 		condition = {},
@@ -25669,11 +21626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.child2_benefit
-
-	var_11_10[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 36400141,
 		trigger = 13,
 		condition = {},
@@ -25688,11 +21641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.child2_benefit
-
-	var_11_11[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 36400151,
 		trigger = 2,
 		condition = {
@@ -25714,11 +21663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.child2_benefit
-
-	var_11_12[24] = {
+	pg.base.child2_benefit[24] = {
 		id = 36400152,
 		trigger = 2,
 		condition = {
@@ -25740,11 +21685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.child2_benefit
-
-	var_11_13[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 36400153,
 		trigger = 2,
 		condition = {
@@ -25766,11 +21707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.child2_benefit
-
-	var_11_14[26] = {
+	pg.base.child2_benefit[26] = {
 		id = 36400154,
 		trigger = 2,
 		condition = {
@@ -25792,11 +21729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.child2_benefit
-
-	var_11_15[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 36400155,
 		trigger = 2,
 		condition = {
@@ -25818,11 +21751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.child2_benefit
-
-	var_11_16[36400161] = {
+	pg.base.child2_benefit[36400161] = {
 		id = 36400161,
 		trigger = 13,
 		condition = {},
@@ -25837,11 +21766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.child2_benefit
-
-	var_11_17[36400171] = {
+	pg.base.child2_benefit[36400171] = {
 		id = 36400171,
 		trigger = 13,
 		condition = {},
@@ -25856,11 +21781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.child2_benefit
-
-	var_11_18[36400181] = {
+	pg.base.child2_benefit[36400181] = {
 		id = 36400181,
 		trigger = 2,
 		condition = {
@@ -25882,11 +21803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.child2_benefit
-
-	var_11_19[36400182] = {
+	pg.base.child2_benefit[36400182] = {
 		id = 36400182,
 		trigger = 2,
 		condition = {
@@ -25908,11 +21825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.child2_benefit
-
-	var_11_20[36400183] = {
+	pg.base.child2_benefit[36400183] = {
 		id = 36400183,
 		trigger = 2,
 		condition = {
@@ -25934,11 +21847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.child2_benefit
-
-	var_11_21[36400184] = {
+	pg.base.child2_benefit[36400184] = {
 		id = 36400184,
 		trigger = 2,
 		condition = {
@@ -25960,11 +21869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.child2_benefit
-
-	var_11_22[36400185] = {
+	pg.base.child2_benefit[36400185] = {
 		id = 36400185,
 		trigger = 2,
 		condition = {
@@ -25986,11 +21891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.child2_benefit
-
-	var_11_23[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38107011,
 		trigger = 19,
 		condition = {
@@ -26007,11 +21908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.child2_benefit
-
-	var_11_24[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38107021,
 		trigger = 1,
 		condition = {},
@@ -26050,11 +21947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.child2_benefit
-
-	var_11_25[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38107031,
 		trigger = 3,
 		condition = {
@@ -26070,11 +21963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.child2_benefit
-
-	var_11_26[38106211] = {
+	pg.base.child2_benefit[38106211] = {
 		id = 38106211,
 		trigger = 5,
 		condition = {},
@@ -26085,11 +21974,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.child2_benefit
-
-	var_11_27[38107811] = {
+	pg.base.child2_benefit[38107811] = {
 		id = 38107811,
 		trigger = 3,
 		condition = {
@@ -26108,11 +21993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.child2_benefit
-
-	var_11_28[38107812] = {
+	pg.base.child2_benefit[38107812] = {
 		id = 38107812,
 		trigger = 1,
 		condition = {},
@@ -26135,21 +22016,13 @@ end)()
 			}
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.child2_benefit
-
-	var_11_29[38107813] = {
+	pg.base.child2_benefit[38107813] = {
 		id = 38107813,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.child2_benefit
-
-	var_11_30[38107814] = {
+	pg.base.child2_benefit[38107814] = {
 		id = 38107814,
 		trigger = 19,
 		condition = {
@@ -26166,11 +22039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.child2_benefit
-
-	var_11_31[38107815] = {
+	pg.base.child2_benefit[38107815] = {
 		id = 38107815,
 		trigger = 19,
 		condition = {
@@ -26187,11 +22056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.child2_benefit
-
-	var_11_32[38107816] = {
+	pg.base.child2_benefit[38107816] = {
 		id = 38107816,
 		trigger = 19,
 		condition = {
@@ -26208,11 +22073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.child2_benefit
-
-	var_11_33[38107817] = {
+	pg.base.child2_benefit[38107817] = {
 		id = 38107817,
 		trigger = 19,
 		condition = {
@@ -26229,11 +22090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.child2_benefit
-
-	var_11_34[38107818] = {
+	pg.base.child2_benefit[38107818] = {
 		id = 38107818,
 		trigger = 19,
 		condition = {
@@ -26250,11 +22107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.child2_benefit
-
-	var_11_35[38107819] = {
+	pg.base.child2_benefit[38107819] = {
 		id = 38107819,
 		trigger = 5,
 		condition = {
@@ -26270,11 +22123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.child2_benefit
-
-	var_11_36[38103211] = {
+	pg.base.child2_benefit[38103211] = {
 		id = 38103211,
 		trigger = 19,
 		condition = {
@@ -26320,11 +22169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.child2_benefit
-
-	var_11_37[38110411] = {
+	pg.base.child2_benefit[38110411] = {
 		id = 38110411,
 		trigger = 1,
 		condition = {},
@@ -26340,11 +22185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.child2_benefit
-
-	var_11_38[38106611] = {
+	pg.base.child2_benefit[38106611] = {
 		id = 38106611,
 		trigger = 5,
 		condition = {},
@@ -26355,11 +22196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.child2_benefit
-
-	var_11_39[38106612] = {
+	pg.base.child2_benefit[38106612] = {
 		id = 38106612,
 		trigger = 1,
 		condition = {},
@@ -26374,11 +22211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.child2_benefit
-
-	var_11_40[38106613] = {
+	pg.base.child2_benefit[38106613] = {
 		id = 38106613,
 		trigger = 1,
 		condition = {},
@@ -26393,11 +22226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.child2_benefit
-
-	var_11_41[38106614] = {
+	pg.base.child2_benefit[38106614] = {
 		id = 38106614,
 		trigger = 1,
 		condition = {},
@@ -26412,11 +22241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.child2_benefit
-
-	var_11_42[38106615] = {
+	pg.base.child2_benefit[38106615] = {
 		id = 38106615,
 		trigger = 1,
 		condition = {},
@@ -26431,11 +22256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.child2_benefit
-
-	var_11_43[38108211] = {
+	pg.base.child2_benefit[38108211] = {
 		id = 38108211,
 		trigger = 3,
 		condition = {
@@ -26456,11 +22277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.child2_benefit
-
-	var_11_44[38108212] = {
+	pg.base.child2_benefit[38108212] = {
 		id = 38108212,
 		trigger = 3,
 		condition = {
@@ -26481,11 +22298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.child2_benefit
-
-	var_11_45[38108213] = {
+	pg.base.child2_benefit[38108213] = {
 		id = 38108213,
 		trigger = 3,
 		condition = {
@@ -26506,11 +22319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.child2_benefit
-
-	var_11_46[38108214] = {
+	pg.base.child2_benefit[38108214] = {
 		id = 38108214,
 		trigger = 3,
 		condition = {
@@ -26531,11 +22340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.child2_benefit
-
-	var_11_47[38108215] = {
+	pg.base.child2_benefit[38108215] = {
 		id = 38108215,
 		trigger = 3,
 		condition = {
@@ -26556,11 +22361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.child2_benefit
-
-	var_11_48[38108216] = {
+	pg.base.child2_benefit[38108216] = {
 		id = 38108216,
 		trigger = 3,
 		condition = {
@@ -26581,11 +22382,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.child2_benefit
-
-	var_11_49[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38109211,
 		trigger = 1,
 		condition = {
@@ -26607,11 +22404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.child2_benefit
-
-	var_11_50[38105811] = {
+	pg.base.child2_benefit[38105811] = {
 		id = 38105811,
 		trigger = 19,
 		condition = {
@@ -26633,11 +22426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.child2_benefit
-
-	var_11_51[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38107411,
 		trigger = 3,
 		condition = {
@@ -26653,11 +22442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.child2_benefit
-
-	var_11_52[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 38107421,
 		trigger = 1,
 		condition = {},
@@ -26696,11 +22481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.child2_benefit
-
-	var_11_53[38105411] = {
+	pg.base.child2_benefit[38105411] = {
 		id = 38105411,
 		trigger = 1,
 		condition = {},
@@ -26739,11 +22520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.child2_benefit
-
-	var_11_54[38105412] = {
+	pg.base.child2_benefit[38105412] = {
 		id = 38105412,
 		trigger = 5,
 		condition = {
@@ -26763,11 +22540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.child2_benefit
-
-	var_11_55[38105413] = {
+	pg.base.child2_benefit[38105413] = {
 		id = 38105413,
 		trigger = 5,
 		condition = {
@@ -26787,11 +22560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.child2_benefit
-
-	var_11_56[38105414] = {
+	pg.base.child2_benefit[38105414] = {
 		id = 38105414,
 		trigger = 5,
 		condition = {
@@ -26811,11 +22580,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.child2_benefit
-
-	var_11_57[38105415] = {
+	pg.base.child2_benefit[38105415] = {
 		id = 38105415,
 		trigger = 5,
 		condition = {
@@ -26835,11 +22600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.child2_benefit
-
-	var_11_58[38105416] = {
+	pg.base.child2_benefit[38105416] = {
 		id = 38105416,
 		trigger = 5,
 		condition = {
@@ -26859,11 +22620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.child2_benefit
-
-	var_11_59[38105417] = {
+	pg.base.child2_benefit[38105417] = {
 		id = 38105417,
 		trigger = 5,
 		condition = {
@@ -26883,11 +22640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.child2_benefit
-
-	var_11_60[38105418] = {
+	pg.base.child2_benefit[38105418] = {
 		id = 38105418,
 		trigger = 5,
 		condition = {
@@ -26907,11 +22660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.child2_benefit
-
-	var_11_61[38105419] = {
+	pg.base.child2_benefit[38105419] = {
 		id = 38105419,
 		trigger = 5,
 		condition = {
@@ -26931,11 +22680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.child2_benefit
-
-	var_11_62[38105420] = {
+	pg.base.child2_benefit[38105420] = {
 		id = 38105420,
 		trigger = 5,
 		condition = {
@@ -26955,11 +22700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.child2_benefit
-
-	var_11_63[38105421] = {
+	pg.base.child2_benefit[38105421] = {
 		id = 38105421,
 		trigger = 5,
 		condition = {
@@ -26979,11 +22720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.child2_benefit
-
-	var_11_64[38105422] = {
+	pg.base.child2_benefit[38105422] = {
 		id = 38105422,
 		trigger = 5,
 		condition = {
@@ -27003,11 +22740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.child2_benefit
-
-	var_11_65[38105423] = {
+	pg.base.child2_benefit[38105423] = {
 		id = 38105423,
 		trigger = 5,
 		condition = {
@@ -27027,11 +22760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.child2_benefit
-
-	var_11_66[38105424] = {
+	pg.base.child2_benefit[38105424] = {
 		id = 38105424,
 		trigger = 5,
 		condition = {
@@ -27051,11 +22780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.child2_benefit
-
-	var_11_67[38105425] = {
+	pg.base.child2_benefit[38105425] = {
 		id = 38105425,
 		trigger = 5,
 		condition = {
@@ -27075,11 +22800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.child2_benefit
-
-	var_11_68[38105426] = {
+	pg.base.child2_benefit[38105426] = {
 		id = 38105426,
 		trigger = 5,
 		condition = {
@@ -27099,11 +22820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.child2_benefit
-
-	var_11_69[38105427] = {
+	pg.base.child2_benefit[38105427] = {
 		id = 38105427,
 		trigger = 5,
 		condition = {
@@ -27123,11 +22840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.child2_benefit
-
-	var_11_70[38105428] = {
+	pg.base.child2_benefit[38105428] = {
 		id = 38105428,
 		trigger = 5,
 		condition = {
@@ -27147,11 +22860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.child2_benefit
-
-	var_11_71[38105429] = {
+	pg.base.child2_benefit[38105429] = {
 		id = 38105429,
 		trigger = 5,
 		condition = {
@@ -27171,11 +22880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.child2_benefit
-
-	var_11_72[38105430] = {
+	pg.base.child2_benefit[38105430] = {
 		id = 38105430,
 		trigger = 5,
 		condition = {
@@ -27195,11 +22900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.child2_benefit
-
-	var_11_73[38105431] = {
+	pg.base.child2_benefit[38105431] = {
 		id = 38105431,
 		trigger = 5,
 		condition = {
@@ -27219,11 +22920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.child2_benefit
-
-	var_11_74[38150011] = {
+	pg.base.child2_benefit[38150011] = {
 		id = 38150011,
 		trigger = 1,
 		condition = {},
@@ -27262,11 +22959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.child2_benefit
-
-	var_11_75[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 38150021,
 		trigger = 1,
 		condition = {},
@@ -27305,11 +22998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.child2_benefit
-
-	var_11_76[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38150031,
 		trigger = 1,
 		condition = {},
@@ -27348,11 +23037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.child2_benefit
-
-	var_11_77[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38150041,
 		trigger = 1,
 		condition = {},
@@ -27391,11 +23076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.child2_benefit
-
-	var_11_78[38150051] = {
+	pg.base.child2_benefit[38150051] = {
 		id = 38150051,
 		trigger = 1,
 		condition = {},
@@ -27434,11 +23115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.child2_benefit
-
-	var_11_79[38150061] = {
+	pg.base.child2_benefit[38150061] = {
 		id = 38150061,
 		trigger = 1,
 		condition = {},
@@ -27477,11 +23154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.child2_benefit
-
-	var_11_80[38150071] = {
+	pg.base.child2_benefit[38150071] = {
 		id = 38150071,
 		trigger = 1,
 		condition = {},
@@ -27520,11 +23193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.child2_benefit
-
-	var_11_81[38150081] = {
+	pg.base.child2_benefit[38150081] = {
 		id = 38150081,
 		trigger = 1,
 		condition = {},
@@ -27563,11 +23232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.child2_benefit
-
-	var_11_82[38150091] = {
+	pg.base.child2_benefit[38150091] = {
 		id = 38150091,
 		trigger = 1,
 		condition = {},
@@ -27606,11 +23271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.child2_benefit
-
-	var_11_83[38150101] = {
+	pg.base.child2_benefit[38150101] = {
 		id = 38150101,
 		trigger = 1,
 		condition = {},
@@ -27649,11 +23310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.child2_benefit
-
-	var_11_84[38150111] = {
+	pg.base.child2_benefit[38150111] = {
 		id = 38150111,
 		trigger = 1,
 		condition = {},
@@ -27692,11 +23349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.child2_benefit
-
-	var_11_85[38150121] = {
+	pg.base.child2_benefit[38150121] = {
 		id = 38150121,
 		trigger = 1,
 		condition = {},
@@ -27735,11 +23388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.child2_benefit
-
-	var_11_86[38150131] = {
+	pg.base.child2_benefit[38150131] = {
 		id = 38150131,
 		trigger = 1,
 		condition = {},
@@ -27778,11 +23427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.child2_benefit
-
-	var_11_87[38150141] = {
+	pg.base.child2_benefit[38150141] = {
 		id = 38150141,
 		trigger = 1,
 		condition = {},
@@ -27821,11 +23466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.child2_benefit
-
-	var_11_88[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38150151,
 		trigger = 1,
 		condition = {},
@@ -27864,11 +23505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.child2_benefit
-
-	var_11_89[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 38150161,
 		trigger = 1,
 		condition = {},
@@ -27907,11 +23544,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.child2_benefit
-
-	var_11_90[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38150171,
 		trigger = 1,
 		condition = {},
@@ -27950,11 +23583,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.child2_benefit
-
-	var_11_91[38150181] = {
+	pg.base.child2_benefit[38150181] = {
 		id = 38150181,
 		trigger = 1,
 		condition = {},
@@ -27993,11 +23622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.child2_benefit
-
-	var_11_92[38150191] = {
+	pg.base.child2_benefit[38150191] = {
 		id = 38150191,
 		trigger = 1,
 		condition = {},
@@ -28036,11 +23661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.child2_benefit
-
-	var_11_93[38150201] = {
+	pg.base.child2_benefit[38150201] = {
 		id = 38150201,
 		trigger = 1,
 		condition = {},
@@ -28079,11 +23700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.child2_benefit
-
-	var_11_94[38104411] = {
+	pg.base.child2_benefit[38104411] = {
 		id = 38104411,
 		trigger = 5,
 		condition = {
@@ -28129,11 +23746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.child2_benefit
-
-	var_11_95[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38103811,
 		trigger = 19,
 		condition = {
@@ -28179,11 +23792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.child2_benefit
-
-	var_11_96[4] = {
+	pg.base.child2_benefit[4] = {
 		id = 38103812,
 		trigger = 5,
 		condition = {},
@@ -28202,11 +23811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.child2_benefit
-
-	var_11_97[38110811] = {
+	pg.base.child2_benefit[38110811] = {
 		id = 38110811,
 		trigger = 1,
 		condition = {
@@ -28266,11 +23871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.child2_benefit
-
-	var_11_98[38150202] = {
+	pg.base.child2_benefit[38150202] = {
 		id = 38150202,
 		trigger = 1,
 		condition = {
@@ -28330,8 +23931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.child2_benefit[38150203] = {
+	pg.base.child2_benefit[38150203] = {
 		id = 38150203,
 		trigger = 1,
 		condition = {
@@ -28395,11 +23995,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.child2_benefit
-
-	var_12_0[38150204] = {
+	pg.base.child2_benefit[38150204] = {
 		id = 38150204,
 		trigger = 1,
 		condition = {
@@ -28459,11 +24055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.child2_benefit
-
-	var_12_1[38150205] = {
+	pg.base.child2_benefit[38150205] = {
 		id = 38150205,
 		trigger = 1,
 		condition = {
@@ -28523,11 +24115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.child2_benefit
-
-	var_12_2[38150206] = {
+	pg.base.child2_benefit[38150206] = {
 		id = 38150206,
 		trigger = 1,
 		condition = {
@@ -28587,11 +24175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.child2_benefit
-
-	var_12_3[38150207] = {
+	pg.base.child2_benefit[38150207] = {
 		id = 38150207,
 		trigger = 1,
 		condition = {
@@ -28651,11 +24235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.child2_benefit
-
-	var_12_4[38150208] = {
+	pg.base.child2_benefit[38150208] = {
 		id = 38150208,
 		trigger = 1,
 		condition = {
@@ -28715,11 +24295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.child2_benefit
-
-	var_12_5[38150209] = {
+	pg.base.child2_benefit[38150209] = {
 		id = 38150209,
 		trigger = 1,
 		condition = {
@@ -28779,11 +24355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.child2_benefit
-
-	var_12_6[38150210] = {
+	pg.base.child2_benefit[38150210] = {
 		id = 38150210,
 		trigger = 1,
 		condition = {
@@ -28843,11 +24415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.child2_benefit
-
-	var_12_7[38150211] = {
+	pg.base.child2_benefit[38150211] = {
 		id = 38150211,
 		trigger = 1,
 		condition = {
@@ -28907,11 +24475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.child2_benefit
-
-	var_12_8[38150212] = {
+	pg.base.child2_benefit[38150212] = {
 		id = 38150212,
 		trigger = 1,
 		condition = {
@@ -28971,11 +24535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.child2_benefit
-
-	var_12_9[38150213] = {
+	pg.base.child2_benefit[38150213] = {
 		id = 38150213,
 		trigger = 1,
 		condition = {
@@ -29035,11 +24595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.child2_benefit
-
-	var_12_10[38150214] = {
+	pg.base.child2_benefit[38150214] = {
 		id = 38150214,
 		trigger = 1,
 		condition = {
@@ -29099,11 +24655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.child2_benefit
-
-	var_12_11[38150215] = {
+	pg.base.child2_benefit[38150215] = {
 		id = 38150215,
 		trigger = 1,
 		condition = {
@@ -29163,11 +24715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.child2_benefit
-
-	var_12_12[38150216] = {
+	pg.base.child2_benefit[38150216] = {
 		id = 38150216,
 		trigger = 1,
 		condition = {
@@ -29227,11 +24775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.child2_benefit
-
-	var_12_13[38150217] = {
+	pg.base.child2_benefit[38150217] = {
 		id = 38150217,
 		trigger = 1,
 		condition = {
@@ -29291,11 +24835,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.child2_benefit
-
-	var_12_14[38150218] = {
+	pg.base.child2_benefit[38150218] = {
 		id = 38150218,
 		trigger = 1,
 		condition = {
@@ -29355,11 +24895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.child2_benefit
-
-	var_12_15[38150219] = {
+	pg.base.child2_benefit[38150219] = {
 		id = 38150219,
 		trigger = 1,
 		condition = {
@@ -29419,11 +24955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.child2_benefit
-
-	var_12_16[38150220] = {
+	pg.base.child2_benefit[38150220] = {
 		id = 38150220,
 		trigger = 1,
 		condition = {
@@ -29483,11 +25015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.child2_benefit
-
-	var_12_17[38150221] = {
+	pg.base.child2_benefit[38150221] = {
 		id = 38150221,
 		trigger = 1,
 		condition = {
@@ -29547,11 +25075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.child2_benefit
-
-	var_12_18[38150222] = {
+	pg.base.child2_benefit[38150222] = {
 		id = 38150222,
 		trigger = 1,
 		condition = {
@@ -29611,11 +25135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.child2_benefit
-
-	var_12_19[38150223] = {
+	pg.base.child2_benefit[38150223] = {
 		id = 38150223,
 		trigger = 1,
 		condition = {
@@ -29675,11 +25195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.child2_benefit
-
-	var_12_20[38150224] = {
+	pg.base.child2_benefit[38150224] = {
 		id = 38150224,
 		trigger = 1,
 		condition = {
@@ -29739,11 +25255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.child2_benefit
-
-	var_12_21[38150225] = {
+	pg.base.child2_benefit[38150225] = {
 		id = 38150225,
 		trigger = 1,
 		condition = {
@@ -29803,11 +25315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.child2_benefit
-
-	var_12_22[38150226] = {
+	pg.base.child2_benefit[38150226] = {
 		id = 38150226,
 		trigger = 1,
 		condition = {
@@ -29867,11 +25375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.child2_benefit
-
-	var_12_23[38150227] = {
+	pg.base.child2_benefit[38150227] = {
 		id = 38150227,
 		trigger = 1,
 		condition = {
@@ -29931,11 +25435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.child2_benefit
-
-	var_12_24[38150228] = {
+	pg.base.child2_benefit[38150228] = {
 		id = 38150228,
 		trigger = 1,
 		condition = {
@@ -29995,11 +25495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.child2_benefit
-
-	var_12_25[38150229] = {
+	pg.base.child2_benefit[38150229] = {
 		id = 38150229,
 		trigger = 1,
 		condition = {
@@ -30059,11 +25555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.child2_benefit
-
-	var_12_26[38150230] = {
+	pg.base.child2_benefit[38150230] = {
 		id = 38150230,
 		trigger = 1,
 		condition = {
@@ -30123,11 +25615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.child2_benefit
-
-	var_12_27[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38100111,
 		trigger = 19,
 		condition = {
@@ -30149,11 +25637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.child2_benefit
-
-	var_12_28[38102611] = {
+	pg.base.child2_benefit[38102611] = {
 		id = 38102611,
 		trigger = 1,
 		condition = {
@@ -30173,11 +25657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.child2_benefit
-
-	var_12_29[38150231] = {
+	pg.base.child2_benefit[38150231] = {
 		id = 38150231,
 		trigger = 1,
 		condition = {
@@ -30197,11 +25677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.child2_benefit
-
-	var_12_30[38150232] = {
+	pg.base.child2_benefit[38150232] = {
 		id = 38150232,
 		trigger = 1,
 		condition = {
@@ -30221,11 +25697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.child2_benefit
-
-	var_12_31[38150233] = {
+	pg.base.child2_benefit[38150233] = {
 		id = 38150233,
 		trigger = 1,
 		condition = {
@@ -30245,11 +25717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.child2_benefit
-
-	var_12_32[38150234] = {
+	pg.base.child2_benefit[38150234] = {
 		id = 38150234,
 		trigger = 1,
 		condition = {
@@ -30269,11 +25737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.child2_benefit
-
-	var_12_33[38150235] = {
+	pg.base.child2_benefit[38150235] = {
 		id = 38150235,
 		trigger = 1,
 		condition = {
@@ -30293,11 +25757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.child2_benefit
-
-	var_12_34[38150236] = {
+	pg.base.child2_benefit[38150236] = {
 		id = 38150236,
 		trigger = 1,
 		condition = {
@@ -30317,11 +25777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.child2_benefit
-
-	var_12_35[38150237] = {
+	pg.base.child2_benefit[38150237] = {
 		id = 38150237,
 		trigger = 1,
 		condition = {
@@ -30341,11 +25797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.child2_benefit
-
-	var_12_36[38150238] = {
+	pg.base.child2_benefit[38150238] = {
 		id = 38150238,
 		trigger = 1,
 		condition = {
@@ -30365,11 +25817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.child2_benefit
-
-	var_12_37[38150239] = {
+	pg.base.child2_benefit[38150239] = {
 		id = 38150239,
 		trigger = 1,
 		condition = {
@@ -30389,11 +25837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.child2_benefit
-
-	var_12_38[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38101911,
 		trigger = 5,
 		condition = {
@@ -30439,11 +25883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.child2_benefit
-
-	var_12_39[24] = {
+	pg.base.child2_benefit[24] = {
 		id = 38101912,
 		trigger = 13,
 		condition = {},
@@ -30454,11 +25894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.child2_benefit
-
-	var_12_40[38101311] = {
+	pg.base.child2_benefit[38101311] = {
 		id = 38101311,
 		trigger = 6,
 		condition = {
@@ -30518,11 +25954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.child2_benefit
-
-	var_12_41[38108611] = {
+	pg.base.child2_benefit[38108611] = {
 		id = 38108611,
 		trigger = 5,
 		condition = {
@@ -30566,11 +25998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.child2_benefit
-
-	var_12_42[38108621] = {
+	pg.base.child2_benefit[38108621] = {
 		id = 38108621,
 		trigger = 5,
 		condition = {
@@ -30614,11 +26042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.child2_benefit
-
-	var_12_43[38100711] = {
+	pg.base.child2_benefit[38100711] = {
 		id = 38100711,
 		trigger = 1,
 		condition = {
@@ -30664,11 +26088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.child2_benefit
-
-	var_12_44[38109811] = {
+	pg.base.child2_benefit[38109811] = {
 		id = 38109811,
 		trigger = 17,
 		condition = {
@@ -30730,11 +26150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.child2_benefit
-
-	var_12_45[38104811] = {
+	pg.base.child2_benefit[38104811] = {
 		id = 38104811,
 		trigger = 20,
 		condition = {
@@ -30751,11 +26167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.child2_benefit
-
-	var_12_46[38104821] = {
+	pg.base.child2_benefit[38104821] = {
 		id = 38104821,
 		trigger = 20,
 		condition = {},
@@ -30766,11 +26178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.child2_benefit
-
-	var_12_47[38100211] = {
+	pg.base.child2_benefit[38100211] = {
 		id = 38100211,
 		trigger = 19,
 		condition = {
@@ -30801,11 +26209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.child2_benefit
-
-	var_12_48[38100311] = {
+	pg.base.child2_benefit[38100311] = {
 		id = 38100311,
 		trigger = 19,
 		condition = {
@@ -30836,11 +26240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.child2_benefit
-
-	var_12_49[38100411] = {
+	pg.base.child2_benefit[38100411] = {
 		id = 38100411,
 		trigger = 1,
 		condition = {
@@ -30885,11 +26285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.child2_benefit
-
-	var_12_50[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38100511,
 		trigger = 3,
 		condition = {
@@ -30934,11 +26330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.child2_benefit
-
-	var_12_51[38100521] = {
+	pg.base.child2_benefit[38100521] = {
 		id = 38100521,
 		trigger = 3,
 		condition = {},
@@ -30977,11 +26369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.child2_benefit
-
-	var_12_52[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38100611,
 		trigger = 5,
 		condition = {
@@ -30997,11 +26385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.child2_benefit
-
-	var_12_53[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38100621,
 		trigger = 1,
 		condition = {},
@@ -31016,11 +26400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.child2_benefit
-
-	var_12_54[38100811] = {
+	pg.base.child2_benefit[38100811] = {
 		id = 38100811,
 		trigger = 18,
 		condition = {
@@ -31040,11 +26420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.child2_benefit
-
-	var_12_55[38100911] = {
+	pg.base.child2_benefit[38100911] = {
 		id = 38100911,
 		trigger = 5,
 		condition = {
@@ -31064,11 +26440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.child2_benefit
-
-	var_12_56[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38101011,
 		trigger = 5,
 		condition = {
@@ -31084,11 +26456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.child2_benefit
-
-	var_12_57[38101111] = {
+	pg.base.child2_benefit[38101111] = {
 		id = 38101111,
 		trigger = 5,
 		condition = {
@@ -31105,11 +26473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.child2_benefit
-
-	var_12_58[38101211] = {
+	pg.base.child2_benefit[38101211] = {
 		id = 38101211,
 		trigger = 18,
 		condition = {},
@@ -31120,11 +26484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.child2_benefit
-
-	var_12_59[38101411] = {
+	pg.base.child2_benefit[38101411] = {
 		id = 38101411,
 		trigger = 6,
 		condition = {
@@ -31160,11 +26520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.child2_benefit
-
-	var_12_60[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38101511,
 		trigger = 6,
 		condition = {
@@ -31185,11 +26541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.child2_benefit
-
-	var_12_61[38101611] = {
+	pg.base.child2_benefit[38101611] = {
 		id = 38101611,
 		trigger = 1,
 		condition = {},
@@ -31253,11 +26605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.child2_benefit
-
-	var_12_62[38101711] = {
+	pg.base.child2_benefit[38101711] = {
 		id = 38101711,
 		trigger = 1,
 		condition = {},
@@ -31325,11 +26673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.child2_benefit
-
-	var_12_63[38101811] = {
+	pg.base.child2_benefit[38101811] = {
 		id = 38101811,
 		trigger = 6,
 		condition = {
@@ -31389,11 +26733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.child2_benefit
-
-	var_12_64[38102011] = {
+	pg.base.child2_benefit[38102011] = {
 		id = 38102011,
 		trigger = 2,
 		condition = {},
@@ -31448,11 +26788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.child2_benefit
-
-	var_12_65[38102012] = {
+	pg.base.child2_benefit[38102012] = {
 		id = 38102012,
 		trigger = 5,
 		condition = {},
@@ -31491,11 +26827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.child2_benefit
-
-	var_12_66[38102111] = {
+	pg.base.child2_benefit[38102111] = {
 		id = 38102111,
 		trigger = 6,
 		condition = {
@@ -31523,11 +26855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.child2_benefit
-
-	var_12_67[38102211] = {
+	pg.base.child2_benefit[38102211] = {
 		id = 38102211,
 		trigger = 6,
 		condition = {
@@ -31555,11 +26883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.child2_benefit
-
-	var_12_68[38102311] = {
+	pg.base.child2_benefit[38102311] = {
 		id = 38102311,
 		trigger = 19,
 		condition = {
@@ -31606,11 +26930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.child2_benefit
-
-	var_12_69[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38102411,
 		trigger = 19,
 		condition = {
@@ -31657,11 +26977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.child2_benefit
-
-	var_12_70[38102511] = {
+	pg.base.child2_benefit[38102511] = {
 		id = 38102511,
 		trigger = 5,
 		condition = {
@@ -31707,11 +27023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.child2_benefit
-
-	var_12_71[38102521] = {
+	pg.base.child2_benefit[38102521] = {
 		id = 38102521,
 		trigger = 1,
 		condition = {},
@@ -31750,11 +27062,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.child2_benefit
-
-	var_12_72[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38102531,
 		trigger = 1,
 		condition = {},
@@ -31793,11 +27101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.child2_benefit
-
-	var_12_73[38102112] = {
+	pg.base.child2_benefit[38102112] = {
 		id = 38102112,
 		trigger = 13,
 		condition = {},
@@ -31808,11 +27112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.child2_benefit
-
-	var_12_74[38102212] = {
+	pg.base.child2_benefit[38102212] = {
 		id = 38102212,
 		trigger = 13,
 		condition = {},
@@ -31823,11 +27123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.child2_benefit
-
-	var_12_75[38102312] = {
+	pg.base.child2_benefit[38102312] = {
 		id = 38102312,
 		trigger = 13,
 		condition = {},
@@ -31838,11 +27134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.child2_benefit
-
-	var_12_76[12] = {
+	pg.base.child2_benefit[12] = {
 		id = 38102412,
 		trigger = 13,
 		condition = {},
@@ -31853,11 +27145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.child2_benefit
-
-	var_12_77[38102512] = {
+	pg.base.child2_benefit[38102512] = {
 		id = 38102512,
 		trigger = 13,
 		condition = {},
@@ -31868,11 +27156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.child2_benefit
-
-	var_12_78[38102113] = {
+	pg.base.child2_benefit[38102113] = {
 		id = 38102113,
 		trigger = 1,
 		condition = {
@@ -31918,11 +27202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.child2_benefit
-
-	var_12_79[38102213] = {
+	pg.base.child2_benefit[38102213] = {
 		id = 38102213,
 		trigger = 1,
 		condition = {
@@ -31968,11 +27248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.child2_benefit
-
-	var_12_80[38102711] = {
+	pg.base.child2_benefit[38102711] = {
 		id = 38102711,
 		trigger = 3,
 		condition = {
@@ -32032,11 +27308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.child2_benefit
-
-	var_12_81[38102712] = {
+	pg.base.child2_benefit[38102712] = {
 		id = 38102712,
 		trigger = 3,
 		condition = {
@@ -32096,11 +27368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.child2_benefit
-
-	var_12_82[38102713] = {
+	pg.base.child2_benefit[38102713] = {
 		id = 38102713,
 		trigger = 3,
 		condition = {
@@ -32160,11 +27428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.child2_benefit
-
-	var_12_83[38102714] = {
+	pg.base.child2_benefit[38102714] = {
 		id = 38102714,
 		trigger = 3,
 		condition = {
@@ -32224,11 +27488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.child2_benefit
-
-	var_12_84[38102715] = {
+	pg.base.child2_benefit[38102715] = {
 		id = 38102715,
 		trigger = 3,
 		condition = {
@@ -32288,11 +27548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.child2_benefit
-
-	var_12_85[38102716] = {
+	pg.base.child2_benefit[38102716] = {
 		id = 38102716,
 		trigger = 3,
 		condition = {
@@ -32352,11 +27608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.child2_benefit
-
-	var_12_86[38102717] = {
+	pg.base.child2_benefit[38102717] = {
 		id = 38102717,
 		trigger = 3,
 		condition = {
@@ -32416,11 +27668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.child2_benefit
-
-	var_12_87[38102718] = {
+	pg.base.child2_benefit[38102718] = {
 		id = 38102718,
 		trigger = 3,
 		condition = {
@@ -32480,11 +27728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.child2_benefit
-
-	var_12_88[38102719] = {
+	pg.base.child2_benefit[38102719] = {
 		id = 38102719,
 		trigger = 3,
 		condition = {
@@ -32544,11 +27788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.child2_benefit
-
-	var_12_89[38102720] = {
+	pg.base.child2_benefit[38102720] = {
 		id = 38102720,
 		trigger = 3,
 		condition = {
@@ -32608,11 +27848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.child2_benefit
-
-	var_12_90[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38102811,
 		trigger = 13,
 		condition = {},
@@ -32627,11 +27863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.child2_benefit
-
-	var_12_91[38102821] = {
+	pg.base.child2_benefit[38102821] = {
 		id = 38102821,
 		trigger = 1,
 		condition = {},
@@ -32646,11 +27878,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.child2_benefit
-
-	var_12_92[38102911] = {
+	pg.base.child2_benefit[38102911] = {
 		id = 38102911,
 		trigger = 19,
 		condition = {
@@ -32666,11 +27894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.child2_benefit
-
-	var_12_93[0] = {
+	pg.base.child2_benefit[0] = {
 		id = 38102912,
 		trigger = 13,
 		condition = {},
@@ -32709,11 +27933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.child2_benefit
-
-	var_12_94[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38102913,
 		trigger = 19,
 		condition = {
@@ -32729,11 +27949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.child2_benefit
-
-	var_12_95[38103011] = {
+	pg.base.child2_benefit[38103011] = {
 		id = 38103011,
 		trigger = 19,
 		condition = {
@@ -32750,11 +27966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.child2_benefit
-
-	var_12_96[38103012] = {
+	pg.base.child2_benefit[38103012] = {
 		id = 38103012,
 		trigger = 13,
 		condition = {},
@@ -32769,11 +27981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.child2_benefit
-
-	var_12_97[38103111] = {
+	pg.base.child2_benefit[38103111] = {
 		id = 38103111,
 		trigger = 19,
 		condition = {
@@ -32790,11 +27998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.child2_benefit
-
-	var_12_98[38103112] = {
+	pg.base.child2_benefit[38103112] = {
 		id = 38103112,
 		trigger = 13,
 		condition = {},
@@ -32809,8 +28013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.child2_benefit[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38103311,
 		trigger = 19,
 		condition = {
@@ -32838,11 +28041,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.child2_benefit
-
-	var_13_0[38103411] = {
+	pg.base.child2_benefit[38103411] = {
 		id = 38103411,
 		trigger = 5,
 		condition = {
@@ -32864,11 +28063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.child2_benefit
-
-	var_13_1[38103511] = {
+	pg.base.child2_benefit[38103511] = {
 		id = 38103511,
 		trigger = 19,
 		condition = {
@@ -32888,11 +28083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.child2_benefit
-
-	var_13_2[38103611] = {
+	pg.base.child2_benefit[38103611] = {
 		id = 38103611,
 		trigger = 1,
 		condition = {},
@@ -32907,11 +28098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.child2_benefit
-
-	var_13_3[38103612] = {
+	pg.base.child2_benefit[38103612] = {
 		id = 38103612,
 		trigger = 3,
 		condition = {},
@@ -32930,11 +28117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.child2_benefit
-
-	var_13_4[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38103711,
 		trigger = 19,
 		condition = {
@@ -32952,11 +28135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.child2_benefit
-
-	var_13_5[38150511] = {
+	pg.base.child2_benefit[38150511] = {
 		id = 38150511,
 		trigger = 19,
 		condition = {
@@ -32974,11 +28153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.child2_benefit
-
-	var_13_6[38150521] = {
+	pg.base.child2_benefit[38150521] = {
 		id = 38150521,
 		trigger = 19,
 		condition = {
@@ -32996,11 +28171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.child2_benefit
-
-	var_13_7[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38150531,
 		trigger = 19,
 		condition = {
@@ -33018,11 +28189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.child2_benefit
-
-	var_13_8[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38150541,
 		trigger = 19,
 		condition = {
@@ -33040,11 +28207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.child2_benefit
-
-	var_13_9[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38150551,
 		trigger = 19,
 		condition = {
@@ -33062,11 +28225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.child2_benefit
-
-	var_13_10[38150561] = {
+	pg.base.child2_benefit[38150561] = {
 		id = 38150561,
 		trigger = 19,
 		condition = {
@@ -33084,11 +28243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.child2_benefit
-
-	var_13_11[38150571] = {
+	pg.base.child2_benefit[38150571] = {
 		id = 38150571,
 		trigger = 19,
 		condition = {
@@ -33106,11 +28261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.child2_benefit
-
-	var_13_12[38150581] = {
+	pg.base.child2_benefit[38150581] = {
 		id = 38150581,
 		trigger = 19,
 		condition = {
@@ -33128,11 +28279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.child2_benefit
-
-	var_13_13[38150591] = {
+	pg.base.child2_benefit[38150591] = {
 		id = 38150591,
 		trigger = 19,
 		condition = {
@@ -33150,11 +28297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.child2_benefit
-
-	var_13_14[38150601] = {
+	pg.base.child2_benefit[38150601] = {
 		id = 38150601,
 		trigger = 19,
 		condition = {
@@ -33172,11 +28315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.child2_benefit
-
-	var_13_15[38150611] = {
+	pg.base.child2_benefit[38150611] = {
 		id = 38150611,
 		trigger = 19,
 		condition = {
@@ -33194,11 +28333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.child2_benefit
-
-	var_13_16[38150621] = {
+	pg.base.child2_benefit[38150621] = {
 		id = 38150621,
 		trigger = 19,
 		condition = {
@@ -33216,11 +28351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.child2_benefit
-
-	var_13_17[38150631] = {
+	pg.base.child2_benefit[38150631] = {
 		id = 38150631,
 		trigger = 19,
 		condition = {
@@ -33238,11 +28369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.child2_benefit
-
-	var_13_18[38150641] = {
+	pg.base.child2_benefit[38150641] = {
 		id = 38150641,
 		trigger = 19,
 		condition = {
@@ -33260,11 +28387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.child2_benefit
-
-	var_13_19[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 38150661,
 		trigger = 1,
 		condition = {},
@@ -33303,11 +28426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.child2_benefit
-
-	var_13_20[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38150671,
 		trigger = 1,
 		condition = {},
@@ -33346,11 +28465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.child2_benefit
-
-	var_13_21[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38150681,
 		trigger = 1,
 		condition = {},
@@ -33389,11 +28504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.child2_benefit
-
-	var_13_22[38150691] = {
+	pg.base.child2_benefit[38150691] = {
 		id = 38150691,
 		trigger = 1,
 		condition = {},
@@ -33432,11 +28543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.child2_benefit
-
-	var_13_23[38150701] = {
+	pg.base.child2_benefit[38150701] = {
 		id = 38150701,
 		trigger = 1,
 		condition = {},
@@ -33475,11 +28582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.child2_benefit
-
-	var_13_24[38150711] = {
+	pg.base.child2_benefit[38150711] = {
 		id = 38150711,
 		trigger = 1,
 		condition = {},
@@ -33518,11 +28621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.child2_benefit
-
-	var_13_25[38150721] = {
+	pg.base.child2_benefit[38150721] = {
 		id = 38150721,
 		trigger = 1,
 		condition = {},
@@ -33561,11 +28660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.child2_benefit
-
-	var_13_26[38150731] = {
+	pg.base.child2_benefit[38150731] = {
 		id = 38150731,
 		trigger = 1,
 		condition = {},
@@ -33604,11 +28699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.child2_benefit
-
-	var_13_27[38150741] = {
+	pg.base.child2_benefit[38150741] = {
 		id = 38150741,
 		trigger = 1,
 		condition = {},
@@ -33647,11 +28738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.child2_benefit
-
-	var_13_28[38150751] = {
+	pg.base.child2_benefit[38150751] = {
 		id = 38150751,
 		trigger = 1,
 		condition = {},
@@ -33690,11 +28777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.child2_benefit
-
-	var_13_29[38150761] = {
+	pg.base.child2_benefit[38150761] = {
 		id = 38150761,
 		trigger = 1,
 		condition = {},
@@ -33733,11 +28816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.child2_benefit
-
-	var_13_30[38150771] = {
+	pg.base.child2_benefit[38150771] = {
 		id = 38150771,
 		trigger = 1,
 		condition = {},
@@ -33776,11 +28855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.child2_benefit
-
-	var_13_31[38150781] = {
+	pg.base.child2_benefit[38150781] = {
 		id = 38150781,
 		trigger = 1,
 		condition = {},
@@ -33819,11 +28894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.child2_benefit
-
-	var_13_32[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38150791,
 		trigger = 1,
 		condition = {},
@@ -33862,11 +28933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.child2_benefit
-
-	var_13_33[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 38150801,
 		trigger = 1,
 		condition = {},
@@ -33905,11 +28972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.child2_benefit
-
-	var_13_34[38103911] = {
+	pg.base.child2_benefit[38103911] = {
 		id = 38103911,
 		trigger = 3,
 		condition = {},
@@ -33924,11 +28987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.child2_benefit
-
-	var_13_35[38104011] = {
+	pg.base.child2_benefit[38104011] = {
 		id = 38104011,
 		trigger = 3,
 		condition = {},
@@ -33947,11 +29006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.child2_benefit
-
-	var_13_36[38104111] = {
+	pg.base.child2_benefit[38104111] = {
 		id = 38104111,
 		trigger = 3,
 		condition = {
@@ -33974,11 +29029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.child2_benefit
-
-	var_13_37[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38104211,
 		trigger = 1,
 		condition = {},
@@ -33993,11 +29044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.child2_benefit
-
-	var_13_38[38104311] = {
+	pg.base.child2_benefit[38104311] = {
 		id = 38104311,
 		trigger = 19,
 		condition = {
@@ -34014,11 +29061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.child2_benefit
-
-	var_13_39[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38150811,
 		trigger = 19,
 		condition = {
@@ -34035,11 +29078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.child2_benefit
-
-	var_13_40[38150821] = {
+	pg.base.child2_benefit[38150821] = {
 		id = 38150821,
 		trigger = 19,
 		condition = {
@@ -34056,11 +29095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.child2_benefit
-
-	var_13_41[38150831] = {
+	pg.base.child2_benefit[38150831] = {
 		id = 38150831,
 		trigger = 19,
 		condition = {
@@ -34077,11 +29112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.child2_benefit
-
-	var_13_42[38150841] = {
+	pg.base.child2_benefit[38150841] = {
 		id = 38150841,
 		trigger = 19,
 		condition = {
@@ -34098,11 +29129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.child2_benefit
-
-	var_13_43[38150851] = {
+	pg.base.child2_benefit[38150851] = {
 		id = 38150851,
 		trigger = 19,
 		condition = {
@@ -34119,11 +29146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.child2_benefit
-
-	var_13_44[38150861] = {
+	pg.base.child2_benefit[38150861] = {
 		id = 38150861,
 		trigger = 19,
 		condition = {
@@ -34140,11 +29163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.child2_benefit
-
-	var_13_45[38150871] = {
+	pg.base.child2_benefit[38150871] = {
 		id = 38150871,
 		trigger = 19,
 		condition = {
@@ -34161,11 +29180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.child2_benefit
-
-	var_13_46[38150881] = {
+	pg.base.child2_benefit[38150881] = {
 		id = 38150881,
 		trigger = 19,
 		condition = {
@@ -34182,11 +29197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.child2_benefit
-
-	var_13_47[38150891] = {
+	pg.base.child2_benefit[38150891] = {
 		id = 38150891,
 		trigger = 19,
 		condition = {
@@ -34203,11 +29214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.child2_benefit
-
-	var_13_48[38150901] = {
+	pg.base.child2_benefit[38150901] = {
 		id = 38150901,
 		trigger = 1,
 		condition = {},
@@ -34222,11 +29229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.child2_benefit
-
-	var_13_49[38150911] = {
+	pg.base.child2_benefit[38150911] = {
 		id = 38150911,
 		trigger = 1,
 		condition = {},
@@ -34241,11 +29244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.child2_benefit
-
-	var_13_50[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 38150921,
 		trigger = 1,
 		condition = {},
@@ -34260,11 +29259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.child2_benefit
-
-	var_13_51[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38150931,
 		trigger = 1,
 		condition = {},
@@ -34279,11 +29274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.child2_benefit
-
-	var_13_52[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 38150941,
 		trigger = 1,
 		condition = {},
@@ -34298,11 +29289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.child2_benefit
-
-	var_13_53[38150951] = {
+	pg.base.child2_benefit[38150951] = {
 		id = 38150951,
 		trigger = 1,
 		condition = {},
@@ -34317,11 +29304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.child2_benefit
-
-	var_13_54[38150961] = {
+	pg.base.child2_benefit[38150961] = {
 		id = 38150961,
 		trigger = 1,
 		condition = {},
@@ -34336,11 +29319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.child2_benefit
-
-	var_13_55[38150971] = {
+	pg.base.child2_benefit[38150971] = {
 		id = 38150971,
 		trigger = 1,
 		condition = {},
@@ -34355,11 +29334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.child2_benefit
-
-	var_13_56[38150981] = {
+	pg.base.child2_benefit[38150981] = {
 		id = 38150981,
 		trigger = 1,
 		condition = {},
@@ -34374,11 +29349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.child2_benefit
-
-	var_13_57[38150991] = {
+	pg.base.child2_benefit[38150991] = {
 		id = 38150991,
 		trigger = 1,
 		condition = {},
@@ -34393,11 +29364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.child2_benefit
-
-	var_13_58[38104511] = {
+	pg.base.child2_benefit[38104511] = {
 		id = 38104511,
 		trigger = 5,
 		condition = {
@@ -34421,11 +29388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.child2_benefit
-
-	var_13_59[38104611] = {
+	pg.base.child2_benefit[38104611] = {
 		id = 38104611,
 		trigger = 5,
 		condition = {
@@ -34449,11 +29412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.child2_benefit
-
-	var_13_60[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38104711,
 		trigger = 5,
 		condition = {
@@ -34477,11 +29436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.child2_benefit
-
-	var_13_61[38104911] = {
+	pg.base.child2_benefit[38104911] = {
 		id = 38104911,
 		trigger = 20,
 		condition = {
@@ -34497,11 +29452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.child2_benefit
-
-	var_13_62[38105011] = {
+	pg.base.child2_benefit[38105011] = {
 		id = 38105011,
 		trigger = 20,
 		condition = {
@@ -34517,11 +29468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.child2_benefit
-
-	var_13_63[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38105111,
 		trigger = 20,
 		condition = {
@@ -34537,11 +29484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.child2_benefit
-
-	var_13_64[38105211] = {
+	pg.base.child2_benefit[38105211] = {
 		id = 38105211,
 		trigger = 1,
 		condition = {
@@ -34561,11 +29504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.child2_benefit
-
-	var_13_65[38105311] = {
+	pg.base.child2_benefit[38105311] = {
 		id = 38105311,
 		trigger = 1,
 		condition = {
@@ -34609,11 +29548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.child2_benefit
-
-	var_13_66[38105511] = {
+	pg.base.child2_benefit[38105511] = {
 		id = 38105511,
 		trigger = 1,
 		condition = {},
@@ -34652,11 +29587,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.child2_benefit
-
-	var_13_67[38105512] = {
+	pg.base.child2_benefit[38105512] = {
 		id = 38105512,
 		trigger = 5,
 		condition = {},
@@ -34695,11 +29626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.child2_benefit
-
-	var_13_68[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38105611,
 		trigger = 1,
 		condition = {},
@@ -34738,11 +29665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.child2_benefit
-
-	var_13_69[12] = {
+	pg.base.child2_benefit[12] = {
 		id = 38105612,
 		trigger = 5,
 		condition = {},
@@ -34757,11 +29680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.child2_benefit
-
-	var_13_70[38105711] = {
+	pg.base.child2_benefit[38105711] = {
 		id = 38105711,
 		trigger = 1,
 		condition = {
@@ -34855,11 +29774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.child2_benefit
-
-	var_13_71[38105911] = {
+	pg.base.child2_benefit[38105911] = {
 		id = 38105911,
 		trigger = 1,
 		condition = {
@@ -34905,11 +29820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.child2_benefit
-
-	var_13_72[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38106011,
 		trigger = 1,
 		condition = {},
@@ -34948,11 +29859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.child2_benefit
-
-	var_13_73[38106111] = {
+	pg.base.child2_benefit[38106111] = {
 		id = 38106111,
 		trigger = 5,
 		condition = {},
@@ -34963,11 +29870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.child2_benefit
-
-	var_13_74[0] = {
+	pg.base.child2_benefit[0] = {
 		id = 38106112,
 		trigger = 13,
 		condition = {},
@@ -34986,11 +29889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.child2_benefit
-
-	var_13_75[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38106113,
 		trigger = 13,
 		condition = {},
@@ -35009,11 +29908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.child2_benefit
-
-	var_13_76[2] = {
+	pg.base.child2_benefit[2] = {
 		id = 38106114,
 		trigger = 13,
 		condition = {},
@@ -35032,11 +29927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.child2_benefit
-
-	var_13_77[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38106115,
 		trigger = 13,
 		condition = {},
@@ -35055,11 +29946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.child2_benefit
-
-	var_13_78[38106311] = {
+	pg.base.child2_benefit[38106311] = {
 		id = 38106311,
 		trigger = 13,
 		condition = {},
@@ -35070,11 +29957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.child2_benefit
-
-	var_13_79[38106411] = {
+	pg.base.child2_benefit[38106411] = {
 		id = 38106411,
 		trigger = 5,
 		condition = {
@@ -35090,11 +29973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.child2_benefit
-
-	var_13_80[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38106511,
 		trigger = 3,
 		condition = {},
@@ -35105,11 +29984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.child2_benefit
-
-	var_13_81[38106711] = {
+	pg.base.child2_benefit[38106711] = {
 		id = 38106711,
 		trigger = 6,
 		condition = {
@@ -35129,11 +30004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.child2_benefit
-
-	var_13_82[38106712] = {
+	pg.base.child2_benefit[38106712] = {
 		id = 38106712,
 		trigger = 6,
 		condition = {
@@ -35153,11 +30024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.child2_benefit
-
-	var_13_83[38106811] = {
+	pg.base.child2_benefit[38106811] = {
 		id = 38106811,
 		trigger = 1,
 		condition = {},
@@ -35188,11 +30055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.child2_benefit
-
-	var_13_84[38106812] = {
+	pg.base.child2_benefit[38106812] = {
 		id = 38106812,
 		trigger = 13,
 		condition = {},
@@ -35207,11 +30070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.child2_benefit
-
-	var_13_85[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38106911,
 		trigger = 1,
 		condition = {},
@@ -35242,11 +30101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.child2_benefit
-
-	var_13_86[38106912] = {
+	pg.base.child2_benefit[38106912] = {
 		id = 38106912,
 		trigger = 13,
 		condition = {},
@@ -35261,11 +30116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.child2_benefit
-
-	var_13_87[38107111] = {
+	pg.base.child2_benefit[38107111] = {
 		id = 38107111,
 		trigger = 19,
 		condition = {
@@ -35286,11 +30137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.child2_benefit
-
-	var_13_88[38107211] = {
+	pg.base.child2_benefit[38107211] = {
 		id = 38107211,
 		trigger = 7,
 		condition = {
@@ -35310,11 +30157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.child2_benefit
-
-	var_13_89[38107311] = {
+	pg.base.child2_benefit[38107311] = {
 		id = 38107311,
 		trigger = 19,
 		condition = {
@@ -35335,11 +30178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.child2_benefit
-
-	var_13_90[38107511] = {
+	pg.base.child2_benefit[38107511] = {
 		id = 38107511,
 		trigger = 3,
 		condition = {
@@ -35383,11 +30222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.child2_benefit
-
-	var_13_91[38107611] = {
+	pg.base.child2_benefit[38107611] = {
 		id = 38107611,
 		trigger = 6,
 		condition = {
@@ -35408,11 +30243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.child2_benefit
-
-	var_13_92[38107711] = {
+	pg.base.child2_benefit[38107711] = {
 		id = 38107711,
 		trigger = 6,
 		condition = {
@@ -35433,11 +30264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.child2_benefit
-
-	var_13_93[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38107911,
 		trigger = 3,
 		condition = {
@@ -35456,11 +30283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.child2_benefit
-
-	var_13_94[38108011] = {
+	pg.base.child2_benefit[38108011] = {
 		id = 38108011,
 		trigger = 5,
 		condition = {
@@ -35481,11 +30304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.child2_benefit
-
-	var_13_95[38108111] = {
+	pg.base.child2_benefit[38108111] = {
 		id = 38108111,
 		trigger = 5,
 		condition = {
@@ -35506,11 +30325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.child2_benefit
-
-	var_13_96[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38108311,
 		trigger = 1,
 		condition = {
@@ -35555,11 +30370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.child2_benefit
-
-	var_13_97[38108411] = {
+	pg.base.child2_benefit[38108411] = {
 		id = 38108411,
 		trigger = 3,
 		condition = {
@@ -35580,11 +30391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.child2_benefit
-
-	var_13_98[38108412] = {
+	pg.base.child2_benefit[38108412] = {
 		id = 38108412,
 		trigger = 3,
 		condition = {
@@ -35605,8 +30412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.child2_benefit[38108413] = {
+	pg.base.child2_benefit[38108413] = {
 		id = 38108413,
 		trigger = 3,
 		condition = {
@@ -35631,11 +30437,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.child2_benefit
-
-	var_14_0[38108414] = {
+	pg.base.child2_benefit[38108414] = {
 		id = 38108414,
 		trigger = 3,
 		condition = {
@@ -35656,11 +30458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.child2_benefit
-
-	var_14_1[38108415] = {
+	pg.base.child2_benefit[38108415] = {
 		id = 38108415,
 		trigger = 3,
 		condition = {
@@ -35681,11 +30479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.child2_benefit
-
-	var_14_2[0] = {
+	pg.base.child2_benefit[0] = {
 		id = 38108416,
 		trigger = 3,
 		condition = {
@@ -35706,11 +30500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.child2_benefit
-
-	var_14_3[38108511] = {
+	pg.base.child2_benefit[38108511] = {
 		id = 38108511,
 		trigger = 6,
 		condition = {
@@ -35730,11 +30520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.child2_benefit
-
-	var_14_4[38108711] = {
+	pg.base.child2_benefit[38108711] = {
 		id = 38108711,
 		trigger = 1,
 		condition = {
@@ -35762,11 +30548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.child2_benefit
-
-	var_14_5[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38108811,
 		trigger = 1,
 		condition = {
@@ -35787,11 +30569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.child2_benefit
-
-	var_14_6[38108911] = {
+	pg.base.child2_benefit[38108911] = {
 		id = 38108911,
 		trigger = 19,
 		condition = {
@@ -35835,11 +30613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.child2_benefit
-
-	var_14_7[38108912] = {
+	pg.base.child2_benefit[38108912] = {
 		id = 38108912,
 		trigger = 19,
 		condition = {
@@ -35883,11 +30657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.child2_benefit
-
-	var_14_8[38109011] = {
+	pg.base.child2_benefit[38109011] = {
 		id = 38109011,
 		trigger = 19,
 		condition = {
@@ -35904,11 +30674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.child2_benefit
-
-	var_14_9[38109111] = {
+	pg.base.child2_benefit[38109111] = {
 		id = 38109111,
 		trigger = 19,
 		condition = {
@@ -35925,11 +30691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.child2_benefit
-
-	var_14_10[38109121] = {
+	pg.base.child2_benefit[38109121] = {
 		id = 38109121,
 		trigger = 1,
 		condition = {},
@@ -35952,11 +30714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.child2_benefit
-
-	var_14_11[38109131] = {
+	pg.base.child2_benefit[38109131] = {
 		id = 38109131,
 		trigger = 1,
 		condition = {},
@@ -35979,11 +30737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.child2_benefit
-
-	var_14_12[38109141] = {
+	pg.base.child2_benefit[38109141] = {
 		id = 38109141,
 		trigger = 3,
 		condition = {
@@ -35999,11 +30753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.child2_benefit
-
-	var_14_13[38109151] = {
+	pg.base.child2_benefit[38109151] = {
 		id = 38109151,
 		trigger = 3,
 		condition = {
@@ -36019,11 +30769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.child2_benefit
-
-	var_14_14[38109311] = {
+	pg.base.child2_benefit[38109311] = {
 		id = 38109311,
 		trigger = 16,
 		condition = {
@@ -36046,11 +30792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.child2_benefit
-
-	var_14_15[38109411] = {
+	pg.base.child2_benefit[38109411] = {
 		id = 38109411,
 		trigger = 19,
 		condition = {
@@ -36073,11 +30815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.child2_benefit
-
-	var_14_16[38109511] = {
+	pg.base.child2_benefit[38109511] = {
 		id = 38109511,
 		trigger = 13,
 		condition = {},
@@ -36096,11 +30834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.child2_benefit
-
-	var_14_17[38109512] = {
+	pg.base.child2_benefit[38109512] = {
 		id = 38109512,
 		trigger = 13,
 		condition = {},
@@ -36119,11 +30853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.child2_benefit
-
-	var_14_18[38109611] = {
+	pg.base.child2_benefit[38109611] = {
 		id = 38109611,
 		trigger = 5,
 		condition = {
@@ -36147,11 +30877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.child2_benefit
-
-	var_14_19[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38109711,
 		trigger = 13,
 		condition = {},
@@ -36166,11 +30892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.child2_benefit
-
-	var_14_20[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38109721,
 		trigger = 1,
 		condition = {},
@@ -36185,11 +30907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.child2_benefit
-
-	var_14_21[38109911] = {
+	pg.base.child2_benefit[38109911] = {
 		id = 38109911,
 		trigger = 17,
 		condition = {},
@@ -36211,11 +30929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.child2_benefit
-
-	var_14_22[38110011] = {
+	pg.base.child2_benefit[38110011] = {
 		id = 38110011,
 		trigger = 17,
 		condition = {},
@@ -36237,11 +30951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.child2_benefit
-
-	var_14_23[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38110111,
 		trigger = 17,
 		condition = {},
@@ -36263,11 +30973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.child2_benefit
-
-	var_14_24[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38110211,
 		trigger = 17,
 		condition = {},
@@ -36289,11 +30995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.child2_benefit
-
-	var_14_25[38110311] = {
+	pg.base.child2_benefit[38110311] = {
 		id = 38110311,
 		trigger = 17,
 		condition = {},
@@ -36348,11 +31050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.child2_benefit
-
-	var_14_26[38110511] = {
+	pg.base.child2_benefit[38110511] = {
 		id = 38110511,
 		trigger = 5,
 		condition = {
@@ -36368,11 +31066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.child2_benefit
-
-	var_14_27[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38110611,
 		trigger = 7,
 		condition = {
@@ -36392,11 +31086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.child2_benefit
-
-	var_14_28[38110711] = {
+	pg.base.child2_benefit[38110711] = {
 		id = 38110711,
 		trigger = 7,
 		condition = {
@@ -36416,11 +31106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.child2_benefit
-
-	var_14_29[38110911] = {
+	pg.base.child2_benefit[38110911] = {
 		id = 38110911,
 		trigger = 1,
 		condition = {
@@ -36464,11 +31150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.child2_benefit
-
-	var_14_30[38111011] = {
+	pg.base.child2_benefit[38111011] = {
 		id = 38111011,
 		trigger = 5,
 		condition = {
@@ -36484,11 +31166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.child2_benefit
-
-	var_14_31[38111021] = {
+	pg.base.child2_benefit[38111021] = {
 		id = 38111021,
 		trigger = 1,
 		condition = {},
@@ -36527,11 +31205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.child2_benefit
-
-	var_14_32[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38111111,
 		trigger = 1,
 		condition = {
@@ -36578,11 +31252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.child2_benefit
-
-	var_14_33[38111211] = {
+	pg.base.child2_benefit[38111211] = {
 		id = 38111211,
 		trigger = 5,
 		condition = {},
@@ -36593,11 +31263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.child2_benefit
-
-	var_14_34[38111311] = {
+	pg.base.child2_benefit[38111311] = {
 		id = 38111311,
 		trigger = 3,
 		condition = {},
@@ -36608,11 +31274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.child2_benefit
-
-	var_14_35[38111411] = {
+	pg.base.child2_benefit[38111411] = {
 		id = 38111411,
 		trigger = 7,
 		condition = {},
@@ -36623,11 +31285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.child2_benefit
-
-	var_14_36[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38111511,
 		trigger = 6,
 		condition = {
@@ -36643,11 +31301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.child2_benefit
-
-	var_14_37[38111611] = {
+	pg.base.child2_benefit[38111611] = {
 		id = 38111611,
 		trigger = 6,
 		condition = {
@@ -36663,11 +31317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.child2_benefit
-
-	var_14_38[38111711] = {
+	pg.base.child2_benefit[38111711] = {
 		id = 38111711,
 		trigger = 16,
 		condition = {},
@@ -36678,11 +31328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.child2_benefit
-
-	var_14_39[38111811] = {
+	pg.base.child2_benefit[38111811] = {
 		id = 38111811,
 		trigger = 17,
 		condition = {},
@@ -36693,11 +31339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.child2_benefit
-
-	var_14_40[38111911] = {
+	pg.base.child2_benefit[38111911] = {
 		id = 38111911,
 		trigger = 6,
 		condition = {
@@ -36713,11 +31355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.child2_benefit
-
-	var_14_41[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38112011,
 		trigger = 18,
 		condition = {},
@@ -36728,11 +31366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.child2_benefit
-
-	var_14_42[38112111] = {
+	pg.base.child2_benefit[38112111] = {
 		id = 38112111,
 		trigger = 5,
 		condition = {
@@ -36754,11 +31388,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.child2_benefit
-
-	var_14_43[38112211] = {
+	pg.base.child2_benefit[38112211] = {
 		id = 38112211,
 		trigger = 19,
 		condition = {
@@ -36779,11 +31409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.child2_benefit
-
-	var_14_44[38112311] = {
+	pg.base.child2_benefit[38112311] = {
 		id = 38112311,
 		trigger = 19,
 		condition = {
@@ -36804,11 +31430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.child2_benefit
-
-	var_14_45[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38112411,
 		trigger = 6,
 		condition = {
@@ -36829,11 +31451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.child2_benefit
-
-	var_14_46[38112511] = {
+	pg.base.child2_benefit[38112511] = {
 		id = 38112511,
 		trigger = 6,
 		condition = {
@@ -36854,11 +31472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.child2_benefit
-
-	var_14_47[38112611] = {
+	pg.base.child2_benefit[38112611] = {
 		id = 38112611,
 		trigger = 6,
 		condition = {
@@ -36879,11 +31493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.child2_benefit
-
-	var_14_48[38112711] = {
+	pg.base.child2_benefit[38112711] = {
 		id = 38112711,
 		trigger = 19,
 		condition = {
@@ -36903,11 +31513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.child2_benefit
-
-	var_14_49[38112811] = {
+	pg.base.child2_benefit[38112811] = {
 		id = 38112811,
 		trigger = 3,
 		condition = {
@@ -36930,11 +31536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.child2_benefit
-
-	var_14_50[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38112911,
 		trigger = 19,
 		condition = {
@@ -36954,11 +31556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.child2_benefit
-
-	var_14_51[38113011] = {
+	pg.base.child2_benefit[38113011] = {
 		id = 38113011,
 		trigger = 19,
 		condition = {
@@ -36979,11 +31577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.child2_benefit
-
-	var_14_52[38113111] = {
+	pg.base.child2_benefit[38113111] = {
 		id = 38113111,
 		trigger = 5,
 		condition = {
@@ -37005,11 +31599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.child2_benefit
-
-	var_14_53[38113211] = {
+	pg.base.child2_benefit[38113211] = {
 		id = 38113211,
 		trigger = 5,
 		condition = {
@@ -37029,11 +31619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.child2_benefit
-
-	var_14_54[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38113311,
 		trigger = 5,
 		condition = {
@@ -37053,11 +31639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.child2_benefit
-
-	var_14_55[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38113411,
 		trigger = 19,
 		condition = {
@@ -37079,11 +31661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.child2_benefit
-
-	var_14_56[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38113421,
 		trigger = 19,
 		condition = {
@@ -37105,11 +31683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.child2_benefit
-
-	var_14_57[38113511] = {
+	pg.base.child2_benefit[38113511] = {
 		id = 38113511,
 		trigger = 5,
 		condition = {},
@@ -37124,11 +31698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.child2_benefit
-
-	var_14_58[38113611] = {
+	pg.base.child2_benefit[38113611] = {
 		id = 38113611,
 		trigger = 5,
 		condition = {},
@@ -37146,11 +31716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.child2_benefit
-
-	var_14_59[38113711] = {
+	pg.base.child2_benefit[38113711] = {
 		id = 38113711,
 		trigger = 5,
 		condition = {},
@@ -37168,11 +31734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.child2_benefit
-
-	var_14_60[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38113811,
 		trigger = 5,
 		condition = {
@@ -37193,11 +31755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.child2_benefit
-
-	var_14_61[38113911] = {
+	pg.base.child2_benefit[38113911] = {
 		id = 38113911,
 		trigger = 19,
 		condition = {
@@ -37218,11 +31776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.child2_benefit
-
-	var_14_62[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38113921,
 		trigger = 19,
 		condition = {
@@ -37243,11 +31797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.child2_benefit
-
-	var_14_63[38114011] = {
+	pg.base.child2_benefit[38114011] = {
 		id = 38114011,
 		trigger = 19,
 		condition = {
@@ -37268,11 +31818,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.child2_benefit
-
-	var_14_64[38114021] = {
+	pg.base.child2_benefit[38114021] = {
 		id = 38114021,
 		trigger = 19,
 		condition = {
@@ -37293,11 +31839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.child2_benefit
-
-	var_14_65[38114111] = {
+	pg.base.child2_benefit[38114111] = {
 		id = 38114111,
 		trigger = 5,
 		condition = {
@@ -37319,11 +31861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.child2_benefit
-
-	var_14_66[38114211] = {
+	pg.base.child2_benefit[38114211] = {
 		id = 38114211,
 		trigger = 7,
 		condition = {
@@ -37343,11 +31881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.child2_benefit
-
-	var_14_67[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38114311,
 		trigger = 5,
 		condition = {
@@ -37367,11 +31901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.child2_benefit
-
-	var_14_68[38114411] = {
+	pg.base.child2_benefit[38114411] = {
 		id = 38114411,
 		trigger = 1,
 		condition = {},
@@ -37387,11 +31917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.child2_benefit
-
-	var_14_69[38114511] = {
+	pg.base.child2_benefit[38114511] = {
 		id = 38114511,
 		trigger = 7,
 		condition = {
@@ -37411,11 +31937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.child2_benefit
-
-	var_14_70[38114611] = {
+	pg.base.child2_benefit[38114611] = {
 		id = 38114611,
 		trigger = 3,
 		condition = {
@@ -37438,11 +31960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.child2_benefit
-
-	var_14_71[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38114711,
 		trigger = 5,
 		condition = {
@@ -37462,11 +31980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.child2_benefit
-
-	var_14_72[38114811] = {
+	pg.base.child2_benefit[38114811] = {
 		id = 38114811,
 		trigger = 7,
 		condition = {},
@@ -37481,11 +31995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.child2_benefit
-
-	var_14_73[38114911] = {
+	pg.base.child2_benefit[38114911] = {
 		id = 38114911,
 		trigger = 7,
 		condition = {
@@ -37505,11 +32015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.child2_benefit
-
-	var_14_74[38115011] = {
+	pg.base.child2_benefit[38115011] = {
 		id = 38115011,
 		trigger = 7,
 		condition = {},
@@ -37524,11 +32030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.child2_benefit
-
-	var_14_75[38115111] = {
+	pg.base.child2_benefit[38115111] = {
 		id = 38115111,
 		trigger = 5,
 		condition = {
@@ -37550,21 +32052,13 @@ end)()
 			}
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.child2_benefit
-
-	var_14_76[38990011] = {
+	pg.base.child2_benefit[38990011] = {
 		id = 38990011,
 		trigger = 1,
 		condition = {},
 		effect = {}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.child2_benefit
-
-	var_14_77[38990021] = {
+	pg.base.child2_benefit[38990021] = {
 		id = 38990021,
 		trigger = 13,
 		condition = {},
@@ -37583,11 +32077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.child2_benefit
-
-	var_14_78[38990031] = {
+	pg.base.child2_benefit[38990031] = {
 		id = 38990031,
 		trigger = 13,
 		condition = {},
@@ -37606,11 +32096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.child2_benefit
-
-	var_14_79[38990041] = {
+	pg.base.child2_benefit[38990041] = {
 		id = 38990041,
 		trigger = 13,
 		condition = {},
@@ -37629,11 +32115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.child2_benefit
-
-	var_14_80[38990051] = {
+	pg.base.child2_benefit[38990051] = {
 		id = 38990051,
 		trigger = 13,
 		condition = {},
@@ -37652,11 +32134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.child2_benefit
-
-	var_14_81[38990061] = {
+	pg.base.child2_benefit[38990061] = {
 		id = 38990061,
 		trigger = 13,
 		condition = {},
@@ -37675,11 +32153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.child2_benefit
-
-	var_14_82[38990071] = {
+	pg.base.child2_benefit[38990071] = {
 		id = 38990071,
 		trigger = 13,
 		condition = {},
@@ -37698,11 +32172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.child2_benefit
-
-	var_14_83[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38990081,
 		trigger = 13,
 		condition = {},
@@ -37721,11 +32191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.child2_benefit
-
-	var_14_84[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38990091,
 		trigger = 13,
 		condition = {},
@@ -37744,11 +32210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.child2_benefit
-
-	var_14_85[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 38990101,
 		trigger = 13,
 		condition = {},
@@ -37767,11 +32229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.child2_benefit
-
-	var_14_86[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38990111,
 		trigger = 13,
 		condition = {},
@@ -37790,11 +32248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.child2_benefit
-
-	var_14_87[38990121] = {
+	pg.base.child2_benefit[38990121] = {
 		id = 38990121,
 		trigger = 13,
 		condition = {},
@@ -37813,11 +32267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.child2_benefit
-
-	var_14_88[38990131] = {
+	pg.base.child2_benefit[38990131] = {
 		id = 38990131,
 		trigger = 13,
 		condition = {},
@@ -37836,11 +32286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.child2_benefit
-
-	var_14_89[38990141] = {
+	pg.base.child2_benefit[38990141] = {
 		id = 38990141,
 		trigger = 13,
 		condition = {},
@@ -37859,11 +32305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.child2_benefit
-
-	var_14_90[38990151] = {
+	pg.base.child2_benefit[38990151] = {
 		id = 38990151,
 		trigger = 13,
 		condition = {},
@@ -37882,11 +32324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.child2_benefit
-
-	var_14_91[38990161] = {
+	pg.base.child2_benefit[38990161] = {
 		id = 38990161,
 		trigger = 13,
 		condition = {},
@@ -37905,11 +32343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.child2_benefit
-
-	var_14_92[38990171] = {
+	pg.base.child2_benefit[38990171] = {
 		id = 38990171,
 		trigger = 13,
 		condition = {},
@@ -37928,11 +32362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.child2_benefit
-
-	var_14_93[38990181] = {
+	pg.base.child2_benefit[38990181] = {
 		id = 38990181,
 		trigger = 13,
 		condition = {},
@@ -37951,11 +32381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.child2_benefit
-
-	var_14_94[38990191] = {
+	pg.base.child2_benefit[38990191] = {
 		id = 38990191,
 		trigger = 13,
 		condition = {},
@@ -37974,11 +32400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.child2_benefit
-
-	var_14_95[38990201] = {
+	pg.base.child2_benefit[38990201] = {
 		id = 38990201,
 		trigger = 13,
 		condition = {},
@@ -37997,11 +32419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.child2_benefit
-
-	var_14_96[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38990211,
 		trigger = 13,
 		condition = {},
@@ -38020,11 +32438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.child2_benefit
-
-	var_14_97[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38990221,
 		trigger = 13,
 		condition = {},
@@ -38043,11 +32457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.child2_benefit
-
-	var_14_98[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38990231,
 		trigger = 13,
 		condition = {},
@@ -38066,8 +32476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.child2_benefit[38990241] = {
+	pg.base.child2_benefit[38990241] = {
 		id = 38990241,
 		trigger = 13,
 		condition = {},
@@ -38090,11 +32499,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.child2_benefit
-
-	var_15_0[38990251] = {
+	pg.base.child2_benefit[38990251] = {
 		id = 38990251,
 		trigger = 13,
 		condition = {},
@@ -38113,11 +32518,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.child2_benefit
-
-	var_15_1[38990261] = {
+	pg.base.child2_benefit[38990261] = {
 		id = 38990261,
 		trigger = 13,
 		condition = {},
@@ -38136,11 +32537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.child2_benefit
-
-	var_15_2[38990271] = {
+	pg.base.child2_benefit[38990271] = {
 		id = 38990271,
 		trigger = 13,
 		condition = {},
@@ -38159,11 +32556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.child2_benefit
-
-	var_15_3[38990281] = {
+	pg.base.child2_benefit[38990281] = {
 		id = 38990281,
 		trigger = 13,
 		condition = {},
@@ -38182,11 +32575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.child2_benefit
-
-	var_15_4[38990291] = {
+	pg.base.child2_benefit[38990291] = {
 		id = 38990291,
 		trigger = 13,
 		condition = {},
@@ -38205,11 +32594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.child2_benefit
-
-	var_15_5[38990301] = {
+	pg.base.child2_benefit[38990301] = {
 		id = 38990301,
 		trigger = 13,
 		condition = {},
@@ -38228,11 +32613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.child2_benefit
-
-	var_15_6[38990311] = {
+	pg.base.child2_benefit[38990311] = {
 		id = 38990311,
 		trigger = 13,
 		condition = {},
@@ -38251,11 +32632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.child2_benefit
-
-	var_15_7[38990321] = {
+	pg.base.child2_benefit[38990321] = {
 		id = 38990321,
 		trigger = 13,
 		condition = {},
@@ -38274,11 +32651,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.child2_benefit
-
-	var_15_8[38990331] = {
+	pg.base.child2_benefit[38990331] = {
 		id = 38990331,
 		trigger = 13,
 		condition = {},
@@ -38297,11 +32670,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.child2_benefit
-
-	var_15_9[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 38990341,
 		trigger = 13,
 		condition = {},
@@ -38320,11 +32689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.child2_benefit
-
-	var_15_10[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38990351,
 		trigger = 13,
 		condition = {},
@@ -38343,11 +32708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.child2_benefit
-
-	var_15_11[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38990361,
 		trigger = 13,
 		condition = {},
@@ -38366,11 +32727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.child2_benefit
-
-	var_15_12[38990371] = {
+	pg.base.child2_benefit[38990371] = {
 		id = 38990371,
 		trigger = 13,
 		condition = {},
@@ -38389,11 +32746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.child2_benefit
-
-	var_15_13[38990381] = {
+	pg.base.child2_benefit[38990381] = {
 		id = 38990381,
 		trigger = 13,
 		condition = {},
@@ -38412,11 +32765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.child2_benefit
-
-	var_15_14[38990391] = {
+	pg.base.child2_benefit[38990391] = {
 		id = 38990391,
 		trigger = 13,
 		condition = {},
@@ -38435,11 +32784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.child2_benefit
-
-	var_15_15[38990401] = {
+	pg.base.child2_benefit[38990401] = {
 		id = 38990401,
 		trigger = 13,
 		condition = {},
@@ -38458,11 +32803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.child2_benefit
-
-	var_15_16[38990411] = {
+	pg.base.child2_benefit[38990411] = {
 		id = 38990411,
 		trigger = 13,
 		condition = {},
@@ -38481,11 +32822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.child2_benefit
-
-	var_15_17[38990421] = {
+	pg.base.child2_benefit[38990421] = {
 		id = 38990421,
 		trigger = 1,
 		condition = {},
@@ -38501,11 +32838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.child2_benefit
-
-	var_15_18[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38991371,
 		trigger = 1,
 		condition = {},
@@ -38544,11 +32877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.child2_benefit
-
-	var_15_19[38300011] = {
+	pg.base.child2_benefit[38300011] = {
 		id = 38300011,
 		trigger = 13,
 		condition = {},
@@ -38563,11 +32892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.child2_benefit
-
-	var_15_20[38300021] = {
+	pg.base.child2_benefit[38300021] = {
 		id = 38300021,
 		trigger = 13,
 		condition = {},
@@ -38590,11 +32915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.child2_benefit
-
-	var_15_21[38300031] = {
+	pg.base.child2_benefit[38300031] = {
 		id = 38300031,
 		trigger = 13,
 		condition = {},
@@ -38625,11 +32946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.child2_benefit
-
-	var_15_22[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 38300041,
 		trigger = 13,
 		condition = {},
@@ -38668,11 +32985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.child2_benefit
-
-	var_15_23[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38300051,
 		trigger = 13,
 		condition = {},
@@ -38711,11 +33024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.child2_benefit
-
-	var_15_24[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 38300061,
 		trigger = 13,
 		condition = {},
@@ -38754,11 +33063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.child2_benefit
-
-	var_15_25[38300081] = {
+	pg.base.child2_benefit[38300081] = {
 		id = 38300081,
 		trigger = 13,
 		condition = {},
@@ -38769,11 +33074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.child2_benefit
-
-	var_15_26[38300091] = {
+	pg.base.child2_benefit[38300091] = {
 		id = 38300091,
 		trigger = 13,
 		condition = {},
@@ -38784,11 +33085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.child2_benefit
-
-	var_15_27[38300101] = {
+	pg.base.child2_benefit[38300101] = {
 		id = 38300101,
 		trigger = 13,
 		condition = {},
@@ -38799,11 +33096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.child2_benefit
-
-	var_15_28[38300111] = {
+	pg.base.child2_benefit[38300111] = {
 		id = 38300111,
 		trigger = 13,
 		condition = {},
@@ -38814,11 +33107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.child2_benefit
-
-	var_15_29[38300121] = {
+	pg.base.child2_benefit[38300121] = {
 		id = 38300121,
 		trigger = 13,
 		condition = {},
@@ -38829,11 +33118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.child2_benefit
-
-	var_15_30[38300131] = {
+	pg.base.child2_benefit[38300131] = {
 		id = 38300131,
 		trigger = 13,
 		condition = {},
@@ -38844,11 +33129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.child2_benefit
-
-	var_15_31[38300141] = {
+	pg.base.child2_benefit[38300141] = {
 		id = 38300141,
 		trigger = 13,
 		condition = {},
@@ -38859,11 +33140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.child2_benefit
-
-	var_15_32[38300151] = {
+	pg.base.child2_benefit[38300151] = {
 		id = 38300151,
 		trigger = 13,
 		condition = {},
@@ -38874,11 +33151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.child2_benefit
-
-	var_15_33[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38300161,
 		trigger = 13,
 		condition = {},
@@ -38889,11 +33162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.child2_benefit
-
-	var_15_34[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38300171,
 		trigger = 13,
 		condition = {},
@@ -38904,11 +33173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.child2_benefit
-
-	var_15_35[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 38300181,
 		trigger = 13,
 		condition = {},
@@ -38919,11 +33184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.child2_benefit
-
-	var_15_36[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38300191,
 		trigger = 13,
 		condition = {},
@@ -38934,11 +33195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.child2_benefit
-
-	var_15_37[38300201] = {
+	pg.base.child2_benefit[38300201] = {
 		id = 38300201,
 		trigger = 13,
 		condition = {},
@@ -38949,11 +33206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.child2_benefit
-
-	var_15_38[38300211] = {
+	pg.base.child2_benefit[38300211] = {
 		id = 38300211,
 		trigger = 13,
 		condition = {},
@@ -38964,11 +33217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.child2_benefit
-
-	var_15_39[38300221] = {
+	pg.base.child2_benefit[38300221] = {
 		id = 38300221,
 		trigger = 13,
 		condition = {},
@@ -38979,11 +33228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.child2_benefit
-
-	var_15_40[38300231] = {
+	pg.base.child2_benefit[38300231] = {
 		id = 38300231,
 		trigger = 13,
 		condition = {},
@@ -38994,11 +33239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.child2_benefit
-
-	var_15_41[38300241] = {
+	pg.base.child2_benefit[38300241] = {
 		id = 38300241,
 		trigger = 13,
 		condition = {},
@@ -39009,11 +33250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.child2_benefit
-
-	var_15_42[38300251] = {
+	pg.base.child2_benefit[38300251] = {
 		id = 38300251,
 		trigger = 13,
 		condition = {},
@@ -39024,11 +33261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.child2_benefit
-
-	var_15_43[38300261] = {
+	pg.base.child2_benefit[38300261] = {
 		id = 38300261,
 		trigger = 13,
 		condition = {},
@@ -39039,11 +33272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.child2_benefit
-
-	var_15_44[38300271] = {
+	pg.base.child2_benefit[38300271] = {
 		id = 38300271,
 		trigger = 13,
 		condition = {},
@@ -39054,11 +33283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.child2_benefit
-
-	var_15_45[38300281] = {
+	pg.base.child2_benefit[38300281] = {
 		id = 38300281,
 		trigger = 13,
 		condition = {},
@@ -39069,11 +33294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.child2_benefit
-
-	var_15_46[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38300291,
 		trigger = 13,
 		condition = {},
@@ -39084,11 +33305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.child2_benefit
-
-	var_15_47[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38300301,
 		trigger = 13,
 		condition = {},
@@ -39099,11 +33316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.child2_benefit
-
-	var_15_48[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38300311,
 		trigger = 13,
 		condition = {},
@@ -39114,11 +33327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.child2_benefit
-
-	var_15_49[38300321] = {
+	pg.base.child2_benefit[38300321] = {
 		id = 38300321,
 		trigger = 13,
 		condition = {},
@@ -39129,11 +33338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.child2_benefit
-
-	var_15_50[38300331] = {
+	pg.base.child2_benefit[38300331] = {
 		id = 38300331,
 		trigger = 13,
 		condition = {},
@@ -39144,11 +33349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.child2_benefit
-
-	var_15_51[38300341] = {
+	pg.base.child2_benefit[38300341] = {
 		id = 38300341,
 		trigger = 1,
 		condition = {},
@@ -39163,11 +33364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.child2_benefit
-
-	var_15_52[38300351] = {
+	pg.base.child2_benefit[38300351] = {
 		id = 38300351,
 		trigger = 1,
 		condition = {},
@@ -39182,11 +33379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.child2_benefit
-
-	var_15_53[38300361] = {
+	pg.base.child2_benefit[38300361] = {
 		id = 38300361,
 		trigger = 1,
 		condition = {},
@@ -39201,11 +33394,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.child2_benefit
-
-	var_15_54[38300371] = {
+	pg.base.child2_benefit[38300371] = {
 		id = 38300371,
 		trigger = 1,
 		condition = {},
@@ -39220,11 +33409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.child2_benefit
-
-	var_15_55[38399971] = {
+	pg.base.child2_benefit[38399971] = {
 		id = 38399971,
 		trigger = 13,
 		condition = {},
@@ -39243,11 +33428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.child2_benefit
-
-	var_15_56[38399981] = {
+	pg.base.child2_benefit[38399981] = {
 		id = 38399981,
 		trigger = 13,
 		condition = {},
@@ -39266,11 +33447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.child2_benefit
-
-	var_15_57[38399991] = {
+	pg.base.child2_benefit[38399991] = {
 		id = 38399991,
 		trigger = 13,
 		condition = {},
@@ -39289,11 +33466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.child2_benefit
-
-	var_15_58[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38200211,
 		trigger = 19,
 		condition = {
@@ -39324,11 +33497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.child2_benefit
-
-	var_15_59[38200311] = {
+	pg.base.child2_benefit[38200311] = {
 		id = 38200311,
 		trigger = 19,
 		condition = {
@@ -39351,11 +33520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.child2_benefit
-
-	var_15_60[38200411] = {
+	pg.base.child2_benefit[38200411] = {
 		id = 38200411,
 		trigger = 1,
 		condition = {
@@ -39400,11 +33565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.child2_benefit
-
-	var_15_61[38200511] = {
+	pg.base.child2_benefit[38200511] = {
 		id = 38200511,
 		trigger = 3,
 		condition = {
@@ -39449,11 +33610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.child2_benefit
-
-	var_15_62[38200521] = {
+	pg.base.child2_benefit[38200521] = {
 		id = 38200521,
 		trigger = 3,
 		condition = {},
@@ -39492,11 +33649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.child2_benefit
-
-	var_15_63[38200611] = {
+	pg.base.child2_benefit[38200611] = {
 		id = 38200611,
 		trigger = 5,
 		condition = {
@@ -39512,11 +33665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.child2_benefit
-
-	var_15_64[38200621] = {
+	pg.base.child2_benefit[38200621] = {
 		id = 38200621,
 		trigger = 1,
 		condition = {},
@@ -39531,11 +33680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.child2_benefit
-
-	var_15_65[38200811] = {
+	pg.base.child2_benefit[38200811] = {
 		id = 38200811,
 		trigger = 18,
 		condition = {
@@ -39555,11 +33700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.child2_benefit
-
-	var_15_66[38200911] = {
+	pg.base.child2_benefit[38200911] = {
 		id = 38200911,
 		trigger = 5,
 		condition = {
@@ -39579,11 +33720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.child2_benefit
-
-	var_15_67[38201011] = {
+	pg.base.child2_benefit[38201011] = {
 		id = 38201011,
 		trigger = 5,
 		condition = {
@@ -39599,11 +33736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.child2_benefit
-
-	var_15_68[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38201111,
 		trigger = 5,
 		condition = {
@@ -39620,11 +33753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.child2_benefit
-
-	var_15_69[38201211] = {
+	pg.base.child2_benefit[38201211] = {
 		id = 38201211,
 		trigger = 18,
 		condition = {},
@@ -39635,11 +33764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.child2_benefit
-
-	var_15_70[38201411] = {
+	pg.base.child2_benefit[38201411] = {
 		id = 38201411,
 		trigger = 6,
 		condition = {
@@ -39675,11 +33800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.child2_benefit
-
-	var_15_71[38201511] = {
+	pg.base.child2_benefit[38201511] = {
 		id = 38201511,
 		trigger = 6,
 		condition = {
@@ -39700,11 +33821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.child2_benefit
-
-	var_15_72[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38201611,
 		trigger = 1,
 		condition = {},
@@ -39768,11 +33885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.child2_benefit
-
-	var_15_73[38201711] = {
+	pg.base.child2_benefit[38201711] = {
 		id = 38201711,
 		trigger = 1,
 		condition = {},
@@ -39840,11 +33953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.child2_benefit
-
-	var_15_74[38201811] = {
+	pg.base.child2_benefit[38201811] = {
 		id = 38201811,
 		trigger = 6,
 		condition = {
@@ -39904,11 +34013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.child2_benefit
-
-	var_15_75[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38202011,
 		trigger = 2,
 		condition = {},
@@ -39963,11 +34068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.child2_benefit
-
-	var_15_76[28] = {
+	pg.base.child2_benefit[28] = {
 		id = 38202012,
 		trigger = 5,
 		condition = {},
@@ -40006,11 +34107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.child2_benefit
-
-	var_15_77[38202111] = {
+	pg.base.child2_benefit[38202111] = {
 		id = 38202111,
 		trigger = 6,
 		condition = {
@@ -40038,11 +34135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.child2_benefit
-
-	var_15_78[38202211] = {
+	pg.base.child2_benefit[38202211] = {
 		id = 38202211,
 		trigger = 6,
 		condition = {
@@ -40070,11 +34163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.child2_benefit
-
-	var_15_79[38202311] = {
+	pg.base.child2_benefit[38202311] = {
 		id = 38202311,
 		trigger = 19,
 		condition = {
@@ -40121,11 +34210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.child2_benefit
-
-	var_15_80[38202411] = {
+	pg.base.child2_benefit[38202411] = {
 		id = 38202411,
 		trigger = 19,
 		condition = {
@@ -40172,11 +34257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.child2_benefit
-
-	var_15_81[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38202511,
 		trigger = 5,
 		condition = {
@@ -40222,11 +34303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.child2_benefit
-
-	var_15_82[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38202521,
 		trigger = 1,
 		condition = {},
@@ -40265,11 +34342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.child2_benefit
-
-	var_15_83[38202531] = {
+	pg.base.child2_benefit[38202531] = {
 		id = 38202531,
 		trigger = 1,
 		condition = {},
@@ -40308,11 +34381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.child2_benefit
-
-	var_15_84[0] = {
+	pg.base.child2_benefit[0] = {
 		id = 38202112,
 		trigger = 13,
 		condition = {},
@@ -40323,11 +34392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_84
-
-	local var_15_85 = var_15_84.base.child2_benefit
-
-	var_15_85[38202212] = {
+	pg.base.child2_benefit[38202212] = {
 		id = 38202212,
 		trigger = 13,
 		condition = {},
@@ -40338,11 +34403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.child2_benefit
-
-	var_15_86[38202312] = {
+	pg.base.child2_benefit[38202312] = {
 		id = 38202312,
 		trigger = 13,
 		condition = {},
@@ -40353,11 +34414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.child2_benefit
-
-	var_15_87[38202412] = {
+	pg.base.child2_benefit[38202412] = {
 		id = 38202412,
 		trigger = 13,
 		condition = {},
@@ -40368,11 +34425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.child2_benefit
-
-	var_15_88[16] = {
+	pg.base.child2_benefit[16] = {
 		id = 38202512,
 		trigger = 13,
 		condition = {},
@@ -40383,11 +34436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.child2_benefit
-
-	var_15_89[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38202113,
 		trigger = 1,
 		condition = {
@@ -40433,11 +34482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.child2_benefit
-
-	var_15_90[38202213] = {
+	pg.base.child2_benefit[38202213] = {
 		id = 38202213,
 		trigger = 1,
 		condition = {
@@ -40483,11 +34528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.child2_benefit
-
-	var_15_91[38202711] = {
+	pg.base.child2_benefit[38202711] = {
 		id = 38202711,
 		trigger = 3,
 		condition = {
@@ -40547,11 +34588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.child2_benefit
-
-	var_15_92[38202712] = {
+	pg.base.child2_benefit[38202712] = {
 		id = 38202712,
 		trigger = 3,
 		condition = {
@@ -40611,11 +34648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.child2_benefit
-
-	var_15_93[38202713] = {
+	pg.base.child2_benefit[38202713] = {
 		id = 38202713,
 		trigger = 3,
 		condition = {
@@ -40675,11 +34708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.child2_benefit
-
-	var_15_94[38202714] = {
+	pg.base.child2_benefit[38202714] = {
 		id = 38202714,
 		trigger = 3,
 		condition = {
@@ -40739,11 +34768,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.child2_benefit
-
-	var_15_95[38202715] = {
+	pg.base.child2_benefit[38202715] = {
 		id = 38202715,
 		trigger = 3,
 		condition = {
@@ -40803,11 +34828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.child2_benefit
-
-	var_15_96[38202716] = {
+	pg.base.child2_benefit[38202716] = {
 		id = 38202716,
 		trigger = 3,
 		condition = {
@@ -40867,11 +34888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.child2_benefit
-
-	var_15_97[38202717] = {
+	pg.base.child2_benefit[38202717] = {
 		id = 38202717,
 		trigger = 3,
 		condition = {
@@ -40931,11 +34948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.child2_benefit
-
-	var_15_98[38202718] = {
+	pg.base.child2_benefit[38202718] = {
 		id = 38202718,
 		trigger = 3,
 		condition = {
@@ -40995,8 +35008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_98
-	var_15_98.base.child2_benefit[38202719] = {
+	pg.base.child2_benefit[38202719] = {
 		id = 38202719,
 		trigger = 3,
 		condition = {
@@ -41060,11 +35072,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.child2_benefit
-
-	var_16_0[38202720] = {
+	pg.base.child2_benefit[38202720] = {
 		id = 38202720,
 		trigger = 3,
 		condition = {
@@ -41124,11 +35132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.child2_benefit
-
-	var_16_1[38202811] = {
+	pg.base.child2_benefit[38202811] = {
 		id = 38202811,
 		trigger = 13,
 		condition = {},
@@ -41143,11 +35147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.child2_benefit
-
-	var_16_2[38202821] = {
+	pg.base.child2_benefit[38202821] = {
 		id = 38202821,
 		trigger = 1,
 		condition = {},
@@ -41162,11 +35162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.child2_benefit
-
-	var_16_3[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38202911,
 		trigger = 19,
 		condition = {
@@ -41182,11 +35178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.child2_benefit
-
-	var_16_4[38202912] = {
+	pg.base.child2_benefit[38202912] = {
 		id = 38202912,
 		trigger = 13,
 		condition = {},
@@ -41225,11 +35217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.child2_benefit
-
-	var_16_5[38202913] = {
+	pg.base.child2_benefit[38202913] = {
 		id = 38202913,
 		trigger = 19,
 		condition = {
@@ -41245,11 +35233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.child2_benefit
-
-	var_16_6[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38203011,
 		trigger = 19,
 		condition = {
@@ -41266,11 +35250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.child2_benefit
-
-	var_16_7[4] = {
+	pg.base.child2_benefit[4] = {
 		id = 38203012,
 		trigger = 13,
 		condition = {},
@@ -41285,11 +35265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.child2_benefit
-
-	var_16_8[38203111] = {
+	pg.base.child2_benefit[38203111] = {
 		id = 38203111,
 		trigger = 19,
 		condition = {
@@ -41306,11 +35282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.child2_benefit
-
-	var_16_9[38203112] = {
+	pg.base.child2_benefit[38203112] = {
 		id = 38203112,
 		trigger = 13,
 		condition = {},
@@ -41325,11 +35297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.child2_benefit
-
-	var_16_10[38203311] = {
+	pg.base.child2_benefit[38203311] = {
 		id = 38203311,
 		trigger = 19,
 		condition = {
@@ -41353,11 +35321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.child2_benefit
-
-	var_16_11[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38203411,
 		trigger = 5,
 		condition = {
@@ -41379,11 +35343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.child2_benefit
-
-	var_16_12[38203511] = {
+	pg.base.child2_benefit[38203511] = {
 		id = 38203511,
 		trigger = 19,
 		condition = {
@@ -41403,11 +35363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.child2_benefit
-
-	var_16_13[38203611] = {
+	pg.base.child2_benefit[38203611] = {
 		id = 38203611,
 		trigger = 1,
 		condition = {},
@@ -41422,11 +35378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.child2_benefit
-
-	var_16_14[38203612] = {
+	pg.base.child2_benefit[38203612] = {
 		id = 38203612,
 		trigger = 3,
 		condition = {},
@@ -41445,11 +35397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.child2_benefit
-
-	var_16_15[38203711] = {
+	pg.base.child2_benefit[38203711] = {
 		id = 38203711,
 		trigger = 19,
 		condition = {
@@ -41467,11 +35415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.child2_benefit
-
-	var_16_16[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38250511,
 		trigger = 19,
 		condition = {
@@ -41489,11 +35433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.child2_benefit
-
-	var_16_17[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38250521,
 		trigger = 19,
 		condition = {
@@ -41511,11 +35451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.child2_benefit
-
-	var_16_18[38250531] = {
+	pg.base.child2_benefit[38250531] = {
 		id = 38250531,
 		trigger = 19,
 		condition = {
@@ -41533,11 +35469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.child2_benefit
-
-	var_16_19[38250541] = {
+	pg.base.child2_benefit[38250541] = {
 		id = 38250541,
 		trigger = 19,
 		condition = {
@@ -41555,11 +35487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.child2_benefit
-
-	var_16_20[38250551] = {
+	pg.base.child2_benefit[38250551] = {
 		id = 38250551,
 		trigger = 19,
 		condition = {
@@ -41577,11 +35505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.child2_benefit
-
-	var_16_21[38250561] = {
+	pg.base.child2_benefit[38250561] = {
 		id = 38250561,
 		trigger = 19,
 		condition = {
@@ -41599,11 +35523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.child2_benefit
-
-	var_16_22[38250571] = {
+	pg.base.child2_benefit[38250571] = {
 		id = 38250571,
 		trigger = 19,
 		condition = {
@@ -41621,11 +35541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.child2_benefit
-
-	var_16_23[38250581] = {
+	pg.base.child2_benefit[38250581] = {
 		id = 38250581,
 		trigger = 19,
 		condition = {
@@ -41643,11 +35559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.child2_benefit
-
-	var_16_24[38250591] = {
+	pg.base.child2_benefit[38250591] = {
 		id = 38250591,
 		trigger = 19,
 		condition = {
@@ -41665,11 +35577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.child2_benefit
-
-	var_16_25[38250601] = {
+	pg.base.child2_benefit[38250601] = {
 		id = 38250601,
 		trigger = 19,
 		condition = {
@@ -41687,11 +35595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.child2_benefit
-
-	var_16_26[38250611] = {
+	pg.base.child2_benefit[38250611] = {
 		id = 38250611,
 		trigger = 19,
 		condition = {
@@ -41709,11 +35613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.child2_benefit
-
-	var_16_27[38250621] = {
+	pg.base.child2_benefit[38250621] = {
 		id = 38250621,
 		trigger = 19,
 		condition = {
@@ -41731,11 +35631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.child2_benefit
-
-	var_16_28[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38250631,
 		trigger = 19,
 		condition = {
@@ -41753,11 +35649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.child2_benefit
-
-	var_16_29[17] = {
+	pg.base.child2_benefit[17] = {
 		id = 38250641,
 		trigger = 19,
 		condition = {
@@ -41775,11 +35667,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.child2_benefit
-
-	var_16_30[38250661] = {
+	pg.base.child2_benefit[38250661] = {
 		id = 38250661,
 		trigger = 1,
 		condition = {},
@@ -41818,11 +35706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.child2_benefit
-
-	var_16_31[38250671] = {
+	pg.base.child2_benefit[38250671] = {
 		id = 38250671,
 		trigger = 1,
 		condition = {},
@@ -41861,11 +35745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.child2_benefit
-
-	var_16_32[38250681] = {
+	pg.base.child2_benefit[38250681] = {
 		id = 38250681,
 		trigger = 1,
 		condition = {},
@@ -41904,11 +35784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.child2_benefit
-
-	var_16_33[38250691] = {
+	pg.base.child2_benefit[38250691] = {
 		id = 38250691,
 		trigger = 1,
 		condition = {},
@@ -41947,11 +35823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.child2_benefit
-
-	var_16_34[38250701] = {
+	pg.base.child2_benefit[38250701] = {
 		id = 38250701,
 		trigger = 1,
 		condition = {},
@@ -41990,11 +35862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.child2_benefit
-
-	var_16_35[38250711] = {
+	pg.base.child2_benefit[38250711] = {
 		id = 38250711,
 		trigger = 1,
 		condition = {},
@@ -42033,11 +35901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.child2_benefit
-
-	var_16_36[38250721] = {
+	pg.base.child2_benefit[38250721] = {
 		id = 38250721,
 		trigger = 1,
 		condition = {},
@@ -42076,11 +35940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.child2_benefit
-
-	var_16_37[38250731] = {
+	pg.base.child2_benefit[38250731] = {
 		id = 38250731,
 		trigger = 1,
 		condition = {},
@@ -42119,11 +35979,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.child2_benefit
-
-	var_16_38[38250741] = {
+	pg.base.child2_benefit[38250741] = {
 		id = 38250741,
 		trigger = 1,
 		condition = {},
@@ -42162,11 +36018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.child2_benefit
-
-	var_16_39[38250751] = {
+	pg.base.child2_benefit[38250751] = {
 		id = 38250751,
 		trigger = 1,
 		condition = {},
@@ -42205,11 +36057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.child2_benefit
-
-	var_16_40[9] = {
+	pg.base.child2_benefit[9] = {
 		id = 38250761,
 		trigger = 1,
 		condition = {},
@@ -42248,11 +36096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.child2_benefit
-
-	var_16_41[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38250771,
 		trigger = 1,
 		condition = {},
@@ -42291,11 +36135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.child2_benefit
-
-	var_16_42[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 38250781,
 		trigger = 1,
 		condition = {},
@@ -42334,11 +36174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.child2_benefit
-
-	var_16_43[38250791] = {
+	pg.base.child2_benefit[38250791] = {
 		id = 38250791,
 		trigger = 1,
 		condition = {},
@@ -42377,11 +36213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.child2_benefit
-
-	var_16_44[38250801] = {
+	pg.base.child2_benefit[38250801] = {
 		id = 38250801,
 		trigger = 1,
 		condition = {},
@@ -42420,11 +36252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.child2_benefit
-
-	var_16_45[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38203911,
 		trigger = 3,
 		condition = {},
@@ -42439,11 +36267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.child2_benefit
-
-	var_16_46[38204011] = {
+	pg.base.child2_benefit[38204011] = {
 		id = 38204011,
 		trigger = 3,
 		condition = {},
@@ -42462,11 +36286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.child2_benefit
-
-	var_16_47[38204111] = {
+	pg.base.child2_benefit[38204111] = {
 		id = 38204111,
 		trigger = 3,
 		condition = {
@@ -42489,11 +36309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.child2_benefit
-
-	var_16_48[38204211] = {
+	pg.base.child2_benefit[38204211] = {
 		id = 38204211,
 		trigger = 1,
 		condition = {},
@@ -42508,11 +36324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.child2_benefit
-
-	var_16_49[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38204311,
 		trigger = 19,
 		condition = {
@@ -42529,11 +36341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.child2_benefit
-
-	var_16_50[38250811] = {
+	pg.base.child2_benefit[38250811] = {
 		id = 38250811,
 		trigger = 19,
 		condition = {
@@ -42550,11 +36358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.child2_benefit
-
-	var_16_51[38250821] = {
+	pg.base.child2_benefit[38250821] = {
 		id = 38250821,
 		trigger = 19,
 		condition = {
@@ -42571,11 +36375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.child2_benefit
-
-	var_16_52[38250831] = {
+	pg.base.child2_benefit[38250831] = {
 		id = 38250831,
 		trigger = 19,
 		condition = {
@@ -42592,11 +36392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.child2_benefit
-
-	var_16_53[38250841] = {
+	pg.base.child2_benefit[38250841] = {
 		id = 38250841,
 		trigger = 19,
 		condition = {
@@ -42613,11 +36409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.child2_benefit
-
-	var_16_54[38250851] = {
+	pg.base.child2_benefit[38250851] = {
 		id = 38250851,
 		trigger = 19,
 		condition = {
@@ -42634,11 +36426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.child2_benefit
-
-	var_16_55[38250861] = {
+	pg.base.child2_benefit[38250861] = {
 		id = 38250861,
 		trigger = 19,
 		condition = {
@@ -42655,11 +36443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.child2_benefit
-
-	var_16_56[38250871] = {
+	pg.base.child2_benefit[38250871] = {
 		id = 38250871,
 		trigger = 19,
 		condition = {
@@ -42676,11 +36460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.child2_benefit
-
-	var_16_57[1] = {
+	pg.base.child2_benefit[1] = {
 		id = 38250881,
 		trigger = 19,
 		condition = {
@@ -42697,11 +36477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.child2_benefit
-
-	var_16_58[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38250891,
 		trigger = 19,
 		condition = {
@@ -42718,11 +36494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.child2_benefit
-
-	var_16_59[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 38250901,
 		trigger = 1,
 		condition = {},
@@ -42737,11 +36509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.child2_benefit
-
-	var_16_60[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38250911,
 		trigger = 1,
 		condition = {},
@@ -42756,11 +36524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.child2_benefit
-
-	var_16_61[38250921] = {
+	pg.base.child2_benefit[38250921] = {
 		id = 38250921,
 		trigger = 1,
 		condition = {},
@@ -42775,11 +36539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.child2_benefit
-
-	var_16_62[38250931] = {
+	pg.base.child2_benefit[38250931] = {
 		id = 38250931,
 		trigger = 1,
 		condition = {},
@@ -42794,11 +36554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.child2_benefit
-
-	var_16_63[38250941] = {
+	pg.base.child2_benefit[38250941] = {
 		id = 38250941,
 		trigger = 1,
 		condition = {},
@@ -42813,11 +36569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.child2_benefit
-
-	var_16_64[38250951] = {
+	pg.base.child2_benefit[38250951] = {
 		id = 38250951,
 		trigger = 1,
 		condition = {},
@@ -42832,11 +36584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.child2_benefit
-
-	var_16_65[38250961] = {
+	pg.base.child2_benefit[38250961] = {
 		id = 38250961,
 		trigger = 1,
 		condition = {},
@@ -42851,11 +36599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.child2_benefit
-
-	var_16_66[38250971] = {
+	pg.base.child2_benefit[38250971] = {
 		id = 38250971,
 		trigger = 1,
 		condition = {},
@@ -42870,11 +36614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.child2_benefit
-
-	var_16_67[38250981] = {
+	pg.base.child2_benefit[38250981] = {
 		id = 38250981,
 		trigger = 1,
 		condition = {},
@@ -42889,11 +36629,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.child2_benefit
-
-	var_16_68[38250991] = {
+	pg.base.child2_benefit[38250991] = {
 		id = 38250991,
 		trigger = 1,
 		condition = {},
@@ -42908,11 +36644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.child2_benefit
-
-	var_16_69[38204511] = {
+	pg.base.child2_benefit[38204511] = {
 		id = 38204511,
 		trigger = 5,
 		condition = {
@@ -42936,11 +36668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.child2_benefit
-
-	var_16_70[38204611] = {
+	pg.base.child2_benefit[38204611] = {
 		id = 38204611,
 		trigger = 5,
 		condition = {
@@ -42964,11 +36692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.child2_benefit
-
-	var_16_71[38204711] = {
+	pg.base.child2_benefit[38204711] = {
 		id = 38204711,
 		trigger = 5,
 		condition = {
@@ -42992,11 +36716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.child2_benefit
-
-	var_16_72[38204911] = {
+	pg.base.child2_benefit[38204911] = {
 		id = 38204911,
 		trigger = 20,
 		condition = {
@@ -43012,11 +36732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.child2_benefit
-
-	var_16_73[38205011] = {
+	pg.base.child2_benefit[38205011] = {
 		id = 38205011,
 		trigger = 20,
 		condition = {
@@ -43032,11 +36748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.child2_benefit
-
-	var_16_74[38205111] = {
+	pg.base.child2_benefit[38205111] = {
 		id = 38205111,
 		trigger = 20,
 		condition = {
@@ -43052,11 +36764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.child2_benefit
-
-	var_16_75[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38205211,
 		trigger = 1,
 		condition = {
@@ -43076,11 +36784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.child2_benefit
-
-	var_16_76[38205311] = {
+	pg.base.child2_benefit[38205311] = {
 		id = 38205311,
 		trigger = 1,
 		condition = {
@@ -43124,11 +36828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.child2_benefit
-
-	var_16_77[38205511] = {
+	pg.base.child2_benefit[38205511] = {
 		id = 38205511,
 		trigger = 1,
 		condition = {},
@@ -43167,11 +36867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.child2_benefit
-
-	var_16_78[38205512] = {
+	pg.base.child2_benefit[38205512] = {
 		id = 38205512,
 		trigger = 5,
 		condition = {},
@@ -43210,11 +36906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.child2_benefit
-
-	var_16_79[38205611] = {
+	pg.base.child2_benefit[38205611] = {
 		id = 38205611,
 		trigger = 1,
 		condition = {},
@@ -43253,11 +36945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.child2_benefit
-
-	var_16_80[38205612] = {
+	pg.base.child2_benefit[38205612] = {
 		id = 38205612,
 		trigger = 5,
 		condition = {},
@@ -43272,11 +36960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.child2_benefit
-
-	var_16_81[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38205711,
 		trigger = 1,
 		condition = {
@@ -43370,11 +37054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_81
-
-	local var_16_82 = var_16_81.base.child2_benefit
-
-	var_16_82[38205911] = {
+	pg.base.child2_benefit[38205911] = {
 		id = 38205911,
 		trigger = 1,
 		condition = {
@@ -43420,11 +37100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.child2_benefit
-
-	var_16_83[38206011] = {
+	pg.base.child2_benefit[38206011] = {
 		id = 38206011,
 		trigger = 1,
 		condition = {},
@@ -43463,11 +37139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.child2_benefit
-
-	var_16_84[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38206111,
 		trigger = 5,
 		condition = {},
@@ -43478,11 +37150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_84
-
-	local var_16_85 = var_16_84.base.child2_benefit
-
-	var_16_85[38206112] = {
+	pg.base.child2_benefit[38206112] = {
 		id = 38206112,
 		trigger = 13,
 		condition = {},
@@ -43501,11 +37169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.child2_benefit
-
-	var_16_86[38206113] = {
+	pg.base.child2_benefit[38206113] = {
 		id = 38206113,
 		trigger = 13,
 		condition = {},
@@ -43524,11 +37188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.child2_benefit
-
-	var_16_87[38206114] = {
+	pg.base.child2_benefit[38206114] = {
 		id = 38206114,
 		trigger = 13,
 		condition = {},
@@ -43547,11 +37207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.child2_benefit
-
-	var_16_88[38206115] = {
+	pg.base.child2_benefit[38206115] = {
 		id = 38206115,
 		trigger = 13,
 		condition = {},
@@ -43570,11 +37226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.child2_benefit
-
-	var_16_89[38206311] = {
+	pg.base.child2_benefit[38206311] = {
 		id = 38206311,
 		trigger = 13,
 		condition = {},
@@ -43585,11 +37237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.child2_benefit
-
-	var_16_90[38206411] = {
+	pg.base.child2_benefit[38206411] = {
 		id = 38206411,
 		trigger = 5,
 		condition = {
@@ -43605,11 +37253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.child2_benefit
-
-	var_16_91[38206511] = {
+	pg.base.child2_benefit[38206511] = {
 		id = 38206511,
 		trigger = 3,
 		condition = {},
@@ -43624,11 +37268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.child2_benefit
-
-	var_16_92[38206711] = {
+	pg.base.child2_benefit[38206711] = {
 		id = 38206711,
 		trigger = 6,
 		condition = {
@@ -43648,11 +37288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.child2_benefit
-
-	var_16_93[38206712] = {
+	pg.base.child2_benefit[38206712] = {
 		id = 38206712,
 		trigger = 6,
 		condition = {
@@ -43672,11 +37308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.child2_benefit
-
-	var_16_94[38206811] = {
+	pg.base.child2_benefit[38206811] = {
 		id = 38206811,
 		trigger = 1,
 		condition = {},
@@ -43707,11 +37339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.child2_benefit
-
-	var_16_95[38206812] = {
+	pg.base.child2_benefit[38206812] = {
 		id = 38206812,
 		trigger = 13,
 		condition = {},
@@ -43726,11 +37354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.child2_benefit
-
-	var_16_96[38206911] = {
+	pg.base.child2_benefit[38206911] = {
 		id = 38206911,
 		trigger = 1,
 		condition = {},
@@ -43761,11 +37385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.child2_benefit
-
-	var_16_97[38206912] = {
+	pg.base.child2_benefit[38206912] = {
 		id = 38206912,
 		trigger = 13,
 		condition = {},
@@ -43780,11 +37400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.child2_benefit
-
-	var_16_98[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38207111,
 		trigger = 19,
 		condition = {
@@ -43805,8 +37421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_98
-	var_16_98.base.child2_benefit[38207211] = {
+	pg.base.child2_benefit[38207211] = {
 		id = 38207211,
 		trigger = 7,
 		condition = {
@@ -43830,11 +37445,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.child2_benefit
-
-	var_17_0[38207311] = {
+	pg.base.child2_benefit[38207311] = {
 		id = 38207311,
 		trigger = 19,
 		condition = {
@@ -43855,11 +37466,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.child2_benefit
-
-	var_17_1[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38207511,
 		trigger = 3,
 		condition = {
@@ -43903,11 +37510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.child2_benefit
-
-	var_17_2[38207611] = {
+	pg.base.child2_benefit[38207611] = {
 		id = 38207611,
 		trigger = 6,
 		condition = {
@@ -43928,11 +37531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.child2_benefit
-
-	var_17_3[38207711] = {
+	pg.base.child2_benefit[38207711] = {
 		id = 38207711,
 		trigger = 6,
 		condition = {
@@ -43953,11 +37552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.child2_benefit
-
-	var_17_4[38207911] = {
+	pg.base.child2_benefit[38207911] = {
 		id = 38207911,
 		trigger = 3,
 		condition = {
@@ -43976,11 +37571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.child2_benefit
-
-	var_17_5[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38208011,
 		trigger = 5,
 		condition = {
@@ -44001,11 +37592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.child2_benefit
-
-	var_17_6[38208111] = {
+	pg.base.child2_benefit[38208111] = {
 		id = 38208111,
 		trigger = 5,
 		condition = {
@@ -44026,11 +37613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.child2_benefit
-
-	var_17_7[38208311] = {
+	pg.base.child2_benefit[38208311] = {
 		id = 38208311,
 		trigger = 1,
 		condition = {
@@ -44075,11 +37658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.child2_benefit
-
-	var_17_8[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38208411,
 		trigger = 3,
 		condition = {
@@ -44100,11 +37679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.child2_benefit
-
-	var_17_9[28] = {
+	pg.base.child2_benefit[28] = {
 		id = 38208412,
 		trigger = 3,
 		condition = {
@@ -44125,11 +37700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.child2_benefit
-
-	var_17_10[29] = {
+	pg.base.child2_benefit[29] = {
 		id = 38208413,
 		trigger = 3,
 		condition = {
@@ -44150,11 +37721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.child2_benefit
-
-	var_17_11[30] = {
+	pg.base.child2_benefit[30] = {
 		id = 38208414,
 		trigger = 3,
 		condition = {
@@ -44175,11 +37742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.child2_benefit
-
-	var_17_12[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38208415,
 		trigger = 3,
 		condition = {
@@ -44200,11 +37763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.child2_benefit
-
-	var_17_13[38208416] = {
+	pg.base.child2_benefit[38208416] = {
 		id = 38208416,
 		trigger = 3,
 		condition = {
@@ -44225,11 +37784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.child2_benefit
-
-	var_17_14[38208511] = {
+	pg.base.child2_benefit[38208511] = {
 		id = 38208511,
 		trigger = 6,
 		condition = {
@@ -44249,11 +37804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.child2_benefit
-
-	var_17_15[38208711] = {
+	pg.base.child2_benefit[38208711] = {
 		id = 38208711,
 		trigger = 1,
 		condition = {
@@ -44281,11 +37832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.child2_benefit
-
-	var_17_16[38208811] = {
+	pg.base.child2_benefit[38208811] = {
 		id = 38208811,
 		trigger = 1,
 		condition = {
@@ -44306,11 +37853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.child2_benefit
-
-	var_17_17[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38208911,
 		trigger = 19,
 		condition = {
@@ -44354,11 +37897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.child2_benefit
-
-	var_17_18[16] = {
+	pg.base.child2_benefit[16] = {
 		id = 38208912,
 		trigger = 19,
 		condition = {
@@ -44402,11 +37941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.child2_benefit
-
-	var_17_19[38209011] = {
+	pg.base.child2_benefit[38209011] = {
 		id = 38209011,
 		trigger = 19,
 		condition = {
@@ -44423,11 +37958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.child2_benefit
-
-	var_17_20[38209111] = {
+	pg.base.child2_benefit[38209111] = {
 		id = 38209111,
 		trigger = 19,
 		condition = {
@@ -44444,11 +37975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.child2_benefit
-
-	var_17_21[38209121] = {
+	pg.base.child2_benefit[38209121] = {
 		id = 38209121,
 		trigger = 1,
 		condition = {},
@@ -44471,11 +37998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.child2_benefit
-
-	var_17_22[38209131] = {
+	pg.base.child2_benefit[38209131] = {
 		id = 38209131,
 		trigger = 1,
 		condition = {},
@@ -44498,11 +38021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.child2_benefit
-
-	var_17_23[38209141] = {
+	pg.base.child2_benefit[38209141] = {
 		id = 38209141,
 		trigger = 3,
 		condition = {
@@ -44518,11 +38037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.child2_benefit
-
-	var_17_24[38209151] = {
+	pg.base.child2_benefit[38209151] = {
 		id = 38209151,
 		trigger = 3,
 		condition = {
@@ -44538,11 +38053,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.child2_benefit
-
-	var_17_25[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38209311,
 		trigger = 16,
 		condition = {
@@ -44564,11 +38075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.child2_benefit
-
-	var_17_26[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38209411,
 		trigger = 19,
 		condition = {
@@ -44591,11 +38098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.child2_benefit
-
-	var_17_27[38209511] = {
+	pg.base.child2_benefit[38209511] = {
 		id = 38209511,
 		trigger = 13,
 		condition = {},
@@ -44614,11 +38117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.child2_benefit
-
-	var_17_28[38209512] = {
+	pg.base.child2_benefit[38209512] = {
 		id = 38209512,
 		trigger = 13,
 		condition = {},
@@ -44637,11 +38136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.child2_benefit
-
-	var_17_29[38209611] = {
+	pg.base.child2_benefit[38209611] = {
 		id = 38209611,
 		trigger = 5,
 		condition = {
@@ -44665,11 +38160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.child2_benefit
-
-	var_17_30[38209711] = {
+	pg.base.child2_benefit[38209711] = {
 		id = 38209711,
 		trigger = 13,
 		condition = {},
@@ -44684,11 +38175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.child2_benefit
-
-	var_17_31[38209721] = {
+	pg.base.child2_benefit[38209721] = {
 		id = 38209721,
 		trigger = 1,
 		condition = {},
@@ -44703,11 +38190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.child2_benefit
-
-	var_17_32[38209911] = {
+	pg.base.child2_benefit[38209911] = {
 		id = 38209911,
 		trigger = 17,
 		condition = {},
@@ -44729,11 +38212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_32
-
-	local var_17_33 = var_17_32.base.child2_benefit
-
-	var_17_33[38210011] = {
+	pg.base.child2_benefit[38210011] = {
 		id = 38210011,
 		trigger = 17,
 		condition = {},
@@ -44755,11 +38234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_33
-
-	local var_17_34 = var_17_33.base.child2_benefit
-
-	var_17_34[38210111] = {
+	pg.base.child2_benefit[38210111] = {
 		id = 38210111,
 		trigger = 17,
 		condition = {},
@@ -44781,11 +38256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_34
-
-	local var_17_35 = var_17_34.base.child2_benefit
-
-	var_17_35[38210211] = {
+	pg.base.child2_benefit[38210211] = {
 		id = 38210211,
 		trigger = 17,
 		condition = {},
@@ -44807,11 +38278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_35
-
-	local var_17_36 = var_17_35.base.child2_benefit
-
-	var_17_36[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38210311,
 		trigger = 17,
 		condition = {},
@@ -44866,11 +38333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_36
-
-	local var_17_37 = var_17_36.base.child2_benefit
-
-	var_17_37[38210511] = {
+	pg.base.child2_benefit[38210511] = {
 		id = 38210511,
 		trigger = 5,
 		condition = {
@@ -44886,11 +38349,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_37
-
-	local var_17_38 = var_17_37.base.child2_benefit
-
-	var_17_38[38210611] = {
+	pg.base.child2_benefit[38210611] = {
 		id = 38210611,
 		trigger = 7,
 		condition = {
@@ -44910,11 +38369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_38
-
-	local var_17_39 = var_17_38.base.child2_benefit
-
-	var_17_39[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38210711,
 		trigger = 7,
 		condition = {
@@ -44934,11 +38389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_39
-
-	local var_17_40 = var_17_39.base.child2_benefit
-
-	var_17_40[38210911] = {
+	pg.base.child2_benefit[38210911] = {
 		id = 38210911,
 		trigger = 1,
 		condition = {
@@ -44982,11 +38433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_40
-
-	local var_17_41 = var_17_40.base.child2_benefit
-
-	var_17_41[38211011] = {
+	pg.base.child2_benefit[38211011] = {
 		id = 38211011,
 		trigger = 5,
 		condition = {
@@ -45002,11 +38449,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_41
-
-	local var_17_42 = var_17_41.base.child2_benefit
-
-	var_17_42[38211021] = {
+	pg.base.child2_benefit[38211021] = {
 		id = 38211021,
 		trigger = 1,
 		condition = {},
@@ -45045,11 +38488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_42
-
-	local var_17_43 = var_17_42.base.child2_benefit
-
-	var_17_43[38211111] = {
+	pg.base.child2_benefit[38211111] = {
 		id = 38211111,
 		trigger = 1,
 		condition = {
@@ -45096,11 +38535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_43
-
-	local var_17_44 = var_17_43.base.child2_benefit
-
-	var_17_44[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38211211,
 		trigger = 5,
 		condition = {},
@@ -45111,11 +38546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_44
-
-	local var_17_45 = var_17_44.base.child2_benefit
-
-	var_17_45[38211311] = {
+	pg.base.child2_benefit[38211311] = {
 		id = 38211311,
 		trigger = 3,
 		condition = {},
@@ -45126,11 +38557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_45
-
-	local var_17_46 = var_17_45.base.child2_benefit
-
-	var_17_46[38211411] = {
+	pg.base.child2_benefit[38211411] = {
 		id = 38211411,
 		trigger = 7,
 		condition = {},
@@ -45141,11 +38568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_46
-
-	local var_17_47 = var_17_46.base.child2_benefit
-
-	var_17_47[38211511] = {
+	pg.base.child2_benefit[38211511] = {
 		id = 38211511,
 		trigger = 6,
 		condition = {
@@ -45161,11 +38584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_47
-
-	local var_17_48 = var_17_47.base.child2_benefit
-
-	var_17_48[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38211611,
 		trigger = 6,
 		condition = {
@@ -45181,11 +38600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_48
-
-	local var_17_49 = var_17_48.base.child2_benefit
-
-	var_17_49[38211711] = {
+	pg.base.child2_benefit[38211711] = {
 		id = 38211711,
 		trigger = 16,
 		condition = {},
@@ -45196,11 +38611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_49
-
-	local var_17_50 = var_17_49.base.child2_benefit
-
-	var_17_50[38211811] = {
+	pg.base.child2_benefit[38211811] = {
 		id = 38211811,
 		trigger = 17,
 		condition = {},
@@ -45211,11 +38622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_50
-
-	local var_17_51 = var_17_50.base.child2_benefit
-
-	var_17_51[38211911] = {
+	pg.base.child2_benefit[38211911] = {
 		id = 38211911,
 		trigger = 6,
 		condition = {
@@ -45231,11 +38638,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_51
-
-	local var_17_52 = var_17_51.base.child2_benefit
-
-	var_17_52[38212011] = {
+	pg.base.child2_benefit[38212011] = {
 		id = 38212011,
 		trigger = 18,
 		condition = {},
@@ -45246,11 +38649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_52
-
-	local var_17_53 = var_17_52.base.child2_benefit
-
-	var_17_53[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38212111,
 		trigger = 5,
 		condition = {
@@ -45272,11 +38671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_53
-
-	local var_17_54 = var_17_53.base.child2_benefit
-
-	var_17_54[38212211] = {
+	pg.base.child2_benefit[38212211] = {
 		id = 38212211,
 		trigger = 19,
 		condition = {
@@ -45297,11 +38692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_54
-
-	local var_17_55 = var_17_54.base.child2_benefit
-
-	var_17_55[38212311] = {
+	pg.base.child2_benefit[38212311] = {
 		id = 38212311,
 		trigger = 19,
 		condition = {
@@ -45322,11 +38713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_55
-
-	local var_17_56 = var_17_55.base.child2_benefit
-
-	var_17_56[38212411] = {
+	pg.base.child2_benefit[38212411] = {
 		id = 38212411,
 		trigger = 6,
 		condition = {
@@ -45347,11 +38734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_56
-
-	local var_17_57 = var_17_56.base.child2_benefit
-
-	var_17_57[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38212511,
 		trigger = 6,
 		condition = {
@@ -45372,11 +38755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_57
-
-	local var_17_58 = var_17_57.base.child2_benefit
-
-	var_17_58[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38212611,
 		trigger = 6,
 		condition = {
@@ -45397,11 +38776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_58
-
-	local var_17_59 = var_17_58.base.child2_benefit
-
-	var_17_59[38212711] = {
+	pg.base.child2_benefit[38212711] = {
 		id = 38212711,
 		trigger = 19,
 		condition = {
@@ -45421,11 +38796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_59
-
-	local var_17_60 = var_17_59.base.child2_benefit
-
-	var_17_60[38212811] = {
+	pg.base.child2_benefit[38212811] = {
 		id = 38212811,
 		trigger = 3,
 		condition = {
@@ -45448,11 +38819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_60
-
-	local var_17_61 = var_17_60.base.child2_benefit
-
-	var_17_61[38212911] = {
+	pg.base.child2_benefit[38212911] = {
 		id = 38212911,
 		trigger = 19,
 		condition = {
@@ -45472,11 +38839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_61
-
-	local var_17_62 = var_17_61.base.child2_benefit
-
-	var_17_62[19] = {
+	pg.base.child2_benefit[19] = {
 		id = 38213011,
 		trigger = 19,
 		condition = {
@@ -45497,11 +38860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_62
-
-	local var_17_63 = var_17_62.base.child2_benefit
-
-	var_17_63[38213111] = {
+	pg.base.child2_benefit[38213111] = {
 		id = 38213111,
 		trigger = 5,
 		condition = {
@@ -45523,11 +38882,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_63
-
-	local var_17_64 = var_17_63.base.child2_benefit
-
-	var_17_64[38213211] = {
+	pg.base.child2_benefit[38213211] = {
 		id = 38213211,
 		trigger = 5,
 		condition = {
@@ -45547,11 +38902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_64
-
-	local var_17_65 = var_17_64.base.child2_benefit
-
-	var_17_65[38213311] = {
+	pg.base.child2_benefit[38213311] = {
 		id = 38213311,
 		trigger = 5,
 		condition = {
@@ -45571,11 +38922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_65
-
-	local var_17_66 = var_17_65.base.child2_benefit
-
-	var_17_66[38213411] = {
+	pg.base.child2_benefit[38213411] = {
 		id = 38213411,
 		trigger = 19,
 		condition = {
@@ -45597,11 +38944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_66
-
-	local var_17_67 = var_17_66.base.child2_benefit
-
-	var_17_67[38213421] = {
+	pg.base.child2_benefit[38213421] = {
 		id = 38213421,
 		trigger = 19,
 		condition = {
@@ -45623,11 +38966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_67
-
-	local var_17_68 = var_17_67.base.child2_benefit
-
-	var_17_68[7] = {
+	pg.base.child2_benefit[7] = {
 		id = 38213511,
 		trigger = 5,
 		condition = {},
@@ -45642,11 +38981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_68
-
-	local var_17_69 = var_17_68.base.child2_benefit
-
-	var_17_69[38213611] = {
+	pg.base.child2_benefit[38213611] = {
 		id = 38213611,
 		trigger = 5,
 		condition = {},
@@ -45664,11 +38999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_69
-
-	local var_17_70 = var_17_69.base.child2_benefit
-
-	var_17_70[38213711] = {
+	pg.base.child2_benefit[38213711] = {
 		id = 38213711,
 		trigger = 5,
 		condition = {},
@@ -45686,11 +39017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_70
-
-	local var_17_71 = var_17_70.base.child2_benefit
-
-	var_17_71[38213811] = {
+	pg.base.child2_benefit[38213811] = {
 		id = 38213811,
 		trigger = 5,
 		condition = {
@@ -45711,11 +39038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_71
-
-	local var_17_72 = var_17_71.base.child2_benefit
-
-	var_17_72[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38213911,
 		trigger = 19,
 		condition = {
@@ -45736,11 +39059,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_72
-
-	local var_17_73 = var_17_72.base.child2_benefit
-
-	var_17_73[38213921] = {
+	pg.base.child2_benefit[38213921] = {
 		id = 38213921,
 		trigger = 19,
 		condition = {
@@ -45761,11 +39080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_73
-
-	local var_17_74 = var_17_73.base.child2_benefit
-
-	var_17_74[38214011] = {
+	pg.base.child2_benefit[38214011] = {
 		id = 38214011,
 		trigger = 19,
 		condition = {
@@ -45786,11 +39101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_74
-
-	local var_17_75 = var_17_74.base.child2_benefit
-
-	var_17_75[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 38214021,
 		trigger = 19,
 		condition = {
@@ -45811,11 +39122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_75
-
-	local var_17_76 = var_17_75.base.child2_benefit
-
-	var_17_76[38214111] = {
+	pg.base.child2_benefit[38214111] = {
 		id = 38214111,
 		trigger = 5,
 		condition = {
@@ -45837,11 +39144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_76
-
-	local var_17_77 = var_17_76.base.child2_benefit
-
-	var_17_77[38214211] = {
+	pg.base.child2_benefit[38214211] = {
 		id = 38214211,
 		trigger = 7,
 		condition = {
@@ -45861,11 +39164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_77
-
-	local var_17_78 = var_17_77.base.child2_benefit
-
-	var_17_78[38214311] = {
+	pg.base.child2_benefit[38214311] = {
 		id = 38214311,
 		trigger = 5,
 		condition = {
@@ -45885,11 +39184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_78
-
-	local var_17_79 = var_17_78.base.child2_benefit
-
-	var_17_79[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38214411,
 		trigger = 1,
 		condition = {},
@@ -45905,11 +39200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_79
-
-	local var_17_80 = var_17_79.base.child2_benefit
-
-	var_17_80[38214511] = {
+	pg.base.child2_benefit[38214511] = {
 		id = 38214511,
 		trigger = 7,
 		condition = {
@@ -45929,11 +39220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_80
-
-	local var_17_81 = var_17_80.base.child2_benefit
-
-	var_17_81[38214611] = {
+	pg.base.child2_benefit[38214611] = {
 		id = 38214611,
 		trigger = 3,
 		condition = {
@@ -45956,11 +39243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_81
-
-	local var_17_82 = var_17_81.base.child2_benefit
-
-	var_17_82[38214711] = {
+	pg.base.child2_benefit[38214711] = {
 		id = 38214711,
 		trigger = 5,
 		condition = {},
@@ -45975,11 +39258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_82
-
-	local var_17_83 = var_17_82.base.child2_benefit
-
-	var_17_83[27] = {
+	pg.base.child2_benefit[27] = {
 		id = 38214811,
 		trigger = 7,
 		condition = {},
@@ -45994,11 +39273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_83
-
-	local var_17_84 = var_17_83.base.child2_benefit
-
-	var_17_84[38214911] = {
+	pg.base.child2_benefit[38214911] = {
 		id = 38214911,
 		trigger = 7,
 		condition = {
@@ -46018,11 +39293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_84
-
-	local var_17_85 = var_17_84.base.child2_benefit
-
-	var_17_85[38215011] = {
+	pg.base.child2_benefit[38215011] = {
 		id = 38215011,
 		trigger = 7,
 		condition = {},
@@ -46037,11 +39308,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_85
-
-	local var_17_86 = var_17_85.base.child2_benefit
-
-	var_17_86[38215111] = {
+	pg.base.child2_benefit[38215111] = {
 		id = 38215111,
 		trigger = 5,
 		condition = {
@@ -46063,11 +39330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_86
-
-	local var_17_87 = var_17_86.base.child2_benefit
-
-	var_17_87[11] = {
+	pg.base.child2_benefit[11] = {
 		id = 38400011,
 		trigger = 13,
 		condition = {},
@@ -46082,11 +39345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_87
-
-	local var_17_88 = var_17_87.base.child2_benefit
-
-	var_17_88[21] = {
+	pg.base.child2_benefit[21] = {
 		id = 38400021,
 		trigger = 13,
 		condition = {},
@@ -46101,11 +39360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_88
-
-	local var_17_89 = var_17_88.base.child2_benefit
-
-	var_17_89[31] = {
+	pg.base.child2_benefit[31] = {
 		id = 38400031,
 		trigger = 13,
 		condition = {},
@@ -46120,11 +39375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_89
-
-	local var_17_90 = var_17_89.base.child2_benefit
-
-	var_17_90[38400041] = {
+	pg.base.child2_benefit[38400041] = {
 		id = 38400041,
 		trigger = 13,
 		condition = {},
@@ -46139,11 +39390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_90
-
-	local var_17_91 = var_17_90.base.child2_benefit
-
-	var_17_91[38400051] = {
+	pg.base.child2_benefit[38400051] = {
 		id = 38400051,
 		trigger = 13,
 		condition = {},
@@ -46158,11 +39405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_91
-
-	local var_17_92 = var_17_91.base.child2_benefit
-
-	var_17_92[38400061] = {
+	pg.base.child2_benefit[38400061] = {
 		id = 38400061,
 		trigger = 13,
 		condition = {},
@@ -46177,11 +39420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_92
-
-	local var_17_93 = var_17_92.base.child2_benefit
-
-	var_17_93[38400071] = {
+	pg.base.child2_benefit[38400071] = {
 		id = 38400071,
 		trigger = 13,
 		condition = {},
@@ -46196,11 +39435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_93
-
-	local var_17_94 = var_17_93.base.child2_benefit
-
-	var_17_94[38400081] = {
+	pg.base.child2_benefit[38400081] = {
 		id = 38400081,
 		trigger = 13,
 		condition = {},
@@ -46215,11 +39450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_94
-
-	local var_17_95 = var_17_94.base.child2_benefit
-
-	var_17_95[38400091] = {
+	pg.base.child2_benefit[38400091] = {
 		id = 38400091,
 		trigger = 13,
 		condition = {},
@@ -46234,11 +39465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_95
-
-	local var_17_96 = var_17_95.base.child2_benefit
-
-	var_17_96[38400101] = {
+	pg.base.child2_benefit[38400101] = {
 		id = 38400101,
 		trigger = 13,
 		condition = {},
@@ -46253,11 +39480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_96
-
-	local var_17_97 = var_17_96.base.child2_benefit
-
-	var_17_97[38400111] = {
+	pg.base.child2_benefit[38400111] = {
 		id = 38400111,
 		trigger = 13,
 		condition = {},
@@ -46272,11 +39495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_97
-
-	local var_17_98 = var_17_97.base.child2_benefit
-
-	var_17_98[38400121] = {
+	pg.base.child2_benefit[38400121] = {
 		id = 38400121,
 		trigger = 13,
 		condition = {},
@@ -46291,8 +39510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_17_98
-	var_17_98.base.child2_benefit[3] = {
+	pg.base.child2_benefit[3] = {
 		id = 38400131,
 		trigger = 13,
 		condition = {},
@@ -46311,11 +39529,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_18_0 = var_1_10000.base.child2_benefit
-
-	var_18_0[13] = {
+	pg.base.child2_benefit[13] = {
 		id = 38400141,
 		trigger = 13,
 		condition = {},
@@ -46330,11 +39544,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_0
-
-	local var_18_1 = var_18_0.base.child2_benefit
-
-	var_18_1[23] = {
+	pg.base.child2_benefit[23] = {
 		id = 38400151,
 		trigger = 13,
 		condition = {},
@@ -46349,11 +39559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_1
-
-	local var_18_2 = var_18_1.base.child2_benefit
-
-	var_18_2[38400161] = {
+	pg.base.child2_benefit[38400161] = {
 		id = 38400161,
 		trigger = 13,
 		condition = {},
@@ -46368,11 +39574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_2
-
-	local var_18_3 = var_18_2.base.child2_benefit
-
-	var_18_3[38400171] = {
+	pg.base.child2_benefit[38400171] = {
 		id = 38400171,
 		trigger = 13,
 		condition = {},
@@ -46387,11 +39589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_3
-
-	local var_18_4 = var_18_3.base.child2_benefit
-
-	var_18_4[38400181] = {
+	pg.base.child2_benefit[38400181] = {
 		id = 38400181,
 		trigger = 13,
 		condition = {},
@@ -46406,11 +39604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_4
-
-	local var_18_5 = var_18_4.base.child2_benefit
-
-	var_18_5[38400191] = {
+	pg.base.child2_benefit[38400191] = {
 		id = 38400191,
 		trigger = 13,
 		condition = {},
@@ -46425,11 +39619,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_5
-
-	local var_18_6 = var_18_5.base.child2_benefit
-
-	var_18_6[38400201] = {
+	pg.base.child2_benefit[38400201] = {
 		id = 38400201,
 		trigger = 13,
 		condition = {},
@@ -46444,11 +39634,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_6
-
-	local var_18_7 = var_18_6.base.child2_benefit
-
-	var_18_7[38400211] = {
+	pg.base.child2_benefit[38400211] = {
 		id = 38400211,
 		trigger = 13,
 		condition = {},
@@ -46463,11 +39649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_7
-
-	local var_18_8 = var_18_7.base.child2_benefit
-
-	var_18_8[38400221] = {
+	pg.base.child2_benefit[38400221] = {
 		id = 38400221,
 		trigger = 13,
 		condition = {},
@@ -46482,11 +39664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_8
-
-	local var_18_9 = var_18_8.base.child2_benefit
-
-	var_18_9[38400231] = {
+	pg.base.child2_benefit[38400231] = {
 		id = 38400231,
 		trigger = 13,
 		condition = {},
@@ -46501,11 +39679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_9
-
-	local var_18_10 = var_18_9.base.child2_benefit
-
-	var_18_10[38400241] = {
+	pg.base.child2_benefit[38400241] = {
 		id = 38400241,
 		trigger = 13,
 		condition = {},
@@ -46520,11 +39694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_10
-
-	local var_18_11 = var_18_10.base.child2_benefit
-
-	var_18_11[38400251] = {
+	pg.base.child2_benefit[38400251] = {
 		id = 38400251,
 		trigger = 13,
 		condition = {},
@@ -46539,11 +39709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_11
-
-	local var_18_12 = var_18_11.base.child2_benefit
-
-	var_18_12[5] = {
+	pg.base.child2_benefit[5] = {
 		id = 38400261,
 		trigger = 13,
 		condition = {},
@@ -46558,11 +39724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_12
-
-	local var_18_13 = var_18_12.base.child2_benefit
-
-	var_18_13[15] = {
+	pg.base.child2_benefit[15] = {
 		id = 38400271,
 		trigger = 13,
 		condition = {},
@@ -46577,8 +39739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_13
-	var_18_13.base.child2_benefit[25] = {
+	pg.base.child2_benefit[25] = {
 		id = 38400281,
 		trigger = 13,
 		condition = {},

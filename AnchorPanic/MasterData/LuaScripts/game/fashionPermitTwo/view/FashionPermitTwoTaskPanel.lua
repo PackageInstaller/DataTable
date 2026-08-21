@@ -11,7 +11,7 @@ function ctor(self)
     super.ctor(self)
     self:setSize(0, 0)
     self:setTxtTitle("任务")
-    self:setBg("fashionPermit_bg.jpg", false, "fashionPermit")
+    self:setBg("fashionPermitTwo_bg.jpg", false, "fashionPermit")
 end
 
 --析构  

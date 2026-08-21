@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GuildConst")
+﻿local var_0_0 = class("GuildConst")
 
 var_0_0.DEBUG = true
 var_0_0.POLICY_TYPE_POWER = 1
@@ -12,22 +10,14 @@ var_0_0.WEEKLY_TASK_PROGRESS_REFRESH_TIME = 60
 var_0_0.REFRESH_CAPITAL_TIME = 30
 var_0_0.REQUEST_ASSAULT_TIME = 30
 var_0_0.REQUEST_REPORT_TIME = 30
-
-local var_0_1 = {}
-
-i18n = var_2
-var_0_1[1] = var_2("guild_policy_power")
-i18n = var_2
-var_0_1[2] = var_2("guild_policy_relax")
-var_0_0.POLICY_NAME = var_0_1
-
-local var_0_2 = {}
-
-i18n = var_2
-var_0_2[1] = var_2("guild_faction_blhx")
-i18n = var_2
-var_0_2[2] = var_2("guild_faction_cszz")
-var_0_0.FACTION_NAME = var_0_2
+var_0_0.POLICY_NAME = {
+	i18n("guild_policy_power"),
+	i18n("guild_policy_relax")
+}
+var_0_0.FACTION_NAME = {
+	i18n("guild_faction_blhx"),
+	i18n("guild_faction_cszz")
+}
 var_0_0.CHAT_LOG_MAX_COUNT = 100
 var_0_0.REQUEST_LOG_TIME = 300
 var_0_0.REQUEST_BOSS_TIME = 60
@@ -64,9 +54,7 @@ var_0_0.BASE_EVENT_TYPE_COMMON = 1
 var_0_0.BASE_EVENT_TYPE_ELITE = 2
 
 function var_0_0.MAX_REPORT_CNT()
-	pg = var_1_10000
-
-	return var_1_10000.guildset.operation_report_max.key_value
+	return pg.guildset.operation_report_max.key_value
 end
 
 var_0_0.REQUEST_REPORT_CD = 30
@@ -78,9 +66,7 @@ var_0_0.RECOMMAND_SHIP = 0
 var_0_0.CANCEL_RECOMMAND_SHIP = 1
 
 function var_0_0.MISSION_BOSS_MAX_CNT()
-	pg = var_1_10000
-
-	return var_1_10000.guildset.operation_daily_boss_count.key_value
+	return pg.guildset.operation_daily_boss_count.key_value
 end
 
 var_0_0.REFRESH_MISSION_BOSS_RANK_TIME = 300
@@ -112,214 +98,64 @@ var_0_0.TYPE_TO_GROUP = {
 }
 
 function var_0_0.GET_TECHNOLOGY_GROUP_DESC(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_0[1]
-	local var_3_1 = "<color="
-
-	COLOR_GREEN = var_1_10005
-
-	local var_3_2 = var_3_1 .. var_1_10005 .. ">" .. arg_3_2 .. "</color>"
+	local var_3_0 = "<color=" .. COLOR_GREEN .. ">" .. arg_3_2 .. "</color>"
 
 	if arg_3_1 == arg_3_2 then
-		var_3_2 = arg_3_1
+		var_3_0 = arg_3_1
 	end
 
-	GuildConst = var_1_10005
-
-	if var_3_0 == var_1_10005.TYPE_GOLD_MAX then
-		i18n = var_5
-
-		return var_5("guild_tech_gold_desc", var_3_2)
+	if arg_3_0[1] == GuildConst.TYPE_GOLD_MAX then
+		return i18n("guild_tech_gold_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_OIL_MAX then
+		return i18n("guild_tech_oil_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_SHIP_BAG then
+		return i18n("guild_tech_shipbag_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_EQUIPMENT_BAG then
+		return i18n("guild_tech_equipbag_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_CATBOX_GOLD_COST then
+		return i18n("guild_box_gold_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_CATBOX_TIME_COST_R then
+		return i18n("guidl_r_box_time_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_CATBOX_TIME_COST_SR then
+		return i18n("guidl_sr_box_time_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_CATBOX_TIME_COST_SSR then
+		return i18n("guidl_ssr_box_time_desc", var_3_0)
+	elseif arg_3_0[1] == GuildConst.TYPE_GUILD_MEMBER_CNT then
+		return i18n("guild_member_max_cnt_desc", var_3_0)
 	else
-		GuildConst = var_5
-
-		if var_3_0 == var_5.TYPE_OIL_MAX then
-			i18n = var_5
-
-			return var_5("guild_tech_oil_desc", var_3_2)
-		else
-			GuildConst = var_5
-
-			if var_3_0 == var_5.TYPE_SHIP_BAG then
-				i18n = var_5
-
-				return var_5("guild_tech_shipbag_desc", var_3_2)
-			else
-				GuildConst = var_5
-
-				if var_3_0 == var_5.TYPE_EQUIPMENT_BAG then
-					i18n = var_5
-
-					return var_5("guild_tech_equipbag_desc", var_3_2)
-				else
-					GuildConst = var_5
-
-					if var_3_0 == var_5.TYPE_CATBOX_GOLD_COST then
-						i18n = var_5
-
-						return var_5("guild_box_gold_desc", var_3_2)
-					else
-						GuildConst = var_5
-
-						if var_3_0 == var_5.TYPE_CATBOX_TIME_COST_R then
-							i18n = var_5
-
-							return var_5("guidl_r_box_time_desc", var_3_2)
-						else
-							GuildConst = var_5
-
-							if var_3_0 == var_5.TYPE_CATBOX_TIME_COST_SR then
-								i18n = var_5
-
-								return var_5("guidl_sr_box_time_desc", var_3_2)
-							else
-								GuildConst = var_5
-
-								if var_3_0 == var_5.TYPE_CATBOX_TIME_COST_SSR then
-									i18n = var_5
-
-									return var_5("guidl_ssr_box_time_desc", var_3_2)
-								else
-									GuildConst = var_5
-
-									if var_3_0 == var_5.TYPE_GUILD_MEMBER_CNT then
-										i18n = var_5
-
-										return var_5("guild_member_max_cnt_desc", var_3_2)
-									else
-										local var_3_3 = arg_3_0[2]
-
-										_ = var_6
-
-										local var_3_4 = var_6.map(var_3_3, function(arg_4_0)
-											pg = var_2_10001
-
-											return var_2_10001.ship_data_by_type[arg_4_0].type_name
-										end)
-
-										table = var_7
-
-										local var_3_5 = var_7.concat(var_3_4, ",")
-
-										i18n = var_8
-
-										local var_3_6 = "guild_ship_attr_desc"
-										local var_3_7 = var_3_5
-
-										AttributeType = var_1_10012
-
-										return var_8(var_3_6, var_3_7, var_1_10012.Type2Name(var_3_0), var_3_2)
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
+		return i18n("guild_ship_attr_desc", table.concat(_.map(arg_3_0[2], function(arg_4_0)
+			return pg.ship_data_by_type[arg_4_0].type_name
+		end), ","), AttributeType.Type2Name(arg_3_0[1]), var_3_0)
 	end
 
 	return
 end
 
 function var_0_0.GET_TECHNOLOGY_DESC(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_0[1]
-	local var_5_1 = "<color="
+	arg_5_1 = "<color=" .. COLOR_GREEN .. ">" .. arg_5_1 .. "</color>"
 
-	COLOR_GREEN = var_1_10004
-	arg_5_1 = var_5_1 .. var_1_10004 .. ">" .. arg_5_1 .. "</color>"
-	GuildConst = var_5_1
-
-	if var_5_0 == var_5_1.TYPE_GOLD_MAX then
-		i18n = var_3
-
-		return var_3("guild_tech_gold_desc", arg_5_1)
+	if arg_5_0[1] == GuildConst.TYPE_GOLD_MAX then
+		return i18n("guild_tech_gold_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_OIL_MAX then
+		return i18n("guild_tech_oil_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_SHIP_BAG then
+		return i18n("guild_tech_shipbag_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_EQUIPMENT_BAG then
+		return i18n("guild_tech_equipbag_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_CATBOX_GOLD_COST then
+		return i18n("guild_box_gold_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_CATBOX_TIME_COST_R then
+		return i18n("guidl_r_box_time_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_CATBOX_TIME_COST_SR then
+		return i18n("guidl_sr_box_time_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_CATBOX_TIME_COST_SSR then
+		return i18n("guidl_ssr_box_time_desc", arg_5_1)
+	elseif arg_5_0[1] == GuildConst.TYPE_GUILD_MEMBER_CNT then
+		return i18n("guild_member_max_cnt_desc", arg_5_1)
 	else
-		GuildConst = var_3
-
-		if var_5_0 == var_3.TYPE_OIL_MAX then
-			i18n = var_3
-
-			return var_3("guild_tech_oil_desc", arg_5_1)
-		else
-			GuildConst = var_3
-
-			if var_5_0 == var_3.TYPE_SHIP_BAG then
-				i18n = var_3
-
-				return var_3("guild_tech_shipbag_desc", arg_5_1)
-			else
-				GuildConst = var_3
-
-				if var_5_0 == var_3.TYPE_EQUIPMENT_BAG then
-					i18n = var_3
-
-					return var_3("guild_tech_equipbag_desc", arg_5_1)
-				else
-					GuildConst = var_3
-
-					if var_5_0 == var_3.TYPE_CATBOX_GOLD_COST then
-						i18n = var_3
-
-						return var_3("guild_box_gold_desc", arg_5_1)
-					else
-						GuildConst = var_3
-
-						if var_5_0 == var_3.TYPE_CATBOX_TIME_COST_R then
-							i18n = var_3
-
-							return var_3("guidl_r_box_time_desc", arg_5_1)
-						else
-							GuildConst = var_3
-
-							if var_5_0 == var_3.TYPE_CATBOX_TIME_COST_SR then
-								i18n = var_3
-
-								return var_3("guidl_sr_box_time_desc", arg_5_1)
-							else
-								GuildConst = var_3
-
-								if var_5_0 == var_3.TYPE_CATBOX_TIME_COST_SSR then
-									i18n = var_3
-
-									return var_3("guidl_ssr_box_time_desc", arg_5_1)
-								else
-									GuildConst = var_3
-
-									if var_5_0 == var_3.TYPE_GUILD_MEMBER_CNT then
-										i18n = var_3
-
-										return var_3("guild_member_max_cnt_desc", arg_5_1)
-									else
-										local var_5_2 = arg_5_0[2]
-
-										_ = var_1_10004
-
-										local var_5_3 = var_1_10004.map(var_5_2, function(arg_6_0)
-											pg = var_2_10001
-
-											return var_2_10001.ship_data_by_type[arg_6_0].type_name
-										end)
-
-										table = var_5
-
-										local var_5_4 = var_5.concat(var_5_3, ",")
-
-										i18n = var_6
-
-										local var_5_5 = "guild_ship_attr_desc"
-										local var_5_6 = var_5_4
-
-										AttributeType = var_1_10010
-
-										return var_6(var_5_5, var_5_6, var_1_10010.Type2Name(var_5_0), arg_5_1)
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
+		return i18n("guild_ship_attr_desc", table.concat(_.map(arg_5_0[2], function(arg_6_0)
+			return pg.ship_data_by_type[arg_6_0].type_name
+		end), ","), AttributeType.Type2Name(arg_5_0[1]), arg_5_1)
 	end
 
 	return

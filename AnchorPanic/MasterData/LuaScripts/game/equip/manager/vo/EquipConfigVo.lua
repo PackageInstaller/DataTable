@@ -16,6 +16,9 @@ function parseConfigData(self, cusTid, cusData)
     self.skill_des = cusData.skill_des
 
     self.nuclearAttrDic = {}
+
+    --满精炼属性
+    self.braceletsMaxData = cusData.bracelets_max_attr
     -- for index, data in pairs(cusData.nuclear_attr) do
     -- 	self.nuclearAttrDic[data.key] = {minValue = data.value_min, maxValue = data.value_max, des = data.describe}
     -- end

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RectBaseScript")
+﻿local var_0_0 = class("RectBaseScript")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0._weight = 1
@@ -38,13 +36,8 @@ function var_0_0.step(arg_4_0)
 end
 
 function var_0_0.addScriptApply(arg_5_0)
-	local var_5_0 = arg_5_0._collisionInfo
-
-	var_1.removeScript(var_5_0)
-
-	local var_5_1 = arg_5_0._collisionInfo
-
-	var_1.setScript(var_5_1, arg_5_0, arg_5_0._weight, arg_5_0._scriptTime, arg_5_0._overrideAble)
+	arg_5_0._collisionInfo:removeScript()
+	arg_5_0._collisionInfo:setScript(arg_5_0, arg_5_0._weight, arg_5_0._scriptTime, arg_5_0._overrideAble)
 
 	return
 end
@@ -60,9 +53,7 @@ function var_0_0.checkScirptApply(arg_6_0)
 		return true
 	end
 
-	print = var_1
-
-	var_1("当前脚本 " .. arg_6_0._collisionInfo.script._name .. " 中，无法执行" .. arg_6_0._name)
+	print("当前脚本 " .. arg_6_0._collisionInfo.script._name .. " 中，无法执行" .. arg_6_0._name)
 
 	return false
 end

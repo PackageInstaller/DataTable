@@ -1,35 +1,25 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleAllInStrikeVO = class("BattleAllInStrikeVO", ys.Battle.BattlePlayerWeaponVO)
+ys.Battle.BattleAllInStrikeVO.__name = "BattleAllInStrikeVO"
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleAllInStrikeVO
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleAllInStrikeVO.GCD = ys.Battle.BattleConfig.AirAssistCFG.GCD
 
-local var_0_1 = var_0.Battle.BattleConfig
-local var_0_2 = var_0.Battle
-
-class = var_0_10003
-var_0_2.BattleAllInStrikeVO = var_0_10003("BattleAllInStrikeVO", var_0.Battle.BattlePlayerWeaponVO)
-var_0.Battle.BattleAllInStrikeVO.__name = "BattleAllInStrikeVO"
-
-local var_0_3 = var_0.Battle.BattleAllInStrikeVO
-
-var_0_3.GCD = var_0_1.AirAssistCFG.GCD
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0, var_0_3.GCD)
+function ys.Battle.BattleAllInStrikeVO.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0, var_0_0.GCD)
 
 	return
 end
 
-function var_0_3.AppendWeapon(arg_2_0, arg_2_1)
+function ys.Battle.BattleAllInStrikeVO.AppendWeapon(arg_2_0, arg_2_1)
 	arg_2_1:SetAllInWeaponVO(arg_2_0)
-	var_0_3.super.AppendWeapon(arg_2_0, arg_2_1)
+	var_0_0.super.AppendWeapon(arg_2_0, arg_2_1)
 
 	return
 end
 
-function var_0_3.GetCurrentWeaponIconIndex(arg_3_0)
+function ys.Battle.BattleAllInStrikeVO.GetCurrentWeaponIconIndex(arg_3_0)
 	return 3
 end
 

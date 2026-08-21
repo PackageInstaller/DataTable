@@ -1,6 +1,6 @@
 module("purchase.FashionShopManager", Class.impl(Manager))
 
---构造函数
+-- 构造函数
 function ctor(self)
     super.ctor(self)
     self:__init()
@@ -17,13 +17,15 @@ function __init(self)
     self.mFashionsedTidList = {}
     -- 商店皮肤列表
     self.mFashionsList = {}
+
+    self.mPaintingList = {}
     -- 各皮肤商店类型数据
     self.mFashionShopList = {}
     -- 商店皮肤列表
     self.mFashionsIdList = {}
     -- 商店皮肤字典
     self.mFashionsDic = {}
-    --当前展示皮肤
+    -- 当前展示皮肤
     self.mFashionShowVo = nil
 
     -- 是否使用打折卡
@@ -31,28 +33,137 @@ function __init(self)
 end
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+function parsePaintingInfoMsg(self, msg)
+    self.mPaintingList = msg.painting_list
+end
+
+function getPaintingIsGeted(self, id)
+    return table.indexof01(self.mPaintingList, id) > 0
+end
+
 -- 解析服务器已购买皮肤列表
 function parseFashionedInfoMsg(self, msg)
     if msg then
         self.mFashionsList = {}
+        self.mFashionFightSkin = {}
+        self.mFashionRechargeName = {}
+        self.mFashionsedTidList = {}
+        self.mPaintingMsgList = {}
         for i, id in ipairs(msg.buy_list) do
-            if (not table.indexof(self.mFashionsedTidList, id)) then
-                table.insert(self.mFashionsedTidList, id)
-            end
+            -- if (not table.indexof(self.mFashionsedTidList, id)) then
+            table.insert(self.mFashionsedTidList, id)
+            -- end
         end
         for i, config in pairs(msg.goods_list) do
-            local vo = purchase.FashionShopVo.new()
-            vo:parseData(config.id, config)
-            self.mFashionsDic[vo:getFashionModel()] = vo
-            table.insert(self.mFashionsList, vo)
+
+            if config.type == fashionShop.ShopType.PAINTING then
+                local vo = purchase.PaintingMsgDataVo.new()
+                vo:parseData(config.id, config)
+                table.insert(self.mPaintingMsgList, vo)
+
+                local paintingVo = self:getPaintingDataById(vo.fashionDic[1])
+                self.mFashionRechargeName[config.id] = _TT(paintingVo.resName)
+            elseif config.type == fashionShop.ShopType.FIGHTSKIN then
+                local vo = purchase.FashionShopVo.new()
+                vo:parseData(config.id, config)
+                table.insert(self.mFashionFightSkin, vo)
+
+                if vo.itemId ~= 0 then
+                    local propsVo = props.PropsManager:getPropsConfigVo(vo.itemId)
+                    self.mFashionRechargeName[config.id] = propsVo:getName()
+                end
+            else
+                local vo = purchase.FashionShopVo.new()
+                vo:parseData(config.id, config)
+                self.mFashionsDic[vo:getFashionModel()] = vo
+
+                table.insert(self.mFashionsList, vo)
+                if vo.itemId ~= 0 then
+                    local propsVo = props.PropsManager:getPropsConfigVo(vo.itemId)
+                    self.mFashionRechargeName[config.id] = propsVo:getName()
+                end
+            end
         end
 
         table.sort(self.mFashionsList, function(a, b)
             return a.sort < b.sort
         end)
 
+        table.sort(self.mPaintingMsgList, function(a, b)
+            return a.sort < b.sort
+        end)
+
+        table.sort(self.mFashionFightSkin, function(a, b)
+            return a.sort < b.sort
+        end)
+
+        self.mComboBuyList = {}
+        for i = 1, #msg.combo_buy_list, 1 do -- 40001
+            table.insert(self.mComboBuyList, msg.combo_buy_list[i])
+        end
+
+        self.mComboGoodsList = {}
+        for i = 1, #msg.combo_goods_list, 1 do
+            local vo = purchase.FashionComboVo.new()
+            vo:parseData(msg.combo_goods_list[i].id, msg.combo_goods_list[i])
+            table.insert(self.mComboGoodsList, vo)
+        end
     end
     GameDispatcher:dispatchEvent(EventName.UPDATE_SKIN_SHOP_ITEM)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_COMBO_VIEW)
+    GameDispatcher:dispatchEvent(EventName.RECEIVE_UPDATE_FASHIONED_INFO_MSG)
+end
+
+function getRechargeName(self, id)
+    return self.mFashionRechargeName[id]
+end
+
+function parseFashionComboBuyMsg(self, msg)
+    if self.mComboBuyList == nil then
+        self.mComboBuyList = {}
+    end
+    table.insert(self.mComboBuyList, msg.goods_combo_id)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_COMBO_VIEW)
+    GameDispatcher:dispatchEvent(EventName.CLOSE_FASHION_SHOP_BUY_3_VIEW)
+end
+
+function getComboIsBuy(self, id)
+    if self.mComboBuyList == nil then
+        return false
+    end
+    return table.indexof01(self.mComboBuyList, id) > 0
+end
+
+function getComboShopList(self)
+    if self.mComboGoodsList == nil then
+        return {}
+    end
+    local list = {}
+    for _, vo in pairs(self.mComboGoodsList) do
+        if vo:getCanUpdate() then
+            table.insert(list, vo)
+        end
+    end
+    table.sort(list, function(a, b)
+        local aHas = purchase.FashionShopManager:checkComboIsAllGoodsHadBuy(a.id)
+        local bHas = purchase.FashionShopManager:checkComboIsAllGoodsHadBuy(b.id)
+        if aHas ~= bHas then
+            return not aHas
+        else
+            return a.id > b.id
+        end
+    end)
+    return list
+end
+
+function getComboShopItemById(self, id)
+    local list = self:getComboShopList()
+    for i = 1, #list, 1 do
+        if list[i].id == id then
+            return list[i]
+        end
+    end
+    return nil
 end
 
 -- 解析服务器已购买皮肤列表
@@ -63,6 +174,8 @@ function parseFashionBuyMsg(self, msg)
         end
     end
     GameDispatcher:dispatchEvent(EventName.UPDATE_SKIN_SHOP_ITEM)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_COMBO_VIEW)
+    GameDispatcher:dispatchEvent(EventName.CLOSE_FASHION_SHOP_BUY_3_VIEW)
 end
 
 -- 解析皮肤商品列表
@@ -79,6 +192,52 @@ end
 --         return a.sort < b.sort
 --     end)
 -- end
+
+function parseFashionSceneData(self)
+    self.mFashionSceneDic = {}
+    local baseData = RefMgr:getData("hero_interact_scene_data")
+    for key, data in pairs(baseData) do
+        local vo = purchase.FashionSceneVo.new()
+        vo:parseData(key, data)
+        self.mFashionSceneDic[key] = vo
+    end
+end
+
+function getFashionSceneDataByModelId(self, heroTid, model_id)
+    if self.mFashionSceneDic == nil then
+        self:parseFashionSceneData()
+    end
+
+    if self.mFashionSceneDic[heroTid] == nil then
+        return nil
+    end
+
+    return self.mFashionSceneDic[heroTid]:getInteractSceneDataByModelId(model_id)
+end
+
+function getFashionSceneData(self, heroTid, sceneId)
+    if self.mFashionSceneDic == nil then
+        self:parseFashionSceneData()
+    end
+    return self.mFashionSceneDic[heroTid]:getSceneChildVo(sceneId)
+end
+
+function parseFashionComboData(self)
+    self.mComboGoodsConfigDic = {}
+    local baseData = RefMgr:getData("fashionshop_combo_data")
+    for key, data in pairs(baseData) do
+        local vo = purchase.FashionComboConfigVo.new()
+        vo:parseData(key, data)
+        self.mComboGoodsConfigDic[key] = vo
+    end
+end
+
+function getFashionComboData(self, id)
+    if self.mComboGoodsConfigDic == nil then
+        self:parseFashionComboData()
+    end
+    return self.mComboGoodsConfigDic[id]
+end
 
 -- 解析子页签配置数据
 function parseFanshionShopTypeData(self)
@@ -116,17 +275,48 @@ function getFashionedTidList(self)
     return self.mFashionsedTidList or {}
 end
 
+function getFashionSceneOrPairtsIsBuy(self, id)
+    if self.mFashionsedTidList == nil then
+        return false
+    end
+    return table.indexof01(self.mFashionsedTidList, id) > 0
+end
+
+-- 检查组合包中是否存在任一商品已被购买
+function checkComboIsAnyGoodsHadBuy(self, comboCfgId)
+    local fashionComboConfigVo = self:getFashionComboData(comboCfgId)
+    for _, goods in pairs(fashionComboConfigVo.goodsList) do
+        if self:getFashionSceneOrPairtsIsBuy(goods) then
+            return true
+        end
+    end
+    return false
+end
+
+-- 检查组合包中是否存在所有商品已被购买
+function checkComboIsAllGoodsHadBuy(self, comboCfgId)
+    local fashionComboConfigVo = self:getFashionComboData(comboCfgId)
+    local isAll = true
+    for _, goods in pairs(fashionComboConfigVo.goodsList) do
+        isAll = isAll and self:getFashionSceneOrPairtsIsBuy(goods)
+    end
+    return isAll
+end
+
 -- 获取
 function getCurShopList(self, type)
     local list = {}
     self.mFashionsIdList = {}
-    if #self.mFashionsList <= 0 then
-        self:parseFanshionShopData()
-    end
+    -- if #self.mFashionsList <= 0 then
+    --     self:parseFanshionShopData()
+    -- end
     for i, vo in ipairs(self.mFashionsList) do
-        if vo:getTime() ~= -1 and (type == vo.type) then
-            table.insert(list, vo)
-            table.insert(self.mFashionsIdList, vo.id)
+        if vo.type == fashionShop.ShopType.NOMAL and not hero.HeroManager:getHeroConfigVo(vo:getHeroTid()) then
+        else
+            if vo:getCanUpdate() and (type == vo.type) then
+                table.insert(list, vo)
+                table.insert(self.mFashionsIdList, vo.id)
+            end
         end
     end
 
@@ -134,6 +324,55 @@ function getCurShopList(self, type)
     --     return vo1.id>vo2.id
     -- end)
     return list or {}
+end
+
+--获取单个部件商品的数据
+function getPairtsFashionVo(self,goodsId)
+    local list = self:getCurShopList(fashionShop.ShopType.PAIRTS)
+   for _, vo in ipairs(list) do
+        if vo.id == goodsId then
+            return vo
+        end
+    end
+    return nil
+end
+
+function getFashionFightSkin(self)
+    local list = {}
+    for i, vo in ipairs(self.mFashionFightSkin) do
+        if vo:getTime() ~= -1 then
+            table.insert(list, vo)
+        end
+    end
+    return list
+end
+
+function getPaintingList(self)
+    local list = {}
+    for i, vo in ipairs(self.mPaintingMsgList) do
+        if vo:getCanUpdate()then
+            table.insert(list, vo)
+        end
+    end
+
+    table.sort(list, function (vo1, vo2)
+        if vo1:getIsSellOut() == vo2:getIsSellOut() then
+            return vo1.sort < vo2.sort
+        else
+            return vo1:getIsSellOut() > vo2:getIsSellOut()
+        end
+
+    end)
+    return list
+end
+
+function getCurShopVo(self, id)
+    for key, v in pairs(self.mFashionsList) do
+        if v.id == id then
+            return v
+        end
+    end
+    return nil
 end
 
 -- 获取商品皮肤id列表
@@ -151,8 +390,56 @@ function setFashionShowVo(self, data)
     self.mFashionShowVo = data
 end
 
---析构函数
-function dtor(self)
+-- 设置默认打开的皮肤商店类型
+function setDefOpenFashionType(self, type)
+    self.defOpenType = type
+end
+
+-- 获取默认打开的皮肤商店类型
+function getDefOpenFashionType(self)
+    return self.defOpenType
+end
+
+--解析图册数据
+function parsePatintingData(self)
+    self.paintingData = {}
+    local baseData = RefMgr:getData("painting_data")
+    for key, data in pairs(baseData) do
+        local vo = purchase.PaintingDataVo.new()
+        vo:parseData(key, data)
+        self.paintingData[key] = vo
+    end
+
+end
+
+--获取图册数据
+function getPaintingData(self)
+    if self.paintingData == nil then
+        self:parsePatintingData()
+    end
+    return self.paintingData
+end
+
+--获取图册数据
+function getPaintingDataById(self, id)
+    if self.paintingData == nil then
+        self:parsePatintingData()
+    end
+    return self.paintingData[id]
+end
+
+--获取所有解锁的图册数据  图册id（非商品id）
+function getAllUnlockPatintingData(self)
+    if self.paintingData == nil then
+        self:parsePatintingData()
+    end
+    local list = {}
+    for k, v in pairs(self.paintingData) do
+        if self:getPaintingIsGeted(v.id) then
+            table.insert(list, v)
+        end
+    end
+    return list
 end
 
 return _M

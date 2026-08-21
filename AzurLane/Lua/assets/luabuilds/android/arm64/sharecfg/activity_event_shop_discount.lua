@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_shop_discount") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_shop_discount"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_shop_discount = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_shop_discount
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_shop_discount = rawget(pg, "activity_event_shop_discount") or setmetatable({
+	__name = "activity_event_shop_discount"
+}, confNEO)
+pg.activity_event_shop_discount.all = {
 	5080,
 	5652,
 	5850,
@@ -41,25 +18,11 @@ var_0_3.all = {
 	21019,
 	50500
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_shop_discount = {}
+pg.base = pg.base or {}
+pg.base.activity_event_shop_discount = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_shop_discount
-
-	var_1_0[5080] = {
+	pg.base.activity_event_shop_discount[5080] = {
 		max_count = 0,
 		item_id = 59502,
 		change_resource_type = 0,
@@ -84,11 +47,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70197
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_shop_discount
-
-	var_1_1[5652] = {
+	pg.base.activity_event_shop_discount[5652] = {
 		max_count = 0,
 		item_id = 65045,
 		change_resource_type = 0,
@@ -113,11 +72,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70197
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_shop_discount
-
-	var_1_2[5850] = {
+	pg.base.activity_event_shop_discount[5850] = {
 		max_count = 0,
 		item_id = 65550,
 		change_resource_type = 0,
@@ -205,11 +160,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70200
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_shop_discount
-
-	var_1_3[50034] = {
+	pg.base.activity_event_shop_discount[50034] = {
 		max_count = 0,
 		item_id = 65551,
 		change_resource_type = 0,
@@ -248,11 +199,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			71009
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_shop_discount
-
-	var_1_4[50142] = {
+	pg.base.activity_event_shop_discount[50142] = {
 		max_count = 0,
 		item_id = 65552,
 		change_resource_type = 0,
@@ -298,11 +245,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			71036
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_shop_discount
-
-	var_1_5[50241] = {
+	pg.base.activity_event_shop_discount[50241] = {
 		max_count = 0,
 		item_id = 65553,
 		change_resource_type = 0,
@@ -596,11 +539,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			71147
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_shop_discount
-
-	var_1_6[50243] = {
+	pg.base.activity_event_shop_discount[50243] = {
 		max_count = 0,
 		item_id = 65554,
 		change_resource_type = 0,
@@ -1769,11 +1708,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70926
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_shop_discount
-
-	var_1_7[50269] = {
+	pg.base.activity_event_shop_discount[50269] = {
 		max_count = 0,
 		item_id = 65555,
 		change_resource_type = 0,
@@ -2061,11 +1996,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			71174
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_shop_discount
-
-	var_1_8[50270] = {
+	pg.base.activity_event_shop_discount[50270] = {
 		max_count = 0,
 		item_id = 65556,
 		change_resource_type = 0,
@@ -2549,11 +2480,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70756
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_shop_discount
-
-	var_1_9[13] = {
+	pg.base.activity_event_shop_discount[13] = {
 		max_count = 0,
 		item_id = 65555,
 		change_resource_type = 0,
@@ -2736,11 +2663,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			71174
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_event_shop_discount
-
-	var_1_10[14] = {
+	pg.base.activity_event_shop_discount[14] = {
 		max_count = 0,
 		item_id = 65556,
 		change_resource_type = 0,
@@ -3639,11 +3562,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70960
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_event_shop_discount
-
-	var_1_11[21018] = {
+	pg.base.activity_event_shop_discount[21018] = {
 		max_count = 0,
 		item_id = 65555,
 		change_resource_type = 0,
@@ -3929,11 +3848,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			71174
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_event_shop_discount
-
-	var_1_12[21019] = {
+	pg.base.activity_event_shop_discount[21019] = {
 		max_count = 0,
 		item_id = 65556,
 		change_resource_type = 0,
@@ -4955,8 +4870,7 @@ var_0_3.base.activity_event_shop_discount = {}
 			70976
 		}
 	}
-	pg = var_1_12
-	var_1_12.base.activity_event_shop_discount[50500] = {
+	pg.base.activity_event_shop_discount[50500] = {
 		max_count = 0,
 		item_id = 65557,
 		change_resource_type = 0,

@@ -175,10 +175,8 @@ end
 
 -- 初始化配置表
 function _parseData(self)
-    self.m_storyDict = {}
-    self.m_perfabDict = {}
-
     local baseData = RefMgr:getData('story_data', self.isEditor)
+    self.m_storyDict = {}
     for key, data in pairs(baseData) do
         local ro = LuaPoolMgr:poolGet(storyTalk.StoryDataRo)
         ro:parseData(key, data)
@@ -186,10 +184,19 @@ function _parseData(self)
     end
 
     local prefabData = RefMgr:getData('story_prefab_data')
+    self.m_perfabDict = {}
     for key, data in pairs(prefabData) do
         local ro = LuaPoolMgr:poolGet(storyTalk.StoryPrefabRo)
         ro:parseData(key, data)
         self.m_perfabDict[key] = ro
+    end
+
+    local roleData = RefMgr:getData('story_role_data')
+    self.m_roleParamDict = {}
+    for key, data in pairs(roleData) do
+        local ro = LuaPoolMgr:poolGet(storyTalk.StoryRoleRo)
+        ro:parseData(key, data)
+        self.m_roleParamDict[key] = ro
     end
 
     --self:parsePlayData()
@@ -262,6 +269,15 @@ function getStoryPrefab(self, prefabName)
     end
     return self.m_perfabDict[prefabName]
 end
+
+-- 获得角色参数
+function getStoryRoleParam(self, roleName)
+    if self.m_roleParamDict == nil then
+        self:_parseData()
+    end
+    return self.m_roleParamDict[roleName]
+end
+
 
 -- 仅在编辑器下使用 会使用新数据覆盖原有的
 function getStoryRoByNew(self, storyID)
@@ -423,12 +439,13 @@ end
 function reqSTORY_OVER(self, storyID)
     local ro = self.m_storyDict[storyID]
     if ro then
-        if SOCKET_SEND(Protocol.CS_STORY_OVER, {
-                story_id = storyID
-            }) == true then
-            self.m_passStoryList[ro:getLineID()] = storyID
-            print("reqSTORY_OVER ============ ", storyID)
+        if self.m_passStoryList[ro:getLineID()] ~= nil and self.m_passStoryList[ro:getLineID()] >= storyID then
+            return
         end
+
+        SOCKET_SEND(Protocol.CS_STORY_OVER, {story_id = storyID }) 
+        self.m_passStoryList[ro:getLineID()] = storyID
+        print("reqSTORY_OVER ============ ", storyID)
     end
 end
 

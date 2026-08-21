@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_benefit_list") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_benefit_list"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_benefit_list = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_benefit_list
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_benefit_list
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.child2_benefit_list = rawget(pg, "child2_benefit_list") or setmetatable({
+	__name = "child2_benefit_list"
+}, confNEO)
+pg.child2_benefit_list.__namecode__ = true
+pg.child2_benefit_list.all = {
 	40001,
 	40002,
 	40011,
@@ -1343,11 +1316,7 @@ var_0_4.all = {
 	3840027,
 	3840028
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.child2_benefit_list
-
-var_0_5.get_id_list_by_character = {
+pg.child2_benefit_list.get_id_list_by_character = {
 	{
 		40001,
 		40002,
@@ -2664,25 +2633,11 @@ var_0_5.get_id_list_by_character = {
 		3840028
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.child2_benefit_list = {}
+pg.base = pg.base or {}
+pg.base.child2_benefit_list = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_benefit_list
-
-	var_1_0[40001] = {
+	pg.base.child2_benefit_list[40001] = {
 		benefit_level = 0,
 		name = "526",
 		is_show = 0,
@@ -2711,11 +2666,7 @@ var_0_5.base.child2_benefit_list = {}
 			400011
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_benefit_list
-
-	var_1_1[40002] = {
+	pg.base.child2_benefit_list[40002] = {
 		benefit_level = 0,
 		name = "621",
 		is_show = 0,
@@ -2744,11 +2695,7 @@ var_0_5.base.child2_benefit_list = {}
 			400021
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_benefit_list
-
-	var_1_2[40011] = {
+	pg.base.child2_benefit_list[40011] = {
 		benefit_level = 0,
 		name = "610",
 		is_show = 0,
@@ -2777,11 +2724,7 @@ var_0_5.base.child2_benefit_list = {}
 			400111
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_benefit_list
-
-	var_1_3[40012] = {
+	pg.base.child2_benefit_list[40012] = {
 		benefit_level = 0,
 		name = "611",
 		is_show = 0,
@@ -2810,11 +2753,7 @@ var_0_5.base.child2_benefit_list = {}
 			400121
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_benefit_list
-
-	var_1_4[40013] = {
+	pg.base.child2_benefit_list[40013] = {
 		benefit_level = 0,
 		name = "612",
 		is_show = 0,
@@ -2843,11 +2782,7 @@ var_0_5.base.child2_benefit_list = {}
 			400131
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_benefit_list
-
-	var_1_5[40014] = {
+	pg.base.child2_benefit_list[40014] = {
 		benefit_level = 0,
 		name = "619",
 		is_show = 0,
@@ -2876,11 +2811,7 @@ var_0_5.base.child2_benefit_list = {}
 			400141
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_benefit_list
-
-	var_1_6[40015] = {
+	pg.base.child2_benefit_list[40015] = {
 		benefit_level = 0,
 		name = "探索加持",
 		is_show = 1,
@@ -2909,11 +2840,7 @@ var_0_5.base.child2_benefit_list = {}
 			400151
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_benefit_list
-
-	var_1_7[40021] = {
+	pg.base.child2_benefit_list[40021] = {
 		benefit_level = 0,
 		name = "610",
 		is_show = 0,
@@ -2942,11 +2869,7 @@ var_0_5.base.child2_benefit_list = {}
 			400211
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_benefit_list
-
-	var_1_8[40022] = {
+	pg.base.child2_benefit_list[40022] = {
 		benefit_level = 0,
 		name = "611",
 		is_show = 0,
@@ -2975,11 +2898,7 @@ var_0_5.base.child2_benefit_list = {}
 			400221
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_benefit_list
-
-	var_1_9[40023] = {
+	pg.base.child2_benefit_list[40023] = {
 		benefit_level = 0,
 		name = "612",
 		is_show = 0,
@@ -3008,11 +2927,7 @@ var_0_5.base.child2_benefit_list = {}
 			400231
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_benefit_list
-
-	var_1_10[40024] = {
+	pg.base.child2_benefit_list[40024] = {
 		benefit_level = 0,
 		name = "619",
 		is_show = 0,
@@ -3041,11 +2956,7 @@ var_0_5.base.child2_benefit_list = {}
 			400241
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_benefit_list
-
-	var_1_11[40025] = {
+	pg.base.child2_benefit_list[40025] = {
 		benefit_level = 0,
 		name = "探索加持",
 		is_show = 1,
@@ -3074,11 +2985,7 @@ var_0_5.base.child2_benefit_list = {}
 			400251
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_benefit_list
-
-	var_1_12[40031] = {
+	pg.base.child2_benefit_list[40031] = {
 		benefit_level = 0,
 		name = "610",
 		is_show = 0,
@@ -3107,11 +3014,7 @@ var_0_5.base.child2_benefit_list = {}
 			400311
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_benefit_list
-
-	var_1_13[40032] = {
+	pg.base.child2_benefit_list[40032] = {
 		benefit_level = 0,
 		name = "611",
 		is_show = 0,
@@ -3140,11 +3043,7 @@ var_0_5.base.child2_benefit_list = {}
 			400321
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_benefit_list
-
-	var_1_14[40033] = {
+	pg.base.child2_benefit_list[40033] = {
 		benefit_level = 0,
 		name = "612",
 		is_show = 0,
@@ -3173,11 +3072,7 @@ var_0_5.base.child2_benefit_list = {}
 			400331
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_benefit_list
-
-	var_1_15[40034] = {
+	pg.base.child2_benefit_list[40034] = {
 		benefit_level = 0,
 		name = "619",
 		is_show = 0,
@@ -3206,11 +3101,7 @@ var_0_5.base.child2_benefit_list = {}
 			400341
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_benefit_list
-
-	var_1_16[40035] = {
+	pg.base.child2_benefit_list[40035] = {
 		benefit_level = 0,
 		name = "探索加持",
 		is_show = 1,
@@ -3239,11 +3130,7 @@ var_0_5.base.child2_benefit_list = {}
 			400351
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_benefit_list
-
-	var_1_17[40041] = {
+	pg.base.child2_benefit_list[40041] = {
 		benefit_level = 0,
 		name = "610",
 		is_show = 0,
@@ -3272,11 +3159,7 @@ var_0_5.base.child2_benefit_list = {}
 			400411
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_benefit_list
-
-	var_1_18[40042] = {
+	pg.base.child2_benefit_list[40042] = {
 		benefit_level = 0,
 		name = "611",
 		is_show = 0,
@@ -3305,11 +3188,7 @@ var_0_5.base.child2_benefit_list = {}
 			400421
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_benefit_list
-
-	var_1_19[40043] = {
+	pg.base.child2_benefit_list[40043] = {
 		benefit_level = 0,
 		name = "612",
 		is_show = 0,
@@ -3338,11 +3217,7 @@ var_0_5.base.child2_benefit_list = {}
 			400431
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_benefit_list
-
-	var_1_20[40044] = {
+	pg.base.child2_benefit_list[40044] = {
 		benefit_level = 0,
 		name = "619",
 		is_show = 0,
@@ -3371,11 +3246,7 @@ var_0_5.base.child2_benefit_list = {}
 			400441
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_benefit_list
-
-	var_1_21[40045] = {
+	pg.base.child2_benefit_list[40045] = {
 		benefit_level = 0,
 		name = "探索加持",
 		is_show = 1,
@@ -3404,11 +3275,7 @@ var_0_5.base.child2_benefit_list = {}
 			400451
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_benefit_list
-
-	var_1_22[41011] = {
+	pg.base.child2_benefit_list[41011] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -3433,11 +3300,7 @@ var_0_5.base.child2_benefit_list = {}
 		content = {},
 		show_content = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_benefit_list
-
-	var_1_23[41021] = {
+	pg.base.child2_benefit_list[41021] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -3466,11 +3329,7 @@ var_0_5.base.child2_benefit_list = {}
 			410211
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_benefit_list
-
-	var_1_24[41022] = {
+	pg.base.child2_benefit_list[41022] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -3499,11 +3358,7 @@ var_0_5.base.child2_benefit_list = {}
 			410221
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_benefit_list
-
-	var_1_25[41023] = {
+	pg.base.child2_benefit_list[41023] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -3532,11 +3387,7 @@ var_0_5.base.child2_benefit_list = {}
 			410231
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_benefit_list
-
-	var_1_26[41024] = {
+	pg.base.child2_benefit_list[41024] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -3565,11 +3416,7 @@ var_0_5.base.child2_benefit_list = {}
 			410241
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_benefit_list
-
-	var_1_27[41031] = {
+	pg.base.child2_benefit_list[41031] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -3594,11 +3441,7 @@ var_0_5.base.child2_benefit_list = {}
 		content = {},
 		show_content = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_benefit_list
-
-	var_1_28[41041] = {
+	pg.base.child2_benefit_list[41041] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -3623,11 +3466,7 @@ var_0_5.base.child2_benefit_list = {}
 		content = {},
 		show_content = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_benefit_list
-
-	var_1_29[41051] = {
+	pg.base.child2_benefit_list[41051] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -3652,11 +3491,7 @@ var_0_5.base.child2_benefit_list = {}
 		content = {},
 		show_content = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_benefit_list
-
-	var_1_30[41061] = {
+	pg.base.child2_benefit_list[41061] = {
 		benefit_level = 0,
 		name = "509",
 		is_show = 0,
@@ -3685,11 +3520,7 @@ var_0_5.base.child2_benefit_list = {}
 			410611
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_benefit_list
-
-	var_1_31[41062] = {
+	pg.base.child2_benefit_list[41062] = {
 		benefit_level = 0,
 		name = "510",
 		is_show = 0,
@@ -3718,11 +3549,7 @@ var_0_5.base.child2_benefit_list = {}
 			410621
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_benefit_list
-
-	var_1_32[41063] = {
+	pg.base.child2_benefit_list[41063] = {
 		benefit_level = 0,
 		name = "511",
 		is_show = 0,
@@ -3751,11 +3578,7 @@ var_0_5.base.child2_benefit_list = {}
 			410631
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_benefit_list
-
-	var_1_33[41064] = {
+	pg.base.child2_benefit_list[41064] = {
 		benefit_level = 0,
 		name = "512",
 		is_show = 0,
@@ -3784,11 +3607,7 @@ var_0_5.base.child2_benefit_list = {}
 			410641
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_benefit_list
-
-	var_1_34[41071] = {
+	pg.base.child2_benefit_list[41071] = {
 		benefit_level = 0,
 		name = "513",
 		is_show = 0,
@@ -3817,11 +3636,7 @@ var_0_5.base.child2_benefit_list = {}
 			410711
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_benefit_list
-
-	var_1_35[41072] = {
+	pg.base.child2_benefit_list[41072] = {
 		benefit_level = 0,
 		name = "514",
 		is_show = 0,
@@ -3850,11 +3665,7 @@ var_0_5.base.child2_benefit_list = {}
 			410721
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_benefit_list
-
-	var_1_36[41073] = {
+	pg.base.child2_benefit_list[41073] = {
 		benefit_level = 0,
 		name = "515",
 		is_show = 0,
@@ -3883,11 +3694,7 @@ var_0_5.base.child2_benefit_list = {}
 			410731
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_benefit_list
-
-	var_1_37[41074] = {
+	pg.base.child2_benefit_list[41074] = {
 		benefit_level = 0,
 		name = "516",
 		is_show = 0,
@@ -3916,11 +3723,7 @@ var_0_5.base.child2_benefit_list = {}
 			410741
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_benefit_list
-
-	var_1_38[41081] = {
+	pg.base.child2_benefit_list[41081] = {
 		benefit_level = 0,
 		name = "517",
 		is_show = 0,
@@ -3949,11 +3752,7 @@ var_0_5.base.child2_benefit_list = {}
 			410811
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_benefit_list
-
-	var_1_39[41082] = {
+	pg.base.child2_benefit_list[41082] = {
 		benefit_level = 0,
 		name = "613",
 		is_show = 0,
@@ -3982,11 +3781,7 @@ var_0_5.base.child2_benefit_list = {}
 			410821
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_benefit_list
-
-	var_1_40[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "518",
 		is_show = 0,
@@ -4015,11 +3810,7 @@ var_0_5.base.child2_benefit_list = {}
 			410911
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_benefit_list
-
-	var_1_41[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 0,
 		name = "519",
 		is_show = 0,
@@ -4048,11 +3839,7 @@ var_0_5.base.child2_benefit_list = {}
 			410921
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_benefit_list
-
-	var_1_42[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 0,
 		name = "520",
 		is_show = 0,
@@ -4081,11 +3868,7 @@ var_0_5.base.child2_benefit_list = {}
 			410931
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_benefit_list
-
-	var_1_43[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 0,
 		name = "521",
 		is_show = 0,
@@ -4114,11 +3897,7 @@ var_0_5.base.child2_benefit_list = {}
 			411011
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_benefit_list
-
-	var_1_44[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 0,
 		name = "614",
 		is_show = 0,
@@ -4147,11 +3926,7 @@ var_0_5.base.child2_benefit_list = {}
 			411021
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_benefit_list
-
-	var_1_45[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 0,
 		name = "522",
 		is_show = 0,
@@ -4180,11 +3955,7 @@ var_0_5.base.child2_benefit_list = {}
 			411111
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_benefit_list
-
-	var_1_46[24] = {
+	pg.base.child2_benefit_list[24] = {
 		benefit_level = 0,
 		name = "523",
 		is_show = 0,
@@ -4213,11 +3984,7 @@ var_0_5.base.child2_benefit_list = {}
 			411121
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_benefit_list
-
-	var_1_47[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 0,
 		name = "524",
 		is_show = 0,
@@ -4246,11 +4013,7 @@ var_0_5.base.child2_benefit_list = {}
 			411131
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_benefit_list
-
-	var_1_48[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 0,
 		name = "525",
 		is_show = 0,
@@ -4279,11 +4042,7 @@ var_0_5.base.child2_benefit_list = {}
 			411141
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_benefit_list
-
-	var_1_49[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -4308,11 +4067,7 @@ var_0_5.base.child2_benefit_list = {}
 		content = {},
 		show_content = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_benefit_list
-
-	var_1_50[41121] = {
+	pg.base.child2_benefit_list[41121] = {
 		benefit_level = 0,
 		name = "527",
 		is_show = 0,
@@ -4341,11 +4096,7 @@ var_0_5.base.child2_benefit_list = {}
 			411211
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_benefit_list
-
-	var_1_51[41122] = {
+	pg.base.child2_benefit_list[41122] = {
 		benefit_level = 0,
 		name = "615",
 		is_show = 0,
@@ -4374,11 +4125,7 @@ var_0_5.base.child2_benefit_list = {}
 			411221
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_benefit_list
-
-	var_1_52[41131] = {
+	pg.base.child2_benefit_list[41131] = {
 		benefit_level = 0,
 		name = "528",
 		is_show = 0,
@@ -4407,11 +4154,7 @@ var_0_5.base.child2_benefit_list = {}
 			411311
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_benefit_list
-
-	var_1_53[41132] = {
+	pg.base.child2_benefit_list[41132] = {
 		benefit_level = 0,
 		name = "529",
 		is_show = 0,
@@ -4440,11 +4183,7 @@ var_0_5.base.child2_benefit_list = {}
 			411321
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_benefit_list
-
-	var_1_54[41133] = {
+	pg.base.child2_benefit_list[41133] = {
 		benefit_level = 0,
 		name = "530",
 		is_show = 0,
@@ -4473,11 +4212,7 @@ var_0_5.base.child2_benefit_list = {}
 			411331
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_benefit_list
-
-	var_1_55[41134] = {
+	pg.base.child2_benefit_list[41134] = {
 		benefit_level = 0,
 		name = "531",
 		is_show = 0,
@@ -4506,11 +4241,7 @@ var_0_5.base.child2_benefit_list = {}
 			411341
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_benefit_list
-
-	var_1_56[41135] = {
+	pg.base.child2_benefit_list[41135] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -4535,11 +4266,7 @@ var_0_5.base.child2_benefit_list = {}
 		content = {},
 		show_content = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_benefit_list
-
-	var_1_57[41141] = {
+	pg.base.child2_benefit_list[41141] = {
 		benefit_level = 0,
 		name = "533",
 		is_show = 0,
@@ -4568,11 +4295,7 @@ var_0_5.base.child2_benefit_list = {}
 			411411
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_benefit_list
-
-	var_1_58[41142] = {
+	pg.base.child2_benefit_list[41142] = {
 		benefit_level = 0,
 		name = "534",
 		is_show = 0,
@@ -4601,11 +4324,7 @@ var_0_5.base.child2_benefit_list = {}
 			411421
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_benefit_list
-
-	var_1_59[41151] = {
+	pg.base.child2_benefit_list[41151] = {
 		benefit_level = 0,
 		name = "535",
 		is_show = 0,
@@ -4634,11 +4353,7 @@ var_0_5.base.child2_benefit_list = {}
 			411511
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_benefit_list
-
-	var_1_60[41161] = {
+	pg.base.child2_benefit_list[41161] = {
 		benefit_level = 0,
 		name = "知识精要·速成",
 		is_show = 1,
@@ -4667,11 +4382,7 @@ var_0_5.base.child2_benefit_list = {}
 			411611
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_benefit_list
-
-	var_1_61[41162] = {
+	pg.base.child2_benefit_list[41162] = {
 		benefit_level = 0,
 		name = "616",
 		is_show = 0,
@@ -4700,11 +4411,7 @@ var_0_5.base.child2_benefit_list = {}
 			411621
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_benefit_list
-
-	var_1_62[41171] = {
+	pg.base.child2_benefit_list[41171] = {
 		benefit_level = 0,
 		name = "知识精要·持续",
 		is_show = 1,
@@ -4733,11 +4440,7 @@ var_0_5.base.child2_benefit_list = {}
 			411711
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_benefit_list
-
-	var_1_63[41172] = {
+	pg.base.child2_benefit_list[41172] = {
 		benefit_level = 0,
 		name = "617",
 		is_show = 0,
@@ -4766,11 +4469,7 @@ var_0_5.base.child2_benefit_list = {}
 			411721
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_benefit_list
-
-	var_1_64[41181] = {
+	pg.base.child2_benefit_list[41181] = {
 		benefit_level = 0,
 		name = "突破极限",
 		is_show = 1,
@@ -4799,11 +4498,7 @@ var_0_5.base.child2_benefit_list = {}
 			411811
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_benefit_list
-
-	var_1_65[41182] = {
+	pg.base.child2_benefit_list[41182] = {
 		benefit_level = 0,
 		name = "618",
 		is_show = 0,
@@ -4832,11 +4527,7 @@ var_0_5.base.child2_benefit_list = {}
 			411821
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_benefit_list
-
-	var_1_66[41191] = {
+	pg.base.child2_benefit_list[41191] = {
 		benefit_level = 0,
 		name = "稳步前行",
 		is_show = 1,
@@ -4865,11 +4556,7 @@ var_0_5.base.child2_benefit_list = {}
 			411911
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_benefit_list
-
-	var_1_67[41192] = {
+	pg.base.child2_benefit_list[41192] = {
 		benefit_level = 0,
 		name = "540",
 		is_show = 0,
@@ -4898,11 +4585,7 @@ var_0_5.base.child2_benefit_list = {}
 			411921
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_benefit_list
-
-	var_1_68[41201] = {
+	pg.base.child2_benefit_list[41201] = {
 		benefit_level = 0,
 		name = "醍醐灌顶",
 		is_show = 1,
@@ -4931,11 +4614,7 @@ var_0_5.base.child2_benefit_list = {}
 			412011
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child2_benefit_list
-
-	var_1_69[41202] = {
+	pg.base.child2_benefit_list[41202] = {
 		benefit_level = 0,
 		name = "慧眼初开",
 		is_show = 1,
@@ -4964,11 +4643,7 @@ var_0_5.base.child2_benefit_list = {}
 			412021
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child2_benefit_list
-
-	var_1_70[41203] = {
+	pg.base.child2_benefit_list[41203] = {
 		benefit_level = 0,
 		name = "豁然开朗",
 		is_show = 1,
@@ -4997,11 +4672,7 @@ var_0_5.base.child2_benefit_list = {}
 			412031
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child2_benefit_list
-
-	var_1_71[41204] = {
+	pg.base.child2_benefit_list[41204] = {
 		benefit_level = 0,
 		name = "融会贯通",
 		is_show = 1,
@@ -5030,11 +4701,7 @@ var_0_5.base.child2_benefit_list = {}
 			412041
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child2_benefit_list
-
-	var_1_72[41211] = {
+	pg.base.child2_benefit_list[41211] = {
 		benefit_level = 0,
 		name = "超频模式",
 		is_show = 1,
@@ -5063,11 +4730,7 @@ var_0_5.base.child2_benefit_list = {}
 			412111
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child2_benefit_list
-
-	var_1_73[41212] = {
+	pg.base.child2_benefit_list[41212] = {
 		benefit_level = 0,
 		name = "546",
 		is_show = 0,
@@ -5096,11 +4759,7 @@ var_0_5.base.child2_benefit_list = {}
 			412121
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child2_benefit_list
-
-	var_1_74[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 0,
 		name = "547",
 		is_show = 0,
@@ -5129,11 +4788,7 @@ var_0_5.base.child2_benefit_list = {}
 			412211
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child2_benefit_list
-
-	var_1_75[6] = {
+	pg.base.child2_benefit_list[6] = {
 		benefit_level = 0,
 		name = "548",
 		is_show = 0,
@@ -5162,11 +4817,7 @@ var_0_5.base.child2_benefit_list = {}
 			412221
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child2_benefit_list
-
-	var_1_76[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 0,
 		name = "极限训练",
 		is_show = 1,
@@ -5195,11 +4846,7 @@ var_0_5.base.child2_benefit_list = {}
 			412311
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child2_benefit_list
-
-	var_1_77[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 0,
 		name = "常规训练",
 		is_show = 0,
@@ -5228,11 +4875,7 @@ var_0_5.base.child2_benefit_list = {}
 			412321
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child2_benefit_list
-
-	var_1_78[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 0,
 		name = "基础训练",
 		is_show = 0,
@@ -5261,11 +4904,7 @@ var_0_5.base.child2_benefit_list = {}
 			412331
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child2_benefit_list
-
-	var_1_79[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -5294,11 +4933,7 @@ var_0_5.base.child2_benefit_list = {}
 			412341
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child2_benefit_list
-
-	var_1_80[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 0,
 		name = "博览群书",
 		is_show = 1,
@@ -5327,11 +4962,7 @@ var_0_5.base.child2_benefit_list = {}
 			412411
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child2_benefit_list
-
-	var_1_81[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 0,
 		name = "深度阅读",
 		is_show = 0,
@@ -5360,11 +4991,7 @@ var_0_5.base.child2_benefit_list = {}
 			412421
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child2_benefit_list
-
-	var_1_82[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 0,
 		name = "略读速览",
 		is_show = 0,
@@ -5393,11 +5020,7 @@ var_0_5.base.child2_benefit_list = {}
 			412431
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child2_benefit_list
-
-	var_1_83[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -5426,11 +5049,7 @@ var_0_5.base.child2_benefit_list = {}
 			412441
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child2_benefit_list
-
-	var_1_84[41251] = {
+	pg.base.child2_benefit_list[41251] = {
 		benefit_level = 0,
 		name = "精益求精",
 		is_show = 1,
@@ -5459,11 +5078,7 @@ var_0_5.base.child2_benefit_list = {}
 			412511
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child2_benefit_list
-
-	var_1_85[41252] = {
+	pg.base.child2_benefit_list[41252] = {
 		benefit_level = 0,
 		name = "渐入佳境",
 		is_show = 0,
@@ -5492,11 +5107,7 @@ var_0_5.base.child2_benefit_list = {}
 			412521
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child2_benefit_list
-
-	var_1_86[41253] = {
+	pg.base.child2_benefit_list[41253] = {
 		benefit_level = 0,
 		name = "入门之路",
 		is_show = 0,
@@ -5525,11 +5136,7 @@ var_0_5.base.child2_benefit_list = {}
 			412531
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child2_benefit_list
-
-	var_1_87[41254] = {
+	pg.base.child2_benefit_list[41254] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -5558,11 +5165,7 @@ var_0_5.base.child2_benefit_list = {}
 			412541
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child2_benefit_list
-
-	var_1_88[41261] = {
+	pg.base.child2_benefit_list[41261] = {
 		benefit_level = 0,
 		name = "巅峰状态",
 		is_show = 1,
@@ -5591,11 +5194,7 @@ var_0_5.base.child2_benefit_list = {}
 			412611
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child2_benefit_list
-
-	var_1_89[41262] = {
+	pg.base.child2_benefit_list[41262] = {
 		benefit_level = 0,
 		name = "全神贯注",
 		is_show = 0,
@@ -5624,11 +5223,7 @@ var_0_5.base.child2_benefit_list = {}
 			412621
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child2_benefit_list
-
-	var_1_90[41263] = {
+	pg.base.child2_benefit_list[41263] = {
 		benefit_level = 0,
 		name = "专注时刻",
 		is_show = 0,
@@ -5657,11 +5252,7 @@ var_0_5.base.child2_benefit_list = {}
 			412631
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child2_benefit_list
-
-	var_1_91[41264] = {
+	pg.base.child2_benefit_list[41264] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -5690,11 +5281,7 @@ var_0_5.base.child2_benefit_list = {}
 			412641
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child2_benefit_list
-
-	var_1_92[41271] = {
+	pg.base.child2_benefit_list[41271] = {
 		benefit_level = 0,
 		name = "561",
 		is_show = 0,
@@ -5723,11 +5310,7 @@ var_0_5.base.child2_benefit_list = {}
 			412711
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child2_benefit_list
-
-	var_1_93[41272] = {
+	pg.base.child2_benefit_list[41272] = {
 		benefit_level = 0,
 		name = "562",
 		is_show = 0,
@@ -5756,11 +5339,7 @@ var_0_5.base.child2_benefit_list = {}
 			412721
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child2_benefit_list
-
-	var_1_94[41281] = {
+	pg.base.child2_benefit_list[41281] = {
 		benefit_level = 0,
 		name = "漫步收获",
 		is_show = 1,
@@ -5789,11 +5368,7 @@ var_0_5.base.child2_benefit_list = {}
 			412811
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child2_benefit_list
-
-	var_1_95[41282] = {
+	pg.base.child2_benefit_list[41282] = {
 		benefit_level = 0,
 		name = "564",
 		is_show = 0,
@@ -5822,11 +5397,7 @@ var_0_5.base.child2_benefit_list = {}
 			412821
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child2_benefit_list
-
-	var_1_96[41291] = {
+	pg.base.child2_benefit_list[41291] = {
 		benefit_level = 0,
 		name = "幸运之财",
 		is_show = 1,
@@ -5855,11 +5426,7 @@ var_0_5.base.child2_benefit_list = {}
 			412911
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child2_benefit_list
-
-	var_1_97[41292] = {
+	pg.base.child2_benefit_list[41292] = {
 		benefit_level = 0,
 		name = "幸运馈赠",
 		is_show = 1,
@@ -5888,11 +5455,7 @@ var_0_5.base.child2_benefit_list = {}
 			412921
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child2_benefit_list
-
-	var_1_98[41293] = {
+	pg.base.child2_benefit_list[41293] = {
 		benefit_level = 0,
 		name = "567",
 		is_show = 0,
@@ -5921,8 +5484,7 @@ var_0_5.base.child2_benefit_list = {}
 			412931
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child2_benefit_list[41301] = {
+	pg.base.child2_benefit_list[41301] = {
 		benefit_level = 0,
 		name = "敏锐感官",
 		is_show = 1,
@@ -5955,11 +5517,7 @@ var_0_5.base.child2_benefit_list = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child2_benefit_list
-
-	var_2_0[41302] = {
+	pg.base.child2_benefit_list[41302] = {
 		benefit_level = 0,
 		name = "569",
 		is_show = 0,
@@ -5988,11 +5546,7 @@ end)()
 			413021
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child2_benefit_list
-
-	var_2_1[41311] = {
+	pg.base.child2_benefit_list[41311] = {
 		benefit_level = 0,
 		name = "澄明心境",
 		is_show = 1,
@@ -6021,11 +5575,7 @@ end)()
 			413111
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child2_benefit_list
-
-	var_2_2[41312] = {
+	pg.base.child2_benefit_list[41312] = {
 		benefit_level = 0,
 		name = "571",
 		is_show = 0,
@@ -6054,11 +5604,7 @@ end)()
 			413121
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child2_benefit_list
-
-	var_2_3[41321] = {
+	pg.base.child2_benefit_list[41321] = {
 		benefit_level = 0,
 		name = "默契时光",
 		is_show = 1,
@@ -6087,11 +5633,7 @@ end)()
 			413211
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child2_benefit_list
-
-	var_2_4[41322] = {
+	pg.base.child2_benefit_list[41322] = {
 		benefit_level = 0,
 		name = "畅谈欢愉",
 		is_show = 1,
@@ -6120,11 +5662,7 @@ end)()
 			413221
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child2_benefit_list
-
-	var_2_5[41323] = {
+	pg.base.child2_benefit_list[41323] = {
 		benefit_level = 0,
 		name = "574",
 		is_show = 0,
@@ -6153,11 +5691,7 @@ end)()
 			413231
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child2_benefit_list
-
-	var_2_6[41331] = {
+	pg.base.child2_benefit_list[41331] = {
 		benefit_level = 0,
 		name = "575",
 		is_show = 0,
@@ -6186,11 +5720,7 @@ end)()
 			413311
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child2_benefit_list
-
-	var_2_7[41332] = {
+	pg.base.child2_benefit_list[41332] = {
 		benefit_level = 0,
 		name = "576",
 		is_show = 0,
@@ -6219,11 +5749,7 @@ end)()
 			413321
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child2_benefit_list
-
-	var_2_8[41341] = {
+	pg.base.child2_benefit_list[41341] = {
 		benefit_level = 0,
 		name = "577",
 		is_show = 0,
@@ -6252,11 +5778,7 @@ end)()
 			413411
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child2_benefit_list
-
-	var_2_9[41342] = {
+	pg.base.child2_benefit_list[41342] = {
 		benefit_level = 0,
 		name = "578",
 		is_show = 0,
@@ -6285,11 +5807,7 @@ end)()
 			413421
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child2_benefit_list
-
-	var_2_10[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 0,
 		name = "惊喜口味",
 		is_show = 1,
@@ -6318,11 +5836,7 @@ end)()
 			413511
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child2_benefit_list
-
-	var_2_11[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 0,
 		name = "580",
 		is_show = 0,
@@ -6351,11 +5865,7 @@ end)()
 			413611
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child2_benefit_list
-
-	var_2_12[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 0,
 		name = "581",
 		is_show = 0,
@@ -6384,11 +5894,7 @@ end)()
 			413621
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child2_benefit_list
-
-	var_2_13[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 0,
 		name = "582",
 		is_show = 0,
@@ -6417,11 +5923,7 @@ end)()
 			413631
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child2_benefit_list
-
-	var_2_14[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 0,
 		name = "583",
 		is_show = 0,
@@ -6450,11 +5952,7 @@ end)()
 			413641
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child2_benefit_list
-
-	var_2_15[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 0,
 		name = "迷径感知",
 		is_show = 1,
@@ -6483,11 +5981,7 @@ end)()
 			413651
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child2_benefit_list
-
-	var_2_16[22] = {
+	pg.base.child2_benefit_list[22] = {
 		benefit_level = 0,
 		name = "585",
 		is_show = 0,
@@ -6516,11 +6010,7 @@ end)()
 			413661
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child2_benefit_list
-
-	var_2_17[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 0,
 		name = "节能模式",
 		is_show = 1,
@@ -6549,11 +6039,7 @@ end)()
 			413711
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child2_benefit_list
-
-	var_2_18[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 0,
 		name = "587",
 		is_show = 0,
@@ -6582,11 +6068,7 @@ end)()
 			413721
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child2_benefit_list
-
-	var_2_19[41381] = {
+	pg.base.child2_benefit_list[41381] = {
 		benefit_level = 0,
 		name = "实感强化·低",
 		is_show = 1,
@@ -6615,11 +6097,7 @@ end)()
 			413811
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child2_benefit_list
-
-	var_2_20[41382] = {
+	pg.base.child2_benefit_list[41382] = {
 		benefit_level = 0,
 		name = "体智强化·低",
 		is_show = 1,
@@ -6648,11 +6126,7 @@ end)()
 			413821
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child2_benefit_list
-
-	var_2_21[41383] = {
+	pg.base.child2_benefit_list[41383] = {
 		benefit_level = 0,
 		name = "实感强化·中",
 		is_show = 1,
@@ -6681,11 +6155,7 @@ end)()
 			413831
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child2_benefit_list
-
-	var_2_22[41384] = {
+	pg.base.child2_benefit_list[41384] = {
 		benefit_level = 0,
 		name = "体智强化·中",
 		is_show = 1,
@@ -6714,11 +6184,7 @@ end)()
 			413841
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child2_benefit_list
-
-	var_2_23[41385] = {
+	pg.base.child2_benefit_list[41385] = {
 		benefit_level = 0,
 		name = "实感持续·中",
 		is_show = 1,
@@ -6747,11 +6213,7 @@ end)()
 			413851
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child2_benefit_list
-
-	var_2_24[41386] = {
+	pg.base.child2_benefit_list[41386] = {
 		benefit_level = 0,
 		name = "体智持续·中",
 		is_show = 1,
@@ -6780,11 +6242,7 @@ end)()
 			413861
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child2_benefit_list
-
-	var_2_25[41387] = {
+	pg.base.child2_benefit_list[41387] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -6813,11 +6271,7 @@ end)()
 			413871
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child2_benefit_list
-
-	var_2_26[41388] = {
+	pg.base.child2_benefit_list[41388] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -6846,11 +6300,7 @@ end)()
 			413881
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child2_benefit_list
-
-	var_2_27[41389] = {
+	pg.base.child2_benefit_list[41389] = {
 		benefit_level = 0,
 		name = "幸运祝福",
 		is_show = 1,
@@ -6879,11 +6329,7 @@ end)()
 			413891
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child2_benefit_list
-
-	var_2_28[41391] = {
+	pg.base.child2_benefit_list[41391] = {
 		benefit_level = 0,
 		name = "598",
 		is_show = 0,
@@ -6912,11 +6358,7 @@ end)()
 			413911
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child2_benefit_list
-
-	var_2_29[41392] = {
+	pg.base.child2_benefit_list[41392] = {
 		benefit_level = 0,
 		name = "599",
 		is_show = 0,
@@ -6945,11 +6387,7 @@ end)()
 			413921
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child2_benefit_list
-
-	var_2_30[41401] = {
+	pg.base.child2_benefit_list[41401] = {
 		benefit_level = 0,
 		name = "600",
 		is_show = 0,
@@ -6978,11 +6416,7 @@ end)()
 			414011
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child2_benefit_list
-
-	var_2_31[41402] = {
+	pg.base.child2_benefit_list[41402] = {
 		benefit_level = 0,
 		name = "601",
 		is_show = 0,
@@ -7011,11 +6445,7 @@ end)()
 			414021
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child2_benefit_list
-
-	var_2_32[41411] = {
+	pg.base.child2_benefit_list[41411] = {
 		benefit_level = 0,
 		name = "引擎之心",
 		is_show = 1,
@@ -7052,11 +6482,7 @@ end)()
 			414115
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child2_benefit_list
-
-	var_2_33[41412] = {
+	pg.base.child2_benefit_list[41412] = {
 		benefit_level = 0,
 		name = "603",
 		is_show = 0,
@@ -7085,11 +6511,7 @@ end)()
 			414121
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child2_benefit_list
-
-	var_2_34[41421] = {
+	pg.base.child2_benefit_list[41421] = {
 		benefit_level = 0,
 		name = "604",
 		is_show = 0,
@@ -7118,11 +6540,7 @@ end)()
 			414211
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child2_benefit_list
-
-	var_2_35[41422] = {
+	pg.base.child2_benefit_list[41422] = {
 		benefit_level = 0,
 		name = "605",
 		is_show = 0,
@@ -7151,11 +6569,7 @@ end)()
 			414221
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child2_benefit_list
-
-	var_2_36[41431] = {
+	pg.base.child2_benefit_list[41431] = {
 		benefit_level = 0,
 		name = "606",
 		is_show = 0,
@@ -7184,11 +6598,7 @@ end)()
 			414311
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child2_benefit_list
-
-	var_2_37[41432] = {
+	pg.base.child2_benefit_list[41432] = {
 		benefit_level = 0,
 		name = "607",
 		is_show = 0,
@@ -7217,11 +6627,7 @@ end)()
 			414321
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child2_benefit_list
-
-	var_2_38[41441] = {
+	pg.base.child2_benefit_list[41441] = {
 		benefit_level = 0,
 		name = "疗愈之语",
 		is_show = 1,
@@ -7258,11 +6664,7 @@ end)()
 			414415
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child2_benefit_list
-
-	var_2_39[41442] = {
+	pg.base.child2_benefit_list[41442] = {
 		benefit_level = 0,
 		name = "609",
 		is_show = 0,
@@ -7291,11 +6693,7 @@ end)()
 			414421
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.child2_benefit_list
-
-	var_2_40[41451] = {
+	pg.base.child2_benefit_list[41451] = {
 		benefit_level = 0,
 		name = "623",
 		is_show = 0,
@@ -7324,11 +6722,7 @@ end)()
 			414511
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.child2_benefit_list
-
-	var_2_41[41452] = {
+	pg.base.child2_benefit_list[41452] = {
 		benefit_level = 0,
 		name = "622",
 		is_show = 0,
@@ -7357,11 +6751,7 @@ end)()
 			414521
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.child2_benefit_list
-
-	var_2_42[41461] = {
+	pg.base.child2_benefit_list[41461] = {
 		benefit_level = 0,
 		name = "625",
 		is_show = 0,
@@ -7390,11 +6780,7 @@ end)()
 			414611
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.child2_benefit_list
-
-	var_2_43[41462] = {
+	pg.base.child2_benefit_list[41462] = {
 		benefit_level = 0,
 		name = "幸运心情",
 		is_show = 1,
@@ -7423,11 +6809,7 @@ end)()
 			414621
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.child2_benefit_list
-
-	var_2_44[41463] = {
+	pg.base.child2_benefit_list[41463] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -7456,11 +6838,7 @@ end)()
 			414631
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.child2_benefit_list
-
-	var_2_45[41464] = {
+	pg.base.child2_benefit_list[41464] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -7489,11 +6867,7 @@ end)()
 			414641
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.child2_benefit_list
-
-	var_2_46[41465] = {
+	pg.base.child2_benefit_list[41465] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -7522,11 +6896,7 @@ end)()
 			414651
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.child2_benefit_list
-
-	var_2_47[41466] = {
+	pg.base.child2_benefit_list[41466] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -7555,11 +6925,7 @@ end)()
 			414661
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.child2_benefit_list
-
-	var_2_48[41467] = {
+	pg.base.child2_benefit_list[41467] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -7588,11 +6954,7 @@ end)()
 			414671
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.child2_benefit_list
-
-	var_2_49[41468] = {
+	pg.base.child2_benefit_list[41468] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -7621,11 +6983,7 @@ end)()
 			414681
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.child2_benefit_list
-
-	var_2_50[41469] = {
+	pg.base.child2_benefit_list[41469] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -7654,11 +7012,7 @@ end)()
 			414691
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.child2_benefit_list
-
-	var_2_51[41470] = {
+	pg.base.child2_benefit_list[41470] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -7687,11 +7041,7 @@ end)()
 			414701
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.child2_benefit_list
-
-	var_2_52[41471] = {
+	pg.base.child2_benefit_list[41471] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-体能惩罚",
 		is_show = 1,
@@ -7720,11 +7070,7 @@ end)()
 			414711
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.child2_benefit_list
-
-	var_2_53[0] = {
+	pg.base.child2_benefit_list[0] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-知识惩罚",
 		is_show = 1,
@@ -7753,11 +7099,7 @@ end)()
 			414721
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.child2_benefit_list
-
-	var_2_54[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-实践惩罚",
 		is_show = 1,
@@ -7786,11 +7128,7 @@ end)()
 			414731
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.child2_benefit_list
-
-	var_2_55[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-感知惩罚",
 		is_show = 1,
@@ -7819,11 +7157,7 @@ end)()
 			414741
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.child2_benefit_list
-
-	var_2_56[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -7848,11 +7182,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.child2_benefit_list
-
-	var_2_57[42021] = {
+	pg.base.child2_benefit_list[42021] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -7881,11 +7211,7 @@ end)()
 			420211
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.child2_benefit_list
-
-	var_2_58[42022] = {
+	pg.base.child2_benefit_list[42022] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -7914,11 +7240,7 @@ end)()
 			420221
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.child2_benefit_list
-
-	var_2_59[42023] = {
+	pg.base.child2_benefit_list[42023] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -7947,11 +7269,7 @@ end)()
 			420231
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.child2_benefit_list
-
-	var_2_60[42024] = {
+	pg.base.child2_benefit_list[42024] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -7980,11 +7298,7 @@ end)()
 			420241
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.child2_benefit_list
-
-	var_2_61[42031] = {
+	pg.base.child2_benefit_list[42031] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -8009,11 +7323,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.child2_benefit_list
-
-	var_2_62[42041] = {
+	pg.base.child2_benefit_list[42041] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -8038,11 +7348,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.child2_benefit_list
-
-	var_2_63[42051] = {
+	pg.base.child2_benefit_list[42051] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -8067,11 +7373,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.child2_benefit_list
-
-	var_2_64[42061] = {
+	pg.base.child2_benefit_list[42061] = {
 		benefit_level = 0,
 		name = "509",
 		is_show = 0,
@@ -8100,11 +7402,7 @@ end)()
 			420611
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.child2_benefit_list
-
-	var_2_65[42062] = {
+	pg.base.child2_benefit_list[42062] = {
 		benefit_level = 0,
 		name = "510",
 		is_show = 0,
@@ -8133,11 +7431,7 @@ end)()
 			420621
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.child2_benefit_list
-
-	var_2_66[42063] = {
+	pg.base.child2_benefit_list[42063] = {
 		benefit_level = 0,
 		name = "511",
 		is_show = 0,
@@ -8166,11 +7460,7 @@ end)()
 			420631
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.child2_benefit_list
-
-	var_2_67[42064] = {
+	pg.base.child2_benefit_list[42064] = {
 		benefit_level = 0,
 		name = "512",
 		is_show = 0,
@@ -8199,11 +7489,7 @@ end)()
 			420641
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.child2_benefit_list
-
-	var_2_68[42071] = {
+	pg.base.child2_benefit_list[42071] = {
 		benefit_level = 0,
 		name = "513",
 		is_show = 0,
@@ -8232,11 +7518,7 @@ end)()
 			420711
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.child2_benefit_list
-
-	var_2_69[42072] = {
+	pg.base.child2_benefit_list[42072] = {
 		benefit_level = 0,
 		name = "514",
 		is_show = 0,
@@ -8265,11 +7547,7 @@ end)()
 			420721
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.child2_benefit_list
-
-	var_2_70[42073] = {
+	pg.base.child2_benefit_list[42073] = {
 		benefit_level = 0,
 		name = "515",
 		is_show = 0,
@@ -8298,11 +7576,7 @@ end)()
 			420731
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.child2_benefit_list
-
-	var_2_71[42074] = {
+	pg.base.child2_benefit_list[42074] = {
 		benefit_level = 0,
 		name = "516",
 		is_show = 0,
@@ -8331,11 +7605,7 @@ end)()
 			420741
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.child2_benefit_list
-
-	var_2_72[42081] = {
+	pg.base.child2_benefit_list[42081] = {
 		benefit_level = 0,
 		name = "517",
 		is_show = 0,
@@ -8364,11 +7634,7 @@ end)()
 			420811
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.child2_benefit_list
-
-	var_2_73[42082] = {
+	pg.base.child2_benefit_list[42082] = {
 		benefit_level = 0,
 		name = "613",
 		is_show = 0,
@@ -8397,11 +7663,7 @@ end)()
 			420821
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.child2_benefit_list
-
-	var_2_74[42091] = {
+	pg.base.child2_benefit_list[42091] = {
 		benefit_level = 0,
 		name = "518",
 		is_show = 0,
@@ -8430,11 +7692,7 @@ end)()
 			420911
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.child2_benefit_list
-
-	var_2_75[42092] = {
+	pg.base.child2_benefit_list[42092] = {
 		benefit_level = 0,
 		name = "519",
 		is_show = 0,
@@ -8463,11 +7721,7 @@ end)()
 			420921
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.child2_benefit_list
-
-	var_2_76[42093] = {
+	pg.base.child2_benefit_list[42093] = {
 		benefit_level = 0,
 		name = "520",
 		is_show = 0,
@@ -8496,11 +7750,7 @@ end)()
 			420931
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.child2_benefit_list
-
-	var_2_77[42101] = {
+	pg.base.child2_benefit_list[42101] = {
 		benefit_level = 0,
 		name = "521",
 		is_show = 0,
@@ -8529,11 +7779,7 @@ end)()
 			421011
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.child2_benefit_list
-
-	var_2_78[42102] = {
+	pg.base.child2_benefit_list[42102] = {
 		benefit_level = 0,
 		name = "614",
 		is_show = 0,
@@ -8562,11 +7808,7 @@ end)()
 			421021
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.child2_benefit_list
-
-	var_2_79[42111] = {
+	pg.base.child2_benefit_list[42111] = {
 		benefit_level = 0,
 		name = "522",
 		is_show = 0,
@@ -8595,11 +7837,7 @@ end)()
 			421111
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.child2_benefit_list
-
-	var_2_80[0] = {
+	pg.base.child2_benefit_list[0] = {
 		benefit_level = 0,
 		name = "523",
 		is_show = 0,
@@ -8628,11 +7866,7 @@ end)()
 			421121
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.child2_benefit_list
-
-	var_2_81[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 0,
 		name = "524",
 		is_show = 0,
@@ -8661,11 +7895,7 @@ end)()
 			421131
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.child2_benefit_list
-
-	var_2_82[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 0,
 		name = "525",
 		is_show = 0,
@@ -8694,11 +7924,7 @@ end)()
 			421141
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.child2_benefit_list
-
-	var_2_83[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -8723,11 +7949,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.child2_benefit_list
-
-	var_2_84[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 0,
 		name = "527",
 		is_show = 0,
@@ -8756,11 +7978,7 @@ end)()
 			421211
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.child2_benefit_list
-
-	var_2_85[10] = {
+	pg.base.child2_benefit_list[10] = {
 		benefit_level = 0,
 		name = "615",
 		is_show = 0,
@@ -8789,11 +8007,7 @@ end)()
 			421221
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.child2_benefit_list
-
-	var_2_86[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 0,
 		name = "528",
 		is_show = 0,
@@ -8822,11 +8036,7 @@ end)()
 			421311
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.child2_benefit_list
-
-	var_2_87[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 0,
 		name = "529",
 		is_show = 0,
@@ -8855,11 +8065,7 @@ end)()
 			421321
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.child2_benefit_list
-
-	var_2_88[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 0,
 		name = "530",
 		is_show = 0,
@@ -8888,11 +8094,7 @@ end)()
 			421331
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.child2_benefit_list
-
-	var_2_89[22] = {
+	pg.base.child2_benefit_list[22] = {
 		benefit_level = 0,
 		name = "531",
 		is_show = 0,
@@ -8921,11 +8123,7 @@ end)()
 			421341
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.child2_benefit_list
-
-	var_2_90[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -8950,11 +8148,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.child2_benefit_list
-
-	var_2_91[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 0,
 		name = "533",
 		is_show = 0,
@@ -8983,11 +8177,7 @@ end)()
 			421411
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.child2_benefit_list
-
-	var_2_92[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 0,
 		name = "534",
 		is_show = 0,
@@ -9016,11 +8206,7 @@ end)()
 			421421
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.child2_benefit_list
-
-	var_2_93[42151] = {
+	pg.base.child2_benefit_list[42151] = {
 		benefit_level = 0,
 		name = "535",
 		is_show = 0,
@@ -9049,11 +8235,7 @@ end)()
 			421511
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.child2_benefit_list
-
-	var_2_94[42161] = {
+	pg.base.child2_benefit_list[42161] = {
 		benefit_level = 0,
 		name = "知识精要·速成",
 		is_show = 1,
@@ -9082,11 +8264,7 @@ end)()
 			421611
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.child2_benefit_list
-
-	var_2_95[42162] = {
+	pg.base.child2_benefit_list[42162] = {
 		benefit_level = 0,
 		name = "616",
 		is_show = 0,
@@ -9115,11 +8293,7 @@ end)()
 			421621
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.child2_benefit_list
-
-	var_2_96[42171] = {
+	pg.base.child2_benefit_list[42171] = {
 		benefit_level = 0,
 		name = "知识精要·持续",
 		is_show = 1,
@@ -9148,11 +8322,7 @@ end)()
 			421711
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.child2_benefit_list
-
-	var_2_97[42172] = {
+	pg.base.child2_benefit_list[42172] = {
 		benefit_level = 0,
 		name = "617",
 		is_show = 0,
@@ -9181,11 +8351,7 @@ end)()
 			421721
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.child2_benefit_list
-
-	var_2_98[42181] = {
+	pg.base.child2_benefit_list[42181] = {
 		benefit_level = 0,
 		name = "突破极限",
 		is_show = 1,
@@ -9214,8 +8380,7 @@ end)()
 			421811
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.child2_benefit_list[42182] = {
+	pg.base.child2_benefit_list[42182] = {
 		benefit_level = 0,
 		name = "618",
 		is_show = 0,
@@ -9248,11 +8413,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.child2_benefit_list
-
-	var_3_0[42191] = {
+	pg.base.child2_benefit_list[42191] = {
 		benefit_level = 0,
 		name = "稳步前行",
 		is_show = 1,
@@ -9281,11 +8442,7 @@ end)()
 			421911
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.child2_benefit_list
-
-	var_3_1[42192] = {
+	pg.base.child2_benefit_list[42192] = {
 		benefit_level = 0,
 		name = "540",
 		is_show = 0,
@@ -9314,11 +8471,7 @@ end)()
 			421921
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.child2_benefit_list
-
-	var_3_2[42201] = {
+	pg.base.child2_benefit_list[42201] = {
 		benefit_level = 0,
 		name = "醍醐灌顶",
 		is_show = 1,
@@ -9347,11 +8500,7 @@ end)()
 			422011
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.child2_benefit_list
-
-	var_3_3[42202] = {
+	pg.base.child2_benefit_list[42202] = {
 		benefit_level = 0,
 		name = "慧眼初开",
 		is_show = 1,
@@ -9380,11 +8529,7 @@ end)()
 			422021
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.child2_benefit_list
-
-	var_3_4[42203] = {
+	pg.base.child2_benefit_list[42203] = {
 		benefit_level = 0,
 		name = "豁然开朗",
 		is_show = 1,
@@ -9413,11 +8558,7 @@ end)()
 			422031
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.child2_benefit_list
-
-	var_3_5[42204] = {
+	pg.base.child2_benefit_list[42204] = {
 		benefit_level = 0,
 		name = "融会贯通",
 		is_show = 1,
@@ -9446,11 +8587,7 @@ end)()
 			422041
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.child2_benefit_list
-
-	var_3_6[42211] = {
+	pg.base.child2_benefit_list[42211] = {
 		benefit_level = 0,
 		name = "超频模式",
 		is_show = 1,
@@ -9479,11 +8616,7 @@ end)()
 			422111
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.child2_benefit_list
-
-	var_3_7[42212] = {
+	pg.base.child2_benefit_list[42212] = {
 		benefit_level = 0,
 		name = "546",
 		is_show = 0,
@@ -9512,11 +8645,7 @@ end)()
 			422121
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.child2_benefit_list
-
-	var_3_8[42221] = {
+	pg.base.child2_benefit_list[42221] = {
 		benefit_level = 0,
 		name = "547",
 		is_show = 0,
@@ -9545,11 +8674,7 @@ end)()
 			422211
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.child2_benefit_list
-
-	var_3_9[42222] = {
+	pg.base.child2_benefit_list[42222] = {
 		benefit_level = 0,
 		name = "548",
 		is_show = 0,
@@ -9578,11 +8703,7 @@ end)()
 			422221
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.child2_benefit_list
-
-	var_3_10[42231] = {
+	pg.base.child2_benefit_list[42231] = {
 		benefit_level = 0,
 		name = "极限训练",
 		is_show = 1,
@@ -9611,11 +8732,7 @@ end)()
 			422311
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.child2_benefit_list
-
-	var_3_11[42232] = {
+	pg.base.child2_benefit_list[42232] = {
 		benefit_level = 0,
 		name = "常规训练",
 		is_show = 0,
@@ -9644,11 +8761,7 @@ end)()
 			422321
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.child2_benefit_list
-
-	var_3_12[42233] = {
+	pg.base.child2_benefit_list[42233] = {
 		benefit_level = 0,
 		name = "基础训练",
 		is_show = 0,
@@ -9677,11 +8790,7 @@ end)()
 			422331
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.child2_benefit_list
-
-	var_3_13[42234] = {
+	pg.base.child2_benefit_list[42234] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -9710,11 +8819,7 @@ end)()
 			422341
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.child2_benefit_list
-
-	var_3_14[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 0,
 		name = "博览群书",
 		is_show = 1,
@@ -9743,11 +8848,7 @@ end)()
 			422411
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.child2_benefit_list
-
-	var_3_15[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 0,
 		name = "深度阅读",
 		is_show = 0,
@@ -9776,11 +8877,7 @@ end)()
 			422421
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.child2_benefit_list
-
-	var_3_16[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "略读速览",
 		is_show = 0,
@@ -9809,11 +8906,7 @@ end)()
 			422431
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.child2_benefit_list
-
-	var_3_17[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -9842,11 +8935,7 @@ end)()
 			422441
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.child2_benefit_list
-
-	var_3_18[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 0,
 		name = "精益求精",
 		is_show = 1,
@@ -9875,11 +8964,7 @@ end)()
 			422511
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.child2_benefit_list
-
-	var_3_19[12] = {
+	pg.base.child2_benefit_list[12] = {
 		benefit_level = 0,
 		name = "渐入佳境",
 		is_show = 0,
@@ -9908,11 +8993,7 @@ end)()
 			422521
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.child2_benefit_list
-
-	var_3_20[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 0,
 		name = "入门之路",
 		is_show = 0,
@@ -9941,11 +9022,7 @@ end)()
 			422531
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.child2_benefit_list
-
-	var_3_21[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -9974,11 +9051,7 @@ end)()
 			422541
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.child2_benefit_list
-
-	var_3_22[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 0,
 		name = "巅峰状态",
 		is_show = 1,
@@ -10007,11 +9080,7 @@ end)()
 			422611
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.child2_benefit_list
-
-	var_3_23[22] = {
+	pg.base.child2_benefit_list[22] = {
 		benefit_level = 0,
 		name = "全神贯注",
 		is_show = 0,
@@ -10040,11 +9109,7 @@ end)()
 			422621
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.child2_benefit_list
-
-	var_3_24[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 0,
 		name = "专注时刻",
 		is_show = 0,
@@ -10073,11 +9138,7 @@ end)()
 			422631
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.child2_benefit_list
-
-	var_3_25[24] = {
+	pg.base.child2_benefit_list[24] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -10106,11 +9167,7 @@ end)()
 			422641
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.child2_benefit_list
-
-	var_3_26[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 0,
 		name = "561",
 		is_show = 0,
@@ -10139,11 +9196,7 @@ end)()
 			422711
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.child2_benefit_list
-
-	var_3_27[42272] = {
+	pg.base.child2_benefit_list[42272] = {
 		benefit_level = 0,
 		name = "562",
 		is_show = 0,
@@ -10172,11 +9225,7 @@ end)()
 			422721
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.child2_benefit_list
-
-	var_3_28[42281] = {
+	pg.base.child2_benefit_list[42281] = {
 		benefit_level = 0,
 		name = "漫步收获",
 		is_show = 1,
@@ -10205,11 +9254,7 @@ end)()
 			422811
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.child2_benefit_list
-
-	var_3_29[42282] = {
+	pg.base.child2_benefit_list[42282] = {
 		benefit_level = 0,
 		name = "564",
 		is_show = 0,
@@ -10238,11 +9283,7 @@ end)()
 			422821
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.child2_benefit_list
-
-	var_3_30[42291] = {
+	pg.base.child2_benefit_list[42291] = {
 		benefit_level = 0,
 		name = "幸运之财",
 		is_show = 1,
@@ -10271,11 +9312,7 @@ end)()
 			422911
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.child2_benefit_list
-
-	var_3_31[42292] = {
+	pg.base.child2_benefit_list[42292] = {
 		benefit_level = 0,
 		name = "幸运馈赠",
 		is_show = 1,
@@ -10304,11 +9341,7 @@ end)()
 			422921
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.child2_benefit_list
-
-	var_3_32[42293] = {
+	pg.base.child2_benefit_list[42293] = {
 		benefit_level = 0,
 		name = "567",
 		is_show = 0,
@@ -10337,11 +9370,7 @@ end)()
 			422931
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.child2_benefit_list
-
-	var_3_33[42301] = {
+	pg.base.child2_benefit_list[42301] = {
 		benefit_level = 0,
 		name = "敏锐感官",
 		is_show = 1,
@@ -10370,11 +9399,7 @@ end)()
 			423011
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.child2_benefit_list
-
-	var_3_34[42302] = {
+	pg.base.child2_benefit_list[42302] = {
 		benefit_level = 0,
 		name = "569",
 		is_show = 0,
@@ -10403,11 +9428,7 @@ end)()
 			423021
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.child2_benefit_list
-
-	var_3_35[42311] = {
+	pg.base.child2_benefit_list[42311] = {
 		benefit_level = 0,
 		name = "澄明心境",
 		is_show = 1,
@@ -10436,11 +9457,7 @@ end)()
 			423111
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.child2_benefit_list
-
-	var_3_36[42312] = {
+	pg.base.child2_benefit_list[42312] = {
 		benefit_level = 0,
 		name = "571",
 		is_show = 0,
@@ -10469,11 +9486,7 @@ end)()
 			423121
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.child2_benefit_list
-
-	var_3_37[42321] = {
+	pg.base.child2_benefit_list[42321] = {
 		benefit_level = 0,
 		name = "默契时光",
 		is_show = 1,
@@ -10502,11 +9515,7 @@ end)()
 			423211
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.child2_benefit_list
-
-	var_3_38[42322] = {
+	pg.base.child2_benefit_list[42322] = {
 		benefit_level = 0,
 		name = "畅谈欢愉",
 		is_show = 1,
@@ -10535,11 +9544,7 @@ end)()
 			423221
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.child2_benefit_list
-
-	var_3_39[42323] = {
+	pg.base.child2_benefit_list[42323] = {
 		benefit_level = 0,
 		name = "574",
 		is_show = 0,
@@ -10568,11 +9573,7 @@ end)()
 			423231
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.child2_benefit_list
-
-	var_3_40[42331] = {
+	pg.base.child2_benefit_list[42331] = {
 		benefit_level = 0,
 		name = "575",
 		is_show = 0,
@@ -10601,11 +9602,7 @@ end)()
 			423311
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.child2_benefit_list
-
-	var_3_41[42332] = {
+	pg.base.child2_benefit_list[42332] = {
 		benefit_level = 0,
 		name = "576",
 		is_show = 0,
@@ -10634,11 +9631,7 @@ end)()
 			423321
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.child2_benefit_list
-
-	var_3_42[42341] = {
+	pg.base.child2_benefit_list[42341] = {
 		benefit_level = 0,
 		name = "577",
 		is_show = 0,
@@ -10667,11 +9660,7 @@ end)()
 			423411
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.child2_benefit_list
-
-	var_3_43[42342] = {
+	pg.base.child2_benefit_list[42342] = {
 		benefit_level = 0,
 		name = "578",
 		is_show = 0,
@@ -10700,11 +9689,7 @@ end)()
 			423421
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.child2_benefit_list
-
-	var_3_44[42351] = {
+	pg.base.child2_benefit_list[42351] = {
 		benefit_level = 0,
 		name = "惊喜口味",
 		is_show = 1,
@@ -10733,11 +9718,7 @@ end)()
 			423511
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.child2_benefit_list
-
-	var_3_45[42361] = {
+	pg.base.child2_benefit_list[42361] = {
 		benefit_level = 0,
 		name = "580",
 		is_show = 0,
@@ -10766,11 +9747,7 @@ end)()
 			423611
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.child2_benefit_list
-
-	var_3_46[42362] = {
+	pg.base.child2_benefit_list[42362] = {
 		benefit_level = 0,
 		name = "581",
 		is_show = 0,
@@ -10799,11 +9776,7 @@ end)()
 			423621
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.child2_benefit_list
-
-	var_3_47[42363] = {
+	pg.base.child2_benefit_list[42363] = {
 		benefit_level = 0,
 		name = "582",
 		is_show = 0,
@@ -10832,11 +9805,7 @@ end)()
 			423631
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.child2_benefit_list
-
-	var_3_48[42364] = {
+	pg.base.child2_benefit_list[42364] = {
 		benefit_level = 0,
 		name = "583",
 		is_show = 0,
@@ -10865,11 +9834,7 @@ end)()
 			423641
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.child2_benefit_list
-
-	var_3_49[42365] = {
+	pg.base.child2_benefit_list[42365] = {
 		benefit_level = 0,
 		name = "迷径感知",
 		is_show = 1,
@@ -10898,11 +9863,7 @@ end)()
 			423651
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.child2_benefit_list
-
-	var_3_50[42366] = {
+	pg.base.child2_benefit_list[42366] = {
 		benefit_level = 0,
 		name = "585",
 		is_show = 0,
@@ -10931,11 +9892,7 @@ end)()
 			423661
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.child2_benefit_list
-
-	var_3_51[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "节能模式",
 		is_show = 1,
@@ -10964,11 +9921,7 @@ end)()
 			423711
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.child2_benefit_list
-
-	var_3_52[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 0,
 		name = "587",
 		is_show = 0,
@@ -10997,11 +9950,7 @@ end)()
 			423721
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.child2_benefit_list
-
-	var_3_53[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 0,
 		name = "实感强化·低",
 		is_show = 1,
@@ -11030,11 +9979,7 @@ end)()
 			423811
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.child2_benefit_list
-
-	var_3_54[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 0,
 		name = "体智强化·低",
 		is_show = 1,
@@ -11063,11 +10008,7 @@ end)()
 			423821
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.child2_benefit_list
-
-	var_3_55[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 0,
 		name = "实感强化·中",
 		is_show = 1,
@@ -11096,11 +10037,7 @@ end)()
 			423831
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.child2_benefit_list
-
-	var_3_56[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 0,
 		name = "体智强化·中",
 		is_show = 1,
@@ -11129,11 +10066,7 @@ end)()
 			423841
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.child2_benefit_list
-
-	var_3_57[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 0,
 		name = "实感持续·中",
 		is_show = 1,
@@ -11162,11 +10095,7 @@ end)()
 			423851
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.child2_benefit_list
-
-	var_3_58[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 0,
 		name = "体智持续·中",
 		is_show = 1,
@@ -11195,11 +10124,7 @@ end)()
 			423861
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.child2_benefit_list
-
-	var_3_59[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -11228,11 +10153,7 @@ end)()
 			423871
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.child2_benefit_list
-
-	var_3_60[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -11261,11 +10182,7 @@ end)()
 			423881
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.child2_benefit_list
-
-	var_3_61[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 0,
 		name = "幸运祝福",
 		is_show = 1,
@@ -11294,11 +10211,7 @@ end)()
 			423891
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.child2_benefit_list
-
-	var_3_62[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 0,
 		name = "598",
 		is_show = 0,
@@ -11327,11 +10240,7 @@ end)()
 			423911
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.child2_benefit_list
-
-	var_3_63[24] = {
+	pg.base.child2_benefit_list[24] = {
 		benefit_level = 0,
 		name = "599",
 		is_show = 0,
@@ -11360,11 +10269,7 @@ end)()
 			423921
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.child2_benefit_list
-
-	var_3_64[42401] = {
+	pg.base.child2_benefit_list[42401] = {
 		benefit_level = 0,
 		name = "600",
 		is_show = 0,
@@ -11393,11 +10298,7 @@ end)()
 			424011
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.child2_benefit_list
-
-	var_3_65[42402] = {
+	pg.base.child2_benefit_list[42402] = {
 		benefit_level = 0,
 		name = "601",
 		is_show = 0,
@@ -11426,11 +10327,7 @@ end)()
 			424021
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.child2_benefit_list
-
-	var_3_66[42411] = {
+	pg.base.child2_benefit_list[42411] = {
 		benefit_level = 0,
 		name = "引擎之心",
 		is_show = 1,
@@ -11467,11 +10364,7 @@ end)()
 			424115
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.child2_benefit_list
-
-	var_3_67[42412] = {
+	pg.base.child2_benefit_list[42412] = {
 		benefit_level = 0,
 		name = "603",
 		is_show = 0,
@@ -11500,11 +10393,7 @@ end)()
 			424121
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.child2_benefit_list
-
-	var_3_68[42421] = {
+	pg.base.child2_benefit_list[42421] = {
 		benefit_level = 0,
 		name = "604",
 		is_show = 0,
@@ -11533,11 +10422,7 @@ end)()
 			424211
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.child2_benefit_list
-
-	var_3_69[42422] = {
+	pg.base.child2_benefit_list[42422] = {
 		benefit_level = 0,
 		name = "605",
 		is_show = 0,
@@ -11566,11 +10451,7 @@ end)()
 			424221
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.child2_benefit_list
-
-	var_3_70[42431] = {
+	pg.base.child2_benefit_list[42431] = {
 		benefit_level = 0,
 		name = "606",
 		is_show = 0,
@@ -11599,11 +10480,7 @@ end)()
 			424311
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.child2_benefit_list
-
-	var_3_71[42432] = {
+	pg.base.child2_benefit_list[42432] = {
 		benefit_level = 0,
 		name = "607",
 		is_show = 0,
@@ -11632,11 +10509,7 @@ end)()
 			424321
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.child2_benefit_list
-
-	var_3_72[42441] = {
+	pg.base.child2_benefit_list[42441] = {
 		benefit_level = 0,
 		name = "疗愈之语",
 		is_show = 1,
@@ -11673,11 +10546,7 @@ end)()
 			424415
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.child2_benefit_list
-
-	var_3_73[42442] = {
+	pg.base.child2_benefit_list[42442] = {
 		benefit_level = 0,
 		name = "609",
 		is_show = 0,
@@ -11706,11 +10575,7 @@ end)()
 			424421
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.child2_benefit_list
-
-	var_3_74[42451] = {
+	pg.base.child2_benefit_list[42451] = {
 		benefit_level = 0,
 		name = "623",
 		is_show = 0,
@@ -11739,11 +10604,7 @@ end)()
 			424511
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.child2_benefit_list
-
-	var_3_75[42452] = {
+	pg.base.child2_benefit_list[42452] = {
 		benefit_level = 0,
 		name = "622",
 		is_show = 0,
@@ -11772,11 +10633,7 @@ end)()
 			424521
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.child2_benefit_list
-
-	var_3_76[42461] = {
+	pg.base.child2_benefit_list[42461] = {
 		benefit_level = 0,
 		name = "625",
 		is_show = 0,
@@ -11805,11 +10662,7 @@ end)()
 			424611
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.child2_benefit_list
-
-	var_3_77[42462] = {
+	pg.base.child2_benefit_list[42462] = {
 		benefit_level = 0,
 		name = "幸运心情",
 		is_show = 1,
@@ -11838,11 +10691,7 @@ end)()
 			424621
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.child2_benefit_list
-
-	var_3_78[42463] = {
+	pg.base.child2_benefit_list[42463] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -11871,11 +10720,7 @@ end)()
 			424631
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.child2_benefit_list
-
-	var_3_79[42464] = {
+	pg.base.child2_benefit_list[42464] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -11904,11 +10749,7 @@ end)()
 			424641
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.child2_benefit_list
-
-	var_3_80[42465] = {
+	pg.base.child2_benefit_list[42465] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -11937,11 +10778,7 @@ end)()
 			424651
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.child2_benefit_list
-
-	var_3_81[42466] = {
+	pg.base.child2_benefit_list[42466] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -11970,11 +10807,7 @@ end)()
 			424661
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.child2_benefit_list
-
-	var_3_82[42467] = {
+	pg.base.child2_benefit_list[42467] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -12003,11 +10836,7 @@ end)()
 			424671
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.child2_benefit_list
-
-	var_3_83[42468] = {
+	pg.base.child2_benefit_list[42468] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -12036,11 +10865,7 @@ end)()
 			424681
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.child2_benefit_list
-
-	var_3_84[42469] = {
+	pg.base.child2_benefit_list[42469] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -12069,11 +10894,7 @@ end)()
 			424691
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.child2_benefit_list
-
-	var_3_85[42470] = {
+	pg.base.child2_benefit_list[42470] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -12102,11 +10923,7 @@ end)()
 			424701
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.child2_benefit_list
-
-	var_3_86[42471] = {
+	pg.base.child2_benefit_list[42471] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-体能惩罚",
 		is_show = 1,
@@ -12135,11 +10952,7 @@ end)()
 			424711
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.child2_benefit_list
-
-	var_3_87[42472] = {
+	pg.base.child2_benefit_list[42472] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-知识惩罚",
 		is_show = 1,
@@ -12168,11 +10981,7 @@ end)()
 			424721
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.child2_benefit_list
-
-	var_3_88[42473] = {
+	pg.base.child2_benefit_list[42473] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-实践惩罚",
 		is_show = 1,
@@ -12201,11 +11010,7 @@ end)()
 			424731
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.child2_benefit_list
-
-	var_3_89[42474] = {
+	pg.base.child2_benefit_list[42474] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-感知惩罚",
 		is_show = 1,
@@ -12234,11 +11039,7 @@ end)()
 			424741
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.child2_benefit_list
-
-	var_3_90[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -12263,11 +11064,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.child2_benefit_list
-
-	var_3_91[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -12296,11 +11093,7 @@ end)()
 			430211
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.child2_benefit_list
-
-	var_3_92[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -12329,11 +11122,7 @@ end)()
 			430221
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.child2_benefit_list
-
-	var_3_93[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -12362,11 +11151,7 @@ end)()
 			430231
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.child2_benefit_list
-
-	var_3_94[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -12395,11 +11180,7 @@ end)()
 			430241
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.child2_benefit_list
-
-	var_3_95[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -12424,11 +11205,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.child2_benefit_list
-
-	var_3_96[43041] = {
+	pg.base.child2_benefit_list[43041] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -12453,11 +11230,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.child2_benefit_list
-
-	var_3_97[43051] = {
+	pg.base.child2_benefit_list[43051] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -12482,11 +11255,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.child2_benefit_list
-
-	var_3_98[43061] = {
+	pg.base.child2_benefit_list[43061] = {
 		benefit_level = 0,
 		name = "509",
 		is_show = 0,
@@ -12515,8 +11284,7 @@ end)()
 			430611
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.child2_benefit_list[43062] = {
+	pg.base.child2_benefit_list[43062] = {
 		benefit_level = 0,
 		name = "510",
 		is_show = 0,
@@ -12549,11 +11317,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.child2_benefit_list
-
-	var_4_0[43063] = {
+	pg.base.child2_benefit_list[43063] = {
 		benefit_level = 0,
 		name = "511",
 		is_show = 0,
@@ -12582,11 +11346,7 @@ end)()
 			430631
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.child2_benefit_list
-
-	var_4_1[43064] = {
+	pg.base.child2_benefit_list[43064] = {
 		benefit_level = 0,
 		name = "512",
 		is_show = 0,
@@ -12615,11 +11375,7 @@ end)()
 			430641
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.child2_benefit_list
-
-	var_4_2[43071] = {
+	pg.base.child2_benefit_list[43071] = {
 		benefit_level = 0,
 		name = "513",
 		is_show = 0,
@@ -12648,11 +11404,7 @@ end)()
 			430711
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.child2_benefit_list
-
-	var_4_3[43072] = {
+	pg.base.child2_benefit_list[43072] = {
 		benefit_level = 0,
 		name = "514",
 		is_show = 0,
@@ -12681,11 +11433,7 @@ end)()
 			430721
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.child2_benefit_list
-
-	var_4_4[43073] = {
+	pg.base.child2_benefit_list[43073] = {
 		benefit_level = 0,
 		name = "515",
 		is_show = 0,
@@ -12714,11 +11462,7 @@ end)()
 			430731
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.child2_benefit_list
-
-	var_4_5[43074] = {
+	pg.base.child2_benefit_list[43074] = {
 		benefit_level = 0,
 		name = "516",
 		is_show = 0,
@@ -12747,11 +11491,7 @@ end)()
 			430741
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.child2_benefit_list
-
-	var_4_6[43081] = {
+	pg.base.child2_benefit_list[43081] = {
 		benefit_level = 0,
 		name = "517",
 		is_show = 0,
@@ -12780,11 +11520,7 @@ end)()
 			430811
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.child2_benefit_list
-
-	var_4_7[43082] = {
+	pg.base.child2_benefit_list[43082] = {
 		benefit_level = 0,
 		name = "613",
 		is_show = 0,
@@ -12813,11 +11549,7 @@ end)()
 			430821
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.child2_benefit_list
-
-	var_4_8[43091] = {
+	pg.base.child2_benefit_list[43091] = {
 		benefit_level = 0,
 		name = "518",
 		is_show = 0,
@@ -12846,11 +11578,7 @@ end)()
 			430911
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.child2_benefit_list
-
-	var_4_9[43092] = {
+	pg.base.child2_benefit_list[43092] = {
 		benefit_level = 0,
 		name = "519",
 		is_show = 0,
@@ -12879,11 +11607,7 @@ end)()
 			430921
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.child2_benefit_list
-
-	var_4_10[43093] = {
+	pg.base.child2_benefit_list[43093] = {
 		benefit_level = 0,
 		name = "520",
 		is_show = 0,
@@ -12912,11 +11636,7 @@ end)()
 			430931
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.child2_benefit_list
-
-	var_4_11[43101] = {
+	pg.base.child2_benefit_list[43101] = {
 		benefit_level = 0,
 		name = "521",
 		is_show = 0,
@@ -12945,11 +11665,7 @@ end)()
 			431011
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.child2_benefit_list
-
-	var_4_12[43102] = {
+	pg.base.child2_benefit_list[43102] = {
 		benefit_level = 0,
 		name = "614",
 		is_show = 0,
@@ -12978,11 +11694,7 @@ end)()
 			431021
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.child2_benefit_list
-
-	var_4_13[43111] = {
+	pg.base.child2_benefit_list[43111] = {
 		benefit_level = 0,
 		name = "522",
 		is_show = 0,
@@ -13011,11 +11723,7 @@ end)()
 			431111
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.child2_benefit_list
-
-	var_4_14[43112] = {
+	pg.base.child2_benefit_list[43112] = {
 		benefit_level = 0,
 		name = "523",
 		is_show = 0,
@@ -13044,11 +11752,7 @@ end)()
 			431121
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.child2_benefit_list
-
-	var_4_15[43113] = {
+	pg.base.child2_benefit_list[43113] = {
 		benefit_level = 0,
 		name = "524",
 		is_show = 0,
@@ -13077,11 +11781,7 @@ end)()
 			431131
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.child2_benefit_list
-
-	var_4_16[43114] = {
+	pg.base.child2_benefit_list[43114] = {
 		benefit_level = 0,
 		name = "525",
 		is_show = 0,
@@ -13110,11 +11810,7 @@ end)()
 			431141
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.child2_benefit_list
-
-	var_4_17[43115] = {
+	pg.base.child2_benefit_list[43115] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -13139,11 +11835,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.child2_benefit_list
-
-	var_4_18[43121] = {
+	pg.base.child2_benefit_list[43121] = {
 		benefit_level = 0,
 		name = "527",
 		is_show = 0,
@@ -13172,11 +11864,7 @@ end)()
 			431211
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.child2_benefit_list
-
-	var_4_19[43122] = {
+	pg.base.child2_benefit_list[43122] = {
 		benefit_level = 0,
 		name = "615",
 		is_show = 0,
@@ -13205,11 +11893,7 @@ end)()
 			431221
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.child2_benefit_list
-
-	var_4_20[43131] = {
+	pg.base.child2_benefit_list[43131] = {
 		benefit_level = 0,
 		name = "528",
 		is_show = 0,
@@ -13238,11 +11922,7 @@ end)()
 			431311
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.child2_benefit_list
-
-	var_4_21[43132] = {
+	pg.base.child2_benefit_list[43132] = {
 		benefit_level = 0,
 		name = "529",
 		is_show = 0,
@@ -13271,11 +11951,7 @@ end)()
 			431321
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.child2_benefit_list
-
-	var_4_22[43133] = {
+	pg.base.child2_benefit_list[43133] = {
 		benefit_level = 0,
 		name = "530",
 		is_show = 0,
@@ -13304,11 +11980,7 @@ end)()
 			431331
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.child2_benefit_list
-
-	var_4_23[43134] = {
+	pg.base.child2_benefit_list[43134] = {
 		benefit_level = 0,
 		name = "531",
 		is_show = 0,
@@ -13337,11 +12009,7 @@ end)()
 			431341
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.child2_benefit_list
-
-	var_4_24[43135] = {
+	pg.base.child2_benefit_list[43135] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -13366,11 +12034,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.child2_benefit_list
-
-	var_4_25[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 0,
 		name = "533",
 		is_show = 0,
@@ -13399,11 +12063,7 @@ end)()
 			431411
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.child2_benefit_list
-
-	var_4_26[6] = {
+	pg.base.child2_benefit_list[6] = {
 		benefit_level = 0,
 		name = "534",
 		is_show = 0,
@@ -13432,11 +12092,7 @@ end)()
 			431421
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.child2_benefit_list
-
-	var_4_27[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 0,
 		name = "535",
 		is_show = 0,
@@ -13465,11 +12121,7 @@ end)()
 			431511
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.child2_benefit_list
-
-	var_4_28[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 0,
 		name = "知识精要·速成",
 		is_show = 1,
@@ -13498,11 +12150,7 @@ end)()
 			431611
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.child2_benefit_list
-
-	var_4_29[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 0,
 		name = "616",
 		is_show = 0,
@@ -13531,11 +12179,7 @@ end)()
 			431621
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.child2_benefit_list
-
-	var_4_30[43171] = {
+	pg.base.child2_benefit_list[43171] = {
 		benefit_level = 0,
 		name = "知识精要·持续",
 		is_show = 1,
@@ -13564,11 +12208,7 @@ end)()
 			431711
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.child2_benefit_list
-
-	var_4_31[43172] = {
+	pg.base.child2_benefit_list[43172] = {
 		benefit_level = 0,
 		name = "617",
 		is_show = 0,
@@ -13597,11 +12237,7 @@ end)()
 			431721
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.child2_benefit_list
-
-	var_4_32[43181] = {
+	pg.base.child2_benefit_list[43181] = {
 		benefit_level = 0,
 		name = "突破极限",
 		is_show = 1,
@@ -13630,11 +12266,7 @@ end)()
 			431811
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.child2_benefit_list
-
-	var_4_33[43182] = {
+	pg.base.child2_benefit_list[43182] = {
 		benefit_level = 0,
 		name = "618",
 		is_show = 0,
@@ -13663,11 +12295,7 @@ end)()
 			431821
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.child2_benefit_list
-
-	var_4_34[43191] = {
+	pg.base.child2_benefit_list[43191] = {
 		benefit_level = 0,
 		name = "稳步前行",
 		is_show = 1,
@@ -13696,11 +12324,7 @@ end)()
 			431911
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.child2_benefit_list
-
-	var_4_35[43192] = {
+	pg.base.child2_benefit_list[43192] = {
 		benefit_level = 0,
 		name = "540",
 		is_show = 0,
@@ -13729,11 +12353,7 @@ end)()
 			431921
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.child2_benefit_list
-
-	var_4_36[43201] = {
+	pg.base.child2_benefit_list[43201] = {
 		benefit_level = 0,
 		name = "醍醐灌顶",
 		is_show = 1,
@@ -13762,11 +12382,7 @@ end)()
 			432011
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.child2_benefit_list
-
-	var_4_37[43202] = {
+	pg.base.child2_benefit_list[43202] = {
 		benefit_level = 0,
 		name = "慧眼初开",
 		is_show = 1,
@@ -13795,11 +12411,7 @@ end)()
 			432021
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.child2_benefit_list
-
-	var_4_38[43203] = {
+	pg.base.child2_benefit_list[43203] = {
 		benefit_level = 0,
 		name = "豁然开朗",
 		is_show = 1,
@@ -13828,11 +12440,7 @@ end)()
 			432031
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.child2_benefit_list
-
-	var_4_39[43204] = {
+	pg.base.child2_benefit_list[43204] = {
 		benefit_level = 0,
 		name = "融会贯通",
 		is_show = 1,
@@ -13861,11 +12469,7 @@ end)()
 			432041
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.child2_benefit_list
-
-	var_4_40[43211] = {
+	pg.base.child2_benefit_list[43211] = {
 		benefit_level = 0,
 		name = "超频模式",
 		is_show = 1,
@@ -13894,11 +12498,7 @@ end)()
 			432111
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.child2_benefit_list
-
-	var_4_41[43212] = {
+	pg.base.child2_benefit_list[43212] = {
 		benefit_level = 0,
 		name = "546",
 		is_show = 0,
@@ -13927,11 +12527,7 @@ end)()
 			432121
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.child2_benefit_list
-
-	var_4_42[43221] = {
+	pg.base.child2_benefit_list[43221] = {
 		benefit_level = 0,
 		name = "547",
 		is_show = 0,
@@ -13960,11 +12556,7 @@ end)()
 			432211
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.child2_benefit_list
-
-	var_4_43[43222] = {
+	pg.base.child2_benefit_list[43222] = {
 		benefit_level = 0,
 		name = "548",
 		is_show = 0,
@@ -13993,11 +12585,7 @@ end)()
 			432221
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.child2_benefit_list
-
-	var_4_44[43231] = {
+	pg.base.child2_benefit_list[43231] = {
 		benefit_level = 0,
 		name = "极限训练",
 		is_show = 1,
@@ -14026,11 +12614,7 @@ end)()
 			432311
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.child2_benefit_list
-
-	var_4_45[43232] = {
+	pg.base.child2_benefit_list[43232] = {
 		benefit_level = 0,
 		name = "常规训练",
 		is_show = 0,
@@ -14059,11 +12643,7 @@ end)()
 			432321
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.child2_benefit_list
-
-	var_4_46[43233] = {
+	pg.base.child2_benefit_list[43233] = {
 		benefit_level = 0,
 		name = "基础训练",
 		is_show = 0,
@@ -14092,11 +12672,7 @@ end)()
 			432331
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.child2_benefit_list
-
-	var_4_47[43234] = {
+	pg.base.child2_benefit_list[43234] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -14125,11 +12701,7 @@ end)()
 			432341
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.child2_benefit_list
-
-	var_4_48[43241] = {
+	pg.base.child2_benefit_list[43241] = {
 		benefit_level = 0,
 		name = "博览群书",
 		is_show = 1,
@@ -14158,11 +12730,7 @@ end)()
 			432411
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.child2_benefit_list
-
-	var_4_49[43242] = {
+	pg.base.child2_benefit_list[43242] = {
 		benefit_level = 0,
 		name = "深度阅读",
 		is_show = 0,
@@ -14191,11 +12759,7 @@ end)()
 			432421
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.child2_benefit_list
-
-	var_4_50[43243] = {
+	pg.base.child2_benefit_list[43243] = {
 		benefit_level = 0,
 		name = "略读速览",
 		is_show = 0,
@@ -14224,11 +12788,7 @@ end)()
 			432431
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.child2_benefit_list
-
-	var_4_51[43244] = {
+	pg.base.child2_benefit_list[43244] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -14257,11 +12817,7 @@ end)()
 			432441
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.child2_benefit_list
-
-	var_4_52[43251] = {
+	pg.base.child2_benefit_list[43251] = {
 		benefit_level = 0,
 		name = "精益求精",
 		is_show = 1,
@@ -14290,11 +12846,7 @@ end)()
 			432511
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.child2_benefit_list
-
-	var_4_53[43252] = {
+	pg.base.child2_benefit_list[43252] = {
 		benefit_level = 0,
 		name = "渐入佳境",
 		is_show = 0,
@@ -14323,11 +12875,7 @@ end)()
 			432521
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.child2_benefit_list
-
-	var_4_54[43253] = {
+	pg.base.child2_benefit_list[43253] = {
 		benefit_level = 0,
 		name = "入门之路",
 		is_show = 0,
@@ -14356,11 +12904,7 @@ end)()
 			432531
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.child2_benefit_list
-
-	var_4_55[43254] = {
+	pg.base.child2_benefit_list[43254] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -14389,11 +12933,7 @@ end)()
 			432541
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.child2_benefit_list
-
-	var_4_56[43261] = {
+	pg.base.child2_benefit_list[43261] = {
 		benefit_level = 0,
 		name = "巅峰状态",
 		is_show = 1,
@@ -14422,11 +12962,7 @@ end)()
 			432611
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.child2_benefit_list
-
-	var_4_57[43262] = {
+	pg.base.child2_benefit_list[43262] = {
 		benefit_level = 0,
 		name = "全神贯注",
 		is_show = 0,
@@ -14455,11 +12991,7 @@ end)()
 			432621
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.child2_benefit_list
-
-	var_4_58[43263] = {
+	pg.base.child2_benefit_list[43263] = {
 		benefit_level = 0,
 		name = "专注时刻",
 		is_show = 0,
@@ -14488,11 +13020,7 @@ end)()
 			432631
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.child2_benefit_list
-
-	var_4_59[0] = {
+	pg.base.child2_benefit_list[0] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -14521,11 +13049,7 @@ end)()
 			432641
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.child2_benefit_list
-
-	var_4_60[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 0,
 		name = "561",
 		is_show = 0,
@@ -14554,11 +13078,7 @@ end)()
 			432711
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.child2_benefit_list
-
-	var_4_61[8] = {
+	pg.base.child2_benefit_list[8] = {
 		benefit_level = 0,
 		name = "562",
 		is_show = 0,
@@ -14587,11 +13107,7 @@ end)()
 			432721
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.child2_benefit_list
-
-	var_4_62[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 0,
 		name = "漫步收获",
 		is_show = 1,
@@ -14620,11 +13136,7 @@ end)()
 			432811
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.child2_benefit_list
-
-	var_4_63[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 0,
 		name = "564",
 		is_show = 0,
@@ -14653,11 +13165,7 @@ end)()
 			432821
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.child2_benefit_list
-
-	var_4_64[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 0,
 		name = "幸运之财",
 		is_show = 1,
@@ -14686,11 +13194,7 @@ end)()
 			432911
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.child2_benefit_list
-
-	var_4_65[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 0,
 		name = "幸运馈赠",
 		is_show = 1,
@@ -14719,11 +13223,7 @@ end)()
 			432921
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.child2_benefit_list
-
-	var_4_66[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 0,
 		name = "567",
 		is_show = 0,
@@ -14752,11 +13252,7 @@ end)()
 			432931
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.child2_benefit_list
-
-	var_4_67[43301] = {
+	pg.base.child2_benefit_list[43301] = {
 		benefit_level = 0,
 		name = "敏锐感官",
 		is_show = 1,
@@ -14785,11 +13281,7 @@ end)()
 			433011
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.child2_benefit_list
-
-	var_4_68[43302] = {
+	pg.base.child2_benefit_list[43302] = {
 		benefit_level = 0,
 		name = "569",
 		is_show = 0,
@@ -14818,11 +13310,7 @@ end)()
 			433021
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.child2_benefit_list
-
-	var_4_69[43311] = {
+	pg.base.child2_benefit_list[43311] = {
 		benefit_level = 0,
 		name = "澄明心境",
 		is_show = 1,
@@ -14851,11 +13339,7 @@ end)()
 			433111
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.child2_benefit_list
-
-	var_4_70[43312] = {
+	pg.base.child2_benefit_list[43312] = {
 		benefit_level = 0,
 		name = "571",
 		is_show = 0,
@@ -14884,11 +13368,7 @@ end)()
 			433121
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.child2_benefit_list
-
-	var_4_71[43321] = {
+	pg.base.child2_benefit_list[43321] = {
 		benefit_level = 0,
 		name = "默契时光",
 		is_show = 1,
@@ -14917,11 +13397,7 @@ end)()
 			433211
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.child2_benefit_list
-
-	var_4_72[43322] = {
+	pg.base.child2_benefit_list[43322] = {
 		benefit_level = 0,
 		name = "畅谈欢愉",
 		is_show = 1,
@@ -14950,11 +13426,7 @@ end)()
 			433221
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.child2_benefit_list
-
-	var_4_73[43323] = {
+	pg.base.child2_benefit_list[43323] = {
 		benefit_level = 0,
 		name = "574",
 		is_show = 0,
@@ -14983,11 +13455,7 @@ end)()
 			433231
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.child2_benefit_list
-
-	var_4_74[43331] = {
+	pg.base.child2_benefit_list[43331] = {
 		benefit_level = 0,
 		name = "575",
 		is_show = 0,
@@ -15016,11 +13484,7 @@ end)()
 			433311
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.child2_benefit_list
-
-	var_4_75[43332] = {
+	pg.base.child2_benefit_list[43332] = {
 		benefit_level = 0,
 		name = "576",
 		is_show = 0,
@@ -15049,11 +13513,7 @@ end)()
 			433321
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.child2_benefit_list
-
-	var_4_76[43341] = {
+	pg.base.child2_benefit_list[43341] = {
 		benefit_level = 0,
 		name = "577",
 		is_show = 0,
@@ -15082,11 +13542,7 @@ end)()
 			433411
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.child2_benefit_list
-
-	var_4_77[43342] = {
+	pg.base.child2_benefit_list[43342] = {
 		benefit_level = 0,
 		name = "578",
 		is_show = 0,
@@ -15115,11 +13571,7 @@ end)()
 			433421
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.child2_benefit_list
-
-	var_4_78[43351] = {
+	pg.base.child2_benefit_list[43351] = {
 		benefit_level = 0,
 		name = "惊喜口味",
 		is_show = 1,
@@ -15148,11 +13600,7 @@ end)()
 			433511
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.child2_benefit_list
-
-	var_4_79[43361] = {
+	pg.base.child2_benefit_list[43361] = {
 		benefit_level = 0,
 		name = "580",
 		is_show = 0,
@@ -15181,11 +13629,7 @@ end)()
 			433611
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.child2_benefit_list
-
-	var_4_80[43362] = {
+	pg.base.child2_benefit_list[43362] = {
 		benefit_level = 0,
 		name = "581",
 		is_show = 0,
@@ -15214,11 +13658,7 @@ end)()
 			433621
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.child2_benefit_list
-
-	var_4_81[43363] = {
+	pg.base.child2_benefit_list[43363] = {
 		benefit_level = 0,
 		name = "582",
 		is_show = 0,
@@ -15247,11 +13687,7 @@ end)()
 			433631
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.child2_benefit_list
-
-	var_4_82[43364] = {
+	pg.base.child2_benefit_list[43364] = {
 		benefit_level = 0,
 		name = "583",
 		is_show = 0,
@@ -15280,11 +13716,7 @@ end)()
 			433641
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.child2_benefit_list
-
-	var_4_83[43365] = {
+	pg.base.child2_benefit_list[43365] = {
 		benefit_level = 0,
 		name = "迷径感知",
 		is_show = 1,
@@ -15313,11 +13745,7 @@ end)()
 			433651
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.child2_benefit_list
-
-	var_4_84[43366] = {
+	pg.base.child2_benefit_list[43366] = {
 		benefit_level = 0,
 		name = "585",
 		is_show = 0,
@@ -15346,11 +13774,7 @@ end)()
 			433661
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.child2_benefit_list
-
-	var_4_85[43371] = {
+	pg.base.child2_benefit_list[43371] = {
 		benefit_level = 0,
 		name = "节能模式",
 		is_show = 1,
@@ -15379,11 +13803,7 @@ end)()
 			433711
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.child2_benefit_list
-
-	var_4_86[43372] = {
+	pg.base.child2_benefit_list[43372] = {
 		benefit_level = 0,
 		name = "587",
 		is_show = 0,
@@ -15412,11 +13832,7 @@ end)()
 			433721
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.child2_benefit_list
-
-	var_4_87[43381] = {
+	pg.base.child2_benefit_list[43381] = {
 		benefit_level = 0,
 		name = "实感强化·低",
 		is_show = 1,
@@ -15445,11 +13861,7 @@ end)()
 			433811
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.child2_benefit_list
-
-	var_4_88[43382] = {
+	pg.base.child2_benefit_list[43382] = {
 		benefit_level = 0,
 		name = "体智强化·低",
 		is_show = 1,
@@ -15478,11 +13890,7 @@ end)()
 			433821
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.child2_benefit_list
-
-	var_4_89[43383] = {
+	pg.base.child2_benefit_list[43383] = {
 		benefit_level = 0,
 		name = "实感强化·中",
 		is_show = 1,
@@ -15511,11 +13919,7 @@ end)()
 			433831
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.child2_benefit_list
-
-	var_4_90[43384] = {
+	pg.base.child2_benefit_list[43384] = {
 		benefit_level = 0,
 		name = "体智强化·中",
 		is_show = 1,
@@ -15544,11 +13948,7 @@ end)()
 			433841
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.child2_benefit_list
-
-	var_4_91[43385] = {
+	pg.base.child2_benefit_list[43385] = {
 		benefit_level = 0,
 		name = "实感持续·中",
 		is_show = 1,
@@ -15577,11 +13977,7 @@ end)()
 			433851
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.child2_benefit_list
-
-	var_4_92[43386] = {
+	pg.base.child2_benefit_list[43386] = {
 		benefit_level = 0,
 		name = "体智持续·中",
 		is_show = 1,
@@ -15610,11 +14006,7 @@ end)()
 			433861
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.child2_benefit_list
-
-	var_4_93[43387] = {
+	pg.base.child2_benefit_list[43387] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -15643,11 +14035,7 @@ end)()
 			433871
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.child2_benefit_list
-
-	var_4_94[43388] = {
+	pg.base.child2_benefit_list[43388] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -15676,11 +14064,7 @@ end)()
 			433881
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.child2_benefit_list
-
-	var_4_95[43389] = {
+	pg.base.child2_benefit_list[43389] = {
 		benefit_level = 0,
 		name = "幸运祝福",
 		is_show = 1,
@@ -15709,11 +14093,7 @@ end)()
 			433891
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.child2_benefit_list
-
-	var_4_96[43391] = {
+	pg.base.child2_benefit_list[43391] = {
 		benefit_level = 0,
 		name = "598",
 		is_show = 0,
@@ -15742,11 +14122,7 @@ end)()
 			433911
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.child2_benefit_list
-
-	var_4_97[0] = {
+	pg.base.child2_benefit_list[0] = {
 		benefit_level = 0,
 		name = "599",
 		is_show = 0,
@@ -15775,11 +14151,7 @@ end)()
 			433921
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.child2_benefit_list
-
-	var_4_98[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 0,
 		name = "600",
 		is_show = 0,
@@ -15808,8 +14180,7 @@ end)()
 			434011
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.child2_benefit_list[10] = {
+	pg.base.child2_benefit_list[10] = {
 		benefit_level = 0,
 		name = "601",
 		is_show = 0,
@@ -15842,11 +14213,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.child2_benefit_list
-
-	var_5_0[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 0,
 		name = "引擎之心",
 		is_show = 1,
@@ -15883,11 +14250,7 @@ end)()
 			434115
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.child2_benefit_list
-
-	var_5_1[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 0,
 		name = "603",
 		is_show = 0,
@@ -15916,11 +14279,7 @@ end)()
 			434121
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.child2_benefit_list
-
-	var_5_2[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 0,
 		name = "604",
 		is_show = 0,
@@ -15949,11 +14308,7 @@ end)()
 			434211
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.child2_benefit_list
-
-	var_5_3[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 0,
 		name = "605",
 		is_show = 0,
@@ -15982,11 +14337,7 @@ end)()
 			434221
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.child2_benefit_list
-
-	var_5_4[43431] = {
+	pg.base.child2_benefit_list[43431] = {
 		benefit_level = 0,
 		name = "606",
 		is_show = 0,
@@ -16015,11 +14366,7 @@ end)()
 			434311
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.child2_benefit_list
-
-	var_5_5[43432] = {
+	pg.base.child2_benefit_list[43432] = {
 		benefit_level = 0,
 		name = "607",
 		is_show = 0,
@@ -16048,11 +14395,7 @@ end)()
 			434321
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.child2_benefit_list
-
-	var_5_6[43441] = {
+	pg.base.child2_benefit_list[43441] = {
 		benefit_level = 0,
 		name = "疗愈之语",
 		is_show = 1,
@@ -16089,11 +14432,7 @@ end)()
 			434415
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.child2_benefit_list
-
-	var_5_7[43442] = {
+	pg.base.child2_benefit_list[43442] = {
 		benefit_level = 0,
 		name = "609",
 		is_show = 0,
@@ -16122,11 +14461,7 @@ end)()
 			434421
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.child2_benefit_list
-
-	var_5_8[43451] = {
+	pg.base.child2_benefit_list[43451] = {
 		benefit_level = 0,
 		name = "623",
 		is_show = 0,
@@ -16155,11 +14490,7 @@ end)()
 			434511
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.child2_benefit_list
-
-	var_5_9[43452] = {
+	pg.base.child2_benefit_list[43452] = {
 		benefit_level = 0,
 		name = "622",
 		is_show = 0,
@@ -16188,11 +14519,7 @@ end)()
 			434521
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.child2_benefit_list
-
-	var_5_10[43461] = {
+	pg.base.child2_benefit_list[43461] = {
 		benefit_level = 0,
 		name = "625",
 		is_show = 0,
@@ -16221,11 +14548,7 @@ end)()
 			434611
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.child2_benefit_list
-
-	var_5_11[43462] = {
+	pg.base.child2_benefit_list[43462] = {
 		benefit_level = 0,
 		name = "幸运心情",
 		is_show = 1,
@@ -16254,11 +14577,7 @@ end)()
 			434621
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.child2_benefit_list
-
-	var_5_12[43463] = {
+	pg.base.child2_benefit_list[43463] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -16287,11 +14606,7 @@ end)()
 			434631
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.child2_benefit_list
-
-	var_5_13[43464] = {
+	pg.base.child2_benefit_list[43464] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -16320,11 +14635,7 @@ end)()
 			434641
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.child2_benefit_list
-
-	var_5_14[43465] = {
+	pg.base.child2_benefit_list[43465] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -16353,11 +14664,7 @@ end)()
 			434651
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.child2_benefit_list
-
-	var_5_15[43466] = {
+	pg.base.child2_benefit_list[43466] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -16386,11 +14693,7 @@ end)()
 			434661
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.child2_benefit_list
-
-	var_5_16[43467] = {
+	pg.base.child2_benefit_list[43467] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -16419,11 +14722,7 @@ end)()
 			434671
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.child2_benefit_list
-
-	var_5_17[43468] = {
+	pg.base.child2_benefit_list[43468] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -16452,11 +14751,7 @@ end)()
 			434681
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.child2_benefit_list
-
-	var_5_18[43469] = {
+	pg.base.child2_benefit_list[43469] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -16485,11 +14780,7 @@ end)()
 			434691
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.child2_benefit_list
-
-	var_5_19[43470] = {
+	pg.base.child2_benefit_list[43470] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -16518,11 +14809,7 @@ end)()
 			434701
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.child2_benefit_list
-
-	var_5_20[43471] = {
+	pg.base.child2_benefit_list[43471] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-体能惩罚",
 		is_show = 1,
@@ -16551,11 +14838,7 @@ end)()
 			434711
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.child2_benefit_list
-
-	var_5_21[43472] = {
+	pg.base.child2_benefit_list[43472] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-知识惩罚",
 		is_show = 1,
@@ -16584,11 +14867,7 @@ end)()
 			434721
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.child2_benefit_list
-
-	var_5_22[43473] = {
+	pg.base.child2_benefit_list[43473] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-实践惩罚",
 		is_show = 1,
@@ -16617,11 +14896,7 @@ end)()
 			434731
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.child2_benefit_list
-
-	var_5_23[43474] = {
+	pg.base.child2_benefit_list[43474] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-感知惩罚",
 		is_show = 1,
@@ -16650,11 +14925,7 @@ end)()
 			434741
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.child2_benefit_list
-
-	var_5_24[44011] = {
+	pg.base.child2_benefit_list[44011] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -16679,11 +14950,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.child2_benefit_list
-
-	var_5_25[44021] = {
+	pg.base.child2_benefit_list[44021] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -16712,11 +14979,7 @@ end)()
 			440211
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.child2_benefit_list
-
-	var_5_26[44022] = {
+	pg.base.child2_benefit_list[44022] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -16745,11 +15008,7 @@ end)()
 			440221
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.child2_benefit_list
-
-	var_5_27[44023] = {
+	pg.base.child2_benefit_list[44023] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -16778,11 +15037,7 @@ end)()
 			440231
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.child2_benefit_list
-
-	var_5_28[44024] = {
+	pg.base.child2_benefit_list[44024] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -16811,11 +15066,7 @@ end)()
 			440241
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.child2_benefit_list
-
-	var_5_29[44031] = {
+	pg.base.child2_benefit_list[44031] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -16840,11 +15091,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.child2_benefit_list
-
-	var_5_30[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -16869,11 +15116,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.child2_benefit_list
-
-	var_5_31[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -16898,11 +15141,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.child2_benefit_list
-
-	var_5_32[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 0,
 		name = "509",
 		is_show = 0,
@@ -16931,11 +15170,7 @@ end)()
 			440611
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.child2_benefit_list
-
-	var_5_33[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 0,
 		name = "510",
 		is_show = 0,
@@ -16964,11 +15199,7 @@ end)()
 			440621
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.child2_benefit_list
-
-	var_5_34[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 0,
 		name = "511",
 		is_show = 0,
@@ -16997,11 +15228,7 @@ end)()
 			440631
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.child2_benefit_list
-
-	var_5_35[44064] = {
+	pg.base.child2_benefit_list[44064] = {
 		benefit_level = 0,
 		name = "512",
 		is_show = 0,
@@ -17030,11 +15257,7 @@ end)()
 			440641
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.child2_benefit_list
-
-	var_5_36[44071] = {
+	pg.base.child2_benefit_list[44071] = {
 		benefit_level = 0,
 		name = "513",
 		is_show = 0,
@@ -17063,11 +15286,7 @@ end)()
 			440711
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.child2_benefit_list
-
-	var_5_37[44072] = {
+	pg.base.child2_benefit_list[44072] = {
 		benefit_level = 0,
 		name = "514",
 		is_show = 0,
@@ -17096,11 +15315,7 @@ end)()
 			440721
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.child2_benefit_list
-
-	var_5_38[44073] = {
+	pg.base.child2_benefit_list[44073] = {
 		benefit_level = 0,
 		name = "515",
 		is_show = 0,
@@ -17129,11 +15344,7 @@ end)()
 			440731
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.child2_benefit_list
-
-	var_5_39[44074] = {
+	pg.base.child2_benefit_list[44074] = {
 		benefit_level = 0,
 		name = "516",
 		is_show = 0,
@@ -17162,11 +15373,7 @@ end)()
 			440741
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.child2_benefit_list
-
-	var_5_40[44081] = {
+	pg.base.child2_benefit_list[44081] = {
 		benefit_level = 0,
 		name = "517",
 		is_show = 0,
@@ -17195,11 +15402,7 @@ end)()
 			440811
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.child2_benefit_list
-
-	var_5_41[44082] = {
+	pg.base.child2_benefit_list[44082] = {
 		benefit_level = 0,
 		name = "613",
 		is_show = 0,
@@ -17228,11 +15431,7 @@ end)()
 			440821
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.child2_benefit_list
-
-	var_5_42[44091] = {
+	pg.base.child2_benefit_list[44091] = {
 		benefit_level = 0,
 		name = "518",
 		is_show = 0,
@@ -17261,11 +15460,7 @@ end)()
 			440911
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.child2_benefit_list
-
-	var_5_43[44092] = {
+	pg.base.child2_benefit_list[44092] = {
 		benefit_level = 0,
 		name = "519",
 		is_show = 0,
@@ -17294,11 +15489,7 @@ end)()
 			440921
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.child2_benefit_list
-
-	var_5_44[44093] = {
+	pg.base.child2_benefit_list[44093] = {
 		benefit_level = 0,
 		name = "520",
 		is_show = 0,
@@ -17327,11 +15518,7 @@ end)()
 			440931
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.child2_benefit_list
-
-	var_5_45[44101] = {
+	pg.base.child2_benefit_list[44101] = {
 		benefit_level = 0,
 		name = "521",
 		is_show = 0,
@@ -17360,11 +15547,7 @@ end)()
 			441011
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.child2_benefit_list
-
-	var_5_46[44102] = {
+	pg.base.child2_benefit_list[44102] = {
 		benefit_level = 0,
 		name = "614",
 		is_show = 0,
@@ -17393,11 +15576,7 @@ end)()
 			441021
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.child2_benefit_list
-
-	var_5_47[44111] = {
+	pg.base.child2_benefit_list[44111] = {
 		benefit_level = 0,
 		name = "522",
 		is_show = 0,
@@ -17426,11 +15605,7 @@ end)()
 			441111
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.child2_benefit_list
-
-	var_5_48[44112] = {
+	pg.base.child2_benefit_list[44112] = {
 		benefit_level = 0,
 		name = "523",
 		is_show = 0,
@@ -17459,11 +15634,7 @@ end)()
 			441121
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.child2_benefit_list
-
-	var_5_49[44113] = {
+	pg.base.child2_benefit_list[44113] = {
 		benefit_level = 0,
 		name = "524",
 		is_show = 0,
@@ -17492,11 +15663,7 @@ end)()
 			441131
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.child2_benefit_list
-
-	var_5_50[44114] = {
+	pg.base.child2_benefit_list[44114] = {
 		benefit_level = 0,
 		name = "525",
 		is_show = 0,
@@ -17525,11 +15692,7 @@ end)()
 			441141
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.child2_benefit_list
-
-	var_5_51[44115] = {
+	pg.base.child2_benefit_list[44115] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -17554,11 +15717,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.child2_benefit_list
-
-	var_5_52[44121] = {
+	pg.base.child2_benefit_list[44121] = {
 		benefit_level = 0,
 		name = "527",
 		is_show = 0,
@@ -17587,11 +15746,7 @@ end)()
 			441211
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.child2_benefit_list
-
-	var_5_53[44122] = {
+	pg.base.child2_benefit_list[44122] = {
 		benefit_level = 0,
 		name = "615",
 		is_show = 0,
@@ -17620,11 +15775,7 @@ end)()
 			441221
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.child2_benefit_list
-
-	var_5_54[44131] = {
+	pg.base.child2_benefit_list[44131] = {
 		benefit_level = 0,
 		name = "528",
 		is_show = 0,
@@ -17653,11 +15804,7 @@ end)()
 			441311
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.child2_benefit_list
-
-	var_5_55[44132] = {
+	pg.base.child2_benefit_list[44132] = {
 		benefit_level = 0,
 		name = "529",
 		is_show = 0,
@@ -17686,11 +15833,7 @@ end)()
 			441321
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.child2_benefit_list
-
-	var_5_56[44133] = {
+	pg.base.child2_benefit_list[44133] = {
 		benefit_level = 0,
 		name = "530",
 		is_show = 0,
@@ -17719,11 +15862,7 @@ end)()
 			441331
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.child2_benefit_list
-
-	var_5_57[44134] = {
+	pg.base.child2_benefit_list[44134] = {
 		benefit_level = 0,
 		name = "531",
 		is_show = 0,
@@ -17752,11 +15891,7 @@ end)()
 			441341
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.child2_benefit_list
-
-	var_5_58[44135] = {
+	pg.base.child2_benefit_list[44135] = {
 		benefit_level = 0,
 		name = "不该有",
 		is_show = 0,
@@ -17781,11 +15916,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.child2_benefit_list
-
-	var_5_59[44141] = {
+	pg.base.child2_benefit_list[44141] = {
 		benefit_level = 0,
 		name = "533",
 		is_show = 0,
@@ -17814,11 +15945,7 @@ end)()
 			441411
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.child2_benefit_list
-
-	var_5_60[44142] = {
+	pg.base.child2_benefit_list[44142] = {
 		benefit_level = 0,
 		name = "534",
 		is_show = 0,
@@ -17847,11 +15974,7 @@ end)()
 			441421
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.child2_benefit_list
-
-	var_5_61[44151] = {
+	pg.base.child2_benefit_list[44151] = {
 		benefit_level = 0,
 		name = "535",
 		is_show = 0,
@@ -17880,11 +16003,7 @@ end)()
 			441511
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.child2_benefit_list
-
-	var_5_62[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 0,
 		name = "知识精要·速成",
 		is_show = 1,
@@ -17913,11 +16032,7 @@ end)()
 			441611
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.child2_benefit_list
-
-	var_5_63[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 0,
 		name = "616",
 		is_show = 0,
@@ -17946,11 +16061,7 @@ end)()
 			441621
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.child2_benefit_list
-
-	var_5_64[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 0,
 		name = "知识精要·持续",
 		is_show = 1,
@@ -17979,11 +16090,7 @@ end)()
 			441711
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.child2_benefit_list
-
-	var_5_65[12] = {
+	pg.base.child2_benefit_list[12] = {
 		benefit_level = 0,
 		name = "617",
 		is_show = 0,
@@ -18012,11 +16119,7 @@ end)()
 			441721
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.child2_benefit_list
-
-	var_5_66[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 0,
 		name = "突破极限",
 		is_show = 1,
@@ -18045,11 +16148,7 @@ end)()
 			441811
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.child2_benefit_list
-
-	var_5_67[22] = {
+	pg.base.child2_benefit_list[22] = {
 		benefit_level = 0,
 		name = "618",
 		is_show = 0,
@@ -18078,11 +16177,7 @@ end)()
 			441821
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.child2_benefit_list
-
-	var_5_68[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 0,
 		name = "稳步前行",
 		is_show = 1,
@@ -18111,11 +16206,7 @@ end)()
 			441911
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.child2_benefit_list
-
-	var_5_69[44192] = {
+	pg.base.child2_benefit_list[44192] = {
 		benefit_level = 0,
 		name = "540",
 		is_show = 0,
@@ -18144,11 +16235,7 @@ end)()
 			441921
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.child2_benefit_list
-
-	var_5_70[44201] = {
+	pg.base.child2_benefit_list[44201] = {
 		benefit_level = 0,
 		name = "醍醐灌顶",
 		is_show = 1,
@@ -18177,11 +16264,7 @@ end)()
 			442011
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.child2_benefit_list
-
-	var_5_71[44202] = {
+	pg.base.child2_benefit_list[44202] = {
 		benefit_level = 0,
 		name = "慧眼初开",
 		is_show = 1,
@@ -18210,11 +16293,7 @@ end)()
 			442021
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.child2_benefit_list
-
-	var_5_72[44203] = {
+	pg.base.child2_benefit_list[44203] = {
 		benefit_level = 0,
 		name = "豁然开朗",
 		is_show = 1,
@@ -18243,11 +16322,7 @@ end)()
 			442031
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.child2_benefit_list
-
-	var_5_73[44204] = {
+	pg.base.child2_benefit_list[44204] = {
 		benefit_level = 0,
 		name = "融会贯通",
 		is_show = 1,
@@ -18276,11 +16351,7 @@ end)()
 			442041
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.child2_benefit_list
-
-	var_5_74[44211] = {
+	pg.base.child2_benefit_list[44211] = {
 		benefit_level = 0,
 		name = "超频模式",
 		is_show = 1,
@@ -18309,11 +16380,7 @@ end)()
 			442111
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.child2_benefit_list
-
-	var_5_75[44212] = {
+	pg.base.child2_benefit_list[44212] = {
 		benefit_level = 0,
 		name = "546",
 		is_show = 0,
@@ -18342,11 +16409,7 @@ end)()
 			442121
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.child2_benefit_list
-
-	var_5_76[44221] = {
+	pg.base.child2_benefit_list[44221] = {
 		benefit_level = 0,
 		name = "547",
 		is_show = 0,
@@ -18375,11 +16438,7 @@ end)()
 			442211
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.child2_benefit_list
-
-	var_5_77[44222] = {
+	pg.base.child2_benefit_list[44222] = {
 		benefit_level = 0,
 		name = "548",
 		is_show = 0,
@@ -18408,11 +16467,7 @@ end)()
 			442221
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.child2_benefit_list
-
-	var_5_78[44231] = {
+	pg.base.child2_benefit_list[44231] = {
 		benefit_level = 0,
 		name = "极限训练",
 		is_show = 1,
@@ -18441,11 +16496,7 @@ end)()
 			442311
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.child2_benefit_list
-
-	var_5_79[44232] = {
+	pg.base.child2_benefit_list[44232] = {
 		benefit_level = 0,
 		name = "常规训练",
 		is_show = 0,
@@ -18474,11 +16525,7 @@ end)()
 			442321
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.child2_benefit_list
-
-	var_5_80[44233] = {
+	pg.base.child2_benefit_list[44233] = {
 		benefit_level = 0,
 		name = "基础训练",
 		is_show = 0,
@@ -18507,11 +16554,7 @@ end)()
 			442331
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.child2_benefit_list
-
-	var_5_81[44234] = {
+	pg.base.child2_benefit_list[44234] = {
 		benefit_level = 0,
 		name = "505",
 		is_show = 0,
@@ -18540,11 +16583,7 @@ end)()
 			442341
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.child2_benefit_list
-
-	var_5_82[44241] = {
+	pg.base.child2_benefit_list[44241] = {
 		benefit_level = 0,
 		name = "博览群书",
 		is_show = 1,
@@ -18573,11 +16612,7 @@ end)()
 			442411
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.child2_benefit_list
-
-	var_5_83[44242] = {
+	pg.base.child2_benefit_list[44242] = {
 		benefit_level = 0,
 		name = "深度阅读",
 		is_show = 0,
@@ -18606,11 +16641,7 @@ end)()
 			442421
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.child2_benefit_list
-
-	var_5_84[44243] = {
+	pg.base.child2_benefit_list[44243] = {
 		benefit_level = 0,
 		name = "略读速览",
 		is_show = 0,
@@ -18639,11 +16670,7 @@ end)()
 			442431
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.child2_benefit_list
-
-	var_5_85[44244] = {
+	pg.base.child2_benefit_list[44244] = {
 		benefit_level = 0,
 		name = "502",
 		is_show = 0,
@@ -18672,11 +16699,7 @@ end)()
 			442441
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.child2_benefit_list
-
-	var_5_86[44251] = {
+	pg.base.child2_benefit_list[44251] = {
 		benefit_level = 0,
 		name = "精益求精",
 		is_show = 1,
@@ -18705,11 +16728,7 @@ end)()
 			442511
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.child2_benefit_list
-
-	var_5_87[44252] = {
+	pg.base.child2_benefit_list[44252] = {
 		benefit_level = 0,
 		name = "渐入佳境",
 		is_show = 0,
@@ -18738,11 +16757,7 @@ end)()
 			442521
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.child2_benefit_list
-
-	var_5_88[44253] = {
+	pg.base.child2_benefit_list[44253] = {
 		benefit_level = 0,
 		name = "入门之路",
 		is_show = 0,
@@ -18771,11 +16786,7 @@ end)()
 			442531
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.child2_benefit_list
-
-	var_5_89[44254] = {
+	pg.base.child2_benefit_list[44254] = {
 		benefit_level = 0,
 		name = "503",
 		is_show = 0,
@@ -18804,11 +16815,7 @@ end)()
 			442541
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.child2_benefit_list
-
-	var_5_90[44261] = {
+	pg.base.child2_benefit_list[44261] = {
 		benefit_level = 0,
 		name = "巅峰状态",
 		is_show = 1,
@@ -18837,11 +16844,7 @@ end)()
 			442611
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.child2_benefit_list
-
-	var_5_91[44262] = {
+	pg.base.child2_benefit_list[44262] = {
 		benefit_level = 0,
 		name = "全神贯注",
 		is_show = 0,
@@ -18870,11 +16873,7 @@ end)()
 			442621
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.child2_benefit_list
-
-	var_5_92[44263] = {
+	pg.base.child2_benefit_list[44263] = {
 		benefit_level = 0,
 		name = "专注时刻",
 		is_show = 0,
@@ -18903,11 +16902,7 @@ end)()
 			442631
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.child2_benefit_list
-
-	var_5_93[44264] = {
+	pg.base.child2_benefit_list[44264] = {
 		benefit_level = 0,
 		name = "504",
 		is_show = 0,
@@ -18936,11 +16931,7 @@ end)()
 			442641
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.child2_benefit_list
-
-	var_5_94[44271] = {
+	pg.base.child2_benefit_list[44271] = {
 		benefit_level = 0,
 		name = "561",
 		is_show = 0,
@@ -18969,11 +16960,7 @@ end)()
 			442711
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.child2_benefit_list
-
-	var_5_95[44272] = {
+	pg.base.child2_benefit_list[44272] = {
 		benefit_level = 0,
 		name = "562",
 		is_show = 0,
@@ -19002,11 +16989,7 @@ end)()
 			442721
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.child2_benefit_list
-
-	var_5_96[44281] = {
+	pg.base.child2_benefit_list[44281] = {
 		benefit_level = 0,
 		name = "漫步收获",
 		is_show = 1,
@@ -19035,11 +17018,7 @@ end)()
 			442811
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.child2_benefit_list
-
-	var_5_97[44282] = {
+	pg.base.child2_benefit_list[44282] = {
 		benefit_level = 0,
 		name = "564",
 		is_show = 0,
@@ -19068,11 +17047,7 @@ end)()
 			442821
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.child2_benefit_list
-
-	var_5_98[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "幸运之财",
 		is_show = 1,
@@ -19101,8 +17076,7 @@ end)()
 			442911
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.child2_benefit_list[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 0,
 		name = "幸运馈赠",
 		is_show = 1,
@@ -19135,11 +17109,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.child2_benefit_list
-
-	var_6_0[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 0,
 		name = "567",
 		is_show = 0,
@@ -19168,11 +17138,7 @@ end)()
 			442931
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.child2_benefit_list
-
-	var_6_1[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 0,
 		name = "敏锐感官",
 		is_show = 1,
@@ -19201,11 +17167,7 @@ end)()
 			443011
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.child2_benefit_list
-
-	var_6_2[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 0,
 		name = "569",
 		is_show = 0,
@@ -19234,11 +17196,7 @@ end)()
 			443021
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.child2_benefit_list
-
-	var_6_3[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 0,
 		name = "澄明心境",
 		is_show = 1,
@@ -19267,11 +17225,7 @@ end)()
 			443111
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.child2_benefit_list
-
-	var_6_4[24] = {
+	pg.base.child2_benefit_list[24] = {
 		benefit_level = 0,
 		name = "571",
 		is_show = 0,
@@ -19300,11 +17254,7 @@ end)()
 			443121
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.child2_benefit_list
-
-	var_6_5[44321] = {
+	pg.base.child2_benefit_list[44321] = {
 		benefit_level = 0,
 		name = "默契时光",
 		is_show = 1,
@@ -19333,11 +17283,7 @@ end)()
 			443211
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.child2_benefit_list
-
-	var_6_6[44322] = {
+	pg.base.child2_benefit_list[44322] = {
 		benefit_level = 0,
 		name = "畅谈欢愉",
 		is_show = 1,
@@ -19366,11 +17312,7 @@ end)()
 			443221
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.child2_benefit_list
-
-	var_6_7[44323] = {
+	pg.base.child2_benefit_list[44323] = {
 		benefit_level = 0,
 		name = "574",
 		is_show = 0,
@@ -19399,11 +17341,7 @@ end)()
 			443231
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.child2_benefit_list
-
-	var_6_8[44331] = {
+	pg.base.child2_benefit_list[44331] = {
 		benefit_level = 0,
 		name = "575",
 		is_show = 0,
@@ -19432,11 +17370,7 @@ end)()
 			443311
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.child2_benefit_list
-
-	var_6_9[44332] = {
+	pg.base.child2_benefit_list[44332] = {
 		benefit_level = 0,
 		name = "576",
 		is_show = 0,
@@ -19465,11 +17399,7 @@ end)()
 			443321
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.child2_benefit_list
-
-	var_6_10[44341] = {
+	pg.base.child2_benefit_list[44341] = {
 		benefit_level = 0,
 		name = "577",
 		is_show = 0,
@@ -19498,11 +17428,7 @@ end)()
 			443411
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.child2_benefit_list
-
-	var_6_11[44342] = {
+	pg.base.child2_benefit_list[44342] = {
 		benefit_level = 0,
 		name = "578",
 		is_show = 0,
@@ -19531,11 +17457,7 @@ end)()
 			443421
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.child2_benefit_list
-
-	var_6_12[44351] = {
+	pg.base.child2_benefit_list[44351] = {
 		benefit_level = 0,
 		name = "惊喜口味",
 		is_show = 1,
@@ -19564,11 +17486,7 @@ end)()
 			443511
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.child2_benefit_list
-
-	var_6_13[44361] = {
+	pg.base.child2_benefit_list[44361] = {
 		benefit_level = 0,
 		name = "580",
 		is_show = 0,
@@ -19597,11 +17515,7 @@ end)()
 			443611
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.child2_benefit_list
-
-	var_6_14[44362] = {
+	pg.base.child2_benefit_list[44362] = {
 		benefit_level = 0,
 		name = "581",
 		is_show = 0,
@@ -19630,11 +17544,7 @@ end)()
 			443621
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.child2_benefit_list
-
-	var_6_15[44363] = {
+	pg.base.child2_benefit_list[44363] = {
 		benefit_level = 0,
 		name = "582",
 		is_show = 0,
@@ -19663,11 +17573,7 @@ end)()
 			443631
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.child2_benefit_list
-
-	var_6_16[44364] = {
+	pg.base.child2_benefit_list[44364] = {
 		benefit_level = 0,
 		name = "583",
 		is_show = 0,
@@ -19696,11 +17602,7 @@ end)()
 			443641
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.child2_benefit_list
-
-	var_6_17[44365] = {
+	pg.base.child2_benefit_list[44365] = {
 		benefit_level = 0,
 		name = "迷径感知",
 		is_show = 1,
@@ -19729,11 +17631,7 @@ end)()
 			443651
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.child2_benefit_list
-
-	var_6_18[44366] = {
+	pg.base.child2_benefit_list[44366] = {
 		benefit_level = 0,
 		name = "585",
 		is_show = 0,
@@ -19762,11 +17660,7 @@ end)()
 			443661
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.child2_benefit_list
-
-	var_6_19[44371] = {
+	pg.base.child2_benefit_list[44371] = {
 		benefit_level = 0,
 		name = "节能模式",
 		is_show = 1,
@@ -19795,11 +17689,7 @@ end)()
 			443711
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.child2_benefit_list
-
-	var_6_20[44372] = {
+	pg.base.child2_benefit_list[44372] = {
 		benefit_level = 0,
 		name = "587",
 		is_show = 0,
@@ -19828,11 +17718,7 @@ end)()
 			443721
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.child2_benefit_list
-
-	var_6_21[44381] = {
+	pg.base.child2_benefit_list[44381] = {
 		benefit_level = 0,
 		name = "实感强化·低",
 		is_show = 1,
@@ -19861,11 +17747,7 @@ end)()
 			443811
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.child2_benefit_list
-
-	var_6_22[44382] = {
+	pg.base.child2_benefit_list[44382] = {
 		benefit_level = 0,
 		name = "体智强化·低",
 		is_show = 1,
@@ -19894,11 +17776,7 @@ end)()
 			443821
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.child2_benefit_list
-
-	var_6_23[44383] = {
+	pg.base.child2_benefit_list[44383] = {
 		benefit_level = 0,
 		name = "实感强化·中",
 		is_show = 1,
@@ -19927,11 +17805,7 @@ end)()
 			443831
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.child2_benefit_list
-
-	var_6_24[44384] = {
+	pg.base.child2_benefit_list[44384] = {
 		benefit_level = 0,
 		name = "体智强化·中",
 		is_show = 1,
@@ -19960,11 +17834,7 @@ end)()
 			443841
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.child2_benefit_list
-
-	var_6_25[44385] = {
+	pg.base.child2_benefit_list[44385] = {
 		benefit_level = 0,
 		name = "实感持续·中",
 		is_show = 1,
@@ -19993,11 +17863,7 @@ end)()
 			443851
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.child2_benefit_list
-
-	var_6_26[44386] = {
+	pg.base.child2_benefit_list[44386] = {
 		benefit_level = 0,
 		name = "体智持续·中",
 		is_show = 1,
@@ -20026,11 +17892,7 @@ end)()
 			443861
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.child2_benefit_list
-
-	var_6_27[44387] = {
+	pg.base.child2_benefit_list[44387] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -20059,11 +17921,7 @@ end)()
 			443871
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.child2_benefit_list
-
-	var_6_28[44388] = {
+	pg.base.child2_benefit_list[44388] = {
 		benefit_level = 0,
 		name = "实感持续·高",
 		is_show = 1,
@@ -20092,11 +17950,7 @@ end)()
 			443881
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.child2_benefit_list
-
-	var_6_29[44389] = {
+	pg.base.child2_benefit_list[44389] = {
 		benefit_level = 0,
 		name = "幸运祝福",
 		is_show = 1,
@@ -20125,11 +17979,7 @@ end)()
 			443891
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.child2_benefit_list
-
-	var_6_30[44391] = {
+	pg.base.child2_benefit_list[44391] = {
 		benefit_level = 0,
 		name = "598",
 		is_show = 0,
@@ -20158,11 +18008,7 @@ end)()
 			443911
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.child2_benefit_list
-
-	var_6_31[44392] = {
+	pg.base.child2_benefit_list[44392] = {
 		benefit_level = 0,
 		name = "599",
 		is_show = 0,
@@ -20191,11 +18037,7 @@ end)()
 			443921
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.child2_benefit_list
-
-	var_6_32[44401] = {
+	pg.base.child2_benefit_list[44401] = {
 		benefit_level = 0,
 		name = "600",
 		is_show = 0,
@@ -20224,11 +18066,7 @@ end)()
 			444011
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.child2_benefit_list
-
-	var_6_33[44402] = {
+	pg.base.child2_benefit_list[44402] = {
 		benefit_level = 0,
 		name = "601",
 		is_show = 0,
@@ -20257,11 +18095,7 @@ end)()
 			444021
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.child2_benefit_list
-
-	var_6_34[44411] = {
+	pg.base.child2_benefit_list[44411] = {
 		benefit_level = 0,
 		name = "引擎之心",
 		is_show = 1,
@@ -20298,11 +18132,7 @@ end)()
 			444115
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.child2_benefit_list
-
-	var_6_35[44412] = {
+	pg.base.child2_benefit_list[44412] = {
 		benefit_level = 0,
 		name = "603",
 		is_show = 0,
@@ -20331,11 +18161,7 @@ end)()
 			444121
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.child2_benefit_list
-
-	var_6_36[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 0,
 		name = "604",
 		is_show = 0,
@@ -20364,11 +18190,7 @@ end)()
 			444211
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.child2_benefit_list
-
-	var_6_37[6] = {
+	pg.base.child2_benefit_list[6] = {
 		benefit_level = 0,
 		name = "605",
 		is_show = 0,
@@ -20397,11 +18219,7 @@ end)()
 			444221
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.child2_benefit_list
-
-	var_6_38[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 0,
 		name = "606",
 		is_show = 0,
@@ -20430,11 +18248,7 @@ end)()
 			444311
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.child2_benefit_list
-
-	var_6_39[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 0,
 		name = "607",
 		is_show = 0,
@@ -20463,11 +18277,7 @@ end)()
 			444321
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.child2_benefit_list
-
-	var_6_40[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 0,
 		name = "疗愈之语",
 		is_show = 1,
@@ -20504,11 +18314,7 @@ end)()
 			444415
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.child2_benefit_list
-
-	var_6_41[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 0,
 		name = "609",
 		is_show = 0,
@@ -20537,11 +18343,7 @@ end)()
 			444421
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.child2_benefit_list
-
-	var_6_42[44451] = {
+	pg.base.child2_benefit_list[44451] = {
 		benefit_level = 0,
 		name = "623",
 		is_show = 0,
@@ -20570,11 +18372,7 @@ end)()
 			444511
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.child2_benefit_list
-
-	var_6_43[44452] = {
+	pg.base.child2_benefit_list[44452] = {
 		benefit_level = 0,
 		name = "622",
 		is_show = 0,
@@ -20603,11 +18401,7 @@ end)()
 			444521
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.child2_benefit_list
-
-	var_6_44[44461] = {
+	pg.base.child2_benefit_list[44461] = {
 		benefit_level = 0,
 		name = "625",
 		is_show = 0,
@@ -20636,11 +18430,7 @@ end)()
 			444611
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.child2_benefit_list
-
-	var_6_45[44462] = {
+	pg.base.child2_benefit_list[44462] = {
 		benefit_level = 0,
 		name = "幸运心情",
 		is_show = 1,
@@ -20669,11 +18459,7 @@ end)()
 			444621
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.child2_benefit_list
-
-	var_6_46[44463] = {
+	pg.base.child2_benefit_list[44463] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -20702,11 +18488,7 @@ end)()
 			444631
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.child2_benefit_list
-
-	var_6_47[44464] = {
+	pg.base.child2_benefit_list[44464] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -20735,11 +18517,7 @@ end)()
 			444641
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.child2_benefit_list
-
-	var_6_48[44465] = {
+	pg.base.child2_benefit_list[44465] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -20768,11 +18546,7 @@ end)()
 			444651
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.child2_benefit_list
-
-	var_6_49[44466] = {
+	pg.base.child2_benefit_list[44466] = {
 		benefit_level = 0,
 		name = "",
 		is_show = 0,
@@ -20801,11 +18575,7 @@ end)()
 			444661
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.child2_benefit_list
-
-	var_6_50[44467] = {
+	pg.base.child2_benefit_list[44467] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -20834,11 +18604,7 @@ end)()
 			444671
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.child2_benefit_list
-
-	var_6_51[44468] = {
+	pg.base.child2_benefit_list[44468] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -20867,11 +18633,7 @@ end)()
 			444681
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.child2_benefit_list
-
-	var_6_52[44469] = {
+	pg.base.child2_benefit_list[44469] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -20900,11 +18662,7 @@ end)()
 			444691
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.child2_benefit_list
-
-	var_6_53[44470] = {
+	pg.base.child2_benefit_list[44470] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚",
 		is_show = 1,
@@ -20933,11 +18691,7 @@ end)()
 			444701
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.child2_benefit_list
-
-	var_6_54[44471] = {
+	pg.base.child2_benefit_list[44471] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-体能惩罚",
 		is_show = 1,
@@ -20966,11 +18720,7 @@ end)()
 			444711
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.child2_benefit_list
-
-	var_6_55[44472] = {
+	pg.base.child2_benefit_list[44472] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-知识惩罚",
 		is_show = 1,
@@ -20999,11 +18749,7 @@ end)()
 			444721
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.child2_benefit_list
-
-	var_6_56[44473] = {
+	pg.base.child2_benefit_list[44473] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-实践惩罚",
 		is_show = 1,
@@ -21032,11 +18778,7 @@ end)()
 			444731
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.child2_benefit_list
-
-	var_6_57[44474] = {
+	pg.base.child2_benefit_list[44474] = {
 		benefit_level = 0,
 		name = "抽王牌惩罚-感知惩罚",
 		is_show = 1,
@@ -21065,11 +18807,7 @@ end)()
 			444741
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.child2_benefit_list
-
-	var_6_58[1001] = {
+	pg.base.child2_benefit_list[1001] = {
 		benefit_level = 0,
 		name = "轻松一刻",
 		is_show = 1,
@@ -21098,11 +18836,7 @@ end)()
 			1001
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.child2_benefit_list
-
-	var_6_59[1002] = {
+	pg.base.child2_benefit_list[1002] = {
 		benefit_level = 0,
 		name = "零花钱",
 		is_show = 1,
@@ -21131,11 +18865,7 @@ end)()
 			1002
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.child2_benefit_list
-
-	var_6_60[1003] = {
+	pg.base.child2_benefit_list[1003] = {
 		benefit_level = 0,
 		name = "欢乐加倍",
 		is_show = 1,
@@ -21164,11 +18894,7 @@ end)()
 			1003
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.child2_benefit_list
-
-	var_6_61[1004] = {
+	pg.base.child2_benefit_list[1004] = {
 		benefit_level = 0,
 		name = "心想事成",
 		is_show = 1,
@@ -21197,11 +18923,7 @@ end)()
 			1004
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.child2_benefit_list
-
-	var_6_62[1005] = {
+	pg.base.child2_benefit_list[1005] = {
 		benefit_level = 0,
 		name = "双重收获",
 		is_show = 1,
@@ -21230,11 +18952,7 @@ end)()
 			1005
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.child2_benefit_list
-
-	var_6_63[1006] = {
+	pg.base.child2_benefit_list[1006] = {
 		benefit_level = 0,
 		name = "欢愉时刻",
 		is_show = 1,
@@ -21263,11 +18981,7 @@ end)()
 			1006
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.child2_benefit_list
-
-	var_6_64[1007] = {
+	pg.base.child2_benefit_list[1007] = {
 		benefit_level = 0,
 		name = "聚财之道",
 		is_show = 1,
@@ -21296,11 +19010,7 @@ end)()
 			1007
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.child2_benefit_list
-
-	var_6_65[1008] = {
+	pg.base.child2_benefit_list[1008] = {
 		benefit_level = 0,
 		name = "富贵吉运",
 		is_show = 1,
@@ -21329,11 +19039,7 @@ end)()
 			1008
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.child2_benefit_list
-
-	var_6_66[1009] = {
+	pg.base.child2_benefit_list[1009] = {
 		benefit_level = 0,
 		name = "金库盈满",
 		is_show = 1,
@@ -21362,11 +19068,7 @@ end)()
 			1009
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.child2_benefit_list
-
-	var_6_67[1010] = {
+	pg.base.child2_benefit_list[1010] = {
 		benefit_level = 0,
 		name = "聚宝盆",
 		is_show = 1,
@@ -21395,11 +19097,7 @@ end)()
 			1010
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.child2_benefit_list
-
-	var_6_68[1011] = {
+	pg.base.child2_benefit_list[1011] = {
 		benefit_level = 0,
 		name = "熟能生巧",
 		is_show = 1,
@@ -21428,11 +19126,7 @@ end)()
 			1011
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.child2_benefit_list
-
-	var_6_69[1012] = {
+	pg.base.child2_benefit_list[1012] = {
 		benefit_level = 0,
 		name = "知识萌芽",
 		is_show = 1,
@@ -21461,11 +19155,7 @@ end)()
 			1012
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.child2_benefit_list
-
-	var_6_70[1013] = {
+	pg.base.child2_benefit_list[1013] = {
 		benefit_level = 0,
 		name = "活力起点",
 		is_show = 1,
@@ -21494,11 +19184,7 @@ end)()
 			1013
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.child2_benefit_list
-
-	var_6_71[1014] = {
+	pg.base.child2_benefit_list[1014] = {
 		benefit_level = 0,
 		name = "观察入门",
 		is_show = 1,
@@ -21527,11 +19213,7 @@ end)()
 			1014
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.child2_benefit_list
-
-	var_6_72[1041] = {
+	pg.base.child2_benefit_list[1041] = {
 		benefit_level = 0,
 		name = "身心畅悟",
 		is_show = 1,
@@ -21560,11 +19242,7 @@ end)()
 			1041
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.child2_benefit_list
-
-	var_6_73[1042] = {
+	pg.base.child2_benefit_list[1042] = {
 		benefit_level = 0,
 		name = "静心求知",
 		is_show = 1,
@@ -21593,11 +19271,7 @@ end)()
 			1042
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.child2_benefit_list
-
-	var_6_74[1043] = {
+	pg.base.child2_benefit_list[1043] = {
 		benefit_level = 0,
 		name = "浑然天成",
 		is_show = 1,
@@ -21626,11 +19300,7 @@ end)()
 			1043
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.child2_benefit_list
-
-	var_6_75[1044] = {
+	pg.base.child2_benefit_list[1044] = {
 		benefit_level = 0,
 		name = "知行超越",
 		is_show = 1,
@@ -21659,11 +19329,7 @@ end)()
 			1044
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.child2_benefit_list
-
-	var_6_76[1045] = {
+	pg.base.child2_benefit_list[1045] = {
 		benefit_level = 0,
 		name = "精打细算",
 		is_show = 1,
@@ -21692,11 +19358,7 @@ end)()
 			1045
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.child2_benefit_list
-
-	var_6_77[1046] = {
+	pg.base.child2_benefit_list[1046] = {
 		benefit_level = 0,
 		name = "明智之选",
 		is_show = 1,
@@ -21725,11 +19387,7 @@ end)()
 			1046
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.child2_benefit_list
-
-	var_6_78[1047] = {
+	pg.base.child2_benefit_list[1047] = {
 		benefit_level = 0,
 		name = "乐享生活",
 		is_show = 1,
@@ -21758,11 +19416,7 @@ end)()
 			1047
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.child2_benefit_list
-
-	var_6_79[1048] = {
+	pg.base.child2_benefit_list[1048] = {
 		benefit_level = 0,
 		name = "均衡发展",
 		is_show = 1,
@@ -21791,11 +19445,7 @@ end)()
 			1048
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.child2_benefit_list
-
-	var_6_80[1049] = {
+	pg.base.child2_benefit_list[1049] = {
 		benefit_level = 0,
 		name = "均衡发展+",
 		is_show = 1,
@@ -21824,11 +19474,7 @@ end)()
 			1049
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.child2_benefit_list
-
-	var_6_81[1050] = {
+	pg.base.child2_benefit_list[1050] = {
 		benefit_level = 0,
 		name = "均衡发展++",
 		is_show = 1,
@@ -21857,11 +19503,7 @@ end)()
 			1050
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.child2_benefit_list
-
-	var_6_82[1051] = {
+	pg.base.child2_benefit_list[1051] = {
 		benefit_level = 0,
 		name = "均衡发展+++",
 		is_show = 1,
@@ -21890,11 +19532,7 @@ end)()
 			1051
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.child2_benefit_list
-
-	var_6_83[1052] = {
+	pg.base.child2_benefit_list[1052] = {
 		benefit_level = 0,
 		name = "归途补给",
 		is_show = 1,
@@ -21923,11 +19561,7 @@ end)()
 			1052
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.child2_benefit_list
-
-	var_6_84[1053] = {
+	pg.base.child2_benefit_list[1053] = {
 		benefit_level = 0,
 		name = "不倦之旅",
 		is_show = 1,
@@ -21956,11 +19590,7 @@ end)()
 			1053
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.child2_benefit_list
-
-	var_6_85[1054] = {
+	pg.base.child2_benefit_list[1054] = {
 		benefit_level = 0,
 		name = "灵光眷顾",
 		is_show = 1,
@@ -21989,11 +19619,7 @@ end)()
 			1054
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.child2_benefit_list
-
-	var_6_86[1055] = {
+	pg.base.child2_benefit_list[1055] = {
 		benefit_level = 0,
 		name = "机缘之助",
 		is_show = 1,
@@ -22022,11 +19648,7 @@ end)()
 			1055
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.child2_benefit_list
-
-	var_6_87[1056] = {
+	pg.base.child2_benefit_list[1056] = {
 		benefit_level = 0,
 		name = "灵光眷顾-体能",
 		is_show = 1,
@@ -22055,11 +19677,7 @@ end)()
 			1056
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.child2_benefit_list
-
-	var_6_88[1057] = {
+	pg.base.child2_benefit_list[1057] = {
 		benefit_level = 0,
 		name = "灵光眷顾-实践",
 		is_show = 1,
@@ -22088,11 +19706,7 @@ end)()
 			1057
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.child2_benefit_list
-
-	var_6_89[1058] = {
+	pg.base.child2_benefit_list[1058] = {
 		benefit_level = 0,
 		name = "灵光眷顾-感知",
 		is_show = 1,
@@ -22121,11 +19735,7 @@ end)()
 			1058
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.child2_benefit_list
-
-	var_6_90[1059] = {
+	pg.base.child2_benefit_list[1059] = {
 		benefit_level = 0,
 		name = "灵光眷顾-知识",
 		is_show = 1,
@@ -22154,11 +19764,7 @@ end)()
 			1059
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.child2_benefit_list
-
-	var_6_91[1060] = {
+	pg.base.child2_benefit_list[1060] = {
 		benefit_level = 0,
 		name = "机缘之助-体能",
 		is_show = 1,
@@ -22187,11 +19793,7 @@ end)()
 			1060
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.child2_benefit_list
-
-	var_6_92[1061] = {
+	pg.base.child2_benefit_list[1061] = {
 		benefit_level = 0,
 		name = "机缘之助-实践",
 		is_show = 1,
@@ -22220,11 +19822,7 @@ end)()
 			1061
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.child2_benefit_list
-
-	var_6_93[1062] = {
+	pg.base.child2_benefit_list[1062] = {
 		benefit_level = 0,
 		name = "机缘之助-感知",
 		is_show = 1,
@@ -22253,11 +19851,7 @@ end)()
 			1062
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.child2_benefit_list
-
-	var_6_94[1063] = {
+	pg.base.child2_benefit_list[1063] = {
 		benefit_level = 0,
 		name = "机缘之助-知识",
 		is_show = 1,
@@ -22286,11 +19880,7 @@ end)()
 			1063
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.child2_benefit_list
-
-	var_6_95[1064] = {
+	pg.base.child2_benefit_list[1064] = {
 		benefit_level = 0,
 		name = "奇位增益",
 		is_show = 1,
@@ -22319,11 +19909,7 @@ end)()
 			1064
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.child2_benefit_list
-
-	var_6_96[1065] = {
+	pg.base.child2_benefit_list[1065] = {
 		benefit_level = 0,
 		name = "偶数飞跃",
 		is_show = 1,
@@ -22352,11 +19938,7 @@ end)()
 			1065
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.child2_benefit_list
-
-	var_6_97[1066] = {
+	pg.base.child2_benefit_list[1066] = {
 		benefit_level = 0,
 		name = "奇位无双",
 		is_show = 1,
@@ -22385,11 +19967,7 @@ end)()
 			1066
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.child2_benefit_list
-
-	var_6_98[1067] = {
+	pg.base.child2_benefit_list[1067] = {
 		benefit_level = 0,
 		name = "偶数巅峰",
 		is_show = 1,
@@ -22418,8 +19996,7 @@ end)()
 			1067
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.child2_benefit_list[1068] = {
+	pg.base.child2_benefit_list[1068] = {
 		benefit_level = 0,
 		name = "开门红",
 		is_show = 1,
@@ -22452,11 +20029,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.child2_benefit_list
-
-	var_7_0[1069] = {
+	pg.base.child2_benefit_list[1069] = {
 		benefit_level = 0,
 		name = "完美开局",
 		is_show = 1,
@@ -22485,11 +20058,7 @@ end)()
 			1069
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.child2_benefit_list
-
-	var_7_1[1070] = {
+	pg.base.child2_benefit_list[1070] = {
 		benefit_level = 0,
 		name = "活力充沛",
 		is_show = 1,
@@ -22522,11 +20091,7 @@ end)()
 			10701
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.child2_benefit_list
-
-	var_7_2[1071] = {
+	pg.base.child2_benefit_list[1071] = {
 		benefit_level = 0,
 		name = "得心应手",
 		is_show = 1,
@@ -22559,11 +20124,7 @@ end)()
 			10711
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.child2_benefit_list
-
-	var_7_3[1072] = {
+	pg.base.child2_benefit_list[1072] = {
 		benefit_level = 0,
 		name = "心领神会",
 		is_show = 1,
@@ -22596,11 +20157,7 @@ end)()
 			10721
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.child2_benefit_list
-
-	var_7_4[1073] = {
+	pg.base.child2_benefit_list[1073] = {
 		benefit_level = 0,
 		name = "乐学不倦",
 		is_show = 1,
@@ -22633,11 +20190,7 @@ end)()
 			10731
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.child2_benefit_list
-
-	var_7_5[1074] = {
+	pg.base.child2_benefit_list[1074] = {
 		benefit_level = 0,
 		name = "悦动之心",
 		is_show = 1,
@@ -22670,11 +20223,7 @@ end)()
 			10741
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.child2_benefit_list
-
-	var_7_6[1075] = {
+	pg.base.child2_benefit_list[1075] = {
 		benefit_level = 0,
 		name = "举重若轻",
 		is_show = 1,
@@ -22707,11 +20256,7 @@ end)()
 			10751
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.child2_benefit_list
-
-	var_7_7[1076] = {
+	pg.base.child2_benefit_list[1076] = {
 		benefit_level = 0,
 		name = "悦然明察",
 		is_show = 1,
@@ -22744,11 +20289,7 @@ end)()
 			10761
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.child2_benefit_list
-
-	var_7_8[1077] = {
+	pg.base.child2_benefit_list[1077] = {
 		benefit_level = 0,
 		name = "学无所忧",
 		is_show = 1,
@@ -22781,11 +20322,7 @@ end)()
 			10771
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.child2_benefit_list
-
-	var_7_9[1078] = {
+	pg.base.child2_benefit_list[1078] = {
 		benefit_level = 0,
 		name = "节约之道",
 		is_show = 1,
@@ -22814,11 +20351,7 @@ end)()
 			1078
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.child2_benefit_list
-
-	var_7_10[1079] = {
+	pg.base.child2_benefit_list[1079] = {
 		benefit_level = 0,
 		name = "省钱有道",
 		is_show = 1,
@@ -22847,11 +20380,7 @@ end)()
 			1079
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.child2_benefit_list
-
-	var_7_11[1080] = {
+	pg.base.child2_benefit_list[1080] = {
 		benefit_level = 0,
 		name = "省钱圣手",
 		is_show = 1,
@@ -22880,11 +20409,7 @@ end)()
 			1080
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.child2_benefit_list
-
-	var_7_12[1081] = {
+	pg.base.child2_benefit_list[1081] = {
 		benefit_level = 0,
 		name = "奇偶馈赠（奇）",
 		is_show = 1,
@@ -22915,11 +20440,7 @@ end)()
 			1082
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.child2_benefit_list
-
-	var_7_13[1083] = {
+	pg.base.child2_benefit_list[1083] = {
 		benefit_level = 0,
 		name = "奇偶馈赠（偶）",
 		is_show = 1,
@@ -22950,11 +20471,7 @@ end)()
 			1084
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.child2_benefit_list
-
-	var_7_14[1084] = {
+	pg.base.child2_benefit_list[1084] = {
 		benefit_level = 0,
 		name = "1084",
 		is_show = 1,
@@ -22979,11 +20496,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.child2_benefit_list
-
-	var_7_15[1085] = {
+	pg.base.child2_benefit_list[1085] = {
 		benefit_level = 0,
 		name = "1085",
 		is_show = 1,
@@ -23008,11 +20521,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.child2_benefit_list
-
-	var_7_16[1086] = {
+	pg.base.child2_benefit_list[1086] = {
 		benefit_level = 0,
 		name = "1086",
 		is_show = 1,
@@ -23037,11 +20546,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.child2_benefit_list
-
-	var_7_17[1087] = {
+	pg.base.child2_benefit_list[1087] = {
 		benefit_level = 0,
 		name = "1087",
 		is_show = 1,
@@ -23066,11 +20571,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.child2_benefit_list
-
-	var_7_18[1088] = {
+	pg.base.child2_benefit_list[1088] = {
 		benefit_level = 0,
 		name = "实践专精",
 		is_show = 1,
@@ -23107,11 +20608,7 @@ end)()
 			10885
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.child2_benefit_list
-
-	var_7_19[1089] = {
+	pg.base.child2_benefit_list[1089] = {
 		benefit_level = 0,
 		name = "求知若渴",
 		is_show = 1,
@@ -23148,11 +20645,7 @@ end)()
 			10895
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.child2_benefit_list
-
-	var_7_20[1090] = {
+	pg.base.child2_benefit_list[1090] = {
 		benefit_level = 0,
 		name = "锻炼达人",
 		is_show = 1,
@@ -23189,11 +20682,7 @@ end)()
 			10905
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.child2_benefit_list
-
-	var_7_21[1091] = {
+	pg.base.child2_benefit_list[1091] = {
 		benefit_level = 0,
 		name = "慧眼如炬",
 		is_show = 1,
@@ -23230,11 +20719,7 @@ end)()
 			10915
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.child2_benefit_list
-
-	var_7_22[1092] = {
+	pg.base.child2_benefit_list[1092] = {
 		benefit_level = 0,
 		name = "融会贯通",
 		is_show = 1,
@@ -23259,11 +20744,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.child2_benefit_list
-
-	var_7_23[1093] = {
+	pg.base.child2_benefit_list[1093] = {
 		benefit_level = 0,
 		name = "举一反三",
 		is_show = 1,
@@ -23288,11 +20769,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.child2_benefit_list
-
-	var_7_24[1094] = {
+	pg.base.child2_benefit_list[1094] = {
 		benefit_level = 0,
 		name = "超越极限",
 		is_show = 1,
@@ -23317,11 +20794,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.child2_benefit_list
-
-	var_7_25[1095] = {
+	pg.base.child2_benefit_list[1095] = {
 		benefit_level = 0,
 		name = "全知感应",
 		is_show = 1,
@@ -23346,11 +20819,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.child2_benefit_list
-
-	var_7_26[1096] = {
+	pg.base.child2_benefit_list[1096] = {
 		benefit_level = 0,
 		name = "实践出真知",
 		is_show = 1,
@@ -23379,11 +20848,7 @@ end)()
 			10961
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.child2_benefit_list
-
-	var_7_27[1097] = {
+	pg.base.child2_benefit_list[1097] = {
 		benefit_level = 0,
 		name = "学以致用",
 		is_show = 1,
@@ -23412,11 +20877,7 @@ end)()
 			10971
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.child2_benefit_list
-
-	var_7_28[1098] = {
+	pg.base.child2_benefit_list[1098] = {
 		benefit_level = 0,
 		name = "形神合一",
 		is_show = 1,
@@ -23445,11 +20906,7 @@ end)()
 			10981
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.child2_benefit_list
-
-	var_7_29[1099] = {
+	pg.base.child2_benefit_list[1099] = {
 		benefit_level = 0,
 		name = "体察入微",
 		is_show = 1,
@@ -23478,11 +20935,7 @@ end)()
 			10991
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.child2_benefit_list
-
-	var_7_30[1100] = {
+	pg.base.child2_benefit_list[1100] = {
 		benefit_level = 0,
 		name = "愉悦成长",
 		is_show = 1,
@@ -23507,11 +20960,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.child2_benefit_list
-
-	var_7_31[1101] = {
+	pg.base.child2_benefit_list[1101] = {
 		benefit_level = 0,
 		name = "财智双收",
 		is_show = 1,
@@ -23536,11 +20985,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.child2_benefit_list
-
-	var_7_32[1102] = {
+	pg.base.child2_benefit_list[1102] = {
 		benefit_level = 0,
 		name = "满载而归",
 		is_show = 1,
@@ -23565,11 +21010,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.child2_benefit_list
-
-	var_7_33[2001] = {
+	pg.base.child2_benefit_list[2001] = {
 		benefit_level = 0,
 		name = "体能增益",
 		is_show = 1,
@@ -23598,11 +21039,7 @@ end)()
 			2001
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.child2_benefit_list
-
-	var_7_34[2002] = {
+	pg.base.child2_benefit_list[2002] = {
 		benefit_level = 0,
 		name = "知识增益",
 		is_show = 1,
@@ -23631,11 +21068,7 @@ end)()
 			2002
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.child2_benefit_list
-
-	var_7_35[2003] = {
+	pg.base.child2_benefit_list[2003] = {
 		benefit_level = 0,
 		name = "实践增益",
 		is_show = 1,
@@ -23664,11 +21097,7 @@ end)()
 			2003
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.child2_benefit_list
-
-	var_7_36[2004] = {
+	pg.base.child2_benefit_list[2004] = {
 		benefit_level = 0,
 		name = "感知增益",
 		is_show = 1,
@@ -23697,11 +21126,7 @@ end)()
 			2004
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.child2_benefit_list
-
-	var_7_37[2005] = {
+	pg.base.child2_benefit_list[2005] = {
 		benefit_level = 0,
 		name = "幸运奖券",
 		is_show = 0,
@@ -23730,11 +21155,7 @@ end)()
 			2005
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.child2_benefit_list
-
-	var_7_38[2006] = {
+	pg.base.child2_benefit_list[2006] = {
 		benefit_level = 0,
 		name = "体能随机增益",
 		is_show = 1,
@@ -23763,11 +21184,7 @@ end)()
 			2006
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.child2_benefit_list
-
-	var_7_39[2007] = {
+	pg.base.child2_benefit_list[2007] = {
 		benefit_level = 0,
 		name = "知识随机增益",
 		is_show = 1,
@@ -23796,11 +21213,7 @@ end)()
 			2007
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.child2_benefit_list
-
-	var_7_40[2008] = {
+	pg.base.child2_benefit_list[2008] = {
 		benefit_level = 0,
 		name = "实践随机增益",
 		is_show = 1,
@@ -23829,11 +21242,7 @@ end)()
 			2008
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.child2_benefit_list
-
-	var_7_41[2009] = {
+	pg.base.child2_benefit_list[2009] = {
 		benefit_level = 0,
 		name = "感知随机增益",
 		is_show = 1,
@@ -23862,11 +21271,7 @@ end)()
 			2009
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.child2_benefit_list
-
-	var_7_42[2010] = {
+	pg.base.child2_benefit_list[2010] = {
 		benefit_level = 0,
 		name = "体能随机增益+",
 		is_show = 1,
@@ -23895,11 +21300,7 @@ end)()
 			2010
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.child2_benefit_list
-
-	var_7_43[2011] = {
+	pg.base.child2_benefit_list[2011] = {
 		benefit_level = 0,
 		name = "知识随机增益+",
 		is_show = 1,
@@ -23928,11 +21329,7 @@ end)()
 			2011
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.child2_benefit_list
-
-	var_7_44[2012] = {
+	pg.base.child2_benefit_list[2012] = {
 		benefit_level = 0,
 		name = "实践随机增益+",
 		is_show = 1,
@@ -23961,11 +21358,7 @@ end)()
 			2012
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.child2_benefit_list
-
-	var_7_45[2013] = {
+	pg.base.child2_benefit_list[2013] = {
 		benefit_level = 0,
 		name = "感知随机增益+",
 		is_show = 1,
@@ -23994,11 +21387,7 @@ end)()
 			2013
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.child2_benefit_list
-
-	var_7_46[2014] = {
+	pg.base.child2_benefit_list[2014] = {
 		benefit_level = 0,
 		name = "体能随机·预增益",
 		is_show = 1,
@@ -24027,11 +21416,7 @@ end)()
 			2014
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.child2_benefit_list
-
-	var_7_47[2015] = {
+	pg.base.child2_benefit_list[2015] = {
 		benefit_level = 0,
 		name = "知识随机·预增益",
 		is_show = 1,
@@ -24060,11 +21445,7 @@ end)()
 			2015
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.child2_benefit_list
-
-	var_7_48[2016] = {
+	pg.base.child2_benefit_list[2016] = {
 		benefit_level = 0,
 		name = "实践随机·预增益",
 		is_show = 1,
@@ -24093,11 +21474,7 @@ end)()
 			2016
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.child2_benefit_list
-
-	var_7_49[2017] = {
+	pg.base.child2_benefit_list[2017] = {
 		benefit_level = 0,
 		name = "感知随机·预增益",
 		is_show = 1,
@@ -24126,11 +21503,7 @@ end)()
 			2017
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.child2_benefit_list
-
-	var_7_50[2018] = {
+	pg.base.child2_benefit_list[2018] = {
 		benefit_level = 0,
 		name = "心情随机回复",
 		is_show = 1,
@@ -24159,11 +21532,7 @@ end)()
 			2018
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.child2_benefit_list
-
-	var_7_51[2019] = {
+	pg.base.child2_benefit_list[2019] = {
 		benefit_level = 0,
 		name = "心情随机回复+",
 		is_show = 1,
@@ -24192,11 +21561,7 @@ end)()
 			2019
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.child2_benefit_list
-
-	var_7_52[2020] = {
+	pg.base.child2_benefit_list[2020] = {
 		benefit_level = 0,
 		name = "心情随机回复++",
 		is_show = 1,
@@ -24225,11 +21590,7 @@ end)()
 			2020
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.child2_benefit_list
-
-	var_7_53[2021] = {
+	pg.base.child2_benefit_list[2021] = {
 		benefit_level = 0,
 		name = "心情随机回复(永久)",
 		is_show = 1,
@@ -24258,11 +21619,7 @@ end)()
 			2021
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.child2_benefit_list
-
-	var_7_54[2022] = {
+	pg.base.child2_benefit_list[2022] = {
 		benefit_level = 0,
 		name = "体能+10",
 		is_show = 0,
@@ -24291,11 +21648,7 @@ end)()
 			2022
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.child2_benefit_list
-
-	var_7_55[2023] = {
+	pg.base.child2_benefit_list[2023] = {
 		benefit_level = 0,
 		name = "知识+10",
 		is_show = 0,
@@ -24324,11 +21677,7 @@ end)()
 			2023
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.child2_benefit_list
-
-	var_7_56[2024] = {
+	pg.base.child2_benefit_list[2024] = {
 		benefit_level = 0,
 		name = "实践+10",
 		is_show = 0,
@@ -24357,11 +21706,7 @@ end)()
 			2024
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.child2_benefit_list
-
-	var_7_57[2025] = {
+	pg.base.child2_benefit_list[2025] = {
 		benefit_level = 0,
 		name = "感知+10",
 		is_show = 0,
@@ -24390,11 +21735,7 @@ end)()
 			2025
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.child2_benefit_list
-
-	var_7_58[2026] = {
+	pg.base.child2_benefit_list[2026] = {
 		benefit_level = 0,
 		name = "心情+2",
 		is_show = 0,
@@ -24423,11 +21764,7 @@ end)()
 			2026
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.child2_benefit_list
-
-	var_7_59[2027] = {
+	pg.base.child2_benefit_list[2027] = {
 		benefit_level = 0,
 		name = "体能+20",
 		is_show = 0,
@@ -24456,11 +21793,7 @@ end)()
 			2027
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.child2_benefit_list
-
-	var_7_60[2028] = {
+	pg.base.child2_benefit_list[2028] = {
 		benefit_level = 0,
 		name = "知识+20",
 		is_show = 0,
@@ -24489,11 +21822,7 @@ end)()
 			2028
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.child2_benefit_list
-
-	var_7_61[2029] = {
+	pg.base.child2_benefit_list[2029] = {
 		benefit_level = 0,
 		name = "实践+20",
 		is_show = 0,
@@ -24522,11 +21851,7 @@ end)()
 			2029
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.child2_benefit_list
-
-	var_7_62[2030] = {
+	pg.base.child2_benefit_list[2030] = {
 		benefit_level = 0,
 		name = "感知+20",
 		is_show = 0,
@@ -24555,11 +21880,7 @@ end)()
 			2030
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.child2_benefit_list
-
-	var_7_63[2031] = {
+	pg.base.child2_benefit_list[2031] = {
 		benefit_level = 0,
 		name = "心情+4",
 		is_show = 0,
@@ -24588,11 +21909,7 @@ end)()
 			2031
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.child2_benefit_list
-
-	var_7_64[2032] = {
+	pg.base.child2_benefit_list[2032] = {
 		benefit_level = 0,
 		name = "体能+40",
 		is_show = 0,
@@ -24621,11 +21938,7 @@ end)()
 			2032
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.child2_benefit_list
-
-	var_7_65[2033] = {
+	pg.base.child2_benefit_list[2033] = {
 		benefit_level = 0,
 		name = "知识+40",
 		is_show = 0,
@@ -24654,11 +21967,7 @@ end)()
 			2033
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.child2_benefit_list
-
-	var_7_66[2034] = {
+	pg.base.child2_benefit_list[2034] = {
 		benefit_level = 0,
 		name = "实践+40",
 		is_show = 0,
@@ -24687,11 +21996,7 @@ end)()
 			2034
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.child2_benefit_list
-
-	var_7_67[2035] = {
+	pg.base.child2_benefit_list[2035] = {
 		benefit_level = 0,
 		name = "感知+40",
 		is_show = 0,
@@ -24720,11 +22025,7 @@ end)()
 			2035
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.child2_benefit_list
-
-	var_7_68[2036] = {
+	pg.base.child2_benefit_list[2036] = {
 		benefit_level = 0,
 		name = "心情+6",
 		is_show = 0,
@@ -24753,11 +22054,7 @@ end)()
 			2036
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.child2_benefit_list
-
-	var_7_69[2037] = {
+	pg.base.child2_benefit_list[2037] = {
 		benefit_level = 0,
 		name = "体能转化·知识",
 		is_show = 1,
@@ -24786,11 +22083,7 @@ end)()
 			2037
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.child2_benefit_list
-
-	var_7_70[2038] = {
+	pg.base.child2_benefit_list[2038] = {
 		benefit_level = 0,
 		name = "知识转化·体能",
 		is_show = 1,
@@ -24819,11 +22112,7 @@ end)()
 			2038
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.child2_benefit_list
-
-	var_7_71[2039] = {
+	pg.base.child2_benefit_list[2039] = {
 		benefit_level = 0,
 		name = "实践转化·感知",
 		is_show = 1,
@@ -24852,11 +22141,7 @@ end)()
 			2039
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.child2_benefit_list
-
-	var_7_72[2040] = {
+	pg.base.child2_benefit_list[2040] = {
 		benefit_level = 0,
 		name = "感知转化·实践",
 		is_show = 1,
@@ -24885,11 +22170,7 @@ end)()
 			2040
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.child2_benefit_list
-
-	var_7_73[2041] = {
+	pg.base.child2_benefit_list[2041] = {
 		benefit_level = 0,
 		name = "实践增益(切换)",
 		is_show = 1,
@@ -24920,11 +22201,7 @@ end)()
 			2065
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.child2_benefit_list
-
-	var_7_74[2042] = {
+	pg.base.child2_benefit_list[2042] = {
 		benefit_level = 0,
 		name = "实践减益(切换)",
 		is_show = 1,
@@ -24955,11 +22232,7 @@ end)()
 			2066
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.child2_benefit_list
-
-	var_7_75[2043] = {
+	pg.base.child2_benefit_list[2043] = {
 		benefit_level = 0,
 		name = "实践增益(切换)+",
 		is_show = 1,
@@ -24990,11 +22263,7 @@ end)()
 			2067
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.child2_benefit_list
-
-	var_7_76[2044] = {
+	pg.base.child2_benefit_list[2044] = {
 		benefit_level = 0,
 		name = "实践减益(切换)+",
 		is_show = 1,
@@ -25025,11 +22294,7 @@ end)()
 			2068
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.child2_benefit_list
-
-	var_7_77[2045] = {
+	pg.base.child2_benefit_list[2045] = {
 		benefit_level = 0,
 		name = "实践增益(切换)++",
 		is_show = 1,
@@ -25060,11 +22325,7 @@ end)()
 			2069
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.child2_benefit_list
-
-	var_7_78[2046] = {
+	pg.base.child2_benefit_list[2046] = {
 		benefit_level = 0,
 		name = "实践减益(切换)++",
 		is_show = 1,
@@ -25095,11 +22356,7 @@ end)()
 			2070
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.child2_benefit_list
-
-	var_7_79[2047] = {
+	pg.base.child2_benefit_list[2047] = {
 		benefit_level = 0,
 		name = "体能增益(切换)",
 		is_show = 1,
@@ -25130,11 +22387,7 @@ end)()
 			2071
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.child2_benefit_list
-
-	var_7_80[2048] = {
+	pg.base.child2_benefit_list[2048] = {
 		benefit_level = 0,
 		name = "体能减益(切换)",
 		is_show = 1,
@@ -25165,11 +22418,7 @@ end)()
 			2072
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.child2_benefit_list
-
-	var_7_81[2049] = {
+	pg.base.child2_benefit_list[2049] = {
 		benefit_level = 0,
 		name = "体能增益(切换)+",
 		is_show = 1,
@@ -25200,11 +22449,7 @@ end)()
 			2073
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.child2_benefit_list
-
-	var_7_82[2050] = {
+	pg.base.child2_benefit_list[2050] = {
 		benefit_level = 0,
 		name = "体能减益(切换)+",
 		is_show = 1,
@@ -25235,11 +22480,7 @@ end)()
 			2074
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.child2_benefit_list
-
-	var_7_83[2051] = {
+	pg.base.child2_benefit_list[2051] = {
 		benefit_level = 0,
 		name = "体能增益(切换)++",
 		is_show = 1,
@@ -25270,11 +22511,7 @@ end)()
 			2075
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.child2_benefit_list
-
-	var_7_84[2052] = {
+	pg.base.child2_benefit_list[2052] = {
 		benefit_level = 0,
 		name = "体能减益(切换)++",
 		is_show = 1,
@@ -25305,11 +22542,7 @@ end)()
 			2076
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.child2_benefit_list
-
-	var_7_85[2053] = {
+	pg.base.child2_benefit_list[2053] = {
 		benefit_level = 0,
 		name = "感知增益(切换)",
 		is_show = 1,
@@ -25340,11 +22573,7 @@ end)()
 			2077
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.child2_benefit_list
-
-	var_7_86[2054] = {
+	pg.base.child2_benefit_list[2054] = {
 		benefit_level = 0,
 		name = "感知减益(切换)",
 		is_show = 1,
@@ -25375,11 +22604,7 @@ end)()
 			2078
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.child2_benefit_list
-
-	var_7_87[2055] = {
+	pg.base.child2_benefit_list[2055] = {
 		benefit_level = 0,
 		name = "感知增益(切换)+",
 		is_show = 1,
@@ -25410,11 +22635,7 @@ end)()
 			2079
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.child2_benefit_list
-
-	var_7_88[2056] = {
+	pg.base.child2_benefit_list[2056] = {
 		benefit_level = 0,
 		name = "感知减益(切换)+",
 		is_show = 1,
@@ -25445,11 +22666,7 @@ end)()
 			2080
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.child2_benefit_list
-
-	var_7_89[2057] = {
+	pg.base.child2_benefit_list[2057] = {
 		benefit_level = 0,
 		name = "感知增益(切换)++",
 		is_show = 1,
@@ -25480,11 +22697,7 @@ end)()
 			2081
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.child2_benefit_list
-
-	var_7_90[2058] = {
+	pg.base.child2_benefit_list[2058] = {
 		benefit_level = 0,
 		name = "感知减益(切换)++",
 		is_show = 1,
@@ -25515,11 +22728,7 @@ end)()
 			2082
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.child2_benefit_list
-
-	var_7_91[2059] = {
+	pg.base.child2_benefit_list[2059] = {
 		benefit_level = 0,
 		name = "知识增益(切换)",
 		is_show = 1,
@@ -25550,11 +22759,7 @@ end)()
 			2083
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.child2_benefit_list
-
-	var_7_92[2060] = {
+	pg.base.child2_benefit_list[2060] = {
 		benefit_level = 0,
 		name = "知识减益(切换)",
 		is_show = 1,
@@ -25585,11 +22790,7 @@ end)()
 			2084
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.child2_benefit_list
-
-	var_7_93[2061] = {
+	pg.base.child2_benefit_list[2061] = {
 		benefit_level = 0,
 		name = "知识增益(切换)+",
 		is_show = 1,
@@ -25620,11 +22821,7 @@ end)()
 			2085
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.child2_benefit_list
-
-	var_7_94[2062] = {
+	pg.base.child2_benefit_list[2062] = {
 		benefit_level = 0,
 		name = "知识减益(切换)+",
 		is_show = 1,
@@ -25655,11 +22852,7 @@ end)()
 			2086
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.child2_benefit_list
-
-	var_7_95[2063] = {
+	pg.base.child2_benefit_list[2063] = {
 		benefit_level = 0,
 		name = "知识增益(切换)++",
 		is_show = 1,
@@ -25690,11 +22883,7 @@ end)()
 			2087
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.child2_benefit_list
-
-	var_7_96[2064] = {
+	pg.base.child2_benefit_list[2064] = {
 		benefit_level = 0,
 		name = "知识减益(切换)++",
 		is_show = 1,
@@ -25725,11 +22914,7 @@ end)()
 			2088
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.child2_benefit_list
-
-	var_7_97[2089] = {
+	pg.base.child2_benefit_list[2089] = {
 		benefit_level = 0,
 		name = "特殊行程格·一",
 		is_show = 1,
@@ -25758,11 +22943,7 @@ end)()
 			2089
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.child2_benefit_list
-
-	var_7_98[2090] = {
+	pg.base.child2_benefit_list[2090] = {
 		benefit_level = 0,
 		name = "特殊行程格·一+",
 		is_show = 1,
@@ -25791,8 +22972,7 @@ end)()
 			2090
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.child2_benefit_list[2091] = {
+	pg.base.child2_benefit_list[2091] = {
 		benefit_level = 0,
 		name = "特殊行程格·一++",
 		is_show = 1,
@@ -25825,11 +23005,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.child2_benefit_list
-
-	var_8_0[2092] = {
+	pg.base.child2_benefit_list[2092] = {
 		benefit_level = 0,
 		name = "奇数行程格增益",
 		is_show = 1,
@@ -25858,11 +23034,7 @@ end)()
 			2092
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.child2_benefit_list
-
-	var_8_1[2093] = {
+	pg.base.child2_benefit_list[2093] = {
 		benefit_level = 0,
 		name = "奇数行程格增益+",
 		is_show = 1,
@@ -25891,11 +23063,7 @@ end)()
 			2093
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.child2_benefit_list
-
-	var_8_2[2094] = {
+	pg.base.child2_benefit_list[2094] = {
 		benefit_level = 0,
 		name = "奇数行程格增益++",
 		is_show = 1,
@@ -25924,11 +23092,7 @@ end)()
 			2094
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.child2_benefit_list
-
-	var_8_3[2095] = {
+	pg.base.child2_benefit_list[2095] = {
 		benefit_level = 0,
 		name = "偶数行程格增益",
 		is_show = 1,
@@ -25957,11 +23121,7 @@ end)()
 			2095
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.child2_benefit_list
-
-	var_8_4[2096] = {
+	pg.base.child2_benefit_list[2096] = {
 		benefit_level = 0,
 		name = "偶数行程格增益+",
 		is_show = 1,
@@ -25990,11 +23150,7 @@ end)()
 			2096
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.child2_benefit_list
-
-	var_8_5[2097] = {
+	pg.base.child2_benefit_list[2097] = {
 		benefit_level = 0,
 		name = "偶数行程格增益++",
 		is_show = 1,
@@ -26023,11 +23179,7 @@ end)()
 			2097
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.child2_benefit_list
-
-	var_8_6[2098] = {
+	pg.base.child2_benefit_list[2098] = {
 		benefit_level = 0,
 		name = "体能随机·预增益",
 		is_show = 0,
@@ -26056,11 +23208,7 @@ end)()
 			2098
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.child2_benefit_list
-
-	var_8_7[2099] = {
+	pg.base.child2_benefit_list[2099] = {
 		benefit_level = 0,
 		name = "知识随机·预增益",
 		is_show = 0,
@@ -26089,11 +23237,7 @@ end)()
 			2099
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.child2_benefit_list
-
-	var_8_8[2100] = {
+	pg.base.child2_benefit_list[2100] = {
 		benefit_level = 0,
 		name = "实践随机·预增益",
 		is_show = 0,
@@ -26122,11 +23266,7 @@ end)()
 			2100
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.child2_benefit_list
-
-	var_8_9[2101] = {
+	pg.base.child2_benefit_list[2101] = {
 		benefit_level = 0,
 		name = "感知随机·预增益",
 		is_show = 0,
@@ -26155,11 +23295,7 @@ end)()
 			2101
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.child2_benefit_list
-
-	var_8_10[3001] = {
+	pg.base.child2_benefit_list[3001] = {
 		benefit_level = 0,
 		name = "独角兽的祝福",
 		is_show = 0,
@@ -26188,11 +23324,7 @@ end)()
 			30011
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.child2_benefit_list
-
-	var_8_11[3002] = {
+	pg.base.child2_benefit_list[3002] = {
 		benefit_level = 0,
 		name = "独角兽的祝福",
 		is_show = 0,
@@ -26221,11 +23353,7 @@ end)()
 			30021
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.child2_benefit_list
-
-	var_8_12[3003] = {
+	pg.base.child2_benefit_list[3003] = {
 		benefit_level = 0,
 		name = "独角兽的祝福",
 		is_show = 1,
@@ -26258,11 +23386,7 @@ end)()
 			30031
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.child2_benefit_list
-
-	var_8_13[3004] = {
+	pg.base.child2_benefit_list[3004] = {
 		benefit_level = 0,
 		name = "海天的祝福",
 		is_show = 0,
@@ -26291,11 +23415,7 @@ end)()
 			30041
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.child2_benefit_list
-
-	var_8_14[3005] = {
+	pg.base.child2_benefit_list[3005] = {
 		benefit_level = 0,
 		name = "海天的祝福",
 		is_show = 0,
@@ -26324,11 +23444,7 @@ end)()
 			30051
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.child2_benefit_list
-
-	var_8_15[3006] = {
+	pg.base.child2_benefit_list[3006] = {
 		benefit_level = 0,
 		name = "海天的祝福",
 		is_show = 1,
@@ -26357,11 +23473,7 @@ end)()
 			30061
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.child2_benefit_list
-
-	var_8_16[3007] = {
+	pg.base.child2_benefit_list[3007] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福",
 		is_show = 0,
@@ -26390,11 +23502,7 @@ end)()
 			30071
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.child2_benefit_list
-
-	var_8_17[3008] = {
+	pg.base.child2_benefit_list[3008] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福",
 		is_show = 0,
@@ -26423,11 +23531,7 @@ end)()
 			30081
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.child2_benefit_list
-
-	var_8_18[3009] = {
+	pg.base.child2_benefit_list[3009] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福",
 		is_show = 1,
@@ -26458,11 +23562,7 @@ end)()
 			30092
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.child2_benefit_list
-
-	var_8_19[3010] = {
+	pg.base.child2_benefit_list[3010] = {
 		benefit_level = 0,
 		name = "{namecode:491}的祝福",
 		is_show = 0,
@@ -26491,11 +23591,7 @@ end)()
 			30101
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.child2_benefit_list
-
-	var_8_20[3011] = {
+	pg.base.child2_benefit_list[3011] = {
 		benefit_level = 0,
 		name = "{namecode:491}的祝福",
 		is_show = 0,
@@ -26524,11 +23620,7 @@ end)()
 			30111
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.child2_benefit_list
-
-	var_8_21[3012] = {
+	pg.base.child2_benefit_list[3012] = {
 		benefit_level = 0,
 		name = "{namecode:491}的祝福",
 		is_show = 1,
@@ -26561,11 +23653,7 @@ end)()
 			30121
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.child2_benefit_list
-
-	var_8_22[3013] = {
+	pg.base.child2_benefit_list[3013] = {
 		benefit_level = 0,
 		name = "凶猛的祝福",
 		is_show = 0,
@@ -26594,11 +23682,7 @@ end)()
 			30131
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.child2_benefit_list
-
-	var_8_23[3014] = {
+	pg.base.child2_benefit_list[3014] = {
 		benefit_level = 0,
 		name = "凶猛的祝福",
 		is_show = 0,
@@ -26627,11 +23711,7 @@ end)()
 			30141
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.child2_benefit_list
-
-	var_8_24[3015] = {
+	pg.base.child2_benefit_list[3015] = {
 		benefit_level = 0,
 		name = "凶猛的祝福",
 		is_show = 1,
@@ -26664,11 +23744,7 @@ end)()
 			30151
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.child2_benefit_list
-
-	var_8_25[3016] = {
+	pg.base.child2_benefit_list[3016] = {
 		benefit_level = 0,
 		name = "{namecode:439}的祝福",
 		is_show = 0,
@@ -26697,11 +23773,7 @@ end)()
 			30161
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.child2_benefit_list
-
-	var_8_26[3017] = {
+	pg.base.child2_benefit_list[3017] = {
 		benefit_level = 0,
 		name = "{namecode:439}的祝福",
 		is_show = 0,
@@ -26730,11 +23802,7 @@ end)()
 			30171
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.child2_benefit_list
-
-	var_8_27[3018] = {
+	pg.base.child2_benefit_list[3018] = {
 		benefit_level = 0,
 		name = "{namecode:439}的祝福",
 		is_show = 1,
@@ -26767,11 +23835,7 @@ end)()
 			30181
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.child2_benefit_list
-
-	var_8_28[3051] = {
+	pg.base.child2_benefit_list[3051] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福·三衍生1",
 		is_show = 0,
@@ -26800,11 +23864,7 @@ end)()
 			30511
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.child2_benefit_list
-
-	var_8_29[3052] = {
+	pg.base.child2_benefit_list[3052] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福·三衍生2",
 		is_show = 0,
@@ -26833,11 +23893,7 @@ end)()
 			30521
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.child2_benefit_list
-
-	var_8_30[3053] = {
+	pg.base.child2_benefit_list[3053] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福·三衍生3",
 		is_show = 0,
@@ -26866,11 +23922,7 @@ end)()
 			30531
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.child2_benefit_list
-
-	var_8_31[3054] = {
+	pg.base.child2_benefit_list[3054] = {
 		benefit_level = 0,
 		name = "安克雷奇的祝福·三衍生4",
 		is_show = 0,
@@ -26899,11 +23951,7 @@ end)()
 			30541
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.child2_benefit_list
-
-	var_8_32[3501] = {
+	pg.base.child2_benefit_list[3501] = {
 		benefit_level = 0,
 		name = "20回合目标属性奖励D",
 		is_show = 0,
@@ -26932,11 +23980,7 @@ end)()
 			35011
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.child2_benefit_list
-
-	var_8_33[3502] = {
+	pg.base.child2_benefit_list[3502] = {
 		benefit_level = 0,
 		name = "20回合目标属性奖励C",
 		is_show = 0,
@@ -26965,11 +24009,7 @@ end)()
 			35021
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.child2_benefit_list
-
-	var_8_34[3503] = {
+	pg.base.child2_benefit_list[3503] = {
 		benefit_level = 0,
 		name = "20回合目标属性奖励B",
 		is_show = 0,
@@ -26998,11 +24038,7 @@ end)()
 			35031
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.child2_benefit_list
-
-	var_8_35[3504] = {
+	pg.base.child2_benefit_list[3504] = {
 		benefit_level = 0,
 		name = "20回合目标属性奖励A",
 		is_show = 0,
@@ -27031,11 +24067,7 @@ end)()
 			35041
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.child2_benefit_list
-
-	var_8_36[3505] = {
+	pg.base.child2_benefit_list[3505] = {
 		benefit_level = 0,
 		name = "5回合目标奖励D",
 		is_show = 0,
@@ -27064,11 +24096,7 @@ end)()
 			35051
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.child2_benefit_list
-
-	var_8_37[3506] = {
+	pg.base.child2_benefit_list[3506] = {
 		benefit_level = 0,
 		name = "5回合目标奖励C",
 		is_show = 0,
@@ -27097,11 +24125,7 @@ end)()
 			35061
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.child2_benefit_list
-
-	var_8_38[3507] = {
+	pg.base.child2_benefit_list[3507] = {
 		benefit_level = 0,
 		name = "5回合目标奖励B",
 		is_show = 0,
@@ -27130,11 +24154,7 @@ end)()
 			35071
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.child2_benefit_list
-
-	var_8_39[3508] = {
+	pg.base.child2_benefit_list[3508] = {
 		benefit_level = 0,
 		name = "5回合目标奖励A",
 		is_show = 0,
@@ -27163,11 +24183,7 @@ end)()
 			35081
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.child2_benefit_list
-
-	var_8_40[3509] = {
+	pg.base.child2_benefit_list[3509] = {
 		benefit_level = 0,
 		name = "10回合目标奖励D",
 		is_show = 0,
@@ -27196,11 +24212,7 @@ end)()
 			35091
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.child2_benefit_list
-
-	var_8_41[3510] = {
+	pg.base.child2_benefit_list[3510] = {
 		benefit_level = 0,
 		name = "10回合目标奖励C",
 		is_show = 0,
@@ -27229,11 +24241,7 @@ end)()
 			35101
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.child2_benefit_list
-
-	var_8_42[3511] = {
+	pg.base.child2_benefit_list[3511] = {
 		benefit_level = 0,
 		name = "10回合目标奖励B",
 		is_show = 0,
@@ -27262,11 +24270,7 @@ end)()
 			35111
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.child2_benefit_list
-
-	var_8_43[3512] = {
+	pg.base.child2_benefit_list[3512] = {
 		benefit_level = 0,
 		name = "10回合目标奖励A",
 		is_show = 0,
@@ -27295,11 +24299,7 @@ end)()
 			35121
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.child2_benefit_list
-
-	var_8_44[3513] = {
+	pg.base.child2_benefit_list[3513] = {
 		benefit_level = 0,
 		name = "15回合目标奖励D",
 		is_show = 0,
@@ -27328,11 +24328,7 @@ end)()
 			35131
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.child2_benefit_list
-
-	var_8_45[3514] = {
+	pg.base.child2_benefit_list[3514] = {
 		benefit_level = 0,
 		name = "15回合目标奖励C",
 		is_show = 0,
@@ -27361,11 +24357,7 @@ end)()
 			35141
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.child2_benefit_list
-
-	var_8_46[3515] = {
+	pg.base.child2_benefit_list[3515] = {
 		benefit_level = 0,
 		name = "15回合目标奖励B",
 		is_show = 0,
@@ -27394,11 +24386,7 @@ end)()
 			35151
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.child2_benefit_list
-
-	var_8_47[3516] = {
+	pg.base.child2_benefit_list[3516] = {
 		benefit_level = 0,
 		name = "15回合目标奖励A",
 		is_show = 0,
@@ -27427,11 +24415,7 @@ end)()
 			35161
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.child2_benefit_list
-
-	var_8_48[3521] = {
+	pg.base.child2_benefit_list[3521] = {
 		benefit_level = 0,
 		name = "结局锚点benefit",
 		is_show = 0,
@@ -27456,11 +24440,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.child2_benefit_list
-
-	var_8_49[3601] = {
+	pg.base.child2_benefit_list[3601] = {
 		benefit_level = 0,
 		name = "好感度掉落1",
 		is_show = 0,
@@ -27489,11 +24469,7 @@ end)()
 			36011
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.child2_benefit_list
-
-	var_8_50[3602] = {
+	pg.base.child2_benefit_list[3602] = {
 		benefit_level = 0,
 		name = "好感度掉落2",
 		is_show = 0,
@@ -27522,11 +24498,7 @@ end)()
 			36021
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.child2_benefit_list
-
-	var_8_51[3603] = {
+	pg.base.child2_benefit_list[3603] = {
 		benefit_level = 0,
 		name = "好感度掉落3",
 		is_show = 0,
@@ -27555,11 +24527,7 @@ end)()
 			36031
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.child2_benefit_list
-
-	var_8_52[3604] = {
+	pg.base.child2_benefit_list[3604] = {
 		benefit_level = 0,
 		name = "好感度掉落4",
 		is_show = 0,
@@ -27588,11 +24556,7 @@ end)()
 			36041
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.child2_benefit_list
-
-	var_8_53[41] = {
+	pg.base.child2_benefit_list[41] = {
 		benefit_level = 0,
 		name = "41",
 		is_show = 1,
@@ -27621,11 +24585,7 @@ end)()
 			41
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.child2_benefit_list
-
-	var_8_54[42] = {
+	pg.base.child2_benefit_list[42] = {
 		benefit_level = 0,
 		name = "42",
 		is_show = 1,
@@ -27654,11 +24614,7 @@ end)()
 			42
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.child2_benefit_list
-
-	var_8_55[43] = {
+	pg.base.child2_benefit_list[43] = {
 		benefit_level = 0,
 		name = "43",
 		is_show = 1,
@@ -27687,11 +24643,7 @@ end)()
 			43
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.child2_benefit_list
-
-	var_8_56[44] = {
+	pg.base.child2_benefit_list[44] = {
 		benefit_level = 0,
 		name = "44",
 		is_show = 1,
@@ -27720,11 +24672,7 @@ end)()
 			44
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.child2_benefit_list
-
-	var_8_57[45] = {
+	pg.base.child2_benefit_list[45] = {
 		benefit_level = 0,
 		name = "45",
 		is_show = 1,
@@ -27753,11 +24701,7 @@ end)()
 			45
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.child2_benefit_list
-
-	var_8_58[46] = {
+	pg.base.child2_benefit_list[46] = {
 		benefit_level = 0,
 		name = "46",
 		is_show = 1,
@@ -27786,11 +24730,7 @@ end)()
 			46
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.child2_benefit_list
-
-	var_8_59[60] = {
+	pg.base.child2_benefit_list[60] = {
 		benefit_level = 0,
 		name = "间隔+心情",
 		is_show = 1,
@@ -27819,11 +24759,7 @@ end)()
 			62
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.child2_benefit_list
-
-	var_8_60[61] = {
+	pg.base.child2_benefit_list[61] = {
 		benefit_level = 0,
 		name = "间隔+心情隐藏1",
 		is_show = 1,
@@ -27854,11 +24790,7 @@ end)()
 			60
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.child2_benefit_list
-
-	var_8_61[62] = {
+	pg.base.child2_benefit_list[62] = {
 		benefit_level = 0,
 		name = "间隔+心情隐藏2",
 		is_show = 1,
@@ -27887,11 +24819,7 @@ end)()
 			61
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.child2_benefit_list
-
-	var_8_62[10000] = {
+	pg.base.child2_benefit_list[10000] = {
 		benefit_level = 0,
 		name = "心情用",
 		is_show = 0,
@@ -27926,11 +24854,7 @@ end)()
 			10004
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.child2_benefit_list
-
-	var_8_63[10001] = {
+	pg.base.child2_benefit_list[10001] = {
 		benefit_level = 0,
 		name = "心情用",
 		is_show = 0,
@@ -27965,11 +24889,7 @@ end)()
 			10008
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.child2_benefit_list
-
-	var_8_64[3240001] = {
+	pg.base.child2_benefit_list[3240001] = {
 		benefit_level = 0,
 		name = "{namecode:199}的祝福",
 		is_show = 1,
@@ -27998,11 +24918,7 @@ end)()
 			32400101
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.child2_benefit_list
-
-	var_8_65[3240002] = {
+	pg.base.child2_benefit_list[3240002] = {
 		benefit_level = 0,
 		name = "{namecode:199}的祝福",
 		is_show = 1,
@@ -28031,11 +24947,7 @@ end)()
 			32400111
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.child2_benefit_list
-
-	var_8_66[3240003] = {
+	pg.base.child2_benefit_list[3240003] = {
 		benefit_level = 1,
 		name = "{namecode:199}的祝福",
 		is_show = 1,
@@ -28068,11 +24980,7 @@ end)()
 			32400121
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.child2_benefit_list
-
-	var_8_67[3240004] = {
+	pg.base.child2_benefit_list[3240004] = {
 		benefit_level = 0,
 		name = "七省的祝福",
 		is_show = 1,
@@ -28101,11 +25009,7 @@ end)()
 			32400131
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.child2_benefit_list
-
-	var_8_68[3240005] = {
+	pg.base.child2_benefit_list[3240005] = {
 		benefit_level = 0,
 		name = "七省的祝福",
 		is_show = 1,
@@ -28134,11 +25038,7 @@ end)()
 			32400141
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.child2_benefit_list
-
-	var_8_69[3240006] = {
+	pg.base.child2_benefit_list[3240006] = {
 		benefit_level = 1,
 		name = "七省的祝福",
 		is_show = 1,
@@ -28171,11 +25071,7 @@ end)()
 			32400151
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.child2_benefit_list
-
-	var_8_70[3240007] = {
+	pg.base.child2_benefit_list[3240007] = {
 		benefit_level = 0,
 		name = "塔什干的祝福",
 		is_show = 1,
@@ -28204,11 +25100,7 @@ end)()
 			32400161
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.child2_benefit_list
-
-	var_8_71[3240008] = {
+	pg.base.child2_benefit_list[3240008] = {
 		benefit_level = 0,
 		name = "塔什干的祝福",
 		is_show = 1,
@@ -28237,11 +25129,7 @@ end)()
 			32400171
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.child2_benefit_list
-
-	var_8_72[3240009] = {
+	pg.base.child2_benefit_list[3240009] = {
 		benefit_level = 1,
 		name = "塔什干的祝福",
 		is_show = 1,
@@ -28274,11 +25162,7 @@ end)()
 			32400181
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.child2_benefit_list
-
-	var_8_73[3240010] = {
+	pg.base.child2_benefit_list[3240010] = {
 		benefit_level = 0,
 		name = "天狼星的祝福",
 		is_show = 1,
@@ -28307,11 +25191,7 @@ end)()
 			32400011
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.child2_benefit_list
-
-	var_8_74[3240011] = {
+	pg.base.child2_benefit_list[3240011] = {
 		benefit_level = 0,
 		name = "天狼星的祝福",
 		is_show = 1,
@@ -28340,11 +25220,7 @@ end)()
 			32400021
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.child2_benefit_list
-
-	var_8_75[3240012] = {
+	pg.base.child2_benefit_list[3240012] = {
 		benefit_level = 1,
 		name = "天狼星的祝福",
 		is_show = 1,
@@ -28377,11 +25253,7 @@ end)()
 			32400031
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.child2_benefit_list
-
-	var_8_76[3240013] = {
+	pg.base.child2_benefit_list[3240013] = {
 		benefit_level = 0,
 		name = "重剑的祝福",
 		is_show = 1,
@@ -28410,11 +25282,7 @@ end)()
 			32400041
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.child2_benefit_list
-
-	var_8_77[3240014] = {
+	pg.base.child2_benefit_list[3240014] = {
 		benefit_level = 0,
 		name = "重剑的祝福",
 		is_show = 1,
@@ -28443,11 +25311,7 @@ end)()
 			32400051
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.child2_benefit_list
-
-	var_8_78[3240015] = {
+	pg.base.child2_benefit_list[3240015] = {
 		benefit_level = 1,
 		name = "重剑的祝福",
 		is_show = 1,
@@ -28476,11 +25340,7 @@ end)()
 			32400061
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.child2_benefit_list
-
-	var_8_79[3240016] = {
+	pg.base.child2_benefit_list[3240016] = {
 		benefit_level = 0,
 		name = "{namecode:50}的祝福",
 		is_show = 1,
@@ -28509,11 +25369,7 @@ end)()
 			32400071
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.child2_benefit_list
-
-	var_8_80[3240017] = {
+	pg.base.child2_benefit_list[3240017] = {
 		benefit_level = 0,
 		name = "{namecode:50}的祝福",
 		is_show = 1,
@@ -28542,11 +25398,7 @@ end)()
 			32400081
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.child2_benefit_list
-
-	var_8_81[3240018] = {
+	pg.base.child2_benefit_list[3240018] = {
 		benefit_level = 1,
 		name = "{namecode:50}的祝福",
 		is_show = 1,
@@ -28577,11 +25429,7 @@ end)()
 			32400092
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.child2_benefit_list
-
-	var_8_82[3640001] = {
+	pg.base.child2_benefit_list[3640001] = {
 		benefit_level = 1,
 		name = "{namecode:199}的祝福",
 		is_show = 0,
@@ -28610,11 +25458,7 @@ end)()
 			36400011
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.child2_benefit_list
-
-	var_8_83[3640002] = {
+	pg.base.child2_benefit_list[3640002] = {
 		benefit_level = 1,
 		name = "{namecode:199}的祝福",
 		is_show = 0,
@@ -28643,11 +25487,7 @@ end)()
 			36400021
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.child2_benefit_list
-
-	var_8_84[3640003] = {
+	pg.base.child2_benefit_list[3640003] = {
 		benefit_level = 1,
 		name = "{namecode:199}的祝福",
 		is_show = 1,
@@ -28680,11 +25520,7 @@ end)()
 			36400031
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.child2_benefit_list
-
-	var_8_85[3640004] = {
+	pg.base.child2_benefit_list[3640004] = {
 		benefit_level = 1,
 		name = "七省的祝福",
 		is_show = 0,
@@ -28713,11 +25549,7 @@ end)()
 			36400041
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.child2_benefit_list
-
-	var_8_86[3640005] = {
+	pg.base.child2_benefit_list[3640005] = {
 		benefit_level = 1,
 		name = "七省的祝福",
 		is_show = 0,
@@ -28746,11 +25578,7 @@ end)()
 			36400051
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.child2_benefit_list
-
-	var_8_87[3640006] = {
+	pg.base.child2_benefit_list[3640006] = {
 		benefit_level = 1,
 		name = "七省的祝福",
 		is_show = 1,
@@ -28779,11 +25607,7 @@ end)()
 			36400061
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.child2_benefit_list
-
-	var_8_88[3640007] = {
+	pg.base.child2_benefit_list[3640007] = {
 		benefit_level = 1,
 		name = "塔什干的祝福",
 		is_show = 0,
@@ -28812,11 +25636,7 @@ end)()
 			36400071
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.child2_benefit_list
-
-	var_8_89[3640008] = {
+	pg.base.child2_benefit_list[3640008] = {
 		benefit_level = 1,
 		name = "塔什干的祝福",
 		is_show = 0,
@@ -28845,11 +25665,7 @@ end)()
 			36400081
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.child2_benefit_list
-
-	var_8_90[3640009] = {
+	pg.base.child2_benefit_list[3640009] = {
 		benefit_level = 1,
 		name = "塔什干的祝福",
 		is_show = 1,
@@ -28880,11 +25696,7 @@ end)()
 			36400092
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.child2_benefit_list
-
-	var_8_91[3640010] = {
+	pg.base.child2_benefit_list[3640010] = {
 		benefit_level = 1,
 		name = "天狼星的祝福",
 		is_show = 0,
@@ -28913,11 +25725,7 @@ end)()
 			36400101
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.child2_benefit_list
-
-	var_8_92[3640011] = {
+	pg.base.child2_benefit_list[3640011] = {
 		benefit_level = 1,
 		name = "天狼星的祝福",
 		is_show = 0,
@@ -28946,11 +25754,7 @@ end)()
 			36400111
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.child2_benefit_list
-
-	var_8_93[3640012] = {
+	pg.base.child2_benefit_list[3640012] = {
 		benefit_level = 1,
 		name = "天狼星的祝福",
 		is_show = 1,
@@ -28983,11 +25787,7 @@ end)()
 			36400121
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.child2_benefit_list
-
-	var_8_94[3640013] = {
+	pg.base.child2_benefit_list[3640013] = {
 		benefit_level = 1,
 		name = "重剑的祝福",
 		is_show = 0,
@@ -29016,11 +25816,7 @@ end)()
 			36400131
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.child2_benefit_list
-
-	var_8_95[3640014] = {
+	pg.base.child2_benefit_list[3640014] = {
 		benefit_level = 1,
 		name = "重剑的祝福",
 		is_show = 0,
@@ -29049,11 +25845,7 @@ end)()
 			36400141
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.child2_benefit_list
-
-	var_8_96[3640015] = {
+	pg.base.child2_benefit_list[3640015] = {
 		benefit_level = 1,
 		name = "重剑的祝福",
 		is_show = 1,
@@ -29086,11 +25878,7 @@ end)()
 			36400151
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.child2_benefit_list
-
-	var_8_97[3640016] = {
+	pg.base.child2_benefit_list[3640016] = {
 		benefit_level = 1,
 		name = "{namecode:50}的祝福",
 		is_show = 0,
@@ -29119,11 +25907,7 @@ end)()
 			36400161
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.child2_benefit_list
-
-	var_8_98[3640017] = {
+	pg.base.child2_benefit_list[3640017] = {
 		benefit_level = 1,
 		name = "{namecode:50}的祝福",
 		is_show = 0,
@@ -29152,8 +25936,7 @@ end)()
 			36400171
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.child2_benefit_list[3640018] = {
+	pg.base.child2_benefit_list[3640018] = {
 		benefit_level = 1,
 		name = "{namecode:50}的祝福",
 		is_show = 1,
@@ -29190,11 +25973,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.child2_benefit_list
-
-	var_9_0[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 愚者",
 		is_show = 1,
@@ -29225,11 +26004,7 @@ end)()
 			38107031
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.child2_benefit_list
-
-	var_9_1[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 1,
 		name = "愚者卡标记",
 		is_show = 0,
@@ -29254,11 +26029,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.child2_benefit_list
-
-	var_9_2[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 愚者child",
 		is_show = 0,
@@ -29287,11 +26058,7 @@ end)()
 			38107021
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.child2_benefit_list
-
-	var_9_3[3810621] = {
+	pg.base.child2_benefit_list[3810621] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 魔术师",
 		is_show = 1,
@@ -29320,11 +26087,7 @@ end)()
 			38106211
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.child2_benefit_list
-
-	var_9_4[3810781] = {
+	pg.base.child2_benefit_list[3810781] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 女祭司",
 		is_show = 1,
@@ -29363,11 +26126,7 @@ end)()
 			38107819
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.child2_benefit_list
-
-	var_9_5[3810782] = {
+	pg.base.child2_benefit_list[3810782] = {
 		benefit_level = 1,
 		name = "女祭司 · IV",
 		is_show = 1,
@@ -29396,11 +26155,7 @@ end)()
 			38107812
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.child2_benefit_list
-
-	var_9_6[3810784] = {
+	pg.base.child2_benefit_list[3810784] = {
 		benefit_level = 1,
 		name = "女祭司监听器：行动力",
 		is_show = 0,
@@ -29429,11 +26184,7 @@ end)()
 			38107813
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.child2_benefit_list
-
-	var_9_7[3810785] = {
+	pg.base.child2_benefit_list[3810785] = {
 		benefit_level = 1,
 		name = "女祭司监听器：金钱",
 		is_show = 0,
@@ -29462,11 +26213,7 @@ end)()
 			38107813
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.child2_benefit_list
-
-	var_9_8[3810786] = {
+	pg.base.child2_benefit_list[3810786] = {
 		benefit_level = 1,
 		name = "女祭司监听器：心情",
 		is_show = 0,
@@ -29495,11 +26242,7 @@ end)()
 			38107813
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.child2_benefit_list
-
-	var_9_9[3810787] = {
+	pg.base.child2_benefit_list[3810787] = {
 		benefit_level = 1,
 		name = "女祭司监听器：性格+",
 		is_show = 0,
@@ -29528,11 +26271,7 @@ end)()
 			38107813
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.child2_benefit_list
-
-	var_9_10[3810788] = {
+	pg.base.child2_benefit_list[3810788] = {
 		benefit_level = 1,
 		name = "女祭司监听器：性格-",
 		is_show = 0,
@@ -29561,11 +26300,7 @@ end)()
 			38107813
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.child2_benefit_list
-
-	var_9_11[3810789] = {
+	pg.base.child2_benefit_list[3810789] = {
 		benefit_level = 1,
 		name = "女祭司汇总监听：看是否同时存在以上4个buff",
 		is_show = 0,
@@ -29594,11 +26329,7 @@ end)()
 			38107819
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.child2_benefit_list
-
-	var_9_12[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 女皇",
 		is_show = 1,
@@ -29627,11 +26358,7 @@ end)()
 			38103211
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.child2_benefit_list
-
-	var_9_13[3811041] = {
+	pg.base.child2_benefit_list[3811041] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 皇帝",
 		is_show = 1,
@@ -29660,11 +26387,7 @@ end)()
 			38110411
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.child2_benefit_list
-
-	var_9_14[3810661] = {
+	pg.base.child2_benefit_list[3810661] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 教皇",
 		is_show = 1,
@@ -29693,11 +26416,7 @@ end)()
 			38106611
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.child2_benefit_list
-
-	var_9_15[3810662] = {
+	pg.base.child2_benefit_list[3810662] = {
 		benefit_level = 1,
 		name = "教皇 · IV",
 		is_show = 1,
@@ -29726,11 +26445,7 @@ end)()
 			38106612
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.child2_benefit_list
-
-	var_9_16[3810663] = {
+	pg.base.child2_benefit_list[3810663] = {
 		benefit_level = 1,
 		name = "教皇 · IV",
 		is_show = 1,
@@ -29759,11 +26474,7 @@ end)()
 			38106613
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.child2_benefit_list
-
-	var_9_17[3810664] = {
+	pg.base.child2_benefit_list[3810664] = {
 		benefit_level = 1,
 		name = "教皇 · IV",
 		is_show = 1,
@@ -29792,11 +26503,7 @@ end)()
 			38106614
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.child2_benefit_list
-
-	var_9_18[3810665] = {
+	pg.base.child2_benefit_list[3810665] = {
 		benefit_level = 1,
 		name = "教皇 · IV",
 		is_show = 1,
@@ -29825,11 +26532,7 @@ end)()
 			38106615
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.child2_benefit_list
-
-	var_9_19[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 恋人",
 		is_show = 1,
@@ -29868,11 +26571,7 @@ end)()
 			38108216
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.child2_benefit_list
-
-	var_9_20[3810921] = {
+	pg.base.child2_benefit_list[3810921] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 战车",
 		is_show = 1,
@@ -29901,11 +26600,7 @@ end)()
 			38109211
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.child2_benefit_list
-
-	var_9_21[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 力量",
 		is_show = 1,
@@ -29934,11 +26629,7 @@ end)()
 			38105811
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.child2_benefit_list
-
-	var_9_22[3810741] = {
+	pg.base.child2_benefit_list[3810741] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 隐者",
 		is_show = 1,
@@ -29967,11 +26658,7 @@ end)()
 			38107411
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.child2_benefit_list
-
-	var_9_23[3810742] = {
+	pg.base.child2_benefit_list[3810742] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 隐者child",
 		is_show = 0,
@@ -30000,11 +26687,7 @@ end)()
 			38107421
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.child2_benefit_list
-
-	var_9_24[3810541] = {
+	pg.base.child2_benefit_list[3810541] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮",
 		is_show = 1,
@@ -30053,11 +26736,7 @@ end)()
 			38105411
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.child2_benefit_list
-
-	var_9_25[3815001] = {
+	pg.base.child2_benefit_list[3815001] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child1",
 		is_show = 0,
@@ -30086,11 +26765,7 @@ end)()
 			38150011
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.child2_benefit_list
-
-	var_9_26[3815002] = {
+	pg.base.child2_benefit_list[3815002] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child2",
 		is_show = 0,
@@ -30119,11 +26794,7 @@ end)()
 			38150021
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.child2_benefit_list
-
-	var_9_27[3815003] = {
+	pg.base.child2_benefit_list[3815003] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child3",
 		is_show = 0,
@@ -30152,11 +26823,7 @@ end)()
 			38150031
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.child2_benefit_list
-
-	var_9_28[3815004] = {
+	pg.base.child2_benefit_list[3815004] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child4",
 		is_show = 0,
@@ -30185,11 +26852,7 @@ end)()
 			38150041
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.child2_benefit_list
-
-	var_9_29[3815005] = {
+	pg.base.child2_benefit_list[3815005] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child5",
 		is_show = 0,
@@ -30218,11 +26881,7 @@ end)()
 			38150051
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.child2_benefit_list
-
-	var_9_30[3815006] = {
+	pg.base.child2_benefit_list[3815006] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child6",
 		is_show = 0,
@@ -30251,11 +26910,7 @@ end)()
 			38150061
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.child2_benefit_list
-
-	var_9_31[3815007] = {
+	pg.base.child2_benefit_list[3815007] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child7",
 		is_show = 0,
@@ -30284,11 +26939,7 @@ end)()
 			38150071
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.child2_benefit_list
-
-	var_9_32[3815008] = {
+	pg.base.child2_benefit_list[3815008] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child8",
 		is_show = 0,
@@ -30317,11 +26968,7 @@ end)()
 			38150081
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.child2_benefit_list
-
-	var_9_33[3815009] = {
+	pg.base.child2_benefit_list[3815009] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child9",
 		is_show = 0,
@@ -30350,11 +26997,7 @@ end)()
 			38150091
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.child2_benefit_list
-
-	var_9_34[3815010] = {
+	pg.base.child2_benefit_list[3815010] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child10",
 		is_show = 0,
@@ -30383,11 +27026,7 @@ end)()
 			38150101
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.child2_benefit_list
-
-	var_9_35[3815011] = {
+	pg.base.child2_benefit_list[3815011] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child11",
 		is_show = 0,
@@ -30416,11 +27055,7 @@ end)()
 			38150111
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.child2_benefit_list
-
-	var_9_36[3815012] = {
+	pg.base.child2_benefit_list[3815012] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child12",
 		is_show = 0,
@@ -30449,11 +27084,7 @@ end)()
 			38150121
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.child2_benefit_list
-
-	var_9_37[3815013] = {
+	pg.base.child2_benefit_list[3815013] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child13",
 		is_show = 0,
@@ -30482,11 +27113,7 @@ end)()
 			38150131
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.child2_benefit_list
-
-	var_9_38[3815014] = {
+	pg.base.child2_benefit_list[3815014] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child14",
 		is_show = 0,
@@ -30515,11 +27142,7 @@ end)()
 			38150141
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.child2_benefit_list
-
-	var_9_39[3815015] = {
+	pg.base.child2_benefit_list[3815015] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child15",
 		is_show = 0,
@@ -30548,11 +27171,7 @@ end)()
 			38150151
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.child2_benefit_list
-
-	var_9_40[3815016] = {
+	pg.base.child2_benefit_list[3815016] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child16",
 		is_show = 0,
@@ -30581,11 +27200,7 @@ end)()
 			38150161
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.child2_benefit_list
-
-	var_9_41[3815017] = {
+	pg.base.child2_benefit_list[3815017] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child17",
 		is_show = 0,
@@ -30614,11 +27229,7 @@ end)()
 			38150171
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.child2_benefit_list
-
-	var_9_42[3815018] = {
+	pg.base.child2_benefit_list[3815018] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child18",
 		is_show = 0,
@@ -30647,11 +27258,7 @@ end)()
 			38150181
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.child2_benefit_list
-
-	var_9_43[3815019] = {
+	pg.base.child2_benefit_list[3815019] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child19",
 		is_show = 0,
@@ -30680,11 +27287,7 @@ end)()
 			38150191
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.child2_benefit_list
-
-	var_9_44[3815020] = {
+	pg.base.child2_benefit_list[3815020] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 命运之轮叠层child20",
 		is_show = 0,
@@ -30713,11 +27316,7 @@ end)()
 			38150201
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.child2_benefit_list
-
-	var_9_45[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 正义",
 		is_show = 1,
@@ -30746,11 +27345,7 @@ end)()
 			38104411
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.child2_benefit_list
-
-	var_9_46[3810381] = {
+	pg.base.child2_benefit_list[3810381] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 倒吊者",
 		is_show = 1,
@@ -30781,11 +27376,7 @@ end)()
 			38103812
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.child2_benefit_list
-
-	var_9_47[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 死神",
 		is_show = 1,
@@ -30843,11 +27434,7 @@ end)()
 			38110811
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.child2_benefit_list
-
-	var_9_48[3810011] = {
+	pg.base.child2_benefit_list[3810011] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 节制",
 		is_show = 1,
@@ -30876,11 +27463,7 @@ end)()
 			38100111
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.child2_benefit_list
-
-	var_9_49[3810261] = {
+	pg.base.child2_benefit_list[3810261] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 恶魔",
 		is_show = 1,
@@ -30918,11 +27501,7 @@ end)()
 			38102611
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.child2_benefit_list
-
-	var_9_50[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 高塔",
 		is_show = 1,
@@ -30953,11 +27532,7 @@ end)()
 			38101912
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.child2_benefit_list
-
-	var_9_51[3810131] = {
+	pg.base.child2_benefit_list[3810131] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 星星",
 		is_show = 1,
@@ -30986,11 +27561,7 @@ end)()
 			38101311
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.child2_benefit_list
-
-	var_9_52[3810861] = {
+	pg.base.child2_benefit_list[3810861] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 月亮",
 		is_show = 1,
@@ -31021,11 +27592,7 @@ end)()
 			38108611
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.child2_benefit_list
-
-	var_9_53[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 太阳",
 		is_show = 1,
@@ -31054,11 +27621,7 @@ end)()
 			38100711
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.child2_benefit_list
-
-	var_9_54[3810981] = {
+	pg.base.child2_benefit_list[3810981] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 审判",
 		is_show = 1,
@@ -31087,11 +27650,7 @@ end)()
 			38109811
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.child2_benefit_list
-
-	var_9_55[3810481] = {
+	pg.base.child2_benefit_list[3810481] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 世界",
 		is_show = 1,
@@ -31120,11 +27679,7 @@ end)()
 			38104811
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.child2_benefit_list
-
-	var_9_56[3810482] = {
+	pg.base.child2_benefit_list[3810482] = {
 		benefit_level = 1,
 		name = "塔罗牌 · 世界",
 		is_show = 0,
@@ -31153,11 +27708,7 @@ end)()
 			38104821
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.child2_benefit_list
-
-	var_9_57[3810021] = {
+	pg.base.child2_benefit_list[3810021] = {
 		benefit_level = 1,
 		name = "节制 · I",
 		is_show = 1,
@@ -31186,11 +27737,7 @@ end)()
 			38100211
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.child2_benefit_list
-
-	var_9_58[3810031] = {
+	pg.base.child2_benefit_list[3810031] = {
 		benefit_level = 1,
 		name = "节制 · II",
 		is_show = 1,
@@ -31219,11 +27766,7 @@ end)()
 			38100311
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.child2_benefit_list
-
-	var_9_59[3810041] = {
+	pg.base.child2_benefit_list[3810041] = {
 		benefit_level = 1,
 		name = "节制 · III",
 		is_show = 1,
@@ -31252,11 +27795,7 @@ end)()
 			38100411
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.child2_benefit_list
-
-	var_9_60[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 1,
 		name = "节制 · IV",
 		is_show = 1,
@@ -31285,11 +27824,7 @@ end)()
 			38100511
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.child2_benefit_list
-
-	var_9_61[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 1,
 		name = "节制IV child",
 		is_show = 0,
@@ -31318,11 +27853,7 @@ end)()
 			38100521
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.child2_benefit_list
-
-	var_9_62[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 1,
 		name = "节制 · V",
 		is_show = 1,
@@ -31351,11 +27882,7 @@ end)()
 			38100611
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.child2_benefit_list
-
-	var_9_63[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 1,
 		name = "节制V child",
 		is_show = 0,
@@ -31384,11 +27911,7 @@ end)()
 			38100621
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.child2_benefit_list
-
-	var_9_64[3810081] = {
+	pg.base.child2_benefit_list[3810081] = {
 		benefit_level = 1,
 		name = "太阳 · I",
 		is_show = 1,
@@ -31417,11 +27940,7 @@ end)()
 			38100811
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.child2_benefit_list
-
-	var_9_65[3810091] = {
+	pg.base.child2_benefit_list[3810091] = {
 		benefit_level = 1,
 		name = "太阳 · II",
 		is_show = 1,
@@ -31450,11 +27969,7 @@ end)()
 			38100911
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.child2_benefit_list
-
-	var_9_66[3810101] = {
+	pg.base.child2_benefit_list[3810101] = {
 		benefit_level = 1,
 		name = "太阳 · III",
 		is_show = 1,
@@ -31483,11 +27998,7 @@ end)()
 			38101011
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.child2_benefit_list
-
-	var_9_67[3810111] = {
+	pg.base.child2_benefit_list[3810111] = {
 		benefit_level = 1,
 		name = "太阳 · IV",
 		is_show = 1,
@@ -31516,11 +28027,7 @@ end)()
 			38101111
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.child2_benefit_list
-
-	var_9_68[3810121] = {
+	pg.base.child2_benefit_list[3810121] = {
 		benefit_level = 1,
 		name = "太阳 · V",
 		is_show = 1,
@@ -31549,11 +28056,7 @@ end)()
 			38101211
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.child2_benefit_list
-
-	var_9_69[3810141] = {
+	pg.base.child2_benefit_list[3810141] = {
 		benefit_level = 1,
 		name = "星星 · I",
 		is_show = 1,
@@ -31582,11 +28085,7 @@ end)()
 			38101411
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.child2_benefit_list
-
-	var_9_70[3810151] = {
+	pg.base.child2_benefit_list[3810151] = {
 		benefit_level = 1,
 		name = "星星 · II",
 		is_show = 1,
@@ -31615,11 +28114,7 @@ end)()
 			38101511
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.child2_benefit_list
-
-	var_9_71[3810161] = {
+	pg.base.child2_benefit_list[3810161] = {
 		benefit_level = 1,
 		name = "星星 · III",
 		is_show = 1,
@@ -31648,11 +28143,7 @@ end)()
 			38101611
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.child2_benefit_list
-
-	var_9_72[3810171] = {
+	pg.base.child2_benefit_list[3810171] = {
 		benefit_level = 1,
 		name = "星星 · IV",
 		is_show = 1,
@@ -31681,11 +28172,7 @@ end)()
 			38101711
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.child2_benefit_list
-
-	var_9_73[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 1,
 		name = "星星 · V",
 		is_show = 1,
@@ -31714,11 +28201,7 @@ end)()
 			38101811
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.child2_benefit_list
-
-	var_9_74[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 1,
 		name = "高塔 · VI",
 		is_show = 1,
@@ -31749,11 +28232,7 @@ end)()
 			38102012
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.child2_benefit_list
-
-	var_9_75[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 1,
 		name = "高塔 · VII",
 		is_show = 1,
@@ -31784,11 +28263,7 @@ end)()
 			38102012
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.child2_benefit_list
-
-	var_9_76[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 1,
 		name = "高塔 · VIII",
 		is_show = 1,
@@ -31819,11 +28294,7 @@ end)()
 			38102012
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.child2_benefit_list
-
-	var_9_77[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 1,
 		name = "高塔 · IX",
 		is_show = 1,
@@ -31854,11 +28325,7 @@ end)()
 			38102012
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.child2_benefit_list
-
-	var_9_78[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 1,
 		name = "高塔 · X",
 		is_show = 1,
@@ -31889,11 +28356,7 @@ end)()
 			38102012
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.child2_benefit_list
-
-	var_9_79[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 1,
 		name = "高塔 · XI",
 		is_show = 1,
@@ -31924,11 +28387,7 @@ end)()
 			38102012
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.child2_benefit_list
-
-	var_9_80[3810211] = {
+	pg.base.child2_benefit_list[3810211] = {
 		benefit_level = 1,
 		name = "高塔 · I",
 		is_show = 1,
@@ -31959,11 +28418,7 @@ end)()
 			38102111
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.child2_benefit_list
-
-	var_9_81[3810221] = {
+	pg.base.child2_benefit_list[3810221] = {
 		benefit_level = 1,
 		name = "高塔 · II",
 		is_show = 1,
@@ -31994,11 +28449,7 @@ end)()
 			38102211
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.child2_benefit_list
-
-	var_9_82[3810231] = {
+	pg.base.child2_benefit_list[3810231] = {
 		benefit_level = 1,
 		name = "高塔 · III",
 		is_show = 1,
@@ -32028,11 +28479,7 @@ end)()
 			38102311
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.child2_benefit_list
-
-	var_9_83[3810241] = {
+	pg.base.child2_benefit_list[3810241] = {
 		benefit_level = 1,
 		name = "高塔 · IV",
 		is_show = 1,
@@ -32062,11 +28509,7 @@ end)()
 			38102411
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.child2_benefit_list
-
-	var_9_84[3810251] = {
+	pg.base.child2_benefit_list[3810251] = {
 		benefit_level = 1,
 		name = "高塔 · V",
 		is_show = 1,
@@ -32096,11 +28539,7 @@ end)()
 			38102511
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.child2_benefit_list
-
-	var_9_85[3810252] = {
+	pg.base.child2_benefit_list[3810252] = {
 		benefit_level = 1,
 		name = "高塔eff_child",
 		is_show = 0,
@@ -32129,11 +28568,7 @@ end)()
 			38102521
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.child2_benefit_list
-
-	var_9_86[3810253] = {
+	pg.base.child2_benefit_list[3810253] = {
 		benefit_level = 1,
 		name = "高塔eff_child",
 		is_show = 0,
@@ -32162,11 +28597,7 @@ end)()
 			38102531
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.child2_benefit_list
-
-	var_9_87[3810271] = {
+	pg.base.child2_benefit_list[3810271] = {
 		benefit_level = 1,
 		name = "恶魔 · I",
 		is_show = 1,
@@ -32213,11 +28644,7 @@ end)()
 			38102720
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.child2_benefit_list
-
-	var_9_88[3810281] = {
+	pg.base.child2_benefit_list[3810281] = {
 		benefit_level = 1,
 		name = "恶魔 · II",
 		is_show = 1,
@@ -32247,11 +28674,7 @@ end)()
 			38102811
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.child2_benefit_list
-
-	var_9_89[3810291] = {
+	pg.base.child2_benefit_list[3810291] = {
 		benefit_level = 1,
 		name = "恶魔 · III",
 		is_show = 1,
@@ -32284,11 +28707,7 @@ end)()
 			38102913
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.child2_benefit_list
-
-	var_9_90[3810301] = {
+	pg.base.child2_benefit_list[3810301] = {
 		benefit_level = 1,
 		name = "恶魔 · IV",
 		is_show = 1,
@@ -32319,11 +28738,7 @@ end)()
 			38103012
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.child2_benefit_list
-
-	var_9_91[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 1,
 		name = "恶魔 · V",
 		is_show = 1,
@@ -32354,11 +28769,7 @@ end)()
 			38103112
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.child2_benefit_list
-
-	var_9_92[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 1,
 		name = "女皇 · I",
 		is_show = 1,
@@ -32387,11 +28798,7 @@ end)()
 			38103311
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.child2_benefit_list
-
-	var_9_93[3810341] = {
+	pg.base.child2_benefit_list[3810341] = {
 		benefit_level = 1,
 		name = "女皇 · II",
 		is_show = 1,
@@ -32420,11 +28827,7 @@ end)()
 			38103411
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.child2_benefit_list
-
-	var_9_94[3810351] = {
+	pg.base.child2_benefit_list[3810351] = {
 		benefit_level = 1,
 		name = "女皇 · III",
 		is_show = 1,
@@ -32453,11 +28856,7 @@ end)()
 			38103511
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.child2_benefit_list
-
-	var_9_95[3810361] = {
+	pg.base.child2_benefit_list[3810361] = {
 		benefit_level = 1,
 		name = "女皇 · IV",
 		is_show = 1,
@@ -32488,11 +28887,7 @@ end)()
 			38103612
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.child2_benefit_list
-
-	var_9_96[3810371] = {
+	pg.base.child2_benefit_list[3810371] = {
 		benefit_level = 1,
 		name = "女皇 · V",
 		is_show = 1,
@@ -32549,11 +28944,7 @@ end)()
 			38150641
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.child2_benefit_list
-
-	var_9_97[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32582,11 +28973,7 @@ end)()
 			38150661
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.child2_benefit_list
-
-	var_9_98[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32615,8 +29002,7 @@ end)()
 			38150671
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.child2_benefit_list[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32649,11 +29035,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.child2_benefit_list
-
-	var_10_0[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32682,11 +29064,7 @@ end)()
 			38150691
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.child2_benefit_list
-
-	var_10_1[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32715,11 +29093,7 @@ end)()
 			38150701
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.child2_benefit_list
-
-	var_10_2[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32748,11 +29122,7 @@ end)()
 			38150711
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.child2_benefit_list
-
-	var_10_3[3815072] = {
+	pg.base.child2_benefit_list[3815072] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32781,11 +29151,7 @@ end)()
 			38150721
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.child2_benefit_list
-
-	var_10_4[3815073] = {
+	pg.base.child2_benefit_list[3815073] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32814,11 +29180,7 @@ end)()
 			38150731
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.child2_benefit_list
-
-	var_10_5[3815074] = {
+	pg.base.child2_benefit_list[3815074] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32847,11 +29209,7 @@ end)()
 			38150741
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.child2_benefit_list
-
-	var_10_6[3815075] = {
+	pg.base.child2_benefit_list[3815075] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32880,11 +29238,7 @@ end)()
 			38150751
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.child2_benefit_list
-
-	var_10_7[3815076] = {
+	pg.base.child2_benefit_list[3815076] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32913,11 +29267,7 @@ end)()
 			38150761
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.child2_benefit_list
-
-	var_10_8[3815077] = {
+	pg.base.child2_benefit_list[3815077] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32946,11 +29296,7 @@ end)()
 			38150771
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.child2_benefit_list
-
-	var_10_9[3815078] = {
+	pg.base.child2_benefit_list[3815078] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -32979,11 +29325,7 @@ end)()
 			38150781
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.child2_benefit_list
-
-	var_10_10[3815079] = {
+	pg.base.child2_benefit_list[3815079] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -33012,11 +29354,7 @@ end)()
 			38150791
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.child2_benefit_list
-
-	var_10_11[3815080] = {
+	pg.base.child2_benefit_list[3815080] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -33045,11 +29383,7 @@ end)()
 			38150801
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.child2_benefit_list
-
-	var_10_12[3810391] = {
+	pg.base.child2_benefit_list[3810391] = {
 		benefit_level = 1,
 		name = "倒吊者 · I",
 		is_show = 1,
@@ -33078,11 +29412,7 @@ end)()
 			38103911
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.child2_benefit_list
-
-	var_10_13[3810401] = {
+	pg.base.child2_benefit_list[3810401] = {
 		benefit_level = 1,
 		name = "倒吊者 · II",
 		is_show = 1,
@@ -33111,11 +29441,7 @@ end)()
 			38104011
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.child2_benefit_list
-
-	var_10_14[3810411] = {
+	pg.base.child2_benefit_list[3810411] = {
 		benefit_level = 1,
 		name = "倒吊者 · III",
 		is_show = 1,
@@ -33144,11 +29470,7 @@ end)()
 			38104111
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.child2_benefit_list
-
-	var_10_15[3810421] = {
+	pg.base.child2_benefit_list[3810421] = {
 		benefit_level = 1,
 		name = "倒吊者 · IV",
 		is_show = 1,
@@ -33177,11 +29499,7 @@ end)()
 			38104211
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.child2_benefit_list
-
-	var_10_16[3810431] = {
+	pg.base.child2_benefit_list[3810431] = {
 		benefit_level = 1,
 		name = "倒吊者 · V",
 		is_show = 1,
@@ -33228,11 +29546,7 @@ end)()
 			38150891
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.child2_benefit_list
-
-	var_10_17[3815081] = {
+	pg.base.child2_benefit_list[3815081] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33261,11 +29575,7 @@ end)()
 			38150901
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.child2_benefit_list
-
-	var_10_18[3815082] = {
+	pg.base.child2_benefit_list[3815082] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33294,11 +29604,7 @@ end)()
 			38150911
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.child2_benefit_list
-
-	var_10_19[3815083] = {
+	pg.base.child2_benefit_list[3815083] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33327,11 +29633,7 @@ end)()
 			38150921
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.child2_benefit_list
-
-	var_10_20[3815084] = {
+	pg.base.child2_benefit_list[3815084] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33360,11 +29662,7 @@ end)()
 			38150931
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.child2_benefit_list
-
-	var_10_21[3815085] = {
+	pg.base.child2_benefit_list[3815085] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33393,11 +29691,7 @@ end)()
 			38150941
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.child2_benefit_list
-
-	var_10_22[3815086] = {
+	pg.base.child2_benefit_list[3815086] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33426,11 +29720,7 @@ end)()
 			38150951
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.child2_benefit_list
-
-	var_10_23[3815087] = {
+	pg.base.child2_benefit_list[3815087] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33459,11 +29749,7 @@ end)()
 			38150961
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.child2_benefit_list
-
-	var_10_24[3815088] = {
+	pg.base.child2_benefit_list[3815088] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33492,11 +29778,7 @@ end)()
 			38150971
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.child2_benefit_list
-
-	var_10_25[3815089] = {
+	pg.base.child2_benefit_list[3815089] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33525,11 +29807,7 @@ end)()
 			38150981
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.child2_benefit_list
-
-	var_10_26[3815090] = {
+	pg.base.child2_benefit_list[3815090] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -33558,11 +29836,7 @@ end)()
 			38150991
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.child2_benefit_list
-
-	var_10_27[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 1,
 		name = "正义 · I",
 		is_show = 1,
@@ -33591,11 +29865,7 @@ end)()
 			38104511
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.child2_benefit_list
-
-	var_10_28[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 1,
 		name = "正义 · II",
 		is_show = 1,
@@ -33624,11 +29894,7 @@ end)()
 			38104611
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.child2_benefit_list
-
-	var_10_29[3810471] = {
+	pg.base.child2_benefit_list[3810471] = {
 		benefit_level = 1,
 		name = "正义 · III",
 		is_show = 1,
@@ -33657,11 +29923,7 @@ end)()
 			38104711
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.child2_benefit_list
-
-	var_10_30[3810491] = {
+	pg.base.child2_benefit_list[3810491] = {
 		benefit_level = 1,
 		name = "世界 · I",
 		is_show = 1,
@@ -33690,11 +29952,7 @@ end)()
 			38104911
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.child2_benefit_list
-
-	var_10_31[3810501] = {
+	pg.base.child2_benefit_list[3810501] = {
 		benefit_level = 1,
 		name = "世界 · II",
 		is_show = 1,
@@ -33723,11 +29981,7 @@ end)()
 			38105011
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.child2_benefit_list
-
-	var_10_32[3810511] = {
+	pg.base.child2_benefit_list[3810511] = {
 		benefit_level = 1,
 		name = "世界 · III",
 		is_show = 1,
@@ -33756,11 +30010,7 @@ end)()
 			38105111
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.child2_benefit_list
-
-	var_10_33[3810521] = {
+	pg.base.child2_benefit_list[3810521] = {
 		benefit_level = 1,
 		name = "世界 · IV",
 		is_show = 1,
@@ -33789,11 +30039,7 @@ end)()
 			38105211
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.child2_benefit_list
-
-	var_10_34[3810531] = {
+	pg.base.child2_benefit_list[3810531] = {
 		benefit_level = 1,
 		name = "世界 · V",
 		is_show = 1,
@@ -33822,11 +30068,7 @@ end)()
 			38105311
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.child2_benefit_list
-
-	var_10_35[3810551] = {
+	pg.base.child2_benefit_list[3810551] = {
 		benefit_level = 1,
 		name = "命运之轮 · I",
 		is_show = 1,
@@ -33857,11 +30099,7 @@ end)()
 			38105512
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.child2_benefit_list
-
-	var_10_36[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 1,
 		name = "命运之轮 · II",
 		is_show = 1,
@@ -33892,11 +30130,7 @@ end)()
 			38105612
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.child2_benefit_list
-
-	var_10_37[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 1,
 		name = "命运之轮 · III",
 		is_show = 1,
@@ -33925,11 +30159,7 @@ end)()
 			38105711
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.child2_benefit_list
-
-	var_10_38[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 1,
 		name = "力量 · I",
 		is_show = 1,
@@ -33958,11 +30188,7 @@ end)()
 			38105911
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.child2_benefit_list
-
-	var_10_39[3810601] = {
+	pg.base.child2_benefit_list[3810601] = {
 		benefit_level = 1,
 		name = "力量 · II",
 		is_show = 1,
@@ -33991,11 +30217,7 @@ end)()
 			38106011
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.child2_benefit_list
-
-	var_10_40[3810611] = {
+	pg.base.child2_benefit_list[3810611] = {
 		benefit_level = 1,
 		name = "力量 · III",
 		is_show = 1,
@@ -34024,11 +30246,7 @@ end)()
 			38106111
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.child2_benefit_list
-
-	var_10_41[3810612] = {
+	pg.base.child2_benefit_list[3810612] = {
 		benefit_level = 1,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -34057,11 +30275,7 @@ end)()
 			38106112
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.child2_benefit_list
-
-	var_10_42[3810613] = {
+	pg.base.child2_benefit_list[3810613] = {
 		benefit_level = 1,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -34090,11 +30304,7 @@ end)()
 			38106113
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.child2_benefit_list
-
-	var_10_43[3810614] = {
+	pg.base.child2_benefit_list[3810614] = {
 		benefit_level = 1,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -34123,11 +30333,7 @@ end)()
 			38106114
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.child2_benefit_list
-
-	var_10_44[3810615] = {
+	pg.base.child2_benefit_list[3810615] = {
 		benefit_level = 1,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -34156,11 +30362,7 @@ end)()
 			38106115
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.child2_benefit_list
-
-	var_10_45[3810631] = {
+	pg.base.child2_benefit_list[3810631] = {
 		benefit_level = 1,
 		name = "魔术师 · I",
 		is_show = 1,
@@ -34189,11 +30391,7 @@ end)()
 			38106311
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.child2_benefit_list
-
-	var_10_46[3810641] = {
+	pg.base.child2_benefit_list[3810641] = {
 		benefit_level = 1,
 		name = "魔术师 · II",
 		is_show = 1,
@@ -34222,11 +30420,7 @@ end)()
 			38106411
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.child2_benefit_list
-
-	var_10_47[3810651] = {
+	pg.base.child2_benefit_list[3810651] = {
 		benefit_level = 1,
 		name = "魔术师 · III",
 		is_show = 1,
@@ -34255,11 +30449,7 @@ end)()
 			38106511
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.child2_benefit_list
-
-	var_10_48[3810671] = {
+	pg.base.child2_benefit_list[3810671] = {
 		benefit_level = 1,
 		name = "教皇 · I",
 		is_show = 1,
@@ -34290,11 +30480,7 @@ end)()
 			38106712
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.child2_benefit_list
-
-	var_10_49[3810681] = {
+	pg.base.child2_benefit_list[3810681] = {
 		benefit_level = 1,
 		name = "教皇 · II",
 		is_show = 1,
@@ -34325,11 +30511,7 @@ end)()
 			38106812
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.child2_benefit_list
-
-	var_10_50[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 1,
 		name = "教皇 · III",
 		is_show = 1,
@@ -34360,11 +30542,7 @@ end)()
 			38106912
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.child2_benefit_list
-
-	var_10_51[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 1,
 		name = "愚者 · I",
 		is_show = 1,
@@ -34393,11 +30571,7 @@ end)()
 			38107111
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.child2_benefit_list
-
-	var_10_52[3810721] = {
+	pg.base.child2_benefit_list[3810721] = {
 		benefit_level = 1,
 		name = "愚者 · II",
 		is_show = 1,
@@ -34426,11 +30600,7 @@ end)()
 			38107211
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.child2_benefit_list
-
-	var_10_53[3810731] = {
+	pg.base.child2_benefit_list[3810731] = {
 		benefit_level = 1,
 		name = "愚者 · III",
 		is_show = 1,
@@ -34459,11 +30629,7 @@ end)()
 			38107311
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.child2_benefit_list
-
-	var_10_54[3810751] = {
+	pg.base.child2_benefit_list[3810751] = {
 		benefit_level = 1,
 		name = "隐者 · I",
 		is_show = 1,
@@ -34492,11 +30658,7 @@ end)()
 			38107511
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.child2_benefit_list
-
-	var_10_55[3810761] = {
+	pg.base.child2_benefit_list[3810761] = {
 		benefit_level = 1,
 		name = "隐者 · II",
 		is_show = 1,
@@ -34525,11 +30687,7 @@ end)()
 			38107611
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.child2_benefit_list
-
-	var_10_56[3810771] = {
+	pg.base.child2_benefit_list[3810771] = {
 		benefit_level = 1,
 		name = "隐者 · III",
 		is_show = 1,
@@ -34558,11 +30716,7 @@ end)()
 			38107711
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.child2_benefit_list
-
-	var_10_57[3810791] = {
+	pg.base.child2_benefit_list[3810791] = {
 		benefit_level = 1,
 		name = "女祭司 · I",
 		is_show = 1,
@@ -34591,11 +30745,7 @@ end)()
 			38107911
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.child2_benefit_list
-
-	var_10_58[3810801] = {
+	pg.base.child2_benefit_list[3810801] = {
 		benefit_level = 1,
 		name = "女祭司 · II",
 		is_show = 1,
@@ -34624,11 +30774,7 @@ end)()
 			38108011
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.child2_benefit_list
-
-	var_10_59[3810811] = {
+	pg.base.child2_benefit_list[3810811] = {
 		benefit_level = 1,
 		name = "女祭司 · III",
 		is_show = 1,
@@ -34657,11 +30803,7 @@ end)()
 			38108111
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.child2_benefit_list
-
-	var_10_60[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 1,
 		name = "恋人 · I",
 		is_show = 1,
@@ -34690,11 +30832,7 @@ end)()
 			38108311
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.child2_benefit_list
-
-	var_10_61[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 1,
 		name = "恋人 · II",
 		is_show = 1,
@@ -34733,11 +30871,7 @@ end)()
 			38108416
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.child2_benefit_list
-
-	var_10_62[3810851] = {
+	pg.base.child2_benefit_list[3810851] = {
 		benefit_level = 1,
 		name = "恋人 · III",
 		is_show = 1,
@@ -34766,11 +30900,7 @@ end)()
 			38108511
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.child2_benefit_list
-
-	var_10_63[3810871] = {
+	pg.base.child2_benefit_list[3810871] = {
 		benefit_level = 1,
 		name = "月亮 · I",
 		is_show = 1,
@@ -34799,11 +30929,7 @@ end)()
 			38108711
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.child2_benefit_list
-
-	var_10_64[3810881] = {
+	pg.base.child2_benefit_list[3810881] = {
 		benefit_level = 1,
 		name = "月亮 · II",
 		is_show = 1,
@@ -34832,11 +30958,7 @@ end)()
 			38108811
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.child2_benefit_list
-
-	var_10_65[3810891] = {
+	pg.base.child2_benefit_list[3810891] = {
 		benefit_level = 1,
 		name = "月亮 · III",
 		is_show = 1,
@@ -34866,11 +30988,7 @@ end)()
 			38108911
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.child2_benefit_list
-
-	var_10_66[3810901] = {
+	pg.base.child2_benefit_list[3810901] = {
 		benefit_level = 1,
 		name = "月亮 · IV",
 		is_show = 1,
@@ -34901,11 +31019,7 @@ end)()
 			38109141
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.child2_benefit_list
-
-	var_10_67[3810911] = {
+	pg.base.child2_benefit_list[3810911] = {
 		benefit_level = 1,
 		name = "月亮 · V",
 		is_show = 1,
@@ -34936,11 +31050,7 @@ end)()
 			38109151
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.child2_benefit_list
-
-	var_10_68[3810912] = {
+	pg.base.child2_benefit_list[3810912] = {
 		benefit_level = 1,
 		name = "月亮4实际效果",
 		is_show = 0,
@@ -34969,11 +31079,7 @@ end)()
 			38109121
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.child2_benefit_list
-
-	var_10_69[3810913] = {
+	pg.base.child2_benefit_list[3810913] = {
 		benefit_level = 1,
 		name = "月亮5实际效果",
 		is_show = 0,
@@ -35002,11 +31108,7 @@ end)()
 			38109131
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.child2_benefit_list
-
-	var_10_70[3810914] = {
+	pg.base.child2_benefit_list[3810914] = {
 		benefit_level = 1,
 		name = "月亮4标记用buff",
 		is_show = 0,
@@ -35031,11 +31133,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.child2_benefit_list
-
-	var_10_71[3810915] = {
+	pg.base.child2_benefit_list[3810915] = {
 		benefit_level = 1,
 		name = "月亮5标记用buff",
 		is_show = 0,
@@ -35060,11 +31158,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.child2_benefit_list
-
-	var_10_72[3810931] = {
+	pg.base.child2_benefit_list[3810931] = {
 		benefit_level = 1,
 		name = "战车 · I",
 		is_show = 1,
@@ -35093,11 +31187,7 @@ end)()
 			38109311
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.child2_benefit_list
-
-	var_10_73[3810941] = {
+	pg.base.child2_benefit_list[3810941] = {
 		benefit_level = 1,
 		name = "战车 · II",
 		is_show = 1,
@@ -35126,11 +31216,7 @@ end)()
 			38109411
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.child2_benefit_list
-
-	var_10_74[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 1,
 		name = "战车 · III",
 		is_show = 1,
@@ -35161,11 +31247,7 @@ end)()
 			38109512
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.child2_benefit_list
-
-	var_10_75[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 1,
 		name = "战车 · IV",
 		is_show = 1,
@@ -35194,11 +31276,7 @@ end)()
 			38109611
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.child2_benefit_list
-
-	var_10_76[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 1,
 		name = "战车 · V",
 		is_show = 1,
@@ -35229,11 +31307,7 @@ end)()
 			38109721
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.child2_benefit_list
-
-	var_10_77[3810991] = {
+	pg.base.child2_benefit_list[3810991] = {
 		benefit_level = 1,
 		name = "审判 · I",
 		is_show = 1,
@@ -35262,11 +31336,7 @@ end)()
 			38109911
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.child2_benefit_list
-
-	var_10_78[3811001] = {
+	pg.base.child2_benefit_list[3811001] = {
 		benefit_level = 1,
 		name = "审判 · II",
 		is_show = 1,
@@ -35295,11 +31365,7 @@ end)()
 			38110011
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.child2_benefit_list
-
-	var_10_79[3811011] = {
+	pg.base.child2_benefit_list[3811011] = {
 		benefit_level = 1,
 		name = "审判 · III",
 		is_show = 1,
@@ -35328,11 +31394,7 @@ end)()
 			38110111
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.child2_benefit_list
-
-	var_10_80[3811021] = {
+	pg.base.child2_benefit_list[3811021] = {
 		benefit_level = 1,
 		name = "审判 · IV",
 		is_show = 1,
@@ -35361,11 +31423,7 @@ end)()
 			38110211
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.child2_benefit_list
-
-	var_10_81[3811031] = {
+	pg.base.child2_benefit_list[3811031] = {
 		benefit_level = 1,
 		name = "审判 · V",
 		is_show = 1,
@@ -35394,11 +31452,7 @@ end)()
 			38110311
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.child2_benefit_list
-
-	var_10_82[3811051] = {
+	pg.base.child2_benefit_list[3811051] = {
 		benefit_level = 1,
 		name = "皇帝 · I",
 		is_show = 1,
@@ -35427,11 +31481,7 @@ end)()
 			38110511
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.child2_benefit_list
-
-	var_10_83[3811061] = {
+	pg.base.child2_benefit_list[3811061] = {
 		benefit_level = 1,
 		name = "皇帝 · II",
 		is_show = 1,
@@ -35460,11 +31510,7 @@ end)()
 			38110611
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.child2_benefit_list
-
-	var_10_84[3811071] = {
+	pg.base.child2_benefit_list[3811071] = {
 		benefit_level = 1,
 		name = "皇帝 · III",
 		is_show = 1,
@@ -35493,11 +31539,7 @@ end)()
 			38110711
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.child2_benefit_list
-
-	var_10_85[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 1,
 		name = "死神 · I",
 		is_show = 1,
@@ -35526,11 +31568,7 @@ end)()
 			38110911
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.child2_benefit_list
-
-	var_10_86[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 1,
 		name = "死神 · II",
 		is_show = 1,
@@ -35559,11 +31597,7 @@ end)()
 			38111011
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.child2_benefit_list
-
-	var_10_87[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 1,
 		name = "死神 · II",
 		is_show = 0,
@@ -35592,11 +31626,7 @@ end)()
 			38111021
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.child2_benefit_list
-
-	var_10_88[3811111] = {
+	pg.base.child2_benefit_list[3811111] = {
 		benefit_level = 1,
 		name = "死神 · III",
 		is_show = 1,
@@ -35625,11 +31655,7 @@ end)()
 			38111111
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.child2_benefit_list
-
-	var_10_89[3811121] = {
+	pg.base.child2_benefit_list[3811121] = {
 		benefit_level = 1,
 		name = "宝剑 · ACE",
 		is_show = 1,
@@ -35658,11 +31684,7 @@ end)()
 			38111211
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.child2_benefit_list
-
-	var_10_90[3811131] = {
+	pg.base.child2_benefit_list[3811131] = {
 		benefit_level = 1,
 		name = "宝剑 · II",
 		is_show = 1,
@@ -35691,11 +31713,7 @@ end)()
 			38111311
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.child2_benefit_list
-
-	var_10_91[3811141] = {
+	pg.base.child2_benefit_list[3811141] = {
 		benefit_level = 1,
 		name = "宝剑 · III",
 		is_show = 1,
@@ -35724,11 +31742,7 @@ end)()
 			38111411
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.child2_benefit_list
-
-	var_10_92[3811151] = {
+	pg.base.child2_benefit_list[3811151] = {
 		benefit_level = 1,
 		name = "宝剑 · IV",
 		is_show = 1,
@@ -35757,11 +31771,7 @@ end)()
 			38111511
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.child2_benefit_list
-
-	var_10_93[3811161] = {
+	pg.base.child2_benefit_list[3811161] = {
 		benefit_level = 1,
 		name = "宝剑 · V",
 		is_show = 1,
@@ -35790,11 +31800,7 @@ end)()
 			38111611
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.child2_benefit_list
-
-	var_10_94[3811171] = {
+	pg.base.child2_benefit_list[3811171] = {
 		benefit_level = 1,
 		name = "宝剑 · VI",
 		is_show = 1,
@@ -35823,11 +31829,7 @@ end)()
 			38111711
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.child2_benefit_list
-
-	var_10_95[3811181] = {
+	pg.base.child2_benefit_list[3811181] = {
 		benefit_level = 1,
 		name = "宝剑 · VII",
 		is_show = 1,
@@ -35856,11 +31858,7 @@ end)()
 			38111811
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.child2_benefit_list
-
-	var_10_96[3811191] = {
+	pg.base.child2_benefit_list[3811191] = {
 		benefit_level = 1,
 		name = "宝剑 · VIII",
 		is_show = 1,
@@ -35889,11 +31887,7 @@ end)()
 			38111911
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.child2_benefit_list
-
-	var_10_97[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 1,
 		name = "宝剑 · IX",
 		is_show = 1,
@@ -35922,11 +31916,7 @@ end)()
 			38112011
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.child2_benefit_list
-
-	var_10_98[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 1,
 		name = "宝剑 · X",
 		is_show = 1,
@@ -35955,8 +31945,7 @@ end)()
 			38112111
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.child2_benefit_list[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 1,
 		name = "权杖 · ACE",
 		is_show = 1,
@@ -35989,11 +31978,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.child2_benefit_list
-
-	var_11_0[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 1,
 		name = "权杖 · II",
 		is_show = 1,
@@ -36022,11 +32007,7 @@ end)()
 			38112311
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.child2_benefit_list
-
-	var_11_1[3811241] = {
+	pg.base.child2_benefit_list[3811241] = {
 		benefit_level = 1,
 		name = "权杖 · III",
 		is_show = 1,
@@ -36055,11 +32036,7 @@ end)()
 			38112411
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.child2_benefit_list
-
-	var_11_2[3811251] = {
+	pg.base.child2_benefit_list[3811251] = {
 		benefit_level = 1,
 		name = "权杖 · IV",
 		is_show = 1,
@@ -36088,11 +32065,7 @@ end)()
 			38112511
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.child2_benefit_list
-
-	var_11_3[3811261] = {
+	pg.base.child2_benefit_list[3811261] = {
 		benefit_level = 1,
 		name = "权杖 · IX",
 		is_show = 1,
@@ -36121,11 +32094,7 @@ end)()
 			38112611
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.child2_benefit_list
-
-	var_11_4[3811271] = {
+	pg.base.child2_benefit_list[3811271] = {
 		benefit_level = 1,
 		name = "权杖 · V",
 		is_show = 1,
@@ -36154,11 +32123,7 @@ end)()
 			38112711
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.child2_benefit_list
-
-	var_11_5[3811281] = {
+	pg.base.child2_benefit_list[3811281] = {
 		benefit_level = 1,
 		name = "权杖 · VI",
 		is_show = 1,
@@ -36187,11 +32152,7 @@ end)()
 			38112811
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.child2_benefit_list
-
-	var_11_6[3811291] = {
+	pg.base.child2_benefit_list[3811291] = {
 		benefit_level = 1,
 		name = "权杖 · VII",
 		is_show = 1,
@@ -36220,11 +32181,7 @@ end)()
 			38112911
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.child2_benefit_list
-
-	var_11_7[3811301] = {
+	pg.base.child2_benefit_list[3811301] = {
 		benefit_level = 1,
 		name = "权杖 · VIII",
 		is_show = 1,
@@ -36253,11 +32210,7 @@ end)()
 			38113011
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.child2_benefit_list
-
-	var_11_8[3811311] = {
+	pg.base.child2_benefit_list[3811311] = {
 		benefit_level = 1,
 		name = "权杖 · X",
 		is_show = 1,
@@ -36286,11 +32239,7 @@ end)()
 			38113111
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.child2_benefit_list
-
-	var_11_9[3811321] = {
+	pg.base.child2_benefit_list[3811321] = {
 		benefit_level = 1,
 		name = "圣杯 · ACE",
 		is_show = 1,
@@ -36319,11 +32268,7 @@ end)()
 			38113211
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.child2_benefit_list
-
-	var_11_10[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 1,
 		name = "圣杯 · II",
 		is_show = 1,
@@ -36352,11 +32297,7 @@ end)()
 			38113311
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.child2_benefit_list
-
-	var_11_11[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 1,
 		name = "圣杯 · III",
 		is_show = 1,
@@ -36387,11 +32328,7 @@ end)()
 			38113421
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.child2_benefit_list
-
-	var_11_12[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 1,
 		name = "圣杯 · IV",
 		is_show = 1,
@@ -36420,11 +32357,7 @@ end)()
 			38113511
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.child2_benefit_list
-
-	var_11_13[3811361] = {
+	pg.base.child2_benefit_list[3811361] = {
 		benefit_level = 1,
 		name = "圣杯 · V",
 		is_show = 1,
@@ -36453,11 +32386,7 @@ end)()
 			38113611
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.child2_benefit_list
-
-	var_11_14[3811371] = {
+	pg.base.child2_benefit_list[3811371] = {
 		benefit_level = 1,
 		name = "圣杯 · VI",
 		is_show = 1,
@@ -36486,11 +32415,7 @@ end)()
 			38113711
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.child2_benefit_list
-
-	var_11_15[3811381] = {
+	pg.base.child2_benefit_list[3811381] = {
 		benefit_level = 1,
 		name = "圣杯 · VII",
 		is_show = 1,
@@ -36519,11 +32444,7 @@ end)()
 			38113811
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.child2_benefit_list
-
-	var_11_16[3811391] = {
+	pg.base.child2_benefit_list[3811391] = {
 		benefit_level = 1,
 		name = "圣杯 · VIII",
 		is_show = 1,
@@ -36554,11 +32475,7 @@ end)()
 			38113921
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.child2_benefit_list
-
-	var_11_17[3811401] = {
+	pg.base.child2_benefit_list[3811401] = {
 		benefit_level = 1,
 		name = "圣杯 · IX",
 		is_show = 1,
@@ -36589,11 +32506,7 @@ end)()
 			38114021
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.child2_benefit_list
-
-	var_11_18[3811411] = {
+	pg.base.child2_benefit_list[3811411] = {
 		benefit_level = 1,
 		name = "圣杯 · X",
 		is_show = 1,
@@ -36622,11 +32535,7 @@ end)()
 			38114111
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.child2_benefit_list
-
-	var_11_19[3811421] = {
+	pg.base.child2_benefit_list[3811421] = {
 		benefit_level = 1,
 		name = "星币 · ACE",
 		is_show = 1,
@@ -36655,11 +32564,7 @@ end)()
 			38114211
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.child2_benefit_list
-
-	var_11_20[3811431] = {
+	pg.base.child2_benefit_list[3811431] = {
 		benefit_level = 1,
 		name = "星币 · II",
 		is_show = 1,
@@ -36688,11 +32593,7 @@ end)()
 			38114311
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.child2_benefit_list
-
-	var_11_21[3811441] = {
+	pg.base.child2_benefit_list[3811441] = {
 		benefit_level = 1,
 		name = "星币 · III",
 		is_show = 1,
@@ -36721,11 +32622,7 @@ end)()
 			38114411
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.child2_benefit_list
-
-	var_11_22[3811451] = {
+	pg.base.child2_benefit_list[3811451] = {
 		benefit_level = 1,
 		name = "星币 · IV",
 		is_show = 1,
@@ -36754,11 +32651,7 @@ end)()
 			38114511
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.child2_benefit_list
-
-	var_11_23[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 1,
 		name = "星币 · V",
 		is_show = 1,
@@ -36787,11 +32680,7 @@ end)()
 			38114611
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.child2_benefit_list
-
-	var_11_24[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 1,
 		name = "星币 · VI",
 		is_show = 1,
@@ -36820,11 +32709,7 @@ end)()
 			38114711
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.child2_benefit_list
-
-	var_11_25[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 1,
 		name = "星币 · VII",
 		is_show = 1,
@@ -36853,11 +32738,7 @@ end)()
 			38114811
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.child2_benefit_list
-
-	var_11_26[3811491] = {
+	pg.base.child2_benefit_list[3811491] = {
 		benefit_level = 1,
 		name = "星币 · VIII",
 		is_show = 1,
@@ -36886,11 +32767,7 @@ end)()
 			38114911
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.child2_benefit_list
-
-	var_11_27[3811501] = {
+	pg.base.child2_benefit_list[3811501] = {
 		benefit_level = 1,
 		name = "星币 · IX",
 		is_show = 1,
@@ -36919,11 +32796,7 @@ end)()
 			38115011
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.child2_benefit_list
-
-	var_11_28[3811511] = {
+	pg.base.child2_benefit_list[3811511] = {
 		benefit_level = 1,
 		name = "星币 · X",
 		is_show = 1,
@@ -36952,11 +32825,7 @@ end)()
 			38115111
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.child2_benefit_list
-
-	var_11_29[3899001] = {
+	pg.base.child2_benefit_list[3899001] = {
 		benefit_level = 0,
 		name = "临时计数:世界",
 		is_show = 0,
@@ -36985,11 +32854,7 @@ end)()
 			38990011
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.child2_benefit_list
-
-	var_11_30[3899002] = {
+	pg.base.child2_benefit_list[3899002] = {
 		benefit_level = 1,
 		name = "0.01体力",
 		is_show = 0,
@@ -37018,11 +32883,7 @@ end)()
 			38990021
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.child2_benefit_list
-
-	var_11_31[3899003] = {
+	pg.base.child2_benefit_list[3899003] = {
 		benefit_level = 1,
 		name = "0.02体力",
 		is_show = 0,
@@ -37051,11 +32912,7 @@ end)()
 			38990031
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.child2_benefit_list
-
-	var_11_32[3899004] = {
+	pg.base.child2_benefit_list[3899004] = {
 		benefit_level = 1,
 		name = "0.03体力",
 		is_show = 0,
@@ -37084,11 +32941,7 @@ end)()
 			38990041
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.child2_benefit_list
-
-	var_11_33[3899005] = {
+	pg.base.child2_benefit_list[3899005] = {
 		benefit_level = 1,
 		name = "0.04体力",
 		is_show = 0,
@@ -37117,11 +32970,7 @@ end)()
 			38990051
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.child2_benefit_list
-
-	var_11_34[3899006] = {
+	pg.base.child2_benefit_list[3899006] = {
 		benefit_level = 1,
 		name = "0.05体力",
 		is_show = 0,
@@ -37150,11 +32999,7 @@ end)()
 			38990061
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.child2_benefit_list
-
-	var_11_35[3899007] = {
+	pg.base.child2_benefit_list[3899007] = {
 		benefit_level = 1,
 		name = "0.06体力",
 		is_show = 0,
@@ -37183,11 +33028,7 @@ end)()
 			38990071
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.child2_benefit_list
-
-	var_11_36[0] = {
+	pg.base.child2_benefit_list[0] = {
 		benefit_level = 1,
 		name = "0.07体力",
 		is_show = 0,
@@ -37216,11 +33057,7 @@ end)()
 			38990081
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.child2_benefit_list
-
-	var_11_37[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 1,
 		name = "0.08体力",
 		is_show = 0,
@@ -37249,11 +33086,7 @@ end)()
 			38990091
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.child2_benefit_list
-
-	var_11_38[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 1,
 		name = "0.09体力",
 		is_show = 0,
@@ -37282,11 +33115,7 @@ end)()
 			38990101
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.child2_benefit_list
-
-	var_11_39[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 1,
 		name = "0.1体力",
 		is_show = 0,
@@ -37315,11 +33144,7 @@ end)()
 			38990111
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.child2_benefit_list
-
-	var_11_40[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 1,
 		name = "0.01实践",
 		is_show = 0,
@@ -37348,11 +33173,7 @@ end)()
 			38990121
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.child2_benefit_list
-
-	var_11_41[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 1,
 		name = "0.02实践",
 		is_show = 0,
@@ -37381,11 +33202,7 @@ end)()
 			38990131
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.child2_benefit_list
-
-	var_11_42[6] = {
+	pg.base.child2_benefit_list[6] = {
 		benefit_level = 1,
 		name = "0.03实践",
 		is_show = 0,
@@ -37414,11 +33231,7 @@ end)()
 			38990141
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.child2_benefit_list
-
-	var_11_43[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 1,
 		name = "0.04实践",
 		is_show = 0,
@@ -37447,11 +33260,7 @@ end)()
 			38990151
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.child2_benefit_list
-
-	var_11_44[8] = {
+	pg.base.child2_benefit_list[8] = {
 		benefit_level = 1,
 		name = "0.05实践",
 		is_show = 0,
@@ -37480,11 +33289,7 @@ end)()
 			38990161
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.child2_benefit_list
-
-	var_11_45[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 1,
 		name = "0.06实践",
 		is_show = 0,
@@ -37513,11 +33318,7 @@ end)()
 			38990171
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.child2_benefit_list
-
-	var_11_46[10] = {
+	pg.base.child2_benefit_list[10] = {
 		benefit_level = 1,
 		name = "0.07实践",
 		is_show = 0,
@@ -37546,11 +33347,7 @@ end)()
 			38990181
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.child2_benefit_list
-
-	var_11_47[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 1,
 		name = "0.08实践",
 		is_show = 0,
@@ -37579,11 +33376,7 @@ end)()
 			38990191
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.child2_benefit_list
-
-	var_11_48[12] = {
+	pg.base.child2_benefit_list[12] = {
 		benefit_level = 1,
 		name = "0.09实践",
 		is_show = 0,
@@ -37612,11 +33405,7 @@ end)()
 			38990201
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.child2_benefit_list
-
-	var_11_49[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 1,
 		name = "0.1实践",
 		is_show = 0,
@@ -37645,11 +33434,7 @@ end)()
 			38990211
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.child2_benefit_list
-
-	var_11_50[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 1,
 		name = "0.01感知",
 		is_show = 0,
@@ -37678,11 +33463,7 @@ end)()
 			38990221
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.child2_benefit_list
-
-	var_11_51[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 1,
 		name = "0.02感知",
 		is_show = 0,
@@ -37711,11 +33492,7 @@ end)()
 			38990231
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.child2_benefit_list
-
-	var_11_52[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 1,
 		name = "0.03感知",
 		is_show = 0,
@@ -37744,11 +33521,7 @@ end)()
 			38990241
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.child2_benefit_list
-
-	var_11_53[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 1,
 		name = "0.04感知",
 		is_show = 0,
@@ -37777,11 +33550,7 @@ end)()
 			38990251
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.child2_benefit_list
-
-	var_11_54[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 1,
 		name = "0.05感知",
 		is_show = 0,
@@ -37810,11 +33579,7 @@ end)()
 			38990261
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.child2_benefit_list
-
-	var_11_55[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 1,
 		name = "0.06感知",
 		is_show = 0,
@@ -37843,11 +33608,7 @@ end)()
 			38990271
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.child2_benefit_list
-
-	var_11_56[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 1,
 		name = "0.07感知",
 		is_show = 0,
@@ -37876,11 +33637,7 @@ end)()
 			38990281
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.child2_benefit_list
-
-	var_11_57[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 1,
 		name = "0.08感知",
 		is_show = 0,
@@ -37909,11 +33666,7 @@ end)()
 			38990291
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.child2_benefit_list
-
-	var_11_58[22] = {
+	pg.base.child2_benefit_list[22] = {
 		benefit_level = 1,
 		name = "0.09感知",
 		is_show = 0,
@@ -37942,11 +33695,7 @@ end)()
 			38990301
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.child2_benefit_list
-
-	var_11_59[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 1,
 		name = "0.1感知",
 		is_show = 0,
@@ -37975,11 +33724,7 @@ end)()
 			38990311
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.child2_benefit_list
-
-	var_11_60[24] = {
+	pg.base.child2_benefit_list[24] = {
 		benefit_level = 1,
 		name = "0.01知识",
 		is_show = 0,
@@ -38008,11 +33753,7 @@ end)()
 			38990321
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.child2_benefit_list
-
-	var_11_61[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 1,
 		name = "0.02知识",
 		is_show = 0,
@@ -38041,11 +33782,7 @@ end)()
 			38990331
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.child2_benefit_list
-
-	var_11_62[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 1,
 		name = "0.03知识",
 		is_show = 0,
@@ -38074,11 +33811,7 @@ end)()
 			38990341
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.child2_benefit_list
-
-	var_11_63[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 1,
 		name = "0.04知识",
 		is_show = 0,
@@ -38107,11 +33840,7 @@ end)()
 			38990351
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.child2_benefit_list
-
-	var_11_64[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 1,
 		name = "0.05知识",
 		is_show = 0,
@@ -38140,11 +33869,7 @@ end)()
 			38990361
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.child2_benefit_list
-
-	var_11_65[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 1,
 		name = "0.06知识",
 		is_show = 0,
@@ -38173,11 +33898,7 @@ end)()
 			38990371
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.child2_benefit_list
-
-	var_11_66[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 1,
 		name = "0.07知识",
 		is_show = 0,
@@ -38206,11 +33927,7 @@ end)()
 			38990381
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.child2_benefit_list
-
-	var_11_67[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 1,
 		name = "0.08知识",
 		is_show = 0,
@@ -38239,11 +33956,7 @@ end)()
 			38990391
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.child2_benefit_list
-
-	var_11_68[3899040] = {
+	pg.base.child2_benefit_list[3899040] = {
 		benefit_level = 1,
 		name = "0.09知识",
 		is_show = 0,
@@ -38272,11 +33985,7 @@ end)()
 			38990401
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.child2_benefit_list
-
-	var_11_69[3899041] = {
+	pg.base.child2_benefit_list[3899041] = {
 		benefit_level = 1,
 		name = "0.1知识",
 		is_show = 0,
@@ -38305,11 +34014,7 @@ end)()
 			38990411
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.child2_benefit_list
-
-	var_11_70[3899042] = {
+	pg.base.child2_benefit_list[3899042] = {
 		benefit_level = 1,
 		name = "单回合减售价",
 		is_show = 0,
@@ -38338,11 +34043,7 @@ end)()
 			38990421
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.child2_benefit_list
-
-	var_11_71[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 1,
 		name = "全属性获取量+3%",
 		is_show = 0,
@@ -38371,11 +34072,7 @@ end)()
 			38991371
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.child2_benefit_list
-
-	var_11_72[3820021] = {
+	pg.base.child2_benefit_list[3820021] = {
 		benefit_level = 2,
 		name = "节制 · I",
 		is_show = 1,
@@ -38404,11 +34101,7 @@ end)()
 			38200211
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.child2_benefit_list
-
-	var_11_73[3820031] = {
+	pg.base.child2_benefit_list[3820031] = {
 		benefit_level = 2,
 		name = "节制 · II",
 		is_show = 1,
@@ -38437,11 +34130,7 @@ end)()
 			38200311
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.child2_benefit_list
-
-	var_11_74[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 2,
 		name = "节制 · III",
 		is_show = 1,
@@ -38470,11 +34159,7 @@ end)()
 			38200411
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.child2_benefit_list
-
-	var_11_75[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 2,
 		name = "节制 · IV",
 		is_show = 1,
@@ -38503,11 +34188,7 @@ end)()
 			38200511
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.child2_benefit_list
-
-	var_11_76[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 2,
 		name = "节制IV child",
 		is_show = 0,
@@ -38536,11 +34217,7 @@ end)()
 			38200521
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.child2_benefit_list
-
-	var_11_77[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 2,
 		name = "节制 · V",
 		is_show = 1,
@@ -38569,11 +34246,7 @@ end)()
 			38200611
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.child2_benefit_list
-
-	var_11_78[30] = {
+	pg.base.child2_benefit_list[30] = {
 		benefit_level = 2,
 		name = "节制V child",
 		is_show = 0,
@@ -38602,11 +34275,7 @@ end)()
 			38200621
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.child2_benefit_list
-
-	var_11_79[3820081] = {
+	pg.base.child2_benefit_list[3820081] = {
 		benefit_level = 2,
 		name = "太阳 · I",
 		is_show = 1,
@@ -38635,11 +34304,7 @@ end)()
 			38200811
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.child2_benefit_list
-
-	var_11_80[3820091] = {
+	pg.base.child2_benefit_list[3820091] = {
 		benefit_level = 2,
 		name = "太阳 · II",
 		is_show = 1,
@@ -38668,11 +34333,7 @@ end)()
 			38200911
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.child2_benefit_list
-
-	var_11_81[3820101] = {
+	pg.base.child2_benefit_list[3820101] = {
 		benefit_level = 2,
 		name = "太阳 · III",
 		is_show = 1,
@@ -38701,11 +34362,7 @@ end)()
 			38201011
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.child2_benefit_list
-
-	var_11_82[3820111] = {
+	pg.base.child2_benefit_list[3820111] = {
 		benefit_level = 2,
 		name = "太阳 · IV",
 		is_show = 1,
@@ -38734,11 +34391,7 @@ end)()
 			38201111
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.child2_benefit_list
-
-	var_11_83[3820121] = {
+	pg.base.child2_benefit_list[3820121] = {
 		benefit_level = 2,
 		name = "太阳 · V",
 		is_show = 1,
@@ -38767,11 +34420,7 @@ end)()
 			38201211
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.child2_benefit_list
-
-	var_11_84[3820141] = {
+	pg.base.child2_benefit_list[3820141] = {
 		benefit_level = 2,
 		name = "星星 · I",
 		is_show = 1,
@@ -38800,11 +34449,7 @@ end)()
 			38201411
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.child2_benefit_list
-
-	var_11_85[3820151] = {
+	pg.base.child2_benefit_list[3820151] = {
 		benefit_level = 2,
 		name = "星星 · II",
 		is_show = 1,
@@ -38833,11 +34478,7 @@ end)()
 			38201511
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.child2_benefit_list
-
-	var_11_86[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 2,
 		name = "星星 · III",
 		is_show = 1,
@@ -38866,11 +34507,7 @@ end)()
 			38201611
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.child2_benefit_list
-
-	var_11_87[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 2,
 		name = "星星 · IV",
 		is_show = 1,
@@ -38899,11 +34536,7 @@ end)()
 			38201711
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.child2_benefit_list
-
-	var_11_88[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 2,
 		name = "星星 · V",
 		is_show = 1,
@@ -38932,11 +34565,7 @@ end)()
 			38201811
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.child2_benefit_list
-
-	var_11_89[3820201] = {
+	pg.base.child2_benefit_list[3820201] = {
 		benefit_level = 2,
 		name = "高塔 · VI",
 		is_show = 1,
@@ -38967,11 +34596,7 @@ end)()
 			38202012
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.child2_benefit_list
-
-	var_11_90[3820202] = {
+	pg.base.child2_benefit_list[3820202] = {
 		benefit_level = 2,
 		name = "高塔 · VII",
 		is_show = 1,
@@ -39002,11 +34627,7 @@ end)()
 			38202012
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.child2_benefit_list
-
-	var_11_91[3820203] = {
+	pg.base.child2_benefit_list[3820203] = {
 		benefit_level = 2,
 		name = "高塔 · VIII",
 		is_show = 1,
@@ -39037,11 +34658,7 @@ end)()
 			38202012
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.child2_benefit_list
-
-	var_11_92[3820204] = {
+	pg.base.child2_benefit_list[3820204] = {
 		benefit_level = 2,
 		name = "高塔 · IX",
 		is_show = 1,
@@ -39072,11 +34689,7 @@ end)()
 			38202012
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.child2_benefit_list
-
-	var_11_93[3820205] = {
+	pg.base.child2_benefit_list[3820205] = {
 		benefit_level = 2,
 		name = "高塔 · X",
 		is_show = 1,
@@ -39107,11 +34720,7 @@ end)()
 			38202012
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.child2_benefit_list
-
-	var_11_94[3820206] = {
+	pg.base.child2_benefit_list[3820206] = {
 		benefit_level = 2,
 		name = "高塔 · XI",
 		is_show = 1,
@@ -39142,11 +34751,7 @@ end)()
 			38202012
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.child2_benefit_list
-
-	var_11_95[3820211] = {
+	pg.base.child2_benefit_list[3820211] = {
 		benefit_level = 2,
 		name = "高塔 · I",
 		is_show = 1,
@@ -39177,11 +34782,7 @@ end)()
 			38202111
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.child2_benefit_list
-
-	var_11_96[3820221] = {
+	pg.base.child2_benefit_list[3820221] = {
 		benefit_level = 2,
 		name = "高塔 · II",
 		is_show = 1,
@@ -39212,11 +34813,7 @@ end)()
 			38202211
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.child2_benefit_list
-
-	var_11_97[3820231] = {
+	pg.base.child2_benefit_list[3820231] = {
 		benefit_level = 2,
 		name = "高塔 · III",
 		is_show = 1,
@@ -39246,11 +34843,7 @@ end)()
 			38202311
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.child2_benefit_list
-
-	var_11_98[3820241] = {
+	pg.base.child2_benefit_list[3820241] = {
 		benefit_level = 2,
 		name = "高塔 · IV",
 		is_show = 1,
@@ -39280,8 +34873,7 @@ end)()
 			38202411
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.child2_benefit_list[3820251] = {
+	pg.base.child2_benefit_list[3820251] = {
 		benefit_level = 2,
 		name = "高塔 · V",
 		is_show = 1,
@@ -39315,11 +34907,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.child2_benefit_list
-
-	var_12_0[3820252] = {
+	pg.base.child2_benefit_list[3820252] = {
 		benefit_level = 2,
 		name = "高塔eff_child",
 		is_show = 0,
@@ -39348,11 +34936,7 @@ end)()
 			38202521
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.child2_benefit_list
-
-	var_12_1[3820253] = {
+	pg.base.child2_benefit_list[3820253] = {
 		benefit_level = 2,
 		name = "高塔eff_child",
 		is_show = 0,
@@ -39381,11 +34965,7 @@ end)()
 			38202531
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.child2_benefit_list
-
-	var_12_2[3820271] = {
+	pg.base.child2_benefit_list[3820271] = {
 		benefit_level = 2,
 		name = "恶魔 · I",
 		is_show = 1,
@@ -39432,11 +35012,7 @@ end)()
 			38202720
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.child2_benefit_list
-
-	var_12_3[3820281] = {
+	pg.base.child2_benefit_list[3820281] = {
 		benefit_level = 2,
 		name = "恶魔 · II",
 		is_show = 1,
@@ -39465,11 +35041,7 @@ end)()
 			38202811
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.child2_benefit_list
-
-	var_12_4[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 2,
 		name = "恶魔 · III",
 		is_show = 1,
@@ -39502,11 +35074,7 @@ end)()
 			38202913
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.child2_benefit_list
-
-	var_12_5[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 2,
 		name = "恶魔 · IV",
 		is_show = 1,
@@ -39537,11 +35105,7 @@ end)()
 			38203012
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.child2_benefit_list
-
-	var_12_6[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 2,
 		name = "恶魔 · V",
 		is_show = 1,
@@ -39572,11 +35136,7 @@ end)()
 			38203112
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.child2_benefit_list
-
-	var_12_7[3820331] = {
+	pg.base.child2_benefit_list[3820331] = {
 		benefit_level = 2,
 		name = "女皇 · I",
 		is_show = 1,
@@ -39605,11 +35165,7 @@ end)()
 			38203311
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.child2_benefit_list
-
-	var_12_8[3820341] = {
+	pg.base.child2_benefit_list[3820341] = {
 		benefit_level = 2,
 		name = "女皇 · II",
 		is_show = 1,
@@ -39638,11 +35194,7 @@ end)()
 			38203411
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.child2_benefit_list
-
-	var_12_9[3820351] = {
+	pg.base.child2_benefit_list[3820351] = {
 		benefit_level = 2,
 		name = "女皇 · III",
 		is_show = 1,
@@ -39671,11 +35223,7 @@ end)()
 			38203511
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.child2_benefit_list
-
-	var_12_10[3820361] = {
+	pg.base.child2_benefit_list[3820361] = {
 		benefit_level = 2,
 		name = "女皇 · IV",
 		is_show = 1,
@@ -39705,11 +35253,7 @@ end)()
 			38203612
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.child2_benefit_list
-
-	var_12_11[3820371] = {
+	pg.base.child2_benefit_list[3820371] = {
 		benefit_level = 2,
 		name = "女皇 · V",
 		is_show = 1,
@@ -39766,11 +35310,7 @@ end)()
 			38250641
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.child2_benefit_list
-
-	var_12_12[3825066] = {
+	pg.base.child2_benefit_list[3825066] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39799,11 +35339,7 @@ end)()
 			38250661
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.child2_benefit_list
-
-	var_12_13[3825067] = {
+	pg.base.child2_benefit_list[3825067] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39832,11 +35368,7 @@ end)()
 			38250671
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.child2_benefit_list
-
-	var_12_14[3825068] = {
+	pg.base.child2_benefit_list[3825068] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39865,11 +35397,7 @@ end)()
 			38250681
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.child2_benefit_list
-
-	var_12_15[3825069] = {
+	pg.base.child2_benefit_list[3825069] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39898,11 +35426,7 @@ end)()
 			38250691
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.child2_benefit_list
-
-	var_12_16[3825070] = {
+	pg.base.child2_benefit_list[3825070] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39931,11 +35455,7 @@ end)()
 			38250701
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.child2_benefit_list
-
-	var_12_17[3825071] = {
+	pg.base.child2_benefit_list[3825071] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39964,11 +35484,7 @@ end)()
 			38250711
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.child2_benefit_list
-
-	var_12_18[3825072] = {
+	pg.base.child2_benefit_list[3825072] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -39997,11 +35513,7 @@ end)()
 			38250721
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.child2_benefit_list
-
-	var_12_19[3825073] = {
+	pg.base.child2_benefit_list[3825073] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40030,11 +35542,7 @@ end)()
 			38250731
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.child2_benefit_list
-
-	var_12_20[3825074] = {
+	pg.base.child2_benefit_list[3825074] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40063,11 +35571,7 @@ end)()
 			38250741
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.child2_benefit_list
-
-	var_12_21[3825075] = {
+	pg.base.child2_benefit_list[3825075] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40096,11 +35600,7 @@ end)()
 			38250751
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.child2_benefit_list
-
-	var_12_22[3825076] = {
+	pg.base.child2_benefit_list[3825076] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40129,11 +35629,7 @@ end)()
 			38250761
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.child2_benefit_list
-
-	var_12_23[3825077] = {
+	pg.base.child2_benefit_list[3825077] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40162,11 +35658,7 @@ end)()
 			38250771
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.child2_benefit_list
-
-	var_12_24[3825078] = {
+	pg.base.child2_benefit_list[3825078] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40195,11 +35687,7 @@ end)()
 			38250781
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.child2_benefit_list
-
-	var_12_25[3825079] = {
+	pg.base.child2_benefit_list[3825079] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40228,11 +35716,7 @@ end)()
 			38250791
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.child2_benefit_list
-
-	var_12_26[3825080] = {
+	pg.base.child2_benefit_list[3825080] = {
 		benefit_level = 0,
 		name = "女皇 · V",
 		is_show = 0,
@@ -40261,11 +35745,7 @@ end)()
 			38250801
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.child2_benefit_list
-
-	var_12_27[3820391] = {
+	pg.base.child2_benefit_list[3820391] = {
 		benefit_level = 2,
 		name = "倒吊者 · I",
 		is_show = 1,
@@ -40294,11 +35774,7 @@ end)()
 			38203911
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.child2_benefit_list
-
-	var_12_28[3820401] = {
+	pg.base.child2_benefit_list[3820401] = {
 		benefit_level = 2,
 		name = "倒吊者 · II",
 		is_show = 1,
@@ -40327,11 +35803,7 @@ end)()
 			38204011
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.child2_benefit_list
-
-	var_12_29[3820411] = {
+	pg.base.child2_benefit_list[3820411] = {
 		benefit_level = 2,
 		name = "倒吊者 · III",
 		is_show = 1,
@@ -40360,11 +35832,7 @@ end)()
 			38204111
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.child2_benefit_list
-
-	var_12_30[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 2,
 		name = "倒吊者 · IV",
 		is_show = 1,
@@ -40393,11 +35861,7 @@ end)()
 			38204211
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.child2_benefit_list
-
-	var_12_31[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 2,
 		name = "倒吊者 · V",
 		is_show = 1,
@@ -40444,11 +35908,7 @@ end)()
 			38250891
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.child2_benefit_list
-
-	var_12_32[3825081] = {
+	pg.base.child2_benefit_list[3825081] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40477,11 +35937,7 @@ end)()
 			38250901
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.child2_benefit_list
-
-	var_12_33[3825082] = {
+	pg.base.child2_benefit_list[3825082] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40510,11 +35966,7 @@ end)()
 			38250911
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.child2_benefit_list
-
-	var_12_34[3825083] = {
+	pg.base.child2_benefit_list[3825083] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40543,11 +35995,7 @@ end)()
 			38250921
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.child2_benefit_list
-
-	var_12_35[3825084] = {
+	pg.base.child2_benefit_list[3825084] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40576,11 +36024,7 @@ end)()
 			38250931
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.child2_benefit_list
-
-	var_12_36[3825085] = {
+	pg.base.child2_benefit_list[3825085] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40609,11 +36053,7 @@ end)()
 			38250941
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.child2_benefit_list
-
-	var_12_37[3825086] = {
+	pg.base.child2_benefit_list[3825086] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40642,11 +36082,7 @@ end)()
 			38250951
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.child2_benefit_list
-
-	var_12_38[3825087] = {
+	pg.base.child2_benefit_list[3825087] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40675,11 +36111,7 @@ end)()
 			38250961
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.child2_benefit_list
-
-	var_12_39[3825088] = {
+	pg.base.child2_benefit_list[3825088] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40708,11 +36140,7 @@ end)()
 			38250971
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.child2_benefit_list
-
-	var_12_40[3825089] = {
+	pg.base.child2_benefit_list[3825089] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40741,11 +36169,7 @@ end)()
 			38250981
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.child2_benefit_list
-
-	var_12_41[3825090] = {
+	pg.base.child2_benefit_list[3825090] = {
 		benefit_level = 0,
 		name = "倒吊者 · III",
 		is_show = 0,
@@ -40774,11 +36198,7 @@ end)()
 			38250991
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.child2_benefit_list
-
-	var_12_42[3820451] = {
+	pg.base.child2_benefit_list[3820451] = {
 		benefit_level = 2,
 		name = "正义 · I",
 		is_show = 1,
@@ -40807,11 +36227,7 @@ end)()
 			38204511
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.child2_benefit_list
-
-	var_12_43[3820461] = {
+	pg.base.child2_benefit_list[3820461] = {
 		benefit_level = 2,
 		name = "正义 · II",
 		is_show = 1,
@@ -40840,11 +36256,7 @@ end)()
 			38204611
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.child2_benefit_list
-
-	var_12_44[3820471] = {
+	pg.base.child2_benefit_list[3820471] = {
 		benefit_level = 2,
 		name = "正义 · III",
 		is_show = 1,
@@ -40873,11 +36285,7 @@ end)()
 			38204711
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.child2_benefit_list
-
-	var_12_45[3820491] = {
+	pg.base.child2_benefit_list[3820491] = {
 		benefit_level = 2,
 		name = "世界 · I",
 		is_show = 1,
@@ -40906,11 +36314,7 @@ end)()
 			38204911
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.child2_benefit_list
-
-	var_12_46[3820501] = {
+	pg.base.child2_benefit_list[3820501] = {
 		benefit_level = 2,
 		name = "世界 · II",
 		is_show = 1,
@@ -40939,11 +36343,7 @@ end)()
 			38205011
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.child2_benefit_list
-
-	var_12_47[3820511] = {
+	pg.base.child2_benefit_list[3820511] = {
 		benefit_level = 2,
 		name = "世界 · III",
 		is_show = 1,
@@ -40972,11 +36372,7 @@ end)()
 			38205111
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.child2_benefit_list
-
-	var_12_48[3820521] = {
+	pg.base.child2_benefit_list[3820521] = {
 		benefit_level = 2,
 		name = "世界 · IV",
 		is_show = 1,
@@ -41005,11 +36401,7 @@ end)()
 			38205211
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.child2_benefit_list
-
-	var_12_49[3820531] = {
+	pg.base.child2_benefit_list[3820531] = {
 		benefit_level = 2,
 		name = "世界 · V",
 		is_show = 1,
@@ -41038,11 +36430,7 @@ end)()
 			38205311
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.child2_benefit_list
-
-	var_12_50[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 2,
 		name = "命运之轮 · I",
 		is_show = 1,
@@ -41073,11 +36461,7 @@ end)()
 			38205512
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.child2_benefit_list
-
-	var_12_51[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 2,
 		name = "命运之轮 · II",
 		is_show = 1,
@@ -41108,11 +36492,7 @@ end)()
 			38205612
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.child2_benefit_list
-
-	var_12_52[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 2,
 		name = "命运之轮 · III",
 		is_show = 1,
@@ -41141,11 +36521,7 @@ end)()
 			38205711
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.child2_benefit_list
-
-	var_12_53[3820591] = {
+	pg.base.child2_benefit_list[3820591] = {
 		benefit_level = 2,
 		name = "力量 · I",
 		is_show = 1,
@@ -41174,11 +36550,7 @@ end)()
 			38205911
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.child2_benefit_list
-
-	var_12_54[3820601] = {
+	pg.base.child2_benefit_list[3820601] = {
 		benefit_level = 2,
 		name = "力量 · II",
 		is_show = 1,
@@ -41207,11 +36579,7 @@ end)()
 			38206011
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.child2_benefit_list
-
-	var_12_55[3820611] = {
+	pg.base.child2_benefit_list[3820611] = {
 		benefit_level = 2,
 		name = "力量 · III",
 		is_show = 1,
@@ -41240,11 +36608,7 @@ end)()
 			38206111
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.child2_benefit_list
-
-	var_12_56[3820612] = {
+	pg.base.child2_benefit_list[3820612] = {
 		benefit_level = 2,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -41273,11 +36637,7 @@ end)()
 			38206112
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.child2_benefit_list
-
-	var_12_57[3820613] = {
+	pg.base.child2_benefit_list[3820613] = {
 		benefit_level = 2,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -41306,11 +36666,7 @@ end)()
 			38206113
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.child2_benefit_list
-
-	var_12_58[3820614] = {
+	pg.base.child2_benefit_list[3820614] = {
 		benefit_level = 2,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -41339,11 +36695,7 @@ end)()
 			38206114
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.child2_benefit_list
-
-	var_12_59[3820615] = {
+	pg.base.child2_benefit_list[3820615] = {
 		benefit_level = 2,
 		name = "【child】玩家看不到",
 		is_show = 0,
@@ -41372,11 +36724,7 @@ end)()
 			38206115
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.child2_benefit_list
-
-	var_12_60[3820631] = {
+	pg.base.child2_benefit_list[3820631] = {
 		benefit_level = 2,
 		name = "魔术师 · I",
 		is_show = 1,
@@ -41405,11 +36753,7 @@ end)()
 			38206311
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.child2_benefit_list
-
-	var_12_61[3820641] = {
+	pg.base.child2_benefit_list[3820641] = {
 		benefit_level = 2,
 		name = "魔术师 · II",
 		is_show = 1,
@@ -41438,11 +36782,7 @@ end)()
 			38206411
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.child2_benefit_list
-
-	var_12_62[3820651] = {
+	pg.base.child2_benefit_list[3820651] = {
 		benefit_level = 2,
 		name = "魔术师 · III",
 		is_show = 1,
@@ -41471,11 +36811,7 @@ end)()
 			38206511
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.child2_benefit_list
-
-	var_12_63[3820671] = {
+	pg.base.child2_benefit_list[3820671] = {
 		benefit_level = 2,
 		name = "教皇 · I",
 		is_show = 1,
@@ -41506,11 +36842,7 @@ end)()
 			38206712
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.child2_benefit_list
-
-	var_12_64[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 2,
 		name = "教皇 · II",
 		is_show = 1,
@@ -41540,11 +36872,7 @@ end)()
 			38206812
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.child2_benefit_list
-
-	var_12_65[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 2,
 		name = "教皇 · III",
 		is_show = 1,
@@ -41574,11 +36902,7 @@ end)()
 			38206912
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.child2_benefit_list
-
-	var_12_66[3820711] = {
+	pg.base.child2_benefit_list[3820711] = {
 		benefit_level = 2,
 		name = "愚者 · I",
 		is_show = 1,
@@ -41607,11 +36931,7 @@ end)()
 			38207111
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.child2_benefit_list
-
-	var_12_67[3820721] = {
+	pg.base.child2_benefit_list[3820721] = {
 		benefit_level = 2,
 		name = "愚者 · II",
 		is_show = 1,
@@ -41640,11 +36960,7 @@ end)()
 			38207211
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.child2_benefit_list
-
-	var_12_68[3820731] = {
+	pg.base.child2_benefit_list[3820731] = {
 		benefit_level = 2,
 		name = "愚者 · III",
 		is_show = 1,
@@ -41673,11 +36989,7 @@ end)()
 			38207311
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.child2_benefit_list
-
-	var_12_69[3820751] = {
+	pg.base.child2_benefit_list[3820751] = {
 		benefit_level = 2,
 		name = "隐者 · I",
 		is_show = 1,
@@ -41706,11 +37018,7 @@ end)()
 			38207511
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.child2_benefit_list
-
-	var_12_70[3820761] = {
+	pg.base.child2_benefit_list[3820761] = {
 		benefit_level = 2,
 		name = "隐者 · II",
 		is_show = 1,
@@ -41739,11 +37047,7 @@ end)()
 			38207611
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.child2_benefit_list
-
-	var_12_71[3820771] = {
+	pg.base.child2_benefit_list[3820771] = {
 		benefit_level = 2,
 		name = "隐者 · III",
 		is_show = 1,
@@ -41772,11 +37076,7 @@ end)()
 			38207711
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.child2_benefit_list
-
-	var_12_72[3820791] = {
+	pg.base.child2_benefit_list[3820791] = {
 		benefit_level = 2,
 		name = "女祭司 · I",
 		is_show = 1,
@@ -41805,11 +37105,7 @@ end)()
 			38207911
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.child2_benefit_list
-
-	var_12_73[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 2,
 		name = "女祭司 · II",
 		is_show = 1,
@@ -41838,11 +37134,7 @@ end)()
 			38208011
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.child2_benefit_list
-
-	var_12_74[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 2,
 		name = "女祭司 · III",
 		is_show = 1,
@@ -41871,11 +37163,7 @@ end)()
 			38208111
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.child2_benefit_list
-
-	var_12_75[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 2,
 		name = "恋人 · I",
 		is_show = 1,
@@ -41904,11 +37192,7 @@ end)()
 			38208311
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.child2_benefit_list
-
-	var_12_76[3820841] = {
+	pg.base.child2_benefit_list[3820841] = {
 		benefit_level = 2,
 		name = "恋人 · II",
 		is_show = 1,
@@ -41947,11 +37231,7 @@ end)()
 			38208416
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.child2_benefit_list
-
-	var_12_77[3820851] = {
+	pg.base.child2_benefit_list[3820851] = {
 		benefit_level = 2,
 		name = "恋人 · III",
 		is_show = 1,
@@ -41980,11 +37260,7 @@ end)()
 			38208511
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.child2_benefit_list
-
-	var_12_78[3820871] = {
+	pg.base.child2_benefit_list[3820871] = {
 		benefit_level = 2,
 		name = "月亮 · I",
 		is_show = 1,
@@ -42013,11 +37289,7 @@ end)()
 			38208711
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.child2_benefit_list
-
-	var_12_79[3820881] = {
+	pg.base.child2_benefit_list[3820881] = {
 		benefit_level = 2,
 		name = "月亮 · II",
 		is_show = 1,
@@ -42046,11 +37318,7 @@ end)()
 			38208811
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.child2_benefit_list
-
-	var_12_80[3820891] = {
+	pg.base.child2_benefit_list[3820891] = {
 		benefit_level = 2,
 		name = "月亮 · III",
 		is_show = 1,
@@ -42080,11 +37348,7 @@ end)()
 			38208911
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.child2_benefit_list
-
-	var_12_81[3820901] = {
+	pg.base.child2_benefit_list[3820901] = {
 		benefit_level = 2,
 		name = "月亮 · IV",
 		is_show = 1,
@@ -42115,11 +37379,7 @@ end)()
 			38209141
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.child2_benefit_list
-
-	var_12_82[3820911] = {
+	pg.base.child2_benefit_list[3820911] = {
 		benefit_level = 2,
 		name = "月亮 · V",
 		is_show = 1,
@@ -42150,11 +37410,7 @@ end)()
 			38209151
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.child2_benefit_list
-
-	var_12_83[3820912] = {
+	pg.base.child2_benefit_list[3820912] = {
 		benefit_level = 2,
 		name = "月亮4实际效果",
 		is_show = 0,
@@ -42183,11 +37439,7 @@ end)()
 			38209121
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.child2_benefit_list
-
-	var_12_84[3820913] = {
+	pg.base.child2_benefit_list[3820913] = {
 		benefit_level = 2,
 		name = "月亮5实际效果",
 		is_show = 0,
@@ -42216,11 +37468,7 @@ end)()
 			38209131
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.child2_benefit_list
-
-	var_12_85[3820914] = {
+	pg.base.child2_benefit_list[3820914] = {
 		benefit_level = 2,
 		name = "月亮4标记用buff",
 		is_show = 0,
@@ -42245,11 +37493,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.child2_benefit_list
-
-	var_12_86[3820915] = {
+	pg.base.child2_benefit_list[3820915] = {
 		benefit_level = 2,
 		name = "月亮5标记用buff",
 		is_show = 0,
@@ -42274,11 +37518,7 @@ end)()
 		content = {},
 		show_content = {}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.child2_benefit_list
-
-	var_12_87[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 2,
 		name = "战车 · I",
 		is_show = 1,
@@ -42307,11 +37547,7 @@ end)()
 			38209311
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.child2_benefit_list
-
-	var_12_88[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 2,
 		name = "战车 · II",
 		is_show = 1,
@@ -42340,11 +37576,7 @@ end)()
 			38209411
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.child2_benefit_list
-
-	var_12_89[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 2,
 		name = "战车 · III",
 		is_show = 1,
@@ -42375,11 +37607,7 @@ end)()
 			38209512
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.child2_benefit_list
-
-	var_12_90[3820961] = {
+	pg.base.child2_benefit_list[3820961] = {
 		benefit_level = 2,
 		name = "战车 · IV",
 		is_show = 1,
@@ -42408,11 +37636,7 @@ end)()
 			38209611
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.child2_benefit_list
-
-	var_12_91[3820971] = {
+	pg.base.child2_benefit_list[3820971] = {
 		benefit_level = 2,
 		name = "战车 · V",
 		is_show = 1,
@@ -42442,11 +37666,7 @@ end)()
 			38209721
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.child2_benefit_list
-
-	var_12_92[3820991] = {
+	pg.base.child2_benefit_list[3820991] = {
 		benefit_level = 2,
 		name = "审判 · I",
 		is_show = 1,
@@ -42475,11 +37695,7 @@ end)()
 			38209911
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.child2_benefit_list
-
-	var_12_93[3821001] = {
+	pg.base.child2_benefit_list[3821001] = {
 		benefit_level = 2,
 		name = "审判 · II",
 		is_show = 1,
@@ -42508,11 +37724,7 @@ end)()
 			38210011
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.child2_benefit_list
-
-	var_12_94[3821011] = {
+	pg.base.child2_benefit_list[3821011] = {
 		benefit_level = 2,
 		name = "审判 · III",
 		is_show = 1,
@@ -42541,11 +37753,7 @@ end)()
 			38210111
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.child2_benefit_list
-
-	var_12_95[3821021] = {
+	pg.base.child2_benefit_list[3821021] = {
 		benefit_level = 2,
 		name = "审判 · IV",
 		is_show = 1,
@@ -42574,11 +37782,7 @@ end)()
 			38210211
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.child2_benefit_list
-
-	var_12_96[3821031] = {
+	pg.base.child2_benefit_list[3821031] = {
 		benefit_level = 2,
 		name = "审判 · V",
 		is_show = 1,
@@ -42607,11 +37811,7 @@ end)()
 			38210311
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.child2_benefit_list
-
-	var_12_97[3821051] = {
+	pg.base.child2_benefit_list[3821051] = {
 		benefit_level = 2,
 		name = "皇帝 · I",
 		is_show = 1,
@@ -42640,11 +37840,7 @@ end)()
 			38210511
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.child2_benefit_list
-
-	var_12_98[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 2,
 		name = "皇帝 · II",
 		is_show = 1,
@@ -42673,8 +37869,7 @@ end)()
 			38210611
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.child2_benefit_list[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 2,
 		name = "皇帝 · III",
 		is_show = 1,
@@ -42707,11 +37902,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.child2_benefit_list
-
-	var_13_0[3821091] = {
+	pg.base.child2_benefit_list[3821091] = {
 		benefit_level = 2,
 		name = "死神 · I",
 		is_show = 1,
@@ -42740,11 +37931,7 @@ end)()
 			38210911
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.child2_benefit_list
-
-	var_13_1[3821101] = {
+	pg.base.child2_benefit_list[3821101] = {
 		benefit_level = 2,
 		name = "死神 · II",
 		is_show = 1,
@@ -42773,11 +37960,7 @@ end)()
 			38211011
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.child2_benefit_list
-
-	var_13_2[3821102] = {
+	pg.base.child2_benefit_list[3821102] = {
 		benefit_level = 2,
 		name = "死神 · II",
 		is_show = 0,
@@ -42806,11 +37989,7 @@ end)()
 			38211021
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.child2_benefit_list
-
-	var_13_3[3821111] = {
+	pg.base.child2_benefit_list[3821111] = {
 		benefit_level = 2,
 		name = "死神 · III",
 		is_show = 1,
@@ -42839,11 +38018,7 @@ end)()
 			38211111
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.child2_benefit_list
-
-	var_13_4[3821121] = {
+	pg.base.child2_benefit_list[3821121] = {
 		benefit_level = 2,
 		name = "宝剑 · ACE",
 		is_show = 1,
@@ -42872,11 +38047,7 @@ end)()
 			38211211
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.child2_benefit_list
-
-	var_13_5[3821131] = {
+	pg.base.child2_benefit_list[3821131] = {
 		benefit_level = 2,
 		name = "宝剑 · II",
 		is_show = 1,
@@ -42905,11 +38076,7 @@ end)()
 			38211311
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.child2_benefit_list
-
-	var_13_6[3821141] = {
+	pg.base.child2_benefit_list[3821141] = {
 		benefit_level = 2,
 		name = "宝剑 · III",
 		is_show = 1,
@@ -42938,11 +38105,7 @@ end)()
 			38211411
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.child2_benefit_list
-
-	var_13_7[3821151] = {
+	pg.base.child2_benefit_list[3821151] = {
 		benefit_level = 2,
 		name = "宝剑 · IV",
 		is_show = 1,
@@ -42971,11 +38134,7 @@ end)()
 			38211511
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.child2_benefit_list
-
-	var_13_8[3821161] = {
+	pg.base.child2_benefit_list[3821161] = {
 		benefit_level = 2,
 		name = "宝剑 · V",
 		is_show = 1,
@@ -43004,11 +38163,7 @@ end)()
 			38211611
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.child2_benefit_list
-
-	var_13_9[3821171] = {
+	pg.base.child2_benefit_list[3821171] = {
 		benefit_level = 2,
 		name = "宝剑 · VI",
 		is_show = 1,
@@ -43037,11 +38192,7 @@ end)()
 			38211711
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.child2_benefit_list
-
-	var_13_10[3821181] = {
+	pg.base.child2_benefit_list[3821181] = {
 		benefit_level = 2,
 		name = "宝剑 · VII",
 		is_show = 1,
@@ -43070,11 +38221,7 @@ end)()
 			38211811
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.child2_benefit_list
-
-	var_13_11[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 2,
 		name = "宝剑 · VIII",
 		is_show = 1,
@@ -43103,11 +38250,7 @@ end)()
 			38211911
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.child2_benefit_list
-
-	var_13_12[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 2,
 		name = "宝剑 · IX",
 		is_show = 1,
@@ -43136,11 +38279,7 @@ end)()
 			38212011
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.child2_benefit_list
-
-	var_13_13[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 2,
 		name = "宝剑 · X",
 		is_show = 1,
@@ -43169,11 +38308,7 @@ end)()
 			38212111
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.child2_benefit_list
-
-	var_13_14[3821221] = {
+	pg.base.child2_benefit_list[3821221] = {
 		benefit_level = 2,
 		name = "权杖 · ACE",
 		is_show = 1,
@@ -43202,11 +38337,7 @@ end)()
 			38212211
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.child2_benefit_list
-
-	var_13_15[3821231] = {
+	pg.base.child2_benefit_list[3821231] = {
 		benefit_level = 2,
 		name = "权杖 · II",
 		is_show = 1,
@@ -43235,11 +38366,7 @@ end)()
 			38212311
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.child2_benefit_list
-
-	var_13_16[3821241] = {
+	pg.base.child2_benefit_list[3821241] = {
 		benefit_level = 2,
 		name = "权杖 · III",
 		is_show = 1,
@@ -43268,11 +38395,7 @@ end)()
 			38212411
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.child2_benefit_list
-
-	var_13_17[3821251] = {
+	pg.base.child2_benefit_list[3821251] = {
 		benefit_level = 2,
 		name = "权杖 · IV",
 		is_show = 1,
@@ -43301,11 +38424,7 @@ end)()
 			38212511
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.child2_benefit_list
-
-	var_13_18[3821261] = {
+	pg.base.child2_benefit_list[3821261] = {
 		benefit_level = 2,
 		name = "权杖 · IX",
 		is_show = 1,
@@ -43334,11 +38453,7 @@ end)()
 			38212611
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.child2_benefit_list
-
-	var_13_19[3821271] = {
+	pg.base.child2_benefit_list[3821271] = {
 		benefit_level = 2,
 		name = "权杖 · V",
 		is_show = 1,
@@ -43367,11 +38482,7 @@ end)()
 			38212711
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.child2_benefit_list
-
-	var_13_20[3821281] = {
+	pg.base.child2_benefit_list[3821281] = {
 		benefit_level = 2,
 		name = "权杖 · VI",
 		is_show = 1,
@@ -43400,11 +38511,7 @@ end)()
 			38212811
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.child2_benefit_list
-
-	var_13_21[3821291] = {
+	pg.base.child2_benefit_list[3821291] = {
 		benefit_level = 2,
 		name = "权杖 · VII",
 		is_show = 1,
@@ -43433,11 +38540,7 @@ end)()
 			38212911
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.child2_benefit_list
-
-	var_13_22[3821301] = {
+	pg.base.child2_benefit_list[3821301] = {
 		benefit_level = 2,
 		name = "权杖 · VIII",
 		is_show = 1,
@@ -43466,11 +38569,7 @@ end)()
 			38213011
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.child2_benefit_list
-
-	var_13_23[3821311] = {
+	pg.base.child2_benefit_list[3821311] = {
 		benefit_level = 2,
 		name = "权杖 · X",
 		is_show = 1,
@@ -43499,11 +38598,7 @@ end)()
 			38213111
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.child2_benefit_list
-
-	var_13_24[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 2,
 		name = "圣杯 · ACE",
 		is_show = 1,
@@ -43532,11 +38627,7 @@ end)()
 			38213211
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.child2_benefit_list
-
-	var_13_25[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 2,
 		name = "圣杯 · II",
 		is_show = 1,
@@ -43565,11 +38656,7 @@ end)()
 			38213311
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.child2_benefit_list
-
-	var_13_26[29] = {
+	pg.base.child2_benefit_list[29] = {
 		benefit_level = 2,
 		name = "圣杯 · III",
 		is_show = 1,
@@ -43600,11 +38687,7 @@ end)()
 			38213421
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.child2_benefit_list
-
-	var_13_27[3821351] = {
+	pg.base.child2_benefit_list[3821351] = {
 		benefit_level = 2,
 		name = "圣杯 · IV",
 		is_show = 1,
@@ -43633,11 +38716,7 @@ end)()
 			38213511
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.child2_benefit_list
-
-	var_13_28[3821361] = {
+	pg.base.child2_benefit_list[3821361] = {
 		benefit_level = 2,
 		name = "圣杯 · V",
 		is_show = 1,
@@ -43666,11 +38745,7 @@ end)()
 			38213611
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.child2_benefit_list
-
-	var_13_29[3821371] = {
+	pg.base.child2_benefit_list[3821371] = {
 		benefit_level = 2,
 		name = "圣杯 · VI",
 		is_show = 1,
@@ -43699,11 +38774,7 @@ end)()
 			38213711
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.child2_benefit_list
-
-	var_13_30[3821381] = {
+	pg.base.child2_benefit_list[3821381] = {
 		benefit_level = 2,
 		name = "圣杯 · VII",
 		is_show = 1,
@@ -43732,11 +38803,7 @@ end)()
 			38213811
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.child2_benefit_list
-
-	var_13_31[3821391] = {
+	pg.base.child2_benefit_list[3821391] = {
 		benefit_level = 2,
 		name = "圣杯 · VIII",
 		is_show = 1,
@@ -43767,11 +38834,7 @@ end)()
 			38213921
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.child2_benefit_list
-
-	var_13_32[3821401] = {
+	pg.base.child2_benefit_list[3821401] = {
 		benefit_level = 2,
 		name = "圣杯 · IX",
 		is_show = 1,
@@ -43802,11 +38865,7 @@ end)()
 			38214021
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.child2_benefit_list
-
-	var_13_33[3821411] = {
+	pg.base.child2_benefit_list[3821411] = {
 		benefit_level = 2,
 		name = "圣杯 · X",
 		is_show = 1,
@@ -43835,11 +38894,7 @@ end)()
 			38214111
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.child2_benefit_list
-
-	var_13_34[3821421] = {
+	pg.base.child2_benefit_list[3821421] = {
 		benefit_level = 2,
 		name = "星币 · ACE",
 		is_show = 1,
@@ -43868,11 +38923,7 @@ end)()
 			38214211
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.child2_benefit_list
-
-	var_13_35[3821431] = {
+	pg.base.child2_benefit_list[3821431] = {
 		benefit_level = 2,
 		name = "星币 · II",
 		is_show = 1,
@@ -43901,11 +38952,7 @@ end)()
 			38214311
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.child2_benefit_list
-
-	var_13_36[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 2,
 		name = "星币 · III",
 		is_show = 1,
@@ -43934,11 +38981,7 @@ end)()
 			38214411
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.child2_benefit_list
-
-	var_13_37[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 2,
 		name = "星币 · IV",
 		is_show = 1,
@@ -43967,11 +39010,7 @@ end)()
 			38214511
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.child2_benefit_list
-
-	var_13_38[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 2,
 		name = "星币 · V",
 		is_show = 1,
@@ -44000,11 +39039,7 @@ end)()
 			38214611
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.child2_benefit_list
-
-	var_13_39[31] = {
+	pg.base.child2_benefit_list[31] = {
 		benefit_level = 2,
 		name = "星币 · VI",
 		is_show = 1,
@@ -44033,11 +39068,7 @@ end)()
 			38214711
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.child2_benefit_list
-
-	var_13_40[3821481] = {
+	pg.base.child2_benefit_list[3821481] = {
 		benefit_level = 2,
 		name = "星币 · VII",
 		is_show = 1,
@@ -44066,11 +39097,7 @@ end)()
 			38214811
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.child2_benefit_list
-
-	var_13_41[3821491] = {
+	pg.base.child2_benefit_list[3821491] = {
 		benefit_level = 2,
 		name = "星币 · VIII",
 		is_show = 1,
@@ -44099,11 +39126,7 @@ end)()
 			38214911
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.child2_benefit_list
-
-	var_13_42[3821501] = {
+	pg.base.child2_benefit_list[3821501] = {
 		benefit_level = 2,
 		name = "星币 · IX",
 		is_show = 1,
@@ -44132,11 +39155,7 @@ end)()
 			38215011
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.child2_benefit_list
-
-	var_13_43[3821511] = {
+	pg.base.child2_benefit_list[3821511] = {
 		benefit_level = 2,
 		name = "星币 · X",
 		is_show = 1,
@@ -44165,11 +39184,7 @@ end)()
 			38215111
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.child2_benefit_list
-
-	var_13_44[3830001] = {
+	pg.base.child2_benefit_list[3830001] = {
 		benefit_level = 0,
 		name = "释义解读I",
 		is_show = 1,
@@ -44198,11 +39213,7 @@ end)()
 			38300011
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.child2_benefit_list
-
-	var_13_45[3830002] = {
+	pg.base.child2_benefit_list[3830002] = {
 		benefit_level = 0,
 		name = "释义解读II",
 		is_show = 1,
@@ -44231,11 +39242,7 @@ end)()
 			38300021
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.child2_benefit_list
-
-	var_13_46[3830003] = {
+	pg.base.child2_benefit_list[3830003] = {
 		benefit_level = 0,
 		name = "释义解读III",
 		is_show = 1,
@@ -44264,11 +39271,7 @@ end)()
 			38300031
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.child2_benefit_list
-
-	var_13_47[3830004] = {
+	pg.base.child2_benefit_list[3830004] = {
 		benefit_level = 0,
 		name = "顿悟III",
 		is_show = 1,
@@ -44297,11 +39300,7 @@ end)()
 			38300041
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.child2_benefit_list
-
-	var_13_48[3830005] = {
+	pg.base.child2_benefit_list[3830005] = {
 		benefit_level = 0,
 		name = "顿悟II",
 		is_show = 1,
@@ -44330,11 +39329,7 @@ end)()
 			38300051
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.child2_benefit_list
-
-	var_13_49[3830006] = {
+	pg.base.child2_benefit_list[3830006] = {
 		benefit_level = 0,
 		name = "顿悟I",
 		is_show = 1,
@@ -44363,11 +39358,7 @@ end)()
 			38300061
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.child2_benefit_list
-
-	var_13_50[3830008] = {
+	pg.base.child2_benefit_list[3830008] = {
 		benefit_level = 0,
 		name = "释义解读 · 节制",
 		is_show = 1,
@@ -44396,11 +39387,7 @@ end)()
 			38300081
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.child2_benefit_list
-
-	var_13_51[3830009] = {
+	pg.base.child2_benefit_list[3830009] = {
 		benefit_level = 0,
 		name = "释义解读 · 太阳",
 		is_show = 1,
@@ -44429,11 +39416,7 @@ end)()
 			38300091
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.child2_benefit_list
-
-	var_13_52[3830010] = {
+	pg.base.child2_benefit_list[3830010] = {
 		benefit_level = 0,
 		name = "释义解读 · 星星",
 		is_show = 1,
@@ -44462,11 +39445,7 @@ end)()
 			38300101
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.child2_benefit_list
-
-	var_13_53[3830011] = {
+	pg.base.child2_benefit_list[3830011] = {
 		benefit_level = 0,
 		name = "释义解读 · 高塔",
 		is_show = 1,
@@ -44495,11 +39474,7 @@ end)()
 			38300111
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.child2_benefit_list
-
-	var_13_54[3830012] = {
+	pg.base.child2_benefit_list[3830012] = {
 		benefit_level = 0,
 		name = "释义解读 · 恶魔",
 		is_show = 1,
@@ -44528,11 +39503,7 @@ end)()
 			38300121
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.child2_benefit_list
-
-	var_13_55[3830013] = {
+	pg.base.child2_benefit_list[3830013] = {
 		benefit_level = 0,
 		name = "释义解读 · 女皇",
 		is_show = 1,
@@ -44561,11 +39532,7 @@ end)()
 			38300131
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.child2_benefit_list
-
-	var_13_56[3830014] = {
+	pg.base.child2_benefit_list[3830014] = {
 		benefit_level = 0,
 		name = "释义解读 · 倒吊者",
 		is_show = 1,
@@ -44594,11 +39561,7 @@ end)()
 			38300141
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.child2_benefit_list
-
-	var_13_57[3830015] = {
+	pg.base.child2_benefit_list[3830015] = {
 		benefit_level = 0,
 		name = "释义解读 · 世界",
 		is_show = 1,
@@ -44627,11 +39590,7 @@ end)()
 			38300151
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.child2_benefit_list
-
-	var_13_58[0] = {
+	pg.base.child2_benefit_list[0] = {
 		benefit_level = 0,
 		name = "释义解读 · 月亮",
 		is_show = 1,
@@ -44660,11 +39619,7 @@ end)()
 			38300161
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.child2_benefit_list
-
-	var_13_59[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 0,
 		name = "释义解读 · 战车",
 		is_show = 1,
@@ -44693,11 +39648,7 @@ end)()
 			38300171
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.child2_benefit_list
-
-	var_13_60[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 0,
 		name = "释义解读 · 审判",
 		is_show = 1,
@@ -44726,11 +39677,7 @@ end)()
 			38300181
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.child2_benefit_list
-
-	var_13_61[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 0,
 		name = "释义解读 · 正义",
 		is_show = 1,
@@ -44759,11 +39706,7 @@ end)()
 			38300191
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.child2_benefit_list
-
-	var_13_62[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 0,
 		name = "释义解读 · 女祭司",
 		is_show = 1,
@@ -44792,11 +39735,7 @@ end)()
 			38300201
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.child2_benefit_list
-
-	var_13_63[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 0,
 		name = "释义解读 · 命运之轮",
 		is_show = 1,
@@ -44825,11 +39764,7 @@ end)()
 			38300211
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.child2_benefit_list
-
-	var_13_64[6] = {
+	pg.base.child2_benefit_list[6] = {
 		benefit_level = 0,
 		name = "释义解读 · 力量",
 		is_show = 1,
@@ -44858,11 +39793,7 @@ end)()
 			38300221
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.child2_benefit_list
-
-	var_13_65[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 0,
 		name = "释义解读 · 魔术师",
 		is_show = 1,
@@ -44891,11 +39822,7 @@ end)()
 			38300231
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.child2_benefit_list
-
-	var_13_66[8] = {
+	pg.base.child2_benefit_list[8] = {
 		benefit_level = 0,
 		name = "释义解读 · 教皇",
 		is_show = 1,
@@ -44924,11 +39851,7 @@ end)()
 			38300241
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.child2_benefit_list
-
-	var_13_67[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 0,
 		name = "释义解读 · 愚者",
 		is_show = 1,
@@ -44957,11 +39880,7 @@ end)()
 			38300251
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.child2_benefit_list
-
-	var_13_68[10] = {
+	pg.base.child2_benefit_list[10] = {
 		benefit_level = 0,
 		name = "释义解读 · 死神",
 		is_show = 1,
@@ -44990,11 +39909,7 @@ end)()
 			38300261
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.child2_benefit_list
-
-	var_13_69[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 0,
 		name = "释义解读 · 皇帝",
 		is_show = 1,
@@ -45023,11 +39938,7 @@ end)()
 			38300271
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.child2_benefit_list
-
-	var_13_70[12] = {
+	pg.base.child2_benefit_list[12] = {
 		benefit_level = 0,
 		name = "释义解读 · 隐者",
 		is_show = 1,
@@ -45056,11 +39967,7 @@ end)()
 			38300281
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.child2_benefit_list
-
-	var_13_71[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 0,
 		name = "释义解读 · 恋人",
 		is_show = 1,
@@ -45089,11 +39996,7 @@ end)()
 			38300291
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.child2_benefit_list
-
-	var_13_72[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 0,
 		name = "释义解读 · 宝剑",
 		is_show = 1,
@@ -45122,11 +40025,7 @@ end)()
 			38300301
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.child2_benefit_list
-
-	var_13_73[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 0,
 		name = "释义解读 · 权杖",
 		is_show = 1,
@@ -45155,11 +40054,7 @@ end)()
 			38300311
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.child2_benefit_list
-
-	var_13_74[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 0,
 		name = "释义解读 · 圣杯",
 		is_show = 1,
@@ -45188,11 +40083,7 @@ end)()
 			38300321
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.child2_benefit_list
-
-	var_13_75[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 0,
 		name = "释义解读 · 星币",
 		is_show = 1,
@@ -45221,11 +40112,7 @@ end)()
 			38300331
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.child2_benefit_list
-
-	var_13_76[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 0,
 		name = "顿悟 · 感知",
 		is_show = 1,
@@ -45254,11 +40141,7 @@ end)()
 			38300341
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.child2_benefit_list
-
-	var_13_77[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 0,
 		name = "顿悟 · 体能",
 		is_show = 1,
@@ -45287,11 +40170,7 @@ end)()
 			38300351
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.child2_benefit_list
-
-	var_13_78[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 0,
 		name = "顿悟 · 知识",
 		is_show = 1,
@@ -45320,11 +40199,7 @@ end)()
 			38300361
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.child2_benefit_list
-
-	var_13_79[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 0,
 		name = "顿悟 · 实践",
 		is_show = 1,
@@ -45353,11 +40228,7 @@ end)()
 			38300371
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.child2_benefit_list
-
-	var_13_80[3839997] = {
+	pg.base.child2_benefit_list[3839997] = {
 		benefit_level = 0,
 		name = "游玩奖励",
 		is_show = 0,
@@ -45386,11 +40257,7 @@ end)()
 			38399971
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.child2_benefit_list
-
-	var_13_81[3839998] = {
+	pg.base.child2_benefit_list[3839998] = {
 		benefit_level = 0,
 		name = "游玩奖励",
 		is_show = 0,
@@ -45419,11 +40286,7 @@ end)()
 			38399981
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.child2_benefit_list
-
-	var_13_82[3839999] = {
+	pg.base.child2_benefit_list[3839999] = {
 		benefit_level = 0,
 		name = "游玩奖励",
 		is_show = 0,
@@ -45452,11 +40315,7 @@ end)()
 			38399991
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.child2_benefit_list
-
-	var_13_83[1] = {
+	pg.base.child2_benefit_list[1] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45485,11 +40344,7 @@ end)()
 			38400011
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.child2_benefit_list
-
-	var_13_84[2] = {
+	pg.base.child2_benefit_list[2] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45518,11 +40373,7 @@ end)()
 			38400021
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.child2_benefit_list
-
-	var_13_85[3] = {
+	pg.base.child2_benefit_list[3] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45551,11 +40402,7 @@ end)()
 			38400031
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.child2_benefit_list
-
-	var_13_86[4] = {
+	pg.base.child2_benefit_list[4] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45584,11 +40431,7 @@ end)()
 			38400041
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.child2_benefit_list
-
-	var_13_87[5] = {
+	pg.base.child2_benefit_list[5] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45617,11 +40460,7 @@ end)()
 			38400051
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.child2_benefit_list
-
-	var_13_88[6] = {
+	pg.base.child2_benefit_list[6] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45650,11 +40489,7 @@ end)()
 			38400061
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.child2_benefit_list
-
-	var_13_89[7] = {
+	pg.base.child2_benefit_list[7] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45683,11 +40518,7 @@ end)()
 			38400071
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.child2_benefit_list
-
-	var_13_90[8] = {
+	pg.base.child2_benefit_list[8] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45716,11 +40547,7 @@ end)()
 			38400081
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.child2_benefit_list
-
-	var_13_91[9] = {
+	pg.base.child2_benefit_list[9] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45749,11 +40576,7 @@ end)()
 			38400091
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.child2_benefit_list
-
-	var_13_92[10] = {
+	pg.base.child2_benefit_list[10] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45782,11 +40605,7 @@ end)()
 			38400101
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.child2_benefit_list
-
-	var_13_93[11] = {
+	pg.base.child2_benefit_list[11] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45815,11 +40634,7 @@ end)()
 			38400111
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.child2_benefit_list
-
-	var_13_94[12] = {
+	pg.base.child2_benefit_list[12] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45848,11 +40663,7 @@ end)()
 			38400121
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.child2_benefit_list
-
-	var_13_95[13] = {
+	pg.base.child2_benefit_list[13] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45881,11 +40692,7 @@ end)()
 			38400131
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.child2_benefit_list
-
-	var_13_96[14] = {
+	pg.base.child2_benefit_list[14] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45914,11 +40721,7 @@ end)()
 			38400141
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.child2_benefit_list
-
-	var_13_97[15] = {
+	pg.base.child2_benefit_list[15] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45947,11 +40750,7 @@ end)()
 			38400151
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.child2_benefit_list
-
-	var_13_98[16] = {
+	pg.base.child2_benefit_list[16] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -45980,8 +40779,7 @@ end)()
 			38400161
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.child2_benefit_list[17] = {
+	pg.base.child2_benefit_list[17] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46014,11 +40812,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.child2_benefit_list
-
-	var_14_0[18] = {
+	pg.base.child2_benefit_list[18] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46047,11 +40841,7 @@ end)()
 			38400181
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.child2_benefit_list
-
-	var_14_1[19] = {
+	pg.base.child2_benefit_list[19] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46080,11 +40870,7 @@ end)()
 			38400191
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.child2_benefit_list
-
-	var_14_2[20] = {
+	pg.base.child2_benefit_list[20] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46113,11 +40899,7 @@ end)()
 			38400201
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.child2_benefit_list
-
-	var_14_3[21] = {
+	pg.base.child2_benefit_list[21] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46146,11 +40928,7 @@ end)()
 			38400211
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.child2_benefit_list
-
-	var_14_4[22] = {
+	pg.base.child2_benefit_list[22] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46179,11 +40957,7 @@ end)()
 			38400221
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.child2_benefit_list
-
-	var_14_5[23] = {
+	pg.base.child2_benefit_list[23] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46212,11 +40986,7 @@ end)()
 			38400231
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.child2_benefit_list
-
-	var_14_6[24] = {
+	pg.base.child2_benefit_list[24] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46245,11 +41015,7 @@ end)()
 			38400241
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.child2_benefit_list
-
-	var_14_7[25] = {
+	pg.base.child2_benefit_list[25] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46278,11 +41044,7 @@ end)()
 			38400251
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.child2_benefit_list
-
-	var_14_8[26] = {
+	pg.base.child2_benefit_list[26] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46311,11 +41073,7 @@ end)()
 			38400261
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.child2_benefit_list
-
-	var_14_9[27] = {
+	pg.base.child2_benefit_list[27] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,
@@ -46344,8 +41102,7 @@ end)()
 			38400271
 		}
 	}
-	pg = var_14_9
-	var_14_9.base.child2_benefit_list[28] = {
+	pg.base.child2_benefit_list[28] = {
 		benefit_level = 2,
 		name = "玩家看不到-商店用掉落",
 		is_show = 0,

@@ -1,422 +1,142 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ContinuousOperationWindow", import("view.base.BaseUI"))
+local var_0_1 = 15
 
-local var_0_0 = "ContinuousOperationWindow"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-local var_0_2 = 15
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ContinuousOperationWindowUI"
 end
 
-function var_0_1.ResUISettings(arg_2_0)
-	local var_2_0 = {
+function var_0_0.ResUISettings(arg_2_0)
+	return {
 		reset = true,
-		gemOffsetX = 628
+		gemOffsetX = 628,
+		showType = PlayerResUI.TYPE_OIL
 	}
-
-	PlayerResUI = var_1_10002
-	var_2_0.showType = var_1_10002.TYPE_OIL
-
-	return var_2_0
 end
 
-function var_0_1.init(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.init(arg_3_0)
+	arg_3_0.panel = arg_3_0._tf:Find("window/panel")
+	arg_3_0._countSelect = arg_3_0.panel:Find("content")
+	arg_3_0._pageUtil = PageUtil.New(arg_3_0._countSelect:Find("value_bg/left"), arg_3_0._countSelect:Find("value_bg/right"), arg_3_0._countSelect:Find("max"), arg_3_0._countSelect:Find("value_bg/value"))
+	arg_3_0.consumeText = arg_3_0.panel:Find("content/consume"):GetComponent("RichText")
 
-	arg_3_0.panel = var_1.Find(var_3_0, "window/panel")
-
-	local var_3_1 = arg_3_0.panel
-
-	arg_3_0._countSelect = var_1.Find(var_3_1, "content")
-	PageUtil = var_1
-
-	local var_3_2 = var_1.New
-	local var_3_3 = arg_3_0._countSelect
-	local var_3_4 = var_3.Find(var_3_3, "value_bg/left")
-	local var_3_5 = arg_3_0._countSelect
-	local var_3_6 = var_4.Find(var_3_5, "value_bg/right")
-	local var_3_7 = arg_3_0._countSelect
-	local var_3_8 = var_5.Find(var_3_7, "max")
-	local var_3_9 = arg_3_0._countSelect
-
-	arg_3_0._pageUtil = var_3_2(var_3_4, var_3_6, var_3_8, var_6.Find(var_3_9, "value_bg/value"))
-
-	local var_3_10 = arg_3_0.panel
-	local var_3_11 = var_1.Find(var_3_10, "content/consume")
-
-	arg_3_0.consumeText = var_1.GetComponent(var_3_11, "RichText")
-	setText = var_1
-
-	local var_3_12 = arg_3_0._tf
-	local var_3_13 = var_3.Find(var_3_12, "window/top/bg/title/title")
-
-	i18n = var_4
-
-	var_1(var_3_13, var_4("multiple_sorties_title"))
-
-	setText = var_1
-
-	local var_3_14 = arg_3_0._tf
-	local var_3_15 = var_3.Find(var_3_14, "window/top/bg/title/title/title_en")
-
-	i18n = var_4
-
-	var_1(var_3_15, var_4("multiple_sorties_title_eng"))
-
-	setText = var_1
-
-	local var_3_16 = arg_3_0.panel
-	local var_3_17 = var_3.Find(var_3_16, "content/desc_txt")
-
-	i18n = var_4
-
-	var_1(var_3_17, var_4("multiple_sorties_times"))
-
-	setText = var_1
-
-	local var_3_18 = arg_3_0.panel
-	local var_3_19 = var_3.Find(var_3_18, "Tip")
-
-	i18n = var_4
-
-	var_1(var_3_19, var_4("multiple_sorties_tip"))
-
-	setText = var_1
-
-	local var_3_20 = arg_3_0.panel
-	local var_3_21 = var_3.Find(var_3_20, "battle/pic")
-
-	i18n = var_4
-
-	var_1(var_3_21, var_4("msgbox_text_battle"))
-
-	setText = var_1
-
-	local var_3_22 = arg_3_0.panel
-	local var_3_23 = var_3.Find(var_3_22, "bonus/Text")
-
-	i18n = var_4
-
-	var_1(var_3_23, var_4("expedition_extra_drop_tip"))
-
-	setText = var_1
-
-	local var_3_24 = arg_3_0.panel
-	local var_3_25 = var_3.Find(var_3_24, "ticket/Text")
-
-	i18n = var_4
-
-	var_1(var_3_25, var_4("multiple_sorties_challenge_ticket_use"))
+	setText(arg_3_0._tf:Find("window/top/bg/title/title"), i18n("multiple_sorties_title"))
+	setText(arg_3_0._tf:Find("window/top/bg/title/title/title_en"), i18n("multiple_sorties_title_eng"))
+	setText(arg_3_0.panel:Find("content/desc_txt"), i18n("multiple_sorties_times"))
+	setText(arg_3_0.panel:Find("Tip"), i18n("multiple_sorties_tip"))
+	setText(arg_3_0.panel:Find("battle/pic"), i18n("msgbox_text_battle"))
+	setText(arg_3_0.panel:Find("bonus/Text"), i18n("expedition_extra_drop_tip"))
+	setText(arg_3_0.panel:Find("ticket/Text"), i18n("multiple_sorties_challenge_ticket_use"))
 
 	return
 end
 
-function var_0_1.SetActivity(arg_4_0, arg_4_1)
+function var_0_0.SetActivity(arg_4_0, arg_4_1)
 	arg_4_0.activity = arg_4_1
 
 	return
 end
 
-function var_0_1.didEnter(arg_5_0)
-	onButton = var_1_10001
-
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.panel
-	local var_5_2 = var_4.Find(var_5_1, "battle")
-
-	local function var_5_3()
-		local var_6_0 = arg_5_0.contextData.battleTimes
-		local var_6_1 = arg_5_0.contextData.oilCost * var_6_0
-
-		getProxy = var_2_10002
-		PlayerProxy = var_2_10004
-
-		local var_6_2 = var_2_10002(var_2_10004)
-
-		if var_2.getRawData(var_6_2).oil < var_6_1 then
-			pg = var_3
-
-			local var_6_3 = var_3.TipsMgr.GetInstance()
-			local var_6_4 = var_3.ShowTips
-
-			i18n = var_2_10006
-
-			var_6_4(var_6_3, var_2_10006("stage_beginStage_error_noResource"))
+function var_0_0.didEnter(arg_5_0)
+	onButton(arg_5_0, arg_5_0.panel:Find("battle"), function()
+		if arg_5_0.contextData.oilCost * arg_5_0.contextData.battleTimes > getProxy(PlayerProxy):getRawData().oil then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 			return
 		end
 
-		local var_6_5 = arg_5_0
-		local var_6_6 = var_3.emit
-
-		PreCombatMediator = var_2_10006
-
-		var_6_6(var_6_5, var_2_10006.CONTINUOUS_OPERATION)
+		arg_5_0:emit(PreCombatMediator.CONTINUOUS_OPERATION)
 
 		return
-	end
-
-	SFX_PANEL = var_5_1
-
-	var_1_10001(var_5_0, var_5_2, var_5_3, var_5_1)
-
-	onButton = var_1_10001
-
-	local var_5_4 = arg_5_0
-	local var_5_5 = arg_5_0._tf
-	local var_5_6 = var_4.Find(var_5_5, "window/top/btnBack")
-
-	local function var_5_7()
-		local var_7_0 = arg_5_0
-
-		var_0.closeView(var_7_0)
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0._tf:Find("window/top/btnBack"), function()
+		arg_5_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_5_5
-
-	var_1_10001(var_5_4, var_5_6, var_5_7, var_5_5)
-
-	onButton = var_1_10001
-
-	local var_5_8 = arg_5_0
-	local var_5_9 = arg_5_0._tf
-	local var_5_10 = var_4.Find(var_5_9, "bg")
-
-	local function var_5_11()
-		local var_8_0 = arg_5_0
-
-		var_0.closeView(var_8_0)
+	end, SFX_CANCEL)
+	onButton(arg_5_0, arg_5_0._tf:Find("bg"), function()
+		arg_5_0:closeView()
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_5_9
+	local var_5_0 = getProxy(SettingsProxy):isTipActBossExchangeTicket() == 1
 
-	var_1_10001(var_5_8, var_5_10, var_5_11, var_5_9)
+	arg_5_0.contextData.useTicket = defaultValue(arg_5_0.contextData.useTicket, var_5_0)
 
-	getProxy = var_1_10001
-	SettingsProxy = var_5_8
-
-	local var_5_12 = var_1_10001(var_5_8)
-	local var_5_13 = var_1.isTipActBossExchangeTicket(var_5_12) == 1
-	local var_5_14 = arg_5_0.contextData
-
-	defaultValue = var_5_12
-	var_5_14.useTicket = var_5_12(arg_5_0.contextData.useTicket, var_5_13)
-	triggerToggle = var_5_14
-
-	local var_5_15 = arg_5_0.panel
-
-	var_5_14(var_4.Find(var_5_15, "ticket/checkbox"), var_5_13)
-
-	onToggle = var_5_14
-
-	local var_5_16 = arg_5_0
-	local var_5_17 = arg_5_0.panel
-	local var_5_18 = var_5.Find(var_5_17, "ticket/checkbox")
-
-	local function var_5_19(arg_9_0)
+	triggerToggle(arg_5_0.panel:Find("ticket/checkbox"), var_5_0)
+	onToggle(arg_5_0, arg_5_0.panel:Find("ticket/checkbox"), function(arg_9_0)
 		arg_5_0.contextData.useTicket = arg_9_0
 
-		local var_9_0 = arg_5_0
-
-		var_1.UpdateContent(var_9_0)
+		arg_5_0:UpdateContent()
 
 		return
-	end
+	end, SFX_PANEL, SFX_CANCEL)
 
-	SFX_PANEL = var_5_17
-	SFX_CANCEL = var_8
+	local var_5_1 = LoadSprite(Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = pg.activity_event_worldboss[arg_5_0.activity:getConfig("config_id")].ticket
+	}):getIcon(), "")
 
-	var_5_14(var_5_16, var_5_18, var_5_19, var_5_17, var_8)
-
-	local var_5_20 = arg_5_0.activity
-	local var_5_21 = var_2.getConfig(var_5_20, "config_id")
-
-	pg = var_3
-
-	local var_5_22 = var_3.activity_event_worldboss[var_5_21].ticket
-
-	Drop = var_5
-
-	local var_5_23 = var_5.New
-	local var_5_24 = {}
-
-	DROP_TYPE_RESOURCE = var_8
-	var_5_24.type = var_8
-	var_5_24.id = var_5_22
-
-	local var_5_25 = var_5_23(var_5_24)
-	local var_5_26 = var_5.getIcon(var_5_25)
-
-	LoadSprite = var_5_19
-
-	local var_5_27 = var_5_19(var_5_26, "")
-	local var_5_28 = arg_5_0.consumeText
-
-	var_7.AddSprite(var_5_28, "ticket", var_5_27)
-
-	setImageSprite = var_7
-
-	local var_5_29 = arg_5_0.panel
-
-	var_7(var_9.Find(var_5_29, "ticket/Text/Icon"), var_5_27)
-
-	local var_5_30 = arg_5_0._pageUtil
-
-	var_7.setNumUpdate(var_5_30, function(arg_10_0)
+	arg_5_0.consumeText:AddSprite("ticket", var_5_1)
+	setImageSprite(arg_5_0.panel:Find("ticket/Text/Icon"), var_5_1)
+	arg_5_0._pageUtil:setNumUpdate(function(arg_10_0)
 		arg_5_0.contextData.battleTimes = arg_10_0
 
-		local var_10_0 = arg_5_0
-
-		var_1.UpdateContent(var_10_0)
+		arg_5_0:UpdateContent()
 
 		return
 	end)
+	arg_5_0._pageUtil:setMaxNum(var_0_1)
 
-	local var_5_31 = arg_5_0._pageUtil
+	arg_5_0.contextData.battleTimes = arg_5_0.contextData.battleTimes or 1
 
-	var_7.setMaxNum(var_5_31, var_0_2)
-
-	local var_5_32 = arg_5_0.contextData
-	local var_5_33
-
-	if not arg_5_0.contextData.battleTimes then
-		var_5_33 = 1
-	end
-
-	var_5_32.battleTimes = var_5_33
-
-	local var_5_34 = arg_5_0._pageUtil
-
-	var_7.setDefaultNum(var_5_34, arg_5_0.contextData.battleTimes)
+	arg_5_0._pageUtil:setDefaultNum(arg_5_0.contextData.battleTimes)
 	arg_5_0:UpdateContent()
-
-	pg = var_7
-
-	local var_5_35 = var_7.UIMgr.GetInstance()
-
-	var_7.BlurPanel(var_5_35, arg_5_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
 
 	return
 end
 
-function var_0_1.UpdateContent(arg_11_0)
+function var_0_0.UpdateContent(arg_11_0)
 	local var_11_0 = arg_11_0.contextData.battleTimes
-	local var_11_1 = arg_11_0.contextData.stageId
-	local var_11_2 = arg_11_0.activity
-	local var_11_3 = var_3.getConfig(var_11_2, "config_id")
+	local var_11_1 = getProxy(PlayerProxy):getRawData():getResource(pg.activity_event_worldboss[arg_11_0.activity:getConfig("config_id")].ticket)
+	local var_11_2 = arg_11_0.activity:GetStageBonus(arg_11_0.contextData.stageId)
+	local var_11_3 = math.clamp(arg_11_0.contextData.battleTimes - var_11_2, 0, var_11_1)
+	local var_11_4 = arg_11_0.contextData.useTicket and var_11_3 or 0
+	local var_11_5 = tostring(var_11_2)
 
-	pg = var_1_10004
-
-	local var_11_4 = var_1_10004.activity_event_worldboss[var_11_3].ticket
-
-	getProxy = var_6
-	PlayerProxy = var_1_10008
-
-	local var_11_5 = var_6(var_1_10008)
-	local var_11_6 = var_6.getRawData(var_11_5)
-	local var_11_7 = var_6.getResource(var_11_6, var_11_4)
-	local var_11_8 = arg_11_0.activity
-	local var_11_9 = var_7.GetStageBonus(var_11_8, var_11_1)
-
-	math = var_11_6
-
-	local var_11_10 = var_11_6.clamp(var_11_0 - var_11_9, 0, var_11_7)
-	local var_11_11 = arg_11_0.contextData.useTicket and var_11_10 or 0
-
-	tostring = var_10
-
-	local var_11_12 = var_10(var_11_9)
-	local var_11_13
-
-	if 0 < var_11_11 then
-		var_11_13 = var_11_12
-		setColorStr = var_12
-
-		local var_11_14 = "+" .. var_11_11
-
-		COLOR_GREEN = var_15
-		var_11_12 = var_11_13 .. var_12(var_11_14, var_15)
+	if (arg_11_0.contextData.useTicket and var_11_3 or 0) > 0 then
+		var_11_5 = var_11_5 .. setColorStr("+" .. var_11_4, COLOR_GREEN)
 	end
 
-	setText = var_11_13
+	setText(arg_11_0.panel:Find("bonus/Number"), var_11_5)
+	setText(arg_11_0.panel:Find("ticket/Number"), var_11_4 .. "/" .. var_11_1)
 
-	local var_11_15 = arg_11_0.panel
+	local var_11_6 = var_11_1 > 0 and var_11_3 > 0
 
-	var_11_13(var_13.Find(var_11_15, "bonus/Number"), var_11_12)
+	setActive(arg_11_0.panel:Find("ticket/checkboxBan"), not (var_11_1 > 0 and var_11_3 > 0))
+	setToggleEnabled(arg_11_0.panel:Find("ticket/checkbox"), var_11_6)
 
-	setText = var_11_13
+	local var_11_7 = i18n("multiple_sorties_cost1", arg_11_0.contextData.oilCost * var_11_0)
 
-	local var_11_16 = arg_11_0.panel
-
-	var_11_13(var_13.Find(var_11_16, "ticket/Number"), var_11_11 .. "/" .. var_11_7)
-
-	local var_11_17 = var_11_7 > 0 and var_11_10 > 0
-
-	setActive = var_12
-
-	local var_11_18 = arg_11_0.panel
-
-	var_12(var_14.Find(var_11_18, "ticket/checkboxBan"), not var_11_17)
-
-	setToggleEnabled = var_12
-
-	local var_11_19 = arg_11_0.panel
-
-	var_12(var_14.Find(var_11_19, "ticket/checkbox"), var_11_17)
-
-	local var_11_20 = arg_11_0.contextData.oilCost * var_11_0
-
-	i18n = var_13
-
-	local var_11_21 = var_13("multiple_sorties_cost1", var_11_20)
-
-	getProxy = var_14
-	PlayerProxy = var_16
-
-	local var_11_22 = var_14(var_16)
-
-	if var_14.getRawData(var_11_22).oil < var_11_20 then
-		string = var_15
-
-		local var_11_23 = var_15.gsub
-		local var_11_24 = var_11_21
-		local var_11_25 = "#92fc63"
-
-		COLOR_RED = var_1_10019
-		var_11_21 = var_11_23(var_11_24, var_11_25, var_1_10019)
+	if arg_11_0.contextData.oilCost * var_11_0 > getProxy(PlayerProxy):getRawData().oil then
+		var_11_7 = string.gsub(var_11_7, "#92fc63", COLOR_RED)
 	end
 
-	if var_11_11 > 0 then
-		local var_11_26 = var_11_21
-
-		i18n = var_11_22
-		var_11_21 = var_11_26 .. var_11_22("multiple_sorties_cost2", var_11_11)
+	if var_11_4 > 0 then
+		var_11_7 = var_11_7 .. i18n("multiple_sorties_cost2", var_11_4)
 	end
 
-	arg_11_0.consumeText.text = var_11_21
+	arg_11_0.consumeText.text = var_11_7
 
 	return
 end
 
-function var_0_1.willExit(arg_12_0)
-	local var_12_0 = arg_12_0._pageUtil
-
-	var_1.Dispose(var_12_0)
-
-	pg = var_1
-
-	local var_12_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_12_1, arg_12_0._tf)
+function var_0_0.willExit(arg_12_0)
+	arg_12_0._pageUtil:Dispose()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

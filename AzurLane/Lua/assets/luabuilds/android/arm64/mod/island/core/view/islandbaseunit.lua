@@ -1,14 +1,10 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandBaseUnit")
+﻿local var_0_0 = class("IslandBaseUnit")
 local var_0_1 = 1
 local var_0_2 = 2
 local var_0_3 = 3
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg = var_1_10002
-
-	var_1_10002.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
 	arg_1_0.__state = var_0_1
 	arg_1_0.view = arg_1_1
@@ -17,39 +13,29 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.IsSelfIsland(arg_2_0)
-	local var_2_0 = arg_2_0.view
-
-	return var_1.IsSelfIsland(var_2_0)
+	return arg_2_0.view:IsSelfIsland()
 end
 
 function var_0_0.NotifiyCore(arg_3_0, arg_3_1, ...)
-	local var_3_0 = arg_3_0.view
-
-	var_2.NotifiyCore(var_3_0, arg_3_1, ...)
+	arg_3_0.view:NotifiyCore(arg_3_1, ...)
 
 	return
 end
 
 function var_0_0.Op(arg_4_0, ...)
-	local var_4_0 = arg_4_0:GetView()
-
-	var_1.Op(var_4_0, ...)
+	arg_4_0:GetView():Op(...)
 
 	return
 end
 
 function var_0_0.NotifiyIsland(arg_5_0, ...)
-	local var_5_0 = arg_5_0:GetView()
-
-	var_1.NotifiyIsland(var_5_0, ...)
+	arg_5_0:GetView():NotifiyIsland(...)
 
 	return
 end
 
 function var_0_0.NotifiyMeditor(arg_6_0, arg_6_1, ...)
-	local var_6_0 = arg_6_0:GetView()
-
-	var_2.NotifiyMeditor(var_6_0, arg_6_1, ...)
+	arg_6_0:GetView():NotifiyMeditor(arg_6_1, ...)
 
 	return
 end
@@ -79,21 +65,15 @@ function var_0_0.GetView(arg_10_0)
 end
 
 function var_0_0.GetPoolMgr(arg_11_0)
-	local var_11_0 = arg_11_0.view
-
-	return var_1.GetPoolMgr(var_11_0)
+	return arg_11_0.view:GetPoolMgr()
 end
 
 function var_0_0.GetIsland(arg_12_0)
-	local var_12_0 = arg_12_0.view
-
-	return var_1.GetIsland(var_12_0)
+	return arg_12_0.view:GetIsland()
 end
 
 function var_0_0.GetSelfIsland(arg_13_0)
-	local var_13_0 = arg_13_0.view
-
-	return var_1.GetSelfIsland(var_13_0)
+	return arg_13_0.view:GetSelfIsland()
 end
 
 function var_0_0.Reset(arg_14_0)
@@ -113,9 +93,7 @@ function var_0_0.Dispose(arg_15_0)
 		return
 	end
 
-	pg = var_1
-
-	var_1.DelegateInfo.Dispose(arg_15_0)
+	pg.DelegateInfo.Dispose(arg_15_0)
 
 	if arg_15_0:IsLoaded() then
 		arg_15_0:OnDispose()

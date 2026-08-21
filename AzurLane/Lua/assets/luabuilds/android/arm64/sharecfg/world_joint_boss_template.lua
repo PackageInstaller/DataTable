@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_joint_boss_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_joint_boss_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_joint_boss_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_joint_boss_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_joint_boss_template = rawget(pg, "world_joint_boss_template") or setmetatable({
+	__name = "world_joint_boss_template"
+}, confNEO)
+pg.world_joint_boss_template.all = {
 	1,
 	2,
 	3,
@@ -50,25 +27,11 @@ var_0_3.all = {
 	22,
 	23
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_joint_boss_template = {}
+pg.base = pg.base or {}
+pg.base.world_joint_boss_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_joint_boss_template
-
-	var_1_0[1] = {
+	pg.base.world_joint_boss_template[1] = {
 		name = "龙·META",
 		boss_level_id = 1,
 		state = "always",
@@ -97,11 +60,7 @@ var_0_3.base.world_joint_boss_template = {}
 			777
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_joint_boss_template
-
-	var_1_1[2] = {
+	pg.base.world_joint_boss_template[2] = {
 		name = "皇家方舟·META",
 		boss_level_id = 16,
 		state = "always",
@@ -130,11 +89,7 @@ var_0_3.base.world_joint_boss_template = {}
 			574
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_joint_boss_template
-
-	var_1_2[3] = {
+	pg.base.world_joint_boss_template[3] = {
 		name = "海伦娜·META",
 		boss_level_id = 31,
 		state = "always",
@@ -167,11 +122,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.95
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_joint_boss_template
-
-	var_1_3[4] = {
+	pg.base.world_joint_boss_template[4] = {
 		name = "蛟·META",
 		boss_level_id = 46,
 		state = "always",
@@ -204,11 +155,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.95
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_joint_boss_template
-
-	var_1_4[5] = {
+	pg.base.world_joint_boss_template[5] = {
 		name = "奥古斯塔·META",
 		boss_level_id = 61,
 		state = "always",
@@ -237,11 +184,7 @@ var_0_3.base.world_joint_boss_template = {}
 			635
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_joint_boss_template
-
-	var_1_5[6] = {
+	pg.base.world_joint_boss_template[6] = {
 		name = "格尔林德·META",
 		boss_level_id = 76,
 		state = "always",
@@ -270,11 +213,7 @@ var_0_3.base.world_joint_boss_template = {}
 			635
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_joint_boss_template
-
-	var_1_6[7] = {
+	pg.base.world_joint_boss_template[7] = {
 		name = "反击·META",
 		boss_level_id = 91,
 		state = "always",
@@ -312,11 +251,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.95
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_joint_boss_template
-
-	var_1_7[8] = {
+	pg.base.world_joint_boss_template[8] = {
 		name = "声望·META",
 		boss_level_id = 106,
 		state = "always",
@@ -359,11 +294,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.9
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_joint_boss_template
-
-	var_1_8[9] = {
+	pg.base.world_joint_boss_template[9] = {
 		name = "亚利桑那·META",
 		boss_level_id = 121,
 		state = "always",
@@ -396,11 +327,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.9
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_joint_boss_template
-
-	var_1_9[10] = {
+	pg.base.world_joint_boss_template[10] = {
 		name = "伊丽莎白女王·META",
 		boss_level_id = 136,
 		state = "always",
@@ -433,11 +360,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.9
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_joint_boss_template
-
-	var_1_10[11] = {
+	pg.base.world_joint_boss_template[11] = {
 		name = "阿尔及利亚·META",
 		boss_level_id = 151,
 		state = "always",
@@ -470,11 +393,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.9
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_joint_boss_template
-
-	var_1_11[12] = {
+	pg.base.world_joint_boss_template[12] = {
 		name = "貎·META",
 		boss_level_id = 166,
 		state = "always",
@@ -512,11 +431,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.8
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_joint_boss_template
-
-	var_1_12[13] = {
+	pg.base.world_joint_boss_template[13] = {
 		name = "基洛夫·META",
 		boss_level_id = 181,
 		state = "always",
@@ -549,11 +464,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.8
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_joint_boss_template
-
-	var_1_13[14] = {
+	pg.base.world_joint_boss_template[14] = {
 		name = "罗德尼·META",
 		boss_level_id = 196,
 		state = "always",
@@ -591,11 +502,7 @@ var_0_3.base.world_joint_boss_template = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_joint_boss_template
-
-	var_1_14[15] = {
+	pg.base.world_joint_boss_template[15] = {
 		name = "威奇塔·META",
 		boss_level_id = 211,
 		state = "always",
@@ -633,11 +540,7 @@ var_0_3.base.world_joint_boss_template = {}
 			1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_joint_boss_template
-
-	var_1_15[16] = {
+	pg.base.world_joint_boss_template[16] = {
 		name = "鲨·META",
 		boss_level_id = 226,
 		state = "always",
@@ -670,11 +573,7 @@ var_0_3.base.world_joint_boss_template = {}
 			1
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_joint_boss_template
-
-	var_1_16[17] = {
+	pg.base.world_joint_boss_template[17] = {
 		name = "鹩·META",
 		boss_level_id = 241,
 		state = "always",
@@ -707,11 +606,7 @@ var_0_3.base.world_joint_boss_template = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_joint_boss_template
-
-	var_1_17[18] = {
+	pg.base.world_joint_boss_template[18] = {
 		name = "大黄蜂·META",
 		boss_level_id = 256,
 		state = "stop",
@@ -744,11 +639,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.9
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_joint_boss_template
-
-	var_1_18[19] = {
+	pg.base.world_joint_boss_template[19] = {
 		name = "茳·META",
 		boss_level_id = 271,
 		state = "stop",
@@ -781,11 +672,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.68
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_joint_boss_template
-
-	var_1_19[20] = {
+	pg.base.world_joint_boss_template[20] = {
 		name = "椿·META",
 		boss_level_id = 286,
 		state = "stop",
@@ -818,11 +705,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.68
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_joint_boss_template
-
-	var_1_20[21] = {
+	pg.base.world_joint_boss_template[21] = {
 		name = "约克城·META",
 		boss_level_id = 301,
 		state = "stop",
@@ -860,11 +743,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.65
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_joint_boss_template
-
-	var_1_21[22] = {
+	pg.base.world_joint_boss_template[22] = {
 		name = "瑞吉娜·META",
 		boss_level_id = 316,
 		state = "stop",
@@ -897,8 +776,7 @@ var_0_3.base.world_joint_boss_template = {}
 			0.65
 		}
 	}
-	pg = var_1_21
-	var_1_21.base.world_joint_boss_template[23] = {
+	pg.base.world_joint_boss_template[23] = {
 		name = "布里斯托尔·META",
 		boss_level_id = 331,
 		item_id = 100000,

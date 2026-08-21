@@ -2,7 +2,7 @@ module('braceletsCommunicate.BraceletsCommunicateItem', Class.impl('lib.componen
 
 UIRes = UrlManager:getUIPrefabPath("braceletsCommunicate/BraceletsCommunicateItem.prefab")
 
---构造函数
+-- 构造函数
 function ctor(self)
     super.ctor(self)
 end
@@ -90,6 +90,8 @@ function configUI(self)
     self.mFrameEmojiRight = self:getChildGO("ImgEmojiRight"):GetComponent(ty.ImageFrame)
     -- self.mChooseContent = self:getChildGO("mChooseContent")
     self.mGroupHorizontalLine = self:getChildGO("mGroupHorizontalLine")
+
+    self.mTxtServer = self:getChildGO("mTxtServer"):GetComponent(ty.Text)
 end
 
 function active(self)
@@ -113,12 +115,12 @@ function setData(self, chatVo, heroList, nowTargetId, segId)
 end
 
 function __updateView(self)
-    if self.mChatVo then 
+    if self.mChatVo then
         self.mGroupLeft:SetActive(true)
         self.mGroupRight:SetActive(true)
         self.mGroupHorizontalLine:SetActive(false)
         local isOwn = true
-        if self.mChatVo.type == 0 then 
+        if self.mChatVo.type == 0 or self.mChatVo.type == 4 then
             isOwn = false
         end
         if (isOwn) then
@@ -162,24 +164,38 @@ function __updateLeftInfo(self)
     local newestSegId, newestTalkId, index = newestMsgVo:getNewestSegmentId()
 
     local infoDelay = function()
+        self.mContentWidth = 128
         if (self.mChatVo.reward == 0) then
-            local content = self.mChatVo.msg
-            self.mLeftContent.text = string.substitute(content, role.RoleManager:getRoleVo():getPlayerName()) 
-            self.mRightContent.text = ""
-            local textWidth = math.min(self.mLeftContent.preferredWidth or gs.LayoutUtility.GetPreferredSize(self.mLeftContentRect, 0), 385)
-            gs.TransQuick:SizeDelta01(self.mLeftContentRect, textWidth)
-            local textHeight = self.mLeftContent.preferredHeight or gs.LayoutUtility.GetPreferredSize(self.mLeftContentRect, 1)
-            gs.TransQuick:SizeDelta02(self.mLeftContentRect, textHeight)
-            self.mContentWidth = textWidth
-            self.mContentHeight = textHeight
-            self.mLeftContent.gameObject:SetActive(true)
-            self.mImgBgLeft.gameObject:SetActive(true)
+
+            if self.mChatVo.type == 4 then
+                
+                self.mGroupContentLeftEmoji:SetActive(true)
+                self.mGroupContentLeftText:SetActive(false)
+                self.mImgEmojiLeft:SetImg(self.mChatVo.msg)
+                gs.TransQuick:SizeDelta02(self.mLeftContentRect, 180)
+                self.mImgBgLeft.gameObject:SetActive(false)
+            else
+                local content = self.mChatVo.msg
+                self.mLeftContent.text = string.substitute(content, role.RoleManager:getRoleVo():getPlayerName())
+                self.mRightContent.text = ""
+                local textWidth = math.min(self.mLeftContent.preferredWidth or
+                                               gs.LayoutUtility.GetPreferredSize(self.mLeftContentRect, 0), 385)
+                gs.TransQuick:SizeDelta01(self.mLeftContentRect, textWidth)
+                local textHeight = self.mLeftContent.preferredHeight or
+                                       gs.LayoutUtility.GetPreferredSize(self.mLeftContentRect, 1)
+                gs.TransQuick:SizeDelta02(self.mLeftContentRect, textHeight)
+                self.mContentWidth = textWidth
+                self.mContentHeight = textHeight
+                self.mLeftContent.gameObject:SetActive(true)
+                self.mImgBgLeft.gameObject:SetActive(true)
+            end
+
         else
             self.mImgEmojiLeft:SetImg(nil, true)
-            if newestTalkId ~= self.mChatVo.talkId then 
+            if newestTalkId ~= self.mChatVo.talkId then
                 self.mImgEmojiLeft:SetImg(UrlManager:getPackPath("braceletsCommunication/chat_icon_06.png"))
             else
-                if index == 1 then 
+                if index == 1 then
                     self.mImgEmojiLeft:SetImg(UrlManager:getPackPath("braceletsCommunication/chat_icon_05.png"))
                 else
                     self.mImgEmojiLeft:SetImg(UrlManager:getPackPath("braceletsCommunication/chat_icon_06.png"))
@@ -193,13 +209,16 @@ function __updateLeftInfo(self)
         gs.TransQuick:SizeDelta(self.mRectLeftBg, bgWidth, bgHeight)
 
         self.mHeight = math.max(bgHeight + 2 * 30, 120)
+        if self.mChatVo.type == 4 then
+            self.mHeight = 180
+        end
         gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), self.mHeight)
         self.mTextNameLeft.gameObject:SetActive(true)
         self.mInputting:SetActive(false)
     end
-    if self.mSegId == newestSegId and newestTalkId == self.mChatVo.talkId and (index == 1) and 
-        self.mChatVo.reward == 0 and (index ~= #newestMsgVo:getTalkList(newestSegId)) and
-        not braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(self.mNowTargetId) then 
+    if self.mSegId == newestSegId and newestTalkId == self.mChatVo.talkId and (index == 1) and self.mChatVo.reward == 0 and
+        (index ~= #newestMsgVo:getTalkList(newestSegId)) and
+        not braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(self.mNowTargetId) then
         self.mTextNameLeft.gameObject:SetActive(false)
         self.mLeftContent.gameObject:SetActive(false)
         self.mImgBgLeft.gameObject:SetActive(false)
@@ -214,39 +233,58 @@ function __updateLeftInfo(self)
         gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), self.mHeight)
     else
         infoDelay()
-    end 
+    end
 end
 
 function __updateRightInfo(self)
-    if self.mChatVo.type == 2 then 
+    if self.mChatVo.type == 2 or self.mChatVo.type == 3 then
         self.mGroupRight:SetActive(false)
         self.mHeight = 1
         gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), self.mHeight)
         -- self.mContentHeight = 0
     else
+        self.mContentWidth = 128
         self.mGroupRight:SetActive(true)
         self.ImgBgRight:SetActive(true)
         local content = self.mChatVo.msg
-        self.mLeftContent.text = ""
-        self.mRightContent.text = content
-        local textWidth = math.min(self.mRightContent.preferredWidth or gs.LayoutUtility.GetPreferredSize(self.mRightContentRect, 0), 385)
-        gs.TransQuick:SizeDelta01(self.mRightContentRect, textWidth)
-        local textHeight = self.mRightContent.preferredHeight or gs.LayoutUtility.GetPreferredSize(self.mRightContentRect, 1)
-        gs.TransQuick:SizeDelta02(self.mRightContentRect, textHeight)
-        self.mContentWidth = textWidth
-        self.mContentHeight = textHeight
-        local bgWidth, bgHeight = self:__getBgSize()
-        gs.TransQuick:SizeDelta(self.mRectRightBg, bgWidth, bgHeight)
+        self.mTxtServer.gameObject:SetActive(false)
+        if self.mChatVo.type == 5 then
+            self.mGroupContentRightEmoji:SetActive(true)
+            self.mGroupContentRightText.gameObject:SetActive(false)
+            self.ImgBgRight:SetActive(false)
+            self.mImgEmojiRight:SetImg(self.mChatVo.msg)
+            gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), 150)
+        elseif self.mChatVo.type == 6 then
+            self.mTxtServer.text = self.mChatVo.msg
+            self.mTxtServer.gameObject:SetActive(true)
+            self.ImgBgRight:SetActive(false)
+            self.mGroupContentRightEmoji:SetActive(false)
+            self.mGroupContentRightText.gameObject:SetActive(false)
+            gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), 40)
+        else
+            self.mLeftContent.text = ""
+            self.mRightContent.text = content
+            local textWidth = math.min(self.mRightContent.preferredWidth or
+                                           gs.LayoutUtility.GetPreferredSize(self.mRightContentRect, 0), 385)
+            gs.TransQuick:SizeDelta01(self.mRightContentRect, textWidth)
+            local textHeight = self.mRightContent.preferredHeight or
+                                   gs.LayoutUtility.GetPreferredSize(self.mRightContentRect, 1)
+            gs.TransQuick:SizeDelta02(self.mRightContentRect, textHeight)
+            self.mContentWidth = textWidth
+            self.mContentHeight = textHeight
+            local bgWidth, bgHeight = self:__getBgSize()
+            gs.TransQuick:SizeDelta(self.mRectRightBg, bgWidth, bgHeight)
 
-        self.mHeight = math.max(bgHeight + 30, 72)
-        gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), self.mHeight)
+            self.mHeight = math.max(bgHeight + 30, 72)
+            gs.TransQuick:SizeDelta02(self.UIObject.gameObject:GetComponent(ty.RectTransform), self.mHeight)
+        end
     end
 end
 
 -- 获取气泡背景宽高
 function __getBgSize(self)
-    local left = 0                             -- 文本左边x坐标距离气泡背景图左边距离
-    local right = 30                            -- 文本右边x坐标距离气泡背景图右边距离
+    local left = 0 -- 文本左边x坐标距离气泡背景图左边距离
+    local right = 30 -- 文本右边x坐标距离气泡背景图右边距离
     local bgWidth = left + self.mContentWidth + right
     local bgHeight = self.mContentHeight + 2 * self:__getBgPadTopBottom()
     if (bgWidth >= 410) then
@@ -275,7 +313,6 @@ end
 function __getBgPadTopBottom(self)
     return 15
 end
-
 
 return _M
 

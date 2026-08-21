@@ -1,42 +1,24 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DOALinkIslandReMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-local var_0_0 = "DOALinkIslandReMediator"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..TemplateMV.BackHillMediatorTemplate"))
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	arg_1_0:BindEvent()
 
 	return
 end
 
-function var_0_1.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_1.GO_SCENE, function(arg_3_0, arg_3_1, ...)
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.GO_SCENE, arg_3_1, ...)
+function var_0_0.BindEvent(arg_2_0)
+	arg_2_0:bind(var_0_0.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_2_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 
 		return
 	end)
-	arg_2_0:bind(var_0_1.GO_SUBLAYER, function(arg_4_0, arg_4_1, arg_4_2)
-		local var_4_0 = arg_2_0
-
-		var_3.addSubLayers(var_4_0, arg_4_1, nil, arg_4_2)
+	arg_2_0:bind(var_0_0.GO_SUBLAYER, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_2_0:addSubLayers(arg_4_1, nil, arg_4_2)
 
 		return
 	end)
-	arg_2_0:bind(var_0_1.MINI_GAME_OPERATOR, function(arg_5_0, ...)
-		local var_5_0 = arg_2_0
-		local var_5_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_5_1(var_5_0, var_2_10004.SEND_MINI_GAME_OP, ...)
+	arg_2_0:bind(var_0_0.MINI_GAME_OPERATOR, function(arg_5_0, ...)
+		arg_2_0:sendNotification(GAME.SEND_MINI_GAME_OP, ...)
 
 		return
 	end)
@@ -44,36 +26,22 @@ function var_0_1.BindEvent(arg_2_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_6_0)
-	local var_6_0 = {}
-
-	GAME = var_1_10002
-	var_6_0[1] = var_1_10002.SEND_MINI_GAME_OP_DONE
-	ActivityProxy = var_2
-	var_6_0[2] = var_2.ACTIVITY_UPDATED
-
-	return var_6_0
+function var_0_0.listNotificationInterests(arg_6_0)
+	return {
+		GAME.SEND_MINI_GAME_OP_DONE,
+		ActivityProxy.ACTIVITY_UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_7_0, arg_7_1)
-	local var_7_0 = arg_7_1
-	local var_7_1 = arg_7_1.getName(var_7_0)
-	local var_7_2 = arg_7_1:getBody()
+function var_0_0.handleNotification(arg_7_0, arg_7_1)
+	local var_7_0 = arg_7_1:getName()
+	local var_7_1 = arg_7_1:getBody()
 
-	GAME = var_7_0
-
-	local var_7_3
-
-	if var_7_1 == var_7_0.SEND_MINI_GAME_OP_DONE then
-		var_7_3 = {
+	if var_7_0 == GAME.SEND_MINI_GAME_OP_DONE then
+		seriesAsync({
 			function(arg_8_0)
-				if #var_7_2.awards > 0 then
-					local var_8_0 = arg_7_0.viewComponent
-					local var_8_1 = var_2.emit
-
-					BaseUI = var_2_10005
-
-					var_8_1(var_8_0, var_2_10005.ON_ACHIEVE, var_1, arg_8_0)
+				if #var_7_1.awards > 0 then
+					arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_7_1.awards, arg_8_0)
 				else
 					arg_8_0()
 				end
@@ -81,27 +49,16 @@ function var_0_1.handleNotification(arg_7_0, arg_7_1)
 				return
 			end,
 			function(arg_9_0)
-				local var_9_0 = arg_7_0.viewComponent
-
-				var_1.UpdateView(var_9_0)
+				arg_7_0.viewComponent:UpdateView()
 
 				return
 			end
-		}
-		seriesAsync = var_5
-
-		var_5(var_7_3)
-	else
-		ActivityProxy = var_7_3
-
-		if var_7_1 == var_7_3.ACTIVITY_UPDATED then
-			local var_7_4 = arg_7_0.viewComponent
-
-			var_4.UpdateActivity(var_7_4, var_7_2)
-		end
+		})
+	elseif var_7_0 == ActivityProxy.ACTIVITY_UPDATED then
+		arg_7_0.viewComponent:UpdateActivity((arg_7_1:getBody()))
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,45 +1,24 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameTaskMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "AuctionGameTaskMediator"
+var_0_0.ON_TASK_GO = "AuctionGameTaskMediator::ON_TASK_GO"
+var_0_0.ON_TASK_SUBMIT = "AuctionGameTaskMediator::ON_TASK_SUBMIT"
+var_0_0.ON_ACTIVITY_TASK_SUBMIT_ONESTEP = "AuctionGameTaskMediator::ON_ACTIVITY_TASK_SUBMIT_ONESTEP"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_TASK_GO = "AuctionGameTaskMediator::ON_TASK_GO"
-var_0_1.ON_TASK_SUBMIT = "AuctionGameTaskMediator::ON_TASK_SUBMIT"
-var_0_1.ON_ACTIVITY_TASK_SUBMIT_ONESTEP = "AuctionGameTaskMediator::ON_ACTIVITY_TASK_SUBMIT_ONESTEP"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_TASK_GO, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.TASK_GO, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_TASK_GO, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.TASK_GO, {
 			taskVO = arg_2_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_TASK_SUBMIT, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.SUBMIT_TASK, arg_3_1.id)
+	arg_1_0:bind(var_0_0.ON_TASK_SUBMIT, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_3_1.id)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_ACTIVITY_TASK_SUBMIT_ONESTEP, function(arg_4_0, arg_4_1, arg_4_2)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_4_1(var_4_0, var_2_10006.SUBMIT_ACTIVITY_TASK, {
+	arg_1_0:bind(var_0_0.ON_ACTIVITY_TASK_SUBMIT_ONESTEP, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(GAME.SUBMIT_ACTIVITY_TASK, {
 			act_id = arg_4_1,
 			task_ids = arg_4_2
 		})
@@ -50,74 +29,42 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.initNotificationHandleDic(arg_5_0)
-	local var_5_0 = {}
+function var_0_0.initNotificationHandleDic(arg_5_0)
+	arg_5_0.handleDic = {
+		[GAME.SUBMIT_TASK_DONE] = function(arg_6_0, arg_6_1)
+			local var_6_0 = getProxy(ContextProxy)
 
-	GAME = var_1_10002
-	var_5_0[var_1_10002.SUBMIT_TASK_DONE] = function(arg_6_0, arg_6_1)
-		getProxy = var_2_10002
-		ContextProxy = var_2_10004
+			if var_6_0:GetPrevContext(0).mediator ~= ActivityMediator and #arg_6_1:getBody().awards > 0 then
+				arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_6_1:getBody().awards)
+			end
 
-		local var_6_0 = var_2_10002(var_2_10004)
-		local var_6_1 = var_2.GetPrevContext(var_6_0, 0).mediator
+			arg_6_0.viewComponent:RefreshUI()
 
-		ActivityMediator = var_2_10003
+			return
+		end,
+		[GAME.SUBMIT_ACTIVITY_TASK_DONE] = function(arg_7_0, arg_7_1)
+			local var_7_0 = getProxy(ContextProxy)
 
-		if not (var_6_1 == var_2_10003) and #arg_6_1:getBody().awards > 0 then
-			local var_6_2 = arg_6_0.viewComponent
-			local var_6_3 = var_3.emit
+			if var_7_0:GetPrevContext(0).mediator ~= CoreActivityMainMediator and #arg_7_1:getBody().awards > 0 then
+				arg_7_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_7_1:getBody().awards)
+			end
 
-			BaseUI = var_2_10006
+			arg_7_0.viewComponent:RefreshUI()
 
-			var_6_3(var_6_2, var_2_10006.ON_ACHIEVE, arg_6_1:getBody().awards)
+			return
+		end,
+		[GAME.TOTAL_TASK_UPDATED] = function(arg_8_0, arg_8_1)
+			arg_8_0.viewComponent:RefreshUI()
+
+			return
 		end
-
-		local var_6_4 = arg_6_0.viewComponent
-
-		var_3.RefreshUI(var_6_4)
-
-		return
-	end
-	GAME = var_2
-	var_5_0[var_2.SUBMIT_ACTIVITY_TASK_DONE] = function(arg_7_0, arg_7_1)
-		getProxy = var_2_10002
-		ContextProxy = var_2_10004
-
-		local var_7_0 = var_2_10002(var_2_10004)
-		local var_7_1 = var_2.GetPrevContext(var_7_0, 0).mediator
-
-		CoreActivityMainMediator = var_2_10003
-
-		if not (var_7_1 == var_2_10003) and #arg_7_1:getBody().awards > 0 then
-			local var_7_2 = arg_7_0.viewComponent
-			local var_7_3 = var_3.emit
-
-			BaseUI = var_2_10006
-
-			var_7_3(var_7_2, var_2_10006.ON_ACHIEVE, arg_7_1:getBody().awards)
-		end
-
-		local var_7_4 = arg_7_0.viewComponent
-
-		var_3.RefreshUI(var_7_4)
-
-		return
-	end
-	GAME = var_2
-	var_5_0[var_2.TOTAL_TASK_UPDATED] = function(arg_8_0, arg_8_1)
-		local var_8_0 = arg_8_0.viewComponent
-
-		var_2.RefreshUI(var_8_0)
-
-		return
-	end
-	arg_5_0.handleDic = var_5_0
+	}
 
 	return
 end
 
-function var_0_1.remove(arg_9_0)
+function var_0_0.remove(arg_9_0)
 	return
 end
 
-return var_0_1
+return var_0_0

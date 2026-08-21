@@ -9,25 +9,28 @@ function ctor(self)
     self.m_audioRoot = audioRootGO.transform
     audioRootGO:SetActive(true)
 
-    self.mMusicData = nil           --主背景音乐音频文件
-    self.mPlayingMusic = true       --是否正在播放主背景音乐
-    self.mMusicList = nil           --当前播放的主背景音乐列表
-    self.mCurMusicType = 0          --当前播放的主背景音乐列表类型
-    self.mMusicListIndex = 1        --当前正在播放的主背景音乐列表的下标
+    self.mMusicData = nil --主背景音乐音频文件
+    self.mPlayingMusic = true --是否正在播放主背景音乐
+    self.mMusicList = nil --当前播放的主背景音乐列表
+    self.mCurMusicType = 0 --当前播放的主背景音乐列表类型
+    self.mMusicListIndex = 1 --当前正在播放的主背景音乐列表的下标
+    self.mMusicTimeOutSn = nil --前奏切换循环段的定时器
+    self.mMusicLoopPath = nil --前奏播放结束后切换的循环段路径
+    self.mMusicLoopRemainTime = nil --暂停时前奏距离切换循环段的剩余时间
 
-    self.mOtherMusciDic = {}        --杂项背景音乐字典
+    self.mOtherMusciDic = {} --杂项背景音乐字典
 
-    self.mStoryMusciDic = {}        --剧情背景音乐字典
+    self.mStoryMusciDic = {} --剧情背景音乐字典
 
-    self.mAllAudioDataDic = {}      --所有播放的音频（包括背景音乐、CV、音效、战斗音效）
+    self.mAllAudioDataDic = {} --所有播放的音频（包括背景音乐、CV、音效、战斗音效）
     self.mFightSoundEffectList = {} --所有播放的战斗音效
 
-    self.mTotalVolume = 0           --总音量
-    self.mMusicVolume = 0           --背景音乐的音量
-    self.mSoundEffcetVolume = 0     --音效的音量
-    self.mCvVolume = 0              --当前的CV音量
+    self.mTotalVolume = 0 --总音量
+    self.mMusicVolume = 0 --背景音乐的音量
+    self.mSoundEffcetVolume = 0 --音效的音量
+    self.mCvVolume = 0 --当前的CV音量
 
-    self.mCurPlayCVAudioData = nil  --当前正在播放的CV 英雄音频
+    self.mCurPlayCVAudioData = nil --当前正在播放的CV 英雄音频
 end
 
 -- 解析音乐音效配置
@@ -61,6 +64,10 @@ function parseCVConfigData(self)
     self.mCVData = {}
     local baseData = RefMgr:getData("cv_data")
     for key, data in pairs(baseData) do
+        if not (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) then
+            data.lines = data.lines1
+            data.voice = data.voice1
+        end
         self.mCVData[key] = data
     end
 end
@@ -196,11 +203,9 @@ function playMusicById(self, cusId, loop)
             end
             self:playMusic(UrlManager:getMusicPath(data.intro), false)
 
-            self:clearMusicTimeOutSn()
-            local time = self.mMusicData.m_source.clip.length
-            self.mMusicTimeOutSn = LoopManager:setTimeout(time, nil, function()
-                self:playMusic(UrlManager:getMusicPath(data.loop), true)
-            end)
+            local time = self.mMusicData and self.mMusicData.m_source.clip.length or 1
+            self.mMusicLoopPath = UrlManager:getMusicPath(data.loop)
+            self:setMusicLoopTimeout(time)
         end
     end
 
@@ -216,6 +221,34 @@ function clearMusicTimeOutSn(self)
         LoopManager:clearTimeout(self.mMusicTimeOutSn)
         self.mMusicTimeOutSn = nil
     end
+end
+
+--创建前奏切换循环段的定时器
+function setMusicLoopTimeout(self, delay)
+    self:clearMusicTimeOutSn()
+
+    if self.mMusicLoopPath == nil then
+        return
+    end
+
+    self.mMusicLoopRemainTime = nil
+    self.mMusicTimeOutSn = LoopManager:setTimeout(delay, nil, function()
+        self.mMusicTimeOutSn = nil
+
+        local loopPath = self.mMusicLoopPath
+        self.mMusicLoopPath = nil
+        self.mMusicLoopRemainTime = nil
+        self:playMusic(loopPath, true)
+    end)
+end
+
+--记录当前前奏距离切换循环段的剩余时间
+function saveMusicLoopRemainTime(self, musicData)
+    if musicData == nil or musicData.m_source == nil or musicData.m_source.clip == nil then
+        return
+    end
+
+    self.mMusicLoopRemainTime = math.max(musicData.m_source.clip.length - musicData.m_source.time, 0)
 end
 
 -- 播放主背景音乐对象(唯一)
@@ -234,12 +267,16 @@ function playMusic(self, path, loop, finishCall)
     end
     self:stopMusic()
     self.mMusicData = self:playAudioSound(path, loop, finishCall)
-    self.mMusicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
+    if self.mMusicData then
+        self.mMusicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
+    end
 end
 
 --移除主背景音乐
 function stopMusic(self)
     self:clearMusicTimeOutSn()
+    self.mMusicLoopPath = nil
+    self.mMusicLoopRemainTime = nil
     self:stopAudioSound(self.mMusicData)
 end
 
@@ -314,12 +351,29 @@ end
 
 --主背景音乐过渡暂停
 function pauseMusicByFade(self, time, callFun)
-    if not self.mMusicData then return end
+    if not self.mMusicData then
+        return
+    end
+
+    local musicData = self.mMusicData
+    local pauseMusicLoop = self.mMusicTimeOutSn ~= nil and self.mMusicLoopPath ~= nil
+    if pauseMusicLoop then
+        self:saveMusicLoopRemainTime(musicData)
+        self:clearMusicTimeOutSn()
+    end
 
     if time == 0 then
-        self.mMusicData:pauseAudioData()
+        musicData:pauseAudioData()
     else
-        self.mMusicData:pauseByFade(time, callFun)
+        musicData:pauseByFade(time, function()
+            if pauseMusicLoop and self.mMusicData == musicData then
+                self:saveMusicLoopRemainTime(musicData)
+            end
+
+            if callFun then
+                callFun()
+            end
+        end)
     end
 end
 
@@ -333,6 +387,10 @@ function resumeMusicByFade(self, time)
         self.mMusicData:resumeByFade(time, curVolume)
     else
         self.mMusicData.m_source.volume = curVolume
+    end
+
+    if self.mMusicTimeOutSn == nil and self.mMusicLoopPath ~= nil and self.mMusicLoopRemainTime ~= nil then
+        self:setMusicLoopTimeout(self.mMusicLoopRemainTime)
     end
 end
 
@@ -517,8 +575,16 @@ end
 --播放一个Cv通过CVId
 function playCvByCVID(self, cvId, finishCall)
     local data = self:getCVData(cvId)
-    if data and data.voice ~= "" then
-        return self:playCvByCVPath(UrlManager:getCVSoundPath(data.voice), finishCall)
+    if data then
+        if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) then
+            if data.voice ~= "" then
+                return self:playCvByCVPath(UrlManager:getCVSoundPath(data.voice), finishCall)
+            end
+        else
+            if data.voice1 ~= "" then
+                return self:playCvByCVPath(UrlManager:getCVSoundPath(data.voice1), finishCall)
+            end
+        end
     end
 end
 
@@ -562,17 +628,53 @@ function setTotalVolume(self, val)
         self.mTotalVolume = val
     end
 
-    if self.mMusicData then
-        self.mMusicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
-    end
+    -- if self.mMusicData then
+    --     self.mMusicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
+    -- end
 
-    for snId, musicData in pairs(self.mOtherMusciDic) do
-        musicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
+    for snId, musicData in pairs(self.mAllAudioDataDic) do
+        if (musicData.m_source and not gs.GoUtil.IsCompNull(musicData.m_source)) then
+            musicData.m_source.volume = self.mMusicVolume * self.mTotalVolume
+        end
     end
+end
+
+--获取当前音效选择的cv是否是本国资源
+--[[    默认cv目录是本国cv目录
+    即国服项目cv不带后缀的cv目录是国语资源 日服项目cv不带后缀的目录是日语资源
+    在多国语言cv目录“cv_multiple”中的带国家缩写例如cv_jp后缀的目录是对应国家的语音资源
+--]]
+function getCurUseCvAudioIsMyCountry(self)
+    local data = systemSetting.SystemSettingManager:getCurCvTypeSettingCfg()
+    local folderName = data[1]
+    return folderName == "cv"
+end
+
+--因为切换cv音效功能需要根据不同配置去用不同目录的音效
+--但是我们有两套播放cv的逻辑 一套在lua 一套在c#
+--lua这边是根据配置去那名字拼接路径的 c#那边是直接传递路径的不好改
+--为了兼容故而在这播放音效最底层去处理
+local function fixCvPath(path)
+    -- 判断路径是否以指定前缀开头
+    local cvPrefixPath = UrlManager:getCVSoundPrefixPath()
+    if string.startsWith(path, cvPrefixPath) then
+        local data = systemSetting.SystemSettingManager:getCurCvTypeSettingCfg()
+        local folderName = data[1]
+        if not AudioManager:getCurUseCvAudioIsMyCountry() then
+            --替换前缀中出现的cv为多国cv总目录
+            local newCvPrefixPath = string.gsub(cvPrefixPath, "cv", "cv_multiple")
+            --拼接目标国家cv目录
+            newCvPrefixPath = newCvPrefixPath .. folderName .. "/"
+            --替换路径前缀
+            path = string.replacePrefix(path, cvPrefixPath, newCvPrefixPath)
+        end
+    end
+    return path
 end
 
 --播放一个音频文件
 function playAudioSound(self, path, beLoop, finishCall, wpos, parentTrans)
+    path = fixCvPath(path)
     local audioData = nil
     local function _delayCall()
         self:stopAudioSound(audioData)
@@ -604,6 +706,25 @@ function loadAudioSound(self, path, beLoop, wpos, parentTrans, deleteCall)
     end
 
     return AudioDataVo:create(path, beLoop, wpos, parentTrans, deleteCall)
+end
+
+function preloadCvByCvId(self, cvId, noTips)
+    local cvData = self:getCVData(cvId)
+    if not cvData then
+        return false
+    end
+    local path = UrlManager:getCVSoundPath(cvData.voice)
+    path = fixCvPath(path)
+    local audioGo = gs.GOPoolMgr:Get(path, false)
+    if not audioGo then
+        if not noTips then
+            gs.Message.Show(_TT(1431))
+        end
+        return false
+    end
+
+    gs.GOPoolMgr:Recover(audioGo, path)
+    return true
 end
 
 function deleteAudioSound(self, audioData)

@@ -1,318 +1,306 @@
-﻿local var_0_0 = {
+﻿return {
 	map_id = 10008,
-	id = 5000016
-}
-local var_0_1 = {}
-local var_0_2 = {
-	stageIndex = 1,
-	failCondition = 1,
-	timeCount = 180,
-	backGroundStageID = 1,
-	passCondition = 1,
-	totalArea = {
-		-70,
-		20,
-		90,
-		70
-	},
-	playerArea = {
-		-70,
-		20,
-		37,
-		68
-	},
-	enemyArea = {}
-}
-local var_0_3 = {}
-local var_0_4 = {}
-
-Vector3 = var_0_10005
-var_0_4[1] = var_0_10005(-105, 0, 58)
-Vector3 = var_5
-var_0_4[2] = var_5(-105, 0, 78)
-Vector3 = var_5
-var_0_4[3] = var_5(-105, 0, 38)
-var_0_3[1] = var_0_4
-
-local var_0_5 = {}
-
-Vector3 = var_5
-var_0_5[1] = var_5(15, 0, 58)
-Vector3 = var_5
-var_0_5[2] = var_5(15, 0, 78)
-Vector3 = var_5
-var_0_5[3] = var_5(15, 0, 38)
-var_0_3[-1] = var_0_5
-var_0_2.mainUnitPosition = var_0_3
-var_0_2.fleetCorrdinate = {
-	-80,
-	0,
-	75
-}
-var_0_2.waves = {
-	{
-		triggerType = 1,
-		waveIndex = 100,
-		preWaves = {},
-		triggerParams = {
-			timeout = 0.5
-		}
-	},
-	{
-		triggerType = 1,
-		waveIndex = 202,
-		preWaves = {},
-		triggerParams = {
-			timeout = 18
-		}
-	},
-	{
-		triggerType = 1,
-		waveIndex = 203,
-		preWaves = {},
-		triggerParams = {
-			timeout = 33
-		}
-	},
-	{
-		triggerType = 1,
-		waveIndex = 887,
-		preWaves = {},
-		triggerParams = {
-			timeout = 38.5
-		}
-	},
-	{
-		triggerType = 1,
-		waveIndex = 885,
-		preWaves = {
-			887
-		},
-		triggerParams = {
-			timeout = 8
-		}
-	},
-	{
-		triggerType = 0,
-		waveIndex = 101,
-		conditionType = 1,
-		preWaves = {
-			100
-		},
-		triggerParam = {},
-		spawn = {
-			{
-				monsterTemplateID = 50000002,
-				delay = 0,
-				moveCast = true,
-				corrdinate = {
-					10,
-					0,
-					75
+	id = 5000016,
+	stages = {
+		{
+			stageIndex = 1,
+			failCondition = 1,
+			timeCount = 180,
+			backGroundStageID = 1,
+			passCondition = 1,
+			totalArea = {
+				-70,
+				20,
+				90,
+				70
+			},
+			playerArea = {
+				-70,
+				20,
+				37,
+				68
+			},
+			enemyArea = {},
+			mainUnitPosition = {
+				{
+					Vector3(-105, 0, 58),
+					Vector3(-105, 0, 78),
+					Vector3(-105, 0, 38)
 				},
-				buffList = {
-					8001,
-					8007
+				[-1] = {
+					Vector3(15, 0, 58),
+					Vector3(15, 0, 78),
+					Vector3(15, 0, 38)
 				}
 			},
-			{
-				monsterTemplateID = 50000002,
-				delay = 0,
-				moveCast = true,
-				corrdinate = {
-					10,
-					0,
-					35
-				},
-				buffList = {
-					8001,
-					8007
-				}
-			}
-		},
-		airFighter = {
-			{
-				interval = 10,
-				onceNumber = 3,
-				formation = 10006,
-				templateID = 750002,
-				delay = 0,
-				totalNumber = 3,
-				weaponID = {
-					750075
-				},
-				attr = {
-					airPower = 40,
-					maxHP = 15,
-					attackRating = 23
-				}
-			}
-		}
-	},
-	{
-		triggerType = 0,
-		waveIndex = 102,
-		conditionType = 0,
-		preWaves = {
-			101,
-			202
-		},
-		triggerParam = {},
-		spawn = {
-			{
-				monsterTemplateID = 50000028,
-				delay = 0,
-				corrdinate = {
-					30,
-					0,
-					55
-				},
-				phase = {
-					{
-						switchType = 4,
-						dive = "STATE_DIVE",
-						switchTo = 1,
-						index = 0,
-						switchParam = -30,
-						setAI = 10002
-					},
-					{
-						switchType = 1,
-						dive = "STATE_RAID",
-						switchTo = 2,
-						index = 1,
-						switchParam = 10,
-						setAI = 10003
-					},
-					{
-						switchType = 4,
-						dive = "STATE_DIVE",
-						switchTo = 4,
-						index = 2,
-						switchParam = -100,
-						setAI = 90002
-					}
-				}
-			}
-		}
-	},
-	{
-		triggerType = 0,
-		waveIndex = 103,
-		conditionType = 0,
-		preWaves = {
-			101,
-			102
-		},
-		triggerParam = {},
-		spawn = {
-			{
-				monsterTemplateID = 50000003,
-				delay = 0,
-				moveCast = true,
-				corrdinate = {
-					11,
-					0,
-					55
-				},
-				buffList = {
-					8001,
-					8007
-				}
+			fleetCorrdinate = {
+				-80,
+				0,
+				75
 			},
-			{
-				monsterTemplateID = 50000028,
-				delay = 0,
-				corrdinate = {
-					30,
-					0,
-					65
-				},
-				phase = {
-					{
-						switchType = 4,
-						dive = "STATE_DIVE",
-						switchTo = 1,
-						index = 0,
-						switchParam = -30,
-						setAI = 10002
-					},
-					{
-						switchType = 1,
-						dive = "STATE_RAID",
-						switchTo = 2,
-						index = 1,
-						switchParam = 10,
-						setAI = 10003
-					},
-					{
-						switchType = 4,
-						dive = "STATE_DIVE",
-						switchTo = 4,
-						index = 2,
-						switchParam = -100,
-						setAI = 90002
+			waves = {
+				{
+					triggerType = 1,
+					waveIndex = 100,
+					preWaves = {},
+					triggerParams = {
+						timeout = 0.5
 					}
-				}
-			},
-			{
-				monsterTemplateID = 50000028,
-				delay = 0,
-				corrdinate = {
-					30,
-					0,
-					45
 				},
-				phase = {
-					{
-						switchType = 4,
-						dive = "STATE_DIVE",
-						switchTo = 1,
-						index = 0,
-						switchParam = -30,
-						setAI = 10002
-					},
-					{
-						switchType = 1,
-						dive = "STATE_RAID",
-						switchTo = 2,
-						index = 1,
-						switchParam = 10,
-						setAI = 10003
-					},
-					{
-						switchType = 4,
-						dive = "STATE_DIVE",
-						switchTo = 4,
-						index = 2,
-						switchParam = -100,
-						setAI = 90002
+				{
+					triggerType = 1,
+					waveIndex = 202,
+					preWaves = {},
+					triggerParams = {
+						timeout = 18
 					}
+				},
+				{
+					triggerType = 1,
+					waveIndex = 203,
+					preWaves = {},
+					triggerParams = {
+						timeout = 33
+					}
+				},
+				{
+					triggerType = 1,
+					waveIndex = 887,
+					preWaves = {},
+					triggerParams = {
+						timeout = 38.5
+					}
+				},
+				{
+					triggerType = 1,
+					waveIndex = 885,
+					preWaves = {
+						887
+					},
+					triggerParams = {
+						timeout = 8
+					}
+				},
+				{
+					triggerType = 0,
+					waveIndex = 101,
+					conditionType = 1,
+					preWaves = {
+						100
+					},
+					triggerParam = {},
+					spawn = {
+						{
+							monsterTemplateID = 50000002,
+							delay = 0,
+							moveCast = true,
+							corrdinate = {
+								10,
+								0,
+								75
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						},
+						{
+							monsterTemplateID = 50000002,
+							delay = 0,
+							moveCast = true,
+							corrdinate = {
+								10,
+								0,
+								35
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						}
+					},
+					airFighter = {
+						{
+							interval = 10,
+							onceNumber = 3,
+							formation = 10006,
+							templateID = 750002,
+							delay = 0,
+							totalNumber = 3,
+							weaponID = {
+								750075
+							},
+							attr = {
+								airPower = 40,
+								maxHP = 15,
+								attackRating = 23
+							}
+						}
+					}
+				},
+				{
+					triggerType = 0,
+					waveIndex = 102,
+					conditionType = 0,
+					preWaves = {
+						101,
+						202
+					},
+					triggerParam = {},
+					spawn = {
+						{
+							monsterTemplateID = 50000028,
+							delay = 0,
+							corrdinate = {
+								30,
+								0,
+								55
+							},
+							phase = {
+								{
+									switchType = 4,
+									dive = "STATE_DIVE",
+									switchTo = 1,
+									index = 0,
+									switchParam = -30,
+									setAI = 10002
+								},
+								{
+									switchType = 1,
+									dive = "STATE_RAID",
+									switchTo = 2,
+									index = 1,
+									switchParam = 10,
+									setAI = 10003
+								},
+								{
+									switchType = 4,
+									dive = "STATE_DIVE",
+									switchTo = 4,
+									index = 2,
+									switchParam = -100,
+									setAI = 90002
+								}
+							}
+						}
+					}
+				},
+				{
+					triggerType = 0,
+					waveIndex = 103,
+					conditionType = 0,
+					preWaves = {
+						101,
+						102
+					},
+					triggerParam = {},
+					spawn = {
+						{
+							monsterTemplateID = 50000003,
+							delay = 0,
+							moveCast = true,
+							corrdinate = {
+								11,
+								0,
+								55
+							},
+							buffList = {
+								8001,
+								8007
+							}
+						},
+						{
+							monsterTemplateID = 50000028,
+							delay = 0,
+							corrdinate = {
+								30,
+								0,
+								65
+							},
+							phase = {
+								{
+									switchType = 4,
+									dive = "STATE_DIVE",
+									switchTo = 1,
+									index = 0,
+									switchParam = -30,
+									setAI = 10002
+								},
+								{
+									switchType = 1,
+									dive = "STATE_RAID",
+									switchTo = 2,
+									index = 1,
+									switchParam = 10,
+									setAI = 10003
+								},
+								{
+									switchType = 4,
+									dive = "STATE_DIVE",
+									switchTo = 4,
+									index = 2,
+									switchParam = -100,
+									setAI = 90002
+								}
+							}
+						},
+						{
+							monsterTemplateID = 50000028,
+							delay = 0,
+							corrdinate = {
+								30,
+								0,
+								45
+							},
+							phase = {
+								{
+									switchType = 4,
+									dive = "STATE_DIVE",
+									switchTo = 1,
+									index = 0,
+									switchParam = -30,
+									setAI = 10002
+								},
+								{
+									switchType = 1,
+									dive = "STATE_RAID",
+									switchTo = 2,
+									index = 1,
+									switchParam = 10,
+									setAI = 10003
+								},
+								{
+									switchType = 4,
+									dive = "STATE_DIVE",
+									switchTo = 4,
+									index = 2,
+									switchParam = -100,
+									setAI = 90002
+								}
+							}
+						}
+					}
+				},
+				{
+					triggerType = 1,
+					waveIndex = 205,
+					preWaves = {
+						103
+					},
+					triggerParams = {
+						timeout = 1
+					}
+				},
+				{
+					triggerType = 8,
+					waveIndex = 206,
+					preWaves = {
+						103
+					},
+					triggerParams = {}
 				}
 			}
 		}
 	},
-	{
-		triggerType = 1,
-		waveIndex = 205,
-		preWaves = {
-			103
-		},
-		triggerParams = {
-			timeout = 1
-		}
-	},
-	{
-		triggerType = 8,
-		waveIndex = 206,
-		preWaves = {
-			103
-		},
-		triggerParams = {}
-	}
+	fleet_prefab = {}
 }
-var_0_1[1] = var_0_2
-var_0_0.stages = var_0_1
-var_0_0.fleet_prefab = {}
-
-return var_0_0

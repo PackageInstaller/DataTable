@@ -1,67 +1,33 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ChallengeShareMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "ChallengeShareMediator"
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ChallengeProxy):getUserChallengeInfo(arg_1_0.contextData.mode)
 
-import = var_0_10003
+	arg_1_0.viewComponent:setLevel(var_1_0:getLevel())
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
+	local var_1_1 = {
+		regularFleet = var_1_0:getRegularFleet(),
+		submarineFleet = var_1_0:getSubmarineFleet()
+	}
+	local var_1_2 = var_1_1.regularFleet:getShipsByTeam(TeamType.Main, true)[1]
 
-function var_0_1.register(arg_1_0)
-	local var_1_0 = arg_1_0.contextData.mode
+	arg_1_0.viewComponent:setFlagShipPaint(var_1_2:getPainting())
 
-	getProxy = var_1_10002
-	ChallengeProxy = var_1_10004
-
-	local var_1_1 = var_1_10002(var_1_10004)
-	local var_1_2 = var_2.getUserChallengeInfo(var_1_1, var_1_0)
-	local var_1_3 = arg_1_0.viewComponent
-
-	var_3.setLevel(var_1_3, var_1_2:getLevel())
-
-	local var_1_4 = ({
-		regularFleet = var_1_2:getRegularFleet(),
-		submarineFleet = var_1_2:getSubmarineFleet()
-	}).regularFleet
-	local var_1_5 = var_4.getShipsByTeam
-
-	TeamType = var_1_10007
-
-	local var_1_6 = var_1_5(var_1_4, var_1_10007.Main, true)[1]
-	local var_1_7 = arg_1_0.viewComponent
-
-	var_5.setFlagShipPaint(var_1_7, var_1_6:getPainting())
-
-	local var_1_8 = {}
-
-	ipairs = var_1_4
-
-	local var_1_9 = var_3.regularFleet
-
-	for iter_1_0, iter_1_1 in var_1_4(var_8.getShips(var_1_9, true)) do
-		if iter_1_1.id ~= var_1_6.id then
-			table = var_11
-
-			var_11.insert(var_1_8, iter_1_1:getPainting())
+	for iter_1_0, iter_1_1 in ipairs(var_1_1.regularFleet:getShips(true)) do
+		if iter_1_1.id ~= var_1_2.id then
+			table.insert({}, iter_1_1:getPainting())
 		end
 	end
 
-	ipairs = var_6
-
-	local var_1_10 = var_3.submarineFleet
-
-	for iter_1_2, iter_1_3 in var_6(var_8.getShips(var_1_10, true)) do
-		if iter_1_3.id ~= var_1_6.id then
-			table = var_11
-
-			var_11.insert(var_1_8, iter_1_3:getPainting())
+	for iter_1_2, iter_1_3 in ipairs(var_1_1.submarineFleet:getShips(true)) do
+		if iter_1_3.id ~= var_1_2.id then
+			table.insert({}, iter_1_3:getPainting())
 		end
 	end
 
-	local var_1_11 = arg_1_0.viewComponent
-
-	var_6.setShipPaintList(var_1_11, var_1_8)
+	arg_1_0.viewComponent:setShipPaintList({})
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandCheaterTavernConst")
+﻿local var_0_0 = class("IslandCheaterTavernConst")
 
 var_0_0.ChangeDressType = {
 	InRoom = 1,

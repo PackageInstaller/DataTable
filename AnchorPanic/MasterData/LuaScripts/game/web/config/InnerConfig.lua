@@ -1,5 +1,8 @@
 return {
 
+    -- web的游戏平台id
+    ["web_game_platform_id"] = "12",
+
     -------------------------------------------------- server_manager_api_dev --------------------------------------------------
     -- 获取服务器相关信息
     ["server_info"] = "https://server_manager_api_dev.leiyangame.com/ApiServerInfo/getSrvInfo/g/12",
@@ -8,12 +11,17 @@ return {
 
     -------------------------------------------------- 文件上传后台 --------------------------------------------------
     -- 玩家信息手机地址（这里做个备忘）：https://web_gms_api_dev.leiyangame.com/Api/GameReport/collectInfo/g/12
+    -- 文件上传密钥
+    ["upload_file_key"] = "6HNihFsuHCQsWcnwkV36eZqOexvqbQSI",
     -- 文件上传地址
-    ["upload_file_url"] = "http://192.168.90.250:5002/report/file/errorMsg",
+    ["upload_file_url"] = "https://web_gms_api_dev.leiyangame.com/Api/GameReport/fileMsg/g/12",
     -- 文件实时上传地址
     ["upload_real_time_url"] = "https://web_gms_api_dev.leiyangame.com/Api/GameReport/gameReportRealtime/g/12",
     -- 文件上传类型地址
     ["get_upload_type_url"] = "https://web_gms_api_dev.leiyangame.com/Api/GameReport/checkCollect/g/12",
+    
+    -- 超级资源开关
+    ["get_super_res_switch"] = "https://web_gms_api_dev.leiyangame.com/Api/ServerData/getSrvR18Info/g/12",
 
     -------------------------------------------------- web_gms_api_dev --------------------------------------------------
     -- 渠道cdn资源更新类型
@@ -41,7 +49,10 @@ return {
 
     -- 获取资源密钥（本处改动需同步发布机）
     ["get_ab_key"] = "https://web_gms_api_dev.leiyangame.com/WebKeyConfig/getWebKeyConfig/g/12",
-
+    
+    -- 客户端debug登录权限
+    ["client_auth_login"] = "https://web_gms_api_test.leiyangame.com/Api/ClientServer/checkClientAuthLogin/g/12",
+    
     -------------------------------------------------- sdk_app_dev --------------------------------------------------
     -- 获取token
     ["token_url"] = "https://sdk_app_dev.leiyangame.com/User/Login/g/12",

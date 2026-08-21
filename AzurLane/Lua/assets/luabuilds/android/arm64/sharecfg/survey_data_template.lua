@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "survey_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "survey_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.survey_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.survey_data_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.survey_data_template = rawget(pg, "survey_data_template") or setmetatable({
+	__name = "survey_data_template"
+}, confNEO)
+pg.survey_data_template.all = {
 	1001,
 	1002,
 	1004,
@@ -33,25 +10,11 @@ var_0_3.all = {
 	1010,
 	1014
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.survey_data_template = {}
+pg.base = pg.base or {}
+pg.base.survey_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.survey_data_template
-
-	var_1_0[1001] = {
+	pg.base.survey_data_template[1001] = {
 		ios_url = "https://usersurvey.biligame.com/vm/eMNHTBq.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6",
 		uo_url = "https://usersurvey.biligame.com/vm/OtgEluc.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6",
 		main_url = "https://usersurvey.biligame.com/vm/mxYPRez.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6",
@@ -68,11 +31,7 @@ var_0_3.base.survey_data_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.survey_data_template
-
-	var_1_1[1002] = {
+	pg.base.survey_data_template[1002] = {
 		ios_url = "https://usersurvey.wjx.cn/vm/wFx2bAQ.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		uo_url = "https://usersurvey.wjx.cn/vm/twi78ax.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		main_url = "https://usersurvey.wjx.cn/vm/OKyoiqf.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
@@ -89,11 +48,7 @@ var_0_3.base.survey_data_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.survey_data_template
-
-	var_1_2[1004] = {
+	pg.base.survey_data_template[1004] = {
 		ios_url = "https://usersurvey.biligame.com/vm/w7z60Lu.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		uo_url = "https://usersurvey.biligame.com/vm/OQzoQgi.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		main_url = "https://usersurvey.biligame.com/vm/Ps01cq1.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
@@ -110,11 +65,7 @@ var_0_3.base.survey_data_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.survey_data_template
-
-	var_1_3[1009] = {
+	pg.base.survey_data_template[1009] = {
 		ios_url = "https://usersurvey.wjx.cn/vm/e7O30Lm.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		uo_url = "https://usersurvey.wjx.cn/vm/YfeZWPA.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		main_url = "https://usersurvey.wjx.cn/vm/tg5pwdS.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
@@ -131,11 +82,7 @@ var_0_3.base.survey_data_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.survey_data_template
-
-	var_1_4[1010] = {
+	pg.base.survey_data_template[1010] = {
 		ios_url = "https://usersurvey.wjx.cn/vm/Pz4fXxz.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		uo_url = "https://usersurvey.wjx.cn/vm/PpslfXd.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&## ",
 		main_url = "https://usersurvey.wjx.cn/vm/rjAKHK5.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
@@ -152,8 +99,7 @@ var_0_3.base.survey_data_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-	var_1_4.base.survey_data_template[1014] = {
+	pg.base.survey_data_template[1014] = {
 		ios_url = "https://usersurvey.wjx.cn/vm/mBYmfYc.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",
 		uo_url = "https://usersurvey.wjx.cn/vm/eDwrY3J.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&## ",
 		main_url = "https://usersurvey.wjx.cn/vm/rGqpU4e.aspx?q1=$1&q2=$2&q3=$3&q4=$4&q5=$5&sojumpparm=$6&##",

@@ -91,6 +91,7 @@ end
 
 --初始化模块
 function initModule(self)
+    sdk.SdkManager:foreignNotifyStartUp("config_req")
     self.m_modulePathList = {
 
         "game/socket/Init",
@@ -112,11 +113,14 @@ function initModule(self)
         "game/battleMapHall/Init",
         "game/role/Init",
         "game/activity/Init",
+        "game/activityStrengthTask/Init",
         "game/firstCharge/Init",
         "game/permit/Init",
         "game/purchase/Init",
         "game/dailyCheckIn/Init",
         "game/fashionPermit/Init",
+        "game/fashionPermitTwo/Init",
+        "game/supercial/Init",
         "game/mainui/Init",
         "game/mail/Init",
         "game/mainCity/Init",
@@ -180,30 +184,57 @@ function initModule(self)
 
         "game/buildBase/Init",
         "game/dormitory/Init",
+        "game/bigHostel/Init",
         "game/noviceActivity/Init",
         "game/fieldExploration/Init",
         "game/ciruit/Init",
+        "game/threeSheep/Init",
         "game/sandPlay/Init",
         "game/danke/Init",
-        "game/mainActivity/Init",
+        "game/shootBrick/Init",
+        "game/putImage/Init",
+        "game/linklink/Init",
+        "game/ranking/Init",
+        "game/block/Init",
+        "game/pickGold/Init",
 
+        "game/mainActivity/Init",
+        "game/roundPrize/Init",
+        "game/roundPrizeTwo/Init",
         "game/arenaEntrance/Init",
+        "game/guildWar/Init",
         "game/guild/Init",
         "game/guildBossImitate/Init",
         "game/returned/Init",
 
         "game/doundless/Init",
-
+        "game/vision/Init",
         "game/mining/Init",
         "game/eliminate/Init",
         "game/disaster/Init",
         "game/seabed/Init",
+
+        "game/dna/Init",
+
         --移至最后
         "game/fightUI/Init",
         --屏蔽模块
         --"game/rogueLike/Init",
         --"game/infiniteCity/Init",
         "game/subPack/Init",
+        "game/organizeBackpacks/Init",
+        "game/mole/Init",
+        "game/watermelon/Init",
+        "game/ghost/Init",
+        "game/lottery/Init",
+        "game/marriage/Init",
+        "game/bulle/Init",
+        "game/build/Init",
+        "game/drop/Init",
+        "game/bird/Init",
+        "game/split/Init",
+        "game/dessert/Init",
+        "game/dailyRecharge/Init"
     }
 
     -- self.gModuleList = {}
@@ -237,5 +268,3 @@ function initModule(self)
 
     --[[ 替换语言包自动生成，请勿修改！
 ]]
-
-   

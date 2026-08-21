@@ -73,6 +73,10 @@ function onCancel(self, executeThing, targetThing)
 end
 
 function addBuff(self)
+    if self.mTargetThing.mRecovering then
+        return
+    end
+
     self.m_buffList = {}
     if self.mTargetThing then
         if not table.empty(self.config.buff_id) then
@@ -113,6 +117,12 @@ function getColliderTags(self)
     return {FieldExplorationConst.ColliderTag.Player}
 end
 
+function getCollider(self)
+    if self.mGo then
+        return self.mGo:GetComponent(ty.Collider)
+    end
+end
+
 function recover(self)
     if self.mColliderCall and not gs.GoUtil.IsCompNull(self.mColliderCall) then
         self.mColliderCall.onTriggerEnterCall = nil
@@ -132,6 +142,9 @@ function recover(self)
         self.mGo = nil
         self.mTran = nil
     end
+
+    self.mExecuteThing = nil
+    self.mTargetThing = nil
 end
 
 return _M

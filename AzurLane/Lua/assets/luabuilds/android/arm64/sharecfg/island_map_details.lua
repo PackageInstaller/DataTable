@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_map_details") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_map_details"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_map_details = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_map_details
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_map_details = rawget(pg, "island_map_details") or setmetatable({
+	__name = "island_map_details"
+}, confNEO)
+pg.island_map_details.all = {
 	100101,
 	100102,
 	100103,
@@ -46,11 +23,7 @@ var_0_3.all = {
 	100603,
 	100604
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_map_details
-
-var_0_4.get_id_list_by_belong_map = {
+pg.island_map_details.get_id_list_by_belong_map = {
 	[1001] = {
 		100101,
 		100102,
@@ -83,25 +56,11 @@ var_0_4.get_id_list_by_belong_map = {
 		100604
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_map_details = {}
+pg.base = pg.base or {}
+pg.base.island_map_details = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_map_details
-
-	var_1_0[5] = {
+	pg.base.island_map_details[5] = {
 		belong_map = 1001,
 		name = "丰壤农田",
 		ability_id = 2001,
@@ -109,11 +68,7 @@ var_0_4.base.island_map_details = {}
 		id = 100101,
 		detail_icon = "101"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_map_details
-
-	var_1_1[6] = {
+	pg.base.island_map_details[6] = {
 		belong_map = 1001,
 		name = "悠然牧场",
 		ability_id = 2002,
@@ -121,11 +76,7 @@ var_0_4.base.island_map_details = {}
 		id = 100102,
 		detail_icon = "102"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_map_details
-
-	var_1_2[7] = {
+	pg.base.island_map_details[7] = {
 		belong_map = 1001,
 		name = "风车磨坊",
 		ability_id = 2002,
@@ -133,11 +84,7 @@ var_0_4.base.island_map_details = {}
 		id = 100103,
 		detail_icon = "103"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_map_details
-
-	var_1_3[100201] = {
+	pg.base.island_map_details[100201] = {
 		belong_map = 1002,
 		name = "JUU'物流",
 		ability_id = 7,
@@ -145,11 +92,7 @@ var_0_4.base.island_map_details = {}
 		id = 100201,
 		detail_icon = "201"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_map_details
-
-	var_1_4[100202] = {
+	pg.base.island_map_details[100202] = {
 		belong_map = 1002,
 		name = "货运中心",
 		ability_id = 32,
@@ -157,11 +100,7 @@ var_0_4.base.island_map_details = {}
 		id = 100202,
 		detail_icon = "202"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_map_details
-
-	var_1_5[100203] = {
+	pg.base.island_map_details[100203] = {
 		belong_map = 1002,
 		name = "啾咖啡",
 		ability_id = 5009,
@@ -169,11 +108,7 @@ var_0_4.base.island_map_details = {}
 		id = 100203,
 		detail_icon = "203"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_map_details
-
-	var_1_6[100204] = {
+	pg.base.island_map_details[100204] = {
 		belong_map = 1002,
 		name = "岛屿科技",
 		ability_id = 5007,
@@ -181,11 +116,7 @@ var_0_4.base.island_map_details = {}
 		id = 100204,
 		detail_icon = "204"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_map_details
-
-	var_1_7[100205] = {
+	pg.base.island_map_details[100205] = {
 		belong_map = 1002,
 		name = "基地工厂",
 		ability_id = 2012,
@@ -193,11 +124,7 @@ var_0_4.base.island_map_details = {}
 		id = 100205,
 		detail_icon = "205"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_map_details
-
-	var_1_8[100206] = {
+	pg.base.island_map_details[100206] = {
 		belong_map = 1002,
 		name = "啾啾渔场",
 		ability_id = 2017,
@@ -205,11 +132,7 @@ var_0_4.base.island_map_details = {}
 		id = 100206,
 		detail_icon = "206"
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_map_details
-
-	var_1_9[100301] = {
+	pg.base.island_map_details[100301] = {
 		belong_map = 1003,
 		name = "自由搭建区",
 		ability_id = 5003,
@@ -217,11 +140,7 @@ var_0_4.base.island_map_details = {}
 		id = 100301,
 		detail_icon = "301"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_map_details
-
-	var_1_10[100302] = {
+	pg.base.island_map_details[100302] = {
 		belong_map = 1003,
 		name = "日常补给",
 		ability_id = 5003,
@@ -229,11 +148,7 @@ var_0_4.base.island_map_details = {}
 		id = 100302,
 		detail_icon = "302"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_map_details
-
-	var_1_11[100401] = {
+	pg.base.island_map_details[100401] = {
 		belong_map = 1004,
 		name = "沉石矿山",
 		ability_id = 2003,
@@ -241,11 +156,7 @@ var_0_4.base.island_map_details = {}
 		id = 100401,
 		detail_icon = "401"
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_map_details
-
-	var_1_12[100402] = {
+	pg.base.island_map_details[100402] = {
 		belong_map = 1004,
 		name = "翠土林场 ",
 		ability_id = 2004,
@@ -253,11 +164,7 @@ var_0_4.base.island_map_details = {}
 		id = 100402,
 		detail_icon = "402"
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_map_details
-
-	var_1_13[21] = {
+	pg.base.island_map_details[21] = {
 		belong_map = 1005,
 		name = "坠香果园",
 		ability_id = 2005,
@@ -265,11 +172,7 @@ var_0_4.base.island_map_details = {}
 		id = 100501,
 		detail_icon = "501"
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_map_details
-
-	var_1_14[22] = {
+	pg.base.island_map_details[22] = {
 		belong_map = 1005,
 		name = "青芽苗圃",
 		ability_id = 2006,
@@ -277,11 +180,7 @@ var_0_4.base.island_map_details = {}
 		id = 100502,
 		detail_icon = "502"
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_map_details
-
-	var_1_15[100601] = {
+	pg.base.island_map_details[100601] = {
 		belong_map = 1006,
 		name = "有鱼餐馆",
 		ability_id = 2008,
@@ -289,11 +188,7 @@ var_0_4.base.island_map_details = {}
 		id = 100601,
 		detail_icon = "601"
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_map_details
-
-	var_1_16[100602] = {
+	pg.base.island_map_details[100602] = {
 		belong_map = 1006,
 		name = "白熊饮品",
 		ability_id = 2009,
@@ -301,11 +196,7 @@ var_0_4.base.island_map_details = {}
 		id = 100602,
 		detail_icon = "602"
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_map_details
-
-	var_1_17[100603] = {
+	pg.base.island_map_details[100603] = {
 		belong_map = 1006,
 		name = "啾啾简餐",
 		ability_id = 2010,
@@ -313,8 +204,7 @@ var_0_4.base.island_map_details = {}
 		id = 100603,
 		detail_icon = "603"
 	}
-	pg = var_1_17
-	var_1_17.base.island_map_details[100604] = {
+	pg.base.island_map_details[100604] = {
 		belong_map = 1006,
 		name = "乌鱼烤肉",
 		ability_id = 2011,

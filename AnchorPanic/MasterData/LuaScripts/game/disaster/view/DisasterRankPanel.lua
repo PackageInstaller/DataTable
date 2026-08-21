@@ -12,7 +12,7 @@ function ctor(self)
     super.ctor(self)
     self:setSize(0, 0)
     self:setTxtTitle(_TT(108003))
-    self:setBg("disaster_blur.jpg", false, "disaster")
+    self:setBg("disaster_blur_2.jpg", false, "disaster")
 end
 
 -- 初始化数据
@@ -30,6 +30,11 @@ end
 -- 激活
 function active(self, args)
     super.active(self, args)
+
+    local id = sysParam.SysParamManager:getValue(SysParamType.DISASTER_BOSS_ID)
+  
+    self:setBg("disaster_blur_"..id..".jpg", false, "disaster")
+
     MoneyManager:setMoneyTidList({ })
 end
 

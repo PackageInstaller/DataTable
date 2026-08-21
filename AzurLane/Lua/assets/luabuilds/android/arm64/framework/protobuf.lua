@@ -1,37 +1,11 @@
-﻿require = var_0_10000
-
-var_0_10000("Framework.protobuf.containers")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.wire_format")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.encoder")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.decoder")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.descriptor")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.listener")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.text_format")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.type_checkers")
-
-require = var_0_10000
-
-var_0_10000("Framework.protobuf.protobuf")
+﻿require("Framework.protobuf.containers")
+require("Framework.protobuf.wire_format")
+require("Framework.protobuf.encoder")
+require("Framework.protobuf.decoder")
+require("Framework.protobuf.descriptor")
+require("Framework.protobuf.listener")
+require("Framework.protobuf.text_format")
+require("Framework.protobuf.type_checkers")
+require("Framework.protobuf.protobuf")
 
 return

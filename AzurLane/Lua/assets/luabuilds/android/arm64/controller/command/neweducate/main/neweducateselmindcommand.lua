@@ -1,84 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateSelMindCommand", pm.SimpleCommand)
 
-local var_0_0 = "NewEducateSelMindCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).id
-
-	getProxy = var_1_0
-	NewEducateProxy = var_1_10006
-
-	local var_1_2 = var_1_0(var_1_10006)
-	local var_1_3 = var_4.GetCurChar(var_1_2)
-	local var_1_4 = var_4.GetFSM(var_1_3)
-	local var_1_6
-
-	if var_4.CheckPriorityStystem(var_1_4) then
-		pg = var_1_6
-
-		local var_1_5 = var_1_6.TipsMgr.GetInstance()
-
-		var_1_6 = var_1_6.ShowTips
-		i18n = var_1_10007
-
-		var_1_6(var_1_5, var_1_10007("child2_priority_tip"))
+function var_0_0.execute(arg_1_0, arg_1_1)
+	if getProxy(NewEducateProxy):GetCurChar():GetFSM():CheckPriorityStystem() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("child2_priority_tip"))
 
 		return
 	end
 
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_7, 29090, {
-		id = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(29090, {
+		id = arg_1_1:getBody().id
 	}, 29091, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			NewEducateProxy = var_2_10003
+			local var_2_0 = getProxy(NewEducateProxy):GetCurChar():GetFSM()
 
-			local var_2_0 = var_1(var_2_10003)
-			local var_2_1 = var_1.GetCurChar(var_2_0)
-			local var_2_2 = var_1.GetFSM(var_2_1)
-			local var_2_3 = var_1.SetSystemNo
-
-			NewEducateFSM = var_2_10005
-
-			var_2_3(var_2_2, var_2_10005.SYSTEM.MIND)
-
-			NewEducateStateBase = var_2_3
-
-			local var_2_4 = var_2_3.New()
-			local var_2_5 = var_1
-			local var_2_6 = var_1.SetState
-
-			NewEducateFSM = var_2_10006
-
-			var_2_6(var_2_5, var_2_10006.SYSTEM.MIND, var_2_4)
-
-			NewEducateDropHelper = var_2_6
-
-			local var_2_7 = var_2_6.HandleDrops(arg_2_0.drop)
-			local var_2_8 = arg_1_0
-			local var_2_9 = var_4.sendNotification
-
-			GAME = var_7
-
-			var_2_9(var_2_8, var_7.NEW_EDUCATE_SEL_MIND_DONE, {
-				drops = var_2_7,
+			var_2_0:SetSystemNo(NewEducateFSM.SYSTEM.MIND)
+			var_2_0:SetState(NewEducateFSM.SYSTEM.MIND, (NewEducateStateBase.New()))
+			arg_1_0:sendNotification(GAME.NEW_EDUCATE_SEL_MIND_DONE, {
+				drops = NewEducateDropHelper.HandleDrops(arg_2_0.drop),
 				node = arg_2_0.first_node
 			})
 		else
-			pg = var_1
-
-			local var_2_10 = var_1.TipsMgr.GetInstance()
-
-			var_1.ShowTips(var_2_10, "NewEducate_SelMind: " .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("NewEducate_SelMind: " .. arg_2_0.result)
 		end
 
 		return
@@ -87,4 +29,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

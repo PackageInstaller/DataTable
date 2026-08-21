@@ -1,15 +1,8 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AtelierFormulaListView", import("view.base.BasePanel"))
 
-local var_0_0 = "AtelierFormulaListView"
+var_0_0.FilterAll = bit.bor(1, 2, 4)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-bit = var_0_10001
-var_0_1.FilterAll = var_0_10001.bor(1, 2, 4)
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 	arg_1_0._tf = arg_1_1
 	arg_1_0._parentClass = arg_1_2
@@ -20,170 +13,80 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "Frame/Item")
+function var_0_0.Init(arg_2_0)
+	setActive(arg_2_0._tf:Find("Frame/Item"), false)
 
-	setActive = var_1_10002
+	arg_2_0.formulaRect = GetComponent(arg_2_0._tf:Find("Frame/ScrollView"), "LScrollRect")
 
-	var_1_10002(var_2_1, false)
-
-	GetComponent = var_1_10002
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.formulaRect = var_1_10002(var_4.Find(var_2_2, "Frame/ScrollView"), "LScrollRect")
-
-	local var_2_3 = arg_2_0.formulaRect
-
-	function var_2_3.onUpdateItem(arg_3_0, arg_3_1)
-		local var_3_0 = arg_2_0
-
-		var_2.UpdateFormulaItem(var_3_0, arg_3_0 + 1, arg_3_1)
+	function arg_2_0.formulaRect.onUpdateItem(arg_3_0, arg_3_1)
+		arg_2_0:UpdateFormulaItem(arg_3_0 + 1, arg_3_1)
 
 		return
 	end
 
-	setActive = var_2_3
-
-	var_2_3(arg_2_0._go, false)
+	setActive(arg_2_0._go, false)
 	arg_2_0:InitCustom()
 
 	return
 end
 
-function var_0_1.InitCustom(arg_4_0)
-	_ = var_1_10001
-	arg_4_0.formulaFilterButtons = var_1_10001.map({
+function var_0_0.InitCustom(arg_4_0)
+	arg_4_0.formulaFilterButtons = _.map({
 		1,
 		2,
 		3
 	}, function(arg_5_0)
-		local var_5_0 = arg_4_0._tf
-		local var_5_1 = var_1.Find(var_5_0, "Frame/Tabs")
-
-		return var_1.GetChild(var_5_1, arg_5_0 - 1)
+		return arg_4_0._tf:Find("Frame/Tabs"):GetChild(arg_5_0 - 1)
 	end)
-	setText = var_1
 
-	local var_4_0 = arg_4_0._tf
-	local var_4_1 = var_3.Find(var_4_0, "Frame/Empty")
-
-	i18n = var_4
-
-	var_1(var_4_1, var_4("ryza_tip_no_recipe"))
-
-	setText = var_1
-
-	local var_4_2 = arg_4_0._tf
-	local var_4_3 = var_3.Find(var_4_2, "Frame/Filter/Text")
-
-	i18n = var_4
-
-	var_1(var_4_3, var_4("ryza_toggle_only_composite"))
-
-	setText = var_1
-
-	local var_4_4 = arg_4_0._tf
-	local var_4_5 = var_3.Find(var_4_4, "Frame/Item/Lock/Text")
-
-	i18n = var_4
-
-	var_1(var_4_5, var_4("ryza_tip_unlock_all_tools"))
-
-	setText = var_1
-
-	local var_4_6 = arg_4_0._tf
-	local var_4_7 = var_3.Find(var_4_6, "Bar/Text")
-
-	i18n = var_4
-
-	var_1(var_4_7, var_4("ryza_tip_select_recipe"))
+	setText(arg_4_0._tf:Find("Frame/Empty"), i18n("ryza_tip_no_recipe"))
+	setText(arg_4_0._tf:Find("Frame/Filter/Text"), i18n("ryza_toggle_only_composite"))
+	setText(arg_4_0._tf:Find("Frame/Item/Lock/Text"), i18n("ryza_tip_unlock_all_tools"))
+	setText(arg_4_0._tf:Find("Bar/Text"), i18n("ryza_tip_select_recipe"))
 
 	return
 end
 
-function var_0_1.SetContextData(arg_6_0, arg_6_1)
+function var_0_0.SetContextData(arg_6_0, arg_6_1)
 	arg_6_0.contextData = arg_6_1
 
 	return
 end
 
-function var_0_1.SetActivity(arg_7_0, arg_7_1)
+function var_0_0.SetActivity(arg_7_0, arg_7_1)
 	arg_7_0.activity = arg_7_1
 
 	return
 end
 
-function var_0_1.didEnter(arg_8_0)
-	local var_8_0 = arg_8_0.contextData
+function var_0_0.didEnter(arg_8_0)
+	arg_8_0.contextData.filterType = var_0_0.FilterAll
 
-	var_8_0.filterType = var_0_1.FilterAll
-	pairs = var_8_0
-
-	for iter_8_0, iter_8_1 in var_8_0(arg_8_0.formulaFilterButtons) do
-		onButton = var_1_10006
-
-		local var_8_1 = arg_8_0
-		local var_8_2 = iter_8_1
-
-		local function var_8_3()
-			if arg_8_0.contextData.filterType == var_0_1.FilterAll then
-				local var_9_0 = arg_8_0.contextData
-
-				bit = var_1
-				var_9_0.filterType = var_1.lshift(1, iter_8_0 - 1)
+	for iter_8_0, iter_8_1 in pairs(arg_8_0.formulaFilterButtons) do
+		onButton(arg_8_0, iter_8_1, function()
+			if arg_8_0.contextData.filterType == var_0_0.FilterAll then
+				arg_8_0.contextData.filterType = bit.lshift(1, iter_8_0 - 1)
 			else
-				local var_9_1 = arg_8_0.contextData
-
-				bit = var_1
-
-				local var_9_2 = var_1.bxor
-				local var_9_3 = arg_8_0.contextData.filterType
-
-				bit = var_2_10004
-				var_9_1.filterType = var_9_2(var_9_3, var_2_10004.lshift(1, iter_8_0 - 1))
+				arg_8_0.contextData.filterType = bit.bxor(arg_8_0.contextData.filterType, bit.lshift(1, iter_8_0 - 1))
 
 				if arg_8_0.contextData.filterType == 0 then
-					arg_8_0.contextData.filterType = var_0_1.FilterAll
+					arg_8_0.contextData.filterType = var_0_0.FilterAll
 				end
 			end
 
-			local var_9_4 = arg_8_0
-
-			var_0.UpdateFilterButtons(var_9_4)
-
-			local var_9_5 = arg_8_0
-
-			var_0.FilterFormulas(var_9_5)
-
-			local var_9_6 = arg_8_0
-
-			var_0.UpdateFormulaList(var_9_6)
+			arg_8_0:UpdateFilterButtons()
+			arg_8_0:FilterFormulas()
+			arg_8_0:UpdateFormulaList()
 
 			return
-		end
-
-		SFX_PANEL = var_1_10011
-
-		var_1_10006(var_8_1, var_8_2, var_8_3, var_1_10011)
+		end, SFX_PANEL)
 	end
 
-	onToggle = var_1
-
-	local var_8_4 = arg_8_0
-	local var_8_5 = arg_8_0._tf
-
-	var_1(var_8_4, var_4.Find(var_8_5, "Frame/Filter/Toggle"), function(arg_10_0)
+	onToggle(arg_8_0, arg_8_0._tf:Find("Frame/Filter/Toggle"), function(arg_10_0)
 		arg_8_0.showOnlyComposite = arg_10_0
 
-		local var_10_0 = arg_8_0
-
-		var_1.FilterFormulas(var_10_0)
-
-		local var_10_1 = arg_8_0
-
-		var_1.UpdateFormulaList(var_10_1)
+		arg_8_0:FilterFormulas()
+		arg_8_0:UpdateFormulaList()
 
 		return
 	end)
@@ -191,18 +94,10 @@ function var_0_1.didEnter(arg_8_0)
 	return
 end
 
-function var_0_1.ShowFormulaList(arg_11_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_11_0._go, true)
-
-	setParent = var_1_10001
-
-	var_1_10001(arg_11_0._go, arg_11_0._parentClass.top)
-
-	local var_11_0 = arg_11_0._tf
-
-	var_1.SetSiblingIndex(var_11_0, 0)
+function var_0_0.ShowFormulaList(arg_11_0)
+	setActive(arg_11_0._go, true)
+	setParent(arg_11_0._go, arg_11_0._parentClass.top)
+	arg_11_0._tf:SetSiblingIndex(0)
 	arg_11_0:UpdateFilterButtons()
 	arg_11_0:FilterFormulas()
 	arg_11_0:UpdateFormulaList()
@@ -210,247 +105,111 @@ function var_0_1.ShowFormulaList(arg_11_0)
 	return
 end
 
-function var_0_1.UpdateFilterButtons(arg_12_0)
-	pairs = var_1_10001
+function var_0_0.UpdateFilterButtons(arg_12_0)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.formulaFilterButtons) do
+		local var_12_0 = arg_12_0.contextData.filterType ~= var_0_0.FilterAll and bit.band(arg_12_0.contextData.filterType, bit.lshift(1, iter_12_0 - 1)) > 0
 
-	for iter_12_0, iter_12_1 in var_1_10001(arg_12_0.formulaFilterButtons) do
-		local var_12_0, var_12_2
-
-		if arg_12_0.contextData.filterType ~= var_0_1.FilterAll then
-			bit = var_12_0
-			var_12_0 = var_12_0.band
-
-			local var_12_1 = arg_12_0.contextData.filterType
-
-			bit = var_1_10010
-			var_12_2 = var_12_0(var_12_1, var_1_10010.lshift(1, iter_12_0 - 1)) > 0
-		end
-
-		setActive = var_12_0
-
-		var_12_0(iter_12_1:Find("Selected"), var_12_2)
+		setActive(iter_12_1:Find("Selected"), var_12_0)
 	end
 
 	return
 end
 
-local var_0_2 = {}
+local var_0_1 = {
+	[AtelierFormula.TYPE.EQUIP] = "ryza_word_equip",
+	[AtelierFormula.TYPE.ITEM] = "word_item",
+	[AtelierFormula.TYPE.TOOL] = "word_tool",
+	[AtelierFormula.TYPE.OTHER] = "word_other"
+}
 
-AtelierFormula = var_0_0
-var_0_2[var_0_0.TYPE.EQUIP] = "ryza_word_equip"
-AtelierFormula = var_2
-var_0_2[var_2.TYPE.ITEM] = "word_item"
-AtelierFormula = var_2
-var_0_2[var_2.TYPE.TOOL] = "word_tool"
-AtelierFormula = var_2
-var_0_2[var_2.TYPE.OTHER] = "word_other"
-
-function var_0_1.UpdateFormulaItem(arg_13_0, arg_13_1, arg_13_2)
-	tf = var_1_10003
-
-	local var_13_0 = var_1_10003(arg_13_2)
+function var_0_0.UpdateFormulaItem(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = tf(arg_13_2)
 	local var_13_1 = arg_13_0.filterFormulas[arg_13_1]
-	local var_13_2 = var_4.GetProduction(var_13_1)
-	local var_13_3 = arg_13_0._parentClass
+	local var_13_2 = arg_13_0.filterFormulas[arg_13_1]:GetProduction()
 
-	var_6.UpdateRyzaDrop(var_13_3, var_13_0:Find("BG/Icon"), {
+	arg_13_0._parentClass:UpdateRyzaDrop(var_13_0:Find("BG/Icon"), {
 		type = var_13_2[1],
 		id = var_13_2[2]
 	}, true)
 
-	local var_13_4 = var_0_2[var_4:GetType()]
-	local var_13_5 = var_4:GetType()
+	local var_13_3 = var_0_1[var_13_1:GetType()]
+	local var_13_4 = var_13_1:GetType() ~= AtelierFormula.TYPE.TOOL and not arg_13_0.activity:IsCompleteAllTools(var_13_1:getConfig("version"))
 
-	AtelierFormula = var_13_3
+	setActive(var_13_0:Find("Lock"), var_13_4)
+	setActive(var_13_0:Find("BG"), not var_13_4)
+	setText(var_13_0:Find("BG/Type"), i18n(var_13_3))
+	setScrollText(var_13_0:Find("BG/Name/Text"), var_13_1:GetName())
 
-	local var_13_7
+	local var_13_5 = var_13_1:GetMaxLimit() > 0 and var_13_1:GetMaxLimit() - var_13_1:GetUsedCount() .. "/" .. var_13_1:GetMaxLimit() or "∞"
+	local var_13_6 = var_13_1:IsAvaliable()
 
-	if var_13_5 ~= var_13_3.TYPE.TOOL then
-		local var_13_6 = arg_13_0.activity
+	setActive(var_13_0:Find("BG/Count"), var_13_6)
+	setActive(var_13_0:Find("Completed"), not var_13_6)
 
-		var_13_7 = not var_7.IsCompleteAllTools(var_13_6, var_4:getConfig("version"))
-	else
-		var_13_7 = false
+	if var_13_6 then
+		local var_13_7 = AtelierFormula.IsFormualCanComposite(var_13_1, arg_13_0.activity, arg_13_0.contextData.versionIndex)
+		local var_13_8 = arg_13_0.contextData.versionIndex
+		local var_13_9 = "ffffff"
+
+		var_13_9 = arg_13_0.contextData.versionIndex and var_13_8 == 2 and SummerFeastScene.TransformColor(var_13_7 and "62e587" or "f27878") or SummerFeastScene.TransformColor(var_13_7 and "4fb3a3" or "d55a54")
+
+		setTextColor(var_13_0:Find("BG/Count"), var_13_9)
 	end
 
-	if false then
-		var_13_7 = true
-	end
-
-	setActive = var_8
-
-	var_8(var_13_0:Find("Lock"), var_13_7)
-
-	setActive = var_8
-
-	var_8(var_13_0:Find("BG"), not var_13_7)
-
-	setText = var_8
-
-	local var_13_8 = var_13_0:Find("BG/Type")
-
-	i18n = var_11
-
-	var_8(var_13_8, var_11(var_13_4))
-
-	setScrollText = var_8
-
-	var_8(var_13_0:Find("BG/Name/Text"), var_4:GetName())
-
-	local var_13_9
-	local var_13_10 = var_4:GetMaxLimit()
-
-	if 0 < var_13_10 then
-		var_13_9 = var_4:GetMaxLimit() - var_4:GetUsedCount() .. "/" .. var_4:GetMaxLimit()
-	else
-		var_13_9 = "∞"
-	end
-
-	local var_13_11 = var_4:IsAvaliable()
-
-	setActive = var_13_12
-
-	var_13_12(var_13_0:Find("BG/Count"), var_13_11)
-
-	setActive = var_13_12
-
-	var_13_12(var_13_0:Find("Completed"), not var_13_11)
-
-	local var_13_12
-
-	if var_13_11 then
-		AtelierFormula = var_13_12
-		var_13_12 = var_13_12.IsFormualCanComposite(var_4, arg_13_0.activity, arg_13_0.contextData.versionIndex)
-
-		local var_13_13 = arg_13_0.contextData.versionIndex
-		local var_13_14 = "ffffff"
-
-		if var_13_13 and var_13_13 == 2 then
-			SummerFeastScene = var_13
-			var_13_14 = var_13.TransformColor(var_13_12 and "62e587" or "f27878")
-		else
-			SummerFeastScene = var_13
-			var_13_14 = var_13.TransformColor(var_13_12 and "4fb3a3" or "d55a54")
-		end
-
-		setTextColor = var_13
-
-		var_13(var_13_0:Find("BG/Count"), var_13_14)
-	end
-
-	setText = var_13_12
-
-	var_13_12(var_13_0:Find("BG/Count"), var_13_9)
-
-	onButton = var_13_12
-
-	local var_13_15 = arg_13_0
-	local var_13_16 = var_13_0
-
-	local function var_13_17()
-		if not var_13_11 then
-			pg = var_0
-
-			local var_14_0 = var_0.TipsMgr.GetInstance()
-			local var_14_1 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_14_1(var_14_0, var_2_10003("ryza_tip_composite_invalid"))
+	setText(var_13_0:Find("BG/Count"), var_13_5)
+	onButton(arg_13_0, var_13_0, function()
+		if not var_13_6 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_composite_invalid"))
 
 			return
 		end
 
-		if var_13_7 then
-			pg = var_0
-
-			local var_14_2 = var_0.TipsMgr.GetInstance()
-			local var_14_3 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_14_3(var_14_2, var_2_10003("ryza_tip_unlock_all_tools"))
+		if var_13_4 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ryza_tip_unlock_all_tools"))
 
 			return
 		end
 
-		local var_14_4 = arg_13_0._parentClass
-
-		var_0.OnClickFormula(var_14_4, var_0)
+		arg_13_0._parentClass:OnClickFormula(var_13_1)
 
 		return
-	end
-
-	SFX_PANEL = var_15
-
-	var_13_12(var_13_15, var_13_16, var_13_17, var_15)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.FilterFormulas(arg_15_0)
+function var_0_0.FilterFormulas(arg_15_0)
 	arg_15_0.filterFormulas = {}
 
-	local var_15_0 = arg_15_0.contextData.versionIndex
-
-	pairs = var_1_10002
-
-	local var_15_1 = arg_15_0.activity
-
-	for iter_15_0, iter_15_1 in var_1_10002(var_4.GetFormulasByVersion(var_15_1, var_15_0)) do
-		if arg_15_0:IsFormulaTypeFit(iter_15_1) then
-			if arg_15_0.showOnlyComposite then
-				if iter_15_1:IsAvaliable() then
-					AtelierFormula = var_7
-
-					if var_7.IsFormualCanComposite(iter_15_1, arg_15_0.activity, var_15_0) then
-						table = var_7
-
-						var_7.insert(arg_15_0.filterFormulas, iter_15_1)
-					end
-				end
-			end
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.activity:GetFormulasByVersion(arg_15_0.contextData.versionIndex)) do
+		if arg_15_0:IsFormulaTypeFit(iter_15_1) and (not arg_15_0.showOnlyComposite or iter_15_1:IsAvaliable() and AtelierFormula.IsFormualCanComposite(iter_15_1, arg_15_0.activity, arg_15_0.contextData.versionIndex)) then
+			table.insert(arg_15_0.filterFormulas, iter_15_1)
 		end
 	end
 
-	table = var_2
-
-	var_2.sort(arg_15_0.filterFormulas, function(arg_16_0, arg_16_1)
-		local var_16_0 = {
+	table.sort(arg_15_0.filterFormulas, function(arg_16_0, arg_16_1)
+		for iter_16_0, iter_16_1 in ipairs({
 			function(arg_17_0)
 				return arg_17_0:IsAvaliable() and 0 or 1
 			end,
 			function(arg_18_0)
-				local var_18_0 = arg_18_0:GetType()
-
-				AtelierFormula = var_3_10002
-
-				if var_18_0 ~= var_3_10002.TYPE.TOOL then
-					local var_18_1 = arg_15_0.activity
-
-					if not var_1.IsCompleteAllTools(var_18_1, arg_18_0:getConfig("version")) then
-						do return 1 end
-
-						goto label_18_0
-					end
+				if arg_18_0:GetType() ~= AtelierFormula.TYPE.TOOL and not arg_15_0.activity:IsCompleteAllTools(arg_18_0:getConfig("version")) then
+					return 1
+				else
+					return 0
 				end
-
-				do return 0 end
-
-				::label_18_0::
 
 				return
 			end,
 			function(arg_19_0)
 				return arg_19_0:GetConfigID()
 			end
-		}
+		}) do
+			local var_16_0 = iter_16_1(arg_16_0)
+			local var_16_1 = iter_16_1(arg_16_1)
 
-		ipairs = var_3
-
-		for iter_16_0, iter_16_1 in var_3(var_16_0) do
-			if iter_16_1(arg_16_0) ~= iter_16_1(arg_16_1) then
-				return var_8 < var_9
+			if var_16_0 ~= var_16_1 then
+				return var_16_0 < var_16_1
 			end
 		end
 
@@ -460,71 +219,42 @@ function var_0_1.FilterFormulas(arg_15_0)
 	return
 end
 
-function var_0_1.IsFormulaTypeFit(arg_20_0, arg_20_1)
-	if arg_20_0.contextData.filterType == var_0_1.FilterAll then
+function var_0_0.IsFormulaTypeFit(arg_20_0, arg_20_1)
+	if arg_20_0.contextData.filterType == var_0_0.FilterAll then
 		return true
 	end
 
-	switch = var_3
-
-	local var_20_0 = arg_20_1
-	local var_20_1 = arg_20_1.GetType(var_20_0)
-	local var_20_2 = {}
-
-	AtelierFormula = var_20_0
-	var_20_2[var_20_0.TYPE.EQUIP] = function()
-		bit = var_2_10000
-
-		return var_2_10000.band(var_0, 1) > 0
-	end
-	AtelierFormula = var_7
-	var_20_2[var_7.TYPE.ITEM] = function()
-		bit = var_2_10000
-
-		return var_2_10000.band(var_0, 2) > 0
-	end
-	AtelierFormula = var_7
-	var_20_2[var_7.TYPE.TOOL] = function()
-		bit = var_2_10000
-
-		return var_2_10000.band(var_0, 4) > 0
-	end
-	AtelierFormula = var_7
-	var_20_2[var_7.TYPE.OTHER] = function()
-		bit = var_2_10000
-
-		return var_2_10000.band(var_0, 4) > 0
-	end
-
-	return var_3(var_20_1, var_20_2)
+	return switch(arg_20_1:GetType(), {
+		[AtelierFormula.TYPE.EQUIP] = function()
+			return bit.band(var_0, 1) > 0
+		end,
+		[AtelierFormula.TYPE.ITEM] = function()
+			return bit.band(var_0, 2) > 0
+		end,
+		[AtelierFormula.TYPE.TOOL] = function()
+			return bit.band(var_0, 4) > 0
+		end,
+		[AtelierFormula.TYPE.OTHER] = function()
+			return bit.band(var_0, 4) > 0
+		end
+	})
 end
 
-function var_0_1.UpdateFormulaList(arg_25_0)
-	local var_25_0 = #arg_25_0.filterFormulas == 0
+function var_0_0.UpdateFormulaList(arg_25_0)
+	local var_25_0 = #arg_25_0.filterFormulas
+	local var_25_1 = #arg_25_0.filterFormulas == 0
 
-	setActive = var_1_10003
-
-	local var_25_1 = arg_25_0._tf
-
-	var_1_10003(var_5.Find(var_25_1, "Frame/Empty"), var_25_0)
-
-	setActive = var_1_10003
-
-	local var_25_2 = arg_25_0._tf
-
-	var_1_10003(var_5.Find(var_25_2, "Frame/ScrollView"), not var_25_0)
-
-	local var_25_3 = arg_25_0.formulaRect
-
-	var_3.SetTotalCount(var_25_3, var_1)
+	setActive(arg_25_0._tf:Find("Frame/Empty"), #arg_25_0.filterFormulas == 0)
+	setActive(arg_25_0._tf:Find("Frame/ScrollView"), not var_25_1)
+	arg_25_0.formulaRect:SetTotalCount(var_25_0)
 
 	return
 end
 
-function var_0_1.willExit(arg_26_0)
+function var_0_0.willExit(arg_26_0)
 	arg_26_0:detach()
 
 	return
 end
 
-return var_0_1
+return var_0_0

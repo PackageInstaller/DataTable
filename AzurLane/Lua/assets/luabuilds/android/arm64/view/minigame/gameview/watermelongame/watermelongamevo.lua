@@ -1,28 +1,13 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("WatermelonGameVo")
+﻿local var_0_0 = class("WatermelonGameVo")
 local var_0_1 = 1.4
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.gameId = arg_1_1
-	pg = var_1_10002
-	arg_1_0.hubId = var_1_10002.mini_game[arg_1_0.gameId].hub_id
-	pg = var_2
-	arg_1_0.drop = var_2.mini_game[arg_1_0.gameId].simple_config_data.drop_ids
-	pg = var_2
-	arg_1_0.totalTimes = var_2.mini_game_hub[arg_1_0.hubId].reward_need
-	getProxy = var_2
-	MiniGameProxy = var_1_10004
-
-	local var_1_0 = var_2(var_1_10004)
-
-	arg_1_0.mgData = var_2.GetMiniGameData(var_1_0, arg_1_0.gameId)
-	getProxy = var_2
-	MiniGameProxy = var_1_0
-
-	local var_1_1 = var_2(var_1_0)
-
-	arg_1_0.mgHubData = var_2.GetHubByHubId(var_1_1, arg_1_0.hubId)
+	arg_1_0.hubId = pg.mini_game[arg_1_0.gameId].hub_id
+	arg_1_0.drop = pg.mini_game[arg_1_0.gameId].simple_config_data.drop_ids
+	arg_1_0.totalTimes = pg.mini_game_hub[arg_1_0.hubId].reward_need
+	arg_1_0.mgData = getProxy(MiniGameProxy):GetMiniGameData(arg_1_0.gameId)
+	arg_1_0.mgHubData = getProxy(MiniGameProxy):GetHubByHubId(arg_1_0.hubId)
 	arg_1_0.tplItemPool = {}
 
 	return
@@ -30,13 +15,7 @@ end
 
 function var_0_0.getGameTimes(arg_2_0)
 	if arg_2_0.mgHubData then
-		local var_2_0
-
-		if not arg_2_0.mgHubData.count then
-			var_2_0 = 0
-		end
-
-		return var_2_0
+		return arg_2_0.mgHubData.count or 0
 	end
 
 	return 0
@@ -44,13 +23,7 @@ end
 
 function var_0_0.getGameUseTimes(arg_3_0)
 	if arg_3_0.mgHubData then
-		local var_3_0
-
-		if not arg_3_0.mgHubData.usedtime then
-			var_3_0 = 0
-		end
-
-		return var_3_0
+		return arg_3_0.mgHubData.usedtime or 0
 	end
 
 	return 0
@@ -62,8 +35,9 @@ function var_0_0.GetGameRound(arg_4_0)
 	end
 
 	local var_4_0 = arg_4_0:getGameUseTimes()
+	local var_4_1 = arg_4_0:GetGameTimes()
 
-	if arg_4_0:GetGameTimes() and var_2 > 0 then
+	if var_4_1 and var_4_1 > 0 then
 		return var_4_0 + 1
 	end
 
@@ -75,8 +49,7 @@ function var_0_0.GetGameRound(arg_4_0)
 end
 
 function var_0_0.prepare(arg_5_0)
-	WatermelonGameConst = var_1_10001
-	arg_5_0.gameTime = var_1_10001.game_time
+	arg_5_0.gameTime = WatermelonGameConst.game_time
 	arg_5_0.gameStepTime = 0
 	arg_5_0.deltaTime = 0
 	arg_5_0.scoreNum = 0
@@ -116,22 +89,14 @@ function var_0_0.getTplItemFromPool(arg_9_0, arg_9_1, arg_9_2)
 		arg_9_0.tplItemPool[arg_9_1] = {}
 	end
 
-	local var_9_0
-
 	if #arg_9_0.tplItemPool[arg_9_1] == 0 then
-		tf = var_9_0
-		instantiate = var_1_10005
-		findTF = var_1_10007
-		var_9_0 = var_9_0(var_1_10005(var_1_10007(arg_9_0.tpl, arg_9_1)))
-		setParent = var_1_10004
+		local var_9_0 = tf(instantiate(findTF(arg_9_0.tpl, arg_9_1)))
 
-		var_1_10004(var_9_0, arg_9_2)
+		setParent(var_9_0, arg_9_2)
 
 		return var_9_0, true
 	else
-		table = var_9_0
-
-		return var_9_0.remove(arg_9_0.tplItemPool[arg_9_1], #arg_9_0.tplItemPool[arg_9_1]), false
+		return table.remove(arg_9_0.tplItemPool[arg_9_1], #arg_9_0.tplItemPool[arg_9_1]), false
 	end
 
 	return nil, nil
@@ -142,13 +107,8 @@ function var_0_0.returnTplItem(arg_10_0, arg_10_1, arg_10_2)
 		return
 	end
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_10_2, false)
-
-	table = var_1_10003
-
-	var_1_10003.insert(arg_10_0.tplItemPool[arg_10_1], arg_10_2)
+	setActive(arg_10_2, false)
+	table.insert(arg_10_0.tplItemPool[arg_10_1], arg_10_2)
 
 	return
 end

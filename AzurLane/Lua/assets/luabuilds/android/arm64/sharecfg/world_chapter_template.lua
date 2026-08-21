@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_chapter_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_chapter_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_chapter_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_chapter_template
-
-var_0_3.__stream__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.world_chapter_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.world_chapter_template = rawget(pg, "world_chapter_template") or setmetatable({
+	__name = "world_chapter_template"
+}, confNEO)
+pg.world_chapter_template.__stream__ = true
+pg.world_chapter_template.all = {
 	2000,
 	2010,
 	2020,
@@ -676,36 +649,10 @@ var_0_4.all = {
 	440010,
 	440020
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-
-local var_0_6 = var_0_4.base
-
-pg = var_0_5
-
-local var_0_7
-
-if not var_0_5.base.world_chapter_template then
-	var_0_7 = {}
-end
-
-var_0_6.world_chapter_template = var_0_7
-cs = var_0_6
-
-local var_0_8
-
-var_0_8 = var_0_6 or {}
-cs = cs
-var_0.world_chapter_template = {
+pg.base = pg.base or {}
+pg.base.world_chapter_template = pg.base.world_chapter_template or {}
+cs = cs or {}
+cs.world_chapter_template = {
 	[2000] = {
 		0,
 		1444

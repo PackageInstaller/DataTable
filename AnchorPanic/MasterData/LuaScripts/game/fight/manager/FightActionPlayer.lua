@@ -243,9 +243,9 @@ function nextPriority(self)
     if vList then
         self:playEftActionList(vList)
     else
+        -- 所有优先级处理完成，大回调
+        self.curBeforePriority = nil
         if self.playAllFinishCall then
-            -- 所有优先级处理完成，大回调
-            self.curBeforePriority = 1
             self.playAllFinishCall()
         end
     end

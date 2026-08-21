@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SkinMagazinePage6", import(".TemplatePage.SkinMagazineTemplatePage"))
 
-local var_0_0 = "SkinMagazinePage6"
+var_0_0.EXPAND_WIDTH = 689
+var_0_0.CLOSE_WIDTH = 146
+var_0_0.DURATION_PARAMETER = 1500
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.SkinMagazineTemplatePage"))
-
-var_0_1.EXPAND_WIDTH = 689
-var_0_1.CLOSE_WIDTH = 146
-var_0_1.DURATION_PARAMETER = 1500
-
-return var_0_1
+return var_0_0

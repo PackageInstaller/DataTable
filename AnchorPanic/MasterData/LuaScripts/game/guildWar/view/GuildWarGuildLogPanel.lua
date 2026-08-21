@@ -3,8 +3,7 @@
 @Description    : 联盟团战联盟纪录
 @copyright      : (LY) 2021 雷焰网络
 -----------------------------------------------------
-]]
-module('guildWar.GuildWarGuildLogPanel', Class.impl(View))
+]] module('guildWar.GuildWarGuildLogPanel', Class.impl(View))
 
 -- 对应的ui文件
 UIRes = UrlManager:getUIPrefabPath("guildWar/GuildWarGuildLogPanel.prefab")
@@ -43,6 +42,15 @@ function configUI(self)
     self.mPretBtn = self:getChildGO("mPretBtn")
     self.mNextBtn = self:getChildGO("mNextBtn")
     self.mTxtNum = self:getChildGO("mTxtNum"):GetComponent(ty.Text)
+
+    self.mSelectType = self:getChildGO("mSelectType")
+    self.mTypeList = {}
+    self.mBtnType1 = self:getChildGO("mBtnType1")
+    self.mBtnType2 = self:getChildGO("mBtnType2")
+    table.insert(self.mTypeList, self.mBtnType1)
+    table.insert(self.mTypeList, self.mBtnType2)
+
+   
 end
 
 function initViewText(self)
@@ -54,6 +62,31 @@ end
 function addAllUIEvent(self)
     self:addUIEvent(self.mPretBtn, self.onPreClick)
     self:addUIEvent(self.mNextBtn, self.onNextClick)
+    self:addUIEvent(self.mBtnType1, self.onBtnType1Click)
+    self:addUIEvent(self.mBtnType2, self.onBtnType2Click)
+end
+
+function onBtnType1Click(self)
+    self:updateClickType(1)
+end
+
+function onBtnType2Click(self)
+    self:updateClickType(2)
+end
+
+function updateClickType(self, index)
+    self.defIndex = index
+    for i = 1, #self.mTypeList do
+        if i ~= index then
+            self.mTypeList[i]:GetComponent(ty.Image).color = gs.ColorUtil.GetColor("2d3646FF")
+            self.mTypeList[i].transform:Find("Text"):GetComponent(ty.Text).color = gs.ColorUtil.GetColor("ddddddFF")
+        else
+            self.mTypeList[i]:GetComponent(ty.Image).color = gs.ColorUtil.GetColor("FFFFFFFF")
+            self.mTypeList[i].transform:Find("Text"):GetComponent(ty.Text).color = gs.ColorUtil.GetColor("40484bFF")
+        end
+    end
+    self.curPage = 1
+    self:updatePageInfo()
 end
 
 function onPreClick(self)
@@ -67,9 +100,15 @@ function onPreClick(self)
 end
 
 function updatePageInfo(self)
-    GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_GUILD_LOG, {
-        page = {(self.curPage - 1) * 5 + 1, self.curPage * 5},
-    })
+    if self.defIndex == guildWar.GuildWarType.Normal then
+        GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_GUILD_LOG, {
+            page = {(self.curPage - 1) * 5 + 1, self.curPage * 5}
+        })
+    else
+        GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_TOP_LOG, {
+            page = {(self.curPage - 1) * 5 + 1, self.curPage * 5}
+        })
+    end
 end
 
 function onNextClick(self)
@@ -85,8 +124,13 @@ end
 function active(self, args)
     super.active(self)
     self.curPage = 1
+    self.defIndex = guildWar.GuildWarManager:getSeasonType()
+    for i = 1, #self.mTypeList do
+        self.mTypeList[i].transform:Find("Text"):GetComponent(ty.Text).text = i == guildWar.GuildWarType.Normal and _TT(149238) or _TT(149239)
+    end
     GameDispatcher:addEventListener(EventName.UPDATE_GUILD_WAR_GUILD_LOG_PANEL, self.updateLogInfo, self)
-    self:updatePageInfo()
+    self:updateClickType(self.defIndex)
+    --self:updatePageInfo()
 end
 
 -- 反激活（销毁工作）
@@ -112,20 +156,22 @@ function updateLogInfo(self, args)
     for i = 1, #self.mLogList do
         local item = SimpleInsItem:create(self.mLogItem, self.mLogScroll.content, "mGuildWarGuildLogItem")
         item:getChildGO("mTxtName"):GetComponent(ty.Text).text = self.mLogList[i].self_name
-        item:getChildGO("mTxtLv"):GetComponent(ty.Text).text = _TT(1361).. self.mLogList[i].self_lv
-        item:getChildGO("mTxtPoint"):GetComponent(ty.Text).text = _TT(149158,self.mLogList[i].old_point,self.mLogList[i].add_point)
+        item:getChildGO("mTxtLv"):GetComponent(ty.Text).text = _TT(1361) .. self.mLogList[i].self_lv
+        item:getChildGO("mTxtPoint"):GetComponent(ty.Text).text = self.defIndex == guildWar.GuildWarType.Normal and
+            _TT(149158, self.mLogList[i].old_point, self.mLogList[i].add_point) or _TT(149155).. self.mLogList[i].self_day_point
 
 
-        item:getChildGO("mIcon"):GetComponent(ty.AutoRefImage):SetImg(
-            UrlManager:getIconPath(guild.GuildManager:getIconDataById(self.mLogList[i].self_icon).icon),false
-        )
+        item:getChildGO("mIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(
+            guild.GuildManager:getIconDataById(self.mLogList[i].self_icon).icon), false)
 
         item:getChildGO("mTxtName2"):GetComponent(ty.Text).text = self.mLogList[i].enemy_name
-        item:getChildGO("mTxtLv2"):GetComponent(ty.Text).text =_TT(1361).. self.mLogList[i].enemy_lv
-        item:getChildGO("mIcon2"):GetComponent(ty.AutoRefImage):SetImg(
-            UrlManager:getIconPath(guild.GuildManager:getIconDataById(self.mLogList[i].enemy_icon).icon),false
-        )
+        item:getChildGO("mTxtLv2"):GetComponent(ty.Text).text = _TT(1361) .. self.mLogList[i].enemy_lv
+        item:getChildGO("mIcon2"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(
+            guild.GuildManager:getIconDataById(self.mLogList[i].enemy_icon).icon), false)
 
+        item:getChildGO("mTxtPoint2"):GetComponent(ty.Text).text = self.defIndex == guildWar.GuildWarType.Normal and
+            "" or _TT(149155).. self.mLogList[i].enemy_day_point
+        item:getChildGO("mTxtPoint2"):SetActive(self.defIndex == guildWar.GuildWarType.Top)
         local text = item:getChildGO("mTxtResult"):GetComponent(ty.Text)
 
         if self.mLogList[i].result == 1 then
@@ -137,8 +183,8 @@ function updateLogInfo(self, args)
         end
 
         item:getChildGO("mTxtTimer"):GetComponent(ty.Text).text =
-        TimeUtil.getFormatTimeBySeconds_12(self.mLogList[i].time)
-        
+            TimeUtil.getFormatTimeBySeconds_12(self.mLogList[i].time)
+
         table.insert(self.mLogItemList, item)
     end
 

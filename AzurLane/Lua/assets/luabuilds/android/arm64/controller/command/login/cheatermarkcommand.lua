@@ -1,43 +1,13 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CheaterMarkCommand", pm.SimpleCommand)
 
-local var_0_0 = "CheaterMarkCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).reason
-
-	pg = var_1_0
-
-	local var_1_2 = var_1_0.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_2, 10994, {
-		type = var_1_1
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(10994, {
+		type = arg_1_1:getBody().reason
 	}, 10995, function(arg_2_0)
-		local var_2_0 = var_1_1
-
-		CC_TYPE_99 = var_2_10002
-
-		if var_2_0 ~= var_2_10002 then
-			local var_2_1 = var_1_1
-
-			CC_TYPE_100 = var_2_10002
-
-			if var_2_1 ~= var_2_10002 then
-				pg = var_2_1
-
-				local var_2_2 = var_2_1.m02
-				local var_2_3 = var_1.sendNotification
-
-				GAME = var_2_10004
-
-				var_2_3(var_2_2, var_2_10004.LOGOUT, {
-					code = 7
-				})
-			end
+		if var_0 ~= CC_TYPE_99 and var_0 ~= CC_TYPE_100 then
+			pg.m02:sendNotification(GAME.LOGOUT, {
+				code = 7
+			})
 		end
 
 		return
@@ -46,4 +16,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

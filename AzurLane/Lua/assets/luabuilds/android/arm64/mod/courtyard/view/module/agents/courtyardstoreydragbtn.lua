@@ -1,16 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CourtYardStoreyDragBtn")
+﻿local var_0_0 = class("CourtYardStoreyDragBtn")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._go = arg_1_1.gameObject
-	CourtYardDragAgent = var_3
-	arg_1_0.agent = var_3.New(arg_1_0, arg_1_2)
+	arg_1_0.agent = CourtYardDragAgent.New(arg_1_0, arg_1_2)
 
-	local var_1_0 = arg_1_0.agent
-
-	var_3.Enable(var_1_0, false)
+	arg_1_0.agent:Enable(false)
 
 	return
 end
@@ -20,9 +15,7 @@ function var_0_0.Active(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 	arg_2_0.OnDragingCallBack = arg_2_2
 	arg_2_0.OnDragEndCallBack = arg_2_3
 
-	local var_2_0 = arg_2_0.agent
-
-	var_4.Enable(var_2_0, true)
+	arg_2_0.agent:Enable(true)
 
 	return
 end
@@ -32,9 +25,7 @@ function var_0_0.DeActive(arg_3_0)
 	arg_3_0.OnDragingCallBack = nil
 	arg_3_0.OnDragEndCallBack = nil
 
-	local var_3_0 = arg_3_0.agent
-
-	var_1.Enable(var_3_0, false)
+	arg_3_0.agent:Enable(false)
 
 	return
 end
@@ -65,10 +56,7 @@ end
 
 function var_0_0.Dispose(arg_7_0)
 	arg_7_0:DeActive()
-
-	local var_7_0 = arg_7_0.agent
-
-	var_1.Dispose(var_7_0)
+	arg_7_0.agent:Dispose()
 
 	return
 end

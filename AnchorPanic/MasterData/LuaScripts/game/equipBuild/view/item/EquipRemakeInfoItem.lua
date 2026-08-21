@@ -52,6 +52,12 @@ function configUI(self)
     -- self.mProgressBarB:InitData(0)
 
     self.mImgColorType = self:getChildGO("mImgColorType"):GetComponent(ty.AutoRefImage)
+
+    self.mBtnRemake = self:getChildGO("mBtnRemake")
+    self.mBtnRemakeAgent = self:getChildGO("mBtnRemakeAgent")
+    self.mTxtRemakeAgent = self:getChildGO("mTxtRemakeAgent"):GetComponent(ty.Text)
+
+    self.mBtnNone = self:getChildGO("mBtnNone")
     -- self.mImgColor = self:getChildGO("mImgColor"):GetComponent(ty.AutoRefImage)
     -- self.aa = self:getChildGO(""):GetComponent(ty.Image)
     -- self.aa = self:getChildTrans("")
@@ -61,7 +67,9 @@ end
 function active(self)
     super.active(self)
     self:initViewText()
-    self:addOnClick(self.mGroupB, self.onRemake)
+    self:addOnClick(self.mBtnRemake, self.onRemake)
+    self:addOnClick(self.mBtnNone, self.onRemake)
+    self:addOnClick(self.mBtnRemakeAgent, self.onRemakeAgent)
 end
 
 -- 反激活（销毁工作）
@@ -77,10 +85,18 @@ end
 function initViewText(self)
     self.mTxtClickTips.text = _TT(71435)
     self.mTxtNoneB.text = _TT(71436)
+    self.mTxtRemakeAgent.text = _TT(71450)
 end
 
 function onRemake(self)
     GameDispatcher:dispatchEvent(EventName.OPEN_EQUIP_REMAKE_UP_VIEW, {
+        pos = self.m_curSelectPos,
+        equipVo = self.m_equipVo
+    })
+end
+
+function onRemakeAgent(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_EQUIP_REMAKE_TARGET_VIEW, {
         pos = self.m_curSelectPos,
         equipVo = self.m_equipVo
     })

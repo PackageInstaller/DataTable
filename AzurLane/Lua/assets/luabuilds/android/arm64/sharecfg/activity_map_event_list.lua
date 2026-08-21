@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_map_event_list") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_map_event_list"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_map_event_list = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_map_event_list
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_map_event_list = rawget(pg, "activity_map_event_list") or setmetatable({
+	__name = "activity_map_event_list"
+}, confNEO)
+pg.activity_map_event_list.all = {
 	1001,
 	1002,
 	1003,
@@ -82,25 +59,11 @@ var_0_3.all = {
 	1404,
 	1405
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_map_event_list = {}
+pg.base = pg.base or {}
+pg.base.activity_map_event_list = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_map_event_list
-
-	var_1_0[1001] = {
+	pg.base.activity_map_event_list[1001] = {
 		node_name = "露营前的准备",
 		icon_name = "storylv1_1_name",
 		type = 1,
@@ -122,11 +85,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_map_event_list
-
-	var_1_1[1002] = {
+	pg.base.activity_map_event_list[1002] = {
 		node_name = "码头的选址",
 		icon_name = "storylv1_2_name",
 		type = 1,
@@ -148,11 +107,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_map_event_list
-
-	var_1_2[1003] = {
+	pg.base.activity_map_event_list[1003] = {
 		node_name = "海鸟的赠礼",
 		icon_name = "storylv1_3_name",
 		type = 1,
@@ -174,11 +129,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_map_event_list
-
-	var_1_3[1004] = {
+	pg.base.activity_map_event_list[1004] = {
 		node_name = "灰烬与宝石",
 		icon_name = "storylv1_4_name",
 		type = 1,
@@ -200,11 +151,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_map_event_list
-
-	var_1_4[1005] = {
+	pg.base.activity_map_event_list[1005] = {
 		node_name = "临时据点",
 		icon_name = "judian_name",
 		type = 1,
@@ -231,11 +178,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_map_event_list
-
-	var_1_5[1006] = {
+	pg.base.activity_map_event_list[1006] = {
 		node_name = "尚未放松的人",
 		icon_name = "storylv2_1_name",
 		type = 1,
@@ -259,11 +202,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_map_event_list
-
-	var_1_6[1007] = {
+	pg.base.activity_map_event_list[1007] = {
 		node_name = "椰林的“赠礼”",
 		icon_name = "storylv2_2_name",
 		type = 1,
@@ -287,11 +226,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_map_event_list
-
-	var_1_7[1008] = {
+	pg.base.activity_map_event_list[1008] = {
 		node_name = "另类捕鱼法",
 		icon_name = "storylv2_3_name",
 		type = 1,
@@ -315,11 +250,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_map_event_list
-
-	var_1_8[1009] = {
+	pg.base.activity_map_event_list[1009] = {
 		node_name = "海边的白日梦",
 		icon_name = "story_swimsuit1_name",
 		type = 1,
@@ -343,11 +274,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_map_event_list
-
-	var_1_9[1010] = {
+	pg.base.activity_map_event_list[1010] = {
 		node_name = "海龟栖息地",
 		icon_name = "storylv2_4_name",
 		type = 1,
@@ -371,11 +298,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_map_event_list
-
-	var_1_10[1011] = {
+	pg.base.activity_map_event_list[1011] = {
 		node_name = "温泉谷",
 		icon_name = "wenquan_name",
 		type = 1,
@@ -399,11 +322,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_map_event_list
-
-	var_1_11[1012] = {
+	pg.base.activity_map_event_list[1012] = {
 		node_name = "落日烧烤会",
 		icon_name = "storylv2_6_name",
 		type = 1,
@@ -432,11 +351,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_map_event_list
-
-	var_1_12[1013] = {
+	pg.base.activity_map_event_list[1013] = {
 		node_name = "丽日茶会",
 		icon_name = "storylv3_1_name",
 		type = 1,
@@ -460,11 +375,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_map_event_list
-
-	var_1_13[1014] = {
+	pg.base.activity_map_event_list[1014] = {
 		node_name = "开辟菜地的计划！",
 		icon_name = "storylv3_2_name",
 		type = 1,
@@ -488,11 +399,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_map_event_list
-
-	var_1_14[1015] = {
+	pg.base.activity_map_event_list[1015] = {
 		node_name = "密林调查组",
 		icon_name = "storylv3_3_name",
 		type = 1,
@@ -516,11 +423,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_map_event_list
-
-	var_1_15[1016] = {
+	pg.base.activity_map_event_list[1016] = {
 		node_name = "温泉乡抢先体验",
 		icon_name = "storylv3_4_name",
 		type = 1,
@@ -544,11 +447,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_map_event_list
-
-	var_1_16[1017] = {
+	pg.base.activity_map_event_list[1017] = {
 		node_name = "心跳的日光浴时间",
 		icon_name = "story_swimsuit2_name",
 		type = 1,
@@ -572,11 +471,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_map_event_list
-
-	var_1_17[1018] = {
+	pg.base.activity_map_event_list[1018] = {
 		node_name = "海龙的邀约",
 		icon_name = "story_swimsuit3_name",
 		type = 1,
@@ -600,11 +495,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_map_event_list
-
-	var_1_18[1019] = {
+	pg.base.activity_map_event_list[1019] = {
 		node_name = "遗迹探险",
 		icon_name = "storylv3_5_name",
 		type = 1,
@@ -628,11 +519,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_map_event_list
-
-	var_1_19[1020] = {
+	pg.base.activity_map_event_list[1020] = {
 		node_name = "并不危险的旅途",
 		icon_name = "storylv3_6_name",
 		type = 1,
@@ -656,11 +543,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_map_event_list
-
-	var_1_20[1021] = {
+	pg.base.activity_map_event_list[1021] = {
 		node_name = "也许是宝物？",
 		icon_name = "storylv3_7_name",
 		type = 1,
@@ -684,11 +567,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_map_event_list
-
-	var_1_21[1022] = {
+	pg.base.activity_map_event_list[1022] = {
 		node_name = "乘风破浪之行",
 		icon_name = "storylv3_8_name",
 		type = 1,
@@ -720,11 +599,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_map_event_list
-
-	var_1_22[1024] = {
+	pg.base.activity_map_event_list[1024] = {
 		node_name = "奇妙的钓鱼比赛",
 		icon_name = "storylv2_3_name1",
 		type = 1,
@@ -748,11 +623,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_map_event_list
-
-	var_1_23[1025] = {
+	pg.base.activity_map_event_list[1025] = {
 		node_name = "波光粼粼的游泳课",
 		icon_name = "story_swimsuit4_name",
 		type = 1,
@@ -776,11 +647,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_map_event_list
-
-	var_1_24[1026] = {
+	pg.base.activity_map_event_list[1026] = {
 		node_name = "马可波罗的计划",
 		icon_name = "storylv4_2_name",
 		type = 1,
@@ -804,11 +671,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_map_event_list
-
-	var_1_25[1027] = {
+	pg.base.activity_map_event_list[1027] = {
 		node_name = "菜地变花田",
 		icon_name = "storylv4_3_name",
 		type = 1,
@@ -832,11 +695,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_map_event_list
-
-	var_1_26[1028] = {
+	pg.base.activity_map_event_list[1028] = {
 		node_name = "泳池与佳人",
 		icon_name = "story_swimsuit5_name",
 		type = 1,
@@ -860,11 +719,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_map_event_list
-
-	var_1_27[1029] = {
+	pg.base.activity_map_event_list[1029] = {
 		node_name = "黄金海滩的尾音",
 		icon_name = "storylv4_4_name",
 		type = 1,
@@ -892,11 +747,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_map_event_list
-
-	var_1_28[1030] = {
+	pg.base.activity_map_event_list[1030] = {
 		node_name = "晚风的送行",
 		icon_name = "storylv3_1_name1",
 		type = 1,
@@ -920,11 +771,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_map_event_list
-
-	var_1_29[1050] = {
+	pg.base.activity_map_event_list[1050] = {
 		node_name = "临时据点",
 		icon_name = "judian_name",
 		type = 5,
@@ -950,11 +797,7 @@ var_0_3.base.activity_map_event_list = {}
 			"island"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_map_event_list
-
-	var_1_30[1051] = {
+	pg.base.activity_map_event_list[1051] = {
 		node_name = "临时据点",
 		icon_name = "judian_name",
 		type = 5,
@@ -980,11 +823,7 @@ var_0_3.base.activity_map_event_list = {}
 			"island"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_map_event_list
-
-	var_1_31[1052] = {
+	pg.base.activity_map_event_list[1052] = {
 		node_name = "临时据点",
 		icon_name = "judian_name",
 		type = 5,
@@ -1010,11 +849,7 @@ var_0_3.base.activity_map_event_list = {}
 			"island"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_map_event_list
-
-	var_1_32[1053] = {
+	pg.base.activity_map_event_list[1053] = {
 		node_name = "临时据点",
 		icon_name = "judian_name",
 		type = 5,
@@ -1040,11 +875,7 @@ var_0_3.base.activity_map_event_list = {}
 			"island"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_map_event_list
-
-	var_1_33[1054] = {
+	pg.base.activity_map_event_list[1054] = {
 		node_name = "温泉谷",
 		icon_name = "wenquan_name",
 		type = 5,
@@ -1070,11 +901,7 @@ var_0_3.base.activity_map_event_list = {}
 			"hotspringtask"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_map_event_list
-
-	var_1_34[1055] = {
+	pg.base.activity_map_event_list[1055] = {
 		node_name = "露天温泉",
 		icon_name = "storylv4_9_name",
 		type = 5,
@@ -1104,11 +931,7 @@ var_0_3.base.activity_map_event_list = {}
 			"hotspring"
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_map_event_list
-
-	var_1_35[1056] = {
+	pg.base.activity_map_event_list[1056] = {
 		node_name = "花田",
 		icon_name = "huatian_name",
 		type = 5,
@@ -1134,11 +957,7 @@ var_0_3.base.activity_map_event_list = {}
 			"flowerfield"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_map_event_list
-
-	var_1_36[1101] = {
+	pg.base.activity_map_event_list[1101] = {
 		node_name = "啾啾搬运工",
 		icon_name = "minigame_1_name",
 		type = 5,
@@ -1164,11 +983,7 @@ var_0_3.base.activity_map_event_list = {}
 			"minigame1"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_map_event_list
-
-	var_1_37[1102] = {
+	pg.base.activity_map_event_list[1102] = {
 		node_name = "啾啾打捞团",
 		icon_name = "minigame_2_name",
 		type = 5,
@@ -1194,11 +1009,7 @@ var_0_3.base.activity_map_event_list = {}
 			"minigame2"
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_map_event_list
-
-	var_1_38[1103] = {
+	pg.base.activity_map_event_list[1103] = {
 		node_name = "啾啾大冒险",
 		icon_name = "minigame_3_name",
 		type = 5,
@@ -1224,11 +1035,7 @@ var_0_3.base.activity_map_event_list = {}
 			"minigame3"
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_map_event_list
-
-	var_1_39[1201] = {
+	pg.base.activity_map_event_list[1201] = {
 		node_name = "啾啾清扫队",
 		icon_name = "Qgame_1_name",
 		type = 2,
@@ -1252,11 +1059,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_map_event_list
-
-	var_1_40[1202] = {
+	pg.base.activity_map_event_list[1202] = {
 		node_name = "过分的“亲密接触”？",
 		icon_name = "Qgame_2_name",
 		type = 2,
@@ -1280,11 +1083,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_map_event_list
-
-	var_1_41[1203] = {
+	pg.base.activity_map_event_list[1203] = {
 		node_name = "丛林中的嬉戏",
 		icon_name = "Qgame_3_name",
 		type = 2,
@@ -1308,11 +1107,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_map_event_list
-
-	var_1_42[1204] = {
+	pg.base.activity_map_event_list[1204] = {
 		node_name = "当心坠落！",
 		icon_name = "Qgame_4_name",
 		type = 2,
@@ -1336,11 +1131,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_map_event_list
-
-	var_1_43[1205] = {
+	pg.base.activity_map_event_list[1205] = {
 		node_name = "旅行中的小憩",
 		icon_name = "Qgame_5_name",
 		type = 2,
@@ -1364,11 +1155,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_map_event_list
-
-	var_1_44[1301] = {
+	pg.base.activity_map_event_list[1301] = {
 		node_name = "诡异的洞穴？",
 		icon_name = "event_1_name",
 		type = 3,
@@ -1392,11 +1179,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_map_event_list
-
-	var_1_45[1302] = {
+	pg.base.activity_map_event_list[1302] = {
 		node_name = "紧急援助行动！",
 		icon_name = "event_2_name",
 		type = 3,
@@ -1420,11 +1203,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_map_event_list
-
-	var_1_46[1303] = {
+	pg.base.activity_map_event_list[1303] = {
 		node_name = "咕咕鸟置换巢",
 		icon_name = "event_3_name",
 		type = 3,
@@ -1446,11 +1225,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_map_event_list
-
-	var_1_47[1304] = {
+	pg.base.activity_map_event_list[1304] = {
 		node_name = "大梦奇遇记",
 		icon_name = "event_4_name",
 		type = 3,
@@ -1472,11 +1247,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_map_event_list
-
-	var_1_48[1305] = {
+	pg.base.activity_map_event_list[1305] = {
 		node_name = "抉择时刻",
 		icon_name = "event_6_name",
 		type = 3,
@@ -1498,11 +1269,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_map_event_list
-
-	var_1_49[1306] = {
+	pg.base.activity_map_event_list[1306] = {
 		node_name = "雨中的邂逅",
 		icon_name = "event_5_name",
 		type = 3,
@@ -1524,11 +1291,7 @@ var_0_3.base.activity_map_event_list = {}
 		open_task = {},
 		params = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_map_event_list
-
-	var_1_50[1401] = {
+	pg.base.activity_map_event_list[1401] = {
 		node_name = "据点隐藏宝箱",
 		icon_name = "",
 		type = 4,
@@ -1559,11 +1322,7 @@ var_0_3.base.activity_map_event_list = {}
 		},
 		params = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_map_event_list
-
-	var_1_51[1402] = {
+	pg.base.activity_map_event_list[1402] = {
 		node_name = "森林隐藏宝箱",
 		icon_name = "",
 		type = 4,
@@ -1590,11 +1349,7 @@ var_0_3.base.activity_map_event_list = {}
 		},
 		params = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_map_event_list
-
-	var_1_52[1403] = {
+	pg.base.activity_map_event_list[1403] = {
 		node_name = "椰子林隐藏宝箱",
 		icon_name = "",
 		type = 4,
@@ -1623,11 +1378,7 @@ var_0_3.base.activity_map_event_list = {}
 		},
 		params = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_map_event_list
-
-	var_1_53[1404] = {
+	pg.base.activity_map_event_list[1404] = {
 		node_name = "火山隐藏宝箱",
 		icon_name = "",
 		type = 4,
@@ -1654,8 +1405,7 @@ var_0_3.base.activity_map_event_list = {}
 		},
 		params = {}
 	}
-	pg = var_1_53
-	var_1_53.base.activity_map_event_list[1405] = {
+	pg.base.activity_map_event_list[1405] = {
 		node_name = "遗迹隐藏宝箱",
 		icon_name = "",
 		type = 4,

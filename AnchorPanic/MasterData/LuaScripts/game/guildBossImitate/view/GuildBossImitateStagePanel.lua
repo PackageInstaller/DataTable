@@ -141,7 +141,7 @@ function refreshView(self)
     self.mTextLevel.text = _TT(108005) .. monsterConfigVo.lvl
 
     local dupInfo = guildBossImitate.GuildBossImitateManager:getDupInfoData()
-    self.mTextMaxRecord.text = _TT(108004, tonumber(dupInfo.my_rank_val))
+    self.mTextMaxRecord.text = _TT(108004, string.formatChineseNumber(dupInfo.my_rank_val))
 
     self:updateModelView()
     self:createEleItem()

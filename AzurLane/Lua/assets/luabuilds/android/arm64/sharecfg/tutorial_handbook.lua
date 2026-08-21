@@ -1,54 +1,17 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "tutorial_handbook") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "tutorial_handbook"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.tutorial_handbook = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.tutorial_handbook
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.tutorial_handbook = rawget(pg, "tutorial_handbook") or setmetatable({
+	__name = "tutorial_handbook"
+}, confNEO)
+pg.tutorial_handbook.all = {
 	100,
 	200,
 	900
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.tutorial_handbook = {}
+pg.base = pg.base or {}
+pg.base.tutorial_handbook = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.tutorial_handbook
-
-	var_1_0[100] = {
+	pg.base.tutorial_handbook[100] = {
 		name = "新手任务",
 		eng_name = "NEWCOMER",
 		type = 1,
@@ -68,11 +31,7 @@ var_0_3.base.tutorial_handbook = {}
 			100901
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.tutorial_handbook
-
-	var_1_1[200] = {
+	pg.base.tutorial_handbook[200] = {
 		name = "功能指引",
 		eng_name = "TUTORIAL",
 		type = 1,
@@ -117,8 +76,7 @@ var_0_3.base.tutorial_handbook = {}
 			203401
 		}
 	}
-	pg = var_1_1
-	var_1_1.base.tutorial_handbook[900] = {
+	pg.base.tutorial_handbook[900] = {
 		name = "科研任务",
 		eng_name = "RESEARCH",
 		type = 2,

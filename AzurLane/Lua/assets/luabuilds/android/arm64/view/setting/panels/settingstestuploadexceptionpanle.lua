@@ -1,48 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SettingsTestUploadExceptionPanle", import(".SettingsBasePanel"))
 
-local var_0_0 = "SettingsTestUploadExceptionPanle"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SettingsBasePanel"))
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsServiceCH"
 end
 
-function var_0_1.GetTitle(arg_2_0)
+function var_0_0.GetTitle(arg_2_0)
 	return "测试异常上传"
 end
 
-function var_0_1.GetTitleEn(arg_3_0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "/ Service"
 end
 
-function var_0_1.OnInit(arg_4_0)
-	findTF = var_1_10001
-	arg_4_0.serviceBtn = var_1_10001(arg_4_0._tf, "delete")
-	onButton = var_1
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.serviceBtn = findTF(arg_4_0._tf, "delete")
 
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.serviceBtn
-
-	local function var_4_2()
-		___inexistence____ = var_2_10000
-
-		local var_5_0 = var_2_10000[0]
-
+	onButton(arg_4_0, arg_4_0.serviceBtn, function()
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_0, var_4_1, var_4_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdate(arg_6_0)
+function var_0_0.OnUpdate(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

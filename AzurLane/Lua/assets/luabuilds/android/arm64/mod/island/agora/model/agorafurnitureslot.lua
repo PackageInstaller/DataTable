@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("AgoraFurnitureSlot")
+﻿local var_0_0 = class("AgoraFurnitureSlot")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.id = arg_1_1

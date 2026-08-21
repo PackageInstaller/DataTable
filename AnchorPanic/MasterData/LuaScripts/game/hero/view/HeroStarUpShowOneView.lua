@@ -122,8 +122,8 @@ function updateView(self)
     -- self.mSkip:SetActive(not self.isNoSkip)
 
     self.mImgPosIcon:SetImg(UrlManager:getHeroJobSmallIconUrl(self.heroConfigVo.professionType), false)
-    self.mImgHeroIcon:SetImg(UrlManager:getBgPath(string.format("heroRecord/record_pic_%s.png", self.heroConfigVo.showModel)), true)
-    self.mImgHeroIcon_bg:SetImg(UrlManager:getBgPath(string.format("heroRecord/record_pic_%s.png", self.heroConfigVo.showModel)), true)
+    self.mImgHeroIcon:SetImg(UrlManager:getheroRecordUrl(self.heroConfigVo.showModel), true)
+    self.mImgHeroIcon_bg:SetImg(UrlManager:getheroRecordUrl(self.heroConfigVo.showModel), true)
 
     if self.heroConfigVo.eleType >= 0 then
         self.mImgEleType.gameObject:SetActive(true)

@@ -1,87 +1,34 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BoatAdGamingUI")
+﻿local var_0_0 = class("BoatAdGamingUI")
 local var_0_1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
-	BoatAdGameVo = var_1_10003
-	var_0_1 = var_1_10003
-	findTF = var_1_10003
-	arg_1_0._gameUI = var_1_10003(arg_1_0._tf, "ui/gamingUI")
-	findTF = var_3
-	arg_1_0.btnBack = var_3(arg_1_0._gameUI, "back")
-	findTF = var_3
-	arg_1_0.btnPause = var_3(arg_1_0._gameUI, "pause")
-	findTF = var_3
-	arg_1_0.gameTime = var_3(arg_1_0._gameUI, "topRight/timeImg/time")
-	findTF = var_3
-	arg_1_0.gameScore = var_3(arg_1_0._gameUI, "topRight/scoreImg/score")
-	onButton = var_3
+	var_0_1 = BoatAdGameVo
+	arg_1_0._gameUI = findTF(arg_1_0._tf, "ui/gamingUI")
+	arg_1_0.btnBack = findTF(arg_1_0._gameUI, "back")
+	arg_1_0.btnPause = findTF(arg_1_0._gameUI, "pause")
+	arg_1_0.gameTime = findTF(arg_1_0._gameUI, "topRight/timeImg/time")
+	arg_1_0.gameScore = findTF(arg_1_0._gameUI, "topRight/scoreImg/score")
 
-	local var_1_0 = arg_1_0._event
-	local var_1_1 = arg_1_0.btnBack
-
-	local function var_1_2()
-		local var_2_0 = arg_1_0._event
-		local var_2_1 = var_0.emit
-
-		SimpleMGEvent = var_2_10003
-
-		var_2_1(var_2_0, var_2_10003.PAUSE_GAME, true)
-
-		local var_2_2 = arg_1_0._event
-		local var_2_3 = var_0.emit
-
-		SimpleMGEvent = var_3
-
-		var_2_3(var_2_2, var_3.OPEN_LEVEL_UI)
+	onButton(arg_1_0._event, arg_1_0.btnBack, function()
+		arg_1_0._event:emit(SimpleMGEvent.PAUSE_GAME, true)
+		arg_1_0._event:emit(SimpleMGEvent.OPEN_LEVEL_UI)
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10008
-
-	var_3(var_1_0, var_1_1, var_1_2, var_1_10008)
-
-	onButton = var_3
-
-	local var_1_3 = arg_1_0._event
-	local var_1_4 = arg_1_0.btnPause
-
-	local function var_1_5()
-		local var_3_0 = arg_1_0._event
-		local var_3_1 = var_0.emit
-
-		SimpleMGEvent = var_2_10003
-
-		var_3_1(var_3_0, var_2_10003.PAUSE_GAME, true)
-
-		local var_3_2 = arg_1_0._event
-		local var_3_3 = var_0.emit
-
-		SimpleMGEvent = var_3
-
-		var_3_3(var_3_2, var_3.OPEN_PAUSE_UI)
+	end, SFX_CONFIRM)
+	onButton(arg_1_0._event, arg_1_0.btnPause, function()
+		arg_1_0._event:emit(SimpleMGEvent.PAUSE_GAME, true)
+		arg_1_0._event:emit(SimpleMGEvent.OPEN_PAUSE_UI)
 
 		return
-	end
+	end, SFX_CONFIRM)
 
-	SFX_CONFIRM = var_1_10008
+	arg_1_0.direct = Vector2(0, 0)
+	arg_1_0.joyStickTf = findTF(arg_1_0._gameUI, "joyStick")
+	arg_1_0.joyStick = MiniGameJoyStick.New(arg_1_0.joyStickTf)
 
-	var_3(var_1_3, var_1_4, var_1_5, var_1_10008)
-
-	Vector2 = var_3
-	arg_1_0.direct = var_3(0, 0)
-	findTF = var_3
-	arg_1_0.joyStickTf = var_3(arg_1_0._gameUI, "joyStick")
-	MiniGameJoyStick = var_3
-	arg_1_0.joyStick = var_3.New(arg_1_0.joyStickTf)
-
-	local var_1_6 = arg_1_0.joyStick
-
-	var_3.setActiveCallback(var_1_6, function(arg_4_0)
+	arg_1_0.joyStick:setActiveCallback(function(arg_4_0)
 		return
 	end)
 
@@ -89,9 +36,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
 function var_0_0.show(arg_5_0, arg_5_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_5_0._gameUI, arg_5_1)
+	setActive(arg_5_0._gameUI, arg_5_1)
 
 	return
 end
@@ -101,8 +46,7 @@ function var_0_0.update(arg_6_0)
 end
 
 function var_0_0.start(arg_7_0)
-	Vector2 = var_1_10001
-	arg_7_0.direct = var_1_10001(0, 0)
+	arg_7_0.direct = Vector2(0, 0)
 	arg_7_0.subGameStepTime = 0
 	arg_7_0._char = nil
 
@@ -110,29 +54,11 @@ function var_0_0.start(arg_7_0)
 end
 
 function var_0_0.step(arg_8_0, arg_8_1)
-	if not arg_8_0._char then
-		arg_8_0._char = var_0_1.GetGameChar()
-	end
+	arg_8_0._char = arg_8_0._char or var_0_1.GetGameChar()
+	arg_8_0.joyStickTf.position = arg_8_0._char:getWorld()
 
-	local var_8_0 = arg_8_0.joyStickTf
-	local var_8_1 = arg_8_0._char
-
-	var_8_0.position = var_3.getWorld(var_8_1)
-
-	local var_8_2 = var_0_1.gameTime
-	local var_8_3 = var_0_1.gameStepTime
-
-	setText = var_1_10004
-
-	var_1_10004(arg_8_0.gameScore, var_0_1.scoreNum)
-
-	setText = var_1_10004
-
-	local var_8_4 = arg_8_0.gameTime
-
-	math = var_7
-
-	var_1_10004(var_8_4, var_7.floor(var_8_3))
+	setText(arg_8_0.gameScore, var_0_1.scoreNum)
+	setText(arg_8_0.gameTime, math.floor(var_0_1.gameStepTime))
 
 	if arg_8_0.leftFlag and arg_8_0.rightFlag then
 		arg_8_0.direct.x = arg_8_0.lastDirect
@@ -144,52 +70,30 @@ function var_0_0.step(arg_8_0, arg_8_1)
 		arg_8_0.direct.x = 0
 	end
 
-	local var_8_5 = arg_8_0.joyStick
+	arg_8_0.joyStick:step()
+	arg_8_0.joyStick:setDirectTarget(arg_8_0.direct)
 
-	var_4.step(var_8_5)
-
-	local var_8_6 = arg_8_0.joyStick
-
-	var_4.setDirectTarget(var_8_6, arg_8_0.direct)
-
-	local var_8_7 = var_0_1
-	local var_8_8 = arg_8_0.joyStick
-
-	var_8_7.joyStickData = var_5.getValue(var_8_8)
+	var_0_1.joyStickData = arg_8_0.joyStick:getValue()
 
 	return
 end
 
 function var_0_0.press(arg_9_0, arg_9_1, arg_9_2)
-	KeyCode = var_1_10003
-
-	if arg_9_1 == var_1_10003.W then
+	if arg_9_1 == KeyCode.W then
 		-- block empty
-	else
-		KeyCode = var_3
+	elseif arg_9_1 == KeyCode.S then
+		-- block empty
+	elseif arg_9_1 == KeyCode.A then
+		arg_9_0.leftFlag = arg_9_2
 
-		if arg_9_1 == var_3.S then
-			-- block empty
-		else
-			KeyCode = var_3
+		if arg_9_2 then
+			arg_9_0.lastDirect = -1
+		end
+	elseif arg_9_1 == KeyCode.D then
+		arg_9_0.rightFlag = arg_9_2
 
-			if arg_9_1 == var_3.A then
-				arg_9_0.leftFlag = arg_9_2
-
-				if arg_9_2 then
-					arg_9_0.lastDirect = -1
-				end
-			else
-				KeyCode = var_3
-
-				if arg_9_1 == var_3.D then
-					arg_9_0.rightFlag = arg_9_2
-
-					if arg_9_2 then
-						arg_9_0.lastDirect = 1
-					end
-				end
-			end
+		if arg_9_2 then
+			arg_9_0.lastDirect = 1
 		end
 	end
 

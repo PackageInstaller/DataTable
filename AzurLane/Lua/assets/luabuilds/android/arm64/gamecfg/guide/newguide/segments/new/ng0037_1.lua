@@ -1,10 +1,4 @@
-﻿local var_0_0 = {
-	"看来奖励是<color=#ff7d36>PT点数</color>",
-	"<color=#ff7d36>PT点数</color>可以在商店里兑换大量奖励，接下来让我们去商店看看！",
-	"真是丰富的奖励呢！指挥官请自由挑选~我先回港等你！"
-}
-
-return {
+﻿return {
 	id = "NG0037_1",
 	events = {
 		{
@@ -15,7 +9,11 @@ return {
 				dir = -1,
 				posY = -341,
 				posX = 431,
-				text = var_0_0[1]
+				text = ({
+					"看来奖励是<color=#ff7d36>PT点数</color>",
+					"<color=#ff7d36>PT点数</color>可以在商店里兑换大量奖励，接下来让我们去商店看看！",
+					"真是丰富的奖励呢！指挥官请自由挑选~我先回港等你！"
+				})[1]
 			},
 			spriteui = {
 				defaultName = "white_dot",
@@ -42,7 +40,11 @@ return {
 				dir = -1,
 				posY = -341,
 				posX = 431,
-				text = var_0_0[2]
+				text = ({
+					"看来奖励是<color=#ff7d36>PT点数</color>",
+					"<color=#ff7d36>PT点数</color>可以在商店里兑换大量奖励，接下来让我们去商店看看！",
+					"真是丰富的奖励呢！指挥官请自由挑选~我先回港等你！"
+				})[2]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/NewServerCarnivalUI(Clone)/left/frame/toggle_group/shop",
@@ -60,7 +62,11 @@ return {
 				posY = -341,
 				dir = -1,
 				posX = 431,
-				text = var_0_0[3],
+				text = ({
+					"看来奖励是<color=#ff7d36>PT点数</color>",
+					"<color=#ff7d36>PT点数</color>可以在商店里兑换大量奖励，接下来让我们去商店看看！",
+					"真是丰富的奖励呢！指挥官请自由挑选~我先回港等你！"
+				})[3],
 				uiset = {
 					{
 						lineMode = 1,

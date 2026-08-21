@@ -7,10 +7,16 @@ require("game/guildWar/manager/GuildWarConst")
 guildWar.GuildWarBuildVo= require("game/guildWar/manager/vo/GuildWarBuildVo")
 -- 引入公会战奖励视图对象模块
 guildWar.GuildWarAwardVo= require("game/guildWar/manager/vo/GuildWarAwardVo")
+-- 引入公会战赛季视图对象模块
+guildWar.GuildWarSeasonVo= require("game/guildWar/manager/vo/GuildWarSeasonVo")
+
+
+
 -- 引入公会战建筑机器人模块
 guildWar.GuildWarRobotVo = require("game/guildWar/manager/vo/GuildWarRobotVo")
 -- 引入公会战主面板模块
 guildWar.GuildWarMainPanel = require("game/guildWar/view/GuildWarMainPanel")
+
 -- 引入公会战子面板模块
 guildWar.GuildWarChildPanel = require("game/guildWar/view/GuildWarChildPanel")
 -- 引入公会战信息面板模块
@@ -40,10 +46,34 @@ guildWar.GuildWarFightResultInfoPanel = require("game/guildWar/view/GuildWarFigh
 -- 引入公会战战斗准备模块
 guildWar.GuildWarFightInfoPanel = require("game/guildWar/view/GuildWarFightInfoPanel")
 
+-- 引入公会战观战面板模块
+guildWar.GuildWarTopObPanel = require("game/guildWar/view/GuildWarTopObPanel")
+-- 引入公会战奖励面板模块
+guildWar.GuildWarBetAwardPanel = require("game/guildWar/view/GuildWarBetAwardPanel")
+-------------------------------------------巅峰团战
+guildWar.GuildWarBetAwardVo= require("game/guildWar/manager/vo/GuildWarBetAwardVo")
+guildWar.GuildWarFinalPanel = require("game/guildWar/view/GuildWarFinalPanel")
+guildWar.GuildWarFinalDayPanel = require("game/guildWar/view/GuildWarFinalDayPanel")
+guildWar.GuildWarTopBetPanel = require("game/guildWar/view/GuildWarTopBetPanel")
+
+
+
+-- 引入公会战排名项模块
+guildWar.GuildWarTopRankItem = require("game/guildWar/view/item/GuildWarTopRankItem")
+-- 引入公会战奖励项模块
+guildWar.GuildWarTopAwardItem = require("game/guildWar/view/item/GuildWarTopAwardItem")
+-- 引入公会战排名标签视图模块
+guildWar.GuildWarTopRankTabView = require("game/guildWar/view/tab/GuildWarTopRankTabView")
+-- 引入公会战奖励标签视图模块
+guildWar.GuildWarTopAwardTabView = require("game/guildWar/view/tab/GuildWarTopAwardTabView")
+
+
 -- 引入并创建公会战管理器实例
 guildWar.GuildWarManager = require("game/guildWar/manager/GuildWarManager").new()
 -- 引入并创建公会战控制器实例
 guildWar.GuildWarController = require("game/guildWar/controller/GuildWarController").new(guildWar.GuildWarManager)
+
+
 
 
 

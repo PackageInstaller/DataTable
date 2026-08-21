@@ -1,490 +1,228 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MapBuilderSkirmish", import(".MapBuilderPermanent"))
 
-local var_0_0 = "MapBuilderSkirmish"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MapBuilderPermanent"))
-
-function var_0_1.GetType(arg_1_0)
-	MapBuilder = var_1_10001
-
-	return var_1_10001.TYPESKIRMISH
+function var_0_0.GetType(arg_1_0)
+	return MapBuilder.TYPESKIRMISH
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "skirmish_levels"
 end
 
-function var_0_1.UpdateView(arg_3_0)
-	local var_3_0 = arg_3_0._tf
-	local var_3_1 = 0.21875
+function var_0_0.UpdateView(arg_3_0)
+	arg_3_0._tf.pivot = Vector2(0.21875, 1)
+	arg_3_0._tf.anchorMin = Vector2(0.5, 1)
+	arg_3_0._tf.anchorMax = Vector2(0.5, 1)
+	arg_3_0._tf.anchoredPosition = Vector2((0.21875 - 0.5) * arg_3_0._parentTf.rect.width, 0)
+	arg_3_0.map.pivot = Vector2(0.21875, 1)
 
-	Vector2 = var_1_10003
-	var_3_0.pivot = var_1_10003(var_3_1, 1)
-	Vector2 = var_3
-	var_3_0.anchorMin = var_3(0.5, 1)
-	Vector2 = var_3
-	var_3_0.anchorMax = var_3(0.5, 1)
+	local var_3_0 = arg_3_0.map.rect.width / arg_3_0.map.rect.height < arg_3_0._parentTf.rect.width / arg_3_0._parentTf.rect.height and arg_3_0._parentTf.rect.width / arg_3_0._tf.rect.width or arg_3_0._parentTf.rect.height / arg_3_0._tf.rect.height
 
-	local var_3_2 = (var_3_1 - 0.5) * arg_3_0._parentTf.rect.width
+	arg_3_0._tf.localScale = Vector3(var_3_0, var_3_0, var_3_0)
 
-	Vector2 = var_4
-	var_3_0.anchoredPosition = var_4(var_3_2, 0)
-
-	local var_3_3 = arg_3_0.map
-
-	Vector2 = var_5
-	var_3_3.pivot = var_5(var_3_1, 1)
-
-	local var_3_4 = arg_3_0.map.rect.width / arg_3_0.map.rect.height
-	local var_3_5 = arg_3_0._parentTf.rect.width / arg_3_0._parentTf.rect.height
-	local var_3_6
-
-	if var_3_4 < var_3_5 then
-		var_3_6 = arg_3_0._parentTf.rect.width / arg_3_0._tf.rect.width
-	else
-		var_3_6 = arg_3_0._parentTf.rect.height / arg_3_0._tf.rect.height
-	end
-
-	local var_3_7 = arg_3_0._tf
-
-	Vector3 = var_8
-	var_3_7.localScale = var_8(var_3_6, var_3_6, var_3_6)
-
-	var_0_1.super.UpdateView(arg_3_0)
+	var_0_0.super.UpdateView(arg_3_0)
 
 	return
 end
 
-Vector2 = var_1
+local var_0_1 = Vector2(-193.5, 120.6)
+local var_0_2 = Vector2(211.3, 116.5263)
+local var_0_3 = Vector2(0, -622)
+local var_0_4 = Vector2(-114, -372)
 
-local var_0_2 = var_1(-193.5, 120.6)
+function var_0_0.UpdateMapItems(arg_4_0)
+	var_0_0.super.UpdateMapItems(arg_4_0)
 
-Vector2 = var_0_0
+	local var_4_0 = getProxy(SkirmishProxy)
 
-local var_0_3 = var_0_0(211.3, 116.5263)
-
-Vector2 = var_3
-
-local var_0_4 = var_3(0, -622)
-
-Vector2 = var_4
-
-local var_0_5 = var_4(-114, -372)
-
-function var_0_1.UpdateMapItems(arg_4_0)
-	var_0_1.super.UpdateMapItems(arg_4_0)
-
-	getProxy = var_1
-	SkirmishProxy = var_3
-
-	local var_4_0 = var_1(var_3)
-
-	if var_1.TryFetchNewTask(var_4_0) then
+	if var_4_0:TryFetchNewTask() then
 		return
 	end
 
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_2.Find(var_4_1, "skirmish_items")
-	local var_4_3 = var_2:Find("point_Links")
-	local var_4_4 = var_2:Find("levelinfo")
+	local var_4_2 = arg_4_0._tf:Find("skirmish_items")
+	local var_4_3 = arg_4_0._tf:Find("point_Links")
+	local var_4_4 = arg_4_0._tf:Find("levelinfo")
 
-	var_1:UpdateSkirmishProgress()
+	var_4_0:UpdateSkirmishProgress()
 
-	local var_4_5 = var_1:getRawData()
+	local var_4_5 = var_4_0:getRawData()
 
 	for iter_4_0 = 1, var_4_2.childCount do
-		go = var_1_10011
-
-		local var_4_6 = var_1_10011(var_4_2:GetChild(iter_4_0 - 1))
-
-		var_1_10011.SetActive(var_4_6, false)
+		go(var_4_2:GetChild(iter_4_0 - 1)):SetActive(false)
 	end
 
 	for iter_4_1 = 1, var_4_3.childCount do
-		go = var_1_10011
-
-		local var_4_7 = var_1_10011(var_4_3:GetChild(iter_4_1 - 1))
-
-		var_1_10011.SetActive(var_4_7, false)
+		go(var_4_3:GetChild(iter_4_1 - 1)):SetActive(false)
 	end
 
+	local var_4_6 = 0
+	local var_4_7 = false
 	local var_4_8 = 0
-	local var_4_9 = false
-	local var_4_10 = 0
-	local var_4_11 = 0
+	local var_4_9 = 0
 
-	ipairs = var_1_10011
+	for iter_4_2, iter_4_3 in ipairs(var_4_5) do
+		local var_4_10 = iter_4_3
+		local var_4_11 = var_4_2:GetChild(iter_4_2 - 1)
 
-	for iter_4_2, iter_4_3 in var_1_10011(var_4_5) do
-		local var_4_12 = iter_4_3
-		local var_4_13 = var_4_2:GetChild(iter_4_2 - 1)
-		local var_4_14 = iter_4_2 - 2
-
-		if 0 <= var_4_14 then
-			go = var_4_14
-			var_1_10022 = var_4_3
-
-			local var_4_15 = var_4_14(var_4_3.GetChild(var_1_10022, iter_4_2 - 2))
-			local var_4_16 = var_18.SetActive
-			local var_4_17 = var_4_12:GetState()
-
-			SkirmishVO = var_1_10022
-
-			var_4_16(var_4_15, var_1_10022.StateActive < var_4_17)
+		if iter_4_2 - 2 >= 0 then
+			go(var_4_3:GetChild(iter_4_2 - 2)):SetActive(var_4_10:GetState() > SkirmishVO.StateActive)
 		end
 
-		local var_4_18 = iter_4_3
-		local var_4_19 = iter_4_3.GetState(var_4_18)
+		local var_4_12 = iter_4_3:GetState()
 
-		setActive = var_19
+		setActive(var_4_11, var_4_12 > SkirmishVO.StateActive)
+		setActive(var_4_11:Find("flag"), var_4_12 == SkirmishVO.StateWorking)
+		setActive(var_4_11:Find("clear"), var_4_12 == SkirmishVO.StateClear)
 
-		local var_4_20 = var_4_13
+		var_4_8 = var_4_12 > SkirmishVO.StateInactive and var_4_8 + 1 or var_4_8
+		var_4_9 = var_4_12 == SkirmishVO.StateClear and var_4_9 + 1 or var_4_9
 
-		SkirmishVO = var_1_10022
-		var_1_10022 = var_1_10022.StateActive < var_4_19
-
-		var_19(var_4_20, var_1_10022)
-
-		setActive = var_19
-
-		local var_4_21 = var_4_13:Find("flag")
-
-		SkirmishVO = var_1_10022
-		var_1_10022 = var_4_19 == var_1_10022.StateWorking
-
-		var_19(var_4_21, var_1_10022)
-
-		setActive = var_19
-
-		local var_4_22 = var_4_13:Find("clear")
-
-		SkirmishVO = var_1_10022
-		var_1_10022 = var_4_19 == var_1_10022.StateClear
-
-		var_19(var_4_22, var_1_10022)
-
-		SkirmishVO = var_19
-		var_4_10 = var_19.StateInactive < var_4_19 and var_4_10 + 1 or var_4_10
-		SkirmishVO = var_19
-		var_4_11 = var_4_19 == var_19.StateClear and var_4_11 + 1 or var_4_11
-		SkirmishVO = var_19
-
-		if var_4_19 == var_19.StateWorking then
-			var_4_8 = iter_4_2
+		if var_4_12 == SkirmishVO.StateWorking then
+			var_4_6 = iter_4_2
 		end
 
-		if var_4_12.flagNew then
-			var_4_12.flagNew = nil
+		if var_4_10.flagNew then
+			var_4_10.flagNew = nil
 
 			if iter_4_2 ~= 1 then
-				go = var_19
+				go(var_4_11):SetActive(false)
 
-				local var_4_23 = var_19(var_4_13)
+				var_4_7 = true
 
-				var_19.SetActive(var_4_23, false)
+				local var_4_13 = var_4_3:GetChild(iter_4_2 - 2):GetComponent(typeof(Image))
 
-				var_4_9 = true
+				var_4_13.fillAmount = 0
 
-				local var_4_24 = var_4_3:GetChild(iter_4_2 - 2)
-				local var_4_25 = var_19.GetComponent
-
-				typeof = var_1_10022
-				Image = var_24
-
-				local var_4_26 = var_4_25(var_4_24, var_1_10022(var_24))
-
-				var_4_26.fillAmount = 0
-				LeanTween = var_4_18
-				var_4_18 = var_4_18.value
-				go = var_1_10022
-				var_1_10022 = var_4_18(var_1_10022(var_4_13), 0, 1, 2)
-				var_4_18 = var_4_18.setOnUpdate
-				System = var_23
-				var_1_10022 = var_4_18(var_1_10022, var_23.Action_float(function(arg_5_0)
-					var_4_26.fillAmount = arg_5_0
+				LeanTween.value(go(var_4_11), 0, 1, 2):setOnUpdate(System.Action_float(function(arg_5_0)
+					var_4_13.fillAmount = arg_5_0
 
 					return
-				end))
-				var_4_18 = var_4_18.setOnComplete
-				System = var_23
-				var_1_10022 = var_4_18(var_1_10022, var_23.Action(function()
-					go = var_2_10000
-
-					local var_6_0 = var_2_10000(var_4_13)
-
-					var_0.SetActive(var_6_0, true)
-
-					go = var_0
-
-					local var_6_1 = var_0(var_4_4)
-
-					var_0.SetActive(var_6_1, true)
+				end)):setOnComplete(System.Action(function()
+					go(var_4_11):SetActive(true)
+					go(var_4_4):SetActive(true)
 
 					return
-				end))
-
-				var_4_18.setDelay(var_1_10022, 0.5)
+				end)):setDelay(0.5)
 			end
 		end
 
-		local var_4_27 = var_4_12:getConfig("task_id")
+		local var_4_14 = var_4_10:getConfig("task_id")
 
-		onButton = var_4_18
-
-		var_4_18(arg_4_0, var_4_13, function()
-			local var_7_0 = var_4_19
-
-			SkirmishVO = var_2_10001
-
-			if var_7_0 ~= var_2_10001.StateWorking then
+		onButton(arg_4_0, var_4_11, function()
+			if var_4_12 ~= SkirmishVO.StateWorking then
 				return
 			end
 
-			local var_7_1 = var_4_12
-			local var_7_2 = var_0.GetType(var_7_1)
-			local var_7_3 = var_4_12
-			local var_7_4 = var_1.GetEvent(var_7_3)
+			local var_7_0 = var_4_10:GetType()
+			local var_7_1 = var_4_10:GetEvent()
 
-			SkirmishVO = var_7_1
+			if var_7_0 == SkirmishVO.TypeStoryOrExpedition then
+				if tonumber(var_7_1) then
+					var_7_1 = tonumber(var_7_1)
 
-			local var_7_5
+					local var_7_2 = arg_4_0.contextData
 
-			if var_7_2 == var_7_1.TypeStoryOrExpedition then
-				tonumber = var_7_5
+					arg_4_0:emit(LevelMediator2.ON_PERFORM_COMBAT, var_7_1, function()
+						var_7_2.preparedTaskList = var_7_2.preparedTaskList or {}
 
-				if var_7_5(var_7_4) then
-					tonumber = var_7_5
-					var_7_4 = var_7_5(var_7_4)
-					var_7_5 = arg_4_0.contextData
-
-					local var_7_6 = arg_4_0
-					local var_7_7 = var_3.emit
-
-					LevelMediator2 = var_2_10006
-
-					var_7_7(var_7_6, var_2_10006.ON_PERFORM_COMBAT, var_7_4, function()
-						local var_8_0 = var_7_5
-						local var_8_1
-
-						if not var_7_5.preparedTaskList then
-							var_8_1 = {}
-						end
-
-						var_8_0.preparedTaskList = var_8_1
-						table = var_8_0
-
-						var_8_0.insert(var_7_5.preparedTaskList, var_4_27)
+						table.insert(var_7_2.preparedTaskList, var_4_14)
 
 						return
 					end)
 				else
-					pg = var_7_5
-
-					local var_7_8 = var_7_5.NewStoryMgr.GetInstance()
-
-					var_7_5.Play(var_7_8, var_7_4, function()
-						local var_9_0 = arg_4_0
-						local var_9_1 = var_0.emit
-
-						LevelMediator2 = var_3_10003
-
-						var_9_1(var_9_0, var_3_10003.ON_SUBMIT_TASK, var_4_27)
+					pg.NewStoryMgr.GetInstance():Play(var_7_1, function()
+						arg_4_0:emit(LevelMediator2.ON_SUBMIT_TASK, var_4_14)
 
 						return
 					end)
 				end
-			else
-				SkirmishVO = var_7_5
-
-				if var_7_2 == var_7_5.TypeChapter then
-					tonumber = var_2
-
-					local var_7_9 = var_2(var_7_4)
-					local var_7_10 = arg_4_0
-
-					var_3.TryOpenChapterInfo(var_7_10, var_7_9)
-				end
+			elseif var_7_0 == SkirmishVO.TypeChapter then
+				arg_4_0:TryOpenChapterInfo((tonumber(var_7_1)))
 			end
 
 			return
 		end)
 	end
 
-	if 0 < var_4_8 then
-		setActive = var_11
+	if var_4_6 > 0 then
+		setActive(var_4_4, not var_4_7)
 
-		var_11(var_4_4, not var_4_9)
+		local var_4_15 = var_4_2:GetChild(var_4_6 - 1).anchoredPosition
+		local var_4_16 = var_4_15
 
-		local var_4_28 = var_4_2:GetChild(var_4_8 - 1).anchoredPosition
-		local var_4_29 = var_12.Add
-		local var_4_30
+		if var_4_6 == 3 then
+			local var_4_18 = var_0_2 or var_0_1
 
-		if var_4_8 ~= 3 or not var_0_3 then
-			var_4_30 = var_0_2
-		end
+			var_4_4.anchoredPosition = var_4_17(var_4_16, var_4_18)
 
-		var_4_4.anchoredPosition = var_4_29(var_4_28, var_4_30)
-		setActive = var_13
+			setActive(var_4_4:Find("line1"), var_4_6 ~= 3)
+			setActive(var_4_4:Find("line2"), var_4_6 == 3)
+			setText(var_4_4:Find("info/position"), string.format("POSITION  %02d", var_4_6))
+			setText(var_4_4:Find("info/name"), var_4_5[var_4_6]:getConfig("name"))
+			onButton(arg_4_0, var_4_4, function()
+				triggerButton(var_0)
 
-		var_13(var_4_4:Find("line1"), var_4_8 ~= 3)
+				return
+			end)
 
-		setActive = var_13
+			if false then
+				setActive(var_4_4, false)
+			end
 
-		var_13(var_4_4:Find("line2"), var_4_8 == 3)
+			local var_4_19 = var_4_1:Find("cloud")
 
-		setText = var_13
+			var_4_19.anchoredPosition = var_0_3
 
-		local var_4_31 = var_4_4:Find("info/position")
+			LeanTween.value(go(var_4_19), var_0_3, var_0_4, 30):setOnUpdateVector2(function(arg_11_0)
+				var_4_19.anchoredPosition = arg_11_0
 
-		string = var_16
+				return
+			end)
 
-		var_13(var_4_31, var_16.format("POSITION  %02d", var_4_8))
-
-		setText = var_13
-
-		local var_4_32 = var_4_4:Find("info/name")
-		local var_4_33 = var_4_5[var_4_8]
-
-		var_13(var_4_32, var_16.getConfig(var_4_33, "name"))
-
-		onButton = var_13
-
-		var_13(arg_4_0, var_4_4, function()
-			triggerButton = var_2_10000
-
-			var_2_10000(var_0)
+			arg_4_0.sceneParent.skirmishBar:Find("text"):GetComponent(typeof(Text)).text = var_4_8 - var_4_9
 
 			return
-		end)
-	else
-		setActive = var_11
+		end
+	end
+end
 
-		var_11(var_4_4, false)
+function var_0_0.OnShow(arg_12_0)
+	var_0_0.super.OnShow(arg_12_0)
+	setActive(arg_12_0.sceneParent.topChapter:Find("type_skirmish"), true)
+	setActive(arg_12_0.sceneParent.skirmishBar, true)
+	setActive(arg_12_0.sceneParent.leftChapter:Find("buttons"), false)
+	setActive(arg_12_0.sceneParent.rightChapter, false)
+
+	return
+end
+
+function var_0_0.OnHide(arg_13_0)
+	setActive(arg_13_0.sceneParent.topChapter:Find("type_skirmish"), false)
+	setActive(arg_13_0.sceneParent.skirmishBar, false)
+	setActive(arg_13_0.sceneParent.leftChapter:Find("buttons"), true)
+	setActive(arg_13_0.sceneParent.rightChapter, true)
+
+	local var_13_0 = arg_13_0._tf:Find("skirmish_items")
+
+	for iter_13_0 = 1, var_13_0.childCount do
+		LeanTween.cancel(go((var_13_0:GetChild(iter_13_0 - 1))))
 	end
 
-	local var_4_34 = var_2:Find("cloud")
-
-	var_4_34.anchoredPosition = var_0_4
-	LeanTween = var_12
-
-	local var_4_35 = var_12.value
-
-	go = var_14
-
-	local var_4_36 = var_4_35(var_14(var_4_34), var_0_4, var_0_5, 30)
-
-	var_12.setOnUpdateVector2(var_4_36, function(arg_11_0)
-		var_4_34.anchoredPosition = arg_11_0
-
-		return
-	end)
-
-	local var_4_37 = arg_4_0.sceneParent.skirmishBar
-	local var_4_38 = var_12.Find(var_4_37, "text")
-	local var_4_39 = var_12.GetComponent
-
-	typeof = var_15
-	Text = var_17
-	var_4_39(var_4_38, var_15(var_17)).text = var_4_10 - var_4_11
+	LeanTween.cancel(go((arg_13_0._tf:Find("cloud"))))
+	var_0_0.super.OnHide(arg_13_0)
 
 	return
 end
 
-function var_0_1.OnShow(arg_12_0)
-	var_0_1.super.OnShow(arg_12_0)
-
-	setActive = var_1
-
-	local var_12_0 = arg_12_0.sceneParent.topChapter
-
-	var_1(var_3.Find(var_12_0, "type_skirmish"), true)
-
-	setActive = var_1
-
-	var_1(arg_12_0.sceneParent.skirmishBar, true)
-
-	setActive = var_1
-
-	local var_12_1 = arg_12_0.sceneParent.leftChapter
-
-	var_1(var_3.Find(var_12_1, "buttons"), false)
-
-	setActive = var_1
-
-	var_1(arg_12_0.sceneParent.rightChapter, false)
+function var_0_0.HideFloat(arg_14_0)
+	setActive(arg_14_0._tf:Find("skirmish_items"), false)
 
 	return
 end
 
-function var_0_1.OnHide(arg_13_0)
-	setActive = var_1_10001
-
-	local var_13_0 = arg_13_0.sceneParent.topChapter
-
-	var_1_10001(var_3.Find(var_13_0, "type_skirmish"), false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_13_0.sceneParent.skirmishBar, false)
-
-	setActive = var_1_10001
-
-	local var_13_1 = arg_13_0.sceneParent.leftChapter
-
-	var_1_10001(var_3.Find(var_13_1, "buttons"), true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_13_0.sceneParent.rightChapter, true)
-
-	local var_13_2 = arg_13_0._tf
-	local var_13_3 = var_1.Find(var_13_2, "skirmish_items")
-
-	for iter_13_0 = 1, var_13_3.childCount do
-		local var_13_4 = var_13_3:GetChild(iter_13_0 - 1)
-
-		LeanTween = var_1_10007
-		var_1_10007 = var_1_10007.cancel
-		go = var_9
-
-		var_1_10007(var_9(var_13_4))
-	end
-
-	local var_13_5 = arg_13_0._tf
-	local var_13_6 = var_2.Find(var_13_5, "cloud")
-
-	LeanTween = var_3
-
-	local var_13_7 = var_3.cancel
-
-	go = var_5
-
-	var_13_7(var_5(var_13_6))
-	var_0_1.super.OnHide(arg_13_0)
+function var_0_0.ShowFloat(arg_15_0)
+	setActive(arg_15_0._tf:Find("skirmish_items"), true)
 
 	return
 end
 
-function var_0_1.HideFloat(arg_14_0)
-	setActive = var_1_10001
-
-	local var_14_0 = arg_14_0._tf
-
-	var_1_10001(var_3.Find(var_14_0, "skirmish_items"), false)
-
-	return
-end
-
-function var_0_1.ShowFloat(arg_15_0)
-	setActive = var_1_10001
-
-	local var_15_0 = arg_15_0._tf
-
-	var_1_10001(var_3.Find(var_15_0, "skirmish_items"), true)
-
-	return
-end
-
-return var_0_1
+return var_0_0

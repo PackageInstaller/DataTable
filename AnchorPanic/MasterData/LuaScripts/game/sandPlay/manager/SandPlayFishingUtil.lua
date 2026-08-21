@@ -50,6 +50,8 @@ function onSuccessFish(self)
 
         --向服务端上行钓鱼结果
         GameDispatcher:dispatchEvent(EventName.SANDPLAY_FISHING_ONREQ_FISHING, self.m_eatFishInfo)
+
+        self:clearWaterFish()
     end
 end
 
@@ -63,6 +65,8 @@ function onFailFish(self)
 
         GameDispatcher:dispatchEvent(EventName.SANDPLAY_CLOSE_FISHING_UI)
     end
+
+    self:clearWaterFish()
 end
 
 function addWinShowFish(self, path, parent)
@@ -113,43 +117,49 @@ function showFishingResult(self)
     local curFishingFishResult = sandPlay.SandPlayManager:getCurFishingFishResult()
     if curFishingFishResult then
         curFishingFishResult.fish_info.cur_size = self.m_eatFishInfo.size
-        local finishCall = function ()
-            self.mPlayerThing:revertState()
+        local finishCall = function (isAutoFish)
             sandPlay.SandPlayManager:setCurFishingFishResult(nil)
 
             if self.mShowWinFish then
                 self.mShowWinFish:recover()
                 self.mShowWinFish = nil
             end
+
+            if isAutoFish then
+                self:clearData()
+                GameDispatcher:dispatchEvent(EventName.SANDPLAY_OPEN_FISHING_UI)
+            else
+                self.mPlayerThing:revertState()
+            end
         end
-        GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_FISHING_RESULTPANEL, {result = curFishingFishResult, finishCall = finishCall})
+        GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_FISHING_RESULTPANEL, {result = curFishingFishResult, bait_id = self.m_eatFishInfo.bait_id, finishCall = finishCall})
     end
 end
 
 function addPlayerThingFrameEvent(self)
     if not self.mPlayerThing then return end
 
-    local fish_node = gs.GoUtil.FindNameInChilds(self.mPlayerThing:getTrans(), "Fish_node")
-    if fish_node and not gs.GoUtil.IsTransNull(fish_node) then
-        local frameNameList =
-        {
-            "fx_fish_yuying_die",
-            "fx_fish_yuying_ready",
-            "fx_fish_yuying_atk01",
-            "fx_fish_yuying_goin",
-        }
+    -- local fish_node = gs.GoUtil.FindNameInChilds(self.mPlayerThing:getTrans(), "Fish_node")
+    -- if fish_node and not gs.GoUtil.IsTransNull(fish_node) then
+    --     local frameNameList =
+    --     {
+    --         "fx_fish_yuying_die",
+    --         "fx_fish_yuying_ready",
+    --         "fx_fish_yuying_atk01",
+    --         "fx_fish_yuying_goin",
+    --     }
 
-        for _, frameName in pairs(frameNameList) do
-            self.mPlayerThing:addFrameCallEvent(frameName, function ()
-                self:addEffect(frameName .. ".prefab", fish_node)
-            end, -1)
-        end
-    end
+    --     for _, frameName in pairs(frameNameList) do
+    --         self.mPlayerThing:addFrameCallEvent(frameName, function ()
+    --             self:addEffect(frameName .. ".prefab", fish_node)
+    --         end, -1)
+    --     end
+    -- end
 
-    --根据美术在win添加的帧事件，移除水下鱼影
-    self.mPlayerThing:addFrameCallEvent("remove_water_fish", function ()
-        self:clearWaterFish()
-    end, -1)
+    -- --根据美术在win添加的帧事件，移除水下鱼影
+    -- self.mPlayerThing:addFrameCallEvent("remove_water_fish", function ()
+    --     self:clearWaterFish()
+    -- end, -1)
 
     local aniName = SandPlayConst.HERO_ACTIONSTATE_ACTHASH[SandPlayConst.HERO_ACTION_STATE.FISH_WIN01]
     local frameCount = self.mPlayerThing:GetTotalFrameCount(aniName)
@@ -209,15 +219,19 @@ function addEffectFrameCallEvent(self)
 
             for _, frameName in pairs(frameNameList) do
                 self.mWaterFish:addFrameCallEvent(frameName, function ()
+                    if self.mShowRecruitResult_Success then
+                        return
+                    end
+
                     self:addEffect(frameName .. ".prefab", fish_node)
                 end, -1)
             end
         end
 
-        local remove = function ()
-            self:clearWaterFish()
-        end
-        self.mWaterFish:addFrameCallEvent("remove_water_fish", remove)
+        -- local remove = function ()
+        --     self:clearWaterFish()
+        -- end
+        -- self.mWaterFish:addFrameCallEvent("remove_water_fish", remove)
     end
 end
 
@@ -257,8 +271,9 @@ function onStartFish(self, playerThing, cameraUtil, eventConfig)
 
             self.mLateCameraParent = gs.CameraMgr:GetSceneCameraTrans().parent
 
+            local TweenAngle_x = 45 - (270 - angle)
             --转镜头
-            self.mCamera:DoTweenAngle(3.9, 45, 36, 1, function ()
+            self.mCamera:DoTweenAngle(3.9, 36, TweenAngle_x, 1, function ()
                 self.mPlayerThing:addAssembly(self.m_CameraPath, false, function (assembly)
                     local node = assembly.m_modelTrans:Find("Root_Camera_node/Camera_node")
                     if node and not gs.GoUtil.IsTransNull(node) then
@@ -275,22 +290,24 @@ function onStartFish(self, playerThing, cameraUtil, eventConfig)
 end
 
 function onExitFish(self)
-    self.mCamera:restoreTween()
-
     if self.mLateCameraParent then
         gs.CameraMgr:GetSceneCameraTrans():SetParent(self.mLateCameraParent, true)
     end
 
+    self.mCamera:restoreTween()
+
     self.mPlayerThing:clearAssembly()
     self.mPlayerThing:removeWeapon()
     self.mPlayerThing:forceActionState(SandPlayConst.HERO_ACTION_STATE.STAND)
+
+    self:clearWaterFish()
 
     GameDispatcher:dispatchEvent(EventName.OPEN_SANDPLAY_SCENEUI)
 end
 
 function onClickFish(self)
     if not self.isFishing then
-        if self.mPlayerThing:setActionState(SandPlayConst.HERO_ACTION_STATE.FISH_DREADY) then
+        if self.mPlayerThing:forceActionState(SandPlayConst.HERO_ACTION_STATE.FISH_DREADY) then
             AudioManager:playSoundEffect("arts/audio/UI/minigames/mng_fs_1.prefab")
             self.isFishing = true
         end
@@ -417,11 +434,12 @@ end
 function addEffect(self, effctName, parent)
     if string.NullOrEmpty(effctName) then return end
 
-    if not self.mEffectList then
-        self.mEffectList = {}
-    end
+    -- if not self.mEffectList then
+    --     self.mEffectList = {}
+    -- end
 
-    local effct = sandPlay.SandPlay_effect:create(SandPlayConst.getEffectPath(effctName), parent)
+    -- local effct = sandPlay.SandPlay_effect:create(SandPlayConst.getEffectPath(effctName), parent)
+    sandPlay.SandPlay_effect:create(nil, SandPlayConst.getEffectPath(effctName), parent)
 end
 
 return _M

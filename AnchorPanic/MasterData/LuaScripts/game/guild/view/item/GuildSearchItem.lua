@@ -11,6 +11,7 @@ function onInit(self, go)
     self.mTxtCount = self:getChildGO("mTxtCount"):GetComponent(ty.Text)
     self.mTxtLv = self:getChildGO("mTxtLv"):GetComponent(ty.Text)
     self.mTxtActive = self:getChildGO("mTxtActive"):GetComponent(ty.Text)
+    self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
 end
 
 function addAllUIEvent(self)
@@ -54,6 +55,8 @@ function setData(self, data)
     self.mTxtCount.text = #data.members .. "/" .. self.localData.peopleNum
     self.mTxtLv.text = data.lv
     self.mTxtActive.text = data.activation
+    local url = guild.GuildManager:getIconDataById(data.icon).icon
+    self.mImgIcon:SetImg(UrlManager:getIconPath(url), false)
 end
 
 function onDelete(self)

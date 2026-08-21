@@ -1,132 +1,59 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewYearHotSpringShipSelectMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "NewYearHotSpringShipSelectMediator"
+var_0_0.EXTEND = "NewYearHotSpringShipSelectMediator:EXTEND"
+var_0_0.OPEN_CHUANWU = "NewYearHotSpringShipSelectMediator:OPEN_CHUANWU"
+var_0_0.LOOG_PRESS_SHIP = "NewYearHotSpringShipSelectMediator:LOOG_PRESS_SHIP"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.EXTEND = "NewYearHotSpringShipSelectMediator:EXTEND"
-var_0_1.OPEN_CHUANWU = "NewYearHotSpringShipSelectMediator:OPEN_CHUANWU"
-var_0_1.LOOG_PRESS_SHIP = "NewYearHotSpringShipSelectMediator:LOOG_PRESS_SHIP"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.EXTEND, function(arg_2_0)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_1.sendNotification
-
-		NewYearHotSpringMediator = var_2_10004
-
-		var_2_1(var_2_0, var_2_10004.UNLOCK_SLOT, arg_1_0.contextData.actId)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.EXTEND, function(arg_2_0)
+		arg_1_0:sendNotification(NewYearHotSpringMediator.UNLOCK_SLOT, arg_1_0.contextData.actId)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.LOOG_PRESS_SHIP, function(arg_3_0, arg_3_1, arg_3_2)
-		pg = var_2_10003
-
-		local var_3_0 = var_2_10003.m02
-		local var_3_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_3_2 = var_2_10006.GO_SCENE
-
-		SCENE = var_2_10007
-
-		var_3_1(var_3_0, var_3_2, var_2_10007.SHIPINFO, {
+	arg_1_0:bind(var_0_0.LOOG_PRESS_SHIP, function(arg_3_0, arg_3_1, arg_3_2)
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 			shipId = arg_3_2.id
 		})
 
 		return
 	end)
-
-	local var_1_0 = arg_1_0
-
-	arg_1_0.bind(var_1_0, var_0_1.OPEN_CHUANWU, function(arg_4_0, arg_4_1, arg_4_2)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_3.sendNotification
-
-		NewYearHotSpringMediator = var_2_10006
-
-		var_4_1(var_4_0, var_2_10006.OPEN_CHUANWU, {
+	arg_1_0:bind(var_0_0.OPEN_CHUANWU, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(NewYearHotSpringMediator.OPEN_CHUANWU, {
 			arg_4_1,
 			arg_4_2
 		})
 
 		return
 	end)
-
-	getProxy = var_1
-	ActivityProxy = var_1_0
-
-	local var_1_1 = var_1(var_1_0)
-	local var_1_2 = var_1.getActivityById(var_1_1, arg_1_0.contextData.actId)
-	local var_1_3 = arg_1_0.viewComponent
-
-	var_2.SetActivity(var_1_3, var_1_2)
+	arg_1_0.viewComponent:SetActivity((getProxy(ActivityProxy):getActivityById(arg_1_0.contextData.actId)))
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	GAME = var_1_10002
-	var_5_0[1] = var_1_10002.EXTEND_BACKYARD_DONE
-	ActivityProxy = var_2
-	var_5_0[2] = var_2.ACTIVITY_UPDATED
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		GAME.EXTEND_BACKYARD_DONE,
+		ActivityProxy.ACTIVITY_UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1
-	local var_6_1 = arg_6_1.getName(var_6_0)
-	local var_6_2 = arg_6_1
-	local var_6_3 = arg_6_1.getBody(var_6_2)
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	GAME = var_6_0
-
-	local var_6_5
-
-	if var_6_1 == var_6_0.EXTEND_BACKYARD_DONE then
-		pg = var_6_5
-
-		local var_6_4 = var_6_5.TipsMgr.GetInstance()
-
-		var_6_5 = var_6_5.ShowTips
-		i18n = var_1_10007
-
-		var_6_5(var_6_4, var_1_10007("backyard_backyardShipInfoMediator_ok_unlock"))
-
-		local var_6_6 = arg_6_0.viewComponent
-
-		var_6_5.UpdateSlots(var_6_6)
-	else
-		ActivityProxy = var_6_5
-
-		if var_6_1 == var_6_5.ACTIVITY_UPDATED then
-			local var_6_7 = var_6_3:getConfig("type")
-
-			ActivityConst = var_6_2
-
-			if var_6_7 == var_6_2.ACTIVITY_TYPE_HOTSPRING then
-				local var_6_8 = arg_6_0.viewComponent
-
-				var_4.SetActivity(var_6_8, var_6_3)
-
-				local var_6_9 = arg_6_0.viewComponent
-
-				var_4.UpdateSlots(var_6_9)
-			end
-		end
+	if var_6_0 == GAME.EXTEND_BACKYARD_DONE then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardShipInfoMediator_ok_unlock"))
+		arg_6_0.viewComponent:UpdateSlots()
+	elseif var_6_0 == ActivityProxy.ACTIVITY_UPDATED and var_6_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_HOTSPRING then
+		arg_6_0.viewComponent:SetActivity(var_6_1)
+		arg_6_0.viewComponent:UpdateSlots()
 	end
 
 	return
 end
 
-function var_0_1.remove(arg_7_0)
+function var_0_0.remove(arg_7_0)
 	return
 end
 
-return var_0_1
+return var_0_0

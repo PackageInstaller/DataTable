@@ -11,7 +11,7 @@ function ctor(self)
     self:setTxtTitle("联盟")
     self:setSize(0, 0)
     self:setBg("guild_bg.jpg", false, "guild")
-    --self:setUICode(LinkCode.Guild)
+    -- self:setUICode(LinkCode.Guild)
 end
 
 -- 初始化数据
@@ -23,6 +23,7 @@ end
 function configUI(self)
     super.configUI(self)
 
+    self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
     self.mTxtGuildName = self:getChildGO("mTxtGuildName"):GetComponent(ty.Text)
     self.mTxtGuildID = self:getChildGO("mTxtGuildID"):GetComponent(ty.Text)
     self.mTxtGuildMasterName = self:getChildGO("mTxtGuildMasterName"):GetComponent(ty.Text)
@@ -48,15 +49,30 @@ function configUI(self)
     self.mBtnMember = self:getChildGO("mBtnMember")
     self.mBtnManager = self:getChildGO("mBtnManager")
 
-    self.mTextBossTime = self:getChildGO("mTextBossTime"):GetComponent(ty.Text)
+    self.mTxtBossTime = self:getChildGO("mTxtBossTime"):GetComponent(ty.Text)
+    self.mTxtBossName = self:getChildGO("mTxtBossName"):GetComponent(ty.Text)
     self.mBtnBoss = self:getChildGO("mBtnBoss")
 
     self.mBtnSweep = self:getChildGO("mBtnSweep")
-    self.mTextSweepTime = self:getChildGO("mTextSweepTime"):GetComponent(ty.Text)
+    self.mTxtSweepTime = self:getChildGO("mTxtSweepTime"):GetComponent(ty.Text)
+    self.mTxtSweepName = self:getChildGO("mTxtSweepName"):GetComponent(ty.Text)
+
+    self.mBtnWar = self:getChildGO("mBtnWar")
+    self.mTxtWarTime = self:getChildGO("mTxtWarTime"):GetComponent(ty.Text)
+    self.mTxtWarName = self:getChildGO("mTxtWarName"):GetComponent(ty.Text)
 
     self.mBtnBossImitate = self:getChildGO("mBtnBossImitate")
 
-    --self.mBtnSweep:SetActive(false)
+    -- self.mBtnSweep:SetActive(false)
+    self.mBtnClickChangeIcon = self:getChildGO("mBtnClickChangeIcon")
+end
+
+function initViewText(self)
+    self.mTxtBossName.text = _TT(94517)
+    self.mTxtSweepName.text = _TT(100001)
+
+    local type = guildWar.GuildWarManager:getSeasonType()
+    self.mTxtWarName.text = type == guildWar.GuildWarType.Normal and _TT(149186) or _TT(149219)
 end
 
 -- 激活
@@ -68,7 +84,7 @@ function active(self, args)
     GameDispatcher:addEventListener(EventName.ONRECEIVE_GUILDBOSSTIME, self.showGuildBossTime, self)
     GameDispatcher:addEventListener(EventName.ONRECEIVE_GUILDBOSST_INFO, self.updateGuildBossRed, self)
 
-    --打开界面时都会重新请求数据 保证数据的最新
+    -- 打开界面时都会重新请求数据 保证数据的最新
     GameDispatcher:dispatchEvent(EventName.REQ_GUILD_INFO)
     GameDispatcher:dispatchEvent(EventName.ONREQ_GUILDBOSSTIME)
     GameDispatcher:dispatchEvent(EventName.ONREQ_GUILDBOSS_INFO)
@@ -109,10 +125,23 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnBoss, self.onOpenGuildBoss)
 
     self:addUIEvent(self.mBtnSweep, self.onOpenGuildSweepClick)
+    self:addUIEvent(self.mBtnWar, self.onOpenGuildWarClick)
 
     self:addUIEvent(self.mBtnSkill, self.onBtnSkillClick)
     self:addUIEvent(self.mBtnBossImitate, self.onBtnGuildBossImitate)
 
+    self:addUIEvent(self.mBtnClickChangeIcon, self.onBtnChangeIcon)
+end
+
+function onBtnChangeIcon(self)
+    if guild.GuildManager:getSelfIsGuildLeader() == false then
+        gs.Message.Show(_TT(149143))
+        return
+    end
+
+    GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_CHANGE_ICON_PANEL, {
+        type = 1
+    })
 end
 
 function showGuildBossTime(self)
@@ -130,17 +159,17 @@ function refreshGuildBossTime(self)
         if bossOpenDt ~= nil and bossEndDt ~= nil then
             local curClientDt = GameManager:getClientTime()
             if curClientDt < bossOpenDt then
-                self.mTextBossTime.text = _TT(94501) .. TimeUtil.getNewRoleShowTime(bossOpenDt - curClientDt)
+                self.mTxtBossTime.text = _TT(94501) .. TimeUtil.getNewRoleShowTime(bossOpenDt - curClientDt)
             elseif curClientDt < bossEndDt then
-                self.mTextBossTime.text = _TT(94502) .. TimeUtil.getNewRoleShowTime(bossEndDt - curClientDt)
+                self.mTxtBossTime.text = _TT(94502) .. TimeUtil.getNewRoleShowTime(bossEndDt - curClientDt)
             elseif curClientDt > bossEndDt then
-                self.mTextBossTime.text = _TT(94503)
+                self.mTxtBossTime.text = _TT(94503)
             end
         else
-            self.mTextBossTime.text = _TT(94503)
+            self.mTxtBossTime.text = _TT(94503)
         end
     else
-        self.mTextBossTime.text = _TT(94519)
+        self.mTxtBossTime.text = _TT(94519)
     end
 end
 
@@ -175,11 +204,28 @@ function onBtnChangeNoticeClick(self)
     GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_CHANGE_NOTICE_PANEL)
 end
 
+function onOpenGuildWarClick(self)
+    -- local startTime = sysParam.SysParamManager:getValue(SysParamType.GUILDWAR_OPEN_START_TIMER)
+    -- local clientTime = GameManager:getClientTime()
+    -- if startTime and startTime ~= 0 and clientTime < startTime then
+    --     gs.Message.Show(_TT(149216))
+    --     return
+    -- end
+    -- local endTime = guildWar.GuildWarManager:getGuildWarEndTime()
+    -- local startTime = guildWar.GuildWarManager:getGuildStartTime()
+    -- if clientTime >= startTime and endTime > clientTime then
+    GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_MAIN_PANEL)
+    -- else
+    --     gs.Message.Show("活动未开启")
+    -- end
+
+end
+
 function onBtnCopyClick(self)
     gs.SdkManager:Copy(self.showId)
     local pasteResult = gs.SdkManager:Paste()
     if (pasteResult == "") then
-        gs.Message.Show(_TT(25104))--"复制失败"
+        gs.Message.Show(_TT(25104)) -- "复制失败"
     else
         gs.Message.Show(string.format(_TT(25105), pasteResult)) -- "复制成功：%s"
     end
@@ -194,7 +240,9 @@ function onBtnPreparationClick(self)
 end
 
 function onBtnShopClick(self)
-    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.ShopGuild})
+    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {
+        linkId = LinkCode.ShopGuild
+    })
 end
 
 function onBtnMemberClick(self)
@@ -222,6 +270,7 @@ function showPanel(self)
 
     self:refreshGuildBossTime()
     self:refreshGuildSweepTime()
+    self:refreshGuildWarTime()
 
     self.guildInfo = guild.GuildManager:getGuildInfo()
 
@@ -229,21 +278,26 @@ function showPanel(self)
 
     self.uid = self.guildInfo.uid
     self.showId = self.guildInfo.show_id
+
+    local url = guild.GuildManager:getIconDataById(guild.GuildManager:getGuildIconId()).icon
+    self.mImgIcon:SetImg(UrlManager:getIconPath(url), false)
     self.mTxtGuildName.text = self.guildInfo.name
     self.mTxtGuildID.text = _TT(25161) .. self.guildInfo.show_id
     self.mTxtGuildMasterName.text = self.guildInfo.leader_name
-    self.mTxtMemberCount.text = #self.guildInfo.members .. "/"..self.localData.peopleNum
+    self.mTxtMemberCount.text = #self.guildInfo.members .. "/" .. self.localData.peopleNum
 
-    self.mTxtMemberCount.color = #self.guildInfo.members == self.localData.peopleNum and gs.ColorUtil.GetColor("FFB644FF") or gs.ColorUtil.GetColor("FFFFFFFF")
+    self.mTxtMemberCount.color = #self.guildInfo.members == self.localData.peopleNum and
+                                     gs.ColorUtil.GetColor("FFB644FF") or gs.ColorUtil.GetColor("FFFFFFFF")
 
-    self.mTxtGuildLv.text = _TT(1361)..self.guildInfo.lv
+    self.mTxtGuildLv.text = _TT(1361) .. self.guildInfo.lv
     local maxLv = guild.GuildManager:getMaxGuildLv()
     if maxLv == self.guildInfo.lv then
         self.mTxtGuildExp.text = _TT(29513)
         gs.TransQuick:SizeDelta01(self.mImgSliderRt, self.mExpSliderRt.sizeDelta.x)
     else
-        self.mTxtGuildExp.text = self.guildInfo.exp .. "/"..self.localData.nextExp
-        gs.TransQuick:SizeDelta01(self.mImgSliderRt, self.guildInfo.exp / self.localData.nextExp * self.mExpSliderRt.sizeDelta.x)
+        self.mTxtGuildExp.text = self.guildInfo.exp .. "/" .. self.localData.nextExp
+        gs.TransQuick:SizeDelta01(self.mImgSliderRt,
+            self.guildInfo.exp / self.localData.nextExp * self.mExpSliderRt.sizeDelta.x)
     end
 
     self.mTxtDes.text = self.guildInfo.notice
@@ -296,6 +350,13 @@ function updateRed(self)
     else
         RedPointManager:remove(self.mBtnSweep.transform)
     end
+
+    if guildWar.GuildWarManager:getGuildWarDefFormationRed() or guildWar.GuildWarManager:getGuildWarFightRed() 
+    or guildWar.GuildWarManager:getGuildWarCanJunRed() or guildWar.GuildWarManager:getGuildBetRed() then
+        RedPointManager:add(self.mBtnWar.transform, nil, -172.4, 46.1)
+    else
+        RedPointManager:remove(self.mBtnWar.transform)
+    end
 end
 
 function refreshGuildSweepTime(self)
@@ -314,12 +375,38 @@ function refreshSweepTime(self)
     if sweepState == 0 then
         local clientTime = GameManager:getClientTime()
         if self.lastChangeTime - clientTime > 0 then
-            self.mTextSweepTime.text = _TT(100014) .. TimeUtil.getNewRoleShowTime(self.lastChangeTime - clientTime)
+            self.mTxtSweepTime.text = _TT(100014) .. TimeUtil.getNewRoleShowTime(self.lastChangeTime - clientTime)
         else
-            self.mTextSweepTime.text = "锁定中"
+            self.mTxtSweepTime.text = "锁定中"
         end
     else
-        self.mTextSweepTime.text = "锁定中"
+        self.mTxtSweepTime.text = "锁定中"
+    end
+end
+
+function refreshGuildWarTime(self)
+    if self.mWarSn then
+        LoopManager:removeTimerByIndex(self.mWarSn)
+        self.mWarSn = nil
+    end
+    self:refreshWarTime()
+    self.mWarSn = self:addTimer(1, 0, self.refreshWarTime)
+end
+
+function refreshWarTime(self)
+    local clientTime = GameManager:getClientTime()
+    local endTime = guildWar.GuildWarManager:getGuildWarEndTime()
+    local startTime = guildWar.GuildWarManager:getGuildStartTime()
+
+    local type = guildWar.GuildWarManager:getSeasonType()
+    if type == guildWar.GuildWarType.Top then
+        endTime = guildWar.GuildWarManager:getGuildWarTopEndTime()
+        startTime = guildWar.GuildWarManager:getGuildWarStartTime()
+    end
+    if clientTime < startTime then
+        self.mTxtWarTime.text = _TT(94501) .. TimeUtil.getNewRoleShowTime(startTime - clientTime)
+    else
+        self.mTxtWarTime.text = _TT(149204) .. TimeUtil.getNewRoleShowTime(endTime - clientTime)
     end
 end
 

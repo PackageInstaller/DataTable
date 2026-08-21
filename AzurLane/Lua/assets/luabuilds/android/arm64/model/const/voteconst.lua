@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("VoteConst")
+﻿local var_0_0 = class("VoteConst")
 
 var_0_0.RacePrimary = 1
 var_0_0.RaceFinal = 2

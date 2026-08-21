@@ -296,6 +296,25 @@ function __updateView(self, isInit)
 
     self:recoverListData(self.m_scrollerSelect.DataProvider)
     local scrollList = self:getDataList()
+
+        local likeList = {}
+        local noLikeList = {}
+        for i = 1, #scrollList do
+            local heroScrollVo = scrollList[i]
+            local heroVo = heroScrollVo:getDataVo()
+            if heroVo.dataVo.isLike == 1 then
+                table.insert(likeList, heroScrollVo)
+            else
+                table.insert(noLikeList, heroScrollVo)
+            end
+        end
+
+        for i = 1, #noLikeList, 1 do
+            table.insert(likeList, noLikeList[i])
+        end
+        scrollList = likeList
+
+
     if isInit == true or self.m_scrollerSelect.Count <= 0 then
         self.m_scrollerSelect.DataProvider = scrollList
     else
@@ -326,7 +345,7 @@ function getDataList(self)
         end
 
         local scrollVo = LuaPoolMgr:poolGet(LyScrollerSelectVo)
-        scrollVo:setDataVo({ dataVo = heroVo, teamId = self.m_teamId, formationId = self.m_formationId, isShowRemove = isShowRemove, manager = self:getManager() })
+        scrollVo:setDataVo({ dataVo = heroVo, teamId = self.m_teamId, formationId = self.m_formationId, isShowRemove = isShowRemove, isReplaceHero = self.tileFormationHeroVo ~= nil, manager = self:getManager() })
         if (isShowRemove) then
             showRemoveVo = scrollVo
         else

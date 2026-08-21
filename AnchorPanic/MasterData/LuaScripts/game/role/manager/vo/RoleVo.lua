@@ -41,6 +41,8 @@ function initData(self)
     self.playerId = nil
     -- 玩家交互识别id
     self.showId = nil
+    -- 地区
+    self.location = 1
     -- 玩家头像id
     self.m_avatarId = nil
     -- 玩家头像框id
@@ -53,6 +55,8 @@ function initData(self)
     self.m_showHeroList = nil
     -- 展示板展示的英雄id
     self.showBoardHeroId = nil
+    --战斗皮肤
+    self.fightUi = nil
     -- 玩家等级
     self.m_playerLvl = nil
     -- 玩家Vip等级
@@ -111,6 +115,10 @@ function initData(self)
     self.m_GuildCoin = nil
     --无限城
     self.m_DoundlessCoin = nil
+    --联盟团战货币
+    self.m_GuildWarCoin = nil
+    --联盟巅峰团战货币
+    self.m_GuildWarTopCoin = nil
 end
 
 -- 解析消息
@@ -118,10 +126,19 @@ function parseMsgData(self, cusMsgData)
     self.m_isMoneyChange = false
     -- 是否是GM
     self.isOpenGM = cusMsgData.gm == 1
+
+    -- -- 地区
+    -- if cusMsgData.location then
+    --     self.location = cusMsgData.location
+    -- end
+    -- 统一接受后台
+    self.location = web.GetServerHotUpdateSuperState() and 1 or 0
+
     -- 玩家id
     self.playerId = cusMsgData.player_id
     -- 玩家交互识别id
     self.showId = cusMsgData.show_id
+   
     -- 玩家头像id
     self:setAvatarId(cusMsgData.avatar_id)
     -- 玩家头像框id
@@ -186,7 +203,18 @@ function parseMsgData(self, cusMsgData)
     self:setDoundlessCoin(cusMsgData.boundless_city_coin)
     --聊天气泡id
     self:setChatBubbleTid(cusMsgData.dialog_box)
+    --开心农场货币
+    self:setHappyFarmMoney(cusMsgData.farm_coin)
+    --联盟团战货币
+    self:setGuildWarCoin(cusMsgData.guild_war_coin)
+
+    --巅峰团战货币
+    self:setGuildWarTopCoin(cusMsgData.guild_top_war_coin)
+    --异象残镜货币
+    self:setVisionMirrorCoin(cusMsgData.vision_mirror_coin)
 end
+
+
 
 ----------------------------------------以下为玩家属性------------------------------------------
 
@@ -638,6 +666,60 @@ end
 function getDoundlessCoin(self)
     return self.m_DoundlessCoin
 end
+
+function setHappyFarmMoney(self, money)
+    local num = tonumber(money)
+
+    if (self.m_playerHappyFarmMoney ~= num) then
+        self.m_playerHappyFarmMoney = num
+        self:dispatchEvent(role.RoleVo.CHANGE_PLAYER_MONEY, MoneyTid.HAPPYFARM_TID)
+    end
+end
+
+function getHappyFarmMoney(self)
+    return self.m_playerHappyFarmMoney or 0
+end
+
+function setGuildWarCoin(self,money)
+    local num = tonumber(money)
+
+    if (self.m_GuildWarCoin ~= num) then
+        self.m_GuildWarCoin = num
+        self:dispatchEvent(role.RoleVo.CHANGE_PLAYER_MONEY, MoneyTid.GUILDWAR_TID)
+    end
+end
+
+function getGuildWarCoin(self)
+    return self.m_GuildWarCoin or 0
+end
+
+function setGuildWarTopCoin(self,money)
+    local num = tonumber(money)
+
+    if (self.m_GuildWarTopCoin ~= num) then
+        self.m_GuildWarTopCoin = num
+        self:dispatchEvent(role.RoleVo.CHANGE_PLAYER_MONEY, MoneyTid.GUILDWARTOP_TID)
+    end
+end
+
+function getGuildWarTopCoin(self)
+    return self.m_GuildWarTopCoin or 0
+end
+
+function setVisionMirrorCoin(self, money)
+    local num = tonumber(money)
+
+    if (self.m_VisionMirrorCoin ~= num) then
+        self.m_VisionMirrorCoin = num
+        self:dispatchEvent(role.RoleVo.CHANGE_PLAYER_MONEY, MoneyTid.VISION_MIRROR_TID)
+    end
+end
+
+function getVisionMirrorCoin(self)
+    return self.m_VisionMirrorCoin or 0
+end
+
+
 
 return _M
 

@@ -1,116 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSubmitTaskCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandSubmitTaskCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().taskId
-	local var_1_1 = var_2.callback
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 21038, {
-		task_id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(21038, {
+		task_id = var_1_0.taskId
 	}, 21039, function(arg_2_0)
+		local var_2_9000
+
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			IslandProxy = var_2_10003
+			local var_2_0 = getProxy(IslandProxy)
+			local var_2_1 = var_2_0.GetIsland(var_2_9000)
+			local var_2_2 = var_2_1:GetTaskAgency()
+			local var_2_3 = var_2_2:GetTask(var_0)
+			local var_2_4 = var_2_0.id == var_2_2:GetTraceId() or var_2_3.id == var_2_2:GetMainTraceId()
+			local var_2_5 = var_2_3:GetExp()
 
-			local var_2_0 = var_1(var_2_10003)
-
-			var_2_10004 = var_1.GetIsland(var_2_0)
-
-			local var_2_1 = var_1.GetTaskAgency(var_2_10004)
-
-			var_2_10004 = var_2.GetTask(var_2_1, var_1_0).id == var_2:GetTraceId() or var_3.id == var_2:GetMainTraceId()
-
-			local var_2_2 = var_3
-			local var_2_3 = var_3.GetExp(var_2_2)
-			local var_2_4 = var_3
-			local var_2_5 = var_3.GetType(var_2_4)
-
-			IslandTaskType = var_2_2
-
-			if var_2_5 == var_2_2.MAIN then
-				IslandAchievementHelper = var_2_5
-
-				local var_2_6 = var_2_5.UpdateRecord
-
-				IslandAchievementType = var_2_4
-
-				var_2_6(var_2_4.FINISH_MAIN_TASK, var_1_0, 1)
+			if var_2_3:GetType() == IslandTaskType.MAIN then
+				IslandAchievementHelper.UpdateRecord(IslandAchievementType.FINISH_MAIN_TASK, var_0, 1)
 			end
 
-			local var_2_7 = var_1:GetInventoryAgency()
+			local var_2_6 = var_2_1:GetInventoryAgency()
 
-			ipairs = var_7
-
-			for iter_2_0, iter_2_1 in var_7(var_3:GetRecycleItemInfos()) do
-				var_2_7:RemoveItem(iter_2_1.id, iter_2_1.count)
+			for iter_2_0, iter_2_1 in ipairs(var_2_3:GetRecycleItemInfos()) do
+				var_2_6:RemoveItem(iter_2_1.id, iter_2_1.count)
 			end
 
-			if var_3:getConfig("is_tech_task") == 1 then
-				local var_2_8 = var_1:GetTechnologyAgency()
-
-				var_7.TryAutoUnlock(var_2_8)
+			if var_2_3:getConfig("is_tech_task") == 1 then
+				var_2_1:GetTechnologyAgency():TryAutoUnlock()
 			end
 
-			var_2:RemoveTask(var_1_0)
-			var_2:AddFinishId(var_1_0)
-
-			IslandTaskHelper = var_7
-
-			var_7.OnSubmitTask({
-				var_1_0
+			var_2_2:RemoveTask(var_0)
+			var_2_2:AddFinishId(var_0)
+			IslandTaskHelper.OnSubmitTask({
+				var_0
 			})
-
-			IslandDropHelper = var_7
-
-			local var_2_9 = var_7.AddItems(arg_2_0, var_2_3)
-
-			var_2:TryAcceptAutoTasks(function()
-				if var_2_10004 then
-					getProxy = var_0
-					IslandProxy = var_3_10002
-
-					local var_3_0 = var_0(var_3_10002)
-					local var_3_1 = var_0.GetIsland(var_3_0)
-					local var_3_2 = var_0.GetTaskAgency(var_3_1)
-
-					var_0.TryAutoTrackTask(var_3_2)
+			var_2_2:TryAcceptAutoTasks(function()
+				if var_2_4 then
+					getProxy(IslandProxy):GetIsland():GetTaskAgency():TryAutoTrackTask()
 				end
 
 				return
 			end)
-
-			local var_2_10 = arg_1_0
-			local var_2_11 = var_8.sendNotification
-
-			GAME = var_11
-
-			var_2_11(var_2_10, var_11.ISLAND_SUBMIT_TASK_DONE, {
-				taskId = var_1_0,
-				dropData = var_2_9,
+			arg_1_0:sendNotification(GAME.ISLAND_SUBMIT_TASK_DONE, {
+				taskId = var_0,
+				dropData = IslandDropHelper.AddItems(arg_2_0, var_2_5),
 				callback = var_1_1
 			})
-
-			local var_2_12 = arg_1_0
-
-			var_8.UpdateGuide(var_2_12, var_1_0)
+			arg_1_0:UpdateGuide(var_0)
 		else
-			pg = var_1
-
-			local var_2_13 = var_1.TipsMgr.GetInstance()
-			local var_2_14 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_14(var_2_13, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -119,63 +59,34 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.UpdateGuide(arg_4_0, arg_4_1)
-	switch = var_1_10002
+function var_0_0.UpdateGuide(arg_4_0, arg_4_1)
+	switch(arg_4_1, {
+		[IslandGuideChecker.MOVE_TASK_ID] = function()
+			pg.m02:sendNotification(GAME.STORY_UPDATE, {
+				storyId = "ISLAND_GUIDE_2"
+			})
 
-	local var_4_0 = arg_4_1
-	local var_4_1 = {}
+			return
+		end,
+		[IslandGuideChecker.ORDER_TASK_ID] = function()
+			pg.m02:sendNotification(GAME.STORY_UPDATE, {
+				storyId = "ISLAND_GUIDE_7"
+			})
 
-	IslandGuideChecker = var_1_10006
-	var_4_1[var_1_10006.MOVE_TASK_ID] = function()
-		pg = var_2_10000
+			return
+		end,
+		[IslandGuideChecker.INVITE_TASK_ID] = function()
+			pg.m02:sendNotification(GAME.STORY_UPDATE, {
+				storyId = "ISLAND_GUIDE_9"
+			})
 
-		local var_5_0 = var_2_10000.m02
-		local var_5_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_5_1(var_5_0, var_2_10003.STORY_UPDATE, {
-			storyId = "ISLAND_GUIDE_2"
-		})
-
-		return
-	end
-	IslandGuideChecker = var_6
-	var_4_1[var_6.ORDER_TASK_ID] = function()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.m02
-		local var_6_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.STORY_UPDATE, {
-			storyId = "ISLAND_GUIDE_7"
-		})
-
-		return
-	end
-	IslandGuideChecker = var_6
-	var_4_1[var_6.INVITE_TASK_ID] = function()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.m02
-		local var_7_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.STORY_UPDATE, {
-			storyId = "ISLAND_GUIDE_9"
-		})
-
-		return
-	end
-
-	var_1_10002(var_4_0, var_4_1, function()
+			return
+		end
+	}, function()
 		return
 	end)
 
 	return
 end
 
-return var_0_1
+return var_0_0

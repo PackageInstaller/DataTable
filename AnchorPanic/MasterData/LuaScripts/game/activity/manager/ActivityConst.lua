@@ -9,9 +9,17 @@ ACTIVITY_DAILYCHECKIN = 5 -- 每日签到
 ACTIVITY_SUBSCRIBE = 6 -- 关注社区领奖
 
 WELFAREOPT_RAFFLE = 7
+--节日福利
+WELFAREOPT_HOLIDAY = 8
 
 function getTabList(self)
     local tabList = {}
+    -- --节日福利
+    -- if mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.Festival) and
+    --     mainActivity.MainActivityManager:getMainActivityVoById(activity.ActivityId.Festival):getTimeRemaining() > 0 and
+    --     welfareOpt.WelfareOptManager:getSignRewardList() == false then
+    --     table.insert(tabList, {page = self.WELFAREOPT_HOLIDAY, nomalLan = _TT(48144), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_80.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_3.png"), view = welfareOpt.WelfareOptFestivalView, funcId = funcopen.FuncOpenConst.FUNC_ID_FESTIVAL, activityId = activity.ActivityId.Festival, isLimit = false, isBubble = welfareOpt.WelfareOptManager:getIsFestivalRed()})
+    -- end
     -- 七日登录
     if (welfareOpt.WelfareOptManager:getSevenOpen()) then
         table.insert(tabList, {page = self.ACTIVITY_SEVENLOADING, nomalLan = _TT(48101), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_6.png"), view = welfareOpt.WelfareOptSevenLoadingView, funcId = funcopen.FuncOpenConst.FUNC_ID_WELFATEOPT_SEVENDAY, isLimit = false, isBubble = welfareOpt.WelfareOptManager:getTabRed(welfareOpt.WelfareOptConst.WELFAREOPT_SEVENLOADING)})
@@ -36,17 +44,24 @@ function getTabList(self)
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HOME_SIGNIN, false) then
         table.insert(tabList, {page = self.ACTIVITY_DAILYCHECKIN, nomalLan = _TT(72111), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_49.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_49.png"), view = dailyCheckIn.DailyCheckInTabSubView, funcId = funcopen.FuncOpenConst.FUNC_ID_HOME_SIGNIN, isLimit = false, isBubble = false})
     end
-    -- 关注社区领奖
-    if (activity.ActitvityExtraManager:checkIsOpen() and not GameManager:getIsInCommiting()) then
-        table.insert(tabList, {page = self.ACTIVITY_SUBSCRIBE, nomalLan = _TT(91002), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_63.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_63.png"), view = activity.ActivitySubscribeGift, funcId = funcopen.FuncOpenConst.FUNC_ID_ACTIVITY_SUBSCRIBE, isLimit = false, isBubble = activity.ActitvityExtraManager:checkBubble()})
-    end
-
+    -- 关注社区领奖(公众号无人维护、微博看的人少，活动直接屏蔽了)
+    -- if (activity.ActitvityExtraManager:checkIsOpen() and not GameManager:getIsInCommiting() and not sdk.ChannelData:getIsChannelHarmonious()) then
+    --     table.insert(tabList, {page = self.ACTIVITY_SUBSCRIBE, nomalLan = _TT(91002), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_63.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_63.png"), view = activity.ActivitySubscribeGift, funcId = funcopen.FuncOpenConst.FUNC_ID_ACTIVITY_SUBSCRIBE, isLimit = false, isBubble = activity.ActitvityExtraManager:checkBubble()})
+    -- end
     --星夜漫步
     -- if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RAFFLE, false) and self:checkActivityLimit(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RAFFLE) then
     --     table.insert(tabList, {page = self.WELFAREOPT_RAFFLE, nomalLan = _TT(90051), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_37.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_37.png"), view = noviceActivity.NoviceActivityRaffleTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RAFFLE, isLimit = false, isBubble = noviceActivity.NoviceActivityManager:checkRaffleBubble()})
     -- end
 
     return tabList
+end
+--获取活动界面所包含的所有活动ID
+function getActivityList(self)
+    return
+    {
+        activity.ActivityId.Festival,
+        activity.ActivityId.Permit,
+    }
 end
 
 function checkActivityLimit(self, fucId)
@@ -55,10 +70,14 @@ function checkActivityLimit(self, fucId)
 end
 
 activity.ActivityId = {
+    --活动id
+    GuildWarTopBet = 55,
     --通行证
     Permit = 101,
     --时装通行证
     Fashion_Permit = 217,
+    --时装通行证2
+    Fashion_Permit_Two = 226,
     --主题活动——试玩关卡
     TrialPlayLevel = 201,
     --主题活动——普通关卡
@@ -112,6 +131,108 @@ activity.ActivityId = {
     Ciruit = 224,
     --周年庆典--抽奖转盘
     CelebrationRaffle = 211,
+    --痒了又痒
+    ThreeSheep = 228,
+
+    --活动-充值好礼
+    RechargeNiceGift = 502,
+    --阿尔戈特供
+    Supercial = 501,
+    --狂欢好礼
+    Activity_Carnival_Gift = 503,
+    --投资理财
+    Activity_Invest = 504,
+    --特供活动
+    SpecialSupply = 505,
+
+    Activity_SummerRecharge_Gift = 600,
+
+    --每日充值
+    DailyRecharge = 601,
+
+    --自选礼包
+    SelectBuy = 506,
+    --新年活动-轮盘抽奖
+    RoundPrize = 507,
+
+    --体力月卡限时任务
+    ActivityStrengthTask = 599,
+
+    --狂欢好礼时装回廊活动
+    --GiftFashionHis = 508,
+
+    --时装通行证时装回廊活动
+    PermitFashionHis = 509,
+    --新年活动-轮盘抽奖2
+    RoundPrizeTwo = 510,
+    --刮刮乐
+    Lottery = 511,
+
+    --绑定
+    Bind = 512,
+    --累充2
+    RechargeTwo = 513,
+    --周年慶
+    Celebraction = 514,
+
+    --农场活动入口
+    HappyFarm = 225,
+    --主题活动--整理背包
+    OrganizeBackpacks = 227,
+    --打砖块
+    ShootBrick = 229,
+    --拼图游戏
+    PutImage = 230,
+    --连连看
+    Linklink = 231,
+    --打地鼠
+    Mole = 232,
+    --2周年
+    TwoAnniversary = 233,
+
+    --排位小游戏
+    Ranking = 234,
+
+    --合成西瓜
+    Watermelon = 235,
+    --2048
+    Ghost = 236,
+
+    --六边形方块
+    Block = 237,
+
+    --捡金币
+    PickGold = 238,
+
+    --泡泡龙
+    Bulle = 239,
+    --像素鸟
+    Bird = 240,
+    --分类
+    Split = 241,
+    --甜品大作战
+    Dessert = 242,
+    --盖大楼
+    Build = 243,
+    --整理背包
+    Drop = 244,
 }
 
+activity.LimitShopActivityType = {
+    --副本类型和副本ID
+    DupType = 1,
+    --招募达到X次
+    Recruitment = 2,
+    --任意战员达到N阶
+    Role = 3,
+    --打开某个界面(界面代码)
+    View = 4,
+}
+
+--历史时装类型
+activity.FashionHisType = {
+    CarnivalGift = 1,
+    FashionPermit = 2,
+    Permit = 3,
+}
 return _M

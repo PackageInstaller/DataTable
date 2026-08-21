@@ -1,9 +1,4 @@
-﻿local var_0_0 = {
-	"关闭奖励界面",
-	"返回主界面"
-}
-
-return {
+﻿return {
 	id = "S012",
 	events = {
 		{
@@ -14,7 +9,10 @@ return {
 				dir = -1,
 				posY = -341,
 				posX = 431,
-				text = var_0_0[1]
+				text = ({
+					"关闭奖励界面",
+					"返回主界面"
+				})[1]
 			},
 			spriteui = {
 				defaultName = "white_dot",
@@ -41,7 +39,10 @@ return {
 				dir = -1,
 				posY = 223.26,
 				posX = -136.21,
-				text = var_0_0[2]
+				text = ({
+					"关闭奖励界面",
+					"返回主界面"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,

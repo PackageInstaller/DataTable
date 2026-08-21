@@ -6,6 +6,12 @@ guildWar.GuildWarState = {
     GuildWarStart = 3, -- 开始阶段
     GuildWarMatchAndSettle = 4, -- 匹配结算
     GuildWarSettle = 5, -- 结算阶段
+
+    GuildWarTopFail = 6, --巅峰团战报名失败
+    GuildWarTopMatch = 7, --巅峰团战匹配中
+    GuildWarTopStart = 8, --巅峰团战开始
+    GuildWarTopSettle = 9, --巅峰团战结算
+    GuildWarTopFightFail = 10, -- 巅峰团战失败
 }
 
 -- 获取建筑名字
@@ -40,7 +46,7 @@ end
 --是否可以请求敌人数据
 guildWar.GuildWarCanReqEnemy = function()
     local state = guildWar.GuildWarManager:getGuildWarState()
-    if state == guildWar.GuildWarState.GuildWarStart then
+    if state == guildWar.GuildWarState.GuildWarStart or state == guildWar.GuildWarState.GuildWarTopStart then
         return true
     end
     return false
@@ -49,7 +55,7 @@ end
 --是否已经有血条的阶段了
 guildWar.GuildWarNotHpInfo = function()
     local state = guildWar.GuildWarManager:getGuildWarState()
-    return state ~= guildWar.GuildWarState.GuildWarStart
+    return state ~= guildWar.GuildWarState.GuildWarStart and state ~= guildWar.GuildWarState.GuildWarTopStart
 end
 -- 结算状态
 guildWar.ResultState = {
@@ -105,21 +111,38 @@ end
 
 guildWar.TabType = {
     Rank = 1,
-    Award = 2
+    Award = 2,
+
+    TopRank = 3,
+    TopAward = 4,
 }
 
 guildWar.GetTabeList = function()
     local tab = {}
     tab[guildWar.TabType.Rank] = {
         page = guildWar.TabType.Rank,
-        nomalLan = _TT(149131),
+        nomalLan = _TT(149254),
         nomalLanEn = "",
         nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png"),
         selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png")
     }
     tab[guildWar.TabType.Award] = {
         page = guildWar.TabType.Award,
-        nomalLan = _TT(149132),
+        nomalLan = _TT(149255),
+        nomalLanEn = "",
+        nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png"),
+        selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png")
+    }
+    tab[guildWar.TabType.TopRank] = {
+        page = guildWar.TabType.TopRank,
+        nomalLan = _TT(149256),
+        nomalLanEn = "",
+        nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png"),
+        selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png")
+    }
+    tab[guildWar.TabType.TopAward] = {
+        page = guildWar.TabType.TopAward,
+        nomalLan = _TT(149257),
         nomalLanEn = "",
         nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png"),
         selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_2.png")
@@ -154,3 +177,8 @@ guildWar.BuildHPState = {
 guildWar.GetDefHPState = function()
     return 1
 end
+
+guildWar.GuildWarType = {
+    Normal = 1, -- 普通赛
+    Top = 2 -- 巅峰赛
+}

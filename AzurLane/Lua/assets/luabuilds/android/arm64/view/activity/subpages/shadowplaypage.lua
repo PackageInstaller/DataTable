@@ -1,111 +1,48 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShadowPlayPage", import("...base.BaseActivityPage"))
 
-local var_0_0 = "ShadowPlayPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0._tf
-
-	arg_1_0.getBtn = var_1.Find(var_1_1, "AD/get")
-
-	local var_1_2 = arg_1_0._tf
-
-	arg_1_0.gotBtn = var_1.Find(var_1_2, "AD/got")
-
-	local var_1_3 = arg_1_0._tf
-
-	arg_1_0.urlBtn = var_1.Find(var_1_3, "AD/url")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.getBtn = arg_1_0._tf:Find("AD/get")
+	arg_1_0.gotBtn = arg_1_0._tf:Find("AD/got")
+	arg_1_0.urlBtn = arg_1_0._tf:Find("AD/url")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	onButton = var_1_10001
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.urlBtn
-
-	local function var_2_2()
-		Application = var_2_10000
-
-		local var_3_0 = var_2_10000.OpenURL
-		local var_3_1 = arg_2_0.activity
-
-		var_3_0(var_2.getConfig(var_3_1, "config_client"))
+function var_0_0.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.urlBtn, function()
+		Application.OpenURL(arg_2_0.activity:getConfig("config_client"))
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_0, var_2_1, var_2_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_4_0)
-	local var_4_0 = arg_4_0.activity
-	local var_4_1 = var_1.getConfig(var_4_0, "config_data")[1]
+function var_0_0.OnUpdateFlush(arg_4_0)
+	local var_4_0 = arg_4_0.activity:getConfig("config_data")[1]
+	local var_4_1 = getProxy(TaskProxy)
+	local var_4_2 = var_4_1:getTaskById(var_4_0) or var_4_1:getFinishTaskById(var_4_0) or Task.New({
+		id = var_4_0
+	})
+	local var_4_3 = var_4_2:isFinish()
+	local var_4_4 = var_4_2:isReceive()
 
-	getProxy = var_1_10002
-	TaskProxy = var_4
-
-	local var_4_2 = var_1_10002(var_4)
-	local var_4_3
-
-	if not var_2.getTaskById(var_4_2, var_4_1) and not var_2:getFinishTaskById(var_4_1) then
-		Task = var_4_3
-		var_4_3 = var_4_3.New({
-			id = var_4_1
-		})
-	end
-
-	local var_4_4 = var_4_3
-	local var_4_5 = var_4_3.isFinish(var_4_4)
-	local var_4_6 = var_4_3:isReceive()
-
-	setActive = var_4_4
-
-	var_4_4(arg_4_0.getBtn, var_4_3 and var_4_5 and not var_4_6)
-
-	setActive = var_4_4
-
-	var_4_4(arg_4_0.gotBtn, var_4_3 and var_4_6)
-
-	onButton = var_4_4
-
-	local var_4_7 = arg_4_0
-	local var_4_8 = arg_4_0.getBtn
-
-	local function var_4_9()
-		if var_4_3 and var_4_5 and not var_4_6 then
-			local var_5_0 = arg_4_0
-			local var_5_1 = var_0.emit
-
-			ActivityMediator = var_2_10003
-
-			var_5_1(var_5_0, var_2_10003.ON_TASK_SUBMIT, var_4_3)
+	setActive(arg_4_0.getBtn, var_4_2 and var_4_3 and not var_4_4)
+	setActive(arg_4_0.gotBtn, var_4_2 and var_4_4)
+	onButton(arg_4_0, arg_4_0.getBtn, function()
+		if var_4_2 and var_4_3 and not var_4_4 then
+			arg_4_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_4_2)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10011
-
-	var_4_4(var_4_7, var_4_8, var_4_9, var_1_10011)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_6_0)
+function var_0_0.OnDestroy(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

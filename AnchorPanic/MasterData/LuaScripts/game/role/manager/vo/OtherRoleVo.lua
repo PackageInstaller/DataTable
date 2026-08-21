@@ -42,14 +42,15 @@ function parseMsg(self, msg)
     self.background = msg.background
     -- 展示战员列表
     self.heroList = {}
-	--联盟数据
-    self.guildInfo  = msg.guild_info
+    --联盟数据
+    self.guildInfo = msg.guild_info
     --无限城城区
     self.cityId = msg.city_id
-
+    --皮肤数量
+    self.fashionNum = msg.fashion_num
     --好友备注
     self.remarks = msg.friend_remarks
-    
+
     for i = 1, #msg.hero_list do
         local heroVo = hero.OtherHeroVo.new()
         heroVo:parseOtherMsg(msg.hero_list[i])
@@ -105,6 +106,12 @@ end
 function getAchievementNum(self)
     return self.achievementNum
 end
+
+--皮肤数量
+function getFashionNum(self)
+    return self.fashionNum
+end
+
 --战员数量
 function getHeroNum(self)
     return self.heroNum
@@ -112,7 +119,7 @@ end
 --背景图
 function getBackGround(self)
     local icon = role.RoleManager:getBackGroundVo(self.background).icon
-    return UrlManager:getBgPath("friend/bigBg/friend_bg_" .. icon .. ".jpg")
+    return UrlManager:getFriendBigBgPath(icon)
 end
 return _M
 

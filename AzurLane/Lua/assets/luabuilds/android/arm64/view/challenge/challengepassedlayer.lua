@@ -1,19 +1,13 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ChallengePassedLayer", import("..base.BaseUI"))
 
-local var_0_0 = "ChallengePassedLayer"
+var_0_0.BOSS_NUM = 5
+var_0_0.GROW_TIME = 0.55
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-var_0_1.BOSS_NUM = 5
-var_0_1.GROW_TIME = 0.55
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChallengePassedUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:findUI()
 	arg_2_0:initData()
 	arg_2_0:addListener()
@@ -21,13 +15,10 @@ function var_0_1.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0.tweenObjs = {}
-	pg = var_1
 
-	local var_3_0 = var_1.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_3_0, arg_3_0._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_3_0._tf)
 	arg_3_0:updatePainting(arg_3_0.paintingName, arg_3_0.paintingTF, arg_3_0.paintingShadow1, true)
 
 	if arg_3_0.paintingNamemNext then
@@ -36,24 +27,13 @@ function var_0_1.didEnter(arg_3_0)
 
 	arg_3_0:updateSlider(arg_3_0.curIndex)
 	arg_3_0:moveSlider(arg_3_0.curIndex)
-
-	onButton = var_1
-
-	var_1(arg_3_0, arg_3_0._tf, function()
-		local var_4_0 = arg_3_0
-
-		var_0.emit(var_4_0, var_0_1.ON_CLOSE)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 
 		return
 	end)
-
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_1.GetComponent(var_3_1, "DftAniEvent")
-
-	var_1.SetEndEvent(var_3_2, function(arg_5_0)
-		local var_5_0 = arg_3_0
-
-		var_1.emit(var_5_0, var_0_1.ON_CLOSE)
+	arg_3_0._tf:GetComponent("DftAniEvent"):SetEndEvent(function(arg_5_0)
+		arg_3_0:emit(var_0_0.ON_CLOSE)
 
 		return
 	end)
@@ -61,27 +41,12 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.willExit(arg_6_0)
-	pg = var_1_10001
+function var_0_0.willExit(arg_6_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_6_0._tf)
+	LeanTween.cancel(go(arg_6_0.slider))
 
-	local var_6_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_6_0, arg_6_0._tf)
-
-	LeanTween = var_1
-
-	local var_6_1 = var_1.cancel
-
-	go = var_6_0
-
-	var_6_1(var_6_0(arg_6_0.slider))
-
-	ipairs = var_6_1
-
-	for iter_6_0, iter_6_1 in var_6_1(arg_6_0.tweenObjs) do
-		LeanTween = var_1_10006
-
-		var_1_10006.cancel(iter_6_1)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0.tweenObjs) do
+		LeanTween.cancel(iter_6_1)
 	end
 
 	arg_6_0.tweenObjs = {}
@@ -89,423 +54,203 @@ function var_0_1.willExit(arg_6_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_7_0)
-	triggerButton = var_1_10001
-
-	var_1_10001(arg_7_0._tf)
+function var_0_0.onBackPressed(arg_7_0)
+	triggerButton(arg_7_0._tf)
 
 	return
 end
 
-function var_0_1.findUI(arg_8_0)
-	local var_8_0 = arg_8_0._tf
-
-	arg_8_0.bg = var_1.Find(var_8_0, "BG")
-
-	local var_8_1 = arg_8_0._tf
-
-	arg_8_0.paintingTF = var_1.Find(var_8_1, "Painting")
-
-	local var_8_2 = arg_8_0._tf
-
-	arg_8_0.paintingShadow1 = var_1.Find(var_8_2, "Painting/PaintingShadow1")
-
-	local var_8_3 = arg_8_0._tf
-
-	arg_8_0.paintingNextTF = var_1.Find(var_8_3, "PaintingNext")
-
-	local var_8_4 = arg_8_0._tf
-
-	arg_8_0.paintingNextShadow1 = var_1.Find(var_8_4, "PaintingNext/PaintingShadow1")
-
-	local var_8_5 = arg_8_0._tf
-	local var_8_6 = var_1.Find(var_8_5, "material1")
-	local var_8_7 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_8_0.material1 = var_8_7(var_8_6, var_4(var_1_10006)).material
-
-	local var_8_8 = arg_8_0._tf
-
-	arg_8_0.slider = var_1.Find(var_8_8, "Slider")
-
-	local var_8_9 = arg_8_0.slider
-
-	arg_8_0.squareContainer = var_1.Find(var_8_9, "SquareList")
-
-	local var_8_10 = arg_8_0.slider
-
-	arg_8_0.squareTpl = var_1.Find(var_8_10, "Squre")
-	UIItemList = var_1
-	arg_8_0.squareList = var_1.New(arg_8_0.squareContainer, arg_8_0.squareTpl)
-	GetComponent = var_1
-	arg_8_0.sliderSC = var_1(arg_8_0.slider, "Slider")
+function var_0_0.findUI(arg_8_0)
+	arg_8_0.bg = arg_8_0._tf:Find("BG")
+	arg_8_0.paintingTF = arg_8_0._tf:Find("Painting")
+	arg_8_0.paintingShadow1 = arg_8_0._tf:Find("Painting/PaintingShadow1")
+	arg_8_0.paintingNextTF = arg_8_0._tf:Find("PaintingNext")
+	arg_8_0.paintingNextShadow1 = arg_8_0._tf:Find("PaintingNext/PaintingShadow1")
+	arg_8_0.material1 = arg_8_0._tf:Find("material1"):GetComponent(typeof(Image)).material
+	arg_8_0.slider = arg_8_0._tf:Find("Slider")
+	arg_8_0.squareContainer = arg_8_0.slider:Find("SquareList")
+	arg_8_0.squareTpl = arg_8_0.slider:Find("Squre")
+	arg_8_0.squareList = UIItemList.New(arg_8_0.squareContainer, arg_8_0.squareTpl)
+	arg_8_0.sliderSC = GetComponent(arg_8_0.slider, "Slider")
 
 	return
 end
 
-function var_0_1.initData(arg_9_0)
-	local var_9_0 = arg_9_0.contextData.mode
+function var_0_0.initData(arg_9_0)
+	local var_9_0 = getProxy(ChallengeProxy):getUserChallengeInfo(arg_9_0.contextData.mode)
 
-	getProxy = var_1_10002
-	ChallengeProxy = var_1_10004
+	arg_9_0.curIndex = var_9_0:getLevel()
 
-	local var_9_1 = var_1_10002(var_1_10004)
-	local var_9_2 = var_2.getUserChallengeInfo(var_9_1, var_9_0)
+	local var_9_1 = arg_9_0.curIndex % ChallengeConst.BOSS_NUM
 
-	arg_9_0.curIndex = var_2.getLevel(var_9_2)
-
-	local var_9_3 = arg_9_0.curIndex
-
-	ChallengeConst = var_9_1
-
-	local var_9_4
-
-	if var_9_3 % var_9_1.BOSS_NUM == 0 then
-		ChallengeConst = var_4
-		var_9_4 = var_4.BOSS_NUM
+	if arg_9_0.curIndex % ChallengeConst.BOSS_NUM == 0 then
+		var_9_1 = ChallengeConst.BOSS_NUM
 	end
 
-	local var_9_5 = var_2:getDungeonIDList()[var_9_4]
-	local var_9_6 = 0
+	local var_9_2 = var_9_0:getDungeonIDList()
+	local var_9_3 = var_9_2[var_9_1]
+	local var_9_4 = 0
 
-	ChallengeProxy = var_1_10007
-
-	if var_9_0 == var_1_10007.MODE_CASUAL then
-		ChallengeConst = var_7
-
-		if var_9_4 ~= var_7.BOSS_NUM then
-			var_9_6 = var_4[var_9_4 + 1]
+	if arg_9_0.contextData.mode == ChallengeProxy.MODE_CASUAL then
+		if var_9_1 ~= ChallengeConst.BOSS_NUM then
+			var_9_4 = var_9_2[var_9_1 + 1]
 		end
 	else
-		ChallengeConst = var_7
-
-		if var_9_4 == var_7.BOSS_NUM then
-			var_9_6 = var_2:getNextInfiniteDungeonIDList()[1]
-		else
-			var_9_6 = var_4[var_9_4 + 1]
-		end
+		var_9_4 = var_9_1 == ChallengeConst.BOSS_NUM and var_9_0:getNextInfiniteDungeonIDList()[1] or var_9_2[var_9_1 + 1]
 	end
 
-	pg = var_7
-	arg_9_0.paintingName = var_7.expedition_challenge_template[var_9_5].char_icon[1]
+	arg_9_0.paintingName = pg.expedition_challenge_template[var_9_3].char_icon[1]
 
-	if var_9_6 ~= 0 then
-		pg = var_7
-		arg_9_0.paintingNamemNext = var_7.expedition_challenge_template[var_9_6].char_icon[1]
+	if var_9_4 ~= 0 then
+		arg_9_0.paintingNamemNext = pg.expedition_challenge_template[var_9_4].char_icon[1]
 	end
 
 	return
 end
 
-function var_0_1.addListener(arg_10_0)
-	onButton = var_1_10001
-
-	local var_10_0 = arg_10_0
-	local var_10_1 = arg_10_0._tf
-
-	local function var_10_2()
-		LeanTween = var_2_10000
-
-		local var_11_0 = var_2_10000.cancel
-
-		go = var_2_10002
-
-		var_11_0(var_2_10002(arg_10_0.slider))
-
-		local var_11_1 = arg_10_0
-
-		var_0.emit(var_11_1, var_0_1.ON_CLOSE)
+function var_0_0.addListener(arg_10_0)
+	onButton(arg_10_0, arg_10_0._tf, function()
+		LeanTween.cancel(go(arg_10_0.slider))
+		arg_10_0:emit(var_0_0.ON_CLOSE)
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_10_0, var_10_1, var_10_2, var_1_10006)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.updatePainting(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
-	local function var_12_0(arg_13_0)
-		local var_13_0 = arg_13_0.material
+function var_0_0.updatePainting(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+	setPaintingPrefab(arg_12_2, arg_12_1, "chuanwu")
 
-		var_1.SetFloat(var_13_0, "_LineGray", 0.3)
+	local var_12_0 = arg_12_2:Find("fitter"):GetChild(0)
 
-		local var_13_1 = arg_13_0.material
-
-		var_1.SetFloat(var_13_1, "_TearDistance", 0)
-
-		LeanTween = var_1
-
-		var_1.cancel(arg_13_0.gameObject)
-
-		table = var_1
-
-		var_1.insert(arg_12_0.tweenObjs, arg_13_0.gameObject)
-
-		LeanTween = var_1
-
-		local var_13_2 = var_1.value(arg_13_0.gameObject, 0, 2, 2)
-		local var_13_3 = var_1.setLoopClamp(var_13_2)
-		local var_13_4 = var_1.setOnUpdate
-
-		System = var_4
-
-		var_13_4(var_13_3, var_4.Action_float(function(arg_14_0)
-			if arg_14_0 >= 1.2 then
-				local var_14_0 = arg_13_0.material
-
-				var_1.SetFloat(var_14_0, "_LineGray", 0.3)
-			elseif arg_14_0 >= 1.1 then
-				local var_14_1 = arg_13_0.material
-
-				var_1.SetFloat(var_14_1, "_LineGray", 0.45)
-			elseif arg_14_0 >= 1.03 then
-				local var_14_2 = arg_13_0.material
-
-				var_1.SetFloat(var_14_2, "_TearDistance", 0)
-			elseif arg_14_0 >= 1 then
-				local var_14_3 = arg_13_0.material
-
-				var_1.SetFloat(var_14_3, "_TearDistance", 0.3)
-			elseif arg_14_0 >= 0.35 then
-				local var_14_4 = arg_13_0.material
-
-				var_1.SetFloat(var_14_4, "_LineGray", 0.3)
-			elseif arg_14_0 >= 0.3 then
-				local var_14_5 = arg_13_0.material
-
-				var_1.SetFloat(var_14_5, "_LineGray", 0.4)
-			elseif arg_14_0 >= 0.25 then
-				local var_14_6 = arg_13_0.material
-
-				var_1.SetFloat(var_14_6, "_LineGray", 0.3)
-			elseif arg_14_0 >= 0.2 then
-				local var_14_7 = arg_13_0.material
-
-				var_1.SetFloat(var_14_7, "_LineGray", 0.4)
-			end
-
-			return
-		end))
-
-		return
-	end
-
-	setPaintingPrefab = var_1_10006
-
-	var_1_10006(arg_12_2, arg_12_1, "chuanwu")
-
-	local var_12_1 = arg_12_2:Find("fitter")
-
-	if var_6.GetChild(var_12_1, 0) then
-		GetComponent = var_1_10007
-		var_1_10007 = var_1_10007(var_6, "MeshImage")
+	if var_12_0 then
+		local var_12_1 = GetComponent(var_12_0, "MeshImage")
 
 		if arg_12_4 then
-			var_1_10007.material = arg_12_0.material1
+			var_12_1.material = arg_12_0.material1
 
-			local var_12_2 = var_1_10007.material
+			var_12_1.material:SetFloat("_LineDensity", 7)
+			;(function(arg_13_0)
+				arg_13_0.material:SetFloat("_LineGray", 0.3)
+				arg_13_0.material:SetFloat("_TearDistance", 0)
+				LeanTween.cancel(arg_13_0.gameObject)
+				table.insert(arg_12_0.tweenObjs, arg_13_0.gameObject)
+				LeanTween.value(arg_13_0.gameObject, 0, 2, 2):setLoopClamp():setOnUpdate(System.Action_float(function(arg_14_0)
+					if arg_14_0 >= 1.2 then
+						arg_13_0.material:SetFloat("_LineGray", 0.3)
+					elseif arg_14_0 >= 1.1 then
+						arg_13_0.material:SetFloat("_LineGray", 0.45)
+					elseif arg_14_0 >= 1.03 then
+						arg_13_0.material:SetFloat("_TearDistance", 0)
+					elseif arg_14_0 >= 1 then
+						arg_13_0.material:SetFloat("_TearDistance", 0.3)
+					elseif arg_14_0 >= 0.35 then
+						arg_13_0.material:SetFloat("_LineGray", 0.3)
+					elseif arg_14_0 >= 0.3 then
+						arg_13_0.material:SetFloat("_LineGray", 0.4)
+					elseif arg_14_0 >= 0.25 then
+						arg_13_0.material:SetFloat("_LineGray", 0.3)
+					elseif arg_14_0 >= 0.2 then
+						arg_13_0.material:SetFloat("_LineGray", 0.4)
+					end
 
-			var_12_1.SetFloat(var_12_2, "_LineDensity", 7)
-			var_12_0(var_1_10007)
+					return
+				end))
+
+				return
+			end)(var_12_1)
 		end
 	end
 
-	setPaintingPrefabAsync = var_1_10007
+	setPaintingPrefabAsync(arg_12_3, arg_12_1, "chuanwu")
 
-	var_1_10007(arg_12_3, arg_12_1, "chuanwu")
+	local var_12_2 = arg_12_3:Find("fitter"):GetChild(0)
 
-	local var_12_3 = arg_12_3:Find("fitter")
-
-	if var_7.GetChild(var_12_3, 0) then
-		var_12_1 = var_7:GetComponent("Image")
-		Color = var_12_3
-		var_12_1.color = var_12_3.New(1, 1, 1, 0.15)
+	if var_12_2 then
+		var_12_2:GetComponent("Image").color = Color.New(1, 1, 1, 0.15)
 	end
 
-	Vector3 = var_12_1
-	arg_12_3.localScale = var_12_1(2.2, 2.2, 1)
+	arg_12_3.localScale = Vector3(2.2, 2.2, 1)
 
 	return
 end
 
-function var_0_1.updateSlider(arg_15_0, arg_15_1)
+function var_0_0.updateSlider(arg_15_0, arg_15_1)
 	local var_15_0 = arg_15_1 or arg_15_0.curIndex
 
-	ChallengeConst = var_1_10003
+	if (arg_15_1 or arg_15_0.curIndex) > ChallengeConst.BOSS_NUM and (var_15_0 % ChallengeConst.BOSS_NUM ~= 0 or not ChallengeConst.BOSS_NUM) then
+		::label_15_0::
 
-	if var_1_10003.BOSS_NUM < var_15_0 then
-		ChallengeConst = var_3
-
-		if var_15_0 % var_3.BOSS_NUM == 0 then
-			ChallengeConst = var_3
-
-			if not var_3.BOSS_NUM then
-				::label_15_0::
-
-				ChallengeConst = var_3
-				var_15_0 = var_15_0 % var_3.BOSS_NUM
-			end
-
-			ChallengeConst = var_3
-
-			local var_15_1 = 1 / (var_3.BOSS_NUM - 1)
-			local var_15_2 = (var_15_0 - 1) * var_15_1
-
-			arg_15_0.sliderSC.value = var_15_2
-
-			local var_15_3 = arg_15_0.squareList
-
-			var_5.make(var_15_3, function(arg_16_0, arg_16_1, arg_16_2)
-				local var_16_0 = arg_16_2:Find("UnFinished")
-				local var_16_1 = arg_16_2:Find("Finished")
-				local var_16_2 = arg_16_2:Find("Challengeing")
-				local var_16_3 = arg_16_2:Find("Arrow")
-
-				local function var_16_4()
-					setActive = var_3_10000
-
-					var_3_10000(var_16_1, true)
-
-					setActive = var_3_10000
-
-					var_3_10000(var_16_0, false)
-
-					setActive = var_3_10000
-
-					var_3_10000(var_16_2, false)
-
-					return
-				end
-
-				local function var_16_5()
-					setActive = var_3_10000
-
-					var_3_10000(var_16_1, false)
-
-					setActive = var_3_10000
-
-					var_3_10000(var_16_0, true)
-
-					setActive = var_3_10000
-
-					var_3_10000(var_16_2, false)
-
-					return
-				end
-
-				local function var_16_6()
-					setActive = var_3_10000
-
-					var_3_10000(var_16_1, false)
-
-					setActive = var_3_10000
-
-					var_3_10000(var_16_0, false)
-
-					setActive = var_3_10000
-
-					var_3_10000(var_16_2, true)
-
-					return
-				end
-
-				UIItemList = var_2_10010
-
-				if arg_16_0 == var_2_10010.EventUpdate then
-					if arg_16_1 + 1 < var_15_0 then
-						setActive = var_10
-
-						var_10(var_16_3, false)
-						var_16_4()
-					elseif arg_16_1 + 1 == var_15_0 then
-						setActive = var_10
-
-						var_10(var_16_3, true)
-						var_16_6()
-					elseif arg_16_1 + 1 > var_15_0 then
-						setActive = var_10
-
-						var_10(var_16_3, false)
-						var_16_5()
-					end
-				end
-
-				return
-			end)
-
-			local var_15_4 = arg_15_0.squareList
-			local var_15_5 = var_5.align
-
-			ChallengeConst = var_8
-
-			var_15_5(var_15_4, var_8.BOSS_NUM)
-
-			return
-		end
+		var_15_0 = var_15_0 % ChallengeConst.BOSS_NUM
 	end
+
+	arg_15_0.sliderSC.value = (var_15_0 - 1) * (1 / (ChallengeConst.BOSS_NUM - 1))
+
+	arg_15_0.squareList:make(function(arg_16_0, arg_16_1, arg_16_2)
+		local var_16_0 = arg_16_2:Find("UnFinished")
+		local var_16_1 = arg_16_2:Find("Finished")
+		local var_16_2 = arg_16_2:Find("Challengeing")
+		local var_16_3 = arg_16_2:Find("Arrow")
+
+		if arg_16_0 == UIItemList.EventUpdate then
+			if arg_16_1 + 1 < var_15_0 then
+				setActive(var_16_3, false)
+				;(function()
+					setActive(var_16_1, true)
+					setActive(var_16_0, false)
+					setActive(var_16_2, false)
+
+					return
+				end)()
+			elseif arg_16_1 + 1 == var_15_0 then
+				setActive(var_16_3, true)
+				;(function()
+					setActive(var_16_1, false)
+					setActive(var_16_0, false)
+					setActive(var_16_2, true)
+
+					return
+				end)()
+			elseif arg_16_1 + 1 > var_15_0 then
+				setActive(var_16_3, false)
+				;(function()
+					setActive(var_16_1, false)
+					setActive(var_16_0, true)
+					setActive(var_16_2, false)
+
+					return
+				end)()
+			end
+		end
+
+		return
+	end)
+	arg_15_0.squareList:align(ChallengeConst.BOSS_NUM)
+
+	return
 end
 
-function var_0_1.moveSlider(arg_20_0, arg_20_1)
+function var_0_0.moveSlider(arg_20_0, arg_20_1)
 	local var_20_0 = arg_20_1 or arg_20_0.curIndex
 
-	ChallengeConst = var_1_10003
+	if (arg_20_1 or arg_20_0.curIndex) > ChallengeConst.BOSS_NUM and (var_20_0 % ChallengeConst.BOSS_NUM ~= 0 or not ChallengeConst.BOSS_NUM) then
+		::label_20_0::
 
-	if var_1_10003.BOSS_NUM < var_20_0 then
-		ChallengeConst = var_3
-
-		if var_20_0 % var_3.BOSS_NUM == 0 then
-			ChallengeConst = var_3
-
-			if not var_3.BOSS_NUM then
-				::label_20_0::
-
-				ChallengeConst = var_3
-				var_20_0 = var_20_0 % var_3.BOSS_NUM
-			end
-
-			ChallengeConst = var_3
-
-			local var_20_1 = 1 / (var_3.BOSS_NUM - 1)
-			local var_20_2 = (var_20_0 - 1) * var_20_1
-			local var_20_3 = var_20_0 * var_20_1
-
-			LeanTween = var_1_10006
-
-			local var_20_4 = var_1_10006.value
-
-			go = var_1_10008
-
-			local var_20_5 = var_20_4(var_1_10008(arg_20_0.slider), var_20_2, var_20_3, var_0_1.GROW_TIME)
-			local var_20_6 = var_6.setDelay(var_20_5, 1.4)
-			local var_20_7 = var_6.setOnUpdate
-
-			System = var_9
-
-			local var_20_8 = var_20_7(var_20_6, var_9.Action_float(function(arg_21_0)
-				arg_20_0.sliderSC.value = arg_21_0
-
-				return
-			end))
-			local var_20_9 = var_6.setOnComplete
-
-			System = var_9
-
-			var_20_9(var_20_8, var_9.Action(function()
-				local var_22_0 = arg_20_0
-
-				var_0.updateSlider(var_22_0, var_20_0 + 1)
-
-				return
-			end))
-
-			return
-		end
+		var_20_0 = var_20_0 % ChallengeConst.BOSS_NUM
 	end
+
+	LeanTween.value(go(arg_20_0.slider), (var_20_0 - 1) * (1 / (ChallengeConst.BOSS_NUM - 1)), var_20_0 * (1 / (ChallengeConst.BOSS_NUM - 1)), var_0_0.GROW_TIME):setDelay(1.4):setOnUpdate(System.Action_float(function(arg_21_0)
+		arg_20_0.sliderSC.value = arg_21_0
+
+		return
+	end)):setOnComplete(System.Action(function()
+		arg_20_0:updateSlider(var_20_0 + 1)
+
+		return
+	end))
+
+	return
 end
 
-return var_0_1
+return var_0_0

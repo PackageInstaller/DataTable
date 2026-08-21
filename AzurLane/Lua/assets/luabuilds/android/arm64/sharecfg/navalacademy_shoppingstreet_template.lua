@@ -1,49 +1,15 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "navalacademy_shoppingstreet_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "navalacademy_shoppingstreet_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.navalacademy_shoppingstreet_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.navalacademy_shoppingstreet_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.navalacademy_shoppingstreet_template = rawget(pg, "navalacademy_shoppingstreet_template") or setmetatable({
+	__name = "navalacademy_shoppingstreet_template"
+}, confNEO)
+pg.navalacademy_shoppingstreet_template.all = {
 	1
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.navalacademy_shoppingstreet_template = {}
+pg.base = pg.base or {}
+pg.base.navalacademy_shoppingstreet_template = {}
 
 ;(function()
-	pg = var_1_10000
-	var_1_10000.base.navalacademy_shoppingstreet_template[1] = {
+	pg.base.navalacademy_shoppingstreet_template[1] = {
 		special_goods_num = 3,
 		words_enter = "恩？欢迎光临…|啊…又来了啊…|要来点科技箱吗……？",
 		goods_num = 10,

@@ -1,66 +1,41 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShipRotateLayer", import("...base.BaseUI"))
 
-local var_0_0 = "ShipRotateLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ShipRotateUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:findUI()
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	local var_3_1
+function var_0_0.didEnter(arg_3_0)
+	if arg_3_0.skin then
+		local var_3_0 = arg_3_0.skin.id or arg_3_0.shipGroup:GetSkin(arg_3_0.showTrans).id
 
-	if not arg_3_0.skin or not arg_3_0.skin.id then
-		local var_3_0 = arg_3_0.shipGroup
+		arg_3_0:SetPainting(var_3_0, arg_3_0.showTrans)
+		arg_3_0.paintingView:setBGCallback(function()
+			arg_3_0:closeView()
 
-		var_3_1 = var_1.GetSkin(var_3_0, arg_3_0.showTrans).id
-	end
-
-	arg_3_0:SetPainting(var_3_1, arg_3_0.showTrans)
-
-	local var_3_2 = arg_3_0.paintingView
-
-	var_2.setBGCallback(var_3_2, function()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+			return
+		end)
+		arg_3_0.paintingView:Start()
+		setActive(arg_3_0._tf:Find("Enc"), true)
 
 		return
-	end)
-
-	local var_3_3 = arg_3_0.paintingView
-
-	var_2.Start(var_3_3)
-
-	setActive = var_2
-
-	local var_3_4 = arg_3_0._tf
-
-	var_2(var_4.Find(var_3_4, "Enc"), true)
-
-	return
+	end
 end
 
-function var_0_1.willExit(arg_5_0)
-	local var_5_0 = arg_5_0.paintingView
-
-	var_1.Dispose(var_5_0)
+function var_0_0.willExit(arg_5_0)
+	arg_5_0.paintingView:Dispose()
 	arg_5_0:RecyclePainting()
 
 	return
 end
 
-function var_0_1.initData(arg_6_0)
+function var_0_0.initData(arg_6_0)
 	arg_6_0.paintingName = nil
 	arg_6_0.shipGroup = arg_6_0.contextData.shipGroup
 	arg_6_0.showTrans = arg_6_0.contextData.showTrans
@@ -69,55 +44,36 @@ function var_0_1.initData(arg_6_0)
 	return
 end
 
-function var_0_1.findUI(arg_7_0)
-	local var_7_0 = arg_7_0._tf
-
-	arg_7_0.painting = var_1.Find(var_7_0, "paint")
-	findTF = var_1
-	arg_7_0.paintingFitter = var_1(arg_7_0.painting, "fitter")
+function var_0_0.findUI(arg_7_0)
+	arg_7_0.painting = arg_7_0._tf:Find("paint")
+	arg_7_0.paintingFitter = findTF(arg_7_0.painting, "fitter")
 	arg_7_0.paintingInitPos = arg_7_0.painting.transform.localPosition
-	ShipProfilePaintingView = var_1
-	arg_7_0.paintingView = var_1.New(arg_7_0._tf, arg_7_0.painting, true)
+	arg_7_0.paintingView = ShipProfilePaintingView.New(arg_7_0._tf, arg_7_0.painting, true)
 
 	return
 end
 
-function var_0_1.SetPainting(arg_8_0, arg_8_1, arg_8_2)
-	local var_8_0 = arg_8_0
+function var_0_0.SetPainting(arg_8_0, arg_8_1, arg_8_2)
+	arg_8_0:RecyclePainting()
+	setPaintingPrefabAsync(arg_8_0.painting, pg.ship_skin_template[arg_8_1].painting, "chuanwu")
 
-	arg_8_0.RecyclePainting(var_8_0)
+	arg_8_0.paintingName = pg.ship_skin_template[arg_8_1].painting
 
-	pg = var_3
-
-	local var_8_1 = var_3.ship_skin_template[arg_8_1].painting
-
-	setPaintingPrefabAsync = var_1_10004
-
-	var_1_10004(arg_8_0.painting, var_8_1, "chuanwu")
-
-	arg_8_0.paintingName = var_8_1
-
-	local var_8_2 = arg_8_0.painting.localEulerAngles
-
-	setLocalEulerAngles = var_8_0
-
-	var_8_0(arg_8_0.painting, {
+	setLocalEulerAngles(arg_8_0.painting, {
 		z = 90,
-		x = var_8_2.x,
-		y = var_8_2.y
+		x = arg_8_0.painting.localEulerAngles.x,
+		y = arg_8_0.painting.localEulerAngles.y
 	})
 
 	return
 end
 
-function var_0_1.RecyclePainting(arg_9_0)
+function var_0_0.RecyclePainting(arg_9_0)
 	if arg_9_0.paintingName then
-		retPaintingPrefab = var_1
-
-		var_1(arg_9_0.painting, arg_9_0.paintingName)
+		retPaintingPrefab(arg_9_0.painting, arg_9_0.paintingName)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BaseExtraSystem")
+﻿local var_0_0 = class("BaseExtraSystem")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.event = arg_1_1
@@ -15,24 +13,16 @@ end
 function var_0_0.WrapContext(arg_2_0, arg_2_1)
 	return {
 		GetModelRoot = function()
-			local var_3_0 = arg_2_1
-
-			return var_0.GetModelRoot(var_3_0)
+			return arg_2_1:GetModelRoot()
 		end,
 		GetCurrentLadyEnv = function()
-			local var_4_0 = arg_2_1
-
-			return var_0.GetCurrentLadyEnv(var_4_0)
+			return arg_2_1:GetCurrentLadyEnv()
 		end,
 		GetSceneItem = function(arg_5_0)
-			local var_5_0 = arg_2_1
-
-			return var_1.GetSceneItem(var_5_0, arg_5_0)
+			return arg_2_1:GetSceneItem(arg_5_0)
 		end,
 		GetFurnitureByName = function(arg_6_0)
-			local var_6_0 = arg_2_1
-
-			return var_1.GetFurnitureByName(var_6_0, arg_6_0)
+			return arg_2_1:GetFurnitureByName(arg_6_0)
 		end,
 		GetLoader = function()
 			return arg_2_1.loader
@@ -46,9 +36,7 @@ end
 
 function var_0_0.Init(arg_9_0)
 	if arg_9_0.isInitialized then
-		warning = var_1
-
-		var_1(arg_9_0.__cname .. " already initialized")
+		warning(arg_9_0.__cname .. " already initialized")
 
 		return
 	end
@@ -70,29 +58,16 @@ function var_0_0.RegisterEvents(arg_11_0)
 end
 
 function var_0_0.Emit(arg_12_0, arg_12_1, ...)
-	local var_12_0 = arg_12_0.event
-
-	var_2.emit(var_12_0, arg_12_1, ...)
+	arg_12_0.event:emit(arg_12_1, ...)
 
 	return
 end
 
 function var_0_0.Bind(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = arg_13_0.bindings
-	local var_13_1
+	arg_13_0.bindings[arg_13_1] = arg_13_0.bindings[arg_13_1] or {}
 
-	if not arg_13_0.bindings[arg_13_1] then
-		var_13_1 = {}
-	end
-
-	var_13_0[arg_13_1] = var_13_1
-	table = var_13_0
-
-	var_13_0.insert(arg_13_0.bindings[arg_13_1], arg_13_2)
-
-	local var_13_2 = arg_13_0.event
-
-	var_3.connect(var_13_2, arg_13_1, arg_13_2)
+	table.insert(arg_13_0.bindings[arg_13_1], arg_13_2)
+	arg_13_0.event:connect(arg_13_1, arg_13_2)
 
 	return
 end
@@ -102,12 +77,8 @@ function var_0_0.Unbind(arg_14_0, arg_14_1)
 		return
 	end
 
-	ipairs = var_1_10003
-
-	for iter_14_0, iter_14_1 in var_1_10003(var_2) do
-		local var_14_0 = arg_14_0.event
-
-		var_8.disconnect(var_14_0, arg_14_1, iter_14_1)
+	for iter_14_0, iter_14_1 in ipairs(arg_14_0.bindings[arg_14_1]) do
+		arg_14_0.event:disconnect(arg_14_1, iter_14_1)
 	end
 
 	arg_14_0.bindings[arg_14_1] = nil
@@ -116,9 +87,7 @@ function var_0_0.Unbind(arg_14_0, arg_14_1)
 end
 
 function var_0_0.UnbindAll(arg_15_0)
-	pairs = var_1_10001
-
-	for iter_15_0, iter_15_1 in var_1_10001(arg_15_0.bindings) do
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.bindings) do
 		arg_15_0:Unbind(iter_15_0)
 	end
 
@@ -178,23 +147,21 @@ function var_0_0.Func(arg_23_0, arg_23_1, ...)
 		return nil
 	end
 
+	local var_23_0 = arg_23_0.scene
+
 	if not arg_23_0.scene then
-		warning = var_1_10003
-
-		var_1_10003("Scene is nil")
+		warning("Scene is nil")
 
 		return nil
 	end
 
-	if not var_2[arg_23_1] then
-		warning = var_1_10004
-
-		var_1_10004("Method " .. arg_23_1 .. " not found in scene")
+	if not var_23_0[arg_23_1] then
+		warning("Method " .. arg_23_1 .. " not found in scene")
 
 		return nil
 	end
 
-	return var_3(var_2, ...)
+	return var_23_1(var_23_0, ...)
 end
 
 function var_0_0.Get(arg_24_0, arg_24_1)
@@ -234,13 +201,7 @@ function var_0_0.IsOpen()
 end
 
 function var_0_0.GetName(arg_32_0)
-	local var_32_0
-
-	if not arg_32_0.__cname then
-		var_32_0 = "BaseExtraSystem"
-	end
-
-	return var_32_0
+	return arg_32_0.__cname or "BaseExtraSystem"
 end
 
 function var_0_0.Dispose(arg_33_0)

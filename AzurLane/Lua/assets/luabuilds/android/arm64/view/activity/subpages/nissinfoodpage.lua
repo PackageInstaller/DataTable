@@ -1,173 +1,69 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NissinFoodPage", import("...base.BaseActivityPage"))
 
-local var_0_0 = "NissinFoodPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.helpBtn = var_1.Find(var_1_1, "help_btn")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.startBtn = var_1.Find(var_1_2, "start_btn")
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.cupList = var_1.Find(var_1_3, "cup_list")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.helpBtn = arg_1_0.bg:Find("help_btn")
+	arg_1_0.startBtn = arg_1_0.bg:Find("start_btn")
+	arg_1_0.cupList = arg_1_0.bg:Find("cup_list")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	local var_2_0 = arg_2_0.activity
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.hubID = arg_2_0.activity:getConfig("config_id")
+	arg_2_0.drop_list = arg_2_0.activity:getConfig("config_client")
 
-	arg_2_0.hubID = var_1.getConfig(var_2_0, "config_id")
-
-	local var_2_1 = arg_2_0.activity
-
-	arg_2_0.drop_list = var_1.getConfig(var_2_1, "config_client")
-	onButton = var_1
-
-	local var_2_2 = arg_2_0
-	local var_2_3 = arg_2_0.helpBtn
-
-	local function var_2_4()
-		pg = var_2_10000
-
-		local var_3_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_3_1 = var_0.ShowMsgBox
-		local var_3_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_3_2.type = var_2_10004
-		i18n = var_2_10004
-		var_3_2.helps = var_2_10004("chazi_tips")
-
-		var_3_1(var_3_0, var_3_2)
+	onButton(arg_2_0, arg_2_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("chazi_tips")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_2_2, var_2_3, var_2_4, var_1_10006)
-
-	onButton = var_1
-
-	local var_2_5 = arg_2_0
-	local var_2_6 = arg_2_0.startBtn
-
-	local function var_2_7()
-		pg = var_2_10000
-
-		local var_4_0 = var_2_10000.m02
-		local var_4_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.GO_MINI_GAME, 29)
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.startBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, 29)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_2_5, var_2_6, var_2_7, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_5_0)
-	getProxy = var_1_10001
-	MiniGameProxy = var_1_10003
+function var_0_0.OnUpdateFlush(arg_5_0)
+	local var_5_0 = getProxy(MiniGameProxy):GetHubByHubId(arg_5_0.hubID)
 
-	local var_5_0 = var_1_10001(var_1_10003)
-	local var_5_1 = var_1.GetHubByHubId(var_5_0, arg_5_0.hubID)
+	eachChild(arg_5_0.cupList, function(arg_6_0)
+		local var_6_0 = tonumber(arg_6_0.name)
 
-	eachChild = var_1_10003
-
-	var_1_10003(arg_5_0.cupList, function(arg_6_0)
-		tonumber = var_2_10001
-
-		local var_6_0 = var_2_10001(arg_6_0.name)
-
-		setActive = var_2_10002
-
-		var_2_10002(arg_6_0:Find("lock"), var_6_0 > var_5_1.count + var_5_1.usedtime)
-
-		setActive = var_2_10002
-
-		var_2_10002(arg_6_0:Find("got"), var_6_0 <= var_5_1.usedtime)
+		setActive(arg_6_0:Find("lock"), var_6_0 > var_5_0.count + var_5_0.usedtime)
+		setActive(arg_6_0:Find("got"), var_6_0 <= var_5_0.usedtime)
 
 		local var_6_1 = arg_6_0:Find("mask/award")
-		local var_6_2 = arg_5_0.drop_list[var_6_0]
-		local var_6_3 = {
-			type = var_6_2[1],
-			id = var_6_2[2],
-			count = var_6_2[3]
-		}
 
-		updateDrop = var_5
-
-		var_5(var_6_1, var_6_3)
-
-		onButton = var_5
-
-		local var_6_4 = arg_5_0
-		local var_6_5 = var_6_1
-
-		local function var_6_6()
-			local var_7_0 = arg_5_0
-			local var_7_1 = var_0.emit
-
-			BaseUI = var_3_10003
-
-			var_7_1(var_7_0, var_3_10003.ON_DROP, var_6_3)
+		updateDrop(var_6_1, {
+			type = arg_5_0.drop_list[var_6_0][1],
+			id = arg_5_0.drop_list[var_6_0][2],
+			count = arg_5_0.drop_list[var_6_0][3]
+		})
+		onButton(arg_5_0, var_6_1, function()
+			arg_5_0:emit(BaseUI.ON_DROP, var_0)
 
 			return
-		end
-
-		SFX_PANEL = var_2_10010
-
-		var_5(var_6_4, var_6_5, var_6_6, var_2_10010)
+		end, SFX_PANEL)
 
 		return
 	end)
 
-	if var_5_1.ultimate == 0 then
-		local var_5_2 = var_5_1.usedtime
-		local var_5_3 = var_5_1
-
-		if var_5_2 >= var_5_1.getConfig(var_5_3, "reward_need") then
-			pg = var_5_2
-
-			local var_5_4 = var_5_2.m02
-			local var_5_5 = var_3.sendNotification
-
-			GAME = var_5_3
-
-			local var_5_6 = var_5_3.SEND_MINI_GAME_OP
-			local var_5_7 = {
-				hubid = var_5_1.id
-			}
-
-			MiniGameOPCommand = var_8
-			var_5_7.cmd = var_8.CMD_ULTIMATE
-			var_5_7.args1 = {}
-
-			var_5_5(var_5_4, var_5_6, var_5_7)
-		end
+	if var_5_0.ultimate == 0 and var_5_0.usedtime >= var_5_0:getConfig("reward_need") then
+		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = var_5_0.id,
+			cmd = MiniGameOPCommand.CMD_ULTIMATE,
+			args1 = {}
+		})
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

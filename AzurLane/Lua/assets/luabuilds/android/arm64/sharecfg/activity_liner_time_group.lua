@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_liner_time_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_liner_time_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_liner_time_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_liner_time_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_liner_time_group = rawget(pg, "activity_liner_time_group") or setmetatable({
+	__name = "activity_liner_time_group"
+}, confNEO)
+pg.activity_liner_time_group.all = {
 	1,
 	2,
 	3,
@@ -36,25 +13,11 @@ var_0_3.all = {
 	8,
 	9
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_liner_time_group = {}
+pg.base = pg.base or {}
+pg.base.activity_liner_time_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_liner_time_group
-
-	var_1_0[1] = {
+	pg.base.activity_liner_time_group[1] = {
 		id = 1,
 		ids = {
 			1,
@@ -71,11 +34,7 @@ var_0_3.base.activity_liner_time_group = {}
 			1000
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_liner_time_group
-
-	var_1_1[2] = {
+	pg.base.activity_liner_time_group[2] = {
 		id = 2,
 		ids = {
 			8,
@@ -92,11 +51,7 @@ var_0_3.base.activity_liner_time_group = {}
 			2000
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_liner_time_group
-
-	var_1_2[3] = {
+	pg.base.activity_liner_time_group[3] = {
 		id = 3,
 		ids = {
 			15,
@@ -112,11 +67,7 @@ var_0_3.base.activity_liner_time_group = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_liner_time_group
-
-	var_1_3[4] = {
+	pg.base.activity_liner_time_group[4] = {
 		id = 4,
 		ids = {
 			21,
@@ -133,11 +84,7 @@ var_0_3.base.activity_liner_time_group = {}
 			2
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_liner_time_group
-
-	var_1_4[5] = {
+	pg.base.activity_liner_time_group[5] = {
 		id = 5,
 		ids = {
 			28
@@ -148,11 +95,7 @@ var_0_3.base.activity_liner_time_group = {}
 			5
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_liner_time_group
-
-	var_1_5[6] = {
+	pg.base.activity_liner_time_group[6] = {
 		id = 6,
 		ids = {
 			29,
@@ -169,11 +112,7 @@ var_0_3.base.activity_liner_time_group = {}
 			300
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_liner_time_group
-
-	var_1_6[7] = {
+	pg.base.activity_liner_time_group[7] = {
 		id = 7,
 		ids = {
 			36,
@@ -190,11 +129,7 @@ var_0_3.base.activity_liner_time_group = {}
 			2
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_liner_time_group
-
-	var_1_7[8] = {
+	pg.base.activity_liner_time_group[8] = {
 		id = 8,
 		ids = {
 			43,
@@ -211,8 +146,7 @@ var_0_3.base.activity_liner_time_group = {}
 			5
 		}
 	}
-	pg = var_1_7
-	var_1_7.base.activity_liner_time_group[9] = {
+	pg.base.activity_liner_time_group[9] = {
 		id = 9,
 		ids = {
 			50,

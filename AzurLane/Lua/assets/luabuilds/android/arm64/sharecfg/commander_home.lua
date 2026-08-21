@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "commander_home") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "commander_home"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.commander_home = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.commander_home
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.commander_home = rawget(pg, "commander_home") or setmetatable({
+	__name = "commander_home"
+}, confNEO)
+pg.commander_home.all = {
 	1,
 	2,
 	3,
@@ -42,25 +19,11 @@ var_0_3.all = {
 	14,
 	15
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.commander_home = {}
+pg.base = pg.base or {}
+pg.base.commander_home = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.commander_home
-
-	var_1_0[1] = {
+	pg.base.commander_home[1] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 120,
@@ -91,11 +54,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.commander_home
-
-	var_1_1[2] = {
+	pg.base.commander_home[2] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 300,
@@ -127,11 +86,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.commander_home
-
-	var_1_2[3] = {
+	pg.base.commander_home[3] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 540,
@@ -163,11 +118,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.commander_home
-
-	var_1_3[4] = {
+	pg.base.commander_home[4] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 900,
@@ -199,11 +150,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.commander_home
-
-	var_1_4[5] = {
+	pg.base.commander_home[5] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 1260,
@@ -235,11 +182,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.commander_home
-
-	var_1_5[6] = {
+	pg.base.commander_home[6] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 1800,
@@ -271,11 +214,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.commander_home
-
-	var_1_6[7] = {
+	pg.base.commander_home[7] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 2280,
@@ -307,11 +246,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.commander_home
-
-	var_1_7[8] = {
+	pg.base.commander_home[8] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 3000,
@@ -343,11 +278,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.commander_home
-
-	var_1_8[9] = {
+	pg.base.commander_home[9] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 3600,
@@ -379,11 +310,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.commander_home
-
-	var_1_9[10] = {
+	pg.base.commander_home[10] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 4500,
@@ -416,11 +343,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.commander_home
-
-	var_1_10[11] = {
+	pg.base.commander_home[11] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 5220,
@@ -453,11 +376,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.commander_home
-
-	var_1_11[12] = {
+	pg.base.commander_home[12] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 6300,
@@ -490,11 +409,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.commander_home
-
-	var_1_12[13] = {
+	pg.base.commander_home[13] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 7140,
@@ -527,11 +442,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.commander_home
-
-	var_1_13[14] = {
+	pg.base.commander_home[14] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 8400,
@@ -564,8 +475,7 @@ var_0_3.base.commander_home = {}
 			}
 		}
 	}
-	pg = var_1_13
-	var_1_13.base.commander_home[15] = {
+	pg.base.commander_home[15] = {
 		clean_exp = 30,
 		exp_number = 60,
 		home_exp = 0,

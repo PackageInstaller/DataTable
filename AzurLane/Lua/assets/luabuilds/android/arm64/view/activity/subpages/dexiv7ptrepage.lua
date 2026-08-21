@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DexiV7PtRePage", import(".TemplatePage.NewPtTemplatePage"))
 
-local var_0_0 = "DexiV7PtRePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.NewPtTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

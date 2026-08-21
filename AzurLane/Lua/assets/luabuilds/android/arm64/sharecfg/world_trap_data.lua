@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_trap_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_trap_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_trap_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_trap_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_trap_data = rawget(pg, "world_trap_data") or setmetatable({
+	__name = "world_trap_data"
+}, confNEO)
+pg.world_trap_data.all = {
 	1,
 	2,
 	3,
@@ -66,25 +43,11 @@ var_0_3.all = {
 	2010,
 	2011
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_trap_data = {}
+pg.base = pg.base or {}
+pg.base.world_trap_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_trap_data
-
-	var_1_0[1] = {
+	pg.base.world_trap_data[1] = {
 		buff_id = 301,
 		name = "电磁异常",
 		repeat_trap = 0,
@@ -95,11 +58,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1,
 		trap_range = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_trap_data
-
-	var_1_1[2] = {
+	pg.base.world_trap_data[2] = {
 		buff_id = 302,
 		name = "旋涡海域",
 		repeat_trap = 1,
@@ -110,11 +69,7 @@ var_0_3.base.world_trap_data = {}
 		id = 2,
 		trap_range = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_trap_data
-
-	var_1_2[3] = {
+	pg.base.world_trap_data[3] = {
 		buff_id = 303,
 		name = "燃烧海域",
 		repeat_trap = 1,
@@ -125,11 +80,7 @@ var_0_3.base.world_trap_data = {}
 		id = 3,
 		trap_range = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_trap_data
-
-	var_1_3[4] = {
+	pg.base.world_trap_data[4] = {
 		buff_id = 304,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -140,11 +91,7 @@ var_0_3.base.world_trap_data = {}
 		id = 4,
 		trap_range = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_trap_data
-
-	var_1_4[5] = {
+	pg.base.world_trap_data[5] = {
 		buff_id = 305,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 0,
@@ -155,11 +102,7 @@ var_0_3.base.world_trap_data = {}
 		id = 5,
 		trap_range = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_trap_data
-
-	var_1_5[6] = {
+	pg.base.world_trap_data[6] = {
 		buff_id = 306,
 		name = "低温海域",
 		repeat_trap = 1,
@@ -170,11 +113,7 @@ var_0_3.base.world_trap_data = {}
 		id = 6,
 		trap_range = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_trap_data
-
-	var_1_6[100] = {
+	pg.base.world_trap_data[100] = {
 		buff_id = 307,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 0,
@@ -185,11 +124,7 @@ var_0_3.base.world_trap_data = {}
 		id = 100,
 		trap_range = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_trap_data
-
-	var_1_7[101] = {
+	pg.base.world_trap_data[101] = {
 		buff_id = 308,
 		name = "燃烧海域",
 		repeat_trap = 0,
@@ -200,11 +135,7 @@ var_0_3.base.world_trap_data = {}
 		id = 101,
 		trap_range = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_trap_data
-
-	var_1_8[102] = {
+	pg.base.world_trap_data[102] = {
 		buff_id = 309,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -215,11 +146,7 @@ var_0_3.base.world_trap_data = {}
 		id = 102,
 		trap_range = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_trap_data
-
-	var_1_9[103] = {
+	pg.base.world_trap_data[103] = {
 		buff_id = 310,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 0,
@@ -230,11 +157,7 @@ var_0_3.base.world_trap_data = {}
 		id = 103,
 		trap_range = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_trap_data
-
-	var_1_10[110] = {
+	pg.base.world_trap_data[110] = {
 		buff_id = 308,
 		name = "燃烧海域",
 		repeat_trap = 0,
@@ -245,11 +168,7 @@ var_0_3.base.world_trap_data = {}
 		id = 110,
 		trap_range = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_trap_data
-
-	var_1_11[200] = {
+	pg.base.world_trap_data[200] = {
 		buff_id = 600,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 2,
@@ -264,11 +183,7 @@ var_0_3.base.world_trap_data = {}
 			2
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_trap_data
-
-	var_1_12[201] = {
+	pg.base.world_trap_data[201] = {
 		buff_id = 601,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 2,
@@ -281,11 +196,7 @@ var_0_3.base.world_trap_data = {}
 			2
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_trap_data
-
-	var_1_13[202] = {
+	pg.base.world_trap_data[202] = {
 		buff_id = 320,
 		name = "异常燃烧海域",
 		repeat_trap = 2,
@@ -300,11 +211,7 @@ var_0_3.base.world_trap_data = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_trap_data
-
-	var_1_14[1001] = {
+	pg.base.world_trap_data[1001] = {
 		buff_id = 311,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -315,11 +222,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1001,
 		trap_range = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_trap_data
-
-	var_1_15[1002] = {
+	pg.base.world_trap_data[1002] = {
 		buff_id = 312,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 0,
@@ -330,11 +233,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1002,
 		trap_range = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_trap_data
-
-	var_1_16[1003] = {
+	pg.base.world_trap_data[1003] = {
 		buff_id = 313,
 		name = "电磁异常",
 		repeat_trap = 0,
@@ -345,11 +244,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1003,
 		trap_range = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_trap_data
-
-	var_1_17[1004] = {
+	pg.base.world_trap_data[1004] = {
 		buff_id = 314,
 		name = "强力电磁异常",
 		repeat_trap = 0,
@@ -360,11 +255,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1004,
 		trap_range = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_trap_data
-
-	var_1_18[1005] = {
+	pg.base.world_trap_data[1005] = {
 		buff_id = 315,
 		name = "燃烧海域",
 		repeat_trap = 1,
@@ -375,11 +266,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1005,
 		trap_range = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_trap_data
-
-	var_1_19[1006] = {
+	pg.base.world_trap_data[1006] = {
 		buff_id = 316,
 		name = "低温海域",
 		repeat_trap = 1,
@@ -390,11 +277,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1006,
 		trap_range = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_trap_data
-
-	var_1_20[1007] = {
+	pg.base.world_trap_data[1007] = {
 		buff_id = 317,
 		name = "旋涡海域",
 		repeat_trap = 1,
@@ -405,11 +288,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1007,
 		trap_range = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_trap_data
-
-	var_1_21[1008] = {
+	pg.base.world_trap_data[1008] = {
 		buff_id = 318,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -420,11 +299,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1008,
 		trap_range = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_trap_data
-
-	var_1_22[1011] = {
+	pg.base.world_trap_data[1011] = {
 		buff_id = 321,
 		name = "电磁异常",
 		repeat_trap = 0,
@@ -435,11 +310,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1011,
 		trap_range = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_trap_data
-
-	var_1_23[1012] = {
+	pg.base.world_trap_data[1012] = {
 		buff_id = 322,
 		name = "旋涡海域",
 		repeat_trap = 1,
@@ -450,11 +321,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1012,
 		trap_range = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_trap_data
-
-	var_1_24[1013] = {
+	pg.base.world_trap_data[1013] = {
 		buff_id = 323,
 		name = "燃烧海域",
 		repeat_trap = 1,
@@ -465,11 +332,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1013,
 		trap_range = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_trap_data
-
-	var_1_25[1014] = {
+	pg.base.world_trap_data[1014] = {
 		buff_id = 324,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -480,11 +343,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1014,
 		trap_range = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_trap_data
-
-	var_1_26[1015] = {
+	pg.base.world_trap_data[1015] = {
 		buff_id = 325,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 0,
@@ -495,11 +354,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1015,
 		trap_range = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_trap_data
-
-	var_1_27[1016] = {
+	pg.base.world_trap_data[1016] = {
 		buff_id = 326,
 		name = "低温海域",
 		repeat_trap = 1,
@@ -510,11 +365,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1016,
 		trap_range = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_trap_data
-
-	var_1_28[1021] = {
+	pg.base.world_trap_data[1021] = {
 		buff_id = 321,
 		name = "电磁异常",
 		repeat_trap = 0,
@@ -525,11 +376,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1021,
 		trap_range = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_trap_data
-
-	var_1_29[1022] = {
+	pg.base.world_trap_data[1022] = {
 		buff_id = 322,
 		name = "旋涡海域",
 		repeat_trap = 1,
@@ -540,11 +387,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1022,
 		trap_range = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_trap_data
-
-	var_1_30[1023] = {
+	pg.base.world_trap_data[1023] = {
 		buff_id = 323,
 		name = "燃烧海域",
 		repeat_trap = 1,
@@ -555,11 +398,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1023,
 		trap_range = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_trap_data
-
-	var_1_31[1024] = {
+	pg.base.world_trap_data[1024] = {
 		buff_id = 324,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -570,11 +409,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1024,
 		trap_range = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_trap_data
-
-	var_1_32[1025] = {
+	pg.base.world_trap_data[1025] = {
 		buff_id = 325,
 		name = "EMP干扰TYPEII",
 		repeat_trap = 0,
@@ -585,11 +420,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1025,
 		trap_range = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_trap_data
-
-	var_1_33[1026] = {
+	pg.base.world_trap_data[1026] = {
 		buff_id = 326,
 		name = "低温海域",
 		repeat_trap = 1,
@@ -600,11 +431,7 @@ var_0_3.base.world_trap_data = {}
 		id = 1026,
 		trap_range = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_trap_data
-
-	var_1_34[2001] = {
+	pg.base.world_trap_data[2001] = {
 		buff_id = 315,
 		name = "燃烧海域",
 		repeat_trap = 0,
@@ -615,11 +442,7 @@ var_0_3.base.world_trap_data = {}
 		id = 2001,
 		trap_range = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_trap_data
-
-	var_1_35[2002] = {
+	pg.base.world_trap_data[2002] = {
 		buff_id = 317,
 		name = "旋涡海域",
 		repeat_trap = 1,
@@ -630,11 +453,7 @@ var_0_3.base.world_trap_data = {}
 		id = 2002,
 		trap_range = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_trap_data
-
-	var_1_36[2003] = {
+	pg.base.world_trap_data[2003] = {
 		buff_id = 311,
 		name = "EMP干扰TYPEI",
 		repeat_trap = 0,
@@ -645,11 +464,7 @@ var_0_3.base.world_trap_data = {}
 		id = 2003,
 		trap_range = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_trap_data
-
-	var_1_37[2010] = {
+	pg.base.world_trap_data[2010] = {
 		buff_id = 320,
 		name = "异常燃烧海域",
 		repeat_trap = 0,
@@ -660,8 +475,7 @@ var_0_3.base.world_trap_data = {}
 		id = 2010,
 		trap_range = {}
 	}
-	pg = var_1_37
-	var_1_37.base.world_trap_data[2011] = {
+	pg.base.world_trap_data[2011] = {
 		buff_id = 323,
 		name = "燃烧海域",
 		repeat_trap = 0,

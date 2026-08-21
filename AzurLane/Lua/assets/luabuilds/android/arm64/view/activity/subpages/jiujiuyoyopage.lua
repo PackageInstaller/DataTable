@@ -1,136 +1,43 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("JiujiuYoyoPage", import("...base.BaseActivityPage"))
+local var_0_1 = PLATFORM_CODE == PLATFORM_JP or PLATFORM_CODE == PLATFORM_CHT
 
-local var_0_0 = "JiujiuYoyoPage"
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.helpBtn = arg_1_0.bg:Find("help_btn")
+	arg_1_0.taskBtn = arg_1_0.bg:Find("task_btn")
+	arg_1_0.taskRedDot = arg_1_0.taskBtn:Find("red_dot")
+	arg_1_0.ticketNumTF = arg_1_0.bg:Find("ticket_num")
+	arg_1_0.rollingCountTF = arg_1_0.bg:Find("rolling_count")
+	arg_1_0.rollingBlink = arg_1_0.bg:Find("blink")
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-
-PLATFORM_CODE = var_0_10001
-PLATFORM_JP = var_0_0
-
-local var_0_2
-
-if var_0_10001 ~= var_0_0 then
-	PLATFORM_CODE = var_0_10001
-	PLATFORM_CHT = var_0_0
-
-	if var_0_10001 ~= var_0_0 then
-		var_0_2 = false
-
-		goto label_0_0
-	end
-end
-
-var_0_2 = true
-
-::label_0_0::
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.helpBtn = var_1.Find(var_1_1, "help_btn")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.taskBtn = var_1.Find(var_1_2, "task_btn")
-
-	local var_1_3 = arg_1_0.taskBtn
-
-	arg_1_0.taskRedDot = var_1.Find(var_1_3, "red_dot")
-
-	local var_1_4 = arg_1_0.bg
-
-	arg_1_0.ticketNumTF = var_1.Find(var_1_4, "ticket_num")
-
-	local var_1_5 = arg_1_0.bg
-
-	arg_1_0.rollingCountTF = var_1.Find(var_1_5, "rolling_count")
-
-	local var_1_6 = arg_1_0.bg
-
-	arg_1_0.rollingBlink = var_1.Find(var_1_6, "blink")
-
-	if var_0_2 then
-		local var_1_7 = arg_1_0.bg
-
-		arg_1_0.awardTpl = var_1.Find(var_1_7, "item_jp")
-
-		local var_1_8 = arg_1_0.bg
-
-		arg_1_0.awardContainter = var_1.Find(var_1_8, "award_list_jp")
+	if var_0_1 then
+		arg_1_0.awardTpl = arg_1_0.bg:Find("item_jp")
+		arg_1_0.awardContainter = arg_1_0.bg:Find("award_list_jp")
 	else
-		local var_1_9 = arg_1_0.bg
-
-		arg_1_0.awardTpl = var_1.Find(var_1_9, "item")
-
-		local var_1_10 = arg_1_0.bg
-
-		arg_1_0.awardContainter = var_1.Find(var_1_10, "award_list")
+		arg_1_0.awardTpl = arg_1_0.bg:Find("item")
+		arg_1_0.awardContainter = arg_1_0.bg:Find("award_list")
 	end
 
-	UIItemList = var_1
-	arg_1_0.awardUIList = var_1.New(arg_1_0.awardContainter, arg_1_0.awardTpl)
-
-	local var_1_11 = arg_1_0.bg
-
-	arg_1_0.finalGot = var_1.Find(var_1_11, "final_got_jp")
-
-	local var_1_12 = arg_1_0.bg
-
-	arg_1_0.rollingAni = var_1.Find(var_1_12, "rolling_mask")
-
-	local var_1_13 = arg_1_0.rollingAni
-	local var_1_14 = var_1.Find(var_1_13, "rolling")
-
-	arg_1_0.rollingSpine = var_1.GetComponent(var_1_14, "SpineAnimUI")
-
-	local var_1_15 = arg_1_0.rollingAni
-	local var_1_16 = var_1.Find(var_1_15, "rolling")
-
-	arg_1_0.rollingGraphic = var_1.GetComponent(var_1_16, "SkeletonGraphic")
-
-	local var_1_17 = arg_1_0.bg
-
-	arg_1_0.forbidMask = var_1.Find(var_1_17, "forbid_mask")
-
-	local var_1_18 = arg_1_0._tf
-
-	arg_1_0.taskWindow = var_1.Find(var_1_18, "TaskWindow")
-
-	local var_1_19 = arg_1_0.taskWindow
-
-	arg_1_0.closeBtn = var_1.Find(var_1_19, "panel/close_btn")
-
-	local var_1_20 = arg_1_0.taskWindow
-
-	arg_1_0.taskTpl = var_1.Find(var_1_20, "panel/scrollview/item")
-
-	local var_1_21 = arg_1_0.taskWindow
-
-	arg_1_0.taskContainter = var_1.Find(var_1_21, "panel/scrollview/items")
-	UIItemList = var_1
-	arg_1_0.taskUIList = var_1.New(arg_1_0.taskContainter, arg_1_0.taskTpl)
+	arg_1_0.awardUIList = UIItemList.New(arg_1_0.awardContainter, arg_1_0.awardTpl)
+	arg_1_0.finalGot = arg_1_0.bg:Find("final_got_jp")
+	arg_1_0.rollingAni = arg_1_0.bg:Find("rolling_mask")
+	arg_1_0.rollingSpine = arg_1_0.rollingAni:Find("rolling"):GetComponent("SpineAnimUI")
+	arg_1_0.rollingGraphic = arg_1_0.rollingAni:Find("rolling"):GetComponent("SkeletonGraphic")
+	arg_1_0.forbidMask = arg_1_0.bg:Find("forbid_mask")
+	arg_1_0.taskWindow = arg_1_0._tf:Find("TaskWindow")
+	arg_1_0.closeBtn = arg_1_0.taskWindow:Find("panel/close_btn")
+	arg_1_0.taskTpl = arg_1_0.taskWindow:Find("panel/scrollview/item")
+	arg_1_0.taskContainter = arg_1_0.taskWindow:Find("panel/scrollview/items")
+	arg_1_0.taskUIList = UIItemList.New(arg_1_0.taskContainter, arg_1_0.taskTpl)
 
 	arg_1_0:register()
 
 	return
 end
 
-function var_0_1.register(arg_2_0)
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.bind
-
-	ActivityMediator = var_1_10004
-
-	var_2_1(var_2_0, var_1_10004.ON_SHAKE_BEADS_RESULT, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_2_0
-
-		var_2.displayResult(var_3_0, arg_3_1.awards, arg_3_1.number, function()
+function var_0_0.register(arg_2_0)
+	arg_2_0:bind(ActivityMediator.ON_SHAKE_BEADS_RESULT, function(arg_3_0, arg_3_1)
+		arg_2_0:displayResult(arg_3_1.awards, arg_3_1.number, function()
 			arg_3_1.callback()
 
 			return
@@ -142,539 +49,227 @@ function var_0_1.register(arg_2_0)
 	return
 end
 
-function var_0_1.OnDataSetting(arg_5_0)
-	getProxy = var_1_10001
-	TaskProxy = var_1_10003
-	arg_5_0.taskProxy = var_1_10001(var_1_10003)
-
-	local var_5_0 = arg_5_0.activity
-	local var_5_1 = var_1.getConfig(var_5_0, "config_client").taskActID
-
-	pg = var_1_10002
-	arg_5_0.taskList = var_1_10002.activity_template[var_5_1].config_data
-
-	local var_5_2 = arg_5_0.activity
-
-	arg_5_0.startTime = var_2.getStartTime(var_5_2)
+function var_0_0.OnDataSetting(arg_5_0)
+	arg_5_0.taskProxy = getProxy(TaskProxy)
+	arg_5_0.taskList = pg.activity_template[arg_5_0.activity:getConfig("config_client").taskActID].config_data
+	arg_5_0.startTime = arg_5_0.activity:getStartTime()
 	arg_5_0.totalNumList = {}
 	arg_5_0.remainNumList = {}
 	arg_5_0.remainTotalNum = 0
 	arg_5_0.awardList = {}
+	arg_5_0.finalAward = arg_5_0.activity:getConfig("config_client").finalAward
+	arg_5_0.awardConifg = arg_5_0.activity:getConfig("config_client").award
+	arg_5_0.beadsConfig = arg_5_0.activity:getConfig("config_data")[1]
 
-	local var_5_3 = arg_5_0.activity
-
-	arg_5_0.finalAward = var_2.getConfig(var_5_3, "config_client").finalAward
-
-	local var_5_4 = arg_5_0.activity
-
-	arg_5_0.awardConifg = var_2.getConfig(var_5_4, "config_client").award
-
-	local var_5_5 = arg_5_0.activity
-
-	arg_5_0.beadsConfig = var_2.getConfig(var_5_5, "config_data")[1]
-	ipairs = var_2
-
-	for iter_5_0, iter_5_1 in var_2(arg_5_0.beadsConfig) do
-		local var_5_6 = iter_5_1[1]
-
-		arg_5_0.awardList[var_5_6] = arg_5_0.awardConifg[var_5_6]
-		arg_5_0.totalNumList[var_5_6] = iter_5_1[2]
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.beadsConfig) do
+		arg_5_0.awardList[iter_5_1[1]] = arg_5_0.awardConifg[iter_5_1[1]]
+		arg_5_0.totalNumList[iter_5_1[1]] = iter_5_1[2]
 	end
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_6_0)
-	onButton = var_1_10001
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.helpBtn
-
-	local function var_6_2()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_7_1 = var_0.ShowMsgBox
-		local var_7_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_7_2.type = var_2_10004
-		i18n = var_2_10004
-		var_7_2.helps = var_2_10004("tips_shakebeads")
-
-		var_7_1(var_7_0, var_7_2)
+function var_0_0.OnFirstFlush(arg_6_0)
+	onButton(arg_6_0, arg_6_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("tips_shakebeads")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.taskBtn
-
-	local function var_6_5()
-		local var_8_0 = arg_6_0
-
-		var_0.openTask(var_8_0)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.taskBtn, function()
+		arg_6_0:openTask()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0.closeBtn
-
-	local function var_6_8()
-		local var_9_0 = arg_6_0
-
-		var_0.closeTask(var_9_0)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.closeBtn, function()
+		arg_6_0:closeTask()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_6, var_6_7, var_6_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_9 = arg_6_0
-	local var_6_10 = arg_6_0.taskWindow
-	local var_6_11 = var_4.Find(var_6_10, "mask")
-
-	local function var_6_12()
-		local var_10_0 = arg_6_0
-
-		var_0.closeTask(var_10_0)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.taskWindow:Find("mask"), function()
+		arg_6_0:closeTask()
 
 		return
-	end
-
-	SFX_PANEL = var_6_10
-
-	var_1_10001(var_6_9, var_6_11, var_6_12, var_6_10)
-
-	onButton = var_1_10001
-
-	local var_6_13 = arg_6_0
-	local var_6_14 = arg_6_0.rollingBlink
-
-	local function var_6_15()
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.rollingBlink, function()
 		if arg_6_0.ticketNum <= 0 then
 			return
 		end
 
-		local var_11_0 = arg_6_0
-		local var_11_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_11_1(var_11_0, var_2_10003.EVENT_OPERATION, {
+		arg_6_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
 			activity_id = arg_6_0.activity.id
 		})
 
 		return
+	end, SFX_PANEL)
+	setActive(arg_6_0.taskRedDot, false)
+
+	if LeanTween.isTweening(arg_6_0.rollingBlink) then
+		LeanTween.cancel(arg_6_0.rollingBlink)
 	end
 
-	SFX_PANEL = var_6_10
-
-	var_1_10001(var_6_13, var_6_14, var_6_15, var_6_10)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_6_0.taskRedDot, false)
-
-	LeanTween = var_1_10001
-
-	if var_1_10001.isTweening(arg_6_0.rollingBlink) then
-		LeanTween = var_1
-
-		var_1.cancel(arg_6_0.rollingBlink)
-	end
-
-	setImageAlpha = var_1
-
-	var_1(arg_6_0.rollingBlink, 1)
-
-	blinkAni = var_1
-
-	var_1(arg_6_0.rollingBlink, 0.5)
+	setImageAlpha(arg_6_0.rollingBlink, 1)
+	blinkAni(arg_6_0.rollingBlink, 0.5)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_12_0)
-	pg = var_1_10001
-
-	local var_12_0 = var_1_10001.TimeMgr.GetInstance()
-	local var_12_1 = var_1.DiffDay
-	local var_12_2 = arg_12_0.startTime
-
-	pg = var_1_10005
-
-	local var_12_3 = var_1_10005.TimeMgr.GetInstance()
-
-	arg_12_0.curDay = var_12_1(var_12_0, var_12_2, var_5.GetServerTime(var_12_3)) + 1
+function var_0_0.OnUpdateFlush(arg_12_0)
+	arg_12_0.curDay = pg.TimeMgr.GetInstance():DiffDay(arg_12_0.startTime, pg.TimeMgr.GetInstance():GetServerTime()) + 1
 	arg_12_0.ticketNum = arg_12_0.activity.data1
 	arg_12_0.hasNumList = arg_12_0.activity.data1KeyValueList[1]
 	arg_12_0.remainTotalNum = 0
-	ipairs = var_1
 
-	for iter_12_0, iter_12_1 in var_1(arg_12_0.beadsConfig) do
-		var_1_10006 = iter_12_1[1]
-
-		if not arg_12_0.hasNumList[var_1_10006] then
-			arg_12_0.hasNumList[var_1_10006] = 0
-		end
-
-		arg_12_0.remainNumList[var_1_10006] = arg_12_0.totalNumList[var_1_10006] - arg_12_0.hasNumList[var_1_10006]
-		arg_12_0.remainTotalNum = arg_12_0.remainTotalNum + arg_12_0.remainNumList[var_1_10006]
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.beadsConfig) do
+		arg_12_0.hasNumList[iter_12_1[1]] = arg_12_0.hasNumList[iter_12_1[1]] or 0
+		arg_12_0.remainNumList[iter_12_1[1]] = arg_12_0.totalNumList[iter_12_1[1]] - arg_12_0.hasNumList[iter_12_1[1]]
+		arg_12_0.remainTotalNum = arg_12_0.remainTotalNum + arg_12_0.remainNumList[iter_12_1[1]]
 	end
 
-	setText = var_1
-
-	var_1(arg_12_0.ticketNumTF, arg_12_0.ticketNum)
-
-	setText = var_1
-
-	var_1(arg_12_0.rollingCountTF, arg_12_0.remainTotalNum)
-
-	setActive = var_1
-
-	var_1(arg_12_0.rollingBlink, arg_12_0.ticketNum > 0)
+	setText(arg_12_0.ticketNumTF, arg_12_0.ticketNum)
+	setText(arg_12_0.rollingCountTF, arg_12_0.remainTotalNum)
+	setActive(arg_12_0.rollingBlink, arg_12_0.ticketNum > 0)
 	arg_12_0:initAwardList()
 	arg_12_0:initTaskWindow()
 
-	PlayerPrefs = var_1
-
-	local var_12_4 = var_1.GetInt
-	local var_12_5 = "jiujiuyoyo_first_"
-
-	getProxy = var_4
-	PlayerProxy = var_1_10006
-
-	local var_12_6 = var_4(var_1_10006)
-
-	arg_12_0.isFirst = var_12_4(var_12_5 .. var_4.getData(var_12_6).id)
+	arg_12_0.isFirst = PlayerPrefs.GetInt("jiujiuyoyo_first_" .. getProxy(PlayerProxy):getData().id)
 
 	if arg_12_0.isFirst == 0 then
-		setActive = var_1
-
-		var_1(arg_12_0.taskRedDot, true)
+		setActive(arg_12_0.taskRedDot, true)
 	end
 
 	if #arg_12_0.finishItemList > 0 then
 		arg_12_0:openTask()
 	end
 
-	setActive = var_1
+	local var_12_1 = var_0_1 and arg_12_0.activity.data2 == 1
 
-	local var_12_7 = arg_12_0.finalGot
-	local var_12_8
-
-	if var_0_2 then
-		var_12_8 = arg_12_0.activity.data2 == 1
-	end
-
-	var_1(var_12_7, var_12_8)
+	var_12_0(arg_12_0.finalGot, var_12_1)
 	arg_12_0:CheckFinalAward()
 
 	return
 end
 
-function var_0_1.initAwardList(arg_13_0)
-	local var_13_0 = arg_13_0.awardUIList
-
-	var_1.make(var_13_0, function(arg_14_0, arg_14_1, arg_14_2)
-		UIItemList = var_2_10003
-
-		if arg_14_0 == var_2_10003.EventUpdate then
+function var_0_0.initAwardList(arg_13_0)
+	arg_13_0.awardUIList:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
 			local var_14_0 = arg_14_1 + 1
-			local var_14_1 = arg_13_0.totalNumList[var_14_0]
+			local var_14_1 = arg_13_0.remainNumList[arg_14_1 + 1]
 
-			if arg_13_0.remainNumList[var_14_0] == 0 then
-				setTextColor = var_2_10006
-
-				local var_14_2 = arg_14_2:Find("num")
-
-				Color = var_2_10009
-
-				var_2_10006(var_14_2, var_2_10009.New(0.55, 0.55, 0.55, 1))
-
-				setOutlineColor = var_2_10006
-
-				local var_14_3 = arg_14_2:Find("num")
-
-				Color = var_9
-
-				var_2_10006(var_14_3, var_9.New(0.26, 0.26, 0.26, 1))
+			if arg_13_0.remainNumList[arg_14_1 + 1] == 0 then
+				setTextColor(arg_14_2:Find("num"), Color.New(0.55, 0.55, 0.55, 1))
+				setOutlineColor(arg_14_2:Find("num"), Color.New(0.26, 0.26, 0.26, 1))
 			end
 
-			setText = var_2_10006
+			setText(arg_14_2:Find("num"), var_14_1 .. "/" .. arg_13_0.totalNumList[arg_14_1 + 1])
+			setActive(arg_14_2:Find("got"), var_14_1 == 0)
 
-			var_2_10006(arg_14_2:Find("num"), var_5 .. "/" .. var_14_1)
+			local var_14_2 = arg_14_2:Find("award_mask/award")
 
-			setActive = var_2_10006
-
-			var_2_10006(arg_14_2:Find("got"), var_5 == 0)
-
-			local var_14_4 = arg_14_2:Find("award_mask/award")
-			local var_14_5 = arg_13_0.awardList[var_14_0]
-			local var_14_6 = {
-				type = var_14_5[1],
-				id = var_14_5[2],
-				count = var_14_5[3] * var_5
-			}
-
-			updateDrop = var_9
-
-			var_9(var_14_4, var_14_6)
-
-			onButton = var_9
-
-			local var_14_7 = arg_13_0
-			local var_14_8 = var_14_4
-
-			local function var_14_9()
-				local var_15_0 = arg_13_0
-				local var_15_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_15_1(var_15_0, var_3_10003.ON_DROP, var_14_6)
+			updateDrop(var_14_2, {
+				type = arg_13_0.awardList[var_14_0][1],
+				id = arg_13_0.awardList[var_14_0][2],
+				count = arg_13_0.awardList[var_14_0][3] * var_14_1
+			})
+			onButton(arg_13_0, var_14_2, function()
+				arg_13_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10014
-
-			var_9(var_14_7, var_14_8, var_14_9, var_2_10014)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
-
-	local var_13_1 = arg_13_0.awardUIList
-
-	var_1.align(var_13_1, #arg_13_0.awardList)
+	arg_13_0.awardUIList:align(#arg_13_0.awardList)
 
 	return
 end
 
-function var_0_1.initTaskWindow(arg_16_0)
+function var_0_0.initTaskWindow(arg_16_0)
 	arg_16_0.finishItemList = {}
 	arg_16_0.finishTaskVOList = {}
 
-	local var_16_0 = arg_16_0.taskUIList
-
-	var_1.make(var_16_0, function(arg_17_0, arg_17_1, arg_17_2)
-		UIItemList = var_2_10003
-
-		if arg_17_0 == var_2_10003.EventUpdate then
+	arg_16_0.taskUIList:make(function(arg_17_0, arg_17_1, arg_17_2)
+		if arg_17_0 == UIItemList.EventUpdate then
 			local var_17_0 = arg_17_1 + 1
 			local var_17_1 = arg_17_2:Find("award/award")
-			local var_17_2 = arg_16_0.taskList[var_17_0]
-			local var_17_3 = arg_16_0.taskProxy
-			local var_17_5
+			local var_17_2 = arg_16_0.taskProxy:getTaskById(arg_16_0.taskList[arg_17_1 + 1]) or arg_16_0.taskProxy:getFinishTaskById(arg_16_0.taskList[arg_17_1 + 1])
 
-			if not var_6.getTaskById(var_17_3, var_17_2) then
-				local var_17_4 = arg_16_0.taskProxy
+			assert(var_17_2, "without this task by id: " .. arg_16_0.taskList[arg_17_1 + 1])
 
-				var_17_5 = var_6.getFinishTaskById(var_17_4, var_17_2)
-			end
+			local var_17_3 = var_17_2:getProgress()
+			local var_17_4 = var_17_2:getConfig("target_num")
+			local var_17_5 = var_17_2:getTaskStatus()
+			local var_17_6 = var_17_2:getConfig("award_display")[1]
+			local var_17_7 = var_17_0 > arg_16_0.curDay
 
-			assert = var_7
-
-			var_7(var_17_5, "without this task by id: " .. var_17_2)
-
-			local var_17_6 = var_17_5:getProgress()
-			local var_17_7 = var_17_5:getConfig("target_num")
-			local var_17_8 = var_17_5:getTaskStatus()
-			local var_17_9 = var_17_5:getConfig("desc")
-			local var_17_10 = var_17_5
-			local var_17_11 = var_17_5.getConfig(var_17_10, "award_display")[1]
-			local var_17_12 = var_17_0 > arg_16_0.curDay
-
-			setText = var_17_10
-
-			var_17_10(arg_17_2:Find("description"), var_17_9)
-
-			setText = var_17_10
-
-			var_17_10(arg_17_2:Find("progress/progressText"), var_17_6 .. "/" .. var_17_7)
-
-			setSlider = var_17_10
-
-			var_17_10(arg_17_2:Find("progress"), 0, var_17_7, var_17_6)
-
-			local var_17_13 = {
-				type = var_17_11[1],
-				id = var_17_11[2],
-				count = var_17_11[3]
-			}
-
-			updateDrop = var_14
-
-			var_14(var_17_1, var_17_13)
-
-			onButton = var_14
-
-			local var_17_14 = arg_16_0
-			local var_17_15 = arg_17_2
-			local var_17_16 = arg_17_2.Find(var_17_15, "award/Image")
-
-			local function var_17_17()
-				local var_18_0 = arg_16_0
-				local var_18_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_18_1(var_18_0, var_3_10003.ON_DROP, var_17_13)
+			setText(arg_17_2:Find("description"), (var_17_2:getConfig("desc")))
+			setText(arg_17_2:Find("progress/progressText"), var_17_3 .. "/" .. var_17_4)
+			setSlider(arg_17_2:Find("progress"), 0, var_17_4, var_17_3)
+			updateDrop(var_17_1, {
+				type = var_17_6[1],
+				id = var_17_6[2],
+				count = var_17_6[3]
+			})
+			onButton(arg_16_0, arg_17_2:Find("award/Image"), function()
+				arg_16_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
+			end, SFX_PANEL)
 
-			SFX_PANEL = var_17_15
+			local var_17_8 = arg_17_2:Find("go_btn")
+			local var_17_9 = arg_17_2:Find("get_btn")
 
-			var_14(var_17_14, var_17_16, var_17_17, var_17_15)
-
-			local var_17_18 = arg_17_2
-			local var_17_19 = arg_17_2.Find(var_17_18, "go_btn")
-			local var_17_20 = arg_17_2:Find("get_btn")
-
-			setActive = var_17_18
-
-			var_17_18(var_17_19, var_17_8 == 0)
-
-			setActive = var_17_18
-
-			var_17_18(var_17_20, var_17_8 == 1)
-
-			onButton = var_17_18
-
-			local var_17_21 = arg_16_0
-			local var_17_22 = var_17_19
-
-			local function var_17_23()
-				local var_19_0 = arg_16_0
-				local var_19_1 = var_0.emit
-
-				ActivityMediator = var_3_10003
-
-				var_19_1(var_19_0, var_3_10003.ON_TASK_GO, var_17_5)
+			setActive(var_17_8, var_17_5 == 0)
+			setActive(var_17_9, var_17_5 == 1)
+			onButton(arg_16_0, var_17_8, function()
+				arg_16_0:emit(ActivityMediator.ON_TASK_GO, var_17_2)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10021
-
-			var_17_18(var_17_21, var_17_22, var_17_23, var_2_10021)
-
-			onButton = var_17_18
-
-			local var_17_24 = arg_16_0
-			local var_17_25 = var_17_20
-
-			local function var_17_26()
-				local var_20_0 = arg_16_0
-				local var_20_1 = var_0.emit
-
-				ActivityMediator = var_3_10003
-
-				var_20_1(var_20_0, var_3_10003.ON_TASK_SUBMIT, var_17_5)
+			end, SFX_PANEL)
+			onButton(arg_16_0, var_17_9, function()
+				arg_16_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_17_2)
 
 				return
-			end
+			end, SFX_PANEL)
+			setActive(arg_17_2:Find("finnal"), var_17_5 == 2 and not var_17_7)
+			setText(arg_17_2:Find("lock/tip"), i18n("unlock_tips", var_17_0))
+			setActive(arg_17_2:Find("lock"), var_17_7)
 
-			SFX_PANEL = var_2_10021
-
-			var_17_18(var_17_24, var_17_25, var_17_26, var_2_10021)
-
-			setActive = var_17_18
-
-			var_17_18(arg_17_2:Find("finnal"), var_17_8 == 2 and not var_17_12)
-
-			setText = var_17_18
-
-			local var_17_27 = arg_17_2:Find("lock/tip")
-
-			i18n = var_19
-
-			var_17_18(var_17_27, var_19("unlock_tips", var_17_0))
-
-			setActive = var_17_18
-
-			var_17_18(arg_17_2:Find("lock"), var_17_12)
-
-			if var_17_8 == 1 and not var_17_12 then
-				table = var_17_18
-
-				var_17_18.insert(arg_16_0.finishItemList, arg_17_2)
-
-				table = var_16
-
-				var_16.insert(arg_16_0.finishTaskVOList, var_17_5)
+			if var_17_5 == 1 and not var_17_7 then
+				table.insert(arg_16_0.finishItemList, arg_17_2)
+				table.insert(arg_16_0.finishTaskVOList, var_17_2)
 			end
 		end
 
 		return
 	end)
-
-	local var_16_1 = arg_16_0.taskUIList
-
-	var_1.align(var_16_1, #arg_16_0.taskList)
+	arg_16_0.taskUIList:align(#arg_16_0.taskList)
 
 	return
 end
 
-function var_0_1.closeTask(arg_21_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_21_0.taskWindow, false)
+function var_0_0.closeTask(arg_21_0)
+	setActive(arg_21_0.taskWindow, false)
 
 	return
 end
 
-function var_0_1.openTask(arg_22_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_22_0.taskWindow, true)
+function var_0_0.openTask(arg_22_0)
+	setActive(arg_22_0.taskWindow, true)
 
 	if arg_22_0.isFirst == 0 then
-		PlayerPrefs = var_1
-
-		local var_22_0 = var_1.SetInt
-		local var_22_1 = "jiujiuyoyo_first_"
-
-		getProxy = var_4
-		PlayerProxy = var_1_10006
-
-		local var_22_2 = var_4(var_1_10006)
-
-		var_22_0(var_22_1 .. var_4.getData(var_22_2).id, 1)
-
-		setActive = var_22_0
-
-		var_22_0(arg_22_0.taskRedDot, false)
+		PlayerPrefs.SetInt("jiujiuyoyo_first_" .. getProxy(PlayerProxy):getData().id, 1)
+		setActive(arg_22_0.taskRedDot, false)
 	end
 
 	arg_22_0.hasClickTask = true
-	eachChild = var_1
 
-	var_1(arg_22_0.taskContainter, function(arg_23_0)
-		isActive = var_2_10001
-
-		if var_2_10001(arg_23_0:Find("finnal")) then
+	eachChild(arg_22_0.taskContainter, function(arg_23_0)
+		if isActive(arg_23_0:Find("finnal")) then
 			arg_23_0:SetAsLastSibling()
 		end
 
@@ -688,64 +283,24 @@ function var_0_1.openTask(arg_22_0)
 	return
 end
 
-function var_0_1.autoFinishTask(arg_24_0)
+function var_0_0.autoFinishTask(arg_24_0)
 	local var_24_0 = 0.01
 	local var_24_1 = 0.5
 
-	ipairs = var_1_10003
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.finishItemList) do
+		local var_24_2 = GetOrAddComponent(iter_24_1, typeof(CanvasGroup))
 
-	for iter_24_0, iter_24_1 in var_1_10003(arg_24_0.finishItemList) do
-		GetOrAddComponent = var_1_10008
-
-		local var_24_2 = iter_24_1
-
-		typeof = var_1_10011
-		CanvasGroup = var_1_10013
-		var_1_10008 = var_1_10008(var_24_2, var_1_10011(var_1_10013))
-		var_1_10011 = arg_24_0
-
-		local var_24_3 = arg_24_0.managedTween
-
-		LeanTween = var_1_10012
-
-		var_24_3(var_1_10011, var_1_10012.delayedCall, function()
-			local var_25_0 = iter_24_1
-
-			var_0.SetAsFirstSibling(var_25_0)
-
-			LeanTween = var_0
-
-			local var_25_1 = var_0.value
-
-			go = var_25_0
-
-			local var_25_2 = var_25_1(var_25_0(iter_24_1), 1, 0, var_24_1)
-			local var_25_3 = var_0.setOnUpdate
-
-			System = var_3
-
-			local var_25_4 = var_25_3(var_25_2, var_3.Action_float(function(arg_26_0)
-				var_1_10008.alpha = arg_26_0
+		arg_24_0:managedTween(LeanTween.delayedCall, function()
+			iter_24_1:SetAsFirstSibling()
+			LeanTween.value(go(iter_24_1), 1, 0, var_24_1):setOnUpdate(System.Action_float(function(arg_26_0)
+				var_24_2.alpha = arg_26_0
 
 				return
-			end))
-			local var_25_5 = var_0.setOnComplete
+			end)):setOnComplete(System.Action(function()
+				var_24_2.alpha = 1
 
-			System = var_3
-
-			var_25_5(var_25_4, var_3.Action(function()
-				local var_27_0 = var_1_10008
-
-				var_27_0.alpha = 1
-				setActive = var_27_0
-
-				local var_27_1 = iter_24_1
-
-				var_27_0(var_2.Find(var_27_1, "finnal"), true)
-
-				local var_27_2 = iter_24_1
-
-				var_0.SetAsLastSibling(var_27_2)
+				setActive(iter_24_1:Find("finnal"), true)
+				iter_24_1:SetAsLastSibling()
 
 				return
 			end))
@@ -753,23 +308,11 @@ function var_0_1.autoFinishTask(arg_24_0)
 			return
 		end, var_24_0, nil)
 
-		var_24_0 = var_24_0 + var_24_1 + 0.1
+		var_24_0 = var_24_0 + 0.5 + 0.1
 	end
 
-	local var_24_4 = arg_24_0
-	local var_24_5 = arg_24_0.managedTween
-
-	LeanTween = iter_24_0
-
-	var_24_5(var_24_4, iter_24_0.delayedCall, function()
-		pg = var_2_10000
-
-		local var_28_0 = var_2_10000.m02
-		local var_28_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_28_1(var_28_0, var_2_10003.SUBMIT_TASK_ONESTEP, {
+	arg_24_0:managedTween(LeanTween.delayedCall, function()
+		pg.m02:sendNotification(GAME.SUBMIT_TASK_ONESTEP, {
 			resultList = arg_24_0.finishTaskVOList
 		})
 
@@ -779,14 +322,9 @@ function var_0_1.autoFinishTask(arg_24_0)
 	return
 end
 
-function var_0_1.CheckFinalAward(arg_29_0)
-	if var_0_2 and arg_29_0.activity.data2 == 0 and arg_29_0.remainTotalNum == 0 then
-		local var_29_0 = arg_29_0
-		local var_29_1 = arg_29_0.emit
-
-		ActivityMediator = var_1_10004
-
-		var_29_1(var_29_0, var_1_10004.EVENT_OPERATION, {
+function var_0_0.CheckFinalAward(arg_29_0)
+	if var_0_1 and arg_29_0.activity.data2 == 0 and arg_29_0.remainTotalNum == 0 then
+		arg_29_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 2,
 			activity_id = arg_29_0.activity.id
 		})
@@ -795,12 +333,9 @@ function var_0_1.CheckFinalAward(arg_29_0)
 	return
 end
 
-function var_0_1.displayResult(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
+function var_0_0.displayResult(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
 	arg_30_0:setForbidMaskStatus(true)
-
-	setActive = var_4
-
-	var_4(arg_30_0.rollingAni, true)
+	setActive(arg_30_0.rollingAni, true)
 
 	function arg_30_0.aniCallback()
 		arg_30_3()
@@ -808,49 +343,22 @@ function var_0_1.displayResult(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
 		return
 	end
 
-	local var_30_0 = arg_30_0.rollingSpine
-
-	var_4.SetActionCallBack(var_30_0, function(arg_32_0)
+	arg_30_0.rollingSpine:SetActionCallBack(function(arg_32_0)
 		if arg_32_0 == "finish" then
-			setActive = var_2_10001
-
-			var_2_10001(arg_30_0.rollingAni, false)
+			setActive(arg_30_0.rollingAni, false)
 			arg_30_3()
 
 			arg_30_0.aniCallback = nil
 
-			local var_32_0 = arg_30_0
-
-			var_1.setForbidMaskStatus(var_32_0, false)
+			arg_30_0:setForbidMaskStatus(false)
 		end
 
 		return
 	end)
-
-	local var_30_1 = arg_30_0.rollingSpine
-	local var_30_2 = var_4.SetAction
-
-	tostring = var_7
-
-	var_30_2(var_30_1, var_7(arg_30_2), 0)
-
-	pg = var_30_2
-
-	local var_30_3 = var_30_2.CriMgr.GetInstance()
-
-	var_4.PlaySoundEffect_V3(var_30_3, "event:/ui/zhuanzhu")
-
-	local var_30_4 = arg_30_0
-	local var_30_5 = arg_30_0.managedTween
-
-	LeanTween = var_7
-
-	var_30_5(var_30_4, var_7.delayedCall, function()
-		pg = var_2_10000
-
-		local var_33_0 = var_2_10000.CriMgr.GetInstance()
-
-		var_0.PlaySoundEffect_V3(var_33_0, "event:/ui/zhengque")
+	arg_30_0.rollingSpine:SetAction(tostring(arg_30_2), 0)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/zhuanzhu")
+	arg_30_0:managedTween(LeanTween.delayedCall, function()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3("event:/ui/zhengque")
 
 		return
 	end, 4, nil)
@@ -858,101 +366,43 @@ function var_0_1.displayResult(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
 	return
 end
 
-function var_0_1.setForbidMaskStatus(arg_34_0, arg_34_1)
+function var_0_0.setForbidMaskStatus(arg_34_0, arg_34_1)
 	if arg_34_1 then
-		setActive = var_1_10002
-
-		var_1_10002(arg_34_0.forbidMask, true)
-
-		pg = var_1_10002
-
-		local var_34_0 = var_1_10002.UIMgr.GetInstance()
-
-		var_1_10002.OverlayPanel(var_34_0, arg_34_0.forbidMask)
+		setActive(arg_34_0.forbidMask, true)
+		pg.UIMgr.GetInstance():OverlayPanel(arg_34_0.forbidMask)
 	else
-		setActive = var_1_10002
-
-		var_1_10002(arg_34_0.forbidMask, false)
-
-		pg = var_1_10002
-
-		local var_34_1 = var_1_10002.UIMgr.GetInstance()
-
-		var_2.UnOverlayPanel(var_34_1, arg_34_0.forbidMask, arg_34_0.bg)
+		setActive(arg_34_0.forbidMask, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_34_0.forbidMask, arg_34_0.bg)
 	end
 
 	return
 end
 
-function var_0_1.canFinishTask()
-	pg = var_1_10000
+function var_0_0.canFinishTask()
+	local var_35_0 = pg.TimeMgr.GetInstance():DiffDay(pg.TimeMgr.GetInstance():parseTimeFromConfig(pg.activity_template[ActivityConst.JIUJIU_YOYO_ID].time[2]), pg.TimeMgr.GetInstance():GetServerTime()) + 1
+	local var_35_1 = false
+	local var_35_2 = getProxy(TaskProxy)
 
-	local var_35_0 = var_1_10000.activity_template
+	for iter_35_0, iter_35_1 in pairs(pg.activity_template[pg.activity_template[ActivityConst.JIUJIU_YOYO_ID].config_client.taskActID].config_data) do
+		local var_35_3 = var_35_0 < iter_35_0
+		local var_35_4 = var_35_2:getTaskById(iter_35_1) or var_35_2:getFinishTaskById(iter_35_1)
 
-	ActivityConst = var_1_10001
+		assert(var_35_4, "without this task by id: " .. iter_35_1)
 
-	local var_35_1 = var_35_0[var_1_10001.JIUJIU_YOYO_ID].config_client.taskActID
-
-	pg = var_1_10002
-
-	local var_35_2 = var_1_10002.activity_template[var_35_1].config_data
-
-	pg = var_1_10003
-
-	local var_35_3 = var_1_10003.TimeMgr.GetInstance()
-	local var_35_4 = var_3.parseTimeFromConfig(var_35_3, var_0.time[2])
-
-	pg = var_1_10004
-
-	local var_35_5 = var_1_10004.TimeMgr.GetInstance()
-	local var_35_6 = var_4.DiffDay
-	local var_35_7 = var_35_4
-
-	pg = var_1_10008
-
-	local var_35_8 = var_1_10008.TimeMgr.GetInstance()
-	local var_35_9 = var_35_6(var_35_5, var_35_7, var_8.GetServerTime(var_35_8)) + 1
-	local var_35_10 = false
-
-	getProxy = var_35_5
-	TaskProxy = var_8
-
-	local var_35_11 = var_35_5(var_8)
-
-	pairs = var_35_7
-
-	for iter_35_0, iter_35_1 in var_35_7(var_35_2) do
-		local var_35_12 = var_35_9 < iter_35_0
-		local var_35_13
-
-		if not var_35_11:getTaskById(iter_35_1) then
-			var_35_13 = var_35_11:getFinishTaskById(iter_35_1)
-		end
-
-		assert = var_1_10014
-
-		var_1_10014(var_35_13, "without this task by id: " .. iter_35_1)
-
-		if var_35_13:getTaskStatus() == 1 and not var_35_12 then
-			var_35_10 = true
+		if var_35_4:getTaskStatus() == 1 and not var_35_3 then
+			var_35_1 = true
 
 			break
 		end
 	end
 
-	return var_35_10
+	return var_35_1
 end
 
-function var_0_1.IsShowRed()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+function var_0_0.IsShowRed()
+	local var_36_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.JIUJIU_YOYO_ID).data1
 
-	local var_36_0 = var_1_10000(var_1_10002)
-	local var_36_1 = var_0.getActivityById
-
-	ActivityConst = var_1_10003
-
-	return var_36_1(var_36_0, var_1_10003.JIUJIU_YOYO_ID).data1 > 0 or var_0_1.canFinishTask()
+	return var_36_0 > 0 or var_0_0.canFinishTask()
 end
 
-return var_0_1
+return var_0_0

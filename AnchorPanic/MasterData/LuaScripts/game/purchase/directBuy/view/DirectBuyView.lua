@@ -20,6 +20,7 @@ end
 function initData(self)
     self.mTabType = nil
     self.mSubTabType = nil
+    self.mSubChildTabIndex = nil
 end
 
 -- 关闭所有UI
@@ -50,6 +51,7 @@ function active(self, args)
     MoneyManager:setMoneyTidList({ MoneyTid.PAY_ITIANIUM_TID, MoneyTid.ITIANIUM_TID })
     self.mTabType = args.type
     self.mSubTabType = args.subType or purchase.DirectBuySubTab.DIRECT_BUY
+    self.mSubChildTabIndex=args.subChildTabIndex or purchase.DirectBuySubTab.LIMITED
     self:__updateTab()
 end
 
@@ -95,13 +97,13 @@ function __updateView(self, isInit)
         self.mSubView = nil
     end
     self.mSubView = self:__getSubView(self.mSubTabType)
-    self.mSubView:show(self.mTabView, self.mSubTabType)
+    self.mSubView:show(self.mTabView, self.mSubTabType,self.mSubChildTabIndex)
 end
 
 function __getSubView(self, subTabType)
     if (subTabType == purchase.DirectBuySubTab.DIRECT_BUY) then
         return UI.new(purchase.DirectBuySubView_1)
-    elseif (subTabType == purchase.DirectBuySubTab.TEMP) then
+    elseif (subTabType == purchase.DirectBuySubTab.DORMITORY) then
         return UI.new(purchase.DirectBuySubView_1)
     end
     Debug:log_error("DirectBuyView", "未定义直购礼包子页签类型")

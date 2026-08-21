@@ -17,9 +17,9 @@ function parseData(self, key, cusData)
     -- 兑换道具tid排序
     self.sort = cusData.sort
     -- -- 开始时间
-    -- self.beginTime = cusData.begin_time
+    self.beginTime = cusData.begin_time
     -- -- 结束时间
-    -- self.endTime = cusData.end_time
+    self.endTime = cusData.end_time
     -- --折扣万分比
     -- self.discount = cusData.discount
     -- 战员皮肤数据
@@ -33,6 +33,9 @@ function parseData(self, key, cusData)
     -- 折扣价格 用于折扣卡
     self.discountCost = cusData.discount_cost
 
+    self.itemId = cusData.item_id
+
+    --self.fightConfigVo = role.RoleManager:getFightConfigVo(self.id)
     --self.canUpdate = 0 -- 无更新 --等待折扣 --正在折扣
 end
 
@@ -42,20 +45,11 @@ function getDiscountCost(self)
 end
 
 function getCanUpdate(self)
-    if #self.discountData == 1 then
-        return false
-    end
-
-    local canUpdate = true
     local time = GameManager:getClientTime()
-    for _, data in pairs(self.discountData) do
-        if data.begin_time ~= 0 and data.end_time ~= 0 then
-            if time > data.end_time then
-                canUpdate = false
-            end
-        end
+    if self.beginTime ~= 0 and self.endTime ~= 0 then
+        return time < self.endTime
     end
-    return canUpdate
+    return true
 end
 
 function getMsgDataByTime(self)
@@ -66,6 +60,17 @@ function getMsgDataByTime(self)
         end
     end
     return self.discountData[1]
+end
+
+function isDiscountTime(self)
+    local time = GameManager:getClientTime()
+    for _, data in pairs(self.discountData) do
+        if time >= data.begin_time and time < data.end_time then
+            return true
+        end
+    end
+
+    return false
 end
 
 function getMoneyCount(self)
@@ -98,9 +103,14 @@ end
 function getTime(self)
     local time = GameManager:getClientTime()
 
-    local data = self:getMsgDataByTime()
-    if data.begin_time ~= 0 and data.end_time ~= 0 then
-        return data.end_time - time
+    for _, data in pairs(self.discountData) do
+        if time >= data.begin_time and time < data.end_time then
+            return data.end_time - time
+        end
+    end
+
+    if self.beginTime ~= 0 and self.endTime ~= 0 then
+        return self.endTime - time
     end
     return 0
 end
@@ -135,18 +145,17 @@ function onClickWearHandler(self)
     GameDispatcher:dispatchEvent(EventName.REQ_HERO_WEAR_FASHION, {
         fashionType = fashion.Type.CLOTHES,
         heroId = hero.HeroManager:getHeroIdByTid(self.fashionDic[1]),
-        fashionId = self.fashionDic[2]
-    })
+    fashionId = self.fashionDic[2]})
 end
 
 -- 获取半身像资源
 function getShadowIcon(self)
-    return UrlManager:getIconPath("fashionShop/" .. self.heroFashionData.fashionIcon)
+    return UrlManager:getFashionShopBodyPath(self.heroFashionData.fashionIcon)
 end
 
 -- 获取皮肤立绘资源
 function getFashionShowUrl(self)
-    return UrlManager:getPainImg(self.heroFashionData:getUrlBody())
+    return UrlManager:getHeroRecoedUrlByDetail(self.heroFashionData:getUrlBody())
 end
 
 -- 获取当前战员tid

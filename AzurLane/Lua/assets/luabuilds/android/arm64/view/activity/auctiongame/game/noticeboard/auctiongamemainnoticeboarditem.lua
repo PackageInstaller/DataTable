@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainNoticeBoardItem", import("view.base.BasePanel"))
 
-local var_0_0 = "AuctionGameMainNoticeBoardItem"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,78 +13,34 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
-	onButton = var_1_10001
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.uiEventBtn
-
-	local function var_2_2()
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		local var_3_2 = var_2_10003.ON_ADD_SUBLAYER
-
-		Context = var_2_10004
-
-		local var_3_3 = var_2_10004.New
-		local var_3_4 = {}
-
-		AuctionGameMainEventMsgLayer = var_2_10007
-		var_3_4.viewComponent = var_2_10007
-		AuctionGameMainEventMsgMediator = var_2_10007
-		var_3_4.mediator = var_2_10007
-		var_3_4.data = {
-			eventID = arg_2_0.data.eventID
-		}
-
-		var_3_1(var_3_0, var_3_2, var_3_3(var_3_4))
+function var_0_0.Init(arg_2_0)
+	onButton(arg_2_0, arg_2_0.uiEventBtn, function()
+		arg_2_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+			viewComponent = AuctionGameMainEventMsgLayer,
+			mediator = AuctionGameMainEventMsgMediator,
+			data = {
+				eventID = arg_2_0.data.eventID
+			}
+		}))
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_0, var_2_1, var_2_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0, arg_4_1)
+function var_0_0.didEnter(arg_4_0, arg_4_1)
 	arg_4_0.data = arg_4_1
 
 	if arg_4_1 == nil then
 		return
 	end
 
-	setText = var_1_10002
-
-	local var_4_0 = arg_4_0.uiBidText
-
-	StringHelper = var_1_10005
-
-	local var_4_1 = var_1_10005.ForamtNumber
-	local var_4_2
-
-	if not arg_4_1.bidValue then
-		var_4_2 = 0
-	end
-
-	var_1_10002(var_4_0, var_4_1(var_4_2))
+	var_4_0(arg_4_0.uiBidText, StringHelper.ForamtNumber(var_4_1))
 
 	if arg_4_1.eventID ~= nil then
-		pg = var_1_10003
-
-		local var_4_3 = var_1_10003.auction_event[var_2]
-
-		LoadSpriteAsync = var_4_0
-
-		var_4_0(var_4_3.icon, function(arg_5_0)
-			IsNil = var_2_10001
-
-			if not var_2_10001(arg_4_0.uiEventImage) then
+		LoadSpriteAsync(pg.auction_event[arg_4_1.eventID].icon, function(arg_5_0)
+			if not IsNil(arg_4_0.uiEventImage) then
 				arg_4_0.uiEventImage.sprite = arg_5_0
 			end
 
@@ -101,14 +51,11 @@ function var_0_1.didEnter(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_1.willExit(arg_6_0)
+function var_0_0.willExit(arg_6_0)
 	arg_6_0:detach()
-
-	Object = var_1
-
-	var_1.Destroy(arg_6_0._go)
+	Object.Destroy(arg_6_0._go)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "transform_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "transform_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.transform_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.transform_data_template
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.transform_data_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.transform_data_template = rawget(pg, "transform_data_template") or setmetatable({
+	__name = "transform_data_template"
+}, confNEO)
+pg.transform_data_template.__namecode__ = true
+pg.transform_data_template.all = {
 	501,
 	502,
 	503,
@@ -428,6 +401,18 @@ var_0_4.all = {
 	10609,
 	10610,
 	10611,
+	11501,
+	11502,
+	11503,
+	11504,
+	11505,
+	11506,
+	11507,
+	11508,
+	11509,
+	11510,
+	11511,
+	11512,
 	11901,
 	11902,
 	11903,
@@ -1261,25 +1246,11 @@ var_0_4.all = {
 	57911,
 	57912
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.transform_data_template = {}
+pg.base = pg.base or {}
+pg.base.transform_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.transform_data_template
-
-	var_1_0[501] = {
+	pg.base.transform_data_template[501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -1311,11 +1282,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.transform_data_template
-
-	var_1_1[502] = {
+	pg.base.transform_data_template[502] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -1349,11 +1316,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.transform_data_template
-
-	var_1_2[503] = {
+	pg.base.transform_data_template[503] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -1387,11 +1350,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.transform_data_template
-
-	var_1_3[504] = {
+	pg.base.transform_data_template[504] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -1425,11 +1384,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.transform_data_template
-
-	var_1_4[505] = {
+	pg.base.transform_data_template[505] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -1463,11 +1418,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.transform_data_template
-
-	var_1_5[506] = {
+	pg.base.transform_data_template[506] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -1501,11 +1452,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.transform_data_template
-
-	var_1_6[507] = {
+	pg.base.transform_data_template[507] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -1549,11 +1496,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.transform_data_template
-
-	var_1_7[508] = {
+	pg.base.transform_data_template[508] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【快速装填】",
@@ -1587,11 +1530,7 @@ var_0_4.base.transform_data_template = {}
 			25
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.transform_data_template
-
-	var_1_8[509] = {
+	pg.base.transform_data_template[509] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -1625,11 +1564,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.transform_data_template
-
-	var_1_9[510] = {
+	pg.base.transform_data_template[510] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -1674,11 +1609,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.transform_data_template
-
-	var_1_10[511] = {
+	pg.base.transform_data_template[511] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+15，机动+25",
@@ -1715,11 +1646,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.transform_data_template
-
-	var_1_11[601] = {
+	pg.base.transform_data_template[601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -1751,11 +1678,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.transform_data_template
-
-	var_1_12[602] = {
+	pg.base.transform_data_template[602] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -1789,11 +1712,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.transform_data_template
-
-	var_1_13[603] = {
+	pg.base.transform_data_template[603] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -1827,11 +1746,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.transform_data_template
-
-	var_1_14[604] = {
+	pg.base.transform_data_template[604] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -1865,11 +1780,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.transform_data_template
-
-	var_1_15[605] = {
+	pg.base.transform_data_template[605] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -1903,11 +1814,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.transform_data_template
-
-	var_1_16[606] = {
+	pg.base.transform_data_template[606] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -1941,11 +1848,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.transform_data_template
-
-	var_1_17[607] = {
+	pg.base.transform_data_template[607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -1989,11 +1892,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.transform_data_template
-
-	var_1_18[608] = {
+	pg.base.transform_data_template[608] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【快速装填】",
@@ -2027,11 +1926,7 @@ var_0_4.base.transform_data_template = {}
 			25
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.transform_data_template
-
-	var_1_19[609] = {
+	pg.base.transform_data_template[609] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -2065,11 +1960,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.transform_data_template
-
-	var_1_20[610] = {
+	pg.base.transform_data_template[610] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -2114,11 +2005,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.transform_data_template
-
-	var_1_21[611] = {
+	pg.base.transform_data_template[611] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+15，机动+25",
@@ -2155,11 +2042,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.transform_data_template
-
-	var_1_22[1001] = {
+	pg.base.transform_data_template[1001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -2191,11 +2074,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.transform_data_template
-
-	var_1_23[1002] = {
+	pg.base.transform_data_template[1002] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -2229,11 +2108,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.transform_data_template
-
-	var_1_24[1003] = {
+	pg.base.transform_data_template[1003] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -2267,11 +2142,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.transform_data_template
-
-	var_1_25[1004] = {
+	pg.base.transform_data_template[1004] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -2305,11 +2176,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.transform_data_template
-
-	var_1_26[1005] = {
+	pg.base.transform_data_template[1005] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -2353,11 +2220,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.transform_data_template
-
-	var_1_27[1006] = {
+	pg.base.transform_data_template[1006] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -2402,11 +2265,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.transform_data_template
-
-	var_1_28[1007] = {
+	pg.base.transform_data_template[1007] = {
 		level_limit = 50,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -2450,11 +2309,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.transform_data_template
-
-	var_1_29[1008] = {
+	pg.base.transform_data_template[1008] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -2498,11 +2353,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.transform_data_template
-
-	var_1_30[1009] = {
+	pg.base.transform_data_template[1009] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -2546,11 +2397,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.transform_data_template
-
-	var_1_31[1010] = {
+	pg.base.transform_data_template[1010] = {
 		level_limit = 75,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -2617,11 +2464,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.transform_data_template
-
-	var_1_32[1011] = {
+	pg.base.transform_data_template[1011] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+30，机动+20",
@@ -2657,11 +2500,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.transform_data_template
-
-	var_1_33[1012] = {
+	pg.base.transform_data_template[1012] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【海上竞逐】",
@@ -2702,11 +2541,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.transform_data_template
-
-	var_1_34[1301] = {
+	pg.base.transform_data_template[1301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -2738,11 +2573,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.transform_data_template
-
-	var_1_35[1302] = {
+	pg.base.transform_data_template[1302] = {
 		level_limit = 5,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -2776,11 +2607,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.transform_data_template
-
-	var_1_36[1303] = {
+	pg.base.transform_data_template[1303] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -2814,11 +2641,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.transform_data_template
-
-	var_1_37[1304] = {
+	pg.base.transform_data_template[1304] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -2852,11 +2675,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.transform_data_template
-
-	var_1_38[1305] = {
+	pg.base.transform_data_template[1305] = {
 		level_limit = 35,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -2900,11 +2719,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.transform_data_template
-
-	var_1_39[1306] = {
+	pg.base.transform_data_template[1306] = {
 		level_limit = 40,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -2949,11 +2764,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.transform_data_template
-
-	var_1_40[1307] = {
+	pg.base.transform_data_template[1307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -2997,11 +2808,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.transform_data_template
-
-	var_1_41[1308] = {
+	pg.base.transform_data_template[1308] = {
 		level_limit = 55,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -3046,11 +2853,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.transform_data_template
-
-	var_1_42[1309] = {
+	pg.base.transform_data_template[1309] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -3094,11 +2897,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.transform_data_template
-
-	var_1_43[1310] = {
+	pg.base.transform_data_template[1310] = {
 		level_limit = 75,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -3164,11 +2963,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.transform_data_template
-
-	var_1_44[1311] = {
+	pg.base.transform_data_template[1311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+35，反潜+10",
@@ -3204,11 +2999,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.transform_data_template
-
-	var_1_45[1312] = {
+	pg.base.transform_data_template[1312] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【正义的力量】，炮击+15",
@@ -3249,11 +3040,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.transform_data_template
-
-	var_1_46[1901] = {
+	pg.base.transform_data_template[1901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -3285,11 +3072,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.transform_data_template
-
-	var_1_47[1902] = {
+	pg.base.transform_data_template[1902] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -3323,11 +3106,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.transform_data_template
-
-	var_1_48[1903] = {
+	pg.base.transform_data_template[1903] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -3361,11 +3140,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.transform_data_template
-
-	var_1_49[1904] = {
+	pg.base.transform_data_template[1904] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -3399,11 +3174,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.transform_data_template
-
-	var_1_50[1905] = {
+	pg.base.transform_data_template[1905] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -3447,11 +3218,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.transform_data_template
-
-	var_1_51[1906] = {
+	pg.base.transform_data_template[1906] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -3496,11 +3263,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.transform_data_template
-
-	var_1_52[1907] = {
+	pg.base.transform_data_template[1907] = {
 		level_limit = 50,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -3544,11 +3307,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.transform_data_template
-
-	var_1_53[1908] = {
+	pg.base.transform_data_template[1908] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -3592,11 +3351,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.transform_data_template
-
-	var_1_54[1909] = {
+	pg.base.transform_data_template[1909] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -3640,11 +3395,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.transform_data_template
-
-	var_1_55[1910] = {
+	pg.base.transform_data_template[1910] = {
 		level_limit = 75,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -3711,11 +3462,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.transform_data_template
-
-	var_1_56[1911] = {
+	pg.base.transform_data_template[1911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+30，机动+20",
@@ -3751,11 +3498,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.transform_data_template
-
-	var_1_57[1912] = {
+	pg.base.transform_data_template[1912] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【歼灭模式】",
@@ -3796,11 +3539,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.transform_data_template
-
-	var_1_58[2601] = {
+	pg.base.transform_data_template[2601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -3832,11 +3571,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.transform_data_template
-
-	var_1_59[2602] = {
+	pg.base.transform_data_template[2602] = {
 		level_limit = 5,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -3870,11 +3605,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.transform_data_template
-
-	var_1_60[2603] = {
+	pg.base.transform_data_template[2603] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -3908,11 +3639,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.transform_data_template
-
-	var_1_61[2604] = {
+	pg.base.transform_data_template[2604] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -3946,11 +3673,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.transform_data_template
-
-	var_1_62[2605] = {
+	pg.base.transform_data_template[2605] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -3984,11 +3707,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.transform_data_template
-
-	var_1_63[2606] = {
+	pg.base.transform_data_template[2606] = {
 		level_limit = 40,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -4033,11 +3752,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.transform_data_template
-
-	var_1_64[2607] = {
+	pg.base.transform_data_template[2607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -4081,11 +3796,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.transform_data_template
-
-	var_1_65[2608] = {
+	pg.base.transform_data_template[2608] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【烟雾弹】",
@@ -4119,11 +3830,7 @@ var_0_4.base.transform_data_template = {}
 			25
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.transform_data_template
-
-	var_1_66[2609] = {
+	pg.base.transform_data_template[2609] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -4157,11 +3864,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.transform_data_template
-
-	var_1_67[2610] = {
+	pg.base.transform_data_template[2610] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -4206,11 +3909,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.transform_data_template
-
-	var_1_68[2611] = {
+	pg.base.transform_data_template[2611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，装填+15，防空+35",
@@ -4247,11 +3946,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.transform_data_template
-
-	var_1_69[2701] = {
+	pg.base.transform_data_template[2701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -4283,11 +3978,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.transform_data_template
-
-	var_1_70[2702] = {
+	pg.base.transform_data_template[2702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -4321,11 +4012,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.transform_data_template
-
-	var_1_71[2703] = {
+	pg.base.transform_data_template[2703] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -4359,11 +4046,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.transform_data_template
-
-	var_1_72[2704] = {
+	pg.base.transform_data_template[2704] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -4397,11 +4080,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.transform_data_template
-
-	var_1_73[2705] = {
+	pg.base.transform_data_template[2705] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -4435,11 +4114,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.transform_data_template
-
-	var_1_74[2706] = {
+	pg.base.transform_data_template[2706] = {
 		level_limit = 40,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -4484,11 +4159,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.transform_data_template
-
-	var_1_75[2707] = {
+	pg.base.transform_data_template[2707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -4532,11 +4203,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.transform_data_template
-
-	var_1_76[2708] = {
+	pg.base.transform_data_template[2708] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【防空模式】",
@@ -4570,11 +4237,7 @@ var_0_4.base.transform_data_template = {}
 			25
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.transform_data_template
-
-	var_1_77[2709] = {
+	pg.base.transform_data_template[2709] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -4608,11 +4271,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.transform_data_template
-
-	var_1_78[2710] = {
+	pg.base.transform_data_template[2710] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -4657,11 +4316,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.transform_data_template
-
-	var_1_79[2711] = {
+	pg.base.transform_data_template[2711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+15，防空+35",
@@ -4698,11 +4353,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.transform_data_template
-
-	var_1_80[2801] = {
+	pg.base.transform_data_template[2801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -4734,11 +4385,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.transform_data_template
-
-	var_1_81[2802] = {
+	pg.base.transform_data_template[2802] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -4772,11 +4419,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.transform_data_template
-
-	var_1_82[2803] = {
+	pg.base.transform_data_template[2803] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -4810,11 +4453,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.transform_data_template
-
-	var_1_83[2804] = {
+	pg.base.transform_data_template[2804] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -4848,11 +4487,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.transform_data_template
-
-	var_1_84[2805] = {
+	pg.base.transform_data_template[2805] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -4896,11 +4531,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.transform_data_template
-
-	var_1_85[2806] = {
+	pg.base.transform_data_template[2806] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -4945,11 +4576,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.transform_data_template
-
-	var_1_86[2807] = {
+	pg.base.transform_data_template[2807] = {
 		level_limit = 50,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -4993,11 +4620,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.transform_data_template
-
-	var_1_87[2808] = {
+	pg.base.transform_data_template[2808] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -5041,11 +4664,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.transform_data_template
-
-	var_1_88[2809] = {
+	pg.base.transform_data_template[2809] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -5089,11 +4708,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.transform_data_template
-
-	var_1_89[2810] = {
+	pg.base.transform_data_template[2810] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -5160,11 +4775,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.transform_data_template
-
-	var_1_90[2811] = {
+	pg.base.transform_data_template[2811] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+60\n改造后，防空炮底座+1\n装备特殊反潜武器\n<color=#92fc63>【彩虹计划】</color>技能将升级为<color=#92fc63>【彩虹计划·改】</color>\n技能<color=#92fc63>【专属弹幕-埃尔德里奇II】</color>将升级为<color=#92fc63>【专属弹幕-埃尔德里奇III】</color>",
@@ -5204,11 +4815,7 @@ var_0_4.base.transform_data_template = {}
 			50
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.transform_data_template
-
-	var_1_91[2812] = {
+	pg.base.transform_data_template[2812] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【电气功率MAX！】",
@@ -5243,11 +4850,7 @@ var_0_4.base.transform_data_template = {}
 			30
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.transform_data_template
-
-	var_1_92[3301] = {
+	pg.base.transform_data_template[3301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -5279,11 +4882,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.transform_data_template
-
-	var_1_93[3302] = {
+	pg.base.transform_data_template[3302] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -5317,11 +4916,7 @@ var_0_4.base.transform_data_template = {}
 			10
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.transform_data_template
-
-	var_1_94[3303] = {
+	pg.base.transform_data_template[3303] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -5355,11 +4950,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.transform_data_template
-
-	var_1_95[3304] = {
+	pg.base.transform_data_template[3304] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -5393,11 +4984,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.transform_data_template
-
-	var_1_96[3305] = {
+	pg.base.transform_data_template[3305] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -5431,11 +5018,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.transform_data_template
-
-	var_1_97[3306] = {
+	pg.base.transform_data_template[3306] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -5470,11 +5053,7 @@ var_0_4.base.transform_data_template = {}
 			20
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.transform_data_template
-
-	var_1_98[3307] = {
+	pg.base.transform_data_template[3307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -5518,8 +5097,7 @@ var_0_4.base.transform_data_template = {}
 			15
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.transform_data_template[3308] = {
+	pg.base.transform_data_template[3308] = {
 		level_limit = 55,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -5557,11 +5135,7 @@ var_0_4.base.transform_data_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.transform_data_template
-
-	var_2_0[3309] = {
+	pg.base.transform_data_template[3309] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -5605,11 +5179,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.transform_data_template
-
-	var_2_1[3310] = {
+	pg.base.transform_data_template[3310] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -5662,11 +5232,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.transform_data_template
-
-	var_2_2[3311] = {
+	pg.base.transform_data_template[3311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，命中+10，防空+35\n改造后<color=#92fc63>【雷达扫描】</color>技能将升级为<color=#92fc63>【雷达扫描·改】</color>",
@@ -5707,11 +5273,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.transform_data_template
-
-	var_2_3[3312] = {
+	pg.base.transform_data_template[3312] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -5750,11 +5312,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.transform_data_template
-
-	var_2_4[3501] = {
+	pg.base.transform_data_template[3501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -5786,11 +5344,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.transform_data_template
-
-	var_2_5[3502] = {
+	pg.base.transform_data_template[3502] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -5824,11 +5378,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.transform_data_template
-
-	var_2_6[3503] = {
+	pg.base.transform_data_template[3503] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -5862,11 +5412,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.transform_data_template
-
-	var_2_7[3504] = {
+	pg.base.transform_data_template[3504] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -5900,11 +5446,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.transform_data_template
-
-	var_2_8[3505] = {
+	pg.base.transform_data_template[3505] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -5938,11 +5480,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.transform_data_template
-
-	var_2_9[3506] = {
+	pg.base.transform_data_template[3506] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -5976,11 +5514,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.transform_data_template
-
-	var_2_10[3507] = {
+	pg.base.transform_data_template[3507] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -6024,11 +5558,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.transform_data_template
-
-	var_2_11[3508] = {
+	pg.base.transform_data_template[3508] = {
 		level_limit = 55,
 		name = "雷击强化II",
 		descrip = "雷击+15/雷击+25",
@@ -6072,11 +5602,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.transform_data_template
-
-	var_2_12[3509] = {
+	pg.base.transform_data_template[3509] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -6120,11 +5646,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.transform_data_template
-
-	var_2_13[3510] = {
+	pg.base.transform_data_template[3510] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -6169,11 +5691,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.transform_data_template
-
-	var_2_14[3511] = {
+	pg.base.transform_data_template[3511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，反潜+30，防空+15\n改造后<color=#92fc63>【主炮底座+1】</color>\n<color=#92fc63>【战争之殇】</color>技能将升级为<color=#92fc63>【战争之殇·改】</color>\n<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射III】</color>",
@@ -6214,11 +5732,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.transform_data_template
-
-	var_2_15[3601] = {
+	pg.base.transform_data_template[3601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -6250,11 +5764,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.transform_data_template
-
-	var_2_16[3602] = {
+	pg.base.transform_data_template[3602] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -6288,11 +5798,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.transform_data_template
-
-	var_2_17[3603] = {
+	pg.base.transform_data_template[3603] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -6326,11 +5832,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.transform_data_template
-
-	var_2_18[3604] = {
+	pg.base.transform_data_template[3604] = {
 		level_limit = 25,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -6374,11 +5876,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.transform_data_template
-
-	var_2_19[3605] = {
+	pg.base.transform_data_template[3605] = {
 		level_limit = 35,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -6422,11 +5920,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.transform_data_template
-
-	var_2_20[3606] = {
+	pg.base.transform_data_template[3606] = {
 		level_limit = 40,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -6470,11 +5964,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.transform_data_template
-
-	var_2_21[3607] = {
+	pg.base.transform_data_template[3607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -6526,11 +6016,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.transform_data_template
-
-	var_2_22[3608] = {
+	pg.base.transform_data_template[3608] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -6575,11 +6061,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.transform_data_template
-
-	var_2_23[3609] = {
+	pg.base.transform_data_template[3609] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -6623,11 +6105,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.transform_data_template
-
-	var_2_24[3610] = {
+	pg.base.transform_data_template[3610] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -6694,11 +6172,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.transform_data_template
-
-	var_2_25[3611] = {
+	pg.base.transform_data_template[3611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮底座+1】</color>\n改造后<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【专属弹幕-{namecode:524}I】</color>",
@@ -6739,11 +6213,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.transform_data_template
-
-	var_2_26[3612] = {
+	pg.base.transform_data_template[3612] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【星之歌】",
@@ -6778,11 +6248,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.transform_data_template
-
-	var_2_27[4401] = {
+	pg.base.transform_data_template[4401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -6814,11 +6280,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.transform_data_template
-
-	var_2_28[4402] = {
+	pg.base.transform_data_template[4402] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -6852,11 +6314,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.transform_data_template
-
-	var_2_29[4403] = {
+	pg.base.transform_data_template[4403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -6890,11 +6348,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.transform_data_template
-
-	var_2_30[4404] = {
+	pg.base.transform_data_template[4404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -6928,11 +6382,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.transform_data_template
-
-	var_2_31[4405] = {
+	pg.base.transform_data_template[4405] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -6976,11 +6426,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.transform_data_template
-
-	var_2_32[4406] = {
+	pg.base.transform_data_template[4406] = {
 		level_limit = 40,
 		name = "副炮改良I",
 		descrip = "副炮武器效率+5%",
@@ -7014,11 +6460,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.transform_data_template
-
-	var_2_33[4407] = {
+	pg.base.transform_data_template[4407] = {
 		level_limit = 50,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -7052,11 +6494,7 @@ end)()
 			25
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.transform_data_template
-
-	var_2_34[4408] = {
+	pg.base.transform_data_template[4408] = {
 		level_limit = 55,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -7090,11 +6528,7 @@ end)()
 			25
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.transform_data_template
-
-	var_2_35[4409] = {
+	pg.base.transform_data_template[4409] = {
 		level_limit = 70,
 		name = "舰体改良III",
 		descrip = "耐久+80/耐久+120/耐久+160",
@@ -7148,11 +6582,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.transform_data_template
-
-	var_2_36[4410] = {
+	pg.base.transform_data_template[4410] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -7197,11 +6627,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.transform_data_template
-
-	var_2_37[4411] = {
+	pg.base.transform_data_template[4411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，耐久+150，炮击+20",
@@ -7238,11 +6664,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.transform_data_template
-
-	var_2_38[5201] = {
+	pg.base.transform_data_template[5201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -7274,11 +6696,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.transform_data_template
-
-	var_2_39[5202] = {
+	pg.base.transform_data_template[5202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -7312,11 +6730,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.transform_data_template
-
-	var_2_40[5203] = {
+	pg.base.transform_data_template[5203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -7350,11 +6764,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.transform_data_template
-
-	var_2_41[5204] = {
+	pg.base.transform_data_template[5204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -7388,11 +6798,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.transform_data_template
-
-	var_2_42[5205] = {
+	pg.base.transform_data_template[5205] = {
 		level_limit = 35,
 		name = "副炮改良I",
 		descrip = "副炮武器效率+5%",
@@ -7426,11 +6832,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.transform_data_template
-
-	var_2_43[5206] = {
+	pg.base.transform_data_template[5206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -7464,11 +6866,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.transform_data_template
-
-	var_2_44[5207] = {
+	pg.base.transform_data_template[5207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -7512,11 +6910,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.transform_data_template
-
-	var_2_45[5208] = {
+	pg.base.transform_data_template[5208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【重点打击】",
@@ -7550,11 +6944,7 @@ end)()
 			25
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.transform_data_template
-
-	var_2_46[5209] = {
+	pg.base.transform_data_template[5209] = {
 		level_limit = 70,
 		name = "副炮改良II",
 		descrip = "副炮武器效率+5%/副炮武器效率+5%",
@@ -7598,11 +6988,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.transform_data_template
-
-	var_2_47[5210] = {
+	pg.base.transform_data_template[5210] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -7647,11 +7033,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.transform_data_template
-
-	var_2_48[5211] = {
+	pg.base.transform_data_template[5211] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，命中+15，防空+30",
@@ -7688,11 +7070,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.transform_data_template
-
-	var_2_49[5301] = {
+	pg.base.transform_data_template[5301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -7724,11 +7102,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.transform_data_template
-
-	var_2_50[5302] = {
+	pg.base.transform_data_template[5302] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -7762,11 +7136,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.transform_data_template
-
-	var_2_51[5303] = {
+	pg.base.transform_data_template[5303] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -7800,11 +7170,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.transform_data_template
-
-	var_2_52[5304] = {
+	pg.base.transform_data_template[5304] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -7838,11 +7204,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.transform_data_template
-
-	var_2_53[5305] = {
+	pg.base.transform_data_template[5305] = {
 		level_limit = 35,
 		name = "副炮改良I",
 		descrip = "副炮武器效率+5%",
@@ -7876,11 +7238,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.transform_data_template
-
-	var_2_54[5306] = {
+	pg.base.transform_data_template[5306] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -7914,11 +7272,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.transform_data_template
-
-	var_2_55[5307] = {
+	pg.base.transform_data_template[5307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -7962,11 +7316,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.transform_data_template
-
-	var_2_56[5308] = {
+	pg.base.transform_data_template[5308] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【重点打击】",
@@ -8000,11 +7350,7 @@ end)()
 			25
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.transform_data_template
-
-	var_2_57[5309] = {
+	pg.base.transform_data_template[5309] = {
 		level_limit = 70,
 		name = "副炮改良II",
 		descrip = "副炮武器效率+5%/副炮武器效率+5%",
@@ -8048,11 +7394,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.transform_data_template
-
-	var_2_58[5310] = {
+	pg.base.transform_data_template[5310] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -8097,11 +7439,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.transform_data_template
-
-	var_2_59[5311] = {
+	pg.base.transform_data_template[5311] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，命中+10，防空+35",
@@ -8138,11 +7476,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.transform_data_template
-
-	var_2_60[6001] = {
+	pg.base.transform_data_template[6001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -8174,11 +7508,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.transform_data_template
-
-	var_2_61[6002] = {
+	pg.base.transform_data_template[6002] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -8212,11 +7542,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.transform_data_template
-
-	var_2_62[6003] = {
+	pg.base.transform_data_template[6003] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -8250,11 +7576,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.transform_data_template
-
-	var_2_63[6004] = {
+	pg.base.transform_data_template[6004] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -8288,11 +7610,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.transform_data_template
-
-	var_2_64[6005] = {
+	pg.base.transform_data_template[6005] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -8326,11 +7644,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.transform_data_template
-
-	var_2_65[6006] = {
+	pg.base.transform_data_template[6006] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -8364,11 +7678,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.transform_data_template
-
-	var_2_66[6007] = {
+	pg.base.transform_data_template[6007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -8412,11 +7722,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.transform_data_template
-
-	var_2_67[6008] = {
+	pg.base.transform_data_template[6008] = {
 		level_limit = 55,
 		name = "命中强化II",
 		descrip = "命中+5/命中+10",
@@ -8461,11 +7767,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.transform_data_template
-
-	var_2_68[6009] = {
+	pg.base.transform_data_template[6009] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -8509,11 +7811,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.transform_data_template
-
-	var_2_69[6010] = {
+	pg.base.transform_data_template[6010] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -8566,11 +7864,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.transform_data_template
-
-	var_2_70[6011] = {
+	pg.base.transform_data_template[6011] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，装填+25\n改造后技能【BIG SEVEN】升级为【BIG SEVEN·科罗拉多】",
@@ -8611,11 +7905,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.transform_data_template
-
-	var_2_71[6012] = {
+	pg.base.transform_data_template[6012] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【未褪去的荣光】",
@@ -8653,11 +7943,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.transform_data_template
-
-	var_2_72[6101] = {
+	pg.base.transform_data_template[6101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -8689,11 +7975,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.transform_data_template
-
-	var_2_73[6102] = {
+	pg.base.transform_data_template[6102] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -8727,11 +8009,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.transform_data_template
-
-	var_2_74[6103] = {
+	pg.base.transform_data_template[6103] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -8765,11 +8043,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.transform_data_template
-
-	var_2_75[6104] = {
+	pg.base.transform_data_template[6104] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -8803,11 +8077,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.transform_data_template
-
-	var_2_76[6105] = {
+	pg.base.transform_data_template[6105] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -8841,11 +8111,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.transform_data_template
-
-	var_2_77[6106] = {
+	pg.base.transform_data_template[6106] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -8879,11 +8145,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.transform_data_template
-
-	var_2_78[6107] = {
+	pg.base.transform_data_template[6107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -8927,11 +8189,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.transform_data_template
-
-	var_2_79[6108] = {
+	pg.base.transform_data_template[6108] = {
 		level_limit = 55,
 		name = "命中强化II",
 		descrip = "命中+5/命中+10",
@@ -8976,11 +8234,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.transform_data_template
-
-	var_2_80[6109] = {
+	pg.base.transform_data_template[6109] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -9024,11 +8278,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.transform_data_template
-
-	var_2_81[6110] = {
+	pg.base.transform_data_template[6110] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -9081,11 +8331,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.transform_data_template
-
-	var_2_82[6111] = {
+	pg.base.transform_data_template[6111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，装填+25\n改造后技能【BIG SEVEN】升级为【BIG SEVEN·马里兰】",
@@ -9126,11 +8372,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.transform_data_template
-
-	var_2_83[6112] = {
+	pg.base.transform_data_template[6112] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【终结一击】",
@@ -9168,11 +8410,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.transform_data_template
-
-	var_2_84[6201] = {
+	pg.base.transform_data_template[6201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -9204,11 +8442,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.transform_data_template
-
-	var_2_85[6202] = {
+	pg.base.transform_data_template[6202] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -9242,11 +8476,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.transform_data_template
-
-	var_2_86[6203] = {
+	pg.base.transform_data_template[6203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -9280,11 +8510,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.transform_data_template
-
-	var_2_87[6204] = {
+	pg.base.transform_data_template[6204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -9318,11 +8544,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.transform_data_template
-
-	var_2_88[6205] = {
+	pg.base.transform_data_template[6205] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -9356,11 +8578,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.transform_data_template
-
-	var_2_89[6206] = {
+	pg.base.transform_data_template[6206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -9394,11 +8612,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.transform_data_template
-
-	var_2_90[6207] = {
+	pg.base.transform_data_template[6207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -9442,11 +8656,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.transform_data_template
-
-	var_2_91[6208] = {
+	pg.base.transform_data_template[6208] = {
 		level_limit = 55,
 		name = "命中强化II",
 		descrip = "命中+5/命中+10",
@@ -9491,11 +8701,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.transform_data_template
-
-	var_2_92[6209] = {
+	pg.base.transform_data_template[6209] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -9539,11 +8745,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.transform_data_template
-
-	var_2_93[6210] = {
+	pg.base.transform_data_template[6210] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -9596,11 +8798,7 @@ end)()
 			20
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.transform_data_template
-
-	var_2_94[6211] = {
+	pg.base.transform_data_template[6211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，装填+25\n改造后技能【BIG SEVEN】升级为【BIG SEVEN·西弗吉尼亚】",
@@ -9641,11 +8839,7 @@ end)()
 			50
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.transform_data_template
-
-	var_2_95[6212] = {
+	pg.base.transform_data_template[6212] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【莱特湾的见证者】",
@@ -9683,11 +8877,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.transform_data_template
-
-	var_2_96[7001] = {
+	pg.base.transform_data_template[7001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -9719,11 +8909,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.transform_data_template
-
-	var_2_97[7002] = {
+	pg.base.transform_data_template[7002] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -9757,11 +8943,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.transform_data_template
-
-	var_2_98[7003] = {
+	pg.base.transform_data_template[7003] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "轰炸机机武器效率+5%",
@@ -9795,8 +8977,7 @@ end)()
 			15
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.transform_data_template[7004] = {
+	pg.base.transform_data_template[7004] = {
 		level_limit = 25,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -9834,11 +9015,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.transform_data_template
-
-	var_3_0[7005] = {
+	pg.base.transform_data_template[7005] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -9872,11 +9049,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.transform_data_template
-
-	var_3_1[7006] = {
+	pg.base.transform_data_template[7006] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -9910,11 +9083,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.transform_data_template
-
-	var_3_2[7007] = {
+	pg.base.transform_data_template[7007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -9958,11 +9127,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.transform_data_template
-
-	var_3_3[7008] = {
+	pg.base.transform_data_template[7008] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【制空支援】",
@@ -9996,11 +9161,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.transform_data_template
-
-	var_3_4[7009] = {
+	pg.base.transform_data_template[7009] = {
 		level_limit = 70,
 		name = "空战精通II",
 		descrip = "轰炸机武器效率+5%/轰炸机武器效率+5%",
@@ -10045,11 +9206,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.transform_data_template
-
-	var_3_5[7010] = {
+	pg.base.transform_data_template[7010] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -10094,11 +9251,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.transform_data_template
-
-	var_3_6[7011] = {
+	pg.base.transform_data_template[7011] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，航空+25",
@@ -10134,11 +9287,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.transform_data_template
-
-	var_3_7[7101] = {
+	pg.base.transform_data_template[7101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -10170,11 +9319,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.transform_data_template
-
-	var_3_8[7102] = {
+	pg.base.transform_data_template[7102] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -10208,11 +9353,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.transform_data_template
-
-	var_3_9[7103] = {
+	pg.base.transform_data_template[7103] = {
 		level_limit = 20,
 		name = "轰炸精通I",
 		descrip = "轰炸机机武器效率+5%",
@@ -10246,11 +9387,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.transform_data_template
-
-	var_3_10[7104] = {
+	pg.base.transform_data_template[7104] = {
 		level_limit = 25,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -10284,11 +9421,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.transform_data_template
-
-	var_3_11[7105] = {
+	pg.base.transform_data_template[7105] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -10322,11 +9455,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.transform_data_template
-
-	var_3_12[7106] = {
+	pg.base.transform_data_template[7106] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -10360,11 +9489,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.transform_data_template
-
-	var_3_13[7107] = {
+	pg.base.transform_data_template[7107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -10408,11 +9533,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.transform_data_template
-
-	var_3_14[7108] = {
+	pg.base.transform_data_template[7108] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【防空指挥·主力】",
@@ -10446,11 +9567,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.transform_data_template
-
-	var_3_15[7109] = {
+	pg.base.transform_data_template[7109] = {
 		level_limit = 70,
 		name = "轰炸精通II",
 		descrip = "轰炸机武器效率+5%/轰炸机武器效率+5%",
@@ -10495,11 +9612,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.transform_data_template
-
-	var_3_16[7110] = {
+	pg.base.transform_data_template[7110] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -10544,11 +9657,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.transform_data_template
-
-	var_3_17[7111] = {
+	pg.base.transform_data_template[7111] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，航空+25",
@@ -10584,11 +9693,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.transform_data_template
-
-	var_3_18[7201] = {
+	pg.base.transform_data_template[7201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -10620,11 +9725,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.transform_data_template
-
-	var_3_19[7202] = {
+	pg.base.transform_data_template[7202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -10658,11 +9759,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.transform_data_template
-
-	var_3_20[7203] = {
+	pg.base.transform_data_template[7203] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "战斗机武器效率+4%",
@@ -10697,11 +9794,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.transform_data_template
-
-	var_3_21[7204] = {
+	pg.base.transform_data_template[7204] = {
 		level_limit = 25,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -10735,11 +9828,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.transform_data_template
-
-	var_3_22[7205] = {
+	pg.base.transform_data_template[7205] = {
 		level_limit = 35,
 		name = "轰炸精通I",
 		descrip = "轰炸机武器效率+5%",
@@ -10773,11 +9862,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.transform_data_template
-
-	var_3_23[7206] = {
+	pg.base.transform_data_template[7206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -10811,11 +9896,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.transform_data_template
-
-	var_3_24[7207] = {
+	pg.base.transform_data_template[7207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -10859,11 +9940,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.transform_data_template
-
-	var_3_25[7208] = {
+	pg.base.transform_data_template[7208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【制空支援】",
@@ -10897,11 +9974,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.transform_data_template
-
-	var_3_26[7209] = {
+	pg.base.transform_data_template[7209] = {
 		level_limit = 70,
 		name = "空战精通II",
 		descrip = "战斗机武器效率+4%/战斗机武器效率+7%",
@@ -10948,11 +10021,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.transform_data_template
-
-	var_3_27[7210] = {
+	pg.base.transform_data_template[7210] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -10997,11 +10066,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.transform_data_template
-
-	var_3_28[7211] = {
+	pg.base.transform_data_template[7211] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，航空+25",
@@ -11037,11 +10102,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.transform_data_template
-
-	var_3_29[7401] = {
+	pg.base.transform_data_template[7401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -11073,11 +10134,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.transform_data_template
-
-	var_3_30[7402] = {
+	pg.base.transform_data_template[7402] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -11111,11 +10168,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.transform_data_template
-
-	var_3_31[7403] = {
+	pg.base.transform_data_template[7403] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "战斗机武器效率+5%",
@@ -11149,11 +10202,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.transform_data_template
-
-	var_3_32[7404] = {
+	pg.base.transform_data_template[7404] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -11187,11 +10236,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.transform_data_template
-
-	var_3_33[7405] = {
+	pg.base.transform_data_template[7405] = {
 		level_limit = 35,
 		name = "轰炸精通I",
 		descrip = "轰炸机机武器效率+3%",
@@ -11226,11 +10271,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.transform_data_template
-
-	var_3_34[7406] = {
+	pg.base.transform_data_template[7406] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -11264,11 +10305,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.transform_data_template
-
-	var_3_35[7407] = {
+	pg.base.transform_data_template[7407] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -11312,11 +10349,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.transform_data_template
-
-	var_3_36[7408] = {
+	pg.base.transform_data_template[7408] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -11361,11 +10394,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.transform_data_template
-
-	var_3_37[7409] = {
+	pg.base.transform_data_template[7409] = {
 		level_limit = 70,
 		name = "轰炸精通II",
 		descrip = "轰炸机武器效率+3%/轰炸机武器效率+4%",
@@ -11411,11 +10440,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.transform_data_template
-
-	var_3_38[7410] = {
+	pg.base.transform_data_template[7410] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -11467,11 +10492,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.transform_data_template
-
-	var_3_39[7411] = {
+	pg.base.transform_data_template[7411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，航空+10",
@@ -11507,11 +10528,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.transform_data_template
-
-	var_3_40[7412] = {
+	pg.base.transform_data_template[7412] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【魔女的恶作剧】",
@@ -11549,11 +10566,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.transform_data_template
-
-	var_3_41[7501] = {
+	pg.base.transform_data_template[7501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -11585,11 +10598,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.transform_data_template
-
-	var_3_42[7502] = {
+	pg.base.transform_data_template[7502] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -11623,11 +10632,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.transform_data_template
-
-	var_3_43[7503] = {
+	pg.base.transform_data_template[7503] = {
 		level_limit = 20,
 		name = "轰炸精通I",
 		descrip = "轰炸机武器效率+4%",
@@ -11662,11 +10667,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.transform_data_template
-
-	var_3_44[7504] = {
+	pg.base.transform_data_template[7504] = {
 		level_limit = 25,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -11700,11 +10701,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.transform_data_template
-
-	var_3_45[7505] = {
+	pg.base.transform_data_template[7505] = {
 		level_limit = 35,
 		name = "鱼雷俯冲I",
 		descrip = "鱼雷机武器效率+5%",
@@ -11738,11 +10735,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.transform_data_template
-
-	var_3_46[7506] = {
+	pg.base.transform_data_template[7506] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -11776,11 +10769,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.transform_data_template
-
-	var_3_47[7507] = {
+	pg.base.transform_data_template[7507] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -11824,11 +10813,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.transform_data_template
-
-	var_3_48[7508] = {
+	pg.base.transform_data_template[7508] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【强袭空母】",
@@ -11862,11 +10847,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.transform_data_template
-
-	var_3_49[7509] = {
+	pg.base.transform_data_template[7509] = {
 		level_limit = 70,
 		name = "轰炸精通II",
 		descrip = "轰炸机武器效率+4%/轰炸机武器效率+7%",
@@ -11913,11 +10894,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.transform_data_template
-
-	var_3_50[7510] = {
+	pg.base.transform_data_template[7510] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -11962,11 +10939,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.transform_data_template
-
-	var_3_51[7511] = {
+	pg.base.transform_data_template[7511] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，航空+25",
@@ -12002,11 +10975,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.transform_data_template
-
-	var_3_52[8101] = {
+	pg.base.transform_data_template[8101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -12038,11 +11007,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.transform_data_template
-
-	var_3_53[8102] = {
+	pg.base.transform_data_template[8102] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -12076,11 +11041,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.transform_data_template
-
-	var_3_54[8103] = {
+	pg.base.transform_data_template[8103] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -12114,11 +11075,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.transform_data_template
-
-	var_3_55[8104] = {
+	pg.base.transform_data_template[8104] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -12152,11 +11109,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.transform_data_template
-
-	var_3_56[8105] = {
+	pg.base.transform_data_template[8105] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -12190,11 +11143,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.transform_data_template
-
-	var_3_57[8106] = {
+	pg.base.transform_data_template[8106] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -12228,11 +11177,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.transform_data_template
-
-	var_3_58[8107] = {
+	pg.base.transform_data_template[8107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -12276,11 +11221,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.transform_data_template
-
-	var_3_59[8108] = {
+	pg.base.transform_data_template[8108] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -12314,11 +11255,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.transform_data_template
-
-	var_3_60[8109] = {
+	pg.base.transform_data_template[8109] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -12363,11 +11300,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.transform_data_template
-
-	var_3_61[8110] = {
+	pg.base.transform_data_template[8110] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，反潜+40，防空+10\n\n改造后<color=#92fc63>【鱼雷底座-1】</color>\n改造后<color=#92fc63>【防空炮底座+1】</color>",
@@ -12408,11 +11341,7 @@ end)()
 			30
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.transform_data_template
-
-	var_3_62[8111] = {
+	pg.base.transform_data_template[8111] = {
 		level_limit = 85,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -12447,11 +11376,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.transform_data_template
-
-	var_3_63[8201] = {
+	pg.base.transform_data_template[8201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -12483,11 +11408,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.transform_data_template
-
-	var_3_64[8202] = {
+	pg.base.transform_data_template[8202] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -12521,11 +11442,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.transform_data_template
-
-	var_3_65[8203] = {
+	pg.base.transform_data_template[8203] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -12559,11 +11476,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.transform_data_template
-
-	var_3_66[8204] = {
+	pg.base.transform_data_template[8204] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -12597,11 +11510,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.transform_data_template
-
-	var_3_67[8205] = {
+	pg.base.transform_data_template[8205] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -12635,11 +11544,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.transform_data_template
-
-	var_3_68[8206] = {
+	pg.base.transform_data_template[8206] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -12673,11 +11578,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.transform_data_template
-
-	var_3_69[8207] = {
+	pg.base.transform_data_template[8207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -12721,11 +11622,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.transform_data_template
-
-	var_3_70[8208] = {
+	pg.base.transform_data_template[8208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【旗舰掩护】",
@@ -12759,11 +11656,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.transform_data_template
-
-	var_3_71[8209] = {
+	pg.base.transform_data_template[8209] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -12797,11 +11690,7 @@ end)()
 			30
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.transform_data_template
-
-	var_3_72[8210] = {
+	pg.base.transform_data_template[8210] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -12846,11 +11735,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.transform_data_template
-
-	var_3_73[8211] = {
+	pg.base.transform_data_template[8211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -12887,11 +11772,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.transform_data_template
-
-	var_3_74[8301] = {
+	pg.base.transform_data_template[8301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -12923,11 +11804,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.transform_data_template
-
-	var_3_75[8302] = {
+	pg.base.transform_data_template[8302] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -12961,11 +11838,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.transform_data_template
-
-	var_3_76[8303] = {
+	pg.base.transform_data_template[8303] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -12999,11 +11872,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.transform_data_template
-
-	var_3_77[8304] = {
+	pg.base.transform_data_template[8304] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -13037,11 +11906,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.transform_data_template
-
-	var_3_78[8305] = {
+	pg.base.transform_data_template[8305] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -13075,11 +11940,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.transform_data_template
-
-	var_3_79[8306] = {
+	pg.base.transform_data_template[8306] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -13113,11 +11974,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.transform_data_template
-
-	var_3_80[8307] = {
+	pg.base.transform_data_template[8307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -13161,11 +12018,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.transform_data_template
-
-	var_3_81[8308] = {
+	pg.base.transform_data_template[8308] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【空袭引导】",
@@ -13199,11 +12052,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.transform_data_template
-
-	var_3_82[8309] = {
+	pg.base.transform_data_template[8309] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -13237,11 +12086,7 @@ end)()
 			30
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.transform_data_template
-
-	var_3_83[8310] = {
+	pg.base.transform_data_template[8310] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -13286,11 +12131,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.transform_data_template
-
-	var_3_84[8311] = {
+	pg.base.transform_data_template[8311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -13327,11 +12168,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.transform_data_template
-
-	var_3_85[8801] = {
+	pg.base.transform_data_template[8801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -13363,11 +12200,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.transform_data_template
-
-	var_3_86[8802] = {
+	pg.base.transform_data_template[8802] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -13401,11 +12234,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.transform_data_template
-
-	var_3_87[8803] = {
+	pg.base.transform_data_template[8803] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -13439,11 +12268,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.transform_data_template
-
-	var_3_88[8804] = {
+	pg.base.transform_data_template[8804] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -13477,11 +12302,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.transform_data_template
-
-	var_3_89[8805] = {
+	pg.base.transform_data_template[8805] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -13515,11 +12336,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.transform_data_template
-
-	var_3_90[8806] = {
+	pg.base.transform_data_template[8806] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -13553,11 +12370,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.transform_data_template
-
-	var_3_91[8807] = {
+	pg.base.transform_data_template[8807] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -13601,11 +12414,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.transform_data_template
-
-	var_3_92[8808] = {
+	pg.base.transform_data_template[8808] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【烟雾弹】",
@@ -13639,11 +12448,7 @@ end)()
 			25
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.transform_data_template
-
-	var_3_93[8809] = {
+	pg.base.transform_data_template[8809] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -13678,11 +12483,7 @@ end)()
 			30
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.transform_data_template
-
-	var_3_94[8810] = {
+	pg.base.transform_data_template[8810] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -13727,11 +12528,7 @@ end)()
 			20
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.transform_data_template
-
-	var_3_95[8811] = {
+	pg.base.transform_data_template[8811] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+25，机动+20",
@@ -13767,11 +12564,7 @@ end)()
 			50
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.transform_data_template
-
-	var_3_96[8901] = {
+	pg.base.transform_data_template[8901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -13803,11 +12596,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.transform_data_template
-
-	var_3_97[8902] = {
+	pg.base.transform_data_template[8902] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -13841,11 +12630,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.transform_data_template
-
-	var_3_98[8903] = {
+	pg.base.transform_data_template[8903] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -13879,8 +12664,7 @@ end)()
 			15
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.transform_data_template[8904] = {
+	pg.base.transform_data_template[8904] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -13918,11 +12702,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.transform_data_template
-
-	var_4_0[8905] = {
+	pg.base.transform_data_template[8905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -13956,11 +12736,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.transform_data_template
-
-	var_4_1[8906] = {
+	pg.base.transform_data_template[8906] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -13994,11 +12770,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.transform_data_template
-
-	var_4_2[8907] = {
+	pg.base.transform_data_template[8907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -14042,11 +12814,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.transform_data_template
-
-	var_4_3[8908] = {
+	pg.base.transform_data_template[8908] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【烟雾弹】",
@@ -14080,11 +12848,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.transform_data_template
-
-	var_4_4[8909] = {
+	pg.base.transform_data_template[8909] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -14119,11 +12883,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.transform_data_template
-
-	var_4_5[8910] = {
+	pg.base.transform_data_template[8910] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -14168,11 +12928,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.transform_data_template
-
-	var_4_6[8911] = {
+	pg.base.transform_data_template[8911] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+30，机动+15",
@@ -14208,11 +12964,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.transform_data_template
-
-	var_4_7[9001] = {
+	pg.base.transform_data_template[9001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -14244,11 +12996,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.transform_data_template
-
-	var_4_8[9002] = {
+	pg.base.transform_data_template[9002] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -14282,11 +13030,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.transform_data_template
-
-	var_4_9[9003] = {
+	pg.base.transform_data_template[9003] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -14320,11 +13064,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.transform_data_template
-
-	var_4_10[9004] = {
+	pg.base.transform_data_template[9004] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -14358,11 +13098,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.transform_data_template
-
-	var_4_11[9005] = {
+	pg.base.transform_data_template[9005] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -14396,11 +13132,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.transform_data_template
-
-	var_4_12[9006] = {
+	pg.base.transform_data_template[9006] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -14434,11 +13166,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.transform_data_template
-
-	var_4_13[9007] = {
+	pg.base.transform_data_template[9007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -14482,11 +13210,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.transform_data_template
-
-	var_4_14[9008] = {
+	pg.base.transform_data_template[9008] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【烟雾弹】",
@@ -14520,11 +13244,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.transform_data_template
-
-	var_4_15[9009] = {
+	pg.base.transform_data_template[9009] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -14558,11 +13278,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.transform_data_template
-
-	var_4_16[9010] = {
+	pg.base.transform_data_template[9010] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -14607,11 +13323,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.transform_data_template
-
-	var_4_17[9011] = {
+	pg.base.transform_data_template[9011] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，机动+25",
@@ -14648,11 +13360,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.transform_data_template
-
-	var_4_18[9101] = {
+	pg.base.transform_data_template[9101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -14684,11 +13392,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.transform_data_template
-
-	var_4_19[9102] = {
+	pg.base.transform_data_template[9102] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -14722,11 +13426,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.transform_data_template
-
-	var_4_20[9103] = {
+	pg.base.transform_data_template[9103] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -14760,11 +13460,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.transform_data_template
-
-	var_4_21[9104] = {
+	pg.base.transform_data_template[9104] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -14798,11 +13494,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.transform_data_template
-
-	var_4_22[9105] = {
+	pg.base.transform_data_template[9105] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -14836,11 +13528,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.transform_data_template
-
-	var_4_23[9106] = {
+	pg.base.transform_data_template[9106] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -14874,11 +13562,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.transform_data_template
-
-	var_4_24[9107] = {
+	pg.base.transform_data_template[9107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -14922,11 +13606,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.transform_data_template
-
-	var_4_25[9108] = {
+	pg.base.transform_data_template[9108] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【侧翼掩护】",
@@ -14960,11 +13640,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.transform_data_template
-
-	var_4_26[9109] = {
+	pg.base.transform_data_template[9109] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -14998,11 +13674,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.transform_data_template
-
-	var_4_27[9110] = {
+	pg.base.transform_data_template[9110] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -15047,11 +13719,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.transform_data_template
-
-	var_4_28[9111] = {
+	pg.base.transform_data_template[9111] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，机动+20",
@@ -15088,11 +13756,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.transform_data_template
-
-	var_4_29[9201] = {
+	pg.base.transform_data_template[9201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -15124,11 +13788,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.transform_data_template
-
-	var_4_30[9202] = {
+	pg.base.transform_data_template[9202] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -15162,11 +13822,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.transform_data_template
-
-	var_4_31[9203] = {
+	pg.base.transform_data_template[9203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -15200,11 +13856,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.transform_data_template
-
-	var_4_32[9204] = {
+	pg.base.transform_data_template[9204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -15238,11 +13890,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.transform_data_template
-
-	var_4_33[9205] = {
+	pg.base.transform_data_template[9205] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -15276,11 +13924,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.transform_data_template
-
-	var_4_34[9206] = {
+	pg.base.transform_data_template[9206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -15314,11 +13958,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.transform_data_template
-
-	var_4_35[9207] = {
+	pg.base.transform_data_template[9207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -15362,11 +14002,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.transform_data_template
-
-	var_4_36[9208] = {
+	pg.base.transform_data_template[9208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【侧翼掩护】",
@@ -15400,11 +14036,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.transform_data_template
-
-	var_4_37[9209] = {
+	pg.base.transform_data_template[9209] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -15438,11 +14070,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.transform_data_template
-
-	var_4_38[9210] = {
+	pg.base.transform_data_template[9210] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -15487,11 +14115,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.transform_data_template
-
-	var_4_39[9211] = {
+	pg.base.transform_data_template[9211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，机动+20",
@@ -15528,11 +14152,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.transform_data_template
-
-	var_4_40[9401] = {
+	pg.base.transform_data_template[9401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -15564,11 +14184,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.transform_data_template
-
-	var_4_41[9402] = {
+	pg.base.transform_data_template[9402] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -15602,11 +14218,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.transform_data_template
-
-	var_4_42[9403] = {
+	pg.base.transform_data_template[9403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -15640,11 +14252,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.transform_data_template
-
-	var_4_43[9404] = {
+	pg.base.transform_data_template[9404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -15678,11 +14286,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.transform_data_template
-
-	var_4_44[9405] = {
+	pg.base.transform_data_template[9405] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -15716,11 +14320,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.transform_data_template
-
-	var_4_45[9406] = {
+	pg.base.transform_data_template[9406] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -15754,11 +14354,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.transform_data_template
-
-	var_4_46[9407] = {
+	pg.base.transform_data_template[9407] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -15792,11 +14388,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.transform_data_template
-
-	var_4_47[9408] = {
+	pg.base.transform_data_template[9408] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -15841,11 +14433,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.transform_data_template
-
-	var_4_48[9409] = {
+	pg.base.transform_data_template[9409] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -15889,11 +14477,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.transform_data_template
-
-	var_4_49[9410] = {
+	pg.base.transform_data_template[9410] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -15945,11 +14529,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.transform_data_template
-
-	var_4_50[9411] = {
+	pg.base.transform_data_template[9411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+25，机动+20\n改造后<color=#92fc63>【主炮底座+1】</color>",
@@ -15990,11 +14570,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.transform_data_template
-
-	var_4_51[9412] = {
+	pg.base.transform_data_template[9412] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【萤火虫突袭】",
@@ -16032,11 +14608,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.transform_data_template
-
-	var_4_52[10101] = {
+	pg.base.transform_data_template[10101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -16068,11 +14640,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.transform_data_template
-
-	var_4_53[10102] = {
+	pg.base.transform_data_template[10102] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -16106,11 +14674,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.transform_data_template
-
-	var_4_54[10103] = {
+	pg.base.transform_data_template[10103] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -16144,11 +14708,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.transform_data_template
-
-	var_4_55[10104] = {
+	pg.base.transform_data_template[10104] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -16182,11 +14742,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.transform_data_template
-
-	var_4_56[10105] = {
+	pg.base.transform_data_template[10105] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -16220,11 +14776,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.transform_data_template
-
-	var_4_57[10106] = {
+	pg.base.transform_data_template[10106] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -16258,11 +14810,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.transform_data_template
-
-	var_4_58[10107] = {
+	pg.base.transform_data_template[10107] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -16296,11 +14844,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.transform_data_template
-
-	var_4_59[10108] = {
+	pg.base.transform_data_template[10108] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -16345,11 +14889,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.transform_data_template
-
-	var_4_60[10109] = {
+	pg.base.transform_data_template[10109] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -16393,11 +14933,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.transform_data_template
-
-	var_4_61[10110] = {
+	pg.base.transform_data_template[10110] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -16449,11 +14985,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.transform_data_template
-
-	var_4_62[10111] = {
+	pg.base.transform_data_template[10111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+25，机动+20",
@@ -16489,11 +15021,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.transform_data_template
-
-	var_4_63[10112] = {
+	pg.base.transform_data_template[10112] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【强袭模式·EX】",
@@ -16531,11 +15059,7 @@ end)()
 			30
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.transform_data_template
-
-	var_4_64[10401] = {
+	pg.base.transform_data_template[10401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -16567,11 +15091,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.transform_data_template
-
-	var_4_65[10402] = {
+	pg.base.transform_data_template[10402] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -16605,11 +15125,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.transform_data_template
-
-	var_4_66[10403] = {
+	pg.base.transform_data_template[10403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -16643,11 +15159,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.transform_data_template
-
-	var_4_67[10404] = {
+	pg.base.transform_data_template[10404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -16681,11 +15193,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.transform_data_template
-
-	var_4_68[10405] = {
+	pg.base.transform_data_template[10405] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -16719,11 +15227,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.transform_data_template
-
-	var_4_69[10406] = {
+	pg.base.transform_data_template[10406] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -16757,11 +15261,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.transform_data_template
-
-	var_4_70[10407] = {
+	pg.base.transform_data_template[10407] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -16805,11 +15305,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.transform_data_template
-
-	var_4_71[10408] = {
+	pg.base.transform_data_template[10408] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【烟雾弹】",
@@ -16843,11 +15339,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.transform_data_template
-
-	var_4_72[10409] = {
+	pg.base.transform_data_template[10409] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -16892,11 +15384,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.transform_data_template
-
-	var_4_73[10410] = {
+	pg.base.transform_data_template[10410] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -16941,11 +15429,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.transform_data_template
-
-	var_4_74[10411] = {
+	pg.base.transform_data_template[10411] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -16981,11 +15465,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.transform_data_template
-
-	var_4_75[10501] = {
+	pg.base.transform_data_template[10501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -17017,11 +15497,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.transform_data_template
-
-	var_4_76[10502] = {
+	pg.base.transform_data_template[10502] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -17055,11 +15531,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.transform_data_template
-
-	var_4_77[10503] = {
+	pg.base.transform_data_template[10503] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -17093,11 +15565,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.transform_data_template
-
-	var_4_78[10504] = {
+	pg.base.transform_data_template[10504] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -17131,11 +15599,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.transform_data_template
-
-	var_4_79[10505] = {
+	pg.base.transform_data_template[10505] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -17169,11 +15633,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.transform_data_template
-
-	var_4_80[10506] = {
+	pg.base.transform_data_template[10506] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -17207,11 +15667,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.transform_data_template
-
-	var_4_81[10507] = {
+	pg.base.transform_data_template[10507] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -17255,11 +15711,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.transform_data_template
-
-	var_4_82[10508] = {
+	pg.base.transform_data_template[10508] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【巨兽猎手】",
@@ -17293,11 +15745,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.transform_data_template
-
-	var_4_83[10509] = {
+	pg.base.transform_data_template[10509] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -17342,11 +15790,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.transform_data_template
-
-	var_4_84[10510] = {
+	pg.base.transform_data_template[10510] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -17391,11 +15835,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.transform_data_template
-
-	var_4_85[10511] = {
+	pg.base.transform_data_template[10511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -17431,11 +15871,7 @@ end)()
 			50
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.transform_data_template
-
-	var_4_86[10601] = {
+	pg.base.transform_data_template[10601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -17467,11 +15903,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.transform_data_template
-
-	var_4_87[10602] = {
+	pg.base.transform_data_template[10602] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -17505,11 +15937,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.transform_data_template
-
-	var_4_88[10603] = {
+	pg.base.transform_data_template[10603] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -17543,11 +15971,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.transform_data_template
-
-	var_4_89[10604] = {
+	pg.base.transform_data_template[10604] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -17581,11 +16005,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.transform_data_template
-
-	var_4_90[10605] = {
+	pg.base.transform_data_template[10605] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -17619,11 +16039,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.transform_data_template
-
-	var_4_91[10606] = {
+	pg.base.transform_data_template[10606] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -17657,11 +16073,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.transform_data_template
-
-	var_4_92[10607] = {
+	pg.base.transform_data_template[10607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -17705,11 +16117,7 @@ end)()
 			15
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.transform_data_template
-
-	var_4_93[10608] = {
+	pg.base.transform_data_template[10608] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【巨兽猎手】",
@@ -17743,11 +16151,7 @@ end)()
 			25
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.transform_data_template
-
-	var_4_94[10609] = {
+	pg.base.transform_data_template[10609] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -17792,11 +16196,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.transform_data_template
-
-	var_4_95[10610] = {
+	pg.base.transform_data_template[10610] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -17841,11 +16241,7 @@ end)()
 			20
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.transform_data_template
-
-	var_4_96[10611] = {
+	pg.base.transform_data_template[10611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -17881,11 +16277,508 @@ end)()
 			50
 		}
 	}
-	pg = var_4_96
+	pg.base.transform_data_template[11501] = {
+		level_limit = 1,
+		name = "舰体改良I",
+		descrip = "耐久+45",
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 1,
+		star_limit = 3,
+		icon = "hp_1",
+		skill_id = 0,
+		use_gold = 600,
+		id = 11501,
+		condition_id = {},
+		effect = {
+			{
+				durability = 45
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18012,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10
+		}
+	}
+	pg.base.transform_data_template[11502] = {
+		level_limit = 5,
+		name = "机动强化I",
+		descrip = "机动+5",
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 3,
+		icon = "dd_1",
+		skill_id = 0,
+		use_gold = 800,
+		id = 11502,
+		condition_id = {
+			11501
+		},
+		effect = {
+			{
+				dodge = 5
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18012,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10
+		}
+	}
+	pg.base.transform_data_template[11503] = {
+		level_limit = 20,
+		name = "主炮改良I",
+		descrip = "主炮武器效率+5%",
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 4,
+		icon = "mgup_1",
+		skill_id = 0,
+		use_gold = 1000,
+		id = 11503,
+		condition_id = {
+			11501
+		},
+		effect = {
+			{
+				equipment_proficiency_1 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18012,
+					3
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	}
 
-	local var_4_97 = var_4_96.base.transform_data_template
-
-	var_4_97[11901] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[11504] = {
+		level_limit = 25,
+		name = "炮击强化I",
+		descrip = "炮击+10",
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 4,
+		icon = "cn_1",
+		skill_id = 0,
+		use_gold = 1500,
+		id = 11504,
+		condition_id = {
+			11503
+		},
+		effect = {
+			{
+				cannon = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18012,
+					3
+				}
+			}
+		},
+		gear_score = {
+			15
+		}
+	}
+	pg.base.transform_data_template[11505] = {
+		level_limit = 35,
+		name = "舰体改良II",
+		descrip = "耐久+45/耐久+75",
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 5,
+		icon = "hp_2",
+		skill_id = 0,
+		use_gold = 1800,
+		id = 11505,
+		condition_id = {
+			11503
+		},
+		effect = {
+			{
+				durability = 45
+			},
+			{
+				durability = 75
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18012,
+					2
+				}
+			},
+			{
+				{
+					18012,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10,
+			10
+		}
+	}
+	pg.base.transform_data_template[11506] = {
+		level_limit = 40,
+		name = "机动强化II",
+		descrip = "机动+5/机动+10",
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 5,
+		icon = "dd_2",
+		skill_id = 0,
+		use_gold = 2000,
+		id = 11506,
+		condition_id = {
+			11502,
+			11505
+		},
+		effect = {
+			{
+				dodge = 5
+			},
+			{
+				dodge = 10
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18012,
+					2
+				}
+			},
+			{
+				{
+					18012,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10,
+			10
+		}
+	}
+	pg.base.transform_data_template[11507] = {
+		level_limit = 50,
+		name = "主炮改良II",
+		descrip = "主炮武器效率+5%/主炮武器效率+5%",
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 5,
+		icon = "mgup_2",
+		skill_id = 0,
+		use_gold = 2500,
+		id = 11507,
+		condition_id = {
+			11505
+		},
+		effect = {
+			{
+				equipment_proficiency_1 = 0.05
+			},
+			{
+				equipment_proficiency_1 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18013,
+					1
+				}
+			},
+			{
+				{
+					18013,
+					1
+				}
+			}
+		},
+		gear_score = {
+			10,
+			15
+		}
+	}
+	pg.base.transform_data_template[11508] = {
+		level_limit = 55,
+		name = "炮击强化II",
+		descrip = "炮击+5/炮击+15",
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 5,
+		icon = "cn_2",
+		skill_id = 0,
+		use_gold = 3000,
+		id = 11508,
+		condition_id = {
+			11507
+		},
+		effect = {
+			{
+				cannon = 5
+			},
+			{
+				cannon = 15
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18013,
+					1
+				}
+			},
+			{
+				{
+					18013,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10,
+			15
+		}
+	}
+	pg.base.transform_data_template[11509] = {
+		level_limit = 70,
+		name = "主炮改良II",
+		descrip = "主炮武器效率+5%/主炮武器效率+5%",
+		max_level = 2,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 6,
+		icon = "mgup_2",
+		skill_id = 0,
+		use_gold = 4000,
+		id = 11509,
+		condition_id = {
+			11507
+		},
+		effect = {
+			{
+				equipment_proficiency_1 = 0.05
+			},
+			{
+				equipment_proficiency_1 = 0.05
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18013,
+					2
+				}
+			},
+			{
+				{
+					18013,
+					2
+				}
+			}
+		},
+		gear_score = {
+			10,
+			20
+		}
+	}
+	pg.base.transform_data_template[11510] = {
+		level_limit = 75,
+		name = "炮击强化III",
+		descrip = "炮击+5/炮击+10/炮击+15",
+		max_level = 3,
+		skin_id = 0,
+		use_ship = 0,
+		star_limit = 6,
+		icon = "Cn_3",
+		skill_id = 0,
+		use_gold = 5000,
+		id = 11510,
+		condition_id = {
+			11504,
+			11509
+		},
+		effect = {
+			{
+				cannon = 5
+			},
+			{
+				cannon = 10
+			},
+			{
+				cannon = 15
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18013,
+					1
+				},
+				{
+					17013,
+					10
+				}
+			},
+			{
+				{
+					18013,
+					2
+				},
+				{
+					17013,
+					20
+				}
+			},
+			{
+				{
+					18013,
+					3
+				},
+				{
+					17013,
+					30
+				}
+			}
+		},
+		gear_score = {
+			5,
+			10,
+			15
+		}
+	}
+	pg.base.transform_data_template[11511] = {
+		level_limit = 85,
+		name = "近代化改造",
+		descrip = "近代化改造完成，防空+60\n改造后，主炮底座+1、鱼雷预装填+1、防空炮底座+1\n<color=#92fc63>【烟雾弹·轻巡】</color>技能将升级为<color=#92fc63>【烟雾弹·贝尔法斯特】</color>\n技能<color=#92fc63>【专属弹幕-贝尔法斯特II】</color>将升级为<color=#92fc63>【专属弹幕-贝尔法斯特III】</color>\n武器效率调整为130%/155%/120%",
+		max_level = 1,
+		skin_id = 202129,
+		use_ship = 1,
+		star_limit = 6,
+		icon = "mt_red",
+		skill_id = 0,
+		use_gold = 7500,
+		id = 11511,
+		condition_id = {
+			11509,
+			11510
+		},
+		effect = {
+			{
+				antiaircraft = 60
+			}
+		},
+		ship_id = {
+			{
+				202124,
+				202994
+			}
+		},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					59860,
+					1
+				}
+			}
+		},
+		gear_score = {
+			50
+		}
+	}
+	pg.base.transform_data_template[11512] = {
+		level_limit = 90,
+		name = "战术启发",
+		descrip = "习得技能【值得信赖的完美女仆】",
+		max_level = 1,
+		skin_id = 0,
+		use_ship = 1,
+		star_limit = 6,
+		icon = "skill_red",
+		skill_id = 152650,
+		use_gold = 5000,
+		id = 11512,
+		condition_id = {
+			11508,
+			11511
+		},
+		effect = {
+			{
+				skill_id = 152650
+			}
+		},
+		ship_id = {},
+		edit_trans = {},
+		use_item = {
+			{
+				{
+					18013,
+					5
+				}
+			}
+		},
+		gear_score = {
+			30
+		}
+	}
+	pg.base.transform_data_template[11901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -17917,11 +16810,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.transform_data_template
-
-	var_4_98[11902] = {
+	pg.base.transform_data_template[11902] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -17955,8 +16844,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.transform_data_template[11903] = {
+	pg.base.transform_data_template[11903] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -17990,15 +16878,7 @@ end)()
 			15
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.transform_data_template
-
-	var_5_0[11904] = {
+	pg.base.transform_data_template[11904] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -18032,11 +16912,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.transform_data_template
-
-	var_5_1[11905] = {
+	pg.base.transform_data_template[11905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -18070,11 +16946,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.transform_data_template
-
-	var_5_2[11906] = {
+	pg.base.transform_data_template[11906] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -18108,11 +16980,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.transform_data_template
-
-	var_5_3[11907] = {
+	pg.base.transform_data_template[11907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -18156,11 +17024,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.transform_data_template
-
-	var_5_4[11908] = {
+	pg.base.transform_data_template[11908] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -18205,11 +17069,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.transform_data_template
-
-	var_5_5[11909] = {
+	pg.base.transform_data_template[11909] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -18253,11 +17113,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.transform_data_template
-
-	var_5_6[11910] = {
+	pg.base.transform_data_template[11910] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -18310,11 +17166,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.transform_data_template
-
-	var_5_7[11911] = {
+	pg.base.transform_data_template[11911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+30，命中+15\n\n改造后<color=#92fc63>【鱼雷】</color>栏位变更为<color=#92fc63>【副武器】</color>栏位，增加可装备武器类型<color=#92fc63>【副炮】</color>，改造后<color=#92fc63>【副武器】底座-1</color>",
@@ -18355,11 +17207,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.transform_data_template
-
-	var_5_8[11912] = {
+	pg.base.transform_data_template[11912] = {
 		level_limit = 85,
 		name = "战术启发",
 		descrip = "习得技能【Londinium】",
@@ -18397,11 +17245,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.transform_data_template
-
-	var_5_9[12001] = {
+	pg.base.transform_data_template[12001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -18433,11 +17277,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.transform_data_template
-
-	var_5_10[12002] = {
+	pg.base.transform_data_template[12002] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -18471,11 +17311,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.transform_data_template
-
-	var_5_11[12003] = {
+	pg.base.transform_data_template[12003] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -18509,11 +17345,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.transform_data_template
-
-	var_5_12[12004] = {
+	pg.base.transform_data_template[12004] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -18547,11 +17379,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.transform_data_template
-
-	var_5_13[12005] = {
+	pg.base.transform_data_template[12005] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -18585,11 +17413,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.transform_data_template
-
-	var_5_14[12006] = {
+	pg.base.transform_data_template[12006] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -18623,11 +17447,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.transform_data_template
-
-	var_5_15[12007] = {
+	pg.base.transform_data_template[12007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -18671,11 +17491,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.transform_data_template
-
-	var_5_16[12008] = {
+	pg.base.transform_data_template[12008] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【炮术指挥·先锋】",
@@ -18709,11 +17525,7 @@ end)()
 			25
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.transform_data_template
-
-	var_5_17[12009] = {
+	pg.base.transform_data_template[12009] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -18757,11 +17569,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.transform_data_template
-
-	var_5_18[12010] = {
+	pg.base.transform_data_template[12010] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -18806,11 +17614,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.transform_data_template
-
-	var_5_19[12011] = {
+	pg.base.transform_data_template[12011] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，雷击+20\n\n改造后<color=#92fc63>【鱼雷】</color>栏位变更为<color=#92fc63>【副武器】</color>栏位，增加可装备武器类型<color=#92fc63>【副炮】</color>，改造后<color=#92fc63>【副武器】底座-1</color>",
@@ -18852,11 +17656,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.transform_data_template
-
-	var_5_20[12201] = {
+	pg.base.transform_data_template[12201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -18888,11 +17688,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.transform_data_template
-
-	var_5_21[12202] = {
+	pg.base.transform_data_template[12202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -18926,11 +17722,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.transform_data_template
-
-	var_5_22[12203] = {
+	pg.base.transform_data_template[12203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -18964,11 +17756,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.transform_data_template
-
-	var_5_23[12204] = {
+	pg.base.transform_data_template[12204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -19002,11 +17790,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.transform_data_template
-
-	var_5_24[12205] = {
+	pg.base.transform_data_template[12205] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -19040,11 +17824,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.transform_data_template
-
-	var_5_25[12206] = {
+	pg.base.transform_data_template[12206] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -19078,11 +17858,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.transform_data_template
-
-	var_5_26[12207] = {
+	pg.base.transform_data_template[12207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -19126,11 +17902,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.transform_data_template
-
-	var_5_27[12208] = {
+	pg.base.transform_data_template[12208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【火力全开】",
@@ -19164,11 +17936,7 @@ end)()
 			25
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.transform_data_template
-
-	var_5_28[12209] = {
+	pg.base.transform_data_template[12209] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -19212,11 +17980,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.transform_data_template
-
-	var_5_29[12210] = {
+	pg.base.transform_data_template[12210] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -19261,11 +18025,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.transform_data_template
-
-	var_5_30[12211] = {
+	pg.base.transform_data_template[12211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，雷击+20",
@@ -19302,11 +18062,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.transform_data_template
-
-	var_5_31[12501] = {
+	pg.base.transform_data_template[12501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -19338,11 +18094,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.transform_data_template
-
-	var_5_32[12502] = {
+	pg.base.transform_data_template[12502] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -19376,11 +18128,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.transform_data_template
-
-	var_5_33[12503] = {
+	pg.base.transform_data_template[12503] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -19414,11 +18162,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.transform_data_template
-
-	var_5_34[12504] = {
+	pg.base.transform_data_template[12504] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -19452,11 +18196,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.transform_data_template
-
-	var_5_35[12505] = {
+	pg.base.transform_data_template[12505] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -19490,11 +18230,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.transform_data_template
-
-	var_5_36[12506] = {
+	pg.base.transform_data_template[12506] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -19528,11 +18264,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.transform_data_template
-
-	var_5_37[12507] = {
+	pg.base.transform_data_template[12507] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -19576,11 +18308,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.transform_data_template
-
-	var_5_38[12508] = {
+	pg.base.transform_data_template[12508] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -19625,11 +18353,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.transform_data_template
-
-	var_5_39[12509] = {
+	pg.base.transform_data_template[12509] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -19673,11 +18397,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.transform_data_template
-
-	var_5_40[12510] = {
+	pg.base.transform_data_template[12510] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -19730,11 +18450,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.transform_data_template
-
-	var_5_41[12511] = {
+	pg.base.transform_data_template[12511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+30，装填+15",
@@ -19770,11 +18486,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.transform_data_template
-
-	var_5_42[12512] = {
+	pg.base.transform_data_template[12512] = {
 		level_limit = 85,
 		name = "战术启发",
 		descrip = "习得技能【Terror Field】",
@@ -19812,11 +18524,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.transform_data_template
-
-	var_5_43[12601] = {
+	pg.base.transform_data_template[12601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -19848,11 +18556,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.transform_data_template
-
-	var_5_44[12602] = {
+	pg.base.transform_data_template[12602] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -19886,11 +18590,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.transform_data_template
-
-	var_5_45[12603] = {
+	pg.base.transform_data_template[12603] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -19924,11 +18624,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.transform_data_template
-
-	var_5_46[12604] = {
+	pg.base.transform_data_template[12604] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -19962,11 +18658,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.transform_data_template
-
-	var_5_47[12605] = {
+	pg.base.transform_data_template[12605] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -20000,11 +18692,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.transform_data_template
-
-	var_5_48[12606] = {
+	pg.base.transform_data_template[12606] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+5",
@@ -20038,11 +18726,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.transform_data_template
-
-	var_5_49[12607] = {
+	pg.base.transform_data_template[12607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -20086,11 +18770,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.transform_data_template
-
-	var_5_50[12608] = {
+	pg.base.transform_data_template[12608] = {
 		level_limit = 55,
 		name = "命中强化II",
 		descrip = "命中+5",
@@ -20125,11 +18805,7 @@ end)()
 			25
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.transform_data_template
-
-	var_5_51[12609] = {
+	pg.base.transform_data_template[12609] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -20173,11 +18849,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.transform_data_template
-
-	var_5_52[12610] = {
+	pg.base.transform_data_template[12610] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -20229,11 +18901,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.transform_data_template
-
-	var_5_53[12611] = {
+	pg.base.transform_data_template[12611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+30，命中+15",
@@ -20269,11 +18937,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.transform_data_template
-
-	var_5_54[12612] = {
+	pg.base.transform_data_template[12612] = {
 		level_limit = 85,
 		name = "战术启发",
 		descrip = "习得技能【巨兽猎手】",
@@ -20311,11 +18975,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.transform_data_template
-
-	var_5_55[13101] = {
+	pg.base.transform_data_template[13101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -20347,11 +19007,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.transform_data_template
-
-	var_5_56[13102] = {
+	pg.base.transform_data_template[13102] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -20385,11 +19041,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.transform_data_template
-
-	var_5_57[13103] = {
+	pg.base.transform_data_template[13103] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -20423,11 +19075,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.transform_data_template
-
-	var_5_58[13104] = {
+	pg.base.transform_data_template[13104] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -20461,11 +19109,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.transform_data_template
-
-	var_5_59[13105] = {
+	pg.base.transform_data_template[13105] = {
 		level_limit = 35,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -20509,11 +19153,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.transform_data_template
-
-	var_5_60[13106] = {
+	pg.base.transform_data_template[13106] = {
 		level_limit = 40,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -20558,11 +19198,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.transform_data_template
-
-	var_5_61[13107] = {
+	pg.base.transform_data_template[13107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -20614,11 +19250,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.transform_data_template
-
-	var_5_62[13108] = {
+	pg.base.transform_data_template[13108] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -20663,11 +19295,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.transform_data_template
-
-	var_5_63[13109] = {
+	pg.base.transform_data_template[13109] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -20711,11 +19339,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.transform_data_template
-
-	var_5_64[13110] = {
+	pg.base.transform_data_template[13110] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -20768,11 +19392,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.transform_data_template
-
-	var_5_65[13111] = {
+	pg.base.transform_data_template[13111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n改造后<color=#92fc63>第一个【设备】</color>栏位增加可装备设备类型<color=#92fc63>【反潜机】</color>\n改造后解锁<color=#92fc63>【反潜】</color>属性\n改造后<color=#92fc63>【神射手】</color>技能将升级为<color=#92fc63>【神射手·改】</color>",
@@ -20813,11 +19433,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.transform_data_template
-
-	var_5_66[13112] = {
+	pg.base.transform_data_template[13112] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【皇家传奇】",
@@ -20851,11 +19467,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.transform_data_template
-
-	var_5_67[13201] = {
+	pg.base.transform_data_template[13201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -20887,11 +19499,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.transform_data_template
-
-	var_5_68[13202] = {
+	pg.base.transform_data_template[13202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -20925,11 +19533,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.transform_data_template
-
-	var_5_69[13203] = {
+	pg.base.transform_data_template[13203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -20963,11 +19567,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.transform_data_template
-
-	var_5_70[13204] = {
+	pg.base.transform_data_template[13204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -21001,11 +19601,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.transform_data_template
-
-	var_5_71[13205] = {
+	pg.base.transform_data_template[13205] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -21039,11 +19635,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.transform_data_template
-
-	var_5_72[13206] = {
+	pg.base.transform_data_template[13206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -21077,11 +19669,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.transform_data_template
-
-	var_5_73[13207] = {
+	pg.base.transform_data_template[13207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -21125,11 +19713,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.transform_data_template
-
-	var_5_74[13208] = {
+	pg.base.transform_data_template[13208] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -21174,11 +19758,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.transform_data_template
-
-	var_5_75[13209] = {
+	pg.base.transform_data_template[13209] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -21222,11 +19802,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.transform_data_template
-
-	var_5_76[13210] = {
+	pg.base.transform_data_template[13210] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -21279,11 +19855,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.transform_data_template
-
-	var_5_77[13211] = {
+	pg.base.transform_data_template[13211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，命中+25\n改造后技能【BIG SEVEN】升级为【BIG SEVEN·纳尔逊】",
@@ -21324,11 +19896,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.transform_data_template
-
-	var_5_78[13212] = {
+	pg.base.transform_data_template[13212] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【Engage the enemy more closely】",
@@ -21366,11 +19934,7 @@ end)()
 			30
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.transform_data_template
-
-	var_5_79[14001] = {
+	pg.base.transform_data_template[14001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -21402,11 +19966,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.transform_data_template
-
-	var_5_80[14002] = {
+	pg.base.transform_data_template[14002] = {
 		level_limit = 5,
 		name = "航空强化I",
 		descrip = "",
@@ -21440,11 +20000,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.transform_data_template
-
-	var_5_81[14003] = {
+	pg.base.transform_data_template[14003] = {
 		level_limit = 20,
 		name = "鱼雷俯冲I",
 		descrip = "轰炸机机武器效率+5%",
@@ -21479,11 +20035,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.transform_data_template
-
-	var_5_82[14004] = {
+	pg.base.transform_data_template[14004] = {
 		level_limit = 25,
 		name = "装填强化I",
 		descrip = "",
@@ -21517,11 +20069,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.transform_data_template
-
-	var_5_83[14005] = {
+	pg.base.transform_data_template[14005] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -21555,11 +20103,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.transform_data_template
-
-	var_5_84[14006] = {
+	pg.base.transform_data_template[14006] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -21593,11 +20137,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.transform_data_template
-
-	var_5_85[14007] = {
+	pg.base.transform_data_template[14007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -21641,11 +20181,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.transform_data_template
-
-	var_5_86[14008] = {
+	pg.base.transform_data_template[14008] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【Destiny Draw!】",
@@ -21679,11 +20215,7 @@ end)()
 			25
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.transform_data_template
-
-	var_5_87[14009] = {
+	pg.base.transform_data_template[14009] = {
 		level_limit = 70,
 		name = "鱼雷俯冲II",
 		descrip = "轰炸机武器效率+5%/轰炸机武器效率+5%",
@@ -21730,11 +20262,11 @@ end)()
 			20
 		}
 	}
-	pg = var_5_87
 
-	local var_5_88 = var_5_87.base.transform_data_template
-
-	var_5_88[14010] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[14010] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "",
@@ -21779,11 +20311,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.transform_data_template
-
-	var_5_89[14011] = {
+	pg.base.transform_data_template[14011] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，航空+10",
@@ -21819,11 +20347,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.transform_data_template
-
-	var_5_90[14201] = {
+	pg.base.transform_data_template[14201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -21855,11 +20379,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.transform_data_template
-
-	var_5_91[14202] = {
+	pg.base.transform_data_template[14202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -21893,11 +20413,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.transform_data_template
-
-	var_5_92[14203] = {
+	pg.base.transform_data_template[14203] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "战斗机武器效率+5%",
@@ -21931,11 +20447,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.transform_data_template
-
-	var_5_93[14204] = {
+	pg.base.transform_data_template[14204] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -21969,11 +20481,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.transform_data_template
-
-	var_5_94[14205] = {
+	pg.base.transform_data_template[14205] = {
 		level_limit = 35,
 		name = "鱼雷俯冲I",
 		descrip = "鱼雷机武器效率+5%",
@@ -22007,11 +20515,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.transform_data_template
-
-	var_5_95[14206] = {
+	pg.base.transform_data_template[14206] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -22045,11 +20549,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.transform_data_template
-
-	var_5_96[14207] = {
+	pg.base.transform_data_template[14207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -22093,11 +20593,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.transform_data_template
-
-	var_5_97[14208] = {
+	pg.base.transform_data_template[14208] = {
 		level_limit = 55,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -22132,11 +20628,7 @@ end)()
 			20
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.transform_data_template
-
-	var_5_98[14209] = {
+	pg.base.transform_data_template[14209] = {
 		level_limit = 70,
 		name = "空战精通II",
 		descrip = "战斗机武器效率+5%/战斗机武器效率+5%",
@@ -22180,8 +20672,7 @@ end)()
 			15
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.transform_data_template[14210] = {
+	pg.base.transform_data_template[14210] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+5/防空+15",
@@ -22233,15 +20724,7 @@ end)()
 			15
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.transform_data_template
-
-	var_6_0[14211] = {
+	pg.base.transform_data_template[14211] = {
 		level_limit = 85,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -22294,11 +20777,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.transform_data_template
-
-	var_6_1[14212] = {
+	pg.base.transform_data_template[14212] = {
 		level_limit = 90,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，航空+10\n改造后<color=#92fc63>【所有战斗机+1】</color>\n<color=#92fc63>【支援空母】</color>技能\n将升级为<color=#92fc63>【独角兽的应援】</color>",
@@ -22338,11 +20817,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.transform_data_template
-
-	var_6_2[14401] = {
+	pg.base.transform_data_template[14401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -22374,11 +20849,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.transform_data_template
-
-	var_6_3[14402] = {
+	pg.base.transform_data_template[14402] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -22412,11 +20883,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.transform_data_template
-
-	var_6_4[14403] = {
+	pg.base.transform_data_template[14403] = {
 		level_limit = 20,
 		name = "轰炸精通I",
 		descrip = "轰炸机武器效率+5%",
@@ -22450,11 +20917,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.transform_data_template
-
-	var_6_5[14404] = {
+	pg.base.transform_data_template[14404] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -22488,11 +20951,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.transform_data_template
-
-	var_6_6[14405] = {
+	pg.base.transform_data_template[14405] = {
 		level_limit = 35,
 		name = "鱼雷俯冲I",
 		descrip = "鱼雷机武器效率+3%",
@@ -22527,11 +20986,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.transform_data_template
-
-	var_6_7[14406] = {
+	pg.base.transform_data_template[14406] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -22565,11 +21020,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.transform_data_template
-
-	var_6_8[14407] = {
+	pg.base.transform_data_template[14407] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -22613,11 +21064,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.transform_data_template
-
-	var_6_9[14408] = {
+	pg.base.transform_data_template[14408] = {
 		level_limit = 55,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -22652,11 +21099,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.transform_data_template
-
-	var_6_10[14409] = {
+	pg.base.transform_data_template[14409] = {
 		level_limit = 70,
 		name = "轰炸精通II",
 		descrip = "轰炸机武器效率+5%/轰炸机武器效率+5%",
@@ -22700,11 +21143,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.transform_data_template
-
-	var_6_11[14410] = {
+	pg.base.transform_data_template[14410] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -22756,11 +21195,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.transform_data_template
-
-	var_6_12[14411] = {
+	pg.base.transform_data_template[14411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，装填+10",
@@ -22796,11 +21231,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.transform_data_template
-
-	var_6_13[14412] = {
+	pg.base.transform_data_template[14412] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -22838,11 +21269,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.transform_data_template
-
-	var_6_14[15501] = {
+	pg.base.transform_data_template[15501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -22874,11 +21301,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.transform_data_template
-
-	var_6_15[15502] = {
+	pg.base.transform_data_template[15502] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -22912,11 +21335,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.transform_data_template
-
-	var_6_16[15503] = {
+	pg.base.transform_data_template[15503] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -22950,11 +21369,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.transform_data_template
-
-	var_6_17[15504] = {
+	pg.base.transform_data_template[15504] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -22988,11 +21403,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.transform_data_template
-
-	var_6_18[15505] = {
+	pg.base.transform_data_template[15505] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -23026,11 +21437,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.transform_data_template
-
-	var_6_19[15506] = {
+	pg.base.transform_data_template[15506] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -23064,11 +21471,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.transform_data_template
-
-	var_6_20[15507] = {
+	pg.base.transform_data_template[15507] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -23102,11 +21505,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.transform_data_template
-
-	var_6_21[15508] = {
+	pg.base.transform_data_template[15508] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -23151,11 +21550,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.transform_data_template
-
-	var_6_22[15509] = {
+	pg.base.transform_data_template[15509] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -23199,11 +21594,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.transform_data_template
-
-	var_6_23[15510] = {
+	pg.base.transform_data_template[15510] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -23256,11 +21647,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.transform_data_template
-
-	var_6_24[15511] = {
+	pg.base.transform_data_template[15511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -23296,11 +21683,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.transform_data_template
-
-	var_6_25[15512] = {
+	pg.base.transform_data_template[15512] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【鬼神演舞】",
@@ -23339,11 +21722,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.transform_data_template
-
-	var_6_26[16301] = {
+	pg.base.transform_data_template[16301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -23375,11 +21754,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.transform_data_template
-
-	var_6_27[16302] = {
+	pg.base.transform_data_template[16302] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -23413,11 +21788,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.transform_data_template
-
-	var_6_28[16303] = {
+	pg.base.transform_data_template[16303] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -23451,11 +21822,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.transform_data_template
-
-	var_6_29[16304] = {
+	pg.base.transform_data_template[16304] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -23489,11 +21856,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.transform_data_template
-
-	var_6_30[16305] = {
+	pg.base.transform_data_template[16305] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -23527,11 +21890,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.transform_data_template
-
-	var_6_31[16306] = {
+	pg.base.transform_data_template[16306] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -23565,11 +21924,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.transform_data_template
-
-	var_6_32[16307] = {
+	pg.base.transform_data_template[16307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -23613,11 +21968,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.transform_data_template
-
-	var_6_33[16308] = {
+	pg.base.transform_data_template[16308] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【可靠的{namecode:15}】",
@@ -23651,11 +22002,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.transform_data_template
-
-	var_6_34[16309] = {
+	pg.base.transform_data_template[16309] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -23689,11 +22036,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.transform_data_template
-
-	var_6_35[16310] = {
+	pg.base.transform_data_template[16310] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -23738,11 +22081,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.transform_data_template
-
-	var_6_36[16311] = {
+	pg.base.transform_data_template[16311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，防空+15\n\n改造后<color=#92fc63>【防空炮底座+1】</color> ，<color=#92fc63>防空炮效率+40%</color> ",
@@ -23784,11 +22123,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.transform_data_template
-
-	var_6_37[16401] = {
+	pg.base.transform_data_template[16401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -23820,11 +22155,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.transform_data_template
-
-	var_6_38[16402] = {
+	pg.base.transform_data_template[16402] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+5",
@@ -23858,11 +22189,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.transform_data_template
-
-	var_6_39[16403] = {
+	pg.base.transform_data_template[16403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -23896,11 +22223,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.transform_data_template
-
-	var_6_40[16404] = {
+	pg.base.transform_data_template[16404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -23934,11 +22257,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.transform_data_template
-
-	var_6_41[16405] = {
+	pg.base.transform_data_template[16405] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -23982,11 +22301,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.transform_data_template
-
-	var_6_42[16406] = {
+	pg.base.transform_data_template[16406] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -24031,11 +22346,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.transform_data_template
-
-	var_6_43[16407] = {
+	pg.base.transform_data_template[16407] = {
 		level_limit = 50,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -24079,11 +22390,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.transform_data_template
-
-	var_6_44[16408] = {
+	pg.base.transform_data_template[16408] = {
 		level_limit = 55,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+10",
@@ -24127,11 +22434,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.transform_data_template
-
-	var_6_45[16409] = {
+	pg.base.transform_data_template[16409] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -24175,11 +22478,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.transform_data_template
-
-	var_6_46[16410] = {
+	pg.base.transform_data_template[16410] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -24246,11 +22545,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.transform_data_template
-
-	var_6_47[16411] = {
+	pg.base.transform_data_template[16411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+20，机动+25\n\n改造后<color=#92fc63>【鱼雷底座-1】</color> <color=#92fc63>【主炮底座+1】</color>\n技能<color=#92fc63>【所罗门的噩梦】</color>将升级为<color=#92fc63>【所罗门的噩梦.改】</color>\n技能<color=#92fc63>【专属弹幕-{namecode:16}II】</color>将升级为<color=#92fc63>【专属弹幕-{namecode:16}III】</color>",
@@ -24290,11 +22585,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.transform_data_template
-
-	var_6_48[16412] = {
+	pg.base.transform_data_template[16412] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【焰舞之爪】",
@@ -24332,11 +22623,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.transform_data_template
-
-	var_6_49[16501] = {
+	pg.base.transform_data_template[16501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -24368,11 +22655,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.transform_data_template
-
-	var_6_50[16502] = {
+	pg.base.transform_data_template[16502] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -24406,11 +22689,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.transform_data_template
-
-	var_6_51[16503] = {
+	pg.base.transform_data_template[16503] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -24444,11 +22723,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.transform_data_template
-
-	var_6_52[16504] = {
+	pg.base.transform_data_template[16504] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -24482,11 +22757,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.transform_data_template
-
-	var_6_53[16505] = {
+	pg.base.transform_data_template[16505] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -24530,11 +22801,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.transform_data_template
-
-	var_6_54[16506] = {
+	pg.base.transform_data_template[16506] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -24579,11 +22846,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.transform_data_template
-
-	var_6_55[16507] = {
+	pg.base.transform_data_template[16507] = {
 		level_limit = 50,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -24627,11 +22890,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.transform_data_template
-
-	var_6_56[16508] = {
+	pg.base.transform_data_template[16508] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -24675,11 +22934,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.transform_data_template
-
-	var_6_57[16509] = {
+	pg.base.transform_data_template[16509] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -24723,11 +22978,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.transform_data_template
-
-	var_6_58[16510] = {
+	pg.base.transform_data_template[16510] = {
 		level_limit = 75,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -24794,11 +23045,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.transform_data_template
-
-	var_6_59[16511] = {
+	pg.base.transform_data_template[16511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+25，反潜+20",
@@ -24833,11 +23080,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.transform_data_template
-
-	var_6_60[16512] = {
+	pg.base.transform_data_template[16512] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -24875,11 +23118,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.transform_data_template
-
-	var_6_61[16701] = {
+	pg.base.transform_data_template[16701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -24911,11 +23150,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.transform_data_template
-
-	var_6_62[16702] = {
+	pg.base.transform_data_template[16702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -24949,11 +23184,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.transform_data_template
-
-	var_6_63[16703] = {
+	pg.base.transform_data_template[16703] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -24987,11 +23218,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.transform_data_template
-
-	var_6_64[16704] = {
+	pg.base.transform_data_template[16704] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -25025,11 +23252,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.transform_data_template
-
-	var_6_65[16705] = {
+	pg.base.transform_data_template[16705] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "主炮武器效率+5%",
@@ -25063,11 +23286,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.transform_data_template
-
-	var_6_66[16706] = {
+	pg.base.transform_data_template[16706] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -25101,11 +23320,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.transform_data_template
-
-	var_6_67[16707] = {
+	pg.base.transform_data_template[16707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -25149,11 +23364,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.transform_data_template
-
-	var_6_68[16708] = {
+	pg.base.transform_data_template[16708] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【火力干扰】",
@@ -25187,11 +23398,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.transform_data_template
-
-	var_6_69[16709] = {
+	pg.base.transform_data_template[16709] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -25225,11 +23432,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.transform_data_template
-
-	var_6_70[16710] = {
+	pg.base.transform_data_template[16710] = {
 		level_limit = 75,
 		name = "反潜强化II",
 		descrip = "反潜+5/反潜+15",
@@ -25273,11 +23476,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.transform_data_template
-
-	var_6_71[16711] = {
+	pg.base.transform_data_template[16711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，装填+15",
@@ -25313,11 +23512,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.transform_data_template
-
-	var_6_72[16801] = {
+	pg.base.transform_data_template[16801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -25349,11 +23544,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.transform_data_template
-
-	var_6_73[16802] = {
+	pg.base.transform_data_template[16802] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -25387,11 +23578,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.transform_data_template
-
-	var_6_74[16803] = {
+	pg.base.transform_data_template[16803] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -25425,11 +23612,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.transform_data_template
-
-	var_6_75[16804] = {
+	pg.base.transform_data_template[16804] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -25463,11 +23646,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.transform_data_template
-
-	var_6_76[16805] = {
+	pg.base.transform_data_template[16805] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "主炮武器效率+5%",
@@ -25501,11 +23680,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.transform_data_template
-
-	var_6_77[16806] = {
+	pg.base.transform_data_template[16806] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -25539,11 +23714,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.transform_data_template
-
-	var_6_78[16807] = {
+	pg.base.transform_data_template[16807] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -25577,11 +23748,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.transform_data_template
-
-	var_6_79[16808] = {
+	pg.base.transform_data_template[16808] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【空母护航】",
@@ -25615,11 +23782,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.transform_data_template
-
-	var_6_80[16809] = {
+	pg.base.transform_data_template[16809] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -25663,11 +23826,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.transform_data_template
-
-	var_6_81[16810] = {
+	pg.base.transform_data_template[16810] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -25712,11 +23871,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.transform_data_template
-
-	var_6_82[16811] = {
+	pg.base.transform_data_template[16811] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -25752,11 +23907,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.transform_data_template
-
-	var_6_83[17101] = {
+	pg.base.transform_data_template[17101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -25788,11 +23939,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.transform_data_template
-
-	var_6_84[17102] = {
+	pg.base.transform_data_template[17102] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -25826,11 +23973,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.transform_data_template
-
-	var_6_85[17103] = {
+	pg.base.transform_data_template[17103] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -25864,11 +24007,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.transform_data_template
-
-	var_6_86[17104] = {
+	pg.base.transform_data_template[17104] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -25902,11 +24041,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.transform_data_template
-
-	var_6_87[17105] = {
+	pg.base.transform_data_template[17105] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -25940,11 +24075,11 @@ end)()
 			20
 		}
 	}
-	pg = var_6_87
 
-	local var_6_88 = var_6_87.base.transform_data_template
-
-	var_6_88[17106] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[17106] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -25978,11 +24113,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.transform_data_template
-
-	var_6_89[17107] = {
+	pg.base.transform_data_template[17107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -26026,11 +24157,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.transform_data_template
-
-	var_6_90[17108] = {
+	pg.base.transform_data_template[17108] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -26064,11 +24191,7 @@ end)()
 			25
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.transform_data_template
-
-	var_6_91[17109] = {
+	pg.base.transform_data_template[17109] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -26102,11 +24225,7 @@ end)()
 			30
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.transform_data_template
-
-	var_6_92[17110] = {
+	pg.base.transform_data_template[17110] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -26151,11 +24270,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.transform_data_template
-
-	var_6_93[17111] = {
+	pg.base.transform_data_template[17111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，防空+15",
@@ -26192,11 +24307,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.transform_data_template
-
-	var_6_94[17401] = {
+	pg.base.transform_data_template[17401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -26228,11 +24339,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.transform_data_template
-
-	var_6_95[17402] = {
+	pg.base.transform_data_template[17402] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -26266,11 +24373,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.transform_data_template
-
-	var_6_96[17403] = {
+	pg.base.transform_data_template[17403] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -26304,11 +24407,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.transform_data_template
-
-	var_6_97[17404] = {
+	pg.base.transform_data_template[17404] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -26342,11 +24441,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.transform_data_template
-
-	var_6_98[17405] = {
+	pg.base.transform_data_template[17405] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -26380,8 +24475,7 @@ end)()
 			20
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.transform_data_template[17406] = {
+	pg.base.transform_data_template[17406] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -26415,15 +24509,7 @@ end)()
 			20
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.transform_data_template
-
-	var_7_0[17407] = {
+	pg.base.transform_data_template[17407] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -26467,11 +24553,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.transform_data_template
-
-	var_7_1[17408] = {
+	pg.base.transform_data_template[17408] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【侧翼掩护】",
@@ -26505,11 +24587,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.transform_data_template
-
-	var_7_2[17409] = {
+	pg.base.transform_data_template[17409] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -26543,11 +24621,7 @@ end)()
 			30
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.transform_data_template
-
-	var_7_3[17410] = {
+	pg.base.transform_data_template[17410] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -26592,11 +24666,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.transform_data_template
-
-	var_7_4[17411] = {
+	pg.base.transform_data_template[17411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，防空+15",
@@ -26633,11 +24703,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.transform_data_template
-
-	var_7_5[17501] = {
+	pg.base.transform_data_template[17501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -26669,11 +24735,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.transform_data_template
-
-	var_7_6[17502] = {
+	pg.base.transform_data_template[17502] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -26707,11 +24769,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.transform_data_template
-
-	var_7_7[17503] = {
+	pg.base.transform_data_template[17503] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -26745,11 +24803,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.transform_data_template
-
-	var_7_8[17504] = {
+	pg.base.transform_data_template[17504] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -26783,11 +24837,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.transform_data_template
-
-	var_7_9[17505] = {
+	pg.base.transform_data_template[17505] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -26821,11 +24871,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.transform_data_template
-
-	var_7_10[17506] = {
+	pg.base.transform_data_template[17506] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -26859,11 +24905,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.transform_data_template
-
-	var_7_11[17507] = {
+	pg.base.transform_data_template[17507] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -26907,11 +24949,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.transform_data_template
-
-	var_7_12[17508] = {
+	pg.base.transform_data_template[17508] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【空袭引导】",
@@ -26945,11 +24983,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.transform_data_template
-
-	var_7_13[17509] = {
+	pg.base.transform_data_template[17509] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -26983,11 +25017,7 @@ end)()
 			30
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.transform_data_template
-
-	var_7_14[17510] = {
+	pg.base.transform_data_template[17510] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -27032,11 +25062,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.transform_data_template
-
-	var_7_15[17511] = {
+	pg.base.transform_data_template[17511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，防空+15",
@@ -27073,11 +25099,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.transform_data_template
-
-	var_7_16[17601] = {
+	pg.base.transform_data_template[17601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -27109,11 +25131,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.transform_data_template
-
-	var_7_17[17602] = {
+	pg.base.transform_data_template[17602] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -27147,11 +25165,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.transform_data_template
-
-	var_7_18[17603] = {
+	pg.base.transform_data_template[17603] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -27185,11 +25199,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.transform_data_template
-
-	var_7_19[17604] = {
+	pg.base.transform_data_template[17604] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -27223,11 +25233,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.transform_data_template
-
-	var_7_20[17605] = {
+	pg.base.transform_data_template[17605] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -27261,11 +25267,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.transform_data_template
-
-	var_7_21[17606] = {
+	pg.base.transform_data_template[17606] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -27299,11 +25301,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.transform_data_template
-
-	var_7_22[17607] = {
+	pg.base.transform_data_template[17607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -27347,11 +25345,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.transform_data_template
-
-	var_7_23[17608] = {
+	pg.base.transform_data_template[17608] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【空袭引导】",
@@ -27385,11 +25379,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.transform_data_template
-
-	var_7_24[17609] = {
+	pg.base.transform_data_template[17609] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -27423,11 +25413,7 @@ end)()
 			30
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.transform_data_template
-
-	var_7_25[17610] = {
+	pg.base.transform_data_template[17610] = {
 		level_limit = 75,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -27472,11 +25458,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.transform_data_template
-
-	var_7_26[17611] = {
+	pg.base.transform_data_template[17611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，防空+15",
@@ -27513,11 +25495,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.transform_data_template
-
-	var_7_27[17901] = {
+	pg.base.transform_data_template[17901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -27549,11 +25527,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.transform_data_template
-
-	var_7_28[17902] = {
+	pg.base.transform_data_template[17902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -27587,11 +25561,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.transform_data_template
-
-	var_7_29[17903] = {
+	pg.base.transform_data_template[17903] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -27625,11 +25595,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.transform_data_template
-
-	var_7_30[17904] = {
+	pg.base.transform_data_template[17904] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -27664,11 +25630,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.transform_data_template
-
-	var_7_31[17905] = {
+	pg.base.transform_data_template[17905] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -27702,11 +25664,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.transform_data_template
-
-	var_7_32[17906] = {
+	pg.base.transform_data_template[17906] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -27740,11 +25698,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.transform_data_template
-
-	var_7_33[17907] = {
+	pg.base.transform_data_template[17907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -27788,11 +25742,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.transform_data_template
-
-	var_7_34[17908] = {
+	pg.base.transform_data_template[17908] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -27837,11 +25787,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.transform_data_template
-
-	var_7_35[17909] = {
+	pg.base.transform_data_template[17909] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -27885,11 +25831,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.transform_data_template
-
-	var_7_36[17910] = {
+	pg.base.transform_data_template[17910] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -27934,11 +25876,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.transform_data_template
-
-	var_7_37[17911] = {
+	pg.base.transform_data_template[17911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+25，命中+20",
@@ -27974,11 +25912,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.transform_data_template
-
-	var_7_38[17912] = {
+	pg.base.transform_data_template[17912] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【不安定的发明家】",
@@ -28013,11 +25947,7 @@ end)()
 			30
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.transform_data_template
-
-	var_7_39[18301] = {
+	pg.base.transform_data_template[18301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -28049,11 +25979,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.transform_data_template
-
-	var_7_40[18302] = {
+	pg.base.transform_data_template[18302] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -28087,11 +26013,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.transform_data_template
-
-	var_7_41[18303] = {
+	pg.base.transform_data_template[18303] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -28125,11 +26047,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.transform_data_template
-
-	var_7_42[18304] = {
+	pg.base.transform_data_template[18304] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -28163,11 +26081,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.transform_data_template
-
-	var_7_43[18305] = {
+	pg.base.transform_data_template[18305] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -28201,11 +26115,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.transform_data_template
-
-	var_7_44[18306] = {
+	pg.base.transform_data_template[18306] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -28239,11 +26149,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.transform_data_template
-
-	var_7_45[18307] = {
+	pg.base.transform_data_template[18307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -28287,11 +26193,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.transform_data_template
-
-	var_7_46[18308] = {
+	pg.base.transform_data_template[18308] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -28325,11 +26227,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.transform_data_template
-
-	var_7_47[18309] = {
+	pg.base.transform_data_template[18309] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -28373,11 +26271,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.transform_data_template
-
-	var_7_48[18310] = {
+	pg.base.transform_data_template[18310] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -28422,11 +26316,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.transform_data_template
-
-	var_7_49[18311] = {
+	pg.base.transform_data_template[18311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，反潜+35，命中+10",
@@ -28462,11 +26352,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.transform_data_template
-
-	var_7_50[18601] = {
+	pg.base.transform_data_template[18601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -28498,11 +26384,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.transform_data_template
-
-	var_7_51[18602] = {
+	pg.base.transform_data_template[18602] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -28536,11 +26418,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.transform_data_template
-
-	var_7_52[18603] = {
+	pg.base.transform_data_template[18603] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -28574,11 +26452,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.transform_data_template
-
-	var_7_53[18604] = {
+	pg.base.transform_data_template[18604] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -28612,11 +26486,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.transform_data_template
-
-	var_7_54[18605] = {
+	pg.base.transform_data_template[18605] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -28650,11 +26520,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.transform_data_template
-
-	var_7_55[18606] = {
+	pg.base.transform_data_template[18606] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -28689,11 +26555,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.transform_data_template
-
-	var_7_56[18607] = {
+	pg.base.transform_data_template[18607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -28737,11 +26599,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.transform_data_template
-
-	var_7_57[18608] = {
+	pg.base.transform_data_template[18608] = {
 		level_limit = 55,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -28775,11 +26633,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.transform_data_template
-
-	var_7_58[18609] = {
+	pg.base.transform_data_template[18609] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -28823,11 +26677,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.transform_data_template
-
-	var_7_59[18610] = {
+	pg.base.transform_data_template[18610] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -28880,11 +26730,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.transform_data_template
-
-	var_7_60[18611] = {
+	pg.base.transform_data_template[18611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+10，雷击+35",
@@ -28920,11 +26766,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.transform_data_template
-
-	var_7_61[18612] = {
+	pg.base.transform_data_template[18612] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -28963,11 +26805,7 @@ end)()
 			30
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.transform_data_template
-
-	var_7_62[18701] = {
+	pg.base.transform_data_template[18701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -28999,11 +26837,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.transform_data_template
-
-	var_7_63[18702] = {
+	pg.base.transform_data_template[18702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -29037,11 +26871,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.transform_data_template
-
-	var_7_64[18703] = {
+	pg.base.transform_data_template[18703] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -29075,11 +26905,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.transform_data_template
-
-	var_7_65[18704] = {
+	pg.base.transform_data_template[18704] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -29113,11 +26939,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.transform_data_template
-
-	var_7_66[18705] = {
+	pg.base.transform_data_template[18705] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -29151,11 +26973,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.transform_data_template
-
-	var_7_67[18706] = {
+	pg.base.transform_data_template[18706] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -29189,11 +27007,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.transform_data_template
-
-	var_7_68[18707] = {
+	pg.base.transform_data_template[18707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -29237,11 +27051,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.transform_data_template
-
-	var_7_69[18708] = {
+	pg.base.transform_data_template[18708] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【鱼雷连射】",
@@ -29275,11 +27085,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.transform_data_template
-
-	var_7_70[18709] = {
+	pg.base.transform_data_template[18709] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -29323,11 +27129,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.transform_data_template
-
-	var_7_71[18710] = {
+	pg.base.transform_data_template[18710] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -29372,11 +27174,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.transform_data_template
-
-	var_7_72[18711] = {
+	pg.base.transform_data_template[18711] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+10，雷击+35",
@@ -29413,11 +27211,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.transform_data_template
-
-	var_7_73[18801] = {
+	pg.base.transform_data_template[18801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -29449,11 +27243,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.transform_data_template
-
-	var_7_74[18802] = {
+	pg.base.transform_data_template[18802] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -29487,11 +27277,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.transform_data_template
-
-	var_7_75[18803] = {
+	pg.base.transform_data_template[18803] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -29525,11 +27311,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.transform_data_template
-
-	var_7_76[18804] = {
+	pg.base.transform_data_template[18804] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -29563,11 +27345,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.transform_data_template
-
-	var_7_77[18805] = {
+	pg.base.transform_data_template[18805] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -29601,11 +27379,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.transform_data_template
-
-	var_7_78[18806] = {
+	pg.base.transform_data_template[18806] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -29639,11 +27413,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.transform_data_template
-
-	var_7_79[18807] = {
+	pg.base.transform_data_template[18807] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -29687,11 +27457,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.transform_data_template
-
-	var_7_80[18808] = {
+	pg.base.transform_data_template[18808] = {
 		level_limit = 55,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -29725,11 +27491,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.transform_data_template
-
-	var_7_81[18809] = {
+	pg.base.transform_data_template[18809] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -29773,11 +27535,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.transform_data_template
-
-	var_7_82[18810] = {
+	pg.base.transform_data_template[18810] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -29830,11 +27588,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.transform_data_template
-
-	var_7_83[18811] = {
+	pg.base.transform_data_template[18811] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮（轻巡主炮）】</color>装备栏位装备类型更改为<color=#92fc63>【主炮（重巡主炮）】</color>\n原来的<color=#92fc63>【主炮（轻巡主炮）】</color>栏位装备将被放入仓库\n由于舰艇类型变化，原来的<color=#92fc63>【特殊兵装】</color>栏位的兵装若改造后不符合装备要求将被放入仓库\n改造后<color=#92fc63>【主炮底座+1】</color>、<color=#92fc63>【鱼雷底座-1】</color>\n改造后<color=#92fc63>【全弹发射II】</color>技能将升级为<color=#92fc63>【全弹发射改】</color>\n改造后<color=#92fc63>【反潜】</color>属性将归零、无法装备<color=#92fc63>声呐和深水炸弹</color>",
@@ -29875,11 +27629,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.transform_data_template
-
-	var_7_84[18812] = {
+	pg.base.transform_data_template[18812] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【持续打击】",
@@ -29917,11 +27667,7 @@ end)()
 			30
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.transform_data_template
-
-	var_7_85[19001] = {
+	pg.base.transform_data_template[19001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -29953,11 +27699,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.transform_data_template
-
-	var_7_86[19002] = {
+	pg.base.transform_data_template[19002] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -29991,11 +27733,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.transform_data_template
-
-	var_7_87[19003] = {
+	pg.base.transform_data_template[19003] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -30029,11 +27767,11 @@ end)()
 			15
 		}
 	}
-	pg = var_7_87
 
-	local var_7_88 = var_7_87.base.transform_data_template
-
-	var_7_88[19004] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[19004] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -30067,11 +27805,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.transform_data_template
-
-	var_7_89[19005] = {
+	pg.base.transform_data_template[19005] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -30105,11 +27839,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.transform_data_template
-
-	var_7_90[19006] = {
+	pg.base.transform_data_template[19006] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -30143,11 +27873,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.transform_data_template
-
-	var_7_91[19007] = {
+	pg.base.transform_data_template[19007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -30191,11 +27917,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.transform_data_template
-
-	var_7_92[19008] = {
+	pg.base.transform_data_template[19008] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【鱼雷连射】",
@@ -30229,11 +27951,7 @@ end)()
 			25
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.transform_data_template
-
-	var_7_93[19009] = {
+	pg.base.transform_data_template[19009] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -30277,11 +27995,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.transform_data_template
-
-	var_7_94[19010] = {
+	pg.base.transform_data_template[19010] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -30326,11 +28040,7 @@ end)()
 			20
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.transform_data_template
-
-	var_7_95[19011] = {
+	pg.base.transform_data_template[19011] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -30366,11 +28076,7 @@ end)()
 			50
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.transform_data_template
-
-	var_7_96[19101] = {
+	pg.base.transform_data_template[19101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -30402,11 +28108,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.transform_data_template
-
-	var_7_97[19102] = {
+	pg.base.transform_data_template[19102] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -30440,11 +28142,7 @@ end)()
 			10
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.transform_data_template
-
-	var_7_98[19103] = {
+	pg.base.transform_data_template[19103] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -30478,8 +28176,7 @@ end)()
 			15
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.transform_data_template[19104] = {
+	pg.base.transform_data_template[19104] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -30513,15 +28210,7 @@ end)()
 			15
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.transform_data_template
-
-	var_8_0[19105] = {
+	pg.base.transform_data_template[19105] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -30555,11 +28244,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.transform_data_template
-
-	var_8_1[19106] = {
+	pg.base.transform_data_template[19106] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -30593,11 +28278,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.transform_data_template
-
-	var_8_2[19107] = {
+	pg.base.transform_data_template[19107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -30641,11 +28322,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.transform_data_template
-
-	var_8_3[19108] = {
+	pg.base.transform_data_template[19108] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【鱼雷连射】",
@@ -30679,11 +28356,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.transform_data_template
-
-	var_8_4[19109] = {
+	pg.base.transform_data_template[19109] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -30727,11 +28400,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.transform_data_template
-
-	var_8_5[19110] = {
+	pg.base.transform_data_template[19110] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -30776,11 +28445,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.transform_data_template
-
-	var_8_6[19111] = {
+	pg.base.transform_data_template[19111] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -30816,11 +28481,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.transform_data_template
-
-	var_8_7[19701] = {
+	pg.base.transform_data_template[19701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+80",
@@ -30852,11 +28513,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.transform_data_template
-
-	var_8_8[19702] = {
+	pg.base.transform_data_template[19702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -30890,11 +28547,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.transform_data_template
-
-	var_8_9[19703] = {
+	pg.base.transform_data_template[19703] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -30928,11 +28581,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.transform_data_template
-
-	var_8_10[19704] = {
+	pg.base.transform_data_template[19704] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -30966,11 +28615,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.transform_data_template
-
-	var_8_11[19705] = {
+	pg.base.transform_data_template[19705] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -31004,11 +28649,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.transform_data_template
-
-	var_8_12[19706] = {
+	pg.base.transform_data_template[19706] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -31042,11 +28683,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.transform_data_template
-
-	var_8_13[19707] = {
+	pg.base.transform_data_template[19707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+80/耐久+120",
@@ -31090,11 +28727,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.transform_data_template
-
-	var_8_14[19708] = {
+	pg.base.transform_data_template[19708] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【战术指挥·巡洋舰】",
@@ -31128,11 +28761,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.transform_data_template
-
-	var_8_15[19709] = {
+	pg.base.transform_data_template[19709] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -31176,11 +28805,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.transform_data_template
-
-	var_8_16[19710] = {
+	pg.base.transform_data_template[19710] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -31225,11 +28850,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.transform_data_template
-
-	var_8_17[19711] = {
+	pg.base.transform_data_template[19711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -31265,11 +28886,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.transform_data_template
-
-	var_8_18[20801] = {
+	pg.base.transform_data_template[20801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+100",
@@ -31301,11 +28918,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.transform_data_template
-
-	var_8_19[20802] = {
+	pg.base.transform_data_template[20802] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -31339,11 +28952,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.transform_data_template
-
-	var_8_20[20803] = {
+	pg.base.transform_data_template[20803] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -31378,11 +28987,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.transform_data_template
-
-	var_8_21[20804] = {
+	pg.base.transform_data_template[20804] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -31416,11 +29021,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.transform_data_template
-
-	var_8_22[20805] = {
+	pg.base.transform_data_template[20805] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -31454,11 +29055,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.transform_data_template
-
-	var_8_23[20806] = {
+	pg.base.transform_data_template[20806] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -31492,11 +29089,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.transform_data_template
-
-	var_8_24[20807] = {
+	pg.base.transform_data_template[20807] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+100/耐久+150",
@@ -31540,11 +29133,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.transform_data_template
-
-	var_8_25[20808] = {
+	pg.base.transform_data_template[20808] = {
 		level_limit = 55,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -31588,11 +29177,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.transform_data_template
-
-	var_8_26[20809] = {
+	pg.base.transform_data_template[20809] = {
 		level_limit = 70,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -31637,11 +29222,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.transform_data_template
-
-	var_8_27[20810] = {
+	pg.base.transform_data_template[20810] = {
 		level_limit = 75,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n习得技能<color=#92fc63>【航空预备】</color>\n第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高20%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【魟改】</color>可以进行<color=#92fc63>空中支援</color>",
@@ -31685,11 +29266,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.transform_data_template
-
-	var_8_28[20811] = {
+	pg.base.transform_data_template[20811] = {
 		level_limit = 85,
 		name = "航空强化I",
 		descrip = "航空+20",
@@ -31724,11 +29301,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.transform_data_template
-
-	var_8_29[20901] = {
+	pg.base.transform_data_template[20901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+100",
@@ -31760,11 +29333,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.transform_data_template
-
-	var_8_30[20902] = {
+	pg.base.transform_data_template[20902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -31798,11 +29367,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.transform_data_template
-
-	var_8_31[20903] = {
+	pg.base.transform_data_template[20903] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -31837,11 +29402,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.transform_data_template
-
-	var_8_32[20904] = {
+	pg.base.transform_data_template[20904] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -31875,11 +29436,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.transform_data_template
-
-	var_8_33[20905] = {
+	pg.base.transform_data_template[20905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -31913,11 +29470,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.transform_data_template
-
-	var_8_34[20906] = {
+	pg.base.transform_data_template[20906] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -31951,11 +29504,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.transform_data_template
-
-	var_8_35[20907] = {
+	pg.base.transform_data_template[20907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+100/耐久+150",
@@ -31999,11 +29548,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.transform_data_template
-
-	var_8_36[20908] = {
+	pg.base.transform_data_template[20908] = {
 		level_limit = 55,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -32047,11 +29592,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.transform_data_template
-
-	var_8_37[20909] = {
+	pg.base.transform_data_template[20909] = {
 		level_limit = 70,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -32096,11 +29637,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.transform_data_template
-
-	var_8_38[20910] = {
+	pg.base.transform_data_template[20910] = {
 		level_limit = 75,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n习得技能<color=#92fc63>【航空预备】</color>\n第一次执行空中支援时，额外进行一轮航空弹幕攻击(威力随技能等级提升)，每场战斗只能触发1次\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高20%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【鲼改】</color>可以进行<color=#92fc63>空中支援</color>",
@@ -32144,11 +29681,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.transform_data_template
-
-	var_8_39[20911] = {
+	pg.base.transform_data_template[20911] = {
 		level_limit = 85,
 		name = "航空强化I",
 		descrip = "航空+20",
@@ -32183,11 +29716,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.transform_data_template
-
-	var_8_40[21001] = {
+	pg.base.transform_data_template[21001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+100",
@@ -32219,11 +29748,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.transform_data_template
-
-	var_8_41[21002] = {
+	pg.base.transform_data_template[21002] = {
 		level_limit = 10,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -32257,11 +29782,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.transform_data_template
-
-	var_8_42[21003] = {
+	pg.base.transform_data_template[21003] = {
 		level_limit = 30,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -32295,11 +29816,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.transform_data_template
-
-	var_8_43[21004] = {
+	pg.base.transform_data_template[21004] = {
 		level_limit = 50,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -32343,11 +29860,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.transform_data_template
-
-	var_8_44[21005] = {
+	pg.base.transform_data_template[21005] = {
 		level_limit = 70,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高25%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【鳌改】</color>可以进行<color=#92fc63>空中支援</color>",
@@ -32392,11 +29905,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.transform_data_template
-
-	var_8_45[21006] = {
+	pg.base.transform_data_template[21006] = {
 		level_limit = 75,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -32430,11 +29939,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.transform_data_template
-
-	var_8_46[21007] = {
+	pg.base.transform_data_template[21007] = {
 		level_limit = 80,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -32468,11 +29973,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.transform_data_template
-
-	var_8_47[21008] = {
+	pg.base.transform_data_template[21008] = {
 		level_limit = 85,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -32516,11 +30017,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.transform_data_template
-
-	var_8_48[21009] = {
+	pg.base.transform_data_template[21009] = {
 		level_limit = 90,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -32565,11 +30062,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.transform_data_template
-
-	var_8_49[21010] = {
+	pg.base.transform_data_template[21010] = {
 		level_limit = 90,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -32614,11 +30107,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.transform_data_template
-
-	var_8_50[21011] = {
+	pg.base.transform_data_template[21011] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【航空战队】",
@@ -32652,11 +30141,7 @@ end)()
 			35
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.transform_data_template
-
-	var_8_51[21101] = {
+	pg.base.transform_data_template[21101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+100",
@@ -32688,11 +30173,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.transform_data_template
-
-	var_8_52[21102] = {
+	pg.base.transform_data_template[21102] = {
 		level_limit = 10,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -32726,11 +30207,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.transform_data_template
-
-	var_8_53[21103] = {
+	pg.base.transform_data_template[21103] = {
 		level_limit = 30,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -32764,11 +30241,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.transform_data_template
-
-	var_8_54[21104] = {
+	pg.base.transform_data_template[21104] = {
 		level_limit = 50,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -32812,11 +30285,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.transform_data_template
-
-	var_8_55[21105] = {
+	pg.base.transform_data_template[21105] = {
 		level_limit = 70,
 		name = "近代化改造",
 		descrip = "近代化改造完成\n\n改造后<color=#92fc63>【主炮底座-1】</color>\n改造后<color=#92fc63>主炮效率</color>提高25%\n改造后<color=#92fc63>【副炮】</color>装备栏位装备类型更改为<color=#92fc63>【水上机】</color>\n在装备<color=#92fc63>【水上机】</color>的情况下，<color=#92fc63>【螯改】</color>可以进行<color=#92fc63>空中支援</color>",
@@ -32861,11 +30330,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.transform_data_template
-
-	var_8_56[21106] = {
+	pg.base.transform_data_template[21106] = {
 		level_limit = 75,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -32899,11 +30364,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.transform_data_template
-
-	var_8_57[21107] = {
+	pg.base.transform_data_template[21107] = {
 		level_limit = 80,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -32937,11 +30398,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.transform_data_template
-
-	var_8_58[21108] = {
+	pg.base.transform_data_template[21108] = {
 		level_limit = 85,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -32985,11 +30442,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.transform_data_template
-
-	var_8_59[21109] = {
+	pg.base.transform_data_template[21109] = {
 		level_limit = 90,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -33034,11 +30487,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.transform_data_template
-
-	var_8_60[21110] = {
+	pg.base.transform_data_template[21110] = {
 		level_limit = 90,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -33083,11 +30532,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.transform_data_template
-
-	var_8_61[21111] = {
+	pg.base.transform_data_template[21111] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【格斗炮术】",
@@ -33121,11 +30566,7 @@ end)()
 			35
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.transform_data_template
-
-	var_8_62[22201] = {
+	pg.base.transform_data_template[22201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -33157,11 +30598,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.transform_data_template
-
-	var_8_63[22202] = {
+	pg.base.transform_data_template[22202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -33195,11 +30632,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.transform_data_template
-
-	var_8_64[22203] = {
+	pg.base.transform_data_template[22203] = {
 		level_limit = 20,
 		name = "轰炸精通I",
 		descrip = "轰炸机武器效率+5%",
@@ -33234,11 +30667,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.transform_data_template
-
-	var_8_65[22204] = {
+	pg.base.transform_data_template[22204] = {
 		level_limit = 25,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -33272,11 +30701,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.transform_data_template
-
-	var_8_66[22205] = {
+	pg.base.transform_data_template[22205] = {
 		level_limit = 35,
 		name = "鱼雷俯冲I",
 		descrip = "鱼雷机武器效率+5%",
@@ -33310,11 +30735,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.transform_data_template
-
-	var_8_67[22206] = {
+	pg.base.transform_data_template[22206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -33348,11 +30769,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.transform_data_template
-
-	var_8_68[22207] = {
+	pg.base.transform_data_template[22207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -33396,11 +30813,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.transform_data_template
-
-	var_8_69[22208] = {
+	pg.base.transform_data_template[22208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【制空支援】",
@@ -33434,11 +30847,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.transform_data_template
-
-	var_8_70[22209] = {
+	pg.base.transform_data_template[22209] = {
 		level_limit = 70,
 		name = "轰炸精通II",
 		descrip = "轰炸机武器效率+5%/轰炸机武器效率+5%",
@@ -33483,11 +30892,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.transform_data_template
-
-	var_8_71[22210] = {
+	pg.base.transform_data_template[22210] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -33532,11 +30937,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.transform_data_template
-
-	var_8_72[22211] = {
+	pg.base.transform_data_template[22211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+20，航空+25",
@@ -33572,11 +30973,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.transform_data_template
-
-	var_8_73[22601] = {
+	pg.base.transform_data_template[22601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -33608,11 +31005,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.transform_data_template
-
-	var_8_74[22602] = {
+	pg.base.transform_data_template[22602] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -33646,11 +31039,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.transform_data_template
-
-	var_8_75[22603] = {
+	pg.base.transform_data_template[22603] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "",
@@ -33684,11 +31073,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.transform_data_template
-
-	var_8_76[22604] = {
+	pg.base.transform_data_template[22604] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -33722,11 +31107,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.transform_data_template
-
-	var_8_77[22605] = {
+	pg.base.transform_data_template[22605] = {
 		level_limit = 35,
 		name = "鱼雷俯冲I",
 		descrip = "",
@@ -33760,11 +31141,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.transform_data_template
-
-	var_8_78[22606] = {
+	pg.base.transform_data_template[22606] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -33798,11 +31175,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.transform_data_template
-
-	var_8_79[22607] = {
+	pg.base.transform_data_template[22607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -33846,11 +31219,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.transform_data_template
-
-	var_8_80[22608] = {
+	pg.base.transform_data_template[22608] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -33895,11 +31264,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.transform_data_template
-
-	var_8_81[22609] = {
+	pg.base.transform_data_template[22609] = {
 		level_limit = 70,
 		name = "空战精通II",
 		descrip = "",
@@ -33943,11 +31308,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.transform_data_template
-
-	var_8_82[22610] = {
+	pg.base.transform_data_template[22610] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -33999,11 +31360,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.transform_data_template
-
-	var_8_83[22611] = {
+	pg.base.transform_data_template[22611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，机动+10",
@@ -34039,11 +31396,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.transform_data_template
-
-	var_8_84[22612] = {
+	pg.base.transform_data_template[22612] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -34081,11 +31434,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.transform_data_template
-
-	var_8_85[22701] = {
+	pg.base.transform_data_template[22701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -34117,11 +31466,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.transform_data_template
-
-	var_8_86[22702] = {
+	pg.base.transform_data_template[22702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -34155,11 +31500,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.transform_data_template
-
-	var_8_87[22703] = {
+	pg.base.transform_data_template[22703] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "",
@@ -34193,11 +31534,11 @@ end)()
 			20
 		}
 	}
-	pg = var_8_87
 
-	local var_8_88 = var_8_87.base.transform_data_template
-
-	var_8_88[22704] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[22704] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -34231,11 +31572,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.transform_data_template
-
-	var_8_89[22705] = {
+	pg.base.transform_data_template[22705] = {
 		level_limit = 35,
 		name = "轰炸精通I",
 		descrip = "",
@@ -34269,11 +31606,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.transform_data_template
-
-	var_8_90[22706] = {
+	pg.base.transform_data_template[22706] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -34307,11 +31640,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.transform_data_template
-
-	var_8_91[22707] = {
+	pg.base.transform_data_template[22707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -34355,11 +31684,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.transform_data_template
-
-	var_8_92[22708] = {
+	pg.base.transform_data_template[22708] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -34404,11 +31729,7 @@ end)()
 			15
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.transform_data_template
-
-	var_8_93[22709] = {
+	pg.base.transform_data_template[22709] = {
 		level_limit = 70,
 		name = "空战精通II",
 		descrip = "",
@@ -34452,11 +31773,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.transform_data_template
-
-	var_8_94[22710] = {
+	pg.base.transform_data_template[22710] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -34508,11 +31825,7 @@ end)()
 			20
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.transform_data_template
-
-	var_8_95[22711] = {
+	pg.base.transform_data_template[22711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，机动+10",
@@ -34548,11 +31861,7 @@ end)()
 			50
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.transform_data_template
-
-	var_8_96[22712] = {
+	pg.base.transform_data_template[22712] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -34590,11 +31899,7 @@ end)()
 			25
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.transform_data_template
-
-	var_8_97[23301] = {
+	pg.base.transform_data_template[23301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -34626,11 +31931,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.transform_data_template
-
-	var_8_98[23302] = {
+	pg.base.transform_data_template[23302] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -34664,8 +31965,7 @@ end)()
 			10
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.transform_data_template[23303] = {
+	pg.base.transform_data_template[23303] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -34699,15 +31999,7 @@ end)()
 			15
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.transform_data_template
-
-	var_9_0[23304] = {
+	pg.base.transform_data_template[23304] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -34741,11 +32033,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.transform_data_template
-
-	var_9_1[23305] = {
+	pg.base.transform_data_template[23305] = {
 		level_limit = 35,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -34789,11 +32077,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.transform_data_template
-
-	var_9_2[23306] = {
+	pg.base.transform_data_template[23306] = {
 		level_limit = 40,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -34837,11 +32121,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.transform_data_template
-
-	var_9_3[23307] = {
+	pg.base.transform_data_template[23307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -34885,11 +32165,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.transform_data_template
-
-	var_9_4[23308] = {
+	pg.base.transform_data_template[23308] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -34933,11 +32209,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.transform_data_template
-
-	var_9_5[23309] = {
+	pg.base.transform_data_template[23309] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -34981,11 +32253,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.transform_data_template
-
-	var_9_6[23310] = {
+	pg.base.transform_data_template[23310] = {
 		level_limit = 75,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -35052,11 +32320,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.transform_data_template
-
-	var_9_7[23311] = {
+	pg.base.transform_data_template[23311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，反潜+10",
@@ -35091,11 +32355,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.transform_data_template
-
-	var_9_8[23312] = {
+	pg.base.transform_data_template[23312] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【毁灭模式·原型】",
@@ -35133,11 +32393,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.transform_data_template
-
-	var_9_9[23601] = {
+	pg.base.transform_data_template[23601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -35169,11 +32425,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.transform_data_template
-
-	var_9_10[23602] = {
+	pg.base.transform_data_template[23602] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -35207,11 +32459,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.transform_data_template
-
-	var_9_11[23603] = {
+	pg.base.transform_data_template[23603] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -35245,11 +32493,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.transform_data_template
-
-	var_9_12[23604] = {
+	pg.base.transform_data_template[23604] = {
 		level_limit = 25,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -35293,11 +32537,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.transform_data_template
-
-	var_9_13[23605] = {
+	pg.base.transform_data_template[23605] = {
 		level_limit = 35,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -35341,11 +32581,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.transform_data_template
-
-	var_9_14[23606] = {
+	pg.base.transform_data_template[23606] = {
 		level_limit = 40,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -35389,11 +32625,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.transform_data_template
-
-	var_9_15[23607] = {
+	pg.base.transform_data_template[23607] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -35437,11 +32669,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.transform_data_template
-
-	var_9_16[23608] = {
+	pg.base.transform_data_template[23608] = {
 		level_limit = 55,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -35485,11 +32713,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.transform_data_template
-
-	var_9_17[23609] = {
+	pg.base.transform_data_template[23609] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -35533,11 +32757,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.transform_data_template
-
-	var_9_18[23610] = {
+	pg.base.transform_data_template[23610] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -35604,11 +32824,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.transform_data_template
-
-	var_9_19[23611] = {
+	pg.base.transform_data_template[23611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+25，反潜+20",
@@ -35643,11 +32859,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.transform_data_template
-
-	var_9_20[23612] = {
+	pg.base.transform_data_template[23612] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【毁灭模式】",
@@ -35685,11 +32897,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.transform_data_template
-
-	var_9_21[23901] = {
+	pg.base.transform_data_template[23901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -35721,11 +32929,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.transform_data_template
-
-	var_9_22[23902] = {
+	pg.base.transform_data_template[23902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -35759,11 +32963,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.transform_data_template
-
-	var_9_23[23903] = {
+	pg.base.transform_data_template[23903] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -35797,11 +32997,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.transform_data_template
-
-	var_9_24[23904] = {
+	pg.base.transform_data_template[23904] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -35835,11 +33031,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.transform_data_template
-
-	var_9_25[23905] = {
+	pg.base.transform_data_template[23905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -35873,11 +33065,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.transform_data_template
-
-	var_9_26[23906] = {
+	pg.base.transform_data_template[23906] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -35911,11 +33099,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.transform_data_template
-
-	var_9_27[23907] = {
+	pg.base.transform_data_template[23907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -35959,11 +33143,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.transform_data_template
-
-	var_9_28[23908] = {
+	pg.base.transform_data_template[23908] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【袭扰战术】",
@@ -35997,11 +33177,7 @@ end)()
 			25
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.transform_data_template
-
-	var_9_29[23909] = {
+	pg.base.transform_data_template[23909] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -36045,11 +33221,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.transform_data_template
-
-	var_9_30[23910] = {
+	pg.base.transform_data_template[23910] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -36094,11 +33266,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.transform_data_template
-
-	var_9_31[23911] = {
+	pg.base.transform_data_template[23911] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+15",
@@ -36135,11 +33303,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.transform_data_template
-
-	var_9_32[24001] = {
+	pg.base.transform_data_template[24001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -36171,11 +33335,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.transform_data_template
-
-	var_9_33[24002] = {
+	pg.base.transform_data_template[24002] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -36209,11 +33369,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.transform_data_template
-
-	var_9_34[24003] = {
+	pg.base.transform_data_template[24003] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -36247,11 +33403,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.transform_data_template
-
-	var_9_35[24004] = {
+	pg.base.transform_data_template[24004] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -36285,11 +33437,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.transform_data_template
-
-	var_9_36[24005] = {
+	pg.base.transform_data_template[24005] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -36323,11 +33471,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.transform_data_template
-
-	var_9_37[24006] = {
+	pg.base.transform_data_template[24006] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -36361,11 +33505,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.transform_data_template
-
-	var_9_38[24007] = {
+	pg.base.transform_data_template[24007] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -36409,11 +33549,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.transform_data_template
-
-	var_9_39[24008] = {
+	pg.base.transform_data_template[24008] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -36457,11 +33593,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.transform_data_template
-
-	var_9_40[24009] = {
+	pg.base.transform_data_template[24009] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -36506,11 +33638,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.transform_data_template
-
-	var_9_41[24010] = {
+	pg.base.transform_data_template[24010] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+15\n\n改造后<color=#92fc63>第一个【设备】</color>栏位增加可装备设备类型<color=#92fc63>【直升机】</color>",
@@ -36551,11 +33679,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.transform_data_template
-
-	var_9_42[24011] = {
+	pg.base.transform_data_template[24011] = {
 		level_limit = 80,
 		name = "战术启发",
 		descrip = "习得技能【蜂鸟侵扰】",
@@ -36590,11 +33714,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.transform_data_template
-
-	var_9_43[24101] = {
+	pg.base.transform_data_template[24101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -36626,11 +33746,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.transform_data_template
-
-	var_9_44[24102] = {
+	pg.base.transform_data_template[24102] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -36664,11 +33780,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.transform_data_template
-
-	var_9_45[24103] = {
+	pg.base.transform_data_template[24103] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -36702,11 +33814,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.transform_data_template
-
-	var_9_46[24104] = {
+	pg.base.transform_data_template[24104] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -36740,11 +33848,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.transform_data_template
-
-	var_9_47[24105] = {
+	pg.base.transform_data_template[24105] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -36778,11 +33882,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.transform_data_template
-
-	var_9_48[24106] = {
+	pg.base.transform_data_template[24106] = {
 		level_limit = 40,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -36826,11 +33926,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.transform_data_template
-
-	var_9_49[24107] = {
+	pg.base.transform_data_template[24107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -36874,11 +33970,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.transform_data_template
-
-	var_9_50[24108] = {
+	pg.base.transform_data_template[24108] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【安全第一!】",
@@ -36912,11 +34004,7 @@ end)()
 			25
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.transform_data_template
-
-	var_9_51[24109] = {
+	pg.base.transform_data_template[24109] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -36961,11 +34049,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.transform_data_template
-
-	var_9_52[24110] = {
+	pg.base.transform_data_template[24110] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -37010,11 +34094,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.transform_data_template
-
-	var_9_53[24111] = {
+	pg.base.transform_data_template[24111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -37050,11 +34130,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.transform_data_template
-
-	var_9_54[24201] = {
+	pg.base.transform_data_template[24201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -37086,11 +34162,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.transform_data_template
-
-	var_9_55[24202] = {
+	pg.base.transform_data_template[24202] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -37124,11 +34196,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.transform_data_template
-
-	var_9_56[24203] = {
+	pg.base.transform_data_template[24203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -37162,11 +34230,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.transform_data_template
-
-	var_9_57[24204] = {
+	pg.base.transform_data_template[24204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -37200,11 +34264,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.transform_data_template
-
-	var_9_58[24205] = {
+	pg.base.transform_data_template[24205] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -37238,11 +34298,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.transform_data_template
-
-	var_9_59[24206] = {
+	pg.base.transform_data_template[24206] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+15",
@@ -37276,11 +34332,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.transform_data_template
-
-	var_9_60[24207] = {
+	pg.base.transform_data_template[24207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -37324,11 +34376,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.transform_data_template
-
-	var_9_61[24208] = {
+	pg.base.transform_data_template[24208] = {
 		level_limit = 55,
 		name = "命中强化II",
 		descrip = "命中+5/命中+5",
@@ -37373,11 +34421,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.transform_data_template
-
-	var_9_62[24209] = {
+	pg.base.transform_data_template[24209] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -37421,11 +34465,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.transform_data_template
-
-	var_9_63[24210] = {
+	pg.base.transform_data_template[24210] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -37477,11 +34517,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.transform_data_template
-
-	var_9_64[24211] = {
+	pg.base.transform_data_template[24211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+30，命中+15\n改造后【主炮底座+1】\n主炮武器效率调整为120%",
@@ -37522,11 +34558,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.transform_data_template
-
-	var_9_65[24212] = {
+	pg.base.transform_data_template[24212] = {
 		level_limit = 85,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -37564,11 +34596,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.transform_data_template
-
-	var_9_66[25301] = {
+	pg.base.transform_data_template[25301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -37600,11 +34628,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.transform_data_template
-
-	var_9_67[25302] = {
+	pg.base.transform_data_template[25302] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+5",
@@ -37638,11 +34662,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.transform_data_template
-
-	var_9_68[25303] = {
+	pg.base.transform_data_template[25303] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -37676,11 +34696,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.transform_data_template
-
-	var_9_69[25304] = {
+	pg.base.transform_data_template[25304] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -37714,11 +34730,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.transform_data_template
-
-	var_9_70[25305] = {
+	pg.base.transform_data_template[25305] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -37762,11 +34774,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.transform_data_template
-
-	var_9_71[25306] = {
+	pg.base.transform_data_template[25306] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -37811,11 +34819,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.transform_data_template
-
-	var_9_72[25307] = {
+	pg.base.transform_data_template[25307] = {
 		level_limit = 50,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+10",
@@ -37859,11 +34863,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.transform_data_template
-
-	var_9_73[25308] = {
+	pg.base.transform_data_template[25308] = {
 		level_limit = 55,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -37917,11 +34917,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.transform_data_template
-
-	var_9_74[25309] = {
+	pg.base.transform_data_template[25309] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -37965,11 +34961,7 @@ end)()
 			20
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.transform_data_template
-
-	var_9_75[25310] = {
+	pg.base.transform_data_template[25310] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -38036,11 +35028,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.transform_data_template
-
-	var_9_76[25311] = {
+	pg.base.transform_data_template[25311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【鞍山级领舰】升级为【鞍山级领舰.改】\n获得新技能【青龙演武】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
@@ -38080,11 +35068,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.transform_data_template
-
-	var_9_77[25312] = {
+	pg.base.transform_data_template[25312] = {
 		level_limit = 90,
 		name = "主力舰队模式",
 		descrip = "切换为主力舰队模式",
@@ -38116,11 +35100,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.transform_data_template
-
-	var_9_78[25313] = {
+	pg.base.transform_data_template[25313] = {
 		level_limit = 90,
 		name = "先锋舰队模式",
 		descrip = "切换为先锋舰队模式",
@@ -38152,11 +35132,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.transform_data_template
-
-	var_9_79[25401] = {
+	pg.base.transform_data_template[25401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -38188,11 +35164,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.transform_data_template
-
-	var_9_80[25402] = {
+	pg.base.transform_data_template[25402] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+5",
@@ -38226,11 +35198,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.transform_data_template
-
-	var_9_81[25403] = {
+	pg.base.transform_data_template[25403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -38264,11 +35232,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.transform_data_template
-
-	var_9_82[25404] = {
+	pg.base.transform_data_template[25404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -38302,11 +35266,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.transform_data_template
-
-	var_9_83[25405] = {
+	pg.base.transform_data_template[25405] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -38350,11 +35310,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.transform_data_template
-
-	var_9_84[25406] = {
+	pg.base.transform_data_template[25406] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -38399,11 +35355,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.transform_data_template
-
-	var_9_85[25407] = {
+	pg.base.transform_data_template[25407] = {
 		level_limit = 50,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+10",
@@ -38447,11 +35399,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.transform_data_template
-
-	var_9_86[25408] = {
+	pg.base.transform_data_template[25408] = {
 		level_limit = 55,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -38505,11 +35453,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.transform_data_template
-
-	var_9_87[25409] = {
+	pg.base.transform_data_template[25409] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -38553,11 +35497,11 @@ end)()
 			20
 		}
 	}
-	pg = var_9_87
 
-	local var_9_88 = var_9_87.base.transform_data_template
-
-	var_9_88[25410] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[25410] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -38624,11 +35568,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.transform_data_template
-
-	var_9_89[25411] = {
+	pg.base.transform_data_template[25411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【尖锐突击】升级为【尖锐突击.改】\n获得新技能【朱雀萦焰】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
@@ -38668,11 +35608,7 @@ end)()
 			50
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.transform_data_template
-
-	var_9_90[25412] = {
+	pg.base.transform_data_template[25412] = {
 		level_limit = 90,
 		name = "主力舰队模式",
 		descrip = "切换为主力舰队模式",
@@ -38704,11 +35640,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.transform_data_template
-
-	var_9_91[25413] = {
+	pg.base.transform_data_template[25413] = {
 		level_limit = 90,
 		name = "先锋舰队模式",
 		descrip = "切换为先锋舰队模式",
@@ -38740,11 +35672,7 @@ end)()
 			30
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.transform_data_template
-
-	var_9_92[25501] = {
+	pg.base.transform_data_template[25501] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -38776,11 +35704,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.transform_data_template
-
-	var_9_93[25502] = {
+	pg.base.transform_data_template[25502] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+5",
@@ -38814,11 +35738,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.transform_data_template
-
-	var_9_94[25503] = {
+	pg.base.transform_data_template[25503] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -38852,11 +35772,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.transform_data_template
-
-	var_9_95[25504] = {
+	pg.base.transform_data_template[25504] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -38890,11 +35806,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.transform_data_template
-
-	var_9_96[25505] = {
+	pg.base.transform_data_template[25505] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -38938,11 +35850,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.transform_data_template
-
-	var_9_97[25506] = {
+	pg.base.transform_data_template[25506] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -38987,11 +35895,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.transform_data_template
-
-	var_9_98[25507] = {
+	pg.base.transform_data_template[25507] = {
 		level_limit = 50,
 		name = "雷击强化II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -39035,8 +35939,7 @@ end)()
 			15
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.transform_data_template[25508] = {
+	pg.base.transform_data_template[25508] = {
 		level_limit = 55,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10",
@@ -39090,15 +35993,7 @@ end)()
 			15
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.transform_data_template
-
-	var_10_0[25509] = {
+	pg.base.transform_data_template[25509] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -39142,11 +36037,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.transform_data_template
-
-	var_10_1[25510] = {
+	pg.base.transform_data_template[25510] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -39213,11 +36104,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.transform_data_template
-
-	var_10_2[25511] = {
+	pg.base.transform_data_template[25511] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【互助同盟】升级为【互助同盟.改】\n获得新技能【虎虎生威】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
@@ -39257,11 +36144,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.transform_data_template
-
-	var_10_3[25512] = {
+	pg.base.transform_data_template[25512] = {
 		level_limit = 90,
 		name = "主力舰队模式",
 		descrip = "切换为主力舰队模式",
@@ -39293,11 +36176,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.transform_data_template
-
-	var_10_4[25513] = {
+	pg.base.transform_data_template[25513] = {
 		level_limit = 90,
 		name = "先锋舰队模式",
 		descrip = "切换为先锋舰队模式",
@@ -39329,11 +36208,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.transform_data_template
-
-	var_10_5[25601] = {
+	pg.base.transform_data_template[25601] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -39365,11 +36240,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.transform_data_template
-
-	var_10_6[25602] = {
+	pg.base.transform_data_template[25602] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+5",
@@ -39403,11 +36274,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.transform_data_template
-
-	var_10_7[25603] = {
+	pg.base.transform_data_template[25603] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -39441,11 +36308,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.transform_data_template
-
-	var_10_8[25604] = {
+	pg.base.transform_data_template[25604] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -39479,11 +36342,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.transform_data_template
-
-	var_10_9[25605] = {
+	pg.base.transform_data_template[25605] = {
 		level_limit = 35,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -39527,11 +36386,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.transform_data_template
-
-	var_10_10[25606] = {
+	pg.base.transform_data_template[25606] = {
 		level_limit = 40,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -39576,11 +36431,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.transform_data_template
-
-	var_10_11[25607] = {
+	pg.base.transform_data_template[25607] = {
 		level_limit = 50,
 		name = "雷击强化II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -39624,11 +36475,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.transform_data_template
-
-	var_10_12[25608] = {
+	pg.base.transform_data_template[25608] = {
 		level_limit = 55,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10",
@@ -39682,11 +36529,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.transform_data_template
-
-	var_10_13[25609] = {
+	pg.base.transform_data_template[25609] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -39730,11 +36573,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.transform_data_template
-
-	var_10_14[25610] = {
+	pg.base.transform_data_template[25610] = {
 		level_limit = 75,
 		name = "炮击强化III",
 		descrip = "炮击+5/炮击+10/炮击+15",
@@ -39801,11 +36640,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.transform_data_template
-
-	var_10_15[25611] = {
+	pg.base.transform_data_template[25611] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15\n改造后全弹发射升级\n技能【团结一致】升级为【团结一致.改】\n获得新技能【毅守玄武】\n【鱼雷底座】变更为【导弹底座】\n【主炮底座+1】\n武器效率调整为100%/150%/105%",
@@ -39845,11 +36680,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.transform_data_template
-
-	var_10_16[25612] = {
+	pg.base.transform_data_template[25612] = {
 		level_limit = 90,
 		name = "主力舰队模式",
 		descrip = "切换为主力舰队模式",
@@ -39881,11 +36712,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.transform_data_template
-
-	var_10_17[25613] = {
+	pg.base.transform_data_template[25613] = {
 		level_limit = 90,
 		name = "先锋舰队模式",
 		descrip = "切换为先锋舰队模式",
@@ -39917,11 +36744,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.transform_data_template
-
-	var_10_18[25701] = {
+	pg.base.transform_data_template[25701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -39953,11 +36776,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.transform_data_template
-
-	var_10_19[25702] = {
+	pg.base.transform_data_template[25702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -39991,11 +36810,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.transform_data_template
-
-	var_10_20[25703] = {
+	pg.base.transform_data_template[25703] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -40030,11 +36845,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.transform_data_template
-
-	var_10_21[25704] = {
+	pg.base.transform_data_template[25704] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -40068,11 +36879,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.transform_data_template
-
-	var_10_22[25705] = {
+	pg.base.transform_data_template[25705] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -40106,11 +36913,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.transform_data_template
-
-	var_10_23[25706] = {
+	pg.base.transform_data_template[25706] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -40145,11 +36948,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.transform_data_template
-
-	var_10_24[25707] = {
+	pg.base.transform_data_template[25707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -40193,11 +36992,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.transform_data_template
-
-	var_10_25[25708] = {
+	pg.base.transform_data_template[25708] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -40241,11 +37036,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.transform_data_template
-
-	var_10_26[25709] = {
+	pg.base.transform_data_template[25709] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -40291,11 +37082,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.transform_data_template
-
-	var_10_27[25710] = {
+	pg.base.transform_data_template[25710] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -40348,11 +37135,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.transform_data_template
-
-	var_10_28[25711] = {
+	pg.base.transform_data_template[25711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，防空+20\n改造后技能【东煌之绊】升级为【东煌之绊.改】",
@@ -40393,11 +37176,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.transform_data_template
-
-	var_10_29[25712] = {
+	pg.base.transform_data_template[25712] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【寒夜语梅】",
@@ -40436,11 +37215,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.transform_data_template
-
-	var_10_30[25801] = {
+	pg.base.transform_data_template[25801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -40472,11 +37247,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.transform_data_template
-
-	var_10_31[25802] = {
+	pg.base.transform_data_template[25802] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -40510,11 +37281,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.transform_data_template
-
-	var_10_32[25803] = {
+	pg.base.transform_data_template[25803] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -40548,11 +37315,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.transform_data_template
-
-	var_10_33[25804] = {
+	pg.base.transform_data_template[25804] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -40586,11 +37349,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.transform_data_template
-
-	var_10_34[25805] = {
+	pg.base.transform_data_template[25805] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -40624,11 +37383,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.transform_data_template
-
-	var_10_35[25806] = {
+	pg.base.transform_data_template[25806] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -40663,11 +37418,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.transform_data_template
-
-	var_10_36[25807] = {
+	pg.base.transform_data_template[25807] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -40711,11 +37462,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.transform_data_template
-
-	var_10_37[25808] = {
+	pg.base.transform_data_template[25808] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -40759,11 +37506,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.transform_data_template
-
-	var_10_38[25809] = {
+	pg.base.transform_data_template[25809] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -40807,11 +37550,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.transform_data_template
-
-	var_10_39[25810] = {
+	pg.base.transform_data_template[25810] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -40864,11 +37603,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.transform_data_template
-
-	var_10_40[25811] = {
+	pg.base.transform_data_template[25811] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，机动+20",
@@ -40904,11 +37639,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.transform_data_template
-
-	var_10_41[25812] = {
+	pg.base.transform_data_template[25812] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【尚武之魂】",
@@ -40947,11 +37678,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.transform_data_template
-
-	var_10_42[25901] = {
+	pg.base.transform_data_template[25901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -40983,11 +37710,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.transform_data_template
-
-	var_10_43[25902] = {
+	pg.base.transform_data_template[25902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -41021,11 +37744,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.transform_data_template
-
-	var_10_44[25903] = {
+	pg.base.transform_data_template[25903] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -41059,11 +37778,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.transform_data_template
-
-	var_10_45[25904] = {
+	pg.base.transform_data_template[25904] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -41097,11 +37812,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.transform_data_template
-
-	var_10_46[25905] = {
+	pg.base.transform_data_template[25905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -41135,11 +37846,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.transform_data_template
-
-	var_10_47[25906] = {
+	pg.base.transform_data_template[25906] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -41174,11 +37881,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.transform_data_template
-
-	var_10_48[25907] = {
+	pg.base.transform_data_template[25907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -41222,11 +37925,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.transform_data_template
-
-	var_10_49[25908] = {
+	pg.base.transform_data_template[25908] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -41270,11 +37969,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.transform_data_template
-
-	var_10_50[25909] = {
+	pg.base.transform_data_template[25909] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -41318,11 +38013,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.transform_data_template
-
-	var_10_51[25910] = {
+	pg.base.transform_data_template[25910] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -41375,11 +38066,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.transform_data_template
-
-	var_10_52[25911] = {
+	pg.base.transform_data_template[25911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，机动+20",
@@ -41415,11 +38102,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.transform_data_template
-
-	var_10_53[25912] = {
+	pg.base.transform_data_template[25912] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【尚武之魂】",
@@ -41458,11 +38141,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.transform_data_template
-
-	var_10_54[26301] = {
+	pg.base.transform_data_template[26301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -41494,11 +38173,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.transform_data_template
-
-	var_10_55[26302] = {
+	pg.base.transform_data_template[26302] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -41532,11 +38207,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.transform_data_template
-
-	var_10_56[26303] = {
+	pg.base.transform_data_template[26303] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -41570,11 +38241,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.transform_data_template
-
-	var_10_57[26304] = {
+	pg.base.transform_data_template[26304] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -41608,11 +38275,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.transform_data_template
-
-	var_10_58[26305] = {
+	pg.base.transform_data_template[26305] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -41646,11 +38309,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.transform_data_template
-
-	var_10_59[26306] = {
+	pg.base.transform_data_template[26306] = {
 		level_limit = 40,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -41695,11 +38354,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.transform_data_template
-
-	var_10_60[26307] = {
+	pg.base.transform_data_template[26307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -41743,11 +38398,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.transform_data_template
-
-	var_10_61[26308] = {
+	pg.base.transform_data_template[26308] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【火力干扰】",
@@ -41781,11 +38432,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.transform_data_template
-
-	var_10_62[26309] = {
+	pg.base.transform_data_template[26309] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -41819,11 +38466,7 @@ end)()
 			30
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.transform_data_template
-
-	var_10_63[26310] = {
+	pg.base.transform_data_template[26310] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -41868,11 +38511,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.transform_data_template
-
-	var_10_64[26311] = {
+	pg.base.transform_data_template[26311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+15，防空+35",
@@ -41909,11 +38548,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.transform_data_template
-
-	var_10_65[26901] = {
+	pg.base.transform_data_template[26901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -41945,11 +38580,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.transform_data_template
-
-	var_10_66[26902] = {
+	pg.base.transform_data_template[26902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -41983,11 +38614,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.transform_data_template
-
-	var_10_67[26903] = {
+	pg.base.transform_data_template[26903] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -42021,11 +38648,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.transform_data_template
-
-	var_10_68[26904] = {
+	pg.base.transform_data_template[26904] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -42059,11 +38682,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.transform_data_template
-
-	var_10_69[26905] = {
+	pg.base.transform_data_template[26905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -42097,11 +38716,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.transform_data_template
-
-	var_10_70[26906] = {
+	pg.base.transform_data_template[26906] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -42135,11 +38750,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.transform_data_template
-
-	var_10_71[26907] = {
+	pg.base.transform_data_template[26907] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -42173,11 +38784,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.transform_data_template
-
-	var_10_72[26908] = {
+	pg.base.transform_data_template[26908] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【第一驱逐舰】",
@@ -42211,11 +38818,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.transform_data_template
-
-	var_10_73[26909] = {
+	pg.base.transform_data_template[26909] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -42259,11 +38862,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.transform_data_template
-
-	var_10_74[26910] = {
+	pg.base.transform_data_template[26910] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -42308,11 +38907,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.transform_data_template
-
-	var_10_75[26911] = {
+	pg.base.transform_data_template[26911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，命中+10，防空+25",
@@ -42349,11 +38944,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.transform_data_template
-
-	var_10_76[27001] = {
+	pg.base.transform_data_template[27001] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -42385,11 +38976,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.transform_data_template
-
-	var_10_77[27002] = {
+	pg.base.transform_data_template[27002] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -42423,11 +39010,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.transform_data_template
-
-	var_10_78[27003] = {
+	pg.base.transform_data_template[27003] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -42461,11 +39044,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.transform_data_template
-
-	var_10_79[27004] = {
+	pg.base.transform_data_template[27004] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -42499,11 +39078,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.transform_data_template
-
-	var_10_80[27005] = {
+	pg.base.transform_data_template[27005] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -42537,11 +39112,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.transform_data_template
-
-	var_10_81[27006] = {
+	pg.base.transform_data_template[27006] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -42575,11 +39146,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.transform_data_template
-
-	var_10_82[27007] = {
+	pg.base.transform_data_template[27007] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -42613,11 +39180,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.transform_data_template
-
-	var_10_83[27008] = {
+	pg.base.transform_data_template[27008] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【紧急回避】",
@@ -42651,11 +39214,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.transform_data_template
-
-	var_10_84[27009] = {
+	pg.base.transform_data_template[27009] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -42699,11 +39258,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.transform_data_template
-
-	var_10_85[27010] = {
+	pg.base.transform_data_template[27010] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -42748,11 +39303,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.transform_data_template
-
-	var_10_86[27011] = {
+	pg.base.transform_data_template[27011] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，命中+10，防空+25",
@@ -42789,11 +39340,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.transform_data_template
-
-	var_10_87[27101] = {
+	pg.base.transform_data_template[27101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -42825,11 +39372,11 @@ end)()
 			10
 		}
 	}
-	pg = var_10_87
 
-	local var_10_88 = var_10_87.base.transform_data_template
-
-	var_10_88[27102] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[27102] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -42863,11 +39410,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.transform_data_template
-
-	var_10_89[27103] = {
+	pg.base.transform_data_template[27103] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -42901,11 +39444,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.transform_data_template
-
-	var_10_90[27104] = {
+	pg.base.transform_data_template[27104] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -42939,11 +39478,7 @@ end)()
 			15
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.transform_data_template
-
-	var_10_91[27105] = {
+	pg.base.transform_data_template[27105] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -42977,11 +39512,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.transform_data_template
-
-	var_10_92[27106] = {
+	pg.base.transform_data_template[27106] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -43015,11 +39546,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.transform_data_template
-
-	var_10_93[27107] = {
+	pg.base.transform_data_template[27107] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -43053,11 +39580,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.transform_data_template
-
-	var_10_94[27108] = {
+	pg.base.transform_data_template[27108] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【雷击指挥·驱逐舰】",
@@ -43091,11 +39614,7 @@ end)()
 			25
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.transform_data_template
-
-	var_10_95[27109] = {
+	pg.base.transform_data_template[27109] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -43139,11 +39658,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.transform_data_template
-
-	var_10_96[27110] = {
+	pg.base.transform_data_template[27110] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -43188,11 +39703,7 @@ end)()
 			20
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.transform_data_template
-
-	var_10_97[27111] = {
+	pg.base.transform_data_template[27111] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+25，防空+20",
@@ -43229,11 +39740,7 @@ end)()
 			50
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.transform_data_template
-
-	var_10_98[27201] = {
+	pg.base.transform_data_template[27201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -43265,8 +39772,7 @@ end)()
 			10
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.transform_data_template[27202] = {
+	pg.base.transform_data_template[27202] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -43300,15 +39806,7 @@ end)()
 			10
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.transform_data_template
-
-	var_11_0[27203] = {
+	pg.base.transform_data_template[27203] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -43342,11 +39840,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.transform_data_template
-
-	var_11_1[27204] = {
+	pg.base.transform_data_template[27204] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -43380,11 +39874,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.transform_data_template
-
-	var_11_2[27205] = {
+	pg.base.transform_data_template[27205] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -43418,11 +39908,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.transform_data_template
-
-	var_11_3[27206] = {
+	pg.base.transform_data_template[27206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -43456,11 +39942,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.transform_data_template
-
-	var_11_4[27207] = {
+	pg.base.transform_data_template[27207] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -43494,11 +39976,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.transform_data_template
-
-	var_11_5[27208] = {
+	pg.base.transform_data_template[27208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【鱼雷连射】",
@@ -43532,11 +40010,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.transform_data_template
-
-	var_11_6[27209] = {
+	pg.base.transform_data_template[27209] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -43580,11 +40054,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.transform_data_template
-
-	var_11_7[27210] = {
+	pg.base.transform_data_template[27210] = {
 		level_limit = 75,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -43629,11 +40099,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.transform_data_template
-
-	var_11_8[27211] = {
+	pg.base.transform_data_template[27211] = {
 		level_limit = 80,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+25，防空+20",
@@ -43670,11 +40136,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.transform_data_template
-
-	var_11_9[30101] = {
+	pg.base.transform_data_template[30101] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -43706,11 +40168,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.transform_data_template
-
-	var_11_10[30102] = {
+	pg.base.transform_data_template[30102] = {
 		level_limit = 5,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -43744,11 +40202,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.transform_data_template
-
-	var_11_11[30103] = {
+	pg.base.transform_data_template[30103] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -43782,11 +40236,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.transform_data_template
-
-	var_11_12[30104] = {
+	pg.base.transform_data_template[30104] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -43820,11 +40270,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.transform_data_template
-
-	var_11_13[30105] = {
+	pg.base.transform_data_template[30105] = {
 		level_limit = 35,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -43868,11 +40314,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.transform_data_template
-
-	var_11_14[30106] = {
+	pg.base.transform_data_template[30106] = {
 		level_limit = 40,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -43917,11 +40359,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.transform_data_template
-
-	var_11_15[30107] = {
+	pg.base.transform_data_template[30107] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -43965,11 +40403,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.transform_data_template
-
-	var_11_16[30108] = {
+	pg.base.transform_data_template[30108] = {
 		level_limit = 55,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -44014,11 +40448,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.transform_data_template
-
-	var_11_17[30109] = {
+	pg.base.transform_data_template[30109] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -44062,11 +40492,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.transform_data_template
-
-	var_11_18[30110] = {
+	pg.base.transform_data_template[30110] = {
 		level_limit = 75,
 		name = "雷击强化III",
 		descrip = "雷击+5/雷击+10/雷击+15",
@@ -44132,11 +40558,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.transform_data_template
-
-	var_11_19[30111] = {
+	pg.base.transform_data_template[30111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+35，反潜+10",
@@ -44172,11 +40594,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.transform_data_template
-
-	var_11_20[30112] = {
+	pg.base.transform_data_template[30112] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【库拉湾之战】，炮击+15",
@@ -44217,11 +40635,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.transform_data_template
-
-	var_11_21[30801] = {
+	pg.base.transform_data_template[30801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -44253,11 +40667,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.transform_data_template
-
-	var_11_22[30802] = {
+	pg.base.transform_data_template[30802] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -44291,11 +40701,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.transform_data_template
-
-	var_11_23[30803] = {
+	pg.base.transform_data_template[30803] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -44329,11 +40735,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.transform_data_template
-
-	var_11_24[30804] = {
+	pg.base.transform_data_template[30804] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -44367,11 +40769,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.transform_data_template
-
-	var_11_25[30805] = {
+	pg.base.transform_data_template[30805] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -44405,11 +40803,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.transform_data_template
-
-	var_11_26[30806] = {
+	pg.base.transform_data_template[30806] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -44444,11 +40838,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.transform_data_template
-
-	var_11_27[30807] = {
+	pg.base.transform_data_template[30807] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -44492,11 +40882,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.transform_data_template
-
-	var_11_28[30808] = {
+	pg.base.transform_data_template[30808] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【照明弹】",
@@ -44530,11 +40916,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.transform_data_template
-
-	var_11_29[30809] = {
+	pg.base.transform_data_template[30809] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -44579,11 +40961,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.transform_data_template
-
-	var_11_30[30810] = {
+	pg.base.transform_data_template[30810] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -44628,11 +41006,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.transform_data_template
-
-	var_11_31[30811] = {
+	pg.base.transform_data_template[30811] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+10，雷击+35",
@@ -44668,11 +41042,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.transform_data_template
-
-	var_11_32[30901] = {
+	pg.base.transform_data_template[30901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -44704,11 +41074,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.transform_data_template
-
-	var_11_33[30902] = {
+	pg.base.transform_data_template[30902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -44742,11 +41108,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.transform_data_template
-
-	var_11_34[30903] = {
+	pg.base.transform_data_template[30903] = {
 		level_limit = 20,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -44780,11 +41142,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.transform_data_template
-
-	var_11_35[30904] = {
+	pg.base.transform_data_template[30904] = {
 		level_limit = 25,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -44818,11 +41176,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.transform_data_template
-
-	var_11_36[30905] = {
+	pg.base.transform_data_template[30905] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -44856,11 +41210,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.transform_data_template
-
-	var_11_37[30906] = {
+	pg.base.transform_data_template[30906] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -44895,11 +41245,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.transform_data_template
-
-	var_11_38[30907] = {
+	pg.base.transform_data_template[30907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -44943,11 +41289,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.transform_data_template
-
-	var_11_39[30908] = {
+	pg.base.transform_data_template[30908] = {
 		level_limit = 55,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -44981,11 +41323,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.transform_data_template
-
-	var_11_40[30909] = {
+	pg.base.transform_data_template[30909] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -45029,11 +41367,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.transform_data_template
-
-	var_11_41[30910] = {
+	pg.base.transform_data_template[30910] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -45086,11 +41420,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.transform_data_template
-
-	var_11_42[30911] = {
+	pg.base.transform_data_template[30911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+10，雷击+35",
@@ -45126,11 +41456,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.transform_data_template
-
-	var_11_43[30912] = {
+	pg.base.transform_data_template[30912] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【不屈之神通】",
@@ -45168,11 +41494,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.transform_data_template
-
-	var_11_44[31801] = {
+	pg.base.transform_data_template[31801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -45204,11 +41526,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.transform_data_template
-
-	var_11_45[31802] = {
+	pg.base.transform_data_template[31802] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -45242,11 +41560,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.transform_data_template
-
-	var_11_46[31803] = {
+	pg.base.transform_data_template[31803] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -45280,11 +41594,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.transform_data_template
-
-	var_11_47[31804] = {
+	pg.base.transform_data_template[31804] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "雷击+10",
@@ -45318,11 +41628,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.transform_data_template
-
-	var_11_48[31805] = {
+	pg.base.transform_data_template[31805] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "主炮武器效率+5%",
@@ -45356,11 +41662,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.transform_data_template
-
-	var_11_49[31806] = {
+	pg.base.transform_data_template[31806] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "炮击+10",
@@ -45394,11 +41696,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.transform_data_template
-
-	var_11_50[31807] = {
+	pg.base.transform_data_template[31807] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -45432,11 +41730,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.transform_data_template
-
-	var_11_51[31808] = {
+	pg.base.transform_data_template[31808] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【紧急回避】",
@@ -45470,11 +41764,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.transform_data_template
-
-	var_11_52[31809] = {
+	pg.base.transform_data_template[31809] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -45518,11 +41808,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.transform_data_template
-
-	var_11_53[31810] = {
+	pg.base.transform_data_template[31810] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -45575,11 +41861,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.transform_data_template
-
-	var_11_54[31811] = {
+	pg.base.transform_data_template[31811] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -45615,11 +41897,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.transform_data_template
-
-	var_11_55[31901] = {
+	pg.base.transform_data_template[31901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -45651,11 +41929,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.transform_data_template
-
-	var_11_56[31902] = {
+	pg.base.transform_data_template[31902] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -45689,11 +41963,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.transform_data_template
-
-	var_11_57[31903] = {
+	pg.base.transform_data_template[31903] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -45727,11 +41997,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.transform_data_template
-
-	var_11_58[31904] = {
+	pg.base.transform_data_template[31904] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "雷击+10",
@@ -45765,11 +42031,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.transform_data_template
-
-	var_11_59[31905] = {
+	pg.base.transform_data_template[31905] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "主炮武器效率+5%",
@@ -45803,11 +42065,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.transform_data_template
-
-	var_11_60[31906] = {
+	pg.base.transform_data_template[31906] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "炮击+10",
@@ -45841,11 +42099,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.transform_data_template
-
-	var_11_61[31907] = {
+	pg.base.transform_data_template[31907] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -45879,11 +42133,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.transform_data_template
-
-	var_11_62[31908] = {
+	pg.base.transform_data_template[31908] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【集火信号-鱼雷】",
@@ -45917,11 +42167,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.transform_data_template
-
-	var_11_63[31909] = {
+	pg.base.transform_data_template[31909] = {
 		level_limit = 70,
 		name = "鱼雷改良II",
 		descrip = "鱼雷武器效率+5%/鱼雷武器效率+5%",
@@ -45965,11 +42211,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.transform_data_template
-
-	var_11_64[31910] = {
+	pg.base.transform_data_template[31910] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -46022,11 +42264,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.transform_data_template
-
-	var_11_65[31911] = {
+	pg.base.transform_data_template[31911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -46062,11 +42300,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.transform_data_template
-
-	var_11_66[34801] = {
+	pg.base.transform_data_template[34801] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -46098,11 +42332,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.transform_data_template
-
-	var_11_67[34802] = {
+	pg.base.transform_data_template[34802] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -46136,11 +42366,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.transform_data_template
-
-	var_11_68[34803] = {
+	pg.base.transform_data_template[34803] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -46174,11 +42400,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.transform_data_template
-
-	var_11_69[34804] = {
+	pg.base.transform_data_template[34804] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -46212,11 +42434,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.transform_data_template
-
-	var_11_70[34805] = {
+	pg.base.transform_data_template[34805] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -46250,11 +42468,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.transform_data_template
-
-	var_11_71[34806] = {
+	pg.base.transform_data_template[34806] = {
 		level_limit = 40,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -46299,11 +42513,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.transform_data_template
-
-	var_11_72[34807] = {
+	pg.base.transform_data_template[34807] = {
 		level_limit = 50,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -46337,11 +42547,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.transform_data_template
-
-	var_11_73[34808] = {
+	pg.base.transform_data_template[34808] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -46385,11 +42591,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.transform_data_template
-
-	var_11_74[34809] = {
+	pg.base.transform_data_template[34809] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -46423,11 +42625,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.transform_data_template
-
-	var_11_75[34810] = {
+	pg.base.transform_data_template[34810] = {
 		level_limit = 75,
 		name = "战术启发",
 		descrip = "习得技能【紧急回避】",
@@ -46461,11 +42659,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.transform_data_template
-
-	var_11_76[34811] = {
+	pg.base.transform_data_template[34811] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+15，反潜+30",
@@ -46501,11 +42695,7 @@ end)()
 			50
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.transform_data_template
-
-	var_11_77[34901] = {
+	pg.base.transform_data_template[34901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -46537,11 +42727,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.transform_data_template
-
-	var_11_78[34902] = {
+	pg.base.transform_data_template[34902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -46575,11 +42761,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.transform_data_template
-
-	var_11_79[34903] = {
+	pg.base.transform_data_template[34903] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -46613,11 +42795,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.transform_data_template
-
-	var_11_80[34904] = {
+	pg.base.transform_data_template[34904] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -46651,11 +42829,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.transform_data_template
-
-	var_11_81[34905] = {
+	pg.base.transform_data_template[34905] = {
 		level_limit = 35,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -46689,11 +42863,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.transform_data_template
-
-	var_11_82[34906] = {
+	pg.base.transform_data_template[34906] = {
 		level_limit = 40,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -46728,11 +42898,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.transform_data_template
-
-	var_11_83[34907] = {
+	pg.base.transform_data_template[34907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -46776,11 +42942,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.transform_data_template
-
-	var_11_84[34908] = {
+	pg.base.transform_data_template[34908] = {
 		level_limit = 55,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -46814,11 +42976,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.transform_data_template
-
-	var_11_85[34909] = {
+	pg.base.transform_data_template[34909] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -46862,11 +43020,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.transform_data_template
-
-	var_11_86[34910] = {
+	pg.base.transform_data_template[34910] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -46919,11 +43073,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.transform_data_template
-
-	var_11_87[34911] = {
+	pg.base.transform_data_template[34911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+20，雷击+25",
@@ -46959,11 +43109,11 @@ end)()
 			50
 		}
 	}
-	pg = var_11_87
 
-	local var_11_88 = var_11_87.base.transform_data_template
-
-	var_11_88[34912] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[34912] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -47001,11 +43151,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.transform_data_template
-
-	var_11_89[29] = {
+	pg.base.transform_data_template[29] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -47037,11 +43183,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.transform_data_template
-
-	var_11_90[30] = {
+	pg.base.transform_data_template[30] = {
 		level_limit = 5,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -47075,11 +43217,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.transform_data_template
-
-	var_11_91[31] = {
+	pg.base.transform_data_template[31] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -47113,11 +43251,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.transform_data_template
-
-	var_11_92[35104] = {
+	pg.base.transform_data_template[35104] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -47151,11 +43285,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.transform_data_template
-
-	var_11_93[35105] = {
+	pg.base.transform_data_template[35105] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -47189,11 +43319,7 @@ end)()
 			20
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.transform_data_template
-
-	var_11_94[35106] = {
+	pg.base.transform_data_template[35106] = {
 		level_limit = 40,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -47238,11 +43364,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.transform_data_template
-
-	var_11_95[35107] = {
+	pg.base.transform_data_template[35107] = {
 		level_limit = 50,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -47276,11 +43398,7 @@ end)()
 			25
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.transform_data_template
-
-	var_11_96[35108] = {
+	pg.base.transform_data_template[35108] = {
 		level_limit = 55,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -47324,11 +43442,7 @@ end)()
 			15
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.transform_data_template
-
-	var_11_97[35109] = {
+	pg.base.transform_data_template[35109] = {
 		level_limit = 70,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -47362,11 +43476,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.transform_data_template
-
-	var_11_98[35110] = {
+	pg.base.transform_data_template[35110] = {
 		level_limit = 75,
 		name = "战术启发",
 		descrip = "习得技能【紧急回避】",
@@ -47400,8 +43510,7 @@ end)()
 			30
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.transform_data_template[35111] = {
+	pg.base.transform_data_template[35111] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+30，反潜+15",
@@ -47437,15 +43546,7 @@ end)()
 			50
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.transform_data_template
-
-	var_12_0[35701] = {
+	pg.base.transform_data_template[35701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -47477,11 +43578,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.transform_data_template
-
-	var_12_1[35702] = {
+	pg.base.transform_data_template[35702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -47515,11 +43612,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.transform_data_template
-
-	var_12_2[35703] = {
+	pg.base.transform_data_template[35703] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "战斗机武器效率+5%",
@@ -47553,11 +43646,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.transform_data_template
-
-	var_12_3[35704] = {
+	pg.base.transform_data_template[35704] = {
 		level_limit = 25,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -47591,11 +43680,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.transform_data_template
-
-	var_12_4[35705] = {
+	pg.base.transform_data_template[35705] = {
 		level_limit = 35,
 		name = "轰炸精通I",
 		descrip = "轰炸机武器效率+5%",
@@ -47629,11 +43714,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.transform_data_template
-
-	var_12_5[35706] = {
+	pg.base.transform_data_template[35706] = {
 		level_limit = 40,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -47677,11 +43758,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.transform_data_template
-
-	var_12_6[35707] = {
+	pg.base.transform_data_template[35707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -47725,11 +43802,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.transform_data_template
-
-	var_12_7[35708] = {
+	pg.base.transform_data_template[35708] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -47774,11 +43847,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.transform_data_template
-
-	var_12_8[35709] = {
+	pg.base.transform_data_template[35709] = {
 		level_limit = 70,
 		name = "鱼雷俯冲II",
 		descrip = "鱼雷机武器效率+5%/鱼雷机武器效率+5%",
@@ -47822,11 +43891,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.transform_data_template
-
-	var_12_9[35710] = {
+	pg.base.transform_data_template[35710] = {
 		level_limit = 75,
 		name = "航空强化III",
 		descrip = "航空+10/航空+15/航空+20",
@@ -47892,11 +43957,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.transform_data_template
-
-	var_12_10[35711] = {
+	pg.base.transform_data_template[35711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，命中+10，防空+35\n改造后<color=#92fc63>轰炸机武器栏位可以装备任意舰载机</color>\n【善战之舰】技能升级为【善战之舰.改】",
@@ -47937,11 +43998,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.transform_data_template
-
-	var_12_11[0] = {
+	pg.base.transform_data_template[0] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【时代新启】",
@@ -47979,11 +44036,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.transform_data_template
-
-	var_12_12[5] = {
+	pg.base.transform_data_template[5] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -48015,11 +44068,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.transform_data_template
-
-	var_12_13[6] = {
+	pg.base.transform_data_template[6] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -48053,11 +44102,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.transform_data_template
-
-	var_12_14[7] = {
+	pg.base.transform_data_template[7] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -48091,11 +44136,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.transform_data_template
-
-	var_12_15[8] = {
+	pg.base.transform_data_template[8] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -48129,11 +44170,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.transform_data_template
-
-	var_12_16[9] = {
+	pg.base.transform_data_template[9] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -48167,11 +44204,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.transform_data_template
-
-	var_12_17[10] = {
+	pg.base.transform_data_template[10] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -48206,11 +44239,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.transform_data_template
-
-	var_12_18[11] = {
+	pg.base.transform_data_template[11] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -48254,11 +44283,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.transform_data_template
-
-	var_12_19[12] = {
+	pg.base.transform_data_template[12] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【炮术指挥·先锋】",
@@ -48292,11 +44317,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.transform_data_template
-
-	var_12_20[13] = {
+	pg.base.transform_data_template[13] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -48341,11 +44362,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.transform_data_template
-
-	var_12_21[14] = {
+	pg.base.transform_data_template[14] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -48390,11 +44407,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.transform_data_template
-
-	var_12_22[15] = {
+	pg.base.transform_data_template[15] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，装填+15，防空+30",
@@ -48430,11 +44443,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.transform_data_template
-
-	var_12_23[37201] = {
+	pg.base.transform_data_template[37201] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -48466,11 +44475,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.transform_data_template
-
-	var_12_24[37202] = {
+	pg.base.transform_data_template[37202] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -48504,11 +44509,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.transform_data_template
-
-	var_12_25[37203] = {
+	pg.base.transform_data_template[37203] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -48542,11 +44543,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.transform_data_template
-
-	var_12_26[37204] = {
+	pg.base.transform_data_template[37204] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -48580,11 +44577,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.transform_data_template
-
-	var_12_27[37205] = {
+	pg.base.transform_data_template[37205] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+3%",
@@ -48619,11 +44612,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.transform_data_template
-
-	var_12_28[37206] = {
+	pg.base.transform_data_template[37206] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -48658,11 +44647,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.transform_data_template
-
-	var_12_29[37207] = {
+	pg.base.transform_data_template[37207] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -48706,11 +44691,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.transform_data_template
-
-	var_12_30[37208] = {
+	pg.base.transform_data_template[37208] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【防空指挥·先锋】",
@@ -48744,11 +44725,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.transform_data_template
-
-	var_12_31[37209] = {
+	pg.base.transform_data_template[37209] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+3%/防空炮武器效率+4%",
@@ -48795,11 +44772,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.transform_data_template
-
-	var_12_32[37210] = {
+	pg.base.transform_data_template[37210] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+5/防空+15",
@@ -48844,11 +44817,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.transform_data_template
-
-	var_12_33[37211] = {
+	pg.base.transform_data_template[37211] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+15，炮击+30",
@@ -48884,11 +44853,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.transform_data_template
-
-	var_12_34[37301] = {
+	pg.base.transform_data_template[37301] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -48920,11 +44885,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.transform_data_template
-
-	var_12_35[37302] = {
+	pg.base.transform_data_template[37302] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -48958,11 +44919,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.transform_data_template
-
-	var_12_36[37303] = {
+	pg.base.transform_data_template[37303] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -48996,11 +44953,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.transform_data_template
-
-	var_12_37[37304] = {
+	pg.base.transform_data_template[37304] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -49034,11 +44987,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.transform_data_template
-
-	var_12_38[37305] = {
+	pg.base.transform_data_template[37305] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+3%",
@@ -49073,11 +45022,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.transform_data_template
-
-	var_12_39[37306] = {
+	pg.base.transform_data_template[37306] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+10",
@@ -49112,11 +45057,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.transform_data_template
-
-	var_12_40[37307] = {
+	pg.base.transform_data_template[37307] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -49160,11 +45101,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.transform_data_template
-
-	var_12_41[37308] = {
+	pg.base.transform_data_template[37308] = {
 		level_limit = 55,
 		name = "战术启发",
 		descrip = "习得技能【空袭引导】",
@@ -49198,11 +45135,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.transform_data_template
-
-	var_12_42[37309] = {
+	pg.base.transform_data_template[37309] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+3%/防空炮武器效率+4%",
@@ -49249,11 +45182,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.transform_data_template
-
-	var_12_43[37310] = {
+	pg.base.transform_data_template[37310] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+5/防空+15",
@@ -49298,11 +45227,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.transform_data_template
-
-	var_12_44[37311] = {
+	pg.base.transform_data_template[37311] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+15，炮击+30",
@@ -49338,11 +45263,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.transform_data_template
-
-	var_12_45[37701] = {
+	pg.base.transform_data_template[37701] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -49374,11 +45295,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.transform_data_template
-
-	var_12_46[37702] = {
+	pg.base.transform_data_template[37702] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -49412,11 +45329,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.transform_data_template
-
-	var_12_47[37703] = {
+	pg.base.transform_data_template[37703] = {
 		level_limit = 20,
 		name = "空战精通I",
 		descrip = "战斗机武器效率+4%",
@@ -49450,11 +45363,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.transform_data_template
-
-	var_12_48[37704] = {
+	pg.base.transform_data_template[37704] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -49488,11 +45397,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.transform_data_template
-
-	var_12_49[37705] = {
+	pg.base.transform_data_template[37705] = {
 		level_limit = 35,
 		name = "鱼雷俯冲I",
 		descrip = "鱼雷机武器效率+5%",
@@ -49526,11 +45431,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.transform_data_template
-
-	var_12_50[37706] = {
+	pg.base.transform_data_template[37706] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -49564,11 +45465,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.transform_data_template
-
-	var_12_51[37707] = {
+	pg.base.transform_data_template[37707] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -49612,11 +45509,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.transform_data_template
-
-	var_12_52[37708] = {
+	pg.base.transform_data_template[37708] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -49661,11 +45554,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.transform_data_template
-
-	var_12_53[37709] = {
+	pg.base.transform_data_template[37709] = {
 		level_limit = 70,
 		name = "空战精通II",
 		descrip = "战斗机武器效率+4%/战斗机武器效率+7%",
@@ -49709,11 +45598,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.transform_data_template
-
-	var_12_54[37710] = {
+	pg.base.transform_data_template[37710] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+5/防空+15",
@@ -49765,11 +45650,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.transform_data_template
-
-	var_12_55[37711] = {
+	pg.base.transform_data_template[37711] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，航空+10\n改造后<color=#92fc63>【所有战斗机+1】</color>、<color=#92fc63>【所有鱼雷机+1】</color>",
@@ -49810,11 +45691,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.transform_data_template
-
-	var_12_56[37712] = {
+	pg.base.transform_data_template[37712] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -49852,11 +45729,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.transform_data_template
-
-	var_12_57[42401] = {
+	pg.base.transform_data_template[42401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+45",
@@ -49888,11 +45761,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.transform_data_template
-
-	var_12_58[42402] = {
+	pg.base.transform_data_template[42402] = {
 		level_limit = 5,
 		name = "机动强化I",
 		descrip = "机动+5",
@@ -49926,11 +45795,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.transform_data_template
-
-	var_12_59[42403] = {
+	pg.base.transform_data_template[42403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -49964,11 +45829,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.transform_data_template
-
-	var_12_60[42404] = {
+	pg.base.transform_data_template[42404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -50002,11 +45863,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.transform_data_template
-
-	var_12_61[42405] = {
+	pg.base.transform_data_template[42405] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -50040,11 +45897,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.transform_data_template
-
-	var_12_62[42406] = {
+	pg.base.transform_data_template[42406] = {
 		level_limit = 40,
 		name = "雷击强化I",
 		descrip = "雷击+10",
@@ -50078,11 +45931,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.transform_data_template
-
-	var_12_63[42407] = {
+	pg.base.transform_data_template[42407] = {
 		level_limit = 50,
 		name = "动力强化",
 		descrip = "航速+3",
@@ -50116,11 +45965,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.transform_data_template
-
-	var_12_64[42408] = {
+	pg.base.transform_data_template[42408] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -50165,11 +46010,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.transform_data_template
-
-	var_12_65[42409] = {
+	pg.base.transform_data_template[42409] = {
 		level_limit = 70,
 		name = "舰体改良II",
 		descrip = "耐久+45/耐久+75",
@@ -50213,11 +46054,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.transform_data_template
-
-	var_12_66[42410] = {
+	pg.base.transform_data_template[42410] = {
 		level_limit = 75,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -50270,11 +46107,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.transform_data_template
-
-	var_12_67[42411] = {
+	pg.base.transform_data_template[42411] = {
 		level_limit = 85,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -50319,11 +46152,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.transform_data_template
-
-	var_12_68[42412] = {
+	pg.base.transform_data_template[42412] = {
 		level_limit = 90,
 		name = "近代化改造",
 		descrip = "近代化改造完成，雷击+30，机动+15",
@@ -50364,11 +46193,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.transform_data_template
-
-	var_12_69[9] = {
+	pg.base.transform_data_template[9] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+70",
@@ -50400,11 +46225,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.transform_data_template
-
-	var_12_70[10] = {
+	pg.base.transform_data_template[10] = {
 		level_limit = 5,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -50438,11 +46259,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.transform_data_template
-
-	var_12_71[11] = {
+	pg.base.transform_data_template[11] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -50476,11 +46293,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.transform_data_template
-
-	var_12_72[12] = {
+	pg.base.transform_data_template[12] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -50514,11 +46327,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.transform_data_template
-
-	var_12_73[13] = {
+	pg.base.transform_data_template[13] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -50552,11 +46361,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.transform_data_template
-
-	var_12_74[14] = {
+	pg.base.transform_data_template[14] = {
 		level_limit = 40,
 		name = "雷击强化II",
 		descrip = "雷击+5/雷击+15",
@@ -50601,11 +46406,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.transform_data_template
-
-	var_12_75[15] = {
+	pg.base.transform_data_template[15] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+70/耐久+100",
@@ -50649,11 +46450,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.transform_data_template
-
-	var_12_76[16] = {
+	pg.base.transform_data_template[16] = {
 		level_limit = 55,
 		name = "命中强化I",
 		descrip = "命中+5",
@@ -50687,11 +46484,7 @@ end)()
 			25
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.transform_data_template
-
-	var_12_77[17] = {
+	pg.base.transform_data_template[17] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -50735,11 +46528,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.transform_data_template
-
-	var_12_78[18] = {
+	pg.base.transform_data_template[18] = {
 		level_limit = 75,
 		name = "防空强化II",
 		descrip = "防空+15/防空+25",
@@ -50792,11 +46581,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.transform_data_template
-
-	var_12_79[19] = {
+	pg.base.transform_data_template[19] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+35，防空+10\n\n改造后<color=#92fc63>【主炮（轻巡主炮）】</color>装备栏位装备类型更改为<color=#92fc63>【主炮（驱逐主炮）】</color>\n原来的<color=#92fc63>【主炮（轻巡主炮）】</color>栏位装备将被放入仓库",
@@ -50837,11 +46622,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.transform_data_template
-
-	var_12_80[20] = {
+	pg.base.transform_data_template[20] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【满怀爱意！】",
@@ -50880,11 +46661,7 @@ end)()
 			30
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.transform_data_template
-
-	var_12_81[21] = {
+	pg.base.transform_data_template[21] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -50916,11 +46693,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.transform_data_template
-
-	var_12_82[22] = {
+	pg.base.transform_data_template[22] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -50954,11 +46727,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.transform_data_template
-
-	var_12_83[23] = {
+	pg.base.transform_data_template[23] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -50992,11 +46761,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.transform_data_template
-
-	var_12_84[24] = {
+	pg.base.transform_data_template[24] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -51030,11 +46795,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.transform_data_template
-
-	var_12_85[25] = {
+	pg.base.transform_data_template[25] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -51068,11 +46829,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.transform_data_template
-
-	var_12_86[26] = {
+	pg.base.transform_data_template[26] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -51107,11 +46864,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.transform_data_template
-
-	var_12_87[27] = {
+	pg.base.transform_data_template[27] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -51155,11 +46908,11 @@ end)()
 			15
 		}
 	}
-	pg = var_12_87
 
-	local var_12_88 = var_12_87.base.transform_data_template
-
-	var_12_88[28] = {
+	return
+end)()
+;(function()
+	pg.base.transform_data_template[28] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -51203,11 +46956,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.transform_data_template
-
-	var_12_89[29] = {
+	pg.base.transform_data_template[29] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -51251,11 +47000,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.transform_data_template
-
-	var_12_90[30] = {
+	pg.base.transform_data_template[30] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -51308,11 +47053,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.transform_data_template
-
-	var_12_91[31] = {
+	pg.base.transform_data_template[31] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，机动+20",
@@ -51348,11 +47089,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.transform_data_template
-
-	var_12_92[49312] = {
+	pg.base.transform_data_template[49312] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【笔走龙蛇】",
@@ -51391,11 +47128,7 @@ end)()
 			30
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.transform_data_template
-
-	var_12_93[49401] = {
+	pg.base.transform_data_template[49401] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -51427,11 +47160,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.transform_data_template
-
-	var_12_94[49402] = {
+	pg.base.transform_data_template[49402] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -51465,11 +47194,7 @@ end)()
 			10
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.transform_data_template
-
-	var_12_95[49403] = {
+	pg.base.transform_data_template[49403] = {
 		level_limit = 20,
 		name = "主炮改良I",
 		descrip = "主炮武器效率+5%",
@@ -51503,11 +47228,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.transform_data_template
-
-	var_12_96[49404] = {
+	pg.base.transform_data_template[49404] = {
 		level_limit = 25,
 		name = "炮击强化I",
 		descrip = "炮击+10",
@@ -51541,11 +47262,7 @@ end)()
 			15
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.transform_data_template
-
-	var_12_97[49405] = {
+	pg.base.transform_data_template[49405] = {
 		level_limit = 35,
 		name = "鱼雷改良I",
 		descrip = "鱼雷武器效率+5%",
@@ -51579,11 +47296,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.transform_data_template
-
-	var_12_98[49406] = {
+	pg.base.transform_data_template[49406] = {
 		level_limit = 40,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -51618,8 +47331,7 @@ end)()
 			20
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.transform_data_template[49407] = {
+	pg.base.transform_data_template[49407] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -51663,15 +47375,7 @@ end)()
 			15
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.transform_data_template
-
-	var_13_0[0] = {
+	pg.base.transform_data_template[0] = {
 		level_limit = 55,
 		name = "机动强化II",
 		descrip = "机动+5/机动+10",
@@ -51715,11 +47419,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.transform_data_template
-
-	var_13_1[1] = {
+	pg.base.transform_data_template[1] = {
 		level_limit = 70,
 		name = "主炮改良II",
 		descrip = "主炮武器效率+5%/主炮武器效率+5%",
@@ -51763,11 +47463,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.transform_data_template
-
-	var_13_2[2] = {
+	pg.base.transform_data_template[2] = {
 		level_limit = 75,
 		name = "炮击强化II",
 		descrip = "炮击+5/炮击+15",
@@ -51820,11 +47516,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.transform_data_template
-
-	var_13_3[3] = {
+	pg.base.transform_data_template[3] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，炮击+25，机动+20",
@@ -51860,11 +47552,7 @@ end)()
 			50
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.transform_data_template
-
-	var_13_4[4] = {
+	pg.base.transform_data_template[4] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【扇舞惊鸿】",
@@ -51903,11 +47591,7 @@ end)()
 			30
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.transform_data_template
-
-	var_13_5[25] = {
+	pg.base.transform_data_template[25] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -51939,11 +47623,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.transform_data_template
-
-	var_13_6[26] = {
+	pg.base.transform_data_template[26] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -51977,11 +47657,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.transform_data_template
-
-	var_13_7[27] = {
+	pg.base.transform_data_template[27] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -52015,11 +47691,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.transform_data_template
-
-	var_13_8[28] = {
+	pg.base.transform_data_template[28] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -52053,11 +47725,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.transform_data_template
-
-	var_13_9[29] = {
+	pg.base.transform_data_template[29] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -52091,11 +47759,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.transform_data_template
-
-	var_13_10[30] = {
+	pg.base.transform_data_template[30] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -52129,11 +47793,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.transform_data_template
-
-	var_13_11[31] = {
+	pg.base.transform_data_template[31] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -52177,11 +47837,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.transform_data_template
-
-	var_13_12[53408] = {
+	pg.base.transform_data_template[53408] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -52226,11 +47882,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.transform_data_template
-
-	var_13_13[53409] = {
+	pg.base.transform_data_template[53409] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -52274,11 +47926,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.transform_data_template
-
-	var_13_14[53410] = {
+	pg.base.transform_data_template[53410] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -52330,11 +47978,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.transform_data_template
-
-	var_13_15[53411] = {
+	pg.base.transform_data_template[53411] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，航空+25\n改造后<color=#92fc63>【第一武器栏位可以装备战斗机】【第一武器栏位舰载机数量+2】</color>、<color=#92fc63>【第二武器栏位可以装备任意类型舰载机】【第二武器栏位舰载机数量/底座数量+1】</color>",
@@ -52375,11 +48019,7 @@ end)()
 			50
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.transform_data_template
-
-	var_13_16[53412] = {
+	pg.base.transform_data_template[53412] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",
@@ -52417,11 +48057,7 @@ end)()
 			25
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.transform_data_template
-
-	var_13_17[57901] = {
+	pg.base.transform_data_template[57901] = {
 		level_limit = 1,
 		name = "舰体改良I",
 		descrip = "耐久+60",
@@ -52453,11 +48089,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.transform_data_template
-
-	var_13_18[57902] = {
+	pg.base.transform_data_template[57902] = {
 		level_limit = 5,
 		name = "装填强化I",
 		descrip = "装填+5",
@@ -52491,11 +48123,7 @@ end)()
 			10
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.transform_data_template
-
-	var_13_19[57903] = {
+	pg.base.transform_data_template[57903] = {
 		level_limit = 20,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -52529,11 +48157,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.transform_data_template
-
-	var_13_20[57904] = {
+	pg.base.transform_data_template[57904] = {
 		level_limit = 25,
 		name = "防空强化I",
 		descrip = "防空+15",
@@ -52567,11 +48191,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.transform_data_template
-
-	var_13_21[57905] = {
+	pg.base.transform_data_template[57905] = {
 		level_limit = 35,
 		name = "防空炮改良I",
 		descrip = "防空炮武器效率+5%",
@@ -52605,11 +48225,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.transform_data_template
-
-	var_13_22[57906] = {
+	pg.base.transform_data_template[57906] = {
 		level_limit = 40,
 		name = "航空强化I",
 		descrip = "航空+10",
@@ -52643,11 +48259,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.transform_data_template
-
-	var_13_23[57907] = {
+	pg.base.transform_data_template[57907] = {
 		level_limit = 50,
 		name = "舰体改良II",
 		descrip = "耐久+60/耐久+90",
@@ -52691,11 +48303,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.transform_data_template
-
-	var_13_24[57908] = {
+	pg.base.transform_data_template[57908] = {
 		level_limit = 55,
 		name = "装填强化II",
 		descrip = "装填+5/装填+10",
@@ -52740,11 +48348,7 @@ end)()
 			15
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.transform_data_template
-
-	var_13_25[57909] = {
+	pg.base.transform_data_template[57909] = {
 		level_limit = 70,
 		name = "防空炮改良II",
 		descrip = "防空炮武器效率+5%/防空炮武器效率+5%",
@@ -52788,11 +48392,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.transform_data_template
-
-	var_13_26[57910] = {
+	pg.base.transform_data_template[57910] = {
 		level_limit = 75,
 		name = "航空强化II",
 		descrip = "航空+10/航空+15",
@@ -52844,11 +48444,7 @@ end)()
 			20
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.transform_data_template
-
-	var_13_27[57911] = {
+	pg.base.transform_data_template[57911] = {
 		level_limit = 85,
 		name = "近代化改造",
 		descrip = "近代化改造完成，防空+35，航空+25\n改造后<color=#92fc63>【第一武器栏位可以装备战斗机】【第二武器栏位可装备任意类型舰载机】</color>、<color=#92fc63>【第一武器栏位、第二武器栏位位武器效率+10%】</color>",
@@ -52889,8 +48485,7 @@ end)()
 			50
 		}
 	}
-	pg = var_13_27
-	var_13_27.base.transform_data_template[57912] = {
+	pg.base.transform_data_template[57912] = {
 		level_limit = 90,
 		name = "战术启发",
 		descrip = "习得技能【】",

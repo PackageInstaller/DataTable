@@ -17,6 +17,21 @@ require 'utils/TableUtil'
 require 'utils/StringUtil'
 JsonUtil = require 'utils/JsonUtil'
 SnMgr = require('utils/SnMgr').new()
+
+MathTool = require('utils/aabb/MathTool')
+MM4 = require('utils/aabb/MM4')
+
+MV4 = require('utils/aabb/MV4')
+MV3 = require('utils/aabb/MV3')
+MV2 = require('utils/aabb/MV2')
+
+Sphere = require('utils/aabb/Sphere')
+AABB = require('utils/aabb/AABB')
+OBB = require('utils/aabb/OBB')
+Rectangle = require('utils/aabb/Rectangle')
+QuadTree = require('utils/aabb/QuadTree')
+QuadTreeItem = require('utils/aabb/QuadTreeItem')
+
 -- LanguageUtil = require 'utils/LanguageUtil'
 --加载常量或配置文件 BEGIN
 --加载常量或配置文件 END
@@ -62,6 +77,7 @@ PlayerHeadFrameGrid = require 'lib/component/PlayerHeadFrameGrid'
 CustomTabBar = require 'lib/component/CustomTabBar'
 CustomTabBar2 = require 'lib/component/CustomTabBar2'
 DropDownEx = require("lib/component/DropDownEx")
+DropDown = require("lib/component/DropDown")
 ArcScrollList = require("lib/component/ArcScrollList")
 ArcScrollBaseItem = require("lib/component/ArcScrollBaseItem")
 Gyro = require 'lib/component/Gyro'

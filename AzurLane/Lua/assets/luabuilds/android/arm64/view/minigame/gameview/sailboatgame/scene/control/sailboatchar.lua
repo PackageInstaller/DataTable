@@ -1,58 +1,22 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatChar")
+﻿local var_0_0 = class("SailBoatChar")
 local var_0_1
 
 var_0_0.fire_cd = 0.1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	SailBoatGameVo = var_1_10003
-	var_0_1 = var_1_10003
+	var_0_1 = SailBoatGameVo
 	arg_1_0._tf = arg_1_1
 	arg_1_0._eventCallback = arg_1_2
-	GetComponent = var_1_10003
-	findTF = var_1_10005
+	arg_1_0._collider = GetComponent(findTF(arg_1_0._tf, "bound"), typeof(BoxCollider2D))
+	arg_1_0.imgTf = findTF(arg_1_0._tf, "img")
+	arg_1_0._animator = GetComponent(arg_1_0.imgTf, typeof(Animator))
+	arg_1_0._leftWeapons, arg_1_0._rightWeapons = {}, {}
+	arg_1_0._hpTf = findTF(arg_1_0._tf, "hp")
+	arg_1_0._hpSlider = GetComponent(findTF(arg_1_0._tf, "hp"), typeof(Slider))
 
-	local var_1_0 = var_1_10005(arg_1_0._tf, "bound")
+	setActive(arg_1_0._tf, false)
 
-	typeof = var_1_10006
-	BoxCollider2D = var_8
-	arg_1_0._collider = var_1_10003(var_1_0, var_1_10006(var_8))
-	findTF = var_3
-	arg_1_0.imgTf = var_3(arg_1_0._tf, "img")
-	GetComponent = var_3
-
-	local var_1_1 = arg_1_0.imgTf
-
-	typeof = var_6
-	Animator = var_8
-	arg_1_0._animator = var_3(var_1_1, var_6(var_8))
-
-	local var_1_2 = {}
-
-	arg_1_0._rightWeapons = {}
-	arg_1_0._leftWeapons = var_1_2
-	findTF = var_1_2
-	arg_1_0._hpTf = var_1_2(arg_1_0._tf, "hp")
-	GetComponent = var_3
-	findTF = var_5
-
-	local var_1_3 = var_5(arg_1_0._tf, "hp")
-
-	typeof = var_6
-	Slider = var_8
-	arg_1_0._hpSlider = var_3(var_1_3, var_6(var_8))
-	setActive = var_3
-
-	var_3(arg_1_0._tf, false)
-
-	GetComponent = var_3
-
-	local var_1_4 = arg_1_0._tf
-
-	typeof = var_6
-	Animator = var_8
-	arg_1_0._playerAnimator = var_3(var_1_4, var_6(var_8))
+	arg_1_0._playerAnimator = GetComponent(arg_1_0._tf, typeof(Animator))
 
 	return
 end
@@ -68,17 +32,13 @@ end
 function var_0_0.setWeapon(arg_3_0, arg_3_1, arg_3_2)
 	if arg_3_0._leftWeapons and #arg_3_0._leftWeapons > 0 then
 		for iter_3_0 = 1, #arg_3_0._leftWeapons do
-			local var_3_0 = arg_3_0._leftWeapons[iter_3_0]
-
-			var_7.clear(var_3_0)
+			arg_3_0._leftWeapons[iter_3_0]:clear()
 		end
 	end
 
 	if arg_3_0._rightWeapons and #arg_3_0._rightWeapons > 0 then
 		for iter_3_1 = 1, #arg_3_0._rightWeapons do
-			local var_3_1 = arg_3_0._rightWeapons[iter_3_1]
-
-			var_7.clear(var_3_1)
+			arg_3_0._rightWeapons[iter_3_1]:clear()
 		end
 	end
 
@@ -91,9 +51,8 @@ end
 
 function var_0_0.setContent(arg_4_0, arg_4_1, arg_4_2)
 	arg_4_0._content = arg_4_1
-	SetParent = var_1_10003
 
-	var_1_10003(arg_4_0._tf, arg_4_1)
+	SetParent(arg_4_0._tf, arg_4_1)
 
 	arg_4_0._tf.anchoredPosition = arg_4_2
 
@@ -103,27 +62,7 @@ end
 function var_0_0.changeDirect(arg_5_0, arg_5_1, arg_5_2)
 	arg_5_0._directX = arg_5_1
 	arg_5_0._directY = arg_5_2
-
-	if arg_5_0._directX < 0 then
-		local var_5_0 = arg_5_0.imgTf
-
-		Vector3 = var_4
-		var_5_0.localEulerAngles = var_4(0, 0, 3)
-	else
-		local var_5_1 = arg_5_0._directX
-
-		if 0 < var_5_1 then
-			local var_5_2 = arg_5_0.imgTf
-
-			Vector3 = var_4
-			var_5_2.localEulerAngles = var_4(0, 0, -3)
-		else
-			local var_5_3 = arg_5_0.imgTf
-
-			Vector3 = var_4
-			var_5_3.localEulerAngles = var_4(0, 0, 0)
-		end
-	end
+	arg_5_0.imgTf.localEulerAngles = arg_5_0._directX < 0 and Vector3(0, 0, 3) or arg_5_0._directX > 0 and Vector3(0, 0, -3) or Vector3(0, 0, 0)
 
 	return
 end
@@ -135,29 +74,20 @@ end
 function var_0_0.start(arg_7_0)
 	arg_7_0._directX = 0
 	arg_7_0._directY = 0
-	setActive = var_1
 
-	var_1(arg_7_0._tf, true)
+	setActive(arg_7_0._tf, true)
 
-	local var_7_0 = arg_7_0._tf
-
-	Vector2 = var_1_10002
-	var_7_0.anchoredPosition = var_1_10002(0, 0)
+	arg_7_0._tf.anchoredPosition = Vector2(0, 0)
 
 	for iter_7_0 = 1, #arg_7_0._leftWeapons do
-		local var_7_1 = arg_7_0._leftWeapons[iter_7_0]
-
-		var_5.start(var_7_1)
+		arg_7_0._leftWeapons[iter_7_0]:start()
 	end
 
 	for iter_7_1 = 1, #arg_7_0._rightWeapons do
-		local var_7_2 = arg_7_0._rightWeapons[iter_7_1]
-
-		var_5.start(var_7_2)
+		arg_7_0._rightWeapons[iter_7_1]:start()
 	end
 
-	Vector2 = var_1
-	arg_7_0._speed = var_1(0, 0)
+	arg_7_0._speed = Vector2(0, 0)
 	arg_7_0._speed.x = arg_7_0._baseSpeed.x + arg_7_0:getEquipAttr("speed")
 	arg_7_0._speed.y = arg_7_0._baseSpeed.y + arg_7_0:getEquipAttr("speed")
 	arg_7_0._hp = arg_7_0._baseHp + arg_7_0:getEquipAttr("hp")
@@ -174,50 +104,28 @@ function var_0_0.start(arg_7_0)
 end
 
 function var_0_0.step(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0
+	if arg_8_0:getLife() then
+		local var_8_0 = arg_8_0:getNextPosition(arg_8_0._directX, arg_8_0._directY)
 
-	if arg_8_0.getLife(var_8_0) then
-		var_8_0 = arg_8_0
-
-		local var_8_1 = arg_8_0.getNextPosition(var_8_0, arg_8_0._directX, arg_8_0._directY)
-
-		math = var_1_10003
-
-		local var_8_2 = var_1_10003.abs(var_8_1.x)
-
-		if not (var_0_1.scene_width / 2 + 50 < var_8_2) then
-			math = var_8_2
-
-			local var_8_3 = var_8_2.abs(var_8_1.y)
-
-			if var_0_1.scene_height / 2 + 50 < var_8_3 then
-				-- block empty
-			else
-				arg_8_0._tf.anchoredPosition = var_8_1
-			end
+		if math.abs(var_8_0.x) > var_0_1.scene_width / 2 + 50 or math.abs(var_8_0.y) > var_0_1.scene_height / 2 + 50 then
+			-- block empty
+		else
+			arg_8_0._tf.anchoredPosition = var_8_0
 		end
 
-		for iter_8_1 = #arg_8_0._leftWeapons, 1, -1 do
-			local var_8_4 = arg_8_0._leftWeapons[iter_8_1]
-
-			var_7.step(var_8_4, arg_8_1)
+		for iter_8_0 = #arg_8_0._leftWeapons, 1, -1 do
+			arg_8_0._leftWeapons[iter_8_0]:step(arg_8_1)
 
 			if arg_8_0._skillTime and arg_8_0._skillTime > 0 then
-				local var_8_5 = arg_8_0._leftWeapons[iter_8_1]
-
-				var_7.skillStep(var_8_5, arg_8_1)
+				arg_8_0._leftWeapons[iter_8_0]:skillStep(arg_8_1)
 			end
 		end
 
 		for iter_8_1 = #arg_8_0._rightWeapons, 1, -1 do
-			local var_8_6 = arg_8_0._rightWeapons[iter_8_1]
-
-			var_7.step(var_8_6, arg_8_1)
+			arg_8_0._rightWeapons[iter_8_1]:step(arg_8_1)
 
 			if arg_8_0._skillTime and arg_8_0._skillTime > 0 then
-				local var_8_7 = arg_8_0._rightWeapons[iter_8_1]
-
-				var_7.skillStep(var_8_7, arg_8_1)
+				arg_8_0._rightWeapons[iter_8_1]:skillStep(arg_8_1)
 			end
 		end
 	end
@@ -236,11 +144,7 @@ function var_0_0.step(arg_8_0, arg_8_1)
 		if arg_8_0._timeForDead <= 0 then
 			arg_8_0._timeForDead = nil
 
-			local var_8_8 = arg_8_0._eventCallback
-
-			SailBoatGameEvent = var_8_0
-
-			var_8_8(var_8_0.PLAYER_DEAD)
+			arg_8_0._eventCallback(SailBoatGameEvent.PLAYER_DEAD)
 		end
 	end
 
@@ -260,26 +164,14 @@ function var_0_0.step(arg_8_0, arg_8_1)
 		end
 	end
 
-	math = var_2
-
-	if not (var_2.abs(arg_8_0._tf.anchoredPosition.x) > var_0_1.scene_width / 2 + 50) then
-		math = var_2
-
-		if var_2.abs(arg_8_0._tf.anchoredPosition.y) > var_0_1.scene_height / 2 + 50 then
-			local var_8_9 = arg_8_0
-			local var_8_10 = arg_8_0.damage
-			local var_8_11 = {
-				num = 999
-			}
-
-			Vector2 = iter_8_1
-			var_8_11.position = iter_8_1(0, 0)
-
-			var_8_10(var_8_9, var_8_11)
-		end
-
-		return
+	if math.abs(arg_8_0._tf.anchoredPosition.x) > var_0_1.scene_width / 2 + 50 or math.abs(arg_8_0._tf.anchoredPosition.y) > var_0_1.scene_height / 2 + 50 then
+		arg_8_0:damage({
+			num = 999,
+			position = Vector2(0, 0)
+		})
 	end
+
+	return
 end
 
 function var_0_0.getHp(arg_9_0)
@@ -291,13 +183,9 @@ function var_0_0.getHpPos(arg_10_0)
 end
 
 function var_0_0.useSkill(arg_11_0)
-	SailBoatGameVo = var_1_10001
-	arg_11_0._skillTime = var_1_10001.skillTime
-	pg = var_1
+	arg_11_0._skillTime = SailBoatGameVo.skillTime
 
-	local var_11_0 = var_1.CriMgr.GetInstance()
-
-	var_1.PlaySoundEffect_V3(var_11_0, var_0_1.SFX_SOUND_SKILL)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_1.SFX_SOUND_SKILL)
 
 	return
 end
@@ -332,20 +220,11 @@ function var_0_0.getWeapons(arg_13_0)
 end
 
 function var_0_0.getFirePos(arg_14_0)
-	if not arg_14_0._leftFireTf then
-		findTF = var_1
-		arg_14_0._leftFireTf = var_1(arg_14_0._tf, "leftFire")
-	end
+	arg_14_0._leftFireTf = arg_14_0._leftFireTf or findTF(arg_14_0._tf, "leftFire")
+	arg_14_0._rightFireTf = arg_14_0._rightFireTf or findTF(arg_14_0._tf, "rightFire")
 
-	if not arg_14_0._rightFireTf then
-		findTF = var_1
-		arg_14_0._rightFireTf = var_1(arg_14_0._tf, "rightFire")
-	end
-
-	local var_14_0 = arg_14_0._content
-	local var_14_1 = var_1.InverseTransformPoint(var_14_0, arg_14_0._leftFireTf.position)
-	local var_14_2 = arg_14_0._content
-	local var_14_3 = var_2.InverseTransformPoint(var_14_2, arg_14_0._rightFireTf.position)
+	local var_14_0 = arg_14_0._content:InverseTransformPoint(arg_14_0._leftFireTf.position)
+	local var_14_1 = arg_14_0._content:InverseTransformPoint(arg_14_0._rightFireTf.position)
 end
 
 function var_0_0.getFireContent(arg_15_0)
@@ -357,18 +236,14 @@ function var_0_0.getWeaponMaxDistance(arg_16_0)
 		arg_16_0._weaponMaxDistance = 0
 
 		for iter_16_0 = 1, #arg_16_0._leftWeapons do
-			local var_16_0 = arg_16_0._leftWeapons[iter_16_0]
-
-			if var_5.getDistance(var_16_0) > arg_16_0._weaponMaxDistance then
-				arg_16_0._weaponMaxDistance = var_5:getDistance()
+			if arg_16_0._leftWeapons[iter_16_0]:getDistance() > arg_16_0._weaponMaxDistance then
+				arg_16_0._weaponMaxDistance = arg_16_0._leftWeapons[iter_16_0]:getDistance()
 			end
 		end
 
 		for iter_16_1 = 1, #arg_16_0._rightWeapons do
-			local var_16_1 = arg_16_0._rightWeapons[iter_16_1]
-
-			if var_5.getDistance(var_16_1) > arg_16_0._weaponMaxDistance then
-				arg_16_0._weaponMaxDistance = var_5:getDistance()
+			if arg_16_0._rightWeapons[iter_16_1]:getDistance() > arg_16_0._weaponMaxDistance then
+				arg_16_0._weaponMaxDistance = arg_16_0._rightWeapons[iter_16_1]:getDistance()
 			end
 		end
 	end
@@ -379,17 +254,15 @@ end
 function var_0_0.flash(arg_17_0)
 	arg_17_0.colliderDamageCd = var_0_1.collider_time
 
-	local var_17_0 = arg_17_0._playerAnimator
-
-	var_1.SetTrigger(var_17_0, "flash")
+	arg_17_0._playerAnimator:SetTrigger("flash")
 
 	return
 end
 
 function var_0_0.move(arg_18_0, arg_18_1, arg_18_2)
-	var_3.x = arg_18_0._tf.anchoredPosition.x + arg_18_1
-	var_3.y = var_3.y + arg_18_2
-	arg_18_0._tf.anchoredPosition = var_3
+	arg_18_0._tf.anchoredPosition.x = arg_18_0._tf.anchoredPosition.x + arg_18_1
+	arg_18_0._tf.anchoredPosition.y = arg_18_0._tf.anchoredPosition.y + arg_18_2
+	arg_18_0._tf.anchoredPosition = arg_18_0._tf.anchoredPosition
 
 	return
 end
@@ -409,9 +282,7 @@ function var_0_0.clearEquipData(arg_21_0)
 end
 
 function var_0_0.setEquipData(arg_22_0, arg_22_1)
-	table = var_1_10002
-
-	var_1_10002.insert(arg_22_0._equipData, arg_22_1)
+	table.insert(arg_22_0._equipData, arg_22_1)
 
 	return
 end
@@ -427,45 +298,37 @@ function var_0_0.getEquipAttr(arg_23_0, arg_23_1)
 end
 
 function var_0_0.getColliderData(arg_24_0)
-	local var_24_0 = arg_24_0._content
-	local var_24_1 = var_1.InverseTransformPoint(var_24_0, arg_24_0._collider.bounds.min)
+	local var_24_0 = arg_24_0._content:InverseTransformPoint(arg_24_0._collider.bounds.min)
 
 	if not arg_24_0._boundData then
-		local var_24_2 = arg_24_0._content
-		local var_24_3 = var_2.InverseTransformPoint(var_24_2, arg_24_0._collider.bounds.max)
-		local var_24_4 = {}
+		local var_24_1 = arg_24_0._content:InverseTransformPoint(arg_24_0._collider.bounds.max)
 
-		math = var_24_2
-		var_24_4.width = var_24_2.floor(var_24_3.x - var_24_1.x)
-		math = var_4
-		var_24_4.height = var_4.floor(var_24_3.y - var_24_1.y)
-		arg_24_0._boundData = var_24_4
-	end
-
-	return var_24_1, arg_24_0._boundData
-end
-
-function var_0_0.getWorldColliderData(arg_25_0)
-	local var_25_0 = arg_25_0._collider.bounds.min
-
-	if not arg_25_0._worldBoundData then
-		local var_25_1 = arg_25_0._collider.bounds.max
-
-		arg_25_0._worldBoundData = {
-			width = var_25_1.x - var_25_0.x,
-			height = var_25_1.y - var_25_0.y
+		arg_24_0._boundData = {
+			width = math.floor(var_24_1.x - var_24_0.x),
+			height = math.floor(var_24_1.y - var_24_0.y)
 		}
 	end
 
-	return var_25_0, arg_25_0._worldBoundData
+	return var_24_0, arg_24_0._boundData
+end
+
+function var_0_0.getWorldColliderData(arg_25_0)
+	arg_25_0._worldBoundData = arg_25_0._worldBoundData or {
+		width = arg_25_0._collider.bounds.max.x - arg_25_0._collider.bounds.min.x,
+		height = arg_25_0._collider.bounds.max.y - arg_25_0._collider.bounds.min.y
+	}
+
+	return arg_25_0._collider.bounds.min, arg_25_0._worldBoundData
 end
 
 function var_0_0.addHp(arg_26_0, arg_26_1)
 	if arg_26_0:getLife() then
 		arg_26_0._hp = arg_26_0._hp + arg_26_1
 
-		if arg_26_0:getMaxHp() < arg_26_0._hp then
-			arg_26_0._hp = var_2
+		local var_26_0 = arg_26_0:getMaxHp()
+
+		if var_26_0 < arg_26_0._hp then
+			arg_26_0._hp = var_26_0
 		end
 	end
 
@@ -477,29 +340,21 @@ function var_0_0.getLife(arg_27_0)
 end
 
 function var_0_0.getColliderMinPosition(arg_28_0)
-	if not arg_28_0._minPosition then
-		local var_28_0 = arg_28_0._tf
-
-		arg_28_0._minPosition = var_1.InverseTransformPoint(var_28_0, arg_28_0._collider.bounds.min)
-	end
+	arg_28_0._minPosition = arg_28_0._minPosition or arg_28_0._tf:InverseTransformPoint(arg_28_0._collider.bounds.min)
 
 	return arg_28_0._minPosition
 end
 
 function var_0_0.getBoundData(arg_29_0)
-	local var_29_0 = arg_29_0._content
-	local var_29_1 = var_1.InverseTransformPoint(var_29_0, arg_29_0._collider.bounds.min)
+	local var_29_0 = arg_29_0._content:InverseTransformPoint(arg_29_0._collider.bounds.min)
 
 	if not arg_29_0._boundData then
-		local var_29_2 = arg_29_0._content
-		local var_29_3 = var_2.InverseTransformPoint(var_29_2, arg_29_0._collider.bounds.max)
-		local var_29_4 = {}
+		local var_29_1 = arg_29_0._content:InverseTransformPoint(arg_29_0._collider.bounds.max)
 
-		math = var_29_2
-		var_29_4.width = var_29_2.floor(var_29_3.x - var_29_1.x)
-		math = var_4
-		var_29_4.height = var_4.floor(var_29_3.y - var_29_1.y)
-		arg_29_0._boundData = var_29_4
+		arg_29_0._boundData = {
+			width = math.floor(var_29_1.x - var_29_0.x),
+			height = math.floor(var_29_1.y - var_29_0.y)
+		}
 	end
 
 	return arg_29_0._boundData
@@ -566,8 +421,10 @@ function var_0_0.damage(arg_38_0, arg_38_1)
 		return
 	end
 
+	local var_38_0 = arg_38_1.position
+
 	if arg_38_1.position then
-		if var_2.x > arg_38_0._tf.position.x then
+		if var_38_0.x > arg_38_0._tf.position.x then
 			arg_38_0:setInteger("damage_direct", 1)
 		else
 			arg_38_0:setInteger("damage_direct", -1)
@@ -582,7 +439,7 @@ function var_0_0.damage(arg_38_0, arg_38_1)
 		arg_38_0:setTrigger("dead", true)
 
 		arg_38_0._timeForDead = 1
-	elseif var_2 then
+	elseif var_38_0 then
 		arg_38_0:setTrigger("damage")
 	end
 
@@ -591,22 +448,16 @@ end
 
 function var_0_0.setTrigger(arg_39_0, arg_39_1, arg_39_2)
 	if arg_39_0:getLife() then
-		local var_39_0 = arg_39_0._animator
-
-		var_3.SetTrigger(var_39_0, arg_39_1)
+		arg_39_0._animator:SetTrigger(arg_39_1)
 	elseif arg_39_2 then
-		local var_39_1 = arg_39_0._animator
-
-		var_3.SetTrigger(var_39_1, arg_39_1)
+		arg_39_0._animator:SetTrigger(arg_39_1)
 	end
 
 	return
 end
 
 function var_0_0.setInteger(arg_40_0, arg_40_1, arg_40_2)
-	local var_40_0 = arg_40_0._animator
-
-	var_3.SetInteger(var_40_0, arg_40_1, arg_40_2)
+	arg_40_0._animator:SetInteger(arg_40_1, arg_40_2)
 
 	return
 end
@@ -620,17 +471,7 @@ function var_0_0.getConfig(arg_42_0, arg_42_1)
 end
 
 function var_0_0.checkPositionInRange(arg_43_0, arg_43_1)
-	local var_43_0 = arg_43_0._tf.anchoredPosition
-
-	math = var_1_10003
-
-	local var_43_1 = var_1_10003.abs(var_43_0.x - arg_43_1.x)
-
-	math = var_1_10004
-
-	local var_43_2 = var_1_10004.abs(var_43_0.y - arg_43_1.y)
-
-	if var_43_1 < 250 and var_43_2 < 300 then
+	if math.abs(arg_43_0._tf.anchoredPosition.x - arg_43_1.x) < 250 and math.abs(arg_43_0._tf.anchoredPosition.y - arg_43_1.y) < 300 then
 		return true
 	end
 

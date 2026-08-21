@@ -311,6 +311,22 @@ function setData(self, isInit, list, idDic)
     for i = #self.m_heroScrollList, 1, -1 do
         table.insert(heroIdList, 1, self.m_heroScrollList[i]:getDataVo().id)
     end
+
+    -- local list = {}
+    -- local likeList = {}
+    -- for i = 1, #heroIdList, 1 do
+    --     local heroVo = hero.HeroManager:getHeroVo(heroIdList[i])
+    --     if heroVo.isLike == 1 then
+    --         table.insert(likeList, heroIdList[i])
+    --     else
+    --         table.insert(list, heroIdList[i])
+    --     end
+    -- end
+
+    -- for i = 1, #list, 1 do
+    --     table.insert(likeList, list[i])
+    -- end
+
     hero.HeroManager:setPanelShowHeroIdList(heroIdList)
 
     -- 单独插入两段列表
@@ -397,6 +413,25 @@ function updateListView(self, isInit, changeType)
             self.m_heroScrollList = needList
         end
         local len = #self.m_heroScrollList
+
+        
+        local likeList = {}
+        local noLikeList = {}
+        for i = 1, #self.m_heroScrollList do
+            local heroScrollVo = self.m_heroScrollList[i]
+            local heroVo = heroScrollVo:getDataVo()
+            if heroVo.isLike == 1 then
+                table.insert(likeList, heroScrollVo)
+            else
+                table.insert(noLikeList, heroScrollVo)
+            end
+        end
+
+        for i = 1, #noLikeList, 1 do
+            table.insert(likeList, noLikeList[i])
+        end
+        self.m_heroScrollList = likeList
+        
         if self.m_isOpenHeroDevelop then
             for i = 1, len do
                 self.m_heroScrollList[i].tweenId = nil
@@ -424,6 +459,7 @@ function updateListView(self, isInit, changeType)
         if changeType or isInit then
             self:scrollerSetting()
         end
+
         -- 定位
         if (hero.HeroManager:getIsVer()) then
             if self.m_scroll.Count == 0 then

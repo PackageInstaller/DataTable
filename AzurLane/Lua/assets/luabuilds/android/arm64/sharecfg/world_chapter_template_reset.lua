@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_chapter_template_reset") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_chapter_template_reset"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_chapter_template_reset = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_chapter_template_reset
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_chapter_template_reset = rawget(pg, "world_chapter_template_reset") or setmetatable({
+	__name = "world_chapter_template_reset"
+}, confNEO)
+pg.world_chapter_template_reset.all = {
 	8000,
 	8030,
 	8060,
@@ -253,25 +230,11 @@ var_0_3.all = {
 	430120,
 	430200
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_chapter_template_reset = {}
+pg.base = pg.base or {}
+pg.base.world_chapter_template_reset = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_chapter_template_reset
-
-	var_1_0[8000] = {
+	pg.base.world_chapter_template_reset[8000] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 8000,
@@ -283,11 +246,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_chapter_template_reset
-
-	var_1_1[8030] = {
+	pg.base.world_chapter_template_reset[8030] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 8030,
@@ -299,11 +258,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_chapter_template_reset
-
-	var_1_2[8060] = {
+	pg.base.world_chapter_template_reset[8060] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 8060,
@@ -315,11 +270,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_chapter_template_reset
-
-	var_1_3[8090] = {
+	pg.base.world_chapter_template_reset[8090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 8090,
@@ -331,11 +282,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_chapter_template_reset
-
-	var_1_4[8200] = {
+	pg.base.world_chapter_template_reset[8200] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8200,
@@ -347,11 +294,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_chapter_template_reset
-
-	var_1_5[8230] = {
+	pg.base.world_chapter_template_reset[8230] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8230,
@@ -363,11 +306,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_chapter_template_reset
-
-	var_1_6[8260] = {
+	pg.base.world_chapter_template_reset[8260] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8260,
@@ -379,11 +318,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_chapter_template_reset
-
-	var_1_7[8290] = {
+	pg.base.world_chapter_template_reset[8290] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 8290,
@@ -395,11 +330,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_chapter_template_reset
-
-	var_1_8[8400] = {
+	pg.base.world_chapter_template_reset[8400] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8400,
@@ -412,11 +343,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_chapter_template_reset
-
-	var_1_9[8410] = {
+	pg.base.world_chapter_template_reset[8410] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8410,
@@ -429,11 +356,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_chapter_template_reset
-
-	var_1_10[8430] = {
+	pg.base.world_chapter_template_reset[8430] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8430,
@@ -446,11 +369,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_chapter_template_reset
-
-	var_1_11[8440] = {
+	pg.base.world_chapter_template_reset[8440] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8440,
@@ -463,11 +382,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_chapter_template_reset
-
-	var_1_12[8460] = {
+	pg.base.world_chapter_template_reset[8460] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8460,
@@ -480,11 +395,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_chapter_template_reset
-
-	var_1_13[8470] = {
+	pg.base.world_chapter_template_reset[8470] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8470,
@@ -497,11 +408,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_chapter_template_reset
-
-	var_1_14[8490] = {
+	pg.base.world_chapter_template_reset[8490] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8490,
@@ -514,11 +421,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_chapter_template_reset
-
-	var_1_15[8500] = {
+	pg.base.world_chapter_template_reset[8500] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8500,
@@ -531,11 +434,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_chapter_template_reset
-
-	var_1_16[8600] = {
+	pg.base.world_chapter_template_reset[8600] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8600,
@@ -547,11 +446,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_chapter_template_reset
-
-	var_1_17[8630] = {
+	pg.base.world_chapter_template_reset[8630] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8630,
@@ -563,11 +458,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_chapter_template_reset
-
-	var_1_18[8660] = {
+	pg.base.world_chapter_template_reset[8660] = {
 		transport = 2,
 		transport_colormask = 2,
 		id = 8660,
@@ -584,11 +475,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_chapter_template_reset
-
-	var_1_19[8690] = {
+	pg.base.world_chapter_template_reset[8690] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 8690,
@@ -600,11 +487,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_chapter_template_reset
-
-	var_1_20[110000] = {
+	pg.base.world_chapter_template_reset[110000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110000,
@@ -644,11 +527,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_chapter_template_reset
-
-	var_1_21[110010] = {
+	pg.base.world_chapter_template_reset[110010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110010,
@@ -688,11 +567,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_chapter_template_reset
-
-	var_1_22[110020] = {
+	pg.base.world_chapter_template_reset[110020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110020,
@@ -732,11 +607,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_chapter_template_reset
-
-	var_1_23[110030] = {
+	pg.base.world_chapter_template_reset[110030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110030,
@@ -776,11 +647,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_chapter_template_reset
-
-	var_1_24[110040] = {
+	pg.base.world_chapter_template_reset[110040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110040,
@@ -820,11 +687,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_chapter_template_reset
-
-	var_1_25[110050] = {
+	pg.base.world_chapter_template_reset[110050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110050,
@@ -864,11 +727,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_chapter_template_reset
-
-	var_1_26[110060] = {
+	pg.base.world_chapter_template_reset[110060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110060,
@@ -908,11 +767,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_chapter_template_reset
-
-	var_1_27[110070] = {
+	pg.base.world_chapter_template_reset[110070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110070,
@@ -952,11 +807,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_chapter_template_reset
-
-	var_1_28[0] = {
+	pg.base.world_chapter_template_reset[0] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110080,
@@ -996,11 +847,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_chapter_template_reset
-
-	var_1_29[10] = {
+	pg.base.world_chapter_template_reset[10] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 110090,
@@ -1040,11 +887,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_chapter_template_reset
-
-	var_1_30[24] = {
+	pg.base.world_chapter_template_reset[24] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111000,
@@ -1084,11 +927,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_chapter_template_reset
-
-	var_1_31[111010] = {
+	pg.base.world_chapter_template_reset[111010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111010,
@@ -1128,11 +967,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_chapter_template_reset
-
-	var_1_32[111020] = {
+	pg.base.world_chapter_template_reset[111020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111020,
@@ -1172,11 +1007,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_chapter_template_reset
-
-	var_1_33[111030] = {
+	pg.base.world_chapter_template_reset[111030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111030,
@@ -1216,11 +1047,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_chapter_template_reset
-
-	var_1_34[111040] = {
+	pg.base.world_chapter_template_reset[111040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111040,
@@ -1260,11 +1087,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_chapter_template_reset
-
-	var_1_35[111050] = {
+	pg.base.world_chapter_template_reset[111050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111050,
@@ -1304,11 +1127,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_chapter_template_reset
-
-	var_1_36[111060] = {
+	pg.base.world_chapter_template_reset[111060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111060,
@@ -1348,11 +1167,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_chapter_template_reset
-
-	var_1_37[111070] = {
+	pg.base.world_chapter_template_reset[111070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111070,
@@ -1392,11 +1207,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_chapter_template_reset
-
-	var_1_38[111080] = {
+	pg.base.world_chapter_template_reset[111080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111080,
@@ -1436,11 +1247,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_chapter_template_reset
-
-	var_1_39[111090] = {
+	pg.base.world_chapter_template_reset[111090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 111090,
@@ -1480,11 +1287,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_chapter_template_reset
-
-	var_1_40[0] = {
+	pg.base.world_chapter_template_reset[0] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112000,
@@ -1524,11 +1327,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_chapter_template_reset
-
-	var_1_41[10] = {
+	pg.base.world_chapter_template_reset[10] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112010,
@@ -1568,11 +1367,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_chapter_template_reset
-
-	var_1_42[20] = {
+	pg.base.world_chapter_template_reset[20] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112020,
@@ -1612,11 +1407,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_chapter_template_reset
-
-	var_1_43[30] = {
+	pg.base.world_chapter_template_reset[30] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112030,
@@ -1656,11 +1447,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_chapter_template_reset
-
-	var_1_44[112040] = {
+	pg.base.world_chapter_template_reset[112040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112040,
@@ -1700,11 +1487,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_chapter_template_reset
-
-	var_1_45[112050] = {
+	pg.base.world_chapter_template_reset[112050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112050,
@@ -1744,11 +1527,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_chapter_template_reset
-
-	var_1_46[112060] = {
+	pg.base.world_chapter_template_reset[112060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112060,
@@ -1788,11 +1567,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_chapter_template_reset
-
-	var_1_47[112070] = {
+	pg.base.world_chapter_template_reset[112070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112070,
@@ -1832,11 +1607,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_chapter_template_reset
-
-	var_1_48[112080] = {
+	pg.base.world_chapter_template_reset[112080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112080,
@@ -1876,11 +1647,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_chapter_template_reset
-
-	var_1_49[112090] = {
+	pg.base.world_chapter_template_reset[112090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 112090,
@@ -1920,11 +1687,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_chapter_template_reset
-
-	var_1_50[113000] = {
+	pg.base.world_chapter_template_reset[113000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113000,
@@ -1964,11 +1727,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_chapter_template_reset
-
-	var_1_51[113010] = {
+	pg.base.world_chapter_template_reset[113010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113010,
@@ -2008,11 +1767,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_chapter_template_reset
-
-	var_1_52[113020] = {
+	pg.base.world_chapter_template_reset[113020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113020,
@@ -2052,11 +1807,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_chapter_template_reset
-
-	var_1_53[6] = {
+	pg.base.world_chapter_template_reset[6] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113030,
@@ -2096,11 +1847,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_chapter_template_reset
-
-	var_1_54[16] = {
+	pg.base.world_chapter_template_reset[16] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113040,
@@ -2140,11 +1887,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_chapter_template_reset
-
-	var_1_55[26] = {
+	pg.base.world_chapter_template_reset[26] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113050,
@@ -2184,11 +1927,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_chapter_template_reset
-
-	var_1_56[113060] = {
+	pg.base.world_chapter_template_reset[113060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113060,
@@ -2228,11 +1967,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_chapter_template_reset
-
-	var_1_57[113070] = {
+	pg.base.world_chapter_template_reset[113070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113070,
@@ -2272,11 +2007,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_chapter_template_reset
-
-	var_1_58[113080] = {
+	pg.base.world_chapter_template_reset[113080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113080,
@@ -2316,11 +2047,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_chapter_template_reset
-
-	var_1_59[113090] = {
+	pg.base.world_chapter_template_reset[113090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 113090,
@@ -2360,11 +2087,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_chapter_template_reset
-
-	var_1_60[114000] = {
+	pg.base.world_chapter_template_reset[114000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114000,
@@ -2404,11 +2127,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_chapter_template_reset
-
-	var_1_61[114010] = {
+	pg.base.world_chapter_template_reset[114010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114010,
@@ -2448,11 +2167,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_chapter_template_reset
-
-	var_1_62[114020] = {
+	pg.base.world_chapter_template_reset[114020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114020,
@@ -2492,11 +2207,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_chapter_template_reset
-
-	var_1_63[114030] = {
+	pg.base.world_chapter_template_reset[114030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114030,
@@ -2536,11 +2247,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_chapter_template_reset
-
-	var_1_64[114040] = {
+	pg.base.world_chapter_template_reset[114040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114040,
@@ -2580,11 +2287,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_chapter_template_reset
-
-	var_1_65[2] = {
+	pg.base.world_chapter_template_reset[2] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114050,
@@ -2624,11 +2327,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_chapter_template_reset
-
-	var_1_66[12] = {
+	pg.base.world_chapter_template_reset[12] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114060,
@@ -2668,11 +2367,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_chapter_template_reset
-
-	var_1_67[22] = {
+	pg.base.world_chapter_template_reset[22] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114070,
@@ -2712,11 +2407,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_chapter_template_reset
-
-	var_1_68[114080] = {
+	pg.base.world_chapter_template_reset[114080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114080,
@@ -2756,11 +2447,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_chapter_template_reset
-
-	var_1_69[114090] = {
+	pg.base.world_chapter_template_reset[114090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 114090,
@@ -2800,11 +2487,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_chapter_template_reset
-
-	var_1_70[115000] = {
+	pg.base.world_chapter_template_reset[115000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115000,
@@ -2844,11 +2527,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_chapter_template_reset
-
-	var_1_71[115010] = {
+	pg.base.world_chapter_template_reset[115010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115010,
@@ -2888,11 +2567,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_chapter_template_reset
-
-	var_1_72[115020] = {
+	pg.base.world_chapter_template_reset[115020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115020,
@@ -2932,11 +2607,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_chapter_template_reset
-
-	var_1_73[115030] = {
+	pg.base.world_chapter_template_reset[115030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115030,
@@ -2976,11 +2647,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_chapter_template_reset
-
-	var_1_74[115040] = {
+	pg.base.world_chapter_template_reset[115040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115040,
@@ -3020,11 +2687,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_chapter_template_reset
-
-	var_1_75[115050] = {
+	pg.base.world_chapter_template_reset[115050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115050,
@@ -3064,11 +2727,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_chapter_template_reset
-
-	var_1_76[115060] = {
+	pg.base.world_chapter_template_reset[115060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115060,
@@ -3108,11 +2767,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_chapter_template_reset
-
-	var_1_77[115070] = {
+	pg.base.world_chapter_template_reset[115070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115070,
@@ -3152,11 +2807,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_chapter_template_reset
-
-	var_1_78[8] = {
+	pg.base.world_chapter_template_reset[8] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115080,
@@ -3196,11 +2847,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_chapter_template_reset
-
-	var_1_79[18] = {
+	pg.base.world_chapter_template_reset[18] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 115090,
@@ -3240,11 +2887,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.world_chapter_template_reset
-
-	var_1_80[120000] = {
+	pg.base.world_chapter_template_reset[120000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120000,
@@ -3284,11 +2927,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.world_chapter_template_reset
-
-	var_1_81[120010] = {
+	pg.base.world_chapter_template_reset[120010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120010,
@@ -3328,11 +2967,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.world_chapter_template_reset
-
-	var_1_82[120020] = {
+	pg.base.world_chapter_template_reset[120020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120020,
@@ -3372,11 +3007,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.world_chapter_template_reset
-
-	var_1_83[120030] = {
+	pg.base.world_chapter_template_reset[120030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120030,
@@ -3416,11 +3047,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.world_chapter_template_reset
-
-	var_1_84[120040] = {
+	pg.base.world_chapter_template_reset[120040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120040,
@@ -3460,11 +3087,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.world_chapter_template_reset
-
-	var_1_85[120050] = {
+	pg.base.world_chapter_template_reset[120050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120050,
@@ -3504,11 +3127,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.world_chapter_template_reset
-
-	var_1_86[120060] = {
+	pg.base.world_chapter_template_reset[120060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120060,
@@ -3548,11 +3167,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.world_chapter_template_reset
-
-	var_1_87[6] = {
+	pg.base.world_chapter_template_reset[6] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120070,
@@ -3592,11 +3207,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.world_chapter_template_reset
-
-	var_1_88[16] = {
+	pg.base.world_chapter_template_reset[16] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120080,
@@ -3636,11 +3247,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.world_chapter_template_reset
-
-	var_1_89[26] = {
+	pg.base.world_chapter_template_reset[26] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 120090,
@@ -3680,11 +3287,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.world_chapter_template_reset
-
-	var_1_90[121000] = {
+	pg.base.world_chapter_template_reset[121000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121000,
@@ -3724,11 +3327,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.world_chapter_template_reset
-
-	var_1_91[121010] = {
+	pg.base.world_chapter_template_reset[121010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121010,
@@ -3768,11 +3367,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.world_chapter_template_reset
-
-	var_1_92[121020] = {
+	pg.base.world_chapter_template_reset[121020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121020,
@@ -3812,11 +3407,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.world_chapter_template_reset
-
-	var_1_93[121030] = {
+	pg.base.world_chapter_template_reset[121030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121030,
@@ -3856,11 +3447,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.world_chapter_template_reset
-
-	var_1_94[121040] = {
+	pg.base.world_chapter_template_reset[121040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121040,
@@ -3900,11 +3487,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.world_chapter_template_reset
-
-	var_1_95[121050] = {
+	pg.base.world_chapter_template_reset[121050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121050,
@@ -3944,11 +3527,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.world_chapter_template_reset
-
-	var_1_96[121060] = {
+	pg.base.world_chapter_template_reset[121060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121060,
@@ -3988,11 +3567,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.world_chapter_template_reset
-
-	var_1_97[121070] = {
+	pg.base.world_chapter_template_reset[121070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121070,
@@ -4032,11 +3607,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.world_chapter_template_reset
-
-	var_1_98[121080] = {
+	pg.base.world_chapter_template_reset[121080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121080,
@@ -4076,8 +3647,7 @@ var_0_3.base.world_chapter_template_reset = {}
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_1_98
-	var_1_98.base.world_chapter_template_reset[2] = {
+	pg.base.world_chapter_template_reset[2] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 121090,
@@ -4121,11 +3691,7 @@ var_0_3.base.world_chapter_template_reset = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.world_chapter_template_reset
-
-	var_2_0[16] = {
+	pg.base.world_chapter_template_reset[16] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122000,
@@ -4165,11 +3731,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.world_chapter_template_reset
-
-	var_2_1[26] = {
+	pg.base.world_chapter_template_reset[26] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122010,
@@ -4209,11 +3771,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.world_chapter_template_reset
-
-	var_2_2[122020] = {
+	pg.base.world_chapter_template_reset[122020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122020,
@@ -4253,11 +3811,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.world_chapter_template_reset
-
-	var_2_3[122030] = {
+	pg.base.world_chapter_template_reset[122030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122030,
@@ -4297,11 +3851,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.world_chapter_template_reset
-
-	var_2_4[122040] = {
+	pg.base.world_chapter_template_reset[122040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122040,
@@ -4341,11 +3891,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.world_chapter_template_reset
-
-	var_2_5[122050] = {
+	pg.base.world_chapter_template_reset[122050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122050,
@@ -4385,11 +3931,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.world_chapter_template_reset
-
-	var_2_6[122060] = {
+	pg.base.world_chapter_template_reset[122060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122060,
@@ -4429,11 +3971,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.world_chapter_template_reset
-
-	var_2_7[122070] = {
+	pg.base.world_chapter_template_reset[122070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122070,
@@ -4473,11 +4011,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.world_chapter_template_reset
-
-	var_2_8[122080] = {
+	pg.base.world_chapter_template_reset[122080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122080,
@@ -4517,11 +4051,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.world_chapter_template_reset
-
-	var_2_9[122090] = {
+	pg.base.world_chapter_template_reset[122090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 122090,
@@ -4561,11 +4091,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.world_chapter_template_reset
-
-	var_2_10[123000] = {
+	pg.base.world_chapter_template_reset[123000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123000,
@@ -4605,11 +4131,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.world_chapter_template_reset
-
-	var_2_11[2] = {
+	pg.base.world_chapter_template_reset[2] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123010,
@@ -4649,11 +4171,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.world_chapter_template_reset
-
-	var_2_12[12] = {
+	pg.base.world_chapter_template_reset[12] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123020,
@@ -4693,11 +4211,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.world_chapter_template_reset
-
-	var_2_13[22] = {
+	pg.base.world_chapter_template_reset[22] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123030,
@@ -4737,11 +4251,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.world_chapter_template_reset
-
-	var_2_14[123040] = {
+	pg.base.world_chapter_template_reset[123040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123040,
@@ -4781,11 +4291,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.world_chapter_template_reset
-
-	var_2_15[123050] = {
+	pg.base.world_chapter_template_reset[123050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123050,
@@ -4825,11 +4331,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.world_chapter_template_reset
-
-	var_2_16[123060] = {
+	pg.base.world_chapter_template_reset[123060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123060,
@@ -4869,11 +4371,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.world_chapter_template_reset
-
-	var_2_17[123070] = {
+	pg.base.world_chapter_template_reset[123070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123070,
@@ -4913,11 +4411,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.world_chapter_template_reset
-
-	var_2_18[123080] = {
+	pg.base.world_chapter_template_reset[123080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123080,
@@ -4957,11 +4451,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.world_chapter_template_reset
-
-	var_2_19[123090] = {
+	pg.base.world_chapter_template_reset[123090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 123090,
@@ -5001,11 +4491,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.world_chapter_template_reset
-
-	var_2_20[124000] = {
+	pg.base.world_chapter_template_reset[124000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124000,
@@ -5045,11 +4531,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.world_chapter_template_reset
-
-	var_2_21[124010] = {
+	pg.base.world_chapter_template_reset[124010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124010,
@@ -5089,11 +4571,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.world_chapter_template_reset
-
-	var_2_22[124020] = {
+	pg.base.world_chapter_template_reset[124020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124020,
@@ -5133,11 +4611,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.world_chapter_template_reset
-
-	var_2_23[124030] = {
+	pg.base.world_chapter_template_reset[124030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124030,
@@ -5177,11 +4651,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.world_chapter_template_reset
-
-	var_2_24[8] = {
+	pg.base.world_chapter_template_reset[8] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124040,
@@ -5221,11 +4691,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.world_chapter_template_reset
-
-	var_2_25[18] = {
+	pg.base.world_chapter_template_reset[18] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124050,
@@ -5265,11 +4731,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.world_chapter_template_reset
-
-	var_2_26[28] = {
+	pg.base.world_chapter_template_reset[28] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124060,
@@ -5309,11 +4771,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.world_chapter_template_reset
-
-	var_2_27[124070] = {
+	pg.base.world_chapter_template_reset[124070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124070,
@@ -5353,11 +4811,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.world_chapter_template_reset
-
-	var_2_28[124080] = {
+	pg.base.world_chapter_template_reset[124080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124080,
@@ -5397,11 +4851,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.world_chapter_template_reset
-
-	var_2_29[124090] = {
+	pg.base.world_chapter_template_reset[124090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 124090,
@@ -5441,11 +4891,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.world_chapter_template_reset
-
-	var_2_30[125000] = {
+	pg.base.world_chapter_template_reset[125000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125000,
@@ -5485,11 +4931,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.world_chapter_template_reset
-
-	var_2_31[125010] = {
+	pg.base.world_chapter_template_reset[125010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125010,
@@ -5529,11 +4971,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.world_chapter_template_reset
-
-	var_2_32[125020] = {
+	pg.base.world_chapter_template_reset[125020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125020,
@@ -5573,11 +5011,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.world_chapter_template_reset
-
-	var_2_33[125030] = {
+	pg.base.world_chapter_template_reset[125030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125030,
@@ -5617,11 +5051,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.world_chapter_template_reset
-
-	var_2_34[125040] = {
+	pg.base.world_chapter_template_reset[125040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125040,
@@ -5661,11 +5091,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.world_chapter_template_reset
-
-	var_2_35[125050] = {
+	pg.base.world_chapter_template_reset[125050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125050,
@@ -5705,11 +5131,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.world_chapter_template_reset
-
-	var_2_36[4] = {
+	pg.base.world_chapter_template_reset[4] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125060,
@@ -5749,11 +5171,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.world_chapter_template_reset
-
-	var_2_37[14] = {
+	pg.base.world_chapter_template_reset[14] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125070,
@@ -5793,11 +5211,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.world_chapter_template_reset
-
-	var_2_38[24] = {
+	pg.base.world_chapter_template_reset[24] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125080,
@@ -5837,11 +5251,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.world_chapter_template_reset
-
-	var_2_39[125090] = {
+	pg.base.world_chapter_template_reset[125090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 125090,
@@ -5881,11 +5291,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.world_chapter_template_reset
-
-	var_2_40[130000] = {
+	pg.base.world_chapter_template_reset[130000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130000,
@@ -5925,11 +5331,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.world_chapter_template_reset
-
-	var_2_41[130010] = {
+	pg.base.world_chapter_template_reset[130010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130010,
@@ -5969,11 +5371,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.world_chapter_template_reset
-
-	var_2_42[130020] = {
+	pg.base.world_chapter_template_reset[130020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130020,
@@ -6013,11 +5411,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.world_chapter_template_reset
-
-	var_2_43[130030] = {
+	pg.base.world_chapter_template_reset[130030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130030,
@@ -6057,11 +5451,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.world_chapter_template_reset
-
-	var_2_44[130040] = {
+	pg.base.world_chapter_template_reset[130040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130040,
@@ -6101,11 +5491,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.world_chapter_template_reset
-
-	var_2_45[2] = {
+	pg.base.world_chapter_template_reset[2] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130050,
@@ -6145,11 +5531,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.world_chapter_template_reset
-
-	var_2_46[12] = {
+	pg.base.world_chapter_template_reset[12] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130060,
@@ -6189,11 +5571,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.world_chapter_template_reset
-
-	var_2_47[22] = {
+	pg.base.world_chapter_template_reset[22] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130070,
@@ -6233,11 +5611,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.world_chapter_template_reset
-
-	var_2_48[130080] = {
+	pg.base.world_chapter_template_reset[130080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130080,
@@ -6277,11 +5651,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.world_chapter_template_reset
-
-	var_2_49[130090] = {
+	pg.base.world_chapter_template_reset[130090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 130090,
@@ -6321,11 +5691,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.world_chapter_template_reset
-
-	var_2_50[131000] = {
+	pg.base.world_chapter_template_reset[131000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131000,
@@ -6365,11 +5731,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.world_chapter_template_reset
-
-	var_2_51[131010] = {
+	pg.base.world_chapter_template_reset[131010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131010,
@@ -6409,11 +5771,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.world_chapter_template_reset
-
-	var_2_52[131020] = {
+	pg.base.world_chapter_template_reset[131020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131020,
@@ -6453,11 +5811,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.world_chapter_template_reset
-
-	var_2_53[131030] = {
+	pg.base.world_chapter_template_reset[131030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131030,
@@ -6497,11 +5851,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.world_chapter_template_reset
-
-	var_2_54[131040] = {
+	pg.base.world_chapter_template_reset[131040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131040,
@@ -6541,11 +5891,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.world_chapter_template_reset
-
-	var_2_55[131050] = {
+	pg.base.world_chapter_template_reset[131050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131050,
@@ -6585,11 +5931,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.world_chapter_template_reset
-
-	var_2_56[131060] = {
+	pg.base.world_chapter_template_reset[131060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131060,
@@ -6629,11 +5971,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.world_chapter_template_reset
-
-	var_2_57[131070] = {
+	pg.base.world_chapter_template_reset[131070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131070,
@@ -6673,11 +6011,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.world_chapter_template_reset
-
-	var_2_58[8] = {
+	pg.base.world_chapter_template_reset[8] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131080,
@@ -6717,11 +6051,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.world_chapter_template_reset
-
-	var_2_59[18] = {
+	pg.base.world_chapter_template_reset[18] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 131090,
@@ -6761,11 +6091,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.world_chapter_template_reset
-
-	var_2_60[132000] = {
+	pg.base.world_chapter_template_reset[132000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132000,
@@ -6805,11 +6131,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.world_chapter_template_reset
-
-	var_2_61[132010] = {
+	pg.base.world_chapter_template_reset[132010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132010,
@@ -6849,11 +6171,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.world_chapter_template_reset
-
-	var_2_62[132020] = {
+	pg.base.world_chapter_template_reset[132020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132020,
@@ -6893,11 +6211,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.world_chapter_template_reset
-
-	var_2_63[132030] = {
+	pg.base.world_chapter_template_reset[132030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132030,
@@ -6937,11 +6251,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.world_chapter_template_reset
-
-	var_2_64[132040] = {
+	pg.base.world_chapter_template_reset[132040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132040,
@@ -6981,11 +6291,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.world_chapter_template_reset
-
-	var_2_65[132050] = {
+	pg.base.world_chapter_template_reset[132050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132050,
@@ -7025,11 +6331,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.world_chapter_template_reset
-
-	var_2_66[132060] = {
+	pg.base.world_chapter_template_reset[132060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132060,
@@ -7069,11 +6371,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.world_chapter_template_reset
-
-	var_2_67[132070] = {
+	pg.base.world_chapter_template_reset[132070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132070,
@@ -7113,11 +6411,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.world_chapter_template_reset
-
-	var_2_68[132080] = {
+	pg.base.world_chapter_template_reset[132080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132080,
@@ -7157,11 +6451,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.world_chapter_template_reset
-
-	var_2_69[132090] = {
+	pg.base.world_chapter_template_reset[132090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 132090,
@@ -7201,11 +6491,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.world_chapter_template_reset
-
-	var_2_70[8] = {
+	pg.base.world_chapter_template_reset[8] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133000,
@@ -7245,11 +6531,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.world_chapter_template_reset
-
-	var_2_71[18] = {
+	pg.base.world_chapter_template_reset[18] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133010,
@@ -7289,11 +6571,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.world_chapter_template_reset
-
-	var_2_72[28] = {
+	pg.base.world_chapter_template_reset[28] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133020,
@@ -7333,11 +6611,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.world_chapter_template_reset
-
-	var_2_73[133030] = {
+	pg.base.world_chapter_template_reset[133030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133030,
@@ -7377,11 +6651,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.world_chapter_template_reset
-
-	var_2_74[133040] = {
+	pg.base.world_chapter_template_reset[133040] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133040,
@@ -7421,11 +6691,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.world_chapter_template_reset
-
-	var_2_75[133050] = {
+	pg.base.world_chapter_template_reset[133050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133050,
@@ -7465,11 +6731,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.world_chapter_template_reset
-
-	var_2_76[133060] = {
+	pg.base.world_chapter_template_reset[133060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133060,
@@ -7509,11 +6771,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.world_chapter_template_reset
-
-	var_2_77[133070] = {
+	pg.base.world_chapter_template_reset[133070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133070,
@@ -7553,11 +6811,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.world_chapter_template_reset
-
-	var_2_78[133080] = {
+	pg.base.world_chapter_template_reset[133080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133080,
@@ -7597,11 +6851,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.world_chapter_template_reset
-
-	var_2_79[133090] = {
+	pg.base.world_chapter_template_reset[133090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 133090,
@@ -7641,11 +6891,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.world_chapter_template_reset
-
-	var_2_80[134000] = {
+	pg.base.world_chapter_template_reset[134000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134000,
@@ -7685,11 +6931,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.world_chapter_template_reset
-
-	var_2_81[134010] = {
+	pg.base.world_chapter_template_reset[134010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134010,
@@ -7729,11 +6971,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.world_chapter_template_reset
-
-	var_2_82[4] = {
+	pg.base.world_chapter_template_reset[4] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134020,
@@ -7773,11 +7011,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.world_chapter_template_reset
-
-	var_2_83[14] = {
+	pg.base.world_chapter_template_reset[14] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134030,
@@ -7817,11 +7051,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.world_chapter_template_reset
-
-	var_2_84[24] = {
+	pg.base.world_chapter_template_reset[24] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134040,
@@ -7861,11 +7091,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.world_chapter_template_reset
-
-	var_2_85[134050] = {
+	pg.base.world_chapter_template_reset[134050] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134050,
@@ -7905,11 +7131,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.world_chapter_template_reset
-
-	var_2_86[134060] = {
+	pg.base.world_chapter_template_reset[134060] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134060,
@@ -7949,11 +7171,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.world_chapter_template_reset
-
-	var_2_87[134070] = {
+	pg.base.world_chapter_template_reset[134070] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134070,
@@ -7993,11 +7211,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.world_chapter_template_reset
-
-	var_2_88[134080] = {
+	pg.base.world_chapter_template_reset[134080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134080,
@@ -8037,11 +7251,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.world_chapter_template_reset
-
-	var_2_89[134090] = {
+	pg.base.world_chapter_template_reset[134090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 134090,
@@ -8081,11 +7291,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.world_chapter_template_reset
-
-	var_2_90[135000] = {
+	pg.base.world_chapter_template_reset[135000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135000,
@@ -8125,11 +7331,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.world_chapter_template_reset
-
-	var_2_91[135010] = {
+	pg.base.world_chapter_template_reset[135010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135010,
@@ -8169,11 +7371,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.world_chapter_template_reset
-
-	var_2_92[135020] = {
+	pg.base.world_chapter_template_reset[135020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135020,
@@ -8213,11 +7411,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.world_chapter_template_reset
-
-	var_2_93[135030] = {
+	pg.base.world_chapter_template_reset[135030] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135030,
@@ -8257,11 +7451,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.world_chapter_template_reset
-
-	var_2_94[0] = {
+	pg.base.world_chapter_template_reset[0] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135040,
@@ -8301,11 +7491,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.world_chapter_template_reset
-
-	var_2_95[10] = {
+	pg.base.world_chapter_template_reset[10] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135050,
@@ -8345,11 +7531,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.world_chapter_template_reset
-
-	var_2_96[20] = {
+	pg.base.world_chapter_template_reset[20] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135060,
@@ -8389,11 +7571,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.world_chapter_template_reset
-
-	var_2_97[30] = {
+	pg.base.world_chapter_template_reset[30] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135070,
@@ -8433,11 +7611,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.world_chapter_template_reset
-
-	var_2_98[135080] = {
+	pg.base.world_chapter_template_reset[135080] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135080,
@@ -8477,8 +7651,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_2_98
-	var_2_98.base.world_chapter_template_reset[135090] = {
+	pg.base.world_chapter_template_reset[135090] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 135090,
@@ -8522,11 +7695,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.world_chapter_template_reset
-
-	var_3_0[140000] = {
+	pg.base.world_chapter_template_reset[140000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 140000,
@@ -8536,11 +7705,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.world_chapter_template_reset
-
-	var_3_1[140004] = {
+	pg.base.world_chapter_template_reset[140004] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 140004,
@@ -8550,11 +7715,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.world_chapter_template_reset
-
-	var_3_2[140005] = {
+	pg.base.world_chapter_template_reset[140005] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 140005,
@@ -8564,11 +7725,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.world_chapter_template_reset
-
-	var_3_3[140006] = {
+	pg.base.world_chapter_template_reset[140006] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 140006,
@@ -8578,11 +7735,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.world_chapter_template_reset
-
-	var_3_4[200000] = {
+	pg.base.world_chapter_template_reset[200000] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200000,
@@ -8596,11 +7749,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.world_chapter_template_reset
-
-	var_3_5[200010] = {
+	pg.base.world_chapter_template_reset[200010] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200010,
@@ -8614,11 +7763,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.world_chapter_template_reset
-
-	var_3_6[200020] = {
+	pg.base.world_chapter_template_reset[200020] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200020,
@@ -8632,11 +7777,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.world_chapter_template_reset
-
-	var_3_7[200030] = {
+	pg.base.world_chapter_template_reset[200030] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200030,
@@ -8650,11 +7791,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.world_chapter_template_reset
-
-	var_3_8[200040] = {
+	pg.base.world_chapter_template_reset[200040] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200040,
@@ -8668,11 +7805,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.world_chapter_template_reset
-
-	var_3_9[200100] = {
+	pg.base.world_chapter_template_reset[200100] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200100,
@@ -8686,11 +7819,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.world_chapter_template_reset
-
-	var_3_10[200110] = {
+	pg.base.world_chapter_template_reset[200110] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200110,
@@ -8704,11 +7833,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.world_chapter_template_reset
-
-	var_3_11[200120] = {
+	pg.base.world_chapter_template_reset[200120] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200120,
@@ -8722,11 +7847,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.world_chapter_template_reset
-
-	var_3_12[200130] = {
+	pg.base.world_chapter_template_reset[200130] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200130,
@@ -8740,11 +7861,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.world_chapter_template_reset
-
-	var_3_13[200140] = {
+	pg.base.world_chapter_template_reset[200140] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200140,
@@ -8758,11 +7875,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.world_chapter_template_reset
-
-	var_3_14[8] = {
+	pg.base.world_chapter_template_reset[8] = {
 		transport = 1,
 		transport_colormask = 1,
 		id = 200200,
@@ -8776,11 +7889,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.world_chapter_template_reset
-
-	var_3_15[28] = {
+	pg.base.world_chapter_template_reset[28] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 890140,
@@ -8790,11 +7899,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.world_chapter_template_reset
-
-	var_3_16[890150] = {
+	pg.base.world_chapter_template_reset[890150] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 890150,
@@ -8804,11 +7909,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.world_chapter_template_reset
-
-	var_3_17[890160] = {
+	pg.base.world_chapter_template_reset[890160] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 890160,
@@ -8818,11 +7919,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.world_chapter_template_reset
-
-	var_3_18[890170] = {
+	pg.base.world_chapter_template_reset[890170] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 890170,
@@ -8832,11 +7929,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.world_chapter_template_reset
-
-	var_3_19[430000] = {
+	pg.base.world_chapter_template_reset[430000] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430000,
@@ -8846,11 +7939,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.world_chapter_template_reset
-
-	var_3_20[430010] = {
+	pg.base.world_chapter_template_reset[430010] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430010,
@@ -8860,11 +7949,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.world_chapter_template_reset
-
-	var_3_21[430020] = {
+	pg.base.world_chapter_template_reset[430020] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430020,
@@ -8874,11 +7959,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.world_chapter_template_reset
-
-	var_3_22[20] = {
+	pg.base.world_chapter_template_reset[20] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430100,
@@ -8888,11 +7969,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.world_chapter_template_reset
-
-	var_3_23[30] = {
+	pg.base.world_chapter_template_reset[30] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430110,
@@ -8902,11 +7979,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.world_chapter_template_reset
-
-	var_3_24[430120] = {
+	pg.base.world_chapter_template_reset[430120] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430120,
@@ -8916,8 +7989,7 @@ end)()
 		reset_item = {},
 		reset_buff = {}
 	}
-	pg = var_3_24
-	var_3_24.base.world_chapter_template_reset[430200] = {
+	pg.base.world_chapter_template_reset[430200] = {
 		transport = 0,
 		transport_colormask = 0,
 		id = 430200,

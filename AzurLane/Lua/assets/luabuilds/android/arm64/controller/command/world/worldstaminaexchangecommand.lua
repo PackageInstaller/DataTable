@@ -1,65 +1,25 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldStaminaExchangeCommand", pm.SimpleCommand)
 
-local var_0_0 = "WorldStaminaExchangeCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = nowWorld().staminaMgr
+	local var_1_3, var_1_4, var_1_5, var_1_6 = nowWorld().staminaMgr:GetExchangeData()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0)
-
-	getProxy = var_1_10003
-	PlayerProxy = var_1_10005
-
-	local var_1_2 = var_1_10003(var_1_10005)
-
-	nowWorld = var_1_0
-
-	local var_1_3 = var_1_0().staminaMgr
-	local var_1_4, var_1_5, var_1_6, var_1_7 = var_4.GetExchangeData(var_1_3)
-
-	pg = var_1_10009
-
-	local var_1_8 = var_1_10009.ConnectionMgr.GetInstance()
-
-	var_9.Send(var_1_8, 33108, {
+	pg.ConnectionMgr.GetInstance():Send(33108, {
 		type = 1
 	}, 33109, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_2
+			local var_2_0 = var_1_1:getData()
 
-			var_2_10004 = var_1.getData(var_2_0)
-
-			var_1.consume(var_2_10004, {
-				oil = var_1_5
+			var_2_0:consume({
+				oil = var_1_4
 			})
-
-			var_2_10004 = var_1_2
-
-			var_2.updatePlayer(var_2_10004, var_1)
-
-			var_2_10004 = var_0
-
-			var_2.ExchangeStamina(var_2_10004, var_1_4, true)
-
-			var_2_10004 = arg_1_0
-
-			local var_2_1 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_1(var_2_10004, var_5.WORLD_STAMINA_EXCHANGE_DONE)
+			var_1_1:updatePlayer(var_2_0)
+			var_1_2:ExchangeStamina(var_1_3, true)
+			arg_1_0:sendNotification(GAME.WORLD_STAMINA_EXCHANGE_DONE)
 		else
-			pg = var_1
-
-			local var_2_2 = var_1.TipsMgr.GetInstance()
-			local var_2_3 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004("world_stamina_exchange_err_", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("world_stamina_exchange_err_", arg_2_0.result))
 		end
 
 		return
@@ -68,4 +28,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

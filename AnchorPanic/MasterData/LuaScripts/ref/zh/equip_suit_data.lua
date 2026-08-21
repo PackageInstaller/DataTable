@@ -26,6 +26,12 @@ local equip_suit_data=
 	[11]={ suit_skill2=6006, suit_skill4=6007, desc=0, name=4211, english=0, features=4236, icon="item/props_6182.png"
 },
 	[12]={ suit_skill2=6008, suit_skill4=6009, desc=0, name=4243, english=0, features=4244, icon="item/props_6184.png"
+},
+	[13]={ suit_skill2=6013, suit_skill4=6014, desc=0, name=4245, english=0, features=4246, icon="item/props_6200.png"
+},
+	[14]={ suit_skill2=6015, suit_skill4=6016, desc=0, name=4247, english=0, features=4248, icon="item/props_6201.png"
+},
+	[15]={ suit_skill2=6017, suit_skill4=6018, desc=0, name=4249, english=0, features=4250, icon="item/props_6202.png"
 }
 }
 

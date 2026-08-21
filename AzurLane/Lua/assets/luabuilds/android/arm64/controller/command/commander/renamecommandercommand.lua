@@ -1,39 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RenameCommanderCommand", pm.SimpleCommand)
 
-local var_0_0 = "RenameCommanderCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.name
+	local var_1_2 = getProxy(CommanderProxy)
+	local var_1_3 = getProxy(CommanderProxy):getCommanderById(var_1_0.commanderId)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().commanderId
-	local var_1_1 = var_2.name
-
-	getProxy = var_1_10005
-	CommanderProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.getCommanderById(var_1_2, var_1_0) then
+	if not var_1_3 then
 		return
 	end
 
-	if not var_6:canModifyName() then
+	if not var_1_3:canModifyName() then
 		return
 	end
 
-	if not var_1_1 or var_1_1 == "" then
+	if not var_1_0.name or var_1_0.name == "" then
 		return
 	end
 
-	if var_6:getName() == var_1_1 then
+	if var_1_3:getName() == var_1_0.name then
 		return
 	end
 
-	nameValidityCheck = var_7
-
-	if not var_7(var_1_1, 0, 20, {
+	if not nameValidityCheck(var_1_0.name, 0, 20, {
 		"spece_illegal_tip",
 		"login_newPlayerScene_name_tooShort",
 		"login_newPlayerScene_name_tooLong",
@@ -42,53 +31,20 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 		return
 	end
 
-	pg = var_7
-
-	local var_1_3 = var_7.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_3, 25020, {
-		commanderid = var_1_0,
-		name = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(25020, {
+		commanderid = var_1_0.commanderId,
+		name = var_1_0.name
 	}, 25021, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_1.setName(var_2_0, var_1_1)
-
-			pg = var_2_1
-			var_2_1 = var_2_1.gameset.commander_rename_coldtime.key_value
-			pg = var_2_10002
-			var_2_10004 = var_2_10002.TimeMgr.GetInstance()
-
-			local var_2_2 = var_2.GetServerTime(var_2_10004) + var_2_1
-			local var_2_3 = var_0
-
-			var_3.setRenameTime(var_2_3, var_2_2)
-
-			local var_2_4 = var_0
-
-			var_3.updateCommander(var_2_4, var_0)
-
-			local var_2_5 = arg_1_0
-			local var_2_6 = var_3.sendNotification
-
-			GAME = var_6
-
-			var_2_6(var_2_5, var_6.COMMANDER_RENAME_DONE, {
-				id = var_0.id,
+			var_1_3:setName(var_1_1)
+			var_1_3:setRenameTime(pg.TimeMgr.GetInstance():GetServerTime() + pg.gameset.commander_rename_coldtime.key_value)
+			var_1_2:updateCommander(var_1_3)
+			arg_1_0:sendNotification(GAME.COMMANDER_RENAME_DONE, {
+				id = var_1_3.id,
 				name = var_1_1
 			})
 		else
-			pg = var_2_1
-
-			local var_2_7 = var_2_1.TipsMgr.GetInstance()
-			local var_2_8 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_8(var_2_7, var_2_10004("rename_commander_erro", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("rename_commander_erro", arg_2_0.result))
 		end
 
 		return
@@ -97,4 +53,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

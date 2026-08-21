@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_data_by_type") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_data_by_type"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_data_by_type = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_data_by_type
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_data_by_type = rawget(pg, "ship_data_by_type") or setmetatable({
+	__name = "ship_data_by_type"
+}, confNEO)
+pg.ship_data_by_type.all = {
 	1,
 	2,
 	3,
@@ -48,25 +25,11 @@ var_0_3.all = {
 	23,
 	24
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_data_by_type = {}
+pg.base = pg.base or {}
+pg.base.ship_data_by_type = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_data_by_type
-
-	var_1_0[1] = {
+	pg.base.ship_data_by_type[1] = {
 		distory_resource_gold_ratio = 12,
 		team_type = "vanguard",
 		type_name = "驱逐",
@@ -95,11 +58,7 @@ var_0_3.base.ship_data_by_type = {}
 			51
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_data_by_type
-
-	var_1_1[2] = {
+	pg.base.ship_data_by_type[2] = {
 		distory_resource_gold_ratio = 14,
 		team_type = "vanguard",
 		type_name = "轻巡",
@@ -128,11 +87,7 @@ var_0_3.base.ship_data_by_type = {}
 			52
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_data_by_type
-
-	var_1_2[3] = {
+	pg.base.ship_data_by_type[3] = {
 		distory_resource_gold_ratio = 18,
 		team_type = "vanguard",
 		type_name = "重巡",
@@ -161,11 +116,7 @@ var_0_3.base.ship_data_by_type = {}
 			53
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_data_by_type
-
-	var_1_3[4] = {
+	pg.base.ship_data_by_type[4] = {
 		distory_resource_gold_ratio = 22,
 		team_type = "main",
 		type_name = "战巡",
@@ -194,11 +145,7 @@ var_0_3.base.ship_data_by_type = {}
 			54
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_data_by_type
-
-	var_1_4[5] = {
+	pg.base.ship_data_by_type[5] = {
 		distory_resource_gold_ratio = 26,
 		team_type = "main",
 		type_name = "战列",
@@ -227,11 +174,7 @@ var_0_3.base.ship_data_by_type = {}
 			55
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_data_by_type
-
-	var_1_5[6] = {
+	pg.base.ship_data_by_type[6] = {
 		distory_resource_gold_ratio = 16,
 		team_type = "main",
 		type_name = "轻航",
@@ -260,11 +203,7 @@ var_0_3.base.ship_data_by_type = {}
 			56
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_data_by_type
-
-	var_1_6[7] = {
+	pg.base.ship_data_by_type[7] = {
 		distory_resource_gold_ratio = 24,
 		team_type = "main",
 		type_name = "正航",
@@ -293,11 +232,7 @@ var_0_3.base.ship_data_by_type = {}
 			57
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_data_by_type
-
-	var_1_7[8] = {
+	pg.base.ship_data_by_type[8] = {
 		distory_resource_gold_ratio = 10,
 		team_type = "submarine",
 		type_name = "潜艇",
@@ -324,11 +259,7 @@ var_0_3.base.ship_data_by_type = {}
 		},
 		arena_buff = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_data_by_type
-
-	var_1_8[9] = {
+	pg.base.ship_data_by_type[9] = {
 		distory_resource_gold_ratio = 18,
 		team_type = "vanguard",
 		type_name = "航巡",
@@ -357,11 +288,7 @@ var_0_3.base.ship_data_by_type = {}
 			53
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_data_by_type
-
-	var_1_9[10] = {
+	pg.base.ship_data_by_type[10] = {
 		distory_resource_gold_ratio = 25,
 		team_type = "main",
 		type_name = "航战",
@@ -390,11 +317,7 @@ var_0_3.base.ship_data_by_type = {}
 			55
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_data_by_type
-
-	var_1_10[11] = {
+	pg.base.ship_data_by_type[11] = {
 		distory_resource_gold_ratio = 15,
 		team_type = "vanguard",
 		type_name = "雷巡",
@@ -423,11 +346,7 @@ var_0_3.base.ship_data_by_type = {}
 			52
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_data_by_type
-
-	var_1_11[12] = {
+	pg.base.ship_data_by_type[12] = {
 		distory_resource_gold_ratio = 13,
 		team_type = "main",
 		type_name = "维修",
@@ -454,11 +373,7 @@ var_0_3.base.ship_data_by_type = {}
 		},
 		arena_buff = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_data_by_type
-
-	var_1_12[13] = {
+	pg.base.ship_data_by_type[13] = {
 		distory_resource_gold_ratio = 13,
 		team_type = "main",
 		type_name = "重炮",
@@ -485,11 +400,7 @@ var_0_3.base.ship_data_by_type = {}
 		},
 		arena_buff = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_data_by_type
-
-	var_1_13[17] = {
+	pg.base.ship_data_by_type[17] = {
 		distory_resource_gold_ratio = 10,
 		team_type = "submarine",
 		type_name = "潜母",
@@ -516,11 +427,7 @@ var_0_3.base.ship_data_by_type = {}
 		},
 		arena_buff = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_data_by_type
-
-	var_1_14[18] = {
+	pg.base.ship_data_by_type[18] = {
 		distory_resource_gold_ratio = 19,
 		team_type = "vanguard",
 		type_name = "超巡",
@@ -549,11 +456,7 @@ var_0_3.base.ship_data_by_type = {}
 			53
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_data_by_type
-
-	var_1_15[19] = {
+	pg.base.ship_data_by_type[19] = {
 		distory_resource_gold_ratio = 11,
 		team_type = "vanguard",
 		type_name = "运输",
@@ -582,11 +485,7 @@ var_0_3.base.ship_data_by_type = {}
 			51
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_data_by_type
-
-	var_1_16[20] = {
+	pg.base.ship_data_by_type[20] = {
 		distory_resource_gold_ratio = 12,
 		team_type = "vanguard",
 		type_name = "导驱",
@@ -615,11 +514,7 @@ var_0_3.base.ship_data_by_type = {}
 			51
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_data_by_type
-
-	var_1_17[21] = {
+	pg.base.ship_data_by_type[21] = {
 		distory_resource_gold_ratio = 12,
 		team_type = "main",
 		type_name = "导驱",
@@ -648,11 +543,7 @@ var_0_3.base.ship_data_by_type = {}
 			55
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_data_by_type
-
-	var_1_18[22] = {
+	pg.base.ship_data_by_type[22] = {
 		distory_resource_gold_ratio = 12,
 		team_type = "submarine",
 		type_name = "风帆",
@@ -679,11 +570,7 @@ var_0_3.base.ship_data_by_type = {}
 		},
 		arena_buff = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_data_by_type
-
-	var_1_19[23] = {
+	pg.base.ship_data_by_type[23] = {
 		distory_resource_gold_ratio = 14,
 		team_type = "vanguard",
 		type_name = "风帆",
@@ -712,8 +599,7 @@ var_0_3.base.ship_data_by_type = {}
 			52
 		}
 	}
-	pg = var_1_19
-	var_1_19.base.ship_data_by_type[24] = {
+	pg.base.ship_data_by_type[24] = {
 		distory_resource_gold_ratio = 22,
 		team_type = "main",
 		type_name = "风帆",

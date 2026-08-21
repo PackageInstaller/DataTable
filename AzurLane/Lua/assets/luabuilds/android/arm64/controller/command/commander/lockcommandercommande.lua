@@ -1,62 +1,30 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LockCommanderCommande", pm.SimpleCommand)
 
-local var_0_0 = "LockCommanderCommande"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.commanderId
+	local var_1_2 = var_1_0.flag
+	local var_1_3 = getProxy(CommanderProxy)
+	local var_1_4 = getProxy(CommanderProxy):getCommanderById(var_1_0.commanderId)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().commanderId
-	local var_1_1 = var_2.flag
-
-	getProxy = var_1_10005
-	CommanderProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.getCommanderById(var_1_2, var_1_0) or var_6:getLock() == var_1_1 then
+	if not var_1_4 or var_1_4:getLock() == var_1_0.flag then
 		return
 	end
 
-	local function var_1_3()
-		pg = var_2_10000
-
-		local var_2_0 = var_2_10000.ConnectionMgr.GetInstance()
-
-		var_0.Send(var_2_0, 25016, {
-			commanderid = var_1_0,
-			flag = var_1_1
+	local function var_1_5()
+		pg.ConnectionMgr.GetInstance():Send(25016, {
+			commanderid = var_1_1,
+			flag = var_1_2
 		}, 25017, function(arg_3_0)
-			local var_3_3
-
 			if arg_3_0.result == 0 then
-				local var_3_0 = var_0
-
-				var_3_3.setLock(var_3_0, var_1_1)
-
-				local var_3_1 = var_0
-
-				var_3_3.updateCommander(var_3_1, var_0)
-
-				local var_3_2 = arg_1_0
-
-				var_3_3 = var_3_3.sendNotification
-				GAME = var_3_10004
-
-				var_3_3(var_3_2, var_3_10004.COMMANDER_LOCK_DONE, {
-					commander = var_0,
-					flag = var_1_1
+				var_1_4:setLock(var_1_2)
+				var_1_3:updateCommander(var_1_4)
+				arg_1_0:sendNotification(GAME.COMMANDER_LOCK_DONE, {
+					commander = var_1_4,
+					flag = var_1_2
 				})
 			else
-				pg = var_3_3
-
-				local var_3_4 = var_3_3.TipsMgr.GetInstance()
-				local var_3_5 = var_1.ShowTips
-
-				i18n = var_3_10004
-
-				var_3_5(var_3_4, var_3_10004("commander_lock_erro", arg_3_0.result))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("commander_lock_erro", arg_3_0.result))
 			end
 
 			return
@@ -65,17 +33,15 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 		return
 	end
 
-	if var_1_1 == 0 then
-		pg = var_1_2
+	if var_1_0.flag == 0 then
+		local var_1_6 = pg.SecondaryPWDMgr.GetInstance()
 
-		local var_1_4 = var_1_2.SecondaryPWDMgr.GetInstance()
-
-		var_8.LimitedOperation(var_1_4, var_8.UNLOCK_COMMANDER, var_1_0, var_1_3)
+		var_1_6:LimitedOperation(var_1_6.UNLOCK_COMMANDER, var_1_0.commanderId, var_1_5)
 	else
-		var_1_3()
+		var_1_5()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

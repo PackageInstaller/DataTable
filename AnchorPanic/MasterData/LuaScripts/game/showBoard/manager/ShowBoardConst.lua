@@ -31,7 +31,7 @@ showBoard.panelFilterType = { ELEMENT = "ELEMENT", PROFESSION = "PROFESSION", DE
 showBoard.panelFilterTypeList = { showBoard.panelFilterType.ELEMENT, showBoard.panelFilterType.PROFESSION, showBoard.panelFilterType.DEFINE_TYPE }
 showBoard.panelFilterTypeDic = {}
 
-showBoard.panelFilterTypeDic[showBoard.panelSortType.ELEMENT] = { showBoard.filterSubTypeAll, hero.ELEMENTTYPE.ATTACK, hero.ELEMENTTYPE.ELECTRICITY, hero.ELEMENTTYPE.FIRE, hero.ELEMENTTYPE.ICE, hero.ELEMENTTYPE.NATURE, hero.ELEMENTTYPE.LIGHT }
+showBoard.panelFilterTypeDic[showBoard.panelSortType.ELEMENT] = { showBoard.filterSubTypeAll, hero.ELEMENTTYPE.ATTACK, hero.ELEMENTTYPE.ELECTRICITY, hero.ELEMENTTYPE.FIRE, hero.ELEMENTTYPE.ICE, hero.ELEMENTTYPE.NATURE, hero.ELEMENTTYPE.LIGHT,hero.ELEMENTTYPE.DARK }
 -- 屏蔽战士
 showBoard.panelFilterTypeDic[showBoard.panelFilterType.PROFESSION] = { showBoard.filterSubTypeAll, hero.ProfessionType.TANK, hero.ProfessionType.WARRIOR, hero.ProfessionType.OUTPUT, hero.ProfessionType.ASSISTER, hero.ProfessionType.CONTROL, hero.ProfessionType.NUCLEUS }
 showBoard.panelFilterTypeDic[showBoard.panelFilterType.DEFINE_TYPE] = { showBoard.filterSubTypeAll, hero.DefineType.FRONT, hero.DefineType.BACK, hero.DefineType.PARA,hero.DefineType.PARAFRONT }

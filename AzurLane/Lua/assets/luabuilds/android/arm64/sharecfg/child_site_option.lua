@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_site_option") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_site_option"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_site_option = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_site_option
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_site_option = rawget(pg, "child_site_option") or setmetatable({
+	__name = "child_site_option"
+}, confNEO)
+pg.child_site_option.all = {
 	1102,
 	1103,
 	11032,
@@ -168,25 +145,11 @@ var_0_3.all = {
 	1722,
 	1723
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_site_option = {}
+pg.base = pg.base or {}
+pg.base.child_site_option = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_site_option
-
-	var_1_0[1102] = {
+	pg.base.child_site_option[1102] = {
 		name = "好味餐厅",
 		type = 3,
 		label = "",
@@ -206,11 +169,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_site_option
-
-	var_1_1[1103] = {
+	pg.base.child_site_option[1103] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -263,11 +222,7 @@ var_0_3.base.child_site_option = {}
 			122
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_site_option
-
-	var_1_2[11032] = {
+	pg.base.child_site_option[11032] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -320,11 +275,7 @@ var_0_3.base.child_site_option = {}
 			122
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_site_option
-
-	var_1_3[11033] = {
+	pg.base.child_site_option[11033] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -377,11 +328,7 @@ var_0_3.base.child_site_option = {}
 			122
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_site_option
-
-	var_1_4[1104] = {
+	pg.base.child_site_option[1104] = {
 		name = "试吃活动",
 		type = 2,
 		label = "",
@@ -425,11 +372,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_site_option
-
-	var_1_5[1105] = {
+	pg.base.child_site_option[1105] = {
 		name = "厨神大赛",
 		type = 2,
 		label = "",
@@ -475,11 +418,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_site_option
-
-	var_1_6[1106] = {
+	pg.base.child_site_option[1106] = {
 		name = "厨神大赛",
 		type = 2,
 		label = "",
@@ -525,11 +464,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_site_option
-
-	var_1_7[1107] = {
+	pg.base.child_site_option[1107] = {
 		name = "厨神大赛",
 		type = 2,
 		label = "",
@@ -575,11 +510,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_site_option
-
-	var_1_8[1108] = {
+	pg.base.child_site_option[1108] = {
 		name = "试吃活动",
 		type = 2,
 		label = "",
@@ -623,11 +554,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_site_option
-
-	var_1_9[1109] = {
+	pg.base.child_site_option[1109] = {
 		name = "试吃活动",
 		type = 2,
 		label = "",
@@ -671,11 +598,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_site_option
-
-	var_1_10[1110] = {
+	pg.base.child_site_option[1110] = {
 		name = "试吃活动",
 		type = 2,
 		label = "",
@@ -719,11 +642,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_site_option
-
-	var_1_11[1111] = {
+	pg.base.child_site_option[1111] = {
 		name = "用餐",
 		type = 1,
 		label = "",
@@ -752,11 +671,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_site_option
-
-	var_1_12[11112] = {
+	pg.base.child_site_option[11112] = {
 		name = "用餐",
 		type = 1,
 		label = "",
@@ -785,11 +700,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_site_option
-
-	var_1_13[11113] = {
+	pg.base.child_site_option[11113] = {
 		name = "用餐",
 		type = 1,
 		label = "",
@@ -818,11 +729,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_site_option
-
-	var_1_14[1112] = {
+	pg.base.child_site_option[1112] = {
 		name = "打工",
 		type = 2,
 		label = "",
@@ -871,11 +778,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_site_option
-
-	var_1_15[11122] = {
+	pg.base.child_site_option[11122] = {
 		name = "打工",
 		type = 2,
 		label = "",
@@ -924,11 +827,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_site_option
-
-	var_1_16[11123] = {
+	pg.base.child_site_option[11123] = {
 		name = "打工",
 		type = 2,
 		label = "",
@@ -977,11 +876,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_site_option
-
-	var_1_17[1201] = {
+	pg.base.child_site_option[1201] = {
 		name = "五金商店",
 		type = 1,
 		label = "",
@@ -1001,11 +896,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_site_option
-
-	var_1_18[1202] = {
+	pg.base.child_site_option[1202] = {
 		name = "用不到",
 		type = 2,
 		label = "",
@@ -1039,11 +930,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_site_option
-
-	var_1_19[1203] = {
+	pg.base.child_site_option[1203] = {
 		name = "静谧之峰",
 		type = 3,
 		label = "",
@@ -1063,11 +950,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_site_option
-
-	var_1_20[1204] = {
+	pg.base.child_site_option[1204] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -1119,11 +1002,7 @@ var_0_3.base.child_site_option = {}
 			164
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_site_option
-
-	var_1_21[12042] = {
+	pg.base.child_site_option[12042] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -1175,11 +1054,7 @@ var_0_3.base.child_site_option = {}
 			164
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_site_option
-
-	var_1_22[12043] = {
+	pg.base.child_site_option[12043] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -1231,11 +1106,7 @@ var_0_3.base.child_site_option = {}
 			164
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_site_option
-
-	var_1_23[1205] = {
+	pg.base.child_site_option[1205] = {
 		name = "第一届钓鱼达人赛",
 		type = 2,
 		label = "",
@@ -1281,11 +1152,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_site_option
-
-	var_1_24[1206] = {
+	pg.base.child_site_option[1206] = {
 		name = "第二届钓鱼达人赛",
 		type = 2,
 		label = "",
@@ -1331,11 +1198,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_site_option
-
-	var_1_25[1207] = {
+	pg.base.child_site_option[1207] = {
 		name = "第三届钓鱼达人赛",
 		type = 2,
 		label = "",
@@ -1381,11 +1244,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_site_option
-
-	var_1_26[1211] = {
+	pg.base.child_site_option[1211] = {
 		name = "去写生",
 		type = 2,
 		label = "",
@@ -1436,11 +1295,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_site_option
-
-	var_1_27[12112] = {
+	pg.base.child_site_option[12112] = {
 		name = "去写生",
 		type = 2,
 		label = "",
@@ -1491,11 +1346,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_site_option
-
-	var_1_28[12113] = {
+	pg.base.child_site_option[12113] = {
 		name = "去写生",
 		type = 2,
 		label = "",
@@ -1546,11 +1397,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child_site_option
-
-	var_1_29[1212] = {
+	pg.base.child_site_option[1212] = {
 		name = "去露营",
 		type = 2,
 		label = "",
@@ -1594,11 +1441,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child_site_option
-
-	var_1_30[12122] = {
+	pg.base.child_site_option[12122] = {
 		name = "去露营",
 		type = 2,
 		label = "",
@@ -1642,11 +1485,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child_site_option
-
-	var_1_31[12123] = {
+	pg.base.child_site_option[12123] = {
 		name = "去露营",
 		type = 2,
 		label = "",
@@ -1690,11 +1529,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child_site_option
-
-	var_1_32[1213] = {
+	pg.base.child_site_option[1213] = {
 		name = "去钓鱼",
 		type = 2,
 		label = "",
@@ -1743,11 +1578,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child_site_option
-
-	var_1_33[12132] = {
+	pg.base.child_site_option[12132] = {
 		name = "去钓鱼",
 		type = 2,
 		label = "",
@@ -1796,11 +1627,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child_site_option
-
-	var_1_34[12133] = {
+	pg.base.child_site_option[12133] = {
 		name = "去钓鱼",
 		type = 2,
 		label = "",
@@ -1849,11 +1676,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child_site_option
-
-	var_1_35[1302] = {
+	pg.base.child_site_option[1302] = {
 		name = "潮流市集",
 		type = 1,
 		label = "",
@@ -1882,11 +1705,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child_site_option
-
-	var_1_36[13022] = {
+	pg.base.child_site_option[13022] = {
 		name = "潮流市集",
 		type = 1,
 		label = "",
@@ -1915,11 +1734,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child_site_option
-
-	var_1_37[13023] = {
+	pg.base.child_site_option[13023] = {
 		name = "潮流市集",
 		type = 1,
 		label = "",
@@ -1948,11 +1763,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child_site_option
-
-	var_1_38[1303] = {
+	pg.base.child_site_option[1303] = {
 		name = "影像工作室",
 		type = 3,
 		label = "",
@@ -1972,11 +1783,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child_site_option
-
-	var_1_39[1304] = {
+	pg.base.child_site_option[1304] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -2028,11 +1835,7 @@ var_0_3.base.child_site_option = {}
 			166
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child_site_option
-
-	var_1_40[13042] = {
+	pg.base.child_site_option[13042] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -2084,11 +1887,7 @@ var_0_3.base.child_site_option = {}
 			166
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child_site_option
-
-	var_1_41[13043] = {
+	pg.base.child_site_option[13043] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -2140,11 +1939,7 @@ var_0_3.base.child_site_option = {}
 			166
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child_site_option
-
-	var_1_42[1305] = {
+	pg.base.child_site_option[1305] = {
 		name = "第一届摄影大赛",
 		type = 2,
 		label = "",
@@ -2190,11 +1985,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child_site_option
-
-	var_1_43[1306] = {
+	pg.base.child_site_option[1306] = {
 		name = "商业街乐队表演",
 		type = 2,
 		label = "",
@@ -2243,11 +2034,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child_site_option
-
-	var_1_44[1307] = {
+	pg.base.child_site_option[1307] = {
 		name = "第二届摄影大赛",
 		type = 2,
 		label = "",
@@ -2293,11 +2080,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child_site_option
-
-	var_1_45[1308] = {
+	pg.base.child_site_option[1308] = {
 		name = "第三届摄影大赛",
 		type = 2,
 		label = "",
@@ -2343,11 +2126,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child_site_option
-
-	var_1_46[1309] = {
+	pg.base.child_site_option[1309] = {
 		name = "商业街乐队表演",
 		type = 2,
 		label = "",
@@ -2396,11 +2175,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child_site_option
-
-	var_1_47[1310] = {
+	pg.base.child_site_option[1310] = {
 		name = "商业街乐队表演",
 		type = 2,
 		label = "",
@@ -2449,11 +2224,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child_site_option
-
-	var_1_48[1321] = {
+	pg.base.child_site_option[1321] = {
 		name = "商业街乐队表演",
 		type = 2,
 		label = "",
@@ -2502,11 +2273,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child_site_option
-
-	var_1_49[1311] = {
+	pg.base.child_site_option[1311] = {
 		name = "日常生活的照片",
 		type = 2,
 		label = "",
@@ -2560,11 +2327,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child_site_option
-
-	var_1_50[1312] = {
+	pg.base.child_site_option[1312] = {
 		name = "记录运动的照片",
 		type = 2,
 		label = "",
@@ -2618,11 +2381,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child_site_option
-
-	var_1_51[1313] = {
+	pg.base.child_site_option[1313] = {
 		name = "更突显自己的照片",
 		type = 2,
 		label = "",
@@ -2676,11 +2435,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child_site_option
-
-	var_1_52[1314] = {
+	pg.base.child_site_option[1314] = {
 		name = "记录青春的照片",
 		type = 2,
 		label = "",
@@ -2729,11 +2484,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child_site_option
-
-	var_1_53[1315] = {
+	pg.base.child_site_option[1315] = {
 		name = "甜品店主题写真",
 		type = 2,
 		label = "",
@@ -2782,11 +2533,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child_site_option
-
-	var_1_54[1316] = {
+	pg.base.child_site_option[1316] = {
 		name = "樱花主题写真",
 		type = 2,
 		label = "",
@@ -2835,11 +2582,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child_site_option
-
-	var_1_55[1317] = {
+	pg.base.child_site_option[1317] = {
 		name = "古堡主题写真",
 		type = 2,
 		label = "",
@@ -2888,11 +2631,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child_site_option
-
-	var_1_56[1318] = {
+	pg.base.child_site_option[1318] = {
 		name = "度假主题写真",
 		type = 2,
 		label = "",
@@ -2941,11 +2680,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child_site_option
-
-	var_1_57[1319] = {
+	pg.base.child_site_option[1319] = {
 		name = "学校主题写真",
 		type = 2,
 		label = "",
@@ -2994,11 +2729,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child_site_option
-
-	var_1_58[1320] = {
+	pg.base.child_site_option[1320] = {
 		name = "东方主题写真",
 		type = 2,
 		label = "",
@@ -3047,11 +2778,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child_site_option
-
-	var_1_59[13112] = {
+	pg.base.child_site_option[13112] = {
 		name = "日常生活的照片",
 		type = 2,
 		label = "",
@@ -3105,11 +2832,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child_site_option
-
-	var_1_60[13122] = {
+	pg.base.child_site_option[13122] = {
 		name = "记录运动的照片",
 		type = 2,
 		label = "",
@@ -3163,11 +2886,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child_site_option
-
-	var_1_61[13132] = {
+	pg.base.child_site_option[13132] = {
 		name = "更突显自己的照片",
 		type = 2,
 		label = "",
@@ -3221,11 +2940,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child_site_option
-
-	var_1_62[13142] = {
+	pg.base.child_site_option[13142] = {
 		name = "记录青春的照片",
 		type = 2,
 		label = "",
@@ -3274,11 +2989,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child_site_option
-
-	var_1_63[13152] = {
+	pg.base.child_site_option[13152] = {
 		name = "甜品店主题写真",
 		type = 2,
 		label = "",
@@ -3327,11 +3038,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child_site_option
-
-	var_1_64[13162] = {
+	pg.base.child_site_option[13162] = {
 		name = "樱花主题写真",
 		type = 2,
 		label = "",
@@ -3380,11 +3087,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child_site_option
-
-	var_1_65[13172] = {
+	pg.base.child_site_option[13172] = {
 		name = "古堡主题写真",
 		type = 2,
 		label = "",
@@ -3433,11 +3136,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child_site_option
-
-	var_1_66[13182] = {
+	pg.base.child_site_option[13182] = {
 		name = "度假主题写真",
 		type = 2,
 		label = "",
@@ -3486,11 +3185,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child_site_option
-
-	var_1_67[13192] = {
+	pg.base.child_site_option[13192] = {
 		name = "学校主题写真",
 		type = 2,
 		label = "",
@@ -3539,11 +3234,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child_site_option
-
-	var_1_68[13202] = {
+	pg.base.child_site_option[13202] = {
 		name = "东方主题写真",
 		type = 2,
 		label = "",
@@ -3592,11 +3283,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child_site_option
-
-	var_1_69[1401] = {
+	pg.base.child_site_option[1401] = {
 		name = "漫海商坊",
 		type = 1,
 		label = "",
@@ -3625,11 +3312,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child_site_option
-
-	var_1_70[1402] = {
+	pg.base.child_site_option[1402] = {
 		name = "星光舞台",
 		type = 3,
 		label = "",
@@ -3649,11 +3332,7 @@ var_0_3.base.child_site_option = {}
 		count_limit = {},
 		polarid_list = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child_site_option
-
-	var_1_71[1403] = {
+	pg.base.child_site_option[1403] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -3704,11 +3383,7 @@ var_0_3.base.child_site_option = {}
 			163
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child_site_option
-
-	var_1_72[14032] = {
+	pg.base.child_site_option[14032] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -3759,11 +3434,7 @@ var_0_3.base.child_site_option = {}
 			163
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child_site_option
-
-	var_1_73[14033] = {
+	pg.base.child_site_option[14033] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -3814,11 +3485,7 @@ var_0_3.base.child_site_option = {}
 			163
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child_site_option
-
-	var_1_74[1404] = {
+	pg.base.child_site_option[1404] = {
 		name = "第一届明日之星",
 		type = 2,
 		label = "",
@@ -3864,11 +3531,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child_site_option
-
-	var_1_75[1405] = {
+	pg.base.child_site_option[1405] = {
 		name = "第二届明日之星",
 		type = 2,
 		label = "",
@@ -3914,11 +3577,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child_site_option
-
-	var_1_76[1406] = {
+	pg.base.child_site_option[1406] = {
 		name = "第三届明日之星",
 		type = 2,
 		label = "",
@@ -3964,11 +3623,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child_site_option
-
-	var_1_77[1411] = {
+	pg.base.child_site_option[1411] = {
 		name = "《爱情与责任》",
 		type = 2,
 		label = "",
@@ -4027,11 +3682,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child_site_option
-
-	var_1_78[1412] = {
+	pg.base.child_site_option[1412] = {
 		name = "《一千个答案》",
 		type = 2,
 		label = "",
@@ -4090,11 +3741,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child_site_option
-
-	var_1_79[1413] = {
+	pg.base.child_site_option[1413] = {
 		name = "《偷一块面包》",
 		type = 2,
 		label = "",
@@ -4153,11 +3800,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child_site_option
-
-	var_1_80[1414] = {
+	pg.base.child_site_option[1414] = {
 		name = "《度假村、迷案与妖怪剧团！》",
 		type = 2,
 		label = "",
@@ -4211,11 +3854,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child_site_option
-
-	var_1_81[1415] = {
+	pg.base.child_site_option[1415] = {
 		name = "《落樱时节》",
 		type = 2,
 		label = "",
@@ -4269,11 +3908,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child_site_option
-
-	var_1_82[1416] = {
+	pg.base.child_site_option[1416] = {
 		name = "《雨夜惊魂》",
 		type = 2,
 		label = "",
@@ -4327,11 +3962,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child_site_option
-
-	var_1_83[1417] = {
+	pg.base.child_site_option[1417] = {
 		name = "《下课后的奇妙历险》",
 		type = 2,
 		label = "",
@@ -4385,11 +4016,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child_site_option
-
-	var_1_84[1418] = {
+	pg.base.child_site_option[1418] = {
 		name = "《海盗的秘密工坊》",
 		type = 2,
 		label = "",
@@ -4443,11 +4070,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child_site_option
-
-	var_1_85[1419] = {
+	pg.base.child_site_option[1419] = {
 		name = "《夏日的小小作战》",
 		type = 2,
 		label = "",
@@ -4501,11 +4124,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child_site_option
-
-	var_1_86[1420] = {
+	pg.base.child_site_option[1420] = {
 		name = "《飨宴的秘密》",
 		type = 2,
 		label = "",
@@ -4559,11 +4178,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child_site_option
-
-	var_1_87[14112] = {
+	pg.base.child_site_option[14112] = {
 		name = "《爱情与责任》",
 		type = 2,
 		label = "",
@@ -4617,11 +4232,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child_site_option
-
-	var_1_88[14122] = {
+	pg.base.child_site_option[14122] = {
 		name = "《一千个答案》",
 		type = 2,
 		label = "",
@@ -4675,11 +4286,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child_site_option
-
-	var_1_89[14132] = {
+	pg.base.child_site_option[14132] = {
 		name = "《偷一块面包》",
 		type = 2,
 		label = "",
@@ -4733,11 +4340,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child_site_option
-
-	var_1_90[14142] = {
+	pg.base.child_site_option[14142] = {
 		name = "《度假村、迷案与妖怪剧团！》",
 		type = 2,
 		label = "",
@@ -4791,11 +4394,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child_site_option
-
-	var_1_91[14152] = {
+	pg.base.child_site_option[14152] = {
 		name = "《落樱时节》",
 		type = 2,
 		label = "",
@@ -4849,11 +4448,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child_site_option
-
-	var_1_92[14162] = {
+	pg.base.child_site_option[14162] = {
 		name = "《雨夜惊魂》",
 		type = 2,
 		label = "",
@@ -4907,11 +4502,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child_site_option
-
-	var_1_93[14172] = {
+	pg.base.child_site_option[14172] = {
 		name = "《下课后的奇妙历险》",
 		type = 2,
 		label = "",
@@ -4965,11 +4556,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child_site_option
-
-	var_1_94[14182] = {
+	pg.base.child_site_option[14182] = {
 		name = "《海盗的秘密工坊》",
 		type = 2,
 		label = "",
@@ -5023,11 +4610,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child_site_option
-
-	var_1_95[14192] = {
+	pg.base.child_site_option[14192] = {
 		name = "《夏日的小小作战》",
 		type = 2,
 		label = "",
@@ -5081,11 +4664,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child_site_option
-
-	var_1_96[14202] = {
+	pg.base.child_site_option[14202] = {
 		name = "《飨宴的秘密》",
 		type = 2,
 		label = "",
@@ -5139,11 +4718,7 @@ var_0_3.base.child_site_option = {}
 		},
 		polarid_list = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child_site_option
-
-	var_1_97[1501] = {
+	pg.base.child_site_option[1501] = {
 		name = "水族馆",
 		type = 2,
 		label = "",
@@ -5208,11 +4783,7 @@ var_0_3.base.child_site_option = {}
 			109
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child_site_option
-
-	var_1_98[1502] = {
+	pg.base.child_site_option[1502] = {
 		name = "游乐园",
 		type = 2,
 		label = "",
@@ -5276,8 +4847,7 @@ var_0_3.base.child_site_option = {}
 			109
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child_site_option[1503] = {
+	pg.base.child_site_option[1503] = {
 		name = "童心乐园",
 		type = 2,
 		label = "",
@@ -5345,11 +4915,7 @@ var_0_3.base.child_site_option = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child_site_option
-
-	var_2_0[1504] = {
+	pg.base.child_site_option[1504] = {
 		name = "童心乐园",
 		type = 2,
 		label = "",
@@ -5404,11 +4970,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child_site_option
-
-	var_2_1[1601] = {
+	pg.base.child_site_option[1601] = {
 		name = "体育锻炼",
 		type = 2,
 		label = "",
@@ -5454,11 +5016,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child_site_option
-
-	var_2_2[16012] = {
+	pg.base.child_site_option[16012] = {
 		name = "体育锻炼",
 		type = 2,
 		label = "",
@@ -5504,11 +5062,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child_site_option
-
-	var_2_3[16013] = {
+	pg.base.child_site_option[16013] = {
 		name = "体育锻炼",
 		type = 2,
 		label = "",
@@ -5554,11 +5108,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child_site_option
-
-	var_2_4[1602] = {
+	pg.base.child_site_option[1602] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -5610,11 +5160,7 @@ end)()
 			158
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child_site_option
-
-	var_2_5[16022] = {
+	pg.base.child_site_option[16022] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -5666,11 +5212,7 @@ end)()
 			158
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child_site_option
-
-	var_2_6[16023] = {
+	pg.base.child_site_option[16023] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -5722,11 +5264,7 @@ end)()
 			158
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.child_site_option
-
-	var_2_7[1603] = {
+	pg.base.child_site_option[1603] = {
 		name = "第一届运动大赛",
 		type = 2,
 		label = "",
@@ -5772,11 +5310,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.child_site_option
-
-	var_2_8[1604] = {
+	pg.base.child_site_option[1604] = {
 		name = "第二届运动大赛",
 		type = 2,
 		label = "",
@@ -5822,11 +5356,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.child_site_option
-
-	var_2_9[1605] = {
+	pg.base.child_site_option[1605] = {
 		name = "第三届运动大赛",
 		type = 2,
 		label = "",
@@ -5872,11 +5402,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.child_site_option
-
-	var_2_10[1606] = {
+	pg.base.child_site_option[1606] = {
 		name = "观看足球比赛",
 		type = 2,
 		label = "",
@@ -5925,11 +5451,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.child_site_option
-
-	var_2_11[1607] = {
+	pg.base.child_site_option[1607] = {
 		name = "观看足球比赛",
 		type = 2,
 		label = "",
@@ -5978,11 +5500,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.child_site_option
-
-	var_2_12[1608] = {
+	pg.base.child_site_option[1608] = {
 		name = "观看足球比赛",
 		type = 2,
 		label = "",
@@ -6031,11 +5549,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.child_site_option
-
-	var_2_13[1609] = {
+	pg.base.child_site_option[1609] = {
 		name = "观看足球比赛",
 		type = 2,
 		label = "",
@@ -6084,11 +5598,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.child_site_option
-
-	var_2_14[1701] = {
+	pg.base.child_site_option[1701] = {
 		name = "校图书馆",
 		type = 2,
 		label = "",
@@ -6132,11 +5642,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.child_site_option
-
-	var_2_15[17012] = {
+	pg.base.child_site_option[17012] = {
 		name = "校图书馆",
 		type = 2,
 		label = "",
@@ -6180,11 +5686,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.child_site_option
-
-	var_2_16[17013] = {
+	pg.base.child_site_option[17013] = {
 		name = "校图书馆",
 		type = 2,
 		label = "",
@@ -6228,11 +5730,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.child_site_option
-
-	var_2_17[1702] = {
+	pg.base.child_site_option[1702] = {
 		name = "音乐教室",
 		type = 2,
 		label = "",
@@ -6281,11 +5779,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.child_site_option
-
-	var_2_18[17022] = {
+	pg.base.child_site_option[17022] = {
 		name = "音乐教室",
 		type = 2,
 		label = "",
@@ -6334,11 +5828,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.child_site_option
-
-	var_2_19[17023] = {
+	pg.base.child_site_option[17023] = {
 		name = "音乐教室",
 		type = 2,
 		label = "",
@@ -6387,11 +5877,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.child_site_option
-
-	var_2_20[1705] = {
+	pg.base.child_site_option[1705] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -6445,11 +5931,7 @@ end)()
 			162
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.child_site_option
-
-	var_2_21[17052] = {
+	pg.base.child_site_option[17052] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -6505,11 +5987,7 @@ end)()
 			162
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.child_site_option
-
-	var_2_22[17053] = {
+	pg.base.child_site_option[17053] = {
 		name = "随便逛逛",
 		type = 2,
 		label = "",
@@ -6563,11 +6041,7 @@ end)()
 			162
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.child_site_option
-
-	var_2_23[1706] = {
+	pg.base.child_site_option[1706] = {
 		name = "第一届文学大奖赛",
 		type = 2,
 		label = "",
@@ -6613,11 +6087,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.child_site_option
-
-	var_2_24[1707] = {
+	pg.base.child_site_option[1707] = {
 		name = "第一届绘画大奖赛",
 		type = 2,
 		label = "",
@@ -6663,11 +6133,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.child_site_option
-
-	var_2_25[1708] = {
+	pg.base.child_site_option[1708] = {
 		name = "第一届歌者之声大奖赛",
 		type = 2,
 		label = "",
@@ -6713,11 +6179,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.child_site_option
-
-	var_2_26[1709] = {
+	pg.base.child_site_option[1709] = {
 		name = "图书馆写作限时指导",
 		type = 2,
 		label = "",
@@ -6766,11 +6228,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.child_site_option
-
-	var_2_27[1710] = {
+	pg.base.child_site_option[1710] = {
 		name = "绘画教室限时指导",
 		type = 2,
 		label = "",
@@ -6819,11 +6277,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.child_site_option
-
-	var_2_28[1711] = {
+	pg.base.child_site_option[1711] = {
 		name = "声乐教室限时指导",
 		type = 2,
 		label = "",
@@ -6872,11 +6326,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.child_site_option
-
-	var_2_29[1712] = {
+	pg.base.child_site_option[1712] = {
 		name = "第二届文学大奖赛",
 		type = 2,
 		label = "",
@@ -6922,11 +6372,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.child_site_option
-
-	var_2_30[1713] = {
+	pg.base.child_site_option[1713] = {
 		name = "第三届文学大奖赛",
 		type = 2,
 		label = "",
@@ -6972,11 +6418,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.child_site_option
-
-	var_2_31[1714] = {
+	pg.base.child_site_option[1714] = {
 		name = "第二届绘画大奖赛",
 		type = 2,
 		label = "",
@@ -7022,11 +6464,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.child_site_option
-
-	var_2_32[1715] = {
+	pg.base.child_site_option[1715] = {
 		name = "第三届绘画大奖赛",
 		type = 2,
 		label = "",
@@ -7072,11 +6510,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.child_site_option
-
-	var_2_33[1716] = {
+	pg.base.child_site_option[1716] = {
 		name = "第二届歌者之声大奖赛",
 		type = 2,
 		label = "",
@@ -7122,11 +6556,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.child_site_option
-
-	var_2_34[1717] = {
+	pg.base.child_site_option[1717] = {
 		name = "第三届歌者之声大奖赛",
 		type = 2,
 		label = "",
@@ -7172,11 +6602,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.child_site_option
-
-	var_2_35[1718] = {
+	pg.base.child_site_option[1718] = {
 		name = "图书馆写作限时指导",
 		type = 2,
 		label = "",
@@ -7225,11 +6651,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.child_site_option
-
-	var_2_36[1719] = {
+	pg.base.child_site_option[1719] = {
 		name = "绘画教室限时指导",
 		type = 2,
 		label = "",
@@ -7278,11 +6700,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.child_site_option
-
-	var_2_37[1720] = {
+	pg.base.child_site_option[1720] = {
 		name = "声乐教室限时指导",
 		type = 2,
 		label = "",
@@ -7331,11 +6749,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.child_site_option
-
-	var_2_38[1721] = {
+	pg.base.child_site_option[1721] = {
 		name = "图书馆写作限时指导",
 		type = 2,
 		label = "",
@@ -7384,11 +6798,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.child_site_option
-
-	var_2_39[1722] = {
+	pg.base.child_site_option[1722] = {
 		name = "绘画教室限时指导",
 		type = 2,
 		label = "",
@@ -7437,8 +6847,7 @@ end)()
 		},
 		polarid_list = {}
 	}
-	pg = var_2_39
-	var_2_39.base.child_site_option[1723] = {
+	pg.base.child_site_option[1723] = {
 		name = "声乐教室限时指导",
 		type = 2,
 		label = "",

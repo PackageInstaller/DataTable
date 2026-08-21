@@ -1,259 +1,100 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewOrleansLoginPage", import("...base.BaseActivityPage"))
 
-local var_0_0 = "NewOrleansLoginPage"
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.showItemTpl = arg_1_0.bg:Find("ShowItem")
+	arg_1_0.showItemContainer = arg_1_0.bg:Find("ItemShowList")
+	arg_1_0.itemList = UIItemList.New(arg_1_0.showItemContainer, arg_1_0.showItemTpl)
 
-import = var_0_10003
+	setActive(arg_1_0.showItemTpl, false)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
+	arg_1_0.item = arg_1_0.bg:Find("item")
+	arg_1_0.items = arg_1_0.bg:Find("items")
+	arg_1_0.uilist = UIItemList.New(arg_1_0.items, arg_1_0.item)
 
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
+	setActive(arg_1_0.item, false)
 
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.showItemTpl = var_1.Find(var_1_1, "ShowItem")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.showItemContainer = var_1.Find(var_1_2, "ItemShowList")
-	UIItemList = var_1
-	arg_1_0.itemList = var_1.New(arg_1_0.showItemContainer, arg_1_0.showItemTpl)
-	setActive = var_1
-
-	var_1(arg_1_0.showItemTpl, false)
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.item = var_1.Find(var_1_3, "item")
-
-	local var_1_4 = arg_1_0.bg
-
-	arg_1_0.items = var_1.Find(var_1_4, "items")
-	UIItemList = var_1
-	arg_1_0.uilist = var_1.New(arg_1_0.items, arg_1_0.item)
-	setActive = var_1
-
-	var_1(arg_1_0.item, false)
-
-	local var_1_5 = arg_1_0.bg
-
-	arg_1_0.stepText = var_1.Find(var_1_5, "step_text")
+	arg_1_0.stepText = arg_1_0.bg:Find("step_text")
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
-	local var_2_0 = arg_2_0.activity
-	local var_2_1 = var_1.getConfig(var_2_0, "config_client").act_id
-
-	getProxy = var_1_10002
-	ActivityProxy = var_4
-
-	local var_2_2 = var_1_10002(var_4)
-
-	arg_2_0.linkActivity = var_2.getActivityById(var_2_2, var_2_1)
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.linkActivity = getProxy(ActivityProxy):getActivityById(arg_2_0.activity:getConfig("config_client").act_id)
 	arg_2_0.nday = 0
-	getProxy = var_2
-	TaskProxy = var_2_2
-	arg_2_0.taskProxy = var_2(var_2_2)
-
-	local var_2_3 = arg_2_0.linkActivity
-
-	arg_2_0.taskGroup = var_2.getConfig(var_2_3, "config_data")
-	pg = var_2
-
-	local var_2_4 = var_2.activity_7_day_sign
-	local var_2_5 = arg_2_0.activity
-
-	arg_2_0.config = var_2_4[var_3.getConfig(var_2_5, "config_id")]
+	arg_2_0.taskProxy = getProxy(TaskProxy)
+	arg_2_0.taskGroup = arg_2_0.linkActivity:getConfig("config_data")
+	arg_2_0.config = pg.activity_7_day_sign[arg_2_0.activity:getConfig("config_id")]
 	arg_2_0.Day = #arg_2_0.config.front_drops
 	arg_2_0.curDay = 0
-	updateActivityTaskStatus = var_2
 
-	return var_2(arg_2_0.linkActivity)
+	return updateActivityTaskStatus(arg_2_0.linkActivity)
 end
 
-function var_0_1.OnFirstFlush(arg_3_0)
-	local var_3_0 = arg_3_0.uilist
+function var_0_0.OnFirstFlush(arg_3_0)
+	arg_3_0.uilist:make(function(arg_4_0, arg_4_1, arg_4_2)
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_4_2:Find("item")
+			local var_4_1 = arg_3_0.taskProxy:getTaskById(arg_3_0.taskGroup[arg_3_0.nday][arg_4_1 + 1]) or arg_3_0.taskProxy:getFinishTaskById(arg_3_0.taskGroup[arg_3_0.nday][arg_4_1 + 1])
 
-	var_1.make(var_3_0, function(arg_4_0, arg_4_1, arg_4_2)
-		UIItemList = var_2_10003
+			assert(var_4_1, "without this task by id: " .. arg_3_0.taskGroup[arg_3_0.nday][arg_4_1 + 1])
 
-		if arg_4_0 == var_2_10003.EventUpdate then
-			local var_4_0 = arg_4_1 + 1
-			local var_4_1 = arg_4_2:Find("item")
-			local var_4_2 = arg_3_0.taskGroup[arg_3_0.nday][var_4_0]
-			local var_4_3 = arg_3_0.taskProxy
-			local var_4_5
+			local var_4_2 = var_4_1:getConfig("award_display")[1]
 
-			if not var_6.getTaskById(var_4_3, var_4_2) then
-				local var_4_4 = arg_3_0.taskProxy
-
-				var_4_5 = var_6.getFinishTaskById(var_4_4, var_4_2)
-			end
-
-			assert = var_7
-
-			var_7(var_4_5, "without this task by id: " .. var_4_2)
-
-			local var_4_6 = var_4_5:getConfig("award_display")[1]
-			local var_4_7 = {
-				type = var_4_6[1],
-				id = var_4_6[2],
-				count = var_4_6[3]
-			}
-
-			updateDrop = var_9
-
-			var_9(var_4_1, var_4_7)
-
-			onButton = var_9
-
-			local var_4_8 = arg_3_0
-			local var_4_9 = var_4_1
-
-			local function var_4_10()
-				local var_5_0 = arg_3_0
-				local var_5_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_5_1(var_5_0, var_3_10003.ON_DROP, var_4_7)
+			updateDrop(var_4_0, {
+				type = var_4_2[1],
+				id = var_4_2[2],
+				count = var_4_2[3]
+			})
+			onButton(arg_3_0, var_4_0, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
+			end, SFX_PANEL)
 
-			SFX_PANEL = var_2_10014
+			local var_4_3 = var_4_1:getProgress()
+			local var_4_4 = var_4_1:getConfig("target_num")
 
-			var_9(var_4_8, var_4_9, var_4_10, var_2_10014)
+			setText(arg_4_2:Find("description"), var_4_1:getConfig("desc"))
+			setText(arg_4_2:Find("progressText"), var_4_3 .. "/" .. var_4_4)
+			setSlider(arg_4_2:Find("progress"), 0, var_4_4, var_4_3)
 
-			local var_4_11 = var_4_5
-			local var_4_12 = var_4_5.getProgress(var_4_11)
-			local var_4_13 = var_4_5:getConfig("target_num")
+			local var_4_5 = arg_4_2:Find("go_btn")
+			local var_4_6 = arg_4_2:Find("get_btn")
+			local var_4_7 = arg_4_2:Find("got_btn")
+			local var_4_8 = var_4_1:getTaskStatus()
 
-			setText = var_4_11
-
-			var_4_11(arg_4_2:Find("description"), var_4_5:getConfig("desc"))
-
-			setText = var_4_11
-
-			var_4_11(arg_4_2:Find("progressText"), var_4_12 .. "/" .. var_4_13)
-
-			setSlider = var_4_11
-
-			var_4_11(arg_4_2:Find("progress"), 0, var_4_13, var_4_12)
-
-			local var_4_14 = arg_4_2:Find("go_btn")
-			local var_4_15 = arg_4_2:Find("get_btn")
-			local var_4_16 = arg_4_2
-			local var_4_17 = arg_4_2.Find(var_4_16, "got_btn")
-			local var_4_18 = var_4_5:getTaskStatus()
-
-			setActive = var_4_16
-
-			var_4_16(var_4_14, var_4_18 == 0)
-
-			setActive = var_4_16
-
-			var_4_16(var_4_15, var_4_18 == 1)
-
-			setActive = var_4_16
-
-			var_4_16(var_4_17, var_4_18 == 2)
-
-			onButton = var_4_16
-
-			local var_4_19 = arg_3_0
-			local var_4_20 = var_4_14
-
-			local function var_4_21()
-				local var_6_0 = arg_3_0
-				local var_6_1 = var_0.emit
-
-				ActivityMediator = var_3_10003
-
-				var_6_1(var_6_0, var_3_10003.ON_TASK_GO, var_4_5)
+			setActive(var_4_5, var_4_8 == 0)
+			setActive(var_4_6, var_4_8 == 1)
+			setActive(var_4_7, var_4_8 == 2)
+			onButton(arg_3_0, var_4_5, function()
+				arg_3_0:emit(ActivityMediator.ON_TASK_GO, var_4_1)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10020
-
-			var_4_16(var_4_19, var_4_20, var_4_21, var_2_10020)
-
-			onButton = var_4_16
-
-			local var_4_22 = arg_3_0
-			local var_4_23 = var_4_15
-
-			local function var_4_24()
-				local var_7_0 = arg_3_0
-				local var_7_1 = var_0.emit
-
-				ActivityMediator = var_3_10003
-
-				var_7_1(var_7_0, var_3_10003.ON_TASK_SUBMIT, var_4_5)
+			end, SFX_PANEL)
+			onButton(arg_3_0, var_4_6, function()
+				arg_3_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_4_1)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10020
-
-			var_4_16(var_4_22, var_4_23, var_4_24, var_2_10020)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
-
-	local var_3_1 = arg_3_0.itemList
-
-	var_1.make(var_3_1, function(arg_8_0, arg_8_1, arg_8_2)
-		UIItemList = var_2_10003
-
-		local var_8_0
-
-		if arg_8_0 == var_2_10003.EventInit then
-			var_8_0 = arg_3_0.config.front_drops[arg_8_1 + 1]
-			var_2_10004 = {
-				type = var_8_0[1],
-				id = var_8_0[2],
-				count = var_8_0[3]
-			}
-			updateDrop = var_5
-
-			var_5(arg_8_2, var_2_10004)
-
-			onButton = var_5
-
-			local var_8_1 = arg_3_0
-			local var_8_2 = arg_8_2
-
-			local function var_8_3()
-				local var_9_0 = arg_3_0
-				local var_9_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_9_1(var_9_0, var_3_10003.ON_DROP, var_2_10004)
+	arg_3_0.itemList:make(function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 == UIItemList.EventInit then
+			updateDrop(arg_8_2, {
+				type = arg_3_0.config.front_drops[arg_8_1 + 1][1],
+				id = arg_3_0.config.front_drops[arg_8_1 + 1][2],
+				count = arg_3_0.config.front_drops[arg_8_1 + 1][3]
+			})
+			onButton(arg_3_0, arg_8_2, function()
+				arg_3_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10010
-
-			var_5(var_8_1, var_8_2, var_8_3, var_2_10010)
-		else
-			UIItemList = var_8_0
-
-			if arg_8_0 == var_8_0.EventUpdate then
-				local var_8_4 = arg_8_2:Find("icon_mask")
-
-				setActive = var_2_10004
-
-				var_2_10004(var_8_4, arg_8_1 < arg_3_0.curDay)
-			end
+			end, SFX_PANEL)
+		elseif arg_8_0 == UIItemList.EventUpdate then
+			setActive(arg_8_2:Find("icon_mask"), arg_8_1 < arg_3_0.curDay)
 		end
 
 		return
@@ -262,51 +103,34 @@ function var_0_1.OnFirstFlush(arg_3_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_10_0)
+function var_0_0.OnUpdateFlush(arg_10_0)
 	arg_10_0.nday = arg_10_0.linkActivity.data3
 
-	local var_10_0 = arg_10_0.linkActivity
-	local var_10_1 = var_1.getConfig(var_10_0, "config_client").story
+	local var_10_0 = arg_10_0.linkActivity:getConfig("config_client").story
 
-	checkExist = var_1_10002
-
-	if var_1_10002(var_10_1, {
+	if checkExist(var_10_0, {
 		arg_10_0.nday
 	}, {
 		1
 	}) then
-		pg = var_2
-
-		local var_10_2 = var_2.NewStoryMgr.GetInstance()
-
-		var_2.Play(var_10_2, var_10_1[arg_10_0.nday][1])
+		pg.NewStoryMgr.GetInstance():Play(var_10_0[arg_10_0.nday][1])
 	end
 
 	if arg_10_0.stepText then
-		setText = var_2
-
-		local var_10_3 = arg_10_0.stepText
-
-		tostring = var_5
-
-		var_2(var_10_3, var_5(arg_10_0.nday))
+		setText(arg_10_0.stepText, tostring(arg_10_0.nday))
 	end
 
-	local var_10_4 = arg_10_0.uilist
-
-	var_2.align(var_10_4, #arg_10_0.taskGroup[arg_10_0.nday])
+	arg_10_0.uilist:align(#arg_10_0.taskGroup[arg_10_0.nday])
 
 	arg_10_0.curDay = arg_10_0.activity.data1
 
-	local var_10_5 = arg_10_0.itemList
-
-	var_2.align(var_10_5, arg_10_0.Day)
+	arg_10_0.itemList:align(arg_10_0.Day)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_11_0)
+function var_0_0.OnDestroy(arg_11_0)
 	return
 end
 
-return var_0_1
+return var_0_0

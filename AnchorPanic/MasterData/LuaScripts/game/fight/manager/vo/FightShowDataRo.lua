@@ -17,6 +17,9 @@ function parseData(self, refID, refData)
 	self.m_targetCameraRotation = refData.target_camera_rotation
 	self.m_extraDist = refData.extra_dist
 	self.m_lockCamera = refData.lock_camera
+
+	self.m_bossCameraPoint = refData.boss_camera_point
+	self.m_bossCameraRotation = refData.boss_camera_rotation
 end
 
 function getRefID(self)
@@ -70,5 +73,14 @@ end
 function getLockCamera(self)
 	return self.m_lockCamera
 end
+
+function getBossCameraPonit(self)
+	return self.m_bossCameraPoint
+end
+
+function getBossCameraRotation(self)
+	return self.m_bossCameraRotation
+end
+
 
 return _M

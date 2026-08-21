@@ -1,15 +1,10 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PacGameMenuUI")
+﻿local var_0_0 = class("PacGameMenuUI")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
 	arg_1_0._gameVo = arg_1_3
-
-	local var_1_0 = arg_1_0._gameVo
-
-	arg_1_0.totalTimes = var_4.GetTotalTimes(var_1_0)
+	arg_1_0.totalTimes = arg_1_0._gameVo:GetTotalTimes()
 	arg_1_0.battleItems = {}
 
 	arg_1_0:initUI()
@@ -18,329 +13,115 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 end
 
 function var_0_0.initUI(arg_2_0)
-	findTF = var_1_10001
-	arg_2_0.menuUI = var_1_10001(arg_2_0._tf, "ui/menuUI")
-	findTF = var_1
-	arg_2_0.highScore = var_1(arg_2_0.menuUI, "highScore/text")
-	GetComponent = var_1
-	findTF = var_3
+	arg_2_0.menuUI = findTF(arg_2_0._tf, "ui/menuUI")
+	arg_2_0.highScore = findTF(arg_2_0.menuUI, "highScore/text")
+	arg_2_0.battleScrollRect = GetComponent(findTF(arg_2_0.menuUI, "battList"), typeof(ScrollRect))
 
-	local var_2_0 = var_3(arg_2_0.menuUI, "battList")
-
-	typeof = var_4
-	ScrollRect = var_6
-	arg_2_0.battleScrollRect = var_1(var_2_0, var_4(var_6))
-	onButton = var_1
-
-	local var_2_1 = arg_2_0._event
-
-	findTF = var_4
-
-	local var_2_2 = var_4(arg_2_0.menuUI, "rightPanelBg/arrowUp")
-
-	local function var_2_3()
+	onButton(arg_2_0._event, findTF(arg_2_0.menuUI, "rightPanelBg/arrowUp"), function()
 		local var_3_0 = arg_2_0.battleScrollRect.normalizedPosition.y + 1 / (arg_2_0.totalTimes - 4)
 
-		if 1 < var_3_0 then
+		if arg_2_0.battleScrollRect.normalizedPosition.y + 1 / (arg_2_0.totalTimes - 4) > 1 then
 			var_3_0 = 1
 		end
 
-		scrollTo = var_1
-
-		var_1(arg_2_0.battleScrollRect, 0, var_3_0)
+		scrollTo(arg_2_0.battleScrollRect, 0, var_3_0)
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_2_1, var_2_2, var_2_3, var_6)
-
-	onButton = var_1
-
-	local var_2_4 = arg_2_0._event
-
-	findTF = var_2_2
-
-	local var_2_5 = var_2_2(arg_2_0.menuUI, "rightPanelBg/arrowDown")
-
-	local function var_2_6()
-		local var_4_0
+	end, SFX_CANCEL)
+	onButton(arg_2_0._event, findTF(arg_2_0.menuUI, "rightPanelBg/arrowDown"), function()
+		local var_4_0 = arg_2_0.battleScrollRect.normalizedPosition.y - 1 / (arg_2_0.totalTimes - 4)
 
 		if arg_2_0.battleScrollRect.normalizedPosition.y - 1 / (arg_2_0.totalTimes - 4) < 0 then
 			var_4_0 = 0
 		end
 
-		scrollTo = var_1
-
-		var_1(arg_2_0.battleScrollRect, 0, var_4_0)
+		scrollTo(arg_2_0.battleScrollRect, 0, var_4_0)
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_2_4, var_2_5, var_2_6, var_6)
-
-	onButton = var_1
-
-	local var_2_7 = arg_2_0._event
-
-	findTF = var_2_5
-
-	local var_2_8 = var_2_5(arg_2_0.menuUI, "btnBack")
-
-	local function var_2_9()
-		local var_5_0 = arg_2_0._event
-		local var_5_1 = var_0.emit
-
-		SimpleMGEvent = var_2_10003
-
-		var_5_1(var_5_0, var_2_10003.CLOSE_GAME)
+	end, SFX_CANCEL)
+	onButton(arg_2_0._event, findTF(arg_2_0.menuUI, "btnBack"), function()
+		arg_2_0._event:emit(SimpleMGEvent.CLOSE_GAME)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_2_0.btnRule = findTF(arg_2_0.menuUI, "btnRule")
 
-	var_1(var_2_7, var_2_8, var_2_9, var_6)
-
-	findTF = var_1
-	arg_2_0.btnRule = var_1(arg_2_0.menuUI, "btnRule")
-	setText = var_1
-	findTF = var_3
-
-	local var_2_10 = var_3(arg_2_0.btnRule, "text")
-
-	i18n = var_4
-
-	var_1(var_2_10, var_4("pac_game_rule_btn"))
-
-	onButton = var_1
-
-	local var_2_11 = arg_2_0._event
-	local var_2_12 = arg_2_0.btnRule
-
-	local function var_2_13()
-		local var_6_0 = arg_2_0._event
-		local var_6_1 = var_0.emit
-
-		SimpleMGEvent = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.SHOW_RULE, true)
+	setText(findTF(arg_2_0.btnRule, "text"), i18n("pac_game_rule_btn"))
+	onButton(arg_2_0._event, arg_2_0.btnRule, function()
+		arg_2_0._event:emit(SimpleMGEvent.SHOW_RULE, true)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_2_0.btnStart = findTF(arg_2_0.menuUI, "btnStart")
 
-	var_1(var_2_11, var_2_12, var_2_13, var_6)
-
-	findTF = var_1
-	arg_2_0.btnStart = var_1(arg_2_0.menuUI, "btnStart")
-	setText = var_1
-	findTF = var_3
-
-	local var_2_14 = var_3(arg_2_0.btnStart, "text")
-
-	i18n = var_4
-
-	var_1(var_2_14, var_4("pac_game_start_btn"))
-
-	onButton = var_1
-
-	local var_2_15 = arg_2_0._event
-	local var_2_16 = arg_2_0.btnStart
-
-	local function var_2_17()
-		local var_7_0 = arg_2_0._event
-		local var_7_1 = var_0.emit
-
-		SimpleMGEvent = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.READY_START)
+	setText(findTF(arg_2_0.btnStart, "text"), i18n("pac_game_start_btn"))
+	onButton(arg_2_0._event, arg_2_0.btnStart, function()
+		arg_2_0._event:emit(SimpleMGEvent.READY_START)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_2_0.btnRank = findTF(arg_2_0.menuUI, "btnRank")
 
-	var_1(var_2_15, var_2_16, var_2_17, var_6)
-
-	findTF = var_1
-	arg_2_0.btnRank = var_1(arg_2_0.menuUI, "btnRank")
-	onButton = var_1
-
-	local var_2_18 = arg_2_0._event
-	local var_2_19 = arg_2_0.btnRank
-
-	local function var_2_20()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.m02
-		local var_8_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		local var_8_2 = var_2_10003.SEND_MINI_GAME_OP
-		local var_8_3 = {}
-		local var_8_4 = arg_2_0._gameVo
-
-		var_8_3.hubid = var_5.GetHubId(var_8_4)
-		MiniGameOPCommand = var_5
-		var_8_3.cmd = var_5.CMD_SPECIAL_TRACK
-
-		local var_8_5 = {
-			nil,
-			103
-		}
-		local var_8_6 = arg_2_0._gameVo
-
-		var_8_5[1] = var_6.GetGameId(var_8_6)
-		var_8_3.args1 = var_8_5
-
-		var_8_1(var_8_0, var_8_2, var_8_3)
-
-		local var_8_7 = arg_2_0._event
-		local var_8_8 = var_0.emit
-
-		SimpleMGEvent = var_8_2
-
-		var_8_8(var_8_7, var_8_2.SHOW_RANK)
+	onButton(arg_2_0._event, arg_2_0.btnRank, function()
+		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg_2_0._gameVo:GetHubId(),
+			cmd = MiniGameOPCommand.CMD_SPECIAL_TRACK,
+			args1 = {
+				arg_2_0._gameVo:GetGameId(),
+				103
+			}
+		})
+		arg_2_0._event:emit(SimpleMGEvent.SHOW_RANK)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_2_0.btnHome = findTF(arg_2_0.menuUI, "btnHome")
 
-	var_1(var_2_18, var_2_19, var_2_20, var_6)
-
-	findTF = var_1
-	arg_2_0.btnHome = var_1(arg_2_0.menuUI, "btnHome")
-	onButton = var_1
-
-	local var_2_21 = arg_2_0._event
-	local var_2_22 = arg_2_0.btnHome
-
-	local function var_2_23()
-		local var_9_0 = arg_2_0._event
-		local var_9_1 = var_0.emit
-
-		SimpleMGEvent = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.ON_HOME)
+	onButton(arg_2_0._event, arg_2_0.btnHome, function()
+		arg_2_0._event:emit(SimpleMGEvent.ON_HOME)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_6
+	arg_2_0._tplBattleItem = findTF(arg_2_0.menuUI, "battList/Viewport/Content/tplBattleItem")
 
-	var_1(var_2_21, var_2_22, var_2_23, var_6)
+	setActive(arg_2_0._tplBattleItem, false)
 
-	findTF = var_1
-	arg_2_0._tplBattleItem = var_1(arg_2_0.menuUI, "battList/Viewport/Content/tplBattleItem")
-	setActive = var_1
-
-	var_1(arg_2_0._tplBattleItem, false)
-
-	local var_2_24 = arg_2_0._gameVo
-	local var_2_25 = var_1.GetDrop(var_2_24)
+	local var_2_0 = arg_2_0._gameVo:GetDrop()
 
 	for iter_2_0 = 1, 7 do
-		local var_2_26 = iter_2_0
+		local var_2_2 = tf(instantiate(arg_2_0._tplBattleItem))
 
-		tf = var_2_27
-		instantiate = var_1_10009
+		var_2_2.name = "battleItem_" .. iter_2_0
 
-		local var_2_27 = var_2_27(var_1_10009(arg_2_0._tplBattleItem))
+		setParent(var_2_2, findTF(arg_2_0.menuUI, "battList/Viewport/Content"))
+		setText(findTF(var_2_2, "ad/desc"), i18n("which_day_2", iter_2_0))
 
-		var_2_27.name = "battleItem_" .. iter_2_0
-		setParent = var_8
+		local var_2_3 = findTF(var_2_2, "ad/iconMask/icon")
 
-		local var_2_28 = var_2_27
-
-		findTF = var_11
-
-		var_8(var_2_28, var_11(arg_2_0.menuUI, "battList/Viewport/Content"))
-
-		local var_2_29 = iter_2_0
-
-		setText = var_1_10009
-		findTF = var_11
-
-		local var_2_30 = var_11(var_2_27, "ad/desc")
-
-		i18n = var_1_10012
-
-		var_1_10009(var_2_30, var_1_10012("which_day_2", var_2_29))
-
-		findTF = var_1_10009
-		var_1_10009 = var_1_10009(var_2_27, "ad/iconMask/icon")
-
-		local var_2_31 = {
-			type = var_2_25[iter_2_0][1],
-			id = var_2_25[iter_2_0][2],
-			count = var_2_25[iter_2_0][3]
-		}
-
-		updateDrop = var_11
-
-		var_11(var_1_10009, var_2_31)
-
-		onButton = var_11
-
-		local var_2_32 = arg_2_0._event
-		local var_2_33 = var_1_10009
-
-		local function var_2_34()
-			local var_10_0 = arg_2_0._event
-			local var_10_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_10_1(var_10_0, var_2_10003.ON_DROP, var_2_31)
+		updateDrop(var_2_3, {
+			type = var_2_0[iter_2_0][1],
+			id = var_2_0[iter_2_0][2],
+			count = var_2_0[iter_2_0][3]
+		})
+		onButton(arg_2_0._event, var_2_3, function()
+			arg_2_0._event:emit(BaseUI.ON_DROP, var_0)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10016
-
-		var_11(var_2_32, var_2_33, var_2_34, var_1_10016)
-
-		setActive = var_11
-
-		var_11(var_2_27, true)
-
-		table = var_11
-
-		var_11.insert(arg_2_0.battleItems, var_2_27)
+		end, SFX_PANEL)
+		setActive(var_2_2, true)
+		table.insert(arg_2_0.battleItems, var_2_2)
 	end
 
-	setActive = var_2
-	findTF = var_4
+	setActive(findTF(arg_2_0.menuUI, "editor"), PacGameConst.editor_mode and true or false)
 
-	local var_2_35 = var_4(arg_2_0.menuUI, "editor")
-
-	PacGameConst = iter_2_0
-
-	var_2(var_2_35, iter_2_0.editor_mode and true or false)
-
-	PacGameConst = var_2
-
-	if var_2.editor_mode then
-		onButton = var_2
-
-		local var_2_36 = arg_2_0._event
-
-		findTF = var_5
-
-		var_2(var_2_36, var_5(arg_2_0.menuUI, "editor"), function()
-			local var_11_0 = arg_2_0._event
-			local var_11_1 = var_0.emit
-
-			SimpleMGEvent = var_2_10003
-
-			var_11_1(var_11_0, var_2_10003.READY_START, {
+	if PacGameConst.editor_mode then
+		onButton(arg_2_0._event, findTF(arg_2_0.menuUI, "editor"), function()
+			arg_2_0._event:emit(SimpleMGEvent.READY_START, {
 				editor = true
 			})
 
@@ -352,144 +133,79 @@ function var_0_0.initUI(arg_2_0)
 end
 
 function var_0_0.Show(arg_12_0, arg_12_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_12_0.menuUI, arg_12_1)
+	setActive(arg_12_0.menuUI, arg_12_1)
 
 	return
 end
 
 function var_0_0.SetGameRoomUI(arg_13_0, arg_13_1)
 	if arg_13_1 then
-		setActive = var_1_10002
-		findTF = var_1_10004
-
-		var_1_10002(var_1_10004(arg_13_0.menuUI, "lastTimes"), false)
-
-		setActive = var_1_10002
-		findTF = var_4
-
-		var_1_10002(var_4(arg_13_0.menuUI, "btnRank"), false)
+		setActive(findTF(arg_13_0.menuUI, "lastTimes"), false)
+		setActive(findTF(arg_13_0.menuUI, "btnRank"), false)
 	end
 
 	return
 end
 
 function var_0_0.Update(arg_14_0)
-	local var_14_0 = arg_14_0._gameVo
-	local var_14_1 = var_1.GetGameUseTimes(var_14_0)
-	local var_14_2 = arg_14_0._gameVo
-	local var_14_3 = var_2.GetGameTimes(var_14_2)
+	local var_14_0 = arg_14_0._gameVo:GetGameUseTimes()
+	local var_14_1 = arg_14_0._gameVo:GetGameTimes()
 
 	for iter_14_0 = 1, 7 do
-		findTF = var_1_10007
-		var_1_10007 = var_1_10007(arg_14_0.battleItems[iter_14_0], "ad/lock")
-		findTF = var_1_10008
-		var_1_10008 = var_1_10008(arg_14_0.battleItems[iter_14_0], "ad/got")
-		setActive = var_9
+		local var_14_2 = findTF(arg_14_0.battleItems[iter_14_0], "ad/lock")
+		local var_14_3 = findTF(arg_14_0.battleItems[iter_14_0], "ad/got")
 
-		var_9(var_1_10007, false)
+		setActive(var_14_2, false)
+		setActive(var_14_3, false)
 
-		setActive = var_9
-
-		var_9(var_1_10008, false)
-
-		if iter_14_0 <= var_14_1 then
-			setActive = var_9
-
-			var_9(var_1_10008, true)
-		elseif iter_14_0 == var_14_1 + 1 and 1 <= var_14_3 then
+		if iter_14_0 <= var_14_0 then
+			setActive(var_14_3, true)
+		elseif iter_14_0 == var_14_0 + 1 and var_14_1 >= 1 then
 			-- block empty
-		elseif var_14_1 < iter_14_0 and iter_14_0 <= var_14_1 + var_14_3 then
+		elseif var_14_0 < iter_14_0 and iter_14_0 <= var_14_0 + var_14_1 then
 			-- block empty
 		else
-			setActive = var_9
-
-			var_9(var_1_10007, true)
+			setActive(var_14_2, true)
 		end
 	end
 
-	local var_14_4 = 1 - (var_14_1 - 3 < 0 and 0 or var_14_1 - 3) / (arg_14_0.totalTimes - 4)
+	local var_14_4 = 1 - (var_14_0 - 3 < 0 and 0 or var_14_0 - 3) / (arg_14_0.totalTimes - 4)
 
-	if 1 < var_14_4 then
+	if 1 - (var_14_0 - 3 < 0 and 0 or var_14_0 - 3) / (arg_14_0.totalTimes - 4) > 1 then
 		var_14_4 = 1
 	end
 
-	scrollTo = var_5
+	scrollTo(arg_14_0.battleScrollRect, 0, var_14_4)
 
-	var_5(arg_14_0.battleScrollRect, 0, var_14_4)
+	local var_14_5 = getProxy(MiniGameProxy):GetHighScore(arg_14_0._gameVo:GetGameId())
 
-	getProxy = var_5
-	MiniGameProxy = var_7
-
-	local var_14_5 = var_5(var_7)
-	local var_14_6 = var_5.GetHighScore
-	local var_14_7 = arg_14_0._gameVo
-
-	if var_14_6(var_14_5, var_8.GetGameId(var_14_7)) then
-		local var_14_8 = #var_5
-		local var_14_9
-
-		if not (0 < var_14_8) or not var_5[1] then
-			var_14_9 = 0
-		end
-
-		setText = var_14_5
-
-		local var_14_10 = arg_14_0.highScore
-
-		i18n = var_14_7
-
-		var_14_5(var_14_10, var_14_7("pac_game_high_score_tip", var_14_9))
+	if var_14_5 and #var_14_5 > 0 then
+		setText(arg_14_0.highScore, i18n("pac_game_high_score_tip", var_14_6))
 
 		return
 	end
 end
 
 function var_0_0.CheckGet(arg_15_0)
-	setActive = var_1_10001
-	findTF = var_1_10003
+	setActive(findTF(arg_15_0.menuUI, "got"), false)
 
-	var_1_10001(var_1_10003(arg_15_0.menuUI, "got"), false)
+	local var_15_0 = arg_15_0._gameVo:GetUltimate()
 
-	local var_15_0 = arg_15_0._gameVo
-
-	if var_1.GetUltimate(var_15_0) and var_1 ~= 0 then
-		setActive = var_1_10002
-		findTF = var_4
-
-		var_1_10002(var_4(arg_15_0.menuUI, "got"), true)
+	if var_15_0 and var_15_0 ~= 0 then
+		setActive(findTF(arg_15_0.menuUI, "got"), true)
 	end
 
-	if var_1 == 0 then
-		local var_15_1 = arg_15_0._gameVo
-
-		if var_2.GetTotalTimes(var_15_1) > arg_15_0:getGameUsedTimes() then
+	if var_15_0 == 0 then
+		if arg_15_0._gameVo:GetTotalTimes() > arg_15_0:getGameUsedTimes() then
 			return
 		end
 
-		pg = var_15_1
-
-		local var_15_2 = var_15_1.m02
-		local var_15_3 = var_4.sendNotification
-
-		GAME = var_1_10007
-
-		local var_15_4 = var_1_10007.SEND_MINI_GAME_OP
-		local var_15_5 = {}
-		local var_15_6 = arg_15_0._gameVo
-
-		var_15_5.hubid = var_9.GetHubId(var_15_6)
-		MiniGameOPCommand = var_9
-		var_15_5.cmd = var_9.CMD_ULTIMATE
-		var_15_5.args1 = {}
-
-		var_15_3(var_15_2, var_15_4, var_15_5)
-
-		setActive = var_15_3
-		findTF = var_15_2
-
-		var_15_3(var_15_2(arg_15_0.menuUI, "got"), true)
+		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg_15_0._gameVo:GetHubId(),
+			cmd = MiniGameOPCommand.CMD_ULTIMATE,
+			args1 = {}
+		})
+		setActive(findTF(arg_15_0.menuUI, "got"), true)
 	end
 
 	return

@@ -1,24 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("TianYuTianYuanMedalAlbumView", import(".MedalAlbumTemplateView"))
 
-local var_0_0 = "TianYuTianYuanMedalAlbumView"
+var_0_0.GROUP_ID = 50136
+var_0_0.MEDAL_COUNT = 8
+var_0_0.ICON_SCALE = 1
+var_0_0.HELP_TIPS = "help_starLightAlbum"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MedalAlbumTemplateView"))
-
-var_0_1.GROUP_ID = 50136
-var_0_1.MEDAL_COUNT = 8
-var_0_1.ICON_SCALE = 1
-var_0_1.HELP_TIPS = "help_starLightAlbum"
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MedalAlbumTianYuTianYuanPage"
 end
 
-function var_0_1.didEnter(arg_2_0)
-	var_0_1.super.didEnter(arg_2_0)
+function var_0_0.didEnter(arg_2_0)
+	var_0_0.super.didEnter(arg_2_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

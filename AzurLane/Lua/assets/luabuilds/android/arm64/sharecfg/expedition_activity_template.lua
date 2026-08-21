@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "expedition_activity_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "expedition_activity_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.expedition_activity_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.expedition_activity_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.expedition_activity_template = rawget(pg, "expedition_activity_template") or setmetatable({
+	__name = "expedition_activity_template"
+}, confNEO)
+pg.expedition_activity_template.all = {
 	2000,
 	2001,
 	2002,
@@ -1211,6 +1188,19 @@ var_0_3.all = {
 	2049503,
 	2049504,
 	2049505,
+	2050013,
+	2050113,
+	2050213,
+	2051013,
+	2051113,
+	2051213,
+	2052013,
+	2052113,
+	2052213,
+	2053013,
+	2053113,
+	2053213,
+	2054013,
 	3000013,
 	3000113,
 	3000213,
@@ -1237,535 +1227,317 @@ var_0_3.all = {
 	4001113,
 	4001313
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.expedition_activity_template = {}
+pg.base = pg.base or {}
+pg.base.expedition_activity_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.expedition_activity_template
-
-	var_1_0[2000] = {
+	pg.base.expedition_activity_template[2000] = {
 		id = 2000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.expedition_activity_template
-
-	var_1_1[2001] = {
+	pg.base.expedition_activity_template[2001] = {
 		id = 2001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.expedition_activity_template
-
-	var_1_2[2002] = {
+	pg.base.expedition_activity_template[2002] = {
 		id = 2002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.expedition_activity_template
-
-	var_1_3[2003] = {
+	pg.base.expedition_activity_template[2003] = {
 		id = 2003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.expedition_activity_template
-
-	var_1_4[2004] = {
+	pg.base.expedition_activity_template[2004] = {
 		id = 2004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.expedition_activity_template
-
-	var_1_5[2005] = {
+	pg.base.expedition_activity_template[2005] = {
 		id = 2005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.expedition_activity_template
-
-	var_1_6[2006] = {
+	pg.base.expedition_activity_template[2006] = {
 		id = 2006,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.expedition_activity_template
-
-	var_1_7[2007] = {
+	pg.base.expedition_activity_template[2007] = {
 		id = 2007,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.expedition_activity_template
-
-	var_1_8[2008] = {
+	pg.base.expedition_activity_template[2008] = {
 		id = 2008,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.expedition_activity_template
-
-	var_1_9[2009] = {
+	pg.base.expedition_activity_template[2009] = {
 		id = 2009,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.expedition_activity_template
-
-	var_1_10[2010] = {
+	pg.base.expedition_activity_template[2010] = {
 		id = 2010,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.expedition_activity_template
-
-	var_1_11[2011] = {
+	pg.base.expedition_activity_template[2011] = {
 		id = 2011,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.expedition_activity_template
-
-	var_1_12[3000] = {
+	pg.base.expedition_activity_template[3000] = {
 		id = 3000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.expedition_activity_template
-
-	var_1_13[3001] = {
+	pg.base.expedition_activity_template[3001] = {
 		id = 3001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.expedition_activity_template
-
-	var_1_14[3002] = {
+	pg.base.expedition_activity_template[3002] = {
 		id = 3002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.expedition_activity_template
-
-	var_1_15[3003] = {
+	pg.base.expedition_activity_template[3003] = {
 		id = 3003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.expedition_activity_template
-
-	var_1_16[3004] = {
+	pg.base.expedition_activity_template[3004] = {
 		id = 3004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.expedition_activity_template
-
-	var_1_17[3005] = {
+	pg.base.expedition_activity_template[3005] = {
 		id = 3005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.expedition_activity_template
-
-	var_1_18[4000] = {
+	pg.base.expedition_activity_template[4000] = {
 		id = 4000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.expedition_activity_template
-
-	var_1_19[4001] = {
+	pg.base.expedition_activity_template[4001] = {
 		id = 4001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.expedition_activity_template
-
-	var_1_20[4002] = {
+	pg.base.expedition_activity_template[4002] = {
 		id = 4002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.expedition_activity_template
-
-	var_1_21[4003] = {
+	pg.base.expedition_activity_template[4003] = {
 		id = 4003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.expedition_activity_template
-
-	var_1_22[4004] = {
+	pg.base.expedition_activity_template[4004] = {
 		id = 4004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.expedition_activity_template
-
-	var_1_23[4005] = {
+	pg.base.expedition_activity_template[4005] = {
 		id = 4005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.expedition_activity_template
-
-	var_1_24[6000] = {
+	pg.base.expedition_activity_template[6000] = {
 		id = 6000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.expedition_activity_template
-
-	var_1_25[6001] = {
+	pg.base.expedition_activity_template[6001] = {
 		id = 6001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.expedition_activity_template
-
-	var_1_26[6002] = {
+	pg.base.expedition_activity_template[6002] = {
 		id = 6002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.expedition_activity_template
-
-	var_1_27[6003] = {
+	pg.base.expedition_activity_template[6003] = {
 		id = 6003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.expedition_activity_template
-
-	var_1_28[6004] = {
+	pg.base.expedition_activity_template[6004] = {
 		id = 6004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.expedition_activity_template
-
-	var_1_29[6005] = {
+	pg.base.expedition_activity_template[6005] = {
 		id = 6005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.expedition_activity_template
-
-	var_1_30[5009] = {
+	pg.base.expedition_activity_template[5009] = {
 		id = 5009,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.expedition_activity_template
-
-	var_1_31[5010] = {
+	pg.base.expedition_activity_template[5010] = {
 		id = 5010,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.expedition_activity_template
-
-	var_1_32[5011] = {
+	pg.base.expedition_activity_template[5011] = {
 		id = 5011,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.expedition_activity_template
-
-	var_1_33[5012] = {
+	pg.base.expedition_activity_template[5012] = {
 		id = 5012,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.expedition_activity_template
-
-	var_1_34[5013] = {
+	pg.base.expedition_activity_template[5013] = {
 		id = 5013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.expedition_activity_template
-
-	var_1_35[5014] = {
+	pg.base.expedition_activity_template[5014] = {
 		id = 5014,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.expedition_activity_template
-
-	var_1_36[5015] = {
+	pg.base.expedition_activity_template[5015] = {
 		id = 5015,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.expedition_activity_template
-
-	var_1_37[5016] = {
+	pg.base.expedition_activity_template[5016] = {
 		id = 5016,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.expedition_activity_template
-
-	var_1_38[5017] = {
+	pg.base.expedition_activity_template[5017] = {
 		id = 5017,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.expedition_activity_template
-
-	var_1_39[5018] = {
+	pg.base.expedition_activity_template[5018] = {
 		id = 5018,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.expedition_activity_template
-
-	var_1_40[10500] = {
+	pg.base.expedition_activity_template[10500] = {
 		id = 10500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.expedition_activity_template
-
-	var_1_41[10501] = {
+	pg.base.expedition_activity_template[10501] = {
 		id = 10501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.expedition_activity_template
-
-	var_1_42[10502] = {
+	pg.base.expedition_activity_template[10502] = {
 		id = 10502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.expedition_activity_template
-
-	var_1_43[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 101000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.expedition_activity_template
-
-	var_1_44[102000] = {
+	pg.base.expedition_activity_template[102000] = {
 		id = 102000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.expedition_activity_template
-
-	var_1_45[103000] = {
+	pg.base.expedition_activity_template[103000] = {
 		id = 103000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.expedition_activity_template
-
-	var_1_46[104000] = {
+	pg.base.expedition_activity_template[104000] = {
 		id = 104000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.expedition_activity_template
-
-	var_1_47[201000] = {
+	pg.base.expedition_activity_template[201000] = {
 		id = 201000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.expedition_activity_template
-
-	var_1_48[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 202000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.expedition_activity_template
-
-	var_1_49[203000] = {
+	pg.base.expedition_activity_template[203000] = {
 		id = 203000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.expedition_activity_template
-
-	var_1_50[204000] = {
+	pg.base.expedition_activity_template[204000] = {
 		id = 204000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.expedition_activity_template
-
-	var_1_51[301000] = {
+	pg.base.expedition_activity_template[301000] = {
 		id = 301000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1777,11 +1549,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.expedition_activity_template
-
-	var_1_52[302000] = {
+	pg.base.expedition_activity_template[302000] = {
 		id = 302000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1793,11 +1561,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.expedition_activity_template
-
-	var_1_53[24] = {
+	pg.base.expedition_activity_template[24] = {
 		id = 303000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1809,11 +1573,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.expedition_activity_template
-
-	var_1_54[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 304000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1825,11 +1585,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.expedition_activity_template
-
-	var_1_55[305000] = {
+	pg.base.expedition_activity_template[305000] = {
 		id = 305000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1841,11 +1597,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.expedition_activity_template
-
-	var_1_56[401000] = {
+	pg.base.expedition_activity_template[401000] = {
 		id = 401000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1857,11 +1609,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.expedition_activity_template
-
-	var_1_57[402000] = {
+	pg.base.expedition_activity_template[402000] = {
 		id = 402000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1873,11 +1621,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.expedition_activity_template
-
-	var_1_58[403000] = {
+	pg.base.expedition_activity_template[403000] = {
 		id = 403000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1889,11 +1633,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.expedition_activity_template
-
-	var_1_59[404000] = {
+	pg.base.expedition_activity_template[404000] = {
 		id = 404000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1905,11 +1645,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.expedition_activity_template
-
-	var_1_60[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 405000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1921,11 +1657,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.expedition_activity_template
-
-	var_1_61[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 501000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1937,11 +1669,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.expedition_activity_template
-
-	var_1_62[502000] = {
+	pg.base.expedition_activity_template[502000] = {
 		id = 502000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1953,11 +1681,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.expedition_activity_template
-
-	var_1_63[503000] = {
+	pg.base.expedition_activity_template[503000] = {
 		id = 503000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1969,11 +1693,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.expedition_activity_template
-
-	var_1_64[504000] = {
+	pg.base.expedition_activity_template[504000] = {
 		id = 504000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -1985,11 +1705,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.expedition_activity_template
-
-	var_1_65[505000] = {
+	pg.base.expedition_activity_template[505000] = {
 		id = 505000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2001,11 +1717,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.expedition_activity_template
-
-	var_1_66[601000] = {
+	pg.base.expedition_activity_template[601000] = {
 		id = 601000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2017,11 +1729,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.expedition_activity_template
-
-	var_1_67[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 602000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2033,11 +1741,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.expedition_activity_template
-
-	var_1_68[603000] = {
+	pg.base.expedition_activity_template[603000] = {
 		id = 603000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2049,11 +1753,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.expedition_activity_template
-
-	var_1_69[604000] = {
+	pg.base.expedition_activity_template[604000] = {
 		id = 604000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2065,11 +1765,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.expedition_activity_template
-
-	var_1_70[605000] = {
+	pg.base.expedition_activity_template[605000] = {
 		id = 605000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2081,11 +1777,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.expedition_activity_template
-
-	var_1_71[701000] = {
+	pg.base.expedition_activity_template[701000] = {
 		id = 701000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2097,11 +1789,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.expedition_activity_template
-
-	var_1_72[702000] = {
+	pg.base.expedition_activity_template[702000] = {
 		id = 702000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2113,11 +1801,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.expedition_activity_template
-
-	var_1_73[24] = {
+	pg.base.expedition_activity_template[24] = {
 		id = 703000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2129,11 +1813,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.expedition_activity_template
-
-	var_1_74[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 704000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2145,11 +1825,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.expedition_activity_template
-
-	var_1_75[705000] = {
+	pg.base.expedition_activity_template[705000] = {
 		id = 705000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2161,11 +1837,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.expedition_activity_template
-
-	var_1_76[801000] = {
+	pg.base.expedition_activity_template[801000] = {
 		id = 801000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2177,11 +1849,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.expedition_activity_template
-
-	var_1_77[802000] = {
+	pg.base.expedition_activity_template[802000] = {
 		id = 802000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2193,11 +1861,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.expedition_activity_template
-
-	var_1_78[803000] = {
+	pg.base.expedition_activity_template[803000] = {
 		id = 803000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2209,11 +1873,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.expedition_activity_template
-
-	var_1_79[804000] = {
+	pg.base.expedition_activity_template[804000] = {
 		id = 804000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2225,11 +1885,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.expedition_activity_template
-
-	var_1_80[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 805000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2241,11 +1897,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.expedition_activity_template
-
-	var_1_81[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 901000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2257,11 +1909,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.expedition_activity_template
-
-	var_1_82[902000] = {
+	pg.base.expedition_activity_template[902000] = {
 		id = 902000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2273,11 +1921,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.expedition_activity_template
-
-	var_1_83[903000] = {
+	pg.base.expedition_activity_template[903000] = {
 		id = 903000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2289,11 +1933,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.expedition_activity_template
-
-	var_1_84[904000] = {
+	pg.base.expedition_activity_template[904000] = {
 		id = 904000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2305,11 +1945,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.expedition_activity_template
-
-	var_1_85[905000] = {
+	pg.base.expedition_activity_template[905000] = {
 		id = 905000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2321,11 +1957,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.expedition_activity_template
-
-	var_1_86[1001000] = {
+	pg.base.expedition_activity_template[1001000] = {
 		id = 1001000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2337,11 +1969,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.expedition_activity_template
-
-	var_1_87[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 1002000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2353,11 +1981,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.expedition_activity_template
-
-	var_1_88[1003000] = {
+	pg.base.expedition_activity_template[1003000] = {
 		id = 1003000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2369,11 +1993,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.expedition_activity_template
-
-	var_1_89[1004000] = {
+	pg.base.expedition_activity_template[1004000] = {
 		id = 1004000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2385,11 +2005,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.expedition_activity_template
-
-	var_1_90[1005000] = {
+	pg.base.expedition_activity_template[1005000] = {
 		id = 1005000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2401,11 +2017,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.expedition_activity_template
-
-	var_1_91[1101000] = {
+	pg.base.expedition_activity_template[1101000] = {
 		id = 1101000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2417,11 +2029,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.expedition_activity_template
-
-	var_1_92[1102000] = {
+	pg.base.expedition_activity_template[1102000] = {
 		id = 1102000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2433,11 +2041,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.expedition_activity_template
-
-	var_1_93[24] = {
+	pg.base.expedition_activity_template[24] = {
 		id = 1103000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2449,11 +2053,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.expedition_activity_template
-
-	var_1_94[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 1104000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2465,11 +2065,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.expedition_activity_template
-
-	var_1_95[1105000] = {
+	pg.base.expedition_activity_template[1105000] = {
 		id = 1105000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2481,11 +2077,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.expedition_activity_template
-
-	var_1_96[1201000] = {
+	pg.base.expedition_activity_template[1201000] = {
 		id = 1201000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2497,11 +2089,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.expedition_activity_template
-
-	var_1_97[1202000] = {
+	pg.base.expedition_activity_template[1202000] = {
 		id = 1202000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2513,11 +2101,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.expedition_activity_template
-
-	var_1_98[1203000] = {
+	pg.base.expedition_activity_template[1203000] = {
 		id = 1203000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2529,8 +2113,7 @@ var_0_3.base.expedition_activity_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.expedition_activity_template[1204000] = {
+	pg.base.expedition_activity_template[1204000] = {
 		id = 1204000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2546,11 +2129,7 @@ var_0_3.base.expedition_activity_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.expedition_activity_template
-
-	var_2_0[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 1205000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2562,11 +2141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.expedition_activity_template
-
-	var_2_1[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 1301000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2578,11 +2153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.expedition_activity_template
-
-	var_2_2[1302000] = {
+	pg.base.expedition_activity_template[1302000] = {
 		id = 1302000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2594,11 +2165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.expedition_activity_template
-
-	var_2_3[1303000] = {
+	pg.base.expedition_activity_template[1303000] = {
 		id = 1303000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2610,11 +2177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.expedition_activity_template
-
-	var_2_4[1304000] = {
+	pg.base.expedition_activity_template[1304000] = {
 		id = 1304000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2626,11 +2189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.expedition_activity_template
-
-	var_2_5[1305000] = {
+	pg.base.expedition_activity_template[1305000] = {
 		id = 1305000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2642,11 +2201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.expedition_activity_template
-
-	var_2_6[1401000] = {
+	pg.base.expedition_activity_template[1401000] = {
 		id = 1401000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2658,11 +2213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.expedition_activity_template
-
-	var_2_7[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 1402000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2674,11 +2225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.expedition_activity_template
-
-	var_2_8[1403000] = {
+	pg.base.expedition_activity_template[1403000] = {
 		id = 1403000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2690,11 +2237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.expedition_activity_template
-
-	var_2_9[1404000] = {
+	pg.base.expedition_activity_template[1404000] = {
 		id = 1404000,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2706,11 +2249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.expedition_activity_template
-
-	var_2_10[151013] = {
+	pg.base.expedition_activity_template[151013] = {
 		id = 151013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2722,11 +2261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.expedition_activity_template
-
-	var_2_11[152013] = {
+	pg.base.expedition_activity_template[152013] = {
 		id = 152013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2738,11 +2273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.expedition_activity_template
-
-	var_2_12[153014] = {
+	pg.base.expedition_activity_template[153014] = {
 		id = 153014,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2754,11 +2285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.expedition_activity_template
-
-	var_2_13[31] = {
+	pg.base.expedition_activity_template[31] = {
 		id = 154015,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2770,11 +2297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.expedition_activity_template
-
-	var_2_14[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 160021,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2786,11 +2309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.expedition_activity_template
-
-	var_2_15[161021] = {
+	pg.base.expedition_activity_template[161021] = {
 		id = 161021,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2802,11 +2321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.expedition_activity_template
-
-	var_2_16[162021] = {
+	pg.base.expedition_activity_template[162021] = {
 		id = 162021,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2818,11 +2333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.expedition_activity_template
-
-	var_2_17[163021] = {
+	pg.base.expedition_activity_template[163021] = {
 		id = 163021,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -2834,818 +2345,493 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.expedition_activity_template
-
-	var_2_18[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 10101000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.expedition_activity_template
-
-	var_2_19[10102000] = {
+	pg.base.expedition_activity_template[10102000] = {
 		id = 10102000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.expedition_activity_template
-
-	var_2_20[10103000] = {
+	pg.base.expedition_activity_template[10103000] = {
 		id = 10103000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.expedition_activity_template
-
-	var_2_21[10104000] = {
+	pg.base.expedition_activity_template[10104000] = {
 		id = 10104000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.expedition_activity_template
-
-	var_2_22[10201000] = {
+	pg.base.expedition_activity_template[10201000] = {
 		id = 10201000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.expedition_activity_template
-
-	var_2_23[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 10202000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.expedition_activity_template
-
-	var_2_24[10203000] = {
+	pg.base.expedition_activity_template[10203000] = {
 		id = 10203000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.expedition_activity_template
-
-	var_2_25[10204000] = {
+	pg.base.expedition_activity_template[10204000] = {
 		id = 10204000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.expedition_activity_template
-
-	var_2_26[10301000] = {
+	pg.base.expedition_activity_template[10301000] = {
 		id = 10301000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.expedition_activity_template
-
-	var_2_27[10302000] = {
+	pg.base.expedition_activity_template[10302000] = {
 		id = 10302000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.expedition_activity_template
-
-	var_2_28[24] = {
+	pg.base.expedition_activity_template[24] = {
 		id = 10303000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.expedition_activity_template
-
-	var_2_29[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 10304000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.expedition_activity_template
-
-	var_2_30[10401000] = {
+	pg.base.expedition_activity_template[10401000] = {
 		id = 10401000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.expedition_activity_template
-
-	var_2_31[10402000] = {
+	pg.base.expedition_activity_template[10402000] = {
 		id = 10402000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.expedition_activity_template
-
-	var_2_32[10403000] = {
+	pg.base.expedition_activity_template[10403000] = {
 		id = 10403000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.expedition_activity_template
-
-	var_2_33[10404000] = {
+	pg.base.expedition_activity_template[10404000] = {
 		id = 10404000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.expedition_activity_template
-
-	var_2_34[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 10501000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.expedition_activity_template
-
-	var_2_35[10502000] = {
+	pg.base.expedition_activity_template[10502000] = {
 		id = 10502000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.expedition_activity_template
-
-	var_2_36[10503000] = {
+	pg.base.expedition_activity_template[10503000] = {
 		id = 10503000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.expedition_activity_template
-
-	var_2_37[10504000] = {
+	pg.base.expedition_activity_template[10504000] = {
 		id = 10504000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.expedition_activity_template
-
-	var_2_38[10601000] = {
+	pg.base.expedition_activity_template[10601000] = {
 		id = 10601000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.expedition_activity_template
-
-	var_2_39[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 10602000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.expedition_activity_template
-
-	var_2_40[10603000] = {
+	pg.base.expedition_activity_template[10603000] = {
 		id = 10603000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.expedition_activity_template
-
-	var_2_41[10604000] = {
+	pg.base.expedition_activity_template[10604000] = {
 		id = 10604000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.expedition_activity_template
-
-	var_2_42[10701000] = {
+	pg.base.expedition_activity_template[10701000] = {
 		id = 10701000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.expedition_activity_template
-
-	var_2_43[10702000] = {
+	pg.base.expedition_activity_template[10702000] = {
 		id = 10702000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.expedition_activity_template
-
-	var_2_44[24] = {
+	pg.base.expedition_activity_template[24] = {
 		id = 10703000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.expedition_activity_template
-
-	var_2_45[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 10704000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.expedition_activity_template
-
-	var_2_46[10801000] = {
+	pg.base.expedition_activity_template[10801000] = {
 		id = 10801000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.expedition_activity_template
-
-	var_2_47[10802000] = {
+	pg.base.expedition_activity_template[10802000] = {
 		id = 10802000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.expedition_activity_template
-
-	var_2_48[10803000] = {
+	pg.base.expedition_activity_template[10803000] = {
 		id = 10803000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.expedition_activity_template
-
-	var_2_49[10804000] = {
+	pg.base.expedition_activity_template[10804000] = {
 		id = 10804000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.expedition_activity_template
-
-	var_2_50[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 10901000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.expedition_activity_template
-
-	var_2_51[10902000] = {
+	pg.base.expedition_activity_template[10902000] = {
 		id = 10902000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.expedition_activity_template
-
-	var_2_52[10903000] = {
+	pg.base.expedition_activity_template[10903000] = {
 		id = 10903000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.expedition_activity_template
-
-	var_2_53[10904000] = {
+	pg.base.expedition_activity_template[10904000] = {
 		id = 10904000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.expedition_activity_template
-
-	var_2_54[11001000] = {
+	pg.base.expedition_activity_template[11001000] = {
 		id = 11001000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.expedition_activity_template
-
-	var_2_55[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 11002000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.expedition_activity_template
-
-	var_2_56[11003000] = {
+	pg.base.expedition_activity_template[11003000] = {
 		id = 11003000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.expedition_activity_template
-
-	var_2_57[11004000] = {
+	pg.base.expedition_activity_template[11004000] = {
 		id = 11004000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.expedition_activity_template
-
-	var_2_58[11101000] = {
+	pg.base.expedition_activity_template[11101000] = {
 		id = 11101000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.expedition_activity_template
-
-	var_2_59[11102000] = {
+	pg.base.expedition_activity_template[11102000] = {
 		id = 11102000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.expedition_activity_template
-
-	var_2_60[24] = {
+	pg.base.expedition_activity_template[24] = {
 		id = 11103000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.expedition_activity_template
-
-	var_2_61[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 11104000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.expedition_activity_template
-
-	var_2_62[11201000] = {
+	pg.base.expedition_activity_template[11201000] = {
 		id = 11201000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.expedition_activity_template
-
-	var_2_63[11202000] = {
+	pg.base.expedition_activity_template[11202000] = {
 		id = 11202000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.expedition_activity_template
-
-	var_2_64[11203000] = {
+	pg.base.expedition_activity_template[11203000] = {
 		id = 11203000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.expedition_activity_template
-
-	var_2_65[11204000] = {
+	pg.base.expedition_activity_template[11204000] = {
 		id = 11204000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.expedition_activity_template
-
-	var_2_66[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 11301000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.expedition_activity_template
-
-	var_2_67[11302000] = {
+	pg.base.expedition_activity_template[11302000] = {
 		id = 11302000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.expedition_activity_template
-
-	var_2_68[11303000] = {
+	pg.base.expedition_activity_template[11303000] = {
 		id = 11303000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.expedition_activity_template
-
-	var_2_69[11304000] = {
+	pg.base.expedition_activity_template[11304000] = {
 		id = 11304000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.expedition_activity_template
-
-	var_2_70[11401000] = {
+	pg.base.expedition_activity_template[11401000] = {
 		id = 11401000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.expedition_activity_template
-
-	var_2_71[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 11402000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.expedition_activity_template
-
-	var_2_72[11403000] = {
+	pg.base.expedition_activity_template[11403000] = {
 		id = 11403000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.expedition_activity_template
-
-	var_2_73[11404000] = {
+	pg.base.expedition_activity_template[11404000] = {
 		id = 11404000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.expedition_activity_template
-
-	var_2_74[1000016] = {
+	pg.base.expedition_activity_template[1000016] = {
 		id = 1000016,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.expedition_activity_template
-
-	var_2_75[1000032] = {
+	pg.base.expedition_activity_template[1000032] = {
 		id = 1000032,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.expedition_activity_template
-
-	var_2_76[1000048] = {
+	pg.base.expedition_activity_template[1000048] = {
 		id = 1000048,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.expedition_activity_template
-
-	var_2_77[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 1000064,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.expedition_activity_template
-
-	var_2_78[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 1000080,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.expedition_activity_template
-
-	var_2_79[1000096] = {
+	pg.base.expedition_activity_template[1000096] = {
 		id = 1000096,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.expedition_activity_template
-
-	var_2_80[1000112] = {
+	pg.base.expedition_activity_template[1000112] = {
 		id = 1000112,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.expedition_activity_template
-
-	var_2_81[1000128] = {
+	pg.base.expedition_activity_template[1000128] = {
 		id = 1000128,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.expedition_activity_template
-
-	var_2_82[23] = {
+	pg.base.expedition_activity_template[23] = {
 		id = 1000215,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.expedition_activity_template
-
-	var_2_83[1000231] = {
+	pg.base.expedition_activity_template[1000231] = {
 		id = 1000231,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.expedition_activity_template
-
-	var_2_84[1000247] = {
+	pg.base.expedition_activity_template[1000247] = {
 		id = 1000247,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.expedition_activity_template
-
-	var_2_85[1000263] = {
+	pg.base.expedition_activity_template[1000263] = {
 		id = 1000263,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.expedition_activity_template
-
-	var_2_86[1000279] = {
+	pg.base.expedition_activity_template[1000279] = {
 		id = 1000279,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.expedition_activity_template
-
-	var_2_87[1000295] = {
+	pg.base.expedition_activity_template[1000295] = {
 		id = 1000295,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.expedition_activity_template
-
-	var_2_88[1000311] = {
+	pg.base.expedition_activity_template[1000311] = {
 		id = 1000311,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.expedition_activity_template
-
-	var_2_89[7] = {
+	pg.base.expedition_activity_template[7] = {
 		id = 1000327,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.expedition_activity_template
-
-	var_2_90[1010500] = {
+	pg.base.expedition_activity_template[1010500] = {
 		id = 1010500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.expedition_activity_template
-
-	var_2_91[1011500] = {
+	pg.base.expedition_activity_template[1011500] = {
 		id = 1011500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.expedition_activity_template
-
-	var_2_92[20] = {
+	pg.base.expedition_activity_template[20] = {
 		id = 1012500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.expedition_activity_template
-
-	var_2_93[1020500] = {
+	pg.base.expedition_activity_template[1020500] = {
 		id = 1020500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.expedition_activity_template
-
-	var_2_94[1021500] = {
+	pg.base.expedition_activity_template[1021500] = {
 		id = 1021500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.expedition_activity_template
-
-	var_2_95[1022500] = {
+	pg.base.expedition_activity_template[1022500] = {
 		id = 1022500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.expedition_activity_template
-
-	var_2_96[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 1030016,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.expedition_activity_template
-
-	var_2_97[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 1030032,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.expedition_activity_template
-
-	var_2_98[1030048] = {
+	pg.base.expedition_activity_template[1030048] = {
 		id = 1030048,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_2_98
-	var_2_98.base.expedition_activity_template[1030064] = {
+	pg.base.expedition_activity_template[1030064] = {
 		id = 1030064,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -3655,998 +2841,601 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.expedition_activity_template
-
-	var_3_0[1030080] = {
+	pg.base.expedition_activity_template[1030080] = {
 		id = 1030080,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.expedition_activity_template
-
-	var_3_1[1030096] = {
+	pg.base.expedition_activity_template[1030096] = {
 		id = 1030096,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.expedition_activity_template
-
-	var_3_2[1030215] = {
+	pg.base.expedition_activity_template[1030215] = {
 		id = 1030215,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.expedition_activity_template
-
-	var_3_3[1030231] = {
+	pg.base.expedition_activity_template[1030231] = {
 		id = 1030231,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.expedition_activity_template
-
-	var_3_4[1030247] = {
+	pg.base.expedition_activity_template[1030247] = {
 		id = 1030247,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.expedition_activity_template
-
-	var_3_5[1030263] = {
+	pg.base.expedition_activity_template[1030263] = {
 		id = 1030263,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.expedition_activity_template
-
-	var_3_6[7] = {
+	pg.base.expedition_activity_template[7] = {
 		id = 1030279,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.expedition_activity_template
-
-	var_3_7[23] = {
+	pg.base.expedition_activity_template[23] = {
 		id = 1030295,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.expedition_activity_template
-
-	var_3_8[4] = {
+	pg.base.expedition_activity_template[4] = {
 		id = 1050500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.expedition_activity_template
-
-	var_3_9[1051500] = {
+	pg.base.expedition_activity_template[1051500] = {
 		id = 1051500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.expedition_activity_template
-
-	var_3_10[1052500] = {
+	pg.base.expedition_activity_template[1052500] = {
 		id = 1052500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.expedition_activity_template
-
-	var_3_11[1060000] = {
+	pg.base.expedition_activity_template[1060000] = {
 		id = 1060000,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.expedition_activity_template
-
-	var_3_12[1060016] = {
+	pg.base.expedition_activity_template[1060016] = {
 		id = 1060016,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.expedition_activity_template
-
-	var_3_13[1060032] = {
+	pg.base.expedition_activity_template[1060032] = {
 		id = 1060032,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.expedition_activity_template
-
-	var_3_14[1060048] = {
+	pg.base.expedition_activity_template[1060048] = {
 		id = 1060048,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.expedition_activity_template
-
-	var_3_15[1060064] = {
+	pg.base.expedition_activity_template[1060064] = {
 		id = 1060064,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.expedition_activity_template
-
-	var_3_16[1060080] = {
+	pg.base.expedition_activity_template[1060080] = {
 		id = 1060080,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.expedition_activity_template
-
-	var_3_17[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 1060096,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.expedition_activity_template
-
-	var_3_18[1060215] = {
+	pg.base.expedition_activity_template[1060215] = {
 		id = 1060215,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.expedition_activity_template
-
-	var_3_19[7] = {
+	pg.base.expedition_activity_template[7] = {
 		id = 1060231,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.expedition_activity_template
-
-	var_3_20[23] = {
+	pg.base.expedition_activity_template[23] = {
 		id = 1060247,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.expedition_activity_template
-
-	var_3_21[1060263] = {
+	pg.base.expedition_activity_template[1060263] = {
 		id = 1060263,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.expedition_activity_template
-
-	var_3_22[1060279] = {
+	pg.base.expedition_activity_template[1060279] = {
 		id = 1060279,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.expedition_activity_template
-
-	var_3_23[1060295] = {
+	pg.base.expedition_activity_template[1060295] = {
 		id = 1060295,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.expedition_activity_template
-
-	var_3_24[1060600] = {
+	pg.base.expedition_activity_template[1060600] = {
 		id = 1060600,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.expedition_activity_template
-
-	var_3_25[12] = {
+	pg.base.expedition_activity_template[12] = {
 		id = 1071500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.expedition_activity_template
-
-	var_3_26[1072500] = {
+	pg.base.expedition_activity_template[1072500] = {
 		id = 1072500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.expedition_activity_template
-
-	var_3_27[1073500] = {
+	pg.base.expedition_activity_template[1073500] = {
 		id = 1073500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.expedition_activity_template
-
-	var_3_28[28] = {
+	pg.base.expedition_activity_template[28] = {
 		id = 1081500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.expedition_activity_template
-
-	var_3_29[4] = {
+	pg.base.expedition_activity_template[4] = {
 		id = 1082500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.expedition_activity_template
-
-	var_3_30[1083500] = {
+	pg.base.expedition_activity_template[1083500] = {
 		id = 1083500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.expedition_activity_template
-
-	var_3_31[1084500] = {
+	pg.base.expedition_activity_template[1084500] = {
 		id = 1084500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.expedition_activity_template
-
-	var_3_32[1085500] = {
+	pg.base.expedition_activity_template[1085500] = {
 		id = 1085500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.expedition_activity_template
-
-	var_3_33[1090016] = {
+	pg.base.expedition_activity_template[1090016] = {
 		id = 1090016,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.expedition_activity_template
-
-	var_3_34[1090032] = {
+	pg.base.expedition_activity_template[1090032] = {
 		id = 1090032,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.expedition_activity_template
-
-	var_3_35[0] = {
+	pg.base.expedition_activity_template[0] = {
 		id = 1090048,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.expedition_activity_template
-
-	var_3_36[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 1090064,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.expedition_activity_template
-
-	var_3_37[1090080] = {
+	pg.base.expedition_activity_template[1090080] = {
 		id = 1090080,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.expedition_activity_template
-
-	var_3_38[1090096] = {
+	pg.base.expedition_activity_template[1090096] = {
 		id = 1090096,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.expedition_activity_template
-
-	var_3_39[1090215] = {
+	pg.base.expedition_activity_template[1090215] = {
 		id = 1090215,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.expedition_activity_template
-
-	var_3_40[1090231] = {
+	pg.base.expedition_activity_template[1090231] = {
 		id = 1090231,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.expedition_activity_template
-
-	var_3_41[1090247] = {
+	pg.base.expedition_activity_template[1090247] = {
 		id = 1090247,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.expedition_activity_template
-
-	var_3_42[1090263] = {
+	pg.base.expedition_activity_template[1090263] = {
 		id = 1090263,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.expedition_activity_template
-
-	var_3_43[1090279] = {
+	pg.base.expedition_activity_template[1090279] = {
 		id = 1090279,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.expedition_activity_template
-
-	var_3_44[1090295] = {
+	pg.base.expedition_activity_template[1090295] = {
 		id = 1090295,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.expedition_activity_template
-
-	var_3_45[4] = {
+	pg.base.expedition_activity_template[4] = {
 		id = 1130500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.expedition_activity_template
-
-	var_3_46[1131500] = {
+	pg.base.expedition_activity_template[1131500] = {
 		id = 1131500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.expedition_activity_template
-
-	var_3_47[1132500] = {
+	pg.base.expedition_activity_template[1132500] = {
 		id = 1132500,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.expedition_activity_template
-
-	var_3_48[1140001] = {
+	pg.base.expedition_activity_template[1140001] = {
 		id = 1140001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.expedition_activity_template
-
-	var_3_49[1140002] = {
+	pg.base.expedition_activity_template[1140002] = {
 		id = 1140002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 20
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.expedition_activity_template
-
-	var_3_50[1140003] = {
+	pg.base.expedition_activity_template[1140003] = {
 		id = 1140003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 20
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.expedition_activity_template
-
-	var_3_51[1140004] = {
+	pg.base.expedition_activity_template[1140004] = {
 		id = 1140004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 40
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.expedition_activity_template
-
-	var_3_52[1160501] = {
+	pg.base.expedition_activity_template[1160501] = {
 		id = 1160501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.expedition_activity_template
-
-	var_3_53[1160502] = {
+	pg.base.expedition_activity_template[1160502] = {
 		id = 1160502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.expedition_activity_template
-
-	var_3_54[1160503] = {
+	pg.base.expedition_activity_template[1160503] = {
 		id = 1160503,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.expedition_activity_template
-
-	var_3_55[1160504] = {
+	pg.base.expedition_activity_template[1160504] = {
 		id = 1160504,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.expedition_activity_template
-
-	var_3_56[1160505] = {
+	pg.base.expedition_activity_template[1160505] = {
 		id = 1160505,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.expedition_activity_template
-
-	var_3_57[1160506] = {
+	pg.base.expedition_activity_template[1160506] = {
 		id = 1160506,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.expedition_activity_template
-
-	var_3_58[1160507] = {
+	pg.base.expedition_activity_template[1160507] = {
 		id = 1160507,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.expedition_activity_template
-
-	var_3_59[1160508] = {
+	pg.base.expedition_activity_template[1160508] = {
 		id = 1160508,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.expedition_activity_template
-
-	var_3_60[1160509] = {
+	pg.base.expedition_activity_template[1160509] = {
 		id = 1160509,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.expedition_activity_template
-
-	var_3_61[1170101] = {
+	pg.base.expedition_activity_template[1170101] = {
 		id = 1170101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.expedition_activity_template
-
-	var_3_62[1170102] = {
+	pg.base.expedition_activity_template[1170102] = {
 		id = 1170102,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.expedition_activity_template
-
-	var_3_63[1170103] = {
+	pg.base.expedition_activity_template[1170103] = {
 		id = 1170103,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.expedition_activity_template
-
-	var_3_64[1180013] = {
+	pg.base.expedition_activity_template[1180013] = {
 		id = 1180013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.expedition_activity_template
-
-	var_3_65[1180113] = {
+	pg.base.expedition_activity_template[1180113] = {
 		id = 1180113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.expedition_activity_template
-
-	var_3_66[1180213] = {
+	pg.base.expedition_activity_template[1180213] = {
 		id = 1180213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.expedition_activity_template
-
-	var_3_67[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1180313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.expedition_activity_template
-
-	var_3_68[1180413] = {
+	pg.base.expedition_activity_template[1180413] = {
 		id = 1180413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.expedition_activity_template
-
-	var_3_69[1180513] = {
+	pg.base.expedition_activity_template[1180513] = {
 		id = 1180513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.expedition_activity_template
-
-	var_3_70[1180613] = {
+	pg.base.expedition_activity_template[1180613] = {
 		id = 1180613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.expedition_activity_template
-
-	var_3_71[1180713] = {
+	pg.base.expedition_activity_template[1180713] = {
 		id = 1180713,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.expedition_activity_template
-
-	var_3_72[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1180813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.expedition_activity_template
-
-	var_3_73[1180913] = {
+	pg.base.expedition_activity_template[1180913] = {
 		id = 1180913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.expedition_activity_template
-
-	var_3_74[1181013] = {
+	pg.base.expedition_activity_template[1181013] = {
 		id = 1181013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.expedition_activity_template
-
-	var_3_75[1181113] = {
+	pg.base.expedition_activity_template[1181113] = {
 		id = 1181113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.expedition_activity_template
-
-	var_3_76[1201201] = {
+	pg.base.expedition_activity_template[1201201] = {
 		id = 1201201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.expedition_activity_template
-
-	var_3_77[1201202] = {
+	pg.base.expedition_activity_template[1201202] = {
 		id = 1201202,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.expedition_activity_template
-
-	var_3_78[1201203] = {
+	pg.base.expedition_activity_template[1201203] = {
 		id = 1201203,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.expedition_activity_template
-
-	var_3_79[1201204] = {
+	pg.base.expedition_activity_template[1201204] = {
 		id = 1201204,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.expedition_activity_template
-
-	var_3_80[1201205] = {
+	pg.base.expedition_activity_template[1201205] = {
 		id = 1201205,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.expedition_activity_template
-
-	var_3_81[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1210013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.expedition_activity_template
-
-	var_3_82[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1210113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.expedition_activity_template
-
-	var_3_83[1210213] = {
+	pg.base.expedition_activity_template[1210213] = {
 		id = 1210213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.expedition_activity_template
-
-	var_3_84[1210313] = {
+	pg.base.expedition_activity_template[1210313] = {
 		id = 1210313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.expedition_activity_template
-
-	var_3_85[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1220101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.expedition_activity_template
-
-	var_3_86[6] = {
+	pg.base.expedition_activity_template[6] = {
 		id = 1220102,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.expedition_activity_template
-
-	var_3_87[7] = {
+	pg.base.expedition_activity_template[7] = {
 		id = 1220103,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.expedition_activity_template
-
-	var_3_88[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1220113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.expedition_activity_template
-
-	var_3_89[27] = {
+	pg.base.expedition_activity_template[27] = {
 		id = 1220123,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.expedition_activity_template
-
-	var_3_90[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 1220104,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.expedition_activity_template
-
-	var_3_91[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1220105,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.expedition_activity_template
-
-	var_3_92[1230013] = {
+	pg.base.expedition_activity_template[1230013] = {
 		id = 1230013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.expedition_activity_template
-
-	var_3_93[1230113] = {
+	pg.base.expedition_activity_template[1230113] = {
 		id = 1230113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.expedition_activity_template
-
-	var_3_94[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1230213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.expedition_activity_template
-
-	var_3_95[1230313] = {
+	pg.base.expedition_activity_template[1230313] = {
 		id = 1230313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.expedition_activity_template
-
-	var_3_96[1230413] = {
+	pg.base.expedition_activity_template[1230413] = {
 		id = 1230413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.expedition_activity_template
-
-	var_3_97[1230513] = {
+	pg.base.expedition_activity_template[1230513] = {
 		id = 1230513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.expedition_activity_template
-
-	var_3_98[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1230613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_3_98
-	var_3_98.base.expedition_activity_template[1230713] = {
+	pg.base.expedition_activity_template[1230713] = {
 		id = 1230713,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -4656,998 +3445,601 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.expedition_activity_template
-
-	var_4_0[1230813] = {
+	pg.base.expedition_activity_template[1230813] = {
 		id = 1230813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.expedition_activity_template
-
-	var_4_1[1230913] = {
+	pg.base.expedition_activity_template[1230913] = {
 		id = 1230913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.expedition_activity_template
-
-	var_4_2[1231013] = {
+	pg.base.expedition_activity_template[1231013] = {
 		id = 1231013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.expedition_activity_template
-
-	var_4_3[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1231113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.expedition_activity_template
-
-	var_4_4[1231213] = {
+	pg.base.expedition_activity_template[1231213] = {
 		id = 1231213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.expedition_activity_template
-
-	var_4_5[1240013] = {
+	pg.base.expedition_activity_template[1240013] = {
 		id = 1240013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.expedition_activity_template
-
-	var_4_6[1240014] = {
+	pg.base.expedition_activity_template[1240014] = {
 		id = 1240014,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.expedition_activity_template
-
-	var_4_7[1240113] = {
+	pg.base.expedition_activity_template[1240113] = {
 		id = 1240113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.expedition_activity_template
-
-	var_4_8[1240114] = {
+	pg.base.expedition_activity_template[1240114] = {
 		id = 1240114,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.expedition_activity_template
-
-	var_4_9[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1240213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.expedition_activity_template
-
-	var_4_10[1240033] = {
+	pg.base.expedition_activity_template[1240033] = {
 		id = 1240033,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.expedition_activity_template
-
-	var_4_11[1240133] = {
+	pg.base.expedition_activity_template[1240133] = {
 		id = 1240133,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.expedition_activity_template
-
-	var_4_12[1240263] = {
+	pg.base.expedition_activity_template[1240263] = {
 		id = 1240263,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.expedition_activity_template
-
-	var_4_13[1240313] = {
+	pg.base.expedition_activity_template[1240313] = {
 		id = 1240313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.expedition_activity_template
-
-	var_4_14[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1240333,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.expedition_activity_template
-
-	var_4_15[1240413] = {
+	pg.base.expedition_activity_template[1240413] = {
 		id = 1240413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.expedition_activity_template
-
-	var_4_16[1240433] = {
+	pg.base.expedition_activity_template[1240433] = {
 		id = 1240433,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.expedition_activity_template
-
-	var_4_17[1240513] = {
+	pg.base.expedition_activity_template[1240513] = {
 		id = 1240513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.expedition_activity_template
-
-	var_4_18[1240613] = {
+	pg.base.expedition_activity_template[1240613] = {
 		id = 1240613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.expedition_activity_template
-
-	var_4_19[1240614] = {
+	pg.base.expedition_activity_template[1240614] = {
 		id = 1240614,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.expedition_activity_template
-
-	var_4_20[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1240713,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.expedition_activity_template
-
-	var_4_21[10] = {
+	pg.base.expedition_activity_template[10] = {
 		id = 1240714,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.expedition_activity_template
-
-	var_4_22[1240813] = {
+	pg.base.expedition_activity_template[1240813] = {
 		id = 1240813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.expedition_activity_template
-
-	var_4_23[1240633] = {
+	pg.base.expedition_activity_template[1240633] = {
 		id = 1240633,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.expedition_activity_template
-
-	var_4_24[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1240733,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.expedition_activity_template
-
-	var_4_25[31] = {
+	pg.base.expedition_activity_template[31] = {
 		id = 1240863,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.expedition_activity_template
-
-	var_4_26[1240913] = {
+	pg.base.expedition_activity_template[1240913] = {
 		id = 1240913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.expedition_activity_template
-
-	var_4_27[1240933] = {
+	pg.base.expedition_activity_template[1240933] = {
 		id = 1240933,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.expedition_activity_template
-
-	var_4_28[1241013] = {
+	pg.base.expedition_activity_template[1241013] = {
 		id = 1241013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.expedition_activity_template
-
-	var_4_29[1241033] = {
+	pg.base.expedition_activity_template[1241033] = {
 		id = 1241033,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.expedition_activity_template
-
-	var_4_30[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1241113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.expedition_activity_template
-
-	var_4_31[1241214] = {
+	pg.base.expedition_activity_template[1241214] = {
 		id = 1241214,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.expedition_activity_template
-
-	var_4_32[1250013] = {
+	pg.base.expedition_activity_template[1250013] = {
 		id = 1250013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.expedition_activity_template
-
-	var_4_33[1250033] = {
+	pg.base.expedition_activity_template[1250033] = {
 		id = 1250033,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.expedition_activity_template
-
-	var_4_34[1250113] = {
+	pg.base.expedition_activity_template[1250113] = {
 		id = 1250113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.expedition_activity_template
-
-	var_4_35[1250133] = {
+	pg.base.expedition_activity_template[1250133] = {
 		id = 1250133,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.expedition_activity_template
-
-	var_4_36[1250213] = {
+	pg.base.expedition_activity_template[1250213] = {
 		id = 1250213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.expedition_activity_template
-
-	var_4_37[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1250313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.expedition_activity_template
-
-	var_4_38[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1250333,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.expedition_activity_template
-
-	var_4_39[1250413] = {
+	pg.base.expedition_activity_template[1250413] = {
 		id = 1250413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.expedition_activity_template
-
-	var_4_40[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1250433,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.expedition_activity_template
-
-	var_4_41[1250513] = {
+	pg.base.expedition_activity_template[1250513] = {
 		id = 1250513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.expedition_activity_template
-
-	var_4_42[1250613] = {
+	pg.base.expedition_activity_template[1250613] = {
 		id = 1250613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.expedition_activity_template
-
-	var_4_43[1250633] = {
+	pg.base.expedition_activity_template[1250633] = {
 		id = 1250633,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.expedition_activity_template
-
-	var_4_44[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1250713,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.expedition_activity_template
-
-	var_4_45[1250733] = {
+	pg.base.expedition_activity_template[1250733] = {
 		id = 1250733,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.expedition_activity_template
-
-	var_4_46[1250813] = {
+	pg.base.expedition_activity_template[1250813] = {
 		id = 1250813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.expedition_activity_template
-
-	var_4_47[1250913] = {
+	pg.base.expedition_activity_template[1250913] = {
 		id = 1250913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.expedition_activity_template
-
-	var_4_48[1250933] = {
+	pg.base.expedition_activity_template[1250933] = {
 		id = 1250933,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.expedition_activity_template
-
-	var_4_49[1251013] = {
+	pg.base.expedition_activity_template[1251013] = {
 		id = 1251013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.expedition_activity_template
-
-	var_4_50[1251033] = {
+	pg.base.expedition_activity_template[1251033] = {
 		id = 1251033,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.expedition_activity_template
-
-	var_4_51[1251113] = {
+	pg.base.expedition_activity_template[1251113] = {
 		id = 1251113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.expedition_activity_template
-
-	var_4_52[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1251213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.expedition_activity_template
-
-	var_4_53[1260001] = {
+	pg.base.expedition_activity_template[1260001] = {
 		id = 1260001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.expedition_activity_template
-
-	var_4_54[1260002] = {
+	pg.base.expedition_activity_template[1260002] = {
 		id = 1260002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.expedition_activity_template
-
-	var_4_55[1260003] = {
+	pg.base.expedition_activity_template[1260003] = {
 		id = 1260003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.expedition_activity_template
-
-	var_4_56[1260004] = {
+	pg.base.expedition_activity_template[1260004] = {
 		id = 1260004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.expedition_activity_template
-
-	var_4_57[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1280013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.expedition_activity_template
-
-	var_4_58[1280043] = {
+	pg.base.expedition_activity_template[1280043] = {
 		id = 1280043,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.expedition_activity_template
-
-	var_4_59[1280073] = {
+	pg.base.expedition_activity_template[1280073] = {
 		id = 1280073,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.expedition_activity_template
-
-	var_4_60[1280103] = {
+	pg.base.expedition_activity_template[1280103] = {
 		id = 1280103,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.expedition_activity_template
-
-	var_4_61[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1280133,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.expedition_activity_template
-
-	var_4_62[1280163] = {
+	pg.base.expedition_activity_template[1280163] = {
 		id = 1280163,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.expedition_activity_template
-
-	var_4_63[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1290013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.expedition_activity_template
-
-	var_4_64[1290033] = {
+	pg.base.expedition_activity_template[1290033] = {
 		id = 1290033,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.expedition_activity_template
-
-	var_4_65[1290063] = {
+	pg.base.expedition_activity_template[1290063] = {
 		id = 1290063,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.expedition_activity_template
-
-	var_4_66[1290083] = {
+	pg.base.expedition_activity_template[1290083] = {
 		id = 1290083,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.expedition_activity_template
-
-	var_4_67[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1290113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.expedition_activity_template
-
-	var_4_68[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1290133,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.expedition_activity_template
-
-	var_4_69[1290163] = {
+	pg.base.expedition_activity_template[1290163] = {
 		id = 1290163,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.expedition_activity_template
-
-	var_4_70[1290183] = {
+	pg.base.expedition_activity_template[1290183] = {
 		id = 1290183,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.expedition_activity_template
-
-	var_4_71[1290213] = {
+	pg.base.expedition_activity_template[1290213] = {
 		id = 1290213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.expedition_activity_template
-
-	var_4_72[1290233] = {
+	pg.base.expedition_activity_template[1290233] = {
 		id = 1290233,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.expedition_activity_template
-
-	var_4_73[23] = {
+	pg.base.expedition_activity_template[23] = {
 		id = 1290263,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.expedition_activity_template
-
-	var_4_74[1290313] = {
+	pg.base.expedition_activity_template[1290313] = {
 		id = 1290313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.expedition_activity_template
-
-	var_4_75[1310013] = {
+	pg.base.expedition_activity_template[1310013] = {
 		id = 1310013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.expedition_activity_template
-
-	var_4_76[1310113] = {
+	pg.base.expedition_activity_template[1310113] = {
 		id = 1310113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.expedition_activity_template
-
-	var_4_77[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1310213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.expedition_activity_template
-
-	var_4_78[1310313] = {
+	pg.base.expedition_activity_template[1310313] = {
 		id = 1310313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.expedition_activity_template
-
-	var_4_79[1310413] = {
+	pg.base.expedition_activity_template[1310413] = {
 		id = 1310413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.expedition_activity_template
-
-	var_4_80[1310513] = {
+	pg.base.expedition_activity_template[1310513] = {
 		id = 1310513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.expedition_activity_template
-
-	var_4_81[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1310613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.expedition_activity_template
-
-	var_4_82[1310713] = {
+	pg.base.expedition_activity_template[1310713] = {
 		id = 1310713,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.expedition_activity_template
-
-	var_4_83[1310813] = {
+	pg.base.expedition_activity_template[1310813] = {
 		id = 1310813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.expedition_activity_template
-
-	var_4_84[1310913] = {
+	pg.base.expedition_activity_template[1310913] = {
 		id = 1310913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.expedition_activity_template
-
-	var_4_85[1311013] = {
+	pg.base.expedition_activity_template[1311013] = {
 		id = 1311013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.expedition_activity_template
-
-	var_4_86[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1311113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.expedition_activity_template
-
-	var_4_87[1311213] = {
+	pg.base.expedition_activity_template[1311213] = {
 		id = 1311213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.expedition_activity_template
-
-	var_4_88[1320101] = {
+	pg.base.expedition_activity_template[1320101] = {
 		id = 1320101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.expedition_activity_template
-
-	var_4_89[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1320201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.expedition_activity_template
-
-	var_4_90[1320301] = {
+	pg.base.expedition_activity_template[1320301] = {
 		id = 1320301,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.expedition_activity_template
-
-	var_4_91[1320401] = {
+	pg.base.expedition_activity_template[1320401] = {
 		id = 1320401,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.expedition_activity_template
-
-	var_4_92[1330013] = {
+	pg.base.expedition_activity_template[1330013] = {
 		id = 1330013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.expedition_activity_template
-
-	var_4_93[1330113] = {
+	pg.base.expedition_activity_template[1330113] = {
 		id = 1330113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.expedition_activity_template
-
-	var_4_94[1330213] = {
+	pg.base.expedition_activity_template[1330213] = {
 		id = 1330213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.expedition_activity_template
-
-	var_4_95[1331013] = {
+	pg.base.expedition_activity_template[1331013] = {
 		id = 1331013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.expedition_activity_template
-
-	var_4_96[1331113] = {
+	pg.base.expedition_activity_template[1331113] = {
 		id = 1331113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.expedition_activity_template
-
-	var_4_97[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1331213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.expedition_activity_template
-
-	var_4_98[1332013] = {
+	pg.base.expedition_activity_template[1332013] = {
 		id = 1332013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_4_98
-	var_4_98.base.expedition_activity_template[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1332113,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -5657,941 +4049,565 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.expedition_activity_template
-
-	var_5_0[1332213] = {
+	pg.base.expedition_activity_template[1332213] = {
 		id = 1332213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.expedition_activity_template
-
-	var_5_1[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1333013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.expedition_activity_template
-
-	var_5_2[1333113] = {
+	pg.base.expedition_activity_template[1333113] = {
 		id = 1333113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.expedition_activity_template
-
-	var_5_3[1333213] = {
+	pg.base.expedition_activity_template[1333213] = {
 		id = 1333213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.expedition_activity_template
-
-	var_5_4[1334013] = {
+	pg.base.expedition_activity_template[1334013] = {
 		id = 1334013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.expedition_activity_template
-
-	var_5_5[1340013] = {
+	pg.base.expedition_activity_template[1340013] = {
 		id = 1340013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.expedition_activity_template
-
-	var_5_6[1340113] = {
+	pg.base.expedition_activity_template[1340113] = {
 		id = 1340113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.expedition_activity_template
-
-	var_5_7[1340213] = {
+	pg.base.expedition_activity_template[1340213] = {
 		id = 1340213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.expedition_activity_template
-
-	var_5_8[1350013] = {
+	pg.base.expedition_activity_template[1350013] = {
 		id = 1350013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.expedition_activity_template
-
-	var_5_9[1350113] = {
+	pg.base.expedition_activity_template[1350113] = {
 		id = 1350113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.expedition_activity_template
-
-	var_5_10[1350213] = {
+	pg.base.expedition_activity_template[1350213] = {
 		id = 1350213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.expedition_activity_template
-
-	var_5_11[1351013] = {
+	pg.base.expedition_activity_template[1351013] = {
 		id = 1351013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.expedition_activity_template
-
-	var_5_12[1351113] = {
+	pg.base.expedition_activity_template[1351113] = {
 		id = 1351113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.expedition_activity_template
-
-	var_5_13[1351213] = {
+	pg.base.expedition_activity_template[1351213] = {
 		id = 1351213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.expedition_activity_template
-
-	var_5_14[1352013] = {
+	pg.base.expedition_activity_template[1352013] = {
 		id = 1352013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.expedition_activity_template
-
-	var_5_15[1352113] = {
+	pg.base.expedition_activity_template[1352113] = {
 		id = 1352113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.expedition_activity_template
-
-	var_5_16[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1352213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.expedition_activity_template
-
-	var_5_17[1353013] = {
+	pg.base.expedition_activity_template[1353013] = {
 		id = 1353013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.expedition_activity_template
-
-	var_5_18[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1353113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.expedition_activity_template
-
-	var_5_19[1353213] = {
+	pg.base.expedition_activity_template[1353213] = {
 		id = 1353213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.expedition_activity_template
-
-	var_5_20[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1354013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.expedition_activity_template
-
-	var_5_21[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1370013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.expedition_activity_template
-
-	var_5_22[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1370113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.expedition_activity_template
-
-	var_5_23[1370213] = {
+	pg.base.expedition_activity_template[1370213] = {
 		id = 1370213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.expedition_activity_template
-
-	var_5_24[1370313] = {
+	pg.base.expedition_activity_template[1370313] = {
 		id = 1370313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.expedition_activity_template
-
-	var_5_25[1370413] = {
+	pg.base.expedition_activity_template[1370413] = {
 		id = 1370413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.expedition_activity_template
-
-	var_5_26[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1370513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.expedition_activity_template
-
-	var_5_27[1370613] = {
+	pg.base.expedition_activity_template[1370613] = {
 		id = 1370613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.expedition_activity_template
-
-	var_5_28[1370713] = {
+	pg.base.expedition_activity_template[1370713] = {
 		id = 1370713,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.expedition_activity_template
-
-	var_5_29[1370813] = {
+	pg.base.expedition_activity_template[1370813] = {
 		id = 1370813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.expedition_activity_template
-
-	var_5_30[1370913] = {
+	pg.base.expedition_activity_template[1370913] = {
 		id = 1370913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.expedition_activity_template
-
-	var_5_31[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1371013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.expedition_activity_template
-
-	var_5_32[1371113] = {
+	pg.base.expedition_activity_template[1371113] = {
 		id = 1371113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.expedition_activity_template
-
-	var_5_33[1380013] = {
+	pg.base.expedition_activity_template[1380013] = {
 		id = 1380013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.expedition_activity_template
-
-	var_5_34[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1380113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.expedition_activity_template
-
-	var_5_35[1380213] = {
+	pg.base.expedition_activity_template[1380213] = {
 		id = 1380213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.expedition_activity_template
-
-	var_5_36[1390013] = {
+	pg.base.expedition_activity_template[1390013] = {
 		id = 1390013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.expedition_activity_template
-
-	var_5_37[1390113] = {
+	pg.base.expedition_activity_template[1390113] = {
 		id = 1390113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.expedition_activity_template
-
-	var_5_38[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1390213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.expedition_activity_template
-
-	var_5_39[1391013] = {
+	pg.base.expedition_activity_template[1391013] = {
 		id = 1391013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.expedition_activity_template
-
-	var_5_40[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1391113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.expedition_activity_template
-
-	var_5_41[1391213] = {
+	pg.base.expedition_activity_template[1391213] = {
 		id = 1391213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.expedition_activity_template
-
-	var_5_42[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1392013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.expedition_activity_template
-
-	var_5_43[1392113] = {
+	pg.base.expedition_activity_template[1392113] = {
 		id = 1392113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.expedition_activity_template
-
-	var_5_44[1392213] = {
+	pg.base.expedition_activity_template[1392213] = {
 		id = 1392213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.expedition_activity_template
-
-	var_5_45[1393013] = {
+	pg.base.expedition_activity_template[1393013] = {
 		id = 1393013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.expedition_activity_template
-
-	var_5_46[1393113] = {
+	pg.base.expedition_activity_template[1393113] = {
 		id = 1393113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.expedition_activity_template
-
-	var_5_47[1393213] = {
+	pg.base.expedition_activity_template[1393213] = {
 		id = 1393213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.expedition_activity_template
-
-	var_5_48[1394013] = {
+	pg.base.expedition_activity_template[1394013] = {
 		id = 1394013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.expedition_activity_template
-
-	var_5_49[1400013] = {
+	pg.base.expedition_activity_template[1400013] = {
 		id = 1400013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.expedition_activity_template
-
-	var_5_50[1400113] = {
+	pg.base.expedition_activity_template[1400113] = {
 		id = 1400113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.expedition_activity_template
-
-	var_5_51[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1400213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.expedition_activity_template
-
-	var_5_52[1410001] = {
+	pg.base.expedition_activity_template[1410001] = {
 		id = 1410001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.expedition_activity_template
-
-	var_5_53[1410002] = {
+	pg.base.expedition_activity_template[1410002] = {
 		id = 1410002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.expedition_activity_template
-
-	var_5_54[1410003] = {
+	pg.base.expedition_activity_template[1410003] = {
 		id = 1410003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.expedition_activity_template
-
-	var_5_55[1410004] = {
+	pg.base.expedition_activity_template[1410004] = {
 		id = 1410004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.expedition_activity_template
-
-	var_5_56[1420013] = {
+	pg.base.expedition_activity_template[1420013] = {
 		id = 1420013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.expedition_activity_template
-
-	var_5_57[1420113] = {
+	pg.base.expedition_activity_template[1420113] = {
 		id = 1420113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.expedition_activity_template
-
-	var_5_58[1420213] = {
+	pg.base.expedition_activity_template[1420213] = {
 		id = 1420213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.expedition_activity_template
-
-	var_5_59[1421013] = {
+	pg.base.expedition_activity_template[1421013] = {
 		id = 1421013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.expedition_activity_template
-
-	var_5_60[1421113] = {
+	pg.base.expedition_activity_template[1421113] = {
 		id = 1421113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.expedition_activity_template
-
-	var_5_61[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1421213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.expedition_activity_template
-
-	var_5_62[1422013] = {
+	pg.base.expedition_activity_template[1422013] = {
 		id = 1422013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.expedition_activity_template
-
-	var_5_63[1422113] = {
+	pg.base.expedition_activity_template[1422113] = {
 		id = 1422113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.expedition_activity_template
-
-	var_5_64[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1422213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.expedition_activity_template
-
-	var_5_65[1423013] = {
+	pg.base.expedition_activity_template[1423013] = {
 		id = 1423013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.expedition_activity_template
-
-	var_5_66[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1423113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.expedition_activity_template
-
-	var_5_67[1423213] = {
+	pg.base.expedition_activity_template[1423213] = {
 		id = 1423213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.expedition_activity_template
-
-	var_5_68[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1424013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.expedition_activity_template
-
-	var_5_69[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1440013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.expedition_activity_template
-
-	var_5_70[1440113] = {
+	pg.base.expedition_activity_template[1440113] = {
 		id = 1440113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.expedition_activity_template
-
-	var_5_71[1440213] = {
+	pg.base.expedition_activity_template[1440213] = {
 		id = 1440213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.expedition_activity_template
-
-	var_5_72[1441013] = {
+	pg.base.expedition_activity_template[1441013] = {
 		id = 1441013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.expedition_activity_template
-
-	var_5_73[1441113] = {
+	pg.base.expedition_activity_template[1441113] = {
 		id = 1441113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.expedition_activity_template
-
-	var_5_74[1441213] = {
+	pg.base.expedition_activity_template[1441213] = {
 		id = 1441213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.expedition_activity_template
-
-	var_5_75[1442013] = {
+	pg.base.expedition_activity_template[1442013] = {
 		id = 1442013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.expedition_activity_template
-
-	var_5_76[1442113] = {
+	pg.base.expedition_activity_template[1442113] = {
 		id = 1442113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.expedition_activity_template
-
-	var_5_77[1442213] = {
+	pg.base.expedition_activity_template[1442213] = {
 		id = 1442213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.expedition_activity_template
-
-	var_5_78[1443013] = {
+	pg.base.expedition_activity_template[1443013] = {
 		id = 1443013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.expedition_activity_template
-
-	var_5_79[1443113] = {
+	pg.base.expedition_activity_template[1443113] = {
 		id = 1443113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.expedition_activity_template
-
-	var_5_80[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1443213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.expedition_activity_template
-
-	var_5_81[1444013] = {
+	pg.base.expedition_activity_template[1444013] = {
 		id = 1444013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.expedition_activity_template
-
-	var_5_82[1446013] = {
+	pg.base.expedition_activity_template[1446013] = {
 		id = 1446013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.expedition_activity_template
-
-	var_5_83[1447013] = {
+	pg.base.expedition_activity_template[1447013] = {
 		id = 1447013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.expedition_activity_template
-
-	var_5_84[1460013] = {
+	pg.base.expedition_activity_template[1460013] = {
 		id = 1460013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.expedition_activity_template
-
-	var_5_85[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1461013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.expedition_activity_template
-
-	var_5_86[1462013] = {
+	pg.base.expedition_activity_template[1462013] = {
 		id = 1462013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.expedition_activity_template
-
-	var_5_87[1470013] = {
+	pg.base.expedition_activity_template[1470013] = {
 		id = 1470013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.expedition_activity_template
-
-	var_5_88[1471013] = {
+	pg.base.expedition_activity_template[1471013] = {
 		id = 1471013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.expedition_activity_template
-
-	var_5_89[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1472013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.expedition_activity_template
-
-	var_5_90[1473013] = {
+	pg.base.expedition_activity_template[1473013] = {
 		id = 1473013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.expedition_activity_template
-
-	var_5_91[1474013] = {
+	pg.base.expedition_activity_template[1474013] = {
 		id = 1474013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.expedition_activity_template
-
-	var_5_92[1475013] = {
+	pg.base.expedition_activity_template[1475013] = {
 		id = 1475013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.expedition_activity_template
-
-	var_5_93[1480013] = {
+	pg.base.expedition_activity_template[1480013] = {
 		id = 1480013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -6608,11 +4624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.expedition_activity_template
-
-	var_5_94[1481013] = {
+	pg.base.expedition_activity_template[1481013] = {
 		id = 1481013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -6629,11 +4641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.expedition_activity_template
-
-	var_5_95[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1482013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -6650,11 +4658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.expedition_activity_template
-
-	var_5_96[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1483013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -6671,11 +4675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.expedition_activity_template
-
-	var_5_97[1484013] = {
+	pg.base.expedition_activity_template[1484013] = {
 		id = 1484013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -6692,18 +4692,13 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.expedition_activity_template
-
-	var_5_98[1490013] = {
+	pg.base.expedition_activity_template[1490013] = {
 		id = 1490013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_5_98
-	var_5_98.base.expedition_activity_template[1490113] = {
+	pg.base.expedition_activity_template[1490113] = {
 		id = 1490113,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -6713,998 +4708,601 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.expedition_activity_template
-
-	var_6_0[1490213] = {
+	pg.base.expedition_activity_template[1490213] = {
 		id = 1490213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.expedition_activity_template
-
-	var_6_1[1491013] = {
+	pg.base.expedition_activity_template[1491013] = {
 		id = 1491013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.expedition_activity_template
-
-	var_6_2[1491113] = {
+	pg.base.expedition_activity_template[1491113] = {
 		id = 1491113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.expedition_activity_template
-
-	var_6_3[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1491213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.expedition_activity_template
-
-	var_6_4[1492013] = {
+	pg.base.expedition_activity_template[1492013] = {
 		id = 1492013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.expedition_activity_template
-
-	var_6_5[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1492113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.expedition_activity_template
-
-	var_6_6[1492213] = {
+	pg.base.expedition_activity_template[1492213] = {
 		id = 1492213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.expedition_activity_template
-
-	var_6_7[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1493013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.expedition_activity_template
-
-	var_6_8[1493113] = {
+	pg.base.expedition_activity_template[1493113] = {
 		id = 1493113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.expedition_activity_template
-
-	var_6_9[1493213] = {
+	pg.base.expedition_activity_template[1493213] = {
 		id = 1493213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.expedition_activity_template
-
-	var_6_10[1494013] = {
+	pg.base.expedition_activity_template[1494013] = {
 		id = 1494013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.expedition_activity_template
-
-	var_6_11[1500013] = {
+	pg.base.expedition_activity_template[1500013] = {
 		id = 1500013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.expedition_activity_template
-
-	var_6_12[1500113] = {
+	pg.base.expedition_activity_template[1500113] = {
 		id = 1500113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.expedition_activity_template
-
-	var_6_13[1500213] = {
+	pg.base.expedition_activity_template[1500213] = {
 		id = 1500213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.expedition_activity_template
-
-	var_6_14[1501013] = {
+	pg.base.expedition_activity_template[1501013] = {
 		id = 1501013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.expedition_activity_template
-
-	var_6_15[1501113] = {
+	pg.base.expedition_activity_template[1501113] = {
 		id = 1501113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.expedition_activity_template
-
-	var_6_16[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1501213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.expedition_activity_template
-
-	var_6_17[1502013] = {
+	pg.base.expedition_activity_template[1502013] = {
 		id = 1502013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.expedition_activity_template
-
-	var_6_18[1502113] = {
+	pg.base.expedition_activity_template[1502113] = {
 		id = 1502113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.expedition_activity_template
-
-	var_6_19[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1502213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.expedition_activity_template
-
-	var_6_20[1503013] = {
+	pg.base.expedition_activity_template[1503013] = {
 		id = 1503013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.expedition_activity_template
-
-	var_6_21[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1503113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.expedition_activity_template
-
-	var_6_22[1503213] = {
+	pg.base.expedition_activity_template[1503213] = {
 		id = 1503213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.expedition_activity_template
-
-	var_6_23[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1504013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.expedition_activity_template
-
-	var_6_24[1510013] = {
+	pg.base.expedition_activity_template[1510013] = {
 		id = 1510013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.expedition_activity_template
-
-	var_6_25[1510113] = {
+	pg.base.expedition_activity_template[1510113] = {
 		id = 1510113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.expedition_activity_template
-
-	var_6_26[1510213] = {
+	pg.base.expedition_activity_template[1510213] = {
 		id = 1510213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.expedition_activity_template
-
-	var_6_27[1511013] = {
+	pg.base.expedition_activity_template[1511013] = {
 		id = 1511013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.expedition_activity_template
-
-	var_6_28[1511113] = {
+	pg.base.expedition_activity_template[1511113] = {
 		id = 1511113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.expedition_activity_template
-
-	var_6_29[1511213] = {
+	pg.base.expedition_activity_template[1511213] = {
 		id = 1511213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.expedition_activity_template
-
-	var_6_30[1512013] = {
+	pg.base.expedition_activity_template[1512013] = {
 		id = 1512013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.expedition_activity_template
-
-	var_6_31[1512113] = {
+	pg.base.expedition_activity_template[1512113] = {
 		id = 1512113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.expedition_activity_template
-
-	var_6_32[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1512213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.expedition_activity_template
-
-	var_6_33[1513013] = {
+	pg.base.expedition_activity_template[1513013] = {
 		id = 1513013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.expedition_activity_template
-
-	var_6_34[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1513113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.expedition_activity_template
-
-	var_6_35[1513213] = {
+	pg.base.expedition_activity_template[1513213] = {
 		id = 1513213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.expedition_activity_template
-
-	var_6_36[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1514013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.expedition_activity_template
-
-	var_6_37[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1520013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.expedition_activity_template
-
-	var_6_38[1520113] = {
+	pg.base.expedition_activity_template[1520113] = {
 		id = 1520113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.expedition_activity_template
-
-	var_6_39[1520213] = {
+	pg.base.expedition_activity_template[1520213] = {
 		id = 1520213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.expedition_activity_template
-
-	var_6_40[1521013] = {
+	pg.base.expedition_activity_template[1521013] = {
 		id = 1521013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.expedition_activity_template
-
-	var_6_41[1521113] = {
+	pg.base.expedition_activity_template[1521113] = {
 		id = 1521113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.expedition_activity_template
-
-	var_6_42[1521213] = {
+	pg.base.expedition_activity_template[1521213] = {
 		id = 1521213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.expedition_activity_template
-
-	var_6_43[1522013] = {
+	pg.base.expedition_activity_template[1522013] = {
 		id = 1522013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.expedition_activity_template
-
-	var_6_44[1522113] = {
+	pg.base.expedition_activity_template[1522113] = {
 		id = 1522113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.expedition_activity_template
-
-	var_6_45[1522213] = {
+	pg.base.expedition_activity_template[1522213] = {
 		id = 1522213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.expedition_activity_template
-
-	var_6_46[1523013] = {
+	pg.base.expedition_activity_template[1523013] = {
 		id = 1523013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.expedition_activity_template
-
-	var_6_47[1523113] = {
+	pg.base.expedition_activity_template[1523113] = {
 		id = 1523113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.expedition_activity_template
-
-	var_6_48[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1523213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.expedition_activity_template
-
-	var_6_49[1524013] = {
+	pg.base.expedition_activity_template[1524013] = {
 		id = 1524013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.expedition_activity_template
-
-	var_6_50[1540013] = {
+	pg.base.expedition_activity_template[1540013] = {
 		id = 1540013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.expedition_activity_template
-
-	var_6_51[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1541013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.expedition_activity_template
-
-	var_6_52[1542013] = {
+	pg.base.expedition_activity_template[1542013] = {
 		id = 1542013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.expedition_activity_template
-
-	var_6_53[1543013] = {
+	pg.base.expedition_activity_template[1543013] = {
 		id = 1543013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.expedition_activity_template
-
-	var_6_54[1544013] = {
+	pg.base.expedition_activity_template[1544013] = {
 		id = 1544013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.expedition_activity_template
-
-	var_6_55[1560013] = {
+	pg.base.expedition_activity_template[1560013] = {
 		id = 1560013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.expedition_activity_template
-
-	var_6_56[1560113] = {
+	pg.base.expedition_activity_template[1560113] = {
 		id = 1560113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.expedition_activity_template
-
-	var_6_57[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1560213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.expedition_activity_template
-
-	var_6_58[1561013] = {
+	pg.base.expedition_activity_template[1561013] = {
 		id = 1561013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.expedition_activity_template
-
-	var_6_59[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1561113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.expedition_activity_template
-
-	var_6_60[1561213] = {
+	pg.base.expedition_activity_template[1561213] = {
 		id = 1561213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.expedition_activity_template
-
-	var_6_61[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1562013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.expedition_activity_template
-
-	var_6_62[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1562113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.expedition_activity_template
-
-	var_6_63[1562213] = {
+	pg.base.expedition_activity_template[1562213] = {
 		id = 1562213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.expedition_activity_template
-
-	var_6_64[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1563013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.expedition_activity_template
-
-	var_6_65[1563113] = {
+	pg.base.expedition_activity_template[1563113] = {
 		id = 1563113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.expedition_activity_template
-
-	var_6_66[1563213] = {
+	pg.base.expedition_activity_template[1563213] = {
 		id = 1563213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.expedition_activity_template
-
-	var_6_67[1564013] = {
+	pg.base.expedition_activity_template[1564013] = {
 		id = 1564013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.expedition_activity_template
-
-	var_6_68[1580013] = {
+	pg.base.expedition_activity_template[1580013] = {
 		id = 1580013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.expedition_activity_template
-
-	var_6_69[1580113] = {
+	pg.base.expedition_activity_template[1580113] = {
 		id = 1580113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.expedition_activity_template
-
-	var_6_70[1580213] = {
+	pg.base.expedition_activity_template[1580213] = {
 		id = 1580213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.expedition_activity_template
-
-	var_6_71[1590013] = {
+	pg.base.expedition_activity_template[1590013] = {
 		id = 1590013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.expedition_activity_template
-
-	var_6_72[1591013] = {
+	pg.base.expedition_activity_template[1591013] = {
 		id = 1591013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.expedition_activity_template
-
-	var_6_73[1592013] = {
+	pg.base.expedition_activity_template[1592013] = {
 		id = 1592013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.expedition_activity_template
-
-	var_6_74[1593013] = {
+	pg.base.expedition_activity_template[1593013] = {
 		id = 1593013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.expedition_activity_template
-
-	var_6_75[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1594013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.expedition_activity_template
-
-	var_6_76[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1600013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.expedition_activity_template
-
-	var_6_77[1600113] = {
+	pg.base.expedition_activity_template[1600113] = {
 		id = 1600113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.expedition_activity_template
-
-	var_6_78[1600213] = {
+	pg.base.expedition_activity_template[1600213] = {
 		id = 1600213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.expedition_activity_template
-
-	var_6_79[1601013] = {
+	pg.base.expedition_activity_template[1601013] = {
 		id = 1601013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.expedition_activity_template
-
-	var_6_80[1601113] = {
+	pg.base.expedition_activity_template[1601113] = {
 		id = 1601113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.expedition_activity_template
-
-	var_6_81[1601213] = {
+	pg.base.expedition_activity_template[1601213] = {
 		id = 1601213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.expedition_activity_template
-
-	var_6_82[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1601413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.expedition_activity_template
-
-	var_6_83[1602013] = {
+	pg.base.expedition_activity_template[1602013] = {
 		id = 1602013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.expedition_activity_template
-
-	var_6_84[1602113] = {
+	pg.base.expedition_activity_template[1602113] = {
 		id = 1602113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.expedition_activity_template
-
-	var_6_85[1602213] = {
+	pg.base.expedition_activity_template[1602213] = {
 		id = 1602213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.expedition_activity_template
-
-	var_6_86[1603013] = {
+	pg.base.expedition_activity_template[1603013] = {
 		id = 1603013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.expedition_activity_template
-
-	var_6_87[1603113] = {
+	pg.base.expedition_activity_template[1603113] = {
 		id = 1603113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.expedition_activity_template
-
-	var_6_88[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1603213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.expedition_activity_template
-
-	var_6_89[1603413] = {
+	pg.base.expedition_activity_template[1603413] = {
 		id = 1603413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.expedition_activity_template
-
-	var_6_90[1604013] = {
+	pg.base.expedition_activity_template[1604013] = {
 		id = 1604013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.expedition_activity_template
-
-	var_6_91[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1610001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.expedition_activity_template
-
-	var_6_92[18] = {
+	pg.base.expedition_activity_template[18] = {
 		id = 1610002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.expedition_activity_template
-
-	var_6_93[19] = {
+	pg.base.expedition_activity_template[19] = {
 		id = 1610003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.expedition_activity_template
-
-	var_6_94[20] = {
+	pg.base.expedition_activity_template[20] = {
 		id = 1610004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.expedition_activity_template
-
-	var_6_95[1620013] = {
+	pg.base.expedition_activity_template[1620013] = {
 		id = 1620013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.expedition_activity_template
-
-	var_6_96[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1620113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.expedition_activity_template
-
-	var_6_97[1620213] = {
+	pg.base.expedition_activity_template[1620213] = {
 		id = 1620213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.expedition_activity_template
-
-	var_6_98[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1621013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_6_98
-	var_6_98.base.expedition_activity_template[1621113] = {
+	pg.base.expedition_activity_template[1621113] = {
 		id = 1621113,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -7714,511 +5312,307 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.expedition_activity_template
-
-	var_7_0[1621114] = {
+	pg.base.expedition_activity_template[1621114] = {
 		id = 1621114,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.expedition_activity_template
-
-	var_7_1[1621213] = {
+	pg.base.expedition_activity_template[1621213] = {
 		id = 1621213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.expedition_activity_template
-
-	var_7_2[1621214] = {
+	pg.base.expedition_activity_template[1621214] = {
 		id = 1621214,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.expedition_activity_template
-
-	var_7_3[1622013] = {
+	pg.base.expedition_activity_template[1622013] = {
 		id = 1622013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.expedition_activity_template
-
-	var_7_4[1622113] = {
+	pg.base.expedition_activity_template[1622113] = {
 		id = 1622113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.expedition_activity_template
-
-	var_7_5[1622213] = {
+	pg.base.expedition_activity_template[1622213] = {
 		id = 1622213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.expedition_activity_template
-
-	var_7_6[1623013] = {
+	pg.base.expedition_activity_template[1623013] = {
 		id = 1623013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.expedition_activity_template
-
-	var_7_7[1623113] = {
+	pg.base.expedition_activity_template[1623113] = {
 		id = 1623113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.expedition_activity_template
-
-	var_7_8[1623114] = {
+	pg.base.expedition_activity_template[1623114] = {
 		id = 1623114,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.expedition_activity_template
-
-	var_7_9[1623213] = {
+	pg.base.expedition_activity_template[1623213] = {
 		id = 1623213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.expedition_activity_template
-
-	var_7_10[1623214] = {
+	pg.base.expedition_activity_template[1623214] = {
 		id = 1623214,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.expedition_activity_template
-
-	var_7_11[1624013] = {
+	pg.base.expedition_activity_template[1624013] = {
 		id = 1624013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.expedition_activity_template
-
-	var_7_12[1624014] = {
+	pg.base.expedition_activity_template[1624014] = {
 		id = 1624014,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.expedition_activity_template
-
-	var_7_13[1630013] = {
+	pg.base.expedition_activity_template[1630013] = {
 		id = 1630013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.expedition_activity_template
-
-	var_7_14[1631013] = {
+	pg.base.expedition_activity_template[1631013] = {
 		id = 1631013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.expedition_activity_template
-
-	var_7_15[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1632013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.expedition_activity_template
-
-	var_7_16[1633013] = {
+	pg.base.expedition_activity_template[1633013] = {
 		id = 1633013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.expedition_activity_template
-
-	var_7_17[1634013] = {
+	pg.base.expedition_activity_template[1634013] = {
 		id = 1634013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.expedition_activity_template
-
-	var_7_18[1640013] = {
+	pg.base.expedition_activity_template[1640013] = {
 		id = 1640013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.expedition_activity_template
-
-	var_7_19[1640113] = {
+	pg.base.expedition_activity_template[1640113] = {
 		id = 1640113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.expedition_activity_template
-
-	var_7_20[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1640213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.expedition_activity_template
-
-	var_7_21[1641013] = {
+	pg.base.expedition_activity_template[1641013] = {
 		id = 1641013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.expedition_activity_template
-
-	var_7_22[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1641113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.expedition_activity_template
-
-	var_7_23[1641213] = {
+	pg.base.expedition_activity_template[1641213] = {
 		id = 1641213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.expedition_activity_template
-
-	var_7_24[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1642013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.expedition_activity_template
-
-	var_7_25[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1642113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.expedition_activity_template
-
-	var_7_26[1642213] = {
+	pg.base.expedition_activity_template[1642213] = {
 		id = 1642213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.expedition_activity_template
-
-	var_7_27[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1643013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.expedition_activity_template
-
-	var_7_28[1643113] = {
+	pg.base.expedition_activity_template[1643113] = {
 		id = 1643113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.expedition_activity_template
-
-	var_7_29[1643213] = {
+	pg.base.expedition_activity_template[1643213] = {
 		id = 1643213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.expedition_activity_template
-
-	var_7_30[1644013] = {
+	pg.base.expedition_activity_template[1644013] = {
 		id = 1644013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.expedition_activity_template
-
-	var_7_31[1650013] = {
+	pg.base.expedition_activity_template[1650013] = {
 		id = 1650013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.expedition_activity_template
-
-	var_7_32[1650113] = {
+	pg.base.expedition_activity_template[1650113] = {
 		id = 1650113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.expedition_activity_template
-
-	var_7_33[1650213] = {
+	pg.base.expedition_activity_template[1650213] = {
 		id = 1650213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.expedition_activity_template
-
-	var_7_34[1651013] = {
+	pg.base.expedition_activity_template[1651013] = {
 		id = 1651013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.expedition_activity_template
-
-	var_7_35[1651113] = {
+	pg.base.expedition_activity_template[1651113] = {
 		id = 1651113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.expedition_activity_template
-
-	var_7_36[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1651213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.expedition_activity_template
-
-	var_7_37[14] = {
+	pg.base.expedition_activity_template[14] = {
 		id = 1651214,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.expedition_activity_template
-
-	var_7_38[1652013] = {
+	pg.base.expedition_activity_template[1652013] = {
 		id = 1652013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.expedition_activity_template
-
-	var_7_39[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1652113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.expedition_activity_template
-
-	var_7_40[1652213] = {
+	pg.base.expedition_activity_template[1652213] = {
 		id = 1652213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.expedition_activity_template
-
-	var_7_41[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1653013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.expedition_activity_template
-
-	var_7_42[1653113] = {
+	pg.base.expedition_activity_template[1653113] = {
 		id = 1653113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.expedition_activity_template
-
-	var_7_43[1653213] = {
+	pg.base.expedition_activity_template[1653213] = {
 		id = 1653213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.expedition_activity_template
-
-	var_7_44[1653214] = {
+	pg.base.expedition_activity_template[1653214] = {
 		id = 1653214,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.expedition_activity_template
-
-	var_7_45[1654013] = {
+	pg.base.expedition_activity_template[1654013] = {
 		id = 1654013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.expedition_activity_template
-
-	var_7_46[1659001] = {
+	pg.base.expedition_activity_template[1659001] = {
 		id = 1659001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.expedition_activity_template
-
-	var_7_47[1659002] = {
+	pg.base.expedition_activity_template[1659002] = {
 		id = 1659002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.expedition_activity_template
-
-	var_7_48[1659003] = {
+	pg.base.expedition_activity_template[1659003] = {
 		id = 1659003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.expedition_activity_template
-
-	var_7_49[1659004] = {
+	pg.base.expedition_activity_template[1659004] = {
 		id = 1659004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.expedition_activity_template
-
-	var_7_50[1660013] = {
+	pg.base.expedition_activity_template[1660013] = {
 		id = 1660013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8230,11 +5624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.expedition_activity_template
-
-	var_7_51[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1660033,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8246,11 +5636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.expedition_activity_template
-
-	var_7_52[1660113] = {
+	pg.base.expedition_activity_template[1660113] = {
 		id = 1660113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8262,11 +5648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.expedition_activity_template
-
-	var_7_53[1660133] = {
+	pg.base.expedition_activity_template[1660133] = {
 		id = 1660133,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8278,11 +5660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.expedition_activity_template
-
-	var_7_54[1660213] = {
+	pg.base.expedition_activity_template[1660213] = {
 		id = 1660213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8294,11 +5672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.expedition_activity_template
-
-	var_7_55[1660233] = {
+	pg.base.expedition_activity_template[1660233] = {
 		id = 1660233,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8310,11 +5684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.expedition_activity_template
-
-	var_7_56[1661013] = {
+	pg.base.expedition_activity_template[1661013] = {
 		id = 1661013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8326,11 +5696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.expedition_activity_template
-
-	var_7_57[1661113] = {
+	pg.base.expedition_activity_template[1661113] = {
 		id = 1661113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8342,11 +5708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.expedition_activity_template
-
-	var_7_58[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1661213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8358,11 +5720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.expedition_activity_template
-
-	var_7_59[1662013] = {
+	pg.base.expedition_activity_template[1662013] = {
 		id = 1662013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8374,11 +5732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.expedition_activity_template
-
-	var_7_60[1662033] = {
+	pg.base.expedition_activity_template[1662033] = {
 		id = 1662033,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8390,11 +5744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.expedition_activity_template
-
-	var_7_61[1662113] = {
+	pg.base.expedition_activity_template[1662113] = {
 		id = 1662113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8406,11 +5756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.expedition_activity_template
-
-	var_7_62[1662133] = {
+	pg.base.expedition_activity_template[1662133] = {
 		id = 1662133,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8422,11 +5768,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.expedition_activity_template
-
-	var_7_63[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1662213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8438,11 +5780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.expedition_activity_template
-
-	var_7_64[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1662233,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8454,11 +5792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.expedition_activity_template
-
-	var_7_65[1663013] = {
+	pg.base.expedition_activity_template[1663013] = {
 		id = 1663013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8470,11 +5804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.expedition_activity_template
-
-	var_7_66[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1663113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8486,11 +5816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.expedition_activity_template
-
-	var_7_67[1663213] = {
+	pg.base.expedition_activity_template[1663213] = {
 		id = 1663213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8502,11 +5828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.expedition_activity_template
-
-	var_7_68[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1664013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8518,11 +5840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.expedition_activity_template
-
-	var_7_69[1670013] = {
+	pg.base.expedition_activity_template[1670013] = {
 		id = 1670013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8534,11 +5852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.expedition_activity_template
-
-	var_7_70[1671013] = {
+	pg.base.expedition_activity_template[1671013] = {
 		id = 1671013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8550,11 +5864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.expedition_activity_template
-
-	var_7_71[1672013] = {
+	pg.base.expedition_activity_template[1672013] = {
 		id = 1672013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8566,11 +5876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.expedition_activity_template
-
-	var_7_72[1673013] = {
+	pg.base.expedition_activity_template[1673013] = {
 		id = 1673013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8582,11 +5888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.expedition_activity_template
-
-	var_7_73[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1674013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8598,11 +5900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.expedition_activity_template
-
-	var_7_74[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1680013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8614,11 +5912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.expedition_activity_template
-
-	var_7_75[1680113] = {
+	pg.base.expedition_activity_template[1680113] = {
 		id = 1680113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8630,11 +5924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.expedition_activity_template
-
-	var_7_76[1680213] = {
+	pg.base.expedition_activity_template[1680213] = {
 		id = 1680213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8646,11 +5936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.expedition_activity_template
-
-	var_7_77[1681013] = {
+	pg.base.expedition_activity_template[1681013] = {
 		id = 1681013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8662,11 +5948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.expedition_activity_template
-
-	var_7_78[1681113] = {
+	pg.base.expedition_activity_template[1681113] = {
 		id = 1681113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8678,11 +5960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.expedition_activity_template
-
-	var_7_79[1681213] = {
+	pg.base.expedition_activity_template[1681213] = {
 		id = 1681213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8694,11 +5972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.expedition_activity_template
-
-	var_7_80[1682013] = {
+	pg.base.expedition_activity_template[1682013] = {
 		id = 1682013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8710,11 +5984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.expedition_activity_template
-
-	var_7_81[1682113] = {
+	pg.base.expedition_activity_template[1682113] = {
 		id = 1682113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8726,11 +5996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.expedition_activity_template
-
-	var_7_82[1682213] = {
+	pg.base.expedition_activity_template[1682213] = {
 		id = 1682213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8742,11 +6008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.expedition_activity_template
-
-	var_7_83[1683013] = {
+	pg.base.expedition_activity_template[1683013] = {
 		id = 1683013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8758,11 +6020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.expedition_activity_template
-
-	var_7_84[1683113] = {
+	pg.base.expedition_activity_template[1683113] = {
 		id = 1683113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8774,11 +6032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.expedition_activity_template
-
-	var_7_85[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1683213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -8790,11 +6044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.expedition_activity_template
-
-	var_7_86[1684013] = {
+	pg.base.expedition_activity_template[1684013] = {
 		id = 1684013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8806,51 +6056,31 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.expedition_activity_template
-
-	var_7_87[1689001] = {
+	pg.base.expedition_activity_template[1689001] = {
 		id = 1689001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.expedition_activity_template
-
-	var_7_88[1689002] = {
+	pg.base.expedition_activity_template[1689002] = {
 		id = 1689002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.expedition_activity_template
-
-	var_7_89[1689003] = {
+	pg.base.expedition_activity_template[1689003] = {
 		id = 1689003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.expedition_activity_template
-
-	var_7_90[1689004] = {
+	pg.base.expedition_activity_template[1689004] = {
 		id = 1689004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.expedition_activity_template
-
-	var_7_91[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1690013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8862,11 +6092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.expedition_activity_template
-
-	var_7_92[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1691013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8878,11 +6104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.expedition_activity_template
-
-	var_7_93[1692013] = {
+	pg.base.expedition_activity_template[1692013] = {
 		id = 1692013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8894,11 +6116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.expedition_activity_template
-
-	var_7_94[1693013] = {
+	pg.base.expedition_activity_template[1693013] = {
 		id = 1693013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8910,11 +6128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.expedition_activity_template
-
-	var_7_95[1693033] = {
+	pg.base.expedition_activity_template[1693033] = {
 		id = 1693033,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8926,11 +6140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.expedition_activity_template
-
-	var_7_96[1694013] = {
+	pg.base.expedition_activity_template[1694013] = {
 		id = 1694013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8942,11 +6152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.expedition_activity_template
-
-	var_7_97[1694014] = {
+	pg.base.expedition_activity_template[1694014] = {
 		id = 1694014,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8958,11 +6164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.expedition_activity_template
-
-	var_7_98[1695013] = {
+	pg.base.expedition_activity_template[1695013] = {
 		id = 1695013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8974,8 +6176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.expedition_activity_template[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1696013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -8991,11 +6192,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.expedition_activity_template
-
-	var_8_0[1697013] = {
+	pg.base.expedition_activity_template[1697013] = {
 		id = 1697013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -9007,11 +6204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.expedition_activity_template
-
-	var_8_1[1698013] = {
+	pg.base.expedition_activity_template[1698013] = {
 		id = 1698013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -9023,11 +6216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.expedition_activity_template
-
-	var_8_2[1699013] = {
+	pg.base.expedition_activity_template[1699013] = {
 		id = 1699013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -9039,11 +6228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.expedition_activity_template
-
-	var_8_3[1700013] = {
+	pg.base.expedition_activity_template[1700013] = {
 		id = 1700013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9055,11 +6240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.expedition_activity_template
-
-	var_8_4[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1700113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9071,11 +6252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.expedition_activity_template
-
-	var_8_5[1700213] = {
+	pg.base.expedition_activity_template[1700213] = {
 		id = 1700213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9087,11 +6264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.expedition_activity_template
-
-	var_8_6[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1701013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9103,11 +6276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.expedition_activity_template
-
-	var_8_7[1701113] = {
+	pg.base.expedition_activity_template[1701113] = {
 		id = 1701113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9119,11 +6288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.expedition_activity_template
-
-	var_8_8[1701213] = {
+	pg.base.expedition_activity_template[1701213] = {
 		id = 1701213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9135,11 +6300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.expedition_activity_template
-
-	var_8_9[1702013] = {
+	pg.base.expedition_activity_template[1702013] = {
 		id = 1702013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9151,11 +6312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.expedition_activity_template
-
-	var_8_10[1702113] = {
+	pg.base.expedition_activity_template[1702113] = {
 		id = 1702113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9167,11 +6324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.expedition_activity_template
-
-	var_8_11[1702213] = {
+	pg.base.expedition_activity_template[1702213] = {
 		id = 1702213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9183,11 +6336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.expedition_activity_template
-
-	var_8_12[1703013] = {
+	pg.base.expedition_activity_template[1703013] = {
 		id = 1703013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9199,11 +6348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.expedition_activity_template
-
-	var_8_13[1703113] = {
+	pg.base.expedition_activity_template[1703113] = {
 		id = 1703113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9215,11 +6360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.expedition_activity_template
-
-	var_8_14[1703213] = {
+	pg.base.expedition_activity_template[1703213] = {
 		id = 1703213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9231,11 +6372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.expedition_activity_template
-
-	var_8_15[1704013] = {
+	pg.base.expedition_activity_template[1704013] = {
 		id = 1704013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -9247,51 +6384,31 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.expedition_activity_template
-
-	var_8_16[1709001] = {
+	pg.base.expedition_activity_template[1709001] = {
 		id = 1709001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.expedition_activity_template
-
-	var_8_17[1709002] = {
+	pg.base.expedition_activity_template[1709002] = {
 		id = 1709002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.expedition_activity_template
-
-	var_8_18[1709003] = {
+	pg.base.expedition_activity_template[1709003] = {
 		id = 1709003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.expedition_activity_template
-
-	var_8_19[1709004] = {
+	pg.base.expedition_activity_template[1709004] = {
 		id = 1709004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.expedition_activity_template
-
-	var_8_20[1710013] = {
+	pg.base.expedition_activity_template[1710013] = {
 		id = 1710013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9303,11 +6420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.expedition_activity_template
-
-	var_8_21[1710113] = {
+	pg.base.expedition_activity_template[1710113] = {
 		id = 1710113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9319,11 +6432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.expedition_activity_template
-
-	var_8_22[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1710213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9335,11 +6444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.expedition_activity_template
-
-	var_8_23[1711013] = {
+	pg.base.expedition_activity_template[1711013] = {
 		id = 1711013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9351,11 +6456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.expedition_activity_template
-
-	var_8_24[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1711113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9367,11 +6468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.expedition_activity_template
-
-	var_8_25[1711213] = {
+	pg.base.expedition_activity_template[1711213] = {
 		id = 1711213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9383,11 +6480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.expedition_activity_template
-
-	var_8_26[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1712013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9399,11 +6492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.expedition_activity_template
-
-	var_8_27[1712113] = {
+	pg.base.expedition_activity_template[1712113] = {
 		id = 1712113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9415,11 +6504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.expedition_activity_template
-
-	var_8_28[1712213] = {
+	pg.base.expedition_activity_template[1712213] = {
 		id = 1712213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9431,11 +6516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.expedition_activity_template
-
-	var_8_29[1713013] = {
+	pg.base.expedition_activity_template[1713013] = {
 		id = 1713013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9447,11 +6528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.expedition_activity_template
-
-	var_8_30[1713113] = {
+	pg.base.expedition_activity_template[1713113] = {
 		id = 1713113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9463,11 +6540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.expedition_activity_template
-
-	var_8_31[1713213] = {
+	pg.base.expedition_activity_template[1713213] = {
 		id = 1713213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9479,11 +6552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.expedition_activity_template
-
-	var_8_32[1714013] = {
+	pg.base.expedition_activity_template[1714013] = {
 		id = 1714013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -9495,161 +6564,97 @@ end)()
 			}
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.expedition_activity_template
-
-	var_8_33[1719101] = {
+	pg.base.expedition_activity_template[1719101] = {
 		id = 1719101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.expedition_activity_template
-
-	var_8_34[1719201] = {
+	pg.base.expedition_activity_template[1719201] = {
 		id = 1719201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.expedition_activity_template
-
-	var_8_35[1719202] = {
+	pg.base.expedition_activity_template[1719202] = {
 		id = 1719202,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.expedition_activity_template
-
-	var_8_36[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1719301,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.expedition_activity_template
-
-	var_8_37[6] = {
+	pg.base.expedition_activity_template[6] = {
 		id = 1719302,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.expedition_activity_template
-
-	var_8_38[7] = {
+	pg.base.expedition_activity_template[7] = {
 		id = 1719303,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.expedition_activity_template
-
-	var_8_39[1719401] = {
+	pg.base.expedition_activity_template[1719401] = {
 		id = 1719401,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.expedition_activity_template
-
-	var_8_40[1719402] = {
+	pg.base.expedition_activity_template[1719402] = {
 		id = 1719402,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.expedition_activity_template
-
-	var_8_41[1719403] = {
+	pg.base.expedition_activity_template[1719403] = {
 		id = 1719403,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.expedition_activity_template
-
-	var_8_42[1719404] = {
+	pg.base.expedition_activity_template[1719404] = {
 		id = 1719404,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.expedition_activity_template
-
-	var_8_43[1719501] = {
+	pg.base.expedition_activity_template[1719501] = {
 		id = 1719501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.expedition_activity_template
-
-	var_8_44[1719502] = {
+	pg.base.expedition_activity_template[1719502] = {
 		id = 1719502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.expedition_activity_template
-
-	var_8_45[1719503] = {
+	pg.base.expedition_activity_template[1719503] = {
 		id = 1719503,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.expedition_activity_template
-
-	var_8_46[1719504] = {
+	pg.base.expedition_activity_template[1719504] = {
 		id = 1719504,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.expedition_activity_template
-
-	var_8_47[1719505] = {
+	pg.base.expedition_activity_template[1719505] = {
 		id = 1719505,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.expedition_activity_template
-
-	var_8_48[1720013] = {
+	pg.base.expedition_activity_template[1720013] = {
 		id = 1720013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9666,11 +6671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.expedition_activity_template
-
-	var_8_49[1720113] = {
+	pg.base.expedition_activity_template[1720113] = {
 		id = 1720113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9687,21 +6688,13 @@ end)()
 			}
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.expedition_activity_template
-
-	var_8_50[1720134] = {
+	pg.base.expedition_activity_template[1720134] = {
 		id = 1720134,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.expedition_activity_template
-
-	var_8_51[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1720213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9718,11 +6711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.expedition_activity_template
-
-	var_8_52[1721013] = {
+	pg.base.expedition_activity_template[1721013] = {
 		id = 1721013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9739,11 +6728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.expedition_activity_template
-
-	var_8_53[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1721113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9760,11 +6745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.expedition_activity_template
-
-	var_8_54[1721213] = {
+	pg.base.expedition_activity_template[1721213] = {
 		id = 1721213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9781,21 +6762,13 @@ end)()
 			}
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.expedition_activity_template
-
-	var_8_55[18] = {
+	pg.base.expedition_activity_template[18] = {
 		id = 1721234,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.expedition_activity_template
-
-	var_8_56[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1722013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9812,11 +6785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.expedition_activity_template
-
-	var_8_57[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1722113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9833,21 +6802,13 @@ end)()
 			}
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.expedition_activity_template
-
-	var_8_58[22] = {
+	pg.base.expedition_activity_template[22] = {
 		id = 1722134,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.expedition_activity_template
-
-	var_8_59[1722213] = {
+	pg.base.expedition_activity_template[1722213] = {
 		id = 1722213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9864,11 +6825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.expedition_activity_template
-
-	var_8_60[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1723013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9885,11 +6842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.expedition_activity_template
-
-	var_8_61[1723113] = {
+	pg.base.expedition_activity_template[1723113] = {
 		id = 1723113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9906,11 +6859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.expedition_activity_template
-
-	var_8_62[1723213] = {
+	pg.base.expedition_activity_template[1723213] = {
 		id = 1723213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -9927,21 +6876,13 @@ end)()
 			}
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.expedition_activity_template
-
-	var_8_63[1723234] = {
+	pg.base.expedition_activity_template[1723234] = {
 		id = 1723234,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.expedition_activity_template
-
-	var_8_64[1724013] = {
+	pg.base.expedition_activity_template[1724013] = {
 		id = 1724013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -9958,61 +6899,37 @@ end)()
 			}
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.expedition_activity_template
-
-	var_8_65[1729001] = {
+	pg.base.expedition_activity_template[1729001] = {
 		id = 1729001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.expedition_activity_template
-
-	var_8_66[1729002] = {
+	pg.base.expedition_activity_template[1729002] = {
 		id = 1729002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.expedition_activity_template
-
-	var_8_67[1729003] = {
+	pg.base.expedition_activity_template[1729003] = {
 		id = 1729003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.expedition_activity_template
-
-	var_8_68[1729004] = {
+	pg.base.expedition_activity_template[1729004] = {
 		id = 1729004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.expedition_activity_template
-
-	var_8_69[1729005] = {
+	pg.base.expedition_activity_template[1729005] = {
 		id = 1729005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.expedition_activity_template
-
-	var_8_70[1730013] = {
+	pg.base.expedition_activity_template[1730013] = {
 		id = 1730013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10024,11 +6941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.expedition_activity_template
-
-	var_8_71[1731013] = {
+	pg.base.expedition_activity_template[1731013] = {
 		id = 1731013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10040,11 +6953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.expedition_activity_template
-
-	var_8_72[1732013] = {
+	pg.base.expedition_activity_template[1732013] = {
 		id = 1732013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10056,11 +6965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.expedition_activity_template
-
-	var_8_73[1740013] = {
+	pg.base.expedition_activity_template[1740013] = {
 		id = 1740013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10077,11 +6982,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.expedition_activity_template
-
-	var_8_74[1740113] = {
+	pg.base.expedition_activity_template[1740113] = {
 		id = 1740113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10098,11 +6999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.expedition_activity_template
-
-	var_8_75[1740213] = {
+	pg.base.expedition_activity_template[1740213] = {
 		id = 1740213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10119,11 +7016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.expedition_activity_template
-
-	var_8_76[1741013] = {
+	pg.base.expedition_activity_template[1741013] = {
 		id = 1741013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10140,11 +7033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.expedition_activity_template
-
-	var_8_77[1741113] = {
+	pg.base.expedition_activity_template[1741113] = {
 		id = 1741113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10161,11 +7050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.expedition_activity_template
-
-	var_8_78[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1741213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10182,11 +7067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.expedition_activity_template
-
-	var_8_79[1742013] = {
+	pg.base.expedition_activity_template[1742013] = {
 		id = 1742013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10203,11 +7084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.expedition_activity_template
-
-	var_8_80[1742113] = {
+	pg.base.expedition_activity_template[1742113] = {
 		id = 1742113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10224,11 +7101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.expedition_activity_template
-
-	var_8_81[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1742213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10245,11 +7118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.expedition_activity_template
-
-	var_8_82[1743013] = {
+	pg.base.expedition_activity_template[1743013] = {
 		id = 1743013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10266,11 +7135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.expedition_activity_template
-
-	var_8_83[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1743113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10287,11 +7152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.expedition_activity_template
-
-	var_8_84[1743213] = {
+	pg.base.expedition_activity_template[1743213] = {
 		id = 1743213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10308,11 +7169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.expedition_activity_template
-
-	var_8_85[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1744013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -10329,11 +7186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.expedition_activity_template
-
-	var_8_86[1750013] = {
+	pg.base.expedition_activity_template[1750013] = {
 		id = 1750013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10345,11 +7198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.expedition_activity_template
-
-	var_8_87[1750113] = {
+	pg.base.expedition_activity_template[1750113] = {
 		id = 1750113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10361,11 +7210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.expedition_activity_template
-
-	var_8_88[1750213] = {
+	pg.base.expedition_activity_template[1750213] = {
 		id = 1750213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10377,11 +7222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.expedition_activity_template
-
-	var_8_89[1751013] = {
+	pg.base.expedition_activity_template[1751013] = {
 		id = 1751013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10393,11 +7234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.expedition_activity_template
-
-	var_8_90[1751113] = {
+	pg.base.expedition_activity_template[1751113] = {
 		id = 1751113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10409,11 +7246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.expedition_activity_template
-
-	var_8_91[1751213] = {
+	pg.base.expedition_activity_template[1751213] = {
 		id = 1751213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10425,11 +7258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.expedition_activity_template
-
-	var_8_92[1752013] = {
+	pg.base.expedition_activity_template[1752013] = {
 		id = 1752013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10441,11 +7270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.expedition_activity_template
-
-	var_8_93[1752113] = {
+	pg.base.expedition_activity_template[1752113] = {
 		id = 1752113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10457,11 +7282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.expedition_activity_template
-
-	var_8_94[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1752213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10473,11 +7294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.expedition_activity_template
-
-	var_8_95[1753013] = {
+	pg.base.expedition_activity_template[1753013] = {
 		id = 1753013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10489,11 +7306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.expedition_activity_template
-
-	var_8_96[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1753113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10505,11 +7318,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.expedition_activity_template
-
-	var_8_97[1753213] = {
+	pg.base.expedition_activity_template[1753213] = {
 		id = 1753213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10521,11 +7330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.expedition_activity_template
-
-	var_8_98[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1754013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -10537,8 +7342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.expedition_activity_template[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1760013,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -10548,131 +7352,79 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.expedition_activity_template
-
-	var_9_0[1761013] = {
+	pg.base.expedition_activity_template[1761013] = {
 		id = 1761013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.expedition_activity_template
-
-	var_9_1[1762013] = {
+	pg.base.expedition_activity_template[1762013] = {
 		id = 1762013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.expedition_activity_template
-
-	var_9_2[1763013] = {
+	pg.base.expedition_activity_template[1763013] = {
 		id = 1763013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.expedition_activity_template
-
-	var_9_3[1764013] = {
+	pg.base.expedition_activity_template[1764013] = {
 		id = 1764013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.expedition_activity_template
-
-	var_9_4[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1765013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.expedition_activity_template
-
-	var_9_5[1766013] = {
+	pg.base.expedition_activity_template[1766013] = {
 		id = 1766013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.expedition_activity_template
-
-	var_9_6[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1770013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.expedition_activity_template
-
-	var_9_7[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1771013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.expedition_activity_template
-
-	var_9_8[1772013] = {
+	pg.base.expedition_activity_template[1772013] = {
 		id = 1772013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.expedition_activity_template
-
-	var_9_9[1773013] = {
+	pg.base.expedition_activity_template[1773013] = {
 		id = 1773013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.expedition_activity_template
-
-	var_9_10[1774013] = {
+	pg.base.expedition_activity_template[1774013] = {
 		id = 1774013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.expedition_activity_template
-
-	var_9_11[1775013] = {
+	pg.base.expedition_activity_template[1775013] = {
 		id = 1775013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.expedition_activity_template
-
-	var_9_12[1780013] = {
+	pg.base.expedition_activity_template[1780013] = {
 		id = 1780013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10689,11 +7441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.expedition_activity_template
-
-	var_9_13[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1780113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10710,11 +7458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.expedition_activity_template
-
-	var_9_14[1780213] = {
+	pg.base.expedition_activity_template[1780213] = {
 		id = 1780213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10731,11 +7475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.expedition_activity_template
-
-	var_9_15[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1781013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10752,11 +7492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.expedition_activity_template
-
-	var_9_16[1781113] = {
+	pg.base.expedition_activity_template[1781113] = {
 		id = 1781113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10773,11 +7509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.expedition_activity_template
-
-	var_9_17[1781213] = {
+	pg.base.expedition_activity_template[1781213] = {
 		id = 1781213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10794,11 +7526,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.expedition_activity_template
-
-	var_9_18[1782013] = {
+	pg.base.expedition_activity_template[1782013] = {
 		id = 1782013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10815,11 +7543,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.expedition_activity_template
-
-	var_9_19[1782113] = {
+	pg.base.expedition_activity_template[1782113] = {
 		id = 1782113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10836,11 +7560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.expedition_activity_template
-
-	var_9_20[1782213] = {
+	pg.base.expedition_activity_template[1782213] = {
 		id = 1782213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10857,11 +7577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.expedition_activity_template
-
-	var_9_21[1783013] = {
+	pg.base.expedition_activity_template[1783013] = {
 		id = 1783013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10878,11 +7594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.expedition_activity_template
-
-	var_9_22[1783113] = {
+	pg.base.expedition_activity_template[1783113] = {
 		id = 1783113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10899,11 +7611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.expedition_activity_template
-
-	var_9_23[1783213] = {
+	pg.base.expedition_activity_template[1783213] = {
 		id = 1783213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -10920,11 +7628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.expedition_activity_template
-
-	var_9_24[1784013] = {
+	pg.base.expedition_activity_template[1784013] = {
 		id = 1784013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -10946,61 +7650,37 @@ end)()
 			}
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.expedition_activity_template
-
-	var_9_25[1789001] = {
+	pg.base.expedition_activity_template[1789001] = {
 		id = 1789001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.expedition_activity_template
-
-	var_9_26[1789002] = {
+	pg.base.expedition_activity_template[1789002] = {
 		id = 1789002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.expedition_activity_template
-
-	var_9_27[1789003] = {
+	pg.base.expedition_activity_template[1789003] = {
 		id = 1789003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.expedition_activity_template
-
-	var_9_28[1789004] = {
+	pg.base.expedition_activity_template[1789004] = {
 		id = 1789004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.expedition_activity_template
-
-	var_9_29[1789005] = {
+	pg.base.expedition_activity_template[1789005] = {
 		id = 1789005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.expedition_activity_template
-
-	var_9_30[1790013] = {
+	pg.base.expedition_activity_template[1790013] = {
 		id = 1790013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11012,11 +7692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.expedition_activity_template
-
-	var_9_31[1790113] = {
+	pg.base.expedition_activity_template[1790113] = {
 		id = 1790113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11028,11 +7704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.expedition_activity_template
-
-	var_9_32[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1790213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11044,11 +7716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.expedition_activity_template
-
-	var_9_33[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1790233,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11060,11 +7728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.expedition_activity_template
-
-	var_9_34[1791013] = {
+	pg.base.expedition_activity_template[1791013] = {
 		id = 1791013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11076,11 +7740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.expedition_activity_template
-
-	var_9_35[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1791113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11092,11 +7752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.expedition_activity_template
-
-	var_9_36[1791213] = {
+	pg.base.expedition_activity_template[1791213] = {
 		id = 1791213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11108,11 +7764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.expedition_activity_template
-
-	var_9_37[1791214] = {
+	pg.base.expedition_activity_template[1791214] = {
 		id = 1791214,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11124,11 +7776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.expedition_activity_template
-
-	var_9_38[1791215] = {
+	pg.base.expedition_activity_template[1791215] = {
 		id = 1791215,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11140,11 +7788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.expedition_activity_template
-
-	var_9_39[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1791233,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11156,11 +7800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.expedition_activity_template
-
-	var_9_40[2] = {
+	pg.base.expedition_activity_template[2] = {
 		id = 1791234,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11172,11 +7812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.expedition_activity_template
-
-	var_9_41[3] = {
+	pg.base.expedition_activity_template[3] = {
 		id = 1791235,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11188,11 +7824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.expedition_activity_template
-
-	var_9_42[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1792013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11204,11 +7836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.expedition_activity_template
-
-	var_9_43[1792113] = {
+	pg.base.expedition_activity_template[1792113] = {
 		id = 1792113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11220,11 +7848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.expedition_activity_template
-
-	var_9_44[1792213] = {
+	pg.base.expedition_activity_template[1792213] = {
 		id = 1792213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11236,11 +7860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.expedition_activity_template
-
-	var_9_45[1792233] = {
+	pg.base.expedition_activity_template[1792233] = {
 		id = 1792233,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11252,11 +7872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.expedition_activity_template
-
-	var_9_46[1793013] = {
+	pg.base.expedition_activity_template[1793013] = {
 		id = 1793013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11268,11 +7884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.expedition_activity_template
-
-	var_9_47[1793113] = {
+	pg.base.expedition_activity_template[1793113] = {
 		id = 1793113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11284,11 +7896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.expedition_activity_template
-
-	var_9_48[1793213] = {
+	pg.base.expedition_activity_template[1793213] = {
 		id = 1793213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11300,11 +7908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.expedition_activity_template
-
-	var_9_49[1793214] = {
+	pg.base.expedition_activity_template[1793214] = {
 		id = 1793214,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11316,11 +7920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.expedition_activity_template
-
-	var_9_50[1793215] = {
+	pg.base.expedition_activity_template[1793215] = {
 		id = 1793215,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11332,11 +7932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.expedition_activity_template
-
-	var_9_51[1793233] = {
+	pg.base.expedition_activity_template[1793233] = {
 		id = 1793233,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11348,11 +7944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.expedition_activity_template
-
-	var_9_52[1793234] = {
+	pg.base.expedition_activity_template[1793234] = {
 		id = 1793234,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11364,11 +7956,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.expedition_activity_template
-
-	var_9_53[1793235] = {
+	pg.base.expedition_activity_template[1793235] = {
 		id = 1793235,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -11380,11 +7968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.expedition_activity_template
-
-	var_9_54[1794013] = {
+	pg.base.expedition_activity_template[1794013] = {
 		id = 1794013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -11396,111 +7980,67 @@ end)()
 			}
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.expedition_activity_template
-
-	var_9_55[1799001] = {
+	pg.base.expedition_activity_template[1799001] = {
 		id = 1799001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.expedition_activity_template
-
-	var_9_56[1799002] = {
+	pg.base.expedition_activity_template[1799002] = {
 		id = 1799002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.expedition_activity_template
-
-	var_9_57[1799003] = {
+	pg.base.expedition_activity_template[1799003] = {
 		id = 1799003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.expedition_activity_template
-
-	var_9_58[1799004] = {
+	pg.base.expedition_activity_template[1799004] = {
 		id = 1799004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.expedition_activity_template
-
-	var_9_59[1800013] = {
+	pg.base.expedition_activity_template[1800013] = {
 		id = 1800013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.expedition_activity_template
-
-	var_9_60[1801013] = {
+	pg.base.expedition_activity_template[1801013] = {
 		id = 1801013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.expedition_activity_template
-
-	var_9_61[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1802013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.expedition_activity_template
-
-	var_9_62[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1803013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.expedition_activity_template
-
-	var_9_63[1804013] = {
+	pg.base.expedition_activity_template[1804013] = {
 		id = 1804013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.expedition_activity_template
-
-	var_9_64[1805013] = {
+	pg.base.expedition_activity_template[1805013] = {
 		id = 1805013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.expedition_activity_template
-
-	var_9_65[1810013] = {
+	pg.base.expedition_activity_template[1810013] = {
 		id = 1810013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -11517,11 +8057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.expedition_activity_template
-
-	var_9_66[1810113] = {
+	pg.base.expedition_activity_template[1810113] = {
 		id = 1810113,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -11538,11 +8074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.expedition_activity_template
-
-	var_9_67[1810213] = {
+	pg.base.expedition_activity_template[1810213] = {
 		id = 1810213,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -11559,11 +8091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.expedition_activity_template
-
-	var_9_68[1811013] = {
+	pg.base.expedition_activity_template[1811013] = {
 		id = 1811013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -11580,11 +8108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.expedition_activity_template
-
-	var_9_69[1811113] = {
+	pg.base.expedition_activity_template[1811113] = {
 		id = 1811113,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -11601,11 +8125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.expedition_activity_template
-
-	var_9_70[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1811213,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -11622,11 +8142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.expedition_activity_template
-
-	var_9_71[1812013] = {
+	pg.base.expedition_activity_template[1812013] = {
 		id = 1812013,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -11643,11 +8159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.expedition_activity_template
-
-	var_9_72[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1812113,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -11664,11 +8176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.expedition_activity_template
-
-	var_9_73[1812213] = {
+	pg.base.expedition_activity_template[1812213] = {
 		id = 1812213,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -11685,11 +8193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.expedition_activity_template
-
-	var_9_74[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1813013,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -11706,11 +8210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.expedition_activity_template
-
-	var_9_75[1813113] = {
+	pg.base.expedition_activity_template[1813113] = {
 		id = 1813113,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -11727,11 +8227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.expedition_activity_template
-
-	var_9_76[1813213] = {
+	pg.base.expedition_activity_template[1813213] = {
 		id = 1813213,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -11748,11 +8244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.expedition_activity_template
-
-	var_9_77[1814013] = {
+	pg.base.expedition_activity_template[1814013] = {
 		id = 1814013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -11774,161 +8266,97 @@ end)()
 			}
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.expedition_activity_template
-
-	var_9_78[1819101] = {
+	pg.base.expedition_activity_template[1819101] = {
 		id = 1819101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.expedition_activity_template
-
-	var_9_79[1819201] = {
+	pg.base.expedition_activity_template[1819201] = {
 		id = 1819201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.expedition_activity_template
-
-	var_9_80[1819202] = {
+	pg.base.expedition_activity_template[1819202] = {
 		id = 1819202,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.expedition_activity_template
-
-	var_9_81[1819301] = {
+	pg.base.expedition_activity_template[1819301] = {
 		id = 1819301,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.expedition_activity_template
-
-	var_9_82[1819302] = {
+	pg.base.expedition_activity_template[1819302] = {
 		id = 1819302,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.expedition_activity_template
-
-	var_9_83[1819303] = {
+	pg.base.expedition_activity_template[1819303] = {
 		id = 1819303,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.expedition_activity_template
-
-	var_9_84[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1819401,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.expedition_activity_template
-
-	var_9_85[10] = {
+	pg.base.expedition_activity_template[10] = {
 		id = 1819402,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.expedition_activity_template
-
-	var_9_86[11] = {
+	pg.base.expedition_activity_template[11] = {
 		id = 1819403,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.expedition_activity_template
-
-	var_9_87[12] = {
+	pg.base.expedition_activity_template[12] = {
 		id = 1819404,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.expedition_activity_template
-
-	var_9_88[1819501] = {
+	pg.base.expedition_activity_template[1819501] = {
 		id = 1819501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.expedition_activity_template
-
-	var_9_89[1819502] = {
+	pg.base.expedition_activity_template[1819502] = {
 		id = 1819502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.expedition_activity_template
-
-	var_9_90[1819503] = {
+	pg.base.expedition_activity_template[1819503] = {
 		id = 1819503,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.expedition_activity_template
-
-	var_9_91[1819504] = {
+	pg.base.expedition_activity_template[1819504] = {
 		id = 1819504,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.expedition_activity_template
-
-	var_9_92[1819505] = {
+	pg.base.expedition_activity_template[1819505] = {
 		id = 1819505,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.expedition_activity_template
-
-	var_9_93[1820013] = {
+	pg.base.expedition_activity_template[1820013] = {
 		id = 1820013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -11940,11 +8368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.expedition_activity_template
-
-	var_9_94[1821013] = {
+	pg.base.expedition_activity_template[1821013] = {
 		id = 1821013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -11956,11 +8380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.expedition_activity_template
-
-	var_9_95[1822013] = {
+	pg.base.expedition_activity_template[1822013] = {
 		id = 1822013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -11972,11 +8392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.expedition_activity_template
-
-	var_9_96[1823013] = {
+	pg.base.expedition_activity_template[1823013] = {
 		id = 1823013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -11988,11 +8404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.expedition_activity_template
-
-	var_9_97[1827013] = {
+	pg.base.expedition_activity_template[1827013] = {
 		id = 1827013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12004,11 +8416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.expedition_activity_template
-
-	var_9_98[1828013] = {
+	pg.base.expedition_activity_template[1828013] = {
 		id = 1828013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12020,8 +8428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.expedition_activity_template[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1829013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12037,11 +8444,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.expedition_activity_template
-
-	var_10_0[1830013] = {
+	pg.base.expedition_activity_template[1830013] = {
 		id = 1830013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12053,11 +8456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.expedition_activity_template
-
-	var_10_1[1830113] = {
+	pg.base.expedition_activity_template[1830113] = {
 		id = 1830113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12069,11 +8468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.expedition_activity_template
-
-	var_10_2[1830213] = {
+	pg.base.expedition_activity_template[1830213] = {
 		id = 1830213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12085,11 +8480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.expedition_activity_template
-
-	var_10_3[1831013] = {
+	pg.base.expedition_activity_template[1831013] = {
 		id = 1831013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12101,11 +8492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.expedition_activity_template
-
-	var_10_4[1831113] = {
+	pg.base.expedition_activity_template[1831113] = {
 		id = 1831113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12117,11 +8504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.expedition_activity_template
-
-	var_10_5[1831213] = {
+	pg.base.expedition_activity_template[1831213] = {
 		id = 1831213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12133,11 +8516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.expedition_activity_template
-
-	var_10_6[1832013] = {
+	pg.base.expedition_activity_template[1832013] = {
 		id = 1832013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12149,11 +8528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.expedition_activity_template
-
-	var_10_7[1832113] = {
+	pg.base.expedition_activity_template[1832113] = {
 		id = 1832113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12165,11 +8540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.expedition_activity_template
-
-	var_10_8[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1832213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12181,11 +8552,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.expedition_activity_template
-
-	var_10_9[1833013] = {
+	pg.base.expedition_activity_template[1833013] = {
 		id = 1833013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12197,11 +8564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.expedition_activity_template
-
-	var_10_10[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1833113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12213,11 +8576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.expedition_activity_template
-
-	var_10_11[1833213] = {
+	pg.base.expedition_activity_template[1833213] = {
 		id = 1833213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12229,11 +8588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.expedition_activity_template
-
-	var_10_12[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1834013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12245,11 +8600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.expedition_activity_template
-
-	var_10_13[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1840013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12261,11 +8612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.expedition_activity_template
-
-	var_10_14[1841013] = {
+	pg.base.expedition_activity_template[1841013] = {
 		id = 1841013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12277,11 +8624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.expedition_activity_template
-
-	var_10_15[1842013] = {
+	pg.base.expedition_activity_template[1842013] = {
 		id = 1842013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12293,11 +8636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.expedition_activity_template
-
-	var_10_16[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1850013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12309,11 +8648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.expedition_activity_template
-
-	var_10_17[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1850113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12325,11 +8660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.expedition_activity_template
-
-	var_10_18[1850213] = {
+	pg.base.expedition_activity_template[1850213] = {
 		id = 1850213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12341,11 +8672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.expedition_activity_template
-
-	var_10_19[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1851013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12357,11 +8684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.expedition_activity_template
-
-	var_10_20[1851113] = {
+	pg.base.expedition_activity_template[1851113] = {
 		id = 1851113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12373,11 +8696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.expedition_activity_template
-
-	var_10_21[1851213] = {
+	pg.base.expedition_activity_template[1851213] = {
 		id = 1851213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12389,11 +8708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.expedition_activity_template
-
-	var_10_22[1852013] = {
+	pg.base.expedition_activity_template[1852013] = {
 		id = 1852013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12405,11 +8720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.expedition_activity_template
-
-	var_10_23[1852113] = {
+	pg.base.expedition_activity_template[1852113] = {
 		id = 1852113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12421,11 +8732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.expedition_activity_template
-
-	var_10_24[1852213] = {
+	pg.base.expedition_activity_template[1852213] = {
 		id = 1852213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12437,11 +8744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.expedition_activity_template
-
-	var_10_25[1853013] = {
+	pg.base.expedition_activity_template[1853013] = {
 		id = 1853013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12453,11 +8756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.expedition_activity_template
-
-	var_10_26[1853113] = {
+	pg.base.expedition_activity_template[1853113] = {
 		id = 1853113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12469,11 +8768,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.expedition_activity_template
-
-	var_10_27[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1853213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12485,11 +8780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.expedition_activity_template
-
-	var_10_28[1854013] = {
+	pg.base.expedition_activity_template[1854013] = {
 		id = 1854013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12501,11 +8792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.expedition_activity_template
-
-	var_10_29[1860013] = {
+	pg.base.expedition_activity_template[1860013] = {
 		id = 1860013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12517,11 +8804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.expedition_activity_template
-
-	var_10_30[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1861013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12533,11 +8816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.expedition_activity_template
-
-	var_10_31[1862013] = {
+	pg.base.expedition_activity_template[1862013] = {
 		id = 1862013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12549,11 +8828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.expedition_activity_template
-
-	var_10_32[1863013] = {
+	pg.base.expedition_activity_template[1863013] = {
 		id = 1863013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12565,11 +8840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.expedition_activity_template
-
-	var_10_33[1864013] = {
+	pg.base.expedition_activity_template[1864013] = {
 		id = 1864013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12581,11 +8852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.expedition_activity_template
-
-	var_10_34[1865013] = {
+	pg.base.expedition_activity_template[1865013] = {
 		id = 1865013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12597,11 +8864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.expedition_activity_template
-
-	var_10_35[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1866013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12613,11 +8876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.expedition_activity_template
-
-	var_10_36[1870013] = {
+	pg.base.expedition_activity_template[1870013] = {
 		id = 1870013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12634,11 +8893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.expedition_activity_template
-
-	var_10_37[1871013] = {
+	pg.base.expedition_activity_template[1871013] = {
 		id = 1871013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12655,11 +8910,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.expedition_activity_template
-
-	var_10_38[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1872013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12676,11 +8927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.expedition_activity_template
-
-	var_10_39[1873013] = {
+	pg.base.expedition_activity_template[1873013] = {
 		id = 1873013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12697,11 +8944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.expedition_activity_template
-
-	var_10_40[1874013] = {
+	pg.base.expedition_activity_template[1874013] = {
 		id = 1874013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12718,11 +8961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.expedition_activity_template
-
-	var_10_41[1875013] = {
+	pg.base.expedition_activity_template[1875013] = {
 		id = 1875013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12739,11 +8978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.expedition_activity_template
-
-	var_10_42[1880013] = {
+	pg.base.expedition_activity_template[1880013] = {
 		id = 1880013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12755,11 +8990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.expedition_activity_template
-
-	var_10_43[1880113] = {
+	pg.base.expedition_activity_template[1880113] = {
 		id = 1880113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12771,11 +9002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.expedition_activity_template
-
-	var_10_44[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1880213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12787,11 +9014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.expedition_activity_template
-
-	var_10_45[1881013] = {
+	pg.base.expedition_activity_template[1881013] = {
 		id = 1881013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12803,11 +9026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.expedition_activity_template
-
-	var_10_46[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1881113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12819,11 +9038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.expedition_activity_template
-
-	var_10_47[1881213] = {
+	pg.base.expedition_activity_template[1881213] = {
 		id = 1881213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -12835,11 +9050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.expedition_activity_template
-
-	var_10_48[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1882013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12851,11 +9062,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.expedition_activity_template
-
-	var_10_49[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1882113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12867,11 +9074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.expedition_activity_template
-
-	var_10_50[1882213] = {
+	pg.base.expedition_activity_template[1882213] = {
 		id = 1882213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12883,11 +9086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.expedition_activity_template
-
-	var_10_51[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1883013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12899,11 +9098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.expedition_activity_template
-
-	var_10_52[1883113] = {
+	pg.base.expedition_activity_template[1883113] = {
 		id = 1883113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12915,11 +9110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.expedition_activity_template
-
-	var_10_53[1883213] = {
+	pg.base.expedition_activity_template[1883213] = {
 		id = 1883213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12931,11 +9122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.expedition_activity_template
-
-	var_10_54[1884013] = {
+	pg.base.expedition_activity_template[1884013] = {
 		id = 1884013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -12952,61 +9139,37 @@ end)()
 			}
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.expedition_activity_template
-
-	var_10_55[1889001] = {
+	pg.base.expedition_activity_template[1889001] = {
 		id = 1889001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.expedition_activity_template
-
-	var_10_56[1889002] = {
+	pg.base.expedition_activity_template[1889002] = {
 		id = 1889002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.expedition_activity_template
-
-	var_10_57[1889003] = {
+	pg.base.expedition_activity_template[1889003] = {
 		id = 1889003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.expedition_activity_template
-
-	var_10_58[1889004] = {
+	pg.base.expedition_activity_template[1889004] = {
 		id = 1889004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.expedition_activity_template
-
-	var_10_59[1889005] = {
+	pg.base.expedition_activity_template[1889005] = {
 		id = 1889005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.expedition_activity_template
-
-	var_10_60[1890013] = {
+	pg.base.expedition_activity_template[1890013] = {
 		id = 1890013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13018,11 +9181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.expedition_activity_template
-
-	var_10_61[1890113] = {
+	pg.base.expedition_activity_template[1890113] = {
 		id = 1890113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13034,11 +9193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.expedition_activity_template
-
-	var_10_62[1890213] = {
+	pg.base.expedition_activity_template[1890213] = {
 		id = 1890213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13050,11 +9205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.expedition_activity_template
-
-	var_10_63[1891013] = {
+	pg.base.expedition_activity_template[1891013] = {
 		id = 1891013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13066,11 +9217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.expedition_activity_template
-
-	var_10_64[1891113] = {
+	pg.base.expedition_activity_template[1891113] = {
 		id = 1891113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13082,11 +9229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.expedition_activity_template
-
-	var_10_65[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1891213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13098,11 +9241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.expedition_activity_template
-
-	var_10_66[1892013] = {
+	pg.base.expedition_activity_template[1892013] = {
 		id = 1892013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13114,11 +9253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.expedition_activity_template
-
-	var_10_67[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1892113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13130,11 +9265,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.expedition_activity_template
-
-	var_10_68[1892213] = {
+	pg.base.expedition_activity_template[1892213] = {
 		id = 1892213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13146,11 +9277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.expedition_activity_template
-
-	var_10_69[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1893013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13162,11 +9289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.expedition_activity_template
-
-	var_10_70[1893113] = {
+	pg.base.expedition_activity_template[1893113] = {
 		id = 1893113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13178,11 +9301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.expedition_activity_template
-
-	var_10_71[1893213] = {
+	pg.base.expedition_activity_template[1893213] = {
 		id = 1893213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13194,11 +9313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.expedition_activity_template
-
-	var_10_72[1894013] = {
+	pg.base.expedition_activity_template[1894013] = {
 		id = 1894013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13210,11 +9325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.expedition_activity_template
-
-	var_10_73[1910013] = {
+	pg.base.expedition_activity_template[1910013] = {
 		id = 1910013,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -13231,11 +9342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.expedition_activity_template
-
-	var_10_74[1910113] = {
+	pg.base.expedition_activity_template[1910113] = {
 		id = 1910113,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -13252,11 +9359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.expedition_activity_template
-
-	var_10_75[1910213] = {
+	pg.base.expedition_activity_template[1910213] = {
 		id = 1910213,
 		bonus_rate = 5,
 		bonus_time = 1,
@@ -13273,11 +9376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.expedition_activity_template
-
-	var_10_76[1911013] = {
+	pg.base.expedition_activity_template[1911013] = {
 		id = 1911013,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -13294,11 +9393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.expedition_activity_template
-
-	var_10_77[1911113] = {
+	pg.base.expedition_activity_template[1911113] = {
 		id = 1911113,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -13315,11 +9410,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.expedition_activity_template
-
-	var_10_78[1911213] = {
+	pg.base.expedition_activity_template[1911213] = {
 		id = 1911213,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -13336,11 +9427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.expedition_activity_template
-
-	var_10_79[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1914013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13357,11 +9444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.expedition_activity_template
-
-	var_10_80[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1920013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13378,11 +9461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.expedition_activity_template
-
-	var_10_81[1920113] = {
+	pg.base.expedition_activity_template[1920113] = {
 		id = 1920113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13399,11 +9478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.expedition_activity_template
-
-	var_10_82[1920213] = {
+	pg.base.expedition_activity_template[1920213] = {
 		id = 1920213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13420,11 +9495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.expedition_activity_template
-
-	var_10_83[1921013] = {
+	pg.base.expedition_activity_template[1921013] = {
 		id = 1921013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13441,11 +9512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.expedition_activity_template
-
-	var_10_84[1921113] = {
+	pg.base.expedition_activity_template[1921113] = {
 		id = 1921113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13462,11 +9529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.expedition_activity_template
-
-	var_10_85[1921213] = {
+	pg.base.expedition_activity_template[1921213] = {
 		id = 1921213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13483,11 +9546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.expedition_activity_template
-
-	var_10_86[1922013] = {
+	pg.base.expedition_activity_template[1922013] = {
 		id = 1922013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13504,11 +9563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.expedition_activity_template
-
-	var_10_87[1922113] = {
+	pg.base.expedition_activity_template[1922113] = {
 		id = 1922113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13525,11 +9580,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.expedition_activity_template
-
-	var_10_88[1922213] = {
+	pg.base.expedition_activity_template[1922213] = {
 		id = 1922213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13546,11 +9597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.expedition_activity_template
-
-	var_10_89[1923013] = {
+	pg.base.expedition_activity_template[1923013] = {
 		id = 1923013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13567,11 +9614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.expedition_activity_template
-
-	var_10_90[1923113] = {
+	pg.base.expedition_activity_template[1923113] = {
 		id = 1923113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13588,11 +9631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.expedition_activity_template
-
-	var_10_91[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1923213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13609,11 +9648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.expedition_activity_template
-
-	var_10_92[1924013] = {
+	pg.base.expedition_activity_template[1924013] = {
 		id = 1924013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13635,68 +9670,43 @@ end)()
 			}
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.expedition_activity_template
-
-	var_10_93[1930101] = {
+	pg.base.expedition_activity_template[1930101] = {
 		id = 1930101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.expedition_activity_template
-
-	var_10_94[1930201] = {
+	pg.base.expedition_activity_template[1930201] = {
 		id = 1930201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.expedition_activity_template
-
-	var_10_95[1930202] = {
+	pg.base.expedition_activity_template[1930202] = {
 		id = 1930202,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.expedition_activity_template
-
-	var_10_96[1930301] = {
+	pg.base.expedition_activity_template[1930301] = {
 		id = 1930301,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.expedition_activity_template
-
-	var_10_97[1930302] = {
+	pg.base.expedition_activity_template[1930302] = {
 		id = 1930302,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.expedition_activity_template
-
-	var_10_98[1930303] = {
+	pg.base.expedition_activity_template[1930303] = {
 		id = 1930303,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_10_98
-	var_10_98.base.expedition_activity_template[1930401] = {
+	pg.base.expedition_activity_template[1930401] = {
 		id = 1930401,
 		bonus_rate = 0,
 		pt_drop_display = "",
@@ -13706,91 +9716,55 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.expedition_activity_template
-
-	var_11_0[1930402] = {
+	pg.base.expedition_activity_template[1930402] = {
 		id = 1930402,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.expedition_activity_template
-
-	var_11_1[1930403] = {
+	pg.base.expedition_activity_template[1930403] = {
 		id = 1930403,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.expedition_activity_template
-
-	var_11_2[1930404] = {
+	pg.base.expedition_activity_template[1930404] = {
 		id = 1930404,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.expedition_activity_template
-
-	var_11_3[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1930501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.expedition_activity_template
-
-	var_11_4[6] = {
+	pg.base.expedition_activity_template[6] = {
 		id = 1930502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.expedition_activity_template
-
-	var_11_5[7] = {
+	pg.base.expedition_activity_template[7] = {
 		id = 1930503,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.expedition_activity_template
-
-	var_11_6[8] = {
+	pg.base.expedition_activity_template[8] = {
 		id = 1930504,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.expedition_activity_template
-
-	var_11_7[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1930505,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.expedition_activity_template
-
-	var_11_8[1940013] = {
+	pg.base.expedition_activity_template[1940013] = {
 		id = 1940013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13802,11 +9776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.expedition_activity_template
-
-	var_11_9[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1941013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13818,11 +9788,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.expedition_activity_template
-
-	var_11_10[1942013] = {
+	pg.base.expedition_activity_template[1942013] = {
 		id = 1942013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13834,11 +9800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.expedition_activity_template
-
-	var_11_11[1943013] = {
+	pg.base.expedition_activity_template[1943013] = {
 		id = 1943013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13850,11 +9812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.expedition_activity_template
-
-	var_11_12[1944013] = {
+	pg.base.expedition_activity_template[1944013] = {
 		id = 1944013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13866,11 +9824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.expedition_activity_template
-
-	var_11_13[1945013] = {
+	pg.base.expedition_activity_template[1945013] = {
 		id = 1945013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13882,11 +9836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.expedition_activity_template
-
-	var_11_14[1944101] = {
+	pg.base.expedition_activity_template[1944101] = {
 		id = 1944101,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13898,11 +9848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.expedition_activity_template
-
-	var_11_15[1944102] = {
+	pg.base.expedition_activity_template[1944102] = {
 		id = 1944102,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13914,11 +9860,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.expedition_activity_template
-
-	var_11_16[1944103] = {
+	pg.base.expedition_activity_template[1944103] = {
 		id = 1944103,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13930,11 +9872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.expedition_activity_template
-
-	var_11_17[1944104] = {
+	pg.base.expedition_activity_template[1944104] = {
 		id = 1944104,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13946,11 +9884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.expedition_activity_template
-
-	var_11_18[1944105] = {
+	pg.base.expedition_activity_template[1944105] = {
 		id = 1944105,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -13962,11 +9896,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.expedition_activity_template
-
-	var_11_19[1950013] = {
+	pg.base.expedition_activity_template[1950013] = {
 		id = 1950013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13978,11 +9908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.expedition_activity_template
-
-	var_11_20[1950113] = {
+	pg.base.expedition_activity_template[1950113] = {
 		id = 1950113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -13994,11 +9920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.expedition_activity_template
-
-	var_11_21[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1950213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14010,11 +9932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.expedition_activity_template
-
-	var_11_22[1951013] = {
+	pg.base.expedition_activity_template[1951013] = {
 		id = 1951013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14026,11 +9944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.expedition_activity_template
-
-	var_11_23[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 1951113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14042,11 +9956,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.expedition_activity_template
-
-	var_11_24[1951213] = {
+	pg.base.expedition_activity_template[1951213] = {
 		id = 1951213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14058,11 +9968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.expedition_activity_template
-
-	var_11_25[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1952013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14074,11 +9980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.expedition_activity_template
-
-	var_11_26[1952113] = {
+	pg.base.expedition_activity_template[1952113] = {
 		id = 1952113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14090,11 +9992,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.expedition_activity_template
-
-	var_11_27[1952213] = {
+	pg.base.expedition_activity_template[1952213] = {
 		id = 1952213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14106,11 +10004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.expedition_activity_template
-
-	var_11_28[1953013] = {
+	pg.base.expedition_activity_template[1953013] = {
 		id = 1953013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14122,11 +10016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.expedition_activity_template
-
-	var_11_29[1953113] = {
+	pg.base.expedition_activity_template[1953113] = {
 		id = 1953113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14138,11 +10028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.expedition_activity_template
-
-	var_11_30[1953213] = {
+	pg.base.expedition_activity_template[1953213] = {
 		id = 1953213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14154,11 +10040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.expedition_activity_template
-
-	var_11_31[1954013] = {
+	pg.base.expedition_activity_template[1954013] = {
 		id = 1954013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14170,11 +10052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.expedition_activity_template
-
-	var_11_32[1960013] = {
+	pg.base.expedition_activity_template[1960013] = {
 		id = 1960013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14186,11 +10064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.expedition_activity_template
-
-	var_11_33[1960113] = {
+	pg.base.expedition_activity_template[1960113] = {
 		id = 1960113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14202,11 +10076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.expedition_activity_template
-
-	var_11_34[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1960213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14218,11 +10088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.expedition_activity_template
-
-	var_11_35[1961013] = {
+	pg.base.expedition_activity_template[1961013] = {
 		id = 1961013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14234,11 +10100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.expedition_activity_template
-
-	var_11_36[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1961113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14250,11 +10112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.expedition_activity_template
-
-	var_11_37[1961213] = {
+	pg.base.expedition_activity_template[1961213] = {
 		id = 1961213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14266,11 +10124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.expedition_activity_template
-
-	var_11_38[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1962013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14282,11 +10136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.expedition_activity_template
-
-	var_11_39[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1962113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14298,11 +10148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.expedition_activity_template
-
-	var_11_40[1962213] = {
+	pg.base.expedition_activity_template[1962213] = {
 		id = 1962213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14314,11 +10160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.expedition_activity_template
-
-	var_11_41[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 1963013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14330,11 +10172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.expedition_activity_template
-
-	var_11_42[1963113] = {
+	pg.base.expedition_activity_template[1963113] = {
 		id = 1963113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14346,11 +10184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.expedition_activity_template
-
-	var_11_43[1963213] = {
+	pg.base.expedition_activity_template[1963213] = {
 		id = 1963213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14362,11 +10196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.expedition_activity_template
-
-	var_11_44[1964013] = {
+	pg.base.expedition_activity_template[1964013] = {
 		id = 1964013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14383,11 +10213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.expedition_activity_template
-
-	var_11_45[1970013] = {
+	pg.base.expedition_activity_template[1970013] = {
 		id = 1970013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14399,11 +10225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.expedition_activity_template
-
-	var_11_46[1971013] = {
+	pg.base.expedition_activity_template[1971013] = {
 		id = 1971013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14415,11 +10237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.expedition_activity_template
-
-	var_11_47[1972013] = {
+	pg.base.expedition_activity_template[1972013] = {
 		id = 1972013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14431,11 +10249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.expedition_activity_template
-
-	var_11_48[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1973013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14447,11 +10261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.expedition_activity_template
-
-	var_11_49[1974013] = {
+	pg.base.expedition_activity_template[1974013] = {
 		id = 1974013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14463,11 +10273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.expedition_activity_template
-
-	var_11_50[1975013] = {
+	pg.base.expedition_activity_template[1975013] = {
 		id = 1975013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14479,11 +10285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.expedition_activity_template
-
-	var_11_51[1976013] = {
+	pg.base.expedition_activity_template[1976013] = {
 		id = 1976013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -14495,411 +10297,247 @@ end)()
 			}
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.expedition_activity_template
-
-	var_11_52[1980001] = {
+	pg.base.expedition_activity_template[1980001] = {
 		id = 1980001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.expedition_activity_template
-
-	var_11_53[1980002] = {
+	pg.base.expedition_activity_template[1980002] = {
 		id = 1980002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.expedition_activity_template
-
-	var_11_54[1980101] = {
+	pg.base.expedition_activity_template[1980101] = {
 		id = 1980101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.expedition_activity_template
-
-	var_11_55[1980102] = {
+	pg.base.expedition_activity_template[1980102] = {
 		id = 1980102,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.expedition_activity_template
-
-	var_11_56[1981001] = {
+	pg.base.expedition_activity_template[1981001] = {
 		id = 1981001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.expedition_activity_template
-
-	var_11_57[1981002] = {
+	pg.base.expedition_activity_template[1981002] = {
 		id = 1981002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.expedition_activity_template
-
-	var_11_58[1981003] = {
+	pg.base.expedition_activity_template[1981003] = {
 		id = 1981003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.expedition_activity_template
-
-	var_11_59[1981004] = {
+	pg.base.expedition_activity_template[1981004] = {
 		id = 1981004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.expedition_activity_template
-
-	var_11_60[1981005] = {
+	pg.base.expedition_activity_template[1981005] = {
 		id = 1981005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.expedition_activity_template
-
-	var_11_61[1981006] = {
+	pg.base.expedition_activity_template[1981006] = {
 		id = 1981006,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.expedition_activity_template
-
-	var_11_62[1982001] = {
+	pg.base.expedition_activity_template[1982001] = {
 		id = 1982001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.expedition_activity_template
-
-	var_11_63[1982002] = {
+	pg.base.expedition_activity_template[1982002] = {
 		id = 1982002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.expedition_activity_template
-
-	var_11_64[1982003] = {
+	pg.base.expedition_activity_template[1982003] = {
 		id = 1982003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.expedition_activity_template
-
-	var_11_65[1982004] = {
+	pg.base.expedition_activity_template[1982004] = {
 		id = 1982004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.expedition_activity_template
-
-	var_11_66[1982005] = {
+	pg.base.expedition_activity_template[1982005] = {
 		id = 1982005,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.expedition_activity_template
-
-	var_11_67[1982006] = {
+	pg.base.expedition_activity_template[1982006] = {
 		id = 1982006,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.expedition_activity_template
-
-	var_11_68[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1983001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.expedition_activity_template
-
-	var_11_69[26] = {
+	pg.base.expedition_activity_template[26] = {
 		id = 1983002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.expedition_activity_template
-
-	var_11_70[27] = {
+	pg.base.expedition_activity_template[27] = {
 		id = 1983003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.expedition_activity_template
-
-	var_11_71[28] = {
+	pg.base.expedition_activity_template[28] = {
 		id = 1983004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.expedition_activity_template
-
-	var_11_72[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 1984001,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.expedition_activity_template
-
-	var_11_73[2] = {
+	pg.base.expedition_activity_template[2] = {
 		id = 1984002,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.expedition_activity_template
-
-	var_11_74[3] = {
+	pg.base.expedition_activity_template[3] = {
 		id = 1984003,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.expedition_activity_template
-
-	var_11_75[4] = {
+	pg.base.expedition_activity_template[4] = {
 		id = 1984004,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.expedition_activity_template
-
-	var_11_76[1981007] = {
+	pg.base.expedition_activity_template[1981007] = {
 		id = 1981007,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.expedition_activity_template
-
-	var_11_77[1981008] = {
+	pg.base.expedition_activity_template[1981008] = {
 		id = 1981008,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.expedition_activity_template
-
-	var_11_78[1981009] = {
+	pg.base.expedition_activity_template[1981009] = {
 		id = 1981009,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.expedition_activity_template
-
-	var_11_79[1981010] = {
+	pg.base.expedition_activity_template[1981010] = {
 		id = 1981010,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.expedition_activity_template
-
-	var_11_80[1981011] = {
+	pg.base.expedition_activity_template[1981011] = {
 		id = 1981011,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.expedition_activity_template
-
-	var_11_81[1981012] = {
+	pg.base.expedition_activity_template[1981012] = {
 		id = 1981012,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.expedition_activity_template
-
-	var_11_82[1981013] = {
+	pg.base.expedition_activity_template[1981013] = {
 		id = 1981013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.expedition_activity_template
-
-	var_11_83[1981014] = {
+	pg.base.expedition_activity_template[1981014] = {
 		id = 1981014,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.expedition_activity_template
-
-	var_11_84[1982007] = {
+	pg.base.expedition_activity_template[1982007] = {
 		id = 1982007,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.expedition_activity_template
-
-	var_11_85[1982008] = {
+	pg.base.expedition_activity_template[1982008] = {
 		id = 1982008,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.expedition_activity_template
-
-	var_11_86[1982009] = {
+	pg.base.expedition_activity_template[1982009] = {
 		id = 1982009,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.expedition_activity_template
-
-	var_11_87[1982010] = {
+	pg.base.expedition_activity_template[1982010] = {
 		id = 1982010,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.expedition_activity_template
-
-	var_11_88[1982011] = {
+	pg.base.expedition_activity_template[1982011] = {
 		id = 1982011,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.expedition_activity_template
-
-	var_11_89[1982012] = {
+	pg.base.expedition_activity_template[1982012] = {
 		id = 1982012,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.expedition_activity_template
-
-	var_11_90[1982013] = {
+	pg.base.expedition_activity_template[1982013] = {
 		id = 1982013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.expedition_activity_template
-
-	var_11_91[1982014] = {
+	pg.base.expedition_activity_template[1982014] = {
 		id = 1982014,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.expedition_activity_template
-
-	var_11_92[1990013] = {
+	pg.base.expedition_activity_template[1990013] = {
 		id = 1990013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14916,11 +10554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.expedition_activity_template
-
-	var_11_93[1990113] = {
+	pg.base.expedition_activity_template[1990113] = {
 		id = 1990113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14937,11 +10571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.expedition_activity_template
-
-	var_11_94[1990213] = {
+	pg.base.expedition_activity_template[1990213] = {
 		id = 1990213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14958,11 +10588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.expedition_activity_template
-
-	var_11_95[1991013] = {
+	pg.base.expedition_activity_template[1991013] = {
 		id = 1991013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -14979,11 +10605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.expedition_activity_template
-
-	var_11_96[1991113] = {
+	pg.base.expedition_activity_template[1991113] = {
 		id = 1991113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15000,11 +10622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.expedition_activity_template
-
-	var_11_97[1991213] = {
+	pg.base.expedition_activity_template[1991213] = {
 		id = 1991213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15021,11 +10639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.expedition_activity_template
-
-	var_11_98[1992013] = {
+	pg.base.expedition_activity_template[1992013] = {
 		id = 1992013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15042,8 +10656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.expedition_activity_template[1992113] = {
+	pg.base.expedition_activity_template[1992113] = {
 		id = 1992113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15064,11 +10677,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.expedition_activity_template
-
-	var_12_0[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 1992213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15085,11 +10694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.expedition_activity_template
-
-	var_12_1[1993013] = {
+	pg.base.expedition_activity_template[1993013] = {
 		id = 1993013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15106,11 +10711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.expedition_activity_template
-
-	var_12_2[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 1993113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15127,11 +10728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.expedition_activity_template
-
-	var_12_3[1993213] = {
+	pg.base.expedition_activity_template[1993213] = {
 		id = 1993213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15148,11 +10745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.expedition_activity_template
-
-	var_12_4[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1994013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15174,211 +10767,127 @@ end)()
 			}
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.expedition_activity_template
-
-	var_12_5[1999101] = {
+	pg.base.expedition_activity_template[1999101] = {
 		id = 1999101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.expedition_activity_template
-
-	var_12_6[1999201] = {
+	pg.base.expedition_activity_template[1999201] = {
 		id = 1999201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.expedition_activity_template
-
-	var_12_7[1999202] = {
+	pg.base.expedition_activity_template[1999202] = {
 		id = 1999202,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.expedition_activity_template
-
-	var_12_8[1999301] = {
+	pg.base.expedition_activity_template[1999301] = {
 		id = 1999301,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.expedition_activity_template
-
-	var_12_9[1999302] = {
+	pg.base.expedition_activity_template[1999302] = {
 		id = 1999302,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.expedition_activity_template
-
-	var_12_10[1999303] = {
+	pg.base.expedition_activity_template[1999303] = {
 		id = 1999303,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.expedition_activity_template
-
-	var_12_11[1999401] = {
+	pg.base.expedition_activity_template[1999401] = {
 		id = 1999401,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.expedition_activity_template
-
-	var_12_12[1999402] = {
+	pg.base.expedition_activity_template[1999402] = {
 		id = 1999402,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.expedition_activity_template
-
-	var_12_13[1999403] = {
+	pg.base.expedition_activity_template[1999403] = {
 		id = 1999403,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.expedition_activity_template
-
-	var_12_14[1999404] = {
+	pg.base.expedition_activity_template[1999404] = {
 		id = 1999404,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.expedition_activity_template
-
-	var_12_15[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 1999501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.expedition_activity_template
-
-	var_12_16[14] = {
+	pg.base.expedition_activity_template[14] = {
 		id = 1999502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.expedition_activity_template
-
-	var_12_17[15] = {
+	pg.base.expedition_activity_template[15] = {
 		id = 1999503,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.expedition_activity_template
-
-	var_12_18[16] = {
+	pg.base.expedition_activity_template[16] = {
 		id = 1999504,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.expedition_activity_template
-
-	var_12_19[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 1999505,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.expedition_activity_template
-
-	var_12_20[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 1999901,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.expedition_activity_template
-
-	var_12_21[30] = {
+	pg.base.expedition_activity_template[30] = {
 		id = 1999902,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.expedition_activity_template
-
-	var_12_22[31] = {
+	pg.base.expedition_activity_template[31] = {
 		id = 1999903,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.expedition_activity_template
-
-	var_12_23[1999904] = {
+	pg.base.expedition_activity_template[1999904] = {
 		id = 1999904,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.expedition_activity_template
-
-	var_12_24[1999905] = {
+	pg.base.expedition_activity_template[1999905] = {
 		id = 1999905,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.expedition_activity_template
-
-	var_12_25[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 2000013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15390,11 +10899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.expedition_activity_template
-
-	var_12_26[2000113] = {
+	pg.base.expedition_activity_template[2000113] = {
 		id = 2000113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15406,11 +10911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.expedition_activity_template
-
-	var_12_27[2000213] = {
+	pg.base.expedition_activity_template[2000213] = {
 		id = 2000213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15422,11 +10923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.expedition_activity_template
-
-	var_12_28[2001013] = {
+	pg.base.expedition_activity_template[2001013] = {
 		id = 2001013,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15438,11 +10935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.expedition_activity_template
-
-	var_12_29[2001113] = {
+	pg.base.expedition_activity_template[2001113] = {
 		id = 2001113,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15454,11 +10947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.expedition_activity_template
-
-	var_12_30[2001213] = {
+	pg.base.expedition_activity_template[2001213] = {
 		id = 2001213,
 		bonus_rate = 0,
 		bonus_time = 1,
@@ -15470,11 +10959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.expedition_activity_template
-
-	var_12_31[2002013] = {
+	pg.base.expedition_activity_template[2002013] = {
 		id = 2002013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15486,11 +10971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.expedition_activity_template
-
-	var_12_32[2002113] = {
+	pg.base.expedition_activity_template[2002113] = {
 		id = 2002113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15502,11 +10983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.expedition_activity_template
-
-	var_12_33[2002213] = {
+	pg.base.expedition_activity_template[2002213] = {
 		id = 2002213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15518,11 +10995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.expedition_activity_template
-
-	var_12_34[2003013] = {
+	pg.base.expedition_activity_template[2003013] = {
 		id = 2003013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15534,11 +11007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.expedition_activity_template
-
-	var_12_35[2003113] = {
+	pg.base.expedition_activity_template[2003113] = {
 		id = 2003113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15550,11 +11019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.expedition_activity_template
-
-	var_12_36[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 2003213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15566,11 +11031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.expedition_activity_template
-
-	var_12_37[2004013] = {
+	pg.base.expedition_activity_template[2004013] = {
 		id = 2004013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15582,11 +11043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.expedition_activity_template
-
-	var_12_38[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 2010013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15603,11 +11060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.expedition_activity_template
-
-	var_12_39[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 2010113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15624,11 +11077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.expedition_activity_template
-
-	var_12_40[2010213] = {
+	pg.base.expedition_activity_template[2010213] = {
 		id = 2010213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15645,11 +11094,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.expedition_activity_template
-
-	var_12_41[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 2011013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15666,11 +11111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.expedition_activity_template
-
-	var_12_42[2011113] = {
+	pg.base.expedition_activity_template[2011113] = {
 		id = 2011113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15687,11 +11128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.expedition_activity_template
-
-	var_12_43[2011213] = {
+	pg.base.expedition_activity_template[2011213] = {
 		id = 2011213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15708,11 +11145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.expedition_activity_template
-
-	var_12_44[2014013] = {
+	pg.base.expedition_activity_template[2014013] = {
 		id = 2014013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15729,11 +11162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.expedition_activity_template
-
-	var_12_45[2020013] = {
+	pg.base.expedition_activity_template[2020013] = {
 		id = 2020013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15750,11 +11179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.expedition_activity_template
-
-	var_12_46[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 2021013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15771,11 +11196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.expedition_activity_template
-
-	var_12_47[2022013] = {
+	pg.base.expedition_activity_template[2022013] = {
 		id = 2022013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15792,11 +11213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.expedition_activity_template
-
-	var_12_48[2023013] = {
+	pg.base.expedition_activity_template[2023013] = {
 		id = 2023013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15813,11 +11230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.expedition_activity_template
-
-	var_12_49[2024013] = {
+	pg.base.expedition_activity_template[2024013] = {
 		id = 2024013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15834,11 +11247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.expedition_activity_template
-
-	var_12_50[2030013] = {
+	pg.base.expedition_activity_template[2030013] = {
 		id = 2030013,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -15850,11 +11259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.expedition_activity_template
-
-	var_12_51[2030113] = {
+	pg.base.expedition_activity_template[2030113] = {
 		id = 2030113,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -15866,11 +11271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.expedition_activity_template
-
-	var_12_52[5] = {
+	pg.base.expedition_activity_template[5] = {
 		id = 2030213,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -15882,11 +11283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.expedition_activity_template
-
-	var_12_53[2031013] = {
+	pg.base.expedition_activity_template[2031013] = {
 		id = 2031013,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -15898,11 +11295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.expedition_activity_template
-
-	var_12_54[9] = {
+	pg.base.expedition_activity_template[9] = {
 		id = 2031113,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -15914,11 +11307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.expedition_activity_template
-
-	var_12_55[2031213] = {
+	pg.base.expedition_activity_template[2031213] = {
 		id = 2031213,
 		bonus_rate = 3,
 		bonus_time = 1,
@@ -15930,11 +11319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.expedition_activity_template
-
-	var_12_56[13] = {
+	pg.base.expedition_activity_template[13] = {
 		id = 2032013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15946,11 +11331,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.expedition_activity_template
-
-	var_12_57[2032113] = {
+	pg.base.expedition_activity_template[2032113] = {
 		id = 2032113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15962,11 +11343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.expedition_activity_template
-
-	var_12_58[2032213] = {
+	pg.base.expedition_activity_template[2032213] = {
 		id = 2032213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15978,11 +11355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.expedition_activity_template
-
-	var_12_59[2033013] = {
+	pg.base.expedition_activity_template[2033013] = {
 		id = 2033013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -15994,11 +11367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.expedition_activity_template
-
-	var_12_60[2033113] = {
+	pg.base.expedition_activity_template[2033113] = {
 		id = 2033113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16010,11 +11379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.expedition_activity_template
-
-	var_12_61[2033213] = {
+	pg.base.expedition_activity_template[2033213] = {
 		id = 2033213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16026,11 +11391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.expedition_activity_template
-
-	var_12_62[2034013] = {
+	pg.base.expedition_activity_template[2034013] = {
 		id = 2034013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16047,11 +11408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.expedition_activity_template
-
-	var_12_63[2040013] = {
+	pg.base.expedition_activity_template[2040013] = {
 		id = 2040013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16063,11 +11420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.expedition_activity_template
-
-	var_12_64[2040113] = {
+	pg.base.expedition_activity_template[2040113] = {
 		id = 2040113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16079,11 +11432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.expedition_activity_template
-
-	var_12_65[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 2040213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16095,11 +11444,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.expedition_activity_template
-
-	var_12_66[2041013] = {
+	pg.base.expedition_activity_template[2041013] = {
 		id = 2041013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16111,11 +11456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.expedition_activity_template
-
-	var_12_67[25] = {
+	pg.base.expedition_activity_template[25] = {
 		id = 2041113,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16127,11 +11468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.expedition_activity_template
-
-	var_12_68[2041213] = {
+	pg.base.expedition_activity_template[2041213] = {
 		id = 2041213,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16143,11 +11480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.expedition_activity_template
-
-	var_12_69[2044013] = {
+	pg.base.expedition_activity_template[2044013] = {
 		id = 2044013,
 		bonus_rate = 0,
 		bonus_time = 0,
@@ -16159,299 +11492,260 @@ end)()
 			}
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.expedition_activity_template
-
-	var_12_70[2049101] = {
+	pg.base.expedition_activity_template[2049101] = {
 		id = 2049101,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.expedition_activity_template
-
-	var_12_71[2049201] = {
+	pg.base.expedition_activity_template[2049201] = {
 		id = 2049201,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.expedition_activity_template
-
-	var_12_72[2049202] = {
+	pg.base.expedition_activity_template[2049202] = {
 		id = 2049202,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.expedition_activity_template
-
-	var_12_73[21] = {
+	pg.base.expedition_activity_template[21] = {
 		id = 2049301,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.expedition_activity_template
-
-	var_12_74[22] = {
+	pg.base.expedition_activity_template[22] = {
 		id = 2049302,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.expedition_activity_template
-
-	var_12_75[23] = {
+	pg.base.expedition_activity_template[23] = {
 		id = 2049303,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.expedition_activity_template
-
-	var_12_76[2049401] = {
+	pg.base.expedition_activity_template[2049401] = {
 		id = 2049401,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.expedition_activity_template
-
-	var_12_77[2049402] = {
+	pg.base.expedition_activity_template[2049402] = {
 		id = 2049402,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.expedition_activity_template
-
-	var_12_78[2049403] = {
+	pg.base.expedition_activity_template[2049403] = {
 		id = 2049403,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.expedition_activity_template
-
-	var_12_79[2049404] = {
+	pg.base.expedition_activity_template[2049404] = {
 		id = 2049404,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.expedition_activity_template
-
-	var_12_80[2049501] = {
+	pg.base.expedition_activity_template[2049501] = {
 		id = 2049501,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.expedition_activity_template
-
-	var_12_81[2049502] = {
+	pg.base.expedition_activity_template[2049502] = {
 		id = 2049502,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.expedition_activity_template
-
-	var_12_82[2049503] = {
+	pg.base.expedition_activity_template[2049503] = {
 		id = 2049503,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.expedition_activity_template
-
-	var_12_83[2049504] = {
+	pg.base.expedition_activity_template[2049504] = {
 		id = 2049504,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.expedition_activity_template
-
-	var_12_84[2049505] = {
+	pg.base.expedition_activity_template[2049505] = {
 		id = 2049505,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.expedition_activity_template
-
-	var_12_85[3000013] = {
+	pg.base.expedition_activity_template[2050013] = {
+		id = 2050013,
+		bonus_rate = 3,
+		bonus_time = 1,
+		pt_drop_display = {
+			{
+				51101,
+				741,
+				30
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2050113] = {
+		id = 2050113,
+		bonus_rate = 3,
+		bonus_time = 1,
+		pt_drop_display = {
+			{
+				51101,
+				741,
+				40
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2050213] = {
+		id = 2050213,
+		bonus_rate = 3,
+		bonus_time = 1,
+		pt_drop_display = {
+			{
+				51101,
+				741,
+				50
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2051013] = {
+		id = 2051013,
+		bonus_rate = 3,
+		bonus_time = 1,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				60
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2051113] = {
+		id = 2051113,
+		bonus_rate = 3,
+		bonus_time = 1,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				70
+			}
+		}
+	}
+	pg.base.expedition_activity_template[13] = {
+		id = 2051213,
+		bonus_rate = 3,
+		bonus_time = 1,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				80
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2052013] = {
+		id = 2052013,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51101,
+				741,
+				90
+			}
+		}
+	}
+	pg.base.expedition_activity_template[17] = {
+		id = 2052113,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51101,
+				741,
+				100
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2052213] = {
+		id = 2052213,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51101,
+				741,
+				110
+			}
+		}
+	}
+	pg.base.expedition_activity_template[21] = {
+		id = 2053013,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				120
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2053113] = {
+		id = 2053113,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				150
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2053213] = {
+		id = 2053213,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				180
+			}
+		}
+	}
+	pg.base.expedition_activity_template[2054013] = {
+		id = 2054013,
+		bonus_rate = 0,
+		bonus_time = 0,
+		pt_drop_display = {
+			{
+				51102,
+				741,
+				800
+			}
+		}
+	}
+	pg.base.expedition_activity_template[3000013] = {
 		id = 3000013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.expedition_activity_template
-
-	var_12_86[3000113] = {
+	pg.base.expedition_activity_template[3000113] = {
 		id = 3000113,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.expedition_activity_template
-
-	var_12_87[21] = {
-		id = 3000213,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.expedition_activity_template
-
-	var_12_88[3000313] = {
-		id = 3000313,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.expedition_activity_template
-
-	var_12_89[3000413] = {
-		id = 3000413,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.expedition_activity_template
-
-	var_12_90[3000513] = {
-		id = 3000513,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.expedition_activity_template
-
-	var_12_91[3000613] = {
-		id = 3000613,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 0
-	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.expedition_activity_template
-
-	var_12_92[9] = {
-		id = 3000713,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 0
-	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.expedition_activity_template
-
-	var_12_93[3000813] = {
-		id = 3000813,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 0
-	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.expedition_activity_template
-
-	var_12_94[3000913] = {
-		id = 3000913,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 0
-	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.expedition_activity_template
-
-	var_12_95[3001013] = {
-		id = 3001013,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 0
-	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.expedition_activity_template
-
-	var_12_96[25] = {
-		id = 3001113,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 0
-	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.expedition_activity_template
-
-	var_12_97[13] = {
-		id = 4000013,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.expedition_activity_template
-
-	var_12_98[4000113] = {
-		id = 4000113,
-		bonus_rate = 0,
-		pt_drop_display = "",
-		bonus_time = 1
-	}
-	pg = var_12_98
-	var_12_98.base.expedition_activity_template[4000213] = {
-		id = 4000213,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
@@ -16460,98 +11754,139 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.expedition_activity_template
-
-	var_13_0[4000313] = {
+	pg.base.expedition_activity_template[21] = {
+		id = 3000213,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[3000313] = {
+		id = 3000313,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[3000413] = {
+		id = 3000413,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[3000513] = {
+		id = 3000513,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[3000613] = {
+		id = 3000613,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 0
+	}
+	pg.base.expedition_activity_template[9] = {
+		id = 3000713,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 0
+	}
+	pg.base.expedition_activity_template[3000813] = {
+		id = 3000813,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 0
+	}
+	pg.base.expedition_activity_template[3000913] = {
+		id = 3000913,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 0
+	}
+	pg.base.expedition_activity_template[3001013] = {
+		id = 3001013,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 0
+	}
+	pg.base.expedition_activity_template[25] = {
+		id = 3001113,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 0
+	}
+	pg.base.expedition_activity_template[13] = {
+		id = 4000013,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[4000113] = {
+		id = 4000113,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[4000213] = {
+		id = 4000213,
+		bonus_rate = 0,
+		pt_drop_display = "",
+		bonus_time = 1
+	}
+	pg.base.expedition_activity_template[4000313] = {
 		id = 4000313,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.expedition_activity_template
-
-	var_13_1[29] = {
+	pg.base.expedition_activity_template[29] = {
 		id = 4000413,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.expedition_activity_template
-
-	var_13_2[1] = {
+	pg.base.expedition_activity_template[1] = {
 		id = 4000513,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 1
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.expedition_activity_template
-
-	var_13_3[4000613] = {
+	pg.base.expedition_activity_template[4000613] = {
 		id = 4000613,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.expedition_activity_template
-
-	var_13_4[4000713] = {
+	pg.base.expedition_activity_template[4000713] = {
 		id = 4000713,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.expedition_activity_template
-
-	var_13_5[4000813] = {
+	pg.base.expedition_activity_template[4000813] = {
 		id = 4000813,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.expedition_activity_template
-
-	var_13_6[17] = {
+	pg.base.expedition_activity_template[17] = {
 		id = 4000913,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.expedition_activity_template
-
-	var_13_7[4001013] = {
+	pg.base.expedition_activity_template[4001013] = {
 		id = 4001013,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.expedition_activity_template
-
-	var_13_8[4001113] = {
+	pg.base.expedition_activity_template[4001113] = {
 		id = 4001113,
 		bonus_rate = 0,
 		pt_drop_display = "",
 		bonus_time = 0
 	}
-	pg = var_13_8
-	var_13_8.base.expedition_activity_template[4001313] = {
+	pg.base.expedition_activity_template[4001313] = {
 		id = 4001313,
 		bonus_rate = 0,
 		pt_drop_display = "",

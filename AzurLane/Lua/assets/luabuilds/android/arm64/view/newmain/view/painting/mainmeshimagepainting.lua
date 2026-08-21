@@ -1,127 +1,72 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainMeshImagePainting", import(".MainBasePainting"))
 
-local var_0_0 = "MainMeshImagePainting"
+var_0_0.DEFAULT_HEIGHT = 0
+var_0_0.TOUCH_HEIGHT = 20
+var_0_0.TOUCH_LOOP = 1
+var_0_0.TOUCH_DURATION = 0.1
+var_0_0.CHAT_HEIGHT = 15
+var_0_0.CHAT_DURATION = 0.3
+var_0_0.BREATH_HEIGHT = -10
+var_0_0.BREATH_DURATION = 2.3
+var_0_0.PAINTING_VARIANT_NORMAL = 0
+var_0_0.PAINTING_VARIANT_EX = 1
 
-import = var_0_10003
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainBasePainting"))
-
-var_0_1.DEFAULT_HEIGHT = 0
-var_0_1.TOUCH_HEIGHT = 20
-var_0_1.TOUCH_LOOP = 1
-var_0_1.TOUCH_DURATION = 0.1
-var_0_1.CHAT_HEIGHT = 15
-var_0_1.CHAT_DURATION = 0.3
-var_0_1.BREATH_HEIGHT = -10
-var_0_1.BREATH_DURATION = 2.3
-var_0_1.PAINTING_VARIANT_NORMAL = 0
-var_0_1.PAINTING_VARIANT_EX = 1
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	GameObject = var_3
-
-	local var_1_0 = var_3.Find("UICamera")
-	local var_1_1 = var_3.GetComponent
-
-	typeof = var_6
-	Camera = var_1_10008
-	arg_1_0.uiCamera = var_1_1(var_1_0, var_6(var_1_10008))
+	arg_1_0.uiCamera = GameObject.Find("UICamera"):GetComponent(typeof(Camera))
 
 	return
 end
 
-function var_0_1.StaticGetPaintingName(arg_2_0)
+function var_0_0.StaticGetPaintingName(arg_2_0)
 	local var_2_0 = arg_2_0
 
-	checkABExist = var_1_10002
-
-	if var_1_10002("painting/" .. var_2_0 .. "_n") then
-		PlayerPrefs = var_2
-
-		if var_2.GetInt("paint_hide_other_obj_" .. var_2_0, 0) ~= 0 then
-			var_2_0 = var_2_0 .. "_n"
-		end
+	if checkABExist("painting/" .. arg_2_0 .. "_n") and PlayerPrefs.GetInt("paint_hide_other_obj_" .. var_2_0, 0) ~= 0 then
+		var_2_0 = var_2_0 .. "_n"
 	end
 
-	HXSet = var_2
-
-	if var_2.isHx() then
+	if HXSet.isHx() then
 		return var_2_0
 	end
 
-	getProxy = var_2
-	SettingsProxy = var_4
+	local var_2_1 = getProxy(SettingsProxy)
+	local var_2_2 = var_2_1:GetMainPaintingVariantFlag(arg_2_0) == var_0_0.PAINTING_VARIANT_EX
 
-	local var_2_1 = var_2(var_4)
-
-	if var_2.GetMainPaintingVariantFlag(var_2_1, arg_2_0) == var_0_1.PAINTING_VARIANT_EX then
-		checkABExist = var_2_1
-
-		if not var_2_1("painting/" .. var_2_0 .. "_ex") then
-			return var_2_0
-		end
+	if var_2_2 and not checkABExist("painting/" .. var_2_0 .. "_ex") then
+		return var_2_0
 	end
 
-	local var_2_2
-
-	if not var_3 or not (var_2_0 .. "_ex") then
-		var_2_2 = var_2_0
+	if var_2_2 then
+		return var_2_0 .. "_ex" or var_2_0
 	end
-
-	return var_2_2
 end
 
-function var_0_1.GetPaintingName(arg_3_0)
-	return var_0_1.StaticGetPaintingName(arg_3_0.paintingName)
+function var_0_0.GetPaintingName(arg_3_0)
+	return var_0_0.StaticGetPaintingName(arg_3_0.paintingName)
 end
 
-function var_0_1.OnLoad(arg_4_0, arg_4_1)
+function var_0_0.OnLoad(arg_4_0, arg_4_1)
 	local var_4_0 = arg_4_0:GetPaintingName()
 
 	arg_4_0:ClearScalePart()
-
-	LoadPaintingPrefabAsync = var_3
-
-	var_3(arg_4_0.container, arg_4_0.paintingName, var_4_0, "mainNormal", function()
-		local var_5_0 = arg_4_0
-
-		if var_0.IsExited(var_5_0) then
-			local var_5_1 = arg_4_0
-
-			var_0.Unload(var_5_1)
+	LoadPaintingPrefabAsync(arg_4_0.container, arg_4_0.paintingName, arg_4_0:GetPaintingName(), "mainNormal", function()
+		if arg_4_0:IsExited() then
+			arg_4_0:Unload()
 
 			return
 		end
 
 		arg_4_0.loadPaintingName = var_4_0
 
-		local var_5_2 = arg_4_0
-		local var_5_3 = var_0.InitSpecialTouch(var_5_2)
-		local var_5_4 = arg_4_0
-
-		var_1.InitSpecialDrag(var_5_4, var_5_3)
+		arg_4_0:InitSpecialDrag((arg_4_0:InitSpecialTouch()))
 
 		if arg_4_0.expression then
-			ShipExpressionHelper = var_1
-
-			local var_5_5 = var_1.UpdateExpression
-
-			findTF = var_5_4
-
-			local var_5_6 = var_5_4(arg_4_0.container, "fitter")
-
-			var_5_5(var_3.GetChild(var_5_6, 0), arg_4_0.paintingName, arg_4_0.expression)
+			ShipExpressionHelper.UpdateExpression(findTF(arg_4_0.container, "fitter"):GetChild(0), arg_4_0.paintingName, arg_4_0.expression)
 		end
 
-		local var_5_7 = arg_4_0
-
-		var_1.Breath(var_5_7)
-
-		local var_5_8 = arg_4_0
-
-		var_1.InitScalePart(var_5_8)
+		arg_4_0:Breath()
+		arg_4_0:InitScalePart()
 		arg_4_1()
 
 		return
@@ -130,26 +75,19 @@ function var_0_1.OnLoad(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_1.GetCenterPos(arg_6_0)
+function var_0_0.GetCenterPos(arg_6_0)
 	if arg_6_0:IsLoaded() then
-		local var_6_0 = arg_6_0.container
-		local var_6_1 = var_1.Find(var_6_0, "fitter")
-		local var_6_2 = (0.5 - var_1.GetChild(var_6_1, 0).pivot.x) * var_1.sizeDelta.x
-		local var_6_3 = var_1.localPosition
+		local var_6_0 = arg_6_0.container:Find("fitter"):GetChild(0)
 
-		Vector3 = var_4
-
-		local var_6_4 = var_6_3 + var_4(var_6_2, 0, 0)
-
-		return (var_1:TransformPoint(var_6_4))
+		return (var_6_0:TransformPoint(var_6_0.localPosition + Vector3((0.5 - var_6_0.pivot.x) * var_6_0.sizeDelta.x, 0, 0)))
 	else
-		return var_0_1.super.GetCenterPos(arg_6_0)
+		return var_0_0.super.GetCenterPos(arg_6_0)
 	end
 
 	return
 end
 
-function var_0_1.PlayChangeSkinActionIn(arg_7_0, arg_7_1)
+function var_0_0.PlayChangeSkinActionIn(arg_7_0, arg_7_1)
 	if arg_7_1 and arg_7_1.callback then
 		arg_7_1.callback({
 			flag = true
@@ -159,7 +97,7 @@ function var_0_1.PlayChangeSkinActionIn(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.PlayChangeSkinActionOut(arg_8_0, arg_8_1)
+function var_0_0.PlayChangeSkinActionOut(arg_8_0, arg_8_1)
 	if arg_8_1 and arg_8_1.callback then
 		arg_8_1.callback({
 			flag = true
@@ -169,37 +107,21 @@ function var_0_1.PlayChangeSkinActionOut(arg_8_0, arg_8_1)
 	return
 end
 
-function var_0_1.InitSpecialTouch(arg_9_0)
-	findTF = var_1_10001
-	findTF = var_1_10003
+function var_0_0.InitSpecialTouch(arg_9_0)
+	local var_9_0 = findTF(findTF(arg_9_0.container, "fitter"):GetChild(0), "Touch")
 
-	local var_9_0 = var_1_10003(arg_9_0.container, "fitter")
-
-	if not var_1_10001(var_3.GetChild(var_9_0, 0), "Touch") then
+	if not var_9_0 then
 		return
 	end
 
-	setActive = var_1_10002
-
-	var_1_10002(var_1, true)
+	setActive(var_9_0, true)
 
 	local var_9_1 = {}
 
-	eachChild = var_3
-
-	var_3(var_1, function(arg_10_0)
-		onButton = var_2_10001
-
-		var_2_10001(arg_9_0, arg_10_0, function()
-			local var_11_0 = arg_9_0
-			local var_11_1 = var_0.GetSpecialTouchEvent(var_11_0, arg_10_0.name)
-			local var_11_2 = arg_9_0
-
-			var_1.TriggerEvent(var_11_2, var_11_1)
-
-			local var_11_3 = arg_9_0
-
-			var_1.TriggerPersonalTask(var_11_3, arg_9_0.ship.groupId)
+	eachChild(var_9_0, function(arg_10_0)
+		onButton(arg_9_0, arg_10_0, function()
+			arg_9_0:TriggerEvent((arg_9_0:GetSpecialTouchEvent(arg_10_0.name)))
+			arg_9_0:TriggerPersonalTask(arg_9_0.ship.groupId)
 
 			return
 		end)
@@ -209,127 +131,76 @@ function var_0_1.InitSpecialTouch(arg_9_0)
 		return
 	end)
 
-	return var_9_1
+	return {}
 end
 
-function var_0_1.InitSpecialDrag(arg_12_0, arg_12_1)
-	findTF = var_1_10002
-	findTF = var_1_10004
+function var_0_0.InitSpecialDrag(arg_12_0, arg_12_1)
+	local var_12_0 = findTF(findTF(arg_12_0.container, "fitter"):GetChild(0), "Drag")
 
-	local var_12_0 = var_1_10004(arg_12_0.container, "fitter")
-
-	if not var_1_10002(var_4.GetChild(var_12_0, 0), "Drag") then
+	if not var_12_0 then
 		return
 	end
 
-	PLATFORM_CODE = var_1_10003
-	PLATFORM_CH = var_4
+	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
+		setActive(var_12_0, false)
 
-	if var_1_10003 == var_4 then
-		HXSet = var_1_10003
-
-		if var_1_10003.isHx() then
-			setActive = var_1_10003
-
-			var_1_10003(var_2, false)
-
-			return
-		end
+		return
 	end
 
-	setActive = var_1_10003
+	setActive(var_12_0, true)
 
-	var_1_10003(var_2, true)
-
-	GetOrAddComponent = var_1_10003
-
-	local var_12_1 = var_2
-
-	typeof = var_6
-	EventTriggerListener = var_1_10008
-
-	local var_12_2 = var_1_10003(var_12_1, var_6(var_1_10008))
-
-	Vector2 = var_4
-
-	local var_12_3 = var_4(0, 0)
+	local var_12_1 = GetOrAddComponent(var_12_0, typeof(EventTriggerListener))
+	local var_12_2 = Vector2(0, 0)
 
 	arg_12_0.isDrag = false
 
-	var_12_2:AddBeginDragFunc(function(arg_13_0, arg_13_1)
+	var_12_1:AddBeginDragFunc(function(arg_13_0, arg_13_1)
 		arg_12_0.isDrag = true
-		var_12_3 = arg_13_1.position
+		var_12_2 = arg_13_1.position
 
 		return
 	end)
-	var_12_2:AddDragEndFunc(function(arg_14_0, arg_14_1)
+	var_12_1:AddDragEndFunc(function(arg_14_0, arg_14_1)
 		arg_12_0.isDrag = false
 
-		local var_14_0 = arg_14_1.position - var_12_3
+		if math.abs((arg_14_1.position - var_12_2).x) > 50 or math.abs((arg_14_1.position - var_12_2).y) > 50 then
+			arg_12_0:SwitchToVariant(var_12_0)
+		end
 
-		math = var_2_10004
+		return
+	end)
 
-		if not (var_2_10004.abs(var_14_0.x) > 50) then
-			math = var_4
+	if arg_12_1 and table.getCount(arg_12_1) > 0 then
+		var_12_1:AddPointUpFunc(function(arg_15_0, arg_15_1)
+			if arg_12_0.isDrag then
+				return
+			end
 
-			if var_4.abs(var_14_0.y) > 50 then
-				local var_14_1 = arg_12_0
+			local var_15_0
 
-				var_4.SwitchToVariant(var_14_1, var_0)
+			for iter_15_0, iter_15_1 in pairs(arg_12_1) do
+				if iter_15_1:Contains((LuaHelper.ScreenToLocal(iter_15_0, arg_15_1.position, arg_12_0.uiCamera))) then
+					var_15_0 = iter_15_0
+
+					break
+				end
+			end
+
+			if var_15_0 then
+				triggerButton(var_15_0)
+			else
+				triggerButton(arg_12_0.container)
 			end
 
 			return
-		end
-	end)
-
-	if arg_12_1 then
-		table = var_5
-
-		if var_5.getCount(arg_12_1) > 0 then
-			var_12_2:AddPointUpFunc(function(arg_15_0, arg_15_1)
-				if arg_12_0.isDrag then
-					return
-				end
-
-				local var_15_0
-
-				pairs = var_2_10003
-
-				for iter_15_0, iter_15_1 in var_2_10003(arg_12_1) do
-					LuaHelper = var_2_10008
-					var_2_10008 = var_2_10008.ScreenToLocal(iter_15_0, arg_15_1.position, arg_12_0.uiCamera)
-
-					if iter_15_1:Contains(var_2_10008) then
-						var_15_0 = iter_15_0
-
-						break
-					end
-				end
-
-				if var_15_0 then
-					triggerButton = var_3
-
-					var_3(var_15_0)
-				else
-					triggerButton = var_3
-
-					var_3(arg_12_0.container)
-				end
-
-				return
-			end)
-		end
+		end)
 	end
 
-	GetOrAddComponent = var_5
+	local var_12_3 = GetOrAddComponent(var_12_0, "UILongPressTrigger").onLongPressed
 
-	local var_12_4 = var_5(var_2, "UILongPressTrigger").onLongPressed
-
-	var_5.RemoveAllListeners(var_12_4)
-	var_5:AddListener(function()
-		local var_16_0 = arg_12_0
-
-		var_0.OnLongPress(var_16_0)
+	var_12_3:RemoveAllListeners()
+	var_12_3:AddListener(function()
+		arg_12_0:OnLongPress()
 
 		return
 	end)
@@ -337,74 +208,35 @@ function var_0_1.InitSpecialDrag(arg_12_0, arg_12_1)
 	return
 end
 
-function var_0_1.SwitchToVariant(arg_17_0, arg_17_1)
-	pg = var_1_10002
-
-	local var_17_0 = var_1_10002.UIMgr.GetInstance()
-
-	var_2.LoadingOn(var_17_0, false)
-
-	getProxy = var_2
-	SettingsProxy = var_17_0
-
-	local var_17_1 = var_2(var_17_0)
-
-	var_2.SwitchMainPaintingVariantFlag(var_17_1, arg_17_0.paintingName)
-
-	seriesAsync = var_2
-
-	var_2({
+function var_0_0.SwitchToVariant(arg_17_0, arg_17_1)
+	pg.UIMgr.GetInstance():LoadingOn(false)
+	getProxy(SettingsProxy):SwitchMainPaintingVariantFlag(arg_17_0.paintingName)
+	seriesAsync({
 		function(arg_18_0)
-			local var_18_0 = arg_17_0
-			local var_18_1 = var_1.GetPaintingName(var_18_0)
-
-			PoolMgr = var_2_10002
-
-			local var_18_2 = var_2_10002.GetInstance()
-
-			var_2.PreloadPainting(var_18_2, var_18_1, arg_18_0)
+			PoolMgr.GetInstance():PreloadPainting(arg_17_0:GetPaintingName(), arg_18_0)
 
 			return
 		end,
 		function(arg_19_0)
-			local var_19_0 = arg_17_0
-
-			var_1.PlayVariantEffect(var_19_0, arg_17_1, arg_19_0)
+			arg_17_0:PlayVariantEffect(arg_17_1, arg_19_0)
 
 			return
 		end,
 		function(arg_20_0)
-			onDelayTick = var_2_10001
-
-			var_2_10001(arg_20_0, 0.5)
+			onDelayTick(arg_20_0, 0.5)
 
 			return
 		end,
 		function(arg_21_0)
-			local var_21_0 = arg_17_0
-
-			var_1.UnloadOnlyPainting(var_21_0)
-
-			local var_21_1 = arg_17_0
-
-			var_1.Load(var_21_1, arg_17_0.ship, true)
-
-			onDelayTick = var_1
-
-			var_1(arg_21_0, 1)
+			arg_17_0:UnloadOnlyPainting()
+			arg_17_0:Load(arg_17_0.ship, true)
+			onDelayTick(arg_21_0, 1)
 
 			return
 		end
 	}, function()
-		local var_22_0 = arg_17_0
-
-		var_0.ClearEffect(var_22_0)
-
-		pg = var_0
-
-		local var_22_1 = var_0.UIMgr.GetInstance()
-
-		var_0.LoadingOff(var_22_1)
+		arg_17_0:ClearEffect()
+		pg.UIMgr.GetInstance():LoadingOff()
 
 		return
 	end)
@@ -412,66 +244,29 @@ function var_0_1.SwitchToVariant(arg_17_0, arg_17_1)
 	return
 end
 
-function var_0_1.PlayVariantEffect(arg_23_0, arg_23_1, arg_23_2)
-	getProxy = var_1_10003
-	SettingsProxy = var_1_10005
+function var_0_0.PlayVariantEffect(arg_23_0, arg_23_1, arg_23_2)
+	local var_23_0 = getProxy(SettingsProxy)
 
-	local var_23_0 = var_1_10003(var_1_10005)
-	local var_23_1 = var_3.GetMainPaintingVariantFlag(var_23_0, arg_23_0.paintingName) == var_0_1.PAINTING_VARIANT_EX and "lihui_qiehuan01" or "lihui_qiehuan02"
-
-	pg = var_6
-
-	local var_23_2 = var_6.PoolMgr.GetInstance()
-
-	var_6.GetPrefab(var_23_2, "ui/" .. var_23_1, "", true, function(arg_24_0)
-		pg = var_2_10001
-
-		local var_24_0 = var_2_10001.ViewUtils.SetLayer
-		local var_24_1 = arg_24_0.transform
-
-		Layer = var_2_10004
-
-		var_24_0(var_24_1, var_2_10004.UI)
+	pg.PoolMgr.GetInstance():GetPrefab("ui/" .. (var_23_0:GetMainPaintingVariantFlag(arg_23_0.paintingName) == var_0_0.PAINTING_VARIANT_EX and "lihui_qiehuan01" or "lihui_qiehuan02"), "", true, function(arg_24_0)
+		pg.ViewUtils.SetLayer(arg_24_0.transform, Layer.UI)
 
 		arg_23_0.effectGo = arg_24_0
-		arg_23_0.effectGo.name = var_23_1
+		arg_23_0.effectGo.name = var_0
 
-		local var_24_2 = arg_23_0
-
-		if var_1.IsExited(var_24_2) then
-			local var_24_3 = arg_23_0
-
-			var_1.ClearEffect(var_24_3)
+		if arg_23_0:IsExited() then
+			arg_23_0:ClearEffect()
 
 			return
 		end
 
-		setParent = var_1
-
-		var_1(arg_24_0, arg_23_0.container)
+		setParent(arg_24_0, arg_23_0.container)
 
 		arg_23_0.effectGo.transform.position = arg_23_1.position
 
-		local var_24_5
-
 		if var_0 then
-			pg = var_24_5
-
-			local var_24_4 = var_24_5.CriMgr.GetInstance()
-
-			var_24_5 = var_24_5.PlaySoundEffect_V3
-			SFX_EXPLOSIVE_SKIN = var_4
-
-			var_24_5(var_24_4, var_4)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_EXPLOSIVE_SKIN)
 		else
-			pg = var_24_5
-
-			local var_24_6 = var_24_5.CriMgr.GetInstance()
-			local var_24_7 = var_1.PlaySoundEffect_V3
-
-			SFX_ANTI_EXPLOSIVE_SKIN = var_4
-
-			var_24_7(var_24_6, var_4)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_ANTI_EXPLOSIVE_SKIN)
 		end
 
 		arg_23_2()
@@ -482,21 +277,15 @@ function var_0_1.PlayVariantEffect(arg_23_0, arg_23_1, arg_23_2)
 	return
 end
 
-function var_0_1.ClearEffect(arg_25_0)
+function var_0_0.ClearEffect(arg_25_0)
 	if arg_25_0.effectTimer then
-		local var_25_0 = arg_25_0.effectTimer
-
-		var_1.Stop(var_25_0)
+		arg_25_0.effectTimer:Stop()
 
 		arg_25_0.effectTimer = nil
 	end
 
 	if arg_25_0.effectGo then
-		pg = var_1
-
-		local var_25_1 = var_1.PoolMgr.GetInstance()
-
-		var_1.ReturnPrefab(var_25_1, "ui/" .. arg_25_0.effectGo.name, "", arg_25_0.effectGo)
+		pg.PoolMgr.GetInstance():ReturnPrefab("ui/" .. arg_25_0.effectGo.name, "", arg_25_0.effectGo)
 
 		arg_25_0.effectGo = nil
 	end
@@ -504,178 +293,99 @@ function var_0_1.ClearEffect(arg_25_0)
 	return
 end
 
-function var_0_1.ClearSpecialDrag(arg_26_0)
-	PLATFORM_CODE = var_1_10001
-	PLATFORM_CH = var_1_10002
-
-	if var_1_10001 == var_1_10002 then
-		HXSet = var_1_10001
-
-		if var_1_10001.isHx() then
-			return
-		end
-	end
-
-	findTF = var_1_10001
-	findTF = var_1_10003
-
-	local var_26_0 = var_1_10003(arg_26_0.container, "fitter")
-
-	if not var_1_10001(var_3.GetChild(var_26_0, 0), "Drag") then
+function var_0_0.ClearSpecialDrag(arg_26_0)
+	if PLATFORM_CODE == PLATFORM_CH and HXSet.isHx() then
 		return
 	end
 
-	GetOrAddComponent = var_1_10002
+	local var_26_0 = findTF(findTF(arg_26_0.container, "fitter"):GetChild(0), "Drag")
 
-	local var_26_1 = var_1
+	if not var_26_0 then
+		return
+	end
 
-	typeof = var_26_0
-	EventTriggerListener = var_1_10007
+	local var_26_1 = GetOrAddComponent(var_26_0, typeof(EventTriggerListener))
 
-	local var_26_2 = var_1_10002(var_26_1, var_26_0(var_1_10007))
-
-	var_2.AddBeginDragFunc(var_26_2, nil)
-	var_2:AddDragEndFunc(nil)
-	var_2:AddPointUpFunc(nil)
-
-	GetOrAddComponent = var_3
-
-	local var_26_3 = var_3(var_1, "UILongPressTrigger").onLongPressed
-
-	var_3.RemoveAllListeners(var_26_3)
+	var_26_1:AddBeginDragFunc(nil)
+	var_26_1:AddDragEndFunc(nil)
+	var_26_1:AddPointUpFunc(nil)
+	GetOrAddComponent(var_26_0, "UILongPressTrigger").onLongPressed:RemoveAllListeners()
 
 	return
 end
 
-function var_0_1.OnClick(arg_27_0)
+function var_0_0.OnClick(arg_27_0)
 	local var_27_0 = arg_27_0:CollectTouchEvents()
 
-	math = var_1_10002
-
-	local var_27_1 = var_1_10002.ceil
-
-	math = var_1_10004
-
-	local var_27_2 = var_27_0[var_27_1(var_1_10004.random(#var_27_0))]
-
-	arg_27_0:TriggerEvent(var_27_2)
+	arg_27_0:TriggerEvent(var_27_0[math.ceil(math.random(#var_27_0))])
 
 	return
 end
 
-function var_0_1.OnLongPress(arg_28_0)
+function var_0_0.OnLongPress(arg_28_0)
 	if arg_28_0.isFoldState then
 		return
 	end
 
-	pg = var_1
-
-	local var_28_0 = var_1.m02
-	local var_28_1 = var_1.sendNotification
-
-	GAME = var_1_10004
-
-	local var_28_2 = var_1_10004.GO_SCENE
-
-	SCENE = var_1_10005
-
-	var_28_1(var_28_0, var_28_2, var_1_10005.SHIPINFO, {
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHIPINFO, {
 		shipId = arg_28_0.ship.id
 	})
 
 	return
 end
 
-function var_0_1.OnDisplayWorld(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_0.ship
-	local var_29_1 = var_2.getCVIntimacy(var_29_0)
+function var_0_0.OnDisplayWorld(arg_29_0, arg_29_1)
+	local var_29_0, var_29_1 = ShipExpressionHelper.SetExpression(findTF(arg_29_0.container, "fitter"):GetChild(0), arg_29_0.paintingName, arg_29_1, arg_29_0.ship:getCVIntimacy(), arg_29_0.ship:getSkinId())
 
-	ShipExpressionHelper = var_1_10003
-
-	local var_29_2 = var_1_10003.SetExpression
-
-	findTF = var_1_10005
-
-	local var_29_3 = var_1_10005(arg_29_0.container, "fitter")
-	local var_29_4 = var_5.GetChild(var_29_3, 0)
-	local var_29_5 = arg_29_0.paintingName
-	local var_29_6 = arg_29_1
-	local var_29_7 = var_29_1
-	local var_29_8 = arg_29_0.ship
-	local var_29_9, var_29_10 = var_29_2(var_29_4, var_29_5, var_29_6, var_29_7, var_9.getSkinId(var_29_8))
-
-	arg_29_0.expression = var_29_10
+	arg_29_0.expression = var_29_1
 
 	return
 end
 
-function var_0_1.OnTriggerEvent(arg_30_0)
-	arg_30_0:Shake(var_0_1.TOUCH_HEIGHT, var_0_1.TOUCH_DURATION, var_0_1.TOUCH_LOOP)
+function var_0_0.OnTriggerEvent(arg_30_0)
+	arg_30_0:Shake(var_0_0.TOUCH_HEIGHT, var_0_0.TOUCH_DURATION, var_0_0.TOUCH_LOOP)
 
 	return
 end
 
-function var_0_1.OnTriggerEventAuto(arg_31_0)
-	arg_31_0:Shake(var_0_1.CHAT_HEIGHT, var_0_1.CHAT_DURATION)
+function var_0_0.OnTriggerEventAuto(arg_31_0)
+	arg_31_0:Shake(var_0_0.CHAT_HEIGHT, var_0_0.CHAT_DURATION)
 
 	return
 end
 
-function var_0_1.GetMeshPainting(arg_32_0)
-	findTF = var_1_10001
+function var_0_0.GetMeshPainting(arg_32_0)
+	local var_32_0 = findTF(arg_32_0.container, "fitter")
 
-	if var_1_10001(arg_32_0.container, "fitter").childCount <= 0 then
+	if var_32_0.childCount <= 0 then
 		return nil
 	end
 
-	return (var_1:GetChild(0))
+	return (var_32_0:GetChild(0))
 end
 
-function var_0_1.Shake(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
-	local var_33_0
-	local var_33_1 = arg_33_1
+function var_0_0.Shake(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
+	local var_33_0 = arg_33_1
 
-	if var_33_0 then
-		var_33_1 = arg_33_1 - var_0_1.DEFAULT_HEIGHT + var_33_0
+	if nil then
+		var_33_0 = arg_33_1 - var_0_0.DEFAULT_HEIGHT + nil
 	end
 
-	if not arg_33_3 then
-		math = var_1_10006
-		arg_33_3 = var_1_10006.random(3) - 1
-	end
+	arg_33_3 = arg_33_3 or math.random(3) - 1
 
 	if arg_33_3 == 0 then
 		return
 	end
 
-	if not arg_33_0:GetMeshPainting() then
+	local var_33_1 = arg_33_0:GetMeshPainting()
+
+	if not var_33_1 then
 		return
 	end
 
-	LeanTween = var_1_10007
-
-	local var_33_2 = var_1_10007.cancel
-
-	go = var_1_10009
-
-	var_33_2(var_1_10009(var_6))
-
-	LeanTween = var_33_2
-
-	local var_33_3 = var_33_2.moveY
-
-	rtf = var_9
-
-	local var_33_4 = var_33_3(var_9(var_6), var_33_1, 0.1)
-	local var_33_5 = var_7.setLoopPingPong(var_33_4, arg_33_3)
-	local var_33_6 = var_7.setOnComplete
-
-	System = var_10
-
-	var_33_6(var_33_5, var_10.Action(function()
-		local var_34_0 = arg_33_0
-
-		var_0.Breath(var_34_0)
+	LeanTween.cancel(go(var_33_1))
+	LeanTween.moveY(rtf(var_33_1), var_33_0, 0.1):setLoopPingPong(arg_33_3):setOnComplete(System.Action(function()
+		arg_33_0:Breath()
 
 		return
 	end))
@@ -683,63 +393,37 @@ function var_0_1.Shake(arg_33_0, arg_33_1, arg_33_2, arg_33_3)
 	return
 end
 
-function var_0_1.Breath(arg_35_0)
-	if not arg_35_0:GetMeshPainting() then
+function var_0_0.Breath(arg_35_0)
+	local var_35_0 = arg_35_0:GetMeshPainting()
+
+	if not var_35_0 then
 		return
 	end
 
-	local var_35_0
-	local var_35_1 = var_35_0 or var_0_1.BREATH_HEIGHT
-	local var_35_2
+	local var_35_1
+	local var_35_2 = var_35_1 or var_0_0.BREATH_HEIGHT
 
-	if not var_35_0 or not (var_35_0 - 10) then
-		var_35_2 = var_0_1.DEFAULT_HEIGHT
+	if var_35_1 then
+		LeanTween.cancel(go(var_35_0))
+		LeanTween.moveY(rtf(var_35_0), var_35_3, var_0_0.BREATH_DURATION):setLoopPingPong():setEase(LeanTweenType.easeInOutCubic):setFrom(var_35_2)
+
+		return
+	end
+end
+
+function var_0_0.StopBreath(arg_36_0)
+	local var_36_0 = arg_36_0:GetMeshPainting()
+
+	if not var_36_0 then
+		return
 	end
 
-	LeanTween = var_1_10005
-
-	local var_35_3 = var_1_10005.cancel
-
-	go = var_1_10007
-
-	var_35_3(var_1_10007(var_1))
-
-	LeanTween = var_35_3
-
-	local var_35_4 = var_35_3.moveY
-
-	rtf = var_7
-
-	local var_35_5 = var_35_4(var_7(var_1), var_35_2, var_0_1.BREATH_DURATION)
-	local var_35_6 = var_5.setLoopPingPong(var_35_5)
-	local var_35_7 = var_5.setEase
-
-	LeanTweenType = var_8
-
-	local var_35_8 = var_35_7(var_35_6, var_8.easeInOutCubic)
-
-	var_5.setFrom(var_35_8, var_35_1)
+	LeanTween.cancel(go(var_36_0))
 
 	return
 end
 
-function var_0_1.StopBreath(arg_36_0)
-	if not arg_36_0:GetMeshPainting() then
-		return
-	end
-
-	LeanTween = var_1_10002
-
-	local var_36_0 = var_1_10002.cancel
-
-	go = var_1_10004
-
-	var_36_0(var_1_10004(var_1))
-
-	return
-end
-
-function var_0_1.OnEnableOrDisableDragAndZoom(arg_37_0, arg_37_1)
+function var_0_0.OnEnableOrDisableDragAndZoom(arg_37_0, arg_37_1)
 	if arg_37_1 then
 		arg_37_0:StopBreath()
 	else
@@ -749,26 +433,19 @@ function var_0_1.OnEnableOrDisableDragAndZoom(arg_37_0, arg_37_1)
 	return
 end
 
-function var_0_1.GetPaintingTransform(arg_38_0)
+function var_0_0.GetPaintingTransform(arg_38_0)
 	return arg_38_0:GetMeshPainting()
 end
 
-function var_0_1.GetPartScaleData(arg_39_0)
-	pg = var_1_10001
-
-	local var_39_0 = var_1_10001.ship_skin_template
-	local var_39_1 = arg_39_0.ship
-
-	return var_39_0[var_2.getSkinId(var_39_1)].part_scale.paint
+function var_0_0.GetPartScaleData(arg_39_0)
+	return pg.ship_skin_template[arg_39_0.ship:getSkinId()].part_scale.paint
 end
 
-function var_0_1.GetPartStateType(arg_40_0)
-	MainPaintingView = var_1_10001
-
-	return var_1_10001.STATE_PAINTING
+function var_0_0.GetPartStateType(arg_40_0)
+	return MainPaintingView.STATE_PAINTING
 end
 
-function var_0_1.OnFold(arg_41_0, arg_41_1)
+function var_0_0.OnFold(arg_41_0, arg_41_1)
 	if not arg_41_1 then
 		arg_41_0:Breath()
 	end
@@ -776,40 +453,31 @@ function var_0_1.OnFold(arg_41_0, arg_41_1)
 	return
 end
 
-function var_0_1.GetOffset(arg_42_0)
-	MainPaintingView = var_1_10001
-
-	return var_1_10001.MESH_POSITION_X_OFFSET
+function var_0_0.GetOffset(arg_42_0)
+	return MainPaintingView.MESH_POSITION_X_OFFSET
 end
 
-function var_0_1.OnResume(arg_43_0)
-	checkCullResume = var_1_10001
-
-	local var_43_0 = arg_43_0.container
-	local var_43_1 = var_3.Find(var_43_0, "fitter")
-
-	var_1_10001(var_3.GetChild(var_43_1, 0))
+function var_0_0.OnResume(arg_43_0)
+	checkCullResume(arg_43_0.container:Find("fitter"):GetChild(0))
 	arg_43_0:Breath()
 
 	return
 end
 
-function var_0_1.Unload(arg_44_0)
-	var_0_1.super.Unload(arg_44_0)
+function var_0_0.Unload(arg_44_0)
+	var_0_0.super.Unload(arg_44_0)
 
 	arg_44_0.expression = nil
 
 	return
 end
 
-function var_0_1.OnUnload(arg_45_0)
+function var_0_0.OnUnload(arg_45_0)
 	arg_45_0:StopBreath()
 	arg_45_0:ClearSpecialDrag()
 
 	if arg_45_0.loadPaintingName then
-		retPaintingPrefab = var_1
-
-		var_1(arg_45_0.container, arg_45_0.loadPaintingName)
+		retPaintingPrefab(arg_45_0.container, arg_45_0.loadPaintingName)
 
 		arg_45_0.loadPaintingName = nil
 	end
@@ -817,18 +485,18 @@ function var_0_1.OnUnload(arg_45_0)
 	return
 end
 
-function var_0_1.OnPause(arg_46_0)
+function var_0_0.OnPause(arg_46_0)
 	arg_46_0:StopBreath()
 	arg_46_0:ClearEffect()
 
 	return
 end
 
-function var_0_1.Dispose(arg_47_0)
-	var_0_1.super.Dispose(arg_47_0)
+function var_0_0.Dispose(arg_47_0)
+	var_0_0.super.Dispose(arg_47_0)
 	arg_47_0:ClearEffect()
 
 	return
 end
 
-return var_0_1
+return var_0_0

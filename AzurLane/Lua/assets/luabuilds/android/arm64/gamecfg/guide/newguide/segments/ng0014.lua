@@ -1,8 +1,4 @@
-﻿local var_0_0 = {
-	"点击help按钮查看限界挑战帮助！"
-}
-
-return {
+﻿return {
 	id = "NG0014",
 	events = {
 		{
@@ -12,7 +8,9 @@ return {
 				dir = -1,
 				posY = -63.794,
 				posX = -663,
-				text = var_0_0[1]
+				text = ({
+					"点击help按钮查看限界挑战帮助！"
+				})[1]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/ChallengeMainUI(Clone)/ForNorth/Award/HelpBtn"

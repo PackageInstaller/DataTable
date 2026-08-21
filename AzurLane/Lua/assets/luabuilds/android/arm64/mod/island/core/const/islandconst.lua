@@ -1,10 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandConst")
-
-require = var_0_10001
-
-local var_0_1 = var_0_10001("Framework.toLua.UnityEngine.Vector3")
+﻿local var_0_0 = class("IslandConst")
 
 var_0_0.TAG_PLAYER = "Player"
 var_0_0.TAG_NPC = "Npc"
@@ -21,38 +15,22 @@ var_0_0.CANT_SWITCH_TO_MOVEMENT_STATES = {
 	var_0_0.ANIMATION_JUMP_LOOP,
 	var_0_0.ANIMATION_JUMP_LAND
 }
-Animator = var_2
-var_0_0.SPEED_FLAG_HASH = var_2.StringToHash("speed")
-Animator = var_2
-var_0_0.SIT_HASH = var_2.StringToHash("sit")
-Animator = var_2
-var_0_0.JUMP_FLAG = var_2.StringToHash("jump")
-Animator = var_2
-var_0_0.GROUD_FLAG = var_2.StringToHash("groud")
-Animator = var_2
-var_0_0.INPUT_MAGNITUDE = var_2.StringToHash("horizontainput")
-Animator = var_2
-var_0_0.MINING_FLAG = var_2.StringToHash("mining")
-Animator = var_2
-var_0_0.DEVICE_SHOW_FLAG = var_2.StringToHash("device")
-Animator = var_2
-var_0_0.UN_DEVICE_SHOW_FLAG = var_2.StringToHash("exitdevice")
-Animator = var_2
-var_0_0.SOW_FLAG = var_2.StringToHash("sow")
-Animator = var_2
-var_0_0.LOP_FLAG = var_2.StringToHash("lop")
-Animator = var_2
-var_0_0.GAHTER_FLAG = var_2.StringToHash("gatheru")
-Animator = var_2
-var_0_0.GAHTERD_FLAG = var_2.StringToHash("gatherd")
-Animator = var_2
-var_0_0.jumpState = var_2.StringToHash("jumpstart")
-Animator = var_2
-var_0_0.RUN_FLAG = var_2.StringToHash("sprint")
-Animator = var_2
-var_0_0.SprintState = var_2.StringToHash("sprint_s2")
-Animator = var_2
-var_0_0.miningState = var_2.StringToHash("mining")
+var_0_0.SPEED_FLAG_HASH = Animator.StringToHash("speed")
+var_0_0.SIT_HASH = Animator.StringToHash("sit")
+var_0_0.JUMP_FLAG = Animator.StringToHash("jump")
+var_0_0.GROUD_FLAG = Animator.StringToHash("groud")
+var_0_0.INPUT_MAGNITUDE = Animator.StringToHash("horizontainput")
+var_0_0.MINING_FLAG = Animator.StringToHash("mining")
+var_0_0.DEVICE_SHOW_FLAG = Animator.StringToHash("device")
+var_0_0.UN_DEVICE_SHOW_FLAG = Animator.StringToHash("exitdevice")
+var_0_0.SOW_FLAG = Animator.StringToHash("sow")
+var_0_0.LOP_FLAG = Animator.StringToHash("lop")
+var_0_0.GAHTER_FLAG = Animator.StringToHash("gatheru")
+var_0_0.GAHTERD_FLAG = Animator.StringToHash("gatherd")
+var_0_0.jumpState = Animator.StringToHash("jumpstart")
+var_0_0.RUN_FLAG = Animator.StringToHash("sprint")
+var_0_0.SprintState = Animator.StringToHash("sprint_s2")
+var_0_0.miningState = Animator.StringToHash("mining")
 var_0_0.GRAVITY = -9.8
 var_0_0.UNIT_TYPE_ITEM = 0
 var_0_0.UNIT_TYPE_CHAR = 1
@@ -104,7 +82,7 @@ var_0_0.UNIT_GEN_TYPE_ACTIVITY = 4
 var_0_0.SYNC_TYPE_UNIT_STATIC = 1
 var_0_0.SYNC_TYPE_AGORA = 2
 var_0_0.GRAVITYACC = 30
-var_0_0.GRAVITYDIR = var_0_1.down
+var_0_0.GRAVITYDIR = require("Framework.toLua.UnityEngine.Vector3").down
 var_0_0.HEART_BEAT_INTERVAL = 5
 var_0_0.SYNC_TIME_INTERVAL = 0.1
 var_0_0.SYNC_TIME_DELAY = 110
@@ -169,12 +147,9 @@ var_0_0.AGORA_LEVEL_2_SIZE = {
 	66,
 	78
 }
-Vector3 = var_2
-var_0_0.AGORA_POSITION_OFFSET = var_2(-0.5, 0, -0.5)
-Vector3 = var_2
-var_0_0.AGORA_GROUND_OFFSET = var_2(-0.5, 0, -0.5)
-Vector3 = var_2
-var_0_0.AGORA_BUILDING_Y_OFFSET = var_2(0, -3.01, 0)
+var_0_0.AGORA_POSITION_OFFSET = Vector3(-0.5, 0, -0.5)
+var_0_0.AGORA_GROUND_OFFSET = Vector3(-0.5, 0, -0.5)
+var_0_0.AGORA_BUILDING_Y_OFFSET = Vector3(0, -3.01, 0)
 var_0_0.SHOP_GET_DATA = 1
 var_0_0.SHOP_BUY_COMMODITY = 2
 var_0_0.SHOP_REFRESH_BY_PLAYER = 3

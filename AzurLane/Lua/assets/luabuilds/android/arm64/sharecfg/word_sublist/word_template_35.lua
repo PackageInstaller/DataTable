@@ -1,15 +1,10 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.word_template_35 = {}
 
-local var_0_0
+local var_0_0 = pg.word_template_35
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.word_template_35 = {}
-
-local var_0_1 = var_0.word_template_35
-
-local function var_0_2()
-	var_0_1.鋸 = {
+function temp()
+	var_0_0.鋸 = {
 		齒 = {
 			通 = {
 				道 = {
@@ -39,12 +34,10 @@ local function var_0_2()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_3()
-	var_0_1.屨 = {
+function temp()
+	var_0_0.屨 = {
 		this = {
 			this = true
 		}
@@ -53,12 +46,10 @@ local function var_0_3()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_4()
-	var_0_1.棬 = {
+function temp()
+	var_0_0.棬 = {
 		this = {
 			this = true
 		}
@@ -67,12 +58,10 @@ local function var_0_4()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_5()
-	var_0_1.絕 = {
+function temp()
+	var_0_0.絕 = {
 		望 = {
 			之 = {
 				地 = {
@@ -114,12 +103,10 @@ local function var_0_5()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_6()
-	var_0_1.譎 = {
+function temp()
+	var_0_0.譎 = {
 		this = {
 			this = true
 		}
@@ -128,12 +115,10 @@ local function var_0_6()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_7()
-	var_0_1.軍 = {
+function temp()
+	var_0_0.軍 = {
 		妓 = {
 			this = true
 		},
@@ -479,12 +464,10 @@ local function var_0_7()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_8()
-	var_0_1.開 = {
+function temp()
+	var_0_0.開 = {
 		苞 = {
 			this = true,
 			價 = {
@@ -626,12 +609,10 @@ local function var_0_8()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_9()
-	var_0_1.凱 = {
+function temp()
+	var_0_0.凱 = {
 		奧 = {
 			勒 = {
 				尼 = {
@@ -690,12 +671,10 @@ local function var_0_9()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_10()
-	var_0_1.砍 = {
+function temp()
+	var_0_0.砍 = {
 		翻 = {
 			一 = {
 				條 = {
@@ -913,12 +892,10 @@ local function var_0_10()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_11()
-	var_0_1.看 = {
+function temp()
+	var_0_0.看 = {
 		中 = {
 			國 = {
 				this = true
@@ -1439,12 +1416,10 @@ local function var_0_11()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_12()
-	var_0_1.闞 = {
+function temp()
+	var_0_0.闞 = {
 		this = {
 			this = true
 		}
@@ -1453,12 +1428,10 @@ local function var_0_12()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_13()
-	var_0_1.柯 = {
+function temp()
+	var_0_0.柯 = {
 		賜 = {
 			海 = {
 				this = true
@@ -1667,12 +1640,10 @@ local function var_0_13()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_14()
-	var_0_1.科 = {
+function temp()
+	var_0_0.科 = {
 		萊 = {
 			爾 = {
 				this = true
@@ -1786,12 +1757,10 @@ local function var_0_14()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_15()
-	var_0_1.緙 = {
+function temp()
+	var_0_0.緙 = {
 		this = {
 			this = true
 		}
@@ -1800,12 +1769,10 @@ local function var_0_15()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_16()
-	var_0_1.恐 = {
+function temp()
+	var_0_0.恐 = {
 		怖 = {
 			this = true,
 			主 = {
@@ -2021,12 +1988,10 @@ local function var_0_16()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_17()
-	var_0_1.瞘 = {
+function temp()
+	var_0_0.瞘 = {
 		this = {
 			this = true
 		}
@@ -2035,12 +2000,10 @@ local function var_0_17()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_18()
-	var_0_1.嚳 = {
+function temp()
+	var_0_0.嚳 = {
 		this = {
 			this = true
 		}
@@ -2049,12 +2012,10 @@ local function var_0_18()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_19()
-	var_0_1.鄺 = {
+function temp()
+	var_0_0.鄺 = {
 		錦 = {
 			文 = {
 				this = true
@@ -2065,12 +2026,10 @@ local function var_0_19()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_20()
-	var_0_1.貺 = {
+function temp()
+	var_0_0.貺 = {
 		this = {
 			this = true
 		}
@@ -2079,12 +2038,10 @@ local function var_0_20()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_21()
-	var_0_1.昆 = {
+function temp()
+	var_0_0.昆 = {
 		圖 = {
 			this = true
 		},
@@ -2126,12 +2083,10 @@ local function var_0_21()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_22()
-	var_0_1.萊 = {
+function temp()
+	var_0_0.萊 = {
 		特 = {
 			this = true
 		}
@@ -2140,12 +2095,10 @@ local function var_0_22()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_23()
-	var_0_1.賴 = {
+function temp()
+	var_0_0.賴 = {
 		士 = {
 			葆 = {
 				this = true
@@ -2161,12 +2114,10 @@ local function var_0_23()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_24()
-	var_0_1.蘭 = {
+function temp()
+	var_0_0.蘭 = {
 		迪 = {
 			this = true
 		},
@@ -2286,12 +2237,10 @@ local function var_0_24()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_25()
-	var_0_1.爛 = {
+function temp()
+	var_0_0.爛 = {
 		B = {
 			this = true
 		},
@@ -2321,12 +2270,10 @@ local function var_0_25()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_26()
-	var_0_1.濫 = {
+function temp()
+	var_0_0.濫 = {
 		B = {
 			this = true
 		},
@@ -2353,12 +2300,10 @@ local function var_0_26()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_27()
-	var_0_1.勞 = {
+function temp()
+	var_0_0.勞 = {
 		動 = {
 			教 = {
 				養 = {
@@ -2388,12 +2333,10 @@ local function var_0_27()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_28()
-	var_0_1.鰳 = {
+function temp()
+	var_0_0.鰳 = {
 		this = {
 			this = true
 		}
@@ -2402,12 +2345,10 @@ local function var_0_28()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_29()
-	var_0_1.雷 = {
+function temp()
+	var_0_0.雷 = {
 		尼 = {
 			亞 = {
 				this = true
@@ -2876,12 +2817,10 @@ local function var_0_29()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_30()
-	var_0_1.誄 = {
+function temp()
+	var_0_0.誄 = {
 		this = {
 			this = true
 		}
@@ -2890,8 +2829,6 @@ local function var_0_30()
 	return
 end
 
-temp = temp
-
-var_2()
+temp()
 
 return

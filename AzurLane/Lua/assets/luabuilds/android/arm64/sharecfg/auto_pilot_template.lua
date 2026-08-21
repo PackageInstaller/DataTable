@@ -1,10 +1,5 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.auto_pilot_template = {
+﻿pg = pg or {}
+pg.auto_pilot_template = {
 	[10001] = {
 		id = 10001,
 		name = "随机移动",
@@ -11847,6 +11842,30 @@ var_0.auto_pilot_template = {
 					antiClockWise = true,
 					duration = 5,
 					x = -10
+				}
+			}
+		}
+	},
+	[70306] = {
+		id = 70306,
+		name = "2026本宁顿活动 EX BOSS移动至中场",
+		default = 1,
+		list = {
+			{
+				index = 1,
+				to = 2,
+				type = 1,
+				param = {
+					x = -40,
+					z = 54
+				}
+			},
+			{
+				index = 2,
+				to = 1,
+				type = 0,
+				param = {
+					duration = -1
 				}
 			}
 		}

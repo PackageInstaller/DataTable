@@ -1,196 +1,87 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PlayRoomSendChatCommand", pm.SimpleCommand)
 
-local var_0_0 = "PlayRoomSendChatCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.channel
+	local var_1_2 = var_1_0.type
+	local var_1_3 = var_1_0.msg
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().channel
-	local var_1_1 = var_2.type
-
-	if var_2.msg == "" then
-		pg = var_1_10006
-		var_1_10008 = var_1_10006.TipsMgr.GetInstance()
-		var_1_10006 = var_1_10006.ShowTips
-		i18n = var_1_10009
-
-		var_1_10006(var_1_10008, var_1_10009("main_notificationLayer_sendButton"))
+	if var_1_0.msg == "" then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("main_notificationLayer_sendButton"))
 
 		return
 	end
 
-	getProxy = var_1_10006
-	PlayerProxy = var_1_10008
+	local var_1_4 = getProxy(PlayerProxy):getRawData()
+	local var_1_5 = 0
 
-	local var_1_2 = var_1_10006(var_1_10008)
-	local var_1_3 = var_6.getRawData(var_1_2)
-	local var_1_4 = 0
+	if var_1_1 == PlayRoomChatConst.CHANNEL_PLAYROOM then
+		local var_1_6 = getProxy(PlayRoomProxy):GetChatMsgs()
 
-	PlayRoomChatConst = var_1_2
-
-	if var_1_0 == var_1_2.CHANNEL_PLAYROOM then
-		getProxy = var_9
-		PlayRoomProxy = var_1_10011
-
-		local var_1_5 = var_9(var_1_10011)
-
-		for iter_1_1 = #var_9.GetChatMsgs(var_1_5), 1, -1 do
-			if var_10[iter_1_1].playerId == var_1_3.id then
-				var_1_4 = var_10[iter_1_1].timestamp
+		for iter_1_0 = #var_1_6, 1, -1 do
+			if var_1_6[iter_1_0].playerId == var_1_4.id then
+				var_1_5 = var_1_6[iter_1_0].timestamp
 
 				break
 			end
 		end
 	else
-		getProxy = var_9
-		ChatProxy = var_1_10011
+		local var_1_7 = getProxy(ChatProxy):getRawData()
 
-		local var_1_6 = var_9(var_1_10011)
-
-		for iter_1_1 = #var_9.getRawData(var_1_6), 1, -1 do
-			var_1_10015 = var_10[iter_1_1].type
-			ChatConst = var_1_10016
-
-			if var_1_10015 == var_1_10016.ChannelWorld and var_10[iter_1_1].player.id == var_1_3.id then
-				var_1_4 = var_10[iter_1_1].timestamp
+		for iter_1_1 = #var_1_7, 1, -1 do
+			if var_1_7[iter_1_1].type == ChatConst.ChannelWorld and var_1_7[iter_1_1].player.id == var_1_4.id then
+				var_1_5 = var_1_7[iter_1_1].timestamp
 
 				break
 			end
 		end
 	end
 
-	pg = var_9
+	local var_1_8 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	local var_1_7 = var_9.TimeMgr.GetInstance()
-	local var_1_8
-
-	if var_9.GetServerTime(var_1_7) < var_1_3.chatMsgBanTime then
-		os = var_1_8
-		var_1_8 = var_1_8.date("%Y/%m/%d %H:%M:%S", var_1_3.chatMsgBanTime)
-		pg = var_1_7
-		var_1_10013 = var_1_7.MsgboxMgr.GetInstance()
-		var_1_7 = var_1_7.ShowMsgBox
-		iter_1_1 = {
-			hideNo = true
-		}
-		i18n = var_1_10015
-		iter_1_1.content = var_1_10015("chat_msg_ban", var_1_8)
-
-		var_1_7(var_1_10013, iter_1_1)
+	if var_1_8 < var_1_4.chatMsgBanTime then
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			hideNo = true,
+			content = i18n("chat_msg_ban", (os.date("%Y/%m/%d %H:%M:%S", var_1_4.chatMsgBanTime)))
+		})
+	elseif PLATFORM_CODE == PLATFORM_CH and LuaHelper.GetCHPackageType() ~= PACKAGE_TYPE_BILI and var_1_4.level < 70 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("chat_level_not_enough", 70))
+	elseif var_1_4.level < 10 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("chat_level_not_enough", 10))
+	elseif var_1_8 - var_1_5 < 10 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("dont_send_message_frequently", 10 - (var_1_8 - var_1_5)))
 	else
-		PLATFORM_CODE = var_1_8
-		PLATFORM_CH = var_1_7
-
-		if var_1_8 == var_1_7 then
-			LuaHelper = var_1_8
-
-			local var_1_9 = var_1_8.GetCHPackageType()
-
-			PACKAGE_TYPE_BILI = var_1_7
-
-			if var_1_9 ~= var_1_7 and var_1_3.level < 70 then
-				pg = var_10
-
-				local var_1_10 = var_10.TipsMgr.GetInstance()
-				local var_1_11 = var_10.ShowTips
-
-				i18n = var_1_10013
-
-				var_1_11(var_1_10, var_1_10013("chat_level_not_enough", 70))
-
-				goto label_1_0
-			end
-		end
-
-		if var_1_3.level < 10 then
-			pg = var_10
-
-			local var_1_12 = var_10.TipsMgr.GetInstance()
-			local var_1_13 = var_10.ShowTips
-
-			i18n = var_1_10013
-
-			var_1_13(var_1_12, var_1_10013("chat_level_not_enough", 10))
-		elseif var_9 - var_1_4 < 10 then
-			local var_1_14 = 10 - (var_9 - var_1_4)
-
-			pg = var_11
-
-			local var_1_15 = var_11.TipsMgr.GetInstance()
-			local var_1_16 = var_11.ShowTips
-
-			i18n = iter_1_1
-
-			var_1_16(var_1_15, iter_1_1("dont_send_message_frequently", var_1_14))
-		else
-			arg_1_0:Send(var_1_0, var_1_1, var_5)
-		end
+		arg_1_0:Send(var_1_1, var_1_2, var_1_3)
 	end
-
-	::label_1_0::
 
 	return
 end
 
-function var_0_1.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	wordVer = var_1_10004
-
-	local var_2_0, var_2_1 = var_1_10004(arg_2_3, {
+function var_0_0.Send(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0, var_2_1 = wordVer(arg_2_3, {
 		isReplace = true
 	})
 
-	PlayRoomChatConst = var_6
-
-	if arg_2_1 == var_6.CHANNEL_PLAYROOM then
-		pg = var_6
-
-		local var_2_2 = var_6.ConnectionMgr.GetInstance()
-
-		var_6.Send(var_2_2, 23023, {
+	if arg_2_1 == PlayRoomChatConst.CHANNEL_PLAYROOM then
+		pg.ConnectionMgr.GetInstance():Send(23023, {
 			type = arg_2_2,
 			content = var_2_1
 		}, 23024, function(arg_3_0)
 			if arg_3_0.result == 0 then
 				-- block empty
 			else
-				pg = var_1
-
-				local var_3_0 = var_1.TipsMgr.GetInstance()
-
-				var_1.ShowTips(var_3_0, arg_3_0.tip)
+				pg.TipsMgr.GetInstance():ShowTips(arg_3_0.tip)
 			end
 
 			return
 		end)
-	else
-		PlayRoomChatConst = var_6
-
-		local var_2_4
-
-		if arg_2_1 == var_6.CHANNEL_WORLD then
-			local var_2_3 = arg_2_0
-
-			var_2_4 = arg_2_0.sendNotification
-			GAME = var_1_10009
-
-			var_2_4(var_2_3, var_1_10009.SEND_MSG, var_2_1)
-		else
-			PlayRoomChatConst = var_2_4
-
-			if arg_2_1 == var_2_4.CHANNEL_GUILD then
-				local var_2_5 = arg_2_0
-				local var_2_6 = arg_2_0.sendNotification
-
-				GAME = var_1_10009
-
-				var_2_6(var_2_5, var_1_10009.GUILD_SEND_MSG, var_2_1)
-			end
-		end
+	elseif arg_2_1 == PlayRoomChatConst.CHANNEL_WORLD then
+		arg_2_0:sendNotification(GAME.SEND_MSG, var_2_1)
+	elseif arg_2_1 == PlayRoomChatConst.CHANNEL_GUILD then
+		arg_2_0:sendNotification(GAME.GUILD_SEND_MSG, var_2_1)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -176,6 +176,198 @@ local avatar_data=
 	[2085]={ unlock_type=3, unlock_list={1301,4}, get_description=28240, res_name=512351, icon="hero_head_1503_4.png", sort=143
 },
 	[2086]={ unlock_type=3, unlock_list={1113,2}, get_description=28241, res_name=512352, icon="hero_head_3504_2.png", sort=144
+},
+	[2087]={ unlock_type=3, unlock_list={1019,3}, get_description=28242, res_name=512354, icon="hero_head_4512_3.png", sort=145
+},
+	[2088]={ unlock_type=2, unlock_list={1024}, get_description=28243, res_name=501024, icon="hero_head_4517.png", sort=146
+},
+	[2089]={ unlock_type=3, unlock_list={1024,2}, get_description=28244, res_name=512355, icon="hero_head_4517_2.png", sort=147
+},
+	[2090]={ unlock_type=3, unlock_list={1010,4}, get_description=28245, res_name=512356, icon="hero_head_4507_3.png", sort=148
+},
+	[2091]={ unlock_type=2, unlock_list={1025}, get_description=28246, res_name=501025, icon="hero_head_4518.png", sort=149
+},
+	[2092]={ unlock_type=3, unlock_list={1025,2}, get_description=28247, res_name=512358, icon="hero_head_4518_2.png", sort=150
+},
+	[2093]={ unlock_type=3, unlock_list={1014,3}, get_description=28248, res_name=512359, icon="hero_head_4107_3.png", sort=151
+},
+	[2094]={ unlock_type=3, unlock_list={1008,3}, get_description=28249, res_name=512360, icon="hero_head_4502_3.png", sort=152
+},
+	[2095]={ unlock_type=3, unlock_list={1011,3}, get_description=28250, res_name=512361, icon="hero_head_4501_3.png", sort=153
+},
+	[2096]={ unlock_type=3, unlock_list={1005,3}, get_description=28251, res_name=512357, icon="hero_head_4108_3.png", sort=154
+},
+	[2097]={ unlock_type=2, unlock_list={1026}, get_description=28252, res_name=501026, icon="hero_head_4519.png", sort=155
+},
+	[2098]={ unlock_type=3, unlock_list={1303,2}, get_description=28253, res_name=512362, icon="hero_head_1105_2.png", sort=156
+},
+	[2099]={ unlock_type=3, unlock_list={1026,2}, get_description=28254, res_name=512363, icon="hero_head_4519_2.png", sort=157
+},
+	[2100]={ unlock_type=3, unlock_list={1201,3}, get_description=28255, res_name=512364, icon="hero_head_2502_2.png", sort=158
+},
+	[2101]={ unlock_type=3, unlock_list={1003,4}, get_description=28256, res_name=512365, icon="hero_head_4105_3.png", sort=159
+},
+	[2102]={ unlock_type=2, unlock_list={1027}, get_description=28257, res_name=501027, icon="hero_head_4520.png", sort=160
+},
+	[2103]={ unlock_type=3, unlock_list={1021,3}, get_description=28258, res_name=512366, icon="hero_head_4514_3.png", sort=161
+},
+	[2104]={ unlock_type=3, unlock_list={1022,3}, get_description=28259, res_name=512367, icon="hero_head_4515_3.png", sort=162
+},
+	[2105]={ unlock_type=3, unlock_list={1207,2}, get_description=28260, res_name=512368, icon="hero_head_2504_2.png", sort=163
+},
+	[2106]={ unlock_type=3, unlock_list={1027,2}, get_description=28261, res_name=512369, icon="hero_head_4520_2.png", sort=164
+},
+	[2107]={ unlock_type=2, unlock_list={1028}, get_description=28262, res_name=501028, icon="hero_head_4521.png", sort=165
+},
+	[2108]={ unlock_type=3, unlock_list={1028,2}, get_description=28263, res_name=512371, icon="hero_head_4521_2.png", sort=166
+},
+	[2109]={ unlock_type=3, unlock_list={1023,3}, get_description=28264, res_name=512372, icon="hero_head_4516_3.png", sort=167
+},
+	[2110]={ unlock_type=3, unlock_list={1016,3}, get_description=28265, res_name=512370, icon="hero_head_4509_3.png", sort=168
+},
+	[2111]={ unlock_type=3, unlock_list={1002,4}, get_description=28266, res_name=512373, icon="hero_head_4503_3.png", sort=169
+},
+	[2112]={ unlock_type=2, unlock_list={1029}, get_description=28268, res_name=501029, icon="hero_head_4522.png", sort=170
+},
+	[2113]={ unlock_type=3, unlock_list={1029,2}, get_description=28269, res_name=512376, icon="hero_head_4522_2.png", sort=171
+},
+	[2114]={ unlock_type=3, unlock_list={1027,3}, get_description=28270, res_name=512377, icon="hero_head_4520_3.png", sort=172
+},
+	[2115]={ unlock_type=3, unlock_list={1004,4}, get_description=28271, res_name=512378, icon="hero_head_4504_3.png", sort=173
+},
+	[2116]={ unlock_type=3, unlock_list={1026,3}, get_description=28272, res_name=512375, icon="hero_head_4519_3.png", sort=174
+},
+	[2117]={ unlock_type=2, unlock_list={1030}, get_description=28277, res_name=501030, icon="hero_head_4523.png", sort=175
+},
+	[2118]={ unlock_type=3, unlock_list={1030,2}, get_description=28273, res_name=512380, icon="hero_head_4523_2.png", sort=176
+},
+	[2119]={ unlock_type=3, unlock_list={1002,5}, get_description=28274, res_name=512381, icon="hero_head_4503_4.png", sort=177
+},
+	[2120]={ unlock_type=3, unlock_list={1020,3}, get_description=28275, res_name=512382, icon="hero_head_4513_3.png", sort=178
+},
+	[2121]={ unlock_type=3, unlock_list={1029,3}, get_description=28276, res_name=512379, icon="hero_head_4522_3.png", sort=179
+},
+	[2122]={ unlock_type=2, unlock_list={1031}, get_description=28278, res_name=501031, icon="hero_head_4524.png", sort=180
+},
+	[2123]={ unlock_type=3, unlock_list={1031,2}, get_description=28279, res_name=512383, icon="hero_head_4524_2.png", sort=181
+},
+	[2124]={ unlock_type=3, unlock_list={1030,3}, get_description=28280, res_name=512384, icon="hero_head_4523_3.png", sort=182
+},
+	[2125]={ unlock_type=3, unlock_list={1025,3}, get_description=28281, res_name=512385, icon="hero_head_4518_3.png", sort=183
+},
+	[2126]={ unlock_type=2, unlock_list={1032}, get_description=28282, res_name=501032, icon="hero_head_4525.png", sort=184
+},
+	[2127]={ unlock_type=3, unlock_list={1032,2}, get_description=28283, res_name=512386, icon="hero_head_4525_2.png", sort=185
+},
+	[2128]={ unlock_type=3, unlock_list={1031,3}, get_description=28284, res_name=512387, icon="hero_head_4524_3.png", sort=186
+},
+	[2129]={ unlock_type=3, unlock_list={1018,3}, get_description=28285, res_name=512388, icon="hero_head_4511_3.png", sort=187
+},
+	[2130]={ unlock_type=3, unlock_list={1007,4}, get_description=28286, res_name=512389, icon="hero_head_4506_4.png", sort=188
+},
+	[2131]={ unlock_type=2, unlock_list={1033}, get_description=28292, res_name=501033, icon="hero_head_4526.png", sort=189
+},
+	[2132]={ unlock_type=3, unlock_list={1033,2}, get_description=28287, res_name=512390, icon="hero_head_4526_2.png", sort=190
+},
+	[2133]={ unlock_type=3, unlock_list={1023,4}, get_description=28288, res_name=512391, icon="hero_head_4516_4.png", sort=191
+},
+	[2134]={ unlock_type=3, unlock_list={1032,3}, get_description=28289, res_name=512392, icon="hero_head_4525_3.png", sort=192
+},
+	[2135]={ unlock_type=3, unlock_list={1028,3}, get_description=28290, res_name=512393, icon="hero_head_4521_3.png", sort=193
+},
+	[2136]={ unlock_type=3, unlock_list={1009,4}, get_description=28291, res_name=512394, icon="hero_head_4505_3.png", sort=194
+},
+	[2137]={ unlock_type=2, unlock_list={1034}, get_description=28293, res_name=501034, icon="hero_head_4527.png", sort=195
+},
+	[2138]={ unlock_type=3, unlock_list={1034,2}, get_description=28294, res_name=512398, icon="hero_head_4527_2.png", sort=196
+},
+	[2139]={ unlock_type=3, unlock_list={1025,4}, get_description=28295, res_name=512396, icon="hero_head_4518_4.png", sort=197
+},
+	[2140]={ unlock_type=3, unlock_list={1001,4}, get_description=28296, res_name=512397, icon="hero_head_4106_4.png", sort=198
+},
+	[2141]={ unlock_type=3, unlock_list={1024,3}, get_description=28297, res_name=512395, icon="hero_head_4517_3.png", sort=199
+},
+	[2142]={ unlock_type=2, unlock_list={1035}, get_description=28298, res_name=501035, icon="hero_head_4528.png", sort=200
+},
+	[2143]={ unlock_type=3, unlock_list={1035,2}, get_description=28299, res_name=512400, icon="hero_head_4528_2.png", sort=201
+},
+	[2144]={ unlock_type=3, unlock_list={1019,4}, get_description=28300, res_name=512401, icon="hero_head_4512_4.png", sort=202
+},
+	[2145]={ unlock_type=3, unlock_list={1030,4}, get_description=28301, res_name=512399, icon="hero_head_4523_4.png", sort=203
+},
+	[2146]={ unlock_type=3, unlock_list={1301,5}, get_description=28302, res_name=512402, icon="hero_head_1503_5.png", sort=204
+},
+	[2147]={ unlock_type=2, unlock_list={1036}, get_description=28303, res_name=501036, icon="hero_head_4529.png", sort=205
+},
+	[2148]={ unlock_type=3, unlock_list={1036,2}, get_description=28304, res_name=512406, icon="hero_head_4529_2.png", sort=206
+},
+	[2149]={ unlock_type=3, unlock_list={1026,4}, get_description=28305, res_name=512404, icon="hero_head_4519_4.png", sort=207
+},
+	[2150]={ unlock_type=3, unlock_list={1011,4}, get_description=28306, res_name=512405, icon="hero_head_4501_4.png", sort=208
+},
+	[2151]={ unlock_type=3, unlock_list={1020,4}, get_description=28307, res_name=512403, icon="hero_head_4513_4.png", sort=209
+},
+	[2152]={ unlock_type=2, unlock_list={1037}, get_description=28308, res_name=501037, icon="hero_head_4530.png", sort=210
+},
+	[2153]={ unlock_type=3, unlock_list={1029,4}, get_description=28309, res_name=512407, icon="hero_head_4522_4.png", sort=211
+},
+	[2154]={ unlock_type=3, unlock_list={1033,3}, get_description=28310, res_name=512408, icon="hero_head_4526_3.png", sort=212
+},
+	[2155]={ unlock_type=3, unlock_list={1105,5}, get_description=28311, res_name=512409, icon="hero_head_3108_5.png", sort=213
+},
+	[2156]={ unlock_type=3, unlock_list={1037,2}, get_description=28312, res_name=512410, icon="hero_head_4530_2.png", sort=214
+},
+	[2157]={ unlock_type=2, unlock_list={1038}, get_description=28313, res_name=501038, icon="hero_head_4531.png", sort=215
+},
+	[2158]={ unlock_type=3, unlock_list={1038,2}, get_description=28314, res_name=512411, icon="hero_head_4531_2.png", sort=216
+},
+	[2159]={ unlock_type=3, unlock_list={1016,4}, get_description=28315, res_name=512412, icon="hero_head_4509_4.png", sort=217
+},
+	[2160]={ unlock_type=3, unlock_list={1027,4}, get_description=28316, res_name=512413, icon="hero_head_4520_4.png", sort=218
+},
+	[2161]={ unlock_type=3, unlock_list={1022,4}, get_description=28317, res_name=512414, icon="hero_head_4515_4.png", sort=219
+},
+	[2162]={ unlock_type=2, unlock_list={1039}, get_description=28318, res_name=501039, icon="hero_head_4532.png", sort=220
+},
+	[2163]={ unlock_type=3, unlock_list={1039,2}, get_description=28319, res_name=512415, icon="hero_head_4532_2.png", sort=221
+},
+	[2164]={ unlock_type=3, unlock_list={1036,3}, get_description=28320, res_name=512416, icon="hero_head_4529_3.png", sort=222
+},
+	[2165]={ unlock_type=3, unlock_list={1034,3}, get_description=28321, res_name=512417, icon="hero_head_4527_3.png", sort=223
+},
+	[2166]={ unlock_type=3, unlock_list={1017,3}, get_description=28322, res_name=512418, icon="hero_head_4510_3.png", sort=224
+},
+	[2167]={ unlock_type=2, unlock_list={1040}, get_description=28323, res_name=501040, icon="hero_head_4533.png", sort=225
+},
+	[2168]={ unlock_type=3, unlock_list={1040,2}, get_description=28324, res_name=512419, icon="hero_head_4533_2.png", sort=226
+},
+	[2169]={ unlock_type=3, unlock_list={1035,3}, get_description=28325, res_name=512420, icon="hero_head_4528_3.png", sort=227
+},
+	[2170]={ unlock_type=3, unlock_list={1037,3}, get_description=28326, res_name=512421, icon="hero_head_4530_3.png", sort=228
+},
+	[2171]={ unlock_type=3, unlock_list={1023,5}, get_description=28327, res_name=512422, icon="hero_head_4516_5.png", sort=229
+},
+	[2172]={ unlock_type=2, unlock_list={1041}, get_description=28328, res_name=501041, icon="hero_head_4534.png", sort=230
+},
+	[2173]={ unlock_type=3, unlock_list={1041,2}, get_description=28329, res_name=512423, icon="hero_head_4534_2.png", sort=231
+},
+	[2174]={ unlock_type=3, unlock_list={1007,5}, get_description=28330, res_name=512424, icon="hero_head_4506_5.png", sort=232
+},
+	[2175]={ unlock_type=3, unlock_list={1032,4}, get_description=28331, res_name=512425, icon="hero_head_4525_4.png", sort=233
+},
+	[2176]={ unlock_type=3, unlock_list={1031,4}, get_description=28332, res_name=512426, icon="hero_head_4524_4.png", sort=234
+},
+	[2177]={ unlock_type=2, unlock_list={1042}, get_description=28333, res_name=501042, icon="hero_head_4535.png", sort=235
+},
+	[2178]={ unlock_type=3, unlock_list={1042,2}, get_description=28334, res_name=512427, icon="hero_head_4535_2.png", sort=236
+},
+	[2179]={ unlock_type=3, unlock_list={1039,3}, get_description=28335, res_name=512428, icon="hero_head_4532_3.png", sort=237
+},
+	[2180]={ unlock_type=3, unlock_list={1038,3}, get_description=28336, res_name=512429, icon="hero_head_4531_3.png", sort=238
+},
+	[2181]={ unlock_type=3, unlock_list={1033,4}, get_description=28337, res_name=512430, icon="hero_head_4526_4.png", sort=239
+},
+	[9999]={ unlock_type=3, unlock_list={1002,999}, get_description=28266, res_name=512373, icon="hero_head_9999.png", sort=240
 }
 }
 

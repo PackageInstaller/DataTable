@@ -3,7 +3,7 @@
 local miner_wave_data=
 
 {
-	[1]={ require_point=1000, time_limit=90, event_list={
+	[1]={ require_point=800, time_limit=90, event_list={
 		[1]={ event_id=1013, pos={-468,-3}, movePos={} },
 		[2]={ event_id=1013, pos={468,-3}, movePos={} },
 		[3]={ event_id=1013, pos={-236,-36}, movePos={} },

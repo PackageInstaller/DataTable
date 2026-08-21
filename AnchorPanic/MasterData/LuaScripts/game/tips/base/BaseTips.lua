@@ -69,13 +69,14 @@ function __tempAction(self, clickPosData)
         moveRect:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPropsIconUrl(vo.tid), true)
         self.m_iconTweener = TweenFactory:propsMoveTo(moveRect, startScale, endScale, startSize, endSize, startPos, endPos, iconTweenTime, nil, _iconTweenFinishCall)
 
-        local groupTweenTime = 0.2
+        -- local groupTweenTime = 0.2
         local canvasGroup = self.m_childGos["GameAction"]:GetComponent(ty.CanvasGroup)
-        local _groupTweenFinishCall = function()
-            self.m_groupTweener:Kill()
-            self.m_groupTweener = nil
-        end
-        self.m_groupTweener = TweenFactory:canvasGroupAlphaTo(canvasGroup, 0, 1, groupTweenTime, nil, _groupTweenFinishCall, 0.1)
+        -- local _groupTweenFinishCall = function()
+        --     self.m_groupTweener:Kill()
+        --     self.m_groupTweener = nil
+        -- end
+        -- self.m_groupTweener = TweenFactory:canvasGroupAlphaTo(canvasGroup, 0, 1, groupTweenTime, nil, _groupTweenFinishCall, 0.1)
+        canvasGroup.alpha = 1
     end
 end
 

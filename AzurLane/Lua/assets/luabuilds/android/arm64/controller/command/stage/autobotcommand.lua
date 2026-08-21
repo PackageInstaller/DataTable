@@ -1,110 +1,57 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AutoBotCommand", pm.SimpleCommand)
 
-local var_0_0 = "AutoBotCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.isActiveBot
+	local var_1_2 = var_1_0.toggle
+	local var_1_3 = var_1_0.system
+	local var_1_4 = var_0_0.GetAutoBotMark(var_1_0.system)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().isActiveBot
-	local var_1_1 = var_2.toggle
-	local var_1_2 = var_2.system
-	local var_1_3 = var_0_1.GetAutoBotMark(var_1_2)
-	local var_1_4 = arg_1_0
-	local var_1_5 = arg_1_0.sendNotification
-
-	BattleMediator = var_1_10010
-
-	var_1_5(var_1_4, var_1_10010.UPDATE_AUTO_COUNT, {
-		isOn = var_1_0
+	arg_1_0:sendNotification(BattleMediator.UPDATE_AUTO_COUNT, {
+		isOn = var_1_0.isActiveBot
 	})
 
-	if var_0_1.autoBotSatisfied() then
-		PlayerPrefs = var_7
-
-		if var_7.GetInt("autoBotIsAcitve" .. var_1_3, 0) == not var_1_0 then
+	if var_0_0.autoBotSatisfied() then
+		if PlayerPrefs.GetInt("autoBotIsAcitve" .. var_1_4, 0) == not var_1_1 then
 			-- block empty
 		else
-			PlayerPrefs = var_8
-
-			var_8.SetInt("autoBotIsAcitve" .. var_1_3, not var_1_0 and 1 or 0)
-			var_0_1.activeBotHelp(not var_1_0)
+			PlayerPrefs.SetInt("autoBotIsAcitve" .. var_1_4, not var_1_1 and 1 or 0)
+			var_0_0.activeBotHelp(not var_1_1)
 		end
-	elseif not var_1_0 then
-		if var_1_1 then
-			onDelayTick = var_7
-
-			var_7(function()
-				GetComponent = var_2_10000
-
-				local var_2_0 = var_1_1
-
-				typeof = var_2_10003
-				Toggle = var_2_10005
-				var_2_10000(var_2_0, var_2_10003(var_2_10005)).isOn = false
+	elseif not var_1_1 then
+		if var_1_0.toggle then
+			onDelayTick(function()
+				GetComponent(var_1_2, typeof(Toggle)).isOn = false
 
 				return
 			end, 0.1)
 		end
 
-		pg = var_7
-
-		local var_1_6 = var_7.TipsMgr.GetInstance()
-		local var_1_7 = var_7.ShowTips
-
-		i18n = var_10
-
-		var_1_7(var_1_6, var_10("auto_battle_limit_tip"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("auto_battle_limit_tip"))
 	end
 
-	if var_1_0 then
-		local var_1_8 = arg_1_0
-		local var_1_9 = arg_1_0.sendNotification
-
-		GAME = var_10
-
-		var_1_9(var_1_8, var_10.AUTO_SUB, {
+	if var_1_1 then
+		arg_1_0:sendNotification(GAME.AUTO_SUB, {
 			isActiveSub = true,
-			system = var_1_2
+			system = var_1_3
 		})
 	end
 
 	return
 end
 
-function var_0_1.autoBotSatisfied()
-	getProxy = var_1_10000
-	ChapterProxy = var_1_10002
+function var_0_0.autoBotSatisfied()
+	local var_3_0 = getProxy(ChapterProxy)
 
-	if var_1_10000(var_1_10002) then
-		::label_3_0::
-
-		local var_3_0 = var_0
-
-		var_1_10001 = var_0.getChapterById
-		AUTO_ENABLE_CHAPTER = var_1_10004
-
-		local var_3_1 = var_1_10001(var_3_0, var_1_10004)
-
-		var_1_10001 = var_1_10001.isClear(var_3_1)
-	end
-
-	return var_1_10001
+	return var_3_0 and var_3_0:getChapterById(AUTO_ENABLE_CHAPTER):isClear()
 end
 
-function var_0_1.activeBotHelp(arg_4_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_4_0 = var_1_10001(var_1_10003)
+function var_0_0.activeBotHelp(arg_4_0)
+	local var_4_0 = getProxy(PlayerProxy)
 
 	if not arg_4_0 then
-		if var_0_1.autoBotHelp then
-			pg = var_2
-			var_1_10004 = var_2.MsgboxMgr.GetInstance()
-
-			var_2.hide(var_1_10004)
+		if var_0_0.autoBotHelp then
+			pg.MsgboxMgr.GetInstance():hide()
 		end
 
 		return
@@ -114,74 +61,37 @@ function var_0_1.activeBotHelp(arg_4_0)
 		return
 	end
 
-	local var_4_1 = var_0_1
+	var_0_0.autoBotHelp = true
 
-	var_4_1.autoBotHelp = true
-	getProxy = var_4_1
-	SettingsProxy = var_1_10004
-
-	local var_4_2 = var_4_1(var_1_10004)
-
-	if var_2.isTipAutoBattle(var_4_2) then
-		pg = var_2
-
-		local var_4_3 = var_2.MsgboxMgr.GetInstance()
-		local var_4_4 = var_2.ShowMsgBox
-		local var_4_5 = {
+	if getProxy(SettingsProxy):isTipAutoBattle() then
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			toggleStatus = true,
-			showStopRemind = true
-		}
+			showStopRemind = true,
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("help_battle_auto"),
+			custom = {
+				{
+					text = "text_iknow",
+					sound = SFX_CANCEL,
+					onCallback = function()
+						if pg.MsgboxMgr.GetInstance().stopRemindToggle.isOn then
+							getProxy(SettingsProxy):setAutoBattleTip()
+						end
 
-		MSGBOX_TYPE_HELP = var_1_10006
-		var_4_5.type = var_1_10006
-		i18n = var_1_10006
-		var_4_5.helps = var_1_10006("help_battle_auto")
+						return
+					end
+				}
+			},
+			onClose = function()
+				var_0_0.autoBotHelp = false
 
-		local var_4_6 = {}
-		local var_4_7 = {
-			text = "text_iknow"
-		}
+				if pg.MsgboxMgr.GetInstance().stopRemindToggle.isOn then
+					getProxy(SettingsProxy):setAutoBattleTip()
+				end
 
-		SFX_CANCEL = var_8
-		var_4_7.sound = var_8
-
-		function var_4_7.onCallback()
-			pg = var_2_10000
-
-			if var_2_10000.MsgboxMgr.GetInstance().stopRemindToggle.isOn then
-				getProxy = var_2_10001
-				SettingsProxy = var_2_10003
-
-				local var_5_0 = var_2_10001(var_2_10003)
-
-				var_1.setAutoBattleTip(var_5_0)
+				return
 			end
-
-			return
-		end
-
-		var_4_6[1] = var_4_7
-		var_4_5.custom = var_4_6
-
-		function var_4_5.onClose()
-			local var_6_0 = var_0_1
-
-			var_6_0.autoBotHelp = false
-			pg = var_6_0
-
-			if var_6_0.MsgboxMgr.GetInstance().stopRemindToggle.isOn then
-				getProxy = var_1
-				SettingsProxy = var_2_10003
-
-				local var_6_1 = var_1(var_2_10003)
-
-				var_1.setAutoBattleTip(var_6_1)
-			end
-
-			return
-		end
-
-		var_4_4(var_4_3, var_4_5)
+		})
 	end
 
 	var_4_0.botHelp = true
@@ -189,33 +99,16 @@ function var_0_1.activeBotHelp(arg_4_0)
 	return
 end
 
-function var_0_1.GetAutoBotMark(arg_7_0)
-	SYSTEM_WORLD = var_1_10001
-
-	if arg_7_0 ~= var_1_10001 then
-		SYSTEM_WORLD_BOSS = var_1_10001
-
-		if arg_7_0 == var_1_10001 then
-			var_1_10001 = "_"
-			SYSTEM_WORLD = var_1_10002
-
-			return var_1_10001 .. var_1_10002
-		else
-			SYSTEM_GUILD = var_1_10001
-
-			if arg_7_0 == var_1_10001 then
-				local var_7_0 = "_"
-
-				SYSTEM_GUILD = var_1_10002
-
-				return var_7_0 .. var_1_10002
-			else
-				return ""
-			end
-		end
-
-		return
+function var_0_0.GetAutoBotMark(arg_7_0)
+	if arg_7_0 == SYSTEM_WORLD or arg_7_0 == SYSTEM_WORLD_BOSS then
+		return "_" .. SYSTEM_WORLD
+	elseif arg_7_0 == SYSTEM_GUILD then
+		return "_" .. SYSTEM_GUILD
+	else
+		return ""
 	end
+
+	return
 end
 
-return var_0_1
+return var_0_0

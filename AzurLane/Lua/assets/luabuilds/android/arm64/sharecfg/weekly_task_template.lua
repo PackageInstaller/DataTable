@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "weekly_task_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "weekly_task_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.weekly_task_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.weekly_task_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.weekly_task_template = rawget(pg, "weekly_task_template") or setmetatable({
+	__name = "weekly_task_template"
+}, confNEO)
+pg.weekly_task_template.all = {
 	10001,
 	10002,
 	10003,
@@ -102,25 +79,11 @@ var_0_3.all = {
 	10154,
 	10155
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.weekly_task_template = {}
+pg.base = pg.base or {}
+pg.base.weekly_task_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.weekly_task_template
-
-	var_1_0[10001] = {
+	pg.base.weekly_task_template[10001] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -134,11 +97,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.weekly_task_template
-
-	var_1_1[10002] = {
+	pg.base.weekly_task_template[10002] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -152,11 +111,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.weekly_task_template
-
-	var_1_2[10003] = {
+	pg.base.weekly_task_template[10003] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -170,11 +125,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.weekly_task_template
-
-	var_1_3[10004] = {
+	pg.base.weekly_task_template[10004] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -188,11 +139,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.weekly_task_template
-
-	var_1_4[10005] = {
+	pg.base.weekly_task_template[10005] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -206,11 +153,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.weekly_task_template
-
-	var_1_5[10006] = {
+	pg.base.weekly_task_template[10006] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -224,11 +167,7 @@ var_0_3.base.weekly_task_template = {}
 			60
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.weekly_task_template
-
-	var_1_6[10007] = {
+	pg.base.weekly_task_template[10007] = {
 		level = 1,
 		sub_type = 20,
 		target_id_for_client = 0,
@@ -242,11 +181,7 @@ var_0_3.base.weekly_task_template = {}
 			70
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.weekly_task_template
-
-	var_1_7[10011] = {
+	pg.base.weekly_task_template[10011] = {
 		level = 1,
 		sub_type = 11,
 		target_id_for_client = 0,
@@ -260,11 +195,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.weekly_task_template
-
-	var_1_8[10012] = {
+	pg.base.weekly_task_template[10012] = {
 		level = 1,
 		sub_type = 11,
 		target_id_for_client = 0,
@@ -278,11 +209,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.weekly_task_template
-
-	var_1_9[10013] = {
+	pg.base.weekly_task_template[10013] = {
 		level = 1,
 		sub_type = 11,
 		target_id_for_client = 0,
@@ -296,11 +223,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.weekly_task_template
-
-	var_1_10[10014] = {
+	pg.base.weekly_task_template[10014] = {
 		level = 1,
 		sub_type = 11,
 		target_id_for_client = 0,
@@ -314,11 +237,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.weekly_task_template
-
-	var_1_11[10015] = {
+	pg.base.weekly_task_template[10015] = {
 		level = 1,
 		sub_type = 11,
 		target_id_for_client = 0,
@@ -332,11 +251,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.weekly_task_template
-
-	var_1_12[10016] = {
+	pg.base.weekly_task_template[10016] = {
 		level = 1,
 		sub_type = 11,
 		target_id_for_client = 0,
@@ -350,11 +265,7 @@ var_0_3.base.weekly_task_template = {}
 			60
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.weekly_task_template
-
-	var_1_13[10021] = {
+	pg.base.weekly_task_template[10021] = {
 		level = 8,
 		sub_type = 60,
 		target_id_for_client = 0,
@@ -368,11 +279,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.weekly_task_template
-
-	var_1_14[10022] = {
+	pg.base.weekly_task_template[10022] = {
 		level = 8,
 		sub_type = 60,
 		target_id_for_client = 0,
@@ -386,11 +293,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.weekly_task_template
-
-	var_1_15[10023] = {
+	pg.base.weekly_task_template[10023] = {
 		level = 8,
 		sub_type = 60,
 		target_id_for_client = 0,
@@ -404,11 +307,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.weekly_task_template
-
-	var_1_16[10024] = {
+	pg.base.weekly_task_template[10024] = {
 		level = 8,
 		sub_type = 60,
 		target_id_for_client = 0,
@@ -422,11 +321,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.weekly_task_template
-
-	var_1_17[10025] = {
+	pg.base.weekly_task_template[10025] = {
 		level = 8,
 		sub_type = 60,
 		target_id_for_client = 0,
@@ -440,11 +335,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.weekly_task_template
-
-	var_1_18[10031] = {
+	pg.base.weekly_task_template[10031] = {
 		level = 40,
 		sub_type = 170,
 		target_id_for_client = 0,
@@ -458,11 +349,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.weekly_task_template
-
-	var_1_19[10032] = {
+	pg.base.weekly_task_template[10032] = {
 		level = 40,
 		sub_type = 170,
 		target_id_for_client = 0,
@@ -476,11 +363,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.weekly_task_template
-
-	var_1_20[10033] = {
+	pg.base.weekly_task_template[10033] = {
 		level = 40,
 		sub_type = 170,
 		target_id_for_client = 0,
@@ -494,11 +377,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.weekly_task_template
-
-	var_1_21[10041] = {
+	pg.base.weekly_task_template[10041] = {
 		level = 1,
 		sub_type = 30,
 		target_id_for_client = 0,
@@ -512,11 +391,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.weekly_task_template
-
-	var_1_22[10042] = {
+	pg.base.weekly_task_template[10042] = {
 		level = 1,
 		sub_type = 30,
 		target_id_for_client = 0,
@@ -530,11 +405,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.weekly_task_template
-
-	var_1_23[10043] = {
+	pg.base.weekly_task_template[10043] = {
 		level = 1,
 		sub_type = 30,
 		target_id_for_client = 0,
@@ -548,11 +419,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.weekly_task_template
-
-	var_1_24[10044] = {
+	pg.base.weekly_task_template[10044] = {
 		level = 1,
 		sub_type = 30,
 		target_id_for_client = 0,
@@ -566,11 +433,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.weekly_task_template
-
-	var_1_25[10051] = {
+	pg.base.weekly_task_template[10051] = {
 		level = 1,
 		sub_type = 121,
 		target_id_for_client = 0,
@@ -584,11 +447,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.weekly_task_template
-
-	var_1_26[10052] = {
+	pg.base.weekly_task_template[10052] = {
 		level = 1,
 		sub_type = 121,
 		target_id_for_client = 0,
@@ -602,11 +461,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.weekly_task_template
-
-	var_1_27[10053] = {
+	pg.base.weekly_task_template[10053] = {
 		level = 1,
 		sub_type = 121,
 		target_id_for_client = 0,
@@ -620,11 +475,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.weekly_task_template
-
-	var_1_28[10054] = {
+	pg.base.weekly_task_template[10054] = {
 		level = 1,
 		sub_type = 121,
 		target_id_for_client = 0,
@@ -638,11 +489,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.weekly_task_template
-
-	var_1_29[10055] = {
+	pg.base.weekly_task_template[10055] = {
 		level = 1,
 		sub_type = 121,
 		target_id_for_client = 0,
@@ -656,11 +503,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.weekly_task_template
-
-	var_1_30[10061] = {
+	pg.base.weekly_task_template[10061] = {
 		level = 1,
 		sub_type = 23,
 		target_id_for_client = 0,
@@ -674,11 +517,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.weekly_task_template
-
-	var_1_31[10062] = {
+	pg.base.weekly_task_template[10062] = {
 		level = 1,
 		sub_type = 23,
 		target_id_for_client = 0,
@@ -692,11 +531,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.weekly_task_template
-
-	var_1_32[10063] = {
+	pg.base.weekly_task_template[10063] = {
 		level = 1,
 		sub_type = 23,
 		target_id_for_client = 0,
@@ -710,11 +545,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.weekly_task_template
-
-	var_1_33[10064] = {
+	pg.base.weekly_task_template[10064] = {
 		level = 1,
 		sub_type = 23,
 		target_id_for_client = 0,
@@ -728,11 +559,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.weekly_task_template
-
-	var_1_34[10071] = {
+	pg.base.weekly_task_template[10071] = {
 		level = 30,
 		sub_type = 110,
 		target_id_for_client = 0,
@@ -746,11 +573,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.weekly_task_template
-
-	var_1_35[10072] = {
+	pg.base.weekly_task_template[10072] = {
 		level = 30,
 		sub_type = 110,
 		target_id_for_client = 0,
@@ -764,11 +587,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.weekly_task_template
-
-	var_1_36[10073] = {
+	pg.base.weekly_task_template[10073] = {
 		level = 30,
 		sub_type = 110,
 		target_id_for_client = 0,
@@ -782,11 +601,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.weekly_task_template
-
-	var_1_37[10074] = {
+	pg.base.weekly_task_template[10074] = {
 		level = 30,
 		sub_type = 110,
 		target_id_for_client = 0,
@@ -800,11 +615,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.weekly_task_template
-
-	var_1_38[10075] = {
+	pg.base.weekly_task_template[10075] = {
 		level = 30,
 		sub_type = 110,
 		target_id_for_client = 0,
@@ -818,11 +629,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.weekly_task_template
-
-	var_1_39[10081] = {
+	pg.base.weekly_task_template[10081] = {
 		level = 1,
 		sub_type = 34,
 		target_id_for_client = 0,
@@ -836,11 +643,7 @@ var_0_3.base.weekly_task_template = {}
 			5
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.weekly_task_template
-
-	var_1_40[10082] = {
+	pg.base.weekly_task_template[10082] = {
 		level = 1,
 		sub_type = 34,
 		target_id_for_client = 0,
@@ -854,11 +657,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.weekly_task_template
-
-	var_1_41[10083] = {
+	pg.base.weekly_task_template[10083] = {
 		level = 1,
 		sub_type = 34,
 		target_id_for_client = 0,
@@ -872,11 +671,7 @@ var_0_3.base.weekly_task_template = {}
 			15
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.weekly_task_template
-
-	var_1_42[10084] = {
+	pg.base.weekly_task_template[10084] = {
 		level = 1,
 		sub_type = 34,
 		target_id_for_client = 0,
@@ -890,11 +685,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.weekly_task_template
-
-	var_1_43[10085] = {
+	pg.base.weekly_task_template[10085] = {
 		level = 1,
 		sub_type = 34,
 		target_id_for_client = 0,
@@ -908,11 +699,7 @@ var_0_3.base.weekly_task_template = {}
 			25
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.weekly_task_template
-
-	var_1_44[10091] = {
+	pg.base.weekly_task_template[10091] = {
 		level = 1,
 		sub_type = 40,
 		target_id_for_client = 0,
@@ -926,11 +713,7 @@ var_0_3.base.weekly_task_template = {}
 			5
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.weekly_task_template
-
-	var_1_45[10092] = {
+	pg.base.weekly_task_template[10092] = {
 		level = 1,
 		sub_type = 40,
 		target_id_for_client = 0,
@@ -944,11 +727,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.weekly_task_template
-
-	var_1_46[10093] = {
+	pg.base.weekly_task_template[10093] = {
 		level = 1,
 		sub_type = 40,
 		target_id_for_client = 0,
@@ -962,11 +741,7 @@ var_0_3.base.weekly_task_template = {}
 			15
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.weekly_task_template
-
-	var_1_47[10101] = {
+	pg.base.weekly_task_template[10101] = {
 		level = 10,
 		sub_type = 26,
 		target_id_for_client = 0,
@@ -980,11 +755,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.weekly_task_template
-
-	var_1_48[10102] = {
+	pg.base.weekly_task_template[10102] = {
 		level = 10,
 		sub_type = 26,
 		target_id_for_client = 0,
@@ -998,11 +769,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.weekly_task_template
-
-	var_1_49[10103] = {
+	pg.base.weekly_task_template[10103] = {
 		level = 10,
 		sub_type = 26,
 		target_id_for_client = 0,
@@ -1016,11 +783,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.weekly_task_template
-
-	var_1_50[10104] = {
+	pg.base.weekly_task_template[10104] = {
 		level = 10,
 		sub_type = 26,
 		target_id_for_client = 0,
@@ -1034,11 +797,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.weekly_task_template
-
-	var_1_51[10105] = {
+	pg.base.weekly_task_template[10105] = {
 		level = 10,
 		sub_type = 26,
 		target_id_for_client = 0,
@@ -1052,11 +811,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.weekly_task_template
-
-	var_1_52[10111] = {
+	pg.base.weekly_task_template[10111] = {
 		level = 1,
 		sub_type = 71,
 		target_id_for_client = 0,
@@ -1070,11 +825,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.weekly_task_template
-
-	var_1_53[10112] = {
+	pg.base.weekly_task_template[10112] = {
 		level = 1,
 		sub_type = 71,
 		target_id_for_client = 0,
@@ -1088,11 +839,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.weekly_task_template
-
-	var_1_54[10113] = {
+	pg.base.weekly_task_template[10113] = {
 		level = 1,
 		sub_type = 71,
 		target_id_for_client = 0,
@@ -1106,11 +853,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.weekly_task_template
-
-	var_1_55[10114] = {
+	pg.base.weekly_task_template[10114] = {
 		level = 1,
 		sub_type = 71,
 		target_id_for_client = 0,
@@ -1124,11 +867,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.weekly_task_template
-
-	var_1_56[10121] = {
+	pg.base.weekly_task_template[10121] = {
 		level = 12,
 		sub_type = 80,
 		target_id_for_client = 0,
@@ -1142,11 +881,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.weekly_task_template
-
-	var_1_57[10122] = {
+	pg.base.weekly_task_template[10122] = {
 		level = 12,
 		sub_type = 80,
 		target_id_for_client = 0,
@@ -1160,11 +895,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.weekly_task_template
-
-	var_1_58[10123] = {
+	pg.base.weekly_task_template[10123] = {
 		level = 12,
 		sub_type = 80,
 		target_id_for_client = 0,
@@ -1178,11 +909,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.weekly_task_template
-
-	var_1_59[10124] = {
+	pg.base.weekly_task_template[10124] = {
 		level = 12,
 		sub_type = 80,
 		target_id_for_client = 0,
@@ -1196,11 +923,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.weekly_task_template
-
-	var_1_60[10125] = {
+	pg.base.weekly_task_template[10125] = {
 		level = 12,
 		sub_type = 80,
 		target_id_for_client = 0,
@@ -1214,11 +937,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.weekly_task_template
-
-	var_1_61[10131] = {
+	pg.base.weekly_task_template[10131] = {
 		level = 15,
 		sub_type = 27,
 		target_id_for_client = 1,
@@ -1232,11 +951,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.weekly_task_template
-
-	var_1_62[10132] = {
+	pg.base.weekly_task_template[10132] = {
 		level = 15,
 		sub_type = 27,
 		target_id_for_client = 1,
@@ -1250,11 +965,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.weekly_task_template
-
-	var_1_63[10133] = {
+	pg.base.weekly_task_template[10133] = {
 		level = 15,
 		sub_type = 27,
 		target_id_for_client = 1,
@@ -1268,11 +979,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.weekly_task_template
-
-	var_1_64[10134] = {
+	pg.base.weekly_task_template[10134] = {
 		level = 15,
 		sub_type = 27,
 		target_id_for_client = 1,
@@ -1286,11 +993,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.weekly_task_template
-
-	var_1_65[10135] = {
+	pg.base.weekly_task_template[10135] = {
 		level = 15,
 		sub_type = 27,
 		target_id_for_client = 1,
@@ -1304,11 +1007,7 @@ var_0_3.base.weekly_task_template = {}
 			50
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.weekly_task_template
-
-	var_1_66[10141] = {
+	pg.base.weekly_task_template[10141] = {
 		level = 1,
 		sub_type = 31,
 		target_id_for_client = 0,
@@ -1322,11 +1021,7 @@ var_0_3.base.weekly_task_template = {}
 			5
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.weekly_task_template
-
-	var_1_67[10142] = {
+	pg.base.weekly_task_template[10142] = {
 		level = 1,
 		sub_type = 31,
 		target_id_for_client = 0,
@@ -1340,11 +1035,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.weekly_task_template
-
-	var_1_68[10143] = {
+	pg.base.weekly_task_template[10143] = {
 		level = 1,
 		sub_type = 31,
 		target_id_for_client = 0,
@@ -1358,11 +1049,7 @@ var_0_3.base.weekly_task_template = {}
 			15
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.weekly_task_template
-
-	var_1_69[10144] = {
+	pg.base.weekly_task_template[10144] = {
 		level = 1,
 		sub_type = 31,
 		target_id_for_client = 0,
@@ -1376,11 +1063,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.weekly_task_template
-
-	var_1_70[10151] = {
+	pg.base.weekly_task_template[10151] = {
 		level = 10,
 		sub_type = 182,
 		target_id_for_client = 0,
@@ -1394,11 +1077,7 @@ var_0_3.base.weekly_task_template = {}
 			10
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.weekly_task_template
-
-	var_1_71[10152] = {
+	pg.base.weekly_task_template[10152] = {
 		level = 10,
 		sub_type = 182,
 		target_id_for_client = 0,
@@ -1412,11 +1091,7 @@ var_0_3.base.weekly_task_template = {}
 			20
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.weekly_task_template
-
-	var_1_72[10153] = {
+	pg.base.weekly_task_template[10153] = {
 		level = 10,
 		sub_type = 182,
 		target_id_for_client = 0,
@@ -1430,11 +1105,7 @@ var_0_3.base.weekly_task_template = {}
 			30
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.weekly_task_template
-
-	var_1_73[10154] = {
+	pg.base.weekly_task_template[10154] = {
 		level = 10,
 		sub_type = 182,
 		target_id_for_client = 0,
@@ -1448,8 +1119,7 @@ var_0_3.base.weekly_task_template = {}
 			40
 		}
 	}
-	pg = var_1_73
-	var_1_73.base.weekly_task_template[10155] = {
+	pg.base.weekly_task_template[10155] = {
 		level = 10,
 		sub_type = 182,
 		target_id_for_client = 0,

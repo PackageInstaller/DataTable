@@ -1,126 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ProposeMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "ProposeMediator"
+var_0_0.ON_PROPOSE = "ProposeMediator.ON_PROPOSE"
+var_0_0.RENAME_SHIP = "ProposeMediator.RENAME_SHIP"
+var_0_0.HIDE_SHIP_MAIN_WORD = "ShipMainMediator.HIDE_SHIP_MAIN_WORD"
+var_0_0.EXCHANGE_TIARA = "ProposeMediator.EXCHANGE_TIARA"
+var_0_0.REGISTER_SHIP = "ProposeMediator.REGISTER_SHIP"
+var_0_0.GIFT_SHIP = "ProposeMediaotr.GIFT_SHIP"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.ON_PROPOSE = "ProposeMediator.ON_PROPOSE"
-var_0_1.RENAME_SHIP = "ProposeMediator.RENAME_SHIP"
-var_0_1.HIDE_SHIP_MAIN_WORD = "ShipMainMediator.HIDE_SHIP_MAIN_WORD"
-var_0_1.EXCHANGE_TIARA = "ProposeMediator.EXCHANGE_TIARA"
-var_0_1.REGISTER_SHIP = "ProposeMediator.REGISTER_SHIP"
-var_0_1.GIFT_SHIP = "ProposeMediaotr.GIFT_SHIP"
-
-function var_0_1.register(arg_1_0)
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
-
-	local var_1_0 = var_1_10001(var_1_10003)
-	local var_1_1
-
+function var_0_0.register(arg_1_0)
 	if arg_1_0.contextData.shipId then
-		var_1_10004 = var_1_0
-		var_1_1 = var_1_0.getShipById(var_1_10004, arg_1_0.contextData.shipId)
-
-		local var_1_2 = arg_1_0.viewComponent
-
-		var_3.setShip(var_1_2, var_1_1)
+		arg_1_0.viewComponent:setShip((getProxy(BayProxy):getShipById(arg_1_0.contextData.shipId)))
 	elseif arg_1_0.contextData.review then
-		var_1_10004 = arg_1_0.viewComponent
-
-		var_1_1.setShipGroupID(var_1_10004, arg_1_0.contextData.group.id)
-
-		var_1_10004 = arg_1_0.viewComponent
-
-		var_1_1.setWeddingReviewSkinID(var_1_10004, arg_1_0.contextData.skinID)
+		arg_1_0.viewComponent:setShipGroupID(arg_1_0.contextData.group.id)
+		arg_1_0.viewComponent:setWeddingReviewSkinID(arg_1_0.contextData.skinID)
 	end
 
-	getProxy = var_1_1
-	BagProxy = var_1_10004
-
-	local var_1_3 = var_1_1(var_1_10004)
-	local var_1_4 = arg_1_0.viewComponent
-
-	var_3.setBagProxy(var_1_4, var_1_3)
-
-	getProxy = var_3
-	PlayerProxy = var_1_4
-
-	local var_1_5 = var_3(var_1_4)
-	local var_1_6 = var_3.getData(var_1_5)
-	local var_1_7 = arg_1_0.viewComponent
-
-	var_4.setPlayer(var_1_7, var_1_6)
-	arg_1_0:bind(var_0_1.ON_PROPOSE, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.PROPOSE_SHIP, {
+	arg_1_0.viewComponent:setBagProxy((getProxy(BagProxy)))
+	arg_1_0.viewComponent:setPlayer((getProxy(PlayerProxy):getData()))
+	arg_1_0:bind(var_0_0.ON_PROPOSE, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.PROPOSE_SHIP, {
 			shipId = arg_2_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.RENAME_SHIP, function(arg_3_0, arg_3_1, arg_3_2)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_3_1(var_3_0, var_2_10006.RENAME_SHIP, {
+	arg_1_0:bind(var_0_0.RENAME_SHIP, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:sendNotification(GAME.RENAME_SHIP, {
 			shipId = arg_3_1,
 			name = arg_3_2
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.HIDE_SHIP_MAIN_WORD, function(arg_4_0, arg_4_1, arg_4_2)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_4_1(var_4_0, var_2_10006.HIDE_Ship_MAIN_SCENE_WORD)
+	arg_1_0:bind(var_0_0.HIDE_SHIP_MAIN_WORD, function(arg_4_0, arg_4_1, arg_4_2)
+		arg_1_0:sendNotification(GAME.HIDE_Ship_MAIN_SCENE_WORD)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.EXCHANGE_TIARA, function(arg_5_0)
-		local var_5_0 = arg_1_0
-		local var_5_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_5_1(var_5_0, var_2_10004.PROPOSE_EXCHANGE_RING)
+	arg_1_0:bind(var_0_0.EXCHANGE_TIARA, function(arg_5_0)
+		arg_1_0:sendNotification(GAME.PROPOSE_EXCHANGE_RING)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.REGISTER_SHIP, function(arg_6_0, arg_6_1)
-		local var_6_0 = arg_1_0
-		local var_6_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_6_1(var_6_0, var_2_10005.PROPOSE_REGISTER_SHIP, {
+	arg_1_0:bind(var_0_0.REGISTER_SHIP, function(arg_6_0, arg_6_1)
+		arg_1_0:sendNotification(GAME.PROPOSE_REGISTER_SHIP, {
 			shipId = arg_6_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.GIFT_SHIP, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_1_0
-		local var_7_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		local var_7_2 = var_2_10005.GO_SCENE
-
-		SCENE = var_2_10006
-
-		var_7_1(var_7_0, var_7_2, var_2_10006.SHIP_GIFT, {
+	arg_1_0:bind(var_0_0.GIFT_SHIP, function(arg_7_0, arg_7_1)
+		arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.SHIP_GIFT, {
 			shipID = arg_7_1
 		})
 
@@ -130,89 +60,46 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_8_0)
-	local var_8_0 = {}
-
-	GAME = var_1_10002
-	var_8_0[1] = var_1_10002.PROPOSE_SHIP_DONE
-	GAME = var_2
-	var_8_0[2] = var_2.RENAME_SHIP_DONE
-	GAME = var_2
-	var_8_0[3] = var_2.PROPOSE_EXCHANGE_RING_DONE
-	GAME = var_2
-	var_8_0[4] = var_2.PROPOSE_REGISTER_SHIP_DONE
-
-	return var_8_0
+function var_0_0.listNotificationInterests(arg_8_0)
+	return {
+		GAME.PROPOSE_SHIP_DONE,
+		GAME.RENAME_SHIP_DONE,
+		GAME.PROPOSE_EXCHANGE_RING_DONE,
+		GAME.PROPOSE_REGISTER_SHIP_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1
-	local var_9_1 = arg_9_1.getName(var_9_0)
-	local var_9_2 = arg_9_1:getBody()
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-	GAME = var_9_0
+	if var_9_0 == GAME.PROPOSE_SHIP_DONE then
+		local var_9_2 = var_9_1.ship:getProposeSkin()
 
-	if var_9_1 == var_9_0.PROPOSE_SHIP_DONE then
-		local var_9_3 = var_9_2.ship
-
-		if var_4.getProposeSkin(var_9_3) then
-			var_1_10007 = arg_9_0
-
-			local var_9_4 = arg_9_0.sendNotification
-
-			GAME = var_1_10008
-
-			var_9_4(var_1_10007, var_1_10008.SET_SHIP_SKIN, {
+		if var_9_2 then
+			arg_9_0:sendNotification(GAME.SET_SHIP_SKIN, {
 				phantomId = 0,
 				hideTip = true,
-				shipId = var_9_2.ship.id,
-				skinId = var_4.id
+				shipId = var_9_1.ship.id,
+				skinId = var_9_2.id
 			})
 		end
 
-		var_1_10007 = arg_9_0.viewComponent
+		arg_9_0.viewComponent:setShip(var_9_1.ship)
+		arg_9_0.viewComponent:RingFadeout()
+	elseif var_9_0 == GAME.RENAME_SHIP_DONE then
+		arg_9_0.viewComponent:closeView()
+	elseif var_9_0 == GAME.PROPOSE_EXCHANGE_RING_DONE then
+		arg_9_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_9_1.items, function()
+			arg_9_0.viewComponent:onUpdateItemCount()
 
-		var_5.setShip(var_1_10007, var_9_2.ship)
-
-		var_1_10007 = arg_9_0.viewComponent
-
-		var_5.RingFadeout(var_1_10007)
-	else
-		GAME = var_4
-
-		if var_9_1 == var_4.RENAME_SHIP_DONE then
-			local var_9_5 = arg_9_0.viewComponent
-
-			var_4.closeView(var_9_5)
-		else
-			GAME = var_4
-
-			local var_9_7
-
-			if var_9_1 == var_4.PROPOSE_EXCHANGE_RING_DONE then
-				local var_9_6 = arg_9_0.viewComponent
-
-				var_9_7 = var_9_7.emit
-				BaseUI = var_1_10007
-
-				var_9_7(var_9_6, var_1_10007.ON_ACHIEVE, var_9_2.items, function()
-					local var_10_0 = arg_9_0.viewComponent
-
-					var_0.onUpdateItemCount(var_10_0)
-
-					return
-				end)
-			else
-				GAME = var_9_7
-
-				if var_9_1 == var_9_7.PROPOSE_REGISTER_SHIP_DONE and arg_9_0.viewComponent.afterRegisterCall then
-					arg_9_0.viewComponent.afterRegisterCall()
-				end
-			end
-		end
+			return
+		end)
+	elseif var_9_0 == GAME.PROPOSE_REGISTER_SHIP_DONE and arg_9_0.viewComponent.afterRegisterCall then
+		arg_9_0.viewComponent.afterRegisterCall()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

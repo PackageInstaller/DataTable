@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ninja_enemy") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ninja_enemy"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ninja_enemy = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ninja_enemy
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ninja_enemy = rawget(pg, "activity_ninja_enemy") or setmetatable({
+	__name = "activity_ninja_enemy"
+}, confNEO)
+pg.activity_ninja_enemy.all = {
 	1,
 	2,
 	3,
@@ -147,25 +124,11 @@ var_0_3.all = {
 	119,
 	120
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_ninja_enemy = {}
+pg.base = pg.base or {}
+pg.base.activity_ninja_enemy = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ninja_enemy
-
-	var_1_0[1] = {
+	pg.base.activity_ninja_enemy[1] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -191,11 +154,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ninja_enemy
-
-	var_1_1[2] = {
+	pg.base.activity_ninja_enemy[2] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -221,11 +180,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ninja_enemy
-
-	var_1_2[3] = {
+	pg.base.activity_ninja_enemy[3] = {
 		drop = 545,
 		name = "宝箱啾莱姆",
 		model = "jiulaimu_quzhu",
@@ -251,11 +206,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ninja_enemy
-
-	var_1_3[4] = {
+	pg.base.activity_ninja_enemy[4] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -281,11 +232,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ninja_enemy
-
-	var_1_4[5] = {
+	pg.base.activity_ninja_enemy[5] = {
 		drop = 545,
 		name = "寂静守卫-克拉肯之触",
 		model = "fengfan_haigu_boss01",
@@ -316,11 +263,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ninja_enemy
-
-	var_1_5[6] = {
+	pg.base.activity_ninja_enemy[6] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -346,11 +289,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ninja_enemy
-
-	var_1_6[7] = {
+	pg.base.activity_ninja_enemy[7] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -376,11 +315,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ninja_enemy
-
-	var_1_7[8] = {
+	pg.base.activity_ninja_enemy[8] = {
 		drop = 545,
 		name = "宝箱啾莱姆",
 		model = "jiulaimu_quzhu",
@@ -406,11 +341,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ninja_enemy
-
-	var_1_8[9] = {
+	pg.base.activity_ninja_enemy[9] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -436,11 +367,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ninja_enemy
-
-	var_1_9[10] = {
+	pg.base.activity_ninja_enemy[10] = {
 		drop = 545,
 		name = "裁决之鬼-阿尔萨斯",
 		model = "aersasi_3",
@@ -471,11 +398,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ninja_enemy
-
-	var_1_10[11] = {
+	pg.base.activity_ninja_enemy[11] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -501,11 +424,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ninja_enemy
-
-	var_1_11[12] = {
+	pg.base.activity_ninja_enemy[12] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -531,11 +450,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ninja_enemy
-
-	var_1_12[13] = {
+	pg.base.activity_ninja_enemy[13] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -561,11 +476,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ninja_enemy
-
-	var_1_13[14] = {
+	pg.base.activity_ninja_enemy[14] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -591,11 +502,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ninja_enemy
-
-	var_1_14[15] = {
+	pg.base.activity_ninja_enemy[15] = {
 		drop = 545,
 		name = "忍者五人众-苏维埃同盟",
 		model = "suweiaitongmeng_3",
@@ -626,11 +533,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ninja_enemy
-
-	var_1_15[16] = {
+	pg.base.activity_ninja_enemy[16] = {
 		drop = 545,
 		name = "腐烂软泥啾莱姆",
 		model = "jiulaimu_ruanniguai",
@@ -656,11 +559,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ninja_enemy
-
-	var_1_16[17] = {
+	pg.base.activity_ninja_enemy[17] = {
 		drop = 545,
 		name = "宝箱啾莱姆",
 		model = "jiulaimu_quzhu",
@@ -686,11 +585,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ninja_enemy
-
-	var_1_17[18] = {
+	pg.base.activity_ninja_enemy[18] = {
 		drop = 545,
 		name = "寂静守卫-沉眠潜伏者",
 		model = "fengfan_haigu_zhongxun",
@@ -716,11 +611,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ninja_enemy
-
-	var_1_18[19] = {
+	pg.base.activity_ninja_enemy[19] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -746,11 +637,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ninja_enemy
-
-	var_1_19[20] = {
+	pg.base.activity_ninja_enemy[20] = {
 		drop = 545,
 		name = "忍者五人众-白凤",
 		model = "baifeng_2",
@@ -781,11 +668,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ninja_enemy
-
-	var_1_20[21] = {
+	pg.base.activity_ninja_enemy[21] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -806,11 +689,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ninja_enemy
-
-	var_1_21[22] = {
+	pg.base.activity_ninja_enemy[22] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -831,11 +710,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ninja_enemy
-
-	var_1_22[23] = {
+	pg.base.activity_ninja_enemy[23] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -856,11 +731,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ninja_enemy
-
-	var_1_23[24] = {
+	pg.base.activity_ninja_enemy[24] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -881,11 +752,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ninja_enemy
-
-	var_1_24[25] = {
+	pg.base.activity_ninja_enemy[25] = {
 		drop = 545,
 		name = "忍者五人众-关岛",
 		model = "guandao_3",
@@ -906,11 +773,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ninja_enemy
-
-	var_1_25[26] = {
+	pg.base.activity_ninja_enemy[26] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -931,11 +794,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ninja_enemy
-
-	var_1_26[27] = {
+	pg.base.activity_ninja_enemy[27] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -956,11 +815,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ninja_enemy
-
-	var_1_27[28] = {
+	pg.base.activity_ninja_enemy[28] = {
 		drop = 545,
 		name = "寂静之灵-掌灯幽影",
 		model = "fengfan_lingti_quzhu",
@@ -981,11 +836,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ninja_enemy
-
-	var_1_28[29] = {
+	pg.base.activity_ninja_enemy[29] = {
 		drop = 545,
 		name = "寂静守卫-掌灯幽影",
 		model = "fengfan_haigu_quzhu",
@@ -1006,11 +857,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ninja_enemy
-
-	var_1_29[30] = {
+	pg.base.activity_ninja_enemy[30] = {
 		drop = 545,
 		name = "忍者五人众-云仙",
 		model = "yunxian_3",
@@ -1031,11 +878,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ninja_enemy
-
-	var_1_30[31] = {
+	pg.base.activity_ninja_enemy[31] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1056,11 +899,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ninja_enemy
-
-	var_1_31[32] = {
+	pg.base.activity_ninja_enemy[32] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -1081,11 +920,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ninja_enemy
-
-	var_1_32[33] = {
+	pg.base.activity_ninja_enemy[33] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -1106,11 +941,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ninja_enemy
-
-	var_1_33[34] = {
+	pg.base.activity_ninja_enemy[34] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -1131,11 +962,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ninja_enemy
-
-	var_1_34[35] = {
+	pg.base.activity_ninja_enemy[35] = {
 		drop = 545,
 		name = "忍者五人众-伊404",
 		model = "i404_2",
@@ -1156,11 +983,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ninja_enemy
-
-	var_1_35[36] = {
+	pg.base.activity_ninja_enemy[36] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1181,11 +1004,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ninja_enemy
-
-	var_1_36[37] = {
+	pg.base.activity_ninja_enemy[37] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -1206,11 +1025,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ninja_enemy
-
-	var_1_37[38] = {
+	pg.base.activity_ninja_enemy[38] = {
 		drop = 545,
 		name = "寂静守卫-沉眠潜伏者",
 		model = "fengfan_haigu_zhongxun",
@@ -1231,11 +1046,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ninja_enemy
-
-	var_1_38[39] = {
+	pg.base.activity_ninja_enemy[39] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -1256,11 +1067,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ninja_enemy
-
-	var_1_39[40] = {
+	pg.base.activity_ninja_enemy[40] = {
 		drop = 545,
 		name = "忍者五人众-关岛",
 		model = "guandao_3",
@@ -1281,11 +1088,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ninja_enemy
-
-	var_1_40[41] = {
+	pg.base.activity_ninja_enemy[41] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -1306,11 +1109,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ninja_enemy
-
-	var_1_41[42] = {
+	pg.base.activity_ninja_enemy[42] = {
 		drop = 545,
 		name = "腐烂软泥啾莱姆",
 		model = "jiulaimu_ruanniguai",
@@ -1331,11 +1130,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ninja_enemy
-
-	var_1_42[43] = {
+	pg.base.activity_ninja_enemy[43] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -1356,11 +1151,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ninja_enemy
-
-	var_1_43[44] = {
+	pg.base.activity_ninja_enemy[44] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -1381,11 +1172,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ninja_enemy
-
-	var_1_44[45] = {
+	pg.base.activity_ninja_enemy[45] = {
 		drop = 545,
 		name = "华裳之鬼-浅间",
 		model = "qianjian_2",
@@ -1406,11 +1193,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ninja_enemy
-
-	var_1_45[46] = {
+	pg.base.activity_ninja_enemy[46] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -1431,11 +1214,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ninja_enemy
-
-	var_1_46[47] = {
+	pg.base.activity_ninja_enemy[47] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1456,11 +1235,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ninja_enemy
-
-	var_1_47[48] = {
+	pg.base.activity_ninja_enemy[48] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1481,11 +1256,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ninja_enemy
-
-	var_1_48[49] = {
+	pg.base.activity_ninja_enemy[49] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -1506,11 +1277,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ninja_enemy
-
-	var_1_49[50] = {
+	pg.base.activity_ninja_enemy[50] = {
 		drop = 545,
 		name = "溺诱之鬼-近江",
 		model = "jinjiang_2",
@@ -1531,11 +1298,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ninja_enemy
-
-	var_1_50[51] = {
+	pg.base.activity_ninja_enemy[51] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1556,11 +1319,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ninja_enemy
-
-	var_1_51[52] = {
+	pg.base.activity_ninja_enemy[52] = {
 		drop = 545,
 		name = "寂静守卫-沉眠潜伏者",
 		model = "fengfan_haigu_zhongxun",
@@ -1581,11 +1340,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ninja_enemy
-
-	var_1_52[53] = {
+	pg.base.activity_ninja_enemy[53] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -1606,11 +1361,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ninja_enemy
-
-	var_1_53[54] = {
+	pg.base.activity_ninja_enemy[54] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1631,11 +1382,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ninja_enemy
-
-	var_1_54[55] = {
+	pg.base.activity_ninja_enemy[55] = {
 		drop = 545,
 		name = "华裳之鬼-浅间",
 		model = "qianjian_2",
@@ -1656,11 +1403,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ninja_enemy
-
-	var_1_55[56] = {
+	pg.base.activity_ninja_enemy[56] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -1681,11 +1424,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ninja_enemy
-
-	var_1_56[57] = {
+	pg.base.activity_ninja_enemy[57] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -1706,11 +1445,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ninja_enemy
-
-	var_1_57[58] = {
+	pg.base.activity_ninja_enemy[58] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -1731,11 +1466,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ninja_enemy
-
-	var_1_58[59] = {
+	pg.base.activity_ninja_enemy[59] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -1756,11 +1487,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ninja_enemy
-
-	var_1_59[60] = {
+	pg.base.activity_ninja_enemy[60] = {
 		drop = 545,
 		name = "忍者五人众-伊404",
 		model = "i404_2",
@@ -1781,11 +1508,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ninja_enemy
-
-	var_1_60[61] = {
+	pg.base.activity_ninja_enemy[61] = {
 		drop = 545,
 		name = "腐烂软泥啾莱姆",
 		model = "jiulaimu_ruanniguai",
@@ -1806,11 +1529,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ninja_enemy
-
-	var_1_61[62] = {
+	pg.base.activity_ninja_enemy[62] = {
 		drop = 545,
 		name = "宝箱啾莱姆",
 		model = "jiulaimu_quzhu",
@@ -1831,11 +1550,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ninja_enemy
-
-	var_1_62[63] = {
+	pg.base.activity_ninja_enemy[63] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -1856,11 +1571,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ninja_enemy
-
-	var_1_63[64] = {
+	pg.base.activity_ninja_enemy[64] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -1881,11 +1592,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ninja_enemy
-
-	var_1_64[65] = {
+	pg.base.activity_ninja_enemy[65] = {
 		drop = 545,
 		name = "小狐妖-水无濑",
 		model = "shuiwulai_2",
@@ -1906,11 +1613,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ninja_enemy
-
-	var_1_65[66] = {
+	pg.base.activity_ninja_enemy[66] = {
 		drop = 545,
 		name = "寂静之灵-掌灯幽影",
 		model = "fengfan_lingti_quzhu",
@@ -1931,11 +1634,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ninja_enemy
-
-	var_1_66[67] = {
+	pg.base.activity_ninja_enemy[67] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -1956,11 +1655,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ninja_enemy
-
-	var_1_67[68] = {
+	pg.base.activity_ninja_enemy[68] = {
 		drop = 545,
 		name = "宝箱啾莱姆",
 		model = "jiulaimu_quzhu",
@@ -1981,11 +1676,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ninja_enemy
-
-	var_1_68[69] = {
+	pg.base.activity_ninja_enemy[69] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -2006,11 +1697,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ninja_enemy
-
-	var_1_69[70] = {
+	pg.base.activity_ninja_enemy[70] = {
 		drop = 545,
 		name = "忍者五人众-苏维埃同盟",
 		model = "suweiaitongmeng_3",
@@ -2031,11 +1718,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ninja_enemy
-
-	var_1_70[71] = {
+	pg.base.activity_ninja_enemy[71] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2056,11 +1739,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ninja_enemy
-
-	var_1_71[72] = {
+	pg.base.activity_ninja_enemy[72] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -2081,11 +1760,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ninja_enemy
-
-	var_1_72[73] = {
+	pg.base.activity_ninja_enemy[73] = {
 		drop = 545,
 		name = "啾莱姆王",
 		model = "jiulaimu_guowang",
@@ -2106,11 +1781,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ninja_enemy
-
-	var_1_73[74] = {
+	pg.base.activity_ninja_enemy[74] = {
 		drop = 545,
 		name = "寂静守卫-掌灯幽影",
 		model = "fengfan_haigu_quzhu",
@@ -2131,11 +1802,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ninja_enemy
-
-	var_1_74[75] = {
+	pg.base.activity_ninja_enemy[75] = {
 		drop = 545,
 		name = "忍者五人众-莫里森",
 		model = "molisen_3",
@@ -2156,11 +1823,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ninja_enemy
-
-	var_1_75[76] = {
+	pg.base.activity_ninja_enemy[76] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -2181,11 +1844,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ninja_enemy
-
-	var_1_76[77] = {
+	pg.base.activity_ninja_enemy[77] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -2206,11 +1865,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ninja_enemy
-
-	var_1_77[78] = {
+	pg.base.activity_ninja_enemy[78] = {
 		drop = 545,
 		name = "寂静之灵-掌灯幽影",
 		model = "fengfan_lingti_quzhu",
@@ -2231,11 +1886,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ninja_enemy
-
-	var_1_78[79] = {
+	pg.base.activity_ninja_enemy[79] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -2256,11 +1907,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ninja_enemy
-
-	var_1_79[80] = {
+	pg.base.activity_ninja_enemy[80] = {
 		drop = 545,
 		name = "裁决之鬼-阿尔萨斯",
 		model = "aersasi_3",
@@ -2281,11 +1928,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ninja_enemy
-
-	var_1_80[81] = {
+	pg.base.activity_ninja_enemy[81] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2306,11 +1949,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ninja_enemy
-
-	var_1_81[82] = {
+	pg.base.activity_ninja_enemy[82] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -2331,11 +1970,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ninja_enemy
-
-	var_1_82[83] = {
+	pg.base.activity_ninja_enemy[83] = {
 		drop = 545,
 		name = "宝箱啾莱姆",
 		model = "jiulaimu_quzhu",
@@ -2356,11 +1991,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ninja_enemy
-
-	var_1_83[84] = {
+	pg.base.activity_ninja_enemy[84] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -2381,11 +2012,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ninja_enemy
-
-	var_1_84[85] = {
+	pg.base.activity_ninja_enemy[85] = {
 		drop = 545,
 		name = "小狐妖-水无濑",
 		model = "shuiwulai_2",
@@ -2406,11 +2033,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ninja_enemy
-
-	var_1_85[86] = {
+	pg.base.activity_ninja_enemy[86] = {
 		drop = 545,
 		name = "腐烂软泥啾莱姆",
 		model = "jiulaimu_ruanniguai",
@@ -2431,11 +2054,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ninja_enemy
-
-	var_1_86[87] = {
+	pg.base.activity_ninja_enemy[87] = {
 		drop = 545,
 		name = "寂静守卫-沉眠潜伏者",
 		model = "fengfan_haigu_zhongxun",
@@ -2456,11 +2075,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ninja_enemy
-
-	var_1_87[88] = {
+	pg.base.activity_ninja_enemy[88] = {
 		drop = 545,
 		name = "啾莱姆王",
 		model = "jiulaimu_guowang",
@@ -2481,11 +2096,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ninja_enemy
-
-	var_1_88[89] = {
+	pg.base.activity_ninja_enemy[89] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -2506,11 +2117,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ninja_enemy
-
-	var_1_89[90] = {
+	pg.base.activity_ninja_enemy[90] = {
 		drop = 545,
 		name = "寂静领主-克拉肯",
 		model = "fengfan_lingti_boss01",
@@ -2531,11 +2138,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ninja_enemy
-
-	var_1_90[91] = {
+	pg.base.activity_ninja_enemy[91] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2556,11 +2159,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ninja_enemy
-
-	var_1_91[92] = {
+	pg.base.activity_ninja_enemy[92] = {
 		drop = 545,
 		name = "寂静守卫-掌灯幽影",
 		model = "fengfan_haigu_quzhu",
@@ -2581,11 +2180,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_ninja_enemy
-
-	var_1_92[93] = {
+	pg.base.activity_ninja_enemy[93] = {
 		drop = 545,
 		name = "地狱恶魔啾莱姆",
 		model = "jiulaimu_emo",
@@ -2606,11 +2201,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_ninja_enemy
-
-	var_1_93[94] = {
+	pg.base.activity_ninja_enemy[94] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -2631,11 +2222,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_ninja_enemy
-
-	var_1_94[95] = {
+	pg.base.activity_ninja_enemy[95] = {
 		drop = 545,
 		name = "忍者五人众-莫里森",
 		model = "molisen_3",
@@ -2656,11 +2243,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_ninja_enemy
-
-	var_1_95[96] = {
+	pg.base.activity_ninja_enemy[96] = {
 		drop = 545,
 		name = "寂静守卫-沉眠潜伏者",
 		model = "fengfan_haigu_zhongxun",
@@ -2681,11 +2264,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_ninja_enemy
-
-	var_1_96[97] = {
+	pg.base.activity_ninja_enemy[97] = {
 		drop = 545,
 		name = "魔法啾莱姆",
 		model = "jiulaimu_hangmu",
@@ -2706,11 +2285,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_ninja_enemy
-
-	var_1_97[98] = {
+	pg.base.activity_ninja_enemy[98] = {
 		drop = 545,
 		name = "寂静守卫-掌灯幽影",
 		model = "fengfan_haigu_quzhu",
@@ -2731,11 +2306,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_ninja_enemy
-
-	var_1_98[99] = {
+	pg.base.activity_ninja_enemy[99] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2756,8 +2327,7 @@ var_0_3.base.activity_ninja_enemy = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_ninja_enemy[100] = {
+	pg.base.activity_ninja_enemy[100] = {
 		drop = 545,
 		name = "寂静守卫-克拉肯之触",
 		model = "fengfan_haigu_boss01",
@@ -2782,11 +2352,7 @@ var_0_3.base.activity_ninja_enemy = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_ninja_enemy
-
-	var_2_0[101] = {
+	pg.base.activity_ninja_enemy[101] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2796,11 +2362,7 @@ end)()
 		basic = 1500,
 		first_drop_show = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_ninja_enemy
-
-	var_2_1[102] = {
+	pg.base.activity_ninja_enemy[102] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -2810,11 +2372,7 @@ end)()
 		basic = 2000,
 		first_drop_show = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_ninja_enemy
-
-	var_2_2[103] = {
+	pg.base.activity_ninja_enemy[103] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2824,11 +2382,7 @@ end)()
 		basic = 2500,
 		first_drop_show = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_ninja_enemy
-
-	var_2_3[104] = {
+	pg.base.activity_ninja_enemy[104] = {
 		drop = 545,
 		name = "黑暗啾莱姆骑士",
 		model = "jiulaimu_zhanlie",
@@ -2838,11 +2392,7 @@ end)()
 		basic = 3000,
 		first_drop_show = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_ninja_enemy
-
-	var_2_4[105] = {
+	pg.base.activity_ninja_enemy[105] = {
 		drop = 545,
 		name = "忍者五人众-白凤",
 		model = "baifeng_2",
@@ -2852,11 +2402,7 @@ end)()
 		basic = 3500,
 		first_drop_show = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_ninja_enemy
-
-	var_2_5[106] = {
+	pg.base.activity_ninja_enemy[106] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -2866,11 +2412,7 @@ end)()
 		basic = 4000,
 		first_drop_show = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_ninja_enemy
-
-	var_2_6[107] = {
+	pg.base.activity_ninja_enemy[107] = {
 		drop = 545,
 		name = "啾莱姆石像鬼",
 		model = "jiulaimu_shixianggui",
@@ -2880,11 +2422,7 @@ end)()
 		basic = 4500,
 		first_drop_show = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_ninja_enemy
-
-	var_2_7[108] = {
+	pg.base.activity_ninja_enemy[108] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -2894,11 +2432,7 @@ end)()
 		basic = 5000,
 		first_drop_show = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_ninja_enemy
-
-	var_2_8[109] = {
+	pg.base.activity_ninja_enemy[109] = {
 		drop = 545,
 		name = "啾莱姆王",
 		model = "jiulaimu_guowang",
@@ -2908,11 +2442,7 @@ end)()
 		basic = 5500,
 		first_drop_show = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_ninja_enemy
-
-	var_2_9[110] = {
+	pg.base.activity_ninja_enemy[110] = {
 		drop = 545,
 		name = "寂静领主-克拉肯",
 		model = "fengfan_lingti_boss01",
@@ -2922,11 +2452,7 @@ end)()
 		basic = 6000,
 		first_drop_show = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_ninja_enemy
-
-	var_2_10[111] = {
+	pg.base.activity_ninja_enemy[111] = {
 		drop = 545,
 		name = "寂静守卫-掌灯幽影",
 		model = "fengfan_haigu_quzhu",
@@ -2936,11 +2462,7 @@ end)()
 		basic = 7000,
 		first_drop_show = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_ninja_enemy
-
-	var_2_11[112] = {
+	pg.base.activity_ninja_enemy[112] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -2950,11 +2472,7 @@ end)()
 		basic = 8000,
 		first_drop_show = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_ninja_enemy
-
-	var_2_12[113] = {
+	pg.base.activity_ninja_enemy[113] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -2964,11 +2482,7 @@ end)()
 		basic = 9000,
 		first_drop_show = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_ninja_enemy
-
-	var_2_13[114] = {
+	pg.base.activity_ninja_enemy[114] = {
 		drop = 545,
 		name = "寂静之灵-沉眠潜伏者",
 		model = "fengfan_lingti_zhongxun",
@@ -2978,11 +2492,7 @@ end)()
 		basic = 10000,
 		first_drop_show = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_ninja_enemy
-
-	var_2_14[115] = {
+	pg.base.activity_ninja_enemy[115] = {
 		drop = 545,
 		name = "小忍者-妙风",
 		model = "miaofeng_2",
@@ -2992,11 +2502,7 @@ end)()
 		basic = 11000,
 		first_drop_show = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_ninja_enemy
-
-	var_2_15[116] = {
+	pg.base.activity_ninja_enemy[116] = {
 		drop = 545,
 		name = "炎爆啾莱姆",
 		model = "jiulaimu_zibao",
@@ -3006,11 +2512,7 @@ end)()
 		basic = 14000,
 		first_drop_show = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_ninja_enemy
-
-	var_2_16[117] = {
+	pg.base.activity_ninja_enemy[117] = {
 		drop = 545,
 		name = "幽魂啾莱姆",
 		model = "jiulaimu_qingxun",
@@ -3020,11 +2522,7 @@ end)()
 		basic = 17000,
 		first_drop_show = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_ninja_enemy
-
-	var_2_17[118] = {
+	pg.base.activity_ninja_enemy[118] = {
 		drop = 545,
 		name = "狂野啾莱姆战士",
 		model = "jiulaimu_zhongxun",
@@ -3034,11 +2532,7 @@ end)()
 		basic = 20000,
 		first_drop_show = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_ninja_enemy
-
-	var_2_18[119] = {
+	pg.base.activity_ninja_enemy[119] = {
 		drop = 545,
 		name = "寂静守卫-沉眠潜伏者",
 		model = "fengfan_haigu_zhongxun",
@@ -3048,8 +2542,7 @@ end)()
 		basic = 23000,
 		first_drop_show = {}
 	}
-	pg = var_2_18
-	var_2_18.base.activity_ninja_enemy[120] = {
+	pg.base.activity_ninja_enemy[120] = {
 		drop = 545,
 		name = "小忍者-妙风",
 		model = "miaofeng_2",

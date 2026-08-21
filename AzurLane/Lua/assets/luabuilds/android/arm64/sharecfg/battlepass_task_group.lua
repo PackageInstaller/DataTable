@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "battlepass_task_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "battlepass_task_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.battlepass_task_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.battlepass_task_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.battlepass_task_group = rawget(pg, "battlepass_task_group") or setmetatable({
+	__name = "battlepass_task_group"
+}, confNEO)
+pg.battlepass_task_group.all = {
 	1,
 	2,
 	3,
@@ -297,25 +274,11 @@ var_0_3.all = {
 	297,
 	298
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.battlepass_task_group = {}
+pg.base = pg.base or {}
+pg.base.battlepass_task_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.battlepass_task_group
-
-	var_1_0[1] = {
+	pg.base.battlepass_task_group[1] = {
 		id = 1,
 		group_mask = 1,
 		is_ontime = 0,
@@ -343,11 +306,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.battlepass_task_group
-
-	var_1_1[2] = {
+	pg.base.battlepass_task_group[2] = {
 		id = 2,
 		group_mask = 2,
 		is_ontime = 0,
@@ -375,11 +334,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.battlepass_task_group
-
-	var_1_2[3] = {
+	pg.base.battlepass_task_group[3] = {
 		id = 3,
 		group_mask = 3,
 		is_ontime = 0,
@@ -407,11 +362,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.battlepass_task_group
-
-	var_1_3[4] = {
+	pg.base.battlepass_task_group[4] = {
 		id = 4,
 		group_mask = 4,
 		is_ontime = 0,
@@ -439,11 +390,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.battlepass_task_group
-
-	var_1_4[5] = {
+	pg.base.battlepass_task_group[5] = {
 		id = 5,
 		group_mask = 5,
 		is_ontime = 0,
@@ -471,11 +418,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.battlepass_task_group
-
-	var_1_5[6] = {
+	pg.base.battlepass_task_group[6] = {
 		id = 6,
 		group_mask = 6,
 		is_ontime = 0,
@@ -503,11 +446,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.battlepass_task_group
-
-	var_1_6[7] = {
+	pg.base.battlepass_task_group[7] = {
 		id = 7,
 		group_mask = 7,
 		is_ontime = 0,
@@ -535,11 +474,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.battlepass_task_group
-
-	var_1_7[8] = {
+	pg.base.battlepass_task_group[8] = {
 		id = 8,
 		group_mask = 8,
 		is_ontime = 0,
@@ -567,11 +502,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.battlepass_task_group
-
-	var_1_8[9] = {
+	pg.base.battlepass_task_group[9] = {
 		id = 9,
 		group_mask = 0,
 		is_ontime = 0,
@@ -633,11 +564,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.battlepass_task_group
-
-	var_1_9[11] = {
+	pg.base.battlepass_task_group[11] = {
 		id = 11,
 		group_mask = 1,
 		is_ontime = 0,
@@ -665,11 +592,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.battlepass_task_group
-
-	var_1_10[12] = {
+	pg.base.battlepass_task_group[12] = {
 		id = 12,
 		group_mask = 2,
 		is_ontime = 0,
@@ -697,11 +620,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.battlepass_task_group
-
-	var_1_11[13] = {
+	pg.base.battlepass_task_group[13] = {
 		id = 13,
 		group_mask = 3,
 		is_ontime = 0,
@@ -729,11 +648,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.battlepass_task_group
-
-	var_1_12[14] = {
+	pg.base.battlepass_task_group[14] = {
 		id = 14,
 		group_mask = 4,
 		is_ontime = 0,
@@ -761,11 +676,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.battlepass_task_group
-
-	var_1_13[15] = {
+	pg.base.battlepass_task_group[15] = {
 		id = 15,
 		group_mask = 5,
 		is_ontime = 0,
@@ -793,11 +704,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.battlepass_task_group
-
-	var_1_14[16] = {
+	pg.base.battlepass_task_group[16] = {
 		id = 16,
 		group_mask = 6,
 		is_ontime = 0,
@@ -825,11 +732,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.battlepass_task_group
-
-	var_1_15[17] = {
+	pg.base.battlepass_task_group[17] = {
 		id = 17,
 		group_mask = 7,
 		is_ontime = 0,
@@ -857,11 +760,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.battlepass_task_group
-
-	var_1_16[18] = {
+	pg.base.battlepass_task_group[18] = {
 		id = 18,
 		group_mask = 8,
 		is_ontime = 0,
@@ -889,11 +788,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.battlepass_task_group
-
-	var_1_17[19] = {
+	pg.base.battlepass_task_group[19] = {
 		id = 19,
 		group_mask = 0,
 		is_ontime = 0,
@@ -955,11 +850,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.battlepass_task_group
-
-	var_1_18[21] = {
+	pg.base.battlepass_task_group[21] = {
 		id = 21,
 		group_mask = 1,
 		is_ontime = 0,
@@ -987,11 +878,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.battlepass_task_group
-
-	var_1_19[22] = {
+	pg.base.battlepass_task_group[22] = {
 		id = 22,
 		group_mask = 2,
 		is_ontime = 0,
@@ -1019,11 +906,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.battlepass_task_group
-
-	var_1_20[23] = {
+	pg.base.battlepass_task_group[23] = {
 		id = 23,
 		group_mask = 3,
 		is_ontime = 0,
@@ -1051,11 +934,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.battlepass_task_group
-
-	var_1_21[24] = {
+	pg.base.battlepass_task_group[24] = {
 		id = 24,
 		group_mask = 4,
 		is_ontime = 0,
@@ -1083,11 +962,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.battlepass_task_group
-
-	var_1_22[25] = {
+	pg.base.battlepass_task_group[25] = {
 		id = 25,
 		group_mask = 5,
 		is_ontime = 0,
@@ -1115,11 +990,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.battlepass_task_group
-
-	var_1_23[26] = {
+	pg.base.battlepass_task_group[26] = {
 		id = 26,
 		group_mask = 6,
 		is_ontime = 0,
@@ -1147,11 +1018,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.battlepass_task_group
-
-	var_1_24[27] = {
+	pg.base.battlepass_task_group[27] = {
 		id = 27,
 		group_mask = 7,
 		is_ontime = 0,
@@ -1179,11 +1046,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.battlepass_task_group
-
-	var_1_25[28] = {
+	pg.base.battlepass_task_group[28] = {
 		id = 28,
 		group_mask = 8,
 		is_ontime = 0,
@@ -1211,11 +1074,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.battlepass_task_group
-
-	var_1_26[29] = {
+	pg.base.battlepass_task_group[29] = {
 		id = 29,
 		group_mask = 0,
 		is_ontime = 0,
@@ -1277,11 +1136,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.battlepass_task_group
-
-	var_1_27[31] = {
+	pg.base.battlepass_task_group[31] = {
 		id = 31,
 		group_mask = 1,
 		is_ontime = 0,
@@ -1309,11 +1164,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.battlepass_task_group
-
-	var_1_28[32] = {
+	pg.base.battlepass_task_group[32] = {
 		id = 32,
 		group_mask = 2,
 		is_ontime = 0,
@@ -1341,11 +1192,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.battlepass_task_group
-
-	var_1_29[33] = {
+	pg.base.battlepass_task_group[33] = {
 		id = 33,
 		group_mask = 3,
 		is_ontime = 0,
@@ -1373,11 +1220,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.battlepass_task_group
-
-	var_1_30[34] = {
+	pg.base.battlepass_task_group[34] = {
 		id = 34,
 		group_mask = 4,
 		is_ontime = 0,
@@ -1405,11 +1248,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.battlepass_task_group
-
-	var_1_31[35] = {
+	pg.base.battlepass_task_group[35] = {
 		id = 35,
 		group_mask = 5,
 		is_ontime = 0,
@@ -1437,11 +1276,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.battlepass_task_group
-
-	var_1_32[36] = {
+	pg.base.battlepass_task_group[36] = {
 		id = 36,
 		group_mask = 6,
 		is_ontime = 0,
@@ -1469,11 +1304,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.battlepass_task_group
-
-	var_1_33[37] = {
+	pg.base.battlepass_task_group[37] = {
 		id = 37,
 		group_mask = 7,
 		is_ontime = 0,
@@ -1501,11 +1332,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.battlepass_task_group
-
-	var_1_34[38] = {
+	pg.base.battlepass_task_group[38] = {
 		id = 38,
 		group_mask = 8,
 		is_ontime = 0,
@@ -1533,11 +1360,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.battlepass_task_group
-
-	var_1_35[39] = {
+	pg.base.battlepass_task_group[39] = {
 		id = 39,
 		group_mask = 0,
 		is_ontime = 0,
@@ -1599,11 +1422,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.battlepass_task_group
-
-	var_1_36[41] = {
+	pg.base.battlepass_task_group[41] = {
 		id = 41,
 		group_mask = 1,
 		is_ontime = 0,
@@ -1631,11 +1450,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.battlepass_task_group
-
-	var_1_37[42] = {
+	pg.base.battlepass_task_group[42] = {
 		id = 42,
 		group_mask = 2,
 		is_ontime = 0,
@@ -1663,11 +1478,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.battlepass_task_group
-
-	var_1_38[43] = {
+	pg.base.battlepass_task_group[43] = {
 		id = 43,
 		group_mask = 3,
 		is_ontime = 0,
@@ -1695,11 +1506,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.battlepass_task_group
-
-	var_1_39[44] = {
+	pg.base.battlepass_task_group[44] = {
 		id = 44,
 		group_mask = 4,
 		is_ontime = 0,
@@ -1727,11 +1534,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.battlepass_task_group
-
-	var_1_40[45] = {
+	pg.base.battlepass_task_group[45] = {
 		id = 45,
 		group_mask = 5,
 		is_ontime = 0,
@@ -1759,11 +1562,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.battlepass_task_group
-
-	var_1_41[46] = {
+	pg.base.battlepass_task_group[46] = {
 		id = 46,
 		group_mask = 6,
 		is_ontime = 0,
@@ -1791,11 +1590,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.battlepass_task_group
-
-	var_1_42[47] = {
+	pg.base.battlepass_task_group[47] = {
 		id = 47,
 		group_mask = 7,
 		is_ontime = 0,
@@ -1823,11 +1618,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.battlepass_task_group
-
-	var_1_43[48] = {
+	pg.base.battlepass_task_group[48] = {
 		id = 48,
 		group_mask = 8,
 		is_ontime = 0,
@@ -1855,11 +1646,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.battlepass_task_group
-
-	var_1_44[49] = {
+	pg.base.battlepass_task_group[49] = {
 		id = 49,
 		group_mask = 0,
 		is_ontime = 0,
@@ -1921,11 +1708,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.battlepass_task_group
-
-	var_1_45[51] = {
+	pg.base.battlepass_task_group[51] = {
 		id = 51,
 		group_mask = 1,
 		is_ontime = 0,
@@ -1953,11 +1736,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.battlepass_task_group
-
-	var_1_46[52] = {
+	pg.base.battlepass_task_group[52] = {
 		id = 52,
 		group_mask = 2,
 		is_ontime = 0,
@@ -1985,11 +1764,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.battlepass_task_group
-
-	var_1_47[53] = {
+	pg.base.battlepass_task_group[53] = {
 		id = 53,
 		group_mask = 3,
 		is_ontime = 0,
@@ -2017,11 +1792,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.battlepass_task_group
-
-	var_1_48[54] = {
+	pg.base.battlepass_task_group[54] = {
 		id = 54,
 		group_mask = 4,
 		is_ontime = 0,
@@ -2049,11 +1820,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.battlepass_task_group
-
-	var_1_49[55] = {
+	pg.base.battlepass_task_group[55] = {
 		id = 55,
 		group_mask = 5,
 		is_ontime = 0,
@@ -2081,11 +1848,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.battlepass_task_group
-
-	var_1_50[56] = {
+	pg.base.battlepass_task_group[56] = {
 		id = 56,
 		group_mask = 6,
 		is_ontime = 0,
@@ -2113,11 +1876,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.battlepass_task_group
-
-	var_1_51[57] = {
+	pg.base.battlepass_task_group[57] = {
 		id = 57,
 		group_mask = 7,
 		is_ontime = 0,
@@ -2145,11 +1904,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.battlepass_task_group
-
-	var_1_52[58] = {
+	pg.base.battlepass_task_group[58] = {
 		id = 58,
 		group_mask = 8,
 		is_ontime = 0,
@@ -2177,11 +1932,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.battlepass_task_group
-
-	var_1_53[59] = {
+	pg.base.battlepass_task_group[59] = {
 		id = 59,
 		group_mask = 0,
 		is_ontime = 0,
@@ -2243,11 +1994,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.battlepass_task_group
-
-	var_1_54[61] = {
+	pg.base.battlepass_task_group[61] = {
 		id = 61,
 		group_mask = 1,
 		is_ontime = 0,
@@ -2275,11 +2022,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.battlepass_task_group
-
-	var_1_55[62] = {
+	pg.base.battlepass_task_group[62] = {
 		id = 62,
 		group_mask = 2,
 		is_ontime = 0,
@@ -2307,11 +2050,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.battlepass_task_group
-
-	var_1_56[63] = {
+	pg.base.battlepass_task_group[63] = {
 		id = 63,
 		group_mask = 3,
 		is_ontime = 0,
@@ -2339,11 +2078,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.battlepass_task_group
-
-	var_1_57[64] = {
+	pg.base.battlepass_task_group[64] = {
 		id = 64,
 		group_mask = 4,
 		is_ontime = 0,
@@ -2371,11 +2106,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.battlepass_task_group
-
-	var_1_58[65] = {
+	pg.base.battlepass_task_group[65] = {
 		id = 65,
 		group_mask = 5,
 		is_ontime = 0,
@@ -2403,11 +2134,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.battlepass_task_group
-
-	var_1_59[66] = {
+	pg.base.battlepass_task_group[66] = {
 		id = 66,
 		group_mask = 6,
 		is_ontime = 0,
@@ -2435,11 +2162,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.battlepass_task_group
-
-	var_1_60[67] = {
+	pg.base.battlepass_task_group[67] = {
 		id = 67,
 		group_mask = 7,
 		is_ontime = 0,
@@ -2467,11 +2190,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.battlepass_task_group
-
-	var_1_61[68] = {
+	pg.base.battlepass_task_group[68] = {
 		id = 68,
 		group_mask = 8,
 		is_ontime = 0,
@@ -2499,11 +2218,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.battlepass_task_group
-
-	var_1_62[69] = {
+	pg.base.battlepass_task_group[69] = {
 		id = 69,
 		group_mask = 0,
 		is_ontime = 0,
@@ -2565,11 +2280,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.battlepass_task_group
-
-	var_1_63[71] = {
+	pg.base.battlepass_task_group[71] = {
 		id = 71,
 		group_mask = 1,
 		is_ontime = 0,
@@ -2597,11 +2308,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.battlepass_task_group
-
-	var_1_64[72] = {
+	pg.base.battlepass_task_group[72] = {
 		id = 72,
 		group_mask = 2,
 		is_ontime = 0,
@@ -2629,11 +2336,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.battlepass_task_group
-
-	var_1_65[73] = {
+	pg.base.battlepass_task_group[73] = {
 		id = 73,
 		group_mask = 3,
 		is_ontime = 0,
@@ -2661,11 +2364,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.battlepass_task_group
-
-	var_1_66[74] = {
+	pg.base.battlepass_task_group[74] = {
 		id = 74,
 		group_mask = 4,
 		is_ontime = 0,
@@ -2693,11 +2392,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.battlepass_task_group
-
-	var_1_67[75] = {
+	pg.base.battlepass_task_group[75] = {
 		id = 75,
 		group_mask = 5,
 		is_ontime = 0,
@@ -2725,11 +2420,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.battlepass_task_group
-
-	var_1_68[76] = {
+	pg.base.battlepass_task_group[76] = {
 		id = 76,
 		group_mask = 6,
 		is_ontime = 0,
@@ -2757,11 +2448,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.battlepass_task_group
-
-	var_1_69[77] = {
+	pg.base.battlepass_task_group[77] = {
 		id = 77,
 		group_mask = 7,
 		is_ontime = 0,
@@ -2789,11 +2476,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.battlepass_task_group
-
-	var_1_70[78] = {
+	pg.base.battlepass_task_group[78] = {
 		id = 78,
 		group_mask = 8,
 		is_ontime = 0,
@@ -2821,11 +2504,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.battlepass_task_group
-
-	var_1_71[79] = {
+	pg.base.battlepass_task_group[79] = {
 		id = 79,
 		group_mask = 0,
 		is_ontime = 0,
@@ -2887,11 +2566,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.battlepass_task_group
-
-	var_1_72[81] = {
+	pg.base.battlepass_task_group[81] = {
 		id = 81,
 		group_mask = 1,
 		is_ontime = 0,
@@ -2919,11 +2594,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.battlepass_task_group
-
-	var_1_73[82] = {
+	pg.base.battlepass_task_group[82] = {
 		id = 82,
 		group_mask = 2,
 		is_ontime = 0,
@@ -2951,11 +2622,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.battlepass_task_group
-
-	var_1_74[83] = {
+	pg.base.battlepass_task_group[83] = {
 		id = 83,
 		group_mask = 3,
 		is_ontime = 0,
@@ -2983,11 +2650,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.battlepass_task_group
-
-	var_1_75[84] = {
+	pg.base.battlepass_task_group[84] = {
 		id = 84,
 		group_mask = 4,
 		is_ontime = 0,
@@ -3015,11 +2678,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.battlepass_task_group
-
-	var_1_76[85] = {
+	pg.base.battlepass_task_group[85] = {
 		id = 85,
 		group_mask = 5,
 		is_ontime = 0,
@@ -3047,11 +2706,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.battlepass_task_group
-
-	var_1_77[86] = {
+	pg.base.battlepass_task_group[86] = {
 		id = 86,
 		group_mask = 6,
 		is_ontime = 0,
@@ -3079,11 +2734,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.battlepass_task_group
-
-	var_1_78[87] = {
+	pg.base.battlepass_task_group[87] = {
 		id = 87,
 		group_mask = 7,
 		is_ontime = 0,
@@ -3111,11 +2762,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.battlepass_task_group
-
-	var_1_79[88] = {
+	pg.base.battlepass_task_group[88] = {
 		id = 88,
 		group_mask = 8,
 		is_ontime = 0,
@@ -3143,11 +2790,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.battlepass_task_group
-
-	var_1_80[89] = {
+	pg.base.battlepass_task_group[89] = {
 		id = 89,
 		group_mask = 0,
 		is_ontime = 0,
@@ -3209,11 +2852,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.battlepass_task_group
-
-	var_1_81[91] = {
+	pg.base.battlepass_task_group[91] = {
 		id = 91,
 		group_mask = 1,
 		is_ontime = 0,
@@ -3241,11 +2880,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.battlepass_task_group
-
-	var_1_82[92] = {
+	pg.base.battlepass_task_group[92] = {
 		id = 92,
 		group_mask = 2,
 		is_ontime = 0,
@@ -3273,11 +2908,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.battlepass_task_group
-
-	var_1_83[93] = {
+	pg.base.battlepass_task_group[93] = {
 		id = 93,
 		group_mask = 3,
 		is_ontime = 0,
@@ -3305,11 +2936,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.battlepass_task_group
-
-	var_1_84[94] = {
+	pg.base.battlepass_task_group[94] = {
 		id = 94,
 		group_mask = 4,
 		is_ontime = 0,
@@ -3337,11 +2964,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.battlepass_task_group
-
-	var_1_85[95] = {
+	pg.base.battlepass_task_group[95] = {
 		id = 95,
 		group_mask = 5,
 		is_ontime = 0,
@@ -3369,11 +2992,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.battlepass_task_group
-
-	var_1_86[96] = {
+	pg.base.battlepass_task_group[96] = {
 		id = 96,
 		group_mask = 6,
 		is_ontime = 0,
@@ -3401,11 +3020,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.battlepass_task_group
-
-	var_1_87[97] = {
+	pg.base.battlepass_task_group[97] = {
 		id = 97,
 		group_mask = 7,
 		is_ontime = 0,
@@ -3433,11 +3048,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.battlepass_task_group
-
-	var_1_88[98] = {
+	pg.base.battlepass_task_group[98] = {
 		id = 98,
 		group_mask = 8,
 		is_ontime = 0,
@@ -3465,11 +3076,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.battlepass_task_group
-
-	var_1_89[99] = {
+	pg.base.battlepass_task_group[99] = {
 		id = 99,
 		group_mask = 0,
 		is_ontime = 0,
@@ -3531,11 +3138,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.battlepass_task_group
-
-	var_1_90[101] = {
+	pg.base.battlepass_task_group[101] = {
 		id = 101,
 		group_mask = 1,
 		is_ontime = 0,
@@ -3563,11 +3166,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.battlepass_task_group
-
-	var_1_91[102] = {
+	pg.base.battlepass_task_group[102] = {
 		id = 102,
 		group_mask = 2,
 		is_ontime = 0,
@@ -3595,11 +3194,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.battlepass_task_group
-
-	var_1_92[103] = {
+	pg.base.battlepass_task_group[103] = {
 		id = 103,
 		group_mask = 3,
 		is_ontime = 0,
@@ -3627,11 +3222,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.battlepass_task_group
-
-	var_1_93[104] = {
+	pg.base.battlepass_task_group[104] = {
 		id = 104,
 		group_mask = 4,
 		is_ontime = 0,
@@ -3659,11 +3250,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.battlepass_task_group
-
-	var_1_94[105] = {
+	pg.base.battlepass_task_group[105] = {
 		id = 105,
 		group_mask = 5,
 		is_ontime = 0,
@@ -3691,11 +3278,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.battlepass_task_group
-
-	var_1_95[106] = {
+	pg.base.battlepass_task_group[106] = {
 		id = 106,
 		group_mask = 6,
 		is_ontime = 0,
@@ -3723,11 +3306,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.battlepass_task_group
-
-	var_1_96[107] = {
+	pg.base.battlepass_task_group[107] = {
 		id = 107,
 		group_mask = 7,
 		is_ontime = 0,
@@ -3755,11 +3334,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.battlepass_task_group
-
-	var_1_97[108] = {
+	pg.base.battlepass_task_group[108] = {
 		id = 108,
 		group_mask = 8,
 		is_ontime = 0,
@@ -3787,11 +3362,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.battlepass_task_group
-
-	var_1_98[109] = {
+	pg.base.battlepass_task_group[109] = {
 		id = 109,
 		group_mask = 0,
 		is_ontime = 0,
@@ -3853,8 +3424,7 @@ var_0_3.base.battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.battlepass_task_group[111] = {
+	pg.base.battlepass_task_group[111] = {
 		id = 111,
 		group_mask = 1,
 		is_ontime = 0,
@@ -3886,11 +3456,7 @@ var_0_3.base.battlepass_task_group = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.battlepass_task_group
-
-	var_2_0[112] = {
+	pg.base.battlepass_task_group[112] = {
 		id = 112,
 		group_mask = 2,
 		is_ontime = 0,
@@ -3918,11 +3484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.battlepass_task_group
-
-	var_2_1[113] = {
+	pg.base.battlepass_task_group[113] = {
 		id = 113,
 		group_mask = 3,
 		is_ontime = 0,
@@ -3950,11 +3512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.battlepass_task_group
-
-	var_2_2[114] = {
+	pg.base.battlepass_task_group[114] = {
 		id = 114,
 		group_mask = 4,
 		is_ontime = 0,
@@ -3982,11 +3540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.battlepass_task_group
-
-	var_2_3[115] = {
+	pg.base.battlepass_task_group[115] = {
 		id = 115,
 		group_mask = 5,
 		is_ontime = 0,
@@ -4014,11 +3568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.battlepass_task_group
-
-	var_2_4[116] = {
+	pg.base.battlepass_task_group[116] = {
 		id = 116,
 		group_mask = 6,
 		is_ontime = 0,
@@ -4046,11 +3596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.battlepass_task_group
-
-	var_2_5[117] = {
+	pg.base.battlepass_task_group[117] = {
 		id = 117,
 		group_mask = 7,
 		is_ontime = 0,
@@ -4078,11 +3624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.battlepass_task_group
-
-	var_2_6[118] = {
+	pg.base.battlepass_task_group[118] = {
 		id = 118,
 		group_mask = 8,
 		is_ontime = 0,
@@ -4110,11 +3652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.battlepass_task_group
-
-	var_2_7[119] = {
+	pg.base.battlepass_task_group[119] = {
 		id = 119,
 		group_mask = 0,
 		is_ontime = 0,
@@ -4176,11 +3714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.battlepass_task_group
-
-	var_2_8[121] = {
+	pg.base.battlepass_task_group[121] = {
 		id = 121,
 		group_mask = 1,
 		is_ontime = 0,
@@ -4208,11 +3742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.battlepass_task_group
-
-	var_2_9[122] = {
+	pg.base.battlepass_task_group[122] = {
 		id = 122,
 		group_mask = 2,
 		is_ontime = 0,
@@ -4240,11 +3770,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.battlepass_task_group
-
-	var_2_10[123] = {
+	pg.base.battlepass_task_group[123] = {
 		id = 123,
 		group_mask = 3,
 		is_ontime = 0,
@@ -4272,11 +3798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.battlepass_task_group
-
-	var_2_11[124] = {
+	pg.base.battlepass_task_group[124] = {
 		id = 124,
 		group_mask = 4,
 		is_ontime = 0,
@@ -4304,11 +3826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.battlepass_task_group
-
-	var_2_12[125] = {
+	pg.base.battlepass_task_group[125] = {
 		id = 125,
 		group_mask = 5,
 		is_ontime = 0,
@@ -4336,11 +3854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.battlepass_task_group
-
-	var_2_13[126] = {
+	pg.base.battlepass_task_group[126] = {
 		id = 126,
 		group_mask = 6,
 		is_ontime = 0,
@@ -4368,11 +3882,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.battlepass_task_group
-
-	var_2_14[127] = {
+	pg.base.battlepass_task_group[127] = {
 		id = 127,
 		group_mask = 7,
 		is_ontime = 0,
@@ -4400,11 +3910,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.battlepass_task_group
-
-	var_2_15[128] = {
+	pg.base.battlepass_task_group[128] = {
 		id = 128,
 		group_mask = 8,
 		is_ontime = 0,
@@ -4432,11 +3938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.battlepass_task_group
-
-	var_2_16[129] = {
+	pg.base.battlepass_task_group[129] = {
 		id = 129,
 		group_mask = 0,
 		is_ontime = 0,
@@ -4498,11 +4000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.battlepass_task_group
-
-	var_2_17[131] = {
+	pg.base.battlepass_task_group[131] = {
 		id = 131,
 		group_mask = 1,
 		is_ontime = 0,
@@ -4530,11 +4028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.battlepass_task_group
-
-	var_2_18[132] = {
+	pg.base.battlepass_task_group[132] = {
 		id = 132,
 		group_mask = 2,
 		is_ontime = 0,
@@ -4562,11 +4056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.battlepass_task_group
-
-	var_2_19[133] = {
+	pg.base.battlepass_task_group[133] = {
 		id = 133,
 		group_mask = 3,
 		is_ontime = 0,
@@ -4594,11 +4084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.battlepass_task_group
-
-	var_2_20[134] = {
+	pg.base.battlepass_task_group[134] = {
 		id = 134,
 		group_mask = 4,
 		is_ontime = 0,
@@ -4626,11 +4112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.battlepass_task_group
-
-	var_2_21[135] = {
+	pg.base.battlepass_task_group[135] = {
 		id = 135,
 		group_mask = 5,
 		is_ontime = 0,
@@ -4658,11 +4140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.battlepass_task_group
-
-	var_2_22[136] = {
+	pg.base.battlepass_task_group[136] = {
 		id = 136,
 		group_mask = 6,
 		is_ontime = 0,
@@ -4690,11 +4168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.battlepass_task_group
-
-	var_2_23[137] = {
+	pg.base.battlepass_task_group[137] = {
 		id = 137,
 		group_mask = 7,
 		is_ontime = 0,
@@ -4722,11 +4196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.battlepass_task_group
-
-	var_2_24[138] = {
+	pg.base.battlepass_task_group[138] = {
 		id = 138,
 		group_mask = 8,
 		is_ontime = 0,
@@ -4754,11 +4224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.battlepass_task_group
-
-	var_2_25[139] = {
+	pg.base.battlepass_task_group[139] = {
 		id = 139,
 		group_mask = 0,
 		is_ontime = 0,
@@ -4820,11 +4286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.battlepass_task_group
-
-	var_2_26[141] = {
+	pg.base.battlepass_task_group[141] = {
 		id = 141,
 		group_mask = 1,
 		is_ontime = 0,
@@ -4852,11 +4314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.battlepass_task_group
-
-	var_2_27[142] = {
+	pg.base.battlepass_task_group[142] = {
 		id = 142,
 		group_mask = 2,
 		is_ontime = 0,
@@ -4884,11 +4342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.battlepass_task_group
-
-	var_2_28[143] = {
+	pg.base.battlepass_task_group[143] = {
 		id = 143,
 		group_mask = 3,
 		is_ontime = 0,
@@ -4916,11 +4370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.battlepass_task_group
-
-	var_2_29[144] = {
+	pg.base.battlepass_task_group[144] = {
 		id = 144,
 		group_mask = 4,
 		is_ontime = 0,
@@ -4948,11 +4398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.battlepass_task_group
-
-	var_2_30[145] = {
+	pg.base.battlepass_task_group[145] = {
 		id = 145,
 		group_mask = 5,
 		is_ontime = 0,
@@ -4980,11 +4426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.battlepass_task_group
-
-	var_2_31[146] = {
+	pg.base.battlepass_task_group[146] = {
 		id = 146,
 		group_mask = 6,
 		is_ontime = 0,
@@ -5012,11 +4454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.battlepass_task_group
-
-	var_2_32[147] = {
+	pg.base.battlepass_task_group[147] = {
 		id = 147,
 		group_mask = 7,
 		is_ontime = 0,
@@ -5044,11 +4482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.battlepass_task_group
-
-	var_2_33[148] = {
+	pg.base.battlepass_task_group[148] = {
 		id = 148,
 		group_mask = 8,
 		is_ontime = 0,
@@ -5076,11 +4510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.battlepass_task_group
-
-	var_2_34[149] = {
+	pg.base.battlepass_task_group[149] = {
 		id = 149,
 		group_mask = 0,
 		is_ontime = 0,
@@ -5142,11 +4572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.battlepass_task_group
-
-	var_2_35[151] = {
+	pg.base.battlepass_task_group[151] = {
 		id = 151,
 		group_mask = 1,
 		is_ontime = 0,
@@ -5174,11 +4600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.battlepass_task_group
-
-	var_2_36[152] = {
+	pg.base.battlepass_task_group[152] = {
 		id = 152,
 		group_mask = 2,
 		is_ontime = 0,
@@ -5206,11 +4628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.battlepass_task_group
-
-	var_2_37[153] = {
+	pg.base.battlepass_task_group[153] = {
 		id = 153,
 		group_mask = 3,
 		is_ontime = 0,
@@ -5238,11 +4656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.battlepass_task_group
-
-	var_2_38[154] = {
+	pg.base.battlepass_task_group[154] = {
 		id = 154,
 		group_mask = 4,
 		is_ontime = 0,
@@ -5270,11 +4684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.battlepass_task_group
-
-	var_2_39[155] = {
+	pg.base.battlepass_task_group[155] = {
 		id = 155,
 		group_mask = 5,
 		is_ontime = 0,
@@ -5302,11 +4712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.battlepass_task_group
-
-	var_2_40[156] = {
+	pg.base.battlepass_task_group[156] = {
 		id = 156,
 		group_mask = 6,
 		is_ontime = 0,
@@ -5334,11 +4740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.battlepass_task_group
-
-	var_2_41[157] = {
+	pg.base.battlepass_task_group[157] = {
 		id = 157,
 		group_mask = 7,
 		is_ontime = 0,
@@ -5366,11 +4768,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.battlepass_task_group
-
-	var_2_42[158] = {
+	pg.base.battlepass_task_group[158] = {
 		id = 158,
 		group_mask = 8,
 		is_ontime = 0,
@@ -5398,11 +4796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.battlepass_task_group
-
-	var_2_43[159] = {
+	pg.base.battlepass_task_group[159] = {
 		id = 159,
 		group_mask = 0,
 		is_ontime = 0,
@@ -5464,11 +4858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.battlepass_task_group
-
-	var_2_44[160] = {
+	pg.base.battlepass_task_group[160] = {
 		id = 160,
 		group_mask = 1,
 		is_ontime = 0,
@@ -5496,11 +4886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.battlepass_task_group
-
-	var_2_45[161] = {
+	pg.base.battlepass_task_group[161] = {
 		id = 161,
 		group_mask = 2,
 		is_ontime = 0,
@@ -5528,11 +4914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.battlepass_task_group
-
-	var_2_46[162] = {
+	pg.base.battlepass_task_group[162] = {
 		id = 162,
 		group_mask = 3,
 		is_ontime = 0,
@@ -5560,11 +4942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.battlepass_task_group
-
-	var_2_47[163] = {
+	pg.base.battlepass_task_group[163] = {
 		id = 163,
 		group_mask = 4,
 		is_ontime = 0,
@@ -5592,11 +4970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.battlepass_task_group
-
-	var_2_48[164] = {
+	pg.base.battlepass_task_group[164] = {
 		id = 164,
 		group_mask = 5,
 		is_ontime = 0,
@@ -5624,11 +4998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.battlepass_task_group
-
-	var_2_49[165] = {
+	pg.base.battlepass_task_group[165] = {
 		id = 165,
 		group_mask = 6,
 		is_ontime = 0,
@@ -5656,11 +5026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.battlepass_task_group
-
-	var_2_50[166] = {
+	pg.base.battlepass_task_group[166] = {
 		id = 166,
 		group_mask = 7,
 		is_ontime = 0,
@@ -5688,11 +5054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.battlepass_task_group
-
-	var_2_51[167] = {
+	pg.base.battlepass_task_group[167] = {
 		id = 167,
 		group_mask = 8,
 		is_ontime = 0,
@@ -5720,11 +5082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.battlepass_task_group
-
-	var_2_52[168] = {
+	pg.base.battlepass_task_group[168] = {
 		id = 168,
 		group_mask = 0,
 		is_ontime = 0,
@@ -5786,11 +5144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.battlepass_task_group
-
-	var_2_53[170] = {
+	pg.base.battlepass_task_group[170] = {
 		id = 170,
 		group_mask = 1,
 		is_ontime = 0,
@@ -5818,11 +5172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.battlepass_task_group
-
-	var_2_54[171] = {
+	pg.base.battlepass_task_group[171] = {
 		id = 171,
 		group_mask = 2,
 		is_ontime = 0,
@@ -5850,11 +5200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.battlepass_task_group
-
-	var_2_55[172] = {
+	pg.base.battlepass_task_group[172] = {
 		id = 172,
 		group_mask = 3,
 		is_ontime = 0,
@@ -5882,11 +5228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.battlepass_task_group
-
-	var_2_56[173] = {
+	pg.base.battlepass_task_group[173] = {
 		id = 173,
 		group_mask = 4,
 		is_ontime = 0,
@@ -5914,11 +5256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.battlepass_task_group
-
-	var_2_57[174] = {
+	pg.base.battlepass_task_group[174] = {
 		id = 174,
 		group_mask = 5,
 		is_ontime = 0,
@@ -5946,11 +5284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.battlepass_task_group
-
-	var_2_58[175] = {
+	pg.base.battlepass_task_group[175] = {
 		id = 175,
 		group_mask = 6,
 		is_ontime = 0,
@@ -5978,11 +5312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.battlepass_task_group
-
-	var_2_59[176] = {
+	pg.base.battlepass_task_group[176] = {
 		id = 176,
 		group_mask = 7,
 		is_ontime = 0,
@@ -6010,11 +5340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.battlepass_task_group
-
-	var_2_60[177] = {
+	pg.base.battlepass_task_group[177] = {
 		id = 177,
 		group_mask = 8,
 		is_ontime = 0,
@@ -6042,11 +5368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.battlepass_task_group
-
-	var_2_61[178] = {
+	pg.base.battlepass_task_group[178] = {
 		id = 178,
 		group_mask = 0,
 		is_ontime = 0,
@@ -6108,11 +5430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.battlepass_task_group
-
-	var_2_62[180] = {
+	pg.base.battlepass_task_group[180] = {
 		id = 180,
 		group_mask = 1,
 		is_ontime = 0,
@@ -6140,11 +5458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.battlepass_task_group
-
-	var_2_63[181] = {
+	pg.base.battlepass_task_group[181] = {
 		id = 181,
 		group_mask = 2,
 		is_ontime = 0,
@@ -6172,11 +5486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.battlepass_task_group
-
-	var_2_64[182] = {
+	pg.base.battlepass_task_group[182] = {
 		id = 182,
 		group_mask = 3,
 		is_ontime = 0,
@@ -6204,11 +5514,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.battlepass_task_group
-
-	var_2_65[183] = {
+	pg.base.battlepass_task_group[183] = {
 		id = 183,
 		group_mask = 4,
 		is_ontime = 0,
@@ -6236,11 +5542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.battlepass_task_group
-
-	var_2_66[184] = {
+	pg.base.battlepass_task_group[184] = {
 		id = 184,
 		group_mask = 5,
 		is_ontime = 0,
@@ -6268,11 +5570,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.battlepass_task_group
-
-	var_2_67[185] = {
+	pg.base.battlepass_task_group[185] = {
 		id = 185,
 		group_mask = 6,
 		is_ontime = 0,
@@ -6300,11 +5598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.battlepass_task_group
-
-	var_2_68[186] = {
+	pg.base.battlepass_task_group[186] = {
 		id = 186,
 		group_mask = 7,
 		is_ontime = 0,
@@ -6332,11 +5626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.battlepass_task_group
-
-	var_2_69[187] = {
+	pg.base.battlepass_task_group[187] = {
 		id = 187,
 		group_mask = 8,
 		is_ontime = 0,
@@ -6364,11 +5654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.battlepass_task_group
-
-	var_2_70[188] = {
+	pg.base.battlepass_task_group[188] = {
 		id = 188,
 		group_mask = 0,
 		is_ontime = 0,
@@ -6430,11 +5716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.battlepass_task_group
-
-	var_2_71[190] = {
+	pg.base.battlepass_task_group[190] = {
 		id = 190,
 		group_mask = 1,
 		is_ontime = 1,
@@ -6462,11 +5744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.battlepass_task_group
-
-	var_2_72[191] = {
+	pg.base.battlepass_task_group[191] = {
 		id = 191,
 		group_mask = 2,
 		is_ontime = 1,
@@ -6494,11 +5772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.battlepass_task_group
-
-	var_2_73[192] = {
+	pg.base.battlepass_task_group[192] = {
 		id = 192,
 		group_mask = 3,
 		is_ontime = 1,
@@ -6526,11 +5800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.battlepass_task_group
-
-	var_2_74[193] = {
+	pg.base.battlepass_task_group[193] = {
 		id = 193,
 		group_mask = 4,
 		is_ontime = 1,
@@ -6558,11 +5828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.battlepass_task_group
-
-	var_2_75[194] = {
+	pg.base.battlepass_task_group[194] = {
 		id = 194,
 		group_mask = 5,
 		is_ontime = 1,
@@ -6590,11 +5856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.battlepass_task_group
-
-	var_2_76[195] = {
+	pg.base.battlepass_task_group[195] = {
 		id = 195,
 		group_mask = 6,
 		is_ontime = 1,
@@ -6622,11 +5884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.battlepass_task_group
-
-	var_2_77[196] = {
+	pg.base.battlepass_task_group[196] = {
 		id = 196,
 		group_mask = 7,
 		is_ontime = 1,
@@ -6654,11 +5912,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.battlepass_task_group
-
-	var_2_78[197] = {
+	pg.base.battlepass_task_group[197] = {
 		id = 197,
 		group_mask = 8,
 		is_ontime = 1,
@@ -6686,11 +5940,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.battlepass_task_group
-
-	var_2_79[198] = {
+	pg.base.battlepass_task_group[198] = {
 		id = 198,
 		group_mask = 0,
 		is_ontime = 0,
@@ -6752,11 +6002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.battlepass_task_group
-
-	var_2_80[200] = {
+	pg.base.battlepass_task_group[200] = {
 		id = 200,
 		group_mask = 1,
 		is_ontime = 1,
@@ -6784,11 +6030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.battlepass_task_group
-
-	var_2_81[201] = {
+	pg.base.battlepass_task_group[201] = {
 		id = 201,
 		group_mask = 2,
 		is_ontime = 1,
@@ -6816,11 +6058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.battlepass_task_group
-
-	var_2_82[202] = {
+	pg.base.battlepass_task_group[202] = {
 		id = 202,
 		group_mask = 3,
 		is_ontime = 1,
@@ -6848,11 +6086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.battlepass_task_group
-
-	var_2_83[203] = {
+	pg.base.battlepass_task_group[203] = {
 		id = 203,
 		group_mask = 4,
 		is_ontime = 1,
@@ -6880,11 +6114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.battlepass_task_group
-
-	var_2_84[204] = {
+	pg.base.battlepass_task_group[204] = {
 		id = 204,
 		group_mask = 5,
 		is_ontime = 1,
@@ -6912,11 +6142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.battlepass_task_group
-
-	var_2_85[205] = {
+	pg.base.battlepass_task_group[205] = {
 		id = 205,
 		group_mask = 6,
 		is_ontime = 1,
@@ -6944,11 +6170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.battlepass_task_group
-
-	var_2_86[206] = {
+	pg.base.battlepass_task_group[206] = {
 		id = 206,
 		group_mask = 7,
 		is_ontime = 1,
@@ -6976,11 +6198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.battlepass_task_group
-
-	var_2_87[207] = {
+	pg.base.battlepass_task_group[207] = {
 		id = 207,
 		group_mask = 8,
 		is_ontime = 1,
@@ -7008,11 +6226,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.battlepass_task_group
-
-	var_2_88[208] = {
+	pg.base.battlepass_task_group[208] = {
 		id = 208,
 		group_mask = 0,
 		is_ontime = 0,
@@ -7074,11 +6288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.battlepass_task_group
-
-	var_2_89[210] = {
+	pg.base.battlepass_task_group[210] = {
 		id = 210,
 		group_mask = 1,
 		is_ontime = 1,
@@ -7106,11 +6316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.battlepass_task_group
-
-	var_2_90[211] = {
+	pg.base.battlepass_task_group[211] = {
 		id = 211,
 		group_mask = 2,
 		is_ontime = 1,
@@ -7138,11 +6344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.battlepass_task_group
-
-	var_2_91[212] = {
+	pg.base.battlepass_task_group[212] = {
 		id = 212,
 		group_mask = 3,
 		is_ontime = 1,
@@ -7170,11 +6372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.battlepass_task_group
-
-	var_2_92[213] = {
+	pg.base.battlepass_task_group[213] = {
 		id = 213,
 		group_mask = 4,
 		is_ontime = 1,
@@ -7202,11 +6400,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.battlepass_task_group
-
-	var_2_93[214] = {
+	pg.base.battlepass_task_group[214] = {
 		id = 214,
 		group_mask = 5,
 		is_ontime = 1,
@@ -7234,11 +6428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.battlepass_task_group
-
-	var_2_94[215] = {
+	pg.base.battlepass_task_group[215] = {
 		id = 215,
 		group_mask = 6,
 		is_ontime = 1,
@@ -7266,11 +6456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.battlepass_task_group
-
-	var_2_95[216] = {
+	pg.base.battlepass_task_group[216] = {
 		id = 216,
 		group_mask = 7,
 		is_ontime = 1,
@@ -7298,11 +6484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.battlepass_task_group
-
-	var_2_96[217] = {
+	pg.base.battlepass_task_group[217] = {
 		id = 217,
 		group_mask = 8,
 		is_ontime = 1,
@@ -7330,11 +6512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.battlepass_task_group
-
-	var_2_97[218] = {
+	pg.base.battlepass_task_group[218] = {
 		id = 218,
 		group_mask = 0,
 		is_ontime = 0,
@@ -7396,11 +6574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.battlepass_task_group
-
-	var_2_98[220] = {
+	pg.base.battlepass_task_group[220] = {
 		id = 220,
 		group_mask = 1,
 		is_ontime = 1,
@@ -7428,8 +6602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.battlepass_task_group[221] = {
+	pg.base.battlepass_task_group[221] = {
 		id = 221,
 		group_mask = 2,
 		is_ontime = 1,
@@ -7461,11 +6634,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.battlepass_task_group
-
-	var_3_0[222] = {
+	pg.base.battlepass_task_group[222] = {
 		id = 222,
 		group_mask = 3,
 		is_ontime = 1,
@@ -7493,11 +6662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.battlepass_task_group
-
-	var_3_1[223] = {
+	pg.base.battlepass_task_group[223] = {
 		id = 223,
 		group_mask = 4,
 		is_ontime = 1,
@@ -7525,11 +6690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.battlepass_task_group
-
-	var_3_2[224] = {
+	pg.base.battlepass_task_group[224] = {
 		id = 224,
 		group_mask = 5,
 		is_ontime = 1,
@@ -7557,11 +6718,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.battlepass_task_group
-
-	var_3_3[225] = {
+	pg.base.battlepass_task_group[225] = {
 		id = 225,
 		group_mask = 6,
 		is_ontime = 1,
@@ -7589,11 +6746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.battlepass_task_group
-
-	var_3_4[226] = {
+	pg.base.battlepass_task_group[226] = {
 		id = 226,
 		group_mask = 7,
 		is_ontime = 1,
@@ -7621,11 +6774,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.battlepass_task_group
-
-	var_3_5[227] = {
+	pg.base.battlepass_task_group[227] = {
 		id = 227,
 		group_mask = 8,
 		is_ontime = 1,
@@ -7653,11 +6802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.battlepass_task_group
-
-	var_3_6[228] = {
+	pg.base.battlepass_task_group[228] = {
 		id = 228,
 		group_mask = 0,
 		is_ontime = 0,
@@ -7719,11 +6864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.battlepass_task_group
-
-	var_3_7[230] = {
+	pg.base.battlepass_task_group[230] = {
 		id = 230,
 		group_mask = 1,
 		is_ontime = 1,
@@ -7751,11 +6892,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.battlepass_task_group
-
-	var_3_8[231] = {
+	pg.base.battlepass_task_group[231] = {
 		id = 231,
 		group_mask = 2,
 		is_ontime = 1,
@@ -7783,11 +6920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.battlepass_task_group
-
-	var_3_9[232] = {
+	pg.base.battlepass_task_group[232] = {
 		id = 232,
 		group_mask = 3,
 		is_ontime = 1,
@@ -7815,11 +6948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.battlepass_task_group
-
-	var_3_10[233] = {
+	pg.base.battlepass_task_group[233] = {
 		id = 233,
 		group_mask = 4,
 		is_ontime = 1,
@@ -7847,11 +6976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.battlepass_task_group
-
-	var_3_11[234] = {
+	pg.base.battlepass_task_group[234] = {
 		id = 234,
 		group_mask = 5,
 		is_ontime = 1,
@@ -7879,11 +7004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.battlepass_task_group
-
-	var_3_12[235] = {
+	pg.base.battlepass_task_group[235] = {
 		id = 235,
 		group_mask = 6,
 		is_ontime = 1,
@@ -7911,11 +7032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.battlepass_task_group
-
-	var_3_13[236] = {
+	pg.base.battlepass_task_group[236] = {
 		id = 236,
 		group_mask = 7,
 		is_ontime = 1,
@@ -7943,11 +7060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.battlepass_task_group
-
-	var_3_14[237] = {
+	pg.base.battlepass_task_group[237] = {
 		id = 237,
 		group_mask = 8,
 		is_ontime = 1,
@@ -7975,11 +7088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.battlepass_task_group
-
-	var_3_15[238] = {
+	pg.base.battlepass_task_group[238] = {
 		id = 238,
 		group_mask = 0,
 		is_ontime = 0,
@@ -8041,11 +7150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.battlepass_task_group
-
-	var_3_16[240] = {
+	pg.base.battlepass_task_group[240] = {
 		id = 240,
 		group_mask = 1,
 		is_ontime = 1,
@@ -8073,11 +7178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.battlepass_task_group
-
-	var_3_17[241] = {
+	pg.base.battlepass_task_group[241] = {
 		id = 241,
 		group_mask = 2,
 		is_ontime = 1,
@@ -8105,11 +7206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.battlepass_task_group
-
-	var_3_18[242] = {
+	pg.base.battlepass_task_group[242] = {
 		id = 242,
 		group_mask = 3,
 		is_ontime = 1,
@@ -8137,11 +7234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.battlepass_task_group
-
-	var_3_19[243] = {
+	pg.base.battlepass_task_group[243] = {
 		id = 243,
 		group_mask = 4,
 		is_ontime = 1,
@@ -8169,11 +7262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.battlepass_task_group
-
-	var_3_20[244] = {
+	pg.base.battlepass_task_group[244] = {
 		id = 244,
 		group_mask = 5,
 		is_ontime = 1,
@@ -8201,11 +7290,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.battlepass_task_group
-
-	var_3_21[245] = {
+	pg.base.battlepass_task_group[245] = {
 		id = 245,
 		group_mask = 6,
 		is_ontime = 1,
@@ -8233,11 +7318,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.battlepass_task_group
-
-	var_3_22[246] = {
+	pg.base.battlepass_task_group[246] = {
 		id = 246,
 		group_mask = 7,
 		is_ontime = 1,
@@ -8265,11 +7346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.battlepass_task_group
-
-	var_3_23[247] = {
+	pg.base.battlepass_task_group[247] = {
 		id = 247,
 		group_mask = 8,
 		is_ontime = 1,
@@ -8297,11 +7374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.battlepass_task_group
-
-	var_3_24[248] = {
+	pg.base.battlepass_task_group[248] = {
 		id = 248,
 		group_mask = 0,
 		is_ontime = 0,
@@ -8363,11 +7436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.battlepass_task_group
-
-	var_3_25[250] = {
+	pg.base.battlepass_task_group[250] = {
 		id = 250,
 		group_mask = 1,
 		is_ontime = 1,
@@ -8395,11 +7464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.battlepass_task_group
-
-	var_3_26[251] = {
+	pg.base.battlepass_task_group[251] = {
 		id = 251,
 		group_mask = 2,
 		is_ontime = 1,
@@ -8427,11 +7492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.battlepass_task_group
-
-	var_3_27[252] = {
+	pg.base.battlepass_task_group[252] = {
 		id = 252,
 		group_mask = 3,
 		is_ontime = 1,
@@ -8459,11 +7520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.battlepass_task_group
-
-	var_3_28[253] = {
+	pg.base.battlepass_task_group[253] = {
 		id = 253,
 		group_mask = 4,
 		is_ontime = 1,
@@ -8491,11 +7548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.battlepass_task_group
-
-	var_3_29[254] = {
+	pg.base.battlepass_task_group[254] = {
 		id = 254,
 		group_mask = 5,
 		is_ontime = 1,
@@ -8523,11 +7576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.battlepass_task_group
-
-	var_3_30[255] = {
+	pg.base.battlepass_task_group[255] = {
 		id = 255,
 		group_mask = 6,
 		is_ontime = 1,
@@ -8555,11 +7604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.battlepass_task_group
-
-	var_3_31[256] = {
+	pg.base.battlepass_task_group[256] = {
 		id = 256,
 		group_mask = 7,
 		is_ontime = 1,
@@ -8587,11 +7632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.battlepass_task_group
-
-	var_3_32[257] = {
+	pg.base.battlepass_task_group[257] = {
 		id = 257,
 		group_mask = 8,
 		is_ontime = 1,
@@ -8619,11 +7660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.battlepass_task_group
-
-	var_3_33[258] = {
+	pg.base.battlepass_task_group[258] = {
 		id = 258,
 		group_mask = 0,
 		is_ontime = 0,
@@ -8685,11 +7722,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.battlepass_task_group
-
-	var_3_34[260] = {
+	pg.base.battlepass_task_group[260] = {
 		id = 260,
 		group_mask = 1,
 		is_ontime = 1,
@@ -8717,11 +7750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.battlepass_task_group
-
-	var_3_35[261] = {
+	pg.base.battlepass_task_group[261] = {
 		id = 261,
 		group_mask = 2,
 		is_ontime = 1,
@@ -8749,11 +7778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.battlepass_task_group
-
-	var_3_36[262] = {
+	pg.base.battlepass_task_group[262] = {
 		id = 262,
 		group_mask = 3,
 		is_ontime = 1,
@@ -8781,11 +7806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.battlepass_task_group
-
-	var_3_37[263] = {
+	pg.base.battlepass_task_group[263] = {
 		id = 263,
 		group_mask = 4,
 		is_ontime = 1,
@@ -8813,11 +7834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.battlepass_task_group
-
-	var_3_38[264] = {
+	pg.base.battlepass_task_group[264] = {
 		id = 264,
 		group_mask = 5,
 		is_ontime = 1,
@@ -8845,11 +7862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.battlepass_task_group
-
-	var_3_39[265] = {
+	pg.base.battlepass_task_group[265] = {
 		id = 265,
 		group_mask = 6,
 		is_ontime = 1,
@@ -8877,11 +7890,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.battlepass_task_group
-
-	var_3_40[266] = {
+	pg.base.battlepass_task_group[266] = {
 		id = 266,
 		group_mask = 7,
 		is_ontime = 1,
@@ -8909,11 +7918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.battlepass_task_group
-
-	var_3_41[267] = {
+	pg.base.battlepass_task_group[267] = {
 		id = 267,
 		group_mask = 8,
 		is_ontime = 1,
@@ -8941,11 +7946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.battlepass_task_group
-
-	var_3_42[268] = {
+	pg.base.battlepass_task_group[268] = {
 		id = 268,
 		group_mask = 0,
 		is_ontime = 0,
@@ -9007,11 +8008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.battlepass_task_group
-
-	var_3_43[270] = {
+	pg.base.battlepass_task_group[270] = {
 		id = 270,
 		group_mask = 1,
 		is_ontime = 1,
@@ -9039,11 +8036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.battlepass_task_group
-
-	var_3_44[271] = {
+	pg.base.battlepass_task_group[271] = {
 		id = 271,
 		group_mask = 2,
 		is_ontime = 1,
@@ -9071,11 +8064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.battlepass_task_group
-
-	var_3_45[272] = {
+	pg.base.battlepass_task_group[272] = {
 		id = 272,
 		group_mask = 3,
 		is_ontime = 1,
@@ -9103,11 +8092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.battlepass_task_group
-
-	var_3_46[273] = {
+	pg.base.battlepass_task_group[273] = {
 		id = 273,
 		group_mask = 4,
 		is_ontime = 1,
@@ -9135,11 +8120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.battlepass_task_group
-
-	var_3_47[274] = {
+	pg.base.battlepass_task_group[274] = {
 		id = 274,
 		group_mask = 5,
 		is_ontime = 1,
@@ -9167,11 +8148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.battlepass_task_group
-
-	var_3_48[275] = {
+	pg.base.battlepass_task_group[275] = {
 		id = 275,
 		group_mask = 6,
 		is_ontime = 1,
@@ -9199,11 +8176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.battlepass_task_group
-
-	var_3_49[276] = {
+	pg.base.battlepass_task_group[276] = {
 		id = 276,
 		group_mask = 7,
 		is_ontime = 1,
@@ -9231,11 +8204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.battlepass_task_group
-
-	var_3_50[277] = {
+	pg.base.battlepass_task_group[277] = {
 		id = 277,
 		group_mask = 8,
 		is_ontime = 1,
@@ -9263,11 +8232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.battlepass_task_group
-
-	var_3_51[278] = {
+	pg.base.battlepass_task_group[278] = {
 		id = 278,
 		group_mask = 0,
 		is_ontime = 0,
@@ -9329,11 +8294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.battlepass_task_group
-
-	var_3_52[280] = {
+	pg.base.battlepass_task_group[280] = {
 		id = 280,
 		group_mask = 1,
 		is_ontime = 1,
@@ -9361,11 +8322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.battlepass_task_group
-
-	var_3_53[281] = {
+	pg.base.battlepass_task_group[281] = {
 		id = 281,
 		group_mask = 2,
 		is_ontime = 1,
@@ -9393,11 +8350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.battlepass_task_group
-
-	var_3_54[282] = {
+	pg.base.battlepass_task_group[282] = {
 		id = 282,
 		group_mask = 3,
 		is_ontime = 1,
@@ -9425,11 +8378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.battlepass_task_group
-
-	var_3_55[283] = {
+	pg.base.battlepass_task_group[283] = {
 		id = 283,
 		group_mask = 4,
 		is_ontime = 1,
@@ -9457,11 +8406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.battlepass_task_group
-
-	var_3_56[284] = {
+	pg.base.battlepass_task_group[284] = {
 		id = 284,
 		group_mask = 5,
 		is_ontime = 1,
@@ -9489,11 +8434,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.battlepass_task_group
-
-	var_3_57[285] = {
+	pg.base.battlepass_task_group[285] = {
 		id = 285,
 		group_mask = 6,
 		is_ontime = 1,
@@ -9521,11 +8462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.battlepass_task_group
-
-	var_3_58[286] = {
+	pg.base.battlepass_task_group[286] = {
 		id = 286,
 		group_mask = 7,
 		is_ontime = 1,
@@ -9553,11 +8490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.battlepass_task_group
-
-	var_3_59[287] = {
+	pg.base.battlepass_task_group[287] = {
 		id = 287,
 		group_mask = 8,
 		is_ontime = 1,
@@ -9585,11 +8518,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.battlepass_task_group
-
-	var_3_60[288] = {
+	pg.base.battlepass_task_group[288] = {
 		id = 288,
 		group_mask = 0,
 		is_ontime = 0,
@@ -9651,11 +8580,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.battlepass_task_group
-
-	var_3_61[290] = {
+	pg.base.battlepass_task_group[290] = {
 		id = 290,
 		group_mask = 1,
 		is_ontime = 1,
@@ -9683,11 +8608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.battlepass_task_group
-
-	var_3_62[291] = {
+	pg.base.battlepass_task_group[291] = {
 		id = 291,
 		group_mask = 2,
 		is_ontime = 1,
@@ -9715,11 +8636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.battlepass_task_group
-
-	var_3_63[292] = {
+	pg.base.battlepass_task_group[292] = {
 		id = 292,
 		group_mask = 3,
 		is_ontime = 1,
@@ -9747,11 +8664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.battlepass_task_group
-
-	var_3_64[293] = {
+	pg.base.battlepass_task_group[293] = {
 		id = 293,
 		group_mask = 4,
 		is_ontime = 1,
@@ -9779,11 +8692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.battlepass_task_group
-
-	var_3_65[294] = {
+	pg.base.battlepass_task_group[294] = {
 		id = 294,
 		group_mask = 5,
 		is_ontime = 1,
@@ -9811,11 +8720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.battlepass_task_group
-
-	var_3_66[295] = {
+	pg.base.battlepass_task_group[295] = {
 		id = 295,
 		group_mask = 6,
 		is_ontime = 1,
@@ -9843,11 +8748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.battlepass_task_group
-
-	var_3_67[296] = {
+	pg.base.battlepass_task_group[296] = {
 		id = 296,
 		group_mask = 7,
 		is_ontime = 1,
@@ -9875,11 +8776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.battlepass_task_group
-
-	var_3_68[297] = {
+	pg.base.battlepass_task_group[297] = {
 		id = 297,
 		group_mask = 8,
 		is_ontime = 1,
@@ -9907,8 +8804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-	var_3_68.base.battlepass_task_group[298] = {
+	pg.base.battlepass_task_group[298] = {
 		id = 298,
 		group_mask = 0,
 		is_ontime = 0,

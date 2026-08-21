@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : HeroShowManager
 @Description    : 英雄获得展示管理
@@ -69,6 +69,11 @@ end
 ------------------------------------------------------------------------ 战员获得展示 ------------------------------------------------------------------------
 -- 检查是否需要战员获得展示界面
 function onCheckHeroGainShowView(self, args)
+    --抽卡过程中不允许弹获得展示界面
+    if map.MapLoader:getCurSceneType() == MAP_TYPE.RECRUIT_HERO then
+        return
+    end
+
     if self.mHeroGainShowPanel then
         self.mHeroGainShowPanel:close()
     end
@@ -76,7 +81,7 @@ function onCheckHeroGainShowView(self, args)
     if (#showTidList > 0) then
         local heroShowVo = table.remove(showTidList, 1)
         -- self:onShowOneHeroPanel(table.remove(showTidList, 1))
-        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_SHOW_ONE_VIEW, { heroTid = heroShowVo.heroTid, propsList = heroShowVo.propsList, isNoSkip = true })
+        GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_SHOW_ONE_VIEW, {heroTid = heroShowVo.heroTid, propsList = heroShowVo.propsList, isNoSkip = true})
         return
     end
     hero.HeroShowManager:runAllFinishCall()

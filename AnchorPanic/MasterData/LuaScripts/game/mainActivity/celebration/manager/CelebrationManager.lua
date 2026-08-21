@@ -16,13 +16,16 @@ end
 function __init(self)
     self.mSSROptionalState = 0--"周年开通月卡赠礼 状态 0-未解锁 1-已解锁未领取 2-已领取"
     self.mAccRechargeNum=0--"周年慶纍計充值費用"
+    self.mAccRechargeNumTwo = 0 --"計充值費用2"
     self.mCelebrationTaskDic = nil
     self.mCelebrationRechargeDic = nil
+    self.mCelebrationRechargeTwoDic = nil
     self.mCelebrationCurDay = 0--当前天数进度
     self.mCelebrationTargetState = 0--不可领取
     self.mCelebrationTaskVoMsgDic={}
     self.mCelebrationTaskIdMsgList={}
     self.mAccRechargeRecivedMsgList={}
+    self.mAccRechargeRecivedMsgTwoList={}
     self.mCelebratoinTargetTaskInfo = nil
 end
 
@@ -50,6 +53,17 @@ function parseCelebrationRechargeConfig(self)
         self.mCelebrationRechargeDic[vo.index]=vo
     end
 end
+
+-- 初始化周年庆任务配置表
+function parseCelebrationRechargeTwoConfig(self)
+    self.mCelebrationRechargeTwoDic = {}
+    local baseData = RefMgr:getData("celebration_recharge2_data")
+    for taskId, data in pairs(baseData) do
+        local vo = LuaPoolMgr:poolGet(Celebration.CelebrationRechargeTwoVo)
+        vo:parseData(taskId, data)
+        self.mCelebrationRechargeTwoDic[vo.index]=vo
+    end
+end
 ----------------------更新庆典任务领取id---------------------------------------
 function updateCelebrationTaskReciveMsg(self,msg)
     for _, id in ipairs(msg.task_id_list) do
@@ -58,6 +72,8 @@ function updateCelebrationTaskReciveMsg(self,msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_TASK_LIST)
     GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
 end
+
+
 
 function updateCelebrationTaskInfoMsg(self,msg)
     self.mAccRechargeNum=tonumber(string.format("%.2f", msg.total_count/100))
@@ -74,6 +90,10 @@ function checkRechargeIsRecivedAward(self,id)
     return table.indexof(self.mAccRechargeRecivedMsgList,id)
 end
 
+function checkRechargeIsRecivedAwardTwo(self,id)
+    return table.indexof(self.mAccRechargeRecivedMsgTwoList,id)
+end
+
 function parseCelebrationTaskPanelMsg(self,msg)
     self.mCelebrationCurDay = msg.day
     self.mCelebrationTargetState = msg.target_gain_state
@@ -83,6 +103,31 @@ function parseCelebrationTaskPanelMsg(self,msg)
     end
     GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_TASK_LIST)
     GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
+end
+
+
+function updateCelebrationTaskInfo2Msg(self,msg)
+    self.mAccRechargeNumTwo=tonumber(string.format("%.2f", msg.total_count/100))
+    for _, id in ipairs(msg.reward_list) do
+        if not table.indexof(self.mAccRechargeRecivedMsgTwoList,id) then
+            table.insert(self.mAccRechargeRecivedMsgTwoList,id)
+        end
+    end
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_ACC_RECHARGE_LIST_TWO)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
+end
+
+function updateAccRechargeRecive2Msg(self,msg)
+    if msg.result then
+        gs.Message.Show(_TT(41722))
+        if not table.indexof(self.mAccRechargeRecivedMsgTwoList,msg.recharge_id) then
+            table.insert(self.mAccRechargeRecivedMsgTwoList,msg.recharge_id)
+        end
+        GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_ACC_RECHARGE_LIST_TWO)
+        GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
+    else
+        gs.Message.Show(_TT(27600))
+    end
 end
 
 function getCurUnLockDay(self)
@@ -119,8 +164,32 @@ function getIsRechargeRed(self)
     return false
 end
 
+function getRechargeTwoList(self)
+    if not self.mCelebrationRechargeTwoDic then
+        self:parseCelebrationRechargeTwoConfig()
+    end
+    local list={}
+    for k, vo in pairs(self.mCelebrationRechargeTwoDic) do
+        table.insert(list,vo)
+    end
+    return list
+end
+
+function getIsRechargeTwoRed(self)
+    for i, rechargeVo in ipairs(self:getRechargeTwoList()) do
+        if rechargeVo:getState()== Celebration.CelebrationConst.CelebrationTaskState.Recive then
+            return true
+        end
+    end
+    return false
+end
+
 function getRechargeNum(self)
     return self.mAccRechargeNum or 0
+end
+
+function getRechargeNumTwo(self)
+    return self.mAccRechargeNumTwo or 0
 end
 
 function updateAccRechargeReciveMsg(self,msg)

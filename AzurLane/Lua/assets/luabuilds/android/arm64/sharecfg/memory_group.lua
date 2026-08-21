@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "memory_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "memory_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.memory_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.memory_group
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.memory_group
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.memory_group = rawget(pg, "memory_group") or setmetatable({
+	__name = "memory_group"
+}, confNEO)
+pg.memory_group.__namecode__ = true
+pg.memory_group.all = {
 	1,
 	2,
 	3,
@@ -309,6 +282,8 @@ var_0_4.all = {
 	369,
 	370,
 	373,
+	374,
+	375,
 	501,
 	502,
 	503,
@@ -442,25 +417,11 @@ var_0_4.all = {
 	1007,
 	1008
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.memory_group = {}
+pg.base = pg.base or {}
+pg.base.memory_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.memory_group
-
-	var_1_0[1] = {
+	pg.base.memory_group[1] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -479,11 +440,7 @@ var_0_4.base.memory_group = {}
 			6
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.memory_group
-
-	var_1_1[2] = {
+	pg.base.memory_group[2] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -506,11 +463,7 @@ var_0_4.base.memory_group = {}
 			16
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.memory_group
-
-	var_1_2[3] = {
+	pg.base.memory_group[3] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -526,11 +479,7 @@ var_0_4.base.memory_group = {}
 			19
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.memory_group
-
-	var_1_3[4] = {
+	pg.base.memory_group[4] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -552,11 +501,7 @@ var_0_4.base.memory_group = {}
 			28
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.memory_group
-
-	var_1_4[98] = {
+	pg.base.memory_group[98] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -596,14 +541,13 @@ var_0_4.base.memory_group = {}
 			3803,
 			4581,
 			4582,
-			4583
+			4583,
+			5371,
+			5372,
+			5373
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.memory_group
-
-	var_1_5[99] = {
+	pg.base.memory_group[99] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -620,11 +564,7 @@ var_0_4.base.memory_group = {}
 			460
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.memory_group
-
-	var_1_6[100] = {
+	pg.base.memory_group[100] = {
 		ship_group = 0,
 		icon = "title_main",
 		type = 1,
@@ -640,11 +580,7 @@ var_0_4.base.memory_group = {}
 			715
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.memory_group
-
-	var_1_7[101] = {
+	pg.base.memory_group[101] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -663,11 +599,7 @@ var_0_4.base.memory_group = {}
 			34
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.memory_group
-
-	var_1_8[102] = {
+	pg.base.memory_group[102] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -699,11 +631,7 @@ var_0_4.base.memory_group = {}
 			50
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.memory_group
-
-	var_1_9[103] = {
+	pg.base.memory_group[103] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -727,11 +655,7 @@ var_0_4.base.memory_group = {}
 			61
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.memory_group
-
-	var_1_10[104] = {
+	pg.base.memory_group[104] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -752,11 +676,7 @@ var_0_4.base.memory_group = {}
 			89
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.memory_group
-
-	var_1_11[105] = {
+	pg.base.memory_group[105] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -778,11 +698,7 @@ var_0_4.base.memory_group = {}
 			98
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.memory_group
-
-	var_1_12[106] = {
+	pg.base.memory_group[106] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -803,11 +719,7 @@ var_0_4.base.memory_group = {}
 			106
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.memory_group
-
-	var_1_13[107] = {
+	pg.base.memory_group[107] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -827,11 +739,7 @@ var_0_4.base.memory_group = {}
 			113
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.memory_group
-
-	var_1_14[108] = {
+	pg.base.memory_group[108] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -862,11 +770,7 @@ var_0_4.base.memory_group = {}
 			131
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.memory_group
-
-	var_1_15[109] = {
+	pg.base.memory_group[109] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -889,11 +793,7 @@ var_0_4.base.memory_group = {}
 			141
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.memory_group
-
-	var_1_16[110] = {
+	pg.base.memory_group[110] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -913,11 +813,7 @@ var_0_4.base.memory_group = {}
 			148
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.memory_group
-
-	var_1_17[111] = {
+	pg.base.memory_group[111] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -937,11 +833,7 @@ var_0_4.base.memory_group = {}
 			155
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.memory_group
-
-	var_1_18[112] = {
+	pg.base.memory_group[112] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -961,11 +853,7 @@ var_0_4.base.memory_group = {}
 			162
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.memory_group
-
-	var_1_19[113] = {
+	pg.base.memory_group[113] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -986,11 +874,7 @@ var_0_4.base.memory_group = {}
 			170
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.memory_group
-
-	var_1_20[114] = {
+	pg.base.memory_group[114] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1010,11 +894,7 @@ var_0_4.base.memory_group = {}
 			177
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.memory_group
-
-	var_1_21[115] = {
+	pg.base.memory_group[115] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1040,11 +920,7 @@ var_0_4.base.memory_group = {}
 			493
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.memory_group
-
-	var_1_22[116] = {
+	pg.base.memory_group[116] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1064,11 +940,7 @@ var_0_4.base.memory_group = {}
 			195
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.memory_group
-
-	var_1_23[117] = {
+	pg.base.memory_group[117] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1090,11 +962,7 @@ var_0_4.base.memory_group = {}
 			204
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.memory_group
-
-	var_1_24[118] = {
+	pg.base.memory_group[118] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1114,11 +982,7 @@ var_0_4.base.memory_group = {}
 			10042
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.memory_group
-
-	var_1_25[119] = {
+	pg.base.memory_group[119] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1139,11 +1003,7 @@ var_0_4.base.memory_group = {}
 			10050
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.memory_group
-
-	var_1_26[120] = {
+	pg.base.memory_group[120] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1161,11 +1021,7 @@ var_0_4.base.memory_group = {}
 			209
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.memory_group
-
-	var_1_27[121] = {
+	pg.base.memory_group[121] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1182,11 +1038,7 @@ var_0_4.base.memory_group = {}
 			213
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.memory_group
-
-	var_1_28[122] = {
+	pg.base.memory_group[122] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1206,11 +1058,7 @@ var_0_4.base.memory_group = {}
 			220
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.memory_group
-
-	var_1_29[123] = {
+	pg.base.memory_group[123] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1241,11 +1089,7 @@ var_0_4.base.memory_group = {}
 			238
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.memory_group
-
-	var_1_30[124] = {
+	pg.base.memory_group[124] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1265,11 +1109,7 @@ var_0_4.base.memory_group = {}
 			245
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.memory_group
-
-	var_1_31[125] = {
+	pg.base.memory_group[125] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1289,11 +1129,7 @@ var_0_4.base.memory_group = {}
 			259
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.memory_group
-
-	var_1_32[126] = {
+	pg.base.memory_group[126] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1307,11 +1143,7 @@ var_0_4.base.memory_group = {}
 			10018
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.memory_group
-
-	var_1_33[128] = {
+	pg.base.memory_group[128] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1331,11 +1163,7 @@ var_0_4.base.memory_group = {}
 			10035
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.memory_group
-
-	var_1_34[129] = {
+	pg.base.memory_group[129] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1352,11 +1180,7 @@ var_0_4.base.memory_group = {}
 			298
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.memory_group
-
-	var_1_35[130] = {
+	pg.base.memory_group[130] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1375,11 +1199,7 @@ var_0_4.base.memory_group = {}
 			320
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.memory_group
-
-	var_1_36[131] = {
+	pg.base.memory_group[131] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1406,11 +1226,7 @@ var_0_4.base.memory_group = {}
 			10064
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.memory_group
-
-	var_1_37[132] = {
+	pg.base.memory_group[132] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1432,11 +1248,7 @@ var_0_4.base.memory_group = {}
 			10080
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.memory_group
-
-	var_1_38[133] = {
+	pg.base.memory_group[133] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1460,11 +1272,7 @@ var_0_4.base.memory_group = {}
 			381
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.memory_group
-
-	var_1_39[134] = {
+	pg.base.memory_group[134] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1482,11 +1290,7 @@ var_0_4.base.memory_group = {}
 			386
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.memory_group
-
-	var_1_40[135] = {
+	pg.base.memory_group[135] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1505,11 +1309,7 @@ var_0_4.base.memory_group = {}
 			406
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.memory_group
-
-	var_1_41[136] = {
+	pg.base.memory_group[136] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1526,11 +1326,7 @@ var_0_4.base.memory_group = {}
 			410
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.memory_group
-
-	var_1_42[137] = {
+	pg.base.memory_group[137] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1548,11 +1344,7 @@ var_0_4.base.memory_group = {}
 			436
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.memory_group
-
-	var_1_43[138] = {
+	pg.base.memory_group[138] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1571,11 +1363,7 @@ var_0_4.base.memory_group = {}
 			442
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.memory_group
-
-	var_1_44[139] = {
+	pg.base.memory_group[139] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1592,11 +1380,7 @@ var_0_4.base.memory_group = {}
 			464
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.memory_group
-
-	var_1_45[140] = {
+	pg.base.memory_group[140] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1614,11 +1398,7 @@ var_0_4.base.memory_group = {}
 			470
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.memory_group
-
-	var_1_46[141] = {
+	pg.base.memory_group[141] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1638,11 +1418,7 @@ var_0_4.base.memory_group = {}
 			500
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.memory_group
-
-	var_1_47[142] = {
+	pg.base.memory_group[142] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1683,11 +1459,7 @@ var_0_4.base.memory_group = {}
 			549
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.memory_group
-
-	var_1_48[143] = {
+	pg.base.memory_group[143] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1707,11 +1479,7 @@ var_0_4.base.memory_group = {}
 			556
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.memory_group
-
-	var_1_49[144] = {
+	pg.base.memory_group[144] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1734,11 +1502,7 @@ var_0_4.base.memory_group = {}
 			566
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.memory_group
-
-	var_1_50[145] = {
+	pg.base.memory_group[145] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1762,11 +1526,7 @@ var_0_4.base.memory_group = {}
 			584
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.memory_group
-
-	var_1_51[146] = {
+	pg.base.memory_group[146] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1786,11 +1546,7 @@ var_0_4.base.memory_group = {}
 			598
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.memory_group
-
-	var_1_52[147] = {
+	pg.base.memory_group[147] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1810,11 +1566,7 @@ var_0_4.base.memory_group = {}
 			619
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.memory_group
-
-	var_1_53[148] = {
+	pg.base.memory_group[148] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1849,11 +1601,7 @@ var_0_4.base.memory_group = {}
 			641
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.memory_group
-
-	var_1_54[149] = {
+	pg.base.memory_group[149] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1873,11 +1621,7 @@ var_0_4.base.memory_group = {}
 			683
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.memory_group
-
-	var_1_55[150] = {
+	pg.base.memory_group[150] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1895,11 +1639,7 @@ var_0_4.base.memory_group = {}
 			688
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.memory_group
-
-	var_1_56[151] = {
+	pg.base.memory_group[151] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1924,11 +1664,7 @@ var_0_4.base.memory_group = {}
 			707
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.memory_group
-
-	var_1_57[152] = {
+	pg.base.memory_group[152] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1948,11 +1684,7 @@ var_0_4.base.memory_group = {}
 			734
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.memory_group
-
-	var_1_58[153] = {
+	pg.base.memory_group[153] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -1969,11 +1701,7 @@ var_0_4.base.memory_group = {}
 			738
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.memory_group
-
-	var_1_59[154] = {
+	pg.base.memory_group[154] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2010,11 +1738,7 @@ var_0_4.base.memory_group = {}
 			762
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.memory_group
-
-	var_1_60[155] = {
+	pg.base.memory_group[155] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2032,11 +1756,7 @@ var_0_4.base.memory_group = {}
 			767
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.memory_group
-
-	var_1_61[156] = {
+	pg.base.memory_group[156] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2052,11 +1772,7 @@ var_0_4.base.memory_group = {}
 			777
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.memory_group
-
-	var_1_62[157] = {
+	pg.base.memory_group[157] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2074,11 +1790,7 @@ var_0_4.base.memory_group = {}
 			796
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.memory_group
-
-	var_1_63[158] = {
+	pg.base.memory_group[158] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2112,11 +1824,7 @@ var_0_4.base.memory_group = {}
 			817
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.memory_group
-
-	var_1_64[159] = {
+	pg.base.memory_group[159] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2136,11 +1844,7 @@ var_0_4.base.memory_group = {}
 			824
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.memory_group
-
-	var_1_65[160] = {
+	pg.base.memory_group[160] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2158,11 +1862,7 @@ var_0_4.base.memory_group = {}
 			829
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.memory_group
-
-	var_1_66[161] = {
+	pg.base.memory_group[161] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2179,11 +1879,7 @@ var_0_4.base.memory_group = {}
 			843
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.memory_group
-
-	var_1_67[162] = {
+	pg.base.memory_group[162] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2206,11 +1902,7 @@ var_0_4.base.memory_group = {}
 			839
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.memory_group
-
-	var_1_68[163] = {
+	pg.base.memory_group[163] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2256,11 +1948,7 @@ var_0_4.base.memory_group = {}
 			883
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.memory_group
-
-	var_1_69[164] = {
+	pg.base.memory_group[164] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2278,11 +1966,7 @@ var_0_4.base.memory_group = {}
 			888
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.memory_group
-
-	var_1_70[165] = {
+	pg.base.memory_group[165] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2297,11 +1981,7 @@ var_0_4.base.memory_group = {}
 			890
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.memory_group
-
-	var_1_71[166] = {
+	pg.base.memory_group[166] = {
 		ship_group = 0,
 		icon = "title_chara_rongyaodiantang",
 		type = 4,
@@ -2326,11 +2006,7 @@ var_0_4.base.memory_group = {}
 			3212
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.memory_group
-
-	var_1_72[167] = {
+	pg.base.memory_group[167] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2366,11 +2042,7 @@ var_0_4.base.memory_group = {}
 			929
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.memory_group
-
-	var_1_73[168] = {
+	pg.base.memory_group[168] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2387,11 +2059,7 @@ var_0_4.base.memory_group = {}
 			933
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.memory_group
-
-	var_1_74[169] = {
+	pg.base.memory_group[169] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2409,11 +2077,7 @@ var_0_4.base.memory_group = {}
 			938
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.memory_group
-
-	var_1_75[170] = {
+	pg.base.memory_group[170] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2436,11 +2100,7 @@ var_0_4.base.memory_group = {}
 			949
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.memory_group
-
-	var_1_76[171] = {
+	pg.base.memory_group[171] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2458,11 +2118,7 @@ var_0_4.base.memory_group = {}
 			954
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.memory_group
-
-	var_1_77[172] = {
+	pg.base.memory_group[172] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2499,11 +2155,7 @@ var_0_4.base.memory_group = {}
 			983
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.memory_group
-
-	var_1_78[173] = {
+	pg.base.memory_group[173] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2519,11 +2171,7 @@ var_0_4.base.memory_group = {}
 			992
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.memory_group
-
-	var_1_79[174] = {
+	pg.base.memory_group[174] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2587,11 +2235,7 @@ var_0_4.base.memory_group = {}
 			1045
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.memory_group
-
-	var_1_80[175] = {
+	pg.base.memory_group[175] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2614,11 +2258,7 @@ var_0_4.base.memory_group = {}
 			1055
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.memory_group
-
-	var_1_81[176] = {
+	pg.base.memory_group[176] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2636,11 +2276,7 @@ var_0_4.base.memory_group = {}
 			1060
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.memory_group
-
-	var_1_82[177] = {
+	pg.base.memory_group[177] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2681,11 +2317,7 @@ var_0_4.base.memory_group = {}
 			1088
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.memory_group
-
-	var_1_83[178] = {
+	pg.base.memory_group[178] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2703,11 +2335,7 @@ var_0_4.base.memory_group = {}
 			1095
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.memory_group
-
-	var_1_84[179] = {
+	pg.base.memory_group[179] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2725,11 +2353,7 @@ var_0_4.base.memory_group = {}
 			1100
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.memory_group
-
-	var_1_85[180] = {
+	pg.base.memory_group[180] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2746,11 +2370,7 @@ var_0_4.base.memory_group = {}
 			1104
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.memory_group
-
-	var_1_86[181] = {
+	pg.base.memory_group[181] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2795,11 +2415,7 @@ var_0_4.base.memory_group = {}
 			1141
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.memory_group
-
-	var_1_87[182] = {
+	pg.base.memory_group[182] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2816,11 +2432,7 @@ var_0_4.base.memory_group = {}
 			1152
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.memory_group
-
-	var_1_88[183] = {
+	pg.base.memory_group[183] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2868,11 +2480,7 @@ var_0_4.base.memory_group = {}
 			1187
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.memory_group
-
-	var_1_89[184] = {
+	pg.base.memory_group[184] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2889,11 +2497,7 @@ var_0_4.base.memory_group = {}
 			1588
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.memory_group
-
-	var_1_90[185] = {
+	pg.base.memory_group[185] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2915,11 +2519,7 @@ var_0_4.base.memory_group = {}
 			1219
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.memory_group
-
-	var_1_91[186] = {
+	pg.base.memory_group[186] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2966,11 +2566,7 @@ var_0_4.base.memory_group = {}
 			1264
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.memory_group
-
-	var_1_92[187] = {
+	pg.base.memory_group[187] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -2996,11 +2592,7 @@ var_0_4.base.memory_group = {}
 			1277
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.memory_group
-
-	var_1_93[188] = {
+	pg.base.memory_group[188] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3053,11 +2645,7 @@ var_0_4.base.memory_group = {}
 			1320
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.memory_group
-
-	var_1_94[189] = {
+	pg.base.memory_group[189] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3112,11 +2700,7 @@ var_0_4.base.memory_group = {}
 			1382
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.memory_group
-
-	var_1_95[190] = {
+	pg.base.memory_group[190] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3139,11 +2723,7 @@ var_0_4.base.memory_group = {}
 			1395
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.memory_group
-
-	var_1_96[191] = {
+	pg.base.memory_group[191] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3178,11 +2758,7 @@ var_0_4.base.memory_group = {}
 			1432
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.memory_group
-
-	var_1_97[192] = {
+	pg.base.memory_group[192] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3211,11 +2787,7 @@ var_0_4.base.memory_group = {}
 			1451
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.memory_group
-
-	var_1_98[193] = {
+	pg.base.memory_group[193] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3232,8 +2804,7 @@ var_0_4.base.memory_group = {}
 			1455
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.memory_group[194] = {
+	pg.base.memory_group[194] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3285,11 +2856,7 @@ var_0_4.base.memory_group = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.memory_group
-
-	var_2_0[195] = {
+	pg.base.memory_group[195] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3333,11 +2900,7 @@ end)()
 			1560
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.memory_group
-
-	var_2_1[196] = {
+	pg.base.memory_group[196] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3385,11 +2948,7 @@ end)()
 			1635
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.memory_group
-
-	var_2_2[197] = {
+	pg.base.memory_group[197] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3406,11 +2965,7 @@ end)()
 			1664
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.memory_group
-
-	var_2_3[198] = {
+	pg.base.memory_group[198] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3456,11 +3011,7 @@ end)()
 			1713
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.memory_group
-
-	var_2_4[199] = {
+	pg.base.memory_group[199] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3477,11 +3028,7 @@ end)()
 			1749
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.memory_group
-
-	var_2_5[200] = {
+	pg.base.memory_group[200] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3510,11 +3057,7 @@ end)()
 			1766
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.memory_group
-
-	var_2_6[202] = {
+	pg.base.memory_group[202] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3562,11 +3105,7 @@ end)()
 			1835
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.memory_group
-
-	var_2_7[203] = {
+	pg.base.memory_group[203] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3591,11 +3130,7 @@ end)()
 			1892
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.memory_group
-
-	var_2_8[204] = {
+	pg.base.memory_group[204] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3633,11 +3168,7 @@ end)()
 			1920
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.memory_group
-
-	var_2_9[205] = {
+	pg.base.memory_group[205] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3654,11 +3185,7 @@ end)()
 			1924
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.memory_group
-
-	var_2_10[206] = {
+	pg.base.memory_group[206] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3683,11 +3210,7 @@ end)()
 			1937
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.memory_group
-
-	var_2_11[207] = {
+	pg.base.memory_group[207] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3737,11 +3260,7 @@ end)()
 			1977
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.memory_group
-
-	var_2_12[208] = {
+	pg.base.memory_group[208] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3759,11 +3278,7 @@ end)()
 			1984
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.memory_group
-
-	var_2_13[209] = {
+	pg.base.memory_group[209] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3783,11 +3298,7 @@ end)()
 			1991
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.memory_group
-
-	var_2_14[210] = {
+	pg.base.memory_group[210] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3804,11 +3315,7 @@ end)()
 			2005
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.memory_group
-
-	var_2_15[211] = {
+	pg.base.memory_group[211] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3854,11 +3361,7 @@ end)()
 			2038
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.memory_group
-
-	var_2_16[212] = {
+	pg.base.memory_group[212] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3882,11 +3385,7 @@ end)()
 			2060
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.memory_group
-
-	var_2_17[213] = {
+	pg.base.memory_group[213] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3901,11 +3400,7 @@ end)()
 			2062
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.memory_group
-
-	var_2_18[214] = {
+	pg.base.memory_group[214] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3925,11 +3420,7 @@ end)()
 			2077
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.memory_group
-
-	var_2_19[215] = {
+	pg.base.memory_group[215] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3976,11 +3467,7 @@ end)()
 			2114
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.memory_group
-
-	var_2_20[216] = {
+	pg.base.memory_group[216] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -3997,11 +3484,7 @@ end)()
 			2119
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.memory_group
-
-	var_2_21[217] = {
+	pg.base.memory_group[217] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4017,11 +3500,7 @@ end)()
 			2130
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.memory_group
-
-	var_2_22[218] = {
+	pg.base.memory_group[218] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4070,11 +3549,7 @@ end)()
 			2166
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.memory_group
-
-	var_2_23[219] = {
+	pg.base.memory_group[219] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4091,11 +3566,7 @@ end)()
 			2170
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.memory_group
-
-	var_2_24[220] = {
+	pg.base.memory_group[220] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4114,11 +3585,7 @@ end)()
 			2186
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.memory_group
-
-	var_2_25[221] = {
+	pg.base.memory_group[221] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4138,11 +3605,7 @@ end)()
 			2197
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.memory_group
-
-	var_2_26[222] = {
+	pg.base.memory_group[222] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4162,11 +3625,7 @@ end)()
 			2217
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.memory_group
-
-	var_2_27[223] = {
+	pg.base.memory_group[223] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4216,11 +3675,7 @@ end)()
 			2257
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.memory_group
-
-	var_2_28[224] = {
+	pg.base.memory_group[224] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4249,11 +3704,7 @@ end)()
 			2286
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.memory_group
-
-	var_2_29[225] = {
+	pg.base.memory_group[225] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4273,11 +3724,7 @@ end)()
 			2297
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.memory_group
-
-	var_2_30[226] = {
+	pg.base.memory_group[226] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4329,11 +3776,7 @@ end)()
 			2339
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.memory_group
-
-	var_2_31[227] = {
+	pg.base.memory_group[227] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4351,11 +3794,7 @@ end)()
 			2355
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.memory_group
-
-	var_2_32[228] = {
+	pg.base.memory_group[228] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4371,11 +3810,7 @@ end)()
 			2363
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.memory_group
-
-	var_2_33[229] = {
+	pg.base.memory_group[229] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4393,11 +3828,7 @@ end)()
 			2382
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.memory_group
-
-	var_2_34[230] = {
+	pg.base.memory_group[230] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4416,11 +3847,7 @@ end)()
 			2388
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.memory_group
-
-	var_2_35[231] = {
+	pg.base.memory_group[231] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4440,11 +3867,7 @@ end)()
 			2407
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.memory_group
-
-	var_2_36[232] = {
+	pg.base.memory_group[232] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4483,11 +3906,7 @@ end)()
 			2436
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.memory_group
-
-	var_2_37[233] = {
+	pg.base.memory_group[233] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4507,11 +3926,7 @@ end)()
 			2447
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.memory_group
-
-	var_2_38[234] = {
+	pg.base.memory_group[234] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4531,11 +3946,7 @@ end)()
 			2467
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.memory_group
-
-	var_2_39[235] = {
+	pg.base.memory_group[235] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4583,11 +3994,7 @@ end)()
 			2505
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.memory_group
-
-	var_2_40[236] = {
+	pg.base.memory_group[236] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4605,11 +4012,7 @@ end)()
 			2525
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.memory_group
-
-	var_2_41[237] = {
+	pg.base.memory_group[237] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4626,11 +4029,7 @@ end)()
 			2534
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.memory_group
-
-	var_2_42[238] = {
+	pg.base.memory_group[238] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4646,11 +4045,7 @@ end)()
 			2543
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.memory_group
-
-	var_2_43[239] = {
+	pg.base.memory_group[239] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4670,11 +4065,7 @@ end)()
 			2557
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.memory_group
-
-	var_2_44[240] = {
+	pg.base.memory_group[240] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4717,11 +4108,7 @@ end)()
 			2600
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.memory_group
-
-	var_2_45[241] = {
+	pg.base.memory_group[241] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4753,11 +4140,7 @@ end)()
 			2629
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.memory_group
-
-	var_2_46[242] = {
+	pg.base.memory_group[242] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4775,11 +4158,7 @@ end)()
 			2635
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.memory_group
-
-	var_2_47[243] = {
+	pg.base.memory_group[243] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4795,11 +4174,7 @@ end)()
 			2643
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.memory_group
-
-	var_2_48[244] = {
+	pg.base.memory_group[244] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4819,11 +4194,7 @@ end)()
 			2667
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.memory_group
-
-	var_2_49[245] = {
+	pg.base.memory_group[245] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4873,11 +4244,7 @@ end)()
 			2707
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.memory_group
-
-	var_2_50[246] = {
+	pg.base.memory_group[246] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4924,11 +4291,7 @@ end)()
 			2744
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.memory_group
-
-	var_2_51[247] = {
+	pg.base.memory_group[247] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4942,11 +4305,7 @@ end)()
 			2751
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.memory_group
-
-	var_2_52[248] = {
+	pg.base.memory_group[248] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4960,11 +4319,7 @@ end)()
 			2781
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.memory_group
-
-	var_2_53[249] = {
+	pg.base.memory_group[249] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -4982,11 +4337,7 @@ end)()
 			2795
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.memory_group
-
-	var_2_54[250] = {
+	pg.base.memory_group[250] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5002,11 +4353,7 @@ end)()
 			2803
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.memory_group
-
-	var_2_55[251] = {
+	pg.base.memory_group[251] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5029,11 +4376,7 @@ end)()
 			2829
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.memory_group
-
-	var_2_56[252] = {
+	pg.base.memory_group[252] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5053,11 +4396,7 @@ end)()
 			2847
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.memory_group
-
-	var_2_57[253] = {
+	pg.base.memory_group[253] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5087,11 +4426,7 @@ end)()
 			2867
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.memory_group
-
-	var_2_58[254] = {
+	pg.base.memory_group[254] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5149,11 +4484,7 @@ end)()
 			2915
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.memory_group
-
-	var_2_59[255] = {
+	pg.base.memory_group[255] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5169,11 +4500,7 @@ end)()
 			2923
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.memory_group
-
-	var_2_60[256] = {
+	pg.base.memory_group[256] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5193,11 +4520,7 @@ end)()
 			2957
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.memory_group
-
-	var_2_61[257] = {
+	pg.base.memory_group[257] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5244,11 +4567,7 @@ end)()
 			2994
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.memory_group
-
-	var_2_62[258] = {
+	pg.base.memory_group[258] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5266,11 +4585,7 @@ end)()
 			3005
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.memory_group
-
-	var_2_63[259] = {
+	pg.base.memory_group[259] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5295,11 +4610,7 @@ end)()
 			3022
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.memory_group
-
-	var_2_64[260] = {
+	pg.base.memory_group[260] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5315,11 +4626,7 @@ end)()
 			3033
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.memory_group
-
-	var_2_65[261] = {
+	pg.base.memory_group[261] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5337,11 +4644,7 @@ end)()
 			3045
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.memory_group
-
-	var_2_66[262] = {
+	pg.base.memory_group[262] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5362,11 +4665,7 @@ end)()
 			3068
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.memory_group
-
-	var_2_67[263] = {
+	pg.base.memory_group[263] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5407,11 +4706,7 @@ end)()
 			3098
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.memory_group
-
-	var_2_68[264] = {
+	pg.base.memory_group[264] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5452,11 +4747,7 @@ end)()
 			3128
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.memory_group
-
-	var_2_69[265] = {
+	pg.base.memory_group[265] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5472,11 +4763,7 @@ end)()
 			3143
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.memory_group
-
-	var_2_70[266] = {
+	pg.base.memory_group[266] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5513,11 +4800,7 @@ end)()
 			3174
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.memory_group
-
-	var_2_71[267] = {
+	pg.base.memory_group[267] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5537,11 +4820,7 @@ end)()
 			3187
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.memory_group
-
-	var_2_72[268] = {
+	pg.base.memory_group[268] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5571,11 +4850,7 @@ end)()
 			3207
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.memory_group
-
-	var_2_73[269] = {
+	pg.base.memory_group[269] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5595,11 +4870,7 @@ end)()
 			3227
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.memory_group
-
-	var_2_74[270] = {
+	pg.base.memory_group[270] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5649,11 +4920,7 @@ end)()
 			3264
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.memory_group
-
-	var_2_75[271] = {
+	pg.base.memory_group[271] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5670,11 +4937,7 @@ end)()
 			3275
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.memory_group
-
-	var_2_76[272] = {
+	pg.base.memory_group[272] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5690,11 +4953,7 @@ end)()
 			3283
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.memory_group
-
-	var_2_77[273] = {
+	pg.base.memory_group[273] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5712,11 +4971,7 @@ end)()
 			3305
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.memory_group
-
-	var_2_78[274] = {
+	pg.base.memory_group[274] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5732,11 +4987,7 @@ end)()
 			3313
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.memory_group
-
-	var_2_79[275] = {
+	pg.base.memory_group[275] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5752,11 +5003,7 @@ end)()
 			3333
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.memory_group
-
-	var_2_80[276] = {
+	pg.base.memory_group[276] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5772,11 +5019,7 @@ end)()
 			3343
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.memory_group
-
-	var_2_81[277] = {
+	pg.base.memory_group[277] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5797,11 +5040,7 @@ end)()
 			3368
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.memory_group
-
-	var_2_82[278] = {
+	pg.base.memory_group[278] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5848,11 +5087,7 @@ end)()
 			3403
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.memory_group
-
-	var_2_83[279] = {
+	pg.base.memory_group[279] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5873,11 +5108,7 @@ end)()
 			3418
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.memory_group
-
-	var_2_84[280] = {
+	pg.base.memory_group[280] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5895,11 +5126,7 @@ end)()
 			3435
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.memory_group
-
-	var_2_85[281] = {
+	pg.base.memory_group[281] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5940,11 +5167,7 @@ end)()
 			3468
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.memory_group
-
-	var_2_86[282] = {
+	pg.base.memory_group[282] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5960,11 +5183,7 @@ end)()
 			3473
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.memory_group
-
-	var_2_87[283] = {
+	pg.base.memory_group[283] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -5984,11 +5203,7 @@ end)()
 			3497
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.memory_group
-
-	var_2_88[284] = {
+	pg.base.memory_group[284] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6018,11 +5233,7 @@ end)()
 			3516
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.memory_group
-
-	var_2_89[285] = {
+	pg.base.memory_group[285] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6038,11 +5249,7 @@ end)()
 			3522
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.memory_group
-
-	var_2_90[286] = {
+	pg.base.memory_group[286] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6060,11 +5267,7 @@ end)()
 			3545
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.memory_group
-
-	var_2_91[287] = {
+	pg.base.memory_group[287] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6084,11 +5287,7 @@ end)()
 			3557
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.memory_group
-
-	var_2_92[288] = {
+	pg.base.memory_group[288] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6147,11 +5346,7 @@ end)()
 			3606
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.memory_group
-
-	var_2_93[289] = {
+	pg.base.memory_group[289] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6199,11 +5394,7 @@ end)()
 			3644
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.memory_group
-
-	var_2_94[290] = {
+	pg.base.memory_group[290] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6217,11 +5408,7 @@ end)()
 			3651
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.memory_group
-
-	var_2_95[291] = {
+	pg.base.memory_group[291] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6235,11 +5422,7 @@ end)()
 			3661
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.memory_group
-
-	var_2_96[292] = {
+	pg.base.memory_group[292] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6262,11 +5445,7 @@ end)()
 			3690
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.memory_group
-
-	var_2_97[293] = {
+	pg.base.memory_group[293] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6289,11 +5468,7 @@ end)()
 			3710
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.memory_group
-
-	var_2_98[294] = {
+	pg.base.memory_group[294] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6309,8 +5484,7 @@ end)()
 			3713
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.memory_group[295] = {
+	pg.base.memory_group[295] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6334,11 +5508,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.memory_group
-
-	var_3_0[296] = {
+	pg.base.memory_group[296] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6388,11 +5558,7 @@ end)()
 			3777
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.memory_group
-
-	var_3_1[297] = {
+	pg.base.memory_group[297] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6423,11 +5589,7 @@ end)()
 			3798
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.memory_group
-
-	var_3_2[298] = {
+	pg.base.memory_group[298] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6453,11 +5615,7 @@ end)()
 			3823
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.memory_group
-
-	var_3_3[299] = {
+	pg.base.memory_group[299] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6477,11 +5635,7 @@ end)()
 			3837
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.memory_group
-
-	var_3_4[300] = {
+	pg.base.memory_group[300] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6499,11 +5653,7 @@ end)()
 			3845
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.memory_group
-
-	var_3_5[301] = {
+	pg.base.memory_group[301] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6535,11 +5685,7 @@ end)()
 			3869
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.memory_group
-
-	var_3_6[302] = {
+	pg.base.memory_group[302] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6589,11 +5735,7 @@ end)()
 			3907
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.memory_group
-
-	var_3_7[303] = {
+	pg.base.memory_group[303] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6607,11 +5749,7 @@ end)()
 			3908
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.memory_group
-
-	var_3_8[304] = {
+	pg.base.memory_group[304] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6625,11 +5763,7 @@ end)()
 			3921
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.memory_group
-
-	var_3_9[305] = {
+	pg.base.memory_group[305] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 1,
@@ -6643,11 +5777,7 @@ end)()
 			3941
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.memory_group
-
-	var_3_10[306] = {
+	pg.base.memory_group[306] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6682,11 +5812,7 @@ end)()
 			3972
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.memory_group
-
-	var_3_11[307] = {
+	pg.base.memory_group[307] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6707,11 +5833,7 @@ end)()
 			3988
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.memory_group
-
-	var_3_12[308] = {
+	pg.base.memory_group[308] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6725,11 +5847,7 @@ end)()
 			4011
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.memory_group
-
-	var_3_13[309] = {
+	pg.base.memory_group[309] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6759,11 +5877,7 @@ end)()
 			4037
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.memory_group
-
-	var_3_14[310] = {
+	pg.base.memory_group[310] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6782,11 +5896,7 @@ end)()
 			4046
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.memory_group
-
-	var_3_15[311] = {
+	pg.base.memory_group[311] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6807,11 +5917,7 @@ end)()
 			4058
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.memory_group
-
-	var_3_16[312] = {
+	pg.base.memory_group[312] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6833,11 +5939,7 @@ end)()
 			4079
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.memory_group
-
-	var_3_17[313] = {
+	pg.base.memory_group[313] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6883,11 +5985,7 @@ end)()
 			4113
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.memory_group
-
-	var_3_18[314] = {
+	pg.base.memory_group[314] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6906,11 +6004,7 @@ end)()
 			4126
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.memory_group
-
-	var_3_19[315] = {
+	pg.base.memory_group[315] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6928,11 +6022,7 @@ end)()
 			4135
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.memory_group
-
-	var_3_20[316] = {
+	pg.base.memory_group[316] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6949,11 +6039,7 @@ end)()
 			4154
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.memory_group
-
-	var_3_21[317] = {
+	pg.base.memory_group[317] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6971,11 +6057,7 @@ end)()
 			4165
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.memory_group
-
-	var_3_22[318] = {
+	pg.base.memory_group[318] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -6992,11 +6074,7 @@ end)()
 			4174
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.memory_group
-
-	var_3_23[319] = {
+	pg.base.memory_group[319] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7016,11 +6094,7 @@ end)()
 			4197
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.memory_group
-
-	var_3_24[320] = {
+	pg.base.memory_group[320] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7069,11 +6143,7 @@ end)()
 			4236
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.memory_group
-
-	var_3_25[321] = {
+	pg.base.memory_group[321] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7090,11 +6160,7 @@ end)()
 			4244
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.memory_group
-
-	var_3_26[322] = {
+	pg.base.memory_group[322] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7118,11 +6184,7 @@ end)()
 			4271
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.memory_group
-
-	var_3_27[323] = {
+	pg.base.memory_group[323] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7138,11 +6200,7 @@ end)()
 			4283
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.memory_group
-
-	var_3_28[324] = {
+	pg.base.memory_group[324] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7159,11 +6217,7 @@ end)()
 			4304
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.memory_group
-
-	var_3_29[325] = {
+	pg.base.memory_group[325] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7184,11 +6238,7 @@ end)()
 			4318
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.memory_group
-
-	var_3_30[326] = {
+	pg.base.memory_group[326] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7206,11 +6256,7 @@ end)()
 			4335
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.memory_group
-
-	var_3_31[327] = {
+	pg.base.memory_group[327] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7230,11 +6276,7 @@ end)()
 			4347
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.memory_group
-
-	var_3_32[328] = {
+	pg.base.memory_group[328] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7274,11 +6316,7 @@ end)()
 			4377
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.memory_group
-
-	var_3_33[329] = {
+	pg.base.memory_group[329] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7327,11 +6365,7 @@ end)()
 			4416
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.memory_group
-
-	var_3_34[330] = {
+	pg.base.memory_group[330] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7345,11 +6379,7 @@ end)()
 			4417
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.memory_group
-
-	var_3_35[331] = {
+	pg.base.memory_group[331] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7367,11 +6397,7 @@ end)()
 			4435
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.memory_group
-
-	var_3_36[332] = {
+	pg.base.memory_group[332] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7386,11 +6412,7 @@ end)()
 			4422
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.memory_group
-
-	var_3_37[333] = {
+	pg.base.memory_group[333] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7413,11 +6435,7 @@ end)()
 			4460
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.memory_group
-
-	var_3_38[334] = {
+	pg.base.memory_group[334] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7464,11 +6482,7 @@ end)()
 			4514
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.memory_group
-
-	var_3_39[335] = {
+	pg.base.memory_group[335] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7485,11 +6499,7 @@ end)()
 			4524
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.memory_group
-
-	var_3_40[336] = {
+	pg.base.memory_group[336] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7531,11 +6541,7 @@ end)()
 			4569
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.memory_group
-
-	var_3_41[337] = {
+	pg.base.memory_group[337] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7555,11 +6561,7 @@ end)()
 			4577
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.memory_group
-
-	var_3_42[338] = {
+	pg.base.memory_group[338] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7579,11 +6581,7 @@ end)()
 			4597
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.memory_group
-
-	var_3_43[339] = {
+	pg.base.memory_group[339] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7635,11 +6633,7 @@ end)()
 			4639
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.memory_group
-
-	var_3_44[340] = {
+	pg.base.memory_group[340] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7672,11 +6666,7 @@ end)()
 			4660
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.memory_group
-
-	var_3_45[341] = {
+	pg.base.memory_group[341] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7704,11 +6694,7 @@ end)()
 			4685
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.memory_group
-
-	var_3_46[342] = {
+	pg.base.memory_group[342] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7723,11 +6709,7 @@ end)()
 			4692
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.memory_group
-
-	var_3_47[343] = {
+	pg.base.memory_group[343] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7748,11 +6730,7 @@ end)()
 			4718
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.memory_group
-
-	var_3_48[344] = {
+	pg.base.memory_group[344] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7794,11 +6772,7 @@ end)()
 			4749
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.memory_group
-
-	var_3_49[345] = {
+	pg.base.memory_group[345] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7814,11 +6788,7 @@ end)()
 			4763
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.memory_group
-
-	var_3_50[346] = {
+	pg.base.memory_group[346] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7832,11 +6802,7 @@ end)()
 			4771
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.memory_group
-
-	var_3_51[347] = {
+	pg.base.memory_group[347] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7881,11 +6847,7 @@ end)()
 			4812
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.memory_group
-
-	var_3_52[348] = {
+	pg.base.memory_group[348] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7904,11 +6866,7 @@ end)()
 			4826
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.memory_group
-
-	var_3_53[349] = {
+	pg.base.memory_group[349] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7940,11 +6898,7 @@ end)()
 			4859
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.memory_group
-
-	var_3_54[350] = {
+	pg.base.memory_group[350] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -7966,11 +6920,7 @@ end)()
 			4879
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.memory_group
-
-	var_3_55[351] = {
+	pg.base.memory_group[351] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8027,11 +6977,7 @@ end)()
 			4924
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.memory_group
-
-	var_3_56[352] = {
+	pg.base.memory_group[352] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8049,11 +6995,7 @@ end)()
 			4935
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.memory_group
-
-	var_3_57[353] = {
+	pg.base.memory_group[353] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8072,11 +7014,7 @@ end)()
 			4946
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.memory_group
-
-	var_3_58[354] = {
+	pg.base.memory_group[354] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8099,11 +7037,7 @@ end)()
 			4970
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.memory_group
-
-	var_3_59[355] = {
+	pg.base.memory_group[355] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8123,11 +7057,7 @@ end)()
 			4987
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.memory_group
-
-	var_3_60[356] = {
+	pg.base.memory_group[356] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8143,11 +7073,7 @@ end)()
 			4993
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.memory_group
-
-	var_3_61[357] = {
+	pg.base.memory_group[357] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8164,11 +7090,7 @@ end)()
 			5004
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.memory_group
-
-	var_3_62[358] = {
+	pg.base.memory_group[358] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8201,11 +7123,7 @@ end)()
 			5030
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.memory_group
-
-	var_3_63[359] = {
+	pg.base.memory_group[359] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8243,11 +7161,7 @@ end)()
 			5057
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.memory_group
-
-	var_3_64[360] = {
+	pg.base.memory_group[360] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8263,11 +7177,7 @@ end)()
 			5063
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.memory_group
-
-	var_3_65[361] = {
+	pg.base.memory_group[361] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8293,11 +7203,7 @@ end)()
 			5093
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.memory_group
-
-	var_3_66[362] = {
+	pg.base.memory_group[362] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8317,11 +7223,7 @@ end)()
 			5107
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.memory_group
-
-	var_3_67[363] = {
+	pg.base.memory_group[363] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8341,11 +7243,7 @@ end)()
 			5127
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.memory_group
-
-	var_3_68[364] = {
+	pg.base.memory_group[364] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8363,11 +7261,7 @@ end)()
 			5135
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.memory_group
-
-	var_3_69[365] = {
+	pg.base.memory_group[365] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8419,11 +7313,7 @@ end)()
 			5179
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.memory_group
-
-	var_3_70[366] = {
+	pg.base.memory_group[366] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8460,11 +7350,7 @@ end)()
 			5204
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.memory_group
-
-	var_3_71[367] = {
+	pg.base.memory_group[367] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8478,11 +7364,7 @@ end)()
 			5211
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.memory_group
-
-	var_3_72[368] = {
+	pg.base.memory_group[368] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8496,11 +7378,7 @@ end)()
 			5221
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.memory_group
-
-	var_3_73[372] = {
+	pg.base.memory_group[372] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8520,11 +7398,7 @@ end)()
 			5307
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.memory_group
-
-	var_3_74[371] = {
+	pg.base.memory_group[371] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8549,11 +7423,7 @@ end)()
 			5282
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.memory_group
-
-	var_3_75[369] = {
+	pg.base.memory_group[369] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8575,11 +7445,7 @@ end)()
 			5249
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.memory_group
-
-	var_3_76[370] = {
+	pg.base.memory_group[370] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8595,11 +7461,7 @@ end)()
 			5263
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.memory_group
-
-	var_3_77[373] = {
+	pg.base.memory_group[373] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -8613,11 +7475,101 @@ end)()
 			5311
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.memory_group
-
-	var_3_78[501] = {
+	pg.base.memory_group[374] = {
+		ship_group = 0,
+		icon = "title_event",
+		type = 2,
+		link_event = 51101,
+		title = "沉溺于星光之城",
+		auto_unlock = "",
+		subtype = 1,
+		id = 374,
+		group_id = "",
+		memories = {
+			5321,
+			5322,
+			5323,
+			5324,
+			5325,
+			5326,
+			5327,
+			5328,
+			5329,
+			5330,
+			5331,
+			5332,
+			5333,
+			5334,
+			5335,
+			5336,
+			5337,
+			5338,
+			5339,
+			5340,
+			5341,
+			5342,
+			5343,
+			5344,
+			5345,
+			5346,
+			5347,
+			5348,
+			5349,
+			5350,
+			5351,
+			5352,
+			5353,
+			5354,
+			5355,
+			5356,
+			5357,
+			5358,
+			5359,
+			5360,
+			5361,
+			5362,
+			5363,
+			5364,
+			5365,
+			5366
+		}
+	}
+	pg.base.memory_group[375] = {
+		ship_group = 0,
+		icon = "title_event",
+		type = 2,
+		link_event = 51113,
+		title = "滨海极速：夏日狂飙",
+		auto_unlock = "",
+		subtype = 3,
+		id = 375,
+		group_id = "",
+		memories = {
+			5381,
+			5382,
+			5383,
+			5384,
+			5385,
+			5386,
+			5387,
+			5388,
+			5389,
+			5390,
+			5391,
+			5392,
+			5393,
+			5394,
+			5395,
+			5396,
+			5397,
+			5398,
+			5399,
+			5400,
+			5401,
+			5402
+		}
+	}
+	pg.base.memory_group[501] = {
 		ship_group = 31201,
 		icon = "title_chara_mingshi",
 		type = 3,
@@ -8650,11 +7602,7 @@ end)()
 			81
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.memory_group
-
-	var_3_79[502] = {
+	pg.base.memory_group[502] = {
 		ship_group = 10601,
 		icon = "title_chara_changdao",
 		type = 3,
@@ -8676,11 +7624,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.memory_group
-
-	var_3_80[503] = {
+	pg.base.memory_group[503] = {
 		ship_group = 30706,
 		icon = "title_chara_ruihe",
 		type = 3,
@@ -8702,11 +7646,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.memory_group
-
-	var_3_81[504] = {
+	pg.base.memory_group[504] = {
 		ship_group = 30116,
 		icon = "title_chara_xuefeng",
 		type = 3,
@@ -8728,11 +7668,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.memory_group
-
-	var_3_82[505] = {
+	pg.base.memory_group[505] = {
 		ship_group = 20203,
 		icon = "title_chara_ajiakesi",
 		type = 3,
@@ -8754,11 +7690,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.memory_group
-
-	var_3_83[506] = {
+	pg.base.memory_group[506] = {
 		ship_group = 10125,
 		icon = "title_chara_haman",
 		type = 3,
@@ -8780,11 +7712,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.memory_group
-
-	var_3_84[507] = {
+	pg.base.memory_group[507] = {
 		ship_group = 30701,
 		icon = "title_chara_chicheng",
 		type = 3,
@@ -8806,11 +7734,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.memory_group
-
-	var_3_85[508] = {
+	pg.base.memory_group[508] = {
 		ship_group = 10209,
 		icon = "title_chara_kelifulan",
 		type = 3,
@@ -8832,11 +7756,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.memory_group
-
-	var_3_86[509] = {
+	pg.base.memory_group[509] = {
 		ship_group = 30502,
 		icon = "title_chara_shancheng2",
 		type = 3,
@@ -8858,11 +7778,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.memory_group
-
-	var_3_87[510] = {
+	pg.base.memory_group[510] = {
 		ship_group = 20706,
 		icon = "title_chara_guangrong",
 		type = 3,
@@ -8884,11 +7800,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.memory_group
-
-	var_3_88[511] = {
+	pg.base.memory_group[511] = {
 		ship_group = 10703,
 		icon = "title_chara_salatuojia",
 		type = 3,
@@ -8910,11 +7822,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.memory_group
-
-	var_3_89[512] = {
+	pg.base.memory_group[512] = {
 		ship_group = 30312,
 		icon = "title_chara_aidang",
 		type = 3,
@@ -8936,11 +7844,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.memory_group
-
-	var_3_90[513] = {
+	pg.base.memory_group[513] = {
 		ship_group = 40146,
 		icon = "title_chara_z46",
 		type = 3,
@@ -8962,11 +7866,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.memory_group
-
-	var_3_91[515] = {
+	pg.base.memory_group[515] = {
 		ship_group = 80101,
 		icon = "title_chara_kaixuan",
 		type = 3,
@@ -8988,11 +7888,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.memory_group
-
-	var_3_92[516] = {
+	pg.base.memory_group[516] = {
 		ship_group = 80201,
 		icon = "title_chara_aimier",
 		type = 3,
@@ -9014,11 +7910,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.memory_group
-
-	var_3_93[517] = {
+	pg.base.memory_group[517] = {
 		ship_group = 80801,
 		icon = "title_chara_xukufu",
 		type = 3,
@@ -9040,11 +7932,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.memory_group
-
-	var_3_94[518] = {
+	pg.base.memory_group[518] = {
 		ship_group = 40502,
 		icon = "title_chara_tierbici",
 		type = 3,
@@ -9066,11 +7954,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.memory_group
-
-	var_3_95[519] = {
+	pg.base.memory_group[519] = {
 		ship_group = 20604,
 		icon = "title_chara_banrenma",
 		type = 3,
@@ -9092,11 +7976,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.memory_group
-
-	var_3_96[520] = {
+	pg.base.memory_group[520] = {
 		ship_group = 30402,
 		icon = "title_chara_birui",
 		type = 3,
@@ -9118,11 +7998,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.memory_group
-
-	var_3_97[521] = {
+	pg.base.memory_group[521] = {
 		ship_group = 40304,
 		icon = "title_chara_deyizhi",
 		type = 3,
@@ -9144,11 +8020,11 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_97
 
-	local var_3_98 = var_3_97.base.memory_group
-
-	var_3_98[522] = {
+	return
+end)()
+;(function()
+	pg.base.memory_group[522] = {
 		ship_group = 10802,
 		icon = "title_chara_daqinghuayu",
 		type = 3,
@@ -9170,8 +8046,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.memory_group[523] = {
+	pg.base.memory_group[523] = {
 		ship_group = 30707,
 		icon = "title_chara_dafeng",
 		type = 3,
@@ -9193,15 +8068,7 @@ end)()
 			10000
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.memory_group
-
-	var_4_0[524] = {
+	pg.base.memory_group[524] = {
 		ship_group = 10709,
 		icon = "title_chara_aisaikesi",
 		type = 3,
@@ -9223,11 +8090,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.memory_group
-
-	var_4_1[525] = {
+	pg.base.memory_group[525] = {
 		ship_group = 30109,
 		icon = "title_chara_xiao",
 		type = 3,
@@ -9249,11 +8112,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.memory_group
-
-	var_4_2[526] = {
+	pg.base.memory_group[526] = {
 		ship_group = 20219,
 		icon = "title_chara_niukasier",
 		type = 3,
@@ -9275,11 +8134,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.memory_group
-
-	var_4_3[527] = {
+	pg.base.memory_group[527] = {
 		ship_group = 10212,
 		icon = "title_chara_huonululu",
 		type = 3,
@@ -9301,11 +8156,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.memory_group
-
-	var_4_4[528] = {
+	pg.base.memory_group[528] = {
 		ship_group = 10127,
 		icon = "title_chara_beili",
 		type = 3,
@@ -9327,11 +8178,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.memory_group
-
-	var_4_5[529] = {
+	pg.base.memory_group[529] = {
 		ship_group = 30118,
 		icon = "title_chara_buzhihuo",
 		type = 3,
@@ -9353,11 +8200,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.memory_group
-
-	var_4_6[530] = {
+	pg.base.memory_group[530] = {
 		ship_group = 10218,
 		icon = "title_chara_kangkede",
 		type = 3,
@@ -9379,11 +8222,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.memory_group
-
-	var_4_7[531] = {
+	pg.base.memory_group[531] = {
 		ship_group = 30606,
 		icon = "title_chara_longxiang",
 		type = 3,
@@ -9405,11 +8244,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.memory_group
-
-	var_4_8[532] = {
+	pg.base.memory_group[532] = {
 		ship_group = 30164,
 		icon = "title_chara_dachao",
 		type = 3,
@@ -9431,11 +8266,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.memory_group
-
-	var_4_9[533] = {
+	pg.base.memory_group[533] = {
 		ship_group = 30309,
 		icon = "title_chara_zubing",
 		type = 3,
@@ -9457,11 +8288,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.memory_group
-
-	var_4_10[534] = {
+	pg.base.memory_group[534] = {
 		ship_group = 30703,
 		icon = "title_chara_canglong",
 		type = 3,
@@ -9483,11 +8310,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.memory_group
-
-	var_4_11[535] = {
+	pg.base.memory_group[535] = {
 		ship_group = 30121,
 		icon = "title_chara_chuchun",
 		type = 3,
@@ -9509,11 +8332,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.memory_group
-
-	var_4_12[536] = {
+	pg.base.memory_group[536] = {
 		ship_group = 10310,
 		icon = "title_chara_wensensi",
 		type = 3,
@@ -9535,11 +8354,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.memory_group
-
-	var_4_13[537] = {
+	pg.base.memory_group[537] = {
 		ship_group = 20208,
 		icon = "title_chara_xiefeierde",
 		type = 3,
@@ -9561,11 +8376,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.memory_group
-
-	var_4_14[538] = {
+	pg.base.memory_group[538] = {
 		ship_group = 20220,
 		icon = "title_chara_tianlangxing",
 		type = 3,
@@ -9587,11 +8398,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.memory_group
-
-	var_4_15[539] = {
+	pg.base.memory_group[539] = {
 		ship_group = 20502,
 		icon = "title_chara_yanzhan",
 		type = 3,
@@ -9613,11 +8420,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.memory_group
-
-	var_4_16[540] = {
+	pg.base.memory_group[540] = {
 		ship_group = 10738,
 		icon = "title_chara_xianggelila",
 		type = 3,
@@ -9639,11 +8442,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.memory_group
-
-	var_4_17[542] = {
+	pg.base.memory_group[542] = {
 		ship_group = 40305,
 		icon = "title_chara_sipei",
 		type = 3,
@@ -9665,11 +8464,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.memory_group
-
-	var_4_18[543] = {
+	pg.base.memory_group[543] = {
 		ship_group = 20505,
 		icon = "title_chara_qiaozhiwushi",
 		type = 3,
@@ -9691,11 +8486,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.memory_group
-
-	var_4_19[544] = {
+	pg.base.memory_group[544] = {
 		ship_group = 40804,
 		icon = "title_chara_u556story",
 		type = 3,
@@ -9717,11 +8508,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.memory_group
-
-	var_4_20[545] = {
+	pg.base.memory_group[545] = {
 		ship_group = 10803,
 		icon = "title_chara_jiqi",
 		type = 3,
@@ -9743,11 +8530,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.memory_group
-
-	var_4_21[546] = {
+	pg.base.memory_group[546] = {
 		ship_group = 60302,
 		icon = "title_chara_zhala",
 		type = 3,
@@ -9769,11 +8552,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.memory_group
-
-	var_4_22[547] = {
+	pg.base.memory_group[547] = {
 		ship_group = 70201,
 		icon = "title_chara_afuleer",
 		type = 3,
@@ -9795,11 +8574,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.memory_group
-
-	var_4_23[548] = {
+	pg.base.memory_group[548] = {
 		ship_group = 30180,
 		icon = "title_chara_juanbo",
 		type = 3,
@@ -9821,11 +8596,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.memory_group
-
-	var_4_24[549] = {
+	pg.base.memory_group[549] = {
 		ship_group = 10306,
 		icon = "title_chara_botelan",
 		type = 3,
@@ -9847,11 +8618,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.memory_group
-
-	var_4_25[550] = {
+	pg.base.memory_group[550] = {
 		ship_group = 20703,
 		icon = "title_chara_guanghui",
 		type = 3,
@@ -9873,11 +8640,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.memory_group
-
-	var_4_26[551] = {
+	pg.base.memory_group[551] = {
 		ship_group = 20402,
 		icon = "title_chara_fanji",
 		type = 3,
@@ -9899,11 +8662,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.memory_group
-
-	var_4_27[552] = {
+	pg.base.memory_group[552] = {
 		ship_group = 40301,
 		icon = "title_chara_xipeier",
 		type = 3,
@@ -9925,11 +8684,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.memory_group
-
-	var_4_28[553] = {
+	pg.base.memory_group[553] = {
 		ship_group = 20303,
 		icon = "title_chara_kente",
 		type = 3,
@@ -9951,11 +8706,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.memory_group
-
-	var_4_29[554] = {
+	pg.base.memory_group[554] = {
 		ship_group = 20605,
 		icon = "title_chara_zhuiganzhe",
 		type = 3,
@@ -9977,11 +8728,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.memory_group
-
-	var_4_30[555] = {
+	pg.base.memory_group[555] = {
 		ship_group = 20226,
 		icon = "title_chara_gelasige",
 		type = 3,
@@ -10003,11 +8750,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.memory_group
-
-	var_4_31[556] = {
+	pg.base.memory_group[556] = {
 		ship_group = 70504,
 		icon = "title_chara_beilaluosi",
 		type = 3,
@@ -10029,11 +8772,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.memory_group
-
-	var_4_32[557] = {
+	pg.base.memory_group[557] = {
 		ship_group = 10215,
 		icon = "title_chara_danfo",
 		type = 3,
@@ -10055,11 +8794,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.memory_group
-
-	var_4_33[558] = {
+	pg.base.memory_group[558] = {
 		ship_group = 10145,
 		icon = "title_chara_ailunsamuna",
 		type = 3,
@@ -10081,11 +8816,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.memory_group
-
-	var_4_34[559] = {
+	pg.base.memory_group[559] = {
 		ship_group = 30115,
 		icon = "title_chara_shiyu",
 		type = 3,
@@ -10107,11 +8838,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.memory_group
-
-	var_4_35[560] = {
+	pg.base.memory_group[560] = {
 		ship_group = 60701,
 		icon = "title_chara_tianying",
 		type = 3,
@@ -10133,11 +8860,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.memory_group
-
-	var_4_36[561] = {
+	pg.base.memory_group[561] = {
 		ship_group = 40802,
 		icon = "title_chara_u47",
 		type = 3,
@@ -10159,11 +8882,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.memory_group
-
-	var_4_37[562] = {
+	pg.base.memory_group[562] = {
 		ship_group = 20503,
 		icon = "title_chara_naerxun",
 		type = 3,
@@ -10185,11 +8904,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.memory_group
-
-	var_4_38[563] = {
+	pg.base.memory_group[563] = {
 		ship_group = 10229,
 		icon = "title_chara_boyixi",
 		type = 3,
@@ -10211,11 +8926,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.memory_group
-
-	var_4_39[564] = {
+	pg.base.memory_group[564] = {
 		ship_group = 30501,
 		icon = "title_chara_fusang",
 		type = 3,
@@ -10237,11 +8948,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.memory_group
-
-	var_4_40[565] = {
+	pg.base.memory_group[565] = {
 		ship_group = 30208,
 		icon = "title_chara_guinu",
 		type = 3,
@@ -10263,11 +8970,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.memory_group
-
-	var_4_41[566] = {
+	pg.base.memory_group[566] = {
 		ship_group = 10707,
 		icon = "title_chara_dahuangfeng",
 		type = 3,
@@ -10289,11 +8992,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.memory_group
-
-	var_4_42[567] = {
+	pg.base.memory_group[567] = {
 		ship_group = 10655,
 		icon = "title_chara_kasabulanka",
 		type = 3,
@@ -10315,11 +9014,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.memory_group
-
-	var_4_43[568] = {
+	pg.base.memory_group[568] = {
 		ship_group = 10227,
 		icon = "title_chara_mabuerheide",
 		type = 3,
@@ -10341,11 +9036,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.memory_group
-
-	var_4_44[569] = {
+	pg.base.memory_group[569] = {
 		ship_group = 30129,
 		icon = "title_chara_daofeng",
 		type = 3,
@@ -10367,11 +9058,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.memory_group
-
-	var_4_45[570] = {
+	pg.base.memory_group[570] = {
 		ship_group = 30514,
 		icon = "title_chara_junhe",
 		type = 3,
@@ -10393,11 +9080,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.memory_group
-
-	var_4_46[571] = {
+	pg.base.memory_group[571] = {
 		ship_group = 40503,
 		icon = "title_chara_wuerlixi",
 		type = 3,
@@ -10419,11 +9102,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.memory_group
-
-	var_4_47[572] = {
+	pg.base.memory_group[572] = {
 		ship_group = 20132,
 		icon = "title_chara_aisijimoren",
 		type = 3,
@@ -10445,11 +9124,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.memory_group
-
-	var_4_48[573] = {
+	pg.base.memory_group[573] = {
 		ship_group = 20211,
 		icon = "title_chara_aidingbao",
 		type = 3,
@@ -10471,11 +9146,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.memory_group
-
-	var_4_49[574] = {
+	pg.base.memory_group[574] = {
 		ship_group = 10205,
 		icon = "title_chara_hailunna",
 		type = 3,
@@ -10497,11 +9168,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.memory_group
-
-	var_4_50[575] = {
+	pg.base.memory_group[575] = {
 		ship_group = 60105,
 		icon = "title_chara_xinanfeng",
 		type = 3,
@@ -10523,11 +9190,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.memory_group
-
-	var_4_51[576] = {
+	pg.base.memory_group[576] = {
 		ship_group = 20134,
 		icon = "title_chara_jiaweisi",
 		type = 3,
@@ -10549,11 +9212,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.memory_group
-
-	var_4_52[577] = {
+	pg.base.memory_group[577] = {
 		ship_group = 70202,
 		icon = "title_chara_shuixingjinian",
 		type = 3,
@@ -10575,11 +9234,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.memory_group
-
-	var_4_53[578] = {
+	pg.base.memory_group[578] = {
 		ship_group = 10501,
 		icon = "title_chara_neihuada",
 		type = 3,
@@ -10601,11 +9256,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.memory_group
-
-	var_4_54[579] = {
+	pg.base.memory_group[579] = {
 		ship_group = 30182,
 		icon = "title_chara_huayue",
 		type = 3,
@@ -10627,11 +9278,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.memory_group
-
-	var_4_55[580] = {
+	pg.base.memory_group[580] = {
 		ship_group = 40302,
 		icon = "title_chara_bulvxieer",
 		type = 3,
@@ -10653,11 +9300,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.memory_group
-
-	var_4_56[581] = {
+	pg.base.memory_group[581] = {
 		ship_group = 60108,
 		icon = "title_chara_aerfuleiduo",
 		type = 3,
@@ -10679,11 +9322,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.memory_group
-
-	var_4_57[582] = {
+	pg.base.memory_group[582] = {
 		ship_group = 10148,
 		icon = "title_chara_yinggelahan",
 		type = 3,
@@ -10705,11 +9344,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.memory_group
-
-	var_4_58[583] = {
+	pg.base.memory_group[583] = {
 		ship_group = 19901,
 		icon = "title_chara_xiyatu",
 		type = 3,
@@ -10731,11 +9366,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.memory_group
-
-	var_4_59[584] = {
+	pg.base.memory_group[584] = {
 		ship_group = 60801,
 		icon = "title_chara_tuolichaili",
 		type = 3,
@@ -10757,11 +9388,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.memory_group
-
-	var_4_60[585] = {
+	pg.base.memory_group[585] = {
 		ship_group = 10702,
 		icon = "title_chara_liekexingdun",
 		type = 3,
@@ -10783,11 +9410,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.memory_group
-
-	var_4_61[586] = {
+	pg.base.memory_group[586] = {
 		ship_group = 40603,
 		icon = "title_chara_yade",
 		type = 3,
@@ -10809,11 +9432,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.memory_group
-
-	var_4_62[587] = {
+	pg.base.memory_group[587] = {
 		ship_group = 40403,
 		icon = "title_chara_saidelici",
 		type = 3,
@@ -10835,11 +9454,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.memory_group
-
-	var_4_63[588] = {
+	pg.base.memory_group[588] = {
 		ship_group = 60802,
 		icon = "title_chara_dafenqi",
 		type = 3,
@@ -10861,11 +9476,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.memory_group
-
-	var_4_64[589] = {
+	pg.base.memory_group[589] = {
 		ship_group = 60109,
 		icon = "title_chara_peisagenuo",
 		type = 3,
@@ -10887,11 +9498,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.memory_group
-
-	var_4_65[590] = {
+	pg.base.memory_group[590] = {
 		ship_group = 90111,
 		icon = "title_chara_edu",
 		type = 3,
@@ -10913,11 +9520,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.memory_group
-
-	var_4_66[591] = {
+	pg.base.memory_group[591] = {
 		ship_group = 90502,
 		icon = "title_chara_kelaimengsuo",
 		type = 3,
@@ -10939,11 +9542,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.memory_group
-
-	var_4_67[592] = {
+	pg.base.memory_group[592] = {
 		ship_group = 60107,
 		icon = "title_chara_pangpei",
 		type = 3,
@@ -10965,11 +9564,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.memory_group
-
-	var_4_68[593] = {
+	pg.base.memory_group[593] = {
 		ship_group = 11802,
 		icon = "title_chara_guandao",
 		type = 3,
@@ -10991,11 +9586,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.memory_group
-
-	var_4_69[594] = {
+	pg.base.memory_group[594] = {
 		ship_group = 50102,
 		icon = "title_chara_fushun",
 		type = 3,
@@ -11017,11 +9608,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.memory_group
-
-	var_4_70[595] = {
+	pg.base.memory_group[595] = {
 		ship_group = 50601,
 		icon = "title_chara_zhenhai",
 		type = 3,
@@ -11043,11 +9630,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.memory_group
-
-	var_4_71[596] = {
+	pg.base.memory_group[596] = {
 		ship_group = 10730,
 		icon = "title_chara_shenghaxintuo",
 		type = 3,
@@ -11069,11 +9652,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.memory_group
-
-	var_4_72[597] = {
+	pg.base.memory_group[597] = {
 		ship_group = 90701,
 		icon = "title_chara_xiafei",
 		type = 3,
@@ -11095,11 +9674,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.memory_group
-
-	var_4_73[598] = {
+	pg.base.memory_group[598] = {
 		ship_group = 50207,
 		icon = "title_chara_haitian",
 		type = 3,
@@ -11121,11 +9696,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.memory_group
-
-	var_4_74[599] = {
+	pg.base.memory_group[599] = {
 		ship_group = 49905,
 		icon = "title_chara_aijier",
 		type = 3,
@@ -11147,11 +9718,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.memory_group
-
-	var_4_75[600] = {
+	pg.base.memory_group[600] = {
 		ship_group = 80503,
 		icon = "title_chara_aersasi",
 		type = 3,
@@ -11173,11 +9740,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.memory_group
-
-	var_4_76[601] = {
+	pg.base.memory_group[601] = {
 		ship_group = 10324,
 		icon = "title_chara_bulaimodun",
 		type = 3,
@@ -11199,11 +9762,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.memory_group
-
-	var_4_77[602] = {
+	pg.base.memory_group[602] = {
 		ship_group = 30311,
 		icon = "title_chara_gaoxiong",
 		type = 3,
@@ -11225,11 +9784,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.memory_group
-
-	var_4_78[603] = {
+	pg.base.memory_group[603] = {
 		ship_group = 960005,
 		icon = "title_chara_weidahao",
 		type = 3,
@@ -11251,11 +9806,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.memory_group
-
-	var_4_79[604] = {
+	pg.base.memory_group[604] = {
 		ship_group = 20509,
 		icon = "title_chara_hao",
 		type = 3,
@@ -11277,11 +9828,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.memory_group
-
-	var_4_80[605] = {
+	pg.base.memory_group[605] = {
 		ship_group = 40404,
 		icon = "title_chara_lvzuofu",
 		type = 3,
@@ -11303,11 +9850,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.memory_group
-
-	var_4_81[606] = {
+	pg.base.memory_group[606] = {
 		ship_group = 50105,
 		icon = "title_chara_longwu",
 		type = 3,
@@ -11329,11 +9872,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.memory_group
-
-	var_4_82[607] = {
+	pg.base.memory_group[607] = {
 		ship_group = 50209,
 		icon = "title_chara_jian",
 		type = 3,
@@ -11355,11 +9894,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.memory_group
-
-	var_4_83[608] = {
+	pg.base.memory_group[608] = {
 		ship_group = 90107,
 		icon = "title_chara_mojiaduoer",
 		type = 3,
@@ -11381,11 +9916,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.memory_group
-
-	var_4_84[609] = {
+	pg.base.memory_group[609] = {
 		ship_group = 70203,
 		icon = "title_chara_qiabayefu",
 		type = 3,
@@ -11407,11 +9938,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.memory_group
-
-	var_4_85[610] = {
+	pg.base.memory_group[610] = {
 		ship_group = 20712,
 		icon = "title_chara_bunao",
 		type = 3,
@@ -11433,11 +9960,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.memory_group
-
-	var_4_86[611] = {
+	pg.base.memory_group[611] = {
 		ship_group = 49906,
 		icon = "title_chara_aogusite",
 		type = 3,
@@ -11459,11 +9982,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.memory_group
-
-	var_4_87[612] = {
+	pg.base.memory_group[612] = {
 		ship_group = 90401,
 		icon = "title_chara_dunkeerke",
 		type = 3,
@@ -11485,11 +10004,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.memory_group
-
-	var_4_88[613] = {
+	pg.base.memory_group[613] = {
 		ship_group = 90105,
 		icon = "title_chara_huajian",
 		type = 3,
@@ -11511,11 +10026,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.memory_group
-
-	var_4_89[614] = {
+	pg.base.memory_group[614] = {
 		ship_group = 30225,
 		icon = "title_chara_dulianglai",
 		type = 3,
@@ -11537,11 +10048,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.memory_group
-
-	var_4_90[615] = {
+	pg.base.memory_group[615] = {
 		ship_group = 960014,
 		icon = "title_chara_zhenzhuhao",
 		type = 3,
@@ -11563,11 +10070,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.memory_group
-
-	var_4_91[616] = {
+	pg.base.memory_group[616] = {
 		ship_group = 110201,
 		icon = "title_chara_qisheng",
 		type = 3,
@@ -11589,11 +10092,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.memory_group
-
-	var_4_92[617] = {
+	pg.base.memory_group[617] = {
 		ship_group = 10233,
 		icon = "title_chara_fage",
 		type = 3,
@@ -11615,11 +10114,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.memory_group
-
-	var_4_93[618] = {
+	pg.base.memory_group[618] = {
 		ship_group = 60501,
 		icon = "title_chara_weineituo",
 		type = 3,
@@ -11641,11 +10136,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.memory_group
-
-	var_4_94[619] = {
+	pg.base.memory_group[619] = {
 		ship_group = 51901,
 		icon = "title_chara_dingan",
 		type = 3,
@@ -11667,11 +10158,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.memory_group
-
-	var_4_95[620] = {
+	pg.base.memory_group[620] = {
 		ship_group = 20607,
 		icon = "title_chara_aerbien",
 		type = 3,
@@ -11693,11 +10180,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.memory_group
-
-	var_4_96[621] = {
+	pg.base.memory_group[621] = {
 		ship_group = 20313,
 		icon = "title_chara_dewenjun",
 		type = 3,
@@ -11719,11 +10202,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.memory_group
-
-	var_4_97[622] = {
+	pg.base.memory_group[622] = {
 		ship_group = 49910,
 		icon = "title_chara_meikelunbao",
 		type = 3,
@@ -11745,11 +10224,11 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_97
 
-	local var_4_98 = var_4_97.base.memory_group
-
-	var_4_98[623] = {
+	return
+end)()
+;(function()
+	pg.base.memory_group[623] = {
 		ship_group = 60508,
 		icon = "title_chara_lafeier",
 		type = 3,
@@ -11771,8 +10250,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.memory_group[625] = {
+	pg.base.memory_group[625] = {
 		ship_group = 10234,
 		icon = "title_chara_shengtafei",
 		type = 3,
@@ -11794,15 +10272,7 @@ end)()
 			10000
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.memory_group
-
-	var_5_0[624] = {
+	pg.base.memory_group[624] = {
 		ship_group = 29905,
 		icon = "title_chara_pulimaosi",
 		type = 3,
@@ -11824,11 +10294,7 @@ end)()
 			10000
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.memory_group
-
-	var_5_1[1000] = {
+	pg.base.memory_group[1000] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -11885,11 +10351,7 @@ end)()
 			20043
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.memory_group
-
-	var_5_2[1001] = {
+	pg.base.memory_group[1001] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -11910,11 +10372,7 @@ end)()
 			20051
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.memory_group
-
-	var_5_3[1002] = {
+	pg.base.memory_group[1002] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -11957,11 +10415,7 @@ end)()
 			20081
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.memory_group
-
-	var_5_4[1003] = {
+	pg.base.memory_group[1003] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -12020,11 +10474,7 @@ end)()
 			20127
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.memory_group
-
-	var_5_5[1004] = {
+	pg.base.memory_group[1004] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -12046,11 +10496,7 @@ end)()
 			20136
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.memory_group
-
-	var_5_6[1005] = {
+	pg.base.memory_group[1005] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -12075,11 +10521,7 @@ end)()
 			20149
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.memory_group
-
-	var_5_7[1006] = {
+	pg.base.memory_group[1006] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -12138,11 +10580,7 @@ end)()
 			20195
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.memory_group
-
-	var_5_8[1007] = {
+	pg.base.memory_group[1007] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,
@@ -12164,8 +10602,7 @@ end)()
 			20205
 		}
 	}
-	pg = var_5_8
-	var_5_8.base.memory_group[1008] = {
+	pg.base.memory_group[1008] = {
 		ship_group = 0,
 		icon = "title_event",
 		type = 2,

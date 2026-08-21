@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PlayRoomRankItem", import("view.base.BasePanel"))
 
-local var_0_0 = "PlayRoomRankItem"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,223 +13,80 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
-	setText = var_1_10001
-
-	local var_2_0 = arg_2_0.uiRankText
-
-	i18n = var_1_10004
-
-	var_1_10001(var_2_0, var_1_10004("match_ui_window_out"))
+function var_0_0.Init(arg_2_0)
+	setText(arg_2_0.uiRankText, i18n("match_ui_window_out"))
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0, arg_3_1)
+function var_0_0.didEnter(arg_3_0, arg_3_1)
 	if arg_3_1 == nil then
 		return
 	end
 
+	local var_3_0 = arg_3_1.rankIndex
+
 	if arg_3_1.rankIndex == 1 then
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum1, true)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum2, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum3, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankNumText, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankText, false)
-
-		setImageColor = var_1_10003
-		var_1_10005 = arg_3_0.uiBgImage
-		Color = var_6
-
-		var_1_10003(var_1_10005, var_6.NewHex("FFFCB0"))
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiBgImage, true)
-	elseif var_2 == 2 then
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum1, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum2, true)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum3, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankNumText, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankText, false)
-
-		setImageColor = var_1_10003
-		var_1_10005 = arg_3_0.uiBgImage
-		Color = var_6
-
-		var_1_10003(var_1_10005, var_6.NewHex("B2EAFF"))
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiBgImage, true)
-	elseif var_2 == 3 then
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum1, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum2, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum3, true)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankNumText, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankText, false)
-
-		setImageColor = var_1_10003
-		var_1_10005 = arg_3_0.uiBgImage
-		Color = var_6
-
-		var_1_10003(var_1_10005, var_6.NewHex("FDDFC7"))
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiBgImage, true)
+		setActive(arg_3_0.uiNum1, true)
+		setActive(arg_3_0.uiNum2, false)
+		setActive(arg_3_0.uiNum3, false)
+		setActive(arg_3_0.uiRankNumText, false)
+		setActive(arg_3_0.uiRankText, false)
+		setImageColor(arg_3_0.uiBgImage, Color.NewHex("FFFCB0"))
+		setActive(arg_3_0.uiBgImage, true)
+	elseif var_3_0 == 2 then
+		setActive(arg_3_0.uiNum1, false)
+		setActive(arg_3_0.uiNum2, true)
+		setActive(arg_3_0.uiNum3, false)
+		setActive(arg_3_0.uiRankNumText, false)
+		setActive(arg_3_0.uiRankText, false)
+		setImageColor(arg_3_0.uiBgImage, Color.NewHex("B2EAFF"))
+		setActive(arg_3_0.uiBgImage, true)
+	elseif var_3_0 == 3 then
+		setActive(arg_3_0.uiNum1, false)
+		setActive(arg_3_0.uiNum2, false)
+		setActive(arg_3_0.uiNum3, true)
+		setActive(arg_3_0.uiRankNumText, false)
+		setActive(arg_3_0.uiRankText, false)
+		setImageColor(arg_3_0.uiBgImage, Color.NewHex("FDDFC7"))
+		setActive(arg_3_0.uiBgImage, true)
 	else
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum1, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum2, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiNum3, false)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankNumText, var_2 ~= 0)
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiRankText, var_2 == 0)
-
-		setText = var_1_10003
-		var_1_10005 = arg_3_0.uiRankNumText
-		string = var_6
-
-		var_1_10003(var_1_10005, var_6.format("%02d", var_2))
-
-		setActive = var_1_10003
-
-		var_1_10003(arg_3_0.uiBgImage, false)
+		setActive(arg_3_0.uiNum1, false)
+		setActive(arg_3_0.uiNum2, false)
+		setActive(arg_3_0.uiNum3, false)
+		setActive(arg_3_0.uiRankNumText, var_3_0 ~= 0)
+		setActive(arg_3_0.uiRankText, var_3_0 == 0)
+		setText(arg_3_0.uiRankNumText, string.format("%02d", var_3_0))
+		setActive(arg_3_0.uiBgImage, false)
 	end
 
-	local var_3_0 = arg_3_1.playerData
+	local var_3_1 = arg_3_1.playerData
 
-	setText = var_1_10004
+	setText(arg_3_0.uiNameText, arg_3_1.playerData.name)
+	setText(arg_3_0.uiLevelText, string.format("Lv.%s", var_3_1.level))
+	setText(arg_3_0.uiPtCntText, arg_3_1.score)
+	setText(arg_3_0.uiServerText, PlayRoomTools.GetServerName(var_3_1.id))
+	setActive(arg_3_0.uiGuildText, var_3_1.guildName ~= "")
+	setText(arg_3_0.uiGuildText, var_3_1.guildName)
 
-	var_1_10004(arg_3_0.uiNameText, var_3_0.name)
+	local var_3_2 = var_3_0 == 0 and getProxy(PlayerProxy):getData():GetFlagShip() or Ship.New({
+		configId = var_3_1.display.icon
+	})
 
-	setText = var_1_10004
-
-	local var_3_1 = arg_3_0.uiLevelText
-
-	string = var_7
-
-	var_1_10004(var_3_1, var_7.format("Lv.%s", var_3_0.level))
-
-	setText = var_1_10004
-
-	var_1_10004(arg_3_0.uiPtCntText, arg_3_1.score)
-
-	setText = var_1_10004
-
-	local var_3_2 = arg_3_0.uiServerText
-
-	PlayRoomTools = var_7
-
-	var_1_10004(var_3_2, var_7.GetServerName(var_3_0.id))
-
-	setActive = var_1_10004
-
-	var_1_10004(arg_3_0.uiGuildText, var_3_0.guildName ~= "")
-
-	setText = var_1_10004
-
-	var_1_10004(arg_3_0.uiGuildText, var_3_0.guildName)
-
-	local var_3_3
-
-	if var_2 == 0 then
-		getProxy = var_1_10005
-		PlayerProxy = var_7
-
-		local var_3_4 = var_1_10005(var_7)
-		local var_3_5 = var_1_10005.getData(var_3_4)
-
-		var_3_3 = var_1_10005.GetFlagShip(var_3_5)
-	else
-		Ship = var_1_10005
-		var_3_3 = var_1_10005.New({
-			configId = var_3_0.display.icon
-		})
-	end
-
-	LoadSpriteAsync = var_1_10005
-
-	var_1_10005("qicon/" .. var_3_3:getPrefab(), function(arg_4_0)
+	LoadSpriteAsync("qicon/" .. var_3_2:getPrefab(), function(arg_4_0)
 		arg_3_0.uiIcon.sprite = arg_4_0
 
 		return
 	end)
-
-	PlayRoomTools = var_1_10005
-
-	local var_3_6 = var_1_10005.GetPtScoreIcon
-
-	PlayRoomTools = var_7
-
-	local var_3_7 = var_3_6(var_7.GetGameTypeID())
-
-	GetImageSpriteFromAtlasAsync = var_6
-
-	var_6("Island/IslandCheaterTavernIcon/" .. var_3_7, "", arg_3_0.uiPtIcon)
+	GetImageSpriteFromAtlasAsync("Island/IslandCheaterTavernIcon/" .. PlayRoomTools.GetPtScoreIcon(PlayRoomTools.GetGameTypeID()), "", arg_3_0.uiPtIcon)
 
 	return
 end
 
-function var_0_1.willExit(arg_5_0)
+function var_0_0.willExit(arg_5_0)
 	arg_5_0:detach()
 
 	return
 end
 
-return var_0_1
+return var_0_0

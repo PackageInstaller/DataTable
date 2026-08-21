@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : GMPanel
 @Description    : GM面板
@@ -62,6 +62,8 @@ function getTabDatas(self)
     self.tabDataList[7] = TabData:poolGet():setData(204, 54, "LUA", UrlManager:getCommon5Path("common_0172.png"), UrlManager:getCommon5Path("common_0171.png"), nil, nil, "LUA", nil, nil, nil, nil, nil, true)
     self.tabDataList[8] = TabData:poolGet():setData(204, 54, "VIDEO", UrlManager:getCommon5Path("common_0172.png"), UrlManager:getCommon5Path("common_0171.png"), nil, nil, "VIDEO", nil, nil, nil, nil, nil, true)
     self.tabDataList[9] = TabData:poolGet():setData(204, 54, "DELTALIST", UrlManager:getCommon5Path("common_0172.png"), UrlManager:getCommon5Path("common_0171.png"), nil, nil, "DELTALIST", nil, nil, nil, nil, nil, true)
+    self.tabDataList[10] = TabData:poolGet():setData(204, 54, "进入大宿舍", UrlManager:getCommon5Path("common_0172.png"), UrlManager:getCommon5Path("common_0171.png"), nil, nil, "BigHostel", nil, nil, nil, nil, nil, true)
+
     return self.tabDataList
 end
 
@@ -76,6 +78,8 @@ function getTabClass(self)
     self.tabClassDic["LUA"] = gm.LuaTabView
     self.tabClassDic["VIDEO"] = gm.VideoTabView
     self.tabClassDic["DELTALIST"] = gm.TestDeltaListTabView
+    self.tabClassDic["BigHostel"] = gm.GmBigHostelView
+
     return self.tabClassDic
 end
 
@@ -87,12 +91,12 @@ end
 function close(self)
     super.close(self)
 end
- 
+
 function destroyPanel(self)
     super.destroyPanel(self)
 end
 
 return _M
-  
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

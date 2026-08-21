@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_chapter_colormask") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_chapter_colormask"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_chapter_colormask = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_chapter_colormask
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_chapter_colormask = rawget(pg, "world_chapter_colormask") or setmetatable({
+	__name = "world_chapter_colormask"
+}, confNEO)
+pg.world_chapter_colormask.all = {
 	1,
 	2,
 	3,
@@ -108,25 +85,11 @@ var_0_3.all = {
 	158,
 	159
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_chapter_colormask = {}
+pg.base = pg.base or {}
+pg.base.world_chapter_colormask = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_chapter_colormask
-
-	var_1_0[1] = {
+	pg.base.world_chapter_colormask[1] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 1,
@@ -160,11 +123,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_chapter_colormask
-
-	var_1_1[2] = {
+	pg.base.world_chapter_colormask[2] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 2,
@@ -198,11 +157,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_chapter_colormask
-
-	var_1_2[3] = {
+	pg.base.world_chapter_colormask[3] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 3,
@@ -237,11 +192,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_chapter_colormask
-
-	var_1_3[4] = {
+	pg.base.world_chapter_colormask[4] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 4,
@@ -275,11 +226,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_chapter_colormask
-
-	var_1_4[5] = {
+	pg.base.world_chapter_colormask[5] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 5,
@@ -313,11 +260,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_chapter_colormask
-
-	var_1_5[6] = {
+	pg.base.world_chapter_colormask[6] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 6,
@@ -351,11 +294,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_chapter_colormask
-
-	var_1_6[7] = {
+	pg.base.world_chapter_colormask[7] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 7,
@@ -389,11 +328,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_chapter_colormask
-
-	var_1_7[8] = {
+	pg.base.world_chapter_colormask[8] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 8,
@@ -427,11 +362,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_chapter_colormask
-
-	var_1_8[11] = {
+	pg.base.world_chapter_colormask[11] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -526,11 +457,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_chapter_colormask
-
-	var_1_9[12] = {
+	pg.base.world_chapter_colormask[12] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -627,11 +554,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_chapter_colormask
-
-	var_1_10[13] = {
+	pg.base.world_chapter_colormask[13] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -728,11 +651,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_chapter_colormask
-
-	var_1_11[14] = {
+	pg.base.world_chapter_colormask[14] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -834,11 +753,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_chapter_colormask
-
-	var_1_12[21] = {
+	pg.base.world_chapter_colormask[21] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -937,11 +852,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_chapter_colormask
-
-	var_1_13[22] = {
+	pg.base.world_chapter_colormask[22] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1040,11 +951,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_chapter_colormask
-
-	var_1_14[23] = {
+	pg.base.world_chapter_colormask[23] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1155,11 +1062,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_chapter_colormask
-
-	var_1_15[24] = {
+	pg.base.world_chapter_colormask[24] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1264,11 +1167,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_chapter_colormask
-
-	var_1_16[25] = {
+	pg.base.world_chapter_colormask[25] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1376,11 +1275,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_chapter_colormask
-
-	var_1_17[31] = {
+	pg.base.world_chapter_colormask[31] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1491,11 +1386,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_chapter_colormask
-
-	var_1_18[32] = {
+	pg.base.world_chapter_colormask[32] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1625,11 +1516,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_chapter_colormask
-
-	var_1_19[33] = {
+	pg.base.world_chapter_colormask[33] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1740,11 +1627,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_chapter_colormask
-
-	var_1_20[34] = {
+	pg.base.world_chapter_colormask[34] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1846,11 +1729,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_chapter_colormask
-
-	var_1_21[41] = {
+	pg.base.world_chapter_colormask[41] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -1964,11 +1843,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_chapter_colormask
-
-	var_1_22[42] = {
+	pg.base.world_chapter_colormask[42] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2066,11 +1941,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_chapter_colormask
-
-	var_1_23[43] = {
+	pg.base.world_chapter_colormask[43] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2172,11 +2043,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_chapter_colormask
-
-	var_1_24[44] = {
+	pg.base.world_chapter_colormask[44] = {
 		world = 1,
 		locked_icon = 1,
 		port_map_icon = 0,
@@ -2265,11 +2132,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_chapter_colormask
-
-	var_1_25[51] = {
+	pg.base.world_chapter_colormask[51] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2380,11 +2243,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_chapter_colormask
-
-	var_1_26[52] = {
+	pg.base.world_chapter_colormask[52] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2499,11 +2358,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_chapter_colormask
-
-	var_1_27[53] = {
+	pg.base.world_chapter_colormask[53] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2613,11 +2468,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_chapter_colormask
-
-	var_1_28[54] = {
+	pg.base.world_chapter_colormask[54] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2732,11 +2583,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_chapter_colormask
-
-	var_1_29[61] = {
+	pg.base.world_chapter_colormask[61] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2848,11 +2695,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_chapter_colormask
-
-	var_1_30[62] = {
+	pg.base.world_chapter_colormask[62] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -2953,11 +2796,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_chapter_colormask
-
-	var_1_31[63] = {
+	pg.base.world_chapter_colormask[63] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3069,11 +2908,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_chapter_colormask
-
-	var_1_32[64] = {
+	pg.base.world_chapter_colormask[64] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3171,11 +3006,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_chapter_colormask
-
-	var_1_33[65] = {
+	pg.base.world_chapter_colormask[65] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3283,11 +3114,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_chapter_colormask
-
-	var_1_34[66] = {
+	pg.base.world_chapter_colormask[66] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3390,11 +3217,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_chapter_colormask
-
-	var_1_35[71] = {
+	pg.base.world_chapter_colormask[71] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3491,11 +3314,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_chapter_colormask
-
-	var_1_36[72] = {
+	pg.base.world_chapter_colormask[72] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3596,11 +3415,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_chapter_colormask
-
-	var_1_37[73] = {
+	pg.base.world_chapter_colormask[73] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3701,11 +3516,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_chapter_colormask
-
-	var_1_38[81] = {
+	pg.base.world_chapter_colormask[81] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3810,11 +3621,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_chapter_colormask
-
-	var_1_39[82] = {
+	pg.base.world_chapter_colormask[82] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -3929,11 +3736,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_chapter_colormask
-
-	var_1_40[83] = {
+	pg.base.world_chapter_colormask[83] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4045,11 +3848,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_chapter_colormask
-
-	var_1_41[84] = {
+	pg.base.world_chapter_colormask[84] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4160,11 +3959,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_chapter_colormask
-
-	var_1_42[85] = {
+	pg.base.world_chapter_colormask[85] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4276,11 +4071,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_chapter_colormask
-
-	var_1_43[91] = {
+	pg.base.world_chapter_colormask[91] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4399,11 +4190,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_chapter_colormask
-
-	var_1_44[92] = {
+	pg.base.world_chapter_colormask[92] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4501,11 +4288,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_chapter_colormask
-
-	var_1_45[93] = {
+	pg.base.world_chapter_colormask[93] = {
 		world = 1,
 		locked_icon = 1,
 		port_map_icon = 0,
@@ -4608,11 +4391,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_chapter_colormask
-
-	var_1_46[94] = {
+	pg.base.world_chapter_colormask[94] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4710,11 +4489,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_chapter_colormask
-
-	var_1_47[95] = {
+	pg.base.world_chapter_colormask[95] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4806,11 +4581,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_chapter_colormask
-
-	var_1_48[101] = {
+	pg.base.world_chapter_colormask[101] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -4906,11 +4677,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_chapter_colormask
-
-	var_1_49[102] = {
+	pg.base.world_chapter_colormask[102] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5006,11 +4773,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_chapter_colormask
-
-	var_1_50[103] = {
+	pg.base.world_chapter_colormask[103] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5106,11 +4869,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_chapter_colormask
-
-	var_1_51[104] = {
+	pg.base.world_chapter_colormask[104] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5207,11 +4966,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_chapter_colormask
-
-	var_1_52[105] = {
+	pg.base.world_chapter_colormask[105] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5318,11 +5073,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_chapter_colormask
-
-	var_1_53[106] = {
+	pg.base.world_chapter_colormask[106] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5417,11 +5168,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_chapter_colormask
-
-	var_1_54[111] = {
+	pg.base.world_chapter_colormask[111] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5520,11 +5267,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_chapter_colormask
-
-	var_1_55[112] = {
+	pg.base.world_chapter_colormask[112] = {
 		world = 1,
 		locked_icon = 1,
 		port_map_icon = 0,
@@ -5624,11 +5367,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_chapter_colormask
-
-	var_1_56[113] = {
+	pg.base.world_chapter_colormask[113] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5738,11 +5477,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_chapter_colormask
-
-	var_1_57[114] = {
+	pg.base.world_chapter_colormask[114] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5845,11 +5580,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_chapter_colormask
-
-	var_1_58[121] = {
+	pg.base.world_chapter_colormask[121] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -5945,11 +5676,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_chapter_colormask
-
-	var_1_59[122] = {
+	pg.base.world_chapter_colormask[122] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6050,11 +5777,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_chapter_colormask
-
-	var_1_60[123] = {
+	pg.base.world_chapter_colormask[123] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6147,11 +5870,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_chapter_colormask
-
-	var_1_61[124] = {
+	pg.base.world_chapter_colormask[124] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6248,11 +5967,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_chapter_colormask
-
-	var_1_62[125] = {
+	pg.base.world_chapter_colormask[125] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6346,11 +6061,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_chapter_colormask
-
-	var_1_63[131] = {
+	pg.base.world_chapter_colormask[131] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6457,11 +6168,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_chapter_colormask
-
-	var_1_64[132] = {
+	pg.base.world_chapter_colormask[132] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6565,11 +6272,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_chapter_colormask
-
-	var_1_65[133] = {
+	pg.base.world_chapter_colormask[133] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6670,11 +6373,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_chapter_colormask
-
-	var_1_66[134] = {
+	pg.base.world_chapter_colormask[134] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6783,11 +6482,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_chapter_colormask
-
-	var_1_67[135] = {
+	pg.base.world_chapter_colormask[135] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6891,11 +6586,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_chapter_colormask
-
-	var_1_68[141] = {
+	pg.base.world_chapter_colormask[141] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -6999,11 +6690,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_chapter_colormask
-
-	var_1_69[142] = {
+	pg.base.world_chapter_colormask[142] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7105,11 +6792,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_chapter_colormask
-
-	var_1_70[143] = {
+	pg.base.world_chapter_colormask[143] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7210,11 +6893,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_chapter_colormask
-
-	var_1_71[144] = {
+	pg.base.world_chapter_colormask[144] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7312,11 +6991,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_chapter_colormask
-
-	var_1_72[151] = {
+	pg.base.world_chapter_colormask[151] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7412,11 +7087,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_chapter_colormask
-
-	var_1_73[152] = {
+	pg.base.world_chapter_colormask[152] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7512,11 +7183,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_chapter_colormask
-
-	var_1_74[153] = {
+	pg.base.world_chapter_colormask[153] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7613,11 +7280,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_chapter_colormask
-
-	var_1_75[154] = {
+	pg.base.world_chapter_colormask[154] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7667,11 +7330,7 @@ var_0_3.base.world_chapter_colormask = {}
 		cryptic_target = {},
 		target_drop_show = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_chapter_colormask
-
-	var_1_76[155] = {
+	pg.base.world_chapter_colormask[155] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7769,11 +7428,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_chapter_colormask
-
-	var_1_77[156] = {
+	pg.base.world_chapter_colormask[156] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7876,11 +7531,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_chapter_colormask
-
-	var_1_78[157] = {
+	pg.base.world_chapter_colormask[157] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -7982,11 +7633,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_chapter_colormask
-
-	var_1_79[158] = {
+	pg.base.world_chapter_colormask[158] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,
@@ -8082,8 +7729,7 @@ var_0_3.base.world_chapter_colormask = {}
 			}
 		}
 	}
-	pg = var_1_79
-	var_1_79.base.world_chapter_colormask[159] = {
+	pg.base.world_chapter_colormask[159] = {
 		world = 1,
 		locked_icon = 0,
 		port_map_icon = 0,

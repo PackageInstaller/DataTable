@@ -1,134 +1,47 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainEventMsgLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "AuctionGameMainEventMsgLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "AuctionGameMainEventMsgUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:OverlayPanel(arg_2_0._tf, {
 		pbList = {
 			arg_2_0.uiBgBtn
 		}
 	})
-
-	setText = var_1
-
-	local var_2_0 = arg_2_0.uiCancelText
-
-	i18n = var_4
-
-	var_1(var_2_0, var_4("auction_cancel"))
-
-	setText = var_1
-
-	local var_2_1 = arg_2_0.uiConfirmText
-
-	i18n = var_4
-
-	var_1(var_2_1, var_4("auction_confirm"))
-
-	onButton = var_1
-
-	local var_2_2 = arg_2_0
-	local var_2_3 = arg_2_0.uiBgBtn
-
-	local function var_2_4()
-		local var_3_0 = arg_2_0
-
-		var_0.closeView(var_3_0)
+	setText(arg_2_0.uiCancelText, i18n("auction_cancel"))
+	setText(arg_2_0.uiConfirmText, i18n("auction_confirm"))
+	onButton(arg_2_0, arg_2_0.uiBgBtn, function()
+		arg_2_0:closeView()
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_2_2, var_2_3, var_2_4, var_6)
-
-	onButton = var_1
-
-	local var_2_5 = arg_2_0
-	local var_2_6 = arg_2_0.uiCloseBtn
-
-	local function var_2_7()
-		local var_4_0 = arg_2_0
-
-		var_0.closeView(var_4_0)
+	end, SOUND_BACK)
+	onButton(arg_2_0, arg_2_0.uiCloseBtn, function()
+		arg_2_0:closeView()
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_2_5, var_2_6, var_2_7, var_6)
-
-	onButton = var_1
-
-	local var_2_8 = arg_2_0
-	local var_2_9 = arg_2_0.uiCancelBtn
-
-	local function var_2_10()
-		local var_5_0 = arg_2_0
-
-		var_0.closeView(var_5_0)
+	end, SOUND_BACK)
+	onButton(arg_2_0, arg_2_0.uiCancelBtn, function()
+		arg_2_0:closeView()
 
 		return
-	end
-
-	SOUND_BACK = var_6
-
-	var_1(var_2_8, var_2_9, var_2_10, var_6)
-
-	onButton = var_1
-
-	local var_2_11 = arg_2_0
-	local var_2_12 = arg_2_0.uiConfirmBtn
-
-	local function var_2_13()
-		existCall = var_2_10000
-
-		var_2_10000(arg_2_0.contextData.callback)
-
-		local var_6_0 = arg_2_0
-
-		var_0.closeView(var_6_0)
+	end, SOUND_BACK)
+	onButton(arg_2_0, arg_2_0.uiConfirmBtn, function()
+		existCall(arg_2_0.contextData.callback)
+		arg_2_0:closeView()
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_2_11, var_2_12, var_2_13, var_6)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.didEnter(arg_7_0)
-	local var_7_0 = arg_7_0.contextData.eventID
-
-	pg = var_1_10002
-
-	local var_7_1 = var_1_10002.auction_event[var_7_0]
-
-	setText = var_1_10003
-
-	var_1_10003(arg_7_0.uiNameText, var_7_1.name)
-
-	setText = var_1_10003
-
-	var_1_10003(arg_7_0.uiDescText, var_7_1.describe)
-
-	LoadSpriteAsync = var_1_10003
-
-	var_1_10003(var_7_1.icon, function(arg_8_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_7_0.uiIconImage) then
+function var_0_0.didEnter(arg_7_0)
+	setText(arg_7_0.uiNameText, pg.auction_event[arg_7_0.contextData.eventID].name)
+	setText(arg_7_0.uiDescText, pg.auction_event[arg_7_0.contextData.eventID].describe)
+	LoadSpriteAsync(pg.auction_event[arg_7_0.contextData.eventID].icon, function(arg_8_0)
+		if not IsNil(arg_7_0.uiIconImage) then
 			arg_7_0.uiIconImage.sprite = arg_8_0
 		end
 
@@ -138,10 +51,10 @@ function var_0_1.didEnter(arg_7_0)
 	return
 end
 
-function var_0_1.willExit(arg_9_0)
+function var_0_0.willExit(arg_9_0)
 	arg_9_0:UnOverlayPanel(arg_9_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

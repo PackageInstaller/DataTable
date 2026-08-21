@@ -1,14 +1,8 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSelfCardLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "IslandSelfCardLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-var_0_1.LABEL_SHOW_CNT = 2
-var_0_1.ACHV_SHOW_CNT = 4
-var_0_1.COLORS = {
+var_0_0.LABEL_SHOW_CNT = 2
+var_0_0.ACHV_SHOW_CNT = 4
+var_0_0.COLORS = {
 	"#A38759",
 	"#AB7B7B",
 	"#B1B284",
@@ -17,52 +11,28 @@ var_0_1.COLORS = {
 	"#9D87A9"
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandSelfCardUI"
 end
 
-function var_0_1.preload(arg_2_0, arg_2_1)
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
+function var_0_0.preload(arg_2_0, arg_2_1)
+	local var_2_0 = getProxy(PlayerProxy):getData().id
 
-	local var_2_0 = var_1_10002(var_1_10004)
-	local var_2_1 = var_2.getData(var_2_0).id
-
-	seriesAsync = var_1_10003
-
-	var_1_10003({
+	seriesAsync({
 		function(arg_3_0)
-			getProxy = var_2_10001
-			IslandProxy = var_2_10003
+			local var_3_0 = getProxy(IslandProxy):GetIsland()
 
-			local var_3_0 = var_2_10001(var_2_10003)
-
-			if var_1.GetIsland(var_3_0) then
-				var_2_10002 = arg_2_0
-				var_2_10002.island = var_1
+			if var_3_0 then
+				arg_2_0.island = var_3_0
 
 				arg_3_0()
 			else
-				pg = var_2_10002
-
-				local var_3_1 = var_2_10002.m02
-				local var_3_2 = var_2.sendNotification
-
-				GAME = var_2_10005
-
-				var_3_2(var_3_1, var_2_10005.ISLAND_GET_DATA, {
+				pg.m02:sendNotification(GAME.ISLAND_GET_DATA, {
 					isCardRequest = true,
-					id = var_2_1,
+					id = var_2_0,
 					list = {},
 					callback = function()
-						local var_4_0 = arg_2_0
-
-						getProxy = var_3_10001
-						IslandProxy = var_3_10003
-
-						local var_4_1 = var_3_10001(var_3_10003)
-
-						var_4_0.island = var_1.GetIsland(var_4_1)
+						arg_2_0.island = getProxy(IslandProxy):GetIsland()
 
 						arg_3_0()
 
@@ -74,15 +44,8 @@ function var_0_1.preload(arg_2_0, arg_2_1)
 			return
 		end,
 		function(arg_5_0)
-			pg = var_2_10001
-
-			local var_5_0 = var_2_10001.m02
-			local var_5_1 = var_1.sendNotification
-
-			GAME = var_2_10004
-
-			var_5_1(var_5_0, var_2_10004.ISLAND_GET_CARD_DATA, {
-				userId = var_2_1,
+			pg.m02:sendNotification(GAME.ISLAND_GET_CARD_DATA, {
+				userId = var_2_0,
 				callback = function(arg_6_0)
 					arg_2_0.card = arg_6_0
 
@@ -103,316 +66,124 @@ function var_0_1.preload(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.init(arg_8_0)
-	local var_8_0 = arg_8_0._tf
-	local var_8_1 = var_1.GetComponent
+function var_0_0.init(arg_8_0)
+	arg_8_0.uiAnim = arg_8_0._tf:GetComponent(typeof(Animation))
+	arg_8_0.uiAnimEvent = arg_8_0._tf:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_1_10004
-	Animation = var_1_10006
-	arg_8_0.uiAnim = var_8_1(var_8_0, var_1_10004(var_1_10006))
-
-	local var_8_2 = arg_8_0._tf
-	local var_8_3 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_8_0.uiAnimEvent = var_8_3(var_8_2, var_4(var_1_10006))
-
-	local var_8_4 = arg_8_0.uiAnimEvent
-
-	var_1.SetEndEvent(var_8_4, function()
+	arg_8_0.uiAnimEvent:SetEndEvent(function()
 		arg_8_0.playingHideAnim = false
 
-		local var_9_0 = arg_8_0
-
-		var_0.closeView(var_9_0, arg_8_0)
+		arg_8_0.closeView(arg_8_0, arg_8_0)
 
 		return
 	end)
+	setText(arg_8_0._tf:Find("tip"), i18n("island_card_close"))
 
-	setText = var_1
+	local var_8_0 = arg_8_0._tf:Find("panel")
 
-	local var_8_5 = arg_8_0._tf
-	local var_8_6 = var_3.Find(var_8_5, "tip")
+	arg_8_0.photoTF = var_8_0:Find("photo/Image")
+	arg_8_0.photoSwitchBtn = var_8_0:Find("photo/switch")
+	arg_8_0.likeTF = var_8_0:Find("photo/like")
+	arg_8_0.labelsTF = var_8_0:Find("labels")
+	arg_8_0.visitTF = var_8_0:Find("btns/visit/Text")
+	arg_8_0.diyBtn = var_8_0:Find("btns/diy")
+	arg_8_0.whitelistBtn = var_8_0:Find("btns/whitelist")
+	arg_8_0.blacklistBtn = var_8_0:Find("btns/blacklist")
+	arg_8_0.levelTF = var_8_0:Find("level")
+	arg_8_0.wordTF = var_8_0:Find("word")
+	arg_8_0.nameTF = var_8_0:Find("name")
+	arg_8_0.addBtn = arg_8_0.nameTF:Find("add")
+	arg_8_0.removeBtn = arg_8_0.nameTF:Find("remove")
+	arg_8_0.editBtn = arg_8_0.nameTF:Find("edit")
+	arg_8_0.editPanel = arg_8_0._tf:Find("editPanel")
+	arg_8_0.editNameBtn = arg_8_0.editPanel:Find("content/name")
 
-	i18n = var_4
+	setText(arg_8_0.editNameBtn:Find("Text"), i18n("island_card_edit_name"))
 
-	var_1(var_8_6, var_4("island_card_close"))
+	arg_8_0.editWordBtn = arg_8_0.editPanel:Find("content/word")
 
-	local var_8_7 = arg_8_0._tf
-	local var_8_8 = var_1.Find(var_8_7, "panel")
+	setText(arg_8_0.editWordBtn:Find("Text"), i18n("island_card_edit_word"))
 
-	arg_8_0.photoTF = var_1.Find(var_8_8, "photo/Image")
-	arg_8_0.photoSwitchBtn = var_1:Find("photo/switch")
-	arg_8_0.likeTF = var_1:Find("photo/like")
-	arg_8_0.labelsTF = var_1:Find("labels")
-	arg_8_0.visitTF = var_1:Find("btns/visit/Text")
-	arg_8_0.diyBtn = var_1:Find("btns/diy")
-	arg_8_0.whitelistBtn = var_1:Find("btns/whitelist")
-	arg_8_0.blacklistBtn = var_1:Find("btns/blacklist")
-	arg_8_0.levelTF = var_1:Find("level")
-	arg_8_0.wordTF = var_1:Find("word")
-	arg_8_0.nameTF = var_1:Find("name")
+	arg_8_0.shipTF = var_8_0:Find("counts/ship/Text")
+	arg_8_0.achvTF = var_8_0:Find("counts/achv/Text")
+	arg_8_0.bookTF = var_8_0:Find("counts/book/Text")
+	arg_8_0.achvUIList = UIItemList.New(var_8_0:Find("achvs"), var_8_0:Find("achvs/tpl"))
 
-	local var_8_9 = arg_8_0.nameTF
-
-	arg_8_0.addBtn = var_2.Find(var_8_9, "add")
-
-	local var_8_10 = arg_8_0.nameTF
-
-	arg_8_0.removeBtn = var_2.Find(var_8_10, "remove")
-
-	local var_8_11 = arg_8_0.nameTF
-
-	arg_8_0.editBtn = var_2.Find(var_8_11, "edit")
-
-	local var_8_12 = arg_8_0._tf
-
-	arg_8_0.editPanel = var_2.Find(var_8_12, "editPanel")
-
-	local var_8_13 = arg_8_0.editPanel
-
-	arg_8_0.editNameBtn = var_2.Find(var_8_13, "content/name")
-	setText = var_2
-
-	local var_8_14 = arg_8_0.editNameBtn
-	local var_8_15 = var_4.Find(var_8_14, "Text")
-
-	i18n = var_5
-
-	var_2(var_8_15, var_5("island_card_edit_name"))
-
-	local var_8_16 = arg_8_0.editPanel
-
-	arg_8_0.editWordBtn = var_2.Find(var_8_16, "content/word")
-	setText = var_2
-
-	local var_8_17 = arg_8_0.editWordBtn
-	local var_8_18 = var_4.Find(var_8_17, "Text")
-
-	i18n = var_5
-
-	var_2(var_8_18, var_5("island_card_edit_word"))
-
-	arg_8_0.shipTF = var_1:Find("counts/ship/Text")
-	arg_8_0.achvTF = var_1:Find("counts/achv/Text")
-	arg_8_0.bookTF = var_1:Find("counts/book/Text")
-	UIItemList = var_2
-	arg_8_0.achvUIList = var_2.New(var_1:Find("achvs"), var_1:Find("achvs/tpl"))
-	setText = var_2
-
-	local var_8_19 = var_1:Find("achvs/tpl/empty/Text")
-
-	i18n = var_5
-
-	var_2(var_8_19, var_5("island_card_no_achv_self"))
+	setText(var_8_0:Find("achvs/tpl/empty/Text"), i18n("island_card_no_achv_self"))
 	arg_8_0:InitBoxs()
 
 	return
 end
 
-function var_0_1.InitBoxs(arg_10_0)
-	IslandEditCardNameBox = var_1_10001
-	arg_10_0.editNameBox = var_1_10001.New(arg_10_0._tf, arg_10_0.event)
-	IslandEditCardWordBox = var_1
-	arg_10_0.editWordBox = var_1.New(arg_10_0._tf, arg_10_0.event)
-	IslandSetCardPhotoBox = var_1
-	arg_10_0.setPhotoBox = var_1.New(arg_10_0._tf, arg_10_0.event)
-	IslandSetCardAchvsBox = var_1
-	arg_10_0.setAchvsBox = var_1.New(arg_10_0._tf, arg_10_0.event)
-	IslandShowCardLabelBox = var_1
-	arg_10_0.showLabelBox = var_1.New(arg_10_0._tf, arg_10_0.event)
+function var_0_0.InitBoxs(arg_10_0)
+	arg_10_0.editNameBox = IslandEditCardNameBox.New(arg_10_0._tf, arg_10_0.event)
+	arg_10_0.editWordBox = IslandEditCardWordBox.New(arg_10_0._tf, arg_10_0.event)
+	arg_10_0.setPhotoBox = IslandSetCardPhotoBox.New(arg_10_0._tf, arg_10_0.event)
+	arg_10_0.setAchvsBox = IslandSetCardAchvsBox.New(arg_10_0._tf, arg_10_0.event)
+	arg_10_0.showLabelBox = IslandShowCardLabelBox.New(arg_10_0._tf, arg_10_0.event)
 
 	return
 end
 
-function var_0_1.didEnter(arg_11_0)
+function var_0_0.didEnter(arg_11_0)
 	if not arg_11_0.contextData.isIslandPage then
-		pg = var_1
-
-		local var_11_0 = var_1.UIMgr.GetInstance()
-
-		var_1.BlurPanel(var_11_0, arg_11_0._tf)
+		pg.UIMgr.GetInstance():BlurPanel(arg_11_0._tf)
 	end
 
-	onButton = var_1
-
-	local var_11_1 = arg_11_0
-	local var_11_2 = arg_11_0._tf
-	local var_11_3 = var_4.Find(var_11_2, "panel/help")
-
-	local function var_11_4()
-		pg = var_2_10000
-
-		local var_12_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_12_1 = var_0.ShowMsgBox
-		local var_12_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_12_2.type = var_2_10004
-		pg = var_2_10004
-		var_12_2.helps = var_2_10004.gametip.island_helpbtn_card.tip
-
-		var_12_1(var_12_0, var_12_2)
+	onButton(arg_11_0, arg_11_0._tf:Find("panel/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.island_helpbtn_card.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_11_2
-
-	var_1(var_11_1, var_11_3, var_11_4, var_11_2)
-
-	onButton = var_1
-
-	local var_11_5 = arg_11_0
-	local var_11_6 = arg_11_0._tf
-	local var_11_7 = var_4.Find(var_11_6, "close")
-
-	local function var_11_8()
-		local var_13_0 = arg_11_0
-
-		var_0.PlayHideAnim(var_13_0)
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0._tf:Find("close"), function()
+		arg_11_0:PlayHideAnim()
 
 		return
-	end
-
-	SFX_PANEL = var_11_6
-
-	var_1(var_11_5, var_11_7, var_11_8, var_11_6)
-
-	onButton = var_1
-
-	local var_11_9 = arg_11_0
-	local var_11_10 = arg_11_0.photoSwitchBtn
-
-	local function var_11_11()
-		local var_14_0 = arg_11_0.island
-		local var_14_1 = var_0.GetCardDiyAgency(var_14_0)
-		local var_14_2 = var_0.GetIds(var_14_1)
-		local var_14_3 = arg_11_0.setPhotoBox
-
-		var_1.ExecuteAction(var_14_3, "Show", var_14_2, arg_11_0.photoId)
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.photoSwitchBtn, function()
+		arg_11_0.setPhotoBox:ExecuteAction("Show", arg_11_0.island:GetCardDiyAgency():GetIds(), arg_11_0.photoId)
 
 		return
-	end
-
-	SFX_PANEL = var_11_6
-
-	var_1(var_11_9, var_11_10, var_11_11, var_11_6)
-
-	onButton = var_1
-
-	local var_11_12 = arg_11_0
-	local var_11_13 = arg_11_0.editBtn
-
-	local function var_11_14()
-		local var_15_0 = arg_11_0
-
-		var_0.ShowEditPanel(var_15_0)
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.editBtn, function()
+		arg_11_0:ShowEditPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_11_6
-
-	var_1(var_11_12, var_11_13, var_11_14, var_11_6)
-
-	onButton = var_1
-
-	local var_11_15 = arg_11_0
-	local var_11_16 = arg_11_0.editPanel
-	local var_11_17 = var_4.Find(var_11_16, "close")
-
-	local function var_11_18()
-		local var_16_0 = arg_11_0
-
-		var_0.HideEditPanel(var_16_0)
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.editPanel:Find("close"), function()
+		arg_11_0:HideEditPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_11_16
-
-	var_1(var_11_15, var_11_17, var_11_18, var_11_16)
-
-	onButton = var_1
-
-	local var_11_19 = arg_11_0
-	local var_11_20 = arg_11_0.editNameBtn
-
-	local function var_11_21()
-		local var_17_0 = arg_11_0.editNameBox
-
-		var_0.ExecuteAction(var_17_0, "Show")
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.editNameBtn, function()
+		arg_11_0.editNameBox:ExecuteAction("Show")
 
 		return
-	end
-
-	SFX_PANEL = var_11_16
-
-	var_1(var_11_19, var_11_20, var_11_21, var_11_16)
-
-	onButton = var_1
-
-	local var_11_22 = arg_11_0
-	local var_11_23 = arg_11_0.editWordBtn
-
-	local function var_11_24()
-		local var_18_0 = arg_11_0.editWordBox
-
-		var_0.ExecuteAction(var_18_0, "Show")
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.editWordBtn, function()
+		arg_11_0.editWordBox:ExecuteAction("Show")
 
 		return
-	end
-
-	SFX_PANEL = var_11_16
-
-	var_1(var_11_22, var_11_23, var_11_24, var_11_16)
+	end, SFX_PANEL)
 	arg_11_0:InitAchvUIList()
 	arg_11_0:Flush()
 
 	return
 end
 
-function var_0_1.InitAchvUIList(arg_19_0)
-	local var_19_0 = arg_19_0.achvUIList
-
-	var_1.make(var_19_0, function(arg_20_0, arg_20_1, arg_20_2)
-		UIItemList = var_2_10003
-
-		if arg_20_0 == var_2_10003.EventInit then
-			onButton = var_3
-
-			local var_20_0 = arg_19_0
-			local var_20_1 = arg_20_2
-
-			local function var_20_2()
-				local var_21_0 = arg_19_0.island
-				local var_21_1 = var_0.GetAchievementAgency(var_21_0)
-				local var_21_2 = var_0.GetGotGroupMaxStageList(var_21_1)
-				local var_21_3 = arg_19_0.setAchvsBox
-				local var_21_4 = var_1.ExecuteAction
-				local var_21_5 = "Show"
-				local var_21_6 = var_21_2
-
-				Clone = var_3_10006
-
-				var_21_4(var_21_3, var_21_5, var_21_6, var_3_10006(arg_19_0.card.achvList))
+function var_0_0.InitAchvUIList(arg_19_0)
+	arg_19_0.achvUIList:make(function(arg_20_0, arg_20_1, arg_20_2)
+		if arg_20_0 == UIItemList.EventInit then
+			onButton(arg_19_0, arg_20_2, function()
+				arg_19_0.setAchvsBox:ExecuteAction("Show", arg_19_0.island:GetAchievementAgency():GetGotGroupMaxStageList(), Clone(arg_19_0.card.achvList))
 
 				return
-			end
-
-			SFX_PANEL = var_2_10008
-
-			var_3(var_20_0, var_20_1, var_20_2, var_2_10008)
-		else
-			UIItemList = var_3
-
-			if arg_20_0 == var_3.EventUpdate then
-				local var_20_3 = arg_19_0
-
-				var_3.UpdataAchvItem(var_20_3, arg_20_1, arg_20_2)
-			end
+			end, SFX_PANEL)
+		elseif arg_20_0 == UIItemList.EventUpdate then
+			arg_19_0:UpdataAchvItem(arg_20_1, arg_20_2)
 		end
 
 		return
@@ -421,70 +192,33 @@ function var_0_1.InitAchvUIList(arg_19_0)
 	return
 end
 
-function var_0_1.ShowEditPanel(arg_22_0)
-	local var_22_0 = arg_22_0._tf
-	local var_22_1 = var_1.InverseTransformPoint(var_22_0, arg_22_0.editBtn.position)
-
-	setAnchoredPosition = var_1_10002
-
-	local var_22_2 = arg_22_0.editPanel
-
-	var_1_10002(var_4.Find(var_22_2, "content"), var_22_1)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_22_0.editPanel, true)
+function var_0_0.ShowEditPanel(arg_22_0)
+	setAnchoredPosition(arg_22_0.editPanel:Find("content"), (arg_22_0._tf:InverseTransformPoint(arg_22_0.editBtn.position)))
+	setActive(arg_22_0.editPanel, true)
 
 	return
 end
 
-function var_0_1.HideEditPanel(arg_23_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_23_0.editPanel, false)
+function var_0_0.HideEditPanel(arg_23_0)
+	setActive(arg_23_0.editPanel, false)
 
 	return
 end
 
-function var_0_1.UpdataAchvItem(arg_24_0, arg_24_1, arg_24_2)
-	local var_24_0 = arg_24_0.card.achvList[arg_24_1 + 1]
+function var_0_0.UpdataAchvItem(arg_24_0, arg_24_1, arg_24_2)
+	setActive(arg_24_2:Find("empty"), not arg_24_0.card.achvList[arg_24_1 + 1])
+	setActive(arg_24_2:Find("content"), arg_24_0.card.achvList[arg_24_1 + 1])
 
-	setActive = var_4
-
-	var_4(arg_24_2:Find("empty"), not var_24_0)
-
-	setActive = var_4
-
-	var_4(arg_24_2:Find("content"), var_24_0)
-
-	if var_24_0 then
-		pg = var_4
-
-		local var_24_1 = var_4.island_achievement[var_24_0]
-
-		LoadImageSpriteAtlasAsync = var_1_10005
-
-		var_1_10005("islandachievement", "achv_stage_" .. var_24_1.stage, arg_24_2:Find("content/Image"), true)
-
-		setText = var_1_10005
-
-		var_1_10005(arg_24_2:Find("content/Text"), var_24_1.name)
+	if arg_24_0.card.achvList[arg_24_1 + 1] then
+		LoadImageSpriteAtlasAsync("islandachievement", "achv_stage_" .. pg.island_achievement[arg_24_0.card.achvList[arg_24_1 + 1]].stage, arg_24_2:Find("content/Image"), true)
+		setText(arg_24_2:Find("content/Text"), pg.island_achievement[arg_24_0.card.achvList[arg_24_1 + 1]].name)
 	end
 
 	return
 end
 
-function var_0_1.Flush(arg_25_0)
-	local var_25_0 = arg_25_0.card
-
-	getProxy = var_1_10002
-	IslandProxy = var_1_10004
-
-	local var_25_1 = var_1_10002(var_1_10004)
-	local var_25_2 = var_2.GetIsland(var_25_1)
-	local var_25_3 = var_2.GetAchievementAgency(var_25_2)
-
-	var_25_0.achvList = var_2.UpdataAchLv(var_25_3, arg_25_0.card.achvList)
+function var_0_0.Flush(arg_25_0)
+	arg_25_0.card.achvList = getProxy(IslandProxy):GetIsland():GetAchievementAgency():UpdataAchLv(arg_25_0.card.achvList)
 
 	arg_25_0:UpdataPhoto()
 	arg_25_0:UpdataLabels()
@@ -493,35 +227,20 @@ function var_0_1.Flush(arg_25_0)
 	return
 end
 
-function var_0_1.UpdataPhoto(arg_26_0)
-	tonumber = var_1_10001
-	arg_26_0.photoId = var_1_10001(arg_26_0.card.photoStr)
+function var_0_0.UpdataPhoto(arg_26_0)
+	arg_26_0.photoId = tonumber(arg_26_0.card.photoStr)
 
 	if arg_26_0.photoId then
-		pg = var_1
-
-		local var_26_0 = var_1.island_card_diy[arg_26_0.photoId].resource
-
-		LoadImageSpriteAsync = var_2
-
-		var_2(var_26_0, arg_26_0.photoTF, true)
+		LoadImageSpriteAsync(pg.island_card_diy[arg_26_0.photoId].resource, arg_26_0.photoTF, true)
 	end
 
 	return
 end
 
-function var_0_1.UpdataLabels(arg_27_0)
-	local var_27_0 = arg_27_0.card
+function var_0_0.UpdataLabels(arg_27_0)
+	arg_27_0.labels = arg_27_0.card:GetLabelList()
 
-	arg_27_0.labels = var_1.GetLabelList(var_27_0)
-	table = var_1
-
-	local var_27_1 = var_1.sort
-	local var_27_2 = arg_27_0.labels
-
-	CompareFuncs = var_1_10004
-
-	var_27_1(var_27_2, var_1_10004({
+	table.sort(arg_27_0.labels, CompareFuncs({
 		function(arg_28_0)
 			return -arg_28_0.num
 		end,
@@ -530,20 +249,17 @@ function var_0_1.UpdataLabels(arg_27_0)
 		end
 	}))
 
-	for iter_27_0 = 1, var_0_1.LABEL_SHOW_CNT + 1 do
-		local var_27_3 = arg_27_0.labelsTF
-		local var_27_4 = var_5.GetChild(var_27_3, iter_27_0 - 1)
-		local var_27_5 = iter_27_0 <= #arg_27_0.labels + 1
+	for iter_27_0 = 1, var_0_0.LABEL_SHOW_CNT + 1 do
+		local var_27_0 = arg_27_0.labelsTF:GetChild(iter_27_0 - 1)
+		local var_27_1 = iter_27_0 <= #arg_27_0.labels + 1
 
-		setActive = var_27_3
+		setActive(var_27_0, iter_27_0 <= #arg_27_0.labels + 1)
 
-		var_27_3(var_27_4, var_27_5)
-
-		if var_27_5 then
+		if var_27_1 then
 			if iter_27_0 <= #arg_27_0.labels then
-				arg_27_0:UpdateNoramlLabel(var_27_4, arg_27_0.labels[iter_27_0])
+				arg_27_0:UpdateNoramlLabel(var_27_0, arg_27_0.labels[iter_27_0])
 			else
-				arg_27_0:UpdateGrayLabel(var_27_4)
+				arg_27_0:UpdateGrayLabel(var_27_0)
 			end
 		end
 	end
@@ -551,188 +267,80 @@ function var_0_1.UpdataLabels(arg_27_0)
 	return
 end
 
-function var_0_1.UpdateNoramlLabel(arg_30_0, arg_30_1, arg_30_2)
-	pg = var_1_10003
-
-	local var_30_0 = var_1_10003.island_card_label[arg_30_2.id]
-
-	LoadImageSpriteAtlasAsync = var_4
-
-	var_4("ui/islandcardui_atlas", "label_bg_" .. var_30_0.color, arg_30_1, true)
-
-	local var_30_1 = var_0_1.COLORS[var_30_0.color]
-
-	setTextColor = var_5
-
-	local var_30_2 = arg_30_1:Find("name")
-
-	Color = var_8
-
-	var_5(var_30_2, var_8.NewHex(var_30_1))
-
-	setTextColor = var_5
-
-	local var_30_3 = arg_30_1:Find("value")
-
-	Color = var_8
-
-	var_5(var_30_3, var_8.NewHex(var_30_1))
-
-	setText = var_5
-
-	var_5(arg_30_1:Find("name"), var_30_0.name)
-
-	setText = var_5
-
-	var_5(arg_30_1:Find("value"), arg_30_2.num)
-
-	removeOnButton = var_5
-
-	var_5(arg_30_1)
+function var_0_0.UpdateNoramlLabel(arg_30_0, arg_30_1, arg_30_2)
+	LoadImageSpriteAtlasAsync("ui/islandcardui_atlas", "label_bg_" .. pg.island_card_label[arg_30_2.id].color, arg_30_1, true)
+	setTextColor(arg_30_1:Find("name"), Color.NewHex(var_0_0.COLORS[pg.island_card_label[arg_30_2.id].color]))
+	setTextColor(arg_30_1:Find("value"), Color.NewHex(var_0_0.COLORS[pg.island_card_label[arg_30_2.id].color]))
+	setText(arg_30_1:Find("name"), pg.island_card_label[arg_30_2.id].name)
+	setText(arg_30_1:Find("value"), arg_30_2.num)
+	removeOnButton(arg_30_1)
 
 	return
 end
 
-function var_0_1.UpdateGrayLabel(arg_31_0, arg_31_1)
-	LoadImageSpriteAtlasAsync = var_1_10002
-
-	var_1_10002("ui/islandcardui_atlas", "bg_label_gray", arg_31_1, true)
+function var_0_0.UpdateGrayLabel(arg_31_0, arg_31_1)
+	LoadImageSpriteAtlasAsync("ui/islandcardui_atlas", "bg_label_gray", arg_31_1, true)
 
 	local var_31_0 = #arg_31_0.labels == 0
 
-	setTextColor = var_1_10003
+	setTextColor(arg_31_1:Find("name"), Color.NewHex("#F7F7F7"))
 
-	local var_31_1 = arg_31_1:Find("name")
+	local var_31_1 = var_31_0 and i18n("island_card_no_label") or i18n("island_card_view_detaills")
 
-	Color = var_6
+	setText(arg_31_1:Find("name"), var_31_1)
+	setText(arg_31_1:Find("value"), "")
 
-	var_1_10003(var_31_1, var_6.NewHex("#F7F7F7"))
+	if not var_31_0 then
+		onButton(arg_31_0, arg_31_1, function()
+			arg_31_0.showLabelBox:ExecuteAction("Show", arg_31_0.labels)
 
-	setText = var_1_10003
-
-	local var_31_2 = arg_31_1:Find("name")
-
-	if var_31_0 then
-		i18n = var_31_3
-
-		local var_31_3
-
-		if not var_31_3("island_card_no_label") then
-			i18n = var_31_3
-			var_31_3 = var_31_3("island_card_view_detaills")
-		end
-
-		var_1_10003(var_31_2, var_31_3)
-
-		setText = var_1_10003
-
-		var_1_10003(arg_31_1:Find("value"), "")
-
-		if not var_31_0 then
-			onButton = var_1_10003
-
-			local var_31_4 = arg_31_0
-			local var_31_5 = arg_31_1
-
-			local function var_31_6()
-				local var_32_0 = arg_31_0.showLabelBox
-
-				var_0.ExecuteAction(var_32_0, "Show", arg_31_0.labels)
-
-				return
-			end
-
-			SFX_PANEL = var_8
-
-			var_1_10003(var_31_4, var_31_5, var_31_6, var_8)
-		else
-			removeOnButton = var_1_10003
-
-			var_1_10003(arg_31_1)
-		end
-
-		return
+			return
+		end, SFX_PANEL)
+	else
+		removeOnButton(arg_31_1)
 	end
-end
-
-function var_0_1.UpdataInfos(arg_33_0)
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.nameTF, arg_33_0.card.name)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.levelTF, "Lv." .. arg_33_0.card.level)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.wordTF, arg_33_0.card.word)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.likeTF, arg_33_0.card.likeCnt)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.visitTF, arg_33_0.card.visitCnt)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.shipTF, arg_33_0.card.shipCnt)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.achvTF, arg_33_0.card.achvCnt)
-
-	setText = var_1_10001
-
-	var_1_10001(arg_33_0.bookTF, arg_33_0.card.bookCnt)
-
-	local var_33_0 = arg_33_0.achvUIList
-
-	var_1.align(var_33_0, var_0_1.ACHV_SHOW_CNT)
 
 	return
 end
 
-function var_0_1.OnSetNameDone(arg_34_0, arg_34_1)
+function var_0_0.UpdataInfos(arg_33_0)
+	setText(arg_33_0.nameTF, arg_33_0.card.name)
+	setText(arg_33_0.levelTF, "Lv." .. arg_33_0.card.level)
+	setText(arg_33_0.wordTF, arg_33_0.card.word)
+	setText(arg_33_0.likeTF, arg_33_0.card.likeCnt)
+	setText(arg_33_0.visitTF, arg_33_0.card.visitCnt)
+	setText(arg_33_0.shipTF, arg_33_0.card.shipCnt)
+	setText(arg_33_0.achvTF, arg_33_0.card.achvCnt)
+	setText(arg_33_0.bookTF, arg_33_0.card.bookCnt)
+	arg_33_0.achvUIList:align(var_0_0.ACHV_SHOW_CNT)
+
+	return
+end
+
+function var_0_0.OnSetNameDone(arg_34_0, arg_34_1)
 	arg_34_0:HideEditPanel()
+	arg_34_0.editNameBox:ExecuteAction("Hide")
 
-	local var_34_0 = arg_34_0.editNameBox
+	arg_34_0.card.name = arg_34_1
 
-	var_2.ExecuteAction(var_34_0, "Hide")
-
-	local var_34_1 = arg_34_0.card
-
-	var_34_1.name = arg_34_1
-	setText = var_34_1
-
-	var_34_1(arg_34_0.nameTF, arg_34_0.card.name)
+	setText(arg_34_0.nameTF, arg_34_0.card.name)
 
 	return
 end
 
-function var_0_1.OnSetWordDone(arg_35_0, arg_35_1)
+function var_0_0.OnSetWordDone(arg_35_0, arg_35_1)
 	arg_35_0:HideEditPanel()
+	arg_35_0.editWordBox:ExecuteAction("Hide")
 
-	local var_35_0 = arg_35_0.editWordBox
+	arg_35_0.card.word = arg_35_1
 
-	var_2.ExecuteAction(var_35_0, "Hide")
-
-	local var_35_1 = arg_35_0.card
-
-	var_35_1.word = arg_35_1
-	setText = var_35_1
-
-	var_35_1(arg_35_0.wordTF, arg_35_0.card.word)
+	setText(arg_35_0.wordTF, arg_35_0.card.word)
 
 	return
 end
 
-function var_0_1.OnSetPhotoDone(arg_36_0, arg_36_1)
-	local var_36_0 = arg_36_0.setPhotoBox
-
-	var_2.ExecuteAction(var_36_0, "Hide")
+function var_0_0.OnSetPhotoDone(arg_36_0, arg_36_1)
+	arg_36_0.setPhotoBox:ExecuteAction("Hide")
 
 	arg_36_0.card.photoStr = arg_36_1
 
@@ -741,66 +349,27 @@ function var_0_1.OnSetPhotoDone(arg_36_0, arg_36_1)
 	return
 end
 
-function var_0_1.OnSetAchvsDone(arg_37_0, arg_37_1)
-	local var_37_0 = arg_37_0.setAchvsBox
+function var_0_0.OnSetAchvsDone(arg_37_0, arg_37_1)
+	arg_37_0.setAchvsBox:ExecuteAction("Hide")
 
-	var_2.ExecuteAction(var_37_0, "Hide")
+	arg_37_0.card.achvList = getProxy(IslandProxy):GetIsland():GetAchievementAgency():UpdataAchLv(arg_37_1)
 
-	local var_37_1 = arg_37_0.card
+	arg_37_0.achvUIList:align(var_0_0.ACHV_SHOW_CNT)
 
-	getProxy = var_1_10003
-	IslandProxy = var_5
+	local var_37_0 = {}
 
-	local var_37_2 = var_1_10003(var_5)
-	local var_37_3 = var_3.GetIsland(var_37_2)
-	local var_37_4 = var_3.GetAchievementAgency(var_37_3)
-
-	var_37_1.achvList = var_3.UpdataAchLv(var_37_4, arg_37_1)
-
-	local var_37_5 = arg_37_0.achvUIList
-
-	var_2.align(var_37_5, var_0_1.ACHV_SHOW_CNT)
-
-	local var_37_6 = {}
-	local var_37_7 = arg_37_0.achvUIList
-
-	var_3.eachActive(var_37_7, function(arg_38_0, arg_38_1)
+	arg_37_0.achvUIList:eachActive(function(arg_38_0, arg_38_1)
 		if arg_37_0.card.achvList[arg_38_0 + 1] then
 			local var_38_0 = arg_38_1:Find("content/Image")
-			local var_38_1 = var_3.GetComponent
 
-			typeof = var_2_10007
-			CanvasGroup = var_2_10009
+			arg_38_1:Find("content/Image"):GetComponent(typeof(CanvasGroup)).alpha = 0
 
-			local var_38_2 = var_38_1(var_38_0, var_2_10007(var_2_10009))
+			table.insert(var_37_0, function(arg_39_0)
+				arg_38_1:GetComponent(typeof(Animation)):Play()
 
-			var_38_2.alpha = 0
-			table = var_38_2
+				var_38_0:GetComponent(typeof(CanvasGroup)).alpha = 1
 
-			var_38_2.insert(var_37_6, function(arg_39_0)
-				local var_39_0 = arg_38_1
-				local var_39_1 = var_1.GetComponent
-
-				typeof = var_3_10004
-				Animation = var_3_10006
-
-				local var_39_2 = var_39_1(var_39_0, var_3_10004(var_3_10006))
-
-				var_1.Play(var_39_2)
-
-				local var_39_3 = var_0
-				local var_39_4 = var_1.GetComponent
-
-				typeof = var_4
-				CanvasGroup = var_3_10006
-				var_39_4(var_39_3, var_4(var_3_10006)).alpha = 1
-
-				local var_39_5 = arg_37_0
-				local var_39_6 = var_1.managedTween
-
-				LeanTween = var_4
-
-				var_39_6(var_39_5, var_4.delayedCall, function()
+				arg_37_0:managedTween(LeanTween.delayedCall, function()
 					arg_39_0()
 
 					return
@@ -812,77 +381,56 @@ function var_0_1.OnSetAchvsDone(arg_37_0, arg_37_1)
 
 		return
 	end)
-
-	seriesAsync = var_3
-
-	var_3(var_37_6)
+	seriesAsync({})
 
 	return
 end
 
-function var_0_1.PlayHideAnim(arg_41_0)
+function var_0_0.PlayHideAnim(arg_41_0)
 	if arg_41_0.playingHideAnim then
 		return
 	end
 
-	local var_41_0 = arg_41_0.uiAnim
-
-	var_1.Play(var_41_0, "anim_IslandSelfCardUI_out")
+	arg_41_0.uiAnim:Play("anim_IslandSelfCardUI_out")
 
 	arg_41_0.playingHideAnim = true
 
 	return
 end
 
-function var_0_1.willExit(arg_42_0)
-	local var_42_0 = arg_42_0.uiAnimEvent
-
-	var_1.SetEndEvent(var_42_0, nil)
+function var_0_0.willExit(arg_42_0)
+	arg_42_0.uiAnimEvent:SetEndEvent(nil)
 
 	if not arg_42_0.contextData.isIslandPage then
-		pg = var_1
-
-		local var_42_1 = var_1.UIMgr.GetInstance()
-
-		var_1.UnOverlayPanel(var_42_1, arg_42_0._tf)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_42_0._tf)
 	end
 
 	if arg_42_0.editNameBox then
-		local var_42_2 = arg_42_0.editNameBox
-
-		var_1.Destroy(var_42_2)
+		arg_42_0.editNameBox:Destroy()
 
 		arg_42_0.editNameBox = nil
 	end
 
 	if arg_42_0.editWordBox then
-		local var_42_3 = arg_42_0.editWordBox
-
-		var_1.Destroy(var_42_3)
+		arg_42_0.editWordBox:Destroy()
 
 		arg_42_0.editWordBox = nil
 	end
 
 	if arg_42_0.setPhotoBox then
-		local var_42_4 = arg_42_0.setPhotoBox
-
-		var_1.Destroy(var_42_4)
+		arg_42_0.setPhotoBox:Destroy()
 
 		arg_42_0.setPhotoBox = nil
 	end
 
 	if arg_42_0.setAchvsBox then
-		local var_42_5 = arg_42_0.setAchvsBox
-
-		var_1.Destroy(var_42_5)
+		arg_42_0.setAchvsBox:Destroy()
 
 		arg_42_0.setAchvsBox = nil
 	end
 
 	if arg_42_0.showLabelBox then
-		local var_42_6 = arg_42_0.showLabelBox
-
-		var_1.Destroy(var_42_6)
+		arg_42_0.showLabelBox:Destroy()
 
 		arg_42_0.showLabelBox = nil
 	end
@@ -890,4 +438,4 @@ function var_0_1.willExit(arg_42_0)
 	return
 end
 
-return var_0_1
+return var_0_0

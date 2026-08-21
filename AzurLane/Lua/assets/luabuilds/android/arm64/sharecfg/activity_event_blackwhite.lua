@@ -1,56 +1,19 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_blackwhite") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_blackwhite"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_blackwhite = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_blackwhite
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_blackwhite = rawget(pg, "activity_event_blackwhite") or setmetatable({
+	__name = "activity_event_blackwhite"
+}, confNEO)
+pg.activity_event_blackwhite.all = {
 	1,
 	2,
 	3,
 	4,
 	5
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_blackwhite = {}
+pg.base = pg.base or {}
+pg.base.activity_event_blackwhite = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_blackwhite
-
-	var_1_0[1] = {
+	pg.base.activity_event_blackwhite[1] = {
 		name = "第一张图",
 		random = 0,
 		story = "AIJINGHUA1",
@@ -338,11 +301,7 @@ var_0_3.base.activity_event_blackwhite = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_blackwhite
-
-	var_1_1[2] = {
+	pg.base.activity_event_blackwhite[2] = {
 		name = "第二张图",
 		random = 0,
 		story = "AIJINGHUA2",
@@ -630,11 +589,7 @@ var_0_3.base.activity_event_blackwhite = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_blackwhite
-
-	var_1_2[3] = {
+	pg.base.activity_event_blackwhite[3] = {
 		name = "第三张图",
 		random = 0,
 		story = "AIJINGHUA3",
@@ -922,11 +877,7 @@ var_0_3.base.activity_event_blackwhite = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_blackwhite
-
-	var_1_3[4] = {
+	pg.base.activity_event_blackwhite[4] = {
 		name = "第四张图",
 		random = 0,
 		story = "AIJINGHUA4",
@@ -1214,8 +1165,7 @@ var_0_3.base.activity_event_blackwhite = {}
 			}
 		}
 	}
-	pg = var_1_3
-	var_1_3.base.activity_event_blackwhite[5] = {
+	pg.base.activity_event_blackwhite[5] = {
 		name = "随机图",
 		random = 1,
 		story = "",

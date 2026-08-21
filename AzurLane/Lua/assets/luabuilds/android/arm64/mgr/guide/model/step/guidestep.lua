@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GuideStep")
+﻿local var_0_0 = class("GuideStep")
 
 var_0_0.TYPE_DOFUNC = 0
 var_0_0.TYPE_DONOTHING = 1
@@ -22,30 +20,14 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.waitScene = arg_1_1.waitScene
 	arg_1_0.code = arg_1_1.code
 	arg_1_0.alpha = arg_1_1.alpha
-	defaultValue = var_2
-	arg_1_0.mask = var_2(arg_1_1.mask, false)
-	defaultValue = var_2
-	arg_1_0.isWorld = var_2(arg_1_1.isWorld, true)
+	arg_1_0.mask = defaultValue(arg_1_1.mask, false)
+	arg_1_0.isWorld = defaultValue(arg_1_1.isWorld, true)
 	arg_1_0.styleData = arg_1_0:GenStyleData(arg_1_1.style)
 	arg_1_0.highLightData = arg_1_0:GenHighLightData(arg_1_1.style)
 	arg_1_0.baseUI = arg_1_0:GenSearchData(arg_1_1.baseui)
 	arg_1_0.spriteUI = arg_1_0:GenSpriteSearchData(arg_1_1.spriteui)
-
-	local var_1_0
-
-	if arg_1_1.style then
-		var_1_0 = arg_1_1.style.scene
-	end
-
-	arg_1_0.sceneName = var_1_0
-
-	local var_1_1
-
-	if arg_1_1.style then
-		var_1_1 = arg_1_1.style.trigger
-	end
-
-	arg_1_0.otherTriggerTarget = var_1_1
+	arg_1_0.sceneName = arg_1_1.style and arg_1_1.style.scene
+	arg_1_0.otherTriggerTarget = arg_1_1.style and arg_1_1.style.trigger
 
 	return
 end
@@ -61,28 +43,18 @@ function var_0_0.UpdateIsWorld(arg_3_0, arg_3_1)
 end
 
 function var_0_0.IsMatchWithCode(arg_4_0, arg_4_1)
-	if not arg_4_0:GetMatchCode() then
+	local var_4_0 = arg_4_0:GetMatchCode()
+
+	if not var_4_0 then
 		return true
 	end
 
-	type = var_1_10003
-
-	if var_1_10003(var_2) == "number" then
-		table = var_3
-
-		return var_3.contains(arg_4_1, var_2)
-	else
-		type = var_3
-
-		if var_3(var_2) == "table" then
-			_ = var_3
-
-			return var_3.any(arg_4_1, function(arg_5_0)
-				table = var_2_10001
-
-				return var_2_10001.contains(var_0, arg_5_0)
-			end)
-		end
+	if type(var_4_0) == "number" then
+		return table.contains(arg_4_1, var_4_0)
+	elseif type(var_4_0) == "table" then
+		return _.any(arg_4_1, function(arg_5_0)
+			return table.contains(var_4_0, arg_5_0)
+		end)
 	end
 
 	return false
@@ -93,33 +65,15 @@ function var_0_0.GetMatchCode(arg_6_0)
 end
 
 function var_0_0.GetDelay(arg_7_0)
-	local var_7_0
-
-	if not arg_7_0.delay then
-		var_7_0 = 0
-	end
-
-	return var_7_0
+	return arg_7_0.delay or 0
 end
 
 function var_0_0.GetAlpha(arg_8_0)
-	local var_8_0
-
-	if not arg_8_0.alpha then
-		var_8_0 = 0.4
-	end
-
-	return var_8_0
+	return arg_8_0.alpha or 0.4
 end
 
 function var_0_0.ShouldWaitScene(arg_9_0)
-	local var_9_0
-
-	if arg_9_0.waitScene then
-		var_9_0 = arg_9_0.waitScene ~= ""
-	end
-
-	return var_9_0
+	return arg_9_0.waitScene and arg_9_0.waitScene ~= ""
 end
 
 function var_0_0.GetWaitScene(arg_10_0)
@@ -148,71 +102,20 @@ end
 
 local function var_0_2(arg_14_0, arg_14_1)
 	if arg_14_1.charPos then
-		Vector2 = var_2
-
-		do return var_2(arg_14_1.charPos[1], arg_14_1.charPos[2]) end
-
-		goto label_14_0
+		return Vector2(arg_14_1.charPos[1], arg_14_1.charPos[2])
+	elseif arg_14_1.dir == 1 then
+		return arg_14_1.mode == var_0_0.DIALOGUE_BLUE and Vector2(-400, -170) or Vector2(-350, 0)
+	else
+		return arg_14_1.mode == var_0_0.DIALOGUE_BLUE and Vector2(400, -170) or Vector2(350, 0)
 	end
 
-	if arg_14_1.dir == 1 then
-		if arg_14_1.mode == var_0_0.DIALOGUE_BLUE then
-			Vector2 = var_14_0
-
-			local var_14_0
-
-			if not var_14_0(-400, -170) then
-				Vector2 = var_14_0
-				var_14_0 = var_14_0(-350, 0)
-			end
-
-			do return var_14_0 end
-
-			goto label_14_0
-
-			if arg_14_1.mode == var_0_0.DIALOGUE_BLUE then
-				Vector2 = var_14_1
-
-				do
-					local var_14_1
-
-					if not var_14_1(400, -170) then
-						Vector2 = var_14_1
-						var_14_1 = var_14_1(350, 0)
-					end
-
-					return var_14_1
-				end
-
-				::label_14_0::
-
-				return
-			end
-		end
-	end
+	return
 end
 
 local function var_0_3(arg_15_0)
-	local var_15_0
+	local var_15_0 = arg_15_0.charScale and Vector2(arg_15_0.charScale[1], arg_15_0.charScale[2]) or Vector2(1, 1)
 
-	if arg_15_0.charScale then
-		Vector2 = var_2
-		var_15_0 = var_2(arg_15_0.charScale[1], arg_15_0.charScale[2])
-	else
-		Vector2 = var_2
-		var_15_0 = var_2(1, 1)
-	end
-
-	local var_15_1
-
-	if arg_15_0.dir ~= 1 or not var_15_0 then
-		::label_15_0::
-
-		Vector3 = var_15_1
-		var_15_1 = var_15_1(-var_15_0.x, var_15_0.y, 1)
-	end
-
-	return var_15_1
+	return arg_15_0.dir == 1 and var_15_0 or Vector3(-var_15_0.x, var_15_0.y, 1)
 end
 
 function var_0_0.GenStyleData(arg_16_0, arg_16_1)
@@ -236,81 +139,24 @@ function var_0_0.GenStyleData(arg_16_0, arg_16_1)
 	local var_16_1 = {
 		mode = arg_16_1.mode
 	}
+	local var_16_2 = arg_16_1.text or ""
 
-	HXSet = var_4
-
-	local var_16_2 = var_4.hxLan
-	local var_16_3
-
-	if not arg_16_1.text then
-		var_16_3 = ""
-	end
-
-	var_16_1.text = var_16_2(var_16_3)
+	var_16_1.text = HXSet.hxLan(var_16_2)
 	var_16_1.counsellor = var_16_0
+	var_16_1.scale = arg_16_1.dir == 1 and Vector3(1, 1, 1) or Vector3(-1, 1, 1)
 
-	if arg_16_1.dir == 1 then
-		Vector3 = var_16_4
+	local var_16_3 = arg_16_1.posX or 0
+	local var_16_4 = arg_16_1.posY or 0
 
-		local var_16_4
+	var_16_1.position = Vector2(var_16_3, var_16_4)
+	var_16_1.handPosition = arg_16_1.handPos and Vector3(arg_16_1.handPos.x, arg_16_1.handPos.y, 0) or Vector3(-267, -96, 0)
 
-		if not var_16_4(1, 1, 1) then
-			Vector3 = var_16_4
-			var_16_4 = var_16_4(-1, 1, 1)
-		end
+	if arg_16_1.handPos then
+		local var_16_5 = arg_16_1.handPos.w or 0
 
-		var_16_1.scale = var_16_4
-		Vector2 = var_16_4
+		var_16_1.handAngle = Vector3(0, 0, var_16_5) or Vector3(0, 0, 0)
 
-		local var_16_5
-
-		if not arg_16_1.posX then
-			var_16_5 = 0
-		end
-
-		local var_16_6
-
-		if not arg_16_1.posY then
-			var_16_6 = 0
-		end
-
-		var_16_1.position = var_16_4(var_16_5, var_16_6)
-
-		if arg_16_1.handPos then
-			Vector3 = var_16_7
-
-			local var_16_7
-
-			if not var_16_7(arg_16_1.handPos.x, arg_16_1.handPos.y, 0) then
-				Vector3 = var_16_7
-				var_16_7 = var_16_7(-267, -96, 0)
-			end
-
-			var_16_1.handPosition = var_16_7
-
-			if arg_16_1.handPos then
-				Vector3 = var_16_11
-
-				local var_16_8 = 0
-				local var_16_9 = 0
-				local var_16_10
-
-				if not arg_16_1.handPos.w then
-					var_16_10 = 0
-				end
-
-				local var_16_11
-
-				if not var_16_11(var_16_8, var_16_9, var_16_10) then
-					Vector3 = var_16_11
-					var_16_11 = var_16_11(0, 0, 0)
-				end
-
-				var_16_1.handAngle = var_16_11
-
-				return var_16_1
-			end
-		end
+		return var_16_1
 	end
 end
 
@@ -343,47 +189,39 @@ function var_0_0.GetStyleData(arg_19_0)
 end
 
 function var_0_0.GenHighLightData(arg_20_0, arg_20_1)
-	local function var_20_0(arg_21_0)
-		local var_21_0 = arg_20_0
-		local var_21_1 = var_1.GenSearchData(var_21_0, arg_21_0)
-		local var_21_2
-
-		if not arg_21_0.lineMode then
-			var_21_2 = var_0_0.HIGH_TYPE_GAMEOBJECT
-		end
-
-		var_21_1.type = var_21_2
-
-		return var_21_1
-	end
-
-	local var_20_1 = {}
+	local var_20_0 = {}
 
 	if arg_20_1 and arg_20_1.ui then
-		table = var_4
+		table.insert(var_20_0, (function(arg_21_0)
+			local var_21_0 = arg_20_0:GenSearchData(arg_21_0)
 
-		var_4.insert(var_20_1, var_20_0(arg_20_1.ui))
+			var_21_0.type = arg_21_0.lineMode or var_0_0.HIGH_TYPE_GAMEOBJECT
+
+			return var_21_0
+		end)(arg_20_1.ui))
 	elseif arg_20_1 and arg_20_1.uiset then
-		ipairs = var_4
+		for iter_20_0, iter_20_1 in ipairs(arg_20_1.uiset) do
+			table.insert(var_20_0, (function(arg_21_0)
+				local var_21_0 = arg_20_0:GenSearchData(arg_21_0)
 
-		for iter_20_0, iter_20_1 in var_4(arg_20_1.uiset) do
-			table = var_1_10009
+				var_21_0.type = arg_21_0.lineMode or var_0_0.HIGH_TYPE_GAMEOBJECT
 
-			var_1_10009.insert(var_20_1, var_20_0(iter_20_1))
+				return var_21_0
+			end)(iter_20_1))
 		end
 	elseif arg_20_1 and arg_20_1.uiFunc then
-		local var_20_2 = arg_20_1.uiFunc()
+		for iter_20_2, iter_20_3 in ipairs((arg_20_1.uiFunc())) do
+			table.insert(var_20_0, (function(arg_21_0)
+				local var_21_0 = arg_20_0:GenSearchData(arg_21_0)
 
-		ipairs = var_1_10005
+				var_21_0.type = arg_21_0.lineMode or var_0_0.HIGH_TYPE_GAMEOBJECT
 
-		for iter_20_2, iter_20_3 in var_1_10005(var_20_2) do
-			table = var_1_10010
-
-			var_1_10010.insert(var_20_1, var_20_0(iter_20_3))
+				return var_21_0
+			end)(iter_20_3))
 		end
 	end
 
-	return var_20_1
+	return var_20_0
 end
 
 function var_0_0.ShouldHighLightTarget(arg_22_0)
@@ -395,17 +233,13 @@ function var_0_0.GetHighLightTarget(arg_23_0)
 end
 
 function var_0_0.ExistTrigger(arg_24_0)
-	return arg_24_0:GetType() == var_0_0.TYPE_FINDUI or var_1 == var_0_0.TYPE_STORY
+	local var_24_0 = arg_24_0:GetType()
+
+	return var_24_0 == var_0_0.TYPE_FINDUI or var_24_0 == var_0_0.TYPE_STORY
 end
 
 function var_0_0.ShouldGoScene(arg_25_0)
-	local var_25_0
-
-	if arg_25_0.sceneName then
-		var_25_0 = arg_25_0.sceneName ~= ""
-	end
-
-	return var_25_0
+	return arg_25_0.sceneName and arg_25_0.sceneName ~= ""
 end
 
 function var_0_0.GetSceneName(arg_26_0)
@@ -417,9 +251,7 @@ function var_0_0.ShouldTriggerOtherTarget(arg_27_0)
 end
 
 function var_0_0.GetOtherTriggerTarget(arg_28_0)
-	local var_28_0 = arg_28_0.otherTriggerTarget
-
-	return arg_28_0:GenSearchData(var_28_0)
+	return arg_28_0:GenSearchData(arg_28_0.otherTriggerTarget)
 end
 
 function var_0_0.GenSearchData(arg_29_0, arg_29_1)
@@ -471,9 +303,7 @@ function var_0_0.GetSpriteUI(arg_34_0)
 end
 
 function var_0_0.GetType(arg_35_0)
-	assert = var_1_10001
-
-	var_1_10001(false, "overwrite me!!!")
+	assert(false, "overwrite me!!!")
 
 	return
 end

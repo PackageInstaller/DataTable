@@ -1,10 +1,5 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CastleGameChar")
-
-Vector3 = var_0_10001
-
-local var_0_1 = var_0_10001(0, 0)
+﻿local var_0_0 = class("CastleGameChar")
+local var_0_1 = Vector3(0, 0)
 local var_0_2 = "qiye_6_SkeletonData"
 local var_0_3 = 3
 local var_0_4 = "activity_run"
@@ -13,10 +8,7 @@ local var_0_6 = "activity_wait"
 local var_0_7 = "tuozhuai2"
 local var_0_8 = "tuozhuai2"
 local var_0_9 = "dead"
-
-Vector3 = var_0_10010
-
-local var_0_10 = var_0_10010(0, 0, -1)
+local var_0_10 = Vector3(0, 0, -1)
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._charTpl = arg_1_1
@@ -32,76 +24,28 @@ function var_0_0.initChar(arg_2_0)
 		return
 	end
 
-	tf = var_1
-	instantiate = var_1_10003
-	arg_2_0.charTf = var_1(var_1_10003(arg_2_0._charTpl))
-	Vector3 = var_1
-	arg_2_0.speed = var_1(0, 0, 0)
-	findTF = var_1
-	arg_2_0.colliderTf = var_1(arg_2_0.charTf, "zPos/collider")
-	GetComponent = var_1
-
-	local var_2_0 = arg_2_0.colliderTf
-
-	typeof = var_4
-	BoxCollider2D = var_1_10006
-	arg_2_0.collider = var_1(var_2_0, var_4(var_1_10006))
-	findTF = var_1
-	arg_2_0.zPos = var_1(arg_2_0.charTf, "zPos")
+	arg_2_0.charTf = tf(instantiate(arg_2_0._charTpl))
+	arg_2_0.speed = Vector3(0, 0, 0)
+	arg_2_0.colliderTf = findTF(arg_2_0.charTf, "zPos/collider")
+	arg_2_0.collider = GetComponent(arg_2_0.colliderTf, typeof(BoxCollider2D))
+	arg_2_0.zPos = findTF(arg_2_0.charTf, "zPos")
 	arg_2_0.raycastPoints = {}
 
 	for iter_2_0 = 1, var_0_3 do
-		table = var_2_1
-
-		local var_2_1 = var_2_1.insert
-		local var_2_2 = arg_2_0.raycastPoints
-
-		Vector3 = var_1_10008
-
-		var_2_1(var_2_2, var_1_10008(0, 0, 0))
+		table.insert(arg_2_0.raycastPoints, Vector3(0, 0, 0))
 	end
 
-	CastleGameVo = var_1
+	CastleGameVo.LoadSkeletonData(var_0_2, function(arg_3_0)
+		arg_3_0.transform.localScale = Vector3(1, 1, 1)
+		arg_3_0.transform.localPosition = Vector3(0, 0, 0)
 
-	var_1.LoadSkeletonData(var_0_2, function(arg_3_0)
-		local var_3_0 = arg_3_0.transform
-
-		Vector3 = var_2_10002
-		var_3_0.localScale = var_2_10002(1, 1, 1)
-
-		local var_3_1 = arg_3_0.transform
-
-		Vector3 = var_2
-		var_3_1.localPosition = var_2(0, 0, 0)
-
-		local var_3_2 = arg_3_0
-
-		arg_3_0.SetActive(var_3_2, true)
-
-		SetParent = var_1
-		tf = var_3_2
-
-		local var_3_3 = var_3_2(arg_3_0)
-
-		findTF = var_4
-
-		var_1(var_3_3, var_4(arg_2_0.charTf, "zPos/char"))
+		arg_3_0:SetActive(true)
+		SetParent(tf(arg_3_0), findTF(arg_2_0.charTf, "zPos/char"))
 
 		arg_2_0.graphic = arg_3_0:GetComponent("SkeletonGraphic")
-
-		local var_3_4 = arg_2_0
-		local var_3_5 = arg_3_0
-		local var_3_6 = arg_3_0.GetComponent
-
-		typeof = var_5
-		SpineAnimUI = var_7
-		var_3_4.anim = var_3_6(var_3_5, var_5(var_7))
+		arg_2_0.anim = arg_3_0:GetComponent(typeof(SpineAnimUI))
 		arg_2_0.charTf.anchoredPosition = var_0_1
-
-		local var_3_7 = arg_2_0.zPos
-
-		Vector2 = var_2
-		var_3_7.anchoredPosition = var_2(0, var_0_1.z)
+		arg_2_0.zPos.anchoredPosition = Vector2(0, var_0_1.z)
 
 		return
 	end)
@@ -118,18 +62,11 @@ function var_0_0.setInGround(arg_4_0, arg_4_1)
 	arg_4_0.inGround = arg_4_1
 
 	if not arg_4_0.inGround then
-		Vector3 = var_2
-		arg_4_0.speed = var_2(0, 0, 0)
+		arg_4_0.speed = Vector3(0, 0, 0)
 	end
 
 	if arg_4_0.char.floor then
-		local var_4_0 = arg_4_0.char.floor.tf
-		local var_4_1 = arg_4_0
-		local var_4_2 = arg_4_0.setContent
-
-		findTF = var_1_10006
-
-		var_4_2(var_4_1, var_1_10006(var_4_0, "zPos/top"))
+		arg_4_0:setContent(findTF(arg_4_0.char.floor.tf, "zPos/top"))
 	end
 
 	return
@@ -137,57 +74,22 @@ end
 
 function var_0_0.setOutLandPoint(arg_5_0, arg_5_1)
 	arg_5_0.outlandPoint = arg_5_1
-
-	local var_5_0 = arg_5_0.outlandPoint.lb
-	local var_5_1 = arg_5_0.outlandPoint.lt
-	local var_5_2 = arg_5_0.outlandPoint.rt
-	local var_5_3 = arg_5_0.outlandPoint.rb
-	local var_5_4 = 2
-
-	Vector2 = var_1_10007
-
-	local var_5_5 = var_1_10007(var_5_0.x + var_5_4, var_5_0.y)
-
-	Vector2 = var_1_10008
-
-	local var_5_6 = var_1_10008(var_5_1.x, var_5_1.y - var_5_4)
-
-	Vector2 = var_9
-
-	local var_5_7 = var_9(var_5_2.x - var_5_4, var_5_2.y)
-
-	Vector2 = var_10
-
-	local var_5_8 = var_10(var_5_3.x, var_5_3.y + var_5_4)
-
-	arg_5_0.outlandPoint.exlb = var_5_5
-	arg_5_0.outlandPoint.exlt = var_5_6
-	arg_5_0.outlandPoint.exrt = var_5_7
-	arg_5_0.outlandPoint.exrb = var_5_8
+	arg_5_0.outlandPoint.exlb = Vector2(arg_5_0.outlandPoint.lb.x + 2, arg_5_0.outlandPoint.lb.y)
+	arg_5_0.outlandPoint.exlt = Vector2(arg_5_0.outlandPoint.lt.x, arg_5_0.outlandPoint.lt.y - 2)
+	arg_5_0.outlandPoint.exrt = Vector2(arg_5_0.outlandPoint.rt.x - 2, arg_5_0.outlandPoint.rt.y)
+	arg_5_0.outlandPoint.exrb = Vector2(arg_5_0.outlandPoint.rb.x, arg_5_0.outlandPoint.rb.y + 2)
 
 	return
 end
 
 function var_0_0.step(arg_6_0)
-	if arg_6_0.timeToOver then
-		local var_6_0 = arg_6_0.timeToOver
+	if arg_6_0.timeToOver and arg_6_0.timeToOver > 0 then
+		arg_6_0.timeToOver = arg_6_0.timeToOver - CastleGameVo.deltaTime
 
-		if 0 < var_6_0 then
-			local var_6_1 = arg_6_0.timeToOver
+		if arg_6_0.timeToOver <= 0 then
+			arg_6_0.timeToOver = nil
 
-			CastleGameVo = var_2
-			arg_6_0.timeToOver = var_6_1 - var_2.deltaTime
-
-			if arg_6_0.timeToOver <= 0 then
-				arg_6_0.timeToOver = nil
-
-				local var_6_2 = arg_6_0._event
-				local var_6_3 = var_1.emit
-
-				CastleGameView = var_1_10004
-
-				var_6_3(var_6_2, var_1_10004.GAME_OVER)
-			end
+			arg_6_0._event:emit(CastleGameView.GAME_OVER)
 		end
 	end
 
@@ -208,35 +110,19 @@ function var_0_0.getPoint(arg_7_0)
 end
 
 function var_0_0.updatePosition(arg_8_0)
-	local var_8_0 = arg_8_0.charTf.anchoredPosition
-	local var_8_1 = arg_8_0.zPos.anchoredPosition
-	local var_8_2 = var_8_0.x
-	local var_8_3 = arg_8_0.speed.x
+	arg_8_0.charTf.anchoredPosition.x = arg_8_0.charTf.anchoredPosition.x + arg_8_0.speed.x * CastleGameVo.deltaTime
+	arg_8_0.charTf.anchoredPosition.y = arg_8_0.charTf.anchoredPosition.y + arg_8_0.speed.y * CastleGameVo.deltaTime
 
-	CastleGameVo = var_1_10005
-	var_8_0.x = var_8_2 + var_8_3 * var_1_10005.deltaTime
+	local var_8_0, var_8_1 = arg_8_0:checkOutland(arg_8_0.charTf.anchoredPosition)
 
-	local var_8_4 = var_8_0.y
-	local var_8_5 = arg_8_0.speed.y
+	if var_8_0 and var_8_1 then
+		arg_8_0.charTf.anchoredPosition = var_8_1
 
-	CastleGameVo = var_5
-	var_8_0.y = var_8_4 + var_8_5 * var_5.deltaTime
-
-	local var_8_6, var_8_7 = arg_8_0:checkOutland(var_8_0)
-
-	if var_8_6 and var_8_7 then
-		arg_8_0.charTf.anchoredPosition = var_8_7
-		var_1_10007 = arg_8_0
-
-		arg_8_0.updateDirect(var_1_10007, var_8_7)
+		arg_8_0:updateDirect(var_8_1)
 	end
 
-	local var_8_8 = var_8_1.y
-	local var_8_9 = arg_8_0.speed.z
-
-	CastleGameVo = var_1_10007
-	var_8_1.y = var_8_8 + var_8_9 * var_1_10007.deltaTime
-	arg_8_0.zPos.anchoredPosition = var_8_1
+	arg_8_0.zPos.anchoredPosition.y = arg_8_0.zPos.anchoredPosition.y + arg_8_0.speed.z * CastleGameVo.deltaTime
+	arg_8_0.zPos.anchoredPosition = arg_8_0.zPos.anchoredPosition
 
 	return
 end
@@ -245,11 +131,8 @@ function var_0_0.updateDirect(arg_9_0, arg_9_1)
 	if arg_9_1.x ~= 0 then
 		local var_9_0 = arg_9_0.speed.x > 0 and 1 or -1
 
-		if arg_9_0.charTf.localScale.x ~= var_9_0 then
-			local var_9_1 = arg_9_0.charTf
-
-			Vector3 = var_1_10004
-			var_9_1.localScale = var_1_10004(var_9_0, 1, 1)
+		if arg_9_0.charTf.localScale.x ~= (arg_9_0.speed.x > 0 and 1 or -1) then
+			arg_9_0.charTf.localScale = Vector3(var_9_0, 1, 1)
 			arg_9_0.charDirect = var_9_0
 		end
 	end
@@ -259,78 +142,41 @@ end
 
 function var_0_0.checkOutland(arg_10_0, arg_10_1, arg_10_2)
 	if arg_10_0.outlandPoint then
-		local var_10_0 = arg_10_0.outlandPoint.lb
-		local var_10_1 = arg_10_0.outlandPoint.lt
-		local var_10_2 = arg_10_0.outlandPoint.rt
-		local var_10_3 = arg_10_0.outlandPoint.rb
-		local var_10_4 = arg_10_0.outlandPoint.exlb
-		local var_10_5 = arg_10_0.outlandPoint.exlt
-		local var_10_6 = arg_10_0.outlandPoint.exrt
-		local var_10_7 = arg_10_0.outlandPoint.exrb
+		if CastleGameVo.PointLeftLine(arg_10_1, arg_10_0.outlandPoint.lb, arg_10_0.outlandPoint.lt) then
+			local var_10_0, var_10_1 = CastleGameVo.PointFootLine(arg_10_1, arg_10_0.outlandPoint.exlb, arg_10_0.outlandPoint.exlt)
 
-		CastleGameVo = var_1_10011
-
-		local var_10_8
-
-		if var_1_10011.PointLeftLine(arg_10_1, var_10_0, var_10_1) then
-			CastleGameVo = var_10_8
-
-			local var_10_9
-
-			var_10_8, var_10_9 = var_10_8.PointFootLine(arg_10_1, var_10_4, var_10_5)
-
-			if var_10_9 then
-				return arg_10_0:checkOutland(var_10_8, var_10_9)
+			if var_10_1 then
+				return arg_10_0:checkOutland(var_10_0, var_10_1)
 			else
 				return false
 			end
 		end
 
-		CastleGameVo = var_10_8
+		if CastleGameVo.PointLeftLine(arg_10_1, arg_10_0.outlandPoint.rb, arg_10_0.outlandPoint.lb) then
+			local var_10_2, var_10_3 = CastleGameVo.PointFootLine(arg_10_1, arg_10_0.outlandPoint.exrb, arg_10_0.outlandPoint.exlb)
 
-		local var_10_10
-
-		if var_10_8.PointLeftLine(arg_10_1, var_10_3, var_10_0) then
-			CastleGameVo = var_10_10
-
-			local var_10_11
-
-			var_10_10, var_10_11 = var_10_10.PointFootLine(arg_10_1, var_10_7, var_10_4)
-
-			if var_10_11 then
-				return arg_10_0:checkOutland(var_10_10)
+			if var_10_3 then
+				return arg_10_0:checkOutland(var_10_2)
 			else
 				return false
 			end
 		end
 
-		CastleGameVo = var_10_10
+		if CastleGameVo.PointLeftLine(arg_10_1, arg_10_0.outlandPoint.lt, arg_10_0.outlandPoint.rt) then
+			local var_10_4, var_10_5 = CastleGameVo.PointFootLine(arg_10_1, arg_10_0.outlandPoint.exlt, arg_10_0.outlandPoint.exrt)
 
-		local var_10_12
-
-		if var_10_10.PointLeftLine(arg_10_1, var_10_1, var_10_2) then
-			CastleGameVo = var_10_12
-
-			local var_10_13
-
-			var_10_12, var_10_13 = var_10_12.PointFootLine(arg_10_1, var_10_5, var_10_6)
-
-			if var_10_13 then
-				return arg_10_0:checkOutland(var_10_12)
+			if var_10_5 then
+				return arg_10_0:checkOutland(var_10_4)
 			else
 				return false
 			end
 		end
 
-		CastleGameVo = var_10_12
+		if CastleGameVo.PointLeftLine(arg_10_1, arg_10_0.outlandPoint.rt, arg_10_0.outlandPoint.rb) then
+			local var_10_6, var_10_7 = CastleGameVo.PointFootLine(arg_10_1, arg_10_0.outlandPoint.exrt, arg_10_0.outlandPoint.exrb)
 
-		if var_10_12.PointLeftLine(arg_10_1, var_10_2, var_10_3) then
-			CastleGameVo = var_11
-
-			local var_10_14, var_10_15 = var_11.PointFootLine(arg_10_1, var_10_6, var_10_7)
-
-			if var_10_15 then
-				return arg_10_0:checkOutland(var_10_14)
+			if var_10_7 then
+				return arg_10_0:checkOutland(var_10_6)
 			else
 				return false
 			end
@@ -341,101 +187,50 @@ function var_0_0.checkOutland(arg_10_0, arg_10_1, arg_10_2)
 end
 
 function var_0_0.updateSpeed(arg_11_0)
-	if arg_11_0.addSpeedTime then
-		local var_11_0 = arg_11_0.addSpeedTime
+	if arg_11_0.addSpeedTime and arg_11_0.addSpeedTime > 0 then
+		arg_11_0.addSpeedTime = arg_11_0.addSpeedTime - CastleGameVo.deltaTime
 
-		if 0 < var_11_0 then
-			local var_11_1 = arg_11_0.addSpeedTime
-
-			CastleGameVo = var_2
-			arg_11_0.addSpeedTime = var_11_1 - var_2.deltaTime
-
-			if arg_11_0.addSpeedTime <= 0 then
-				arg_11_0.addSpeedTime = nil
-				arg_11_0.addSpeed = 0
-			end
+		if arg_11_0.addSpeedTime <= 0 then
+			arg_11_0.addSpeedTime = nil
+			arg_11_0.addSpeed = 0
 		end
 	end
 
 	if not arg_11_0.inGround then
-		local var_11_2 = arg_11_0.speed
-		local var_11_3
+		local var_11_0 = arg_11_0.speed
 
-		if not (arg_11_0.speed.z > -1500) or not (arg_11_0.speed.z - 20) then
-			var_11_3 = -1500
-		end
+		if arg_11_0.speed.z > -1500 then
+			var_11_0.z = arg_11_0.speed.z - 20 or -1500
 
-		var_11_2.z = var_11_3
-	elseif arg_11_0.inBubble then
-		arg_11_0.speed.x = 0
-		arg_11_0.speed.y = 0
+			if false then
+				if arg_11_0.inBubble then
+					arg_11_0.speed.x = 0
+					arg_11_0.speed.y = 0
+					arg_11_0.speed.z = 0
 
-		local var_11_4 = arg_11_0.speed
+					print("角色在气泡中，无法移动")
+				elseif arg_11_0.fail then
+					arg_11_0.speed.x = 0
+					arg_11_0.speed.y = 0
+					arg_11_0.speed.z = 0
 
-		var_11_4.z = 0
-		print = var_11_4
+					print("被车撞了，无法移动")
+				elseif CastleGameVo.joyStickData then
+					arg_11_0.speed.x = CastleGameVo.joyStickData.x * (CastleGameVo.char_speed + arg_11_0.addSpeed)
+					arg_11_0.speed.y = CastleGameVo.joyStickData.y * (CastleGameVo.char_speed + arg_11_0.addSpeed)
+					arg_11_0.speed.x = math.abs(arg_11_0.speed.x) < CastleGameVo.char_speed_min and 0 or arg_11_0.speed.x
+					arg_11_0.speed.y = math.abs(arg_11_0.speed.y) < CastleGameVo.char_speed_min and 0 or arg_11_0.speed.y
 
-		var_11_4("角色在气泡中，无法移动")
-	else
-		local var_11_5
-
-		if arg_11_0.fail then
-			var_11_5 = arg_11_0.speed
-			var_11_5.x = 0
-			var_11_5 = arg_11_0.speed
-			var_11_5.y = 0
-			var_11_5 = arg_11_0.speed
-			var_11_5.z = 0
-			print = var_11_5
-
-			var_11_5("被车撞了，无法移动")
-		else
-			CastleGameVo = var_11_5
-
-			if var_11_5.joyStickData then
-				CastleGameVo = var_1
-
-				local var_11_6 = var_1.joyStickData.x
-				local var_11_7 = var_1.y
-				local var_11_8 = arg_11_0.speed
-				local var_11_9 = var_1.x
-
-				CastleGameVo = var_1_10006
-				var_11_8.x = var_11_9 * (var_1_10006.char_speed + arg_11_0.addSpeed)
-
-				local var_11_10 = arg_11_0.speed
-				local var_11_11 = var_1.y
-
-				CastleGameVo = var_6
-				var_11_10.y = var_11_11 * (var_6.char_speed + arg_11_0.addSpeed)
-
-				local var_11_12 = arg_11_0.speed
-
-				math = var_5
-
-				local var_11_13 = var_5.abs(arg_11_0.speed.x)
-
-				CastleGameVo = var_6
-				var_11_12.x = var_11_13 < var_6.char_speed_min and 0 or arg_11_0.speed.x
-
-				local var_11_14 = arg_11_0.speed
-
-				math = var_5
-
-				local var_11_15 = var_5.abs(arg_11_0.speed.y)
-
-				CastleGameVo = var_6
-				var_11_14.y = var_11_15 < var_6.char_speed_min and 0 or arg_11_0.speed.y
-
-				arg_11_0:updateDirect(arg_11_0.speed)
-			else
-				arg_11_0.speed.x = 0
-				arg_11_0.speed.y = 0
+					arg_11_0:updateDirect(arg_11_0.speed)
+				else
+					arg_11_0.speed.x = 0
+					arg_11_0.speed.y = 0
+				end
 			end
+
+			return
 		end
 	end
-
-	return
 end
 
 function var_0_0.updateAnim(arg_12_0)
@@ -448,23 +243,9 @@ function var_0_0.updateAnim(arg_12_0)
 	elseif arg_12_0.fail then
 		var_12_0 = var_0_9
 	else
-		math = var_2
+		local var_12_1 = math.max(math.abs(arg_12_0.speed.x), math.abs(arg_12_0.speed.y))
 
-		local var_12_1 = var_2.max
-
-		math = var_1_10004
-
-		local var_12_2 = var_1_10004.abs(arg_12_0.speed.x)
-
-		math = var_1_10005
-
-		if var_12_1(var_12_2, var_1_10005.abs(arg_12_0.speed.y)) > 120 then
-			var_12_0 = var_0_4
-		elseif var_2 > 0 then
-			var_12_0 = var_0_5
-		else
-			var_12_0 = var_0_6
-		end
+		var_12_0 = var_12_1 > 120 and var_0_4 or var_12_1 > 0 and var_0_5 or var_0_6
 	end
 
 	if arg_12_0.action ~= var_12_0 then
@@ -475,14 +256,11 @@ function var_0_0.updateAnim(arg_12_0)
 end
 
 function var_0_0.setScore(arg_13_0, arg_13_1)
-	local var_13_0 = arg_13_1.data.speed
-	local var_13_1 = arg_13_1.data.time
-
-	if var_13_0 >= arg_13_0.addSpeed then
-		arg_13_0.addSpeed = var_13_0
+	if arg_13_1.data.speed >= arg_13_0.addSpeed then
+		arg_13_0.addSpeed = arg_13_1.data.speed
 	end
 
-	arg_13_0.addSpeedTime = var_13_1
+	arg_13_0.addSpeedTime = arg_13_1.data.time
 
 	return
 end
@@ -498,14 +276,10 @@ end
 
 function var_0_0.setContent(arg_15_0, arg_15_1, arg_15_2)
 	arg_15_0._content = arg_15_1
-	setParent = var_1_10003
 
-	var_1_10003(arg_15_0.charTf, arg_15_0._content, true)
+	setParent(arg_15_0.charTf, arg_15_0._content, true)
 
-	local var_15_0 = arg_15_0.charTf
-
-	Vector3 = var_1_10004
-	var_15_0.localScale = var_1_10004(1, 1, 1)
+	arg_15_0.charTf.localScale = Vector3(1, 1, 1)
 
 	if arg_15_2 then
 		arg_15_0.charTf.anchoredPosition = arg_15_2
@@ -520,21 +294,15 @@ end
 
 function var_0_0.start(arg_17_0)
 	arg_17_0.charTf.anchoredPosition = var_0_1
+	arg_17_0.zPos.anchoredPosition = Vector2(0, var_0_1.y)
 
-	local var_17_0 = arg_17_0.zPos
-
-	Vector2 = var_2
-	var_17_0.anchoredPosition = var_2(0, var_0_1.y)
-	setActive = var_17_0
-
-	var_17_0(arg_17_0.charTf, true)
+	setActive(arg_17_0.charTf, true)
 
 	arg_17_0.inGround = true
 	arg_17_0.inBubble = false
 	arg_17_0.fail = false
 	arg_17_0.timeToOver = nil
-	Vector3 = var_1
-	arg_17_0.speed = var_1(0, 0, 0)
+	arg_17_0.speed = Vector3(0, 0, 0)
 	arg_17_0.addSpeed = 0
 	arg_17_0.addSpeedTime = 0
 
@@ -548,15 +316,8 @@ function var_0_0.clear(arg_18_0)
 end
 
 function var_0_0.checkPlayerOutScreen(arg_19_0)
-	math = var_1_10001
-
-	if var_1_10001.abs(arg_19_0.zPos.anchoredPosition.y) > 2000 then
-		local var_19_0 = arg_19_0._event
-		local var_19_1 = var_1.emit
-
-		CastleGameView = var_1_10004
-
-		var_19_1(var_19_0, var_1_10004.GAME_OVER)
+	if math.abs(arg_19_0.zPos.anchoredPosition.y) > 2000 then
+		arg_19_0._event:emit(CastleGameView.GAME_OVER)
 	end
 
 	return
@@ -597,10 +358,7 @@ end
 function var_0_0.playerDead(arg_23_0)
 	arg_23_0.action = var_0_9
 
-	local var_23_0 = arg_23_0.anim
-	local var_23_1 = var_1.GetAnimationState(var_23_0)
-
-	var_1.SetAnimation(var_23_1, 0, var_0_9, false)
+	arg_23_0.anim:GetAnimationState():SetAnimation(0, var_0_9, false)
 
 	return
 end
@@ -613,9 +371,7 @@ function var_0_0.changeAnimAction(arg_24_0, arg_24_1, arg_24_2, arg_24_3, arg_24
 	arg_24_1:SetActionCallBack(function(arg_25_0)
 		if arg_25_0 == "finish" then
 			if arg_24_3 == 1 then
-				local var_25_0 = arg_24_1
-
-				var_1.SetActionCallBack(var_25_0, nil)
+				arg_24_1:SetActionCallBack(nil)
 			end
 
 			if arg_24_5 then

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_random_award_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_random_award_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_random_award_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_random_award_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_random_award_template = rawget(pg, "activity_random_award_template") or setmetatable({
+	__name = "activity_random_award_template"
+}, confNEO)
+pg.activity_random_award_template.all = {
 	1,
 	2,
 	3,
@@ -42,25 +19,11 @@ var_0_3.all = {
 	18,
 	19
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_random_award_template = {}
+pg.base = pg.base or {}
+pg.base.activity_random_award_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_random_award_template
-
-	var_1_0[1] = {
+	pg.base.activity_random_award_template[1] = {
 		activity = 76,
 		resource_category = 1,
 		resource_type = 105,
@@ -225,11 +188,7 @@ var_0_3.base.activity_random_award_template = {}
 			100013
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_random_award_template
-
-	var_1_1[2] = {
+	pg.base.activity_random_award_template[2] = {
 		activity = 76,
 		resource_category = 1,
 		resource_type = 105,
@@ -385,11 +344,7 @@ var_0_3.base.activity_random_award_template = {}
 			100017
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_random_award_template
-
-	var_1_2[3] = {
+	pg.base.activity_random_award_template[3] = {
 		activity = 76,
 		resource_category = 1,
 		resource_type = 105,
@@ -550,11 +505,7 @@ var_0_3.base.activity_random_award_template = {}
 			100019
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_random_award_template
-
-	var_1_3[4] = {
+	pg.base.activity_random_award_template[4] = {
 		activity = 76,
 		resource_category = 1,
 		resource_type = 105,
@@ -711,11 +662,7 @@ var_0_3.base.activity_random_award_template = {}
 			83
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_random_award_template
-
-	var_1_4[9] = {
+	pg.base.activity_random_award_template[9] = {
 		activity = 176,
 		resource_category = 1,
 		resource_type = 114,
@@ -832,11 +779,7 @@ var_0_3.base.activity_random_award_template = {}
 			100026
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_random_award_template
-
-	var_1_5[10] = {
+	pg.base.activity_random_award_template[10] = {
 		activity = 176,
 		resource_category = 1,
 		resource_type = 114,
@@ -1053,11 +996,7 @@ var_0_3.base.activity_random_award_template = {}
 			100024
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_random_award_template
-
-	var_1_6[11] = {
+	pg.base.activity_random_award_template[11] = {
 		activity = 176,
 		resource_category = 1,
 		resource_type = 114,
@@ -1230,11 +1169,7 @@ var_0_3.base.activity_random_award_template = {}
 			100007
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_random_award_template
-
-	var_1_7[12] = {
+	pg.base.activity_random_award_template[12] = {
 		activity = 176,
 		resource_category = 1,
 		resource_type = 114,
@@ -1431,11 +1366,7 @@ var_0_3.base.activity_random_award_template = {}
 			83
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_random_award_template
-
-	var_1_8[13] = {
+	pg.base.activity_random_award_template[13] = {
 		activity = 230,
 		resource_category = 1,
 		resource_type = 119,
@@ -1552,11 +1483,7 @@ var_0_3.base.activity_random_award_template = {}
 			100013
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_random_award_template
-
-	var_1_9[14] = {
+	pg.base.activity_random_award_template[14] = {
 		activity = 230,
 		resource_category = 1,
 		resource_type = 119,
@@ -1773,11 +1700,7 @@ var_0_3.base.activity_random_award_template = {}
 			100024
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_random_award_template
-
-	var_1_10[15] = {
+	pg.base.activity_random_award_template[15] = {
 		activity = 230,
 		resource_category = 1,
 		resource_type = 119,
@@ -1950,11 +1873,7 @@ var_0_3.base.activity_random_award_template = {}
 			100014
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_random_award_template
-
-	var_1_11[16] = {
+	pg.base.activity_random_award_template[16] = {
 		activity = 230,
 		resource_category = 1,
 		resource_type = 119,
@@ -2151,11 +2070,7 @@ var_0_3.base.activity_random_award_template = {}
 			83
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_random_award_template
-
-	var_1_12[17] = {
+	pg.base.activity_random_award_template[17] = {
 		activity = 5264,
 		resource_category = 1,
 		resource_type = 625,
@@ -2245,11 +2160,7 @@ var_0_3.base.activity_random_award_template = {}
 		},
 		main_item = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_random_award_template
-
-	var_1_13[18] = {
+	pg.base.activity_random_award_template[18] = {
 		activity = 5264,
 		resource_category = 1,
 		resource_type = 625,
@@ -2327,8 +2238,7 @@ var_0_3.base.activity_random_award_template = {}
 		},
 		main_item = {}
 	}
-	pg = var_1_13
-	var_1_13.base.activity_random_award_template[19] = {
+	pg.base.activity_random_award_template[19] = {
 		activity = 5264,
 		resource_category = 1,
 		resource_type = 625,

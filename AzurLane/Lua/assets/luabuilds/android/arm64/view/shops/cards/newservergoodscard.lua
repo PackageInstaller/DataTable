@@ -1,105 +1,26 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NewServerGoodsCard")
+﻿local var_0_0 = class("NewServerGoodsCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 	arg_1_0._tf = arg_1_1.transform
 	arg_1_0._tr = arg_1_1.transform
+	arg_1_0.itemTF = arg_1_0._tr:Find("item")
+	arg_1_0.itemIconBgTF = arg_1_0.itemTF:Find("icon_bg")
+	arg_1_0.itemIconFrameTF = arg_1_0.itemTF:Find("icon_bg/frame")
+	arg_1_0.itemIconTF = arg_1_0.itemTF:Find("icon_bg/icon")
+	arg_1_0.itemCountTF = arg_1_0.itemTF:Find("icon_bg/count"):GetComponent(typeof(Text))
+	arg_1_0.discountTF = arg_1_0._tr:Find("item/discount")
+	arg_1_0.nameTF = arg_1_0._tr:Find("item/name_mask/name"):GetComponent(typeof(Text))
+	arg_1_0.consumeIconTF = arg_1_0._tr:Find("item/consume/contain/icon")
+	arg_1_0.consumeTxtTF = arg_1_0._tr:Find("item/consume/contain/Text"):GetComponent(typeof(Text))
+	arg_1_0.sellOutMaskTF = arg_1_0._tr:Find("selloutmask")
+	arg_1_0.levelMaskTF = arg_1_0._tr:Find("levelmask")
+	arg_1_0.cntTxt = arg_1_0._tr:Find("item/count_contain/count"):GetComponent(typeof(Text))
 
-	local var_1_0 = arg_1_0._tr
-
-	arg_1_0.itemTF = var_2.Find(var_1_0, "item")
-
-	local var_1_1 = arg_1_0.itemTF
-
-	arg_1_0.itemIconBgTF = var_2.Find(var_1_1, "icon_bg")
-
-	local var_1_2 = arg_1_0.itemTF
-
-	arg_1_0.itemIconFrameTF = var_2.Find(var_1_2, "icon_bg/frame")
-
-	local var_1_3 = arg_1_0.itemTF
-
-	arg_1_0.itemIconTF = var_2.Find(var_1_3, "icon_bg/icon")
-
-	local var_1_4 = arg_1_0.itemTF
-	local var_1_5 = var_2.Find(var_1_4, "icon_bg/count")
-	local var_1_6 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.itemCountTF = var_1_6(var_1_5, var_5(var_1_10007))
-
-	local var_1_7 = arg_1_0._tr
-
-	arg_1_0.discountTF = var_2.Find(var_1_7, "item/discount")
-
-	local var_1_8 = arg_1_0._tr
-	local var_1_9 = var_2.Find(var_1_8, "item/name_mask/name")
-	local var_1_10 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTF = var_1_10(var_1_9, var_5(var_1_10007))
-
-	local var_1_11 = arg_1_0._tr
-
-	arg_1_0.consumeIconTF = var_2.Find(var_1_11, "item/consume/contain/icon")
-
-	local var_1_12 = arg_1_0._tr
-	local var_1_13 = var_2.Find(var_1_12, "item/consume/contain/Text")
-	local var_1_14 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.consumeTxtTF = var_1_14(var_1_13, var_5(var_1_10007))
-
-	local var_1_15 = arg_1_0._tr
-
-	arg_1_0.sellOutMaskTF = var_2.Find(var_1_15, "selloutmask")
-
-	local var_1_16 = arg_1_0._tr
-
-	arg_1_0.levelMaskTF = var_2.Find(var_1_16, "levelmask")
-
-	local var_1_17 = arg_1_0._tr
-	local var_1_18 = var_2.Find(var_1_17, "item/count_contain/count")
-	local var_1_19 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.cntTxt = var_1_19(var_1_18, var_5(var_1_10007))
-	setActive = var_2
-
-	var_2(arg_1_0.discountTF, false)
-
-	setText = var_2
-
-	local var_1_20 = arg_1_0.sellOutMaskTF
-	local var_1_21 = var_4.Find(var_1_20, "ch")
-
-	i18n = var_5
-
-	var_2(var_1_21, var_5("word_sell_out"))
-
-	setText = var_2
-
-	local var_1_22 = arg_1_0.levelMaskTF
-	local var_1_23 = var_4.Find(var_1_22, "ch")
-
-	i18n = var_5
-
-	var_2(var_1_23, var_5("word_sell_lock"))
-
-	setText = var_2
-
-	local var_1_24 = arg_1_0._tr
-	local var_1_25 = var_4.Find(var_1_24, "item/count_contain/label")
-
-	i18n = var_5
-
-	var_2(var_1_25, var_5("activity_shop_exchange_count"))
+	setActive(arg_1_0.discountTF, false)
+	setText(arg_1_0.sellOutMaskTF:Find("ch"), i18n("word_sell_out"))
+	setText(arg_1_0.levelMaskTF:Find("ch"), i18n("word_sell_lock"))
+	setText(arg_1_0._tr:Find("item/count_contain/label"), i18n("activity_shop_exchange_count"))
 
 	return
 end
@@ -122,104 +43,34 @@ function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
 end
 
 function var_0_0.Flush(arg_3_0)
-	local var_3_0 = arg_3_0.cntTxt
-	local var_3_1 = arg_3_0.commodity
-	local var_3_2 = var_2.GetCanPurchaseCnt(var_3_1)
-	local var_3_3 = "/"
-	local var_3_4 = arg_3_0.commodity
+	arg_3_0.cntTxt.text = arg_3_0.commodity:GetCanPurchaseCnt() .. "/" .. arg_3_0.commodity:GetCanPurchaseMaxCnt()
 
-	var_3_0.text = var_3_2 .. var_3_3 .. var_4.GetCanPurchaseMaxCnt(var_3_4)
-	setActive = var_3_0
-
-	local var_3_5 = arg_3_0.sellOutMaskTF
-	local var_3_6 = arg_3_0.commodity
-
-	var_3_0(var_3_5, not var_4.CanPurchase(var_3_6))
-
-	setActive = var_3_0
-
-	local var_3_7 = arg_3_0.levelMaskTF
-	local var_3_8 = arg_3_0.commodity
-	local var_3_9 = var_4.IsOpening
-	local var_3_10 = arg_3_0.shop
-
-	var_3_0(var_3_7, not var_3_9(var_3_8, var_7.GetStartTime(var_3_10)))
+	setActive(arg_3_0.sellOutMaskTF, not arg_3_0.commodity:CanPurchase())
+	setActive(arg_3_0.levelMaskTF, not arg_3_0.commodity:IsOpening(arg_3_0.shop:GetStartTime()))
 
 	return
 end
 
 function var_0_0.Init(arg_4_0)
-	local var_4_0 = arg_4_0.commodity
-	local var_4_1 = var_1.GetDesc(var_4_0).name
+	local var_4_0 = arg_4_0.commodity:GetDesc()
 
-	string = var_4_0
-
-	if var_4_0.match(var_4_1, "(%d+)") then
-		setText = var_3
-
-		local var_4_2 = arg_4_0.nameTF
-
-		shortenString = var_6
-
-		var_3(var_4_2, var_6(var_4_1, 5))
+	if string.match(var_4_0.name, "(%d+)") then
+		setText(arg_4_0.nameTF, shortenString(var_4_0.name, 5))
 	else
-		setText = var_3
-
-		local var_4_3 = arg_4_0.nameTF
-
-		shortenString = var_6
-
-		var_3(var_4_3, var_6(var_4_1, 6))
+		setText(arg_4_0.nameTF, shortenString(var_4_0.name, 6))
 	end
 
-	local var_4_4 = arg_4_0.commodity
-	local var_4_5 = var_3.GetConsume(var_4_4)
-	local var_4_6 = arg_4_0.consumeTxtTF
+	local var_4_1 = arg_4_0.commodity:GetConsume()
 
-	var_4_6.text = var_4_5.count
-	GetImageSpriteFromAtlasAsync = var_4_6
+	arg_4_0.consumeTxtTF.text = var_4_1.count
 
-	var_4_6(var_4_5:getConfig("icon"), "", arg_4_0.consumeIconTF)
+	GetImageSpriteFromAtlasAsync(var_4_1:getConfig("icon"), "", arg_4_0.consumeIconTF)
 
-	local var_4_7 = arg_4_0.itemCountTF
-	local var_4_8 = arg_4_0.commodity
+	arg_4_0.itemCountTF.text = arg_4_0.commodity:GetDropCnt()
 
-	var_4_7.text = var_5.GetDropCnt(var_4_8)
-	GetImageSpriteFromAtlasAsync = var_4_7
-
-	var_4_7(var_1.icon, "", arg_4_0.itemIconTF)
-
-	local var_4_9
-
-	if not var_1.rarity then
-		ItemRarity = var_4_9
-		var_4_9 = var_4_9.Gray
-	end
-
-	setImageSprite = var_5
-
-	local var_4_10 = arg_4_0.itemIconBgTF
-
-	GetSpriteFromAtlas = var_8
-
-	local var_4_11 = "weaponframes"
-	local var_4_12 = "bg"
-
-	ItemRarity = var_1_10012
-
-	var_5(var_4_10, var_8(var_4_11, var_4_12 .. var_1_10012.Rarity2Print(var_4_9)))
-
-	setImageColor = var_5
-
-	local var_4_13 = arg_4_0.itemIconFrameTF
-
-	Color = var_8
-
-	local var_4_14 = var_8.NewHex
-
-	ItemRarity = var_4_11
-
-	var_5(var_4_13, var_4_14(var_4_11.Rarity2FrameHexColor(var_4_9)))
+	GetImageSpriteFromAtlasAsync(var_4_0.icon, "", arg_4_0.itemIconTF)
+	setImageSprite(arg_4_0.itemIconBgTF, GetSpriteFromAtlas("weaponframes", "bg" .. ItemRarity.Rarity2Print(var_4_2)))
+	setImageColor(arg_4_0.itemIconFrameTF, Color.NewHex(ItemRarity.Rarity2FrameHexColor(var_4_2)))
 
 	return
 end

@@ -85,11 +85,7 @@ function setData(self, cusParent, data)
     self.colorVo = fashion.FashionManager:getFasionColorVo(showVo.fashionDic[1],showVo.fashionDic[2],showVo.fashionDic[3])
     local propsVo = props.PropsManager:getPropsConfigVo( self.colorVo.costTid)
 
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        self.mImgIcon:SetImg(UrlManager:getIconPath("fashionPairts_Har/"..self.colorVo.fashionIcon)  , true)
-    else
-        self.mImgIcon:SetImg(UrlManager:getIconPath("fashionPairts/"..self.colorVo.fashionIcon)  , true)
-    end
+    self.mImgIcon:SetImg(UrlManager:getFashionPairtsPath(self.colorVo.fashionIcon), true)
     --self.mImgIcon:SetImg(UrlManager:getIconPath("fashionPairts/"..self.colorVo.fashionIcon)  , true)
     --self.mImgIcon:SetImg(showVo:getShadowIcon(), false)
 

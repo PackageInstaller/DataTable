@@ -202,7 +202,13 @@ function onChildCallBack(self, index)
 end
 
 function childCallback1(self, funcId)
-    self.childCallBack(self.thisObject, funcId)
+    local args=nil
+    if funcId==funcopen.FuncOpenConst.FUNC_ID_PURCHASE_DIRECT_BUY and self.subChildType then
+        args={subChildTabIndex=self.subChildType}
+    else
+        args={subChildTabIndex=nil}
+    end
+    self.childCallBack(self.thisObject, funcId,args)
 end
 
 --删除子物体

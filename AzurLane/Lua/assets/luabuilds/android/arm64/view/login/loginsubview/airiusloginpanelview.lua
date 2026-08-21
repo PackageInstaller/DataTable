@@ -1,347 +1,110 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AiriUSLoginPanelView", import("...base.BaseSubView"))
 
-local var_0_0 = "AiriUSLoginPanelView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "AiriUSLoginPanelView"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.SetShareData(arg_3_0, arg_3_1)
+function var_0_0.SetShareData(arg_3_0, arg_3_1)
 	arg_3_0.shareData = arg_3_1
 
 	return
 end
 
-function var_0_1.OnInit(arg_4_0)
+function var_0_0.OnInit(arg_4_0)
 	arg_4_0.airijpPanel = arg_4_0._tf
-
-	local var_4_0 = arg_4_0.airijpPanel
-
-	arg_4_0.airiLoginBtn = var_1.Find(var_4_0, "airi_login")
-
-	local var_4_1 = arg_4_0.airijpPanel
-
-	arg_4_0.clearTranscodeBtn = var_1.Find(var_4_1, "clear_transcode")
-
-	local var_4_2 = arg_4_0.airijpPanel
-
-	arg_4_0.jpLoginCon = var_1.Find(var_4_2, "jp_login_btns")
-
-	local var_4_3 = arg_4_0.jpLoginCon
-
-	arg_4_0.appleLoginBtn = var_1.Find(var_4_3, "apple_login")
-
-	local var_4_4 = arg_4_0.jpLoginCon
-
-	arg_4_0.amazonLoginBtn = var_1.Find(var_4_4, "amazon_login")
-
-	local var_4_5 = arg_4_0.jpLoginCon
-
-	arg_4_0.twitterLoginBtn = var_1.Find(var_4_5, "twitter_login")
-
-	local var_4_6 = arg_4_0.jpLoginCon
-
-	arg_4_0.transcodeLoginBtn = var_1.Find(var_4_6, "transcode_login")
-
-	local var_4_7 = arg_4_0.jpLoginCon
-
-	arg_4_0.touristLoginBtn = var_1.Find(var_4_7, "tourist_login")
-
-	local var_4_8 = arg_4_0.jpLoginCon
-
-	arg_4_0.yostarLoginBtn = var_1.Find(var_4_8, "yostar_login")
-
-	local var_4_9 = arg_4_0.airijpPanel
-
-	arg_4_0.firstAlertWin = var_1.Find(var_4_9, "empty_alert")
-
-	local var_4_10 = arg_4_0.firstAlertWin
-
-	arg_4_0.appleToggleTf = var_1.Find(var_4_10, "window/content_bg/apple_toggle")
-
-	local var_4_11 = arg_4_0.firstAlertWin
-
-	arg_4_0.amazonToggleTf = var_1.Find(var_4_11, "window/content_bg/amazon_toggle")
-
-	local var_4_12 = arg_4_0.firstAlertWin
-
-	arg_4_0.twitterToggleTf = var_1.Find(var_4_12, "window/content_bg/twitter_toggle")
-
-	local var_4_13 = arg_4_0.firstAlertWin
-
-	arg_4_0.transcodeToggleTf = var_1.Find(var_4_13, "window/content_bg/transcode_toggle")
-
-	local var_4_14 = arg_4_0.firstAlertWin
-
-	arg_4_0.touristToggleTf = var_1.Find(var_4_14, "window/content_bg/tourist_toggle")
-
-	local var_4_15 = arg_4_0.firstAlertWin
-
-	arg_4_0.yostarToggleTf = var_1.Find(var_4_15, "window/content_bg/yostar_toggle")
-
-	local var_4_16 = arg_4_0.firstAlertWin
-
-	arg_4_0.alertCloseBtn = var_1.Find(var_4_16, "window/top/btnBack")
-
-	local var_4_17 = arg_4_0.firstAlertWin
-
-	arg_4_0.alertCancelBtn = var_1.Find(var_4_17, "window/button_container/custom_button_2")
-
-	local var_4_18 = arg_4_0.firstAlertWin
-
-	arg_4_0.alertSureBtn = var_1.Find(var_4_18, "window/button_container/custom_button_1")
-
-	local var_4_19 = arg_4_0.airijpPanel
-
-	arg_4_0.enLoginCon = var_1.Find(var_4_19, "en_login_btns")
-
-	local var_4_20 = arg_4_0.enLoginCon
-
-	arg_4_0.twitterLoginBtn_en = var_1.Find(var_4_20, "twitter_login_en")
-
-	local var_4_21 = arg_4_0.enLoginCon
-
-	arg_4_0.facebookLoginBtn_en = var_1.Find(var_4_21, "facebook_login_en")
-
-	local var_4_22 = arg_4_0.enLoginCon
-
-	arg_4_0.yostarLoginBtn_en = var_1.Find(var_4_22, "yostar_login_en")
-
-	local var_4_23 = arg_4_0.enLoginCon
-
-	arg_4_0.appleLoginBtn_en = var_1.Find(var_4_23, "apple_login_en")
-
-	local var_4_24 = arg_4_0.enLoginCon
-
-	arg_4_0.amazonLoginBtn_en = var_1.Find(var_4_24, "amazon_login_en")
-	setActive = var_1
-
-	local var_4_25 = arg_4_0.clearTranscodeBtn
-
-	LOCK_CLEAR_ACCOUNT = var_4
-
-	var_1(var_4_25, not var_4)
-
-	setActive = var_1
-
-	local var_4_26 = arg_4_0.transcodeLoginBtn
-
-	PLATFORM_CODE = var_4
-	PLATFORM_JP = var_1_10005
-
-	var_1(var_4_26, var_4 == var_1_10005)
-
-	setActive = var_1
-
-	var_1(arg_4_0.touristLoginBtn, false)
-
-	setActive = var_1
-
-	local var_4_27 = arg_4_0.yostarLoginBtn
-
-	PLATFORM_CODE = var_4
-	PLATFORM_JP = var_1_10005
-
-	var_1(var_4_27, var_4 == var_1_10005)
-
-	setActive = var_1
-
-	local var_4_28 = arg_4_0.appleLoginBtn
-
-	PLATFORM_CODE = var_4
-	PLATFORM_JP = var_1_10005
-
-	if var_4 == var_1_10005 then
-		pg = var_4
-
-		local var_4_29 = var_4.SdkMgr.GetInstance()
-		local var_4_30
-
-		if var_4.GetChannelUID(var_4_29) ~= "1" then
-			var_4_30 = false
-		else
-			var_4_30 = true
-		end
-
-		var_1(var_4_28, var_4_30)
-
-		setActive = var_1
-
-		local var_4_31 = arg_4_0.appleToggleTf
-
-		PLATFORM_CODE = var_4_30
-		PLATFORM_JP = var_1_10005
-
-		if var_4_30 == var_1_10005 then
-			pg = var_4_30
-
-			local var_4_32 = var_4_30.SdkMgr.GetInstance()
-			local var_4_33
-
-			if var_4.GetChannelUID(var_4_32) ~= "1" then
-				var_4_33 = false
-			else
-				var_4_33 = true
-			end
-
-			var_1(var_4_31, var_4_33)
-
-			setActive = var_1
-
-			local var_4_34 = arg_4_0.amazonLoginBtn
-
-			PLATFORM_CODE = var_4_33
-			PLATFORM_JP = var_1_10005
-
-			if var_4_33 == var_1_10005 then
-				pg = var_4_33
-
-				local var_4_35 = var_4_33.SdkMgr.GetInstance()
-				local var_4_36
-
-				if var_4.GetChannelUID(var_4_35) ~= "3" then
-					var_4_36 = false
-				else
-					var_4_36 = true
-				end
-
-				var_1(var_4_34, var_4_36)
-
-				setActive = var_1
-
-				local var_4_37 = arg_4_0.amazonToggleTf
-
-				PLATFORM_CODE = var_4_36
-				PLATFORM_JP = var_1_10005
-
-				if var_4_36 == var_1_10005 then
-					pg = var_4_36
-
-					local var_4_38 = var_4_36.SdkMgr.GetInstance()
-					local var_4_39
-
-					if var_4.GetChannelUID(var_4_38) ~= "3" then
-						var_4_39 = false
-					else
-						var_4_39 = true
+	arg_4_0.airiLoginBtn = arg_4_0.airijpPanel:Find("airi_login")
+	arg_4_0.clearTranscodeBtn = arg_4_0.airijpPanel:Find("clear_transcode")
+	arg_4_0.jpLoginCon = arg_4_0.airijpPanel:Find("jp_login_btns")
+	arg_4_0.appleLoginBtn = arg_4_0.jpLoginCon:Find("apple_login")
+	arg_4_0.amazonLoginBtn = arg_4_0.jpLoginCon:Find("amazon_login")
+	arg_4_0.twitterLoginBtn = arg_4_0.jpLoginCon:Find("twitter_login")
+	arg_4_0.transcodeLoginBtn = arg_4_0.jpLoginCon:Find("transcode_login")
+	arg_4_0.touristLoginBtn = arg_4_0.jpLoginCon:Find("tourist_login")
+	arg_4_0.yostarLoginBtn = arg_4_0.jpLoginCon:Find("yostar_login")
+	arg_4_0.firstAlertWin = arg_4_0.airijpPanel:Find("empty_alert")
+	arg_4_0.appleToggleTf = arg_4_0.firstAlertWin:Find("window/content_bg/apple_toggle")
+	arg_4_0.amazonToggleTf = arg_4_0.firstAlertWin:Find("window/content_bg/amazon_toggle")
+	arg_4_0.twitterToggleTf = arg_4_0.firstAlertWin:Find("window/content_bg/twitter_toggle")
+	arg_4_0.transcodeToggleTf = arg_4_0.firstAlertWin:Find("window/content_bg/transcode_toggle")
+	arg_4_0.touristToggleTf = arg_4_0.firstAlertWin:Find("window/content_bg/tourist_toggle")
+	arg_4_0.yostarToggleTf = arg_4_0.firstAlertWin:Find("window/content_bg/yostar_toggle")
+	arg_4_0.alertCloseBtn = arg_4_0.firstAlertWin:Find("window/top/btnBack")
+	arg_4_0.alertCancelBtn = arg_4_0.firstAlertWin:Find("window/button_container/custom_button_2")
+	arg_4_0.alertSureBtn = arg_4_0.firstAlertWin:Find("window/button_container/custom_button_1")
+	arg_4_0.enLoginCon = arg_4_0.airijpPanel:Find("en_login_btns")
+	arg_4_0.twitterLoginBtn_en = arg_4_0.enLoginCon:Find("twitter_login_en")
+	arg_4_0.facebookLoginBtn_en = arg_4_0.enLoginCon:Find("facebook_login_en")
+	arg_4_0.yostarLoginBtn_en = arg_4_0.enLoginCon:Find("yostar_login_en")
+	arg_4_0.appleLoginBtn_en = arg_4_0.enLoginCon:Find("apple_login_en")
+	arg_4_0.amazonLoginBtn_en = arg_4_0.enLoginCon:Find("amazon_login_en")
+
+	setActive(arg_4_0.clearTranscodeBtn, not LOCK_CLEAR_ACCOUNT)
+	setActive(arg_4_0.transcodeLoginBtn, PLATFORM_CODE == PLATFORM_JP)
+	setActive(arg_4_0.touristLoginBtn, false)
+	setActive(arg_4_0.yostarLoginBtn, PLATFORM_CODE == PLATFORM_JP)
+
+	local var_4_1 = arg_4_0.appleLoginBtn
+
+	if PLATFORM_CODE == PLATFORM_JP then
+		local var_4_2 = pg.SdkMgr.GetInstance():GetChannelUID() == "1"
+
+		var_4_0(var_4_1, var_4_2)
+
+		local var_4_4 = arg_4_0.appleToggleTf
+
+		if PLATFORM_CODE == PLATFORM_JP then
+			local var_4_5 = pg.SdkMgr.GetInstance():GetChannelUID() == "1"
+
+			var_4_3(var_4_4, var_4_5)
+
+			local var_4_7 = arg_4_0.amazonLoginBtn
+
+			if PLATFORM_CODE == PLATFORM_JP then
+				local var_4_8 = pg.SdkMgr.GetInstance():GetChannelUID() == "3"
+
+				var_4_6(var_4_7, var_4_8)
+
+				local var_4_10 = arg_4_0.amazonToggleTf
+
+				if PLATFORM_CODE == PLATFORM_JP then
+					local var_4_11 = pg.SdkMgr.GetInstance():GetChannelUID() == "3"
+
+					var_4_9(var_4_10, var_4_11)
+
+					if PLATFORM_CODE == PLATFORM_JP then
+						setActive(arg_4_0.firstAlertWin, false)
 					end
 
-					var_1(var_4_37, var_4_39)
+					setActive(arg_4_0.twitterLoginBtn_en, PLATFORM_CODE == PLATFORM_US)
 
-					PLATFORM_CODE = var_1
-					PLATFORM_JP = var_1_10002
+					local var_4_13 = arg_4_0.facebookLoginBtn_en
 
-					if var_1 == var_1_10002 then
-						setActive = var_1
+					if PLATFORM_CODE == PLATFORM_US then
+						local var_4_14 = pg.SdkMgr.GetInstance():GetChannelUID() ~= "3"
 
-						var_1(arg_4_0.firstAlertWin, false)
-					end
+						var_4_12(var_4_13, var_4_14)
+						setActive(arg_4_0.yostarLoginBtn_en, PLATFORM_CODE == PLATFORM_US)
 
-					setActive = var_1
+						local var_4_16 = arg_4_0.appleLoginBtn_en
 
-					local var_4_40 = arg_4_0.twitterLoginBtn_en
+						if PLATFORM_CODE == PLATFORM_US then
+							local var_4_17 = pg.SdkMgr.GetInstance():GetChannelUID() == "1"
 
-					PLATFORM_CODE = var_4_39
-					PLATFORM_US = var_1_10005
+							var_4_15(var_4_16, var_4_17)
 
-					var_1(var_4_40, var_4_39 == var_1_10005)
+							local var_4_19 = arg_4_0.amazonLoginBtn_en
 
-					setActive = var_1
+							if PLATFORM_CODE == PLATFORM_US then
+								local var_4_20 = pg.SdkMgr.GetInstance():GetChannelUID() == "3"
 
-					local var_4_41 = arg_4_0.facebookLoginBtn_en
-
-					PLATFORM_CODE = var_4
-					PLATFORM_US = var_1_10005
-
-					if var_4 == var_1_10005 then
-						pg = var_4
-
-						local var_4_42 = var_4.SdkMgr.GetInstance()
-						local var_4_43
-
-						if var_4.GetChannelUID(var_4_42) == "3" then
-							var_4_43 = false
-						else
-							var_4_43 = true
-						end
-
-						var_1(var_4_41, var_4_43)
-
-						setActive = var_1
-
-						local var_4_44 = arg_4_0.yostarLoginBtn_en
-
-						PLATFORM_CODE = var_4_43
-						PLATFORM_US = var_1_10005
-
-						var_1(var_4_44, var_4_43 == var_1_10005)
-
-						setActive = var_1
-
-						local var_4_45 = arg_4_0.appleLoginBtn_en
-
-						PLATFORM_CODE = var_4
-						PLATFORM_US = var_1_10005
-
-						if var_4 == var_1_10005 then
-							pg = var_4
-
-							local var_4_46 = var_4.SdkMgr.GetInstance()
-							local var_4_47
-
-							if var_4.GetChannelUID(var_4_46) ~= "1" then
-								var_4_47 = false
-							else
-								var_4_47 = true
-							end
-
-							var_1(var_4_45, var_4_47)
-
-							setActive = var_1
-
-							local var_4_48 = arg_4_0.amazonLoginBtn_en
-
-							PLATFORM_CODE = var_4_47
-							PLATFORM_US = var_1_10005
-
-							if var_4_47 == var_1_10005 then
-								pg = var_4_47
-
-								local var_4_49 = var_4_47.SdkMgr.GetInstance()
-								local var_4_50
-
-								if var_4.GetChannelUID(var_4_49) ~= "3" then
-									var_4_50 = false
-								else
-									var_4_50 = true
-								end
-
-								var_1(var_4_48, var_4_50)
-
-								setActive = var_1
-
-								local var_4_51 = arg_4_0.clearTranscodeBtn
-
-								PLATFORM_CODE = var_4_50
-								PLATFORM_US = var_1_10005
-
-								var_1(var_4_51, var_4_50 ~= var_1_10005)
-
-								setActive = var_1
-
-								var_1(arg_4_0.twitterLoginBtn, false)
-
-								setActive = var_1
-
-								var_1(arg_4_0.twitterToggleTf, false)
+								var_4_18(var_4_19, var_4_20)
+								setActive(arg_4_0.clearTranscodeBtn, PLATFORM_CODE ~= PLATFORM_US)
+								setActive(arg_4_0.twitterLoginBtn, false)
+								setActive(arg_4_0.twitterToggleTf, false)
 								arg_4_0:InitEvent()
 
 								return
@@ -354,36 +117,18 @@ function var_0_1.OnInit(arg_4_0)
 	end
 end
 
-function var_0_1.InitEvent(arg_5_0)
+function var_0_0.InitEvent(arg_5_0)
 	local function var_5_0()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.UIMgr.GetInstance()
-
-		var_0.UnOverlayPanel(var_6_0, arg_5_0.firstAlertWin, arg_5_0.airijpPanel)
-
-		setActive = var_0
-
-		var_0(arg_5_0.firstAlertWin, false)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_5_0.firstAlertWin, arg_5_0.airijpPanel)
+		setActive(arg_5_0.firstAlertWin, false)
 
 		return
 	end
 
 	local function var_5_1()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.SdkMgr.GetInstance()
-
-		if not var_0.CheckHadAccountCache(var_7_0) then
-			setActive = var_0
-
-			var_0(arg_5_0.firstAlertWin, true)
-
-			pg = var_0
-
-			local var_7_1 = var_0.UIMgr.GetInstance()
-
-			var_0.BlurPanel(var_7_1, arg_5_0.firstAlertWin)
+		if not pg.SdkMgr.GetInstance():CheckHadAccountCache() then
+			setActive(arg_5_0.firstAlertWin, true)
+			pg.UIMgr.GetInstance():BlurPanel(arg_5_0.firstAlertWin)
 
 			return true
 		end
@@ -391,378 +136,144 @@ function var_0_1.InitEvent(arg_5_0)
 		return false
 	end
 
-	onButton = var_1_10003
+	onButton(arg_5_0, arg_5_0.airiLoginBtn, function()
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CONFIRM)
 
-	var_1_10003(arg_5_0, arg_5_0.airiLoginBtn, function()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.CriMgr.GetInstance()
-		local var_8_1 = var_0.PlaySoundEffect_V3
-
-		SFX_CONFIRM = var_2_10003
-
-		var_8_1(var_8_0, var_2_10003)
-
-		getProxy = var_8_1
-		SettingsProxy = var_8_0
-
-		local var_8_2 = var_8_1(var_8_0)
-
-		if var_0.CheckNeedUserAgreement(var_8_2) then
-			local var_8_3 = arg_5_0.event
-			local var_8_4 = var_1.emit
-
-			LoginMediator = var_2_10004
-
-			var_8_4(var_8_3, var_2_10004.ON_LOGIN_PROCESS)
+		if getProxy(SettingsProxy):CheckNeedUserAgreement() then
+			arg_5_0.event:emit(LoginMediator.ON_LOGIN_PROCESS)
 		elseif not var_5_1() then
-			pg = var_1
-
-			local var_8_5 = var_1.SdkMgr.GetInstance()
-
-			var_1.AiriLoginSDK(var_8_5)
+			pg.SdkMgr.GetInstance():AiriLoginSDK()
 		end
 
 		return
 	end)
+	onButton(arg_5_0, arg_5_0.clearTranscodeBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			content = i18n("clear_transcode_cache_confirm"),
+			onYes = function()
+				ClearAccountCache()
 
-	onButton = var_1_10003
+				local var_10_0 = getProxy(SettingsProxy)
 
-	var_1_10003(arg_5_0, arg_5_0.clearTranscodeBtn, function()
-		pg = var_2_10000
+				var_10_0:deleteUserAreement()
+				var_10_0:clearAllReadHelp()
+				arg_5_0.event:emit(LoginMediator.ON_LOGIN_PROCESS)
+				pg.TipsMgr.GetInstance():ShowTips(i18n("clear_transcode_cache_success"))
 
-		local var_9_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_9_1 = var_0.ShowMsgBox
-		local var_9_2 = {}
+				return
+			end,
+			onNo = function()
+				return
+			end
+		})
 
-		i18n = var_2_10004
-		var_9_2.content = var_2_10004("clear_transcode_cache_confirm")
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.appleLoginBtn, function()
+		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_APPLE)
 
-		function var_9_2.onYes()
-			ClearAccountCache = var_3_10000
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.amazonLoginBtn, function()
+		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_AMAZON)
 
-			var_3_10000()
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.yostarLoginBtn, function()
+		arg_5_0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+			LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW,
+			LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
+			LoginSceneConst.DEFINE.PRESS_TO_LOGIN
+		})
 
-			getProxy = var_3_10000
-			SettingsProxy = var_3_10002
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.transcodeLoginBtn, function()
+		arg_5_0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+			LoginSceneConst.DEFINE.TRANSCODE_ALERT_VIEW,
+			LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
+			LoginSceneConst.DEFINE.PRESS_TO_LOGIN
+		})
 
-			local var_10_0 = var_3_10000(var_3_10002)
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.touristLoginBtn, function()
+		pg.SdkMgr.GetInstance():LoginWithDevice()
 
-			var_0.deleteUserAreement(var_10_0)
-			var_0:clearAllReadHelp()
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.twitterLoginBtn_en, function()
+		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_TWITTER)
 
-			local var_10_1 = arg_5_0.event
-			local var_10_2 = var_1.emit
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.facebookLoginBtn_en, function()
+		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_FACEBOOK)
 
-			LoginMediator = var_3_10004
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.yostarLoginBtn_en, function()
+		arg_5_0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+			LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW,
+			LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
+			LoginSceneConst.DEFINE.PRESS_TO_LOGIN
+		})
 
-			var_10_2(var_10_1, var_3_10004.ON_LOGIN_PROCESS)
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.appleLoginBtn_en, function()
+		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_APPLE)
 
-			pg = var_10_2
+		return
+	end)
+	onButton(arg_5_0, arg_5_0.amazonLoginBtn_en, function()
+		pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_AMAZON)
 
-			local var_10_3 = var_10_2.TipsMgr.GetInstance()
-			local var_10_4 = var_1.ShowTips
+		return
+	end)
+	;(function()
+		if not pg.SdkMgr.GetInstance():CheckHadAccountCache() then
+			setActive(arg_5_0.firstAlertWin, true)
+			pg.UIMgr.GetInstance():BlurPanel(arg_5_0.firstAlertWin)
 
-			i18n = var_4
-
-			var_10_4(var_10_3, var_4("clear_transcode_cache_success"))
-
-			return
+			return true
 		end
 
-		function var_9_2.onNo()
-			return
-		end
-
-		var_9_1(var_9_0, var_9_2)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.appleLoginBtn, function()
-		pg = var_2_10000
-
-		local var_12_0 = var_2_10000.SdkMgr.GetInstance()
-		local var_12_1 = var_0.LoginWithSocial
-
-		AIRI_PLATFORM_APPLE = var_2_10003
-
-		var_12_1(var_12_0, var_2_10003)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.amazonLoginBtn, function()
-		pg = var_2_10000
-
-		local var_13_0 = var_2_10000.SdkMgr.GetInstance()
-		local var_13_1 = var_0.LoginWithSocial
-
-		AIRI_PLATFORM_AMAZON = var_2_10003
-
-		var_13_1(var_13_0, var_2_10003)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.yostarLoginBtn, function()
-		local var_14_0 = arg_5_0
-		local var_14_1 = var_0.emit
-
-		LoginSceneConst = var_2_10003
-
-		local var_14_2 = var_2_10003.SWITCH_SUB_VIEW
-		local var_14_3 = {}
-
-		LoginSceneConst = var_2_10005
-		var_14_3[1] = var_2_10005.DEFINE.YOSTAR_ALERT_VIEW
-		LoginSceneConst = var_5
-		var_14_3[2] = var_5.DEFINE.AIRI_LOGIN_PANEL_VIEW
-		LoginSceneConst = var_5
-		var_14_3[3] = var_5.DEFINE.PRESS_TO_LOGIN
-
-		var_14_1(var_14_0, var_14_2, var_14_3)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.transcodeLoginBtn, function()
-		local var_15_0 = arg_5_0
-		local var_15_1 = var_0.emit
-
-		LoginSceneConst = var_2_10003
-
-		local var_15_2 = var_2_10003.SWITCH_SUB_VIEW
-		local var_15_3 = {}
-
-		LoginSceneConst = var_2_10005
-		var_15_3[1] = var_2_10005.DEFINE.TRANSCODE_ALERT_VIEW
-		LoginSceneConst = var_5
-		var_15_3[2] = var_5.DEFINE.AIRI_LOGIN_PANEL_VIEW
-		LoginSceneConst = var_5
-		var_15_3[3] = var_5.DEFINE.PRESS_TO_LOGIN
-
-		var_15_1(var_15_0, var_15_2, var_15_3)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.touristLoginBtn, function()
-		pg = var_2_10000
-
-		local var_16_0 = var_2_10000.SdkMgr.GetInstance()
-
-		var_0.LoginWithDevice(var_16_0)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.twitterLoginBtn_en, function()
-		pg = var_2_10000
-
-		local var_17_0 = var_2_10000.SdkMgr.GetInstance()
-		local var_17_1 = var_0.LoginWithSocial
-
-		AIRI_PLATFORM_TWITTER = var_2_10003
-
-		var_17_1(var_17_0, var_2_10003)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.facebookLoginBtn_en, function()
-		pg = var_2_10000
-
-		local var_18_0 = var_2_10000.SdkMgr.GetInstance()
-		local var_18_1 = var_0.LoginWithSocial
-
-		AIRI_PLATFORM_FACEBOOK = var_2_10003
-
-		var_18_1(var_18_0, var_2_10003)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.yostarLoginBtn_en, function()
-		local var_19_0 = arg_5_0
-		local var_19_1 = var_0.emit
-
-		LoginSceneConst = var_2_10003
-
-		local var_19_2 = var_2_10003.SWITCH_SUB_VIEW
-		local var_19_3 = {}
-
-		LoginSceneConst = var_2_10005
-		var_19_3[1] = var_2_10005.DEFINE.YOSTAR_ALERT_VIEW
-		LoginSceneConst = var_5
-		var_19_3[2] = var_5.DEFINE.AIRI_LOGIN_PANEL_VIEW
-		LoginSceneConst = var_5
-		var_19_3[3] = var_5.DEFINE.PRESS_TO_LOGIN
-
-		var_19_1(var_19_0, var_19_2, var_19_3)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.appleLoginBtn_en, function()
-		pg = var_2_10000
-
-		local var_20_0 = var_2_10000.SdkMgr.GetInstance()
-		local var_20_1 = var_0.LoginWithSocial
-
-		AIRI_PLATFORM_APPLE = var_2_10003
-
-		var_20_1(var_20_0, var_2_10003)
-
-		return
-	end)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_5_0, arg_5_0.amazonLoginBtn_en, function()
-		pg = var_2_10000
-
-		local var_21_0 = var_2_10000.SdkMgr.GetInstance()
-		local var_21_1 = var_0.LoginWithSocial
-
-		AIRI_PLATFORM_AMAZON = var_2_10003
-
-		var_21_1(var_21_0, var_2_10003)
-
-		return
-	end)
-	var_5_1()
-
-	onButton = var_3
-
-	var_3(arg_5_0, arg_5_0.alertCloseBtn, function()
+		return false
+	end)()
+	onButton(arg_5_0, arg_5_0.alertCloseBtn, function()
 		var_5_0()
 
 		return
 	end)
-
-	onButton = var_3
-
-	var_3(arg_5_0, arg_5_0.alertCancelBtn, function()
+	onButton(arg_5_0, arg_5_0.alertCancelBtn, function()
 		var_5_0()
 
 		return
 	end)
+	onButton(arg_5_0, arg_5_0.alertSureBtn, function()
+		local var_24_0 = getToggleState(arg_5_0.twitterToggleTf)
 
-	onButton = var_3
-
-	var_3(arg_5_0, arg_5_0.alertSureBtn, function()
-		getToggleState = var_2_10000
-
-		local var_24_0 = var_2_10000(arg_5_0.twitterToggleTf)
-		local var_24_1 = false
-
-		getToggleState = var_2_10001
-
-		local var_24_2 = var_2_10001(arg_5_0.transcodeToggleTf)
-
-		getToggleState = var_2
-
-		local var_24_3 = var_2(arg_5_0.touristToggleTf)
-
-		getToggleState = var_3
-
-		local var_24_4 = var_3(arg_5_0.appleToggleTf)
-
-		getToggleState = var_4
-
-		local var_24_5 = var_4(arg_5_0.amazonToggleTf)
-
-		getToggleState = var_5
-
-		local var_24_6 = var_5(arg_5_0.yostarToggleTf)
-		local var_24_8
-
-		if var_24_1 then
-			pg = var_24_8
-
-			local var_24_7 = var_24_8.SdkMgr.GetInstance()
-
-			var_24_8 = var_24_8.LoginWithSocial
-			AIRI_PLATFORM_TWITTER = var_2_10009
-
-			var_24_8(var_24_7, var_2_10009)
-		elseif var_24_2 then
-			local var_24_9 = arg_5_0
-
-			var_24_8 = var_24_8.emit
-			LoginSceneConst = var_2_10009
-			var_2_10009 = var_2_10009.SWITCH_SUB_VIEW
-
-			local var_24_10 = {}
-
-			LoginSceneConst = var_2_10011
-			var_24_10[1] = var_2_10011.DEFINE.TRANSCODE_ALERT_VIEW
-			LoginSceneConst = var_2_10011
-			var_24_10[2] = var_2_10011.DEFINE.AIRI_LOGIN_PANEL_VIEW
-			LoginSceneConst = var_2_10011
-			var_24_10[3] = var_2_10011.DEFINE.PRESS_TO_LOGIN
-
-			var_24_8(var_24_9, var_2_10009, var_24_10)
-		elseif var_24_3 then
-			pg = var_24_8
-
-			local var_24_11 = var_24_8.SdkMgr.GetInstance()
-
-			var_24_8.LoginWithDevice(var_24_11)
-		elseif var_24_4 then
-			pg = var_24_8
-
-			local var_24_12 = var_24_8.SdkMgr.GetInstance()
-
-			var_24_8 = var_24_8.LoginWithSocial
-			AIRI_PLATFORM_APPLE = var_2_10009
-
-			var_24_8(var_24_12, var_2_10009)
-		elseif var_24_5 then
-			pg = var_24_8
-
-			local var_24_13 = var_24_8.SdkMgr.GetInstance()
-			local var_24_14 = var_6.LoginWithSocial
-
-			AIRI_PLATFORM_AMAZON = var_2_10009
-
-			var_24_14(var_24_13, var_2_10009)
-		elseif var_24_6 then
-			local var_24_15 = arg_5_0
-			local var_24_16 = var_6.emit
-
-			LoginSceneConst = var_2_10009
-
-			local var_24_17 = var_2_10009.SWITCH_SUB_VIEW
-			local var_24_18 = {}
-
-			LoginSceneConst = var_2_10011
-			var_24_18[1] = var_2_10011.DEFINE.YOSTAR_ALERT_VIEW
-			LoginSceneConst = var_11
-			var_24_18[2] = var_11.DEFINE.AIRI_LOGIN_PANEL_VIEW
-			LoginSceneConst = var_11
-			var_24_18[3] = var_11.DEFINE.PRESS_TO_LOGIN
-
-			var_24_16(var_24_15, var_24_17, var_24_18)
+		if false then
+			pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_TWITTER)
+		elseif getToggleState(arg_5_0.transcodeToggleTf) then
+			arg_5_0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+				LoginSceneConst.DEFINE.TRANSCODE_ALERT_VIEW,
+				LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
+				LoginSceneConst.DEFINE.PRESS_TO_LOGIN
+			})
+		elseif getToggleState(arg_5_0.touristToggleTf) then
+			pg.SdkMgr.GetInstance():LoginWithDevice()
+		elseif getToggleState(arg_5_0.appleToggleTf) then
+			pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_APPLE)
+		elseif getToggleState(arg_5_0.amazonToggleTf) then
+			pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_AMAZON)
+		elseif getToggleState(arg_5_0.yostarToggleTf) then
+			arg_5_0:emit(LoginSceneConst.SWITCH_SUB_VIEW, {
+				LoginSceneConst.DEFINE.YOSTAR_ALERT_VIEW,
+				LoginSceneConst.DEFINE.AIRI_LOGIN_PANEL_VIEW,
+				LoginSceneConst.DEFINE.PRESS_TO_LOGIN
+			})
 		end
 
 		var_5_0()
@@ -773,8 +284,8 @@ function var_0_1.InitEvent(arg_5_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_25_0)
+function var_0_0.OnDestroy(arg_25_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -104,11 +104,19 @@ function setTuPoAttachAttr(self, cusList, isDispatch)
         else
             isActive = vo.is_active == 1
         end
-        local data = {key = vo.key, value = vo.value, isActive = isActive, breakUpRank = vo.breakUpRank or vo.breakup_rank}
+        local data = {key = vo.key, value = vo.value, isActive = isActive, breakUpRank = vo.breakUpRank or vo.breakup_rank,pos = vo.pos,isLock = vo.is_lock==1}
         table.insert(self.m_tuPoAttachAttrList, data)
         self.m_tuPoAttachAttrDic[cusList[i].key] = data
     end
     self:__dispatchUpdateDetailData(isDispatch)
+end
+
+function updateEmpowerLockInfo(self,pos,isLock)
+    for i = 1, #self.m_tuPoAttachAttrList do
+        if(self.m_tuPoAttachAttrList[i].pos == pos)then
+            self.m_tuPoAttachAttrList[i].isLock = isLock == 1
+        end        
+    end
 end
 
 -- 获取附加属性
@@ -632,6 +640,7 @@ function setPropsAwardMsgData(self, pt_prop_award)
     self:setTuPoAttachAttr(pt_prop_award.break_add_attr)
     self:setSkillEffect(pt_prop_award.skill_effect)
     self.refineLvl = pt_prop_award.refine_lv
+    --self.isLock = pt_prop_award.is_lock
 end
 
 -- 设置奖励展示道具数据(本地奖励包)

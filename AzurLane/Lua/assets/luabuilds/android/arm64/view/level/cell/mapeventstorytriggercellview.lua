@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MapEventStoryTriggerCellView", import(".StaticCellView"))
 
-local var_0_0 = "MapEventStoryTriggerCellView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".StaticCellView"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
 	arg_1_0.chapter = nil
 	arg_1_0.triggerUpper = nil
@@ -15,128 +9,68 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.GetOrder(arg_2_0)
-	ChapterConst = var_1_10001
-
-	return var_1_10001.CellPriorityAttachment
+function var_0_0.GetOrder(arg_2_0)
+	return ChapterConst.CellPriorityAttachment
 end
 
-function var_0_1.Update(arg_3_0)
-	local var_3_0 = arg_3_0.info.flag
+function var_0_0.Update(arg_3_0)
+	local var_3_0 = arg_3_0.info.flag == ChapterConst.CellFlagTriggerActive and arg_3_0.info.trait ~= ChapterConst.TraitLurk
 
-	ChapterConst = var_1_10003
+	if IsNil(arg_3_0.go) then
+		arg_3_0:PrepareBase("story_" .. arg_3_0.info.row .. "_" .. arg_3_0.info.column .. "_" .. arg_3_0.info.attachmentId)
 
-	if var_3_0 == var_1_10003.CellFlagTriggerActive then
-		local var_3_1 = var_1.trait
+		if IsNil(arg_3_0.triggerUpper) and pg.map_event_template[arg_3_0.info.attachmentId].icon and #pg.map_event_template[arg_3_0.info.attachmentId].icon > 0 and checkABExist("ui/" .. pg.map_event_template[arg_3_0.info.attachmentId].icon .. "_1shangceng") then
+			arg_3_0.triggerUpper = HaloAttachmentView.New(arg_3_0.parent, arg_3_0.info.row, arg_3_0.info.column)
 
-		ChapterConst = var_3
+			arg_3_0.triggerUpper:SetLoader(arg_3_0.loader)
+		end
+	end
 
-		local var_3_2
+	local var_3_1 = pg.map_event_template[arg_3_0.info.attachmentId].icon
+	local var_3_2
 
-		if var_3_1 == var_3.TraitLurk then
-			var_3_2 = false
+	var_3_2 = pg.map_event_template[arg_3_0.info.attachmentId].icon and #var_3_1 > 0 and var_3_1 .. "_1" or nil
+
+	local var_3_3 = ItemCell.TransformItemAsset(arg_3_0.chapter, var_3_2)
+
+	if arg_3_0.assetName ~= var_3_3 then
+		if var_3_3 == nil then
+			arg_3_0:GetLoader():ClearRequest("ItemAsset")
+
+			arg_3_0.assetName = var_3_3
 		else
-			var_3_2 = true
+			arg_3_0:GetLoader():GetPrefab("ui/" .. var_3_3, var_3_3, function(arg_4_0)
+				setParent(arg_4_0, arg_3_0.tf)
+				arg_3_0:ResetCanvasOrder()
+
+				arg_3_0.assetName = var_3_3
+
+				return
+			end, "ItemAsset")
 		end
-
-		IsNil = var_3
-
-		local var_3_3, var_3_5
-
-		if var_3(arg_3_0.go) then
-			var_3_3 = var_1.row
-
-			local var_3_4 = var_1.column
-
-			var_3_5 = "story_" .. var_3_3 .. "_" .. var_3_4 .. "_" .. var_1.attachmentId
-
-			local var_3_6 = arg_3_0
-
-			arg_3_0.PrepareBase(var_3_6, var_3_5)
-
-			pg = var_6
-
-			local var_3_7 = var_6.map_event_template[var_1.attachmentId].icon
-
-			IsNil = var_3_6
-
-			if var_3_6(arg_3_0.triggerUpper) and var_3_7 and #var_3_7 > 0 then
-				checkABExist = var_8
-
-				if var_8("ui/" .. var_3_7 .. "_1shangceng") then
-					HaloAttachmentView = var_8
-					arg_3_0.triggerUpper = var_8.New(arg_3_0.parent, var_3_3, var_3_4)
-
-					local var_3_8 = arg_3_0.triggerUpper
-
-					var_8.SetLoader(var_3_8, arg_3_0.loader)
-				end
-			end
-		end
-
-		pg = var_3_3
-
-		local var_3_9
-
-		var_3_9 = var_3_3.map_event_template[var_1.attachmentId].icon and #var_4 > 0 and var_4 .. "_1" or nil
-		ItemCell = var_3_5
-
-		local var_3_10 = var_3_5.TransformItemAsset(arg_3_0.chapter, var_3_9)
-
-		if arg_3_0.assetName ~= var_3_10 then
-			if var_3_10 == nil then
-				local var_3_11 = arg_3_0:GetLoader()
-
-				var_5.ClearRequest(var_3_11, "ItemAsset")
-
-				arg_3_0.assetName = var_3_10
-			else
-				local var_3_12 = arg_3_0:GetLoader()
-
-				var_5.GetPrefab(var_3_12, "ui/" .. var_3_10, var_3_10, function(arg_4_0)
-					setParent = var_2_10001
-
-					var_2_10001(arg_4_0, arg_3_0.tf)
-
-					local var_4_0 = arg_3_0
-
-					var_1.ResetCanvasOrder(var_4_0)
-
-					arg_3_0.assetName = var_3_10
-
-					return
-				end, "ItemAsset")
-			end
-		end
-
-		setActive = var_5
-
-		var_5(arg_3_0.tf, var_3_2)
-
-		if arg_3_0.triggerUpper then
-			arg_3_0.triggerUpper.info = arg_3_0.info
-
-			local var_3_13 = arg_3_0.triggerUpper
-
-			var_5.Update(var_3_13)
-		end
-
-		return
-	end
-end
-
-function var_0_1.DestroyGO(arg_5_0)
-	if arg_5_0.triggerUpper then
-		local var_5_0 = arg_5_0.triggerUpper
-
-		var_1.Clear(var_5_0)
 	end
 
-	arg_5_0.triggerUpper = nil
+	setActive(arg_3_0.tf, var_3_0)
 
-	var_0_1.super.DestroyGO(arg_5_0)
+	if arg_3_0.triggerUpper then
+		arg_3_0.triggerUpper.info = arg_3_0.info
+
+		arg_3_0.triggerUpper:Update()
+	end
 
 	return
 end
 
-return var_0_1
+function var_0_0.DestroyGO(arg_5_0)
+	if arg_5_0.triggerUpper then
+		arg_5_0.triggerUpper:Clear()
+	end
+
+	arg_5_0.triggerUpper = nil
+
+	var_0_0.super.DestroyGO(arg_5_0)
+
+	return
+end
+
+return var_0_0

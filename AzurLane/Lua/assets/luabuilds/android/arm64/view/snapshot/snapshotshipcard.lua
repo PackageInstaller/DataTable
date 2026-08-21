@@ -1,111 +1,41 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SnapshotShipCard")
+﻿local var_0_0 = class("SnapshotShipCard")
 
 var_0_0.TypeCard = 1
 var_0_0.TypeTrans = 2
-pg = var_1
 
-local var_0_1 = var_1.ship_data_group
+local var_0_1 = pg.ship_data_group
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.go = arg_1_1
 	arg_1_0.tr = arg_1_1.transform
-	GetOrAddComponent = var_2
-	arg_1_0.btn = var_2(arg_1_1, "Button")
-	findTF = var_2
-	arg_1_0.content = var_2(arg_1_0.tr, "content").gameObject
-	setActive = var_2
-	findTF = var_4
+	arg_1_0.btn = GetOrAddComponent(arg_1_1, "Button")
+	arg_1_0.content = findTF(arg_1_0.tr, "content").gameObject
 
-	var_2(var_4(arg_1_0.content, "dockyard"), false)
+	setActive(findTF(arg_1_0.content, "dockyard"), false)
+	setActive(findTF(arg_1_0.content, "collection"), true)
 
-	setActive = var_2
-	findTF = var_4
+	arg_1_0.shipFrameImg = findTF(arg_1_0.content, "front/frame")
+	arg_1_0.iconShip = findTF(arg_1_0.content, "ship_icon"):GetComponent(typeof(Image))
+	arg_1_0.imageBg = findTF(arg_1_0.content, "bg"):GetComponent(typeof(Image))
+	arg_1_0.labelName = findTF(arg_1_0.content, "info/name_mask/name")
+	arg_1_0.iconType = findTF(arg_1_0.content, "info/top/type"):GetComponent(typeof(Image))
+	arg_1_0.ringTF = findTF(arg_1_0.content, "front/ring")
+	arg_1_0.maskTF = findTF(arg_1_0.content, "collection/mask")
+	arg_1_0.heart = findTF(arg_1_0.content, "collection/heart")
+	arg_1_0.labelHeart = findTF(arg_1_0.heart, "heart"):GetComponent(typeof(Text))
+	arg_1_0.labelHeartIcon = findTF(arg_1_0.heart, "icon"):GetComponent(typeof(Image))
+	arg_1_0.labelHeartPlus = findTF(arg_1_0.heart, "heart+"):GetComponent(typeof(Text))
+	arg_1_0.imageUnknown = findTF(arg_1_0.tr, "unknown"):GetComponent(typeof(Image))
 
-	var_2(var_4(arg_1_0.content, "collection"), true)
-
-	findTF = var_2
-	arg_1_0.shipFrameImg = var_2(arg_1_0.content, "front/frame")
-	findTF = var_2
-
-	local var_1_0 = var_2(arg_1_0.content, "ship_icon")
-	local var_1_1 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_1_0.iconShip = var_1_1(var_1_0, var_5(var_7))
-	findTF = var_2
-
-	local var_1_2 = var_2(arg_1_0.content, "bg")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_1_0.imageBg = var_1_3(var_1_2, var_5(var_7))
-	findTF = var_2
-	arg_1_0.labelName = var_2(arg_1_0.content, "info/name_mask/name")
-	findTF = var_2
-
-	local var_1_4 = var_2(arg_1_0.content, "info/top/type")
-	local var_1_5 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_1_0.iconType = var_1_5(var_1_4, var_5(var_7))
-	findTF = var_2
-	arg_1_0.ringTF = var_2(arg_1_0.content, "front/ring")
-	findTF = var_2
-	arg_1_0.maskTF = var_2(arg_1_0.content, "collection/mask")
-	findTF = var_2
-	arg_1_0.heart = var_2(arg_1_0.content, "collection/heart")
-	findTF = var_2
-
-	local var_1_6 = var_2(arg_1_0.heart, "heart")
-	local var_1_7 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_7
-	arg_1_0.labelHeart = var_1_7(var_1_6, var_5(var_7))
-	findTF = var_2
-
-	local var_1_8 = var_2(arg_1_0.heart, "icon")
-	local var_1_9 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_1_0.labelHeartIcon = var_1_9(var_1_8, var_5(var_7))
-	findTF = var_2
-
-	local var_1_10 = var_2(arg_1_0.heart, "heart+")
-	local var_1_11 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_7
-	arg_1_0.labelHeartPlus = var_1_11(var_1_10, var_5(var_7))
-	findTF = var_2
-
-	local var_1_12 = var_2(arg_1_0.tr, "unknown")
-	local var_1_13 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_1_0.imageUnknown = var_1_13(var_1_12, var_5(var_7))
-	ClearTweenItemAlphaAndWhite = var_2
-
-	var_2(arg_1_0.go)
+	ClearTweenItemAlphaAndWhite(arg_1_0.go)
 
 	return
 end
 
 function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4, arg_2_5)
-	TweenItemAlphaAndWhite = var_1_10006
+	TweenItemAlphaAndWhite(arg_2_0.go)
 
-	var_1_10006(arg_2_0.go)
-
-	ShipGroup = var_1_10006
-
-	local var_2_0 = var_1_10006.getState(arg_2_5, arg_2_2, arg_2_3)
+	local var_2_0 = ShipGroup.getState(arg_2_5, arg_2_2, arg_2_3)
 
 	if arg_2_0.code ~= arg_2_1 or arg_2_0.shipGroup ~= arg_2_2 or arg_2_0.showTrans ~= arg_2_3 or arg_2_0.propose ~= arg_2_4 or arg_2_0.state ~= var_2_0 then
 		arg_2_0.code = arg_2_1
@@ -123,24 +53,13 @@ end
 
 function var_0_0.flush(arg_3_0)
 	if arg_3_0.shipGroup then
-		local var_3_0 = var_1
-		local var_3_1 = var_1.rarity2bgPrint(var_3_0, arg_3_0.showTrans)
+		local var_3_0 = arg_3_0.shipGroup:rarity2bgPrint(arg_3_0.showTrans)
 
-		var_1_10005 = var_1
+		GetImageSpriteFromAtlasAsync("bg/star_level_card_" .. var_3_0, "", arg_3_0.imageBg)
 
-		local var_3_2 = var_1.getPainting(var_1_10005, arg_3_0.showTrans)
+		arg_3_0.iconShip.sprite = GetSpriteFromAtlas("shipYardIcon/unknown", "")
 
-		GetImageSpriteFromAtlasAsync = var_3_0
-
-		var_3_0("bg/star_level_card_" .. var_3_1, "", arg_3_0.imageBg)
-
-		local var_3_3 = arg_3_0.iconShip
-
-		GetSpriteFromAtlas = var_1_10005
-		var_3_3.sprite = var_1_10005("shipYardIcon/unknown", "")
-		LoadSpriteAsync = var_3_3
-
-		var_3_3("shipYardIcon/" .. var_3_2, function(arg_4_0)
+		LoadSpriteAsync("shipYardIcon/" .. arg_3_0.shipGroup:getPainting(arg_3_0.showTrans), function(arg_4_0)
 			if arg_3_0.go then
 				arg_3_0.iconShip.sprite = arg_4_0
 			end
@@ -148,105 +67,45 @@ function var_0_0.flush(arg_3_0)
 			return
 		end)
 
-		local var_3_4 = arg_3_0.iconType
+		arg_3_0.iconType.sprite = GetSpriteFromAtlas("shiptype", shipType2print(arg_3_0.shipGroup:getShipType(arg_3_0.showTrans)))
 
-		GetSpriteFromAtlas = var_1_10005
+		setScrollText(arg_3_0.labelName, arg_3_0.shipGroup:getName(arg_3_0.showTrans))
 
-		local var_3_5 = "shiptype"
+		arg_3_0.labelHeart.text = arg_3_0.shipGroup.hearts > 999 and "999" or tostring(arg_3_0.shipGroup.hearts)
 
-		shipType2print = var_8
-		var_3_4.sprite = var_1_10005(var_3_5, var_8(var_1:getShipType(arg_3_0.showTrans)))
-		setScrollText = var_3_4
+		setActive(arg_3_0.labelHeartPlus, arg_3_0.shipGroup.hearts > 999)
 
-		var_3_4(arg_3_0.labelName, var_1:getName(arg_3_0.showTrans))
+		local var_3_1 = arg_3_0.labelHeart
 
-		local var_3_6 = arg_3_0.labelHeart
+		var_3_1.color = arg_3_0.shipGroup.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
 
-		if var_1.hearts > 999 then
-			var_1_10005 = "999"
-		else
-			tostring = var_1_10005
-			var_1_10005 = var_1_10005(var_1.hearts)
-		end
+		local var_3_2 = arg_3_0.labelHeartIcon
 
-		var_3_6.text = var_1_10005
-		setActive = var_3_6
+		var_3_2.color = arg_3_0.shipGroup.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
 
-		var_3_6(arg_3_0.labelHeartPlus, var_1.hearts > 999)
+		local var_3_3 = arg_3_0.labelHeartPlus
 
-		local var_3_7 = arg_3_0.labelHeart
+		var_3_3.color = arg_3_0.shipGroup.iheart and Color.New(1, 0.6, 0.6) or Color.New(1, 1, 1)
 
-		if var_1.iheart then
-			Color = var_1_10005
+		setShipCardFrame(arg_3_0.shipFrameImg, var_3_0)
+	end
 
-			if not var_1_10005.New(1, 0.6, 0.6) then
-				Color = var_1_10005
-				var_1_10005 = var_1_10005.New(1, 1, 1)
-			end
+	arg_3_0.content:SetActive(tobool(arg_3_0.shipGroup))
+	arg_3_0.imageUnknown.gameObject:SetActive(not arg_3_0.shipGroup)
 
-			var_3_7.color = var_1_10005
+	local var_3_4 = arg_3_0.btn
 
-			local var_3_8 = arg_3_0.labelHeartIcon
+	if arg_3_0.shipGroup then
+		var_3_4.targetGraphic = arg_3_0.imageFrame or arg_3_0.imageUnknown
 
-			if var_1.iheart then
-				Color = var_1_10005
+		setActive(arg_3_0.ringTF, arg_3_0.propose)
 
-				if not var_1_10005.New(1, 0.6, 0.6) then
-					Color = var_1_10005
-					var_1_10005 = var_1_10005.New(1, 1, 1)
-				end
-
-				var_3_8.color = var_1_10005
-
-				local var_3_9 = arg_3_0.labelHeartPlus
-
-				if var_1.iheart then
-					Color = var_1_10005
-
-					if not var_1_10005.New(1, 0.6, 0.6) then
-						Color = var_1_10005
-						var_1_10005 = var_1_10005.New(1, 1, 1)
-					end
-
-					var_3_9.color = var_1_10005
-					setShipCardFrame = var_3_9
-
-					var_3_9(arg_3_0.shipFrameImg, var_3_1)
-
-					local var_3_10 = arg_3_0.content
-					local var_3_11 = var_2.SetActive
-
-					tobool = var_1_10005
-
-					var_3_11(var_3_10, var_1_10005(var_1))
-
-					local var_3_12 = arg_3_0.imageUnknown.gameObject
-
-					var_2.SetActive(var_3_12, not var_1)
-
-					local var_3_13 = arg_3_0.btn
-					local var_3_14
-
-					if not var_1 or not arg_3_0.imageFrame then
-						var_3_14 = arg_3_0.imageUnknown
-					end
-
-					var_3_13.targetGraphic = var_3_14
-					setActive = var_3_13
-
-					var_3_13(arg_3_0.ringTF, arg_3_0.propose)
-
-					return
-				end
-			end
-		end
+		return
 	end
 end
 
 function var_0_0.clear(arg_5_0)
-	ClearTweenItemAlphaAndWhite = var_1_10001
-
-	var_1_10001(arg_5_0.go)
+	ClearTweenItemAlphaAndWhite(arg_5_0.go)
 
 	arg_5_0.shipGroup = nil
 	arg_5_0.showTrans = nil

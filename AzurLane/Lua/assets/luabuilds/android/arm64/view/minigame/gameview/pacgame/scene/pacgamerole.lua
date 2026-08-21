@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PacGameRole")
+﻿local var_0_0 = class("PacGameRole")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._tf = arg_1_1
@@ -10,49 +8,35 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._enemyFlag = arg_1_2.enemy
 	arg_1_0._bound = arg_1_2.bound
 
-	local var_1_0
+	if arg_1_2.rate then
+		arg_1_0._rate = arg_1_2.rate or 0
+		arg_1_0._rateCount = 0
+		arg_1_0._halfBound = {
+			arg_1_0._bound[1] / 2,
+			arg_1_0._bound[2] / 2
+		}
+		arg_1_0._spineAnimUI = GetComponent(findTF(arg_1_0._tf, "spine"), "SpineAnimUI")
+		arg_1_0._direct = {
+			0,
+			0
+		}
+		arg_1_0._rushState = false
+		arg_1_0._rushTime = nil
+		arg_1_0._position = Vector2(0, 0)
+		arg_1_0._speed = arg_1_2.speed
+		arg_1_0._rushSpeed = arg_1_2.rush_speed
+		arg_1_0._anchoredPosition = arg_1_0._tf.anchoredPosition
+		arg_1_0._roads = {}
+		arg_1_0._targetHistory = {}
+		arg_1_0._targetHistoryCount = 0
+		arg_1_0._isPlayer = false
+		arg_1_0._animator = GetComponent(arg_1_0._tf, typeof(Animator))
+		arg_1_0._directArrowTf = findTF(arg_1_0._tf, "player_arrow")
 
-	if not arg_1_2.rate or not arg_1_2.rate then
-		var_1_0 = 0
+		arg_1_0:setActionNormal()
+
+		return
 	end
-
-	arg_1_0._rate = var_1_0
-	arg_1_0._rateCount = 0
-	arg_1_0._halfBound = {
-		arg_1_0._bound[1] / 2,
-		arg_1_0._bound[2] / 2
-	}
-	GetComponent = var_3
-	findTF = var_1_10005
-	arg_1_0._spineAnimUI = var_3(var_1_10005(arg_1_0._tf, "spine"), "SpineAnimUI")
-	arg_1_0._direct = {
-		0,
-		0
-	}
-	arg_1_0._rushState = false
-	arg_1_0._rushTime = nil
-	Vector2 = var_3
-	arg_1_0._position = var_3(0, 0)
-	arg_1_0._speed = arg_1_2.speed
-	arg_1_0._rushSpeed = arg_1_2.rush_speed
-	arg_1_0._anchoredPosition = arg_1_0._tf.anchoredPosition
-	arg_1_0._roads = {}
-	arg_1_0._targetHistory = {}
-	arg_1_0._targetHistoryCount = 0
-	arg_1_0._isPlayer = false
-	GetComponent = var_3
-
-	local var_1_1 = arg_1_0._tf
-
-	typeof = var_6
-	Animator = var_8
-	arg_1_0._animator = var_3(var_1_1, var_6(var_8))
-	findTF = var_3
-	arg_1_0._directArrowTf = var_3(arg_1_0._tf, "player_arrow")
-
-	arg_1_0:setActionNormal()
-
-	return
 end
 
 function var_0_0.SetPlayer(arg_2_0, arg_2_1)
@@ -64,13 +48,11 @@ end
 function var_0_0.Step(arg_3_0, arg_3_1)
 	arg_3_0._deltaTime = arg_3_1
 
-	local var_3_0 = arg_3_0._animator
-	local var_3_1 = var_2.GetBool(var_3_0, "flash")
-	local var_3_2 = false
+	local var_3_0 = false
 
 	if arg_3_0._rushTime and arg_3_0._rushTime >= 0 then
 		if arg_3_0._rushTime <= 3 then
-			var_3_2 = true
+			var_3_0 = true
 		end
 
 		arg_3_0._rushTime = arg_3_0._rushTime - arg_3_1
@@ -82,10 +64,8 @@ function var_0_0.Step(arg_3_0, arg_3_1)
 		end
 	end
 
-	if var_3_1 ~= var_3_2 then
-		local var_3_3 = arg_3_0._animator
-
-		var_4.SetBool(var_3_3, "flash", var_3_2)
+	if arg_3_0._animator:GetBool("flash") ~= var_3_0 then
+		arg_3_0._animator:SetBool("flash", var_3_0)
 	end
 
 	if arg_3_0._backStartStepTime and arg_3_0._backStartStepTime >= 0 then
@@ -115,18 +95,8 @@ function var_0_0.GetSpeed(arg_4_0)
 
 	local var_4_0 = arg_4_0._speed + arg_4_0._rate * arg_4_0._rateCount
 
-	PacGameConst = var_2
-
-	if var_2.enemy_max_speed <= var_4_0 then
-		PacGameConst = var_2
-
-		local var_4_1
-
-		if not var_2.enemy_max_speed then
-			var_4_1 = var_4_0
-		end
-
-		return var_4_1
+	if arg_4_0._speed + arg_4_0._rate * arg_4_0._rateCount >= PacGameConst.enemy_max_speed then
+		return PacGameConst.enemy_max_speed or var_4_0
 	end
 end
 
@@ -147,9 +117,7 @@ function var_0_0.GetStartIndex(arg_7_0)
 end
 
 function var_0_0.SetParent(arg_8_0, arg_8_1)
-	setParent = var_1_10002
-
-	var_1_10002(arg_8_0._tf, arg_8_1)
+	setParent(arg_8_0._tf, arg_8_1)
 
 	return
 end
@@ -187,17 +155,14 @@ end
 
 function var_0_0.GetGridIndexNext(arg_14_0)
 	if arg_14_0:HasTarget() then
-		math = var_1
+		local var_14_0 = math.abs(arg_14_0._target.x - arg_14_0._tf.anchoredPosition.x)
+		local var_14_1 = math.abs(arg_14_0._target.y - arg_14_0._tf.anchoredPosition.y)
 
-		local var_14_0 = var_1.abs(arg_14_0._target.x - arg_14_0._tf.anchoredPosition.x)
-
-		math = var_1_10002
-
-		if var_14_0 + var_1_10002.abs(arg_14_0._target.y - arg_14_0._tf.anchoredPosition.y) >= arg_14_0._halfBound[1] then
+		if var_14_0 + var_14_1 >= arg_14_0._halfBound[1] then
 			return arg_14_0._gridIndex
 		elseif var_14_0 >= arg_14_0._halfBound[1] then
 			return arg_14_0._gridIndex
-		elseif var_2 >= arg_14_0._halfBound[2] then
+		elseif var_14_1 >= arg_14_0._halfBound[2] then
 			return arg_14_0._gridIndex
 		end
 
@@ -223,9 +188,8 @@ end
 
 function var_0_0.MoveTo(arg_18_0, arg_18_1)
 	arg_18_0._targetHistoryCount = arg_18_0._targetHistoryCount + 1
-	table = var_2
 
-	var_2.insert(arg_18_0._targetHistory, arg_18_1)
+	table.insert(arg_18_0._targetHistory, arg_18_1)
 	arg_18_0:SetPosition(arg_18_1)
 
 	return
@@ -251,9 +215,7 @@ end
 
 function var_0_0.PopRoad(arg_23_0)
 	if #arg_23_0._roads >= 0 then
-		table = var_1
-
-		return var_1.remove(arg_23_0._roads, 1)
+		return table.remove(arg_23_0._roads, 1)
 	end
 
 	return nil
@@ -314,9 +276,7 @@ function var_0_0.GetAutoState(arg_30_0)
 end
 
 function var_0_0.SetActive(arg_31_0, arg_31_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_31_0._tf, arg_31_1)
+	setActive(arg_31_0._tf, arg_31_1)
 
 	return
 end
@@ -328,25 +288,19 @@ function var_0_0.SetAction(arg_32_0, arg_32_1, arg_32_2)
 
 	arg_32_0._playingAction = arg_32_1
 
-	local var_32_0 = arg_32_0._spineAnimUI
-
-	var_3.SetAction(var_32_0, arg_32_1, arg_32_2)
+	arg_32_0._spineAnimUI:SetAction(arg_32_1, arg_32_2)
 
 	return
 end
 
 function var_0_0.SetActionCallBack(arg_33_0, arg_33_1)
-	local var_33_0 = arg_33_0._spineAnimUI
-
-	var_2.SetActionCallBack(var_33_0, arg_33_1)
+	arg_33_0._spineAnimUI:SetActionCallBack(arg_33_1)
 
 	return
 end
 
 function var_0_0.SetRush(arg_34_0, arg_34_1, arg_34_2)
-	print = var_1_10003
-
-	var_1_10003("角色开始冲刺")
+	print("角色开始冲刺")
 
 	arg_34_0._rushState = arg_34_1
 	arg_34_0._rushTime = arg_34_2
@@ -384,9 +338,7 @@ end
 
 function var_0_0.SetAsLastSibling(arg_39_0)
 	if arg_39_0._tf then
-		local var_39_0 = arg_39_0._tf
-
-		var_1.SetAsLastSibling(var_39_0)
+		arg_39_0._tf:SetAsLastSibling()
 	end
 
 	return
@@ -394,9 +346,7 @@ end
 
 function var_0_0.Dispose(arg_40_0)
 	if arg_40_0._tf then
-		destroy = var_1
-
-		var_1(arg_40_0._tf)
+		destroy(arg_40_0._tf)
 
 		arg_40_0._tf = nil
 	end
@@ -405,9 +355,7 @@ function var_0_0.Dispose(arg_40_0)
 	arg_40_0._playingAction = nil
 
 	if arg_40_0._spineAnimUI then
-		local var_40_0 = arg_40_0._spineAnimUI
-
-		var_1.SetActionCallBack(var_40_0, nil)
+		arg_40_0._spineAnimUI:SetActionCallBack(nil)
 
 		arg_40_0._spineAnimUI = nil
 	end
@@ -419,46 +367,19 @@ function var_0_0.Dispose(arg_40_0)
 end
 
 function var_0_0.setDirectArrow(arg_41_0, arg_41_1)
-	setActive = var_1_10002
-	findTF = var_1_10004
-
-	var_1_10002(var_1_10004(arg_41_0._tf, "bg/L"), false)
-
-	setActive = var_1_10002
-	findTF = var_4
-
-	var_1_10002(var_4(arg_41_0._tf, "bg/R"), false)
-
-	setActive = var_1_10002
-	findTF = var_4
-
-	var_1_10002(var_4(arg_41_0._tf, "bg/T"), false)
-
-	setActive = var_1_10002
-	findTF = var_4
-
-	var_1_10002(var_4(arg_41_0._tf, "bg/B"), false)
+	setActive(findTF(arg_41_0._tf, "bg/L"), false)
+	setActive(findTF(arg_41_0._tf, "bg/R"), false)
+	setActive(findTF(arg_41_0._tf, "bg/T"), false)
+	setActive(findTF(arg_41_0._tf, "bg/B"), false)
 
 	if arg_41_1[1] == 1 then
-		setActive = var_2
-		findTF = var_4
-
-		var_2(var_4(arg_41_0._tf, "bg/R"), true)
+		setActive(findTF(arg_41_0._tf, "bg/R"), true)
 	elseif arg_41_1[1] == -1 then
-		setActive = var_2
-		findTF = var_4
-
-		var_2(var_4(arg_41_0._tf, "bg/L"), true)
+		setActive(findTF(arg_41_0._tf, "bg/L"), true)
 	elseif arg_41_1[2] == 1 then
-		setActive = var_2
-		findTF = var_4
-
-		var_2(var_4(arg_41_0._tf, "bg/T"), true)
+		setActive(findTF(arg_41_0._tf, "bg/T"), true)
 	elseif arg_41_1[2] == -1 then
-		setActive = var_2
-		findTF = var_4
-
-		var_2(var_4(arg_41_0._tf, "bg/B"), true)
+		setActive(findTF(arg_41_0._tf, "bg/B"), true)
 	end
 
 	return

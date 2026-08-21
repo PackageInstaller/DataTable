@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : BuildBaseRoomCamera
 @Description    : 基建摄像机
@@ -54,7 +54,7 @@ function onMobilePlatformCameraSlowMove(self)
         self:onMobilePlatformCameraScale()
 
         ---速度归0 停下镜头旋转
-    self.cameraSpeed = { x = 0, y = 0 }
+        self.cameraSpeed = {x = 0, y = 0}
     elseif math.abs(self.cameraSpeed.x) > 0 or math.abs(self.cameraSpeed.y) > 0 then
         isStop = self:updateCamera()
     end
@@ -66,6 +66,6 @@ function destroy(self)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

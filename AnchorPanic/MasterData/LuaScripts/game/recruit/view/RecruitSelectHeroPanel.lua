@@ -120,10 +120,10 @@ function active(self, args)
     end
 
     if self.m_appType == 1 then
-        self.mBtnConfirmRect.anchoredPosition = gs.Vector2(200,self.mBtnConfirmRect.anchoredPosition.y)
+        self.mBtnConfirmRect.anchoredPosition = gs.Vector2(200, self.mBtnConfirmRect.anchoredPosition.y)
         self.mBtnGo:SetActive(true)
     else
-        self.mBtnConfirmRect.anchoredPosition = gs.Vector2(0,self.mBtnConfirmRect.anchoredPosition.y)
+        self.mBtnConfirmRect.anchoredPosition = gs.Vector2(0, self.mBtnConfirmRect.anchoredPosition.y)
         self.mBtnGo:SetActive(false)
     end
 
@@ -182,6 +182,9 @@ function refreshProps(self)
             local consume_tid = sysParam.SysParamManager:getValue(SysParamType.RECRUIT_APP_ITEM)
             self.m_consumeGrid = PropsGrid:createByData({tid = consume_tid, num = 0, parent = self:getChildTrans("consume"), scale = 1, showUseInTip = true})
             self.m_consumeGrid:setCount(nil, 1)
+
+            local rect = self:getChildTrans("consume"):GetComponent(ty.RectTransform)
+            rect.anchoredPosition = gs.Vector2(400, rect.anchoredPosition.y)
         end
     else
         local consume_tid = sysParam.SysParamManager:getValue(SysParamType.RECRUIT_SENIORAPP_ITEM)

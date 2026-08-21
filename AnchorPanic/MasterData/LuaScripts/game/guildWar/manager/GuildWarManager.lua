@@ -14,6 +14,7 @@ end
 
 function __initData(self)
     self.mGuildWarViewList = {}
+    self.isSkipFighting = false
 end
 
 -- 析构函数
@@ -24,9 +25,19 @@ function parseGuildWar()
 
 end
 
+function setIsFight(self,isOn)
+    self.isFightSkip = isOn
+end
+
 function parseChallengeInfo(self, msg)
     local function fightCall()
-        fight.FightManager:reqBattleEnter(PreFightBattleType.GuildWar, self.lastPlayerId)
+        if self.isFightSkip then
+            fight.FightController:reqBattleOutsideSkip(PreFightBattleType.GuildWar, self.lastPlayerId)
+            GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_SKIP_FIGHT)
+        else
+            fight.FightManager:reqBattleEnter(PreFightBattleType.GuildWar, self.lastPlayerId)
+        end
+      
     end
 
     if msg.result == 1 then
@@ -155,26 +166,92 @@ end
 function parseCurrentDayLog(self, msg)
     if msg.is_send_guild_war_battle_result == 0 then
         GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_CURRENT_DAY_LOG_PANEL, {
-            log = msg.log
+            log = msg.log,
+            isTop = false
         })
     end
-
 end
 
 function parseGuildWarSeason(self, msg)
-    self.warSeasonId = msg.season_info.season_id -- 赛季id
-    self.warNextStepStartTime = msg.season_info.next_step_start_time -- 开始时间
-    self.warState = msg.season_info.state -- 状态
-    self.warEndTime = msg.season_info.end_time
-    self.warStartTime = msg.season_info.start_time
-    self.lockDefState = msg.sync_def_formation_state
+    self.warSeasonId = msg.guild_war_season_info.season_id -- 赛季id
+    self.warNextStepStartTime = msg.guild_war_season_info.next_step_start_time -- 开始时间
+    self.warState = msg.guild_war_season_info.state -- 状态
+    self.warEndTime = msg.guild_war_season_info.end_time
+    self.warStartTime = msg.guild_war_season_info.start_time
 
+
+    --巅峰团战
+    self.warTopSeasonId = msg.guild_top_war_season_info.season_id -- 最高赛季id
+    self.warTopNextStepStartTime = msg.guild_top_war_season_info.next_step_start_time -- 最高开始时间
+    self.warTopState = msg.guild_top_war_season_info.state -- 最高状态
+    
+    self.warTopBetStartTime = msg.guild_top_war_season_info.bet_start_time -- 下注开始时间
+    self.warTopBetEndTime = msg.guild_top_war_season_info.bet_end_time -- 下注结束时间
+   
+
+    --self.warTopFightEndTime = msg.guild_top_war_season_info.fight_end_time -- 战斗结束时间
+    
+    self.warTopEndTime = msg.guild_top_war_season_info.end_time
+    self.warTopStartTime = msg.guild_top_war_season_info.start_time
+    
+    self.warTopDay = msg.guild_top_war_season_info.day -- 巅峰天数
+
+    self.seasonType = msg.season_type -- 赛季类型 1-公会团战,2-巅峰团战
+
+    self.lockDefState = msg.sync_def_formation_state
     -- 状态切换时重置敌方数据
     self.mEnemyGuildInfo = nil
 
     GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_STATE)
 
     cusLog("最新团战状态" .. self.warState)
+end
+
+function getGuildWarTopSeasonId(self)
+    return self.warTopSeasonId 
+end
+
+function getGuildWarTopEndTime(self)
+    return self.warTopEndTime
+end
+
+function getGuildWarTopNextStartTime(self)
+    return self.warTopNextStepStartTime
+end
+
+function getGuildWarStartTime(self)
+    return self.warTopStartTime
+end
+
+function parseGuildBetRed(self,msg)
+    self.betDay = msg.day
+    self.result = msg.result
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_STATE)
+
+    local red = self:getGuildBetRed()
+    red = red or self:getGuildBetAwardRedAll()
+    mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_GUILD_WAR_TOP_BET, red)
+end
+
+function getGuildBetRed(self)
+    return self.result == 1 and self.betDay == self.warTopDay
+end
+
+function getWarTopBetTime(self)
+    return self.warTopBetStartTime, self.warTopBetEndTime
+end
+
+function getTopDay(self)
+    return self.warTopDay
+end
+
+function getGuildWarTopNextStartTime(self)
+    return self.warTopNextStepStartTime
+end
+
+-- 赛季类型 1-公会团战,2-巅峰团战
+function getSeasonType(self)
+    return self.seasonType
 end
 
 function getGuildWarLockState(self)
@@ -202,7 +279,7 @@ function getGuildStartTime(self)
 end
 
 function getGuildWarState(self)
-    return self.warState
+    return self:getSeasonType() == guildWar.GuildWarType.Normal and self.warState or self.warTopState
 end
 
 function parseGuildWarBuildData(self)
@@ -221,7 +298,15 @@ end
 
 function getGuildWarDefFormationRed(self)
     local teamHeroList = formation.FormationManager:__getFormationHeroListByTeamId(22001)
-    return (#teamHeroList == 0 or teamHeroList == nil) and (self.warState == guildWar.GuildWarState.GuildWarSignUp or self.warState == guildWar.GuildWarState.GuildWarMatchAndSettle)
+     local defRed  = false
+    local type = guildWar.GuildWarManager:getSeasonType()
+    if type == guildWar.GuildWarType.Normal then
+        defRed = self.warState == guildWar.GuildWarState.GuildWarSignUp or self.warState == guildWar.GuildWarState.GuildWarMatchAndSettle
+    else 
+        defRed = self.warTopState == guildWar.GuildWarState.GuildWarTopMatch
+    end
+    
+    return (#teamHeroList == 0 or teamHeroList == nil) and defRed
 end
 
 function getGuildWarFightRed(self)
@@ -238,6 +323,10 @@ end
 
 function getNeedNumberCount(self, id)
     if self.warState ~= guildWar.GuildWarState.GuildWarSignUp or guild.GuildManager:getSelfIsGuildLeader() == false then
+        return false
+    end
+
+    if self:getSeasonType() == guildWar.GuildWarType.Top then
         return false
     end
 
@@ -383,4 +472,229 @@ function getIsRep(self)
     self.isRep = false
     return retIs
 end
+
+function parseGuildWarTopInfo(self,msg)
+    self.detDay = msg.day
+    self.betInfo = msg.bet_info
+    self.firstDayGroup = msg.first_day_group
+    self.winGroup = msg.win_group
+    self.loseGroup = msg.lose_group
+
+    table.sort(self.firstDayGroup, function(a, b) return a.group_id < b.group_id end)
+    table.sort(self.betInfo, function(a, b) return a.group_id < b.group_id end)
+    table.sort(self.winGroup, function(a, b) return a.group_id < b.group_id end)
+    table.sort(self.loseGroup, function(a, b) return a.group_id < b.group_id end)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_TOP_INFO)
+end
+
+function getGuildWarTopSelectDay(self)
+    return self.detDay
+end
+
+function getFirstDayGroup(self)
+    return self.firstDayGroup
+end
+
+function getWinGroup(self)
+    return self.winGroup
+end
+
+function getLoseGroup(self)
+    return self.loseGroup
+end
+
+function getBetInfo(self)
+    return self.betInfo
+end
+
+
+function parseGuildWarTopBet(self,msg)
+    if self.detDay ~= msg.day then
+        return
+    end
+    for i = 1, #self.betInfo, 1 do
+        if self.betInfo[i].group_id == msg.group_id then
+            self.betInfo[i].bet_uid = msg.bet_uid
+        end
+    end
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_TOP_INFO)
+end
+
+function parseGuildWarTopHistoryRank(self,msg)
+    self.mWarTopRank = msg.my_rank 
+    self.mWarTopPoint = msg.my_point
+    self.mWarTopName = msg.guild_name
+    self.mWarTopRankList = msg.rank_list
+    self.mWarTopLeaderName = msg.leader_name
+
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_TOP_HITSTORY_RANK)
+end
+
+function getGuildWarTopRankInfoData(self)
+    return self.mWarTopRank, self.mWarTopPoint, self.mWarTopName,self.mWarTopLeaderName
+end 
+
+function getGuildWarTopRankList(self)
+    return self.mWarTopRankList
+end
+
+
+function parseGuildWarTopLog(self,msg)
+    self.mWarTopLogList = msg.log_list
+    self.mWarTopLogNum = msg.log_num
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_GUILD_LOG_PANEL, {
+        logList = self.mWarTopLogList,
+        logNum = self.mWarTopLogNum
+    })
+end
+
+
+function parseGuildWarTopCurrentLog(self,msg)
+    -- self.mWarTopCurrentLog = msg.log
+    -- self.mWarTopIsSendGuildWarBattleResult = msg.is_send_guild_war_battle_result
+
+     if msg.is_send_guild_war_battle_result == 0 then
+        GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_CURRENT_DAY_LOG_PANEL, {
+            log = msg.log,
+            isTop = true
+        })
+    end
+end
+
+function parseGuildWarTopBattleLog(self,msg)
+    self.mWarTopBattleLogList = msg.log_list
+    self.mWarTopBattleLogNum = msg.log_num
+
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_BATTLE_LOG, {
+        logList = self.mWarTopBattleLogList,
+        logNum = self.mWarTopBattleLogNum
+    })
+end
+
+function parseGuildWarBetReward(self)
+    self.mWarTopBet = {}
+    local baseData = RefMgr:getData("guild_top_war_bet_reward")
+    for id, data in pairs(baseData) do
+        local vo = LuaPoolMgr:poolGet(guildWar.GuildWarBetAwardVo)
+        vo:parseData(id, data)
+        table.insert(self.mWarTopBet, vo)
+    end
+end
+
+function getGuildAwardBetAward(self,id)
+    if self.mWarTopBet == nil then
+        self:parseGuildWarBetReward()
+    end
+
+    for i = 1, #self.mWarTopBet, 1 do
+        if self.mWarTopBet[i].id == id then
+            return self.mWarTopBet[i]
+        end
+    end
+    return nil
+end
+
+function parseGuildWarTopAwardData(self)
+    self.guildWarTopAwardData = {}
+    self.guildWarMaxId = 0
+    local baseData = RefMgr:getData("guild_top_war_rank_award_data")
+    for id, data in pairs(baseData) do
+        local vo = LuaPoolMgr:poolGet(guildWar.GuildWarSeasonVo)
+        vo:parseData(id, data)
+        table.insert(self.guildWarTopAwardData, vo)
+        if vo.id > self.guildWarMaxId then
+            self.guildWarMaxId = vo.id
+        end
+    end
+
+    table.sort(self.guildWarTopAwardData, function(vo1, vo2)
+        return vo1.id < vo2.id
+    end)
+end
+
+function getGuildWarTopAwardData(self)
+    if self.guildWarTopAwardData == nil then
+        self:parseGuildWarTopAwardData()
+    end
+    return self.guildWarTopAwardData
+end
+
+function getGuildWarTopAwardMaxId(self)
+        if self.guildWarTopAwardData == nil then
+        self:parseGuildWarTopAwardData()
+    end
+    return self.guildWarMaxId
+end
+
+--观战数据
+function parseGuildWarTopOb(self,msg)
+    self.obDay = msg.day 
+    self.guildInfo1 = msg.guild_info_1
+    self.guildInfo2 = msg.guild_info_2
+
+    GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_TOP_OB_PANEL)
+end
+
+--获取观战数据
+function getGuildWarTopObData(self)
+    return self.obDay, self.guildInfo1, self.guildInfo2
+end
+
+function getObInfoAllMembers(self,team)
+    local retList = {} 
+    local members = team == 1 and self.guildInfo1.members or self.guildInfo2.members
+    local robotList = team == 1 and self.guildInfo1.robot_members or self.guildInfo2.robot_members
+
+    for i = 1, #members, 1 do
+        table.insert(retList, members[i])
+    end
+
+    for i = 1, #robotList, 1 do
+        table.insert(retList, robotList[i])
+    end
+    return retList
+end
+
+function parseGuildWarBetAward(self,msg)
+    self.awardBetResult = msg.result --"0-失败,1-应援成功,2-应援失败,3-安慰奖励"
+    self.awardGroupId = msg.group_id
+    self.awardDay = msg.day
+    self.betUid = msg.bet_uid
+
+    if self.awardBetResult == 0 then
+        gs.Message.Show("领取失败")
+        return
+    end
+
+    GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_BET_AWARD_PANEL)
+end
+
+function getGuildWarBetAwardData(self)
+    return self.awardBetResult, self.awardGroupId, self.awardDay,self.betUid
+end
+
+function parseGuildBetAwardRedPoint(self,msg)
+    self.awardBetRedPoint = msg.bet_award_info
+    GameDispatcher:dispatchEvent(EventName.UPDATE_GUILD_WAR_STATE)
+end
+
+function getGuildBetAwardRedAll(self)
+    local red = false
+    for i = 1, 6 do
+        red = red or self:getGuildBetAwarRed(i)
+    end
+    return red
+end
+
+function getGuildBetAwarRed(self,i)
+    if self.awardBetRedPoint == nil then
+        return false
+    end
+    for k, v in pairs(self.awardBetRedPoint) do
+        if v.day == i then
+            return v.red_point == 1
+        end
+    end
+end
+ 
 return _M

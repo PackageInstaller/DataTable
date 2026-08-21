@@ -1,201 +1,111 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldPreCombatMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "WorldPreCombatMediator"
+var_0_0.OnSwitchShip = "WorldPreCombatMediator.OnSwitchShip"
+var_0_0.OnMapOp = "WorldPreCombatMediator.OnMapOp"
+var_0_0.OnAuto = "WorldPreCombatMediator.OnAuto"
+var_0_0.OnSubAuto = "WorldPreCombatMediator.OnSubAuto"
+var_0_0.OnStartBattle = "WorldPreCombatMediator.OnStartBattle"
+var_0_0.OnOpenSublayer = "OpenSublayer"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.OnSwitchShip = "WorldPreCombatMediator.OnSwitchShip"
-var_0_1.OnMapOp = "WorldPreCombatMediator.OnMapOp"
-var_0_1.OnAuto = "WorldPreCombatMediator.OnAuto"
-var_0_1.OnSubAuto = "WorldPreCombatMediator.OnSubAuto"
-var_0_1.OnStartBattle = "WorldPreCombatMediator.OnStartBattle"
-var_0_1.OnOpenSublayer = "OpenSublayer"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.OnSwitchShip, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		nowWorld = var_2_10004
-
-		local var_2_0 = var_2_10004()
-		local var_2_1 = var_4.GetFleet(var_2_0, arg_2_1)
-
-		var_5.SwitchShip(var_2_1, arg_2_2, arg_2_3)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OnSwitchShip, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+		nowWorld():GetFleet(arg_2_1):SwitchShip(arg_2_2, arg_2_3)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnAuto, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-
-		var_2.onAutoBtn(var_3_0, arg_3_1)
+	arg_1_0:bind(var_0_0.OnAuto, function(arg_3_0, arg_3_1)
+		arg_1_0:onAutoBtn(arg_3_1)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnSubAuto, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0
-
-		var_2.onSubAuto(var_4_0, arg_4_1)
+	arg_1_0:bind(var_0_0.OnSubAuto, function(arg_4_0, arg_4_1)
+		arg_1_0:onSubAuto(arg_4_1)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnMapOp, function(arg_5_0, arg_5_1)
-		local var_5_0 = arg_1_0
-		local var_5_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_5_1(var_5_0, var_2_10005.WORLD_MAP_OP, arg_5_1)
+	arg_1_0:bind(var_0_0.OnMapOp, function(arg_5_0, arg_5_1)
+		arg_1_0:sendNotification(GAME.WORLD_MAP_OP, arg_5_1)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnStartBattle, function(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
-		local var_6_0 = arg_6_2.damageLevel
-		local var_6_1 = arg_6_3
+	arg_1_0:bind(var_0_0.OnStartBattle, function(arg_6_0, arg_6_1, arg_6_2, arg_6_3)
+		local var_6_0
 
-		if var_6_0 > arg_6_3.GetLimitDamageLevel(var_6_1) then
-			pg = var_6_0
+		if arg_6_2.damageLevel > arg_6_3:GetLimitDamageLevel() then
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				hideYes = true,
+				content = i18n("world_low_morale")
+			})
 
-			local var_6_2 = var_6_0.MsgboxMgr.GetInstance()
-			local var_6_3 = var_4.ShowMsgBox
+			goto label_6_0
 
-			var_6_1 = {
-				hideYes = true
+			var_6_0 = arg_1_0
+		end
+
+		do
+			local var_6_2 = GAME.BEGIN_STAGE
+			local var_6_3 = {
+				system = SYSTEM_WORLD,
+				stageId = arg_6_1
 			}
-			i18n = var_2_10008
-			var_6_1.content = var_2_10008("world_low_morale")
 
-			var_6_3(var_6_2, var_6_1)
-		else
-			local var_6_4 = arg_1_0
-			local var_6_5 = var_4.sendNotification
+			var_6_3.hpRate = arg_6_3:GetHP() and arg_6_3:GetHP() / arg_6_3:GetMaxHP() or nil
 
-			GAME = var_6_1
-
-			local var_6_6 = var_6_1.BEGIN_STAGE
-			local var_6_7 = {}
-
-			SYSTEM_WORLD = var_2_10009
-			var_6_7.system = var_2_10009
-			var_6_7.stageId = arg_6_1
-
-			local var_6_8
-
-			if not arg_6_3:GetHP() or not (arg_6_3:GetHP() / arg_6_3:GetMaxHP()) then
-				var_6_8 = nil
-			end
-
-			var_6_7.hpRate = var_6_8
-
-			var_6_5(var_6_4, var_6_6, var_6_7)
+			var_6_1(var_6_0, var_6_2, var_6_3)
 		end
+
+		::label_6_0::
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnOpenSublayer, function(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
-		local var_7_0 = arg_1_0
-
-		var_4.addSubLayers(var_7_0, arg_7_1, arg_7_2, arg_7_3)
+	arg_1_0:bind(var_0_0.OnOpenSublayer, function(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+		arg_1_0:addSubLayers(arg_7_1, arg_7_2, arg_7_3)
 
 		return
 	end)
-
-	local var_1_0 = arg_1_0.viewComponent
-	local var_1_1 = var_1.setPlayerInfo
-
-	getProxy = var_4
-	PlayerProxy = var_1_10006
-
-	local var_1_2 = var_4(var_1_10006)
-
-	var_1_1(var_1_0, var_4.getRawData(var_1_2))
+	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 
 	return
 end
 
-function var_0_1.onAutoBtn(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1.isOn
-	local var_8_1 = arg_8_1.toggle
-	local var_8_2 = arg_8_0
-	local var_8_3 = arg_8_0.sendNotification
+function var_0_0.onAutoBtn(arg_8_0, arg_8_1)
+	arg_8_0:sendNotification(GAME.AUTO_BOT, {
+		isActiveBot = arg_8_1.isOn,
+		toggle = arg_8_1.toggle,
+		system = SYSTEM_WORLD
+	})
 
-	GAME = var_1_10007
+	return
+end
 
-	local var_8_4 = var_1_10007.AUTO_BOT
-	local var_8_5 = {
-		isActiveBot = var_8_0,
-		toggle = var_8_1
+function var_0_0.onSubAuto(arg_9_0, arg_9_1)
+	arg_9_0:sendNotification(GAME.AUTO_SUB, {
+		isActiveSub = arg_9_1.isOn,
+		toggle = arg_9_1.toggle,
+		system = SYSTEM_WORLD
+	})
+
+	return
+end
+
+function var_0_0.listNotificationInterests(arg_10_0)
+	return {
+		PlayerProxy.UPDATED,
+		GAME.WORLD_MAP_OP_DONE
 	}
-
-	SYSTEM_WORLD = var_1_10009
-	var_8_5.system = var_1_10009
-
-	var_8_3(var_8_2, var_8_4, var_8_5)
-
-	return
 end
 
-function var_0_1.onSubAuto(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1.isOn
-	local var_9_1 = arg_9_1.toggle
-	local var_9_2 = arg_9_1.system
-	local var_9_3 = arg_9_0
-	local var_9_4 = arg_9_0.sendNotification
+function var_0_0.handleNotification(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_1:getName()
+	local var_11_1 = arg_11_1:getBody()
 
-	GAME = var_1_10008
-
-	local var_9_5 = var_1_10008.AUTO_SUB
-	local var_9_6 = {
-		isActiveSub = var_9_0,
-		toggle = var_9_1
-	}
-
-	SYSTEM_WORLD = var_1_10010
-	var_9_6.system = var_1_10010
-
-	var_9_4(var_9_3, var_9_5, var_9_6)
-
-	return
-end
-
-function var_0_1.listNotificationInterests(arg_10_0)
-	local var_10_0 = {}
-
-	PlayerProxy = var_1_10002
-	var_10_0[1] = var_1_10002.UPDATED
-	GAME = var_2
-	var_10_0[2] = var_2.WORLD_MAP_OP_DONE
-
-	return var_10_0
-end
-
-function var_0_1.handleNotification(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1
-	local var_11_1 = arg_11_1.getName(var_11_0)
-	local var_11_2 = arg_11_1:getBody()
-
-	PlayerProxy = var_11_0
-
-	local var_11_4
-
-	if var_11_1 == var_11_0.UPDATED then
-		local var_11_3 = arg_11_0.viewComponent
-
-		var_11_4 = var_11_4.setPlayerInfo
-		getProxy = var_1_10007
-		PlayerProxy = var_1_10009
-
-		local var_11_5 = var_1_10007(var_1_10009)
-
-		var_11_4(var_11_3, var_7.getRawData(var_11_5))
-	else
-		GAME = var_11_4
-
-		if var_11_1 == var_11_4.WORLD_MAP_OP_DONE then
-			-- block empty
-		end
+	if var_11_0 == PlayerProxy.UPDATED then
+		arg_11_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	elseif var_11_0 == GAME.WORLD_MAP_OP_DONE then
+		-- block empty
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

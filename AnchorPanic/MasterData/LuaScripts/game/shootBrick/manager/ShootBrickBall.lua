@@ -10,11 +10,31 @@ function setArgs(self, args)
     super.setArgs(self, args)
     self.id = self.m_args.id
 
+    self.mSpeedScale = 0.3
+
     self:setDamage(self.m_args.config.damage)
     self:setSpeed(self.m_args.config.speed)
     self:setScale(self.m_args.config.scale)
 
     self.mRectTrans = self:getGo():GetComponent(ty.RectTransform)
+
+    self.mPhysicsFrame = self:getGo():GetComponent(ty.PhysicsFrame)
+    if self.mPhysicsFrame == nil or gs.GoUtil.IsCompNull(self.mPhysicsFrame) then
+        self.mPhysicsFrame = self:getGo():AddComponent(ty.PhysicsFrame)
+    end
+
+    self.mPhysicsCollision2D = self:getGo():GetComponent(ty.PhysicsCollision2D)
+    if self.mPhysicsCollision2D == nil or gs.GoUtil.IsCompNull(self.mPhysicsCollision2D) then
+        self.mPhysicsCollision2D = self:getGo():AddComponent(ty.PhysicsCollision2D)
+    end
+
+    self:getGo().layer = gs.LayerMask.NameToLayer("Physics_Move")
+
+    self.mRigidBody2d = self:getGo():GetComponent(ty.Rigidbody2D)
+end
+
+function getCollider(self)
+    return self:getGo():GetComponent(ty.Collider2D)
 end
 
 function refreshImg(self)
@@ -25,42 +45,63 @@ end
 function shoot(self, angle)
     angle = angle * gs.Mathf.Deg2Rad
 
-    self.m_shootDir = gs.Vector3(0, 0, 0)
+    self.m_shootDir = gs.Vector2(0, 0)
     self.m_shootDir.x = gs.Mathf.Cos(angle)
     self.m_shootDir.y = gs.Mathf.Sin(angle)
 
-    self:clearFrame()
-    self.m_frameSn = LoopManager:addFrame(1, 0, self, self.onFrame)
+    self.mPhysicsFrame:SetUpdateCall(self, self.onFixFrame)
+    self.mPhysicsCollision2D:SetCollisionCallFun(self, self.onCollisionEnter, nil, nil)
+
+    self.m_force = 0
+    self.mRigidBody2d:AddForce(self.m_shootDir.normalized * self.speed)
 end
 
-function onFrame(self)
-    if gs.Time.timeScale == 0 or shootBrick.ShootBrickManager:getOpenSettlementPanel() then
+function onCollisionEnter(self, collision2D)
+    if self.onCollisionCallBack then
+        self.onCollisionCallBack(self.onCheckCollisionClass, self, collision2D)
+    end
+
+    if self.mRigidBody2d then
+        local addOffset = gs.Vector2(0, 0)
+        if math.abs(self:getVelocity().x) < 0.05 then
+            if math.random(1, 100) <= 50 then
+                addOffset.x = 0.5
+            else
+                addOffset.x = -0.5
+            end
+        end
+
+        if math.abs(self:getVelocity().y) < 0.05 then
+            if math.random(1, 100) <= 50 then
+                addOffset.y = 0.5
+            else
+                addOffset.y = -0.5
+            end
+        end
+
+        if addOffset ~= gs.VEC2_ZERO then
+            self:setVelocity(self:getVelocity() + addOffset)
+        end
+    end
+end
+
+function onFixFrame(self, fixedDeltaTime)
+    if gs.Time.timeScale == 0 or shootBrick.ShootBrickManager:getOpenSettlementPanel() and(self:getVelocity() ~= gs.VEC2_ZERO) then
+        self:setVelocity(gs.VEC2_ZERO)
         return
     end
 
-    if self.onCheckCollisionFun then
-        local dir = self.onCheckCollisionFun(self.onCheckCollisionClass, self, self.m_shootDir, self.mRectTrans.anchoredPosition, ShootBrickConst.BallRadius * self.scale)
-        if dir == nil then
-            return
+    if self.onFixFrameCallBack then
+        local state = self.onFixFrameCallBack(self.onCheckCollisionClass, self, self:getVelocity(), self.mRectTrans.anchoredPosition, ShootBrickConst.BallRadius * self.scale)
+        if state then
+            self:setVelocity(self:getVelocity() * gs.Vector2(1, -1))
         end
-
-        self.m_shootDir.x = dir.x
-        self.m_shootDir.y = dir.y
-    end
-
-    self:getTrans():Translate(self.m_shootDir.normalized * self.speed, gs.Space.World)
-end
-
-function clearFrame(self)
-    if self.m_frameSn then
-        LoopManager:removeFrameByIndex(self.m_frameSn)
-        self.m_frameSn = nil
     end
 end
 
 --添加横向发射偏移角度
 function addHorizontalOffset(self, offset)
-    self.m_shootDir.x = self.m_shootDir.x + offset
+    self:setVelocity(self:getVelocity() + gs.Vector2(offset, 0))
 end
 
 --添加移动速度
@@ -68,10 +109,29 @@ function addSpeed(self, val, max)
     if self.speed >= max then
         return
     end
-    self.speed = self.speed * (1 + val)
 
-    if self.speed >= max then
-        self.speed = max
+    val = val * self.mSpeedScale
+    max = max * self.mSpeedScale
+
+    local addSpeed = val
+    local speed = self.speed + val
+    if speed >= max then
+        addSpeed = max - self.speed
+        speed = max
+    end
+
+    self.speed = speed
+
+    self:setVelocity(self:getVelocity() + gs.Vector2(addSpeed, addSpeed))
+end
+
+function setVelocity(self, velocity)
+    self.mRigidBody2d.velocity = velocity
+end
+
+function getVelocity(self)
+    if self.mRigidBody2d then
+        return self.mRigidBody2d.velocity
     end
 end
 
@@ -80,7 +140,7 @@ function getSpeed(self)
 end
 
 function setSpeed(self, value)
-    self.speed = value
+    self.speed = value * self.mSpeedScale
 end
 
 function setScale(self, val)
@@ -112,8 +172,10 @@ function setDamage(self, value)
     self:refreshImg()
 end
 
-function setCheckCollision(self, checkClasee, checkFun)
-    self.onCheckCollisionFun = checkFun
+function setCheckCollision(self, checkClasee, fixFrameCallBack, collisionCallBack)
+    self.onFixFrameCallBack = fixFrameCallBack
+    self.onCollisionCallBack = collisionCallBack
+
     self.onCheckCollisionClass = checkClasee
 end
 
@@ -125,9 +187,10 @@ end
 function recover(self)
     super.recover(self)
 
-    self:clearFrame()
+    self.mRigidBody2d = nil
 
-    self.onCheckCollisionFun = nil
+    self.onFixFrameCallBack = nil
+    self.onCollisionCallBack = nil
     self.onCheckCollisionClass = nil
 
     self.mRectTrans = nil
@@ -141,6 +204,15 @@ function recover(self)
 
     self.m_shootDir = nil
 
+    self.mPhysicsFrame:SetUpdateCall(nil, nil)
+    self.mPhysicsCollision2D:SetCollisionCallFun(nil, nil, nil, nil)
+
+    gs.GameObject.Destroy(self.mPhysicsFrame)
+    gs.GameObject.Destroy(self.mPhysicsCollision2D)
+
+    self.mPhysicsFrame = nil
+    self.mPhysicsCollision2D = nil
+    self.mRigidBody2d = nil
 end
 
 return _M

@@ -42,6 +42,8 @@ end
 function getTabClass(self)
     self.tabClassDic[guildWar.TabType.Rank] = guildWar.GuildWarRankTabView
     self.tabClassDic[guildWar.TabType.Award] = guildWar.GuildWarAwardTabView
+    self.tabClassDic[guildWar.TabType.TopRank] = guildWar.GuildWarTopRankTabView
+    self.tabClassDic[guildWar.TabType.TopAward] = guildWar.GuildWarTopAwardTabView
     return self.tabClassDic
 end
 

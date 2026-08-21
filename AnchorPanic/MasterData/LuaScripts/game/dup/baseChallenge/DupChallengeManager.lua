@@ -21,6 +21,7 @@ function ctor(self)
         { type = DupType.RogueLike,funcopenId = funcopen.FuncOpenConst.FUNC_ID_ROGUE,name = _TT(73006)},
         { type = DupType.Doundless,funcopenId = funcopen.FuncOpenConst.FUNC_ID_BOUNDLESS,name = "无限城"},
         { type = DupType.Seaded,funcopenId = funcopen.FuncOpenConst.FUNC_ID_SEADED,name = _TT(111017)},
+        { type = DupType.Vision,funcopenId = funcopen.FuncOpenConst.FUNC_ID_VISION,name = _TT(153206)},
         --{ type = 0, funcopenId = 0, name = '0' },
     }
 

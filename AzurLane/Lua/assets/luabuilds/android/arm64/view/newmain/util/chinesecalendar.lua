@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChineseCalendar")
+﻿local var_0_0 = class("ChineseCalendar")
 local var_0_1 = 1901
 local var_0_2 = 199
 local var_0_3 = {
@@ -206,7 +204,7 @@ local var_0_3 = {
 }
 
 function var_0_0.DayOfSolarYear(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0, var_1_1 = {
+	local var_1_0 = {
 		1,
 		32,
 		60,
@@ -219,28 +217,41 @@ function var_0_0.DayOfSolarYear(arg_1_0, arg_1_1, arg_1_2)
 		274,
 		305,
 		335
-	}, {
-		1,
-		32,
-		61,
-		92,
-		122,
-		153,
-		183,
-		214,
-		245,
-		275,
-		306,
-		336
 	}
 
 	if arg_1_0 % 4 == 0 then
 		if arg_1_0 % 100 ~= 0 then
-			var_1_0 = var_1_1
+			var_1_0 = {
+				1,
+				32,
+				61,
+				92,
+				122,
+				153,
+				183,
+				214,
+				245,
+				275,
+				306,
+				336
+			}
 		end
 
 		if arg_1_0 % 16 == 0 then
-			var_1_0 = var_1_1
+			var_1_0 = {
+				1,
+				32,
+				61,
+				92,
+				122,
+				153,
+				183,
+				214,
+				245,
+				275,
+				306,
+				336
+			}
 		end
 	end
 
@@ -248,100 +259,110 @@ function var_0_0.DayOfSolarYear(arg_1_0, arg_1_1, arg_1_2)
 end
 
 function var_0_0.CalDate(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = {
+	if arg_2_0 <= var_0_1 or arg_2_0 > var_0_1 + var_0_2 - 1 then
+		return {
+			leap = false,
+			month = 0,
+			day = 0,
+			year = arg_2_0
+		}
+	end
+
+	local var_2_0 = arg_2_0 - var_0_1 + 1
+	local var_2_1 = var_0_0.DayOfSolarYear(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_2 = var_2_1 - var_0_0.DayOfSolarYear(arg_2_0, bit.rshift(bit.band(var_0_3[arg_2_0 - var_0_1 + 1], 96), 5), (bit.band(var_0_3[arg_2_0 - var_0_1 + 1], 31))) + 1
+
+	if var_2_2 <= 0 then
+		var_2_0 = var_2_0 - 1
+		;({
+			leap = false,
+			month = 0,
+			day = 0,
+			year = arg_2_0
+		}).year = ({
+			leap = false,
+			month = 0,
+			day = 0,
+			year = arg_2_0
+		}).year - 1
+
+		if var_2_0 <= 0 then
+			return {
+				leap = false,
+				month = 0,
+				day = 0,
+				year = arg_2_0
+			}
+		end
+
+		var_2_2 = var_2_1 + var_0_0.DayOfSolarYear(({
+			leap = false,
+			month = 0,
+			day = 0,
+			year = arg_2_0
+		}).year, 12, 31) - var_0_0.DayOfSolarYear(({
+			leap = false,
+			month = 0,
+			day = 0,
+			year = arg_2_0
+		}).year, bit.rshift(bit.band(var_0_3[var_2_0], 96), 5), (bit.band(var_0_3[var_2_0], 31))) + 1
+	end
+
+	local var_2_3 = 1
+
+	while var_2_3 <= 13 do
+		local var_2_4 = 29
+
+		if bit.band(bit.rshift(var_0_3[var_2_0], 6 + var_2_3), 1) == 1 then
+			var_2_4 = 30
+		end
+
+		if var_2_2 <= var_2_4 then
+			break
+		else
+			var_2_2 = var_2_2 - var_2_4
+		end
+
+		var_2_3 = var_2_3 + 1
+	end
+
+	;({
+		leap = false,
+		month = 0,
+		day = 0,
+		year = arg_2_0
+	}).day = var_2_2
+
+	local var_2_5 = bit.band(bit.rshift(var_0_3[var_2_0], 20), 15)
+
+	if var_2_5 > 0 and var_2_5 < var_2_3 then
+		var_2_3 = var_2_3 - 1
+
+		if var_2_3 == var_2_5 then
+			({
+				leap = false,
+				month = 0,
+				day = 0,
+				year = arg_2_0
+			}).leap = true
+		end
+	end
+
+	assert(var_2_5 <= 12)
+
+	;({
+		leap = false,
+		month = 0,
+		day = 0,
+		year = arg_2_0
+	}).month = var_2_3
+
+	return {
 		leap = false,
 		month = 0,
 		day = 0,
 		year = arg_2_0
 	}
-
-	if arg_2_0 <= var_0_1 or arg_2_0 > var_0_1 + var_0_2 - 1 then
-		return var_2_0
-	end
-
-	local var_2_1 = arg_2_0 - var_0_1 + 1
-
-	bit = var_1_10005
-
-	local var_2_2 = var_1_10005.rshift
-
-	bit = var_1_10007
-
-	local var_2_3 = var_2_2(var_1_10007.band(var_0_3[var_2_1], 96), 5)
-
-	bit = var_1_10006
-
-	local var_2_4 = var_1_10006.band(var_0_3[var_2_1], 31)
-	local var_2_9
-
-	if var_0_0.DayOfSolarYear(arg_2_0, arg_2_1, arg_2_2) - var_0_0.DayOfSolarYear(arg_2_0, var_2_3, var_2_4) + 1 <= 0 then
-		var_2_1 = var_2_1 - 1
-		var_2_0.year = var_2_0.year - 1
-
-		if var_2_1 <= 0 then
-			return var_2_0
-		end
-
-		bit = var_10
-
-		local var_2_5 = var_10.rshift
-
-		bit = var_2_12
-
-		local var_2_6 = var_2_5(var_2_12.band(var_0_3[var_2_1], 96), 5)
-
-		bit = var_10
-
-		local var_2_7 = var_10.band(var_0_3[var_2_1], 31)
-		local var_2_8 = var_0_0.DayOfSolarYear(var_2_0.year, var_2_6, var_2_7)
-
-		var_2_9 = var_7 + var_0_0.DayOfSolarYear(var_2_0.year, 12, 31) - var_2_8 + 1
-	end
-
-	local var_2_10 = 1
-
-	while var_2_10 <= 13 do
-		local var_2_11 = 29
-
-		bit = var_2_12
-
-		local var_2_12 = var_2_12.band
-
-		bit = var_1_10014
-
-		if var_2_12(var_1_10014.rshift(var_0_3[var_2_1], 6 + var_2_10), 1) == 1 then
-			var_2_11 = 30
-		end
-
-		if var_2_9 <= var_2_11 then
-			break
-		else
-			var_2_9 = var_2_9 - var_2_11
-		end
-
-		var_2_10 = var_2_10 + 1
-	end
-
-	var_2_0.day = var_2_9
-	bit = var_2_11
-
-	local var_2_13 = var_2_11.band
-
-	bit = var_1_10013
-
-	local var_2_14 = var_2_13(var_1_10013.rshift(var_0_3[var_2_1], 20), 15)
-
-	if 0 < var_2_14 and var_2_14 < var_2_10 and var_2_10 - 1 == var_2_14 then
-		var_2_0.leap = true
-	end
-
-	assert = var_12
-
-	var_12(var_2_14 <= 12)
-
-	var_2_0.month = var_2_10
-
-	return var_2_0
 end
 
 function var_0_0.IsNewYear(arg_3_0, arg_3_1, arg_3_2)
@@ -349,7 +370,9 @@ function var_0_0.IsNewYear(arg_3_0, arg_3_1, arg_3_2)
 end
 
 function var_0_0.IsLunarNewYear(arg_4_0, arg_4_1, arg_4_2)
-	return var_0_0.CalDate(arg_4_0, arg_4_1, arg_4_2 + 1).month == 1 and var_3.day == 1
+	local var_4_0 = var_0_0.CalDate(arg_4_0, arg_4_1, arg_4_2 + 1)
+
+	return var_4_0.month == 1 and var_4_0.day == 1
 end
 
 function var_0_0.IsValentineDay(arg_5_0, arg_5_1, arg_5_2)
@@ -357,7 +380,9 @@ function var_0_0.IsValentineDay(arg_5_0, arg_5_1, arg_5_2)
 end
 
 function var_0_0.IsMidAutumnFestival(arg_6_0, arg_6_1, arg_6_2)
-	return var_0_0.CalDate(arg_6_0, arg_6_1, arg_6_2).month == 8 and var_3.day == 15
+	local var_6_0 = var_0_0.CalDate(arg_6_0, arg_6_1, arg_6_2)
+
+	return var_6_0.month == 8 and var_6_0.day == 15
 end
 
 function var_0_0.AllHallowsDay(arg_7_0, arg_7_1, arg_7_2)
@@ -369,38 +394,13 @@ function var_0_0.IsChristmas(arg_8_0, arg_8_1, arg_8_2)
 end
 
 function var_0_0.GetCurrYearMonthDay(arg_9_0)
-	pg = var_1_10001
+	local var_9_0 = string.split(pg.TimeMgr.GetInstance():STimeDescC(arg_9_0, "%Y.%m.%d"), ".")
 
-	local var_9_0 = var_1_10001.TimeMgr.GetInstance()
-	local var_9_1 = var_1.STimeDescC(var_9_0, arg_9_0, "%Y.%m.%d")
-
-	string = var_1_10002
-
-	local var_9_2 = var_1_10002.split(var_9_1, ".")
-
-	tonumber = var_9_0
-
-	local var_9_3 = var_9_0(var_9_2[1])
-
-	tonumber = var_4
-
-	local var_9_4 = var_4(var_9_2[2])
-
-	tonumber = var_5
-
-	local var_9_5 = var_5(var_9_2[3])
-
-	return var_9_3, var_9_4, var_9_5
+	return tonumber(var_9_0[1]), tonumber(var_9_0[2]), (tonumber(var_9_0[3]))
 end
 
 function var_0_0.AnySpecialDay(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0
-
-	if not var_0_0.IsNewYear(arg_10_0, arg_10_1, arg_10_2) and not var_0_0.IsLunarNewYear(arg_10_0, arg_10_1, arg_10_2) and not var_0_0.IsValentineDay(arg_10_0, arg_10_1, arg_10_2) and not var_0_0.IsMidAutumnFestival(arg_10_0, arg_10_1, arg_10_2) and not var_0_0.AllHallowsDay(arg_10_0, arg_10_1, arg_10_2) then
-		var_10_0 = var_0_0.IsChristmas(arg_10_0, arg_10_1, arg_10_2)
-	end
-
-	return var_10_0
+	return var_0_0.IsNewYear(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsLunarNewYear(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsValentineDay(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsMidAutumnFestival(arg_10_0, arg_10_1, arg_10_2) or var_0_0.AllHallowsDay(arg_10_0, arg_10_1, arg_10_2) or var_0_0.IsChristmas(arg_10_0, arg_10_1, arg_10_2)
 end
 
 return var_0_0

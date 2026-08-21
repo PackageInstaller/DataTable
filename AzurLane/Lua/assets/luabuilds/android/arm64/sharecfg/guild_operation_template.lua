@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "guild_operation_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "guild_operation_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.guild_operation_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.guild_operation_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.guild_operation_template = rawget(pg, "guild_operation_template") or setmetatable({
+	__name = "guild_operation_template"
+}, confNEO)
+pg.guild_operation_template.all = {
 	1,
 	2,
 	3,
 	4
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.guild_operation_template = {}
+pg.base = pg.base or {}
+pg.base.guild_operation_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.guild_operation_template
-
-	var_1_0[1] = {
+	pg.base.guild_operation_template[1] = {
 		scale = "小型远征：1~5人(推荐)",
 		name = "米德维岛哨卫作战",
 		theme = "midway",
@@ -80,11 +43,7 @@ var_0_3.base.guild_operation_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.guild_operation_template
-
-	var_1_1[2] = {
+	pg.base.guild_operation_template[2] = {
 		scale = "中型远征：3~8人(推荐)",
 		name = "北方商路护航作战",
 		theme = "northern",
@@ -114,11 +73,7 @@ var_0_3.base.guild_operation_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.guild_operation_template
-
-	var_1_2[3] = {
+	pg.base.guild_operation_template[3] = {
 		scale = "大型远征：6~14人(推荐)",
 		name = "半岛攻略战",
 		theme = "norskehavet",
@@ -150,8 +105,7 @@ var_0_3.base.guild_operation_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.guild_operation_template[4] = {
+	pg.base.guild_operation_template[4] = {
 		scale = "大型远征：8~20人(推荐)",
 		name = "达古康纳尔岛海空战",
 		theme = "guadalcanal",

@@ -307,9 +307,10 @@ function getPermitIndex(self)
 end
 
 function canGetTask(self)
-
-
     local isRed = false
+    if self.mFashionLv == nil then
+        return isRed
+    end
 
     if self.mFashionLv < self:getFashionPermitMaxLv() then
         if self.mTaskInfo ~= nil then
@@ -334,7 +335,7 @@ function updateBubble(self)
     --     return false
     -- end
 
-    local isFlag = self:getCanReciveNum() >= 1 or self:canGetTask()
+    local isFlag = self:getCanReciveNum() >= 1 or self:canGetTask() or activity.ActitvityExtraManager:getFashionPermitRedInfo()
 
     mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_FASHIONPERMIT, isFlag)
     --GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_PERMIT_RED)

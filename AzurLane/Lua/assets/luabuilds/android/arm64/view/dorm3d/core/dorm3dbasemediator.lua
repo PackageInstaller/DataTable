@@ -1,66 +1,34 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dBaseMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "Dorm3dBaseMediator"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-function var_0_1.GetDefaultSystemClasses()
-	DormConst = var_1_10000
-
-	return var_1_10000.GetDefaultSystemClasses()
+function var_0_0.GetDefaultSystemClasses()
+	return DormConst.GetDefaultSystemClasses()
 end
 
-function var_0_1.handleNotification(arg_2_0, arg_2_1)
-	var_0_1.super.handleNotification(arg_2_0, arg_2_1)
-
-	local var_2_0 = arg_2_1:getName()
-	local var_2_1 = arg_2_1:getBody()
+function var_0_0.handleNotification(arg_2_0, arg_2_1)
+	var_0_0.super.handleNotification(arg_2_0, arg_2_1)
 
 	if arg_2_0.viewComponent.systemManager then
-		local var_2_2 = arg_2_0.viewComponent.systemManager
-
-		var_4.BroadcastNotification(var_2_2, var_2_0, var_2_1)
+		arg_2_0.viewComponent.systemManager:BroadcastNotification(arg_2_1:getName(), (arg_2_1:getBody()))
 	end
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	underscore = var_1_10001
-
-	local var_3_0 = var_1_10001.keys
-	local var_3_1
-
-	if not arg_3_0.handleDic then
-		var_3_1 = {}
-	end
-
-	local var_3_2 = var_3_0(var_3_1)
+function var_0_0.listNotificationInterests(arg_3_0)
+	local var_3_0 = arg_3_0.handleDic or {}
+	local var_3_1 = underscore.keys(var_3_0)
 
 	if arg_3_0.viewComponent and arg_3_0.viewComponent.systemManager then
-		table = var_2
-
-		local var_3_3 = var_2.mergeArray
-		local var_3_4 = var_3_2
-		local var_3_5 = arg_3_0.viewComponent.systemManager
-
-		var_3_2 = var_3_3(var_3_4, var_5.GetAllInterests(var_3_5), true)
+		var_3_1 = table.mergeArray(var_3_1, arg_3_0.viewComponent.systemManager:GetAllInterests(), true)
 	else
-		local var_3_6 = arg_3_0.GetDefaultSystemClasses()
-
-		ipairs = var_3_1
-
-		for iter_3_0, iter_3_1 in var_3_1(var_3_6) do
+		for iter_3_0, iter_3_1 in ipairs((arg_3_0.GetDefaultSystemClasses())) do
 			if iter_3_1.GetInterests then
-				table = var_8
-				var_3_2 = var_8.mergeArray(var_3_2, iter_3_1.GetInterests())
+				var_3_1 = table.mergeArray(var_3_1, iter_3_1.GetInterests())
 			end
 		end
 	end
 
-	return var_3_2
+	return var_3_1
 end
 
-return var_0_1
+return var_0_0

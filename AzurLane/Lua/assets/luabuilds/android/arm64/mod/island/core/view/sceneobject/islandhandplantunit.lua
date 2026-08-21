@@ -1,164 +1,120 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandHandPlantUnit", import(".IslandSlotBaseUnit"))
 
-local var_0_0 = "IslandHandPlantUnit"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandSlotBaseUnit"))
-local var_0_2 = {
+PlantStateType = {
 	Planting = 3,
 	Locked = 1,
 	Delegate = 5,
 	CanHarvest = 4,
 	CanPlant = 2
 }
-local var_0_3 = PlantStateType
 
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0:InitData()
 
-	pg = var_3
-	arg_1_0.emptyName = var_3.island_set.farm_empty_state_info.key_value_varchar[1]
-	pg = var_3
-	arg_1_0.emptyIcon = var_3.island_set.farm_empty_state_info.key_value_varchar[2]
+	arg_1_0.emptyName = pg.island_set.farm_empty_state_info.key_value_varchar[1]
+	arg_1_0.emptyIcon = pg.island_set.farm_empty_state_info.key_value_varchar[2]
 
 	return
 end
 
-function var_0_1.InitData(arg_2_0)
+function var_0_0.InitData(arg_2_0)
 	arg_2_0.handDate = arg_2_0.data.slotData
 	arg_2_0.slotType = arg_2_0.data.slotType
 	arg_2_0.slotState = arg_2_0:GetPlantStateType()
 
-	local var_2_0 = arg_2_0.data
-	local var_2_1
+	local var_2_0 = arg_2_0.data:GetEndProductEndTime() or 0
+	local var_2_1 = pg.TimeMgr.GetInstance()
+	local var_2_2 = var_2_0 - var_2_1:GetServerTime()
 
-	if not var_1.GetEndProductEndTime(var_2_0) then
-		var_2_1 = 0
-	end
+	if var_2_2 > 0 then
+		arg_2_0.stateTimer = Timer.New(function()
+			arg_2_0.slotState = arg_2_0:GetPlantStateType()
 
-	pg = var_1_10002
-
-	local var_2_2 = var_1_10002.TimeMgr.GetInstance()
-	local var_2_3 = var_2_1 - var_2.GetServerTime(var_2_2)
-
-	if 0 < var_2_3 then
-		Timer = var_3
-		arg_2_0.stateTimer = var_3.New(function()
-			local var_3_0 = arg_2_0
-			local var_3_1 = arg_2_0
-
-			var_3_0.slotState = var_1.GetPlantStateType(var_3_1)
-
-			local var_3_2 = arg_2_0
-			local var_3_3 = var_0.NotifiyCore
-
-			ISLAND_EVT = var_3_1
-
-			local var_3_4 = var_3_1.UPDATE_HUD
-
-			tonumber = var_2_10004
-
-			var_3_3(var_3_2, var_3_4, var_2_10004(arg_2_0.id))
+			arg_2_0:NotifiyCore(ISLAND_EVT.UPDATE_HUD, tonumber(arg_2_0.id))
 
 			return
-		end, var_2_3, 1)
+		end, var_2_2, 1)
 
-		local var_2_4 = arg_2_0.stateTimer
-
-		var_3.Start(var_2_4)
+		arg_2_0.stateTimer:Start()
 	end
 
 	return
 end
 
-function var_0_1.GetPlantType(arg_4_0)
+function var_0_0.GetPlantType(arg_4_0)
 	return arg_4_0.slotState
 end
 
-function var_0_1.LoadProductItemByPath(arg_5_0, arg_5_1)
+function var_0_0.LoadProductItemByPath(arg_5_0, arg_5_1)
 	if arg_5_0.productItemGo then
 		arg_5_0:UnLoadSceneItemRes(arg_5_0.productItemPath, arg_5_0.productItemGo)
 	end
 
 	arg_5_0.productItemPath = arg_5_1
 
-	local function var_5_0(arg_6_0)
-		setParent = var_2_10001
-
-		local var_6_0 = arg_6_0
-		local var_6_1 = arg_5_0
-
-		var_2_10001(var_6_0, var_4.GetView(var_6_1).root)
+	arg_5_0:LoadSceneItemRes(arg_5_0.productItemPath, function(arg_6_0)
+		setParent(arg_6_0, arg_5_0:GetView().root)
 
 		arg_6_0.transform.position = arg_5_0.position
 		arg_6_0.transform.eulerAngles = arg_5_0.rotation
 		arg_5_0.productItemGo = arg_6_0
 
 		return
-	end
-
-	arg_5_0:LoadSceneItemRes(arg_5_0.productItemPath, var_5_0)
+	end)
 
 	return
 end
 
-function var_0_1.InitProductItem(arg_7_0)
-	local var_7_0 = arg_7_0.data
+function var_0_0.InitProductItem(arg_7_0)
+	local var_7_0 = arg_7_0.data:GetProductProcess()
+	local var_7_1, var_7_2
 
-	if not var_1.GetProductProcess(var_7_0) or #var_1 == 0 then
-		return
-	end
+	if not var_7_0 or #var_7_0 == 0 then
+		do return end
 
-	local var_7_1 = #var_1
+		function var_7_1()
+			arg_7_0:LoadProductItemByPath(pg.island_unit_item[var_7_0[arg_7_0.processIndex].model].model)
 
-	local function var_7_2()
-		local var_8_0 = var_0[arg_7_0.processIndex].model
+			if arg_7_0.processIndex < var_0 then
+				arg_7_0.delayTimer = Timer.New(function()
+					arg_7_0.processIndex = arg_7_0.processIndex + 1
 
-		pg = var_1
+					var_7_1()
 
-		local var_8_1 = var_1.island_unit_item[var_8_0].model
-		local var_8_2 = arg_7_0
+					return
+				end, var_7_0[arg_7_0.processIndex + 1].startTime - pg.TimeMgr.GetInstance():GetServerTime(), 1)
 
-		var_2.LoadProductItemByPath(var_8_2, var_8_1)
+				arg_7_0.delayTimer:Start()
+			end
 
-		if arg_7_0.processIndex < var_7_1 then
-			local var_8_3 = var_0[arg_7_0.processIndex + 1].startTime
-
-			pg = var_3
-
-			local var_8_4 = var_3.TimeMgr.GetInstance()
-			local var_8_5 = var_8_3 - var_3.GetServerTime(var_8_4)
-			local var_8_6 = arg_7_0
-
-			Timer = var_8_4
-			var_8_6.delayTimer = var_8_4.New(function()
-				arg_7_0.processIndex = arg_7_0.processIndex + 1
-
-				var_7_2()
-
-				return
-			end, var_8_5, 1)
-
-			local var_8_7 = arg_7_0.delayTimer
-
-			var_4.Start(var_8_7)
+			return
 		end
 
-		return
+		var_7_2 = pg.TimeMgr.GetInstance():GetServerTime()
 	end
 
-	pg = var_1_10004
-
-	local var_7_3 = var_1_10004.TimeMgr.GetInstance()
-	local var_7_4 = var_4.GetServerTime(var_7_3)
-
-	for iter_7_0 = var_7_1, 1, -1 do
-		if var_7_4 >= var_1[iter_7_0].startTime or iter_7_0 == 1 then
+	for iter_7_0 = #var_7_0, 1, -1 do
+		if var_7_2 >= var_7_0[iter_7_0].startTime or iter_7_0 == 1 then
 			arg_7_0.processIndex = iter_7_0
 
-			var_7_2()
+			;(function()
+				arg_7_0:LoadProductItemByPath(pg.island_unit_item[var_7_0[arg_7_0.processIndex].model].model)
+
+				if arg_7_0.processIndex < var_0 then
+					arg_7_0.delayTimer = Timer.New(function()
+						arg_7_0.processIndex = arg_7_0.processIndex + 1
+
+						var_7_1()
+
+						return
+					end, var_7_0[arg_7_0.processIndex + 1].startTime - pg.TimeMgr.GetInstance():GetServerTime(), 1)
+
+					arg_7_0.delayTimer:Start()
+				end
+
+				return
+			end)()
 
 			break
 		end
@@ -167,15 +123,11 @@ function var_0_1.InitProductItem(arg_7_0)
 	return
 end
 
-function var_0_1.CanCheckByPlayer(arg_10_0)
-	local var_10_0 = arg_10_0.data.slotType
-
-	IslandProductConst = var_1_10002
-
-	return var_10_0 == var_1_10002.ProductSlotType.HandPlant and arg_10_0.data.slotData ~= nil
+function var_0_0.CanCheckByPlayer(arg_10_0)
+	return arg_10_0.data.slotType == IslandProductConst.ProductSlotType.HandPlant and arg_10_0.data.slotData ~= nil
 end
 
-function var_0_1.OnStart(arg_11_0)
+function var_0_0.OnStart(arg_11_0)
 	arg_11_0:HighLightDisPlayHandle()
 	arg_11_0:InitProductItem()
 	arg_11_0:InitEffectItem()
@@ -183,240 +135,143 @@ function var_0_1.OnStart(arg_11_0)
 	return
 end
 
-function var_0_1.InitEffectItem(arg_12_0)
-	local var_12_0 = arg_12_0.slotState
-
-	PlantStateType = var_1_10002
-
-	if var_12_0 ~= var_1_10002.Planting then
-		local var_12_1 = arg_12_0.slotState
-
-		PlantStateType = var_2
-
-		if var_12_1 ~= var_2.CanHarvest then
-			return
-		end
+function var_0_0.InitEffectItem(arg_12_0)
+	if arg_12_0.slotState ~= PlantStateType.Planting and arg_12_0.slotState ~= PlantStateType.CanHarvest then
+		return
 	end
 
-	local function var_12_2()
-		local var_13_0 = arg_12_0.handDate.formula_id
+	local function var_12_0()
+		arg_12_0.effectPath = pg.island_unit_item[pg.island_formula[arg_12_0.handDate.formula_id].collectable_vfx].model
 
-		pg = var_2_10001
-
-		local var_13_1 = var_2_10001.island_formula[var_13_0].collectable_vfx
-		local var_13_2 = arg_12_0
-
-		pg = var_2_10003
-		var_13_2.effectPath = var_2_10003.island_unit_item[var_13_1].model
-
-		local function var_13_3(arg_14_0)
-			setParent = var_3_10001
-
-			local var_14_0 = arg_14_0
-			local var_14_1 = arg_12_0
-
-			var_3_10001(var_14_0, var_4.GetView(var_14_1).root)
+		arg_12_0:LoadSceneEffectItemRes(arg_12_0.effectPath, function(arg_14_0)
+			setParent(arg_14_0, arg_12_0:GetView().root)
 
 			arg_12_0.effectGo = arg_14_0
 			arg_12_0.effectGo.transform.position = arg_12_0.position
 			arg_12_0.effectGo.transform.eulerAngles = arg_12_0.rotation
 
 			return
-		end
-
-		local var_13_4 = arg_12_0
-
-		var_3.LoadSceneEffectItemRes(var_13_4, arg_12_0.effectPath, var_13_3)
+		end)
 
 		return
 	end
 
-	local var_12_3 = arg_12_0.data
-	local var_12_4
+	local var_12_1 = arg_12_0.data:GetEndProductEndTime() or 0
+	local var_12_2 = pg.TimeMgr.GetInstance()
+	local var_12_3 = var_12_1 - var_12_2:GetServerTime()
 
-	if not var_2.GetEndProductEndTime(var_12_3) then
-		var_12_4 = 0
-	end
-
-	pg = var_1_10003
-
-	local var_12_5 = var_1_10003.TimeMgr.GetInstance()
-	local var_12_6 = var_12_4 - var_3.GetServerTime(var_12_5)
-
-	if 0 < var_12_6 then
-		Timer = var_4
-		arg_12_0.effectTimer = var_4.New(function()
-			var_12_2()
+	if var_12_3 > 0 then
+		arg_12_0.effectTimer = Timer.New(function()
+			var_12_0()
 
 			return
-		end, var_12_6, 1)
+		end, var_12_3, 1)
 
-		local var_12_7 = arg_12_0.effectTimer
-
-		var_4.Start(var_12_7)
+		arg_12_0.effectTimer:Start()
 	else
-		var_12_2()
+		var_12_0()
 	end
 
 	return
 end
 
-function var_0_1.SetHighLight(arg_16_0, arg_16_1)
-	local var_16_0 = arg_16_0.data
-
-	var_2.SetHighLight(var_16_0, arg_16_1)
+function var_0_0.SetHighLight(arg_16_0, arg_16_1)
+	arg_16_0.data:SetHighLight(arg_16_1)
 
 	if not arg_16_0._go then
 		return
 	end
 
-	GetOrAddComponent = var_2
-
-	local var_16_1 = var_2(arg_16_0._go, "HighlightController")
+	local var_16_0 = GetOrAddComponent(arg_16_0._go, "HighlightController")
 
 	if arg_16_1 then
-		var_16_1:HighlightOn()
+		var_16_0:HighlightOn()
 	else
-		var_16_1:HighlightOff()
+		var_16_0:HighlightOff()
 	end
 
 	return
 end
 
-function var_0_1.HighLightDisPlayHandle(arg_17_0)
-	local var_17_0 = arg_17_0.data
-
-	if var_1.GetHighLight(var_17_0) then
-		GetOrAddComponent = var_1
-
-		local var_17_1 = var_1(arg_17_0._go, "HighlightController")
-
-		var_1.HighlightOn(var_17_1)
+function var_0_0.HighLightDisPlayHandle(arg_17_0)
+	if arg_17_0.data:GetHighLight() then
+		GetOrAddComponent(arg_17_0._go, "HighlightController"):HighlightOn()
 	end
 
 	return
 end
 
-function var_0_1.CanPlant(arg_18_0)
-	local var_18_0 = arg_18_0.slotState
-
-	PlantStateType = var_1_10002
-
-	return var_18_0 == var_1_10002.CanPlant
+function var_0_0.CanPlant(arg_18_0)
+	return arg_18_0.slotState == PlantStateType.CanPlant
 end
 
-function var_0_1.CanHarvest(arg_19_0)
-	local var_19_0 = arg_19_0.slotState
-
-	PlantStateType = var_1_10002
-
-	return var_19_0 == var_1_10002.CanHarvest
+function var_0_0.CanHarvest(arg_19_0)
+	return arg_19_0.slotState == PlantStateType.CanHarvest
 end
 
-function var_0_1.GetHudInfo(arg_20_0)
-	local var_20_0 = {}
-	local var_20_1 = {}
+function var_0_0.GetHudInfo(arg_20_0)
+	if table.contains({
+		PlantStateType.Locked,
+		PlantStateType.Delegate
+	}, arg_20_0.slotState) then
+		({}).needShowHud = false
 
-	PlantStateType = var_1_10003
-	var_20_1[1] = var_1_10003.Locked
-	PlantStateType = var_3
-	var_20_1[2] = var_3.Delegate
-	table = var_3
-
-	if var_3.contains(var_20_1, arg_20_0.slotState) then
-		var_20_0.needShowHud = false
-
-		return var_20_0
+		return {}
 	end
 
-	var_20_0.needShowHud = true
+	;({}).needShowHud = true
 
-	local var_20_2 = arg_20_0.handDate
+	local var_20_0 = arg_20_0.handDate:GetPlantFormulaId()
 
-	if not var_3.GetPlantFormulaId(var_20_2) then
-		var_20_0.name = arg_20_0.emptyName
-		var_20_0.itemIcon = "island/" .. arg_20_0.emptyIcon
+	if not var_20_0 then
+		({}).name = arg_20_0.emptyName
+		;({}).itemIcon = "island/" .. arg_20_0.emptyIcon
 	else
-		pg = var_1_10004
-		var_20_0.name = var_1_10004.island_formula[var_3].name
-		var_20_2 = "island/"
-		pg = var_6
-		var_20_0.itemIcon = var_20_2 .. var_6.island_item_data_template[var_4.item_id].icon
+		local var_20_1 = pg.island_formula[var_20_0]
+
+		;({}).name = pg.island_formula[var_20_0].name
+		;({}).itemIcon = "island/" .. pg.island_item_data_template[var_20_1.item_id].icon
 	end
 
-	var_20_0.hudState = {}
+	;({}).hudState = {}
 
-	local var_20_3 = arg_20_0.slotState
-
-	PlantStateType = var_20_2
-
-	if var_20_3 == var_20_2.CanPlant then
-		local var_20_4 = var_20_0.hudState
-
-		i18n = var_5
-		var_20_4.stateText = var_5("island_production_plantable")
+	if arg_20_0.slotState == PlantStateType.CanPlant then
+		({}).hudState.stateText = i18n("island_production_plantable")
+	elseif arg_20_0.slotState == PlantStateType.Planting then
+		({}).hudState.stateEndTime = arg_20_0.handDate.end_time
 	else
-		local var_20_5 = arg_20_0.slotState
-
-		PlantStateType = var_5
-
-		if var_20_5 == var_5.Planting then
-			var_20_0.hudState.stateEndTime = arg_20_0.handDate.end_time
-		else
-			local var_20_6 = var_20_0.hudState
-
-			i18n = var_5
-			var_20_6.stateText = var_5("island_production_harvestable")
-		end
+		({}).hudState.stateText = i18n("island_production_harvestable")
 	end
 
-	return var_20_0
+	return {}
 end
 
-function var_0_1.GetPlantStateType(arg_21_0)
-	local var_21_0 = arg_21_0.data.slotType
-
-	IslandProductConst = var_1_10002
-
-	if var_21_0 ~= var_1_10002.ProductSlotType.HandPlant then
-		PlantStateType = var_21_0
-
-		return var_21_0.Delegate
+function var_0_0.GetPlantStateType(arg_21_0)
+	if arg_21_0.data.slotType ~= IslandProductConst.ProductSlotType.HandPlant then
+		return PlantStateType.Delegate
 	end
 
 	if not arg_21_0.handDate then
-		PlantStateType = var_1
-
-		return var_1.Locked
+		return PlantStateType.Locked
 	end
 
 	if arg_21_0.handDate.state == 0 then
-		PlantStateType = var_1
-
-		return var_1.CanPlant
+		return PlantStateType.CanPlant
 	else
-		local var_21_1 = arg_21_0.handDate.end_time
+		local var_21_0 = arg_21_0.handDate.end_time - pg.TimeMgr.GetInstance():GetServerTime()
 
-		pg = var_2
-
-		local var_21_2 = var_2.TimeMgr.GetInstance()
-
-		if var_21_1 - var_2.GetServerTime(var_21_2) <= 0 then
-			PlantStateType = var_2
-
-			return var_2.CanHarvest
+		if var_21_0 <= 0 then
+			return PlantStateType.CanHarvest
 		else
-			PlantStateType = var_2
-
-			return var_2.Planting
+			return PlantStateType.Planting
 		end
 	end
 
 	return
 end
 
-function var_0_1.OnDispose(arg_22_0)
-	var_0_1.super.OnDispose(arg_22_0)
+function var_0_0.OnDispose(arg_22_0)
+	var_0_0.super.OnDispose(arg_22_0)
 
 	if arg_22_0.effectGo then
 		arg_22_0:UnLoadSceneItemRes(arg_22_0.effectPath, arg_22_0.effectGo)
@@ -427,25 +282,19 @@ function var_0_1.OnDispose(arg_22_0)
 	end
 
 	if arg_22_0.delayTimer then
-		local var_22_0 = arg_22_0.delayTimer
-
-		var_1.Stop(var_22_0)
+		arg_22_0.delayTimer:Stop()
 
 		arg_22_0.delayTimer = nil
 	end
 
 	if arg_22_0.effectTimer then
-		local var_22_1 = arg_22_0.effectTimer
-
-		var_1.Stop(var_22_1)
+		arg_22_0.effectTimer:Stop()
 
 		arg_22_0.effectTimer = nil
 	end
 
 	if arg_22_0.stateTimer then
-		local var_22_2 = arg_22_0.stateTimer
-
-		var_1.Stop(var_22_2)
+		arg_22_0.stateTimer:Stop()
 
 		arg_22_0.stateTimer = nil
 	end
@@ -453,13 +302,11 @@ function var_0_1.OnDispose(arg_22_0)
 	return
 end
 
-function var_0_1.DelegateSlotStartPerform(arg_23_0)
-	local var_23_0 = arg_23_0.data
-
-	var_1.StartDelegateSlotPerform(var_23_0)
+function var_0_0.DelegateSlotStartPerform(arg_23_0)
+	arg_23_0.data:StartDelegateSlotPerform()
 	arg_23_0:InitProductItem()
 
 	return
 end
 
-return var_0_1
+return var_0_0

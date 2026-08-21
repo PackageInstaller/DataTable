@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "commander_ability_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "commander_ability_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.commander_ability_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.commander_ability_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.commander_ability_template = rawget(pg, "commander_ability_template") or setmetatable({
+	__name = "commander_ability_template"
+}, confNEO)
+pg.commander_ability_template.all = {
 	101,
 	102,
 	103,
@@ -191,25 +168,11 @@ var_0_3.all = {
 	5171,
 	5181
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.commander_ability_template = {}
+pg.base = pg.base or {}
+pg.base.commander_ability_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.commander_ability_template
-
-	var_1_0[101] = {
+	pg.base.commander_ability_template[101] = {
 		cost = 0,
 		name = "炮击新手·驱逐",
 		group_id = 10,
@@ -238,11 +201,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.commander_ability_template
-
-	var_1_1[102] = {
+	pg.base.commander_ability_template[102] = {
 		cost = 0,
 		name = "熟练炮手·驱逐",
 		group_id = 10,
@@ -271,11 +230,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.commander_ability_template
-
-	var_1_2[103] = {
+	pg.base.commander_ability_template[103] = {
 		cost = 0,
 		name = "炮术长·驱逐",
 		group_id = 10,
@@ -304,11 +259,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.commander_ability_template
-
-	var_1_3[111] = {
+	pg.base.commander_ability_template[111] = {
 		cost = 0,
 		name = "炮击新手·巡洋",
 		group_id = 11,
@@ -345,11 +296,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.commander_ability_template
-
-	var_1_4[112] = {
+	pg.base.commander_ability_template[112] = {
 		cost = 0,
 		name = "熟练炮手·巡洋",
 		group_id = 11,
@@ -386,11 +333,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.commander_ability_template
-
-	var_1_5[113] = {
+	pg.base.commander_ability_template[113] = {
 		cost = 0,
 		name = "炮术长·巡洋",
 		group_id = 11,
@@ -427,11 +370,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.commander_ability_template
-
-	var_1_6[121] = {
+	pg.base.commander_ability_template[121] = {
 		cost = 0,
 		name = "炮击新手·主力",
 		group_id = 12,
@@ -478,11 +417,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.commander_ability_template
-
-	var_1_7[122] = {
+	pg.base.commander_ability_template[122] = {
 		cost = 0,
 		name = "熟练炮手·主力",
 		group_id = 12,
@@ -529,11 +464,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.commander_ability_template
-
-	var_1_8[123] = {
+	pg.base.commander_ability_template[123] = {
 		cost = 0,
 		name = "炮术长·主力",
 		group_id = 12,
@@ -580,11 +511,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.commander_ability_template
-
-	var_1_9[131] = {
+	pg.base.commander_ability_template[131] = {
 		cost = 0,
 		name = "炮火力量·M",
 		group_id = 13,
@@ -633,11 +560,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.commander_ability_template
-
-	var_1_10[132] = {
+	pg.base.commander_ability_template[132] = {
 		cost = 0,
 		name = "炮火覆盖·M",
 		group_id = 13,
@@ -686,11 +609,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.commander_ability_template
-
-	var_1_11[141] = {
+	pg.base.commander_ability_template[141] = {
 		cost = 0,
 		name = "炮火力量·V",
 		group_id = 14,
@@ -734,11 +653,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.commander_ability_template
-
-	var_1_12[142] = {
+	pg.base.commander_ability_template[142] = {
 		cost = 0,
 		name = "炮火覆盖·V",
 		group_id = 14,
@@ -782,11 +697,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.commander_ability_template
-
-	var_1_13[151] = {
+	pg.base.commander_ability_template[151] = {
 		cost = 0,
 		name = "碧海亲和性·新手",
 		group_id = 15,
@@ -833,11 +744,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.commander_ability_template
-
-	var_1_14[152] = {
+	pg.base.commander_ability_template[152] = {
 		cost = 0,
 		name = "碧海亲和性·精锐",
 		group_id = 15,
@@ -884,11 +791,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.commander_ability_template
-
-	var_1_15[201] = {
+	pg.base.commander_ability_template[201] = {
 		cost = 0,
 		name = "新人雷击士·潜艇",
 		group_id = 20,
@@ -916,11 +819,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.commander_ability_template
-
-	var_1_16[202] = {
+	pg.base.commander_ability_template[202] = {
 		cost = 0,
 		name = "熟练雷击士·潜艇",
 		group_id = 20,
@@ -948,11 +847,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.commander_ability_template
-
-	var_1_17[203] = {
+	pg.base.commander_ability_template[203] = {
 		cost = 0,
 		name = "雷击长·潜艇",
 		group_id = 20,
@@ -980,11 +875,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.commander_ability_template
-
-	var_1_18[211] = {
+	pg.base.commander_ability_template[211] = {
 		cost = 0,
 		name = "新人雷击士·驱逐",
 		group_id = 21,
@@ -1013,11 +904,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.commander_ability_template
-
-	var_1_19[212] = {
+	pg.base.commander_ability_template[212] = {
 		cost = 0,
 		name = "熟练雷击士·驱逐",
 		group_id = 21,
@@ -1046,11 +933,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.commander_ability_template
-
-	var_1_20[213] = {
+	pg.base.commander_ability_template[213] = {
 		cost = 0,
 		name = "雷击长·驱逐",
 		group_id = 21,
@@ -1079,11 +962,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.commander_ability_template
-
-	var_1_21[221] = {
+	pg.base.commander_ability_template[221] = {
 		cost = 0,
 		name = "新人雷击士·巡洋",
 		group_id = 22,
@@ -1115,11 +994,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.commander_ability_template
-
-	var_1_22[222] = {
+	pg.base.commander_ability_template[222] = {
 		cost = 0,
 		name = "熟练雷击士·巡洋",
 		group_id = 22,
@@ -1151,11 +1026,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.commander_ability_template
-
-	var_1_23[223] = {
+	pg.base.commander_ability_template[223] = {
 		cost = 0,
 		name = "雷击长·巡洋",
 		group_id = 22,
@@ -1187,11 +1058,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.commander_ability_template
-
-	var_1_24[301] = {
+	pg.base.commander_ability_template[301] = {
 		cost = 0,
 		name = "航空新兵·空母",
 		group_id = 30,
@@ -1223,11 +1090,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.commander_ability_template
-
-	var_1_25[302] = {
+	pg.base.commander_ability_template[302] = {
 		cost = 0,
 		name = "熟练机师·空母",
 		group_id = 30,
@@ -1259,11 +1122,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.commander_ability_template
-
-	var_1_26[303] = {
+	pg.base.commander_ability_template[303] = {
 		cost = 0,
 		name = "空中杀手·空母",
 		group_id = 30,
@@ -1295,11 +1154,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.commander_ability_template
-
-	var_1_27[311] = {
+	pg.base.commander_ability_template[311] = {
 		cost = 0,
 		name = "航空新兵·特殊",
 		group_id = 31,
@@ -1326,11 +1181,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.commander_ability_template
-
-	var_1_28[312] = {
+	pg.base.commander_ability_template[312] = {
 		cost = 0,
 		name = "熟练机师·特殊",
 		group_id = 31,
@@ -1357,11 +1208,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.commander_ability_template
-
-	var_1_29[313] = {
+	pg.base.commander_ability_template[313] = {
 		cost = 0,
 		name = "空中杀手·特殊",
 		group_id = 31,
@@ -1388,11 +1235,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.commander_ability_template
-
-	var_1_30[321] = {
+	pg.base.commander_ability_template[321] = {
 		cost = 0,
 		name = "蓝天亲和性·新手",
 		group_id = 32,
@@ -1433,11 +1276,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.commander_ability_template
-
-	var_1_31[322] = {
+	pg.base.commander_ability_template[322] = {
 		cost = 0,
 		name = "蓝天亲和性·精锐",
 		group_id = 32,
@@ -1478,11 +1317,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.commander_ability_template
-
-	var_1_32[401] = {
+	pg.base.commander_ability_template[401] = {
 		cost = 0,
 		name = "对空炮手·先锋",
 		group_id = 40,
@@ -1514,11 +1349,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.commander_ability_template
-
-	var_1_33[402] = {
+	pg.base.commander_ability_template[402] = {
 		cost = 0,
 		name = "熟练对空炮手·先锋",
 		group_id = 40,
@@ -1550,11 +1381,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.commander_ability_template
-
-	var_1_34[403] = {
+	pg.base.commander_ability_template[403] = {
 		cost = 0,
 		name = "敌机克星·先锋",
 		group_id = 40,
@@ -1586,11 +1413,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.commander_ability_template
-
-	var_1_35[411] = {
+	pg.base.commander_ability_template[411] = {
 		cost = 0,
 		name = "对空炮手·主力",
 		group_id = 41,
@@ -1625,11 +1448,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.commander_ability_template
-
-	var_1_36[412] = {
+	pg.base.commander_ability_template[412] = {
 		cost = 0,
 		name = "熟练对空炮手·主力",
 		group_id = 41,
@@ -1664,11 +1483,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.commander_ability_template
-
-	var_1_37[413] = {
+	pg.base.commander_ability_template[413] = {
 		cost = 0,
 		name = "敌机克星·主力",
 		group_id = 41,
@@ -1703,11 +1518,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.commander_ability_template
-
-	var_1_38[501] = {
+	pg.base.commander_ability_template[501] = {
 		cost = 0,
 		name = "声纳兵·先锋",
 		group_id = 50,
@@ -1739,11 +1550,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.commander_ability_template
-
-	var_1_39[502] = {
+	pg.base.commander_ability_template[502] = {
 		cost = 0,
 		name = "熟练声纳兵·先锋",
 		group_id = 50,
@@ -1775,11 +1582,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.commander_ability_template
-
-	var_1_40[503] = {
+	pg.base.commander_ability_template[503] = {
 		cost = 0,
 		name = "人形声纳·先锋",
 		group_id = 50,
@@ -1811,11 +1614,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.commander_ability_template
-
-	var_1_41[511] = {
+	pg.base.commander_ability_template[511] = {
 		cost = 0,
 		name = "声纳兵·主力",
 		group_id = 51,
@@ -1850,11 +1649,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.commander_ability_template
-
-	var_1_42[512] = {
+	pg.base.commander_ability_template[512] = {
 		cost = 0,
 		name = "熟练声纳兵·主力",
 		group_id = 51,
@@ -1889,11 +1684,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.commander_ability_template
-
-	var_1_43[513] = {
+	pg.base.commander_ability_template[513] = {
 		cost = 0,
 		name = "人形声纳·主力",
 		group_id = 51,
@@ -1928,11 +1719,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.commander_ability_template
-
-	var_1_44[601] = {
+	pg.base.commander_ability_template[601] = {
 		cost = 0,
 		name = "装填新手·潜艇",
 		group_id = 60,
@@ -1960,11 +1747,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.commander_ability_template
-
-	var_1_45[602] = {
+	pg.base.commander_ability_template[602] = {
 		cost = 0,
 		name = "熟练装填手·潜艇",
 		group_id = 60,
@@ -1992,11 +1775,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.commander_ability_template
-
-	var_1_46[603] = {
+	pg.base.commander_ability_template[603] = {
 		cost = 0,
 		name = "无影手·潜艇",
 		group_id = 60,
@@ -2024,11 +1803,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.commander_ability_template
-
-	var_1_47[611] = {
+	pg.base.commander_ability_template[611] = {
 		cost = 0,
 		name = "装填新手·驱逐",
 		group_id = 61,
@@ -2057,11 +1832,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.commander_ability_template
-
-	var_1_48[612] = {
+	pg.base.commander_ability_template[612] = {
 		cost = 0,
 		name = "熟练装填手·驱逐",
 		group_id = 61,
@@ -2090,11 +1861,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.commander_ability_template
-
-	var_1_49[613] = {
+	pg.base.commander_ability_template[613] = {
 		cost = 0,
 		name = "无影手·驱逐",
 		group_id = 61,
@@ -2123,11 +1890,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.commander_ability_template
-
-	var_1_50[621] = {
+	pg.base.commander_ability_template[621] = {
 		cost = 0,
 		name = "装填新手·巡洋",
 		group_id = 62,
@@ -2164,11 +1927,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.commander_ability_template
-
-	var_1_51[622] = {
+	pg.base.commander_ability_template[622] = {
 		cost = 0,
 		name = "熟练装填手·巡洋",
 		group_id = 62,
@@ -2205,11 +1964,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.commander_ability_template
-
-	var_1_52[623] = {
+	pg.base.commander_ability_template[623] = {
 		cost = 0,
 		name = "无影手·巡洋",
 		group_id = 62,
@@ -2246,11 +2001,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.commander_ability_template
-
-	var_1_53[631] = {
+	pg.base.commander_ability_template[631] = {
 		cost = 0,
 		name = "装填新手·战列",
 		group_id = 63,
@@ -2287,11 +2038,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.commander_ability_template
-
-	var_1_54[632] = {
+	pg.base.commander_ability_template[632] = {
 		cost = 0,
 		name = "熟练装填手·战列",
 		group_id = 63,
@@ -2328,11 +2075,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.commander_ability_template
-
-	var_1_55[633] = {
+	pg.base.commander_ability_template[633] = {
 		cost = 0,
 		name = "无影手·战列",
 		group_id = 63,
@@ -2369,11 +2112,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.commander_ability_template
-
-	var_1_56[641] = {
+	pg.base.commander_ability_template[641] = {
 		cost = 0,
 		name = "新手整备士",
 		group_id = 64,
@@ -2405,11 +2144,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.commander_ability_template
-
-	var_1_57[642] = {
+	pg.base.commander_ability_template[642] = {
 		cost = 0,
 		name = "熟练技师",
 		group_id = 64,
@@ -2441,11 +2176,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.commander_ability_template
-
-	var_1_58[643] = {
+	pg.base.commander_ability_template[643] = {
 		cost = 0,
 		name = "格纳库之主",
 		group_id = 64,
@@ -2477,11 +2208,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.commander_ability_template
-
-	var_1_59[651] = {
+	pg.base.commander_ability_template[651] = {
 		cost = 0,
 		name = "装填新手·特殊",
 		group_id = 65,
@@ -2525,11 +2252,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.commander_ability_template
-
-	var_1_60[652] = {
+	pg.base.commander_ability_template[652] = {
 		cost = 0,
 		name = "熟练装填手·特殊",
 		group_id = 65,
@@ -2573,11 +2296,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.commander_ability_template
-
-	var_1_61[653] = {
+	pg.base.commander_ability_template[653] = {
 		cost = 0,
 		name = "无影手·特殊",
 		group_id = 65,
@@ -2621,11 +2340,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.commander_ability_template
-
-	var_1_62[701] = {
+	pg.base.commander_ability_template[701] = {
 		cost = 0,
 		name = "轮机手·潜艇",
 		group_id = 70,
@@ -2653,11 +2368,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.commander_ability_template
-
-	var_1_63[702] = {
+	pg.base.commander_ability_template[702] = {
 		cost = 0,
 		name = "熟练轮机手·潜艇",
 		group_id = 70,
@@ -2685,11 +2396,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.commander_ability_template
-
-	var_1_64[703] = {
+	pg.base.commander_ability_template[703] = {
 		cost = 0,
 		name = "轮机长·潜艇",
 		group_id = 70,
@@ -2717,11 +2424,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.commander_ability_template
-
-	var_1_65[711] = {
+	pg.base.commander_ability_template[711] = {
 		cost = 0,
 		name = "轮机手·驱逐",
 		group_id = 71,
@@ -2750,11 +2453,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.commander_ability_template
-
-	var_1_66[712] = {
+	pg.base.commander_ability_template[712] = {
 		cost = 0,
 		name = "熟练轮机手·驱逐",
 		group_id = 71,
@@ -2783,11 +2482,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.commander_ability_template
-
-	var_1_67[713] = {
+	pg.base.commander_ability_template[713] = {
 		cost = 0,
 		name = "轮机长·驱逐",
 		group_id = 71,
@@ -2816,11 +2511,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.commander_ability_template
-
-	var_1_68[721] = {
+	pg.base.commander_ability_template[721] = {
 		cost = 0,
 		name = "轮机手·巡洋",
 		group_id = 72,
@@ -2857,11 +2548,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.commander_ability_template
-
-	var_1_69[722] = {
+	pg.base.commander_ability_template[722] = {
 		cost = 0,
 		name = "熟练轮机手·巡洋",
 		group_id = 72,
@@ -2898,11 +2585,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.commander_ability_template
-
-	var_1_70[723] = {
+	pg.base.commander_ability_template[723] = {
 		cost = 0,
 		name = "轮机长·巡洋",
 		group_id = 72,
@@ -2939,11 +2622,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.commander_ability_template
-
-	var_1_71[731] = {
+	pg.base.commander_ability_template[731] = {
 		cost = 0,
 		name = "轮机手·战列",
 		group_id = 73,
@@ -2980,11 +2659,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.commander_ability_template
-
-	var_1_72[732] = {
+	pg.base.commander_ability_template[732] = {
 		cost = 0,
 		name = "熟练轮机手·战列",
 		group_id = 73,
@@ -3021,11 +2696,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.commander_ability_template
-
-	var_1_73[733] = {
+	pg.base.commander_ability_template[733] = {
 		cost = 0,
 		name = "轮机长·战列",
 		group_id = 73,
@@ -3062,11 +2733,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.commander_ability_template
-
-	var_1_74[741] = {
+	pg.base.commander_ability_template[741] = {
 		cost = 0,
 		name = "轮机手·空母",
 		group_id = 74,
@@ -3098,11 +2765,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.commander_ability_template
-
-	var_1_75[742] = {
+	pg.base.commander_ability_template[742] = {
 		cost = 0,
 		name = "熟练轮机手·空母",
 		group_id = 74,
@@ -3134,11 +2797,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.commander_ability_template
-
-	var_1_76[743] = {
+	pg.base.commander_ability_template[743] = {
 		cost = 0,
 		name = "轮机长·空母",
 		group_id = 74,
@@ -3170,11 +2829,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.commander_ability_template
-
-	var_1_77[751] = {
+	pg.base.commander_ability_template[751] = {
 		cost = 0,
 		name = "轮机手·特殊",
 		group_id = 75,
@@ -3218,11 +2873,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.commander_ability_template
-
-	var_1_78[752] = {
+	pg.base.commander_ability_template[752] = {
 		cost = 0,
 		name = "熟练轮机手·特殊",
 		group_id = 75,
@@ -3266,11 +2917,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.commander_ability_template
-
-	var_1_79[753] = {
+	pg.base.commander_ability_template[753] = {
 		cost = 0,
 		name = "轮机长·特殊",
 		group_id = 75,
@@ -3314,11 +2961,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.commander_ability_template
-
-	var_1_80[761] = {
+	pg.base.commander_ability_template[761] = {
 		cost = 0,
 		name = "轮机手·小型舰",
 		group_id = 76,
@@ -3352,11 +2995,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.commander_ability_template
-
-	var_1_81[762] = {
+	pg.base.commander_ability_template[762] = {
 		cost = 0,
 		name = "熟练轮机手·小型舰",
 		group_id = 76,
@@ -3390,11 +3029,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.commander_ability_template
-
-	var_1_82[763] = {
+	pg.base.commander_ability_template[763] = {
 		cost = 0,
 		name = "轮机长·小型舰",
 		group_id = 76,
@@ -3428,11 +3063,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.commander_ability_template
-
-	var_1_83[771] = {
+	pg.base.commander_ability_template[771] = {
 		cost = 0,
 		name = "轮机手·先锋",
 		group_id = 77,
@@ -3464,11 +3095,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.commander_ability_template
-
-	var_1_84[772] = {
+	pg.base.commander_ability_template[772] = {
 		cost = 0,
 		name = "熟练轮机手·先锋",
 		group_id = 77,
@@ -3500,11 +3127,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.commander_ability_template
-
-	var_1_85[773] = {
+	pg.base.commander_ability_template[773] = {
 		cost = 0,
 		name = "轮机长·先锋",
 		group_id = 77,
@@ -3536,11 +3159,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.commander_ability_template
-
-	var_1_86[801] = {
+	pg.base.commander_ability_template[801] = {
 		cost = 0,
 		name = "新手观测士·潜艇",
 		group_id = 80,
@@ -3568,11 +3187,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.commander_ability_template
-
-	var_1_87[802] = {
+	pg.base.commander_ability_template[802] = {
 		cost = 0,
 		name = "熟练观测士·潜艇",
 		group_id = 80,
@@ -3600,11 +3215,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.commander_ability_template
-
-	var_1_88[803] = {
+	pg.base.commander_ability_template[803] = {
 		cost = 0,
 		name = "鹰眼·潜艇",
 		group_id = 80,
@@ -3632,11 +3243,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.commander_ability_template
-
-	var_1_89[811] = {
+	pg.base.commander_ability_template[811] = {
 		cost = 0,
 		name = "新手观测士·先锋",
 		group_id = 81,
@@ -3668,11 +3275,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.commander_ability_template
-
-	var_1_90[812] = {
+	pg.base.commander_ability_template[812] = {
 		cost = 0,
 		name = "熟练观测士·先锋",
 		group_id = 81,
@@ -3704,11 +3307,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.commander_ability_template
-
-	var_1_91[813] = {
+	pg.base.commander_ability_template[813] = {
 		cost = 0,
 		name = "鹰眼·先锋",
 		group_id = 81,
@@ -3740,11 +3339,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.commander_ability_template
-
-	var_1_92[821] = {
+	pg.base.commander_ability_template[821] = {
 		cost = 0,
 		name = "新手观测士·主力",
 		group_id = 82,
@@ -3779,11 +3374,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.commander_ability_template
-
-	var_1_93[822] = {
+	pg.base.commander_ability_template[822] = {
 		cost = 0,
 		name = "熟练观测士·主力",
 		group_id = 82,
@@ -3818,11 +3409,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.commander_ability_template
-
-	var_1_94[823] = {
+	pg.base.commander_ability_template[823] = {
 		cost = 0,
 		name = "鹰眼·主力",
 		group_id = 82,
@@ -3857,11 +3444,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.commander_ability_template
-
-	var_1_95[831] = {
+	pg.base.commander_ability_template[831] = {
 		cost = 0,
 		name = "飓风观测士·新手",
 		group_id = 83,
@@ -3886,11 +3469,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.commander_ability_template
-
-	var_1_96[832] = {
+	pg.base.commander_ability_template[832] = {
 		cost = 0,
 		name = "飓风观测士·熟练",
 		group_id = 83,
@@ -3915,11 +3494,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.commander_ability_template
-
-	var_1_97[833] = {
+	pg.base.commander_ability_template[833] = {
 		cost = 0,
 		name = "飓风之眼",
 		group_id = 83,
@@ -3944,11 +3519,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.commander_ability_template
-
-	var_1_98[901] = {
+	pg.base.commander_ability_template[901] = {
 		cost = 0,
 		name = "操舵手·小型舰",
 		group_id = 90,
@@ -3982,8 +3553,7 @@ var_0_3.base.commander_ability_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.commander_ability_template[902] = {
+	pg.base.commander_ability_template[902] = {
 		cost = 0,
 		name = "熟练舵手·小型舰",
 		group_id = 90,
@@ -4021,11 +3591,7 @@ var_0_3.base.commander_ability_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.commander_ability_template
-
-	var_2_0[903] = {
+	pg.base.commander_ability_template[903] = {
 		cost = 0,
 		name = "航海长·小型舰",
 		group_id = 90,
@@ -4059,11 +3625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.commander_ability_template
-
-	var_2_1[911] = {
+	pg.base.commander_ability_template[911] = {
 		cost = 0,
 		name = "操舵手·中型舰",
 		group_id = 91,
@@ -4095,11 +3657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.commander_ability_template
-
-	var_2_2[912] = {
+	pg.base.commander_ability_template[912] = {
 		cost = 0,
 		name = "熟练舵手·中型舰",
 		group_id = 91,
@@ -4131,11 +3689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.commander_ability_template
-
-	var_2_3[913] = {
+	pg.base.commander_ability_template[913] = {
 		cost = 0,
 		name = "航海长·中型舰",
 		group_id = 91,
@@ -4167,11 +3721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.commander_ability_template
-
-	var_2_4[921] = {
+	pg.base.commander_ability_template[921] = {
 		cost = 0,
 		name = "操舵手·大型舰",
 		group_id = 92,
@@ -4202,11 +3752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.commander_ability_template
-
-	var_2_5[922] = {
+	pg.base.commander_ability_template[922] = {
 		cost = 0,
 		name = "熟练舵手·大型舰",
 		group_id = 92,
@@ -4237,11 +3783,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.commander_ability_template
-
-	var_2_6[923] = {
+	pg.base.commander_ability_template[923] = {
 		cost = 0,
 		name = "航海长·大型舰",
 		group_id = 92,
@@ -4272,11 +3814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.commander_ability_template
-
-	var_2_7[2001] = {
+	pg.base.commander_ability_template[2001] = {
 		cost = 0,
 		name = "新晋指挥官·驱逐",
 		group_id = 200,
@@ -4320,11 +3858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.commander_ability_template
-
-	var_2_8[2002] = {
+	pg.base.commander_ability_template[2002] = {
 		cost = 0,
 		name = "精锐指挥官·驱逐",
 		group_id = 200,
@@ -4368,11 +3902,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.commander_ability_template
-
-	var_2_9[2003] = {
+	pg.base.commander_ability_template[2003] = {
 		cost = 0,
 		name = "海上先锋",
 		group_id = 200,
@@ -4416,11 +3946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.commander_ability_template
-
-	var_2_10[2011] = {
+	pg.base.commander_ability_template[2011] = {
 		cost = 0,
 		name = "新晋指挥官·巡洋",
 		group_id = 201,
@@ -4476,11 +4002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.commander_ability_template
-
-	var_2_11[2012] = {
+	pg.base.commander_ability_template[2012] = {
 		cost = 0,
 		name = "精锐指挥官·巡洋",
 		group_id = 201,
@@ -4536,11 +4058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.commander_ability_template
-
-	var_2_12[2013] = {
+	pg.base.commander_ability_template[2013] = {
 		cost = 0,
 		name = "中坚力量",
 		group_id = 201,
@@ -4596,11 +4114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.commander_ability_template
-
-	var_2_13[2021] = {
+	pg.base.commander_ability_template[2021] = {
 		cost = 0,
 		name = "新晋指挥官·战列",
 		group_id = 202,
@@ -4650,11 +4164,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.commander_ability_template
-
-	var_2_14[2022] = {
+	pg.base.commander_ability_template[2022] = {
 		cost = 0,
 		name = "精锐指挥官·战列",
 		group_id = 202,
@@ -4704,11 +4214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.commander_ability_template
-
-	var_2_15[2023] = {
+	pg.base.commander_ability_template[2023] = {
 		cost = 0,
 		name = "钢铁巨兽",
 		group_id = 202,
@@ -4758,11 +4264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.commander_ability_template
-
-	var_2_16[2031] = {
+	pg.base.commander_ability_template[2031] = {
 		cost = 0,
 		name = "新晋指挥官·空母",
 		group_id = 203,
@@ -4802,11 +4304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.commander_ability_template
-
-	var_2_17[2032] = {
+	pg.base.commander_ability_template[2032] = {
 		cost = 0,
 		name = "精锐指挥官·空母",
 		group_id = 203,
@@ -4846,11 +4344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.commander_ability_template
-
-	var_2_18[2033] = {
+	pg.base.commander_ability_template[2033] = {
 		cost = 0,
 		name = "苍穹猎手",
 		group_id = 203,
@@ -4890,11 +4384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.commander_ability_template
-
-	var_2_19[2041] = {
+	pg.base.commander_ability_template[2041] = {
 		cost = 0,
 		name = "新晋指挥官·潜艇",
 		group_id = 204,
@@ -4936,11 +4426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.commander_ability_template
-
-	var_2_20[2042] = {
+	pg.base.commander_ability_template[2042] = {
 		cost = 0,
 		name = "精锐指挥官·潜艇",
 		group_id = 204,
@@ -4982,11 +4468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.commander_ability_template
-
-	var_2_21[2043] = {
+	pg.base.commander_ability_template[2043] = {
 		cost = 0,
 		name = "沉默杀手",
 		group_id = 204,
@@ -5028,11 +4510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.commander_ability_template
-
-	var_2_22[2111] = {
+	pg.base.commander_ability_template[2111] = {
 		cost = 0,
 		name = "新晋指挥官·白鹰",
 		group_id = 211,
@@ -5085,11 +4563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.commander_ability_template
-
-	var_2_23[2112] = {
+	pg.base.commander_ability_template[2112] = {
 		cost = 0,
 		name = "精锐指挥官·白鹰",
 		group_id = 211,
@@ -5142,11 +4616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.commander_ability_template
-
-	var_2_24[2113] = {
+	pg.base.commander_ability_template[2113] = {
 		cost = 0,
 		name = "王牌指挥官·白鹰",
 		group_id = 211,
@@ -5199,11 +4669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.commander_ability_template
-
-	var_2_25[2121] = {
+	pg.base.commander_ability_template[2121] = {
 		cost = 0,
 		name = "新晋指挥官·皇家",
 		group_id = 212,
@@ -5256,11 +4722,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.commander_ability_template
-
-	var_2_26[2122] = {
+	pg.base.commander_ability_template[2122] = {
 		cost = 0,
 		name = "精锐指挥官·皇家",
 		group_id = 212,
@@ -5313,11 +4775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.commander_ability_template
-
-	var_2_27[2123] = {
+	pg.base.commander_ability_template[2123] = {
 		cost = 0,
 		name = "王牌指挥官·皇家",
 		group_id = 212,
@@ -5370,11 +4828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.commander_ability_template
-
-	var_2_28[2131] = {
+	pg.base.commander_ability_template[2131] = {
 		cost = 0,
 		name = "新晋指挥官·重樱",
 		group_id = 213,
@@ -5427,11 +4881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.commander_ability_template
-
-	var_2_29[2132] = {
+	pg.base.commander_ability_template[2132] = {
 		cost = 0,
 		name = "精锐指挥官·重樱",
 		group_id = 213,
@@ -5484,11 +4934,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.commander_ability_template
-
-	var_2_30[2133] = {
+	pg.base.commander_ability_template[2133] = {
 		cost = 0,
 		name = "王牌指挥官·重樱",
 		group_id = 213,
@@ -5541,11 +4987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.commander_ability_template
-
-	var_2_31[2141] = {
+	pg.base.commander_ability_template[2141] = {
 		cost = 0,
 		name = "新晋指挥官·铁血",
 		group_id = 214,
@@ -5596,11 +5038,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.commander_ability_template
-
-	var_2_32[2142] = {
+	pg.base.commander_ability_template[2142] = {
 		cost = 0,
 		name = "精锐指挥官·铁血",
 		group_id = 214,
@@ -5651,11 +5089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.commander_ability_template
-
-	var_2_33[2143] = {
+	pg.base.commander_ability_template[2143] = {
 		cost = 0,
 		name = "王牌指挥官·铁血",
 		group_id = 214,
@@ -5706,11 +5140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.commander_ability_template
-
-	var_2_34[2151] = {
+	pg.base.commander_ability_template[2151] = {
 		cost = 0,
 		name = "新晋指挥官·东煌",
 		group_id = 215,
@@ -5763,11 +5193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.commander_ability_template
-
-	var_2_35[2152] = {
+	pg.base.commander_ability_template[2152] = {
 		cost = 0,
 		name = "精锐指挥官·东煌",
 		group_id = 215,
@@ -5820,11 +5246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.commander_ability_template
-
-	var_2_36[2153] = {
+	pg.base.commander_ability_template[2153] = {
 		cost = 0,
 		name = "王牌指挥官·东煌",
 		group_id = 215,
@@ -5877,11 +5299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.commander_ability_template
-
-	var_2_37[2171] = {
+	pg.base.commander_ability_template[2171] = {
 		cost = 0,
 		name = "新晋指挥官·北联",
 		group_id = 217,
@@ -5934,11 +5352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.commander_ability_template
-
-	var_2_38[2172] = {
+	pg.base.commander_ability_template[2172] = {
 		cost = 0,
 		name = "精锐指挥官·北联",
 		group_id = 217,
@@ -5991,11 +5405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.commander_ability_template
-
-	var_2_39[2173] = {
+	pg.base.commander_ability_template[2173] = {
 		cost = 0,
 		name = "王牌指挥官·北联",
 		group_id = 217,
@@ -6048,11 +5458,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.commander_ability_template
-
-	var_2_40[2181] = {
+	pg.base.commander_ability_template[2181] = {
 		cost = 0,
 		name = "新晋指挥官·鸢尾",
 		group_id = 218,
@@ -6105,11 +5511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.commander_ability_template
-
-	var_2_41[2182] = {
+	pg.base.commander_ability_template[2182] = {
 		cost = 0,
 		name = "精锐指挥官·鸢尾",
 		group_id = 218,
@@ -6162,11 +5564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.commander_ability_template
-
-	var_2_42[2183] = {
+	pg.base.commander_ability_template[2183] = {
 		cost = 0,
 		name = "王牌指挥官·鸢尾",
 		group_id = 218,
@@ -6219,11 +5617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.commander_ability_template
-
-	var_2_43[2191] = {
+	pg.base.commander_ability_template[2191] = {
 		cost = 0,
 		name = "新晋指挥官·维希",
 		group_id = 219,
@@ -6276,11 +5670,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.commander_ability_template
-
-	var_2_44[2192] = {
+	pg.base.commander_ability_template[2192] = {
 		cost = 0,
 		name = "精锐指挥官·维希",
 		group_id = 219,
@@ -6333,11 +5723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.commander_ability_template
-
-	var_2_45[2193] = {
+	pg.base.commander_ability_template[2193] = {
 		cost = 0,
 		name = "王牌指挥官·维希",
 		group_id = 219,
@@ -6390,11 +5776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.commander_ability_template
-
-	var_2_46[5011] = {
+	pg.base.commander_ability_template[5011] = {
 		cost = 0,
 		name = "见敌必战",
 		group_id = 501,
@@ -6454,11 +5836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.commander_ability_template
-
-	var_2_47[5021] = {
+	pg.base.commander_ability_template[5021] = {
 		cost = 0,
 		name = "一发入魂",
 		group_id = 502,
@@ -6507,11 +5885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.commander_ability_template
-
-	var_2_48[5031] = {
+	pg.base.commander_ability_template[5031] = {
 		cost = 0,
 		name = "水雷魂",
 		group_id = 503,
@@ -6562,11 +5936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.commander_ability_template
-
-	var_2_49[5041] = {
+	pg.base.commander_ability_template[5041] = {
 		cost = 0,
 		name = "王牌机师",
 		group_id = 504,
@@ -6606,11 +5976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.commander_ability_template
-
-	var_2_50[5051] = {
+	pg.base.commander_ability_template[5051] = {
 		cost = 0,
 		name = "狼群之首",
 		group_id = 505,
@@ -6652,11 +6018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.commander_ability_template
-
-	var_2_51[5061] = {
+	pg.base.commander_ability_template[5061] = {
 		cost = 0,
 		name = "被期待的新星",
 		group_id = 506,
@@ -6676,11 +6038,7 @@ end)()
 		},
 		add_desc = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.commander_ability_template
-
-	var_2_52[5071] = {
+	pg.base.commander_ability_template[5071] = {
 		cost = 0,
 		name = "最佳玩伴",
 		group_id = 507,
@@ -6700,11 +6058,7 @@ end)()
 		},
 		add_desc = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.commander_ability_template
-
-	var_2_53[5081] = {
+	pg.base.commander_ability_template[5081] = {
 		cost = 0,
 		name = "其疾如风",
 		group_id = 508,
@@ -6729,11 +6083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.commander_ability_template
-
-	var_2_54[5091] = {
+	pg.base.commander_ability_template[5091] = {
 		cost = 0,
 		name = "其徐如林",
 		group_id = 509,
@@ -6791,11 +6141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.commander_ability_template
-
-	var_2_55[5101] = {
+	pg.base.commander_ability_template[5101] = {
 		cost = 0,
 		name = "侵略如火",
 		group_id = 510,
@@ -6821,11 +6167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.commander_ability_template
-
-	var_2_56[5111] = {
+	pg.base.commander_ability_template[5111] = {
 		cost = 0,
 		name = "不动如山",
 		group_id = 511,
@@ -6851,11 +6193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.commander_ability_template
-
-	var_2_57[5121] = {
+	pg.base.commander_ability_template[5121] = {
 		cost = 0,
 		name = "小小的奇迹",
 		group_id = 512,
@@ -6880,11 +6218,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.commander_ability_template
-
-	var_2_58[5131] = {
+	pg.base.commander_ability_template[5131] = {
 		cost = 0,
 		name = "既定的命运",
 		group_id = 513,
@@ -6942,11 +6276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.commander_ability_template
-
-	var_2_59[5141] = {
+	pg.base.commander_ability_template[5141] = {
 		cost = 0,
 		name = "战备状态",
 		group_id = 514,
@@ -6984,11 +6314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.commander_ability_template
-
-	var_2_60[5151] = {
+	pg.base.commander_ability_template[5151] = {
 		cost = 0,
 		name = "展旗扬帆",
 		group_id = 515,
@@ -7058,11 +6384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.commander_ability_template
-
-	var_2_61[5161] = {
+	pg.base.commander_ability_template[5161] = {
 		cost = 0,
 		name = "攻夺预备",
 		group_id = 516,
@@ -7112,11 +6434,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.commander_ability_template
-
-	var_2_62[5171] = {
+	pg.base.commander_ability_template[5171] = {
 		cost = 0,
 		name = "大胆的尝试",
 		group_id = 517,
@@ -7171,8 +6489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-	var_2_62.base.commander_ability_template[5181] = {
+	pg.base.commander_ability_template[5181] = {
 		cost = 0,
 		name = "战旗重扬",
 		group_id = 518,

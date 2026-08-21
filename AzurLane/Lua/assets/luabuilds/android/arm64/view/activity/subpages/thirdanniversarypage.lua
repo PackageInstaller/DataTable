@@ -1,64 +1,35 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ThirdAnniversaryPage", import("...base.BaseActivityPage"))
 
-local var_0_0 = "ThirdAnniversaryPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
+function var_0_0.OnInit(arg_1_0)
 	arg_1_0:findUI()
 	arg_1_0:initData()
 
 	return
 end
 
-function var_0_1.findUI(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.paintBackTF = var_1.Find(var_2_0, "Paints/PaintBack")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.paintFrontTF = var_1.Find(var_2_1, "Paints/PaintFront")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.skinShopBtn = var_1.Find(var_2_2, "BtnShop")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.btnContainer = var_1.Find(var_2_3, "BtnList/Viewport/Content")
-
-	local var_2_4 = arg_2_0.btnContainer.childCount / 2
-
+function var_0_0.findUI(arg_2_0)
+	arg_2_0.paintBackTF = arg_2_0._tf:Find("Paints/PaintBack")
+	arg_2_0.paintFrontTF = arg_2_0._tf:Find("Paints/PaintFront")
+	arg_2_0.skinShopBtn = arg_2_0._tf:Find("BtnShop")
+	arg_2_0.btnContainer = arg_2_0._tf:Find("BtnList/Viewport/Content")
 	arg_2_0.btnList1 = {}
 
-	for iter_2_0 = 0, var_2_4 - 1 do
-		local var_2_5 = arg_2_0.btnList1
-		local var_2_6 = iter_2_0 + 1
-		local var_2_7 = arg_2_0.btnContainer
-
-		var_2_5[var_2_6] = var_8.GetChild(var_2_7, iter_2_0)
+	for iter_2_0 = 0, arg_2_0.btnContainer.childCount / 2 - 1 do
+		arg_2_0.btnList1[iter_2_0 + 1] = arg_2_0.btnContainer:GetChild(iter_2_0)
 	end
 
 	arg_2_0.btnList2 = {}
 
-	for iter_2_1 = 7, 2 * var_2_4 - 1 do
-		local var_2_8 = arg_2_0.btnList2
-		local var_2_9 = #arg_2_0.btnList2 + 1
-		local var_2_10 = arg_2_0.btnContainer
-
-		var_2_8[var_2_9] = var_8.GetChild(var_2_10, iter_2_1)
+	for iter_2_1 = 7, 2 * (arg_2_0.btnContainer.childCount / 2) - 1 do
+		arg_2_0.btnList2[#arg_2_0.btnList2 + 1] = arg_2_0.btnContainer:GetChild(iter_2_1)
 	end
 
-	GetComponent = var_2
-	arg_2_0.gridLayoutGroupCom = var_2(arg_2_0.btnContainer, "GridLayoutGroup")
+	arg_2_0.gridLayoutGroupCom = GetComponent(arg_2_0.btnContainer, "GridLayoutGroup")
 
 	return
 end
 
-function var_0_1.initData(arg_3_0)
+function var_0_0.initData(arg_3_0)
 	arg_3_0.paintCount = 14
 	arg_3_0.curPaintIndex = 1
 	arg_3_0.paintSwitchTime = 1
@@ -76,67 +47,22 @@ function var_0_1.initData(arg_3_0)
 	return
 end
 
-function var_0_1.switchNextPaint(arg_4_0)
-	local var_4_0 = arg_4_0.frameTimer
-
-	var_1.Stop(var_4_0)
-
-	local var_4_1 = arg_4_0.curPaintIndex % arg_4_0.paintCount + 1
-	local var_4_2 = arg_4_0.paintNamePrefix .. var_4_1
-	local var_4_3 = arg_4_0.paintPathPrefix .. var_4_2
-
-	setImageSprite = var_5
-
-	local var_4_4 = arg_4_0.paintBackTF
-
-	LoadSprite = var_1_10008
-
-	var_5(var_4_4, var_1_10008(var_4_3, var_4_2))
-
-	LeanTween = var_5
-
-	local var_4_5 = var_5.value
-
-	go = var_4_4
-
-	local var_4_6 = var_4_5(var_4_4(arg_4_0.paintFrontTF), 1, 0, arg_4_0.paintSwitchTime)
-	local var_4_7 = var_5.setOnUpdate
-
-	System = var_8
-
-	local var_4_8 = var_4_7(var_4_6, var_8.Action_float(function(arg_5_0)
-		setImageAlpha = var_2_10001
-
-		var_2_10001(arg_4_0.paintFrontTF, arg_5_0)
-
-		setImageAlpha = var_2_10001
-
-		var_2_10001(arg_4_0.paintBackTF, 1 - arg_5_0)
+function var_0_0.switchNextPaint(arg_4_0)
+	arg_4_0.frameTimer:Stop()
+	setImageSprite(arg_4_0.paintBackTF, LoadSprite(arg_4_0.paintPathPrefix .. arg_4_0.paintNamePrefix .. arg_4_0.curPaintIndex % arg_4_0.paintCount + 1, arg_4_0.paintNamePrefix .. arg_4_0.curPaintIndex % arg_4_0.paintCount + 1))
+	LeanTween.value(go(arg_4_0.paintFrontTF), 1, 0, arg_4_0.paintSwitchTime):setOnUpdate(System.Action_float(function(arg_5_0)
+		setImageAlpha(arg_4_0.paintFrontTF, arg_5_0)
+		setImageAlpha(arg_4_0.paintBackTF, 1 - arg_5_0)
 
 		return
-	end))
-	local var_4_9 = var_5.setOnComplete
+	end)):setOnComplete(System.Action(function()
+		setImageFromImage(arg_4_0.paintFrontTF, arg_4_0.paintBackTF)
+		setImageAlpha(arg_4_0.paintFrontTF, 1)
+		setImageAlpha(arg_4_0.paintBackTF, 0)
 
-	System = var_8
+		arg_4_0.curPaintIndex = var_0
 
-	var_4_9(var_4_8, var_8.Action(function()
-		setImageFromImage = var_2_10000
-
-		var_2_10000(arg_4_0.paintFrontTF, arg_4_0.paintBackTF)
-
-		setImageAlpha = var_2_10000
-
-		var_2_10000(arg_4_0.paintFrontTF, 1)
-
-		setImageAlpha = var_2_10000
-
-		var_2_10000(arg_4_0.paintBackTF, 0)
-
-		arg_4_0.curPaintIndex = var_4_1
-
-		local var_6_0 = arg_4_0.frameTimer
-
-		var_0.Start(var_6_0)
+		arg_4_0.frameTimer:Start()
 
 		return
 	end))
@@ -144,7 +70,7 @@ function var_0_1.switchNextPaint(arg_4_0)
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_7_0)
+function var_0_0.OnFirstFlush(arg_7_0)
 	arg_7_0:initPaint()
 	arg_7_0:initBtnList(arg_7_0.btnList1)
 	arg_7_0:initBtnList(arg_7_0.btnList2)
@@ -153,267 +79,99 @@ function var_0_1.OnFirstFlush(arg_7_0)
 	return
 end
 
-function var_0_1.initPaint(arg_8_0)
-	local var_8_0 = (arg_8_0.curPaintIndex - 1) % arg_8_0.paintCount + 1
-	local var_8_1 = arg_8_0.paintNamePrefix .. var_1
-	local var_8_2 = arg_8_0.paintPathPrefix .. var_8_1
-
-	setImageSprite = var_5
-
-	local var_8_3 = arg_8_0.paintFrontTF
-
-	LoadSprite = var_1_10008
-
-	var_5(var_8_3, var_1_10008(var_8_2, var_8_1))
-
-	local var_8_4 = arg_8_0.paintNamePrefix .. var_8_0
-	local var_8_5 = arg_8_0.paintPathPrefix .. var_8_4
-
-	setImageSprite = var_5
-
-	local var_8_6 = arg_8_0.paintBackTF
-
-	LoadSprite = var_8
-
-	var_5(var_8_6, var_8(var_8_5, var_8_4))
+function var_0_0.initPaint(arg_8_0)
+	setImageSprite(arg_8_0.paintFrontTF, LoadSprite(arg_8_0.paintPathPrefix .. arg_8_0.paintNamePrefix .. arg_8_0.curPaintIndex, arg_8_0.paintNamePrefix .. arg_8_0.curPaintIndex))
+	setImageSprite(arg_8_0.paintBackTF, LoadSprite(arg_8_0.paintPathPrefix .. arg_8_0.paintNamePrefix .. (arg_8_0.curPaintIndex - 1) % arg_8_0.paintCount + 1, arg_8_0.paintNamePrefix .. (arg_8_0.curPaintIndex - 1) % arg_8_0.paintCount + 1))
 
 	return
 end
 
-function var_0_1.initBtnList(arg_9_0, arg_9_1)
-	onButton = var_1_10002
-
-	local var_9_0 = arg_9_0
-	local var_9_1 = arg_9_1[1]
-
-	local function var_9_2()
-		local var_10_0 = arg_9_0
-		local var_10_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_10_1(var_10_0, var_2_10003.GO_PRAY_POOL)
+function var_0_0.initBtnList(arg_9_0, arg_9_1)
+	onButton(arg_9_0, arg_9_1[1], function()
+		arg_9_0:emit(ActivityMediator.GO_PRAY_POOL)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_0, var_9_1, var_9_2, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_9_3 = arg_9_0
-	local var_9_4 = arg_9_1[2]
-
-	local function var_9_5()
-		local var_11_0 = arg_9_0
-		local var_11_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_11_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_11_1(var_11_0, var_11_2, var_2_10004.SUMMARY)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_1[2], function()
+		arg_9_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SUMMARY)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_3, var_9_4, var_9_5, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_9_6 = arg_9_0
-	local var_9_7 = arg_9_1[3]
-
-	local function var_9_8()
-		local var_12_0 = arg_9_0
-		local var_12_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_12_2 = var_2_10003.SELECT_ACTIVITY
-
-		ActivityConst = var_2_10004
-
-		var_12_1(var_12_0, var_12_2, var_2_10004.ACTIVITY_TYPE_RETURN_AWARD_ID3)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_1[3], function()
+		arg_9_0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.ACTIVITY_TYPE_RETURN_AWARD_ID3)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_6, var_9_7, var_9_8, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_9_9 = arg_9_0
-	local var_9_10 = arg_9_1[4]
-
-	local function var_9_11()
-		local var_13_0 = arg_9_0
-		local var_13_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_13_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		local var_13_3 = var_2_10004.CHARGE
-		local var_13_4 = {}
-
-		ChargeScene = var_2_10006
-		var_13_4.wrap = var_2_10006.TYPE_DIAMOND
-
-		var_13_1(var_13_0, var_13_2, var_13_3, var_13_4)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_1[4], function()
+		arg_9_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.CHARGE, {
+			wrap = ChargeScene.TYPE_DIAMOND
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_9, var_9_10, var_9_11, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_9_12 = arg_9_0
-	local var_9_13 = arg_9_1[5]
-
-	local function var_9_14()
-		local var_14_0 = arg_9_0
-		local var_14_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_14_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_14_1(var_14_0, var_14_2, var_2_10004.THIRD_ANNIVERSARY_AKIBA)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_1[5], function()
+		arg_9_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.THIRD_ANNIVERSARY_AKIBA)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_12, var_9_13, var_9_14, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_9_15 = arg_9_0
-	local var_9_16 = arg_9_1[6]
-
-	local function var_9_17()
-		local var_15_0 = arg_9_0
-		local var_15_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_15_2 = var_2_10003.SELECT_ACTIVITY
-
-		ActivityConst = var_2_10004
-
-		var_15_1(var_15_0, var_15_2, var_2_10004.PIZZAHUT_PT_PAGE)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_1[6], function()
+		arg_9_0:emit(ActivityMediator.SELECT_ACTIVITY, ActivityConst.PIZZAHUT_PT_PAGE)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_15, var_9_16, var_9_17, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_9_18 = arg_9_0
-	local var_9_19 = arg_9_1[7]
-
-	local function var_9_20()
-		local var_16_0 = arg_9_0
-		local var_16_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_16_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_16_1(var_16_0, var_16_2, var_2_10004.SKINSHOP)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_1[7], function()
+		arg_9_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SKINSHOP)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_9_18, var_9_19, var_9_20, var_1_10007)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.initTimer(arg_17_0)
+function var_0_0.initTimer(arg_17_0)
 	local var_17_0 = 0.016666666666666666
 
 	arg_17_0.paintStaticCountValue = 0
-	Timer = var_2
-	arg_17_0.frameTimer = var_2.New(function()
+	arg_17_0.frameTimer = Timer.New(function()
 		arg_17_0.paintStaticCountValue = arg_17_0.paintStaticCountValue + var_17_0
 
 		if arg_17_0.paintStaticCountValue >= arg_17_0.paintStaticTime then
 			arg_17_0.paintStaticCountValue = 0
 
-			local var_18_0 = arg_17_0
-
-			var_0.switchNextPaint(var_18_0)
+			arg_17_0:switchNextPaint()
 		end
 
 		return
-	end, var_17_0, -1, false)
+	end, 0.016666666666666666, -1, false)
 
-	local var_17_1 = arg_17_0.frameTimer
+	arg_17_0.frameTimer:Start()
 
-	var_2.Start(var_17_1)
-
-	Timer = var_2
-	arg_17_0.frameTimer2 = var_2.New(function()
+	arg_17_0.frameTimer2 = Timer.New(function()
 		local var_19_0 = arg_17_0.btnContainer.anchoredPosition.x - arg_17_0.btnSpeed * var_17_0
-		local var_19_1 = arg_17_0.startAnchoredPosX - var_19_0
 
-		if arg_17_0.moveLength <= var_19_1 then
+		if arg_17_0.startAnchoredPosX - (arg_17_0.btnContainer.anchoredPosition.x - arg_17_0.btnSpeed * var_17_0) >= arg_17_0.moveLength then
 			var_19_0 = arg_17_0.btnContainer.anchoredPosition.x + arg_17_0.moveLength
 		end
 
-		local var_19_2 = arg_17_0.btnContainer
-
-		Vector3 = var_2
-		var_19_2.anchoredPosition = var_2(var_19_0, 0, 0)
+		arg_17_0.btnContainer.anchoredPosition = Vector3(var_19_0, 0, 0)
 
 		return
-	end, var_17_0, -1, false)
+	end, 0.016666666666666666, -1, false)
 
-	local var_17_2 = arg_17_0.frameTimer2
-
-	var_2.Start(var_17_2)
+	arg_17_0.frameTimer2:Start()
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_20_0)
+function var_0_0.OnDestroy(arg_20_0)
 	if arg_20_0.frameTimer then
-		local var_20_0 = arg_20_0.frameTimer
-
-		var_1.Stop(var_20_0)
+		arg_20_0.frameTimer:Stop()
 
 		arg_20_0.frameTimer = nil
 	end
 
 	if arg_20_0.frameTimer2 then
-		local var_20_1 = arg_20_0.frameTimer2
-
-		var_1.Stop(var_20_1)
+		arg_20_0.frameTimer2:Stop()
 
 		arg_20_0.frameTimer2 = nil
 	end
@@ -421,4 +179,4 @@ function var_0_1.OnDestroy(arg_20_0)
 	return
 end
 
-return var_0_1
+return var_0_0

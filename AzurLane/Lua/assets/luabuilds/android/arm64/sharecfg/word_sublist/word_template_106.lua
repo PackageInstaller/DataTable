@@ -1,15 +1,10 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.word_template_106 = {}
 
-local var_0_0
+local var_0_0 = pg.word_template_106
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.word_template_106 = {}
-
-local var_0_1 = var_0.word_template_106
-
-local function var_0_2()
-	var_0_1.还 = {
+function temp()
+	var_0_0.还 = {
 		立 = {
 			方 = {
 				娱 = {
@@ -131,12 +126,10 @@ local function var_0_2()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_3()
-	var_0_1.烸 = {
+function temp()
+	var_0_0.烸 = {
 		埖 = {
 			嘸 = {
 				敵 = {
@@ -171,12 +164,10 @@ local function var_0_3()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_4()
-	var_0_1.害 = {
+function temp()
+	var_0_0.害 = {
 		电 = {
 			突 = {
 				网 = {
@@ -213,12 +204,10 @@ local function var_0_4()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_5()
-	var_0_1.駭 = {
+function temp()
+	var_0_0.駭 = {
 		客 = {
 			軟 = {
 				體 = {
@@ -239,12 +228,10 @@ local function var_0_5()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_6()
-	var_0_1.憨 = {
+function temp()
+	var_0_0.憨 = {
 		厚 = {
 			哥 = {
 				this = true
@@ -255,12 +242,10 @@ local function var_0_6()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_7()
-	var_0_1.函 = {
+function temp()
+	var_0_0.函 = {
 		授 = {
 			大 = {
 				专 = {
@@ -273,12 +258,10 @@ local function var_0_7()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_8()
-	var_0_1.涵 = {
+function temp()
+	var_0_0.涵 = {
 		洞 = {
 			裸 = {
 				聊 = {
@@ -293,12 +276,10 @@ local function var_0_8()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_9()
-	var_0_1.寒 = {
+function temp()
+	var_0_0.寒 = {
 		潭 = {
 			鹤 = {
 				影 = {
@@ -311,12 +292,10 @@ local function var_0_9()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_10()
-	var_0_1.捍 = {
+function temp()
+	var_0_0.捍 = {
 		卫 = {
 			薄 = {
 				熙 = {
@@ -343,12 +322,10 @@ local function var_0_10()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_11()
-	var_0_1.呺 = {
+function temp()
+	var_0_0.呺 = {
 		碼 = {
 			恁 = {
 				噫 = {
@@ -363,12 +340,10 @@ local function var_0_11()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_12()
-	var_0_1.嚎 = {
+function temp()
+	var_0_0.嚎 = {
 		狼 = {
 			狩 = {
 				猎 = {
@@ -383,12 +358,10 @@ local function var_0_12()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_13()
-	var_0_1.濠 = {
+function temp()
+	var_0_0.濠 = {
 		江 = {
 			区 = {
 				刻 = {
@@ -407,12 +380,10 @@ local function var_0_13()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_14()
-	var_0_1.恏 = {
+function temp()
+	var_0_0.恏 = {
 		騒 = {
 			琮 = {
 				匼 = {
@@ -425,12 +396,10 @@ local function var_0_14()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_15()
-	var_0_1.滈 = {
+function temp()
+	var_0_0.滈 = {
 		汸 = {
 			亾 = {
 				怶 = {
@@ -511,12 +480,10 @@ local function var_0_15()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_16()
-	var_0_1.盒 = {
+function temp()
+	var_0_0.盒 = {
 		瓶 = {
 			奖 = {
 				this = true
@@ -552,12 +519,10 @@ local function var_0_16()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_17()
-	var_0_1.鹤 = {
+function temp()
+	var_0_0.鹤 = {
 		山 = {
 			刻 = {
 				章 = {
@@ -581,12 +546,10 @@ local function var_0_17()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_18()
-	var_0_1.黒 = {
+function temp()
+	var_0_0.黒 = {
 		姫 = {
 			桎 = {
 				梏 = {
@@ -601,12 +564,10 @@ local function var_0_18()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_19()
-	var_0_1.潶 = {
+function temp()
+	var_0_0.潶 = {
 		黯 = {
 			聖 = {
 				殿 = {
@@ -678,12 +639,10 @@ local function var_0_19()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_20()
-	var_0_1.橫 = {
+function temp()
+	var_0_0.橫 = {
 		山 = {
 			美 = {
 				雪 = {
@@ -696,12 +655,10 @@ local function var_0_20()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_21()
-	var_0_1.灴 = {
+function temp()
+	var_0_0.灴 = {
 		至 = {
 			this = true
 		},
@@ -713,12 +670,10 @@ local function var_0_21()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_22()
-	var_0_1.烘 = {
+function temp()
+	var_0_0.烘 = {
 		至 = {
 			this = true
 		},
@@ -730,12 +685,10 @@ local function var_0_22()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_23()
-	var_0_1.闳 = {
+function temp()
+	var_0_0.闳 = {
 		志 = {
 			this = true
 		}
@@ -744,12 +697,10 @@ local function var_0_23()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_24()
-	var_0_1.泓 = {
+function temp()
+	var_0_0.泓 = {
 		志 = {
 			this = true
 		}
@@ -758,12 +709,10 @@ local function var_0_24()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_25()
-	var_0_1.荭 = {
+function temp()
+	var_0_0.荭 = {
 		志 = {
 			this = true
 		},
@@ -777,12 +726,10 @@ local function var_0_25()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_26()
-	var_0_1.虹 = {
+function temp()
+	var_0_0.虹 = {
 		发 = {
 			代 = {
 				办 = {
@@ -824,12 +771,10 @@ local function var_0_26()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_27()
-	var_0_1.葒 = {
+function temp()
+	var_0_0.葒 = {
 		燈 = {
 			岖 = {
 				尐 = {
@@ -887,12 +832,10 @@ local function var_0_27()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_28()
-	var_0_1.哄 = {
+function temp()
+	var_0_0.哄 = {
 		抢 = {
 			周 = {
 				口 = {
@@ -913,12 +856,10 @@ local function var_0_28()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_29()
-	var_0_1.猴 = {
+function temp()
+	var_0_0.猴 = {
 		儿 = {
 			酒 = {
 				this = true
@@ -929,12 +870,10 @@ local function var_0_29()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_30()
-	var_0_1.吼 = {
+function temp()
+	var_0_0.吼 = {
 		叫 = {
 			一 = {
 				九 = {
@@ -951,8 +890,6 @@ local function var_0_30()
 	return
 end
 
-temp = temp
-
-var_2()
+temp()
 
 return

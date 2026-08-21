@@ -164,6 +164,7 @@ end
 -- 创建道具格子新方法（通过不定参数，推荐）
 function createByData(self, args)
     local item = self:poolGet()
+    item:initData()
 
     local parent = args.parent
     local tid = args.tid
@@ -184,6 +185,7 @@ end
 function create(self, parent, cusData, cusScale, cusIsShowUseInTip)
     local vo = nil
     local item = self:poolGet()
+    item:initData()
     if (cusData.__cname ~= props.PropsVo.__cname and cusData.__cname ~= props.EquipVo.__cname and cusData.__cname ~= props.OrderVo.__cname) then
         if cusData.tid and cusData.num then
             vo = props.PropsManager:getTypePropsVoByTid(cusData.tid)
@@ -436,6 +438,7 @@ function updateCount(self)
     else
         self.mGroupBottom:SetActive(false)
     end
+
 end
 
 -- 更新底部栏2数量

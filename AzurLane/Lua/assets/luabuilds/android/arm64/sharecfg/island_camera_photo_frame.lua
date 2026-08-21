@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_camera_photo_frame") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_camera_photo_frame"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_camera_photo_frame = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_camera_photo_frame
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_camera_photo_frame = rawget(pg, "island_camera_photo_frame") or setmetatable({
+	__name = "island_camera_photo_frame"
+}, confNEO)
+pg.island_camera_photo_frame.all = {
 	1001,
 	1002,
 	1003,
@@ -36,25 +13,11 @@ var_0_3.all = {
 	1008,
 	1009
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_camera_photo_frame = {}
+pg.base = pg.base or {}
+pg.base.island_camera_photo_frame = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_camera_photo_frame
-
-	var_1_0[1001] = {
+	pg.base.island_camera_photo_frame[1001] = {
 		name = "默认",
 		rarity = 2,
 		farme_path = "photo_frame_default",
@@ -70,11 +33,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_camera_photo_frame
-
-	var_1_1[1002] = {
+	pg.base.island_camera_photo_frame[1002] = {
 		name = "视频",
 		rarity = 2,
 		farme_path = "photo_frame_vcr",
@@ -94,11 +53,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_camera_photo_frame
-
-	var_1_2[1003] = {
+	pg.base.island_camera_photo_frame[1003] = {
 		name = "票根",
 		rarity = 2,
 		farme_path = "photo_frame_counterfoil",
@@ -118,11 +73,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_camera_photo_frame
-
-	var_1_3[1004] = {
+	pg.base.island_camera_photo_frame[1004] = {
 		name = "拍立得",
 		rarity = 3,
 		farme_path = "photo_frame_polaroid",
@@ -142,11 +93,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_camera_photo_frame
-
-	var_1_4[1005] = {
+	pg.base.island_camera_photo_frame[1005] = {
 		name = "卡片",
 		rarity = 3,
 		farme_path = "photo_frame_card",
@@ -166,11 +113,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_camera_photo_frame
-
-	var_1_5[1006] = {
+	pg.base.island_camera_photo_frame[1006] = {
 		name = "格调风向",
 		rarity = 3,
 		farme_path = "photo_frame_ins",
@@ -190,11 +133,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_camera_photo_frame
-
-	var_1_6[1007] = {
+	pg.base.island_camera_photo_frame[1007] = {
 		name = "胶片质感",
 		rarity = 3,
 		farme_path = "photo_frame_film",
@@ -214,11 +153,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_camera_photo_frame
-
-	var_1_7[1008] = {
+	pg.base.island_camera_photo_frame[1008] = {
 		name = "雅致胡桃",
 		rarity = 3,
 		farme_path = "photo_frame_Wood",
@@ -238,8 +173,7 @@ var_0_3.base.island_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_7
-	var_1_7.base.island_camera_photo_frame[1009] = {
+	pg.base.island_camera_photo_frame[1009] = {
 		name = "镜头感",
 		rarity = 3,
 		farme_path = "photo_frame_Focus",

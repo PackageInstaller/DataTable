@@ -1,5 +1,3 @@
-﻿require = var_0_10000
-
-var_0_10000("Framework.toLua.tolua")
+﻿require("Framework.toLua.tolua")
 
 return

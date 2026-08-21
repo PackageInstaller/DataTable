@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_coloring_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_coloring_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_coloring_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_coloring_template
-
-var_0_3.__stream__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_coloring_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.activity_coloring_template = rawget(pg, "activity_coloring_template") or setmetatable({
+	__name = "activity_coloring_template"
+}, confNEO)
+pg.activity_coloring_template.__stream__ = true
+pg.activity_coloring_template.all = {
 	1,
 	2,
 	3,
@@ -151,36 +124,10 @@ var_0_4.all = {
 	118,
 	119
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-
-local var_0_6 = var_0_4.base
-
-pg = var_0_5
-
-local var_0_7
-
-if not var_0_5.base.activity_coloring_template then
-	var_0_7 = {}
-end
-
-var_0_6.activity_coloring_template = var_0_7
-cs = var_0_6
-
-local var_0_8
-
-var_0_8 = var_0_6 or {}
-cs = cs
-var_0.activity_coloring_template = {
+pg.base = pg.base or {}
+pg.base.activity_coloring_template = pg.base.activity_coloring_template or {}
+cs = cs or {}
+cs.activity_coloring_template = {
 	{
 		0,
 		8717

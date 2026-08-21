@@ -34,6 +34,7 @@ function setGrid(self)
             if isNew then
                 GameDispatcher:dispatchEvent(EventName.REQ_MODULE_READ, { type = ReadConst.NORMALBAGITEM, id = self.propsVo.tid })
             end
+
             TipsFactory:propsTips({ propsVo = self.propsVo, isShowUseBtn = self.mPropsGrid:getIsShowUseInTip() }, { rectTransform = self.mPropsGrid:getIconRect() })
         end
 
@@ -83,9 +84,17 @@ function updateBubbleView(self)
             RedPointManager:add(self.m_childTrans["GroupAction"], UrlManager:getCommon5Path("common_0223.png"), 45, 59.2)
         end
     else
-        if self.UIObject then
+        local showRed = true
+        if self.propsVo.effectType == UseEffectType.USE_GET_HEROEGG then
+            local maxCount = bag.BagManager:getPropsCountByTid(self.propsVo.tid)
+            local needCount = self.propsVo.effectList[1] 
+            showRed = maxCount >= needCount
+        end
+        if self.UIObject and showRed then
             RedPointManager:remove(self.m_childTrans["GroupAction"])
             RedPointManager:add(self.m_childTrans["GroupAction"], nil, 64, 64)
+        else
+            RedPointManager:remove(self.m_childTrans["GroupAction"])
         end
     end
 end

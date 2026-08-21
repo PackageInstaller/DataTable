@@ -4,7 +4,7 @@ noviceActivity.NoviceActivityCreateVo = require("game/noviceActivity/manager/vo/
 noviceActivity.NoviceActivityRecruitVo = require("game/noviceActivity/manager/vo/NoviceActivityRecruitVo")
 noviceActivity.NoviceActivityUpgradePlanVo = require("game/noviceActivity/manager/vo/NoviceActivityUpgradePlanVo")
 noviceActivity.NoviceActivityReturnVo = require("game/noviceActivity/manager/vo/NoviceActivityReturnVo")
-
+noviceActivity.NoviceActivityStrengthVo = require("game/noviceActivity/manager/vo/NoviceActivityStrengthVo")
 
 noviceActivity.NoviceActivityRaffleVo = require("game/noviceActivity/manager/vo/NoviceActivityRaffleVo")
 -----------------------------------------item--------------------------------------------------------
@@ -25,13 +25,26 @@ noviceActivity.NovicePromotionPlanView = require("game/noviceActivity/view/Novic
 noviceActivity.NoviceActivityReturnTabView = require("game/noviceActivity/view/NoviceActivityReturnTabView")
 --抽奖
 noviceActivity.NoviceActivityRaffleTabView = require("game/noviceActivity/view/NoviceActivityRaffleTabView")
+--体力
+noviceActivity.NoviceActivityStrengtnView = require("game/noviceActivity/view/NoviceActivityStrengtnView")
+
+--新人礼包
+noviceActivity.NoviceNewSuperGiftTabView = require("game/noviceActivity/view/NoviceNewSuperGiftTabView")
 -------------------管理------------------------------------------------------------------------------
 noviceActivity.NoviceActivityConst = require("game/noviceActivity/manager/NoviceActivityConst")
 noviceActivity.NoviceActivityManager = require("game/noviceActivity/manager/NoviceActivityManager").new()
 
+noviceActivity.NoviceActivitySsrOptionalTabView = require("game/noviceActivity/view/NoviceActivitySsrOptionalTabView")
 
 
+noviceActivity.NoviceActivityAccRechargeItem = require("game/noviceActivity/view/item/NoviceActivityAccRechargeItem")
+noviceActivity.NoviceActivityRechargeVo = require("game/noviceActivity/manager/vo/NoviceActivityRechargeVo")
+noviceActivity.NoviceActivityRechargeTabView = require("game/noviceActivity/view/NoviceActivityRechargeTabView")
 
+
+noviceActivity.NoviceActivityAccRechargeTwoItem = require("game/noviceActivity/view/item/NoviceActivityAccRechargeTwoItem")
+noviceActivity.NoviceActivityRechargeTwoVo = require("game/noviceActivity/manager/vo/NoviceActivityRechargeTwoVo")
+noviceActivity.NoviceActivityRechargeTwoTabView = require("game/noviceActivity/view/NoviceActivityRechargeTwoTabView")
 
 local _c = require('game/noviceActivity/controller/NoviceActivityController').new(noviceActivity.NoviceActivityManager)
 

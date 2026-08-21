@@ -1,183 +1,35 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SkinCoupunShoppingCommand", pm.SimpleCommand)
 
-local var_0_0 = "SkinCoupunShoppingCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shopId
+	local var_1_2 = var_1_0.cnt
+	local var_1_3 = _.detect(getProxy(ShipSkinProxy):GetAllSkins(), function(arg_2_0)
+		return arg_2_0.id == var_1_1
+	end)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().shopId
-	local var_1_1 = var_2.cnt
-
-	getProxy = var_1_10005
-	ShipSkinProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-	local var_1_3 = var_5.GetAllSkins(var_1_2)
-
-	_ = var_1_10006
-
-	if not var_1_10006.detect(var_1_3, function(arg_2_0)
-		return arg_2_0.id == var_1_0
-	end) then
-		pg = var_1_2
-
-		local var_1_4 = var_1_2.TipsMgr.GetInstance()
-		local var_1_5 = var_7.ShowTips
-
-		i18n = var_1_10010
-
-		var_1_5(var_1_4, var_1_10010("common_shopId_noFound"))
+	if not var_1_3 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_shopId_noFound"))
 
 		return
 	end
 
-	if not var_6:canPurchase() then
+	if not var_1_3:canPurchase() then
 		return
 	end
 
-	local var_1_6 = var_6
-	local var_1_7 = var_6.getSkinId(var_1_6)
-
-	getProxy = var_8
-	ShipSkinProxy = var_1_10010
-
-	local var_1_8 = var_8(var_1_10010)
-
-	ShipSkin = var_1_6
-
-	local var_1_9 = var_1_6.New({
-		id = var_1_7
+	local var_1_4 = var_1_3:getSkinId()
+	local var_1_5 = getProxy(ShipSkinProxy)
+	local var_1_6 = ShipSkin.New({
+		id = var_1_4
 	})
+	local var_1_7 = SkinCouponActivity.GetSkinCouponActivities(var_1_0.shopId)
 
-	local function var_1_10(arg_3_0)
-		local var_3_0 = var_0
-		local var_3_1 = var_1.getConfig(var_3_0, "resource_num") - arg_3_0.discount
-
-		getProxy = var_2
-		PlayerProxy = var_4
-
-		local var_3_2 = var_2(var_4)
-		local var_3_3 = var_2.getRawData(var_3_2)
-
-		id2res = var_3_0
-
-		local var_3_4 = var_0
-
-		if var_3_3[var_3_0(var_5.getConfig(var_3_4, "resource_type"))] < var_3_1 then
-			GoShoppingMsgBox = var_3
-			i18n = var_5
-
-			local var_3_5 = "switch_to_shop_tip_3"
-
-			i18n = var_8
-
-			local var_3_6 = var_5(var_3_5, var_8("word_gem"))
-
-			ChargeScene = var_2_10006
-
-			var_3(var_3_6, var_2_10006.TYPE_DIAMOND)
-
-			return
-		end
-
-		pg = var_3
-
-		local var_3_7 = var_3.ConnectionMgr.GetInstance()
-
-		var_3.Send(var_3_7, 11202, {
-			cmd = 1,
-			activity_id = arg_3_0.actId,
-			arg1 = var_1_0,
-			arg2 = var_1_1,
-			arg_list = {}
-		}, 11203, function(arg_4_0)
-			if arg_4_0.result == 0 then
-				SkinCouponActivity = var_1
-
-				var_1.UseSkinCoupon(arg_3_0.actId)
-
-				local var_4_0 = var_1_8
-
-				var_1.addSkin(var_4_0, var_1_9)
-
-				getProxy = var_1
-				PlayerProxy = var_4_0
-
-				local var_4_1 = var_1(var_4_0)
-
-				var_3_10004 = var_1.getData(var_4_1)
-
-				local var_4_2 = var_1.consume
-				local var_4_3 = {}
-
-				id2res = var_3_10006
-
-				local var_4_4 = var_0
-
-				var_4_3[var_3_10006(var_8.getConfig(var_4_4, "resource_type"))] = var_3_1
-
-				var_4_2(var_3_10004, var_4_3)
-
-				getProxy = var_4_2
-				PlayerProxy = var_3_10004
-				var_3_10004 = var_4_2(var_3_10004)
-
-				var_2.updatePlayer(var_3_10004, var_1)
-
-				pg = var_2
-				var_3_10004 = var_2.TipsMgr.GetInstance()
-
-				local var_4_5 = var_2.ShowTips
-
-				i18n = var_5
-
-				var_4_5(var_3_10004, var_5("common_buy_success"))
-
-				var_3_10004 = arg_1_0
-
-				local var_4_6 = var_2.sendNotification
-
-				GAME = var_5
-
-				var_4_6(var_3_10004, var_5.SKIN_COUPON_SHOPPING_DONE, {
-					id = var_1_0,
-					awards = {}
-				})
-			else
-				pg = var_1
-
-				local var_4_7 = var_1.TipsMgr.GetInstance()
-				local var_4_8 = var_1.ShowTips
-
-				ERROR_MESSAGE = var_3_10004
-
-				var_4_8(var_4_7, var_3_10004[arg_4_0.result] .. arg_4_0.result)
-			end
-
-			return
-		end)
-
+	if #var_1_7 == 0 then
 		return
 	end
 
-	local var_1_11 = {}
-
-	SkinCouponActivity = var_1_10012
-
-	if #var_1_10012.GetSkinCouponActivities(var_1_0) == 0 then
-		return
-	end
-
-	table = var_13
-
-	local var_1_12 = var_13.sort
-	local var_1_13 = var_12
-
-	CompareFuncs = var_1_10016
-
-	var_1_12(var_1_13, var_1_10016({
+	table.sort(var_1_7, CompareFuncs({
 		function(arg_5_0)
 			return -arg_5_0:GetDiscountPrice()
 		end,
@@ -186,51 +38,68 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 		end
 	}))
 
-	ipairs = var_1_12
-
-	for iter_1_0, iter_1_1 in var_1_12(var_12) do
+	for iter_1_0, iter_1_1 in ipairs(var_1_7) do
 		if iter_1_1:GetCanUsageCnt() > 0 then
-			table = var_18
-
-			local var_1_14 = var_18.insert
-			local var_1_15 = var_1_11
-			local var_1_16 = {
-				actId = iter_1_1.id
-			}
-
-			Drop = var_22
-
-			local var_1_17 = var_22.New
-			local var_1_18 = {}
-
-			DROP_TYPE_VITEM = var_1_10025
-			var_1_18.type = var_1_10025
-			var_1_18.id = iter_1_1:GetItemId()
-			var_1_18.count = iter_1_1:GetCanUsageCnt()
-			var_1_16.drop = var_1_17(var_1_18)
-			var_1_16.discount = iter_1_1:GetDiscountPrice()
-
-			var_1_14(var_1_15, var_1_16)
+			table.insert({}, {
+				actId = iter_1_1.id,
+				drop = Drop.New({
+					type = DROP_TYPE_VITEM,
+					id = iter_1_1:GetItemId(),
+					count = iter_1_1:GetCanUsageCnt()
+				}),
+				discount = iter_1_1:GetDiscountPrice()
+			})
 		end
 	end
 
-	SkinCouponMultiMsgBox = var_13
+	SkinCouponMultiMsgBox.New(pg.UIMgr.GetInstance().OverlayMain):ExecuteAction("Show", {
+		itemList = {},
+		skinId = var_1_4,
+		skinName = ShipSkin.New({
+			id = var_1_4
+		}).skinName,
+		price = var_1_3:getConfig("resource_num"),
+		onYes = function(arg_3_0)
+			if var_1_3:getConfig("resource_num") - arg_3_0.discount > getProxy(PlayerProxy):getRawData()[id2res(var_1_3:getConfig("resource_type"))] then
+				GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 
-	local var_1_19 = var_13.New
+				return
+			end
 
-	pg = var_15
+			pg.ConnectionMgr.GetInstance():Send(11202, {
+				cmd = 1,
+				activity_id = arg_3_0.actId,
+				arg1 = var_1_1,
+				arg2 = var_1_2,
+				arg_list = {}
+			}, 11203, function(arg_4_0)
+				if arg_4_0.result == 0 then
+					SkinCouponActivity.UseSkinCoupon(arg_3_0.actId)
+					var_1_5:addSkin(var_1_6)
 
-	local var_1_20 = var_1_19(var_15.UIMgr.GetInstance().OverlayMain)
+					local var_4_0 = getProxy(PlayerProxy):getData()
 
-	var_13.ExecuteAction(var_1_20, "Show", {
-		itemList = var_1_11,
-		skinId = var_1_7,
-		skinName = var_1_9.skinName,
-		price = var_6:getConfig("resource_num"),
-		onYes = var_1_10
+					var_4_0:consume({
+						[id2res(var_1_3:getConfig("resource_type"))] = var_0
+					})
+					getProxy(PlayerProxy):updatePlayer(var_4_0)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("common_buy_success"))
+					arg_1_0:sendNotification(GAME.SKIN_COUPON_SHOPPING_DONE, {
+						id = var_1_1,
+						awards = {}
+					})
+				else
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_4_0.result] .. arg_4_0.result)
+				end
+
+				return
+			end)
+
+			return
+		end
 	})
 
 	return
 end
 
-return var_0_1
+return var_0_0

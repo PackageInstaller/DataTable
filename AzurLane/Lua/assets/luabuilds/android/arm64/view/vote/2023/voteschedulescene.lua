@@ -1,199 +1,66 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("VoteScheduleScene", import("view.base.BaseUI"))
+local var_0_1 = 1
+local var_0_2 = 2
+local var_0_3 = 3
+local var_0_4 = 4
+local var_0_5 = 5
+local var_0_6 = 6
+local var_0_7 = 1
+local var_0_8 = 2
+local var_0_9 = 3
 
-local var_0_0 = "VoteScheduleScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-local var_0_2 = 1
-local var_0_3 = 2
-local var_0_4 = 3
-local var_0_5 = 4
-local var_0_6 = 5
-local var_0_7 = 6
-local var_0_8 = 1
-local var_0_9 = 2
-local var_0_10 = 3
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "VoteScheduleUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.backBtn = var_1.Find(var_2_0, "blur_panel/adapt/top/back_btn")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.raceTpl = var_1.Find(var_2_1, "res/raceTpl")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.layoutTpl = var_1.Find(var_2_2, "res/layoutTpl")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.raceTpl1 = var_1.Find(var_2_3, "res/raceTpl1")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.layoutTpl1 = var_1.Find(var_2_4, "res/layoutTpl1")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.container = var_1.Find(var_2_5, "scrollrect/content")
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.verLeftTpl = var_1.Find(var_2_6, "res/ver_left")
-
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.verLeftTplClose = var_1.Find(var_2_7, "res/ver_left_close")
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.verRightTpl = var_1.Find(var_2_8, "res/ver_right")
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.verRightTplClose = var_1.Find(var_2_9, "res/ver_right_close")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.centTpl = var_1.Find(var_2_10, "res/cen")
-
-	local var_2_11 = arg_2_0._tf
-
-	arg_2_0.centTplClose = var_1.Find(var_2_11, "res/cen_close")
-
-	local var_2_12 = arg_2_0._tf
-
-	arg_2_0.hrzRightTpl = var_1.Find(var_2_12, "res/hrz_rigth")
-
-	local var_2_13 = arg_2_0._tf
-
-	arg_2_0.hrzRightTplClose = var_1.Find(var_2_13, "res/hrz_rigth_close")
-
-	local var_2_14 = arg_2_0._tf
-
-	arg_2_0.hrzLeftTpl = var_1.Find(var_2_14, "res/hrz_left")
-
-	local var_2_15 = arg_2_0._tf
-
-	arg_2_0.hrzLeftTplClose = var_1.Find(var_2_15, "res/hrz_left_close")
-
-	local var_2_16 = arg_2_0._tf
-
-	arg_2_0.lineContainer = var_1.Find(var_2_16, "scrollrect/content/line")
+function var_0_0.init(arg_2_0)
+	arg_2_0.backBtn = arg_2_0._tf:Find("blur_panel/adapt/top/back_btn")
+	arg_2_0.raceTpl = arg_2_0._tf:Find("res/raceTpl")
+	arg_2_0.layoutTpl = arg_2_0._tf:Find("res/layoutTpl")
+	arg_2_0.raceTpl1 = arg_2_0._tf:Find("res/raceTpl1")
+	arg_2_0.layoutTpl1 = arg_2_0._tf:Find("res/layoutTpl1")
+	arg_2_0.container = arg_2_0._tf:Find("scrollrect/content")
+	arg_2_0.verLeftTpl = arg_2_0._tf:Find("res/ver_left")
+	arg_2_0.verLeftTplClose = arg_2_0._tf:Find("res/ver_left_close")
+	arg_2_0.verRightTpl = arg_2_0._tf:Find("res/ver_right")
+	arg_2_0.verRightTplClose = arg_2_0._tf:Find("res/ver_right_close")
+	arg_2_0.centTpl = arg_2_0._tf:Find("res/cen")
+	arg_2_0.centTplClose = arg_2_0._tf:Find("res/cen_close")
+	arg_2_0.hrzRightTpl = arg_2_0._tf:Find("res/hrz_rigth")
+	arg_2_0.hrzRightTplClose = arg_2_0._tf:Find("res/hrz_rigth_close")
+	arg_2_0.hrzLeftTpl = arg_2_0._tf:Find("res/hrz_left")
+	arg_2_0.hrzLeftTplClose = arg_2_0._tf:Find("res/hrz_left_close")
+	arg_2_0.lineContainer = arg_2_0._tf:Find("scrollrect/content/line")
 	arg_2_0.lineTpls = {}
-	setText = var_1
 
-	local var_2_17 = arg_2_0.raceTpl
-	local var_2_18 = var_3.Find(var_2_17, "open/Text")
+	setText(arg_2_0.raceTpl:Find("open/Text"), i18n("vote_lable_voting"))
+	setText(arg_2_0.raceTpl:Find("close/Text"), i18n("vote_lable_not_start"))
+	setText(arg_2_0.raceTpl1:Find("open/Text"), i18n("vote_lable_voting"))
+	setText(arg_2_0.raceTpl1:Find("close/Text"), i18n("vote_lable_not_start"))
+	setText(arg_2_0._tf:Find("title/Text"), i18n("vote_lable_title"))
 
-	i18n = var_4
-
-	var_1(var_2_18, var_4("vote_lable_voting"))
-
-	setText = var_1
-
-	local var_2_19 = arg_2_0.raceTpl
-	local var_2_20 = var_3.Find(var_2_19, "close/Text")
-
-	i18n = var_4
-
-	var_1(var_2_20, var_4("vote_lable_not_start"))
-
-	setText = var_1
-
-	local var_2_21 = arg_2_0.raceTpl1
-	local var_2_22 = var_3.Find(var_2_21, "open/Text")
-
-	i18n = var_4
-
-	var_1(var_2_22, var_4("vote_lable_voting"))
-
-	setText = var_1
-
-	local var_2_23 = arg_2_0.raceTpl1
-	local var_2_24 = var_3.Find(var_2_23, "close/Text")
-
-	i18n = var_4
-
-	var_1(var_2_24, var_4("vote_lable_not_start"))
-
-	setText = var_1
-
-	local var_2_25 = arg_2_0._tf
-	local var_2_26 = var_3.Find(var_2_25, "title/Text")
-
-	i18n = var_4
-
-	var_1(var_2_26, var_4("vote_lable_title"))
-
-	local var_2_27 = arg_2_0.layoutTpl
-	local var_2_28 = var_1.GetComponent
-
-	typeof = var_4
-	LayoutElement = var_6
-	arg_2_0.LayoutHeight = var_2_28(var_2_27, var_4(var_6)).preferredHeight
-
-	local var_2_29 = arg_2_0.container
-	local var_2_30 = var_1.GetComponent
-
-	typeof = var_4
-	VerticalLayoutGroup = var_6
-	arg_2_0.spacing = var_2_30(var_2_29, var_4(var_6)).spacing
+	arg_2_0.LayoutHeight = arg_2_0.layoutTpl:GetComponent(typeof(LayoutElement)).preferredHeight
+	arg_2_0.spacing = arg_2_0.container:GetComponent(typeof(VerticalLayoutGroup)).spacing
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.backBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:closeView()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	pg = var_1_10001
-
-	local var_3_3 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.LoadingOn(var_3_3, false)
-
-	seriesAsync = var_1
-
-	var_1({
+	end, SFX_PANEL)
+	pg.UIMgr.GetInstance():LoadingOn(false)
+	seriesAsync({
 		function(arg_5_0)
-			local var_5_0 = arg_3_0
-
-			var_1.RequestFinishedVoteGroup(var_5_0, arg_5_0)
+			arg_3_0:RequestFinishedVoteGroup(arg_5_0)
 
 			return
 		end,
 		function(arg_6_0)
-			pg = var_2_10001
-
-			local var_6_0 = var_2_10001.UIMgr.GetInstance()
-
-			var_1.LoadingOff(var_6_0)
-
-			local var_6_1 = arg_3_0
-
-			var_1.SetUp(var_6_1, arg_6_0)
+			pg.UIMgr.GetInstance():LoadingOff()
+			arg_3_0:SetUp(arg_6_0)
 
 			return
 		end
@@ -204,90 +71,50 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.RequestFinishedVoteGroup(arg_8_0, arg_8_1)
-	local var_8_0 = {}
+function var_0_0.RequestFinishedVoteGroup(arg_8_0, arg_8_1)
+	for iter_8_0, iter_8_1 in ipairs(pg.activity_vote.all) do
+		local var_8_0 = pg.TimeMgr.GetInstance()
+		local var_8_1 = pg.TimeMgr.GetInstance()
 
-	ipairs = var_1_10003
-	pg = var_1_10005
-
-	for iter_8_0, iter_8_1 in var_1_10003(var_1_10005.activity_vote.all) do
-		pg = var_1_10008
-
-		local var_8_1 = var_1_10008.TimeMgr.GetInstance()
-
-		var_1_10008 = var_1_10008.parseTimeFromConfig
-		pg = var_1_10011
-		var_1_10008 = var_1_10008(var_8_1, var_1_10011.activity_vote[iter_8_1].time_vote[2])
-		pg = var_1_10009
-		var_1_10011 = var_1_10009.TimeMgr.GetInstance()
-
-		if var_1_10008 <= var_1_10009.GetServerTime(var_1_10011) then
-			table = var_8_1
-
-			var_8_1.insert(var_8_0, function(arg_9_0)
-				local var_9_0 = arg_8_0
-				local var_9_1 = var_1.emit
-
-				VoteScheduleMediator = var_2_10004
-
-				var_9_1(var_9_0, var_2_10004.FETCH_RANK, iter_8_1, arg_9_0)
+		if var_8_0:parseTimeFromConfig(pg.activity_vote[iter_8_1].time_vote[2]) <= var_8_1:GetServerTime() then
+			table.insert({}, function(arg_9_0)
+				arg_8_0:emit(VoteScheduleMediator.FETCH_RANK, iter_8_1, arg_9_0)
 
 				return
 			end)
 		end
 	end
 
-	seriesAsync = var_3
-
-	var_3(var_8_0, arg_8_1)
+	seriesAsync({}, arg_8_1)
 
 	return
 end
 
-function var_0_1.SetUp(arg_10_0, arg_10_1)
+function var_0_0.SetUp(arg_10_0, arg_10_1)
 	arg_10_0.voteIdList = arg_10_0:GetVoteIdList()
 	arg_10_0.displayList = arg_10_0:GenDisplayList(arg_10_0.voteIdList)
 
 	arg_10_0:ClearLines()
 
 	local var_10_0 = arg_10_0:InitScheduleList()
-	local var_10_1 = arg_10_0.lineContainer
 
-	var_3.SetAsLastSibling(var_10_1)
-
-	seriesAsync = var_3
-
-	var_3({
+	arg_10_0.lineContainer:SetAsLastSibling()
+	seriesAsync({
 		function(arg_11_0)
-			Canvas = var_2_10001
-
-			var_2_10001.ForceUpdateCanvases()
-
-			onNextTick = var_1
-
-			var_1(arg_11_0)
+			Canvas.ForceUpdateCanvases()
+			onNextTick(arg_11_0)
 
 			return
 		end,
 		function(arg_12_0)
-			local var_12_0 = arg_10_0
-
-			var_1.UpdateLinesPosition(var_12_0)
-
-			local var_12_1 = arg_10_0
-
-			var_1.ScrollTo(var_12_1, var_10_0)
-
-			onNextTick = var_1
-
-			var_1(arg_12_0)
+			arg_10_0:UpdateLinesPosition()
+			arg_10_0:ScrollTo(var_10_0)
+			onNextTick(arg_12_0)
 
 			return
 		end,
 		function(arg_13_0)
-			local var_13_0 = arg_10_0
-
-			var_1.PlayAnimation(var_13_0, arg_13_0)
+			arg_10_0:PlayAnimation(arg_13_0)
 
 			return
 		end
@@ -296,37 +123,17 @@ function var_0_1.SetUp(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.PlayAnimation(arg_14_0, arg_14_1)
+function var_0_0.PlayAnimation(arg_14_0, arg_14_1)
 	local var_14_0 = 1
 
 	local function var_14_1(arg_15_0, arg_15_1, arg_15_2)
-		local var_15_0 = arg_15_0
-		local var_15_1 = arg_15_0.GetComponent
+		local var_15_0 = arg_15_0:GetComponent(typeof(CanvasGroup))
 
-		typeof = var_2_10006
-		CanvasGroup = var_2_10008
-
-		local var_15_2 = var_15_1(var_15_0, var_2_10006(var_2_10008))
-
-		LeanTween = var_2_10004
-
-		local var_15_3 = var_2_10004.value(arg_15_0.gameObject, 0, 1, 0.333)
-		local var_15_4 = var_4.setOnUpdate
-
-		System = var_7
-
-		local var_15_5 = var_15_4(var_15_3, var_7.Action_float(function(arg_16_0)
-			var_15_2.alpha = arg_16_0
+		LeanTween.value(arg_15_0.gameObject, 0, 1, 0.333):setOnUpdate(System.Action_float(function(arg_16_0)
+			var_15_0.alpha = arg_16_0
 
 			return
-		end))
-		local var_15_6 = var_4.setOnComplete
-
-		System = var_7
-
-		local var_15_7 = var_15_6(var_15_5, var_7.Action(arg_15_2))
-
-		var_4.setDelay(var_15_7, arg_15_1 * var_14_0)
+		end)):setOnComplete(System.Action(arg_15_2)):setDelay(arg_15_1 * var_14_0)
 
 		var_14_0 = var_14_0 + 1
 
@@ -334,46 +141,25 @@ function var_0_1.PlayAnimation(arg_14_0, arg_14_1)
 	end
 
 	local var_14_2 = {}
+	local var_14_3 = arg_14_0.voteIdList or {}
 
-	pairs = var_1_10005
+	for iter_14_0, iter_14_1 in pairs(var_14_3) do
+		local var_14_4 = arg_14_0:GetRaceState(iter_14_1) == var_0_9
 
-	local var_14_3
-
-	if not arg_14_0.voteIdList then
-		var_14_3 = {}
-	end
-
-	for iter_14_0, iter_14_1 in var_1_10005(var_14_3) do
-		local var_14_4 = arg_14_0:GetRaceState(iter_14_1)
-		local var_14_5 = arg_14_0.animationNodes[iter_14_1]
-		local var_14_6 = var_14_4 == var_0_10
-
-		ipairs = var_13
-
-		for iter_14_2, iter_14_3 in var_13(var_14_5) do
-			if var_14_6 then
-				table = var_1_10018
-
-				var_1_10018.insert(var_14_2, function(arg_17_0)
+		for iter_14_2, iter_14_3 in ipairs(arg_14_0.animationNodes[iter_14_1]) do
+			if var_14_4 then
+				table.insert(var_14_2, function(arg_17_0)
 					var_14_1(iter_14_3, 0.066, arg_17_0)
 
 					return
 				end)
 			else
-				local var_14_7 = iter_14_3
-
-				var_1_10018 = iter_14_3.GetComponent
-				typeof = var_1_10021
-				CanvasGroup = var_1_10023
-				var_1_10018 = var_1_10018(var_14_7, var_1_10021(var_1_10023))
-				var_1_10018.alpha = 1
+				iter_14_3:GetComponent(typeof(CanvasGroup)).alpha = 1
 			end
 		end
 	end
 
-	parallelAsync = var_5
-
-	var_5(var_14_2, function()
+	parallelAsync(var_14_2, function()
 		arg_14_0.animationNodes = {}
 
 		arg_14_1()
@@ -384,27 +170,17 @@ function var_0_1.PlayAnimation(arg_14_0, arg_14_1)
 	return
 end
 
-function var_0_1.ScrollTo(arg_19_0, arg_19_1)
-	local var_19_0 = (arg_19_0.LayoutHeight + arg_19_0.spacing) * (arg_19_1 - 1) - 170
-
-	setAnchoredPosition = var_3
-
-	var_3(arg_19_0.container, {
-		y = var_19_0
+function var_0_0.ScrollTo(arg_19_0, arg_19_1)
+	setAnchoredPosition(arg_19_0.container, {
+		y = (arg_19_0.LayoutHeight + arg_19_0.spacing) * (arg_19_1 - 1) - 170
 	})
 
 	return
 end
 
-function var_0_1.ClearLines(arg_20_0)
-	ipairs = var_1_10001
-
-	for iter_20_0, iter_20_1 in var_1_10001(arg_20_0.lineTpls) do
-		local var_20_0 = iter_20_1[1]
-
-		Object = var_1_10007
-
-		var_1_10007.Destroy(var_20_0.gameObject)
+function var_0_0.ClearLines(arg_20_0)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.lineTpls) do
+		Object.Destroy(iter_20_1[1].gameObject)
 	end
 
 	arg_20_0.lineTpls = {}
@@ -412,318 +188,213 @@ function var_0_1.ClearLines(arg_20_0)
 	return
 end
 
-local function var_0_11(arg_21_0, arg_21_1, arg_21_2)
+local function var_0_10(arg_21_0, arg_21_1, arg_21_2)
 	if arg_21_0 == arg_21_1 then
 		return arg_21_2
 	else
-		local var_21_0 = arg_21_0
-		local var_21_1 = arg_21_0.TransformPoint(var_21_0, arg_21_2)
-		local var_21_2 = arg_21_1:InverseTransformPoint(var_21_1)
+		local var_21_0 = arg_21_1:InverseTransformPoint((arg_21_0:TransformPoint(arg_21_2)))
 
-		Vector3 = var_21_0
-
-		return var_21_0(var_21_2.x, var_21_2.y, 0)
+		return Vector3(var_21_0.x, var_21_0.y, 0)
 	end
 
 	return
 end
 
-function var_0_1.UpdateLinesPosition(arg_22_0)
-	ipairs = var_1_10001
-
-	for iter_22_0, iter_22_1 in var_1_10001(arg_22_0.lineTpls) do
-		local var_22_0 = var_0_11(iter_22_1[2], arg_22_0.lineContainer, iter_22_1[3])
-
-		setAnchoredPosition = var_1_10007
-
-		var_1_10007(iter_22_1[1], var_22_0)
+function var_0_0.UpdateLinesPosition(arg_22_0)
+	for iter_22_0, iter_22_1 in ipairs(arg_22_0.lineTpls) do
+		setAnchoredPosition(iter_22_1[1], (var_0_10(iter_22_1[2], arg_22_0.lineContainer, iter_22_1[3])))
 	end
 
 	return
 end
 
-function var_0_1.GetVoteIdList(arg_23_0)
-	local var_23_0 = {}
-
-	ipairs = var_1_10002
-	pg = var_1_10004
-
-	for iter_23_0, iter_23_1 in var_1_10002(var_1_10004.activity_vote.all) do
-		table = var_1_10007
-
-		var_1_10007.insert(var_23_0, iter_23_1)
+function var_0_0.GetVoteIdList(arg_23_0)
+	for iter_23_0, iter_23_1 in ipairs(pg.activity_vote.all) do
+		table.insert({}, iter_23_1)
 	end
 
-	table = var_2
+	table.sort({}, function(arg_24_0, arg_24_1)
+		local var_24_0 = pg.TimeMgr.GetInstance()
+		local var_24_1 = pg.TimeMgr.GetInstance()
 
-	var_2.sort(var_23_0, function(arg_24_0, arg_24_1)
-		pg = var_2_10002
-
-		local var_24_0 = var_2_10002.activity_vote[arg_24_0]
-
-		pg = var_2_10003
-
-		local var_24_1 = var_2_10003.activity_vote[arg_24_1]
-
-		pg = var_2_10004
-
-		local var_24_2 = var_2_10004.TimeMgr.GetInstance()
-		local var_24_3 = var_4.parseTimeFromConfig(var_24_2, var_24_0.time_vote[1])
-
-		pg = var_2_10005
-
-		local var_24_4 = var_2_10005.TimeMgr.GetInstance()
-
-		return var_24_3 < var_5.parseTimeFromConfig(var_24_4, var_24_1.time_vote[1])
+		return var_24_0:parseTimeFromConfig(pg.activity_vote[arg_24_0].time_vote[1]) < var_24_1:parseTimeFromConfig(pg.activity_vote[arg_24_1].time_vote[1])
 	end)
 
-	return var_23_0
+	return {}
 end
 
-function var_0_1.GenDisplayList(arg_25_0, arg_25_1)
-	local var_25_0 = {}
-
+function var_0_0.GenDisplayList(arg_25_0, arg_25_1)
 	if #arg_25_1 <= 4 then
-		ipairs = var_3
-
-		for iter_25_0, iter_25_1 in var_3(arg_25_1) do
-			local var_25_1 = var_0_4
+		for iter_25_0, iter_25_1 in ipairs(arg_25_1) do
+			local var_25_0 = var_0_3
 
 			if iter_25_0 == #arg_25_1 then
-				var_25_1 = var_0_7
+				var_25_0 = var_0_6
 			end
 
-			table = var_9
-
-			var_9.insert(var_25_0, {
+			table.insert({}, {
 				{
 					id = iter_25_1,
-					dir = var_25_1
+					dir = var_25_0
 				}
 			})
 		end
 
-		return var_25_0
+		return {}
 	end
 
-	table = var_3
-
-	var_3.insert(var_25_0, {
+	table.insert({}, {
 		{
 			id = arg_25_1[1],
-			dir = var_0_2
+			dir = var_0_1
 		}
 	})
 
-	local var_25_2 = 0
-	local var_25_3 = #arg_25_1 - 3
+	local var_25_1 = 0
 
-	for iter_25_2 = 2, var_25_3, 2 do
-		var_25_2 = var_25_2 + 1
+	for iter_25_2 = 2, #arg_25_1 - 3, 2 do
+		var_25_1 = var_25_1 + 1
 
-		local var_25_4 = iter_25_2 == var_25_3 or var_25_3 < iter_25_2 + 2
-		local var_25_5
+		local var_25_2 = iter_25_2 == #arg_25_1 - 3 or #arg_25_1 - 3 < iter_25_2 + 2
 
-		if var_25_2 % 2 == 0 then
-			table = var_25_5
-			var_25_5 = var_25_5.insert
-
-			local var_25_6 = var_25_0
-			local var_25_7 = {}
-			local var_25_8 = {
+		if var_25_1 % 2 == 0 then
+			local var_25_4 = {}
+			local var_25_5 = {}
+			local var_25_6 = {
 				id = arg_25_1[iter_25_2 + 1]
 			}
-			local var_25_9
 
-			if not var_25_4 or not var_0_3 then
-				var_25_9 = var_0_4
-			end
-
-			var_25_8.dir = var_25_9
-			var_25_7[1] = var_25_8
-			var_25_7[2] = {
-				id = arg_25_1[iter_25_2],
-				dir = var_0_6
-			}
-
-			var_25_5(var_25_6, var_25_7)
-		else
-			table = var_25_5
-
-			local var_25_10 = var_25_5.insert
-			local var_25_11 = var_25_0
-			local var_25_12 = {
-				{
+			if var_25_2 then
+				var_25_6.dir = var_0_2 or var_0_3
+				var_25_5[1] = var_25_6
+				var_25_5[2] = {
 					id = arg_25_1[iter_25_2],
 					dir = var_0_5
 				}
-			}
-			local var_25_13 = {
-				id = arg_25_1[iter_25_2 + 1]
-			}
-			local var_25_14
 
-			if not var_25_4 or not var_0_2 then
-				var_25_14 = var_0_4
+				var_25_3(var_25_4, var_25_5)
+
+				local var_25_8 = {}
+				local var_25_9 = {
+					{
+						id = arg_25_1[iter_25_2],
+						dir = var_0_4
+					}
+				}
+				local var_25_10 = {
+					id = arg_25_1[iter_25_2 + 1]
+				}
+
+				goto label_25_0
+
+				::label_25_0::
+
+				if var_25_2 then
+					var_25_10.dir = var_0_1 or var_0_3
+					var_25_9[2] = var_25_10
+
+					var_25_7(var_25_8, var_25_9)
+				end
 			end
-
-			var_25_13.dir = var_25_14
-			var_25_12[2] = var_25_13
-
-			var_25_10(var_25_11, var_25_12)
 		end
 	end
 
 	if #arg_25_1 % 2 == 0 then
-		table = var_5
-
-		var_5.insert(var_25_0, {
+		table.insert({}, {
 			{
 				id = arg_25_1[#arg_25_1 - 2],
-				dir = var_0_4
+				dir = var_0_3
 			}
 		})
 	end
 
-	table = var_5
-
-	var_5.insert(var_25_0, {
+	table.insert({}, {
 		{
 			id = arg_25_1[#arg_25_1 - 1],
-			dir = var_0_4
+			dir = var_0_3
 		}
 	})
-
-	table = var_5
-
-	var_5.insert(var_25_0, {
+	table.insert({}, {
 		{
 			id = arg_25_1[#arg_25_1],
-			dir = var_0_7
+			dir = var_0_6
 		}
 	})
 
-	return var_25_0
+	return {}
 end
 
-function var_0_1.InitScheduleList(arg_26_0)
+function var_0_0.InitScheduleList(arg_26_0)
 	arg_26_0.animationNodes = {}
 
-	local var_26_0 = {}
-
 	for iter_26_0 = 1, arg_26_0.container.childCount do
-		local var_26_1 = arg_26_0.container
+		local var_26_0 = arg_26_0.container:GetChild(iter_26_0 - 1)
 
-		if var_6.GetChild(var_26_1, iter_26_0 - 1).name ~= "line" then
-			table = var_1_10007
-
-			var_1_10007.insert(var_26_0, var_6.gameObject)
+		if var_26_0.name ~= "line" then
+			table.insert({}, var_26_0.gameObject)
 		end
 	end
 
-	local var_26_2 = #var_26_0
-
-	if 0 < var_26_2 then
-		ipairs = var_26_2
-
-		for iter_26_1, iter_26_2 in var_26_2(var_26_0) do
-			Object = var_1_10007
-
-			var_1_10007.Destroy(iter_26_2)
+	if #{} > 0 then
+		for iter_26_1, iter_26_2 in ipairs({}) do
+			Object.Destroy(iter_26_2)
 		end
 	end
 
-	local var_26_3 = {}
+	local var_26_1 = {}
 
-	ipairs = var_3
-
-	for iter_26_3, iter_26_4 in var_3(arg_26_0.voteIdList) do
-		var_1_10010 = arg_26_0
-		var_26_3[iter_26_4] = arg_26_0.GetRaceState(var_1_10010, iter_26_4)
+	for iter_26_3, iter_26_4 in ipairs(arg_26_0.voteIdList) do
+		var_26_1[iter_26_4] = arg_26_0:GetRaceState(iter_26_4)
 	end
 
-	local var_26_4 = 1
+	local var_26_2 = 1
 
-	ipairs = var_4
+	for iter_26_5, iter_26_6 in ipairs(arg_26_0.displayList) do
+		local var_26_3
+		local var_26_4 = iter_26_5 == #arg_26_0.displayList
 
-	for iter_26_5, iter_26_6 in var_4(arg_26_0.displayList) do
-		local var_26_5
+		var_26_3 = iter_26_5 == #arg_26_0.displayList and cloneTplTo(arg_26_0.layoutTpl1, arg_26_0.container) or cloneTplTo(arg_26_0.layoutTpl, arg_26_0.container)
 
-		var_1_10010 = iter_26_5 == #arg_26_0.displayList
-
-		if var_1_10010 then
-			cloneTplTo = var_1_10011
-			var_26_5 = var_1_10011(arg_26_0.layoutTpl1, arg_26_0.container)
-		else
-			cloneTplTo = var_1_10011
-			var_26_5 = var_1_10011(arg_26_0.layoutTpl, arg_26_0.container)
-		end
-
-		if arg_26_0:GenRaceList(var_26_5, iter_26_6, var_26_3, var_1_10010) then
-			var_26_4 = iter_26_5
+		if arg_26_0:GenRaceList(var_26_3, iter_26_6, var_26_1, var_26_4) then
+			var_26_2 = iter_26_5
 		end
 	end
 
-	local var_26_6 = false
+	local var_26_5 = false
 
-	pairs = var_5
-
-	for iter_26_7, iter_26_8 in var_5(var_26_3) do
-		pg = var_1_10010
-		var_1_10010 = var_1_10010.activity_vote[iter_26_7].type
-		VoteConst = var_1_10011
-
-		if var_1_10010 == var_1_10011.RACE_TYPE_FINAL and iter_26_8 == var_0_9 then
-			var_26_6 = true
+	for iter_26_7, iter_26_8 in pairs(var_26_1) do
+		if pg.activity_vote[iter_26_7].type == VoteConst.RACE_TYPE_FINAL and iter_26_8 == var_0_8 then
+			var_26_5 = true
 
 			break
 		end
 	end
 
-	if var_26_6 then
-		cloneTplTo = var_5
-
-		var_5(arg_26_0.layoutTpl, arg_26_0.container)
+	if var_26_5 then
+		cloneTplTo(arg_26_0.layoutTpl, arg_26_0.container)
 	end
 
-	return var_26_4
+	return var_26_2
 end
 
-function var_0_1.GenRaceList(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4)
+function var_0_0.GenRaceList(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4)
 	local var_27_0 = false
-	local var_27_1
-
-	if arg_27_4 then
-		UIItemList = var_1_10007
-		var_27_1 = var_1_10007.New(arg_27_1:Find("content"), arg_27_0.raceTpl1)
-	else
-		UIItemList = var_1_10007
-		var_27_1 = var_1_10007.New(arg_27_1:Find("content"), arg_27_0.raceTpl)
-	end
+	local var_27_1 = arg_27_4 and UIItemList.New(arg_27_1:Find("content"), arg_27_0.raceTpl1) or UIItemList.New(arg_27_1:Find("content"), arg_27_0.raceTpl)
 
 	var_27_1:make(function(arg_28_0, arg_28_1, arg_28_2)
-		UIItemList = var_2_10003
+		if arg_28_0 == UIItemList.EventUpdate then
+			local var_28_0 = table.indexof(arg_27_0.voteIdList, arg_27_2[arg_28_1 + 1].id)
+			local var_28_1
 
-		if arg_28_0 == var_2_10003.EventUpdate then
-			local var_28_0 = arg_27_2[arg_28_1 + 1]
-
-			table = var_4
-
-			local var_28_1 = var_4.indexof(arg_27_0.voteIdList, var_28_0.id)
-			local var_28_2
-
-			if var_28_1 and var_28_1 > 0 then
-				local var_28_3 = arg_27_0.voteIdList[var_28_1 + 1]
-
-				var_28_2 = arg_27_3[var_28_3]
+			if var_28_0 and var_28_0 > 0 then
+				var_28_1 = arg_27_3[arg_27_0.voteIdList[var_28_0 + 1]]
 			end
 
-			local var_28_4 = arg_27_3[var_28_0.id]
-			local var_28_5 = arg_27_0
+			local var_28_2 = arg_27_3[arg_27_2[arg_28_1 + 1].id]
 
-			var_7.UpdateRace(var_28_5, arg_28_2, var_28_0, var_28_4, var_28_2)
+			arg_27_0:UpdateRace(arg_28_2, arg_27_2[arg_28_1 + 1], arg_27_3[arg_27_2[arg_28_1 + 1].id], var_28_1)
 
-			if not var_27_0 and var_28_4 == var_0_9 then
+			if not var_27_0 and var_28_2 == var_0_8 then
 				var_27_0 = true
 			end
 		end
@@ -732,564 +403,250 @@ function var_0_1.GenRaceList(arg_27_0, arg_27_1, arg_27_2, arg_27_3, arg_27_4)
 	end)
 	var_27_1:align(#arg_27_2)
 
-	return var_27_0
+	return false
 end
 
-function var_0_1.GetRaceState(arg_29_0, arg_29_1)
-	pg = var_1_10002
-
-	local var_29_0 = var_1_10002.activity_vote[arg_29_1]
-
-	pg = var_1_10003
-
-	local var_29_1 = var_1_10003.TimeMgr.GetInstance()
-
-	if var_3.inTime(var_29_1, var_29_0.time_vote) then
-		return var_0_9
+function var_0_0.GetRaceState(arg_29_0, arg_29_1)
+	if pg.TimeMgr.GetInstance():inTime(pg.activity_vote[arg_29_1].time_vote) then
+		return var_0_8
 	else
-		pg = var_1_10004
+		local var_29_0 = pg.TimeMgr.GetInstance()
 
-		local var_29_2 = var_1_10004.TimeMgr.GetInstance()
-		local var_29_3 = var_4.parseTimeFromConfig(var_29_2, var_29_0.time_vote[2])
-
-		pg = var_29_1
-
-		local var_29_4 = var_29_1.TimeMgr.GetInstance()
-
-		if var_29_3 <= var_5.GetServerTime(var_29_4) then
-			return var_0_8
+		if var_29_0:parseTimeFromConfig(pg.activity_vote[arg_29_1].time_vote[2]) <= pg.TimeMgr.GetInstance():GetServerTime() then
+			return var_0_7
 		else
-			return var_0_10
+			return var_0_9
 		end
 	end
 
 	return
 end
 
-function var_0_1.UpdateRace(arg_30_0, arg_30_1, arg_30_2, arg_30_3, arg_30_4)
-	pg = var_1_10005
-
-	local var_30_0 = var_1_10005.activity_vote[arg_30_2.id]
-	local var_30_1 = arg_30_0:UpdateRaceLink(arg_30_1, arg_30_2, arg_30_4 and arg_30_4 ~= var_0_10)
-
-	arg_30_0:UpdateRaceState(arg_30_1, var_30_0, arg_30_3)
+function var_0_0.UpdateRace(arg_30_0, arg_30_1, arg_30_2, arg_30_3, arg_30_4)
+	arg_30_0:UpdateRaceState(arg_30_1, pg.activity_vote[arg_30_2.id], arg_30_3)
 
 	arg_30_0.animationNodes[arg_30_2.id] = {
 		arg_30_1,
-		var_30_1
+		(arg_30_0:UpdateRaceLink(arg_30_1, arg_30_2, arg_30_4 and arg_30_4 ~= var_0_9))
 	}
 
 	return
 end
 
-local function var_0_12(arg_31_0, arg_31_1)
-	if arg_31_1 == var_0_10 then
+local function var_0_11(arg_31_0, arg_31_1)
+	if arg_31_1 == var_0_9 then
 		return "border_close"
+	elseif arg_31_0.type == VoteConst.RACE_TYPE_FINAL then
+		return "border_finals"
 	else
-		local var_31_0 = arg_31_0.type
-
-		VoteConst = var_1_10003
-
-		if var_31_0 == var_1_10003.RACE_TYPE_FINAL then
-			return "border_finals"
-		else
-			return "border_open"
-		end
+		return "border_open"
 	end
 
 	return
 end
 
-local function var_0_13(arg_32_0, arg_32_1)
-	if arg_32_1 == var_0_10 then
+local function var_0_12(arg_32_0, arg_32_1)
+	if arg_32_1 == var_0_9 then
 		return "frame_title_close"
-	else
-		local var_32_0 = arg_32_0.type
-
-		VoteConst = var_1_10003
-
-		if var_32_0 == var_1_10003.RACE_TYPE_FINAL then
-			return "frame_title_finals"
-		else
-			local var_32_1 = arg_32_0.type
-
-			VoteConst = var_3
-
-			if var_32_1 == var_3.RACE_TYPE_RESURGENCE then
-				return "frame_title_rec"
-			else
-				local var_32_2 = arg_32_0.type
-
-				VoteConst = var_3
-
-				if var_32_2 == var_3.RACE_TYPE_FUN then
-					local var_32_3 = arg_32_0.sub_type
-
-					VoteConst = var_3
-
-					if var_32_3 == var_3.RACE_SUBTYPE_SIRE then
-						return "frame_title_sire"
-					else
-						local var_32_4 = arg_32_0.sub_type
-
-						VoteConst = var_3
-
-						if var_32_4 == var_3.RACE_SUBTYPE_META then
-							return "frame_title_META"
-						else
-							local var_32_5 = arg_32_0.sub_type
-
-							VoteConst = var_3
-
-							if var_32_5 == var_3.RACE_SUBTYPE_KID then
-								return "frame_title_kid"
-							end
-						end
-					end
-				else
-					return "frame_title"
-				end
-			end
+	elseif arg_32_0.type == VoteConst.RACE_TYPE_FINAL then
+		return "frame_title_finals"
+	elseif arg_32_0.type == VoteConst.RACE_TYPE_RESURGENCE then
+		return "frame_title_rec"
+	elseif arg_32_0.type == VoteConst.RACE_TYPE_FUN then
+		if arg_32_0.sub_type == VoteConst.RACE_SUBTYPE_SIRE then
+			return "frame_title_sire"
+		elseif arg_32_0.sub_type == VoteConst.RACE_SUBTYPE_META then
+			return "frame_title_META"
+		elseif arg_32_0.sub_type == VoteConst.RACE_SUBTYPE_KID then
+			return "frame_title_kid"
 		end
+	else
+		return "frame_title"
 	end
 
 	return
 end
 
-local function var_0_14(arg_33_0, arg_33_1)
-	local var_33_0 = arg_33_0.type
-
-	VoteConst = var_1_10003
-
-	if var_33_0 == var_1_10003.RACE_TYPE_FUN then
-		local var_33_1 = arg_33_0.sub_type
-
-		VoteConst = var_3
-
-		if var_33_1 == var_3.RACE_SUBTYPE_SIRE then
+local function var_0_13(arg_33_0, arg_33_1)
+	if arg_33_0.type == VoteConst.RACE_TYPE_FUN then
+		if arg_33_0.sub_type == VoteConst.RACE_SUBTYPE_SIRE then
 			return "icon_sire"
-		else
-			local var_33_2 = arg_33_0.sub_type
-
-			VoteConst = var_3
-
-			if var_33_2 == var_3.RACE_SUBTYPE_META then
-				return "icon_META"
-			else
-				local var_33_3 = arg_33_0.sub_type
-
-				VoteConst = var_3
-
-				if var_33_3 == var_3.RACE_SUBTYPE_KID then
-					return "icon_kid"
-				end
-			end
+		elseif arg_33_0.sub_type == VoteConst.RACE_SUBTYPE_META then
+			return "icon_META"
+		elseif arg_33_0.sub_type == VoteConst.RACE_SUBTYPE_KID then
+			return "icon_kid"
 		end
 	end
 
 	return nil
 end
 
-function var_0_1.UpdateRaceState(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
-	local var_34_0 = arg_34_1:Find("border")
-	local var_34_1 = var_4.GetComponent
+function var_0_0.UpdateRaceState(arg_34_0, arg_34_1, arg_34_2, arg_34_3)
+	arg_34_1:Find("border"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/VoteScheduleUI_atlas", var_0_11(arg_34_2, arg_34_3))
+	arg_34_1:Find("title"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/VoteScheduleUI_atlas", var_0_12(arg_34_2, arg_34_3))
 
-	typeof = var_7
-	Image = var_1_10009
+	local var_34_0 = var_0_13(arg_34_2, arg_34_3)
 
-	local var_34_2 = var_34_1(var_34_0, var_7(var_1_10009))
+	setActive(arg_34_1:Find("title/content/icon"), var_34_0)
 
-	GetSpriteFromAtlas = var_1_10005
-	var_34_2.sprite = var_1_10005("ui/VoteScheduleUI_atlas", var_0_12(arg_34_2, arg_34_3))
-
-	local var_34_3 = arg_34_1:Find("title")
-	local var_34_4 = var_4.GetComponent
-
-	typeof = var_7
-	Image = var_1_10009
-
-	local var_34_5 = var_34_4(var_34_3, var_7(var_1_10009))
-
-	GetSpriteFromAtlas = var_5
-	var_34_5.sprite = var_5("ui/VoteScheduleUI_atlas", var_0_13(arg_34_2, arg_34_3))
-
-	local var_34_6 = var_0_14(arg_34_2, arg_34_3)
-
-	setActive = var_5
-
-	local var_34_7 = arg_34_1
-
-	var_5(arg_34_1.Find(var_34_7, "title/content/icon"), var_34_6)
-
-	local var_34_8
-
-	if var_34_6 then
-		var_34_8 = arg_34_1
-		var_34_8 = arg_34_1.Find(var_34_8, "title/content/icon")
-
-		local var_34_9 = var_5.GetComponent
-
-		typeof = var_8
-		Image = var_10
-
-		local var_34_10 = var_34_9(var_34_8, var_8(var_10))
-
-		GetSpriteFromAtlas = var_6
-		var_34_10.sprite = var_6("ui/VoteScheduleUI_atlas", var_34_6)
+	if var_34_0 then
+		arg_34_1:Find("title/content/icon"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("ui/VoteScheduleUI_atlas", var_34_0)
 	end
 
-	local var_34_11
+	setText(arg_34_1:Find("title/content/Text"), setColorStr(arg_34_2.name, arg_34_3 ~= var_0_9 and arg_34_2.type == VoteConst.RACE_TYPE_RESURGENCE and "#074e51" or COLOR_WHITE))
+	setText(arg_34_1:Find("title/content/Text/Text"), setColorStr(VoteGroup.GetTimeDesc2(arg_34_2.time_vote, arg_34_2.type), var_34_1))
+	setActive(arg_34_1:Find("open"), arg_34_3 == var_0_8)
+	setActive(arg_34_1:Find("close"), arg_34_3 == var_0_9)
+	setActive(arg_34_1:Find("list"), arg_34_3 == var_0_7)
 
-	if arg_34_3 ~= var_0_10 then
-		var_34_11 = arg_34_2.type
-		VoteConst = var_6
+	local var_34_2 = getProxy(VoteProxy):RawGetTempVoteGroup(arg_34_2.id)
+	local var_34_3 = UIItemList.New(arg_34_1:Find("list"), arg_34_1:Find("list/ship_tpl"))
 
-		if var_34_11 == var_6.RACE_TYPE_RESURGENCE then
-			var_34_11 = "#074e51"
-
-			goto label_34_0
-		end
-	end
-
-	COLOR_WHITE = var_34_11
-
-	::label_34_0::
-
-	setText = var_6
-
-	local var_34_12 = arg_34_1
-	local var_34_13 = arg_34_1.Find(var_34_12, "title/content/Text")
-
-	setColorStr = var_34_7
-
-	var_6(var_34_13, var_34_7(arg_34_2.name, var_34_11))
-
-	VoteGroup = var_6
-
-	local var_34_14 = var_6.GetTimeDesc2(arg_34_2.time_vote, arg_34_2.type)
-
-	setText = var_34_8
-
-	local var_34_15 = arg_34_1:Find("title/content/Text/Text")
-
-	setColorStr = var_34_12
-
-	var_34_8(var_34_15, var_34_12(var_34_14, var_34_11))
-
-	setActive = var_34_8
-
-	var_34_8(arg_34_1:Find("open"), arg_34_3 == var_0_9)
-
-	setActive = var_34_8
-
-	var_34_8(arg_34_1:Find("close"), arg_34_3 == var_0_10)
-
-	setActive = var_34_8
-
-	var_34_8(arg_34_1:Find("list"), arg_34_3 == var_0_8)
-
-	getProxy = var_34_8
-	VoteProxy = var_9
-
-	local var_34_16 = var_34_8(var_9)
-	local var_34_17 = var_7.RawGetTempVoteGroup(var_34_16, arg_34_2.id)
-
-	UIItemList = var_8
-
-	local var_34_18 = var_8.New(arg_34_1:Find("list"), arg_34_1:Find("list/ship_tpl"))
-
-	var_8.make(var_34_18, function(arg_35_0, arg_35_1, arg_35_2)
-		UIItemList = var_2_10003
-
-		if arg_35_0 == var_2_10003.EventUpdate then
-			local var_35_0 = arg_34_0
-
-			var_3.UpdateRaceRank(var_35_0, var_34_17, arg_35_1 + 1, arg_35_2)
+	var_34_3:make(function(arg_35_0, arg_35_1, arg_35_2)
+		if arg_35_0 == UIItemList.EventUpdate then
+			arg_34_0:UpdateRaceRank(var_34_2, arg_35_1 + 1, arg_35_2)
 		end
 
 		return
 	end)
+	var_34_3:align(arg_34_3 == var_0_7 and var_34_2 and #var_34_2:getList() >= 3 and 3 or 0)
+	onButton(arg_34_0, arg_34_1, function()
+		local var_36_0 = getProxy(VoteProxy):GetOpeningNonFunVoteGroup()
 
-	local var_34_19 = arg_34_3 == var_0_8 and var_34_17 and #var_34_17:getList() >= 3 and 3 or 0
+		var_36_0 = var_36_0 or getProxy(VoteProxy):GetOpeningFunVoteGroup()
 
-	var_8:align(var_34_19)
+		local var_36_1 = getProxy(VoteProxy)
 
-	onButton = var_10
+		if var_36_1:RawGetVoteGroupByConfigId(arg_34_2.id) and var_36_0 and var_36_0.id == arg_34_2.id then
+			local var_36_2 = getProxy(ContextProxy):getCurrentContext()
 
-	local var_34_20 = arg_34_0
-	local var_34_21 = arg_34_1
-
-	local function var_34_22()
-		getProxy = var_2_10000
-		VoteProxy = var_2_10002
-
-		local var_36_0 = var_2_10000(var_2_10002)
-		local var_36_2
-
-		if not var_0.GetOpeningNonFunVoteGroup(var_36_0) then
-			getProxy = var_36_2
-			VoteProxy = var_36_0
-
-			local var_36_1 = var_36_2(var_36_0)
-
-			var_36_2 = var_36_2.GetOpeningFunVoteGroup(var_36_1)
-		end
-
-		getProxy = var_2_10001
-		VoteProxy = var_2_10003
-
-		local var_36_3 = var_2_10001(var_2_10003)
-		local var_36_6
-
-		if var_1.RawGetVoteGroupByConfigId(var_36_3, arg_34_2.id) and var_36_2 and var_36_2.id == arg_34_2.id then
-			getProxy = var_1
-			ContextProxy = var_36_3
-
-			local var_36_4 = var_1(var_36_3)
-
-			if var_1.getCurrentContext(var_36_4) then
-				local var_36_5 = var_1.mediator
-
-				VoteMediator = var_36_4
-
-				if var_36_5 == var_36_4 then
-					var_36_6 = arg_34_0
-
-					var_2.emit(var_36_6, var_0_1.ON_CLOSE)
-
-					goto label_36_0
-				end
+			if var_36_2 and var_36_2.mediator == VoteMediator then
+				arg_34_0:emit(var_0_0.ON_CLOSE)
+			else
+				arg_34_0:emit(VoteScheduleMediator.ON_VOTE)
 			end
-
-			var_36_6 = arg_34_0
-
-			local var_36_7 = var_2.emit
-
-			VoteScheduleMediator = var_2_10005
-
-			var_36_7(var_36_6, var_2_10005.ON_VOTE)
-		elseif var_34_17 then
-			local var_36_8 = arg_34_0
-			local var_36_9 = var_1.emit
-
-			VoteScheduleMediator = var_36_6
-
-			var_36_9(var_36_8, var_36_6.GO_RANK, var_34_17)
+		elseif var_34_2 then
+			arg_34_0:emit(VoteScheduleMediator.GO_RANK, var_34_2)
 		end
-
-		::label_36_0::
 
 		return
-	end
-
-	SFX_PANEL = var_1_10015
-
-	var_10(var_34_20, var_34_21, var_34_22, var_1_10015)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.UpdateRaceRank(arg_37_0, arg_37_1, arg_37_2, arg_37_3)
+function var_0_0.UpdateRaceRank(arg_37_0, arg_37_1, arg_37_2, arg_37_3)
 	if not arg_37_1 then
-		setActive = var_1_10004
-
-		var_1_10004(arg_37_3, false)
+		setActive(arg_37_3, false)
 
 		return
 	end
 
-	local var_37_0 = arg_37_1
-	local var_37_1 = arg_37_1.getList(var_37_0)[arg_37_2]
+	local var_37_0 = arg_37_1:getList()[arg_37_2]
 
-	VoteShipItem = var_37_0
-
-	local var_37_2 = var_37_0.New(arg_37_3.gameObject)
-	local var_37_3 = arg_37_1:GetRank(var_37_1)
-
-	var_37_2:update(var_37_1, {
-		rank = var_37_3
+	VoteShipItem.New(arg_37_3.gameObject):update(var_37_0, {
+		rank = arg_37_1:GetRank(var_37_0)
 	})
 
 	return
 end
 
-function var_0_1.UpdateRaceLink(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
-	local var_38_0 = arg_38_2.dir
-	local var_38_1
+function var_0_0.UpdateRaceLink(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
+	local var_38_0
 
-	if var_38_0 == var_0_2 and arg_38_3 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.verLeftTpl, arg_38_0.lineContainer)
-		table = var_6
+	if arg_38_2.dir == var_0_1 and arg_38_3 then
+		var_38_0 = cloneTplTo(arg_38_0.verLeftTpl, arg_38_0.lineContainer)
 
-		local var_38_2 = var_6.insert
-		local var_38_3 = arg_38_0.lineTpls
-		local var_38_4 = {
-			var_38_1,
-			arg_38_1
-		}
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(-224.42, -203.2)
+		})
+	elseif arg_38_2.dir == var_0_1 then
+		var_38_0 = cloneTplTo(arg_38_0.verLeftTplClose, arg_38_0.lineContainer)
 
-		Vector2 = var_1_10010
-		var_38_4[3] = var_1_10010(-224.42, -203.2)
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(-224.42, -203.2)
+		})
+	elseif arg_38_2.dir == var_0_2 and arg_38_3 then
+		var_38_0 = cloneTplTo(arg_38_0.verRightTpl, arg_38_0.lineContainer)
 
-		var_38_2(var_38_3, var_38_4)
-	elseif var_38_0 == var_0_2 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.verLeftTplClose, arg_38_0.lineContainer)
-		table = var_6
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(224.42, -203.2)
+		})
+	elseif arg_38_2.dir == var_0_2 then
+		var_38_0 = cloneTplTo(arg_38_0.verRightTplClose, arg_38_0.lineContainer)
 
-		local var_38_5 = var_6.insert
-		local var_38_6 = arg_38_0.lineTpls
-		local var_38_7 = {
-			var_38_1,
-			arg_38_1
-		}
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(224.42, -203.2)
+		})
+	elseif arg_38_2.dir == var_0_3 and arg_38_3 then
+		var_38_0 = cloneTplTo(arg_38_0.centTpl, arg_38_0.lineContainer)
 
-		Vector2 = var_1_10010
-		var_38_7[3] = var_1_10010(-224.42, -203.2)
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(0, -203.2)
+		})
+	elseif arg_38_2.dir == var_0_3 then
+		var_38_0 = cloneTplTo(arg_38_0.centTplClose, arg_38_0.lineContainer)
 
-		var_38_5(var_38_6, var_38_7)
-	elseif var_38_0 == var_0_3 and arg_38_3 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.verRightTpl, arg_38_0.lineContainer)
-		table = var_6
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(0, -203.2)
+		})
+	elseif arg_38_2.dir == var_0_4 and arg_38_3 then
+		var_38_0 = cloneTplTo(arg_38_0.hrzRightTpl, arg_38_0.lineContainer)
 
-		local var_38_8 = var_6.insert
-		local var_38_9 = arg_38_0.lineTpls
-		local var_38_10 = {
-			var_38_1,
-			arg_38_1
-		}
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(447.2, 0)
+		})
+	elseif arg_38_2.dir == var_0_4 then
+		var_38_0 = cloneTplTo(arg_38_0.hrzRightTplClose, arg_38_0.lineContainer)
 
-		Vector2 = var_1_10010
-		var_38_10[3] = var_1_10010(224.42, -203.2)
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(447.2, 0)
+		})
+	elseif arg_38_2.dir == var_0_5 and arg_38_3 then
+		var_38_0 = cloneTplTo(arg_38_0.hrzLeftTpl, arg_38_0.lineContainer)
 
-		var_38_8(var_38_9, var_38_10)
-	elseif var_38_0 == var_0_3 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.verRightTplClose, arg_38_0.lineContainer)
-		table = var_6
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(-447.2, 0)
+		})
+	elseif arg_38_2.dir == var_0_5 then
+		var_38_0 = cloneTplTo(arg_38_0.hrzLeftTplClose, arg_38_0.lineContainer)
 
-		local var_38_11 = var_6.insert
-		local var_38_12 = arg_38_0.lineTpls
-		local var_38_13 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_13[3] = var_1_10010(224.42, -203.2)
-
-		var_38_11(var_38_12, var_38_13)
-	elseif var_38_0 == var_0_4 and arg_38_3 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.centTpl, arg_38_0.lineContainer)
-		table = var_6
-
-		local var_38_14 = var_6.insert
-		local var_38_15 = arg_38_0.lineTpls
-		local var_38_16 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_16[3] = var_1_10010(0, -203.2)
-
-		var_38_14(var_38_15, var_38_16)
-	elseif var_38_0 == var_0_4 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.centTplClose, arg_38_0.lineContainer)
-		table = var_6
-
-		local var_38_17 = var_6.insert
-		local var_38_18 = arg_38_0.lineTpls
-		local var_38_19 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_19[3] = var_1_10010(0, -203.2)
-
-		var_38_17(var_38_18, var_38_19)
-	elseif var_38_0 == var_0_5 and arg_38_3 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.hrzRightTpl, arg_38_0.lineContainer)
-		table = var_6
-
-		local var_38_20 = var_6.insert
-		local var_38_21 = arg_38_0.lineTpls
-		local var_38_22 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_22[3] = var_1_10010(447.2, 0)
-
-		var_38_20(var_38_21, var_38_22)
-	elseif var_38_0 == var_0_5 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.hrzRightTplClose, arg_38_0.lineContainer)
-		table = var_6
-
-		local var_38_23 = var_6.insert
-		local var_38_24 = arg_38_0.lineTpls
-		local var_38_25 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_25[3] = var_1_10010(447.2, 0)
-
-		var_38_23(var_38_24, var_38_25)
-	elseif var_38_0 == var_0_6 and arg_38_3 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.hrzLeftTpl, arg_38_0.lineContainer)
-		table = var_6
-
-		local var_38_26 = var_6.insert
-		local var_38_27 = arg_38_0.lineTpls
-		local var_38_28 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_28[3] = var_1_10010(-447.2, 0)
-
-		var_38_26(var_38_27, var_38_28)
-	elseif var_38_0 == var_0_6 then
-		cloneTplTo = var_6
-		var_38_1 = var_6(arg_38_0.hrzLeftTplClose, arg_38_0.lineContainer)
-		table = var_6
-
-		local var_38_29 = var_6.insert
-		local var_38_30 = arg_38_0.lineTpls
-		local var_38_31 = {
-			var_38_1,
-			arg_38_1
-		}
-
-		Vector2 = var_1_10010
-		var_38_31[3] = var_1_10010(-447.2, 0)
-
-		var_38_29(var_38_30, var_38_31)
+		table.insert(arg_38_0.lineTpls, {
+			var_38_0,
+			arg_38_1,
+			Vector2(-447.2, 0)
+		})
 	end
 
-	return var_38_1
+	return var_38_0
 end
 
-function var_0_1.onBackPressed(arg_39_0)
-	var_0_1.super.onBackPressed(arg_39_0)
+function var_0_0.onBackPressed(arg_39_0)
+	var_0_0.super.onBackPressed(arg_39_0)
 
 	return
 end
 
-function var_0_1.willExit(arg_40_0)
+function var_0_0.willExit(arg_40_0)
 	return
 end
 
-return var_0_1
+return var_0_0

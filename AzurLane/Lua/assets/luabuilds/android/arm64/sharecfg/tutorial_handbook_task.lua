@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "tutorial_handbook_task") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "tutorial_handbook_task"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.tutorial_handbook_task = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.tutorial_handbook_task
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.tutorial_handbook_task = rawget(pg, "tutorial_handbook_task") or setmetatable({
+	__name = "tutorial_handbook_task"
+}, confNEO)
+pg.tutorial_handbook_task.all = {
 	100101,
 	100201,
 	100301,
@@ -70,25 +47,11 @@ var_0_3.all = {
 	203301,
 	203401
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.tutorial_handbook_task = {}
+pg.base = pg.base or {}
+pg.base.tutorial_handbook_task = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.tutorial_handbook_task
-
-	var_1_0[5] = {
+	pg.base.tutorial_handbook_task[5] = {
 		name = "阶段一",
 		type = 1,
 		lock_name = "",
@@ -124,11 +87,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.tutorial_handbook_task
-
-	var_1_1[100201] = {
+	pg.base.tutorial_handbook_task[100201] = {
 		name = "阶段二",
 		type = 1,
 		lock_name = "未解锁",
@@ -166,11 +125,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.tutorial_handbook_task
-
-	var_1_2[100301] = {
+	pg.base.tutorial_handbook_task[100301] = {
 		name = "阶段三",
 		type = 1,
 		lock_name = "未解锁",
@@ -208,11 +163,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.tutorial_handbook_task
-
-	var_1_3[100401] = {
+	pg.base.tutorial_handbook_task[100401] = {
 		name = "阶段四",
 		type = 1,
 		lock_name = "未解锁",
@@ -250,11 +201,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.tutorial_handbook_task
-
-	var_1_4[21] = {
+	pg.base.tutorial_handbook_task[21] = {
 		name = "阶段五",
 		type = 1,
 		lock_name = "未解锁",
@@ -292,11 +239,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.tutorial_handbook_task
-
-	var_1_5[100601] = {
+	pg.base.tutorial_handbook_task[100601] = {
 		name = "阶段六",
 		type = 1,
 		lock_name = "未解锁",
@@ -334,11 +277,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.tutorial_handbook_task
-
-	var_1_6[100701] = {
+	pg.base.tutorial_handbook_task[100701] = {
 		name = "阶段七",
 		type = 1,
 		lock_name = "未解锁",
@@ -376,11 +315,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.tutorial_handbook_task
-
-	var_1_7[100801] = {
+	pg.base.tutorial_handbook_task[100801] = {
 		name = "阶段八",
 		type = 1,
 		lock_name = "未解锁",
@@ -418,11 +353,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.tutorial_handbook_task
-
-	var_1_8[100901] = {
+	pg.base.tutorial_handbook_task[100901] = {
 		name = "阶段九",
 		type = 1,
 		lock_name = "未解锁",
@@ -461,11 +392,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.tutorial_handbook_task
-
-	var_1_9[200101] = {
+	pg.base.tutorial_handbook_task[200101] = {
 		name = "等级",
 		type = 2,
 		lock_name = "",
@@ -495,11 +422,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.tutorial_handbook_task
-
-	var_1_10[9] = {
+	pg.base.tutorial_handbook_task[9] = {
 		name = "建造",
 		type = 2,
 		lock_name = "",
@@ -532,11 +455,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.tutorial_handbook_task
-
-	var_1_11[200301] = {
+	pg.base.tutorial_handbook_task[200301] = {
 		name = "编队",
 		type = 2,
 		lock_name = "",
@@ -572,11 +491,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.tutorial_handbook_task
-
-	var_1_12[200401] = {
+	pg.base.tutorial_handbook_task[200401] = {
 		name = "出击",
 		type = 2,
 		lock_name = "",
@@ -614,11 +529,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.tutorial_handbook_task
-
-	var_1_13[200501] = {
+	pg.base.tutorial_handbook_task[200501] = {
 		name = "活动",
 		type = 2,
 		lock_name = "",
@@ -648,11 +559,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.tutorial_handbook_task
-
-	var_1_14[25] = {
+	pg.base.tutorial_handbook_task[25] = {
 		name = "养成",
 		type = 2,
 		lock_name = "",
@@ -689,11 +596,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.tutorial_handbook_task
-
-	var_1_15[200701] = {
+	pg.base.tutorial_handbook_task[200701] = {
 		name = "周常",
 		type = 2,
 		lock_name = "",
@@ -722,11 +625,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.tutorial_handbook_task
-
-	var_1_16[200801] = {
+	pg.base.tutorial_handbook_task[200801] = {
 		name = "商城",
 		type = 2,
 		lock_name = "",
@@ -756,11 +655,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.tutorial_handbook_task
-
-	var_1_17[200901] = {
+	pg.base.tutorial_handbook_task[200901] = {
 		name = "军火商店",
 		type = 2,
 		lock_name = "",
@@ -789,11 +684,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.tutorial_handbook_task
-
-	var_1_18[201001] = {
+	pg.base.tutorial_handbook_task[201001] = {
 		name = "战术学院",
 		type = 2,
 		lock_name = "",
@@ -823,11 +714,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.tutorial_handbook_task
-
-	var_1_19[13] = {
+	pg.base.tutorial_handbook_task[13] = {
 		name = "食堂",
 		type = 2,
 		lock_name = "",
@@ -856,11 +743,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.tutorial_handbook_task
-
-	var_1_20[201201] = {
+	pg.base.tutorial_handbook_task[201201] = {
 		name = "勋章收藏",
 		type = 2,
 		lock_name = "",
@@ -890,11 +773,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.tutorial_handbook_task
-
-	var_1_21[201301] = {
+	pg.base.tutorial_handbook_task[201301] = {
 		name = "世界巡游",
 		type = 2,
 		lock_name = "",
@@ -924,11 +803,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.tutorial_handbook_task
-
-	var_1_22[201401] = {
+	pg.base.tutorial_handbook_task[201401] = {
 		name = "邮箱",
 		type = 2,
 		lock_name = "",
@@ -957,11 +832,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.tutorial_handbook_task
-
-	var_1_23[29] = {
+	pg.base.tutorial_handbook_task[29] = {
 		name = "装备",
 		type = 2,
 		lock_name = "",
@@ -996,11 +867,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.tutorial_handbook_task
-
-	var_1_24[1] = {
+	pg.base.tutorial_handbook_task[1] = {
 		name = "科技点",
 		type = 2,
 		lock_name = "",
@@ -1029,11 +896,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.tutorial_handbook_task
-
-	var_1_25[201701] = {
+	pg.base.tutorial_handbook_task[201701] = {
 		name = "后宅",
 		type = 2,
 		lock_name = "Lv.8",
@@ -1066,11 +929,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.tutorial_handbook_task
-
-	var_1_26[201801] = {
+	pg.base.tutorial_handbook_task[201801] = {
 		name = "日常",
 		type = 2,
 		lock_name = "Lv.10",
@@ -1106,11 +965,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.tutorial_handbook_task
-
-	var_1_27[201901] = {
+	pg.base.tutorial_handbook_task[201901] = {
 		name = "核心商店",
 		type = 2,
 		lock_name = "Lv.10",
@@ -1141,11 +996,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.tutorial_handbook_task
-
-	var_1_28[17] = {
+	pg.base.tutorial_handbook_task[17] = {
 		name = "委托",
 		type = 2,
 		lock_name = "Lv.11",
@@ -1177,11 +1028,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.tutorial_handbook_task
-
-	var_1_29[202101] = {
+	pg.base.tutorial_handbook_task[202101] = {
 		name = "大舰队",
 		type = 2,
 		lock_name = "Lv.11",
@@ -1216,11 +1063,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.tutorial_handbook_task
-
-	var_1_30[202201] = {
+	pg.base.tutorial_handbook_task[202201] = {
 		name = "演习",
 		type = 2,
 		lock_name = "Lv.15",
@@ -1254,11 +1097,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.tutorial_handbook_task
-
-	var_1_31[202301] = {
+	pg.base.tutorial_handbook_task[202301] = {
 		name = "原型商店",
 		type = 2,
 		lock_name = "Lv.30",
@@ -1290,11 +1129,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.tutorial_handbook_task
-
-	var_1_32[202401] = {
+	pg.base.tutorial_handbook_task[202401] = {
 		name = "游戏屋",
 		type = 2,
 		lock_name = "Lv.30",
@@ -1325,11 +1160,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.tutorial_handbook_task
-
-	var_1_33[5] = {
+	pg.base.tutorial_handbook_task[5] = {
 		name = "军部研究室",
 		type = 2,
 		lock_name = "Lv.30",
@@ -1363,11 +1194,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.tutorial_handbook_task
-
-	var_1_34[202601] = {
+	pg.base.tutorial_handbook_task[202601] = {
 		name = "开发船坞",
 		type = 2,
 		lock_name = "Lv.30",
@@ -1401,11 +1228,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.tutorial_handbook_task
-
-	var_1_35[202701] = {
+	pg.base.tutorial_handbook_task[202701] = {
 		name = "养成计划",
 		type = 2,
 		lock_name = "Lv.30",
@@ -1437,11 +1260,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.tutorial_handbook_task
-
-	var_1_36[202801] = {
+	pg.base.tutorial_handbook_task[202801] = {
 		name = "指挥喵",
 		type = 2,
 		lock_name = "Lv.40",
@@ -1474,11 +1293,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.tutorial_handbook_task
-
-	var_1_37[21] = {
+	pg.base.tutorial_handbook_task[21] = {
 		name = "大讲堂",
 		type = 2,
 		lock_name = "Lv.50",
@@ -1510,11 +1325,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.tutorial_handbook_task
-
-	var_1_38[203001] = {
+	pg.base.tutorial_handbook_task[203001] = {
 		name = "装备研发",
 		type = 2,
 		lock_name = "Lv.60",
@@ -1545,11 +1356,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.tutorial_handbook_task
-
-	var_1_39[203101] = {
+	pg.base.tutorial_handbook_task[203101] = {
 		name = "限界挑战",
 		type = 2,
 		lock_name = "Lv.80",
@@ -1580,11 +1387,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.tutorial_handbook_task
-
-	var_1_40[203201] = {
+	pg.base.tutorial_handbook_task[203201] = {
 		name = "大型作战",
 		type = 2,
 		lock_name = "Lv.80",
@@ -1624,11 +1427,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.tutorial_handbook_task
-
-	var_1_41[203301] = {
+	pg.base.tutorial_handbook_task[203301] = {
 		name = "META研究室",
 		type = 2,
 		lock_name = "Lv.80",
@@ -1659,8 +1458,7 @@ var_0_3.base.tutorial_handbook_task = {}
 			}
 		}
 	}
-	pg = var_1_41
-	var_1_41.base.tutorial_handbook_task[9] = {
+	pg.base.tutorial_handbook_task[9] = {
 		name = "宿舍计划",
 		type = 2,
 		lock_name = "Lv.80",

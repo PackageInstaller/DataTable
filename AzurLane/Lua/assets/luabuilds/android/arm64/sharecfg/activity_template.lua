@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_template = rawget(pg, "activity_template") or setmetatable({
+	__name = "activity_template"
+}, confNEO)
+pg.activity_template.all = {
 	3,
 	4,
 	6,
@@ -1231,6 +1208,22 @@ var_0_3.all = {
 	51077,
 	51078,
 	51079,
+	51101,
+	51102,
+	51103,
+	51104,
+	51105,
+	51106,
+	51107,
+	51108,
+	51109,
+	51110,
+	51111,
+	51112,
+	51113,
+	51114,
+	51115,
+	51117,
 	7011,
 	7012,
 	7013,
@@ -1428,6 +1421,7 @@ var_0_3.all = {
 	6021,
 	6022,
 	6023,
+	6042,
 	100001,
 	100002,
 	100003,
@@ -1464,11 +1458,7 @@ var_0_3.all = {
 	990026,
 	999901
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_template
-
-var_0_4.get_id_list_by_type = {
+pg.activity_template.get_id_list_by_type = {
 	[0] = {
 		40,
 		711
@@ -1536,7 +1526,8 @@ var_0_4.get_id_list_by_type = {
 		50614,
 		50658,
 		51037,
-		51070
+		51070,
+		51103
 	},
 	{
 		8064,
@@ -1716,7 +1707,9 @@ var_0_4.get_id_list_by_type = {
 		50606,
 		50651,
 		51033,
-		51034
+		51034,
+		51101,
+		51102
 	},
 	[13] = {
 		710,
@@ -1915,6 +1908,10 @@ var_0_4.get_id_list_by_type = {
 		51089,
 		51074,
 		51078,
+		51105,
+		51110,
+		51112,
+		51113,
 		1103,
 		1104,
 		1105,
@@ -1988,7 +1985,8 @@ var_0_4.get_id_list_by_type = {
 		50829,
 		50611,
 		50655,
-		51032
+		51032,
+		51104
 	},
 	[15] = {
 		6027,
@@ -2061,7 +2059,8 @@ var_0_4.get_id_list_by_type = {
 		50625,
 		50654,
 		51039,
-		51076
+		51076,
+		51106
 	},
 	[17] = {
 		21,
@@ -2223,6 +2222,7 @@ var_0_4.get_id_list_by_type = {
 		6020,
 		6021,
 		6023,
+		6042,
 		970002,
 		990021
 	},
@@ -2333,7 +2333,8 @@ var_0_4.get_id_list_by_type = {
 		50601,
 		50653,
 		51036,
-		51077
+		51077,
+		51108
 	},
 	[29] = {
 		5201,
@@ -2408,7 +2409,8 @@ var_0_4.get_id_list_by_type = {
 		50432,
 		50468,
 		50600,
-		51038
+		51038,
+		51107
 	},
 	[38] = {
 		117
@@ -2437,7 +2439,8 @@ var_0_4.get_id_list_by_type = {
 	},
 	[51] = {
 		4933,
-		5460
+		5460,
+		51111
 	},
 	[52] = {
 		4915,
@@ -2518,6 +2521,7 @@ var_0_4.get_id_list_by_type = {
 		50812,
 		50617,
 		51090,
+		51115,
 		100002
 	},
 	[58] = {
@@ -2759,6 +2763,7 @@ var_0_4.get_id_list_by_type = {
 		51031,
 		51062,
 		51073,
+		51109,
 		1110,
 		6006,
 		6010,
@@ -2956,7 +2961,8 @@ var_0_4.get_id_list_by_type = {
 		50155,
 		50249,
 		50844,
-		51079
+		51079,
+		51117
 	},
 	[104] = {
 		4963
@@ -3001,7 +3007,8 @@ var_0_4.get_id_list_by_type = {
 		50375
 	},
 	[113] = {
-		5322
+		5322,
+		51114
 	},
 	[114] = {
 		5335
@@ -3131,25 +3138,11 @@ var_0_4.get_id_list_by_type = {
 		990025
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_template = {}
+pg.base = pg.base or {}
+pg.base.activity_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_template
-
-	var_1_0[3] = {
+	pg.base.activity_template[3] = {
 		mark = 20170406,
 		time = "always",
 		type = 3,
@@ -3166,11 +3159,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "day7loginpage"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_template
-
-	var_1_1[4] = {
+	pg.base.activity_template[4] = {
 		mark = 20170406,
 		time = "always",
 		type = 4,
@@ -3187,11 +3176,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "levelawardpage"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_template
-
-	var_1_2[6] = {
+	pg.base.activity_template[6] = {
 		mark = 20170601,
 		time = "always",
 		type = 6,
@@ -3212,11 +3197,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_template
-
-	var_1_3[7] = {
+	pg.base.activity_template[7] = {
 		mark = 2016091500,
 		page_info = "",
 		type = 7,
@@ -3258,11 +3239,7 @@ var_0_4.base.activity_template = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_template
-
-	var_1_4[9] = {
+	pg.base.activity_template[9] = {
 		mark = 20170406,
 		time = "always",
 		type = 9,
@@ -3279,11 +3256,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "chargeawardpage"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_template
-
-	var_1_5[21] = {
+	pg.base.activity_template[21] = {
 		mark = 20170726,
 		page_info = "",
 		time = "always",
@@ -3312,11 +3285,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_template
-
-	var_1_6[40] = {
+	pg.base.activity_template[40] = {
 		mark = 20251009,
 		page_info = "",
 		type = 0,
@@ -3356,11 +3325,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_template
-
-	var_1_7[100] = {
+	pg.base.activity_template[100] = {
 		mark = 20180408,
 		page_info = "",
 		time = "stop",
@@ -3377,11 +3342,7 @@ var_0_4.base.activity_template = {}
 			{}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_template
-
-	var_1_8[117] = {
+	pg.base.activity_template[117] = {
 		mark = 20260520,
 		page_info = "",
 		type = 38,
@@ -3636,11 +3597,7 @@ var_0_4.base.activity_template = {}
 			875
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_template
-
-	var_1_9[162] = {
+	pg.base.activity_template[162] = {
 		mark = 20180914,
 		page_info = "",
 		time = "stop",
@@ -3764,11 +3721,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_template
-
-	var_1_10[164] = {
+	pg.base.activity_template[164] = {
 		mark = 20180914,
 		page_info = "",
 		time = "always",
@@ -3869,11 +3822,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_template
-
-	var_1_11[368] = {
+	pg.base.activity_template[368] = {
 		mark = 20190911,
 		time = "always",
 		type = 59,
@@ -3890,11 +3839,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "storyawardpage"
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_template
-
-	var_1_12[632] = {
+	pg.base.activity_template[632] = {
 		mark = 20200709,
 		page_info = "",
 		time = "always",
@@ -4081,11 +4026,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_template
-
-	var_1_13[710] = {
+	pg.base.activity_template[710] = {
 		mark = 20200917,
 		page_info = "",
 		type = 13,
@@ -4127,11 +4068,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_template
-
-	var_1_14[711] = {
+	pg.base.activity_template[711] = {
 		mark = 20200917,
 		time = "always",
 		type = 0,
@@ -4148,11 +4085,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "UrExchangeItemPage"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_template
-
-	var_1_15[713] = {
+	pg.base.activity_template[713] = {
 		mark = 20200917,
 		time = "always",
 		type = 18,
@@ -4188,11 +4121,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "UrExchangeTaskPage"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_template
-
-	var_1_16[801] = {
+	pg.base.activity_template[801] = {
 		mark = 20201222,
 		page_info = "",
 		time = "stop",
@@ -4210,11 +4139,7 @@ var_0_4.base.activity_template = {}
 			id = 970701
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_template
-
-	var_1_17[802] = {
+	pg.base.activity_template[802] = {
 		mark = 20201222,
 		page_info = "",
 		time = "stop",
@@ -4228,11 +4153,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_template
-
-	var_1_18[920] = {
+	pg.base.activity_template[920] = {
 		mark = 20210318,
 		page_info = "",
 		time = "stop",
@@ -4246,11 +4167,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_template
-
-	var_1_19[4008] = {
+	pg.base.activity_template[4008] = {
 		mark = 20210610,
 		page_info = "",
 		time = "stop",
@@ -4264,11 +4181,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_template
-
-	var_1_20[4100] = {
+	pg.base.activity_template[4100] = {
 		mark = 20210909,
 		page_info = "",
 		time = "stop",
@@ -4282,11 +4195,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_template
-
-	var_1_21[4180] = {
+	pg.base.activity_template[4180] = {
 		mark = 20211209,
 		page_info = "",
 		time = "stop",
@@ -4300,11 +4209,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_template
-
-	var_1_22[4282] = {
+	pg.base.activity_template[4282] = {
 		mark = 20220310,
 		page_info = "",
 		time = "stop",
@@ -4318,11 +4223,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_template
-
-	var_1_23[4877] = {
+	pg.base.activity_template[4877] = {
 		mark = 20230525,
 		page_info = "",
 		time = "stop",
@@ -4359,11 +4260,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_template
-
-	var_1_24[4885] = {
+	pg.base.activity_template[4885] = {
 		mark = 20230601,
 		page_info = "",
 		time = "stop",
@@ -4384,11 +4281,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_template
-
-	var_1_25[4887] = {
+	pg.base.activity_template[4887] = {
 		mark = 20230831,
 		time = "stop",
 		type = 102,
@@ -4419,11 +4312,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "CardPuzzlePage"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_template
-
-	var_1_26[4888] = {
+	pg.base.activity_template[4888] = {
 		mark = 20230608,
 		time = "stop",
 		type = 18,
@@ -4477,11 +4366,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_template
-
-	var_1_27[4889] = {
+	pg.base.activity_template[4889] = {
 		mark = 20230608,
 		page_info = "",
 		time = "stop",
@@ -4508,11 +4393,7 @@ var_0_4.base.activity_template = {}
 			60412
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_template
-
-	var_1_28[4890] = {
+	pg.base.activity_template[4890] = {
 		mark = 20230615,
 		page_info = "",
 		time = "stop",
@@ -4557,11 +4438,7 @@ var_0_4.base.activity_template = {}
 			ui = "ColoringJupiterUI"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_template
-
-	var_1_29[4891] = {
+	pg.base.activity_template[4891] = {
 		mark = 20230615,
 		page_info = "",
 		time = "stop",
@@ -4594,11 +4471,7 @@ var_0_4.base.activity_template = {}
 			18920
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_template
-
-	var_1_30[4892] = {
+	pg.base.activity_template[4892] = {
 		mark = 20230615,
 		page_info = "",
 		time = "stop",
@@ -4618,11 +4491,7 @@ var_0_4.base.activity_template = {}
 			10159
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_template
-
-	var_1_31[4893] = {
+	pg.base.activity_template[4893] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4636,11 +4505,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_template
-
-	var_1_32[4895] = {
+	pg.base.activity_template[4895] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4661,11 +4526,7 @@ var_0_4.base.activity_template = {}
 			10
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_template
-
-	var_1_33[4896] = {
+	pg.base.activity_template[4896] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4679,11 +4540,7 @@ var_0_4.base.activity_template = {}
 		id = 4896,
 		page_core = ""
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_template
-
-	var_1_34[4897] = {
+	pg.base.activity_template[4897] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4718,11 +4575,7 @@ var_0_4.base.activity_template = {}
 			18940
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_template
-
-	var_1_35[4898] = {
+	pg.base.activity_template[4898] = {
 		mark = 20230621,
 		time = "stop",
 		type = 12,
@@ -4748,11 +4601,7 @@ var_0_4.base.activity_template = {}
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_template
-
-	var_1_36[4899] = {
+	pg.base.activity_template[4899] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4777,11 +4626,7 @@ var_0_4.base.activity_template = {}
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_template
-
-	var_1_37[4900] = {
+	pg.base.activity_template[4900] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4800,11 +4645,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_template
-
-	var_1_38[4901] = {
+	pg.base.activity_template[4901] = {
 		mark = 20230621,
 		time = "stop",
 		type = 74,
@@ -4821,11 +4662,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "NewMeixiV4PtPage"
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_template
-
-	var_1_39[4902] = {
+	pg.base.activity_template[4902] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4843,11 +4680,7 @@ var_0_4.base.activity_template = {}
 			59460
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_template
-
-	var_1_40[4903] = {
+	pg.base.activity_template[4903] = {
 		mark = 20230621,
 		time = "stop",
 		type = 87,
@@ -4890,11 +4723,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_template
-
-	var_1_41[4904] = {
+	pg.base.activity_template[4904] = {
 		mark = 20230621,
 		time = "stop",
 		type = 18,
@@ -4952,11 +4781,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_template
-
-	var_1_42[4905] = {
+	pg.base.activity_template[4905] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -4972,11 +4797,7 @@ var_0_4.base.activity_template = {}
 			18955
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_template
-
-	var_1_43[4906] = {
+	pg.base.activity_template[4906] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -5030,11 +4851,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_template
-
-	var_1_44[4907] = {
+	pg.base.activity_template[4907] = {
 		mark = 20230621,
 		time = "stop",
 		type = 3,
@@ -5051,11 +4868,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "BuildLoginPage"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_template
-
-	var_1_45[4908] = {
+	pg.base.activity_template[4908] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -5069,11 +4882,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_template
-
-	var_1_46[4910] = {
+	pg.base.activity_template[4910] = {
 		mark = 20230621,
 		page_info = "",
 		time = "stop",
@@ -5087,11 +4896,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_template
-
-	var_1_47[4914] = {
+	pg.base.activity_template[4914] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5110,11 +4915,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_template
-
-	var_1_48[4915] = {
+	pg.base.activity_template[4915] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5153,11 +4954,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_template
-
-	var_1_49[4916] = {
+	pg.base.activity_template[4916] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5171,11 +4968,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_template
-
-	var_1_50[4917] = {
+	pg.base.activity_template[4917] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5197,11 +4990,7 @@ var_0_4.base.activity_template = {}
 			18962
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_template
-
-	var_1_51[4918] = {
+	pg.base.activity_template[4918] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5215,11 +5004,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_template
-
-	var_1_52[4919] = {
+	pg.base.activity_template[4919] = {
 		mark = 20230629,
 		time = "stop",
 		type = 86,
@@ -5252,11 +5037,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_template
-
-	var_1_53[4920] = {
+	pg.base.activity_template[4920] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5272,11 +5053,7 @@ var_0_4.base.activity_template = {}
 			18966
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_template
-
-	var_1_54[4921] = {
+	pg.base.activity_template[4921] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5294,11 +5071,7 @@ var_0_4.base.activity_template = {}
 			382
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_template
-
-	var_1_55[4922] = {
+	pg.base.activity_template[4922] = {
 		mark = 20230629,
 		page_info = "",
 		time = "stop",
@@ -5312,11 +5085,7 @@ var_0_4.base.activity_template = {}
 		id = 4922,
 		page_core = ""
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_template
-
-	var_1_56[4925] = {
+	pg.base.activity_template[4925] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5362,11 +5131,7 @@ var_0_4.base.activity_template = {}
 			18997
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_template
-
-	var_1_57[4926] = {
+	pg.base.activity_template[4926] = {
 		mark = 20230720,
 		page_info = "",
 		type = 36,
@@ -5413,11 +5178,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_template
-
-	var_1_58[4927] = {
+	pg.base.activity_template[4927] = {
 		mark = 20230720,
 		page_info = "",
 		type = 16,
@@ -5457,11 +5218,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_template
-
-	var_1_59[4928] = {
+	pg.base.activity_template[4928] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5501,11 +5258,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_template
-
-	var_1_60[4929] = {
+	pg.base.activity_template[4929] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5524,11 +5277,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_template
-
-	var_1_61[4930] = {
+	pg.base.activity_template[4930] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5597,11 +5346,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_template
-
-	var_1_62[4931] = {
+	pg.base.activity_template[4931] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5617,11 +5362,7 @@ var_0_4.base.activity_template = {}
 			18986
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_template
-
-	var_1_63[4932] = {
+	pg.base.activity_template[4932] = {
 		mark = 20230720,
 		time = "stop",
 		type = 12,
@@ -5652,11 +5393,7 @@ var_0_4.base.activity_template = {}
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_template
-
-	var_1_64[4933] = {
+	pg.base.activity_template[4933] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5670,11 +5407,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_template
-
-	var_1_65[4934] = {
+	pg.base.activity_template[4934] = {
 		mark = 20230720,
 		time = "stop",
 		type = 74,
@@ -5691,11 +5424,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "SSSSPTPage"
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_template
-
-	var_1_66[4935] = {
+	pg.base.activity_template[4935] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5737,11 +5466,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_template
-
-	var_1_67[4937] = {
+	pg.base.activity_template[4937] = {
 		mark = 20230720,
 		time = "stop",
 		type = 103,
@@ -5797,11 +5522,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_template
-
-	var_1_68[4938] = {
+	pg.base.activity_template[4938] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5840,11 +5561,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_template
-
-	var_1_69[4939] = {
+	pg.base.activity_template[4939] = {
 		mark = 20230720,
 		page_info = "",
 		time = "stop",
@@ -5879,11 +5596,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_template
-
-	var_1_70[4940] = {
+	pg.base.activity_template[4940] = {
 		mark = 20230803,
 		page_info = "",
 		time = "stop",
@@ -5903,11 +5616,7 @@ var_0_4.base.activity_template = {}
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_template
-
-	var_1_71[4941] = {
+	pg.base.activity_template[4941] = {
 		mark = 20230803,
 		type = 74,
 		login_pop = 0,
@@ -5953,11 +5662,7 @@ var_0_4.base.activity_template = {}
 			linkActID = 4940
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_template
-
-	var_1_72[4942] = {
+	pg.base.activity_template[4942] = {
 		mark = 20230803,
 		page_info = "",
 		type = 16,
@@ -5997,11 +5702,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_template
-
-	var_1_73[4943] = {
+	pg.base.activity_template[4943] = {
 		mark = 20230803,
 		page_info = "",
 		time = "stop",
@@ -6022,11 +5723,7 @@ var_0_4.base.activity_template = {}
 			19003
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_template
-
-	var_1_74[4944] = {
+	pg.base.activity_template[4944] = {
 		mark = 20230803,
 		time = "stop",
 		type = 3,
@@ -6043,11 +5740,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "SummerSportsLoginPage"
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_template
-
-	var_1_75[4945] = {
+	pg.base.activity_template[4945] = {
 		mark = 20230803,
 		page_info = "",
 		time = "stop",
@@ -6061,11 +5754,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_template
-
-	var_1_76[4946] = {
+	pg.base.activity_template[4946] = {
 		mark = 20230803,
 		page_info = "",
 		time = "stop",
@@ -6090,11 +5779,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_template
-
-	var_1_77[4947] = {
+	pg.base.activity_template[4947] = {
 		mark = 20230803,
 		time = "stop",
 		type = 18,
@@ -6133,11 +5818,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "JamaicaSkinRePage"
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_template
-
-	var_1_78[4948] = {
+	pg.base.activity_template[4948] = {
 		mark = 20230810,
 		type = 87,
 		login_pop = 0,
@@ -6180,11 +5861,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "SaDingFramePage"
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_template
-
-	var_1_79[4949] = {
+	pg.base.activity_template[4949] = {
 		mark = 20230810,
 		page_info = "",
 		time = "stop",
@@ -6198,11 +5875,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_template
-
-	var_1_80[4950] = {
+	pg.base.activity_template[4950] = {
 		mark = 20230810,
 		type = 69,
 		login_pop = 0,
@@ -6247,11 +5920,7 @@ var_0_4.base.activity_template = {}
 			itemid = 42034
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_template
-
-	var_1_81[4951] = {
+	pg.base.activity_template[4951] = {
 		mark = 20230810,
 		type = 18,
 		login_pop = 0,
@@ -6347,11 +6016,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_template
-
-	var_1_82[4953] = {
+	pg.base.activity_template[4953] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6385,11 +6050,7 @@ var_0_4.base.activity_template = {}
 			19156
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_template
-
-	var_1_83[4954] = {
+	pg.base.activity_template[4954] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6403,11 +6064,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_template
-
-	var_1_84[4955] = {
+	pg.base.activity_template[4955] = {
 		mark = 20230817,
 		type = 74,
 		login_pop = 0,
@@ -6452,11 +6109,7 @@ var_0_4.base.activity_template = {}
 			linkActID = 4967
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_template
-
-	var_1_85[4956] = {
+	pg.base.activity_template[4956] = {
 		mark = 20230817,
 		page_info = "",
 		type = 14,
@@ -6535,11 +6188,7 @@ var_0_4.base.activity_template = {}
 			use_secretary = false
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_template
-
-	var_1_86[4957] = {
+	pg.base.activity_template[4957] = {
 		mark = 20230817,
 		page_info = "",
 		type = 36,
@@ -6586,11 +6235,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_template
-
-	var_1_87[4958] = {
+	pg.base.activity_template[4958] = {
 		mark = 20230817,
 		page_info = "",
 		type = 16,
@@ -6630,11 +6275,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_template
-
-	var_1_88[4959] = {
+	pg.base.activity_template[4959] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6650,11 +6291,7 @@ var_0_4.base.activity_template = {}
 			19103
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_template
-
-	var_1_89[4960] = {
+	pg.base.activity_template[4960] = {
 		mark = 20230817,
 		time = "stop",
 		type = 18,
@@ -6700,11 +6337,7 @@ var_0_4.base.activity_template = {}
 			ui_name = "SaDingSkinPage"
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_template
-
-	var_1_90[4961] = {
+	pg.base.activity_template[4961] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6731,11 +6364,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_template
-
-	var_1_91[4962] = {
+	pg.base.activity_template[4962] = {
 		mark = 20230817,
 		time = "stop",
 		type = 86,
@@ -6768,11 +6397,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_template
-
-	var_1_92[4963] = {
+	pg.base.activity_template[4963] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6855,11 +6480,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_template
-
-	var_1_93[4964] = {
+	pg.base.activity_template[4964] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6873,11 +6494,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_template
-
-	var_1_94[4965] = {
+	pg.base.activity_template[4965] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6910,11 +6527,7 @@ var_0_4.base.activity_template = {}
 			19137
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_template
-
-	var_1_95[4966] = {
+	pg.base.activity_template[4966] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6928,11 +6541,7 @@ var_0_4.base.activity_template = {}
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_template
-
-	var_1_96[4967] = {
+	pg.base.activity_template[4967] = {
 		mark = 20230817,
 		time = "stop",
 		type = 12,
@@ -6958,11 +6567,7 @@ var_0_4.base.activity_template = {}
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_template
-
-	var_1_97[4968] = {
+	pg.base.activity_template[4968] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -6987,11 +6592,7 @@ var_0_4.base.activity_template = {}
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_template
-
-	var_1_98[4969] = {
+	pg.base.activity_template[4969] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -7010,8 +6611,7 @@ var_0_4.base.activity_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_template[4970] = {
+	pg.base.activity_template[4970] = {
 		mark = 20230817,
 		page_info = "",
 		time = "stop",
@@ -7036,11 +6636,7 @@ var_0_4.base.activity_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_template
-
-	var_2_0[4971] = {
+	pg.base.activity_template[4971] = {
 		mark = 20230831,
 		time = "stop",
 		type = 18,
@@ -7086,11 +6682,7 @@ end)()
 			ui_name = "BulvxieerSPSkinPage"
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_template
-
-	var_2_1[4972] = {
+	pg.base.activity_template[4972] = {
 		mark = 20230907,
 		page_info = "",
 		type = 13,
@@ -7136,11 +6728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_template
-
-	var_2_2[4973] = {
+	pg.base.activity_template[4973] = {
 		mark = 20230907,
 		type = 87,
 		login_pop = 0,
@@ -7183,11 +6771,7 @@ end)()
 			ui_name = "ChongYingFramePage"
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_template
-
-	var_2_3[4974] = {
+	pg.base.activity_template[4974] = {
 		mark = 20230907,
 		type = 18,
 		login_pop = 0,
@@ -7283,11 +6867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_template
-
-	var_2_4[4975] = {
+	pg.base.activity_template[4975] = {
 		mark = 20230907,
 		type = 69,
 		login_pop = 0,
@@ -7332,11 +6912,7 @@ end)()
 			itemid = 42032
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_template
-
-	var_2_5[4976] = {
+	pg.base.activity_template[4976] = {
 		mark = 20230907,
 		page_info = "",
 		time = "stop",
@@ -7350,11 +6926,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_template
-
-	var_2_6[4978] = {
+	pg.base.activity_template[4978] = {
 		mark = 20230914,
 		type = 74,
 		login_pop = 0,
@@ -7399,11 +6971,7 @@ end)()
 			linkActID = 5001
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_template
-
-	var_2_7[4979] = {
+	pg.base.activity_template[4979] = {
 		mark = 20230914,
 		page_info = "",
 		type = 14,
@@ -7482,11 +7050,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_template
-
-	var_2_8[4980] = {
+	pg.base.activity_template[4980] = {
 		mark = 20230914,
 		type = 3,
 		login_pop = 0,
@@ -7529,11 +7093,7 @@ end)()
 			ui_name = "JapanSixthLoginPage"
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_template
-
-	var_2_9[4981] = {
+	pg.base.activity_template[4981] = {
 		mark = 20230914,
 		page_info = "",
 		type = 91,
@@ -7585,11 +7145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_template
-
-	var_2_10[4982] = {
+	pg.base.activity_template[4982] = {
 		mark = 20230914,
 		page_info = "",
 		type = 13,
@@ -7892,11 +7448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_template
-
-	var_2_11[4983] = {
+	pg.base.activity_template[4983] = {
 		mark = 20230914,
 		page_info = "",
 		type = 14,
@@ -7950,11 +7502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_template
-
-	var_2_12[4990] = {
+	pg.base.activity_template[4990] = {
 		mark = 20230914,
 		type = 105,
 		login_pop = 0,
@@ -8080,11 +7628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_template
-
-	var_2_13[4991] = {
+	pg.base.activity_template[4991] = {
 		mark = 20230914,
 		page_info = "",
 		type = 57,
@@ -8124,11 +7668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_template
-
-	var_2_14[5001] = {
+	pg.base.activity_template[5001] = {
 		mark = 20230914,
 		type = 12,
 		login_pop = 0,
@@ -8180,11 +7720,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_template
-
-	var_2_15[5002] = {
+	pg.base.activity_template[5002] = {
 		mark = 20230914,
 		page_info = "",
 		type = 12,
@@ -8235,11 +7771,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_template
-
-	var_2_16[5003] = {
+	pg.base.activity_template[5003] = {
 		mark = 20230914,
 		page_info = "",
 		type = 13,
@@ -8302,11 +7834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_template
-
-	var_2_17[5004] = {
+	pg.base.activity_template[5004] = {
 		mark = 20230914,
 		page_info = "",
 		type = 27,
@@ -8351,11 +7879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_template
-
-	var_2_18[5005] = {
+	pg.base.activity_template[5005] = {
 		mark = 20230914,
 		page_info = "",
 		type = 1,
@@ -8397,11 +7921,7 @@ end)()
 			build_painting = "yunxian_building"
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_template
-
-	var_2_19[5006] = {
+	pg.base.activity_template[5006] = {
 		mark = 20230914,
 		page_info = "",
 		type = 36,
@@ -8448,11 +7968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_template
-
-	var_2_20[5007] = {
+	pg.base.activity_template[5007] = {
 		mark = 20230914,
 		page_info = "",
 		type = 16,
@@ -8492,11 +8008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_template
-
-	var_2_21[5008] = {
+	pg.base.activity_template[5008] = {
 		mark = 20230914,
 		page_info = "",
 		type = 13,
@@ -8538,11 +8050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_template
-
-	var_2_22[5009] = {
+	pg.base.activity_template[5009] = {
 		mark = 20230914,
 		type = 86,
 		login_pop = 0,
@@ -8606,11 +8114,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_template
-
-	var_2_23[5010] = {
+	pg.base.activity_template[5010] = {
 		mark = 20230914,
 		page_info = "",
 		type = 55,
@@ -8654,11 +8158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_template
-
-	var_2_24[5011] = {
+	pg.base.activity_template[5011] = {
 		mark = 20230914,
 		type = 56,
 		login_pop = 0,
@@ -8702,11 +8202,7 @@ end)()
 			ui_name = "returnawardpage"
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_template
-
-	var_2_25[5012] = {
+	pg.base.activity_template[5012] = {
 		mark = 20230914,
 		page_info = "",
 		type = 30,
@@ -8746,11 +8242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_template
-
-	var_2_26[5013] = {
+	pg.base.activity_template[5013] = {
 		mark = 20230914,
 		page_info = "",
 		type = 60,
@@ -8798,11 +8290,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_template
-
-	var_2_27[5014] = {
+	pg.base.activity_template[5014] = {
 		mark = 20230914,
 		page_info = "",
 		type = 10,
@@ -8842,11 +8330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_template
-
-	var_2_28[5015] = {
+	pg.base.activity_template[5015] = {
 		mark = 20230921,
 		type = 86,
 		login_pop = 0,
@@ -8905,11 +8389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_template
-
-	var_2_29[5016] = {
+	pg.base.activity_template[5016] = {
 		mark = 20230921,
 		page_info = "",
 		type = 13,
@@ -8951,11 +8431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_template
-
-	var_2_30[5017] = {
+	pg.base.activity_template[5017] = {
 		mark = 20230921,
 		type = 18,
 		login_pop = 0,
@@ -9027,11 +8503,7 @@ end)()
 			ui_name = "JavelinDressSkinPage"
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_template
-
-	var_2_31[5018] = {
+	pg.base.activity_template[5018] = {
 		mark = 20230921,
 		page_info = "",
 		type = 60,
@@ -9078,11 +8550,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_template
-
-	var_2_32[5019] = {
+	pg.base.activity_template[5019] = {
 		mark = 20230928,
 		type = 86,
 		login_pop = 0,
@@ -9149,11 +8617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_template
-
-	var_2_33[5020] = {
+	pg.base.activity_template[5020] = {
 		mark = 20230928,
 		time = "stop",
 		type = 57,
@@ -9172,11 +8636,7 @@ end)()
 			gameid = 58
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_template
-
-	var_2_34[5021] = {
+	pg.base.activity_template[5021] = {
 		mark = 20230928,
 		page_info = "",
 		time = "stop",
@@ -9193,11 +8653,7 @@ end)()
 			410
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_template
-
-	var_2_35[5022] = {
+	pg.base.activity_template[5022] = {
 		mark = 20231012,
 		type = 18,
 		login_pop = 0,
@@ -9269,11 +8725,7 @@ end)()
 			ui_name = "NeihuadaSkinPage"
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_template
-
-	var_2_36[5023] = {
+	pg.base.activity_template[5023] = {
 		mark = 20231019,
 		time = "stop",
 		type = 18,
@@ -9353,11 +8805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_template
-
-	var_2_37[5047] = {
+	pg.base.activity_template[5047] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -9380,11 +8828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_template
-
-	var_2_38[5048] = {
+	pg.base.activity_template[5048] = {
 		mark = 20231026,
 		page_info = "",
 		type = 13,
@@ -9432,11 +8876,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_template
-
-	var_2_39[5049] = {
+	pg.base.activity_template[5049] = {
 		mark = 20231026,
 		page_info = "",
 		type = 14,
@@ -9519,11 +8959,7 @@ end)()
 			painting = "jinluhao_pt"
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_template
-
-	var_2_40[5050] = {
+	pg.base.activity_template[5050] = {
 		mark = 20231026,
 		type = 74,
 		login_pop = 0,
@@ -9566,11 +9002,7 @@ end)()
 			ui_name = "PiratePtPage"
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_template
-
-	var_2_41[5051] = {
+	pg.base.activity_template[5051] = {
 		mark = 20231026,
 		time = "stop",
 		type = 12,
@@ -9598,11 +9030,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_template
-
-	var_2_42[5052] = {
+	pg.base.activity_template[5052] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -9618,11 +9046,7 @@ end)()
 			19350
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_template
-
-	var_2_43[5053] = {
+	pg.base.activity_template[5053] = {
 		mark = 20231026,
 		time = "stop",
 		type = 74,
@@ -9663,11 +9087,7 @@ end)()
 			linkActID = 5053
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_template
-
-	var_2_44[5054] = {
+	pg.base.activity_template[5054] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -9690,11 +9110,7 @@ end)()
 			19375
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_template
-
-	var_2_45[5055] = {
+	pg.base.activity_template[5055] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -9887,11 +9303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_template
-
-	var_2_46[5056] = {
+	pg.base.activity_template[5056] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -9910,11 +9322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_template
-
-	var_2_47[5057] = {
+	pg.base.activity_template[5057] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -9950,11 +9358,7 @@ end)()
 			19403
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_template
-
-	var_2_48[5058] = {
+	pg.base.activity_template[5058] = {
 		mark = 20231026,
 		page_info = "",
 		type = 16,
@@ -9994,11 +9398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_template
-
-	var_2_49[5059] = {
+	pg.base.activity_template[5059] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -10012,11 +9412,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_template
-
-	var_2_50[5060] = {
+	pg.base.activity_template[5060] = {
 		mark = 20231026,
 		page_info = "",
 		type = 36,
@@ -10063,11 +9459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_template
-
-	var_2_51[5061] = {
+	pg.base.activity_template[5061] = {
 		mark = 20231026,
 		page_info = "",
 		time = "stop",
@@ -10089,11 +9481,7 @@ end)()
 			417
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_template
-
-	var_2_52[5062] = {
+	pg.base.activity_template[5062] = {
 		mark = 20231109,
 		page_info = "",
 		type = 13,
@@ -10135,11 +9523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_template
-
-	var_2_53[5063] = {
+	pg.base.activity_template[5063] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10153,11 +9537,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_template
-
-	var_2_54[5064] = {
+	pg.base.activity_template[5064] = {
 		mark = 20231109,
 		type = 87,
 		login_pop = 0,
@@ -10200,11 +9580,7 @@ end)()
 			ui_name = "JapanV2frameRePage"
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_template
-
-	var_2_55[5065] = {
+	pg.base.activity_template[5065] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10222,11 +9598,7 @@ end)()
 			60435
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_template
-
-	var_2_56[5066] = {
+	pg.base.activity_template[5066] = {
 		mark = 20231109,
 		time = "stop",
 		type = 3,
@@ -10243,11 +9615,7 @@ end)()
 			ui_name = "DaofengV2LoginPage"
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_template
-
-	var_2_57[5067] = {
+	pg.base.activity_template[5067] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10261,11 +9629,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_template
-
-	var_2_58[5068] = {
+	pg.base.activity_template[5068] = {
 		mark = 20231109,
 		page_info = "",
 		type = 10,
@@ -10305,11 +9669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_template
-
-	var_2_59[5069] = {
+	pg.base.activity_template[5069] = {
 		mark = 20231109,
 		time = "stop",
 		type = 12,
@@ -10335,11 +9695,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_template
-
-	var_2_60[5070] = {
+	pg.base.activity_template[5070] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10364,11 +9720,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_template
-
-	var_2_61[5071] = {
+	pg.base.activity_template[5071] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10402,11 +9754,7 @@ end)()
 			19424
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_template
-
-	var_2_62[5072] = {
+	pg.base.activity_template[5072] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10420,11 +9768,7 @@ end)()
 		id = 5072,
 		page_core = ""
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_template
-
-	var_2_63[5073] = {
+	pg.base.activity_template[5073] = {
 		mark = 20231109,
 		type = 74,
 		login_pop = 0,
@@ -10467,11 +9811,7 @@ end)()
 			ui_name = "DaofengPTRePage"
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_template
-
-	var_2_64[5074] = {
+	pg.base.activity_template[5074] = {
 		mark = 20231109,
 		page_info = "",
 		type = 27,
@@ -10516,11 +9856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_template
-
-	var_2_65[5075] = {
+	pg.base.activity_template[5075] = {
 		mark = 20231109,
 		page_info = "",
 		type = 14,
@@ -10595,11 +9931,7 @@ end)()
 			painting = "zhumo_pt"
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_template
-
-	var_2_66[5077] = {
+	pg.base.activity_template[5077] = {
 		mark = 20231109,
 		page_info = "",
 		time = "stop",
@@ -10620,11 +9952,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_template
-
-	var_2_67[5078] = {
+	pg.base.activity_template[5078] = {
 		mark = 20231116,
 		time = "stop",
 		type = 11,
@@ -10643,11 +9971,7 @@ end)()
 			shopActID = 5079
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_template
-
-	var_2_68[5079] = {
+	pg.base.activity_template[5079] = {
 		mark = 20231116,
 		page_info = "",
 		time = "stop",
@@ -10693,11 +10017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_template
-
-	var_2_69[5081] = {
+	pg.base.activity_template[5081] = {
 		mark = 20231214,
 		type = 74,
 		login_pop = 0,
@@ -10949,11 +10269,7 @@ end)()
 			5082
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_template
-
-	var_2_70[5082] = {
+	pg.base.activity_template[5082] = {
 		mark = 20231214,
 		page_info = "",
 		time = "stop",
@@ -10975,11 +10291,7 @@ end)()
 			"JINRIZHUTUISHANGPINSHI3"
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_template
-
-	var_2_71[5083] = {
+	pg.base.activity_template[5083] = {
 		mark = 20231214,
 		time = "stop",
 		type = 108,
@@ -11017,11 +10329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_template
-
-	var_2_72[5090] = {
+	pg.base.activity_template[5090] = {
 		mark = 20231123,
 		page_info = "",
 		type = 16,
@@ -11061,11 +10369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_template
-
-	var_2_73[5091] = {
+	pg.base.activity_template[5091] = {
 		mark = 20231123,
 		page_info = "",
 		type = 36,
@@ -11112,11 +10416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_template
-
-	var_2_74[5092] = {
+	pg.base.activity_template[5092] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -11136,11 +10436,7 @@ end)()
 			19449
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_template
-
-	var_2_75[5093] = {
+	pg.base.activity_template[5093] = {
 		mark = 20231123,
 		page_info = "",
 		type = 21,
@@ -11188,11 +10484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_template
-
-	var_2_76[5094] = {
+	pg.base.activity_template[5094] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -11399,11 +10691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_template
-
-	var_2_77[5095] = {
+	pg.base.activity_template[5095] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -11447,11 +10735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_template
-
-	var_2_78[5096] = {
+	pg.base.activity_template[5096] = {
 		mark = 20231123,
 		time = "stop",
 		type = 61,
@@ -11468,11 +10752,7 @@ end)()
 			ui_name = "SenrankaguraTaskPage"
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_template
-
-	var_2_79[5097] = {
+	pg.base.activity_template[5097] = {
 		mark = 20231123,
 		page_info = "",
 		type = 14,
@@ -11587,11 +10867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_template
-
-	var_2_80[5098] = {
+	pg.base.activity_template[5098] = {
 		mark = 20231123,
 		type = 74,
 		login_pop = 0,
@@ -11634,11 +10910,7 @@ end)()
 			ui_name = "SenrankaguraPtPage"
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_template
-
-	var_2_81[5099] = {
+	pg.base.activity_template[5099] = {
 		mark = 20231123,
 		page_info = "",
 		type = 107,
@@ -11719,11 +10991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_template
-
-	var_2_82[5100] = {
+	pg.base.activity_template[5100] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -11742,11 +11010,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_template
-
-	var_2_83[5101] = {
+	pg.base.activity_template[5101] = {
 		mark = 20231123,
 		time = "stop",
 		type = 12,
@@ -11778,11 +11042,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_template
-
-	var_2_84[5102] = {
+	pg.base.activity_template[5102] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -11804,11 +11064,7 @@ end)()
 			424
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_template
-
-	var_2_85[5103] = {
+	pg.base.activity_template[5103] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -11841,11 +11097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_template
-
-	var_2_86[5104] = {
+	pg.base.activity_template[5104] = {
 		mark = 20231214,
 		type = 87,
 		login_pop = 0,
@@ -11888,11 +11140,7 @@ end)()
 			ui_name = "StarSeaFramePage"
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_template
-
-	var_2_87[5105] = {
+	pg.base.activity_template[5105] = {
 		mark = 20231214,
 		type = 18,
 		login_pop = 0,
@@ -11988,11 +11236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_template
-
-	var_2_88[5106] = {
+	pg.base.activity_template[5106] = {
 		mark = 20231214,
 		type = 69,
 		login_pop = 0,
@@ -12037,11 +11281,7 @@ end)()
 			itemid = 42031
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_template
-
-	var_2_89[5107] = {
+	pg.base.activity_template[5107] = {
 		mark = 20231214,
 		page_info = "",
 		time = "stop",
@@ -12055,11 +11295,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_template
-
-	var_2_90[5108] = {
+	pg.base.activity_template[5108] = {
 		mark = 20231214,
 		page_info = "",
 		time = "stop",
@@ -12079,11 +11315,7 @@ end)()
 			10169
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_template
-
-	var_2_91[5131] = {
+	pg.base.activity_template[5131] = {
 		mark = 20231221,
 		time = "stop",
 		type = 12,
@@ -12109,11 +11341,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_template
-
-	var_2_92[5132] = {
+	pg.base.activity_template[5132] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12138,11 +11366,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_template
-
-	var_2_93[5133] = {
+	pg.base.activity_template[5133] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12179,11 +11403,7 @@ end)()
 			19660
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_template
-
-	var_2_94[5134] = {
+	pg.base.activity_template[5134] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12202,11 +11422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_template
-
-	var_2_95[5135] = {
+	pg.base.activity_template[5135] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12227,11 +11443,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_template
-
-	var_2_96[5136] = {
+	pg.base.activity_template[5136] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12245,11 +11457,7 @@ end)()
 		id = 5136,
 		page_core = ""
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_template
-
-	var_2_97[5137] = {
+	pg.base.activity_template[5137] = {
 		mark = 20231221,
 		type = 74,
 		login_pop = 0,
@@ -12292,11 +11500,7 @@ end)()
 			ui_name = "StarSeaPtPage"
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_template
-
-	var_2_98[5138] = {
+	pg.base.activity_template[5138] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12405,8 +11609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.activity_template[5140] = {
+	pg.base.activity_template[5140] = {
 		mark = 20231221,
 		time = "stop",
 		type = 18,
@@ -12456,11 +11659,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_template
-
-	var_3_0[5141] = {
+	pg.base.activity_template[5141] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12488,11 +11687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_template
-
-	var_3_1[5142] = {
+	pg.base.activity_template[5142] = {
 		mark = 20231221,
 		time = "stop",
 		type = 63,
@@ -12519,11 +11714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_template
-
-	var_3_2[5143] = {
+	pg.base.activity_template[5143] = {
 		mark = 20231221,
 		time = "stop",
 		type = 86,
@@ -12560,11 +11751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_template
-
-	var_3_3[5144] = {
+	pg.base.activity_template[5144] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12593,11 +11780,7 @@ end)()
 			438
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_template
-
-	var_3_4[5145] = {
+	pg.base.activity_template[5145] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12613,11 +11796,7 @@ end)()
 			19637
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_template
-
-	var_3_5[5146] = {
+	pg.base.activity_template[5146] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12631,11 +11810,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_template
-
-	var_3_6[5147] = {
+	pg.base.activity_template[5147] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12655,11 +11830,7 @@ end)()
 			19657
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_template
-
-	var_3_7[5148] = {
+	pg.base.activity_template[5148] = {
 		mark = 20231221,
 		page_info = "",
 		time = "stop",
@@ -12673,11 +11844,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_template
-
-	var_3_8[5149] = {
+	pg.base.activity_template[5149] = {
 		mark = 20231221,
 		page_info = "",
 		type = 10,
@@ -12717,11 +11884,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_template
-
-	var_3_9[5150] = {
+	pg.base.activity_template[5150] = {
 		mark = 20231228,
 		time = "stop",
 		type = 86,
@@ -12754,11 +11917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_template
-
-	var_3_10[5151] = {
+	pg.base.activity_template[5151] = {
 		mark = 20231228,
 		page_info = "",
 		time = "stop",
@@ -12774,11 +11933,7 @@ end)()
 			19664
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_template
-
-	var_3_11[5154] = {
+	pg.base.activity_template[5154] = {
 		mark = 20240104,
 		time = "stop",
 		type = 57,
@@ -12795,11 +11950,7 @@ end)()
 			ui_name = "BeachGamePage"
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_template
-
-	var_3_12[5160] = {
+	pg.base.activity_template[5160] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -12815,11 +11966,7 @@ end)()
 			19665
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_template
-
-	var_3_13[5161] = {
+	pg.base.activity_template[5161] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -12833,11 +11980,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_template
-
-	var_3_14[5162] = {
+	pg.base.activity_template[5162] = {
 		mark = 20240111,
 		time = "stop",
 		type = 87,
@@ -12854,11 +11997,7 @@ end)()
 			ui_name = "DeXiQianShaoRePtPage"
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_template
-
-	var_3_15[5163] = {
+	pg.base.activity_template[5163] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -12876,11 +12015,7 @@ end)()
 			59521
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_template
-
-	var_3_16[5164] = {
+	pg.base.activity_template[5164] = {
 		mark = 20240111,
 		time = "stop",
 		type = 3,
@@ -12897,11 +12032,7 @@ end)()
 			ui_name = "HuttenV2LoginPage"
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_template
-
-	var_3_17[5165] = {
+	pg.base.activity_template[5165] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -12915,11 +12046,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_template
-
-	var_3_18[5166] = {
+	pg.base.activity_template[5166] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -12933,11 +12060,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_template
-
-	var_3_19[5167] = {
+	pg.base.activity_template[5167] = {
 		mark = 20240111,
 		time = "stop",
 		type = 12,
@@ -12964,11 +12087,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_template
-
-	var_3_20[5168] = {
+	pg.base.activity_template[5168] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -12994,11 +12113,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_template
-
-	var_3_21[5169] = {
+	pg.base.activity_template[5169] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -13033,11 +12148,7 @@ end)()
 			19685
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_template
-
-	var_3_22[5170] = {
+	pg.base.activity_template[5170] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -13051,11 +12162,7 @@ end)()
 		id = 5170,
 		page_core = ""
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_template
-
-	var_3_23[5171] = {
+	pg.base.activity_template[5171] = {
 		mark = 20240111,
 		time = "stop",
 		type = 74,
@@ -13072,11 +12179,7 @@ end)()
 			ui_name = "DexiV4PtPage"
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_template
-
-	var_3_24[5172] = {
+	pg.base.activity_template[5172] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -13095,11 +12198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_template
-
-	var_3_25[5173] = {
+	pg.base.activity_template[5173] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -13153,11 +12252,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_template
-
-	var_3_26[5174] = {
+	pg.base.activity_template[5174] = {
 		mark = 20240111,
 		page_info = "",
 		time = "stop",
@@ -13178,11 +12273,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_template
-
-	var_3_27[5175] = {
+	pg.base.activity_template[5175] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13201,11 +12292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_template
-
-	var_3_28[5176] = {
+	pg.base.activity_template[5176] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13224,11 +12311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_template
-
-	var_3_29[5177] = {
+	pg.base.activity_template[5177] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13253,11 +12336,7 @@ end)()
 			448
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_template
-
-	var_3_30[5178] = {
+	pg.base.activity_template[5178] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13297,11 +12376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_template
-
-	var_3_31[5179] = {
+	pg.base.activity_template[5179] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13315,11 +12390,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_template
-
-	var_3_32[5180] = {
+	pg.base.activity_template[5180] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13341,11 +12412,7 @@ end)()
 			19692
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_template
-
-	var_3_33[5181] = {
+	pg.base.activity_template[5181] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13376,11 +12443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_template
-
-	var_3_34[5183] = {
+	pg.base.activity_template[5183] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13394,11 +12457,7 @@ end)()
 		id = 5183,
 		page_core = ""
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_template
-
-	var_3_35[5184] = {
+	pg.base.activity_template[5184] = {
 		mark = 20240130,
 		time = "stop",
 		type = 86,
@@ -13431,11 +12490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_template
-
-	var_3_36[5185] = {
+	pg.base.activity_template[5185] = {
 		mark = 20240130,
 		time = "stop",
 		type = 74,
@@ -13454,11 +12509,7 @@ end)()
 			fireworkActID = 5186
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_template
-
-	var_3_37[5186] = {
+	pg.base.activity_template[5186] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13509,11 +12560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_template
-
-	var_3_38[5187] = {
+	pg.base.activity_template[5187] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13529,11 +12576,7 @@ end)()
 			19696
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_template
-
-	var_3_39[5188] = {
+	pg.base.activity_template[5188] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13566,11 +12609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_template
-
-	var_3_40[5189] = {
+	pg.base.activity_template[5189] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13615,11 +12654,7 @@ end)()
 			ui = "ColoringAnshanUI"
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_template
-
-	var_3_41[5190] = {
+	pg.base.activity_template[5190] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13652,11 +12687,7 @@ end)()
 			19714
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_template
-
-	var_3_42[5191] = {
+	pg.base.activity_template[5191] = {
 		mark = 20240130,
 		time = "stop",
 		type = 3,
@@ -13687,11 +12718,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_template
-
-	var_3_43[5192] = {
+	pg.base.activity_template[5192] = {
 		mark = 20240130,
 		time = "stop",
 		type = 18,
@@ -13737,11 +12764,7 @@ end)()
 			ui_name = "TaiyuanAlterItemPage"
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_template
-
-	var_3_44[5193] = {
+	pg.base.activity_template[5193] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13764,11 +12787,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_template
-
-	var_3_45[5194] = {
+	pg.base.activity_template[5194] = {
 		mark = 20240130,
 		time = "stop",
 		type = 74,
@@ -13789,11 +12808,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_template
-
-	var_3_46[5195] = {
+	pg.base.activity_template[5195] = {
 		mark = 20240130,
 		page_info = "",
 		time = "stop",
@@ -13834,11 +12849,7 @@ end)()
 			19754
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_template
-
-	var_3_47[5196] = {
+	pg.base.activity_template[5196] = {
 		mark = 20240206,
 		page_info = "",
 		time = "stop",
@@ -13854,11 +12865,7 @@ end)()
 			19755
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_template
-
-	var_3_48[5197] = {
+	pg.base.activity_template[5197] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -13874,11 +12881,7 @@ end)()
 			19823
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_template
-
-	var_3_49[5200] = {
+	pg.base.activity_template[5200] = {
 		mark = 20240206,
 		time = "stop",
 		type = 86,
@@ -13911,11 +12914,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_template
-	local var_3_51 = 5201
-	local var_3_52 = {
+	pg.base.activity_template[5201] = {
 		mark = 20240206,
 		page_info = "",
 		time = "stop",
@@ -13926,33 +12925,19 @@ end)()
 		config_client = "",
 		title_res_tag = "",
 		id = 5201,
-		page_core = ""
+		page_core = "",
+		config_data = {
+			{
+				defaultID,
+				312011
+			},
+			{
+				itemID,
+				44002
+			}
+		}
 	}
-	local var_3_53 = {}
-	local var_3_54 = {
-		nil,
-		312011
-	}
-
-	defaultID = var_5
-	var_3_54[1] = var_5
-	var_3_53[1] = var_3_54
-
-	local var_3_55 = {
-		nil,
-		44002
-	}
-
-	itemID = var_5
-	var_3_55[1] = var_5
-	var_3_53[2] = var_3_55
-	var_3_52.config_data = var_3_53
-	var_3_50[var_3_51] = var_3_52
-	pg = var_3_50
-
-	local var_3_56 = var_3_50.base.activity_template
-
-	var_3_56[5202] = {
+	pg.base.activity_template[5202] = {
 		mark = 20240222,
 		page_info = "",
 		time = "stop",
@@ -13968,11 +12953,7 @@ end)()
 			miniGame = 64
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_template
-
-	var_3_57[5210] = {
+	pg.base.activity_template[5210] = {
 		mark = 20240222,
 		time = "stop",
 		type = 69,
@@ -13991,11 +12972,7 @@ end)()
 			itemid = 42044
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_template
-
-	var_3_58[5211] = {
+	pg.base.activity_template[5211] = {
 		mark = 20240222,
 		time = "stop",
 		type = 87,
@@ -14012,11 +12989,7 @@ end)()
 			ui_name = "MaoxiV4FramePage"
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_template
-
-	var_3_59[5212] = {
+	pg.base.activity_template[5212] = {
 		mark = 20240222,
 		time = "stop",
 		type = 18,
@@ -14087,11 +13060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_template
-
-	var_3_60[5213] = {
+	pg.base.activity_template[5213] = {
 		mark = 20240222,
 		page_info = "",
 		time = "stop",
@@ -14105,11 +13074,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_template
-
-	var_3_61[5221] = {
+	pg.base.activity_template[5221] = {
 		mark = 20240229,
 		time = "stop",
 		type = 12,
@@ -14135,11 +13100,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_template
-
-	var_3_62[5222] = {
+	pg.base.activity_template[5222] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14164,11 +13125,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_template
-
-	var_3_63[5223] = {
+	pg.base.activity_template[5223] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14182,11 +13139,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_template
-
-	var_3_64[5224] = {
+	pg.base.activity_template[5224] = {
 		mark = 20240229,
 		time = "stop",
 		type = 74,
@@ -14230,11 +13183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_template
-
-	var_3_65[5225] = {
+	pg.base.activity_template[5225] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14272,11 +13221,7 @@ end)()
 			19823
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_template
-
-	var_3_66[5226] = {
+	pg.base.activity_template[5226] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14297,11 +13242,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_template
-
-	var_3_67[5227] = {
+	pg.base.activity_template[5227] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14315,11 +13256,7 @@ end)()
 		id = 5227,
 		page_core = ""
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_template
-
-	var_3_68[5228] = {
+	pg.base.activity_template[5228] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14341,11 +13278,7 @@ end)()
 			455
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_template
-
-	var_3_69[5229] = {
+	pg.base.activity_template[5229] = {
 		mark = 20240229,
 		time = "stop",
 		type = 74,
@@ -14362,11 +13295,7 @@ end)()
 			ui_name = "MaoxiV4PtPage"
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_template
-
-	var_3_70[5230] = {
+	pg.base.activity_template[5230] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14420,11 +13349,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_template
-
-	var_3_71[5231] = {
+	pg.base.activity_template[5231] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14443,11 +13368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_template
-
-	var_3_72[5232] = {
+	pg.base.activity_template[5232] = {
 		mark = 20240229,
 		page_info = "",
 		time = "stop",
@@ -14461,11 +13382,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_template
-
-	var_3_73[5233] = {
+	pg.base.activity_template[5233] = {
 		mark = 20240314,
 		time = "stop",
 		type = 12,
@@ -14491,11 +13408,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_template
-
-	var_3_74[5234] = {
+	pg.base.activity_template[5234] = {
 		mark = 20240314,
 		page_info = "",
 		time = "stop",
@@ -14525,11 +13438,7 @@ end)()
 			19838
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_template
-
-	var_3_75[5235] = {
+	pg.base.activity_template[5235] = {
 		mark = 20240314,
 		page_info = "",
 		type = 36,
@@ -14576,11 +13485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_template
-
-	var_3_76[5236] = {
+	pg.base.activity_template[5236] = {
 		mark = 20240314,
 		page_info = "",
 		type = 16,
@@ -14620,11 +13525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_template
-
-	var_3_77[5237] = {
+	pg.base.activity_template[5237] = {
 		mark = 20240314,
 		time = "stop",
 		type = 74,
@@ -14643,11 +13544,7 @@ end)()
 			linkActID = 5233
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_template
-
-	var_3_78[5238] = {
+	pg.base.activity_template[5238] = {
 		mark = 20240314,
 		page_info = "",
 		time = "stop",
@@ -14696,11 +13593,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_template
-
-	var_3_79[5239] = {
+	pg.base.activity_template[5239] = {
 		mark = 20240314,
 		page_info = "",
 		time = "stop",
@@ -14716,11 +13609,7 @@ end)()
 			19824
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_template
-
-	var_3_80[5240] = {
+	pg.base.activity_template[5240] = {
 		mark = 20240314,
 		page_info = "",
 		time = "stop",
@@ -14751,11 +13640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_template
-
-	var_3_81[5241] = {
+	pg.base.activity_template[5241] = {
 		mark = 20240314,
 		page_info = "",
 		time = "stop",
@@ -14773,11 +13658,7 @@ end)()
 			59535
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_template
-
-	var_3_82[5242] = {
+	pg.base.activity_template[5242] = {
 		mark = 20240314,
 		time = "stop",
 		type = 3,
@@ -14794,11 +13675,7 @@ end)()
 			ui_name = "YidaliSPV2LoginPage"
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_template
-
-	var_3_83[5243] = {
+	pg.base.activity_template[5243] = {
 		mark = 20240314,
 		time = "stop",
 		type = 3,
@@ -14833,11 +13710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_template
-
-	var_3_84[5244] = {
+	pg.base.activity_template[5244] = {
 		mark = 20240321,
 		page_info = "",
 		time = "stop",
@@ -14857,11 +13730,7 @@ end)()
 			10174
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_template
-
-	var_3_85[5245] = {
+	pg.base.activity_template[5245] = {
 		mark = 20240321,
 		page_info = "",
 		time = "stop",
@@ -14907,11 +13776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_template
-
-	var_3_86[5246] = {
+	pg.base.activity_template[5246] = {
 		mark = 20240321,
 		page_info = "",
 		time = "stop",
@@ -14925,11 +13790,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_template
-
-	var_3_87[5247] = {
+	pg.base.activity_template[5247] = {
 		mark = 20240321,
 		time = "stop",
 		type = 74,
@@ -14971,11 +13832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_template
-
-	var_3_88[5248] = {
+	pg.base.activity_template[5248] = {
 		mark = 20240321,
 		page_info = "",
 		time = "stop",
@@ -15006,11 +13863,7 @@ end)()
 			19854
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_template
-
-	var_3_89[5249] = {
+	pg.base.activity_template[5249] = {
 		mark = 20240321,
 		page_info = "",
 		time = "stop",
@@ -15024,11 +13877,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_template
-
-	var_3_90[5260] = {
+	pg.base.activity_template[5260] = {
 		mark = 20240328,
 		time = "stop",
 		type = 111,
@@ -15054,11 +13903,7 @@ end)()
 			scene = "OTHERWORLD_BACKHILL"
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_template
-
-	var_3_91[5261] = {
+	pg.base.activity_template[5261] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15099,11 +13944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_template
-
-	var_3_92[5262] = {
+	pg.base.activity_template[5262] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15121,11 +13962,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_template
-
-	var_3_93[5263] = {
+	pg.base.activity_template[5263] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15141,11 +13978,7 @@ end)()
 			19855
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_template
-
-	var_3_94[5264] = {
+	pg.base.activity_template[5264] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15173,11 +14006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_template
-
-	var_3_95[5265] = {
+	pg.base.activity_template[5265] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15234,11 +14063,7 @@ end)()
 			open_story = "CONGLINGKAISHIMOWANG1"
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_template
-
-	var_3_96[5266] = {
+	pg.base.activity_template[5266] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15252,11 +14077,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_template
-
-	var_3_97[5267] = {
+	pg.base.activity_template[5267] = {
 		mark = 20240328,
 		time = "stop",
 		type = 21,
@@ -15281,11 +14102,7 @@ end)()
 			[1] = {}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_template
-
-	var_3_98[5268] = {
+	pg.base.activity_template[5268] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15299,11 +14116,7 @@ end)()
 		id = 5268,
 		page_core = ""
 	}
-	pg = var_3_98
-
-	local var_3_99 = var_3_98.base.activity_template
-
-	var_3_99[5269] = {
+	pg.base.activity_template[5269] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15392,11 +14205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_99
-
-	local var_3_100 = var_3_99.base.activity_template
-
-	var_3_100[5270] = {
+	pg.base.activity_template[5270] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15410,11 +14219,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_3_100
-
-	local var_3_101 = var_3_100.base.activity_template
-
-	var_3_101[5271] = {
+	pg.base.activity_template[5271] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15433,11 +14238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_101
-
-	local var_3_102 = var_3_101.base.activity_template
-
-	var_3_102[5272] = {
+	pg.base.activity_template[5272] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15453,11 +14254,7 @@ end)()
 			19889
 		}
 	}
-	pg = var_3_102
-
-	local var_3_103 = var_3_102.base.activity_template
-
-	var_3_103[5273] = {
+	pg.base.activity_template[5273] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15486,8 +14283,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_103
-	var_3_103.base.activity_template[5274] = {
+	pg.base.activity_template[5274] = {
 		mark = 20240328,
 		page_info = "",
 		time = "stop",
@@ -15505,11 +14301,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_template
-
-	var_4_0[5280] = {
+	pg.base.activity_template[5280] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15525,11 +14317,7 @@ end)()
 			19919
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_template
-
-	var_4_1[5281] = {
+	pg.base.activity_template[5281] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15543,11 +14331,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_template
-
-	var_4_2[5282] = {
+	pg.base.activity_template[5282] = {
 		mark = 20240411,
 		time = "stop",
 		type = 87,
@@ -15564,11 +14348,7 @@ end)()
 			ui_name = "MaoxiV3FrameLightPage"
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_template
-
-	var_4_3[5283] = {
+	pg.base.activity_template[5283] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15586,11 +14366,7 @@ end)()
 			59546
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_template
-
-	var_4_4[5284] = {
+	pg.base.activity_template[5284] = {
 		mark = 20240411,
 		time = "stop",
 		type = 3,
@@ -15607,11 +14383,7 @@ end)()
 			ui_name = "LoginSignRe1Page"
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_template
-
-	var_4_5[5285] = {
+	pg.base.activity_template[5285] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15625,11 +14397,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_template
-
-	var_4_6[5286] = {
+	pg.base.activity_template[5286] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15643,11 +14411,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_template
-
-	var_4_7[5287] = {
+	pg.base.activity_template[5287] = {
 		mark = 20240411,
 		time = "stop",
 		type = 12,
@@ -15673,11 +14437,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_template
-
-	var_4_8[5288] = {
+	pg.base.activity_template[5288] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15702,11 +14462,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_template
-
-	var_4_9[5289] = {
+	pg.base.activity_template[5289] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15741,11 +14497,7 @@ end)()
 			19919
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_template
-
-	var_4_10[5290] = {
+	pg.base.activity_template[5290] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15759,11 +14511,7 @@ end)()
 		id = 5290,
 		page_core = ""
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_template
-
-	var_4_11[5291] = {
+	pg.base.activity_template[5291] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15784,11 +14532,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_template
-
-	var_4_12[5292] = {
+	pg.base.activity_template[5292] = {
 		mark = 20240411,
 		time = "stop",
 		type = 74,
@@ -15805,11 +14549,7 @@ end)()
 			ui_name = "MaoxiV3PtPage"
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_template
-
-	var_4_13[5293] = {
+	pg.base.activity_template[5293] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15858,11 +14598,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_template
-
-	var_4_14[5294] = {
+	pg.base.activity_template[5294] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15881,11 +14617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_template
-
-	var_4_15[5295] = {
+	pg.base.activity_template[5295] = {
 		mark = 20240411,
 		time = "stop",
 		type = 86,
@@ -15906,11 +14638,7 @@ end)()
 		},
 		config_client = {}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_template
-
-	var_4_16[5296] = {
+	pg.base.activity_template[5296] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -15931,11 +14659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_template
-
-	var_4_17[5297] = {
+	pg.base.activity_template[5297] = {
 		mark = 20240411,
 		time = "stop",
 		type = 74,
@@ -15954,11 +14678,7 @@ end)()
 			task_act_id = 5298
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_template
-
-	var_4_18[5298] = {
+	pg.base.activity_template[5298] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -16010,11 +14730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_template
-
-	var_4_19[5299] = {
+	pg.base.activity_template[5299] = {
 		mark = 20240411,
 		page_info = "",
 		time = "stop",
@@ -16031,11 +14747,7 @@ end)()
 			19956
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_template
-
-	var_4_20[5305] = {
+	pg.base.activity_template[5305] = {
 		mark = 20240418,
 		time = "stop",
 		type = 18,
@@ -16105,11 +14817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_template
-
-	var_4_21[5301] = {
+	pg.base.activity_template[5301] = {
 		mark = 20240425,
 		time = "stop",
 		type = 12,
@@ -16142,11 +14850,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_template
-
-	var_4_22[5302] = {
+	pg.base.activity_template[5302] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16160,11 +14864,7 @@ end)()
 		id = 5302,
 		page_core = ""
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_template
-
-	var_4_23[5303] = {
+	pg.base.activity_template[5303] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16185,11 +14885,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_template
-
-	var_4_24[5306] = {
+	pg.base.activity_template[5306] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16210,11 +14906,7 @@ end)()
 			465
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_template
-
-	var_4_25[5307] = {
+	pg.base.activity_template[5307] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16247,11 +14939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_template
-
-	var_4_26[5308] = {
+	pg.base.activity_template[5308] = {
 		mark = 20240425,
 		time = "stop",
 		type = 74,
@@ -16270,11 +14958,7 @@ end)()
 			linkActID = 5301
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_template
-
-	var_4_27[5309] = {
+	pg.base.activity_template[5309] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16317,11 +15001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_template
-
-	var_4_28[5310] = {
+	pg.base.activity_template[5310] = {
 		mark = 20240425,
 		time = "stop",
 		type = 57,
@@ -16348,11 +15028,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_template
-
-	var_4_29[5311] = {
+	pg.base.activity_template[5311] = {
 		mark = 20240425,
 		time = "stop",
 		type = 86,
@@ -16385,11 +15061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_template
-
-	var_4_30[5312] = {
+	pg.base.activity_template[5312] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16436,11 +15108,7 @@ end)()
 			20017
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_template
-
-	var_4_31[5313] = {
+	pg.base.activity_template[5313] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16459,11 +15127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_template
-
-	var_4_32[5314] = {
+	pg.base.activity_template[5314] = {
 		mark = 20240425,
 		time = "stop",
 		type = 74,
@@ -16480,11 +15144,7 @@ end)()
 			ui_name = "XiaoXinNongPtPage"
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_template
-
-	var_4_33[5315] = {
+	pg.base.activity_template[5315] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16505,11 +15165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_template
-
-	var_4_34[5316] = {
+	pg.base.activity_template[5316] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16523,11 +15179,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_template
-
-	var_4_35[5317] = {
+	pg.base.activity_template[5317] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -16580,11 +15232,7 @@ end)()
 			painting = "mougen_pt"
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_template
-
-	var_4_36[5318] = {
+	pg.base.activity_template[5318] = {
 		mark = 20240516,
 		time = "stop",
 		type = 69,
@@ -16603,11 +15251,7 @@ end)()
 			itemid = 42045
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_template
-
-	var_4_37[5320] = {
+	pg.base.activity_template[5320] = {
 		mark = 20240509,
 		page_info = "",
 		time = "stop",
@@ -16628,11 +15272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_template
-
-	var_4_38[5321] = {
+	pg.base.activity_template[5321] = {
 		mark = 20240509,
 		time = "stop",
 		type = 74,
@@ -16663,11 +15303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_template
-
-	var_4_39[5322] = {
+	pg.base.activity_template[5322] = {
 		mark = 20240516,
 		page_info = "",
 		time = "stop",
@@ -16681,11 +15317,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_template
-
-	var_4_40[5323] = {
+	pg.base.activity_template[5323] = {
 		mark = 20240516,
 		page_info = "",
 		time = "stop",
@@ -16713,11 +15345,7 @@ end)()
 			478
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_template
-
-	var_4_41[5324] = {
+	pg.base.activity_template[5324] = {
 		mark = 20240516,
 		time = "stop",
 		type = 18,
@@ -16769,11 +15397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_template
-
-	var_4_42[5331] = {
+	pg.base.activity_template[5331] = {
 		mark = 20240521,
 		time = "stop",
 		type = 12,
@@ -16799,11 +15423,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_template
-
-	var_4_43[5332] = {
+	pg.base.activity_template[5332] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -16828,11 +15448,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_template
-
-	var_4_44[5333] = {
+	pg.base.activity_template[5333] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -16846,11 +15462,7 @@ end)()
 		id = 5333,
 		page_core = ""
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_template
-
-	var_4_45[5334] = {
+	pg.base.activity_template[5334] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -16871,11 +15483,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_template
-
-	var_4_46[5335] = {
+	pg.base.activity_template[5335] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17071,11 +15679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_template
-
-	var_4_47[5336] = {
+	pg.base.activity_template[5336] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17089,11 +15693,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_template
-
-	var_4_48[5337] = {
+	pg.base.activity_template[5337] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17113,11 +15713,7 @@ end)()
 			20181
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_template
-
-	var_4_49[5339] = {
+	pg.base.activity_template[5339] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17135,11 +15731,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_template
-
-	var_4_50[5340] = {
+	pg.base.activity_template[5340] = {
 		mark = 20240516,
 		time = "stop",
 		type = 87,
@@ -17156,11 +15748,7 @@ end)()
 			ui_name = "FaxiV4FramePage"
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_template
-
-	var_4_51[5341] = {
+	pg.base.activity_template[5341] = {
 		mark = 20240516,
 		time = "stop",
 		type = 18,
@@ -17220,11 +15808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_template
-
-	var_4_52[5342] = {
+	pg.base.activity_template[5342] = {
 		mark = 20240516,
 		page_info = "",
 		time = "stop",
@@ -17238,11 +15822,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_template
-
-	var_4_53[5343] = {
+	pg.base.activity_template[5343] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17261,11 +15841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_template
-
-	var_4_54[5344] = {
+	pg.base.activity_template[5344] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17303,11 +15879,7 @@ end)()
 			20107
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_template
-
-	var_4_55[5346] = {
+	pg.base.activity_template[5346] = {
 		mark = 20240521,
 		time = "stop",
 		type = 74,
@@ -17324,11 +15896,7 @@ end)()
 			ui_name = "AersasiPtPage"
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_template
-
-	var_4_56[5347] = {
+	pg.base.activity_template[5347] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17342,11 +15910,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_template
-
-	var_4_57[5348] = {
+	pg.base.activity_template[5348] = {
 		mark = 20240521,
 		time = "stop",
 		type = 3,
@@ -17363,11 +15927,7 @@ end)()
 			ui_name = "AnniversarySevenLoginPage"
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_template
-
-	var_4_58[5349] = {
+	pg.base.activity_template[5349] = {
 		mark = 20240521,
 		time = "stop",
 		type = 56,
@@ -17385,11 +15945,7 @@ end)()
 			ui_name = "returnawardpage"
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_template
-
-	var_4_59[5350] = {
+	pg.base.activity_template[5350] = {
 		mark = 20240521,
 		time = "stop",
 		type = 70,
@@ -17410,11 +15966,7 @@ end)()
 			trimRed = true
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_template
-
-	var_4_60[5351] = {
+	pg.base.activity_template[5351] = {
 		mark = 20240521,
 		time = "stop",
 		type = 115,
@@ -17503,11 +16055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_template
-
-	var_4_61[5352] = {
+	pg.base.activity_template[5352] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17524,11 +16072,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_template
-
-	var_4_62[5353] = {
+	pg.base.activity_template[5353] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17542,11 +16086,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_template
-
-	var_4_63[5354] = {
+	pg.base.activity_template[5354] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17605,11 +16145,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_template
-
-	var_4_64[5355] = {
+	pg.base.activity_template[5355] = {
 		mark = 20240521,
 		page_info = "",
 		time = "stop",
@@ -17623,11 +16159,7 @@ end)()
 		id = 5355,
 		page_core = ""
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_template
-
-	var_4_65[5360] = {
+	pg.base.activity_template[5360] = {
 		mark = 20240530,
 		time = "stop",
 		type = 18,
@@ -17678,11 +16210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_template
-
-	var_4_66[5361] = {
+	pg.base.activity_template[5361] = {
 		mark = 20240530,
 		page_info = "",
 		time = "stop",
@@ -17703,11 +16231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_template
-
-	var_4_67[5362] = {
+	pg.base.activity_template[5362] = {
 		mark = 20240530,
 		time = "stop",
 		type = 74,
@@ -17724,11 +16248,7 @@ end)()
 			ui_name = "XiaoDaDiPtPage"
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_template
-
-	var_4_68[5364] = {
+	pg.base.activity_template[5364] = {
 		mark = 20240606,
 		time = "stop",
 		type = 18,
@@ -17786,11 +16306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_template
-
-	var_4_69[5365] = {
+	pg.base.activity_template[5365] = {
 		mark = 20240613,
 		time = "stop",
 		type = 18,
@@ -17836,11 +16352,7 @@ end)()
 			ui_name = "KelifulanSkinRePage"
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_template
-
-	var_4_70[5366] = {
+	pg.base.activity_template[5366] = {
 		mark = 20240613,
 		page_info = "",
 		time = "stop",
@@ -17860,11 +16372,7 @@ end)()
 			10179
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_template
-
-	var_4_71[5368] = {
+	pg.base.activity_template[5368] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -17878,11 +16386,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_template
-
-	var_4_72[5369] = {
+	pg.base.activity_template[5369] = {
 		mark = 20240620,
 		type = 87,
 		login_pop = 0,
@@ -17925,11 +16429,7 @@ end)()
 			ui_name = "DexiV4FrameReRePage"
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_template
-
-	var_4_73[5370] = {
+	pg.base.activity_template[5370] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -17947,11 +16447,7 @@ end)()
 			59590
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_template
-
-	var_4_74[5371] = {
+	pg.base.activity_template[5371] = {
 		mark = 20240620,
 		time = "stop",
 		type = 3,
@@ -17968,11 +16464,7 @@ end)()
 			ui_name = "GongHaiLoginPage"
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_template
-
-	var_4_75[5372] = {
+	pg.base.activity_template[5372] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -17986,11 +16478,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_template
-
-	var_4_76[5374] = {
+	pg.base.activity_template[5374] = {
 		mark = 20240620,
 		time = "stop",
 		type = 12,
@@ -18016,11 +16504,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_template
-
-	var_4_77[5375] = {
+	pg.base.activity_template[5375] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -18045,11 +16529,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_template
-
-	var_4_78[5376] = {
+	pg.base.activity_template[5376] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -18083,11 +16563,7 @@ end)()
 			20242
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_template
-
-	var_4_79[5377] = {
+	pg.base.activity_template[5377] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -18101,11 +16577,7 @@ end)()
 		id = 5377,
 		page_core = ""
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_template
-
-	var_4_80[5378] = {
+	pg.base.activity_template[5378] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -18126,11 +16598,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_template
-
-	var_4_81[5379] = {
+	pg.base.activity_template[5379] = {
 		mark = 20240620,
 		type = 74,
 		login_pop = 0,
@@ -18175,11 +16643,7 @@ end)()
 			linkActID = 5374
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_template
-
-	var_4_82[5380] = {
+	pg.base.activity_template[5380] = {
 		mark = 20240620,
 		page_info = "",
 		type = 14,
@@ -18260,11 +16724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_template
-
-	var_4_83[5381] = {
+	pg.base.activity_template[5381] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -18283,11 +16743,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_template
-
-	var_4_84[5401] = {
+	pg.base.activity_template[5401] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -18301,11 +16757,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_template
-
-	var_4_85[5402] = {
+	pg.base.activity_template[5402] = {
 		mark = 20240627,
 		time = "stop",
 		type = 93,
@@ -18347,11 +16799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_template
-
-	var_4_86[5403] = {
+	pg.base.activity_template[5403] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -18365,11 +16813,7 @@ end)()
 		id = 5403,
 		page_core = ""
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_template
-
-	var_4_87[5404] = {
+	pg.base.activity_template[5404] = {
 		mark = 20240627,
 		page_info = "",
 		type = 74,
@@ -18412,11 +16856,7 @@ end)()
 			linkActID = 5402
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_template
-
-	var_4_88[5405] = {
+	pg.base.activity_template[5405] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -18435,11 +16875,7 @@ end)()
 			482
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_template
-
-	var_4_89[5406] = {
+	pg.base.activity_template[5406] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -18470,11 +16906,7 @@ end)()
 			20311
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_template
-
-	var_4_90[5408] = {
+	pg.base.activity_template[5408] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -18488,11 +16920,7 @@ end)()
 		id = 5408,
 		page_core = ""
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_template
-
-	var_4_91[5409] = {
+	pg.base.activity_template[5409] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -18518,11 +16946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_template
-
-	var_4_92[5410] = {
+	pg.base.activity_template[5410] = {
 		mark = 20240620,
 		page_info = "",
 		time = "stop",
@@ -18541,11 +16965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_template
-
-	var_4_93[5415] = {
+	pg.base.activity_template[5415] = {
 		mark = 20240711,
 		time = "stop",
 		type = 18,
@@ -18591,11 +17011,7 @@ end)()
 			ui_name = "HaitianSkinPage"
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_template
-
-	var_4_94[5418] = {
+	pg.base.activity_template[5418] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18614,11 +17030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_template
-
-	var_4_95[5421] = {
+	pg.base.activity_template[5421] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18632,11 +17044,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_template
-
-	var_4_96[5422] = {
+	pg.base.activity_template[5422] = {
 		mark = 20240718,
 		time = "stop",
 		type = 87,
@@ -18653,11 +17061,7 @@ end)()
 			ui_name = "YingxiV3FrameRePage"
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_template
-
-	var_4_97[5423] = {
+	pg.base.activity_template[5423] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18675,11 +17079,7 @@ end)()
 			59597
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_template
-
-	var_4_98[5424] = {
+	pg.base.activity_template[5424] = {
 		mark = 20240718,
 		time = "stop",
 		type = 3,
@@ -18696,8 +17096,7 @@ end)()
 			ui_name = "LoginSignRe2Page"
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.activity_template[5425] = {
+	pg.base.activity_template[5425] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18715,11 +17114,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_template
-
-	var_5_0[5426] = {
+	pg.base.activity_template[5426] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18733,11 +17128,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_template
-
-	var_5_1[5427] = {
+	pg.base.activity_template[5427] = {
 		mark = 20240718,
 		time = "stop",
 		type = 12,
@@ -18763,11 +17154,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_template
-
-	var_5_2[5428] = {
+	pg.base.activity_template[5428] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18792,11 +17179,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_template
-
-	var_5_3[5429] = {
+	pg.base.activity_template[5429] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18831,11 +17214,7 @@ end)()
 			20360
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.activity_template
-
-	var_5_4[5430] = {
+	pg.base.activity_template[5430] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18849,11 +17228,7 @@ end)()
 		id = 5430,
 		page_core = ""
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.activity_template
-
-	var_5_5[5431] = {
+	pg.base.activity_template[5431] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18874,11 +17249,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.activity_template
-
-	var_5_6[5432] = {
+	pg.base.activity_template[5432] = {
 		mark = 20240718,
 		time = "stop",
 		type = 74,
@@ -18895,11 +17266,7 @@ end)()
 			ui_name = "YingxiV3PtRepage"
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.activity_template
-
-	var_5_7[5433] = {
+	pg.base.activity_template[5433] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18949,11 +17316,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.activity_template
-
-	var_5_8[5434] = {
+	pg.base.activity_template[5434] = {
 		mark = 20240718,
 		page_info = "",
 		time = "stop",
@@ -18972,11 +17335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.activity_template
-
-	var_5_9[5436] = {
+	pg.base.activity_template[5436] = {
 		mark = 20240725,
 		time = "stop",
 		type = 18,
@@ -19015,11 +17374,7 @@ end)()
 			ui_name = "JamaicaSkinRePage"
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.activity_template
-
-	var_5_10[5460] = {
+	pg.base.activity_template[5460] = {
 		mark = 20240725,
 		time = "stop",
 		type = 51,
@@ -19036,11 +17391,7 @@ end)()
 			ui_name = "MonopolyCar2024Page"
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.activity_template
-
-	var_5_11[5461] = {
+	pg.base.activity_template[5461] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19056,11 +17407,7 @@ end)()
 			20373
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.activity_template
-
-	var_5_12[5501] = {
+	pg.base.activity_template[5501] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19086,11 +17433,7 @@ end)()
 			task_id = 20374
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.activity_template
-
-	var_5_13[5502] = {
+	pg.base.activity_template[5502] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19108,11 +17451,7 @@ end)()
 			485
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.activity_template
-
-	var_5_14[5503] = {
+	pg.base.activity_template[5503] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19133,11 +17472,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.activity_template
-
-	var_5_15[5504] = {
+	pg.base.activity_template[5504] = {
 		mark = 20240725,
 		time = "stop",
 		type = 86,
@@ -19170,11 +17505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.activity_template
-
-	var_5_16[5505] = {
+	pg.base.activity_template[5505] = {
 		mark = 20240725,
 		time = "stop",
 		type = 74,
@@ -19193,11 +17524,7 @@ end)()
 			boostLinkActID = 5506
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.activity_template
-
-	var_5_17[5506] = {
+	pg.base.activity_template[5506] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19215,11 +17542,7 @@ end)()
 			desc = "sitelasibao_expup_desc"
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.activity_template
-
-	var_5_18[5507] = {
+	pg.base.activity_template[5507] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19233,11 +17556,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.activity_template
-
-	var_5_19[5508] = {
+	pg.base.activity_template[5508] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19288,11 +17607,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.activity_template
-
-	var_5_20[5509] = {
+	pg.base.activity_template[5509] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19322,11 +17637,7 @@ end)()
 			20374
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.activity_template
-
-	var_5_21[5510] = {
+	pg.base.activity_template[5510] = {
 		mark = 20240725,
 		page_info = "",
 		time = "stop",
@@ -19340,11 +17651,7 @@ end)()
 		id = 5510,
 		page_core = ""
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.activity_template
-
-	var_5_22[5511] = {
+	pg.base.activity_template[5511] = {
 		mark = 20240808,
 		time = "stop",
 		type = 69,
@@ -19363,11 +17670,7 @@ end)()
 			itemid = 42042
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.activity_template
-
-	var_5_23[5512] = {
+	pg.base.activity_template[5512] = {
 		mark = 20240808,
 		time = "stop",
 		type = 18,
@@ -19437,11 +17740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.activity_template
-
-	var_5_24[5513] = {
+	pg.base.activity_template[5513] = {
 		mark = 20240808,
 		time = "stop",
 		type = 87,
@@ -19458,11 +17757,7 @@ end)()
 			ui_name = "MeixiV5FramePage"
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.activity_template
-
-	var_5_25[5514] = {
+	pg.base.activity_template[5514] = {
 		mark = 20240808,
 		page_info = "",
 		time = "stop",
@@ -19476,11 +17771,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.activity_template
-
-	var_5_26[5521] = {
+	pg.base.activity_template[5521] = {
 		mark = 20240815,
 		time = "stop",
 		type = 12,
@@ -19506,11 +17797,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.activity_template
-
-	var_5_27[5522] = {
+	pg.base.activity_template[5522] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19535,11 +17822,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.activity_template
-
-	var_5_28[5523] = {
+	pg.base.activity_template[5523] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19599,11 +17882,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.activity_template
-
-	var_5_29[5524] = {
+	pg.base.activity_template[5524] = {
 		mark = 20240815,
 		time = "stop",
 		type = 74,
@@ -19620,11 +17899,7 @@ end)()
 			ui_name = "PittsburghPtPage"
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.activity_template
-
-	var_5_30[5525] = {
+	pg.base.activity_template[5525] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19643,11 +17918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.activity_template
-
-	var_5_31[5526] = {
+	pg.base.activity_template[5526] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19684,11 +17955,7 @@ end)()
 			20440
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.activity_template
-
-	var_5_32[5528] = {
+	pg.base.activity_template[5528] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19702,11 +17969,7 @@ end)()
 		id = 5528,
 		page_core = ""
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.activity_template
-
-	var_5_33[5529] = {
+	pg.base.activity_template[5529] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19727,11 +17990,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.activity_template
-
-	var_5_34[5530] = {
+	pg.base.activity_template[5530] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19745,11 +18004,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.activity_template
-
-	var_5_35[5531] = {
+	pg.base.activity_template[5531] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19802,11 +18057,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.activity_template
-
-	var_5_36[5532] = {
+	pg.base.activity_template[5532] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19820,11 +18071,7 @@ end)()
 		id = 5532,
 		page_core = ""
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.activity_template
-
-	var_5_37[5533] = {
+	pg.base.activity_template[5533] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19844,11 +18091,7 @@ end)()
 			490
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.activity_template
-
-	var_5_38[5534] = {
+	pg.base.activity_template[5534] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19890,11 +18133,7 @@ end)()
 			20469
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.activity_template
-
-	var_5_39[5535] = {
+	pg.base.activity_template[5535] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19929,11 +18168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.activity_template
-
-	var_5_40[5536] = {
+	pg.base.activity_template[5536] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -19960,11 +18195,7 @@ end)()
 			20497
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.activity_template
-
-	var_5_41[5537] = {
+	pg.base.activity_template[5537] = {
 		mark = 20240815,
 		time = "stop",
 		type = 18,
@@ -20010,11 +18241,7 @@ end)()
 			ui_name = "AierdeliqiAlterItemPage"
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.activity_template
-
-	var_5_42[5541] = {
+	pg.base.activity_template[5541] = {
 		mark = 20240829,
 		page_info = "",
 		time = "stop",
@@ -20036,11 +18263,7 @@ end)()
 			task_id = 20498
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.activity_template
-
-	var_5_43[5542] = {
+	pg.base.activity_template[5542] = {
 		mark = 20240829,
 		page_info = "",
 		time = "stop",
@@ -20063,11 +18286,7 @@ end)()
 			20498
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.activity_template
-
-	var_5_44[5543] = {
+	pg.base.activity_template[5543] = {
 		mark = 20240829,
 		time = "stop",
 		type = 74,
@@ -20084,11 +18303,7 @@ end)()
 			ui_name = "RuiFengSpPage"
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.activity_template
-
-	var_5_45[5544] = {
+	pg.base.activity_template[5544] = {
 		mark = 20240829,
 		page_info = "",
 		time = "stop",
@@ -20102,11 +18317,7 @@ end)()
 		id = 5544,
 		page_core = ""
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.activity_template
-
-	var_5_46[5545] = {
+	pg.base.activity_template[5545] = {
 		mark = 20240829,
 		page_info = "",
 		time = "stop",
@@ -20122,11 +18333,7 @@ end)()
 			491
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.activity_template
-
-	var_5_47[5546] = {
+	pg.base.activity_template[5546] = {
 		mark = 20240829,
 		page_info = "",
 		time = "stop",
@@ -20152,11 +18359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.activity_template
-
-	var_5_48[5547] = {
+	pg.base.activity_template[5547] = {
 		mark = 20240905,
 		page_info = "",
 		time = "stop",
@@ -20176,11 +18379,7 @@ end)()
 			10184
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.activity_template
-
-	var_5_49[5548] = {
+	pg.base.activity_template[5548] = {
 		mark = 20240905,
 		time = "stop",
 		type = 18,
@@ -20231,11 +18430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.activity_template
-
-	var_5_50[5549] = {
+	pg.base.activity_template[5549] = {
 		mark = 20240815,
 		page_info = "",
 		time = "stop",
@@ -20263,11 +18458,7 @@ end)()
 			504
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.activity_template
-
-	var_5_51[5550] = {
+	pg.base.activity_template[5550] = {
 		mark = 20240905,
 		time = "stop",
 		type = 69,
@@ -20286,11 +18477,7 @@ end)()
 			itemid = 42041
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.activity_template
-
-	var_5_52[5551] = {
+	pg.base.activity_template[5551] = {
 		mark = 20240905,
 		time = "stop",
 		type = 18,
@@ -20360,11 +18547,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.activity_template
-
-	var_5_53[5552] = {
+	pg.base.activity_template[5552] = {
 		mark = 20240905,
 		time = "stop",
 		type = 87,
@@ -20381,11 +18564,7 @@ end)()
 			ui_name = "AnniV5FramePage"
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.activity_template
-
-	var_5_54[5553] = {
+	pg.base.activity_template[5553] = {
 		mark = 20240905,
 		page_info = "",
 		time = "stop",
@@ -20399,11 +18578,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.activity_template
-
-	var_5_55[5560] = {
+	pg.base.activity_template[5560] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20420,11 +18595,7 @@ end)()
 			preActID = 5548
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.activity_template
-
-	var_5_56[5561] = {
+	pg.base.activity_template[5561] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20442,11 +18613,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.activity_template
-
-	var_5_57[5562] = {
+	pg.base.activity_template[5562] = {
 		mark = 20240912,
 		time = "stop",
 		type = 12,
@@ -20473,11 +18640,7 @@ end)()
 			task_id = 20593
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.activity_template
-
-	var_5_58[5563] = {
+	pg.base.activity_template[5563] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20504,11 +18667,7 @@ end)()
 			task_id = 20593
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.activity_template
-
-	var_5_59[5564] = {
+	pg.base.activity_template[5564] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20522,11 +18681,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.activity_template
-
-	var_5_60[5565] = {
+	pg.base.activity_template[5565] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20540,11 +18695,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.activity_template
-
-	var_5_61[5566] = {
+	pg.base.activity_template[5566] = {
 		mark = 20240912,
 		time = "stop",
 		type = 74,
@@ -20561,11 +18712,7 @@ end)()
 			ui_name = "Jp7thPtPage"
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.activity_template
-
-	var_5_62[5567] = {
+	pg.base.activity_template[5567] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20584,11 +18731,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.activity_template
-
-	var_5_63[5568] = {
+	pg.base.activity_template[5568] = {
 		mark = 20240912,
 		time = "stop",
 		type = 70,
@@ -20609,11 +18752,7 @@ end)()
 			trimRed = true
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.activity_template
-
-	var_5_64[5569] = {
+	pg.base.activity_template[5569] = {
 		mark = 20240912,
 		time = "stop",
 		type = 3,
@@ -20630,11 +18769,7 @@ end)()
 			ui_name = "AnniversarySevenLoginJPPage"
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.activity_template
-
-	var_5_65[5570] = {
+	pg.base.activity_template[5570] = {
 		mark = 20240912,
 		time = "stop",
 		type = 56,
@@ -20652,11 +18787,7 @@ end)()
 			ui_name = "returnawardpage"
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.activity_template
-
-	var_5_66[5572] = {
+	pg.base.activity_template[5572] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20714,11 +18845,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.activity_template
-
-	var_5_67[5573] = {
+	pg.base.activity_template[5573] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20735,11 +18862,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.activity_template
-
-	var_5_68[5574] = {
+	pg.base.activity_template[5574] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20753,11 +18876,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.activity_template
-
-	var_5_69[5575] = {
+	pg.base.activity_template[5575] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20771,11 +18890,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.activity_template
-
-	var_5_70[5576] = {
+	pg.base.activity_template[5576] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20789,11 +18904,7 @@ end)()
 		id = 5576,
 		page_core = ""
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.activity_template
-
-	var_5_71[5577] = {
+	pg.base.activity_template[5577] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20814,11 +18925,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.activity_template
-
-	var_5_72[5579] = {
+	pg.base.activity_template[5579] = {
 		mark = 20240912,
 		page_info = "",
 		time = "stop",
@@ -20836,11 +18943,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.activity_template
-
-	var_5_73[5581] = {
+	pg.base.activity_template[5581] = {
 		mark = 20240919,
 		time = "stop",
 		type = 18,
@@ -20898,11 +19001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.activity_template
-
-	var_5_74[5583] = {
+	pg.base.activity_template[5583] = {
 		mark = 20240926,
 		time = "stop",
 		type = 18,
@@ -20948,11 +19047,7 @@ end)()
 			ui_name = "JavelinDressSkinPage"
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.activity_template
-
-	var_5_75[5585] = {
+	pg.base.activity_template[5585] = {
 		mark = 20241010,
 		time = "stop",
 		type = 18,
@@ -20998,11 +19093,7 @@ end)()
 			ui_name = "SaDingSkinPage"
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.activity_template
-
-	var_5_76[5591] = {
+	pg.base.activity_template[5591] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21021,11 +19112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.activity_template
-
-	var_5_77[5592] = {
+	pg.base.activity_template[5592] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21039,11 +19126,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.activity_template
-
-	var_5_78[5593] = {
+	pg.base.activity_template[5593] = {
 		mark = 20241017,
 		time = "stop",
 		type = 87,
@@ -21060,11 +19143,7 @@ end)()
 			ui_name = "YidaliV3FrameRePage"
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.activity_template
-
-	var_5_79[5594] = {
+	pg.base.activity_template[5594] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21082,11 +19161,7 @@ end)()
 			65034
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.activity_template
-
-	var_5_80[5595] = {
+	pg.base.activity_template[5595] = {
 		mark = 20241017,
 		time = "stop",
 		type = 3,
@@ -21103,11 +19178,7 @@ end)()
 			ui_name = "Yidaliv3LoginRePage"
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.activity_template
-
-	var_5_81[5596] = {
+	pg.base.activity_template[5596] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21121,11 +19192,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.activity_template
-
-	var_5_82[5597] = {
+	pg.base.activity_template[5597] = {
 		mark = 20241017,
 		time = "stop",
 		type = 12,
@@ -21151,11 +19218,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.activity_template
-
-	var_5_83[5598] = {
+	pg.base.activity_template[5598] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21180,11 +19243,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.activity_template
-
-	var_5_84[5599] = {
+	pg.base.activity_template[5599] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21219,11 +19278,7 @@ end)()
 			20669
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.activity_template
-
-	var_5_85[5600] = {
+	pg.base.activity_template[5600] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21237,11 +19292,7 @@ end)()
 		id = 5600,
 		page_core = ""
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.activity_template
-
-	var_5_86[5601] = {
+	pg.base.activity_template[5601] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21262,11 +19313,7 @@ end)()
 			10
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.activity_template
-
-	var_5_87[5602] = {
+	pg.base.activity_template[5602] = {
 		mark = 20241017,
 		time = "stop",
 		type = 74,
@@ -21285,11 +19332,7 @@ end)()
 			linkActID = 5597
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.activity_template
-
-	var_5_88[5603] = {
+	pg.base.activity_template[5603] = {
 		mark = 20241017,
 		page_info = "",
 		time = "stop",
@@ -21344,11 +19387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.activity_template
-
-	var_5_89[5604] = {
+	pg.base.activity_template[5604] = {
 		mark = 20241017,
 		time = "stop",
 		type = 18,
@@ -21411,11 +19450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.activity_template
-
-	var_5_90[5618] = {
+	pg.base.activity_template[5618] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21434,11 +19469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.activity_template
-
-	var_5_91[5619] = {
+	pg.base.activity_template[5619] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21452,11 +19483,7 @@ end)()
 		id = 5619,
 		page_core = ""
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.activity_template
-
-	var_5_92[5620] = {
+	pg.base.activity_template[5620] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21496,11 +19523,7 @@ end)()
 			20734
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.activity_template
-
-	var_5_93[5621] = {
+	pg.base.activity_template[5621] = {
 		mark = 20241024,
 		time = "stop",
 		type = 12,
@@ -21529,11 +19552,7 @@ end)()
 			task_id = 20700
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.activity_template
-
-	var_5_94[5622] = {
+	pg.base.activity_template[5622] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21555,11 +19574,7 @@ end)()
 			511
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.activity_template
-
-	var_5_95[5623] = {
+	pg.base.activity_template[5623] = {
 		mark = 20241024,
 		time = "stop",
 		type = 117,
@@ -21626,11 +19641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.activity_template
-
-	var_5_96[5624] = {
+	pg.base.activity_template[5624] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21662,11 +19673,7 @@ end)()
 			20717
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.activity_template
-
-	var_5_97[5625] = {
+	pg.base.activity_template[5625] = {
 		mark = 20241024,
 		time = "stop",
 		type = 18,
@@ -21746,11 +19753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.activity_template
-
-	var_5_98[5626] = {
+	pg.base.activity_template[5626] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21773,8 +19776,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.activity_template[5627] = {
+	pg.base.activity_template[5627] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21817,11 +19819,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.activity_template
-
-	var_6_0[5628] = {
+	pg.base.activity_template[5628] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21852,11 +19850,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.activity_template
-
-	var_6_1[5629] = {
+	pg.base.activity_template[5629] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21870,11 +19864,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.activity_template
-
-	var_6_2[5630] = {
+	pg.base.activity_template[5630] = {
 		mark = 20241024,
 		time = "stop",
 		type = 74,
@@ -21891,11 +19881,7 @@ end)()
 			ui_name = "StormSeaPtPage"
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.activity_template
-
-	var_6_3[5631] = {
+	pg.base.activity_template[5631] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21960,11 +19946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.activity_template
-
-	var_6_4[5632] = {
+	pg.base.activity_template[5632] = {
 		mark = 20241024,
 		page_info = "",
 		time = "stop",
@@ -21983,11 +19965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.activity_template
-
-	var_6_5[5633] = {
+	pg.base.activity_template[5633] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22003,11 +19981,7 @@ end)()
 			build_painting = "wuzang_building"
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.activity_template
-
-	var_6_6[5634] = {
+	pg.base.activity_template[5634] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22021,11 +19995,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.activity_template
-
-	var_6_7[5635] = {
+	pg.base.activity_template[5635] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22046,11 +20016,7 @@ end)()
 			20746
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.activity_template
-
-	var_6_8[5636] = {
+	pg.base.activity_template[5636] = {
 		mark = 20241114,
 		time = "stop",
 		type = 75,
@@ -22119,11 +20085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.activity_template
-
-	var_6_9[5637] = {
+	pg.base.activity_template[5637] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22137,11 +20099,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.activity_template
-
-	var_6_10[5638] = {
+	pg.base.activity_template[5638] = {
 		mark = 20241114,
 		time = "stop",
 		type = 87,
@@ -22158,11 +20116,7 @@ end)()
 			ui_name = "JapanV3FrameRePage"
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.activity_template
-
-	var_6_11[5639] = {
+	pg.base.activity_template[5639] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22180,11 +20134,7 @@ end)()
 			65044
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.activity_template
-
-	var_6_12[5640] = {
+	pg.base.activity_template[5640] = {
 		mark = 20241114,
 		time = "stop",
 		type = 3,
@@ -22201,11 +20151,7 @@ end)()
 			ui_name = "RuoyueLoginRePage"
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.activity_template
-
-	var_6_13[5641] = {
+	pg.base.activity_template[5641] = {
 		mark = 20241114,
 		time = "stop",
 		type = 12,
@@ -22231,11 +20177,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.activity_template
-
-	var_6_14[5642] = {
+	pg.base.activity_template[5642] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22260,11 +20202,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.activity_template
-
-	var_6_15[5643] = {
+	pg.base.activity_template[5643] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22299,11 +20237,7 @@ end)()
 			20769
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.activity_template
-
-	var_6_16[5644] = {
+	pg.base.activity_template[5644] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22317,11 +20251,7 @@ end)()
 		id = 5644,
 		page_core = ""
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.activity_template
-
-	var_6_17[5645] = {
+	pg.base.activity_template[5645] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22342,11 +20272,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.activity_template
-
-	var_6_18[5646] = {
+	pg.base.activity_template[5646] = {
 		mark = 20241114,
 		time = "stop",
 		type = 74,
@@ -22363,11 +20289,7 @@ end)()
 			ui_name = "JapanV3PtPage"
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.activity_template
-
-	var_6_19[5647] = {
+	pg.base.activity_template[5647] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22421,11 +20343,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.activity_template
-
-	var_6_20[5648] = {
+	pg.base.activity_template[5648] = {
 		mark = 20241114,
 		page_info = "",
 		time = "stop",
@@ -22444,11 +20362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.activity_template
-
-	var_6_21[5656] = {
+	pg.base.activity_template[5656] = {
 		mark = 20241114,
 		time = "stop",
 		type = 18,
@@ -22511,11 +20425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.activity_template
-
-	var_6_22[5679] = {
+	pg.base.activity_template[5679] = {
 		mark = 20241121,
 		time = "stop",
 		type = 12,
@@ -22551,11 +20461,7 @@ end)()
 			skin_linkId = 71072
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.activity_template
-
-	var_6_23[5680] = {
+	pg.base.activity_template[5680] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22601,11 +20507,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.activity_template
-
-	var_6_24[5681] = {
+	pg.base.activity_template[5681] = {
 		mark = 20241121,
 		time = "stop",
 		type = 57,
@@ -22622,11 +20524,7 @@ end)()
 			ui_name = "ToLoveGame"
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.activity_template
-
-	var_6_25[5682] = {
+	pg.base.activity_template[5682] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22700,11 +20598,7 @@ end)()
 			20892
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.activity_template
-
-	var_6_26[5683] = {
+	pg.base.activity_template[5683] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22718,11 +20612,7 @@ end)()
 		id = 5683,
 		page_core = ""
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.activity_template
-
-	var_6_27[5684] = {
+	pg.base.activity_template[5684] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22743,11 +20633,7 @@ end)()
 			10
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.activity_template
-
-	var_6_28[5685] = {
+	pg.base.activity_template[5685] = {
 		mark = 20241121,
 		time = "stop",
 		type = 74,
@@ -22773,11 +20659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.activity_template
-
-	var_6_29[5686] = {
+	pg.base.activity_template[5686] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22829,11 +20711,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.activity_template
-
-	var_6_30[5687] = {
+	pg.base.activity_template[5687] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22852,11 +20730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.activity_template
-
-	var_6_31[5689] = {
+	pg.base.activity_template[5689] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -22904,11 +20778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.activity_template
-
-	var_6_32[5690] = {
+	pg.base.activity_template[5690] = {
 		mark = 20241121,
 		time = "stop",
 		type = 103,
@@ -22963,11 +20833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.activity_template
-	local var_6_34 = 5691
-	local var_6_35 = {
+	pg.base.activity_template[5691] = {
 		mark = 20241121,
 		time = "stop",
 		type = 1001,
@@ -22989,27 +20855,20 @@ end)()
 		page_info = {
 			class_name = "PuzzleConnectSceneUI",
 			ui_name = "ToLoveGame"
+		},
+		config_client = {
+			story = {
+				WEIXIANFAMINGPOJINZHONGWEITUO1
+			},
+			{},
+			{},
+			{},
+			{},
+			{},
+			{}
 		}
 	}
-	local var_6_36 = {}
-	local var_6_37 = {}
-
-	WEIXIANFAMINGPOJINZHONGWEITUO1 = var_5
-	var_6_37[1] = var_5
-	var_6_36.story = var_6_37
-	var_6_36[1] = {}
-	var_6_36[2] = {}
-	var_6_36[3] = {}
-	var_6_36[4] = {}
-	var_6_36[5] = {}
-	var_6_36[6] = {}
-	var_6_35.config_client = var_6_36
-	var_6_33[var_6_34] = var_6_35
-	pg = var_6_33
-
-	local var_6_38 = var_6_33.base.activity_template
-
-	var_6_38[5692] = {
+	pg.base.activity_template[5692] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -23023,11 +20882,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.activity_template
-
-	var_6_39[5693] = {
+	pg.base.activity_template[5693] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -23048,11 +20903,7 @@ end)()
 			517
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.activity_template
-
-	var_6_40[5694] = {
+	pg.base.activity_template[5694] = {
 		mark = 20241121,
 		page_info = "",
 		time = "stop",
@@ -23066,11 +20917,7 @@ end)()
 		id = 5694,
 		page_core = ""
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.activity_template
-
-	var_6_41[5695] = {
+	pg.base.activity_template[5695] = {
 		mark = 20241205,
 		page_info = "",
 		time = "stop",
@@ -23090,11 +20937,7 @@ end)()
 			10189
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.activity_template
-
-	var_6_42[5698] = {
+	pg.base.activity_template[5698] = {
 		mark = 20241212,
 		time = "stop",
 		type = 69,
@@ -23113,11 +20956,7 @@ end)()
 			itemid = 42043
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.activity_template
-
-	var_6_43[5699] = {
+	pg.base.activity_template[5699] = {
 		mark = 20241212,
 		time = "stop",
 		type = 18,
@@ -23177,11 +21016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.activity_template
-
-	var_6_44[5700] = {
+	pg.base.activity_template[5700] = {
 		mark = 20241212,
 		time = "stop",
 		type = 87,
@@ -23198,11 +21033,7 @@ end)()
 			ui_name = "DexiV6FramePage"
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.activity_template
-
-	var_6_45[5701] = {
+	pg.base.activity_template[5701] = {
 		mark = 20241212,
 		page_info = "",
 		time = "stop",
@@ -23216,11 +21047,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.activity_template
-
-	var_6_46[5702] = {
+	pg.base.activity_template[5702] = {
 		mark = 20241212,
 		page_info = "",
 		time = "stop",
@@ -23266,11 +21093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.activity_template
-
-	var_6_47[5703] = {
+	pg.base.activity_template[5703] = {
 		mark = 20241212,
 		page_info = "",
 		time = "stop",
@@ -23339,11 +21162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.activity_template
-
-	var_6_48[5704] = {
+	pg.base.activity_template[5704] = {
 		mark = 20241212,
 		time = "stop",
 		type = 74,
@@ -23652,11 +21471,7 @@ end)()
 			5705
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.activity_template
-
-	var_6_49[5705] = {
+	pg.base.activity_template[5705] = {
 		mark = 20241212,
 		page_info = "",
 		time = "stop",
@@ -23676,11 +21491,7 @@ end)()
 			"XINXINGCUXIAOLAIXI1"
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.activity_template
-
-	var_6_50[5706] = {
+	pg.base.activity_template[5706] = {
 		mark = 20241212,
 		page_info = "",
 		time = "stop",
@@ -23719,11 +21530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.activity_template
-
-	var_6_51[5711] = {
+	pg.base.activity_template[5711] = {
 		mark = 20241219,
 		time = "stop",
 		type = 12,
@@ -23750,11 +21557,7 @@ end)()
 			task_id = 21059
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.activity_template
-
-	var_6_52[5712] = {
+	pg.base.activity_template[5712] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -23781,11 +21584,7 @@ end)()
 			task_id = 21059
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.activity_template
-
-	var_6_53[5713] = {
+	pg.base.activity_template[5713] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -23804,11 +21603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.activity_template
-
-	var_6_54[5714] = {
+	pg.base.activity_template[5714] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -23846,11 +21641,7 @@ end)()
 			21059
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.activity_template
-
-	var_6_55[5715] = {
+	pg.base.activity_template[5715] = {
 		mark = 20241219,
 		page_info = "",
 		type = 36,
@@ -23897,11 +21688,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.activity_template
-
-	var_6_56[5716] = {
+	pg.base.activity_template[5716] = {
 		mark = 20241219,
 		page_info = "",
 		type = 16,
@@ -23941,11 +21728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.activity_template
-
-	var_6_57[5717] = {
+	pg.base.activity_template[5717] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -23959,11 +21742,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.activity_template
-
-	var_6_58[5718] = {
+	pg.base.activity_template[5718] = {
 		mark = 20241219,
 		time = "stop",
 		type = 74,
@@ -23990,11 +21769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.activity_template
-
-	var_6_59[5719] = {
+	pg.base.activity_template[5719] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24056,11 +21831,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.activity_template
-
-	var_6_60[5720] = {
+	pg.base.activity_template[5720] = {
 		mark = 20241219,
 		time = "stop",
 		type = 63,
@@ -24087,11 +21858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.activity_template
-
-	var_6_61[5721] = {
+	pg.base.activity_template[5721] = {
 		mark = 20241219,
 		time = "stop",
 		type = 86,
@@ -24136,11 +21903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.activity_template
-
-	var_6_62[5722] = {
+	pg.base.activity_template[5722] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24154,11 +21917,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.activity_template
-
-	var_6_63[5723] = {
+	pg.base.activity_template[5723] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24178,11 +21937,7 @@ end)()
 			21034
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.activity_template
-
-	var_6_64[5724] = {
+	pg.base.activity_template[5724] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24196,11 +21951,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.activity_template
-
-	var_6_65[5725] = {
+	pg.base.activity_template[5725] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24214,11 +21965,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.activity_template
-
-	var_6_66[5726] = {
+	pg.base.activity_template[5726] = {
 		mark = 20241219,
 		time = "stop",
 		type = 115,
@@ -24307,11 +22054,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.activity_template
-
-	var_6_67[5732] = {
+	pg.base.activity_template[5732] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24331,11 +22074,7 @@ end)()
 			522
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.activity_template
-
-	var_6_68[5733] = {
+	pg.base.activity_template[5733] = {
 		mark = 20241219,
 		page_info = "",
 		time = "stop",
@@ -24359,11 +22098,7 @@ end)()
 			21042
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.activity_template
-
-	var_6_69[5734] = {
+	pg.base.activity_template[5734] = {
 		mark = 20241219,
 		time = "stop",
 		type = 18,
@@ -24409,11 +22144,7 @@ end)()
 			ui_name = "VampireSkinPage2"
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.activity_template
-
-	var_6_70[5735] = {
+	pg.base.activity_template[5735] = {
 		mark = 20241226,
 		time = "stop",
 		type = 86,
@@ -24454,11 +22185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.activity_template
-
-	var_6_71[5736] = {
+	pg.base.activity_template[5736] = {
 		mark = 20250102,
 		time = "stop",
 		type = 11,
@@ -24477,11 +22204,7 @@ end)()
 			shopActID = 5737
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.activity_template
-
-	var_6_72[5737] = {
+	pg.base.activity_template[5737] = {
 		mark = 20250102,
 		page_info = "",
 		type = 14,
@@ -24553,11 +22276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.activity_template
-
-	var_6_73[5739] = {
+	pg.base.activity_template[5739] = {
 		mark = 20241226,
 		page_info = "",
 		time = "stop",
@@ -24580,11 +22299,7 @@ end)()
 			530
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.activity_template
-
-	var_6_74[5745] = {
+	pg.base.activity_template[5745] = {
 		mark = 20250109,
 		page_info = "",
 		time = "stop",
@@ -24598,11 +22313,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.activity_template
-
-	var_6_75[5746] = {
+	pg.base.activity_template[5746] = {
 		mark = 20250109,
 		type = 87,
 		login_pop = 0,
@@ -24645,11 +22356,7 @@ end)()
 			ui_name = "SeaStarsPage"
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.activity_template
-
-	var_6_76[5747] = {
+	pg.base.activity_template[5747] = {
 		mark = 20250109,
 		page_info = "",
 		time = "stop",
@@ -24667,11 +22374,7 @@ end)()
 			65070
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.activity_template
-
-	var_6_77[5748] = {
+	pg.base.activity_template[5748] = {
 		mark = 20250109,
 		time = "stop",
 		type = 3,
@@ -24688,11 +22391,7 @@ end)()
 			ui_name = "HornetLoginRePage"
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.activity_template
-
-	var_6_78[5749] = {
+	pg.base.activity_template[5749] = {
 		mark = 20250109,
 		time = "stop",
 		type = 12,
@@ -24718,11 +22417,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.activity_template
-
-	var_6_79[5750] = {
+	pg.base.activity_template[5750] = {
 		mark = 20250109,
 		page_info = "",
 		time = "stop",
@@ -24747,11 +22442,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.activity_template
-
-	var_6_80[5751] = {
+	pg.base.activity_template[5751] = {
 		mark = 20250109,
 		page_info = "",
 		time = "stop",
@@ -24786,11 +22477,7 @@ end)()
 			21109
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.activity_template
-
-	var_6_81[5752] = {
+	pg.base.activity_template[5752] = {
 		mark = 20250109,
 		page_info = "",
 		type = 16,
@@ -24830,11 +22517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.activity_template
-
-	var_6_82[5753] = {
+	pg.base.activity_template[5753] = {
 		mark = 20250109,
 		page_info = "",
 		type = 36,
@@ -24881,11 +22564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.activity_template
-
-	var_6_83[5754] = {
+	pg.base.activity_template[5754] = {
 		mark = 20250109,
 		type = 74,
 		login_pop = 0,
@@ -24930,11 +22609,7 @@ end)()
 			linkActID = 5749
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.activity_template
-
-	var_6_84[5755] = {
+	pg.base.activity_template[5755] = {
 		mark = 20250109,
 		page_info = "",
 		type = 14,
@@ -25015,11 +22690,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.activity_template
-
-	var_6_85[5756] = {
+	pg.base.activity_template[5756] = {
 		mark = 20250109,
 		page_info = "",
 		time = "stop",
@@ -25038,11 +22709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.activity_template
-
-	var_6_86[5758] = {
+	pg.base.activity_template[5758] = {
 		mark = 20250109,
 		page_info = "",
 		time = "stop",
@@ -25058,11 +22725,7 @@ end)()
 			build_painting = "yuekechengII_building"
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.activity_template
-
-	var_6_87[5759] = {
+	pg.base.activity_template[5759] = {
 		mark = 20250109,
 		page_info = "",
 		type = 10,
@@ -25102,11 +22765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.activity_template
-
-	var_6_88[5760] = {
+	pg.base.activity_template[5760] = {
 		mark = 20250109,
 		time = "stop",
 		type = 18,
@@ -25169,11 +22828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.activity_template
-
-	var_6_89[5765] = {
+	pg.base.activity_template[5765] = {
 		mark = 20250116,
 		time = "stop",
 		type = 57,
@@ -25190,11 +22845,7 @@ end)()
 			ui_name = "NenjuuMiniGameUI"
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.activity_template
-
-	var_6_90[5766] = {
+	pg.base.activity_template[5766] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25223,11 +22874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.activity_template
-
-	var_6_91[5767] = {
+	pg.base.activity_template[5767] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25247,11 +22894,7 @@ end)()
 			535
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.activity_template
-
-	var_6_92[5768] = {
+	pg.base.activity_template[5768] = {
 		mark = 20250116,
 		time = "stop",
 		type = 13,
@@ -25271,11 +22914,7 @@ end)()
 			skin_linkId = 71072
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.activity_template
-
-	var_6_93[5769] = {
+	pg.base.activity_template[5769] = {
 		mark = 20250116,
 		page_info = "",
 		type = 13,
@@ -25325,11 +22964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.activity_template
-
-	var_6_94[5770] = {
+	pg.base.activity_template[5770] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25348,11 +22983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.activity_template
-
-	var_6_95[5771] = {
+	pg.base.activity_template[5771] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25371,11 +23002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.activity_template
-
-	var_6_96[5772] = {
+	pg.base.activity_template[5772] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25415,11 +23042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.activity_template
-
-	var_6_97[5773] = {
+	pg.base.activity_template[5773] = {
 		mark = 20250116,
 		page_info = "",
 		type = 74,
@@ -25459,11 +23082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.activity_template
-
-	var_6_98[5774] = {
+	pg.base.activity_template[5774] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25485,11 +23104,7 @@ end)()
 			21133
 		}
 	}
-	pg = var_6_98
-
-	local var_6_99 = var_6_98.base.activity_template
-
-	var_6_99[5776] = {
+	pg.base.activity_template[5776] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25503,11 +23118,7 @@ end)()
 		id = 5776,
 		page_core = ""
 	}
-	pg = var_6_99
-
-	local var_6_100 = var_6_99.base.activity_template
-
-	var_6_100[5777] = {
+	pg.base.activity_template[5777] = {
 		mark = 20250116,
 		type = 86,
 		login_pop = 0,
@@ -25570,11 +23181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_100
-
-	local var_6_101 = var_6_100.base.activity_template
-
-	var_6_101[5779] = {
+	pg.base.activity_template[5779] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25607,11 +23214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_101
-
-	local var_6_102 = var_6_101.base.activity_template
-
-	var_6_102[5780] = {
+	pg.base.activity_template[5780] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25656,8 +23259,7 @@ end)()
 			ui = "ColoringAnshanUI"
 		}
 	}
-	pg = var_6_102
-	var_6_102.base.activity_template[5781] = {
+	pg.base.activity_template[5781] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25694,11 +23296,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.activity_template
-
-	var_7_0[5782] = {
+	pg.base.activity_template[5782] = {
 		mark = 20250116,
 		time = "stop",
 		type = 3,
@@ -25715,11 +23313,7 @@ end)()
 			ui_name = "FuboLoginPage"
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.activity_template
-
-	var_7_1[5783] = {
+	pg.base.activity_template[5783] = {
 		mark = 20250116,
 		time = "stop",
 		type = 74,
@@ -25740,11 +23334,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.activity_template
-
-	var_7_2[5784] = {
+	pg.base.activity_template[5784] = {
 		mark = 20250116,
 		page_info = "",
 		time = "stop",
@@ -25785,11 +23375,7 @@ end)()
 			21181
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.activity_template
-
-	var_7_3[5785] = {
+	pg.base.activity_template[5785] = {
 		mark = 20250123,
 		page_info = "",
 		time = "stop",
@@ -25811,11 +23397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.activity_template
-
-	var_7_4[5786] = {
+	pg.base.activity_template[5786] = {
 		mark = 20250123,
 		page_info = "",
 		time = "stop",
@@ -25846,11 +23428,7 @@ end)()
 			21206
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.activity_template
-
-	var_7_5[5787] = {
+	pg.base.activity_template[5787] = {
 		mark = 20250123,
 		page_info = "",
 		time = "stop",
@@ -25878,11 +23456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.activity_template
-
-	var_7_6[5788] = {
+	pg.base.activity_template[5788] = {
 		mark = 20250123,
 		page_info = "",
 		time = "stop",
@@ -25909,11 +23483,7 @@ end)()
 			65532
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.activity_template
-
-	var_7_7[5790] = {
+	pg.base.activity_template[5790] = {
 		mark = 20250123,
 		time = "stop",
 		type = 86,
@@ -25950,11 +23520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.activity_template
-
-	var_7_8[5791] = {
+	pg.base.activity_template[5791] = {
 		mark = 20250123,
 		page_info = "",
 		time = "stop",
@@ -25974,11 +23540,7 @@ end)()
 			540
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.activity_template
-
-	var_7_9[5792] = {
+	pg.base.activity_template[5792] = {
 		mark = 20250206,
 		page_info = "",
 		time = "stop",
@@ -26008,11 +23570,7 @@ end)()
 			21240
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.activity_template
-
-	var_7_10[5793] = {
+	pg.base.activity_template[5793] = {
 		mark = 20250206,
 		page_info = "",
 		type = 36,
@@ -26059,11 +23617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.activity_template
-
-	var_7_11[5794] = {
+	pg.base.activity_template[5794] = {
 		mark = 20250206,
 		page_info = "",
 		type = 16,
@@ -26103,11 +23657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.activity_template
-
-	var_7_12[5795] = {
+	pg.base.activity_template[5795] = {
 		mark = 20250206,
 		time = "stop",
 		type = 74,
@@ -26126,11 +23676,7 @@ end)()
 			linkActID = 5802
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.activity_template
-
-	var_7_13[5796] = {
+	pg.base.activity_template[5796] = {
 		mark = 20250206,
 		page_info = "",
 		time = "stop",
@@ -26184,11 +23730,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.activity_template
-
-	var_7_14[5798] = {
+	pg.base.activity_template[5798] = {
 		mark = 20250206,
 		page_info = "",
 		time = "stop",
@@ -26217,11 +23759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.activity_template
-
-	var_7_15[5799] = {
+	pg.base.activity_template[5799] = {
 		mark = 20250206,
 		page_info = "",
 		time = "stop",
@@ -26239,11 +23777,7 @@ end)()
 			65078
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.activity_template
-
-	var_7_16[5800] = {
+	pg.base.activity_template[5800] = {
 		mark = 20250206,
 		time = "stop",
 		type = 3,
@@ -26260,11 +23794,7 @@ end)()
 			ui_name = "ReproductionHornetLoginRePage"
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.activity_template
-
-	var_7_17[5801] = {
+	pg.base.activity_template[5801] = {
 		mark = 20250206,
 		page_info = "",
 		time = "stop",
@@ -26283,11 +23813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.activity_template
-
-	var_7_18[5802] = {
+	pg.base.activity_template[5802] = {
 		mark = 20250206,
 		time = "stop",
 		type = 12,
@@ -26313,11 +23839,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.activity_template
-
-	var_7_19[5803] = {
+	pg.base.activity_template[5803] = {
 		mark = 20250206,
 		page_info = "",
 		time = "stop",
@@ -26333,11 +23855,7 @@ end)()
 			miniGame = 74
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.activity_template
-
-	var_7_20[5806] = {
+	pg.base.activity_template[5806] = {
 		mark = 20250213,
 		time = "stop",
 		type = 57,
@@ -26354,11 +23872,7 @@ end)()
 			ui_name = "ValentineQte2Page"
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.activity_template
-	local var_7_22 = 5807
-	local var_7_23 = {
+	pg.base.activity_template[5807] = {
 		mark = 20250213,
 		page_info = "",
 		time = "stop",
@@ -26369,33 +23883,19 @@ end)()
 		config_client = "",
 		title_res_tag = "",
 		id = 5807,
-		page_core = ""
+		page_core = "",
+		config_data = {
+			{
+				defaultID,
+				312011
+			},
+			{
+				itemID,
+				44003
+			}
+		}
 	}
-	local var_7_24 = {}
-	local var_7_25 = {
-		nil,
-		312011
-	}
-
-	defaultID = var_5
-	var_7_25[1] = var_5
-	var_7_24[1] = var_7_25
-
-	local var_7_26 = {
-		nil,
-		44003
-	}
-
-	itemID = var_5
-	var_7_26[1] = var_5
-	var_7_24[2] = var_7_26
-	var_7_23.config_data = var_7_24
-	var_7_21[var_7_22] = var_7_23
-	pg = var_7_21
-
-	local var_7_27 = var_7_21.base.activity_template
-
-	var_7_27[5808] = {
+	pg.base.activity_template[5808] = {
 		mark = 20250220,
 		time = "stop",
 		type = 69,
@@ -26414,11 +23914,7 @@ end)()
 			itemid = 42055
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.activity_template
-
-	var_7_28[5809] = {
+	pg.base.activity_template[5809] = {
 		mark = 20250220,
 		time = "stop",
 		type = 18,
@@ -26488,11 +23984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.activity_template
-
-	var_7_29[5810] = {
+	pg.base.activity_template[5810] = {
 		mark = 20250220,
 		time = "stop",
 		type = 87,
@@ -26509,11 +24001,7 @@ end)()
 			ui_name = "YidaliV4FramePage"
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.activity_template
-
-	var_7_30[5811] = {
+	pg.base.activity_template[5811] = {
 		mark = 20250220,
 		page_info = "",
 		time = "stop",
@@ -26527,11 +24015,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.activity_template
-
-	var_7_31[5812] = {
+	pg.base.activity_template[5812] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26555,11 +24039,7 @@ end)()
 			21285
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.activity_template
-
-	var_7_32[5821] = {
+	pg.base.activity_template[5821] = {
 		mark = 20250227,
 		time = "stop",
 		type = 12,
@@ -26586,11 +24066,7 @@ end)()
 			task_id = 21291
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.activity_template
-
-	var_7_33[5822] = {
+	pg.base.activity_template[5822] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26617,11 +24093,7 @@ end)()
 			task_id = 21291
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.activity_template
-
-	var_7_34[5823] = {
+	pg.base.activity_template[5823] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26658,11 +24130,7 @@ end)()
 			21291
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.activity_template
-
-	var_7_35[5824] = {
+	pg.base.activity_template[5824] = {
 		mark = 20250227,
 		page_info = "",
 		type = 16,
@@ -26702,11 +24170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.activity_template
-
-	var_7_36[5825] = {
+	pg.base.activity_template[5825] = {
 		mark = 20250227,
 		page_info = "",
 		type = 36,
@@ -26753,11 +24217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.activity_template
-
-	var_7_37[5827] = {
+	pg.base.activity_template[5827] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26776,11 +24236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.activity_template
-
-	var_7_38[5828] = {
+	pg.base.activity_template[5828] = {
 		mark = 20250227,
 		time = "stop",
 		type = 74,
@@ -26807,11 +24263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.activity_template
-
-	var_7_39[5829] = {
+	pg.base.activity_template[5829] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26865,11 +24317,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.activity_template
-
-	var_7_40[5830] = {
+	pg.base.activity_template[5830] = {
 		mark = 20250227,
 		time = "stop",
 		type = 86,
@@ -26906,11 +24354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.activity_template
-
-	var_7_41[5845] = {
+	pg.base.activity_template[5845] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26931,11 +24375,7 @@ end)()
 			546
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.activity_template
-
-	var_7_42[5846] = {
+	pg.base.activity_template[5846] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26949,11 +24389,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.activity_template
-
-	var_7_43[5847] = {
+	pg.base.activity_template[5847] = {
 		mark = 20250227,
 		page_info = "",
 		time = "stop",
@@ -26967,11 +24403,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.activity_template
-
-	var_7_44[5848] = {
+	pg.base.activity_template[5848] = {
 		mark = 20250313,
 		page_info = "",
 		time = "stop",
@@ -26991,11 +24423,7 @@ end)()
 			10194
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.activity_template
-
-	var_7_45[5850] = {
+	pg.base.activity_template[5850] = {
 		mark = 20250320,
 		page_info = "",
 		type = 68,
@@ -27035,11 +24463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.activity_template
-
-	var_7_46[5852] = {
+	pg.base.activity_template[5852] = {
 		mark = 20250320,
 		type = 124,
 		login_pop = 0,
@@ -27168,11 +24592,7 @@ end)()
 			sub_act_id = 5870
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.activity_template
-
-	var_7_47[5853] = {
+	pg.base.activity_template[5853] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27188,11 +24608,7 @@ end)()
 			build_painting = "yuanchou_building"
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.activity_template
-
-	var_7_48[5854] = {
+	pg.base.activity_template[5854] = {
 		mark = 20250320,
 		page_info = "",
 		type = 10,
@@ -27232,11 +24648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.activity_template
-
-	var_7_49[5855] = {
+	pg.base.activity_template[5855] = {
 		mark = 20250320,
 		type = 87,
 		login_pop = 0,
@@ -27279,11 +24691,7 @@ end)()
 			ui_name = "YingxiV4FrameRePage"
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.activity_template
-
-	var_7_50[5856] = {
+	pg.base.activity_template[5856] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27297,11 +24705,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.activity_template
-
-	var_7_51[5857] = {
+	pg.base.activity_template[5857] = {
 		mark = 20250320,
 		time = "stop",
 		type = 18,
@@ -27371,11 +24775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.activity_template
-
-	var_7_52[5858] = {
+	pg.base.activity_template[5858] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27393,11 +24793,7 @@ end)()
 			65082
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.activity_template
-
-	var_7_53[5859] = {
+	pg.base.activity_template[5859] = {
 		mark = 20250320,
 		time = "stop",
 		type = 3,
@@ -27414,11 +24810,7 @@ end)()
 			ui_name = "YingxiV4LoginRePage"
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.activity_template
-
-	var_7_54[5860] = {
+	pg.base.activity_template[5860] = {
 		mark = 20250320,
 		time = "stop",
 		type = 12,
@@ -27444,11 +24836,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.activity_template
-
-	var_7_55[5861] = {
+	pg.base.activity_template[5861] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27473,11 +24861,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.activity_template
-
-	var_7_56[5862] = {
+	pg.base.activity_template[5862] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27512,11 +24896,7 @@ end)()
 			21331
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.activity_template
-
-	var_7_57[5864] = {
+	pg.base.activity_template[5864] = {
 		mark = 20250320,
 		type = 74,
 		login_pop = 0,
@@ -27568,11 +24948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.activity_template
-
-	var_7_58[5865] = {
+	pg.base.activity_template[5865] = {
 		mark = 20250320,
 		page_info = "",
 		type = 14,
@@ -27652,11 +25028,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.activity_template
-
-	var_7_59[5866] = {
+	pg.base.activity_template[5866] = {
 		mark = 20250320,
 		page_info = "",
 		type = 36,
@@ -27703,11 +25075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.activity_template
-
-	var_7_60[5867] = {
+	pg.base.activity_template[5867] = {
 		mark = 20250320,
 		page_info = "",
 		type = 16,
@@ -27747,11 +25115,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.activity_template
-
-	var_7_61[5868] = {
+	pg.base.activity_template[5868] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27770,11 +25134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.activity_template
-
-	var_7_62[5870] = {
+	pg.base.activity_template[5870] = {
 		mark = 20250320,
 		page_info = "",
 		time = "stop",
@@ -27798,11 +25158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.activity_template
-
-	var_7_63[5871] = {
+	pg.base.activity_template[5871] = {
 		mark = 20250327,
 		time = "stop",
 		type = 123,
@@ -28016,11 +25372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.activity_template
-
-	var_7_64[5872] = {
+	pg.base.activity_template[5872] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28038,11 +25390,7 @@ end)()
 			21666
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.activity_template
-
-	var_7_65[5873] = {
+	pg.base.activity_template[5873] = {
 		mark = 20250227,
 		type = 74,
 		login_pop = 0,
@@ -28093,11 +25441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.activity_template
-
-	var_7_66[5874] = {
+	pg.base.activity_template[5874] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28116,11 +25460,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.activity_template
-
-	var_7_67[5875] = {
+	pg.base.activity_template[5875] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28144,11 +25484,7 @@ end)()
 			21658
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.activity_template
-
-	var_7_68[5876] = {
+	pg.base.activity_template[5876] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28168,11 +25504,7 @@ end)()
 			551
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.activity_template
-
-	var_7_69[5877] = {
+	pg.base.activity_template[5877] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28341,11 +25673,7 @@ end)()
 			21663
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.activity_template
-
-	var_7_70[5878] = {
+	pg.base.activity_template[5878] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28359,11 +25687,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.activity_template
-
-	var_7_71[5879] = {
+	pg.base.activity_template[5879] = {
 		mark = 20250327,
 		time = "stop",
 		type = 21,
@@ -28387,11 +25711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.activity_template
-
-	var_7_72[5880] = {
+	pg.base.activity_template[5880] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28420,11 +25740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.activity_template
-
-	var_7_73[5882] = {
+	pg.base.activity_template[5882] = {
 		mark = 20250327,
 		page_info = "",
 		type = 16,
@@ -28464,11 +25780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.activity_template
-
-	var_7_74[5883] = {
+	pg.base.activity_template[5883] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28484,11 +25796,7 @@ end)()
 			21670
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.activity_template
-
-	var_7_75[5884] = {
+	pg.base.activity_template[5884] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -28504,11 +25812,7 @@ end)()
 			21670
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.activity_template
-
-	var_7_76[5885] = {
+	pg.base.activity_template[5885] = {
 		mark = 20250410,
 		time = "stop",
 		type = 74,
@@ -28525,11 +25829,7 @@ end)()
 			ui_name = "XiaoKeWeiPtRePage"
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.activity_template
-
-	var_7_77[5886] = {
+	pg.base.activity_template[5886] = {
 		mark = 20250410,
 		page_info = "",
 		time = "stop",
@@ -28550,11 +25850,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.activity_template
-
-	var_7_78[5887] = {
+	pg.base.activity_template[5887] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28583,11 +25879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.activity_template
-
-	var_7_79[5888] = {
+	pg.base.activity_template[5888] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28639,11 +25931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.activity_template
-
-	var_7_80[5889] = {
+	pg.base.activity_template[5889] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28657,11 +25945,7 @@ end)()
 		id = 5889,
 		page_core = ""
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.activity_template
-
-	var_7_81[5890] = {
+	pg.base.activity_template[5890] = {
 		mark = 20250417,
 		type = 74,
 		login_pop = 0,
@@ -28706,11 +25990,7 @@ end)()
 			linkActID = 5888
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.activity_template
-
-	var_7_82[5892] = {
+	pg.base.activity_template[5892] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28736,11 +26016,7 @@ end)()
 			21683
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.activity_template
-
-	var_7_83[5893] = {
+	pg.base.activity_template[5893] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28756,11 +26032,7 @@ end)()
 			21672
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.activity_template
-
-	var_7_84[5894] = {
+	pg.base.activity_template[5894] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28774,11 +26046,7 @@ end)()
 		id = 5894,
 		page_core = ""
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.activity_template
-
-	var_7_85[5895] = {
+	pg.base.activity_template[5895] = {
 		mark = 20250417,
 		time = "stop",
 		type = 3,
@@ -28795,11 +26063,7 @@ end)()
 			ui_name = "LoginSign1Page"
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.activity_template
-
-	var_7_86[5896] = {
+	pg.base.activity_template[5896] = {
 		mark = 20250417,
 		page_info = "",
 		time = "stop",
@@ -28817,11 +26081,7 @@ end)()
 			65088
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.activity_template
-
-	var_7_87[5901] = {
+	pg.base.activity_template[5901] = {
 		mark = 20250424,
 		time = "stop",
 		type = 12,
@@ -28849,11 +26109,7 @@ end)()
 			task_id = 21713
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.activity_template
-
-	var_7_88[5902] = {
+	pg.base.activity_template[5902] = {
 		mark = 20250424,
 		page_info = "",
 		time = "stop",
@@ -28883,11 +26139,7 @@ end)()
 			21713
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.activity_template
-
-	var_7_89[5903] = {
+	pg.base.activity_template[5903] = {
 		mark = 20250424,
 		type = 74,
 		login_pop = 0,
@@ -28940,11 +26192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.activity_template
-
-	var_7_90[5904] = {
+	pg.base.activity_template[5904] = {
 		mark = 20250424,
 		page_info = "",
 		type = 16,
@@ -28984,11 +26232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.activity_template
-
-	var_7_91[5905] = {
+	pg.base.activity_template[5905] = {
 		mark = 20250424,
 		page_info = "",
 		time = "stop",
@@ -29002,11 +26246,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.activity_template
-
-	var_7_92[5906] = {
+	pg.base.activity_template[5906] = {
 		mark = 20250424,
 		page_info = "",
 		type = 14,
@@ -29086,11 +26326,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.activity_template
-
-	var_7_93[5908] = {
+	pg.base.activity_template[5908] = {
 		mark = 20250424,
 		page_info = "",
 		time = "stop",
@@ -29109,11 +26345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.activity_template
-
-	var_7_94[5909] = {
+	pg.base.activity_template[5909] = {
 		mark = 20250424,
 		time = "stop",
 		type = 74,
@@ -29130,11 +26362,7 @@ end)()
 			ui_name = "XiaoAnKeLeiPtPage"
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.activity_template
-
-	var_7_95[5910] = {
+	pg.base.activity_template[5910] = {
 		mark = 20250424,
 		page_info = "",
 		time = "stop",
@@ -29155,11 +26383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.activity_template
-
-	var_7_96[5911] = {
+	pg.base.activity_template[5911] = {
 		mark = 20250424,
 		type = 86,
 		login_pop = 0,
@@ -29222,11 +26446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.activity_template
-
-	var_7_97[5912] = {
+	pg.base.activity_template[5912] = {
 		mark = 20250424,
 		page_info = "",
 		time = "stop",
@@ -29245,11 +26465,7 @@ end)()
 			555
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.activity_template
-
-	var_7_98[5913] = {
+	pg.base.activity_template[5913] = {
 		mark = 20250327,
 		page_info = "",
 		time = "stop",
@@ -29273,11 +26489,7 @@ end)()
 			21710
 		}
 	}
-	pg = var_7_98
-
-	local var_7_99 = var_7_98.base.activity_template
-
-	var_7_99[5921] = {
+	pg.base.activity_template[5921] = {
 		mark = 20250514,
 		time = "stop",
 		type = 69,
@@ -29296,11 +26508,7 @@ end)()
 			itemid = 42053
 		}
 	}
-	pg = var_7_99
-
-	local var_7_100 = var_7_99.base.activity_template
-
-	var_7_100[5922] = {
+	pg.base.activity_template[5922] = {
 		mark = 20250514,
 		time = "stop",
 		type = 18,
@@ -29351,11 +26559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_100
-
-	local var_7_101 = var_7_100.base.activity_template
-
-	var_7_101[5923] = {
+	pg.base.activity_template[5923] = {
 		mark = 20250514,
 		time = "stop",
 		type = 87,
@@ -29372,11 +26576,7 @@ end)()
 			ui_name = "HMSFramePage"
 		}
 	}
-	pg = var_7_101
-
-	local var_7_102 = var_7_101.base.activity_template
-
-	var_7_102[5924] = {
+	pg.base.activity_template[5924] = {
 		mark = 20250514,
 		time = "stop",
 		type = 18,
@@ -29444,11 +26644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_102
-
-	local var_7_103 = var_7_102.base.activity_template
-
-	var_7_103[5925] = {
+	pg.base.activity_template[5925] = {
 		mark = 20250514,
 		page_info = "",
 		time = "stop",
@@ -29462,8 +26658,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_7_103
-	var_7_103.base.activity_template[5926] = {
+	pg.base.activity_template[5926] = {
 		mark = 20250514,
 		page_info = "",
 		time = "stop",
@@ -29483,11 +26678,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.activity_template
-
-	var_8_0[5927] = {
+	pg.base.activity_template[5927] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -29508,11 +26699,7 @@ end)()
 			562
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.activity_template
-
-	var_8_1[5941] = {
+	pg.base.activity_template[5941] = {
 		mark = 20250520,
 		time = "stop",
 		type = 12,
@@ -29539,11 +26726,7 @@ end)()
 			task_id = 21753
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.activity_template
-
-	var_8_2[5942] = {
+	pg.base.activity_template[5942] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -29570,11 +26753,7 @@ end)()
 			task_id = 21753
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.activity_template
-
-	var_8_3[5951] = {
+	pg.base.activity_template[5951] = {
 		mark = 20250520,
 		time = "stop",
 		type = 125,
@@ -29827,11 +27006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.activity_template
-
-	var_8_4[5952] = {
+	pg.base.activity_template[5952] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -29882,11 +27057,7 @@ end)()
 			23718
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.activity_template
-
-	var_8_5[5953] = {
+	pg.base.activity_template[5953] = {
 		mark = 20250520,
 		page_info = "",
 		type = 16,
@@ -29926,11 +27097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.activity_template
-
-	var_8_6[5954] = {
+	pg.base.activity_template[5954] = {
 		mark = 20250520,
 		page_info = "",
 		type = 36,
@@ -29977,11 +27144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.activity_template
-
-	var_8_7[5955] = {
+	pg.base.activity_template[5955] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -29995,11 +27158,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.activity_template
-
-	var_8_8[5956] = {
+	pg.base.activity_template[5956] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30019,11 +27178,7 @@ end)()
 			23662
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.activity_template
-
-	var_8_9[5957] = {
+	pg.base.activity_template[5957] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30041,11 +27196,7 @@ end)()
 			3
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.activity_template
-
-	var_8_10[5958] = {
+	pg.base.activity_template[5958] = {
 		mark = 20250520,
 		time = "stop",
 		type = 74,
@@ -30072,11 +27223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.activity_template
-
-	var_8_11[5959] = {
+	pg.base.activity_template[5959] = {
 		mark = 20250520,
 		page_info = "",
 		type = 30,
@@ -30116,11 +27263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.activity_template
-
-	var_8_12[5960] = {
+	pg.base.activity_template[5960] = {
 		mark = 20250520,
 		time = "stop",
 		type = 3,
@@ -30137,11 +27280,7 @@ end)()
 			ui_name = "AnniversaryEightLoginPage"
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.activity_template
-
-	var_8_13[5961] = {
+	pg.base.activity_template[5961] = {
 		mark = 20250520,
 		time = "stop",
 		type = 56,
@@ -30159,11 +27298,7 @@ end)()
 			ui_name = "returnawardpage"
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.activity_template
-
-	var_8_14[5962] = {
+	pg.base.activity_template[5962] = {
 		mark = 20250520,
 		time = "stop",
 		type = 74,
@@ -30180,11 +27315,7 @@ end)()
 			ui_name = "CelebrationPage"
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.activity_template
-
-	var_8_15[5963] = {
+	pg.base.activity_template[5963] = {
 		mark = 20250520,
 		time = "stop",
 		type = 115,
@@ -30273,11 +27404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.activity_template
-
-	var_8_16[5964] = {
+	pg.base.activity_template[5964] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30335,11 +27462,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.activity_template
-
-	var_8_17[5965] = {
+	pg.base.activity_template[5965] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30353,11 +27476,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.activity_template
-
-	var_8_18[5966] = {
+	pg.base.activity_template[5966] = {
 		mark = 20250520,
 		page_info = "",
 		type = 10,
@@ -30397,11 +27516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.activity_template
-
-	var_8_19[5967] = {
+	pg.base.activity_template[5967] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30429,11 +27544,7 @@ end)()
 			3053
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.activity_template
-
-	var_8_20[5968] = {
+	pg.base.activity_template[5968] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30543,11 +27654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.activity_template
-
-	var_8_21[5969] = {
+	pg.base.activity_template[5969] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30561,11 +27668,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.activity_template
-
-	var_8_22[5970] = {
+	pg.base.activity_template[5970] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30589,11 +27692,7 @@ end)()
 			21722
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.activity_template
-
-	var_8_23[5971] = {
+	pg.base.activity_template[5971] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30616,11 +27715,7 @@ end)()
 			21730
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.activity_template
-
-	var_8_24[5972] = {
+	pg.base.activity_template[5972] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30657,11 +27752,7 @@ end)()
 			21753
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.activity_template
-
-	var_8_25[5973] = {
+	pg.base.activity_template[5973] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30677,11 +27768,7 @@ end)()
 			21731
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.activity_template
-
-	var_8_26[5974] = {
+	pg.base.activity_template[5974] = {
 		mark = 20240627,
 		page_info = "",
 		time = "stop",
@@ -30707,11 +27794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.activity_template
-
-	var_8_27[5975] = {
+	pg.base.activity_template[5975] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30730,11 +27813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.activity_template
-
-	var_8_28[5976] = {
+	pg.base.activity_template[5976] = {
 		mark = 20250520,
 		page_info = "",
 		time = "stop",
@@ -30748,11 +27827,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.activity_template
-
-	var_8_29[5977] = {
+	pg.base.activity_template[5977] = {
 		mark = 20250529,
 		page_info = "",
 		time = "stop",
@@ -30772,11 +27847,7 @@ end)()
 			567
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.activity_template
-
-	var_8_30[5979] = {
+	pg.base.activity_template[5979] = {
 		mark = 20250529,
 		time = "stop",
 		type = 18,
@@ -30834,11 +27905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.activity_template
-
-	var_8_31[5980] = {
+	pg.base.activity_template[5980] = {
 		mark = 20250529,
 		page_info = "",
 		time = "stop",
@@ -30859,11 +27926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.activity_template
-
-	var_8_32[5981] = {
+	pg.base.activity_template[5981] = {
 		mark = 20250529,
 		time = "stop",
 		type = 74,
@@ -30882,11 +27945,7 @@ end)()
 			task_act_id = 5982
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.activity_template
-
-	var_8_33[5982] = {
+	pg.base.activity_template[5982] = {
 		mark = 20250529,
 		page_info = "",
 		time = "stop",
@@ -30938,11 +27997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.activity_template
-
-	var_8_34[5983] = {
+	pg.base.activity_template[5983] = {
 		mark = 20250529,
 		page_info = "",
 		time = "stop",
@@ -30959,11 +28014,7 @@ end)()
 			23834
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.activity_template
-
-	var_8_35[5984] = {
+	pg.base.activity_template[5984] = {
 		mark = 20250605,
 		time = "stop",
 		type = 74,
@@ -30992,11 +28043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.activity_template
-
-	var_8_36[5985] = {
+	pg.base.activity_template[5985] = {
 		mark = 20250605,
 		time = "stop",
 		type = 13,
@@ -31013,11 +28060,7 @@ end)()
 			ui_name = "BRSMainPage"
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.activity_template
-
-	var_8_37[5986] = {
+	pg.base.activity_template[5986] = {
 		mark = 20250605,
 		time = "stop",
 		type = 74,
@@ -31046,11 +28089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.activity_template
-
-	var_8_38[5987] = {
+	pg.base.activity_template[5987] = {
 		mark = 20250605,
 		page_info = "",
 		time = "stop",
@@ -31071,11 +28110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.activity_template
-
-	var_8_39[5988] = {
+	pg.base.activity_template[5988] = {
 		mark = 20250605,
 		time = "stop",
 		type = 103,
@@ -31130,11 +28165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.activity_template
-
-	var_8_40[5989] = {
+	pg.base.activity_template[5989] = {
 		mark = 20250605,
 		time = "stop",
 		type = 111,
@@ -31172,11 +28203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.activity_template
-
-	var_8_41[5990] = {
+	pg.base.activity_template[5990] = {
 		mark = 20250605,
 		time = "stop",
 		type = 18,
@@ -31232,11 +28259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.activity_template
-
-	var_8_42[5991] = {
+	pg.base.activity_template[5991] = {
 		mark = 20250605,
 		page_info = "",
 		time = "stop",
@@ -31254,11 +28277,7 @@ end)()
 			23843
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.activity_template
-
-	var_8_43[5992] = {
+	pg.base.activity_template[5992] = {
 		mark = 20250605,
 		page_info = "",
 		time = "stop",
@@ -31275,11 +28294,7 @@ end)()
 			569
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.activity_template
-
-	var_8_44[5993] = {
+	pg.base.activity_template[5993] = {
 		mark = 20250612,
 		page_info = "",
 		time = "stop",
@@ -31299,11 +28314,7 @@ end)()
 			10199
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.activity_template
-
-	var_8_45[5994] = {
+	pg.base.activity_template[5994] = {
 		mark = 20250612,
 		time = "stop",
 		type = 74,
@@ -31320,11 +28331,7 @@ end)()
 			ui_name = "LittleDaihoRePage"
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.activity_template
-
-	var_8_46[5995] = {
+	pg.base.activity_template[5995] = {
 		mark = 20250612,
 		page_info = "",
 		time = "stop",
@@ -31345,11 +28352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.activity_template
-
-	var_8_47[5996] = {
+	pg.base.activity_template[5996] = {
 		mark = 20250619,
 		page_info = "",
 		time = "stop",
@@ -31363,11 +28366,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.activity_template
-
-	var_8_48[5997] = {
+	pg.base.activity_template[5997] = {
 		mark = 20250619,
 		page_info = "",
 		type = 10,
@@ -31407,11 +28406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.activity_template
-
-	var_8_49[5998] = {
+	pg.base.activity_template[5998] = {
 		mark = 20250619,
 		type = 87,
 		login_pop = 0,
@@ -31454,11 +28449,7 @@ end)()
 			ui_name = "BisimaiFrameRePage"
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.activity_template
-
-	var_8_50[5999] = {
+	pg.base.activity_template[5999] = {
 		mark = 20250619,
 		page_info = "",
 		time = "stop",
@@ -31472,11 +28463,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.activity_template
-	local var_8_52 = 6024
-	local var_8_53 = {
+	pg.base.activity_template[6024] = {
 		mark = 20260212,
 		page_info = "",
 		type = 134,
@@ -31486,60 +28473,46 @@ end)()
 		config_client = "",
 		title_res_tag = "",
 		id = 6024,
-		page_core = ""
-	}
-	local var_8_54 = {}
-	local var_8_55 = {
-		nil,
-		312011
-	}
-
-	defaultID = var_5
-	var_8_55[1] = var_5
-	var_8_54[1] = var_8_55
-
-	local var_8_56 = {
-		nil,
-		44004
-	}
-
-	itemID = var_5
-	var_8_56[1] = var_5
-	var_8_54[2] = var_8_56
-	var_8_53.config_data = var_8_54
-	var_8_53.time = {
-		"timer",
-		{
+		page_core = "",
+		config_data = {
 			{
-				2026,
-				2,
-				17
+				defaultID,
+				312011
 			},
 			{
-				0,
-				0,
-				0
+				itemID,
+				44004
 			}
 		},
-		{
+		time = {
+			"timer",
 			{
-				2026,
-				3,
-				3
+				{
+					2026,
+					2,
+					17
+				},
+				{
+					0,
+					0,
+					0
+				}
 			},
 			{
-				23,
-				59,
-				59
+				{
+					2026,
+					3,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
 			}
 		}
 	}
-	var_8_51[var_8_52] = var_8_53
-	pg = var_8_51
-
-	local var_8_57 = var_8_51.base.activity_template
-
-	var_8_57[6025] = {
+	pg.base.activity_template[6025] = {
 		mark = 20260417,
 		type = 13,
 		login_pop = 0,
@@ -31584,11 +28557,7 @@ end)()
 			shopItemID = 71325
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.activity_template
-
-	var_8_58[6026] = {
+	pg.base.activity_template[6026] = {
 		mark = 20260417,
 		type = 74,
 		login_pop = 0,
@@ -31641,11 +28610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.activity_template
-
-	var_8_59[6027] = {
+	pg.base.activity_template[6027] = {
 		mark = 20260417,
 		page_info = "",
 		type = 15,
@@ -31690,11 +28655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.activity_template
-
-	var_8_60[6028] = {
+	pg.base.activity_template[6028] = {
 		mark = 20260417,
 		type = 13,
 		login_pop = 0,
@@ -31769,11 +28730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.activity_template
-
-	var_8_61[6029] = {
+	pg.base.activity_template[6029] = {
 		mark = 20260417,
 		type = 57,
 		login_pop = 0,
@@ -31816,11 +28773,7 @@ end)()
 			ui_name = "DOACoreMiniGamePage"
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.activity_template
-
-	var_8_62[6030] = {
+	pg.base.activity_template[6030] = {
 		mark = 20260417,
 		type = 91,
 		login_pop = 0,
@@ -31875,11 +28828,7 @@ end)()
 			ui_name = "DOAYearHotSpringUI"
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.activity_template
-
-	var_8_63[6031] = {
+	pg.base.activity_template[6031] = {
 		mark = 20260417,
 		type = 74,
 		login_pop = 0,
@@ -31931,11 +28880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.activity_template
-
-	var_8_64[6032] = {
+	pg.base.activity_template[6032] = {
 		mark = 20260417,
 		type = 103,
 		login_pop = 0,
@@ -32019,11 +28964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.activity_template
-
-	var_8_65[6033] = {
+	pg.base.activity_template[6033] = {
 		mark = 20260417,
 		page_info = "",
 		type = 36,
@@ -32070,11 +29011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.activity_template
-
-	var_8_66[6034] = {
+	pg.base.activity_template[6034] = {
 		mark = 20260417,
 		page_info = "",
 		type = 16,
@@ -32116,11 +29053,7 @@ end)()
 			linkPTActID = 6031
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.activity_template
-
-	var_8_67[6035] = {
+	pg.base.activity_template[6035] = {
 		mark = 20260417,
 		page_info = "",
 		type = 14,
@@ -32199,11 +29132,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.activity_template
-
-	var_8_68[6036] = {
+	pg.base.activity_template[6036] = {
 		mark = 20260417,
 		page_info = "",
 		type = 12,
@@ -32257,11 +29186,7 @@ end)()
 			PTID = 653
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.activity_template
-
-	var_8_69[6037] = {
+	pg.base.activity_template[6037] = {
 		mark = 20260417,
 		page_info = "",
 		type = 13,
@@ -32325,11 +29250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.activity_template
-
-	var_8_70[6038] = {
+	pg.base.activity_template[6038] = {
 		mark = 20260417,
 		page_info = "",
 		type = 27,
@@ -32374,11 +29295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.activity_template
-
-	var_8_71[6040] = {
+	pg.base.activity_template[6040] = {
 		mark = 20260409,
 		type = 86,
 		login_pop = 0,
@@ -32425,11 +29342,7 @@ end)()
 		},
 		config_client = {}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.activity_template
-
-	var_8_72[6041] = {
+	pg.base.activity_template[6041] = {
 		mark = 20260417,
 		page_info = "",
 		type = 1,
@@ -32469,11 +29382,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.activity_template
-
-	var_8_73[50000] = {
+	pg.base.activity_template[50000] = {
 		mark = 20250619,
 		time = "stop",
 		type = 18,
@@ -32543,11 +29452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.activity_template
-
-	var_8_74[50001] = {
+	pg.base.activity_template[50001] = {
 		mark = 20250619,
 		page_info = "",
 		time = "stop",
@@ -32565,11 +29470,7 @@ end)()
 			65625
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.activity_template
-
-	var_8_75[50002] = {
+	pg.base.activity_template[50002] = {
 		mark = 20250619,
 		time = "stop",
 		type = 3,
@@ -32586,11 +29487,7 @@ end)()
 			ui_name = "BisimaiLoginPage"
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.activity_template
-
-	var_8_76[50003] = {
+	pg.base.activity_template[50003] = {
 		mark = 20250619,
 		time = "stop",
 		type = 12,
@@ -32618,11 +29515,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.activity_template
-
-	var_8_77[50004] = {
+	pg.base.activity_template[50004] = {
 		mark = 20250619,
 		page_info = "",
 		time = "stop",
@@ -32649,11 +29542,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.activity_template
-
-	var_8_78[50005] = {
+	pg.base.activity_template[50005] = {
 		mark = 20250619,
 		page_info = "",
 		time = "stop",
@@ -32688,11 +29577,7 @@ end)()
 			23881
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.activity_template
-
-	var_8_79[50006] = {
+	pg.base.activity_template[50006] = {
 		mark = 20250619,
 		type = 74,
 		login_pop = 0,
@@ -32744,11 +29629,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.activity_template
-
-	var_8_80[50007] = {
+	pg.base.activity_template[50007] = {
 		mark = 20250619,
 		page_info = "",
 		type = 14,
@@ -32828,11 +29709,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.activity_template
-
-	var_8_81[50008] = {
+	pg.base.activity_template[50008] = {
 		mark = 20250619,
 		page_info = "",
 		type = 36,
@@ -32879,11 +29756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.activity_template
-
-	var_8_82[50009] = {
+	pg.base.activity_template[50009] = {
 		mark = 20250619,
 		page_info = "",
 		type = 16,
@@ -32923,11 +29796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.activity_template
-
-	var_8_83[50010] = {
+	pg.base.activity_template[50010] = {
 		mark = 20250619,
 		page_info = "",
 		time = "stop",
@@ -32946,11 +29815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.activity_template
-
-	var_8_84[50012] = {
+	pg.base.activity_template[50012] = {
 		mark = 20250626,
 		page_info = "",
 		time = "stop",
@@ -32964,11 +29829,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.activity_template
-
-	var_8_85[50013] = {
+	pg.base.activity_template[50013] = {
 		mark = 20250626,
 		time = "stop",
 		type = 93,
@@ -33072,11 +29933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.activity_template
-
-	var_8_86[50014] = {
+	pg.base.activity_template[50014] = {
 		mark = 20250626,
 		page_info = "",
 		type = 94,
@@ -33116,11 +29973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.activity_template
-
-	var_8_87[50015] = {
+	pg.base.activity_template[50015] = {
 		mark = 20250626,
 		type = 74,
 		login_pop = 0,
@@ -33171,11 +30024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.activity_template
-
-	var_8_88[50016] = {
+	pg.base.activity_template[50016] = {
 		mark = 20250626,
 		page_info = "",
 		time = "stop",
@@ -33194,11 +30043,7 @@ end)()
 			573
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.activity_template
-
-	var_8_89[50017] = {
+	pg.base.activity_template[50017] = {
 		mark = 20250626,
 		page_info = "",
 		time = "stop",
@@ -33224,11 +30069,7 @@ end)()
 			23893
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.activity_template
-
-	var_8_90[50019] = {
+	pg.base.activity_template[50019] = {
 		mark = 20250626,
 		page_info = "",
 		type = 16,
@@ -33268,11 +30109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.activity_template
-
-	var_8_91[50020] = {
+	pg.base.activity_template[50020] = {
 		mark = 20250626,
 		page_info = "",
 		time = "stop",
@@ -33291,11 +30128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.activity_template
-
-	var_8_92[50021] = {
+	pg.base.activity_template[50021] = {
 		mark = 20250626,
 		page_info = "",
 		type = 13,
@@ -33345,11 +30178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.activity_template
-
-	var_8_93[50030] = {
+	pg.base.activity_template[50030] = {
 		mark = 20250717,
 		type = 126,
 		login_pop = 0,
@@ -33425,11 +30254,7 @@ end)()
 			ui_name = "DailyLevelPage"
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.activity_template
-
-	var_8_94[50031] = {
+	pg.base.activity_template[50031] = {
 		mark = 20250717,
 		time = "stop",
 		type = 124,
@@ -33483,11 +30308,7 @@ end)()
 			sub_act_id = 50032
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.activity_template
-
-	var_8_95[50032] = {
+	pg.base.activity_template[50032] = {
 		mark = 20250717,
 		page_info = "",
 		time = "stop",
@@ -33511,11 +30332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.activity_template
-
-	var_8_96[50033] = {
+	pg.base.activity_template[50033] = {
 		mark = 20250717,
 		time = "stop",
 		type = 18,
@@ -33561,11 +30378,7 @@ end)()
 			ui_name = "LuXieErSkinPage"
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.activity_template
-
-	var_8_97[50034] = {
+	pg.base.activity_template[50034] = {
 		mark = 20250717,
 		page_info = "",
 		time = "stop",
@@ -33579,11 +30392,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.activity_template
-
-	var_8_98[50042] = {
+	pg.base.activity_template[50042] = {
 		mark = 20250724,
 		time = "stop",
 		type = 12,
@@ -33617,11 +30426,7 @@ end)()
 			order = 2
 		}
 	}
-	pg = var_8_98
-
-	local var_8_99 = var_8_98.base.activity_template
-
-	var_8_99[50043] = {
+	pg.base.activity_template[50043] = {
 		mark = 20250724,
 		time = "stop",
 		type = 88,
@@ -33649,11 +30454,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_99
-
-	local var_8_100 = var_8_99.base.activity_template
-
-	var_8_100[50044] = {
+	pg.base.activity_template[50044] = {
 		mark = 20250724,
 		time = "stop",
 		type = 89,
@@ -33796,11 +30597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_100
-
-	local var_8_101 = var_8_100.base.activity_template
-
-	var_8_101[50045] = {
+	pg.base.activity_template[50045] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -33836,11 +30633,7 @@ end)()
 			300221
 		}
 	}
-	pg = var_8_101
-
-	local var_8_102 = var_8_101.base.activity_template
-
-	var_8_102[50046] = {
+	pg.base.activity_template[50046] = {
 		mark = 20250724,
 		time = "stop",
 		type = 57,
@@ -33875,11 +30668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_102
-
-	local var_8_103 = var_8_102.base.activity_template
-
-	var_8_103[50047] = {
+	pg.base.activity_template[50047] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -33898,8 +30687,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_103
-	var_8_103.base.activity_template[0] = {
+	pg.base.activity_template[0] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -33935,11 +30723,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.activity_template
-
-	var_9_0[1] = {
+	pg.base.activity_template[1] = {
 		mark = 20250724,
 		type = 74,
 		login_pop = 0,
@@ -33993,11 +30777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.activity_template
-
-	var_9_1[3] = {
+	pg.base.activity_template[3] = {
 		mark = 20250724,
 		page_info = "",
 		type = 16,
@@ -34037,11 +30817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.activity_template
-
-	var_9_2[4] = {
+	pg.base.activity_template[4] = {
 		mark = 20250724,
 		page_info = "",
 		type = 14,
@@ -34148,11 +30924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.activity_template
-
-	var_9_3[5] = {
+	pg.base.activity_template[5] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -34185,11 +30957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.activity_template
-
-	var_9_4[6] = {
+	pg.base.activity_template[6] = {
 		mark = 20250724,
 		time = "stop",
 		type = 12,
@@ -34300,11 +31068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.activity_template
-
-	var_9_5[7] = {
+	pg.base.activity_template[7] = {
 		mark = 20250724,
 		time = "stop",
 		type = 70,
@@ -34321,11 +31085,7 @@ end)()
 			ui_name = "RyzaAtelierCompositeRePage"
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.activity_template
-
-	var_9_6[8] = {
+	pg.base.activity_template[8] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -34344,11 +31104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.activity_template
-
-	var_9_7[9] = {
+	pg.base.activity_template[9] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -34426,11 +31182,7 @@ end)()
 			24277
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.activity_template
-
-	var_9_8[10] = {
+	pg.base.activity_template[10] = {
 		mark = 20250724,
 		type = 74,
 		login_pop = 0,
@@ -34482,11 +31234,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.activity_template
-
-	var_9_9[11] = {
+	pg.base.activity_template[11] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -34507,11 +31255,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.activity_template
-
-	var_9_10[12] = {
+	pg.base.activity_template[12] = {
 		mark = 20250724,
 		page_info = "",
 		type = 16,
@@ -34551,11 +31295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.activity_template
-
-	var_9_11[13] = {
+	pg.base.activity_template[13] = {
 		mark = 20250724,
 		page_info = "",
 		type = 14,
@@ -34662,11 +31402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.activity_template
-
-	var_9_12[14] = {
+	pg.base.activity_template[14] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -34680,11 +31416,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.activity_template
-
-	var_9_13[15] = {
+	pg.base.activity_template[15] = {
 		mark = 20250724,
 		time = "stop",
 		type = 127,
@@ -34870,11 +31602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.activity_template
-
-	var_9_14[16] = {
+	pg.base.activity_template[16] = {
 		mark = 20250724,
 		time = "stop",
 		type = 103,
@@ -34929,11 +31657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.activity_template
-
-	var_9_15[17] = {
+	pg.base.activity_template[17] = {
 		mark = 20250724,
 		page_info = "",
 		time = "stop",
@@ -34980,11 +31704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.activity_template
-
-	var_9_16[18] = {
+	pg.base.activity_template[18] = {
 		mark = 20250724,
 		time = "stop",
 		type = 103,
@@ -35036,11 +31756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.activity_template
-
-	var_9_17[20] = {
+	pg.base.activity_template[20] = {
 		mark = 20250807,
 		time = "stop",
 		type = 18,
@@ -35086,11 +31802,7 @@ end)()
 			ui_name = "ForestVacationSkinPage"
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.activity_template
-
-	var_9_18[21] = {
+	pg.base.activity_template[21] = {
 		mark = 20250807,
 		time = "stop",
 		type = 69,
@@ -35109,11 +31821,7 @@ end)()
 			itemid = 42051
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.activity_template
-
-	var_9_19[22] = {
+	pg.base.activity_template[22] = {
 		mark = 20250807,
 		time = "stop",
 		type = 3,
@@ -35148,11 +31856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.activity_template
-
-	var_9_20[50081] = {
+	pg.base.activity_template[50081] = {
 		mark = 20250814,
 		time = "stop",
 		type = 12,
@@ -35231,11 +31935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.activity_template
-
-	var_9_21[50082] = {
+	pg.base.activity_template[50082] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35262,11 +31962,7 @@ end)()
 			task_id = 21818
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.activity_template
-
-	var_9_22[50083] = {
+	pg.base.activity_template[50083] = {
 		mark = 20250814,
 		time = "stop",
 		type = 57,
@@ -35285,11 +31981,7 @@ end)()
 			first_sfx = "qiyuanxiademimi"
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.activity_template
-
-	var_9_23[50084] = {
+	pg.base.activity_template[50084] = {
 		mark = 20250814,
 		time = "stop",
 		type = 86,
@@ -35338,11 +32030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.activity_template
-
-	var_9_24[50085] = {
+	pg.base.activity_template[50085] = {
 		mark = 20250814,
 		time = "stop",
 		type = 74,
@@ -35367,11 +32055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.activity_template
-
-	var_9_25[50087] = {
+	pg.base.activity_template[50087] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35395,11 +32079,7 @@ end)()
 			21810
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.activity_template
-
-	var_9_26[50088] = {
+	pg.base.activity_template[50088] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35455,11 +32135,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.activity_template
-
-	var_9_27[50089] = {
+	pg.base.activity_template[50089] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35480,11 +32156,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.activity_template
-
-	var_9_28[50090] = {
+	pg.base.activity_template[50090] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35498,11 +32170,7 @@ end)()
 		id = 50090,
 		page_core = ""
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.activity_template
-
-	var_9_29[50091] = {
+	pg.base.activity_template[50091] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35540,11 +32208,7 @@ end)()
 			24300
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.activity_template
-
-	var_9_30[50092] = {
+	pg.base.activity_template[50092] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35563,11 +32227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.activity_template
-
-	var_9_31[50093] = {
+	pg.base.activity_template[50093] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35581,11 +32241,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.activity_template
-
-	var_9_32[50094] = {
+	pg.base.activity_template[50094] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35628,11 +32284,7 @@ end)()
 			3028
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.activity_template
-
-	var_9_33[50095] = {
+	pg.base.activity_template[50095] = {
 		mark = 20250814,
 		page_info = "",
 		time = "stop",
@@ -35648,11 +32300,7 @@ end)()
 			24301
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.activity_template
-
-	var_9_34[50098] = {
+	pg.base.activity_template[50098] = {
 		mark = 20250828,
 		page_info = "",
 		type = 70,
@@ -35692,11 +32340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.activity_template
-
-	var_9_35[50099] = {
+	pg.base.activity_template[50099] = {
 		mark = 20250828,
 		time = "stop",
 		type = 18,
@@ -35742,11 +32386,7 @@ end)()
 			ui_name = "AierdeliqiAlterItemRePage"
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.activity_template
-
-	var_9_36[50100] = {
+	pg.base.activity_template[50100] = {
 		mark = 20250904,
 		page_info = "",
 		time = "stop",
@@ -35766,11 +32406,7 @@ end)()
 			12004
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.activity_template
-
-	var_9_37[50101] = {
+	pg.base.activity_template[50101] = {
 		mark = 20250904,
 		type = 69,
 		login_pop = 0,
@@ -35815,11 +32451,7 @@ end)()
 			itemid = 42052
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.activity_template
-
-	var_9_38[50102] = {
+	pg.base.activity_template[50102] = {
 		mark = 20250904,
 		type = 87,
 		login_pop = 0,
@@ -35862,11 +32494,7 @@ end)()
 			ui_name = "TianYuTianYuanFramePage"
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.activity_template
-
-	var_9_39[50103] = {
+	pg.base.activity_template[50103] = {
 		mark = 20250904,
 		page_info = "",
 		time = "stop",
@@ -35880,11 +32508,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.activity_template
-
-	var_9_40[50104] = {
+	pg.base.activity_template[50104] = {
 		mark = 20250904,
 		type = 18,
 		login_pop = 0,
@@ -35980,11 +32604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.activity_template
-
-	var_9_41[50111] = {
+	pg.base.activity_template[50111] = {
 		mark = 20250912,
 		time = "stop",
 		type = 115,
@@ -36080,11 +32700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.activity_template
-
-	var_9_42[50112] = {
+	pg.base.activity_template[50112] = {
 		mark = 20250912,
 		type = 13,
 		login_pop = 0,
@@ -36151,11 +32767,7 @@ end)()
 			ui_name = "AnniversaryEightMainPage"
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.activity_template
-
-	var_9_43[50113] = {
+	pg.base.activity_template[50113] = {
 		mark = 20250912,
 		page_info = "",
 		type = 55,
@@ -36199,11 +32811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.activity_template
-
-	var_9_44[50114] = {
+	pg.base.activity_template[50114] = {
 		mark = 20250912,
 		type = 12,
 		login_pop = 0,
@@ -36257,11 +32865,7 @@ end)()
 			PTID = 543
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.activity_template
-
-	var_9_45[50115] = {
+	pg.base.activity_template[50115] = {
 		mark = 20250912,
 		page_info = "",
 		type = 12,
@@ -36314,11 +32918,7 @@ end)()
 			task_id = 24466
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.activity_template
-
-	var_9_46[50116] = {
+	pg.base.activity_template[50116] = {
 		mark = 20250912,
 		type = 129,
 		login_pop = 0,
@@ -36363,11 +32963,7 @@ end)()
 			task_id = 24428
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.activity_template
-
-	var_9_47[50117] = {
+	pg.base.activity_template[50117] = {
 		mark = 20250912,
 		type = 3,
 		login_pop = 0,
@@ -36412,11 +33008,7 @@ end)()
 			manulSign = true
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.activity_template
-
-	var_9_48[50118] = {
+	pg.base.activity_template[50118] = {
 		mark = 20250912,
 		time = "stop",
 		type = 56,
@@ -36434,11 +33026,7 @@ end)()
 			ui_name = "AnniversaryEightJpReturnAwardPage"
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.activity_template
-
-	var_9_49[50119] = {
+	pg.base.activity_template[50119] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36459,11 +33047,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.activity_template
-
-	var_9_50[50120] = {
+	pg.base.activity_template[50120] = {
 		mark = 20250912,
 		page_info = "",
 		type = 110,
@@ -36503,11 +33087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.activity_template
-
-	var_9_51[50121] = {
+	pg.base.activity_template[50121] = {
 		mark = 20250912,
 		page_info = "",
 		type = 13,
@@ -36553,11 +33133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.activity_template
-
-	var_9_52[50122] = {
+	pg.base.activity_template[50122] = {
 		mark = 20250912,
 		page_info = "",
 		type = 30,
@@ -36597,11 +33173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.activity_template
-
-	var_9_53[50125] = {
+	pg.base.activity_template[50125] = {
 		mark = 20250912,
 		type = 74,
 		login_pop = 0,
@@ -36644,11 +33216,7 @@ end)()
 			ui_name = "AnniversaryEightInvitePage"
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.activity_template
-
-	var_9_54[50127] = {
+	pg.base.activity_template[50127] = {
 		mark = 20250912,
 		page_info = "",
 		type = 1,
@@ -36691,11 +33259,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.activity_template
-
-	var_9_55[50128] = {
+	pg.base.activity_template[50128] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36709,11 +33273,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.activity_template
-
-	var_9_56[50129] = {
+	pg.base.activity_template[50129] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36770,11 +33330,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.activity_template
-
-	var_9_57[50130] = {
+	pg.base.activity_template[50130] = {
 		mark = 20250912,
 		time = "stop",
 		type = 74,
@@ -36799,11 +33355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.activity_template
-
-	var_9_58[50131] = {
+	pg.base.activity_template[50131] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36817,11 +33369,7 @@ end)()
 		id = 50131,
 		page_core = ""
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.activity_template
-
-	var_9_59[50132] = {
+	pg.base.activity_template[50132] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36847,11 +33395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.activity_template
-
-	var_9_60[50133] = {
+	pg.base.activity_template[50133] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36894,11 +33438,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.activity_template
-
-	var_9_61[50134] = {
+	pg.base.activity_template[50134] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36934,11 +33474,7 @@ end)()
 			24462
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.activity_template
-
-	var_9_62[50135] = {
+	pg.base.activity_template[50135] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36957,11 +33493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.activity_template
-
-	var_9_63[50136] = {
+	pg.base.activity_template[50136] = {
 		mark = 20250912,
 		page_info = "",
 		time = "stop",
@@ -36986,11 +33518,7 @@ end)()
 			21844
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.activity_template
-
-	var_9_64[50140] = {
+	pg.base.activity_template[50140] = {
 		mark = 20250925,
 		time = "stop",
 		type = 124,
@@ -37051,11 +33579,7 @@ end)()
 			sub_act_id = 50141
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.activity_template
-
-	var_9_65[50141] = {
+	pg.base.activity_template[50141] = {
 		mark = 20250925,
 		page_info = "",
 		time = "stop",
@@ -37079,11 +33603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.activity_template
-
-	var_9_66[50142] = {
+	pg.base.activity_template[50142] = {
 		mark = 20250925,
 		page_info = "",
 		time = "stop",
@@ -37097,11 +33617,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.activity_template
-
-	var_9_67[50151] = {
+	pg.base.activity_template[50151] = {
 		mark = 20251009,
 		time = "stop",
 		type = 74,
@@ -37130,11 +33646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.activity_template
-
-	var_9_68[50152] = {
+	pg.base.activity_template[50152] = {
 		mark = 20251009,
 		time = "stop",
 		type = 13,
@@ -37151,11 +33663,7 @@ end)()
 			ui_name = "AEBCSMainPage"
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.activity_template
-
-	var_9_69[50153] = {
+	pg.base.activity_template[50153] = {
 		mark = 20251009,
 		time = "stop",
 		type = 74,
@@ -37184,11 +33692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.activity_template
-
-	var_9_70[50154] = {
+	pg.base.activity_template[50154] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37209,11 +33713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.activity_template
-
-	var_9_71[50155] = {
+	pg.base.activity_template[50155] = {
 		mark = 20251009,
 		time = "stop",
 		type = 103,
@@ -37268,11 +33768,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.activity_template
-
-	var_9_72[50156] = {
+	pg.base.activity_template[50156] = {
 		mark = 20251009,
 		time = "stop",
 		type = 70,
@@ -37309,11 +33805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.activity_template
-
-	var_9_73[50159] = {
+	pg.base.activity_template[50159] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37329,11 +33821,7 @@ end)()
 			21848
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.activity_template
-
-	var_9_74[50161] = {
+	pg.base.activity_template[50161] = {
 		mark = 20251009,
 		type = 87,
 		login_pop = 0,
@@ -37376,11 +33864,7 @@ end)()
 			ui_name = "SaDingFrameRePage"
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.activity_template
-
-	var_9_75[50162] = {
+	pg.base.activity_template[50162] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37394,11 +33878,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.activity_template
-
-	var_9_76[50163] = {
+	pg.base.activity_template[50163] = {
 		mark = 20251009,
 		time = "stop",
 		type = 18,
@@ -37468,11 +33948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.activity_template
-
-	var_9_77[50164] = {
+	pg.base.activity_template[50164] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37490,11 +33966,7 @@ end)()
 			65714
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.activity_template
-
-	var_9_78[50165] = {
+	pg.base.activity_template[50165] = {
 		mark = 20251009,
 		time = "stop",
 		type = 3,
@@ -37511,11 +33983,7 @@ end)()
 			ui_name = "SaDingLoginRePage"
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.activity_template
-
-	var_9_79[50166] = {
+	pg.base.activity_template[50166] = {
 		mark = 20251009,
 		time = "stop",
 		type = 12,
@@ -37541,11 +34009,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.activity_template
-
-	var_9_80[50167] = {
+	pg.base.activity_template[50167] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37570,11 +34034,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.activity_template
-
-	var_9_81[50168] = {
+	pg.base.activity_template[50168] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37609,11 +34069,7 @@ end)()
 			24544
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.activity_template
-
-	var_9_82[50169] = {
+	pg.base.activity_template[50169] = {
 		mark = 20251009,
 		type = 74,
 		login_pop = 0,
@@ -37665,11 +34121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.activity_template
-
-	var_9_83[50170] = {
+	pg.base.activity_template[50170] = {
 		mark = 20251009,
 		page_info = "",
 		type = 14,
@@ -37749,11 +34201,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.activity_template
-
-	var_9_84[50171] = {
+	pg.base.activity_template[50171] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37774,11 +34222,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.activity_template
-
-	var_9_85[50172] = {
+	pg.base.activity_template[50172] = {
 		mark = 20251009,
 		page_info = "",
 		type = 16,
@@ -37818,11 +34262,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.activity_template
-
-	var_9_86[50173] = {
+	pg.base.activity_template[50173] = {
 		mark = 20251009,
 		page_info = "",
 		time = "stop",
@@ -37841,11 +34281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.activity_template
-
-	var_9_87[50175] = {
+	pg.base.activity_template[50175] = {
 		mark = 20251016,
 		page_info = "",
 		time = "stop",
@@ -37859,11 +34295,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.activity_template
-
-	var_9_88[5] = {
+	pg.base.activity_template[5] = {
 		mark = 20251023,
 		time = "stop",
 		type = 12,
@@ -37894,11 +34326,7 @@ end)()
 			PTID = 577
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.activity_template
-
-	var_9_89[6] = {
+	pg.base.activity_template[6] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -37936,11 +34364,7 @@ end)()
 			24601
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.activity_template
-
-	var_9_90[7] = {
+	pg.base.activity_template[7] = {
 		mark = 20251023,
 		page_info = "",
 		type = 16,
@@ -37980,11 +34404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.activity_template
-
-	var_9_91[8] = {
+	pg.base.activity_template[8] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38005,11 +34425,7 @@ end)()
 			10
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.activity_template
-
-	var_9_92[26] = {
+	pg.base.activity_template[26] = {
 		mark = 20251023,
 		time = "stop",
 		type = 117,
@@ -38076,11 +34492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.activity_template
-
-	var_9_93[27] = {
+	pg.base.activity_template[27] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38112,11 +34524,7 @@ end)()
 			24577
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.activity_template
-
-	var_9_94[28] = {
+	pg.base.activity_template[28] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38130,11 +34538,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.activity_template
-
-	var_9_95[29] = {
+	pg.base.activity_template[29] = {
 		mark = 20251023,
 		time = "stop",
 		type = 74,
@@ -38159,11 +34563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.activity_template
-
-	var_9_96[30] = {
+	pg.base.activity_template[30] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38222,11 +34622,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.activity_template
-
-	var_9_97[50208] = {
+	pg.base.activity_template[50208] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38245,11 +34641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.activity_template
-
-	var_9_98[50209] = {
+	pg.base.activity_template[50209] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38274,8 +34666,7 @@ end)()
 			21858
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.activity_template[50210] = {
+	pg.base.activity_template[50210] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38318,11 +34709,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.activity_template
-
-	var_10_0[50211] = {
+	pg.base.activity_template[50211] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38353,11 +34740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.activity_template
-
-	var_10_1[50212] = {
+	pg.base.activity_template[50212] = {
 		mark = 20251023,
 		page_info = "",
 		time = "stop",
@@ -38376,11 +34759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.activity_template
-
-	var_10_2[50213] = {
+	pg.base.activity_template[50213] = {
 		mark = 20251106,
 		page_info = "",
 		type = 12,
@@ -38426,11 +34805,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.activity_template
-
-	var_10_3[50214] = {
+	pg.base.activity_template[50214] = {
 		mark = 20251106,
 		time = "stop",
 		type = 74,
@@ -38450,11 +34825,7 @@ end)()
 			linkActID = 50213
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.activity_template
-
-	var_10_4[50215] = {
+	pg.base.activity_template[50215] = {
 		mark = 20251106,
 		page_info = "",
 		time = "stop",
@@ -38468,11 +34839,7 @@ end)()
 		id = 50215,
 		page_core = ""
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.activity_template
-
-	var_10_5[50216] = {
+	pg.base.activity_template[50216] = {
 		mark = 20251106,
 		page_info = "",
 		type = 13,
@@ -38519,11 +34886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.activity_template
-
-	var_10_6[50217] = {
+	pg.base.activity_template[50217] = {
 		mark = 20251106,
 		page_info = "",
 		type = 26,
@@ -38574,11 +34937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.activity_template
-
-	var_10_7[50218] = {
+	pg.base.activity_template[50218] = {
 		mark = 20251106,
 		page_info = "",
 		time = "stop",
@@ -38592,11 +34951,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.activity_template
-
-	var_10_8[50220] = {
+	pg.base.activity_template[50220] = {
 		mark = 20251113,
 		type = 74,
 		login_pop = 0,
@@ -38648,11 +35003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.activity_template
-
-	var_10_9[50221] = {
+	pg.base.activity_template[50221] = {
 		mark = 20251113,
 		page_info = "",
 		type = 14,
@@ -38732,11 +35083,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.activity_template
-
-	var_10_10[50222] = {
+	pg.base.activity_template[50222] = {
 		mark = 20251113,
 		time = "stop",
 		type = 12,
@@ -38762,11 +35109,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.activity_template
-
-	var_10_11[50223] = {
+	pg.base.activity_template[50223] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -38791,11 +35134,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.activity_template
-
-	var_10_12[50224] = {
+	pg.base.activity_template[50224] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -38830,11 +35169,7 @@ end)()
 			24644
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.activity_template
-
-	var_10_13[50225] = {
+	pg.base.activity_template[50225] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -38853,11 +35188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.activity_template
-
-	var_10_14[50226] = {
+	pg.base.activity_template[50226] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -38873,11 +35204,7 @@ end)()
 			build_painting = "yunxian_building"
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.activity_template
-
-	var_10_15[50227] = {
+	pg.base.activity_template[50227] = {
 		mark = 20251113,
 		page_info = "",
 		type = 36,
@@ -38924,11 +35251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.activity_template
-
-	var_10_16[50228] = {
+	pg.base.activity_template[50228] = {
 		mark = 20251113,
 		page_info = "",
 		type = 16,
@@ -38968,11 +35291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.activity_template
-
-	var_10_17[50230] = {
+	pg.base.activity_template[50230] = {
 		mark = 20251113,
 		type = 87,
 		login_pop = 0,
@@ -39015,11 +35334,7 @@ end)()
 			ui_name = "ChongYingFrameRePage"
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.activity_template
-
-	var_10_18[50231] = {
+	pg.base.activity_template[50231] = {
 		mark = 20251113,
 		time = "stop",
 		type = 18,
@@ -39089,11 +35404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.activity_template
-
-	var_10_19[50232] = {
+	pg.base.activity_template[50232] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -39107,11 +35418,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.activity_template
-
-	var_10_20[50233] = {
+	pg.base.activity_template[50233] = {
 		mark = 20251113,
 		time = "stop",
 		type = 3,
@@ -39128,11 +35435,7 @@ end)()
 			ui_name = "ChongYingLoginRePage"
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.activity_template
-
-	var_10_21[50234] = {
+	pg.base.activity_template[50234] = {
 		mark = 20251113,
 		time = "stop",
 		type = 18,
@@ -39178,11 +35481,7 @@ end)()
 			ui_name = "PSSSkinPage"
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.activity_template
-
-	var_10_22[50235] = {
+	pg.base.activity_template[50235] = {
 		mark = 20251113,
 		time = "stop",
 		type = 86,
@@ -39216,11 +35515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.activity_template
-
-	var_10_23[50236] = {
+	pg.base.activity_template[50236] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -39238,11 +35533,7 @@ end)()
 			65733
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.activity_template
-
-	var_10_24[50238] = {
+	pg.base.activity_template[50238] = {
 		mark = 20251113,
 		page_info = "",
 		type = 10,
@@ -39282,11 +35573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.activity_template
-
-	var_10_25[50242] = {
+	pg.base.activity_template[50242] = {
 		mark = 20251113,
 		page_info = "",
 		time = "stop",
@@ -39314,11 +35601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.activity_template
-
-	var_10_26[50245] = {
+	pg.base.activity_template[50245] = {
 		mark = 20251120,
 		time = "stop",
 		type = 74,
@@ -39343,11 +35626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.activity_template
-
-	var_10_27[50246] = {
+	pg.base.activity_template[50246] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39425,11 +35704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.activity_template
-
-	var_10_28[50247] = {
+	pg.base.activity_template[50247] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39448,11 +35723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.activity_template
-
-	var_10_29[50249] = {
+	pg.base.activity_template[50249] = {
 		mark = 20251120,
 		time = "stop",
 		type = 103,
@@ -39507,11 +35778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.activity_template
-
-	var_10_30[50250] = {
+	pg.base.activity_template[50250] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39525,11 +35792,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.activity_template
-
-	var_10_31[50251] = {
+	pg.base.activity_template[50251] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39543,11 +35806,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.activity_template
-
-	var_10_32[50252] = {
+	pg.base.activity_template[50252] = {
 		mark = 20251120,
 		time = "stop",
 		type = 13,
@@ -39592,11 +35851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.activity_template
-
-	var_10_33[50253] = {
+	pg.base.activity_template[50253] = {
 		mark = 20251120,
 		time = "stop",
 		type = 74,
@@ -39613,11 +35868,7 @@ end)()
 			ui_name = "DALFavorabilityPage"
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.activity_template
-
-	var_10_34[50254] = {
+	pg.base.activity_template[50254] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39636,11 +35887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.activity_template
-
-	var_10_35[50255] = {
+	pg.base.activity_template[50255] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39666,11 +35913,7 @@ end)()
 			resource_ID = 65742
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.activity_template
-
-	var_10_36[50256] = {
+	pg.base.activity_template[50256] = {
 		mark = 20251120,
 		time = "stop",
 		type = 132,
@@ -39709,11 +35952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.activity_template
-
-	var_10_37[50257] = {
+	pg.base.activity_template[50257] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39755,11 +35994,7 @@ end)()
 			24741
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.activity_template
-
-	var_10_38[50258] = {
+	pg.base.activity_template[50258] = {
 		mark = 20251120,
 		page_info = "",
 		time = "stop",
@@ -39773,11 +36008,7 @@ end)()
 		id = 50258,
 		page_core = ""
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.activity_template
-
-	var_10_39[50260] = {
+	pg.base.activity_template[50260] = {
 		mark = 20251204,
 		page_info = "",
 		time = "stop",
@@ -39797,11 +36028,7 @@ end)()
 			12009
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.activity_template
-
-	var_10_40[50261] = {
+	pg.base.activity_template[50261] = {
 		mark = 20251204,
 		type = 74,
 		login_pop = 0,
@@ -39869,11 +36096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.activity_template
-
-	var_10_41[50262] = {
+	pg.base.activity_template[50262] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -39915,11 +36138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.activity_template
-
-	var_10_42[50263] = {
+	pg.base.activity_template[50263] = {
 		mark = 20251211,
 		type = 69,
 		login_pop = 0,
@@ -39964,11 +36183,7 @@ end)()
 			itemid = 42054
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.activity_template
-
-	var_10_43[50264] = {
+	pg.base.activity_template[50264] = {
 		mark = 20251211,
 		type = 87,
 		login_pop = 0,
@@ -40011,11 +36226,7 @@ end)()
 			ui_name = "HelenaFramePage"
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.activity_template
-
-	var_10_44[50265] = {
+	pg.base.activity_template[50265] = {
 		mark = 20251211,
 		page_info = "",
 		time = "stop",
@@ -40029,11 +36240,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.activity_template
-
-	var_10_45[50266] = {
+	pg.base.activity_template[50266] = {
 		mark = 20251211,
 		type = 18,
 		login_pop = 0,
@@ -40130,11 +36337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.activity_template
-
-	var_10_46[50267] = {
+	pg.base.activity_template[50267] = {
 		mark = 20251211,
 		time = "stop",
 		type = 124,
@@ -40447,11 +36650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.activity_template
-
-	var_10_47[50268] = {
+	pg.base.activity_template[50268] = {
 		mark = 20251211,
 		page_info = "",
 		time = "stop",
@@ -40475,11 +36674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.activity_template
-
-	var_10_48[50269] = {
+	pg.base.activity_template[50269] = {
 		mark = 20251211,
 		page_info = "",
 		time = "stop",
@@ -40493,11 +36688,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.activity_template
-
-	var_10_49[50270] = {
+	pg.base.activity_template[50270] = {
 		mark = 20251211,
 		page_info = "",
 		type = 68,
@@ -40537,11 +36728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.activity_template
-
-	var_10_50[50280] = {
+	pg.base.activity_template[50280] = {
 		mark = 20251218,
 		page_info = "",
 		type = 36,
@@ -40588,11 +36775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.activity_template
-
-	var_10_51[50281] = {
+	pg.base.activity_template[50281] = {
 		mark = 20251218,
 		type = 12,
 		login_pop = 0,
@@ -40647,11 +36830,7 @@ end)()
 			PTID = 596
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.activity_template
-
-	var_10_52[50282] = {
+	pg.base.activity_template[50282] = {
 		mark = 20251218,
 		page_info = "",
 		type = 12,
@@ -40704,11 +36883,7 @@ end)()
 			task_id = 24824
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.activity_template
-
-	var_10_53[50283] = {
+	pg.base.activity_template[50283] = {
 		mark = 20251218,
 		page_info = "",
 		type = 27,
@@ -40753,11 +36928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.activity_template
-
-	var_10_54[50284] = {
+	pg.base.activity_template[50284] = {
 		mark = 20251218,
 		time = "stop",
 		type = 115,
@@ -40844,11 +37015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.activity_template
-
-	var_10_55[50285] = {
+	pg.base.activity_template[50285] = {
 		mark = 20251218,
 		type = 13,
 		login_pop = 0,
@@ -40914,11 +37081,7 @@ end)()
 			ui_name = "AnniversaryEightMainPage"
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.activity_template
-
-	var_10_56[50286] = {
+	pg.base.activity_template[50286] = {
 		mark = 20251218,
 		page_info = "",
 		time = "stop",
@@ -40932,11 +37095,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.activity_template
-
-	var_10_57[50287] = {
+	pg.base.activity_template[50287] = {
 		mark = 20251218,
 		page_info = "",
 		time = "stop",
@@ -40999,11 +37158,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.activity_template
-
-	var_10_58[50288] = {
+	pg.base.activity_template[50288] = {
 		mark = 20251218,
 		time = "stop",
 		type = 74,
@@ -41028,11 +37183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.activity_template
-
-	var_10_59[50289] = {
+	pg.base.activity_template[50289] = {
 		mark = 20251218,
 		page_info = "",
 		time = "stop",
@@ -41046,11 +37197,7 @@ end)()
 		id = 50289,
 		page_core = ""
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.activity_template
-
-	var_10_60[50290] = {
+	pg.base.activity_template[50290] = {
 		mark = 20251218,
 		time = "stop",
 		type = 86,
@@ -41091,11 +37238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.activity_template
-
-	var_10_61[50291] = {
+	pg.base.activity_template[50291] = {
 		mark = 20251218,
 		page_info = "",
 		type = 110,
@@ -41135,11 +37278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.activity_template
-
-	var_10_62[50292] = {
+	pg.base.activity_template[50292] = {
 		mark = 20251218,
 		page_info = "",
 		type = 13,
@@ -41190,11 +37329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.activity_template
-
-	var_10_63[50294] = {
+	pg.base.activity_template[50294] = {
 		mark = 20250912,
 		page_info = "",
 		type = 1,
@@ -41237,11 +37372,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.activity_template
-
-	var_10_64[50295] = {
+	pg.base.activity_template[50295] = {
 		mark = 20251218,
 		page_info = "",
 		time = "stop",
@@ -41266,11 +37397,7 @@ end)()
 			21882
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.activity_template
-
-	var_10_65[50296] = {
+	pg.base.activity_template[50296] = {
 		mark = 20251218,
 		type = 18,
 		login_pop = 0,
@@ -41342,11 +37469,7 @@ end)()
 			ui_name = "HamanIITaskSkinPage"
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.activity_template
-
-	var_10_66[50297] = {
+	pg.base.activity_template[50297] = {
 		mark = 20251218,
 		page_info = "",
 		type = 13,
@@ -41386,11 +37509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.activity_template
-
-	var_10_67[50298] = {
+	pg.base.activity_template[50298] = {
 		mark = 20251225,
 		type = 63,
 		login_pop = 0,
@@ -41433,11 +37552,7 @@ end)()
 			ui_name = "WinterFestival2025ShrinePage"
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.activity_template
-
-	var_10_68[50300] = {
+	pg.base.activity_template[50300] = {
 		mark = 20251225,
 		page_info = "",
 		type = 57,
@@ -41477,11 +37592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.activity_template
-
-	var_10_69[50301] = {
+	pg.base.activity_template[50301] = {
 		mark = 20251225,
 		type = 86,
 		login_pop = 0,
@@ -41552,11 +37663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.activity_template
-
-	var_10_70[17] = {
+	pg.base.activity_template[17] = {
 		mark = 20260115,
 		type = 87,
 		login_pop = 0,
@@ -41599,11 +37706,7 @@ end)()
 			ui_name = "MeixiT2FrameRePage"
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.activity_template
-
-	var_10_71[18] = {
+	pg.base.activity_template[18] = {
 		mark = 20260115,
 		page_info = "",
 		type = 58,
@@ -41643,11 +37746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.activity_template
-
-	var_10_72[19] = {
+	pg.base.activity_template[19] = {
 		mark = 20260115,
 		type = 18,
 		login_pop = 0,
@@ -41743,11 +37842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.activity_template
-
-	var_10_73[20] = {
+	pg.base.activity_template[20] = {
 		mark = 20260115,
 		page_info = "",
 		type = 80,
@@ -41791,11 +37886,7 @@ end)()
 			65800
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.activity_template
-
-	var_10_74[21] = {
+	pg.base.activity_template[21] = {
 		mark = 20260115,
 		type = 3,
 		login_pop = 0,
@@ -41838,11 +37929,7 @@ end)()
 			ui_name = "BuildLoginRePage"
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.activity_template
-
-	var_10_75[22] = {
+	pg.base.activity_template[22] = {
 		mark = 20260115,
 		type = 12,
 		login_pop = 0,
@@ -41897,11 +37984,7 @@ end)()
 			PTID = 607
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.activity_template
-
-	var_10_76[23] = {
+	pg.base.activity_template[23] = {
 		mark = 20260115,
 		page_info = "",
 		type = 12,
@@ -41954,11 +38037,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.activity_template
-
-	var_10_77[24] = {
+	pg.base.activity_template[24] = {
 		mark = 20260115,
 		page_info = "",
 		type = 13,
@@ -42019,11 +38098,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.activity_template
-
-	var_10_78[25] = {
+	pg.base.activity_template[25] = {
 		mark = 20260115,
 		time = "stop",
 		type = 74,
@@ -42049,11 +38124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.activity_template
-
-	var_10_79[26] = {
+	pg.base.activity_template[26] = {
 		mark = 20260115,
 		page_info = "",
 		time = "stop",
@@ -42112,11 +38183,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.activity_template
-
-	var_10_80[27] = {
+	pg.base.activity_template[27] = {
 		mark = 20260115,
 		page_info = "",
 		type = 36,
@@ -42163,11 +38230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.activity_template
-
-	var_10_81[28] = {
+	pg.base.activity_template[28] = {
 		mark = 20260115,
 		page_info = "",
 		type = 16,
@@ -42207,11 +38270,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.activity_template
-
-	var_10_82[29] = {
+	pg.base.activity_template[29] = {
 		mark = 20260115,
 		page_info = "",
 		type = 27,
@@ -42256,11 +38315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.activity_template
-
-	var_10_83[31] = {
+	pg.base.activity_template[31] = {
 		mark = 20260115,
 		page_info = "",
 		type = 1,
@@ -42300,11 +38355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.activity_template
-
-	var_10_84[50336] = {
+	pg.base.activity_template[50336] = {
 		mark = 20260115,
 		page_info = "",
 		time = "stop",
@@ -42318,11 +38369,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.activity_template
-
-	var_10_85[50337] = {
+	pg.base.activity_template[50337] = {
 		mark = 20260115,
 		time = "stop",
 		type = 115,
@@ -42404,11 +38451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.activity_template
-
-	var_10_86[50341] = {
+	pg.base.activity_template[50341] = {
 		mark = 20260115,
 		type = 74,
 		login_pop = 0,
@@ -42476,11 +38519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.activity_template
-
-	var_10_87[50342] = {
+	pg.base.activity_template[50342] = {
 		mark = 20260115,
 		page_info = "",
 		type = 13,
@@ -42522,11 +38561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.activity_template
-
-	var_10_88[50344] = {
+	pg.base.activity_template[50344] = {
 		mark = 20260115,
 		page_info = "",
 		type = 110,
@@ -42566,11 +38601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.activity_template
-
-	var_10_89[50345] = {
+	pg.base.activity_template[50345] = {
 		mark = 20260115,
 		page_info = "",
 		type = 13,
@@ -42616,11 +38647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.activity_template
-
-	var_10_90[50350] = {
+	pg.base.activity_template[50350] = {
 		mark = 20260122,
 		page_info = "",
 		time = "stop",
@@ -42634,11 +38661,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.activity_template
-
-	var_10_91[50351] = {
+	pg.base.activity_template[50351] = {
 		mark = 20260122,
 		time = "stop",
 		type = 93,
@@ -42678,11 +38701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.activity_template
-
-	var_10_92[50352] = {
+	pg.base.activity_template[50352] = {
 		mark = 20260122,
 		page_info = "",
 		time = "stop",
@@ -42696,11 +38715,7 @@ end)()
 		id = 50352,
 		page_core = ""
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.activity_template
-
-	var_10_93[50353] = {
+	pg.base.activity_template[50353] = {
 		mark = 20260122,
 		type = 74,
 		login_pop = 0,
@@ -42751,11 +38766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.activity_template
-
-	var_10_94[50355] = {
+	pg.base.activity_template[50355] = {
 		mark = 20260122,
 		page_info = "",
 		time = "stop",
@@ -42789,11 +38800,7 @@ end)()
 			24983
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.activity_template
-
-	var_10_95[50357] = {
+	pg.base.activity_template[50357] = {
 		mark = 20260122,
 		page_info = "",
 		type = 16,
@@ -42833,11 +38840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.activity_template
-
-	var_10_96[50358] = {
+	pg.base.activity_template[50358] = {
 		mark = 20260122,
 		page_info = "",
 		time = "stop",
@@ -42856,11 +38859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.activity_template
-
-	var_10_97[50359] = {
+	pg.base.activity_template[50359] = {
 		mark = 20260122,
 		page_info = "",
 		type = 13,
@@ -42910,11 +38909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.activity_template
-
-	var_10_98[50360] = {
+	pg.base.activity_template[50360] = {
 		mark = 20260122,
 		page_info = "",
 		time = "stop",
@@ -42955,8 +38950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.activity_template[50362] = {
+	pg.base.activity_template[50362] = {
 		mark = 20260129,
 		page_info = "",
 		type = 14,
@@ -43032,11 +39026,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.activity_template
-
-	var_11_0[50363] = {
+	pg.base.activity_template[50363] = {
 		mark = 20260129,
 		type = 11,
 		login_pop = 0,
@@ -43081,11 +39071,7 @@ end)()
 			shopActID = 50362
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.activity_template
-
-	var_11_1[50371] = {
+	pg.base.activity_template[50371] = {
 		mark = 20260205,
 		type = 111,
 		login_pop = 0,
@@ -43137,11 +39123,7 @@ end)()
 			scene = "OTHERWORLD_BACKHILL"
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.activity_template
-
-	var_11_2[50372] = {
+	pg.base.activity_template[50372] = {
 		mark = 20260205,
 		page_info = "",
 		type = 89,
@@ -43209,11 +39191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.activity_template
-
-	var_11_3[50374] = {
+	pg.base.activity_template[50374] = {
 		mark = 20260205,
 		page_info = "",
 		type = 22,
@@ -43267,11 +39245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.activity_template
-
-	var_11_4[50375] = {
+	pg.base.activity_template[50375] = {
 		mark = 20260205,
 		page_info = "",
 		type = 112,
@@ -43354,11 +39328,7 @@ end)()
 			open_story = "CONGLINGKAISHIMOWANG1"
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.activity_template
-
-	var_11_5[50376] = {
+	pg.base.activity_template[50376] = {
 		mark = 20260205,
 		page_info = "",
 		type = 16,
@@ -43398,11 +39368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.activity_template
-
-	var_11_6[50377] = {
+	pg.base.activity_template[50377] = {
 		mark = 20260205,
 		page_info = "",
 		type = 13,
@@ -43517,11 +39483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.activity_template
-
-	var_11_7[50378] = {
+	pg.base.activity_template[50378] = {
 		mark = 20260205,
 		page_info = "",
 		type = 74,
@@ -43561,11 +39523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.activity_template
-
-	var_11_8[50379] = {
+	pg.base.activity_template[50379] = {
 		mark = 20260205,
 		page_info = "",
 		type = 27,
@@ -43610,11 +39568,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.activity_template
-
-	var_11_9[50380] = {
+	pg.base.activity_template[50380] = {
 		mark = 20260205,
 		page_info = "",
 		type = 13,
@@ -43656,11 +39610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.activity_template
-
-	var_11_10[50381] = {
+	pg.base.activity_template[50381] = {
 		mark = 20260205,
 		page_info = "",
 		type = 1,
@@ -43715,11 +39665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.activity_template
-
-	var_11_11[50382] = {
+	pg.base.activity_template[50382] = {
 		mark = 20260205,
 		page_info = "",
 		type = 74,
@@ -43759,11 +39705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.activity_template
-
-	var_11_12[50383] = {
+	pg.base.activity_template[50383] = {
 		mark = 20260205,
 		type = 3,
 		login_pop = 0,
@@ -43806,11 +39748,7 @@ end)()
 			ui_name = "OtherWorldLoginRePage"
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.activity_template
-
-	var_11_13[50384] = {
+	pg.base.activity_template[50384] = {
 		mark = 20260205,
 		page_info = "",
 		type = 80,
@@ -43854,11 +39792,7 @@ end)()
 			65815
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.activity_template
-
-	var_11_14[50385] = {
+	pg.base.activity_template[50385] = {
 		mark = 20260205,
 		page_info = "",
 		type = 13,
@@ -43904,11 +39838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.activity_template
-
-	var_11_15[50400] = {
+	pg.base.activity_template[50400] = {
 		mark = 20260212,
 		page_info = "",
 		type = 133,
@@ -43965,11 +39895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.activity_template
-
-	var_11_16[50401] = {
+	pg.base.activity_template[50401] = {
 		mark = 20260212,
 		page_info = "",
 		type = 13,
@@ -44015,11 +39941,7 @@ end)()
 			exp = 50
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.activity_template
-
-	var_11_17[50402] = {
+	pg.base.activity_template[50402] = {
 		mark = 20260212,
 		page_info = "",
 		type = 26,
@@ -44072,11 +39994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.activity_template
-
-	var_11_18[50403] = {
+	pg.base.activity_template[50403] = {
 		mark = 20260212,
 		page_info = "",
 		time = "stop",
@@ -44096,11 +40014,7 @@ end)()
 			535
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.activity_template
-
-	var_11_19[50404] = {
+	pg.base.activity_template[50404] = {
 		mark = 20260212,
 		type = 13,
 		login_pop = 0,
@@ -44145,11 +40059,7 @@ end)()
 			shopItemID = 90436
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.activity_template
-
-	var_11_20[50405] = {
+	pg.base.activity_template[50405] = {
 		mark = 20260212,
 		page_info = "",
 		type = 13,
@@ -44199,11 +40109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.activity_template
-
-	var_11_21[50406] = {
+	pg.base.activity_template[50406] = {
 		mark = 20260212,
 		page_info = "",
 		type = 27,
@@ -44248,11 +40154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.activity_template
-
-	var_11_22[50407] = {
+	pg.base.activity_template[50407] = {
 		mark = 20260212,
 		page_info = "",
 		type = 27,
@@ -44297,11 +40199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.activity_template
-
-	var_11_23[50408] = {
+	pg.base.activity_template[50408] = {
 		mark = 20260212,
 		page_info = "",
 		type = 52,
@@ -44375,11 +40273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.activity_template
-
-	var_11_24[50409] = {
+	pg.base.activity_template[50409] = {
 		mark = 20260212,
 		page_info = "",
 		type = 74,
@@ -44419,11 +40313,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.activity_template
-
-	var_11_25[50410] = {
+	pg.base.activity_template[50410] = {
 		mark = 20260212,
 		page_info = "",
 		type = 13,
@@ -44466,11 +40356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.activity_template
-
-	var_11_26[50411] = {
+	pg.base.activity_template[50411] = {
 		mark = 20260212,
 		page_info = "",
 		type = 46,
@@ -44510,11 +40396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.activity_template
-
-	var_11_27[50412] = {
+	pg.base.activity_template[50412] = {
 		mark = 20260212,
 		type = 86,
 		login_pop = 0,
@@ -44577,11 +40459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.activity_template
-
-	var_11_28[50413] = {
+	pg.base.activity_template[50413] = {
 		mark = 20260212,
 		type = 3,
 		login_pop = 0,
@@ -44624,11 +40502,7 @@ end)()
 			ui_name = "SpringFestival2026FuboLoginPage"
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.activity_template
-
-	var_11_29[50414] = {
+	pg.base.activity_template[50414] = {
 		mark = 20260212,
 		page_info = "",
 		type = 43,
@@ -44699,11 +40573,7 @@ end)()
 			ui = "ColoringAnshanUI"
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.activity_template
-
-	var_11_30[50415] = {
+	pg.base.activity_template[50415] = {
 		mark = 20260212,
 		page_info = "",
 		type = 13,
@@ -44762,11 +40632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.activity_template
-
-	var_11_31[50416] = {
+	pg.base.activity_template[50416] = {
 		mark = 20260212,
 		type = 64,
 		login_pop = 0,
@@ -44828,11 +40694,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.activity_template
-
-	var_11_32[50417] = {
+	pg.base.activity_template[50417] = {
 		mark = 20260212,
 		type = 74,
 		login_pop = 0,
@@ -44879,11 +40741,7 @@ end)()
 			1
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.activity_template
-
-	var_11_33[50418] = {
+	pg.base.activity_template[50418] = {
 		mark = 20260212,
 		page_info = "",
 		type = 13,
@@ -44950,11 +40808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.activity_template
-
-	var_11_34[50419] = {
+	pg.base.activity_template[50419] = {
 		mark = 20260212,
 		type = 74,
 		login_pop = 0,
@@ -45005,11 +40859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.activity_template
-
-	var_11_35[50420] = {
+	pg.base.activity_template[50420] = {
 		mark = 20260212,
 		page_info = "",
 		type = 13,
@@ -45066,11 +40916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.activity_template
-
-	var_11_36[50421] = {
+	pg.base.activity_template[50421] = {
 		mark = 20260212,
 		page_info = "",
 		type = 100,
@@ -45124,11 +40970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.activity_template
-
-	var_11_37[50422] = {
+	pg.base.activity_template[50422] = {
 		mark = 20260212,
 		page_info = "",
 		type = 21,
@@ -45181,11 +41023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.activity_template
-
-	var_11_38[50423] = {
+	pg.base.activity_template[50423] = {
 		mark = 20260212,
 		type = 57,
 		login_pop = 0,
@@ -45228,11 +41066,7 @@ end)()
 			ui_name = "SpringFestival2026PacGamePage"
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.activity_template
-
-	var_11_39[50425] = {
+	pg.base.activity_template[50425] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45271,11 +41105,7 @@ end)()
 			25269
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.activity_template
-
-	var_11_40[50426] = {
+	pg.base.activity_template[50426] = {
 		mark = 20260226,
 		time = "stop",
 		type = 12,
@@ -45303,11 +41133,7 @@ end)()
 			PTID = 632
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.activity_template
-
-	var_11_41[50427] = {
+	pg.base.activity_template[50427] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45334,11 +41160,7 @@ end)()
 			task_id = 24824
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.activity_template
-
-	var_11_42[50428] = {
+	pg.base.activity_template[50428] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45357,11 +41179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.activity_template
-
-	var_11_43[50429] = {
+	pg.base.activity_template[50429] = {
 		mark = 20260226,
 		time = "stop",
 		type = 74,
@@ -45386,11 +41204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.activity_template
-
-	var_11_44[50430] = {
+	pg.base.activity_template[50430] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45444,11 +41258,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.activity_template
-
-	var_11_45[50431] = {
+	pg.base.activity_template[50431] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45462,11 +41272,7 @@ end)()
 		id = 50431,
 		page_core = ""
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.activity_template
-
-	var_11_46[0] = {
+	pg.base.activity_template[0] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45487,11 +41293,7 @@ end)()
 			10
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.activity_template
-
-	var_11_47[1] = {
+	pg.base.activity_template[1] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45508,11 +41310,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.activity_template
-
-	var_11_48[2] = {
+	pg.base.activity_template[2] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45610,11 +41408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.activity_template
-
-	var_11_49[4] = {
+	pg.base.activity_template[4] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45628,11 +41422,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.activity_template
-
-	var_11_50[9] = {
+	pg.base.activity_template[9] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45657,11 +41447,7 @@ end)()
 			21910
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.activity_template
-
-	var_11_51[10] = {
+	pg.base.activity_template[10] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45720,11 +41506,7 @@ end)()
 			25275
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.activity_template
-
-	var_11_52[11] = {
+	pg.base.activity_template[11] = {
 		mark = 20260226,
 		page_info = "",
 		time = "stop",
@@ -45740,11 +41522,7 @@ end)()
 			miniGame = 82
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.activity_template
-
-	var_11_53[16] = {
+	pg.base.activity_template[16] = {
 		mark = 20260312,
 		page_info = "",
 		time = "stop",
@@ -45764,11 +41542,7 @@ end)()
 			12019
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.activity_template
-
-	var_11_54[29] = {
+	pg.base.activity_template[29] = {
 		mark = 20260312,
 		type = 12,
 		login_pop = 0,
@@ -45821,11 +41595,7 @@ end)()
 			PTID = 638
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.activity_template
-
-	var_11_55[30] = {
+	pg.base.activity_template[30] = {
 		mark = 20260312,
 		page_info = "",
 		type = 12,
@@ -45876,11 +41646,7 @@ end)()
 			entrance_bg = "activitybanner/temp10"
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.activity_template
-
-	var_11_56[31] = {
+	pg.base.activity_template[31] = {
 		mark = 20260312,
 		type = 74,
 		login_pop = 0,
@@ -45932,11 +41698,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.activity_template
-
-	var_11_57[50464] = {
+	pg.base.activity_template[50464] = {
 		mark = 20260312,
 		page_info = "",
 		type = 14,
@@ -46017,11 +41779,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.activity_template
-
-	var_11_58[50465] = {
+	pg.base.activity_template[50465] = {
 		mark = 20260312,
 		page_info = "",
 		type = 13,
@@ -46082,11 +41840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.activity_template
-
-	var_11_59[50466] = {
+	pg.base.activity_template[50466] = {
 		mark = 20260312,
 		page_info = "",
 		type = 27,
@@ -46131,11 +41885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.activity_template
-
-	var_11_60[50467] = {
+	pg.base.activity_template[50467] = {
 		mark = 20260312,
 		page_info = "",
 		type = 1,
@@ -46178,11 +41928,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.activity_template
-
-	var_11_61[50468] = {
+	pg.base.activity_template[50468] = {
 		mark = 20260312,
 		page_info = "",
 		type = 36,
@@ -46229,11 +41975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.activity_template
-
-	var_11_62[50469] = {
+	pg.base.activity_template[50469] = {
 		mark = 20260312,
 		page_info = "",
 		type = 16,
@@ -46273,11 +42015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.activity_template
-
-	var_11_63[50470] = {
+	pg.base.activity_template[50470] = {
 		mark = 20260312,
 		type = 87,
 		login_pop = 0,
@@ -46320,11 +42058,7 @@ end)()
 			ui_name = "MaoxiV5FramePage"
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.activity_template
-
-	var_11_64[50471] = {
+	pg.base.activity_template[50471] = {
 		mark = 20260312,
 		type = 18,
 		login_pop = 0,
@@ -46421,11 +42155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.activity_template
-
-	var_11_65[50472] = {
+	pg.base.activity_template[50472] = {
 		mark = 20260312,
 		page_info = "",
 		type = 58,
@@ -46465,11 +42195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.activity_template
-
-	var_11_66[50473] = {
+	pg.base.activity_template[50473] = {
 		mark = 20260312,
 		type = 3,
 		login_pop = 0,
@@ -46512,11 +42238,7 @@ end)()
 			ui_name = "MaoxiV5LoginPage"
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.activity_template
-
-	var_11_67[50474] = {
+	pg.base.activity_template[50474] = {
 		mark = 20260312,
 		page_info = "",
 		type = 80,
@@ -46560,11 +42282,7 @@ end)()
 			65873
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.activity_template
-
-	var_11_68[50476] = {
+	pg.base.activity_template[50476] = {
 		mark = 20260312,
 		page_info = "",
 		type = 10,
@@ -46604,11 +42322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.activity_template
-
-	var_11_69[50477] = {
+	pg.base.activity_template[50477] = {
 		mark = 20260312,
 		type = 74,
 		login_pop = 0,
@@ -46678,11 +42392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.activity_template
-
-	var_11_70[50479] = {
+	pg.base.activity_template[50479] = {
 		mark = 20260319,
 		time = "stop",
 		type = 124,
@@ -46743,11 +42453,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.activity_template
-
-	var_11_71[50480] = {
+	pg.base.activity_template[50480] = {
 		mark = 20260319,
 		page_info = "",
 		time = "stop",
@@ -46771,11 +42477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.activity_template
-
-	var_11_72[50501] = {
+	pg.base.activity_template[50501] = {
 		mark = 20260319,
 		page_info = "",
 		type = 15,
@@ -46815,11 +42517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.activity_template
-
-	var_11_73[50502] = {
+	pg.base.activity_template[50502] = {
 		mark = 20260319,
 		type = 74,
 		login_pop = 0,
@@ -46862,11 +42560,7 @@ end)()
 			ui_name = "XiaoDaDiPtRePage"
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.activity_template
-
-	var_11_74[50481] = {
+	pg.base.activity_template[50481] = {
 		mark = 20260326,
 		time = "stop",
 		type = 12,
@@ -46909,11 +42603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.activity_template
-
-	var_11_75[50482] = {
+	pg.base.activity_template[50482] = {
 		mark = 20260326,
 		page_info = "",
 		type = 13,
@@ -46964,11 +42654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.activity_template
-
-	var_11_76[50483] = {
+	pg.base.activity_template[50483] = {
 		mark = 20260326,
 		type = 74,
 		login_pop = 0,
@@ -47020,11 +42706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.activity_template
-
-	var_11_77[50484] = {
+	pg.base.activity_template[50484] = {
 		mark = 20260326,
 		page_info = "",
 		time = "stop",
@@ -47043,11 +42725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.activity_template
-
-	var_11_78[50485] = {
+	pg.base.activity_template[50485] = {
 		mark = 20260326,
 		page_info = "",
 		type = 16,
@@ -47087,11 +42765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.activity_template
-
-	var_11_79[50486] = {
+	pg.base.activity_template[50486] = {
 		mark = 20260326,
 		page_info = "",
 		type = 14,
@@ -47171,11 +42845,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.activity_template
-
-	var_11_80[50487] = {
+	pg.base.activity_template[50487] = {
 		mark = 20250424,
 		page_info = "",
 		time = "stop",
@@ -47205,11 +42875,7 @@ end)()
 			25333
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.activity_template
-
-	var_11_81[50491] = {
+	pg.base.activity_template[50491] = {
 		mark = 20260326,
 		page_info = "",
 		time = "stop",
@@ -47238,11 +42904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.activity_template
-
-	var_11_82[50492] = {
+	pg.base.activity_template[50492] = {
 		mark = 20260326,
 		page_info = "",
 		type = 23,
@@ -47282,11 +42944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.activity_template
-
-	var_11_83[50493] = {
+	pg.base.activity_template[50493] = {
 		mark = 20260326,
 		type = 21,
 		login_pop = 0,
@@ -47336,11 +42994,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.activity_template
-
-	var_11_84[50500] = {
+	pg.base.activity_template[50500] = {
 		mark = 20260319,
 		page_info = "",
 		time = "stop",
@@ -47354,11 +43008,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.activity_template
-
-	var_11_85[50521] = {
+	pg.base.activity_template[50521] = {
 		mark = 20260709,
 		page_info = "",
 		time = "stop",
@@ -47378,11 +43028,7 @@ end)()
 			scene = "BossRushKurskReScene"
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.activity_template
-
-	var_11_86[50801] = {
+	pg.base.activity_template[50801] = {
 		mark = 20260423,
 		page_info = "",
 		type = 76,
@@ -47437,11 +43083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.activity_template
-
-	var_11_87[50803] = {
+	pg.base.activity_template[50803] = {
 		mark = 20260423,
 		page_info = "",
 		type = 27,
@@ -47486,11 +43128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.activity_template
-
-	var_11_88[50804] = {
+	pg.base.activity_template[50804] = {
 		mark = 20260423,
 		type = 12,
 		login_pop = 0,
@@ -47547,11 +43185,7 @@ end)()
 			order = 2
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.activity_template
-
-	var_11_89[50805] = {
+	pg.base.activity_template[50805] = {
 		mark = 20260423,
 		page_info = "",
 		type = 13,
@@ -47617,11 +43251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.activity_template
-
-	var_11_90[50806] = {
+	pg.base.activity_template[50806] = {
 		mark = 20260423,
 		type = 74,
 		login_pop = 0,
@@ -47666,11 +43296,7 @@ end)()
 			fightLinkActID = 50804
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.activity_template
-
-	var_11_91[50807] = {
+	pg.base.activity_template[50807] = {
 		mark = 20260423,
 		page_info = "",
 		type = 14,
@@ -47752,11 +43378,7 @@ end)()
 			pt_id = 661
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.activity_template
-
-	var_11_92[50809] = {
+	pg.base.activity_template[50809] = {
 		mark = 20260423,
 		page_info = "",
 		type = 16,
@@ -47798,11 +43420,7 @@ end)()
 			linkPTActID = 50806
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.activity_template
-
-	var_11_93[50810] = {
+	pg.base.activity_template[50810] = {
 		mark = 20260423,
 		page_info = "",
 		type = 21,
@@ -47861,11 +43479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.activity_template
-
-	var_11_94[50811] = {
+	pg.base.activity_template[50811] = {
 		mark = 20260423,
 		page_info = "",
 		type = 57,
@@ -47918,11 +43532,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.activity_template
-
-	var_11_95[50812] = {
+	pg.base.activity_template[50812] = {
 		mark = 20260423,
 		page_info = "",
 		type = 57,
@@ -47962,11 +43572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.activity_template
-
-	var_11_96[50813] = {
+	pg.base.activity_template[50813] = {
 		mark = 20260423,
 		page_info = "",
 		type = 80,
@@ -48013,11 +43619,7 @@ end)()
 			[nil] = 66019
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.activity_template
-
-	var_11_97[50814] = {
+	pg.base.activity_template[50814] = {
 		mark = 20260423,
 		type = 3,
 		login_pop = 0,
@@ -48060,11 +43662,7 @@ end)()
 			ui_name = "LoginSignRe3Page"
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.activity_template
-
-	var_11_98[50815] = {
+	pg.base.activity_template[50815] = {
 		mark = 20260423,
 		page_info = "",
 		type = 1,
@@ -48129,8 +43727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.activity_template[0] = {
+	pg.base.activity_template[0] = {
 		mark = 20260423,
 		page_info = "",
 		type = 1,
@@ -48195,11 +43792,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.activity_template
-
-	var_12_0[5] = {
+	pg.base.activity_template[5] = {
 		mark = 20260430,
 		type = 74,
 		login_pop = 0,
@@ -48251,11 +43844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.activity_template
-
-	var_12_1[6] = {
+	pg.base.activity_template[6] = {
 		mark = 20260430,
 		type = 3,
 		login_pop = 0,
@@ -48298,11 +43887,7 @@ end)()
 			ui_name = "HeLanLoginRePage"
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.activity_template
-
-	var_12_2[7] = {
+	pg.base.activity_template[7] = {
 		mark = 20260430,
 		page_info = "",
 		type = 80,
@@ -48346,11 +43931,7 @@ end)()
 			65903
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.activity_template
-
-	var_12_3[8] = {
+	pg.base.activity_template[8] = {
 		mark = 20260430,
 		page_info = "",
 		type = 27,
@@ -48395,11 +43976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.activity_template
-
-	var_12_4[9] = {
+	pg.base.activity_template[9] = {
 		mark = 20260430,
 		type = 12,
 		login_pop = 0,
@@ -48455,11 +44032,7 @@ end)()
 			PTID = 691
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.activity_template
-
-	var_12_5[10] = {
+	pg.base.activity_template[10] = {
 		mark = 20260430,
 		page_info = "",
 		type = 13,
@@ -48516,11 +44089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.activity_template
-
-	var_12_6[11] = {
+	pg.base.activity_template[11] = {
 		mark = 20260430,
 		page_info = "",
 		type = 16,
@@ -48560,11 +44129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.activity_template
-
-	var_12_7[12] = {
+	pg.base.activity_template[12] = {
 		mark = 20260430,
 		page_info = "",
 		type = 1,
@@ -48619,11 +44184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.activity_template
-
-	var_12_8[13] = {
+	pg.base.activity_template[13] = {
 		mark = 20260430,
 		page_info = "",
 		type = 14,
@@ -48704,11 +44265,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.activity_template
-
-	var_12_9[16] = {
+	pg.base.activity_template[16] = {
 		mark = 20260430,
 		page_info = "",
 		type = 15,
@@ -48748,11 +44305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.activity_template
-
-	var_12_10[17] = {
+	pg.base.activity_template[17] = {
 		mark = 20260430,
 		type = 74,
 		login_pop = 0,
@@ -48797,11 +44350,7 @@ end)()
 			task_act_id = 50834
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.activity_template
-
-	var_12_11[18] = {
+	pg.base.activity_template[18] = {
 		mark = 20260430,
 		page_info = "",
 		type = 13,
@@ -48877,11 +44426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.activity_template
-
-	var_12_12[19] = {
+	pg.base.activity_template[19] = {
 		mark = 20260430,
 		page_info = "",
 		type = 13,
@@ -48924,11 +44469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.activity_template
-
-	var_12_13[24] = {
+	pg.base.activity_template[24] = {
 		mark = 20260716,
 		type = 74,
 		login_pop = 0,
@@ -49010,11 +44551,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.activity_template
-
-	var_12_14[25] = {
+	pg.base.activity_template[25] = {
 		mark = 20260716,
 		type = 13,
 		login_pop = 0,
@@ -49061,11 +44598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.activity_template
-
-	var_12_15[28] = {
+	pg.base.activity_template[28] = {
 		mark = 20260716,
 		type = 103,
 		login_pop = 0,
@@ -49146,11 +44679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.activity_template
-
-	var_12_16[29] = {
+	pg.base.activity_template[29] = {
 		mark = 20260716,
 		type = 111,
 		login_pop = 0,
@@ -49203,11 +44732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.activity_template
-
-	var_12_17[30] = {
+	pg.base.activity_template[30] = {
 		mark = 20260716,
 		type = 18,
 		login_pop = 0,
@@ -49337,11 +44862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.activity_template
-
-	var_12_18[31] = {
+	pg.base.activity_template[31] = {
 		mark = 20260716,
 		page_info = "",
 		type = 13,
@@ -49385,11 +44906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.activity_template
-
-	var_12_19[50598] = {
+	pg.base.activity_template[50598] = {
 		mark = 20260520,
 		page_info = "",
 		type = 13,
@@ -49452,11 +44969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.activity_template
-
-	var_12_20[50599] = {
+	pg.base.activity_template[50599] = {
 		mark = 20260520,
 		page_info = "",
 		type = 16,
@@ -49496,11 +45009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.activity_template
-
-	var_12_21[50600] = {
+	pg.base.activity_template[50600] = {
 		mark = 20260520,
 		page_info = "",
 		type = 36,
@@ -49547,11 +45056,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.activity_template
-
-	var_12_22[50601] = {
+	pg.base.activity_template[50601] = {
 		mark = 20260520,
 		page_info = "",
 		type = 27,
@@ -49596,11 +45101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.activity_template
-
-	var_12_23[50602] = {
+	pg.base.activity_template[50602] = {
 		mark = 20260520,
 		page_info = "",
 		type = 140,
@@ -49682,11 +45183,7 @@ end)()
 			daily_task = {}
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.activity_template
-
-	var_12_24[50603] = {
+	pg.base.activity_template[50603] = {
 		mark = 20260226,
 		page_info = "",
 		type = 13,
@@ -49747,11 +45244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.activity_template
-
-	var_12_25[50604] = {
+	pg.base.activity_template[50604] = {
 		mark = 20260520,
 		page_info = "",
 		type = 74,
@@ -49791,11 +45284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.activity_template
-
-	var_12_26[50605] = {
+	pg.base.activity_template[50605] = {
 		mark = 20260520,
 		type = 12,
 		login_pop = 0,
@@ -49850,11 +45339,7 @@ end)()
 			PTID = 701
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.activity_template
-
-	var_12_27[50606] = {
+	pg.base.activity_template[50606] = {
 		mark = 20260520,
 		page_info = "",
 		type = 12,
@@ -49907,11 +45392,7 @@ end)()
 			task_id = 25611
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.activity_template
-
-	var_12_28[50607] = {
+	pg.base.activity_template[50607] = {
 		mark = 20260520,
 		page_info = "",
 		type = 13,
@@ -49962,11 +45443,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.activity_template
-
-	var_12_29[50608] = {
+	pg.base.activity_template[50608] = {
 		mark = 20260520,
 		type = 115,
 		login_pop = 0,
@@ -50082,11 +45559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.activity_template
-
-	var_12_30[50609] = {
+	pg.base.activity_template[50609] = {
 		mark = 20260520,
 		type = 3,
 		login_pop = 0,
@@ -50131,11 +45604,7 @@ end)()
 			"https://game.bilibili.com/blhx/2026-ninth-anniversary/"
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.activity_template
-
-	var_12_31[50610] = {
+	pg.base.activity_template[50610] = {
 		mark = 20260520,
 		type = 18,
 		login_pop = 0,
@@ -50203,11 +45672,7 @@ end)()
 			mini_game_id = 84
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.activity_template
-
-	var_12_32[50611] = {
+	pg.base.activity_template[50611] = {
 		mark = 20260520,
 		page_info = "",
 		type = 14,
@@ -50295,11 +45760,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.activity_template
-
-	var_12_33[50612] = {
+	pg.base.activity_template[50612] = {
 		mark = 20250520,
 		type = 56,
 		login_pop = 0,
@@ -50343,11 +45804,7 @@ end)()
 			ui_name = "AnniversaryNinthReturnAwardPage"
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.activity_template
-
-	var_12_34[50614] = {
+	pg.base.activity_template[50614] = {
 		mark = 20250520,
 		page_info = "",
 		type = 1,
@@ -50390,11 +45847,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.activity_template
-
-	var_12_35[50615] = {
+	pg.base.activity_template[50615] = {
 		mark = 20250520,
 		page_info = "",
 		type = 10,
@@ -50434,11 +45887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.activity_template
-
-	var_12_36[50616] = {
+	pg.base.activity_template[50616] = {
 		mark = 20260520,
 		page_info = "",
 		type = 13,
@@ -50488,11 +45937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.activity_template
-
-	var_12_37[50617] = {
+	pg.base.activity_template[50617] = {
 		mark = 20260520,
 		type = 57,
 		login_pop = 0,
@@ -50535,11 +45980,7 @@ end)()
 			ui_name = "AnniversaryNineGamePage"
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.activity_template
-
-	var_12_38[50618] = {
+	pg.base.activity_template[50618] = {
 		mark = 20260520,
 		page_info = "",
 		type = 55,
@@ -50583,11 +46024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.activity_template
-
-	var_12_39[50619] = {
+	pg.base.activity_template[50619] = {
 		mark = 20260520,
 		type = 13,
 		login_pop = 0,
@@ -50630,11 +46067,7 @@ end)()
 			ui_name = "AnniversaryNineMainPage"
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.activity_template
-
-	var_12_40[50621] = {
+	pg.base.activity_template[50621] = {
 		mark = 20260520,
 		type = 74,
 		login_pop = 0,
@@ -50685,11 +46118,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.activity_template
-
-	var_12_41[50622] = {
+	pg.base.activity_template[50622] = {
 		mark = 20260520,
 		page_info = "",
 		type = 30,
@@ -50729,11 +46158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.activity_template
-
-	var_12_42[50623] = {
+	pg.base.activity_template[50623] = {
 		mark = 20260520,
 		page_info = "",
 		type = 110,
@@ -50773,11 +46198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.activity_template
-
-	var_12_43[50624] = {
+	pg.base.activity_template[50624] = {
 		mark = 20260520,
 		page_info = "",
 		type = 13,
@@ -50823,11 +46244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.activity_template
-
-	var_12_44[50625] = {
+	pg.base.activity_template[50625] = {
 		mark = 20260520,
 		page_info = "",
 		type = 16,
@@ -50867,11 +46284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.activity_template
-
-	var_12_45[50630] = {
+	pg.base.activity_template[50630] = {
 		mark = 20260605,
 		type = 18,
 		login_pop = 0,
@@ -50971,11 +46384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.activity_template
-
-	var_12_46[50651] = {
+	pg.base.activity_template[50651] = {
 		mark = 20260625,
 		type = 12,
 		login_pop = 0,
@@ -51031,11 +46440,7 @@ end)()
 			PTID = 726
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.activity_template
-
-	var_12_47[50652] = {
+	pg.base.activity_template[50652] = {
 		mark = 20260625,
 		type = 74,
 		login_pop = 0,
@@ -51087,11 +46492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.activity_template
-
-	var_12_48[50653] = {
+	pg.base.activity_template[50653] = {
 		mark = 20260625,
 		page_info = "",
 		type = 27,
@@ -51136,11 +46537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.activity_template
-
-	var_12_49[50654] = {
+	pg.base.activity_template[50654] = {
 		mark = 20260625,
 		page_info = "",
 		type = 16,
@@ -51180,11 +46577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.activity_template
-
-	var_12_50[50655] = {
+	pg.base.activity_template[50655] = {
 		mark = 20260625,
 		page_info = "",
 		type = 14,
@@ -51262,11 +46655,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.activity_template
-
-	var_12_51[50656] = {
+	pg.base.activity_template[50656] = {
 		mark = 20260625,
 		page_info = "",
 		type = 13,
@@ -51322,11 +46711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.activity_template
-
-	var_12_52[50658] = {
+	pg.base.activity_template[50658] = {
 		mark = 20260625,
 		page_info = "",
 		type = 1,
@@ -51381,11 +46766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.activity_template
-
-	var_12_53[50659] = {
+	pg.base.activity_template[50659] = {
 		mark = 20260625,
 		page_info = "",
 		type = 13,
@@ -51436,11 +46817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.activity_template
-
-	var_12_54[50660] = {
+	pg.base.activity_template[50660] = {
 		mark = 20260625,
 		page_info = "",
 		type = 131,
@@ -51494,11 +46871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.activity_template
-
-	var_12_55[21] = {
+	pg.base.activity_template[21] = {
 		mark = 20260326,
 		page_info = "",
 		type = 13,
@@ -51548,11 +46921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.activity_template
-
-	var_12_56[51001] = {
+	pg.base.activity_template[51001] = {
 		mark = 20260514,
 		type = 18,
 		login_pop = 0,
@@ -51629,11 +46998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.activity_template
-
-	var_12_57[51002] = {
+	pg.base.activity_template[51002] = {
 		mark = 20260514,
 		type = 69,
 		login_pop = 0,
@@ -51678,11 +47043,7 @@ end)()
 			itemid = 42061
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.activity_template
-
-	var_12_58[51003] = {
+	pg.base.activity_template[51003] = {
 		mark = 20260514,
 		type = 87,
 		login_pop = 0,
@@ -51725,11 +47086,7 @@ end)()
 			ui_name = "YidaliV5FramePage"
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.activity_template
-
-	var_12_59[51004] = {
+	pg.base.activity_template[51004] = {
 		mark = 20260514,
 		page_info = "",
 		type = 58,
@@ -51769,11 +47126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.activity_template
-
-	var_12_60[51005] = {
+	pg.base.activity_template[51005] = {
 		mark = 20260514,
 		type = 18,
 		login_pop = 0,
@@ -51879,11 +47232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.activity_template
-
-	var_12_61[51006] = {
+	pg.base.activity_template[51006] = {
 		mark = 20260514,
 		page_info = "",
 		type = 13,
@@ -51925,11 +47274,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.activity_template
-
-	var_12_62[51021] = {
+	pg.base.activity_template[51021] = {
 		mark = 20260612,
 		type = 74,
 		login_pop = 0,
@@ -51972,11 +47317,7 @@ end)()
 			ui_name = "XiaoXinNongPtPage2"
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.activity_template
-
-	var_12_63[51022] = {
+	pg.base.activity_template[51022] = {
 		mark = 20260612,
 		page_info = "",
 		type = 15,
@@ -52016,11 +47357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.activity_template
-
-	var_12_64[51011] = {
+	pg.base.activity_template[51011] = {
 		mark = 20260528,
 		type = 18,
 		login_pop = 0,
@@ -52120,11 +47457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.activity_template
-
-	var_12_65[51012] = {
+	pg.base.activity_template[51012] = {
 		mark = 20260528,
 		page_info = "",
 		type = 15,
@@ -52164,11 +47497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.activity_template
-
-	var_12_66[51013] = {
+	pg.base.activity_template[51013] = {
 		mark = 20260528,
 		type = 74,
 		login_pop = 0,
@@ -52213,11 +47542,7 @@ end)()
 			task_act_id = 51014
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.activity_template
-
-	var_12_67[51014] = {
+	pg.base.activity_template[51014] = {
 		mark = 20260528,
 		page_info = "",
 		type = 13,
@@ -52293,11 +47618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.activity_template
-
-	var_12_68[51015] = {
+	pg.base.activity_template[51015] = {
 		mark = 20260528,
 		page_info = "",
 		type = 13,
@@ -52340,11 +47661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.activity_template
-
-	var_12_69[51031] = {
+	pg.base.activity_template[51031] = {
 		mark = 20260618,
 		type = 74,
 		login_pop = 0,
@@ -52396,11 +47713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.activity_template
-
-	var_12_70[51032] = {
+	pg.base.activity_template[51032] = {
 		mark = 20260618,
 		page_info = "",
 		type = 14,
@@ -52486,11 +47799,7 @@ end)()
 			use_secretary = false
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.activity_template
-
-	var_12_71[51033] = {
+	pg.base.activity_template[51033] = {
 		mark = 20260618,
 		type = 12,
 		login_pop = 0,
@@ -52543,11 +47852,7 @@ end)()
 			PTID = 717
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.activity_template
-
-	var_12_72[51034] = {
+	pg.base.activity_template[51034] = {
 		mark = 20260618,
 		page_info = "",
 		type = 12,
@@ -52599,11 +47904,7 @@ end)()
 			PTID = 717
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.activity_template
-
-	var_12_73[51035] = {
+	pg.base.activity_template[51035] = {
 		mark = 20260618,
 		page_info = "",
 		type = 13,
@@ -52667,11 +47968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.activity_template
-
-	var_12_74[51036] = {
+	pg.base.activity_template[51036] = {
 		mark = 20260618,
 		page_info = "",
 		type = 27,
@@ -52716,11 +48013,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.activity_template
-
-	var_12_75[51037] = {
+	pg.base.activity_template[51037] = {
 		mark = 20260618,
 		page_info = "",
 		type = 1,
@@ -52763,11 +48056,7 @@ end)()
 			bg = "loadingbg/bg_build_4_act"
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.activity_template
-
-	var_12_76[51038] = {
+	pg.base.activity_template[51038] = {
 		mark = 20260618,
 		page_info = "",
 		type = 36,
@@ -52814,11 +48103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.activity_template
-
-	var_12_77[51039] = {
+	pg.base.activity_template[51039] = {
 		mark = 20260618,
 		page_info = "",
 		type = 16,
@@ -52858,11 +48143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.activity_template
-
-	var_12_78[51040] = {
+	pg.base.activity_template[51040] = {
 		mark = 20260618,
 		type = 87,
 		login_pop = 0,
@@ -52905,11 +48186,7 @@ end)()
 			ui_name = "LuminousFramePage"
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.activity_template
-
-	var_12_79[51041] = {
+	pg.base.activity_template[51041] = {
 		mark = 20260618,
 		type = 18,
 		login_pop = 0,
@@ -52995,11 +48272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.activity_template
-
-	var_12_80[51042] = {
+	pg.base.activity_template[51042] = {
 		mark = 20260618,
 		page_info = "",
 		type = 58,
@@ -53039,11 +48312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.activity_template
-
-	var_12_81[51043] = {
+	pg.base.activity_template[51043] = {
 		mark = 20260618,
 		type = 3,
 		login_pop = 0,
@@ -53086,11 +48355,7 @@ end)()
 			ui_name = "LuminousLoginPage"
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.activity_template
-
-	var_12_82[51044] = {
+	pg.base.activity_template[51044] = {
 		mark = 20260618,
 		page_info = "",
 		type = 80,
@@ -53134,11 +48399,7 @@ end)()
 			66043
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.activity_template
-
-	var_12_83[51045] = {
+	pg.base.activity_template[51045] = {
 		mark = 20260618,
 		page_info = "",
 		type = 110,
@@ -53178,11 +48439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.activity_template
-
-	var_12_84[51046] = {
+	pg.base.activity_template[51046] = {
 		mark = 20260618,
 		page_info = "",
 		type = 13,
@@ -53228,11 +48485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.activity_template
-
-	var_12_85[51047] = {
+	pg.base.activity_template[51047] = {
 		mark = 20260618,
 		page_info = "",
 		type = 10,
@@ -53272,11 +48525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.activity_template
-
-	var_12_86[51050] = {
+	pg.base.activity_template[51050] = {
 		mark = 20260618,
 		type = 115,
 		login_pop = 0,
@@ -53384,11 +48633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.activity_template
-
-	var_12_87[13] = {
+	pg.base.activity_template[13] = {
 		mark = 20260806,
 		type = 69,
 		login_pop = 0,
@@ -53433,11 +48678,7 @@ end)()
 			itemid = 42062
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.activity_template
-
-	var_12_88[14] = {
+	pg.base.activity_template[14] = {
 		mark = 20260806,
 		type = 87,
 		login_pop = 0,
@@ -53480,11 +48721,7 @@ end)()
 			ui_name = "EssexFramePage"
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.activity_template
-
-	var_12_89[15] = {
+	pg.base.activity_template[15] = {
 		mark = 20260806,
 		page_info = "",
 		type = 58,
@@ -53524,11 +48761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.activity_template
-
-	var_12_90[16] = {
+	pg.base.activity_template[16] = {
 		mark = 20260806,
 		type = 18,
 		login_pop = 0,
@@ -53590,10 +48823,11 @@ end)()
 			}
 		},
 		config_client = {
-			task_id = 27365,
-			subType = 1,
-			default_bgm = "battle-deepecho",
 			default_background = "star_level_bg_581",
+			subType = 1,
+			is_clickOnce = true,
+			default_bgm = "battle-deepecho",
+			task_id = 27365,
 			storys = {
 				471,
 				472,
@@ -53635,11 +48869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.activity_template
-
-	var_12_91[17] = {
+	pg.base.activity_template[17] = {
 		mark = 20260806,
 		page_info = "",
 		type = 13,
@@ -53681,11 +48911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.activity_template
-
-	var_12_92[18] = {
+	pg.base.activity_template[18] = {
 		mark = 20260806,
 		type = 57,
 		login_pop = 0,
@@ -53730,11 +48956,7 @@ end)()
 			first_sfx = "qiyuanxiademimi"
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.activity_template
-
-	var_12_93[51061] = {
+	pg.base.activity_template[51061] = {
 		mark = 20260709,
 		page_info = "",
 		type = 142,
@@ -53774,11 +48996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.activity_template
-
-	var_12_94[51062] = {
+	pg.base.activity_template[51062] = {
 		mark = 20260709,
 		page_info = "",
 		type = 74,
@@ -53818,11 +49036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.activity_template
-
-	var_12_95[51063] = {
+	pg.base.activity_template[51063] = {
 		mark = 20260709,
 		type = 18,
 		login_pop = 0,
@@ -53877,11 +49091,7 @@ end)()
 			link_act = 51062
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.activity_template
-
-	var_12_96[51070] = {
+	pg.base.activity_template[51070] = {
 		mark = 20260723,
 		page_info = "",
 		time = "stop",
@@ -53895,11 +49105,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.activity_template
-
-	var_12_97[51071] = {
+	pg.base.activity_template[51071] = {
 		mark = 20260723,
 		time = "stop",
 		type = 93,
@@ -53954,11 +49160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.activity_template
-
-	var_12_98[0] = {
+	pg.base.activity_template[0] = {
 		mark = 20260723,
 		page_info = "",
 		time = "stop",
@@ -53972,8 +49174,7 @@ end)()
 		id = 51072,
 		page_core = ""
 	}
-	pg = var_12_98
-	var_12_98.base.activity_template[1] = {
+	pg.base.activity_template[1] = {
 		mark = 20260723,
 		type = 74,
 		login_pop = 0,
@@ -54029,11 +49230,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.activity_template
-
-	var_13_0[2] = {
+	pg.base.activity_template[2] = {
 		mark = 20260723,
 		page_info = "",
 		time = "stop",
@@ -54059,11 +49256,7 @@ end)()
 			27333
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.activity_template
-
-	var_13_1[4] = {
+	pg.base.activity_template[4] = {
 		mark = 20260723,
 		page_info = "",
 		type = 16,
@@ -54103,11 +49296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.activity_template
-
-	var_13_2[5] = {
+	pg.base.activity_template[5] = {
 		mark = 20260723,
 		page_info = "",
 		time = "stop",
@@ -54126,11 +49315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.activity_template
-
-	var_13_3[6] = {
+	pg.base.activity_template[6] = {
 		mark = 20260723,
 		page_info = "",
 		type = 13,
@@ -54180,11 +49365,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.activity_template
-
-	var_13_4[7] = {
+	pg.base.activity_template[7] = {
 		mark = 20260723,
 		time = "stop",
 		type = 103,
@@ -54228,11 +49409,809 @@ end)()
 			}
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.activity_template
-
-	var_13_5[7011] = {
+	pg.base.activity_template[29] = {
+		mark = 20260813,
+		type = 12,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 1,
+		title_res_tag = "StarsCityCoreActivityUI_subtitle_4",
+		id = 51101,
+		page_core = "StarsCityCoreActivityUI",
+		config_data = {
+			2050001,
+			2050002,
+			2050003,
+			2050021,
+			2050022,
+			2050023
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		page_info = {
+			class_name = "StarsCityMainPage",
+			ui_name = "StarsCityMainPage"
+		},
+		config_client = {
+			is_showMedal = true,
+			medal_group_id = 51110,
+			buildLinkActID = 51103,
+			shopItemID = 71387,
+			fightLinkActID = 51101,
+			task_id = 27392,
+			entrance_bg = "activitybanner/temp10",
+			PTID = 741
+		}
+	}
+	pg.base.activity_template[30] = {
+		mark = 20260813,
+		page_info = "",
+		type = 12,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		id = 51102,
+		page_core = "",
+		config_data = {
+			2050004,
+			2050005,
+			2050006,
+			2050024,
+			2050025,
+			2050026,
+			2050041,
+			2050051,
+			2050052
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		config_client = {
+			entrance_bg = "activitybanner/temp10",
+			task_id = 27392
+		}
+	}
+	pg.base.activity_template[31] = {
+		mark = 20260813,
+		page_info = "",
+		type = 1,
+		login_pop = 0,
+		config_id = 4,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51103,
+		page_core = "",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51104] = {
+		mark = 20260813,
+		page_info = "",
+		type = 14,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		title_res_tag = "",
+		id = 51104,
+		page_core = "",
+		config_data = {
+			4131,
+			4132,
+			4133,
+			4134,
+			4135,
+			4136,
+			4137,
+			4138,
+			4139,
+			4140,
+			4141,
+			4142,
+			4143,
+			4144,
+			4145,
+			4146,
+			4147,
+			4148,
+			4149,
+			4150,
+			4151,
+			4152,
+			4153,
+			4154,
+			4155,
+			4156
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		config_client = {
+			[0] = "pt_id",
+			741,
+			{
+				1,
+				1,
+				1,
+				1
+			},
+			[nil] = "commonbg/bg_pt_lumei",
+			shop_title = "StarsCityCoreActivityUI_subtitle_4",
+			use_secretary = false,
+			painting = "kelaite_pt"
+		}
+	}
+	pg.base.activity_template[51105] = {
+		mark = 20260813,
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51105,
+		page_core = "",
+		config_data = {
+			27371,
+			27372,
+			27373,
+			27374,
+			27375,
+			27376,
+			27377,
+			27378,
+			27379,
+			27380,
+			27381,
+			27382,
+			27383,
+			27384,
+			27385,
+			27386,
+			27387,
+			27388,
+			27389,
+			27390,
+			27391,
+			27392
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51106] = {
+		mark = 20260813,
+		page_info = "",
+		type = 16,
+		login_pop = 0,
+		config_id = 741,
+		is_show = 0,
+		config_data = "100",
+		config_client = "",
+		title_res_tag = "",
+		id = 51106,
+		page_core = "",
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51107] = {
+		mark = 20260813,
+		page_info = "",
+		type = 36,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51107,
+		page_core = "",
+		config_data = {
+			2055002,
+			5000,
+			50,
+			0.36,
+			0.6,
+			10
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					7
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51108] = {
+		mark = 20260813,
+		page_info = "",
+		type = 27,
+		login_pop = 0,
+		config_id = 1,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51108,
+		page_core = "",
+		config_data = {
+			{
+				31919,
+				100
+			}
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51109] = {
+		mark = 20260813,
+		type = 74,
+		login_pop = 0,
+		config_id = 51109,
+		is_show = 2,
+		title_res_tag = "StarsCityCoreActivityUI_subtitle_5",
+		id = 51109,
+		page_core = "StarsCityCoreActivityUI",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		page_info = {
+			class_name = "StarsCityPtPage",
+			ui_name = "StarsCityPtPage"
+		},
+		config_client = {
+			shopLinkActID = 51104,
+			highValueItemSort = {
+				23,
+				30,
+				36,
+				40
+			}
+		}
+	}
+	pg.base.activity_template[51110] = {
+		mark = 20260813,
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51110,
+		page_core = "",
+		config_data = {
+			25701,
+			25702,
+			25703,
+			25704,
+			25705,
+			25706,
+			25707,
+			25708,
+			25709,
+			25710
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51111] = {
+		mark = 20260813,
+		type = 51,
+		login_pop = 0,
+		config_id = 9,
+		is_show = 2,
+		title_res_tag = "RapidSeasideCoreActivityUI_subtitle_2",
+		id = 51111,
+		page_core = "RapidSeasideCoreActivityUI",
+		config_data = {
+			51112
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		page_info = {
+			class_name = "RapidSeasideMonopolyPage",
+			ui_name = "RapidSeasideMonopolyPage"
+		},
+		config_client = {
+			is_showMedal = true,
+			medal_group_id = 51113,
+			link_act = 51114
+		}
+	}
+	pg.base.activity_template[51112] = {
+		mark = 20260813,
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51112,
+		page_core = "",
+		config_data = {
+			27393
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51113] = {
+		mark = 20260813,
+		page_info = "",
+		type = 13,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51113,
+		page_core = "",
+		config_data = {
+			25711,
+			25712,
+			25713,
+			25714,
+			25715,
+			25716,
+			25717,
+			25718
+		},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					9,
+					3
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.activity_template[51114] = {
+		mark = 20260813,
+		page_info = "",
+		time = "always",
+		type = 113,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 0,
+		config_client = "",
+		title_res_tag = "",
+		id = 51114,
+		page_core = "",
+		config_data = {}
+	}
+	pg.base.activity_template[51115] = {
+		mark = 20260813,
+		type = 57,
+		login_pop = 0,
+		config_id = 78,
+		is_show = 3,
+		config_client = "",
+		title_res_tag = "RapidSeasideCoreActivityUI_subtitle_3",
+		id = 51115,
+		page_core = "RapidSeasideCoreActivityUI",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		page_info = {
+			class_name = "RapidSeasideGamePage",
+			ui_name = "RapidSeasideGamePage"
+		}
+	}
+	pg.base.activity_template[51117] = {
+		mark = 20260813,
+		type = 103,
+		login_pop = 0,
+		config_id = 0,
+		is_show = 6,
+		title_res_tag = "StarsCityCoreActivityUI_subtitle_6",
+		id = 51117,
+		page_core = "StarsCityCoreActivityUI",
+		config_data = {},
+		time = {
+			"timer",
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					27
+				},
+				{
+					12,
+					0,
+					0
+				}
+			}
+		},
+		page_info = {
+			class_name = "StarsCityCollectPage",
+			ui_name = "StarsCityCollectPage",
+			sub_ui = {
+				"StarsCityCollectMsgBox"
+			}
+		},
+		config_client = {
+			furniture_theme_link = {
+				2,
+				{
+					"scene court yard",
+					{}
+				}
+			},
+			medal_link = {
+				2,
+				{
+					"scene task"
+				}
+			},
+			equipskin_box_link = {
+				drop_type = 2,
+				drop_id = 30387,
+				list = {
+					{
+						2,
+						{
+							"scene shop",
+							{
+								warp = "shopstreet"
+							}
+						},
+						"军需商店兑换"
+					}
+				}
+			}
+		}
+	}
+	pg.base.activity_template[7011] = {
 		mark = 20230525,
 		time = "stop",
 		type = 54,
@@ -54289,11 +50268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.activity_template
-
-	var_13_6[7012] = {
+	pg.base.activity_template[7012] = {
 		mark = 20230720,
 		time = "stop",
 		type = 54,
@@ -54350,11 +50325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.activity_template
-
-	var_13_7[7013] = {
+	pg.base.activity_template[7013] = {
 		mark = 20230928,
 		type = 54,
 		login_pop = 0,
@@ -54437,11 +50408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.activity_template
-
-	var_13_8[7014] = {
+	pg.base.activity_template[7014] = {
 		mark = 20231123,
 		type = 54,
 		login_pop = 0,
@@ -54524,11 +50491,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.activity_template
-
-	var_13_9[7015] = {
+	pg.base.activity_template[7015] = {
 		mark = 20240130,
 		type = 54,
 		login_pop = 0,
@@ -54611,11 +50574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.activity_template
-
-	var_13_10[7016] = {
+	pg.base.activity_template[7016] = {
 		mark = 20240328,
 		type = 54,
 		login_pop = 0,
@@ -54698,11 +50657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.activity_template
-
-	var_13_11[7017] = {
+	pg.base.activity_template[7017] = {
 		mark = 20240530,
 		type = 54,
 		login_pop = 0,
@@ -54785,11 +50740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.activity_template
-
-	var_13_12[7018] = {
+	pg.base.activity_template[7018] = {
 		mark = 20240730,
 		type = 54,
 		login_pop = 0,
@@ -54842,11 +50793,7 @@ end)()
 			ui_name = "CrusingDisplayActPage18"
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.activity_template
-
-	var_13_13[7019] = {
+	pg.base.activity_template[7019] = {
 		mark = 20240926,
 		type = 54,
 		login_pop = 0,
@@ -54899,11 +50846,7 @@ end)()
 			ui_name = "CrusingDisplayActPage19"
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.activity_template
-
-	var_13_14[7020] = {
+	pg.base.activity_template[7020] = {
 		mark = 20241121,
 		time = "stop",
 		type = 54,
@@ -54930,11 +50873,7 @@ end)()
 			ui_name = "CrusingDisplayActPage20"
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.activity_template
-
-	var_13_15[7021] = {
+	pg.base.activity_template[7021] = {
 		mark = 20250123,
 		type = 54,
 		login_pop = 0,
@@ -54987,11 +50926,7 @@ end)()
 			ui_name = "CrusingDisplayActPage21"
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.activity_template
-
-	var_13_16[7022] = {
+	pg.base.activity_template[7022] = {
 		mark = 20250327,
 		type = 54,
 		login_pop = 0,
@@ -55044,11 +50979,7 @@ end)()
 			ui_name = "CrusingDisplayActPage22"
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.activity_template
-
-	var_13_17[7023] = {
+	pg.base.activity_template[7023] = {
 		mark = 20250529,
 		type = 54,
 		login_pop = 0,
@@ -55101,11 +51032,7 @@ end)()
 			ui_name = "CrusingDisplayActPage23"
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.activity_template
-
-	var_13_18[7024] = {
+	pg.base.activity_template[7024] = {
 		mark = 20250724,
 		type = 54,
 		login_pop = 0,
@@ -55158,11 +51085,7 @@ end)()
 			ui_name = "CrusingDisplayActPage24"
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.activity_template
-
-	var_13_19[7025] = {
+	pg.base.activity_template[7025] = {
 		mark = 20250925,
 		type = 54,
 		login_pop = 0,
@@ -55215,11 +51138,7 @@ end)()
 			ui_name = "CrusingDisplayActPage25"
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.activity_template
-
-	var_13_20[7026] = {
+	pg.base.activity_template[7026] = {
 		mark = 20251120,
 		type = 54,
 		login_pop = 0,
@@ -55272,11 +51191,7 @@ end)()
 			ui_name = "CrusingDisplayActPage26"
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.activity_template
-
-	var_13_21[7027] = {
+	pg.base.activity_template[7027] = {
 		mark = 20260129,
 		type = 54,
 		login_pop = 0,
@@ -55329,11 +51244,7 @@ end)()
 			ui_name = "CrusingDisplayActPage27"
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.activity_template
-
-	var_13_22[7028] = {
+	pg.base.activity_template[7028] = {
 		mark = 20260326,
 		type = 54,
 		login_pop = 0,
@@ -55386,11 +51297,7 @@ end)()
 			ui_name = "CrusingDisplayActPage28"
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.activity_template
-
-	var_13_23[7029] = {
+	pg.base.activity_template[7029] = {
 		mark = 20260528,
 		type = 54,
 		login_pop = 0,
@@ -55443,11 +51350,7 @@ end)()
 			ui_name = "CrusingDisplayActPage29"
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.activity_template
-
-	var_13_24[7030] = {
+	pg.base.activity_template[7030] = {
 		mark = 20260730,
 		type = 54,
 		login_pop = 0,
@@ -55500,11 +51403,7 @@ end)()
 			ui_name = "CrusingDisplayActPage30"
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.activity_template
-
-	var_13_25[7101] = {
+	pg.base.activity_template[7101] = {
 		mark = 20230511,
 		type = 101,
 		login_pop = 0,
@@ -55550,11 +51449,7 @@ end)()
 			ui_name = "SurveyPage"
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.activity_template
-
-	var_13_26[7102] = {
+	pg.base.activity_template[7102] = {
 		mark = 20240222,
 		type = 101,
 		login_pop = 0,
@@ -55600,11 +51495,7 @@ end)()
 			ui_name = "SurveyPage"
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.activity_template
-
-	var_13_27[7104] = {
+	pg.base.activity_template[7104] = {
 		mark = 20240926,
 		page_info = "",
 		time = "always",
@@ -55672,11 +51563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.activity_template
-
-	var_13_28[7105] = {
+	pg.base.activity_template[7105] = {
 		mark = 20241107,
 		type = 101,
 		login_pop = 0,
@@ -55722,11 +51609,7 @@ end)()
 			ui_name = "SurveyPage"
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.activity_template
-
-	var_13_29[7110] = {
+	pg.base.activity_template[7110] = {
 		mark = 20260108,
 		page_info = "",
 		type = 101,
@@ -55769,11 +51652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.activity_template
-
-	var_13_30[7111] = {
+	pg.base.activity_template[7111] = {
 		mark = 20260122,
 		type = 101,
 		login_pop = 0,
@@ -55819,11 +51698,7 @@ end)()
 			ui_name = "SurveyPage"
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.activity_template
-
-	var_13_31[7115] = {
+	pg.base.activity_template[7115] = {
 		mark = 20260625,
 		type = 101,
 		login_pop = 0,
@@ -55869,11 +51744,7 @@ end)()
 			ui_name = "SurveyPage"
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.activity_template
-
-	var_13_32[7302] = {
+	pg.base.activity_template[7302] = {
 		mark = 20251211,
 		type = 130,
 		login_pop = 0,
@@ -55965,11 +51836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.activity_template
-
-	var_13_33[7501] = {
+	pg.base.activity_template[7501] = {
 		mark = 20240926,
 		type = 89,
 		login_pop = 99,
@@ -56034,11 +51901,7 @@ end)()
 			ui_name = "DormSignPage"
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.activity_template
-
-	var_13_34[7502] = {
+	pg.base.activity_template[7502] = {
 		mark = 20250612,
 		type = 89,
 		login_pop = 99,
@@ -56103,11 +51966,7 @@ end)()
 			ui_name = "DormSignTwoPage"
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.activity_template
-
-	var_13_35[7503] = {
+	pg.base.activity_template[7503] = {
 		mark = 20250929,
 		type = 89,
 		login_pop = 99,
@@ -56172,11 +52031,7 @@ end)()
 			ui_name = "IslandSignPage"
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.activity_template
-
-	var_13_36[7505] = {
+	pg.base.activity_template[7505] = {
 		mark = 20260625,
 		type = 89,
 		login_pop = 99,
@@ -56241,11 +52096,7 @@ end)()
 			ui_name = "DormSignThirdPage"
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.activity_template
-
-	var_13_37[7506] = {
+	pg.base.activity_template[7506] = {
 		mark = 20260625,
 		type = 18,
 		login_pop = 99,
@@ -56323,11 +52174,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.activity_template
-
-	var_13_38[8042] = {
+	pg.base.activity_template[8042] = {
 		mark = 20231123,
 		page_info = "",
 		type = 80,
@@ -56390,11 +52237,7 @@ end)()
 			59513
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.activity_template
-
-	var_13_39[8043] = {
+	pg.base.activity_template[8043] = {
 		mark = 20231123,
 		page_info = "",
 		type = 83,
@@ -56528,11 +52371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.activity_template
-
-	var_13_40[8044] = {
+	pg.base.activity_template[8044] = {
 		mark = 20231123,
 		page_info = "",
 		type = 85,
@@ -56601,11 +52440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.activity_template
-
-	var_13_41[8045] = {
+	pg.base.activity_template[8045] = {
 		mark = 20231123,
 		type = 82,
 		login_pop = 0,
@@ -56851,11 +52686,7 @@ end)()
 			ui_name = "NewServerMainPage"
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.activity_template
-
-	var_13_42[8046] = {
+	pg.base.activity_template[8046] = {
 		mark = 20231123,
 		page_info = "",
 		type = 30,
@@ -56919,11 +52750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.activity_template
-
-	var_13_43[8047] = {
+	pg.base.activity_template[8047] = {
 		mark = 20231123,
 		page_info = "",
 		time = "stop",
@@ -56939,11 +52766,7 @@ end)()
 			103
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.activity_template
-
-	var_13_44[8048] = {
+	pg.base.activity_template[8048] = {
 		mark = 20231123,
 		page_info = "",
 		type = 84,
@@ -57008,11 +52831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.activity_template
-
-	var_13_45[8049] = {
+	pg.base.activity_template[8049] = {
 		mark = 20231123,
 		time = "stop",
 		type = 3,
@@ -57029,11 +52848,7 @@ end)()
 			ui_name = "NewServerLoginPage"
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.activity_template
-
-	var_13_46[8054] = {
+	pg.base.activity_template[8054] = {
 		mark = 20240425,
 		page_info = "",
 		type = 80,
@@ -57096,11 +52911,7 @@ end)()
 			59574
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.activity_template
-
-	var_13_47[8055] = {
+	pg.base.activity_template[8055] = {
 		mark = 20240425,
 		page_info = "",
 		type = 83,
@@ -57232,11 +53043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.activity_template
-
-	var_13_48[8056] = {
+	pg.base.activity_template[8056] = {
 		mark = 20240425,
 		page_info = "",
 		type = 85,
@@ -57305,11 +53112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.activity_template
-
-	var_13_49[8057] = {
+	pg.base.activity_template[8057] = {
 		mark = 20240425,
 		type = 82,
 		login_pop = 0,
@@ -57555,11 +53358,7 @@ end)()
 			ui_name = "NewServerMainPage"
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.activity_template
-
-	var_13_50[8058] = {
+	pg.base.activity_template[8058] = {
 		mark = 20240425,
 		page_info = "",
 		type = 30,
@@ -57623,11 +53422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.activity_template
-
-	var_13_51[8059] = {
+	pg.base.activity_template[8059] = {
 		mark = 20240425,
 		page_info = "",
 		time = "stop",
@@ -57643,11 +53438,7 @@ end)()
 			103
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.activity_template
-
-	var_13_52[8060] = {
+	pg.base.activity_template[8060] = {
 		mark = 20240425,
 		page_info = "",
 		type = 84,
@@ -57712,11 +53503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.activity_template
-
-	var_13_53[8061] = {
+	pg.base.activity_template[8061] = {
 		mark = 20240425,
 		time = "stop",
 		type = 3,
@@ -57733,11 +53520,7 @@ end)()
 			ui_name = "NewServerLoginPage"
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.activity_template
-
-	var_13_54[8064] = {
+	pg.base.activity_template[8064] = {
 		mark = 20240425,
 		page_info = "",
 		type = 2,
@@ -57809,11 +53592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.activity_template
-
-	var_13_55[8072] = {
+	pg.base.activity_template[8072] = {
 		mark = 20241121,
 		page_info = "",
 		type = 2,
@@ -57885,11 +53664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.activity_template
-
-	var_13_56[8081] = {
+	pg.base.activity_template[8081] = {
 		mark = 20241121,
 		page_info = "",
 		type = 80,
@@ -57952,11 +53727,7 @@ end)()
 			65056
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.activity_template
-
-	var_13_57[8082] = {
+	pg.base.activity_template[8082] = {
 		mark = 20241121,
 		page_info = "",
 		type = 83,
@@ -58088,11 +53859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.activity_template
-
-	var_13_58[8083] = {
+	pg.base.activity_template[8083] = {
 		mark = 20241121,
 		page_info = "",
 		type = 85,
@@ -58161,11 +53928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.activity_template
-
-	var_13_59[8084] = {
+	pg.base.activity_template[8084] = {
 		mark = 20241121,
 		type = 82,
 		login_pop = 0,
@@ -58411,11 +54174,7 @@ end)()
 			ui_name = "NewServerMainPage"
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.activity_template
-
-	var_13_60[8085] = {
+	pg.base.activity_template[8085] = {
 		mark = 20241121,
 		page_info = "",
 		type = 30,
@@ -58479,11 +54238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.activity_template
-
-	var_13_61[8086] = {
+	pg.base.activity_template[8086] = {
 		mark = 20241121,
 		page_info = "",
 		type = 30,
@@ -58542,11 +54297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.activity_template
-
-	var_13_62[8087] = {
+	pg.base.activity_template[8087] = {
 		mark = 20241121,
 		page_info = "",
 		type = 84,
@@ -58611,11 +54362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.activity_template
-
-	var_13_63[8088] = {
+	pg.base.activity_template[8088] = {
 		mark = 20241121,
 		type = 3,
 		login_pop = 0,
@@ -58675,11 +54422,7 @@ end)()
 			ui_name = "NewServerLoginPage"
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.activity_template
-
-	var_13_64[8091] = {
+	pg.base.activity_template[8091] = {
 		mark = 20250424,
 		page_info = "",
 		type = 2,
@@ -58751,11 +54494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.activity_template
-
-	var_13_65[8092] = {
+	pg.base.activity_template[8092] = {
 		mark = 20250424,
 		page_info = "",
 		type = 80,
@@ -58818,11 +54557,7 @@ end)()
 			65093
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.activity_template
-
-	var_13_66[8093] = {
+	pg.base.activity_template[8093] = {
 		mark = 20250424,
 		page_info = "",
 		type = 83,
@@ -58954,11 +54689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.activity_template
-
-	var_13_67[8094] = {
+	pg.base.activity_template[8094] = {
 		mark = 20250424,
 		page_info = "",
 		type = 85,
@@ -59027,11 +54758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.activity_template
-
-	var_13_68[8095] = {
+	pg.base.activity_template[8095] = {
 		mark = 20250424,
 		type = 82,
 		login_pop = 0,
@@ -59277,11 +55004,7 @@ end)()
 			ui_name = "NewServerMainPage"
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.activity_template
-
-	var_13_69[8096] = {
+	pg.base.activity_template[8096] = {
 		mark = 20250424,
 		page_info = "",
 		type = 30,
@@ -59345,11 +55068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.activity_template
-
-	var_13_70[8097] = {
+	pg.base.activity_template[8097] = {
 		mark = 20250424,
 		page_info = "",
 		type = 30,
@@ -59408,11 +55127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.activity_template
-
-	var_13_71[8098] = {
+	pg.base.activity_template[8098] = {
 		mark = 20250424,
 		page_info = "",
 		type = 84,
@@ -59477,11 +55192,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.activity_template
-
-	var_13_72[8099] = {
+	pg.base.activity_template[8099] = {
 		mark = 20250424,
 		type = 3,
 		login_pop = 0,
@@ -59541,11 +55252,7 @@ end)()
 			ui_name = "NewServerLoginPage"
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.activity_template
-
-	var_13_73[8102] = {
+	pg.base.activity_template[8102] = {
 		mark = 20251120,
 		page_info = "",
 		type = 2,
@@ -59617,11 +55324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.activity_template
-
-	var_13_74[8103] = {
+	pg.base.activity_template[8103] = {
 		mark = 20251120,
 		page_info = "",
 		type = 80,
@@ -59684,11 +55387,7 @@ end)()
 			65109
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.activity_template
-
-	var_13_75[8104] = {
+	pg.base.activity_template[8104] = {
 		mark = 20251120,
 		page_info = "",
 		type = 83,
@@ -59820,11 +55519,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.activity_template
-
-	var_13_76[8105] = {
+	pg.base.activity_template[8105] = {
 		mark = 20251120,
 		page_info = "",
 		type = 85,
@@ -59893,11 +55588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.activity_template
-
-	var_13_77[8106] = {
+	pg.base.activity_template[8106] = {
 		mark = 20251120,
 		type = 82,
 		login_pop = 0,
@@ -60143,11 +55834,7 @@ end)()
 			ui_name = "NewServerMainPage"
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.activity_template
-
-	var_13_78[8107] = {
+	pg.base.activity_template[8107] = {
 		mark = 20251120,
 		page_info = "",
 		type = 30,
@@ -60211,11 +55898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.activity_template
-
-	var_13_79[8108] = {
+	pg.base.activity_template[8108] = {
 		mark = 20251120,
 		page_info = "",
 		type = 30,
@@ -60274,11 +55957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.activity_template
-
-	var_13_80[8109] = {
+	pg.base.activity_template[8109] = {
 		mark = 20251120,
 		page_info = "",
 		type = 84,
@@ -60343,11 +56022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.activity_template
-
-	var_13_81[8110] = {
+	pg.base.activity_template[8110] = {
 		mark = 20251120,
 		type = 3,
 		login_pop = 0,
@@ -60407,11 +56082,7 @@ end)()
 			ui_name = "NewServerLoginPage"
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.activity_template
-
-	var_13_82[8116] = {
+	pg.base.activity_template[8116] = {
 		mark = 20260417,
 		page_info = "",
 		type = 2,
@@ -60483,11 +56154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.activity_template
-
-	var_13_83[8117] = {
+	pg.base.activity_template[8117] = {
 		mark = 20260417,
 		page_info = "",
 		type = 80,
@@ -60552,11 +56219,11 @@ end)()
 			[nil] = 66015
 		}
 	}
-	pg = var_13_83
 
-	local var_13_84 = var_13_83.base.activity_template
-
-	var_13_84[8118] = {
+	return
+end)()
+;(function()
+	pg.base.activity_template[8118] = {
 		mark = 20260417,
 		page_info = "",
 		type = 83,
@@ -60688,11 +56355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.activity_template
-
-	var_13_85[8119] = {
+	pg.base.activity_template[8119] = {
 		mark = 20260417,
 		page_info = "",
 		type = 85,
@@ -60761,11 +56424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.activity_template
-
-	var_13_86[8120] = {
+	pg.base.activity_template[8120] = {
 		mark = 20260417,
 		type = 82,
 		login_pop = 0,
@@ -61011,11 +56670,7 @@ end)()
 			ui_name = "NewServerMainPage"
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.activity_template
-
-	var_13_87[8121] = {
+	pg.base.activity_template[8121] = {
 		mark = 20260417,
 		page_info = "",
 		type = 30,
@@ -61079,11 +56734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.activity_template
-
-	var_13_88[8122] = {
+	pg.base.activity_template[8122] = {
 		mark = 20260417,
 		page_info = "",
 		type = 30,
@@ -61142,11 +56793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.activity_template
-
-	var_13_89[8123] = {
+	pg.base.activity_template[8123] = {
 		mark = 20260417,
 		page_info = "",
 		type = 84,
@@ -61211,11 +56858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.activity_template
-
-	var_13_90[8124] = {
+	pg.base.activity_template[8124] = {
 		mark = 20260417,
 		type = 3,
 		login_pop = 0,
@@ -61275,11 +56918,7 @@ end)()
 			ui_name = "NewServerLoginPage"
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.activity_template
-
-	var_13_91[1092] = {
+	pg.base.activity_template[1092] = {
 		mark = 20251204,
 		page_info = "",
 		type = 70,
@@ -61329,11 +56968,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG17"
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.activity_template
-
-	var_13_92[1093] = {
+	pg.base.activity_template[1093] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61375,11 +57010,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG7"
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.activity_template
-
-	var_13_93[1094] = {
+	pg.base.activity_template[1094] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61421,11 +57052,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG8"
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.activity_template
-
-	var_13_94[1095] = {
+	pg.base.activity_template[1095] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61467,11 +57094,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG9"
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.activity_template
-
-	var_13_95[1096] = {
+	pg.base.activity_template[1096] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61513,11 +57136,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG10"
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.activity_template
-
-	var_13_96[1097] = {
+	pg.base.activity_template[1097] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61559,11 +57178,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG11"
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.activity_template
-
-	var_13_97[1098] = {
+	pg.base.activity_template[1098] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61605,11 +57220,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG12"
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.activity_template
-
-	var_13_98[1099] = {
+	pg.base.activity_template[1099] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61651,8 +57262,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG13"
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.activity_template[1100] = {
+	pg.base.activity_template[1100] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61694,15 +57304,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG14"
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.activity_template
-
-	var_14_0[1101] = {
+	pg.base.activity_template[1101] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61744,11 +57346,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG15"
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.activity_template
-
-	var_14_1[1102] = {
+	pg.base.activity_template[1102] = {
 		mark = 20251204,
 		page_info = "",
 		type = 19,
@@ -61790,11 +57388,7 @@ end)()
 			"RENQITOUPIAOXINPIANZHANG16"
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.activity_template
-
-	var_14_2[1103] = {
+	pg.base.activity_template[1103] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -61910,11 +57504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.activity_template
-
-	var_14_3[1104] = {
+	pg.base.activity_template[1104] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62030,11 +57620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.activity_template
-
-	var_14_4[1105] = {
+	pg.base.activity_template[1105] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62150,11 +57736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.activity_template
-
-	var_14_5[1106] = {
+	pg.base.activity_template[1106] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62270,11 +57852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.activity_template
-
-	var_14_6[1107] = {
+	pg.base.activity_template[1107] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62390,11 +57968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.activity_template
-
-	var_14_7[1108] = {
+	pg.base.activity_template[1108] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62510,11 +58084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.activity_template
-
-	var_14_8[1109] = {
+	pg.base.activity_template[1109] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62630,11 +58200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.activity_template
-
-	var_14_9[1110] = {
+	pg.base.activity_template[1110] = {
 		mark = 20251204,
 		page_info = "",
 		type = 74,
@@ -62674,11 +58240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.activity_template
-
-	var_14_10[1111] = {
+	pg.base.activity_template[1111] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62720,11 +58282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.activity_template
-
-	var_14_11[1112] = {
+	pg.base.activity_template[1112] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62766,11 +58324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.activity_template
-
-	var_14_12[1113] = {
+	pg.base.activity_template[1113] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62812,11 +58366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.activity_template
-
-	var_14_13[1114] = {
+	pg.base.activity_template[1114] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62858,11 +58408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.activity_template
-
-	var_14_14[1115] = {
+	pg.base.activity_template[1115] = {
 		mark = 20251204,
 		page_info = "",
 		type = 13,
@@ -62915,11 +58461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.activity_template
-
-	var_14_15[2001] = {
+	pg.base.activity_template[2001] = {
 		mark = 20180327,
 		page_info = "",
 		time = "stop",
@@ -62936,11 +58478,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.activity_template
-
-	var_14_16[2002] = {
+	pg.base.activity_template[2002] = {
 		mark = 20180327,
 		page_info = "",
 		time = "stop",
@@ -62957,11 +58495,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.activity_template
-
-	var_14_17[2003] = {
+	pg.base.activity_template[2003] = {
 		mark = 20180327,
 		page_info = "",
 		time = "stop",
@@ -62978,11 +58512,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.activity_template
-
-	var_14_18[2004] = {
+	pg.base.activity_template[2004] = {
 		mark = 20180327,
 		page_info = "",
 		time = "stop",
@@ -62999,11 +58529,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.activity_template
-
-	var_14_19[2005] = {
+	pg.base.activity_template[2005] = {
 		mark = 20180426,
 		page_info = "",
 		time = "stop",
@@ -63020,11 +58546,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.activity_template
-
-	var_14_20[2006] = {
+	pg.base.activity_template[2006] = {
 		mark = 20180426,
 		page_info = "",
 		time = "stop",
@@ -63041,11 +58563,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.activity_template
-
-	var_14_21[2007] = {
+	pg.base.activity_template[2007] = {
 		mark = 20180510,
 		page_info = "",
 		time = "stop",
@@ -63062,11 +58580,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.activity_template
-
-	var_14_22[2008] = {
+	pg.base.activity_template[2008] = {
 		mark = 20180510,
 		page_info = "",
 		time = "stop",
@@ -63083,11 +58597,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.activity_template
-
-	var_14_23[2009] = {
+	pg.base.activity_template[2009] = {
 		mark = 20180717,
 		page_info = "",
 		time = "stop",
@@ -63104,11 +58614,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.activity_template
-
-	var_14_24[2010] = {
+	pg.base.activity_template[2010] = {
 		mark = 20180717,
 		page_info = "",
 		time = "stop",
@@ -63125,11 +58631,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.activity_template
-
-	var_14_25[2011] = {
+	pg.base.activity_template[2011] = {
 		mark = 20180628,
 		page_info = "",
 		time = "stop",
@@ -63146,11 +58648,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.activity_template
-
-	var_14_26[2013] = {
+	pg.base.activity_template[2013] = {
 		mark = 20180726,
 		page_info = "",
 		time = "stop",
@@ -63167,11 +58665,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.activity_template
-
-	var_14_27[2014] = {
+	pg.base.activity_template[2014] = {
 		mark = 20180726,
 		page_info = "",
 		time = "stop",
@@ -63188,11 +58682,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.activity_template
-
-	var_14_28[2015] = {
+	pg.base.activity_template[2015] = {
 		mark = 20180726,
 		page_info = "",
 		time = "stop",
@@ -63209,11 +58699,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.activity_template
-
-	var_14_29[2016] = {
+	pg.base.activity_template[2016] = {
 		mark = 20180809,
 		page_info = "",
 		time = "stop",
@@ -63230,11 +58716,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.activity_template
-
-	var_14_30[2017] = {
+	pg.base.activity_template[2017] = {
 		mark = 20188020,
 		page_info = "",
 		time = "stop",
@@ -63251,11 +58733,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.activity_template
-
-	var_14_31[2018] = {
+	pg.base.activity_template[2018] = {
 		mark = 20188030,
 		page_info = "",
 		time = "stop",
@@ -63272,11 +58750,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.activity_template
-
-	var_14_32[2019] = {
+	pg.base.activity_template[2019] = {
 		mark = 20180906,
 		page_info = "",
 		time = "stop",
@@ -63293,11 +58767,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.activity_template
-
-	var_14_33[2020] = {
+	pg.base.activity_template[2020] = {
 		mark = 20180914,
 		page_info = "",
 		time = "stop",
@@ -63314,11 +58784,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.activity_template
-
-	var_14_34[2021] = {
+	pg.base.activity_template[2021] = {
 		mark = 20180914,
 		page_info = "",
 		time = "stop",
@@ -63335,11 +58801,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.activity_template
-
-	var_14_35[2022] = {
+	pg.base.activity_template[2022] = {
 		mark = 20180914,
 		page_info = "",
 		time = "stop",
@@ -63356,11 +58818,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.activity_template
-
-	var_14_36[2023] = {
+	pg.base.activity_template[2023] = {
 		mark = 20180928,
 		page_info = "",
 		time = "stop",
@@ -63377,11 +58835,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.activity_template
-
-	var_14_37[2024] = {
+	pg.base.activity_template[2024] = {
 		mark = 20180928,
 		page_info = "",
 		time = "stop",
@@ -63398,11 +58852,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.activity_template
-
-	var_14_38[2025] = {
+	pg.base.activity_template[2025] = {
 		mark = 20181011,
 		page_info = "",
 		time = "stop",
@@ -63419,11 +58869,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.activity_template
-
-	var_14_39[2026] = {
+	pg.base.activity_template[2026] = {
 		mark = 20181030,
 		page_info = "",
 		time = "stop",
@@ -63440,11 +58886,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.activity_template
-
-	var_14_40[2027] = {
+	pg.base.activity_template[2027] = {
 		mark = 20181122,
 		page_info = "",
 		time = "stop",
@@ -63461,11 +58903,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.activity_template
-
-	var_14_41[2028] = {
+	pg.base.activity_template[2028] = {
 		mark = 20181122,
 		page_info = "",
 		time = "stop",
@@ -63482,11 +58920,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.activity_template
-
-	var_14_42[2029] = {
+	pg.base.activity_template[2029] = {
 		mark = 20181213,
 		page_info = "",
 		time = "stop",
@@ -63503,11 +58937,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.activity_template
-
-	var_14_43[2030] = {
+	pg.base.activity_template[2030] = {
 		mark = 20181220,
 		page_info = "",
 		time = "stop",
@@ -63524,11 +58954,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.activity_template
-
-	var_14_44[2031] = {
+	pg.base.activity_template[2031] = {
 		mark = 20181227,
 		page_info = "",
 		time = "stop",
@@ -63545,11 +58971,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.activity_template
-
-	var_14_45[2032] = {
+	pg.base.activity_template[2032] = {
 		mark = 20181227,
 		page_info = "",
 		time = "stop",
@@ -63566,11 +58988,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.activity_template
-
-	var_14_46[2033] = {
+	pg.base.activity_template[2033] = {
 		mark = 20190117,
 		page_info = "",
 		time = "stop",
@@ -63587,11 +59005,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.activity_template
-
-	var_14_47[2034] = {
+	pg.base.activity_template[2034] = {
 		mark = 20190117,
 		page_info = "",
 		time = "stop",
@@ -63608,11 +59022,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.activity_template
-
-	var_14_48[2035] = {
+	pg.base.activity_template[2035] = {
 		mark = 20190124,
 		page_info = "",
 		time = "stop",
@@ -63629,11 +59039,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.activity_template
-
-	var_14_49[2036] = {
+	pg.base.activity_template[2036] = {
 		mark = 20190131,
 		page_info = "",
 		time = "stop",
@@ -63650,11 +59056,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.activity_template
-
-	var_14_50[2037] = {
+	pg.base.activity_template[2037] = {
 		mark = 20190131,
 		page_info = "",
 		time = "stop",
@@ -63671,11 +59073,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.activity_template
-
-	var_14_51[2038] = {
+	pg.base.activity_template[2038] = {
 		mark = 20190228,
 		page_info = "",
 		time = "stop",
@@ -63692,11 +59090,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.activity_template
-
-	var_14_52[2040] = {
+	pg.base.activity_template[2040] = {
 		mark = 20190509,
 		page_info = "",
 		time = "stop",
@@ -63713,11 +59107,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.activity_template
-
-	var_14_53[2041] = {
+	pg.base.activity_template[2041] = {
 		mark = 20190520,
 		page_info = "",
 		time = "stop",
@@ -63734,11 +59124,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.activity_template
-
-	var_14_54[2042] = {
+	pg.base.activity_template[2042] = {
 		mark = 20190520,
 		page_info = "",
 		time = "stop",
@@ -63755,11 +59141,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.activity_template
-
-	var_14_55[2043] = {
+	pg.base.activity_template[2043] = {
 		mark = 20190731,
 		page_info = "",
 		time = "stop",
@@ -63776,11 +59158,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.activity_template
-
-	var_14_56[2044] = {
+	pg.base.activity_template[2044] = {
 		mark = 20190911,
 		page_info = "",
 		time = "stop",
@@ -63797,11 +59175,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.activity_template
-
-	var_14_57[2045] = {
+	pg.base.activity_template[2045] = {
 		mark = 20200312,
 		page_info = "",
 		time = "stop",
@@ -63818,11 +59192,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.activity_template
-
-	var_14_58[2046] = {
+	pg.base.activity_template[2046] = {
 		mark = 20200423,
 		page_info = "",
 		time = "stop",
@@ -63839,11 +59209,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.activity_template
-
-	var_14_59[2047] = {
+	pg.base.activity_template[2047] = {
 		mark = 20200723,
 		page_info = "",
 		time = "stop",
@@ -63860,11 +59226,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.activity_template
-
-	var_14_60[2048] = {
+	pg.base.activity_template[2048] = {
 		mark = 20200820,
 		page_info = "",
 		time = "stop",
@@ -63881,11 +59243,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.activity_template
-
-	var_14_61[2049] = {
+	pg.base.activity_template[2049] = {
 		mark = 20201012,
 		page_info = "",
 		time = "stop",
@@ -63902,11 +59260,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.activity_template
-
-	var_14_62[2050] = {
+	pg.base.activity_template[2050] = {
 		mark = 20201126,
 		page_info = "",
 		time = "stop",
@@ -63923,11 +59277,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.activity_template
-
-	var_14_63[2051] = {
+	pg.base.activity_template[2051] = {
 		mark = 20201229,
 		page_info = "",
 		time = "stop",
@@ -63944,11 +59294,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.activity_template
-
-	var_14_64[2052] = {
+	pg.base.activity_template[2052] = {
 		mark = 20210121,
 		page_info = "",
 		time = "stop",
@@ -63965,11 +59311,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.activity_template
-
-	var_14_65[2053] = {
+	pg.base.activity_template[2053] = {
 		mark = 20210225,
 		page_info = "",
 		time = "stop",
@@ -63986,11 +59328,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.activity_template
-
-	var_14_66[2054] = {
+	pg.base.activity_template[2054] = {
 		mark = 20210318,
 		page_info = "",
 		time = "stop",
@@ -64007,11 +59345,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.activity_template
-
-	var_14_67[2055] = {
+	pg.base.activity_template[2055] = {
 		mark = 20210325,
 		page_info = "",
 		time = "stop",
@@ -64028,11 +59362,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.activity_template
-
-	var_14_68[2056] = {
+	pg.base.activity_template[2056] = {
 		mark = 20210415,
 		page_info = "",
 		time = "stop",
@@ -64049,11 +59379,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.activity_template
-
-	var_14_69[2057] = {
+	pg.base.activity_template[2057] = {
 		mark = 20210422,
 		page_info = "",
 		time = "stop",
@@ -64070,11 +59396,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.activity_template
-
-	var_14_70[2058] = {
+	pg.base.activity_template[2058] = {
 		mark = 20210422,
 		page_info = "",
 		time = "stop",
@@ -64091,11 +59413,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.activity_template
-
-	var_14_71[2059] = {
+	pg.base.activity_template[2059] = {
 		mark = 20210520,
 		page_info = "",
 		time = "stop",
@@ -64112,11 +59430,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.activity_template
-
-	var_14_72[2060] = {
+	pg.base.activity_template[2060] = {
 		mark = 20210527,
 		page_info = "",
 		time = "stop",
@@ -64133,11 +59447,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.activity_template
-
-	var_14_73[2061] = {
+	pg.base.activity_template[2061] = {
 		mark = 20210603,
 		page_info = "",
 		time = "stop",
@@ -64154,11 +59464,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.activity_template
-
-	var_14_74[2062] = {
+	pg.base.activity_template[2062] = {
 		mark = 20210715,
 		page_info = "",
 		time = "stop",
@@ -64175,11 +59481,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.activity_template
-
-	var_14_75[2063] = {
+	pg.base.activity_template[2063] = {
 		mark = 20210805,
 		page_info = "",
 		time = "stop",
@@ -64196,11 +59498,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.activity_template
-
-	var_14_76[2064] = {
+	pg.base.activity_template[2064] = {
 		mark = 20210812,
 		page_info = "",
 		time = "stop",
@@ -64217,11 +59515,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.activity_template
-
-	var_14_77[2065] = {
+	pg.base.activity_template[2065] = {
 		mark = 20210902,
 		page_info = "",
 		time = "stop",
@@ -64238,11 +59532,7 @@ end)()
 			{}
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.activity_template
-
-	var_14_78[6000] = {
+	pg.base.activity_template[6000] = {
 		mark = 20210610,
 		time = "stop",
 		type = 18,
@@ -64305,11 +59595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.activity_template
-
-	var_14_79[6001] = {
+	pg.base.activity_template[6001] = {
 		mark = 20210610,
 		time = "stop",
 		type = 18,
@@ -64394,11 +59680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.activity_template
-
-	var_14_80[6002] = {
+	pg.base.activity_template[6002] = {
 		mark = 20210708,
 		time = "stop",
 		type = 18,
@@ -64457,11 +59739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.activity_template
-
-	var_14_81[6003] = {
+	pg.base.activity_template[6003] = {
 		mark = 20210708,
 		time = "stop",
 		type = 18,
@@ -64546,11 +59824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.activity_template
-
-	var_14_82[6004] = {
+	pg.base.activity_template[6004] = {
 		mark = 20210923,
 		time = "stop",
 		type = 18,
@@ -64614,11 +59888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.activity_template
-
-	var_14_83[6005] = {
+	pg.base.activity_template[6005] = {
 		mark = 20210923,
 		time = "stop",
 		type = 18,
@@ -64686,11 +59956,11 @@ end)()
 			}
 		}
 	}
-	pg = var_14_83
 
-	local var_14_84 = var_14_83.base.activity_template
-
-	var_14_84[6006] = {
+	return
+end)()
+;(function()
+	pg.base.activity_template[6006] = {
 		mark = 20211028,
 		time = "stop",
 		type = 74,
@@ -64727,11 +59997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.activity_template
-
-	var_14_85[6007] = {
+	pg.base.activity_template[6007] = {
 		mark = 20211223,
 		time = "stop",
 		type = 18,
@@ -64797,11 +60063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.activity_template
-
-	var_14_86[6008] = {
+	pg.base.activity_template[6008] = {
 		mark = 20211223,
 		time = "stop",
 		type = 18,
@@ -64871,11 +60133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.activity_template
-
-	var_14_87[6009] = {
+	pg.base.activity_template[6009] = {
 		mark = 20211223,
 		time = "stop",
 		type = 18,
@@ -64944,11 +60202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.activity_template
-
-	var_14_88[6010] = {
+	pg.base.activity_template[6010] = {
 		mark = 20220421,
 		time = "stop",
 		type = 74,
@@ -64965,11 +60219,7 @@ end)()
 			ui_name = "SaratogaPermanentSkinPage"
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.activity_template
-
-	var_14_89[6011] = {
+	pg.base.activity_template[6011] = {
 		mark = 20220513,
 		time = "stop",
 		type = 18,
@@ -65045,11 +60295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.activity_template
-
-	var_14_90[6012] = {
+	pg.base.activity_template[6012] = {
 		mark = 20220513,
 		time = "stop",
 		type = 18,
@@ -65125,11 +60371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.activity_template
-
-	var_14_91[6013] = {
+	pg.base.activity_template[6013] = {
 		mark = 20220609,
 		time = "stop",
 		type = 18,
@@ -65175,11 +60417,7 @@ end)()
 			ui_name = "JiqilifuSkinPermanentPage"
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.activity_template
-
-	var_14_92[6014] = {
+	pg.base.activity_template[6014] = {
 		mark = 20220811,
 		time = "stop",
 		type = 18,
@@ -65237,11 +60475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.activity_template
-
-	var_14_93[6015] = {
+	pg.base.activity_template[6015] = {
 		mark = 20221027,
 		time = "stop",
 		type = 18,
@@ -65311,11 +60545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.activity_template
-
-	var_14_94[6016] = {
+	pg.base.activity_template[6016] = {
 		mark = 20221117,
 		time = "stop",
 		type = 18,
@@ -65400,11 +60630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.activity_template
-
-	var_14_95[6017] = {
+	pg.base.activity_template[6017] = {
 		mark = 20221215,
 		time = "stop",
 		type = 74,
@@ -65421,11 +60647,7 @@ end)()
 			ui_name = "MabuerheideshengdanPermanentPage"
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.activity_template
-
-	var_14_96[6018] = {
+	pg.base.activity_template[6018] = {
 		mark = 20230209,
 		time = "stop",
 		type = 18,
@@ -65464,11 +60686,7 @@ end)()
 			ui_name = "ChocolateWorkshopPermanentPage"
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.activity_template
-
-	var_14_97[6019] = {
+	pg.base.activity_template[6019] = {
 		mark = 20230406,
 		time = "stop",
 		type = 18,
@@ -65532,11 +60750,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.activity_template
-
-	var_14_98[6020] = {
+	pg.base.activity_template[6020] = {
 		mark = 20221019,
 		time = "stop",
 		type = 18,
@@ -65582,8 +60796,7 @@ end)()
 			ui_name = "ManChaoSkinPermanentPage"
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.activity_template[6021] = {
+	pg.base.activity_template[6021] = {
 		mark = 20240222,
 		time = "stop",
 		type = 18,
@@ -65629,15 +60842,7 @@ end)()
 			ui_name = "NagaraSkinPermanentPage"
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.activity_template
-
-	var_15_0[6022] = {
+	pg.base.activity_template[6022] = {
 		mark = 20240418,
 		time = "stop",
 		type = 74,
@@ -65654,11 +60859,7 @@ end)()
 			ui_name = "U410VictoryPtPermanentPage"
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.activity_template
-
-	var_15_1[6023] = {
+	pg.base.activity_template[6023] = {
 		mark = 20240613,
 		time = "stop",
 		type = 18,
@@ -65704,11 +60905,55 @@ end)()
 			ui_name = "ChuChunSkinPermanentPage"
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.activity_template
-
-	var_15_2[100001] = {
+	pg.base.activity_template[6042] = {
+		mark = 20260813,
+		time = "stop",
+		type = 18,
+		login_pop = 0,
+		config_id = 3,
+		is_show = 10,
+		config_client = "",
+		title_res_tag = "LeMarsReSkin_permanent",
+		id = 6042,
+		page_core = "",
+		config_data = {
+			{
+				35291
+			},
+			{
+				35292
+			},
+			{
+				35293
+			},
+			{
+				35294
+			},
+			{
+				35295
+			},
+			{
+				35296
+			},
+			{
+				35297
+			},
+			{
+				35298
+			},
+			{
+				35299
+			},
+			{
+				35300
+			}
+		},
+		page_info = {
+			class_name = "LeMarsReSkinPage",
+			ui_name = "LeMarsReSkinPage"
+		}
+	}
+	pg.base.activity_template[100001] = {
 		mark = 20190530,
 		page_info = "",
 		time = "stop",
@@ -65722,11 +60967,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.activity_template
-
-	var_15_3[100002] = {
+	pg.base.activity_template[100002] = {
 		mark = 20190731,
 		page_info = "",
 		time = "stop",
@@ -65740,11 +60981,7 @@ end)()
 		page_core = "",
 		config_data = {}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.activity_template
-
-	var_15_4[100003] = {
+	pg.base.activity_template[100003] = {
 		mark = 20220113,
 		page_info = "",
 		time = "stop",
@@ -65771,11 +61008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.activity_template
-
-	var_15_5[980001] = {
+	pg.base.activity_template[980001] = {
 		mark = 20260312,
 		page_info = "",
 		time = "always",
@@ -65793,11 +61026,7 @@ end)()
 			8003
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.activity_template
-
-	var_15_6[30896] = {
+	pg.base.activity_template[30896] = {
 		mark = 20260701,
 		page_info = "",
 		type = 55,
@@ -65841,11 +61070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.activity_template
-
-	var_15_7[16] = {
+	pg.base.activity_template[16] = {
 		mark = 20260716,
 		page_info = "",
 		type = 136,
@@ -65888,11 +61113,7 @@ end)()
 			taskActID = 970001
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.activity_template
-
-	var_15_8[17] = {
+	pg.base.activity_template[17] = {
 		mark = 20260716,
 		page_info = "",
 		type = 13,
@@ -65978,11 +61199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.activity_template
-
-	var_15_9[18] = {
+	pg.base.activity_template[18] = {
 		mark = 20260716,
 		type = 18,
 		login_pop = 0,
@@ -66035,11 +61252,7 @@ end)()
 			ui_name = "AuctionGameLoginPage"
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.activity_template
-
-	var_15_10[19] = {
+	pg.base.activity_template[19] = {
 		mark = 20260716,
 		type = 74,
 		login_pop = 0,
@@ -66088,11 +61301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.activity_template
-
-	var_15_11[998001] = {
+	pg.base.activity_template[998001] = {
 		mark = 20260605,
 		page_info = "",
 		type = 141,
@@ -66132,11 +61341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.activity_template
-
-	var_15_12[990001] = {
+	pg.base.activity_template[990001] = {
 		mark = 20250929,
 		page_info = "",
 		type = 5001,
@@ -66178,11 +61383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.activity_template
-
-	var_15_13[990002] = {
+	pg.base.activity_template[990002] = {
 		mark = 20250929,
 		page_info = "",
 		type = 5002,
@@ -66238,11 +61439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.activity_template
-
-	var_15_14[990003] = {
+	pg.base.activity_template[990003] = {
 		mark = 20250929,
 		page_info = "",
 		type = 5003,
@@ -66291,11 +61488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.activity_template
-
-	var_15_15[990004] = {
+	pg.base.activity_template[990004] = {
 		mark = 20250929,
 		page_info = "",
 		type = 5004,
@@ -66344,11 +61537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.activity_template
-
-	var_15_16[990005] = {
+	pg.base.activity_template[990005] = {
 		mark = 20260205,
 		page_info = "",
 		type = 5001,
@@ -66390,11 +61579,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.activity_template
-
-	var_15_17[990006] = {
+	pg.base.activity_template[990006] = {
 		mark = 20260205,
 		page_info = "",
 		type = 5002,
@@ -66450,11 +61635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.activity_template
-
-	var_15_18[990007] = {
+	pg.base.activity_template[990007] = {
 		mark = 20260205,
 		page_info = "",
 		type = 5003,
@@ -66503,11 +61684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.activity_template
-
-	var_15_19[990008] = {
+	pg.base.activity_template[990008] = {
 		mark = 20260205,
 		page_info = "",
 		type = 5004,
@@ -66556,11 +61733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.activity_template
-
-	var_15_20[990009] = {
+	pg.base.activity_template[990009] = {
 		mark = 20260205,
 		page_info = "",
 		type = 800,
@@ -66600,11 +61773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.activity_template
-
-	var_15_21[990011] = {
+	pg.base.activity_template[990011] = {
 		mark = 20250929,
 		page_info = "",
 		time = "always",
@@ -66620,11 +61789,7 @@ end)()
 			2
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.activity_template
-
-	var_15_22[990013] = {
+	pg.base.activity_template[990013] = {
 		mark = 20260319,
 		page_info = "",
 		type = 801,
@@ -66664,11 +61829,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.activity_template
-
-	var_15_23[990014] = {
+	pg.base.activity_template[990014] = {
 		mark = 20260319,
 		page_info = "",
 		type = 89,
@@ -66724,11 +61885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.activity_template
-
-	var_15_24[990015] = {
+	pg.base.activity_template[990015] = {
 		mark = 20260319,
 		page_info = "",
 		type = 890,
@@ -66768,11 +61925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.activity_template
-
-	var_15_25[990016] = {
+	pg.base.activity_template[990016] = {
 		mark = 20260507,
 		page_info = "",
 		type = 5001,
@@ -66814,11 +61967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.activity_template
-
-	var_15_26[990017] = {
+	pg.base.activity_template[990017] = {
 		mark = 20260507,
 		page_info = "",
 		type = 5002,
@@ -66874,11 +62023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.activity_template
-
-	var_15_27[990018] = {
+	pg.base.activity_template[990018] = {
 		mark = 20260507,
 		page_info = "",
 		type = 5003,
@@ -66927,11 +62072,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.activity_template
-
-	var_15_28[990019] = {
+	pg.base.activity_template[990019] = {
 		mark = 20260507,
 		page_info = "",
 		type = 5004,
@@ -66980,11 +62121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.activity_template
-
-	var_15_29[990020] = {
+	pg.base.activity_template[990020] = {
 		mark = 20260507,
 		page_info = "",
 		type = 800,
@@ -67024,11 +62161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.activity_template
-
-	var_15_30[990021] = {
+	pg.base.activity_template[990021] = {
 		mark = 20260605,
 		page_info = "",
 		type = 18,
@@ -67068,11 +62201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.activity_template
-
-	var_15_31[990022] = {
+	pg.base.activity_template[990022] = {
 		mark = 20260806,
 		page_info = "",
 		type = 5001,
@@ -67114,11 +62243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.activity_template
-
-	var_15_32[990023] = {
+	pg.base.activity_template[990023] = {
 		mark = 20260806,
 		page_info = "",
 		type = 5002,
@@ -67174,11 +62299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.activity_template
-
-	var_15_33[990024] = {
+	pg.base.activity_template[990024] = {
 		mark = 20260806,
 		page_info = "",
 		type = 5003,
@@ -67227,11 +62348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.activity_template
-
-	var_15_34[990025] = {
+	pg.base.activity_template[990025] = {
 		mark = 20260806,
 		page_info = "",
 		type = 5004,
@@ -67280,11 +62397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.activity_template
-
-	var_15_35[990026] = {
+	pg.base.activity_template[990026] = {
 		mark = 20260806,
 		page_info = "",
 		type = 800,
@@ -67324,8 +62437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_35
-	var_15_35.base.activity_template[999901] = {
+	pg.base.activity_template[999901] = {
 		mark = 20250929,
 		page_info = "",
 		type = 800,

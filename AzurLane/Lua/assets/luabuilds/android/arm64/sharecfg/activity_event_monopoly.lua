@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_monopoly") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_monopoly"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_monopoly = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_monopoly
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_monopoly = rawget(pg, "activity_event_monopoly") or setmetatable({
+	__name = "activity_event_monopoly"
+}, confNEO)
+pg.activity_event_monopoly.all = {
 	1,
 	2,
 	3,
@@ -33,27 +10,14 @@ var_0_3.all = {
 	5,
 	6,
 	7,
-	8
+	8,
+	9
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_monopoly = {}
+pg.base = pg.base or {}
+pg.base.activity_event_monopoly = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_monopoly
-
-	var_1_0[1] = {
+	pg.base.activity_event_monopoly[1] = {
 		daily_time = 4,
 		ship_reward = "",
 		effective_times = 0,
@@ -130,11 +94,7 @@ var_0_3.base.activity_event_monopoly = {}
 		},
 		drop_times = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_monopoly
-
-	var_1_1[2] = {
+	pg.base.activity_event_monopoly[2] = {
 		daily_time = 5,
 		ship_reward = "",
 		effective_times = 0,
@@ -197,11 +157,7 @@ var_0_3.base.activity_event_monopoly = {}
 		},
 		drop_times = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_monopoly
-
-	var_1_2[3] = {
+	pg.base.activity_event_monopoly[3] = {
 		daily_time = 5,
 		ship_reward = "",
 		effective_times = 0,
@@ -235,11 +191,7 @@ var_0_3.base.activity_event_monopoly = {}
 		story = {},
 		drop_times = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_monopoly
-
-	var_1_3[4] = {
+	pg.base.activity_event_monopoly[4] = {
 		daily_time = 5,
 		ship_reward = "",
 		effective_times = 0,
@@ -275,11 +227,7 @@ var_0_3.base.activity_event_monopoly = {}
 			94598
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_monopoly
-
-	var_1_4[5] = {
+	pg.base.activity_event_monopoly[5] = {
 		daily_time = 5,
 		ship_reward = "",
 		effective_times = 0,
@@ -313,11 +261,7 @@ var_0_3.base.activity_event_monopoly = {}
 		story = {},
 		drop_times = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_monopoly
-
-	var_1_5[6] = {
+	pg.base.activity_event_monopoly[6] = {
 		daily_time = 5,
 		ship_reward = "",
 		effective_times = 35,
@@ -353,11 +297,7 @@ var_0_3.base.activity_event_monopoly = {}
 			96859
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_monopoly
-
-	var_1_6[7] = {
+	pg.base.activity_event_monopoly[7] = {
 		daily_time = 5,
 		ship_reward = "",
 		effective_times = 0,
@@ -391,8 +331,7 @@ var_0_3.base.activity_event_monopoly = {}
 		story = {},
 		drop_times = {}
 	}
-	pg = var_1_6
-	var_1_6.base.activity_event_monopoly[8] = {
+	pg.base.activity_event_monopoly[8] = {
 		daily_time = 3,
 		effective_times = 0,
 		reward_time = 0,
@@ -580,6 +519,177 @@ var_0_3.base.activity_event_monopoly = {}
 			{
 				5,
 				282,
+				1
+			}
+		}
+	}
+	pg.base.activity_event_monopoly[9] = {
+		daily_time = 3,
+		effective_times = 0,
+		reward_time = 0,
+		id = 9,
+		version = 4,
+		map = {
+			7001,
+			7002,
+			7003,
+			7004,
+			7005,
+			7006,
+			7007,
+			7008,
+			7009,
+			7010,
+			7011
+		},
+		reward = {},
+		reward_extra = {},
+		story = {},
+		drop_times = {},
+		ship_reward = {
+			{
+				10720,
+				910578
+			},
+			{
+				20712,
+				910579
+			},
+			{
+				30510,
+				910580
+			}
+		},
+		ship_dialog = {
+			{
+				10720,
+				{
+					{
+						1,
+						{
+							134,
+							135
+						}
+					},
+					{
+						2,
+						{
+							136,
+							137
+						}
+					},
+					{
+						3,
+						{
+							138,
+							139
+						}
+					},
+					{
+						4,
+						{
+							132
+						}
+					},
+					{
+						5,
+						{
+							133
+						}
+					}
+				}
+			},
+			{
+				20712,
+				{
+					{
+						1,
+						{
+							144,
+							145
+						}
+					},
+					{
+						2,
+						{
+							146,
+							147
+						}
+					},
+					{
+						3,
+						{
+							148,
+							149
+						}
+					},
+					{
+						4,
+						{
+							142
+						}
+					},
+					{
+						5,
+						{
+							143
+						}
+					}
+				}
+			},
+			{
+				30510,
+				{
+					{
+						1,
+						{
+							154,
+							155
+						}
+					},
+					{
+						2,
+						{
+							156,
+							157
+						}
+					},
+					{
+						3,
+						{
+							158,
+							159
+						}
+					},
+					{
+						4,
+						{
+							152
+						}
+					},
+					{
+						5,
+						{
+							153
+						}
+					}
+				}
+			}
+		},
+		sum_lap_reward_show = {
+			{
+				1,
+				1,
+				2000
+			},
+			{
+				1,
+				2,
+				200
+			},
+			{
+				5,
+				344,
 				1
 			}
 		}

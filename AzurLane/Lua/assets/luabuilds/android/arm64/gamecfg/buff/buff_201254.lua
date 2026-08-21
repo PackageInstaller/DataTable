@@ -10,6 +10,16 @@
 	last_effect = "",
 	effect_list = {
 		{
+			type = "BattleBuffAddTag",
+			trigger = {
+				"onAttach",
+				"onRemove"
+			},
+			arg_list = {
+				tag = "leaderEX"
+			}
+		},
+		{
 			type = "BattleBuffAddBuff",
 			trigger = {
 				"onAttach"

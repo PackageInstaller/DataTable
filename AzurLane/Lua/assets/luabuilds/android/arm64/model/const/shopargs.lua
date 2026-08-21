@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ShopArgs")
+﻿local var_0_0 = class("ShopArgs")
 
 var_0_0.EffecetEquipBagSize = "equip_bag_size"
 var_0_0.EffecetShipBagSize = "ship_bag_size"

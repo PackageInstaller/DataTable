@@ -57,6 +57,8 @@ local hero_formation_data=
 },
 	[612]={ formation_list={{1,{1,1}},{2,{1,2}},{3,{2,3}},{4,{3,3}},{5,{4,1}},{6,{4,2}}}, limit=1, dupId=0, is_show=0
 },
+	[613]={ formation_list={{1,{1,2}},{2,{2,2}},{3,{3,1}},{4,{3,2}},{5,{3,3}},{6,{4,2}}}, limit=1, dupId=0, is_show=0
+},
 	[101]={ formation_list={{1,{1,2}}}, limit=1, dupId=0, is_show=0
 },
 	[102]={ formation_list={{1,{2,2}}}, limit=1, dupId=0, is_show=0

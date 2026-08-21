@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_strengthen_meta") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_strengthen_meta"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_strengthen_meta = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_strengthen_meta
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_strengthen_meta = rawget(pg, "ship_strengthen_meta") or setmetatable({
+	__name = "ship_strengthen_meta"
+}, confNEO)
+pg.ship_strengthen_meta.all = {
 	970701,
 	970702,
 	970201,
@@ -90,25 +67,11 @@ var_0_3.all = {
 	970112,
 	970213
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_strengthen_meta = {}
+pg.base = pg.base or {}
+pg.base.ship_strengthen_meta = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_strengthen_meta
-
-	var_1_0[970701] = {
+	pg.base.ship_strengthen_meta[970701] = {
 		ship_id = 9707011,
 		type = 1,
 		synchronize = 5000,
@@ -560,11 +523,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_strengthen_meta
-
-	var_1_1[970702] = {
+	pg.base.ship_strengthen_meta[970702] = {
 		ship_id = 9707021,
 		type = 1,
 		synchronize = 5000,
@@ -1016,11 +975,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-58
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_strengthen_meta
-
-	var_1_2[970201] = {
+	pg.base.ship_strengthen_meta[970201] = {
 		ship_id = 9702011,
 		type = 1,
 		synchronize = 5000,
@@ -1472,11 +1427,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-58
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_strengthen_meta
-
-	var_1_3[5] = {
+	pg.base.ship_strengthen_meta[5] = {
 		ship_id = 9705011,
 		type = 3,
 		synchronize = 0,
@@ -1583,11 +1534,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-4.4
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_strengthen_meta
-
-	var_1_4[970703] = {
+	pg.base.ship_strengthen_meta[970703] = {
 		ship_id = 9707031,
 		type = 1,
 		synchronize = 5000,
@@ -2095,11 +2042,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-58
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_strengthen_meta
-
-	var_1_5[970601] = {
+	pg.base.ship_strengthen_meta[970601] = {
 		ship_id = 9706011,
 		type = 3,
 		synchronize = 0,
@@ -2206,11 +2149,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-50
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_strengthen_meta
-
-	var_1_6[970401] = {
+	pg.base.ship_strengthen_meta[970401] = {
 		ship_id = 9704011,
 		type = 1,
 		synchronize = 5000,
@@ -2729,11 +2668,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-50
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_strengthen_meta
-
-	var_1_7[970602] = {
+	pg.base.ship_strengthen_meta[970602] = {
 		ship_id = 9706021,
 		type = 3,
 		synchronize = 0,
@@ -2840,11 +2775,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-109
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_strengthen_meta
-
-	var_1_8[970402] = {
+	pg.base.ship_strengthen_meta[970402] = {
 		ship_id = 9704021,
 		type = 1,
 		synchronize = 5000,
@@ -3363,11 +3294,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			33
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_strengthen_meta
-
-	var_1_9[6] = {
+	pg.base.ship_strengthen_meta[6] = {
 		ship_id = 9705021,
 		type = 3,
 		synchronize = 0,
@@ -3474,11 +3401,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-200
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_strengthen_meta
-
-	var_1_10[970202] = {
+	pg.base.ship_strengthen_meta[970202] = {
 		ship_id = 9702021,
 		type = 3,
 		synchronize = 0,
@@ -3586,11 +3509,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-90
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_strengthen_meta
-
-	var_1_11[970403] = {
+	pg.base.ship_strengthen_meta[970403] = {
 		ship_id = 9704031,
 		type = 1,
 		synchronize = 5000,
@@ -4098,11 +4017,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-130
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_strengthen_meta
-
-	var_1_12[970301] = {
+	pg.base.ship_strengthen_meta[970301] = {
 		ship_id = 9703011,
 		type = 3,
 		synchronize = 0,
@@ -4210,11 +4125,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			50
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_strengthen_meta
-
-	var_1_13[970404] = {
+	pg.base.ship_strengthen_meta[970404] = {
 		ship_id = 9704041,
 		type = 1,
 		synchronize = 5000,
@@ -4722,11 +4633,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-77
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_strengthen_meta
-
-	var_1_14[970101] = {
+	pg.base.ship_strengthen_meta[970101] = {
 		ship_id = 9701011,
 		type = 3,
 		synchronize = 0,
@@ -4832,11 +4739,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-21
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_strengthen_meta
-
-	var_1_15[970102] = {
+	pg.base.ship_strengthen_meta[970102] = {
 		ship_id = 9701021,
 		type = 3,
 		synchronize = 0,
@@ -4942,11 +4845,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-21
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_strengthen_meta
-
-	var_1_16[7] = {
+	pg.base.ship_strengthen_meta[7] = {
 		ship_id = 9705031,
 		type = 1,
 		synchronize = 5000,
@@ -5454,11 +5353,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			16
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_strengthen_meta
-
-	var_1_17[970203] = {
+	pg.base.ship_strengthen_meta[970203] = {
 		ship_id = 9702031,
 		type = 3,
 		synchronize = 0,
@@ -5565,11 +5460,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			91
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_strengthen_meta
-
-	var_1_18[8] = {
+	pg.base.ship_strengthen_meta[8] = {
 		ship_id = 9705041,
 		type = 1,
 		synchronize = 5000,
@@ -6077,11 +5968,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			16
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_strengthen_meta
-
-	var_1_19[970204] = {
+	pg.base.ship_strengthen_meta[970204] = {
 		ship_id = 9702041,
 		type = 3,
 		synchronize = 0,
@@ -6188,11 +6075,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-21
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_strengthen_meta
-
-	var_1_20[970801] = {
+	pg.base.ship_strengthen_meta[970801] = {
 		ship_id = 9708011,
 		type = 2,
 		synchronize = 0,
@@ -6300,11 +6183,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-58
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_strengthen_meta
-
-	var_1_21[971201] = {
+	pg.base.ship_strengthen_meta[971201] = {
 		ship_id = 9712011,
 		type = 3,
 		synchronize = 0,
@@ -6410,11 +6289,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-21
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_strengthen_meta
-
-	var_1_22[970302] = {
+	pg.base.ship_strengthen_meta[970302] = {
 		ship_id = 9703021,
 		type = 1,
 		synchronize = 5000,
@@ -6923,11 +6798,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			16
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_strengthen_meta
-
-	var_1_23[970103] = {
+	pg.base.ship_strengthen_meta[970103] = {
 		ship_id = 9701031,
 		type = 3,
 		synchronize = 0,
@@ -7033,11 +6904,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-21
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_strengthen_meta
-
-	var_1_24[970205] = {
+	pg.base.ship_strengthen_meta[970205] = {
 		ship_id = 9702051,
 		type = 1,
 		synchronize = 5000,
@@ -7546,11 +7413,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			8
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_strengthen_meta
-
-	var_1_25[970603] = {
+	pg.base.ship_strengthen_meta[970603] = {
 		ship_id = 9706031,
 		type = 3,
 		synchronize = 0,
@@ -7656,11 +7519,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-109
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_strengthen_meta
-
-	var_1_26[971301] = {
+	pg.base.ship_strengthen_meta[971301] = {
 		ship_id = 9713011,
 		type = 3,
 		synchronize = 0,
@@ -7766,11 +7625,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-109
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_strengthen_meta
-
-	var_1_27[970206] = {
+	pg.base.ship_strengthen_meta[970206] = {
 		ship_id = 9702061,
 		type = 1,
 		synchronize = 5000,
@@ -8279,11 +8134,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-47
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_strengthen_meta
-
-	var_1_28[970104] = {
+	pg.base.ship_strengthen_meta[970104] = {
 		ship_id = 9701041,
 		type = 3,
 		synchronize = 0,
@@ -8389,11 +8240,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-21
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_strengthen_meta
-
-	var_1_29[970207] = {
+	pg.base.ship_strengthen_meta[970207] = {
 		ship_id = 9702071,
 		type = 2,
 		synchronize = 0,
@@ -8501,11 +8348,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-58
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_strengthen_meta
-
-	var_1_30[9] = {
+	pg.base.ship_strengthen_meta[9] = {
 		ship_id = 9705051,
 		type = 1,
 		synchronize = 5000,
@@ -9013,11 +8856,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_strengthen_meta
-
-	var_1_31[970105] = {
+	pg.base.ship_strengthen_meta[970105] = {
 		ship_id = 9701051,
 		type = 3,
 		synchronize = 0,
@@ -9123,11 +8962,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-111
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_strengthen_meta
-
-	var_1_32[970704] = {
+	pg.base.ship_strengthen_meta[970704] = {
 		ship_id = 9707041,
 		type = 2,
 		synchronize = 0,
@@ -9235,11 +9070,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-13
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_strengthen_meta
-
-	var_1_33[970303] = {
+	pg.base.ship_strengthen_meta[970303] = {
 		ship_id = 9703031,
 		type = 3,
 		synchronize = 0,
@@ -9346,11 +9177,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-91.6
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_strengthen_meta
-
-	var_1_34[970304] = {
+	pg.base.ship_strengthen_meta[970304] = {
 		ship_id = 9703041,
 		type = 1,
 		synchronize = 5000,
@@ -9858,11 +9685,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			39
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_strengthen_meta
-
-	var_1_35[970106] = {
+	pg.base.ship_strengthen_meta[970106] = {
 		ship_id = 9701061,
 		type = 3,
 		synchronize = 0,
@@ -9968,11 +9791,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			60
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_strengthen_meta
-
-	var_1_36[10] = {
+	pg.base.ship_strengthen_meta[10] = {
 		ship_id = 9705061,
 		type = 1,
 		synchronize = 5000,
@@ -10480,11 +10299,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_strengthen_meta
-
-	var_1_37[970405] = {
+	pg.base.ship_strengthen_meta[970405] = {
 		ship_id = 9704051,
 		type = 2,
 		synchronize = 0,
@@ -10591,11 +10406,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_strengthen_meta
-
-	var_1_38[970604] = {
+	pg.base.ship_strengthen_meta[970604] = {
 		ship_id = 9706041,
 		type = 3,
 		synchronize = 0,
@@ -10701,11 +10512,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-100
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_strengthen_meta
-
-	var_1_39[11] = {
+	pg.base.ship_strengthen_meta[11] = {
 		ship_id = 9705071,
 		type = 3,
 		synchronize = 0,
@@ -10811,11 +10618,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_strengthen_meta
-
-	var_1_40[970705] = {
+	pg.base.ship_strengthen_meta[970705] = {
 		ship_id = 9707051,
 		type = 1,
 		synchronize = 5000,
@@ -11323,11 +11126,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-68
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_strengthen_meta
-
-	var_1_41[970305] = {
+	pg.base.ship_strengthen_meta[970305] = {
 		ship_id = 9703051,
 		type = 2,
 		synchronize = 0,
@@ -11435,11 +11234,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			16
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_strengthen_meta
-
-	var_1_42[970306] = {
+	pg.base.ship_strengthen_meta[970306] = {
 		ship_id = 9703061,
 		type = 3,
 		synchronize = 0,
@@ -11546,11 +11341,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-16
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_strengthen_meta
-
-	var_1_43[12] = {
+	pg.base.ship_strengthen_meta[12] = {
 		ship_id = 9705081,
 		type = 2,
 		synchronize = 0,
@@ -11657,11 +11448,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			16
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_strengthen_meta
-
-	var_1_44[970706] = {
+	pg.base.ship_strengthen_meta[970706] = {
 		ship_id = 9707061,
 		type = 1,
 		synchronize = 5000,
@@ -12169,11 +11956,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-40
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_strengthen_meta
-
-	var_1_45[13] = {
+	pg.base.ship_strengthen_meta[13] = {
 		ship_id = 9705091,
 		type = 3,
 		synchronize = 0,
@@ -12279,11 +12062,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_strengthen_meta
-
-	var_1_46[970107] = {
+	pg.base.ship_strengthen_meta[970107] = {
 		ship_id = 9701071,
 		type = 3,
 		synchronize = 0,
@@ -12389,11 +12168,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_strengthen_meta
-
-	var_1_47[970108] = {
+	pg.base.ship_strengthen_meta[970108] = {
 		ship_id = 9701081,
 		type = 1,
 		synchronize = 5000,
@@ -12901,11 +12676,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			0
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_strengthen_meta
-
-	var_1_48[970707] = {
+	pg.base.ship_strengthen_meta[970707] = {
 		ship_id = 9707071,
 		type = 2,
 		synchronize = 0,
@@ -13012,11 +12783,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-40
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_strengthen_meta
-
-	var_1_49[970406] = {
+	pg.base.ship_strengthen_meta[970406] = {
 		ship_id = 9704061,
 		type = 3,
 		synchronize = 0,
@@ -13122,11 +12889,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_strengthen_meta
-
-	var_1_50[970109] = {
+	pg.base.ship_strengthen_meta[970109] = {
 		ship_id = 9701091,
 		type = 1,
 		synchronize = 5000,
@@ -13634,11 +13397,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			70
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_strengthen_meta
-
-	var_1_51[970110] = {
+	pg.base.ship_strengthen_meta[970110] = {
 		ship_id = 9701101,
 		type = 3,
 		synchronize = 0,
@@ -13744,11 +13503,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			60
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_strengthen_meta
-
-	var_1_52[970208] = {
+	pg.base.ship_strengthen_meta[970208] = {
 		ship_id = 9702081,
 		type = 3,
 		synchronize = 0,
@@ -13854,11 +13609,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-90
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_strengthen_meta
-
-	var_1_53[970708] = {
+	pg.base.ship_strengthen_meta[970708] = {
 		ship_id = 9707081,
 		type = 1,
 		synchronize = 5000,
@@ -14366,11 +14117,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-60
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_strengthen_meta
-
-	var_1_54[970209] = {
+	pg.base.ship_strengthen_meta[970209] = {
 		ship_id = 9702091,
 		type = 2,
 		synchronize = 0,
@@ -14477,11 +14224,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-90
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_strengthen_meta
-
-	var_1_55[970111] = {
+	pg.base.ship_strengthen_meta[970111] = {
 		ship_id = 9701111,
 		type = 3,
 		synchronize = 0,
@@ -14587,11 +14330,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			60
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_strengthen_meta
-
-	var_1_56[970211] = {
+	pg.base.ship_strengthen_meta[970211] = {
 		ship_id = 9702111,
 		type = 1,
 		synchronize = 5000,
@@ -15100,11 +14839,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-20
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_strengthen_meta
-
-	var_1_57[14] = {
+	pg.base.ship_strengthen_meta[14] = {
 		ship_id = 9705101,
 		type = 2,
 		synchronize = 0,
@@ -15211,11 +14946,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			16
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_strengthen_meta
-
-	var_1_58[970210] = {
+	pg.base.ship_strengthen_meta[970210] = {
 		ship_id = 9702101,
 		type = 3,
 		synchronize = 0,
@@ -15322,11 +15053,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-74.4
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_strengthen_meta
-
-	var_1_59[970212] = {
+	pg.base.ship_strengthen_meta[970212] = {
 		ship_id = 9702121,
 		type = 3,
 		synchronize = 0,
@@ -15433,11 +15160,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-74.4
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_strengthen_meta
-
-	var_1_60[970605] = {
+	pg.base.ship_strengthen_meta[970605] = {
 		ship_id = 9706051,
 		type = 2,
 		synchronize = 0,
@@ -15543,11 +15266,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			-10
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_strengthen_meta
-
-	var_1_61[0] = {
+	pg.base.ship_strengthen_meta[0] = {
 		ship_id = 9701121,
 		type = 1,
 		synchronize = 5000,
@@ -16055,8 +15774,7 @@ var_0_3.base.ship_strengthen_meta = {}
 			0
 		}
 	}
-	pg = var_1_61
-	var_1_61.base.ship_strengthen_meta[970213] = {
+	pg.base.ship_strengthen_meta[970213] = {
 		ship_id = 9702131,
 		type = 3,
 		synchronize = 0,

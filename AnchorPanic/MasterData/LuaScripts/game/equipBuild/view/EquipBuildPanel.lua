@@ -70,12 +70,13 @@ function getTabDatas(self)
     table.insert(funcOpenList, funcopen.FuncOpenConst.FUNC_ID_HERO_EQUIP_STRENGTHEN)
     table.insert(funcOpenList, funcopen.FuncOpenConst.FUNC_ID_HERO_EQUIP_RETROFIT)
     table.insert(funcOpenList, funcopen.FuncOpenConst.FUNC_ID_HERO_EQUIP_REFACTOR)
-
+    table.insert(funcOpenList, funcopen.FuncOpenConst.FUNC_ID_HERO_EQUIP_EMPOWER)
     self.tabDataList = {}
     table.insert(self.tabDataList, equipBuild.BuildTabType.ATTRS)
     table.insert(self.tabDataList, equipBuild.BuildTabType.STRENGTHEN)
     table.insert(self.tabDataList, equipBuild.BuildTabType.REMAKE)
     table.insert(self.tabDataList, equipBuild.BuildTabType.RESTRUCTURE)
+    table.insert(self.tabDataList, equipBuild.BuildTabType.EMPOWER)
 
     for i = 1, #self.tabDataList do
         local tabType = self.tabDataList[i]
@@ -94,6 +95,7 @@ function getTabClass(self)
     self.tabClassDic[equipBuild.BuildTabType.STRENGTHEN] = equipBuild.EquipStrengthenTabView
     self.tabClassDic[equipBuild.BuildTabType.REMAKE] = equipBuild.EquipRemakeTabView
     self.tabClassDic[equipBuild.BuildTabType.RESTRUCTURE] = equipBuild.EquipRestructureTabView
+    self.tabClassDic[equipBuild.BuildTabType.EMPOWER] = equipBuild.EquipEmpowerTabView
     return self.tabClassDic
 end
 

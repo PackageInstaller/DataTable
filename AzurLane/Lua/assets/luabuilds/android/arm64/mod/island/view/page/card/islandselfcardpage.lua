@@ -1,104 +1,60 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSelfCardPage", import("...base.IslandBasePage"))
 
-local var_0_0 = "IslandSelfCardPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.IslandBasePage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandEmptyUI"
 end
 
-function var_0_1.NeedCache(arg_2_0)
+function var_0_0.NeedCache(arg_2_0)
 	return false
 end
 
-function var_0_1.OnShow(arg_3_0)
+function var_0_0.OnShow(arg_3_0)
 	arg_3_0:AddSubLayers(arg_3_0:GetContext())
 
 	return
 end
 
-function var_0_1.OnHide(arg_4_0)
+function var_0_0.OnHide(arg_4_0)
 	arg_4_0:RemoveSubLayers(arg_4_0:GetContext())
 
 	return
 end
 
-function var_0_1.AddSubLayers(arg_5_0, arg_5_1)
-	getProxy = var_1_10002
-	ContextProxy = var_1_10004
-
-	local var_5_0 = var_1_10002(var_1_10004)
-	local var_5_1 = var_2.getCurrentContext(var_5_0)
-	local var_5_2 = var_3.getContextByMediator
-
-	IslandMediator = var_1_10007
-
-	local var_5_3 = var_5_2(var_5_1, var_1_10007)
-
-	pg = var_5_0
-
-	local var_5_4 = var_5_0.m02
-	local var_5_5 = var_5.sendNotification
-
-	GAME = var_1_10008
-
-	var_5_5(var_5_4, var_1_10008.LOAD_LAYERS, {
-		parentContext = var_5_3,
+function var_0_0.AddSubLayers(arg_5_0, arg_5_1)
+	pg.m02:sendNotification(GAME.LOAD_LAYERS, {
+		parentContext = getProxy(ContextProxy):getCurrentContext():getContextByMediator(IslandMediator),
 		context = arg_5_1
 	})
 
 	return
 end
 
-function var_0_1.RemoveSubLayers(arg_6_0, arg_6_1)
-	getProxy = var_1_10002
-	ContextProxy = var_1_10004
+function var_0_0.RemoveSubLayers(arg_6_0, arg_6_1)
+	local var_6_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_6_1.mediator)
 
-	local var_6_0 = var_1_10002(var_1_10004)
-	local var_6_1 = var_2.getCurrentContext(var_6_0)
-
-	if var_3.getContextByMediator(var_6_1, arg_6_1.mediator) then
-		pg = var_6_0
-
-		local var_6_2 = var_6_0.m02
-		local var_6_3 = var_5.sendNotification
-
-		GAME = var_1_10008
-
-		var_6_3(var_6_2, var_1_10008.REMOVE_LAYERS, {
-			context = var_4
+	if var_6_0 then
+		pg.m02:sendNotification(GAME.REMOVE_LAYERS, {
+			context = var_6_0
 		})
 	end
 
 	return
 end
 
-function var_0_1.GetContext(arg_7_0)
-	Context = var_1_10001
+function var_0_0.GetContext(arg_7_0)
+	return Context.New({
+		mediator = IslandSelfCardMediator,
+		viewComponent = IslandSelfCardAttach,
+		data = {
+			isIslandPage = true,
+			container = arg_7_0._tf,
+			onClose = function()
+				arg_7_0:Hide()
 
-	local var_7_0 = var_1_10001.New
-	local var_7_1 = {}
-
-	IslandSelfCardMediator = var_1_10004
-	var_7_1.mediator = var_1_10004
-	IslandSelfCardAttach = var_1_10004
-	var_7_1.viewComponent = var_1_10004
-	var_7_1.data = {
-		isIslandPage = true,
-		container = arg_7_0._tf,
-		onClose = function()
-			local var_8_0 = arg_7_0
-
-			var_0.Hide(var_8_0)
-
-			return
-		end
-	}
-
-	return var_7_0(var_7_1)
+				return
+			end
+		}
+	})
 end
 
-return var_0_1
+return var_0_0

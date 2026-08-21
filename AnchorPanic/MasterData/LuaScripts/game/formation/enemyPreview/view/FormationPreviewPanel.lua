@@ -21,7 +21,6 @@ function initData(self)
     self.m_formationName = UrlManager:getUIPrefabPath("formation/FormationScene3.prefab")
     self.mItemList = {}
     self.mMinHight = 86.62
-    self.mMaxHight = 186.83
     self.mDetailWeaknessGrid = {}
     self.mSkillGridList = {}
     self.mWeaknessGridList = {}
@@ -444,43 +443,39 @@ function showDetail(self)
         skillItem:getChildGO("Scroll View"):GetComponent(ty.ScrollRect).enabled = false
         local isCanOpen = false
         local isOpen = false
+        local skillItemExpandHeight = self.mMinHight
+        gs.TransQuick:SizeDelta02(skillItem:getTrans(), self.mMinHight)
         gs.LayoutRebuilder.ForceRebuildLayoutImmediate(self.mIconSkillNode)
-        local skillDescHeight = skillItem:getChildTrans("mTxtSkillDesc").rect.size.y -
-        skillItem:getChildTrans("mTxtSkillDesc").rect.size.y % 0.01
-        local scrollheight = skillItem:getChildTrans("Scroll View").rect.size.y -
-        skillItem:getChildTrans("Scroll View").rect.size.y % 0.01
         table.insert(self.frameSnList, LoopManager:addFrame(1, 3, self, function()
             gs.TransQuick:LPosY(self.mIconSkillNode.transform, 0)
-            skillDescHeight = skillItem:getChildTrans("mTxtSkillDesc").rect.size.y -
+            if isOpen then
+                return
+            end
+            local skillDescHeight = skillItem:getChildTrans("mTxtSkillDesc").rect.size.y -
             skillItem:getChildTrans("mTxtSkillDesc").rect.size.y % 0.01
-            scrollheight = skillItem:getChildTrans("Scroll View").rect.size.y -
+            local scrollHeight = skillItem:getChildTrans("Scroll View").rect.size.y -
             skillItem:getChildTrans("Scroll View").rect.size.y % 0.01
-            skillItem:getChildGO("mBtnShrink"):SetActive(skillDescHeight > scrollheight)
-            skillItem:getChildGO("mBtnEnlarge"):SetActive(skillDescHeight > scrollheight)
+            local overflowHeight = math.max(0, skillDescHeight - scrollHeight)
+            skillItemExpandHeight = self.mMinHight + overflowHeight
+            isCanOpen = overflowHeight > 0
+            skillItem:getChildGO("mBtnShrink"):SetActive(isCanOpen)
+            skillItem:getChildGO("mBtnEnlarge"):SetActive(isCanOpen)
             gs.TransQuick:SetRotation(skillItem:getChildTrans("mBtnShrink"), 0, 0, 0)
-            isCanOpen = skillDescHeight > scrollheight
         end))
-        gs.TransQuick:SizeDelta02(skillItem:getTrans(), self.mMinHight)
         skillItem:addUIEvent("mBtnEnlarge", function()
             if (isCanOpen and (not isOpen)) then
                 isOpen = true
-                gs.TransQuick:SizeDelta02(skillItem:getTrans(), self.mMaxHight)
+                -- 根据技能描述文本高度完整展开条目
+                gs.TransQuick:SizeDelta02(skillItem:getTrans(), skillItemExpandHeight)
                 gs.TransQuick:SetRotation(skillItem:getChildTrans("mBtnShrink"), 0, 0, 180)
-                LoopManager:addFrame(1, 3, self, function()
-                    skillItem:getChildGO("Scroll View"):GetComponent(ty.ScrollRect).enabled = ((skillDescHeight >
-                    skillItem:getChildTrans(
-                    "Scroll View").rect
-                    .size.y))
-                end)
+                skillItem:getChildGO("Scroll View"):GetComponent(ty.ScrollRect).enabled = false
                 return
             end
             if isOpen then
-                if skillItem:getTrans().rect.size.y >= self.mMaxHight then
-                    isOpen = false
-                    gs.TransQuick:SizeDelta02(skillItem:getTrans(), self.mMinHight)
-                    gs.TransQuick:SetRotation(skillItem:getChildTrans("mBtnShrink"), 0, 0, 0)
-                    skillItem:getChildGO("Scroll View"):GetComponent(ty.ScrollRect).enabled = false
-                end
+                isOpen = false
+                gs.TransQuick:SizeDelta02(skillItem:getTrans(), self.mMinHight)
+                gs.TransQuick:SetRotation(skillItem:getChildTrans("mBtnShrink"), 0, 0, 0)
+                skillItem:getChildGO("Scroll View"):GetComponent(ty.ScrollRect).enabled = false
                 return
             end
         end)

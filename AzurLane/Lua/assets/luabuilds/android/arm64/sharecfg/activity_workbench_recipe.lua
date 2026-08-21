@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_workbench_recipe") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_workbench_recipe"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_workbench_recipe = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_workbench_recipe
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_workbench_recipe = rawget(pg, "activity_workbench_recipe") or setmetatable({
+	__name = "activity_workbench_recipe"
+}, confNEO)
+pg.activity_workbench_recipe.all = {
 	1,
 	3,
 	4,
@@ -58,25 +35,11 @@ var_0_3.all = {
 	121,
 	122
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_workbench_recipe = {}
+pg.base = pg.base or {}
+pg.base.activity_workbench_recipe = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_workbench_recipe
-
-	var_1_0[1] = {
+	pg.base.activity_workbench_recipe[1] = {
 		name = "优选木料",
 		id = 1,
 		lock_display = "海岛制作台Lv.2解锁",
@@ -99,11 +62,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_workbench_recipe
-
-	var_1_1[3] = {
+	pg.base.activity_workbench_recipe[3] = {
 		name = "红宝石",
 		id = 3,
 		lock_display = "海岛制作台Lv.2解锁",
@@ -126,11 +85,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_workbench_recipe
-
-	var_1_2[4] = {
+	pg.base.activity_workbench_recipe[4] = {
 		name = "黄宝石",
 		id = 4,
 		lock_display = "海岛制作台Lv.2解锁",
@@ -153,11 +108,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_workbench_recipe
-
-	var_1_3[5] = {
+	pg.base.activity_workbench_recipe[5] = {
 		name = "温泉石板",
 		id = 5,
 		lock_display = "海岛制作台Lv.3解锁",
@@ -180,11 +131,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_workbench_recipe
-
-	var_1_4[6] = {
+	pg.base.activity_workbench_recipe[6] = {
 		name = "温泉出水口",
 		id = 6,
 		lock_display = "海岛制作台Lv.3解锁",
@@ -212,11 +159,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_workbench_recipe
-
-	var_1_5[7] = {
+	pg.base.activity_workbench_recipe[7] = {
 		name = "团子牛奶套装",
 		id = 7,
 		lock_display = "海岛制作台Lv.3解锁",
@@ -239,11 +182,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_workbench_recipe
-
-	var_1_6[8] = {
+	pg.base.activity_workbench_recipe[8] = {
 		name = "温泉栅栏",
 		id = 8,
 		lock_display = "海岛制作台Lv.3解锁",
@@ -266,11 +205,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_workbench_recipe
-
-	var_1_7[9] = {
+	pg.base.activity_workbench_recipe[9] = {
 		name = "“温泉打包”服务",
 		id = 9,
 		lock_display = "海岛制作台Lv.3解锁",
@@ -293,11 +228,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_workbench_recipe
-
-	var_1_8[100] = {
+	pg.base.activity_workbench_recipe[100] = {
 		name = "漫花庄园地板",
 		id = 100,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -325,11 +256,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_workbench_recipe
-
-	var_1_9[101] = {
+	pg.base.activity_workbench_recipe[101] = {
 		name = "漫花庄园墙纸",
 		id = 101,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -362,11 +289,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_workbench_recipe
-
-	var_1_10[102] = {
+	pg.base.activity_workbench_recipe[102] = {
 		name = "庄园长椅",
 		id = 102,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -399,11 +322,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_workbench_recipe
-
-	var_1_11[103] = {
+	pg.base.activity_workbench_recipe[103] = {
 		name = "庄园花床",
 		id = 103,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -436,11 +355,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_workbench_recipe
-
-	var_1_12[104] = {
+	pg.base.activity_workbench_recipe[104] = {
 		name = "庄园小屋",
 		id = 104,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -473,11 +388,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_workbench_recipe
-
-	var_1_13[105] = {
+	pg.base.activity_workbench_recipe[105] = {
 		name = "庄园画板",
 		id = 105,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -510,11 +421,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_workbench_recipe
-
-	var_1_14[106] = {
+	pg.base.activity_workbench_recipe[106] = {
 		name = "庄园花车",
 		id = 106,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -547,11 +454,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_workbench_recipe
-
-	var_1_15[107] = {
+	pg.base.activity_workbench_recipe[107] = {
 		name = "庄园花灯",
 		id = 107,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -584,11 +487,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_workbench_recipe
-
-	var_1_16[108] = {
+	pg.base.activity_workbench_recipe[108] = {
 		name = "庄园花棚",
 		id = 108,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -621,11 +520,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_workbench_recipe
-
-	var_1_17[109] = {
+	pg.base.activity_workbench_recipe[109] = {
 		name = "庄园花田",
 		id = 109,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -658,11 +553,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_workbench_recipe
-
-	var_1_18[110] = {
+	pg.base.activity_workbench_recipe[110] = {
 		name = "庄园木桥",
 		id = 110,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -690,11 +581,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_workbench_recipe
-
-	var_1_19[111] = {
+	pg.base.activity_workbench_recipe[111] = {
 		name = "庄园秋千",
 		id = 111,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -727,11 +614,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_workbench_recipe
-
-	var_1_20[112] = {
+	pg.base.activity_workbench_recipe[112] = {
 		name = "庄园水井",
 		id = 112,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -764,11 +647,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_workbench_recipe
-
-	var_1_21[113] = {
+	pg.base.activity_workbench_recipe[113] = {
 		name = "庄园竖琴",
 		id = 113,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -801,11 +680,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_workbench_recipe
-
-	var_1_22[114] = {
+	pg.base.activity_workbench_recipe[114] = {
 		name = "庄园梳妆台",
 		id = 114,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -838,11 +713,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_workbench_recipe
-
-	var_1_23[115] = {
+	pg.base.activity_workbench_recipe[115] = {
 		name = "庄园书桌",
 		id = 115,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -875,11 +746,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_workbench_recipe
-
-	var_1_24[116] = {
+	pg.base.activity_workbench_recipe[116] = {
 		name = "庄园小亭",
 		id = 116,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -912,11 +779,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_workbench_recipe
-
-	var_1_25[117] = {
+	pg.base.activity_workbench_recipe[117] = {
 		name = "庄园小灯",
 		id = 117,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -949,11 +812,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_workbench_recipe
-
-	var_1_26[118] = {
+	pg.base.activity_workbench_recipe[118] = {
 		name = "庄园邮箱",
 		id = 118,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -986,11 +845,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_workbench_recipe
-
-	var_1_27[119] = {
+	pg.base.activity_workbench_recipe[119] = {
 		name = "庄园浴池",
 		id = 119,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -1023,11 +878,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_workbench_recipe
-
-	var_1_28[120] = {
+	pg.base.activity_workbench_recipe[120] = {
 		name = "庄园落地钟",
 		id = 120,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -1060,11 +911,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_workbench_recipe
-
-	var_1_29[121] = {
+	pg.base.activity_workbench_recipe[121] = {
 		name = "庄园花栏",
 		id = 121,
 		lock_display = "海岛制作台Lv.4解锁",
@@ -1097,8 +944,7 @@ var_0_3.base.activity_workbench_recipe = {}
 			}
 		}
 	}
-	pg = var_1_29
-	var_1_29.base.activity_workbench_recipe[122] = {
+	pg.base.activity_workbench_recipe[122] = {
 		name = "绽放刹那",
 		id = 122,
 		lock_display = "海岛制作台Lv.4解锁",

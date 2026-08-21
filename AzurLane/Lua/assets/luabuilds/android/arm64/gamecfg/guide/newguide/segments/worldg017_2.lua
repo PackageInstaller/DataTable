@@ -10,8 +10,7 @@
 		{
 			alpha = 0,
 			doFunc = function()
-				WorldConst = var_1_10000
-				var_1_10000.GuideEnemyEnd = true
+				WorldConst.GuideEnemyEnd = true
 
 				return
 			end
@@ -95,8 +94,7 @@
 		{
 			alpha = 0,
 			doFunc = function()
-				WorldConst = var_1_10000
-				var_1_10000.GuideEnemyEnd = false
+				WorldConst.GuideEnemyEnd = false
 
 				return
 			end

@@ -1,36 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldBossOverTimeCommand", pm.SimpleCommand)
 
-local var_0_0 = "WorldBossOverTimeCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = nowWorld().worldBossProxy
+	local var_1_2 = var_1_1:GetSelfBoss()
 
-	nowWorld = var_1_10003
-
-	local var_1_1 = var_1_10003().worldBossProxy
-
-	if var_4.GetSelfBoss(var_1_1) and var_5:IsExpired() then
-		local var_1_3
-
-		if var_5:isDeath() then
-			local var_1_2 = arg_1_0
-
-			var_1_3 = arg_1_0.sendNotification
-			GAME = var_1_10009
-
-			var_1_3(var_1_2, var_1_10009.WORLD_BOSS_SUBMIT_AWARD, {
-				bossId = var_5.id
+	if var_1_2 and var_1_2:IsExpired() then
+		if var_1_2:isDeath() then
+			arg_1_0:sendNotification(GAME.WORLD_BOSS_SUBMIT_AWARD, {
+				bossId = var_1_2.id
 			})
 		else
-			pg = var_1_3
-
-			local var_1_4 = var_1_3.ConnectionMgr.GetInstance()
-
-			var_6.Send(var_1_4, 34513, {
+			pg.ConnectionMgr.GetInstance():Send(34513, {
 				type = 0
 			}, 34514, function(arg_2_0)
 				if arg_2_0.result == 0 then
@@ -41,18 +22,12 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 			end)
 		end
 
-		var_4:ClearRank(var_5.id)
-		var_4:RemoveSelfBoss()
-
-		local var_1_5 = arg_1_0
-		local var_1_6 = arg_1_0.sendNotification
-
-		GAME = var_9
-
-		var_1_6(var_1_5, var_9.WORLD_SELF_BOSS_OVERTIME_DONE)
+		var_1_1:ClearRank(var_1_2.id)
+		var_1_1:RemoveSelfBoss()
+		arg_1_0:sendNotification(GAME.WORLD_SELF_BOSS_OVERTIME_DONE)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

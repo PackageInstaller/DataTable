@@ -31,6 +31,8 @@ end
 -- 激活
 function active(self, args)
     super.active(self, args)
+
+    GameDispatcher:addEventListener(EventName.UPDATE_SEABED_COLLECTION_PANEL,self.updateBubble,self)
     MoneyManager:setMoneyTidList({ })
     self:updateBubble()
 end
@@ -52,6 +54,7 @@ end
 -- 反激活（销毁工作）
 function deActive(self)
     super.deActive(self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_SEABED_COLLECTION_PANEL,self.updateBubble,self)
 end
 
 function updateBubble(self)
@@ -64,7 +67,7 @@ function updateBubble(self)
     if seabed.SeabedManager:canGetGain(seabed.SeabedBattleType.Buff) then
         self:addBubble(seabed.SeabedBattleType.Buff)
     else
-        self:removeBubble(seabed.SeabedBattleType.Collage)
+        self:removeBubble(seabed.SeabedBattleType.Buff)
     end
 end
 

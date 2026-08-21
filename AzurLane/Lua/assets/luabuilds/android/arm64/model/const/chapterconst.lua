@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChapterConst")
+﻿local var_0_0 = class("ChapterConst")
 
 var_0_0.ExitFromChapter = 0
 var_0_0.ExitFromMap = 1
@@ -55,9 +53,7 @@ var_0_0.AttachEnemyTypes = {
 }
 
 function var_0_0.IsEnemyAttach(arg_1_0)
-	table = var_1_10001
-
-	return var_1_10001.contains(var_0_0.AttachEnemyTypes, arg_1_0)
+	return table.contains(var_0_0.AttachEnemyTypes, arg_1_0)
 end
 
 function var_0_0.IsBossCell(arg_2_0)
@@ -69,22 +65,20 @@ function var_0_0.IsBossCell(arg_2_0)
 		return false
 	end
 
-	pg = var_1
+	local var_2_0 = pg.expedition_data_template[arg_2_0.attachmentId]
 
-	if not var_1.expedition_data_template[arg_2_0.attachmentId] then
+	if not pg.expedition_data_template[arg_2_0.attachmentId] then
 		return
 	end
 
-	return var_1.type == var_0_0.ExpeditionTypeBoss or var_1.type == var_0_0.ExpeditionTypeMulBoss
+	return var_2_0.type == var_0_0.ExpeditionTypeBoss or var_2_0.type == var_0_0.ExpeditionTypeMulBoss
 end
 
 function var_0_0.GetDestroyFX(arg_3_0)
-	pg = var_1_10001
-
-	if not var_1_10001.expedition_data_template[arg_3_0.attachmentId] or var_1.SLG_destroy_FX == "" then
+	if not pg.expedition_data_template[arg_3_0.attachmentId] or pg.expedition_data_template[arg_3_0.attachmentId].SLG_destroy_FX == "" then
 		return "huoqiubaozha"
 	else
-		return var_1.SLG_destroy_FX
+		return pg.expedition_data_template[arg_3_0.attachmentId].SLG_destroy_FX
 	end
 
 	return
@@ -183,10 +177,8 @@ var_0_0.QuadStateExpel = 7
 var_0_0.PlaneName = "plane"
 var_0_0.LineCross = 2
 var_0_0.CellEaseOutAlpha = 0.01
-Color = var_1
-var_0_0.CellNormalColor = var_1.white
-Color = var_1
-var_0_0.CellTargetColor = var_1.green
+var_0_0.CellNormalColor = Color.white
+var_0_0.CellTargetColor = Color.green
 var_0_0.ChildItem = "item"
 var_0_0.ChildAttachment = "attachment"
 var_0_0.TraitNone = 0
@@ -194,36 +186,20 @@ var_0_0.TraitLurk = 1
 var_0_0.TraitVirgin = 2
 
 function var_0_0.NeedMarkAsLurk(arg_4_0)
-	local var_4_0 = arg_4_0.flag
-
-	ChapterConst = var_1_10002
-
-	if var_4_0 ~= var_1_10002.CellFlagActive then
+	if arg_4_0.flag ~= ChapterConst.CellFlagActive then
 		return false
 	end
 
 	if arg_4_0.attachment == var_0_0.AttachBox then
-		pg = var_1
+		local var_4_0 = pg.box_data_template[arg_4_0.attachmentId]
 
-		local var_4_1 = var_1.box_data_template[arg_4_0.attachmentId]
+		assert(pg.box_data_template[arg_4_0.attachmentId], "box_data_template not exist: " .. arg_4_0.attachmentId)
 
-		assert = var_2
-
-		var_2(var_4_1, "box_data_template not exist: " .. arg_4_0.attachmentId)
-
-		if var_4_1.type == var_0_0.BoxStrategy then
-			pg = var_2
-
-			local var_4_2 = var_2.strategy_data_template[var_4_1.effect_id].type
-
-			ChapterConst = var_4
-
-			if var_4_2 == var_4.StgTypeBindFleetPassive then
-				return nil
-			end
+		if var_4_0.type == var_0_0.BoxStrategy and pg.strategy_data_template[var_4_0.effect_id].type == ChapterConst.StgTypeBindFleetPassive then
+			return nil
 		end
 
-		return var_4_1.type == var_0_0.BoxDrop or var_4_1.type == var_0_0.BoxStrategy or var_4_1.type == var_0_0.BoxSupply or var_4_1.type == var_0_0.BoxEnemy
+		return var_4_0.type == var_0_0.BoxDrop or var_4_0.type == var_0_0.BoxStrategy or var_4_0.type == var_0_0.BoxSupply or var_4_0.type == var_0_0.BoxEnemy
 	elseif var_0_0.IsBossCell(arg_4_0) then
 		return true
 	elseif arg_4_0.attachment == var_0_0.AttachAmbush then
@@ -239,56 +215,26 @@ function var_0_0.NeedEasePathCell(arg_5_0)
 	if arg_5_0.attachment == var_0_0.AttachNone then
 		return true
 	elseif arg_5_0.attachment == var_0_0.AttachAmbush then
-		local var_5_0 = arg_5_0.flag
-
-		ChapterConst = var_2
-
-		if var_5_0 ~= var_2.CellFlagActive then
+		if arg_5_0.flag ~= ChapterConst.CellFlagActive then
 			return true
 		end
 	elseif arg_5_0.attachment == var_0_0.AttachEnemy or arg_5_0.attachment == var_0_0.AttachElite then
-		local var_5_1 = arg_5_0.flag
-
-		ChapterConst = var_2
-
-		if var_5_1 == var_2.CellFlagDisabled then
+		if arg_5_0.flag == ChapterConst.CellFlagDisabled then
 			return true
 		end
 	elseif arg_5_0.attachment == var_0_0.AttachSupply and arg_5_0.attachmentId <= 0 then
 		return true
 	elseif arg_5_0.attachment == var_0_0.AttachBox then
-		pg = var_1
+		assert(pg.box_data_template[arg_5_0.attachmentId], "box_data_template not exist: " .. arg_5_0.attachmentId)
 
-		local var_5_2 = var_1.box_data_template[arg_5_0.attachmentId]
-
-		assert = var_2
-
-		var_2(var_5_2, "box_data_template not exist: " .. arg_5_0.attachmentId)
-
-		if var_5_2.type == var_0_0.BoxAirStrike or var_5_2.type == var_0_0.BoxTorpedo then
+		if pg.box_data_template[arg_5_0.attachmentId].type == var_0_0.BoxAirStrike or pg.box_data_template[arg_5_0.attachmentId].type == var_0_0.BoxTorpedo then
 			return true
-		elseif var_5_2.type == var_0_0.BoxDrop or var_5_2.type == var_0_0.BoxStrategy or var_5_2.type == var_0_0.BoxEnemy or var_5_2.type == var_0_0.BoxSupply then
-			local var_5_3 = arg_5_0.flag
-
-			ChapterConst = var_3
-
-			if var_5_3 == var_3.CellFlagDisabled then
-				return true
-			end
+		elseif (pg.box_data_template[arg_5_0.attachmentId].type == var_0_0.BoxDrop or pg.box_data_template[arg_5_0.attachmentId].type == var_0_0.BoxStrategy or pg.box_data_template[arg_5_0.attachmentId].type == var_0_0.BoxEnemy or pg.box_data_template[arg_5_0.attachmentId].type == var_0_0.BoxSupply) and arg_5_0.flag == ChapterConst.CellFlagDisabled then
+			return true
 		end
 	elseif arg_5_0.attachment == var_0_0.AttachStory then
-		local var_5_4 = arg_5_0.flag
-
-		ChapterConst = var_2
-
-		if var_5_4 ~= var_2.CellFlagActive then
-			local var_5_5 = arg_5_0.flag
-
-			ChapterConst = var_2
-
-			if var_5_5 ~= var_2.CellFlagTriggerActive or arg_5_0.data ~= var_0_0.StoryObstacle then
-				return true
-			end
+		if arg_5_0.flag ~= ChapterConst.CellFlagActive and (arg_5_0.flag ~= ChapterConst.CellFlagTriggerActive or arg_5_0.data ~= var_0_0.StoryObstacle) then
+			return true
 		end
 	elseif arg_5_0.attachment == var_0_0.AttachBarrier then
 		return true
@@ -298,26 +244,14 @@ function var_0_0.NeedEasePathCell(arg_5_0)
 end
 
 function var_0_0.NeedClearStep(arg_6_0)
-	if arg_6_0.attachment == var_0_0.AttachAmbush then
-		local var_6_0 = arg_6_0.flag
-
-		ChapterConst = var_2
-
-		if var_6_0 == var_2.CellFlagAmbush then
-			return true
-		end
+	if arg_6_0.attachment == var_0_0.AttachAmbush and arg_6_0.flag == ChapterConst.CellFlagAmbush then
+		return true
 	end
 
 	if arg_6_0.attachment == var_0_0.AttachBox then
-		pg = var_1
+		assert(pg.box_data_template[arg_6_0.attachmentId], "box_data_template not exist: " .. arg_6_0.attachmentId)
 
-		local var_6_1 = var_1.box_data_template[arg_6_0.attachmentId]
-
-		assert = var_2
-
-		var_2(var_6_1, "box_data_template not exist: " .. arg_6_0.attachmentId)
-
-		if var_6_1.type == var_0_0.BoxAirStrike then
+		if pg.box_data_template[arg_6_0.attachmentId].type == var_0_0.BoxAirStrike then
 			return true
 		end
 	end
@@ -333,55 +267,29 @@ var_0_0.AchieveType5 = 5
 var_0_0.AchieveType6 = 6
 
 function var_0_0.IsAchieved(arg_7_0)
-	local var_7_0 = false
-
-	if arg_7_0.type == var_0_0.AchieveType4 or arg_7_0.type == var_0_0.AchieveType5 then
-		var_7_0 = arg_7_0.count >= 1
-	else
-		var_7_0 = arg_7_0.count >= arg_7_0.config
-	end
-
-	return var_7_0
+	return (arg_7_0.type == var_0_0.AchieveType4 or arg_7_0.type == var_0_0.AchieveType5) and arg_7_0.count >= 1 or arg_7_0.count >= arg_7_0.config
 end
 
 function var_0_0.GetAchieveDesc(arg_8_0, arg_8_1)
-	local var_8_0 = false
-
-	_ = var_1_10003
-
-	if var_1_10003.detect(arg_8_1.achieves, function(arg_9_0)
+	local var_8_0 = _.detect(arg_8_1.achieves, function(arg_9_0)
 		return arg_9_0.type == arg_8_0
-	end).type == var_0_0.AchieveType1 then
+	end)
+
+	if var_8_0.type == var_0_0.AchieveType1 then
 		return "击破敌方旗舰"
-	elseif var_3.type == var_0_0.AchieveType2 then
-		string = var_4
-
-		local var_8_1 = var_4.format
-		local var_8_2 = "击破护卫舰队（%d/%d）"
-
-		math = var_1_10007
-
-		return var_8_1(var_8_2, var_1_10007.min(var_3.count, var_3.config), var_3.config)
-	elseif var_3.type == var_0_0.AchieveType3 then
+	elseif var_8_0.type == var_0_0.AchieveType2 then
+		return string.format("击破护卫舰队（%d/%d）", math.min(var_8_0.count, var_8_0.config), var_8_0.config)
+	elseif var_8_0.type == var_0_0.AchieveType3 then
 		return "击破所有敌舰"
-	elseif var_3.type == var_0_0.AchieveType4 then
-		string = var_4
-
-		return var_4.format("出击人数不多于%d", var_3.config)
-	elseif var_3.type == var_0_0.AchieveType5 then
-		string = var_4
-
-		local var_8_3 = var_4.format
-		local var_8_4 = "出击舰娘不包含XX"
-
-		ShipType = var_1_10007
-
-		return var_8_3(var_8_4, var_1_10007.Type2Name(var_3.config))
-	elseif var_3.type == var_0_0.AchieveType6 then
+	elseif var_8_0.type == var_0_0.AchieveType4 then
+		return string.format("出击人数不多于%d", var_8_0.config)
+	elseif var_8_0.type == var_0_0.AchieveType5 then
+		return string.format("出击舰娘不包含XX", ShipType.Type2Name(var_8_0.config))
+	elseif var_8_0.type == var_0_0.AchieveType6 then
 		return "Full Combo完成关卡"
 	end
 
-	return var_8_0
+	return false
 end
 
 var_0_0.OpRetreat = 0
@@ -457,42 +365,27 @@ var_0_0.StatusMusashiGame6 = 47
 var_0_0.StatusMusashiGame7 = 48
 var_0_0.StatusMusashiGame8 = 49
 var_0_0.StatusSupportSubmarineFinish = 104
-setmetatable = var_1
-var_0_0.Status2Stg = var_1({}, {
+var_0_0.Status2Stg = setmetatable({}, {
 	__index = function(arg_10_0, arg_10_1)
-		pg = var_1_10002
+		if pg.chapter_status_effect[arg_10_1] then
+			local var_10_0 = pg.chapter_status_effect[arg_10_1].strategy or 0
 
-		local var_10_0
-
-		if not var_1_10002.chapter_status_effect[arg_10_1] or not var_2.strategy then
-			var_10_0 = 0
+			return var_10_0 ~= 0 and var_10_0 or nil
 		end
-
-		return var_10_0 ~= 0 and var_10_0 or nil
 	end
 })
 var_0_0.Buff2Stg = {}
 
-local function var_0_1(arg_11_0, arg_11_1)
-	if arg_11_1.buff_id == 0 then
+for iter_0_0, iter_0_1 in ipairs(pg.strategy_data_template.all) do
+	(function(arg_11_0, arg_11_1)
+		if arg_11_1.buff_id == 0 then
+			return
+		end
+
+		var_0_0.Buff2Stg[arg_11_1.buff_id] = arg_11_0
+
 		return
-	end
-
-	var_0_0.Buff2Stg[arg_11_1.buff_id] = arg_11_0
-
-	return
-end
-
-ipairs = var_2
-pg = var_4
-
-for iter_0_0, iter_0_1 in var_2(var_4.strategy_data_template.all) do
-	local var_0_2 = var_0_1
-	local var_0_3 = iter_0_1
-
-	pg = var_0_10010
-
-	var_0_2(var_0_3, var_0_10010.strategy_data_template[iter_0_1])
+	end)(iter_0_1, pg.strategy_data_template[iter_0_1])
 end
 
 var_0_0.HpGreen = 3000
@@ -502,40 +395,26 @@ function var_0_0.GetAmbushDisplay(arg_12_0)
 	local var_12_1
 
 	if not arg_12_0 then
-		pg = var_1_10003
-		var_12_0 = var_1_10003.gametip.ambush_display_0.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.9607843137254902, 0.3764705882352941, 0.2823529411764706)
+		var_12_0 = pg.gametip.ambush_display_0.tip
+		var_12_1 = Color.New(0.9607843137254902, 0.3764705882352941, 0.2823529411764706)
 	elseif arg_12_0 <= 0 then
-		pg = var_3
-		var_12_0 = var_3.gametip.ambush_display_1.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.6627450980392157, 0.9607843137254902, 0.2823529411764706)
+		var_12_0 = pg.gametip.ambush_display_1.tip
+		var_12_1 = Color.New(0.6627450980392157, 0.9607843137254902, 0.2823529411764706)
 	elseif arg_12_0 < 0.1 then
-		pg = var_3
-		var_12_0 = var_3.gametip.ambush_display_2.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.6627450980392157, 0.9607843137254902, 0.2823529411764706)
+		var_12_0 = pg.gametip.ambush_display_2.tip
+		var_12_1 = Color.New(0.6627450980392157, 0.9607843137254902, 0.2823529411764706)
 	elseif arg_12_0 < 0.2 then
-		pg = var_3
-		var_12_0 = var_3.gametip.ambush_display_3.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.6627450980392157, 0.9607843137254902, 0.2823529411764706)
+		var_12_0 = pg.gametip.ambush_display_3.tip
+		var_12_1 = Color.New(0.6627450980392157, 0.9607843137254902, 0.2823529411764706)
 	elseif arg_12_0 < 0.33 then
-		pg = var_3
-		var_12_0 = var_3.gametip.ambush_display_4.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.984313725490196, 0.788235294117647, 0.21568627450980393)
+		var_12_0 = pg.gametip.ambush_display_4.tip
+		var_12_1 = Color.New(0.984313725490196, 0.788235294117647, 0.21568627450980393)
 	elseif arg_12_0 < 0.5 then
-		pg = var_3
-		var_12_0 = var_3.gametip.ambush_display_5.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.9607843137254902, 0.3764705882352941, 0.2823529411764706)
+		var_12_0 = pg.gametip.ambush_display_5.tip
+		var_12_1 = Color.New(0.9607843137254902, 0.3764705882352941, 0.2823529411764706)
 	else
-		pg = var_3
-		var_12_0 = var_3.gametip.ambush_display_6.tip
-		Color = var_3
-		var_12_1 = var_3.New(0.9607843137254902, 0.3764705882352941, 0.2823529411764706)
+		var_12_0 = pg.gametip.ambush_display_6.tip
+		var_12_1 = Color.New(0.9607843137254902, 0.3764705882352941, 0.2823529411764706)
 	end
 
 	return var_12_0, var_12_1
@@ -651,145 +530,40 @@ var_0_0.TemplateFleet = "tpl_ship"
 var_0_0.TemplateSub = "tpl_sub"
 var_0_0.TemplateTransport = "tpl_transport"
 var_0_0.AirDominanceStrategyBuffType = 1001
-
-local var_0_4 = "AirDominance"
-local var_0_5 = {}
-local var_0_6 = {}
-
-pg = iter_0_0
-
-local var_0_7 = iter_0_0.gametip.no_airspace_competition.tip
-
-var_0_6.name = var_0_7
-Color = var_0_7
-
-local var_0_8 = var_0_7.New(1, 1, 1)
-
-var_0_6.color = var_0_8
-var_0_5[0] = var_0_6
-
-local var_0_9 = {}
-
-pg = var_0_8
-
-local var_0_10 = var_0_8.strategy_data_template
-
-pg = var_6
-
-local var_0_11 = var_0_10[var_6.gameset.air_dominance_level_5.key_value].name
-
-var_0_9.name = var_0_11
-pg = var_0_11
-
-local var_0_12 = var_0_11.gameset.air_dominance_level_5.key_value
-
-var_0_9.StgId = var_0_12
-Color = var_0_12
-
-local var_0_13 = var_0_12.New(0.9921568627450981, 0.4, 0.39215686274509803)
-
-var_0_9.color = var_0_13
-var_0_5[1] = var_0_9
-
-local var_0_14 = {}
-
-pg = var_0_13
-
-local var_0_15 = var_0_13.strategy_data_template
-
-pg = var_6
-
-local var_0_16 = var_0_15[var_6.gameset.air_dominance_level_4.key_value].name
-
-var_0_14.name = var_0_16
-pg = var_0_16
-
-local var_0_17 = var_0_16.gameset.air_dominance_level_4.key_value
-
-var_0_14.StgId = var_0_17
-Color = var_0_17
-
-local var_0_18 = var_0_17.New(0.9568627450980393, 0.5647058823529412, 0.34901960784313724)
-
-var_0_14.color = var_0_18
-var_0_5[2] = var_0_14
-
-local var_0_19 = {}
-
-pg = var_0_18
-
-local var_0_20 = var_0_18.strategy_data_template
-
-pg = var_6
-
-local var_0_21 = var_0_20[var_6.gameset.air_dominance_level_3.key_value].name
-
-var_0_19.name = var_0_21
-pg = var_0_21
-
-local var_0_22 = var_0_21.gameset.air_dominance_level_3.key_value
-
-var_0_19.StgId = var_0_22
-Color = var_0_22
-
-local var_0_23 = var_0_22.New(0.9568627450980393, 0.8470588235294118, 0.23921568627450981)
-
-var_0_19.color = var_0_23
-var_0_5[3] = var_0_19
-
-local var_0_24 = {}
-
-pg = var_0_23
-
-local var_0_25 = var_0_23.strategy_data_template
-
-pg = var_6
-
-local var_0_26 = var_0_25[var_6.gameset.air_dominance_level_2.key_value].name
-
-var_0_24.name = var_0_26
-pg = var_0_26
-
-local var_0_27 = var_0_26.gameset.air_dominance_level_2.key_value
-
-var_0_24.StgId = var_0_27
-Color = var_0_27
-
-local var_0_28 = var_0_27.New(0.7333333333333333, 0.7725490196078432, 0.2)
-
-var_0_24.color = var_0_28
-var_0_5[4] = var_0_24
-
-local var_0_29 = {}
-
-pg = var_0_28
-
-local var_0_30 = var_0_28.strategy_data_template
-
-pg = var_6
-
-local var_0_31 = var_0_30[var_6.gameset.air_dominance_level_1.key_value].name
-
-var_0_29.name = var_0_31
-pg = var_0_31
-
-local var_0_32 = var_0_31.gameset.air_dominance_level_1.key_value
-
-var_0_29.StgId = var_0_32
-Color = var_0_32
-
-local var_0_33 = var_0_32.New(0.615686274509804, 0.9215686274509803, 0.14901960784313725)
-
-var_0_29.color = var_0_33
-var_0_5[5] = var_0_29
-var_0_0[var_0_4] = var_0_5
+var_0_0.AirDominance = {
+	[0] = {
+		name = pg.gametip.no_airspace_competition.tip,
+		color = Color.New(1, 1, 1)
+	},
+	{
+		name = pg.strategy_data_template[pg.gameset.air_dominance_level_5.key_value].name,
+		StgId = pg.gameset.air_dominance_level_5.key_value,
+		color = Color.New(0.9921568627450981, 0.4, 0.39215686274509803)
+	},
+	{
+		name = pg.strategy_data_template[pg.gameset.air_dominance_level_4.key_value].name,
+		StgId = pg.gameset.air_dominance_level_4.key_value,
+		color = Color.New(0.9568627450980393, 0.5647058823529412, 0.34901960784313724)
+	},
+	{
+		name = pg.strategy_data_template[pg.gameset.air_dominance_level_3.key_value].name,
+		StgId = pg.gameset.air_dominance_level_3.key_value,
+		color = Color.New(0.9568627450980393, 0.8470588235294118, 0.23921568627450981)
+	},
+	{
+		name = pg.strategy_data_template[pg.gameset.air_dominance_level_2.key_value].name,
+		StgId = pg.gameset.air_dominance_level_2.key_value,
+		color = Color.New(0.7333333333333333, 0.7725490196078432, 0.2)
+	},
+	{
+		name = pg.strategy_data_template[pg.gameset.air_dominance_level_1.key_value].name,
+		StgId = pg.gameset.air_dominance_level_1.key_value,
+		color = Color.New(0.615686274509804, 0.9215686274509803, 0.14901960784313725)
+	}
+}
 
 function var_0_0.IsAtelierMap(arg_15_0)
-	local var_15_0 = arg_15_0:getConfig("on_activity")
-
-	ActivityConst = var_1_10002
-
-	return var_15_0 == var_1_10002.RYZA_MAP_ACT_ID
+	return arg_15_0:getConfig("on_activity") == ActivityConst.RYZA_MAP_ACT_ID
 end
 
 var_0_0.AUTOFIGHT_STOP_REASON = {
@@ -802,44 +576,16 @@ var_0_0.AUTOFIGHT_STOP_REASON = {
 	SETTLEMENT = 7,
 	UNKNOWN = 0
 }
-PlayerPrefs = var_2
+chapter_skip_battle = PlayerPrefs.GetInt("chapter_skip_battle") or 0
 
-if not var_2.GetInt("chapter_skip_battle") then
-	local var_0_34 = 0
-end
+function switch_chapter_skip_battle()
+	chapter_skip_battle = 1 - chapter_skip_battle
 
-local var_0_35 = chapter_skip_battle
-
-local function var_0_36()
-	chapter_skip_battle = var_1_10000
-
-	local var_16_0 = 1 - var_1_10000
-
-	PlayerPrefs = chapter_skip_battle
-
-	local var_16_1 = var_0.SetInt
-	local var_16_2 = "chapter_skip_battle"
-
-	chapter_skip_battle = var_1_10003
-
-	var_16_1(var_16_2, var_1_10003)
-
-	PlayerPrefs = var_16_1
-
-	var_16_1.Save()
-
-	pg = var_0
-
-	local var_16_3 = var_0.TipsMgr.GetInstance()
-	local var_16_4 = var_0.ShowTips
-
-	chapter_skip_battle = var_1_10003
-
-	var_16_4(var_16_3, var_1_10003 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
+	PlayerPrefs.SetInt("chapter_skip_battle", chapter_skip_battle)
+	PlayerPrefs.Save()
+	pg.TipsMgr.GetInstance():ShowTips(chapter_skip_battle == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
 
 	return
 end
-
-local var_0_37 = switch_chapter_skip_battle
 
 return var_0_0

@@ -1,20 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandOtherCardAttach", import(".external.IslandOtherCardLayer"))
 
-local var_0_0 = "IslandOtherCardAttach"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".external.IslandOtherCardLayer"))
-
-function var_0_1.didEnter(arg_1_0)
-	var_0_1.super.didEnter(arg_1_0)
-
-	onNextTick = var_1
-
-	var_1(function()
-		local var_2_0 = arg_1_0
-
-		var_0.ExtraHandle(var_2_0)
+function var_0_0.didEnter(arg_1_0)
+	var_0_0.super.didEnter(arg_1_0)
+	onNextTick(function()
+		arg_1_0:ExtraHandle()
 
 		return
 	end)
@@ -22,25 +11,17 @@ function var_0_1.didEnter(arg_1_0)
 	return
 end
 
-function var_0_1.ExtraHandle(arg_3_0)
-	pg = var_1_10001
-
-	local var_3_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_3_0, arg_3_0._tf)
+function var_0_0.ExtraHandle(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 
 	return
 end
 
-function var_0_1.closeView(arg_4_0)
-	pg = var_1_10001
-
-	local var_4_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_4_0, arg_4_0._tf, arg_4_0.contextData.container)
+function var_0_0.closeView(arg_4_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_4_0._tf, arg_4_0.contextData.container)
 	arg_4_0.contextData.onClose()
 
 	return
 end
 
-return var_0_1
+return var_0_0

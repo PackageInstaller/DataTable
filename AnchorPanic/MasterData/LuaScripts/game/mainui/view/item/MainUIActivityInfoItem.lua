@@ -44,7 +44,15 @@ function setData(self, cusParent, cusBillboardData)
     self:setParentTrans(cusParent)
     self.billboardData = cusBillboardData
     if self.billboardData then
-        self.mImgItem:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getBgPath(string.format("billboard/billboard_bg_%d.jpg", self.billboardData.illustration)))
+        local sp = gs.ResMgr:LoadSprite(UrlManager:getBillboardBgHarUrl(self.billboardData.illustration))
+        if not sp then
+            -- logError(string.format("=========轮播id%s 没有提交国服资源，和策划核对后补上", self.billboardData.illustration))
+            logError(string.format("=========轮播id%s 没有提交国服资源，和策划核对后补上", self.billboardData.illustration))
+            self.mImgItem:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getBgPath("activityTarget/activity_bg_02.png")) -- 这里是故意设置错误图片，提示错误，需要注意错误。请勿删除代码
+        else
+
+            self.mImgItem:GetComponent(ty.AutoRefImage):SetImg(UrlManager:getBillboardBgUrl(self.billboardData.illustration))
+        end
         self.mImgItem:SetActive(true)
     else
         self.mImgItem:SetActive(false)
@@ -75,7 +83,7 @@ end
 -- 更新红点
 function updateBubble(self, isBubble)
     if (isBubble) then
-        RedPointManager:add(self.UITrans, nil, -154, 54)
+        RedPointManager:add(self.UITrans, nil, 114, 25)
     else
         RedPointManager:remove(self.UITrans)
     end

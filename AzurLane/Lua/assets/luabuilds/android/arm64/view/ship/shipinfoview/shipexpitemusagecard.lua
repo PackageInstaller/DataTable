@@ -1,122 +1,41 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ShipExpItemUsageCard")
+﻿local var_0_0 = class("ShipExpItemUsageCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg = var_1_10002
+	pg.DelegateInfo.New(arg_1_0)
 
-	var_1_10002.DelegateInfo.New(arg_1_0)
-
-	local var_1_0 = arg_1_1:Find("name")
-	local var_1_1 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTxt = var_1_1(var_1_0, var_5(var_1_10007))
+	arg_1_0.nameTxt = arg_1_1:Find("name"):GetComponent(typeof(Text))
 	arg_1_0.itemTF = arg_1_1:Find("item")
-
-	local var_1_2 = arg_1_1:Find("value/Text")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.valueTxt = var_1_3(var_1_2, var_5(var_1_10007))
+	arg_1_0.valueTxt = arg_1_1:Find("value/Text"):GetComponent(typeof(Text))
 	arg_1_0.value = 0
-	pressPersistTrigger = var_2
 
-	local var_1_4 = arg_1_1:Find("m10")
-	local var_1_5 = 0.5
-
-	local function var_1_6()
+	pressPersistTrigger(arg_1_1:Find("m10"), 0.5, function()
 		arg_1_0.value = arg_1_0.value - 10
 
-		local var_2_0 = arg_1_0
-
-		var_0.UpdateValue(var_2_0, true)
+		arg_1_0:UpdateValue(true)
 
 		return
-	end
-
-	local var_1_7
-	local var_1_8 = true
-	local var_1_9 = true
-	local var_1_10 = 0.15
-
-	SFX_PANEL = var_1_10011
-
-	var_2(var_1_4, var_1_5, var_1_6, var_1_7, var_1_8, var_1_9, var_1_10, var_1_10011)
-
-	pressPersistTrigger = var_2
-
-	local var_1_11 = arg_1_1:Find("a10")
-	local var_1_12 = 0.5
-
-	local function var_1_13()
+	end, nil, true, true, 0.15, SFX_PANEL)
+	pressPersistTrigger(arg_1_1:Find("a10"), 0.5, function()
 		arg_1_0.value = arg_1_0.value + 10
 
-		local var_3_0 = arg_1_0
-
-		var_0.UpdateValue(var_3_0)
+		arg_1_0:UpdateValue()
 
 		return
-	end
-
-	local var_1_14
-	local var_1_15 = true
-	local var_1_16 = true
-	local var_1_17 = 0.15
-
-	SFX_PANEL = var_1_10011
-
-	var_2(var_1_11, var_1_12, var_1_13, var_1_14, var_1_15, var_1_16, var_1_17, var_1_10011)
-
-	pressPersistTrigger = var_2
-
-	local var_1_18 = arg_1_1:Find("a1")
-	local var_1_19 = 0.5
-
-	local function var_1_20()
+	end, nil, true, true, 0.15, SFX_PANEL)
+	pressPersistTrigger(arg_1_1:Find("a1"), 0.5, function()
 		arg_1_0.value = arg_1_0.value + 1
 
-		local var_4_0 = arg_1_0
-
-		var_0.UpdateValue(var_4_0)
+		arg_1_0:UpdateValue()
 
 		return
-	end
-
-	local var_1_21
-	local var_1_22 = true
-	local var_1_23 = true
-	local var_1_24 = 0.15
-
-	SFX_PANEL = var_1_10011
-
-	var_2(var_1_18, var_1_19, var_1_20, var_1_21, var_1_22, var_1_23, var_1_24, var_1_10011)
-
-	pressPersistTrigger = var_2
-
-	local var_1_25 = arg_1_1:Find("m1")
-	local var_1_26 = 0.5
-
-	local function var_1_27()
+	end, nil, true, true, 0.15, SFX_PANEL)
+	pressPersistTrigger(arg_1_1:Find("m1"), 0.5, function()
 		arg_1_0.value = arg_1_0.value - 1
 
-		local var_5_0 = arg_1_0
-
-		var_0.UpdateValue(var_5_0, true)
+		arg_1_0:UpdateValue(true)
 
 		return
-	end
-
-	local var_1_28
-	local var_1_29 = true
-	local var_1_30 = true
-	local var_1_31 = 0.15
-
-	SFX_PANEL = var_1_10011
-
-	var_2(var_1_25, var_1_26, var_1_27, var_1_28, var_1_29, var_1_30, var_1_31, var_1_10011)
+	end, nil, true, true, 0.15, SFX_PANEL)
 
 	return
 end
@@ -128,65 +47,35 @@ function var_0_0.SetCallBack(arg_6_0, arg_6_1)
 end
 
 function var_0_0.GetItem(arg_7_0, arg_7_1)
-	getProxy = var_1_10002
-	BagProxy = var_1_10004
+	local var_7_0 = getProxy(BagProxy):getItemById(arg_7_1)
 
-	local var_7_0 = var_1_10002(var_1_10004)
-	local var_7_1
+	var_7_0 = var_7_0 or Drop.New({
+		count = 0,
+		type = DROP_TYPE_ITEM,
+		id = arg_7_1
+	})
 
-	if not var_2.getItemById(var_7_0, arg_7_1) then
-		Drop = var_7_1
-		var_7_1 = var_7_1.New
-
-		local var_7_2 = {
-			count = 0
-		}
-
-		DROP_TYPE_ITEM = var_5
-		var_7_2.type = var_5
-		var_7_2.id = arg_7_1
-		var_7_1 = var_7_1(var_7_2)
-	end
-
-	return var_7_1
+	return var_7_0
 end
 
 function var_0_0.Update(arg_8_0, arg_8_1)
 	arg_8_0.value = 0
 
-	local var_8_0 = arg_8_0
+	local var_8_0 = arg_8_0:GetItem(arg_8_1)
 
-	arg_8_0.item = arg_8_0.GetItem(var_8_0, arg_8_1)
-	updateDrop = var_1_10003
+	arg_8_0.item = var_8_0
 
-	local var_8_1 = arg_8_0.itemTF
-	local var_8_2 = {}
+	updateDrop(arg_8_0.itemTF, {
+		type = DROP_TYPE_ITEM,
+		id = arg_8_1,
+		count = var_8_0.count
+	})
 
-	DROP_TYPE_ITEM = var_1_10007
-	var_8_2.type = var_1_10007
-	var_8_2.id = arg_8_1
-	var_8_2.count = var_2.count
-
-	var_1_10003(var_8_1, var_8_2)
-
-	local var_8_3
-
-	if var_2.count == 0 then
-		setText = var_3
-		var_8_3 = arg_8_0.itemTF
-
-		var_3(var_5.Find(var_8_3, "icon_bg/count"), 0)
+	if var_8_0.count == 0 then
+		setText(arg_8_0.itemTF:Find("icon_bg/count"), 0)
 	end
 
-	local var_8_4 = arg_8_0.nameTxt
-
-	string = var_8_0
-
-	local var_8_5 = var_8_0.format
-	local var_8_6 = "<color=#%s>%s</color>"
-
-	ItemRarity = var_8_3
-	var_8_4.text = var_8_5(var_8_6, var_8_3.Rarity2HexColor(var_2:getConfig("rarity")), var_2:getConfig("name"))
+	arg_8_0.nameTxt.text = string.format("<color=#%s>%s</color>", ItemRarity.Rarity2HexColor(var_8_0:getConfig("rarity")), var_8_0:getConfig("name"))
 
 	arg_8_0:UpdateValue()
 
@@ -194,14 +83,12 @@ function var_0_0.Update(arg_8_0, arg_8_1)
 end
 
 function var_0_0.UpdateValue(arg_9_0, arg_9_1)
-	math = var_1_10002
-	arg_9_0.value = var_1_10002.min(arg_9_0.value, arg_9_0.item.count)
-	math = var_2
-	arg_9_0.value = var_2.max(arg_9_0.value, 0)
+	arg_9_0.value = math.min(arg_9_0.value, arg_9_0.item.count)
+	arg_9_0.value = math.max(arg_9_0.value, 0)
 	arg_9_0.valueTxt.text = arg_9_0.value
 
 	if arg_9_0.callback then
-		arg_9_0.callback(arg_9_0, arg_9_0.item.id, arg_9_0.value, arg_9_1)
+		arg_9_0:callback(arg_9_0.item.id, arg_9_0.value, arg_9_1)
 	end
 
 	return
@@ -215,9 +102,7 @@ function var_0_0.ForceUpdateValue(arg_10_0, arg_10_1)
 end
 
 function var_0_0.Dispose(arg_11_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_11_0)
+	pg.DelegateInfo.Dispose(arg_11_0)
 
 	return
 end

@@ -42,7 +42,7 @@ function getDes(self)
 end
 --获取图片Url
 function getImgUrl(self)
-    return UrlManager:getBgPath("story/cg/" .. self.backgroundName)
+    return UrlManager:getStoryCgUrl(self.backgroundName)
 end
 
 --获取是否已解锁
@@ -60,7 +60,13 @@ end
 
 --获取图片
 function getImg(self)
-    return self.backgroundName
+    return string.gsub(self.backgroundName, "^cg/", "")
+end
+
+function getImgDir(self)
+    local url = UrlManager:getStoryCgUrl(self.backgroundName)
+    local dir = string.match(url, "^arts/ui/bg/(.+)/[^/]+$")
+    return dir or "story/cg_lymden"
 end
 
 --获取排序

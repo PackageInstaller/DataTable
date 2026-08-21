@@ -1,21 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EducateSelEndingMediator", import(".base.EducateContextMediator"))
 
-local var_0_0 = "EducateSelEndingMediator"
+var_0_0.ON_SELECT_ENDING = "EducateSelEndingMediator:ON_SELECT_ENDING"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".base.EducateContextMediator"))
-
-var_0_1.ON_SELECT_ENDING = "EducateSelEndingMediator:ON_SELECT_ENDING"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_SELECT_ENDING, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_1(var_2_0, var_2_10006.EDUCATE_TRIGGER_END, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_SELECT_ENDING, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.EDUCATE_TRIGGER_END, {
 			ids = arg_2_2,
 			selId = arg_2_1
 		})
@@ -26,29 +15,20 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	local var_3_0 = {}
-
-	GAME = var_1_10002
-	var_3_0[1] = var_1_10002.EDUCATE_TRIGGER_END_DONE
-
-	return var_3_0
+function var_0_0.listNotificationInterests(arg_3_0)
+	return {
+		GAME.EDUCATE_TRIGGER_END_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getName(var_4_0)
-	local var_4_2 = arg_4_1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getBody()
 
-	GAME = var_4_0
-
-	if var_4_1 == var_4_0.EDUCATE_TRIGGER_END_DONE then
-		local var_4_3 = arg_4_0.viewComponent
-
-		var_4.closeView(var_4_3)
+	if arg_4_1:getName() == GAME.EDUCATE_TRIGGER_END_DONE then
+		arg_4_0.viewComponent:closeView()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

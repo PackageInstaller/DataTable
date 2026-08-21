@@ -1,12 +1,12 @@
 --[[ 
 -----------------------------------------------------
-@filename       : FashionShowView
-@Description    : 单个皮肤展示
-@date           : 2023-09-20 14:20:33
-@Author         : Jacob
+@filename       : FashionShowOneBuyView
+@Description    : 单个皮肤部件购买展示
+@Author         : sxt
 @copyright      : (LY) 2023 雷焰网络
 -----------------------------------------------------
-]] module('purchase.FashionShowOneBuyView', Class.impl("game/purchase/fashionShop/view/FashionShowView"))
+]]
+module('purchase.FashionShowOneBuyView', Class.impl("game/purchase/fashionShop/view/FashionShowView"))
 UIRes = UrlManager:getUIPrefabPath('purchase/FashionShowOneBuyView.prefab')
 
 function configUI(self)
@@ -71,8 +71,9 @@ function configUI(self)
     -- self.mTxtSingleUnlock = self:getChildGO("mTxtSingleUnlock"):GetComponent(ty.Text)
 
     self.mBtnSingleHas = self:getChildGO("mBtnSingleHas")
+    self.mImgCover = self:getChildGO("mImgCover")
 
-    
+
 end
 
 -- 更新是否有显示动态
@@ -106,17 +107,15 @@ function active(self, args)
     -- self.mGroupFashionColor = self:getChildGO("mGroupFashionColor")
     -- self.mGroupFashionColor:SetActive(false)
 
-   
-
-    
     -- self.mTxtSingleUnlock.text = _TT(9)
-
-   
 
     self:updateView(args)
 
     self.mBtnFColorPre:SetActive(false)
     self.mBtnFight:SetActive(false)
+
+    -- self.mImgCover:SetActive(RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())
+    self.mImgCover:SetActive(false) --改成模型骨骼打码
 end
 
 function deActive(self)
@@ -225,7 +224,7 @@ end
 
 function updateHeroFashionColor(self, msgVo)
     --if msgVo.heroTid == self:getHeroTid() and msgVo.fashionId == self:getFahiondId() then
-         self:updateFColorItem()
+    self:updateFColorItem()
     --end
 end
 
@@ -239,7 +238,7 @@ function updateFColorItem(self)
 
     for i, v in ipairs(list) do
         local item = SimpleInsItem:create(self:getChildGO("mGroupFColorItem"), self.mGroupFColorMenu.transform,
-            "FashionClothesTabViewGroupFColorItem")
+        "FashionClothesTabViewGroupFColorItem")
         item:getChildGO("mImgFColorIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(v.icon), false)
 
         local heroId = hero.HeroManager:getHeroIdByTid(self:getHeroTid())
@@ -247,7 +246,7 @@ function updateFColorItem(self)
         local unlock = table.indexof(msgVo.colorList, v.id) ~= false or v.id == 0
         item:getChildGO("mImgFColorLock"):SetActive(not unlock)
 
-        item:getChildGO("mImgFColorSelect"):SetActive( v.id == self.mDefPairtsId == nil and 0 or self.mDefPairtsId)
+        item:getChildGO("mImgFColorSelect"):SetActive(v.id == self.mDefPairtsId == nil and 0 or self.mDefPairtsId)
         item:getChildGO("mImgFColorUse"):SetActive(false)
 
         table.insert(self.mFColorItemList, item)
@@ -261,7 +260,7 @@ function updateFColorItem(self)
             self.mSelectColorId = v.id
 
             -- 替换材质球预览
-            self.mModelPlayer:setMaterial(v.posList, v.materials, v.dissolves)
+            self.mModelPlayer:setMaterial(v.posList, v.materials, v.dissolves, v.posY)
         end)
     end
 
@@ -274,7 +273,7 @@ function updateFColorItem(self)
                 self:resetFColorSelect()
                 self.mFColorItemList[i]:getChildGO("mImgFColorSelect"):SetActive(true)
                 self.mSelectColorId = self.mDefPairtsId
-                self.mModelPlayer:setMaterial(list[i].posList, list[i].materials, list[i].dissolves)
+                self.mModelPlayer:setMaterial(list[i].posList, list[i].materials, list[i].dissolves, list[i].posY)
                 --self.mDefInit = true
                 break
             end
@@ -287,7 +286,7 @@ end
 function getFashionIsUnLock(self)
     local heroId = hero.HeroManager:getHeroIdByTid(self:getHeroTid())
     local fashionVo, state = fashion.FashionManager:getHeroFashionVo(self:getFashionType(), heroId,
-        self.mFashionVo:getFashionId())
+    self.mFashionVo:getFashionId())
     if (state == fashion.State.LOCK) then
         return false
     end
@@ -351,25 +350,40 @@ function updateModelView(self, args)
         if (self.mIsShow3D or self.mIsFristShowModel) then
             self:recoverModel(false)
             self.mModelPlayer:setModelData(args, false, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, nil,
-                self.mModelClicker, true, function()
-                    if self.mIsFristShowModel then
-                        local isFirstShow3D = self.mIsShow3D
-                        self:update3DShow(isFirstShow3D)
-                        self.mIsFristShowModel = false
-                    end
-                    self:resetFColorSelect(self.mDefPairtsId == nil and 0 or self.mDefPairtsId)
+            self.mModelClicker, true, function()
+                if self.mIsFristShowModel then
+                    local isFirstShow3D = self.mIsShow3D
+                    self:update3DShow(isFirstShow3D)
+                    self.mIsFristShowModel = false
+                end
+                self:resetFColorSelect(self.mDefPairtsId == nil and 0 or self.mDefPairtsId)
 
-                    local data = fashion.FashionManager:getModelHarData(args)
-                    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and data then
-                        -- 替换材质球预览
-                        self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
-                            self.mModelPlayer:setMaterial(data.pos, data.materials, {})
-                        end)
+                local data = fashion.FashionManager:getModelHarData(args)
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                    -- 替换材质球预览
+                    self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                        self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                    end)
+
+                    local eftGo = gs.ResMgr:LoadGO(UrlManager:get3DBuffPath("fx_common_hero_cover_1.prefab"))
+                    gs.TransQuick:SetParentOrg(eftGo.transform, self.mModelPlayer:getModelTrans())
+                    local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
+                    if charAppend then
+                        charAppend.CharSet = self.mModelPlayer.m_modelView:getRootGO()
                     end
-                end)
+
+                    local eftGo = gs.ResMgr:LoadGO(UrlManager:get3DBuffPath("fx_common_hero_cover_2.prefab"))
+                    gs.TransQuick:SetParentOrg(eftGo.transform, self.mModelPlayer:getModelTrans())
+                    local charAppend = eftGo:GetComponent(ty.CharAppendEffect)
+                    if charAppend then
+                        charAppend.CharSet = self.mModelPlayer.m_modelView:getRootGO()
+                    end
+                end
+
+            end)
+        else
+            self:recoverModel(false)
         end
-    else
-        self:recoverModel(false)
     end
 end
 
@@ -382,7 +396,7 @@ function updateShow(self, args)
     self.mDefPairtsId = curFashionData.fashionDic[3]
 
     self.mBtnBuy:SetActive((not curFashionData:getIsSellOut()))
-  
+
     self.mBtnCanWear:SetActive(((curFashionData:getIsSellOut()) and (not curFashionData:getIsWear())))
     self.mBtnWearOver:SetActive((curFashionData:getIsSellOut() and (curFashionData:getIsWear())))
     local count = bag.BagManager:getPropsCountByTid(PROPS_TID.FASHION_DISCOUNT_CARE)
@@ -395,8 +409,8 @@ function updateShow(self, args)
     self.mFashionVo = curFashionData
     -- self:setFashionSelectIndex(false)
 
-    self.colorVo = fashion.FashionManager:getFasionColorVo(self.mPairtsFashionVo.fashionDic[1],self.mPairtsFashionVo.fashionDic[2],self.mPairtsFashionVo.fashionDic[3])
-    local propsVo = props.PropsManager:getPropsConfigVo( self.colorVo.costTid)
+    self.colorVo = fashion.FashionManager:getFasionColorVo(self.mPairtsFashionVo.fashionDic[1], self.mPairtsFashionVo.fashionDic[2], self.mPairtsFashionVo.fashionDic[3])
+    local propsVo = props.PropsManager:getPropsConfigVo(self.colorVo.costTid)
     self.mTxtSeriesName.text = propsVo:getName()
 
     self.mTxtTopSeries.text = propsVo:getName()
@@ -422,7 +436,7 @@ function updateShow(self, args)
     self:updateFashionColorBtn()
 end
 
-function updateView(self,args)
+function updateView(self, args)
 
     if self.mPairtsFashionVo:getMoneyTid() == MoneyType.MONEY then
         self.mImgSingleCost.gameObject:SetActive(false)
@@ -433,20 +447,21 @@ function updateView(self,args)
         self.mImgSingleCost.gameObject:SetActive(true)
     end
 
+  
     self.mBtnSingleHas:SetActive(self.mPairtsFashionVo:getIsSellOut())
     self.mBtnSingleBuy:SetActive(false)
 
     self.mBtnBuy:SetActive((not self.mPairtsFashionVo:getIsSellOut()))
     --self.mBtnBuy:SetActive(false)
-    self.mImgToggle:SetActive(false)
-
+    --self.mImgToggle:SetActive(false)
+    self.mImgToggle.gameObject:SetActive(false)
     self.mImgFashionShowBg:SetActive((not self.mIsShow3D))
 
     self.mFashionVo = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self:getHeroTid(),
-        self:getFahiondId())
+    self:getFahiondId())
     self.mTxtHeroSeries.text = self.mFashionVo:getFashionSeries()
 
-    self.colorVo = fashion.FashionManager:getFasionColorVo(self.mPairtsFashionVo.fashionDic[1],self.mPairtsFashionVo.fashionDic[2],self.mPairtsFashionVo.fashionDic[3])
+    self.colorVo = fashion.FashionManager:getFasionColorVo(self.mPairtsFashionVo.fashionDic[1], self.mPairtsFashionVo.fashionDic[2], self.mPairtsFashionVo.fashionDic[3])
     local propsVo = props.PropsManager:getPropsConfigVo(self.colorVo.costTid)
     self.mTxtSeriesName.text = propsVo:getName()
     self.mTxtTopSeries.text = propsVo:getName()
@@ -476,7 +491,7 @@ function updateView(self,args)
     --self.mShowId = list[1].id
     for i = 1, #list, 1 do
         if list[i].id == self.mPairtsFashionVo.id then
-            table.insert(onlyList,list[i])
+            table.insert(onlyList, list[i])
             self.mShowId = i
         end
     end

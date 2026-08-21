@@ -1,30 +1,15 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NieRAutomataMainPage", import("view.activity.CorePage.CoreActivityPage"))
 
-local var_0_0 = "NieRAutomataMainPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.CoreActivityPage"))
-
-function var_0_1.OnFirstFlush(arg_1_0)
+function var_0_0.OnFirstFlush(arg_1_0)
 	arg_1_0.super.OnFirstFlush(arg_1_0)
 
-	local var_1_0 = arg_1_0.activity
-	local var_1_1 = var_1.getConfig(var_1_0, "config_client").intro_story
+	local var_1_0 = arg_1_0.activity:getConfig("config_client").intro_story
 
-	pg = var_1_10002
-
-	local var_1_2 = var_1_10002.NewStoryMgr.GetInstance()
-
-	if not var_2.IsPlayed(var_1_2, var_1_1) then
-		pg = var_1_0
-
-		local var_1_3 = var_1_0.NewStoryMgr.GetInstance()
-
-		var_3.Play(var_1_3, var_1_1[1])
+	if not pg.NewStoryMgr.GetInstance():IsPlayed(var_1_0) then
+		pg.NewStoryMgr.GetInstance():Play(var_1_0[1])
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

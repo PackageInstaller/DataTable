@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "chapter_capture") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "chapter_capture"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.chapter_capture = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.chapter_capture
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.chapter_capture = rawget(pg, "chapter_capture") or setmetatable({
+	__name = "chapter_capture"
+}, confNEO)
+pg.chapter_capture.all = {
 	1150001,
 	1150002,
 	1150003,
@@ -51,25 +28,11 @@ var_0_3.all = {
 	1210015,
 	1210016
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.chapter_capture = {}
+pg.base = pg.base or {}
+pg.base.chapter_capture = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.chapter_capture
-
-	var_1_0[1150001] = {
+	pg.base.chapter_capture[1150001] = {
 		special_item = 2,
 		special_unit_p = 1500,
 		escape_grid_icon = 0,
@@ -165,11 +128,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.chapter_capture
-
-	var_1_1[1150002] = {
+	pg.base.chapter_capture[1150002] = {
 		special_item = 2,
 		special_unit_p = 1500,
 		escape_grid_icon = 0,
@@ -261,11 +220,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.chapter_capture
-
-	var_1_2[1150003] = {
+	pg.base.chapter_capture[1150003] = {
 		special_item = 2,
 		special_unit_p = 1500,
 		escape_grid_icon = 0,
@@ -385,11 +340,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.chapter_capture
-
-	var_1_3[1150004] = {
+	pg.base.chapter_capture[1150004] = {
 		special_item = 2,
 		special_unit_p = 1500,
 		escape_grid_icon = 0,
@@ -485,11 +436,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.chapter_capture
-
-	var_1_4[1150005] = {
+	pg.base.chapter_capture[1150005] = {
 		special_item = 2,
 		special_unit_p = 1500,
 		escape_grid_icon = 0,
@@ -601,11 +548,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.chapter_capture
-
-	var_1_5[1150006] = {
+	pg.base.chapter_capture[1150006] = {
 		special_item = 2,
 		special_unit_p = 1500,
 		escape_grid_icon = 0,
@@ -753,11 +696,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.chapter_capture
-
-	var_1_6[1150011] = {
+	pg.base.chapter_capture[1150011] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -853,11 +792,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.chapter_capture
-
-	var_1_7[1150012] = {
+	pg.base.chapter_capture[1150012] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -949,11 +884,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.chapter_capture
-
-	var_1_8[1150013] = {
+	pg.base.chapter_capture[1150013] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1073,11 +1004,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.chapter_capture
-
-	var_1_9[1150014] = {
+	pg.base.chapter_capture[1150014] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1173,11 +1100,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.chapter_capture
-
-	var_1_10[1150015] = {
+	pg.base.chapter_capture[1150015] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1289,11 +1212,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.chapter_capture
-
-	var_1_11[1150016] = {
+	pg.base.chapter_capture[1150016] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1441,11 +1360,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.chapter_capture
-
-	var_1_12[17] = {
+	pg.base.chapter_capture[17] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1561,11 +1476,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.chapter_capture
-
-	var_1_13[18] = {
+	pg.base.chapter_capture[18] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1657,11 +1568,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.chapter_capture
-
-	var_1_14[19] = {
+	pg.base.chapter_capture[19] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1761,11 +1668,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.chapter_capture
-
-	var_1_15[20] = {
+	pg.base.chapter_capture[20] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1841,11 +1744,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.chapter_capture
-
-	var_1_16[21] = {
+	pg.base.chapter_capture[21] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -1929,11 +1828,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.chapter_capture
-
-	var_1_17[22] = {
+	pg.base.chapter_capture[22] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -2061,11 +1956,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.chapter_capture
-
-	var_1_18[27] = {
+	pg.base.chapter_capture[27] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -2181,11 +2072,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.chapter_capture
-
-	var_1_19[28] = {
+	pg.base.chapter_capture[28] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -2277,11 +2164,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.chapter_capture
-
-	var_1_20[29] = {
+	pg.base.chapter_capture[29] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -2381,11 +2264,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.chapter_capture
-
-	var_1_21[30] = {
+	pg.base.chapter_capture[30] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -2461,11 +2340,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.chapter_capture
-
-	var_1_22[31] = {
+	pg.base.chapter_capture[31] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,
@@ -2549,8 +2424,7 @@ var_0_3.base.chapter_capture = {}
 			}
 		}
 	}
-	pg = var_1_22
-	var_1_22.base.chapter_capture[1210016] = {
+	pg.base.chapter_capture[1210016] = {
 		special_item = 2,
 		special_unit_p = 2000,
 		escape_grid_icon = 0,

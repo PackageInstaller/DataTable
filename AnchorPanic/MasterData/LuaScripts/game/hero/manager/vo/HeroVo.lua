@@ -102,6 +102,16 @@ function __init(self)
     self.equipAttrDicAll = nil
     -- 已穿戴芯片装备全部属性列表(全部属性，不包含手环)
     self.equipAttrListAll = nil
+    --是否已结婚
+    self.isPromise = nil
+    --签名记录
+    self.signPos = nil
+    --昵称
+    self.nickname = nil
+    -- 重命名次数
+    self.renicknameTimes = nil
+    --结婚时间
+    self.promiseTime = nil
 end
 
 -- 获取战员穿戴的时装id
@@ -133,6 +143,15 @@ function getUIModel(self)
         return self:getHeroHighModel()
     end
     return self:getHeroModel()
+end
+
+function getHostelModel(self)
+    local fashionVo = fashion.FashionManager:getHeroWearingFashionVo(fashion.Type.CLOTHES, self.id)
+    if not fashionVo then
+        return nil
+    end
+    local fashionConfigVo = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self.tid, fashionVo.fashionId)
+    return fashionConfigVo.hostelModel
 end
 
 function getConfigVo(self)
@@ -201,6 +220,9 @@ function parsePreMsgData(self, pt_hero_pre_info)
     self.favorableExp = pt_hero_pre_info.relation_exp
     self.growLv = pt_hero_pre_info.increases_lv
 
+    self.isPromise = pt_hero_pre_info.is_promise
+    self.nickname = pt_hero_pre_info.nickname
+
     -- 该字段只在初始登录作为预览数据使用，不做维护（用于判断装备空槽部位红点）
     self.emptyEquipPosList = pt_hero_pre_info.empty_equip_pos_list
 
@@ -238,7 +260,11 @@ function parseMsgData(self, pt_hero_info)
     self.favorableLevel = pt_hero_info.relation_level
     self.favorableExp = pt_hero_info.relation_exp
     self.growLv = pt_hero_info.increases_lv
-
+    self.isPromise = pt_hero_info.is_promise
+    self.signPos = pt_hero_info.sign_pos
+    self.nickname = pt_hero_info.nickname
+    self.renicknameTimes = pt_hero_info.renickname_times
+    self.promiseTime = pt_hero_info.promise_time
     --self.covanantHelperId = pt_hero_info.connect_helper_id
     self:setFightSkillList(pt_hero_info.fight_skill_list)
     self:setActiveSkillList(pt_hero_info.active_skill_list)
@@ -250,6 +276,7 @@ function parseMsgData(self, pt_hero_info)
     if pt_hero_info.resonance_id_list then
         self:setActiveResonancePos(pt_hero_info.resonance_id_list)
     end
+    self:setDnaEggInfo(pt_hero_info)
 
     self.m_isPreData = false
 
@@ -273,7 +300,11 @@ function parseDetailMsgData(self, pt_hero_info)
     --self.covanantHelperId = pt_hero_info.connect_helper_id
 
     self.growLv = pt_hero_info.increases_lv
-
+    self.isPromise = pt_hero_info.is_promise
+    self.signPos = pt_hero_info.sign_pos
+    self.nickname = pt_hero_info.nickname
+    self.renicknameTimes = pt_hero_info.renickname_times
+    self.promiseTime = pt_hero_info.promise_time
     self:setFightSkillList(pt_hero_info.fight_skill_list)
     self:setActiveSkillList(pt_hero_info.active_skill_list)
     self:setActivePassiveSkillList(pt_hero_info.passive_skill_list)
@@ -283,6 +314,7 @@ function parseDetailMsgData(self, pt_hero_info)
     if pt_hero_info.resonance_id_list then
         self:setActiveResonancePos(pt_hero_info.resonance_id_list)
     end
+    self:setDnaEggInfo(pt_hero_info)
 
     self.m_isPreData = false
 
@@ -335,6 +367,34 @@ function parseOtherMsg(self, pt_other_hero_info)
     self.m_isPreData = false
 
     return true
+end
+
+function setDnaEggInfo(self, pt_hero_info)
+    ----dna蛋信息
+    --战员蛋当前形态
+    local isLvl
+    if self.egg_form and self.egg_form == pt_hero_info.egg_form then
+        if self.egg_lv ~= pt_hero_info.egg_lv then
+            isLvl = true
+        end
+    end
+    self.egg_form = pt_hero_info.egg_form or hero.eggType.none
+    --[[ --当前蛋id
+        desc:
+            在 == hero.eggType.egg 时 此id代表是蛋品质123索引
+            在 == hero.eggType.role 时 此id代表是战员形态配置索引
+    --]]
+    self.egg_id = pt_hero_info.egg_id
+    --当前培养等级
+    self.egg_lv = pt_hero_info.egg_lv
+    --战员蛋属性是否计算(有某个属性id在内即为这个属性id不计算属性)
+    self.egg_attr_cal = {}
+    for i, v in ipairs(pt_hero_info.egg_attr_cal or {}) do
+        self.egg_attr_cal[i] = v
+    end
+    if isLvl then
+        GameDispatcher:dispatchEvent(EventName.DNA_LV_UP, self.id)
+    end
 end
 
 -- 设置出战的技能列表
@@ -547,7 +607,6 @@ function setAttrList(self, cusList)
         return
     end
 
-
     self.attrList = {}
     self.attrDic = {}
     self.allElementDemage = 0 --全属性增伤
@@ -558,9 +617,9 @@ function setAttrList(self, cusList)
         -- elseif cusList[i].key == 113 then
         --     self.allElementDefine = cusList[i].value
         -- else
-            local attrVo = {key = cusList[i].key, value = cusList[i].value}
-            table.insert(self.attrList, attrVo)
-            self.attrDic[attrVo.key] = attrVo.value
+        local attrVo = {key = cusList[i].key, value = cusList[i].value}
+        table.insert(self.attrList, attrVo)
+        self.attrDic[attrVo.key] = attrVo.value
         --end
     end
     table.sort(self.attrList, AttConst.sort)
@@ -875,6 +934,20 @@ function getActivesSkillResonanceCount(self)
     end
 
     return count
+end
+
+--判断当前战员dna状态
+function checkDnaStatus(self, eggType)
+    return self.egg_form == eggType
+end
+
+--获取当前战员名字或昵称
+function getHeroName(self)
+    if self.isPromise == 1 then
+        return self.nickname
+    else
+        return self.name
+    end
 end
 
 return _M

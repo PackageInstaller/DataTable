@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ins_ship_group_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ins_ship_group_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ins_ship_group_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ins_ship_group_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ins_ship_group_template = rawget(pg, "activity_ins_ship_group_template") or setmetatable({
+	__name = "activity_ins_ship_group_template"
+}, confNEO)
+pg.activity_ins_ship_group_template.all = {
 	30701,
 	30702,
 	40301,
@@ -557,6 +534,7 @@ var_0_3.all = {
 	200,
 	201,
 	202,
+	203,
 	960007,
 	960008,
 	960009,
@@ -714,27 +692,19 @@ var_0_3.all = {
 	40405,
 	10146,
 	10142,
-	20307
+	20307,
+	10720,
+	10156,
+	10157,
+	10236,
+	10158,
+	30159
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_ins_ship_group_template = {}
+pg.base = pg.base or {}
+pg.base.activity_ins_ship_group_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_1_0[30701] = {
+	pg.base.activity_ins_ship_group_template[30701] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		background = "",
@@ -743,11 +713,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ins_ship_group_template
-
-	var_1_1[30702] = {
+	pg.base.activity_ins_ship_group_template[30702] = {
 		ship_group = 30702,
 		name = "Ran_mew",
 		background = "",
@@ -756,11 +722,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ins_ship_group_template
-
-	var_1_2[40301] = {
+	pg.base.activity_ins_ship_group_template[40301] = {
 		ship_group = 40301,
 		name = "R-Guitarist",
 		background = "",
@@ -769,11 +731,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ins_ship_group_template
-
-	var_1_3[99901] = {
+	pg.base.activity_ins_ship_group_template[99901] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		background = "",
@@ -782,11 +740,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ins_ship_group_template
-
-	var_1_4[20208] = {
+	pg.base.activity_ins_ship_group_template[20208] = {
 		ship_group = 20208,
 		name = "ShiningS",
 		background = "",
@@ -795,11 +749,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ins_ship_group_template
-
-	var_1_5[10209] = {
+	pg.base.activity_ins_ship_group_template[10209] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		background = "",
@@ -808,11 +758,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ins_ship_group_template
-
-	var_1_6[30705] = {
+	pg.base.activity_ins_ship_group_template[30705] = {
 		ship_group = 30705,
 		name = "KADEKURU",
 		background = "",
@@ -821,11 +767,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ins_ship_group_template
-
-	var_1_7[30706] = {
+	pg.base.activity_ins_ship_group_template[30706] = {
 		ship_group = 30706,
 		name = "Zuikaku",
 		background = "",
@@ -834,11 +776,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ins_ship_group_template
-
-	var_1_8[10214] = {
+	pg.base.activity_ins_ship_group_template[10214] = {
 		ship_group = 10214,
 		name = "Cleve-FC.1",
 		background = "",
@@ -847,11 +785,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ins_ship_group_template
-
-	var_1_9[10215] = {
+	pg.base.activity_ins_ship_group_template[10215] = {
 		ship_group = 10215,
 		name = "Cleve-FC.2",
 		background = "",
@@ -860,11 +794,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ins_ship_group_template
-
-	var_1_10[10210] = {
+	pg.base.activity_ins_ship_group_template[10210] = {
 		ship_group = 10210,
 		name = "Cleve-FC.3",
 		background = "",
@@ -873,11 +803,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ins_ship_group_template
-
-	var_1_11[20212] = {
+	pg.base.activity_ins_ship_group_template[20212] = {
 		ship_group = 20212,
 		name = "Belfast_inService",
 		background = "",
@@ -886,11 +812,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ins_ship_group_template
-
-	var_1_12[40303] = {
+	pg.base.activity_ins_ship_group_template[40303] = {
 		ship_group = 40303,
 		name = "P.Eugen",
 		background = "",
@@ -899,11 +821,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ins_ship_group_template
-
-	var_1_13[40305] = {
+	pg.base.activity_ins_ship_group_template[40305] = {
 		ship_group = 40305,
 		name = "GRAFSPEE",
 		background = "",
@@ -912,11 +830,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ins_ship_group_template
-
-	var_1_14[40304] = {
+	pg.base.activity_ins_ship_group_template[40304] = {
 		ship_group = 40304,
 		name = "SPEE_FIGHT",
 		background = "",
@@ -925,11 +839,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ins_ship_group_template
-
-	var_1_15[30181] = {
+	pg.base.activity_ins_ship_group_template[30181] = {
 		ship_group = 30181,
 		name = "fuwarin1118",
 		background = "",
@@ -938,11 +848,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ins_ship_group_template
-
-	var_1_16[30118] = {
+	pg.base.activity_ins_ship_group_template[30118] = {
 		ship_group = 30118,
 		name = "KoubaiStaff_unofficial",
 		background = "",
@@ -951,11 +857,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ins_ship_group_template
-
-	var_1_17[30307] = {
+	pg.base.activity_ins_ship_group_template[30307] = {
 		ship_group = 30307,
 		name = "Myoko_CA",
 		background = "",
@@ -964,11 +866,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ins_ship_group_template
-
-	var_1_18[30514] = {
+	pg.base.activity_ins_ship_group_template[30514] = {
 		ship_group = 30514,
 		name = "S8u6r6ug8A",
 		background = "",
@@ -977,11 +875,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ins_ship_group_template
-
-	var_1_19[30401] = {
+	pg.base.activity_ins_ship_group_template[30401] = {
 		ship_group = 30401,
 		name = "BarrowYoko",
 		background = "",
@@ -990,11 +884,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ins_ship_group_template
-
-	var_1_20[30707] = {
+	pg.base.activity_ins_ship_group_template[30707] = {
 		ship_group = 30707,
 		name = "OutrangeTH",
 		background = "",
@@ -1003,11 +893,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ins_ship_group_template
-
-	var_1_21[49901] = {
+	pg.base.activity_ins_ship_group_template[49901] = {
 		ship_group = 49901,
 		name = "RoonDESU",
 		background = "",
@@ -1016,11 +902,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ins_ship_group_template
-
-	var_1_22[49902] = {
+	pg.base.activity_ins_ship_group_template[49902] = {
 		ship_group = 49902,
 		name = "SymphonicStigma",
 		background = "",
@@ -1029,11 +911,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ins_ship_group_template
-
-	var_1_23[20220] = {
+	pg.base.activity_ins_ship_group_template[20220] = {
 		ship_group = 20220,
 		name = "forMaster_Sirius",
 		background = "",
@@ -1042,11 +920,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ins_ship_group_template
-
-	var_1_24[20211] = {
+	pg.base.activity_ins_ship_group_template[20211] = {
 		ship_group = 20211,
 		name = "☆ Royal Maid ☆",
 		background = "",
@@ -1055,11 +929,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ins_ship_group_template
-
-	var_1_25[10223] = {
+	pg.base.activity_ins_ship_group_template[10223] = {
 		ship_group = 10223,
 		name = "Cleve-FC.4",
 		background = "",
@@ -1068,11 +938,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ins_ship_group_template
-
-	var_1_26[30208] = {
+	pg.base.activity_ins_ship_group_template[30208] = {
 		ship_group = 30208,
 		name = "RageofONI",
 		background = "",
@@ -1081,11 +947,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ins_ship_group_template
-
-	var_1_27[30205] = {
+	pg.base.activity_ins_ship_group_template[30205] = {
 		ship_group = 30205,
 		name = "Isuzuzu",
 		background = "",
@@ -1094,11 +956,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ins_ship_group_template
-
-	var_1_28[30209] = {
+	pg.base.activity_ins_ship_group_template[30209] = {
 		ship_group = 30209,
 		name = "AbuAbu",
 		background = "",
@@ -1107,11 +965,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ins_ship_group_template
-
-	var_1_29[30204] = {
+	pg.base.activity_ins_ship_group_template[30204] = {
 		ship_group = 30204,
 		name = "Nagara_CA",
 		background = "",
@@ -1120,11 +974,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ins_ship_group_template
-
-	var_1_30[30110] = {
+	pg.base.activity_ins_ship_group_template[30110] = {
 		ship_group = 30110,
 		name = "HibikiChannel",
 		background = "",
@@ -1133,11 +983,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ins_ship_group_template
-
-	var_1_31[30109] = {
+	pg.base.activity_ins_ship_group_template[30109] = {
 		ship_group = 30109,
 		name = "NINJA-AKATSUKI",
 		background = "",
@@ -1146,11 +992,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ins_ship_group_template
-
-	var_1_32[30111] = {
+	pg.base.activity_ins_ship_group_template[30111] = {
 		ship_group = 30111,
 		name = "RAI",
 		background = "",
@@ -1159,11 +1001,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ins_ship_group_template
-
-	var_1_33[30112] = {
+	pg.base.activity_ins_ship_group_template[30112] = {
 		ship_group = 30112,
 		name = "DEN",
 		background = "",
@@ -1172,11 +1010,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ins_ship_group_template
-
-	var_1_34[20702] = {
+	pg.base.activity_ins_ship_group_template[20702] = {
 		ship_group = 20702,
 		name = "ArkRoyal_Defense",
 		background = "",
@@ -1185,11 +1019,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ins_ship_group_template
-
-	var_1_35[20706] = {
+	pg.base.activity_ins_ship_group_template[20706] = {
 		ship_group = 20706,
 		name = "Glorius",
 		background = "",
@@ -1198,11 +1028,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ins_ship_group_template
-
-	var_1_36[30221] = {
+	pg.base.activity_ins_ship_group_template[30221] = {
 		ship_group = 30221,
 		name = "Nshiro",
 		background = "",
@@ -1211,11 +1037,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ins_ship_group_template
-
-	var_1_37[30220] = {
+	pg.base.activity_ins_ship_group_template[30220] = {
 		ship_group = 30220,
 		name = "FinalOTU",
 		background = "",
@@ -1224,11 +1046,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ins_ship_group_template
-
-	var_1_38[20603] = {
+	pg.base.activity_ins_ship_group_template[20603] = {
 		ship_group = 20603,
 		name = "UnicornI72",
 		background = "",
@@ -1237,11 +1055,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ins_ship_group_template
-
-	var_1_39[20207] = {
+	pg.base.activity_ins_ship_group_template[20207] = {
 		ship_group = 20207,
 		name = "MINAMIpton",
 		background = "",
@@ -1250,11 +1064,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ins_ship_group_template
-
-	var_1_40[30201] = {
+	pg.base.activity_ins_ship_group_template[30201] = {
 		ship_group = 30201,
 		name = "Kagakubu.org",
 		background = "",
@@ -1263,11 +1073,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ins_ship_group_template
-
-	var_1_41[30404] = {
+	pg.base.activity_ins_ship_group_template[30404] = {
 		ship_group = 30404,
 		name = "KirinnKS",
 		background = "",
@@ -1276,11 +1082,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ins_ship_group_template
-
-	var_1_42[40135] = {
+	pg.base.activity_ins_ship_group_template[40135] = {
 		ship_group = 40135,
 		name = "funf♡3536",
 		background = "",
@@ -1289,11 +1091,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ins_ship_group_template
-
-	var_1_43[40136] = {
+	pg.base.activity_ins_ship_group_template[40136] = {
 		ship_group = 40136,
 		name = "Zech✛3536",
 		background = "",
@@ -1302,11 +1100,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ins_ship_group_template
-
-	var_1_44[10703] = {
+	pg.base.activity_ins_ship_group_template[10703] = {
 		ship_group = 10703,
 		name = "SisterSara",
 		background = "",
@@ -1315,11 +1109,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ins_ship_group_template
-
-	var_1_45[30803] = {
+	pg.base.activity_ins_ship_group_template[30803] = {
 		ship_group = 30803,
 		name = "I58_sensuisenntai",
 		background = "",
@@ -1328,11 +1118,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ins_ship_group_template
-
-	var_1_46[30804] = {
+	pg.base.activity_ins_ship_group_template[30804] = {
 		ship_group = 30804,
 		name = "I25_sensuisenntai",
 		background = "",
@@ -1341,11 +1127,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ins_ship_group_template
-
-	var_1_47[30802] = {
+	pg.base.activity_ins_ship_group_template[30802] = {
 		ship_group = 30802,
 		name = "I26_sensuisenntai",
 		background = "",
@@ -1354,11 +1136,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ins_ship_group_template
-
-	var_1_48[30605] = {
+	pg.base.activity_ins_ship_group_template[30605] = {
 		ship_group = 30605,
 		name = "SHOHO",
 		background = "",
@@ -1367,11 +1145,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ins_ship_group_template
-
-	var_1_49[39904] = {
+	pg.base.activity_ins_ship_group_template[39904] = {
 		ship_group = 39904,
 		name = "AzumaB65",
 		background = "",
@@ -1380,11 +1154,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ins_ship_group_template
-
-	var_1_50[10135] = {
+	pg.base.activity_ins_ship_group_template[10135] = {
 		ship_group = 10135,
 		name = "USSBACHE",
 		background = "",
@@ -1393,11 +1163,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ins_ship_group_template
-
-	var_1_51[13] = {
+	pg.base.activity_ins_ship_group_template[13] = {
 		ship_group = 60301,
 		name = "Da Trento",
 		background = "",
@@ -1406,11 +1172,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ins_ship_group_template
-
-	var_1_52[30105] = {
+	pg.base.activity_ins_ship_group_template[30105] = {
 		ship_group = 30105,
 		name = "AYANAMIN",
 		background = "",
@@ -1419,11 +1181,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ins_ship_group_template
-
-	var_1_53[30101] = {
+	pg.base.activity_ins_ship_group_template[30101] = {
 		ship_group = 30101,
 		name = "bukkitoku1",
 		background = "",
@@ -1432,11 +1190,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ins_ship_group_template
-
-	var_1_54[30505] = {
+	pg.base.activity_ins_ship_group_template[30505] = {
 		ship_group = 30505,
 		name = "SakuraCombinedFleet",
 		background = "",
@@ -1445,11 +1199,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ins_ship_group_template
-
-	var_1_55[30607] = {
+	pg.base.activity_ins_ship_group_template[30607] = {
 		ship_group = 30607,
 		name = "PhoenixWhale",
 		background = "",
@@ -1458,11 +1208,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ins_ship_group_template
-
-	var_1_56[90401] = {
+	pg.base.activity_ins_ship_group_template[90401] = {
 		ship_group = 90401,
 		name = "gateaumistress",
 		background = "",
@@ -1471,11 +1217,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ins_ship_group_template
-
-	var_1_57[10707] = {
+	pg.base.activity_ins_ship_group_template[10707] = {
 		ship_group = 10707,
 		name = "CarVesGAL6",
 		background = "",
@@ -1484,11 +1226,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ins_ship_group_template
-
-	var_1_58[30511] = {
+	pg.base.activity_ins_ship_group_template[30511] = {
 		ship_group = 30511,
 		name = "Mikasa",
 		background = "",
@@ -1497,11 +1235,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ins_ship_group_template
-
-	var_1_59[30132] = {
+	pg.base.activity_ins_ship_group_template[30132] = {
 		ship_group = 30132,
 		name = "Mutsuki",
 		background = "",
@@ -1510,11 +1244,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ins_ship_group_template
-
-	var_1_60[30135] = {
+	pg.base.activity_ins_ship_group_template[30135] = {
 		ship_group = 30135,
 		name = "Uduki",
 		background = "",
@@ -1523,11 +1253,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ins_ship_group_template
-
-	var_1_61[30133] = {
+	pg.base.activity_ins_ship_group_template[30133] = {
 		ship_group = 30133,
 		name = "Kisaragi",
 		background = "",
@@ -1536,11 +1262,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ins_ship_group_template
-
-	var_1_62[31201] = {
+	pg.base.activity_ins_ship_group_template[31201] = {
 		ship_group = 31201,
 		name = "akashi_TUUHAN",
 		background = "",
@@ -1549,11 +1271,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ins_ship_group_template
-
-	var_1_63[20218] = {
+	pg.base.activity_ins_ship_group_template[20218] = {
 		ship_group = 20218,
 		name = "Royal Maid Little",
 		background = "",
@@ -1562,11 +1280,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ins_ship_group_template
-
-	var_1_64[25] = {
+	pg.base.activity_ins_ship_group_template[25] = {
 		ship_group = 50201,
 		name = "Yi Xian",
 		background = "",
@@ -1575,11 +1289,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ins_ship_group_template
-
-	var_1_65[50101] = {
+	pg.base.activity_ins_ship_group_template[50101] = {
 		ship_group = 50101,
 		name = "Anshan1",
 		background = "",
@@ -1588,11 +1298,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ins_ship_group_template
-
-	var_1_66[50102] = {
+	pg.base.activity_ins_ship_group_template[50102] = {
 		ship_group = 50102,
 		name = "Fushun2",
 		background = "",
@@ -1601,11 +1307,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ins_ship_group_template
-
-	var_1_67[26] = {
+	pg.base.activity_ins_ship_group_template[26] = {
 		ship_group = 50202,
 		name = "NINGHAI",
 		background = "",
@@ -1614,11 +1316,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ins_ship_group_template
-
-	var_1_68[27] = {
+	pg.base.activity_ins_ship_group_template[27] = {
 		ship_group = 50203,
 		name = "PINGHAI",
 		background = "",
@@ -1627,11 +1325,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ins_ship_group_template
-
-	var_1_69[70201] = {
+	pg.base.activity_ins_ship_group_template[70201] = {
 		ship_group = 70201,
 		name = "Aurora1900",
 		background = "",
@@ -1640,11 +1334,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ins_ship_group_template
-
-	var_1_70[10126] = {
+	pg.base.activity_ins_ship_group_template[10126] = {
 		ship_group = 10126,
 		name = "EldridgeCoil",
 		background = "",
@@ -1653,11 +1343,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ins_ship_group_template
-
-	var_1_71[10208] = {
+	pg.base.activity_ins_ship_group_template[10208] = {
 		ship_group = 10208,
 		name = "NO1Sandiego!",
 		background = "",
@@ -1666,11 +1352,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ins_ship_group_template
-
-	var_1_72[10709] = {
+	pg.base.activity_ins_ship_group_template[10709] = {
 		ship_group = 10709,
 		name = "EssexG1",
 		background = "",
@@ -1679,11 +1361,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ins_ship_group_template
-
-	var_1_73[10601] = {
+	pg.base.activity_ins_ship_group_template[10601] = {
 		ship_group = 10601,
 		name = "L.I.",
 		background = "",
@@ -1692,11 +1370,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ins_ship_group_template
-
-	var_1_74[10706] = {
+	pg.base.activity_ins_ship_group_template[10706] = {
 		ship_group = 10706,
 		name = "Enterprise",
 		background = "",
@@ -1705,11 +1379,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ins_ship_group_template
-
-	var_1_75[40146] = {
+	pg.base.activity_ins_ship_group_template[40146] = {
 		ship_group = 40146,
 		name = "viersech",
 		background = "",
@@ -1718,11 +1388,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ins_ship_group_template
-
-	var_1_76[40701] = {
+	pg.base.activity_ins_ship_group_template[40701] = {
 		ship_group = 40701,
 		name = "TrägerZeppelin",
 		background = "",
@@ -1731,11 +1397,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ins_ship_group_template
-
-	var_1_77[40123] = {
+	pg.base.activity_ins_ship_group_template[40123] = {
 		ship_group = 40123,
 		name = "Zerstörer.23",
 		background = "",
@@ -1744,11 +1406,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ins_ship_group_template
-
-	var_1_78[20121] = {
+	pg.base.activity_ins_ship_group_template[20121] = {
 		ship_group = 20121,
 		name = "Javelin☆",
 		background = "",
@@ -1757,11 +1415,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ins_ship_group_template
-
-	var_1_79[20506] = {
+	pg.base.activity_ins_ship_group_template[20506] = {
 		ship_group = 20506,
 		name = "TywysogWales",
 		background = "",
@@ -1770,11 +1424,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ins_ship_group_template
-
-	var_1_80[20703] = {
+	pg.base.activity_ins_ship_group_template[20703] = {
 		ship_group = 20703,
 		name = "Illustrious",
 		background = "",
@@ -1783,11 +1433,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ins_ship_group_template
-
-	var_1_81[10125] = {
+	pg.base.activity_ins_ship_group_template[10125] = {
 		ship_group = 10125,
 		name = "DD_Hammann",
 		background = "",
@@ -1796,11 +1442,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ins_ship_group_template
-
-	var_1_82[10117] = {
+	pg.base.activity_ins_ship_group_template[10117] = {
 		ship_group = 10117,
 		name = "Lafite.82",
 		background = "",
@@ -1809,11 +1451,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ins_ship_group_template
-
-	var_1_83[20101] = {
+	pg.base.activity_ins_ship_group_template[20101] = {
 		ship_group = 20101,
 		name = "ThornyA",
 		background = "",
@@ -1822,11 +1460,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ins_ship_group_template
-
-	var_1_84[10705] = {
+	pg.base.activity_ins_ship_group_template[10705] = {
 		ship_group = 10705,
 		name = "YorkTown",
 		background = "",
@@ -1835,11 +1469,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ins_ship_group_template
-
-	var_1_85[90111] = {
+	pg.base.activity_ins_ship_group_template[90111] = {
 		ship_group = 90111,
 		name = "VivaLaze",
 		background = "",
@@ -1848,11 +1478,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ins_ship_group_template
-
-	var_1_86[20215] = {
+	pg.base.activity_ins_ship_group_template[20215] = {
 		ship_group = 20215,
 		name = "AuroraRose",
 		background = "",
@@ -1861,11 +1487,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ins_ship_group_template
-
-	var_1_87[5] = {
+	pg.base.activity_ins_ship_group_template[5] = {
 		ship_group = 90501,
 		name = "PirateKnight",
 		background = "",
@@ -1874,11 +1496,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ins_ship_group_template
-
-	var_1_88[40501] = {
+	pg.base.activity_ins_ship_group_template[40501] = {
 		ship_group = 40501,
 		name = "Bismarck",
 		background = "",
@@ -1887,11 +1505,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ins_ship_group_template
-
-	var_1_89[10212] = {
+	pg.base.activity_ins_ship_group_template[10212] = {
 		ship_group = 10212,
 		name = "Honolulu",
 		background = "",
@@ -1900,11 +1514,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ins_ship_group_template
-
-	var_1_90[30405] = {
+	pg.base.activity_ins_ship_group_template[30405] = {
 		ship_group = 30405,
 		name = "Amagi",
 		background = "",
@@ -1913,11 +1523,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ins_ship_group_template
-
-	var_1_91[29902] = {
+	pg.base.activity_ins_ship_group_template[29902] = {
 		ship_group = 29902,
 		name = "Monarch",
 		background = "",
@@ -1926,11 +1532,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_ins_ship_group_template
-
-	var_1_92[20604] = {
+	pg.base.activity_ins_ship_group_template[20604] = {
 		ship_group = 20604,
 		name = "CenAlpha",
 		background = "",
@@ -1939,11 +1541,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_ins_ship_group_template
-
-	var_1_93[30312] = {
+	pg.base.activity_ins_ship_group_template[30312] = {
 		ship_group = 30312,
 		name = "Atago",
 		background = "",
@@ -1952,11 +1550,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_ins_ship_group_template
-
-	var_1_94[30311] = {
+	pg.base.activity_ins_ship_group_template[30311] = {
 		ship_group = 30311,
 		name = "Takao",
 		background = "",
@@ -1965,11 +1559,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_ins_ship_group_template
-
-	var_1_95[30313] = {
+	pg.base.activity_ins_ship_group_template[30313] = {
 		ship_group = 30313,
 		name = "Maya",
 		background = "",
@@ -1978,11 +1568,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_ins_ship_group_template
-
-	var_1_96[30314] = {
+	pg.base.activity_ins_ship_group_template[30314] = {
 		ship_group = 30314,
 		name = "ToriUmi",
 		background = "",
@@ -1991,11 +1577,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_ins_ship_group_template
-
-	var_1_97[30116] = {
+	pg.base.activity_ins_ship_group_template[30116] = {
 		ship_group = 30116,
 		name = "SnowStorm",
 		background = "",
@@ -2004,11 +1586,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_ins_ship_group_template
-
-	var_1_98[10205] = {
+	pg.base.activity_ins_ship_group_template[10205] = {
 		ship_group = 10205,
 		name = "HelenaSG",
 		background = "",
@@ -2017,8 +1595,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_1_98
-	var_1_98.base.activity_ins_ship_group_template[10105] = {
+	pg.base.activity_ins_ship_group_template[10105] = {
 		ship_group = 10105,
 		name = "GL_SaraNo1",
 		background = "",
@@ -2031,11 +1608,7 @@ var_0_3.base.activity_ins_ship_group_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_2_0[80101] = {
+	pg.base.activity_ins_ship_group_template[80101] = {
 		ship_group = 80101,
 		name = "Le.Triomphant",
 		background = "",
@@ -2044,11 +1617,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_ins_ship_group_template
-
-	var_2_1[80801] = {
+	pg.base.activity_ins_ship_group_template[80801] = {
 		ship_group = 80801,
 		name = "P.P.O",
 		background = "",
@@ -2057,11 +1626,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_ins_ship_group_template
-
-	var_2_2[90103] = {
+	pg.base.activity_ins_ship_group_template[90103] = {
 		ship_group = 90103,
 		name = "Vauquelin",
 		background = "",
@@ -2070,11 +1635,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_ins_ship_group_template
-
-	var_2_3[90102] = {
+	pg.base.activity_ins_ship_group_template[90102] = {
 		ship_group = 90102,
 		name = "Tartu",
 		background = "",
@@ -2083,11 +1644,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_ins_ship_group_template
-
-	var_2_4[10519] = {
+	pg.base.activity_ins_ship_group_template[10519] = {
 		ship_group = 10519,
 		name = "2700P.Justice",
 		background = "",
@@ -2096,11 +1653,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_ins_ship_group_template
-
-	var_2_5[80501] = {
+	pg.base.activity_ins_ship_group_template[80501] = {
 		ship_group = 80501,
 		name = "Richelieu",
 		background = "",
@@ -2109,11 +1662,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_ins_ship_group_template
-
-	var_2_6[90302] = {
+	pg.base.activity_ins_ship_group_template[90302] = {
 		ship_group = 90302,
 		name = "Algérie",
 		background = "",
@@ -2122,11 +1671,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_ins_ship_group_template
-
-	var_2_7[50103] = {
+	pg.base.activity_ins_ship_group_template[50103] = {
 		ship_group = 50103,
 		name = "ChangChun",
 		background = "",
@@ -2135,11 +1680,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_ins_ship_group_template
-
-	var_2_8[50104] = {
+	pg.base.activity_ins_ship_group_template[50104] = {
 		ship_group = 50104,
 		name = "TaiYuan",
 		background = "",
@@ -2148,11 +1689,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_ins_ship_group_template
-
-	var_2_9[30115] = {
+	pg.base.activity_ins_ship_group_template[30115] = {
 		ship_group = 30115,
 		name = "LuckyShigure",
 		background = "",
@@ -2161,11 +1698,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_ins_ship_group_template
-
-	var_2_10[30114] = {
+	pg.base.activity_ins_ship_group_template[30114] = {
 		ship_group = 30114,
 		name = "NikuSuki",
 		background = "",
@@ -2174,11 +1707,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_ins_ship_group_template
-
-	var_2_11[40804] = {
+	pg.base.activity_ins_ship_group_template[40804] = {
 		ship_group = 40804,
 		name = "U.B.556",
 		background = "",
@@ -2187,11 +1716,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_ins_ship_group_template
-
-	var_2_12[40502] = {
+	pg.base.activity_ins_ship_group_template[40502] = {
 		ship_group = 40502,
 		name = "Tirpitz",
 		background = "",
@@ -2200,11 +1725,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_ins_ship_group_template
-
-	var_2_13[10213] = {
+	pg.base.activity_ins_ship_group_template[10213] = {
 		ship_group = 10213,
 		name = "Lucky Lou",
 		background = "",
@@ -2213,11 +1734,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_ins_ship_group_template
-
-	var_2_14[39901] = {
+	pg.base.activity_ins_ship_group_template[39901] = {
 		ship_group = 39901,
 		name = "Ibuki",
 		background = "",
@@ -2226,11 +1743,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_ins_ship_group_template
-
-	var_2_15[20505] = {
+	pg.base.activity_ins_ship_group_template[20505] = {
 		ship_group = 20505,
 		name = "King.George.V",
 		background = "",
@@ -2239,11 +1752,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_ins_ship_group_template
-
-	var_2_16[20501] = {
+	pg.base.activity_ins_ship_group_template[20501] = {
 		ship_group = 20501,
 		name = "QueenEliz",
 		background = "",
@@ -2252,11 +1761,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_ins_ship_group_template
-
-	var_2_17[20705] = {
+	pg.base.activity_ins_ship_group_template[20705] = {
 		ship_group = 20705,
 		name = "Formidable",
 		background = "",
@@ -2265,11 +1770,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_ins_ship_group_template
-
-	var_2_18[20704] = {
+	pg.base.activity_ins_ship_group_template[20704] = {
 		ship_group = 20704,
 		name = "Victorious",
 		background = "",
@@ -2278,11 +1779,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_ins_ship_group_template
-
-	var_2_19[30212] = {
+	pg.base.activity_ins_ship_group_template[30212] = {
 		ship_group = 30212,
 		name = "Zendai",
 		background = "",
@@ -2291,11 +1788,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_ins_ship_group_template
-
-	var_2_20[30213] = {
+	pg.base.activity_ins_ship_group_template[30213] = {
 		ship_group = 30213,
 		name = "Jintuu",
 		background = "",
@@ -2304,11 +1797,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_ins_ship_group_template
-
-	var_2_21[40101] = {
+	pg.base.activity_ins_ship_group_template[40101] = {
 		ship_group = 40101,
 		name = "L.Maaß",
 		background = "",
@@ -2317,11 +1806,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_ins_ship_group_template
-
-	var_2_22[20509] = {
+	pg.base.activity_ins_ship_group_template[20509] = {
 		ship_group = 20509,
 		name = "Howe_Cookies",
 		background = "",
@@ -2330,11 +1815,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_ins_ship_group_template
-
-	var_2_23[20606] = {
+	pg.base.activity_ins_ship_group_template[20606] = {
 		ship_group = 20606,
 		name = "Per",
 		background = "",
@@ -2343,11 +1824,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_ins_ship_group_template
-
-	var_2_24[20227] = {
+	pg.base.activity_ins_ship_group_template[20227] = {
 		ship_group = 20227,
 		name = "Hermione",
 		background = "",
@@ -2356,11 +1833,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_ins_ship_group_template
-
-	var_2_25[20510] = {
+	pg.base.activity_ins_ship_group_template[20510] = {
 		ship_group = 20510,
 		name = "Cmdr_Valiant",
 		background = "",
@@ -2369,11 +1842,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_ins_ship_group_template
-
-	var_2_26[20133] = {
+	pg.base.activity_ins_ship_group_template[20133] = {
 		ship_group = 20133,
 		name = "Icarus_Wing",
 		background = "",
@@ -2382,11 +1851,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_ins_ship_group_template
-
-	var_2_27[20701] = {
+	pg.base.activity_ins_ship_group_template[20701] = {
 		ship_group = 20701,
 		name = "Eagle",
 		background = "",
@@ -2395,11 +1860,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_ins_ship_group_template
-
-	var_2_28[20507] = {
+	pg.base.activity_ins_ship_group_template[20507] = {
 		ship_group = 20507,
 		name = "D_O_Y",
 		background = "",
@@ -2408,11 +1869,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_ins_ship_group_template
-
-	var_2_29[20219] = {
+	pg.base.activity_ins_ship_group_template[20219] = {
 		ship_group = 20219,
 		name = "Newcastle",
 		background = "",
@@ -2421,11 +1878,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_ins_ship_group_template
-
-	var_2_30[20204] = {
+	pg.base.activity_ins_ship_group_template[20204] = {
 		ship_group = 20204,
 		name = "Dido_Doll",
 		background = "",
@@ -2434,11 +1887,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_ins_ship_group_template
-
-	var_2_31[20502] = {
+	pg.base.activity_ins_ship_group_template[20502] = {
 		ship_group = 20502,
 		name = "Warspite",
 		background = "",
@@ -2447,11 +1896,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_ins_ship_group_template
-
-	var_2_32[40801] = {
+	pg.base.activity_ins_ship_group_template[40801] = {
 		ship_group = 40801,
 		name = "U-81",
 		background = "",
@@ -2460,11 +1905,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_ins_ship_group_template
-
-	var_2_33[40805] = {
+	pg.base.activity_ins_ship_group_template[40805] = {
 		ship_group = 40805,
 		name = "U-73",
 		background = "",
@@ -2473,11 +1914,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_ins_ship_group_template
-
-	var_2_34[40807] = {
+	pg.base.activity_ins_ship_group_template[40807] = {
 		ship_group = 40807,
 		name = "U-522",
 		background = "",
@@ -2486,11 +1923,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_ins_ship_group_template
-
-	var_2_35[20224] = {
+	pg.base.activity_ins_ship_group_template[20224] = {
 		ship_group = 20224,
 		name = "White Princess",
 		background = "",
@@ -2499,11 +1932,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_ins_ship_group_template
-
-	var_2_36[10316] = {
+	pg.base.activity_ins_ship_group_template[10316] = {
 		ship_group = 10316,
 		name = "Justice_B",
 		background = "",
@@ -2512,11 +1941,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_ins_ship_group_template
-
-	var_2_37[10324] = {
+	pg.base.activity_ins_ship_group_template[10324] = {
 		ship_group = 10324,
 		name = "Bremerton",
 		background = "",
@@ -2525,11 +1950,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_ins_ship_group_template
-
-	var_2_38[10738] = {
+	pg.base.activity_ins_ship_group_template[10738] = {
 		ship_group = 10738,
 		name = "Shangri-La",
 		background = "",
@@ -2538,11 +1959,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_ins_ship_group_template
-
-	var_2_39[70202] = {
+	pg.base.activity_ins_ship_group_template[70202] = {
 		ship_group = 70202,
 		name = "Pamiat' Merkuria",
 		background = "",
@@ -2551,11 +1968,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_ins_ship_group_template
-
-	var_2_40[10802] = {
+	pg.base.activity_ins_ship_group_template[10802] = {
 		ship_group = 10802,
 		name = "G_Albacore",
 		background = "",
@@ -2564,11 +1977,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_ins_ship_group_template
-
-	var_2_41[30501] = {
+	pg.base.activity_ins_ship_group_template[30501] = {
 		ship_group = 30501,
 		name = "Fusō",
 		background = "",
@@ -2577,11 +1986,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_ins_ship_group_template
-
-	var_2_42[30502] = {
+	pg.base.activity_ins_ship_group_template[30502] = {
 		ship_group = 30502,
 		name = "Yamashiro",
 		background = "",
@@ -2590,11 +1995,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_ins_ship_group_template
-
-	var_2_43[39903] = {
+	pg.base.activity_ins_ship_group_template[39903] = {
 		ship_group = 39903,
 		name = "Kitakaze",
 		background = "",
@@ -2603,11 +2004,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_ins_ship_group_template
-
-	var_2_44[90201] = {
+	pg.base.activity_ins_ship_group_template[90201] = {
 		ship_group = 90201,
 		name = "Inquisition_G",
 		background = "",
@@ -2616,11 +2013,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_ins_ship_group_template
-
-	var_2_45[30704] = {
+	pg.base.activity_ins_ship_group_template[30704] = {
 		ship_group = 30704,
 		name = "Gokou",
 		background = "",
@@ -2629,11 +2022,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_ins_ship_group_template
-
-	var_2_46[30703] = {
+	pg.base.activity_ins_ship_group_template[30703] = {
 		ship_group = 30703,
 		name = "Ino·Shika·Cho",
 		background = "",
@@ -2642,11 +2031,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_ins_ship_group_template
-
-	var_2_47[29901] = {
+	pg.base.activity_ins_ship_group_template[29901] = {
 		ship_group = 29901,
 		name = "Neptune",
 		background = "",
@@ -2655,11 +2040,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_ins_ship_group_template
-
-	var_2_48[30402] = {
+	pg.base.activity_ins_ship_group_template[30402] = {
 		ship_group = 30402,
 		name = "Hiei",
 		background = "",
@@ -2668,11 +2049,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_ins_ship_group_template
-
-	var_2_49[30512] = {
+	pg.base.activity_ins_ship_group_template[30512] = {
 		ship_group = 30512,
 		name = "Kii",
 		background = "",
@@ -2681,11 +2058,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_ins_ship_group_template
-
-	var_2_50[30503] = {
+	pg.base.activity_ins_ship_group_template[30503] = {
 		ship_group = 30503,
 		name = "Isei",
 		background = "",
@@ -2694,11 +2067,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_ins_ship_group_template
-
-	var_2_51[30317] = {
+	pg.base.activity_ins_ship_group_template[30317] = {
 		ship_group = 30317,
 		name = "Suzu✩",
 		background = "",
@@ -2707,11 +2076,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_ins_ship_group_template
-
-	var_2_52[30318] = {
+	pg.base.activity_ins_ship_group_template[30318] = {
 		ship_group = 30318,
 		name = "Kuma✩",
 		background = "",
@@ -2720,11 +2085,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_ins_ship_group_template
-
-	var_2_53[30210] = {
+	pg.base.activity_ins_ship_group_template[30210] = {
 		ship_group = 30210,
 		name = "Mogami",
 		background = "",
@@ -2733,11 +2094,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_ins_ship_group_template
-
-	var_2_54[30211] = {
+	pg.base.activity_ins_ship_group_template[30211] = {
 		ship_group = 30211,
 		name = "Mikuma",
 		background = "",
@@ -2746,11 +2103,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_ins_ship_group_template
-
-	var_2_55[30123] = {
+	pg.base.activity_ins_ship_group_template[30123] = {
 		ship_group = 30123,
 		name = "NutLove",
 		background = "",
@@ -2759,11 +2112,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_ins_ship_group_template
-
-	var_2_56[60502] = {
+	pg.base.activity_ins_ship_group_template[60502] = {
 		ship_group = 60502,
 		name = "VV_Littorio",
 		background = "",
@@ -2772,11 +2121,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_ins_ship_group_template
-
-	var_2_57[60102] = {
+	pg.base.activity_ins_ship_group_template[60102] = {
 		ship_group = 60102,
 		name = "S_Carabiniere",
 		background = "",
@@ -2785,11 +2130,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_ins_ship_group_template
-
-	var_2_58[89902] = {
+	pg.base.activity_ins_ship_group_template[89902] = {
 		ship_group = 89902,
 		name = "Champagne",
 		background = "",
@@ -2798,11 +2139,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_ins_ship_group_template
-
-	var_2_59[80103] = {
+	pg.base.activity_ins_ship_group_template[80103] = {
 		ship_group = 80103,
 		name = "L.Téméraire",
 		background = "",
@@ -2811,11 +2148,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_ins_ship_group_template
-
-	var_2_60[30184] = {
+	pg.base.activity_ins_ship_group_template[30184] = {
 		ship_group = 30184,
 		name = "Puuta",
 		background = "",
@@ -2824,11 +2157,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_ins_ship_group_template
-
-	var_2_61[10311] = {
+	pg.base.activity_ins_ship_group_template[10311] = {
 		ship_group = 10311,
 		name = "G.Wichita",
 		background = "",
@@ -2837,11 +2166,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_ins_ship_group_template
-
-	var_2_62[10226] = {
+	pg.base.activity_ins_ship_group_template[10226] = {
 		ship_group = 10226,
 		name = "HerosAides",
 		background = "",
@@ -2850,11 +2175,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_ins_ship_group_template
-
-	var_2_63[89901] = {
+	pg.base.activity_ins_ship_group_template[89901] = {
 		ship_group = 89901,
 		name = "S.Louis",
 		background = "",
@@ -2863,11 +2184,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_ins_ship_group_template
-
-	var_2_64[39902] = {
+	pg.base.activity_ins_ship_group_template[39902] = {
 		ship_group = 39902,
 		name = "Izumo",
 		background = "",
@@ -2876,11 +2193,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_ins_ship_group_template
-
-	var_2_65[80104] = {
+	pg.base.activity_ins_ship_group_template[80104] = {
 		ship_group = 80104,
 		name = "L.Opiniâtre",
 		background = "",
@@ -2889,11 +2202,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_ins_ship_group_template
-
-	var_2_66[80701] = {
+	pg.base.activity_ins_ship_group_template[80701] = {
 		ship_group = 80701,
 		name = "Béarn",
 		background = "",
@@ -2902,11 +2211,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_ins_ship_group_template
-
-	var_2_67[30164] = {
+	pg.base.activity_ins_ship_group_template[30164] = {
 		ship_group = 30164,
 		name = "Ooshio",
 		background = "",
@@ -2915,11 +2220,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_ins_ship_group_template
-
-	var_2_68[70505] = {
+	pg.base.activity_ins_ship_group_template[70505] = {
 		ship_group = 70505,
 		name = "Proj23.Ros",
 		background = "",
@@ -2928,11 +2229,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_ins_ship_group_template
-
-	var_2_69[30163] = {
+	pg.base.activity_ins_ship_group_template[30163] = {
 		ship_group = 30163,
 		name = "Asashio",
 		background = "",
@@ -2941,11 +2238,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_ins_ship_group_template
-
-	var_2_70[70104] = {
+	pg.base.activity_ins_ship_group_template[70104] = {
 		ship_group = 70104,
 		name = "Ташкент",
 		background = "",
@@ -2954,11 +2247,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_ins_ship_group_template
-
-	var_2_71[20123] = {
+	pg.base.activity_ins_ship_group_template[20123] = {
 		ship_group = 20123,
 		name = "Vampire ",
 		background = "",
@@ -2967,11 +2256,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_ins_ship_group_template
-
-	var_2_72[40808] = {
+	pg.base.activity_ins_ship_group_template[40808] = {
 		ship_group = 40808,
 		name = "HAI_110 ",
 		background = "",
@@ -2980,11 +2265,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_ins_ship_group_template
-
-	var_2_73[10711] = {
+	pg.base.activity_ins_ship_group_template[10711] = {
 		ship_group = 10711,
 		name = "The_Fighting_I",
 		background = "",
@@ -2993,11 +2274,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_ins_ship_group_template
-
-	var_2_74[30303] = {
+	pg.base.activity_ins_ship_group_template[30303] = {
 		ship_group = 30303,
 		name = "REPORTER_AOBA",
 		background = "",
@@ -3006,11 +2283,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_ins_ship_group_template
-
-	var_2_75[20110] = {
+	pg.base.activity_ins_ship_group_template[20110] = {
 		ship_group = 20110,
 		name = "Cygnet",
 		background = "",
@@ -3019,11 +2292,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_ins_ship_group_template
-
-	var_2_76[30157] = {
+	pg.base.activity_ins_ship_group_template[30157] = {
 		ship_group = 30157,
 		name = "HARUTSUKI",
 		background = "",
@@ -3032,11 +2301,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_ins_ship_group_template
-
-	var_2_77[10306] = {
+	pg.base.activity_ins_ship_group_template[10306] = {
 		ship_group = 10306,
 		name = "INDI_LOVE",
 		background = "",
@@ -3045,11 +2310,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_ins_ship_group_template
-
-	var_2_78[10307] = {
+	pg.base.activity_ins_ship_group_template[10307] = {
 		ship_group = 10307,
 		name = "Indianapolis",
 		background = "",
@@ -3058,11 +2319,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_ins_ship_group_template
-
-	var_2_79[10501] = {
+	pg.base.activity_ins_ship_group_template[10501] = {
 		ship_group = 10501,
 		name = "Nevada",
 		background = "",
@@ -3071,11 +2328,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_ins_ship_group_template
-
-	var_2_80[1060004] = {
+	pg.base.activity_ins_ship_group_template[1060004] = {
 		ship_group = 1060004,
 		name = "Misaki",
 		background = "",
@@ -3084,11 +2337,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_ins_ship_group_template
-
-	var_2_81[1060001] = {
+	pg.base.activity_ins_ship_group_template[1060001] = {
 		ship_group = 1060001,
 		name = "Marie",
 		background = "",
@@ -3097,11 +2346,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_ins_ship_group_template
-
-	var_2_82[1060007] = {
+	pg.base.activity_ins_ship_group_template[1060007] = {
 		ship_group = 1060007,
 		name = "Monica",
 		background = "",
@@ -3110,11 +2355,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_ins_ship_group_template
-
-	var_2_83[1060006] = {
+	pg.base.activity_ins_ship_group_template[1060006] = {
 		ship_group = 1060006,
 		name = "Nyotengu",
 		background = "",
@@ -3123,11 +2364,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_ins_ship_group_template
-
-	var_2_84[1060002] = {
+	pg.base.activity_ins_ship_group_template[1060002] = {
 		ship_group = 1060002,
 		name = "Honoka",
 		background = "",
@@ -3136,11 +2373,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_ins_ship_group_template
-
-	var_2_85[1060003] = {
+	pg.base.activity_ins_ship_group_template[1060003] = {
 		ship_group = 1060003,
 		name = "Kasumi",
 		background = "",
@@ -3149,11 +2382,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_ins_ship_group_template
-
-	var_2_86[1060005] = {
+	pg.base.activity_ins_ship_group_template[1060005] = {
 		ship_group = 1060005,
 		name = "Nagisa",
 		background = "",
@@ -3162,11 +2391,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_ins_ship_group_template
-
-	var_2_87[30127] = {
+	pg.base.activity_ins_ship_group_template[30127] = {
 		ship_group = 30127,
 		name = "Nin_Kuroshio",
 		background = "",
@@ -3175,11 +2400,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_ins_ship_group_template
-
-	var_2_88[10124] = {
+	pg.base.activity_ins_ship_group_template[10124] = {
 		ship_group = 10124,
 		name = "Sims",
 		background = "",
@@ -3188,11 +2409,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_ins_ship_group_template
-
-	var_2_89[10130] = {
+	pg.base.activity_ins_ship_group_template[10130] = {
 		ship_group = 10130,
 		name = "DD.Jenkins",
 		background = "",
@@ -3201,11 +2418,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_ins_ship_group_template
-
-	var_2_90[10129] = {
+	pg.base.activity_ins_ship_group_template[10129] = {
 		ship_group = 10129,
 		name = "DD.Radford",
 		background = "",
@@ -3214,11 +2427,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_ins_ship_group_template
-
-	var_2_91[10131] = {
+	pg.base.activity_ins_ship_group_template[10131] = {
 		ship_group = 10131,
 		name = "DD.Nick",
 		background = "",
@@ -3227,11 +2436,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_ins_ship_group_template
-
-	var_2_92[10144] = {
+	pg.base.activity_ins_ship_group_template[10144] = {
 		ship_group = 10144,
 		name = "BlackCat",
 		background = "",
@@ -3240,11 +2445,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_ins_ship_group_template
-
-	var_2_93[10227] = {
+	pg.base.activity_ins_ship_group_template[10227] = {
 		ship_group = 10227,
 		name = "Marblehead",
 		background = "",
@@ -3253,11 +2454,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_ins_ship_group_template
-
-	var_2_94[10127] = {
+	pg.base.activity_ins_ship_group_template[10127] = {
 		ship_group = 10127,
 		name = "Rabbit.Bailey",
 		background = "",
@@ -3266,11 +2463,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_ins_ship_group_template
-
-	var_2_95[10211] = {
+	pg.base.activity_ins_ship_group_template[10211] = {
 		ship_group = 10211,
 		name = "Richmond",
 		background = "",
@@ -3279,11 +2472,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_ins_ship_group_template
-
-	var_2_96[10216] = {
+	pg.base.activity_ins_ship_group_template[10216] = {
 		ship_group = 10216,
 		name = "Memphis",
 		background = "",
@@ -3292,11 +2481,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_ins_ship_group_template
-
-	var_2_97[10218] = {
+	pg.base.activity_ins_ship_group_template[10218] = {
 		ship_group = 10218,
 		name = "Sweet.Concord",
 		background = "",
@@ -3305,11 +2490,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_ins_ship_group_template
-
-	var_2_98[30117] = {
+	pg.base.activity_ins_ship_group_template[30117] = {
 		ship_group = 30117,
 		name = "Kagerō",
 		background = "",
@@ -3318,8 +2499,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_2_98
-	var_2_98.base.activity_ins_ship_group_template[10313] = {
+	pg.base.activity_ins_ship_group_template[10313] = {
 		ship_group = 10313,
 		name = "Minnie.Hunter",
 		background = "",
@@ -3332,11 +2512,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_3_0[10309] = {
+	pg.base.activity_ins_ship_group_template[10309] = {
 		ship_group = 10309,
 		name = "Quincy",
 		background = "",
@@ -3345,11 +2521,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_ins_ship_group_template
-
-	var_3_1[10310] = {
+	pg.base.activity_ins_ship_group_template[10310] = {
 		ship_group = 10310,
 		name = "Vincennes",
 		background = "",
@@ -3358,11 +2530,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_ins_ship_group_template
-
-	var_3_2[20217] = {
+	pg.base.activity_ins_ship_group_template[20217] = {
 		ship_group = 20217,
 		name = "TheFightingJ",
 		background = "",
@@ -3371,11 +2539,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_ins_ship_group_template
-
-	var_3_3[10308] = {
+	pg.base.activity_ins_ship_group_template[10308] = {
 		ship_group = 10308,
 		name = "Nasty.Asty",
 		background = "",
@@ -3384,11 +2548,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_ins_ship_group_template
-
-	var_3_4[10111] = {
+	pg.base.activity_ins_ship_group_template[10111] = {
 		ship_group = 10111,
 		name = "L.B.Charles",
 		background = "",
@@ -3397,11 +2557,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_ins_ship_group_template
-
-	var_3_5[30708] = {
+	pg.base.activity_ins_ship_group_template[30708] = {
 		ship_group = 30708,
 		name = "Shinano",
 		background = "",
@@ -3410,11 +2566,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_ins_ship_group_template
-
-	var_3_6[49904] = {
+	pg.base.activity_ins_ship_group_template[49904] = {
 		ship_group = 49904,
 		name = "Odin",
 		background = "",
@@ -3423,11 +2575,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_ins_ship_group_template
-
-	var_3_7[40309] = {
+	pg.base.activity_ins_ship_group_template[40309] = {
 		ship_group = 40309,
 		name = "Eisen_Fight",
 		background = "",
@@ -3436,11 +2584,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_ins_ship_group_template
-
-	var_3_8[40401] = {
+	pg.base.activity_ins_ship_group_template[40401] = {
 		ship_group = 40401,
 		name = "Scharnhorst",
 		background = "",
@@ -3449,11 +2593,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_ins_ship_group_template
-
-	var_3_9[40402] = {
+	pg.base.activity_ins_ship_group_template[40402] = {
 		ship_group = 40402,
 		name = "Gneisenau",
 		background = "",
@@ -3462,11 +2602,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_ins_ship_group_template
-
-	var_3_10[49903] = {
+	pg.base.activity_ins_ship_group_template[49903] = {
 		ship_group = 49903,
 		name = "Mainz",
 		background = "",
@@ -3475,11 +2611,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_ins_ship_group_template
-
-	var_3_11[25] = {
+	pg.base.activity_ins_ship_group_template[25] = {
 		ship_group = 40601,
 		name = "Weser",
 		background = "",
@@ -3488,11 +2620,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_ins_ship_group_template
-
-	var_3_12[30508] = {
+	pg.base.activity_ins_ship_group_template[30508] = {
 		ship_group = 30508,
 		name = "Tosa",
 		background = "",
@@ -3501,11 +2629,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_ins_ship_group_template
-
-	var_3_13[30182] = {
+	pg.base.activity_ins_ship_group_template[30182] = {
 		ship_group = 30182,
 		name = "FlowerMoon",
 		background = "",
@@ -3514,11 +2638,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_ins_ship_group_template
-
-	var_3_14[30156] = {
+	pg.base.activity_ins_ship_group_template[30156] = {
 		ship_group = 30156,
 		name = "Niizuki",
 		background = "",
@@ -3527,11 +2647,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_ins_ship_group_template
-
-	var_3_15[30606] = {
+	pg.base.activity_ins_ship_group_template[30606] = {
 		ship_group = 30606,
 		name = "Ryūjō",
 		background = "",
@@ -3540,11 +2656,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_ins_ship_group_template
-
-	var_3_16[40128] = {
+	pg.base.activity_ins_ship_group_template[40128] = {
 		ship_group = 40128,
 		name = "Zerstörer28",
 		background = "",
@@ -3553,11 +2665,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_ins_ship_group_template
-
-	var_3_17[40810] = {
+	pg.base.activity_ins_ship_group_template[40810] = {
 		ship_group = 40810,
 		name = "UBoat37",
 		background = "",
@@ -3566,11 +2674,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_ins_ship_group_template
-
-	var_3_18[30403] = {
+	pg.base.activity_ins_ship_group_template[30403] = {
 		ship_group = 30403,
 		name = "Haruna",
 		background = "",
@@ -3579,11 +2683,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_ins_ship_group_template
-
-	var_3_19[40102] = {
+	pg.base.activity_ins_ship_group_template[40102] = {
 		ship_group = 40102,
 		name = "Zerstörer2",
 		background = "",
@@ -3592,11 +2692,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_ins_ship_group_template
-
-	var_3_20[40124] = {
+	pg.base.activity_ins_ship_group_template[40124] = {
 		ship_group = 40124,
 		name = "GreatDevil24",
 		background = "",
@@ -3605,11 +2701,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_ins_ship_group_template
-
-	var_3_21[70102] = {
+	pg.base.activity_ins_ship_group_template[70102] = {
 		ship_group = 70102,
 		name = "Grozny",
 		background = "",
@@ -3618,11 +2710,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_ins_ship_group_template
-
-	var_3_22[30609] = {
+	pg.base.activity_ins_ship_group_template[30609] = {
 		ship_group = 30609,
 		name = "Chiyoda",
 		background = "",
@@ -3631,11 +2719,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_ins_ship_group_template
-
-	var_3_23[30608] = {
+	pg.base.activity_ins_ship_group_template[30608] = {
 		ship_group = 30608,
 		name = "Chitose",
 		background = "",
@@ -3644,11 +2728,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_ins_ship_group_template
-
-	var_3_24[10225] = {
+	pg.base.activity_ins_ship_group_template[10225] = {
 		ship_group = 10225,
 		name = "Biloxi",
 		background = "",
@@ -3657,11 +2737,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_ins_ship_group_template
-
-	var_3_25[10722] = {
+	pg.base.activity_ins_ship_group_template[10722] = {
 		ship_group = 10722,
 		name = "Independence",
 		background = "",
@@ -3670,11 +2746,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_ins_ship_group_template
-
-	var_3_26[28] = {
+	pg.base.activity_ins_ship_group_template[28] = {
 		ship_group = 50204,
 		name = "Yingrui",
 		background = "",
@@ -3683,11 +2755,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_ins_ship_group_template
-
-	var_3_27[29] = {
+	pg.base.activity_ins_ship_group_template[29] = {
 		ship_group = 50205,
 		name = "Zhaohe",
 		background = "",
@@ -3696,11 +2764,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_ins_ship_group_template
-
-	var_3_28[20226] = {
+	pg.base.activity_ins_ship_group_template[20226] = {
 		ship_group = 20226,
 		name = "Glasgow",
 		background = "",
@@ -3709,11 +2773,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_ins_ship_group_template
-
-	var_3_29[70203] = {
+	pg.base.activity_ins_ship_group_template[70203] = {
 		ship_group = 70203,
 		name = "Chapaev",
 		background = "",
@@ -3722,11 +2782,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_ins_ship_group_template
-
-	var_3_30[70501] = {
+	pg.base.activity_ins_ship_group_template[70501] = {
 		ship_group = 70501,
 		name = "Gangut",
 		background = "",
@@ -3735,11 +2791,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_ins_ship_group_template
-
-	var_3_31[70103] = {
+	pg.base.activity_ins_ship_group_template[70103] = {
 		ship_group = 70103,
 		name = "Minsk",
 		background = "",
@@ -3748,11 +2800,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_ins_ship_group_template
-
-	var_3_32[10723] = {
+	pg.base.activity_ins_ship_group_template[10723] = {
 		ship_group = 10723,
 		name = "Princeton",
 		background = "",
@@ -3761,11 +2809,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_ins_ship_group_template
-
-	var_3_33[80202] = {
+	pg.base.activity_ins_ship_group_template[80202] = {
 		ship_group = 80202,
 		name = "Jeanne d'Arc",
 		background = "",
@@ -3774,11 +2818,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_ins_ship_group_template
-
-	var_3_34[20132] = {
+	pg.base.activity_ins_ship_group_template[20132] = {
 		ship_group = 20132,
 		name = "Eskimo",
 		background = "",
@@ -3787,11 +2827,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_ins_ship_group_template
-
-	var_3_35[20303] = {
+	pg.base.activity_ins_ship_group_template[20303] = {
 		ship_group = 20303,
 		name = "Kent",
 		background = "",
@@ -3800,11 +2836,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_ins_ship_group_template
-
-	var_3_36[30172] = {
+	pg.base.activity_ins_ship_group_template[30172] = {
 		ship_group = 30172,
 		name = "Uranami",
 		background = "",
@@ -3813,11 +2845,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_ins_ship_group_template
-
-	var_3_37[29904] = {
+	pg.base.activity_ins_ship_group_template[29904] = {
 		ship_group = 29904,
 		name = "Drake",
 		background = "",
@@ -3826,11 +2854,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_ins_ship_group_template
-
-	var_3_38[29903] = {
+	pg.base.activity_ins_ship_group_template[29903] = {
 		ship_group = 29903,
 		name = "CaitSith",
 		background = "",
@@ -3839,11 +2863,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_ins_ship_group_template
-
-	var_3_39[31901] = {
+	pg.base.activity_ins_ship_group_template[31901] = {
 		ship_group = 31901,
 		name = "Kashino",
 		background = "",
@@ -3852,11 +2872,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_ins_ship_group_template
-
-	var_3_40[15] = {
+	pg.base.activity_ins_ship_group_template[15] = {
 		ship_group = 60303,
 		name = "Pola",
 		background = "",
@@ -3865,11 +2881,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_ins_ship_group_template
-
-	var_3_41[60103] = {
+	pg.base.activity_ins_ship_group_template[60103] = {
 		ship_group = 60103,
 		name = "G.B",
 		background = "",
@@ -3878,11 +2890,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_ins_ship_group_template
-
-	var_3_42[14] = {
+	pg.base.activity_ins_ship_group_template[14] = {
 		ship_group = 60302,
 		name = "Zara",
 		background = "",
@@ -3891,11 +2899,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_ins_ship_group_template
-
-	var_3_43[70108] = {
+	pg.base.activity_ins_ship_group_template[70108] = {
 		ship_group = 70108,
 		name = "Громкий",
 		background = "",
@@ -3904,11 +2908,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_ins_ship_group_template
-
-	var_3_44[70206] = {
+	pg.base.activity_ins_ship_group_template[70206] = {
 		ship_group = 70206,
 		name = "Мурманск",
 		background = "",
@@ -3917,11 +2917,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_ins_ship_group_template
-
-	var_3_45[70107] = {
+	pg.base.activity_ins_ship_group_template[70107] = {
 		ship_group = 70107,
 		name = "ремящий",
 		background = "",
@@ -3930,11 +2926,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_ins_ship_group_template
-
-	var_3_46[29] = {
+	pg.base.activity_ins_ship_group_template[29] = {
 		ship_group = 70301,
 		name = "Tallinn",
 		background = "",
@@ -3943,11 +2935,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_ins_ship_group_template
-
-	var_3_47[70204] = {
+	pg.base.activity_ins_ship_group_template[70204] = {
 		ship_group = 70204,
 		name = "Киров",
 		background = "",
@@ -3956,11 +2944,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_ins_ship_group_template
-
-	var_3_48[70106] = {
+	pg.base.activity_ins_ship_group_template[70106] = {
 		ship_group = 70106,
 		name = "cнежок",
 		background = "",
@@ -3969,11 +2953,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_ins_ship_group_template
-
-	var_3_49[70504] = {
+	pg.base.activity_ins_ship_group_template[70504] = {
 		ship_group = 70504,
 		name = "Proj23.Bel",
 		background = "",
@@ -3982,11 +2962,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_ins_ship_group_template
-
-	var_3_50[60106] = {
+	pg.base.activity_ins_ship_group_template[60106] = {
 		ship_group = 60106,
 		name = "Captain.Da.Recco",
 		background = "",
@@ -3995,11 +2971,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_ins_ship_group_template
-
-	var_3_51[60105] = {
+	pg.base.activity_ins_ship_group_template[60105] = {
 		ship_group = 60105,
 		name = "Libeccio",
 		background = "",
@@ -4008,11 +2980,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_ins_ship_group_template
-
-	var_3_52[60104] = {
+	pg.base.activity_ins_ship_group_template[60104] = {
 		ship_group = 60104,
 		name = "Maestrale",
 		background = "",
@@ -4021,11 +2989,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_ins_ship_group_template
-
-	var_3_53[60501] = {
+	pg.base.activity_ins_ship_group_template[60501] = {
 		ship_group = 60501,
 		name = "VV_Veneto",
 		background = "",
@@ -4034,11 +2998,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_ins_ship_group_template
-
-	var_3_54[29] = {
+	pg.base.activity_ins_ship_group_template[29] = {
 		ship_group = 60701,
 		name = "Aquila",
 		background = "",
@@ -4047,11 +3007,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_ins_ship_group_template
-
-	var_3_55[60201] = {
+	pg.base.activity_ins_ship_group_template[60201] = {
 		ship_group = 60201,
 		name = "C_Abruzzi",
 		background = "",
@@ -4060,11 +3016,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_ins_ship_group_template
-
-	var_3_56[1] = {
+	pg.base.activity_ins_ship_group_template[1] = {
 		ship_group = 60801,
 		name = "Torricelli",
 		background = "",
@@ -4073,11 +3025,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_ins_ship_group_template
-
-	var_3_57[40802] = {
+	pg.base.activity_ins_ship_group_template[40802] = {
 		ship_group = 40802,
 		name = "UBoat47",
 		background = "",
@@ -4086,11 +3034,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_ins_ship_group_template
-
-	var_3_58[10147] = {
+	pg.base.activity_ins_ship_group_template[10147] = {
 		ship_group = 10147,
 		name = "Bear-MKII",
 		background = "",
@@ -4099,11 +3043,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_ins_ship_group_template
-
-	var_3_59[10229] = {
+	pg.base.activity_ins_ship_group_template[10229] = {
 		ship_group = 10229,
 		name = "USSBOISE",
 		background = "",
@@ -4112,11 +3052,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_ins_ship_group_template
-
-	var_3_60[10204] = {
+	pg.base.activity_ins_ship_group_template[10204] = {
 		ship_group = 10204,
 		name = "PhoenixBurn",
 		background = "",
@@ -4125,11 +3061,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_ins_ship_group_template
-
-	var_3_61[10203] = {
+	pg.base.activity_ins_ship_group_template[10203] = {
 		ship_group = 10203,
 		name = "Brooklyn",
 		background = "",
@@ -4138,11 +3070,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_ins_ship_group_template
-
-	var_3_62[10806] = {
+	pg.base.activity_ins_ship_group_template[10806] = {
 		ship_group = 10806,
 		name = "CharmArcher",
 		background = "",
@@ -4151,11 +3079,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_ins_ship_group_template
-
-	var_3_63[10803] = {
+	pg.base.activity_ins_ship_group_template[10803] = {
 		ship_group = 10803,
 		name = "Cavalla",
 		background = "",
@@ -4164,11 +3088,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_ins_ship_group_template
-
-	var_3_64[30801] = {
+	pg.base.activity_ins_ship_group_template[30801] = {
 		ship_group = 30801,
 		name = "I19_sensuisenntai",
 		background = "",
@@ -4177,11 +3097,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_ins_ship_group_template
-
-	var_3_65[10314] = {
+	pg.base.activity_ins_ship_group_template[10314] = {
 		ship_group = 10314,
 		name = "HappyEveryDay!",
 		background = "",
@@ -4190,11 +3106,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_ins_ship_group_template
-
-	var_3_66[10714] = {
+	pg.base.activity_ins_ship_group_template[10714] = {
 		ship_group = 10714,
 		name = "Ticonderoga",
 		background = "",
@@ -4203,11 +3115,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_ins_ship_group_template
-
-	var_3_67[10517] = {
+	pg.base.activity_ins_ship_group_template[10517] = {
 		ship_group = 10517,
 		name = "BlackDragon",
 		background = "",
@@ -4216,11 +3124,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_ins_ship_group_template
-
-	var_3_68[10112] = {
+	pg.base.activity_ins_ship_group_template[10112] = {
 		ship_group = 10112,
 		name = "L.B.Thatcher",
 		background = "",
@@ -4229,11 +3133,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_ins_ship_group_template
-
-	var_3_69[10109] = {
+	pg.base.activity_ins_ship_group_template[10109] = {
 		ship_group = 10109,
 		name = "Fletcher",
 		background = "",
@@ -4242,11 +3142,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_ins_ship_group_template
-
-	var_3_70[10113] = {
+	pg.base.activity_ins_ship_group_template[10113] = {
 		ship_group = 10113,
 		name = "L.B.Aulick",
 		background = "",
@@ -4255,11 +3151,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_ins_ship_group_template
-
-	var_3_71[10115] = {
+	pg.base.activity_ins_ship_group_template[10115] = {
 		ship_group = 10115,
 		name = "L.B.Spence",
 		background = "",
@@ -4268,11 +3160,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_ins_ship_group_template
-
-	var_3_72[10141] = {
+	pg.base.activity_ins_ship_group_template[10141] = {
 		ship_group = 10141,
 		name = "L.B.Stanly",
 		background = "",
@@ -4281,11 +3169,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_ins_ship_group_template
-
-	var_3_73[10145] = {
+	pg.base.activity_ins_ship_group_template[10145] = {
 		ship_group = 10145,
 		name = "A.M.Sumner",
 		background = "",
@@ -4294,11 +3178,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_ins_ship_group_template
-
-	var_3_74[40703] = {
+	pg.base.activity_ins_ship_group_template[40703] = {
 		ship_group = 40703,
 		name = "FlugzeugträgerB ",
 		background = "",
@@ -4307,11 +3187,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_ins_ship_group_template
-
-	var_3_75[1070001] = {
+	pg.base.activity_ins_ship_group_template[1070001] = {
 		ship_group = 1070001,
 		name = "Haruka_Amami",
 		background = "",
@@ -4320,11 +3196,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_ins_ship_group_template
-
-	var_3_76[1070002] = {
+	pg.base.activity_ins_ship_group_template[1070002] = {
 		ship_group = 1070002,
 		name = "Chihaya_Kisaragi",
 		background = "",
@@ -4333,11 +3205,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_ins_ship_group_template
-
-	var_3_77[11201] = {
+	pg.base.activity_ins_ship_group_template[11201] = {
 		ship_group = 11201,
 		name = "Vestal",
 		background = "",
@@ -4346,11 +3214,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_ins_ship_group_template
-
-	var_3_78[1070003] = {
+	pg.base.activity_ins_ship_group_template[1070003] = {
 		ship_group = 1070003,
 		name = "Iori_Minase",
 		background = "",
@@ -4359,11 +3223,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_ins_ship_group_template
-
-	var_3_79[1070004] = {
+	pg.base.activity_ins_ship_group_template[1070004] = {
 		ship_group = 1070004,
 		name = "Azusa_Miura",
 		background = "",
@@ -4372,11 +3232,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_ins_ship_group_template
-
-	var_3_80[1070005] = {
+	pg.base.activity_ins_ship_group_template[1070005] = {
 		ship_group = 1070005,
 		name = "Ritsuko_Akizuki",
 		background = "",
@@ -4385,11 +3241,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_ins_ship_group_template
-
-	var_3_81[1070006] = {
+	pg.base.activity_ins_ship_group_template[1070006] = {
 		ship_group = 1070006,
 		name = "Ami_Futami",
 		background = "",
@@ -4398,11 +3250,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_ins_ship_group_template
-
-	var_3_82[1070007] = {
+	pg.base.activity_ins_ship_group_template[1070007] = {
 		ship_group = 1070007,
 		name = "Mami_Futami",
 		background = "",
@@ -4411,11 +3259,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_ins_ship_group_template
-
-	var_3_83[30129] = {
+	pg.base.activity_ins_ship_group_template[30129] = {
 		ship_group = 30129,
 		name = "Hayaizo",
 		background = "",
@@ -4424,11 +3268,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_ins_ship_group_template
-
-	var_3_84[30306] = {
+	pg.base.activity_ins_ship_group_template[30306] = {
 		ship_group = 30306,
 		name = "ChiKUMA",
 		background = "",
@@ -4437,11 +3277,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_ins_ship_group_template
-
-	var_3_85[10108] = {
+	pg.base.activity_ins_ship_group_template[10108] = {
 		ship_group = 10108,
 		name = "Maury",
 		background = "",
@@ -4450,11 +3286,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_ins_ship_group_template
-
-	var_3_86[30712] = {
+	pg.base.activity_ins_ship_group_template[30712] = {
 		ship_group = 30712,
 		name = "Misato",
 		background = "",
@@ -4463,11 +3295,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_ins_ship_group_template
-
-	var_3_87[30147] = {
+	pg.base.activity_ins_ship_group_template[30147] = {
 		ship_group = 30147,
 		name = "Umikaze",
 		background = "",
@@ -4476,11 +3304,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_ins_ship_group_template
-
-	var_3_88[30148] = {
+	pg.base.activity_ins_ship_group_template[30148] = {
 		ship_group = 30148,
 		name = "Yamakaze",
 		background = "",
@@ -4489,11 +3313,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_ins_ship_group_template
-
-	var_3_89[30207] = {
+	pg.base.activity_ins_ship_group_template[30207] = {
 		ship_group = 30207,
 		name = "Yura",
 		background = "",
@@ -4502,11 +3322,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_ins_ship_group_template
-
-	var_3_90[10102] = {
+	pg.base.activity_ins_ship_group_template[10102] = {
 		ship_group = 10102,
 		name = "Dewey",
 		background = "",
@@ -4515,11 +3331,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_ins_ship_group_template
-
-	var_3_91[21304] = {
+	pg.base.activity_ins_ship_group_template[21304] = {
 		ship_group = 21304,
 		name = "Abercrombie",
 		background = "",
@@ -4528,11 +3340,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_ins_ship_group_template
-
-	var_3_92[30113] = {
+	pg.base.activity_ins_ship_group_template[30113] = {
 		ship_group = 30113,
 		name = "Shiratsuyu",
 		background = "",
@@ -4541,11 +3349,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_ins_ship_group_template
-
-	var_3_93[80201] = {
+	pg.base.activity_ins_ship_group_template[80201] = {
 		ship_group = 80201,
 		name = "DancerEmile",
 		background = "",
@@ -4554,11 +3358,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_ins_ship_group_template
-
-	var_3_94[30165] = {
+	pg.base.activity_ins_ship_group_template[30165] = {
 		ship_group = 30165,
 		name = "Michishio ",
 		background = "",
@@ -4567,11 +3367,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_ins_ship_group_template
-
-	var_3_95[30166] = {
+	pg.base.activity_ins_ship_group_template[30166] = {
 		ship_group = 30166,
 		name = "Arashio",
 		background = "",
@@ -4580,11 +3376,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_ins_ship_group_template
-
-	var_3_96[20112] = {
+	pg.base.activity_ins_ship_group_template[20112] = {
 		ship_group = 20112,
 		name = "Fortune",
 		background = "",
@@ -4593,11 +3385,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_ins_ship_group_template
-
-	var_3_97[10514] = {
+	pg.base.activity_ins_ship_group_template[10514] = {
 		ship_group = 10514,
 		name = "SoDakX",
 		background = "",
@@ -4606,11 +3394,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_ins_ship_group_template
-
-	var_3_98[13] = {
+	pg.base.activity_ins_ship_group_template[13] = {
 		ship_group = 40205,
 		name = "Nürnberg",
 		background = "",
@@ -4619,8 +3403,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_3_98
-	var_3_98.base.activity_ins_ship_group_template[12] = {
+	pg.base.activity_ins_ship_group_template[12] = {
 		ship_group = 40204,
 		name = "Leipzig ",
 		background = "",
@@ -4633,11 +3416,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_4_0[1080001] = {
+	pg.base.activity_ins_ship_group_template[1080001] = {
 		ship_group = 1080001,
 		name = "Rikka",
 		background = "",
@@ -4646,11 +3425,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_ins_ship_group_template
-
-	var_4_1[1080002] = {
+	pg.base.activity_ins_ship_group_template[1080002] = {
 		ship_group = 1080002,
 		name = "Akane",
 		background = "",
@@ -4659,11 +3434,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_ins_ship_group_template
-
-	var_4_2[1080003] = {
+	pg.base.activity_ins_ship_group_template[1080003] = {
 		ship_group = 1080003,
 		name = "Hass",
 		background = "",
@@ -4672,11 +3443,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_ins_ship_group_template
-
-	var_4_3[1080004] = {
+	pg.base.activity_ins_ship_group_template[1080004] = {
 		ship_group = 1080004,
 		name = "Namiko",
 		background = "",
@@ -4685,11 +3452,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_ins_ship_group_template
-
-	var_4_4[1080005] = {
+	pg.base.activity_ins_ship_group_template[1080005] = {
 		ship_group = 1080005,
 		name = "Yume",
 		background = "",
@@ -4698,11 +3461,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_ins_ship_group_template
-
-	var_4_5[1080006] = {
+	pg.base.activity_ins_ship_group_template[1080006] = {
 		ship_group = 1080006,
 		name = "Chise",
 		background = "",
@@ -4711,11 +3470,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_ins_ship_group_template
-
-	var_4_6[1080007] = {
+	pg.base.activity_ins_ship_group_template[1080007] = {
 		ship_group = 1080007,
 		name = "Mujina",
 		background = "",
@@ -4724,11 +3479,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_ins_ship_group_template
-
-	var_4_7[19902] = {
+	pg.base.activity_ins_ship_group_template[19902] = {
 		ship_group = 19902,
 		name = "GA@ColaLove",
 		background = "",
@@ -4737,11 +3488,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_ins_ship_group_template
-
-	var_4_8[40503] = {
+	pg.base.activity_ins_ship_group_template[40503] = {
 		ship_group = 40503,
 		name = "U.V.Hutten",
 		background = "",
@@ -4750,11 +3497,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_ins_ship_group_template
-
-	var_4_9[40310] = {
+	pg.base.activity_ins_ship_group_template[40310] = {
 		ship_group = 40310,
 		name = "PrinzAdalbert",
 		background = "",
@@ -4763,11 +3506,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_ins_ship_group_template
-
-	var_4_10[40812] = {
+	pg.base.activity_ins_ship_group_template[40812] = {
 		ship_group = 40812,
 		name = "U.B.1206",
 		background = "",
@@ -4776,11 +3515,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_ins_ship_group_template
-
-	var_4_11[14] = {
+	pg.base.activity_ins_ship_group_template[14] = {
 		ship_group = 40206,
 		name = "Magdeburg",
 		background = "",
@@ -4789,11 +3524,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_ins_ship_group_template
-
-	var_4_12[26] = {
+	pg.base.activity_ins_ship_group_template[26] = {
 		ship_group = 40602,
 		name = "Elbe",
 		background = "",
@@ -4802,11 +3533,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_ins_ship_group_template
-
-	var_4_13[40809] = {
+	pg.base.activity_ins_ship_group_template[40809] = {
 		ship_group = 40809,
 		name = "U.B.96",
 		background = "",
@@ -4815,11 +3542,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_ins_ship_group_template
-
-	var_4_14[39905] = {
+	pg.base.activity_ins_ship_group_template[39905] = {
 		ship_group = 39905,
 		name = "Hakuryū",
 		background = "",
@@ -4828,11 +3551,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_ins_ship_group_template
-
-	var_4_15[20229] = {
+	pg.base.activity_ins_ship_group_template[20229] = {
 		ship_group = 20229,
 		name = "Penelope",
 		background = "",
@@ -4841,11 +3560,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_ins_ship_group_template
-
-	var_4_16[20304] = {
+	pg.base.activity_ins_ship_group_template[20304] = {
 		ship_group = 20304,
 		name = "Suffolk",
 		background = "",
@@ -4854,11 +3569,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_ins_ship_group_template
-
-	var_4_17[10655] = {
+	pg.base.activity_ins_ship_group_template[10655] = {
 		ship_group = 10655,
 		name = "Casablanca",
 		background = "",
@@ -4867,11 +3578,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_ins_ship_group_template
-
-	var_4_18[50601] = {
+	pg.base.activity_ins_ship_group_template[50601] = {
 		ship_group = 50601,
 		name = "ChenHai",
 		background = "",
@@ -4880,11 +3587,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_ins_ship_group_template
-
-	var_4_19[31] = {
+	pg.base.activity_ins_ship_group_template[31] = {
 		ship_group = 50207,
 		name = "HaiTien",
 		background = "",
@@ -4893,11 +3596,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_ins_ship_group_template
-
-	var_4_20[50208] = {
+	pg.base.activity_ins_ship_group_template[50208] = {
 		ship_group = 50208,
 		name = "HaiChi",
 		background = "",
@@ -4906,11 +3605,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_ins_ship_group_template
-
-	var_4_21[10503] = {
+	pg.base.activity_ins_ship_group_template[10503] = {
 		ship_group = 10503,
 		name = "Pennsylvania",
 		background = "",
@@ -4919,11 +3614,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_ins_ship_group_template
-
-	var_4_22[10149] = {
+	pg.base.activity_ins_ship_group_template[10149] = {
 		ship_group = 10149,
 		name = "Bristol",
 		background = "",
@@ -4932,11 +3623,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_ins_ship_group_template
-
-	var_4_23[20230] = {
+	pg.base.activity_ins_ship_group_template[20230] = {
 		ship_group = 20230,
 		name = "Charybdis",
 		background = "",
@@ -4945,11 +3632,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_ins_ship_group_template
-
-	var_4_24[30158] = {
+	pg.base.activity_ins_ship_group_template[30158] = {
 		ship_group = 30158,
 		name = "Yoizuki",
 		background = "",
@@ -4958,11 +3641,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_ins_ship_group_template
-
-	var_4_25[10504] = {
+	pg.base.activity_ins_ship_group_template[10504] = {
 		ship_group = 10504,
 		name = "Arizona",
 		background = "",
@@ -4971,11 +3650,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_ins_ship_group_template
-
-	var_4_26[30183] = {
+	pg.base.activity_ins_ship_group_template[30183] = {
 		ship_group = 30183,
 		name = "Naganami",
 		background = "",
@@ -4984,11 +3659,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_ins_ship_group_template
-
-	var_4_27[71801] = {
+	pg.base.activity_ins_ship_group_template[71801] = {
 		ship_group = 71801,
 		name = "Кронштадт",
 		background = "",
@@ -4997,11 +3668,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_ins_ship_group_template
-
-	var_4_28[70110] = {
+	pg.base.activity_ins_ship_group_template[70110] = {
 		ship_group = 70110,
 		name = "Киев",
 		background = "",
@@ -5010,11 +3677,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_ins_ship_group_template
-
-	var_4_29[70701] = {
+	pg.base.activity_ins_ship_group_template[70701] = {
 		ship_group = 70701,
 		name = "Волга",
 		background = "",
@@ -5023,11 +3686,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_ins_ship_group_template
-
-	var_4_30[70506] = {
+	pg.base.activity_ins_ship_group_template[70506] = {
 		ship_group = 70506,
 		name = "Архангельск",
 		background = "",
@@ -5036,11 +3695,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_ins_ship_group_template
-
-	var_4_31[70109] = {
+	pg.base.activity_ins_ship_group_template[70109] = {
 		ship_group = 70109,
 		name = "Сообразительный",
 		background = "",
@@ -5049,11 +3704,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_ins_ship_group_template
-
-	var_4_32[10148] = {
+	pg.base.activity_ins_ship_group_template[10148] = {
 		ship_group = 10148,
 		name = "Ingraham",
 		background = "",
@@ -5062,11 +3713,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_ins_ship_group_template
-
-	var_4_33[30] = {
+	pg.base.activity_ins_ship_group_template[30] = {
 		ship_group = 60702,
 		name = "orepmI",
 		background = "",
@@ -5075,11 +3722,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_ins_ship_group_template
-
-	var_4_34[60107] = {
+	pg.base.activity_ins_ship_group_template[60107] = {
 		ship_group = 60107,
 		name = "PompeyTheGreat",
 		background = "",
@@ -5088,11 +3731,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_ins_ship_group_template
-
-	var_4_35[16] = {
+	pg.base.activity_ins_ship_group_template[16] = {
 		ship_group = 60304,
 		name = "Trieste",
 		background = "",
@@ -5101,11 +3740,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_ins_ship_group_template
-
-	var_4_36[20403] = {
+	pg.base.activity_ins_ship_group_template[20403] = {
 		ship_group = 20403,
 		name = "Mighty_Hood",
 		background = "",
@@ -5114,11 +3749,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_ins_ship_group_template
-
-	var_4_37[15] = {
+	pg.base.activity_ins_ship_group_template[15] = {
 		ship_group = 40207,
 		name = "Emden ",
 		background = "",
@@ -5127,11 +3758,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_ins_ship_group_template
-
-	var_4_38[40404] = {
+	pg.base.activity_ins_ship_group_template[40404] = {
 		ship_group = 40404,
 		name = "Lützow ",
 		background = "",
@@ -5140,11 +3767,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_ins_ship_group_template
-
-	var_4_39[40504] = {
+	pg.base.activity_ins_ship_group_template[40504] = {
 		ship_group = 40504,
 		name = "Thüringen ",
 		background = "",
@@ -5153,11 +3776,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_ins_ship_group_template
-
-	var_4_40[40311] = {
+	pg.base.activity_ins_ship_group_template[40311] = {
 		ship_group = 40311,
 		name = "Yorck ",
 		background = "",
@@ -5166,11 +3785,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_ins_ship_group_template
-
-	var_4_41[16] = {
+	pg.base.activity_ins_ship_group_template[16] = {
 		ship_group = 40208,
 		name = "Elbing ",
 		background = "",
@@ -5179,11 +3794,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_ins_ship_group_template
-
-	var_4_42[40403] = {
+	pg.base.activity_ins_ship_group_template[40403] = {
 		ship_group = 40403,
 		name = "Seydlitz ",
 		background = "",
@@ -5192,11 +3803,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_ins_ship_group_template
-
-	var_4_43[10136] = {
+	pg.base.activity_ins_ship_group_template[10136] = {
 		ship_group = 10136,
 		name = "Hobby",
 		background = "",
@@ -5205,11 +3812,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_ins_ship_group_template
-
-	var_4_44[20513] = {
+	pg.base.activity_ins_ship_group_template[20513] = {
 		ship_group = 20513,
 		name = "Vanguard",
 		background = "",
@@ -5218,11 +3821,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_ins_ship_group_template
-
-	var_4_45[20712] = {
+	pg.base.activity_ins_ship_group_template[20712] = {
 		ship_group = 20712,
 		name = "Indomitable",
 		background = "",
@@ -5231,11 +3830,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_ins_ship_group_template
-
-	var_4_46[20134] = {
+	pg.base.activity_ins_ship_group_template[20134] = {
 		ship_group = 20134,
 		name = "Jervis",
 		background = "",
@@ -5244,11 +3839,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_ins_ship_group_template
-
-	var_4_47[20122] = {
+	pg.base.activity_ins_ship_group_template[20122] = {
 		ship_group = 20122,
 		name = "Juno",
 		background = "",
@@ -5257,11 +3848,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_ins_ship_group_template
-
-	var_4_48[20231] = {
+	pg.base.activity_ins_ship_group_template[20231] = {
 		ship_group = 20231,
 		name = "Bellona",
 		background = "",
@@ -5270,11 +3857,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_ins_ship_group_template
-
-	var_4_49[20601] = {
+	pg.base.activity_ins_ship_group_template[20601] = {
 		ship_group = 20601,
 		name = "Hermes@Dual",
 		background = "",
@@ -5283,11 +3866,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_ins_ship_group_template
-
-	var_4_50[20511] = {
+	pg.base.activity_ins_ship_group_template[20511] = {
 		ship_group = 20511,
 		name = "Revenge",
 		background = "",
@@ -5296,11 +3875,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_ins_ship_group_template
-
-	var_4_51[20124] = {
+	pg.base.activity_ins_ship_group_template[20124] = {
 		ship_group = 20124,
 		name = "Jupiter",
 		background = "",
@@ -5309,11 +3884,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_ins_ship_group_template
-
-	var_4_52[20114] = {
+	pg.base.activity_ins_ship_group_template[20114] = {
 		ship_group = 20114,
 		name = "Glowworm@Attack",
 		background = "",
@@ -5322,11 +3893,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_ins_ship_group_template
-
-	var_4_53[20113] = {
+	pg.base.activity_ins_ship_group_template[20113] = {
 		ship_group = 20113,
 		name = "Grenville",
 		background = "",
@@ -5335,11 +3902,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_ins_ship_group_template
-
-	var_4_54[49905] = {
+	pg.base.activity_ins_ship_group_template[49905] = {
 		ship_group = 49905,
 		name = "Aegir",
 		background = "",
@@ -5348,11 +3911,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_ins_ship_group_template
-
-	var_4_55[49906] = {
+	pg.base.activity_ins_ship_group_template[49906] = {
 		ship_group = 49906,
 		name = "August.V.Parseval",
 		background = "",
@@ -5361,11 +3920,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_ins_ship_group_template
-
-	var_4_56[90101] = {
+	pg.base.activity_ins_ship_group_template[90101] = {
 		ship_group = 90101,
 		name = "LeMars ",
 		background = "",
@@ -5374,11 +3929,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_ins_ship_group_template
-
-	var_4_57[80102] = {
+	pg.base.activity_ins_ship_group_template[80102] = {
 		ship_group = 80102,
 		name = "Forbin ",
 		background = "",
@@ -5387,11 +3938,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_ins_ship_group_template
-
-	var_4_58[90701] = {
+	pg.base.activity_ins_ship_group_template[90701] = {
 		ship_group = 90701,
 		name = "Joffre",
 		background = "",
@@ -5400,11 +3947,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_ins_ship_group_template
-
-	var_4_59[1] = {
+	pg.base.activity_ins_ship_group_template[1] = {
 		ship_group = 90113,
 		name = "L'Indomptable",
 		background = "",
@@ -5413,11 +3956,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_ins_ship_group_template
-
-	var_4_60[20232] = {
+	pg.base.activity_ins_ship_group_template[20232] = {
 		ship_group = 20232,
 		name = "RoyalMaid.E",
 		background = "",
@@ -5426,11 +3965,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_ins_ship_group_template
-
-	var_4_61[80107] = {
+	pg.base.activity_ins_ship_group_template[80107] = {
 		ship_group = 80107,
 		name = "Le Terrible",
 		background = "",
@@ -5439,11 +3974,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_ins_ship_group_template
-
-	var_4_62[30214] = {
+	pg.base.activity_ins_ship_group_template[30214] = {
 		ship_group = 30214,
 		name = "Naka",
 		background = "",
@@ -5452,11 +3983,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_ins_ship_group_template
-
-	var_4_63[60503] = {
+	pg.base.activity_ins_ship_group_template[60503] = {
 		ship_group = 60503,
 		name = "Roma ",
 		background = "",
@@ -5465,11 +3992,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_ins_ship_group_template
-
-	var_4_64[2] = {
+	pg.base.activity_ins_ship_group_template[2] = {
 		ship_group = 60802,
 		name = "DaVinci ",
 		background = "",
@@ -5478,11 +4001,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_ins_ship_group_template
-
-	var_4_65[60202] = {
+	pg.base.activity_ins_ship_group_template[60202] = {
 		ship_group = 60202,
 		name = "Giuseppe ",
 		background = "",
@@ -5491,11 +4010,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_ins_ship_group_template
-
-	var_4_66[60109] = {
+	pg.base.activity_ins_ship_group_template[60109] = {
 		ship_group = 60109,
 		name = "Emanuele ",
 		background = "",
@@ -5504,11 +4019,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_ins_ship_group_template
-
-	var_4_67[60108] = {
+	pg.base.activity_ins_ship_group_template[60108] = {
 		ship_group = 60108,
 		name = "Alfredo ",
 		background = "",
@@ -5517,11 +4028,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_ins_ship_group_template
-
-	var_4_68[17] = {
+	pg.base.activity_ins_ship_group_template[17] = {
 		ship_group = 60305,
 		name = "Bolzano ",
 		background = "",
@@ -5530,11 +4037,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_ins_ship_group_template
-
-	var_4_69[30510] = {
+	pg.base.activity_ins_ship_group_template[30510] = {
 		ship_group = 30510,
 		name = "Musashi",
 		background = "",
@@ -5543,11 +4046,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_ins_ship_group_template
-
-	var_4_70[30187] = {
+	pg.base.activity_ins_ship_group_template[30187] = {
 		ship_group = 30187,
 		name = "Wakatsuki",
 		background = "",
@@ -5556,11 +4055,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_ins_ship_group_template
-
-	var_4_71[30223] = {
+	pg.base.activity_ins_ship_group_template[30223] = {
 		ship_group = 30223,
 		name = "Sakawa ",
 		background = "",
@@ -5569,11 +4064,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_ins_ship_group_template
-
-	var_4_72[30310] = {
+	pg.base.activity_ins_ship_group_template[30310] = {
 		ship_group = 30310,
 		name = "Haguro ",
 		background = "",
@@ -5582,11 +4073,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_ins_ship_group_template
-
-	var_4_73[30104] = {
+	pg.base.activity_ins_ship_group_template[30104] = {
 		ship_group = 30104,
 		name = "Miyuki ",
 		background = "",
@@ -5595,11 +4082,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_ins_ship_group_template
-
-	var_4_74[30102] = {
+	pg.base.activity_ins_ship_group_template[30102] = {
 		ship_group = 30102,
 		name = "Shirayuki ",
 		background = "",
@@ -5608,11 +4091,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_ins_ship_group_template
-
-	var_4_75[30309] = {
+	pg.base.activity_ins_ship_group_template[30309] = {
 		ship_group = 30309,
 		name = "Ashigara",
 		background = "",
@@ -5621,11 +4100,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_ins_ship_group_template
-
-	var_4_76[80108] = {
+	pg.base.activity_ins_ship_group_template[80108] = {
 		ship_group = 80108,
 		name = "Brézé",
 		background = "",
@@ -5634,11 +4109,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_ins_ship_group_template
-
-	var_4_77[10502] = {
+	pg.base.activity_ins_ship_group_template[10502] = {
 		ship_group = 10502,
 		name = "Oklahoma",
 		background = "",
@@ -5647,11 +4118,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_ins_ship_group_template
-
-	var_4_78[30504] = {
+	pg.base.activity_ins_ship_group_template[30504] = {
 		ship_group = 30504,
 		name = "Hyūga",
 		background = "",
@@ -5660,11 +4127,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_ins_ship_group_template
-
-	var_4_79[10207] = {
+	pg.base.activity_ins_ship_group_template[10207] = {
 		ship_group = 10207,
 		name = "Juneau",
 		background = "",
@@ -5673,11 +4136,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_ins_ship_group_template
-
-	var_4_80[10206] = {
+	pg.base.activity_ins_ship_group_template[10206] = {
 		ship_group = 10206,
 		name = "Atlanta",
 		background = "",
@@ -5686,11 +4145,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_ins_ship_group_template
-
-	var_4_81[20135] = {
+	pg.base.activity_ins_ship_group_template[20135] = {
 		ship_group = 20135,
 		name = "Janus",
 		background = "",
@@ -5699,11 +4154,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_ins_ship_group_template
-
-	var_4_82[20607] = {
+	pg.base.activity_ins_ship_group_template[20607] = {
 		ship_group = 20607,
 		name = "Albion",
 		background = "",
@@ -5712,11 +4163,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_ins_ship_group_template
-
-	var_4_83[20209] = {
+	pg.base.activity_ins_ship_group_template[20209] = {
 		ship_group = 20209,
 		name = "Manchester",
 		background = "",
@@ -5725,11 +4172,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_ins_ship_group_template
-
-	var_4_84[21301] = {
+	pg.base.activity_ins_ship_group_template[21301] = {
 		ship_group = 21301,
 		name = "Erebus",
 		background = "",
@@ -5738,11 +4181,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_ins_ship_group_template
-
-	var_4_85[21302] = {
+	pg.base.activity_ins_ship_group_template[21302] = {
 		ship_group = 21302,
 		name = "Terror",
 		background = "",
@@ -5751,11 +4190,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_ins_ship_group_template
-
-	var_4_86[20210] = {
+	pg.base.activity_ins_ship_group_template[20210] = {
 		ship_group = 20210,
 		name = "Gloucester",
 		background = "",
@@ -5764,11 +4199,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_ins_ship_group_template
-
-	var_4_87[10513] = {
+	pg.base.activity_ins_ship_group_template[10513] = {
 		ship_group = 10513,
 		name = "Washington",
 		background = "",
@@ -5777,11 +4208,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_ins_ship_group_template
-
-	var_4_88[1090001] = {
+	pg.base.activity_ins_ship_group_template[1090001] = {
 		ship_group = 1090001,
 		name = "Reisalin Stout",
 		background = "",
@@ -5790,11 +4217,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_ins_ship_group_template
-
-	var_4_89[1090002] = {
+	pg.base.activity_ins_ship_group_template[1090002] = {
 		ship_group = 1090002,
 		name = "Klaudia Valentz",
 		background = "",
@@ -5803,11 +4226,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_ins_ship_group_template
-
-	var_4_90[1090003] = {
+	pg.base.activity_ins_ship_group_template[1090003] = {
 		ship_group = 1090003,
 		name = "Patricia Abelheim",
 		background = "",
@@ -5816,11 +4235,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_ins_ship_group_template
-
-	var_4_91[1090005] = {
+	pg.base.activity_ins_ship_group_template[1090005] = {
 		ship_group = 1090005,
 		name = "Serri Glaus",
 		background = "",
@@ -5829,11 +4244,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_ins_ship_group_template
-
-	var_4_92[1090004] = {
+	pg.base.activity_ins_ship_group_template[1090004] = {
 		ship_group = 1090004,
 		name = "Lila Decyrus",
 		background = "",
@@ -5842,11 +4253,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_ins_ship_group_template
-
-	var_4_93[10303] = {
+	pg.base.activity_ins_ship_group_template[10303] = {
 		ship_group = 10303,
 		name = "Northampton",
 		background = "",
@@ -5855,11 +4262,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_ins_ship_group_template
-
-	var_4_94[10701] = {
+	pg.base.activity_ins_ship_group_template[10701] = {
 		ship_group = 10701,
 		name = "Langley",
 		background = "",
@@ -5868,11 +4271,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_ins_ship_group_template
-
-	var_4_95[51901] = {
+	pg.base.activity_ins_ship_group_template[51901] = {
 		ship_group = 51901,
 		name = "Ting An",
 		background = "",
@@ -5881,11 +4280,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_ins_ship_group_template
-
-	var_4_96[20608] = {
+	pg.base.activity_ins_ship_group_template[20608] = {
 		ship_group = 20608,
 		name = "Theseus",
 		background = "",
@@ -5894,11 +4289,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_ins_ship_group_template
-
-	var_4_97[70205] = {
+	pg.base.activity_ins_ship_group_template[70205] = {
 		ship_group = 70205,
 		name = "Kuybyshev",
 		background = "",
@@ -5907,11 +4298,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_ins_ship_group_template
-
-	var_4_98[50602] = {
+	pg.base.activity_ins_ship_group_template[50602] = {
 		ship_group = 50602,
 		name = "Hua Jia",
 		background = "",
@@ -5920,8 +4307,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_4_98
-	var_4_98.base.activity_ins_ship_group_template[89903] = {
+	pg.base.activity_ins_ship_group_template[89903] = {
 		ship_group = 89903,
 		name = "Brest",
 		background = "",
@@ -5934,11 +4320,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_5_0[29905] = {
+	pg.base.activity_ins_ship_group_template[29905] = {
 		ship_group = 29905,
 		name = "Plymouth",
 		background = "",
@@ -5947,11 +4329,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_ins_ship_group_template
-
-	var_5_1[59901] = {
+	pg.base.activity_ins_ship_group_template[59901] = {
 		ship_group = 59901,
 		name = "Bin Jiang",
 		background = "",
@@ -5960,11 +4338,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_ins_ship_group_template
-
-	var_5_2[29] = {
+	pg.base.activity_ins_ship_group_template[29] = {
 		ship_group = 79901,
 		name = "Chkalov",
 		background = "",
@@ -5973,11 +4347,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_ins_ship_group_template
-
-	var_5_3[49907] = {
+	pg.base.activity_ins_ship_group_template[49907] = {
 		ship_group = 49907,
 		name = "Prinz-Rupprecht",
 		background = "",
@@ -5986,11 +4356,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.activity_ins_ship_group_template
-
-	var_5_4[20707] = {
+	pg.base.activity_ins_ship_group_template[20707] = {
 		ship_group = 20707,
 		name = "Implacable",
 		background = "",
@@ -5999,11 +4365,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.activity_ins_ship_group_template
-
-	var_5_5[20233] = {
+	pg.base.activity_ins_ship_group_template[20233] = {
 		ship_group = 20233,
 		name = "Scylla",
 		background = "",
@@ -6012,11 +4374,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.activity_ins_ship_group_template
-
-	var_5_6[20136] = {
+	pg.base.activity_ins_ship_group_template[20136] = {
 		ship_group = 20136,
 		name = "Hero",
 		background = "",
@@ -6025,11 +4383,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.activity_ins_ship_group_template
-
-	var_5_7[20602] = {
+	pg.base.activity_ins_ship_group_template[20602] = {
 		ship_group = 20602,
 		name = "Argus",
 		background = "",
@@ -6038,11 +4392,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.activity_ins_ship_group_template
-
-	var_5_8[20514] = {
+	pg.base.activity_ins_ship_group_template[20514] = {
 		ship_group = 20514,
 		name = "RoyalOak",
 		background = "",
@@ -6051,11 +4401,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.activity_ins_ship_group_template
-
-	var_5_9[40116] = {
+	pg.base.activity_ins_ship_group_template[40116] = {
 		ship_group = 40116,
 		name = "F.Eckoldt",
 		background = "",
@@ -6064,11 +4410,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.activity_ins_ship_group_template
-
-	var_5_10[10602] = {
+	pg.base.activity_ins_ship_group_template[10602] = {
 		ship_group = 10602,
 		name = "Bogue",
 		background = "",
@@ -6077,11 +4419,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.activity_ins_ship_group_template
-
-	var_5_11[20116] = {
+	pg.base.activity_ins_ship_group_template[20116] = {
 		ship_group = 20116,
 		name = "Hardy",
 		background = "",
@@ -6090,11 +4428,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.activity_ins_ship_group_template
-
-	var_5_12[70207] = {
+	pg.base.activity_ins_ship_group_template[70207] = {
 		ship_group = 70207,
 		name = "Voroshilov",
 		background = "",
@@ -6103,11 +4437,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.activity_ins_ship_group_template
-
-	var_5_13[70507] = {
+	pg.base.activity_ins_ship_group_template[70507] = {
 		ship_group = 70507,
 		name = "Sevastopol",
 		background = "",
@@ -6116,11 +4446,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.activity_ins_ship_group_template
-
-	var_5_14[30] = {
+	pg.base.activity_ins_ship_group_template[30] = {
 		ship_group = 70302,
 		name = "Kursk",
 		background = "",
@@ -6129,11 +4455,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.activity_ins_ship_group_template
-
-	var_5_15[18] = {
+	pg.base.activity_ins_ship_group_template[18] = {
 		ship_group = 40210,
 		name = "Regensburg",
 		background = "",
@@ -6142,11 +4464,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.activity_ins_ship_group_template
-
-	var_5_16[27] = {
+	pg.base.activity_ins_ship_group_template[27] = {
 		ship_group = 40603,
 		name = "Jade",
 		background = "",
@@ -6155,11 +4473,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.activity_ins_ship_group_template
-
-	var_5_17[7] = {
+	pg.base.activity_ins_ship_group_template[7] = {
 		ship_group = 40199,
 		name = "Alvensleben",
 		background = "",
@@ -6168,11 +4482,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.activity_ins_ship_group_template
-
-	var_5_18[18] = {
+	pg.base.activity_ins_ship_group_template[18] = {
 		ship_group = 60306,
 		name = "Gorizia",
 		background = "",
@@ -6181,11 +4491,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.activity_ins_ship_group_template
-
-	var_5_19[60110] = {
+	pg.base.activity_ins_ship_group_template[60110] = {
 		ship_group = 60110,
 		name = "Attilio",
 		background = "",
@@ -6194,11 +4500,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.activity_ins_ship_group_template
-
-	var_5_20[19903] = {
+	pg.base.activity_ins_ship_group_template[19903] = {
 		ship_group = 19903,
 		name = "Anchorage",
 		background = "",
@@ -6207,11 +4509,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.activity_ins_ship_group_template
-
-	var_5_21[30128] = {
+	pg.base.activity_ins_ship_group_template[30128] = {
 		ship_group = 30128,
 		name = "Oyashio",
 		background = "",
@@ -6220,11 +4518,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.activity_ins_ship_group_template
-
-	var_5_22[60507] = {
+	pg.base.activity_ins_ship_group_template[60507] = {
 		ship_group = 60507,
 		name = "Andrea",
 		background = "",
@@ -6233,11 +4527,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.activity_ins_ship_group_template
-
-	var_5_23[6] = {
+	pg.base.activity_ins_ship_group_template[6] = {
 		ship_group = 90502,
 		name = "Clemenceau",
 		background = "",
@@ -6246,11 +4536,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.activity_ins_ship_group_template
-
-	var_5_24[80702] = {
+	pg.base.activity_ins_ship_group_template[80702] = {
 		ship_group = 80702,
 		name = "Painlevé",
 		background = "",
@@ -6259,11 +4545,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.activity_ins_ship_group_template
-
-	var_5_25[80203] = {
+	pg.base.activity_ins_ship_group_template[80203] = {
 		ship_group = 80203,
 		name = "Guichen",
 		background = "",
@@ -6272,11 +4554,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.activity_ins_ship_group_template
-
-	var_5_26[80301] = {
+	pg.base.activity_ins_ship_group_template[80301] = {
 		ship_group = 80301,
 		name = "Suffren",
 		background = "",
@@ -6285,11 +4563,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.activity_ins_ship_group_template
-
-	var_5_27[40302] = {
+	pg.base.activity_ins_ship_group_template[40302] = {
 		ship_group = 40302,
 		name = "Blücher",
 		background = "",
@@ -6298,11 +4572,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.activity_ins_ship_group_template
-
-	var_5_28[90301] = {
+	pg.base.activity_ins_ship_group_template[90301] = {
 		ship_group = 90301,
 		name = "Foch",
 		background = "",
@@ -6311,11 +4581,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.activity_ins_ship_group_template
-
-	var_5_29[80502] = {
+	pg.base.activity_ins_ship_group_template[80502] = {
 		ship_group = 80502,
 		name = "Lyon",
 		background = "",
@@ -6324,11 +4590,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.activity_ins_ship_group_template
-
-	var_5_30[90104] = {
+	pg.base.activity_ins_ship_group_template[90104] = {
 		ship_group = 90104,
 		name = "Kersaint",
 		background = "",
@@ -6337,11 +4599,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.activity_ins_ship_group_template
-
-	var_5_31[30603] = {
+	pg.base.activity_ins_ship_group_template[30603] = {
 		ship_group = 30603,
 		name = "Hōshō",
 		background = "",
@@ -6350,11 +4608,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.activity_ins_ship_group_template
-
-	var_5_32[30319] = {
+	pg.base.activity_ins_ship_group_template[30319] = {
 		ship_group = 30319,
 		name = "Unzen",
 		background = "",
@@ -6363,11 +4617,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.activity_ins_ship_group_template
-
-	var_5_33[30513] = {
+	pg.base.activity_ins_ship_group_template[30513] = {
 		ship_group = 30513,
 		name = "owari",
 		background = "",
@@ -6376,11 +4626,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.activity_ins_ship_group_template
-
-	var_5_34[30189] = {
+	pg.base.activity_ins_ship_group_template[30189] = {
 		ship_group = 30189,
 		name = "Hatsuzuki",
 		background = "",
@@ -6389,11 +4635,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.activity_ins_ship_group_template
-
-	var_5_35[30206] = {
+	pg.base.activity_ins_ship_group_template[30206] = {
 		ship_group = 30206,
 		name = "Natori ",
 		background = "",
@@ -6402,11 +4644,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.activity_ins_ship_group_template
-
-	var_5_36[30190] = {
+	pg.base.activity_ins_ship_group_template[30190] = {
 		ship_group = 30190,
 		name = "Asanagi",
 		background = "",
@@ -6415,11 +4653,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.activity_ins_ship_group_template
-
-	var_5_37[30130] = {
+	pg.base.activity_ins_ship_group_template[30130] = {
 		ship_group = 30130,
 		name = "Kamikaze",
 		background = "",
@@ -6428,11 +4662,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.activity_ins_ship_group_template
-
-	var_5_38[2] = {
+	pg.base.activity_ins_ship_group_template[2] = {
 		ship_group = 960002,
 		name = "São Martinho",
 		background = "",
@@ -6441,11 +4671,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.activity_ins_ship_group_template
-
-	var_5_39[1] = {
+	pg.base.activity_ins_ship_group_template[1] = {
 		ship_group = 960001,
 		name = "Royal Fortune",
 		background = "",
@@ -6454,11 +4680,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.activity_ins_ship_group_template
-
-	var_5_40[4] = {
+	pg.base.activity_ins_ship_group_template[4] = {
 		ship_group = 960004,
 		name = "Mary Celeste",
 		background = "",
@@ -6467,11 +4689,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.activity_ins_ship_group_template
-
-	var_5_41[30137] = {
+	pg.base.activity_ins_ship_group_template[30137] = {
 		ship_group = 30137,
 		name = "Minazuki",
 		background = "",
@@ -6480,11 +4698,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.activity_ins_ship_group_template
-
-	var_5_42[20402] = {
+	pg.base.activity_ins_ship_group_template[20402] = {
 		ship_group = 20402,
 		name = "Repulse",
 		background = "",
@@ -6493,11 +4707,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.activity_ins_ship_group_template
-
-	var_5_43[10708] = {
+	pg.base.activity_ins_ship_group_template[10708] = {
 		ship_group = 10708,
 		name = "Wasp",
 		background = "",
@@ -6506,11 +4716,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.activity_ins_ship_group_template
-
-	var_5_44[5] = {
+	pg.base.activity_ins_ship_group_template[5] = {
 		ship_group = 960005,
 		name = "Whydah",
 		background = "",
@@ -6519,11 +4725,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.activity_ins_ship_group_template
-
-	var_5_45[10103] = {
+	pg.base.activity_ins_ship_group_template[10103] = {
 		ship_group = 10103,
 		name = "Cassin",
 		background = "",
@@ -6532,11 +4734,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.activity_ins_ship_group_template
-
-	var_5_46[3] = {
+	pg.base.activity_ins_ship_group_template[3] = {
 		ship_group = 960003,
 		name = "Golden Hind",
 		background = "",
@@ -6545,11 +4743,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.activity_ins_ship_group_template
-
-	var_5_47[6] = {
+	pg.base.activity_ins_ship_group_template[6] = {
 		ship_group = 960006,
 		name = "Adventure Galley",
 		background = "",
@@ -6558,11 +4752,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.activity_ins_ship_group_template
-
-	var_5_48[30160] = {
+	pg.base.activity_ins_ship_group_template[30160] = {
 		ship_group = 30160,
 		name = "Isokaze",
 		background = "",
@@ -6571,11 +4761,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.activity_ins_ship_group_template
-
-	var_5_49[1100001] = {
+	pg.base.activity_ins_ship_group_template[1100001] = {
 		ship_group = 1100001,
 		name = "Asuka",
 		background = "",
@@ -6584,11 +4770,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.activity_ins_ship_group_template
-
-	var_5_50[1100002] = {
+	pg.base.activity_ins_ship_group_template[1100002] = {
 		ship_group = 1100002,
 		name = "Ikaruga",
 		background = "",
@@ -6597,11 +4779,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.activity_ins_ship_group_template
-
-	var_5_51[1100007] = {
+	pg.base.activity_ins_ship_group_template[1100007] = {
 		ship_group = 1100007,
 		name = "Yūyaki",
 		background = "",
@@ -6610,11 +4788,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.activity_ins_ship_group_template
-
-	var_5_52[1100006] = {
+	pg.base.activity_ins_ship_group_template[1100006] = {
 		ship_group = 1100006,
 		name = "Murasaki",
 		background = "",
@@ -6623,11 +4797,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.activity_ins_ship_group_template
-
-	var_5_53[1100003] = {
+	pg.base.activity_ins_ship_group_template[1100003] = {
 		ship_group = 1100003,
 		name = "Homura",
 		background = "",
@@ -6636,11 +4806,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.activity_ins_ship_group_template
-
-	var_5_54[1100005] = {
+	pg.base.activity_ins_ship_group_template[1100005] = {
 		ship_group = 1100005,
 		name = "Fubuki",
 		background = "",
@@ -6649,11 +4815,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.activity_ins_ship_group_template
-
-	var_5_55[1100004] = {
+	pg.base.activity_ins_ship_group_template[1100004] = {
 		ship_group = 1100004,
 		name = "Yumi",
 		background = "",
@@ -6662,11 +4824,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.activity_ins_ship_group_template
-
-	var_5_56[11802] = {
+	pg.base.activity_ins_ship_group_template[11802] = {
 		ship_group = 11802,
 		name = "Guam",
 		background = "",
@@ -6675,11 +4833,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.activity_ins_ship_group_template
-
-	var_5_57[10401] = {
+	pg.base.activity_ins_ship_group_template[10401] = {
 		ship_group = 10401,
 		name = "Constellation",
 		background = "",
@@ -6688,11 +4842,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.activity_ins_ship_group_template
-
-	var_5_58[10702] = {
+	pg.base.activity_ins_ship_group_template[10702] = {
 		ship_group = 10702,
 		name = "Lexington",
 		background = "",
@@ -6701,11 +4851,7 @@ end)()
 		type = 1,
 		sculpture_ii = "liekexingdunII"
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.activity_ins_ship_group_template
-
-	var_5_59[10808] = {
+	pg.base.activity_ins_ship_group_template[10808] = {
 		ship_group = 10808,
 		name = "Flasher",
 		background = "",
@@ -6714,11 +4860,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.activity_ins_ship_group_template
-
-	var_5_60[10730] = {
+	pg.base.activity_ins_ship_group_template[10730] = {
 		ship_group = 10730,
 		name = "San Jacinto",
 		background = "",
@@ -6727,11 +4869,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.activity_ins_ship_group_template
-
-	var_5_61[20203] = {
+	pg.base.activity_ins_ship_group_template[20203] = {
 		ship_group = 20203,
 		name = "Ajax",
 		background = "",
@@ -6740,11 +4878,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.activity_ins_ship_group_template
-
-	var_5_62[10327] = {
+	pg.base.activity_ins_ship_group_template[10327] = {
 		ship_group = 10327,
 		name = "Louisville",
 		background = "",
@@ -6753,11 +4887,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.activity_ins_ship_group_template
-
-	var_5_63[10305] = {
+	pg.base.activity_ins_ship_group_template[10305] = {
 		ship_group = 10305,
 		name = "Houston",
 		background = "",
@@ -6766,11 +4896,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.activity_ins_ship_group_template
-
-	var_5_64[19904] = {
+	pg.base.activity_ins_ship_group_template[19904] = {
 		ship_group = 19904,
 		name = "Kearsarge",
 		background = "",
@@ -6779,11 +4905,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.activity_ins_ship_group_template
-
-	var_5_65[49909] = {
+	pg.base.activity_ins_ship_group_template[49909] = {
 		ship_group = 49909,
 		name = "Hindenburg",
 		background = "",
@@ -6792,11 +4914,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.activity_ins_ship_group_template
-
-	var_5_66[39906] = {
+	pg.base.activity_ins_ship_group_template[39906] = {
 		ship_group = 39906,
 		name = "Shimanto",
 		background = "",
@@ -6805,11 +4923,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.activity_ins_ship_group_template
-
-	var_5_67[49908] = {
+	pg.base.activity_ins_ship_group_template[49908] = {
 		ship_group = 49908,
 		name = "Felix Schultz",
 		background = "",
@@ -6818,11 +4932,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.activity_ins_ship_group_template
-
-	var_5_68[99902] = {
+	pg.base.activity_ins_ship_group_template[99902] = {
 		ship_group = 99902,
 		name = "Flandre",
 		background = "",
@@ -6831,11 +4941,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.activity_ins_ship_group_template
-
-	var_5_69[30186] = {
+	pg.base.activity_ins_ship_group_template[30186] = {
 		ship_group = 30186,
 		name = "Kazagumo",
 		background = "",
@@ -6844,11 +4950,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.activity_ins_ship_group_template
-
-	var_5_70[50401] = {
+	pg.base.activity_ins_ship_group_template[50401] = {
 		ship_group = 50401,
 		name = "Huan Ch'ang",
 		background = "",
@@ -6857,11 +4959,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.activity_ins_ship_group_template
-
-	var_5_71[50107] = {
+	pg.base.activity_ins_ship_group_template[50107] = {
 		ship_group = 50107,
 		name = "Fei Yuen",
 		background = "",
@@ -6870,11 +4968,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.activity_ins_ship_group_template
-
-	var_5_72[50209] = {
+	pg.base.activity_ins_ship_group_template[50209] = {
 		ship_group = 50209,
 		name = "Chi An",
 		background = "",
@@ -6883,11 +4977,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.activity_ins_ship_group_template
-
-	var_5_73[50105] = {
+	pg.base.activity_ins_ship_group_template[50105] = {
 		ship_group = 50105,
 		name = "Lung Wu",
 		background = "",
@@ -6896,11 +4986,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.activity_ins_ship_group_template
-
-	var_5_74[50106] = {
+	pg.base.activity_ins_ship_group_template[50106] = {
 		ship_group = 50106,
 		name = "Hu Pen",
 		background = "",
@@ -6909,11 +4995,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.activity_ins_ship_group_template
-
-	var_5_75[20401] = {
+	pg.base.activity_ins_ship_group_template[20401] = {
 		ship_group = 20401,
 		name = "Renown",
 		background = "",
@@ -6922,11 +5004,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.activity_ins_ship_group_template
-
-	var_5_76[70502] = {
+	pg.base.activity_ins_ship_group_template[70502] = {
 		ship_group = 70502,
 		name = "Sovetsky Soyuz",
 		background = "",
@@ -6935,11 +5013,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.activity_ins_ship_group_template
-
-	var_5_77[10116] = {
+	pg.base.activity_ins_ship_group_template[10116] = {
 		ship_group = 10116,
 		name = "Benson",
 		background = "",
@@ -6948,11 +5022,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.activity_ins_ship_group_template
-
-	var_5_78[70111] = {
+	pg.base.activity_ins_ship_group_template[70111] = {
 		ship_group = 70111,
 		name = "Ognevoy",
 		background = "",
@@ -6961,11 +5031,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.activity_ins_ship_group_template
-
-	var_5_79[70508] = {
+	pg.base.activity_ins_ship_group_template[70508] = {
 		ship_group = 70508,
 		name = "Poltava",
 		background = "",
@@ -6974,11 +5040,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.activity_ins_ship_group_template
-
-	var_5_80[70112] = {
+	pg.base.activity_ins_ship_group_template[70112] = {
 		ship_group = 70112,
 		name = "Svirepy",
 		background = "",
@@ -6987,11 +5049,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.activity_ins_ship_group_template
-
-	var_5_81[20137] = {
+	pg.base.activity_ins_ship_group_template[20137] = {
 		ship_group = 20137,
 		name = "Nubian",
 		background = "",
@@ -7000,11 +5058,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.activity_ins_ship_group_template
-
-	var_5_82[20234] = {
+	pg.base.activity_ins_ship_group_template[20234] = {
 		ship_group = 20234,
 		name = "Liverpool",
 		background = "",
@@ -7013,11 +5067,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.activity_ins_ship_group_template
-
-	var_5_83[20313] = {
+	pg.base.activity_ins_ship_group_template[20313] = {
 		ship_group = 20313,
 		name = "Devonshire",
 		background = "",
@@ -7026,11 +5076,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.activity_ins_ship_group_template
-
-	var_5_84[80503] = {
+	pg.base.activity_ins_ship_group_template[80503] = {
 		ship_group = 80503,
 		name = "Alsace",
 		background = "",
@@ -7039,11 +5085,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.activity_ins_ship_group_template
-
-	var_5_85[80302] = {
+	pg.base.activity_ins_ship_group_template[80302] = {
 		ship_group = 80302,
 		name = "Brennus",
 		background = "",
@@ -7052,11 +5094,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.activity_ins_ship_group_template
-
-	var_5_86[90105] = {
+	pg.base.activity_ins_ship_group_template[90105] = {
 		ship_group = 90105,
 		name = "Fleuret",
 		background = "",
@@ -7065,11 +5103,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.activity_ins_ship_group_template
-
-	var_5_87[90106] = {
+	pg.base.activity_ins_ship_group_template[90106] = {
 		ship_group = 90106,
 		name = "Épée",
 		background = "",
@@ -7078,11 +5112,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.activity_ins_ship_group_template
-
-	var_5_88[90107] = {
+	pg.base.activity_ins_ship_group_template[90107] = {
 		ship_group = 90107,
 		name = "Mogador",
 		background = "",
@@ -7091,11 +5121,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.activity_ins_ship_group_template
-
-	var_5_89[20120] = {
+	pg.base.activity_ins_ship_group_template[20120] = {
 		ship_group = 20120,
 		name = "Hunter",
 		background = "",
@@ -7104,11 +5130,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.activity_ins_ship_group_template
-
-	var_5_90[19901] = {
+	pg.base.activity_ins_ship_group_template[19901] = {
 		ship_group = 19901,
 		name = "Seattle",
 		background = "",
@@ -7117,11 +5139,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.activity_ins_ship_group_template
-
-	var_5_91[40406] = {
+	pg.base.activity_ins_ship_group_template[40406] = {
 		ship_group = 40406,
 		name = "Hervör alvitr",
 		background = "",
@@ -7130,11 +5148,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.activity_ins_ship_group_template
-
-	var_5_92[40147] = {
+	pg.base.activity_ins_ship_group_template[40147] = {
 		ship_group = 40147,
 		name = "☆WildeKatze47☆",
 		background = "",
@@ -7143,11 +5157,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.activity_ins_ship_group_template
-
-	var_5_93[40813] = {
+	pg.base.activity_ins_ship_group_template[40813] = {
 		ship_group = 40813,
 		name = "Unbeschwert31",
 		background = "",
@@ -7156,11 +5166,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.activity_ins_ship_group_template
-
-	var_5_94[40143] = {
+	pg.base.activity_ins_ship_group_template[40143] = {
 		ship_group = 40143,
 		name = "Z·DEVIL·43",
 		background = "",
@@ -7169,11 +5175,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.activity_ins_ship_group_template
-
-	var_5_95[10219] = {
+	pg.base.activity_ins_ship_group_template[10219] = {
 		ship_group = 10219,
 		name = "HelenaSG@little",
 		background = "",
@@ -7182,11 +5184,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.activity_ins_ship_group_template
-
-	var_5_96[10221] = {
+	pg.base.activity_ins_ship_group_template[10221] = {
 		ship_group = 10221,
 		name = "NO1Sandiego!@little",
 		background = "",
@@ -7195,11 +5193,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.activity_ins_ship_group_template
-
-	var_5_97[40702] = {
+	pg.base.activity_ins_ship_group_template[40702] = {
 		ship_group = 40702,
 		name = "TrägerZeppelin@little",
 		background = "",
@@ -7208,11 +5202,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.activity_ins_ship_group_template
-
-	var_5_98[10220] = {
+	pg.base.activity_ins_ship_group_template[10220] = {
 		ship_group = 10220,
 		name = "Cleveland☆Knight@little",
 		background = "",
@@ -7221,8 +5211,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_5_98
-	var_5_98.base.activity_ins_ship_group_template[90402] = {
+	pg.base.activity_ins_ship_group_template[90402] = {
 		ship_group = 90402,
 		name = "Strasbourg",
 		background = "",
@@ -7235,11 +5224,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_6_0[40314] = {
+	pg.base.activity_ins_ship_group_template[40314] = {
 		ship_group = 40314,
 		name = "Friedrich Carl",
 		background = "",
@@ -7248,11 +5233,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.activity_ins_ship_group_template
-
-	var_6_1[90202] = {
+	pg.base.activity_ins_ship_group_template[90202] = {
 		ship_group = 90202,
 		name = "Marseillaise",
 		background = "",
@@ -7261,11 +5242,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.activity_ins_ship_group_template
-
-	var_6_2[90303] = {
+	pg.base.activity_ins_ship_group_template[90303] = {
 		ship_group = 90303,
 		name = "Dupleix",
 		background = "",
@@ -7274,11 +5251,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.activity_ins_ship_group_template
-
-	var_6_3[2] = {
+	pg.base.activity_ins_ship_group_template[2] = {
 		ship_group = 90114,
 		name = "L'Audacieux",
 		background = "",
@@ -7287,11 +5260,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.activity_ins_ship_group_template
-
-	var_6_4[10233] = {
+	pg.base.activity_ins_ship_group_template[10233] = {
 		ship_group = 10233,
 		name = "Fargo",
 		background = "",
@@ -7300,11 +5269,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.activity_ins_ship_group_template
-
-	var_6_5[10328] = {
+	pg.base.activity_ins_ship_group_template[10328] = {
 		ship_group = 10328,
 		name = "Pittsburgh",
 		background = "",
@@ -7313,11 +5278,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.activity_ins_ship_group_template
-
-	var_6_6[10515] = {
+	pg.base.activity_ins_ship_group_template[10515] = {
 		ship_group = 10515,
 		name = "Indiana",
 		background = "",
@@ -7326,11 +5287,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.activity_ins_ship_group_template
-
-	var_6_7[10809] = {
+	pg.base.activity_ins_ship_group_template[10809] = {
 		ship_group = 10809,
 		name = "Herring",
 		background = "",
@@ -7339,11 +5296,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.activity_ins_ship_group_template
-
-	var_6_8[10152] = {
+	pg.base.activity_ins_ship_group_template[10152] = {
 		ship_group = 10152,
 		name = "Bell",
 		background = "",
@@ -7352,11 +5305,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.activity_ins_ship_group_template
-
-	var_6_9[30604] = {
+	pg.base.activity_ins_ship_group_template[30604] = {
 		ship_group = 30604,
 		name = "Zuihō",
 		background = "",
@@ -7365,11 +5314,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.activity_ins_ship_group_template
-
-	var_6_10[14] = {
+	pg.base.activity_ins_ship_group_template[14] = {
 		ship_group = 69902,
 		name = "Napoli",
 		background = "",
@@ -7378,11 +5323,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.activity_ins_ship_group_template
-
-	var_6_11[10133] = {
+	pg.base.activity_ins_ship_group_template[10133] = {
 		ship_group = 10133,
 		name = "Bush",
 		background = "",
@@ -7391,11 +5332,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.activity_ins_ship_group_template
-
-	var_6_12[30138] = {
+	pg.base.activity_ins_ship_group_template[30138] = {
 		ship_group = 30138,
 		name = "Fumizuki",
 		background = "",
@@ -7404,11 +5341,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.activity_ins_ship_group_template
-
-	var_6_13[30225] = {
+	pg.base.activity_ins_ship_group_template[30225] = {
 		ship_group = 30225,
 		name = "Watarase",
 		background = "",
@@ -7417,11 +5350,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.activity_ins_ship_group_template
-
-	var_6_14[30226] = {
+	pg.base.activity_ins_ship_group_template[30226] = {
 		ship_group = 30226,
 		name = "Ayase",
 		background = "",
@@ -7430,11 +5359,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.activity_ins_ship_group_template
-
-	var_6_15[30191] = {
+	pg.base.activity_ins_ship_group_template[30191] = {
 		ship_group = 30191,
 		name = "Suzunami",
 		background = "",
@@ -7443,11 +5368,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.activity_ins_ship_group_template
-
-	var_6_16[30180] = {
+	pg.base.activity_ins_ship_group_template[30180] = {
 		ship_group = 30180,
 		name = "Makinami",
 		background = "",
@@ -7456,11 +5377,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.activity_ins_ship_group_template
-
-	var_6_17[19905] = {
+	pg.base.activity_ins_ship_group_template[19905] = {
 		ship_group = 19905,
 		name = "Halford",
 		background = "",
@@ -7469,11 +5386,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.activity_ins_ship_group_template
-
-	var_6_18[101] = {
+	pg.base.activity_ins_ship_group_template[101] = {
 		ship_group = 101,
 		name = "白鹰阵营专用频道",
 		background = "101",
@@ -7482,11 +5395,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.activity_ins_ship_group_template
-
-	var_6_19[102] = {
+	pg.base.activity_ins_ship_group_template[102] = {
 		ship_group = 102,
 		name = "北方联合阵营专用频道",
 		background = "102",
@@ -7495,11 +5404,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.activity_ins_ship_group_template
-
-	var_6_20[103] = {
+	pg.base.activity_ins_ship_group_template[103] = {
 		ship_group = 103,
 		name = "东煌阵营专用频道",
 		background = "103",
@@ -7508,11 +5413,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.activity_ins_ship_group_template
-
-	var_6_21[104] = {
+	pg.base.activity_ins_ship_group_template[104] = {
 		ship_group = 104,
 		name = "撒丁阵营专用频道",
 		background = "104",
@@ -7521,11 +5422,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.activity_ins_ship_group_template
-
-	var_6_22[105] = {
+	pg.base.activity_ins_ship_group_template[105] = {
 		ship_group = 105,
 		name = "铁血阵营专用频道",
 		background = "105",
@@ -7534,11 +5431,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.activity_ins_ship_group_template
-
-	var_6_23[106] = {
+	pg.base.activity_ins_ship_group_template[106] = {
 		ship_group = 106,
 		name = "鸢尾阵营专用频道",
 		background = "106",
@@ -7547,11 +5440,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.activity_ins_ship_group_template
-
-	var_6_24[107] = {
+	pg.base.activity_ins_ship_group_template[107] = {
 		ship_group = 107,
 		name = "重樱阵营专用频道",
 		background = "107",
@@ -7560,11 +5449,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.activity_ins_ship_group_template
-
-	var_6_25[108] = {
+	pg.base.activity_ins_ship_group_template[108] = {
 		ship_group = 108,
 		name = "皇家阵营专用频道",
 		background = "108",
@@ -7573,11 +5458,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.activity_ins_ship_group_template
-
-	var_6_26[109] = {
+	pg.base.activity_ins_ship_group_template[109] = {
 		ship_group = 109,
 		name = "飓风阵营专用频道",
 		background = "109",
@@ -7586,11 +5467,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.activity_ins_ship_group_template
-
-	var_6_27[110] = {
+	pg.base.activity_ins_ship_group_template[110] = {
 		ship_group = 110,
 		name = "郁金阵营专用频道",
 		background = "110",
@@ -7599,11 +5476,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.activity_ins_ship_group_template
-
-	var_6_28[200] = {
+	pg.base.activity_ins_ship_group_template[200] = {
 		ship_group = 200,
 		name = "公共频道",
 		background = "200",
@@ -7612,11 +5485,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.activity_ins_ship_group_template
-
-	var_6_29[201] = {
+	pg.base.activity_ins_ship_group_template[201] = {
 		ship_group = 201,
 		name = "下午茶福利",
 		background = "200",
@@ -7625,11 +5494,7 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.activity_ins_ship_group_template
-
-	var_6_30[202] = {
+	pg.base.activity_ins_ship_group_template[202] = {
 		ship_group = 202,
 		name = "活动筹备组",
 		background = "200",
@@ -7638,11 +5503,16 @@ end)()
 		type = 2,
 		sculpture_ii = ""
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.activity_ins_ship_group_template
-
-	var_6_31[7] = {
+	pg.base.activity_ins_ship_group_template[203] = {
+		ship_group = 203,
+		name = "速达商店交流1群",
+		background = "200",
+		sculpture = "203",
+		nationality = 12,
+		type = 2,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[7] = {
 		ship_group = 960007,
 		name = "Ganj-i-sawai",
 		background = "",
@@ -7651,11 +5521,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.activity_ins_ship_group_template
-
-	var_6_32[8] = {
+	pg.base.activity_ins_ship_group_template[8] = {
 		ship_group = 960008,
 		name = "Fancy",
 		background = "",
@@ -7664,11 +5530,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.activity_ins_ship_group_template
-
-	var_6_33[9] = {
+	pg.base.activity_ins_ship_group_template[9] = {
 		ship_group = 960009,
 		name = "Amity",
 		background = "",
@@ -7677,11 +5539,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.activity_ins_ship_group_template
-
-	var_6_34[10] = {
+	pg.base.activity_ins_ship_group_template[10] = {
 		ship_group = 960010,
 		name = "Portsmouth Adventure",
 		background = "",
@@ -7690,11 +5548,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.activity_ins_ship_group_template
-
-	var_6_35[11] = {
+	pg.base.activity_ins_ship_group_template[11] = {
 		ship_group = 960011,
 		name = "Dolphin",
 		background = "",
@@ -7703,11 +5557,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.activity_ins_ship_group_template
-
-	var_6_36[13] = {
+	pg.base.activity_ins_ship_group_template[13] = {
 		ship_group = 69901,
 		name = "Marco Polo",
 		background = "",
@@ -7716,11 +5566,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.activity_ins_ship_group_template
-
-	var_6_37[30506] = {
+	pg.base.activity_ins_ship_group_template[30506] = {
 		ship_group = 30506,
 		name = "Mutsu",
 		background = "",
@@ -7729,11 +5575,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.activity_ins_ship_group_template
-
-	var_6_38[20223] = {
+	pg.base.activity_ins_ship_group_template[20223] = {
 		ship_group = 20223,
 		name = "Swiftsure",
 		background = "",
@@ -7742,11 +5584,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.activity_ins_ship_group_template
-
-	var_6_39[30] = {
+	pg.base.activity_ins_ship_group_template[30] = {
 		ship_group = 79902,
 		name = "Admiral Nakhimov",
 		background = "",
@@ -7755,11 +5593,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.activity_ins_ship_group_template
-
-	var_6_40[1110001] = {
+	pg.base.activity_ins_ship_group_template[1110001] = {
 		ship_group = 1110001,
 		name = "Lala Satalin Deviluke",
 		background = "",
@@ -7768,11 +5602,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.activity_ins_ship_group_template
-
-	var_6_41[1110002] = {
+	pg.base.activity_ins_ship_group_template[1110002] = {
 		ship_group = 1110002,
 		name = "Nana Asta Deviluke",
 		background = "",
@@ -7781,11 +5611,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.activity_ins_ship_group_template
-
-	var_6_42[1110003] = {
+	pg.base.activity_ins_ship_group_template[1110003] = {
 		ship_group = 1110003,
 		name = "Momo Belia Deviluke",
 		background = "",
@@ -7794,11 +5620,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.activity_ins_ship_group_template
-
-	var_6_43[1110004] = {
+	pg.base.activity_ins_ship_group_template[1110004] = {
 		ship_group = 1110004,
 		name = "Konjiki no Yami",
 		background = "",
@@ -7807,11 +5629,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.activity_ins_ship_group_template
-
-	var_6_44[1110005] = {
+	pg.base.activity_ins_ship_group_template[1110005] = {
 		ship_group = 1110005,
 		name = "Sairenji Haruna",
 		background = "",
@@ -7820,11 +5638,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.activity_ins_ship_group_template
-
-	var_6_45[1110006] = {
+	pg.base.activity_ins_ship_group_template[1110006] = {
 		ship_group = 1110006,
 		name = "Kotegawa Yui",
 		background = "",
@@ -7833,11 +5647,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.activity_ins_ship_group_template
-
-	var_6_46[30141] = {
+	pg.base.activity_ins_ship_group_template[30141] = {
 		ship_group = 30141,
 		name = "Mikazuki",
 		background = "",
@@ -7846,11 +5656,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.activity_ins_ship_group_template
-
-	var_6_47[0] = {
+	pg.base.activity_ins_ship_group_template[0] = {
 		ship_group = 40704,
 		name = "Fritz Rumey",
 		background = "",
@@ -7859,11 +5665,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.activity_ins_ship_group_template
-
-	var_6_48[19] = {
+	pg.base.activity_ins_ship_group_template[19] = {
 		ship_group = 40211,
 		name = "Duisburg",
 		background = "",
@@ -7872,11 +5674,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.activity_ins_ship_group_template
-
-	var_6_49[40109] = {
+	pg.base.activity_ins_ship_group_template[40109] = {
 		ship_group = 40109,
 		name = "Wolke9",
 		background = "",
@@ -7885,11 +5683,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.activity_ins_ship_group_template
-
-	var_6_50[40111] = {
+	pg.base.activity_ins_ship_group_template[40111] = {
 		ship_group = 40111,
 		name = "Z11_Spielefan",
 		background = "",
@@ -7898,11 +5692,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.activity_ins_ship_group_template
-
-	var_6_51[40152] = {
+	pg.base.activity_ins_ship_group_template[40152] = {
 		ship_group = 40152,
 		name = "Blitz-Z52",
 		background = "",
@@ -7911,11 +5701,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.activity_ins_ship_group_template
-
-	var_6_52[20216] = {
+	pg.base.activity_ins_ship_group_template[20216] = {
 		ship_group = 20216,
 		name = "Fiji",
 		background = "",
@@ -7924,11 +5710,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.activity_ins_ship_group_template
-
-	var_6_53[20202] = {
+	pg.base.activity_ins_ship_group_template[20202] = {
 		ship_group = 20202,
 		name = "Achilles",
 		background = "",
@@ -7937,11 +5719,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.activity_ins_ship_group_template
-
-	var_6_54[39907] = {
+	pg.base.activity_ins_ship_group_template[39907] = {
 		ship_group = 39907,
 		name = "Daisen",
 		background = "",
@@ -7950,11 +5728,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.activity_ins_ship_group_template
-
-	var_6_55[89904] = {
+	pg.base.activity_ins_ship_group_template[89904] = {
 		ship_group = 89904,
 		name = "Bayard",
 		background = "",
@@ -7963,11 +5737,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.activity_ins_ship_group_template
-
-	var_6_56[40126] = {
+	pg.base.activity_ins_ship_group_template[40126] = {
 		ship_group = 40126,
 		name = "Zuverlässig_26",
 		background = "",
@@ -7976,11 +5746,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.activity_ins_ship_group_template
-
-	var_6_57[50301] = {
+	pg.base.activity_ins_ship_group_template[50301] = {
 		ship_group = 50301,
 		name = "Chien Wu",
 		background = "",
@@ -7989,11 +5755,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.activity_ins_ship_group_template
-
-	var_6_58[50210] = {
+	pg.base.activity_ins_ship_group_template[50210] = {
 		ship_group = 50210,
 		name = "Hai Yung",
 		background = "",
@@ -8002,11 +5764,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.activity_ins_ship_group_template
-
-	var_6_59[50108] = {
+	pg.base.activity_ins_ship_group_template[50108] = {
 		ship_group = 50108,
 		name = "Chang Feng",
 		background = "",
@@ -8015,11 +5773,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.activity_ins_ship_group_template
-
-	var_6_60[50109] = {
+	pg.base.activity_ins_ship_group_template[50109] = {
 		ship_group = 50109,
 		name = "Fu Po",
 		background = "",
@@ -8028,11 +5782,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.activity_ins_ship_group_template
-
-	var_6_61[10222] = {
+	pg.base.activity_ins_ship_group_template[10222] = {
 		ship_group = 10222,
 		name = "San Juan",
 		background = "",
@@ -8041,11 +5791,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.activity_ins_ship_group_template
-
-	var_6_62[40803] = {
+	pg.base.activity_ins_ship_group_template[40803] = {
 		ship_group = 40803,
 		name = "U-557",
 		background = "",
@@ -8054,11 +5800,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.activity_ins_ship_group_template
-
-	var_6_63[60508] = {
+	pg.base.activity_ins_ship_group_template[60508] = {
 		ship_group = 60508,
 		name = "Raffaello",
 		background = "",
@@ -8067,11 +5809,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.activity_ins_ship_group_template
-
-	var_6_64[3] = {
+	pg.base.activity_ins_ship_group_template[3] = {
 		ship_group = 60803,
 		name = "Maggiore Baracca",
 		background = "",
@@ -8080,11 +5818,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.activity_ins_ship_group_template
-
-	var_6_65[60111] = {
+	pg.base.activity_ins_ship_group_template[60111] = {
 		ship_group = 60111,
 		name = "Giosuè Carducci",
 		background = "",
@@ -8093,11 +5827,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.activity_ins_ship_group_template
-
-	var_6_66[60203] = {
+	pg.base.activity_ins_ship_group_template[60203] = {
 		ship_group = 60203,
 		name = "Bartolomeo Colleoni",
 		background = "",
@@ -8106,11 +5836,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.activity_ins_ship_group_template
-
-	var_6_67[10713] = {
+	pg.base.activity_ins_ship_group_template[10713] = {
 		ship_group = 10713,
 		name = "Franklin",
 		background = "",
@@ -8119,11 +5845,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.activity_ins_ship_group_template
-
-	var_6_68[10234] = {
+	pg.base.activity_ins_ship_group_template[10234] = {
 		ship_group = 10234,
 		name = "Santa Fe",
 		background = "",
@@ -8132,11 +5854,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.activity_ins_ship_group_template
-
-	var_6_69[10153] = {
+	pg.base.activity_ins_ship_group_template[10153] = {
 		ship_group = 10153,
 		name = "Miller",
 		background = "",
@@ -8145,11 +5863,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.activity_ins_ship_group_template
-
-	var_6_70[10512] = {
+	pg.base.activity_ins_ship_group_template[10512] = {
 		ship_group = 10512,
 		name = "North Carolina",
 		background = "",
@@ -8158,11 +5872,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.activity_ins_ship_group_template
-
-	var_6_71[110201] = {
+	pg.base.activity_ins_ship_group_template[110201] = {
 		ship_group = 110201,
 		name = "De Zeven Provinciën",
 		background = "",
@@ -8171,11 +5881,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.activity_ins_ship_group_template
-
-	var_6_72[21] = {
+	pg.base.activity_ins_ship_group_template[21] = {
 		ship_group = 110101,
 		name = "Evertsen",
 		background = "",
@@ -8184,11 +5890,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.activity_ins_ship_group_template
-
-	var_6_73[119901] = {
+	pg.base.activity_ins_ship_group_template[119901] = {
 		ship_group = 119901,
 		name = "Gouden leeuw",
 		background = "",
@@ -8197,11 +5899,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.activity_ins_ship_group_template
-
-	var_6_74[70509] = {
+	pg.base.activity_ins_ship_group_template[70509] = {
 		ship_group = 70509,
 		name = "Kazan ",
 		background = "",
@@ -8210,11 +5908,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.activity_ins_ship_group_template
-
-	var_6_75[70208] = {
+	pg.base.activity_ins_ship_group_template[70208] = {
 		ship_group = 70208,
 		name = "Oleg",
 		background = "",
@@ -8223,11 +5917,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.activity_ins_ship_group_template
-
-	var_6_76[20516] = {
+	pg.base.activity_ins_ship_group_template[20516] = {
 		ship_group = 20516,
 		name = "Lion",
 		background = "",
@@ -8236,11 +5926,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.activity_ins_ship_group_template
-
-	var_6_77[20138] = {
+	pg.base.activity_ins_ship_group_template[20138] = {
 		ship_group = 20138,
 		name = "Trafalgar",
 		background = "",
@@ -8249,11 +5935,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.activity_ins_ship_group_template
-
-	var_6_78[20235] = {
+	pg.base.activity_ins_ship_group_template[20235] = {
 		ship_group = 20235,
 		name = "Cleopatra",
 		background = "",
@@ -8262,11 +5944,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.activity_ins_ship_group_template
-
-	var_6_79[20139] = {
+	pg.base.activity_ins_ship_group_template[20139] = {
 		ship_group = 20139,
 		name = "Gallant",
 		background = "",
@@ -8275,11 +5953,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.activity_ins_ship_group_template
-
-	var_6_80[20236] = {
+	pg.base.activity_ins_ship_group_template[20236] = {
 		ship_group = 20236,
 		name = "Trinidad",
 		background = "",
@@ -8288,11 +5962,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.activity_ins_ship_group_template
-
-	var_6_81[10509] = {
+	pg.base.activity_ins_ship_group_template[10509] = {
 		ship_group = 10509,
 		name = "Colorado",
 		background = "",
@@ -8301,11 +5971,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.activity_ins_ship_group_template
-
-	var_6_82[10510] = {
+	pg.base.activity_ins_ship_group_template[10510] = {
 		ship_group = 10510,
 		name = "Maryland",
 		background = "",
@@ -8314,11 +5980,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.activity_ins_ship_group_template
-
-	var_6_83[10511] = {
+	pg.base.activity_ins_ship_group_template[10511] = {
 		ship_group = 10511,
 		name = "West Virginia",
 		background = "",
@@ -8327,11 +5989,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.activity_ins_ship_group_template
-
-	var_6_84[10121] = {
+	pg.base.activity_ins_ship_group_template[10121] = {
 		ship_group = 10121,
 		name = "BLACK★ROCK SHOOTER",
 		background = "",
@@ -8340,11 +5998,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.activity_ins_ship_group_template
-
-	var_6_85[10122] = {
+	pg.base.activity_ins_ship_group_template[10122] = {
 		ship_group = 10122,
 		name = "DEAD MASTER",
 		background = "",
@@ -8353,11 +6007,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.activity_ins_ship_group_template
-
-	var_6_86[30149] = {
+	pg.base.activity_ins_ship_group_template[30149] = {
 		ship_group = 30149,
 		name = "Kawakaze",
 		background = "",
@@ -8366,11 +6016,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.activity_ins_ship_group_template
-
-	var_6_87[40407] = {
+	pg.base.activity_ins_ship_group_template[40407] = {
 		ship_group = 40407,
 		name = "Admiral Zenker",
 		background = "",
@@ -8379,11 +6025,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.activity_ins_ship_group_template
-
-	var_6_88[40814] = {
+	pg.base.activity_ins_ship_group_template[40814] = {
 		ship_group = 40814,
 		name = "U.B.552",
 		background = "",
@@ -8392,11 +6034,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.activity_ins_ship_group_template
-
-	var_6_89[40113] = {
+	pg.base.activity_ins_ship_group_template[40113] = {
 		ship_group = 40113,
 		name = "AAAZielplanerin13",
 		background = "",
@@ -8405,11 +6043,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.activity_ins_ship_group_template
-
-	var_6_90[17] = {
+	pg.base.activity_ins_ship_group_template[17] = {
 		ship_group = 1130001,
 		name = "Yumia Liessfeldt",
 		background = "",
@@ -8418,11 +6052,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.activity_ins_ship_group_template
-
-	var_6_91[18] = {
+	pg.base.activity_ins_ship_group_template[18] = {
 		ship_group = 1130002,
 		name = "Isla von Duerer",
 		background = "",
@@ -8431,11 +6061,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.activity_ins_ship_group_template
-
-	var_6_92[19] = {
+	pg.base.activity_ins_ship_group_template[19] = {
 		ship_group = 1130003,
 		name = "Nina Friede",
 		background = "",
@@ -8444,11 +6070,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.activity_ins_ship_group_template
-
-	var_6_93[20] = {
+	pg.base.activity_ins_ship_group_template[20] = {
 		ship_group = 1130004,
 		name = "Lenja",
 		background = "",
@@ -8457,11 +6079,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.activity_ins_ship_group_template
-
-	var_6_94[301541] = {
+	pg.base.activity_ins_ship_group_template[301541] = {
 		ship_group = 301541,
 		name = "Kiyonami",
 		background = "",
@@ -8470,11 +6088,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.activity_ins_ship_group_template
-
-	var_6_95[17] = {
+	pg.base.activity_ins_ship_group_template[17] = {
 		ship_group = 80401,
 		name = "Masséna",
 		background = "",
@@ -8483,11 +6097,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.activity_ins_ship_group_template
-
-	var_6_96[80601] = {
+	pg.base.activity_ins_ship_group_template[80601] = {
 		ship_group = 80601,
 		name = "Bois Belleau",
 		background = "",
@@ -8496,11 +6106,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.activity_ins_ship_group_template
-
-	var_6_97[80105] = {
+	pg.base.activity_ins_ship_group_template[80105] = {
 		ship_group = 80105,
 		name = "Le hardi",
 		background = "",
@@ -8509,11 +6115,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.activity_ins_ship_group_template
-
-	var_6_98[80303] = {
+	pg.base.activity_ins_ship_group_template[80303] = {
 		ship_group = 80303,
 		name = "Duquesne ",
 		background = "",
@@ -8522,8 +6124,11 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_6_98
-	var_6_98.base.activity_ins_ship_group_template[80204] = {
+
+	return
+end)()
+;(function()
+	pg.base.activity_ins_ship_group_template[80204] = {
 		ship_group = 80204,
 		name = "Duguay-Trouin ",
 		background = "",
@@ -8532,15 +6137,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.activity_ins_ship_group_template
-
-	var_7_0[900939] = {
+	pg.base.activity_ins_ship_group_template[900939] = {
 		ship_group = 900939,
 		name = "Kansas",
 		background = "",
@@ -8549,11 +6146,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.activity_ins_ship_group_template
-
-	var_7_1[30716] = {
+	pg.base.activity_ins_ship_group_template[30716] = {
 		ship_group = 30716,
 		name = "Hakuhō ",
 		background = "",
@@ -8562,11 +6155,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.activity_ins_ship_group_template
-
-	var_7_2[31702] = {
+	pg.base.activity_ins_ship_group_template[31702] = {
 		ship_group = 31702,
 		name = "I404 ",
 		background = "",
@@ -8575,11 +6164,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.activity_ins_ship_group_template
-
-	var_7_3[30516] = {
+	pg.base.activity_ins_ship_group_template[30516] = {
 		ship_group = 30516,
 		name = "Omi",
 		background = "",
@@ -8588,11 +6173,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.activity_ins_ship_group_template
-
-	var_7_4[30320] = {
+	pg.base.activity_ins_ship_group_template[30320] = {
 		ship_group = 30320,
 		name = "Asama ",
 		background = "",
@@ -8601,11 +6182,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.activity_ins_ship_group_template
-
-	var_7_5[30227] = {
+	pg.base.activity_ins_ship_group_template[30227] = {
 		ship_group = 30227,
 		name = "Minase",
 		background = "",
@@ -8614,11 +6191,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.activity_ins_ship_group_template
-
-	var_7_6[30192] = {
+	pg.base.activity_ins_ship_group_template[30192] = {
 		ship_group = 30192,
 		name = "Taekaze",
 		background = "",
@@ -8627,11 +6200,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.activity_ins_ship_group_template
-
-	var_7_7[20103] = {
+	pg.base.activity_ins_ship_group_template[20103] = {
 		ship_group = 20103,
 		name = "Ardent",
 		background = "",
@@ -8640,11 +6209,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.activity_ins_ship_group_template
-
-	var_7_8[10201] = {
+	pg.base.activity_ins_ship_group_template[10201] = {
 		ship_group = 10201,
 		name = "Omaha",
 		background = "",
@@ -8653,11 +6218,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.activity_ins_ship_group_template
-
-	var_7_9[15] = {
+	pg.base.activity_ins_ship_group_template[15] = {
 		ship_group = 69903,
 		name = "Cuniberti",
 		background = "",
@@ -8666,11 +6227,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.activity_ins_ship_group_template
-
-	var_7_10[1140001] = {
+	pg.base.activity_ins_ship_group_template[1140001] = {
 		ship_group = 1140001,
 		name = "Hestia",
 		background = "",
@@ -8679,11 +6236,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.activity_ins_ship_group_template
-
-	var_7_11[1140002] = {
+	pg.base.activity_ins_ship_group_template[1140002] = {
 		ship_group = 1140002,
 		name = "Ryu Lion",
 		background = "",
@@ -8692,11 +6245,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.activity_ins_ship_group_template
-
-	var_7_12[12] = {
+	pg.base.activity_ins_ship_group_template[12] = {
 		ship_group = 960012,
 		name = "Queen Anne's Revenge",
 		background = "",
@@ -8705,11 +6254,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.activity_ins_ship_group_template
-
-	var_7_13[13] = {
+	pg.base.activity_ins_ship_group_template[13] = {
 		ship_group = 960013,
 		name = "Lyme",
 		background = "",
@@ -8718,11 +6263,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.activity_ins_ship_group_template
-
-	var_7_14[14] = {
+	pg.base.activity_ins_ship_group_template[14] = {
 		ship_group = 960014,
 		name = "Pearl ",
 		background = "",
@@ -8731,11 +6272,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.activity_ins_ship_group_template
-
-	var_7_15[15] = {
+	pg.base.activity_ins_ship_group_template[15] = {
 		ship_group = 960015,
 		name = "Royal James",
 		background = "",
@@ -8744,11 +6281,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.activity_ins_ship_group_template
-
-	var_7_16[16] = {
+	pg.base.activity_ins_ship_group_template[16] = {
 		ship_group = 960016,
 		name = "Adventure",
 		background = "",
@@ -8757,11 +6290,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.activity_ins_ship_group_template
-
-	var_7_17[30121] = {
+	pg.base.activity_ins_ship_group_template[30121] = {
 		ship_group = 30121,
 		name = "Hatsuharu",
 		background = "",
@@ -8770,11 +6299,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.activity_ins_ship_group_template
-
-	var_7_18[1150001] = {
+	pg.base.activity_ins_ship_group_template[1150001] = {
 		ship_group = 1150001,
 		name = "Tohka Yatogami",
 		background = "",
@@ -8783,11 +6308,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.activity_ins_ship_group_template
-
-	var_7_19[1150002] = {
+	pg.base.activity_ins_ship_group_template[1150002] = {
 		ship_group = 1150002,
 		name = "Origami Tobiichi",
 		background = "",
@@ -8796,11 +6317,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.activity_ins_ship_group_template
-
-	var_7_20[1150003] = {
+	pg.base.activity_ins_ship_group_template[1150003] = {
 		ship_group = 1150003,
 		name = "Kotori Itsuka",
 		background = "",
@@ -8809,11 +6326,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.activity_ins_ship_group_template
-
-	var_7_21[1150004] = {
+	pg.base.activity_ins_ship_group_template[1150004] = {
 		ship_group = 1150004,
 		name = "Yoshino",
 		background = "",
@@ -8822,11 +6335,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.activity_ins_ship_group_template
-
-	var_7_22[1150005] = {
+	pg.base.activity_ins_ship_group_template[1150005] = {
 		ship_group = 1150005,
 		name = "Kurumi Tokisaki",
 		background = "",
@@ -8835,11 +6344,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.activity_ins_ship_group_template
-
-	var_7_23[1150006] = {
+	pg.base.activity_ins_ship_group_template[1150006] = {
 		ship_group = 1150006,
 		name = "Kaguya Yamai・Yuzuru Yamai",
 		background = "",
@@ -8848,11 +6353,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.activity_ins_ship_group_template
-
-	var_7_24[10110] = {
+	pg.base.activity_ins_ship_group_template[10110] = {
 		ship_group = 10110,
 		name = "William D. Porter ",
 		background = "",
@@ -8861,11 +6362,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.activity_ins_ship_group_template
-
-	var_7_25[10155] = {
+	pg.base.activity_ins_ship_group_template[10155] = {
 		ship_group = 10155,
 		name = "Clarence K. Bronson",
 		background = "",
@@ -8874,11 +6371,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.activity_ins_ship_group_template
-
-	var_7_26[10235] = {
+	pg.base.activity_ins_ship_group_template[10235] = {
 		ship_group = 10235,
 		name = "Pasadena",
 		background = "",
@@ -8887,11 +6380,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.activity_ins_ship_group_template
-
-	var_7_27[10725] = {
+	pg.base.activity_ins_ship_group_template[10725] = {
 		ship_group = 10725,
 		name = "Cowpens",
 		background = "",
@@ -8900,11 +6389,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.activity_ins_ship_group_template
-
-	var_7_28[10716] = {
+	pg.base.activity_ins_ship_group_template[10716] = {
 		ship_group = 10716,
 		name = "Lexington",
 		background = "",
@@ -8913,11 +6398,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.activity_ins_ship_group_template
-
-	var_7_29[10140] = {
+	pg.base.activity_ins_ship_group_template[10140] = {
 		ship_group = 10140,
 		name = "Aylwin",
 		background = "",
@@ -8926,11 +6407,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.activity_ins_ship_group_template
-
-	var_7_30[49910] = {
+	pg.base.activity_ins_ship_group_template[49910] = {
 		ship_group = 49910,
 		name = "Mecklenburg",
 		background = "",
@@ -8939,11 +6416,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.activity_ins_ship_group_template
-
-	var_7_31[31] = {
+	pg.base.activity_ins_ship_group_template[31] = {
 		ship_group = 79903,
 		name = "Dmitri Donskoi",
 		background = "",
@@ -8952,11 +6425,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.activity_ins_ship_group_template
-
-	var_7_32[30161] = {
+	pg.base.activity_ins_ship_group_template[30161] = {
 		ship_group = 30161,
 		name = "Hamakaze",
 		background = "",
@@ -8965,11 +6434,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.activity_ins_ship_group_template
-
-	var_7_33[19906] = {
+	pg.base.activity_ins_ship_group_template[19906] = {
 		ship_group = 19906,
 		name = "Kansas",
 		background = "",
@@ -8978,11 +6443,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.activity_ins_ship_group_template
-
-	var_7_34[60509] = {
+	pg.base.activity_ins_ship_group_template[60509] = {
 		ship_group = 60509,
 		name = "Francesco Caracciolo",
 		background = "",
@@ -8991,11 +6452,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.activity_ins_ship_group_template
-
-	var_7_35[60204] = {
+	pg.base.activity_ins_ship_group_template[60204] = {
 		ship_group = 60204,
 		name = "Alberto di Giussano",
 		background = "",
@@ -9004,11 +6461,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.activity_ins_ship_group_template
-
-	var_7_36[60112] = {
+	pg.base.activity_ins_ship_group_template[60112] = {
 		ship_group = 60112,
 		name = "Ugolino Vivaldi",
 		background = "",
@@ -9017,11 +6470,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.activity_ins_ship_group_template
-
-	var_7_37[10520] = {
+	pg.base.activity_ins_ship_group_template[10520] = {
 		ship_group = 10520,
 		name = "Alabama",
 		background = "",
@@ -9030,11 +6479,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.activity_ins_ship_group_template
-
-	var_7_38[30194] = {
+	pg.base.activity_ins_ship_group_template[30194] = {
 		ship_group = 30194,
 		name = "Fujinami",
 		background = "",
@@ -9043,11 +6488,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.activity_ins_ship_group_template
-
-	var_7_39[50302] = {
+	pg.base.activity_ins_ship_group_template[50302] = {
 		ship_group = 50302,
 		name = "Chang Wu",
 		background = "",
@@ -9056,11 +6497,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.activity_ins_ship_group_template
-
-	var_7_40[50212] = {
+	pg.base.activity_ins_ship_group_template[50212] = {
 		ship_group = 50212,
 		name = "Hai Chou",
 		background = "",
@@ -9069,11 +6506,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.activity_ins_ship_group_template
-
-	var_7_41[40125] = {
+	pg.base.activity_ins_ship_group_template[40125] = {
 		ship_group = 40125,
 		name = "Zerstörer.25",
 		background = "",
@@ -9082,11 +6515,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.activity_ins_ship_group_template
-
-	var_7_42[31] = {
+	pg.base.activity_ins_ship_group_template[31] = {
 		ship_group = 70303,
 		name = "Moskva",
 		background = "",
@@ -9095,11 +6524,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.activity_ins_ship_group_template
-
-	var_7_43[70113] = {
+	pg.base.activity_ins_ship_group_template[70113] = {
 		ship_group = 70113,
 		name = "Ozornoy",
 		background = "",
@@ -9108,11 +6533,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.activity_ins_ship_group_template
-
-	var_7_44[70209] = {
+	pg.base.activity_ins_ship_group_template[70209] = {
 		ship_group = 70209,
 		name = "Krasny Kavkaz",
 		background = "",
@@ -9121,11 +6542,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.activity_ins_ship_group_template
-
-	var_7_45[70210] = {
+	pg.base.activity_ins_ship_group_template[70210] = {
 		ship_group = 70210,
 		name = "Bogatyr",
 		background = "",
@@ -9134,11 +6551,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.activity_ins_ship_group_template
-
-	var_7_46[10704] = {
+	pg.base.activity_ins_ship_group_template[10704] = {
 		ship_group = 10704,
 		name = "Ranger",
 		background = "",
@@ -9147,11 +6560,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.activity_ins_ship_group_template
-
-	var_7_47[20504] = {
+	pg.base.activity_ins_ship_group_template[20504] = {
 		ship_group = 20504,
 		name = "Rodney",
 		background = "",
@@ -9160,11 +6569,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.activity_ins_ship_group_template
-
-	var_7_48[30717] = {
+	pg.base.activity_ins_ship_group_template[30717] = {
 		ship_group = 30717,
 		name = "Unryū",
 		background = "",
@@ -9173,11 +6578,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.activity_ins_ship_group_template
-
-	var_7_49[30228] = {
+	pg.base.activity_ins_ship_group_template[30228] = {
 		ship_group = 30228,
 		name = "Kizu",
 		background = "",
@@ -9186,11 +6587,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.activity_ins_ship_group_template
-
-	var_7_50[30229] = {
+	pg.base.activity_ins_ship_group_template[30229] = {
 		ship_group = 30229,
 		name = "Nayoro",
 		background = "",
@@ -9199,11 +6596,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.activity_ins_ship_group_template
-
-	var_7_51[30806] = {
+	pg.base.activity_ins_ship_group_template[30806] = {
 		ship_group = 30806,
 		name = "I168",
 		background = "",
@@ -9212,11 +6605,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.activity_ins_ship_group_template
-
-	var_7_52[30125] = {
+	pg.base.activity_ins_ship_group_template[30125] = {
 		ship_group = 30125,
 		name = "Ariake",
 		background = "",
@@ -9225,11 +6614,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.activity_ins_ship_group_template
-
-	var_7_53[20605] = {
+	pg.base.activity_ins_ship_group_template[20605] = {
 		ship_group = 20605,
 		name = "Chaser",
 		background = "",
@@ -9238,11 +6623,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.activity_ins_ship_group_template
-
-	var_7_54[40120] = {
+	pg.base.activity_ins_ship_group_template[40120] = {
 		ship_group = 40120,
 		name = "Karl Galster",
 		background = "",
@@ -9251,11 +6632,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.activity_ins_ship_group_template
-
-	var_7_55[60506] = {
+	pg.base.activity_ins_ship_group_template[60506] = {
 		ship_group = 60506,
 		name = "Giulio Cesare",
 		background = "",
@@ -9264,11 +6641,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.activity_ins_ship_group_template
-
-	var_7_56[10990] = {
+	pg.base.activity_ins_ship_group_template[10990] = {
 		ship_group = 10990,
 		name = "Elise",
 		background = "",
@@ -9277,11 +6650,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.activity_ins_ship_group_template
-
-	var_7_57[10991] = {
+	pg.base.activity_ins_ship_group_template[10991] = {
 		ship_group = 10991,
 		name = "Shizuku",
 		background = "",
@@ -9290,11 +6659,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.activity_ins_ship_group_template
-
-	var_7_58[10992] = {
+	pg.base.activity_ins_ship_group_template[10992] = {
 		ship_group = 10992,
 		name = "Shandy",
 		background = "",
@@ -9303,11 +6668,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.activity_ins_ship_group_template
-
-	var_7_59[10993] = {
+	pg.base.activity_ins_ship_group_template[10993] = {
 		ship_group = 10993,
 		name = "Tsukushi",
 		background = "",
@@ -9316,11 +6677,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.activity_ins_ship_group_template
-
-	var_7_60[10994] = {
+	pg.base.activity_ins_ship_group_template[10994] = {
 		ship_group = 10994,
 		name = "Patty",
 		background = "",
@@ -9329,11 +6686,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.activity_ins_ship_group_template
-
-	var_7_61[10995] = {
+	pg.base.activity_ins_ship_group_template[10995] = {
 		ship_group = 10995,
 		name = "Yukino",
 		background = "",
@@ -9342,11 +6695,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.activity_ins_ship_group_template
-
-	var_7_62[10107] = {
+	pg.base.activity_ins_ship_group_template[10107] = {
 		ship_group = 10107,
 		name = "McCall",
 		background = "",
@@ -9355,11 +6704,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.activity_ins_ship_group_template
-
-	var_7_63[10139] = {
+	pg.base.activity_ins_ship_group_template[10139] = {
 		ship_group = 10139,
 		name = "Mullany",
 		background = "",
@@ -9368,11 +6713,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.activity_ins_ship_group_template
-
-	var_7_64[10138] = {
+	pg.base.activity_ins_ship_group_template[10138] = {
 		ship_group = 10138,
 		name = "Kimberly",
 		background = "",
@@ -9381,11 +6722,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.activity_ins_ship_group_template
-
-	var_7_65[40815] = {
+	pg.base.activity_ins_ship_group_template[40815] = {
 		ship_group = 40815,
 		name = "U-2501>w<",
 		background = "",
@@ -9394,11 +6731,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.activity_ins_ship_group_template
-
-	var_7_66[40114] = {
+	pg.base.activity_ins_ship_group_template[40114] = {
 		ship_group = 40114,
 		name = "Zerstörer14",
 		background = "",
@@ -9407,11 +6740,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.activity_ins_ship_group_template
-
-	var_7_67[40115] = {
+	pg.base.activity_ins_ship_group_template[40115] = {
 		ship_group = 40115,
 		name = "Fahrzeugkiller15",
 		background = "",
@@ -9420,11 +6749,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.activity_ins_ship_group_template
-
-	var_7_68[40317] = {
+	pg.base.activity_ins_ship_group_template[40317] = {
 		ship_group = 40317,
 		name = "Prinz Moritz",
 		background = "",
@@ -9433,11 +6758,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.activity_ins_ship_group_template
-
-	var_7_69[40507] = {
+	pg.base.activity_ins_ship_group_template[40507] = {
 		ship_group = 40507,
 		name = "Götz von Berlichingen",
 		background = "",
@@ -9446,11 +6767,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.activity_ins_ship_group_template
-
-	var_7_70[20309] = {
+	pg.base.activity_ins_ship_group_template[20309] = {
 		ship_group = 20309,
 		name = "Sussex",
 		background = "",
@@ -9459,11 +6776,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.activity_ins_ship_group_template
-
-	var_7_71[10106] = {
+	pg.base.activity_ins_ship_group_template[10106] = {
 		ship_group = 10106,
 		name = "Craven",
 		background = "",
@@ -9472,11 +6785,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.activity_ins_ship_group_template
-
-	var_7_72[9] = {
+	pg.base.activity_ins_ship_group_template[9] = {
 		ship_group = 81801,
 		name = "Cherbourg ",
 		background = "",
@@ -9485,11 +6794,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.activity_ins_ship_group_template
-
-	var_7_73[80602] = {
+	pg.base.activity_ins_ship_group_template[80602] = {
 		ship_group = 80602,
 		name = "Arromanches ",
 		background = "",
@@ -9498,11 +6803,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.activity_ins_ship_group_template
-
-	var_7_74[80106] = {
+	pg.base.activity_ins_ship_group_template[80106] = {
 		ship_group = 80106,
 		name = "L'Intrépide ",
 		background = "",
@@ -9511,11 +6812,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.activity_ins_ship_group_template
-
-	var_7_75[60505] = {
+	pg.base.activity_ins_ship_group_template[60505] = {
 		ship_group = 60505,
 		name = "Conte di Cavour",
 		background = "",
@@ -9524,11 +6821,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.activity_ins_ship_group_template
-
-	var_7_76[10114] = {
+	pg.base.activity_ins_ship_group_template[10114] = {
 		ship_group = 10114,
 		name = "Foote",
 		background = "",
@@ -9537,11 +6830,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.activity_ins_ship_group_template
-
-	var_7_77[10143] = {
+	pg.base.activity_ins_ship_group_template[10143] = {
 		ship_group = 10143,
 		name = "Halsey Powell",
 		background = "",
@@ -9550,11 +6839,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.activity_ins_ship_group_template
-
-	var_7_78[20237] = {
+	pg.base.activity_ins_ship_group_template[20237] = {
 		ship_group = 20237,
 		name = "Superb",
 		background = "",
@@ -9563,11 +6848,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.activity_ins_ship_group_template
-
-	var_7_79[20314] = {
+	pg.base.activity_ins_ship_group_template[20314] = {
 		ship_group = 20314,
 		name = "Surrey",
 		background = "",
@@ -9576,11 +6857,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.activity_ins_ship_group_template
-
-	var_7_80[20115] = {
+	pg.base.activity_ins_ship_group_template[20115] = {
 		ship_group = 20115,
 		name = "Griffin",
 		background = "",
@@ -9589,11 +6866,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.activity_ins_ship_group_template
-
-	var_7_81[71379] = {
+	pg.base.activity_ins_ship_group_template[71379] = {
 		ship_group = 71379,
 		name = "A2",
 		background = "",
@@ -9602,11 +6875,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.activity_ins_ship_group_template
-
-	var_7_82[71380] = {
+	pg.base.activity_ins_ship_group_template[71380] = {
 		ship_group = 71380,
 		name = "2B",
 		background = "",
@@ -9615,11 +6884,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.activity_ins_ship_group_template
-
-	var_7_83[70569] = {
+	pg.base.activity_ins_ship_group_template[70569] = {
 		ship_group = 70569,
 		name = "Downes",
 		background = "",
@@ -9628,11 +6893,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.activity_ins_ship_group_template
-
-	var_7_84[20301] = {
+	pg.base.activity_ins_ship_group_template[20301] = {
 		ship_group = 20301,
 		name = "London",
 		background = "",
@@ -9641,11 +6902,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.activity_ins_ship_group_template
-
-	var_7_85[40405] = {
+	pg.base.activity_ins_ship_group_template[40405] = {
 		ship_group = 40405,
 		name = "Brünhilde",
 		background = "",
@@ -9654,11 +6911,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.activity_ins_ship_group_template
-
-	var_7_86[10146] = {
+	pg.base.activity_ins_ship_group_template[10146] = {
 		ship_group = 10146,
 		name = "Stephen Potter",
 		background = "",
@@ -9667,11 +6920,7 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.activity_ins_ship_group_template
-
-	var_7_87[10142] = {
+	pg.base.activity_ins_ship_group_template[10142] = {
 		ship_group = 10142,
 		name = "Smalley",
 		background = "",
@@ -9680,13 +6929,66 @@ end)()
 		type = 1,
 		sculpture_ii = ""
 	}
-	pg = var_7_87
-	var_7_87.base.activity_ins_ship_group_template[20307] = {
+	pg.base.activity_ins_ship_group_template[20307] = {
 		ship_group = 20307,
 		name = "York",
 		background = "",
 		sculpture = "yueke",
 		nationality = 2,
+		type = 1,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[10720] = {
+		ship_group = 10720,
+		name = "Bennington",
+		background = "",
+		sculpture = "benningdun",
+		nationality = 1,
+		type = 1,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[10156] = {
+		ship_group = 10156,
+		name = "Collett",
+		background = "",
+		sculpture = "kelaite",
+		nationality = 1,
+		type = 1,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[10157] = {
+		ship_group = 10157,
+		name = "Harrison",
+		background = "",
+		sculpture = "halisen",
+		nationality = 1,
+		type = 1,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[10236] = {
+		ship_group = 10236,
+		name = "Vicksburg",
+		background = "",
+		sculpture = "weikesibao",
+		nationality = 1,
+		type = 1,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[10158] = {
+		ship_group = 10158,
+		name = "John Rodgers",
+		background = "",
+		sculpture = "yuehanluojiesi",
+		nationality = 1,
+		type = 1,
+		sculpture_ii = ""
+	}
+	pg.base.activity_ins_ship_group_template[30159] = {
+		ship_group = 30159,
+		name = "Urakaze",
+		background = "",
+		sculpture = "pufeng",
+		nationality = 3,
 		type = 1,
 		sculpture_ii = ""
 	}

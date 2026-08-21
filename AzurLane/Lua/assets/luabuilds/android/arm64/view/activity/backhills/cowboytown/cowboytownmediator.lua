@@ -1,119 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CowboyTownMediator", import("..TemplateMV.BackHillMediatorTemplate"))
 
-local var_0_0 = "CowboyTownMediator"
+var_0_0.MINI_GAME = "MINI_GAME"
+var_0_0.TASK = "TASK"
+var_0_0.EXPANSION = "EXPANSION"
+var_0_0.STORY = "STORY"
+var_0_0.SKIN = "SKIN"
+var_0_0.MINI_GAME_ID = 28
 
-import = var_0_10003
+function var_0_0.register(arg_1_0)
+	arg_1_0:BindEvent()
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..TemplateMV.BackHillMediatorTemplate"))
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_TOWN)
 
-var_0_1.MINI_GAME = "MINI_GAME"
-var_0_1.TASK = "TASK"
-var_0_1.EXPANSION = "EXPANSION"
-var_0_1.STORY = "STORY"
-var_0_1.SKIN = "SKIN"
-var_0_1.MINI_GAME_ID = 28
+	assert(var_1_0, "Building Activity Not Found")
 
-function var_0_1.register(arg_1_0)
-	local var_1_0 = arg_1_0
+	arg_1_0.activity = var_1_0
 
-	arg_1_0.BindEvent(var_1_0)
-
-	getProxy = var_1
-	ActivityProxy = var_1_0
-
-	local var_1_1 = var_1(var_1_0)
-	local var_1_2 = var_1.getActivityByType
-
-	ActivityConst = var_1_10004
-
-	local var_1_3 = var_1_2(var_1_1, var_1_10004.ACTIVITY_TYPE_TOWN)
-
-	assert = var_1_10002
-
-	var_1_10002(var_1_3, "Building Activity Not Found")
-
-	arg_1_0.activity = var_1_3
-
-	local var_1_4 = arg_1_0.viewComponent
-
-	var_2.UpdateActivity(var_1_4, var_1_3)
+	arg_1_0.viewComponent:UpdateActivity(var_1_0)
 
 	return
 end
 
-function var_0_1.BindEvent(arg_2_0)
-	var_0_1.super.BindEvent(arg_2_0)
-	arg_2_0:bind(var_0_1.MINI_GAME, function()
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_3_1(var_3_0, var_2_10003.GO_MINI_GAME, var_0_1.MINI_GAME_ID)
+function var_0_0.BindEvent(arg_2_0)
+	var_0_0.super.BindEvent(arg_2_0)
+	arg_2_0:bind(var_0_0.MINI_GAME, function()
+		arg_2_0:sendNotification(GAME.GO_MINI_GAME, var_0_0.MINI_GAME_ID)
 
 		return
 	end)
-	arg_2_0:bind(var_0_1.STORY, function()
-		local var_4_0 = arg_2_0
-		local var_4_1 = var_0.addSubLayers
-
-		Context = var_2_10003
-
-		local var_4_2 = var_2_10003.New
-		local var_4_3 = {}
-
-		TownSkinMediator = var_2_10006
-		var_4_3.mediator = var_2_10006
-		TownSkinPage = var_2_10006
-		var_4_3.viewComponent = var_2_10006
-
-		var_4_1(var_4_0, var_4_2(var_4_3))
+	arg_2_0:bind(var_0_0.STORY, function()
+		arg_2_0:addSubLayers(Context.New({
+			mediator = TownSkinMediator,
+			viewComponent = TownSkinPage
+		}))
 
 		return
 	end)
-	arg_2_0:bind(var_0_1.SKIN, function()
-		local var_5_0 = arg_2_0
-		local var_5_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		local var_5_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_5_1(var_5_0, var_5_2, var_2_10004.SKINSHOP)
+	arg_2_0:bind(var_0_0.SKIN, function()
+		arg_2_0:sendNotification(GAME.GO_SCENE, SCENE.SKINSHOP)
 
 		return
 	end)
-	arg_2_0:bind(var_0_1.EXPANSION, function()
-		local var_6_0 = arg_2_0
-		local var_6_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		local var_6_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_6_1(var_6_0, var_6_2, var_2_10004.TOWN)
+	arg_2_0:bind(var_0_0.EXPANSION, function()
+		arg_2_0:sendNotification(GAME.GO_SCENE, SCENE.TOWN)
 
 		return
 	end)
-	arg_2_0:bind(var_0_1.TASK, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_2_0
-		local var_7_1 = var_2.addSubLayers
-
-		Context = var_2_10005
-
-		local var_7_2 = var_2_10005.New
-		local var_7_3 = {}
-
-		SixYearUsTaskMediator = var_2_10008
-		var_7_3.mediator = var_2_10008
-		SixYearUsTaskScene = var_2_10008
-		var_7_3.viewComponent = var_2_10008
-
-		var_7_1(var_7_0, var_7_2(var_7_3))
+	arg_2_0:bind(var_0_0.TASK, function(arg_7_0, arg_7_1)
+		arg_2_0:addSubLayers(Context.New({
+			mediator = SixYearUsTaskMediator,
+			viewComponent = SixYearUsTaskScene
+		}))
 
 		return
 	end)
@@ -121,47 +58,25 @@ function var_0_1.BindEvent(arg_2_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_8_0)
-	local var_8_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_8_0[1] = var_1_10002.ACTIVITY_UPDATED
-	GAME = var_2
-	var_8_0[2] = var_2.SUBMIT_ACTIVITY_TASK_DONE
-
-	return var_8_0
+function var_0_0.listNotificationInterests(arg_8_0)
+	return {
+		ActivityProxy.ACTIVITY_UPDATED,
+		GAME.SUBMIT_ACTIVITY_TASK_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1
-	local var_9_1 = arg_9_1.getName(var_9_0)
-	local var_9_2 = arg_9_1
-	local var_9_3 = arg_9_1.getBody(var_9_2)
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
 
-	ActivityProxy = var_9_0
-
-	local var_9_4
-
-	if var_9_1 == var_9_0.ACTIVITY_UPDATED then
-		var_9_4 = var_9_3:getConfig("type")
-		ActivityConst = var_9_2
-
-		if var_9_4 == var_9_2.ACTIVITY_TYPE_TownSkinStory then
-			local var_9_5 = arg_9_0.viewComponent
-
-			var_9_4.UpdateStoryView(var_9_5)
+	if var_9_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if arg_9_1:getBody():getConfig("type") == ActivityConst.ACTIVITY_TYPE_TownSkinStory then
+			arg_9_0.viewComponent:UpdateStoryView()
 		end
-	else
-		GAME = var_9_4
-
-		if var_9_1 == var_9_4.SUBMIT_ACTIVITY_TASK_DONE then
-			local var_9_6 = arg_9_0.viewComponent
-
-			var_4.UpdateTaskTips(var_9_6)
-		end
+	elseif var_9_0 == GAME.SUBMIT_ACTIVITY_TASK_DONE then
+		arg_9_0.viewComponent:UpdateTaskTips()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,70 +1,16 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CryptolaliaCard")
+﻿local var_0_0 = class("CryptolaliaCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 	arg_1_0._tf = arg_1_1.transform
-
-	local var_1_0 = arg_1_0._tf
-	local var_1_1 = var_2.Find(var_1_0, "icon")
-	local var_1_2 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.iconImg = var_1_2(var_1_1, var_5(var_1_10007))
-
-	local var_1_3 = arg_1_0._tf
-	local var_1_4 = var_2.Find(var_1_3, "name")
-	local var_1_5 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTxt = var_1_5(var_1_4, var_5(var_1_10007))
-
-	local var_1_6 = arg_1_0._tf
-	local var_1_7 = var_2.Find(var_1_6, "shipname")
-	local var_1_8 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.shipNameTxt = var_1_8(var_1_7, var_5(var_1_10007))
-
-	local var_1_9 = arg_1_0._tf
-	local var_1_10 = var_2.Find(var_1_9, "time")
-	local var_1_11 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.timeTxt = var_1_11(var_1_10, var_5(var_1_10007))
-
-	local var_1_12 = arg_1_0._tf
-	local var_1_13 = var_2.Find(var_1_12, "time")
-	local var_1_14 = var_2.GetComponent
-
-	typeof = var_5
-	CanvasGroup = var_1_10007
-	arg_1_0.timeCG = var_1_14(var_1_13, var_5(var_1_10007))
-
-	local var_1_15 = arg_1_0._tf
-
-	arg_1_0.selected = var_2.Find(var_1_15, "selected")
-
-	local var_1_16 = arg_1_0._tf
-	local var_1_17 = var_2.Find(var_1_16, "name/state")
-	local var_1_18 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.stateBtn = var_1_18(var_1_17, var_5(var_1_10007))
-
-	local var_1_19 = arg_1_0._tf
-	local var_1_20 = var_2.Find(var_1_19, "name/state/icon")
-	local var_1_21 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.stateIcon = var_1_21(var_1_20, var_5(var_1_10007))
+	arg_1_0.iconImg = arg_1_0._tf:Find("icon"):GetComponent(typeof(Image))
+	arg_1_0.nameTxt = arg_1_0._tf:Find("name"):GetComponent(typeof(Text))
+	arg_1_0.shipNameTxt = arg_1_0._tf:Find("shipname"):GetComponent(typeof(Text))
+	arg_1_0.timeTxt = arg_1_0._tf:Find("time"):GetComponent(typeof(Text))
+	arg_1_0.timeCG = arg_1_0._tf:Find("time"):GetComponent(typeof(CanvasGroup))
+	arg_1_0.selected = arg_1_0._tf:Find("selected")
+	arg_1_0.stateBtn = arg_1_0._tf:Find("name/state"):GetComponent(typeof(Image))
+	arg_1_0.stateIcon = arg_1_0._tf:Find("name/state/icon"):GetComponent(typeof(Image))
 
 	return
 end
@@ -74,11 +20,7 @@ function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
 	local var_2_0 = arg_2_1:ShipIcon()
 
-	PoolMgr = var_1_10005
-
-	local var_2_1 = var_1_10005.GetInstance()
-
-	var_5.GetSprite(var_2_1, "SquareIcon/" .. var_2_0, var_2_0, true, function(arg_3_0)
+	PoolMgr.GetInstance():GetSprite("SquareIcon/" .. var_2_0, var_2_0, true, function(arg_3_0)
 		if arg_2_0.exited then
 			return
 		end
@@ -88,63 +30,33 @@ function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 		return
 	end)
 
-	local var_2_2 = arg_2_0
-	local var_2_3 = arg_2_0.GetColor(var_2_2, arg_2_3)
-	local var_2_4 = arg_2_0.nameTxt
+	local var_2_1 = arg_2_0:GetColor(arg_2_3)
 
-	setColorStr = var_2_2
-	var_2_4.text = var_2_2(arg_2_1:GetName(), var_2_3)
+	arg_2_0.nameTxt.text = setColorStr(arg_2_1:GetName(), var_2_1)
 
-	local var_2_5 = arg_2_1:GetShipName()
+	local var_2_2 = arg_2_1:GetShipName()
 
-	utf8 = var_7
-
-	local var_2_6 = var_7.len(var_2_5)
-
-	if 11 <= var_2_6 then
-		utf8 = var_2_6
-		var_2_5 = var_2_6.sub(var_2_5, 1, 11) .. "..."
+	if utf8.len(var_2_2) >= 11 then
+		var_2_2 = utf8.sub(var_2_2, 1, 11) .. "..."
 	end
 
-	local var_2_7 = arg_2_0.shipNameTxt
-
-	setColorStr = var_8
-	var_2_7.text = var_8(var_2_5, var_2_3)
+	arg_2_0.shipNameTxt.text = setColorStr(var_2_2, var_2_1)
 	arg_2_0.timeCG.alpha = arg_2_3 and 1 or 0.7
+	arg_2_0.timeTxt.text = not arg_2_1:IsForever() and arg_2_1:IsLock() and setColorStr(arg_2_1:GetExpiredTimeStr(), var_2_1) or ""
 
-	local var_2_8
+	setActive(arg_2_0.selected, arg_2_3)
 
-	if not arg_2_1:IsForever() and arg_2_1:IsLock() then
-		var_2_8 = arg_2_0.timeTxt
-		setColorStr = var_8
-		var_2_8.text = var_8(arg_2_1:GetExpiredTimeStr(), var_2_3)
-	else
-		var_2_8 = arg_2_0.timeTxt
-		var_2_8.text = ""
-	end
+	local var_2_3 = arg_2_1:IsLock()
+	local var_2_4 = var_2_3 or not arg_2_1:IsDownloadAllRes()
 
-	setActive = var_2_8
+	setActive(arg_2_0.stateBtn, var_2_4)
 
-	var_2_8(arg_2_0.selected, arg_2_3)
+	if var_2_4 then
+		local var_2_5 = arg_2_0:_GetColor(arg_2_3)
 
-	local var_2_9 = arg_2_1
-	local var_2_10 = arg_2_1.IsLock(var_2_9) or not arg_2_1:IsDownloadAllRes()
-
-	setActive = var_2_9
-
-	var_2_9(arg_2_0.stateBtn, var_2_10)
-
-	if var_2_10 then
-		local var_2_11 = arg_2_0:_GetColor(arg_2_3)
-
-		arg_2_0.stateBtn.color = var_2_11
-		arg_2_0.stateIcon.color = var_2_11
-
-		local var_2_12 = var_7 and "list_panel_lock" or "list_panel_download"
-		local var_2_13 = arg_2_0.stateIcon
-
-		GetSpriteFromAtlas = var_12
-		var_2_13.sprite = var_12("ui/CryptolaliaUI_atlas", var_2_12)
+		arg_2_0.stateBtn.color = var_2_5
+		arg_2_0.stateIcon.color = var_2_5
+		arg_2_0.stateIcon.sprite = GetSpriteFromAtlas("ui/CryptolaliaUI_atlas", var_2_3 and "list_panel_lock" or "list_panel_download")
 	end
 
 	return
@@ -155,16 +67,7 @@ function var_0_0.GetColor(arg_4_0, arg_4_1)
 end
 
 function var_0_0._GetColor(arg_5_0, arg_5_1)
-	if arg_5_1 then
-		Color = var_1_10002
-
-		if not var_1_10002.New(0.764, 0.227, 0.29) then
-			Color = var_1_10002
-			var_1_10002 = var_1_10002.New(0.211, 0.215, 0.215)
-		end
-
-		return var_1_10002
-	end
+	return arg_5_1 and Color.New(0.764, 0.227, 0.29) or Color.New(0.211, 0.215, 0.215)
 end
 
 function var_0_0.Dispose(arg_6_0)

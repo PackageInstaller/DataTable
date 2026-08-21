@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "livingarea_cover") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "livingarea_cover"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.livingarea_cover = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.livingarea_cover
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.livingarea_cover
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.livingarea_cover = rawget(pg, "livingarea_cover") or setmetatable({
+	__name = "livingarea_cover"
+}, confNEO)
+pg.livingarea_cover.__namecode__ = true
+pg.livingarea_cover.all = {
 	0,
 	100101,
 	100102,
@@ -54,25 +27,11 @@ var_0_4.all = {
 	102102,
 	102103
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.livingarea_cover = {}
+pg.base = pg.base or {}
+pg.base.livingarea_cover = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.livingarea_cover
-
-	var_1_0[0] = {
+	pg.base.livingarea_cover[0] = {
 		get_tips = "",
 		name = "默认",
 		nighttime_res = "0_bg_night",
@@ -84,11 +43,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "0_icon"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.livingarea_cover
-
-	var_1_1[5] = {
+	pg.base.livingarea_cover[5] = {
 		get_tips = "获得了新的契合度封面",
 		name = "欢迎光临",
 		nighttime_res = "100101_bg_night",
@@ -100,11 +55,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100101_icon"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.livingarea_cover
-
-	var_1_2[6] = {
+	pg.base.livingarea_cover[6] = {
 		get_tips = "获得了新的契合度封面",
 		name = "沙发谈心",
 		nighttime_res = "100102_bg_night",
@@ -116,11 +67,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100102_icon"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.livingarea_cover
-
-	var_1_3[7] = {
+	pg.base.livingarea_cover[7] = {
 		get_tips = "获得了新的契合度封面",
 		name = "床铺整理",
 		nighttime_res = "100103_bg_night",
@@ -132,11 +79,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100103_icon"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.livingarea_cover
-
-	var_1_4[100201] = {
+	pg.base.livingarea_cover[100201] = {
 		get_tips = "获得了新的契合度封面",
 		name = "窗边等待",
 		nighttime_res = "100201_bg_night",
@@ -148,11 +91,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100201_icon"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.livingarea_cover
-
-	var_1_5[100202] = {
+	pg.base.livingarea_cover[100202] = {
 		get_tips = "获得了新的契合度封面",
 		name = "下午茶邀请",
 		nighttime_res = "100202_bg_night",
@@ -164,11 +103,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100202_icon"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.livingarea_cover
-
-	var_1_6[100203] = {
+	pg.base.livingarea_cover[100203] = {
 		get_tips = "获得了新的契合度封面",
 		name = "休憩时间",
 		nighttime_res = "100203_bg_night",
@@ -180,11 +115,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100203_icon"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.livingarea_cover
-
-	var_1_7[100301] = {
+	pg.base.livingarea_cover[100301] = {
 		get_tips = "获得了新的契合度封面",
 		name = "美味期待",
 		nighttime_res = "100301_bg_night",
@@ -196,11 +127,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100301_icon"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.livingarea_cover
-
-	var_1_8[100302] = {
+	pg.base.livingarea_cover[100302] = {
 		get_tips = "获得了新的契合度封面",
 		name = "故事时光",
 		nighttime_res = "100302_bg_night",
@@ -212,11 +139,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100302_icon"
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.livingarea_cover
-
-	var_1_9[100303] = {
+	pg.base.livingarea_cover[100303] = {
 		get_tips = "获得了新的契合度封面",
 		name = "绘境之约",
 		nighttime_res = "100303_bg_night",
@@ -228,11 +151,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "100303_icon"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.livingarea_cover
-
-	var_1_10[101101] = {
+	pg.base.livingarea_cover[101101] = {
 		get_tips = "获得了新的契合度封面",
 		name = "闲憩怡然",
 		nighttime_res = "101101_bg_night",
@@ -244,11 +163,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101101_icon"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.livingarea_cover
-
-	var_1_11[101102] = {
+	pg.base.livingarea_cover[101102] = {
 		get_tips = "获得了新的契合度封面",
 		name = "暖阳欢颜",
 		nighttime_res = "101102_bg_night",
@@ -260,11 +175,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101102_icon"
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.livingarea_cover
-
-	var_1_12[101103] = {
+	pg.base.livingarea_cover[101103] = {
 		get_tips = "获得了新的契合度封面",
 		name = "甜蜜絮语",
 		nighttime_res = "101103_bg_night",
@@ -276,11 +187,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101103_icon"
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.livingarea_cover
-
-	var_1_13[101201] = {
+	pg.base.livingarea_cover[101201] = {
 		get_tips = "获得了新的契合度封面",
 		name = "独享邀请 ",
 		nighttime_res = "101201_bg_night",
@@ -292,11 +199,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101201_icon"
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.livingarea_cover
-
-	var_1_14[101202] = {
+	pg.base.livingarea_cover[101202] = {
 		get_tips = "获得了新的契合度封面",
 		name = "相依的思绪 ",
 		nighttime_res = "101202_bg_night",
@@ -308,11 +211,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101202_icon"
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.livingarea_cover
-
-	var_1_15[101203] = {
+	pg.base.livingarea_cover[101203] = {
 		get_tips = "获得了新的契合度封面",
 		name = "情动指尖 ",
 		nighttime_res = "101203_bg_night",
@@ -324,11 +223,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101203_icon"
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.livingarea_cover
-
-	var_1_16[25] = {
+	pg.base.livingarea_cover[25] = {
 		get_tips = "获得了新的契合度封面",
 		name = "案前密语",
 		nighttime_res = "101401_bg_night",
@@ -340,11 +235,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101401_icon"
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.livingarea_cover
-
-	var_1_17[26] = {
+	pg.base.livingarea_cover[26] = {
 		get_tips = "获得了新的契合度封面",
 		name = "慵懒共憩",
 		nighttime_res = "101402_bg_night",
@@ -356,11 +247,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101402_icon"
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.livingarea_cover
-
-	var_1_18[27] = {
+	pg.base.livingarea_cover[27] = {
 		get_tips = "获得了新的契合度封面",
 		name = "枕畔邀约",
 		nighttime_res = "101403_bg_night",
@@ -372,11 +259,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "101403_icon"
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.livingarea_cover
-
-	var_1_19[102101] = {
+	pg.base.livingarea_cover[102101] = {
 		get_tips = "获得了新的契合度封面",
 		name = "暖意依偎",
 		nighttime_res = "102101_bg_night",
@@ -388,11 +271,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "102101_icon"
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.livingarea_cover
-
-	var_1_20[102102] = {
+	pg.base.livingarea_cover[102102] = {
 		get_tips = "获得了新的契合度封面",
 		name = "共眠时刻",
 		nighttime_res = "102102_bg_night",
@@ -404,8 +283,7 @@ var_0_4.base.livingarea_cover = {}
 		icon = "Props/drom3d_camera1003",
 		icon_res = "102102_icon"
 	}
-	pg = var_1_20
-	var_1_20.base.livingarea_cover[102103] = {
+	pg.base.livingarea_cover[102103] = {
 		get_tips = "获得了新的契合度封面",
 		name = "屏息待你",
 		nighttime_res = "102103_bg_night",

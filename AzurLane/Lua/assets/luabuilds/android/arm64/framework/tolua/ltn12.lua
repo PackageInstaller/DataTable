@@ -1,46 +1,32 @@
-﻿require = var_0_10000
+﻿local var_0_0 = require("string")
+local var_0_1 = require("table")
+local var_0_2 = unpack or var_0_1.unpack
+local var_0_3 = _G
+local var_0_4 = {}
 
-local var_0_0 = var_0_10000("string")
-
-require = var_0_10001
-
-local var_0_1 = var_0_10001("table")
-
-unpack = var_0_2
-
-local var_0_2 = var_0_2 or var_0_1.unpack
-
-_G = var_3
-
-local var_0_3 = {}
-
-module = var_0_10005
-
-if var_0_10005 then
-	var_0_3 = ltn12
+if module then
+	ltn12 = {}
 end
 
-local var_0_4 = {}
 local var_0_5 = {}
 local var_0_6 = {}
 local var_0_7 = {}
+local var_0_8 = {}
 
-var_0_3.filter = var_0_4
-var_0_3.source = var_0_5
-var_0_3.sink = var_0_6
-var_0_3.pump = var_0_7
+;({}).filter = {}
+;({}).source = {}
+;({}).sink = {}
+;({}).pump = {}
 
-local var_0_8 = var_0_2 or var_0_1.unpack
-local var_0_9 = var_3.select
+local var_0_9 = var_0_2 or var_0_1.unpack
 
-var_0_3.BLOCKSIZE = 2048
-var_0_3._VERSION = "LTN12 1.0.3"
+;({}).BLOCKSIZE = 2048
+;({})._VERSION = "LTN12 1.0.3"
 
-function var_0_4.cycle(arg_1_0, arg_1_1, arg_1_2)
-	var_0.assert(arg_1_0)
+function var_0_5.cycle(arg_1_0, arg_1_1, arg_1_2)
+	var_0_3.assert(arg_1_0)
 
 	return function(arg_2_0)
-		local var_2_0
 		local var_2_1, var_2_2 = arg_1_0(arg_1_1, arg_2_0, arg_1_2)
 
 		arg_1_1 = var_2_2
@@ -49,11 +35,11 @@ function var_0_4.cycle(arg_1_0, arg_1_1, arg_1_2)
 	end
 end
 
-function var_0_4.chain(...)
+function var_0_5.chain(...)
 	local var_3_0 = {
 		...
 	}
-	local var_3_1 = var_0.select("#", ...)
+	local var_3_1 = var_0_3.select("#", ...)
 	local var_3_2 = 1
 	local var_3_3 = 1
 	local var_3_4 = ""
@@ -63,7 +49,9 @@ function var_0_4.chain(...)
 
 		while true do
 			if var_3_3 == var_3_2 then
-				if var_3_0[var_3_3](arg_4_0) == "" or var_3_2 == var_3_1 then
+				arg_4_0 = var_3_0[var_3_3](arg_4_0)
+
+				if arg_4_0 == "" or var_3_2 == var_3_1 then
 					return arg_4_0
 				elseif arg_4_0 then
 					var_3_3 = var_3_3 + 1
@@ -71,17 +59,21 @@ function var_0_4.chain(...)
 					var_3_2 = var_3_2 + 1
 					var_3_3 = var_3_2
 				end
-			elseif var_3_0[var_3_3](arg_4_0 or "") == "" then
-				var_3_3 = var_3_3 - 1
-				arg_4_0 = var_3_4
-			elseif arg_4_0 then
-				if var_3_3 == var_3_1 then
-					return arg_4_0
-				else
-					var_3_3 = var_3_3 + 1
-				end
 			else
-				var_0.error("filter returned inappropriate nil")
+				arg_4_0 = var_3_0[var_3_3](arg_4_0 or "")
+
+				if arg_4_0 == "" then
+					var_3_3 = var_3_3 - 1
+					arg_4_0 = var_3_4
+				elseif arg_4_0 then
+					if var_3_3 == var_3_1 then
+						return arg_4_0
+					else
+						var_3_3 = var_3_3 + 1
+					end
+				else
+					var_0_3.error("filter returned inappropriate nil")
+				end
 			end
 		end
 
@@ -89,42 +81,37 @@ function var_0_4.chain(...)
 	end
 end
 
-local function var_0_10()
+local function var_0_11()
 	return nil
 end
 
-function var_0_5.empty()
-	return var_0_10
+;({}).empty = function()
+	return var_0_11
 end
-
-function var_0_5.error(arg_7_0)
+;({}).error = function(arg_7_0)
 	return function()
 		return nil, arg_7_0
 	end
 end
-
-function var_0_5.file(arg_9_0, arg_9_1)
+;({}).file = function(arg_9_0, arg_9_1)
 	if arg_9_0 then
 		return function()
-			local var_10_0 = arg_9_0
+			local var_10_0 = arg_9_0:read(var_0_4.BLOCKSIZE)
 
-			if not var_0.read(var_10_0, var_0_3.BLOCKSIZE) then
-				local var_10_1 = arg_9_0
-
-				var_1.close(var_10_1)
+			if not var_10_0 then
+				arg_9_0:close()
 			end
 
-			return var_0
+			return var_10_0
 		end
 	else
-		return var_0_5.error(arg_9_1 or "unable to open file")
+		return var_0_6.error(arg_9_1 or "unable to open file")
 	end
 
 	return
 end
-
-function var_0_5.simplify(arg_11_0)
-	var_0.assert(arg_11_0)
+;({}).simplify = function(arg_11_0)
+	var_0_3.assert(arg_11_0)
 
 	return function()
 		local var_12_0, var_12_1 = arg_11_0()
@@ -140,15 +127,14 @@ function var_0_5.simplify(arg_11_0)
 		return
 	end
 end
-
-function var_0_5.string(arg_13_0)
+;({}).string = function(arg_13_0)
 	if arg_13_0 then
 		local var_13_0 = 1
 
 		return function()
-			local var_14_0 = var_0_0.sub(arg_13_0, var_13_0, var_13_0 + var_0_3.BLOCKSIZE - 1)
+			local var_14_0 = var_0_0.sub(arg_13_0, var_13_0, var_13_0 + var_0_4.BLOCKSIZE - 1)
 
-			var_13_0 = var_13_0 + var_0_3.BLOCKSIZE
+			var_13_0 = var_13_0 + var_0_4.BLOCKSIZE
 
 			if var_14_0 ~= "" then
 				return var_14_0
@@ -159,20 +145,21 @@ function var_0_5.string(arg_13_0)
 			return
 		end
 	else
-		return var_0_5.empty()
+		return var_0_6.empty()
 	end
 
 	return
 end
-
-function var_0_5.rewind(arg_15_0)
-	var_0.assert(arg_15_0)
+;({}).rewind = function(arg_15_0)
+	var_0_3.assert(arg_15_0)
 
 	local var_15_0 = {}
 
 	return function(arg_16_0)
 		if not arg_16_0 then
-			if not var_0_1.remove(var_15_0) then
+			arg_16_0 = var_0_1.remove(var_15_0)
+
+			if not arg_16_0 then
 				return arg_15_0()
 			else
 				return arg_16_0
@@ -184,13 +171,12 @@ function var_0_5.rewind(arg_15_0)
 		return
 	end
 end
-
-function var_0_5.chain(arg_17_0, arg_17_1, ...)
+;({}).chain = function(arg_17_0, arg_17_1, ...)
 	if ... then
-		arg_17_1 = var_0_4.chain(arg_17_1, ...)
+		arg_17_1 = var_0_5.chain(arg_17_1, ...)
 	end
 
-	var_0.assert(arg_17_0 and arg_17_1)
+	var_0_3.assert(arg_17_0 and arg_17_1)
 
 	local var_17_0 = ""
 	local var_17_1 = ""
@@ -199,7 +185,7 @@ function var_0_5.chain(arg_17_0, arg_17_1, ...)
 
 	return function()
 		if not var_17_1 then
-			var_0.error("source is empty!", 2)
+			var_0_3.error("source is empty!", 2)
 		end
 
 		while true do
@@ -214,7 +200,7 @@ function var_0_5.chain(arg_17_0, arg_17_1, ...)
 
 				if not var_17_1 then
 					if var_17_0 then
-						var_0.error("filter returned inappropriate nil")
+						var_0_3.error("filter returned inappropriate nil")
 					else
 						return nil
 					end
@@ -234,11 +220,11 @@ function var_0_5.chain(arg_17_0, arg_17_1, ...)
 					if var_17_0 == "" then
 						var_17_2 = "feeding"
 					else
-						var_0.error("filter returned \"\"")
+						var_0_3.error("filter returned \"\"")
 					end
 				elseif not var_17_1 then
 					if var_17_0 then
-						var_0.error("filter returned inappropriate nil")
+						var_0_3.error("filter returned inappropriate nil")
 					else
 						return nil
 					end
@@ -251,16 +237,14 @@ function var_0_5.chain(arg_17_0, arg_17_1, ...)
 		return
 	end
 end
-
-function var_0_5.cat(...)
-	local var_19_0 = {
+;({}).cat = function(...)
+	local var_19_0 = var_0_1.remove({
 		...
-	}
-	local var_19_1 = var_0_1.remove(var_19_0, 1)
+	}, 1)
 
 	return function()
-		while var_19_1 do
-			local var_20_0, var_20_1 = var_19_1()
+		while var_19_0 do
+			local var_20_0, var_20_1 = var_19_0()
 
 			if var_20_0 then
 				return var_20_0
@@ -270,14 +254,13 @@ function var_0_5.cat(...)
 				return nil, var_20_1
 			end
 
-			var_19_1 = var_0_1.remove(var_19_0, 1)
+			var_19_0 = var_0_1.remove(var_0, 1)
 		end
 
 		return
 	end
 end
-
-function var_0_6.table(arg_21_0)
+;({}).table = function(arg_21_0)
 	arg_21_0 = arg_21_0 or {}
 
 	return function(arg_22_0, arg_22_1)
@@ -288,9 +271,8 @@ function var_0_6.table(arg_21_0)
 		return 1
 	end, arg_21_0
 end
-
-function var_0_6.simplify(arg_23_0)
-	var_0.assert(arg_23_0)
+;({}).simplify = function(arg_23_0)
+	var_0_3.assert(arg_23_0)
 
 	return function(arg_24_0, arg_24_1)
 		local var_24_0, var_24_1 = arg_23_0(arg_24_0, arg_24_1)
@@ -304,46 +286,39 @@ function var_0_6.simplify(arg_23_0)
 		return 1
 	end
 end
-
-function var_0_6.file(arg_25_0, arg_25_1)
+;({}).file = function(arg_25_0, arg_25_1)
 	if arg_25_0 then
 		return function(arg_26_0, arg_26_1)
 			if not arg_26_0 then
-				local var_26_0 = arg_25_0
-
-				var_2.close(var_26_0)
+				arg_25_0:close()
 
 				return 1
 			else
-				local var_26_1 = arg_25_0
-
-				return var_2.write(var_26_1, arg_26_0)
+				return arg_25_0:write(arg_26_0)
 			end
 
 			return
 		end
 	else
-		return var_0_6.error(arg_25_1 or "unable to open file")
+		return var_0_7.error(arg_25_1 or "unable to open file")
 	end
 
 	return
 end
 
-local function var_0_11()
+local function var_0_12()
 	return 1
 end
 
-function var_0_6.null()
-	return var_0_11
+;({}).null = function()
+	return var_0_12
 end
-
-function var_0_6.error(arg_29_0)
+;({}).error = function(arg_29_0)
 	return function()
 		return nil, arg_29_0
 	end
 end
-
-function var_0_6.chain(arg_31_0, arg_31_1, ...)
+;({}).chain = function(arg_31_0, arg_31_1, ...)
 	if ... then
 		local var_31_0 = {
 			arg_31_0,
@@ -352,10 +327,10 @@ function var_0_6.chain(arg_31_0, arg_31_1, ...)
 		}
 
 		arg_31_1 = var_0_1.remove(var_31_0, #var_31_0)
-		arg_31_0 = var_0_4.chain(var_0_8(var_31_0))
+		arg_31_0 = var_0_5.chain(var_0_9(var_31_0))
 	end
 
-	var_0.assert(arg_31_0 and arg_31_1)
+	var_0_3.assert(arg_31_0 and arg_31_1)
 
 	return function(arg_32_0, arg_32_1)
 		if arg_32_0 ~= "" then
@@ -382,8 +357,7 @@ function var_0_6.chain(arg_31_0, arg_31_1, ...)
 		return
 	end
 end
-
-function var_0_7.step(arg_33_0, arg_33_1)
+;({}).step = function(arg_33_0, arg_33_1)
 	local var_33_0, var_33_1 = arg_33_0()
 	local var_33_2, var_33_3 = arg_33_1(var_33_0, var_33_1)
 
@@ -395,11 +369,10 @@ function var_0_7.step(arg_33_0, arg_33_1)
 
 	return
 end
+;({}).all = function(arg_34_0, arg_34_1, arg_34_2)
+	var_0_3.assert(arg_34_0 and arg_34_1)
 
-function var_0_7.all(arg_34_0, arg_34_1, arg_34_2)
-	var_0.assert(arg_34_0 and arg_34_1)
-
-	arg_34_2 = arg_34_2 or var_0_7.step
+	arg_34_2 = arg_34_2 or var_0_8.step
 
 	while true do
 		local var_34_0, var_34_1 = arg_34_2(arg_34_0, arg_34_1)
@@ -416,4 +389,4 @@ function var_0_7.all(arg_34_0, arg_34_1, arg_34_2)
 	return
 end
 
-return var_0_3
+return {}

@@ -1,298 +1,132 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CrossRoadGameView", import("..BaseMiniGameView"))
+local var_0_1 = 89
 
-local var_0_0 = "CrossRoadGameView"
+var_0_0.LEAVEL_GAME = "leavel game"
+var_0_0.OPEN_LEAVEL_UI = "open leave ui"
+var_0_0.SUB_LIFE = "sub life"
+var_0_0.ADD_LIFE = "add life"
+var_0_0.AGAIN = "reGameAgain"
 
-import = var_0_10003
+function var_0_0.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-local var_0_2 = 89
-
-var_0_1.LEAVEL_GAME = "leavel game"
-var_0_1.OPEN_LEAVEL_UI = "open leave ui"
-var_0_1.SUB_LIFE = "sub life"
-var_0_1.ADD_LIFE = "add life"
-var_0_1.AGAIN = "reGameAgain"
-
-function var_0_1.Ctor(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0)
-
-	CrossRoadGameVo = var_1
-	arg_1_0._gameVo = var_1.New(var_0_2)
+	arg_1_0._gameVo = CrossRoadGameVo.New(var_0_1)
 
 	return
 end
 
-function var_0_1.getUIName(arg_2_0)
-	CrossRoadGameConst = var_1_10001
-
-	return var_1_10001.game_ui
+function var_0_0.getUIName(arg_2_0)
+	return CrossRoadGameConst.game_ui
 end
 
-function var_0_1.getBGM(arg_3_0)
-	CrossRoadGameConst = var_1_10001
-
-	return var_1_10001.menu_bgm
+function var_0_0.getBGM(arg_3_0)
+	return CrossRoadGameConst.menu_bgm
 end
 
-function var_0_1.didEnter(arg_4_0)
+function var_0_0.didEnter(arg_4_0)
 	arg_4_0:initEvent()
 	arg_4_0:initUI()
 
 	return
 end
 
-function var_0_1.initEvent(arg_5_0)
+function var_0_0.initEvent(arg_5_0)
 	if not arg_5_0.handle then
-		UpdateBeat = var_1
-		arg_5_0.handle = var_1:CreateListener(arg_5_0.OnUpdate, arg_5_0)
-		UpdateBeat = var_1
+		arg_5_0.handle = UpdateBeat:CreateListener(arg_5_0.OnUpdate, arg_5_0)
 
-		var_1:AddListener(arg_5_0.handle)
+		UpdateBeat:AddListener(arg_5_0.handle)
 	end
 
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.bind
-
-	CrossRoadGameView = var_1_10004
-
-	var_5_1(var_5_0, var_1_10004.LEAVEL_GAME, function(arg_6_0, arg_6_1, arg_6_2)
+	arg_5_0:bind(CrossRoadGameView.LEAVEL_GAME, function(arg_6_0, arg_6_1, arg_6_2)
 		if arg_6_1 then
-			local var_6_0 = arg_5_0
-
-			var_3.resumeGame(var_6_0)
-
-			local var_6_1 = arg_5_0
-
-			var_3.onGameOver(var_6_1, false)
+			arg_5_0:resumeGame()
+			arg_5_0:onGameOver(false)
 		else
-			local var_6_2 = arg_5_0
-
-			var_3.resumeGame(var_6_2)
+			arg_5_0:resumeGame()
 		end
 
 		return
 	end)
-
-	local var_5_2 = arg_5_0
-	local var_5_3 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_3(var_5_2, var_4.COUNT_DOWN, function(arg_7_0, arg_7_1, arg_7_2)
-		local var_7_0 = arg_5_0
-
-		var_3.gameStart(var_7_0)
+	arg_5_0:bind(SimpleMGEvent.COUNT_DOWN, function(arg_7_0, arg_7_1, arg_7_2)
+		arg_5_0:gameStart()
 
 		return
 	end)
-
-	local var_5_4 = arg_5_0
-	local var_5_5 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_5(var_5_4, var_4.ON_HOME, function(arg_8_0, arg_8_1, arg_8_2)
-		local var_8_0 = arg_5_0
-		local var_8_1 = var_3.emit
-
-		BaseUI = var_2_10006
-
-		var_8_1(var_8_0, var_2_10006.ON_HOME)
+	arg_5_0:bind(SimpleMGEvent.ON_HOME, function(arg_8_0, arg_8_1, arg_8_2)
+		arg_5_0:emit(BaseUI.ON_HOME)
 
 		return
 	end)
-
-	local var_5_6 = arg_5_0
-	local var_5_7 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_7(var_5_6, var_4.OPEN_PAUSE_UI, function(arg_9_0, arg_9_1, arg_9_2)
-		local var_9_0 = arg_5_0.popUI
-
-		var_3.PopPauseUI(var_9_0)
+	arg_5_0:bind(SimpleMGEvent.OPEN_PAUSE_UI, function(arg_9_0, arg_9_1, arg_9_2)
+		arg_5_0.popUI:PopPauseUI()
 
 		return
 	end)
-
-	local var_5_8 = arg_5_0
-	local var_5_9 = arg_5_0.bind
-
-	CrossRoadGameView = var_4
-
-	var_5_9(var_5_8, var_4.OPEN_LEAVEL_UI, function(arg_10_0, arg_10_1, arg_10_2)
-		local var_10_0 = arg_5_0.popUI
-
-		var_3.PopLeaveUI(var_10_0)
+	arg_5_0:bind(CrossRoadGameView.OPEN_LEAVEL_UI, function(arg_10_0, arg_10_1, arg_10_2)
+		arg_5_0.popUI:PopLeaveUI()
 
 		return
 	end)
-
-	local var_5_10 = arg_5_0
-	local var_5_11 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_11(var_5_10, var_4.PAUSE_GAME, function(arg_11_0, arg_11_1, arg_11_2)
+	arg_5_0:bind(SimpleMGEvent.PAUSE_GAME, function(arg_11_0, arg_11_1, arg_11_2)
 		if arg_11_1 then
-			local var_11_0 = arg_5_0
-
-			var_3.pauseGame(var_11_0)
+			arg_5_0:pauseGame()
 		else
-			local var_11_1 = arg_5_0
-
-			var_3.resumeGame(var_11_1)
+			arg_5_0:resumeGame()
 		end
 
 		return
 	end)
-
-	local var_5_12 = arg_5_0
-	local var_5_13 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_13(var_5_12, var_4.BACK_MENU, function(arg_12_0, arg_12_1, arg_12_2)
-		local var_12_0 = arg_5_0.gameScene
-
-		var_3.ShowContainer(var_12_0, false)
-
-		local var_12_1 = arg_5_0
-		local var_12_2 = var_3.changeBgm
-
-		SortGameConst = var_6
-
-		var_12_2(var_12_1, var_6.menu_bgm)
-
-		local var_12_3 = arg_5_0
-
-		var_3.closeView(var_12_3)
+	arg_5_0:bind(SimpleMGEvent.BACK_MENU, function(arg_12_0, arg_12_1, arg_12_2)
+		arg_5_0.gameScene:ShowContainer(false)
+		arg_5_0:changeBgm(SortGameConst.menu_bgm)
+		arg_5_0:closeView()
 
 		return
 	end)
-
-	local var_5_14 = arg_5_0
-	local var_5_15 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_15(var_5_14, var_4.CLOSE_GAME, function(arg_13_0, arg_13_1, arg_13_2)
-		local var_13_0 = arg_5_0
-
-		var_3.closeView(var_13_0)
+	arg_5_0:bind(SimpleMGEvent.CLOSE_GAME, function(arg_13_0, arg_13_1, arg_13_2)
+		arg_5_0:closeView()
 
 		return
 	end)
-
-	local var_5_16 = arg_5_0
-	local var_5_17 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_17(var_5_16, var_4.SHOW_RULE, function(arg_14_0, arg_14_1, arg_14_2)
-		pg = var_2_10003
-
-		local var_14_0 = var_2_10003.MsgboxMgr.GetInstance()
-		local var_14_1 = var_3.ShowMsgBox
-		local var_14_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10007
-		var_14_2.type = var_2_10007
-		pg = var_2_10007
-		var_14_2.helps = var_2_10007.gametip.crossroad_minigame_help.tip
-
-		var_14_1(var_14_0, var_14_2)
+	arg_5_0:bind(SimpleMGEvent.SHOW_RULE, function(arg_14_0, arg_14_1, arg_14_2)
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.crossroad_minigame_help.tip
+		})
 
 		return
 	end)
-
-	local var_5_18 = arg_5_0
-	local var_5_19 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_19(var_5_18, var_4.READY_START, function(arg_15_0, arg_15_1, arg_15_2)
-		local var_15_0 = arg_5_0
-
-		var_3.readyStart(var_15_0)
+	arg_5_0:bind(SimpleMGEvent.READY_START, function(arg_15_0, arg_15_1, arg_15_2)
+		arg_5_0:readyStart()
 
 		return
 	end)
-
-	local var_5_20 = arg_5_0
-	local var_5_21 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_21(var_5_20, var_4.ADD_SCORE, function(arg_16_0, arg_16_1, arg_16_2)
-		local var_16_0 = arg_5_0
-
-		var_3.addScore(var_16_0, arg_16_1.score)
+	arg_5_0:bind(SimpleMGEvent.ADD_SCORE, function(arg_16_0, arg_16_1, arg_16_2)
+		arg_5_0:addScore(arg_16_1.score)
 
 		return
 	end)
-
-	local var_5_22 = arg_5_0
-	local var_5_23 = arg_5_0.bind
-
-	CrossRoadGameView = var_4
-
-	var_5_23(var_5_22, var_4.SUB_LIFE, function(arg_17_0, arg_17_1, arg_17_2)
-		local var_17_0 = arg_5_0
-
-		var_3.changeLife(var_17_0, -1)
+	arg_5_0:bind(CrossRoadGameView.SUB_LIFE, function(arg_17_0, arg_17_1, arg_17_2)
+		arg_5_0:changeLife(-1)
 
 		return
 	end)
-
-	local var_5_24 = arg_5_0
-	local var_5_25 = arg_5_0.bind
-
-	CrossRoadGameView = var_4
-
-	var_5_25(var_5_24, var_4.ADD_LIFE, function(arg_18_0, arg_18_1, arg_18_2)
-		local var_18_0 = arg_5_0
-		local var_18_1 = var_3.changeLife
-
-		CrossRoadGameConst = var_2_10006
-
-		var_18_1(var_18_0, var_2_10006.HONGCHA_GET_LIFE)
+	arg_5_0:bind(CrossRoadGameView.ADD_LIFE, function(arg_18_0, arg_18_1, arg_18_2)
+		arg_5_0:changeLife(CrossRoadGameConst.HONGCHA_GET_LIFE)
 
 		return
 	end)
-
-	local var_5_26 = arg_5_0
-	local var_5_27 = arg_5_0.bind
-
-	CrossRoadGameView = var_4
-
-	var_5_27(var_5_26, var_4.AGAIN, function(arg_19_0, arg_19_1, arg_19_2)
-		local var_19_0 = arg_5_0
-
-		var_3.readyStart(var_19_0)
+	arg_5_0:bind(CrossRoadGameView.AGAIN, function(arg_19_0, arg_19_1, arg_19_2)
+		arg_5_0:readyStart()
 
 		return
 	end)
-
-	local var_5_28 = arg_5_0
-	local var_5_29 = arg_5_0.bind
-
-	SimpleMGEvent = var_4
-
-	var_5_29(var_5_28, var_4.SUBMIT_GAME_SUCCESS, function(arg_20_0, arg_20_1, arg_20_2)
+	arg_5_0:bind(SimpleMGEvent.SUBMIT_GAME_SUCCESS, function(arg_20_0, arg_20_1, arg_20_2)
 		if not arg_5_0.sendSuccessFlag then
 			arg_5_0.sendSuccessFlag = true
 
-			local var_20_0 = arg_5_0
-
-			var_3.SendSuccess(var_20_0, 0)
-
-			getProxy = var_3
-			MiniGameProxy = var_20_0
-
-			local var_20_1 = var_3(var_20_0)
-
-			var_3.UpdataHighScore(var_20_1, var_0_2, {
+			arg_5_0:SendSuccess(0)
+			getProxy(MiniGameProxy):UpdataHighScore(var_0_1, {
 				arg_20_1.num,
 				arg_20_1.cnt
 			})
@@ -304,195 +138,96 @@ function var_0_1.initEvent(arg_5_0)
 	return
 end
 
-function var_0_1.initUI(arg_21_0)
-	setActive = var_1_10001
-	findTF = var_1_10003
+function var_0_0.initUI(arg_21_0)
+	setActive(findTF(arg_21_0._tf, "tpl"), false)
 
-	var_1_10001(var_1_10003(arg_21_0._tf, "tpl"), false)
+	arg_21_0.clickMask = findTF(arg_21_0._tf, "clickMask")
+	arg_21_0.menuUIbg1 = findTF(arg_21_0._tf, "ui/bg")
+	arg_21_0.menuUIbg2 = findTF(arg_21_0._tf, "ui/bg_1")
+	arg_21_0.popUI = CrossRoadPopUI.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
 
-	findTF = var_1_10001
-	arg_21_0.clickMask = var_1_10001(arg_21_0._tf, "clickMask")
-	findTF = var_1
-	arg_21_0.menuUIbg1 = var_1(arg_21_0._tf, "ui/bg")
-	findTF = var_1
-	arg_21_0.menuUIbg2 = var_1(arg_21_0._tf, "ui/bg_1")
-	CrossRoadPopUI = var_1
-	arg_21_0.popUI = var_1.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
+	arg_21_0.popUI:ClearUI()
 
-	local var_21_0 = arg_21_0.popUI
+	arg_21_0.gameUI = CrossRoadGamingUI.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
 
-	var_1.ClearUI(var_21_0)
+	arg_21_0.gameUI:Show(false)
 
-	CrossRoadGamingUI = var_1
-	arg_21_0.gameUI = var_1.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
+	arg_21_0.menuUI = CrossRoadMenuUI.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
 
-	local var_21_1 = arg_21_0.gameUI
+	arg_21_0.menuUI:Update()
+	arg_21_0.menuUI:Show(true)
+	setActive(arg_21_0.menuUIbg1, true)
+	setActive(arg_21_0.menuUIbg2, true)
 
-	var_1.Show(var_21_1, false)
+	arg_21_0.gameScene = CrossRoadScene.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
 
-	CrossRoadMenuUI = var_1
-	arg_21_0.menuUI = var_1.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
-
-	local var_21_2 = arg_21_0.menuUI
-
-	var_1.Update(var_21_2)
-
-	local var_21_3 = arg_21_0.menuUI
-
-	var_1.Show(var_21_3, true)
-
-	setActive = var_1
-
-	var_1(arg_21_0.menuUIbg1, true)
-
-	setActive = var_1
-
-	var_1(arg_21_0.menuUIbg2, true)
-
-	CrossRoadScene = var_1
-	arg_21_0.gameScene = var_1.New(arg_21_0._tf, arg_21_0, arg_21_0._gameVo)
-
-	local var_21_4 = arg_21_0.gameScene
-
-	var_1.ShowContainer(var_21_4, true)
+	arg_21_0.gameScene:ShowContainer(true)
 
 	return
 end
 
-function var_0_1.changeBgm(arg_22_0, arg_22_1)
+function var_0_0.changeBgm(arg_22_0, arg_22_1)
 	local var_22_0
 
-	PipeGameConst = var_1_10003
-
-	if arg_22_1 == var_1_10003.bgm_type_default then
-		if not arg_22_0:getBGM() then
-			pg = var_3
-
-			local var_22_1 = var_3.CriMgr.GetInstance()
-
-			if var_3.IsDefaultBGM(var_22_1) then
-				pg = var_3
-				var_22_0 = var_3.voice_bgm.NewMainScene.default_bgm
-			else
-				pg = var_3
-				var_22_0 = var_3.voice_bgm.NewMainScene.bgm
-			end
-		end
-	else
-		PipeGameConst = var_3
-
-		if arg_22_1 == var_3.bgm_type_menu then
-			CrossRoadGameConst = var_3
-			var_22_0 = var_3.menu_bgm
-		else
-			PipeGameConst = var_3
-
-			if arg_22_1 == var_3.bgm_type_game then
-				CrossRoadGameConst = var_3
-				var_22_0 = var_3.game_bgm
-			end
-		end
+	if arg_22_1 == PipeGameConst.bgm_type_default then
+		var_22_0 = arg_22_0:getBGM() or pg.CriMgr.GetInstance():IsDefaultBGM() and pg.voice_bgm.NewMainScene.default_bgm or pg.voice_bgm.NewMainScene.bgm
+	elseif arg_22_1 == PipeGameConst.bgm_type_menu then
+		var_22_0 = CrossRoadGameConst.menu_bgm
+	elseif arg_22_1 == PipeGameConst.bgm_type_game then
+		var_22_0 = CrossRoadGameConst.game_bgm
 	end
 
 	if arg_22_0.bgm ~= var_22_0 then
 		arg_22_0.bgm = var_22_0
-		pg = var_3
 
-		local var_22_2 = var_3.BgmMgr.GetInstance()
-
-		var_3.Push(var_22_2, arg_22_0.__cname, var_22_0)
+		pg.BgmMgr.GetInstance():Push(arg_22_0.__cname, var_22_0)
 	end
 
 	return
 end
 
-function var_0_1.OnUpdate(arg_23_0)
+function var_0_0.OnUpdate(arg_23_0)
 	arg_23_0:gameStep()
 
 	return
 end
 
-function var_0_1.readyStart(arg_24_0)
+function var_0_0.readyStart(arg_24_0)
 	arg_24_0.readyStartFlag = true
 
-	local var_24_0 = arg_24_0._gameVo
-
-	var_1.Prepare(var_24_0)
-
-	local var_24_1 = arg_24_0.popUI
-
-	var_1.ReadyStart(var_24_1)
-
-	local var_24_2 = arg_24_0.menuUI
-
-	var_1.Show(var_24_2, false)
-
-	local var_24_3 = arg_24_0.gameUI
-
-	var_1.Show(var_24_3, false)
-
-	setActive = var_1
-
-	var_1(arg_24_0.menuUIbg1, false)
-
-	setActive = var_1
-
-	var_1(arg_24_0.menuUIbg2, false)
-
-	local var_24_4 = arg_24_0.gameScene
-
-	var_1.Prepare(var_24_4)
+	arg_24_0._gameVo:Prepare()
+	arg_24_0.popUI:ReadyStart()
+	arg_24_0.menuUI:Show(false)
+	arg_24_0.gameUI:Show(false)
+	setActive(arg_24_0.menuUIbg1, false)
+	setActive(arg_24_0.menuUIbg2, false)
+	arg_24_0.gameScene:Prepare()
 
 	return
 end
 
-function var_0_1.gameStart(arg_25_0)
+function var_0_0.gameStart(arg_25_0)
 	arg_25_0.readyStartFlag = false
 	arg_25_0.gameStartFlag = true
 	arg_25_0.sendSuccessFlag = false
 
-	local var_25_0 = arg_25_0.popUI
-
-	var_1.PopCountUI(var_25_0, false)
-
-	local var_25_1 = arg_25_0.gameUI
-
-	var_1.Start(var_25_1)
-
-	local var_25_2 = arg_25_0.gameUI
-
-	var_1.Show(var_25_2, true)
-
-	local var_25_3 = arg_25_0.gameScene
-
-	var_1.Start(var_25_3)
+	arg_25_0.popUI:PopCountUI(false)
+	arg_25_0.gameUI:Start()
+	arg_25_0.gameUI:Show(true)
+	arg_25_0.gameScene:Start()
 	arg_25_0:timerStart()
-
-	local var_25_4 = arg_25_0
-	local var_25_5 = arg_25_0.changeBgm
-
-	PipeGameConst = var_4
-
-	var_25_5(var_25_4, var_4.bgm_type_game)
+	arg_25_0:changeBgm(PipeGameConst.bgm_type_game)
 
 	return
 end
 
-function var_0_1.gameStep(arg_26_0)
+function var_0_0.gameStep(arg_26_0)
 	if arg_26_0.gameStartFlag and not arg_26_0.gameStop and not arg_26_0.settlementFlag then
 		arg_26_0:stepRunTimeData()
+		arg_26_0.gameUI:Step()
+		arg_26_0.gameScene:Step()
 
-		local var_26_0 = arg_26_0.gameUI
-
-		var_1.Step(var_26_0)
-
-		local var_26_1 = arg_26_0.gameScene
-
-		var_1.Step(var_26_1)
-
-		local var_26_2 = arg_26_0._gameVo
-
-		if var_1.GetTime(var_26_2) <= 0 then
+		if arg_26_0._gameVo:GetTime() <= 0 then
 			arg_26_0:onGameOver()
 		end
 	end
@@ -500,107 +235,64 @@ function var_0_1.gameStep(arg_26_0)
 	return
 end
 
-function var_0_1.timerStart(arg_27_0)
+function var_0_0.timerStart(arg_27_0)
 	arg_27_0.gamestop = false
 
 	return
 end
 
-function var_0_1.timerStop(arg_28_0)
+function var_0_0.timerStop(arg_28_0)
 	arg_28_0.gamestop = true
 
-	local var_28_0 = arg_28_0.gameScene
-
-	var_1.Stop(var_28_0)
+	arg_28_0.gameScene:Stop()
 
 	return
 end
 
-function var_0_1.stepRunTimeData(arg_29_0)
-	local var_29_0 = arg_29_0._gameVo
-	local var_29_1 = var_1.Step
-
-	Time = var_1_10004
-
-	var_29_1(var_29_0, var_1_10004.deltaTime)
+function var_0_0.stepRunTimeData(arg_29_0)
+	arg_29_0._gameVo:Step(Time.deltaTime)
 
 	return
 end
 
-function var_0_1.addScore(arg_30_0, arg_30_1)
-	local var_30_0 = arg_30_0._gameVo
-
-	var_2.AddScore(var_30_0, arg_30_1)
+function var_0_0.addScore(arg_30_0, arg_30_1)
+	arg_30_0._gameVo:AddScore(arg_30_1)
 
 	return
 end
 
-function var_0_1.changeLife(arg_31_0, arg_31_1)
-	local var_31_0 = arg_31_0._gameVo
-
-	if var_2.GetLife(var_31_0) + arg_31_1 <= 0 then
+function var_0_0.changeLife(arg_31_0, arg_31_1)
+	if arg_31_0._gameVo:GetLife() + arg_31_1 <= 0 then
 		arg_31_0:onGameOver()
 
 		return
 	end
 
-	local var_31_1 = arg_31_0._gameVo
-
-	var_4.changeLife(var_31_1, arg_31_1)
+	arg_31_0._gameVo:changeLife(arg_31_1)
 
 	return
 end
 
-function var_0_1.onGameOver(arg_32_0, arg_32_1)
+function var_0_0.onGameOver(arg_32_0, arg_32_1)
 	if arg_32_0.settlementFlag then
 		return
 	end
 
 	arg_32_0:timerStop()
-
-	local var_32_0 = arg_32_0._gameVo
-
-	var_2.SetSettlement(var_32_0, true)
+	arg_32_0._gameVo:SetSettlement(true)
 
 	arg_32_0.settlementFlag = true
 	arg_32_0.gameStartFlag = false
-	setActive = var_2
 
-	var_2(arg_32_0.clickMask, true)
-
-	LeanTween = var_2
-
-	local var_32_1 = var_2.delayedCall
-
-	go = var_4
-
-	local var_32_2 = var_4(arg_32_0._tf)
-	local var_32_3 = 0.1
-
-	System = var_6
-
-	var_32_1(var_32_2, var_32_3, var_6.Action(function()
+	setActive(arg_32_0.clickMask, true)
+	LeanTween.delayedCall(go(arg_32_0._tf), 0.1, System.Action(function()
 		arg_32_0.settlementFlag = false
 
-		local var_33_0 = arg_32_0
-
-		var_0.clearController(var_33_0)
-
-		local var_33_1 = arg_32_0._gameVo
-
-		var_0.SetSettlement(var_33_1, false)
-
-		setActive = var_0
-
-		var_0(arg_32_0.clickMask, false)
-
-		local var_33_2 = arg_32_0.popUI
-
-		var_0.UpdateSettlementUI(var_33_2)
-
-		local var_33_3 = arg_32_0.popUI
-
-		var_0.PopSettlementUI(var_33_3, true)
+		arg_32_0:clearController()
+		arg_32_0._gameVo:SetSettlement(false)
+		setActive(arg_32_0.clickMask, false)
+		arg_32_0.popUI:UpdateSettlementUI()
+		arg_32_0.popUI:PopSettlementUI(true)
 
 		return
 	end))
@@ -608,7 +300,7 @@ function var_0_1.onGameOver(arg_32_0, arg_32_1)
 	return
 end
 
-function var_0_1.OnApplicationPaused(arg_34_0)
+function var_0_0.OnApplicationPaused(arg_34_0)
 	if not arg_34_0.gameStartFlag then
 		return
 	end
@@ -622,23 +314,18 @@ function var_0_1.OnApplicationPaused(arg_34_0)
 	end
 
 	arg_34_0:pauseGame()
-
-	local var_34_0 = arg_34_0.popUI
-
-	var_1.PopPauseUI(var_34_0)
+	arg_34_0.popUI:PopPauseUI()
 
 	return
 end
 
-function var_0_1.clearController(arg_35_0)
-	local var_35_0 = arg_35_0.gameScene
-
-	var_1.Clear(var_35_0)
+function var_0_0.clearController(arg_35_0)
+	arg_35_0.gameScene:Clear()
 
 	return
 end
 
-function var_0_1.pauseGame(arg_36_0)
+function var_0_0.pauseGame(arg_36_0)
 	arg_36_0.gameStop = true
 
 	arg_36_0:timerStop()
@@ -646,7 +333,7 @@ function var_0_1.pauseGame(arg_36_0)
 	return
 end
 
-function var_0_1.resumeGame(arg_37_0)
+function var_0_0.resumeGame(arg_37_0)
 	arg_37_0.gameStop = false
 
 	arg_37_0:timerStart()
@@ -654,58 +341,36 @@ function var_0_1.resumeGame(arg_37_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_38_0)
+function var_0_0.onBackPressed(arg_38_0)
 	if arg_38_0.gameStartFlag and not arg_38_0.settlementFlag and not arg_38_0.readyStartFlag then
-		local var_38_0 = arg_38_0.popUI
-
-		var_1.BackPressed(var_38_0)
+		arg_38_0.popUI:BackPressed()
 	end
 
 	if not arg_38_0.gameStartFlag and not arg_38_0.settlementFlag and not arg_38_0.readyStartFlag then
-		local var_38_1 = arg_38_0.menuUI
-
-		var_1.Show(var_38_1, false)
+		arg_38_0.menuUI:Show(false)
 		arg_38_0:closeView()
 	end
 
 	return
 end
 
-function var_0_1.OnSendMiniGameOPDone(arg_39_0, arg_39_1)
+function var_0_0.OnSendMiniGameOPDone(arg_39_0, arg_39_1)
 	return
 end
 
-function var_0_1.willExit(arg_40_0)
+function var_0_0.willExit(arg_40_0)
 	if arg_40_0.handle then
-		UpdateBeat = var_1
-		var_1_10003 = var_1
-
-		var_1.RemoveListener(var_1_10003, arg_40_0.handle)
+		UpdateBeat:RemoveListener(arg_40_0.handle)
 	end
 
-	local var_40_0
-
-	if arg_40_0._tf then
-		LeanTween = var_40_0
-		var_40_0 = var_40_0.isTweening
-		go = var_1_10003
-
-		if var_40_0(var_1_10003(arg_40_0._tf)) then
-			LeanTween = var_40_0
-			var_40_0 = var_40_0.cancel
-			go = var_3
-
-			var_40_0(var_3(arg_40_0._tf))
-		end
+	if arg_40_0._tf and LeanTween.isTweening(go(arg_40_0._tf)) then
+		LeanTween.cancel(go(arg_40_0._tf))
 	end
 
-	Time = var_40_0
-	var_40_0.timeScale = 1
+	Time.timeScale = 1
 
 	if arg_40_0._gameVo then
-		local var_40_1 = arg_40_0._gameVo
-
-		var_1.Clear(var_40_1)
+		arg_40_0._gameVo:Clear()
 
 		arg_40_0._gameVo = nil
 	end
@@ -713,4 +378,4 @@ function var_0_1.willExit(arg_40_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -22,6 +22,7 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.CLOSE_RECRUIT_SHOW_ONE_VIEW, self.onCloseOneView, self)
     GameDispatcher:addEventListener(EventName.OPEN_HERORECRUIT_MAP, self.initScene, self)
     GameDispatcher:addEventListener(EventName.UPDATE_RECRUIT_PANEL, self.initData, self)
+    GameDispatcher:addEventListener(EventName.RECRUIT_OPEN_DOOR, self.onShowRecruitResult, self)
 end
 
 -- 开始加载前
@@ -33,15 +34,13 @@ end
 function enterMap(self)
     super.enterMap(self)
 
-    local Environment = gs.GameObject.Find("scene_root_ui_card_03/Environment")
+    local Environment = gs.GameObject.Find("scene_root_ui_card_04/Environment1")
     if Environment then
-        self.mAnimator = Environment:GetComponent(ty.Animator)
+        self.mAnimator_1 = Environment:GetComponent(ty.Animator)
 
-        if self.mAnimator and not gs.GoUtil.IsCompNull(self.mAnimator) then
-            local time = AnimatorUtil.getAnimatorClipTime(self.mAnimator, "chouka_cs_01")
-            LoopManager:setTimeout(time, nil, function ()
-                self.mAnimator:Play("chouka_cs_02_xunhuan")
-
+        if self.mAnimator_1 and not gs.GoUtil.IsCompNull(self.mAnimator_1) then
+            local time = AnimatorUtil.getAnimatorClipTime(self.mAnimator_1, "chouka_cs_01")
+            LoopManager:setTimeout(time - 0.5, nil, function ()
                 --这里需要特殊处理，原因因为动画修改了 相机fieldOfView 值
                 if not gs.Application.isMobilePlatform then
                     gs.CameraMgr:GetToScreenSceneCamera().fieldOfView = gs.CameraMgr:GetSceneCamera().fieldOfView
@@ -57,6 +56,78 @@ function enterMap(self)
                 end
             end)
         end
+    end
+
+    Environment = gs.GameObject.Find("scene_root_ui_card_04/Environment1/Environment3")
+    if Environment then
+        self.mAnimator_2 = Environment:GetComponent(ty.Animator)
+
+        if self.mAnimator_2 and not gs.GoUtil.IsCompNull(self.mAnimator_2) then
+            if self.mAnimator_2.enabled then
+                self.mAnimator_2.enabled = false
+            end
+        end
+
+        local maxQualiy_wheel = 0
+        for i = 1, #self.mRecruitHeroVo do
+            local heroConfigVo = hero.HeroManager:getHeroConfigVo(self.mRecruitHeroVo[i].heroTid)
+            if heroConfigVo.color - 1 > maxQualiy_wheel then
+                maxQualiy_wheel = heroConfigVo.color - 1
+            end
+        end
+
+        local audioMusic = {"ui_beam_blue_loop", "ui_beam_purple_loop", "ui_beam_gold_loop"}
+        local playWheelMusci = function (quality)
+            if maxQualiy_wheel == quality then
+                AudioManager:playMusic(string.format("arts/audio/UI/recruit/%s.prefab", audioMusic[maxQualiy_wheel]))
+            end
+        end
+
+        local audioSoundList = {"ui_beam_blue", "ui_beam_purple", "ui_beam_gold"}
+
+        self.mAnimatCall_2 = self.mAnimator_2:GetComponent(ty.AnimatCall)
+        self.mAnimatCall_2:AddFrameEventCall("PlayQualitySound_1", function()
+            local heroConfigVo = hero.HeroManager:getHeroConfigVo(self.mRecruitHeroVo[1].heroTid)
+            AudioManager:playSoundEffect(string.format("arts/audio/UI/recruit/%s.prefab", audioSoundList[heroConfigVo.color - 1]))
+
+            playWheelMusci(heroConfigVo.color - 1)
+
+            -- gs.EditorApplication.isPaused = true
+        end)
+        self.mAnimatCall_2:AddFrameEventCall("PlayQualitySound_2", function()
+            if #self.mRecruitHeroVo <= 1 then
+                return
+            end
+
+            local maxQualiy = 0
+            for _, index in pairs({2, 5, 8}) do
+                local heroConfigVo = hero.HeroManager:getHeroConfigVo(self.mRecruitHeroVo[index].heroTid)
+                if heroConfigVo.color - 1 > maxQualiy then
+                    maxQualiy = heroConfigVo.color - 1
+                end
+            end
+
+            AudioManager:playSoundEffect(string.format("arts/audio/UI/recruit/%s.prefab", audioSoundList[maxQualiy]))
+            playWheelMusci(maxQualiy)
+            -- gs.EditorApplication.isPaused = true
+        end)
+        self.mAnimatCall_2:AddFrameEventCall("PlayQualitySound_3", function()
+            if #self.mRecruitHeroVo <= 1 then
+                return
+            end
+
+            local maxQualiy = 0
+            for _, index in pairs({3, 4, 6, 7, 9, 10}) do
+                local heroConfigVo = hero.HeroManager:getHeroConfigVo(self.mRecruitHeroVo[index].heroTid)
+                if heroConfigVo.color - 1 > maxQualiy then
+                    maxQualiy = heroConfigVo.color - 1
+                end
+            end
+
+            AudioManager:playSoundEffect(string.format("arts/audio/UI/recruit/%s.prefab", audioSoundList[maxQualiy]))
+            playWheelMusci(maxQualiy)
+            -- gs.EditorApplication.isPaused = true
+        end)
 
         local animatPoint = Environment.transform:Find("ui_card_03_hexin_01")
         if animatPoint ~= nil and not gs.GoUtil.IsTransNull(animatPoint) then
@@ -87,6 +158,20 @@ function enterMap(self)
             if point and not gs.GoUtil.IsTransNull(point) then
                 self.mQulityExfList_2[i] = point
             end
+        end
+
+        self.mQulityExfList_3 = {}
+        for i = 1, 3 do
+            self.mQulityExfList_3[i] = {}
+            for j = 1, 3 do
+                local fx = Environment.transform:Find(string.format("ui_card_03_hexin_01/fx_ui_card_03_0%s/fx_ui_card_03_0%s_0%s", i, i, j))
+                self.mQulityExfList_3[i][j] = fx
+            end
+        end
+
+        self.mQulityExfList_4 = {}
+        for i = 1, 10 do
+            self.mQulityExfList_4[i] = gs.GameObject.Find(string.format("fx_quality_%02d", i))
         end
 
         self.mClick_L_Collier = Environment.transform:Find("ui_card_03_hexin_01/ui_card_04/_601_03_xiaowujian05_001/fx_601_03_anniu_01_L/fx_601_03_anniu_01_L_xunhuan/click_L_Collier")
@@ -128,17 +213,51 @@ end
 
 --初始化
 function initScene(self)
-    local curType = recruit.RecruitManager:getRecruitActionType()
-    if curType ~= recruit.RecruitType.RECRUIT_TOP and
-        curType ~= recruit.RecruitType.RECRUIT_NEW_PLAYER and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_1 and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_3 then
+    if not self:isRecruitType() then
         return
     end
 
-    if self.mAnimator and not gs.GoUtil.IsCompNull(self.mAnimator) then
-        self.mAnimator.speed = 1
-        self.mAnimator:Play("chouka_cs_01")
+    if self.mAnimator_1 and not gs.GoUtil.IsCompNull(self.mAnimator_1) then
+        self.mAnimator_1.speed = 1
+        self.mAnimator_1:Play("chouka_cs_01")
+    end
+
+    if self.mAnimator_2 and not gs.GoUtil.IsCompNull(self.mAnimator_2) then
+        if not self.mAnimator_2.enabled then
+            self.mAnimator_2.enabled = true
+        end
+
+        self.mAnimator_2:Play("chouka_cs_03_daohui")
+        LoopManager:setTimeout(0.1, self, function ()
+            self.mAnimator_2:Play("Empty")
+
+            if self.mAnimator_2.enabled then
+                self.mAnimator_2.enabled = false
+            end
+        end)
+    end
+
+    if not table.empty(self.mQulityExfList_1) and not table.empty(self.mQulityExfList_2) and not table.empty(self.mQulityExfList_3) then
+        local efx = nil
+        for i = 1, 3 do
+            efx = self.mQulityExfList_1[i]
+            if efx ~= nil and not gs.GoUtil.IsTransNull(efx) then
+                efx.gameObject:SetActive(false)
+            end
+
+            efx = self.mQulityExfList_2[i]
+            if efx ~= nil and not gs.GoUtil.IsTransNull(efx) then
+                efx.gameObject:SetActive(false)
+            end
+
+            for _, fx in pairs(self.mQulityExfList_3[i]) do
+                fx.gameObject:SetActive(false)
+            end
+        end
+    end
+
+    if self.mChargingAnimator and not gs.GoUtil.IsCompNull(self.mChargingAnimator) then
+        self.mChargingAnimator:Play("Empty")
     end
 
     if self.mQualityAnimator and not gs.GoUtil.IsCompNull(self.mQualityAnimator) then
@@ -152,35 +271,6 @@ function initScene(self)
         end)
     end
 
-    if self.mCameraAnimator and not gs.GoUtil.IsCompNull(self.mCameraAnimator) then
-        self.mCameraAnimator:Play("Empty")
-
-        LoopManager:setFrameout(2, nil, function ()
-            if self.mCameraAnimator.enabled then
-                self.mCameraAnimator.enabled = false
-            end
-        end)
-    end
-
-    if self.mChargingAnimator and not gs.GoUtil.IsCompNull(self.mChargingAnimator) then
-        self.mChargingAnimator:Play("Empty")
-    end
-
-    if not table.empty(self.mQulityExfList_1) and not table.empty(self.mQulityExfList_2) then
-        local efx = nil
-        for i = 1, 3 do
-            efx = self.mQulityExfList_1[i]
-            if efx ~= nil and not gs.GoUtil.IsTransNull(efx) then
-                efx.gameObject:SetActive(false)
-            end
-
-            efx = self.mQulityExfList_2[i]
-            if efx ~= nil and not gs.GoUtil.IsTransNull(efx) then
-                efx.gameObject:SetActive(false)
-            end
-        end
-    end
-
     AudioManager:playSoundEffect("arts/audio/UI/recruit/ui_recruit.prefab")
     AudioManager:playMusic("arts/audio/UI/recruit/ui_recruit_loop.prefab")
 
@@ -190,11 +280,7 @@ function initScene(self)
 end
 
 function initData(self)
-    local curType = recruit.RecruitManager:getRecruitActionType()
-    if curType ~= recruit.RecruitType.RECRUIT_TOP and
-        curType ~= recruit.RecruitType.RECRUIT_NEW_PLAYER and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_1 and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_3 then
+    if not self:isRecruitType() then
         return
     end
 
@@ -233,6 +319,12 @@ end
 
 --按下去(左)
 function onMouseDown_L(self)
+    if subPack.SubDownLoadController:isExistNeedUpdate() then
+        self:onOver()
+        gs.Message.Show("请等待资源下载完成获得最佳体验")
+        return
+    end
+
     if gs.UnityEngineUtil.GetRaycastUIResults(gs.Vector2(gs.UnityEngineUtil.GetMousePosX(), gs.UnityEngineUtil.GetMousePosY())).Count > 0 then
         return
     end
@@ -248,7 +340,7 @@ function onMouseDown_L(self)
         end
 
         if self.mIsMouseUp then
-            self:onShowRecruitResult()
+            self:onShowTween3()
         else
             self:onOpenRecruit(2)
         end
@@ -257,6 +349,12 @@ end
 
 --按下去(右)
 function onMouseDown_R(self)
+    if subPack.SubDownLoadController:isExistNeedUpdate() then
+        self:onOver()
+        gs.Message.Show("请等待资源下载完成获得最佳体验")
+        return
+    end
+
     if gs.UnityEngineUtil.GetRaycastUIResults(gs.Vector2(gs.UnityEngineUtil.GetMousePosX(), gs.UnityEngineUtil.GetMousePosY())).Count > 0 then
         return
     end
@@ -272,7 +370,7 @@ function onMouseDown_R(self)
         end
 
         if self.mIsMouseUp then
-            self:onShowRecruitResult()
+            self:onShowTween3()
         else
             self:onOpenRecruit(1)
         end
@@ -297,7 +395,7 @@ function onMouseUp(self)
         return
     end
 
-    self:onShowRecruitResult()
+    self:onShowTween3()
 end
 
 function onFrame(self)
@@ -355,8 +453,8 @@ function onOpenRecruit(self, clip_type)
 
     GameDispatcher:dispatchEvent(EventName.RECRUIT_HERO_CLICK)
 
-    if self.mAnimator and not gs.GoUtil.IsCompNull(self.mAnimator) then
-        self.mAnimator:Play("chouka_cs_02_xunhuan")
+    if self.mAnimator_1 and not gs.GoUtil.IsCompNull(self.mAnimator_1) then
+        self.mAnimator_1:Play("chouka_cs_02_xunhuan")
     end
 
     if self.mChargingAnimator and not gs.GoUtil.IsCompNull(self.mChargingAnimator) then
@@ -390,17 +488,17 @@ function onOpenRecruit(self, clip_type)
             local audioPath_sound = ""
             ---充能动画播放倍速
             if index == 1 then
-                self.mAnimator.speed = 5
+                self.mAnimator_1.speed = 5
 
                 audioPath = "arts/audio/UI/recruit/ui_blue_loop.prefab"
                 audioPath_sound = "arts/audio/UI/recruit/ui_hint_blue.prefab"
             elseif index == 2 then
-                self.mAnimator.speed = 10
+                self.mAnimator_1.speed = 10
 
                 audioPath = "arts/audio/UI/recruit/ui_purple_loop.prefab"
                 audioPath_sound = "arts/audio/UI/recruit/ui_hint_purple.prefab"
             elseif index == 3 then
-                self.mAnimator.speed = 15
+                self.mAnimator_1.speed = 15
 
                 audioPath = "arts/audio/UI/recruit/ui_gold_loop.prefab"
                 audioPath_sound = "arts/audio/UI/recruit/ui_hint_gold.prefab"
@@ -419,17 +517,101 @@ function onOpenRecruit(self, clip_type)
     end)
 
     if not self.mOutShowRecruitSn then
-        self.mOutShowRecruitSn = LoopManager:setTimeout(20, self, self.onShowRecruitResult)
+        self.mOutShowRecruitSn = LoopManager:setTimeout(20, self, self.onShowTween3)
     end
+end
+
+--展示第三阶段动画
+function onShowTween3(self)
+    self:clearTimer()
+    self:clearFrame()
+
+    GameDispatcher:dispatchEvent(EventName.CLOSERECRUITSKIPVIEW)
+    AudioManager:pauseMusicByFade(1)
+    self.m_ShootSoundAuidoData = AudioManager:playSoundEffect("arts/audio/UI/recruit/ui_beam_shoot.prefab")
+
+    GameDispatcher:dispatchEvent(EventName.OPENRECRUITSKIPVIEW, {isNeedSkip = true, skillCall = function ()
+        self:onShowRecruitResult()
+    end})
+
+    for _, fx_list in pairs(self.mQulityExfList_3) do
+        local fx = fx_list[self.mMaxQualiy]
+        if fx and not gs.GoUtil.IsTransNull(fx) then
+            fx.gameObject:SetActive(true)
+        end
+    end
+
+    self.mQualityFxGoList = {}
+    if not table.empty(self.mRecruitHeroVo) then
+        if #self.mRecruitHeroVo > 1 then
+            for i = 1, #self.mRecruitHeroVo do
+                local heroConfigVo = hero.HeroManager:getHeroConfigVo(self.mRecruitHeroVo[i].heroTid)
+
+                local path = string.format("arts/fx/3d/scene/ui_card_01/fx_rolecard_03_%02d.prefab", heroConfigVo.color - 1)
+                local quality_fx_go = gs.GOPoolMgr:Get(path, false)
+
+                gs.TransQuick:SetParentOrg01(quality_fx_go, self.mQulityExfList_4[i].transform)
+                gs.TransQuick:LPos(quality_fx_go.transform, gs.VEC3_ZERO)
+
+                table.insert(self.mQualityFxGoList, {go = quality_fx_go, path = path})
+            end
+        else
+            local heroConfigVo = hero.HeroManager:getHeroConfigVo(self.mRecruitHeroVo[1].heroTid)
+
+            local path = string.format("arts/fx/3d/scene/ui_card_01/fx_rolecard_03_%02d.prefab", heroConfigVo.color - 1)
+            local quality_fx_go = gs.GOPoolMgr:Get(path, false)
+
+            gs.TransQuick:SetParentOrg01(quality_fx_go, self.mQulityExfList_4[1].transform)
+            gs.TransQuick:LPos(quality_fx_go.transform, gs.VEC3_ZERO)
+
+            table.insert(self.mQualityFxGoList, {go = quality_fx_go, path = path})
+        end
+    end
+
+    if self.mCameraAnimator and not gs.GoUtil.IsCompNull(self.mCameraAnimator) then
+        self.mCameraAnimator:Play("Empty")
+
+        LoopManager:setFrameout(2, nil, function ()
+            if self.mCameraAnimator.enabled then
+                self.mCameraAnimator.enabled = false
+            end
+        end)
+    end
+
+    if self.mAnimator_2 and not gs.GoUtil.IsCompNull(self.mAnimator_2) then
+        if not self.mAnimator_2.enabled then
+            self.mAnimator_2.enabled = true
+        end
+        self.mAnimator_2:Play("chouka_cs_03_qiehuan")
+
+        self:clearAnimator_2_qiehuanTimeOut()
+        self.mAnimator_2_qiehuanTimeOut = LoopManager:setFrameout(220, self, self.onAnimaTweenEnd)
+    end
+end
+
+function clearAnimator_2_qiehuanTimeOut(self)
+    if self.mAnimator_2_qiehuanTimeOut then
+        LoopManager:removeFrameByIndex(self.mAnimator_2_qiehuanTimeOut)
+        self.mAnimator_2_qiehuanTimeOut = nil
+    end
+end
+
+function onAnimaTweenEnd(self)
+    GameDispatcher:dispatchEvent(EventName.OPENRECRUITSKIPVIEW, {isNeedClick = true, isNeedSkip = false})
 end
 
 --展示结果
 function onShowRecruitResult(self)
+    if not self:isRecruitType() then
+        return
+    end
+
     -- if self.mOnShowRecruitResult then return end
     -- self.mOnShowRecruitResult = true
 
     self:clearTimer()
     self:clearFrame()
+    self:clearQualityFxGo()
 
     GameDispatcher:dispatchEvent(EventName.CLOSERECRUITSKIPVIEW)
 
@@ -446,21 +628,25 @@ function onShowRecruitResult(self)
         end
     end
 
-    AudioManager:pauseMusicByFade(1)
     AudioManager:playSoundEffect("arts/audio/UI/recruit/ui_recruit_get.prefab")
     --出结果等待时间
     LoopManager:setTimeout(0.8, self, function ()
         self:ShowRecruitResult()
+
+        AudioManager:stopAudioSound(self.m_ShootSoundAuidoData)
+        self.m_ShootSoundAuidoData = nil
+
+        if self.mAnimator_2 and not gs.GoUtil.IsCompNull(self.mAnimator_2) then
+            if self.mAnimator_2.enabled then
+                self.mAnimator_2.enabled = false
+            end
+        end
     end)
 end
 
 --关闭立绘界面
 function onCloseOneView(self)
-    local curType = recruit.RecruitManager:getRecruitActionType()
-    if curType ~= recruit.RecruitType.RECRUIT_TOP and
-        curType ~= recruit.RecruitType.RECRUIT_NEW_PLAYER and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_1 and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_3 then
+    if not self:isRecruitType() then
         return
     end
 
@@ -474,15 +660,9 @@ end
 
 --跳过
 function onSkip(self)
-    local curType = recruit.RecruitManager:getRecruitActionType()
-    if curType ~= recruit.RecruitType.RECRUIT_TOP and
-        curType ~= recruit.RecruitType.RECRUIT_NEW_PLAYER and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_1 and
-        curType ~= recruit.RecruitType.RECRUIT_ACTIVITY_3 then
+    if not self:isRecruitType() then
         return
     end
-
-    AudioManager:pauseMusicByFade(1)
 
     --判断是不是新站员，有的话展示下立绘
     for i = 1, #self.mRecruitHeroVo do
@@ -529,6 +709,9 @@ function ShowRecruitResult(self, isSkip)
     if self.mQualityAnimator and not gs.GoUtil.IsCompNull(self.mQualityAnimator) then
         self.mQualityAnimator.gameObject:SetActive(false)
     end
+
+    self:clearAnimator_2_qiehuanTimeOut()
+    AudioManager:pauseMusicByFade(1)
 end
 
 --结算
@@ -542,6 +725,24 @@ function onOver(self)
             self.mIsOver = true
         end
     end
+end
+
+function isRecruitType(self)
+    local recruit_id = recruit.RecruitManager:getRecruitActionId()
+    local menuVo = recruit.RecruitManager:getRecruitMenuVo(recruit_id)
+    if not menuVo then
+        return
+    end
+
+    if menuVo.type ~= recruit.RecruitType.RECRUIT_TOP and
+        menuVo.type ~= recruit.RecruitType.RECRUIT_NEW_PLAYER and
+        menuVo.type ~= recruit.RecruitType.RECRUIT_ACTIVITY_1 and
+        menuVo.type ~= recruit.RecruitType.RECRUIT_ACTIVITY_3 and
+        menuVo.type ~= recruit.RecruitType.RECRUIT_APP_ACTTOP then
+        return
+    end
+
+    return true
 end
 
 function clearTimer(self)
@@ -563,11 +764,22 @@ function clearFrame(self)
     end
 end
 
+function clearQualityFxGo(self)
+    if self.mQualityFxGoList then
+        for _, fx in pairs(self.mQualityFxGoList) do
+            gs.GOPoolMgr:Recover(fx.go, fx.path)
+        end
+        self.mQualityFxGoList = {}
+    end
+end
+
 -- 关闭当前地图
 function clearMap(self)
     super.clearMap(self)
+
     self:clearTimer()
     self:clearFrame()
+    self:clearQualityFxGo()
 end
 
 -- 地图类型

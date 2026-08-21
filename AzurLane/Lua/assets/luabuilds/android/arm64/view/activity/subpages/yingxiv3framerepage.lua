@@ -1,134 +1,49 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("YingxiV3FrameRePage", import(".TemplatePage.NewFrameTemplatePage"))
 
-local var_0_0 = "YingxiV3FrameRePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.NewFrameTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.battleBtn = var_1.Find(var_1_1, "btn/battle_btn")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.getBtn = var_1.Find(var_1_2, "btn/get_btn")
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.gotBtn = var_1.Find(var_1_3, "btn/got_btn")
-
-	local var_1_4 = arg_1_0.bg
-
-	arg_1_0.bar = var_1.Find(var_1_4, "barContent/bar")
-
-	local var_1_5 = arg_1_0.bg
-
-	arg_1_0.cur = var_1.Find(var_1_5, "progress/cur")
-
-	local var_1_6 = arg_1_0.bg
-
-	arg_1_0.target = var_1.Find(var_1_6, "progress/target")
-
-	local var_1_7 = arg_1_0.bg
-
-	arg_1_0.gotTag = var_1.Find(var_1_7, "tag/got")
-
-	local var_1_8 = arg_1_0.bg
-
-	arg_1_0.getTag = var_1.Find(var_1_8, "tag/get")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.battleBtn = arg_1_0.bg:Find("btn/battle_btn")
+	arg_1_0.getBtn = arg_1_0.bg:Find("btn/get_btn")
+	arg_1_0.gotBtn = arg_1_0.bg:Find("btn/got_btn")
+	arg_1_0.bar = arg_1_0.bg:Find("barContent/bar")
+	arg_1_0.cur = arg_1_0.bg:Find("progress/cur")
+	arg_1_0.target = arg_1_0.bg:Find("progress/target")
+	arg_1_0.gotTag = arg_1_0.bg:Find("tag/got")
+	arg_1_0.getTag = arg_1_0.bg:Find("tag/get")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	onButton = var_1_10001
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.battleBtn
-
-	local function var_2_2()
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_3_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_3_1(var_3_0, var_3_2, var_2_10004.TASK)
+function var_0_0.OnFirstFlush(arg_2_0)
+	onButton(arg_2_0, arg_2_0.battleBtn, function()
+		arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.TASK)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_0, var_2_1, var_2_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_2_3 = arg_2_0
-	local var_2_4 = arg_2_0.getBtn
-
-	local function var_2_5()
-		local var_4_0 = arg_2_0
-		local var_4_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.EVENT_OPERATION, {
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.getBtn, function()
+		arg_2_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 1,
 			activity_id = arg_2_0.activity.id
 		})
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_3, var_2_4, var_2_5, var_1_10006)
-
-	local var_2_7
-
-	if arg_2_0.timeStamp then
-		pg = var_2_7
-
-		local var_2_6 = var_2_7.TimeMgr.GetInstance()
-
-		var_2_7 = var_2_7.GetServerTime(var_2_6) - arg_2_0.timeStamp > 0
-	end
-
-	arg_2_0.inPhase2 = var_2_7
+	arg_2_0.inPhase2 = arg_2_0.timeStamp and pg.TimeMgr.GetInstance():GetServerTime() - arg_2_0.timeStamp > 0
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_5_0)
-	var_0_1.super.OnUpdateFlush(arg_5_0)
+function var_0_0.OnUpdateFlush(arg_5_0)
+	var_0_0.super.OnUpdateFlush(arg_5_0)
 
-	local var_5_0 = arg_5_0.activity.data1
-	local var_5_1 = arg_5_0.avatarConfig.target
-	local var_5_2 = arg_5_0.activity.data2 >= 1
-	local var_5_3 = var_5_1 <= var_5_0
+	local var_5_0 = arg_5_0.activity.data2 >= 1
+	local var_5_1 = arg_5_0.avatarConfig.target <= arg_5_0.activity.data1
+	local var_5_3 = arg_5_0.inPhase2 and not var_5_0 and var_5_1
 
-	setActive = var_1_10005
-
-	local var_5_4 = arg_5_0.getTag
-	local var_5_5
-
-	if arg_5_0.inPhase2 then
-		var_5_5 = not var_5_2 and var_5_3
-	end
-
-	var_1_10005(var_5_4, var_5_5)
+	var_5_2(arg_5_0.getTag, var_5_3)
 
 	return
 end
 
-return var_0_1
+return var_0_0

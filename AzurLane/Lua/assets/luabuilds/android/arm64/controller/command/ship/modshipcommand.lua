@@ -1,182 +1,88 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ModShipCommand", pm.SimpleCommand)
 
-local var_0_0 = "ModShipCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().shipId
-	local var_1_1
-
-	if not var_2.shipIds then
-		var_1_1 = {}
-	end
-
-	getProxy = var_1_10005
-	BayProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-	local var_1_3 = var_5.getShipById(var_1_2, var_1_0)
-
-	Clone = var_1_10007
-
-	local var_1_4 = var_1_10007(var_1_3)
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shipIds or {}
+	local var_1_2 = getProxy(BayProxy)
+	local var_1_3 = var_1_2:getShipById(var_1_0.shipId)
+	local var_1_4 = Clone(var_1_3)
 
 	if not var_1_3 then
-		pg = var_1_2
-
-		local var_1_5 = var_1_2.TipsMgr.GetInstance()
-
-		var_1_2 = var_1_2.ShowTips
-		i18n = var_1_10011
-
-		var_1_2(var_1_5, var_1_10011("ship_error_noShip", var_1_0))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", var_1_0.shipId))
 
 		return
 	end
 
-	table = var_1_2
-
-	if var_1_2.getCount(var_1_1) == 0 then
-		pg = var_8
-
-		local var_1_6 = var_8.TipsMgr.GetInstance()
-		local var_1_7 = var_8.ShowTips
-
-		i18n = var_1_10011
-
-		var_1_7(var_1_6, var_1_10011("word_materal_no_enough"))
+	if table.getCount(var_1_1) == 0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("word_materal_no_enough"))
 
 		return
 	end
 
-	local var_1_8 = {}
+	local var_1_5 = {}
 
-	ipairs = var_9
+	for iter_1_0, iter_1_1 in ipairs(var_1_1) do
+		local var_1_6 = var_1_2:getShipById(iter_1_1)
 
-	for iter_1_0, iter_1_1 in var_9(var_1_1) do
-		if not var_5:getShipById(iter_1_1) then
-			pg = var_1_10015
-
-			local var_1_9 = var_1_10015.TipsMgr.GetInstance()
-
-			var_1_10015 = var_1_10015.ShowTips
-			i18n = var_1_10018
-
-			var_1_10015(var_1_9, var_1_10018("ship_error_noShip", iter_1_1))
+		if not var_1_6 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("ship_error_noShip", iter_1_1))
 
 			return
 		end
 
-		table = var_1_10015
-
-		var_1_10015.insert(var_1_8, var_14)
+		table.insert(var_1_5, var_1_6)
 	end
 
-	pg = var_9
-
-	local var_1_10 = var_9.ConnectionMgr.GetInstance()
-
-	var_9.Send(var_1_10, 12017, {
-		ship_id = var_1_0,
+	pg.ConnectionMgr.GetInstance():Send(12017, {
+		ship_id = var_1_0.shipId,
 		material_id_list = var_1_1
 	}, 12018, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			pg = var_2_1
+			pg.TrackerMgr.GetInstance():Tracking(TRACKING_SHIP_INTENSIFY, #var_1_1)
 
-			local var_2_0 = var_2_1.TrackerMgr.GetInstance()
+			local var_2_0 = getProxy(EquipmentProxy)
 
-			var_2_1 = var_2_1.Tracking
-			TRACKING_SHIP_INTENSIFY = var_2_10004
-
-			var_2_1(var_2_0, var_2_10004, #var_1_1)
-
-			var_2_1 = {}
-			getProxy = var_2_10002
-			EquipmentProxy = var_2_10004
-
-			local var_2_2 = var_2_10002(var_2_10004)
-
-			ipairs = var_2_0
-
-			for iter_2_0, iter_2_1 in var_2_0(var_1_8) do
-				ipairs = var_2_10008
-
-				for iter_2_2, iter_2_3 in var_2_10008(iter_2_1.equipments) do
+			for iter_2_0, iter_2_1 in ipairs(var_1_5) do
+				for iter_2_2, iter_2_3 in ipairs(iter_2_1.equipments) do
 					if iter_2_3 then
-						var_2_2:addEquipment(iter_2_3)
+						var_2_0:addEquipment(iter_2_3)
 
-						if not var_2_1[iter_2_3.id] then
-							var_2_1[iter_2_3.id] = iter_2_3:clone()
+						if not ({})[iter_2_3.id] then
+							({})[iter_2_3.id] = iter_2_3:clone()
 						else
-							var_2_1[iter_2_3.id].count = var_2_1[iter_2_3.id].count + 1
+							({})[iter_2_3.id].count = ({})[iter_2_3.id].count + 1
 						end
 					end
 
 					if iter_2_1:getEquipSkin(iter_2_2) ~= 0 then
-						var_2_2:addEquipmentSkin(iter_2_1:getEquipSkin(iter_2_2), 1)
+						var_2_0:addEquipmentSkin(iter_2_1:getEquipSkin(iter_2_2), 1)
 						iter_2_1:updateEquipmentSkin(iter_2_2, 0)
-
-						pg = var_13
-
-						local var_2_3 = var_13.TipsMgr.GetInstance()
-						local var_2_4 = var_13.ShowTips
-
-						i18n = var_16
-
-						var_2_4(var_2_3, var_16("equipment_skin_unload"))
+						pg.TipsMgr.GetInstance():ShowTips(i18n("equipment_skin_unload"))
 					end
 				end
 
-				if iter_2_1:GetSpWeapon() then
+				local var_2_1 = iter_2_1:GetSpWeapon()
+
+				if var_2_1 then
 					iter_2_1:UpdateSpWeapon(nil)
-					var_2_2:AddSpWeapon(var_2_10008)
+					var_2_0:AddSpWeapon(var_2_1)
 				end
 
-				local var_2_5 = var_0
-
-				var_9.removeShip(var_2_5, iter_2_1)
+				var_1_2:removeShip(iter_2_1)
 			end
 
-			ShipModLayer = var_3
-
-			local var_2_6 = var_3.getModExpAdditions(var_1_3, var_1_8)
-
-			pairs = var_2_10004
-
-			for iter_2_4, iter_2_5 in var_2_10004(var_2_6) do
-				local var_2_7 = var_1_3
-
-				var_9.addModAttrExp(var_2_7, iter_2_4, iter_2_5)
+			for iter_2_4, iter_2_5 in pairs((ShipModLayer.getModExpAdditions(var_1_3, var_1_5))) do
+				var_1_3:addModAttrExp(iter_2_4, iter_2_5)
 			end
 
-			local var_2_8 = var_0
-
-			var_2_10004.updateShip(var_2_8, var_1_3)
-
-			local var_2_9 = arg_1_0
-
-			var_2_10004 = var_2_10004.sendNotification
-			GAME = var_7
-
-			var_2_10004(var_2_9, var_7.MOD_SHIP_DONE, {
+			var_1_2:updateShip(var_1_3)
+			arg_1_0:sendNotification(GAME.MOD_SHIP_DONE, {
 				oldShip = var_1_4,
 				newShip = var_1_3,
-				equipments = var_2_1
+				equipments = {}
 			})
 		else
-			pg = var_2_1
-
-			local var_2_10 = var_2_1.TipsMgr.GetInstance()
-			local var_2_11 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_11(var_2_10, var_2_10004("ship_modShip_error", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("ship_modShip_error", arg_2_0.result))
 		end
 
 		return
@@ -185,4 +91,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,17 +1,6 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("LaunchBallGameConst")
+﻿local var_0_0 = class("LaunchBallGameConst")
 
 var_0_0.color_total = 7
-
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
-local var_0_5 = 5
-local var_0_6 = 6
-local var_0_7 = 7
-
 var_0_0.enemy_move_speed = 50
 var_0_0.round_type_juqing = 1
 var_0_0.round_type_zhuanshu = 2
@@ -165,98 +154,98 @@ var_0_0.enemy_data = {
 		name = "Enemy_01_Yellow",
 		hp = 1,
 		player = true,
-		color = var_0_1
+		color = 1
 	},
 	{
 		id = 2,
 		name = "Enemy_02_Green",
 		hp = 1,
 		player = true,
-		color = var_0_2
+		color = 2
 	},
 	{
 		id = 3,
 		name = "Enemy_03_White",
 		hp = 1,
 		player = true,
-		color = var_0_3
+		color = 3
 	},
 	{
 		id = 4,
 		name = "Enemy_04_Red",
 		hp = 1,
 		player = true,
-		color = var_0_4
+		color = 4
 	},
 	{
 		id = 5,
 		name = "Enemy_05_Blue",
 		hp = 1,
 		player = true,
-		color = var_0_5
+		color = 5
 	},
 	{
 		id = 6,
 		name = "Enemy_06_Black",
 		hp = 1,
 		player = true,
-		color = var_0_6
+		color = 6
 	},
 	{
 		id = 7,
 		name = "Enemy_07_Purple",
 		hp = 1,
 		player = true,
-		color = var_0_7
+		color = 7
 	},
 	[11] = {
 		id = 11,
 		name = "Enemy_11_Yellow",
 		hp = 2,
 		player = false,
-		color = var_0_1
+		color = 1
 	},
 	[12] = {
 		id = 12,
 		name = "Enemy_12_Green",
 		hp = 2,
 		player = false,
-		color = var_0_2
+		color = 2
 	},
 	[13] = {
 		id = 13,
 		name = "Enemy_13_White",
 		hp = 2,
 		player = false,
-		color = var_0_3
+		color = 3
 	},
 	[14] = {
 		id = 14,
 		name = "Enemy_14_Red",
 		hp = 2,
 		player = false,
-		color = var_0_4
+		color = 4
 	},
 	[15] = {
 		id = 15,
 		name = "Enemy_15_Blue",
 		hp = 2,
 		player = false,
-		color = var_0_5
+		color = 5
 	},
 	[16] = {
 		id = 16,
 		name = "Enemy_16_Black",
 		hp = 2,
 		player = false,
-		color = var_0_6
+		color = 6
 	},
 	[17] = {
 		id = 17,
 		name = "Enemy_17_Purple",
 		hp = 2,
 		player = false,
-		color = var_0_7
+		color = 7
 	}
 }
 var_0_0.enemy_create_rule = {
@@ -917,26 +906,16 @@ var_0_0.map_data = {
 		line = "round_8"
 	}
 }
-
-local var_0_8 = {}
-
-Vector2 = var_9
-var_0_8[1] = var_9(1211, 891)
-Vector2 = var_9
-var_0_8[2] = var_9(1293, 891)
-Vector2 = var_9
-var_0_8[3] = var_9(1455, 960)
-Vector2 = var_9
-var_0_8[4] = var_9(1550, 960)
-Vector2 = var_9
-var_0_8[5] = var_9(1293, 960)
-Vector2 = var_9
-var_0_8[6] = var_9(1682, 995)
-Vector2 = var_9
-var_0_8[7] = var_9(1396, 972)
-Vector2 = var_9
-var_0_8[8] = var_9(1211, 995)
-var_0_0.enemy_round_bound = var_0_8
+var_0_0.enemy_round_bound = {
+	Vector2(1211, 891),
+	Vector2(1293, 891),
+	Vector2(1455, 960),
+	Vector2(1550, 960),
+	Vector2(1293, 960),
+	Vector2(1682, 995),
+	Vector2(1396, 972),
+	(Vector2(1211, 995))
+}
 var_0_0.enemy_buff_slow = 1
 var_0_0.enemy_buff_back = 2
 var_0_0.enemy_buff_boom = 3

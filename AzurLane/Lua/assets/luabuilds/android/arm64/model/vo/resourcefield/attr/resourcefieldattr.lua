@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ResourceFieldAttr")
+﻿local var_0_0 = class("ResourceFieldAttr")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.name = arg_1_2
@@ -22,8 +20,7 @@ function var_0_0.Update(arg_2_0, arg_2_1)
 	end
 
 	arg_2_0.level = arg_2_1
-	math = var_2
-	arg_2_0.nextLevel = var_2.min(arg_2_1 + 1, #arg_2_0.config.all)
+	arg_2_0.nextLevel = math.min(arg_2_1 + 1, #arg_2_0.config.all)
 
 	arg_2_0:ReCalcValue()
 

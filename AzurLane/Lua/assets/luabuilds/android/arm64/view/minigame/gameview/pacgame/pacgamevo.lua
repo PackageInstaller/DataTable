@@ -1,28 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PacGameVo")
-local var_0_1 = 1.4
+﻿local var_0_0 = class("PacGameVo")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._gameId = arg_1_1
-	pg = var_1_10002
-	arg_1_0._hubId = var_1_10002.mini_game[arg_1_0._gameId].hub_id
-	pg = var_2
-	arg_1_0._drop = var_2.mini_game[arg_1_0._gameId].simple_config_data.drop_ids
-	pg = var_2
-	arg_1_0._totalTimes = var_2.mini_game_hub[arg_1_0._hubId].reward_need
-	getProxy = var_2
-	MiniGameProxy = var_1_10004
-
-	local var_1_0 = var_2(var_1_10004)
-
-	arg_1_0._mgData = var_2.GetMiniGameData(var_1_0, arg_1_0._gameId)
-	getProxy = var_2
-	MiniGameProxy = var_1_0
-
-	local var_1_1 = var_2(var_1_0)
-
-	arg_1_0._mgHubData = var_2.GetHubByHubId(var_1_1, arg_1_0._hubId)
+	arg_1_0._hubId = pg.mini_game[arg_1_0._gameId].hub_id
+	arg_1_0._drop = pg.mini_game[arg_1_0._gameId].simple_config_data.drop_ids
+	arg_1_0._totalTimes = pg.mini_game_hub[arg_1_0._hubId].reward_need
+	arg_1_0._mgData = getProxy(MiniGameProxy):GetMiniGameData(arg_1_0._gameId)
+	arg_1_0._mgHubData = getProxy(MiniGameProxy):GetHubByHubId(arg_1_0._hubId)
 
 	return
 end
@@ -43,9 +27,7 @@ end
 
 function var_0_0.GetGameRound(arg_5_0)
 	if arg_5_0._editorFlag then
-		PacGameConst = var_1
-
-		return var_1.editor_chapter
+		return PacGameConst.editor_chapter
 	end
 
 	if arg_5_0.selectRound ~= nil then
@@ -53,8 +35,9 @@ function var_0_0.GetGameRound(arg_5_0)
 	end
 
 	local var_5_0 = arg_5_0:GetGameUseTimes()
+	local var_5_1 = arg_5_0:GetGameTimes()
 
-	if arg_5_0:GetGameTimes() and var_2 > 0 then
+	if var_5_1 and var_5_1 > 0 then
 		return var_5_0 + 1
 	end
 
@@ -67,13 +50,7 @@ end
 
 function var_0_0.GetGameTimes(arg_6_0)
 	if arg_6_0._mgHubData then
-		local var_6_0
-
-		if not arg_6_0._mgHubData.count then
-			var_6_0 = 0
-		end
-
-		return var_6_0
+		return arg_6_0._mgHubData.count or 0
 	end
 
 	return 0
@@ -81,13 +58,7 @@ end
 
 function var_0_0.GetGameUseTimes(arg_7_0)
 	if arg_7_0._mgHubData then
-		local var_7_0
-
-		if not arg_7_0._mgHubData.usedtime then
-			var_7_0 = 0
-		end
-
-		return var_7_0
+		return arg_7_0._mgHubData.usedtime or 0
 	end
 
 	return 0
@@ -110,10 +81,8 @@ function var_0_0.GetHubId(arg_10_0)
 end
 
 function var_0_0.Prepare(arg_11_0)
-	PacGameConst = var_1_10001
-	arg_11_0._gameTime = var_1_10001.game_time
-	math = var_1
-	arg_11_0._gameTimeInteger = var_1.floor(arg_11_0._gameTime)
+	arg_11_0._gameTime = PacGameConst.game_time
+	arg_11_0._gameTimeInteger = math.floor(arg_11_0._gameTime)
 	arg_11_0._gameStepTime = 0
 	arg_11_0._deltaTime = 0
 	arg_11_0._scoreNum = 0
@@ -125,11 +94,9 @@ end
 
 function var_0_0.Step(arg_12_0, arg_12_1)
 	arg_12_0._gameTime = arg_12_0._gameTime - arg_12_1
-	math = var_2
-	arg_12_0._gameTimeInteger = var_2.floor(arg_12_0._gameTime)
+	arg_12_0._gameTimeInteger = math.floor(arg_12_0._gameTime)
 	arg_12_0._gameStepTime = arg_12_0._gameStepTime + arg_12_1
-	math = var_2
-	arg_12_0._gameStepTimeInteger = var_2.floor(arg_12_0._gameStepTime)
+	arg_12_0._gameStepTimeInteger = math.floor(arg_12_0._gameStepTime)
 	arg_12_0._deltaTime = arg_12_1
 
 	return
@@ -172,9 +139,7 @@ function var_0_0.GetDrop(arg_20_0)
 end
 
 function var_0_0.GetConfig(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_0._mgData
-
-	return var_2.getConfig(var_21_0, arg_21_1)
+	return arg_21_0._mgData:getConfig(arg_21_1)
 end
 
 function var_0_0.GetDeltaTime(arg_22_0)

@@ -1,25 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CarWashMediator", import("view.dorm3d.Core.Dorm3dBaseMediator"))
 
-local var_0_0 = "CarWashMediator"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.dorm3d.Core.Dorm3dBaseMediator"))
-
-function var_0_1.GetDefaultSystemClasses()
-	CarWashConst = var_1_10000
-
-	return var_1_10000.GetDefaultSystemClasses()
+function var_0_0.GetDefaultSystemClasses()
+	return CarWashConst.GetDefaultSystemClasses()
 end
 
-function var_0_1.register(arg_2_0)
+function var_0_0.register(arg_2_0)
 	return
 end
 
-function var_0_1.initNotificationHandleDic(arg_3_0)
+function var_0_0.initNotificationHandleDic(arg_3_0)
 	arg_3_0.handleDic = {}
 
 	return
 end
 
-return var_0_1
+return var_0_0

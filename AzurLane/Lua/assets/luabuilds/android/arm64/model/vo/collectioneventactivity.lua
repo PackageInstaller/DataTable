@@ -1,96 +1,53 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CollectionEventActivity", import(".Activity"))
 
-local var_0_0 = "CollectionEventActivity"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".Activity"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
 	arg_1_0.collections = {}
-	ipairs = var_2
 
-	for iter_1_0, iter_1_1 in var_2(arg_1_1.collection_list) do
-		EventInfo = var_1_10007
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.collection_list) do
+		local var_1_0 = EventInfo.New(iter_1_1)
 
-		local var_1_0 = var_1_10007.New(iter_1_1)
-
-		var_1_10007.SetActivityId(var_1_0, arg_1_0.id)
-
-		table = var_8
-
-		var_8.insert(arg_1_0.collections, var_1_10007)
+		var_1_0:SetActivityId(arg_1_0.id)
+		table.insert(arg_1_0.collections, var_1_0)
 	end
 
 	return
 end
 
-function var_0_1.getDayIndex(arg_2_0)
-	local var_2_0 = arg_2_0.data1
+function var_0_0.getDayIndex(arg_2_0)
+	local var_2_0 = pg.TimeMgr.GetInstance()
 
-	pg = var_1_10002
-
-	local var_2_1 = var_1_10002.TimeMgr.GetInstance()
-	local var_2_2 = var_2.GetServerTime(var_2_1)
-
-	return var_2:DiffDay(var_2_0, var_2_2) + 1
+	return var_2_0:DiffDay(arg_2_0.data1, (var_2_0:GetServerTime())) + 1
 end
 
-function var_0_1.GetCollectionList(arg_3_0)
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.getConfig(var_3_0, "config_data")
-	local var_3_2 = arg_3_0
-	local var_3_3 = arg_3_0.getDayIndex(var_3_2)
+function var_0_0.GetCollectionList(arg_3_0)
+	local var_3_0 = arg_3_0:getConfig("config_data")
+	local var_3_1 = arg_3_0:getDayIndex()
 
-	underscore = var_3_0
-	arg_3_0.collections = var_3_0.filter(arg_3_0.collections, function(arg_4_0)
-		table = var_2_10001
-
-		local var_4_0 = var_2_10001.contains
-		local var_4_1 = arg_3_0
-
-		if var_4_0(var_3.getData1List(var_4_1), arg_4_0.id) then
+	arg_3_0.collections = underscore.filter(arg_3_0.collections, function(arg_4_0)
+		if table.contains(arg_3_0:getData1List(), arg_4_0.id) then
 			return false
 		end
 
-		table = var_1
-
-		if var_1.indexof(var_3_1, arg_4_0.id) < var_3_3 then
-			local var_4_2 = arg_4_0:GetState()
-
-			EventInfo = var_3
-
-			if var_4_2 < var_3.StateActive then
-				return false
-			end
+		if table.indexof(var_3_0, arg_4_0.id) < var_3_1 and arg_4_0:GetState() < EventInfo.StateActive then
+			return false
 		end
 
 		return true
 	end)
 
-	if #arg_3_0.collections == 0 and var_3_1[var_3_3] then
-		table = var_3
-
-		if not var_3.contains(arg_3_0:getData1List(), var_3_1[var_3_3]) then
-			EventInfo = var_3
-
-			local var_3_4 = var_3.New({
-				finish_time = 0,
-				over_time = 0,
-				id = var_3_1[var_3_3],
-				ship_id_list = {},
-				activity_id = arg_3_0.id
-			})
-
-			table = var_3_2
-
-			var_3_2.insert(arg_3_0.collections, var_3_4)
-		end
+	if #arg_3_0.collections == 0 and var_3_0[var_3_1] and not table.contains(arg_3_0:getData1List(), var_3_0[var_3_1]) then
+		table.insert(arg_3_0.collections, (EventInfo.New({
+			finish_time = 0,
+			over_time = 0,
+			id = var_3_0[var_3_1],
+			ship_id_list = {},
+			activity_id = arg_3_0.id
+		})))
 	end
 
 	return arg_3_0.collections
 end
 
-return var_0_1
+return var_0_0

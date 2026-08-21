@@ -54,6 +54,13 @@ function listNotification(self)
     --请求玩家个人信息
     -- GameDispatcher:addEventListener(EventName.FIGHT_RESULT_PANEL_ACTVIE, self.onFightOverShowLvUpHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_PLAYER_HOMEPAGE_INFO, self.onReqPlayerHomePageInfoHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_HERO_GROUP_PANEL, self.onOpenHeroGroupPanelHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_HERO_GROUP_SELECT_VIEW, self.onOpenHeroGroupSelectViewHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_HERO_GROUP_FASHION_VIEW, self.onOpenHeroGroupFashionViewHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_EXCHANGE_CODE_VIEW, self.onOpenExchangeCodeTabViewHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_FIGHT_SKIN_PANEL, self.onOpenFightSkinPanelHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_FIGHT_SKIN_PRE_VIEW, self.onOpenFightSkinPreViewHandler, self)
+
 end
 
 --注册server发来的数据
@@ -91,6 +98,8 @@ function registerMsgHandler(self)
 
         --- *s2c* 玩家的个人主页信息 12034
         SC_PLAYER_HOMEPAGE_INFO = self.onResPersonalInfoDataHandler,
+        --- *s2c* 获取背景图列表 12220
+        SC_GET_FIGHT_UI_LIST = self.onRoleFightUIHandler,
     }
 end
 
@@ -99,8 +108,7 @@ function onAccountLoginSucHandler(self)
     -- 不请求角色列表了
     -- self:requestRoleList()
     -- 直接请求进游戏
-    SOCKET_SEND(Protocol.CS_ENTER_WORLD, {battle_sync_word = 0})
-    GameManager:setIsGetPlayerData(true)
+    SOCKET_SEND(Protocol.CS_ENTER_WORLD, { battle_sync_word = 0 })
 end
 
 -- -- 请求角色列表
@@ -146,13 +154,15 @@ function onPlayerBaseDataMsgHandler(self, msg)
     local roleVo = self.mMgr:getRoleVo()
     roleVo:parseMsgData(msg)
 
+    GameManager:setIsGetPlayerData(true)
+
     -- 通知sdk创角成功
     sdk.SdkManager:notifyCreateRoleSuc()
     -- 通知sdk登录服务器成功
     sdk.SdkManager:notifyLoginServerSuc()
 
     -- 比较消耗的实时发送不给进入游戏内
-	if(web.getLogCollectType() == web.DEBUG_LOG_COLLECT_TYPE.AUTO_REAL_TIME_UPLOAD)then
+    if (web.getLogCollectType() == web.DEBUG_LOG_COLLECT_TYPE.AUTO_REAL_TIME_UPLOAD) then
         web.setLogCollectType(web.DEBUG_LOG_COLLECT_TYPE.NONE)
     end
 
@@ -164,12 +174,35 @@ function onPlayerBaseDataMsgHandler(self, msg)
     else
         GameManager.IS_DEBUG = false
     end
+
     -- 设置log界面是否允许弹出
     Debug:setLogAllow(GameManager.IS_DEBUG)
     gs.ApplicationUtil.SetDebugVisible(GameManager.IS_DEBUG)
     systemSetting.SystemSettingManager:setDefaultQuality()
 
+    -- 检查河蟹步骤
+    web.RunHarmoniousStep1()
+
     GameView.UINode["UID"].text = string.format("UID：%s", roleVo.showId)
+
+    if (web.WebManager.net_type ~= web.NET_TYPE.OUTER_RELEASE and (not sdk.ChannelData:getIsOuterTestDouYinBroadcast())) then
+        local sdkInfo = sdk.SdkManager:getSdkInfo()
+        local fxidList = { "22001100101", "22001100014", "22001100015" }  -- 飞行加个白名单，临时写死
+        if sdkInfo then
+            if table.indexof(fxidList, roleVo.showId) ~= false then
+                if not waterMask then
+                    waterMask = require("game/common/view/WaterMark").new()
+                end
+                waterMask:updateWatermark(roleVo.showId, 10)
+            end
+        elseif login.LoginManager.clientAuthLv < 2 then
+            if not waterMask then
+                waterMask = require("game/common/view/WaterMark").new()
+            end
+            waterMask:updateWatermark(login.LoginManager.clientAuthId, 10)
+            -- waterMask:updateWatermark("test", 10)
+        end
+    end
 end
 
 -- 更新角色属性数据
@@ -223,36 +256,36 @@ end
 -- 请求角色改名
 function onReqModifyRoleNameHandler(self, args)
     --- *c2s* 玩家改名 12010
-    SOCKET_SEND(Protocol.CS_RENAME, {name = args.name})
+    SOCKET_SEND(Protocol.CS_RENAME, { name = args.name })
 end
 
 -- 请求角色修改个性签名
 function onReqModifyRoleAutographHandler(self, args)
     --- *c2s* 玩家修改签名 12012
-    SOCKET_SEND(Protocol.CS_SET_SIGNATURE, {signature = args.content})
+    SOCKET_SEND(Protocol.CS_SET_SIGNATURE, { signature = args.content })
 end
 
 --- 请求删除好友备注
 function onReqMasksClearHandler(self, id)
     --- *c2s* 删除好友备注 15032
-    SOCKET_SEND(Protocol.CS_FRIEND_REMARKS_CLEAR, {friend_id = id})
+    SOCKET_SEND(Protocol.CS_FRIEND_REMARKS_CLEAR, { friend_id = id })
 end
 
 -- 请求选择玩家的展示战员
 function onReqRoleSelectHeroHandler(self, args)
     --- *c2s* 设置展示战员 12015
-    SOCKET_SEND(Protocol.CS_SET_SHOW_HERO, {hero_list = args.showHeroList})
+    SOCKET_SEND(Protocol.CS_SET_SHOW_HERO, { hero_list = args.showHeroList })
     GameDispatcher:dispatchEvent(EventName.REQ_CANNOTDEL_HERO_DATA)
 end
 
 --- *c2s* 其它玩家预览信息 12030
 function onReqOtherRoleInfoHandler(self, id)
-    SOCKET_SEND(Protocol.CS_OTHER_PLAYER_PRE_INFO, {player_id = id}, Protocol.SC_OTHER_PLAYER_PRE_INFO)
+    SOCKET_SEND(Protocol.CS_OTHER_PLAYER_PRE_INFO, { player_id = id }, Protocol.SC_OTHER_PLAYER_PRE_INFO)
 end
 
 --- *c2s* 玩家使用激活码 24030
 function onReqExchangeCodeHandler(self, args)
-    SOCKET_SEND(Protocol.CS_USE_PLAYER_CODE, {code = args.code})
+    SOCKET_SEND(Protocol.CS_USE_PLAYER_CODE, { code = args.code })
 end
 
 --- *c2s* 玩家的个人主页信息 12033
@@ -334,6 +367,11 @@ end
 --- *s2c* 玩家的个人主页信息返回 12034
 function onResPersonalInfoDataHandler(self, msg)
     role.RoleManager:prasePersonalInfoData(msg)
+end
+
+--- *s2c* 获取背景图列表 12220
+function onRoleFightUIHandler(self,msg)
+    role.RoleManager:parseFightUIList(msg)
 end
 --------------------------------------------------------------角色面板----------------------------------------------------------------------
 -- 打开角色面板
@@ -581,6 +619,97 @@ end
 function onDestroyOtherMarkInfoViewHandler(self)
     self.mOtherMarkInfoView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOtherMarkInfoViewHandler, self)
     self.mOtherMarkInfoView = nil
+end
+
+--------------------------------------------------------------打开看板值班战员组----------------------------------------------------------------------
+function onOpenHeroGroupPanelHandler(self, args)
+
+    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_GURAD_GROUP, true) == false then
+        return
+    end
+
+    if self.mRoleGuradGroupPanel == nil then
+        self.mRoleGuradGroupPanel = UI.new(role.RoleGuradGroupPanel)
+        self.mRoleGuradGroupPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupPanelHandler, self)
+    end
+    self.mRoleGuradGroupPanel:open(args)
+end
+
+-- ui销毁
+function onDestroyHeroGroupPanelHandler(self)
+    self.mRoleGuradGroupPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupPanelHandler, self)
+    self.mRoleGuradGroupPanel = nil
+end
+--------------------------------------------------------------打开看板值班战员组选择页面----------------------------------------------------------------------
+function onOpenHeroGroupSelectViewHandler(self, args)
+    if self.mRoleGuradGroupSelectView == nil then
+        self.mRoleGuradGroupSelectView = UI.new(role.RoleGuradGroupSelectView)
+        self.mRoleGuradGroupSelectView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupSelectViewHandler, self)
+    end
+    self.mRoleGuradGroupSelectView:open(args)
+end
+
+-- ui销毁
+function onDestroyHeroGroupSelectViewHandler(self)
+    self.mRoleGuradGroupSelectView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupSelectViewHandler, self)
+    self.mRoleGuradGroupSelectView = nil
+end
+--------------------------------------------------------------打开看板值班战员组选择换装页面----------------------------------------------------------------------
+function onOpenHeroGroupFashionViewHandler(self, args)
+    if self.mRoleGuradGroupFashionView == nil then
+        self.mRoleGuradGroupFashionView = UI.new(role.RoleGuradGroupFashionView)
+        self.mRoleGuradGroupFashionView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupFashionViewHandler, self)
+    end
+    self.mRoleGuradGroupFashionView:open(args)
+end
+
+-- ui销毁
+function onDestroyHeroGroupFashionViewHandler(self)
+    self.mRoleGuradGroupFashionView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroGroupFashionViewHandler, self)
+    self.mRoleGuradGroupFashionView = nil
+end
+--------------------------------------------------------------打开兑换码页面----------------------------------------------------------------------
+function onOpenExchangeCodeTabViewHandler(self, args)
+    if self.mExchangeCodeTabView == nil then
+        self.mExchangeCodeTabView = role.ExchangeCodeTabView.new()
+        self.mExchangeCodeTabView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyExchangeCodeTabViewHandler, self)
+    end
+    self.mExchangeCodeTabView:open(args)
+end
+
+-- ui销毁
+function onDestroyExchangeCodeTabViewHandler(self)
+    self.mExchangeCodeTabView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyExchangeCodeTabViewHandler, self)
+    self.mExchangeCodeTabView = nil
+end
+
+function onOpenFightSkinPanelHandler(self,args)
+    if self.mFightSkinPanel == nil then
+        self.mFightSkinPanel = role.RoleFightSkinPanel.new()
+        self.mFightSkinPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightSkinPanelHandler, self)
+    end
+    self.mFightSkinPanel:open(args)
+end
+
+-- ui销毁
+function onDestroyFightSkinPanelHandler(self)
+    self.mFightSkinPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightSkinPanelHandler, self)
+    self.mFightSkinPanel = nil
+end
+
+--打开战斗皮肤预览页面
+function onOpenFightSkinPreViewHandler(self,args)
+    if self.mFightSkinPreView == nil then
+        self.mFightSkinPreView = role.RoleFightSkinPreView.new()
+        self.mFightSkinPreView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightSkinPreViewHandler, self)
+    end
+    self.mFightSkinPreView:open(args)
+end
+
+-- ui销毁
+function onDestroyFightSkinPreViewHandler(self)
+    self.mFightSkinPreView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFightSkinPreViewHandler, self)
+    self.mFightSkinPreView = nil
 end
 
 return _M

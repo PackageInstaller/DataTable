@@ -75,11 +75,13 @@ function updateView(self)
         return
     end
     for i, v in ipairs(list) do
-        local item = favorable.FavorableActionItem:poolGet()
-        v.tweenId = i
-        item:setData(self.Content, v, self.mHeroId, self.mHeroTid)
-        item:addEventListener(item.EVENT_PLAYING, self.onPlayingHandler, self)
-        table.insert(self.mItemList, item)
+        if v.type == 1 then
+            local item = favorable.FavorableActionItem:poolGet()
+            v.tweenId = i
+            item:setData(self.Content, v, self.mHeroId, self.mHeroTid)
+            item:addEventListener(item.EVENT_PLAYING, self.onPlayingHandler, self)
+            table.insert(self.mItemList, item)
+        end
     end
 end
 

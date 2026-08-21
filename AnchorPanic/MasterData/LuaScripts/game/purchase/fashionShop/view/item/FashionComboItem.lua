@@ -7,9 +7,11 @@ function onInit(self, go)
     self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
     self.mImgSelect = self:getChildGO("mImgSelect")
     self.mImgHas = self:getChildGO("mImgHas")
+    self.mGroupTime = self:getChildGO("mGroupTime")
+    self.mTxtTime = self:getChildGO("mTxtTime"):GetComponent(ty.Text)
 end
 
-function setIsSelect(self,isSelect)
+function setIsSelect(self, isSelect)
     self.mImgSelect:SetActive(isSelect)
 end
 
@@ -23,6 +25,11 @@ end
 
 function deActive(self)
     super.deActive(self)
+
+    if self.time then
+        LoopManager:removeTimerByIndex(self.time)
+        self.time = nil
+    end
 end
 
 function addAllUIEvent(self)
@@ -43,10 +50,25 @@ function setData(self, param)
     self.mImgHas:SetActive(purchase.FashionShopManager:checkComboIsAllGoodsHadBuy(param.id))
     --self.mImgIcon:SetImg(UrlManager:getIconPath(param.configVo.icon),false)
 
-    if (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) then
-        self.mImgIcon:SetImg(UrlManager:getIconPath("fashionCombo_Har/"..param.configVo.icon)  , false)
-    else
-        self.mImgIcon:SetImg(UrlManager:getIconPath("fashionCombo/"..param.configVo.icon)  , false)
+    self.mImgIcon:SetImg(UrlManager:getFashionComboPath(param.configVo.icon), false)
+
+    self.mGroupTime:SetActive(self.mData:getTime() > 0)
+    if self.mData:getTime() > 0 then
+        if self.time then
+            LoopManager:removeTimerByIndex(self.time)
+            self.time = nil
+        end
+        self:updateTime()
+        self.time = LoopManager:addTimer(1, 0, self, self.updateTime)
+    end
+
+end
+
+function updateTime(self)
+    self.mTxtTime.text = TimeUtil.getFormatTimeBySeconds_10(self.mData:getTime())
+
+    if self.mData:getTime() <= 0 then 
+        GameDispatcher:dispatchEvent(EventName.UPDATE_FASHION_COMBO_VIEW)
     end
 end
 

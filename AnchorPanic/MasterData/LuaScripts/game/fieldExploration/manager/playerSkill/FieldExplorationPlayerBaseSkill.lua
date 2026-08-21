@@ -286,6 +286,12 @@ function getIsShowSkillEffect(self)
     return self.isShowSkillEffect
 end
 
+function getCollider(self)
+    if self.mGo then
+        return self.mGo:GetComponent(ty.Collider)
+    end
+end
+
 function clearFrameSn(self)
     if self.mFrameSn then
         LoopManager:removeFrameByIndex(self.mFrameSn)

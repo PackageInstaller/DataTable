@@ -1,16 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("Fushun3GameConst")
+﻿local var_0_0 = class("Fushun3GameConst")
 
 var_0_0.mini_game_leave = "mini_game_leave"
 var_0_0.mini_game_pause = "mini_game_pause"
 var_0_0.game_time = 999999999
 var_0_0.level_time = 30
 var_0_0.game_scale = 3
-Vector3 = var_1
-var_0_0.game_scale_v3 = var_1(var_0_0.game_scale, var_0_0.game_scale, var_0_0.game_scale)
-Vector2 = var_1
-var_0_0.char_init_pos = var_1(300, 450)
+var_0_0.game_scale_v3 = Vector3(var_0_0.game_scale, var_0_0.game_scale, var_0_0.game_scale)
+var_0_0.char_init_pos = Vector2(300, 450)
 var_0_0.attack_cd = 0.45
 var_0_0.damage_cd = 1
 var_0_0.move_speed = 8
@@ -1255,416 +1251,246 @@ var_0_0.BG_TYPE_MID = 2
 var_0_0.BG_TYPE_TOP = 3
 var_0_0.BG_TYPE_FIRE = 4
 var_0_0.BG_TYPE_PETAL = 5
-
-local var_0_1 = {}
-local var_0_2 = {
-	name = "line",
-	id = 1
+var_0_0.bg_data = {
+	{
+		name = "line",
+		id = 1,
+		bound = Vector2(640, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_LOOP
+	},
+	{
+		name = "bg",
+		id = 2,
+		bound = Vector2(672, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_LOOP
+	},
+	{
+		name = "bg_A",
+		id = 3,
+		bound = Vector2(200, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_B",
+		id = 4,
+		bound = Vector2(200, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_C",
+		id = 5,
+		bound = Vector2(100, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_D",
+		id = 6,
+		bound = Vector2(100, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_E",
+		id = 7,
+		bound = Vector2(100, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_F",
+		id = 8,
+		bound = Vector2(100, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_G",
+		id = 9,
+		bound = Vector2(0, 420),
+		pos = Vector2(0, 500),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "bg_H",
+		id = 10,
+		bound = Vector2(0, 420),
+		pos = Vector2(0, 500),
+		type = var_0_0.BG_TYPE_MID
+	},
+	{
+		name = "BLD_Anshan",
+		id = 11,
+		bound = Vector2(400, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_TOP
+	},
+	{
+		name = "BLD_Niku",
+		id = 12,
+		bound = Vector2(400, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_TOP
+	},
+	{
+		name = "BLD_Shiratsuyu",
+		id = 13,
+		bound = Vector2(400, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_TOP
+	},
+	{
+		name = "BLD_Laffey_Ayanami",
+		id = 14,
+		bound = Vector2(400, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_TOP
+	},
+	{
+		name = "BLD_PingHai_NingHai",
+		id = 15,
+		bound = Vector2(400, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_TOP
+	},
+	{
+		name = "BLD_TaiYuan_ChangChun",
+		id = 16,
+		bound = Vector2(400, 420),
+		pos = Vector2(0, -90),
+		type = var_0_0.BG_TYPE_TOP
+	},
+	{
+		name = "Anchor",
+		id = 17,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "LRG_B",
+		id = 18,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "LRG_P",
+		id = 19,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "LRG_Y",
+		id = 20,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "Manjuu_L",
+		id = 21,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "Manjuu_S",
+		id = 22,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "Materials",
+		id = 23,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "MID_B",
+		id = 24,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "MID_P",
+		id = 25,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "MID_Y",
+		id = 26,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "Ofunya",
+		id = 27,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "SML_B",
+		id = 28,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "SML_P",
+		id = 29,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "SML_Y",
+		id = 30,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "U_chan",
+		id = 31,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_FIRE
+	},
+	{
+		name = "Petal_A",
+		id = 32,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_PETAL
+	},
+	{
+		name = "Petal_B",
+		id = 33,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_PETAL
+	},
+	{
+		name = "Petal_C",
+		id = 34,
+		bound = Vector2(20, 0),
+		pos = Vector2(0, 650),
+		type = var_0_0.BG_TYPE_PETAL
+	}
 }
-
-Vector2 = var_3
-var_0_2.bound = var_3(640, 420)
-Vector2 = var_3
-var_0_2.pos = var_3(0, -90)
-var_0_2.type = var_0_0.BG_TYPE_LOOP
-var_0_1[1] = var_0_2
-
-local var_0_3 = {
-	name = "bg",
-	id = 2
-}
-
-Vector2 = var_3
-var_0_3.bound = var_3(672, 420)
-Vector2 = var_3
-var_0_3.pos = var_3(0, -90)
-var_0_3.type = var_0_0.BG_TYPE_LOOP
-var_0_1[2] = var_0_3
-
-local var_0_4 = {
-	name = "bg_A",
-	id = 3
-}
-
-Vector2 = var_3
-var_0_4.bound = var_3(200, 420)
-Vector2 = var_3
-var_0_4.pos = var_3(0, -90)
-var_0_4.type = var_0_0.BG_TYPE_MID
-var_0_1[3] = var_0_4
-
-local var_0_5 = {
-	name = "bg_B",
-	id = 4
-}
-
-Vector2 = var_3
-var_0_5.bound = var_3(200, 420)
-Vector2 = var_3
-var_0_5.pos = var_3(0, -90)
-var_0_5.type = var_0_0.BG_TYPE_MID
-var_0_1[4] = var_0_5
-
-local var_0_6 = {
-	name = "bg_C",
-	id = 5
-}
-
-Vector2 = var_3
-var_0_6.bound = var_3(100, 420)
-Vector2 = var_3
-var_0_6.pos = var_3(0, -90)
-var_0_6.type = var_0_0.BG_TYPE_MID
-var_0_1[5] = var_0_6
-
-local var_0_7 = {
-	name = "bg_D",
-	id = 6
-}
-
-Vector2 = var_3
-var_0_7.bound = var_3(100, 420)
-Vector2 = var_3
-var_0_7.pos = var_3(0, -90)
-var_0_7.type = var_0_0.BG_TYPE_MID
-var_0_1[6] = var_0_7
-
-local var_0_8 = {
-	name = "bg_E",
-	id = 7
-}
-
-Vector2 = var_3
-var_0_8.bound = var_3(100, 420)
-Vector2 = var_3
-var_0_8.pos = var_3(0, -90)
-var_0_8.type = var_0_0.BG_TYPE_MID
-var_0_1[7] = var_0_8
-
-local var_0_9 = {
-	name = "bg_F",
-	id = 8
-}
-
-Vector2 = var_3
-var_0_9.bound = var_3(100, 420)
-Vector2 = var_3
-var_0_9.pos = var_3(0, -90)
-var_0_9.type = var_0_0.BG_TYPE_MID
-var_0_1[8] = var_0_9
-
-local var_0_10 = {
-	name = "bg_G",
-	id = 9
-}
-
-Vector2 = var_3
-var_0_10.bound = var_3(0, 420)
-Vector2 = var_3
-var_0_10.pos = var_3(0, 500)
-var_0_10.type = var_0_0.BG_TYPE_MID
-var_0_1[9] = var_0_10
-
-local var_0_11 = {
-	name = "bg_H",
-	id = 10
-}
-
-Vector2 = var_3
-var_0_11.bound = var_3(0, 420)
-Vector2 = var_3
-var_0_11.pos = var_3(0, 500)
-var_0_11.type = var_0_0.BG_TYPE_MID
-var_0_1[10] = var_0_11
-
-local var_0_12 = {
-	name = "BLD_Anshan",
-	id = 11
-}
-
-Vector2 = var_3
-var_0_12.bound = var_3(400, 420)
-Vector2 = var_3
-var_0_12.pos = var_3(0, -90)
-var_0_12.type = var_0_0.BG_TYPE_TOP
-var_0_1[11] = var_0_12
-
-local var_0_13 = {
-	name = "BLD_Niku",
-	id = 12
-}
-
-Vector2 = var_3
-var_0_13.bound = var_3(400, 420)
-Vector2 = var_3
-var_0_13.pos = var_3(0, -90)
-var_0_13.type = var_0_0.BG_TYPE_TOP
-var_0_1[12] = var_0_13
-
-local var_0_14 = {
-	name = "BLD_Shiratsuyu",
-	id = 13
-}
-
-Vector2 = var_3
-var_0_14.bound = var_3(400, 420)
-Vector2 = var_3
-var_0_14.pos = var_3(0, -90)
-var_0_14.type = var_0_0.BG_TYPE_TOP
-var_0_1[13] = var_0_14
-
-local var_0_15 = {
-	name = "BLD_Laffey_Ayanami",
-	id = 14
-}
-
-Vector2 = var_3
-var_0_15.bound = var_3(400, 420)
-Vector2 = var_3
-var_0_15.pos = var_3(0, -90)
-var_0_15.type = var_0_0.BG_TYPE_TOP
-var_0_1[14] = var_0_15
-
-local var_0_16 = {
-	name = "BLD_PingHai_NingHai",
-	id = 15
-}
-
-Vector2 = var_3
-var_0_16.bound = var_3(400, 420)
-Vector2 = var_3
-var_0_16.pos = var_3(0, -90)
-var_0_16.type = var_0_0.BG_TYPE_TOP
-var_0_1[15] = var_0_16
-
-local var_0_17 = {
-	name = "BLD_TaiYuan_ChangChun",
-	id = 16
-}
-
-Vector2 = var_3
-var_0_17.bound = var_3(400, 420)
-Vector2 = var_3
-var_0_17.pos = var_3(0, -90)
-var_0_17.type = var_0_0.BG_TYPE_TOP
-var_0_1[16] = var_0_17
-
-local var_0_18 = {
-	name = "Anchor",
-	id = 17
-}
-
-Vector2 = var_3
-var_0_18.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_18.pos = var_3(0, 650)
-var_0_18.type = var_0_0.BG_TYPE_FIRE
-var_0_1[17] = var_0_18
-
-local var_0_19 = {
-	name = "LRG_B",
-	id = 18
-}
-
-Vector2 = var_3
-var_0_19.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_19.pos = var_3(0, 650)
-var_0_19.type = var_0_0.BG_TYPE_FIRE
-var_0_1[18] = var_0_19
-
-local var_0_20 = {
-	name = "LRG_P",
-	id = 19
-}
-
-Vector2 = var_3
-var_0_20.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_20.pos = var_3(0, 650)
-var_0_20.type = var_0_0.BG_TYPE_FIRE
-var_0_1[19] = var_0_20
-
-local var_0_21 = {
-	name = "LRG_Y",
-	id = 20
-}
-
-Vector2 = var_3
-var_0_21.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_21.pos = var_3(0, 650)
-var_0_21.type = var_0_0.BG_TYPE_FIRE
-var_0_1[20] = var_0_21
-
-local var_0_22 = {
-	name = "Manjuu_L",
-	id = 21
-}
-
-Vector2 = var_3
-var_0_22.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_22.pos = var_3(0, 650)
-var_0_22.type = var_0_0.BG_TYPE_FIRE
-var_0_1[21] = var_0_22
-
-local var_0_23 = {
-	name = "Manjuu_S",
-	id = 22
-}
-
-Vector2 = var_3
-var_0_23.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_23.pos = var_3(0, 650)
-var_0_23.type = var_0_0.BG_TYPE_FIRE
-var_0_1[22] = var_0_23
-
-local var_0_24 = {
-	name = "Materials",
-	id = 23
-}
-
-Vector2 = var_3
-var_0_24.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_24.pos = var_3(0, 650)
-var_0_24.type = var_0_0.BG_TYPE_FIRE
-var_0_1[23] = var_0_24
-
-local var_0_25 = {
-	name = "MID_B",
-	id = 24
-}
-
-Vector2 = var_3
-var_0_25.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_25.pos = var_3(0, 650)
-var_0_25.type = var_0_0.BG_TYPE_FIRE
-var_0_1[24] = var_0_25
-
-local var_0_26 = {
-	name = "MID_P",
-	id = 25
-}
-
-Vector2 = var_3
-var_0_26.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_26.pos = var_3(0, 650)
-var_0_26.type = var_0_0.BG_TYPE_FIRE
-var_0_1[25] = var_0_26
-
-local var_0_27 = {
-	name = "MID_Y",
-	id = 26
-}
-
-Vector2 = var_3
-var_0_27.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_27.pos = var_3(0, 650)
-var_0_27.type = var_0_0.BG_TYPE_FIRE
-var_0_1[26] = var_0_27
-
-local var_0_28 = {
-	name = "Ofunya",
-	id = 27
-}
-
-Vector2 = var_3
-var_0_28.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_28.pos = var_3(0, 650)
-var_0_28.type = var_0_0.BG_TYPE_FIRE
-var_0_1[27] = var_0_28
-
-local var_0_29 = {
-	name = "SML_B",
-	id = 28
-}
-
-Vector2 = var_3
-var_0_29.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_29.pos = var_3(0, 650)
-var_0_29.type = var_0_0.BG_TYPE_FIRE
-var_0_1[28] = var_0_29
-
-local var_0_30 = {
-	name = "SML_P",
-	id = 29
-}
-
-Vector2 = var_3
-var_0_30.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_30.pos = var_3(0, 650)
-var_0_30.type = var_0_0.BG_TYPE_FIRE
-var_0_1[29] = var_0_30
-
-local var_0_31 = {
-	name = "SML_Y",
-	id = 30
-}
-
-Vector2 = var_3
-var_0_31.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_31.pos = var_3(0, 650)
-var_0_31.type = var_0_0.BG_TYPE_FIRE
-var_0_1[30] = var_0_31
-
-local var_0_32 = {
-	name = "U_chan",
-	id = 31
-}
-
-Vector2 = var_3
-var_0_32.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_32.pos = var_3(0, 650)
-var_0_32.type = var_0_0.BG_TYPE_FIRE
-var_0_1[31] = var_0_32
-
-local var_0_33 = {
-	name = "Petal_A",
-	id = 32
-}
-
-Vector2 = var_3
-var_0_33.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_33.pos = var_3(0, 650)
-var_0_33.type = var_0_0.BG_TYPE_PETAL
-var_0_1[32] = var_0_33
-
-local var_0_34 = {
-	name = "Petal_B",
-	id = 33
-}
-
-Vector2 = var_3
-var_0_34.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_34.pos = var_3(0, 650)
-var_0_34.type = var_0_0.BG_TYPE_PETAL
-var_0_1[33] = var_0_34
-
-local var_0_35 = {
-	name = "Petal_C",
-	id = 34
-}
-
-Vector2 = var_3
-var_0_35.bound = var_3(20, 0)
-Vector2 = var_3
-var_0_35.pos = var_3(0, 650)
-var_0_35.type = var_0_0.BG_TYPE_PETAL
-var_0_1[34] = var_0_35
-var_0_0.bg_data = var_0_1
 var_0_0.loop_bg = {
 	1,
 	2
@@ -1921,22 +1747,13 @@ var_0_0.effect_data = {
 }
 
 function var_0_0.CheckBoxCollider(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	local var_1_0 = arg_1_0.x
-	local var_1_1 = arg_1_0.y
-	local var_1_2 = arg_1_2.x
-	local var_1_3 = arg_1_2.y
-	local var_1_4 = arg_1_1.x
-	local var_1_5 = arg_1_1.y
-	local var_1_6 = arg_1_3.x
-	local var_1_7 = arg_1_3.y
-
-	if var_1_4 <= var_1_0 and var_1_0 >= var_1_4 + var_1_6 then
+	if arg_1_1.x <= arg_1_0.x and arg_1_0.x >= arg_1_1.x + arg_1_3.x then
 		return false
-	elseif var_1_0 <= var_1_4 and var_1_4 >= var_1_0 + var_1_2 then
+	elseif arg_1_0.x <= arg_1_1.x and arg_1_1.x >= arg_1_0.x + arg_1_2.x then
 		return false
-	elseif var_1_5 <= var_1_1 and var_1_1 >= var_1_5 + var_1_7 then
+	elseif arg_1_1.y <= arg_1_0.y and arg_1_0.y >= arg_1_1.y + arg_1_3.y then
 		return false
-	elseif var_1_1 <= var_1_5 and var_1_5 >= var_1_1 + var_1_3 then
+	elseif arg_1_0.y <= arg_1_1.y and arg_1_1.y >= arg_1_0.y + arg_1_2.y then
 		return false
 	else
 		return true

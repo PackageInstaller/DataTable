@@ -26,7 +26,12 @@ function gameStartCallBack(self)
     GameDispatcher:addEventListener(EventName.REQ_GAON_FASHION_PERMIT_REWARD_ALL,self.onReqGainAllFashionPermitReward,self)
     
     GameDispatcher:addEventListener(EventName.REQ_GAIN_FASHION_PERMIT_TASK,self.onReqFashionPermitTaskReceive,self)
+   
     
+    GameDispatcher:addEventListener(EventName.UPDATE_FASHION_HIS_RED,self.onUpdateFashionHisRed,self)
+    
+    GameDispatcher:addEventListener(EventName.ACTIVITY_OPEN_UPDATE,self.onUpdateFashionHisRed,self)
+    GameDispatcher:addEventListener(EventName.ACTIVITY_CLOSE_UPDATE,self.onUpdateFashionHisRed,self)
 end
 
 --模块间事件监听
@@ -102,6 +107,10 @@ function onReqFashionPermitTaskReceive(self,args)
     end
     
     SOCKET_SEND(Protocol.CS_FASHION_PERMIT_TASK_RECEIVE,{task_id_list = list},Protocol.SC_FASHION_PERMIT_TASK_RECEIVE)
+end
+
+function onUpdateFashionHisRed(self)
+    fashionPermit.FashionPermitManager:updateBubble()
 end
 
 

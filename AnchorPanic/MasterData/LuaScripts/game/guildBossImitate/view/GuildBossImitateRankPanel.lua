@@ -47,6 +47,14 @@ function configUI(self)
     self.mHeadGridNode = self:getChildTrans("mHeadGridNode")
 
     self.mImgNo = self:getChildGO("mImgNo")
+
+    self.mBtnCurMessage = self:getChildGO("mBtnCurMessage")
+end
+
+function addAllUIEvent(self)
+    self:addUIEvent(self.mBtnCurMessage, function ()
+        gs.Message.Show(self.damage) 
+    end)
 end
 
 --[[
@@ -224,7 +232,9 @@ function refreshView(self, args)
     self.mPlayerHeadGrid:setScale(1)
 
     self.mTxtName.text = role.RoleManager:getRoleVo():getPlayerName()
-    self.mTxtDamage.text = args.my_rank_val
+
+    self.damage = args.my_rank_val
+    self.mTxtDamage.text = string.formatChineseNumber(args.my_rank_val)
 
     self.mTxtInfoRankBig.gameObject:SetActive(args.my_rank <= 10 and args.my_rank ~= 0)
     self.mTxtInfoRankBig.text = args.my_rank

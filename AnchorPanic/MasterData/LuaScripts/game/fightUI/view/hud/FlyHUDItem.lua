@@ -31,7 +31,7 @@ function setColor(self, color)
 end
 
 function setVal(self, val)
-	self.mTxtFlyNum.text = val
+	self.mTxtFlyNum.text = string.formatSciNotationNumber(tostring(val))
 end
 
 -- 设置暴击

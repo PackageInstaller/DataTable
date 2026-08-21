@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_recall") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_recall"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_recall = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_recall
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_recall = rawget(pg, "dorm3d_recall") or setmetatable({
+	__name = "dorm3d_recall"
+}, confNEO)
+pg.dorm3d_recall.all = {
 	1,
 	2,
 	3,
@@ -63,11 +40,7 @@ var_0_3.all = {
 	213,
 	214
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_recall
-
-var_0_4.get_id_list_by_story_id = {
+pg.dorm3d_recall.get_id_list_by_story_id = {
 	[10010] = {
 		1
 	},
@@ -177,25 +150,11 @@ var_0_4.get_id_list_by_story_id = {
 		214
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_recall = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_recall = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_recall
-
-	var_1_0[1] = {
+	pg.base.dorm3d_recall[1] = {
 		story_id = 10010,
 		name = "欢迎光临 ",
 		type = 1,
@@ -209,11 +168,7 @@ var_0_4.base.dorm3d_recall = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_recall
-
-	var_1_1[2] = {
+	pg.base.dorm3d_recall[2] = {
 		story_id = 10020,
 		name = "片刻温存",
 		type = 1,
@@ -227,11 +182,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_recall
-
-	var_1_2[3] = {
+	pg.base.dorm3d_recall[3] = {
 		story_id = 10030,
 		name = "贴心准备",
 		type = 1,
@@ -245,11 +196,7 @@ var_0_4.base.dorm3d_recall = {}
 			7
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_recall
-
-	var_1_3[4] = {
+	pg.base.dorm3d_recall[4] = {
 		story_id = 10040,
 		name = "温柔关怀",
 		type = 1,
@@ -263,11 +210,7 @@ var_0_4.base.dorm3d_recall = {}
 			10
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_recall
-
-	var_1_4[5] = {
+	pg.base.dorm3d_recall[5] = {
 		story_id = 10050,
 		name = "共舞一曲",
 		type = 1,
@@ -281,11 +224,7 @@ var_0_4.base.dorm3d_recall = {}
 			13
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_recall
-
-	var_1_5[6] = {
+	pg.base.dorm3d_recall[6] = {
 		story_id = 10060,
 		name = "清扫的诀窍",
 		type = 1,
@@ -298,11 +237,7 @@ var_0_4.base.dorm3d_recall = {}
 			2022001
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_recall
-
-	var_1_6[7] = {
+	pg.base.dorm3d_recall[7] = {
 		story_id = 10070,
 		name = "意外失误",
 		type = 1,
@@ -315,11 +250,7 @@ var_0_4.base.dorm3d_recall = {}
 			2022002
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_recall
-
-	var_1_7[8] = {
+	pg.base.dorm3d_recall[8] = {
 		story_id = 10080,
 		name = "晨起之时 ",
 		type = 1,
@@ -332,11 +263,7 @@ var_0_4.base.dorm3d_recall = {}
 			2022003
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_recall
-
-	var_1_8[21] = {
+	pg.base.dorm3d_recall[21] = {
 		story_id = 20500,
 		name = "蒙眼惊喜",
 		type = 1,
@@ -350,11 +277,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_recall
-
-	var_1_9[22] = {
+	pg.base.dorm3d_recall[22] = {
 		story_id = 20510,
 		name = "掌间温度",
 		type = 1,
@@ -368,11 +291,7 @@ var_0_4.base.dorm3d_recall = {}
 			8
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_recall
-
-	var_1_10[23] = {
+	pg.base.dorm3d_recall[23] = {
 		story_id = 20520,
 		name = "心跳触摸",
 		type = 1,
@@ -386,11 +305,7 @@ var_0_4.base.dorm3d_recall = {}
 			12
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_recall
-
-	var_1_11[31] = {
+	pg.base.dorm3d_recall[31] = {
 		story_id = 29991,
 		name = "贴心协助",
 		type = 1,
@@ -403,11 +318,7 @@ var_0_4.base.dorm3d_recall = {}
 			3022101
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_recall
-
-	var_1_12[32] = {
+	pg.base.dorm3d_recall[32] = {
 		story_id = 20530,
 		name = "能量修复仪",
 		type = 1,
@@ -420,11 +331,7 @@ var_0_4.base.dorm3d_recall = {}
 			3022102
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_recall
-
-	var_1_13[41] = {
+	pg.base.dorm3d_recall[41] = {
 		story_id = 30520,
 		name = "想一起玩",
 		type = 1,
@@ -438,11 +345,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_recall
-
-	var_1_14[42] = {
+	pg.base.dorm3d_recall[42] = {
 		story_id = 30530,
 		name = "一起捉迷藏",
 		type = 1,
@@ -456,11 +359,7 @@ var_0_4.base.dorm3d_recall = {}
 			8
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_recall
-
-	var_1_15[43] = {
+	pg.base.dorm3d_recall[43] = {
 		story_id = 30540,
 		name = "晨间之吻",
 		type = 1,
@@ -474,11 +373,7 @@ var_0_4.base.dorm3d_recall = {}
 			12
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_recall
-
-	var_1_16[51] = {
+	pg.base.dorm3d_recall[51] = {
 		story_id = 30510,
 		name = "绘制幸福 ",
 		type = 1,
@@ -491,11 +386,7 @@ var_0_4.base.dorm3d_recall = {}
 			1990301
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_recall
-
-	var_1_17[52] = {
+	pg.base.dorm3d_recall[52] = {
 		story_id = 30550,
 		name = "拼贴艺术 ",
 		type = 1,
@@ -508,11 +399,7 @@ var_0_4.base.dorm3d_recall = {}
 			1990302
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_recall
-
-	var_1_18[101] = {
+	pg.base.dorm3d_recall[101] = {
 		story_id = 110510,
 		name = "迷人装饰",
 		type = 1,
@@ -526,11 +413,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_recall
-
-	var_1_19[102] = {
+	pg.base.dorm3d_recall[102] = {
 		story_id = 110520,
 		name = "甜蜜恶作剧",
 		type = 1,
@@ -544,11 +427,7 @@ var_0_4.base.dorm3d_recall = {}
 			8
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_recall
-
-	var_1_20[103] = {
+	pg.base.dorm3d_recall[103] = {
 		story_id = 110530,
 		name = "冰凉味道",
 		type = 1,
@@ -562,11 +441,7 @@ var_0_4.base.dorm3d_recall = {}
 			12
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_recall
-
-	var_1_21[104] = {
+	pg.base.dorm3d_recall[104] = {
 		story_id = 110541,
 		name = "甜蜜水晶",
 		type = 1,
@@ -579,11 +454,7 @@ var_0_4.base.dorm3d_recall = {}
 			1051701
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_recall
-
-	var_1_22[105] = {
+	pg.base.dorm3d_recall[105] = {
 		story_id = 110551,
 		name = "游戏对决 ",
 		type = 1,
@@ -596,11 +467,7 @@ var_0_4.base.dorm3d_recall = {}
 			1051702
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_recall
-
-	var_1_23[121] = {
+	pg.base.dorm3d_recall[121] = {
 		story_id = 120510,
 		name = "锁爱",
 		type = 1,
@@ -614,11 +481,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_recall
-
-	var_1_24[122] = {
+	pg.base.dorm3d_recall[122] = {
 		story_id = 120520,
 		name = "午后呓语",
 		type = 1,
@@ -632,11 +495,7 @@ var_0_4.base.dorm3d_recall = {}
 			8
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_recall
-
-	var_1_25[123] = {
+	pg.base.dorm3d_recall[123] = {
 		story_id = 120530,
 		name = "唇印余温",
 		type = 1,
@@ -650,11 +509,7 @@ var_0_4.base.dorm3d_recall = {}
 			12
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_recall
-
-	var_1_26[124] = {
+	pg.base.dorm3d_recall[124] = {
 		story_id = 120541,
 		name = "心锁相连",
 		type = 1,
@@ -667,11 +522,7 @@ var_0_4.base.dorm3d_recall = {}
 			3070701
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_recall
-
-	var_1_27[125] = {
+	pg.base.dorm3d_recall[125] = {
 		story_id = 120551,
 		name = "丝缕缠绵 ",
 		type = 1,
@@ -684,11 +535,7 @@ var_0_4.base.dorm3d_recall = {}
 			3070702
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_recall
-
-	var_1_28[141] = {
+	pg.base.dorm3d_recall[141] = {
 		story_id = 140510,
 		name = "浅寐时光 ",
 		type = 1,
@@ -702,11 +549,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_recall
-
-	var_1_29[142] = {
+	pg.base.dorm3d_recall[142] = {
 		story_id = 140520,
 		name = "近在眼前的惩罚 ",
 		type = 1,
@@ -720,11 +563,7 @@ var_0_4.base.dorm3d_recall = {}
 			8
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_recall
-
-	var_1_30[143] = {
+	pg.base.dorm3d_recall[143] = {
 		story_id = 140530,
 		name = "指尖发丝 ",
 		type = 1,
@@ -738,11 +577,7 @@ var_0_4.base.dorm3d_recall = {}
 			12
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_recall
-
-	var_1_31[144] = {
+	pg.base.dorm3d_recall[144] = {
 		story_id = 140541,
 		name = "浓情溶于杯中",
 		type = 1,
@@ -755,11 +590,7 @@ var_0_4.base.dorm3d_recall = {}
 			4990501
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_recall
-
-	var_1_32[211] = {
+	pg.base.dorm3d_recall[211] = {
 		story_id = 210510,
 		name = "高效清洁方案",
 		type = 1,
@@ -773,11 +604,7 @@ var_0_4.base.dorm3d_recall = {}
 			4
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_recall
-
-	var_1_33[212] = {
+	pg.base.dorm3d_recall[212] = {
 		story_id = 210520,
 		name = "晨间的温暖",
 		type = 1,
@@ -791,11 +618,7 @@ var_0_4.base.dorm3d_recall = {}
 			8
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_recall
-
-	var_1_34[213] = {
+	pg.base.dorm3d_recall[213] = {
 		story_id = 210530,
 		name = "维修专家",
 		type = 1,
@@ -809,8 +632,7 @@ var_0_4.base.dorm3d_recall = {}
 			12
 		}
 	}
-	pg = var_1_34
-	var_1_34.base.dorm3d_recall[214] = {
+	pg.base.dorm3d_recall[214] = {
 		story_id = 210541,
 		name = "隐藏的本能",
 		type = 1,

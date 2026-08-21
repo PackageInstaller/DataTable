@@ -552,10 +552,12 @@ function parseBuildBaseFactoryData(self)
 end
 
 ---------------------------------------------------------------属性----------------------------------------------------------------
+-- 加工厂生成类型
 function setOrderType(self, type)
     self.mNowSelectFacOrderType = type
 end
 
+-- 加工厂生成类型
 function getOrderType(self)
     return self.mNowSelectFacOrderType
 end

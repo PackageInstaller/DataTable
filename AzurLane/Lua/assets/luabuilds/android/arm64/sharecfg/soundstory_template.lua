@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "soundstory_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "soundstory_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.soundstory_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.soundstory_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.soundstory_template = rawget(pg, "soundstory_template") or setmetatable({
+	__name = "soundstory_template"
+}, confNEO)
+pg.soundstory_template.all = {
 	1,
 	2,
 	3,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	29,
 	30
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.soundstory_template = {}
+pg.base = pg.base or {}
+pg.base.soundstory_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.soundstory_template
-
-	var_1_0[1] = {
+	pg.base.soundstory_template[1] = {
 		story_pic = "",
 		name = "悠然茶室 ",
 		story_resource_JP = "soundStory1_JP",
@@ -128,11 +91,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.soundstory_template
-
-	var_1_1[2] = {
+	pg.base.soundstory_template[2] = {
 		story_pic = "",
 		name = "碧海阳光",
 		story_resource_JP = "soundStory2_JP",
@@ -159,11 +118,7 @@ var_0_3.base.soundstory_template = {}
 			3
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.soundstory_template
-
-	var_1_2[3] = {
+	pg.base.soundstory_template[3] = {
 		story_pic = "",
 		name = "枕边心跳",
 		story_resource_JP = "soundStory3_JP",
@@ -190,11 +145,7 @@ var_0_3.base.soundstory_template = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.soundstory_template
-
-	var_1_3[4] = {
+	pg.base.soundstory_template[4] = {
 		story_pic = "",
 		name = "融化于舌尖的甜美",
 		story_resource_JP = "soundStory4_JP",
@@ -221,11 +172,7 @@ var_0_3.base.soundstory_template = {}
 			3
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.soundstory_template
-
-	var_1_4[5] = {
+	pg.base.soundstory_template[5] = {
 		story_pic = "",
 		name = "至高的嘉奖",
 		story_resource_JP = "soundStory5_JP",
@@ -252,11 +199,7 @@ var_0_3.base.soundstory_template = {}
 			3
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.soundstory_template
-
-	var_1_5[6] = {
+	pg.base.soundstory_template[6] = {
 		story_pic = "",
 		name = "匣中赠礼",
 		story_resource_JP = "soundStory6_JP",
@@ -309,11 +252,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.soundstory_template
-
-	var_1_6[7] = {
+	pg.base.soundstory_template[7] = {
 		story_pic = "",
 		name = "独占你的渴望",
 		story_resource_JP = "soundStory7_JP",
@@ -366,11 +305,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.soundstory_template
-
-	var_1_7[8] = {
+	pg.base.soundstory_template[8] = {
 		story_pic = "",
 		name = "心跳协奏",
 		story_resource_JP = "soundStory8_JP",
@@ -397,11 +332,7 @@ var_0_3.base.soundstory_template = {}
 			3
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.soundstory_template
-
-	var_1_8[9] = {
+	pg.base.soundstory_template[9] = {
 		story_pic = "",
 		name = "微热的厨房间",
 		story_resource_JP = "soundStory9_JP",
@@ -454,11 +385,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.soundstory_template
-
-	var_1_9[10] = {
+	pg.base.soundstory_template[10] = {
 		story_pic = "",
 		name = "少女的小小心思",
 		story_resource_JP = "soundStory10_JP",
@@ -511,11 +438,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.soundstory_template
-
-	var_1_10[11] = {
+	pg.base.soundstory_template[11] = {
 		story_pic = "",
 		name = "沉醉余音",
 		story_resource_JP = "soundStory11_JP",
@@ -568,11 +491,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.soundstory_template
-
-	var_1_11[12] = {
+	pg.base.soundstory_template[12] = {
 		story_pic = "",
 		name = "藏匿在暗处的亲昵",
 		story_resource_JP = "soundStory12_JP",
@@ -625,11 +544,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.soundstory_template
-
-	var_1_12[13] = {
+	pg.base.soundstory_template[13] = {
 		story_pic = "",
 		name = "微醺之爱的夏夜邂逅",
 		story_resource_JP = "soundStory13_JP",
@@ -682,11 +597,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.soundstory_template
-
-	var_1_13[14] = {
+	pg.base.soundstory_template[14] = {
 		story_pic = "",
 		name = "受困于甜蜜陷阱",
 		story_resource_JP = "soundStory14_JP",
@@ -739,11 +650,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.soundstory_template
-
-	var_1_14[15] = {
+	pg.base.soundstory_template[15] = {
 		story_pic = "",
 		name = "雨雾迷蒙",
 		story_resource_JP = "soundStory15_JP",
@@ -770,11 +677,7 @@ var_0_3.base.soundstory_template = {}
 			3
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.soundstory_template
-
-	var_1_15[16] = {
+	pg.base.soundstory_template[16] = {
 		story_pic = "",
 		name = "床边的玛丽小姐",
 		story_resource_JP = "soundStory16_JP",
@@ -827,11 +730,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.soundstory_template
-
-	var_1_16[17] = {
+	pg.base.soundstory_template[17] = {
 		story_pic = "",
 		name = "拉近关系的秘诀",
 		story_resource_JP = "soundStory17_JP",
@@ -884,11 +783,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.soundstory_template
-
-	var_1_17[18] = {
+	pg.base.soundstory_template[18] = {
 		story_pic = "",
 		name = "圣夜的惊喜 ",
 		story_resource_JP = "soundStory18_JP",
@@ -941,11 +836,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.soundstory_template
-
-	var_1_18[19] = {
+	pg.base.soundstory_template[19] = {
 		story_pic = "",
 		name = "乌冬面的制作方法？！",
 		story_resource_JP = "soundStory19_JP",
@@ -998,11 +889,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.soundstory_template
-
-	var_1_19[20] = {
+	pg.base.soundstory_template[20] = {
 		story_pic = "",
 		name = "和你的海滩约会",
 		story_resource_JP = "soundStory20_JP",
@@ -1055,11 +942,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.soundstory_template
-
-	var_1_20[21] = {
+	pg.base.soundstory_template[21] = {
 		story_pic = "",
 		name = "禁忌的午夜告解室",
 		story_resource_JP = "soundStory21_JP",
@@ -1112,11 +995,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.soundstory_template
-
-	var_1_21[22] = {
+	pg.base.soundstory_template[22] = {
 		story_pic = "",
 		name = "甜汤中的心意",
 		story_resource_JP = "soundStory22_JP",
@@ -1169,11 +1048,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.soundstory_template
-
-	var_1_22[23] = {
+	pg.base.soundstory_template[23] = {
 		story_pic = "",
 		name = "桑拿房中的耐力训练！……？",
 		story_resource_JP = "soundStory23_JP",
@@ -1226,11 +1101,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.soundstory_template
-
-	var_1_23[24] = {
+	pg.base.soundstory_template[24] = {
 		story_pic = "",
 		name = "保养“藏品”的方式",
 		story_resource_JP = "soundStory24_JP",
@@ -1283,11 +1154,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.soundstory_template
-
-	var_1_24[25] = {
+	pg.base.soundstory_template[25] = {
 		story_pic = "",
 		name = "下次也一起约会吧！",
 		story_resource_JP = "soundStory25_JP",
@@ -1340,11 +1207,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.soundstory_template
-
-	var_1_25[26] = {
+	pg.base.soundstory_template[26] = {
 		story_pic = "",
 		name = "“深海魔物”进食观察",
 		story_resource_JP = "soundStory26_JP",
@@ -1397,11 +1260,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.soundstory_template
-
-	var_1_26[27] = {
+	pg.base.soundstory_template[27] = {
 		story_pic = "",
 		name = "令人着迷的休憩之处",
 		story_resource_JP = "soundStory27_JP",
@@ -1454,11 +1313,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.soundstory_template
-
-	var_1_27[28] = {
+	pg.base.soundstory_template[28] = {
 		story_pic = "",
 		name = "温柔的安眠时分",
 		story_resource_JP = "soundStory28_JP",
@@ -1511,11 +1366,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.soundstory_template
-
-	var_1_28[29] = {
+	pg.base.soundstory_template[29] = {
 		story_pic = "",
 		name = "浴室中的亲密接触",
 		story_resource_JP = "soundStory29_JP",
@@ -1568,8 +1419,7 @@ var_0_3.base.soundstory_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.soundstory_template[30] = {
+	pg.base.soundstory_template[30] = {
 		story_pic = "",
 		name = "今夜的身体检查",
 		story_resource_JP = "soundStory30_JP",

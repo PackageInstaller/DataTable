@@ -4,6 +4,7 @@ require("game/storyTalk/manager/StoryTalkConst")
 require("game/storyTalk/manager/StoryModelConst")
 storyTalk.StoryDataRo = require('rodata/StoryDataRo')
 storyTalk.StoryPrefabRo = require('rodata/StoryPrefabRo')
+storyTalk.StoryRoleRo = require('rodata/StoryRoleRo')
 
 storyTalk.StoryEditorView = require("game/storyTalk/view/StoryEditorView")
 

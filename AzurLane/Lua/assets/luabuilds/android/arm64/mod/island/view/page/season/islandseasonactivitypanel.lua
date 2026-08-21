@@ -1,111 +1,63 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSeasonActivityPanel", import("view.base.BaseSubView"))
 
-local var_0_0 = "IslandSeasonActivityPanel"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandSeasonActivityPanel"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	UIItemList = var_1_10001
-	arg_3_0.tabsList = var_1_10001.New(arg_3_0.rtTabsContent, arg_3_0.rtTabsTpl)
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.tabsList = UIItemList.New(arg_3_0.rtTabsContent, arg_3_0.rtTabsTpl)
 
-	local var_3_0 = arg_3_0.tabsList
-
-	var_1.make(var_3_0, function(arg_4_0, arg_4_1, arg_4_2)
+	arg_3_0.tabsList:make(function(arg_4_0, arg_4_1, arg_4_2)
 		arg_4_1 = arg_4_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_4_0 == var_2_10003.EventUpdate then
-			local var_4_0
+		if arg_4_0 == UIItemList.EventUpdate then
+			local var_4_0 = arg_3_0.activities[arg_4_1]
 
-			if not arg_3_0.activities[arg_4_1] or not var_3.id then
-				var_4_0 = 0
-			end
+			if arg_3_0.activities[arg_4_1] then
+				local var_4_1 = var_4_0.id or 0
 
-			arg_4_2.name = var_4_0
+				arg_4_2.name = var_4_1
 
-			local function var_4_1(arg_5_0)
-				setActive = var_3_10001
+				local function var_4_2(arg_5_0)
+					setActive(arg_4_2:Find("red"), IslandSeasonRedDotHelper.TipActivity(arg_5_0))
 
-				local var_5_0 = arg_4_2
-				local var_5_1 = var_3.Find(var_5_0, "red")
-
-				IslandSeasonRedDotHelper = var_3_10004
-
-				var_3_10001(var_5_1, var_3_10004.TipActivity(arg_5_0))
-
-				return
-			end
-
-			if var_3 then
-				var_2_10006 = var_3:getIslandConfig("title_res_tag")
-				setText = var_2_10007
-
-				var_2_10007(arg_4_2:Find("on/Text"), var_2_10006)
-
-				setText = var_2_10007
-
-				var_2_10007(arg_4_2:Find("off/Text"), var_2_10006)
-				var_4_1(var_3)
-			else
-				setText = var_2_10006
-
-				local var_4_2 = arg_4_2:Find("on/Text")
-
-				i18n = var_2_10009
-
-				var_2_10006(var_4_2, var_2_10009("island_no_activity"))
-
-				setText = var_2_10006
-
-				local var_4_3 = arg_4_2:Find("on/Text/en")
-
-				i18n = var_9
-
-				var_2_10006(var_4_3, var_9("island_activity_decorative_word"))
-
-				setText = var_2_10006
-
-				local var_4_4 = arg_4_2:Find("off/Text")
-
-				i18n = var_9
-
-				var_2_10006(var_4_4, var_9("island_no_activity"))
-			end
-
-			local var_4_5 = arg_3_0.pageDic[var_4_0]
-
-			onToggle = var_2_10007
-
-			local var_4_6 = arg_3_0
-			local var_4_7 = arg_4_2
-
-			local function var_4_8(arg_6_0)
-				if var_4_5 and arg_6_0 then
-					local var_6_0 = arg_3_0
-
-					var_1.selectActivity(var_6_0, var_0)
-					var_4_1(var_0)
+					return
 				end
 
+				if var_4_0 then
+					local var_4_3 = var_4_0:getIslandConfig("title_res_tag")
+
+					setText(arg_4_2:Find("on/Text"), var_4_3)
+					setText(arg_4_2:Find("off/Text"), var_4_3)
+					;(function(arg_5_0)
+						setActive(arg_4_2:Find("red"), IslandSeasonRedDotHelper.TipActivity(arg_5_0))
+
+						return
+					end)(var_4_0)
+				else
+					setText(arg_4_2:Find("on/Text"), i18n("island_no_activity"))
+					setText(arg_4_2:Find("on/Text/en"), i18n("island_activity_decorative_word"))
+					setText(arg_4_2:Find("off/Text"), i18n("island_no_activity"))
+				end
+
+				local var_4_4 = arg_3_0.pageDic[var_4_1]
+
+				onToggle(arg_3_0, arg_4_2, function(arg_6_0)
+					if var_4_4 and arg_6_0 then
+						arg_3_0:selectActivity(var_4_0)
+						var_4_2(var_4_0)
+					end
+
+					return
+				end, SFX_PANEL)
+
 				return
 			end
-
-			SFX_PANEL = var_2_10012
-
-			var_2_10007(var_4_6, var_4_7, var_4_8, var_2_10012)
 		end
-
-		return
 	end)
 
 	arg_3_0.switchCount = 0
@@ -113,38 +65,25 @@ function var_0_1.OnInit(arg_3_0)
 	return
 end
 
-function var_0_1.Show(arg_7_0)
-	var_0_1.super.Show(arg_7_0)
+function var_0_0.Show(arg_7_0)
+	var_0_0.super.Show(arg_7_0)
 	arg_7_0:Flush()
-
-	IslandGuideChecker = var_1
-
-	var_1.CheckGuide("ISLAND_GUIDE_14")
+	IslandGuideChecker.CheckGuide("ISLAND_GUIDE_14")
 
 	return
 end
 
-function var_0_1.Flush(arg_8_0)
+function var_0_0.Flush(arg_8_0)
 	if not arg_8_0:isShowing() then
 		return
 	end
 
 	if not arg_8_0.activities then
-		local var_8_0 = arg_8_0
-		local var_8_1 = arg_8_0.setActivities
-
-		getProxy = var_1_10004
-		ActivityProxy = var_1_10006
-
-		local var_8_2 = var_1_10004(var_1_10006)
-
-		var_8_1(var_8_0, var_4.getIslandPanelActivities(var_8_2))
+		arg_8_0:setActivities(getProxy(ActivityProxy):getIslandPanelActivities())
 	end
 
 	if arg_8_0.activity then
-		local var_8_3 = arg_8_0.pageDic[arg_8_0.activity.id]
-
-		var_1.ExecuteAction(var_8_3, "ShowOrHide", true)
+		arg_8_0.pageDic[arg_8_0.activity.id]:ExecuteAction("ShowOrHide", true)
 	else
 		arg_8_0:verifyTabs()
 	end
@@ -152,30 +91,18 @@ function var_0_1.Flush(arg_8_0)
 	return
 end
 
-function var_0_1.verifyTabs(arg_9_0, arg_9_1)
+function var_0_0.verifyTabs(arg_9_0, arg_9_1)
 	if #arg_9_0.activities > 0 then
-		local var_9_0 = arg_9_0
-		local var_9_1
+		local var_9_0 = arg_9_0:getActivityIndex(arg_9_1) or 1
 
-		if not arg_9_0.getActivityIndex(var_9_0, arg_9_1) then
-			var_9_1 = 1
-		end
-
-		local var_9_2 = arg_9_0.rtTabsContent
-		local var_9_3 = var_3.GetChild(var_9_2, var_9_1 - 1)
-
-		triggerToggle = var_9_0
-
-		var_9_0(var_9_3, true)
+		triggerToggle(arg_9_0.rtTabsContent:GetChild(var_9_0 - 1), true)
 	end
 
 	return
 end
 
-function var_0_1.getActivityIndex(arg_10_0, arg_10_1)
-	ipairs = var_1_10002
-
-	for iter_10_0, iter_10_1 in var_1_10002(arg_10_0.activities) do
+function var_0_0.getActivityIndex(arg_10_0, arg_10_1)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.activities) do
 		if iter_10_1.id == arg_10_1 then
 			return iter_10_0
 		end
@@ -184,40 +111,18 @@ function var_0_1.getActivityIndex(arg_10_0, arg_10_1)
 	return nil
 end
 
-function var_0_1.setActivities(arg_11_0, arg_11_1)
+function var_0_0.setActivities(arg_11_0, arg_11_1)
 	arg_11_0.activities = arg_11_1 or {}
+	arg_11_0.shareData = arg_11_0.shareData or ActivityShareData.New()
+	arg_11_0.pageDic = arg_11_0.pageDic or {}
 
-	local var_11_0
-
-	if not arg_11_0.shareData then
-		ActivityShareData = var_11_0
-		var_11_0 = var_11_0.New()
-	end
-
-	arg_11_0.shareData = var_11_0
-
-	local var_11_1
-
-	if not arg_11_0.pageDic then
-		var_11_1 = {}
-	end
-
-	arg_11_0.pageDic = var_11_1
-	ipairs = var_11_1
-
-	for iter_11_0, iter_11_1 in var_11_1(arg_11_1) do
+	for iter_11_0, iter_11_1 in ipairs(arg_11_1) do
 		arg_11_0:instanceActivityPage(iter_11_1)
 	end
 
 	arg_11_0.activity = nil
-	table = var_2
 
-	local var_11_2 = var_2.sort
-	local var_11_3 = arg_11_0.activities
-
-	CompareFuncs = iter_11_0
-
-	var_11_2(var_11_3, iter_11_0({
+	table.sort(arg_11_0.activities, CompareFuncs({
 		function(arg_12_0)
 			return -arg_12_0:getIslandConfig("is_show")
 		end,
@@ -230,48 +135,24 @@ function var_0_1.setActivities(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.OnTaskUpdate(arg_14_0, arg_14_1)
-	pairs = var_1_10002
-
-	for iter_14_0, iter_14_1 in var_1_10002(arg_14_0.activities) do
-		local var_14_0 = iter_14_1
-		local var_14_1 = iter_14_1.getConfig(var_14_0, "type")
-
-		ActivityConst = var_1_10008
-
-		if var_14_1 == var_1_10008.ACTIVITY_TYPE_TASK_LIST then
-			_ = var_14_1
-
-			local var_14_2 = var_14_1.any
-
-			_ = var_14_0
-
-			if var_14_2(var_14_0.flatten(iter_14_1:getIslandConfig("config_data")), function(arg_15_0)
-				return arg_15_0 == arg_14_1
-			end) then
-				arg_14_0:updateActivity(iter_14_1)
-			end
+function var_0_0.OnTaskUpdate(arg_14_0, arg_14_1)
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.activities) do
+		if iter_14_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_TASK_LIST and _.any(_.flatten(iter_14_1:getIslandConfig("config_data")), function(arg_15_0)
+			return arg_15_0 == arg_14_1
+		end) then
+			arg_14_0:updateActivity(iter_14_1)
 		end
 	end
 
 	return
 end
 
-function var_0_1.updateActivity(arg_16_0, arg_16_1)
-	ActivityConst = var_1_10002
+function var_0_0.updateActivity(arg_16_0, arg_16_1)
+	if ActivityConst.IslandPageIdLinks[arg_16_1.id] then
+		for iter_16_0, iter_16_1 in ipairs(ActivityConst.IslandPageIdLinks[arg_16_1.id]) do
+			local var_16_0 = getProxy(ActivityProxy)
 
-	if var_1_10002.IslandPageIdLinks[arg_16_1.id] then
-		ipairs = var_3
-
-		for iter_16_0, iter_16_1 in var_3(var_2) do
-			local var_16_0 = arg_16_0
-			local var_16_1 = arg_16_0._updateActivity
-
-			getProxy = var_1_10011
-			ActivityProxy = var_1_10013
-			var_1_10013 = var_1_10011(var_1_10013)
-
-			var_16_1(var_16_0, var_1_10011.getActivityById(var_1_10013, iter_16_1))
+			arg_16_0:_updateActivity(var_16_0:getActivityById(iter_16_1))
 		end
 	else
 		arg_16_0:_updateActivity(arg_16_1)
@@ -280,25 +161,13 @@ function var_0_1.updateActivity(arg_16_0, arg_16_1)
 	return
 end
 
-function var_0_1._updateActivity(arg_17_0, arg_17_1)
+function var_0_0._updateActivity(arg_17_0, arg_17_1)
 	if arg_17_1:isIslandShow() and not arg_17_1:isEnd() then
-		local var_17_0 = arg_17_0.activities
-		local var_17_1 = arg_17_0
-		local var_17_2
+		local var_17_0 = arg_17_0:getActivityIndex(arg_17_1.id) or #arg_17_0.activities + 1
 
-		if not arg_17_0.getActivityIndex(var_17_1, arg_17_1.id) then
-			var_17_2 = #arg_17_0.activities + 1
-		end
+		arg_17_0.activities[var_17_0] = arg_17_1
 
-		var_17_0[var_17_2] = arg_17_1
-		table = var_17_0
-
-		local var_17_3 = var_17_0.sort
-		local var_17_4 = arg_17_0.activities
-
-		CompareFuncs = var_17_1
-
-		var_17_3(var_17_4, var_17_1({
+		table.sort(arg_17_0.activities, CompareFuncs({
 			function(arg_18_0)
 				return -arg_18_0:getIslandConfig("is_show")
 			end,
@@ -316,24 +185,19 @@ function var_0_1._updateActivity(arg_17_0, arg_17_1)
 		if arg_17_0:isShowing() and arg_17_0.activity and arg_17_0.activity.id == arg_17_1.id then
 			arg_17_0.activity = arg_17_1
 
-			local var_17_5 = arg_17_0.pageDic[arg_17_1.id]
-
-			var_2.ActionInvoke(var_17_5, "Flush", arg_17_1)
+			arg_17_0.pageDic[arg_17_1.id]:ActionInvoke("Flush", arg_17_1)
 		end
 	end
 
 	return
 end
 
-function var_0_1.removeActivity(arg_20_0, arg_20_1)
-	if arg_20_0:getActivityIndex(arg_20_1) then
-		table = var_1_10003
+function var_0_0.removeActivity(arg_20_0, arg_20_1)
+	local var_20_0 = arg_20_0:getActivityIndex(arg_20_1)
 
-		var_1_10003.remove(arg_20_0.activities, var_2)
-
-		local var_20_0 = arg_20_0.pageDic[arg_20_1]
-
-		var_3.Destroy(var_20_0)
+	if var_20_0 then
+		table.remove(arg_20_0.activities, var_20_0)
+		arg_20_0.pageDic[arg_20_1]:Destroy()
 
 		arg_20_0.pageDic[arg_20_1] = nil
 
@@ -349,75 +213,52 @@ function var_0_1.removeActivity(arg_20_0, arg_20_1)
 	return
 end
 
-function var_0_1.getActClass(arg_21_0, arg_21_1)
-	import = var_1_10002
-
-	return var_1_10002("Mod.Island.View.page.activity." .. arg_21_1)
+function var_0_0.getActClass(arg_21_0, arg_21_1)
+	return import("Mod.Island.View.page.activity." .. arg_21_1)
 end
 
-function var_0_1.instanceActivityPage(arg_22_0, arg_22_1)
-	if arg_22_1:getIslandConfig("page_info").class_name and not arg_22_0.pageDic[arg_22_1.id] and not arg_22_1:isEnd() then
-		local var_22_0 = arg_22_0:getActClass(var_2.class_name).New(arg_22_0.rtPages, arg_22_0.event, arg_22_0.contextData)
+function var_0_0.instanceActivityPage(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_1:getIslandConfig("page_info")
 
-		if var_4.UseSecondPage(var_22_0, arg_22_1) then
-			var_4:SetUIName(var_2.ui_name2)
+	if var_22_0.class_name and not arg_22_0.pageDic[arg_22_1.id] and not arg_22_1:isEnd() then
+		local var_22_1 = arg_22_0:getActClass(var_22_0.class_name).New(arg_22_0.rtPages, arg_22_0.event, arg_22_0.contextData)
+
+		if var_22_1:UseSecondPage(arg_22_1) then
+			var_22_1:SetUIName(var_22_0.ui_name2)
 		else
-			var_4:SetUIName(var_2.ui_name)
+			var_22_1:SetUIName(var_22_0.ui_name)
 		end
 
-		var_4:SetShareData(arg_22_0.shareData)
+		var_22_1:SetShareData(arg_22_0.shareData)
 
-		arg_22_0.pageDic[arg_22_1.id] = var_4
+		arg_22_0.pageDic[arg_22_1.id] = var_22_1
 	end
 
 	return
 end
 
-function var_0_1.flushTabs(arg_23_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_23_0.rtPagesEmpty, #arg_23_0.activities == 0)
-
-	local var_23_0 = arg_23_0.tabsList
-	local var_23_1 = var_1.align
-
-	math = var_4
-
-	var_23_1(var_23_0, var_4.max(#arg_23_0.activities, 1))
+function var_0_0.flushTabs(arg_23_0)
+	setActive(arg_23_0.rtPagesEmpty, #arg_23_0.activities == 0)
+	arg_23_0.tabsList:align(math.max(#arg_23_0.activities, 1))
 
 	return
 end
 
-function var_0_1.selectActivity(arg_24_0, arg_24_1)
+function var_0_0.selectActivity(arg_24_0, arg_24_1)
 	if arg_24_0.nextActivity == arg_24_1 or not arg_24_0.nextActivity and arg_24_0.activity and arg_24_1.id == arg_24_0.activity.id then
 		return
 	end
 
-	IslandSeasonRedDotHelper = var_2
+	IslandSeasonRedDotHelper.UpdateActEnterTip(arg_24_1)
+	arg_24_0:emit(IslandSeasonPage.UPDATE_REDDOT, IslandSeasonPage.PAGE_ACTIVITY)
 
-	var_2.UpdateActEnterTip(arg_24_1)
-
-	local var_24_0 = arg_24_0
-	local var_24_1 = arg_24_0.emit
-
-	IslandSeasonPage = var_1_10005
-
-	local var_24_2 = var_1_10005.UPDATE_REDDOT
-
-	IslandSeasonPage = var_1_10006
-
-	var_24_1(var_24_0, var_24_2, var_1_10006.PAGE_ACTIVITY)
-
-	local var_24_3 = {}
+	local var_24_0 = {}
 
 	if arg_24_0.activity and not arg_24_0.nextActivity then
 		arg_24_0.switchCount = arg_24_0.switchCount + 1
-		table = var_3
 
-		var_3.insert(var_24_3, function(arg_25_0)
-			local var_25_0 = arg_24_0.pageDic[arg_24_0.activity.id]
-
-			var_1.ActionInvoke(var_25_0, "SwitchOut", function()
+		table.insert(var_24_0, function(arg_25_0)
+			arg_24_0.pageDic[arg_24_0.activity.id]:ActionInvoke("SwitchOut", function()
 				arg_24_0.switchCount = arg_24_0.switchCount - 1
 
 				arg_25_0()
@@ -429,74 +270,56 @@ function var_0_1.selectActivity(arg_24_0, arg_24_1)
 		end)
 	end
 
-	local var_24_4
+	if arg_24_0.activity then
+		if arg_24_0.activity.id ~= arg_24_1.id then
+			assert(arg_24_0.pageDic[arg_24_1.id], "找不到id:" .. arg_24_1.id .. "的活动页，请检查")
 
-	if not arg_24_0.activity or arg_24_0.activity.id ~= arg_24_1.id then
-		var_24_4 = arg_24_0.pageDic[arg_24_1.id]
-		assert = var_4
+			arg_24_0.switchCount = arg_24_0.switchCount + 1
 
-		var_4(var_24_4, "找不到id:" .. arg_24_1.id .. "的活动页，请检查")
+			table.insert(var_24_0, function(arg_27_0)
+				var_0:Load()
+				var_0:ActionInvoke("ShowOrHide", false)
+				var_0:CallbackInvoke(function()
+					arg_24_0.switchCount = arg_24_0.switchCount - 1
 
-		arg_24_0.switchCount = arg_24_0.switchCount + 1
-		table = var_4
+					arg_27_0()
 
-		var_4.insert(var_24_3, function(arg_27_0)
-			local var_27_0 = var_24_4
-
-			var_1.Load(var_27_0)
-
-			local var_27_1 = var_24_4
-
-			var_1.ActionInvoke(var_27_1, "ShowOrHide", false)
-
-			local var_27_2 = var_24_4
-
-			var_1.CallbackInvoke(var_27_2, function()
-				arg_24_0.switchCount = arg_24_0.switchCount - 1
-
-				arg_27_0()
+					return
+				end)
 
 				return
 			end)
+		end
+
+		arg_24_0.nextActivity = arg_24_1
+
+		parallelAsync(var_24_0, function()
+			if arg_24_0.switchCount > 0 then
+				return
+			end
+
+			if arg_24_0.activity then
+				arg_24_0.pageDic[arg_24_0.activity.id]:ActionInvoke("ShowOrHide", false)
+			end
+
+			arg_24_0.activity = arg_24_0.nextActivity
+			arg_24_0.contextData.id = arg_24_0.nextActivity.id
+			arg_24_0.nextActivity = nil
+
+			arg_24_0.pageDic[arg_24_0.activity.id]:ActionInvoke("ShowOrHide", true)
+			arg_24_0.pageDic[arg_24_0.activity.id]:ActionInvoke("Flush", arg_24_0.activity)
 
 			return
 		end)
-	end
-
-	arg_24_0.nextActivity = arg_24_1
-	parallelAsync = var_24_4
-
-	var_24_4(var_24_3, function()
-		if arg_24_0.switchCount > 0 then
-			return
-		end
-
-		if arg_24_0.activity then
-			local var_29_0 = arg_24_0.pageDic[arg_24_0.activity.id]
-
-			var_0.ActionInvoke(var_29_0, "ShowOrHide", false)
-		end
-
-		arg_24_0.activity = arg_24_0.nextActivity
-		arg_24_0.contextData.id = arg_24_0.nextActivity.id
-		arg_24_0.nextActivity = nil
-
-		local var_29_1 = arg_24_0.pageDic[arg_24_0.activity.id]
-
-		var_0.ActionInvoke(var_29_1, "ShowOrHide", true)
-		var_0:ActionInvoke("Flush", arg_24_0.activity)
 
 		return
-	end)
-
-	return
+	end
 end
 
-function var_0_1.OnDestroy(arg_30_0)
+function var_0_0.OnDestroy(arg_30_0)
 	arg_30_0.shareData = nil
-	pairs = var_1
 
-	for iter_30_0, iter_30_1 in var_1(arg_30_0.pageDic) do
+	for iter_30_0, iter_30_1 in pairs(arg_30_0.pageDic) do
 		iter_30_1:Destroy()
 	end
 
@@ -507,12 +330,10 @@ function var_0_1.OnDestroy(arg_30_0)
 	return
 end
 
-function var_0_1.OnHide(arg_31_0)
+function var_0_0.OnHide(arg_31_0)
 	arg_31_0:UnOverlayPanel(arg_31_0._tf, arg_31_0._parentTf)
 
-	pairs = var_1
-
-	for iter_31_0, iter_31_1 in var_1(arg_31_0.pageDic) do
+	for iter_31_0, iter_31_1 in pairs(arg_31_0.pageDic) do
 		if iter_31_1 and iter_31_1:isShowing() then
 			iter_31_1:Hide()
 		end
@@ -521,4 +342,4 @@ function var_0_1.OnHide(arg_31_0)
 	return
 end
 
-return var_0_1
+return var_0_0

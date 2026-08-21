@@ -1,156 +1,76 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SculptureMiniMsgBoxPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "SculptureMiniMsgBoxPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SculptureMiniMsgBoxUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "frame/Text")
-	local var_2_2 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.contentTxt = var_2_2(var_2_1, var_4(var_1_10006))
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.confirmBtn = var_1.Find(var_2_3, "frame/btns/btn_confrim")
-
-	local var_2_4 = arg_2_0.confirmBtn
-	local var_2_5 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_2_0.btnImg = var_2_5(var_2_4, var_4(var_1_10006))
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.cancelBtn = var_1.Find(var_2_6, "frame/btns/btn_cancel")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.contentTxt = arg_2_0._tf:Find("frame/Text"):GetComponent(typeof(Text))
+	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/btns/btn_confrim")
+	arg_2_0.btnImg = arg_2_0.confirmBtn:GetComponent(typeof(Image))
+	arg_2_0.cancelBtn = arg_2_0._tf:Find("frame/btns/btn_cancel")
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.confirmBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		arg_3_0:Hide()
 
 		if arg_3_0.settings.onYes then
 			arg_3_0.settings.onYes()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0._tf
-
-	local function var_3_5()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf, function()
 		if arg_3_0.settings.model then
 			return
 		end
 
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.cancelBtn
-
-	local function var_3_8()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
 		if arg_3_0.settings.model then
 			return
 		end
 
-		local var_6_0 = arg_3_0
-
-		var_0.Hide(var_6_0)
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_7_0, arg_7_1)
-	var_0_1.super.Show(arg_7_0)
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
 
 	arg_7_0.settings = arg_7_1
+	arg_7_0.contentTxt.text = HXSet.hxLan(arg_7_1.content)
 
-	local var_7_0 = arg_7_0.contentTxt
+	SetParent(arg_7_0._tf, pg.UIMgr.GetInstance().OverlayMain)
 
-	HXSet = var_1_10003
-	var_7_0.text = var_1_10003.hxLan(arg_7_1.content)
-	SetParent = var_7_0
+	local var_7_0 = arg_7_1.yes_text or "btn_confrim"
 
-	local var_7_1 = arg_7_0._tf
-
-	pg = var_5
-
-	var_7_0(var_7_1, var_5.UIMgr.GetInstance().OverlayMain)
-
-	local var_7_2
-
-	if not arg_7_1.yes_text then
-		var_7_2 = "btn_confrim"
-	end
-
-	GetSpriteFromAtlas = var_3
-
-	local var_7_3 = var_3("ui/SculptureUI_atlas", var_7_2)
-
-	arg_7_0.btnImg.sprite = var_7_3
+	arg_7_0.btnImg.sprite = GetSpriteFromAtlas("ui/SculptureUI_atlas", var_7_0)
 
 	if arg_7_1.effect then
 		arg_7_0:LoadEffect()
 	end
 
-	setActive = var_4
-
-	var_4(arg_7_0.cancelBtn, arg_7_1.showNo)
+	setActive(arg_7_0.cancelBtn, arg_7_1.showNo)
 
 	return
 end
 
-function var_0_1.Hide(arg_8_0)
-	var_0_1.super.Hide(arg_8_0)
+function var_0_0.Hide(arg_8_0)
+	var_0_0.super.Hide(arg_8_0)
 
 	if arg_8_0.effectGo then
-		Object = var_1
-
-		var_1.Destroy(arg_8_0.effectGo)
+		Object.Destroy(arg_8_0.effectGo)
 
 		arg_8_0.effectGo = nil
 	end
@@ -158,49 +78,29 @@ function var_0_1.Hide(arg_8_0)
 	return
 end
 
-function var_0_1.LoadEffect(arg_9_0)
+function var_0_0.LoadEffect(arg_9_0)
 	local var_9_0 = "liwucaijian_caidai"
-	local var_9_2
 
 	if not arg_9_0.effectGo then
-		ResourceMgr = var_9_2
-
-		local var_9_1 = var_9_2.Inst
-
-		var_9_2 = var_9_2.getAssetAsync
-
-		local var_9_3 = "ui/" .. var_9_0
-		local var_9_4 = ""
-
-		UnityEngine = var_1_10007
-
-		var_9_2(var_9_1, var_9_3, var_9_4, var_1_10007.Events.UnityAction_UnityEngine_Object(function(arg_10_0)
+		ResourceMgr.Inst:getAssetAsync("ui/" .. "liwucaijian_caidai", "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_10_0)
 			if arg_9_0.exited then
 				return
 			end
 
-			local var_10_0 = arg_9_0
-
-			Object = var_2_10002
-			var_10_0.effectGo = var_2_10002.Instantiate(arg_10_0, arg_9_0._tf)
+			arg_9_0.effectGo = Object.Instantiate(arg_10_0, arg_9_0._tf)
 			arg_9_0.effectGo.name = var_9_0
 
 			return
 		end), true, true)
 	else
-		setActive = var_9_2
-
-		var_9_2(arg_9_0.effectGo, false)
-
-		setActive = var_9_2
-
-		var_9_2(arg_9_0.effectGo, true)
+		setActive(arg_9_0.effectGo, false)
+		setActive(arg_9_0.effectGo, true)
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_11_0)
+function var_0_0.OnDestroy(arg_11_0)
 	if arg_11_0:isShowing() then
 		arg_11_0:Hide()
 	end
@@ -208,4 +108,4 @@ function var_0_1.OnDestroy(arg_11_0)
 	return
 end
 
-return var_0_1
+return var_0_0

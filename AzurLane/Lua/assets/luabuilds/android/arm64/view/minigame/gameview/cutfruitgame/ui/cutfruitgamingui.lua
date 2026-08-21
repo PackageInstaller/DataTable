@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CutFruitGamingUI")
+﻿local var_0_0 = class("CutFruitGamingUI")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._tf = arg_1_1
@@ -13,144 +11,50 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 end
 
 function var_0_0.initUI(arg_2_0)
-	findTF = var_1_10001
-	arg_2_0._gameUI = var_1_10001(arg_2_0._tf, "ui/gamingUI")
-	findTF = var_1
-	arg_2_0.btnBack = var_1(arg_2_0._gameUI, "back")
-	findTF = var_1
-	arg_2_0.btnPause = var_1(arg_2_0._gameUI, "pause")
-	findTF = var_1
-	arg_2_0.timeTF = var_1(arg_2_0._gameUI, "top/ad/time")
-	onButton = var_1
+	arg_2_0._gameUI = findTF(arg_2_0._tf, "ui/gamingUI")
+	arg_2_0.btnBack = findTF(arg_2_0._gameUI, "back")
+	arg_2_0.btnPause = findTF(arg_2_0._gameUI, "pause")
+	arg_2_0.timeTF = findTF(arg_2_0._gameUI, "top/ad/time")
 
-	local var_2_0 = arg_2_0._event
-	local var_2_1 = arg_2_0.btnBack
-
-	local function var_2_2()
+	onButton(arg_2_0._event, arg_2_0.btnBack, function()
 		if not arg_2_0._gameVo.startSettlement then
-			local var_3_0 = arg_2_0._event
-			local var_3_1 = var_0.emit
-
-			SimpleMGEvent = var_2_10003
-
-			var_3_1(var_3_0, var_2_10003.PAUSE_GAME, true)
-
-			local var_3_2 = arg_2_0._event
-			local var_3_3 = var_0.emit
-
-			SimpleMGEvent = var_3
-
-			var_3_3(var_3_2, var_3.OPEN_LEVEL_UI)
+			arg_2_0._event:emit(SimpleMGEvent.PAUSE_GAME, true)
+			arg_2_0._event:emit(SimpleMGEvent.OPEN_LEVEL_UI)
 		end
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10006
-
-	var_1(var_2_0, var_2_1, var_2_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_2_3 = arg_2_0._event
-	local var_2_4 = arg_2_0.btnPause
-
-	local function var_2_5()
+	end, SFX_CONFIRM)
+	onButton(arg_2_0._event, arg_2_0.btnPause, function()
 		if not arg_2_0._gameVo.startSettlement then
-			local var_4_0 = arg_2_0._event
-			local var_4_1 = var_0.emit
-
-			SimpleMGEvent = var_2_10003
-
-			var_4_1(var_4_0, var_2_10003.PAUSE_GAME, true)
-
-			local var_4_2 = arg_2_0._event
-			local var_4_3 = var_0.emit
-
-			SimpleMGEvent = var_3
-
-			var_4_3(var_4_2, var_3.OPEN_PAUSE_UI)
+			arg_2_0._event:emit(SimpleMGEvent.PAUSE_GAME, true)
+			arg_2_0._event:emit(SimpleMGEvent.OPEN_PAUSE_UI)
 		end
 
 		return
-	end
+	end, SFX_CONFIRM)
 
-	SFX_CONFIRM = var_1_10006
+	arg_2_0.btnUp = findTF(arg_2_0._gameUI, "up")
+	arg_2_0.btnDown = findTF(arg_2_0._gameUI, "down")
+	arg_2_0.btnLeft = findTF(arg_2_0._gameUI, "left")
+	arg_2_0.btnRight = findTF(arg_2_0._gameUI, "right")
 
-	var_1(var_2_3, var_2_4, var_2_5, var_1_10006)
-
-	findTF = var_1
-	arg_2_0.btnUp = var_1(arg_2_0._gameUI, "up")
-	findTF = var_1
-	arg_2_0.btnDown = var_1(arg_2_0._gameUI, "down")
-	findTF = var_1
-	arg_2_0.btnLeft = var_1(arg_2_0._gameUI, "left")
-	findTF = var_1
-	arg_2_0.btnRight = var_1(arg_2_0._gameUI, "right")
-	onButton = var_1
-
-	var_1(arg_2_0._event, arg_2_0.btnUp, function()
-		local var_5_0 = arg_2_0._event
-		local var_5_1 = var_0.emit
-
-		CutFruitGameView = var_2_10003
-
-		local var_5_2 = var_2_10003.EVENT_DIRECT
-
-		CutFruitGameConst = var_2_10004
-
-		var_5_1(var_5_0, var_5_2, var_2_10004.DIRECT_UP)
+	onButton(arg_2_0._event, arg_2_0.btnUp, function()
+		arg_2_0._event:emit(CutFruitGameView.EVENT_DIRECT, CutFruitGameConst.DIRECT_UP)
 
 		return
 	end)
-
-	onButton = var_1
-
-	var_1(arg_2_0._event, arg_2_0.btnDown, function()
-		local var_6_0 = arg_2_0._event
-		local var_6_1 = var_0.emit
-
-		CutFruitGameView = var_2_10003
-
-		local var_6_2 = var_2_10003.EVENT_DIRECT
-
-		CutFruitGameConst = var_2_10004
-
-		var_6_1(var_6_0, var_6_2, var_2_10004.DIRECT_DOWN)
+	onButton(arg_2_0._event, arg_2_0.btnDown, function()
+		arg_2_0._event:emit(CutFruitGameView.EVENT_DIRECT, CutFruitGameConst.DIRECT_DOWN)
 
 		return
 	end)
-
-	onButton = var_1
-
-	var_1(arg_2_0._event, arg_2_0.btnLeft, function()
-		local var_7_0 = arg_2_0._event
-		local var_7_1 = var_0.emit
-
-		CutFruitGameView = var_2_10003
-
-		local var_7_2 = var_2_10003.EVENT_DIRECT
-
-		CutFruitGameConst = var_2_10004
-
-		var_7_1(var_7_0, var_7_2, var_2_10004.DIRECT_LEFT)
+	onButton(arg_2_0._event, arg_2_0.btnLeft, function()
+		arg_2_0._event:emit(CutFruitGameView.EVENT_DIRECT, CutFruitGameConst.DIRECT_LEFT)
 
 		return
 	end)
-
-	onButton = var_1
-
-	var_1(arg_2_0._event, arg_2_0.btnRight, function()
-		local var_8_0 = arg_2_0._event
-		local var_8_1 = var_0.emit
-
-		CutFruitGameView = var_2_10003
-
-		local var_8_2 = var_2_10003.EVENT_DIRECT
-
-		CutFruitGameConst = var_2_10004
-
-		var_8_1(var_8_0, var_8_2, var_2_10004.DIRECT_RIGHT)
+	onButton(arg_2_0._event, arg_2_0.btnRight, function()
+		arg_2_0._event:emit(CutFruitGameView.EVENT_DIRECT, CutFruitGameConst.DIRECT_RIGHT)
 
 		return
 	end)
@@ -159,9 +63,7 @@ function var_0_0.initUI(arg_2_0)
 end
 
 function var_0_0.Show(arg_9_0, arg_9_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_9_0._gameUI, arg_9_1)
+	setActive(arg_9_0._gameUI, arg_9_1)
 
 	return
 end
@@ -175,18 +77,12 @@ function var_0_0.Start(arg_11_0)
 
 	arg_11_0:Show(true)
 
-	local var_11_0 = arg_11_0._gameVo
+	arg_11_0._editorFlag = arg_11_0._gameVo:GetEditor()
 
-	arg_11_0._editorFlag = var_1.GetEditor(var_11_0)
-	getProxy = var_1
-	MiniGameProxy = var_11_0
+	local var_11_0 = getProxy(MiniGameProxy):GetHighScore(arg_11_0._gameVo:GetGameId())
 
-	local var_11_1 = var_1(var_11_0)
-	local var_11_2 = var_1.GetHighScore
-	local var_11_3 = arg_11_0._gameVo
-
-	if not var_11_2(var_11_1, var_4.GetGameId(var_11_3)) or not (#var_1 > 0) or not var_1[1] then
-		local var_11_4 = 0
+	if not var_11_0 or #var_11_0 <= 0 or not var_11_0[1] then
+		-- block empty
 	end
 
 	arg_11_0._score = 0
@@ -196,34 +92,18 @@ function var_0_0.Start(arg_11_0)
 end
 
 function var_0_0.Step(arg_12_0)
-	local var_12_0 = arg_12_0._time
-	local var_12_1 = arg_12_0._gameVo
-
-	if var_12_0 ~= var_2.GetTimeInteger(var_12_1) then
-		local var_12_2 = arg_12_0._gameVo
-
-		arg_12_0._time = var_1.GetTimeInteger(var_12_2)
+	if arg_12_0._time ~= arg_12_0._gameVo:GetTimeInteger() then
+		arg_12_0._time = arg_12_0._gameVo:GetTimeInteger()
 
 		if arg_12_0._time < 0 then
 			arg_12_0._time = 0
 		end
 
-		setText = var_1
-
-		local var_12_3 = arg_12_0.timeTF
-
-		math = var_12_1
-
-		var_1(var_12_3, var_12_1.floor(arg_12_0._time))
+		setText(arg_12_0.timeTF, math.floor(arg_12_0._time))
 	end
 
-	local var_12_4 = arg_12_0._score
-	local var_12_5 = arg_12_0._gameVo
-
-	if var_12_4 ~= var_2.GetScore(var_12_5) then
-		local var_12_6 = arg_12_0._gameVo
-
-		arg_12_0._score = var_1.GetScore(var_12_6)
+	if arg_12_0._score ~= arg_12_0._gameVo:GetScore() then
+		arg_12_0._score = arg_12_0._gameVo:GetScore()
 	end
 
 	return
@@ -231,11 +111,7 @@ end
 
 function var_0_0.SetChildVisible(arg_13_0, arg_13_1, arg_13_2)
 	for iter_13_0 = 1, arg_13_1.childCount do
-		local var_13_0 = arg_13_1:GetChild(iter_13_0 - 1)
-
-		setActive = var_1_10008
-
-		var_1_10008(var_13_0, arg_13_2)
+		setActive(arg_13_1:GetChild(iter_13_0 - 1), arg_13_2)
 	end
 
 	return

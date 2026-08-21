@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_template_returnner") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_template_returnner"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_template_returnner = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_template_returnner
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_template_returnner = rawget(pg, "activity_template_returnner") or setmetatable({
+	__name = "activity_template_returnner"
+}, confNEO)
+pg.activity_template_returnner.all = {
 	300,
 	369,
 	590,
@@ -46,27 +23,14 @@ var_0_3.all = {
 	40807,
 	41327,
 	50118,
-	50612
+	50612,
+	30908
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_template_returnner = {}
+pg.base = pg.base or {}
+pg.base.activity_template_returnner = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_template_returnner
-
-	var_1_0[300] = {
+	pg.base.activity_template_returnner[300] = {
 		id = 300,
 		level = 15,
 		unlogin_time = {
@@ -140,11 +104,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_template_returnner
-
-	var_1_1[369] = {
+	pg.base.activity_template_returnner[369] = {
 		id = 369,
 		level = 1,
 		unlogin_time = {
@@ -218,11 +178,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_template_returnner
-
-	var_1_2[590] = {
+	pg.base.activity_template_returnner[590] = {
 		id = 590,
 		level = 1,
 		unlogin_time = {
@@ -296,11 +252,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_template_returnner
-
-	var_1_3[687] = {
+	pg.base.activity_template_returnner[687] = {
 		id = 687,
 		level = 1,
 		unlogin_time = {
@@ -374,11 +326,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_template_returnner
-
-	var_1_4[990] = {
+	pg.base.activity_template_returnner[990] = {
 		id = 990,
 		level = 1,
 		unlogin_time = {
@@ -452,11 +400,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_template_returnner
-
-	var_1_5[4111] = {
+	pg.base.activity_template_returnner[4111] = {
 		id = 4111,
 		level = 1,
 		unlogin_time = {
@@ -530,11 +474,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_template_returnner
-
-	var_1_6[4416] = {
+	pg.base.activity_template_returnner[4416] = {
 		id = 4416,
 		level = 1,
 		unlogin_time = {
@@ -608,11 +548,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_template_returnner
-
-	var_1_7[4526] = {
+	pg.base.activity_template_returnner[4526] = {
 		id = 4526,
 		level = 1,
 		unlogin_time = {
@@ -686,11 +622,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_template_returnner
-
-	var_1_8[4876] = {
+	pg.base.activity_template_returnner[4876] = {
 		id = 4876,
 		level = 1,
 		unlogin_time = {
@@ -764,11 +696,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_template_returnner
-
-	var_1_9[5011] = {
+	pg.base.activity_template_returnner[5011] = {
 		id = 5011,
 		level = 1,
 		unlogin_time = {
@@ -842,11 +770,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_template_returnner
-
-	var_1_10[5349] = {
+	pg.base.activity_template_returnner[5349] = {
 		id = 5349,
 		level = 1,
 		unlogin_time = {
@@ -920,11 +844,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_template_returnner
-
-	var_1_11[30887] = {
+	pg.base.activity_template_returnner[30887] = {
 		id = 30887,
 		level = 1,
 		unlogin_time = {
@@ -998,11 +918,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_template_returnner
-
-	var_1_12[5570] = {
+	pg.base.activity_template_returnner[5570] = {
 		id = 5570,
 		level = 1,
 		unlogin_time = {
@@ -1076,11 +992,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_template_returnner
-
-	var_1_13[5961] = {
+	pg.base.activity_template_returnner[5961] = {
 		id = 5961,
 		level = 1,
 		unlogin_time = {
@@ -1154,11 +1066,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_template_returnner
-
-	var_1_14[30893] = {
+	pg.base.activity_template_returnner[30893] = {
 		id = 30893,
 		level = 1,
 		unlogin_time = {
@@ -1232,11 +1140,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_template_returnner
-
-	var_1_15[40428] = {
+	pg.base.activity_template_returnner[40428] = {
 		id = 40428,
 		level = 1,
 		unlogin_time = {
@@ -1310,11 +1214,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_template_returnner
-
-	var_1_16[40674] = {
+	pg.base.activity_template_returnner[40674] = {
 		id = 40674,
 		level = 1,
 		unlogin_time = {
@@ -1388,11 +1288,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_template_returnner
-
-	var_1_17[40807] = {
+	pg.base.activity_template_returnner[40807] = {
 		id = 40807,
 		level = 1,
 		unlogin_time = {
@@ -1466,11 +1362,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_template_returnner
-
-	var_1_18[41327] = {
+	pg.base.activity_template_returnner[41327] = {
 		id = 41327,
 		level = 1,
 		unlogin_time = {
@@ -1544,11 +1436,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_template_returnner
-
-	var_1_19[50118] = {
+	pg.base.activity_template_returnner[50118] = {
 		id = 50118,
 		level = 1,
 		unlogin_time = {
@@ -1622,8 +1510,7 @@ var_0_3.base.activity_template_returnner = {}
 			}
 		}
 	}
-	pg = var_1_19
-	var_1_19.base.activity_template_returnner[50612] = {
+	pg.base.activity_template_returnner[50612] = {
 		id = 50612,
 		level = 1,
 		unlogin_time = {
@@ -1631,6 +1518,80 @@ var_0_3.base.activity_template_returnner = {}
 				2026,
 				5,
 				7
+			},
+			{
+				0,
+				0,
+				0
+			}
+		},
+		task_list = {
+			{
+				25655,
+				25656
+			},
+			{
+				25657,
+				25658
+			},
+			{
+				25659,
+				25660
+			},
+			{
+				25661,
+				25662
+			},
+			{
+				25663,
+				25664
+			},
+			{
+				25665,
+				25666
+			},
+			{
+				25667,
+				25668
+			},
+			{
+				25669,
+				25670
+			},
+			{
+				25671,
+				25672
+			},
+			{
+				25673,
+				25674
+			},
+			{
+				25675,
+				25676
+			},
+			{
+				25677,
+				25678
+			},
+			{
+				25679,
+				25680
+			},
+			{
+				25681,
+				25682
+			}
+		}
+	}
+	pg.base.activity_template_returnner[30908] = {
+		id = 30908,
+		level = 1,
+		unlogin_time = {
+			{
+				2026,
+				8,
+				1
 			},
 			{
 				0,

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "emoji_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "emoji_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.emoji_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.emoji_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.emoji_template = rawget(pg, "emoji_template") or setmetatable({
+	__name = "emoji_template"
+}, confNEO)
+pg.emoji_template.all = {
 	1,
 	2,
 	3,
@@ -92,6 +69,9 @@ var_0_3.all = {
 	66,
 	67,
 	68,
+	69,
+	70,
+	71,
 	100,
 	101,
 	102,
@@ -217,11 +197,7 @@ var_0_3.all = {
 	2008,
 	2009
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.emoji_template
-
-var_0_4.get_id_list_by_auction = {
+pg.emoji_template.get_id_list_by_auction = {
 	[0] = {
 		1,
 		2,
@@ -289,6 +265,9 @@ var_0_4.get_id_list_by_auction = {
 		66,
 		67,
 		68,
+		69,
+		70,
+		71,
 		100,
 		101,
 		102,
@@ -417,25 +396,11 @@ var_0_4.get_id_list_by_auction = {
 		2009
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.emoji_template = {}
+pg.base = pg.base or {}
+pg.base.emoji_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.emoji_template
-
-	var_1_0[1] = {
+	pg.base.emoji_template[1] = {
 		achieve = 0,
 		auction = 0,
 		index = 41,
@@ -449,11 +414,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.emoji_template
-
-	var_1_1[2] = {
+	pg.base.emoji_template[2] = {
 		achieve = 0,
 		auction = 0,
 		index = 42,
@@ -467,11 +428,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.emoji_template
-
-	var_1_2[3] = {
+	pg.base.emoji_template[3] = {
 		achieve = 0,
 		auction = 0,
 		index = 43,
@@ -485,11 +442,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.emoji_template
-
-	var_1_3[4] = {
+	pg.base.emoji_template[4] = {
 		achieve = 0,
 		auction = 0,
 		index = 44,
@@ -503,11 +456,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.emoji_template
-
-	var_1_4[5] = {
+	pg.base.emoji_template[5] = {
 		achieve = 0,
 		auction = 0,
 		index = 45,
@@ -521,11 +470,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.emoji_template
-
-	var_1_5[6] = {
+	pg.base.emoji_template[6] = {
 		achieve = 0,
 		auction = 0,
 		index = 46,
@@ -539,11 +484,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.emoji_template
-
-	var_1_6[7] = {
+	pg.base.emoji_template[7] = {
 		achieve = 0,
 		auction = 0,
 		index = 47,
@@ -557,11 +498,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.emoji_template
-
-	var_1_7[8] = {
+	pg.base.emoji_template[8] = {
 		achieve = 0,
 		auction = 0,
 		index = 48,
@@ -575,11 +512,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.emoji_template
-
-	var_1_8[9] = {
+	pg.base.emoji_template[9] = {
 		achieve = 0,
 		auction = 0,
 		index = 49,
@@ -593,11 +526,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.emoji_template
-
-	var_1_9[10] = {
+	pg.base.emoji_template[10] = {
 		achieve = 0,
 		auction = 0,
 		index = 50,
@@ -611,11 +540,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.emoji_template
-
-	var_1_10[11] = {
+	pg.base.emoji_template[11] = {
 		achieve = 0,
 		auction = 0,
 		index = 51,
@@ -629,11 +554,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.emoji_template
-
-	var_1_11[12] = {
+	pg.base.emoji_template[12] = {
 		achieve = 0,
 		auction = 0,
 		index = 52,
@@ -647,11 +568,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.emoji_template
-
-	var_1_12[13] = {
+	pg.base.emoji_template[13] = {
 		achieve = 0,
 		auction = 0,
 		index = 53,
@@ -665,11 +582,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.emoji_template
-
-	var_1_13[14] = {
+	pg.base.emoji_template[14] = {
 		achieve = 0,
 		auction = 0,
 		index = 54,
@@ -683,11 +596,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.emoji_template
-
-	var_1_14[15] = {
+	pg.base.emoji_template[15] = {
 		achieve = 0,
 		auction = 0,
 		index = 55,
@@ -701,11 +610,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.emoji_template
-
-	var_1_15[16] = {
+	pg.base.emoji_template[16] = {
 		achieve = 0,
 		auction = 0,
 		index = 56,
@@ -719,11 +624,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.emoji_template
-
-	var_1_16[17] = {
+	pg.base.emoji_template[17] = {
 		achieve = 0,
 		auction = 0,
 		index = 57,
@@ -737,11 +638,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.emoji_template
-
-	var_1_17[18] = {
+	pg.base.emoji_template[18] = {
 		achieve = 0,
 		auction = 0,
 		index = 58,
@@ -755,11 +652,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.emoji_template
-
-	var_1_18[19] = {
+	pg.base.emoji_template[19] = {
 		achieve = 0,
 		auction = 0,
 		index = 59,
@@ -773,11 +666,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.emoji_template
-
-	var_1_19[20] = {
+	pg.base.emoji_template[20] = {
 		achieve = 0,
 		auction = 0,
 		index = 60,
@@ -791,11 +680,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.emoji_template
-
-	var_1_20[21] = {
+	pg.base.emoji_template[21] = {
 		achieve = 0,
 		auction = 0,
 		index = 61,
@@ -809,11 +694,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.emoji_template
-
-	var_1_21[22] = {
+	pg.base.emoji_template[22] = {
 		achieve = 0,
 		auction = 0,
 		index = 62,
@@ -827,11 +708,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.emoji_template
-
-	var_1_22[23] = {
+	pg.base.emoji_template[23] = {
 		achieve = 0,
 		auction = 0,
 		index = 63,
@@ -845,11 +722,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.emoji_template
-
-	var_1_23[24] = {
+	pg.base.emoji_template[24] = {
 		achieve = 0,
 		auction = 0,
 		index = 64,
@@ -863,11 +736,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.emoji_template
-
-	var_1_24[25] = {
+	pg.base.emoji_template[25] = {
 		achieve = 0,
 		auction = 0,
 		index = 65,
@@ -881,11 +750,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.emoji_template
-
-	var_1_25[26] = {
+	pg.base.emoji_template[26] = {
 		achieve = 0,
 		auction = 0,
 		index = 66,
@@ -899,11 +764,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.emoji_template
-
-	var_1_26[27] = {
+	pg.base.emoji_template[27] = {
 		achieve = 0,
 		auction = 0,
 		index = 67,
@@ -917,11 +778,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.emoji_template
-
-	var_1_27[28] = {
+	pg.base.emoji_template[28] = {
 		achieve = 0,
 		auction = 0,
 		index = 68,
@@ -935,11 +792,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.emoji_template
-
-	var_1_28[29] = {
+	pg.base.emoji_template[29] = {
 		achieve = 0,
 		auction = 0,
 		index = 69,
@@ -953,11 +806,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.emoji_template
-
-	var_1_29[30] = {
+	pg.base.emoji_template[30] = {
 		achieve = 0,
 		auction = 0,
 		index = 70,
@@ -971,11 +820,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.emoji_template
-
-	var_1_30[31] = {
+	pg.base.emoji_template[31] = {
 		achieve = 0,
 		auction = 0,
 		index = 71,
@@ -989,11 +834,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.emoji_template
-
-	var_1_31[32] = {
+	pg.base.emoji_template[32] = {
 		achieve = 0,
 		auction = 0,
 		index = 72,
@@ -1007,11 +848,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.emoji_template
-
-	var_1_32[33] = {
+	pg.base.emoji_template[33] = {
 		achieve = 1,
 		auction = 0,
 		index = 73,
@@ -1025,11 +862,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.emoji_template
-
-	var_1_33[34] = {
+	pg.base.emoji_template[34] = {
 		achieve = 1,
 		auction = 0,
 		index = 74,
@@ -1043,11 +876,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.emoji_template
-
-	var_1_34[35] = {
+	pg.base.emoji_template[35] = {
 		achieve = 1,
 		auction = 0,
 		index = 75,
@@ -1061,11 +890,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.emoji_template
-
-	var_1_35[36] = {
+	pg.base.emoji_template[36] = {
 		achieve = 1,
 		auction = 0,
 		index = 76,
@@ -1079,11 +904,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.emoji_template
-
-	var_1_36[37] = {
+	pg.base.emoji_template[37] = {
 		achieve = 1,
 		auction = 0,
 		index = 83,
@@ -1097,11 +918,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.emoji_template
-
-	var_1_37[38] = {
+	pg.base.emoji_template[38] = {
 		achieve = 1,
 		auction = 0,
 		index = 84,
@@ -1115,11 +932,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.emoji_template
-
-	var_1_38[39] = {
+	pg.base.emoji_template[39] = {
 		achieve = 1,
 		auction = 0,
 		index = 85,
@@ -1133,11 +946,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.emoji_template
-
-	var_1_39[40] = {
+	pg.base.emoji_template[40] = {
 		achieve = 1,
 		auction = 0,
 		index = 86,
@@ -1151,11 +960,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.emoji_template
-
-	var_1_40[41] = {
+	pg.base.emoji_template[41] = {
 		achieve = 0,
 		auction = 0,
 		index = 1001,
@@ -1169,11 +974,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.emoji_template
-
-	var_1_41[42] = {
+	pg.base.emoji_template[42] = {
 		achieve = 0,
 		auction = 0,
 		index = 1002,
@@ -1187,11 +988,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.emoji_template
-
-	var_1_42[43] = {
+	pg.base.emoji_template[43] = {
 		achieve = 0,
 		auction = 0,
 		index = 1003,
@@ -1205,11 +1002,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.emoji_template
-
-	var_1_43[44] = {
+	pg.base.emoji_template[44] = {
 		achieve = 0,
 		auction = 0,
 		index = 1004,
@@ -1223,11 +1016,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.emoji_template
-
-	var_1_44[45] = {
+	pg.base.emoji_template[45] = {
 		achieve = 0,
 		auction = 0,
 		index = 1005,
@@ -1241,11 +1030,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.emoji_template
-
-	var_1_45[46] = {
+	pg.base.emoji_template[46] = {
 		achieve = 0,
 		auction = 0,
 		index = 1006,
@@ -1259,11 +1044,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.emoji_template
-
-	var_1_46[47] = {
+	pg.base.emoji_template[47] = {
 		achieve = 0,
 		auction = 0,
 		index = 1007,
@@ -1277,11 +1058,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.emoji_template
-
-	var_1_47[48] = {
+	pg.base.emoji_template[48] = {
 		achieve = 0,
 		auction = 0,
 		index = 1008,
@@ -1295,11 +1072,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.emoji_template
-
-	var_1_48[49] = {
+	pg.base.emoji_template[49] = {
 		achieve = 0,
 		auction = 0,
 		index = 1009,
@@ -1313,11 +1086,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.emoji_template
-
-	var_1_49[50] = {
+	pg.base.emoji_template[50] = {
 		achieve = 0,
 		auction = 0,
 		index = 1010,
@@ -1331,11 +1100,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.emoji_template
-
-	var_1_50[51] = {
+	pg.base.emoji_template[51] = {
 		achieve = 0,
 		auction = 0,
 		index = 1011,
@@ -1349,11 +1114,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.emoji_template
-
-	var_1_51[52] = {
+	pg.base.emoji_template[52] = {
 		achieve = 0,
 		auction = 0,
 		index = 1012,
@@ -1367,11 +1128,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.emoji_template
-
-	var_1_52[54] = {
+	pg.base.emoji_template[54] = {
 		achieve = 0,
 		auction = 0,
 		index = 1014,
@@ -1385,11 +1142,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.emoji_template
-
-	var_1_53[55] = {
+	pg.base.emoji_template[55] = {
 		achieve = 0,
 		auction = 0,
 		index = 1015,
@@ -1403,11 +1156,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.emoji_template
-
-	var_1_54[56] = {
+	pg.base.emoji_template[56] = {
 		achieve = 0,
 		auction = 0,
 		index = 1016,
@@ -1421,11 +1170,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.emoji_template
-
-	var_1_55[57] = {
+	pg.base.emoji_template[57] = {
 		achieve = 0,
 		auction = 0,
 		index = 1017,
@@ -1439,11 +1184,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.emoji_template
-
-	var_1_56[58] = {
+	pg.base.emoji_template[58] = {
 		achieve = 0,
 		auction = 0,
 		index = 1018,
@@ -1457,11 +1198,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.emoji_template
-
-	var_1_57[59] = {
+	pg.base.emoji_template[59] = {
 		achieve = 0,
 		auction = 0,
 		index = 1019,
@@ -1475,11 +1212,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.emoji_template
-
-	var_1_58[60] = {
+	pg.base.emoji_template[60] = {
 		achieve = 0,
 		auction = 0,
 		index = 1020,
@@ -1493,11 +1226,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.emoji_template
-
-	var_1_59[61] = {
+	pg.base.emoji_template[61] = {
 		achieve = 0,
 		auction = 0,
 		index = 1021,
@@ -1511,11 +1240,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.emoji_template
-
-	var_1_60[62] = {
+	pg.base.emoji_template[62] = {
 		achieve = 0,
 		auction = 0,
 		index = 1022,
@@ -1529,11 +1254,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.emoji_template
-
-	var_1_61[63] = {
+	pg.base.emoji_template[63] = {
 		achieve = 0,
 		auction = 0,
 		index = 1023,
@@ -1547,11 +1268,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.emoji_template
-
-	var_1_62[65] = {
+	pg.base.emoji_template[65] = {
 		achieve = 0,
 		auction = 0,
 		index = 1025,
@@ -1565,11 +1282,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.emoji_template
-
-	var_1_63[66] = {
+	pg.base.emoji_template[66] = {
 		achieve = 0,
 		auction = 0,
 		index = 1024,
@@ -1583,11 +1296,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.emoji_template
-
-	var_1_64[67] = {
+	pg.base.emoji_template[67] = {
 		achieve = 1,
 		auction = 0,
 		index = 1026,
@@ -1601,11 +1310,7 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.emoji_template
-
-	var_1_65[68] = {
+	pg.base.emoji_template[68] = {
 		achieve = 1,
 		auction = 0,
 		index = 1027,
@@ -1619,11 +1324,49 @@ var_0_4.base.emoji_template = {}
 			2
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.emoji_template
-
-	var_1_66[100] = {
+	pg.base.emoji_template[69] = {
+		achieve = 1,
+		auction = 0,
+		index = 1028,
+		pic = "weikesibao_2_1",
+		desc = "<color=#92fc63>[超级开心！]</color>",
+		item_name = "聊天表情：超级开心！",
+		item_desc = "聊天表情：超级开心！可以在表情选项的「动态」选项卡中找到并发出此表情。",
+		id = 69,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[70] = {
+		achieve = 1,
+		auction = 0,
+		index = 1029,
+		pic = "weikesibao_2_2",
+		desc = "<color=#92fc63>[wink比心]</color>",
+		item_name = "聊天表情：wink比心",
+		item_desc = "聊天表情：wink比心。可以在表情选项的「动态」选项卡中找到并发出此表情。",
+		id = 70,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[71] = {
+		achieve = 1,
+		auction = 0,
+		index = 1030,
+		pic = "weikesibao_2_3",
+		desc = "<color=#92fc63>[终点到咯]</color>",
+		item_name = "聊天表情：终点到咯",
+		item_desc = "聊天表情：终点到咯。可以在表情选项的「动态」选项卡中找到并发出此表情。",
+		id = 71,
+		icon = "",
+		type = {
+			2
+		}
+	}
+	pg.base.emoji_template[100] = {
 		achieve = 0,
 		auction = 0,
 		index = 2001,
@@ -1637,11 +1380,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.emoji_template
-
-	var_1_67[101] = {
+	pg.base.emoji_template[101] = {
 		achieve = 0,
 		auction = 0,
 		index = 2002,
@@ -1655,11 +1394,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.emoji_template
-
-	var_1_68[102] = {
+	pg.base.emoji_template[102] = {
 		achieve = 0,
 		auction = 0,
 		index = 2003,
@@ -1673,11 +1408,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.emoji_template
-
-	var_1_69[103] = {
+	pg.base.emoji_template[103] = {
 		achieve = 0,
 		auction = 0,
 		index = 2004,
@@ -1691,11 +1422,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.emoji_template
-
-	var_1_70[104] = {
+	pg.base.emoji_template[104] = {
 		achieve = 0,
 		auction = 0,
 		index = 2005,
@@ -1709,11 +1436,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.emoji_template
-
-	var_1_71[105] = {
+	pg.base.emoji_template[105] = {
 		achieve = 0,
 		auction = 0,
 		index = 2006,
@@ -1727,11 +1450,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.emoji_template
-
-	var_1_72[106] = {
+	pg.base.emoji_template[106] = {
 		achieve = 0,
 		auction = 0,
 		index = 2007,
@@ -1745,11 +1464,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.emoji_template
-
-	var_1_73[107] = {
+	pg.base.emoji_template[107] = {
 		achieve = 0,
 		auction = 0,
 		index = 2008,
@@ -1763,11 +1478,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.emoji_template
-
-	var_1_74[108] = {
+	pg.base.emoji_template[108] = {
 		achieve = 0,
 		auction = 0,
 		index = 2009,
@@ -1781,11 +1492,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.emoji_template
-
-	var_1_75[109] = {
+	pg.base.emoji_template[109] = {
 		achieve = 0,
 		auction = 0,
 		index = 2010,
@@ -1799,11 +1506,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.emoji_template
-
-	var_1_76[110] = {
+	pg.base.emoji_template[110] = {
 		achieve = 0,
 		auction = 0,
 		index = 2011,
@@ -1817,11 +1520,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.emoji_template
-
-	var_1_77[111] = {
+	pg.base.emoji_template[111] = {
 		achieve = 0,
 		auction = 0,
 		index = 2012,
@@ -1835,11 +1534,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.emoji_template
-
-	var_1_78[112] = {
+	pg.base.emoji_template[112] = {
 		achieve = 0,
 		auction = 0,
 		index = 2013,
@@ -1853,11 +1548,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.emoji_template
-
-	var_1_79[113] = {
+	pg.base.emoji_template[113] = {
 		achieve = 0,
 		auction = 0,
 		index = 2014,
@@ -1871,11 +1562,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.emoji_template
-
-	var_1_80[114] = {
+	pg.base.emoji_template[114] = {
 		achieve = 0,
 		auction = 0,
 		index = 2015,
@@ -1889,11 +1576,7 @@ var_0_4.base.emoji_template = {}
 			3
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.emoji_template
-
-	var_1_81[201] = {
+	pg.base.emoji_template[201] = {
 		achieve = 0,
 		auction = 0,
 		index = 1,
@@ -1907,11 +1590,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.emoji_template
-
-	var_1_82[202] = {
+	pg.base.emoji_template[202] = {
 		achieve = 0,
 		auction = 0,
 		index = 2,
@@ -1925,11 +1604,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.emoji_template
-
-	var_1_83[203] = {
+	pg.base.emoji_template[203] = {
 		achieve = 0,
 		auction = 0,
 		index = 3,
@@ -1943,11 +1618,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.emoji_template
-
-	var_1_84[204] = {
+	pg.base.emoji_template[204] = {
 		achieve = 0,
 		auction = 0,
 		index = 4,
@@ -1961,11 +1632,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.emoji_template
-
-	var_1_85[205] = {
+	pg.base.emoji_template[205] = {
 		achieve = 0,
 		auction = 0,
 		index = 5,
@@ -1979,11 +1646,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.emoji_template
-
-	var_1_86[206] = {
+	pg.base.emoji_template[206] = {
 		achieve = 0,
 		auction = 0,
 		index = 6,
@@ -1997,11 +1660,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.emoji_template
-
-	var_1_87[207] = {
+	pg.base.emoji_template[207] = {
 		achieve = 0,
 		auction = 0,
 		index = 7,
@@ -2015,11 +1674,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.emoji_template
-
-	var_1_88[208] = {
+	pg.base.emoji_template[208] = {
 		achieve = 0,
 		auction = 0,
 		index = 8,
@@ -2033,11 +1688,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.emoji_template
-
-	var_1_89[209] = {
+	pg.base.emoji_template[209] = {
 		achieve = 0,
 		auction = 0,
 		index = 9,
@@ -2051,11 +1702,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.emoji_template
-
-	var_1_90[210] = {
+	pg.base.emoji_template[210] = {
 		achieve = 0,
 		auction = 0,
 		index = 10,
@@ -2069,11 +1716,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.emoji_template
-
-	var_1_91[211] = {
+	pg.base.emoji_template[211] = {
 		achieve = 0,
 		auction = 0,
 		index = 11,
@@ -2087,11 +1730,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.emoji_template
-
-	var_1_92[212] = {
+	pg.base.emoji_template[212] = {
 		achieve = 0,
 		auction = 0,
 		index = 12,
@@ -2105,11 +1744,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.emoji_template
-
-	var_1_93[213] = {
+	pg.base.emoji_template[213] = {
 		achieve = 0,
 		auction = 0,
 		index = 13,
@@ -2123,11 +1758,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.emoji_template
-
-	var_1_94[214] = {
+	pg.base.emoji_template[214] = {
 		achieve = 0,
 		auction = 0,
 		index = 14,
@@ -2141,11 +1772,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.emoji_template
-
-	var_1_95[215] = {
+	pg.base.emoji_template[215] = {
 		achieve = 0,
 		auction = 0,
 		index = 15,
@@ -2159,11 +1786,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.emoji_template
-
-	var_1_96[216] = {
+	pg.base.emoji_template[216] = {
 		achieve = 0,
 		auction = 0,
 		index = 16,
@@ -2177,11 +1800,11 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_96
 
-	local var_1_97 = var_1_96.base.emoji_template
-
-	var_1_97[217] = {
+	return
+end)()
+;(function()
+	pg.base.emoji_template[217] = {
 		achieve = 0,
 		auction = 0,
 		index = 17,
@@ -2195,11 +1818,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.emoji_template
-
-	var_1_98[218] = {
+	pg.base.emoji_template[218] = {
 		achieve = 0,
 		auction = 0,
 		index = 18,
@@ -2213,8 +1832,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.emoji_template[219] = {
+	pg.base.emoji_template[219] = {
 		achieve = 0,
 		auction = 0,
 		index = 19,
@@ -2228,15 +1846,7 @@ var_0_4.base.emoji_template = {}
 			1
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.emoji_template
-
-	var_2_0[220] = {
+	pg.base.emoji_template[220] = {
 		achieve = 0,
 		auction = 0,
 		index = 20,
@@ -2250,11 +1860,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.emoji_template
-
-	var_2_1[221] = {
+	pg.base.emoji_template[221] = {
 		achieve = 0,
 		auction = 0,
 		index = 21,
@@ -2268,11 +1874,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.emoji_template
-
-	var_2_2[222] = {
+	pg.base.emoji_template[222] = {
 		achieve = 0,
 		auction = 0,
 		index = 22,
@@ -2286,11 +1888,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.emoji_template
-
-	var_2_3[223] = {
+	pg.base.emoji_template[223] = {
 		achieve = 0,
 		auction = 0,
 		index = 23,
@@ -2304,11 +1902,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.emoji_template
-
-	var_2_4[224] = {
+	pg.base.emoji_template[224] = {
 		achieve = 0,
 		auction = 0,
 		index = 24,
@@ -2322,11 +1916,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.emoji_template
-
-	var_2_5[225] = {
+	pg.base.emoji_template[225] = {
 		achieve = 0,
 		auction = 0,
 		index = 25,
@@ -2340,11 +1930,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.emoji_template
-
-	var_2_6[226] = {
+	pg.base.emoji_template[226] = {
 		achieve = 0,
 		auction = 0,
 		index = 26,
@@ -2358,11 +1944,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.emoji_template
-
-	var_2_7[227] = {
+	pg.base.emoji_template[227] = {
 		achieve = 0,
 		auction = 0,
 		index = 27,
@@ -2376,11 +1958,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.emoji_template
-
-	var_2_8[228] = {
+	pg.base.emoji_template[228] = {
 		achieve = 0,
 		auction = 0,
 		index = 28,
@@ -2394,11 +1972,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.emoji_template
-
-	var_2_9[229] = {
+	pg.base.emoji_template[229] = {
 		achieve = 0,
 		auction = 0,
 		index = 29,
@@ -2412,11 +1986,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.emoji_template
-
-	var_2_10[230] = {
+	pg.base.emoji_template[230] = {
 		achieve = 0,
 		auction = 0,
 		index = 30,
@@ -2430,11 +2000,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.emoji_template
-
-	var_2_11[231] = {
+	pg.base.emoji_template[231] = {
 		achieve = 0,
 		auction = 0,
 		index = 31,
@@ -2448,11 +2014,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.emoji_template
-
-	var_2_12[232] = {
+	pg.base.emoji_template[232] = {
 		achieve = 0,
 		auction = 0,
 		index = 32,
@@ -2466,11 +2028,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.emoji_template
-
-	var_2_13[233] = {
+	pg.base.emoji_template[233] = {
 		achieve = 0,
 		auction = 0,
 		index = 33,
@@ -2484,11 +2042,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.emoji_template
-
-	var_2_14[234] = {
+	pg.base.emoji_template[234] = {
 		achieve = 0,
 		auction = 0,
 		index = 34,
@@ -2502,11 +2056,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.emoji_template
-
-	var_2_15[235] = {
+	pg.base.emoji_template[235] = {
 		achieve = 0,
 		auction = 0,
 		index = 35,
@@ -2520,11 +2070,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.emoji_template
-
-	var_2_16[236] = {
+	pg.base.emoji_template[236] = {
 		achieve = 0,
 		auction = 0,
 		index = 36,
@@ -2538,11 +2084,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.emoji_template
-
-	var_2_17[237] = {
+	pg.base.emoji_template[237] = {
 		achieve = 0,
 		auction = 0,
 		index = 37,
@@ -2556,11 +2098,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.emoji_template
-
-	var_2_18[238] = {
+	pg.base.emoji_template[238] = {
 		achieve = 0,
 		auction = 0,
 		index = 38,
@@ -2574,11 +2112,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.emoji_template
-
-	var_2_19[239] = {
+	pg.base.emoji_template[239] = {
 		achieve = 0,
 		auction = 0,
 		index = 39,
@@ -2592,11 +2126,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.emoji_template
-
-	var_2_20[240] = {
+	pg.base.emoji_template[240] = {
 		achieve = 0,
 		auction = 0,
 		index = 40,
@@ -2610,11 +2140,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.emoji_template
-
-	var_2_21[241] = {
+	pg.base.emoji_template[241] = {
 		achieve = 1,
 		auction = 0,
 		index = 77,
@@ -2628,11 +2154,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.emoji_template
-
-	var_2_22[242] = {
+	pg.base.emoji_template[242] = {
 		achieve = 1,
 		auction = 0,
 		index = 78,
@@ -2646,11 +2168,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.emoji_template
-
-	var_2_23[243] = {
+	pg.base.emoji_template[243] = {
 		achieve = 1,
 		auction = 0,
 		index = 79,
@@ -2664,11 +2182,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.emoji_template
-
-	var_2_24[244] = {
+	pg.base.emoji_template[244] = {
 		achieve = 1,
 		auction = 0,
 		index = 80,
@@ -2682,11 +2196,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.emoji_template
-
-	var_2_25[245] = {
+	pg.base.emoji_template[245] = {
 		achieve = 1,
 		auction = 0,
 		index = 81,
@@ -2700,11 +2210,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.emoji_template
-
-	var_2_26[246] = {
+	pg.base.emoji_template[246] = {
 		achieve = 1,
 		auction = 0,
 		index = 82,
@@ -2718,11 +2224,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.emoji_template
-
-	var_2_27[247] = {
+	pg.base.emoji_template[247] = {
 		achieve = 1,
 		auction = 0,
 		index = 83,
@@ -2736,11 +2238,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.emoji_template
-
-	var_2_28[248] = {
+	pg.base.emoji_template[248] = {
 		achieve = 1,
 		auction = 0,
 		index = 84,
@@ -2754,11 +2252,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.emoji_template
-
-	var_2_29[301] = {
+	pg.base.emoji_template[301] = {
 		achieve = 0,
 		auction = 0,
 		index = 970,
@@ -2772,11 +2266,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.emoji_template
-
-	var_2_30[302] = {
+	pg.base.emoji_template[302] = {
 		achieve = 0,
 		auction = 0,
 		index = 971,
@@ -2790,11 +2280,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.emoji_template
-
-	var_2_31[303] = {
+	pg.base.emoji_template[303] = {
 		achieve = 0,
 		auction = 0,
 		index = 972,
@@ -2808,11 +2294,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.emoji_template
-
-	var_2_32[304] = {
+	pg.base.emoji_template[304] = {
 		achieve = 0,
 		auction = 0,
 		index = 973,
@@ -2826,11 +2308,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.emoji_template
-
-	var_2_33[305] = {
+	pg.base.emoji_template[305] = {
 		achieve = 0,
 		auction = 0,
 		index = 974,
@@ -2844,11 +2322,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.emoji_template
-
-	var_2_34[306] = {
+	pg.base.emoji_template[306] = {
 		achieve = 0,
 		auction = 0,
 		index = 975,
@@ -2862,11 +2336,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.emoji_template
-
-	var_2_35[307] = {
+	pg.base.emoji_template[307] = {
 		achieve = 0,
 		auction = 0,
 		index = 976,
@@ -2880,11 +2350,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.emoji_template
-
-	var_2_36[308] = {
+	pg.base.emoji_template[308] = {
 		achieve = 0,
 		auction = 0,
 		index = 977,
@@ -2898,11 +2364,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.emoji_template
-
-	var_2_37[309] = {
+	pg.base.emoji_template[309] = {
 		achieve = 0,
 		auction = 0,
 		index = 978,
@@ -2916,11 +2378,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.emoji_template
-
-	var_2_38[310] = {
+	pg.base.emoji_template[310] = {
 		achieve = 0,
 		auction = 0,
 		index = 979,
@@ -2934,11 +2392,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.emoji_template
-
-	var_2_39[311] = {
+	pg.base.emoji_template[311] = {
 		achieve = 0,
 		auction = 0,
 		index = 980,
@@ -2952,11 +2406,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.emoji_template
-
-	var_2_40[312] = {
+	pg.base.emoji_template[312] = {
 		achieve = 0,
 		auction = 0,
 		index = 981,
@@ -2970,11 +2420,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.emoji_template
-
-	var_2_41[313] = {
+	pg.base.emoji_template[313] = {
 		achieve = 0,
 		auction = 0,
 		index = 982,
@@ -2988,11 +2434,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.emoji_template
-
-	var_2_42[314] = {
+	pg.base.emoji_template[314] = {
 		achieve = 0,
 		auction = 0,
 		index = 983,
@@ -3006,11 +2448,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.emoji_template
-
-	var_2_43[315] = {
+	pg.base.emoji_template[315] = {
 		achieve = 0,
 		auction = 0,
 		index = 984,
@@ -3024,11 +2462,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.emoji_template
-
-	var_2_44[316] = {
+	pg.base.emoji_template[316] = {
 		achieve = 0,
 		auction = 0,
 		index = 985,
@@ -3042,11 +2476,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.emoji_template
-
-	var_2_45[317] = {
+	pg.base.emoji_template[317] = {
 		achieve = 0,
 		auction = 0,
 		index = 986,
@@ -3060,11 +2490,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.emoji_template
-
-	var_2_46[318] = {
+	pg.base.emoji_template[318] = {
 		achieve = 0,
 		auction = 0,
 		index = 987,
@@ -3078,11 +2504,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.emoji_template
-
-	var_2_47[319] = {
+	pg.base.emoji_template[319] = {
 		achieve = 0,
 		auction = 0,
 		index = 988,
@@ -3096,11 +2518,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.emoji_template
-
-	var_2_48[320] = {
+	pg.base.emoji_template[320] = {
 		achieve = 0,
 		auction = 0,
 		index = 989,
@@ -3114,11 +2532,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.emoji_template
-
-	var_2_49[321] = {
+	pg.base.emoji_template[321] = {
 		achieve = 0,
 		auction = 0,
 		index = 990,
@@ -3132,11 +2546,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.emoji_template
-
-	var_2_50[322] = {
+	pg.base.emoji_template[322] = {
 		achieve = 0,
 		auction = 0,
 		index = 991,
@@ -3150,11 +2560,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.emoji_template
-
-	var_2_51[323] = {
+	pg.base.emoji_template[323] = {
 		achieve = 0,
 		auction = 0,
 		index = 992,
@@ -3168,11 +2574,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.emoji_template
-
-	var_2_52[324] = {
+	pg.base.emoji_template[324] = {
 		achieve = 0,
 		auction = 0,
 		index = 993,
@@ -3186,11 +2588,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.emoji_template
-
-	var_2_53[351] = {
+	pg.base.emoji_template[351] = {
 		achieve = 0,
 		auction = 0,
 		index = 937,
@@ -3204,11 +2602,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.emoji_template
-
-	var_2_54[352] = {
+	pg.base.emoji_template[352] = {
 		achieve = 0,
 		auction = 0,
 		index = 938,
@@ -3222,11 +2616,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.emoji_template
-
-	var_2_55[353] = {
+	pg.base.emoji_template[353] = {
 		achieve = 0,
 		auction = 0,
 		index = 939,
@@ -3240,11 +2630,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.emoji_template
-
-	var_2_56[354] = {
+	pg.base.emoji_template[354] = {
 		achieve = 0,
 		auction = 0,
 		index = 940,
@@ -3258,11 +2644,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.emoji_template
-
-	var_2_57[355] = {
+	pg.base.emoji_template[355] = {
 		achieve = 0,
 		auction = 0,
 		index = 941,
@@ -3276,11 +2658,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.emoji_template
-
-	var_2_58[356] = {
+	pg.base.emoji_template[356] = {
 		achieve = 0,
 		auction = 0,
 		index = 942,
@@ -3294,11 +2672,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.emoji_template
-
-	var_2_59[357] = {
+	pg.base.emoji_template[357] = {
 		achieve = 0,
 		auction = 0,
 		index = 943,
@@ -3312,11 +2686,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.emoji_template
-
-	var_2_60[358] = {
+	pg.base.emoji_template[358] = {
 		achieve = 0,
 		auction = 0,
 		index = 944,
@@ -3330,11 +2700,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.emoji_template
-
-	var_2_61[359] = {
+	pg.base.emoji_template[359] = {
 		achieve = 0,
 		auction = 0,
 		index = 945,
@@ -3348,11 +2714,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.emoji_template
-
-	var_2_62[360] = {
+	pg.base.emoji_template[360] = {
 		achieve = 0,
 		auction = 0,
 		index = 946,
@@ -3366,11 +2728,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.emoji_template
-
-	var_2_63[361] = {
+	pg.base.emoji_template[361] = {
 		achieve = 0,
 		auction = 0,
 		index = 947,
@@ -3384,11 +2742,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.emoji_template
-
-	var_2_64[362] = {
+	pg.base.emoji_template[362] = {
 		achieve = 0,
 		auction = 0,
 		index = 948,
@@ -3402,11 +2756,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.emoji_template
-
-	var_2_65[363] = {
+	pg.base.emoji_template[363] = {
 		achieve = 0,
 		auction = 0,
 		index = 949,
@@ -3420,11 +2770,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.emoji_template
-
-	var_2_66[365] = {
+	pg.base.emoji_template[365] = {
 		achieve = 0,
 		auction = 0,
 		index = 951,
@@ -3438,11 +2784,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.emoji_template
-
-	var_2_67[366] = {
+	pg.base.emoji_template[366] = {
 		achieve = 0,
 		auction = 0,
 		index = 952,
@@ -3456,11 +2798,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.emoji_template
-
-	var_2_68[367] = {
+	pg.base.emoji_template[367] = {
 		achieve = 0,
 		auction = 0,
 		index = 953,
@@ -3474,11 +2812,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.emoji_template
-
-	var_2_69[368] = {
+	pg.base.emoji_template[368] = {
 		achieve = 0,
 		auction = 0,
 		index = 954,
@@ -3492,11 +2826,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.emoji_template
-
-	var_2_70[369] = {
+	pg.base.emoji_template[369] = {
 		achieve = 0,
 		auction = 0,
 		index = 955,
@@ -3510,11 +2840,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.emoji_template
-
-	var_2_71[370] = {
+	pg.base.emoji_template[370] = {
 		achieve = 0,
 		auction = 0,
 		index = 956,
@@ -3528,11 +2854,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.emoji_template
-
-	var_2_72[371] = {
+	pg.base.emoji_template[371] = {
 		achieve = 0,
 		auction = 0,
 		index = 957,
@@ -3546,11 +2868,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.emoji_template
-
-	var_2_73[372] = {
+	pg.base.emoji_template[372] = {
 		achieve = 0,
 		auction = 0,
 		index = 958,
@@ -3564,11 +2882,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.emoji_template
-
-	var_2_74[373] = {
+	pg.base.emoji_template[373] = {
 		achieve = 0,
 		auction = 0,
 		index = 959,
@@ -3582,11 +2896,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.emoji_template
-
-	var_2_75[374] = {
+	pg.base.emoji_template[374] = {
 		achieve = 0,
 		auction = 0,
 		index = 960,
@@ -3600,11 +2910,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.emoji_template
-
-	var_2_76[375] = {
+	pg.base.emoji_template[375] = {
 		achieve = 0,
 		auction = 0,
 		index = 950,
@@ -3618,11 +2924,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.emoji_template
-
-	var_2_77[1041] = {
+	pg.base.emoji_template[1041] = {
 		achieve = 1,
 		auction = 0,
 		index = 87,
@@ -3636,11 +2938,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.emoji_template
-
-	var_2_78[1042] = {
+	pg.base.emoji_template[1042] = {
 		achieve = 1,
 		auction = 0,
 		index = 88,
@@ -3654,11 +2952,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.emoji_template
-
-	var_2_79[1043] = {
+	pg.base.emoji_template[1043] = {
 		achieve = 1,
 		auction = 0,
 		index = 89,
@@ -3672,11 +2966,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.emoji_template
-
-	var_2_80[1044] = {
+	pg.base.emoji_template[1044] = {
 		achieve = 1,
 		auction = 0,
 		index = 90,
@@ -3690,11 +2980,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.emoji_template
-
-	var_2_81[2001] = {
+	pg.base.emoji_template[2001] = {
 		achieve = 1,
 		auction = 1,
 		index = 91,
@@ -3708,11 +2994,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.emoji_template
-
-	var_2_82[2002] = {
+	pg.base.emoji_template[2002] = {
 		achieve = 1,
 		auction = 1,
 		index = 92,
@@ -3726,11 +3008,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.emoji_template
-
-	var_2_83[2003] = {
+	pg.base.emoji_template[2003] = {
 		achieve = 1,
 		auction = 1,
 		index = 93,
@@ -3744,11 +3022,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.emoji_template
-
-	var_2_84[2004] = {
+	pg.base.emoji_template[2004] = {
 		achieve = 1,
 		auction = 1,
 		index = 94,
@@ -3762,11 +3036,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.emoji_template
-
-	var_2_85[2005] = {
+	pg.base.emoji_template[2005] = {
 		achieve = 1,
 		auction = 1,
 		index = 95,
@@ -3780,11 +3050,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.emoji_template
-
-	var_2_86[2006] = {
+	pg.base.emoji_template[2006] = {
 		achieve = 1,
 		auction = 1,
 		index = 96,
@@ -3798,11 +3064,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.emoji_template
-
-	var_2_87[2007] = {
+	pg.base.emoji_template[2007] = {
 		achieve = 1,
 		auction = 1,
 		index = 97,
@@ -3816,11 +3078,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.emoji_template
-
-	var_2_88[2008] = {
+	pg.base.emoji_template[2008] = {
 		achieve = 1,
 		auction = 1,
 		index = 98,
@@ -3834,8 +3092,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_88
-	var_2_88.base.emoji_template[2009] = {
+	pg.base.emoji_template[2009] = {
 		achieve = 1,
 		auction = 1,
 		index = 99,

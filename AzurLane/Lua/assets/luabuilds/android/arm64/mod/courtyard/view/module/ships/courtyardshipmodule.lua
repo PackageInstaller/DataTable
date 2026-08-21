@@ -1,424 +1,157 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CourtYardShipModule", import("..CourtYardPlaceableModule"))
+local var_0_1 = 1
 
-local var_0_0 = "CourtYardShipModule"
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	var_0_1 = CourtYardConst.SHIP_SCALE
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..CourtYardPlaceableModule"))
-local var_0_2 = 1
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	CourtYardConst = var_1_10004
-	var_0_2 = var_1_10004.SHIP_SCALE
-
-	var_0_1.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
 
 	arg_1_0._role = arg_1_3
 
 	return
 end
 
-function var_0_1.OnInit(arg_2_0)
-	var_0_1.super.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
+	var_0_0.super.OnInit(arg_2_0)
+	pg.ViewUtils.SetLayer(arg_2_0._tf, Layer.UI)
+	arg_2_0._tf:SetParent(arg_2_0.floor)
+	arg_2_0._role:SetLocalPosition(Vector3(0, 25, 0))
 
-	pg = var_1
+	arg_2_0.shadow = arg_2_0._tf:Find("shadow")
+	arg_2_0.shadow.localPosition = Vector3(0, 25, 0)
 
-	local var_2_0 = var_1.ViewUtils.SetLayer
-	local var_2_1 = arg_2_0._tf
+	arg_2_0.shadow:SetAsFirstSibling()
 
-	Layer = var_1_10004
+	arg_2_0.spineAnimUI = arg_2_0._role:GetSpineAnimUI()
+	arg_2_0.clickTF = arg_2_0._tf:Find("click")
+	arg_2_0.chatTF = arg_2_0._tf:Find("chat")
+	arg_2_0.chatTF.localScale = Vector3.zero
+	arg_2_0.additionTF = arg_2_0._tf:Find("addition")
+	arg_2_0.additionTFs = {
+		findTF(arg_2_0.additionTF, "money"),
+		findTF(arg_2_0.additionTF, "intimacy"),
+		findTF(arg_2_0.additionTF, "exp")
+	}
+	arg_2_0.additionTFPos = Vector3(0, 250, 0)
+	arg_2_0.inimacyBubble = arg_2_0._tf:Find("intimacy")
+	arg_2_0.moneyBubble = arg_2_0._tf:Find("money")
+	arg_2_0.animator = CourtYardShipAnimatorAgent.New(arg_2_0)
+	arg_2_0._tf.localScale = Vector3(var_0_1, var_0_1, 1)
+	arg_2_0._tf:Find("grids").localScale = Vector3(1 / var_0_1, 1 / var_0_1, 1)
 
-	var_2_0(var_2_1, var_1_10004.UI)
-
-	local var_2_2 = arg_2_0._tf
-
-	var_1.SetParent(var_2_2, arg_2_0.floor)
-
-	local var_2_3 = arg_2_0._role
-	local var_2_4 = var_1.SetLocalPosition
-
-	Vector3 = var_4
-
-	var_2_4(var_2_3, var_4(0, 25, 0))
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.shadow = var_1.Find(var_2_5, "shadow")
-
-	local var_2_6 = arg_2_0.shadow
-
-	Vector3 = var_1_10002
-	var_2_6.localPosition = var_1_10002(0, 25, 0)
-
-	local var_2_7 = arg_2_0.shadow
-
-	var_1.SetAsFirstSibling(var_2_7)
-
-	local var_2_8 = arg_2_0._role
-
-	arg_2_0.spineAnimUI = var_1.GetSpineAnimUI(var_2_8)
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.clickTF = var_1.Find(var_2_9, "click")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.chatTF = var_1.Find(var_2_10, "chat")
-
-	local var_2_11 = arg_2_0.chatTF
-
-	Vector3 = var_2
-	var_2_11.localScale = var_2.zero
-
-	local var_2_12 = arg_2_0._tf
-
-	arg_2_0.additionTF = var_1.Find(var_2_12, "addition")
-
-	local var_2_13 = {}
-
-	findTF = var_2
-	var_2_13[1] = var_2(arg_2_0.additionTF, "money")
-	findTF = var_2
-	var_2_13[2] = var_2(arg_2_0.additionTF, "intimacy")
-	findTF = var_2
-	var_2_13[3] = var_2(arg_2_0.additionTF, "exp")
-	arg_2_0.additionTFs = var_2_13
-	Vector3 = var_2_13
-	arg_2_0.additionTFPos = var_2_13(0, 250, 0)
-
-	local var_2_14 = arg_2_0._tf
-
-	arg_2_0.inimacyBubble = var_1.Find(var_2_14, "intimacy")
-
-	local var_2_15 = arg_2_0._tf
-
-	arg_2_0.moneyBubble = var_1.Find(var_2_15, "money")
-	CourtYardShipAnimatorAgent = var_1
-	arg_2_0.animator = var_1.New(arg_2_0)
-
-	local var_2_16 = arg_2_0._tf
-
-	Vector3 = var_2
-	var_2_16.localScale = var_2(var_0_2, var_0_2, 1)
-
-	local var_2_17 = arg_2_0._tf
-	local var_2_18 = var_1.Find(var_2_17, "grids")
-
-	Vector3 = var_2
-	var_2_18.localScale = var_2(1 / var_0_2, 1 / var_0_2, 1)
-
-	local var_2_19 = arg_2_0.animator
-	local var_2_20 = var_1.SetState
-	local var_2_21 = arg_2_0.data
-
-	var_2_20(var_2_19, var_4.GetState(var_2_21))
+	arg_2_0.animator:SetState(arg_2_0.data:GetState())
 	arg_2_0:UpdateBubble(arg_2_0.inimacyBubble, arg_2_0.data.inimacy)
 	arg_2_0:UpdateBubble(arg_2_0.moneyBubble, arg_2_0.data.coin)
 	arg_2_0:InitAttachment()
-
-	setActive = var_1
-
-	var_1(arg_2_0.shadow, true)
+	setActive(arg_2_0.shadow, true)
 
 	return
 end
 
-function var_0_1.AdjustYForInteraction(arg_3_0)
-	local var_3_0 = arg_3_0._role
-	local var_3_1 = var_1.SetLocalPosition
-
-	Vector3 = var_1_10004
-
-	var_3_1(var_3_0, var_1_10004(0, 0, 0))
+function var_0_0.AdjustYForInteraction(arg_3_0)
+	arg_3_0._role:SetLocalPosition(Vector3(0, 0, 0))
 
 	return
 end
 
-function var_0_1.ResetYForInteraction(arg_4_0)
-	local var_4_0 = arg_4_0._role
-	local var_4_1 = var_1.SetLocalPosition
-
-	Vector3 = var_1_10004
-
-	var_4_1(var_4_0, var_1_10004(0, 25, 0))
+function var_0_0.ResetYForInteraction(arg_4_0)
+	arg_4_0._role:SetLocalPosition(Vector3(0, 25, 0))
 
 	return
 end
 
-function var_0_1.GetSpine(arg_5_0)
-	local var_5_0 = arg_5_0._role
-
-	return var_1.GetRoleModel(var_5_0)
+function var_0_0.GetSpine(arg_5_0)
+	return arg_5_0._role:GetRoleModel()
 end
 
-function var_0_1.AddListeners(arg_6_0)
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.AddListener
-
-	CourtYardEvent = var_1_10004
-
-	var_6_1(var_6_0, var_1_10004.SHIP_STATE_CHANGE, arg_6_0.OnStateChange)
-
-	local var_6_2 = arg_6_0
-	local var_6_3 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_3(var_6_2, var_4.SHIP_MOVE, arg_6_0.OnMove)
-
-	local var_6_4 = arg_6_0
-	local var_6_5 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_5(var_6_4, var_4.SHIP_POSITION_CHANGE, arg_6_0.OnUpdatePosition)
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_7(var_6_6, var_4.SHIP_GET_AWARD, arg_6_0.OnAddAward)
-
-	local var_6_8 = arg_6_0
-	local var_6_9 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_9(var_6_8, var_4.SHIP_INIMACY_CHANGE, arg_6_0.OnInimacyChange)
-
-	local var_6_10 = arg_6_0
-	local var_6_11 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_11(var_6_10, var_4.SHIP_COIN_CHANGE, arg_6_0.OnCoinChange)
-
-	local var_6_12 = arg_6_0
-	local var_6_13 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_13(var_6_12, var_4.SHIP_UPDATE_INTERACTION, arg_6_0.OnUpdateInteraction)
-
-	local var_6_14 = arg_6_0
-	local var_6_15 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_15(var_6_14, var_4.SHIP_WILL_INTERACTION, arg_6_0.WillInterAction)
-
-	local var_6_16 = arg_6_0
-	local var_6_17 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_17(var_6_16, var_4.SHIP_START_INTERACTION, arg_6_0.StartInterAction)
-
-	local var_6_18 = arg_6_0
-	local var_6_19 = arg_6_0.AddListener
-
-	CourtYardEvent = var_4
-
-	var_6_19(var_6_18, var_4.SHIP_STOP_INTERACTION, arg_6_0.StopInterAction)
+function var_0_0.AddListeners(arg_6_0)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_STATE_CHANGE, arg_6_0.OnStateChange)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_MOVE, arg_6_0.OnMove)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_POSITION_CHANGE, arg_6_0.OnUpdatePosition)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_GET_AWARD, arg_6_0.OnAddAward)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_INIMACY_CHANGE, arg_6_0.OnInimacyChange)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_COIN_CHANGE, arg_6_0.OnCoinChange)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_UPDATE_INTERACTION, arg_6_0.OnUpdateInteraction)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_WILL_INTERACTION, arg_6_0.WillInterAction)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_START_INTERACTION, arg_6_0.StartInterAction)
+	arg_6_0:AddListener(CourtYardEvent.SHIP_STOP_INTERACTION, arg_6_0.StopInterAction)
 
 	return
 end
 
-function var_0_1.RemoveListeners(arg_7_0)
-	local var_7_0 = arg_7_0
-	local var_7_1 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_1_10004
-
-	var_7_1(var_7_0, var_1_10004.SHIP_STATE_CHANGE, arg_7_0.OnStateChange)
-
-	local var_7_2 = arg_7_0
-	local var_7_3 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_3(var_7_2, var_4.SHIP_MOVE, arg_7_0.OnMove)
-
-	local var_7_4 = arg_7_0
-	local var_7_5 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_5(var_7_4, var_4.SHIP_POSITION_CHANGE, arg_7_0.OnUpdatePosition)
-
-	local var_7_6 = arg_7_0
-	local var_7_7 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_7(var_7_6, var_4.SHIP_GET_AWARD, arg_7_0.OnAddAward)
-
-	local var_7_8 = arg_7_0
-	local var_7_9 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_9(var_7_8, var_4.SHIP_INIMACY_CHANGE, arg_7_0.OnInimacyChange)
-
-	local var_7_10 = arg_7_0
-	local var_7_11 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_11(var_7_10, var_4.SHIP_COIN_CHANGE, arg_7_0.OnCoinChange)
-
-	local var_7_12 = arg_7_0
-	local var_7_13 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_13(var_7_12, var_4.SHIP_UPDATE_INTERACTION, arg_7_0.OnUpdateInteraction)
-
-	local var_7_14 = arg_7_0
-	local var_7_15 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_15(var_7_14, var_4.SHIP_WILL_INTERACTION, arg_7_0.WillInterAction)
-
-	local var_7_16 = arg_7_0
-	local var_7_17 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_17(var_7_16, var_4.SHIP_START_INTERACTION, arg_7_0.StartInterAction)
-
-	local var_7_18 = arg_7_0
-	local var_7_19 = arg_7_0.RemoveListener
-
-	CourtYardEvent = var_4
-
-	var_7_19(var_7_18, var_4.SHIP_STOP_INTERACTION, arg_7_0.StopInterAction)
+function var_0_0.RemoveListeners(arg_7_0)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_STATE_CHANGE, arg_7_0.OnStateChange)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_MOVE, arg_7_0.OnMove)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_POSITION_CHANGE, arg_7_0.OnUpdatePosition)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_GET_AWARD, arg_7_0.OnAddAward)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_INIMACY_CHANGE, arg_7_0.OnInimacyChange)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_COIN_CHANGE, arg_7_0.OnCoinChange)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_UPDATE_INTERACTION, arg_7_0.OnUpdateInteraction)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_WILL_INTERACTION, arg_7_0.WillInterAction)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_START_INTERACTION, arg_7_0.StartInterAction)
+	arg_7_0:RemoveListener(CourtYardEvent.SHIP_STOP_INTERACTION, arg_7_0.StopInterAction)
 
 	return
 end
 
-function var_0_1.InitAttachment(arg_8_0)
-	onButton = var_1_10001
-
-	var_1_10001(arg_8_0, arg_8_0.clickTF, function()
-		local var_9_0 = arg_8_0
-
-		var_0.Emit(var_9_0, "TouchShip", arg_8_0.data.id)
-
-		pg = var_0
-
-		local var_9_1 = var_0.CriMgr.GetInstance()
-		local var_9_2 = var_0.PlaySoundEffect_V3
-
-		SFX_BOAT_CLICK = var_3
-
-		var_9_2(var_9_1, var_3)
+function var_0_0.InitAttachment(arg_8_0)
+	onButton(arg_8_0, arg_8_0.clickTF, function()
+		arg_8_0:Emit("TouchShip", arg_8_0.data.id)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_BOAT_CLICK)
 
 		return
 	end)
-
-	onButton = var_1_10001
-
-	local var_8_0 = arg_8_0
-	local var_8_1 = arg_8_0.inimacyBubble
-
-	local function var_8_2()
-		local var_10_0 = arg_8_0
-
-		var_0.Emit(var_10_0, "GetShipInimacy", arg_8_0.data.id)
+	onButton(arg_8_0, arg_8_0.inimacyBubble, function()
+		arg_8_0:Emit("GetShipInimacy", arg_8_0.data.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_8_0, var_8_1, var_8_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_8_3 = arg_8_0
-	local var_8_4 = arg_8_0.moneyBubble
-
-	local function var_8_5()
-		local var_11_0 = arg_8_0
-
-		var_0.Emit(var_11_0, "GetShipCoin", arg_8_0.data.id)
+	end, SFX_PANEL)
+	onButton(arg_8_0, arg_8_0.moneyBubble, function()
+		arg_8_0:Emit("GetShipCoin", arg_8_0.data.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_8_3, var_8_4, var_8_5, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnBeginDrag(arg_12_0)
-	local var_12_0 = arg_12_0:GetView()
-	local var_12_1 = var_1.GetCurrStorey(var_12_0)
-
-	if not var_1.AllModulesAreCompletion(var_12_1) then
+function var_0_0.OnBeginDrag(arg_12_0)
+	if not arg_12_0:GetView():GetCurrStorey():AllModulesAreCompletion() then
 		return
 	end
 
 	arg_12_0:Emit("DragShip", arg_12_0.data.id)
-
-	pg = var_1
-
-	local var_12_2 = var_1.CriMgr.GetInstance()
-	local var_12_3 = var_1.PlaySoundEffect_V3
-
-	SFX_BOAT_DRAG = var_4
-
-	var_12_3(var_12_2, var_4)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_BOAT_DRAG)
 
 	return
 end
 
-function var_0_1.OnDragging(arg_13_0, arg_13_1)
+function var_0_0.OnDragging(arg_13_0, arg_13_1)
 	arg_13_0:Emit("DragingShip", arg_13_0.data.id, arg_13_1)
 
 	return
 end
 
-function var_0_1.OnDragEnd(arg_14_0, arg_14_1)
+function var_0_0.OnDragEnd(arg_14_0, arg_14_1)
 	arg_14_0:Emit("DragShipEnd", arg_14_0.data.id, arg_14_1)
 
 	return
 end
 
-function var_0_1.OnUpdatePosition(arg_15_0, arg_15_1, arg_15_2)
+function var_0_0.OnUpdatePosition(arg_15_0, arg_15_1, arg_15_2)
 	arg_15_0:UpdatePosition(arg_15_1, arg_15_2)
 
 	return
 end
 
-function var_0_1.OnStateChange(arg_16_0, arg_16_1, arg_16_2)
-	CourtYardShip = var_1_10003
-
-	if arg_16_1 ~= var_1_10003.STATE_MOVING_ZERO then
-		CourtYardShip = var_3
-
-		if arg_16_1 ~= var_3.STATE_MOVING_HALF then
-			CourtYardShip = var_3
-
-			if arg_16_1 ~= var_3.STATE_MOVING_ONE then
-				arg_16_0:ClearMove()
-			end
-		end
+function var_0_0.OnStateChange(arg_16_0, arg_16_1, arg_16_2)
+	if arg_16_1 ~= CourtYardShip.STATE_MOVING_ZERO and arg_16_1 ~= CourtYardShip.STATE_MOVING_HALF and arg_16_1 ~= CourtYardShip.STATE_MOVING_ONE then
+		arg_16_0:ClearMove()
 	end
 
-	local var_16_0 = arg_16_0.animator
+	arg_16_0.animator:SetState(arg_16_1)
 
-	var_3.SetState(var_16_0, arg_16_1)
-
-	CourtYardShip = var_3
-
-	if arg_16_1 == var_3.STATE_TOUCH then
+	if arg_16_1 == CourtYardShip.STATE_TOUCH then
 		arg_16_0:ClearChatAnimation()
 		arg_16_0:PlayChatAnim()
 	end
@@ -426,47 +159,17 @@ function var_0_1.OnStateChange(arg_16_0, arg_16_1, arg_16_2)
 	return
 end
 
-function var_0_1.PlayChatAnim(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	defaultValue = var_1_10004
-	arg_17_3 = var_1_10004(arg_17_3, true)
-	defaultValue = var_4
-	arg_17_2 = var_4(arg_17_2, 0)
-	defaultValue = var_4
-
-	local var_17_0 = arg_17_1
-
-	Vector3 = var_7
-	arg_17_1 = var_4(var_17_0, var_7(2, 2, 2))
-	LeanTween = var_4
-
-	local var_17_1 = var_4.scale
-
-	go = var_17_0
-
-	local var_17_2 = var_17_1(var_17_0(arg_17_0.chatTF), arg_17_1, 0.5)
-	local var_17_3 = var_4.setEase
-
-	LeanTweenType = var_7
-
-	local var_17_4 = var_17_3(var_17_2, var_7.easeOutBack)
-	local var_17_5 = var_4.setDelay(var_17_4, arg_17_2)
+function var_0_0.PlayChatAnim(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+	arg_17_3 = defaultValue(arg_17_3, true)
+	arg_17_2 = defaultValue(arg_17_2, 0)
+	arg_17_1 = defaultValue(arg_17_1, Vector3(2, 2, 2))
 
 	if not arg_17_3 then
 		return
 	end
 
-	local var_17_6 = var_17_5
-	local var_17_7 = var_17_5.setOnComplete
-
-	System = var_8
-
-	var_17_7(var_17_6, var_8.Action(function()
-		local var_18_0 = arg_17_0
-		local var_18_1 = var_0.PlayChatAnim
-
-		Vector3 = var_2_10003
-
-		var_18_1(var_18_0, var_2_10003(0, 0, 0), 2, false)
+	LeanTween.scale(go(arg_17_0.chatTF), arg_17_1, 0.5):setEase(LeanTweenType.easeOutBack):setDelay(arg_17_2):setOnComplete(System.Action(function()
+		arg_17_0:PlayChatAnim(Vector3(0, 0, 0), 2, false)
 
 		return
 	end))
@@ -474,105 +177,56 @@ function var_0_1.PlayChatAnim(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 	return
 end
 
-function var_0_1.ClearChatAnimation(arg_19_0)
-	LeanTween = var_1_10001
-
-	local var_19_0 = var_1_10001.isTweening
-
-	go = var_1_10003
-
-	if var_19_0(var_1_10003(arg_19_0.chatTF)) then
-		LeanTween = var_1
-
-		local var_19_1 = var_1.cancel
-
-		go = var_3
-
-		var_19_1(var_3(arg_19_0.chatTF))
+function var_0_0.ClearChatAnimation(arg_19_0)
+	if LeanTween.isTweening(go(arg_19_0.chatTF)) then
+		LeanTween.cancel(go(arg_19_0.chatTF))
 	end
 
-	local var_19_2 = arg_19_0.chatTF
-
-	Vector3 = var_1_10002
-	var_19_2.localScale = var_1_10002.zero
+	arg_19_0.chatTF.localScale = Vector3.zero
 
 	return
 end
 
-function var_0_1.OnUpdateInteraction(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_1.action
-	local var_20_1 = arg_20_0.animator
-
-	var_3.PlayInteractioAnim(var_20_1, var_20_0)
+function var_0_0.OnUpdateInteraction(arg_20_0, arg_20_1)
+	arg_20_0.animator:PlayInteractioAnim(arg_20_1.action)
 
 	return
 end
 
-function var_0_1.OnAnimtionFinish(arg_21_0, arg_21_1)
+function var_0_0.OnAnimtionFinish(arg_21_0, arg_21_1)
 	arg_21_0:Emit("ShipAnimtionFinish", arg_21_0.data.id, arg_21_1)
 
 	return
 end
 
-function var_0_1.OnMove(arg_22_0, arg_22_1, arg_22_2)
+function var_0_0.OnMove(arg_22_0, arg_22_1, arg_22_2)
 	arg_22_0:ClearMove()
 
-	local var_22_0 = arg_22_0.data
-	local var_22_1 = var_3.GetPosition(var_22_0)
+	local var_22_0 = arg_22_0.data:GetPosition()
+	local var_22_1 = CourtYardCalcUtil.Map2Local(arg_22_1)
+	local var_22_2 = arg_22_0.data:GetMoveTime()
 
-	CourtYardCalcUtil = var_1_10004
-
-	local var_22_2 = var_1_10004.Map2Local(arg_22_1)
-	local var_22_3 = arg_22_0.data
-	local var_22_4 = var_5.GetMoveTime(var_22_3)
-	local var_22_5 = arg_22_1.x < var_22_1.x and arg_22_1.y == var_22_1.y or arg_22_1.x == var_22_1.x and arg_22_1.y > var_22_1.y
-	local var_22_6 = arg_22_0._role
-	local var_22_7 = var_7.SetLocalScale
-
-	Vector3 = var_1_10010
-
-	var_22_7(var_22_6, var_1_10010(var_22_5 == false and 1 or -1, 1, 1))
-
-	Vector3 = var_22_7
-
-	local var_22_8 = var_22_7(var_22_2.x, var_22_2.y, 0) + arg_22_2
-
-	CourtYardCalcUtil = var_1_10008
-
-	local var_22_9 = var_1_10008.TrPosition2LocalPos(arg_22_0:GetParentTF(), arg_22_0._tf.parent, var_22_8)
-
-	LeanTween = var_9
-
-	var_9.moveLocal(arg_22_0._go, var_22_9, var_22_4)
+	arg_22_0._role:SetLocalScale(Vector3((arg_22_1.x < var_22_0.x and arg_22_1.y == var_22_0.y or arg_22_1.x == var_22_0.x and arg_22_1.y > var_22_0.y) == false and 1 or -1, 1, 1))
+	LeanTween.moveLocal(arg_22_0._go, CourtYardCalcUtil.TrPosition2LocalPos(arg_22_0:GetParentTF(), arg_22_0._tf.parent, Vector3(var_22_1.x, var_22_1.y, 0) + arg_22_2), var_22_2)
 
 	for iter_22_0 = 1, arg_22_0.interactionTF.childCount do
-		local var_22_10 = arg_22_0.interactionTF
-		local var_22_11 = var_13.GetChild(var_22_10, iter_22_0 - 1)
+		local var_22_3 = arg_22_0.interactionTF:GetChild(iter_22_0 - 1)
 
-		Vector3 = var_14
-		math = var_16
-		var_22_11.localScale = var_14(var_16.abs(var_22_11.localScale.x), var_22_11.localScale.y, var_22_11.localScale.z)
+		var_22_3.localScale = Vector3(math.abs(var_22_3.localScale.x), var_22_3.localScale.y, var_22_3.localScale.z)
 	end
 
-	local var_22_12 = arg_22_0.interactionTF
-	local var_22_13 = arg_22_0._role
-
-	var_22_12.localScale = var_10.GetLocalScale(var_22_13)
+	arg_22_0.interactionTF.localScale = arg_22_0._role:GetLocalScale()
 
 	return
 end
 
-function var_0_1.OnAddAward(arg_23_0, arg_23_1, arg_23_2)
+function var_0_0.OnAddAward(arg_23_0, arg_23_1, arg_23_2)
 	if arg_23_2 == 3 and arg_23_1 <= 0 then
 		return
 	end
 
-	pairs = var_1_10003
-
-	for iter_23_0, iter_23_1 in var_1_10003(arg_23_0.additionTFs) do
-		setActive = var_1_10008
-
-		var_1_10008(iter_23_1, arg_23_2 == iter_23_0)
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.additionTFs) do
+		setActive(iter_23_1, arg_23_2 == iter_23_0)
 	end
 
 	local var_23_0 = arg_23_0.additionTFs[arg_23_2]
@@ -581,71 +235,33 @@ function var_0_1.OnAddAward(arg_23_0, arg_23_1, arg_23_2)
 		arg_23_1 = ""
 	end
 
-	setText = var_4
-
-	var_4(var_23_0:Find("Text"), arg_23_1 or "")
-
-	local var_23_5
+	setText(arg_23_0.additionTFs[arg_23_2]:Find("Text"), arg_23_1 or "")
 
 	if arg_23_2 == 2 then
-		local var_23_1 = arg_23_0:GetView().poolMgr
+		if arg_23_0:GetView().poolMgr:GetHeartPool() then
+			local var_23_1 = arg_23_0:GetView().poolMgr:GetHeartPool():Dequeue()
 
-		if var_4.GetHeartPool(var_23_1) then
-			local var_23_2 = arg_23_0:GetView().poolMgr
-			local var_23_3 = var_4.GetHeartPool(var_23_2)
-			local var_23_4 = var_4.Dequeue(var_23_3).transform
+			var_23_1.transform:SetParent(arg_23_0._tf, false)
 
-			var_23_5.SetParent(var_23_4, arg_23_0._tf, false)
-
-			tf = var_23_5
-			var_23_5 = var_23_5(var_4)
-			Vector3 = var_23_3
-			var_23_5.localPosition = var_23_3(0, 200, -100)
-			tf = var_23_5
-			var_23_5 = var_23_5(var_4)
-			Vector3 = var_6
-			var_23_5.localScale = var_6(100, 100, 100)
+			tf(var_23_1).localPosition = Vector3(0, 200, -100)
+			tf(var_23_1).localScale = Vector3(100, 100, 100)
 		end
 	end
 
-	local var_23_6 = 1 / var_0_2
+	local var_23_2 = 1 / var_0_1
 
-	CourtYardCalcUtil = var_23_5
-
-	local var_23_7
-
-	if var_23_5.GetTransformSign(arg_23_0._tf, arg_23_0.rect) < 0 then
-		var_23_7 = arg_23_0.additionTF
-		Vector3 = var_6
-		var_23_7.localScale = var_6(-var_23_6, var_23_6, var_23_6)
+	if CourtYardCalcUtil.GetTransformSign(arg_23_0._tf, arg_23_0.rect) < 0 then
+		arg_23_0.additionTF.localScale = Vector3(-var_23_2, var_23_2, var_23_2)
 	end
 
-	LeanTween = var_23_7
+	LeanTween.cancel(arg_23_0.additionTF.gameObject)
 
-	var_23_7.cancel(arg_23_0.additionTF.gameObject)
+	arg_23_0.additionTF.transform.localPosition = arg_23_0.additionTFPos
 
-	local var_23_8 = arg_23_0.additionTF.transform
+	LeanTween.moveY(rtf(arg_23_0.additionTF), arg_23_0.additionTFPos.y + 110, 1.2):setOnComplete(System.Action(function()
+		arg_23_0.additionTF.localScale = Vector3(var_23_2, var_23_2, var_23_2)
 
-	var_23_8.localPosition = arg_23_0.additionTFPos
-	LeanTween = var_23_8
-
-	local var_23_9 = var_23_8.moveY
-
-	rtf = var_7
-
-	local var_23_10 = var_23_9(var_7(arg_23_0.additionTF), arg_23_0.additionTFPos.y + 110, 1.2)
-	local var_23_11 = var_5.setOnComplete
-
-	System = var_8
-
-	var_23_11(var_23_10, var_8.Action(function()
-		local var_24_0 = arg_23_0.additionTF
-
-		Vector3 = var_2_10001
-		var_24_0.localScale = var_2_10001(var_23_6, var_23_6, var_23_6)
-		setActive = var_24_0
-
-		var_24_0(var_23_0, false)
+		setActive(var_23_0, false)
 
 		return
 	end))
@@ -653,133 +269,94 @@ function var_0_1.OnAddAward(arg_23_0, arg_23_1, arg_23_2)
 	return
 end
 
-function var_0_1.UpdateBubble(arg_25_0, arg_25_1, arg_25_2)
-	setActive = var_1_10003
+function var_0_0.UpdateBubble(arg_25_0, arg_25_1, arg_25_2)
+	setActive(arg_25_1, arg_25_2 ~= 0)
 
-	var_1_10003(arg_25_1, arg_25_2 ~= 0)
-
-	LeanTween = var_1_10003
-
-	if var_1_10003.isTweening(arg_25_1.gameObject) then
-		LeanTween = var_3
-
-		var_3.cancel(arg_25_1.gameObject)
+	if LeanTween.isTweening(arg_25_1.gameObject) then
+		LeanTween.cancel(arg_25_1.gameObject)
 	end
 
 	if arg_25_2 ~= 0 then
-		Vector3 = var_3
-		arg_25_1.localScale = var_3(2, 2, 0)
+		arg_25_1.localScale = Vector3(2, 2, 0)
 	end
 
 	if arg_25_2 ~= 0 then
-		floatAni = var_3
-
-		var_3(arg_25_1, 20, 1)
+		floatAni(arg_25_1, 20, 1)
 	end
 
 	return
 end
 
-function var_0_1.OnInimacyChange(arg_26_0, arg_26_1)
+function var_0_0.OnInimacyChange(arg_26_0, arg_26_1)
 	arg_26_0:UpdateBubble(arg_26_0.inimacyBubble, arg_26_1)
 
 	return
 end
 
-function var_0_1.OnCoinChange(arg_27_0, arg_27_1)
+function var_0_0.OnCoinChange(arg_27_0, arg_27_1)
 	arg_27_0:UpdateBubble(arg_27_0.moneyBubble, arg_27_1)
 
 	return
 end
 
-function var_0_1.ClearMove(arg_28_0)
-	LeanTween = var_1_10001
-
-	var_1_10001.cancel(arg_28_0._go)
+function var_0_0.ClearMove(arg_28_0)
+	LeanTween.cancel(arg_28_0._go)
 
 	return
 end
 
-function var_0_1.WillInterAction(arg_29_0, arg_29_1)
+function var_0_0.WillInterAction(arg_29_0, arg_29_1)
 	return
 end
 
-function var_0_1.StartInterAction(arg_30_0, arg_30_1)
-	setActive = var_1_10002
+function var_0_0.StartInterAction(arg_30_0, arg_30_1)
+	setActive(arg_30_0.shadow, false)
+	setAnchoredPosition(arg_30_0._tf, (arg_30_1:GetOffset()))
 
-	var_1_10002(arg_30_0.shadow, false)
+	local var_30_0 = arg_30_1:GetScale()
 
-	local var_30_0 = arg_30_1:GetOffset()
-
-	setAnchoredPosition = var_1_10003
-
-	var_1_10003(arg_30_0._tf, var_30_0)
-
-	local var_30_1 = arg_30_1:GetOwner()
-	local var_30_2 = var_3.GetNormalDirection(var_30_1)
-	local var_30_3 = arg_30_1:GetScale()
-	local var_30_4 = arg_30_0._role
-	local var_30_5 = var_6.SetLocalScale
-
-	Vector3 = var_1_10009
-
-	var_30_5(var_30_4, var_1_10009(var_30_2 * var_30_3.x, var_30_3.y, var_30_3.z))
+	arg_30_0._role:SetLocalScale(Vector3(arg_30_1:GetOwner():GetNormalDirection() * var_30_0.x, var_30_0.y, var_30_0.z))
 	arg_30_0:AdjustYForInteraction()
 
 	return
 end
 
-function var_0_1.StopInterAction(arg_31_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_31_0.shadow, true)
+function var_0_0.StopInterAction(arg_31_0)
+	setActive(arg_31_0.shadow, true)
 	arg_31_0:ResetTransform()
 	arg_31_0:ResetYForInteraction()
 
 	return
 end
 
-function var_0_1.ResetTransform(arg_32_0)
-	local var_32_0 = arg_32_0._tf
-
-	Vector3 = var_1_10002
-	var_32_0.localScale = var_1_10002(var_0_2, var_0_2, 1)
-
-	local var_32_1 = arg_32_0._tf
-
-	Vector3 = var_2
-	var_32_1.localEulerAngles = var_2.zero
+function var_0_0.ResetTransform(arg_32_0)
+	arg_32_0._tf.localScale = Vector3(var_0_1, var_0_1, 1)
+	arg_32_0._tf.localEulerAngles = Vector3.zero
 
 	return
 end
 
-function var_0_1.HideAttachment(arg_33_0, arg_33_1)
+function var_0_0.HideAttachment(arg_33_0, arg_33_1)
 	if arg_33_0._role then
-		local var_33_0 = arg_33_0._role
-
-		var_2.SetOrbitVisible(var_33_0, not arg_33_1)
+		arg_33_0._role:SetOrbitVisible(not arg_33_1)
 	end
 
 	return
 end
 
-function var_0_1.OnDispose(arg_34_0)
-	var_0_1.super.OnDispose(arg_34_0)
+function var_0_0.OnDispose(arg_34_0)
+	var_0_0.super.OnDispose(arg_34_0)
 	arg_34_0:ClearChatAnimation()
 	arg_34_0:ResetTransform()
 
 	if arg_34_0.animator then
-		local var_34_0 = arg_34_0.animator
-
-		var_1.Dispose(var_34_0)
+		arg_34_0.animator:Dispose()
 
 		arg_34_0.animator = nil
 	end
 
 	if arg_34_0.spineAnimUI then
-		local var_34_1 = arg_34_0.spineAnimUI
-
-		var_1.SetActionCallBack(var_34_1, nil)
+		arg_34_0.spineAnimUI:SetActionCallBack(nil)
 
 		arg_34_0.spineAnimUI = nil
 	end
@@ -787,9 +364,7 @@ function var_0_1.OnDispose(arg_34_0)
 	arg_34_0:ClearMove()
 
 	if arg_34_0._role then
-		local var_34_2 = arg_34_0._role
-
-		var_1.Dispose(var_34_2)
+		arg_34_0._role:Dispose()
 
 		arg_34_0._role = nil
 	end
@@ -797,13 +372,10 @@ function var_0_1.OnDispose(arg_34_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_35_0)
-	local var_35_0 = arg_35_0:GetView().poolMgr
-	local var_35_1 = var_1.GetShipPool(var_35_0)
-
-	var_1.Enqueue(var_35_1, arg_35_0._go)
+function var_0_0.OnDestroy(arg_35_0)
+	arg_35_0:GetView().poolMgr:GetShipPool():Enqueue(arg_35_0._go)
 
 	return
 end
 
-return var_0_1
+return var_0_0

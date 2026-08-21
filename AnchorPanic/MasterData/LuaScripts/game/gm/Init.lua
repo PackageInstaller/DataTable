@@ -1,4 +1,4 @@
-gm ={}
+gm = {}
 gm.GmCommandVo = require('game/gm/manager/vo/GmCommandVo')
 gm.GmManager = require('game/gm/manager/GmManager')
 gm.GmTabView = require('game/gm/view/tabView/GmTabView')
@@ -6,6 +6,9 @@ gm.LuaTabView = require('game/gm/view/tabView/LuaTabView')
 gm.VideoTabView = require('game/gm/view/tabView/VideoTabView')
 gm.TestDeltaListTabView = require('game/gm/view/tabView/TestDeltaListTabView')
 gm.TestDeltaListItem = require('game/gm/view/tabView/item/TestDeltaListItem')
+gm.GmBigHostelView = require('game/gm/view/tabView/GmBigHostelView')
+gm.GmBigHostelItem = require('game/gm/view/tabView/GmBigHostelItem')
+
 gm.DownLoadTabView = require('game/gm/view/tabView/DownLoadTabView')
 gm.GmFightReplayItem = require('game/gm/view/tabView/GmFightReplayItem')
 gm.GmFightPostItem = require('game/gm/view/tabView/GmFightPostItem')
@@ -19,6 +22,6 @@ gm.GmPanel = require('game/gm/view/GmPanel')
 gm.GmController = require('game/gm/controller/GmController').new(gm.GmManager)
 local module = {gm.GmController}
 return module
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

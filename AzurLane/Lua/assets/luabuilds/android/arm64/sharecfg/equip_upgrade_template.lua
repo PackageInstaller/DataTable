@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "equip_upgrade_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "equip_upgrade_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.equip_upgrade_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.equip_upgrade_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.equip_upgrade_template = rawget(pg, "equip_upgrade_template") or setmetatable({
+	__name = "equip_upgrade_template"
+}, confNEO)
+pg.equip_upgrade_template.all = {
 	101,
 	102,
 	103,
@@ -78,25 +55,11 @@ var_0_3.all = {
 	1007,
 	1008
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.equip_upgrade_template = {}
+pg.base = pg.base or {}
+pg.base.equip_upgrade_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.equip_upgrade_template
-
-	var_1_0[101] = {
+	pg.base.equip_upgrade_template[101] = {
 		category1 = 1,
 		category2 = 1,
 		id = 101,
@@ -203,11 +166,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.equip_upgrade_template
-
-	var_1_1[102] = {
+	pg.base.equip_upgrade_template[102] = {
 		category1 = 1,
 		category2 = 2,
 		id = 102,
@@ -298,11 +257,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.equip_upgrade_template
-
-	var_1_2[103] = {
+	pg.base.equip_upgrade_template[103] = {
 		category1 = 1,
 		category2 = 3,
 		id = 103,
@@ -401,11 +356,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.equip_upgrade_template
-
-	var_1_3[104] = {
+	pg.base.equip_upgrade_template[104] = {
 		category1 = 1,
 		category2 = 4,
 		id = 104,
@@ -634,11 +585,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.equip_upgrade_template
-
-	var_1_4[105] = {
+	pg.base.equip_upgrade_template[105] = {
 		category1 = 1,
 		category2 = 5,
 		id = 105,
@@ -785,11 +732,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.equip_upgrade_template
-
-	var_1_5[113] = {
+	pg.base.equip_upgrade_template[113] = {
 		category1 = 1,
 		category2 = 13,
 		id = 113,
@@ -890,11 +833,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.equip_upgrade_template
-
-	var_1_6[106] = {
+	pg.base.equip_upgrade_template[106] = {
 		category1 = 1,
 		category2 = 6,
 		id = 106,
@@ -1175,11 +1114,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.equip_upgrade_template
-
-	var_1_7[107] = {
+	pg.base.equip_upgrade_template[107] = {
 		category1 = 1,
 		category2 = 7,
 		id = 107,
@@ -1366,11 +1301,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.equip_upgrade_template
-
-	var_1_8[108] = {
+	pg.base.equip_upgrade_template[108] = {
 		category1 = 1,
 		category2 = 8,
 		id = 108,
@@ -1551,11 +1482,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.equip_upgrade_template
-
-	var_1_9[201] = {
+	pg.base.equip_upgrade_template[201] = {
 		category1 = 2,
 		category2 = 1,
 		id = 201,
@@ -1754,11 +1681,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.equip_upgrade_template
-
-	var_1_10[202] = {
+	pg.base.equip_upgrade_template[202] = {
 		category1 = 2,
 		category2 = 2,
 		id = 202,
@@ -1873,11 +1796,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.equip_upgrade_template
-
-	var_1_11[203] = {
+	pg.base.equip_upgrade_template[203] = {
 		category1 = 2,
 		category2 = 3,
 		id = 203,
@@ -2000,11 +1919,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.equip_upgrade_template
-
-	var_1_12[204] = {
+	pg.base.equip_upgrade_template[204] = {
 		category1 = 2,
 		category2 = 4,
 		id = 204,
@@ -2127,11 +2042,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.equip_upgrade_template
-
-	var_1_13[205] = {
+	pg.base.equip_upgrade_template[205] = {
 		category1 = 2,
 		category2 = 5,
 		id = 205,
@@ -2262,11 +2173,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.equip_upgrade_template
-
-	var_1_14[213] = {
+	pg.base.equip_upgrade_template[213] = {
 		category1 = 2,
 		category2 = 13,
 		id = 213,
@@ -2333,11 +2240,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.equip_upgrade_template
-
-	var_1_15[206] = {
+	pg.base.equip_upgrade_template[206] = {
 		category1 = 2,
 		category2 = 6,
 		id = 206,
@@ -2632,11 +2535,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.equip_upgrade_template
-
-	var_1_16[207] = {
+	pg.base.equip_upgrade_template[207] = {
 		category1 = 2,
 		category2 = 7,
 		id = 207,
@@ -2783,11 +2682,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.equip_upgrade_template
-
-	var_1_17[208] = {
+	pg.base.equip_upgrade_template[208] = {
 		category1 = 2,
 		category2 = 8,
 		id = 208,
@@ -3010,11 +2905,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.equip_upgrade_template
-
-	var_1_18[301] = {
+	pg.base.equip_upgrade_template[301] = {
 		category1 = 3,
 		category2 = 1,
 		id = 301,
@@ -3217,11 +3108,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.equip_upgrade_template
-
-	var_1_19[302] = {
+	pg.base.equip_upgrade_template[302] = {
 		category1 = 3,
 		category2 = 2,
 		id = 302,
@@ -3336,11 +3223,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.equip_upgrade_template
-
-	var_1_20[303] = {
+	pg.base.equip_upgrade_template[303] = {
 		category1 = 3,
 		category2 = 3,
 		id = 303,
@@ -3399,11 +3282,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.equip_upgrade_template
-
-	var_1_21[304] = {
+	pg.base.equip_upgrade_template[304] = {
 		category1 = 3,
 		category2 = 4,
 		id = 304,
@@ -3542,11 +3421,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.equip_upgrade_template
-
-	var_1_22[305] = {
+	pg.base.equip_upgrade_template[305] = {
 		category1 = 3,
 		category2 = 5,
 		id = 305,
@@ -3653,11 +3528,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.equip_upgrade_template
-
-	var_1_23[313] = {
+	pg.base.equip_upgrade_template[313] = {
 		category1 = 3,
 		category2 = 13,
 		id = 313,
@@ -3764,11 +3635,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.equip_upgrade_template
-
-	var_1_24[306] = {
+	pg.base.equip_upgrade_template[306] = {
 		category1 = 3,
 		category2 = 6,
 		id = 306,
@@ -3999,11 +3866,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.equip_upgrade_template
-
-	var_1_25[307] = {
+	pg.base.equip_upgrade_template[307] = {
 		category1 = 3,
 		category2 = 7,
 		id = 307,
@@ -4174,11 +4037,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.equip_upgrade_template
-
-	var_1_26[308] = {
+	pg.base.equip_upgrade_template[308] = {
 		category1 = 3,
 		category2 = 8,
 		id = 308,
@@ -4429,11 +4288,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.equip_upgrade_template
-
-	var_1_27[401] = {
+	pg.base.equip_upgrade_template[401] = {
 		category1 = 4,
 		category2 = 1,
 		id = 401,
@@ -4508,11 +4363,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.equip_upgrade_template
-
-	var_1_28[402] = {
+	pg.base.equip_upgrade_template[402] = {
 		category1 = 4,
 		category2 = 2,
 		id = 402,
@@ -4635,11 +4486,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.equip_upgrade_template
-
-	var_1_29[403] = {
+	pg.base.equip_upgrade_template[403] = {
 		category1 = 4,
 		category2 = 3,
 		id = 403,
@@ -4682,11 +4529,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.equip_upgrade_template
-
-	var_1_30[404] = {
+	pg.base.equip_upgrade_template[404] = {
 		category1 = 4,
 		category2 = 4,
 		id = 404,
@@ -4803,11 +4646,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.equip_upgrade_template
-
-	var_1_31[405] = {
+	pg.base.equip_upgrade_template[405] = {
 		category1 = 4,
 		category2 = 5,
 		id = 405,
@@ -4938,11 +4777,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.equip_upgrade_template
-
-	var_1_32[413] = {
+	pg.base.equip_upgrade_template[413] = {
 		category1 = 4,
 		category2 = 13,
 		id = 413,
@@ -5001,11 +4836,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.equip_upgrade_template
-
-	var_1_33[406] = {
+	pg.base.equip_upgrade_template[406] = {
 		category1 = 4,
 		category2 = 6,
 		id = 406,
@@ -5184,11 +5015,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.equip_upgrade_template
-
-	var_1_34[407] = {
+	pg.base.equip_upgrade_template[407] = {
 		category1 = 4,
 		category2 = 7,
 		id = 407,
@@ -5335,11 +5162,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.equip_upgrade_template
-
-	var_1_35[408] = {
+	pg.base.equip_upgrade_template[408] = {
 		category1 = 4,
 		category2 = 8,
 		id = 408,
@@ -5454,11 +5277,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.equip_upgrade_template
-
-	var_1_36[601] = {
+	pg.base.equip_upgrade_template[601] = {
 		category1 = 6,
 		category2 = 1,
 		id = 601,
@@ -5533,11 +5352,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.equip_upgrade_template
-
-	var_1_37[604] = {
+	pg.base.equip_upgrade_template[604] = {
 		category1 = 6,
 		category2 = 4,
 		id = 604,
@@ -5636,11 +5451,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.equip_upgrade_template
-
-	var_1_38[606] = {
+	pg.base.equip_upgrade_template[606] = {
 		category1 = 6,
 		category2 = 6,
 		id = 606,
@@ -5775,11 +5586,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.equip_upgrade_template
-
-	var_1_39[701] = {
+	pg.base.equip_upgrade_template[701] = {
 		category1 = 7,
 		category2 = 1,
 		id = 701,
@@ -5854,11 +5661,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.equip_upgrade_template
-
-	var_1_40[702] = {
+	pg.base.equip_upgrade_template[702] = {
 		category1 = 7,
 		category2 = 31,
 		id = 702,
@@ -6017,11 +5820,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.equip_upgrade_template
-
-	var_1_41[704] = {
+	pg.base.equip_upgrade_template[704] = {
 		category1 = 7,
 		category2 = 4,
 		id = 704,
@@ -6088,11 +5887,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.equip_upgrade_template
-
-	var_1_42[707] = {
+	pg.base.equip_upgrade_template[707] = {
 		category1 = 7,
 		category2 = 7,
 		id = 707,
@@ -6209,11 +6004,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.equip_upgrade_template
-
-	var_1_43[708] = {
+	pg.base.equip_upgrade_template[708] = {
 		category1 = 7,
 		category2 = 8,
 		id = 708,
@@ -6312,11 +6103,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.equip_upgrade_template
-
-	var_1_44[1001] = {
+	pg.base.equip_upgrade_template[1001] = {
 		category1 = 10,
 		category2 = 1,
 		id = 1001,
@@ -6397,11 +6184,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.equip_upgrade_template
-
-	var_1_45[1002] = {
+	pg.base.equip_upgrade_template[1002] = {
 		category1 = 10,
 		category2 = 31,
 		id = 1002,
@@ -6540,11 +6323,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.equip_upgrade_template
-
-	var_1_46[1004] = {
+	pg.base.equip_upgrade_template[1004] = {
 		category1 = 10,
 		category2 = 4,
 		id = 1004,
@@ -6639,11 +6418,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.equip_upgrade_template
-
-	var_1_47[1005] = {
+	pg.base.equip_upgrade_template[1005] = {
 		category1 = 10,
 		category2 = 5,
 		id = 1005,
@@ -6734,11 +6509,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.equip_upgrade_template
-
-	var_1_48[1006] = {
+	pg.base.equip_upgrade_template[1006] = {
 		category1 = 10,
 		category2 = 6,
 		id = 1006,
@@ -6851,11 +6622,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.equip_upgrade_template
-
-	var_1_49[1007] = {
+	pg.base.equip_upgrade_template[1007] = {
 		category1 = 10,
 		category2 = 7,
 		id = 1007,
@@ -6914,8 +6681,7 @@ var_0_3.base.equip_upgrade_template = {}
 			}
 		}
 	}
-	pg = var_1_49
-	var_1_49.base.equip_upgrade_template[1008] = {
+	pg.base.equip_upgrade_template[1008] = {
 		category1 = 10,
 		category2 = 8,
 		id = 1008,

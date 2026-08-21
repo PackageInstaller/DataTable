@@ -3,8 +3,9 @@ module("recruit.RecruitActPlayerTabView", Class.impl(TabSubView))
 UIRes = UrlManager:getUIPrefabPath("recruit/tab/RecruitActPlayerTab.prefab")
 
 --构造函数
-function ctor(self)
+function ctor(self, recruitId)
     super.ctor(self)
+    self.m_recruitId = recruitId
 end
 
 -- 初始化数据
@@ -33,24 +34,24 @@ function initViewText(self)
 end
 
 function addAllUIEvent(self)
-    self:addUIEvent(self.m_btnTen, self.__onClickTenHandler)
+    self:addUIEvent(self.m_btnTen, self.onClickTenHandler)
 end
 
 -- 已招募次数
 function getRecruitTimes(self)
-    return recruit.RecruitManager:getRecruitInfo(self.m_recruitType).recruit_daily_times
+    return recruit.RecruitManager:getRecruitInfo(self.m_recruitId).recruit_daily_times
 end
 
-function __onClickTenHandler(self)
+function onClickTenHandler(self)
     if (self:getRecruitTimes() > 0) then
         gs.Message.Show(_TT(28009))--"不可超过招募次数上限"
     else
-        self:checkSend(self.m_recruitType, 10)
+        self:checkSend(self.m_recruitId, 10)
     end
 end
 
-function checkSend(self, recruitType, times)
-    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, { type = recruitType, times = times })
+function checkSend(self, recruitId, times)
+    GameDispatcher:dispatchEvent(EventName.SEND_RECRUIT, {recruitId = recruitId, times = times})
 end
 
 function __onUpdateViewHandler(self, args)
@@ -58,7 +59,7 @@ function __onUpdateViewHandler(self, args)
 end
 
 function __updateView(self)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitType)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_recruitId)
     local costMoneyTid_ten = configVo:getCostTenId()
     local costMoneyCount_ten = configVo:getCostTenNum()
 
@@ -67,6 +68,6 @@ function __updateView(self)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

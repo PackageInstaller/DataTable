@@ -1,25 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LevelInfoView", import("..base.BaseSubView"))
 
-local var_0_0 = "LevelInfoView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "LevelStageInfoView"
 end
 
-function var_0_1.OnInit(arg_2_0)
-	AutoLoader = var_1_10001
-	arg_2_0.loader = var_1_10001.New()
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.loader = AutoLoader.New()
 
 	arg_2_0:InitUI()
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_3_0)
+function var_0_0.OnDestroy(arg_3_0)
 	if arg_3_0:isShowing() then
 		arg_3_0:Hide()
 	end
@@ -28,237 +21,101 @@ function var_0_1.OnDestroy(arg_3_0)
 	arg_3_0.onCancel = nil
 
 	if arg_3_0.LTid then
-		LeanTween = var_1
-
-		var_1.cancel(arg_3_0.LTid)
+		LeanTween.cancel(arg_3_0.LTid)
 
 		arg_3_0.LTid = nil
 	end
 
-	local var_3_0 = arg_3_0.loader
-
-	var_1.Clear(var_3_0)
+	arg_3_0.loader:Clear()
 
 	return
 end
 
-function var_0_1.Show(arg_4_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_4_0._tf, true)
+function var_0_0.Show(arg_4_0)
+	setActive(arg_4_0._tf, true)
 	arg_4_0:BlurPanel(arg_4_0._tf)
 
 	return
 end
 
-function var_0_1.Hide(arg_5_0)
+function var_0_0.Hide(arg_5_0)
 	arg_5_0:clear()
-
-	setActive = var_1
-
-	var_1(arg_5_0._tf, false)
+	setActive(arg_5_0._tf, false)
 	arg_5_0:UnOverlayPanel(arg_5_0._tf, arg_5_0._parentTf)
 
 	return
 end
 
-function var_0_1.setCBFunc(arg_6_0, arg_6_1, arg_6_2)
+function var_0_0.setCBFunc(arg_6_0, arg_6_1, arg_6_2)
 	arg_6_0.onConfirm = arg_6_1
 	arg_6_0.onCancel = arg_6_2
 
 	return
 end
 
-function var_0_1.InitUI(arg_7_0)
-	local var_7_0 = arg_7_0._tf
-
-	arg_7_0.titleBG = var_1.Find(var_7_0, "panel/title")
-
-	local var_7_1 = arg_7_0._tf
-
-	arg_7_0.titleBGDecoration = var_1.Find(var_7_1, "panel/title/Image")
-
-	local var_7_2 = arg_7_0._tf
-
-	arg_7_0.titleIcon = var_1.Find(var_7_2, "panel/title/icon")
-
-	local var_7_3 = arg_7_0._tf
-
-	arg_7_0.txTitle = var_1.Find(var_7_3, "panel/title_form")
+function var_0_0.InitUI(arg_7_0)
+	arg_7_0.titleBG = arg_7_0._tf:Find("panel/title")
+	arg_7_0.titleBGDecoration = arg_7_0._tf:Find("panel/title/Image")
+	arg_7_0.titleIcon = arg_7_0._tf:Find("panel/title/icon")
+	arg_7_0.txTitle = arg_7_0._tf:Find("panel/title_form")
 	arg_7_0.txTitleOriginPosY = arg_7_0.txTitle.anchoredPosition.y
+	arg_7_0.txTitleHead = arg_7_0._tf:Find("panel/title_head")
 
-	local var_7_4 = arg_7_0._tf
+	setActive(arg_7_0.txTitleHead, false)
 
-	arg_7_0.txTitleHead = var_1.Find(var_7_4, "panel/title_head")
-	setActive = var_1
+	arg_7_0.txIntro = arg_7_0._tf:Find("panel/intro")
+	arg_7_0.txCost = arg_7_0._tf:Find("panel/cost/text")
+	arg_7_0.progressBar = arg_7_0._tf:Find("panel/progress")
+	arg_7_0.txProgress = arg_7_0._tf:Find("panel/progress/Text/value")
+	arg_7_0.progress = arg_7_0._tf:Find("panel/progress")
+	arg_7_0.head = arg_7_0._tf:Find("panel/head/Image")
+	arg_7_0.trAchieveTpl = arg_7_0._tf:Find("panel/achieve")
+	arg_7_0.trAchieves = arg_7_0._tf:Find("panel/achieves")
+	arg_7_0.passStateMask = arg_7_0._tf:Find("panel/passState")
+	arg_7_0.passState = arg_7_0._tf:Find("panel/passState/Image")
 
-	var_1(arg_7_0.txTitleHead, false)
+	setActive(arg_7_0.passState, true)
 
-	local var_7_5 = arg_7_0._tf
+	arg_7_0.winCondDesc = arg_7_0._tf:Find("panel/win_conditions/desc")
+	arg_7_0.winCondAwardBtn = arg_7_0._tf:Find("panel/win_conditions/icon")
+	arg_7_0.loseCondDesc = arg_7_0._tf:Find("panel/lose_conditions/desc")
+	arg_7_0.achieveList = UIItemList.New(arg_7_0.trAchieves, arg_7_0.trAchieveTpl)
 
-	arg_7_0.txIntro = var_1.Find(var_7_5, "panel/intro")
+	setActive(arg_7_0.trAchieveTpl, false)
 
-	local var_7_6 = arg_7_0._tf
+	arg_7_0.trDropTpl = arg_7_0._tf:Find("panel/drops/frame/list/item")
+	arg_7_0.trDrops = arg_7_0._tf:Find("panel/drops/frame/list")
+	arg_7_0.dropList = UIItemList.New(arg_7_0.trDrops, arg_7_0.trDropTpl)
 
-	arg_7_0.txCost = var_1.Find(var_7_6, "panel/cost/text")
-
-	local var_7_7 = arg_7_0._tf
-
-	arg_7_0.progressBar = var_1.Find(var_7_7, "panel/progress")
-
-	local var_7_8 = arg_7_0._tf
-
-	arg_7_0.txProgress = var_1.Find(var_7_8, "panel/progress/Text/value")
-
-	local var_7_9 = arg_7_0._tf
-
-	arg_7_0.progress = var_1.Find(var_7_9, "panel/progress")
-
-	local var_7_10 = arg_7_0._tf
-
-	arg_7_0.head = var_1.Find(var_7_10, "panel/head/Image")
-
-	local var_7_11 = arg_7_0._tf
-
-	arg_7_0.trAchieveTpl = var_1.Find(var_7_11, "panel/achieve")
-
-	local var_7_12 = arg_7_0._tf
-
-	arg_7_0.trAchieves = var_1.Find(var_7_12, "panel/achieves")
-
-	local var_7_13 = arg_7_0._tf
-
-	arg_7_0.passStateMask = var_1.Find(var_7_13, "panel/passState")
-
-	local var_7_14 = arg_7_0._tf
-
-	arg_7_0.passState = var_1.Find(var_7_14, "panel/passState/Image")
-	setActive = var_1
-
-	var_1(arg_7_0.passState, true)
-
-	local var_7_15 = arg_7_0._tf
-
-	arg_7_0.winCondDesc = var_1.Find(var_7_15, "panel/win_conditions/desc")
-
-	local var_7_16 = arg_7_0._tf
-
-	arg_7_0.winCondAwardBtn = var_1.Find(var_7_16, "panel/win_conditions/icon")
-
-	local var_7_17 = arg_7_0._tf
-
-	arg_7_0.loseCondDesc = var_1.Find(var_7_17, "panel/lose_conditions/desc")
-	UIItemList = var_1
-	arg_7_0.achieveList = var_1.New(arg_7_0.trAchieves, arg_7_0.trAchieveTpl)
-	setActive = var_1
-
-	var_1(arg_7_0.trAchieveTpl, false)
-
-	local var_7_18 = arg_7_0._tf
-
-	arg_7_0.trDropTpl = var_1.Find(var_7_18, "panel/drops/frame/list/item")
-
-	local var_7_19 = arg_7_0._tf
-
-	arg_7_0.trDrops = var_1.Find(var_7_19, "panel/drops/frame/list")
-	UIItemList = var_1
-	arg_7_0.dropList = var_1.New(arg_7_0.trDrops, arg_7_0.trDropTpl)
-
-	local var_7_20 = arg_7_0.dropList
-
-	var_1.make(var_7_20, function(arg_8_0, arg_8_1, arg_8_2)
-		local var_8_0 = arg_7_0
-
-		var_3.updateDrop(var_8_0, arg_8_0, arg_8_1, arg_8_2)
+	arg_7_0.dropList:make(function(arg_8_0, arg_8_1, arg_8_2)
+		arg_7_0:updateDrop(arg_8_0, arg_8_1, arg_8_2)
 
 		return
 	end)
+	setActive(arg_7_0.trDropTpl, false)
 
-	setActive = var_1
+	arg_7_0.btnConfirm = arg_7_0._tf:Find("panel/start_button")
+	arg_7_0.btnCancel = arg_7_0._tf:Find("panel/btnBack")
+	arg_7_0.quickPlayGroup = arg_7_0._tf:Find("panel/quickPlay")
+	arg_7_0.descQuickPlay = arg_7_0.quickPlayGroup:Find("desc")
+	arg_7_0.toggleQuickPlay = arg_7_0.quickPlayGroup:GetComponent(typeof(Toggle))
+	arg_7_0.bottomExtra = arg_7_0._tf:Find("panel/BottomExtra")
+	arg_7_0.layoutView = GetComponent(arg_7_0.bottomExtra:Find("LoopGroup/view"), typeof(LayoutElement))
+	arg_7_0.rtViewContainer = arg_7_0.bottomExtra:Find("LoopGroup/view/container")
 
-	var_1(arg_7_0.trDropTpl, false)
+	setText(arg_7_0.bottomExtra:Find("LoopGroup/Loop/Text"), i18n("autofight_farm"))
 
-	local var_7_21 = arg_7_0._tf
+	arg_7_0.loopToggle = arg_7_0.bottomExtra:Find("LoopGroup/Loop/Toggle")
+	arg_7_0.loopOn = arg_7_0.loopToggle:Find("on")
+	arg_7_0.loopOff = arg_7_0.loopToggle:Find("off")
+	arg_7_0.loopHelp = arg_7_0.bottomExtra:Find("ButtonHelp")
+	arg_7_0.costLimitTip = arg_7_0.bottomExtra:Find("LoopGroup/view/container/CostLimit")
 
-	arg_7_0.btnConfirm = var_1.Find(var_7_21, "panel/start_button")
+	setActive(arg_7_0.costLimitTip, false)
 
-	local var_7_22 = arg_7_0._tf
+	arg_7_0.autoFightToggle = arg_7_0.bottomExtra:Find("LoopGroup/view/container/AutoFight")
 
-	arg_7_0.btnCancel = var_1.Find(var_7_22, "panel/btnBack")
-
-	local var_7_23 = arg_7_0._tf
-
-	arg_7_0.quickPlayGroup = var_1.Find(var_7_23, "panel/quickPlay")
-
-	local var_7_24 = arg_7_0.quickPlayGroup
-
-	arg_7_0.descQuickPlay = var_1.Find(var_7_24, "desc")
-
-	local var_7_25 = arg_7_0.quickPlayGroup
-	local var_7_26 = var_1.GetComponent
-
-	typeof = var_4
-	Toggle = var_1_10006
-	arg_7_0.toggleQuickPlay = var_7_26(var_7_25, var_4(var_1_10006))
-
-	local var_7_27 = arg_7_0._tf
-
-	arg_7_0.bottomExtra = var_1.Find(var_7_27, "panel/BottomExtra")
-	GetComponent = var_1
-
-	local var_7_28 = arg_7_0.bottomExtra
-	local var_7_29 = var_3.Find(var_7_28, "LoopGroup/view")
-
-	typeof = var_4
-	LayoutElement = var_6
-	arg_7_0.layoutView = var_1(var_7_29, var_4(var_6))
-
-	local var_7_30 = arg_7_0.bottomExtra
-
-	arg_7_0.rtViewContainer = var_1.Find(var_7_30, "LoopGroup/view/container")
-	setText = var_1
-
-	local var_7_31 = arg_7_0.bottomExtra
-	local var_7_32 = var_3.Find(var_7_31, "LoopGroup/Loop/Text")
-
-	i18n = var_4
-
-	var_1(var_7_32, var_4("autofight_farm"))
-
-	local var_7_33 = arg_7_0.bottomExtra
-
-	arg_7_0.loopToggle = var_1.Find(var_7_33, "LoopGroup/Loop/Toggle")
-
-	local var_7_34 = arg_7_0.loopToggle
-
-	arg_7_0.loopOn = var_1.Find(var_7_34, "on")
-
-	local var_7_35 = arg_7_0.loopToggle
-
-	arg_7_0.loopOff = var_1.Find(var_7_35, "off")
-
-	local var_7_36 = arg_7_0.bottomExtra
-
-	arg_7_0.loopHelp = var_1.Find(var_7_36, "ButtonHelp")
-
-	local var_7_37 = arg_7_0.bottomExtra
-
-	arg_7_0.costLimitTip = var_1.Find(var_7_37, "LoopGroup/view/container/CostLimit")
-	setActive = var_1
-
-	var_1(arg_7_0.costLimitTip, false)
-
-	local var_7_38 = arg_7_0.bottomExtra
-
-	arg_7_0.autoFightToggle = var_1.Find(var_7_38, "LoopGroup/view/container/AutoFight")
-	setText = var_1
-
-	local var_7_39 = arg_7_0.autoFightToggle
-	local var_7_40 = var_3.Find(var_7_39, "Text")
-
-	i18n = var_4
-
-	var_1(var_7_40, var_4("autofight"))
+	setText(arg_7_0.autoFightToggle:Find("Text"), i18n("autofight"))
 
 	arg_7_0.delayTween = {}
 	arg_7_0.doEaseIn = true
@@ -266,895 +123,343 @@ function var_0_1.InitUI(arg_7_0)
 	return
 end
 
-local var_0_2 = 525
-local var_0_3 = 373
+local var_0_1 = 525
+local var_0_2 = 373
 
-function var_0_1.set(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = arg_9_0
+function var_0_0.set(arg_9_0, arg_9_1, arg_9_2)
+	arg_9_0:cancelTween()
 
-	arg_9_0.cancelTween(var_9_0)
+	local var_9_0 = getProxy(ChapterProxy):getChapterById(arg_9_1, true)
 
-	getProxy = var_3
-	ChapterProxy = var_9_0
+	arg_9_0.chapter = var_9_0
+	arg_9_0.posStart = arg_9_2 or Vector3(0, 0, 0)
 
-	local var_9_1 = var_3(var_9_0)
+	local var_9_1 = getProxy(ChapterProxy):getMapById(var_9_0:getConfig("map"))
+	local var_9_2 = var_9_0:getConfigTable()
+	local var_9_3 = string.split(var_9_2.name, "|")
+	local var_9_4 = var_9_0:getPlayType() == ChapterConst.TypeDefence
 
-	arg_9_0.chapter = var_3.getChapterById(var_9_1, arg_9_1, true)
-
-	if not arg_9_2 then
-		::label_9_0::
-
-		Vector3 = var_1_10004
-		var_1_10004 = var_1_10004(0, 0, 0)
-	end
-
-	arg_9_0.posStart = var_1_10004
-	getProxy = var_1_10004
-	ChapterProxy = var_6
-
-	local var_9_2 = var_1_10004(var_6)
-	local var_9_3 = var_4.getMapById(var_9_2, var_3:getConfig("map"))
-	local var_9_4 = var_3:getConfigTable()
-
-	string = var_9_2
-
-	local var_9_5 = var_9_2.split(var_9_4.name, "|")
-	local var_9_6 = var_3:getPlayType()
-
-	ChapterConst = var_8
-
-	local var_9_7 = var_9_6 == var_8.TypeDefence
-
-	GetSpriteFromAtlasAsync = var_8
-
-	var_8("ui/levelstageinfoview_atlas", var_9_7 and "title_print_defense" or "title_print", function(arg_10_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_9_0.titleBGDecoration) then
-			local var_10_0 = arg_9_0.titleBGDecoration
-			local var_10_1 = var_1.GetComponent
-
-			typeof = var_2_10004
-			Image = var_2_10006
-			var_10_1(var_10_0, var_2_10004(var_2_10006)).sprite = arg_10_0
+	GetSpriteFromAtlasAsync("ui/levelstageinfoview_atlas", var_9_4 and "title_print_defense" or "title_print", function(arg_10_0)
+		if not IsNil(arg_9_0.titleBGDecoration) then
+			arg_9_0.titleBGDecoration:GetComponent(typeof(Image)).sprite = arg_10_0
 		end
 
 		return
 	end)
-
-	GetSpriteFromAtlasAsync = var_8
-
-	var_8("ui/levelstageinfoview_atlas", var_9_7 and "titlebar_bg_defense" or "titlebar_bg", function(arg_11_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_9_0.titleBG) then
-			local var_11_0 = arg_9_0.titleBG
-			local var_11_1 = var_1.GetComponent
-
-			typeof = var_2_10004
-			Image = var_2_10006
-			var_11_1(var_11_0, var_2_10004(var_2_10006)).sprite = arg_11_0
+	GetSpriteFromAtlasAsync("ui/levelstageinfoview_atlas", var_9_4 and "titlebar_bg_defense" or "titlebar_bg", function(arg_11_0)
+		if not IsNil(arg_9_0.titleBG) then
+			arg_9_0.titleBG:GetComponent(typeof(Image)).sprite = arg_11_0
 		end
 
 		return
 	end)
+	setActive(arg_9_0.titleIcon, var_9_4)
 
-	setActive = var_8
+	local var_9_5 = arg_9_0.progressBar.sizeDelta
 
-	var_8(arg_9_0.titleIcon, var_9_7)
+	if var_9_4 then
+		var_9_5.x = var_0_2 or var_0_1
+		arg_9_0.progressBar.sizeDelta = var_9_5
 
-	local var_9_8 = arg_9_0.progressBar.sizeDelta
-	local var_9_9
+		setText(arg_9_0.txTitle:Find("title_index"), var_9_2.chapter_name .. "  ")
+		setText(arg_9_0.txTitle:Find("title"), var_9_3[1])
 
-	if not var_9_7 or not var_0_3 then
-		var_9_9 = var_0_2
-	end
+		local var_9_6 = var_9_3[2] or ""
 
-	var_9_8.x = var_9_9
+		setText(arg_9_0.txTitle:Find("title_en"), var_9_6)
 
-	local var_9_10 = arg_9_0.progressBar
+		local var_9_7 = var_9_3[3] and #var_9_3[3] > 0
 
-	var_9_10.sizeDelta = var_9_8
-	setText = var_9_10
+		setActive(arg_9_0.txTitleHead, var_9_7)
 
-	local var_9_11 = arg_9_0.txTitle
+		if var_9_3[3] and #var_9_3[3] > 0 then
+			local var_9_8 = arg_9_0.txTitleOriginPosY or arg_9_0.txTitleOriginPosY + 8
 
-	var_9_10(var_11.Find(var_9_11, "title_index"), var_9_4.chapter_name .. "  ")
-
-	setText = var_9_10
-
-	local var_9_12 = arg_9_0.txTitle
-
-	var_9_10(var_11.Find(var_9_12, "title"), var_9_5[1])
-
-	setText = var_9_10
-
-	local var_9_13 = arg_9_0.txTitle
-	local var_9_14 = var_11.Find(var_9_13, "title_en")
-	local var_9_15
-
-	if not var_9_5[2] then
-		var_9_15 = ""
-	end
-
-	var_9_10(var_9_14, var_9_15)
-
-	setActive = var_9_10
-
-	local var_9_16 = arg_9_0.txTitleHead
-	local var_9_17
-
-	if var_9_5[3] then
-		var_9_17 = #var_9_5[3] > 0
-	end
-
-	var_9_10(var_9_16, var_9_17)
-
-	if var_9_5[3] then
-		local var_9_18 = #var_9_5[3]
-		local var_9_19
-
-		if not (0 < var_9_18) or not arg_9_0.txTitleOriginPosY then
-			var_9_19 = arg_9_0.txTitleOriginPosY + 8
-		end
-
-		setAnchoredPosition = var_10
-
-		var_10(arg_9_0.txTitle, {
-			y = var_9_19
-		})
-
-		setText = var_10
-
-		local var_9_20 = arg_9_0.txTitleHead
-		local var_9_21
-
-		if not var_9_5[3] then
-			var_9_21 = ""
-		end
-
-		var_10(var_9_20, var_9_21)
-
-		setText = var_10
-
-		local var_9_22 = arg_9_0.winCondDesc
-
-		i18n = var_9_21
-
-		local var_9_23 = var_9_21("text_win_condition")
-		local var_9_24 = "："
-
-		i18n = var_15
-
-		var_10(var_9_22, var_9_23 .. var_9_24 .. var_15(var_3:getConfig("win_condition_display")))
-
-		setText = var_10
-
-		local var_9_25 = arg_9_0.loseCondDesc
-
-		i18n = var_13
-
-		local var_9_26 = var_13("text_lose_condition")
-		local var_9_27 = "："
-
-		i18n = var_15
-
-		var_10(var_9_25, var_9_26 .. var_9_27 .. var_15(var_3:getConfig("lose_condition_display")))
-
-		setActive = var_10
-
-		local var_9_28 = arg_9_0.winCondAwardBtn
-		local var_9_29 = var_3:getPlayType()
-
-		ChapterConst = var_9_27
-
-		var_10(var_9_28, var_9_29 == var_9_27.TypeDefence)
-
-		local var_9_30
-
-		if not var_3:existAchieve() then
-			setActive = var_9_30
-
-			var_9_30(arg_9_0.passState, false)
-
-			setActive = var_9_30
-
-			var_9_30(arg_9_0.progress, false)
-
-			setActive = var_9_30
-
-			var_9_30(arg_9_0.trAchieves, false)
-		else
-			setActive = var_9_30
-
-			var_9_30(arg_9_0.passState, true)
-
-			setActive = var_9_30
-
-			var_9_30(arg_9_0.progress, true)
-
-			setActive = var_9_30
-
-			var_9_30(arg_9_0.trAchieves, true)
-
-			var_9_30 = arg_9_0.passState
-			Vector3 = var_9_16
-			var_9_30.localPosition = var_9_16(-arg_9_0.passState.rect.width, 0, 0)
-
-			local var_9_31 = var_3
-
-			var_9_30 = var_3.hasMitigation(var_9_31)
-			setActive = var_9_16
-
-			var_9_16(arg_9_0.passState, var_9_30)
-
-			local var_9_32
-
-			if var_9_30 then
-				var_9_16 = var_3:getRiskLevel()
-				setImageSprite = var_9_31
-				var_9_32 = arg_9_0.passState
-				GetSpriteFromAtlas = var_15
-
-				var_9_31(var_9_32, var_15("passstate", var_9_16), true)
-			end
-
-			setWidgetText = var_9_16
-
-			local var_9_33 = arg_9_0.progress
-
-			i18n = var_9_32
-
-			var_9_16(var_9_33, var_9_32("levelScene_threat_to_rule_out", ": "))
-
-			table = var_9_16
-			var_9_16 = var_9_16.insert
-
-			local var_9_34 = arg_9_0.delayTween
-
-			LeanTween = var_14
-
-			local var_9_35 = var_14.value
-
-			go = var_1_10016
-			var_1_10016 = var_9_35(var_1_10016(arg_9_0.progress), 0, var_3.progress, 0.5)
-			var_1_10016 = var_14.setDelay(var_1_10016, 0.15)
-
-			local var_9_36 = var_14.setOnUpdate
-
-			System = var_17
-
-			var_9_16(var_9_34, var_9_36(var_1_10016, var_17.Action_float(function(arg_12_0)
-				setSlider = var_2_10001
-
-				var_2_10001(arg_9_0.progress, 0, 100, arg_12_0)
-
-				setText = var_2_10001
-
-				local var_12_0 = arg_9_0.txProgress
-
-				math = var_4
-
-				var_2_10001(var_12_0, var_4.floor(arg_12_0) .. "%")
-
-				return
-			end)).uniqueId)
-
-			local var_9_37 = arg_9_0.achieveList
-
-			var_9_16.align(var_9_37, #var_3.achieves)
-
-			local var_9_38 = arg_9_0.achieveList
-
-			var_9_16.each(var_9_38, function(arg_13_0, arg_13_1)
-				local var_13_0 = var_0.achieves[arg_13_0 + 1]
-
-				findTF = var_3
-
-				local var_13_1 = var_3(arg_13_1, "desc")
-
-				setText = var_2_10004
-
-				local var_13_2 = var_13_1
-
-				ChapterConst = var_2_10007
-
-				var_2_10004(var_13_2, var_2_10007.GetAchieveDesc(var_13_0.type, var_0))
-
-				setTextColor = var_2_10004
-
-				local var_13_3 = var_13_1
-
-				Color = var_7
-
-				var_2_10004(var_13_3, var_7.white)
-
-				setActive = var_2_10004
-				findTF = var_13_3
-
-				var_2_10004(var_13_3(arg_13_1, "star"), false)
-
-				setActive = var_2_10004
-				findTF = var_6
-
-				var_2_10004(var_6(arg_13_1, "star_empty"), true)
-
-				ChapterConst = var_2_10004
-
-				local var_13_4 = var_2_10004.IsAchieved(var_13_0)
-
-				table = var_5
-
-				local var_13_5 = var_5.insert
-				local var_13_6 = arg_9_0.delayTween
-
-				LeanTween = var_8
-
-				local var_13_7 = var_8.delayedCall
-				local var_13_8 = 0.15 + (arg_13_0 + 1) * 0.15
-
-				System = var_2_10011
-
-				var_13_5(var_13_6, var_13_7(var_13_8, var_2_10011.Action(function()
-					IsNil = var_3_10000
-
-					if not var_3_10000(arg_13_1) then
-						findTF = var_0
-
-						local var_14_0
-
-						var_14_0, setTextColor = var_0(arg_13_1, "desc"), var_3_10001
-
-						if var_13_4 then
-							Color = var_14_1
-
-							local var_14_1
-
-							if not var_14_1.yellow then
-								Color = var_14_1
-								var_14_1 = var_14_1.white
-							end
-
-							var_3_10001(var_14_0, var_14_1)
-
-							setActive = var_3_10001
-							findTF = var_14_0
-
-							var_3_10001(var_14_0(arg_13_1, "star"), var_13_4)
-
-							setActive = var_3_10001
-							findTF = var_3
-
-							var_3_10001(var_3(arg_13_1, "star_empty"), not var_13_4)
-
-							return
-						end
-					end
-				end)).uniqueId)
-
-				return
-			end)
-		end
-
-		setText = var_9_30
-
-		var_9_30(arg_9_0.txIntro, var_9_4.profiles)
-
-		setText = var_9_30
-
-		var_9_30(arg_9_0.txCost, var_9_4.oil)
-
-		if var_9_4.icon and var_9_4.icon[1] then
-			setActive = var_10
-
-			var_10(arg_9_0.head.parent, true)
-
-			setImageSprite = var_10
-
-			local var_9_39 = arg_9_0.head
-
-			LoadSprite = var_13
-
-			var_10(var_9_39, var_13("qicon/" .. var_9_4.icon[1]))
-		else
-			setActive = var_10
-
-			var_10(arg_9_0.head.parent, false)
-		end
-
-		arg_9_0.awards = arg_9_0:getChapterAwards()
-
-		local var_9_40 = arg_9_0.dropList
-
-		var_10.align(var_9_40, #arg_9_0.awards)
-
-		local var_9_41 = var_3
-		local var_9_42 = var_3.existLoop(var_9_41)
-
-		setActive = var_9_16
-
-		var_9_16(arg_9_0.bottomExtra, var_9_42)
-
-		local var_9_48
-
-		if var_9_42 then
-			var_9_16 = var_3:canActivateLoop()
-			var_9_41 = "chapter_loop_flag_" .. var_3.id
-			PlayerPrefs = var_13
-
-			local var_9_43 = (var_13.GetInt(var_9_41, -1) == 1 or var_13 == -1) and var_9_16
-			local var_9_44 = #var_3:getConfig("use_oil_limit")
-			local var_9_45 = 0 < var_9_44
-
-			setActive = var_1_10016
-
-			var_1_10016(arg_9_0.loopOn, var_9_43)
-
-			setActive = var_1_10016
-
-			var_1_10016(arg_9_0.loopOff, not var_9_43)
-
-			setActive = var_1_10016
-
-			var_1_10016(arg_9_0.costLimitTip, var_9_45)
-
-			onNextTick = var_1_10016
-
-			var_1_10016(function()
-				Canvas = var_2_10000
-
-				var_2_10000.ForceUpdateCanvases()
-
-				local var_15_0 = arg_9_0.layoutView
-				local var_15_1
-
-				if not var_9_43 or not arg_9_0.rtViewContainer.rect.width then
-					var_15_1 = 0
-				end
-
-				var_15_0.preferredWidth = var_15_1
-
-				return
-			end)
-
-			onButton = var_1_10016
-
-			local var_9_46 = arg_9_0
-			local var_9_47 = arg_9_0.loopToggle
-
-			function var_9_48()
-				if not var_9_16 then
-					pg = var_0
-
-					local var_16_0 = var_0.TipsMgr.GetInstance()
-					local var_16_1 = var_0.ShowTips
-
-					i18n = var_2_10003
-
-					var_16_1(var_16_0, var_2_10003("levelScene_activate_loop_mode_failed"))
-
-					return
-				end
-
-				local var_16_2 = not arg_9_0.loopOn.gameObject.activeSelf
-
-				PlayerPrefs = var_2_10001
-
-				var_2_10001.SetInt(var_9_41, var_16_2 and 1 or 0)
-
-				PlayerPrefs = var_1
-
-				var_1.Save()
-
-				setActive = var_1
-
-				var_1(arg_9_0.loopOn, var_16_2)
-
-				setActive = var_1
-
-				var_1(arg_9_0.loopOff, not var_16_2)
-
-				local var_16_3 = 0
-				local var_16_4 = 0
-
-				if var_16_2 then
-					var_16_4 = arg_9_0.rtViewContainer.rect.width
-				else
-					var_16_3 = arg_9_0.rtViewContainer.rect.width
-				end
-
-				if arg_9_0.LTid then
-					LeanTween = var_3
-
-					var_3.cancel(arg_9_0.LTid)
-
-					arg_9_0.LTid = nil
-				end
-
-				local var_16_5 = arg_9_0
-
-				LeanTween = var_4
-
-				local var_16_6 = var_4.value(var_16_3, var_16_4, 0.3)
-				local var_16_7 = var_4.setOnUpdate
-
-				System = var_7
-
-				local var_16_8 = var_16_7(var_16_6, var_7.Action_float(function(arg_17_0)
-					arg_9_0.layoutView.preferredWidth = arg_17_0
-
-					return
-				end))
-				local var_16_9 = var_4.setOnComplete
-
-				System = var_7
-				var_16_5.LTid = var_16_9(var_16_8, var_7.Action(function()
-					arg_9_0.LTid = nil
-
-					return
-				end)).uniqueId
-
-				return
-			end
-
-			SFX_PANEL = var_1_10021
-
-			var_1_10016(var_9_46, var_9_47, var_9_48, var_1_10021)
-
-			onButton = var_1_10016
-
-			var_1_10016(arg_9_0, arg_9_0.loopHelp, function()
-				pg = var_2_10000
-
-				local var_19_0 = var_2_10000.MsgboxMgr.GetInstance()
-				local var_19_1 = var_0.ShowMsgBox
-				local var_19_2 = {}
-
-				MSGBOX_TYPE_HELP = var_2_10004
-				var_19_2.type = var_2_10004
-				i18n = var_2_10004
-				var_19_2.helps = var_2_10004("levelScene_loop_help_tip")
-
-				var_19_1(var_19_0, var_19_2)
-
-				return
-			end)
-
-			AutoBotCommand = var_1_10016
-			var_1_10016 = var_1_10016.autoBotSatisfied()
-
-			local var_9_49 = "chapter_autofight_flag_" .. var_3.id
-			local var_9_50
-
-			if var_1_10016 then
-				::label_9_1::
-
-				PlayerPrefs = var_9_50
-				var_9_50 = var_9_50.GetInt(var_9_49, 1) == 1
-			end
-
-			onToggle = var_19
-
-			local var_9_51 = arg_9_0
-			local var_9_52 = arg_9_0.autoFightToggle
-
-			local function var_9_53(arg_20_0)
-				if arg_20_0 ~= var_9_50 then
-					var_9_50 = arg_20_0
-					PlayerPrefs = var_1
-
-					var_1.SetInt(var_9_49, var_9_50 and 1 or 0)
-
-					PlayerPrefs = var_1
-
-					var_1.Save()
-				end
-
-				return
-			end
-
-			SFX_UI_TAG = var_1_10024
-
-			var_19(var_9_51, var_9_52, var_9_53, var_1_10024)
-
-			triggerToggle = var_19
-
-			var_19(arg_9_0.autoFightToggle, var_9_50)
-
-			setActive = var_19
-
-			var_19(arg_9_0.autoFightToggle, var_1_10016)
-		end
-
-		onButton = var_9_16
-
-		local var_9_54 = arg_9_0
-		local var_9_55 = arg_9_0.btnConfirm
-
-		local function var_9_56()
-			getProxy = var_2_10000
-			BayProxy = var_2_10002
-
-			local var_21_0 = var_2_10000(var_2_10002)
-			local var_21_1 = var_0.getShipCount(var_21_0)
-
-			getProxy = var_2_10002
-			PlayerProxy = var_2_10004
-
-			local var_21_2 = var_2_10002(var_2_10004)
-			local var_21_3 = var_2.getRawData(var_21_2)
-
-			if var_2.getMaxShipBag(var_21_3) <= var_21_1 then
-				NoPosMsgBox = var_3
-				i18n = var_21_3
-
-				local var_21_4 = var_21_3("switch_to_shop_tip_noDockyard")
-
-				openDockyardClear = var_2_10006
-				gotoChargeScene = var_7
-				openDockyardIntensify = var_2_10008
-
-				var_3(var_21_4, var_2_10006, var_7, var_2_10008)
-
-				return
-			end
-
-			if not arg_9_0.onConfirm then
-				return
-			end
-
-			local var_21_5
-
-			if var_9_42 then
-				var_21_5 = arg_9_0.loopOn.gameObject.activeSelf
-			end
-
-			local var_21_6 = var_21_5 and 1 or 0
-
-			arg_9_0.onConfirm(arg_9_1, var_21_6)
-
-			return
-		end
-
-		SFX_UI_WEIGHANCHOR_GO = var_1_10016
-
-		var_9_16(var_9_54, var_9_55, var_9_56, var_1_10016)
-
-		onButton = var_9_16
-
-		local var_9_57 = arg_9_0
-		local var_9_58 = arg_9_0.btnCancel
-
-		local function var_9_59()
-			if arg_9_0.onCancel then
-				arg_9_0.onCancel()
-			end
-
-			return
-		end
-
-		SFX_CANCEL = var_1_10016
-
-		var_9_16(var_9_57, var_9_58, var_9_59, var_1_10016)
-
-		onButton = var_9_16
-
-		local var_9_60 = arg_9_0
-		local var_9_61 = arg_9_0._tf
-		local var_9_62 = var_14.Find(var_9_61, "bg")
-
-		local function var_9_63()
-			if arg_9_0.onCancel then
-				arg_9_0.onCancel()
-			end
-
-			return
-		end
-
-		SFX_CANCEL = var_9_61
-
-		var_9_16(var_9_60, var_9_62, var_9_63, var_9_61)
-
-		local var_9_64 = var_3
-
-		if not var_3.getConfig(var_9_64, "risk_levels") then
-			local var_9_65 = {}
-		end
-
-		onButton = var_9_41
-
-		local var_9_66 = arg_9_0
-		local var_9_67 = arg_9_0.passState
-
-		local function var_9_68()
-			local var_24_0 = var_0
-
-			if not var_0.hasMitigation(var_24_0) then
-				return
-			end
-
-			i18n = var_0
-
-			local var_24_1 = "level_risk_level_desc"
-			local var_24_2 = var_0
-			local var_24_3 = var_0(var_24_1, var_3.getChapterState(var_24_2))
-
-			i18n = var_2_10001
-
-			local var_24_4 = "level_risk_level_mitigation_rate"
-			local var_24_5 = var_0
-			local var_24_6 = var_4.getRemainPassCount(var_24_5)
-			local var_24_7 = var_0
-			local var_24_8 = var_24_3 .. var_2_10001(var_24_4, var_24_6, var_5.getMitigationRate(var_24_7))
-			local var_24_9 = var_9_3
-			local var_24_10 = var_1.getMapType(var_24_9)
-
-			Map = var_24_1
-
-			if var_24_10 == var_24_1.ELITE then
-				var_24_10 = var_24_8
-
-				local var_24_11 = "\n"
-
-				i18n = var_24_9
-				var_24_8 = var_24_10 .. var_24_11 .. var_24_9("level_diffcult_chapter_state_safety")
-			end
-
-			pg = var_24_10
-
-			local var_24_12 = var_24_10.MsgboxMgr.GetInstance()
-
-			var_1.ShowMsgBox(var_24_12, {
-				hideNo = true,
-				content = var_24_8
+			setAnchoredPosition(arg_9_0.txTitle, {
+				y = var_9_8
 			})
 
-			return
-		end
+			local var_9_9 = var_9_3[3] or ""
 
-		SFX_PANEL = var_17
+			setText(arg_9_0.txTitleHead, var_9_9)
+			setText(arg_9_0.winCondDesc, i18n("text_win_condition") .. "：" .. i18n(var_9_0:getConfig("win_condition_display")))
+			setText(arg_9_0.loseCondDesc, i18n("text_lose_condition") .. "：" .. i18n(var_9_0:getConfig("lose_condition_display")))
+			setActive(arg_9_0.winCondAwardBtn, var_9_0:getPlayType() == ChapterConst.TypeDefence)
 
-		var_9_41(var_9_66, var_9_67, var_9_68, var_17)
+			if not var_9_0:existAchieve() then
+				setActive(arg_9_0.passState, false)
+				setActive(arg_9_0.progress, false)
+				setActive(arg_9_0.trAchieves, false)
+			else
+				setActive(arg_9_0.passState, true)
+				setActive(arg_9_0.progress, true)
+				setActive(arg_9_0.trAchieves, true)
 
-		onButton = var_9_41
+				arg_9_0.passState.localPosition = Vector3(-arg_9_0.passState.rect.width, 0, 0)
 
-		local var_9_69 = arg_9_0
-		local var_9_70 = arg_9_0.head
+				local var_9_10 = var_9_0:hasMitigation()
 
-		local function var_9_71()
-			triggerButton = var_2_10000
+				setActive(arg_9_0.passState, var_9_10)
 
-			var_2_10000(arg_9_0.passState)
+				if var_9_10 then
+					setImageSprite(arg_9_0.passState, GetSpriteFromAtlas("passstate", (var_9_0:getRiskLevel())), true)
+				end
 
-			return
-		end
+				setWidgetText(arg_9_0.progress, i18n("levelScene_threat_to_rule_out", ": "))
+				table.insert(arg_9_0.delayTween, LeanTween.value(go(arg_9_0.progress), 0, var_9_0.progress, 0.5):setDelay(0.15):setOnUpdate(System.Action_float(function(arg_12_0)
+					setSlider(arg_9_0.progress, 0, 100, arg_12_0)
+					setText(arg_9_0.txProgress, math.floor(arg_12_0) .. "%")
 
-		SFX_PANEL = var_17
+					return
+				end)).uniqueId)
+				arg_9_0.achieveList:align(#var_9_0.achieves)
+				arg_9_0.achieveList:each(function(arg_13_0, arg_13_1)
+					local var_13_0 = findTF(arg_13_1, "desc")
 
-		var_9_41(var_9_69, var_9_70, var_9_71, var_17)
+					setText(var_13_0, ChapterConst.GetAchieveDesc(var_9_0.achieves[arg_13_0 + 1].type, var_9_0))
+					setTextColor(var_13_0, Color.white)
+					setActive(findTF(arg_13_1, "star"), false)
+					setActive(findTF(arg_13_1, "star_empty"), true)
 
-		onButton = var_9_41
+					local var_13_1 = ChapterConst.IsAchieved(var_9_0.achieves[arg_13_0 + 1])
 
-		var_9_41(arg_9_0, arg_9_0.winCondAwardBtn, function()
-			local var_26_0 = arg_9_0
+					table.insert(arg_9_0.delayTween, LeanTween.delayedCall(0.15 + (arg_13_0 + 1) * 0.15, System.Action(function()
+						if not IsNil(arg_13_1) then
+							local var_14_1 = findTF(arg_13_1, "desc")
 
-			var_0.ShowChapterRewardPanel(var_26_0)
+							if var_13_1 then
+								local var_14_2 = Color.yellow or Color.white
 
-			return
-		end)
+								var_14_0(var_14_1, var_14_2)
+								setActive(findTF(arg_13_1, "star"), var_13_1)
+								setActive(findTF(arg_13_1, "star_empty"), not var_13_1)
 
-		setText = var_9_41
+								return
+							end
+						end
+					end)).uniqueId)
 
-		local var_9_72 = arg_9_0.descQuickPlay
-
-		i18n = var_15
-
-		var_9_41(var_9_72, var_15("desc_quick_play"))
-
-		local var_9_73 = var_3:CanQuickPlay()
-
-		setActive = var_9_64
-
-		var_9_64(arg_9_0.quickPlayGroup, var_9_73)
-
-		local var_9_76
-
-		if var_9_73 then
-			local var_9_74 = "chapter_quickPlay_flag_" .. var_3.id
-
-			PlayerPrefs = var_14
-
-			local var_9_75 = var_14.GetInt(var_9_74, 1)
-
-			onToggle = var_15
-			var_9_76 = arg_9_0
-
-			local var_9_77 = arg_9_0.toggleQuickPlay
-
-			local function var_9_78(arg_27_0)
-				PlayerPrefs = var_2_10001
-
-				var_2_10001.SetInt(var_9_74, arg_27_0 and 1 or 0)
-
-				PlayerPrefs = var_1
-
-				var_1.Save()
-
-				return
+					return
+				end)
 			end
 
-			SFX_PANEL = var_9_48
+			setText(arg_9_0.txIntro, var_9_2.profiles)
+			setText(arg_9_0.txCost, var_9_2.oil)
 
-			var_15(var_9_76, var_9_77, var_9_78, var_9_48)
+			if var_9_2.icon and var_9_2.icon[1] then
+				setActive(arg_9_0.head.parent, true)
+				setImageSprite(arg_9_0.head, LoadSprite("qicon/" .. var_9_2.icon[1]))
+			else
+				setActive(arg_9_0.head.parent, false)
+			end
 
-			triggerToggle = var_15
+			arg_9_0.awards = arg_9_0:getChapterAwards()
 
-			var_15(arg_9_0.toggleQuickPlay, var_9_75 == 1)
+			arg_9_0.dropList:align(#arg_9_0.awards)
+
+			local var_9_11 = var_9_0:existLoop()
+
+			setActive(arg_9_0.bottomExtra, var_9_11)
+
+			if var_9_11 then
+				local var_9_12 = var_9_0:canActivateLoop()
+				local var_9_13 = PlayerPrefs.GetInt("chapter_loop_flag_" .. var_9_0.id, -1)
+				local var_9_14 = (var_9_13 == 1 or var_9_13 == -1) and var_9_12
+				local var_9_15 = #var_9_0:getConfig("use_oil_limit") > 0
+
+				setActive(arg_9_0.loopOn, (var_9_13 == 1 or var_9_13 == -1) and var_9_12)
+				setActive(arg_9_0.loopOff, not var_9_14)
+				setActive(arg_9_0.costLimitTip, var_9_15)
+				onNextTick(function()
+					Canvas.ForceUpdateCanvases()
+
+					local var_15_0 = arg_9_0.layoutView
+
+					if var_9_14 then
+						var_15_0.preferredWidth = arg_9_0.rtViewContainer.rect.width or 0
+
+						return
+					end
+				end)
+				onButton(arg_9_0, arg_9_0.loopToggle, function()
+					if not var_9_12 then
+						pg.TipsMgr.GetInstance():ShowTips(i18n("levelScene_activate_loop_mode_failed"))
+
+						return
+					end
+
+					local var_16_0 = not arg_9_0.loopOn.gameObject.activeSelf
+
+					PlayerPrefs.SetInt(var_0, not arg_9_0.loopOn.gameObject.activeSelf and 1 or 0)
+					PlayerPrefs.Save()
+					setActive(arg_9_0.loopOn, var_16_0)
+					setActive(arg_9_0.loopOff, not var_16_0)
+
+					local var_16_1 = 0
+					local var_16_2 = 0
+
+					if var_16_0 then
+						var_16_2 = arg_9_0.rtViewContainer.rect.width
+					else
+						var_16_1 = arg_9_0.rtViewContainer.rect.width
+					end
+
+					if arg_9_0.LTid then
+						LeanTween.cancel(arg_9_0.LTid)
+
+						arg_9_0.LTid = nil
+					end
+
+					local var_16_3 = arg_9_0
+
+					var_16_3.LTid = LeanTween.value(var_16_1, var_16_2, 0.3):setOnUpdate(System.Action_float(function(arg_17_0)
+						arg_9_0.layoutView.preferredWidth = arg_17_0
+
+						return
+					end)):setOnComplete(System.Action(function()
+						arg_9_0.LTid = nil
+
+						return
+					end)).uniqueId
+
+					return
+				end, SFX_PANEL)
+				onButton(arg_9_0, arg_9_0.loopHelp, function()
+					pg.MsgboxMgr.GetInstance():ShowMsgBox({
+						type = MSGBOX_TYPE_HELP,
+						helps = i18n("levelScene_loop_help_tip")
+					})
+
+					return
+				end)
+
+				local var_9_16 = AutoBotCommand.autoBotSatisfied()
+				local var_9_17 = "chapter_autofight_flag_" .. var_9_0.id
+				local var_9_18 = var_9_16 and PlayerPrefs.GetInt("chapter_autofight_flag_" .. var_9_0.id, 1) == 1
+
+				onToggle(arg_9_0, arg_9_0.autoFightToggle, function(arg_20_0)
+					if arg_20_0 ~= var_9_18 then
+						var_9_18 = arg_20_0
+
+						PlayerPrefs.SetInt(var_9_17, var_9_18 and 1 or 0)
+						PlayerPrefs.Save()
+					end
+
+					return
+				end, SFX_UI_TAG)
+				triggerToggle(arg_9_0.autoFightToggle, var_9_18)
+				setActive(arg_9_0.autoFightToggle, var_9_16)
+			end
+
+			onButton(arg_9_0, arg_9_0.btnConfirm, function()
+				if getProxy(BayProxy):getShipCount() >= getProxy(PlayerProxy):getRawData():getMaxShipBag() then
+					NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
+
+					return
+				end
+
+				if not arg_9_0.onConfirm then
+					return
+				end
+
+				local var_21_0 = var_9_11
+				local var_21_1
+
+				if var_9_11 then
+					var_21_0 = arg_9_0.loopOn.gameObject.activeSelf
+					var_21_1 = arg_9_0.onConfirm
+				end
+
+				var_21_1(arg_9_1, var_21_0 and 1 or 0)
+
+				return
+			end, SFX_UI_WEIGHANCHOR_GO)
+			onButton(arg_9_0, arg_9_0.btnCancel, function()
+				if arg_9_0.onCancel then
+					arg_9_0.onCancel()
+				end
+
+				return
+			end, SFX_CANCEL)
+			onButton(arg_9_0, arg_9_0._tf:Find("bg"), function()
+				if arg_9_0.onCancel then
+					arg_9_0.onCancel()
+				end
+
+				return
+			end, SFX_CANCEL)
+
+			if not var_9_0:getConfig("risk_levels") then
+				-- block empty
+			end
+
+			onButton(arg_9_0, arg_9_0.passState, function()
+				if not var_9_0:hasMitigation() then
+					return
+				end
+
+				local var_24_0 = i18n("level_risk_level_desc", var_9_0:getChapterState()) .. i18n("level_risk_level_mitigation_rate", var_9_0:getRemainPassCount(), var_9_0:getMitigationRate())
+
+				if var_9_1:getMapType() == Map.ELITE then
+					var_24_0 = var_24_0 .. "\n" .. i18n("level_diffcult_chapter_state_safety")
+				end
+
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					hideNo = true,
+					content = var_24_0
+				})
+
+				return
+			end, SFX_PANEL)
+			onButton(arg_9_0, arg_9_0.head, function()
+				triggerButton(arg_9_0.passState)
+
+				return
+			end, SFX_PANEL)
+			onButton(arg_9_0, arg_9_0.winCondAwardBtn, function()
+				arg_9_0:ShowChapterRewardPanel()
+
+				return
+			end)
+			setText(arg_9_0.descQuickPlay, i18n("desc_quick_play"))
+
+			local var_9_20 = var_9_0:CanQuickPlay()
+
+			setActive(arg_9_0.quickPlayGroup, var_9_20)
+
+			if var_9_20 then
+				local var_9_21 = PlayerPrefs.GetInt("chapter_quickPlay_flag_" .. var_9_0.id, 1)
+
+				onToggle(arg_9_0, arg_9_0.toggleQuickPlay, function(arg_27_0)
+					PlayerPrefs.SetInt(var_0, arg_27_0 and 1 or 0)
+					PlayerPrefs.Save()
+
+					return
+				end, SFX_PANEL)
+				triggerToggle(arg_9_0.toggleQuickPlay, var_9_21 == 1)
+			end
+
+			if arg_9_0.doEaseIn then
+				local var_9_22 = arg_9_0._tf:Find("panel")
+
+				var_9_22.transform.localPosition = arg_9_0.posStart
+
+				table.insert(arg_9_0.delayTween, LeanTween.move(var_9_22, Vector3.zero, 0.2).uniqueId)
+
+				var_9_22.localScale = Vector3.zero
+
+				table.insert(arg_9_0.delayTween, LeanTween.scale(var_9_22, Vector3(1, 1, 1), 0.2).uniqueId)
+				table.insert(arg_9_0.delayTween, LeanTween.moveX(arg_9_0.passState, 0, 0.35):setEase(LeanTweenType.easeInOutSine):setDelay(0.3).uniqueId)
+			end
+
+			return
 		end
-
-		if arg_9_0.doEaseIn then
-			local var_9_79 = arg_9_0._tf
-			local var_9_80 = var_13.Find(var_9_79, "panel").transform
-
-			var_9_80.localPosition = arg_9_0.posStart
-			table = var_9_80
-
-			local var_9_81 = var_9_80.insert
-			local var_9_82 = arg_9_0.delayTween
-
-			LeanTween = var_9_76
-
-			local var_9_83 = var_9_76.move
-			local var_9_84 = var_13
-
-			Vector3 = var_9_48
-
-			var_9_81(var_9_82, var_9_83(var_9_84, var_9_48.zero, 0.2).uniqueId)
-
-			Vector3 = var_9_81
-			var_13.localScale = var_9_81.zero
-			table = var_14
-
-			local var_9_85 = var_14.insert
-			local var_9_86 = arg_9_0.delayTween
-
-			LeanTween = var_17
-
-			local var_9_87 = var_17.scale
-			local var_9_88 = var_13
-
-			Vector3 = var_20
-
-			var_9_85(var_9_86, var_9_87(var_9_88, var_20(1, 1, 1), 0.2).uniqueId)
-
-			table = var_9_85
-
-			local var_9_89 = var_9_85.insert
-			local var_9_90 = arg_9_0.delayTween
-
-			LeanTween = var_17
-
-			local var_9_91 = var_17.moveX(arg_9_0.passState, 0, 0.35)
-			local var_9_92 = var_17.setEase
-
-			LeanTweenType = var_20
-
-			local var_9_93 = var_9_92(var_9_91, var_20.easeInOutSine)
-
-			var_9_89(var_9_90, var_17.setDelay(var_9_93, 0.3).uniqueId)
-		end
-
-		return
 	end
 end
 
-function var_0_1.cancelTween(arg_28_0)
-	_ = var_1_10001
-
-	var_1_10001.each(arg_28_0.delayTween, function(arg_29_0)
-		LeanTween = var_2_10001
-
-		var_2_10001.cancel(arg_29_0)
+function var_0_0.cancelTween(arg_28_0)
+	_.each(arg_28_0.delayTween, function(arg_29_0)
+		LeanTween.cancel(arg_29_0)
 
 		return
 	end)
@@ -1164,327 +469,155 @@ function var_0_1.cancelTween(arg_28_0)
 	return
 end
 
-function var_0_1.updateDrop(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
-	UIItemList = var_1_10004
-
-	if arg_30_1 == var_1_10004.EventUpdate then
-		local var_30_0 = arg_30_0.awards[arg_30_2 + 1]
-
-		Drop = var_5
-
-		local var_30_1 = var_5.Create(var_30_0)
-
-		updateDrop = var_1_10006
-
-		var_1_10006(arg_30_3, var_30_1)
-
-		onButton = var_1_10006
-
-		local var_30_2 = arg_30_0
-		local var_30_3 = arg_30_3
-
-		local function var_30_4()
-			local var_31_0 = {
+function var_0_0.updateDrop(arg_30_0, arg_30_1, arg_30_2, arg_30_3)
+	if arg_30_1 == UIItemList.EventUpdate then
+		updateDrop(arg_30_3, (Drop.Create(arg_30_0.awards[arg_30_2 + 1])))
+		onButton(arg_30_0, arg_30_3, function()
+			if ({
 				[99] = true
-			}
-			local var_31_1 = var_30_1
-			local var_31_3
+			})[var_0:getConfig("type")] then
+				arg_30_0:emit(LevelMediator2.GET_CHAPTER_DROP_SHIP_LIST, arg_30_0.chapter.id, function(arg_32_0)
+					local var_32_0 = {}
 
-			if var_31_0[var_1.getConfig(var_31_1, "type")] then
-				local function var_31_2(arg_32_0)
-					local var_32_0 = var_30_1
-					local var_32_1 = var_1.getConfig(var_32_0, "display_icon")
-					local var_32_2 = {}
+					for iter_32_0, iter_32_1 in ipairs((var_0:getConfig("display_icon"))) do
+						local var_32_1 = iter_32_1[2]
 
-					ipairs = var_32_0
-
-					for iter_32_0, iter_32_1 in var_32_0(var_32_1) do
-						local var_32_3 = iter_32_1[1]
-						local var_32_4 = iter_32_1[2]
-
-						DROP_TYPE_SHIP = var_3_10010
-
-						if var_32_3 == var_3_10010 then
-							table = var_3_10010
-							var_3_10010 = not var_3_10010.contains(arg_32_0, var_32_4)
-						else
-							var_3_10010 = false
-						end
-
-						if false then
-							var_3_10010 = true
-						end
-
-						var_32_2[#var_32_2 + 1] = {
-							type = var_32_3,
-							id = var_32_4,
-							anonymous = var_3_10010
+						var_32_0[#var_32_0 + 1] = {
+							type = iter_32_1[1],
+							id = iter_32_1[2],
+							anonymous = iter_32_1[1] == DROP_TYPE_SHIP and not table.contains(arg_32_0, var_32_1)
 						}
 					end
 
-					local var_32_5 = arg_30_0
-					local var_32_6 = var_3.emit
-
-					BaseUI = iter_32_0
-
-					local var_32_7 = iter_32_0.ON_DROP_LIST
-					local var_32_8 = {
+					arg_30_0:emit(BaseUI.ON_DROP_LIST, {
 						item2Row = true,
-						itemList = var_32_2
-					}
-					local var_32_9 = var_30_1
-
-					var_32_8.content = var_8.getConfig(var_32_9, "display")
-
-					var_32_6(var_32_5, var_32_7, var_32_8)
-
-					local var_32_10 = arg_30_0
-					local var_32_11 = var_3.initTestShowDrop
-					local var_32_12 = var_30_1
-
-					Clone = var_32_8
-
-					var_32_11(var_32_10, var_32_12, var_32_8(var_32_2))
+						itemList = var_32_0,
+						content = var_0:getConfig("display")
+					})
+					arg_30_0:initTestShowDrop(var_0, Clone(var_32_0))
 
 					return
-				end
-
-				var_31_3 = arg_30_0
-
-				local var_31_4 = var_2.emit
-
-				LevelMediator2 = var_2_10005
-
-				var_31_4(var_31_3, var_2_10005.GET_CHAPTER_DROP_SHIP_LIST, arg_30_0.chapter.id, var_31_2)
+				end)
 			else
-				local var_31_5 = arg_30_0
-				local var_31_6 = var_1.emit
-
-				BaseUI = var_31_3
-
-				var_31_6(var_31_5, var_31_3.ON_DROP, var_30_1)
+				arg_30_0:emit(BaseUI.ON_DROP, var_0)
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_1_10011
-
-		var_1_10006(var_30_2, var_30_3, var_30_4, var_1_10011)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.getChapterAwards(arg_33_0)
-	local var_33_0 = arg_33_0.chapter
+function var_0_0.getChapterAwards(arg_33_0)
+	local var_33_0 = Clone(arg_33_0.chapter:getConfig("awards"))
+	local var_33_1 = arg_33_0.chapter:getStageExtraAwards()
 
-	Clone = var_1_10002
-
-	local var_33_1 = var_33_0
-	local var_33_2 = var_1_10002(var_33_0.getConfig(var_33_1, "awards"))
-
-	if var_33_0:getStageExtraAwards() then
-		for iter_33_0 = #var_3, 1, -1 do
-			table = var_1_10008
-
-			var_1_10008.insert(var_33_2, 1, var_3[iter_33_0])
+	if var_33_1 then
+		for iter_33_0 = #var_33_1, 1, -1 do
+			table.insert(var_33_0, 1, var_33_1[iter_33_0])
 		end
 	end
 
-	local var_33_3 = {
-		var_33_0:getConfig("boss_expedition_id"),
-		var_33_0:getConfig("ai_expedition_list")
+	local var_33_2 = {
+		arg_33_0.chapter:getConfig("boss_expedition_id"),
+		arg_33_0.chapter:getConfig("ai_expedition_list")
 	}
-	local var_33_4 = var_33_0:getPlayType()
+	local var_33_3
 
-	ChapterConst = var_33_1
+	if arg_33_0.chapter:getPlayType() == ChapterConst.TypeMultiStageBoss then
+		table.insert(var_33_2, pg.chapter_model_multistageboss[arg_33_0.chapter.id].boss_expedition_id)
 
-	if var_33_4 == var_33_1.TypeMultiStageBoss then
-		table = var_33_4
-		var_33_4 = var_33_4.insert
-
-		local var_33_5 = var_33_3
-
-		pg = var_8
-
-		var_33_4(var_33_5, var_8.chapter_model_multistageboss[var_33_0.id].boss_expedition_id)
+		var_33_3 = {}
 	end
 
-	_ = var_33_4
-
-	local var_33_6 = var_33_4.flatten(var_33_3)
-	local var_33_7 = {}
-	local var_33_8 = {}
-
-	local function var_33_9(arg_34_0)
-		ipairs = var_2_10001
-
-		for iter_34_0, iter_34_1 in var_2_10001(var_33_7) do
-			if iter_34_1 == arg_34_0 then
-				return false
-			end
-		end
-
-		return true
-	end
-
-	local var_33_10 = {}
-
-	ipairs = var_1_10010
-
-	for iter_33_1, iter_33_2 in var_1_10010(var_33_6) do
-		checkExist = var_1_10015
-		pg = var_1_10017
-
-		if var_1_10015(var_1_10017.expedition_activity_template[iter_33_2], {
+	for iter_33_1, iter_33_2 in ipairs((_.flatten(var_33_2))) do
+		local var_33_4 = checkExist(pg.expedition_activity_template[iter_33_2], {
 			"pt_drop_display"
-		}) then
-			type = var_1_10016
+		})
 
-			if var_1_10016(var_1_10015) == "table" then
-				ipairs = var_1_10016
-
-				for iter_33_3, iter_33_4 in var_1_10016(var_1_10015) do
-					local var_33_11 = iter_33_4[1]
-					local var_33_12 = iter_33_4[2]
-					local var_33_13 = iter_33_4[3]
-
-					if var_33_9(var_33_12) then
-						table = var_24
-
-						var_24.insert(var_33_7, var_33_12)
-
-						var_33_8[var_33_12] = {}
+		if var_33_4 and type(var_33_4) == "table" then
+			for iter_33_3, iter_33_4 in ipairs(var_33_4) do
+				if (function(arg_34_0)
+					for iter_34_0, iter_34_1 in ipairs(var_33_3) do
+						if iter_34_1 == arg_34_0 then
+							return false
+						end
 					end
 
-					var_33_8[var_33_12][var_33_11] = true
+					return true
+				end)(iter_33_4[2]) then
+					table.insert({}, iter_33_4[2])
 
-					local var_33_14
-
-					if not var_33_10[var_33_12] then
-						var_33_14 = {}
-					end
-
-					var_33_10[var_33_12] = var_33_14
-					var_33_10[var_33_12][var_33_11] = var_33_13
+					;({})[iter_33_4[2]] = {}
 				end
+
+				;({})[iter_33_4[2]][iter_33_4[1]] = true
+
+				local var_33_5 = ({})[iter_33_4[2]]
+
+				if not ({})[iter_33_4[2]] then
+					var_33_5 = {}
+				end
+
+				;({})[iter_33_4[2]] = var_33_5
+				;({})[iter_33_4[2]][iter_33_4[1]] = iter_33_4[3]
 			end
 		end
 	end
 
-	getProxy = var_10
-	ActivityProxy = var_12
+	local var_33_6 = getProxy(ActivityProxy)
 
-	local var_33_15 = var_10(var_12)
+	for iter_33_5 = #{}, 1, -1 do
+		for iter_33_6, iter_33_7 in pairs(({})[({})[iter_33_5]]) do
+			local var_33_7 = var_33_6:getActivityById(iter_33_6)
 
-	for iter_33_5 = #var_33_7, 1, -1 do
-		pairs = var_1_10015
-
-		for iter_33_6, iter_33_7 in var_1_10015(var_33_8[var_33_7[iter_33_5]]) do
-			if var_33_15:getActivityById(iter_33_6) and not var_20:isEnd() then
-				table = var_21
-
-				local var_33_16 = var_21.insert
-				local var_33_17 = var_33_2
-				local var_33_18 = 1
-				local var_33_19 = {}
-
-				DROP_TYPE_ITEM = var_1_10026
-				var_33_19[1] = var_1_10026
-				id2ItemId = var_1_10026
-				var_33_19[2] = var_1_10026(var_33_7[iter_33_5])
-				var_33_19[3] = var_33_10[var_33_7[iter_33_5]][iter_33_6]
-
-				var_33_16(var_33_17, var_33_18, var_33_19)
+			if var_33_7 and not var_33_7:isEnd() then
+				table.insert(var_33_0, 1, {
+					DROP_TYPE_ITEM,
+					id2ItemId(({})[iter_33_5]),
+					({})[({})[iter_33_5]][iter_33_6]
+				})
 
 				break
 			end
 		end
 	end
 
-	return var_33_2
+	return var_33_0
 end
 
-function var_0_1.initTestShowDrop(arg_35_0, arg_35_1, arg_35_2)
-	IsUnityEditor = var_1_10003
+function var_0_0.initTestShowDrop(arg_35_0, arg_35_1, arg_35_2)
+	if IsUnityEditor then
+		local var_35_0 = pg.MsgboxMgr.GetInstance()._go
+		local var_35_1 = var_35_0.transform:Find("button_test_show_drop")
 
-	if var_1_10003 then
-		pg = var_1_10003
+		if IsNil(var_35_1) then
+			var_35_1 = GameObject.New("button_test_show_drop")
 
-		local var_35_0 = var_1_10003.MsgboxMgr.GetInstance()._go.transform
-		local var_35_1 = var_4.Find(var_35_0, "button_test_show_drop")
-
-		IsNil = var_1_10005
-
-		if var_1_10005(var_35_1) then
-			GameObject = var_5
-
-			local var_35_2 = var_5.New("button_test_show_drop")
-			local var_35_3 = var_35_1.AddComponent
-
-			typeof = var_1_10008
-			Button = var_1_10010
-
-			var_35_3(var_35_2, var_1_10008(var_1_10010))
-
-			local var_35_4 = var_35_1
-			local var_35_5 = var_35_1.AddComponent
-
-			typeof = var_1_10008
-			RectTransform = var_1_10010
-
-			var_35_5(var_35_4, var_1_10008(var_1_10010))
-
-			local var_35_6 = var_35_1
-			local var_35_7 = var_35_1.AddComponent
-
-			typeof = var_1_10008
-			Image = var_1_10010
-
-			var_35_7(var_35_6, var_1_10008(var_1_10010))
+			var_35_1:AddComponent(typeof(Button))
+			var_35_1:AddComponent(typeof(RectTransform))
+			var_35_1:AddComponent(typeof(Image))
 		end
 
-		local var_35_8 = var_35_1
-		local var_35_9 = var_35_1.GetComponent
+		local var_35_2 = var_35_1:GetComponent(typeof(RectTransform))
 
-		typeof = var_1_10008
-		RectTransform = var_1_10010
+		var_35_2:SetParent(var_35_0.transform, false)
 
-		local var_35_10 = var_35_9(var_35_8, var_1_10008(var_1_10010))
+		var_35_2.anchoredPosition = Vector3(-239, 173, 0)
+		var_35_2.sizeDelta = Vector2(40, 40)
 
-		var_5.SetParent(var_35_10, var_3.transform, false)
-
-		Vector3 = var_6
-		var_5.anchoredPosition = var_6(-239, 173, 0)
-		Vector2 = var_6
-		var_5.sizeDelta = var_6(40, 40)
-		onButton = var_6
-
-		var_6(arg_35_0, var_5, function()
-			_ = var_2_10000
-
-			var_2_10000.each(arg_35_2, function(arg_37_0)
+		onButton(arg_35_0, var_35_2, function()
+			_.each(arg_35_2, function(arg_37_0)
 				arg_37_0.anonymous = false
 
 				return
 			end)
-
-			local var_36_0 = arg_35_0
-			local var_36_1 = var_0.emit
-
-			BaseUI = var_3
-
-			local var_36_2 = var_3.ON_DROP_LIST
-			local var_36_3 = {
+			arg_35_0:emit(BaseUI.ON_DROP_LIST, {
 				item2Row = true,
-				itemList = arg_35_2
-			}
-			local var_36_4 = arg_35_1
-
-			var_36_3.content = var_5.getConfig(var_36_4, "display")
-
-			var_36_1(var_36_0, var_36_2, var_36_3)
+				itemList = arg_35_2,
+				content = arg_35_1:getConfig("display")
+			})
 
 			return
 		end)
@@ -1493,49 +626,33 @@ function var_0_1.initTestShowDrop(arg_35_0, arg_35_1, arg_35_2)
 	return
 end
 
-function var_0_1.clearTestShowDrop(arg_38_0)
-	IsUnityEditor = var_1_10001
+function var_0_0.clearTestShowDrop(arg_38_0)
+	if IsUnityEditor then
+		local var_38_0 = pg.MsgboxMgr.GetInstance()._go.transform:Find("button_test_show_drop")
 
-	if var_1_10001 then
-		pg = var_1_10001
-
-		local var_38_0 = var_1_10001.MsgboxMgr.GetInstance()._go.transform
-		local var_38_1 = var_2.Find(var_38_0, "button_test_show_drop")
-
-		IsNil = var_1_10003
-
-		if not var_1_10003(var_38_1) then
-			Destroy = var_3
-
-			var_3(var_38_1)
+		if not IsNil(var_38_0) then
+			Destroy(var_38_0)
 		end
 	end
 
 	return
 end
 
-function var_0_1.ShowChapterRewardPanel(arg_39_0)
+function var_0_0.ShowChapterRewardPanel(arg_39_0)
 	if arg_39_0.rewardPanel == nil then
-		ChapterRewardPanel = var_1
-		arg_39_0.rewardPanel = var_1.New(arg_39_0._tf.parent, arg_39_0.event, arg_39_0.contextData)
+		arg_39_0.rewardPanel = ChapterRewardPanel.New(arg_39_0._tf.parent, arg_39_0.event, arg_39_0.contextData)
 
-		local var_39_0 = arg_39_0.rewardPanel
-
-		var_1.Load(var_39_0)
+		arg_39_0.rewardPanel:Load()
 	end
 
-	local var_39_1 = arg_39_0.rewardPanel
-
-	var_1.ActionInvoke(var_39_1, "Enter", arg_39_0.chapter)
+	arg_39_0.rewardPanel:ActionInvoke("Enter", arg_39_0.chapter)
 
 	return
 end
 
-function var_0_1.ClearChapterRewardPanel(arg_40_0)
+function var_0_0.ClearChapterRewardPanel(arg_40_0)
 	if arg_40_0.rewardPanel ~= nil then
-		local var_40_0 = arg_40_0.rewardPanel
-
-		var_1.Destroy(var_40_0)
+		arg_40_0.rewardPanel:Destroy()
 
 		arg_40_0.rewardPanel = nil
 	end
@@ -1543,15 +660,10 @@ function var_0_1.ClearChapterRewardPanel(arg_40_0)
 	return
 end
 
-function var_0_1.clear(arg_41_0)
+function var_0_0.clear(arg_41_0)
 	arg_41_0:cancelTween()
-
-	local var_41_0 = arg_41_0.dropList
-
-	var_1.each(var_41_0, function(arg_42_0, arg_42_1)
-		clearDrop = var_2_10002
-
-		var_2_10002(arg_42_1)
+	arg_41_0.dropList:each(function(arg_42_0, arg_42_1)
+		clearDrop(arg_42_1)
 
 		return
 	end)
@@ -1561,4 +673,4 @@ function var_0_1.clear(arg_41_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_rooms") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_rooms"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_rooms = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_rooms
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_rooms = rawget(pg, "dorm3d_rooms") or setmetatable({
+	__name = "dorm3d_rooms"
+}, confNEO)
+pg.dorm3d_rooms.all = {
 	1,
 	2,
 	3,
@@ -38,11 +15,7 @@ var_0_3.all = {
 	21,
 	26
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_rooms
-
-var_0_4.get_id_list_by_in_map = {
+pg.dorm3d_rooms.get_id_list_by_in_map = {
 	floor_1 = {
 		1,
 		2,
@@ -61,25 +34,11 @@ var_0_4.get_id_list_by_in_map = {
 		26
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_rooms = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_rooms = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_rooms
-
-	var_1_0[1] = {
+	pg.base.dorm3d_rooms[1] = {
 		assets_prefix = "Tianlangxing",
 		resource_name = "Tianlangxing_DB",
 		type = 2,
@@ -160,11 +119,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_rooms
-
-	var_1_1[2] = {
+	pg.base.dorm3d_rooms[2] = {
 		assets_prefix = "Nengdai",
 		resource_name = "Nengdai_DB",
 		type = 2,
@@ -245,11 +200,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_rooms
-
-	var_1_2[3] = {
+	pg.base.dorm3d_rooms[3] = {
 		assets_prefix = "Ankeleiqi",
 		resource_name = "Ankeleiqi_DB",
 		type = 2,
@@ -321,11 +272,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_rooms
-
-	var_1_3[4] = {
+	pg.base.dorm3d_rooms[4] = {
 		assets_prefix = "Beach",
 		resource_name = "Beach",
 		type = 1,
@@ -494,11 +441,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_rooms
-
-	var_1_4[5] = {
+	pg.base.dorm3d_rooms[5] = {
 		furniture_zones = "",
 		assets_prefix = "Bathroom",
 		default_zone = "",
@@ -540,11 +483,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_rooms
-
-	var_1_5[11] = {
+	pg.base.dorm3d_rooms[11] = {
 		assets_prefix = "Xinzexi",
 		resource_name = "Xinzexi_DB",
 		type = 2,
@@ -614,11 +553,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_rooms
-
-	var_1_6[12] = {
+	pg.base.dorm3d_rooms[12] = {
 		assets_prefix = "Dafeng",
 		resource_name = "Dafeng_DB",
 		type = 2,
@@ -693,11 +628,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_rooms
-
-	var_1_7[14] = {
+	pg.base.dorm3d_rooms[14] = {
 		assets_prefix = "Aijier",
 		resource_name = "Aijier_DB",
 		type = 2,
@@ -767,11 +698,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_rooms
-
-	var_1_8[16] = {
+	pg.base.dorm3d_rooms[16] = {
 		assets_prefix = "Publiccafe",
 		resource_name = "Publiccafe",
 		type = 1,
@@ -978,11 +905,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_rooms
-
-	var_1_9[21] = {
+	pg.base.dorm3d_rooms[21] = {
 		assets_prefix = "Naximofu",
 		resource_name = "Naximofu_DB",
 		type = 2,
@@ -1052,8 +975,7 @@ var_0_4.base.dorm3d_rooms = {}
 			}
 		}
 	}
-	pg = var_1_9
-	var_1_9.base.dorm3d_rooms[26] = {
+	pg.base.dorm3d_rooms[26] = {
 		assets_prefix = "Carwash",
 		resource_name = "Carwash",
 		type = 1,

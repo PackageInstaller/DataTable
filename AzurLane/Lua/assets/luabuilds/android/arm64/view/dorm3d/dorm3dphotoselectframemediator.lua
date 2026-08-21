@@ -1,18 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dPhotoSelectFrameMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "Dorm3dPhotoSelectFrameMediator"
+var_0_0.CONFIRMFRAME = "Dorm3dPhotoSelectFrameMediator:CONFIRMFRAME"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.CONFIRMFRAME = "Dorm3dPhotoSelectFrameMediator:CONFIRMFRAME"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.CONFIRMFRAME, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-		local var_2_0 = arg_1_0
-
-		var_5.sendNotification(var_2_0, var_0_1.CONFIRMFRAME, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.CONFIRMFRAME, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+		arg_1_0:sendNotification(var_0_0.CONFIRMFRAME, {
 			selectFrameId = arg_2_1,
 			imagePos = arg_2_2,
 			imageScale = arg_2_3,
@@ -25,12 +17,12 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	return {}
 end
 
-function var_0_1.remove(arg_4_0)
+function var_0_0.remove(arg_4_0)
 	return
 end
 
-return var_0_1
+return var_0_0

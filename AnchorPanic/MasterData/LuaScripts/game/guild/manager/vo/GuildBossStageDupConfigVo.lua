@@ -6,7 +6,7 @@ function parseData(self, id, cusData)
     self.boss_id = cusData.boss_id
     self.formationId = cusData.formation_id
     self.kill_award = cusData.kill_award
-    self.posEffectId = cusData.pos_effect_id
+    -- self.posEffectId = cusData.pos_effect_id
     self.mIsLock = cusData.lock_formation
     self.mSceneId = cusData.scene_id
     self.boss_img = cusData.boss_img

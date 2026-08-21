@@ -32,6 +32,7 @@ function configUI(self)
     self.mTxtGuildMasterName = self:getChildGO("mTxtGuildMasterName"):GetComponent(ty.Text)
     self.mTxtMemberCount = self:getChildGO("mTxtMemberCount"):GetComponent(ty.Text)
     self.mTxtDes = self:getChildGO("mTxtDes"):GetComponent(ty.Text)
+    self.mImgShowIcon = self:getChildGO("mImgShowIcon"):GetComponent(ty.AutoRefImage)
     self.mTxtRequestInfo = self:getChildGO("mTxtRequestInfo"):GetComponent(ty.Text)
     self.mBtnJoin = self:getChildGO("mBtnJoin")
     self.mBtnJoined = self:getChildGO("mBtnJoined")
@@ -245,6 +246,7 @@ function updateGuildInfo(self)
     self.mTxtGuildName.text = self.mSelectData.name
     self.mTxtGuildID.text = _TT(25161) .. self.mSelectData.show_id
     self.mTxtGuildMasterName.text = self.mSelectData.leader_name
+    self.mImgShowIcon:SetImg(UrlManager:getIconPath(guild.GuildManager:getIconDataById(self.mSelectData.icon).icon),false)
 
     self.localData = guild.GuildManager:getGuildData(self.mSelectData.lv)
 

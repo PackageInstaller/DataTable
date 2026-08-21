@@ -1,30 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewShipLayer", import("..base.BaseUI"))
 
-local var_0_0 = "NewShipLayer"
+var_0_0.PAINT_DURATION = 0.35
+var_0_0.STAR_DURATION = 0.5
+var_0_0.STAR_ANIMATION_DUR1 = 0.075
+var_0_0.STAR_ANIMATION_DUR2 = 0.1
+var_0_0.STAR_ANIMATION_DUR3 = 0.4
+var_0_0.STAR_ANIMATION_DUR4 = 0.26
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-var_0_1.PAINT_DURATION = 0.35
-var_0_1.STAR_DURATION = 0.5
-var_0_1.STAR_ANIMATION_DUR1 = 0.075
-var_0_1.STAR_ANIMATION_DUR2 = 0.1
-var_0_1.STAR_ANIMATION_DUR3 = 0.4
-var_0_1.STAR_ANIMATION_DUR4 = 0.26
-
-local var_0_2 = 19
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewShipUI"
 end
 
-function var_0_1.preload(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_0.contextData.ship
-
-	LoadSpriteAsync = var_1_10003
-
-	var_1_10003("newshipbg/bg_" .. var_2_0:rarity2bgPrintForGet(), function(arg_3_0)
+function var_0_0.preload(arg_2_0, arg_2_1)
+	LoadSpriteAsync("newshipbg/bg_" .. arg_2_0.contextData.ship:rarity2bgPrintForGet(), function(arg_3_0)
 		arg_2_0.bgSprite = arg_3_0
 		arg_2_0.isLoadBg = true
 
@@ -36,167 +24,55 @@ function var_0_1.preload(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.init(arg_4_0)
-	GetComponent = var_1_10001
-	arg_4_0._animator = var_1_10001(arg_4_0._tf, "Animator")
-	GetOrAddComponent = var_1
-
-	local var_4_0 = arg_4_0._tf
-
-	typeof = var_4
-	CanvasGroup = var_1_10006
-	arg_4_0._canvasGroup = var_1(var_4_0, var_4(var_1_10006))
-
-	local var_4_1 = arg_4_0._tf
-
-	arg_4_0._shake = var_1.Find(var_4_1, "shake_panel")
-
-	local var_4_2 = arg_4_0._tf
-
-	arg_4_0._shade = var_1.Find(var_4_2, "shade")
-
-	local var_4_3 = arg_4_0._shake
-
-	arg_4_0._bg = var_1.Find(var_4_3, "bg")
-
-	local var_4_4 = arg_4_0._shake
-
-	arg_4_0._drag = var_1.Find(var_4_4, "drag")
-
-	local var_4_5 = arg_4_0._shake
-
-	arg_4_0._paintingTF = var_1.Find(var_4_5, "paint")
-
-	local var_4_6 = arg_4_0._shake
-
-	arg_4_0._paintingShadowTF = var_1.Find(var_4_6, "shadow")
-
-	local var_4_7 = arg_4_0._shake
-
-	arg_4_0._dialogue = var_1.Find(var_4_7, "dialogue")
-
-	local var_4_8 = arg_4_0._dialogue
-	local var_4_9 = var_1.Find(var_4_8, "bg/name")
-	local var_4_10 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0._shipName = var_4_10(var_4_9, var_4(var_1_10006))
-
-	local var_4_11 = arg_4_0._dialogue
-	local var_4_12 = var_1.Find(var_4_11, "bg/type")
-	local var_4_13 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0._shipType = var_4_13(var_4_12, var_4(var_1_10006))
-
-	local var_4_14 = arg_4_0._dialogue
-
-	arg_4_0._dialogueText = var_1.Find(var_4_14, "Text")
-
-	local var_4_15 = arg_4_0._shake
-
-	arg_4_0._left = var_1.Find(var_4_15, "ForNotch/left_panel")
-
-	local var_4_16 = arg_4_0._left
-
-	arg_4_0._lockTF = var_1.Find(var_4_16, "lock")
-
-	local var_4_17 = arg_4_0._left
-
-	arg_4_0._lockBtn = var_1.Find(var_4_17, "lock/lock")
-
-	local var_4_18 = arg_4_0._left
-
-	arg_4_0._unlockBtn = var_1.Find(var_4_18, "lock/unlock_btn")
-
-	local var_4_19 = arg_4_0._left
-
-	arg_4_0._viewBtn = var_1.Find(var_4_19, "view_btn")
-
-	local var_4_20 = arg_4_0._left
-
-	arg_4_0._evaluationBtn = var_1.Find(var_4_20, "evaluation_btn")
-
-	local var_4_21 = arg_4_0._left
-
-	arg_4_0._shareBtn = var_1.Find(var_4_21, "share_btn")
-
-	local var_4_22 = arg_4_0._shake
-
-	arg_4_0.audioBtn = var_1.Find(var_4_22, "property_btn")
-
-	local var_4_23 = arg_4_0._shake
-
-	arg_4_0.clickTF = var_1.Find(var_4_23, "click")
-
-	local var_4_24 = arg_4_0._tf
-
-	arg_4_0.npc = var_1.Find(var_4_24, "shake_panel/npc")
-	setActive = var_1
-
-	var_1(arg_4_0.npc, false)
-
-	local var_4_25 = arg_4_0._shake
-
-	arg_4_0.newTF = var_1.Find(var_4_25, "New")
-
-	local var_4_26 = arg_4_0._shake
-
-	arg_4_0.rarityTF = var_1.Find(var_4_26, "rarity")
-
-	local var_4_27 = arg_4_0.rarityTF
-
-	arg_4_0.starsTF = var_1.Find(var_4_27, "stars")
-
-	local var_4_28 = arg_4_0.starsTF
-
-	arg_4_0.starsCont = var_1.Find(var_4_28, "content")
-
-	local var_4_29 = arg_4_0._shake
-
-	arg_4_0._skipButton = var_1.Find(var_4_29, "ForNotch/skip")
-	setActive = var_1
-
-	var_1(arg_4_0._skipButton, arg_4_0.contextData.canSkipBatch)
-
-	setActive = var_1
-
-	var_1(arg_4_0._left, true)
-
-	setActive = var_1
-
-	var_1(arg_4_0.audioBtn, true)
-
-	pg = var_1
-
-	local var_4_30 = var_1.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_4_30, arg_4_0._tf)
-
-	local var_4_31 = arg_4_0.rarityTF
-
-	arg_4_0.metaRepeatTF = var_1.Find(var_4_31, "MetaRepeat")
-
-	local var_4_32 = arg_4_0._shake
-
-	arg_4_0.metaDarkTF = var_1.Find(var_4_32, "MetaMask")
+function var_0_0.init(arg_4_0)
+	arg_4_0._animator = GetComponent(arg_4_0._tf, "Animator")
+	arg_4_0._canvasGroup = GetOrAddComponent(arg_4_0._tf, typeof(CanvasGroup))
+	arg_4_0._shake = arg_4_0._tf:Find("shake_panel")
+	arg_4_0._shade = arg_4_0._tf:Find("shade")
+	arg_4_0._bg = arg_4_0._shake:Find("bg")
+	arg_4_0._drag = arg_4_0._shake:Find("drag")
+	arg_4_0._paintingTF = arg_4_0._shake:Find("paint")
+	arg_4_0._paintingShadowTF = arg_4_0._shake:Find("shadow")
+	arg_4_0._dialogue = arg_4_0._shake:Find("dialogue")
+	arg_4_0._shipName = arg_4_0._dialogue:Find("bg/name"):GetComponent(typeof(Text))
+	arg_4_0._shipType = arg_4_0._dialogue:Find("bg/type"):GetComponent(typeof(Text))
+	arg_4_0._dialogueText = arg_4_0._dialogue:Find("Text")
+	arg_4_0._left = arg_4_0._shake:Find("ForNotch/left_panel")
+	arg_4_0._lockTF = arg_4_0._left:Find("lock")
+	arg_4_0._lockBtn = arg_4_0._left:Find("lock/lock")
+	arg_4_0._unlockBtn = arg_4_0._left:Find("lock/unlock_btn")
+	arg_4_0._viewBtn = arg_4_0._left:Find("view_btn")
+	arg_4_0._evaluationBtn = arg_4_0._left:Find("evaluation_btn")
+	arg_4_0._shareBtn = arg_4_0._left:Find("share_btn")
+	arg_4_0.audioBtn = arg_4_0._shake:Find("property_btn")
+	arg_4_0.clickTF = arg_4_0._shake:Find("click")
+	arg_4_0.npc = arg_4_0._tf:Find("shake_panel/npc")
+
+	setActive(arg_4_0.npc, false)
+
+	arg_4_0.newTF = arg_4_0._shake:Find("New")
+	arg_4_0.rarityTF = arg_4_0._shake:Find("rarity")
+	arg_4_0.starsTF = arg_4_0.rarityTF:Find("stars")
+	arg_4_0.starsCont = arg_4_0.starsTF:Find("content")
+	arg_4_0._skipButton = arg_4_0._shake:Find("ForNotch/skip")
+
+	setActive(arg_4_0._skipButton, arg_4_0.contextData.canSkipBatch)
+	setActive(arg_4_0._left, true)
+	setActive(arg_4_0.audioBtn, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_4_0._tf)
+
+	arg_4_0.metaRepeatTF = arg_4_0.rarityTF:Find("MetaRepeat")
+	arg_4_0.metaDarkTF = arg_4_0._shake:Find("MetaMask")
 	arg_4_0.rarityEffect = {}
 
 	if arg_4_0.contextData.autoExitTime then
-		Timer = var_1
-		arg_4_0.autoExitTimer = var_1.New(function()
-			local var_5_0 = arg_4_0
-
-			var_0.showExitTip(var_5_0)
+		arg_4_0.autoExitTimer = Timer.New(function()
+			arg_4_0:showExitTip()
 
 			return
 		end, arg_4_0.contextData.autoExitTime)
 
-		local var_4_33 = arg_4_0.autoExitTimer
-
-		var_1.Start(var_4_33)
+		arg_4_0.autoExitTimer:Start()
 
 		arg_4_0.contextData.autoExitTime = nil
 	end
@@ -206,7 +82,7 @@ function var_0_1.init(arg_4_0)
 	return
 end
 
-function var_0_1.voice(arg_6_0, arg_6_1)
+function var_0_0.voice(arg_6_0, arg_6_1)
 	if not arg_6_1 then
 		return
 	end
@@ -214,22 +90,15 @@ function var_0_1.voice(arg_6_0, arg_6_1)
 	arg_6_0:stopVoice()
 
 	arg_6_0._currentVoice = arg_6_1
-	pg = var_2
 
-	local var_6_0 = var_2.CriMgr.GetInstance()
-
-	var_2.PlaySoundEffect_V3(var_6_0, arg_6_1)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(arg_6_1)
 
 	return
 end
 
-function var_0_1.stopVoice(arg_7_0)
+function var_0_0.stopVoice(arg_7_0)
 	if arg_7_0._currentVoice then
-		pg = var_1
-
-		local var_7_0 = var_1.CriMgr.GetInstance()
-
-		var_1.UnloadSoundEffect_V3(var_7_0, arg_7_0._currentVoice)
+		pg.CriMgr.GetInstance():UnloadSoundEffect_V3(arg_7_0._currentVoice)
 	end
 
 	arg_7_0._currentVoice = nil
@@ -237,627 +106,270 @@ function var_0_1.stopVoice(arg_7_0)
 	return
 end
 
-function var_0_1.setShip(arg_8_0, arg_8_1)
+function var_0_0.setShip(arg_8_0, arg_8_1)
 	arg_8_0:recyclePainting()
 
 	arg_8_0._shipVO = arg_8_1
 	arg_8_0.isRemoulded = arg_8_1:isRemoulded()
 
-	local var_8_0 = arg_8_1
-	local var_8_1 = arg_8_1.isBluePrintShip(var_8_0)
-	local var_8_2 = arg_8_1:isMetaShip()
+	local var_8_0 = arg_8_1:isBluePrintShip()
 
-	setImageSprite = var_8_0
+	setImageSprite(arg_8_0._bg, arg_8_0.bgSprite)
+	setActive(arg_8_0.metaDarkTF, arg_8_1:isMetaShip())
 
-	var_8_0(arg_8_0._bg, arg_8_0.bgSprite)
-
-	setActive = var_8_0
-
-	var_8_0(arg_8_0.metaDarkTF, arg_8_1:isMetaShip())
-
-	if var_8_1 then
+	if var_8_0 then
 		if arg_8_0.metaBg then
-			setActive = var_4
-
-			var_4(arg_8_0.metaBg, false)
+			setActive(arg_8_0.metaBg, false)
 		end
 
 		if arg_8_0.designBg and arg_8_0.designName ~= "raritydesign" .. arg_8_1:getRarity() then
-			PoolMgr = var_4
-
-			local var_8_3 = var_4.GetInstance()
-
-			var_4.ReturnUI(var_8_3, arg_8_0.designName, arg_8_0.designBg)
+			PoolMgr.GetInstance():ReturnUI(arg_8_0.designName, arg_8_0.designBg)
 
 			arg_8_0.designBg = nil
 		end
 
-		local var_8_5
-
 		if not arg_8_0.designBg then
-			PoolMgr = var_8_5
-
-			local var_8_4 = var_8_5.GetInstance()
-
-			var_8_5 = var_8_5.GetUI
-
-			local var_8_6 = "raritydesign"
-
-			var_1_10010 = arg_8_1
-
-			var_8_5(var_8_4, var_8_6 .. arg_8_1.getRarity(var_1_10010), true, function(arg_9_0)
+			PoolMgr.GetInstance():GetUI("raritydesign" .. arg_8_1:getRarity(), true, function(arg_9_0)
 				arg_8_0.designBg = arg_9_0
+				arg_8_0.designName = "raritydesign" .. arg_8_1:getRarity()
 
-				local var_9_0 = arg_8_0
-				local var_9_1 = "raritydesign"
-				local var_9_2 = arg_8_1
+				arg_9_0.transform:SetParent(arg_8_0._shake, false)
 
-				var_9_0.designName = var_9_1 .. var_3.getRarity(var_9_2)
+				arg_9_0.transform.localPosition = Vector3(1, 1, 1)
+				arg_9_0.transform.localScale = Vector3(1, 1, 1)
 
-				local var_9_3 = arg_9_0.transform
-
-				var_1.SetParent(var_9_3, arg_8_0._shake, false)
-
-				local var_9_4 = arg_9_0.transform
-
-				Vector3 = var_2
-				var_9_4.localPosition = var_2(1, 1, 1)
-
-				local var_9_5 = arg_9_0.transform
-
-				Vector3 = var_2
-				var_9_5.localScale = var_2(1, 1, 1)
-
-				local var_9_6 = arg_9_0.transform
-
-				var_1.SetSiblingIndex(var_9_6, 1)
-
-				setActive = var_1
-
-				var_1(arg_9_0, true)
+				arg_9_0.transform:SetSiblingIndex(1)
+				setActive(arg_9_0, true)
 
 				return
 			end)
 		else
-			setActive = var_8_5
-
-			var_8_5(arg_8_0.designBg, true)
+			setActive(arg_8_0.designBg, true)
 		end
-	elseif var_8_2 then
+	elseif arg_8_1:isMetaShip() then
 		if arg_8_0.designBg then
-			setActive = var_4
-
-			var_4(arg_8_0.designBg, false)
+			setActive(arg_8_0.designBg, false)
 		end
 
 		if arg_8_0.metaBg and arg_8_0.metaName ~= "raritymeta" .. arg_8_1:getRarity() then
-			PoolMgr = var_4
-
-			local var_8_7 = var_4.GetInstance()
-
-			var_4.ReturnUI(var_8_7, arg_8_0.metaName, arg_8_0.metaBg)
+			PoolMgr.GetInstance():ReturnUI(arg_8_0.metaName, arg_8_0.metaBg)
 
 			arg_8_0.metaBg = nil
 		end
 
-		local var_8_9
-
 		if not arg_8_0.metaBg then
-			PoolMgr = var_8_9
-
-			local var_8_8 = var_8_9.GetInstance()
-
-			var_8_9 = var_8_9.GetUI
-
-			local var_8_10 = "raritymeta"
-
-			var_1_10010 = arg_8_1
-
-			var_8_9(var_8_8, var_8_10 .. arg_8_1.getRarity(var_1_10010), true, function(arg_10_0)
+			PoolMgr.GetInstance():GetUI("raritymeta" .. arg_8_1:getRarity(), true, function(arg_10_0)
 				arg_8_0.metaBg = arg_10_0
+				arg_8_0.metaName = "raritymeta" .. arg_8_1:getRarity()
 
-				local var_10_0 = arg_8_0
-				local var_10_1 = "raritymeta"
-				local var_10_2 = arg_8_1
+				arg_10_0.transform:SetParent(arg_8_0._shake, false)
 
-				var_10_0.metaName = var_10_1 .. var_3.getRarity(var_10_2)
+				arg_10_0.transform.localPosition = Vector3(1, 1, 1)
+				arg_10_0.transform.localScale = Vector3(1, 1, 1)
 
-				local var_10_3 = arg_10_0.transform
-
-				var_1.SetParent(var_10_3, arg_8_0._shake, false)
-
-				local var_10_4 = arg_10_0.transform
-
-				Vector3 = var_2
-				var_10_4.localPosition = var_2(1, 1, 1)
-
-				local var_10_5 = arg_10_0.transform
-
-				Vector3 = var_2
-				var_10_5.localScale = var_2(1, 1, 1)
-
-				local var_10_6 = arg_10_0.transform
-
-				var_1.SetSiblingIndex(var_10_6, 1)
-
-				setActive = var_1
-
-				var_1(arg_10_0, true)
+				arg_10_0.transform:SetSiblingIndex(1)
+				setActive(arg_10_0, true)
 
 				return
 			end)
 		else
-			setActive = var_8_9
-
-			var_8_9(arg_8_0.metaBg, true)
+			setActive(arg_8_0.metaBg, true)
 		end
 	else
 		if arg_8_0.designBg then
-			setActive = var_4
-
-			var_4(arg_8_0.designBg, false)
+			setActive(arg_8_0.designBg, false)
 		end
 
 		if arg_8_0.metaBg then
-			setActive = var_4
-
-			var_4(arg_8_0.metaBg, false)
+			setActive(arg_8_0.metaBg, false)
 		end
 	end
-
-	local var_8_11
 
 	if arg_8_1.virgin and not arg_8_0.isRemoulded and not arg_8_1:isActivityNpc() then
-		setActive = var_8_11
+		setActive(arg_8_0.newTF, true)
+		LoadImageSpriteAsync("clutter/new", arg_8_0.newTF)
 
-		var_8_11(arg_8_0.newTF, true)
-
-		LoadImageSpriteAsync = var_8_11
-
-		var_8_11("clutter/new", arg_8_0.newTF)
-
-		OPEN_TEC_TREE_SYSTEM = var_8_11
-
-		if var_8_11 then
-			table = var_8_11
-			var_8_11 = var_8_11.indexof
-			pg = var_6
-
-			if var_8_11(var_6.fleet_tech_ship_template.all, arg_8_0._shipVO.groupId, 1) then
-				pg = var_8_11
-				var_8_11 = var_8_11.fleet_tech_ship_template[arg_8_0._shipVO.groupId].pt_get
-				ShipType = var_5
-
-				local var_8_12 = var_5.FilterOverQuZhuType
-
-				pg = var_7
-
-				local var_8_13 = var_8_12(var_7.fleet_tech_ship_template[arg_8_0._shipVO.groupId].add_get_shiptype)
-
-				pg = var_6
-
-				local var_8_14 = var_6.fleet_tech_ship_template[arg_8_0._shipVO.groupId].add_get_attr
-
-				pg = var_7
-
-				local var_8_15 = var_7.fleet_tech_ship_template[arg_8_0._shipVO.groupId].add_get_value
-
-				pg = var_8
-				var_1_10010 = var_8.ToastMgr.GetInstance()
-
-				local var_8_16 = var_8.ShowToast
-
-				pg = var_1_10011
-
-				var_8_16(var_1_10010, var_1_10011.ToastMgr.TYPE_TECPOINT, {
-					point = var_8_11,
-					typeList = var_8_13,
-					attr = var_8_14,
-					value = var_8_15
-				})
-			end
+		if OPEN_TEC_TREE_SYSTEM and table.indexof(pg.fleet_tech_ship_template.all, arg_8_0._shipVO.groupId, 1) then
+			pg.ToastMgr.GetInstance():ShowToast(pg.ToastMgr.TYPE_TECPOINT, {
+				point = pg.fleet_tech_ship_template[arg_8_0._shipVO.groupId].pt_get,
+				typeList = ShipType.FilterOverQuZhuType(pg.fleet_tech_ship_template[arg_8_0._shipVO.groupId].add_get_shiptype),
+				attr = pg.fleet_tech_ship_template[arg_8_0._shipVO.groupId].add_get_attr,
+				value = pg.fleet_tech_ship_template[arg_8_0._shipVO.groupId].add_get_value
+			})
 		end
 	else
-		setActive = var_8_11
+		setActive(arg_8_0.newTF, false)
 
-		var_8_11(arg_8_0.newTF, false)
+		local var_8_1 = arg_8_1:getReMetaSpecialItemVO()
 
-		var_8_11 = arg_8_1:getReMetaSpecialItemVO()
+		arg_8_0:updateLockTF(var_8_1 ~= nil)
 
-		arg_8_0:updateLockTF(var_8_11 ~= nil)
+		if var_8_1 then
+			local var_8_2 = arg_8_0.metaRepeatTF:Find("Icon")
 
-		local var_8_18
+			setImageSprite(var_8_2, LoadSprite(var_8_1:getConfig("icon")))
+			GetImageSpriteFromAtlasAsync(var_8_1:getConfig("icon"), "", var_8_2)
+			setText(arg_8_0.metaRepeatTF:Find("Count"), var_8_1.count)
 
-		if var_8_11 then
-			local var_8_17 = arg_8_0.metaRepeatTF
+			local var_8_3 = pg.ship_transform[arg_8_0._shipVO.groupId].common_item[1][2]
+			local var_8_4 = arg_8_0.metaRepeatTF:Find("Commom")
 
-			var_8_18 = var_8_18.Find(var_8_17, "Icon")
-
-			local var_8_19 = arg_8_0.metaRepeatTF
-			local var_8_20 = var_6.Find(var_8_19, "Count")
-
-			setImageSprite = var_8_17
-
-			local var_8_21 = var_8_18
-
-			LoadSprite = var_1_10010
-
-			var_8_17(var_8_21, var_1_10010(var_8_11:getConfig("icon")))
-
-			GetImageSpriteFromAtlasAsync = var_8_17
-
-			var_8_17(var_8_11:getConfig("icon"), "", var_8_18)
-
-			setText = var_8_17
-
-			var_8_17(var_8_20, var_8_11.count)
-
-			pg = var_8_17
-
-			local var_8_22 = var_8_17.ship_transform[arg_8_0._shipVO.groupId].exclusive_item[1][2]
-
-			pg = var_8
-
-			local var_8_23 = var_8.ship_transform[arg_8_0._shipVO.groupId].common_item[1][2]
-			local var_8_24 = arg_8_0.metaRepeatTF
-			local var_8_25 = var_9.Find(var_8_24, "Special")
-			local var_8_26 = arg_8_0.metaRepeatTF
-			local var_8_27 = var_10.Find(var_8_26, "Commom")
-
-			setActive = var_8_24
-
-			var_8_24(var_8_25, var_8_11.id == var_8_22)
-
-			setActive = var_8_24
-
-			var_8_24(var_8_27, var_8_11.id == var_8_23)
+			setActive(arg_8_0.metaRepeatTF:Find("Special"), var_8_1.id == pg.ship_transform[arg_8_0._shipVO.groupId].exclusive_item[1][2])
+			setActive(var_8_4, var_8_1.id == var_8_3)
 		else
-			setActive = var_8_18
-
-			var_8_18(arg_8_0.metaRepeatTF, false)
+			setActive(arg_8_0.metaRepeatTF, false)
 		end
 	end
 
-	setActive = var_8_11
+	setActive(arg_8_0.audioBtn, not arg_8_0.isRemoulded)
+	arg_8_0:UpdateLockButton(arg_8_0._shipVO:GetLockState())
 
-	var_8_11(arg_8_0.audioBtn, not arg_8_0.isRemoulded)
-
-	local var_8_28 = arg_8_0
-	local var_8_29 = arg_8_0.UpdateLockButton
-	local var_8_30 = arg_8_0._shipVO
-
-	var_8_29(var_8_28, var_7.GetLockState(var_8_30))
-
-	local var_8_31 = arg_8_0._shipVO
-	local var_8_32 = var_4.getConfigTable(var_8_31)
+	local var_8_5 = arg_8_0._shipVO:getConfigTable()
 
 	if arg_8_0.isRemoulded then
-		setPaintingPrefabAsync = var_5
-
-		local var_8_33 = arg_8_0._paintingTF
-		local var_8_34 = arg_8_0._shipVO
-
-		var_5(var_8_33, var_8.getRemouldPainting(var_8_34), "huode")
-
-		setPaintingPrefabAsync = var_5
-
-		local var_8_35 = arg_8_0._paintingShadowTF
-		local var_8_36 = arg_8_0._shipVO
-
-		var_5(var_8_35, var_8.getRemouldPainting(var_8_36), "huode")
+		setPaintingPrefabAsync(arg_8_0._paintingTF, arg_8_0._shipVO:getRemouldPainting(), "huode")
+		setPaintingPrefabAsync(arg_8_0._paintingShadowTF, arg_8_0._shipVO:getRemouldPainting(), "huode")
 	else
-		setPaintingPrefabAsync = var_5
-
-		local var_8_37 = arg_8_0._paintingTF
-		local var_8_38 = arg_8_0._shipVO
-
-		var_5(var_8_37, var_8.getPainting(var_8_38), "huode")
-
-		setPaintingPrefabAsync = var_5
-
-		local var_8_39 = arg_8_0._paintingShadowTF
-		local var_8_40 = arg_8_0._shipVO
-
-		var_5(var_8_39, var_8.getPainting(var_8_40), "huode")
+		setPaintingPrefabAsync(arg_8_0._paintingTF, arg_8_0._shipVO:getPainting(), "huode")
+		setPaintingPrefabAsync(arg_8_0._paintingShadowTF, arg_8_0._shipVO:getPainting(), "huode")
 	end
 
-	local var_8_41 = arg_8_0._shipType
-
-	pg = var_8_31
-
-	local var_8_42 = var_8_31.ship_data_by_type
-	local var_8_43 = arg_8_0._shipVO
-
-	var_8_41.text = var_8_42[var_7.getShipType(var_8_43)].type_name
+	arg_8_0._shipType.text = pg.ship_data_by_type[arg_8_0._shipVO:getShipType()].type_name
 	arg_8_0._shipName.text = arg_8_1:getName()
 
-	local var_8_44 = arg_8_1:getRarity()
+	local var_8_6 = arg_8_1:getRarity()
+	local var_8_7 = pg.ship_data_template[var_8_5.id].star_max
+	local var_8_8 = arg_8_0._shipVO:getStar()
 
-	pg = var_6
-
-	local var_8_45 = var_6.ship_data_template[var_8_32.id].star_max
-	local var_8_46 = arg_8_0._shipVO
-	local var_8_47 = var_7.getStar(var_8_46)
-
-	if not (var_8_45 % 2 == 0) or not (var_8_45 / 2) then
-		math = var_8_46
-
-		local var_8_48 = var_8_46.floor(var_8_45 / 2) + 1
+	if pg.ship_data_template[var_8_5.id].star_max % 2 ~= 0 or not (var_8_7 / 2) then
+		local var_8_9 = math.floor(var_8_7 / 2) + 1
 	end
 
-	local var_8_49 = 15
-
 	for iter_8_0 = 1, 6 do
-		local var_8_50 = arg_8_0.starsTF
-		local var_8_51 = var_1_10015.Find(var_8_50, "content/star_" .. iter_8_0)
-		local var_8_52 = var_1_10015.Find(var_8_51, "star_empty")
-		local var_8_53 = var_1_10015:Find("star")
+		local var_8_11 = arg_8_0.starsTF:Find("content/star_" .. iter_8_0)
+		local var_8_12 = var_8_11:Find("star_empty")
 
-		setActive = var_8_51
+		setActive(var_8_11:Find("star"), iter_8_0 <= var_8_8)
+		setActive(var_8_12, var_8_8 < iter_8_0)
 
-		var_8_51(var_8_53, iter_8_0 <= var_8_47)
-
-		setActive = var_8_51
-
-		var_8_51(var_8_52, var_8_47 < iter_8_0)
-
-		if var_8_45 < iter_8_0 then
-			setActive = var_8_51
-
-			var_8_51(var_1_10015, false)
+		if var_8_7 < iter_8_0 then
+			setActive(var_8_11, false)
 		end
 	end
 
-	local var_8_54 = arg_8_0._shake
-	local var_8_55 = var_11.Find(var_8_54, "rarity/nation")
+	local var_8_13 = arg_8_0._shake:Find("rarity/nation")
+	local var_8_14 = LoadSprite("prints/" .. nation2print(var_8_5.nationality) .. "_0")
 
-	LoadSprite = var_12
-
-	local var_8_56 = "prints/"
-
-	nation2print = var_1_10015
-
-	if not var_12(var_8_56 .. var_1_10015(var_8_32.nationality) .. "_0") then
-		warning = var_8_54
-
-		var_8_54("找不到印花, shipConfigId: " .. arg_8_1.configId)
-
-		setActive = var_8_54
-
-		var_8_54(var_8_55, false)
+	if not var_8_14 then
+		warning("找不到印花, shipConfigId: " .. arg_8_1.configId)
+		setActive(var_8_13, false)
 	else
-		setImageSprite = var_8_54
-
-		var_8_54(var_8_55, var_12, false)
+		setImageSprite(var_8_13, var_8_14, false)
 	end
 
-	local var_8_57 = arg_8_0._shake
-	local var_8_58 = var_13.Find(var_8_57, "rarity/type")
-	local var_8_59 = arg_8_0._shake
-	local var_8_60 = var_14.Find(var_8_59, "rarity/type/rarLogo")
+	local var_8_15 = arg_8_0._shake:Find("rarity/type")
+	local var_8_16 = arg_8_0._shake:Find("rarity/type/rarLogo")
 
 	if arg_8_1:isMetaShip() then
-		LoadImageSpriteAsync = var_15
-
-		var_15("shiprarity/1" .. var_8_44 .. "m", var_8_58, true)
-
-		LoadImageSpriteAsync = var_15
-
-		var_15("shiprarity/1" .. var_8_44 .. "s", var_8_60, true)
+		LoadImageSpriteAsync("shiprarity/1" .. var_8_6 .. "m", var_8_15, true)
+		LoadImageSpriteAsync("shiprarity/1" .. var_8_6 .. "s", var_8_16, true)
 	else
-		LoadImageSpriteAsync = var_15
-
-		var_15("shiprarity/" .. (var_8_1 and "0" or "") .. var_8_44 .. "m", var_8_58, true)
-
-		LoadImageSpriteAsync = var_15
-
-		var_15("shiprarity/" .. (var_8_1 and "0" or "") .. var_8_44 .. "s", var_8_60, true)
+		LoadImageSpriteAsync("shiprarity/" .. (var_8_0 and "0" or "") .. var_8_6 .. "m", var_8_15, true)
+		LoadImageSpriteAsync("shiprarity/" .. (var_8_0 and "0" or "") .. var_8_6 .. "s", var_8_16, true)
 	end
 
-	setActive = var_15
-
-	var_15(var_8_55, false)
-
-	setActive = var_15
-
-	var_15(arg_8_0.rarityTF, false)
-
-	setActive = var_15
-
-	var_15(arg_8_0._shade, true)
+	setActive(var_8_13, false)
+	setActive(arg_8_0.rarityTF, false)
+	setActive(arg_8_0._shade, true)
 
 	arg_8_0.inAnimating = true
 
 	arg_8_0:AddLeanTween(function()
-		LeanTween = var_2_10000
-
-		local var_11_0 = var_2_10000.delayedCall
-		local var_11_1 = 0.5
-
-		System = var_2_10003
-
-		return var_11_0(var_11_1, var_2_10003.Action(function()
-			setActive = var_3_10000
-
-			var_3_10000(var_8_55, true)
-
-			setActive = var_3_10000
-
-			var_3_10000(arg_8_0.rarityTF, true)
-
-			local var_12_0 = arg_8_0
-
-			var_0.starsAnimation(var_12_0)
+		return LeanTween.delayedCall(0.5, System.Action(function()
+			setActive(var_8_13, true)
+			setActive(arg_8_0.rarityTF, true)
+			arg_8_0:starsAnimation()
 
 			return
 		end))
 	end)
 
-	local var_8_61 = arg_8_0._shake
-	local var_8_62 = var_15.Find(var_8_61, "ship_type")
-	local var_8_63 = var_15.Find(var_8_62, "stars")
-	local var_8_64 = var_15
-	local var_8_65 = var_15.Find(var_8_64, "stars/startpl")
-	local var_8_66
+	local var_8_17 = arg_8_0._shake:Find("ship_type")
+	local var_8_18 = var_8_17:Find("stars")
+	local var_8_19 = var_8_17:Find("stars/startpl")
 
-	var_8_66, setText = var_15:Find("english_name"), var_8_64
+	setText(var_8_17:Find("english_name"), arg_8_0._shipVO:getConfig("english_name"))
 
-	local var_8_67 = arg_8_0._shipVO
+	local var_8_20 = arg_8_0._shipVO:getStar()
+	local var_8_21 = arg_8_0._shipVO:getMaxStar()
 
-	var_8_64(var_8_66, var_22.getConfig(var_8_67, "english_name"))
-
-	local var_8_68 = var_8_63.childCount
-	local var_8_69 = arg_8_0._shipVO
-	local var_8_70 = var_20.getStar(var_8_69)
-	local var_8_71 = arg_8_0._shipVO
-	local var_8_72 = var_21.getMaxStar(var_8_71)
-
-	for iter_8_1 = var_8_68, var_8_72 - 1 do
-		cloneTplTo = var_1_10026
-
-		var_1_10026(var_8_65, var_8_63)
+	for iter_8_1 = var_8_18.childCount, var_8_21 - 1 do
+		cloneTplTo(var_8_19, var_8_18)
 	end
 
-	local var_8_73 = var_8_63.childCount
+	for iter_8_2 = 0, var_8_18.childCount - 1 do
+		local var_8_22 = var_8_18:GetChild(iter_8_2)
 
-	for iter_8_2 = 0, var_8_73 - 1 do
-		var_1_10028 = var_8_63
-
-		local var_8_74 = var_8_63.GetChild(var_1_10028, iter_8_2).gameObject
-
-		var_1_10027.SetActive(var_8_74, iter_8_2 < var_8_72)
-
-		setActive = var_1_10027
-
-		var_1_10027(var_26:Find("star"), iter_8_2 < var_8_70)
-
-		setActive = var_1_10027
-
-		var_1_10027(var_26:Find("empty"), var_8_70 <= iter_8_2)
+		var_8_22.gameObject:SetActive(iter_8_2 < var_8_21)
+		setActive(var_8_22:Find("star"), iter_8_2 < var_8_20)
+		setActive(var_8_22:Find("empty"), var_8_20 <= iter_8_2)
 	end
 
-	local var_8_75 = arg_8_0._shipVO
-	local var_8_76 = var_22.getConfigTable(var_8_75)
+	local var_8_23 = arg_8_0._shipVO:getConfigTable()
 
-	findTF = var_23
+	findTF(var_8_17, "type_bg/type"):GetComponent(typeof(Image)).sprite = GetSpriteFromAtlas("shiptype", tostring(arg_8_0._shipVO:getShipType()))
 
-	local var_8_77 = var_23(var_15, "type_bg/type")
-	local var_8_78 = var_23.GetComponent
+	setScrollText(var_8_17:Find("name_bg/mask/Text"), arg_8_0._shipVO:getName())
 
-	typeof = var_26
-	Image = var_1_10028
-
-	local var_8_79 = var_8_78(var_8_77, var_26(var_1_10028))
-
-	GetSpriteFromAtlas = var_8_75
-
-	local var_8_80 = "shiptype"
-
-	tostring = var_1_10027
-
-	local var_8_81 = arg_8_0._shipVO
-
-	var_8_79.sprite = var_8_75(var_8_80, var_1_10027(var_29.getShipType(var_8_81)))
-	setScrollText = var_24
-
-	local var_8_82 = var_15:Find("name_bg/mask/Text")
-	local var_8_83 = arg_8_0._shipVO
-
-	var_24(var_8_82, var_27.getName(var_8_83))
-
-	if var_8_1 then
-		var_8_44 = var_8_44 .. "_1"
+	if var_8_0 then
+		var_8_6 = var_8_6 .. "_1"
 	elseif arg_8_1:isMetaShip() then
-		var_8_44 = var_8_44 .. "_2"
+		var_8_6 = var_8_6 .. "_2"
 	end
 
-	if not arg_8_0.rarityEffect[var_8_44] then
-		PoolMgr = var_24
-
-		local var_8_84 = var_24.GetInstance()
-
-		var_24.GetUI(var_8_84, "getrole_" .. var_8_44, true, function(arg_13_0)
-			IsNil = var_2_10001
-
-			if var_2_10001(arg_8_0._tf) then
+	if not arg_8_0.rarityEffect[var_8_6] then
+		PoolMgr.GetInstance():GetUI("getrole_" .. var_8_6, true, function(arg_13_0)
+			if IsNil(arg_8_0._tf) then
 				return
 			end
 
-			arg_8_0.rarityEffect[var_8_44] = arg_13_0
+			arg_8_0.rarityEffect[var_8_6] = arg_13_0
 
-			local var_13_0 = arg_13_0.transform
+			arg_13_0.transform:SetParent(arg_8_0._tf, false)
 
-			var_1.SetParent(var_13_0, arg_8_0._tf, false)
+			arg_13_0.transform.localPosition = Vector3(1, 1, 1)
+			arg_13_0.transform.localScale = Vector3(1, 1, 1)
 
-			local var_13_1 = arg_13_0.transform
+			arg_13_0.transform:SetSiblingIndex(1)
 
-			Vector3 = var_2
-			var_13_1.localPosition = var_2(1, 1, 1)
+			if arg_8_1:isMetaShip() then
+				local var_13_0 = tf(arg_13_0):Find("fire_ruchang")
 
-			local var_13_2 = arg_13_0.transform
-
-			Vector3 = var_2
-			var_13_2.localScale = var_2(1, 1, 1)
-
-			local var_13_3 = arg_13_0.transform
-
-			var_1.SetSiblingIndex(var_13_3, 1)
-
-			local var_13_4 = arg_8_1
-
-			if var_1.isMetaShip(var_13_4) then
-				tf = var_1
-
-				local var_13_5 = var_1(arg_13_0)
-				local var_13_6 = var_1.Find(var_13_5, "fire_ruchang")
-				local var_13_7 = var_1.GetComponent
-
-				typeof = var_5
-				DftAniEvent = var_2_10007
-
-				local var_13_8 = var_13_7(var_13_6, var_5(var_2_10007))
-
-				var_2.SetEndEvent(var_13_8, function(arg_14_0)
-					setActive = var_3_10001
-
-					var_3_10001(var_8_55, true)
-
-					setActive = var_3_10001
-
-					var_3_10001(var_0, false)
+				tf(arg_13_0):Find("fire_ruchang"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function(arg_14_0)
+					setActive(var_8_13, true)
+					setActive(var_13_0, false)
 
 					return
 				end)
 			end
 
-			setActive = var_1
+			setActive(var_8_13, false)
 
-			var_1(var_8_55, false)
+			arg_8_0.effectObj = arg_13_0
 
-			local var_13_9 = arg_8_0
-
-			var_13_9.effectObj = arg_13_0
-			setActive = var_13_9
-
-			var_13_9(arg_8_0.effectObj, arg_8_0.isOpeningEnd)
+			setActive(arg_8_0.effectObj, arg_8_0.isOpeningEnd)
 
 			return
 		end)
 	else
-		arg_8_0.effectObj = arg_8_0.rarityEffect[var_8_44]
-		setActive = var_24
+		arg_8_0.effectObj = arg_8_0.rarityEffect[var_8_6]
 
-		var_24(arg_8_0.effectObj, arg_8_0.isOpeningEnd)
+		setActive(arg_8_0.effectObj, arg_8_0.isOpeningEnd)
 	end
 
 	arg_8_0:playOpening(function()
-		local var_15_0 = arg_8_0
-
-		var_0.ResumeAnimation(var_15_0)
-
-		local var_15_1 = arg_8_0
-
-		var_0.DisplayWord(var_15_1)
+		arg_8_0:ResumeAnimation()
+		arg_8_0:DisplayWord()
 
 		return
 	end)
@@ -865,131 +377,61 @@ function var_0_1.setShip(arg_8_0, arg_8_1)
 	return
 end
 
-function var_0_1.PauseAnimation(arg_16_0)
+function var_0_0.PauseAnimation(arg_16_0)
 	arg_16_0._canvasGroup.alpha = 0
 	arg_16_0._animator.enabled = false
 
 	return
 end
 
-function var_0_1.ResumeAnimation(arg_17_0)
+function var_0_0.ResumeAnimation(arg_17_0)
 	arg_17_0._canvasGroup.alpha = 1
 	arg_17_0._animator.enabled = true
 	arg_17_0.isOpeningEnd = true
 
 	if arg_17_0.effectObj then
-		setActive = var_1
-
-		var_1(arg_17_0.effectObj, true)
+		setActive(arg_17_0.effectObj, true)
 	end
 
 	return
 end
 
-function var_0_1.DisplayWord(arg_18_0)
-	local var_18_0
+function var_0_0.DisplayWord(arg_18_0)
 	local var_18_1 = ""
 	local var_18_2
-	local var_18_4
 
 	if arg_18_0.isRemoulded then
-		local var_18_3 = arg_18_0._shipVO
+		local var_18_3 = arg_18_0._shipVO:getRemouldSkinId()
 
-		var_18_4 = var_18_4.getRemouldSkinId(var_18_3)
-		ShipWordHelper = var_1_10005
-		var_1_10005 = var_1_10005.RawGetWord
-		var_1_10007 = var_18_4
-		ShipWordHelper = var_1_10008
+		var_18_1 = ShipWordHelper.RawGetWord(var_18_3, ShipWordHelper.WORD_TYPE_UNLOCK)
 
-		if var_1_10005(var_1_10007, var_1_10008.WORD_TYPE_UNLOCK) == "" then
-			ShipWordHelper = var_1_10005
-			var_1_10005 = var_1_10005.GetWordAndCV
-			var_1_10007 = var_18_4
-			ShipWordHelper = var_8
+		if var_18_1 == "" then
+			local var_18_4
 
+			var_18_4, var_18_2, var_18_1 = ShipWordHelper.GetWordAndCV(var_18_3, ShipWordHelper.WORD_TYPE_DROP)
+		else
 			local var_18_5
 
-			var_1_10005, var_18_5, var_1_10007 = var_1_10005(var_1_10007, var_8.WORD_TYPE_DROP)
-			var_18_1 = var_1_10007
-			var_18_2 = var_18_5
-
-			local var_18_6 = var_1_10005
-		else
-			ShipWordHelper = var_1_10005
-			var_1_10005 = var_1_10005.GetWordAndCV
-			var_1_10007 = var_18_4
-			ShipWordHelper = var_8
-
-			local var_18_7
-
-			var_1_10005, var_18_7, var_1_10007 = var_1_10005(var_1_10007, var_8.WORD_TYPE_UNLOCK)
-			var_18_1 = var_1_10007
-			var_18_2 = var_18_7
-
-			local var_18_8 = var_1_10005
+			var_18_5, var_18_2, var_18_1 = ShipWordHelper.GetWordAndCV(var_18_3, ShipWordHelper.WORD_TYPE_UNLOCK)
 		end
 	else
-		ShipWordHelper = var_18_4
-		var_18_4 = var_18_4.GetWordAndCV
+		local var_18_6
 
-		local var_18_9 = arg_18_0._shipVO
-		local var_18_10 = var_6.getSkinId(var_18_9)
-
-		ShipWordHelper = var_1_10007
-
-		local var_18_11
-
-		var_18_4, var_1_10005, var_18_11 = var_18_4(var_18_10, var_1_10007.WORD_TYPE_UNLOCK)
-		var_18_1 = var_18_11
-		var_18_2 = var_1_10005
-
-		local var_18_12 = var_18_4
+		var_18_6, var_18_2, var_18_1 = ShipWordHelper.GetWordAndCV(arg_18_0._shipVO:getSkinId(), ShipWordHelper.WORD_TYPE_UNLOCK)
 	end
 
-	setWidgetText = var_18_4
+	setWidgetText(arg_18_0._dialogue, SwitchSpecialChar(var_18_1, true), "Text")
 
-	local var_18_13 = arg_18_0._dialogue
+	arg_18_0._dialogue.transform.localScale = Vector3(0, 1, 1)
 
-	SwitchSpecialChar = var_1_10007
-
-	var_18_4(var_18_13, var_1_10007(var_18_1, true), "Text")
-
-	local var_18_14 = arg_18_0._dialogue.transform
-
-	Vector3 = var_1_10005
-	var_18_14.localScale = var_1_10005(0, 1, 1)
-	SetActive = var_18_14
-
-	var_18_14(arg_18_0._dialogue, false)
+	SetActive(arg_18_0._dialogue, false)
 	arg_18_0:AddLeanTween(function()
-		LeanTween = var_2_10000
-
-		local var_19_0 = var_2_10000.delayedCall
-		local var_19_1 = 0.5
-
-		System = var_2_10003
-
-		return var_19_0(var_19_1, var_2_10003.Action(function()
-			SetActive = var_3_10000
-
-			var_3_10000(arg_18_0._dialogue, true)
-
-			local var_20_0 = arg_18_0
-
-			var_0.AddLeanTween(var_20_0, function()
-				LeanTween = var_4_10000
-
-				local var_21_0 = var_4_10000.scale
-				local var_21_1 = arg_18_0._dialogue
-
-				Vector3 = var_4_10003
-
-				return var_21_0(var_21_1, var_4_10003(1, 1, 1), 0.1)
+		return LeanTween.delayedCall(0.5, System.Action(function()
+			SetActive(arg_18_0._dialogue, true)
+			arg_18_0:AddLeanTween(function()
+				return LeanTween.scale(arg_18_0._dialogue, Vector3(1, 1, 1), 0.1)
 			end)
-
-			local var_20_1 = arg_18_0
-
-			var_0.voice(var_20_1, var_18_2)
+			arg_18_0:voice(var_18_2)
 
 			return
 		end))
@@ -998,465 +440,179 @@ function var_0_1.DisplayWord(arg_18_0)
 	return
 end
 
-function var_0_1.updateShip(arg_22_0, arg_22_1)
+function var_0_0.updateShip(arg_22_0, arg_22_1)
 	arg_22_0._shipVO = arg_22_1
 
 	return
 end
 
-function var_0_1.switch2Property(arg_23_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_23_0.newTF, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_23_0._dialogue, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_23_0.rarityTF, false)
-
-	setActive = var_1_10001
-
-	local var_23_0 = arg_23_0._shake
-
-	var_1_10001(var_3.Find(var_23_0, "rarity/nation"), false)
-
-	local var_23_1 = arg_23_0._shake
-	local var_23_2 = var_1.Find(var_23_1, "ship_type")
-
-	setActive = var_1_10002
-
-	var_1_10002(var_23_2, true)
+function var_0_0.switch2Property(arg_23_0)
+	setActive(arg_23_0.newTF, false)
+	setActive(arg_23_0._dialogue, false)
+	setActive(arg_23_0.rarityTF, false)
+	setActive(arg_23_0._shake:Find("rarity/nation"), false)
+	setActive(arg_23_0._shake:Find("ship_type"), true)
 	arg_23_0:AddLeanTween(function()
-		LeanTween = var_2_10000
-
-		local var_24_0 = var_2_10000.move
-
-		rtf = var_2_10002
-
-		local var_24_1 = var_2_10002(var_23_2)
-
-		Vector3 = var_2_10003
-
-		return var_24_0(var_24_1, var_2_10003(0, -149.55, 0), 0.3)
+		return LeanTween.move(rtf(var_0), Vector3(0, -149.55, 0), 0.3)
 	end)
 	arg_23_0:AddLeanTween(function()
-		LeanTween = var_2_10000
-
-		local var_25_0 = var_2_10000.move
-
-		rtf = var_2_10002
-
-		local var_25_1 = var_2_10002(arg_23_0._paintingTF)
-
-		Vector3 = var_2_10003
-
-		return var_25_0(var_25_1, var_2_10003(-59, 21, 0), 0.2)
+		return LeanTween.move(rtf(arg_23_0._paintingTF), Vector3(-59, 21, 0), 0.2)
 	end)
 	arg_23_0:DisplayNewShipDocumentView()
 
 	return
 end
 
-function var_0_1.showExitTip(arg_26_0, arg_26_1)
-	local var_26_0 = arg_26_0._shipVO
-	local var_26_1 = var_2.GetLockState(var_26_0)
+function var_0_0.showExitTip(arg_26_0, arg_26_1)
+	local var_26_0 = getProxy(PlayerProxy):getRawData():GetCommonFlag(_G[pg.settings_other_template[22].name])
 
-	pg = var_1_10003
-
-	local var_26_2 = var_1_10003.settings_other_template[22]
-
-	getProxy = var_26_0
-	PlayerProxy = var_1_10006
-
-	local var_26_3 = var_26_0(var_1_10006)
-	local var_26_4 = var_4.getRawData(var_26_3)
-	local var_26_5 = var_4.GetCommonFlag
-
-	_G = var_1_10007
-
-	local var_26_6 = var_26_5(var_26_4, var_1_10007[var_26_2.name])
-
-	if var_26_2.default == 1 then
-		var_26_6 = not var_26_6
+	if pg.settings_other_template[22].default == 1 then
+		var_26_0 = not var_26_0
 	end
 
-	local var_26_9
-
-	if arg_26_0._shipVO.virgin then
-		Ship = var_5
-
-		if var_26_1 == var_5.LOCK_STATE_UNLOCK and not var_26_6 then
-			if arg_26_0.effectObj then
-				setActive = var_5
-
-				var_5(arg_26_0.effectObj, false)
-			end
-
-			if arg_26_0.effectLineObj then
-				setActive = var_5
-
-				var_5(arg_26_0.effectLineObj, false)
-			end
-
-			pg = var_5
-
-			local var_26_7 = var_5.MsgboxMgr.GetInstance()
-			local var_26_8 = var_5.ShowMsgBox
-
-			var_26_9 = {
-				modal = true
-			}
-			i18n = var_1_10009
-			var_26_9.content = var_1_10009("ship_lock_tip")
-
-			function var_26_9.onYes()
-				triggerButton = var_2_10000
-
-				var_2_10000(arg_26_0._lockBtn)
-
-				if arg_26_1 then
-					arg_26_1()
-				else
-					local var_27_0 = arg_26_0
-					local var_27_1 = var_0.emit
-
-					NewShipMediator = var_2_10003
-
-					var_27_1(var_27_0, var_2_10003.ON_EXIT)
-				end
-
-				return
-			end
-
-			function var_26_9.onNo()
-				if arg_26_1 then
-					arg_26_1()
-				else
-					local var_28_0 = arg_26_0
-					local var_28_1 = var_0.emit
-
-					NewShipMediator = var_2_10003
-
-					var_28_1(var_28_0, var_2_10003.ON_EXIT)
-				end
-
-				return
-			end
-
-			var_26_8(var_26_7, var_26_9)
-
-			goto label_26_0
+	if arg_26_0._shipVO.virgin and arg_26_0._shipVO:GetLockState() == Ship.LOCK_STATE_UNLOCK and not var_26_0 then
+		if arg_26_0.effectObj then
+			setActive(arg_26_0.effectObj, false)
 		end
-	end
 
-	if arg_26_1 then
+		if arg_26_0.effectLineObj then
+			setActive(arg_26_0.effectLineObj, false)
+		end
+
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			modal = true,
+			content = i18n("ship_lock_tip"),
+			onYes = function()
+				triggerButton(arg_26_0._lockBtn)
+
+				if arg_26_1 then
+					arg_26_1()
+				else
+					arg_26_0:emit(NewShipMediator.ON_EXIT)
+				end
+
+				return
+			end,
+			onNo = function()
+				if arg_26_1 then
+					arg_26_1()
+				else
+					arg_26_0:emit(NewShipMediator.ON_EXIT)
+				end
+
+				return
+			end
+		})
+	elseif arg_26_1 then
 		arg_26_1()
 	else
-		local var_26_10 = arg_26_0
-		local var_26_11 = arg_26_0.emit
-
-		NewShipMediator = var_26_9
-
-		var_26_11(var_26_10, var_26_9.ON_EXIT)
+		arg_26_0:emit(NewShipMediator.ON_EXIT)
 	end
 
-	::label_26_0::
+	return
+end
+
+function var_0_0.UpdateLockButton(arg_29_0, arg_29_1)
+	setActive(arg_29_0._lockBtn, arg_29_1 ~= Ship.LOCK_STATE_LOCK)
+	setActive(arg_29_0._unlockBtn, arg_29_1 ~= Ship.LOCK_STATE_UNLOCK)
 
 	return
 end
 
-function var_0_1.UpdateLockButton(arg_29_0, arg_29_1)
-	setActive = var_1_10002
-
-	local var_29_0 = arg_29_0._lockBtn
-
-	Ship = var_1_10005
-
-	var_1_10002(var_29_0, arg_29_1 ~= var_1_10005.LOCK_STATE_LOCK)
-
-	setActive = var_1_10002
-
-	local var_29_1 = arg_29_0._unlockBtn
-
-	Ship = var_5
-
-	var_1_10002(var_29_1, arg_29_1 ~= var_5.LOCK_STATE_UNLOCK)
+function var_0_0.updateLockTF(arg_30_0, arg_30_1)
+	setActive(arg_30_0._lockTF, not arg_30_1)
 
 	return
 end
 
-function var_0_1.updateLockTF(arg_30_0, arg_30_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_30_0._lockTF, not arg_30_1)
-
-	return
-end
-
-function var_0_1.didEnter(arg_31_0)
-	onButton = var_1_10001
-
-	local var_31_0 = arg_31_0
-	local var_31_1 = arg_31_0._lockBtn
-
-	local function var_31_2()
-		local var_32_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_32_0)
-
-		local var_32_1 = arg_31_0
-		local var_32_2 = var_0.emit
-
-		NewShipMediator = var_2_10003
-
-		local var_32_3 = var_2_10003.ON_LOCK
-		local var_32_4 = {
+function var_0_0.didEnter(arg_31_0)
+	onButton(arg_31_0, arg_31_0._lockBtn, function()
+		arg_31_0:StopAutoExitTimer()
+		arg_31_0:emit(NewShipMediator.ON_LOCK, {
 			arg_31_0._shipVO.id
-		}
-
-		Ship = var_5
-
-		var_32_2(var_32_1, var_32_3, var_32_4, var_5.LOCK_STATE_LOCK)
+		}, Ship.LOCK_STATE_LOCK)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_0, var_31_1, var_31_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_3 = arg_31_0
-	local var_31_4 = arg_31_0._unlockBtn
-
-	local function var_31_5()
-		local var_33_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_33_0)
-
-		local var_33_1 = arg_31_0
-		local var_33_2 = var_0.emit
-
-		NewShipMediator = var_2_10003
-
-		local var_33_3 = var_2_10003.ON_LOCK
-		local var_33_4 = {
+	end, SFX_PANEL)
+	onButton(arg_31_0, arg_31_0._unlockBtn, function()
+		arg_31_0:StopAutoExitTimer()
+		arg_31_0:emit(NewShipMediator.ON_LOCK, {
 			arg_31_0._shipVO.id
-		}
-
-		Ship = var_5
-
-		var_33_2(var_33_1, var_33_3, var_33_4, var_5.LOCK_STATE_UNLOCK)
+		}, Ship.LOCK_STATE_UNLOCK)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_3, var_31_4, var_31_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_6 = arg_31_0
-	local var_31_7 = arg_31_0._viewBtn
-
-	local function var_31_8()
-		local var_34_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_34_0)
+	end, SFX_PANEL)
+	onButton(arg_31_0, arg_31_0._viewBtn, function()
+		arg_31_0:StopAutoExitTimer()
 
 		arg_31_0.isInView = true
 
-		local var_34_1 = arg_31_0
-
-		var_0.paintView(var_34_1)
-
-		setActive = var_0
-
-		var_0(arg_31_0.clickTF, false)
+		arg_31_0:paintView()
+		setActive(arg_31_0.clickTF, false)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_6, var_31_7, var_31_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_9 = arg_31_0
-	local var_31_10 = arg_31_0._evaluationBtn
-
-	local function var_31_11()
-		local var_35_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_35_0)
-
-		local var_35_1 = arg_31_0
-		local var_35_2 = var_0.emit
-
-		NewShipMediator = var_2_10003
-
-		local var_35_3 = var_2_10003.ON_EVALIATION
-		local var_35_4 = arg_31_0._shipVO
-
-		var_35_2(var_35_1, var_35_3, var_4.getGroupId(var_35_4))
+	end, SFX_PANEL)
+	onButton(arg_31_0, arg_31_0._evaluationBtn, function()
+		arg_31_0:StopAutoExitTimer()
+		arg_31_0:emit(NewShipMediator.ON_EVALIATION, arg_31_0._shipVO:getGroupId())
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_9, var_31_10, var_31_11, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_12 = arg_31_0
-	local var_31_13 = arg_31_0._shareBtn
-
-	local function var_31_14()
-		local var_36_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_36_0)
-
-		pg = var_0
-
-		local var_36_1 = var_0.ShareMgr.GetInstance()
-		local var_36_2 = var_0.Share
-
-		pg = var_2_10003
-
-		var_36_2(var_36_1, var_2_10003.ShareMgr.TypeNewShip)
+	end, SFX_PANEL)
+	onButton(arg_31_0, arg_31_0._shareBtn, function()
+		arg_31_0:StopAutoExitTimer()
+		pg.ShareMgr.GetInstance():Share(pg.ShareMgr.TypeNewShip)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_12, var_31_13, var_31_14, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_15 = arg_31_0
-	local var_31_16 = arg_31_0.clickTF
-
-	local function var_31_17()
-		local var_37_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_37_0)
+	end, SFX_PANEL)
+	onButton(arg_31_0, arg_31_0.clickTF, function()
+		arg_31_0:StopAutoExitTimer()
 
 		if arg_31_0.isInView or not arg_31_0.isLoadBg then
 			return
 		end
 
-		local var_37_1 = arg_31_0
-
-		var_0.showExitTip(var_37_1)
+		arg_31_0:showExitTip()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_31_15, var_31_16, var_31_17, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_18 = arg_31_0
-	local var_31_19 = arg_31_0.audioBtn
-
-	local function var_31_20()
-		local var_38_0 = arg_31_0
-
-		var_0.StopAutoExitTimer(var_38_0)
+	end, SFX_CANCEL)
+	onButton(arg_31_0, arg_31_0.audioBtn, function()
+		arg_31_0:StopAutoExitTimer()
 
 		if arg_31_0.isInView then
 			return
 		end
 
-		local var_38_2
-
 		if not arg_31_0.isOpenProperty then
-			local var_38_1 = arg_31_0
+			arg_31_0:switch2Property()
 
-			var_38_2.switch2Property(var_38_1)
-
-			var_38_2 = arg_31_0
-			var_38_2.isOpenProperty = true
+			arg_31_0.isOpenProperty = true
 		end
 
-		setActive = var_38_2
-
-		var_38_2(arg_31_0.audioBtn, not arg_31_0.isRemoulded and not arg_31_0.isOpenProperty)
+		setActive(arg_31_0.audioBtn, not arg_31_0.isRemoulded and not arg_31_0.isOpenProperty)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_18, var_31_19, var_31_20, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_31_21 = arg_31_0
-	local var_31_22 = arg_31_0._skipButton
-
-	local function var_31_23()
-		local var_39_0 = arg_31_0
-
-		var_0.showExitTip(var_39_0, function()
-			local var_40_0 = arg_31_0
-			local var_40_1 = var_0.emit
-
-			NewShipMediator = var_3_10003
-
-			var_40_1(var_40_0, var_3_10003.ON_SKIP_BATCH)
+	end, SFX_PANEL)
+	onButton(arg_31_0, arg_31_0._skipButton, function()
+		arg_31_0:showExitTip(function()
+			arg_31_0:emit(NewShipMediator.ON_SKIP_BATCH)
 
 			return
 		end)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_31_21, var_31_22, var_31_23, var_1_10006)
-
-	pg = var_1_10001
-
-	local var_31_24 = var_1_10001.CriMgr.GetInstance()
-	local var_31_25 = var_1.PlaySoundEffect_V3
-
-	SFX_UI_DOCKYARD_CHARGET = var_31_22
-
-	var_31_25(var_31_24, var_31_22)
-
-	pg = var_31_25
-
-	local var_31_26 = var_31_25.SystemGuideMgr.GetInstance()
-
-	var_1.Play(var_31_26, arg_31_0)
+	end, SFX_PANEL)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_DOCKYARD_CHARGET)
+	pg.SystemGuideMgr.GetInstance():Play(arg_31_0)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_41_0)
+function var_0_0.onBackPressed(arg_41_0)
 	if arg_41_0.inAnimating then
 		return
 	end
 
-	pg = var_1
-
-	local var_41_0 = var_1.CriMgr.GetInstance()
-	local var_41_1 = var_1.PlaySoundEffect_V3
-
-	SFX_CANCEL = var_1_10004
-
-	var_41_1(var_41_0, var_1_10004)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	if arg_41_0.isInView then
 		arg_41_0:hidePaintView(true)
@@ -1465,226 +621,123 @@ function var_0_1.onBackPressed(arg_41_0)
 	end
 
 	arg_41_0:DestroyNewShipDocumentView()
-
-	triggerButton = var_1
-
-	var_1(arg_41_0.clickTF)
+	triggerButton(arg_41_0.clickTF)
 
 	return
 end
 
-function var_0_1.paintView(arg_42_0)
+function var_0_0.paintView(arg_42_0)
 	local var_42_0 = {}
-	local var_42_1 = arg_42_0._shake.childCount
-	local var_42_2 = 0
 
-	while var_42_2 < var_42_1 do
-		local var_42_3 = arg_42_0._shake
+	while 0 < arg_42_0._shake.childCount do
+		local var_42_1 = arg_42_0._shake:GetChild(0)
 
-		if var_1_10004.GetChild(var_42_3, var_42_2).gameObject.activeSelf and var_1_10004 ~= arg_42_0._paintingTF and var_1_10004 ~= arg_42_0._bg and var_1_10004 ~= arg_42_0._drag then
-			var_42_0[#var_42_0 + 1] = var_1_10004
-			setActive = var_5
+		if var_42_1.gameObject.activeSelf and var_42_1 ~= arg_42_0._paintingTF and var_42_1 ~= arg_42_0._bg and var_42_1 ~= arg_42_0._drag then
+			({})[#{} + 1] = var_42_1
 
-			var_5(var_1_10004, false)
+			setActive(var_42_1, false)
 		end
-
-		var_42_2 = var_42_2 + 1
 	end
 
-	setActive = var_1_10004
+	setActive(arg_42_0._paintingShadowTF, false)
+	openPortrait()
 
-	var_1_10004(arg_42_0._paintingShadowTF, false)
+	local var_42_3 = arg_42_0._paintingTF.anchoredPosition.x
+	local var_42_4 = arg_42_0._paintingTF.anchoredPosition.y
+	local var_42_5 = arg_42_0._tf.rect.width / UnityEngine.Screen.width
+	local var_42_6 = arg_42_0._tf.rect.height / UnityEngine.Screen.height
+	local var_42_7 = arg_42_0._paintingTF.rect.width / 2
+	local var_42_8 = arg_42_0._paintingTF.rect.height / 2
+	local var_42_9
+	local var_42_10
 
-	openPortrait = var_1_10004
-
-	var_1_10004()
-
-	local var_42_4 = arg_42_0._paintingTF.anchoredPosition.x
-	local var_42_5 = var_4.anchoredPosition.y
-	local var_42_6 = var_4.rect.width
-	local var_42_7 = var_4.rect.height
-	local var_42_8 = arg_42_0._tf.rect.width
-
-	UnityEngine = var_1_10010
-
-	local var_42_9 = var_42_8 / var_1_10010.Screen.width
-	local var_42_10 = arg_42_0._tf.rect.height
-
-	UnityEngine = var_1_10011
-
-	local var_42_11 = var_42_10 / var_1_10011.Screen.height
-	local var_42_12 = var_42_6 / 2
-	local var_42_13 = var_42_7 / 2
-	local var_42_14
-	local var_42_15
-
-	LeanTween = var_1_10015
-
-	local var_42_16 = var_1_10015.isTweening
-
-	go = var_1_10017
-
-	if not var_42_16(var_1_10017(var_4)) then
+	if not LeanTween.isTweening(go(arg_42_0._paintingTF)) then
 		arg_42_0:AddLeanTween(function()
-			LeanTween = var_2_10000
-
-			local var_43_0 = var_2_10000.moveX
-
-			rtf = var_2_10002
-
-			local var_43_1 = var_43_0(var_2_10002(var_0), 150, 0.5)
-			local var_43_2 = var_0.setEase
-
-			LeanTweenType = var_3
-
-			return var_43_2(var_43_1, var_3.easeInOutSine)
+			return LeanTween.moveX(rtf(var_0), 150, 0.5):setEase(LeanTweenType.easeInOutSine)
 		end)
 	end
 
-	GetOrAddComponent = var_15
+	local var_42_11 = GetOrAddComponent(arg_42_0._drag, "MultiTouchZoom")
 
-	local var_42_17 = var_15(arg_42_0._drag, "MultiTouchZoom")
+	var_42_11:SetZoomTarget(arg_42_0._paintingTF)
 
-	var_15.SetZoomTarget(var_42_17, arg_42_0._paintingTF)
+	local var_42_12 = GetOrAddComponent(arg_42_0._drag, "EventTriggerListener")
 
-	GetOrAddComponent = var_16
-	arg_42_0.dragTrigger = var_16(arg_42_0._drag, "EventTriggerListener")
+	arg_42_0.dragTrigger = var_42_12
 
-	local var_42_18 = true
+	local var_42_13 = true
 
-	var_15.enabled = true
-	var_16.enabled = true
+	var_42_11.enabled = true
+	var_42_12.enabled = true
 
-	local var_42_19 = false
+	local var_42_14 = false
 
-	var_16:AddPointDownFunc(function(arg_44_0)
-		Input = var_2_10001
-
-		if var_2_10001.touchCount ~= 1 then
-			IsUnityEditor = var_1
-
-			if var_1 then
-				var_42_19 = true
-				var_42_18 = true
-			else
-				Input = var_1
-
-				if var_1.touchCount >= 2 then
-					var_42_18 = false
-					var_42_19 = false
-				end
-			end
-
-			return
-		end
-	end)
-	var_16:AddPointUpFunc(function(arg_45_0)
-		Input = var_2_10001
-
-		if var_2_10001.touchCount <= 2 then
-			var_42_18 = true
+	var_42_12:AddPointDownFunc(function(arg_44_0)
+		if Input.touchCount == 1 or IsUnityEditor then
+			var_42_14 = true
+			var_42_13 = true
+		elseif Input.touchCount >= 2 then
+			var_42_13 = false
+			var_42_14 = false
 		end
 
 		return
 	end)
-	var_16:AddBeginDragFunc(function(arg_46_0, arg_46_1)
-		var_42_19 = false
-
-		local var_46_0 = arg_46_1.position.x * var_42_9 - var_42_12
-
-		tf = var_3
-		var_42_14 = var_46_0 - var_3(arg_42_0._paintingTF).localPosition.x
-
-		local var_46_1 = arg_46_1.position.y * var_42_11 - var_42_13
-
-		tf = var_3
-		var_42_15 = var_46_1 - var_3(arg_42_0._paintingTF).localPosition.y
-
-		return
-	end)
-	var_16:AddDragFunc(function(arg_47_0, arg_47_1)
-		if var_42_18 then
-			tf = var_2
-
-			local var_47_0 = var_2(arg_42_0._paintingTF).localPosition
-
-			tf = var_2_10003
-
-			local var_47_1 = var_2_10003(arg_42_0._paintingTF)
-
-			Vector3 = var_4
-			var_47_1.localPosition = var_4(arg_47_1.position.x * var_42_9 - var_42_12 - var_42_14, arg_47_1.position.y * var_42_11 - var_42_13 - var_42_15, -22)
+	var_42_12:AddPointUpFunc(function(arg_45_0)
+		if Input.touchCount <= 2 then
+			var_42_13 = true
 		end
 
 		return
 	end)
-
-	onButton = var_19
-
-	local var_42_20 = arg_42_0
-	local var_42_21 = arg_42_0._drag
-
-	local function var_42_22()
-		local var_48_0 = arg_42_0
-
-		var_0.hidePaintView(var_48_0)
+	var_42_12:AddBeginDragFunc(function(arg_46_0, arg_46_1)
+		var_42_14 = false
+		var_42_9 = arg_46_1.position.x * var_42_5 - var_42_7 - tf(arg_42_0._paintingTF).localPosition.x
+		var_42_10 = arg_46_1.position.y * var_42_6 - var_42_8 - tf(arg_42_0._paintingTF).localPosition.y
 
 		return
-	end
+	end)
+	var_42_12:AddDragFunc(function(arg_47_0, arg_47_1)
+		if var_42_13 then
+			local var_47_0 = tf(arg_42_0._paintingTF).localPosition
 
-	SFX_CANCEL = var_1_10024
+			tf(arg_42_0._paintingTF).localPosition = Vector3(arg_47_1.position.x * var_42_5 - var_42_7 - var_42_9, arg_47_1.position.y * var_42_6 - var_42_8 - var_42_10, -22)
+		end
 
-	var_19(var_42_20, var_42_21, var_42_22, var_1_10024)
+		return
+	end)
+	onButton(arg_42_0, arg_42_0._drag, function()
+		arg_42_0:hidePaintView()
 
-	function var_0_1.hidePaintView(arg_49_0, arg_49_1)
-		if not arg_49_1 and not var_42_19 then
+		return
+	end, SFX_CANCEL)
+
+	function var_0_0.hidePaintView(arg_49_0, arg_49_1)
+		if not arg_49_1 and not var_42_14 then
 			return
 		end
 
-		var_0.enabled = false
+		var_42_12.enabled = false
+		var_42_11.enabled = false
 
-		local var_49_0 = var_0
-
-		var_49_0.enabled = false
-		ipairs = var_49_0
-
-		for iter_49_0, iter_49_1 in var_49_0(var_42_0) do
-			setActive = var_2_10007
-
-			var_2_10007(iter_49_1, true)
+		for iter_49_0, iter_49_1 in ipairs(var_42_0) do
+			setActive(iter_49_1, true)
 		end
 
-		setActive = var_2
+		setActive(arg_49_0._paintingShadowTF, true)
+		closePortrait()
+		LeanTween.cancel(go(arg_49_0._paintingTF))
 
-		var_2(arg_49_0._paintingShadowTF, true)
+		arg_49_0._paintingTF.localScale = Vector3(1, 1, 1)
 
-		closePortrait = var_2
-
-		var_2()
-
-		LeanTween = var_2
-
-		local var_49_1 = var_2.cancel
-
-		go = var_4
-
-		var_49_1(var_4(arg_49_0._paintingTF))
-
-		local var_49_2 = arg_49_0._paintingTF
-
-		Vector3 = var_3
-		var_49_2.localScale = var_3(1, 1, 1)
-		setAnchoredPosition = var_49_2
-
-		var_49_2(arg_49_0._paintingTF, {
-			x = var_42_4,
-			y = var_42_5
+		setAnchoredPosition(arg_49_0._paintingTF, {
+			x = var_42_3,
+			y = var_42_4
 		})
 
 		arg_49_0.isInView = false
-		setActive = var_2
 
-		var_2(arg_49_0.clickTF, true)
+		setActive(arg_49_0.clickTF, true)
 
 		return
 	end
@@ -1692,21 +745,10 @@ function var_0_1.paintView(arg_42_0)
 	return
 end
 
-function var_0_1.recyclePainting(arg_50_0)
+function var_0_0.recyclePainting(arg_50_0)
 	if arg_50_0._shipVO then
-		retPaintingPrefab = var_1
-
-		local var_50_0 = arg_50_0._paintingTF
-		local var_50_1 = arg_50_0._shipVO
-
-		var_1(var_50_0, var_4.getPainting(var_50_1))
-
-		retPaintingPrefab = var_1
-
-		local var_50_2 = arg_50_0._paintingShadowTF
-		local var_50_3 = arg_50_0._shipVO
-
-		var_1(var_50_2, var_4.getPainting(var_50_3))
+		retPaintingPrefab(arg_50_0._paintingTF, arg_50_0._shipVO:getPainting())
+		retPaintingPrefab(arg_50_0._paintingShadowTF, arg_50_0._shipVO:getPainting())
 
 		arg_50_0._shipVO = nil
 	end
@@ -1714,120 +756,42 @@ function var_0_1.recyclePainting(arg_50_0)
 	return
 end
 
-function var_0_1.starsAnimation(arg_51_0)
+function var_0_0.starsAnimation(arg_51_0)
 	arg_51_0.inAnimating = true
 
-	local var_51_0 = arg_51_0._shipVO
-	local var_51_1 = var_1.getMaxStar(var_51_0)
-	local var_51_2
-
-	if 6 <= var_51_1 then
-		PlayerPrefs = var_51_2
-		var_51_2 = var_51_2.GetInt
-		RARE_SHIP_VIBRATE = var_1_10004
-
-		if var_51_2(var_1_10004, 1) > 0 then
-			LuaHelper = var_51_2
-
-			var_51_2.Vibrate()
-		end
+	if arg_51_0._shipVO:getMaxStar() >= 6 and PlayerPrefs.GetInt(RARE_SHIP_VIBRATE, 1) > 0 then
+		LuaHelper.Vibrate()
 	end
 
-	setActive = var_51_2
+	setActive(arg_51_0.starsCont, false)
 
-	var_51_2(arg_51_0.starsCont, false)
+	local var_51_0 = arg_51_0._tf:GetComponent(typeof(DftAniEvent))
 
-	local var_51_3 = arg_51_0._tf
-	local var_51_4 = var_2.GetComponent
-
-	typeof = var_5
-	DftAniEvent = var_1_10007
-
-	local var_51_5 = var_51_4(var_51_3, var_5(var_1_10007))
-
-	var_2.SetTriggerEvent(var_51_5, function(arg_52_0)
-		local var_52_0 = arg_51_0
-
-		var_1.AddLeanTween(var_52_0, function()
-			LeanTween = var_3_10000
-
-			local var_53_0 = var_3_10000.scale
-
-			rtf = var_3_10002
-
-			local var_53_1 = var_3_10002(arg_51_0.starsCont)
-
-			Vector3 = var_3_10003
-
-			local var_53_2 = var_53_0(var_53_1, var_3_10003.one, 0)
-			local var_53_3 = var_0.setOnComplete
-
-			System = var_3
-
-			return var_53_3(var_53_2, var_3.Action(function()
-				setActive = var_4_10000
-
-				var_4_10000(arg_51_0.starsCont, true)
+	var_51_0:SetTriggerEvent(function(arg_52_0)
+		arg_51_0:AddLeanTween(function()
+			return LeanTween.scale(rtf(arg_51_0.starsCont), Vector3.one, 0):setOnComplete(System.Action(function()
+				setActive(arg_51_0.starsCont, true)
 
 				return
 			end))
 		end)
 
-		local var_52_1 = arg_51_0.STAR_ANIMATION_DUR1
+		local var_52_0 = arg_51_0.STAR_ANIMATION_DUR1
 
 		for iter_52_0 = 0, arg_51_0.starsCont.childCount - 1 do
-			local var_52_2 = arg_51_0.starsCont
-			local var_52_3 = var_6.GetChild(var_52_2, iter_52_0)
-			local var_52_4 = var_6.Find(var_52_3, "star_empty")
-			local var_52_5 = var_6:Find("star")
+			local var_52_1 = arg_51_0.starsCont:GetChild(iter_52_0)
+			local var_52_2 = var_52_1:Find("star")
 
-			setActive = var_52_3
+			setActive(var_52_1:Find("star_empty"), false)
+			setActive(var_52_2, false)
 
-			var_52_3(var_52_4, false)
+			local var_52_3 = iter_52_0 * arg_51_0.STAR_ANIMATION_DUR1
 
-			setActive = var_52_3
-
-			var_52_3(var_52_5, false)
-
-			local var_52_6 = iter_52_0 * var_52_1
-			local var_52_7 = arg_51_0
-
-			var_10.AddLeanTween(var_52_7, function()
-				LeanTween = var_3_10000
-
-				local var_55_0 = var_3_10000.scale
-
-				rtf = var_3_10002
-
-				local var_55_1 = var_3_10002(var_52_4)
-
-				Vector3 = var_3_10003
-
-				local var_55_2 = var_55_0(var_55_1, var_3_10003(1.8, 1.8, 1.8), 0)
-				local var_55_3 = var_0.setDelay(var_55_2, var_52_6)
-				local var_55_4 = var_0.setOnComplete
-
-				System = var_3
-
-				return var_55_4(var_55_3, var_3.Action(function()
-					setActive = var_4_10000
-
-					var_4_10000(var_52_4, true)
-
-					local var_56_0 = arg_51_0
-
-					var_0.AddLeanTween(var_56_0, function()
-						LeanTween = var_5_10000
-
-						local var_57_0 = var_5_10000.scale
-
-						rtf = var_5_10002
-
-						local var_57_1 = var_5_10002(var_52_4)
-
-						Vector3 = var_5_10003
-
-						return var_57_0(var_57_1, var_5_10003(1, 1, 1), var_52_1)
+			arg_51_0:AddLeanTween(function()
+				return LeanTween.scale(rtf(var_0), Vector3(1.8, 1.8, 1.8), 0):setDelay(var_52_3):setOnComplete(System.Action(function()
+					setActive(var_0, true)
+					arg_51_0:AddLeanTween(function()
+						return LeanTween.scale(rtf(var_0), Vector3(1, 1, 1), var_52_0)
 					end)
 
 					return
@@ -1835,244 +799,95 @@ function var_0_1.starsAnimation(arg_51_0)
 			end)
 		end
 
-		local var_52_8 = arg_51_0._shipVO
-		local var_52_9 = var_2.getStar(var_52_8)
-		local var_52_10 = arg_51_0.STAR_ANIMATION_DUR2
-		local var_52_11 = arg_51_0.STAR_ANIMATION_DUR3
+		local var_52_4 = arg_51_0.STAR_ANIMATION_DUR2
+		local var_52_5 = arg_51_0.STAR_ANIMATION_DUR3
 
-		for iter_52_1 = 0, var_52_9 - 1 do
-			local var_52_12 = arg_51_0.starsCont
-			local var_52_13 = var_9.GetChild(var_52_12, iter_52_1)
-			local var_52_14 = var_9.Find(var_52_13, "star_empty")
-			local var_52_15 = var_9:Find("star")
-			local var_52_16 = var_52_1 * arg_51_0.starsCont.childCount + iter_52_1 * var_52_10
-			local var_52_17 = arg_51_0
+		for iter_52_1 = 0, arg_51_0._shipVO:getStar() - 1 do
+			local var_52_6 = arg_51_0.starsCont:GetChild(iter_52_1)
+			local var_52_7 = var_52_6:Find("star_empty")
+			local var_52_8 = var_52_6:Find("star")
+			local var_52_9 = arg_51_0.STAR_ANIMATION_DUR1 * arg_51_0.starsCont.childCount + iter_52_1 * arg_51_0.STAR_ANIMATION_DUR2
 
-			var_13.AddLeanTween(var_52_17, function()
-				LeanTween = var_3_10000
-
-				local var_58_0 = var_3_10000.scale
-
-				rtf = var_3_10002
-
-				local var_58_1 = var_3_10002(var_52_15)
-
-				Vector3 = var_3_10003
-
-				local var_58_2 = var_58_0(var_58_1, var_3_10003(1.8, 1.8, 1.8), 0)
-				local var_58_3 = var_0.setDelay(var_58_2, var_52_16)
-				local var_58_4 = var_0.setOnStart
-
-				System = var_3
-
-				local var_58_5 = var_58_4(var_58_3, var_3.Action(function()
-					pg = var_4_10000
-
-					local var_59_0 = var_4_10000.CriMgr.GetInstance()
-					local var_59_1 = var_0.PlaySoundEffect_V3
-
-					SFX_UI_DOCKYARD_STAR = var_4_10003
-
-					var_59_1(var_59_0, var_4_10003)
+			arg_51_0:AddLeanTween(function()
+				return LeanTween.scale(rtf(var_52_8), Vector3(1.8, 1.8, 1.8), 0):setDelay(var_52_9):setOnStart(System.Action(function()
+					pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_DOCKYARD_STAR)
 
 					return
-				end))
-				local var_58_6 = var_0.setOnComplete
-
-				System = var_3
-
-				return var_58_6(var_58_5, var_3.Action(function()
-					setActive = var_4_10000
-
-					var_4_10000(var_52_14, false)
-
-					setActive = var_4_10000
-
-					var_4_10000(var_52_15, true)
-
-					local var_60_0 = arg_51_0
-
-					var_0.AddLeanTween(var_60_0, function()
-						LeanTween = var_5_10000
-
-						local var_61_0 = var_5_10000.scale
-
-						rtf = var_5_10002
-
-						local var_61_1 = var_5_10002(var_52_15)
-
-						Vector3 = var_5_10003
-
-						return var_61_0(var_61_1, var_5_10003(1, 1, 1), var_52_10)
+				end)):setOnComplete(System.Action(function()
+					setActive(var_52_7, false)
+					setActive(var_52_8, true)
+					arg_51_0:AddLeanTween(function()
+						return LeanTween.scale(rtf(var_52_8), Vector3(1, 1, 1), var_52_4)
 					end)
 
 					return
 				end))
 			end)
 
-			local var_52_18 = var_9
+			local var_52_10 = var_52_6:Find("light")
 
-			if var_9.Find(var_52_18, "light") then
-				local var_52_19 = arg_51_0
-
-				var_14.AddLeanTween(var_52_19, function()
-					LeanTween = var_3_10000
-
-					local var_62_0 = var_3_10000.delayedCall
-					local var_62_1 = var_52_16
-
-					System = var_3_10003
-
-					return var_62_0(var_62_1, var_3_10003.Action(function()
+			if var_52_10 then
+				arg_51_0:AddLeanTween(function()
+					return LeanTween.delayedCall(var_52_9, System.Action(function()
 						if arg_51_0.exited then
 							return
 						end
 
-						setActive = var_0
+						setActive(var_52_10, true)
 
-						var_0(var_0, true)
+						return
+					end))
+				end)
+				arg_51_0:AddLeanTween(function()
+					return LeanTween.alpha(rtf(var_52_10), 0, var_52_5):setDelay(var_52_9):setOnComplete(System.Action(function()
+						SetActive(var_52_10, false)
+						LeanTween.alpha(rtf(var_52_10), 1, 0)
 
 						return
 					end))
 				end)
 
-				local var_52_20 = arg_51_0
+				var_52_10.transform.localScale = Vector3(1, 1, 1)
 
-				var_14.AddLeanTween(var_52_20, function()
-					LeanTween = var_3_10000
-
-					local var_64_0 = var_3_10000.alpha
-
-					rtf = var_3_10002
-
-					local var_64_1 = var_64_0(var_3_10002(var_0), 0, var_52_11)
-					local var_64_2 = var_0.setDelay(var_64_1, var_52_16)
-					local var_64_3 = var_0.setOnComplete
-
-					System = var_3
-
-					return var_64_3(var_64_2, var_3.Action(function()
-						SetActive = var_4_10000
-
-						var_4_10000(var_0, false)
-
-						LeanTween = var_4_10000
-
-						local var_65_0 = var_4_10000.alpha
-
-						rtf = var_2
-
-						var_65_0(var_2(var_0), 1, 0)
-
-						return
-					end))
-				end)
-
-				local var_52_21 = var_13.transform
-
-				Vector3 = var_52_18
-				var_52_21.localScale = var_52_18(1, 1, 1)
-
-				local var_52_22 = arg_51_0
-
-				var_14.AddLeanTween(var_52_22, function()
-					LeanTween = var_3_10000
-
-					local var_66_0 = var_3_10000.scale
-
-					rtf = var_3_10002
-
-					local var_66_1 = var_3_10002(var_0)
-
-					Vector3 = var_3_10003
-
-					local var_66_2 = var_66_0(var_66_1, var_3_10003(0.5, 1, 1), arg_51_0.STAR_ANIMATION_DUR4)
-
-					return var_0.setDelay(var_66_2, var_52_16 + var_52_11 * 1 / 3)
+				arg_51_0:AddLeanTween(function()
+					return LeanTween.scale(rtf(var_52_10), Vector3(0.5, 1, 1), arg_51_0.STAR_ANIMATION_DUR4):setDelay(var_52_9 + var_52_5 * 1 / 3)
 				end)
 			end
 		end
 
 		return
 	end)
-	var_2:SetEndEvent(function(arg_67_0)
-		local var_67_0 = arg_51_0._shipVO
+	var_51_0:SetEndEvent(function(arg_67_0)
+		if arg_51_0._shipVO:getReMetaSpecialItemVO() then
+			GetComponent(arg_51_0.metaRepeatTF, "CanvasGroup").alpha = 1
 
-		if var_1.getReMetaSpecialItemVO(var_67_0) then
-			GetComponent = var_2_10002
-			var_2_10002(arg_51_0.metaRepeatTF, "CanvasGroup").alpha = 1
-
-			local var_67_1 = arg_51_0
-			local var_67_2 = var_3.managedTween
-
-			LeanTween = var_2_10006
-
-			local var_67_3 = var_2_10006.value
-
-			local function var_67_4()
-				setAnchoredPosition = var_3_10000
-
-				var_3_10000(arg_51_0.metaRepeatTF, {
+			arg_51_0:managedTween(LeanTween.value, function()
+				setAnchoredPosition(arg_51_0.metaRepeatTF, {
 					x = 0
 				})
 
-				local var_68_0 = arg_51_0
+				arg_51_0.inAnimating = false
 
-				var_68_0.inAnimating = false
-				setActive = var_68_0
-
-				local var_68_1 = arg_51_0.npc
-				local var_68_2 = arg_51_0._shipVO
-
-				var_68_0(var_68_1, var_3.isActivityNpc(var_68_2))
-
-				setActive = var_68_0
-
-				var_68_0(arg_51_0._shade, false)
+				setActive(arg_51_0.npc, arg_51_0._shipVO:isActivityNpc())
+				setActive(arg_51_0._shade, false)
 
 				return
-			end
-
-			go = var_2_10008
-
-			local var_67_5 = var_67_2(var_67_1, var_67_3, var_67_4, var_2_10008(arg_51_0.metaRepeatTF), arg_51_0.metaRepeatTF.rect.width, 0, 1)
-			local var_67_6 = var_3.setOnUpdate
-
-			System = var_67_3
-
-			var_67_6(var_67_5, var_67_3.Action_float(function(arg_69_0)
-				setAnchoredPosition = var_3_10001
-
-				var_3_10001(arg_51_0.metaRepeatTF, {
+			end, go(arg_51_0.metaRepeatTF), arg_51_0.metaRepeatTF.rect.width, 0, 1):setOnUpdate(System.Action_float(function(arg_69_0)
+				setAnchoredPosition(arg_51_0.metaRepeatTF, {
 					x = arg_69_0
 				})
 
 				return
 			end))
-
-			setAnchoredPosition = var_67_6
-
-			var_67_6(arg_51_0.metaRepeatTF, {
+			setAnchoredPosition(arg_51_0.metaRepeatTF, {
 				x = arg_51_0.metaRepeatTF.rect.width
 			})
-
-			setActive = var_67_6
-
-			var_67_6(arg_51_0.metaRepeatTF, true)
+			setActive(arg_51_0.metaRepeatTF, true)
 		else
-			local var_67_7 = arg_51_0
+			arg_51_0.inAnimating = false
 
-			var_67_7.inAnimating = false
-			setActive = var_67_7
-
-			local var_67_8 = arg_51_0.npc
-			local var_67_9 = arg_51_0._shipVO
-
-			var_67_7(var_67_8, var_5.isActivityNpc(var_67_9))
-
-			setActive = var_67_7
-
-			var_67_7(arg_51_0._shade, false)
+			setActive(arg_51_0.npc, arg_51_0._shipVO:isActivityNpc())
+			setActive(arg_51_0._shade, false)
 		end
 
 		return
@@ -2081,19 +896,9 @@ function var_0_1.starsAnimation(arg_51_0)
 	return
 end
 
-function var_0_1.playOpening(arg_70_0, arg_70_1)
-	local var_70_0 = arg_70_0._shipVO
-
-	if var_2.isMetaShip(var_70_0) then
-		getProxy = var_2
-		ContextProxy = var_70_0
-
-		local var_70_1 = var_2(var_70_0)
-		local var_70_2 = var_2.getContextByMediator
-
-		BuildShipMediator = var_1_10005
-
-		if not var_70_2(var_70_1, var_1_10005) then
+function var_0_0.playOpening(arg_70_0, arg_70_1)
+	if arg_70_0._shipVO:isMetaShip() then
+		if not getProxy(ContextProxy):getContextByMediator(BuildShipMediator) then
 			if arg_70_1 then
 				arg_70_1()
 			end
@@ -2102,36 +907,11 @@ function var_0_1.playOpening(arg_70_0, arg_70_1)
 		end
 	end
 
-	local var_70_3
-	local var_70_4 = arg_70_0._shipVO
-	local var_70_5
+	local var_70_0 = arg_70_0._shipVO:isRemoulded() and ShipGroup.GetGroupConfig(arg_70_0._shipVO:getGroupId()).trans_skin or ShipGroup.getDefaultSkin(arg_70_0._shipVO:getGroupId()).id
+	local var_70_1 = "star_level_unlock_anim_" .. var_70_0
 
-	if var_3.isRemoulded(var_70_4) then
-		ShipGroup = var_70_5
-		var_70_5 = var_70_5.GetGroupConfig
-
-		local var_70_6 = arg_70_0._shipVO
-
-		var_70_3 = var_70_5(var_70_4.getGroupId(var_70_6)).trans_skin
-	else
-		ShipGroup = var_70_5
-
-		local var_70_7 = var_70_5.getDefaultSkin
-		local var_70_8 = arg_70_0._shipVO
-
-		var_70_3 = var_70_7(var_70_4.getGroupId(var_70_8)).id
-	end
-
-	local var_70_9 = "star_level_unlock_anim_" .. var_70_3
-
-	checkABExist = var_4
-
-	if var_4("ui/skinunlockanim/" .. var_70_9) then
-		pg = var_70_4
-
-		local var_70_10 = var_70_4.CpkPlayMgr.GetInstance()
-
-		var_5.PlayCpkMovie(var_70_10, function()
+	if checkABExist("ui/skinunlockanim/" .. "star_level_unlock_anim_" .. var_70_0) then
+		pg.CpkPlayMgr.GetInstance():PlayCpkMovie(function()
 			return
 		end, function()
 			if arg_70_1 then
@@ -2139,7 +919,7 @@ function var_0_1.playOpening(arg_70_0, arg_70_1)
 			end
 
 			return
-		end, "ui/skinunlockanim", var_70_9, true, false)
+		end, "ui/skinunlockanim", var_70_1, true, false)
 	elseif arg_70_1 then
 		arg_70_1()
 	end
@@ -2147,187 +927,96 @@ function var_0_1.playOpening(arg_70_0, arg_70_1)
 	return
 end
 
-function var_0_1.ClearTweens(arg_73_0, arg_73_1)
+function var_0_0.ClearTweens(arg_73_0, arg_73_1)
 	arg_73_0:cleanManagedTween(true)
 
 	return
 end
 
-function var_0_1.willExit(arg_74_0)
-	pg = var_1_10001
-
-	local var_74_0 = var_1_10001.CpkPlayMgr.GetInstance()
-
-	var_1.DisposeCpkMovie(var_74_0)
+function var_0_0.willExit(arg_74_0)
+	pg.CpkPlayMgr.GetInstance():DisposeCpkMovie()
 	arg_74_0:StopAutoExitTimer()
 	arg_74_0:DestroyNewShipDocumentView()
 
 	if arg_74_0.designBg then
-		PoolMgr = var_1
-
-		local var_74_1 = var_1.GetInstance()
-
-		var_1.ReturnUI(var_74_1, arg_74_0.designName, arg_74_0.designBg)
+		PoolMgr.GetInstance():ReturnUI(arg_74_0.designName, arg_74_0.designBg)
 	end
 
 	if arg_74_0.metaBg then
-		PoolMgr = var_1
-
-		local var_74_2 = var_1.GetInstance()
-
-		var_1.ReturnUI(var_74_2, arg_74_0.metaName, arg_74_0.metaBg)
+		PoolMgr.GetInstance():ReturnUI(arg_74_0.metaName, arg_74_0.metaBg)
 	end
 
-	pairs = var_1
-
-	for iter_74_0, iter_74_1 in var_1(arg_74_0.rarityEffect) do
+	for iter_74_0, iter_74_1 in pairs(arg_74_0.rarityEffect) do
 		if iter_74_1 then
-			PoolMgr = var_1_10006
-
-			local var_74_3 = var_1_10006.GetInstance()
-
-			var_1_10006.ReturnUI(var_74_3, "getrole_" .. iter_74_0, iter_74_1)
+			PoolMgr.GetInstance():ReturnUI("getrole_" .. iter_74_0, iter_74_1)
 		end
 	end
 
 	if arg_74_0.dragTrigger then
-		ClearEventTrigger = var_1
-
-		var_1(arg_74_0.dragTrigger)
+		ClearEventTrigger(arg_74_0.dragTrigger)
 
 		arg_74_0.dragTrigger = nil
 	end
 
 	if not arg_74_0.isRemoulded then
-		pg = var_1
-
-		local var_74_4 = var_1.TipsMgr.GetInstance()
-		local var_74_5 = var_1.ShowTips
-
-		i18n = iter_74_0
-
-		local var_74_6 = "ship_newShipLayer_get"
-
-		pg = var_1_10007
-
-		local var_74_7 = var_1_10007.ship_data_by_type
-		local var_74_8 = arg_74_0._shipVO
-		local var_74_9 = var_74_7[var_8.getShipType(var_74_8)].type_name
-		local var_74_10 = arg_74_0._shipVO
-		local var_74_11 = iter_74_0(var_74_6, var_74_9, var_8.getName(var_74_10))
-
-		COLOR_GREEN = iter_74_1
-
-		var_74_5(var_74_4, var_74_11, iter_74_1)
+		pg.TipsMgr.GetInstance():ShowTips(i18n("ship_newShipLayer_get", pg.ship_data_by_type[arg_74_0._shipVO:getShipType()].type_name, arg_74_0._shipVO:getName()), COLOR_GREEN)
 	end
 
 	arg_74_0:recyclePainting()
-
-	pg = var_1
-
-	local var_74_12 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_74_12, arg_74_0._tf)
-
-	local var_74_13 = arg_74_0
-
-	arg_74_0.stopVoice(var_74_13)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_74_0._tf)
+	arg_74_0:stopVoice()
 
 	if arg_74_0.loadedCVBankName then
-		pg = var_1
-
-		var_1.CriMgr.UnloadCVBank(arg_74_0.loadedCVBankName)
+		pg.CriMgr.UnloadCVBank(arg_74_0.loadedCVBankName)
 
 		arg_74_0.loadedCVBankName = nil
 	end
 
-	LeanTween = var_1
-
-	local var_74_14 = var_1.isTweening
-
-	go = var_74_13
-
-	local var_74_15
-
-	if var_74_14(var_74_13(arg_74_0.rarityTF)) then
-		LeanTween = var_74_15
-		var_74_15 = var_74_15.cancel
-		go = var_3
-
-		var_74_15(var_3(arg_74_0.rarityTF))
+	if LeanTween.isTweening(go(arg_74_0.rarityTF)) then
+		LeanTween.cancel(go(arg_74_0.rarityTF))
 	end
 
-	cameraPaintViewAdjust = var_74_15
-
-	var_74_15(false)
+	cameraPaintViewAdjust(false)
 
 	return
 end
 
-function var_0_1.DisplayNewShipDocumentView(arg_75_0)
-	NewShipDocumentView = var_1_10001
+function var_0_0.DisplayNewShipDocumentView(arg_75_0)
+	arg_75_0.newShipDocumentView = NewShipDocumentView.New(arg_75_0._shake:Find("ForNotch"), arg_75_0.event, arg_75_0.contextData)
 
-	local var_75_0 = var_1_10001.New
-	local var_75_1 = arg_75_0._shake
-
-	arg_75_0.newShipDocumentView = var_75_0(var_3.Find(var_75_1, "ForNotch"), arg_75_0.event, arg_75_0.contextData)
-
-	local var_75_2 = arg_75_0.newShipDocumentView
-
-	var_1.Load(var_75_2)
-
-	local function var_75_3()
+	arg_75_0.newShipDocumentView:Load()
+	arg_75_0.newShipDocumentView:ActionInvoke("SetParams", arg_75_0._shipVO, function()
 		if not arg_75_0.isLoadBg then
 			return
 		end
 
-		local var_76_0 = arg_75_0
-
-		var_0.showExitTip(var_76_0)
+		arg_75_0:showExitTip()
 
 		return
-	end
-
-	local var_75_4 = arg_75_0.newShipDocumentView
-
-	var_2.ActionInvoke(var_75_4, "SetParams", arg_75_0._shipVO, var_75_3)
-
-	local var_75_5 = arg_75_0.newShipDocumentView
-
-	var_2.ActionInvoke(var_75_5, "RefreshUI")
+	end)
+	arg_75_0.newShipDocumentView:ActionInvoke("RefreshUI")
 
 	return
 end
 
-function var_0_1.DestroyNewShipDocumentView(arg_77_0)
-	if arg_77_0.newShipDocumentView then
-		local var_77_0 = arg_77_0.newShipDocumentView
-		local var_77_1 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_77_1(var_77_0, var_1_10004.STATES.INITED) then
-			local var_77_2 = arg_77_0.newShipDocumentView
-
-			var_1.Destroy(var_77_2)
-		end
+function var_0_0.DestroyNewShipDocumentView(arg_77_0)
+	if arg_77_0.newShipDocumentView and arg_77_0.newShipDocumentView:CheckState(BaseSubView.STATES.INITED) then
+		arg_77_0.newShipDocumentView:Destroy()
 	end
 
 	return
 end
 
-function var_0_1.StopAutoExitTimer(arg_78_0)
+function var_0_0.StopAutoExitTimer(arg_78_0)
 	if not arg_78_0.autoExitTimer then
 		return
 	end
 
-	local var_78_0 = arg_78_0.autoExitTimer
-
-	var_1.Stop(var_78_0)
+	arg_78_0.autoExitTimer:Stop()
 
 	arg_78_0.autoExitTimer = nil
 
 	return
 end
 
-return var_0_1
+return var_0_0

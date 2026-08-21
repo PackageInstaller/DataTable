@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "mini_game") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "mini_game"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.mini_game = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.mini_game
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.mini_game = rawget(pg, "mini_game") or setmetatable({
+	__name = "mini_game"
+}, confNEO)
+pg.mini_game.all = {
 	1,
 	2,
 	3,
@@ -113,6 +90,7 @@ var_0_3.all = {
 	87,
 	84,
 	88,
+	89,
 	1001,
 	1002,
 	1003,
@@ -137,25 +115,11 @@ var_0_3.all = {
 	1025,
 	1026
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.mini_game = {}
+pg.base = pg.base or {}
+pg.base.mini_game = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.mini_game
-
-	var_1_0[1] = {
+	pg.base.mini_game[1] = {
 		is_ranking = 0,
 		view_name = "TestView",
 		game_room = 0,
@@ -176,11 +140,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.mini_game
-
-	var_1_1[2] = {
+	pg.base.mini_game[2] = {
 		is_ranking = 0,
 		view_name = "SnackView",
 		game_room = 0,
@@ -210,11 +170,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.mini_game
-
-	var_1_2[3] = {
+	pg.base.mini_game[3] = {
 		is_ranking = 0,
 		view_name = "ShrineView",
 		game_room = 0,
@@ -239,11 +195,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.mini_game
-
-	var_1_3[4] = {
+	pg.base.mini_game[4] = {
 		is_ranking = 0,
 		view_name = "FireworkFactoryView",
 		game_room = 0,
@@ -274,11 +226,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.mini_game
-
-	var_1_4[5] = {
+	pg.base.mini_game[5] = {
 		is_ranking = 0,
 		view_name = "ShootingGameView",
 		game_room = 0,
@@ -309,11 +257,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.mini_game
-
-	var_1_5[6] = {
+	pg.base.mini_game[6] = {
 		is_ranking = 0,
 		view_name = "MusicGameView",
 		game_room = 0,
@@ -453,11 +397,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.mini_game
-
-	var_1_6[7] = {
+	pg.base.mini_game[7] = {
 		is_ranking = 0,
 		view_name = "HoloLiveLinkGameView",
 		game_room = 0,
@@ -472,11 +412,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 3,
 		request_data = 1
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.mini_game
-
-	var_1_7[8] = {
+	pg.base.mini_game[8] = {
 		is_ranking = 0,
 		view_name = "QTEGameView",
 		game_room = 0,
@@ -512,11 +448,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.mini_game
-
-	var_1_8[9] = {
+	pg.base.mini_game[9] = {
 		is_ranking = 0,
 		view_name = "StackGameView",
 		game_room = 0,
@@ -531,11 +463,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 5,
 		request_data = 1
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.mini_game
-
-	var_1_9[10] = {
+	pg.base.mini_game[10] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -550,11 +478,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 6,
 		request_data = 1
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.mini_game
-
-	var_1_10[11] = {
+	pg.base.mini_game[11] = {
 		is_ranking = 0,
 		view_name = "DecodeMiniGameView",
 		game_room = 0,
@@ -569,11 +493,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 7,
 		request_data = 1
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.mini_game
-
-	var_1_11[12] = {
+	pg.base.mini_game[12] = {
 		is_ranking = 0,
 		view_name = "Match3GameView",
 		game_room = 0,
@@ -588,11 +508,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 8,
 		request_data = 1
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.mini_game
-
-	var_1_12[13] = {
+	pg.base.mini_game[13] = {
 		is_ranking = 0,
 		view_name = "TowerClimbingGameView",
 		game_room = 0,
@@ -661,11 +577,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.mini_game
-
-	var_1_13[14] = {
+	pg.base.mini_game[14] = {
 		is_ranking = 0,
 		view_name = "RollingBallGameView",
 		game_room = 0,
@@ -680,11 +592,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 10,
 		request_data = 1
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.mini_game
-
-	var_1_14[15] = {
+	pg.base.mini_game[15] = {
 		is_ranking = 0,
 		view_name = "HalloweenGameView",
 		game_room = 0,
@@ -699,11 +607,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 25,
 		request_data = 1
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.mini_game
-
-	var_1_15[16] = {
+	pg.base.mini_game[16] = {
 		is_ranking = 0,
 		view_name = "MusicGameView",
 		game_room = 0,
@@ -749,11 +653,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.mini_game
-
-	var_1_16[17] = {
+	pg.base.mini_game[17] = {
 		is_ranking = 0,
 		view_name = "VolleyballGameView",
 		game_room = 0,
@@ -813,11 +713,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.mini_game
-
-	var_1_17[18] = {
+	pg.base.mini_game[18] = {
 		is_ranking = 0,
 		view_name = "SnowballGameView",
 		game_room = 0,
@@ -832,11 +728,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 14,
 		request_data = 1
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.mini_game
-
-	var_1_18[19] = {
+	pg.base.mini_game[19] = {
 		is_ranking = 0,
 		view_name = "NewYearSnackView",
 		game_room = 0,
@@ -866,11 +758,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.mini_game
-
-	var_1_19[20] = {
+	pg.base.mini_game[20] = {
 		is_ranking = 0,
 		view_name = "NewYearShrineView",
 		game_room = 0,
@@ -893,11 +781,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.mini_game
-
-	var_1_20[21] = {
+	pg.base.mini_game[21] = {
 		is_ranking = 0,
 		view_name = "FushunAdventureView",
 		game_room = 0,
@@ -912,11 +796,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 16,
 		request_data = 1
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.mini_game
-
-	var_1_21[22] = {
+	pg.base.mini_game[22] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -931,11 +811,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 17,
 		request_data = 1
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.mini_game
-
-	var_1_22[23] = {
+	pg.base.mini_game[23] = {
 		is_ranking = 0,
 		view_name = "PokeMoleView",
 		game_room = 0,
@@ -950,11 +826,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 18,
 		request_data = 1
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.mini_game
-
-	var_1_23[24] = {
+	pg.base.mini_game[24] = {
 		is_ranking = 0,
 		view_name = "IdolMasterView",
 		game_room = 0,
@@ -969,11 +841,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 19,
 		request_data = 0
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.mini_game
-
-	var_1_24[25] = {
+	pg.base.mini_game[25] = {
 		is_ranking = 0,
 		view_name = "SnackView",
 		game_room = 0,
@@ -1003,11 +871,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.mini_game
-
-	var_1_25[26] = {
+	pg.base.mini_game[26] = {
 		is_ranking = 0,
 		view_name = "FireworkFactoryView",
 		game_room = 0,
@@ -1038,11 +902,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.mini_game
-
-	var_1_26[27] = {
+	pg.base.mini_game[27] = {
 		is_ranking = 0,
 		view_name = "ShootingGameView",
 		game_room = 0,
@@ -1073,11 +933,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.mini_game
-
-	var_1_27[28] = {
+	pg.base.mini_game[28] = {
 		is_ranking = 0,
 		view_name = "RopingCowGameView",
 		game_room = 0,
@@ -1152,11 +1008,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.mini_game
-
-	var_1_28[29] = {
+	pg.base.mini_game[29] = {
 		is_ranking = 0,
 		view_name = "GuessForkGameView",
 		game_room = 0,
@@ -1171,11 +1023,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 22,
 		request_data = 0
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.mini_game
-
-	var_1_29[30] = {
+	pg.base.mini_game[30] = {
 		is_ranking = 0,
 		view_name = "CatchTreasureGameView",
 		game_room = 0,
@@ -1228,11 +1076,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.mini_game
-
-	var_1_30[31] = {
+	pg.base.mini_game[31] = {
 		is_ranking = 0,
 		view_name = "EatFoodGameView",
 		game_room = 0,
@@ -1247,11 +1091,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 35,
 		request_data = 0
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.mini_game
-
-	var_1_31[32] = {
+	pg.base.mini_game[32] = {
 		is_ranking = 0,
 		view_name = "GridGameView",
 		game_room = 0,
@@ -1266,11 +1106,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 26,
 		request_data = 0
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.mini_game
-
-	var_1_32[33] = {
+	pg.base.mini_game[33] = {
 		is_ranking = 1,
 		view_name = "CurlingGameView",
 		game_room = 0,
@@ -1324,11 +1160,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.mini_game
-
-	var_1_33[34] = {
+	pg.base.mini_game[34] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -1353,11 +1185,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.mini_game
-
-	var_1_34[35] = {
+	pg.base.mini_game[35] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -1388,11 +1216,7 @@ var_0_3.base.mini_game = {}
 			1
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.mini_game
-
-	var_1_35[36] = {
+	pg.base.mini_game[36] = {
 		is_ranking = 0,
 		view_name = "FireworkFactory2022View",
 		game_room = 0,
@@ -1423,11 +1247,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.mini_game
-
-	var_1_36[37] = {
+	pg.base.mini_game[37] = {
 		is_ranking = 0,
 		view_name = "Fushun3GameView",
 		game_room = 0,
@@ -1442,11 +1262,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 53,
 		request_data = 1
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.mini_game
-
-	var_1_37[38] = {
+	pg.base.mini_game[38] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -1461,11 +1277,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 30,
 		request_data = 1
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.mini_game
-
-	var_1_38[39] = {
+	pg.base.mini_game[39] = {
 		is_ranking = 0,
 		view_name = "DecodeMiniGameView",
 		game_room = 0,
@@ -1480,11 +1292,7 @@ var_0_3.base.mini_game = {}
 		request_data = 1,
 		simple_config_data = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.mini_game
-
-	var_1_39[40] = {
+	pg.base.mini_game[40] = {
 		is_ranking = 0,
 		view_name = "HideSeekGameView",
 		game_room = 0,
@@ -1499,11 +1307,7 @@ var_0_3.base.mini_game = {}
 		request_data = 1,
 		simple_config_data = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.mini_game
-
-	var_1_40[41] = {
+	pg.base.mini_game[41] = {
 		is_ranking = 0,
 		view_name = "IceCreamGameView",
 		game_room = 0,
@@ -1556,11 +1360,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.mini_game
-
-	var_1_41[42] = {
+	pg.base.mini_game[42] = {
 		is_ranking = 0,
 		view_name = "CookGameView",
 		game_room = 0,
@@ -1613,11 +1413,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.mini_game
-
-	var_1_42[43] = {
+	pg.base.mini_game[43] = {
 		is_ranking = 0,
 		view_name = "RyzaMiniGameView",
 		game_room = 0,
@@ -1693,11 +1489,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.mini_game
-
-	var_1_43[44] = {
+	pg.base.mini_game[44] = {
 		is_ranking = 0,
 		view_name = "BeachGuardGameView",
 		game_room = 0,
@@ -1750,11 +1542,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.mini_game
-
-	var_1_44[45] = {
+	pg.base.mini_game[45] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -1780,11 +1568,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.mini_game
-
-	var_1_45[46] = {
+	pg.base.mini_game[46] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -1815,11 +1599,7 @@ var_0_3.base.mini_game = {}
 			1
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.mini_game
-
-	var_1_46[47] = {
+	pg.base.mini_game[47] = {
 		is_ranking = 0,
 		view_name = "StackGameView",
 		game_room = 0,
@@ -1872,11 +1652,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.mini_game
-
-	var_1_47[48] = {
+	pg.base.mini_game[48] = {
 		is_ranking = 0,
 		view_name = "NenjuuMiniGameView",
 		game_room = 0,
@@ -1929,11 +1705,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.mini_game
-
-	var_1_48[49] = {
+	pg.base.mini_game[49] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -1948,11 +1720,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 41,
 		request_data = 1
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.mini_game
-
-	var_1_49[50] = {
+	pg.base.mini_game[50] = {
 		is_ranking = 0,
 		view_name = "ValentineQteGameView",
 		game_room = 0,
@@ -2005,11 +1773,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.mini_game
-
-	var_1_50[51] = {
+	pg.base.mini_game[51] = {
 		is_ranking = 0,
 		view_name = "DOAPPMiniGameView",
 		game_room = 0,
@@ -2062,11 +1826,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.mini_game
-
-	var_1_51[52] = {
+	pg.base.mini_game[52] = {
 		is_ranking = 0,
 		view_name = "OreMiniGameView",
 		game_room = 0,
@@ -2081,11 +1841,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 44,
 		request_data = 0
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.mini_game
-
-	var_1_52[53] = {
+	pg.base.mini_game[53] = {
 		is_ranking = 0,
 		view_name = "IslandCatchTreasureGameView",
 		game_room = 0,
@@ -2100,11 +1856,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 44,
 		request_data = 0
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.mini_game
-
-	var_1_53[54] = {
+	pg.base.mini_game[54] = {
 		is_ranking = 0,
 		view_name = "IslandTowerClimbingGameView",
 		game_room = 0,
@@ -2173,11 +1925,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.mini_game
-
-	var_1_54[55] = {
+	pg.base.mini_game[55] = {
 		is_ranking = 0,
 		view_name = "GridGameReView",
 		game_room = 0,
@@ -2192,11 +1940,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 46,
 		request_data = 0
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.mini_game
-
-	var_1_55[56] = {
+	pg.base.mini_game[56] = {
 		is_ranking = 0,
 		view_name = "CastleGameView",
 		game_room = 0,
@@ -2249,11 +1993,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.mini_game
-
-	var_1_56[57] = {
+	pg.base.mini_game[57] = {
 		is_ranking = 0,
 		view_name = "LaunchBallGameView",
 		game_room = 0,
@@ -2306,11 +2046,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.mini_game
-
-	var_1_57[58] = {
+	pg.base.mini_game[58] = {
 		is_ranking = 1,
 		view_name = "RacingMiniGameView",
 		game_room = 0,
@@ -2363,11 +2099,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.mini_game
-
-	var_1_58[59] = {
+	pg.base.mini_game[59] = {
 		is_ranking = 0,
 		view_name = "SailBoatGameView",
 		game_room = 0,
@@ -2447,11 +2179,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.mini_game
-
-	var_1_59[60] = {
+	pg.base.mini_game[60] = {
 		is_ranking = 0,
 		view_name = "CookGameView",
 		game_room = 0,
@@ -2504,11 +2232,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.mini_game
-
-	var_1_60[61] = {
+	pg.base.mini_game[61] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -2539,11 +2263,7 @@ var_0_3.base.mini_game = {}
 			1
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.mini_game
-
-	var_1_61[62] = {
+	pg.base.mini_game[62] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -2569,11 +2289,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.mini_game
-
-	var_1_62[63] = {
+	pg.base.mini_game[63] = {
 		is_ranking = 0,
 		view_name = "BeachGuardGameView",
 		game_room = 0,
@@ -2626,11 +2342,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.mini_game
-
-	var_1_63[64] = {
+	pg.base.mini_game[64] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -2645,11 +2357,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 54,
 		request_data = 1
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.mini_game
-
-	var_1_64[65] = {
+	pg.base.mini_game[65] = {
 		is_ranking = 1,
 		view_name = "PipeGameView",
 		game_room = 0,
@@ -2702,11 +2410,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.mini_game
-
-	var_1_65[66] = {
+	pg.base.mini_game[66] = {
 		is_ranking = 1,
 		view_name = "TouchCakeGameView",
 		game_room = 0,
@@ -2759,11 +2463,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.mini_game
-
-	var_1_66[67] = {
+	pg.base.mini_game[67] = {
 		is_ranking = 0,
 		view_name = "EatFoodGameView",
 		game_room = 0,
@@ -2816,11 +2516,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.mini_game
-
-	var_1_67[68] = {
+	pg.base.mini_game[68] = {
 		is_ranking = 1,
 		view_name = "BoatAdGameView",
 		game_room = 0,
@@ -2873,11 +2569,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.mini_game
-
-	var_1_68[69] = {
+	pg.base.mini_game[69] = {
 		is_ranking = 1,
 		view_name = "ToLoveGameView",
 		game_room = 0,
@@ -2951,11 +2643,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.mini_game
-
-	var_1_69[70] = {
+	pg.base.mini_game[70] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -2986,11 +2674,7 @@ var_0_3.base.mini_game = {}
 			1
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.mini_game
-
-	var_1_70[71] = {
+	pg.base.mini_game[71] = {
 		is_ranking = 0,
 		view_name = "Shrine2022View",
 		game_room = 0,
@@ -3016,11 +2700,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.mini_game
-
-	var_1_71[72] = {
+	pg.base.mini_game[72] = {
 		is_ranking = 0,
 		view_name = "CurlingGameView",
 		game_room = 0,
@@ -3073,11 +2753,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.mini_game
-
-	var_1_72[73] = {
+	pg.base.mini_game[73] = {
 		is_ranking = 0,
 		view_name = "NenjuuMiniGameView",
 		game_room = 0,
@@ -3130,11 +2806,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.mini_game
-
-	var_1_73[74] = {
+	pg.base.mini_game[74] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -3149,11 +2821,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 62,
 		request_data = 1
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.mini_game
-
-	var_1_74[75] = {
+	pg.base.mini_game[75] = {
 		is_ranking = 0,
 		view_name = "EatFoodGameView",
 		game_room = 0,
@@ -3168,11 +2836,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 0
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.mini_game
-
-	var_1_75[76] = {
+	pg.base.mini_game[76] = {
 		is_ranking = 1,
 		view_name = "WatermelonGameView",
 		game_room = 0,
@@ -3225,11 +2889,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.mini_game
-
-	var_1_76[77] = {
+	pg.base.mini_game[77] = {
 		is_ranking = 0,
 		view_name = "CatchTreasureGameView",
 		game_room = 0,
@@ -3282,11 +2942,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.mini_game
-
-	var_1_77[78] = {
+	pg.base.mini_game[78] = {
 		is_ranking = 1,
 		view_name = "MusicBeatGameView",
 		game_room = 0,
@@ -3339,11 +2995,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.mini_game
-
-	var_1_78[79] = {
+	pg.base.mini_game[79] = {
 		is_ranking = 0,
 		view_name = "WinterFestival2025ShrineView",
 		game_room = 0,
@@ -3374,11 +3026,7 @@ var_0_3.base.mini_game = {}
 			1
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.mini_game
-
-	var_1_79[80] = {
+	pg.base.mini_game[80] = {
 		is_ranking = 0,
 		view_name = "WinterFestival2025ShrineView",
 		game_room = 0,
@@ -3404,11 +3052,7 @@ var_0_3.base.mini_game = {}
 			2
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.mini_game
-
-	var_1_80[81] = {
+	pg.base.mini_game[81] = {
 		is_ranking = 0,
 		view_name = "PacGameView",
 		game_room = 0,
@@ -3461,11 +3105,7 @@ var_0_3.base.mini_game = {}
 		},
 		config_data = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.mini_game
-
-	var_1_81[82] = {
+	pg.base.mini_game[82] = {
 		is_ranking = 0,
 		view_name = "LanternFestivalView",
 		game_room = 0,
@@ -3480,11 +3120,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 69,
 		request_data = 1
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.mini_game
-
-	var_1_82[83] = {
+	pg.base.mini_game[83] = {
 		is_ranking = 0,
 		view_name = "CutFruitGameView",
 		game_room = 0,
@@ -3537,11 +3173,7 @@ var_0_3.base.mini_game = {}
 		},
 		config_data = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.mini_game
-
-	var_1_83[86] = {
+	pg.base.mini_game[86] = {
 		is_ranking = 0,
 		view_name = "DOAPPMiniGameView",
 		game_room = 0,
@@ -3594,11 +3226,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.mini_game
-
-	var_1_84[87] = {
+	pg.base.mini_game[87] = {
 		is_ranking = 0,
 		view_name = "VolleyballGameView",
 		game_room = 0,
@@ -3658,11 +3286,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.mini_game
-
-	var_1_85[84] = {
+	pg.base.mini_game[84] = {
 		is_ranking = 1,
 		view_name = "SortGameView",
 		game_room = 0,
@@ -3715,11 +3339,7 @@ var_0_3.base.mini_game = {}
 		},
 		config_data = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.mini_game
-
-	var_1_86[88] = {
+	pg.base.mini_game[88] = {
 		is_ranking = 1,
 		view_name = "MusicBeatGameView",
 		game_room = 0,
@@ -3772,11 +3392,60 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.mini_game
-
-	var_1_87[1001] = {
+	pg.base.mini_game[89] = {
+		is_ranking = 0,
+		view_name = "CrossRoadGameView",
+		game_room = 0,
+		type = 2,
+		mediator_name = "MiniHubMediator",
+		config_csv_key = "",
+		name = "过马路小游戏",
+		config_csv = "",
+		id = 89,
+		hub_id = 78,
+		request_data = 1,
+		simple_config_data = {
+			drop_ids = {
+				{
+					2,
+					54006,
+					1
+				},
+				{
+					2,
+					50004,
+					5
+				},
+				{
+					1,
+					2,
+					300
+				},
+				{
+					2,
+					54034,
+					2
+				},
+				{
+					2,
+					20013,
+					1
+				},
+				{
+					2,
+					54051,
+					1
+				},
+				{
+					2,
+					59860,
+					1
+				}
+			}
+		},
+		config_data = {}
+	}
+	pg.base.mini_game[1001] = {
 		is_ranking = 0,
 		view_name = "GameRoomFushun3View",
 		game_room = 1,
@@ -3791,11 +3460,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.mini_game
-
-	var_1_88[1002] = {
+	pg.base.mini_game[1002] = {
 		is_ranking = 0,
 		view_name = "GameRoomPileGameView",
 		game_room = 1,
@@ -3810,11 +3475,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.mini_game
-
-	var_1_89[1003] = {
+	pg.base.mini_game[1003] = {
 		is_ranking = 0,
 		view_name = "GameRoomMatch3View",
 		game_room = 2,
@@ -3829,11 +3490,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.mini_game
-
-	var_1_90[1004] = {
+	pg.base.mini_game[1004] = {
 		is_ranking = 0,
 		view_name = "GameRoomShootingView",
 		game_room = 3,
@@ -3864,11 +3521,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.mini_game
-
-	var_1_91[1005] = {
+	pg.base.mini_game[1005] = {
 		is_ranking = 0,
 		view_name = "GameRoomSnackView",
 		game_room = 4,
@@ -3898,11 +3551,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.mini_game
-
-	var_1_92[1006] = {
+	pg.base.mini_game[1006] = {
 		is_ranking = 0,
 		view_name = "GameRoomQTEView",
 		game_room = 5,
@@ -3938,11 +3587,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.mini_game
-
-	var_1_93[1007] = {
+	pg.base.mini_game[1007] = {
 		is_ranking = 0,
 		view_name = "GameRoomPokeView",
 		game_room = 6,
@@ -3957,11 +3602,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.mini_game
-
-	var_1_94[1008] = {
+	pg.base.mini_game[1008] = {
 		is_ranking = 0,
 		view_name = "GameRoomTowerView",
 		game_room = 7,
@@ -4030,11 +3671,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.mini_game
-
-	var_1_95[1009] = {
+	pg.base.mini_game[1009] = {
 		is_ranking = 0,
 		view_name = "GameRoomFushun2View",
 		game_room = 8,
@@ -4049,11 +3686,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.mini_game
-
-	var_1_96[1010] = {
+	pg.base.mini_game[1010] = {
 		is_ranking = 0,
 		view_name = "GameRoomRollingView",
 		game_room = 9,
@@ -4068,11 +3701,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.mini_game
-
-	var_1_97[1011] = {
+	pg.base.mini_game[1011] = {
 		is_ranking = 0,
 		view_name = "GameRoomHalloweenView",
 		game_room = 10,
@@ -4087,11 +3716,7 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.mini_game
-
-	var_1_98[1012] = {
+	pg.base.mini_game[1012] = {
 		is_ranking = 0,
 		view_name = "GameRoomSnowballView",
 		game_room = 11,
@@ -4106,8 +3731,11 @@ var_0_3.base.mini_game = {}
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_1_98
-	var_1_98.base.mini_game[1013] = {
+
+	return
+end)()
+;(function()
+	pg.base.mini_game[1013] = {
 		is_ranking = 0,
 		view_name = "GameRoomPipeView",
 		game_room = 12,
@@ -4160,15 +3788,7 @@ var_0_3.base.mini_game = {}
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.mini_game
-
-	var_2_0[1014] = {
+	pg.base.mini_game[1014] = {
 		is_ranking = 0,
 		view_name = "GameRoomCookView",
 		game_room = 13,
@@ -4221,11 +3841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.mini_game
-
-	var_2_1[1015] = {
+	pg.base.mini_game[1015] = {
 		is_ranking = 0,
 		view_name = "GameRoomLaunchView",
 		game_room = 14,
@@ -4278,11 +3894,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.mini_game
-
-	var_2_2[1016] = {
+	pg.base.mini_game[1016] = {
 		is_ranking = 0,
 		view_name = "GameRoomTreasureView",
 		game_room = 15,
@@ -4297,11 +3909,7 @@ end)()
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.mini_game
-
-	var_2_3[1017] = {
+	pg.base.mini_game[1017] = {
 		is_ranking = 0,
 		view_name = "GameRoomGuardView",
 		game_room = 16,
@@ -4354,11 +3962,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.mini_game
-
-	var_2_4[1018] = {
+	pg.base.mini_game[1018] = {
 		is_ranking = 0,
 		view_name = "GameRoomOreView",
 		game_room = 17,
@@ -4373,11 +3977,7 @@ end)()
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.mini_game
-
-	var_2_5[1019] = {
+	pg.base.mini_game[1019] = {
 		is_ranking = 0,
 		view_name = "GameRoomRopingCowView",
 		game_room = 18,
@@ -4392,11 +3992,7 @@ end)()
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.mini_game
-
-	var_2_6[1020] = {
+	pg.base.mini_game[1020] = {
 		is_ranking = 0,
 		view_name = "GameRoomCurlingView",
 		game_room = 19,
@@ -4411,11 +4007,7 @@ end)()
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.mini_game
-
-	var_2_7[1021] = {
+	pg.base.mini_game[1021] = {
 		is_ranking = 0,
 		view_name = "GameRoomFushun3View",
 		game_room = 20,
@@ -4430,11 +4022,7 @@ end)()
 		hub_id = 45,
 		request_data = 1
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.mini_game
-
-	var_2_8[1025] = {
+	pg.base.mini_game[1025] = {
 		is_ranking = 0,
 		view_name = "GameRoomHideSeekView",
 		game_room = 24,
@@ -4449,8 +4037,7 @@ end)()
 		request_data = 1,
 		simple_config_data = {}
 	}
-	pg = var_2_8
-	var_2_8.base.mini_game[1026] = {
+	pg.base.mini_game[1026] = {
 		is_ranking = 0,
 		view_name = "GameRoomIceCreamView",
 		game_room = 25,

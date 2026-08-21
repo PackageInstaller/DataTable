@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_ins_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_ins_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_ins_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_ins_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_ins_template = rawget(pg, "dorm3d_ins_template") or setmetatable({
+	__name = "dorm3d_ins_template"
+}, confNEO)
+pg.dorm3d_ins_template.all = {
 	20220201,
 	30221201,
 	19903201,
@@ -40,11 +17,7 @@ var_0_3.all = {
 	79902201,
 	79902202
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_ins_template
-
-var_0_4.get_id_list_by_ship_group = {
+pg.dorm3d_ins_template.get_id_list_by_ship_group = {
 	[10517] = {
 		10517201,
 		10517202,
@@ -73,25 +46,11 @@ var_0_4.get_id_list_by_ship_group = {
 		79902202
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_ins_template = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_ins_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_ins_template
-
-	var_1_0[20220201] = {
+	pg.base.dorm3d_ins_template[20220201] = {
 		ship_group = 20220,
 		name = "forMaster_Sirius",
 		sculpture = "tianlangxing_5",
@@ -106,11 +65,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			2
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_ins_template
-
-	var_1_1[17] = {
+	pg.base.dorm3d_ins_template[17] = {
 		ship_group = 30221,
 		name = "Nshiro",
 		sculpture = "nengdai_idol",
@@ -125,11 +80,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			4
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_ins_template
-
-	var_1_2[19903201] = {
+	pg.base.dorm3d_ins_template[19903201] = {
 		ship_group = 19903,
 		name = "Anchorage",
 		sculpture = "ankeleiqi_3",
@@ -144,11 +95,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			6
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_ins_template
-
-	var_1_3[19903202] = {
+	pg.base.dorm3d_ins_template[19903202] = {
 		ship_group = 19903,
 		name = "Anchorage",
 		sculpture = "ankeleiqi_3",
@@ -163,11 +110,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			8
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_ins_template
-
-	var_1_4[10517201] = {
+	pg.base.dorm3d_ins_template[10517201] = {
 		ship_group = 10517,
 		name = "BlackDragon",
 		sculpture = "xinzexi_4",
@@ -182,11 +125,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			10
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_ins_template
-
-	var_1_5[10517202] = {
+	pg.base.dorm3d_ins_template[10517202] = {
 		ship_group = 10517,
 		name = "BlackDragon",
 		sculpture = "xinzexi_4",
@@ -201,11 +140,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			12
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_ins_template
-
-	var_1_6[10517203] = {
+	pg.base.dorm3d_ins_template[10517203] = {
 		ship_group = 10517,
 		name = "BlackDragon",
 		sculpture = "xinzexi_4",
@@ -220,11 +155,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			14
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_ins_template
-
-	var_1_7[1] = {
+	pg.base.dorm3d_ins_template[1] = {
 		ship_group = 30707,
 		name = "Taiho",
 		sculpture = "dafeng_2",
@@ -239,11 +170,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			16
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_ins_template
-
-	var_1_8[2] = {
+	pg.base.dorm3d_ins_template[2] = {
 		ship_group = 30707,
 		name = "Taiho",
 		sculpture = "dafeng_2",
@@ -258,11 +185,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			18
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_ins_template
-
-	var_1_9[49905201] = {
+	pg.base.dorm3d_ins_template[49905201] = {
 		ship_group = 49905,
 		name = "Ägir",
 		sculpture = "aijier",
@@ -277,11 +200,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			20
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_ins_template
-
-	var_1_10[49905202] = {
+	pg.base.dorm3d_ins_template[49905202] = {
 		ship_group = 49905,
 		name = "Ägir",
 		sculpture = "aijier",
@@ -296,11 +215,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			22
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_ins_template
-
-	var_1_11[79902201] = {
+	pg.base.dorm3d_ins_template[79902201] = {
 		ship_group = 79902,
 		name = "Admiral Nakhimov",
 		sculpture = "naximofu",
@@ -315,8 +230,7 @@ var_0_4.base.dorm3d_ins_template = {}
 			24
 		}
 	}
-	pg = var_1_11
-	var_1_11.base.dorm3d_ins_template[79902202] = {
+	pg.base.dorm3d_ins_template[79902202] = {
 		ship_group = 79902,
 		name = "Admiral Nakhimov",
 		sculpture = "naximofu",

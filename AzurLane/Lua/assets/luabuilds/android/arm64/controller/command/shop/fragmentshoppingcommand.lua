@@ -1,149 +1,70 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FragmentShoppingCommand", pm.SimpleCommand)
 
-local var_0_0 = "FragmentShoppingCommand"
+var_0_0.FRAG_SHOP = 2
+var_0_0.FRAG_NORMAL_SHOP = 3
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-var_0_1.FRAG_SHOP = 2
-var_0_1.FRAG_NORMAL_SHOP = 3
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.count
-	local var_1_2 = var_2.type
-
-	getProxy = var_1_10006
-	PlayerProxy = var_1_10008
-
-	local var_1_3 = var_1_10006(var_1_10008)
-	local var_1_4 = var_6.getRawData(var_1_3)
-
-	getProxy = var_1_10008
-	ShopsProxy = var_1_10010
-
-	local var_1_5 = var_1_10008(var_1_10010)
-	local var_1_6 = var_8.getFragmentShop(var_1_5)
-	local var_1_7 = var_9.getGoodsCfg(var_1_6, var_1_0)
-
-	Drop = var_1_5
-
-	local var_1_8 = var_1_5.New({
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_4 = getProxy(PlayerProxy):getRawData()
+	local var_1_5 = getProxy(ShopsProxy)
+	local var_1_6 = getProxy(ShopsProxy):getFragmentShop()
+	local var_1_7 = var_1_6:getGoodsCfg(var_1_0.id)
+	local var_1_8 = Drop.New({
 		type = var_1_7.resource_category,
 		id = var_1_7.resource_type
 	})
 
-	if var_11.getOwnedCount(var_1_8) < var_1_7.resource_num * var_1_1 then
-		pg = var_12
-
-		local var_1_9 = var_12.TipsMgr.GetInstance()
-		local var_1_10 = var_12.ShowTips
-
-		i18n = var_1_10015
-
-		var_1_10(var_1_9, var_1_10015("common_no_x", var_11:getName()))
+	if var_1_8:getOwnedCount() < var_1_7.resource_num * var_1_0.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var_1_8:getName()))
 
 		return
 	end
 
+	local var_1_9
+
 	if var_1_7.commodity_type == 1 then
-		if var_1_7.commodity_id == 1 and var_1_4:GoldMax(var_1_7.num * var_1_1) then
-			pg = var_12
-
-			local var_1_11 = var_12.TipsMgr.GetInstance()
-			local var_1_12 = var_12.ShowTips
-
-			i18n = var_15
-
-			local var_1_13 = var_15("gold_max_tip_title")
-
-			i18n = var_1_10016
-
-			var_1_12(var_1_11, var_1_13 .. var_1_10016("resource_max_tip_shop"))
+		if var_1_7.commodity_id == 1 and var_1_4:GoldMax(var_1_7.num * var_1_0.count) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_shop"))
 
 			return
 		end
 
-		if var_1_7.commodity_id == 2 and var_1_4:OilMax(var_1_7.num * var_1_1) then
-			pg = var_12
+		if var_1_7.commodity_id == 2 and var_1_4:OilMax(var_1_7.num * var_1_0.count) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title") .. i18n("resource_max_tip_shop"))
 
-			local var_1_14 = var_12.TipsMgr.GetInstance()
-			local var_1_15 = var_12.ShowTips
+			do return end
 
-			i18n = var_15
-
-			local var_1_16 = var_15("oil_max_tip_title")
-
-			i18n = var_1_10016
-
-			var_1_15(var_1_14, var_1_16 .. var_1_10016("resource_max_tip_shop"))
-
-			return
+			var_1_9 = var_0_0.FRAG_SHOP
 		end
 	end
 
-	local var_1_17 = var_9:GetCommodityById(var_1_0)
-	local var_1_18 = var_0_1.FRAG_SHOP
-	local var_1_19 = var_1_17.type
-
-	Goods = var_15
-
-	if var_1_19 == var_15.TYPE_FRAGMENT_NORMAL then
-		var_1_18 = var_0_1.FRAG_NORMAL_SHOP
+	if var_1_6:GetCommodityById(var_1_0.id).type == Goods.TYPE_FRAGMENT_NORMAL then
+		var_1_9 = var_0_0.FRAG_NORMAL_SHOP
 	end
 
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.ConnectionMgr.GetInstance()
-
-	var_14.Send(var_1_20, 16201, {
-		id = var_1_0,
-		type = var_1_18,
-		count = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(16201, {
+		id = var_1_0.id,
+		type = var_1_9,
+		count = var_1_0.count
 	}, 16202, function(arg_2_0)
-		local var_2_0
-
 		if arg_2_0.result == 0 then
-			PlayerConst = var_2_0
-			var_2_0 = var_2_0.addTranDrop(arg_2_0.drop_list)
-			var_2_10004 = var_0
+			local var_2_0 = var_1_5:getFragmentShop()
 
-			local var_2_1 = var_2.getFragmentShop(var_2_10004)
-			local var_2_2 = var_2.getGoodsById(var_2_1, var_1_0)
-
-			var_3.addBuyCount(var_2_2, var_1_1)
-
-			local var_2_3 = var_0
-
-			var_2_10004.updateFragmentShop(var_2_3, var_2)
-
-			reducePlayerOwn = var_2_10004
-
-			var_2_10004({
+			var_2_0:getGoodsById(var_1_1):addBuyCount(var_1_2)
+			var_1_5:updateFragmentShop(var_2_0)
+			reducePlayerOwn({
 				type = var_1_7.resource_category,
 				id = var_1_7.resource_type,
-				count = var_1_7.resource_num * var_1_1
+				count = var_1_7.resource_num * var_1_2
 			})
-
-			local var_2_4 = arg_1_0
-
-			var_2_10004 = var_2_10004.sendNotification
-			GAME = var_7
-
-			var_2_10004(var_2_4, var_7.FRAG_SHOPPING_DONE, {
-				awards = var_2_0,
-				id = var_1_0
+			arg_1_0:sendNotification(GAME.FRAG_SHOPPING_DONE, {
+				awards = PlayerConst.addTranDrop(arg_2_0.drop_list),
+				id = var_1_1
 			})
 		else
-			pg = var_2_0
-
-			local var_2_5 = var_2_0.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -152,4 +73,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -229,7 +229,7 @@ function __onClickCleanAssetsHandler(self)
     -- self.mIsOpenedTip = true
     -- download.ResDownLoadManager:cancelAllDownloadingAssets()
     -- updateRes.ShowAlert(updateRes.TipType.Normal, _TT(5), _TT(52)
-    -- , "确认",
+    -- ,_TT(10000115)--[["确认"]],
     -- function()
     --     local result = download.ResDownLoadManager:cancelAllDownloadingAssets()
     --     if (result) then
@@ -256,10 +256,13 @@ function __onClickCleanAssetsHandler(self)
     --         updateRes.UpdateResController:judgeDownload()
     --     end
     -- end)
-    
-    updateRes.ShowAlert(updateRes.TipType.Normal, _TT(5), "本操作会清除所有已下载资源，请重启游戏再次进行下载"
-    , "确认",
+    updateRes.ShowAlert(updateRes.TipType.Normal, _TT(5), _TT(10000247)
+    --[["本操作会清除所有已下载资源，请重启游戏再次进行下载"]]
+    , _TT(10000115)
+    --[["确认"]]
+    ,
     function()
+        CS.UnityEngine.PlayerPrefs.DeleteAll()
         gs.AssetsUtils:AddCleanResSign(true, true)
         CS.UnityEngine.PlayerPrefs.Save()
         LoopManager:addTimer(1, 1, self, function()
@@ -334,22 +337,25 @@ end
 function onSpeedTimerHandler(self, args)
     local state = download.ResDownLoadManager:getUpdateState()
     local zipDownLoadState = download.ResDownLoadManager:getZipDownLoadState()
-    if(zipDownLoadState == download.ZipState.Restore or zipDownLoadState == download.ZipState.Downloading or state == download.ResState.DownloadFiles or state == download.ResState.DownloadFilesMove or state == download.ResState.DownloadFilesSuc)then
+    if (zipDownLoadState == download.ZipState.Restore or zipDownLoadState == download.ZipState.Downloading or state == download.ResState.DownloadFiles) then
         local downloadKbSize = download.ResDownLoadManager:getDownLoadKbSzie(true)
-        if(downloadKbSize <= 0)then
+        if (downloadKbSize <= 0) then
             self:removeSpeedTimerHandler()
             self:updateSpeedView("0 KB/s")
         else
             local formatSize, unit = download.GetFormatSize(downloadKbSize)
             self:updateSpeedView(tostring(formatSize) .. " " .. unit .. "/s")
         end
+    else
+        self:updateSpeedView("")
     end
 end
 
 function updateSpeedView(self, speedStr)
     if(self.mShowProgress and self.mShowProgress >= 0.98 and speedStr == "0 KB/s")then
         -- 下到97、98会速度为0，暂时还无方案，特殊处理下
-        speedStr = "整理中"
+        speedStr = _TT(10000248)
+    --[["整理中"]]
     end
     if(self.mTextSpeed.text ~= speedStr)then
         -- self.mTextSpeed.text = speedStr
@@ -366,18 +372,23 @@ function updateZipView(self, successCode, failCode, state, downloadedCount, tota
         totalCount = math.max(0, totalCount or 0)
         downloadedSize = math.max(0, downloadedSize or 0)
         totalSize = math.max(0, totalSize or 0)
-        self.mZipSize = totalSize
 
         local downLoadModuleTypeList, totalNeedSize, matchSignModuleTypeList = download.ResDownLoadManager:getDownLoadModuleTypeList()
         local zipPro = math.min(1, downloadedSize / totalSize)
-        self.mZipPro = (self.mAllPro - self.mPreparePro) * (totalSize / (totalSize + totalNeedSize)) * zipPro
+        if(state ~= download.ZipState.UnZiping and state ~= download.ZipState.ZipValidating)then
+            self.mZipPro = (self.mAllPro - self.mPreparePro) * (totalSize / (totalSize + totalNeedSize)) * zipPro
+            self.mZipSize = totalSize
+        end
+
         local showProgress = self.mPreparePro + self.mZipPro
         -- if ((not self.mSpeedTimerSn and self.mShowProgress <= 0) or self.mShowProgress <= showProgress) then
             self.mShowProgress = showProgress
             if(state == download.ZipState.Restore)then
-                self.mTxtState.text = "正在校验进度中，请稍候"
+                self.mTxtState.text = _TT(10000249)    
+                --[["正在校验进度中，请稍候"]]
             elseif(state == download.ZipState.Downloading)then
-                self.mTxtState.text = "正在下载基础包"
+                self.mTxtState.text = _TT(10000250)    
+            --[["正在下载基础包"]]
             end
             local formatDownloadedSize, downloadedUnit = download.GetFormatSize(math.min(downloadedSize, totalSize))
             local formatTotalSize, totalUnit = download.GetFormatSize(totalSize + totalNeedSize)
@@ -403,10 +414,15 @@ function updateZipView(self, successCode, failCode, state, downloadedCount, tota
                     end
                 end
             end
-        elseif(zipPro >= 1)then
+        elseif(zipPro >= 1 or state == download.ZipState.UnZiping or state == download.ZipState.ZipValidating)then
             self:removeSpeedTimerHandler()
+            self.mTextSize.text = ""
+            self.mTxtPro.text = string.format("%.2f", (downloadedCount / totalCount) * 100) .. "%"
+            self.mTxtState.text = _TT(10000251) .. "(" .. downloadedCount .. "/" .. totalCount .. ")"
+            local unzipPro = downloadedCount / totalCount
+            self:__updateTween(unzipPro)
             self:updateSpeedView("")
-            self.mTxtState.text = "正在解压资源包"
+        --[["正在解压资源包"]]
         end
     else
         if(successCode)then
@@ -423,27 +439,43 @@ function updateZipView(self, successCode, failCode, state, downloadedCount, tota
                     local function initZipDownManger()
                         download.ResDownLoadManager:initZipDownManger(function(resultCode)
                             if(resultCode == 0)then
-                                updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", "网络下载出错请重新下载" .. "，提示码：" .. string.format("%s(%s)", updateRes.ErrorCode.ZipDownLoadError, tostring(failCode))
-                                    ,"确认",
-                                    function()
-                                        self.mIsOpenedTip = false
-                                        updateRes.UpdateResController:judgeDownload()
-                                    end
-                                    -- ,"退出",
-                                    -- function()
-                                    --     CS.Lylibs.SDKManager.Ins:CloseApplication()
-                                    -- end
+                                updateRes.ShowAlert(updateRes.TipType.Normal, _TT(10000109)
+                                --[["更新提示"]]
+                                , _TT(10000264)
+                                --[["网络下载出错请重新下载"]]
+                                .. _TT(10000265)
+                                --[["，提示码："]]
+                                .. string.format("%s(%s)", updateRes.ErrorCode.ZipDownLoadError, tostring(failCode))
+                                , _TT(10000115)
+                                --[["确认"]]
+                                ,
+                                function()
+                                    self.mIsOpenedTip = false
+                                    updateRes.UpdateResController:judgeDownload()
+                                end
+                                -- ,"退出",
+                                -- function()
+                                --     CS.Lylibs.SDKManager.Ins:CloseApplication()
+                                -- end
                                 )
                             else
-                                updateRes.ShowAlert(updateRes.TipType.Net, "更新提示", "网络下载出错请重新下载" .. "，提示码：" .. string.format("%s[%s]", updateRes.ErrorCode.ZipInitError, tostring(resultCode))
-                                    ,"确认",
-                                    function()
-                                        initZipDownManger()
-                                    end
-                                    -- ,"退出",
-                                    -- function()
-                                    --     CS.Lylibs.SDKManager.Ins:CloseApplication()
-                                    -- end
+                                updateRes.ShowAlert(updateRes.TipType.Net, _TT(10000109)
+                                --[["更新提示"]]
+                                , _TT(10000264)
+                                --[["网络下载出错请重新下载"]]
+                                .. _TT(10000265)
+                                --[["，提示码："]]
+                                .. string.format("%s[%s]", updateRes.ErrorCode.ZipInitError, tostring(resultCode))
+                                , _TT(10000115)
+                                --[["确认"]]
+                                ,
+                                function()
+                                    initZipDownManger()
+                                end
+                                -- ,"退出",
+                                -- function()
+                                --     CS.Lylibs.SDKManager.Ins:CloseApplication()
+                                -- end
                                 )
                             end
                         end)
@@ -540,28 +572,36 @@ function updateView(self)
                 if(totalNeedSize <= 0)then
                     self.mShowProgress = self.mAllPro
                 end
-                self.mTxtState.text = string.format("正在校验 %s（%s个/%s个），请稍候", download.GetModuleName(moduleType), downloadedCount, maxCount)
+                self.mTxtState.text = string.format(_TT(10000252)
+                --[["正在校验 %s（%s个/%s个），请稍候"]]
+                , download.GetModuleName(moduleType), downloadedCount, maxCount)
                 self.mTextSize.text = ""
                 self.mTxtPro.text = ""
                 self:removeSpeedTimerHandler()
                 self:updateSpeedView("")
             end
         elseif (state == download.ResState.DownloadFilesMove and not download.ResDownLoadManager:getIsNeedCheckZip()) then
-            if(self.mShowProgress >= self.mAllPro)then
+            -- if(self.mShowProgress >= self.mAllPro)then
                 -- 移动文件回调的该moduleTypeList数组只有一个值
                 local moduleType = data.moduleTypeList[1]
-                self.mTxtState.text = string.format("正在整理 %s（%s个/%s个），请稍候", download.GetModuleName(moduleType), data.movedCount, data.moveTotalCount)
+                self.mTxtState.text = string.format(_TT(10000253)
+                --[["正在整理 %s（%s个/%s个），请稍候"]]
+                , download.GetModuleName(moduleType), data.movedCount, data.moveTotalCount)
                 self.mTextSize.text = ""
                 self.mTxtPro.text = ""
-            end
+                self:updateSpeedView("")
+            -- end
         elseif (state == download.ResState.DownloadFilesSuc and not download.ResDownLoadManager:getIsNeedCheckZip()) then
-            if(self.mShowProgress >= self.mAllPro)then
+            -- if(self.mShowProgress >= self.mAllPro)then
                 -- 移动文件回调的该moduleTypeList数组只有一个值
                 local moduleType = data.moduleTypeList[1]
-                self.mTxtState.text = string.format("成功整理 %s，请稍候", download.GetModuleName(moduleType))
+                self.mTxtState.text = string.format(_TT(10000254)
+                --[["成功整理 %s，请稍候"]]
+                , download.GetModuleName(moduleType))
                 self.mTextSize.text = ""
                 self.mTxtPro.text = ""
-            end
+                self:updateSpeedView("")
+            -- end
         elseif (state == download.ResState.DownloadFilesFail and not download.ResDownLoadManager:getIsNeedCheckZip()) then
             self.mTxtState.text = tip
             self.mTextSize.text = ""
@@ -580,8 +620,8 @@ function updateView(self)
             self:__updateTween(self.mShowProgress)
 
             -- if(updateRes.UpdateResManager:getIsNeedRestart())then
-            --     updateRes.ShowAlert("更新提示", "本次更新需要重启游戏"
-            --         ,"确认",
+            --     updateRes.ShowAlert(_TT(10000109)--[["更新提示"]], "本次更新需要重启游戏"
+            --         ,_TT(10000115)--[["确认"]],
             --         function()
             --             CS.Lylibs.SDKManager.Ins:RestartApplication()
             --         end
@@ -605,7 +645,8 @@ function checkView(self)
         if (isHasNetWork) then
             return true
         else
-            self.mTxtState.text = "等待网络连接中......"
+            self.mTxtState.text = _TT(10000255)    
+            --[["等待网络连接中......"]]
             self.mTextSize.text = ""
             self.mTxtPro.text = ""
             self:removeSpeedTimerHandler()
@@ -639,7 +680,7 @@ function updateClientVersion(self)
     local proVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ProVersionKey)
     local artVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ArtVersionKey)
     if (version ~= "" and proVersion ~= "" and artVersion ~= "") then
-        self.mTxtClientVersion.text = web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion)
+        self.mTxtClientVersion.text = _TT(10000295) .. ": " .. web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion)
         self.mTxtClientVersion.gameObject:SetActive(true)
     else
         self.mTxtClientVersion.text = "";
@@ -655,7 +696,7 @@ function updateServerVersion(self)
     local serverProVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.ProVersionKey)
     local serverArtVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.ArtVersionKey)
     if (serverVersion ~= "" and serverProVersion ~= "" and serverArtVersion ~= "") then
-        self.mTxtServerVersion.text = web.getFormatVersion(prefixVersion, serverVersionStr, serverProVersion, serverArtVersion)
+        self.mTxtServerVersion.text = _TT(10000296) .. ": " .. web.getFormatVersion(prefixVersion, serverVersionStr, serverProVersion, serverArtVersion)
         self.mTxtServerVersion.gameObject:SetActive(true)
     else
         self.mTxtServerVersion.text = ""

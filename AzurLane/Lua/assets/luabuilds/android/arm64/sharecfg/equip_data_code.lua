@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "equip_data_code") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "equip_data_code"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.equip_data_code = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.equip_data_code
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.equip_data_code = rawget(pg, "equip_data_code") or setmetatable({
+	__name = "equip_data_code"
+}, confNEO)
+pg.equip_data_code.all = {
 	"WAVE",
 	"GUID",
 	"ASW",
@@ -41,126 +18,63 @@ var_0_3.all = {
 	"LOCK",
 	"TRP"
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.equip_data_code = {}
+pg.base = pg.base or {}
+pg.base.equip_data_code = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.equip_data_code
-
-	var_1_0.WAVE = {
+	pg.base.equip_data_code.WAVE = {
 		text = "/轮",
 		code = "WAVE"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.equip_data_code
-
-	var_1_1.GUID = {
+	pg.base.equip_data_code.GUID = {
 		text = "制导",
 		code = "GUID"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.equip_data_code
-
-	var_1_2.ASW = {
+	pg.base.equip_data_code.ASW = {
 		text = "反潜",
 		code = "ASW"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.equip_data_code
-
-	var_1_3.SCA = {
+	pg.base.equip_data_code.SCA = {
 		text = "散射",
 		code = "SCA"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.equip_data_code
-
-	var_1_4.NA = {
+	pg.base.equip_data_code.NA = {
 		text = "无",
 		code = "NA"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.equip_data_code
-
-	var_1_5.FP = {
+	pg.base.equip_data_code.FP = {
 		text = "炮击",
 		code = "FP"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.equip_data_code
-
-	var_1_6.AIR = {
+	pg.base.equip_data_code.AIR = {
 		text = "空战",
 		code = "AIR"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.equip_data_code
-
-	var_1_7.VOL = {
+	pg.base.equip_data_code.VOL = {
 		text = "跨射",
 		code = "VOL"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.equip_data_code
-
-	var_1_8.BOMB = {
+	pg.base.equip_data_code.BOMB = {
 		text = "轰炸",
 		code = "BOMB"
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.equip_data_code
-
-	var_1_9.SRG = {
+	pg.base.equip_data_code.SRG = {
 		text = "近程",
 		code = "SRG"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.equip_data_code
-
-	var_1_10.LRG = {
+	pg.base.equip_data_code.LRG = {
 		text = "远程",
 		code = "LRG"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.equip_data_code
-
-	var_1_11.NORM = {
+	pg.base.equip_data_code.NORM = {
 		text = "通常",
 		code = "NORM"
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.equip_data_code
-
-	var_1_12.LOCK = {
+	pg.base.equip_data_code.LOCK = {
 		text = "锁定",
 		code = "LOCK"
 	}
-	pg = var_1_12
-	var_1_12.base.equip_data_code.TRP = {
+	pg.base.equip_data_code.TRP = {
 		text = "雷击",
 		code = "TRP"
 	}

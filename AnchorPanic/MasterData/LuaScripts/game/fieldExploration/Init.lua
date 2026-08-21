@@ -63,6 +63,10 @@ fieldExploration.FieldExplorationEventPortalSkill = require("game/fieldExplorati
 fieldExploration.FieldExplorationEventShowHideSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventShowHideSkill")
 fieldExploration.FieldExplorationEventShowOrHideSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventShowOrHideSkill")
 fieldExploration.FieldExplorationEventInitShowSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventInitShowSkill")
+fieldExploration.FieldExplorationEventLasetShootSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventLasetShootSkill")
+fieldExploration.FieldExplorationEventMoveSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventMoveSkill")
+fieldExploration.FieldExplorationEventRotateSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventRotateSkill")
+fieldExploration.FieldExplorationEventStepGridSkill = require("game/fieldExploration/manager/eventSkill/FieldExplorationEventStepGridSkill")
 
 -----------------场景事件相关
 fieldExploration.FieldExplorationBaseThing = require("game/fieldExploration/manager/thing/FieldExplorationBaseThing")

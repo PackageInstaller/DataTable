@@ -1,71 +1,52 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleBulletEvent
+local var_0_2 = ys.Battle.BattleConfig
+local var_0_3 = class("BattleBombBullet", ys.Battle.BattleBullet)
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleBombBullet = var_0_3
+var_0_3.__name = "BattleBombBullet"
 
-local var_0_1 = var_0.Battle.BattleBulletEvent
-local var_0_2 = var_0.Battle.BattleResourceManager
-local var_0_3 = var_0.Battle.BattleConfig
-
-class = var_0_10004
-
-local var_0_4 = var_0_10004("BattleBombBullet", var_0.Battle.BattleBullet)
-
-var_0.Battle.BattleBombBullet = var_0_4
-var_0_4.__name = "BattleBombBullet"
-
-function var_0_4.Ctor(arg_1_0)
-	var_0_4.super.Ctor(arg_1_0)
+function var_0_3.Ctor(arg_1_0)
+	var_0_3.super.Ctor(arg_1_0)
 
 	return
 end
 
-function var_0_4.Dispose(arg_2_0)
+function var_0_3.Dispose(arg_2_0)
 	if arg_2_0._alert then
-		local var_2_0 = arg_2_0._alert
-
-		var_1.Dispose(var_2_0)
+		arg_2_0._alert:Dispose()
 	end
 
-	var_0_4.super.Dispose(arg_2_0)
+	var_0_3.super.Dispose(arg_2_0)
 
 	return
 end
 
-function var_0_4.AddBulletEvent(arg_3_0)
-	local var_3_0 = arg_3_0._bulletData
-
-	var_1.RegisterEventListener(var_3_0, arg_3_0, var_0_1.EXPLODE, arg_3_0.onBulletExplode)
+function var_0_3.AddBulletEvent(arg_3_0)
+	arg_3_0._bulletData:RegisterEventListener(arg_3_0, var_0_0.EXPLODE, arg_3_0.onBulletExplode)
 
 	return
 end
 
-function var_0_4.RemoveBulletEvent(arg_4_0)
-	local var_4_0 = arg_4_0._bulletData
-
-	var_1.UnregisterEventListener(var_4_0, arg_4_0, var_0_1.EXPLODE)
+function var_0_3.RemoveBulletEvent(arg_4_0)
+	arg_4_0._bulletData:UnregisterEventListener(arg_4_0, var_0_0.EXPLODE)
 
 	return
 end
 
-function var_0_4.onBulletExplode(arg_5_0, arg_5_1)
-	arg_5_0._bulletHitFunc(arg_5_0)
+function var_0_3.onBulletExplode(arg_5_0, arg_5_1)
+	arg_5_0:_bulletHitFunc()
 
 	return
 end
 
-function var_0_4.UpdatePosition(arg_6_0)
-	Vector3 = var_1_10001
-
-	local var_6_0 = var_1_10001.Lerp(arg_6_0._tf.localPosition, arg_6_0:GetPosition(), var_0_3.BulletMotionRate)
+function var_0_3.UpdatePosition(arg_6_0)
+	local var_6_0 = Vector3.Lerp(arg_6_0._tf.localPosition, arg_6_0:GetPosition(), var_0_2.BulletMotionRate)
 
 	arg_6_0._tf.localPosition = var_6_0
 
-	local var_6_1 = arg_6_0._cacheTFPos
-
-	var_2.Set(var_6_1, var_6_0.x, var_6_0.y, var_6_0.z)
+	arg_6_0._cacheTFPos:Set(var_6_0.x, var_6_0.y, var_6_0.z)
 
 	return
 end

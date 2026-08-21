@@ -1,38 +1,18 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BoatAdBg")
+﻿local var_0_0 = class("BoatAdBg")
 local var_0_1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	BoatAdGameVo = var_1_10003
-	var_0_1 = var_1_10003
+	var_0_1 = BoatAdGameVo
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
-	GetComponent = var_1_10003
+	arg_1_0._moveAnimator = GetComponent(arg_1_0._tf, typeof(Animator))
+	arg_1_0._moveDftEvent = GetComponent(arg_1_0._tf, typeof(DftAniEvent))
+	arg_1_0.spineTf = findTF(arg_1_0._tf, "ad/img/spine")
 
-	local var_1_0 = arg_1_0._tf
-
-	typeof = var_1_10006
-	Animator = var_1_10008
-	arg_1_0._moveAnimator = var_1_10003(var_1_0, var_1_10006(var_1_10008))
-	GetComponent = var_3
-
-	local var_1_1 = arg_1_0._tf
-
-	typeof = var_6
-	DftAniEvent = var_1_10008
-	arg_1_0._moveDftEvent = var_3(var_1_1, var_6(var_1_10008))
-	findTF = var_3
-	arg_1_0.spineTf = var_3(arg_1_0._tf, "ad/img/spine")
-
-	local var_1_2 = arg_1_0._moveDftEvent
-
-	var_3.SetEndEvent(var_1_2, function()
-		local var_2_0 = arg_1_0
-
-		var_0.setRemoveFlag(var_2_0, true)
+	arg_1_0._moveDftEvent:SetEndEvent(function()
+		arg_1_0:setRemoveFlag(true)
 
 		return
 	end)
@@ -100,17 +80,14 @@ end
 
 function var_0_0.setContent(arg_13_0, arg_13_1)
 	arg_13_0._content = arg_13_1
-	SetParent = var_1_10002
 
-	var_1_10002(arg_13_0._tf, arg_13_1)
+	SetParent(arg_13_0._tf, arg_13_1)
 
 	return
 end
 
 function var_0_0.setVisible(arg_14_0, arg_14_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_14_0._tf, arg_14_1)
+	setActive(arg_14_0._tf, arg_14_1)
 
 	return
 end

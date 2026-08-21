@@ -13,7 +13,16 @@ function parseConfigData(self,cusData)
     self.des = cusData.des
     --关系描述
     self.favorable = cusData.relation_des
-
+    --剧情奖励
+    self.storyReward = cusData.story_reward
+    --剧情id
+    self.storyId = cusData.story_id
+    --剧情title
+    self.storyTitle = cusData.story_title
+    --剧情描述
+    self.storyDes = cusData.story_des
+    --是否是结婚后的
+    self.isPromise = cusData.is_promise
 end
 
 return _M

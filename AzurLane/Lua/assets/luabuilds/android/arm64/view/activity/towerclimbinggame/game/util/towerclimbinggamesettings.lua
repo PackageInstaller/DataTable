@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TowerClimbingGameSettings")
+﻿local var_0_0 = class("TowerClimbingGameSettings")
 
 var_0_0.BLOCK_NAME = "block"
 var_0_0.STAB_NAME = "stab"
@@ -195,10 +193,8 @@ var_0_0.AWARDEFFECT = "pata_huodedaoju_tuowei"
 var_0_0.AWARDEFFECT1 = "pata_huodedaoju_baodian"
 var_0_0.JUMP_VELOCITY = 31.7
 var_0_0.MOVE_VELOCITY = 8.68
-Vector2 = var_1
-var_0_0.BEINJURED_VELOCITY = var_1(0, 0)
-Vector2 = var_1
-var_0_0.BLOCK_START_POSITION = var_1(-60, 385)
+var_0_0.BEINJURED_VELOCITY = Vector2(0, 0)
+var_0_0.BLOCK_START_POSITION = Vector2(-60, 385)
 var_0_0.BLOCK_INTERVAL_HEIGHT = 150
 var_0_0.BLOCK_MAX_INTERVAL_WIDTH = {
 	-55,
@@ -217,8 +213,7 @@ var_0_0.FIRE_TIME = {
 	3,
 	5
 }
-Vector2 = var_1
-var_0_0.MANJUU_START_POS = var_1(4, -92.7)
+var_0_0.MANJUU_START_POS = Vector2(4, -92.7)
 var_0_0.MANJUU_HEIGHT = 230
 var_0_0.GROUND_RISE_UP_SPEED = {
 	{
@@ -268,11 +263,7 @@ var_0_0.GROUND_RISE_UP_SPEED = {
 }
 
 function var_0_0.GetBlockInitCnt(arg_1_0)
-	local var_1_0 = arg_1_0 - var_0_0.BLOCK_START_POSITION.y
-
-	math = var_1_10002
-
-	return var_1_10002.ceil(var_1_0 / var_0_0.BLOCK_INTERVAL_HEIGHT) + 2
+	return math.ceil((arg_1_0 - var_0_0.BLOCK_START_POSITION.y) / var_0_0.BLOCK_INTERVAL_HEIGHT) + 2
 end
 
 return var_0_0

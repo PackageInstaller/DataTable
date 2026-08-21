@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_vote") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_vote"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_vote = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_vote
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_vote = rawget(pg, "activity_vote") or setmetatable({
+	__name = "activity_vote"
+}, confNEO)
+pg.activity_vote.all = {
 	40,
 	41,
 	42,
@@ -37,25 +14,11 @@ var_0_3.all = {
 	48,
 	49
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_vote = {}
+pg.base = pg.base or {}
+pg.base.activity_vote = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_vote
-
-	var_1_0[40] = {
+	pg.base.activity_vote[40] = {
 		name = "预选赛",
 		ticket_period = 480,
 		type = 1,
@@ -1170,11 +1133,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_vote
-
-	var_1_1[41] = {
+	pg.base.activity_vote[41] = {
 		name = "小组赛A",
 		ticket_period = 200,
 		type = 3,
@@ -1423,11 +1382,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_vote
-
-	var_1_2[42] = {
+	pg.base.activity_vote[42] = {
 		name = "小组赛B",
 		ticket_period = 200,
 		type = 3,
@@ -1676,11 +1631,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_vote
-
-	var_1_3[43] = {
+	pg.base.activity_vote[43] = {
 		name = "小组赛C",
 		ticket_period = 200,
 		type = 3,
@@ -1929,11 +1880,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_vote
-
-	var_1_4[44] = {
+	pg.base.activity_vote[44] = {
 		name = "小组赛D",
 		ticket_period = 200,
 		type = 3,
@@ -2182,11 +2129,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_vote
-
-	var_1_5[45] = {
+	pg.base.activity_vote[45] = {
 		name = "决胜复活赛",
 		ticket_period = 160,
 		type = 4,
@@ -2430,11 +2373,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_vote
-
-	var_1_6[46] = {
+	pg.base.activity_vote[46] = {
 		name = "决赛",
 		ticket_period = 280,
 		type = 5,
@@ -2697,11 +2636,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_vote
-
-	var_1_7[47] = {
+	pg.base.activity_vote[47] = {
 		name = "趣味投票一",
 		ticket_period = 0,
 		type = 7,
@@ -2812,11 +2747,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_vote
-
-	var_1_8[48] = {
+	pg.base.activity_vote[48] = {
 		name = "趣味投票二",
 		ticket_period = 0,
 		type = 7,
@@ -2965,8 +2896,7 @@ var_0_3.base.activity_vote = {}
 			}
 		}
 	}
-	pg = var_1_8
-	var_1_8.base.activity_vote[49] = {
+	pg.base.activity_vote[49] = {
 		name = "趣味投票三",
 		ticket_period = 0,
 		type = 7,

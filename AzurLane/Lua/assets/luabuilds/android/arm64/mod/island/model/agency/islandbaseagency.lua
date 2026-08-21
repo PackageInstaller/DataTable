@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandBaseAgency")
+﻿local var_0_0 = class("IslandBaseAgency")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.host = arg_1_1
@@ -18,17 +16,13 @@ function var_0_0.GetHost(arg_2_0)
 end
 
 function var_0_0.DispatchEvent(arg_3_0, arg_3_1, ...)
-	local var_3_0 = arg_3_0:GetHost()
-
-	var_2.DispatchEvent(var_3_0, arg_3_1, ...)
+	arg_3_0:GetHost():DispatchEvent(arg_3_1, ...)
 
 	return
 end
 
 function var_0_0.On(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0 = arg_4_0:GetHost()
-
-	var_3.On(var_4_0, arg_4_1, arg_4_2)
+	arg_4_0:GetHost():On(arg_4_1, arg_4_2)
 
 	return
 end

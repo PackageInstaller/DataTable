@@ -1,104 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GameRoomFushun2View", import("..BaseMiniGameView"))
 
-local var_0_0 = "GameRoomFushun2View"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "GameRoomFushun2UI"
 end
 
-function var_0_1.getBGM(arg_2_0)
-	FushunAdventureGameConst = var_1_10001
-
-	return var_1_10001.BGM_NAME
+function var_0_0.getBGM(arg_2_0)
+	return FushunAdventureGameConst.BGM_NAME
 end
 
-function var_0_1.didEnter(arg_3_0)
-	FushunAdventureGame = var_1_10001
-	arg_3_0.game = var_1_10001.New(arg_3_0._go, arg_3_0:GetMGHubData(), arg_3_0:GetMGData())
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.game = FushunAdventureGame.New(arg_3_0._go, arg_3_0:GetMGHubData(), arg_3_0:GetMGData())
 
-	local var_3_0 = arg_3_0.game
-
-	var_1.SetGameStateCallback(var_3_0, function()
-		local var_4_0 = arg_3_0
-
-		var_0.openCoinLayer(var_4_0, false)
+	arg_3_0.game:SetGameStateCallback(function()
+		arg_3_0:openCoinLayer(false)
 
 		return
 	end, function()
-		local var_5_0 = arg_3_0
-
-		var_0.openCoinLayer(var_5_0, true)
+		arg_3_0:openCoinLayer(true)
 
 		return
 	end)
+	arg_3_0.game:SetOnShowResult(function(arg_6_0)
+		local var_6_0 = arg_3_0:GetMGHubData()
 
-	local var_3_1 = arg_3_0.game
-
-	var_1.SetOnShowResult(var_3_1, function(arg_6_0)
-		local var_6_0 = arg_3_0
-		local var_6_1 = var_1.GetMGHubData(var_6_0)
-		local var_6_2 = arg_3_0
-
-		var_2.SendSuccess(var_6_2, arg_6_0)
+		arg_3_0:SendSuccess(arg_6_0)
 
 		return
 	end)
-
-	local var_3_2 = arg_3_0.game
-
-	var_1.SetOnLevelUpdate(var_3_2, function()
-		local var_7_0 = arg_3_0
-
-		var_0.CheckAaward(var_7_0)
+	arg_3_0.game:SetOnLevelUpdate(function()
+		arg_3_0:CheckAaward()
 
 		return
 	end)
-
-	local var_3_3 = arg_3_0.game
-
-	var_1.setRoomTip(var_3_3, arg_3_0:getGameRoomData().game_help)
-
-	local var_3_4 = arg_3_0.game
-
-	var_1.setRoomId(var_3_4, arg_3_0:getGameRoomData().id)
-
-	onButton = var_1
-
-	local var_3_5 = arg_3_0
-
-	findTF = var_4
-
-	local var_3_6 = var_4(arg_3_0._go, "back")
-
-	local function var_3_7()
-		local var_8_0 = arg_3_0
-
-		var_0.emit(var_8_0, var_0_1.ON_BACK)
+	arg_3_0.game:setRoomTip(arg_3_0:getGameRoomData().game_help)
+	arg_3_0.game:setRoomId(arg_3_0:getGameRoomData().id)
+	onButton(arg_3_0, findTF(arg_3_0._go, "back"), function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_3_5, var_3_6, var_3_7, var_6)
+	end, SFX_PANEL)
 	arg_3_0:CheckAaward()
 
 	return
 end
 
-function var_0_1.CheckAaward(arg_9_0)
+function var_0_0.CheckAaward(arg_9_0)
 	return
 end
 
-function var_0_1.willExit(arg_10_0)
+function var_0_0.willExit(arg_10_0)
 	if arg_10_0.game then
-		local var_10_0 = arg_10_0.game
-
-		var_1.Dispose(var_10_0)
+		arg_10_0.game:Dispose()
 
 		arg_10_0.game = nil
 	end
@@ -106,28 +58,20 @@ function var_0_1.willExit(arg_10_0)
 	return
 end
 
-function var_0_1.OnSendMiniGameOPDone(arg_11_0)
+function var_0_0.OnSendMiniGameOPDone(arg_11_0)
 	if arg_11_0.game then
-		local var_11_0 = arg_11_0.game
-
-		var_1.RefreshLevels(var_11_0)
+		arg_11_0.game:RefreshLevels()
 	end
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_12_0)
-	if arg_12_0.game then
-		local var_12_0 = arg_12_0.game
-
-		if var_1.IsStarting(var_12_0) then
-			local var_12_1 = arg_12_0.game
-
-			var_1.ShowPauseMsgbox(var_12_1)
-		end
+function var_0_0.onBackPressed(arg_12_0)
+	if arg_12_0.game and arg_12_0.game:IsStarting() then
+		arg_12_0.game:ShowPauseMsgbox()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

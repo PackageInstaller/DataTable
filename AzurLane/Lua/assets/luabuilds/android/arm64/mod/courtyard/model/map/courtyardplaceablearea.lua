@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CourtYardPlaceableArea", import("...CourtYardDispatcher"))
 
-local var_0_0 = "CourtYardPlaceableArea"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...CourtYardDispatcher"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
 	arg_1_0.sizeX = arg_1_2.x
 	arg_1_0.sizeY = arg_1_2.y
@@ -25,209 +19,121 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 		end
 	end
 
-	CourtYardDepthMap = var_3
-	arg_1_0.depthMap = var_3.New(arg_1_0.sizeX + 1, arg_1_0.sizeY + 1)
+	arg_1_0.depthMap = CourtYardDepthMap.New(arg_1_0.sizeX + 1, arg_1_0.sizeY + 1)
 
 	return
 end
 
-function var_0_1.GetRange(arg_2_0)
-	Vector4 = var_1_10001
-
-	return var_1_10001(arg_2_0.sizeX, arg_2_0.sizeY, arg_2_0.minSizeX, arg_2_0.minSizeY)
+function var_0_0.GetRange(arg_2_0)
+	return Vector4(arg_2_0.sizeX, arg_2_0.sizeY, arg_2_0.minSizeX, arg_2_0.minSizeY)
 end
 
-function var_0_1.GetRangeWithoutWall(arg_3_0)
-	Vector4 = var_1_10001
-
-	return var_1_10001(arg_3_0.sizeX - 1, arg_3_0.sizeY - 1, arg_3_0.minSizeX, arg_3_0.minSizeY)
+function var_0_0.GetRangeWithoutWall(arg_3_0)
+	return Vector4(arg_3_0.sizeX - 1, arg_3_0.sizeY - 1, arg_3_0.minSizeX, arg_3_0.minSizeY)
 end
 
-function var_0_1.UpdateMinRange(arg_4_0, arg_4_1)
+function var_0_0.UpdateMinRange(arg_4_0, arg_4_1)
 	arg_4_0.minSizeX = arg_4_1.x
 	arg_4_0.minSizeY = arg_4_1.y
 
 	return
 end
 
-function var_0_1.LockPosition(arg_5_0, arg_5_1)
+function var_0_0.LockPosition(arg_5_0, arg_5_1)
 	arg_5_0.map[arg_5_1.x][arg_5_1.y] = true
 
 	return
 end
 
-function var_0_1._ClearLockPosition(arg_6_0, arg_6_1)
-	if arg_6_1:GetMarkPosition() then
-		arg_6_0:ClearLockPosition(var_2)
+function var_0_0._ClearLockPosition(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:GetMarkPosition()
+
+	if var_6_0 then
+		arg_6_0:ClearLockPosition(var_6_0)
 		arg_6_1:ClearMarkPosition()
 	end
 
 	return
 end
 
-function var_0_1.ClearLockPosition(arg_7_0, arg_7_1)
+function var_0_0.ClearLockPosition(arg_7_0, arg_7_1)
 	arg_7_0.map[arg_7_1.x][arg_7_1.y] = false
 
 	return
 end
 
-function var_0_1.AddItem(arg_8_0, arg_8_1)
-	assert = var_1_10002
-	isa = var_1_10004
+function var_0_0.AddItem(arg_8_0, arg_8_1)
+	assert(isa(arg_8_1, CourtYardDepthItem))
 
-	local var_8_0 = arg_8_1
+	local var_8_0 = arg_8_1:GetDeathType()
 
-	CourtYardDepthItem = var_1_10007
-
-	var_1_10002(var_1_10004(var_8_0, var_1_10007))
-
-	local var_8_1 = arg_8_1
-	local var_8_2 = arg_8_1.GetDeathType(var_8_1)
-
-	CourtYardConst = var_1_10003
-
-	local var_8_4
-
-	if var_8_2 == var_1_10003.DEPTH_TYPE_MAT then
-		table = var_8_4
-
-		var_8_4.insert(arg_8_0.mats, arg_8_1)
-
-		local var_8_3 = arg_8_0
-
-		var_8_4 = arg_8_0.DispatchEvent
-		CourtYardEvent = var_6
-
-		var_8_4(var_8_3, var_6.ADD_MAT_ITEM, arg_8_1)
+	if var_8_0 == CourtYardConst.DEPTH_TYPE_MAT then
+		table.insert(arg_8_0.mats, arg_8_1)
+		arg_8_0:DispatchEvent(CourtYardEvent.ADD_MAT_ITEM, arg_8_1)
 
 		return
 	end
 
-	CourtYardConst = var_8_4
-
-	if var_8_2 == var_8_4.DEPTH_TYPE_SHIP then
-		local var_8_5 = arg_8_0.depthMap
-
-		var_3.InsertChar(var_8_5, arg_8_1)
-
-		table = var_3
-
-		var_3.insert(arg_8_0.chars, arg_8_1)
+	if var_8_0 == CourtYardConst.DEPTH_TYPE_SHIP then
+		arg_8_0.depthMap:InsertChar(arg_8_1)
+		table.insert(arg_8_0.chars, arg_8_1)
 	else
-		local var_8_6 = arg_8_0.depthMap
-
-		var_3.PlaceItem(var_8_6, arg_8_1)
+		arg_8_0.depthMap:PlaceItem(arg_8_1)
 	end
 
-	local var_8_7 = arg_8_1:GetArea()
-
-	ipairs = var_8_1
-
-	for iter_8_0, iter_8_1 in var_8_1(var_8_7) do
+	for iter_8_0, iter_8_1 in ipairs((arg_8_1:GetArea())) do
 		if arg_8_0.map[iter_8_1.x] then
 			arg_8_0.map[iter_8_1.x][iter_8_1.y] = true
 		end
 	end
 
-	local var_8_8 = arg_8_0
-	local var_8_9 = arg_8_0.DispatchEvent
-
-	CourtYardEvent = iter_8_0
-
-	var_8_9(var_8_8, iter_8_0.ADD_ITEM, arg_8_1)
+	arg_8_0:DispatchEvent(CourtYardEvent.ADD_ITEM, arg_8_1)
 
 	return
 end
 
-function var_0_1.RemoveItem(arg_9_0, arg_9_1)
-	assert = var_1_10002
-	isa = var_1_10004
+function var_0_0.RemoveItem(arg_9_0, arg_9_1)
+	assert(isa(arg_9_1, CourtYardDepthItem))
 
-	local var_9_0 = arg_9_1
+	local var_9_0 = arg_9_1:GetDeathType()
 
-	CourtYardDepthItem = var_1_10007
-
-	var_1_10002(var_1_10004(var_9_0, var_1_10007))
-
-	local var_9_1 = arg_9_1
-	local var_9_2 = arg_9_1.GetDeathType(var_9_1)
-
-	CourtYardConst = var_1_10003
-
-	if var_9_2 == var_1_10003.DEPTH_TYPE_MAT then
-		table = var_3
-
-		var_3.removebyvalue(arg_9_0.mats, arg_9_1)
-
-		var_1_10005 = arg_9_0
-
-		local var_9_3 = arg_9_0.DispatchEvent
-
-		CourtYardEvent = var_6
-
-		var_9_3(var_1_10005, var_6.REMOVE_MAT_ITEM, arg_9_1)
+	if var_9_0 == CourtYardConst.DEPTH_TYPE_MAT then
+		table.removebyvalue(arg_9_0.mats, arg_9_1)
+		arg_9_0:DispatchEvent(CourtYardEvent.REMOVE_MAT_ITEM, arg_9_1)
 
 		return
 	end
 
-	local var_9_4 = 1
+	local var_9_1 = 1
 
-	CourtYardConst = var_9_1
+	if var_9_0 == CourtYardConst.DEPTH_TYPE_SHIP then
+		arg_9_0.depthMap:RemoveChar(arg_9_1)
 
-	if var_9_2 == var_9_1.DEPTH_TYPE_SHIP then
-		local var_9_5 = arg_9_0.depthMap
-
-		var_4.RemoveChar(var_9_5, arg_9_1)
-
-		table = var_4
-		var_9_4 = var_4.removebyvalue(arg_9_0.chars, arg_9_1)
+		var_9_1 = table.removebyvalue(arg_9_0.chars, arg_9_1)
 	else
-		local var_9_6 = arg_9_0.depthMap
-
-		var_4.RemoveItem(var_9_6, arg_9_1)
+		arg_9_0.depthMap:RemoveItem(arg_9_1)
 	end
 
-	if var_9_4 > 0 then
-		local var_9_7 = arg_9_1:GetArea()
-
-		ipairs = var_1_10005
-
-		for iter_9_0, iter_9_1 in var_1_10005(var_9_7) do
+	if var_9_1 > 0 then
+		for iter_9_0, iter_9_1 in ipairs((arg_9_1:GetArea())) do
 			if arg_9_0.map[iter_9_1.x] then
 				arg_9_0.map[iter_9_1.x][iter_9_1.y] = false
 			end
 		end
 
-		local var_9_8 = arg_9_0
-		local var_9_9 = arg_9_0.DispatchEvent
-
-		CourtYardEvent = iter_9_0
-
-		var_9_9(var_9_8, iter_9_0.REMOVE_ITEM, arg_9_1)
+		arg_9_0:DispatchEvent(CourtYardEvent.REMOVE_ITEM, arg_9_1)
 	end
 
 	return
 end
 
-function var_0_1.RemoveItemAndRefresh(arg_10_0, arg_10_1)
-	_ = var_1_10002
-
-	local var_10_0 = var_1_10002.map(arg_10_0.chars, function(arg_11_0)
-		return arg_11_0
-	end)
-
+function var_0_0.RemoveItemAndRefresh(arg_10_0, arg_10_1)
 	arg_10_0:RemoveItem(arg_10_1)
-
-	_ = var_3
-
-	var_3.each(var_10_0, function(arg_12_0)
-		local var_12_0 = arg_10_0
-
-		var_1.RemoveItem(var_12_0, arg_12_0)
-
-		local var_12_1 = arg_10_0
-
-		var_1.AddItem(var_12_1, arg_12_0)
+	_.each(_.map(arg_10_0.chars, function(arg_11_0)
+		return arg_11_0
+	end), function(arg_12_0)
+		arg_10_0:RemoveItem(arg_12_0)
+		arg_10_0:AddItem(arg_12_0)
 
 		return
 	end)
@@ -235,25 +141,13 @@ function var_0_1.RemoveItemAndRefresh(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.AddItemAndRefresh(arg_13_0, arg_13_1)
-	_ = var_1_10002
-
-	local var_13_0 = var_1_10002.map(arg_13_0.chars, function(arg_14_0)
-		return arg_14_0
-	end)
-
+function var_0_0.AddItemAndRefresh(arg_13_0, arg_13_1)
 	arg_13_0:AddItem(arg_13_1)
-
-	_ = var_3
-
-	var_3.each(var_13_0, function(arg_15_0)
-		local var_15_0 = arg_13_0
-
-		var_1.RemoveItem(var_15_0, arg_15_0)
-
-		local var_15_1 = arg_13_0
-
-		var_1.AddItem(var_15_1, arg_15_0)
+	_.each(_.map(arg_13_0.chars, function(arg_14_0)
+		return arg_14_0
+	end), function(arg_15_0)
+		arg_13_0:RemoveItem(arg_15_0)
+		arg_13_0:AddItem(arg_15_0)
 
 		return
 	end)
@@ -261,30 +155,17 @@ function var_0_1.AddItemAndRefresh(arg_13_0, arg_13_1)
 	return
 end
 
-function var_0_1.GetPositions(arg_16_0)
-	local var_16_0 = {}
-
-	pairs = var_1_10002
-
-	for iter_16_0, iter_16_1 in var_1_10002(arg_16_0.map) do
-		pairs = var_1_10007
-
-		for iter_16_2, iter_16_3 in var_1_10007(iter_16_1) do
-			table = var_1_10012
-			var_1_10012 = var_1_10012.insert
-
-			local var_16_1 = var_16_0
-
-			Vector2 = var_1_10015
-
-			var_1_10012(var_16_1, var_1_10015(iter_16_0, iter_16_2))
+function var_0_0.GetPositions(arg_16_0)
+	for iter_16_0, iter_16_1 in pairs(arg_16_0.map) do
+		for iter_16_2, iter_16_3 in pairs(iter_16_1) do
+			table.insert({}, Vector2(iter_16_0, iter_16_2))
 		end
 	end
 
-	return var_16_0
+	return {}
 end
 
-function var_0_1.IsEmptyPosition(arg_17_0, arg_17_1)
+function var_0_0.IsEmptyPosition(arg_17_0, arg_17_1)
 	if not arg_17_0.map[arg_17_1.x] then
 		return false
 	end
@@ -292,37 +173,30 @@ function var_0_1.IsEmptyPosition(arg_17_0, arg_17_1)
 	return arg_17_0.map[arg_17_1.x][arg_17_1.y] == false
 end
 
-function var_0_1.InSide(arg_18_0, arg_18_1)
+function var_0_0.InSide(arg_18_0, arg_18_1)
 	return arg_18_1.x >= arg_18_0.minSizeX and arg_18_1.y >= arg_18_0.minSizeY and arg_18_1.x <= arg_18_0.sizeX and arg_18_1.y <= arg_18_0.sizeY
 end
 
-function var_0_1.LegalPosition(arg_19_0, arg_19_1, arg_19_2)
-	local var_19_0
-
-	if arg_19_0:InSide(arg_19_1) and not arg_19_0:IsEmptyPosition(arg_19_1) then
-		var_19_0 = arg_19_2:GetDeathType()
-		CourtYardConst = var_1_10004
-		var_19_0 = var_19_0 == var_1_10004.DEPTH_TYPE_MAT
-	end
-
-	return var_19_0
+function var_0_0.LegalPosition(arg_19_0, arg_19_1, arg_19_2)
+	return arg_19_0:InSide(arg_19_1) and (arg_19_0:IsEmptyPosition(arg_19_1) or arg_19_2:GetDeathType() == CourtYardConst.DEPTH_TYPE_MAT)
 end
 
-function var_0_1.GetItems(arg_20_0)
+function var_0_0.GetItems(arg_20_0)
 	return arg_20_0.depthMap.sortedItems
 end
 
-function var_0_1.GetMatItems(arg_21_0)
-	table = var_1_10001
+function var_0_0.GetMatItems(arg_21_0)
+	table.sort(arg_21_0.mats, function(arg_22_0, arg_22_1)
+		local var_22_0 = arg_22_0:GetInitSizeCnt()
+		local var_22_1 = arg_22_1:GetInitSizeCnt()
 
-	var_1_10001.sort(arg_21_0.mats, function(arg_22_0, arg_22_1)
-		if arg_22_0:GetInitSizeCnt() == arg_22_1:GetInitSizeCnt() then
-			local var_22_0 = arg_22_0:GetPosition()
-			local var_22_1 = arg_22_1:GetPosition()
+		if var_22_0 == var_22_1 then
+			local var_22_2 = arg_22_0:GetPosition()
+			local var_22_3 = arg_22_1:GetPosition()
 
-			return var_22_0.x + var_22_0.y > var_22_1.x + var_22_1.y
+			return var_22_2.x + var_22_2.y > var_22_3.x + var_22_3.y
 		else
-			return var_3 < var_2
+			return var_22_1 < var_22_0
 		end
 
 		return
@@ -331,80 +205,49 @@ function var_0_1.GetMatItems(arg_21_0)
 	return arg_21_0.mats
 end
 
-function var_0_1.GetEmptyPositions(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_0:GetPositions()
-
-	_ = var_1_10003
-
-	return (var_1_10003.select(var_23_0, function(arg_24_0)
-		local var_24_0 = arg_23_0
-
-		return var_1.LegalPosition(var_24_0, arg_24_0, arg_23_1)
+function var_0_0.GetEmptyPositions(arg_23_0, arg_23_1)
+	return (_.select(arg_23_0:GetPositions(), function(arg_24_0)
+		return arg_23_0:LegalPosition(arg_24_0, arg_23_1)
 	end))
 end
 
-function var_0_1.GetRandomPosition(arg_25_0, arg_25_1)
-	if #arg_25_0:GetEmptyPositions(arg_25_1) > 0 then
-		math = var_3
+function var_0_0.GetRandomPosition(arg_25_0, arg_25_1)
+	local var_25_0 = arg_25_0:GetEmptyPositions(arg_25_1)
 
-		return var_2[var_3.random(1, #var_2)]
+	if #var_25_0 > 0 then
+		return var_25_0[math.random(1, #var_25_0)]
 	end
 
 	return nil
 end
 
-function var_0_1.GetEmptyArea(arg_26_0, arg_26_1)
-	local var_26_0 = arg_26_1:GetInitSize()
+function var_0_0.GetEmptyArea(arg_26_0, arg_26_1)
+	for iter_26_0, iter_26_1 in ipairs((arg_26_1:GetInitSize())) do
+		local var_26_0 = arg_26_0:_GetEmptyArea(arg_26_1, iter_26_1[1], iter_26_1[2])
 
-	ipairs = var_1_10003
-
-	for iter_26_0, iter_26_1 in var_1_10003(var_26_0) do
-		if arg_26_0:_GetEmptyArea(arg_26_1, iter_26_1[1], iter_26_1[2]) then
-			return var_8
+		if var_26_0 then
+			return var_26_0
 		end
 	end
 
 	return nil
 end
 
-function var_0_1._GetEmptyArea(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
-	local function var_27_0(arg_28_0)
-		local var_28_0 = {}
-
-		for iter_28_0 = arg_28_0.x, arg_28_0.x + arg_27_2 - 1 do
-			for iter_28_1 = arg_28_0.y, arg_28_0.y + arg_27_3 - 1 do
-				table = var_2_10010
-				var_2_10010 = var_2_10010.insert
-
-				local var_28_1 = var_28_0
-
-				Vector2 = var_2_10013
-
-				var_2_10010(var_28_1, var_2_10013(iter_28_0, iter_28_1))
-			end
-		end
-
-		return var_28_0
-	end
-
+function var_0_0._GetEmptyArea(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
 	for iter_27_0 = arg_27_0.sizeX, arg_27_0.minSizeX, -1 do
 		for iter_27_1 = arg_27_0.sizeY, arg_27_0.minSizeY, -1 do
-			local var_27_1 = var_27_0
+			if _.all((function(arg_28_0)
+				for iter_28_0 = arg_28_0.x, arg_28_0.x + arg_27_2 - 1 do
+					for iter_28_1 = arg_28_0.y, arg_28_0.y + arg_27_3 - 1 do
+						table.insert({}, Vector2(iter_28_0, iter_28_1))
+					end
+				end
 
-			Vector2 = var_1_10015
-
-			local var_27_2 = var_27_1(var_1_10015(iter_27_0, iter_27_1))
-
-			_ = var_1_10014
-
-			if var_1_10014.all(var_27_2, function(arg_29_0)
-				local var_29_0 = arg_27_0
-
-				return var_1.LegalPosition(var_29_0, arg_29_0, arg_27_1)
+				return {}
+			end)(Vector2(iter_27_0, iter_27_1)), function(arg_29_0)
+				return arg_27_0:LegalPosition(arg_29_0, arg_27_1)
 			end) then
-				Vector2 = var_1_10014
-
-				return var_1_10014(iter_27_0, iter_27_1)
+				return Vector2(iter_27_0, iter_27_1)
 			end
 		end
 	end
@@ -412,125 +255,72 @@ function var_0_1._GetEmptyArea(arg_27_0, arg_27_1, arg_27_2, arg_27_3)
 	return nil
 end
 
-function var_0_1._GetNextPositionForMove(arg_30_0, arg_30_1)
-	local var_30_0 = arg_30_1:GetAroundPositions()
+function var_0_0._GetNextPositionForMove(arg_30_0, arg_30_1)
+	local var_30_0 = _.select(arg_30_1:GetAroundPositions(), function(arg_31_0)
+		return arg_30_0:LegalPosition(arg_31_0, arg_30_1)
+	end)
 
-	_ = var_1_10003
-
-	if #var_1_10003.select(var_30_0, function(arg_31_0)
-		local var_31_0 = arg_30_0
-
-		return var_1.LegalPosition(var_31_0, arg_31_0, arg_30_1)
-	end) > 0 then
-		math = var_4
-
-		return var_3[var_4.random(1, #var_3)]
+	if #var_30_0 > 0 then
+		return var_30_0[math.random(1, #var_30_0)]
 	end
 
 	return nil
 end
 
-function var_0_1.GetMapNotIncludeItem(arg_32_0, arg_32_1)
-	local var_32_0 = arg_32_1
-	local var_32_1 = arg_32_1.GetAreaByPosition(var_32_0, arg_32_1:GetPosition())
-	local var_32_2 = {}
+function var_0_0.GetMapNotIncludeItem(arg_32_0, arg_32_1)
+	local var_32_0 = arg_32_1:GetAreaByPosition(arg_32_1:GetPosition())
 
-	pairs = var_32_0
+	for iter_32_0, iter_32_1 in pairs(arg_32_0.map) do
+		({})[iter_32_0] = {}
 
-	for iter_32_0, iter_32_1 in var_32_0(arg_32_0.map) do
-		var_32_2[iter_32_0] = {}
-		pairs = var_9
-
-		for iter_32_2, iter_32_3 in var_9(iter_32_1) do
-			table = var_1_10014
-			var_1_10014 = var_1_10014.contains
-
-			local var_32_3 = var_32_1
-
-			Vector2 = var_1_10017
-
-			if var_1_10014(var_32_3, var_1_10017(iter_32_0, iter_32_2)) then
-				var_1_10014 = var_32_2[iter_32_0]
-				var_1_10014[iter_32_2] = false
+		for iter_32_2, iter_32_3 in pairs(iter_32_1) do
+			if table.contains(var_32_0, Vector2(iter_32_0, iter_32_2)) then
+				({})[iter_32_0][iter_32_2] = false
 			else
-				var_1_10014 = var_32_2[iter_32_0]
-				var_1_10014[iter_32_2] = iter_32_3
+				({})[iter_32_0][iter_32_2] = iter_32_3
 			end
 		end
 	end
 
-	return var_32_2
+	return {}
 end
 
-function var_0_1.__GetNextPositionForMove(arg_33_0, arg_33_1)
+function var_0_0.__GetNextPositionForMove(arg_33_0, arg_33_1)
 	local var_33_0 = arg_33_0:GetMapNotIncludeItem(arg_33_1)
+	local var_33_1 = _.select(arg_33_1:GetAroundPositions(), function(arg_34_0)
+		local var_34_0 = arg_33_1:IsDifferentDirection(arg_34_0) and arg_33_0:CanRotateItem(arg_33_1) and arg_33_1:_GetRotatePositions(arg_34_0) or arg_33_1:GetAreaByPosition(arg_34_0)
 
-	local function var_33_1(arg_34_0)
-		local var_34_0 = arg_33_1
-		local var_34_1 = var_1.IsDifferentDirection(var_34_0, arg_34_0)
-		local var_34_2
+		return _.all(var_34_0, function(arg_35_0)
+			local var_35_0 = var_33_0[arg_35_0.x]
 
-		if var_34_1 then
-			local var_34_3 = arg_33_0
-
-			if var_34_0.CanRotateItem(var_34_3, arg_33_1) then
-				local var_34_4 = arg_33_1
-
-				var_34_2 = var_34_0._GetRotatePositions(var_34_4, arg_34_0)
-
-				goto label_34_0
-			end
-		end
-
-		do
-			local var_34_5 = arg_33_1
-
-			var_34_2 = var_34_0.GetAreaByPosition(var_34_5, arg_34_0)
-		end
-
-		::label_34_0::
-
-		_ = var_34_0
-
-		return var_34_0.all(var_34_2, function(arg_35_0)
 			if var_33_0[arg_35_0.x] then
-				local var_35_2
-
 				if var_33_0[arg_35_0.x][arg_35_0.y] == false then
-					local var_35_0 = arg_33_0
+					var_35_0 = arg_33_0:InSide(arg_35_0)
 
-					if var_1.InSide(var_35_0, arg_35_0) then
-						local var_35_1 = arg_33_1
-
-						var_35_2 = var_1.InActivityRange(var_35_1, arg_35_0)
+					if var_35_0 then
+						var_35_0 = arg_33_1:InActivityRange(arg_35_0)
 					end
 				else
-					var_35_2 = false
+					var_35_0 = false
 				end
 			end
 
 			if false then
-				var_35_2 = true
+				var_35_0 = true
 			end
 
-			return var_35_2
+			return var_35_0
 		end)
-	end
+	end)
 
-	local var_33_2 = arg_33_1:GetAroundPositions()
-
-	_ = var_5
-
-	if #var_5.select(var_33_2, var_33_1) > 0 then
-		math = var_6
-
-		return var_5[var_6.random(1, #var_5)]
+	if #var_33_1 > 0 then
+		return var_33_1[math.random(1, #var_33_1)]
 	end
 
 	return nil
 end
 
-function var_0_1.GetNextPositionForMove(arg_36_0, arg_36_1)
+function var_0_0.GetNextPositionForMove(arg_36_0, arg_36_1)
 	if arg_36_1:GetInitSizeCnt() == 1 then
 		return arg_36_0:_GetNextPositionForMove(arg_36_1)
 	else
@@ -540,185 +330,116 @@ function var_0_1.GetNextPositionForMove(arg_36_0, arg_36_1)
 	return
 end
 
-function var_0_1.AreaWithInfo(arg_37_0, arg_37_1, arg_37_2, arg_37_3, arg_37_4)
-	_ = var_1_10005
-
-	return (var_1_10005.map(arg_37_1:GetAreaByPosition(arg_37_2), function(arg_38_0)
-		local var_38_1
-
-		if not arg_37_4 then
-			local var_38_0 = arg_37_0
-
-			var_38_1 = var_1.LegalPosition(var_38_0, arg_38_0, arg_37_1)
-		end
+function var_0_0.AreaWithInfo(arg_37_0, arg_37_1, arg_37_2, arg_37_3, arg_37_4)
+	return (_.map(arg_37_1:GetAreaByPosition(arg_37_2), function(arg_38_0)
+		local var_38_0 = arg_37_4 or arg_37_0:LegalPosition(arg_38_0, arg_37_1)
 
 		return {
-			flag = var_38_1 and 1 or 2,
+			flag = var_38_0 and 1 or 2,
 			position = arg_38_0,
 			offset = arg_37_3
 		}
 	end))
 end
 
-function var_0_1.CanRotateItem(arg_39_0, arg_39_1)
+function var_0_0.CanRotateItem(arg_39_0, arg_39_1)
 	if arg_39_1:HasParent() then
-		var_1_10005 = arg_39_1:GetParent()
-
-		return var_2.CanRotateChild(var_1_10005, arg_39_1)
+		return arg_39_1:GetParent():CanRotateChild(arg_39_1)
+	elseif isa(arg_39_1, CourtYardCanPutFurniture) and arg_39_1:AnyNotRotateChilds() then
+		return false
 	else
-		isa = var_2
+		local var_39_0 = arg_39_0:GetMapNotIncludeItem(arg_39_1)
 
-		local var_39_0 = arg_39_1
+		return _.all(arg_39_1:GetRotatePositions(), function(arg_40_0)
+			local var_40_0 = var_39_0[arg_40_0.x]
 
-		CourtYardCanPutFurniture = var_1_10005
+			if var_39_0[arg_40_0.x] then
+				if var_39_0[arg_40_0.x][arg_40_0.y] == false then
+					var_40_0 = arg_39_0:InSide(arg_40_0)
 
-		if var_2(var_39_0, var_1_10005) and arg_39_1:AnyNotRotateChilds() then
-			return false
-		else
-			local var_39_1 = arg_39_0:GetMapNotIncludeItem(arg_39_1)
-
-			_ = var_1_10003
-
-			return var_1_10003.all(arg_39_1:GetRotatePositions(), function(arg_40_0)
-				if var_39_1[arg_40_0.x] then
-					local var_40_2
-
-					if var_39_1[arg_40_0.x][arg_40_0.y] == false then
-						local var_40_0 = arg_39_0
-
-						if var_1.InSide(var_40_0, arg_40_0) then
-							local var_40_1 = arg_39_1
-
-							var_40_2 = var_1.InActivityRange(var_40_1, arg_40_0)
-						end
-					else
-						var_40_2 = false
+					if var_40_0 then
+						var_40_0 = arg_39_1:InActivityRange(arg_40_0)
 					end
+				else
+					var_40_0 = false
 				end
+			end
 
-				if false then
-					var_40_2 = true
-				end
+			if false then
+				var_40_0 = true
+			end
 
-				return var_40_2
-			end)
-		end
+			return var_40_0
+		end)
 	end
 
 	return
 end
 
-function var_0_1.GetAroundEmptyPosition(arg_41_0, arg_41_1)
-	local var_41_0 = {}
-	local var_41_1 = {}
-	local var_41_2 = arg_41_1:GetPosition()
+function var_0_0.GetAroundEmptyPosition(arg_41_0, arg_41_1)
+	local var_41_0 = arg_41_1:GetPosition()
 
-	table = var_1_10005
+	table.insert({}, Vector2(var_41_0.x, var_41_0.y - 1))
 
-	local var_41_3 = var_1_10005.insert
-	local var_41_4 = var_41_0
+	while #{} > 0 do
+		local var_41_1 = table.remove({}, 1)
 
-	Vector2 = var_1_10008
-
-	var_41_3(var_41_4, var_1_10008(var_41_2.x, var_41_2.y - 1))
-
-	while #var_41_0 > 0 do
-		table = var_41_5
-
-		local var_41_5 = var_41_5.remove(var_41_0, 1)
-
-		if arg_41_0:IsEmptyPosition(var_41_5) then
-			return var_41_5
+		if arg_41_0:IsEmptyPosition(var_41_1) then
+			return var_41_1
 		end
 
-		table = var_6
+		table.insert({}, var_41_1)
 
-		var_6.insert(var_41_1, var_41_5)
-
-		ipairs = var_6
-
-		local var_41_6 = {}
-
-		Vector2 = var_9
-		var_41_6[1] = var_9(var_41_5.x, var_41_5.y - 1)
-		Vector2 = var_9
-		var_41_6[2] = var_9(var_41_5.x - 1, var_41_5.y)
-		Vector2 = var_9
-		var_41_6[3] = var_9(var_41_5.x + 1, var_41_5.y)
-		Vector2 = var_9
-		var_41_6[4] = var_9(var_41_5.x, var_41_5.y + 1)
-
-		for iter_41_0, iter_41_1 in var_6(var_41_6) do
-			table = var_11
-
-			if not var_11.contains(var_41_1, iter_41_1) and arg_41_0:InSide(iter_41_1) then
-				table = var_11
-
-				var_11.insert(var_41_0, iter_41_1)
+		for iter_41_0, iter_41_1 in ipairs({
+			Vector2(var_41_1.x, var_41_1.y - 1),
+			Vector2(var_41_1.x - 1, var_41_1.y),
+			Vector2(var_41_1.x + 1, var_41_1.y),
+			Vector2(var_41_1.x, var_41_1.y + 1)
+		}) do
+			if not table.contains({}, iter_41_1) and arg_41_0:InSide(iter_41_1) then
+				table.insert({}, iter_41_1)
 			end
 		end
 	end
 
-	assert = var_41_5
-
-	var_41_5(false)
+	assert(false)
 
 	return
 end
 
-function var_0_1.GetAroundEmptyArea(arg_42_0, arg_42_1, arg_42_2)
-	local var_42_0 = arg_42_1:GetInitSize()[1][1]
-	local var_42_1 = var_3[1][2]
-	local var_42_2 = arg_42_0
-	local var_42_3 = arg_42_0.GetPositions(var_42_2)
+function var_0_0.GetAroundEmptyArea(arg_42_0, arg_42_1, arg_42_2)
+	local var_42_0 = arg_42_1:GetInitSize()
 
-	local function var_42_4(arg_43_0, arg_43_1)
-		local var_43_0 = arg_43_0.x + arg_43_0.y - (arg_43_1.x + arg_43_1.y)
-
-		math = var_3
-
-		return var_3.abs(var_43_0)
+	local function var_42_3(arg_43_0, arg_43_1)
+		return math.abs(arg_43_0.x + arg_43_0.y - (arg_43_1.x + arg_43_1.y))
 	end
 
-	_ = var_42_2
-
-	local var_42_5 = var_42_2.map(var_42_3, function(arg_44_0)
+	local var_42_4 = _.map(arg_42_0:GetPositions(), function(arg_44_0)
 		return {
-			cost = var_42_4(arg_44_0, arg_42_2),
+			cost = var_42_3(arg_44_0, arg_42_2),
 			value = arg_44_0
 		}
 	end)
 
-	table = var_1_10009
-
-	var_1_10009.sort(var_42_5, function(arg_45_0, arg_45_1)
+	table.sort(var_42_4, function(arg_45_0, arg_45_1)
 		return arg_45_0.cost < arg_45_1.cost
 	end)
 
-	ipairs = var_9
-
-	for iter_42_0, iter_42_1 in var_9(var_42_5) do
-		local var_42_6 = iter_42_1.value
-		local var_42_7 = arg_42_1:GetAreaByPosition(var_42_6)
-
-		_ = var_1_10016
-
-		if var_1_10016.all(var_42_7, function(arg_46_0)
-			local var_46_0 = arg_42_0
-
-			return var_1.LegalPosition(var_46_0, arg_46_0, arg_42_1)
+	for iter_42_0, iter_42_1 in ipairs(var_42_4) do
+		if _.all(arg_42_1:GetAreaByPosition(iter_42_1.value), function(arg_46_0)
+			return arg_42_0:LegalPosition(arg_46_0, arg_42_1)
 		end) then
-			return var_42_6
+			return iter_42_1.value
 		end
 	end
 
 	return nil
 end
 
-function var_0_1.Dispose(arg_47_0)
+function var_0_0.Dispose(arg_47_0)
 	arg_47_0:ClearListeners()
 
 	return
 end
 
-return var_0_1
+return var_0_0

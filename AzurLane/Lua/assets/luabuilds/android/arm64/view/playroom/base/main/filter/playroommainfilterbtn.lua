@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PlayRoomMainFilterBtn", import("view.base.BasePanel"))
 
-local var_0_0 = "PlayRoomMainFilterBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,42 +13,28 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
+function var_0_0.Init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0, arg_3_1, arg_3_2)
-	setText = var_1_10003
-
-	var_1_10003(arg_3_0.uiText, arg_3_1.text)
-
-	setText = var_1_10003
-
-	var_1_10003(arg_3_0.uiText2, arg_3_1.text)
-
-	onButton = var_1_10003
-
-	var_1_10003(arg_3_0, arg_3_0.uiBtn, function()
+function var_0_0.didEnter(arg_3_0, arg_3_1, arg_3_2)
+	setText(arg_3_0.uiText, arg_3_1.text)
+	setText(arg_3_0.uiText2, arg_3_1.text)
+	onButton(arg_3_0, arg_3_0.uiBtn, function()
 		arg_3_1.clickBtn()
 
 		return
 	end)
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_3_0._go, true)
+	setActive(arg_3_0._go, true)
 
 	arg_3_0.data = arg_3_1
 
 	return
 end
 
-function var_0_1.willExit(arg_5_0)
+function var_0_0.willExit(arg_5_0)
 	arg_5_0:detach()
-
-	Object = var_1
-
-	var_1.Destroy(arg_5_0._go)
+	Object.Destroy(arg_5_0._go)
 
 	arg_5_0._tf = nil
 	arg_5_0._go = nil
@@ -62,16 +42,11 @@ function var_0_1.willExit(arg_5_0)
 	return
 end
 
-function var_0_1.RefreshUI(arg_6_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_6_0.uiSelectTf, arg_6_0.data.selected())
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_6_0.uiUnSelectTf, not arg_6_0.data.selected())
+function var_0_0.RefreshUI(arg_6_0)
+	setActive(arg_6_0.uiSelectTf, arg_6_0.data.selected())
+	setActive(arg_6_0.uiUnSelectTf, not arg_6_0.data.selected())
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "specialunit_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "specialunit_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.specialunit_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.specialunit_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.specialunit_template = rawget(pg, "specialunit_template") or setmetatable({
+	__name = "specialunit_template"
+}, confNEO)
+pg.specialunit_template.all = {
 	1150001,
 	1150002,
 	1150003,
@@ -54,25 +31,11 @@ var_0_3.all = {
 	1210015,
 	1210016
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.specialunit_template = {}
+pg.base = pg.base or {}
+pg.base.specialunit_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.specialunit_template
-
-	var_1_0[1150001] = {
+	pg.base.specialunit_template[1150001] = {
 		appear_story = "DONGHUO13",
 		name = "塞壬运输船",
 		ai = 1,
@@ -200,11 +163,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.specialunit_template
-
-	var_1_1[1150002] = {
+	pg.base.specialunit_template[1150002] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -332,11 +291,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.specialunit_template
-
-	var_1_2[1150003] = {
+	pg.base.specialunit_template[1150003] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -464,11 +419,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.specialunit_template
-
-	var_1_3[1150004] = {
+	pg.base.specialunit_template[1150004] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -596,11 +547,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.specialunit_template
-
-	var_1_4[1150005] = {
+	pg.base.specialunit_template[1150005] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -728,11 +675,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.specialunit_template
-
-	var_1_5[1150006] = {
+	pg.base.specialunit_template[1150006] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -860,11 +803,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.specialunit_template
-
-	var_1_6[1150011] = {
+	pg.base.specialunit_template[1150011] = {
 		appear_story = "DONGHUO13",
 		name = "塞壬运输船",
 		ai = 1,
@@ -992,11 +931,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.specialunit_template
-
-	var_1_7[1150012] = {
+	pg.base.specialunit_template[1150012] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1124,11 +1059,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.specialunit_template
-
-	var_1_8[1150013] = {
+	pg.base.specialunit_template[1150013] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1256,11 +1187,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.specialunit_template
-
-	var_1_9[1150014] = {
+	pg.base.specialunit_template[1150014] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1388,11 +1315,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.specialunit_template
-
-	var_1_10[1150015] = {
+	pg.base.specialunit_template[1150015] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1520,11 +1443,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.specialunit_template
-
-	var_1_11[1150016] = {
+	pg.base.specialunit_template[1150016] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1652,11 +1571,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.specialunit_template
-
-	var_1_12[1150020] = {
+	pg.base.specialunit_template[1150020] = {
 		appear_story = "LINGDONG19",
 		name = "侦查舰队",
 		ai = 0,
@@ -1670,11 +1585,7 @@ var_0_3.base.specialunit_template = {}
 		ai_arg = {},
 		alert_range = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.specialunit_template
-
-	var_1_13[1150021] = {
+	pg.base.specialunit_template[1150021] = {
 		appear_story = "LINGDONG19",
 		name = "主力舰队",
 		ai = 0,
@@ -1688,11 +1599,7 @@ var_0_3.base.specialunit_template = {}
 		ai_arg = {},
 		alert_range = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.specialunit_template
-
-	var_1_14[1150022] = {
+	pg.base.specialunit_template[1150022] = {
 		appear_story = "LINGDONG19",
 		name = "航空舰队",
 		ai = 0,
@@ -1706,11 +1613,7 @@ var_0_3.base.specialunit_template = {}
 		ai_arg = {},
 		alert_range = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.specialunit_template
-
-	var_1_15[17] = {
+	pg.base.specialunit_template[17] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1838,11 +1741,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.specialunit_template
-
-	var_1_16[18] = {
+	pg.base.specialunit_template[18] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -1970,11 +1869,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.specialunit_template
-
-	var_1_17[19] = {
+	pg.base.specialunit_template[19] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2102,11 +1997,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.specialunit_template
-
-	var_1_18[20] = {
+	pg.base.specialunit_template[20] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2234,11 +2125,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.specialunit_template
-
-	var_1_19[21] = {
+	pg.base.specialunit_template[21] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2366,11 +2253,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.specialunit_template
-
-	var_1_20[22] = {
+	pg.base.specialunit_template[22] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2498,11 +2381,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.specialunit_template
-
-	var_1_21[27] = {
+	pg.base.specialunit_template[27] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2630,11 +2509,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.specialunit_template
-
-	var_1_22[28] = {
+	pg.base.specialunit_template[28] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2762,11 +2637,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.specialunit_template
-
-	var_1_23[29] = {
+	pg.base.specialunit_template[29] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -2894,11 +2765,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.specialunit_template
-
-	var_1_24[30] = {
+	pg.base.specialunit_template[30] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -3026,11 +2893,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.specialunit_template
-
-	var_1_25[31] = {
+	pg.base.specialunit_template[31] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,
@@ -3158,8 +3021,7 @@ var_0_3.base.specialunit_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-	var_1_25.base.specialunit_template[1210016] = {
+	pg.base.specialunit_template[1210016] = {
 		appear_story = "",
 		name = "塞壬运输船",
 		ai = 1,

@@ -1,21 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewRecommendationShopMediator", import("...base.ContextMediator"))
 
-local var_0_0 = "NewRecommendationShopMediator"
+var_0_0.GO_SHOP = "NewRecommendationShopMediator.GO_SHOP"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.ContextMediator"))
-
-var_0_1.GO_SHOP = "NewRecommendationShopMediator.GO_SHOP"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GO_SHOP, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_1(var_2_0, var_2_10006.CHANGE_SCENE, arg_2_1, arg_2_2)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GO_SHOP, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.CHANGE_SCENE, arg_2_1, arg_2_2)
 
 		return
 	end)
@@ -23,39 +12,24 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	local var_3_0 = {}
-
-	NewShopMainScene = var_1_10002
-	var_3_0[1] = var_1_10002.CLOSE_ALL_LAYER
-	PlayerProxy = var_2
-	var_3_0[2] = var_2.UPDATED
-
-	return var_3_0
+function var_0_0.listNotificationInterests(arg_3_0)
+	return {
+		NewShopMainScene.CLOSE_ALL_LAYER,
+		PlayerProxy.UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getName(var_4_0)
-	local var_4_2 = arg_4_1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	NewShopMainScene = var_4_0
-
-	if var_4_1 == var_4_0.CLOSE_ALL_LAYER then
-		local var_4_3 = arg_4_0.viewComponent
-
-		var_4.closeView(var_4_3)
-	else
-		PlayerProxy = var_4
-
-		if var_4_1 == var_4.UPDATED then
-			local var_4_4 = arg_4_0.viewComponent
-
-			var_4.ShowResUI(var_4_4)
-		end
+	if var_4_0 == NewShopMainScene.CLOSE_ALL_LAYER then
+		arg_4_0.viewComponent:closeView()
+	elseif var_4_0 == PlayerProxy.UPDATED then
+		arg_4_0.viewComponent:ShowResUI()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

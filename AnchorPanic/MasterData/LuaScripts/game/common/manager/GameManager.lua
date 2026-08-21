@@ -38,6 +38,13 @@ GET_PING_SUCCESS = 'GET_PING_SUCCESS'
 function ctor(self)
     super.ctor(self)
 
+    -- 客户端启动时间
+    self.clientSetupTime = os.time()
+
+    self:initData()
+end
+
+function initData(self)
     self.m_isLoadPreResComplete = false
     self.m_isGetPlayerData = false
 
@@ -56,17 +63,21 @@ function ctor(self)
     -- 是否已经5点重置
     self.isDaily5Reset = nil
 
-    -- 客户端启动时间
-    self.clientSetupTime = os.time()
-
     -- 是否正在退出到登录中
     self.mIsExiting = nil
 
     -- 每周重置时间戳
     self.mWeekResetTime = nil
+    -- 是否提审
+    self.mIsInCommiting = nil
+    -- 是否测试特殊材质球
+    self.isTestHar = true
 end
 
 function setIsExiting(self, is)
+    if (is) then
+        self:initData()
+    end
     self.mIsExiting = is
 end
 function getIsExiting(self)
@@ -186,6 +197,24 @@ function getWeekResetTime(self)
     wday = (wday == 1 and tonumber(os.date("%H", self.mServerTime)) < 5) and 8 or wday
     local endTime = ((8 - wday) * 24 * 3600) - os.date("%H", self.mServerTime) * 3600 - os.date("%M", self.mServerTime) * 60 - os.date("%S", self.mServerTime) + 5 * 3600 + self.mServerTime
     return endTime
+end
+
+function getMonthResetTime(self)
+    local date = os.date("*t", self.mServerTime)
+    local resetDate = {
+        year = date.year,
+        month = date.month,
+        day = 1,
+        hour = 5,
+        min = 0,
+        sec = 0,
+    }
+
+    if date.day > 1 or date.hour >= 5 then
+        resetDate.month = resetDate.month + 1
+    end
+
+    return os.time(resetDate)
 end
 
 -- 是否处于提审期间

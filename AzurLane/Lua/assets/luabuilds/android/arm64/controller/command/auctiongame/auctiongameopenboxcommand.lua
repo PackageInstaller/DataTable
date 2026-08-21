@@ -1,44 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameOpenBoxCommand", pm.SimpleCommand)
 
-local var_0_0 = "AuctionGameOpenBoxCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
+function var_0_0.execute(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_1:getBody()
 
-	pg = var_1_10003
-
-	local var_1_1 = var_1_10003.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_1_1, 23422, {
+	pg.ConnectionMgr.GetInstance():Send(23422, {
 		arg = 1
 	}, 23423, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			AuctionGameBaseProxy = var_2_10003
-			var_2_10004 = var_1(var_2_10003)
-
-			var_1.UpdateSettlementData(var_2_10004, arg_2_0)
-
-			var_2_10004 = arg_1_0
-
-			local var_2_0 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_0(var_2_10004, var_5.AUCTION_GAME_OPEN_BOX_DONE)
+			getProxy(AuctionGameBaseProxy):UpdateSettlementData(arg_2_0)
+			arg_1_0:sendNotification(GAME.AUCTION_GAME_OPEN_BOX_DONE)
 		else
-			pg = var_1
-
-			local var_2_1 = var_1.TipsMgr.GetInstance()
-			local var_2_2 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004("", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
 		end
 
 		return
@@ -47,4 +19,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

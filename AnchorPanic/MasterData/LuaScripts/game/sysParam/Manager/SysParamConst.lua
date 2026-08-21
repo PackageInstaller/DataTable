@@ -136,6 +136,15 @@ SysParamType.RECRUIT_CHECK_STAGE_DOWNLOAD = 119
 --道具使用会检测是否需要下载额外资源
 SysParamType.PROP_SELECT_USE_CHECK_DOWNLOAD = 120
 
+--主题活动那边关联的卡池id，如果为0则不显示按钮
+SysParamType.MAINACTIVITY_TRIAL_RECRUITID = 124
+
+--战员重置等级消耗配置
+SysParamType.HERO_RESET_LV_COST = 196
+
+--主界面弹脸7
+SysParamType.MAIN_BANNER_PROMO4_ID = 197
+
 -- 手环精炼上限
 SysParamType.BRACELETS_UPPER_LIMIT = 506
 -- 盟约声望最大等级
@@ -144,10 +153,14 @@ SysParamType.COVENANT_MAXLV = 710
 SysParamType.COVENANT_MAXLV = 710
 -- 迷宫小模型tid
 SysParamType.MAZE_MODEL_TID = 857
+-- 战斗元素类型数量
+SysParamType.FIGHT_ELETYPECOUNT = 886
 
 -- 号芯片对应安装槽位开启所需军阶
 SysParamType.EQUIP_NEED_MILITART_LVL = 921
 
+--主题活动广告牌id
+SysParamType.MAINACTIVITY_BILLBOARD_BG_ID = 1102
 -- 最大战员助战数量
 SysParamType.MAX_HERO_ASSIST_COUNT = 1401
 
@@ -162,6 +175,16 @@ SysParamType.STORY_LOGNG_SPEED_2 = 1852
 SysParamType.STORY_LOGNG_SPEED_3 = 1853
 -- 剧情加速 第四档
 SysParamType.STORY_LOGNG_SPEED_4 = 1854
+
+--使用道具上限
+SysParamType.MAX_USE_PROPS_COUNT = 1914
+--单次选择上限
+SysParamType.MAX_SELECT_COUNT = 1915
+
+--增加模组方案消耗
+SysParamType.ADD_EQUIP_PLAN_COST = 1918
+--增加模组方案数量
+SysParamType.ADD_EQUIP_PLAN_COUNT = 1919
 
 -- 装备强化材料一键添加的数量上限
 SysParamType.EQUIP_MATERIAL_AUTO_COUNT = 2001
@@ -236,6 +259,8 @@ SysParamType.TRAINING_MAX_MINUTE = 902
 SysParamType.TRAINING_BUBBLE_TIP_TIME = 903
 -- 亲密度上限
 SysParamType.MAX_FAVORABLE_LV = 831
+--结婚后亲密度上限
+SysParamType.MARRIAGE_MAX_LV = 832
 -- 主角自带迷雾光源范围
 SysParamType.MAZE_PLAYER_FOG_LIGHT_RANGE = 853
 -- 1到3格模型移动速率，百分比
@@ -324,6 +349,11 @@ SysParamType.MAIN_EXPLORE_TIP_OVAL_BIG = 1707
 --进入探索地图场景后椭圆提示的半短轴"
 SysParamType.MAIN_EXPLORE_TIP_OVAL_SMALL = 1708
 
+--模组改造最大可选属性数量
+SysParamType.REMAAKE_MAX_SELECT_TYPE1 = 1916
+--模组改造最大可选品质数量
+SysParamType.REMAAKE_MAX_SELECT_TYPE2 = 1917
+
 -- 基建疲劳上限
 SysParamType.BUILD_BASE_STAMINA = 5001
 -- 发电站生产效率【数量， 多少秒】
@@ -355,6 +385,8 @@ SysParamType.NORMALSKILLREALYCEILING = 5105
 SysParamType.STAMINAHIGHT = 5011
 -- 疲劳值小于时红色
 SysParamType.STAMINALOW = 5012
+-- 当控制中心到多少级开放一键入驻
+SysParamType.OPEN_ONE_KEY_WORK = 5013
 -- 手环通讯自动等待时间
 SysParamType.AUTOWAIT = 5202
 -- 1星彩源晶兑换N时装币
@@ -390,7 +422,6 @@ SysParamType.GUILD_IMPEACH_TIME = 5452
 --弹劾需要倒计时
 SysParamType.GUILD_IMPEACH_NEED_TIME = 5453
 
-
 --公会Boss最大挑战次数
 SysParamType.GUILDBOSS_MAXBATTLECOUNT = 5501
 --工会Boss开启的时间
@@ -404,6 +435,15 @@ SysParamType.SandPlayNPCBubbleinterval = 5551
 SysParamType.SandPlayNPCBubbleShowTime = 5552
 --沙盒默认场景ID
 SysParamType.SandPlayDupId = 5553
+--自动钓鱼所需要手动钓成功鱼的数里
+SysParamType.SandPlayAutoFishCount = 5599
+
+--开心农场默认场景Id
+SysParamType.HappyFarmDupId = 5554
+
+--是否是主线类型
+SysParamType.MainActivityType = 5556
+SysParamType.MainActivityChapter = 5557
 
 --战区升级
 SysParamType.WARUP1 = 5571
@@ -413,6 +453,11 @@ SysParamType.WARUP2 = 5572
 SysParamType.FASHIONPERMIT_UP_NEED_DIAMOND = 5581
 --时装通行证tid id
 SysParamType.FASHIONPERMIT_INFO = 5582
+
+--时装通行证需要
+SysParamType.FASHIONPERMIT_TWO_UP_NEED_DIAMOND = 5586
+--时装通行证tid id
+SysParamType.FASHIONPERMIT_TWO_INFO = 5587
 
 --最大挑战次数
 SysParamType.GUILD_SEEP_MAX_TIMES = 5602
@@ -425,6 +470,8 @@ SysParamType.DISASTER_ROUNDTIMER = 5652
 
 --总力战跳过回合数
 SysParamType.DISASTER_FIGHT_SKIP = 5653
+--BOSS
+SysParamType.DISASTER_BOSS_ID = 5656
 
 --体力月卡持续天数
 SysParamType.STRENGTH_DAY = 5701
@@ -450,6 +497,84 @@ SysParamType.CELEBRATION_TASK_FASHION_INFO = 5763
 --庆典月卡激活奖励
 SysParamType.SSR_OPTIONAL_AWARD = 5764
 
+--海底跳过
+SysParamType.SEABED_FIGHT_SKIP = 5776
+--体力月卡限时任务所需任务数里
+SysParamType.ACTIVITY_STRENGTH_TASK_AWARD_NEED_COUNT = 990111
+--体力月卡限时任务累计奖励
+SysParamType.ACTIVITY_STRENGTH_TASK_AWARD = 990112
 
 
+--投资理财需要金额
+SysParamType.ACTIVITY_INVEST_NEED_MONEY = 5791--新手活动- 投资理财
+FUNC_ID_ACTIVITY_INVEST = 3404--活动期间充值达到金额
+SysParamType.ACTIVITY_RECHARGE_NUM = 5781
+-- 达标奖励
+SysParamType.ACTIVITY_RECHARGE_AWARD = 5782
+-- 充值好礼界面跳转
+SysParamType.ACTIVITY_RECHARGE_LINK_ID = 5783
+-- 狂欢好礼充值金额
+SysParamType.ACTIVITY_CARIVAL_GIFT_MONEY = 5786
+-- 狂欢好礼展示战员信息
+SysParamType.ACTIVITY_CARIVAL_GIFT_SHOW_HERO_INFO = 5787
+--阿尔戈特供显示时间
+SysParamType.SUPERCIAL_NEED_TIME = 5796
+
+--taptap活动结束时间
+SysParamType.TAPTAP_ENDTIME = 5433
+
+--纳源链接重置选择道具
+SysParamType.RECRUIT_APP_ITEM = 5903
+SysParamType.RECRUIT_SENIORAPP_ITEM = 5904
+
+--公会图标修改消耗
+SysParamType.GUILD_ICON_CHANGE_NEED = 5456
+
+--联盟单人每日挑战次数
+SysParamType.GUILDWAR_COUNT = 5801
+
+--匹配需要时间
+SysParamType.GUILDWAR_NEED_TIME = 5803
+--进攻主城所需边城消耗血量
+SysParamType.GUILDFIGHT_NEED_PRO = 5804 
+
+--DNA蛋
+--金色的卵孵化所需道具
+SysParamType.DNA_INCUBATION_NEED_PROPS = 5906 
+--功能开启所需要的战员军阶条件
+SysParamType.DNA_FUNC_OPEN_PARAM = 5907 
+--dna蛋背包容量
+SysParamType.DNA_BAG_LIMIT_COUNT = 5907 
+
+--报名需要建筑数量 类型3
+SysParamType.GUILDWAR_NEED_TYPE3_COUNT = 5812
+--报名需要建筑数量 类型1
+SysParamType.GUILDWAR_NEED_TYPE1_COUNT = 5813
+--报名需要建筑数量 类型2
+SysParamType.GUILDWAR_NEED_TYPE2_COUNT = 5814
+
+--活动可进入时间
+SysParamType.GUILDWAR_OPEN_START_TIMER = 5819
+
+--不同国家cv类型配置
+SysParamType.CV_TYPE = 5921
+
+--BOSS地鼠点击最短间隔/毫秒
+SysParamType.MOLE_BOSS_TIMER = 5922
+
+--结婚消耗道具
+SysParamType.MARRIAGE_PROPS_TID = 5941
+--结婚奖励
+SysParamType.MARRIAGE_AWARD_LIST = 5942
+--昵称长度
+SysParamType.MARRIAGE_NAME_LENGTH = 5943
+
+--泡泡龙消除分数
+SysParamType.BULLE_DESTORY_SCORE = 5951
+--泡泡龙掉落分数
+SysParamType.BULLE_DROP_SCORE = 5952
+--盖楼大作战消除分数
+SysParamType.BUILD_DESTORY_SCORE = 5953
+--盖楼大作战掉落分数
+SysParamType.BUILD_DROP_SCORE = 5954
 ----[[ 替换语言包自动生成，请勿修改！]]

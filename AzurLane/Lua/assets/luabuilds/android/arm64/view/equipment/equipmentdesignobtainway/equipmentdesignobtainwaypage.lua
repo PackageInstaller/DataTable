@@ -1,171 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EquipmentDesignObtainWayPage", import("view.base.BaseSubView"))
+local var_0_1 = {
+	i18n("equipment_design_chapter"),
+	i18n("equipment_design_tech"),
+	(i18n("equipment_design_shop"))
+}
 
-local var_0_0 = "EquipmentDesignObtainWayPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-local var_0_2 = 1
-local var_0_3 = 2
-local var_0_4 = 3
-local var_0_5 = {}
-
-i18n = var_5
-var_0_5[var_0_2] = var_5("equipment_design_chapter")
-i18n = var_5
-var_0_5[var_0_3] = var_5("equipment_design_tech")
-i18n = var_5
-var_0_5[var_0_4] = var_5("equipment_design_shop")
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "EquipmentDesignObtainWayUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.GetComponent
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.animationPlayer = arg_2_0._tf:GetComponent(typeof(Animation))
+	arg_2_0.dropTF = arg_2_0._tf:Find("main_page/item/left/IconTpl")
+	arg_2_0.nameTxt = arg_2_0._tf:Find("main_page/item/name_container/name/Text")
+	arg_2_0.descTxt = arg_2_0._tf:Find("main_page/item/Text")
+	arg_2_0.closeBtn = arg_2_0._tf:Find("main_page/top/btnBack")
+	arg_2_0.uiWayList = UIItemList.New(arg_2_0._tf:Find("main_page/obtainWay/list/content"), arg_2_0._tf:Find("main_page/obtainWay/list/content/tpl"))
+	arg_2_0.uiChapterWayList = UIItemList.New(arg_2_0._tf:Find("sub_page/list/content"), arg_2_0._tf:Find("sub_page/list/content/tpl"))
 
-	typeof = var_1_10004
-	Animation = var_1_10006
-	arg_2_0.animationPlayer = var_2_1(var_2_0, var_1_10004(var_1_10006))
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.dropTF = var_1.Find(var_2_2, "main_page/item/left/IconTpl")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.nameTxt = var_1.Find(var_2_3, "main_page/item/name_container/name/Text")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.descTxt = var_1.Find(var_2_4, "main_page/item/Text")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_5, "main_page/top/btnBack")
-	UIItemList = var_1
-
-	local var_2_6 = var_1.New
-	local var_2_7 = arg_2_0._tf
-	local var_2_8 = var_3.Find(var_2_7, "main_page/obtainWay/list/content")
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.uiWayList = var_2_6(var_2_8, var_4.Find(var_2_9, "main_page/obtainWay/list/content/tpl"))
-	UIItemList = var_1
-
-	local var_2_10 = var_1.New
-	local var_2_11 = arg_2_0._tf
-	local var_2_12 = var_3.Find(var_2_11, "sub_page/list/content")
-	local var_2_13 = arg_2_0._tf
-
-	arg_2_0.uiChapterWayList = var_2_10(var_2_12, var_4.Find(var_2_13, "sub_page/list/content/tpl"))
-	setText = var_1
-
-	local var_2_14 = arg_2_0._tf
-	local var_2_15 = var_3.Find(var_2_14, "main_page/obtainWay/list/content/tpl/expand/Text")
-
-	i18n = var_4
-
-	var_1(var_2_15, var_4("equipment_design_btn_expand"))
-
-	setText = var_1
-
-	local var_2_16 = arg_2_0._tf
-	local var_2_17 = var_3.Find(var_2_16, "main_page/obtainWay/list/content/tpl/fold/Text")
-
-	i18n = var_4
-
-	var_1(var_2_17, var_4("equipment_design_btn_fold"))
-
-	setText = var_1
-
-	local var_2_18 = arg_2_0._tf
-	local var_2_19 = var_3.Find(var_2_18, "main_page/obtainWay/list/content/tpl/skip/Text")
-
-	i18n = var_4
-
-	var_1(var_2_19, var_4("equipment_design_btn_skip"))
-
-	setText = var_1
-
-	local var_2_20 = arg_2_0._tf
-	local var_2_21 = var_3.Find(var_2_20, "sub_page/list/content/tpl/skip_btn/Text")
-
-	i18n = var_4
-
-	var_1(var_2_21, var_4("equipment_design_btn_skip"))
-
-	setText = var_1
-
-	local var_2_22 = arg_2_0._tf
-	local var_2_23 = var_3.Find(var_2_22, "main_page/obtainWay/title")
-
-	i18n = var_4
-
-	var_1(var_2_23, var_4("equipment_design_sub_title"))
-
-	setText = var_1
-
-	local var_2_24 = arg_2_0._tf
-	local var_2_25 = var_3.Find(var_2_24, "main_page/top/bg/infomation/title")
-
-	i18n = var_4
-
-	var_1(var_2_25, var_4("words_information"))
+	setText(arg_2_0._tf:Find("main_page/obtainWay/list/content/tpl/expand/Text"), i18n("equipment_design_btn_expand"))
+	setText(arg_2_0._tf:Find("main_page/obtainWay/list/content/tpl/fold/Text"), i18n("equipment_design_btn_fold"))
+	setText(arg_2_0._tf:Find("main_page/obtainWay/list/content/tpl/skip/Text"), i18n("equipment_design_btn_skip"))
+	setText(arg_2_0._tf:Find("sub_page/list/content/tpl/skip_btn/Text"), i18n("equipment_design_btn_skip"))
+	setText(arg_2_0._tf:Find("main_page/obtainWay/title"), i18n("equipment_design_sub_title"))
+	setText(arg_2_0._tf:Find("main_page/top/bg/infomation/title"), i18n("words_information"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "bg")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_1
-
-	var_1_10001(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	onButton = var_1_10001
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = arg_3_0.closeBtn
-
-	local function var_3_6()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_1
-
-	var_1_10001(var_3_4, var_3_5, var_3_6, var_3_1)
+	end, SFX_PANEL)
 
 	arg_3_0.isOpenSubPage = false
 
 	return
 end
 
-function var_0_1.Show(arg_6_0, arg_6_1)
-	var_0_1.super.Show(arg_6_0)
+function var_0_0.Show(arg_6_0, arg_6_1)
+	var_0_0.super.Show(arg_6_0)
 
 	arg_6_0.designId = arg_6_1
 
-	local var_6_0 = arg_6_0:GetObtainWayData(arg_6_1)
-
-	arg_6_0:UpdateObtainWay(var_6_0)
+	arg_6_0:UpdateObtainWay((arg_6_0:GetObtainWayData(arg_6_1)))
 	arg_6_0:UpdateEquipmentDesignInfo(arg_6_1)
 	arg_6_0:ResetSubPage()
 	arg_6_0:BlurPanel(arg_6_0._tf)
@@ -173,414 +58,194 @@ function var_0_1.Show(arg_6_0, arg_6_1)
 	return
 end
 
-function var_0_1.UpdateEquipmentDesignInfo(arg_7_0, arg_7_1)
-	pg = var_1_10002
-
-	local var_7_0 = var_1_10002.compose_data_template[arg_7_1]
-
-	Item = var_1_10003
-
-	local var_7_1 = var_1_10003.New({
+function var_0_0.UpdateEquipmentDesignInfo(arg_7_0, arg_7_1)
+	local var_7_0 = Item.New({
 		count = 0,
-		id = var_7_0.material_id
+		id = pg.compose_data_template[arg_7_1].material_id
 	})
 
-	setText = var_1_10004
-
-	local var_7_2 = arg_7_0.nameTxt
-
-	HXSet = var_1_10007
-
-	local var_7_3 = var_1_10007.hxLan
-
-	shortenString = var_1_10009
-
-	var_1_10004(var_7_2, var_7_3(var_1_10009(var_7_1:getConfig("name"), 12)))
-
-	setText = var_1_10004
-
-	local var_7_4 = arg_7_0.descTxt
-
-	HXSet = var_7
-
-	var_1_10004(var_7_4, var_7.hxLan(var_7_1:getConfig("display")))
-
-	updateItem = var_1_10004
-
-	var_1_10004(arg_7_0.dropTF, var_7_1)
-
-	setActive = var_1_10004
-
-	local var_7_5 = arg_7_0.dropTF
-
-	var_1_10004(var_6.Find(var_7_5, "icon_bg/count"), false)
+	setText(arg_7_0.nameTxt, HXSet.hxLan(shortenString(var_7_0:getConfig("name"), 12)))
+	setText(arg_7_0.descTxt, HXSet.hxLan(var_7_0:getConfig("display")))
+	updateItem(arg_7_0.dropTF, var_7_0)
+	setActive(arg_7_0.dropTF:Find("icon_bg/count"), false)
 
 	return
 end
 
-function var_0_1.ResetSubPage(arg_8_0)
-	local var_8_0 = arg_8_0.animationPlayer
-
-	var_1.Stop(var_8_0)
-
-	local var_8_1 = arg_8_0.animationPlayer
-
-	var_1.Play(var_8_1, "reset_sub_page")
+function var_0_0.ResetSubPage(arg_8_0)
+	arg_8_0.animationPlayer:Stop()
+	arg_8_0.animationPlayer:Play("reset_sub_page")
 
 	arg_8_0.isOpenSubPage = false
 
 	return
 end
 
-function var_0_1.Hide(arg_9_0)
-	var_0_1.super.Hide(arg_9_0)
+function var_0_0.Hide(arg_9_0)
+	var_0_0.super.Hide(arg_9_0)
 	arg_9_0:ResetSubPage()
 	arg_9_0:UnOverlayPanel(arg_9_0._tf, arg_9_0._parentTf)
 
 	return
 end
 
-function var_0_1.GetObtainWayData(arg_10_0, arg_10_1)
-	getProxy = var_1_10002
-	EquipmentProxy = var_1_10004
+function var_0_0.GetObtainWayData(arg_10_0, arg_10_1)
+	local var_10_0 = getProxy(EquipmentProxy):GetObtainWay4EquipmentDesign(arg_10_1)
 
-	local var_10_0 = var_1_10002(var_1_10004)
-	local var_10_1 = var_2.GetObtainWay4EquipmentDesign(var_10_0, arg_10_1)[1]
-	local var_10_2 = var_2[2]
-	local var_10_3 = var_2[3]
-	local var_10_4 = {}
-
-	if var_10_2 then
-		table = var_1_10007
-
-		var_1_10007.insert(var_10_4, var_0_3)
+	if var_10_0[2] then
+		table.insert({}, var_0)
 	end
 
-	if var_10_3 then
-		table = var_1_10007
-
-		var_1_10007.insert(var_10_4, var_0_4)
+	if var_10_0[3] then
+		table.insert({}, var_0)
 	end
 
-	if #var_10_1 > 0 then
-		table = var_7
-
-		var_7.insert(var_10_4, 1, var_0_2)
+	if #var_10_0[1] > 0 then
+		table.insert({}, 1, var_0)
 	end
 
-	return var_10_4
+	return {}
 end
 
-function var_0_1.UpdateObtainWay(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0.uiWayList
-
-	var_2.make(var_11_0, function(arg_12_0, arg_12_1, arg_12_2)
-		UIItemList = var_2_10003
-
-		if arg_12_0 == var_2_10003.EventUpdate then
-			local var_12_0 = arg_11_1[arg_12_1 + 1]
-			local var_12_1 = arg_11_0
-
-			var_4.UpdateWayTpl(var_12_1, arg_12_2, var_12_0)
+function var_0_0.UpdateObtainWay(arg_11_0, arg_11_1)
+	arg_11_0.uiWayList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
+			arg_11_0:UpdateWayTpl(arg_12_2, arg_11_1[arg_12_1 + 1])
 		end
 
 		return
 	end)
-
-	local var_11_1 = arg_11_0.uiWayList
-
-	var_2.align(var_11_1, #arg_11_1)
+	arg_11_0.uiWayList:align(#arg_11_1)
 
 	return
 end
 
-function var_0_1.UpdateWayTpl(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = arg_13_1:Find("expand")
-	local var_13_1 = arg_13_1:Find("fold")
-	local var_13_2 = arg_13_1:Find("skip")
-	local var_13_3 = arg_13_1
-	local var_13_4 = arg_13_1.Find(var_13_3, "title")
+function var_0_0.UpdateWayTpl(arg_13_0, arg_13_1, arg_13_2)
+	local var_13_0 = arg_13_1:Find("fold")
+	local var_13_1 = arg_13_1:Find("skip")
 
-	local function var_13_5()
-		setActive = var_2_10000
-
-		var_2_10000(var_13_0, arg_13_2 == var_0_2 and not arg_13_0.isOpenSubPage)
-
-		setActive = var_2_10000
-
-		var_2_10000(var_13_1, arg_13_2 == var_0_2 and arg_13_0.isOpenSubPage)
-
-		setActive = var_2_10000
-
-		var_2_10000(var_13_2, arg_13_2 == var_0_3 or arg_13_2 == var_0_4)
+	local function var_13_2()
+		setActive(var_0, arg_13_2 == var_0 and not arg_13_0.isOpenSubPage)
+		setActive(var_13_0, arg_13_2 == var_0 and arg_13_0.isOpenSubPage)
+		setActive(var_13_1, arg_13_2 == var_0 or arg_13_2 == var_0)
 
 		return
 	end
 
-	onButton = var_13_3
-
-	local var_13_6 = arg_13_0
-	local var_13_7 = var_13_0
-
-	local function var_13_8()
-		local var_15_0 = arg_13_0.animationPlayer
-
-		var_0.Stop(var_15_0)
-
-		local var_15_1 = arg_13_0.animationPlayer
-
-		var_0.Play(var_15_1, "open_sub_page")
-
-		local var_15_2 = arg_13_0
-
-		var_0.UpdateChapterWays(var_15_2)
+	onButton(arg_13_0, arg_13_1:Find("expand"), function()
+		arg_13_0.animationPlayer:Stop()
+		arg_13_0.animationPlayer:Play("open_sub_page")
+		arg_13_0:UpdateChapterWays()
 
 		arg_13_0.isOpenSubPage = true
 
-		var_13_5()
+		var_13_2()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10013
-
-	var_13_3(var_13_6, var_13_7, var_13_8, var_1_10013)
-
-	onButton = var_13_3
-
-	local var_13_9 = arg_13_0
-	local var_13_10 = var_13_1
-
-	local function var_13_11()
-		local var_16_0 = arg_13_0.animationPlayer
-
-		var_0.Stop(var_16_0)
-
-		local var_16_1 = arg_13_0.animationPlayer
-
-		var_0.Play(var_16_1, "close_sub_page")
+	end, SFX_PANEL)
+	onButton(arg_13_0, arg_13_1:Find("fold"), function()
+		arg_13_0.animationPlayer:Stop()
+		arg_13_0.animationPlayer:Play("close_sub_page")
 
 		arg_13_0.isOpenSubPage = false
 
-		var_13_5()
+		var_13_2()
 
 		return
-	end
+	end, SFX_PANEL)
+	;(function()
+		setActive(var_0, arg_13_2 == var_0 and not arg_13_0.isOpenSubPage)
+		setActive(var_13_0, arg_13_2 == var_0 and arg_13_0.isOpenSubPage)
+		setActive(var_13_1, arg_13_2 == var_0 or arg_13_2 == var_0)
 
-	SFX_PANEL = var_1_10013
-
-	var_13_3(var_13_9, var_13_10, var_13_11, var_1_10013)
-	var_13_5()
-
-	onButton = var_8
-
-	local var_13_12 = arg_13_0
-	local var_13_13 = var_13_2
-
-	local function var_13_14()
-		if arg_13_2 == var_0_3 then
-			local var_17_0 = arg_13_0
-
-			var_0.GoTechScene(var_17_0)
-		elseif arg_13_2 == var_0_4 then
-			local var_17_1 = arg_13_0
-
-			var_0.GoShopScene(var_17_1)
+		return
+	end)()
+	onButton(arg_13_0, arg_13_1:Find("skip"), function()
+		if arg_13_2 == var_0 then
+			arg_13_0:GoTechScene()
+		elseif arg_13_2 == var_0 then
+			arg_13_0:GoShopScene()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10013
-
-	var_8(var_13_12, var_13_13, var_13_14, var_1_10013)
-
-	setText = var_8
-
-	var_8(var_13_4, var_0_5[arg_13_2])
+	end, SFX_PANEL)
+	setText(arg_13_1:Find("title"), var_0_1[arg_13_2])
 
 	return
 end
 
-function var_0_1.UpdateChapterWays(arg_18_0)
-	getProxy = var_1_10001
-	EquipmentProxy = var_1_10003
+function var_0_0.UpdateChapterWays(arg_18_0)
+	local var_18_0 = getProxy(EquipmentProxy):GetObtainWay4EquipmentDesign(arg_18_0.designId)[1]
 
-	local var_18_0 = var_1_10001(var_1_10003)
-	local var_18_1 = var_1.GetObtainWay4EquipmentDesign(var_18_0, arg_18_0.designId)[1]
-	local var_18_2 = arg_18_0.uiChapterWayList
-
-	var_3.make(var_18_2, function(arg_19_0, arg_19_1, arg_19_2)
-		UIItemList = var_2_10003
-
-		if arg_19_0 == var_2_10003.EventUpdate then
-			local var_19_0 = var_18_1[arg_19_1 + 1]
-
-			pg = var_4
-
-			local var_19_1 = var_4.chapter_template[var_19_0]
-
-			setScrollText = var_2_10005
-
-			local var_19_2 = arg_19_2:Find("mask/Text")
-
-			i18n = var_2_10008
-
-			var_2_10005(var_19_2, var_2_10008("equipment_design_chapter") .. ":" .. var_19_1.name)
-
-			onButton = var_2_10005
-
-			local var_19_3 = arg_18_0
-			local var_19_4 = arg_19_2
-			local var_19_5 = arg_19_2.Find(var_19_4, "skip_btn")
-
-			local function var_19_6()
-				local var_20_0 = arg_18_0
-
-				var_0.GoChapterScene(var_20_0, var_19_0)
+	arg_18_0.uiChapterWayList:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
+			setScrollText(arg_19_2:Find("mask/Text"), i18n("equipment_design_chapter") .. ":" .. pg.chapter_template[var_18_0[arg_19_1 + 1]].name)
+			onButton(arg_18_0, arg_19_2:Find("skip_btn"), function()
+				arg_18_0:GoChapterScene(var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_19_4
-
-			var_2_10005(var_19_3, var_19_5, var_19_6, var_19_4)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
-
-	local var_18_3 = arg_18_0.uiChapterWayList
-
-	var_3.align(var_18_3, #var_18_1)
+	arg_18_0.uiChapterWayList:align(#getProxy(EquipmentProxy):GetObtainWay4EquipmentDesign(arg_18_0.designId)[1])
 
 	return
 end
 
-function var_0_1.GoChapterScene(arg_21_0, arg_21_1)
-	pg = var_1_10002
+function var_0_0.GoChapterScene(arg_21_0, arg_21_1)
+	if pg.chapter_template[arg_21_1].act_id ~= 0 and pg.chapter_template[arg_21_1].act_id ~= 100001 then
+		local var_21_0 = getProxy(ActivityProxy):RawGetActivityById(pg.chapter_template[arg_21_1].act_id)
 
-	if var_1_10002.chapter_template[arg_21_1].act_id ~= 0 and var_2.act_id ~= 100001 then
-		getProxy = var_3
-		ActivityProxy = var_1_10005
-		var_1_10005 = var_3(var_1_10005)
-
-		if not var_3.RawGetActivityById(var_1_10005, var_2.act_id) or var_3:isEnd() then
-			pg = var_1_10004
-
-			local var_21_0 = var_1_10004.TipsMgr.GetInstance()
-
-			var_1_10004 = var_1_10004.ShowTips
-			i18n = var_1_10007
-
-			var_1_10004(var_21_0, var_1_10007("common_activity_notStartOrEnd"))
+		if not var_21_0 or var_21_0:isEnd() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_notStartOrEnd"))
 
 			return
 		end
 
-		chapterProxy = var_1_10004
+		local var_21_1, var_21_2 = chapterProxy:getLastMapForActivity()
 
-		local var_21_1 = var_1_10004
-		local var_21_2
-
-		var_21_2, var_1_10005 = var_1_10004.getLastMapForActivity(var_21_1)
-		pg = var_21_1
-		var_1_10008 = var_21_1.m02
-
-		local var_21_3 = var_6.sendNotification
-
-		GAME = var_1_10009
-		var_1_10009 = var_1_10009.GO_SCENE
-		SCENE = var_1_10010
-
-		var_21_3(var_1_10008, var_1_10009, var_1_10010.LEVEL, {
-			chapterId = var_1_10005,
-			mapIdx = var_21_2
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
+			chapterId = var_21_2,
+			mapIdx = var_21_1
 		})
 
 		return
 	end
 
-	getProxy = var_3
-	ChapterProxy = var_1_10005
+	local var_21_3 = getProxy(ChapterProxy):getChapterById(arg_21_1)
 
-	local var_21_4 = var_3(var_1_10005)
-
-	if not var_3.getChapterById(var_21_4, arg_21_1) or not var_4:isUnlock() then
-		pg = var_1_10005
-
-		local var_21_5 = var_1_10005.TipsMgr.GetInstance()
-
-		var_1_10005 = var_1_10005.ShowTips
-		i18n = var_1_10008
-
-		var_1_10005(var_21_5, var_1_10008("battle_levelScene_chapter_lock"))
+	if not var_21_3 or not var_21_3:isUnlock() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("battle_levelScene_chapter_lock"))
 
 		return
 	end
 
-	pg = var_1_10005
-
-	local var_21_6 = var_1_10005.m02
-	local var_21_7 = var_5.sendNotification
-
-	GAME = var_1_10008
-
-	local var_21_8 = var_1_10008.GO_SCENE
-
-	SCENE = var_1_10009
-
-	var_21_7(var_21_6, var_21_8, var_1_10009.LEVEL, {
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.LEVEL, {
 		chapterId = arg_21_1,
-		mapIdx = var_2.map
+		mapIdx = pg.chapter_template[arg_21_1].map
 	})
 
 	return
 end
 
-function var_0_1.GoTechScene(arg_22_0)
-	pg = var_1_10001
-
-	local var_22_0 = var_1_10001.m02
-	local var_22_1 = var_1.sendNotification
-
-	GAME = var_1_10004
-
-	local var_22_2 = var_1_10004.GO_SCENE
-
-	SCENE = var_1_10005
-
-	var_22_1(var_22_0, var_22_2, var_1_10005.TECHNOLOGY)
+function var_0_0.GoTechScene(arg_22_0)
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.TECHNOLOGY)
 
 	return
 end
 
-function var_0_1.GoShopScene(arg_23_0)
-	pg = var_1_10001
-
-	local var_23_0 = var_1_10001.m02
-	local var_23_1 = var_1.sendNotification
-
-	GAME = var_1_10004
-
-	local var_23_2 = var_1_10004.GO_SCENE
-
-	SCENE = var_1_10005
-
-	local var_23_3 = var_1_10005.SHOP
-	local var_23_4 = {}
-
-	ShopConst = var_1_10007
-	var_23_4.warp = var_1_10007.TYPE_FRAGMENT
-	ShopConst = var_7
-	var_23_4.type = var_7.SHOP_TYPE.SUPPLY
-
-	var_23_1(var_23_0, var_23_2, var_23_3, var_23_4)
+function var_0_0.GoShopScene(arg_23_0)
+	pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+		warp = ShopConst.TYPE_FRAGMENT,
+		type = ShopConst.SHOP_TYPE.SUPPLY
+	})
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_24_0)
+function var_0_0.OnDestroy(arg_24_0)
 	if arg_24_0:isShowing() then
 		arg_24_0:Hide()
 	end
@@ -588,4 +253,4 @@ function var_0_1.OnDestroy(arg_24_0)
 	return
 end
 
-return var_0_1
+return var_0_0

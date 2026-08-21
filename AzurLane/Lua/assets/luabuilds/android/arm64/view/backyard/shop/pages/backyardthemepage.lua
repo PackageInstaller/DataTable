@@ -1,240 +1,106 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BackYardThemePage", import(".BackYardShopBasePage"))
 
-local var_0_0 = "BackYardThemePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BackYardShopBasePage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackYardThemePage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	arg_2_0:LoadList()
 	arg_2_0:LoadDetail()
 
-	BackYardLargeSpriteLoader = var_1
-	arg_2_0.largeSpLoader = var_1.New(6)
+	arg_2_0.largeSpLoader = BackYardLargeSpriteLoader.New(6)
 
 	return
 end
 
-function var_0_1.LoadList(arg_3_0)
+function var_0_0.LoadList(arg_3_0)
 	arg_3_0._parentTF = arg_3_0._tf.parent
+	arg_3_0.adpter = arg_3_0._tf:Find("adpter")
+	arg_3_0.themeContainer = arg_3_0._tf:Find("list/frame")
+	arg_3_0.scrollRect = arg_3_0._tf:Find("list/frame/mask/content"):GetComponent("LScrollRect")
+	arg_3_0.scrollRectWidth = arg_3_0._tf:Find("list/frame/mask").rect.width
+	arg_3_0.searchInput = arg_3_0._tf:Find("adpter/search")
+	arg_3_0.searchClear = arg_3_0.searchInput:Find("clear")
 
-	local var_3_0 = arg_3_0._tf
-
-	arg_3_0.adpter = var_1.Find(var_3_0, "adpter")
-
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.themeContainer = var_1.Find(var_3_1, "list/frame")
-
-	local var_3_2 = arg_3_0._tf
-	local var_3_3 = var_1.Find(var_3_2, "list/frame/mask/content")
-
-	arg_3_0.scrollRect = var_1.GetComponent(var_3_3, "LScrollRect")
-
-	local var_3_4 = arg_3_0._tf
-
-	arg_3_0.scrollRectWidth = var_1.Find(var_3_4, "list/frame/mask").rect.width
-
-	local var_3_5 = arg_3_0._tf
-
-	arg_3_0.searchInput = var_1.Find(var_3_5, "adpter/search")
-
-	local var_3_6 = arg_3_0.searchInput
-
-	arg_3_0.searchClear = var_1.Find(var_3_6, "clear")
-	setText = var_1
-
-	local var_3_7 = arg_3_0.searchInput
-	local var_3_8 = var_3.Find(var_3_7, "Placeholder")
-
-	i18n = var_4
-
-	var_1(var_3_8, var_4("courtyard_label_search_holder"))
+	setText(arg_3_0.searchInput:Find("Placeholder"), i18n("courtyard_label_search_holder"))
 
 	return
 end
 
-function var_0_1.LoadDetail(arg_4_0)
-	local var_4_0 = arg_4_0._tf
-
-	arg_4_0.purchaseBtn = var_1.Find(var_4_0, "adpter/descript/btn_goumai")
-
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_1.Find(var_4_1, "adpter/descript/title")
-	local var_4_3 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0.title = var_4_3(var_4_2, var_4(var_1_10006))
-
-	local var_4_4 = arg_4_0._tf
-	local var_4_5 = var_1.Find(var_4_4, "adpter/descript/desc")
-	local var_4_6 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0.desc = var_4_6(var_4_5, var_4(var_1_10006))
-
-	local var_4_7 = arg_4_0._tf
-
-	arg_4_0.actualPrice = var_1.Find(var_4_7, "adpter/descript/price/actual_price")
-
-	local var_4_8 = arg_4_0._tf
-	local var_4_9 = var_1.Find(var_4_8, "adpter/descript/price/actual_price/Text")
-	local var_4_10 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0.actualPriceTxt = var_4_10(var_4_9, var_4(var_1_10006))
-
-	local var_4_11 = arg_4_0._tf
-	local var_4_12 = var_1.Find(var_4_11, "adpter/descript/price/price/Text")
-	local var_4_13 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0.goldTxt = var_4_13(var_4_12, var_4(var_1_10006))
-
-	local var_4_14 = arg_4_0._tf
-	local var_4_15 = var_1.Find(var_4_14, "preview")
-	local var_4_16 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_4_0.preview = var_4_16(var_4_15, var_4(var_1_10006))
-
-	local var_4_17 = arg_4_0._tf
-
-	arg_4_0.descript = var_1.Find(var_4_17, "adpter/descript")
-	BackYardThemeInfoPage = var_1
-	arg_4_0.infoPage = var_1.New(arg_4_0._tf.parent, arg_4_0.event, arg_4_0.contextData)
+function var_0_0.LoadDetail(arg_4_0)
+	arg_4_0.purchaseBtn = arg_4_0._tf:Find("adpter/descript/btn_goumai")
+	arg_4_0.title = arg_4_0._tf:Find("adpter/descript/title"):GetComponent(typeof(Text))
+	arg_4_0.desc = arg_4_0._tf:Find("adpter/descript/desc"):GetComponent(typeof(Text))
+	arg_4_0.actualPrice = arg_4_0._tf:Find("adpter/descript/price/actual_price")
+	arg_4_0.actualPriceTxt = arg_4_0._tf:Find("adpter/descript/price/actual_price/Text"):GetComponent(typeof(Text))
+	arg_4_0.goldTxt = arg_4_0._tf:Find("adpter/descript/price/price/Text"):GetComponent(typeof(Text))
+	arg_4_0.preview = arg_4_0._tf:Find("preview"):GetComponent(typeof(Image))
+	arg_4_0.descript = arg_4_0._tf:Find("adpter/descript")
+	arg_4_0.infoPage = BackYardThemeInfoPage.New(arg_4_0._tf.parent, arg_4_0.event, arg_4_0.contextData)
 
 	function arg_4_0.infoPage.OnEnter()
-		local var_5_0 = arg_4_0
-
-		var_0.UnBlurView(var_5_0)
+		arg_4_0:UnBlurView()
 
 		return
 	end
 
 	function arg_4_0.infoPage.OnExit()
-		local var_6_0 = arg_4_0
-
-		var_0.BlurView(var_6_0)
+		arg_4_0:BlurView()
 
 		return
 	end
 
 	function arg_4_0.infoPage.OnPrevTheme()
-		local var_7_0 = arg_4_0
-
-		var_0.OnInfoPagePrevTheme(var_7_0)
+		arg_4_0:OnInfoPagePrevTheme()
 
 		return
 	end
 
-	local var_4_18 = arg_4_0.infoPage
-
-	function var_4_18.OnNextTheme()
-		local var_8_0 = arg_4_0
-
-		var_0.OnInfoPageNextTheme(var_8_0)
+	function arg_4_0.infoPage.OnNextTheme()
+		arg_4_0:OnInfoPageNextTheme()
 
 		return
 	end
 
-	onButton = var_4_18
-
-	local var_4_19 = arg_4_0
-	local var_4_20 = arg_4_0.purchaseBtn
-
-	local function var_4_21()
-		local var_9_0 = arg_4_0
-		local var_9_1 = var_0.GetSelectedIndex(var_9_0)
-		local var_9_2 = arg_4_0.infoPage
-
-		var_1.ExecuteAction(var_9_2, "SetUp", var_9_1, arg_4_0.selected, arg_4_0.dorm, arg_4_0.player)
+	onButton(arg_4_0, arg_4_0.purchaseBtn, function()
+		arg_4_0.infoPage:ExecuteAction("SetUp", arg_4_0:GetSelectedIndex(), arg_4_0.selected, arg_4_0.dorm, arg_4_0.player)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_4_18(var_4_19, var_4_20, var_4_21, var_1_10006)
-
-	setText = var_4_18
-
-	local var_4_22 = arg_4_0.purchaseBtn
-	local var_4_23 = var_3.Find(var_4_22, "Text")
-
-	i18n = var_4_20
-
-	var_4_18(var_4_23, var_4_20("word_buy"))
+	end, SFX_PANEL)
+	setText(arg_4_0.purchaseBtn:Find("Text"), i18n("word_buy"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_10_0)
+function var_0_0.OnInit(arg_10_0)
 	arg_10_0.cards = {}
 
 	function arg_10_0.scrollRect.onInitItem(arg_11_0)
-		local var_11_0 = arg_10_0
-
-		var_1.OnInitCard(var_11_0, arg_11_0)
+		arg_10_0:OnInitCard(arg_11_0)
 
 		return
 	end
 
 	function arg_10_0.scrollRect.onUpdateItem(arg_12_0, arg_12_1)
-		local var_12_0 = arg_10_0
-
-		var_2.OnUpdateCard(var_12_0, arg_12_0, arg_12_1)
+		arg_10_0:OnUpdateCard(arg_12_0, arg_12_1)
 
 		return
 	end
 
 	arg_10_0:InitInput()
-
-	onButton = var_1
-
-	local var_10_0 = arg_10_0
-	local var_10_1 = arg_10_0.searchClear
-
-	local function var_10_2()
-		setInputText = var_2_10000
-
-		var_2_10000(arg_10_0.searchInput, "")
+	onButton(arg_10_0, arg_10_0.searchClear, function()
+		setInputText(arg_10_0.searchInput, "")
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_10_0, var_10_1, var_10_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.InitInput(arg_14_0)
-	onInputChanged = var_1_10001
-
-	var_1_10001(arg_14_0, arg_14_0.searchInput, function()
-		getInputText = var_2_10000
-
-		local var_15_0 = var_2_10000(arg_14_0.searchInput)
-
-		setActive = var_2_10001
-
-		var_2_10001(arg_14_0.searchClear, var_15_0 ~= "")
-
-		local var_15_1 = arg_14_0
-
-		var_1.OnSearchKeyChange(var_15_1)
+function var_0_0.InitInput(arg_14_0)
+	onInputChanged(arg_14_0, arg_14_0.searchInput, function()
+		setActive(arg_14_0.searchClear, getInputText(arg_14_0.searchInput) ~= "")
+		arg_14_0:OnSearchKeyChange()
 
 		return
 	end)
@@ -242,74 +108,54 @@ function var_0_1.InitInput(arg_14_0)
 	return
 end
 
-function var_0_1.GetData(arg_16_0)
-	local var_16_0 = {}
+function var_0_0.GetData(arg_16_0)
+	local var_16_0 = getInputText(arg_16_0.searchInput)
+	local var_16_1 = arg_16_0.dorm:GetPurchasedFurnitures()
+	local var_16_2 = {}
 
-	getProxy = var_1_10002
-	DormProxy = var_1_10004
+	for iter_16_0, iter_16_1 in ipairs((getProxy(DormProxy):GetSystemThemes())) do
+		if not iter_16_1:IsOverTime() and iter_16_1:MatchSearchKey(var_16_0) then
+			table.insert({}, iter_16_1)
 
-	local var_16_1 = var_1_10002(var_1_10004)
-	local var_16_2 = var_2.GetSystemThemes(var_16_1)
-
-	getInputText = var_1_10003
-
-	local var_16_3 = var_1_10003(arg_16_0.searchInput)
-	local var_16_4 = arg_16_0.dorm
-	local var_16_5 = var_4.GetPurchasedFurnitures(var_16_4)
-	local var_16_6 = {}
-
-	ipairs = var_16_4
-
-	for iter_16_0, iter_16_1 in var_16_4(var_16_2) do
-		if not iter_16_1:IsOverTime() and iter_16_1:MatchSearchKey(var_16_3) then
-			table = var_11
-
-			var_11.insert(var_16_0, iter_16_1)
-
-			var_16_6[iter_16_1.id] = iter_16_1:IsPurchased(var_16_5) and 1 or 0
+			var_16_2[iter_16_1.id] = iter_16_1:IsPurchased(var_16_1) and 1 or 0
 		end
 	end
 
-	pg = var_6
+	local var_16_3 = pg.backyard_theme_template
 
-	local var_16_7 = var_6.backyard_theme_template
-
-	local function var_16_8(arg_17_0, arg_17_1)
-		if var_16_7[arg_17_0.id].hot == var_16_7[arg_17_1.id].hot then
-			return var_16_7[arg_17_0.id].order > var_16_7[arg_17_1.id].order
+	local function var_16_4(arg_17_0, arg_17_1)
+		if var_16_3[arg_17_0.id].hot == var_16_3[arg_17_1.id].hot then
+			return var_16_3[arg_17_0.id].order > var_16_3[arg_17_1.id].order
 		else
-			return var_16_7[arg_17_0.id].hot > var_16_7[arg_17_1.id].hot
+			return var_16_3[arg_17_0.id].hot > var_16_3[arg_17_1.id].hot
 		end
 
 		return
 	end
 
-	table = var_8
+	table.sort({}, function(arg_18_0, arg_18_1)
+		local var_18_0 = var_16_2[arg_18_0.id]
+		local var_18_1 = var_16_2[arg_18_1.id]
 
-	var_8.sort(var_16_0, function(arg_18_0, arg_18_1)
-		if var_16_6[arg_18_0.id] == var_16_6[arg_18_1.id] then
-			if var_16_7[arg_18_0.id].new == var_16_7[arg_18_1.id].new then
-				return var_16_8(arg_18_0, arg_18_1)
+		if var_16_2[arg_18_0.id] == var_16_2[arg_18_1.id] then
+			if var_16_3[arg_18_0.id].new == var_16_3[arg_18_1.id].new then
+				return var_16_4(arg_18_0, arg_18_1)
 			else
-				return var_16_7[arg_18_0.id].new > var_16_7[arg_18_1.id].new
+				return var_16_3[arg_18_0.id].new > var_16_3[arg_18_1.id].new
 			end
 		else
-			return var_2 < var_3
+			return var_18_0 < var_18_1
 		end
 
 		return
 	end)
 
-	return var_16_0
+	return {}
 end
 
-function var_0_1.FurnituresUpdated(arg_19_0, arg_19_1)
-	local var_19_0 = arg_19_0.infoPage
-
-	if var_2.GetLoaded(var_19_0) then
-		local var_19_1 = arg_19_0.infoPage
-
-		var_2.ExecuteAction(var_19_1, "FurnituresUpdated", arg_19_1)
+function var_0_0.FurnituresUpdated(arg_19_0, arg_19_1)
+	if arg_19_0.infoPage:GetLoaded() then
+		arg_19_0.infoPage:ExecuteAction("FurnituresUpdated", arg_19_1)
 	end
 
 	if arg_19_0.card then
@@ -321,47 +167,36 @@ function var_0_1.FurnituresUpdated(arg_19_0, arg_19_1)
 	return
 end
 
-function var_0_1.OnDormUpdated(arg_20_0)
-	local var_20_0 = arg_20_0.infoPage
-
-	if var_1.GetLoaded(var_20_0) then
-		local var_20_1 = arg_20_0.infoPage
-
-		var_1.ExecuteAction(var_20_1, "DormUpdated", arg_20_0.dorm)
+function var_0_0.OnDormUpdated(arg_20_0)
+	if arg_20_0.infoPage:GetLoaded() then
+		arg_20_0.infoPage:ExecuteAction("DormUpdated", arg_20_0.dorm)
 	end
 
 	return
 end
 
-function var_0_1.OnPlayerUpdated(arg_21_0)
-	local var_21_0 = arg_21_0.infoPage
-
-	if var_1.GetLoaded(var_21_0) then
-		local var_21_1 = arg_21_0.infoPage
-
-		var_1.ExecuteAction(var_21_1, "OnPlayerUpdated", arg_21_0.player)
+function var_0_0.OnPlayerUpdated(arg_21_0)
+	if arg_21_0.infoPage:GetLoaded() then
+		arg_21_0.infoPage:ExecuteAction("OnPlayerUpdated", arg_21_0.player)
 	end
 
 	return
 end
 
-function var_0_1.OnSetUp(arg_22_0)
+function var_0_0.OnSetUp(arg_22_0)
 	arg_22_0:InitThemeList()
 	arg_22_0:BlurView()
 
 	return
 end
 
-function var_0_1.InitThemeList(arg_23_0)
+function var_0_0.InitThemeList(arg_23_0)
 	arg_23_0.disPlays = arg_23_0:GetData()
-	onNextTick = var_1
 
-	var_1(function()
+	onNextTick(function()
 		arg_23_0.scrollRect.enabled = true
 
-		local var_24_0 = arg_23_0.scrollRect
-
-		var_0.SetTotalCount(var_24_0, #arg_23_0.disPlays)
+		arg_23_0.scrollRect:SetTotalCount(#arg_23_0.disPlays)
 
 		return
 	end)
@@ -369,150 +204,91 @@ function var_0_1.InitThemeList(arg_23_0)
 	return
 end
 
-function var_0_1.OnSearchKeyChange(arg_25_0)
+function var_0_0.OnSearchKeyChange(arg_25_0)
 	arg_25_0:InitThemeList()
 
 	return
 end
 
-function var_0_1.CreateCard(arg_26_0, arg_26_1)
-	BackYardThemeCard = var_1_10002
-
-	return (var_1_10002.New(arg_26_1))
+function var_0_0.CreateCard(arg_26_0, arg_26_1)
+	return (BackYardThemeCard.New(arg_26_1))
 end
 
-function var_0_1.OnInitCard(arg_27_0, arg_27_1)
+function var_0_0.OnInitCard(arg_27_0, arg_27_1)
 	local var_27_0 = arg_27_0:CreateCard(arg_27_1)
 
-	onButton = var_1_10003
+	onButton(arg_27_0, var_27_0._go, function()
+		arg_27_0:OnCardClick(var_27_0)
 
-	local var_27_1 = arg_27_0
-	local var_27_2 = var_27_0._go
+		arg_27_0.selected = var_27_0.themeVO
 
-	local function var_27_3()
-		local var_28_0 = arg_27_0
-
-		var_0.OnCardClick(var_28_0, var_27_0)
-
-		local var_28_1 = arg_27_0.selected
-		local var_28_2 = arg_27_0
-
-		var_28_2.selected = var_27_0.themeVO
-
-		if var_28_1 then
-			pairs = var_28_2
-
-			for iter_28_0, iter_28_1 in var_28_2(arg_27_0.cards) do
-				if iter_28_1.themeVO.id == var_28_1.id and iter_28_1._go.name ~= "-1" then
-					iter_28_1 = preCard
+		if arg_27_0.selected then
+			for iter_28_0, iter_28_1 in pairs(arg_27_0.cards) do
+				if iter_28_1.themeVO.id == arg_27_0.selected.id and iter_28_1._go.name ~= "-1" then
+					preCard = iter_28_1
 
 					break
 				end
 			end
 
-			preCard = var_1
-
-			if var_1 then
-				preCard = var_1
-
-				var_1:UpdateSelected(arg_27_0.selected)
+			if preCard then
+				preCard:UpdateSelected(arg_27_0.selected)
 			end
 		end
 
-		local var_28_3 = var_27_0
-
-		var_1.UpdateSelected(var_28_3, arg_27_0.selected)
+		var_27_0:UpdateSelected(arg_27_0.selected)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_27_1, var_27_2, var_27_3, var_1_10008)
+	end, SFX_PANEL)
 
 	arg_27_0.cards[arg_27_1] = var_27_0
 
 	return
 end
 
-function var_0_1.OnUpdateCard(arg_29_0, arg_29_1, arg_29_2)
+function var_0_0.OnUpdateCard(arg_29_0, arg_29_1, arg_29_2)
 	if not arg_29_0.cards[arg_29_2] then
 		arg_29_0:OnInitCard(arg_29_2)
 	end
 
 	local var_29_0 = arg_29_0.cards[arg_29_2]
-	local var_29_1 = arg_29_0.dorm
-	local var_29_2 = var_4.GetPurchasedFurnitures(var_29_1)
-	local var_29_3 = arg_29_0.disPlays[arg_29_1 + 1]
 
-	var_29_0:Update(var_29_3, var_29_3:IsPurchased(var_29_2))
+	arg_29_0.cards[arg_29_2]:Update(arg_29_0.disPlays[arg_29_1 + 1], arg_29_0.disPlays[arg_29_1 + 1]:IsPurchased((arg_29_0.dorm:GetPurchasedFurnitures())))
 	var_29_0:UpdateSelected(arg_29_0.selected)
 
 	if arg_29_0:NoSelected() and arg_29_1 == 0 then
-		triggerButton = var_6
-
-		var_6(var_29_0._go)
+		triggerButton(var_29_0._go)
 	end
 
 	return
 end
 
-function var_0_1.NoSelected(arg_30_0)
-	local var_30_0
-
-	if arg_30_0.selected then
-		_ = var_1
-		var_30_0 = not var_1.any(arg_30_0.disPlays, function(arg_31_0)
-			return arg_31_0.id == arg_30_0.selected.id
-		end)
-
-		if false then
-			var_30_0 = false
-		end
-	else
-		var_30_0 = true
-	end
-
-	return var_30_0
+function var_0_0.NoSelected(arg_30_0)
+	return not arg_30_0.selected or not _.any(arg_30_0.disPlays, function(arg_31_0)
+		return arg_31_0.id == arg_30_0.selected.id
+	end)
 end
 
-function var_0_1.OnCardClick(arg_32_0, arg_32_1)
+function var_0_0.OnCardClick(arg_32_0, arg_32_1)
 	arg_32_0:UpdateMainPage(arg_32_1.themeVO)
 
 	return
 end
 
-function var_0_1.UpdateMainPage(arg_33_0, arg_33_1)
+function var_0_0.UpdateMainPage(arg_33_0, arg_33_1)
 	if arg_33_1 == arg_33_0.card then
 		return
 	end
 
-	local var_33_0 = arg_33_1:getConfig("name")
-
-	string = var_1_10003
-
-	local var_33_1 = var_1_10003.gsub(var_33_0, "<size=%d+>", "")
-	local var_33_2 = arg_33_0.title
-
-	string = var_5
-	var_33_2.text = var_5.gsub(var_33_1, "</size>", "")
+	arg_33_0.title.text = string.gsub(string.gsub(arg_33_1:getConfig("name"), "<size=%d+>", ""), "</size>", "")
 	arg_33_0.desc.text = arg_33_1:getConfig("desc")
 
-	local var_33_3 = arg_33_1
-	local var_33_4 = arg_33_1.getConfig(var_33_3, "discount")
-	local var_33_5 = arg_33_1:HasDiscount()
+	local var_33_0 = arg_33_1:getConfig("discount")
 
-	setActive = var_33_3
-
-	var_33_3(arg_33_0.actualPrice, var_33_5)
+	setActive(arg_33_0.actualPrice, (arg_33_1:HasDiscount()))
 	arg_33_0:UpdatePrice(arg_33_1)
-
-	local var_33_6 = arg_33_0.largeSpLoader
-
-	var_6.LoadSpriteAsync(var_33_6, "BackYardTheme/theme_" .. arg_33_1.id, function(arg_34_0)
-		IsNil = var_2_10001
-
-		if var_2_10001(arg_33_0.preview) then
+	arg_33_0.largeSpLoader:LoadSpriteAsync("BackYardTheme/theme_" .. arg_33_1.id, function(arg_34_0)
+		if IsNil(arg_33_0.preview) then
 			return
 		end
 
@@ -527,7 +303,7 @@ function var_0_1.UpdateMainPage(arg_33_0, arg_33_1)
 	return
 end
 
-function var_0_1.UpdatePrice(arg_35_0, arg_35_1)
+function var_0_0.UpdatePrice(arg_35_0, arg_35_1)
 	local var_35_0, var_35_1 = arg_35_0:CalcThemePrice(arg_35_1)
 
 	arg_35_0.actualPriceTxt.text = var_35_1
@@ -536,59 +312,36 @@ function var_0_1.UpdatePrice(arg_35_0, arg_35_1)
 	return
 end
 
-function var_0_1.GetAddList(arg_36_0, arg_36_1)
-	local var_36_0 = {}
-	local var_36_1 = arg_36_1
-	local var_36_2 = arg_36_1.GetFurnitures(var_36_1)
-	local var_36_3 = arg_36_0.dorm
-	local var_36_4 = var_4.GetPurchasedFurnitures(var_36_3)
+function var_0_0.GetAddList(arg_36_0, arg_36_1)
+	local var_36_0 = arg_36_0.dorm:GetPurchasedFurnitures()
 
-	ipairs = var_36_1
-
-	for iter_36_0, iter_36_1 in var_36_1(var_36_2) do
-		if not var_36_4[iter_36_1] then
-			table = var_10
-
-			local var_36_5 = var_10.insert
-			local var_36_6 = var_36_0
-
-			Furniture = var_1_10013
-
-			var_36_5(var_36_6, var_1_10013.New({
+	for iter_36_0, iter_36_1 in ipairs((arg_36_1:GetFurnitures())) do
+		if not var_36_0[iter_36_1] then
+			table.insert({}, Furniture.New({
 				id = iter_36_1
 			}))
 		end
 	end
 
-	return var_36_0
+	return {}
 end
 
-function var_0_1.CalcThemePrice(arg_37_0, arg_37_1)
-	local var_37_0 = arg_37_0:GetAddList(arg_37_1)
+function var_0_0.CalcThemePrice(arg_37_0, arg_37_1)
+	local var_37_0 = 0
 	local var_37_1 = 0
-	local var_37_2 = 0
 
-	ipairs = var_5
-
-	for iter_37_0, iter_37_1 in var_5(var_37_0) do
-		var_37_2 = var_37_2 + iter_37_1:getConfig("dorm_icon_price")
-
-		local var_37_3 = iter_37_1
-		local var_37_4 = iter_37_1.getPrice
-
-		PlayerConst = var_13
-		var_37_1 = var_37_1 + var_37_4(var_37_3, var_13.ResDormMoney)
+	for iter_37_0, iter_37_1 in ipairs((arg_37_0:GetAddList(arg_37_1))) do
+		var_37_1 = var_37_1 + iter_37_1:getConfig("dorm_icon_price")
+		var_37_0 = var_37_0 + iter_37_1:getPrice(PlayerConst.ResDormMoney)
 	end
 
-	return var_37_1, var_37_2
+	return var_37_0, var_37_1
 end
 
-local function var_0_2(arg_38_0, arg_38_1)
+local function var_0_1(arg_38_0, arg_38_1)
 	local var_38_0
 
-	pairs = var_1_10003
-
-	for iter_38_0, iter_38_1 in var_1_10003(arg_38_0) do
+	for iter_38_0, iter_38_1 in pairs(arg_38_0) do
 		if iter_38_1.themeVO.id == arg_38_1.id then
 			var_38_0 = iter_38_1
 
@@ -599,22 +352,14 @@ local function var_0_2(arg_38_0, arg_38_1)
 	return var_38_0
 end
 
-local function var_0_3(arg_39_0, arg_39_1, arg_39_2)
-	local var_39_0 = arg_39_0
-	local var_39_1 = arg_39_0.HeadIndexToValue(var_39_0, arg_39_1)
-	local var_39_2 = arg_39_0:HeadIndexToValue(arg_39_2)
-
-	math = var_39_0
-
-	return var_39_0.abs(var_39_2 - var_39_1)
+local function var_0_2(arg_39_0, arg_39_1, arg_39_2)
+	return math.abs(arg_39_0:HeadIndexToValue(arg_39_2) - arg_39_0:HeadIndexToValue(arg_39_1))
 end
 
-function var_0_1.GetSelectedIndex(arg_40_0)
+function var_0_0.GetSelectedIndex(arg_40_0)
 	local var_40_0 = 0
 
-	ipairs = var_1_10002
-
-	for iter_40_0, iter_40_1 in var_1_10002(arg_40_0.disPlays) do
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0.disPlays) do
 		if iter_40_1.id == arg_40_0.selected.id then
 			var_40_0 = iter_40_0
 
@@ -625,178 +370,122 @@ function var_0_1.GetSelectedIndex(arg_40_0)
 	return var_40_0
 end
 
-function var_0_1.OnSwitchToNextTheme(arg_41_0)
-	if arg_41_0:GetSelectedIndex() >= #arg_41_0.disPlays then
+function var_0_0.OnSwitchToNextTheme(arg_41_0)
+	local var_41_0 = arg_41_0:GetSelectedIndex()
+
+	if var_41_0 >= #arg_41_0.disPlays then
 		return false
 	end
 
-	local var_41_0 = arg_41_0.disPlays[var_1 + 1]
-	local var_41_1 = var_0_2(arg_41_0.cards, var_41_0)
+	local var_41_1 = arg_41_0.disPlays[var_41_0 + 1]
+	local var_41_2 = var_0_1(arg_41_0.cards, arg_41_0.disPlays[var_41_0 + 1])
 
-	local function var_41_2(arg_42_0)
-		go = var_2_10001
+	if var_41_2 then
+		if var_41_2 and (function(arg_42_0)
+			local var_42_0 = go(arg_41_0.scrollRect).transform.parent
 
-		local var_42_0 = var_2_10001(arg_41_0.scrollRect).transform.localPosition.x + arg_41_0.scrollRectWidth / 2
+			return go(arg_41_0.scrollRect).transform.localPosition.x + arg_41_0.scrollRectWidth / 2 < var_42_0:InverseTransformPoint(arg_42_0._tf.position).x
+		end)(var_41_2) then
+			arg_41_0.scrollRect:ScrollTo(arg_41_0.scrollRect.value + var_0_2(arg_41_0.scrollRect, 1, 2), true)
 
-		go = var_2
+			var_41_2 = var_0_1(arg_41_0.cards, var_41_1)
+		end
 
-		local var_42_1 = var_2(arg_41_0.scrollRect).transform.parent
+		if var_41_2 then
+			triggerButton(var_41_2._go)
+		end
 
-		return var_42_0 < var_2.InverseTransformPoint(var_42_1, arg_42_0._tf.position).x
+		return true
 	end
-
-	local var_41_3
-
-	if not var_41_1 or var_41_1 and var_41_2(var_41_1) then
-		var_41_3 = var_0_3(arg_41_0.scrollRect, 1, 2)
-
-		local var_41_4 = arg_41_0.scrollRect
-
-		var_6.ScrollTo(var_41_4, arg_41_0.scrollRect.value + var_41_3, true)
-
-		var_41_1 = var_0_2(arg_41_0.cards, var_41_0)
-	end
-
-	if var_41_1 then
-		triggerButton = var_41_3
-
-		var_41_3(var_41_1._go)
-	end
-
-	return true
 end
 
-function var_0_1.OnSwitchToPrevTheme(arg_43_0)
-	if arg_43_0:GetSelectedIndex() <= 1 then
+function var_0_0.OnSwitchToPrevTheme(arg_43_0)
+	local var_43_0 = arg_43_0:GetSelectedIndex()
+
+	if var_43_0 <= 1 then
 		return false
 	end
 
-	local var_43_0 = arg_43_0.disPlays[var_1 - 1]
-	local var_43_1 = var_0_2(arg_43_0.cards, var_43_0)
+	local var_43_1 = arg_43_0.disPlays[var_43_0 - 1]
+	local var_43_2 = var_0_1(arg_43_0.cards, arg_43_0.disPlays[var_43_0 - 1])
 
-	local function var_43_2(arg_44_0)
-		go = var_2_10001
+	if var_43_2 then
+		if var_43_2 and (function(arg_44_0)
+			local var_44_0 = go(arg_43_0.scrollRect).transform.parent
 
-		local var_44_0 = var_2_10001(arg_43_0.scrollRect).transform.localPosition.x - arg_43_0.scrollRectWidth / 2
+			return go(arg_43_0.scrollRect).transform.localPosition.x - arg_43_0.scrollRectWidth / 2 > var_44_0:InverseTransformPoint(arg_44_0._tf.position).x
+		end)(var_43_2) then
+			arg_43_0.scrollRect:ScrollTo(arg_43_0.scrollRect.value - var_0_2(arg_43_0.scrollRect, 1, 2), true)
 
-		go = var_2
+			var_43_2 = var_0_1(arg_43_0.cards, var_43_1)
+		end
 
-		local var_44_1 = var_2(arg_43_0.scrollRect).transform.parent
+		if var_43_2 then
+			triggerButton(var_43_2._go)
+		end
 
-		return var_44_0 > var_2.InverseTransformPoint(var_44_1, arg_44_0._tf.position).x
+		return true
 	end
-
-	local var_43_3
-
-	if not var_43_1 or var_43_1 and var_43_2(var_43_1) then
-		var_43_3 = var_0_3(arg_43_0.scrollRect, 1, 2)
-
-		local var_43_4 = arg_43_0.scrollRect
-
-		var_6.ScrollTo(var_43_4, arg_43_0.scrollRect.value - var_43_3, true)
-
-		var_43_1 = var_0_2(arg_43_0.cards, var_43_0)
-	end
-
-	if var_43_1 then
-		triggerButton = var_43_3
-
-		var_43_3(var_43_1._go)
-	end
-
-	return true
 end
 
-function var_0_1.OnInfoPagePrevTheme(arg_45_0)
+function var_0_0.OnInfoPagePrevTheme(arg_45_0)
 	if arg_45_0:OnSwitchToPrevTheme() then
-		triggerButton = var_1
-
-		var_1(arg_45_0.purchaseBtn)
+		triggerButton(arg_45_0.purchaseBtn)
 	end
 
 	return
 end
 
-function var_0_1.OnInfoPageNextTheme(arg_46_0)
+function var_0_0.OnInfoPageNextTheme(arg_46_0)
 	if arg_46_0:OnSwitchToNextTheme() then
-		triggerButton = var_1
-
-		var_1(arg_46_0.purchaseBtn)
+		triggerButton(arg_46_0.purchaseBtn)
 	end
 
 	return
 end
 
-function var_0_1.Hide(arg_47_0)
-	var_0_1.super.Hide(arg_47_0)
+function var_0_0.Hide(arg_47_0)
+	var_0_0.super.Hide(arg_47_0)
 	arg_47_0:UnBlurView()
 
 	return
 end
 
-function var_0_1.BlurView(arg_48_0)
-	pg = var_1_10001
-
-	local var_48_0 = var_1_10001.UIMgr.GetInstance()
-	local var_48_1 = var_1.OverlayPanel
-	local var_48_2 = arg_48_0.adpter
-	local var_48_3 = {}
-	local var_48_4 = {}
-	local var_48_5 = arg_48_0._tf
-
-	var_48_4[1] = var_7.Find(var_48_5, "adpter/descript")
-	var_48_3.pbList = var_48_4
-
-	var_48_1(var_48_0, var_48_2, var_48_3)
+function var_0_0.BlurView(arg_48_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_48_0.adpter, {
+		pbList = {
+			arg_48_0._tf:Find("adpter/descript")
+		}
+	})
 
 	return
 end
 
-function var_0_1.UnBlurView(arg_49_0)
-	pg = var_1_10001
-
-	local var_49_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_49_0, arg_49_0.adpter, arg_49_0._tf)
+function var_0_0.UnBlurView(arg_49_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_49_0.adpter, arg_49_0._tf)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_50_0)
+function var_0_0.OnDestroy(arg_50_0)
 	if arg_50_0.largeSpLoader then
-		local var_50_0 = arg_50_0.largeSpLoader
-
-		var_1.Dispose(var_50_0)
+		arg_50_0.largeSpLoader:Dispose()
 
 		arg_50_0.largeSpLoader = nil
 	end
 
-	local var_50_1
-
 	if arg_50_0.infoPage then
-		var_50_1 = arg_50_0.infoPage
-		var_50_1.OnExit = nil
-		var_50_1 = arg_50_0.infoPage
-		var_50_1.OnEnter = nil
-		var_50_1 = arg_50_0.infoPage
-		var_50_1.OnPrevTheme = nil
-		var_50_1 = arg_50_0.infoPage
-		var_50_1.OnNextTheme = nil
+		arg_50_0.infoPage.OnExit = nil
+		arg_50_0.infoPage.OnEnter = nil
+		arg_50_0.infoPage.OnPrevTheme = nil
+		arg_50_0.infoPage.OnNextTheme = nil
 
-		local var_50_2 = arg_50_0.infoPage
-
-		var_50_1.Destroy(var_50_2)
+		arg_50_0.infoPage:Destroy()
 	end
 
-	pairs = var_50_1
+	local var_50_1 = arg_50_0.cards or {}
 
-	local var_50_3
-
-	if not arg_50_0.cards then
-		var_50_3 = {}
-	end
-
-	for iter_50_0, iter_50_1 in var_50_1(var_50_3) do
+	for iter_50_0, iter_50_1 in var_50_0(var_50_1) do
 		iter_50_1:Dispose()
 	end
 
@@ -807,4 +496,4 @@ function var_0_1.OnDestroy(arg_50_0)
 	return
 end
 
-return var_0_1
+return var_0_0

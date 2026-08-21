@@ -796,7 +796,7 @@ function __recoverTxtGoDic(self, saveType)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 	语言包: _TT(1334):	"穿戴"
 	语言包: _TT(1333):	"替换"

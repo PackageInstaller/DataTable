@@ -1,49 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("YingxiV3PtPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "YingxiV3PtPage"
+function var_0_0.OnUpdateFlush(arg_1_0)
+	var_0_0.super.OnUpdateFlush(arg_1_0)
 
-import = var_0_10003
+	local var_1_0, var_1_1, var_1_2 = arg_1_0.ptData:GetLevelProgress()
+	local var_1_3, var_1_4, var_1_5 = arg_1_0.ptData:GetResProgress()
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
+	setText(arg_1_0.step, setColorStr(var_1_0, "#fff5c6") .. "/" .. var_1_1)
 
-function var_0_1.OnUpdateFlush(arg_1_0)
-	var_0_1.super.OnUpdateFlush(arg_1_0)
+	local var_1_6 = var_1_5 >= 1 and setColorStr(var_1_3, COLOR_GREEN) or setColorStr(var_1_3, "#fff5c6")
 
-	local var_1_0 = arg_1_0.ptData
-	local var_1_1, var_1_2, var_1_3 = var_1.GetLevelProgress(var_1_0)
-	local var_1_4 = arg_1_0.ptData
-	local var_1_5, var_1_6, var_1_7 = var_4.GetResProgress(var_1_4)
+	setText(arg_1_0.progress, var_1_6 .. "/" .. var_1_4)
 
-	setText = var_1_10007
-
-	local var_1_8 = arg_1_0.step
-
-	setColorStr = var_1_10010
-
-	var_1_10007(var_1_8, var_1_10010(var_1_1, "#fff5c6") .. "/" .. var_1_2)
-
-	setText = var_1_10007
-
-	local var_1_9 = arg_1_0.progress
-
-	if 1 <= var_1_7 then
-		setColorStr = var_1_11
-
-		local var_1_10 = var_1_5
-
-		COLOR_GREEN = var_13
-
-		local var_1_11
-
-		if not var_1_11(var_1_10, var_13) then
-			setColorStr = var_1_11
-			var_1_11 = var_1_11(var_1_5, "#fff5c6")
-		end
-
-		var_1_10007(var_1_9, var_1_11 .. "/" .. var_1_6)
-
-		return
-	end
+	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,85 +1,50 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MainGuideSequence")
+﻿local var_0_0 = class("MainGuideSequence")
 local var_0_1 = {
 	{
 		id = "NG002",
 		condition = function()
-			getProxy = var_1_10000
-			TaskProxy = var_1_10002
+			local var_1_9000
+			local var_1_0 = getProxy(TaskProxy)
+			local var_1_1 = var_1_0.getTaskById(var_1_9000, 10302)
+			local var_1_2 = getProxy(FleetProxy):getFleetById(11)
+			local var_1_3 = var_1_1 and var_1_1:isFinish() and not var_1_1:isReceive() and var_1_2:isEmpty()
 
-			local var_1_0 = var_1_10000(var_1_10002)
-			local var_1_1 = var_0.getTaskById(var_1_0, 10302)
-
-			getProxy = var_1_10001
-			FleetProxy = var_3
-
-			local var_1_2 = var_1_10001(var_3)
-			local var_1_3 = var_1.getFleetById(var_1_2, 11)
-			local var_1_4
-
-			if var_1_1 and var_1_1:isFinish() then
-				var_1_4 = not var_1_1:isReceive() and var_1_3:isEmpty()
-			end
-
-			return var_1_4
+			return var_1_0
 		end,
 		args = function()
-			_ = var_1_10000
-
-			local var_2_0 = var_1_10000.any
-
-			getProxy = var_1_10002
-			BayProxy = var_1_10004
-
-			local var_2_1 = var_1_10002(var_1_10004)
-			local var_2_2
-
-			if not var_2_0(var_2.getShips(var_2_1), function(arg_3_0)
+			if _.any(getProxy(BayProxy):getShips(), function(arg_3_0)
 				return arg_3_0 and arg_3_0.configId == 308031
-			end) or not {} then
-				var_2_2 = {
-					1
-				}
-			end
+			end) then
+				local var_2_0 = {}
 
-			return var_2_2
+				if not {} then
+					var_2_0 = {
+						1
+					}
+				end
+
+				return var_2_0
+			end
 		end
 	},
 	{
 		id = "NG004",
 		condition = function()
-			pg = var_1_10000
-
-			local var_4_0 = var_1_10000.SeriesGuideMgr.GetInstance()
-
-			if var_0.IsNewVersion(var_4_0) then
+			if pg.SeriesGuideMgr.GetInstance():IsNewVersion() then
 				return false
 			end
 
-			getProxy = var_0
-			ActivityProxy = var_4_0
+			local var_4_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_GUIDE_TASKS)
+			local var_4_1 = var_4_0 and not var_4_0:isEnd()
+			local var_4_2 = false
 
-			local var_4_1 = var_0(var_4_0)
-			local var_4_2 = var_0.getActivityByType
+			if var_4_1 then
+				local var_4_3 = getProxy(ChapterProxy):getChapterById(var_4_0:getConfig("config_data")[1])
 
-			ActivityConst = var_1_10003
-
-			local var_4_3 = var_4_2(var_4_1, var_1_10003.ACTIVITY_TYPE_GUIDE_TASKS) and not var_0:isEnd()
-			local var_4_4 = false
-
-			if var_4_3 then
-				local var_4_5 = var_0:getConfig("config_data")[1]
-
-				getProxy = var_1_10004
-				ChapterProxy = var_6
-
-				local var_4_6 = var_1_10004(var_6)
-
-				var_4_4 = var_4.getChapterById(var_4_6, var_4_5) and var_4:isClear()
+				var_4_2 = var_4_3 and var_4_3:isClear()
 			end
 
-			return var_4_3 and var_4_4
+			return var_4_1 and var_4_2
 		end,
 		args = function()
 			return {}
@@ -88,17 +53,7 @@ local var_0_1 = {
 	{
 		id = "NG005",
 		condition = function()
-			getProxy = var_1_10000
-			PlayerProxy = var_1_10002
-
-			local var_6_0 = var_1_10000(var_1_10002)
-			local var_6_1 = var_0.getRawData(var_6_0).level
-
-			pg = var_1_10001
-
-			local var_6_2 = var_1_10001.SystemOpenMgr.GetInstance()
-
-			return var_1.isOpenSystem(var_6_2, var_6_1, "CommanderCatMediator")
+			return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
 		end,
 		args = function()
 			return {}
@@ -107,17 +62,7 @@ local var_0_1 = {
 	{
 		id = "NG0022",
 		condition = function()
-			getProxy = var_1_10000
-			PlayerProxy = var_1_10002
-
-			local var_8_0 = var_1_10000(var_1_10002)
-			local var_8_1 = var_0.getRawData(var_8_0).level
-
-			pg = var_1_10001
-
-			local var_8_2 = var_1_10001.SystemOpenMgr.GetInstance()
-
-			return var_1.isOpenSystem(var_8_2, var_8_1, "EquipmentTransformTreeMediator")
+			return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "EquipmentTransformTreeMediator")
 		end,
 		args = function()
 			return {}
@@ -126,11 +71,7 @@ local var_0_1 = {
 	{
 		id = "NG0023",
 		condition = function()
-			pg = var_1_10000
-
-			local var_10_0 = var_1_10000.NewStoryMgr.GetInstance()
-
-			return var_0.IsPlayed(var_10_0, "WorldG192")
+			return pg.NewStoryMgr.GetInstance():IsPlayed("WorldG192")
 		end,
 		args = function()
 			return {}
@@ -139,129 +80,82 @@ local var_0_1 = {
 	{
 		id = "NG0030",
 		condition = function()
-			getProxy = var_1_10000
-			ActivityProxy = var_1_10002
-
-			local var_12_0 = var_1_10000(var_1_10002)
-			local var_12_1 = var_0.getActivityByType
-
-			ActivityConst = var_1_10003
-
-			local var_12_2 = var_12_1(var_12_0, var_1_10003.ACTIVITY_TYPE_ATELIER_LINK)
-
-			tobool = var_1_10001
-
-			if not var_1_10001(var_12_2) then
+			if not tobool((getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK))) then
 				return false
 			end
 
-			getProxy = var_12_0
-			ChapterProxy = var_1_10004
+			local var_12_0 = getProxy(ChapterProxy)
+			local var_12_1 = var_12_0:getChapterById(21)
 
-			local var_12_3 = var_12_0(var_1_10004)
-			local var_12_4
-
-			if var_2.getChapterById(var_12_3, 21) and var_3:isClear() then
-				var_12_4 = var_2:getMapById(var_2:getLastMapForActivity())
-			end
-
-			return var_12_4
+			return var_12_1 and var_12_1:isClear() and var_12_0:getMapById(var_12_0:getLastMapForActivity())
 		end,
 		args = function()
-			getProxy = var_1_10000
-			ChapterProxy = var_1_10002
+			local var_13_0 = getProxy(ChapterProxy)
+			local var_13_1 = var_13_0:getMapById((var_13_0:getLastMapForActivity()))
 
-			local var_13_0 = var_1_10000(var_1_10002)
-			local var_13_1 = var_0.getLastMapForActivity(var_13_0)
-			local var_13_2 = var_0
-			local var_13_3 = var_0.getMapById(var_13_2, var_13_1)
-			local var_13_4 = var_2.getConfig(var_13_3, "type")
-
-			Map = var_13_2
-
-			local var_13_5
-
-			if not (var_13_4 == var_13_2.ACTIVITY_HARD) or not {
-				1,
-				3
-			} then
-				var_13_5 = {
+			if var_13_1:getConfig("type") == Map.ACTIVITY_HARD then
+				local var_13_2 = {
 					1,
-					2,
 					3
 				}
-			end
 
-			return var_13_5
+				if not {
+					1,
+					3
+				} then
+					var_13_2 = {
+						1,
+						2,
+						3
+					}
+				end
+
+				return var_13_2
+			end
 		end
 	},
 	{
 		id = "NG0032_1",
 		condition = function()
-			pg = var_1_10000
-
-			local var_14_0 = var_1_10000.NewStoryMgr.GetInstance()
-
-			return var_0.IsPlayed(var_14_0, "NG0030")
+			return pg.NewStoryMgr.GetInstance():IsPlayed("NG0030")
 		end,
 		args = function()
-			getProxy = var_1_10000
-			ActivityProxy = var_1_10002
+			local var_15_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
+			local var_15_1
 
-			local var_15_0 = var_1_10000(var_1_10002)
-			local var_15_1 = var_0.getActivityByType
+			if not tobool(var_15_0) then
+				do return false end
 
-			ActivityConst = var_1_10003
-
-			local var_15_2 = var_15_1(var_15_0, var_1_10003.ACTIVITY_TYPE_ATELIER_LINK)
-
-			tobool = var_1_10001
-
-			if not var_1_10001(var_15_2) then
-				return false
+				var_15_1 = getProxy(PlayerProxy)
 			end
 
-			PlayerPrefs = var_15_0
-
-			local var_15_3 = var_15_0.GetInt
-
-			string = var_1_10004
-
-			local var_15_4 = var_1_10004.format
-			local var_15_5 = "first_enter_ryza_atelier_%s_%s"
-
-			getProxy = var_1_10007
-			PlayerProxy = var_1_10009
-
-			local var_15_6 = var_1_10007(var_1_10009)
-			local var_15_7
-
-			if not (var_15_3(var_15_4(var_15_5, var_7.getRawData(var_15_6).id, var_15_2.id), 0) == 0) or not {
-				1,
-				2
-			} then
-				var_15_7 = {
-					1
+			if PlayerPrefs.GetInt(string.format("first_enter_ryza_atelier_%s_%s", var_15_1:getRawData().id, var_15_0.id), 0) == 0 then
+				local var_15_2 = {
+					1,
+					2
 				}
-			end
 
-			return var_15_7
+				if not {
+					1,
+					2
+				} then
+					var_15_2 = {
+						1
+					}
+				end
+
+				return var_15_2
+			end
 		end
 	},
 	{
 		id = "NG0037",
 		condition = function()
-			pg = var_1_10000
-
-			local var_16_0 = var_1_10000.SeriesGuideMgr.GetInstance()
-
-			if var_0.IsNewVersion(var_16_0) then
+			if pg.SeriesGuideMgr.GetInstance():IsNewVersion() then
 				return false
 			end
 
-			NewServerCarnivalScene = var_0
-
-			return var_0.isShow()
+			return NewServerCarnivalScene.isShow()
 		end,
 		args = function()
 			return {}
@@ -270,26 +164,9 @@ local var_0_1 = {
 	{
 		id = "NG0038",
 		condition = function()
-			getProxy = var_1_10000
-			PlayerProxy = var_1_10002
+			local var_18_0 = getProxy(PlayerProxy)
 
-			local var_18_0 = var_1_10000(var_1_10002)
-			local var_18_1 = var_0.getRawData(var_18_0).level
-
-			if 30 <= var_18_1 then
-				PLATFORM_CODE = var_18_1
-				PLATFORM_CHT = var_1
-
-				local var_18_2
-
-				if var_18_1 == var_1 then
-					var_18_2 = false
-				else
-					var_18_2 = true
-				end
-
-				return var_18_2
-			end
+			return var_18_0:getRawData().level >= 30 and PLATFORM_CODE ~= PLATFORM_CHT
 		end,
 		args = function()
 			return {}
@@ -298,22 +175,7 @@ local var_0_1 = {
 	{
 		id = "tb_20",
 		condition = function()
-			LOCK_EDUCATE_SYSTEM = var_1_10000
-
-			local var_20_0
-
-			if not var_1_10000 then
-				NewEducateHelper = var_1_10000
-				var_20_0 = var_1_10000.HasAnyUnlockShip()
-			else
-				var_20_0 = false
-			end
-
-			if false then
-				var_20_0 = true
-			end
-
-			return var_20_0
+			return not LOCK_EDUCATE_SYSTEM and NewEducateHelper.HasAnyUnlockShip()
 		end,
 		args = function()
 			return {}
@@ -322,31 +184,13 @@ local var_0_1 = {
 	{
 		id = "DORM3D_GUIDE_01",
 		condition = function()
-			LOCK_DORM3D_SYSTEM = var_1_10000
-
-			local var_22_3
-
-			if not var_1_10000 then
-				pg = var_1_10000
-
-				local var_22_0 = var_1_10000.SystemOpenMgr.GetInstance()
-				local var_22_1 = var_0.isOpenSystem
-
-				getProxy = var_1_10003
-				PlayerProxy = var_1_10005
-
-				local var_22_2 = var_1_10003(var_1_10005)
-
-				var_22_3 = var_22_1(var_22_0, var_3.getData(var_22_2).level, "SelectDorm3DMediator")
-			else
-				var_22_3 = false
-			end
+			local var_22_0 = not LOCK_DORM3D_SYSTEM and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "SelectDorm3DMediator") or false
 
 			if false then
-				var_22_3 = true
+				var_22_0 = true
 			end
 
-			return var_22_3
+			return var_22_0
 		end,
 		args = function()
 			return {}
@@ -364,25 +208,13 @@ local var_0_1 = {
 	{
 		id = "Yumia_atelier",
 		condition = function()
-			getProxy = var_1_10000
-			ActivityProxy = var_1_10002
+			local var_26_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			local var_26_0 = var_1_10000(var_1_10002)
-			local var_26_1 = var_0.getActivityByType
-
-			ActivityConst = var_1_10003
-
-			local var_26_2 = var_26_1(var_26_0, var_1_10003.ACTIVITY_TYPE_ATELIER_LINK)
-
-			tobool = var_1_10001
-
-			if not var_1_10001(var_26_2) then
+			if not tobool(var_26_0) then
 				return false
 			end
 
-			AtelierTools = var_26_0
-
-			return var_26_0.IsUnlockAtelier(var_26_2, 2)
+			return AtelierTools.IsUnlockAtelier(var_26_0, 2)
 		end,
 		args = function()
 			return {}
@@ -391,39 +223,13 @@ local var_0_1 = {
 	{
 		id = "ISLAND_GUIDE_1",
 		condition = function()
-			LOCK_ISLAND_DISPLAY = var_1_10000
-
-			local var_28_3
-
-			if not var_1_10000 then
-				LOCK_ISLAND_GUIDE = var_1_10000
-
-				if not var_1_10000 then
-					pg = var_1_10000
-
-					local var_28_0 = var_1_10000.SystemOpenMgr.GetInstance()
-					local var_28_1 = var_0.isOpenSystem
-
-					getProxy = var_1_10003
-					PlayerProxy = var_1_10005
-
-					local var_28_2 = var_1_10003(var_1_10005)
-
-					var_28_3 = var_28_1(var_28_0, var_3.getData(var_28_2).level, "IslandMediator")
-
-					goto label_28_0
-				end
-			end
-
-			var_28_3 = false
+			local var_28_0 = not LOCK_ISLAND_DISPLAY and not LOCK_ISLAND_GUIDE and pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getData().level, "IslandMediator") or false
 
 			if false then
-				var_28_3 = true
+				var_28_0 = true
 			end
 
-			::label_28_0::
-
-			return var_28_3
+			return var_28_0
 		end,
 		args = function()
 			return {}
@@ -432,134 +238,65 @@ local var_0_1 = {
 }
 
 function var_0_0.Execute(arg_30_0, arg_30_1)
-	IsUnityEditor = var_1_10002
-
-	if var_1_10002 then
-		ENABLE_GUIDE = var_1_10002
-
-		if not var_1_10002 then
-			if arg_30_1 then
-				arg_30_1()
-			end
-
-			return
+	if IsUnityEditor and not ENABLE_GUIDE then
+		if arg_30_1 then
+			arg_30_1()
 		end
-	end
 
-	getProxy = var_1_10002
-	ContextProxy = var_1_10004
-
-	local var_30_0 = var_1_10002(var_1_10004)
-
-	if var_2.getCurrentContext(var_30_0) and var_2.mediator.__cname ~= "NewMainMediator" then
 		return
 	end
 
-	_ = var_1_10003
+	local var_30_0 = getProxy(ContextProxy):getCurrentContext()
 
-	if not var_1_10003.detect(var_0_1, function(arg_31_0)
-		local var_31_0 = arg_31_0.id
-		local var_31_1 = arg_31_0.condition
+	if var_30_0 and var_30_0.mediator.__cname ~= "NewMainMediator" then
+		return
+	end
 
-		pg = var_2_10003
+	local var_30_1 = _.detect(var_0_1, function(arg_31_0)
+		local var_31_1 = pg.NewStoryMgr.GetInstance()
 
-		local var_31_2 = var_2_10003.NewStoryMgr.GetInstance()
+		return not var_31_1:IsPlayed(arg_31_0.id) and var_31_0()
+	end)
 
-		return not var_3.IsPlayed(var_31_2, var_31_0) and var_31_1()
-	end) then
+	if not var_30_1 then
 		arg_30_1()
 
 		return
 	end
 
-	local var_30_1 = var_3.id
-	local var_30_2 = var_3.args()
+	local var_30_2 = var_30_1.id
 
-	pg = var_1_10007
-
-	local var_30_3 = var_1_10007.SeriesGuideMgr.GetInstance()
-
-	if var_7.isRunning(var_30_3) then
+	if pg.SeriesGuideMgr.GetInstance():isRunning() then
 		arg_30_1()
 
 		return
 	end
 
-	pg = var_7
+	local var_30_3 = pg.NewGuideMgr.GetInstance()
 
-	local var_30_4 = var_7.NewGuideMgr.GetInstance()
-
-	if not var_7.CanPlay(var_30_4) then
+	if not var_30_3:CanPlay() then
 		arg_30_1()
 
 		return
 	end
 
-	pg = var_7
-
-	local var_30_5 = var_7.m02
-	local var_30_6 = var_7.sendNotification
-
-	GAME = var_1_10010
-
-	var_30_6(var_30_5, var_1_10010.STORY_UPDATE, {
-		storyId = var_30_1
+	pg.m02:sendNotification(GAME.STORY_UPDATE, {
+		storyId = var_30_2
 	})
 
-	if var_30_1 == "DORM3D_GUIDE_01" then
-		pg = var_30_6
-
-		local var_30_7 = var_30_6.m02
-
-		var_30_6 = var_30_6.sendNotification
-		GAME = var_10
-
-		local var_30_8 = var_10.APARTMENT_TRACK
-
-		Dorm3dTrackCommand = var_11
-
-		local var_30_9 = var_11.BuildDataGuide
-		local var_30_10 = 1
-
-		pg = var_1_10014
-
-		local var_30_11 = var_1_10014.NewStoryMgr.GetInstance()
-
-		var_30_6(var_30_7, var_30_8, var_30_9(var_30_10, var_14.StoryName2StoryId(var_30_11, var_30_1)))
+	if var_30_2 == "DORM3D_GUIDE_01" then
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(1, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_30_2)))
 	end
 
-	pg = var_30_6
-
-	local var_30_12 = var_30_6.NewGuideMgr.GetInstance()
-
-	var_7.Play(var_30_12, var_30_1, var_30_2, function()
-		if var_30_1 == "DORM3D_GUIDE_01" then
-			pg = var_0
-
-			local var_32_0 = var_0.m02
-			local var_32_1 = var_0.sendNotification
-
-			GAME = var_2_10003
-
-			local var_32_2 = var_2_10003.APARTMENT_TRACK
-
-			Dorm3dTrackCommand = var_2_10004
-
-			local var_32_3 = var_2_10004.BuildDataGuide
-			local var_32_4 = 2
-
-			pg = var_2_10007
-
-			local var_32_5 = var_2_10007.NewStoryMgr.GetInstance()
-
-			var_32_1(var_32_0, var_32_2, var_32_3(var_32_4, var_7.StoryName2StoryId(var_32_5, var_30_1)))
+	pg.NewGuideMgr.GetInstance():Play(var_30_2, var_30_1.args(), function()
+		if var_30_2 == "DORM3D_GUIDE_01" then
+			pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataGuide(2, pg.NewStoryMgr.GetInstance():StoryName2StoryId(var_30_2)))
 		end
 
-		if var_0.nextOne then
-			local var_32_6, var_32_7 = var_0.nextOne()
-			local var_32_8 = arg_30_0
+		if var_30_1.nextOne then
+			local var_32_0, var_32_1 = var_30_1.nextOne()
 
-			var_2.PlayNextOne(var_32_8, var_32_6, var_32_7)
+			arg_30_0:PlayNextOne(var_32_0, var_32_1)
 		end
 
 		return
@@ -573,22 +310,10 @@ function var_0_0.PlayNextOne(arg_33_0, arg_33_1, arg_33_2)
 		return
 	end
 
-	pg = var_1_10003
-
-	local var_33_0 = var_1_10003.NewGuideMgr.GetInstance()
-
-	var_3.Play(var_33_0, arg_33_1, arg_33_2, function()
+	pg.NewGuideMgr.GetInstance():Play(arg_33_1, arg_33_2, function()
 		return
 	end)
-
-	pg = var_3
-
-	local var_33_1 = var_3.m02
-	local var_33_2 = var_3.sendNotification
-
-	GAME = var_6
-
-	var_33_2(var_33_1, var_6.STORY_UPDATE, {
+	pg.m02:sendNotification(GAME.STORY_UPDATE, {
 		storyId = arg_33_1
 	})
 

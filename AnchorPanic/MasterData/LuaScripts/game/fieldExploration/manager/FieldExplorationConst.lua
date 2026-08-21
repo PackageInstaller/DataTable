@@ -15,7 +15,7 @@ FieldExplorationConst.PlayerMoveType =
     Free_Mode = "Free_Mode", --自由
     Horizontal_Mode = "Horizontal_Mode", --推箱子横向
     Vertical_Mode = "Vertical_Mode", --推箱子纵向
-    Lift_Mode = "Lift_Mode",--举箱子自由移动
+    Lift_Mode = "Lift_Mode", --举箱子自由移动
 }
 
 --碰撞类型
@@ -107,7 +107,6 @@ FieldExplorationConst.ACT_BOXDOWN = gs.Animator.StringToHash("Qboxdown")
 FieldExplorationConst.ACT_BOXSTAND = gs.Animator.StringToHash("Qboxstand")
 FieldExplorationConst.ACT_BOXUP = gs.Animator.StringToHash("Qboxup")
 FieldExplorationConst.ACT_BOXWALK = gs.Animator.StringToHash("Qboxwalk")
-
 
 -- FieldExplorationConst.ACT_RDOWN = gs.Animator.StringToHash("QRdown")
 
@@ -216,12 +215,18 @@ FieldExplorationConst.GetSkill = function (skill_id, trans)
         skill = fieldExploration.FieldExplorationEventLiftSkill.new()
     elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_PORTAL then--传送门
         skill = fieldExploration.FieldExplorationEventPortalSkill.new()
-    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_SHOWANHIDE then--显隐
+    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_SHOWANHIDE then--取反显隐
         skill = fieldExploration.FieldExplorationEventShowHideSkill.new()
-    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_SHOWORHIDE then--显隐
+    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_SHOWORHIDE then--单向显隐
         skill = fieldExploration.FieldExplorationEventShowOrHideSkill.new()
-    -- elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_INITSHOW then--显隐
-    --     skill = fieldExploration.FieldExplorationEventInitShowSkill.new()
+    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_LASERSHOOT then--激光发射
+        skill = fieldExploration.FieldExplorationEventLasetShootSkill.new()
+    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_ROTATE then-- - 旋转
+        skill = fieldExploration.FieldExplorationEventRotateSkill.new()
+    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_MOVE then-- 移动
+        skill = fieldExploration.FieldExplorationEventMoveSkill.new()
+    elseif skillConfig.type == FieldExplorationConst.EVENTSKILLTYPE_STEPGRID then-- 踩踏地板
+        skill = fieldExploration.FieldExplorationEventStepGridSkill.new()
     else
         skill = fieldExploration.FieldExplorationEventMoneySkill.new()
     end
@@ -243,8 +248,9 @@ FieldExplorationConst.EventThing_Lift = 103 --电梯
 FieldExplorationConst.EventThing_Silver = 14 --银币
 FieldExplorationConst.EventThing_Gold = 6 --金币
 FieldExplorationConst.EventThing_Portal = 104 --传送门
-
-
+-- FieldExplorationConst.EventThing_LaserShoot = 107 --激光发射器
+-- FieldExplorationConst.EventThing_LaserReflex = 108 --激光反射
+-- 109踩踏地板
 
 ---------------------------------战员技能
 FieldExplorationConst.HERO_SKILL_DODGE = 1 --闪避
@@ -287,9 +293,23 @@ FieldExplorationConst.EVENTSKILLTYPE_SHOWORHIDE = 207
 --初始显隐
 FieldExplorationConst.EVENTSKILLTYPE_INITSHOW = 208
 
+--激光发射
+FieldExplorationConst.EVENTSKILLTYPE_LASERSHOOT = 209 --目标事件，执行技能的事件id,执行事件身上的技能id（为空则全部执行）
+--激光反射
+FieldExplorationConst.EVENTSKILLTYPE_LASERREFLEX = 210 --无参数，做标识用
+--旋转(技能的碰撞需要开起来，与事件碰撞分开，避免冲突)
+FieldExplorationConst.EVENTSKILLTYPE_ROTATE = 211 -- {旋转角度,语言包id},{旋转角度,语言包id}
+--移动(技能的碰撞需要开起来，与事件碰撞分开，避免冲突)
+FieldExplorationConst.EVENTSKILLTYPE_MOVE = 212 --{{移动的X,移动的Y},语言包id},{{移动的X,移动的Y},语言包id}
+
+--踩踏地板 (事件必须为可穿透)
+FieldExplorationConst.EVENTSKILLTYPE_STEPGRID = 213 --{事件id，事件id}，{需要执行技能的事件id，需要执行事件身上的技能id（为空则全部执行）}
+
 --荒野探索的特效路劲
 FieldExplorationConst.getFieldExplorationFxPath = function(pathName)
-    return "arts/fx/3d/sceneModule/maze/" .. pathName
+    if string.NullOrEmpty(pathName) then return end
+    
+    return "arts/fx/3d/sceneModule/gold/" .. pathName
 end
 
 FieldExplorationConst.getFieldExplorationSoundPath = function(pathName)

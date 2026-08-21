@@ -1,98 +1,60 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MetaCharacterTacticsRequestCommand", pm.SimpleCommand)
 
-local var_0_0 = "MetaCharacterTacticsRequestCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).id
-
-	print = var_1_0
-
-	var_1_0("63313 request tactics info")
-
-	pg = var_1_0
-
-	local var_1_2 = var_1_0.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_2, 63313, {
-		ship_id = var_1_1
+function var_0_0.execute(arg_1_0, arg_1_1)
+	print("63313 request tactics info")
+	pg.ConnectionMgr.GetInstance():Send(63313, {
+		ship_id = arg_1_1:getBody().id
 	}, 63314, function(arg_2_0)
-		print = var_2_10001
+		print("63314 requset success")
 
-		var_2_10001("63314 requset success")
+		local var_2_0 = arg_2_0.tasks or {}
 
-		local var_2_0 = {}
-
-		ipairs = var_2_10002
-
-		local var_2_1
-
-		if not arg_2_0.tasks then
-			var_2_1 = {}
-		end
-
-		for iter_2_0, iter_2_1 in var_2_10002(var_2_1) do
-			if not var_2_0[iter_2_1.skill_id] then
-				var_2_0[var_7] = {}
+		for iter_2_0, iter_2_1 in ipairs(var_2_0) do
+			if not ({})[iter_2_1.skill_id] then
+				({})[iter_2_1.skill_id] = {}
 			end
 
-			table = var_8
-
-			var_8.insert(var_2_0[var_7], {
+			table.insert(({})[iter_2_1.skill_id], {
 				taskID = iter_2_1.task_id,
 				finishCount = iter_2_1.finish_cnt
 			})
 		end
 
-		local var_2_2 = {}
+		local var_2_1 = arg_2_0.skill_exp or {}
 
-		ipairs = var_3
+		for iter_2_2, iter_2_3 in ipairs(var_2_1) do
+			({})[iter_2_3.skill_id] = iter_2_3.exp
 
-		local var_2_3
-
-		if not arg_2_0.skill_exp then
-			var_2_3 = {}
+			print("skill", iter_2_3.skill_id, iter_2_3.exp)
 		end
 
-		for iter_2_2, iter_2_3 in var_3(var_2_3) do
-			var_2_2[iter_2_3.skill_id] = iter_2_3.exp
-			print = var_8
-
-			var_8("skill", iter_2_3.skill_id, iter_2_3.exp)
-		end
-
-		local var_2_4 = {
+		;({
 			shipID = arg_2_0.ship_id,
 			doubleExp = arg_2_0.double_exp,
 			normalExp = arg_2_0.exp
-		}
-		local var_2_5
+		}).curSkillID = arg_2_0.skill_id or 0
+		;({
+			shipID = arg_2_0.ship_id,
+			doubleExp = arg_2_0.double_exp,
+			normalExp = arg_2_0.exp
+		}).switchCount = arg_2_0.switch_cnt
+		;({
+			shipID = arg_2_0.ship_id,
+			doubleExp = arg_2_0.double_exp,
+			normalExp = arg_2_0.exp
+		}).taskInfoTable = {}
+		;({
+			shipID = arg_2_0.ship_id,
+			doubleExp = arg_2_0.double_exp,
+			normalExp = arg_2_0.exp
+		}).skillExpTable = {}
 
-		if not arg_2_0.skill_id then
-			var_2_5 = 0
-		end
-
-		var_2_4.curSkillID = var_2_5
-		var_2_4.switchCount = arg_2_0.switch_cnt
-		var_2_4.taskInfoTable = var_2_0
-		var_2_4.skillExpTable = var_2_2
-		getProxy = var_4
-		MetaCharacterProxy = iter_2_2
-
-		local var_2_6 = var_4(iter_2_2)
-
-		var_4.setMetaTacticsInfo(var_2_6, arg_2_0)
-
-		local var_2_7 = arg_1_0
-		local var_2_8 = var_4.sendNotification
-
-		GAME = var_7
-
-		var_2_8(var_2_7, var_7.TACTICS_META_INFO_REQUEST_DONE, var_2_4)
+		getProxy(MetaCharacterProxy):setMetaTacticsInfo(arg_2_0)
+		arg_1_0:sendNotification(GAME.TACTICS_META_INFO_REQUEST_DONE, {
+			shipID = arg_2_0.ship_id,
+			doubleExp = arg_2_0.double_exp,
+			normalExp = arg_2_0.exp
+		})
 
 		return
 	end)
@@ -100,4 +62,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

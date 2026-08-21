@@ -1,203 +1,52 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ResourcePage", import("...base.BaseSubView"))
 
-local var_0_0 = "ResourcePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ResourcePage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "frame/title/text")
-	local var_2_2 = var_1.GetComponent
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.titleTxt = arg_2_0._tf:Find("frame/title/text"):GetComponent(typeof(Text))
+	arg_2_0.iconImg = arg_2_0._tf:Find("frame/title/icon"):GetComponent(typeof(Image))
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/btnBack")
+	arg_2_0.descTxt = arg_2_0._tf:Find("frame/content/describe/class"):GetComponent(typeof(Text))
+	arg_2_0.levelTxt = arg_2_0._tf:Find("frame/title/icon/current"):GetComponent(typeof(Text))
+	arg_2_0.currentLevelTxt = arg_2_0._tf:Find("frame/content/info/level/curr"):GetComponent(typeof(Text))
+	arg_2_0.nextLevelTxt = arg_2_0._tf:Find("frame/content/info/level/next"):GetComponent(typeof(Text))
+	arg_2_0.costTxt = arg_2_0._tf:Find("frame/content/upgrade_btn/cost"):GetComponent(typeof(Text))
+	arg_2_0.spendTimeTxt = arg_2_0._tf:Find("frame/upgrade_duration/Text"):GetComponent(typeof(Text))
+	arg_2_0.upgradeBtn = arg_2_0._tf:Find("frame/content/upgrade_btn")
+	arg_2_0.upgradingBtn = arg_2_0._tf:Find("frame/content/upgrading_block")
+	arg_2_0.attrUIlist = UIItemList.New(arg_2_0._tf:Find("frame/content/info/conent"), arg_2_0._tf:Find("frame/content/info/conent/tpl"))
 
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.titleTxt = var_2_2(var_2_1, var_4(var_1_10006))
-
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_1.Find(var_2_3, "frame/title/icon")
-	local var_2_5 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_2_0.iconImg = var_2_5(var_2_4, var_4(var_1_10006))
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_6, "frame/btnBack")
-
-	local var_2_7 = arg_2_0._tf
-	local var_2_8 = var_1.Find(var_2_7, "frame/content/describe/class")
-	local var_2_9 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.descTxt = var_2_9(var_2_8, var_4(var_1_10006))
-
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_1.Find(var_2_10, "frame/title/icon/current")
-	local var_2_12 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.levelTxt = var_2_12(var_2_11, var_4(var_1_10006))
-
-	local var_2_13 = arg_2_0._tf
-	local var_2_14 = var_1.Find(var_2_13, "frame/content/info/level/curr")
-	local var_2_15 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.currentLevelTxt = var_2_15(var_2_14, var_4(var_1_10006))
-
-	local var_2_16 = arg_2_0._tf
-	local var_2_17 = var_1.Find(var_2_16, "frame/content/info/level/next")
-	local var_2_18 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.nextLevelTxt = var_2_18(var_2_17, var_4(var_1_10006))
-
-	local var_2_19 = arg_2_0._tf
-	local var_2_20 = var_1.Find(var_2_19, "frame/content/upgrade_btn/cost")
-	local var_2_21 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.costTxt = var_2_21(var_2_20, var_4(var_1_10006))
-
-	local var_2_22 = arg_2_0._tf
-	local var_2_23 = var_1.Find(var_2_22, "frame/upgrade_duration/Text")
-	local var_2_24 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.spendTimeTxt = var_2_24(var_2_23, var_4(var_1_10006))
-
-	local var_2_25 = arg_2_0._tf
-
-	arg_2_0.upgradeBtn = var_1.Find(var_2_25, "frame/content/upgrade_btn")
-
-	local var_2_26 = arg_2_0._tf
-
-	arg_2_0.upgradingBtn = var_1.Find(var_2_26, "frame/content/upgrading_block")
-	UIItemList = var_1
-
-	local var_2_27 = var_1.New
-	local var_2_28 = arg_2_0._tf
-	local var_2_29 = var_3.Find(var_2_28, "frame/content/info/conent")
-	local var_2_30 = arg_2_0._tf
-
-	arg_2_0.attrUIlist = var_2_27(var_2_29, var_4.Find(var_2_30, "frame/content/info/conent/tpl"))
-	setText = var_1
-
-	local var_2_31 = arg_2_0.upgradeBtn
-	local var_2_32 = var_3.Find(var_2_31, "Image")
-
-	i18n = var_4
-
-	var_1(var_2_32, var_4("word_levelup"))
-
-	setText = var_1
-
-	local var_2_33 = arg_2_0.upgradingBtn
-	local var_2_34 = var_3.Find(var_2_33, "Image")
-
-	i18n = var_4
-
-	var_1(var_2_34, var_4("class_label_upgrading"))
-
-	setText = var_1
-
-	local var_2_35 = arg_2_0._tf
-	local var_2_36 = var_3.Find(var_2_35, "frame/content/upgrade_btn/costback/label")
-
-	i18n = var_4
-
-	var_1(var_2_36, var_4("text_consume"))
-
-	setText = var_1
-
-	local var_2_37 = arg_2_0._tf
-	local var_2_38 = var_3.Find(var_2_37, "frame/upgrade_duration/Image/Text")
-
-	i18n = var_4
-
-	var_1(var_2_38, var_4("class_label_upgradetime"))
+	setText(arg_2_0.upgradeBtn:Find("Image"), i18n("word_levelup"))
+	setText(arg_2_0.upgradingBtn:Find("Image"), i18n("class_label_upgrading"))
+	setText(arg_2_0._tf:Find("frame/content/upgrade_btn/costback/label"), i18n("text_consume"))
+	setText(arg_2_0._tf:Find("frame/upgrade_duration/Image/Text"), i18n("class_label_upgradetime"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.closeBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0._tf
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.upgradeBtn
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-
-		if var_0.CheckUpgrade(var_6_0) then
-			local var_6_1 = arg_3_0
-
-			var_0.OnUpgrade(var_6_1)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.upgradeBtn, function()
+		if arg_3_0:CheckUpgrade() then
+			arg_3_0:OnUpgrade()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
-
-	local var_3_9 = arg_3_0.attrUIlist
-
-	var_1.make(var_3_9, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			local var_7_0 = arg_3_0
-
-			var_3.UpdateResourceFieldAttr(var_7_0, arg_3_0.attrs[arg_7_1 + 1], arg_7_2)
+	end, SFX_PANEL)
+	arg_3_0.attrUIlist:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateResourceFieldAttr(arg_3_0.attrs[arg_7_1 + 1], arg_7_2)
 		end
 
 		return
@@ -206,14 +55,14 @@ function var_0_1.OnInit(arg_3_0)
 	return
 end
 
-function var_0_1.Flush(arg_8_0, arg_8_1)
+function var_0_0.Flush(arg_8_0, arg_8_1)
 	arg_8_0:Update(arg_8_1)
 	arg_8_0:Show()
 
 	return
 end
 
-function var_0_1.Update(arg_9_0, arg_9_1)
+function var_0_0.Update(arg_9_0, arg_9_1)
 	arg_9_0.resourceField = arg_9_1
 
 	arg_9_0:Refresh()
@@ -221,69 +70,22 @@ function var_0_1.Update(arg_9_0, arg_9_1)
 	return
 end
 
-function var_0_1.CheckUpgrade(arg_10_0)
-	local var_10_0 = arg_10_0.resourceField
+function var_0_0.CheckUpgrade(arg_10_0)
+	if not arg_10_0.resourceField:CanUpgrade() then
+		if arg_10_0.resourceField:IsMaxLevel() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("class_res_maxlevel_tip"))
+		elseif not arg_10_0.resourceField:IsReachLevel() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_limit_level", arg_10_0.resourceField:GetTargetLevel()))
+		elseif not arg_10_0.resourceField:IsReachRes() then
+			local var_10_0 = arg_10_0.resourceField:GetTargetRes()
 
-	if not var_1.CanUpgrade(var_10_0) then
-		local var_10_1 = arg_10_0.resourceField
-
-		if var_1.IsMaxLevel(var_10_1) then
-			pg = var_1
-
-			local var_10_2 = var_1.TipsMgr.GetInstance()
-			local var_10_3 = var_1.ShowTips
-
-			i18n = var_1_10004
-
-			var_10_3(var_10_2, var_1_10004("class_res_maxlevel_tip"))
-		else
-			local var_10_4 = arg_10_0.resourceField
-
-			if not var_1.IsReachLevel(var_10_4) then
-				pg = var_1
-
-				local var_10_5 = var_1.TipsMgr.GetInstance()
-				local var_10_6 = var_1.ShowTips
-
-				i18n = var_1_10004
-				var_1_10006 = "common_limit_level"
-
-				local var_10_7 = arg_10_0.resourceField
-
-				var_10_6(var_10_5, var_1_10004(var_1_10006, var_7.GetTargetLevel(var_10_7)))
-			else
-				local var_10_8 = arg_10_0.resourceField
-
-				if not var_1.IsReachRes(var_10_8) then
-					local var_10_9 = arg_10_0.resourceField
-					local var_10_10 = var_1.GetTargetRes(var_10_9)
-
-					getProxy = var_1_10002
-					PlayerProxy = var_1_10004
-
-					local var_10_11 = var_1_10002(var_1_10004)
-					local var_10_12 = var_2.getRawData(var_10_11).gold
-
-					GoShoppingMsgBox = var_10_9
-					i18n = var_1_10005
-
-					local var_10_13 = "switch_to_shop_tip_2"
-
-					i18n = var_1_10008
-
-					local var_10_14 = var_1_10005(var_10_13, var_1_10008("word_gold"))
-
-					ChargeScene = var_1_10006
-
-					var_10_9(var_10_14, var_1_10006.TYPE_ITEM, {
-						{
-							59001,
-							var_10_10 - var_10_12,
-							var_10_10
-						}
-					})
-				end
-			end
+			GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
+				{
+					59001,
+					var_10_0 - getProxy(PlayerProxy):getRawData().gold,
+					var_10_0
+				}
+			})
 		end
 
 		return false
@@ -292,51 +94,33 @@ function var_0_1.CheckUpgrade(arg_10_0)
 	return true
 end
 
-function var_0_1.OnUpgrade(arg_11_0)
-	local var_11_0 = arg_11_0.resourceField
-	local var_11_1 = var_1.GetUpgradeType(var_11_0)
-	local var_11_2 = arg_11_0
-	local var_11_3 = arg_11_0.emit
-
-	NavalAcademyMediator = var_1_10005
-
-	var_11_3(var_11_2, var_1_10005.UPGRADE_FIELD, var_11_1)
+function var_0_0.OnUpgrade(arg_11_0)
+	arg_11_0:emit(NavalAcademyMediator.UPGRADE_FIELD, (arg_11_0.resourceField:GetUpgradeType()))
 
 	return
 end
 
-function var_0_1.Refresh(arg_12_0)
-	local var_12_0 = arg_12_0.resourceField
-	local var_12_1 = var_1.GetKeyWord(var_12_0)
-	local var_12_2 = arg_12_0.iconImg
+function var_0_0.Refresh(arg_12_0)
+	arg_12_0.iconImg.sprite = GetSpriteFromAtlas("ui/ResourceFieldUI_atlas", (arg_12_0.resourceField:GetKeyWord()))
+	arg_12_0.titleTxt.text = arg_12_0.resourceField:GetName()
+	arg_12_0.descTxt.text = arg_12_0.resourceField:GetDesc()
 
-	GetSpriteFromAtlas = var_12_0
-	var_12_2.sprite = var_12_0("ui/ResourceFieldUI_atlas", var_12_1)
-	arg_12_0.titleTxt.text = var_1:GetName()
+	local var_12_1 = "Lv." .. var_12_0:GetLevel()
 
-	local var_12_3 = arg_12_0.resourceField
+	arg_12_0.levelTxt.text = var_12_1
 
-	arg_12_0.descTxt.text = var_12_3:GetDesc()
+	local var_12_2 = var_12_0:IsMaxLevel()
+	local var_12_3 = var_12_2 and "Lv.Max" or "Lv." .. var_12_0:GetLevel() + 1
 
-	local var_12_4 = "Lv." .. var_12_3:GetLevel()
+	arg_12_0.currentLevelTxt.text = var_12_1
+	arg_12_0.nextLevelTxt.text = var_12_3
 
-	arg_12_0.levelTxt.text = var_12_4
+	local var_12_4 = var_12_2 and "-" or var_12_0:GetCost().count
 
-	local var_12_5 = var_12_3:IsMaxLevel() and "Lv.Max" or "Lv." .. var_12_3:GetLevel() + 1
+	if var_12_0:IsReachRes() then
+		local var_12_5 = COLOR_WHITE or COLOR_RED
 
-	arg_12_0.currentLevelTxt.text = var_12_4
-	arg_12_0.nextLevelTxt.text = var_12_5
-
-	local var_12_6 = var_5 and "-" or var_12_3:GetCost().count
-
-	if var_12_3:IsReachRes() then
-		COLOR_WHITE = var_8
-
-		if not var_8 then
-			COLOR_RED = var_8
-		end
-
-		arg_12_0.costTxt.text = "<color=" .. var_8 .. ">" .. var_12_6 .. "</color>"
+		arg_12_0.costTxt.text = "<color=" .. var_12_5 .. ">" .. var_12_4 .. "</color>"
 
 		arg_12_0:FlushState()
 
@@ -344,40 +128,19 @@ function var_0_1.Refresh(arg_12_0)
 	end
 end
 
-function var_0_1.FlushState(arg_13_0)
-	local var_13_0 = arg_13_0.resourceField
-	local var_13_1 = var_1.IsMaxLevel(var_13_0)
-	local var_13_2 = var_1:IsStarting()
+function var_0_0.FlushState(arg_13_0)
+	local var_13_0 = arg_13_0.resourceField:IsMaxLevel()
+	local var_13_1 = arg_13_0.resourceField:IsStarting()
 
-	setActive = var_13_0
-
-	var_13_0(arg_13_0.upgradeBtn, not var_13_2)
-
-	setActive = var_13_0
-
-	var_13_0(arg_13_0.upgradingBtn, var_13_2)
-
-	setGray = var_13_0
-
-	var_13_0(arg_13_0.upgradeBtn, var_13_1, true)
+	setActive(arg_13_0.upgradeBtn, not var_13_1)
+	setActive(arg_13_0.upgradingBtn, var_13_1)
+	setGray(arg_13_0.upgradeBtn, var_13_0, true)
 	arg_13_0:RemoveTimer()
 
-	if var_13_2 then
+	if var_13_1 then
 		arg_13_0:AddTimer()
 	else
-		local var_13_3
-
-		if var_13_1 then
-			var_13_3 = "-"
-		else
-			pg = var_13_3
-
-			local var_13_4 = var_13_3.TimeMgr.GetInstance()
-
-			var_13_3 = var_13_3.DescCDTime(var_13_4, var_1:GetSpendTime())
-		end
-
-		arg_13_0.spendTimeTxt.text = var_13_3
+		arg_13_0.spendTimeTxt.text = var_13_0 and "-" or pg.TimeMgr.GetInstance():DescCDTime(arg_13_0.resourceField:GetSpendTime())
 	end
 
 	arg_13_0:UpdateResourceFieldAttrs()
@@ -385,109 +148,55 @@ function var_0_1.FlushState(arg_13_0)
 	return
 end
 
-function var_0_1.UpdateResourceFieldAttrs(arg_14_0)
-	local var_14_0 = arg_14_0.resourceField
+function var_0_0.UpdateResourceFieldAttrs(arg_14_0)
+	arg_14_0.attrs = arg_14_0.resourceField:GetEffectAttrs()
 
-	arg_14_0.attrs = var_1.GetEffectAttrs(var_14_0)
-
-	local var_14_1 = arg_14_0.attrUIlist
-
-	var_2.align(var_14_1, #arg_14_0.attrs)
+	arg_14_0.attrUIlist:align(#arg_14_0.attrs)
 
 	return
 end
 
-function var_0_1.UpdateResourceFieldAttr(arg_15_0, arg_15_1, arg_15_2)
-	setText = var_1_10003
+function var_0_0.UpdateResourceFieldAttr(arg_15_0, arg_15_1, arg_15_2)
+	setText(arg_15_2:Find("label"), arg_15_1:GetName())
+	setText(arg_15_2:Find("advance"), "[+" .. arg_15_1:GetAdditionDesc() .. "]")
 
-	var_1_10003(arg_15_2:Find("label"), arg_15_1:GetName())
+	local var_15_0 = arg_15_1:GetMaxValue()
 
-	setText = var_1_10003
-
-	var_1_10003(arg_15_2:Find("advance"), "[+" .. arg_15_1:GetAdditionDesc() .. "]")
-
-	local var_15_0 = arg_15_1:GetValue()
-	local var_15_1 = arg_15_1
-	local var_15_2 = arg_15_1.GetNextValue(var_15_1)
-	local var_15_3 = arg_15_1:GetMaxValue()
-
-	setFillAmount = var_15_1
-
-	var_15_1(arg_15_2:Find("curr"), var_15_0 / var_15_3)
-
-	setFillAmount = var_15_1
-
-	var_15_1(arg_15_2:Find("prev"), var_15_2 / var_15_3)
-
-	LeanTween = var_15_1
-
-	local var_15_4 = var_15_1.cancel
-
-	go = var_8
-
-	var_15_4(var_8(arg_15_2:Find("prev")))
-
-	blinkAni = var_15_4
-
-	local var_15_5 = var_15_4(arg_15_2:Find("prev"), 0.8, -1, 0.3)
-
-	var_6.setFrom(var_15_5, 1)
-
-	setText = var_6
-
-	var_6(arg_15_2:Find("current"), arg_15_1:GetProgressDesc())
+	setFillAmount(arg_15_2:Find("curr"), arg_15_1:GetValue() / var_15_0)
+	setFillAmount(arg_15_2:Find("prev"), arg_15_1:GetNextValue() / var_15_0)
+	LeanTween.cancel(go(arg_15_2:Find("prev")))
+	blinkAni(arg_15_2:Find("prev"), 0.8, -1, 0.3):setFrom(1)
+	setText(arg_15_2:Find("current"), arg_15_1:GetProgressDesc())
 
 	return
 end
 
-function var_0_1.AddTimer(arg_16_0)
-	local var_16_0 = arg_16_0.resourceField
-	local var_16_1 = var_1.GetUpgradeTimeStamp(var_16_0)
+function var_0_0.AddTimer(arg_16_0)
+	if arg_16_0.resourceField:GetUpgradeTimeStamp() > pg.TimeMgr.GetInstance():GetServerTime() then
+		arg_16_0.timer = Timer.New(function()
+			local var_17_0 = var_0 - pg.TimeMgr.GetInstance():GetServerTime()
 
-	pg = var_1_10003
-
-	local var_16_2 = var_1_10003.TimeMgr.GetInstance()
-
-	if var_3.GetServerTime(var_16_2) < var_16_1 then
-		Timer = var_3
-		arg_16_0.timer = var_3.New(function()
-			local var_17_0 = var_16_1
-
-			pg = var_2_10001
-
-			local var_17_1 = var_2_10001.TimeMgr.GetInstance()
-
-			if var_17_0 - var_1.GetServerTime(var_17_1) <= 0 then
-				local var_17_2 = arg_16_0
-
-				var_1.RemoveTimer(var_17_2)
+			if var_17_0 <= 0 then
+				arg_16_0:RemoveTimer()
 			end
 
-			local var_17_3 = arg_16_0.spendTimeTxt
+			local var_17_1 = arg_16_0.spendTimeTxt
 
-			pg = var_2_10002
-
-			local var_17_4 = var_2_10002.TimeMgr.GetInstance()
-
-			var_17_3.text = var_2.DescCDTime(var_17_4, var_0)
+			var_17_1.text = pg.TimeMgr.GetInstance():DescCDTime(var_17_0)
 
 			return
 		end, 1, -1)
 
-		local var_16_3 = arg_16_0.timer
-
-		var_3.Start(var_16_3)
+		arg_16_0.timer:Start()
 		arg_16_0.timer.func()
 	end
 
 	return
 end
 
-function var_0_1.RemoveTimer(arg_18_0)
+function var_0_0.RemoveTimer(arg_18_0)
 	if arg_18_0.timer then
-		local var_18_0 = arg_18_0.timer
-
-		var_1.Stop(var_18_0)
+		arg_18_0.timer:Stop()
 
 		arg_18_0.timer = nil
 	end
@@ -495,15 +204,10 @@ function var_0_1.RemoveTimer(arg_18_0)
 	return
 end
 
-function var_0_1.Show(arg_19_0)
+function var_0_0.Show(arg_19_0)
 	if not arg_19_0.isOpen then
-		var_0_1.super.Show(arg_19_0)
-
-		pg = var_1
-
-		local var_19_0 = var_1.UIMgr.GetInstance()
-
-		var_1.BlurPanel(var_19_0, arg_19_0._tf)
+		var_0_0.super.Show(arg_19_0)
+		pg.UIMgr.GetInstance():BlurPanel(arg_19_0._tf)
 
 		arg_19_0.isOpen = true
 	end
@@ -511,27 +215,22 @@ function var_0_1.Show(arg_19_0)
 	return
 end
 
-function var_0_1.Hide(arg_20_0)
+function var_0_0.Hide(arg_20_0)
 	if arg_20_0.isOpen then
 		arg_20_0.isOpen = false
 
-		var_0_1.super.Hide(arg_20_0)
-
-		pg = var_1
-
-		local var_20_0 = var_1.UIMgr.GetInstance()
-
-		var_1.UnOverlayPanel(var_20_0, arg_20_0._tf, arg_20_0._parentTf)
+		var_0_0.super.Hide(arg_20_0)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_20_0._tf, arg_20_0._parentTf)
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_21_0)
+function var_0_0.OnDestroy(arg_21_0)
 	arg_21_0:Hide()
 	arg_21_0:RemoveTimer()
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,76 +1,36 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildJoinMissionCommand", import(".GuildEventBaseCommand"))
 
-local var_0_0 = "GuildJoinMissionCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.shipIds
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".GuildEventBaseCommand"))
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.shipIds
-
-	if not var_1_0 or #var_1_1 == 0 then
+	if not var_1_0.id or #var_1_0.shipIds == 0 then
 		return
 	end
 
-	if not arg_1_0:CanFormationMission(var_1_0) then
+	if not arg_1_0:CanFormationMission(var_1_0.id) then
 		return
 	end
 
-	pg = var_5
-
-	local var_1_2 = var_5.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 61007, {
-		event_tid = var_1_0,
-		ship_ids = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(61007, {
+		event_tid = var_1_0.id,
+		ship_ids = var_1_0.shipIds
 	}, 61008, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			GuildProxy = var_2_10003
-			var_2_10004 = var_1(var_2_10003)
+			local var_2_0 = getProxy(GuildProxy)
+			local var_2_1 = var_2_0:getData()
+			local var_2_2 = var_2_1:GetActiveEvent():GetMissionById(var_1_1)
 
-			local var_2_0 = var_1.getData(var_2_10004)
-			local var_2_1 = var_2.GetActiveEvent(var_2_0)
-			local var_2_2 = var_3.GetMissionById(var_2_1, var_1_0)
-			local var_2_3 = var_2_10004.GetCanFormationIndex(var_2_2)
-
-			var_2_10004:UpdateFleet(var_2_3, var_1_1)
-
-			local var_2_4 = var_2_10004
-			local var_2_5 = var_2_10004.UpdateFormationTime
-
-			pg = var_9
-
-			local var_2_6 = var_9.TimeMgr.GetInstance()
-
-			var_2_5(var_2_4, var_9.GetServerTime(var_2_6))
-			var_1:updateGuild(var_2)
-
-			local var_2_7 = arg_1_0
-			local var_2_8 = var_6.sendNotification
-
-			GAME = var_9
-
-			var_2_8(var_2_7, var_9.GUILD_JOIN_MISSION_DONE, {
-				id = var_1_0
+			var_2_2:UpdateFleet(var_2_2:GetCanFormationIndex(), var_1_2)
+			var_2_2:UpdateFormationTime(pg.TimeMgr.GetInstance():GetServerTime())
+			var_2_0:updateGuild(var_2_1)
+			arg_1_0:sendNotification(GAME.GUILD_JOIN_MISSION_DONE, {
+				id = var_1_1
 			})
-
-			pg = var_2_8
-
-			local var_2_9 = var_2_8.ShipFlagMgr.GetInstance()
-
-			var_6.UpdateFlagShips(var_2_9, "inGuildEvent")
+			pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inGuildEvent")
 		else
-			pg = var_1
-
-			local var_2_10 = var_1.TipsMgr.GetInstance()
-			local var_2_11 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_11(var_2_10, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -79,4 +39,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

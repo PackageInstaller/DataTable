@@ -66,6 +66,9 @@ end
 
 function showPanel(self)
 
+     local type = guildWar.GuildWarManager:getSeasonType()
+    self:setTxtTitle(type == guildWar.GuildWarType.Normal and _TT(149186) or _TT(149219))
+    
     self.mTxtId.text = _TT(98005, self.log.show_id)
 
     local isSelf = self.log.is_atk == 1
@@ -104,7 +107,7 @@ function showPanel(self)
                 end
             end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, RemindConst.GUILDWAR_REPLAY)
         end)
-
+        item:getChildGO("mBtnInfo"):SetActive(false)
         item:addUIEvent("mBtnInfo", function()
             guildWar.GuildWarManager:setLookIsSelf(isSelf)
             fight.FightController:reqBattleRePlayDate(PreFightBattleType.GuildWar, self.log.battle_id)

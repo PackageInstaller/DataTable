@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "secretary_special_ship_expression") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "secretary_special_ship_expression"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.secretary_special_ship_expression = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.secretary_special_ship_expression
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.secretary_special_ship_expression = rawget(pg, "secretary_special_ship_expression") or setmetatable({
+	__name = "secretary_special_ship_expression"
+}, confNEO)
+pg.secretary_special_ship_expression.all = {
 	1000,
 	1001,
 	1002,
@@ -68,25 +45,11 @@ var_0_3.all = {
 	3202,
 	3300
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.secretary_special_ship_expression = {}
+pg.base = pg.base or {}
+pg.base.secretary_special_ship_expression = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.secretary_special_ship_expression
-
-	var_1_0[1000] = {
+	pg.base.secretary_special_ship_expression[1000] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -129,11 +92,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.secretary_special_ship_expression
-
-	var_1_1[1001] = {
+	pg.base.secretary_special_ship_expression[1001] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "9",
@@ -176,11 +135,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.secretary_special_ship_expression
-
-	var_1_2[1002] = {
+	pg.base.secretary_special_ship_expression[1002] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "9",
@@ -223,11 +178,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.secretary_special_ship_expression
-
-	var_1_3[1003] = {
+	pg.base.secretary_special_ship_expression[1003] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "9",
@@ -270,11 +221,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.secretary_special_ship_expression
-
-	var_1_4[1004] = {
+	pg.base.secretary_special_ship_expression[1004] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "9",
@@ -317,11 +264,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.secretary_special_ship_expression
-
-	var_1_5[1005] = {
+	pg.base.secretary_special_ship_expression[1005] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "9",
@@ -364,11 +307,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.secretary_special_ship_expression
-
-	var_1_6[1006] = {
+	pg.base.secretary_special_ship_expression[1006] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "9",
@@ -411,11 +350,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.secretary_special_ship_expression
-
-	var_1_7[1007] = {
+	pg.base.secretary_special_ship_expression[1007] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -458,11 +393,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.secretary_special_ship_expression
-
-	var_1_8[1008] = {
+	pg.base.secretary_special_ship_expression[1008] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -505,11 +436,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.secretary_special_ship_expression
-
-	var_1_9[1009] = {
+	pg.base.secretary_special_ship_expression[1009] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -552,11 +479,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.secretary_special_ship_expression
-
-	var_1_10[1010] = {
+	pg.base.secretary_special_ship_expression[1010] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -599,11 +522,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.secretary_special_ship_expression
-
-	var_1_11[1011] = {
+	pg.base.secretary_special_ship_expression[1011] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -646,11 +565,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = ""
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.secretary_special_ship_expression
-
-	var_1_12[1100] = {
+	pg.base.secretary_special_ship_expression[1100] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -693,11 +608,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "11"
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.secretary_special_ship_expression
-
-	var_1_13[1101] = {
+	pg.base.secretary_special_ship_expression[1101] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -740,11 +651,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "11"
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.secretary_special_ship_expression
-
-	var_1_14[1200] = {
+	pg.base.secretary_special_ship_expression[1200] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "2",
@@ -787,11 +694,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "8"
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.secretary_special_ship_expression
-
-	var_1_15[1201] = {
+	pg.base.secretary_special_ship_expression[1201] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "2",
@@ -834,11 +737,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "8"
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.secretary_special_ship_expression
-
-	var_1_16[1300] = {
+	pg.base.secretary_special_ship_expression[1300] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -881,11 +780,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "9"
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.secretary_special_ship_expression
-
-	var_1_17[1301] = {
+	pg.base.secretary_special_ship_expression[1301] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "",
@@ -928,11 +823,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "9"
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.secretary_special_ship_expression
-
-	var_1_18[1310] = {
+	pg.base.secretary_special_ship_expression[1310] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "4",
@@ -975,11 +866,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "6"
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.secretary_special_ship_expression
-
-	var_1_19[2000] = {
+	pg.base.secretary_special_ship_expression[2000] = {
 		chime_0 = "6",
 		chime_9 = "7",
 		chuxi = "6",
@@ -1022,11 +909,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "7",
 		login = "7"
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.secretary_special_ship_expression
-
-	var_1_20[2001] = {
+	pg.base.secretary_special_ship_expression[2001] = {
 		chime_0 = "7",
 		chime_9 = "7",
 		chuxi = "8",
@@ -1069,11 +952,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "7",
 		login = "7"
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.secretary_special_ship_expression
-
-	var_1_21[2002] = {
+	pg.base.secretary_special_ship_expression[2002] = {
 		chime_0 = "7",
 		chime_9 = "7",
 		chuxi = "8",
@@ -1116,11 +995,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "7",
 		login = "7"
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.secretary_special_ship_expression
-
-	var_1_22[2003] = {
+	pg.base.secretary_special_ship_expression[2003] = {
 		chime_0 = "7",
 		chime_9 = "7",
 		chuxi = "6",
@@ -1163,11 +1038,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "7",
 		login = "7"
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.secretary_special_ship_expression
-
-	var_1_23[2100] = {
+	pg.base.secretary_special_ship_expression[2100] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "6",
@@ -1210,11 +1081,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "6"
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.secretary_special_ship_expression
-
-	var_1_24[2101] = {
+	pg.base.secretary_special_ship_expression[2101] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "6",
@@ -1257,11 +1124,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "6"
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.secretary_special_ship_expression
-
-	var_1_25[2102] = {
+	pg.base.secretary_special_ship_expression[2102] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "6",
@@ -1304,11 +1167,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "6"
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.secretary_special_ship_expression
-
-	var_1_26[2200] = {
+	pg.base.secretary_special_ship_expression[2200] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "8",
@@ -1351,11 +1210,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "7"
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.secretary_special_ship_expression
-
-	var_1_27[2201] = {
+	pg.base.secretary_special_ship_expression[2201] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "8",
@@ -1398,11 +1253,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "7"
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.secretary_special_ship_expression
-
-	var_1_28[2202] = {
+	pg.base.secretary_special_ship_expression[2202] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "8",
@@ -1445,11 +1296,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "7"
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.secretary_special_ship_expression
-
-	var_1_29[2300] = {
+	pg.base.secretary_special_ship_expression[2300] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "1",
@@ -1492,11 +1339,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "1"
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.secretary_special_ship_expression
-
-	var_1_30[3000] = {
+	pg.base.secretary_special_ship_expression[3000] = {
 		chime_0 = "5",
 		chime_9 = "15",
 		chuxi = "12",
@@ -1539,11 +1382,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "11",
 		login = "1"
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.secretary_special_ship_expression
-
-	var_1_31[3001] = {
+	pg.base.secretary_special_ship_expression[3001] = {
 		chime_0 = "5",
 		chime_9 = "15",
 		chuxi = "9",
@@ -1586,11 +1425,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "11",
 		login = "1"
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.secretary_special_ship_expression
-
-	var_1_32[3002] = {
+	pg.base.secretary_special_ship_expression[3002] = {
 		chime_0 = "5",
 		chime_9 = "15",
 		chuxi = "9",
@@ -1633,11 +1468,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "11",
 		login = "1"
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.secretary_special_ship_expression
-
-	var_1_33[3003] = {
+	pg.base.secretary_special_ship_expression[3003] = {
 		chime_0 = "7",
 		chime_9 = "10",
 		chuxi = "5",
@@ -1680,11 +1511,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "1",
 		login = "1"
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.secretary_special_ship_expression
-
-	var_1_34[3100] = {
+	pg.base.secretary_special_ship_expression[3100] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "4",
@@ -1727,11 +1554,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "5"
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.secretary_special_ship_expression
-
-	var_1_35[3101] = {
+	pg.base.secretary_special_ship_expression[3101] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "4",
@@ -1774,11 +1597,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "5"
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.secretary_special_ship_expression
-
-	var_1_36[3102] = {
+	pg.base.secretary_special_ship_expression[3102] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "4",
@@ -1821,11 +1640,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "5"
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.secretary_special_ship_expression
-
-	var_1_37[3200] = {
+	pg.base.secretary_special_ship_expression[3200] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "1",
@@ -1868,11 +1683,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "2"
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.secretary_special_ship_expression
-
-	var_1_38[3201] = {
+	pg.base.secretary_special_ship_expression[3201] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "1",
@@ -1915,11 +1726,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "2"
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.secretary_special_ship_expression
-
-	var_1_39[3202] = {
+	pg.base.secretary_special_ship_expression[3202] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "1",
@@ -1962,8 +1769,7 @@ var_0_3.base.secretary_special_ship_expression = {}
 		chime_20 = "",
 		login = "2"
 	}
-	pg = var_1_39
-	var_1_39.base.secretary_special_ship_expression[3300] = {
+	pg.base.secretary_special_ship_expression[3300] = {
 		chime_0 = "",
 		chime_9 = "",
 		chuxi = "4",

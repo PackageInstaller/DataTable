@@ -60,17 +60,30 @@ function initData(self, rootGo)
         end
     end
 
+    local fightSkinId = role.RoleManager:getCurSelectSkinId()
+
     self.m_skill1 = fightUI.FightSkillItem.new()
-    self.m_skill1:setup(UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"))
+    self.m_skill2 = fightUI.FightSkillItem.new()
+    self.m_skillmax1 = fightUI.FightMaxSkillItem.new()
+    if fightSkinId == role.DefFightUIId  then
+        self.m_skill1:setup(UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"))
+        self.m_skill2:setup(UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"))
+        self.m_skillmax1:setup(UrlManager:getUIPrefabPath("fight/FightMaxSkillItem.prefab"))
+    else
+        self.m_skill1:setup(UrlManager:getUIPrefabPath("fight_"..fightSkinId.."/FightSkillItem.prefab"))
+        self.m_skill2:setup(UrlManager:getUIPrefabPath("fight_"..fightSkinId.."/FightSkillItem.prefab"))
+        self.m_skillmax1:setup(UrlManager:getUIPrefabPath("fight_"..fightSkinId.."/FightMaxSkillItem.prefab"))
+    end
+
     self.m_skill1:setSkillCall(_skillCall)
     self.m_skill1:addOnParent(self:getChildTrans("SkillItem1"))
-    self.m_skill2 = fightUI.FightSkillItem.new()
-    self.m_skill2:setup(UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"))
+  
+    --self.m_skill2:setup(UrlManager:getUIPrefabPath("fight/FightSkillItem.prefab"))
     self.m_skill2:setSkillCall(_skillCall)
     self.m_skill2:addOnParent(self:getChildTrans("SkillItem2"))
 
-    self.m_skillmax1 = fightUI.FightMaxSkillItem.new()
-    self.m_skillmax1:setup(UrlManager:getUIPrefabPath("fight/FightMaxSkillItem.prefab"))
+   
+    --self.m_skillmax1:setup(UrlManager:getUIPrefabPath("fight/FightMaxSkillItem.prefab"))
     self.m_skillmax1:setSkillCall(_skillMaxCall)
     self.m_skillmax1:addOnParent(self:getChildTrans("SkillItem3"))
 

@@ -1,247 +1,107 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildOfficeLogPage", import("....base.BaseSubView"))
+local var_0_1 = {
+	{
+		GuildConst.TYPE_SUPPLY,
+		GuildConst.START_BATTLE,
+		GuildConst.TECHNOLOGY
+	},
+	{
+		GuildConst.TYPE_DONATE,
+		GuildConst.WEEKLY_TASK
+	},
+	{
+		GuildConst.TECHNOLOGY_OVER,
+		GuildConst.SWITCH_TOGGLE
+	}
+}
 
-local var_0_0 = "GuildOfficeLogPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("....base.BaseSubView"))
-local var_0_2 = {}
-local var_0_3 = {}
-
-GuildConst = var_3
-var_0_3[1] = var_3.TYPE_SUPPLY
-GuildConst = var_3
-var_0_3[2] = var_3.START_BATTLE
-GuildConst = var_3
-var_0_3[3] = var_3.TECHNOLOGY
-var_0_2[1] = var_0_3
-
-local var_0_4 = {}
-
-GuildConst = var_3
-var_0_4[1] = var_3.TYPE_DONATE
-GuildConst = var_3
-var_0_4[2] = var_3.WEEKLY_TASK
-var_0_2[2] = var_0_4
-
-local var_0_5 = {}
-
-GuildConst = var_3
-var_0_5[1] = var_3.TECHNOLOGY_OVER
-GuildConst = var_3
-var_0_5[2] = var_3.SWITCH_TOGGLE
-var_0_2[3] = var_0_5
-
-function var_0_1.Flag2Filter(arg_1_0, arg_1_1)
-	local var_1_0 = {}
-
-	ipairs = var_1_10003
-
-	for iter_1_0, iter_1_1 in var_1_10003(var_0_2) do
-		bit = var_1_10008
-		var_1_10008 = var_1_10008.lshift(1, iter_1_0)
-		bit = var_1_10009
-
-		if var_1_10009.band(arg_1_1, var_1_10008) > 0 then
-			ipairs = var_1_10009
-
-			for iter_1_2, iter_1_3 in var_1_10009(iter_1_1) do
-				table = var_1_10014
-
-				var_1_10014.insert(var_1_0, iter_1_3)
+function var_0_0.Flag2Filter(arg_1_0, arg_1_1)
+	for iter_1_0, iter_1_1 in ipairs(var_0_1) do
+		if bit.band(arg_1_1, (bit.lshift(1, iter_1_0))) > 0 then
+			for iter_1_2, iter_1_3 in ipairs(iter_1_1) do
+				table.insert({}, iter_1_3)
 			end
 		end
 	end
 
-	return var_1_0
+	return {}
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "GuildOfficeLogPage"
 end
 
-function var_0_1.OnLoaded(arg_3_0)
-	UIItemList = var_1_10001
+function var_0_0.OnLoaded(arg_3_0)
+	arg_3_0.uilist = UIItemList.New(arg_3_0._tf:Find("frame/window/sliders/list/content"), arg_3_0._tf:Find("frame/window/sliders/list/content/tpl"))
 
-	local var_3_0 = var_1_10001.New
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_3.Find(var_3_1, "frame/window/sliders/list/content")
-	local var_3_3 = arg_3_0._tf
+	setText(arg_3_0._tf:Find("frame/window/top/bg/infomation/title"), i18n("guild_log_title"))
 
-	arg_3_0.uilist = var_3_0(var_3_2, var_4.Find(var_3_3, "frame/window/sliders/list/content/tpl"))
-	setText = var_1
-
-	local var_3_4 = arg_3_0._tf
-	local var_3_5 = var_3.Find(var_3_4, "frame/window/top/bg/infomation/title")
-
-	i18n = var_4
-
-	var_1(var_3_5, var_4("guild_log_title"))
-
-	local var_3_6 = arg_3_0._tf
-
-	arg_3_0.btnAll = var_1.Find(var_3_6, "frame/window/sliders/filter/1")
-
-	local var_3_7 = {}
-	local var_3_8 = arg_3_0._tf
-
-	var_3_7[1] = var_2.Find(var_3_8, "frame/window/sliders/filter/2")
-
-	local var_3_9 = arg_3_0._tf
-
-	var_3_7[2] = var_2.Find(var_3_9, "frame/window/sliders/filter/3")
-
-	local var_3_10 = arg_3_0._tf
-
-	var_3_7[3] = var_2.Find(var_3_10, "frame/window/sliders/filter/4")
-	arg_3_0.btns = var_3_7
+	arg_3_0.btnAll = arg_3_0._tf:Find("frame/window/sliders/filter/1")
+	arg_3_0.btns = {
+		arg_3_0._tf:Find("frame/window/sliders/filter/2"),
+		arg_3_0._tf:Find("frame/window/sliders/filter/3"),
+		arg_3_0._tf:Find("frame/window/sliders/filter/4")
+	}
 
 	return
 end
 
-function var_0_1.OnInit(arg_4_0)
-	onButton = var_1_10001
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_4.Find(var_4_1, "frame/window/top/btnBack")
-
-	local function var_4_3()
-		local var_5_0 = arg_4_0
-
-		var_0.Close(var_5_0)
+function var_0_0.OnInit(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("frame/window/top/btnBack"), function()
+		arg_4_0:Close()
 
 		return
-	end
-
-	SFX_PANEL = var_4_1
-
-	var_1_10001(var_4_0, var_4_2, var_4_3, var_4_1)
-
-	onButton = var_1_10001
-
-	local var_4_4 = arg_4_0
-	local var_4_5 = arg_4_0._tf
-	local var_4_6 = var_4.Find(var_4_5, "frame")
-
-	local function var_4_7()
-		local var_6_0 = arg_4_0
-
-		var_0.Close(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0._tf:Find("frame"), function()
+		arg_4_0:Close()
 
 		return
-	end
-
-	SFX_PANEL = var_4_5
-
-	var_1_10001(var_4_4, var_4_6, var_4_7, var_4_5)
-
-	onButton = var_1_10001
-
-	local var_4_8 = arg_4_0
-	local var_4_9 = arg_4_0.btnAll
-
-	local function var_4_10()
-		local var_7_0 = arg_4_0
-
-		var_0.SelectAll(var_7_0)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.btnAll, function()
+		arg_4_0:SelectAll()
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_4_5
-
-	var_1_10001(var_4_8, var_4_9, var_4_10, var_4_5)
-
-	ipairs = var_1_10001
-
-	for iter_4_0, iter_4_1 in var_1_10001(arg_4_0.btns) do
-		onButton = var_4_5
-
-		local var_4_11 = arg_4_0
-		local var_4_12 = iter_4_1
-
-		local function var_4_13()
-			if arg_4_0.allFlags ~= arg_4_0.flags then
-				bit = var_0
-
-				local var_8_0 = var_0.band
-				local var_8_1 = arg_4_0.flags
-
-				bit = var_2_10003
-
-				if var_8_0(var_8_1, var_2_10003.lshift(1, iter_4_0)) > 0 then
-					local var_8_2 = arg_4_0
-
-					var_0.UnSelectFlag(var_8_2, iter_4_0, iter_4_1)
-
-					goto label_8_0
-				end
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.btns) do
+		onButton(arg_4_0, iter_4_1, function()
+			if arg_4_0.allFlags ~= arg_4_0.flags and bit.band(arg_4_0.flags, bit.lshift(1, iter_4_0)) > 0 then
+				arg_4_0:UnSelectFlag(iter_4_0, iter_4_1)
+			else
+				arg_4_0:SelectFlag(iter_4_0, iter_4_1)
 			end
-
-			do
-				local var_8_3 = arg_4_0
-
-				var_0.SelectFlag(var_8_3, iter_4_0, iter_4_1)
-			end
-
-			::label_8_0::
 
 			return
-		end
-
-		SFX_PANEL = var_1_10011
-
-		var_4_5(var_4_11, var_4_12, var_4_13, var_1_10011)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.SelectAll(arg_9_0)
+function var_0_0.SelectAll(arg_9_0)
 	arg_9_0.flags = 0
-	pairs = var_1
 
-	for iter_9_0, iter_9_1 in var_1(arg_9_0.btns) do
-		setActive = var_1_10006
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.btns) do
+		setActive(iter_9_1:Find("sel"), false)
 
-		var_1_10006(iter_9_1:Find("sel"), false)
-
-		bit = var_1_10006
-		var_1_10006 = var_1_10006.bor
-
-		local var_9_0 = arg_9_0.flags
-
-		bit = var_9
-		arg_9_0.flags = var_1_10006(var_9_0, var_9.lshift(1, iter_9_0))
+		arg_9_0.flags = bit.bor(arg_9_0.flags, bit.lshift(1, iter_9_0))
 	end
 
-	setActive = var_1
-
-	local var_9_1 = arg_9_0.btnAll
-
-	var_1(var_3.Find(var_9_1, "sel"), true)
+	setActive(arg_9_0.btnAll:Find("sel"), true)
 	arg_9_0:Filter()
 
 	return
 end
 
-function var_0_1.UnSelectFlag(arg_10_0, arg_10_1, arg_10_2)
-	setActive = var_1_10003
+function var_0_0.UnSelectFlag(arg_10_0, arg_10_1, arg_10_2)
+	setActive(arg_10_2:Find("sel"), false)
 
-	var_1_10003(arg_10_2:Find("sel"), false)
+	local var_10_0 = bit.bxor(arg_10_0.flags, bit.lshift(1, arg_10_1))
 
-	bit = var_1_10003
-
-	local var_10_0 = var_1_10003.bxor
-	local var_10_1 = arg_10_0.flags
-
-	bit = var_6
-
-	if var_10_0(var_10_1, var_6.lshift(1, arg_10_1)) == 0 then
+	if var_10_0 == 0 then
 		arg_10_0:SelectAll()
 	else
-		arg_10_0.flags = var_3
+		arg_10_0.flags = var_10_0
 
 		arg_10_0:Filter()
 	end
@@ -249,149 +109,84 @@ function var_0_1.UnSelectFlag(arg_10_0, arg_10_1, arg_10_2)
 	return
 end
 
-function var_0_1.SelectFlag(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = arg_11_0.flags
-
-	local function var_11_1()
-		setActive = var_2_10000
-
-		local var_12_0 = arg_11_2
-
-		var_2_10000(var_2.Find(var_12_0, "sel"), true)
-
-		setActive = var_2_10000
-
-		local var_12_1 = arg_11_0.btnAll
-
-		var_2_10000(var_2.Find(var_12_1, "sel"), false)
-
-		local var_12_2 = arg_11_0
-
-		bit = var_2_10001
-
-		local var_12_3 = var_2_10001.bor
-		local var_12_4 = arg_11_0.flags
-
-		bit = var_12_1
-		var_12_2.flags = var_12_3(var_12_4, var_12_1.lshift(1, arg_11_1))
-
-		local var_12_5 = arg_11_0
-
-		var_0.Filter(var_12_5)
-
-		return
-	end
-
-	if var_11_0 ~= arg_11_0.allFlags then
-		local var_11_2 = arg_11_0.allFlags
-
-		bit = var_1_10006
-
-		local var_11_3 = var_1_10006.bor
-		local var_11_4 = arg_11_0.flags
-
-		bit = var_1_10009
-
-		if var_11_2 == var_11_3(var_11_4, var_1_10009.lshift(1, arg_11_1)) then
-			arg_11_0:SelectAll()
-
-			goto label_11_0
-		end
-	end
-
-	if var_11_0 == arg_11_0.allFlags then
+function var_0_0.SelectFlag(arg_11_0, arg_11_1, arg_11_2)
+	if arg_11_0.flags ~= arg_11_0.allFlags and arg_11_0.allFlags == bit.bor(arg_11_0.flags, bit.lshift(1, arg_11_1)) then
+		arg_11_0:SelectAll()
+	elseif arg_11_0.flags == arg_11_0.allFlags then
 		arg_11_0.flags = 0
 
-		var_11_1()
-	else
-		var_11_1()
-	end
+		;(function()
+			setActive(arg_11_2:Find("sel"), true)
+			setActive(arg_11_0.btnAll:Find("sel"), false)
 
-	::label_11_0::
+			arg_11_0.flags = bit.bor(arg_11_0.flags, bit.lshift(1, arg_11_1))
+
+			arg_11_0:Filter()
+
+			return
+		end)()
+	else
+		(function()
+			setActive(arg_11_2:Find("sel"), true)
+			setActive(arg_11_0.btnAll:Find("sel"), false)
+
+			arg_11_0.flags = bit.bor(arg_11_0.flags, bit.lshift(1, arg_11_1))
+
+			arg_11_0:Filter()
+
+			return
+		end)()
+	end
 
 	return
 end
 
-function var_0_1.Show(arg_13_0, arg_13_1)
+function var_0_0.Show(arg_13_0, arg_13_1)
 	arg_13_0.guild = arg_13_1
-	pg = var_1_10002
 
-	local var_13_0 = var_1_10002.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_13_0, arg_13_0._tf)
-
-	setActive = var_2
-
-	var_2(arg_13_0._tf, true)
-
-	triggerButton = var_2
-
-	var_2(arg_13_0.btnAll)
+	pg.UIMgr.GetInstance():BlurPanel(arg_13_0._tf)
+	setActive(arg_13_0._tf, true)
+	triggerButton(arg_13_0.btnAll)
 
 	arg_13_0.allFlags = arg_13_0.flags
 
 	return
 end
 
-function var_0_1.Filter(arg_14_0)
-	local var_14_0 = arg_14_0.guild
-	local var_14_1 = var_1.getCapitalLogs(var_14_0)
-
+function var_0_0.Filter(arg_14_0)
 	arg_14_0.displays = {}
 
-	local var_14_2 = arg_14_0:Flag2Filter(arg_14_0.flags)
+	local var_14_0 = arg_14_0:Flag2Filter(arg_14_0.flags)
 
-	ipairs = var_14_0
-
-	for iter_14_0, iter_14_1 in var_14_0(var_14_1) do
-		if iter_14_1:IsSameType(var_14_2) then
-			table = var_9
-
-			var_9.insert(arg_14_0.displays, iter_14_1)
+	for iter_14_0, iter_14_1 in ipairs((arg_14_0.guild:getCapitalLogs())) do
+		if iter_14_1:IsSameType(var_14_0) then
+			table.insert(arg_14_0.displays, iter_14_1)
 		end
 	end
 
-	local var_14_3 = arg_14_0.uilist
-
-	var_4.make(var_14_3, function(arg_15_0, arg_15_1, arg_15_2)
-		UIItemList = var_2_10003
-
-		if arg_15_0 == var_2_10003.EventUpdate then
-			local var_15_0 = arg_14_0.displays[arg_15_1 + 1]
-
-			setText = var_4
-
-			var_4(arg_15_2, var_15_0:getText())
+	arg_14_0.uilist:make(function(arg_15_0, arg_15_1, arg_15_2)
+		if arg_15_0 == UIItemList.EventUpdate then
+			setText(arg_15_2, arg_14_0.displays[arg_15_1 + 1]:getText())
 		end
 
 		return
 	end)
-
-	local var_14_4 = arg_14_0.uilist
-
-	var_4.align(var_14_4, #arg_14_0.displays)
+	arg_14_0.uilist:align(#arg_14_0.displays)
 
 	return
 end
 
-function var_0_1.Close(arg_16_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_16_0._tf, false)
-
-	pg = var_1_10001
-
-	local var_16_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_16_0, arg_16_0._tf, arg_16_0._parentTf)
+function var_0_0.Close(arg_16_0)
+	setActive(arg_16_0._tf, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_16_0._tf, arg_16_0._parentTf)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_17_0)
+function var_0_0.OnDestroy(arg_17_0)
 	arg_17_0:Close()
 
 	return
 end
 
-return var_0_1
+return var_0_0

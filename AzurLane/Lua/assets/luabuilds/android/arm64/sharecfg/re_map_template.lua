@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "re_map_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "re_map_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.re_map_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.re_map_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.re_map_template = rawget(pg, "re_map_template") or setmetatable({
+	__name = "re_map_template"
+}, confNEO)
+pg.re_map_template.all = {
 	1,
 	2,
 	4,
@@ -76,25 +53,11 @@ var_0_3.all = {
 	49,
 	50
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.re_map_template = {}
+pg.base = pg.base or {}
+pg.base.re_map_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.re_map_template
-
-	var_1_0[1] = {
+	pg.base.re_map_template[1] = {
 		name = "红染常驻复刻",
 		memory_group = 108,
 		bg = "temp_hongran",
@@ -166,11 +129,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.re_map_template
-
-	var_1_1[2] = {
+	pg.base.re_map_template[2] = {
 		name = "Z舰队常驻复刻",
 		memory_group = 101,
 		bg = "temp_zjiandui",
@@ -215,11 +174,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.re_map_template
-
-	var_1_2[4] = {
+	pg.base.re_map_template[4] = {
 		name = "凛冬常驻复刻",
 		memory_group = 123,
 		bg = "temp_lingdong",
@@ -291,11 +246,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.re_map_template
-
-	var_1_3[5] = {
+	pg.base.re_map_template[5] = {
 		name = "围剿斯佩伯爵』常驻复刻",
 		memory_group = 117,
 		bg = "temp_sipei",
@@ -333,11 +284,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.re_map_template
-
-	var_1_4[6] = {
+	pg.base.re_map_template[6] = {
 		name = "异色格常驻复刻",
 		memory_group = 102,
 		bg = "temp_yisege",
@@ -417,11 +364,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.re_map_template
-
-	var_1_5[7] = {
+	pg.base.re_map_template[7] = {
 		name = "坠落之翼常驻复刻",
 		memory_group = 115,
 		bg = "temp_zhuiluo",
@@ -493,11 +436,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.re_map_template
-
-	var_1_6[8] = {
+	pg.base.re_map_template[8] = {
 		name = "鸢尾之华常驻复刻",
 		memory_group = 133,
 		bg = "temp_yuanwei",
@@ -569,11 +508,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.re_map_template
-
-	var_1_7[9] = {
+	pg.base.re_map_template[9] = {
 		name = "墨染的钢铁之花常驻复刻",
 		memory_group = 131,
 		bg = "temp_moran",
@@ -645,11 +580,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.re_map_template
-
-	var_1_8[10] = {
+	pg.base.re_map_template[10] = {
 		name = "光荣的一战常驻复刻",
 		memory_group = 109,
 		bg = "temp_guangrong",
@@ -694,11 +625,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.re_map_template
-
-	var_1_9[11] = {
+	pg.base.re_map_template[11] = {
 		name = "苍红的回响常驻复刻",
 		memory_group = 148,
 		bg = "temp_tiancheng",
@@ -770,11 +697,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.re_map_template
-
-	var_1_10[12] = {
+	pg.base.re_map_template[12] = {
 		name = "月光下的序曲常驻复刻",
 		memory_group = 132,
 		bg = "temp_xinaoerliang",
@@ -805,11 +728,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.re_map_template
-
-	var_1_11[13] = {
+	pg.base.re_map_template[13] = {
 		name = "俾斯麦常驻复刻",
 		memory_group = 158,
 		bg = "temp_bisimai",
@@ -881,11 +800,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.re_map_template
-
-	var_1_12[14] = {
+	pg.base.re_map_template[14] = {
 		name = "偶像一期常驻复刻",
 		memory_group = 172,
 		bg = "temp_ouxiang",
@@ -935,11 +850,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.re_map_template
-
-	var_1_13[15] = {
+	pg.base.re_map_template[15] = {
 		name = "神圣的悲喜剧常驻复刻",
 		memory_group = 167,
 		bg = "temp_beixiju",
@@ -1019,11 +930,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.re_map_template
-
-	var_1_14[16] = {
+	pg.base.re_map_template[16] = {
 		name = "斯图尔特的硝烟常驻复刻",
 		memory_group = 145,
 		bg = "temp_longxiang",
@@ -1054,11 +961,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.re_map_template
-
-	var_1_15[17] = {
+	pg.base.re_map_template[17] = {
 		name = "箱庭疗法常驻复刻",
 		memory_group = 163,
 		bg = "temp_xiangting",
@@ -1146,11 +1049,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.re_map_template
-
-	var_1_16[18] = {
+	pg.base.re_map_template[18] = {
 		name = "浮樱影华常驻复刻",
 		memory_group = 177,
 		bg = "temp_fuying",
@@ -1222,11 +1121,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.re_map_template
-
-	var_1_17[19] = {
+	pg.base.re_map_template[19] = {
 		name = "最珍贵的宝物常驻复刻",
 		memory_group = 170,
 		bg = "temp_u110",
@@ -1257,11 +1152,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.re_map_template
-
-	var_1_18[20] = {
+	pg.base.re_map_template[20] = {
 		name = "偶像二期常驻复刻",
 		memory_group = 191,
 		bg = "temp_ouxiang2",
@@ -1311,11 +1202,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.re_map_template
-
-	var_1_19[21] = {
+	pg.base.re_map_template[21] = {
 		name = "微层混合常驻复刻",
 		memory_group = 183,
 		bg = "temp_weiceng",
@@ -1387,11 +1274,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.re_map_template
-
-	var_1_20[22] = {
+	pg.base.re_map_template[22] = {
 		name = "峡湾间的星辰常驻复刻",
 		memory_group = 151,
 		bg = "temp_yonggan",
@@ -1424,11 +1307,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.re_map_template
-
-	var_1_21[23] = {
+	pg.base.re_map_template[23] = {
 		name = "穹顶下的圣咏曲常驻复刻",
 		memory_group = 186,
 		bg = "temp_zhende",
@@ -1500,11 +1379,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.re_map_template
-
-	var_1_22[24] = {
+	pg.base.re_map_template[24] = {
 		name = "夜幕下的归途常驻复刻",
 		memory_group = 185,
 		bg = "temp_taertu",
@@ -1535,11 +1410,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.re_map_template
-
-	var_1_23[25] = {
+	pg.base.re_map_template[25] = {
 		name = "北境序曲常驻复刻",
 		memory_group = 181,
 		bg = "temp_qiaba",
@@ -1611,11 +1482,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.re_map_template
-
-	var_1_24[26] = {
+	pg.base.re_map_template[26] = {
 		name = "永夜幻光常驻复刻",
 		memory_group = 188,
 		bg = "temp_hemin",
@@ -1687,11 +1554,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.re_map_template
-
-	var_1_25[27] = {
+	pg.base.re_map_template[27] = {
 		name = "峡湾间的反击常驻复刻",
 		memory_group = 187,
 		bg = "temp_aisijimoren",
@@ -1722,11 +1585,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.re_map_template
-
-	var_1_26[28] = {
+	pg.base.re_map_template[28] = {
 		name = "负象限作战常驻复刻",
 		memory_group = 194,
 		bg = "temp_u37",
@@ -1798,11 +1657,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.re_map_template
-
-	var_1_27[29] = {
+	pg.base.re_map_template[29] = {
 		name = "蝶海梦花常驻复刻",
 		memory_group = 189,
 		bg = "temp_xinnong",
@@ -1882,11 +1737,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.re_map_template
-
-	var_1_28[30] = {
+	pg.base.re_map_template[30] = {
 		name = "镜位螺旋常驻复刻",
 		memory_group = 198,
 		bg = "temp_xinzexi",
@@ -1958,11 +1809,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.re_map_template
-
-	var_1_29[31] = {
+	pg.base.re_map_template[31] = {
 		name = "破晓冰华常驻复刻",
 		memory_group = 195,
 		bg = "temp_talin",
@@ -2034,11 +1881,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.re_map_template
-
-	var_1_30[32] = {
+	pg.base.re_map_template[32] = {
 		name = "划破海空之翼常驻复刻",
 		memory_group = 190,
 		bg = "temp_pulinsidun",
@@ -2069,11 +1912,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.re_map_template
-
-	var_1_31[33] = {
+	pg.base.re_map_template[33] = {
 		name = "杰诺瓦的焰火常驻复刻",
 		memory_group = 203,
 		bg = "temp_fuxv",
@@ -2104,11 +1943,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.re_map_template
-
-	var_1_32[34] = {
+	pg.base.re_map_template[34] = {
 		name = "碧海光粼常驻复刻",
 		memory_group = 202,
 		bg = "temp_daofeng",
@@ -2180,11 +2015,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.re_map_template
-
-	var_1_33[35] = {
+	pg.base.re_map_template[35] = {
 		name = "复兴的赞美诗常驻复刻",
 		memory_group = 196,
 		bg = "temp_weineituo",
@@ -2256,11 +2087,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.re_map_template
-
-	var_1_34[36] = {
+	pg.base.re_map_template[36] = {
 		name = "逆转彩虹之塔常驻复刻",
 		memory_group = 207,
 		bg = "temp_huteng",
@@ -2336,11 +2163,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.re_map_template
-
-	var_1_35[37] = {
+	pg.base.re_map_template[37] = {
 		name = "深度回音常驻复刻",
 		memory_group = 211,
 		bg = "temp_kalangshitade",
@@ -2412,11 +2235,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.re_map_template
-
-	var_1_36[38] = {
+	pg.base.re_map_template[38] = {
 		name = "虚像构筑之塔常驻复刻",
 		memory_group = 212,
 		bg = "temp_diguo",
@@ -2465,11 +2284,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.re_map_template
-
-	var_1_37[39] = {
+	pg.base.re_map_template[39] = {
 		name = "泠誓光庭常驻复刻",
 		memory_group = 218,
 		bg = "temp_qianwei",
@@ -2541,11 +2356,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.re_map_template
-
-	var_1_38[40] = {
+	pg.base.re_map_template[40] = {
 		name = "雄鹰的叙事歌常驻复刻",
 		memory_group = 223,
 		bg = "temp_luoma",
@@ -2617,11 +2428,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.re_map_template
-
-	var_1_39[41] = {
+	pg.base.re_map_template[41] = {
 		name = "虹彩的终幕曲常驻复刻",
 		memory_group = 215,
 		bg = "temp_aimudeng",
@@ -2693,11 +2500,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.re_map_template
-
-	var_1_40[42] = {
+	pg.base.re_map_template[42] = {
 		name = "飓风与青春之泉常驻复刻",
 		memory_group = 263,
 		bg = "temp_fengfanv1",
@@ -2750,11 +2553,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.re_map_template
-
-	var_1_41[43] = {
+	pg.base.re_map_template[43] = {
 		name = "紫绛槿岚常驻复刻",
 		memory_group = 226,
 		bg = "temp_wuzang",
@@ -2826,11 +2625,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.re_map_template
-
-	var_1_42[44] = {
+	pg.base.re_map_template[44] = {
 		name = "定向折叠常驻复刻",
 		memory_group = 235,
 		bg = "temp_yuekechengII",
@@ -2902,11 +2697,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.re_map_template
-
-	var_1_43[45] = {
+	pg.base.re_map_template[45] = {
 		name = "湮烬尘墟常驻复刻",
 		memory_group = 240,
 		bg = "temp_yuanchou",
@@ -2978,11 +2769,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.re_map_template
-
-	var_1_44[46] = {
+	pg.base.re_map_template[46] = {
 		name = "远汇点作战常驻复刻",
 		memory_group = 224,
 		bg = "temp_bulunxierde",
@@ -3031,11 +2818,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.re_map_template
-
-	var_1_45[47] = {
+	pg.base.re_map_template[47] = {
 		name = "奏响鸢尾之歌常驻复刻",
 		memory_group = 251,
 		bg = "temp_masaiqu",
@@ -3066,11 +2849,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.re_map_template
-
-	var_1_46[48] = {
+	pg.base.re_map_template[48] = {
 		name = "空相交汇点常驻复刻",
 		memory_group = 245,
 		bg = "temp_bisimaiz",
@@ -3150,11 +2929,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.re_map_template
-
-	var_1_47[49] = {
+	pg.base.re_map_template[49] = {
 		name = "幻梦间奏曲常驻复刻",
 		memory_group = 293,
 		bg = "temp_sitelasibao",
@@ -3207,8 +2982,7 @@ var_0_3.base.re_map_template = {}
 		},
 		tickets = {}
 	}
-	pg = var_1_47
-	var_1_47.base.re_map_template[50] = {
+	pg.base.re_map_template[50] = {
 		name = "极地风暴常驻复刻",
 		memory_group = 241,
 		bg = "temp_kuersike",

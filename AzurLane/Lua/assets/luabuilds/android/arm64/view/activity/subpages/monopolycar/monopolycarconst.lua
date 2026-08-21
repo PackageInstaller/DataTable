@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MonopolyCarConst")
+﻿local var_0_0 = class("MonopolyCarConst")
 
 var_0_0.map_dic = {
 	{

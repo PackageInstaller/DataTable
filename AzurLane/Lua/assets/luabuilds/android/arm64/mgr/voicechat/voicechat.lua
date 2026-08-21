@@ -1,34 +1,16 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("VoiceChat")
+﻿local var_0_0 = class("VoiceChat")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.bgName = arg_1_1.bgName
 	arg_1_0.shipGroup = arg_1_1.shipGroup
-
-	local var_1_0
-
-	if not arg_1_1.stopBgm then
-		var_1_0 = false
-	end
-
-	arg_1_0.stopBgm = var_1_0
+	arg_1_0.stopBgm = arg_1_1.stopBgm or false
 	arg_1_0.label = arg_1_1.label
 	arg_1_0.steps = {}
-	ipairs = var_2
 
-	local var_1_1
+	local var_1_0 = arg_1_1.scripts or {}
 
-	if not arg_1_1.scripts then
-		var_1_1 = {}
-	end
-
-	for iter_1_0, iter_1_1 in var_2(var_1_1) do
-		VoiceChatStep = var_1_10007
-		var_1_10007 = var_1_10007.New(iter_1_1, arg_1_0.shipGroup)
-		table = var_1_10008
-
-		var_1_10008.insert(arg_1_0.steps, var_1_10007)
+	for iter_1_0, iter_1_1 in ipairs(var_1_0) do
+		table.insert(arg_1_0.steps, (VoiceChatStep.New(iter_1_1, arg_1_0.shipGroup)))
 	end
 
 	arg_1_0.branchCode = nil
@@ -42,13 +24,9 @@ function var_0_0.GetBgName(arg_2_0)
 end
 
 function var_0_0.GetShipName(arg_3_0)
-	ShipGroup = var_1_10001
+	local var_3_0 = ShipGroup.getDefaultShipConfig(arg_3_0.shipGroup)
 
-	local var_3_0 = var_1_10001.getDefaultShipConfig(arg_3_0.shipGroup)
-
-	assert = var_1_10002
-
-	var_1_10002(var_3_0, "shipGroup not found:" .. arg_3_0.shipGroup)
+	assert(var_3_0, "shipGroup not found:" .. arg_3_0.shipGroup)
 
 	return var_3_0.name
 end
@@ -74,11 +52,13 @@ function var_0_0.GetStepByIndex(arg_7_0, arg_7_1)
 		return nil
 	end
 
-	if not arg_7_0.steps[arg_7_1] or arg_7_0.branchCode and not var_2:IsSameBranch(arg_7_0.branchCode) then
+	local var_7_0 = arg_7_0.steps[arg_7_1]
+
+	if not arg_7_0.steps[arg_7_1] or arg_7_0.branchCode and not var_7_0:IsSameBranch(arg_7_0.branchCode) then
 		return nil
 	end
 
-	return var_2
+	return var_7_0
 end
 
 function var_0_0.HasBg(arg_8_0)

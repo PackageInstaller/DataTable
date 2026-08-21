@@ -1,15 +1,10 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.word_template_51 = {}
 
-local var_0_0
+local var_0_0 = pg.word_template_51
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.word_template_51 = {}
-
-local var_0_1 = var_0.word_template_51
-
-local function var_0_2()
-	var_0_1.单 = {
+function temp()
+	var_0_0.单 = {
 		管 = {
 			this = true,
 			猎 = {
@@ -232,12 +227,10 @@ local function var_0_2()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_3()
-	var_0_1.锡 = {
+function temp()
+	var_0_0.锡 = {
 		锋 = {
 			this = true,
 			牌 = {
@@ -516,12 +509,10 @@ local function var_0_3()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_4()
-	var_0_1.猎 = {
+function temp()
+	var_0_0.猎 = {
 		枪 = {
 			this = true,
 			铅 = {
@@ -941,12 +932,10 @@ local function var_0_4()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_5()
-	var_0_1.弹 = {
+function temp()
+	var_0_0.弹 = {
 		轮 = {
 			this = true
 		},
@@ -1259,12 +1248,10 @@ local function var_0_5()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_6()
-	var_0_1.峨 = {
+function temp()
+	var_0_0.峨 = {
 		眉 = {
 			牌 = {
 				汽 = {
@@ -1303,12 +1290,10 @@ local function var_0_6()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_7()
-	var_0_1.折 = {
+function temp()
+	var_0_0.折 = {
 		叠 = {
 			气 = {
 				枪 = {
@@ -1574,12 +1559,10 @@ local function var_0_7()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_8()
-	var_0_1.侧 = {
+function temp()
+	var_0_0.侧 = {
 		拉 = {
 			式 = {
 				气 = {
@@ -1618,12 +1601,10 @@ local function var_0_8()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_9()
-	var_0_1.仿 = {
+function temp()
+	var_0_0.仿 = {
 		真 = {
 			this = true,
 			["6"] = {
@@ -3748,12 +3729,10 @@ local function var_0_9()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_10()
-	var_0_1.Q = {
+function temp()
+	var_0_0.Q = {
 		B = {
 			["7"] = {
 				["9"] = {
@@ -4051,12 +4030,10 @@ local function var_0_10()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_11()
-	var_0_1.健 = {
+function temp()
+	var_0_0.健 = {
 		卫 = {
 			步 = {
 				枪 = {
@@ -4316,12 +4293,10 @@ local function var_0_11()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_12()
-	var_0_1.X = {
+function temp()
+	var_0_0.X = {
 		M = {
 			["1"] = {
 				["0"] = {
@@ -4886,12 +4861,10 @@ local function var_0_12()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_13()
-	var_0_1.狙 = {
+function temp()
+	var_0_0.狙 = {
 		击 = {
 			this = true,
 			之 = {
@@ -5416,12 +5389,10 @@ local function var_0_13()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_14()
-	var_0_1.汤 = {
+function temp()
+	var_0_0.汤 = {
 		普 = {
 			森 = {
 				M = {
@@ -5508,12 +5479,10 @@ local function var_0_14()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_15()
-	var_0_1.左 = {
+function temp()
+	var_0_0.左 = {
 		轮 = {
 			this = true,
 			手 = {
@@ -5731,12 +5700,10 @@ local function var_0_15()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_16()
-	var_0_1.穿 = {
+function temp()
+	var_0_0.穿 = {
 		甲 = {
 			弹 = {
 				this = true
@@ -5844,12 +5811,10 @@ local function var_0_16()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_17()
-	var_0_1.勃 = {
+function temp()
+	var_0_0.勃 = {
 		朗 = {
 			宁 = {
 				this = true,
@@ -5889,12 +5854,10 @@ local function var_0_17()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_18()
-	var_0_1.终 = {
+function temp()
+	var_0_0.终 = {
 		极 = {
 			猎 = {
 				人 = {
@@ -6012,12 +5975,10 @@ local function var_0_18()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_19()
-	var_0_1.L = {
+function temp()
+	var_0_0.L = {
 		新 = {
 			型 = {
 				火 = {
@@ -6305,12 +6266,10 @@ local function var_0_19()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_20()
-	var_0_1.七 = {
+function temp()
+	var_0_0.七 = {
 		七 = {
 			式 = {
 				手 = {
@@ -7116,12 +7075,10 @@ local function var_0_20()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_21()
-	var_0_1.松 = {
+function temp()
+	var_0_0.松 = {
 		鼠 = {
 			牌 = {
 				单 = {
@@ -7680,12 +7637,10 @@ local function var_0_21()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_22()
-	var_0_1.蟒 = {
+function temp()
+	var_0_0.蟒 = {
 		蛇 = {
 			["5"] = {
 				["8"] = {
@@ -7707,12 +7662,10 @@ local function var_0_22()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_23()
-	var_0_1.底 = {
+function temp()
+	var_0_0.底 = {
 		火 = {
 			this = true,
 			砧 = {
@@ -7772,12 +7725,10 @@ local function var_0_23()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_24()
-	var_0_1.霰 = {
+function temp()
+	var_0_0.霰 = {
 		弹 = {
 			枪 = {
 				this = true
@@ -7788,12 +7739,10 @@ local function var_0_24()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_25()
-	var_0_1.广 = {
+function temp()
+	var_0_0.广 = {
 		州 = {
 			三 = {
 				箭 = {
@@ -8499,12 +8448,10 @@ local function var_0_25()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_26()
-	var_0_1.长 = {
+function temp()
+	var_0_0.长 = {
 		枪 = {
 			this = true,
 			管 = {
@@ -9132,12 +9079,10 @@ local function var_0_26()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_27()
-	var_0_1.冲 = {
+function temp()
+	var_0_0.冲 = {
 		锋 = {
 			枪 = {
 				this = true,
@@ -9339,12 +9284,10 @@ local function var_0_27()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_28()
-	var_0_1.微 = {
+function temp()
+	var_0_0.微 = {
 		冲 = {
 			this = true
 		},
@@ -9694,12 +9637,10 @@ local function var_0_28()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_29()
-	var_0_1.锦 = {
+function temp()
+	var_0_0.锦 = {
 		江 = {
 			b = {
 				["5"] = {
@@ -9812,12 +9753,10 @@ local function var_0_29()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_30()
-	var_0_1.平 = {
+function temp()
+	var_0_0.平 = {
 		式 = {
 			枪 = {
 				this = true
@@ -10569,8 +10508,6 @@ local function var_0_30()
 	return
 end
 
-temp = temp
-
-var_2()
+temp()
 
 return

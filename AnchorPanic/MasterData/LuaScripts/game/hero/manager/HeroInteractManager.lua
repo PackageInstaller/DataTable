@@ -28,6 +28,7 @@ end
 --初始化
 function __init(self)
     self.mConfigData = nil
+    self.wallpaperTempModelId = nil
 end
 
 -- 解析英雄互动配置
@@ -76,34 +77,70 @@ end
 
 -- 取主UI模型是否有动态立绘
 function getShowBoardHeroDynamic(self)
-    local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
-    local heroVo = hero.HeroManager:getHeroVo(showId)
-    if not heroVo then
+    local modelId = self:getShowBoardHeroModelId()
+    if not modelId then
         return false
     end
-    local data = self:getModelIsDynamic(heroVo:getHeroModel())
+    local data = self:getModelIsDynamic(modelId)
     return (data and data.dynamic == 1)
+end
+
+-- 取主界面的模型立绘或者图册是否有专属互动
+function getMainUIInteractHasUnique(self)
+    local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+    if saveType == role.GuradType.Gurad_hero then
+        return self:getShowBoardUnique()
+    else
+        return self:getPaintingUnique()
+
+    end
+    return false
 end
 
 -- 取主UI模型是否有专属互动
 function getShowBoardUnique(self)
-    local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
-    local heroVo = hero.HeroManager:getHeroVo(showId)
-    if not heroVo then
+    local modelId = self:getShowBoardHeroModelId()
+    if not modelId then
         return false
     end
-    local data = self:getModelIsDynamic(heroVo:getHeroModel())
+    local data = self:getModelIsDynamic(modelId)
     return (data and data.isUnique == 1)
+end
+
+-- 取主UI图册是否有专属互动
+function getPaintingUnique(self)
+    local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+    if saveType == role.GuradType.Gurad_painting then
+        local paintingData = purchase.FashionShopManager:getPaintingDataById(tonumber(saveId))
+        return (paintingData and paintingData.isUnique == 1)
+    end
+    return false
 end
 
 -- 取主界面展示的模型id
 function getShowBoardHeroModelId(self)
+    if self.wallpaperTempModelId then
+        return self.wallpaperTempModelId
+    end
+
     local showId = role.RoleManager:getRoleVo():getShowBoardHeroId()
     local heroVo = hero.HeroManager:getHeroVo(showId)
     if not heroVo then
         return nil
     end
     return heroVo:getHeroModel()
+end
+
+-- 获取配置里得cv延迟播放时间
+function getCvDataLayBack(self, baseData)
+    local data = systemSetting.SystemSettingManager:getCurCvTypeSettingCfg()
+    local fieldName = data[3]
+    local voice_layback = baseData[fieldName]
+    if not voice_layback then
+        logError(string.format("hero_interact_data 音效延迟配置错误，当前语音切换字段是%s没有配置: /n/r %s",
+        tostring(voice_layback), table.tostring(data)))
+    end
+    return voice_layback and voice_layback / 1000 or 0
 end
 
 return _M

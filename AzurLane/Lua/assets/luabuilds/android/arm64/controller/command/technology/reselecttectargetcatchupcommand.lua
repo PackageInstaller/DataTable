@@ -1,44 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ReSelectTecTargetCatchupCommand", pm.SimpleCommand)
 
-local var_0_0 = "ReSelectTecTargetCatchupCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).charID
-
-	pg = var_1_0
-
-	local var_1_2 = var_1_0.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_2, 63013, {
-		target = var_1_1
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(63013, {
+		target = arg_1_1:getBody().charID
 	}, 63014, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			TechnologyProxy = var_2_10003
+			local var_2_0 = getProxy(TechnologyProxy)
 
-			local var_2_0 = var_1(var_2_10003)
-			local var_2_1 = var_1.getNewestCatchupTecID(var_2_0)
-			local var_2_2 = var_1_1
-
-			var_1:setCurCatchupTecInfo(var_2_1, var_2_2)
-
-			local var_2_3 = arg_1_0
-			local var_2_4 = var_4.sendNotification
-
-			GAME = var_7
-
-			var_2_4(var_2_3, var_7.RESELECT_TEC_TARGET_CATCHUP_DONE)
+			var_2_0:setCurCatchupTecInfo(var_2_0:getNewestCatchupTecID(), var_0)
+			arg_1_0:sendNotification(GAME.RESELECT_TEC_TARGET_CATCHUP_DONE)
 		else
-			pg = var_1
-
-			local var_2_5 = var_1.TipsMgr.GetInstance()
-
-			var_1.ShowTips(var_2_5, "Error Code" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("Error Code" .. arg_2_0.result)
 		end
 
 		return
@@ -47,4 +19,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

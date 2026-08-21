@@ -1,177 +1,77 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ChallengePreCombatLayer", import("..base.BaseUI"))
 
-local var_0_0 = "ChallengePreCombatLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ChapterPreCombatUI"
 end
 
-function var_0_1.ResUISettings(arg_2_0)
+function var_0_0.ResUISettings(arg_2_0)
 	return true
 end
 
-function var_0_1.init(arg_3_0)
-	local var_3_0 = arg_3_0.rtAdapt
+function var_0_0.init(arg_3_0)
+	arg_3_0._startBtn = arg_3_0.rtAdapt:Find("right/start")
+	arg_3_0._popup = arg_3_0.rtAdapt:Find("right/popup")
 
-	arg_3_0._startBtn = var_1.Find(var_3_0, "right/start")
+	setActive(arg_3_0._popup, false)
 
-	local var_3_1 = arg_3_0.rtAdapt
+	arg_3_0._backBtn = arg_3_0.rtAdapt:Find("top/back_btn")
 
-	arg_3_0._popup = var_1.Find(var_3_1, "right/popup")
-	setActive = var_1
+	local var_3_0 = arg_3_0.rtAdapt:Find("middle")
 
-	var_1(arg_3_0._popup, false)
+	arg_3_0._mainGS = var_3_0:Find("gear_score/main/Text")
+	arg_3_0._vanguardGS = var_3_0:Find("gear_score/vanguard/Text")
 
-	local var_3_2 = arg_3_0.rtAdapt
+	setText(arg_3_0._mainGS, 0)
+	setText(arg_3_0._vanguardGS, 0)
 
-	arg_3_0._backBtn = var_1.Find(var_3_2, "top/back_btn")
-
-	local var_3_3 = arg_3_0.rtAdapt
-	local var_3_4 = var_1.Find(var_3_3, "middle")
-
-	arg_3_0._mainGS = var_1.Find(var_3_4, "gear_score/main/Text")
-	arg_3_0._vanguardGS = var_1:Find("gear_score/vanguard/Text")
-	setText = var_2
-
-	var_2(arg_3_0._mainGS, 0)
-
-	setText = var_2
-
-	var_2(arg_3_0._vanguardGS, 0)
-
-	local var_3_5 = {}
-
-	TeamType = var_3_3
-	var_3_5[var_3_3.Vanguard] = {}
-	TeamType = var_3
-	var_3_5[var_3.Main] = {}
-	arg_3_0._gridTFs = var_3_5
-	arg_3_0._gridFrame = var_1:Find("mask/GridFrame")
+	arg_3_0._gridTFs = {
+		[TeamType.Vanguard] = {},
+		[TeamType.Main] = {}
+	}
+	arg_3_0._gridFrame = var_3_0:Find("mask/GridFrame")
 
 	for iter_3_0 = 1, 3 do
-		local var_3_6 = arg_3_0._gridTFs
-
-		TeamType = var_1_10007
-
-		local var_3_7 = var_3_6[var_1_10007.Vanguard]
-		local var_3_8 = arg_3_0._gridFrame
-
-		var_3_7[iter_3_0] = var_1_10007.Find(var_3_8, "vanguard_" .. iter_3_0)
-
-		local var_3_9 = arg_3_0._gridTFs
-
-		TeamType = var_1_10007
-
-		local var_3_10 = var_3_9[var_1_10007.Main]
-		local var_3_11 = arg_3_0._gridFrame
-
-		var_3_10[iter_3_0] = var_1_10007.Find(var_3_11, "main_" .. iter_3_0)
+		arg_3_0._gridTFs[TeamType.Vanguard][iter_3_0] = arg_3_0._gridFrame:Find("vanguard_" .. iter_3_0)
+		arg_3_0._gridTFs[TeamType.Main][iter_3_0] = arg_3_0._gridFrame:Find("main_" .. iter_3_0)
 	end
 
-	arg_3_0._heroContainer = var_1:Find("HeroContainer")
-	arg_3_0._strategy = var_1:Find("strategy")
-	setActive = var_2
+	arg_3_0._heroContainer = var_3_0:Find("HeroContainer")
+	arg_3_0._strategy = var_3_0:Find("strategy")
 
-	var_2(arg_3_0._strategy, false)
+	setActive(arg_3_0._strategy, false)
 
-	arg_3_0._formationList = var_1:Find("formation_list")
-	setActive = var_2
+	arg_3_0._formationList = var_3_0:Find("formation_list")
 
-	var_2(arg_3_0._formationList, false)
+	setActive(arg_3_0._formationList, false)
 
-	local var_3_12 = arg_3_0.rtAdapt
-
-	arg_3_0._goals = var_2.Find(var_3_12, "right/infomation/goal")
+	arg_3_0._goals = arg_3_0.rtAdapt:Find("right/infomation/goal")
 	arg_3_0._heroInfo = arg_3_0:getTpl("heroInfo")
 	arg_3_0._starTpl = arg_3_0:getTpl("star_tpl")
-	BaseFormation = var_2
-	arg_3_0._formationLogic = var_2.New(arg_3_0._tf, arg_3_0._heroContainer, arg_3_0._heroInfo, arg_3_0._gridTFs)
+	arg_3_0._formationLogic = BaseFormation.New(arg_3_0._tf, arg_3_0._heroContainer, arg_3_0._heroInfo, arg_3_0._gridTFs)
+	arg_3_0._middle = arg_3_0.rtAdapt:Find("middle")
+	arg_3_0._right = arg_3_0.rtAdapt:Find("right")
+	arg_3_0._fleet = arg_3_0.rtAdapt:Find("middle/fleet")
 
-	local var_3_13 = arg_3_0.rtAdapt
+	setText(arg_3_0.rtAdapt:Find("middle/gear_score/vanguard/line/Image/Text1"), i18n("pre_combat_vanguard"))
+	setText(arg_3_0.rtAdapt:Find("middle/gear_score/main/line/Image/Text1"), i18n("pre_combat_main"))
+	setText(arg_3_0._fleet:Find("title_bg/Text"), i18n("pre_combat_team"))
 
-	arg_3_0._middle = var_2.Find(var_3_13, "middle")
+	arg_3_0._ship_tpl = arg_3_0._fleet:Find("shiptpl")
+	arg_3_0._empty_tpl = arg_3_0._fleet:Find("emptytpl")
 
-	local var_3_14 = arg_3_0.rtAdapt
+	setActive(arg_3_0._ship_tpl, false)
+	setActive(arg_3_0._empty_tpl, false)
 
-	arg_3_0._right = var_2.Find(var_3_14, "right")
+	arg_3_0._autoToggle = arg_3_0.rtAdapt:Find("middle/auto_toggle")
+	arg_3_0._autoSubToggle = arg_3_0.rtAdapt:Find("middle/sub_toggle_container/sub_toggle")
+	arg_3_0.topPanel = arg_3_0.rtAdapt:Find("top")
+	arg_3_0.strategyInfo = arg_3_0._tf:Find("strategy_info")
 
-	local var_3_15 = arg_3_0.rtAdapt
-
-	arg_3_0._fleet = var_2.Find(var_3_15, "middle/fleet")
-	setText = var_2
-
-	local var_3_16 = arg_3_0.rtAdapt
-	local var_3_17 = var_4.Find(var_3_16, "middle/gear_score/vanguard/line/Image/Text1")
-
-	i18n = var_5
-
-	var_2(var_3_17, var_5("pre_combat_vanguard"))
-
-	setText = var_2
-
-	local var_3_18 = arg_3_0.rtAdapt
-	local var_3_19 = var_4.Find(var_3_18, "middle/gear_score/main/line/Image/Text1")
-
-	i18n = var_5
-
-	var_2(var_3_19, var_5("pre_combat_main"))
-
-	setText = var_2
-
-	local var_3_20 = arg_3_0._fleet
-	local var_3_21 = var_4.Find(var_3_20, "title_bg/Text")
-
-	i18n = var_5
-
-	var_2(var_3_21, var_5("pre_combat_team"))
-
-	local var_3_22 = arg_3_0._fleet
-
-	arg_3_0._ship_tpl = var_2.Find(var_3_22, "shiptpl")
-
-	local var_3_23 = arg_3_0._fleet
-
-	arg_3_0._empty_tpl = var_2.Find(var_3_23, "emptytpl")
-	setActive = var_2
-
-	var_2(arg_3_0._ship_tpl, false)
-
-	setActive = var_2
-
-	var_2(arg_3_0._empty_tpl, false)
-
-	local var_3_24 = arg_3_0.rtAdapt
-
-	arg_3_0._autoToggle = var_2.Find(var_3_24, "middle/auto_toggle")
-
-	local var_3_25 = arg_3_0.rtAdapt
-
-	arg_3_0._autoSubToggle = var_2.Find(var_3_25, "middle/sub_toggle_container/sub_toggle")
-
-	local var_3_26 = arg_3_0.rtAdapt
-
-	arg_3_0.topPanel = var_2.Find(var_3_26, "top")
-
-	local var_3_27 = arg_3_0._tf
-
-	arg_3_0.strategyInfo = var_2.Find(var_3_27, "strategy_info")
-	setActive = var_2
-
-	var_2(arg_3_0.strategyInfo, false)
-
-	setAnchoredPosition = var_2
-
-	var_2(arg_3_0._middle, {
+	setActive(arg_3_0.strategyInfo, false)
+	setAnchoredPosition(arg_3_0._middle, {
 		x = -840
 	})
-
-	setAnchoredPosition = var_2
-
-	var_2(arg_3_0._right, {
+	setAnchoredPosition(arg_3_0._right, {
 		x = 470
 	})
 	arg_3_0:Register()
@@ -179,235 +79,86 @@ function var_0_1.init(arg_3_0)
 	return
 end
 
-function var_0_1.uiStartAnimating(arg_4_0)
-	setAnchoredPosition = var_1_10001
-
-	var_1_10001(arg_4_0.topPanel, {
+function var_0_0.uiStartAnimating(arg_4_0)
+	setAnchoredPosition(arg_4_0.topPanel, {
 		y = 100
 	})
-
-	local var_4_0 = 0
-	local var_4_1 = 0.3
-
-	shiftPanel = var_3
-
-	var_3(arg_4_0._middle, 0, nil, var_4_1, var_4_0, true, true)
-
-	shiftPanel = var_3
-
-	var_3(arg_4_0._right, 0, nil, var_4_1, var_4_0, true, true, nil)
-
-	shiftPanel = var_3
-
-	var_3(arg_4_0.topPanel, nil, 0, var_4_1, var_4_0, true, true, nil, nil)
+	shiftPanel(arg_4_0._middle, 0, nil, 0.3, 0, true, true)
+	shiftPanel(arg_4_0._right, 0, nil, 0.3, 0, true, true, nil)
+	shiftPanel(arg_4_0.topPanel, nil, 0, 0.3, 0, true, true, nil, nil)
 
 	return
 end
 
-function var_0_1.uiExitAnimating(arg_5_0)
-	local var_5_0 = 0
-	local var_5_1 = 0.3
-
-	shiftPanel = var_1_10003
-
-	var_1_10003(arg_5_0._middle, -840, nil, var_5_1, var_5_0, true, true)
-
-	shiftPanel = var_1_10003
-
-	var_1_10003(arg_5_0._right, 470, nil, var_5_1, var_5_0, true, true)
-
-	shiftPanel = var_1_10003
-
-	var_1_10003(arg_5_0.topPanel, nil, arg_5_0.topPanel.rect.height, var_5_1, var_5_0, true, true, nil, nil)
+function var_0_0.uiExitAnimating(arg_5_0)
+	shiftPanel(arg_5_0._middle, -840, nil, 0.3, 0, true, true)
+	shiftPanel(arg_5_0._right, 470, nil, 0.3, 0, true, true)
+	shiftPanel(arg_5_0.topPanel, nil, arg_5_0.topPanel.rect.height, 0.3, 0, true, true, nil, nil)
 
 	return
 end
 
-function var_0_1.didEnter(arg_6_0)
-	onButton = var_1_10001
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0._backBtn, function()
+		GetOrAddComponent(arg_6_0._tf, typeof(CanvasGroup)).interactable = false
 
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0._backBtn
-
-	local function var_6_2()
-		GetOrAddComponent = var_2_10000
-
-		local var_7_0 = arg_6_0._tf
-
-		typeof = var_2_10003
-		CanvasGroup = var_2_10005
-		var_2_10000(var_7_0, var_2_10003(var_2_10005)).interactable = false
-
-		local var_7_1 = arg_6_0
-
-		var_1.uiExitAnimating(var_7_1)
-
-		LeanTween = var_1
-
-		local var_7_2 = var_1.delayedCall
-		local var_7_3 = 0.3
-
-		System = var_2_10004
-
-		var_7_2(var_7_3, var_2_10004.Action(function()
-			local var_8_0 = arg_6_0
-
-			var_0.emit(var_8_0, var_0_1.ON_CLOSE)
+		arg_6_0:uiExitAnimating()
+		LeanTween.delayedCall(0.3, System.Action(function()
+			arg_6_0:emit(var_0_0.ON_CLOSE)
 
 			return
 		end))
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0._startBtn
-
-	local function var_6_5()
-		local var_9_0 = arg_6_0.fleet.ships
-
-		pairs = var_2_10001
-
-		for iter_9_0, iter_9_1 in var_2_10001(var_9_0) do
-			ShipStatus = var_2_10006
-
-			local var_9_1
-
-			var_2_10006, var_9_1 = var_2_10006.ShipStatusConflict("inActivity", iter_9_1, {
+	end, SFX_CANCEL)
+	onButton(arg_6_0, arg_6_0._startBtn, function()
+		for iter_9_0, iter_9_1 in pairs(arg_6_0.fleet.ships) do
+			local var_9_0, var_9_1 = ShipStatus.ShipStatusConflict("inActivity", iter_9_1, {
 				inActivity = false
 			})
-			ShipStatus = var_8
 
-			if var_2_10006 == var_8.STATE_CHANGE_FAIL then
-				pg = var_8
-
-				local var_9_2 = var_8.TipsMgr.GetInstance()
-				local var_9_3 = var_8.ShowTips
-
-				i18n = var_2_10011
-
-				var_9_3(var_9_2, var_2_10011(var_9_1))
+			if var_9_0 == ShipStatus.STATE_CHANGE_FAIL then
+				pg.TipsMgr.GetInstance():ShowTips(i18n(var_9_1))
 
 				return
 			end
 		end
 
-		local var_9_4 = arg_6_0
-		local var_9_5 = var_1.emit
-
-		ChallengePreCombatMediator = iter_9_0
-
-		var_9_5(var_9_4, iter_9_0.ON_START)
+		arg_6_0:emit(ChallengePreCombatMediator.ON_START)
 
 		return
-	end
-
-	SFX_UI_WEIGHANCHOR = var_1_10006
-
-	var_1_10001(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onToggle = var_1_10001
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0._autoToggle
-
-	local function var_6_8(arg_10_0)
-		local var_10_0 = arg_6_0
-		local var_10_1 = var_1.emit
-
-		ChallengePreCombatMediator = var_2_10004
-
-		var_10_1(var_10_0, var_2_10004.ON_AUTO, {
+	end, SFX_UI_WEIGHANCHOR)
+	onToggle(arg_6_0, arg_6_0._autoToggle, function(arg_10_0)
+		arg_6_0:emit(ChallengePreCombatMediator.ON_AUTO, {
 			isOn = not arg_10_0,
 			toggle = arg_6_0._autoToggle
 		})
 
 		if arg_10_0 and arg_6_0.subUseable == true then
-			setActive = var_10_1
-
-			var_10_1(arg_6_0._autoSubToggle, true)
-
-			onToggle = var_10_1
-
-			local var_10_2 = arg_6_0
-			local var_10_3 = arg_6_0._autoSubToggle
-
-			local function var_10_4(arg_11_0)
-				local var_11_0 = arg_6_0
-				local var_11_1 = var_1.emit
-
-				ChallengePreCombatMediator = var_3_10004
-
-				var_11_1(var_11_0, var_3_10004.ON_SUB_AUTO, {
+			setActive(arg_6_0._autoSubToggle, true)
+			onToggle(arg_6_0, arg_6_0._autoSubToggle, function(arg_11_0)
+				arg_6_0:emit(ChallengePreCombatMediator.ON_SUB_AUTO, {
 					isOn = not arg_11_0,
 					toggle = arg_6_0._autoSubToggle
 				})
 
 				return
-			end
-
-			SFX_PANEL = var_6
-			SFX_PANEL = var_2_10007
-
-			var_10_1(var_10_2, var_10_3, var_10_4, var_6, var_2_10007)
-
-			triggerToggle = var_10_1
-
-			local var_10_5 = arg_6_0._autoSubToggle
-
-			ys = var_10_3
-
-			var_10_1(var_10_5, var_10_3.Battle.BattleState.IsAutoSubActive())
+			end, SFX_PANEL, SFX_PANEL)
+			triggerToggle(arg_6_0._autoSubToggle, ys.Battle.BattleState.IsAutoSubActive())
 		else
-			setActive = var_10_1
-
-			var_10_1(arg_6_0._autoSubToggle, false)
+			setActive(arg_6_0._autoSubToggle, false)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-	SFX_PANEL = var_1_10007
-
-	var_1_10001(var_6_6, var_6_7, var_6_8, var_1_10006, var_1_10007)
-
-	pg = var_1_10001
-
-	local var_6_9 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_6_9, arg_6_0._tf)
-
-	setParent = var_1
-
-	var_1(arg_6_0.strategyInfo, arg_6_0._tf.parent)
-
-	triggerToggle = var_1
-
-	local var_6_10 = arg_6_0._autoToggle
-
-	ys = var_4
-
-	var_1(var_6_10, var_4.Battle.BattleState.IsAutoBotActive())
-
-	setAnchoredPosition = var_1
-
-	var_1(arg_6_0.topPanel, {
+	end, SFX_PANEL, SFX_PANEL)
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
+	setParent(arg_6_0.strategyInfo, arg_6_0._tf.parent)
+	triggerToggle(arg_6_0._autoToggle, ys.Battle.BattleState.IsAutoBotActive())
+	setAnchoredPosition(arg_6_0.topPanel, {
 		y = arg_6_0.topPanel.rect.height
 	})
-
-	onNextTick = var_1
-
-	var_1(function()
-		local var_12_0 = arg_6_0
-
-		var_0.uiStartAnimating(var_12_0)
+	onNextTick(function()
+		arg_6_0:uiStartAnimating()
 
 		return
 	end)
@@ -415,136 +166,66 @@ function var_0_1.didEnter(arg_6_0)
 	return
 end
 
-function var_0_1.Register(arg_13_0)
-	local var_13_0 = arg_13_0._formationLogic
-
-	var_1.AddHeroInfoModify(var_13_0, function(arg_14_0, arg_14_1)
-		setAnchoredPosition = var_2_10002
-
-		var_2_10002(arg_14_0, {
+function var_0_0.Register(arg_13_0)
+	arg_13_0._formationLogic:AddHeroInfoModify(function(arg_14_0, arg_14_1)
+		setAnchoredPosition(arg_14_0, {
 			x = 0,
 			y = 0
 		})
-
-		SetActive = var_2_10002
-
-		var_2_10002(arg_14_0, true)
+		SetActive(arg_14_0, true)
 
 		arg_14_0.name = "info"
 
 		local var_14_0 = arg_14_0:Find("info")
-		local var_14_1 = var_2.Find(var_14_0, "stars")
-		local var_14_2 = arg_14_1
-		local var_14_3 = arg_14_1.getEnergy(var_14_2)
+		local var_14_1 = var_14_0:Find("stars")
+		local var_14_2 = arg_14_1:getEnergy() <= Ship.ENERGY_MID
+		local var_14_3 = var_14_0:Find("energy")
 
-		Ship = var_14_0
+		if var_14_2 then
+			local var_14_4, var_14_5 = arg_14_1:getEnergyPrint()
+			local var_14_6 = GetSpriteFromAtlas("energy", var_14_4)
 
-		local var_14_4 = var_14_3 <= var_14_0.ENERGY_MID
-		local var_14_5 = var_2:Find("energy")
-
-		if var_14_4 then
-			local var_14_6 = arg_14_1
-			local var_14_7
-
-			var_14_2, var_14_7 = arg_14_1.getEnergyPrint(var_14_6)
-			GetSpriteFromAtlas = var_14_6
-
-			if not var_14_6("energy", var_14_2) then
-				warning = var_2_10009
-
-				var_2_10009("找不到疲劳")
+			if not var_14_6 then
+				warning("找不到疲劳")
 			end
 
-			setImageSprite = var_2_10009
-
-			var_2_10009(var_14_5, var_8)
+			setImageSprite(var_14_3, var_14_6)
 		end
 
-		setActive = var_14_2
+		setActive(var_14_3, var_14_2)
 
-		var_14_2(var_14_5, var_14_4)
-
-		local var_14_8 = arg_14_1:getStar()
-
-		for iter_14_0 = 1, var_14_8 do
-			cloneTplTo = var_2_10011
-
-			var_2_10011(arg_13_0._starTpl, var_14_1)
+		for iter_14_0 = 1, arg_14_1:getStar() do
+			cloneTplTo(arg_13_0._starTpl, var_14_1)
 		end
 
-		GetSpriteFromAtlas = var_7
+		local var_14_7 = GetSpriteFromAtlas("shiptype", shipType2print(arg_14_1:getShipType()))
 
-		local var_14_9 = "shiptype"
-
-		shipType2print = iter_14_0
-
-		if not var_7(var_14_9, iter_14_0(arg_14_1:getShipType())) then
-			warning = var_8
-
-			var_8("找不到船形, shipConfigId: " .. arg_14_1.configId)
+		if not var_14_7 then
+			warning("找不到船形, shipConfigId: " .. arg_14_1.configId)
 		end
 
-		setImageSprite = var_8
+		setImageSprite(var_14_0:Find("type"), var_14_7, true)
+		setText(var_14_0:Find("frame/lv_contain/lv"), arg_14_1.level)
 
-		var_8(var_2:Find("type"), var_7, true)
+		local var_14_8 = var_14_0:Find("blood")
+		local var_14_9 = var_14_8:Find("fillarea/green")
+		local var_14_10 = var_14_8:Find("fillarea/red")
 
-		setText = var_8
+		setActive(var_14_9, arg_14_1.hpRant >= ChapterConst.HpGreen)
+		setActive(var_14_10, arg_14_1.hpRant < ChapterConst.HpGreen)
 
-		var_8(var_2:Find("frame/lv_contain/lv"), arg_14_1.level)
+		;(arg_14_1.hpRant >= ChapterConst.HpGreen and var_14_9 or var_14_10):GetComponent("Image").fillAmount = arg_14_1.hpRant * 0.0001
 
-		local var_14_10 = var_2:Find("blood")
-		local var_14_11 = var_8.Find(var_14_10, "fillarea/green")
-		local var_14_12 = var_8
-		local var_14_13 = var_8.Find(var_14_12, "fillarea/red")
-
-		setActive = var_14_10
-
-		local var_14_14 = var_14_11
-		local var_14_15 = arg_14_1.hpRant
-
-		ChapterConst = var_2_10015
-
-		var_14_10(var_14_14, var_2_10015.HpGreen <= var_14_15)
-
-		setActive = var_14_10
-
-		local var_14_16 = var_14_13
-		local var_14_17 = arg_14_1.hpRant
-
-		ChapterConst = var_15
-
-		var_14_10(var_14_16, var_14_17 < var_15.HpGreen)
-
-		local var_14_18 = arg_14_1.hpRant
-
-		ChapterConst = var_14_12
-
-		local var_14_19 = var_14_18 >= var_14_12.HpGreen and var_14_11 or var_14_13
-
-		var_11.GetComponent(var_14_19, "Image").fillAmount = arg_14_1.hpRant * 0.0001
-
-		local var_14_20 = var_2:Find("expbuff")
-
-		setActive = var_13
-
-		var_13(var_14_20, false)
+		setActive(var_14_0:Find("expbuff"), false)
 
 		return
 	end)
-
-	local var_13_1 = arg_13_0._formationLogic
-
-	var_1.AddShiftOnly(var_13_1, function(arg_15_0)
-		local var_15_0 = arg_13_0
-
-		var_1.updateView(var_15_0, false)
+	arg_13_0._formationLogic:AddShiftOnly(function(arg_15_0)
+		arg_13_0:updateView(false)
 
 		return
 	end)
-
-	local var_13_2 = arg_13_0._formationLogic
-
-	var_1.AddCheckRemove(var_13_2, function(arg_16_0, arg_16_1)
+	arg_13_0._formationLogic:AddCheckRemove(function(arg_16_0, arg_16_1)
 		arg_16_0()
 
 		return
@@ -553,108 +234,48 @@ function var_0_1.Register(arg_13_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_17_0)
-	local var_17_1
-
-	if arg_17_0.strategyPanel and arg_17_0.strategyPanel._go then
-		isActive = var_17_1
-
-		if var_17_1(arg_17_0.strategyPanel._go) then
-			pg = var_17_1
-
-			local var_17_0 = var_17_1.CriMgr.GetInstance()
-
-			var_17_1 = var_17_1.PlaySoundEffect_V3
-			SFX_CANCEL = var_1_10004
-
-			var_17_1(var_17_0, var_1_10004)
-
-			goto label_17_0
-		end
+function var_0_0.onBackPressed(arg_17_0)
+	if arg_17_0.strategyPanel and arg_17_0.strategyPanel._go and isActive(arg_17_0.strategyPanel._go) then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
+	else
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
+		triggerButton(arg_17_0._backBtn)
 	end
-
-	pg = var_17_1
-
-	do
-		local var_17_2 = var_17_1.CriMgr.GetInstance()
-		local var_17_3 = var_1.PlaySoundEffect_V3
-
-		SFX_CANCEL = var_1_10004
-
-		var_17_3(var_17_2, var_1_10004)
-
-		triggerButton = var_17_3
-
-		var_17_3(arg_17_0._backBtn)
-	end
-
-	::label_17_0::
 
 	return
 end
 
-function var_0_1.setPlayerInfo(arg_18_0, arg_18_1)
+function var_0_0.setPlayerInfo(arg_18_0, arg_18_1)
 	return
 end
 
-function var_0_1.updateChallenge(arg_19_0, arg_19_1)
+function var_0_0.updateChallenge(arg_19_0, arg_19_1)
 	arg_19_0.challenge = arg_19_1
 	arg_19_0.fleet = arg_19_1:getRegularFleet()
 
-	local var_19_0 = arg_19_0.fleet.ships
-	local var_19_1 = arg_19_0._formationLogic
-
-	var_3.SetFleetVO(var_19_1, arg_19_0.fleet)
-
-	local var_19_2 = arg_19_0._formationLogic
-
-	var_3.SetShipVOs(var_19_2, var_19_0)
+	arg_19_0._formationLogic:SetFleetVO(arg_19_0.fleet)
+	arg_19_0._formationLogic:SetShipVOs(arg_19_0.fleet.ships)
 	arg_19_0:updateView(true)
 
 	return
 end
 
-function var_0_1.setSubFlag(arg_20_0, arg_20_1)
+function var_0_0.setSubFlag(arg_20_0, arg_20_1)
 	arg_20_0.subUseable = arg_20_1 or false
 
 	return
 end
 
-function var_0_1.updateView(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_0._formationLogic
-	local var_21_1 = var_2.ResetGrid
-
-	TeamType = var_1_10005
-
-	var_21_1(var_21_0, var_1_10005.Vanguard)
-
-	local var_21_2 = arg_21_0._formationLogic
-	local var_21_3 = var_2.ResetGrid
-
-	TeamType = var_5
-
-	var_21_3(var_21_2, var_5.Main)
-
-	SetActive = var_21_3
-
-	local var_21_4 = arg_21_0._gridTFs
-
-	TeamType = var_5
-
-	local var_21_5 = var_21_4[var_5.Main][1]
-
-	var_21_3(var_4.Find(var_21_5, "flag"), true)
+function var_0_0.updateView(arg_21_0, arg_21_1)
+	arg_21_0._formationLogic:ResetGrid(TeamType.Vanguard)
+	arg_21_0._formationLogic:ResetGrid(TeamType.Main)
+	SetActive(arg_21_0._gridTFs[TeamType.Main][1]:Find("flag"), true)
 
 	if arg_21_1 then
 		arg_21_0:updateStageView()
-
-		local var_21_6 = arg_21_0._formationLogic
-
-		var_2.LoadAllCharacter(var_21_6)
+		arg_21_0._formationLogic:LoadAllCharacter()
 	else
-		local var_21_7 = arg_21_0._formationLogic
-
-		var_2.SetAllCharacterPos(var_21_7)
+		arg_21_0._formationLogic:SetAllCharacterPos()
 	end
 
 	arg_21_0:updateBattleFleetView()
@@ -663,201 +284,117 @@ function var_0_1.updateView(arg_21_0, arg_21_1)
 	return
 end
 
-function var_0_1.updateStageView(arg_22_0)
-	local function var_22_0(arg_23_0, arg_23_1)
-		type = var_2_10002
+function var_0_0.updateStageView(arg_22_0)
+	local var_22_0 = {
+		arg_22_0._goals:Find("goal_tpl"),
+		arg_22_0._goals:Find("goal_sink"),
+		arg_22_0._goals:Find("goal_time")
+	}
 
-		local var_23_0
-
-		if var_2_10002(arg_23_0) == "table" then
-			setActive = var_23_0
-
-			var_23_0(arg_23_1, true)
-
-			i18n = var_23_0
-			PreCombatLayer = var_4
-			var_23_0 = var_23_0(var_4.ObjectiveList[arg_23_0[1]], arg_23_0[2])
-			setWidgetText = var_2_10003
-
-			var_2_10003(arg_23_1, var_23_0)
-		else
-			setActive = var_23_0
-
-			var_23_0(arg_23_1, false)
-		end
-
-		return
-	end
-
-	local var_22_1 = {}
-	local var_22_2 = arg_22_0._goals
-
-	var_22_1[1] = var_3.Find(var_22_2, "goal_tpl")
-
-	local var_22_3 = arg_22_0._goals
-
-	var_22_1[2] = var_3.Find(var_22_3, "goal_sink")
-
-	local var_22_4 = arg_22_0._goals
-
-	var_22_1[3] = var_3.Find(var_22_4, "goal_time")
-
-	local var_22_5 = {
+	for iter_22_0, iter_22_1 in ipairs({
 		{
 			1
 		},
 		false,
 		false
-	}
-	local var_22_6 = 1
+	}) do
+		local var_22_1
 
-	ipairs = var_22_4
+		if type(iter_22_1) ~= "string" then
+			(function(arg_23_0, arg_23_1)
+				if type(arg_23_0) == "table" then
+					setActive(arg_23_1, true)
+					setWidgetText(arg_23_1, (i18n(PreCombatLayer.ObjectiveList[arg_23_0[1]], arg_23_0[2])))
+				else
+					setActive(arg_23_1, false)
+				end
 
-	for iter_22_0, iter_22_1 in var_22_4(var_22_5) do
-		type = var_1_10010
+				return
+			end)(iter_22_1, var_22_0[1])
 
-		if var_1_10010(iter_22_1) ~= "string" then
-			var_22_0(iter_22_1, var_22_1[var_22_6])
-
-			var_22_6 = var_22_6 + 1
+			var_22_1 = 1 + 1
 		end
 	end
 
 	return
 end
 
-function var_0_1.updateBattleFleetView(arg_24_0)
-	local function var_24_0(arg_25_0, arg_25_1)
-		removeAllChildren = var_2_10002
+function var_0_0.updateBattleFleetView(arg_24_0)
+	local var_24_0 = arg_24_0.challenge:getRegularFleet()
 
-		var_2_10002(arg_25_0)
+	;(function(arg_25_0, arg_25_1)
+		removeAllChildren(arg_25_0)
 
 		for iter_25_0 = 1, 3 do
 			if arg_25_1[iter_25_0] then
-				cloneTplTo = var_6
+				local var_25_0 = cloneTplTo(arg_24_0._ship_tpl, arg_25_0)
 
-				local var_25_0 = var_6(arg_24_0._ship_tpl, arg_25_0)
+				updateShip(var_25_0, arg_25_1[iter_25_0])
 
-				updateShip = var_2_10007
-
-				var_2_10007(var_25_0, arg_25_1[iter_25_0])
-
-				var_2_10007 = arg_25_1[iter_25_0].hpRant
-
-				local var_25_1 = var_25_0:Find("blood")
-				local var_25_2 = var_25_0
-				local var_25_3 = var_25_0.Find(var_25_2, "blood/fillarea/green")
+				local var_25_1 = arg_25_1[iter_25_0].hpRant
+				local var_25_2 = var_25_0:Find("blood")
+				local var_25_3 = var_25_0:Find("blood/fillarea/green")
 				local var_25_4 = var_25_0:Find("blood/fillarea/red")
 
-				setActive = var_25_2
+				setActive(var_25_3, arg_25_1[iter_25_0].hpRant >= ChapterConst.HpGreen)
+				setActive(var_25_4, var_25_1 < ChapterConst.HpGreen)
 
-				local var_25_5 = var_25_3
-
-				ChapterConst = var_2_10014
-				var_2_10014 = var_2_10014.HpGreen <= var_2_10007
-
-				var_25_2(var_25_5, var_2_10014)
-
-				setActive = var_25_2
-
-				local var_25_6 = var_25_4
-
-				ChapterConst = var_2_10014
-				var_2_10014 = var_2_10007 < var_2_10014.HpGreen
-
-				var_25_2(var_25_6, var_2_10014)
-
-				ChapterConst = var_25_2
-				var_2_10014 = var_2_10007 >= var_25_2.HpGreen and var_25_3 or var_25_4
-				var_11.GetComponent(var_2_10014, "Image").fillAmount = var_2_10007 * 0.0001
+				;(var_25_1 >= ChapterConst.HpGreen and var_25_3 or var_25_4):GetComponent("Image").fillAmount = var_25_1 * 0.0001
 			end
 		end
 
 		return
-	end
+	end)(arg_24_0._fleet:Find("main"), var_24_0:getShipsByTeam(TeamType.Main, true))
+	;(function(arg_25_0, arg_25_1)
+		removeAllChildren(arg_25_0)
 
-	local var_24_1 = arg_24_0.challenge
-	local var_24_2 = var_2.getRegularFleet(var_24_1)
-	local var_24_3 = var_24_0
-	local var_24_4 = arg_24_0._fleet
-	local var_24_5 = var_5.Find(var_24_4, "main")
-	local var_24_6 = var_24_2
-	local var_24_7 = var_24_2.getShipsByTeam
+		for iter_25_0 = 1, 3 do
+			if arg_25_1[iter_25_0] then
+				local var_25_0 = cloneTplTo(arg_24_0._ship_tpl, arg_25_0)
 
-	TeamType = var_1_10009
+				updateShip(var_25_0, arg_25_1[iter_25_0])
 
-	var_24_3(var_24_5, var_24_7(var_24_6, var_1_10009.Main, true))
+				local var_25_1 = arg_25_1[iter_25_0].hpRant
+				local var_25_2 = var_25_0:Find("blood")
+				local var_25_3 = var_25_0:Find("blood/fillarea/green")
+				local var_25_4 = var_25_0:Find("blood/fillarea/red")
 
-	local var_24_8 = var_24_0
-	local var_24_9 = arg_24_0._fleet
-	local var_24_10 = var_5.Find(var_24_9, "vanguard")
-	local var_24_11 = var_24_2
-	local var_24_12 = var_24_2.getShipsByTeam
+				setActive(var_25_3, arg_25_1[iter_25_0].hpRant >= ChapterConst.HpGreen)
+				setActive(var_25_4, var_25_1 < ChapterConst.HpGreen)
 
-	TeamType = var_9
+				;(var_25_1 >= ChapterConst.HpGreen and var_25_3 or var_25_4):GetComponent("Image").fillAmount = var_25_1 * 0.0001
+			end
+		end
 
-	var_24_8(var_24_10, var_24_12(var_24_11, var_9.Vanguard, true))
-
-	return
-end
-
-function var_0_1.displayFleetInfo(arg_26_0)
-	local var_26_0 = arg_26_0.challenge
-	local var_26_1 = var_1.getRegularFleet(var_26_0)
-	local var_26_2 = var_1.getCommanders(var_26_1)
-
-	_ = var_26_0
-
-	local var_26_3 = var_26_0.reduce
-	local var_26_4 = var_1
-	local var_26_5 = var_1.getShipsByTeam
-
-	TeamType = var_1_10008
-
-	local var_26_6 = var_26_3(var_26_5(var_26_4, var_1_10008.Vanguard, false), 0, function(arg_27_0, arg_27_1)
-		return arg_27_0 + arg_27_1:getShipCombatPower(var_26_2)
-	end)
-
-	_ = var_26_1
-
-	local var_26_7 = var_26_1.reduce
-	local var_26_8 = var_1
-	local var_26_9 = var_1.getShipsByTeam
-
-	TeamType = var_9
-
-	local var_26_10 = var_26_7(var_26_9(var_26_8, var_9.Main, false), 0, function(arg_28_0, arg_28_1)
-		return arg_28_0 + arg_28_1:getShipCombatPower(var_26_2)
-	end)
-
-	FormationUI = var_5
-
-	var_5.tweenNumText(arg_26_0._vanguardGS, var_26_6)
-
-	FormationUI = var_5
-
-	var_5.tweenNumText(arg_26_0._mainGS, var_26_10)
+		return
+	end)(arg_24_0._fleet:Find("vanguard"), var_24_0:getShipsByTeam(TeamType.Vanguard, true))
 
 	return
 end
 
-function var_0_1.willExit(arg_29_0)
-	setParent = var_1_10001
+function var_0_0.displayFleetInfo(arg_26_0)
+	local var_26_0 = arg_26_0.challenge:getRegularFleet()
+	local var_26_1 = var_26_0:getCommanders()
 
-	var_1_10001(arg_29_0.strategyInfo, arg_29_0._tf)
+	FormationUI.tweenNumText(arg_26_0._vanguardGS, (_.reduce(var_26_0:getShipsByTeam(TeamType.Vanguard, false), 0, function(arg_27_0, arg_27_1)
+		return arg_27_0 + arg_27_1:getShipCombatPower(var_26_1)
+	end)))
+	FormationUI.tweenNumText(arg_26_0._mainGS, (_.reduce(var_26_0:getShipsByTeam(TeamType.Main, false), 0, function(arg_28_0, arg_28_1)
+		return arg_28_0 + arg_28_1:getShipCombatPower(var_26_1)
+	end)))
 
-	local var_29_0 = arg_29_0._formationLogic
+	return
+end
 
-	var_1.Destroy(var_29_0)
+function var_0_0.willExit(arg_29_0)
+	setParent(arg_29_0.strategyInfo, arg_29_0._tf)
+	arg_29_0._formationLogic:Destroy()
 
 	arg_29_0._formationLogic = nil
-	pg = var_1
 
-	local var_29_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_29_1, arg_29_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_29_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

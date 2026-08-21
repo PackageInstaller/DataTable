@@ -8,6 +8,11 @@ function parseData(self, cusId, cusData)
     self.sort = cusData.sort
     self.icon = cusData.icon
     self.uicode = cusData.uicode
+    self.dissolves = cusData.dissolves
+    self.costTid = cusData.cost_tid
+    self.fashionIcon = cusData.fashionIcon
+    self.posY = cusData.posY / 10000 --脱鞋模型高度，万分比
+    self.goodsId = cusData.goods_id --商城id
 end
 
 return _M

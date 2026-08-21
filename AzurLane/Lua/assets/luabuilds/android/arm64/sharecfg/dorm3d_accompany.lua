@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_accompany") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_accompany"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_accompany = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_accompany
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_accompany = rawget(pg, "dorm3d_accompany") or setmetatable({
+	__name = "dorm3d_accompany"
+}, confNEO)
+pg.dorm3d_accompany.all = {
 	1,
 	2,
 	3,
@@ -42,11 +19,7 @@ var_0_3.all = {
 	211,
 	212
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_accompany
-
-var_0_4.get_id_list_by_ship_id = {
+pg.dorm3d_accompany.get_id_list_by_ship_id = {
 	[10517] = {
 		111,
 		112
@@ -77,25 +50,11 @@ var_0_4.get_id_list_by_ship_id = {
 		212
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_accompany = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_accompany = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_accompany
-
-	var_1_0[1] = {
+	pg.base.dorm3d_accompany[1] = {
 		sceneInfo = "map_siriushostel_01|Tianlangxing_DB/SiriusHostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -115,11 +74,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_accompany
-
-	var_1_1[2] = {
+	pg.base.dorm3d_accompany[2] = {
 		sceneInfo = "map_beach_01|Beach",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -143,11 +98,7 @@ var_0_4.base.dorm3d_accompany = {}
 			20220
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_accompany
-
-	var_1_2[3] = {
+	pg.base.dorm3d_accompany[3] = {
 		sceneInfo = "map_publiccafe_01|Publiccafe",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -171,11 +122,7 @@ var_0_4.base.dorm3d_accompany = {}
 			20220
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_accompany
-
-	var_1_3[21] = {
+	pg.base.dorm3d_accompany[21] = {
 		sceneInfo = "map_noshirohostel_01|Nengdai_DB/NoshiroHostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -195,11 +142,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_accompany
-
-	var_1_4[22] = {
+	pg.base.dorm3d_accompany[22] = {
 		sceneInfo = "map_beach_01|Beach",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -223,11 +166,7 @@ var_0_4.base.dorm3d_accompany = {}
 			30221
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_accompany
-
-	var_1_5[31] = {
+	pg.base.dorm3d_accompany[31] = {
 		sceneInfo = "map_anchoragehostel_01|Ankeleiqi_DB/Anchoragehostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -247,11 +186,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_accompany
-
-	var_1_6[32] = {
+	pg.base.dorm3d_accompany[32] = {
 		sceneInfo = "map_beach_01|Beach",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -275,11 +210,7 @@ var_0_4.base.dorm3d_accompany = {}
 			19903
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_accompany
-
-	var_1_7[111] = {
+	pg.base.dorm3d_accompany[111] = {
 		sceneInfo = "map_newjerseyhostel_01|Xinzexi_DB/Newjerseyhostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -299,11 +230,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_accompany
-
-	var_1_8[112] = {
+	pg.base.dorm3d_accompany[112] = {
 		sceneInfo = "map_publiccafe_01|Publiccafe",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -327,11 +254,7 @@ var_0_4.base.dorm3d_accompany = {}
 			10517
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_accompany
-
-	var_1_9[121] = {
+	pg.base.dorm3d_accompany[121] = {
 		sceneInfo = "map_dafeng_01|Dafeng_DB/Dafenghostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -351,11 +274,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_accompany
-
-	var_1_10[122] = {
+	pg.base.dorm3d_accompany[122] = {
 		sceneInfo = "map_publiccafe_01|Publiccafe",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -379,11 +298,7 @@ var_0_4.base.dorm3d_accompany = {}
 			30707
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_accompany
-
-	var_1_11[141] = {
+	pg.base.dorm3d_accompany[141] = {
 		sceneInfo = "map_aijier_01|Aijier_DB/Aijierhostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -403,11 +318,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_accompany
-
-	var_1_12[142] = {
+	pg.base.dorm3d_accompany[142] = {
 		sceneInfo = "map_publiccafe_01|Publiccafe",
 		name = "休闲相伴",
 		performance_time = 20,
@@ -431,11 +342,7 @@ var_0_4.base.dorm3d_accompany = {}
 			49905
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_accompany
-
-	var_1_13[211] = {
+	pg.base.dorm3d_accompany[211] = {
 		sceneInfo = "map_naximofu_01|Naximofu_DB/Naximofuhostel",
 		name = "日常相伴",
 		performance_time = 20,
@@ -455,8 +362,7 @@ var_0_4.base.dorm3d_accompany = {}
 		jump_trigger = {},
 		unlock = {}
 	}
-	pg = var_1_13
-	var_1_13.base.dorm3d_accompany[212] = {
+	pg.base.dorm3d_accompany[212] = {
 		sceneInfo = "map_carwash_01|Carwash",
 		name = "休闲相伴",
 		performance_time = 20,

@@ -32,7 +32,7 @@ end
 -- 非激活
 function deActive(self)
     super.deActive(self)
-    self.curPage = nil
+    --self.curPage = nil
 end
 
 function getTabDatas(self)

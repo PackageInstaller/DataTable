@@ -1,53 +1,16 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_data = rawget(pg, "child2_data") or setmetatable({
+	__name = "child2_data"
+}, confNEO)
+pg.child2_data.all = {
 	1,
 	2
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child2_data = {}
+pg.base = pg.base or {}
+pg.base.child2_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_data
-
-	var_1_0[1] = {
+	pg.base.child2_data[1] = {
 		name = "娜比娅",
 		name_background = "educate_oceana_1",
 		personality_type = 1,
@@ -200,8 +163,7 @@ var_0_3.base.child2_data = {}
 			}
 		}
 	}
-	pg = var_1_0
-	var_1_0.base.child2_data[2] = {
+	pg.base.child2_data[2] = {
 		name = "艾普洛",
 		name_background = "educate_explorer_1",
 		personality_type = 1,

@@ -34,6 +34,9 @@ function listNotification(self)
     -- 打开装备方案名修改界面
     GameDispatcher:addEventListener(EventName.OPEN_EQUIP_PLANE_CHANGE_NAME_PANEL, self.__onOpenEquipPlaneChangeNamePanelHandler, self)
 
+    GameDispatcher:addEventListener(EventName.OPEN_EQUIP_ADD_PLAN_PANEL, self.__onOpenEquipAddPlanHandler, self)
+
+
     -- 请求获取模组方案列表信息
     GameDispatcher:addEventListener(EventName.REQ_EQUIP_PLANE_LIST_DATA, self.__onReqEquipPlanListDataHandler, self)
     -- 请求保存模组方案
@@ -44,6 +47,11 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_EQUIP_PLANE_DELETE, self.__onReqEquipPlanDeleteHandler, self)
     -- 请求装备模组方案
     GameDispatcher:addEventListener(EventName.REQ_EQUIP_PLANE_WEAR, self.__onReqEquipPlanWearHandler, self)
+
+    GameDispatcher:addEventListener(EventName.REQ_EQUIP_PLANE_CHANGE, self.__onReqEquipPlanChangeHandler, self)
+    
+    GameDispatcher:addEventListener(EventName.REQ_EQUIP_ADD_PLAN, self.__onReqEquipAddPlanHandler, self)
+    
 end
 
 --注册server发来的数据
@@ -59,6 +67,8 @@ function registerMsgHandler(self)
         SC_DELETE_CHIP_PLAN = self.onEquipPlanDeleteResultHandler, 
         --- *s2c* 装备模组方案 12199
         SC_EQUIP_CHIP_PLAN = self.onEquipPlanWearResultHandler, 
+        --- *s2c* 购买模组方案 12202
+        SC_BUY_CHIP_PLAN = self.onEquipPlanAddResultHandler,
     }
 end
 
@@ -88,6 +98,15 @@ function onEquipPlanWearResultHandler(self, msg)
     equipBuild.EquipPlanManager:parseMsgEquipPlanWearResult(msg)
 end
 
+function onEquipPlanAddResultHandler(self,msg)
+    if msg.result == 1 then
+         gs.Message.Show(_TT(4392))
+        equipBuild.EquipPlanManager:parseMsgAddPlanResult(msg)
+    else
+        gs.Message.Show(_TT(26332))
+    end
+end
+
 ---------------------------------------------------------------请求------------------------------------------------------------------
 -- 请求获取模组方案列表信息
 function __onReqEquipPlanListDataHandler(self, args)
@@ -101,6 +120,12 @@ function __onReqEquipPlanSaveHandler(self, args)
     equipPlanMsgVo.id = args.equipPlanVo.id
     equipPlanMsgVo.name = args.equipPlanName
     equipPlanMsgVo.chip_list = {}
+    local list = equipBuild.EquipPlanManager:getEquipPlanList()
+    local maxSort = 1
+    if list ~=nil and #list > 0 then
+        maxSort = list[1].sort + 1
+    end
+    equipPlanMsgVo.sort = maxSort
     for pos, equipId in pairs(args.equipPlanVo.equipPosDic) do
         table.insert(equipPlanMsgVo.chip_list, {pos = pos, equip_id = equipId})
     end
@@ -126,6 +151,30 @@ function __onReqEquipPlanWearHandler(self, args)
     SOCKET_SEND(Protocol.CS_EQUIP_CHIP_PLAN, { chip_plan_id = args.equipPlanId, hero_id = args.heroId}, Protocol.SC_EQUIP_CHIP_PLAN)
 end
 
+function __onReqEquipPlanChangeHandler(self,args)
+    local list = equipBuild.EquipPlanManager:getEquipPlanList()
+    local maxSort = 1
+    if list ~=nil and #list > 0 then
+        maxSort = list[1].sort + 1
+    end
+    local selectSort = args.planVo.sort
+    local newList = {}
+    for i = 1, #list, 1 do
+        table.insert(newList, {id = list[i].id,sort = list[i].sort})
+        if newList[i].sort == selectSort then
+            newList[i].sort = maxSort
+        end
+
+        if newList[i].sort > selectSort then
+            newList[i].sort = newList[i].sort - 1
+        end
+    end
+    SOCKET_SEND(Protocol.CS_SORT_CHIP_PLAN, { sort_chip_plan = newList}, Protocol.SC_GET_ALL_CHIP_PLAN)
+end
+
+function __onReqEquipAddPlanHandler(self,count)
+    SOCKET_SEND(Protocol.CS_BUY_CHIP_PLAN, { buy_num = count}, Protocol.SC_BUY_CHIP_PLAN)
+end
 ------------------------------------------------------------------------ 方案面板 ------------------------------------------------------------------------
 -- 打开方案界面
 function __onOpenEquipPlanePanelHandler(self, args)
@@ -155,6 +204,20 @@ function onDestroyEquipPlaneChangeNamePanelHandler(self)
     self.mEquipPlanChangeNamePanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyEquipPlaneChangeNamePanelHandler, self)
     self.mEquipPlanChangeNamePanel = nil
 end
+
+function __onOpenEquipAddPlanHandler(self,args)
+    if self.mEquipAddPlanPanel == nil then
+        self.mEquipAddPlanPanel = equipBuild.EquipAddPlanPanel.new()
+        self.mEquipAddPlanPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyEquipAddPlanPanelHandler, self)
+    end
+    self.mEquipAddPlanPanel:open(args)
+end
+
+function onDestroyEquipAddPlanPanelHandler(self)
+    self.mEquipAddPlanPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyEquipAddPlanPanelHandler, self)
+    self.mEquipAddPlanPanel = nil
+end
+
 
 return _M
  

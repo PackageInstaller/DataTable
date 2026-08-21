@@ -47,11 +47,17 @@ end
 function active(self, args)
     self.subType = args.subType
     self.subChildType = args.subChildType
+
+    if not self.isReshow then
+        purchase.FashionShopManager:setDefOpenFashionType(args.openFashionType)
+    end
+    
+
     self.type = args.type
     self.mScrollRect.enabled = true
     super.active(self, args)
     GameDispatcher:addEventListener(EventName.UPDATE_SHOP_TAB_CONTENT, self.onUpdateContent, self)
-    -- self.base_childGos["gBtnCloseAll"]:SetActive(map.MapLoader.m_curMapType ~= MAP_TYPE.DORMITORY)
+    self.base_childGos["gBtnCloseAll"]:SetActive(map.MapLoader.m_curMapType ~= MAP_TYPE.DORMITORY)
 end
 
 function onUpdateContent(self)
@@ -103,6 +109,8 @@ function openView(self, args)
     self.type = args.type
     self.subType = args.subType
     self.subChildType = args.subChildType
+    purchase.FashionShopManager:setDefOpenFashionType(args.openFashionType)
+
     self:setTabbar()
     self:setTabChildIndex(self.subType, args, true)
     self:setTabIndex(self.type)
@@ -219,6 +227,9 @@ end
 function setType(self, cusTabType, cusArgs)
     if (self.curPage == cusTabType) then
         return
+    end
+    if activity.ActitvityExtraManager:getIsLimitShopTypeParam(activity.LimitShopActivityType.View,cusTabType) then
+        GameDispatcher:dispatchEvent(EventName.REQ_OPEN_SOME_VIEW_UNLOCK_GIFT,{id = cusTabType})
     end
     super.setType(self, cusTabType, cusArgs, true)
 end

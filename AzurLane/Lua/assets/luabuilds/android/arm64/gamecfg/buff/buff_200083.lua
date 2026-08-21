@@ -35,26 +35,10 @@
 					}
 				},
 				centerPosFun = function(arg_1_0)
-					local var_1_0 = arg_1_0 * 3
-
-					Vector3 = var_1_10002
-					math = var_1_10004
-
-					local var_1_1 = var_1_10004.sin(var_1_0) * 3
-					local var_1_2 = 0.75
-
-					math = var_6
-
-					return var_1_10002(var_1_1, var_1_2, var_6.cos(var_1_0) * 5)
+					return Vector3(math.sin(arg_1_0 * 3) * 3, 0.75, math.cos(arg_1_0 * 3) * 5)
 				end,
 				rotationFun = function(arg_2_0)
-					Vector3 = var_1_10001
-
-					local var_2_0 = 0
-
-					ys = var_1_10004
-
-					return var_1_10001(var_2_0, arg_2_0 * var_1_10004.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
+					return Vector3(0, arg_2_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 90, 0)
 				end
 			}
 		},
@@ -85,30 +69,10 @@
 					}
 				},
 				centerPosFun = function(arg_3_0)
-					local var_3_0 = arg_3_0 * 3
-
-					ys = var_1_10002
-
-					local var_3_1 = var_3_0 + var_1_10002.Battle.BattleConfig.SHIELD_CENTER_CONST_2
-
-					Vector3 = var_2
-					math = var_1_10004
-
-					local var_3_2 = var_1_10004.sin(var_3_1) * 3
-					local var_3_3 = 0.75
-
-					math = var_6
-
-					return var_2(var_3_2, var_3_3, var_6.cos(var_3_1) * 5)
+					return Vector3(math.sin(arg_3_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_2) * 3, 0.75, math.cos(arg_3_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_2) * 5)
 				end,
 				rotationFun = function(arg_4_0)
-					Vector3 = var_1_10001
-
-					local var_4_0 = 0
-
-					ys = var_1_10004
-
-					return var_1_10001(var_4_0, arg_4_0 * var_1_10004.Battle.BattleConfig.SHIELD_ROTATE_CONST + 210, 0)
+					return Vector3(0, arg_4_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST + 210, 0)
 				end
 			}
 		},
@@ -139,30 +103,10 @@
 					}
 				},
 				centerPosFun = function(arg_5_0)
-					local var_5_0 = arg_5_0 * 3
-
-					ys = var_1_10002
-
-					local var_5_1 = var_5_0 + var_1_10002.Battle.BattleConfig.SHIELD_CENTER_CONST_4
-
-					Vector3 = var_2
-					math = var_1_10004
-
-					local var_5_2 = var_1_10004.sin(var_5_1) * 3
-					local var_5_3 = 0.75
-
-					math = var_6
-
-					return var_2(var_5_2, var_5_3, var_6.cos(var_5_1) * 5)
+					return Vector3(math.sin(arg_5_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_4) * 3, 0.75, math.cos(arg_5_0 * 3 + ys.Battle.BattleConfig.SHIELD_CENTER_CONST_4) * 5)
 				end,
 				rotationFun = function(arg_6_0)
-					Vector3 = var_1_10001
-
-					local var_6_0 = 0
-
-					ys = var_1_10004
-
-					return var_1_10001(var_6_0, arg_6_0 * var_1_10004.Battle.BattleConfig.SHIELD_ROTATE_CONST - 20, 0)
+					return Vector3(0, arg_6_0 * ys.Battle.BattleConfig.SHIELD_ROTATE_CONST - 20, 0)
 				end
 			}
 		}

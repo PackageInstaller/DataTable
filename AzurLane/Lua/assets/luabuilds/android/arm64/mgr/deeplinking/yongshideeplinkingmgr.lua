@@ -1,27 +1,21 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
 
-local var_0_0
+local var_0_0 = pg
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-singletonClass = var_0_10001
-var_0.YongshiDeepLinkingMgr = var_0_10001("YongshiDeepLinkingMgr")
+pg.YongshiDeepLinkingMgr = singletonClass("YongshiDeepLinkingMgr")
 
-local var_0_1 = var_0.YongshiDeepLinkingMgr
-local var_0_2 = true
+local var_0_1 = true
 
-local function var_0_3(arg_1_0)
-	if var_0_2 then
-		originalPrint = var_1
-
-		var_1(arg_1_0)
+local function var_0_2(arg_1_0)
+	if var_0_1 then
+		originalPrint(arg_1_0)
 	end
 
 	return
 end
 
-function var_0_1.SetData(arg_2_0, arg_2_1)
-	var_0_3("SetData......")
+function pg.YongshiDeepLinkingMgr.SetData(arg_2_0, arg_2_1)
+	var_0_2("SetData......")
 
 	arg_2_0.deepLinking = arg_2_1
 
@@ -30,103 +24,67 @@ function var_0_1.SetData(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.ShouldSwitchScene(arg_3_0)
-	if arg_3_0.deepLinking ~= nil then
-		var_1_10003 = arg_3_0.deepLinking
+function pg.YongshiDeepLinkingMgr.ShouldSwitchScene(arg_3_0)
+	if arg_3_0.deepLinking == nil or arg_3_0.deepLinking:IsEmpty() then
+		var_0_2("deepLinking is empty")
 
-		if var_1.IsEmpty(var_1_10003) then
-			var_0_3("deepLinking is empty")
-
-			return false
-		end
-
-		if not var_0.m02 then
-			var_0_3("game is not start")
-
-			return false
-		end
-
-		getProxy = var_1
-		ContextProxy = var_1_10003
-
-		local var_3_0 = var_1(var_1_10003)
-
-		if not var_1.getCurrentContext(var_3_0) then
-			var_0_3("game is not start")
-
-			return false
-		end
-
-		local var_3_1 = var_2.mediator
-
-		LoginMediator = var_3_0
-
-		if var_3_1 == var_3_0 then
-			var_0_3("player is not created")
-
-			return false
-		end
-
-		local var_3_2 = var_2.mediator
-
-		CombatLoadMediator = var_3_0
-
-		if var_3_2 ~= var_3_0 then
-			local var_3_3 = var_2.mediator
-
-			BattleMediator = var_3_0
-
-			if var_3_3 == var_3_0 then
-				var_0_3("game is in battle")
-				arg_3_0:Clear()
-
-				return false
-			end
-
-			return true
-		end
+		return false
 	end
+
+	if not var_0_0.m02 then
+		var_0_2("game is not start")
+
+		return false
+	end
+
+	local var_3_0 = getProxy(ContextProxy):getCurrentContext()
+
+	if not var_3_0 then
+		var_0_2("game is not start")
+
+		return false
+	end
+
+	if var_3_0.mediator == LoginMediator then
+		var_0_2("player is not created")
+
+		return false
+	end
+
+	if var_3_0.mediator == CombatLoadMediator or var_3_0.mediator == BattleMediator then
+		var_0_2("game is in battle")
+		arg_3_0:Clear()
+
+		return false
+	end
+
+	return true
 end
 
-local function var_0_4(arg_4_0, arg_4_1)
-	var_0_3("Switch......" .. arg_4_0 .. "-" .. arg_4_1)
+local function var_0_3(arg_4_0, arg_4_1)
+	var_0_2("Switch......" .. arg_4_0 .. "-" .. arg_4_1)
 
 	if arg_4_0 == "1" then
-		local var_4_0 = var_0.m02
-		local var_4_1 = var_2.sendNotification
-
-		GAME = var_5
-
-		local var_4_2 = var_5.GO_SCENE
-
-		SCENE = var_6
-
-		var_4_1(var_4_0, var_4_2, var_6.DOCKYARD)
+		var_0_0.m02:sendNotification(GAME.GO_SCENE, SCENE.DOCKYARD)
 	end
 
 	return
 end
 
-function var_0_1.SwitchScene(arg_5_0)
-	var_0_3("SwitchScene......")
+function pg.YongshiDeepLinkingMgr.SwitchScene(arg_5_0)
+	var_0_2("SwitchScene......")
 
 	if arg_5_0:ShouldSwitchScene() then
-		local var_5_0 = arg_5_0.deepLinking.page
-		local var_5_1 = arg_5_0.deepLinking.arg
-
-		var_0_4(var_5_0, var_5_1)
+		var_0_3(arg_5_0.deepLinking.page, arg_5_0.deepLinking.arg)
 		arg_5_0:Clear()
 	end
 
 	return
 end
 
-function var_0_1.Clear(arg_6_0)
-	var_0_3("Clear......")
-
-	local var_6_0 = arg_6_0.deepLinking
-
-	var_1.Clear(var_6_0)
+function pg.YongshiDeepLinkingMgr.Clear(arg_6_0)
+	var_0_2("Clear......")
+	arg_6_0.deepLinking:Clear()
 
 	arg_6_0.deepLinking = nil
 

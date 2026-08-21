@@ -1,20 +1,8 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChapterChampionPackage")
-local var_0_1 = {}
-
-ChapterConst = var_2
-
-local var_0_2 = var_2.AttachOni
-
-import = var_0_10003
-var_0_1[var_0_2] = var_0_10003(".ChapterChampionOni")
-ChapterConst = var_0_2
-
-local var_0_3 = var_0_2.AttachChampion
-
-import = var_3
-var_0_1[var_0_3] = var_3(".ChapterChampionNormal")
+﻿local var_0_0 = class("ChapterChampionPackage")
+local var_0_1 = {
+	[ChapterConst.AttachOni] = import(".ChapterChampionOni"),
+	[ChapterConst.AttachChampion] = import(".ChapterChampionNormal")
+}
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	local var_1_0 = arg_1_0:RebuildData(arg_1_1)
@@ -22,21 +10,16 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.idList = {}
 
 	if arg_1_1.extra_id then
-		ipairs = var_3
-
-		for iter_1_0, iter_1_1 in var_3(arg_1_1.extra_id) do
+		for iter_1_0, iter_1_1 in ipairs(arg_1_1.extra_id) do
 			arg_1_0.idList[iter_1_0] = iter_1_1
 		end
 	end
 
 	arg_1_0.currentChampion = var_0_1[var_1_0.attachment].New(var_1_0)
-	ChapterConst = var_3
-	arg_1_0.trait = var_3.TraitNone
-	Quaternion = var_3
-	arg_1_0.rotation = var_3.identity
-	rawset = var_3
+	arg_1_0.trait = ChapterConst.TraitNone
+	arg_1_0.rotation = Quaternion.identity
 
-	var_3(arg_1_0, "_init", true)
+	rawset(arg_1_0, "_init", true)
 
 	return
 end
@@ -46,22 +29,37 @@ function var_0_0.RebuildData(arg_2_0, arg_2_1)
 		id = arg_2_1.item_id,
 		pos = {}
 	}).pos.row = arg_2_1.pos.row
-	var_2.pos.column = arg_2_1.pos.column
-	var_2.attachment = arg_2_1.item_type
-	var_2.flag = arg_2_1.item_flag
-	var_2.data = arg_2_1.item_data
+	;({
+		id = arg_2_1.item_id,
+		pos = {}
+	}).pos.column = arg_2_1.pos.column
+	;({
+		id = arg_2_1.item_id,
+		pos = {}
+	}).attachment = arg_2_1.item_type
+	;({
+		id = arg_2_1.item_id,
+		pos = {}
+	}).flag = arg_2_1.item_flag
+	;({
+		id = arg_2_1.item_id,
+		pos = {}
+	}).data = arg_2_1.item_data
 
-	return var_2
+	return {
+		id = arg_2_1.item_id,
+		pos = {}
+	}
 end
 
 function var_0_0.__index(arg_3_0, arg_3_1)
-	local var_3_0
+	local var_3_0 = var_0_0[arg_3_1]
 
 	if not var_0_0[arg_3_1] then
-		rawget = var_1_10003
+		local var_3_1 = rawget(arg_3_0, "currentChampion")
 
-		if var_1_10003(arg_3_0, "currentChampion") then
-			var_3_0 = var_3[arg_3_1]
+		if var_3_1 then
+			var_3_0 = var_3_1[arg_3_1]
 		end
 	end
 
@@ -69,20 +67,16 @@ function var_0_0.__index(arg_3_0, arg_3_1)
 end
 
 function var_0_0.__newindex(arg_4_0, arg_4_1, arg_4_2)
-	rawget = var_1_10003
-
-	if not var_1_10003(arg_4_0, "_init") then
-		rawset = var_1_10004
-
-		var_1_10004(arg_4_0, arg_4_1, arg_4_2)
+	if not rawget(arg_4_0, "_init") then
+		rawset(arg_4_0, arg_4_1, arg_4_2)
 
 		return
 	end
 
-	rawget = var_1_10004
+	local var_4_0 = rawget(arg_4_0, "currentChampion")
 
-	if var_1_10004(arg_4_0, "currentChampion") then
-		var_4[arg_4_1] = arg_4_2
+	if var_4_0 then
+		var_4_0[arg_4_1] = arg_4_2
 	end
 
 	return
@@ -90,25 +84,23 @@ end
 
 function var_0_0.Iter(arg_5_0)
 	if #arg_5_0.idList <= 0 then
-		ChapterConst = var_1
-		arg_5_0.flag = var_1.CellFlagDisabled
+		arg_5_0.flag = ChapterConst.CellFlagDisabled
 
 		return
 	end
 
-	table = var_1
+	;({
+		data = 0
+	}).id = table.remove(arg_5_0.idList, 1)
+	;({
+		data = 0
+	}).pos = arg_5_0.currentChampion
 
-	local var_5_0 = var_1.remove(arg_5_0.idList, 1)
-
-	setmetatable = var_2
-
-	local var_5_1 = var_2({
-		data = 0,
-		id = var_5_0,
-		pos = arg_5_0.currentChampion
+	local var_5_0 = setmetatable({
+		data = 0
 	}, arg_5_0.currentChampion)
 
-	arg_5_0.currentChampion = var_0_1[var_5_1.attachment].New(var_5_1)
+	arg_5_0.currentChampion = var_0_1[var_5_0.attachment].New(var_5_0)
 
 	return
 end

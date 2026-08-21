@@ -1,39 +1,56 @@
-﻿class = var_0_10000
-
-local var_0_0 = "ResolveEquipmentLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-local var_0_2 = "resolve_equipment_option_all"
-local var_0_3 = {
-	SR = "SR",
-	SSR = "SSR",
-	ALL = "ALL",
-	R = "R",
-	N = "N"
-}
-local var_0_4 = {
+﻿local var_0_0 = class("ResolveEquipmentLayer", import("..base.BaseUI"))
+local var_0_1 = "resolve_equipment_option_all"
+local var_0_2 = {
 	N = "N",
 	SR = "SR",
 	SSR = "SSR",
 	R = "R"
 }
-local var_0_5 = {
-	[var_0_3.N] = {
+local var_0_3 = {
+	[({
+		SR = "SR",
+		SSR = "SSR",
+		ALL = "ALL",
+		R = "R",
+		N = "N"
+	}).N] = {
 		1,
 		2
 	},
-	[var_0_3.R] = {
+	[({
+		SR = "SR",
+		SSR = "SSR",
+		ALL = "ALL",
+		R = "R",
+		N = "N"
+	}).R] = {
 		3
 	},
-	[var_0_3.SR] = {
+	[({
+		SR = "SR",
+		SSR = "SSR",
+		ALL = "ALL",
+		R = "R",
+		N = "N"
+	}).SR] = {
 		4
 	},
-	[var_0_3.SSR] = {
+	[({
+		SR = "SR",
+		SSR = "SSR",
+		ALL = "ALL",
+		R = "R",
+		N = "N"
+	}).SSR] = {
 		5
 	},
-	[var_0_3.ALL] = {
+	[({
+		SR = "SR",
+		SSR = "SSR",
+		ALL = "ALL",
+		R = "R",
+		N = "N"
+	}).ALL] = {
 		1,
 		2,
 		3,
@@ -41,24 +58,24 @@ local var_0_5 = {
 		5
 	}
 }
-local var_0_6 = {
+local var_0_4 = {
 	ALL = 3,
 	PART = 2,
 	NONE = 1,
 	GREY = 0
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ResolveEquipmentUI"
 end
 
-function var_0_1.setPlayer(arg_2_0, arg_2_1)
+function var_0_0.setPlayer(arg_2_0, arg_2_1)
 	arg_2_0.player = arg_2_1
 
 	return
 end
 
-function var_0_1.setEquipments(arg_3_0, arg_3_1)
+function var_0_0.setEquipments(arg_3_0, arg_3_1)
 	arg_3_0.equipmentVOs = arg_3_1
 
 	arg_3_0:setEquipmentByIds(arg_3_1)
@@ -66,219 +83,75 @@ function var_0_1.setEquipments(arg_3_0, arg_3_1)
 	return
 end
 
-function var_0_1.setEquipmentByIds(arg_4_0, arg_4_1)
+function var_0_0.setEquipmentByIds(arg_4_0, arg_4_1)
 	arg_4_0.equipmentVOByIds = {}
-	ipairs = var_2
 
-	for iter_4_0, iter_4_1 in var_2(arg_4_1) do
+	for iter_4_0, iter_4_1 in ipairs(arg_4_1) do
 		arg_4_0.equipmentVOByIds[iter_4_1.id] = iter_4_1
 	end
 
 	return
 end
 
-function var_0_1.init(arg_5_0)
-	local var_5_0 = arg_5_0._tf
+function var_0_0.init(arg_5_0)
+	arg_5_0.mainPanel = arg_5_0._tf:Find("main")
 
-	arg_5_0.mainPanel = var_1.Find(var_5_0, "main")
-	setActive = var_1
+	setActive(arg_5_0.mainPanel, true)
+	setText(arg_5_0.mainPanel:Find("top/title_list/infomation/title"), i18n("title_info"))
+	setText(arg_5_0.mainPanel:Find("title/Text"), i18n("resolve_equip_tip"))
 
-	var_1(arg_5_0.mainPanel, true)
+	arg_5_0.viewRect = arg_5_0._tf:Find("main/frame/view"):GetComponent("LScrollRect")
+	arg_5_0.backBtn = arg_5_0._tf:Find("main/top/btnBack")
+	arg_5_0.cancelBtn = arg_5_0._tf:Find("main/cancel_btn")
 
-	setText = var_1
+	setText(arg_5_0.cancelBtn:Find("Image"), i18n("text_cancel"))
 
-	local var_5_1 = arg_5_0.mainPanel
-	local var_5_2 = var_3.Find(var_5_1, "top/title_list/infomation/title")
+	arg_5_0.okBtn = arg_5_0._tf:Find("main/ok_btn")
 
-	i18n = var_4
-
-	var_1(var_5_2, var_4("title_info"))
-
-	setText = var_1
-
-	local var_5_3 = arg_5_0.mainPanel
-	local var_5_4 = var_3.Find(var_5_3, "title/Text")
-
-	i18n = var_4
-
-	var_1(var_5_4, var_4("resolve_equip_tip"))
-
-	local var_5_5 = arg_5_0._tf
-	local var_5_6 = var_1.Find(var_5_5, "main/frame/view")
-
-	arg_5_0.viewRect = var_1.GetComponent(var_5_6, "LScrollRect")
-
-	local var_5_7 = arg_5_0._tf
-
-	arg_5_0.backBtn = var_1.Find(var_5_7, "main/top/btnBack")
-
-	local var_5_8 = arg_5_0._tf
-
-	arg_5_0.cancelBtn = var_1.Find(var_5_8, "main/cancel_btn")
-	setText = var_1
-
-	local var_5_9 = arg_5_0.cancelBtn
-	local var_5_10 = var_3.Find(var_5_9, "Image")
-
-	i18n = var_4
-
-	var_1(var_5_10, var_4("text_cancel"))
-
-	local var_5_11 = arg_5_0._tf
-
-	arg_5_0.okBtn = var_1.Find(var_5_11, "main/ok_btn")
-	setText = var_1
-
-	local var_5_12 = arg_5_0.okBtn
-	local var_5_13 = var_3.Find(var_5_12, "Image")
-
-	i18n = var_4
-
-	var_1(var_5_13, var_4("text_confirm"))
-
-	pg = var_1
-
-	local var_5_14 = var_1.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_5_14, arg_5_0._tf)
+	setText(arg_5_0.okBtn:Find("Image"), i18n("text_confirm"))
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
 
 	arg_5_0.selectedIds = {}
+	arg_5_0.selectOptions = arg_5_0._tf:Find("main/options")
 
-	local var_5_15 = arg_5_0._tf
-
-	arg_5_0.selectOptions = var_1.Find(var_5_15, "main/options")
-	setText = var_1
-
-	local var_5_16 = arg_5_0.selectOptions
-	local var_5_17 = var_3.Find(var_5_16, "ALL/Label")
-
-	i18n = var_4
-
-	var_1(var_5_17, var_4("word_equipment_all"))
+	setText(arg_5_0.selectOptions:Find("ALL/Label"), i18n("word_equipment_all"))
 
 	arg_5_0.optionStatus = {}
+	arg_5_0.destroyConfirm = arg_5_0._tf:Find("destroy_confirm")
+	arg_5_0.destroyBonusList = arg_5_0.destroyConfirm:Find("got/scrollview/list")
+	arg_5_0.destroyBonusItem = arg_5_0.destroyConfirm:Find("got/scrollview/item")
 
-	local var_5_18 = arg_5_0._tf
+	setActive(arg_5_0.destroyConfirm, false)
+	setActive(arg_5_0.destroyBonusItem, false)
+	setText(arg_5_0.destroyConfirm:Find("got/title"), i18n("resolve_equip_title"))
+	setText(arg_5_0.destroyConfirm:Find("actions/cancel_button/Image"), i18n("text_cancel"))
+	setText(arg_5_0.destroyConfirm:Find("actions/destroy_button/Image"), i18n("text_confirm"))
 
-	arg_5_0.destroyConfirm = var_1.Find(var_5_18, "destroy_confirm")
-
-	local var_5_19 = arg_5_0.destroyConfirm
-
-	arg_5_0.destroyBonusList = var_1.Find(var_5_19, "got/scrollview/list")
-
-	local var_5_20 = arg_5_0.destroyConfirm
-
-	arg_5_0.destroyBonusItem = var_1.Find(var_5_20, "got/scrollview/item")
-	setActive = var_1
-
-	var_1(arg_5_0.destroyConfirm, false)
-
-	setActive = var_1
-
-	var_1(arg_5_0.destroyBonusItem, false)
-
-	setText = var_1
-
-	local var_5_21 = arg_5_0.destroyConfirm
-	local var_5_22 = var_3.Find(var_5_21, "got/title")
-
-	i18n = var_4
-
-	var_1(var_5_22, var_4("resolve_equip_title"))
-
-	setText = var_1
-
-	local var_5_23 = arg_5_0.destroyConfirm
-	local var_5_24 = var_3.Find(var_5_23, "actions/cancel_button/Image")
-
-	i18n = var_4
-
-	var_1(var_5_24, var_4("text_cancel"))
-
-	setText = var_1
-
-	local var_5_25 = arg_5_0.destroyConfirm
-	local var_5_26 = var_3.Find(var_5_25, "actions/destroy_button/Image")
-
-	i18n = var_4
-
-	var_1(var_5_26, var_4("text_confirm"))
-
-	EquipDestoryConfirmWindow = var_1
-	arg_5_0.equipDestroyConfirmWindow = var_1.New(arg_5_0._tf, arg_5_0.event)
+	arg_5_0.equipDestroyConfirmWindow = EquipDestoryConfirmWindow.New(arg_5_0._tf, arg_5_0.event)
 
 	return
 end
 
-function var_0_1.didEnter(arg_6_0)
+function var_0_0.didEnter(arg_6_0)
 	arg_6_0:initEquipments()
-
-	onButton = var_1
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.backBtn
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-
-		var_0.SureExit(var_7_0)
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		arg_6_0:SureExit()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.cancelBtn
-
-	local function var_6_5()
-		local var_8_0 = arg_6_0
-
-		var_0.SureExit(var_8_0)
+	end, SFX_CANCEL)
+	onButton(arg_6_0, arg_6_0.cancelBtn, function()
+		arg_6_0:SureExit()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onButton = var_1
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0.okBtn
-
-	local function var_6_8()
-		local var_9_0 = {}
-
-		underscore = var_2_10001
-
-		if var_2_10001.any(arg_6_0.selectedIds, function(arg_10_0)
-			local var_10_0 = arg_6_0.equipmentVOByIds[arg_10_0[1]]
-
-			return var_1.getConfig(var_10_0, "rarity") >= 4 or var_1:getConfig("level") > 1
+	end, SFX_CANCEL)
+	onButton(arg_6_0, arg_6_0.okBtn, function()
+		if underscore.any(arg_6_0.selectedIds, function(arg_10_0)
+			return arg_6_0.equipmentVOByIds[arg_10_0[1]]:getConfig("rarity") >= 4 or var_10_0:getConfig("level") > 1
 		end) then
-			table = var_1
-
-			var_1.insert(var_9_0, function(arg_11_0)
-				local var_11_0 = arg_6_0.equipDestroyConfirmWindow
-
-				var_1.Load(var_11_0)
-
-				local var_11_1 = arg_6_0.equipDestroyConfirmWindow
-				local var_11_2 = var_1.ActionInvoke
-				local var_11_3 = "Show"
-
-				underscore = var_3_10005
-
-				var_11_2(var_11_1, var_11_3, var_3_10005.map(arg_6_0.selectedIds, function(arg_12_0)
-					setmetatable = var_4_10001
-
-					return var_4_10001({
+			table.insert({}, function(arg_11_0)
+				arg_6_0.equipDestroyConfirmWindow:Load()
+				arg_6_0.equipDestroyConfirmWindow:ActionInvoke("Show", underscore.map(arg_6_0.selectedIds, function(arg_12_0)
+					return setmetatable({
 						count = arg_12_0[2]
 					}, {
 						__index = arg_6_0.equipmentVOByIds[arg_12_0[1]]
@@ -289,155 +162,65 @@ function var_0_1.didEnter(arg_6_0)
 			end)
 		end
 
-		seriesAsync = var_1
-
-		var_1(var_9_0, function()
-			local var_13_1
-
+		seriesAsync({}, function()
 			if #arg_6_0.selectedIds <= 0 then
-				pg = var_13_1
-
-				local var_13_0 = var_13_1.TipsMgr.GetInstance()
-
-				var_13_1 = var_13_1.ShowTips
-				i18n = var_3_10003
-
-				var_13_1(var_13_0, var_3_10003("err_resloveequip_nochoice"))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("err_resloveequip_nochoice"))
 
 				return
 			end
 
-			setActive = var_13_1
-
-			var_13_1(arg_6_0.mainPanel, false)
-
-			setActive = var_13_1
-
-			var_13_1(arg_6_0.destroyConfirm, true)
-
-			local var_13_2 = arg_6_0
-
-			var_0.displayDestroyBonus(var_13_2)
+			setActive(arg_6_0.mainPanel, false)
+			setActive(arg_6_0.destroyConfirm, true)
+			arg_6_0:displayDestroyBonus()
 
 			return
 		end)
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10006
-
-	var_1(var_6_6, var_6_7, var_6_8, var_1_10006)
-
-	onButton = var_1
-
-	local var_6_9 = arg_6_0
-
-	findTF = var_6_7
-
-	local var_6_10 = var_6_7(arg_6_0.destroyConfirm, "actions/cancel_button")
-
-	local function var_6_11()
-		setActive = var_2_10000
-
-		var_2_10000(arg_6_0.destroyConfirm, false)
-
-		setActive = var_2_10000
-
-		var_2_10000(arg_6_0.mainPanel, true)
-
-		pg = var_2_10000
-
-		local var_14_0 = var_2_10000.UIMgr.GetInstance()
-
-		var_0.UnOverlayPanel(var_14_0, arg_6_0.destroyConfirm, arg_6_0._tf)
+	end, SFX_CONFIRM)
+	onButton(arg_6_0, findTF(arg_6_0.destroyConfirm, "actions/cancel_button"), function()
+		setActive(arg_6_0.destroyConfirm, false)
+		setActive(arg_6_0.mainPanel, true)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_6_0.destroyConfirm, arg_6_0._tf)
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_6_9, var_6_10, var_6_11, var_6)
-
-	onButton = var_1
-
-	local var_6_12 = arg_6_0
-
-	findTF = var_6_10
-
-	local var_6_13 = var_6_10(arg_6_0.destroyConfirm, "actions/destroy_button")
-
-	local function var_6_14()
-		local var_15_0 = {}
-
-		seriesAsync = var_2_10001
-
-		var_2_10001(var_15_0, function()
-			local var_16_0 = arg_6_0
-			local var_16_1 = var_0.emit
-
-			ResolveEquipmentMediator = var_3_10003
-
-			var_16_1(var_16_0, var_3_10003.ON_RESOLVE, arg_6_0.selectedIds)
+	end, SFX_CANCEL)
+	onButton(arg_6_0, findTF(arg_6_0.destroyConfirm, "actions/destroy_button"), function()
+		seriesAsync({}, function()
+			arg_6_0:emit(ResolveEquipmentMediator.ON_RESOLVE, arg_6_0.selectedIds)
 
 			return
 		end)
 
 		return
-	end
+	end, SFX_UI_EQUIPMENT_RESOLVE)
+	eachChild(arg_6_0.selectOptions, function(arg_17_0)
+		onButton(arg_6_0, arg_17_0, function()
+			local var_18_0 = var_0_3[arg_17_0.name]
 
-	SFX_UI_EQUIPMENT_RESOLVE = var_6
-
-	var_1(var_6_12, var_6_13, var_6_14, var_6)
-
-	eachChild = var_1
-
-	var_1(arg_6_0.selectOptions, function(arg_17_0)
-		onButton = var_2_10001
-
-		local var_17_0 = arg_6_0
-		local var_17_1 = arg_17_0
-
-		local function var_17_2()
-			local var_18_0 = arg_17_0.name
-			local var_18_1 = arg_6_0.optionStatus[var_18_0]
-			local var_18_2 = var_0_5[var_18_0]
-
-			switch = var_3_10003
-
-			var_3_10003(var_18_1, {
-				[var_0_6.GREY] = function()
+			switch(arg_6_0.optionStatus[arg_17_0.name], {
+				[var_0_4.GREY] = function()
 					return
 				end,
-				[var_0_6.NONE] = function()
-					local var_20_0 = arg_6_0
-
-					var_0.selAllEquipsByRaritys(var_20_0, var_18_2)
+				[var_0_4.NONE] = function()
+					arg_6_0:selAllEquipsByRaritys(var_18_0)
 
 					return
 				end,
-				[var_0_6.PART] = function()
-					local var_21_0 = arg_6_0
-
-					var_0.unselAllEquipsByRaritys(var_21_0, var_18_2)
+				[var_0_4.PART] = function()
+					arg_6_0:unselAllEquipsByRaritys(var_18_0)
 
 					return
 				end,
-				[var_0_6.ALL] = function()
-					local var_22_0 = arg_6_0
-
-					var_0.unselAllEquipsByRaritys(var_22_0, var_18_2)
+				[var_0_4.ALL] = function()
+					arg_6_0:unselAllEquipsByRaritys(var_18_0)
 
 					return
 				end
 			})
 
 			return
-		end
-
-		SFX_CANCEL = var_2_10006
-
-		var_2_10001(var_17_0, var_17_1, var_17_2, var_2_10006)
+		end, SFX_CANCEL)
 
 		return
 	end)
@@ -445,116 +228,73 @@ function var_0_1.didEnter(arg_6_0)
 	return
 end
 
-function var_0_1.HideDestroyCondirm(arg_23_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_23_0.destroyConfirm, false)
+function var_0_0.HideDestroyCondirm(arg_23_0)
+	setActive(arg_23_0.destroyConfirm, false)
 
 	return
 end
 
-function var_0_1.OnResolveEquipDone(arg_24_0)
-	pairs = var_1_10001
-
-	for iter_24_0, iter_24_1 in var_1_10001(var_0_4) do
-		if arg_24_0.optionStatus[iter_24_1] == var_0_6.ALL then
+function var_0_0.OnResolveEquipDone(arg_24_0)
+	for iter_24_0, iter_24_1 in pairs(var_0_2) do
+		if arg_24_0.optionStatus[iter_24_1] == var_0_4.ALL then
 			arg_24_0:SetLocalDataByOption(iter_24_1, 1)
-		elseif var_6 == var_0_6.NONE then
+		elseif arg_24_0.optionStatus[iter_24_1] == var_0_4.NONE then
 			arg_24_0:SetLocalDataByOption(iter_24_1, 0)
 		end
 	end
 
-	if arg_24_0.optionStatus[var_0_3.ALL] == var_0_6.ALL then
-		arg_24_0:emit(var_0_1.ON_CLOSE)
+	if arg_24_0.optionStatus[var_0.ALL] == var_0_4.ALL then
+		arg_24_0:emit(var_0_0.ON_CLOSE)
 	else
-		setActive = var_1
+		setActive(arg_24_0.mainPanel, true)
 
-		var_1(arg_24_0.mainPanel, true)
-
-		local function var_24_0(arg_25_0)
-			ipairs = var_2_10001
-
-			for iter_25_0, iter_25_1 in var_2_10001(arg_24_0.selectedIds) do
-				if iter_25_1[1] == arg_25_0 then
-					return iter_25_1[2]
+		for iter_24_2, iter_24_3 in ipairs(arg_24_0.equipmentVOs) do
+			local var_24_0 = Clone(iter_24_3)
+			local var_24_1 = iter_24_3.count - (function(arg_25_0)
+				for iter_25_0, iter_25_1 in ipairs(arg_24_0.selectedIds) do
+					if iter_25_1[1] == arg_25_0 then
+						return iter_25_1[2]
+					end
 				end
-			end
 
-			return 0
-		end
+				return 0
+			end)(iter_24_3.id)
 
-		local var_24_1 = {}
+			if var_24_1 > 0 then
+				var_24_0.count = var_24_1
 
-		ipairs = var_3
-
-		for iter_24_2, iter_24_3 in var_3(arg_24_0.equipmentVOs) do
-			Clone = var_1_10008
-			var_1_10008 = var_1_10008(iter_24_3)
-
-			local var_24_2 = iter_24_3.count - var_24_0(iter_24_3.id)
-
-			if 0 < var_24_2 then
-				var_1_10008.count = var_24_2
-				table = var_10
-
-				var_10.insert(var_24_1, var_1_10008)
+				table.insert({}, var_24_0)
 			end
 		end
 
-		arg_24_0:setEquipments(var_24_1)
-
-		local var_24_3 = arg_24_0.viewRect
-
-		var_3.SetTotalCount(var_24_3, #arg_24_0.equipmentVOs, -1)
+		arg_24_0:setEquipments({})
+		arg_24_0.viewRect:SetTotalCount(#arg_24_0.equipmentVOs, -1)
 		arg_24_0:selectedLocalRecordEquipment()
 	end
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_26_0)
-	pg = var_1_10001
+function var_0_0.onBackPressed(arg_26_0)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
-	local var_26_0 = var_1_10001.CriMgr.GetInstance()
-	local var_26_1 = var_1.PlaySoundEffect_V3
-
-	SFX_CANCEL = var_1_10004
-
-	var_26_1(var_26_0, var_1_10004)
-
-	isActive = var_26_1
-
-	if var_26_1(arg_26_0.destroyConfirm) then
-		triggerButton = var_1
-		findTF = var_3
-
-		var_1(var_3(arg_26_0.destroyConfirm, "actions/cancel_button"))
+	if isActive(arg_26_0.destroyConfirm) then
+		triggerButton(findTF(arg_26_0.destroyConfirm, "actions/cancel_button"))
+	elseif arg_26_0.equipDestroyConfirmWindow:isShowing() then
+		arg_26_0.equipDestroyConfirmWindow:Hide()
 	else
-		local var_26_2 = arg_26_0.equipDestroyConfirmWindow
-
-		if var_1.isShowing(var_26_2) then
-			local var_26_3 = arg_26_0.equipDestroyConfirmWindow
-
-			var_1.Hide(var_26_3)
-		else
-			triggerButton = var_1
-
-			var_1(arg_26_0.cancelBtn)
-		end
+		triggerButton(arg_26_0.cancelBtn)
 	end
 
 	return
 end
 
-function var_0_1.selectedLocalRecordEquipment(arg_27_0)
+function var_0_0.selectedLocalRecordEquipment(arg_27_0)
 	arg_27_0.selectedIds = {}
-	pairs = var_1
 
-	for iter_27_0, iter_27_1 in var_1(var_0_4) do
+	for iter_27_0, iter_27_1 in pairs(var_0_2) do
 		if arg_27_0:GetLocalDataByOption(iter_27_1) == 1 then
-			local var_27_0 = var_0_5[iter_27_1]
-
-			arg_27_0:selAllEquipsByRaritys(var_27_0)
+			arg_27_0:selAllEquipsByRaritys(var_0_3[iter_27_1])
 		end
 	end
 
@@ -563,43 +303,24 @@ function var_0_1.selectedLocalRecordEquipment(arg_27_0)
 	return
 end
 
-function var_0_1.GetLocalDataByOption(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_0.player.id .. var_0_2 .. arg_28_1
-
-	if arg_28_1 == var_0_3.N or arg_28_1 == var_0_3.R then
-		PlayerPrefs = var_3
-
-		if not var_3.HasKey(var_28_0) then
-			arg_28_0:SetLocalDataByOption(arg_28_1, 1)
-		end
+function var_0_0.GetLocalDataByOption(arg_28_0, arg_28_1)
+	if (arg_28_1 == var_0.N or arg_28_1 == var_0.R) and not PlayerPrefs.HasKey(arg_28_0.player.id .. var_0_1 .. arg_28_1) then
+		arg_28_0:SetLocalDataByOption(arg_28_1, 1)
 	end
 
-	PlayerPrefs = var_3
-
-	return var_3.GetInt(arg_28_0.player.id .. var_0_2 .. arg_28_1, 0)
+	return PlayerPrefs.GetInt(arg_28_0.player.id .. var_0_1 .. arg_28_1, 0)
 end
 
-function var_0_1.SetLocalDataByOption(arg_29_0, arg_29_1, arg_29_2)
-	PlayerPrefs = var_1_10003
-
-	var_1_10003.SetInt(arg_29_0.player.id .. var_0_2 .. arg_29_1, arg_29_2)
-
-	PlayerPrefs = var_3
-
-	var_3.Save()
+function var_0_0.SetLocalDataByOption(arg_29_0, arg_29_1, arg_29_2)
+	PlayerPrefs.SetInt(arg_29_0.player.id .. var_0_1 .. arg_29_1, arg_29_2)
+	PlayerPrefs.Save()
 
 	return
 end
 
-function var_0_1.selAllEquipsByRaritys(arg_30_0, arg_30_1)
-	ipairs = var_1_10002
-
-	for iter_30_0, iter_30_1 in var_1_10002(arg_30_0.equipmentVOs) do
-		local var_30_0 = iter_30_1:getConfig("rarity")
-
-		table = var_1_10008
-
-		if var_1_10008.contains(arg_30_1, var_30_0) then
+function var_0_0.selAllEquipsByRaritys(arg_30_0, arg_30_1)
+	for iter_30_0, iter_30_1 in ipairs(arg_30_0.equipmentVOs) do
+		if table.contains(arg_30_1, (iter_30_1:getConfig("rarity"))) then
 			arg_30_0:selectEquip(iter_30_1, iter_30_1.count)
 		end
 	end
@@ -609,15 +330,9 @@ function var_0_1.selAllEquipsByRaritys(arg_30_0, arg_30_1)
 	return
 end
 
-function var_0_1.unselAllEquipsByRaritys(arg_31_0, arg_31_1)
-	underscore = var_1_10002
-	arg_31_0.selectedIds = var_1_10002.select(arg_31_0.selectedIds, function(arg_32_0)
-		local var_32_0 = arg_31_0.equipmentVOByIds[arg_32_0[1]]
-		local var_32_1 = var_1.getConfig(var_32_0, "rarity")
-
-		table = var_2
-
-		return not var_2.contains(arg_31_1, var_32_1)
+function var_0_0.unselAllEquipsByRaritys(arg_31_0, arg_31_1)
+	arg_31_0.selectedIds = underscore.select(arg_31_0.selectedIds, function(arg_32_0)
+		return not table.contains(arg_31_1, (arg_31_0.equipmentVOByIds[arg_32_0[1]]:getConfig("rarity")))
 	end)
 
 	arg_31_0:updateSelected()
@@ -625,41 +340,23 @@ function var_0_1.unselAllEquipsByRaritys(arg_31_0, arg_31_1)
 	return
 end
 
-function var_0_1.displayDestroyBonus(arg_33_0)
-	local var_33_0 = {}
-	local var_33_1 = 0
+function var_0_0.displayDestroyBonus(arg_33_0)
+	local var_33_0 = 0
 
-	ipairs = var_1_10003
+	for iter_33_0, iter_33_1 in ipairs(arg_33_0.selectedIds) do
+		if Equipment.CanInBag(iter_33_1[1]) then
+			local var_33_1 = Equipment.getConfigData(iter_33_1[1])
+			local var_33_2 = var_33_1.destory_item or {}
+			local var_33_3 = var_33_1.destory_gold or 0
 
-	for iter_33_0, iter_33_1 in var_1_10003(arg_33_0.selectedIds) do
-		Equipment = var_1_10008
+			var_33_0 = var_33_0 + var_33_3 * iter_33_1[2]
 
-		if var_1_10008.CanInBag(iter_33_1[1]) then
-			Equipment = var_1_10008
-
-			local var_33_2
-
-			if not var_1_10008.getConfigData(iter_33_1[1]).destory_item then
-				var_33_2 = {}
-			end
-
-			local var_33_3
-
-			if not var_1_10008.destory_gold then
-				var_33_3 = 0
-			end
-
-			var_33_1 = var_33_1 + var_33_3 * iter_33_1[2]
-			ipairs = var_11
-
-			for iter_33_2, iter_33_3 in var_11(var_33_2) do
+			for iter_33_2, iter_33_3 in ipairs(var_33_2) do
 				local var_33_4 = false
 
-				ipairs = var_1_10017
-
-				for iter_33_4, iter_33_5 in var_1_10017(var_33_0) do
-					if iter_33_3[1] == var_33_0[iter_33_4].id then
-						var_33_0[iter_33_4].count = var_33_0[iter_33_4].count + iter_33_3[2] * iter_33_1[2]
+				for iter_33_4, iter_33_5 in ipairs({}) do
+					if iter_33_3[1] == ({})[iter_33_4].id then
+						({})[iter_33_4].count = ({})[iter_33_4].count + iter_33_3[2] * iter_33_1[2]
 						var_33_4 = true
 
 						break
@@ -667,172 +364,89 @@ function var_0_1.displayDestroyBonus(arg_33_0)
 				end
 
 				if not var_33_4 then
-					table = var_1_10017
-					var_1_10017 = var_1_10017.insert
-
-					local var_33_5 = var_33_0
-					local var_33_6 = {}
-
-					DROP_TYPE_ITEM = iter_33_5
-					var_33_6.type = iter_33_5
-					var_33_6.id = iter_33_3[1]
-					var_33_6.count = iter_33_3[2] * iter_33_1[2]
-
-					var_1_10017(var_33_5, var_33_6)
+					table.insert({}, {
+						type = DROP_TYPE_ITEM,
+						id = iter_33_3[1],
+						count = iter_33_3[2] * iter_33_1[2]
+					})
 				end
 			end
 		end
 	end
 
-	if 0 < var_33_1 then
-		table = var_3
-
-		local var_33_7 = var_3.insert
-		local var_33_8 = var_33_0
-		local var_33_9 = {
-			id = 1
-		}
-
-		DROP_TYPE_RESOURCE = iter_33_1
-		var_33_9.type = iter_33_1
-		var_33_9.count = var_33_1
-
-		var_33_7(var_33_8, var_33_9)
+	if var_33_0 > 0 then
+		table.insert({}, {
+			id = 1,
+			type = DROP_TYPE_RESOURCE,
+			count = var_33_0
+		})
 	end
 
-	for iter_33_6 = #var_33_0, arg_33_0.destroyBonusList.childCount - 1 do
-		Destroy = iter_33_1
-
-		local var_33_10 = arg_33_0.destroyBonusList
-
-		iter_33_1(var_9.GetChild(var_33_10, iter_33_6))
+	for iter_33_6 = #{}, arg_33_0.destroyBonusList.childCount - 1 do
+		Destroy(arg_33_0.destroyBonusList:GetChild(iter_33_6))
 	end
 
-	for iter_33_7 = arg_33_0.destroyBonusList.childCount, #var_33_0 - 1 do
-		cloneTplTo = iter_33_1
-
-		iter_33_1(arg_33_0.destroyBonusItem, arg_33_0.destroyBonusList)
+	for iter_33_7 = arg_33_0.destroyBonusList.childCount, #{} - 1 do
+		cloneTplTo(arg_33_0.destroyBonusItem, arg_33_0.destroyBonusList)
 	end
 
-	for iter_33_8 = 1, #var_33_0 do
-		local var_33_11 = arg_33_0.destroyBonusList
-		local var_33_12 = var_7.GetChild(var_33_11, iter_33_8 - 1)
-		local var_33_13 = var_33_0[iter_33_8].type
+	for iter_33_8 = 1, #{} do
+		local var_33_5 = arg_33_0.destroyBonusList:GetChild(iter_33_8 - 1)
+		local var_33_6 = ({})[iter_33_8]
 
-		DROP_TYPE_SHIP = var_10
-
-		if var_33_13 == var_10 then
+		if ({})[iter_33_8].type == DROP_TYPE_SHIP then
 			arg_33_0.hasShip = true
 		end
 
-		local var_33_14 = var_33_12:Find("icon_bg/icon/icon")
+		local var_33_7 = var_33_5:Find("icon_bg/icon/icon")
 
-		GetComponent = var_10
+		GetComponent(var_33_5:Find("icon_bg/icon"), typeof(Image)).enabled = true
 
-		local var_33_15 = var_33_12:Find("icon_bg/icon")
-
-		typeof = var_1_10013
-		Image = var_15
-		var_10(var_33_15, var_1_10013(var_15)).enabled = true
-		IsNil = var_11
-
-		if not var_11(var_33_14) then
-			setActive = var_11
-
-			var_11(var_33_14, false)
+		if not IsNil(var_33_7) then
+			setActive(var_33_7, false)
 		end
 
-		updateDrop = var_11
+		updateDrop(var_33_5, ({})[iter_33_8])
 
-		var_11(var_33_12, var_8)
+		local var_33_8, var_33_9 = contentWrap(({})[iter_33_8]:getConfig("name"), 10, 2)
 
-		contentWrap = var_11
-
-		local var_33_16, var_33_17 = var_11(var_8:getConfig("name"), 10, 2)
-
-		if var_33_16 then
-			var_33_17 = var_33_17 .. "..."
+		if var_33_8 then
+			var_33_9 = var_33_9 .. "..."
 		end
 
-		setText = var_1_10013
-
-		var_1_10013(var_33_12:Find("name"), var_33_17)
-
-		onButton = var_1_10013
-
-		local var_33_18 = arg_33_0
-		local var_33_19 = var_33_12
-
-		local function var_33_20()
-			local var_34_0 = var_0.type
-
-			DROP_TYPE_RESOURCE = var_2_10001
-
-			if var_34_0 ~= var_2_10001 then
-				local var_34_1 = var_0.type
-
-				DROP_TYPE_ITEM = var_2_10001
-
-				if var_34_1 == var_2_10001 then
-					local var_34_2 = arg_33_0
-					local var_34_3 = var_0.emit
-					local var_34_4 = var_0_1.ON_ITEM
-					local var_34_5 = var_0
-
-					var_34_3(var_34_2, var_34_4, var_4.getConfig(var_34_5, "id"))
-				else
-					local var_34_6 = var_0.type
-
-					DROP_TYPE_EQUIP = var_2_10001
-
-					if var_34_6 == var_2_10001 then
-						local var_34_7 = arg_33_0
-						local var_34_8 = var_0.emit
-						local var_34_9 = var_0_1.ON_EQUIPMENT
-						local var_34_10 = {}
-						local var_34_11 = var_0
-
-						var_34_10.equipmentId = var_5.getConfig(var_34_11, "id")
-						EquipmentInfoMediator = var_5
-						var_34_10.type = var_5.TYPE_DISPLAY
-
-						var_34_8(var_34_7, var_34_9, var_34_10)
-					end
-				end
-
-				return
+		setText(var_33_5:Find("name"), var_33_9)
+		onButton(arg_33_0, var_33_5, function()
+			if var_33_6.type == DROP_TYPE_RESOURCE or var_33_6.type == DROP_TYPE_ITEM then
+				arg_33_0:emit(var_0_0.ON_ITEM, var_33_6:getConfig("id"))
+			elseif var_33_6.type == DROP_TYPE_EQUIP then
+				arg_33_0:emit(var_0_0.ON_EQUIPMENT, {
+					equipmentId = var_33_6:getConfig("id"),
+					type = EquipmentInfoMediator.TYPE_DISPLAY
+				})
 			end
-		end
 
-		SFX_PANEL = var_18
-
-		var_1_10013(var_33_18, var_33_19, var_33_20, var_18)
+			return
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.initEquipments(arg_35_0)
+function var_0_0.initEquipments(arg_35_0)
 	function arg_35_0.viewRect.onInitItem(arg_36_0)
-		local var_36_0 = arg_35_0
-
-		var_1.onInitItem(var_36_0, arg_36_0)
+		arg_35_0:onInitItem(arg_36_0)
 
 		return
 	end
 
 	function arg_35_0.viewRect.onUpdateItem(arg_37_0, arg_37_1)
-		local var_37_0 = arg_35_0
-
-		var_2.onUpdateItem(var_37_0, arg_37_0, arg_37_1)
+		arg_35_0:onUpdateItem(arg_37_0, arg_37_1)
 
 		return
 	end
 
 	function arg_35_0.viewRect.onStart()
-		local var_38_0 = arg_35_0
-
-		var_0.selectedLocalRecordEquipment(var_38_0)
+		arg_35_0:selectedLocalRecordEquipment()
 
 		return
 	end
@@ -844,23 +458,11 @@ function var_0_1.initEquipments(arg_35_0)
 	return
 end
 
-function var_0_1.filterEquipments(arg_39_0)
-	underscore = var_1_10001
-
-	local var_39_0 = var_1_10001.select(arg_39_0.equipmentVOs, function(arg_40_0)
+function var_0_0.filterEquipments(arg_39_0)
+	arg_39_0:setEquipments((underscore.select(arg_39_0.equipmentVOs, function(arg_40_0)
 		return not arg_40_0:isImportance()
-	end)
-
-	arg_39_0:setEquipments(var_39_0)
-
-	table = var_2
-
-	local var_39_1 = var_2.sort
-	local var_39_2 = arg_39_0.equipmentVOs
-
-	CompareFuncs = var_5
-
-	var_39_1(var_39_2, var_5({
+	end)))
+	table.sort(arg_39_0.equipmentVOs, CompareFuncs({
 		function(arg_41_0)
 			return -arg_41_0:getConfig("rarity")
 		end,
@@ -868,60 +470,32 @@ function var_0_1.filterEquipments(arg_39_0)
 			return arg_42_0.id
 		end
 	}))
-
-	local var_39_3 = arg_39_0.viewRect
-
-	var_2.SetTotalCount(var_39_3, #arg_39_0.equipmentVOs, -1)
+	arg_39_0.viewRect:SetTotalCount(#arg_39_0.equipmentVOs, -1)
 
 	return
 end
 
-function var_0_1.onInitItem(arg_43_0, arg_43_1)
-	EquipmentItem = var_1_10002
+function var_0_0.onInitItem(arg_43_0, arg_43_1)
+	local var_43_0 = EquipmentItem.New(arg_43_1)
 
-	local var_43_0 = var_1_10002.New(arg_43_1)
-
-	onButton = var_1_10003
-
-	local var_43_1 = arg_43_0
-	local var_43_2 = var_43_0.go
-
-	local function var_43_3()
-		local var_44_0 = arg_43_0
-
-		var_0.selectEquip(var_44_0, var_43_0.equipmentVO, var_43_0.equipmentVO.count)
+	onButton(arg_43_0, var_43_0.go, function()
+		arg_43_0:selectEquip(var_43_0.equipmentVO, var_43_0.equipmentVO.count)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_43_1, var_43_2, var_43_3, var_1_10008)
-
-	onButton = var_1_10003
-
-	local var_43_4 = arg_43_0
-	local var_43_5 = var_43_0.reduceBtn
-
-	local function var_43_6()
-		local var_45_0 = arg_43_0
-
-		var_0.selectEquip(var_45_0, var_43_0.equipmentVO, 1)
+	end, SFX_PANEL)
+	onButton(arg_43_0, var_43_0.reduceBtn, function()
+		arg_43_0:selectEquip(var_43_0.equipmentVO, 1)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_43_4, var_43_5, var_43_6, var_1_10008)
+	end, SFX_PANEL)
 
 	arg_43_0.cards[arg_43_1] = var_43_0
 
 	return
 end
 
-function var_0_1.onUpdateItem(arg_46_0, arg_46_1, arg_46_2)
-	local var_46_0
+function var_0_0.onUpdateItem(arg_46_0, arg_46_1, arg_46_2)
+	local var_46_0 = arg_46_0.cards[arg_46_2]
 
 	if not arg_46_0.cards[arg_46_2] then
 		arg_46_0:onInitItem(arg_46_2)
@@ -929,39 +503,30 @@ function var_0_1.onUpdateItem(arg_46_0, arg_46_1, arg_46_2)
 		var_46_0 = arg_46_0.cards[arg_46_2]
 	end
 
-	local var_46_1 = arg_46_0.equipmentVOs[arg_46_1 + 1]
-	local var_46_2 = var_46_0
+	var_46_0:update(arg_46_0.equipmentVOs[arg_46_1 + 1], true)
 
-	var_46_0.update(var_46_2, var_46_1, true)
+	local var_46_1 = false
+	local var_46_2 = 0
 
-	local var_46_3 = false
-	local var_46_4 = 0
-
-	pairs = var_46_2
-
-	for iter_46_0, iter_46_1 in var_46_2(arg_46_0.selectedIds) do
+	for iter_46_0, iter_46_1 in pairs(arg_46_0.selectedIds) do
 		if var_46_0.equipmentVO.id == iter_46_1[1] then
-			var_46_3 = true
-			var_46_4 = iter_46_1[2]
+			var_46_1 = true
+			var_46_2 = iter_46_1[2]
 
 			break
 		end
 	end
 
-	var_46_0:updateSelected(var_46_3, var_46_4)
+	var_46_0:updateSelected(var_46_1, var_46_2)
 
 	return
 end
 
-function var_0_1.isSelectedAll(arg_47_0)
-	pairs = var_1_10001
-
-	for iter_47_0, iter_47_1 in var_1_10001(arg_47_0.equipmentVOByIds) do
+function var_0_0.isSelectedAll(arg_47_0)
+	for iter_47_0, iter_47_1 in pairs(arg_47_0.equipmentVOByIds) do
 		local var_47_0 = false
 
-		pairs = var_1_10007
-
-		for iter_47_2, iter_47_3 in var_1_10007(arg_47_0.selectedIds) do
+		for iter_47_2, iter_47_3 in pairs(arg_47_0.selectedIds) do
 			if iter_47_3[1] == iter_47_1.id and iter_47_1.count == iter_47_3[2] then
 				var_47_0 = true
 			end
@@ -975,58 +540,40 @@ function var_0_1.isSelectedAll(arg_47_0)
 	return true
 end
 
-function var_0_1.selectEquip(arg_48_0, arg_48_1, arg_48_2)
+function var_0_0.selectEquip(arg_48_0, arg_48_1, arg_48_2)
 	if not arg_48_0:checkDestroyGold(arg_48_1, arg_48_2) then
 		return
 	end
 
 	if arg_48_1:isImportance() then
-		pg = var_3
-
-		local var_48_0 = var_3.TipsMgr.GetInstance()
-		local var_48_1 = var_3.ShowTips
-
-		i18n = var_6
-
-		var_48_1(var_48_0, var_6("retire_importantequipment_tips"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("retire_importantequipment_tips"))
 
 		return
 	end
 
-	local var_48_2 = false
-	local var_48_3
-	local var_48_4 = 0
+	local var_48_0 = false
+	local var_48_1
+	local var_48_2 = 0
 
-	pairs = var_6
-
-	for iter_48_0, iter_48_1 in var_6(arg_48_0.selectedIds) do
+	for iter_48_0, iter_48_1 in pairs(arg_48_0.selectedIds) do
 		if iter_48_1[1] == arg_48_1.id then
-			var_48_2 = true
-			var_48_3 = iter_48_0
-			var_48_4 = iter_48_1[2]
+			var_48_0 = true
+			var_48_1 = iter_48_0
+			var_48_2 = iter_48_1[2]
 
 			break
 		end
 	end
 
-	if not var_48_2 then
-		table = var_6
-
-		var_6.insert(arg_48_0.selectedIds, {
+	if not var_48_0 then
+		table.insert(arg_48_0.selectedIds, {
 			arg_48_1.id,
 			arg_48_2
 		})
+	elseif var_48_2 - arg_48_2 > 0 then
+		arg_48_0.selectedIds[var_48_1][2] = var_48_2 - arg_48_2
 	else
-		local var_48_5
-
-		if var_48_4 - arg_48_2 > 0 then
-			var_48_5 = arg_48_0.selectedIds[var_48_3]
-			var_48_5[2] = var_48_4 - arg_48_2
-		else
-			table = var_48_5
-
-			var_48_5.remove(arg_48_0.selectedIds, var_48_3)
-		end
+		table.remove(arg_48_0.selectedIds, var_48_1)
 	end
 
 	arg_48_0:updateSelected()
@@ -1034,17 +581,13 @@ function var_0_1.selectEquip(arg_48_0, arg_48_1, arg_48_2)
 	return
 end
 
-function var_0_1.updateSelected(arg_49_0)
-	pairs = var_1_10001
-
-	for iter_49_0, iter_49_1 in var_1_10001(arg_49_0.cards) do
+function var_0_0.updateSelected(arg_49_0)
+	for iter_49_0, iter_49_1 in pairs(arg_49_0.cards) do
 		if iter_49_1.equipmentVO then
 			local var_49_0 = false
 			local var_49_1 = 0
 
-			pairs = var_1_10008
-
-			for iter_49_2, iter_49_3 in var_1_10008(arg_49_0.selectedIds) do
+			for iter_49_2, iter_49_3 in pairs(arg_49_0.selectedIds) do
 				if iter_49_1.equipmentVO.id == iter_49_3[1] then
 					var_49_0 = true
 					var_49_1 = iter_49_3[2]
@@ -1062,108 +605,74 @@ function var_0_1.updateSelected(arg_49_0)
 	return
 end
 
-function var_0_1.updateOptionsStatus(arg_50_0)
+function var_0_0.updateOptionsStatus(arg_50_0)
 	arg_50_0.optionStatus = {}
-	pairs = var_1
 
-	for iter_50_0, iter_50_1 in var_1(var_0_3) do
-		local var_50_0 = arg_50_0.selectOptions
-		local var_50_1 = var_6.Find(var_50_0, iter_50_1)
-		local var_50_2 = arg_50_0:GetOptionStatus(iter_50_1)
-		local var_50_3 = arg_50_0.optionStatus
+	for iter_50_0, iter_50_1 in pairs(var_0) do
+		local var_50_0 = arg_50_0.selectOptions:Find(iter_50_1)
+		local var_50_1 = arg_50_0:GetOptionStatus(iter_50_1)
 
-		var_50_3[iter_50_1] = var_50_2
-		setGray = var_50_3
+		arg_50_0.optionStatus[iter_50_1] = var_50_1
 
-		var_50_3(var_50_1, var_50_2 == var_0_6.GREY, true)
+		setGray(var_50_0, var_50_1 == var_0_4.GREY, true)
 
-		GetOrAddComponent = var_50_3
+		GetOrAddComponent(var_50_0, "CanvasGroup").alpha = var_50_1 == var_0_4.GREY and 0.4 or 1
 
-		local var_50_4 = var_50_3(var_50_1, "CanvasGroup")
-
-		var_50_4.alpha = var_50_2 == var_0_6.GREY and 0.4 or 1
-		setActive = var_50_4
-
-		var_50_4(var_50_1:Find("Background/Checkmark"), var_50_2 == var_0_6.ALL)
-
-		setActive = var_50_4
-
-		var_50_4(var_50_1:Find("Background/Part"), var_50_2 == var_0_6.PART)
+		setActive(var_50_0:Find("Background/Checkmark"), var_50_1 == var_0_4.ALL)
+		setActive(var_50_0:Find("Background/Part"), var_50_1 == var_0_4.PART)
 	end
 
 	return
 end
 
-function var_0_1.GetOptionStatus(arg_51_0, arg_51_1)
-	if arg_51_1 == var_0_3.ALL then
-		if #arg_51_0.selectedIds == 0 then
-			return var_0_6.NONE
-		else
-			var_1_10004 = arg_51_0
+function var_0_0.GetOptionStatus(arg_51_0, arg_51_1)
+	local var_51_0 = var_0_3[arg_51_1]
+	local var_51_1 = underscore.any(arg_51_0.selectedIds, function(arg_53_0)
+		return table.contains(var_51_0, (arg_51_0.equipmentVOByIds[arg_53_0[1]]:getConfig("rarity")))
+	end)
 
-			if arg_51_0.isSelectedAll(var_1_10004) then
-				return var_0_6.ALL
-			else
-				return var_0_6.PART
+	if arg_51_1 == var_0.ALL then
+		if #arg_51_0.selectedIds == 0 then
+			return var_0_4.NONE
+		elseif arg_51_0:isSelectedAll() then
+			return var_0_4.ALL
+		else
+			return var_0_4.PART
+		end
+
+		goto label_51_0
+	end
+
+	if not underscore.any(arg_51_0.equipmentVOs, function(arg_52_0)
+		return table.contains(var_51_0, (arg_52_0:getConfig("rarity")))
+	end) then
+		return var_0_4.GREY
+	end
+
+	::label_51_0::
+
+	if arg_51_0:isSelectedAllRaritys(var_51_0) then
+		if not var_0_4.ALL then
+			if var_51_1 then
+				do return var_0_4.PART or var_0_4.NONE end
+				return
 			end
 		end
-	else
-		local var_51_0 = var_0_5[arg_51_1]
-
-		underscore = var_1_10003
-
-		if not var_1_10003.any(arg_51_0.equipmentVOs, function(arg_52_0)
-			local var_52_0 = arg_52_0:getConfig("rarity")
-
-			table = var_2_10002
-
-			return var_2_10002.contains(var_51_0, var_52_0)
-		end) then
-			return var_0_6.GREY
-		end
-
-		underscore = var_1_10004
-
-		local var_51_1 = var_1_10004.any(arg_51_0.selectedIds, function(arg_53_0)
-			local var_53_0 = arg_51_0.equipmentVOByIds[arg_53_0[1]]
-			local var_53_1 = var_1.getConfig(var_53_0, "rarity")
-
-			table = var_2
-
-			return var_2.contains(var_51_0, var_53_1)
-		end)
-		local var_51_2
-
-		if (not arg_51_0:isSelectedAllRaritys(var_51_0) or not var_0_6.ALL) and (not var_51_1 or not var_0_6.PART) then
-			var_51_2 = var_0_6.NONE
-		end
-
-		return var_51_2
 	end
-
-	return
 end
 
-function var_0_1.isSelectedAllRaritys(arg_54_0, arg_54_1)
-	pairs = var_1_10002
+function var_0_0.isSelectedAllRaritys(arg_54_0, arg_54_1)
+	for iter_54_0, iter_54_1 in pairs(arg_54_0.equipmentVOByIds) do
+		if table.contains(arg_54_1, (iter_54_1:getConfig("rarity"))) then
+			local var_54_0 = false
 
-	for iter_54_0, iter_54_1 in var_1_10002(arg_54_0.equipmentVOByIds) do
-		local var_54_0 = iter_54_1
-		local var_54_1 = iter_54_1.getConfig(var_54_0, "rarity")
-
-		table = var_1_10008
-
-		if var_1_10008.contains(arg_54_1, var_54_1) then
-			var_1_10008 = false
-			pairs = var_54_0
-
-			for iter_54_2, iter_54_3 in var_54_0(arg_54_0.selectedIds) do
+			for iter_54_2, iter_54_3 in pairs(arg_54_0.selectedIds) do
 				if iter_54_3[1] == iter_54_1.id and iter_54_1.count == iter_54_3[2] then
-					var_1_10008 = true
+					var_54_0 = true
 				end
 			end
 
-			if var_1_10008 == false then
+			if var_54_0 == false then
 				return false
 			end
 		end
@@ -1172,27 +681,15 @@ function var_0_1.isSelectedAllRaritys(arg_54_0, arg_54_1)
 	return true
 end
 
-function var_0_1.checkDestroyGold(arg_55_0, arg_55_1, arg_55_2)
+function var_0_0.checkDestroyGold(arg_55_0, arg_55_1, arg_55_2)
 	local var_55_0 = 0
 	local var_55_1 = false
 
-	pairs = var_1_10005
+	for iter_55_0, iter_55_1 in pairs(arg_55_0.selectedIds) do
+		if Equipment.CanInBag(iter_55_1[1]) then
+			local var_55_2 = Equipment.getConfigData(iter_55_1[1]).destory_gold or 0
 
-	for iter_55_0, iter_55_1 in var_1_10005(arg_55_0.selectedIds) do
-		local var_55_2 = iter_55_1[2]
-
-		Equipment = var_1_10011
-
-		if var_1_10011.CanInBag(iter_55_1[1]) then
-			Equipment = var_1_10011
-
-			local var_55_3
-
-			if not var_1_10011.getConfigData(iter_55_1[1]).destory_gold then
-				var_55_3 = 0
-			end
-
-			var_55_0 = var_55_0 + var_55_3 * var_55_2
+			var_55_0 = var_55_0 + var_55_2 * iter_55_1[2]
 		end
 
 		if arg_55_1 and iter_55_1[1] == arg_55_1.configId then
@@ -1201,30 +698,13 @@ function var_0_1.checkDestroyGold(arg_55_0, arg_55_1, arg_55_2)
 	end
 
 	if not var_55_1 and arg_55_1 and arg_55_2 > 0 then
-		local var_55_4
+		local var_55_3 = arg_55_1:getConfig("destory_gold") or 0
 
-		if not arg_55_1:getConfig("destory_gold") then
-			var_55_4 = 0
-		end
-
-		var_55_0 = var_55_0 + var_55_4 * arg_55_2
+		var_55_0 = var_55_0 + var_55_3 * arg_55_2
 	end
 
-	local var_55_5 = arg_55_0.player
-
-	if var_5.GoldMax(var_55_5, var_55_0) then
-		pg = var_5
-
-		local var_55_6 = var_5.TipsMgr.GetInstance()
-		local var_55_7 = var_5.ShowTips
-
-		i18n = var_8
-
-		local var_55_8 = var_8("gold_max_tip_title")
-
-		i18n = iter_55_1
-
-		var_55_7(var_55_6, var_55_8 .. iter_55_1("resource_max_tip_destroy"))
+	if arg_55_0.player:GoldMax(var_55_0) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title") .. i18n("resource_max_tip_destroy"))
 
 		return false
 	end
@@ -1232,45 +712,24 @@ function var_0_1.checkDestroyGold(arg_55_0, arg_55_1, arg_55_2)
 	return true
 end
 
-function var_0_1.SureExit(arg_56_0)
-	pg = var_1_10001
+function var_0_0.SureExit(arg_56_0)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		content = i18n("sure_exit_resolve_equip"),
+		onYes = function()
+			arg_56_0:emit(var_0_0.ON_CLOSE)
 
-	local var_56_0 = var_1_10001.MsgboxMgr.GetInstance()
-	local var_56_1 = var_1.ShowMsgBox
-	local var_56_2 = {}
-
-	i18n = var_1_10005
-	var_56_2.content = var_1_10005("sure_exit_resolve_equip")
-
-	function var_56_2.onYes()
-		local var_57_0 = arg_56_0
-
-		var_0.emit(var_57_0, var_0_1.ON_CLOSE)
-
-		return
-	end
-
-	var_56_1(var_56_0, var_56_2)
+			return
+		end
+	})
 
 	return
 end
 
-function var_0_1.willExit(arg_58_0)
-	local var_58_0 = arg_58_0.equipDestroyConfirmWindow
-
-	var_1.Destroy(var_58_0)
-
-	pg = var_1
-
-	local var_58_1 = var_1.UIMgr.GetInstance()
-	local var_58_2 = var_1.UnOverlayPanel
-	local var_58_3 = arg_58_0._tf
-
-	pg = var_1_10005
-
-	var_58_2(var_58_1, var_58_3, var_1_10005.UIMgr.GetInstance().UIMain)
+function var_0_0.willExit(arg_58_0)
+	arg_58_0.equipDestroyConfirmWindow:Destroy()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_58_0._tf, pg.UIMgr.GetInstance().UIMain)
 
 	return
 end
 
-return var_0_1
+return var_0_0

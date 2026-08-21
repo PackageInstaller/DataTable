@@ -1,52 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewLimitChallengeResultGradePage", import("..NewBattleResultGradePage"))
 
-local var_0_0 = "NewLimitChallengeResultGradePage"
+function var_0_0.GetGetObjectives(arg_1_0)
+	local var_1_0 = {}
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..NewBattleResultGradePage"))
-
-function var_0_1.GetGetObjectives(arg_1_0)
-	local var_1_0 = arg_1_0.contextData
-	local var_1_1 = {}
-	local var_1_2 = var_1_0.statistics._battleScore
-
-	ys = var_1_10004
-
-	if var_1_2 > var_1_10004.Battle.BattleConst.BattleScore.C then
-		local var_1_3 = var_1_0.statistics._totalTime
-
-		math = var_1_10006
-
-		local var_1_4 = var_1_10006.floor(var_1_3)
-
-		ys = var_1_10007
-
-		local var_1_5 = var_1_10007.Battle.BattleTimerView.formatTime(var_1_4)
-
-		i18n = var_8
-
-		local var_1_6 = var_8("battle_result_total_time")
-
-		table = var_9
-
-		local var_1_7 = var_9.insert
-		local var_1_8 = var_1_1
-		local var_1_9 = {}
-
-		setColorStr = var_1_10013
-		var_1_9.text = var_1_10013(var_1_6, "#FFFFFFFF")
-		setColorStr = var_13
-
-		local var_1_10 = var_1_5
-
-		COLOR_YELLOW = var_16
-		var_1_9.value = var_13(var_1_10, var_16)
-
-		var_1_7(var_1_8, var_1_9)
+	if arg_1_0.contextData.statistics._battleScore > ys.Battle.BattleConst.BattleScore.C then
+		table.insert(var_1_0, {
+			text = setColorStr(i18n("battle_result_total_time"), "#FFFFFFFF"),
+			value = setColorStr(ys.Battle.BattleTimerView.formatTime((math.floor(arg_1_0.contextData.statistics._totalTime))), COLOR_YELLOW)
+		})
 	end
 
-	return var_1_1
+	return var_1_0
 end
 
-return var_0_1
+return var_0_0

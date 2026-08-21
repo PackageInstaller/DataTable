@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ins_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ins_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ins_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ins_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ins_template = rawget(pg, "activity_ins_template") or setmetatable({
+	__name = "activity_ins_template"
+}, confNEO)
+pg.activity_ins_template.all = {
 	1,
 	2,
 	3,
@@ -678,6 +655,11 @@ var_0_3.all = {
 	660,
 	661,
 	662,
+	663,
+	664,
+	665,
+	666,
+	667,
 	20001,
 	20002,
 	20003,
@@ -686,29 +668,16 @@ var_0_3.all = {
 	20005,
 	20007,
 	20008,
-	20011,
 	20009,
-	20010
+	20010,
+	20011,
+	20012
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_ins_template = {}
+pg.base = pg.base or {}
+pg.base.activity_ins_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ins_template
-
-	var_1_0[1] = {
+	pg.base.activity_ins_template[1] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -750,11 +719,7 @@ var_0_3.base.activity_ins_template = {}
 			3
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ins_template
-
-	var_1_1[2] = {
+	pg.base.activity_ins_template[2] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		type = 1,
@@ -795,11 +760,7 @@ var_0_3.base.activity_ins_template = {}
 			35
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ins_template
-
-	var_1_2[3] = {
+	pg.base.activity_ins_template[3] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		type = 1,
@@ -840,11 +801,7 @@ var_0_3.base.activity_ins_template = {}
 			43
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ins_template
-
-	var_1_3[4] = {
+	pg.base.activity_ins_template[4] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -887,11 +844,7 @@ var_0_3.base.activity_ins_template = {}
 			62
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ins_template
-
-	var_1_4[5] = {
+	pg.base.activity_ins_template[5] = {
 		ship_group = 20208,
 		name = "ShiningS",
 		type = 1,
@@ -932,11 +885,7 @@ var_0_3.base.activity_ins_template = {}
 			96
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ins_template
-
-	var_1_5[6] = {
+	pg.base.activity_ins_template[6] = {
 		ship_group = 40301,
 		name = "R-Guitarist",
 		type = 1,
@@ -978,11 +927,7 @@ var_0_3.base.activity_ins_template = {}
 			114
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ins_template
-
-	var_1_6[7] = {
+	pg.base.activity_ins_template[7] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -1025,11 +970,7 @@ var_0_3.base.activity_ins_template = {}
 			28
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ins_template
-
-	var_1_7[8] = {
+	pg.base.activity_ins_template[8] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -1071,11 +1012,7 @@ var_0_3.base.activity_ins_template = {}
 			77
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ins_template
-
-	var_1_8[9] = {
+	pg.base.activity_ins_template[9] = {
 		ship_group = 20208,
 		name = "ShiningS",
 		type = 1,
@@ -1116,11 +1053,7 @@ var_0_3.base.activity_ins_template = {}
 			105
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ins_template
-
-	var_1_9[10] = {
+	pg.base.activity_ins_template[10] = {
 		ship_group = 40301,
 		name = "R-Guitarist",
 		type = 1,
@@ -1162,11 +1095,7 @@ var_0_3.base.activity_ins_template = {}
 			132
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ins_template
-
-	var_1_10[11] = {
+	pg.base.activity_ins_template[11] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		type = 1,
@@ -1208,11 +1137,7 @@ var_0_3.base.activity_ins_template = {}
 			52
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ins_template
-
-	var_1_11[12] = {
+	pg.base.activity_ins_template[12] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -1254,11 +1179,7 @@ var_0_3.base.activity_ins_template = {}
 			13
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ins_template
-
-	var_1_12[13] = {
+	pg.base.activity_ins_template[13] = {
 		ship_group = 40301,
 		name = "R-Guitarist",
 		type = 1,
@@ -1300,11 +1221,7 @@ var_0_3.base.activity_ins_template = {}
 			120
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ins_template
-
-	var_1_13[14] = {
+	pg.base.activity_ins_template[14] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -1346,11 +1263,7 @@ var_0_3.base.activity_ins_template = {}
 			67
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ins_template
-
-	var_1_14[15] = {
+	pg.base.activity_ins_template[15] = {
 		ship_group = 20208,
 		name = "ShiningS",
 		type = 1,
@@ -1391,11 +1304,7 @@ var_0_3.base.activity_ins_template = {}
 			89
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ins_template
-
-	var_1_15[16] = {
+	pg.base.activity_ins_template[16] = {
 		ship_group = 40301,
 		name = "R-Guitarist",
 		type = 1,
@@ -1436,11 +1345,7 @@ var_0_3.base.activity_ins_template = {}
 			123
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ins_template
-
-	var_1_16[17] = {
+	pg.base.activity_ins_template[17] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -1482,11 +1387,7 @@ var_0_3.base.activity_ins_template = {}
 			84
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ins_template
-
-	var_1_17[18] = {
+	pg.base.activity_ins_template[18] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		type = 1,
@@ -1528,11 +1429,7 @@ var_0_3.base.activity_ins_template = {}
 			57
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ins_template
-
-	var_1_18[19] = {
+	pg.base.activity_ins_template[19] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -1573,11 +1470,7 @@ var_0_3.base.activity_ins_template = {}
 			18
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ins_template
-
-	var_1_19[20] = {
+	pg.base.activity_ins_template[20] = {
 		ship_group = 20208,
 		name = "ShiningS",
 		type = 1,
@@ -1619,11 +1512,7 @@ var_0_3.base.activity_ins_template = {}
 			100
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ins_template
-
-	var_1_20[21] = {
+	pg.base.activity_ins_template[21] = {
 		ship_group = 30514,
 		name = "S8u6r6ug8A",
 		type = 1,
@@ -1664,11 +1553,7 @@ var_0_3.base.activity_ins_template = {}
 			143
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ins_template
-
-	var_1_21[22] = {
+	pg.base.activity_ins_template[22] = {
 		ship_group = 30505,
 		name = "SakuraCombinedFleet",
 		type = 1,
@@ -1710,11 +1595,7 @@ var_0_3.base.activity_ins_template = {}
 			151
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ins_template
-
-	var_1_22[23] = {
+	pg.base.activity_ins_template[23] = {
 		ship_group = 30105,
 		name = "AYANAMIN",
 		type = 1,
@@ -1755,11 +1636,7 @@ var_0_3.base.activity_ins_template = {}
 			159
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ins_template
-
-	var_1_23[24] = {
+	pg.base.activity_ins_template[24] = {
 		ship_group = 30110,
 		name = "HibikiChannel",
 		type = 1,
@@ -1800,11 +1677,7 @@ var_0_3.base.activity_ins_template = {}
 			167
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ins_template
-
-	var_1_24[25] = {
+	pg.base.activity_ins_template[25] = {
 		ship_group = 30221,
 		name = "Nshiro",
 		type = 1,
@@ -1846,11 +1719,7 @@ var_0_3.base.activity_ins_template = {}
 			176
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ins_template
-
-	var_1_25[26] = {
+	pg.base.activity_ins_template[26] = {
 		ship_group = 20603,
 		name = "UnicornI72",
 		type = 1,
@@ -1891,11 +1760,7 @@ var_0_3.base.activity_ins_template = {}
 			182
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ins_template
-
-	var_1_26[27] = {
+	pg.base.activity_ins_template[27] = {
 		ship_group = 49902,
 		name = "SymphonicStigma",
 		type = 1,
@@ -1938,11 +1803,7 @@ var_0_3.base.activity_ins_template = {}
 			190
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ins_template
-
-	var_1_27[28] = {
+	pg.base.activity_ins_template[28] = {
 		ship_group = 30505,
 		name = "SakuraCombinedFleet",
 		type = 1,
@@ -1982,11 +1843,7 @@ var_0_3.base.activity_ins_template = {}
 			193
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ins_template
-
-	var_1_28[29] = {
+	pg.base.activity_ins_template[29] = {
 		ship_group = 30404,
 		name = "KirinnKS",
 		type = 1,
@@ -2027,11 +1884,7 @@ var_0_3.base.activity_ins_template = {}
 			202
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ins_template
-
-	var_1_29[30] = {
+	pg.base.activity_ins_template[30] = {
 		ship_group = 30607,
 		name = "PhoenixWhale",
 		type = 1,
@@ -2073,11 +1926,7 @@ var_0_3.base.activity_ins_template = {}
 			210
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ins_template
-
-	var_1_30[31] = {
+	pg.base.activity_ins_template[31] = {
 		ship_group = 40135,
 		name = "Funf♡3536",
 		type = 1,
@@ -2118,11 +1967,7 @@ var_0_3.base.activity_ins_template = {}
 			216
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ins_template
-
-	var_1_31[32] = {
+	pg.base.activity_ins_template[32] = {
 		ship_group = 30181,
 		name = "fuwarin1118",
 		type = 1,
@@ -2163,11 +2008,7 @@ var_0_3.base.activity_ins_template = {}
 			224
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ins_template
-
-	var_1_32[33] = {
+	pg.base.activity_ins_template[33] = {
 		ship_group = 30208,
 		name = "RageofONI",
 		type = 1,
@@ -2208,11 +2049,7 @@ var_0_3.base.activity_ins_template = {}
 			230
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ins_template
-
-	var_1_33[34] = {
+	pg.base.activity_ins_template[34] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -2253,11 +2090,7 @@ var_0_3.base.activity_ins_template = {}
 			235
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ins_template
-
-	var_1_34[35] = {
+	pg.base.activity_ins_template[35] = {
 		ship_group = 20603,
 		name = "UnicornI72",
 		type = 1,
@@ -2298,11 +2131,7 @@ var_0_3.base.activity_ins_template = {}
 			243
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ins_template
-
-	var_1_35[36] = {
+	pg.base.activity_ins_template[36] = {
 		ship_group = 20207,
 		name = "MINAMIpton",
 		type = 1,
@@ -2343,11 +2172,7 @@ var_0_3.base.activity_ins_template = {}
 			250
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ins_template
-
-	var_1_36[37] = {
+	pg.base.activity_ins_template[37] = {
 		ship_group = 20702,
 		name = "ArkRoyal_Defense",
 		type = 1,
@@ -2388,11 +2213,7 @@ var_0_3.base.activity_ins_template = {}
 			256
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ins_template
-
-	var_1_37[38] = {
+	pg.base.activity_ins_template[38] = {
 		ship_group = 20121,
 		name = "Javelin☆",
 		type = 1,
@@ -2434,11 +2255,7 @@ var_0_3.base.activity_ins_template = {}
 			335
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ins_template
-
-	var_1_38[39] = {
+	pg.base.activity_ins_template[39] = {
 		ship_group = 40304,
 		name = "SPEE_FIGHT",
 		type = 1,
@@ -2479,11 +2296,7 @@ var_0_3.base.activity_ins_template = {}
 			301
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ins_template
-
-	var_1_39[40] = {
+	pg.base.activity_ins_template[40] = {
 		ship_group = 20101,
 		name = "ThornyA",
 		type = 1,
@@ -2524,11 +2337,7 @@ var_0_3.base.activity_ins_template = {}
 			436
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ins_template
-
-	var_1_40[41] = {
+	pg.base.activity_ins_template[41] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -2570,11 +2379,7 @@ var_0_3.base.activity_ins_template = {}
 			267
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ins_template
-
-	var_1_41[42] = {
+	pg.base.activity_ins_template[42] = {
 		ship_group = 30705,
 		name = "KADEKURU",
 		type = 1,
@@ -2616,11 +2421,7 @@ var_0_3.base.activity_ins_template = {}
 			275
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ins_template
-
-	var_1_42[43] = {
+	pg.base.activity_ins_template[43] = {
 		ship_group = 20603,
 		name = "UnicornI72",
 		type = 1,
@@ -2661,11 +2462,7 @@ var_0_3.base.activity_ins_template = {}
 			416
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ins_template
-
-	var_1_43[44] = {
+	pg.base.activity_ins_template[44] = {
 		ship_group = 10601,
 		name = "L.I.",
 		type = 1,
@@ -2706,11 +2503,7 @@ var_0_3.base.activity_ins_template = {}
 			442
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ins_template
-
-	var_1_44[45] = {
+	pg.base.activity_ins_template[45] = {
 		ship_group = 10125,
 		name = "DD_Hammann",
 		type = 1,
@@ -2751,11 +2544,7 @@ var_0_3.base.activity_ins_template = {}
 			424
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ins_template
-
-	var_1_45[46] = {
+	pg.base.activity_ins_template[46] = {
 		ship_group = 40123,
 		name = "Zerstorer23",
 		type = 1,
@@ -2797,11 +2586,7 @@ var_0_3.base.activity_ins_template = {}
 			391
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ins_template
-
-	var_1_46[47] = {
+	pg.base.activity_ins_template[47] = {
 		ship_group = 20220,
 		name = "forMaster_Sirius",
 		type = 1,
@@ -2842,11 +2627,7 @@ var_0_3.base.activity_ins_template = {}
 			374
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ins_template
-
-	var_1_47[48] = {
+	pg.base.activity_ins_template[48] = {
 		ship_group = 30707,
 		name = "OutrangeTH",
 		type = 1,
@@ -2887,11 +2668,7 @@ var_0_3.base.activity_ins_template = {}
 			410
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ins_template
-
-	var_1_48[49] = {
+	pg.base.activity_ins_template[49] = {
 		ship_group = 10709,
 		name = "EssexG1",
 		type = 1,
@@ -2932,11 +2709,7 @@ var_0_3.base.activity_ins_template = {}
 			448
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ins_template
-
-	var_1_49[50] = {
+	pg.base.activity_ins_template[50] = {
 		ship_group = 50201,
 		name = "Yi Xian",
 		type = 1,
@@ -2978,11 +2751,7 @@ var_0_3.base.activity_ins_template = {}
 			363
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ins_template
-
-	var_1_50[51] = {
+	pg.base.activity_ins_template[51] = {
 		ship_group = 30132,
 		name = "Mutsuki",
 		type = 1,
@@ -3023,11 +2792,7 @@ var_0_3.base.activity_ins_template = {}
 			325
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ins_template
-
-	var_1_51[52] = {
+	pg.base.activity_ins_template[52] = {
 		ship_group = 40303,
 		name = "P.Eugen",
 		type = 1,
@@ -3069,11 +2834,7 @@ var_0_3.base.activity_ins_template = {}
 			315
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ins_template
-
-	var_1_52[53] = {
+	pg.base.activity_ins_template[53] = {
 		ship_group = 10706,
 		name = "Enterprise",
 		type = 1,
@@ -3115,11 +2876,7 @@ var_0_3.base.activity_ins_template = {}
 			285
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ins_template
-
-	var_1_53[54] = {
+	pg.base.activity_ins_template[54] = {
 		ship_group = 20212,
 		name = "Belfast_inService",
 		type = 1,
@@ -3161,11 +2918,7 @@ var_0_3.base.activity_ins_template = {}
 			460
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ins_template
-
-	var_1_54[55] = {
+	pg.base.activity_ins_template[55] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -3207,11 +2960,7 @@ var_0_3.base.activity_ins_template = {}
 			353
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ins_template
-
-	var_1_55[56] = {
+	pg.base.activity_ins_template[56] = {
 		ship_group = 10706,
 		name = "Enterprise",
 		type = 1,
@@ -3252,11 +3001,7 @@ var_0_3.base.activity_ins_template = {}
 			342
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ins_template
-
-	var_1_56[57] = {
+	pg.base.activity_ins_template[57] = {
 		ship_group = 40303,
 		name = "P.Eugen",
 		type = 1,
@@ -3298,11 +3043,7 @@ var_0_3.base.activity_ins_template = {}
 			383
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ins_template
-
-	var_1_57[58] = {
+	pg.base.activity_ins_template[58] = {
 		ship_group = 31201,
 		name = "akashi_TUUHAN",
 		type = 1,
@@ -3343,11 +3084,7 @@ var_0_3.base.activity_ins_template = {}
 			404
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ins_template
-
-	var_1_58[59] = {
+	pg.base.activity_ins_template[59] = {
 		ship_group = 30109,
 		name = "NINJA-AKATSUKI",
 		type = 1,
@@ -3388,11 +3125,7 @@ var_0_3.base.activity_ins_template = {}
 			396
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ins_template
-
-	var_1_59[60] = {
+	pg.base.activity_ins_template[60] = {
 		ship_group = 40123,
 		name = "Zerstorer23",
 		type = 1,
@@ -3435,11 +3168,7 @@ var_0_3.base.activity_ins_template = {}
 			431
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ins_template
-
-	var_1_60[61] = {
+	pg.base.activity_ins_template[61] = {
 		ship_group = 50201,
 		name = "Yi Xian",
 		type = 1,
@@ -3480,11 +3209,7 @@ var_0_3.base.activity_ins_template = {}
 			470
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ins_template
-
-	var_1_61[62] = {
+	pg.base.activity_ins_template[62] = {
 		ship_group = 40303,
 		name = "P.Eugen",
 		type = 1,
@@ -3525,11 +3250,7 @@ var_0_3.base.activity_ins_template = {}
 			480
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ins_template
-
-	var_1_62[63] = {
+	pg.base.activity_ins_template[63] = {
 		ship_group = 10703,
 		name = "SisterSara",
 		type = 1,
@@ -3570,11 +3291,7 @@ var_0_3.base.activity_ins_template = {}
 			489
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ins_template
-
-	var_1_63[64] = {
+	pg.base.activity_ins_template[64] = {
 		ship_group = 30405,
 		name = "Amagi",
 		type = 1,
@@ -3615,11 +3332,7 @@ var_0_3.base.activity_ins_template = {}
 			496
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ins_template
-
-	var_1_64[65] = {
+	pg.base.activity_ins_template[65] = {
 		ship_group = 50203,
 		name = "PINGHAI",
 		type = 1,
@@ -3660,11 +3373,7 @@ var_0_3.base.activity_ins_template = {}
 			502
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ins_template
-
-	var_1_65[66] = {
+	pg.base.activity_ins_template[66] = {
 		ship_group = 80101,
 		name = "Le.Triomphant",
 		type = 1,
@@ -3705,11 +3414,7 @@ var_0_3.base.activity_ins_template = {}
 			511
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ins_template
-
-	var_1_66[67] = {
+	pg.base.activity_ins_template[67] = {
 		ship_group = 20603,
 		name = "UnicornI72",
 		type = 1,
@@ -3750,11 +3455,7 @@ var_0_3.base.activity_ins_template = {}
 			519
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ins_template
-
-	var_1_67[68] = {
+	pg.base.activity_ins_template[68] = {
 		ship_group = 30505,
 		name = "SakuraCombinedFleet",
 		type = 1,
@@ -3795,11 +3496,7 @@ var_0_3.base.activity_ins_template = {}
 			526
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ins_template
-
-	var_1_68[69] = {
+	pg.base.activity_ins_template[69] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		type = 1,
@@ -3841,11 +3538,7 @@ var_0_3.base.activity_ins_template = {}
 			536
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ins_template
-
-	var_1_69[70] = {
+	pg.base.activity_ins_template[70] = {
 		ship_group = 49902,
 		name = "SymphonicStigma",
 		type = 1,
@@ -3886,11 +3579,7 @@ var_0_3.base.activity_ins_template = {}
 			544
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ins_template
-
-	var_1_70[71] = {
+	pg.base.activity_ins_template[71] = {
 		ship_group = 10519,
 		name = "2700P.Justice",
 		type = 1,
@@ -3931,11 +3620,7 @@ var_0_3.base.activity_ins_template = {}
 			552
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ins_template
-
-	var_1_71[72] = {
+	pg.base.activity_ins_template[72] = {
 		ship_group = 20215,
 		name = "AuroraRose",
 		type = 1,
@@ -3976,11 +3661,7 @@ var_0_3.base.activity_ins_template = {}
 			563
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ins_template
-
-	var_1_72[73] = {
+	pg.base.activity_ins_template[73] = {
 		ship_group = 30115,
 		name = "LuckyShigure",
 		type = 1,
@@ -4021,11 +3702,7 @@ var_0_3.base.activity_ins_template = {}
 			574
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ins_template
-
-	var_1_73[74] = {
+	pg.base.activity_ins_template[74] = {
 		ship_group = 40501,
 		name = "Bismarck",
 		type = 1,
@@ -4066,11 +3743,7 @@ var_0_3.base.activity_ins_template = {}
 			581
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ins_template
-
-	var_1_74[75] = {
+	pg.base.activity_ins_template[75] = {
 		ship_group = 10212,
 		name = "Honolulu",
 		type = 1,
@@ -4111,11 +3784,7 @@ var_0_3.base.activity_ins_template = {}
 			587
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ins_template
-
-	var_1_75[76] = {
+	pg.base.activity_ins_template[76] = {
 		ship_group = 39904,
 		name = "AzumaB65",
 		type = 1,
@@ -4157,11 +3826,7 @@ var_0_3.base.activity_ins_template = {}
 			597
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ins_template
-
-	var_1_76[77] = {
+	pg.base.activity_ins_template[77] = {
 		ship_group = 29902,
 		name = "Monarch",
 		type = 1,
@@ -4202,11 +3867,7 @@ var_0_3.base.activity_ins_template = {}
 			603
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ins_template
-
-	var_1_77[78] = {
+	pg.base.activity_ins_template[78] = {
 		ship_group = 20220,
 		name = "forMaster_Sirius",
 		type = 1,
@@ -4247,11 +3908,7 @@ var_0_3.base.activity_ins_template = {}
 			614
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ins_template
-
-	var_1_78[79] = {
+	pg.base.activity_ins_template[79] = {
 		ship_group = 10205,
 		name = "HelenaSG",
 		type = 1,
@@ -4293,11 +3950,7 @@ var_0_3.base.activity_ins_template = {}
 			623
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ins_template
-
-	var_1_79[80] = {
+	pg.base.activity_ins_template[80] = {
 		ship_group = 10117,
 		name = "Lafite.82",
 		type = 1,
@@ -4338,11 +3991,7 @@ var_0_3.base.activity_ins_template = {}
 			637
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ins_template
-
-	var_1_80[81] = {
+	pg.base.activity_ins_template[81] = {
 		ship_group = 30312,
 		name = "Atago",
 		type = 1,
@@ -4383,11 +4032,7 @@ var_0_3.base.activity_ins_template = {}
 			647
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ins_template
-
-	var_1_81[82] = {
+	pg.base.activity_ins_template[82] = {
 		ship_group = 20604,
 		name = "CenAlpha",
 		type = 1,
@@ -4428,11 +4073,7 @@ var_0_3.base.activity_ins_template = {}
 			655
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ins_template
-
-	var_1_82[83] = {
+	pg.base.activity_ins_template[83] = {
 		ship_group = 20703,
 		name = "Illustrious",
 		type = 1,
@@ -4473,11 +4114,7 @@ var_0_3.base.activity_ins_template = {}
 			662
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ins_template
-
-	var_1_83[84] = {
+	pg.base.activity_ins_template[84] = {
 		ship_group = 30105,
 		name = "AYANAMIN",
 		type = 1,
@@ -4519,11 +4156,7 @@ var_0_3.base.activity_ins_template = {}
 			673
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ins_template
-
-	var_1_84[85] = {
+	pg.base.activity_ins_template[85] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -4564,11 +4197,7 @@ var_0_3.base.activity_ins_template = {}
 			679
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ins_template
-
-	var_1_85[86] = {
+	pg.base.activity_ins_template[86] = {
 		ship_group = 49901,
 		name = "RoonDESU",
 		type = 1,
@@ -4609,11 +4238,7 @@ var_0_3.base.activity_ins_template = {}
 			700
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ins_template
-
-	var_1_86[87] = {
+	pg.base.activity_ins_template[87] = {
 		ship_group = 40123,
 		name = "Zerstorer23",
 		type = 1,
@@ -4655,11 +4280,7 @@ var_0_3.base.activity_ins_template = {}
 			690
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ins_template
-
-	var_1_87[88] = {
+	pg.base.activity_ins_template[88] = {
 		ship_group = 20227,
 		name = "Howe_Cookies",
 		type = 1,
@@ -4700,11 +4321,7 @@ var_0_3.base.activity_ins_template = {}
 			745
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ins_template
-
-	var_1_88[89] = {
+	pg.base.activity_ins_template[89] = {
 		ship_group = 20606,
 		name = "Per",
 		type = 1,
@@ -4745,11 +4362,7 @@ var_0_3.base.activity_ins_template = {}
 			714
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ins_template
-
-	var_1_89[90] = {
+	pg.base.activity_ins_template[90] = {
 		ship_group = 20510,
 		name = "Hermione",
 		type = 1,
@@ -4790,11 +4403,7 @@ var_0_3.base.activity_ins_template = {}
 			707
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ins_template
-
-	var_1_90[91] = {
+	pg.base.activity_ins_template[91] = {
 		ship_group = 20133,
 		name = "Cmdr_Valiant",
 		type = 1,
@@ -4836,11 +4445,7 @@ var_0_3.base.activity_ins_template = {}
 			724
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ins_template
-
-	var_1_91[92] = {
+	pg.base.activity_ins_template[92] = {
 		ship_group = 20701,
 		name = "Icarus_Wing",
 		type = 1,
@@ -4881,11 +4486,7 @@ var_0_3.base.activity_ins_template = {}
 			731
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_ins_template
-
-	var_1_92[93] = {
+	pg.base.activity_ins_template[93] = {
 		ship_group = 20509,
 		name = "Eagle",
 		type = 1,
@@ -4926,11 +4527,7 @@ var_0_3.base.activity_ins_template = {}
 			740
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_ins_template
-
-	var_1_93[94] = {
+	pg.base.activity_ins_template[94] = {
 		ship_group = 20509,
 		name = "Per",
 		type = 1,
@@ -4971,11 +4568,7 @@ var_0_3.base.activity_ins_template = {}
 			764
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_ins_template
-
-	var_1_94[95] = {
+	pg.base.activity_ins_template[95] = {
 		ship_group = 20606,
 		name = "Eagle",
 		type = 1,
@@ -5017,11 +4610,7 @@ var_0_3.base.activity_ins_template = {}
 			775
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_ins_template
-
-	var_1_95[96] = {
+	pg.base.activity_ins_template[96] = {
 		ship_group = 20701,
 		name = "Hermione",
 		type = 1,
@@ -5062,11 +4651,7 @@ var_0_3.base.activity_ins_template = {}
 			783
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_ins_template
-
-	var_1_96[97] = {
+	pg.base.activity_ins_template[97] = {
 		ship_group = 20227,
 		name = "Icarus_Wing",
 		type = 1,
@@ -5108,11 +4693,7 @@ var_0_3.base.activity_ins_template = {}
 			791
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_ins_template
-
-	var_1_97[98] = {
+	pg.base.activity_ins_template[98] = {
 		ship_group = 20133,
 		name = "Cmdr_Valiant",
 		type = 1,
@@ -5153,11 +4734,7 @@ var_0_3.base.activity_ins_template = {}
 			799
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_ins_template
-
-	var_1_98[99] = {
+	pg.base.activity_ins_template[99] = {
 		ship_group = 20510,
 		name = "Howe_Cookies",
 		type = 1,
@@ -5198,8 +4775,7 @@ var_0_3.base.activity_ins_template = {}
 			755
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_ins_template[100] = {
+	pg.base.activity_ins_template[100] = {
 		ship_group = 30505,
 		name = "SakuraCombinedFleet",
 		type = 1,
@@ -5244,11 +4820,7 @@ var_0_3.base.activity_ins_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_ins_template
-
-	var_2_0[101] = {
+	pg.base.activity_ins_template[101] = {
 		ship_group = 29901,
 		name = "Neptune",
 		type = 1,
@@ -5289,11 +4861,7 @@ end)()
 			830
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_ins_template
-
-	var_2_1[102] = {
+	pg.base.activity_ins_template[102] = {
 		ship_group = 10738,
 		name = "Shangri-La",
 		type = 1,
@@ -5335,11 +4903,7 @@ end)()
 			839
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_ins_template
-
-	var_2_2[103] = {
+	pg.base.activity_ins_template[103] = {
 		ship_group = 10738,
 		name = "Shangri-La",
 		type = 1,
@@ -5380,11 +4944,7 @@ end)()
 			844
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_ins_template
-
-	var_2_3[104] = {
+	pg.base.activity_ins_template[104] = {
 		ship_group = 10213,
 		name = "Lucky Lou",
 		type = 1,
@@ -5425,11 +4985,7 @@ end)()
 			856
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_ins_template
-
-	var_2_4[105] = {
+	pg.base.activity_ins_template[105] = {
 		ship_group = 30702,
 		name = "Ran_mew",
 		type = 1,
@@ -5470,11 +5026,7 @@ end)()
 			880
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_ins_template
-
-	var_2_5[106] = {
+	pg.base.activity_ins_template[106] = {
 		ship_group = 20220,
 		name = "forMaster_Sirius",
 		type = 1,
@@ -5515,11 +5067,7 @@ end)()
 			890
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_ins_template
-
-	var_2_6[107] = {
+	pg.base.activity_ins_template[107] = {
 		ship_group = 10316,
 		name = "Justice_B",
 		type = 1,
@@ -5560,11 +5108,7 @@ end)()
 			899
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_ins_template
-
-	var_2_7[108] = {
+	pg.base.activity_ins_template[108] = {
 		ship_group = 90111,
 		name = "VivaLaze",
 		type = 1,
@@ -5605,11 +5149,7 @@ end)()
 			907
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_ins_template
-
-	var_2_8[109] = {
+	pg.base.activity_ins_template[109] = {
 		ship_group = 30317,
 		name = "Suzu✩",
 		type = 1,
@@ -5650,11 +5190,7 @@ end)()
 			917
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_ins_template
-
-	var_2_9[111] = {
+	pg.base.activity_ins_template[111] = {
 		ship_group = 30116,
 		name = "SnowStorm",
 		type = 1,
@@ -5696,11 +5232,7 @@ end)()
 			934
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_ins_template
-
-	var_2_10[112] = {
+	pg.base.activity_ins_template[112] = {
 		ship_group = 30114,
 		name = "NikuSuki",
 		type = 1,
@@ -5741,11 +5273,7 @@ end)()
 			944
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_ins_template
-
-	var_2_11[113] = {
+	pg.base.activity_ins_template[113] = {
 		ship_group = 30707,
 		name = "OutrangeTH",
 		type = 1,
@@ -5786,11 +5314,7 @@ end)()
 			954
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_ins_template
-
-	var_2_12[114] = {
+	pg.base.activity_ins_template[114] = {
 		ship_group = 30511,
 		name = "Mikasa",
 		type = 1,
@@ -5831,11 +5355,7 @@ end)()
 			962
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_ins_template
-
-	var_2_13[115] = {
+	pg.base.activity_ins_template[115] = {
 		ship_group = 10212,
 		name = "Honolulu",
 		type = 1,
@@ -5876,11 +5396,7 @@ end)()
 			970
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_ins_template
-
-	var_2_14[116] = {
+	pg.base.activity_ins_template[116] = {
 		ship_group = 20704,
 		name = "Victorious",
 		type = 1,
@@ -5921,11 +5437,7 @@ end)()
 			980
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_ins_template
-
-	var_2_15[117] = {
+	pg.base.activity_ins_template[117] = {
 		ship_group = 60502,
 		name = "VV_Littorio",
 		type = 1,
@@ -5966,11 +5478,7 @@ end)()
 			988
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_ins_template
-
-	var_2_16[118] = {
+	pg.base.activity_ins_template[118] = {
 		ship_group = 89902,
 		name = "Champagne",
 		type = 1,
@@ -6011,11 +5519,7 @@ end)()
 			998
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_ins_template
-
-	var_2_17[119] = {
+	pg.base.activity_ins_template[119] = {
 		ship_group = 20705,
 		name = "Formidable",
 		type = 1,
@@ -6056,11 +5560,7 @@ end)()
 			1005
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_ins_template
-
-	var_2_18[120] = {
+	pg.base.activity_ins_template[120] = {
 		ship_group = 40146,
 		name = "viersech",
 		type = 1,
@@ -6101,11 +5601,7 @@ end)()
 			1014
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_ins_template
-
-	var_2_19[121] = {
+	pg.base.activity_ins_template[121] = {
 		ship_group = 40305,
 		name = "GRAFSPEE",
 		type = 1,
@@ -6146,11 +5642,7 @@ end)()
 			1025
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_ins_template
-
-	var_2_20[122] = {
+	pg.base.activity_ins_template[122] = {
 		ship_group = 20204,
 		name = "Dido_Doll",
 		type = 1,
@@ -6191,11 +5683,7 @@ end)()
 			1035
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_ins_template
-
-	var_2_21[123] = {
+	pg.base.activity_ins_template[123] = {
 		ship_group = 10324,
 		name = "Bremerton",
 		type = 1,
@@ -6236,11 +5724,7 @@ end)()
 			1043
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_ins_template
-
-	var_2_22[124] = {
+	pg.base.activity_ins_template[124] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -6281,11 +5765,7 @@ end)()
 			1053
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_ins_template
-
-	var_2_23[125] = {
+	pg.base.activity_ins_template[125] = {
 		ship_group = 89901,
 		name = "S.Louis",
 		type = 1,
@@ -6326,11 +5806,7 @@ end)()
 			1059
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_ins_template
-
-	var_2_24[126] = {
+	pg.base.activity_ins_template[126] = {
 		ship_group = 80801,
 		name = "P.P.O",
 		type = 1,
@@ -6372,11 +5848,7 @@ end)()
 			1068
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_ins_template
-
-	var_2_25[127] = {
+	pg.base.activity_ins_template[127] = {
 		ship_group = 70505,
 		name = "Proj23.Ros",
 		type = 1,
@@ -6417,11 +5889,7 @@ end)()
 			1076
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_ins_template
-
-	var_2_26[128] = {
+	pg.base.activity_ins_template[128] = {
 		ship_group = 30221,
 		name = "Nshiro",
 		type = 1,
@@ -6462,11 +5930,7 @@ end)()
 			1084
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_ins_template
-
-	var_2_27[129] = {
+	pg.base.activity_ins_template[129] = {
 		ship_group = 20703,
 		name = "Illustrious",
 		type = 1,
@@ -6507,11 +5971,7 @@ end)()
 			1096
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_ins_template
-
-	var_2_28[130] = {
+	pg.base.activity_ins_template[130] = {
 		ship_group = 30707,
 		name = "OutrangeTH",
 		type = 1,
@@ -6552,11 +6012,7 @@ end)()
 			1105
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_ins_template
-
-	var_2_29[131] = {
+	pg.base.activity_ins_template[131] = {
 		ship_group = 80101,
 		name = "Le.Triomphant",
 		type = 1,
@@ -6597,11 +6053,7 @@ end)()
 			1116
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_ins_template
-
-	var_2_30[132] = {
+	pg.base.activity_ins_template[132] = {
 		ship_group = 90112,
 		name = "VivaLaze",
 		type = 1,
@@ -6643,11 +6095,7 @@ end)()
 			1128
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_ins_template
-
-	var_2_31[133] = {
+	pg.base.activity_ins_template[133] = {
 		ship_group = 20204,
 		name = "Dido_Doll",
 		type = 1,
@@ -6688,11 +6136,7 @@ end)()
 			1135
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_ins_template
-
-	var_2_32[134] = {
+	pg.base.activity_ins_template[134] = {
 		ship_group = 10316,
 		name = "Justice_B",
 		type = 1,
@@ -6734,11 +6178,7 @@ end)()
 			1146
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_ins_template
-
-	var_2_33[135] = {
+	pg.base.activity_ins_template[135] = {
 		ship_group = 49901,
 		name = "RoonDESU",
 		type = 1,
@@ -6780,11 +6220,7 @@ end)()
 			1158
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_ins_template
-
-	var_2_34[136] = {
+	pg.base.activity_ins_template[136] = {
 		ship_group = 70104,
 		name = "Ташкент",
 		type = 1,
@@ -6825,11 +6261,7 @@ end)()
 			1168
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_ins_template
-
-	var_2_35[137] = {
+	pg.base.activity_ins_template[137] = {
 		ship_group = 10802,
 		name = "G_Albacore",
 		type = 1,
@@ -6870,11 +6302,7 @@ end)()
 			1178
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_ins_template
-
-	var_2_36[138] = {
+	pg.base.activity_ins_template[138] = {
 		ship_group = 30707,
 		name = "OutrangeTH",
 		type = 1,
@@ -6915,11 +6343,7 @@ end)()
 			1188
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_ins_template
-
-	var_2_37[139] = {
+	pg.base.activity_ins_template[139] = {
 		ship_group = 49901,
 		name = "RoonDESU",
 		type = 1,
@@ -6961,11 +6385,7 @@ end)()
 			1202
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_ins_template
-
-	var_2_38[140] = {
+	pg.base.activity_ins_template[140] = {
 		ship_group = 10316,
 		name = "Justice_B",
 		type = 1,
@@ -7006,11 +6426,7 @@ end)()
 			1213
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_ins_template
-
-	var_2_39[141] = {
+	pg.base.activity_ins_template[141] = {
 		ship_group = 20703,
 		name = "Formidable",
 		type = 1,
@@ -7051,11 +6467,7 @@ end)()
 			1222
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_ins_template
-
-	var_2_40[142] = {
+	pg.base.activity_ins_template[142] = {
 		ship_group = 70104,
 		name = "Ташкент",
 		type = 1,
@@ -7096,11 +6508,7 @@ end)()
 			1230
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_ins_template
-
-	var_2_41[143] = {
+	pg.base.activity_ins_template[143] = {
 		ship_group = 20204,
 		name = "Dido_Doll",
 		type = 1,
@@ -7142,11 +6550,7 @@ end)()
 			1243
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_ins_template
-
-	var_2_42[144] = {
+	pg.base.activity_ins_template[144] = {
 		ship_group = 10802,
 		name = "G_Albacore",
 		type = 1,
@@ -7187,11 +6591,7 @@ end)()
 			1253
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_ins_template
-
-	var_2_43[145] = {
+	pg.base.activity_ins_template[145] = {
 		ship_group = 1060004,
 		name = "Misaki",
 		type = 1,
@@ -7233,11 +6633,7 @@ end)()
 			1263
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_ins_template
-
-	var_2_44[146] = {
+	pg.base.activity_ins_template[146] = {
 		ship_group = 1060005,
 		name = "Nagisa",
 		type = 1,
@@ -7278,11 +6674,7 @@ end)()
 			1275
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_ins_template
-
-	var_2_45[147] = {
+	pg.base.activity_ins_template[147] = {
 		ship_group = 1060001,
 		name = "Marie",
 		type = 1,
@@ -7324,11 +6716,7 @@ end)()
 			1287
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_ins_template
-
-	var_2_46[148] = {
+	pg.base.activity_ins_template[148] = {
 		ship_group = 1060002,
 		name = "Honoka",
 		type = 1,
@@ -7369,11 +6757,7 @@ end)()
 			1312
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_ins_template
-
-	var_2_47[149] = {
+	pg.base.activity_ins_template[149] = {
 		ship_group = 30303,
 		name = "REPORTER_AOBA",
 		type = 1,
@@ -7414,11 +6798,7 @@ end)()
 			1297
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_ins_template
-
-	var_2_48[150] = {
+	pg.base.activity_ins_template[150] = {
 		ship_group = 1060006,
 		name = "Nyotengu",
 		type = 1,
@@ -7459,11 +6839,7 @@ end)()
 			1305
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_ins_template
-
-	var_2_49[151] = {
+	pg.base.activity_ins_template[151] = {
 		ship_group = 1060007,
 		name = "Monica",
 		type = 1,
@@ -7505,11 +6881,7 @@ end)()
 			1355
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_ins_template
-
-	var_2_50[152] = {
+	pg.base.activity_ins_template[152] = {
 		ship_group = 1060001,
 		name = "Marie",
 		type = 1,
@@ -7551,11 +6923,7 @@ end)()
 			1337
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_ins_template
-
-	var_2_51[153] = {
+	pg.base.activity_ins_template[153] = {
 		ship_group = 30127,
 		name = "Nin_Kuroshio",
 		type = 1,
@@ -7597,11 +6965,7 @@ end)()
 			1323
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_ins_template
-
-	var_2_52[154] = {
+	pg.base.activity_ins_template[154] = {
 		ship_group = 1060002,
 		name = "Honoka",
 		type = 1,
@@ -7643,11 +7007,7 @@ end)()
 			1381
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_ins_template
-
-	var_2_53[155] = {
+	pg.base.activity_ins_template[155] = {
 		ship_group = 1060004,
 		name = "Misaki",
 		type = 1,
@@ -7688,11 +7048,7 @@ end)()
 			1344
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_ins_template
-
-	var_2_54[156] = {
+	pg.base.activity_ins_template[156] = {
 		ship_group = 1060006,
 		name = "Nyotengu",
 		type = 1,
@@ -7733,11 +7089,7 @@ end)()
 			1363
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_ins_template
-
-	var_2_55[157] = {
+	pg.base.activity_ins_template[157] = {
 		ship_group = 1060003,
 		name = "Kasumi",
 		type = 1,
@@ -7778,11 +7130,7 @@ end)()
 			1371
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_ins_template
-
-	var_2_56[158] = {
+	pg.base.activity_ins_template[158] = {
 		ship_group = 1060004,
 		name = "Misaki",
 		type = 1,
@@ -7823,11 +7171,7 @@ end)()
 			1388
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_ins_template
-
-	var_2_57[159] = {
+	pg.base.activity_ins_template[159] = {
 		ship_group = 10227,
 		name = "Marblehead",
 		type = 1,
@@ -7869,11 +7213,7 @@ end)()
 			1402
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_ins_template
-
-	var_2_58[160] = {
+	pg.base.activity_ins_template[160] = {
 		ship_group = 10144,
 		name = "BlackCat",
 		type = 1,
@@ -7914,11 +7254,7 @@ end)()
 			1411
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_ins_template
-
-	var_2_59[161] = {
+	pg.base.activity_ins_template[161] = {
 		ship_group = 10124,
 		name = "Sims",
 		type = 1,
@@ -7959,11 +7295,7 @@ end)()
 			1420
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_ins_template
-
-	var_2_60[162] = {
+	pg.base.activity_ins_template[162] = {
 		ship_group = 30114,
 		name = "NikuSuki",
 		type = 1,
@@ -8004,11 +7336,7 @@ end)()
 			1429
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_ins_template
-
-	var_2_61[163] = {
+	pg.base.activity_ins_template[163] = {
 		ship_group = 10313,
 		name = "Minnie.Hunter",
 		type = 1,
@@ -8049,11 +7377,7 @@ end)()
 			1437
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_ins_template
-
-	var_2_62[164] = {
+	pg.base.activity_ins_template[164] = {
 		ship_group = 10130,
 		name = "DD.Jenkins",
 		type = 1,
@@ -8094,11 +7418,7 @@ end)()
 			1446
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_ins_template
-
-	var_2_63[165] = {
+	pg.base.activity_ins_template[165] = {
 		ship_group = 40502,
 		name = "Tirpitz",
 		type = 1,
@@ -8140,11 +7460,7 @@ end)()
 			1456
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_ins_template
-
-	var_2_64[166] = {
+	pg.base.activity_ins_template[166] = {
 		ship_group = 20212,
 		name = "Belfast_inService",
 		type = 1,
@@ -8186,11 +7502,7 @@ end)()
 			1466
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_ins_template
-
-	var_2_65[167] = {
+	pg.base.activity_ins_template[167] = {
 		ship_group = 30405,
 		name = "Amagi",
 		type = 1,
@@ -8231,11 +7543,7 @@ end)()
 			1471
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_ins_template
-
-	var_2_66[168] = {
+	pg.base.activity_ins_template[168] = {
 		ship_group = 40808,
 		name = "HAI_110 ",
 		type = 1,
@@ -8276,11 +7584,7 @@ end)()
 			1477
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_ins_template
-
-	var_2_67[169] = {
+	pg.base.activity_ins_template[169] = {
 		ship_group = 30184,
 		name = "Puuta",
 		type = 1,
@@ -8322,11 +7626,7 @@ end)()
 			1487
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_ins_template
-
-	var_2_68[170] = {
+	pg.base.activity_ins_template[170] = {
 		ship_group = 49903,
 		name = "Mainz",
 		type = 1,
@@ -8367,11 +7667,7 @@ end)()
 			1496
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_ins_template
-
-	var_2_69[171] = {
+	pg.base.activity_ins_template[171] = {
 		ship_group = 30708,
 		name = "Shinano",
 		type = 1,
@@ -8413,11 +7709,7 @@ end)()
 			1508
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_ins_template
-
-	var_2_70[172] = {
+	pg.base.activity_ins_template[172] = {
 		ship_group = 40128,
 		name = "Zerstörer28",
 		type = 1,
@@ -8458,11 +7750,7 @@ end)()
 			1516
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_ins_template
-
-	var_2_71[173] = {
+	pg.base.activity_ins_template[173] = {
 		ship_group = 10225,
 		name = "Biloxi",
 		type = 1,
@@ -8504,11 +7792,7 @@ end)()
 			1526
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_ins_template
-
-	var_2_72[174] = {
+	pg.base.activity_ins_template[174] = {
 		ship_group = 30609,
 		name = "Chiyoda",
 		type = 1,
@@ -8550,11 +7834,7 @@ end)()
 			1536
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_ins_template
-
-	var_2_73[175] = {
+	pg.base.activity_ins_template[175] = {
 		ship_group = 80801,
 		name = "P.P.O",
 		type = 1,
@@ -8595,11 +7875,7 @@ end)()
 			1545
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_ins_template
-
-	var_2_74[176] = {
+	pg.base.activity_ins_template[176] = {
 		ship_group = 30508,
 		name = "Tosa",
 		type = 1,
@@ -8640,11 +7916,7 @@ end)()
 			1553
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_ins_template
-
-	var_2_75[177] = {
+	pg.base.activity_ins_template[177] = {
 		ship_group = 30403,
 		name = "Haruna",
 		type = 1,
@@ -8686,11 +7958,7 @@ end)()
 			1563
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_ins_template
-
-	var_2_76[178] = {
+	pg.base.activity_ins_template[178] = {
 		ship_group = 39903,
 		name = "Kitakaze",
 		type = 1,
@@ -8731,11 +7999,7 @@ end)()
 			1570
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_ins_template
-
-	var_2_77[179] = {
+	pg.base.activity_ins_template[179] = {
 		ship_group = 70102,
 		name = "Grozny",
 		type = 1,
@@ -8776,11 +8040,7 @@ end)()
 			1578
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_ins_template
-
-	var_2_78[180] = {
+	pg.base.activity_ins_template[180] = {
 		ship_group = 30512,
 		name = "Kii",
 		type = 1,
@@ -8822,11 +8082,7 @@ end)()
 			1588
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_ins_template
-
-	var_2_79[181] = {
+	pg.base.activity_ins_template[181] = {
 		ship_group = 30111,
 		name = "RAI",
 		type = 1,
@@ -8867,11 +8123,7 @@ end)()
 			1595
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_ins_template
-
-	var_2_80[182] = {
+	pg.base.activity_ins_template[182] = {
 		ship_group = 10601,
 		name = "L.I.",
 		type = 1,
@@ -8913,11 +8165,7 @@ end)()
 			1607
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_ins_template
-
-	var_2_81[183] = {
+	pg.base.activity_ins_template[183] = {
 		ship_group = 49904,
 		name = "Odin",
 		type = 1,
@@ -8959,11 +8207,7 @@ end)()
 			1618
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_ins_template
-
-	var_2_82[184] = {
+	pg.base.activity_ins_template[184] = {
 		ship_group = 39902,
 		name = "Izumo",
 		type = 1,
@@ -9004,11 +8248,7 @@ end)()
 			1627
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_ins_template
-
-	var_2_83[185] = {
+	pg.base.activity_ins_template[185] = {
 		ship_group = 50203,
 		name = "PINGHAI",
 		type = 1,
@@ -9049,11 +8289,7 @@ end)()
 			1633
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_ins_template
-
-	var_2_84[186] = {
+	pg.base.activity_ins_template[186] = {
 		ship_group = 29903,
 		name = "CaitSith",
 		type = 1,
@@ -9094,11 +8330,7 @@ end)()
 			1642
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_ins_template
-
-	var_2_85[187] = {
+	pg.base.activity_ins_template[187] = {
 		ship_group = 70203,
 		name = "Chapaev",
 		type = 1,
@@ -9140,11 +8372,7 @@ end)()
 			1652
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_ins_template
-
-	var_2_86[188] = {
+	pg.base.activity_ins_template[188] = {
 		ship_group = 10324,
 		name = "Bremerton",
 		type = 1,
@@ -9185,11 +8413,7 @@ end)()
 			1658
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_ins_template
-
-	var_2_87[189] = {
+	pg.base.activity_ins_template[189] = {
 		ship_group = 60303,
 		name = "Pola",
 		type = 1,
@@ -9230,11 +8454,7 @@ end)()
 			1668
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_ins_template
-
-	var_2_88[190] = {
+	pg.base.activity_ins_template[190] = {
 		ship_group = 10226,
 		name = "HerosAides",
 		type = 1,
@@ -9276,11 +8496,7 @@ end)()
 			1679
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_ins_template
-
-	var_2_89[191] = {
+	pg.base.activity_ins_template[191] = {
 		ship_group = 80501,
 		name = "Richelieu",
 		type = 1,
@@ -9321,11 +8537,7 @@ end)()
 			1685
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_ins_template
-
-	var_2_90[192] = {
+	pg.base.activity_ins_template[192] = {
 		ship_group = 90401,
 		name = "gateaumistress",
 		type = 1,
@@ -9366,11 +8578,7 @@ end)()
 			1694
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_ins_template
-
-	var_2_91[193] = {
+	pg.base.activity_ins_template[193] = {
 		ship_group = 50201,
 		name = "Yi Xian",
 		type = 1,
@@ -9412,11 +8620,7 @@ end)()
 			1704
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_ins_template
-
-	var_2_92[194] = {
+	pg.base.activity_ins_template[194] = {
 		ship_group = 89902,
 		name = "ChangChun",
 		type = 1,
@@ -9457,11 +8661,7 @@ end)()
 			1719
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_ins_template
-
-	var_2_93[195] = {
+	pg.base.activity_ins_template[195] = {
 		ship_group = 50103,
 		name = "Champagne",
 		type = 1,
@@ -9502,11 +8702,7 @@ end)()
 			1711
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_ins_template
-
-	var_2_94[196] = {
+	pg.base.activity_ins_template[196] = {
 		ship_group = 20132,
 		name = "Eskimo",
 		type = 1,
@@ -9548,11 +8744,7 @@ end)()
 			1728
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_ins_template
-
-	var_2_95[197] = {
+	pg.base.activity_ins_template[197] = {
 		ship_group = 20204,
 		name = "Dido_Doll",
 		type = 1,
@@ -9594,11 +8786,7 @@ end)()
 			1737
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_ins_template
-
-	var_2_96[198] = {
+	pg.base.activity_ins_template[198] = {
 		ship_group = 29904,
 		name = "Drake",
 		type = 1,
@@ -9640,11 +8828,7 @@ end)()
 			1745
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_ins_template
-
-	var_2_97[199] = {
+	pg.base.activity_ins_template[199] = {
 		ship_group = 31901,
 		name = "Kashino",
 		type = 1,
@@ -9686,11 +8870,7 @@ end)()
 			1753
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_ins_template
-
-	var_2_98[200] = {
+	pg.base.activity_ins_template[200] = {
 		ship_group = 30318,
 		name = "Kuma✩",
 		type = 1,
@@ -9731,8 +8911,7 @@ end)()
 			1760
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.activity_ins_template[201] = {
+	pg.base.activity_ins_template[201] = {
 		ship_group = 60502,
 		name = "VV_Littorio",
 		type = 1,
@@ -9777,11 +8956,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_ins_template
-
-	var_3_0[202] = {
+	pg.base.activity_ins_template[202] = {
 		ship_group = 70504,
 		name = "Proj23.Bel",
 		type = 1,
@@ -9823,11 +8998,7 @@ end)()
 			1776
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_ins_template
-
-	var_3_1[203] = {
+	pg.base.activity_ins_template[203] = {
 		ship_group = 70301,
 		name = "Tallinn",
 		type = 1,
@@ -9869,11 +9040,7 @@ end)()
 			1786
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_ins_template
-
-	var_3_2[204] = {
+	pg.base.activity_ins_template[204] = {
 		ship_group = 70206,
 		name = "Мурманск",
 		type = 1,
@@ -9915,11 +9082,7 @@ end)()
 			1794
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_ins_template
-
-	var_3_3[205] = {
+	pg.base.activity_ins_template[205] = {
 		ship_group = 70108,
 		name = "Громкий",
 		type = 1,
@@ -9961,11 +9124,7 @@ end)()
 			1804
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_ins_template
-
-	var_3_4[206] = {
+	pg.base.activity_ins_template[206] = {
 		ship_group = 70107,
 		name = "ремящий",
 		type = 1,
@@ -10007,11 +9166,7 @@ end)()
 			1814
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_ins_template
-
-	var_3_5[207] = {
+	pg.base.activity_ins_template[207] = {
 		ship_group = 70204,
 		name = "Киров",
 		type = 1,
@@ -10053,11 +9208,7 @@ end)()
 			1823
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_ins_template
-
-	var_3_6[208] = {
+	pg.base.activity_ins_template[208] = {
 		ship_group = 60106,
 		name = "Captain.Da.Recco",
 		type = 1,
@@ -10098,11 +9249,7 @@ end)()
 			1831
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_ins_template
-
-	var_3_7[209] = {
+	pg.base.activity_ins_template[209] = {
 		ship_group = 60501,
 		name = "VV_Veneto",
 		type = 1,
@@ -10145,11 +9292,7 @@ end)()
 			1842
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_ins_template
-
-	var_3_8[210] = {
+	pg.base.activity_ins_template[210] = {
 		ship_group = 60201,
 		name = "C_Abruzzi",
 		type = 1,
@@ -10191,11 +9334,7 @@ end)()
 			1850
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_ins_template
-
-	var_3_9[211] = {
+	pg.base.activity_ins_template[211] = {
 		ship_group = 60701,
 		name = "Aquila",
 		type = 1,
@@ -10236,11 +9375,7 @@ end)()
 			1856
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_ins_template
-
-	var_3_10[212] = {
+	pg.base.activity_ins_template[212] = {
 		ship_group = 60801,
 		name = "Torricelli",
 		type = 1,
@@ -10282,11 +9417,7 @@ end)()
 			1866
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_ins_template
-
-	var_3_11[213] = {
+	pg.base.activity_ins_template[213] = {
 		ship_group = 60104,
 		name = "Maestrale",
 		type = 1,
@@ -10327,11 +9458,7 @@ end)()
 			1872
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_ins_template
-
-	var_3_12[214] = {
+	pg.base.activity_ins_template[214] = {
 		ship_group = 60105,
 		name = "Libeccio",
 		type = 1,
@@ -10373,11 +9500,7 @@ end)()
 			1881
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_ins_template
-
-	var_3_13[215] = {
+	pg.base.activity_ins_template[215] = {
 		ship_group = 10714,
 		name = "Ticonderoga",
 		type = 1,
@@ -10418,11 +9541,7 @@ end)()
 			1937
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_ins_template
-
-	var_3_14[216] = {
+	pg.base.activity_ins_template[216] = {
 		ship_group = 10517,
 		name = "BlackDragon",
 		type = 1,
@@ -10464,11 +9583,7 @@ end)()
 			1946
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_ins_template
-
-	var_3_15[217] = {
+	pg.base.activity_ins_template[217] = {
 		ship_group = 10806,
 		name = "CharmArcher",
 		type = 1,
@@ -10510,11 +9625,7 @@ end)()
 			1913
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_ins_template
-
-	var_3_16[218] = {
+	pg.base.activity_ins_template[218] = {
 		ship_group = 30801,
 		name = "I19_sensuisenntai",
 		type = 1,
@@ -10556,11 +9667,7 @@ end)()
 			1920
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_ins_template
-
-	var_3_17[219] = {
+	pg.base.activity_ins_template[219] = {
 		ship_group = 10314,
 		name = "HappyEveryDay!",
 		type = 1,
@@ -10602,11 +9709,7 @@ end)()
 			1929
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_ins_template
-
-	var_3_18[220] = {
+	pg.base.activity_ins_template[220] = {
 		ship_group = 10229,
 		name = "USSBOISE",
 		type = 1,
@@ -10648,11 +9751,7 @@ end)()
 			1901
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_ins_template
-
-	var_3_19[221] = {
+	pg.base.activity_ins_template[221] = {
 		ship_group = 10147,
 		name = "Bear-MKII",
 		type = 1,
@@ -10694,11 +9793,7 @@ end)()
 			1891
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_ins_template
-
-	var_3_20[222] = {
+	pg.base.activity_ins_template[222] = {
 		ship_group = 50204,
 		name = "Yingrui",
 		type = 1,
@@ -10740,11 +9835,7 @@ end)()
 			1955
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_ins_template
-
-	var_3_21[223] = {
+	pg.base.activity_ins_template[223] = {
 		ship_group = 20705,
 		name = "Formidable",
 		type = 1,
@@ -10786,11 +9877,7 @@ end)()
 			1967
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_ins_template
-
-	var_3_22[224] = {
+	pg.base.activity_ins_template[224] = {
 		ship_group = 89902,
 		name = "Isuzuzu",
 		type = 1,
@@ -10832,11 +9919,7 @@ end)()
 			1977
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_ins_template
-
-	var_3_23[225] = {
+	pg.base.activity_ins_template[225] = {
 		ship_group = 30205,
 		name = "Champagne",
 		type = 1,
@@ -10877,11 +9960,7 @@ end)()
 			1983
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_ins_template
-
-	var_3_24[226] = {
+	pg.base.activity_ins_template[226] = {
 		ship_group = 40601,
 		name = "Weser",
 		type = 1,
@@ -10923,11 +10002,7 @@ end)()
 			1995
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_ins_template
-
-	var_3_25[227] = {
+	pg.base.activity_ins_template[227] = {
 		ship_group = 10112,
 		name = "L.B.Thatcher",
 		type = 1,
@@ -10968,11 +10043,7 @@ end)()
 			2003
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_ins_template
-
-	var_3_26[228] = {
+	pg.base.activity_ins_template[228] = {
 		ship_group = 70104,
 		name = "Ташкент",
 		type = 1,
@@ -11013,11 +10084,7 @@ end)()
 			2012
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_ins_template
-
-	var_3_27[229] = {
+	pg.base.activity_ins_template[229] = {
 		ship_group = 10209,
 		name = "Cleveland☆Knight",
 		type = 1,
@@ -11059,11 +10126,7 @@ end)()
 			2021
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_ins_template
-
-	var_3_28[230] = {
+	pg.base.activity_ins_template[230] = {
 		ship_group = 40703,
 		name = "FlugzeugträgerB ",
 		type = 1,
@@ -11104,11 +10167,7 @@ end)()
 			2029
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_ins_template
-
-	var_3_29[231] = {
+	pg.base.activity_ins_template[231] = {
 		ship_group = 10214,
 		name = "Cleve-FC.1",
 		type = 1,
@@ -11150,11 +10209,7 @@ end)()
 			2039
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_ins_template
-
-	var_3_30[232] = {
+	pg.base.activity_ins_template[232] = {
 		ship_group = 20224,
 		name = "White Princess",
 		type = 1,
@@ -11195,11 +10250,7 @@ end)()
 			2044
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_ins_template
-
-	var_3_31[233] = {
+	pg.base.activity_ins_template[233] = {
 		ship_group = 20703,
 		name = "Illustrious",
 		type = 1,
@@ -11240,11 +10291,7 @@ end)()
 			2051
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_ins_template
-
-	var_3_32[234] = {
+	pg.base.activity_ins_template[234] = {
 		ship_group = 49902,
 		name = "SymphonicStigma",
 		type = 1,
@@ -11285,11 +10332,7 @@ end)()
 			2060
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_ins_template
-
-	var_3_33[235] = {
+	pg.base.activity_ins_template[235] = {
 		ship_group = 1070004,
 		name = "Azusa_Miura",
 		type = 1,
@@ -11330,11 +10373,7 @@ end)()
 			2070
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_ins_template
-
-	var_3_34[236] = {
+	pg.base.activity_ins_template[236] = {
 		ship_group = 1070001,
 		name = "Haruka_Amami",
 		type = 1,
@@ -11376,11 +10415,7 @@ end)()
 			2082
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_ins_template
-
-	var_3_35[237] = {
+	pg.base.activity_ins_template[237] = {
 		ship_group = 1070002,
 		name = "Chihaya_Kisaragi",
 		type = 1,
@@ -11423,11 +10458,7 @@ end)()
 			2097
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_ins_template
-
-	var_3_36[238] = {
+	pg.base.activity_ins_template[238] = {
 		ship_group = 1070003,
 		name = "Iori_Minase",
 		type = 1,
@@ -11468,11 +10499,7 @@ end)()
 			2105
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_ins_template
-
-	var_3_37[239] = {
+	pg.base.activity_ins_template[239] = {
 		ship_group = 1070005,
 		name = "Ritsuko_Akizuki",
 		type = 1,
@@ -11514,11 +10541,7 @@ end)()
 			2117
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_ins_template
-
-	var_3_38[240] = {
+	pg.base.activity_ins_template[240] = {
 		ship_group = 1070006,
 		name = "Ami_Futami",
 		type = 1,
@@ -11559,11 +10582,7 @@ end)()
 			2125
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_ins_template
-
-	var_3_39[241] = {
+	pg.base.activity_ins_template[241] = {
 		ship_group = 1070007,
 		name = "Mami_Futami",
 		type = 1,
@@ -11604,11 +10623,7 @@ end)()
 			2134
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_ins_template
-
-	var_3_40[242] = {
+	pg.base.activity_ins_template[242] = {
 		ship_group = 30207,
 		name = "Yura",
 		type = 1,
@@ -11649,11 +10664,7 @@ end)()
 			2142
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_ins_template
-
-	var_3_41[243] = {
+	pg.base.activity_ins_template[243] = {
 		ship_group = 30129,
 		name = "Hayaizo",
 		type = 1,
@@ -11695,11 +10706,7 @@ end)()
 			2152
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_ins_template
-
-	var_3_42[244] = {
+	pg.base.activity_ins_template[244] = {
 		ship_group = 30712,
 		name = "Misato",
 		type = 1,
@@ -11740,11 +10747,7 @@ end)()
 			2160
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_ins_template
-
-	var_3_43[245] = {
+	pg.base.activity_ins_template[245] = {
 		ship_group = 30306,
 		name = "ChiKUMA",
 		type = 1,
@@ -11785,11 +10788,7 @@ end)()
 			2169
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_ins_template
-
-	var_3_44[246] = {
+	pg.base.activity_ins_template[246] = {
 		ship_group = 30147,
 		name = "Umikaze",
 		type = 1,
@@ -11830,11 +10829,7 @@ end)()
 			2180
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_ins_template
-
-	var_3_45[247] = {
+	pg.base.activity_ins_template[247] = {
 		ship_group = 30148,
 		name = "Yamakaze",
 		type = 1,
@@ -11875,11 +10870,7 @@ end)()
 			2187
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_ins_template
-
-	var_3_46[248] = {
+	pg.base.activity_ins_template[248] = {
 		ship_group = 30114,
 		name = "NikuSuki",
 		type = 1,
@@ -11920,11 +10911,7 @@ end)()
 			2195
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_ins_template
-
-	var_3_47[249] = {
+	pg.base.activity_ins_template[249] = {
 		ship_group = 30707,
 		name = "OutrangeTH",
 		type = 1,
@@ -11966,11 +10953,7 @@ end)()
 			2205
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_ins_template
-
-	var_3_48[250] = {
+	pg.base.activity_ins_template[250] = {
 		ship_group = 80201,
 		name = "DancerEmile",
 		type = 1,
@@ -12011,11 +10994,7 @@ end)()
 			2214
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_ins_template
-
-	var_3_49[251] = {
+	pg.base.activity_ins_template[251] = {
 		ship_group = 30165,
 		name = "Michishio ",
 		type = 1,
@@ -12057,11 +11036,7 @@ end)()
 			2224
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_ins_template
-
-	var_3_50[252] = {
+	pg.base.activity_ins_template[252] = {
 		ship_group = 20112,
 		name = "Fortune",
 		type = 1,
@@ -12102,11 +11077,7 @@ end)()
 			2237
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_ins_template
-
-	var_3_51[253] = {
+	pg.base.activity_ins_template[253] = {
 		ship_group = 90111,
 		name = "VivaLaze",
 		type = 1,
@@ -12147,11 +11118,7 @@ end)()
 			2245
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_ins_template
-
-	var_3_52[254] = {
+	pg.base.activity_ins_template[254] = {
 		ship_group = 10519,
 		name = "2700P.Justice",
 		type = 1,
@@ -12193,11 +11160,7 @@ end)()
 			2254
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_ins_template
-
-	var_3_53[255] = {
+	pg.base.activity_ins_template[255] = {
 		ship_group = 10306,
 		name = "INDI_LOVE",
 		type = 1,
@@ -12238,11 +11201,7 @@ end)()
 			2262
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_ins_template
-
-	var_3_54[256] = {
+	pg.base.activity_ins_template[256] = {
 		ship_group = 40205,
 		name = "Nürnberg",
 		type = 1,
@@ -12283,11 +11242,7 @@ end)()
 			2270
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_ins_template
-
-	var_3_55[257] = {
+	pg.base.activity_ins_template[257] = {
 		ship_group = 1080001,
 		name = "Rikka",
 		type = 1,
@@ -12328,11 +11283,7 @@ end)()
 			2278
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_ins_template
-
-	var_3_56[258] = {
+	pg.base.activity_ins_template[258] = {
 		ship_group = 1080002,
 		name = "Akane",
 		type = 1,
@@ -12373,11 +11324,7 @@ end)()
 			2288
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_ins_template
-
-	var_3_57[259] = {
+	pg.base.activity_ins_template[259] = {
 		ship_group = 1080004,
 		name = "Namiko",
 		type = 1,
@@ -12419,11 +11366,7 @@ end)()
 			2299
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_ins_template
-
-	var_3_58[260] = {
+	pg.base.activity_ins_template[260] = {
 		ship_group = 1080003,
 		name = "Hass",
 		type = 1,
@@ -12465,11 +11408,7 @@ end)()
 			2308
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_ins_template
-
-	var_3_59[261] = {
+	pg.base.activity_ins_template[261] = {
 		ship_group = 1080005,
 		name = "Yume",
 		type = 1,
@@ -12510,11 +11449,7 @@ end)()
 			2316
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_ins_template
-
-	var_3_60[262] = {
+	pg.base.activity_ins_template[262] = {
 		ship_group = 1080006,
 		name = "Chise",
 		type = 1,
@@ -12555,11 +11490,7 @@ end)()
 			2325
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_ins_template
-
-	var_3_61[263] = {
+	pg.base.activity_ins_template[263] = {
 		ship_group = 1080007,
 		name = "Mujina",
 		type = 1,
@@ -12600,11 +11531,7 @@ end)()
 			2333
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_ins_template
-
-	var_3_62[264] = {
+	pg.base.activity_ins_template[264] = {
 		ship_group = 40503,
 		name = "U.V.Hutten",
 		type = 1,
@@ -12646,11 +11573,7 @@ end)()
 			2343
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_ins_template
-
-	var_3_63[265] = {
+	pg.base.activity_ins_template[265] = {
 		ship_group = 40310,
 		name = "PrinzAdalbert",
 		type = 1,
@@ -12691,11 +11614,7 @@ end)()
 			2352
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_ins_template
-
-	var_3_64[266] = {
+	pg.base.activity_ins_template[266] = {
 		ship_group = 40206,
 		name = "Magdeburg",
 		type = 1,
@@ -12737,11 +11656,7 @@ end)()
 			2363
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_ins_template
-
-	var_3_65[267] = {
+	pg.base.activity_ins_template[267] = {
 		ship_group = 40602,
 		name = "Elbe",
 		type = 1,
@@ -12782,11 +11697,7 @@ end)()
 			2372
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_ins_template
-
-	var_3_66[268] = {
+	pg.base.activity_ins_template[268] = {
 		ship_group = 40812,
 		name = "U.B.1206",
 		type = 1,
@@ -12828,11 +11739,7 @@ end)()
 			2384
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_ins_template
-
-	var_3_67[269] = {
+	pg.base.activity_ins_template[269] = {
 		ship_group = 39905,
 		name = "Hakuryū",
 		type = 1,
@@ -12873,11 +11780,7 @@ end)()
 			2393
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_ins_template
-
-	var_3_68[270] = {
+	pg.base.activity_ins_template[270] = {
 		ship_group = 20229,
 		name = "Penelope",
 		type = 1,
@@ -12918,11 +11821,7 @@ end)()
 			2402
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_ins_template
-
-	var_3_69[271] = {
+	pg.base.activity_ins_template[271] = {
 		ship_group = 10802,
 		name = "G_Albacore",
 		type = 1,
@@ -12964,11 +11863,7 @@ end)()
 			2413
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_ins_template
-
-	var_3_70[272] = {
+	pg.base.activity_ins_template[272] = {
 		ship_group = 20133,
 		name = "Icarus_Wing",
 		type = 1,
@@ -13010,11 +11905,7 @@ end)()
 			2425
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_ins_template
-
-	var_3_71[273] = {
+	pg.base.activity_ins_template[273] = {
 		ship_group = 30314,
 		name = "ToriUmi",
 		type = 1,
@@ -13055,11 +11946,7 @@ end)()
 			2434
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_ins_template
-
-	var_3_72[274] = {
+	pg.base.activity_ins_template[274] = {
 		ship_group = 50601,
 		name = "ChenHai",
 		type = 1,
@@ -13101,11 +11988,7 @@ end)()
 			2444
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_ins_template
-
-	var_3_73[275] = {
+	pg.base.activity_ins_template[275] = {
 		ship_group = 10149,
 		name = "Bristol",
 		type = 1,
@@ -13147,11 +12030,7 @@ end)()
 			2453
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_ins_template
-
-	var_3_74[276] = {
+	pg.base.activity_ins_template[276] = {
 		ship_group = 20230,
 		name = "Charybdis",
 		type = 1,
@@ -13193,11 +12072,7 @@ end)()
 			2463
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_ins_template
-
-	var_3_75[277] = {
+	pg.base.activity_ins_template[277] = {
 		ship_group = 30163,
 		name = "Asashio",
 		type = 1,
@@ -13239,11 +12114,7 @@ end)()
 			2472
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_ins_template
-
-	var_3_76[278] = {
+	pg.base.activity_ins_template[278] = {
 		ship_group = 50207,
 		name = "HaiTien",
 		type = 1,
@@ -13285,11 +12156,7 @@ end)()
 			2484
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_ins_template
-
-	var_3_77[279] = {
+	pg.base.activity_ins_template[279] = {
 		ship_group = 30182,
 		name = "FlowerMoon",
 		type = 1,
@@ -13330,11 +12197,7 @@ end)()
 			2492
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_ins_template
-
-	var_3_78[280] = {
+	pg.base.activity_ins_template[280] = {
 		ship_group = 20227,
 		name = "Hermione",
 		type = 1,
@@ -13375,11 +12238,7 @@ end)()
 			2500
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_ins_template
-
-	var_3_79[281] = {
+	pg.base.activity_ins_template[281] = {
 		ship_group = 30105,
 		name = "AYANAMIN",
 		type = 1,
@@ -13420,11 +12279,7 @@ end)()
 			2515
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_ins_template
-
-	var_3_80[282] = {
+	pg.base.activity_ins_template[282] = {
 		ship_group = 10503,
 		name = "Pennsylvania",
 		type = 1,
@@ -13466,11 +12321,7 @@ end)()
 			2526
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_ins_template
-
-	var_3_81[283] = {
+	pg.base.activity_ins_template[283] = {
 		ship_group = 50208,
 		name = "HaiChi",
 		type = 1,
@@ -13512,11 +12363,7 @@ end)()
 			2537
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_ins_template
-
-	var_3_82[284] = {
+	pg.base.activity_ins_template[284] = {
 		ship_group = 71801,
 		name = "Кронштадт",
 		type = 1,
@@ -13557,11 +12404,7 @@ end)()
 			2545
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_ins_template
-
-	var_3_83[285] = {
+	pg.base.activity_ins_template[285] = {
 		ship_group = 70110,
 		name = "Киев",
 		type = 1,
@@ -13602,11 +12445,7 @@ end)()
 			2557
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_ins_template
-
-	var_3_84[286] = {
+	pg.base.activity_ins_template[286] = {
 		ship_group = 70701,
 		name = "Волга",
 		type = 1,
@@ -13647,11 +12486,7 @@ end)()
 			2566
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_ins_template
-
-	var_3_85[287] = {
+	pg.base.activity_ins_template[287] = {
 		ship_group = 70109,
 		name = "Сообразительный",
 		type = 1,
@@ -13693,11 +12528,7 @@ end)()
 			2576
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_ins_template
-
-	var_3_86[288] = {
+	pg.base.activity_ins_template[288] = {
 		ship_group = 70506,
 		name = "Архангельск",
 		type = 1,
@@ -13738,11 +12569,7 @@ end)()
 			2584
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_ins_template
-
-	var_3_87[289] = {
+	pg.base.activity_ins_template[289] = {
 		ship_group = 60107,
 		name = "PompeyTheGreat",
 		type = 1,
@@ -13783,11 +12610,7 @@ end)()
 			2592
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_ins_template
-
-	var_3_88[290] = {
+	pg.base.activity_ins_template[290] = {
 		ship_group = 60304,
 		name = "Trieste",
 		type = 1,
@@ -13828,11 +12651,7 @@ end)()
 			2601
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_ins_template
-
-	var_3_89[291] = {
+	pg.base.activity_ins_template[291] = {
 		ship_group = 60702,
 		name = "orepmI",
 		type = 1,
@@ -13873,11 +12692,7 @@ end)()
 			2611
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_ins_template
-
-	var_3_90[292] = {
+	pg.base.activity_ins_template[292] = {
 		ship_group = 30401,
 		name = "BarrowYoko",
 		type = 1,
@@ -13919,11 +12734,7 @@ end)()
 			2622
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_ins_template
-
-	var_3_91[293] = {
+	pg.base.activity_ins_template[293] = {
 		ship_group = 30164,
 		name = "Ooshio",
 		type = 1,
@@ -13965,11 +12776,7 @@ end)()
 			2631
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_ins_template
-
-	var_3_92[294] = {
+	pg.base.activity_ins_template[294] = {
 		ship_group = 10806,
 		name = "CharmArcher",
 		type = 1,
@@ -14010,11 +12817,7 @@ end)()
 			2643
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_ins_template
-
-	var_3_93[295] = {
+	pg.base.activity_ins_template[295] = {
 		ship_group = 40207,
 		name = "Emden ",
 		type = 1,
@@ -14056,11 +12859,7 @@ end)()
 			2655
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_ins_template
-
-	var_3_94[296] = {
+	pg.base.activity_ins_template[296] = {
 		ship_group = 40404,
 		name = "Lützow ",
 		type = 1,
@@ -14101,11 +12900,7 @@ end)()
 			2664
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_ins_template
-
-	var_3_95[297] = {
+	pg.base.activity_ins_template[297] = {
 		ship_group = 40208,
 		name = "Elbing ",
 		type = 1,
@@ -14147,11 +12942,7 @@ end)()
 			2674
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_ins_template
-
-	var_3_96[298] = {
+	pg.base.activity_ins_template[298] = {
 		ship_group = 40311,
 		name = "Yorck ",
 		type = 1,
@@ -14192,11 +12983,7 @@ end)()
 			2682
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_ins_template
-
-	var_3_97[299] = {
+	pg.base.activity_ins_template[299] = {
 		ship_group = 40504,
 		name = "Thüringen ",
 		type = 1,
@@ -14238,11 +13025,7 @@ end)()
 			2691
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_ins_template
-
-	var_3_98[300] = {
+	pg.base.activity_ins_template[300] = {
 		ship_group = 40403,
 		name = "Seydlitz ",
 		type = 1,
@@ -14284,8 +13067,7 @@ end)()
 			2702
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.activity_ins_template[301] = {
+	pg.base.activity_ins_template[301] = {
 		ship_group = 20513,
 		name = "Vanguard",
 		type = 1,
@@ -14330,11 +13112,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_ins_template
-
-	var_4_0[302] = {
+	pg.base.activity_ins_template[302] = {
 		ship_group = 20712,
 		name = "Indomitable",
 		type = 1,
@@ -14376,11 +13154,7 @@ end)()
 			2726
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_ins_template
-
-	var_4_1[303] = {
+	pg.base.activity_ins_template[303] = {
 		ship_group = 20134,
 		name = "Jervis",
 		type = 1,
@@ -14422,11 +13196,7 @@ end)()
 			2735
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_ins_template
-
-	var_4_2[304] = {
+	pg.base.activity_ins_template[304] = {
 		ship_group = 20231,
 		name = "Bellona",
 		type = 1,
@@ -14468,11 +13238,7 @@ end)()
 			2749
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_ins_template
-
-	var_4_3[305] = {
+	pg.base.activity_ins_template[305] = {
 		ship_group = 20510,
 		name = "Cmdr_Valiant",
 		type = 1,
@@ -14513,11 +13279,7 @@ end)()
 			2758
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_ins_template
-
-	var_4_4[306] = {
+	pg.base.activity_ins_template[306] = {
 		ship_group = 40303,
 		name = "P.Eugen",
 		type = 1,
@@ -14558,11 +13320,7 @@ end)()
 			2769
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_ins_template
-
-	var_4_5[307] = {
+	pg.base.activity_ins_template[307] = {
 		ship_group = 49905,
 		name = "Aegir",
 		type = 1,
@@ -14603,11 +13361,7 @@ end)()
 			2778
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_ins_template
-
-	var_4_6[308] = {
+	pg.base.activity_ins_template[308] = {
 		ship_group = 20509,
 		name = "Howe_Cookies",
 		type = 1,
@@ -14649,11 +13403,7 @@ end)()
 			2788
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_ins_template
-
-	var_4_7[309] = {
+	pg.base.activity_ins_template[309] = {
 		ship_group = 70102,
 		name = "Grozny",
 		type = 1,
@@ -14694,11 +13444,7 @@ end)()
 			2797
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_ins_template
-
-	var_4_8[310] = {
+	pg.base.activity_ins_template[310] = {
 		ship_group = 30608,
 		name = "Chitose",
 		type = 1,
@@ -14739,11 +13485,7 @@ end)()
 			2808
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_ins_template
-
-	var_4_9[311] = {
+	pg.base.activity_ins_template[311] = {
 		ship_group = 40502,
 		name = "Tirpitz",
 		type = 1,
@@ -14784,11 +13526,7 @@ end)()
 			2818
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_ins_template
-
-	var_4_10[312] = {
+	pg.base.activity_ins_template[312] = {
 		ship_group = 49901,
 		name = "RoonDESU",
 		type = 1,
@@ -14829,11 +13567,7 @@ end)()
 			2826
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_ins_template
-
-	var_4_11[313] = {
+	pg.base.activity_ins_template[313] = {
 		ship_group = 10229,
 		name = "USSBOISE",
 		type = 1,
@@ -14875,11 +13609,7 @@ end)()
 			2837
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_ins_template
-
-	var_4_12[314] = {
+	pg.base.activity_ins_template[314] = {
 		ship_group = 90101,
 		name = "LeMars ",
 		type = 1,
@@ -14920,11 +13650,7 @@ end)()
 			2846
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_ins_template
-
-	var_4_13[315] = {
+	pg.base.activity_ins_template[315] = {
 		ship_group = 30129,
 		name = "Hayaizo",
 		type = 1,
@@ -14966,11 +13692,7 @@ end)()
 			2860
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_ins_template
-
-	var_4_14[316] = {
+	pg.base.activity_ins_template[316] = {
 		ship_group = 90113,
 		name = "L'Indomptable",
 		type = 1,
@@ -15012,11 +13734,7 @@ end)()
 			2869
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_ins_template
-
-	var_4_15[317] = {
+	pg.base.activity_ins_template[317] = {
 		ship_group = 90701,
 		name = "Joffre",
 		type = 1,
@@ -15057,11 +13775,7 @@ end)()
 			2878
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_ins_template
-
-	var_4_16[318] = {
+	pg.base.activity_ins_template[318] = {
 		ship_group = 30213,
 		name = "Jintuu",
 		type = 1,
@@ -15103,11 +13817,7 @@ end)()
 			2889
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_ins_template
-
-	var_4_17[319] = {
+	pg.base.activity_ins_template[319] = {
 		ship_group = 10225,
 		name = "Biloxi",
 		type = 1,
@@ -15148,11 +13858,7 @@ end)()
 			2897
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_ins_template
-
-	var_4_18[320] = {
+	pg.base.activity_ins_template[320] = {
 		ship_group = 20232,
 		name = "RoyalMaid.E",
 		type = 1,
@@ -15194,11 +13900,7 @@ end)()
 			2909
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_ins_template
-
-	var_4_19[321] = {
+	pg.base.activity_ins_template[321] = {
 		ship_group = 60503,
 		name = "Roma ",
 		type = 1,
@@ -15240,11 +13942,7 @@ end)()
 			2920
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_ins_template
-
-	var_4_20[322] = {
+	pg.base.activity_ins_template[322] = {
 		ship_group = 60802,
 		name = "DaVinci ",
 		type = 1,
@@ -15286,11 +13984,7 @@ end)()
 			2933
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_ins_template
-
-	var_4_21[323] = {
+	pg.base.activity_ins_template[323] = {
 		ship_group = 60202,
 		name = "Giuseppe ",
 		type = 1,
@@ -15331,11 +14025,7 @@ end)()
 			2944
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_ins_template
-
-	var_4_22[324] = {
+	pg.base.activity_ins_template[324] = {
 		ship_group = 60109,
 		name = "Emanuele ",
 		type = 1,
@@ -15376,11 +14066,7 @@ end)()
 			2953
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_ins_template
-
-	var_4_23[325] = {
+	pg.base.activity_ins_template[325] = {
 		ship_group = 60108,
 		name = "Alfredo ",
 		type = 1,
@@ -15422,11 +14108,7 @@ end)()
 			2967
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_ins_template
-
-	var_4_24[326] = {
+	pg.base.activity_ins_template[326] = {
 		ship_group = 60305,
 		name = "Bolzano ",
 		type = 1,
@@ -15467,11 +14149,7 @@ end)()
 			2974
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_ins_template
-
-	var_4_25[327] = {
+	pg.base.activity_ins_template[327] = {
 		ship_group = 30510,
 		name = "Musashi",
 		type = 1,
@@ -15513,11 +14191,7 @@ end)()
 			2986
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_ins_template
-
-	var_4_26[328] = {
+	pg.base.activity_ins_template[328] = {
 		ship_group = 30223,
 		name = "Sakawa ",
 		type = 1,
@@ -15559,11 +14233,7 @@ end)()
 			2997
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_ins_template
-
-	var_4_27[329] = {
+	pg.base.activity_ins_template[329] = {
 		ship_group = 30187,
 		name = "Wakatsuki",
 		type = 1,
@@ -15605,11 +14275,7 @@ end)()
 			3008
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_ins_template
-
-	var_4_28[330] = {
+	pg.base.activity_ins_template[330] = {
 		ship_group = 30104,
 		name = "Miyuki ",
 		type = 1,
@@ -15650,11 +14316,7 @@ end)()
 			3015
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_ins_template
-
-	var_4_29[331] = {
+	pg.base.activity_ins_template[331] = {
 		ship_group = 30310,
 		name = "Haguro ",
 		type = 1,
@@ -15695,11 +14357,7 @@ end)()
 			3026
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_ins_template
-
-	var_4_30[332] = {
+	pg.base.activity_ins_template[332] = {
 		ship_group = 50601,
 		name = "ChenHai",
 		type = 1,
@@ -15741,11 +14399,7 @@ end)()
 			3039
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_ins_template
-
-	var_4_31[333] = {
+	pg.base.activity_ins_template[333] = {
 		ship_group = 80108,
 		name = "Brézé",
 		type = 1,
@@ -15786,11 +14440,7 @@ end)()
 			3050
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_ins_template
-
-	var_4_32[334] = {
+	pg.base.activity_ins_template[334] = {
 		ship_group = 10501,
 		name = "Nevada",
 		type = 1,
@@ -15832,11 +14482,7 @@ end)()
 			3061
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_ins_template
-
-	var_4_33[335] = {
+	pg.base.activity_ins_template[335] = {
 		ship_group = 30505,
 		name = "SakuraCombinedFleet",
 		type = 1,
@@ -15877,11 +14523,7 @@ end)()
 			3071
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_ins_template
-
-	var_4_34[336] = {
+	pg.base.activity_ins_template[336] = {
 		ship_group = 29901,
 		name = "Neptune",
 		type = 1,
@@ -15922,11 +14564,7 @@ end)()
 			3080
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_ins_template
-
-	var_4_35[337] = {
+	pg.base.activity_ins_template[337] = {
 		ship_group = 10207,
 		name = "Juneau",
 		type = 1,
@@ -15967,11 +14605,7 @@ end)()
 			3090
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_ins_template
-
-	var_4_36[338] = {
+	pg.base.activity_ins_template[338] = {
 		ship_group = 20135,
 		name = "Janus",
 		type = 1,
@@ -16013,11 +14647,7 @@ end)()
 			3101
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_ins_template
-
-	var_4_37[339] = {
+	pg.base.activity_ins_template[339] = {
 		ship_group = 20607,
 		name = "Albion",
 		type = 1,
@@ -16058,11 +14688,7 @@ end)()
 			3110
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_ins_template
-
-	var_4_38[340] = {
+	pg.base.activity_ins_template[340] = {
 		ship_group = 20209,
 		name = "Manchester",
 		type = 1,
@@ -16103,11 +14729,7 @@ end)()
 			3120
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_ins_template
-
-	var_4_39[341] = {
+	pg.base.activity_ins_template[341] = {
 		ship_group = 10502,
 		name = "Oklahoma",
 		type = 1,
@@ -16149,11 +14771,7 @@ end)()
 			3131
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_ins_template
-
-	var_4_40[342] = {
+	pg.base.activity_ins_template[342] = {
 		ship_group = 1090001,
 		name = "Reisalin Stout",
 		type = 1,
@@ -16195,11 +14813,7 @@ end)()
 			3143
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_ins_template
-
-	var_4_41[343] = {
+	pg.base.activity_ins_template[343] = {
 		ship_group = 1090002,
 		name = "Klaudia Valentz",
 		type = 1,
@@ -16241,11 +14855,7 @@ end)()
 			3152
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_ins_template
-
-	var_4_42[344] = {
+	pg.base.activity_ins_template[344] = {
 		ship_group = 1090003,
 		name = "Patricia Abelheim",
 		type = 1,
@@ -16286,11 +14896,7 @@ end)()
 			3159
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_ins_template
-
-	var_4_43[345] = {
+	pg.base.activity_ins_template[345] = {
 		ship_group = 1090005,
 		name = "Serri Glaus",
 		type = 1,
@@ -16331,11 +14937,7 @@ end)()
 			3168
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_ins_template
-
-	var_4_44[346] = {
+	pg.base.activity_ins_template[346] = {
 		ship_group = 1090004,
 		name = "Lila Decyrus",
 		type = 1,
@@ -16377,11 +14979,7 @@ end)()
 			3178
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_ins_template
-
-	var_4_45[347] = {
+	pg.base.activity_ins_template[347] = {
 		ship_group = 10707,
 		name = "CarVesGAL6",
 		type = 1,
@@ -16423,11 +15021,7 @@ end)()
 			3188
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_ins_template
-
-	var_4_46[348] = {
+	pg.base.activity_ins_template[348] = {
 		ship_group = 10705,
 		name = "YorkTown",
 		type = 1,
@@ -16469,11 +15063,7 @@ end)()
 			3197
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_ins_template
-
-	var_4_47[349] = {
+	pg.base.activity_ins_template[349] = {
 		ship_group = 10125,
 		name = "DD_Hammann",
 		type = 1,
@@ -16515,11 +15105,7 @@ end)()
 			3210
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_ins_template
-
-	var_4_48[350] = {
+	pg.base.activity_ins_template[350] = {
 		ship_group = 10303,
 		name = "Northampton",
 		type = 1,
@@ -16560,11 +15146,7 @@ end)()
 			3217
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_ins_template
-
-	var_4_49[351] = {
+	pg.base.activity_ins_template[351] = {
 		ship_group = 10701,
 		name = "Langley",
 		type = 1,
@@ -16605,11 +15187,7 @@ end)()
 			3228
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_ins_template
-
-	var_4_50[352] = {
+	pg.base.activity_ins_template[352] = {
 		ship_group = 51901,
 		name = "Ting An",
 		type = 1,
@@ -16651,11 +15229,7 @@ end)()
 			3239
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_ins_template
-
-	var_4_51[353] = {
+	pg.base.activity_ins_template[353] = {
 		ship_group = 20608,
 		name = "Theseus",
 		type = 1,
@@ -16697,11 +15271,7 @@ end)()
 			3248
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_ins_template
-
-	var_4_52[354] = {
+	pg.base.activity_ins_template[354] = {
 		ship_group = 70205,
 		name = "Kuybyshev",
 		type = 1,
@@ -16742,11 +15312,7 @@ end)()
 			3256
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_ins_template
-
-	var_4_53[355] = {
+	pg.base.activity_ins_template[355] = {
 		ship_group = 50602,
 		name = "Hua Jia",
 		type = 1,
@@ -16787,11 +15353,7 @@ end)()
 			3264
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_ins_template
-
-	var_4_54[356] = {
+	pg.base.activity_ins_template[356] = {
 		ship_group = 50201,
 		name = "Yi Xian",
 		type = 1,
@@ -16833,11 +15395,7 @@ end)()
 			3277
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_ins_template
-
-	var_4_55[357] = {
+	pg.base.activity_ins_template[357] = {
 		ship_group = 89903,
 		name = "Brest",
 		type = 1,
@@ -16878,11 +15436,7 @@ end)()
 			3284
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_ins_template
-
-	var_4_56[358] = {
+	pg.base.activity_ins_template[358] = {
 		ship_group = 29905,
 		name = "Plymouth",
 		type = 1,
@@ -16923,11 +15477,7 @@ end)()
 			3295
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_ins_template
-
-	var_4_57[359] = {
+	pg.base.activity_ins_template[359] = {
 		ship_group = 59901,
 		name = "Bin Jiang",
 		type = 1,
@@ -16969,11 +15519,7 @@ end)()
 			3305
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_ins_template
-
-	var_4_58[360] = {
+	pg.base.activity_ins_template[360] = {
 		ship_group = 79901,
 		name = "Chkalov",
 		type = 1,
@@ -17015,11 +15561,7 @@ end)()
 			3317
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_ins_template
-
-	var_4_59[361] = {
+	pg.base.activity_ins_template[361] = {
 		ship_group = 49907,
 		name = "Prinz-Rupprecht",
 		type = 1,
@@ -17061,11 +15603,7 @@ end)()
 			3326
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_ins_template
-
-	var_4_60[362] = {
+	pg.base.activity_ins_template[362] = {
 		ship_group = 20707,
 		name = "Implacable",
 		type = 1,
@@ -17107,11 +15645,7 @@ end)()
 			3337
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_ins_template
-
-	var_4_61[363] = {
+	pg.base.activity_ins_template[363] = {
 		ship_group = 20233,
 		name = "Scylla",
 		type = 1,
@@ -17153,11 +15687,7 @@ end)()
 			3346
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_ins_template
-
-	var_4_62[364] = {
+	pg.base.activity_ins_template[364] = {
 		ship_group = 20602,
 		name = "Argus",
 		type = 1,
@@ -17198,11 +15728,7 @@ end)()
 			3354
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_ins_template
-
-	var_4_63[365] = {
+	pg.base.activity_ins_template[365] = {
 		ship_group = 20514,
 		name = "RoyalOak",
 		type = 1,
@@ -17244,11 +15770,7 @@ end)()
 			3364
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_ins_template
-
-	var_4_64[366] = {
+	pg.base.activity_ins_template[366] = {
 		ship_group = 20136,
 		name = "Hero",
 		type = 1,
@@ -17289,11 +15811,7 @@ end)()
 			3372
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_ins_template
-
-	var_4_65[367] = {
+	pg.base.activity_ins_template[367] = {
 		ship_group = 70207,
 		name = "Voroshilov",
 		type = 1,
@@ -17335,11 +15853,7 @@ end)()
 			3383
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_ins_template
-
-	var_4_66[368] = {
+	pg.base.activity_ins_template[368] = {
 		ship_group = 70302,
 		name = "Kursk",
 		type = 1,
@@ -17382,11 +15896,7 @@ end)()
 			3395
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_ins_template
-
-	var_4_67[369] = {
+	pg.base.activity_ins_template[369] = {
 		ship_group = 70507,
 		name = "Sevastopol",
 		type = 1,
@@ -17428,11 +15938,7 @@ end)()
 			3406
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_ins_template
-
-	var_4_68[370] = {
+	pg.base.activity_ins_template[370] = {
 		ship_group = 40501,
 		name = "Bismarck",
 		type = 1,
@@ -17474,11 +15980,7 @@ end)()
 			3416
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_ins_template
-
-	var_4_69[371] = {
+	pg.base.activity_ins_template[371] = {
 		ship_group = 40210,
 		name = "Regensburg",
 		type = 1,
@@ -17520,11 +16022,7 @@ end)()
 			3428
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_ins_template
-
-	var_4_70[372] = {
+	pg.base.activity_ins_template[372] = {
 		ship_group = 40603,
 		name = "Jade",
 		type = 1,
@@ -17565,11 +16063,7 @@ end)()
 			3438
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_ins_template
-
-	var_4_71[374] = {
+	pg.base.activity_ins_template[374] = {
 		ship_group = 40199,
 		name = "Alvensleben",
 		type = 1,
@@ -17610,11 +16104,7 @@ end)()
 			3445
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_ins_template
-
-	var_4_72[375] = {
+	pg.base.activity_ins_template[375] = {
 		ship_group = 20603,
 		name = "UnicornI72",
 		type = 1,
@@ -17656,11 +16146,7 @@ end)()
 			3458
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_ins_template
-
-	var_4_73[376] = {
+	pg.base.activity_ins_template[376] = {
 		ship_group = 40309,
 		name = "Eisen_Fight",
 		type = 1,
@@ -17701,11 +16187,7 @@ end)()
 			3467
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_ins_template
-
-	var_4_74[377] = {
+	pg.base.activity_ins_template[377] = {
 		ship_group = 30105,
 		name = "AYANAMIN",
 		type = 1,
@@ -17747,11 +16229,7 @@ end)()
 			3478
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_ins_template
-
-	var_4_75[378] = {
+	pg.base.activity_ins_template[378] = {
 		ship_group = 30405,
 		name = "Amagi",
 		type = 1,
@@ -17793,11 +16271,7 @@ end)()
 			3490
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_ins_template
-
-	var_4_76[379] = {
+	pg.base.activity_ins_template[379] = {
 		ship_group = 70203,
 		name = "Chapaev",
 		type = 1,
@@ -17838,11 +16312,7 @@ end)()
 			3500
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_ins_template
-
-	var_4_77[380] = {
+	pg.base.activity_ins_template[380] = {
 		ship_group = 60306,
 		name = "Gorizia",
 		type = 1,
@@ -17884,11 +16354,7 @@ end)()
 			3510
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_ins_template
-
-	var_4_78[381] = {
+	pg.base.activity_ins_template[381] = {
 		ship_group = 60110,
 		name = "Attilio",
 		type = 1,
@@ -17930,11 +16396,7 @@ end)()
 			3521
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_ins_template
-
-	var_4_79[382] = {
+	pg.base.activity_ins_template[382] = {
 		ship_group = 60507,
 		name = "Andrea",
 		type = 1,
@@ -17976,11 +16438,7 @@ end)()
 			3532
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_ins_template
-
-	var_4_80[390] = {
+	pg.base.activity_ins_template[390] = {
 		ship_group = 90502,
 		name = "Clemenceau",
 		type = 1,
@@ -18022,11 +16480,7 @@ end)()
 			3543
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_ins_template
-
-	var_4_81[391] = {
+	pg.base.activity_ins_template[391] = {
 		ship_group = 80702,
 		name = "Painlevé",
 		type = 1,
@@ -18068,11 +16522,7 @@ end)()
 			3552
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_ins_template
-
-	var_4_82[392] = {
+	pg.base.activity_ins_template[392] = {
 		ship_group = 80203,
 		name = "Guichen",
 		type = 1,
@@ -18113,11 +16563,7 @@ end)()
 			3558
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_ins_template
-
-	var_4_83[393] = {
+	pg.base.activity_ins_template[393] = {
 		ship_group = 80301,
 		name = "Suffren",
 		type = 1,
@@ -18159,11 +16605,7 @@ end)()
 			3570
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_ins_template
-
-	var_4_84[394] = {
+	pg.base.activity_ins_template[394] = {
 		ship_group = 80502,
 		name = "Lyon",
 		type = 1,
@@ -18205,11 +16647,7 @@ end)()
 			3579
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_ins_template
-
-	var_4_85[395] = {
+	pg.base.activity_ins_template[395] = {
 		ship_group = 90104,
 		name = "Kersaint",
 		type = 1,
@@ -18250,11 +16688,7 @@ end)()
 			3589
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_ins_template
-
-	var_4_86[396] = {
+	pg.base.activity_ins_template[396] = {
 		ship_group = 30319,
 		name = "Unzen",
 		type = 1,
@@ -18296,11 +16730,7 @@ end)()
 			3599
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_ins_template
-
-	var_4_87[397] = {
+	pg.base.activity_ins_template[397] = {
 		ship_group = 30513,
 		name = "owari",
 		type = 1,
@@ -18342,11 +16772,7 @@ end)()
 			3610
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_ins_template
-
-	var_4_88[398] = {
+	pg.base.activity_ins_template[398] = {
 		ship_group = 30189,
 		name = "Hatsuzuki",
 		type = 1,
@@ -18388,11 +16814,7 @@ end)()
 			3624
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_ins_template
-
-	var_4_89[399] = {
+	pg.base.activity_ins_template[399] = {
 		ship_group = 30206,
 		name = "Natori ",
 		type = 1,
@@ -18433,11 +16855,7 @@ end)()
 			3633
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_ins_template
-
-	var_4_90[400] = {
+	pg.base.activity_ins_template[400] = {
 		ship_group = 30190,
 		name = "Asanagi",
 		type = 1,
@@ -18479,11 +16897,7 @@ end)()
 			3641
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_ins_template
-
-	var_4_91[401] = {
+	pg.base.activity_ins_template[401] = {
 		ship_group = 31901,
 		name = "Kashino",
 		type = 1,
@@ -18525,11 +16939,7 @@ end)()
 			3652
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_ins_template
-
-	var_4_92[402] = {
+	pg.base.activity_ins_template[402] = {
 		ship_group = 39905,
 		name = "Hakuryū",
 		type = 1,
@@ -18571,11 +16981,7 @@ end)()
 			3661
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_ins_template
-
-	var_4_93[403] = {
+	pg.base.activity_ins_template[403] = {
 		ship_group = 30708,
 		name = "Shinano",
 		type = 1,
@@ -18616,11 +17022,7 @@ end)()
 			3668
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_ins_template
-
-	var_4_94[404] = {
+	pg.base.activity_ins_template[404] = {
 		ship_group = 20506,
 		name = "TywysogWales",
 		type = 1,
@@ -18661,11 +17063,7 @@ end)()
 			3675
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_ins_template
-
-	var_4_95[405] = {
+	pg.base.activity_ins_template[405] = {
 		ship_group = 20602,
 		name = "Argus",
 		type = 1,
@@ -18706,11 +17104,7 @@ end)()
 			3685
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_ins_template
-
-	var_4_96[406] = {
+	pg.base.activity_ins_template[406] = {
 		ship_group = 20121,
 		name = "Javelin☆",
 		type = 1,
@@ -18751,11 +17145,7 @@ end)()
 			3693
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_ins_template
-
-	var_4_97[407] = {
+	pg.base.activity_ins_template[407] = {
 		ship_group = 40123,
 		name = "Zerstörer.23",
 		type = 1,
@@ -18797,11 +17187,7 @@ end)()
 			3705
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_ins_template
-
-	var_4_98[408] = {
+	pg.base.activity_ins_template[408] = {
 		ship_group = 30223,
 		name = "Sakawa ",
 		type = 1,
@@ -18842,8 +17228,7 @@ end)()
 			3713
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.activity_ins_template[409] = {
+	pg.base.activity_ins_template[409] = {
 		ship_group = 40503,
 		name = "U.V.Hutten",
 		type = 1,
@@ -18888,11 +17273,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_ins_template
-
-	var_5_0[410] = {
+	pg.base.activity_ins_template[410] = {
 		ship_group = 10709,
 		name = "EssexG1",
 		type = 1,
@@ -18934,11 +17315,7 @@ end)()
 			3732
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_ins_template
-
-	var_5_1[411] = {
+	pg.base.activity_ins_template[411] = {
 		ship_group = 960002,
 		name = "São Martinho",
 		type = 1,
@@ -18980,11 +17357,7 @@ end)()
 			3742
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_ins_template
-
-	var_5_2[412] = {
+	pg.base.activity_ins_template[412] = {
 		ship_group = 960001,
 		name = "Royal Fortune",
 		type = 1,
@@ -19026,11 +17399,7 @@ end)()
 			3757
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_ins_template
-
-	var_5_3[413] = {
+	pg.base.activity_ins_template[413] = {
 		ship_group = 960004,
 		name = "Mary Celeste",
 		type = 1,
@@ -19072,11 +17441,7 @@ end)()
 			3771
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.activity_ins_template
-
-	var_5_4[414] = {
+	pg.base.activity_ins_template[414] = {
 		ship_group = 50207,
 		name = "HaiTien",
 		type = 1,
@@ -19118,11 +17483,7 @@ end)()
 			3785
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.activity_ins_template
-
-	var_5_5[415] = {
+	pg.base.activity_ins_template[415] = {
 		ship_group = 960005,
 		name = "Whydah",
 		type = 1,
@@ -19163,11 +17524,7 @@ end)()
 			3795
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.activity_ins_template
-
-	var_5_6[416] = {
+	pg.base.activity_ins_template[416] = {
 		ship_group = 960003,
 		name = "Golden Hind",
 		type = 1,
@@ -19210,11 +17567,7 @@ end)()
 			3809
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.activity_ins_template
-
-	var_5_7[417] = {
+	pg.base.activity_ins_template[417] = {
 		ship_group = 960006,
 		name = "Adventure Galley",
 		type = 1,
@@ -19255,11 +17608,7 @@ end)()
 			3820
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.activity_ins_template
-
-	var_5_8[418] = {
+	pg.base.activity_ins_template[418] = {
 		ship_group = 1100001,
 		name = "Asuka",
 		type = 1,
@@ -19301,11 +17650,7 @@ end)()
 			3835
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.activity_ins_template
-
-	var_5_9[419] = {
+	pg.base.activity_ins_template[419] = {
 		ship_group = 1100007,
 		name = "Yūyaki",
 		type = 1,
@@ -19346,11 +17691,7 @@ end)()
 			3845
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.activity_ins_template
-
-	var_5_10[420] = {
+	pg.base.activity_ins_template[420] = {
 		ship_group = 1100006,
 		name = "Murasaki",
 		type = 1,
@@ -19391,11 +17732,7 @@ end)()
 			3856
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.activity_ins_template
-
-	var_5_11[421] = {
+	pg.base.activity_ins_template[421] = {
 		ship_group = 1100003,
 		name = "Homura",
 		type = 1,
@@ -19437,11 +17774,7 @@ end)()
 			3871
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.activity_ins_template
-
-	var_5_12[422] = {
+	pg.base.activity_ins_template[422] = {
 		ship_group = 1100005,
 		name = "Fubuki",
 		type = 1,
@@ -19482,11 +17815,7 @@ end)()
 			3880
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.activity_ins_template
-
-	var_5_13[423] = {
+	pg.base.activity_ins_template[423] = {
 		ship_group = 1100004,
 		name = "Yumi",
 		type = 1,
@@ -19527,11 +17856,7 @@ end)()
 			3890
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.activity_ins_template
-
-	var_5_14[424] = {
+	pg.base.activity_ins_template[424] = {
 		ship_group = 1100002,
 		name = "Ikaruga",
 		type = 1,
@@ -19572,11 +17897,7 @@ end)()
 			3899
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.activity_ins_template
-
-	var_5_15[425] = {
+	pg.base.activity_ins_template[425] = {
 		ship_group = 11802,
 		name = "Guam",
 		type = 1,
@@ -19617,11 +17938,7 @@ end)()
 			3909
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.activity_ins_template
-
-	var_5_16[426] = {
+	pg.base.activity_ins_template[426] = {
 		ship_group = 10117,
 		name = "Lafite.82",
 		type = 1,
@@ -19663,11 +17980,7 @@ end)()
 			3923
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.activity_ins_template
-
-	var_5_17[427] = {
+	pg.base.activity_ins_template[427] = {
 		ship_group = 10401,
 		name = "Constellation",
 		type = 1,
@@ -19709,11 +18022,7 @@ end)()
 			3937
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.activity_ins_template
-
-	var_5_18[428] = {
+	pg.base.activity_ins_template[428] = {
 		ship_group = 10808,
 		name = "Flasher",
 		type = 1,
@@ -19754,11 +18063,7 @@ end)()
 			3949
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.activity_ins_template
-
-	var_5_19[429] = {
+	pg.base.activity_ins_template[429] = {
 		ship_group = 10730,
 		name = "San Jacinto",
 		type = 1,
@@ -19799,11 +18104,7 @@ end)()
 			3962
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.activity_ins_template
-
-	var_5_20[430] = {
+	pg.base.activity_ins_template[430] = {
 		ship_group = 10327,
 		name = "Louisville",
 		type = 1,
@@ -19845,11 +18146,7 @@ end)()
 			3974
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.activity_ins_template
-
-	var_5_21[431] = {
+	pg.base.activity_ins_template[431] = {
 		ship_group = 10305,
 		name = "Houston",
 		type = 1,
@@ -19890,11 +18187,7 @@ end)()
 			3984
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.activity_ins_template
-
-	var_5_22[432] = {
+	pg.base.activity_ins_template[432] = {
 		ship_group = 19904,
 		name = "Kearsarge",
 		type = 1,
@@ -19936,11 +18229,7 @@ end)()
 			3997
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.activity_ins_template
-
-	var_5_23[433] = {
+	pg.base.activity_ins_template[433] = {
 		ship_group = 49909,
 		name = "Hindenburg",
 		type = 1,
@@ -19981,11 +18270,7 @@ end)()
 			4007
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.activity_ins_template
-
-	var_5_24[434] = {
+	pg.base.activity_ins_template[434] = {
 		ship_group = 39906,
 		name = "Shimanto",
 		type = 1,
@@ -20026,11 +18311,7 @@ end)()
 			4018
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.activity_ins_template
-
-	var_5_25[435] = {
+	pg.base.activity_ins_template[435] = {
 		ship_group = 49908,
 		name = "Felix Schultz",
 		type = 1,
@@ -20072,11 +18353,7 @@ end)()
 			4031
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.activity_ins_template
-
-	var_5_26[436] = {
+	pg.base.activity_ins_template[436] = {
 		ship_group = 99902,
 		name = "Flandre",
 		type = 1,
@@ -20118,11 +18395,7 @@ end)()
 			4043
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.activity_ins_template
-
-	var_5_27[437] = {
+	pg.base.activity_ins_template[437] = {
 		ship_group = 30186,
 		name = "Kazagumo",
 		type = 1,
@@ -20163,11 +18436,7 @@ end)()
 			4053
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.activity_ins_template
-
-	var_5_28[438] = {
+	pg.base.activity_ins_template[438] = {
 		ship_group = 20135,
 		name = "Janus",
 		type = 1,
@@ -20209,11 +18478,7 @@ end)()
 			4065
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.activity_ins_template
-
-	var_5_29[439] = {
+	pg.base.activity_ins_template[439] = {
 		ship_group = 50401,
 		name = "Huan Ch'ang",
 		type = 1,
@@ -20255,11 +18520,7 @@ end)()
 			4078
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.activity_ins_template
-
-	var_5_30[440] = {
+	pg.base.activity_ins_template[440] = {
 		ship_group = 50209,
 		name = "Chi An",
 		type = 1,
@@ -20300,11 +18561,7 @@ end)()
 			4090
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.activity_ins_template
-
-	var_5_31[441] = {
+	pg.base.activity_ins_template[441] = {
 		ship_group = 50105,
 		name = "Lung Wu",
 		type = 1,
@@ -20346,11 +18603,7 @@ end)()
 			4106
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.activity_ins_template
-
-	var_5_32[442] = {
+	pg.base.activity_ins_template[442] = {
 		ship_group = 50106,
 		name = "Hu Pen",
 		type = 1,
@@ -20392,11 +18645,7 @@ end)()
 			4122
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.activity_ins_template
-
-	var_5_33[443] = {
+	pg.base.activity_ins_template[443] = {
 		ship_group = 50107,
 		name = "Fei Yuen",
 		type = 1,
@@ -20438,11 +18687,7 @@ end)()
 			4135
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.activity_ins_template
-
-	var_5_34[444] = {
+	pg.base.activity_ins_template[444] = {
 		ship_group = 40208,
 		name = "Elbing ",
 		type = 1,
@@ -20483,11 +18728,7 @@ end)()
 			4145
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.activity_ins_template
-
-	var_5_35[445] = {
+	pg.base.activity_ins_template[445] = {
 		ship_group = 20606,
 		name = "Per",
 		type = 1,
@@ -20528,11 +18769,7 @@ end)()
 			4156
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.activity_ins_template
-
-	var_5_36[446] = {
+	pg.base.activity_ins_template[446] = {
 		ship_group = 20607,
 		name = "Albion",
 		type = 1,
@@ -20573,11 +18810,7 @@ end)()
 			4168
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.activity_ins_template
-
-	var_5_37[447] = {
+	pg.base.activity_ins_template[447] = {
 		ship_group = 19903,
 		name = "Anchorage",
 		type = 1,
@@ -20618,11 +18851,7 @@ end)()
 			4179
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.activity_ins_template
-
-	var_5_38[448] = {
+	pg.base.activity_ins_template[448] = {
 		ship_group = 20401,
 		name = "Renown",
 		type = 1,
@@ -20664,11 +18893,7 @@ end)()
 			4192
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.activity_ins_template
-
-	var_5_39[449] = {
+	pg.base.activity_ins_template[449] = {
 		ship_group = 70502,
 		name = "Sovetsky Soyuz",
 		type = 1,
@@ -20710,11 +18935,7 @@ end)()
 			4206
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.activity_ins_template
-
-	var_5_40[450] = {
+	pg.base.activity_ins_template[450] = {
 		ship_group = 70111,
 		name = "Ognevoy",
 		type = 1,
@@ -20756,11 +18977,7 @@ end)()
 			4226
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.activity_ins_template
-
-	var_5_41[451] = {
+	pg.base.activity_ins_template[451] = {
 		ship_group = 70508,
 		name = "Poltava",
 		type = 1,
@@ -20802,11 +19019,7 @@ end)()
 			4241
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.activity_ins_template
-
-	var_5_42[452] = {
+	pg.base.activity_ins_template[452] = {
 		ship_group = 70112,
 		name = "Svirepy",
 		type = 1,
@@ -20848,11 +19061,7 @@ end)()
 			4257
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.activity_ins_template
-
-	var_5_43[453] = {
+	pg.base.activity_ins_template[453] = {
 		ship_group = 21304,
 		name = "Abercrombie",
 		type = 1,
@@ -20893,11 +19102,7 @@ end)()
 			4270
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.activity_ins_template
-
-	var_5_44[454] = {
+	pg.base.activity_ins_template[454] = {
 		ship_group = 10145,
 		name = "A.M.Sumner",
 		type = 1,
@@ -20939,11 +19144,7 @@ end)()
 			4288
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.activity_ins_template
-
-	var_5_45[455] = {
+	pg.base.activity_ins_template[455] = {
 		ship_group = 29902,
 		name = "Monarch",
 		type = 1,
@@ -20985,11 +19186,7 @@ end)()
 			4305
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.activity_ins_template
-
-	var_5_46[457] = {
+	pg.base.activity_ins_template[457] = {
 		ship_group = 20137,
 		name = "Nubian",
 		type = 1,
@@ -21030,11 +19227,7 @@ end)()
 			4331
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.activity_ins_template
-
-	var_5_47[458] = {
+	pg.base.activity_ins_template[458] = {
 		ship_group = 20234,
 		name = "Liverpool",
 		type = 1,
@@ -21075,11 +19268,7 @@ end)()
 			4345
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.activity_ins_template
-
-	var_5_48[459] = {
+	pg.base.activity_ins_template[459] = {
 		ship_group = 20313,
 		name = "Devonshire",
 		type = 1,
@@ -21120,11 +19309,7 @@ end)()
 			4359
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.activity_ins_template
-
-	var_5_49[460] = {
+	pg.base.activity_ins_template[460] = {
 		ship_group = 20703,
 		name = "Illustrious",
 		type = 1,
@@ -21165,11 +19350,7 @@ end)()
 			4374
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.activity_ins_template
-
-	var_5_50[461] = {
+	pg.base.activity_ins_template[461] = {
 		ship_group = 30221,
 		name = "Nshiro",
 		type = 1,
@@ -21210,11 +19391,7 @@ end)()
 			4386
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.activity_ins_template
-
-	var_5_51[462] = {
+	pg.base.activity_ins_template[462] = {
 		ship_group = 40303,
 		name = "P.Eugen",
 		type = 1,
@@ -21256,11 +19433,7 @@ end)()
 			4404
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.activity_ins_template
-
-	var_5_52[463] = {
+	pg.base.activity_ins_template[463] = {
 		ship_group = 30401,
 		name = "BarrowYoko",
 		type = 1,
@@ -21302,11 +19475,7 @@ end)()
 			4420
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.activity_ins_template
-
-	var_5_53[464] = {
+	pg.base.activity_ins_template[464] = {
 		ship_group = 80103,
 		name = "L.Téméraire",
 		type = 1,
@@ -21348,11 +19517,7 @@ end)()
 			4433
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.activity_ins_template
-
-	var_5_54[465] = {
+	pg.base.activity_ins_template[465] = {
 		ship_group = 10229,
 		name = "USSBOISE",
 		type = 1,
@@ -21394,11 +19559,7 @@ end)()
 			4446
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.activity_ins_template
-
-	var_5_55[466] = {
+	pg.base.activity_ins_template[466] = {
 		ship_group = 10601,
 		name = "L.I.",
 		type = 1,
@@ -21439,11 +19600,7 @@ end)()
 			4458
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.activity_ins_template
-
-	var_5_56[467] = {
+	pg.base.activity_ins_template[467] = {
 		ship_group = 40207,
 		name = "Emden ",
 		type = 1,
@@ -21484,11 +19641,7 @@ end)()
 			4470
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.activity_ins_template
-
-	var_5_57[468] = {
+	pg.base.activity_ins_template[468] = {
 		ship_group = 80503,
 		name = "Alsace",
 		type = 1,
@@ -21529,11 +19682,7 @@ end)()
 			4480
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.activity_ins_template
-
-	var_5_58[469] = {
+	pg.base.activity_ins_template[469] = {
 		ship_group = 80302,
 		name = "Brennus",
 		type = 1,
@@ -21574,11 +19723,7 @@ end)()
 			4489
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.activity_ins_template
-
-	var_5_59[470] = {
+	pg.base.activity_ins_template[470] = {
 		ship_group = 90105,
 		name = "Fleuret",
 		type = 1,
@@ -21619,11 +19764,7 @@ end)()
 			4498
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.activity_ins_template
-
-	var_5_60[471] = {
+	pg.base.activity_ins_template[471] = {
 		ship_group = 90106,
 		name = "Épée",
 		type = 1,
@@ -21664,11 +19805,7 @@ end)()
 			4507
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.activity_ins_template
-
-	var_5_61[472] = {
+	pg.base.activity_ins_template[472] = {
 		ship_group = 59901,
 		name = "Bin Jiang",
 		type = 1,
@@ -21710,11 +19847,7 @@ end)()
 			4520
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.activity_ins_template
-
-	var_5_62[473] = {
+	pg.base.activity_ins_template[473] = {
 		ship_group = 90107,
 		name = "Mogador",
 		type = 1,
@@ -21755,11 +19888,7 @@ end)()
 			4531
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.activity_ins_template
-
-	var_5_63[474] = {
+	pg.base.activity_ins_template[474] = {
 		ship_group = 20233,
 		name = "Scylla",
 		type = 1,
@@ -21800,11 +19929,7 @@ end)()
 			4543
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.activity_ins_template
-
-	var_5_64[475] = {
+	pg.base.activity_ins_template[475] = {
 		ship_group = 70104,
 		name = "Ташкент",
 		type = 1,
@@ -21846,11 +19971,7 @@ end)()
 			4561
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.activity_ins_template
-
-	var_5_65[476] = {
+	pg.base.activity_ins_template[476] = {
 		ship_group = 29903,
 		name = "CaitSith",
 		type = 1,
@@ -21892,11 +20013,7 @@ end)()
 			4576
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.activity_ins_template
-
-	var_5_66[477] = {
+	pg.base.activity_ins_template[477] = {
 		ship_group = 70302,
 		name = "Kursk",
 		type = 1,
@@ -21938,11 +20055,7 @@ end)()
 			4591
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.activity_ins_template
-
-	var_5_67[478] = {
+	pg.base.activity_ins_template[478] = {
 		ship_group = 30508,
 		name = "Tosa",
 		type = 1,
@@ -21984,11 +20097,7 @@ end)()
 			4604
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.activity_ins_template
-
-	var_5_68[479] = {
+	pg.base.activity_ins_template[479] = {
 		ship_group = 40406,
 		name = "Hervör alvitr",
 		type = 1,
@@ -22030,11 +20139,7 @@ end)()
 			4620
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.activity_ins_template
-
-	var_5_69[480] = {
+	pg.base.activity_ins_template[480] = {
 		ship_group = 40147,
 		name = "☆WildeKatze47☆",
 		type = 1,
@@ -22076,11 +20181,7 @@ end)()
 			4635
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.activity_ins_template
-
-	var_5_70[481] = {
+	pg.base.activity_ins_template[481] = {
 		ship_group = 40813,
 		name = "Unbeschwert31",
 		type = 1,
@@ -22121,11 +20222,7 @@ end)()
 			4647
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.activity_ins_template
-
-	var_5_71[482] = {
+	pg.base.activity_ins_template[482] = {
 		ship_group = 40143,
 		name = "Z·DEVIL·43",
 		type = 1,
@@ -22166,11 +20263,7 @@ end)()
 			4660
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.activity_ins_template
-
-	var_5_72[483] = {
+	pg.base.activity_ins_template[483] = {
 		ship_group = 90402,
 		name = "Strasbourg",
 		type = 1,
@@ -22212,11 +20305,7 @@ end)()
 			4676
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.activity_ins_template
-
-	var_5_73[484] = {
+	pg.base.activity_ins_template[484] = {
 		ship_group = 90303,
 		name = "Dupleix",
 		type = 1,
@@ -22258,11 +20347,7 @@ end)()
 			4694
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.activity_ins_template
-
-	var_5_74[485] = {
+	pg.base.activity_ins_template[485] = {
 		ship_group = 60108,
 		name = "Alfredo ",
 		type = 1,
@@ -22304,11 +20389,7 @@ end)()
 			4712
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.activity_ins_template
-
-	var_5_75[486] = {
+	pg.base.activity_ins_template[486] = {
 		ship_group = 10233,
 		name = "Fargo",
 		type = 1,
@@ -22350,11 +20431,7 @@ end)()
 			4732
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.activity_ins_template
-
-	var_5_76[487] = {
+	pg.base.activity_ins_template[487] = {
 		ship_group = 10328,
 		name = "Pittsburgh",
 		type = 1,
@@ -22395,11 +20472,7 @@ end)()
 			4746
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.activity_ins_template
-
-	var_5_77[488] = {
+	pg.base.activity_ins_template[488] = {
 		ship_group = 10515,
 		name = "Indiana",
 		type = 1,
@@ -22440,11 +20513,7 @@ end)()
 			4760
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.activity_ins_template
-
-	var_5_78[489] = {
+	pg.base.activity_ins_template[489] = {
 		ship_group = 10809,
 		name = "Herring",
 		type = 1,
@@ -22486,11 +20555,7 @@ end)()
 			4779
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.activity_ins_template
-
-	var_5_79[490] = {
+	pg.base.activity_ins_template[490] = {
 		ship_group = 10152,
 		name = "Bell",
 		type = 1,
@@ -22531,11 +20596,7 @@ end)()
 			4794
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.activity_ins_template
-
-	var_5_80[491] = {
+	pg.base.activity_ins_template[491] = {
 		ship_group = 30604,
 		name = "Zuihō",
 		type = 1,
@@ -22577,11 +20638,7 @@ end)()
 			4812
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.activity_ins_template
-
-	var_5_81[492] = {
+	pg.base.activity_ins_template[492] = {
 		ship_group = 20702,
 		name = "ArkRoyal_Defense",
 		type = 1,
@@ -22623,11 +20680,7 @@ end)()
 			4826
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.activity_ins_template
-
-	var_5_82[493] = {
+	pg.base.activity_ins_template[493] = {
 		ship_group = 30132,
 		name = "Mutsuki",
 		type = 1,
@@ -22669,11 +20722,7 @@ end)()
 			4841
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.activity_ins_template
-
-	var_5_83[494] = {
+	pg.base.activity_ins_template[494] = {
 		ship_group = 30405,
 		name = "Amagi",
 		type = 1,
@@ -22714,11 +20763,7 @@ end)()
 			4852
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.activity_ins_template
-
-	var_5_84[495] = {
+	pg.base.activity_ins_template[495] = {
 		ship_group = 30701,
 		name = "Ootori_Shikikan",
 		type = 1,
@@ -22760,11 +20805,7 @@ end)()
 			4869
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.activity_ins_template
-
-	var_5_85[496] = {
+	pg.base.activity_ins_template[496] = {
 		ship_group = 30225,
 		name = "Watarase",
 		type = 1,
@@ -22806,11 +20847,7 @@ end)()
 			4883
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.activity_ins_template
-
-	var_5_86[497] = {
+	pg.base.activity_ins_template[497] = {
 		ship_group = 30226,
 		name = "Ayase",
 		type = 1,
@@ -22852,11 +20889,7 @@ end)()
 			4898
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.activity_ins_template
-
-	var_5_87[498] = {
+	pg.base.activity_ins_template[498] = {
 		ship_group = 30191,
 		name = "Suzunami",
 		type = 1,
@@ -22898,11 +20931,7 @@ end)()
 			4914
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.activity_ins_template
-
-	var_5_88[499] = {
+	pg.base.activity_ins_template[499] = {
 		ship_group = 20208,
 		name = "ShiningS",
 		type = 1,
@@ -22943,11 +20972,7 @@ end)()
 			4927
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.activity_ins_template
-
-	var_5_89[500] = {
+	pg.base.activity_ins_template[500] = {
 		ship_group = 20220,
 		name = "forMaster_Sirius",
 		type = 1,
@@ -22988,11 +21013,7 @@ end)()
 			4941
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.activity_ins_template
-
-	var_5_90[501] = {
+	pg.base.activity_ins_template[501] = {
 		ship_group = 31901,
 		name = "Kashino",
 		type = 1,
@@ -23034,11 +21055,7 @@ end)()
 			4959
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.activity_ins_template
-
-	var_5_91[502] = {
+	pg.base.activity_ins_template[502] = {
 		ship_group = 30606,
 		name = "Ryūjō",
 		type = 1,
@@ -23079,11 +21096,7 @@ end)()
 			4971
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.activity_ins_template
-
-	var_5_92[503] = {
+	pg.base.activity_ins_template[503] = {
 		ship_group = 30510,
 		name = "Musashi",
 		type = 1,
@@ -23124,11 +21137,7 @@ end)()
 			4987
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.activity_ins_template
-
-	var_5_93[504] = {
+	pg.base.activity_ins_template[504] = {
 		ship_group = 39905,
 		name = "Hakuryū",
 		type = 1,
@@ -23170,11 +21179,7 @@ end)()
 			5006
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.activity_ins_template
-
-	var_5_94[505] = {
+	pg.base.activity_ins_template[505] = {
 		ship_group = 960007,
 		name = "Ganj-i-sawai",
 		type = 1,
@@ -23216,11 +21221,7 @@ end)()
 			5022
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.activity_ins_template
-
-	var_5_95[506] = {
+	pg.base.activity_ins_template[506] = {
 		ship_group = 960008,
 		name = "Fancy",
 		type = 1,
@@ -23261,11 +21262,7 @@ end)()
 			5035
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.activity_ins_template
-
-	var_5_96[507] = {
+	pg.base.activity_ins_template[507] = {
 		ship_group = 960009,
 		name = "Amity",
 		type = 1,
@@ -23306,11 +21303,7 @@ end)()
 			5048
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.activity_ins_template
-
-	var_5_97[508] = {
+	pg.base.activity_ins_template[508] = {
 		ship_group = 960010,
 		name = "Portsmouth Adventure",
 		type = 1,
@@ -23351,11 +21344,7 @@ end)()
 			5062
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.activity_ins_template
-
-	var_5_98[509] = {
+	pg.base.activity_ins_template[509] = {
 		ship_group = 960011,
 		name = "Dolphin",
 		type = 1,
@@ -23396,8 +21385,7 @@ end)()
 			5077
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.activity_ins_template[510] = {
+	pg.base.activity_ins_template[510] = {
 		ship_group = 30513,
 		name = "owari",
 		type = 1,
@@ -23442,11 +21430,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.activity_ins_template
-
-	var_6_0[511] = {
+	pg.base.activity_ins_template[511] = {
 		ship_group = 10149,
 		name = "Bristol",
 		type = 1,
@@ -23488,11 +21472,7 @@ end)()
 			5109
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.activity_ins_template
-
-	var_6_1[512] = {
+	pg.base.activity_ins_template[512] = {
 		ship_group = 1110001,
 		name = "Lala Satalin Deviluke",
 		type = 1,
@@ -23534,11 +21514,7 @@ end)()
 			5128
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.activity_ins_template
-
-	var_6_2[513] = {
+	pg.base.activity_ins_template[513] = {
 		ship_group = 1110002,
 		name = "Nana Asta Deviluke",
 		type = 1,
@@ -23579,11 +21555,7 @@ end)()
 			5143
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.activity_ins_template
-
-	var_6_3[514] = {
+	pg.base.activity_ins_template[514] = {
 		ship_group = 1110003,
 		name = "Momo Belia Deviluke",
 		type = 1,
@@ -23625,11 +21597,7 @@ end)()
 			5162
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.activity_ins_template
-
-	var_6_4[515] = {
+	pg.base.activity_ins_template[515] = {
 		ship_group = 1110005,
 		name = "Sairenji Haruna",
 		type = 1,
@@ -23670,11 +21638,7 @@ end)()
 			5178
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.activity_ins_template
-
-	var_6_5[516] = {
+	pg.base.activity_ins_template[516] = {
 		ship_group = 1110004,
 		name = "Konjiki no Yami",
 		type = 1,
@@ -23715,11 +21679,7 @@ end)()
 			5193
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.activity_ins_template
-
-	var_6_6[517] = {
+	pg.base.activity_ins_template[517] = {
 		ship_group = 1110006,
 		name = "Kotegawa Yui",
 		type = 1,
@@ -23760,11 +21720,7 @@ end)()
 			5210
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.activity_ins_template
-
-	var_6_7[518] = {
+	pg.base.activity_ins_template[518] = {
 		ship_group = 40704,
 		name = "Fritz Rumey",
 		type = 1,
@@ -23806,11 +21762,7 @@ end)()
 			5226
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.activity_ins_template
-
-	var_6_8[519] = {
+	pg.base.activity_ins_template[519] = {
 		ship_group = 40211,
 		name = "Duisburg",
 		type = 1,
@@ -23852,11 +21804,7 @@ end)()
 			5248
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.activity_ins_template
-
-	var_6_9[520] = {
+	pg.base.activity_ins_template[520] = {
 		ship_group = 40152,
 		name = "Blitz-Z52",
 		type = 1,
@@ -23898,11 +21846,7 @@ end)()
 			5265
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.activity_ins_template
-
-	var_6_10[521] = {
+	pg.base.activity_ins_template[521] = {
 		ship_group = 40109,
 		name = "Wolke9",
 		type = 1,
@@ -23944,11 +21888,7 @@ end)()
 			5282
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.activity_ins_template
-
-	var_6_11[522] = {
+	pg.base.activity_ins_template[522] = {
 		ship_group = 40111,
 		name = "Z11_Spielefan",
 		type = 1,
@@ -23990,11 +21930,7 @@ end)()
 			5299
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.activity_ins_template
-
-	var_6_12[523] = {
+	pg.base.activity_ins_template[523] = {
 		ship_group = 40501,
 		name = "Bismarck",
 		type = 1,
@@ -24037,11 +21973,7 @@ end)()
 			5317
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.activity_ins_template
-
-	var_6_13[524] = {
+	pg.base.activity_ins_template[524] = {
 		ship_group = 49905,
 		name = "Aegir",
 		type = 1,
@@ -24083,11 +22015,7 @@ end)()
 			5331
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.activity_ins_template
-
-	var_6_14[525] = {
+	pg.base.activity_ins_template[525] = {
 		ship_group = 20135,
 		name = "Janus",
 		type = 1,
@@ -24129,11 +22057,7 @@ end)()
 			5347
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.activity_ins_template
-
-	var_6_15[526] = {
+	pg.base.activity_ins_template[526] = {
 		ship_group = 69902,
 		name = "Napoli",
 		type = 1,
@@ -24175,11 +22099,7 @@ end)()
 			5363
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.activity_ins_template
-
-	var_6_16[527] = {
+	pg.base.activity_ins_template[527] = {
 		ship_group = 79902,
 		name = "Admiral Nakhimov",
 		type = 1,
@@ -24221,11 +22141,7 @@ end)()
 			5381
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.activity_ins_template
-
-	var_6_17[528] = {
+	pg.base.activity_ins_template[528] = {
 		ship_group = 19905,
 		name = "Halford",
 		type = 1,
@@ -24267,11 +22183,7 @@ end)()
 			5401
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.activity_ins_template
-
-	var_6_18[529] = {
+	pg.base.activity_ins_template[529] = {
 		ship_group = 89904,
 		name = "Bayard",
 		type = 1,
@@ -24312,11 +22224,7 @@ end)()
 			5416
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.activity_ins_template
-
-	var_6_19[530] = {
+	pg.base.activity_ins_template[530] = {
 		ship_group = 39907,
 		name = "Daisen",
 		type = 1,
@@ -24357,11 +22265,7 @@ end)()
 			5429
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.activity_ins_template
-
-	var_6_20[531] = {
+	pg.base.activity_ins_template[531] = {
 		ship_group = 50210,
 		name = "Hai Yung",
 		type = 1,
@@ -24402,11 +22306,7 @@ end)()
 			5444
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.activity_ins_template
-
-	var_6_21[532] = {
+	pg.base.activity_ins_template[532] = {
 		ship_group = 50301,
 		name = "Chien Wu",
 		type = 1,
@@ -24447,11 +22347,7 @@ end)()
 			5459
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.activity_ins_template
-
-	var_6_22[533] = {
+	pg.base.activity_ins_template[533] = {
 		ship_group = 50108,
 		name = "Chang Feng",
 		type = 1,
@@ -24493,11 +22389,7 @@ end)()
 			5480
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.activity_ins_template
-
-	var_6_23[534] = {
+	pg.base.activity_ins_template[534] = {
 		ship_group = 50109,
 		name = "Fu Po",
 		type = 1,
@@ -24538,11 +22430,7 @@ end)()
 			5494
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.activity_ins_template
-
-	var_6_24[535] = {
+	pg.base.activity_ins_template[535] = {
 		ship_group = 50102,
 		name = "Fushun2",
 		type = 1,
@@ -24584,11 +22472,7 @@ end)()
 			5511
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.activity_ins_template
-
-	var_6_25[536] = {
+	pg.base.activity_ins_template[536] = {
 		ship_group = 49903,
 		name = "Mainz",
 		type = 1,
@@ -24630,11 +22514,7 @@ end)()
 			5530
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.activity_ins_template
-
-	var_6_26[537] = {
+	pg.base.activity_ins_template[537] = {
 		ship_group = 10517,
 		name = "BlackDragon",
 		type = 1,
@@ -24676,11 +22556,7 @@ end)()
 			5549
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.activity_ins_template
-
-	var_6_27[538] = {
+	pg.base.activity_ins_template[538] = {
 		ship_group = 70206,
 		name = "Мурманск",
 		type = 1,
@@ -24721,11 +22597,7 @@ end)()
 			5565
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.activity_ins_template
-
-	var_6_28[539] = {
+	pg.base.activity_ins_template[539] = {
 		ship_group = 80202,
 		name = "Jeanne d'Arc",
 		type = 1,
@@ -24766,11 +22638,7 @@ end)()
 			5578
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.activity_ins_template
-
-	var_6_29[540] = {
+	pg.base.activity_ins_template[540] = {
 		ship_group = 19904,
 		name = "Kearsarge",
 		type = 1,
@@ -24811,11 +22679,7 @@ end)()
 			5593
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.activity_ins_template
-
-	var_6_30[541] = {
+	pg.base.activity_ins_template[541] = {
 		ship_group = 60508,
 		name = "Raffaello",
 		type = 1,
@@ -24856,11 +22720,7 @@ end)()
 			5607
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.activity_ins_template
-
-	var_6_31[542] = {
+	pg.base.activity_ins_template[542] = {
 		ship_group = 60803,
 		name = "Maggiore Baracca",
 		type = 1,
@@ -24902,11 +22762,7 @@ end)()
 			5627
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.activity_ins_template
-
-	var_6_32[543] = {
+	pg.base.activity_ins_template[543] = {
 		ship_group = 60111,
 		name = "Giosuè Carducci",
 		type = 1,
@@ -24948,11 +22804,7 @@ end)()
 			5647
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.activity_ins_template
-
-	var_6_33[544] = {
+	pg.base.activity_ins_template[544] = {
 		ship_group = 60203,
 		name = "Bartolomeo Colleoni",
 		type = 1,
@@ -24993,11 +22845,7 @@ end)()
 			5662
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.activity_ins_template
-
-	var_6_34[545] = {
+	pg.base.activity_ins_template[545] = {
 		ship_group = 50209,
 		name = "Chi An",
 		type = 1,
@@ -25039,11 +22887,7 @@ end)()
 			5680
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.activity_ins_template
-
-	var_6_35[546] = {
+	pg.base.activity_ins_template[546] = {
 		ship_group = 20233,
 		name = "Scylla",
 		type = 1,
@@ -25085,11 +22929,7 @@ end)()
 			5697
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.activity_ins_template
-
-	var_6_36[547] = {
+	pg.base.activity_ins_template[547] = {
 		ship_group = 10713,
 		name = "Franklin",
 		type = 1,
@@ -25131,11 +22971,7 @@ end)()
 			5715
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.activity_ins_template
-
-	var_6_37[548] = {
+	pg.base.activity_ins_template[548] = {
 		ship_group = 10234,
 		name = "Santa Fe",
 		type = 1,
@@ -25177,11 +23013,7 @@ end)()
 			5736
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.activity_ins_template
-
-	var_6_38[549] = {
+	pg.base.activity_ins_template[549] = {
 		ship_group = 10153,
 		name = "Miller",
 		type = 1,
@@ -25223,11 +23055,7 @@ end)()
 			5751
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.activity_ins_template
-
-	var_6_39[550] = {
+	pg.base.activity_ins_template[550] = {
 		ship_group = 70207,
 		name = "Voroshilov",
 		type = 1,
@@ -25269,11 +23097,7 @@ end)()
 			5771
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.activity_ins_template
-
-	var_6_40[551] = {
+	pg.base.activity_ins_template[551] = {
 		ship_group = 30317,
 		name = "Suzu?",
 		type = 1,
@@ -25315,11 +23139,7 @@ end)()
 			5785
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.activity_ins_template
-
-	var_6_41[552] = {
+	pg.base.activity_ins_template[552] = {
 		ship_group = 110201,
 		name = "De Zeven Provinci?n",
 		type = 1,
@@ -25360,11 +23180,7 @@ end)()
 			5802
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.activity_ins_template
-
-	var_6_42[553] = {
+	pg.base.activity_ins_template[553] = {
 		ship_group = 110101,
 		name = "Evertsen",
 		type = 1,
@@ -25406,11 +23222,7 @@ end)()
 			5823
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.activity_ins_template
-
-	var_6_43[554] = {
+	pg.base.activity_ins_template[554] = {
 		ship_group = 70208,
 		name = "Oleg",
 		type = 1,
@@ -25452,11 +23264,7 @@ end)()
 			5845
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.activity_ins_template
-
-	var_6_44[555] = {
+	pg.base.activity_ins_template[555] = {
 		ship_group = 70509,
 		name = "Kazan ",
 		type = 1,
@@ -25497,11 +23305,7 @@ end)()
 			5860
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.activity_ins_template
-
-	var_6_45[556] = {
+	pg.base.activity_ins_template[556] = {
 		ship_group = 70202,
 		name = "Pamiat' Merkuria",
 		type = 1,
@@ -25543,11 +23347,7 @@ end)()
 			5880
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.activity_ins_template
-
-	var_6_46[557] = {
+	pg.base.activity_ins_template[557] = {
 		ship_group = 20516,
 		name = "Lion",
 		type = 1,
@@ -25588,11 +23388,7 @@ end)()
 			5896
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.activity_ins_template
-
-	var_6_47[558] = {
+	pg.base.activity_ins_template[558] = {
 		ship_group = 20138,
 		name = "Trafalgar",
 		type = 1,
@@ -25633,11 +23429,7 @@ end)()
 			5910
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.activity_ins_template
-
-	var_6_48[559] = {
+	pg.base.activity_ins_template[559] = {
 		ship_group = 20235,
 		name = "Cleopatra",
 		type = 1,
@@ -25678,11 +23470,7 @@ end)()
 			5924
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.activity_ins_template
-
-	var_6_49[560] = {
+	pg.base.activity_ins_template[560] = {
 		ship_group = 20139,
 		name = "Gallant",
 		type = 1,
@@ -25723,11 +23511,7 @@ end)()
 			5939
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.activity_ins_template
-
-	var_6_50[561] = {
+	pg.base.activity_ins_template[561] = {
 		ship_group = 20236,
 		name = "Trinidad",
 		type = 1,
@@ -25768,11 +23552,7 @@ end)()
 			5957
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.activity_ins_template
-
-	var_6_51[562] = {
+	pg.base.activity_ins_template[562] = {
 		ship_group = 39906,
 		name = "Shimanto",
 		type = 1,
@@ -25813,11 +23593,7 @@ end)()
 			5971
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.activity_ins_template
-
-	var_6_52[563] = {
+	pg.base.activity_ins_template[563] = {
 		ship_group = 70504,
 		name = "Proj23.Bel",
 		type = 1,
@@ -25858,11 +23634,7 @@ end)()
 			5987
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.activity_ins_template
-
-	var_6_53[564] = {
+	pg.base.activity_ins_template[564] = {
 		ship_group = 20705,
 		name = "Formidable",
 		type = 1,
@@ -25903,11 +23675,7 @@ end)()
 			6004
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.activity_ins_template
-
-	var_6_54[565] = {
+	pg.base.activity_ins_template[565] = {
 		ship_group = 40314,
 		name = "Friedrich Carl",
 		type = 1,
@@ -25948,11 +23716,7 @@ end)()
 			6021
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.activity_ins_template
-
-	var_6_55[566] = {
+	pg.base.activity_ins_template[566] = {
 		ship_group = 30189,
 		name = "Hatsuzuki",
 		type = 1,
@@ -25993,11 +23757,7 @@ end)()
 			6035
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.activity_ins_template
-
-	var_6_56[567] = {
+	pg.base.activity_ins_template[567] = {
 		ship_group = 10509,
 		name = "Colorado",
 		type = 1,
@@ -26039,11 +23799,7 @@ end)()
 			6052
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.activity_ins_template
-
-	var_6_57[568] = {
+	pg.base.activity_ins_template[568] = {
 		ship_group = 10121,
 		name = "BLACK★ROCK SHOOTER",
 		type = 1,
@@ -26084,11 +23840,7 @@ end)()
 			6070
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.activity_ins_template
-
-	var_6_58[569] = {
+	pg.base.activity_ins_template[569] = {
 		ship_group = 10122,
 		name = "DEAD MASTER",
 		type = 1,
@@ -26129,11 +23881,7 @@ end)()
 			6085
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.activity_ins_template
-
-	var_6_59[570] = {
+	pg.base.activity_ins_template[570] = {
 		ship_group = 40407,
 		name = "Admiral Zenker",
 		type = 1,
@@ -26174,11 +23922,7 @@ end)()
 			6101
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.activity_ins_template
-
-	var_6_60[571] = {
+	pg.base.activity_ins_template[571] = {
 		ship_group = 40814,
 		name = "U.B.552",
 		type = 1,
@@ -26219,11 +23963,7 @@ end)()
 			6118
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.activity_ins_template
-
-	var_6_61[572] = {
+	pg.base.activity_ins_template[572] = {
 		ship_group = 40113,
 		name = "AAAZielplanerin13",
 		type = 1,
@@ -26264,11 +24004,7 @@ end)()
 			6134
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.activity_ins_template
-
-	var_6_62[573] = {
+	pg.base.activity_ins_template[573] = {
 		ship_group = 29901,
 		name = "Neptune",
 		type = 1,
@@ -26309,11 +24045,7 @@ end)()
 			6153
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.activity_ins_template
-
-	var_6_63[574] = {
+	pg.base.activity_ins_template[574] = {
 		ship_group = 1130001,
 		name = "Yumia Liessfeldt",
 		type = 1,
@@ -26354,11 +24086,7 @@ end)()
 			6167
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.activity_ins_template
-
-	var_6_64[575] = {
+	pg.base.activity_ins_template[575] = {
 		ship_group = 1130002,
 		name = "Isla von Duerer",
 		type = 1,
@@ -26399,11 +24127,7 @@ end)()
 			6182
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.activity_ins_template
-
-	var_6_65[576] = {
+	pg.base.activity_ins_template[576] = {
 		ship_group = 1130003,
 		name = "Nina Friede",
 		type = 1,
@@ -26444,11 +24168,7 @@ end)()
 			6196
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.activity_ins_template
-
-	var_6_66[577] = {
+	pg.base.activity_ins_template[577] = {
 		ship_group = 1130004,
 		name = "Lenja",
 		type = 1,
@@ -26489,11 +24209,7 @@ end)()
 			6210
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.activity_ins_template
-
-	var_6_67[578] = {
+	pg.base.activity_ins_template[578] = {
 		ship_group = 80401,
 		name = "Masséna",
 		type = 1,
@@ -26534,11 +24250,7 @@ end)()
 			6223
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.activity_ins_template
-
-	var_6_68[579] = {
+	pg.base.activity_ins_template[579] = {
 		ship_group = 80601,
 		name = "Bois Belleau",
 		type = 1,
@@ -26579,11 +24291,7 @@ end)()
 			6236
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.activity_ins_template
-
-	var_6_69[580] = {
+	pg.base.activity_ins_template[580] = {
 		ship_group = 80105,
 		name = "Le hardi",
 		type = 1,
@@ -26624,11 +24332,7 @@ end)()
 			6250
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.activity_ins_template
-
-	var_6_70[581] = {
+	pg.base.activity_ins_template[581] = {
 		ship_group = 80303,
 		name = "Duquesne ",
 		type = 1,
@@ -26669,11 +24373,7 @@ end)()
 			6263
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.activity_ins_template
-
-	var_6_71[582] = {
+	pg.base.activity_ins_template[582] = {
 		ship_group = 80204,
 		name = "Duguay-Trouin ",
 		type = 1,
@@ -26714,11 +24414,7 @@ end)()
 			6275
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.activity_ins_template
-
-	var_6_72[583] = {
+	pg.base.activity_ins_template[583] = {
 		ship_group = 10709,
 		name = "EssexG1",
 		type = 1,
@@ -26760,11 +24456,7 @@ end)()
 			6288
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.activity_ins_template
-
-	var_6_73[584] = {
+	pg.base.activity_ins_template[584] = {
 		ship_group = 30716,
 		name = "Hakuhō ",
 		type = 1,
@@ -26805,11 +24497,7 @@ end)()
 			6299
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.activity_ins_template
-
-	var_6_74[585] = {
+	pg.base.activity_ins_template[585] = {
 		ship_group = 31702,
 		name = "I404 ",
 		type = 1,
@@ -26850,11 +24538,7 @@ end)()
 			6311
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.activity_ins_template
-
-	var_6_75[586] = {
+	pg.base.activity_ins_template[586] = {
 		ship_group = 30516,
 		name = "Omi",
 		type = 1,
@@ -26896,11 +24580,7 @@ end)()
 			6324
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.activity_ins_template
-
-	var_6_76[587] = {
+	pg.base.activity_ins_template[587] = {
 		ship_group = 30320,
 		name = "Asama ",
 		type = 1,
@@ -26941,11 +24621,7 @@ end)()
 			6336
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.activity_ins_template
-
-	var_6_77[588] = {
+	pg.base.activity_ins_template[588] = {
 		ship_group = 30227,
 		name = "Minase",
 		type = 1,
@@ -26986,11 +24662,7 @@ end)()
 			6349
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.activity_ins_template
-
-	var_6_78[589] = {
+	pg.base.activity_ins_template[589] = {
 		ship_group = 30192,
 		name = "Taekaze",
 		type = 1,
@@ -27031,11 +24703,7 @@ end)()
 			6361
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.activity_ins_template
-
-	var_6_79[590] = {
+	pg.base.activity_ins_template[590] = {
 		ship_group = 30319,
 		name = "Unzen",
 		type = 1,
@@ -27076,11 +24744,7 @@ end)()
 			6372
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.activity_ins_template
-
-	var_6_80[591] = {
+	pg.base.activity_ins_template[591] = {
 		ship_group = 70301,
 		name = "Tallinn",
 		type = 1,
@@ -27121,11 +24785,7 @@ end)()
 			6384
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.activity_ins_template
-
-	var_6_81[592] = {
+	pg.base.activity_ins_template[592] = {
 		ship_group = 11802,
 		name = "Guam",
 		type = 1,
@@ -27166,11 +24826,7 @@ end)()
 			6398
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.activity_ins_template
-
-	var_6_82[593] = {
+	pg.base.activity_ins_template[593] = {
 		ship_group = 70502,
 		name = "Sovetsky Soyuz",
 		type = 1,
@@ -27211,11 +24867,7 @@ end)()
 			6414
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.activity_ins_template
-
-	var_6_83[594] = {
+	pg.base.activity_ins_template[594] = {
 		ship_group = 80302,
 		name = "Brennus",
 		type = 1,
@@ -27256,11 +24908,7 @@ end)()
 			6428
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.activity_ins_template
-
-	var_6_84[595] = {
+	pg.base.activity_ins_template[595] = {
 		ship_group = 99901,
 		name = "GascogneT8",
 		type = 1,
@@ -27301,11 +24949,7 @@ end)()
 			6445
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.activity_ins_template
-
-	var_6_85[596] = {
+	pg.base.activity_ins_template[596] = {
 		ship_group = 80503,
 		name = "Alsace",
 		type = 1,
@@ -27346,11 +24990,7 @@ end)()
 			6457
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.activity_ins_template
-
-	var_6_86[597] = {
+	pg.base.activity_ins_template[597] = {
 		ship_group = 1140001,
 		name = "Hestia",
 		type = 1,
@@ -27391,11 +25031,7 @@ end)()
 			6471
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.activity_ins_template
-
-	var_6_87[598] = {
+	pg.base.activity_ins_template[598] = {
 		ship_group = 1140002,
 		name = "Ryu Lion",
 		type = 1,
@@ -27436,11 +25072,7 @@ end)()
 			6482
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.activity_ins_template
-
-	var_6_88[599] = {
+	pg.base.activity_ins_template[599] = {
 		ship_group = 960012,
 		name = "Queen Anne's Revenge",
 		type = 1,
@@ -27481,11 +25113,7 @@ end)()
 			6498
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.activity_ins_template
-
-	var_6_89[600] = {
+	pg.base.activity_ins_template[600] = {
 		ship_group = 960014,
 		name = "Pearl",
 		type = 1,
@@ -27526,11 +25154,7 @@ end)()
 			6512
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.activity_ins_template
-
-	var_6_90[601] = {
+	pg.base.activity_ins_template[601] = {
 		ship_group = 960013,
 		name = "Lyme",
 		type = 1,
@@ -27571,11 +25195,7 @@ end)()
 			6526
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.activity_ins_template
-
-	var_6_91[602] = {
+	pg.base.activity_ins_template[602] = {
 		ship_group = 960015,
 		name = "Royal James",
 		type = 1,
@@ -27616,11 +25236,7 @@ end)()
 			6538
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.activity_ins_template
-
-	var_6_92[603] = {
+	pg.base.activity_ins_template[603] = {
 		ship_group = 960016,
 		name = "Adventure",
 		type = 1,
@@ -27661,11 +25277,7 @@ end)()
 			6550
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.activity_ins_template
-
-	var_6_93[604] = {
+	pg.base.activity_ins_template[604] = {
 		ship_group = 1150002,
 		name = "Tobiichi Origami",
 		type = 1,
@@ -27706,11 +25318,7 @@ end)()
 			6566
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.activity_ins_template
-
-	var_6_94[605] = {
+	pg.base.activity_ins_template[605] = {
 		ship_group = 1150005,
 		name = "Kurumi Tokisaki ",
 		type = 1,
@@ -27751,11 +25359,7 @@ end)()
 			6580
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.activity_ins_template
-
-	var_6_95[606] = {
+	pg.base.activity_ins_template[606] = {
 		ship_group = 1150004,
 		name = "Yoshino",
 		type = 1,
@@ -27796,11 +25400,7 @@ end)()
 			6597
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.activity_ins_template
-
-	var_6_96[607] = {
+	pg.base.activity_ins_template[607] = {
 		ship_group = 1150003,
 		name = "Itsuka Kotori",
 		type = 1,
@@ -27841,11 +25441,7 @@ end)()
 			6611
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.activity_ins_template
-
-	var_6_97[608] = {
+	pg.base.activity_ins_template[608] = {
 		ship_group = 1150006,
 		name = "Yamai Kguya Yamai Yuzuru",
 		type = 1,
@@ -27886,11 +25482,7 @@ end)()
 			6623
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.activity_ins_template
-
-	var_6_98[609] = {
+	pg.base.activity_ins_template[609] = {
 		ship_group = 1150001,
 		name = "Yatogami Tōka",
 		type = 1,
@@ -27931,8 +25523,7 @@ end)()
 			6636
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.activity_ins_template[610] = {
+	pg.base.activity_ins_template[610] = {
 		ship_group = 10235,
 		name = "Pasadena",
 		type = 1,
@@ -27977,11 +25568,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.activity_ins_template
-
-	var_7_0[611] = {
+	pg.base.activity_ins_template[611] = {
 		ship_group = 10110,
 		name = "William D. Porter",
 		type = 1,
@@ -28022,11 +25609,7 @@ end)()
 			6659
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.activity_ins_template
-
-	var_7_1[612] = {
+	pg.base.activity_ins_template[612] = {
 		ship_group = 10716,
 		name = "Lexington II",
 		type = 1,
@@ -28068,11 +25651,7 @@ end)()
 			6675
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.activity_ins_template
-
-	var_7_2[613] = {
+	pg.base.activity_ins_template[613] = {
 		ship_group = 10725,
 		name = "Cowpens",
 		type = 1,
@@ -28113,11 +25692,7 @@ end)()
 			6687
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.activity_ins_template
-
-	var_7_3[614] = {
+	pg.base.activity_ins_template[614] = {
 		ship_group = 10155,
 		name = "Clarence K. Bronson",
 		type = 1,
@@ -28158,11 +25733,7 @@ end)()
 			6699
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.activity_ins_template
-
-	var_7_4[615] = {
+	pg.base.activity_ins_template[615] = {
 		ship_group = 119901,
 		name = "Gouden leeuw",
 		type = 1,
@@ -28203,11 +25774,7 @@ end)()
 			6709
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.activity_ins_template
-
-	var_7_5[616] = {
+	pg.base.activity_ins_template[616] = {
 		ship_group = 49910,
 		name = "Mecklenburg",
 		type = 1,
@@ -28248,11 +25815,7 @@ end)()
 			6723
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.activity_ins_template
-
-	var_7_6[617] = {
+	pg.base.activity_ins_template[617] = {
 		ship_group = 79903,
 		name = "Dmitri Donskoi",
 		type = 1,
@@ -28293,11 +25856,7 @@ end)()
 			6733
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.activity_ins_template
-
-	var_7_7[618] = {
+	pg.base.activity_ins_template[618] = {
 		ship_group = 19906,
 		name = "Kansas",
 		type = 1,
@@ -28338,11 +25897,7 @@ end)()
 			6748
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.activity_ins_template
-
-	var_7_8[619] = {
+	pg.base.activity_ins_template[619] = {
 		ship_group = 69903,
 		name = "Cuniberti",
 		type = 1,
@@ -28383,11 +25938,7 @@ end)()
 			6760
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.activity_ins_template
-
-	var_7_9[620] = {
+	pg.base.activity_ins_template[620] = {
 		ship_group = 30311,
 		name = "Takao",
 		type = 1,
@@ -28429,11 +25980,7 @@ end)()
 			6775
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.activity_ins_template
-
-	var_7_10[621] = {
+	pg.base.activity_ins_template[621] = {
 		ship_group = 60509,
 		name = "Francesco Caracciolo",
 		type = 1,
@@ -28474,11 +26021,7 @@ end)()
 			6786
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.activity_ins_template
-
-	var_7_11[622] = {
+	pg.base.activity_ins_template[622] = {
 		ship_group = 60204,
 		name = "Alberto di Giussano",
 		type = 1,
@@ -28519,11 +26062,7 @@ end)()
 			6797
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.activity_ins_template
-
-	var_7_12[623] = {
+	pg.base.activity_ins_template[623] = {
 		ship_group = 60112,
 		name = "Ugolino Vivaldi",
 		type = 1,
@@ -28564,11 +26103,7 @@ end)()
 			6807
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.activity_ins_template
-
-	var_7_13[624] = {
+	pg.base.activity_ins_template[624] = {
 		ship_group = 10520,
 		name = "Alabama",
 		type = 1,
@@ -28609,11 +26144,7 @@ end)()
 			6822
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.activity_ins_template
-
-	var_7_14[625] = {
+	pg.base.activity_ins_template[625] = {
 		ship_group = 50302,
 		name = "Chang Wu",
 		type = 1,
@@ -28655,11 +26186,7 @@ end)()
 			6836
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.activity_ins_template
-
-	var_7_15[626] = {
+	pg.base.activity_ins_template[626] = {
 		ship_group = 50212,
 		name = "Hai Chou",
 		type = 1,
@@ -28700,11 +26227,7 @@ end)()
 			6850
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.activity_ins_template
-
-	var_7_16[627] = {
+	pg.base.activity_ins_template[627] = {
 		ship_group = 30708,
 		name = "Shinano",
 		type = 1,
@@ -28745,11 +26268,7 @@ end)()
 			6862
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.activity_ins_template
-
-	var_7_17[628] = {
+	pg.base.activity_ins_template[628] = {
 		ship_group = 50107,
 		name = "Fei Yuen",
 		type = 1,
@@ -28790,11 +26309,7 @@ end)()
 			6874
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.activity_ins_template
-
-	var_7_18[629] = {
+	pg.base.activity_ins_template[629] = {
 		ship_group = 49902,
 		name = "SymphonicStigma",
 		type = 1,
@@ -28835,11 +26350,7 @@ end)()
 			6889
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.activity_ins_template
-
-	var_7_19[630] = {
+	pg.base.activity_ins_template[630] = {
 		ship_group = 70303,
 		name = "Moskva",
 		type = 1,
@@ -28880,11 +26391,7 @@ end)()
 			6907
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.activity_ins_template
-
-	var_7_20[631] = {
+	pg.base.activity_ins_template[631] = {
 		ship_group = 70113,
 		name = "Ozornoy",
 		type = 1,
@@ -28925,11 +26432,7 @@ end)()
 			6918
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.activity_ins_template
-
-	var_7_21[632] = {
+	pg.base.activity_ins_template[632] = {
 		ship_group = 70209,
 		name = "Krasny Kavkaz",
 		type = 1,
@@ -28970,11 +26473,7 @@ end)()
 			6929
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.activity_ins_template
-
-	var_7_22[633] = {
+	pg.base.activity_ins_template[633] = {
 		ship_group = 70210,
 		name = "Bogatyr",
 		type = 1,
@@ -29015,11 +26514,7 @@ end)()
 			6941
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.activity_ins_template
-
-	var_7_23[634] = {
+	pg.base.activity_ins_template[634] = {
 		ship_group = 30717,
 		name = "Unryū",
 		type = 1,
@@ -29060,11 +26555,7 @@ end)()
 			6955
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.activity_ins_template
-
-	var_7_24[635] = {
+	pg.base.activity_ins_template[635] = {
 		ship_group = 30228,
 		name = "Kizu",
 		type = 1,
@@ -29105,11 +26596,7 @@ end)()
 			6966
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.activity_ins_template
-
-	var_7_25[636] = {
+	pg.base.activity_ins_template[636] = {
 		ship_group = 30229,
 		name = "Nayoro",
 		type = 1,
@@ -29150,11 +26637,7 @@ end)()
 			6981
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.activity_ins_template
-
-	var_7_26[637] = {
+	pg.base.activity_ins_template[637] = {
 		ship_group = 10990,
 		name = "Elise",
 		type = 1,
@@ -29195,11 +26678,7 @@ end)()
 			6993
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.activity_ins_template
-
-	var_7_27[638] = {
+	pg.base.activity_ins_template[638] = {
 		ship_group = 10991,
 		name = "Shizuku",
 		type = 1,
@@ -29240,11 +26719,7 @@ end)()
 			7005
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.activity_ins_template
-
-	var_7_28[639] = {
+	pg.base.activity_ins_template[639] = {
 		ship_group = 10992,
 		name = "Shandy",
 		type = 1,
@@ -29285,11 +26760,7 @@ end)()
 			7018
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.activity_ins_template
-
-	var_7_29[640] = {
+	pg.base.activity_ins_template[640] = {
 		ship_group = 10993,
 		name = "Tsukushi",
 		type = 1,
@@ -29330,11 +26801,7 @@ end)()
 			7031
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.activity_ins_template
-
-	var_7_30[641] = {
+	pg.base.activity_ins_template[641] = {
 		ship_group = 10994,
 		name = "Patty",
 		type = 1,
@@ -29375,11 +26842,7 @@ end)()
 			7046
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.activity_ins_template
-
-	var_7_31[642] = {
+	pg.base.activity_ins_template[642] = {
 		ship_group = 10995,
 		name = "Yukino",
 		type = 1,
@@ -29420,18 +26883,14 @@ end)()
 			7059
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.activity_ins_template
-
-	var_7_32[650] = {
+	pg.base.activity_ins_template[650] = {
 		ship_group = 90107,
 		name = "Mogador",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260528_mojiaduoer8ST2s74KVqEaWODu.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_650",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "mojiaduoer_4",
 		id = 650,
@@ -29448,21 +26907,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				28
+			},
+			{
+				13,
+				21,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7165,
+			7170
+		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.activity_ins_template
-
-	var_7_33[651] = {
+	pg.base.activity_ins_template[651] = {
 		ship_group = 20135,
 		name = "Janus",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260528_yanusiRmKV1SxJiQbkeCOy.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_651",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "yanusi_7",
 		id = 651,
@@ -29479,21 +26948,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				29
+			},
+			{
+				10,
+				27,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7180,
+			7183
+		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.activity_ins_template
-
-	var_7_34[652] = {
+	pg.base.activity_ins_template[652] = {
 		ship_group = 40207,
 		name = "Emden ",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260528_aimudengVHTsIkTCSfK4quI1.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_652",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "aimudeng_5",
 		id = 652,
@@ -29510,21 +26989,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				30
+			},
+			{
+				16,
+				28,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7193,
+			7198
+		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.activity_ins_template
-
-	var_7_35[653] = {
+	pg.base.activity_ins_template[653] = {
 		ship_group = 30405,
 		name = "Amagi",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260528_tianchengcvmAMsD4VOPAoaRamn.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_653",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "tiancheng_cv_3",
 		id = 653,
@@ -29541,21 +27030,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				31
+			},
+			{
+				12,
+				16,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7207,
+			7211
+		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.activity_ins_template
-
-	var_7_36[654] = {
+	pg.base.activity_ins_template[654] = {
 		ship_group = 49906,
 		name = "August.V.Parseval",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260528_aogusiterV4F6FaDIOTul6wx.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_654",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "aogusite_4",
 		id = 654,
@@ -29572,21 +27071,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				6,
+				1
+			},
+			{
+				19,
+				8,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7221,
+			7227
+		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.activity_ins_template
-
-	var_7_37[644] = {
+	pg.base.activity_ins_template[644] = {
 		ship_group = 40815,
 		name = "U-2501>w<",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260520_U25011zEfHem9uMyHI2CE.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_644",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "u2501",
 		id = 644,
@@ -29603,21 +27112,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				20
+			},
+			{
+				13,
+				12,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7081,
+			7086
+		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.activity_ins_template
-
-	var_7_38[645] = {
+	pg.base.activity_ins_template[645] = {
 		ship_group = 20121,
 		name = "Javelin☆",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260520_biaoqiangRJzJ8hfN12wBFCpU.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_645",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "biaoqiang",
 		id = 645,
@@ -29634,21 +27153,33 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				20
+			},
+			{
+				14,
+				0,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7095,
+			7098,
+			7101,
+			7104
+		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.activity_ins_template
-
-	var_7_39[646] = {
+	pg.base.activity_ins_template[646] = {
 		ship_group = 40507,
 		name = "Götz von Berlichingen",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260520_gezi0udHZa8KBXFbE6xJ.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_646",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "gezi",
 		id = 646,
@@ -29665,21 +27196,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				21
+			},
+			{
+				23,
+				58,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7114,
+			7118
+		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.activity_ins_template
-
-	var_7_40[647] = {
+	pg.base.activity_ins_template[647] = {
 		ship_group = 40317,
 		name = "Prinz Moritz",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260520_moliciCYkonoz7udoQ4SOl.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_647",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "molici",
 		id = 647,
@@ -29696,21 +27237,32 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				22
+			},
+			{
+				10,
+				25,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7126,
+			7130,
+			7134
+		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.activity_ins_template
-
-	var_7_41[648] = {
+	pg.base.activity_ins_template[648] = {
 		ship_group = 40114,
 		name = "Zerstörer14",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260520_Z14W3FPHJbgqXGBqXja.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_648",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "Z14",
 		id = 648,
@@ -29727,21 +27279,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				23
+			},
+			{
+				16,
+				7,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7141,
+			7143
+		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.activity_ins_template
-
-	var_7_42[649] = {
+	pg.base.activity_ins_template[649] = {
 		ship_group = 40115,
 		name = "Fahrzeugkiller15",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260520_Z15EFkXnH8LURNwoiM1.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_649",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "Z15",
 		id = 649,
@@ -29758,21 +27320,32 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				24
+			},
+			{
+				12,
+				31,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7152,
+			7154,
+			7157
+		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.activity_ins_template
-
-	var_7_43[643] = {
+	pg.base.activity_ins_template[643] = {
 		ship_group = 40152,
 		name = "Blitz-Z52",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260514_Z52flU4zLOcOkLLWqho.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_643",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "Z52",
 		id = 643,
@@ -29789,21 +27362,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				5,
+				14
+			},
+			{
+				15,
+				0,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7069,
+			7072
+		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.activity_ins_template
-
-	var_7_44[655] = {
+	pg.base.activity_ins_template[655] = {
 		ship_group = 81801,
 		name = "Cherbourg",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260625_sebao73qtVT1YqHWZlFBa.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_655",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "sebao",
 		id = 655,
@@ -29820,21 +27403,31 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				6,
+				25
+			},
+			{
+				14,
+				8,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7236,
+			7241
+		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.activity_ins_template
-
-	var_7_45[656] = {
+	pg.base.activity_ins_template[656] = {
 		ship_group = 80602,
 		name = "Arromanches",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260625_aluomangshidGMSqMPArwBuHWo4.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_656",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "aluomangshi",
 		id = 656,
@@ -29851,21 +27444,32 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				6,
+				26
+			},
+			{
+				17,
+				35,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7253,
+			7255,
+			7257
+		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.activity_ins_template
-
-	var_7_46[657] = {
+	pg.base.activity_ins_template[657] = {
 		ship_group = 80106,
 		name = "L'Intrépide",
 		type = 1,
-		picture_persist = "",
+		picture_persist = "https://line3-patch-blhx.bilibiligame.net/pic/260625_wujuvIiPeRndf1gU0z0L.png",
 		title = "",
-		message_persist = "",
-		is_active = 1,
+		message_persist = "ins_657",
+		is_active = 0,
 		oalist_pic_persist = "",
 		sculpture = "wuju",
 		id = 657,
@@ -29882,14 +27486,24 @@ end)()
 				0
 			}
 		},
-		time_persist = {},
-		npc_discuss_persist = {}
+		time_persist = {
+			{
+				2026,
+				6,
+				27
+			},
+			{
+				18,
+				0,
+				0
+			}
+		},
+		npc_discuss_persist = {
+			7268,
+			7272
+		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.activity_ins_template
-
-	var_7_47[658] = {
+	pg.base.activity_ins_template[658] = {
 		ship_group = 71379,
 		name = "A2",
 		type = 1,
@@ -29916,11 +27530,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.activity_ins_template
-
-	var_7_48[659] = {
+	pg.base.activity_ins_template[659] = {
 		ship_group = 71380,
 		name = "2B",
 		type = 1,
@@ -29947,11 +27557,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.activity_ins_template
-
-	var_7_49[660] = {
+	pg.base.activity_ins_template[660] = {
 		ship_group = 20237,
 		name = "Superb",
 		type = 1,
@@ -29978,11 +27584,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.activity_ins_template
-
-	var_7_50[661] = {
+	pg.base.activity_ins_template[661] = {
 		ship_group = 20314,
 		name = "Surrey",
 		type = 1,
@@ -30009,11 +27611,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.activity_ins_template
-
-	var_7_51[662] = {
+	pg.base.activity_ins_template[662] = {
 		ship_group = 20115,
 		name = "Griffin",
 		type = 1,
@@ -30040,11 +27638,142 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.activity_ins_template
-
-	var_7_52[20001] = {
+	pg.base.activity_ins_template[663] = {
+		ship_group = 10720,
+		name = "Bennington",
+		type = 1,
+		picture_persist = "",
+		title = "",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "benningdun",
+		id = 663,
+		group_id = 663,
+		time = {
+			{
+				2026,
+				8,
+				13
+			},
+			{
+				16,
+				0,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[664] = {
+		ship_group = 10236,
+		name = "Vicksburg",
+		type = 1,
+		picture_persist = "",
+		title = "",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "weikesibao",
+		id = 664,
+		group_id = 664,
+		time = {
+			{
+				2026,
+				8,
+				14
+			},
+			{
+				11,
+				0,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[665] = {
+		ship_group = 10156,
+		name = "Collett",
+		type = 1,
+		picture_persist = "",
+		title = "",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "kelaite",
+		id = 665,
+		group_id = 665,
+		time = {
+			{
+				2026,
+				8,
+				15
+			},
+			{
+				19,
+				30,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[666] = {
+		ship_group = 10157,
+		name = "Harrison",
+		type = 1,
+		picture_persist = "",
+		title = "",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "halisen",
+		id = 666,
+		group_id = 666,
+		time = {
+			{
+				2026,
+				8,
+				16
+			},
+			{
+				8,
+				30,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[667] = {
+		ship_group = 10158,
+		name = "John Rodgers",
+		type = 1,
+		picture_persist = "",
+		title = "",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "yuehanluojiesi",
+		id = 667,
+		group_id = 667,
+		time = {
+			{
+				2026,
+				8,
+				17
+			},
+			{
+				20,
+				30,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[20001] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30071,11 +27800,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.activity_ins_template
-
-	var_7_53[20002] = {
+	pg.base.activity_ins_template[20002] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30102,11 +27827,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.activity_ins_template
-
-	var_7_54[20003] = {
+	pg.base.activity_ins_template[20003] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30133,11 +27854,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.activity_ins_template
-
-	var_7_55[20004] = {
+	pg.base.activity_ins_template[20004] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30164,11 +27881,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.activity_ins_template
-
-	var_7_56[20006] = {
+	pg.base.activity_ins_template[20006] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30195,11 +27908,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.activity_ins_template
-
-	var_7_57[20005] = {
+	pg.base.activity_ins_template[20005] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30226,11 +27935,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.activity_ins_template
-
-	var_7_58[20007] = {
+	pg.base.activity_ins_template[20007] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30257,11 +27962,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.activity_ins_template
-
-	var_7_59[20008] = {
+	pg.base.activity_ins_template[20008] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30288,42 +27989,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.activity_ins_template
-
-	var_7_60[20011] = {
-		ship_group = 0,
-		name = "",
-		type = 2,
-		picture_persist = "",
-		title = "【港区新闻】滨海极速——全新赛车企划正式官宣！",
-		message_persist = "",
-		is_active = 1,
-		oalist_pic_persist = "",
-		sculpture = "",
-		id = 20011,
-		group_id = 20011,
-		time = {
-			{
-				2026,
-				8,
-				6
-			},
-			{
-				11,
-				0,
-				0
-			}
-		},
-		time_persist = {},
-		npc_discuss_persist = {}
-	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.activity_ins_template
-
-	var_7_61[20009] = {
+	pg.base.activity_ins_template[20009] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30350,8 +28016,7 @@ end)()
 		time_persist = {},
 		npc_discuss_persist = {}
 	}
-	pg = var_7_61
-	var_7_61.base.activity_ins_template[20010] = {
+	pg.base.activity_ins_template[20010] = {
 		ship_group = 0,
 		name = "",
 		type = 2,
@@ -30372,6 +28037,60 @@ end)()
 			{
 				13,
 				15,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[20011] = {
+		ship_group = 0,
+		name = "",
+		type = 2,
+		picture_persist = "",
+		title = "【港区新闻】滨海极速——全新赛车企划正式官宣！",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "",
+		id = 20011,
+		group_id = 20011,
+		time = {
+			{
+				2026,
+				8,
+				6
+			},
+			{
+				11,
+				0,
+				0
+			}
+		},
+		time_persist = {},
+		npc_discuss_persist = {}
+	}
+	pg.base.activity_ins_template[20012] = {
+		ship_group = 0,
+		name = "",
+		type = 2,
+		picture_persist = "",
+		title = "【时尚港区】轰鸣渐近，各位都选好战甲了吗？",
+		message_persist = "",
+		is_active = 1,
+		oalist_pic_persist = "",
+		sculpture = "",
+		id = 20012,
+		group_id = 20012,
+		time = {
+			{
+				2026,
+				8,
+				13
+			},
+			{
+				15,
+				0,
 				0
 			}
 		},

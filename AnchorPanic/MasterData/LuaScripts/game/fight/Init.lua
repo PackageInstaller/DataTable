@@ -1,6 +1,7 @@
 fight = {}
 
 require('game/fight/FightConst')
+require('game/fight/FightSettingConst')
 fight.FightDef = require('game/fight/FightDef')
 --scene item
 fight.LiveBase = require('game/fight/view/LiveBase')

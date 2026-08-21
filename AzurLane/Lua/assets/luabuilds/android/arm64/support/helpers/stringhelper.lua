@@ -1,53 +1,32 @@
 ﻿local var_0_0 = {}
 
-function var_0_0.ForamtNumberK(arg_1_0)
-	tonumber = var_1_10001
-	arg_1_0 = var_1_10001(arg_1_0) or 0
+;({}).ForamtNumberK = function(arg_1_0)
+	arg_1_0 = tonumber(arg_1_0) or 0
 
 	local var_1_0 = arg_1_0 < 0 and "-" or ""
+	local var_1_1 = math.abs(arg_1_0)
 
-	math = var_1_10002
-
-	if var_1_10002.abs(arg_1_0) < 10000 then
+	if var_1_1 < 10000 then
 		return var_0_0.ForamtNumber(arg_1_0)
 	end
 
-	math = var_3
+	local var_1_2 = tostring((math.floor(var_1_1 / 1000))):reverse():gsub("(%d%d%d)", "%1,"):reverse()
 
-	local var_1_1 = var_3.floor(var_2 / 1000)
-
-	tostring = var_4
-
-	local var_1_2 = var_4(var_1_1)
-	local var_1_3 = var_4.reverse(var_1_2)
-	local var_1_4 = var_4.gsub(var_1_3, "(%d%d%d)", "%1,")
-	local var_1_5 = var_4.reverse(var_1_4)
-	local var_1_6 = var_4.gsub(var_1_5, "^,", "")
-
-	return var_1_0 .. var_1_6 .. "K"
+	return var_1_0 .. var_1_2:gsub("^,", "") .. "K"
 end
-
-function var_0_0.ForamtNumber(arg_2_0)
-	tonumber = var_1_10001
-	arg_2_0 = var_1_10001(arg_2_0) or 0
+;({}).ForamtNumber = function(arg_2_0)
+	arg_2_0 = tonumber(arg_2_0) or 0
 
 	local var_2_0 = arg_2_0 < 0 and "-" or ""
+	local var_2_1 = math.abs(arg_2_0)
 
-	math = var_1_10002
-
-	if var_1_10002.abs(arg_2_0) < 1000 then
+	if var_2_1 < 1000 then
 		return arg_2_0
 	end
 
-	tostring = var_3
+	local var_2_2 = tostring(var_2_1):reverse():gsub("(%d%d%d)", "%1,"):reverse()
 
-	local var_2_1 = var_3(var_2)
-	local var_2_2 = var_3.reverse(var_2_1)
-	local var_2_3 = var_3.gsub(var_2_2, "(%d%d%d)", "%1,")
-	local var_2_4 = var_3.reverse(var_2_3)
-	local var_2_5 = var_3.gsub(var_2_4, "^,", "")
-
-	return var_2_0 .. var_2_5
+	return var_2_0 .. var_2_2:gsub("^,", "")
 end
 
-return var_0_0
+return {}

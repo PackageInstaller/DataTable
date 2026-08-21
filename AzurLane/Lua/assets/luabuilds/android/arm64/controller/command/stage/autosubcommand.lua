@@ -1,44 +1,23 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AutoSubCommand", pm.SimpleCommand)
 
-local var_0_0 = "AutoSubCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().isActiveSub
-	local var_1_1 = var_2.toggle
-	local var_1_2 = var_2.system
-	local var_1_3 = var_0_1.GetAutoSubMark(var_1_2)
-
-	PlayerPrefs = var_1_10007
-
-	var_1_10007.SetInt("autoSubIsAcitve" .. var_1_3, not var_1_0 and 1 or 0)
+	PlayerPrefs.SetInt("autoSubIsAcitve" .. var_0_0.GetAutoSubMark(var_1_0.system), not var_1_0.isActiveSub and 1 or 0)
 
 	return
 end
 
-function var_0_1.GetAutoSubMark(arg_2_0)
-	SYSTEM_WORLD = var_1_10001
-
-	if arg_2_0 == var_1_10001 then
+function var_0_0.GetAutoSubMark(arg_2_0)
+	if arg_2_0 == SYSTEM_WORLD then
 		return "_" .. arg_2_0
+	elseif arg_2_0 == SYSTEM_GUILD then
+		return "_" .. SYSTEM_GUILD
 	else
-		SYSTEM_GUILD = var_1_10001
-
-		if arg_2_0 == var_1_10001 then
-			local var_2_0 = "_"
-
-			SYSTEM_GUILD = var_1_10002
-
-			return var_2_0 .. var_1_10002
-		else
-			return ""
-		end
+		return ""
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

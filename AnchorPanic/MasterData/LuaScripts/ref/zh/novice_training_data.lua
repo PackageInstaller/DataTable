@@ -7,7 +7,7 @@ local novice_training_data=
 },
 	[2]={ task_type=2010, time=40, describe=62702, title=0, reward={{1,10000},{11502,1}}, ui_code=502, step=1
 },
-	[3]={ task_type=4, time=10, describe=62703, title=0, reward={{12201,1},{12202,1}}, ui_code=401, step=1
+	[3]={ task_type=4, time=10, describe=62703, title=0, reward={{1,10000},{11,3600}}, ui_code=401, step=1
 },
 	[4]={ task_type=4006, time=1, describe=62704, title=0, reward={{1,10000},{11,3600}}, ui_code=10202, step=1
 },

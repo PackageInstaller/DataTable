@@ -1,111 +1,66 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleVigilantBar = class("BattleVigilantBar")
+ys.Battle.BattleVigilantBar.__name = "BattleVigilantBar"
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleVigilantBar
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleVigilantBar.MIN = 0.267
+ys.Battle.BattleVigilantBar.MAX = 0.7335
+ys.Battle.BattleVigilantBar.METER_LENGTH = ys.Battle.BattleVigilantBar.MAX - ys.Battle.BattleVigilantBar.MIN
+ys.Battle.BattleVigilantBar.STATE_CALM = 0
+ys.Battle.BattleVigilantBar.STATE_SUSPICIOUS = 1
+ys.Battle.BattleVigilantBar.STATE_VIGILANT = 2
+ys.Battle.BattleVigilantBar.STATE_ENGAGE = 3
 
-local var_0_1 = var_0.Battle
-
-class = var_0_10002
-var_0_1.BattleVigilantBar = var_0_10002("BattleVigilantBar")
-var_0.Battle.BattleVigilantBar.__name = "BattleVigilantBar"
-
-local var_0_2 = var_0.Battle.BattleVigilantBar
-
-var_0_2.MIN = 0.267
-var_0_2.MAX = 0.7335
-var_0_2.METER_LENGTH = var_0_2.MAX - var_0_2.MIN
-var_0_2.STATE_CALM = 0
-var_0_2.STATE_SUSPICIOUS = 1
-var_0_2.STATE_VIGILANT = 2
-var_0_2.STATE_ENGAGE = 3
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.BattleVigilantBar.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._vigilantBar = arg_1_1
 	arg_1_0._vigilantBarGO = arg_1_0._vigilantBar.gameObject
-
-	local var_1_0 = arg_1_0._vigilantBar
-	local var_1_1 = var_2.Find(var_1_0, "progress")
-	local var_1_2 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0._progress = var_1_2(var_1_1, var_5(var_1_10007))
+	arg_1_0._progress = arg_1_0._vigilantBar:Find("progress"):GetComponent(typeof(Image))
 	arg_1_0._markList = {}
-
-	local var_1_3 = arg_1_0._markList
-	local var_1_4 = var_0_2.STATE_CALM
-	local var_1_5 = arg_1_0._vigilantBar
-
-	var_1_3[var_1_4] = var_4.Find(var_1_5, "mark/" .. var_0_2.STATE_CALM)
-
-	local var_1_6 = arg_1_0._markList
-	local var_1_7 = var_0_2.STATE_SUSPICIOUS
-	local var_1_8 = arg_1_0._vigilantBar
-
-	var_1_6[var_1_7] = var_4.Find(var_1_8, "mark/" .. var_0_2.STATE_SUSPICIOUS)
-
-	local var_1_9 = arg_1_0._markList
-	local var_1_10 = var_0_2.STATE_VIGILANT
-	local var_1_11 = arg_1_0._vigilantBar
-
-	var_1_9[var_1_10] = var_4.Find(var_1_11, "mark/" .. var_0_2.STATE_VIGILANT)
-
-	local var_1_12 = arg_1_0._markList
-	local var_1_13 = var_0_2.STATE_ENGAGE
-	local var_1_14 = arg_1_0._vigilantBar
-
-	var_1_12[var_1_13] = var_4.Find(var_1_14, "mark/" .. var_0_2.STATE_ENGAGE)
+	arg_1_0._markList[var_0_0.STATE_CALM] = arg_1_0._vigilantBar:Find("mark/" .. var_0_0.STATE_CALM)
+	arg_1_0._markList[var_0_0.STATE_SUSPICIOUS] = arg_1_0._vigilantBar:Find("mark/" .. var_0_0.STATE_SUSPICIOUS)
+	arg_1_0._markList[var_0_0.STATE_VIGILANT] = arg_1_0._vigilantBar:Find("mark/" .. var_0_0.STATE_VIGILANT)
+	arg_1_0._markList[var_0_0.STATE_ENGAGE] = arg_1_0._vigilantBar:Find("mark/" .. var_0_0.STATE_ENGAGE)
 
 	return
 end
 
-function var_0_2.ConfigVigilant(arg_2_0, arg_2_1)
+function ys.Battle.BattleVigilantBar.ConfigVigilant(arg_2_0, arg_2_1)
 	arg_2_0._vigilantState = arg_2_1
 
 	return
 end
 
-function var_0_2.UpdateVigilantProgress(arg_3_0)
-	local var_3_0 = arg_3_0._vigilantState
-	local var_3_1 = var_1.GetVigilantRate(var_3_0)
-
-	arg_3_0._progress.fillAmount = arg_3_0.meterConvert(var_3_1)
+function ys.Battle.BattleVigilantBar.UpdateVigilantProgress(arg_3_0)
+	arg_3_0._progress.fillAmount = arg_3_0.meterConvert((arg_3_0._vigilantState:GetVigilantRate()))
 
 	return
 end
 
-function var_0_2.UpdateVigilantMark(arg_4_0)
-	local var_4_0 = arg_4_0._vigilantState
-	local var_4_1 = var_1.GetVigilantMark(var_4_0)
+function ys.Battle.BattleVigilantBar.UpdateVigilantMark(arg_4_0)
+	local var_4_0 = arg_4_0._vigilantState:GetVigilantMark()
 
-	ipairs = var_1_10002
-
-	for iter_4_0, iter_4_1 in var_1_10002(arg_4_0._markList) do
-		SetActive = var_1_10007
-
-		var_1_10007(iter_4_1, var_4_1 == iter_4_0)
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0._markList) do
+		SetActive(iter_4_1, var_4_0 == iter_4_0)
 	end
 
 	return
 end
 
-function var_0_2.UpdateVigilantBarPosition(arg_5_0, arg_5_1)
+function ys.Battle.BattleVigilantBar.UpdateVigilantBarPosition(arg_5_0, arg_5_1)
 	arg_5_0._vigilantBar.position = arg_5_1
 
 	return
 end
 
-function var_0_2.meterConvert(arg_6_0)
-	return var_0_2.METER_LENGTH * arg_6_0 + var_0_2.MIN
+function ys.Battle.BattleVigilantBar.meterConvert(arg_6_0)
+	return var_0_0.METER_LENGTH * arg_6_0 + var_0_0.MIN
 end
 
-function var_0_2.Dispose(arg_7_0)
+function ys.Battle.BattleVigilantBar.Dispose(arg_7_0)
 	arg_7_0._vigilantState = nil
-	Object = var_1
 
-	var_1.Destroy(arg_7_0._vigilantBarGO)
+	Object.Destroy(arg_7_0._vigilantBarGO)
 
 	arg_7_0._vigilantBar = nil
 	arg_7_0._vigilantBarGO = nil

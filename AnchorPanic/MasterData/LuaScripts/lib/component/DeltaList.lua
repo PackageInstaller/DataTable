@@ -14,6 +14,7 @@ UIRes = UrlManager:getUIPrefabPath("compent/DeltaList.prefab")
 --构造函数
 function ctor(self)
     super.ctor(self)
+    self.allTweener = {}
 end
 
 --析构  
@@ -245,9 +246,20 @@ function setSelectIndex(self, selectIndex, isTween)
         local canvasGroup = item:getChildTrans("ShowNode"):GetComponent(ty.CanvasGroup)
         rect:SetSiblingIndex(0)
         if (isTween) then
-            TweenFactory:move2LPosX(rect, targetX, self.mTweenTime, self.mTweenEaseType)
-            TweenFactory:widthTo(rect, nil, targetW, self.mTweenTime, self.mTweenEaseType)
-            TweenFactory:canvasGroupAlphaTo(canvasGroup, nil, targetAlpha, self.mTweenTime, self.mTweenEaseType)
+            local tweener1, tweener2, tweener3
+            tweener1 = TweenFactory:move2LPosX(rect, targetX, self.mTweenTime, self.mTweenEaseType, function()
+                self.allTweener[tweener1] = nil
+            end)
+            tweener2 = TweenFactory:widthTo(rect, nil, targetW, self.mTweenTime, self.mTweenEaseType, function()
+                self.allTweener[tweener2] = nil
+            end)
+            tweener3 = TweenFactory:canvasGroupAlphaTo(canvasGroup, nil, targetAlpha, self.mTweenTime, self.mTweenEaseType, function()
+                self.allTweener[tweener3] = nil
+            end)
+            self.allTweener[tweener1] = tweener1
+            self.allTweener[tweener2] = tweener2
+            self.allTweener[tweener3] = tweener3
+
             if self.mCallHandelr then
                 if selectIndex == data.itemIndex then
                     self.mCallHandelr(data)
@@ -318,6 +330,11 @@ function recoveItemList(self)
         end
     end
     self.mItemList = {}
+
+    for _, tweener in pairs(self.allTweener) do
+        tweener:Kill()
+    end
+    self.allTweener = {}
 end
 
 return _M

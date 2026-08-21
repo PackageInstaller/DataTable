@@ -3,7 +3,7 @@
 local system_param=
 
 {
-	[1]={ parameter=100, explain="体力初始化值"
+	[1]={ parameter=300, explain="体力初始化值"
 },
 	[2]={ parameter=1110, explain="初始战员（首次进入游戏解锁的战员）"
 },
@@ -11,7 +11,7 @@ local system_param=
 },
 	[5]={ parameter=10, explain="体力购买每日上限"
 },
-	[6]={ parameter=90, explain="玩家最大等级"
+	[6]={ parameter=120, explain="玩家最大等级"
 },
 	[10]={ parameter=1000, explain="核能上限"
 },
@@ -56,6 +56,8 @@ local system_param=
 	[1020]={ parameter=0, explain="手环升级副本每日挑战次数上限"
 },
 	[1021]={ parameter=0, explain="手环突破副本每日挑战次数上限"
+},
+	[1022]={ parameter=0, explain="虚黯潜能副本每日挑战次数上限"
 },
 	[2001]={ parameter=100, explain="芯片或者动能核心强化一键添加强化材料数量的最大上限"
 },
@@ -175,7 +177,7 @@ local system_param=
 },
 	[61]={ parameter=3, explain="第三个获得的战员id"
 },
-	[62]={ parameter=2000, explain="芯片背包容量上限"
+	[62]={ parameter=3000, explain="芯片背包容量上限"
 },
 	[63]={ parameter=2000, explain="手环背包容量上限"
 },
@@ -247,7 +249,7 @@ local system_param=
 },
 	[97]={ parameter=7, explain="竞技场小于等于该段位只会匹配到机器人"
 },
-	[98]={ parameter=2, explain="兑换码使用间隔，单位：秒"
+	[98]={ parameter=5, explain="兑换码使用间隔，单位：秒"
 },
 	[99]={ parameter=5, explain="星夜漫步活动持续时间，单位：天（从创角还是算起）"
 },
@@ -259,7 +261,7 @@ local system_param=
 },
 	[107]={ parameter=1000, explain="竞技场(每个区取得数量=1000/区服数量)"
 },
-	[108]={ parameter=60, explain="模组方案存储上限"
+	[108]={ parameter=80, explain="模组方案存储上限"
 },
 	[109]={ parameter=8, explain="模组方案文字上限，字符数"
 },
@@ -273,13 +275,13 @@ local system_param=
 },
 	[114]={ parameter=1, explain="无限城跳过所需回合数"
 },
-	[115]={ parameter={1113,2}, explain="通行证模型查看角色tid，序号"
+	[115]={ parameter={1033,4}, explain="通行证模型查看角色tid，序号"
 },
 	[116]={ parameter={69,85}, explain="链尉官等级在这个等级段则会分配至竞技场和颠峰竞技场得中级保护区"
 },
 	[117]={ parameter=4, explain="共鸣第一个位置所需要的战员军阶条件"
 },
-	[118]={ parameter=2, explain="当前卡池处于上半还是下半。（1.上半   2.下半）"
+	[118]={ parameter=1, explain="当前卡池处于上半还是下半。（1.上半   2.下半）"
 },
 	[119]={ parameter=10000, explain="抽卡需要监听是否需要监听该模块下载额外资源"
 },
@@ -288,6 +290,16 @@ local system_param=
 	[121]={ parameter=500, explain="珍藏邮件上限"
 },
 	[122]={ parameter=4, explain="最低分区数量"
+},
+	[123]={ parameter=2000, explain="dna蛋背包容量"
+},
+	[124]={ parameter=101, explain="主题活动那边关联的卡池id，如果为0则不显示按钮"
+},
+	[131]={ parameter={1,2060,2061}, explain="需要回收的道具列表"
+},
+	[196]={ parameter={{3,50}}, explain="等级重置消耗"
+},
+	[197]={ parameter=40005, explain="主界面弹脸图读组合包配置的哪个商品id"
 },
 	[3001]={ parameter=200, explain="格挡点击判定时间段，单位：毫秒"
 },
@@ -320,6 +332,8 @@ local system_param=
 	[3017]={ parameter=100, explain="中等格挡点击判定时间段，单位：毫秒"
 },
 	[1101]={ parameter=3, explain="主界面广告牌轮播时间。单位：秒"
+},
+	[1102]={ parameter=3030, explain="主界面活动资源id"
 },
 	[200]={ parameter=62, explain="每扣除1%的生命时可获得的核能值(/10)"
 },
@@ -369,15 +383,15 @@ local system_param=
 },
 	[311]={ parameter=500, explain="噩梦难度对应的技能id"
 },
-	[401]={ parameter=6, explain="资源副本多倍挑战倍数上限"
+	[401]={ parameter=10, explain="资源副本多倍挑战倍数上限"
 },
-	[402]={ parameter=6, explain="潜能副本多倍挑战倍数上限"
+	[402]={ parameter=10, explain="潜能副本多倍挑战倍数上限"
 },
-	[403]={ parameter=6, explain="模组副本多倍挑战倍数上限"
+	[403]={ parameter=10, explain="模组副本多倍挑战倍数上限"
 },
 	[404]={ parameter=2, explain="情报副本多倍挑战倍数上限"
 },
-	[405]={ parameter={{2,5},{3,10},{4,30},{5,40},{6,45}}, explain="资源副本多倍挑战数量和对应开启指挥官等级"
+	[405]={ parameter={{2,5},{3,10},{4,30},{5,40},{6,45},{7,45},{8,45},{9,45},{10,45}}, explain="资源副本多倍挑战数量和对应开启指挥官等级"
 },
 	[501]={ parameter=1, explain="第一条附加属性解锁所需芯片阶段等级"
 },
@@ -385,9 +399,9 @@ local system_param=
 },
 	[503]={ parameter=1, explain="第三条附加属性解锁所需芯片阶段等级"
 },
-	[504]={ parameter=8, explain="芯片/手环强化材料单词消耗的数量上限"
+	[504]={ parameter=16, explain="芯片/手环强化材料单词消耗的数量上限"
 },
-	[505]={ parameter=8, explain="芯片/手环强化材料一键添加的数量上限"
+	[505]={ parameter=16, explain="芯片/手环强化材料一键添加的数量上限"
 },
 	[506]={ parameter=6, explain="手环精炼等级上限"
 },
@@ -443,7 +457,7 @@ local system_param=
 },
 	[952]={ parameter=15, explain="宿舍高"
 },
-	[953]={ parameter=10, explain="家具过载值上限"
+	[953]={ parameter=12, explain="家具过载值上限"
 },
 	[957]={ parameter=2000, explain="家具背包上限"
 },
@@ -491,6 +505,8 @@ local system_param=
 },
 	[831]={ parameter=15, explain="亲密度等级上限"
 },
+	[832]={ parameter=20, explain="誓约后亲密度等级上限"
+},
 	[861]={ parameter=16000, explain="每周任务获取通行证经验上限（周一5点刷新）"
 },
 	[862]={ parameter=80, explain="1级对应消耗x钻石"
@@ -526,6 +542,8 @@ local system_param=
 	[884]={ parameter=1000, explain="SSR卡初始属性系数。（单位：千分比）6星及以上"
 },
 	[885]={ parameter={{11,30000},{12,10000},{13,20000}}, explain="战员辅助型增益buff的三维增益上限，关联buff开启（单位：万分比）"
+},
+	[886]={ parameter=6, explain="战员属性总数量限制"
 },
 	[921]={ parameter={1,1,3,3,4,4,1}, explain="号芯片对应安装槽位开启所需军阶"
 },
@@ -576,6 +594,12 @@ local system_param=
 	[1601]={ parameter=3, explain="匹配时间下限（单位：秒）"
 },
 	[1602]={ parameter=8, explain="匹配时间上限（单位：秒）"
+},
+	[1603]={ parameter=-200, explain="竞技场胜利积分获取修正参数a"
+},
+	[1604]={ parameter=700000, explain="竞技场胜利积分获取修正参数b"
+},
+	[1605]={ parameter=-190000, explain="竞技场胜利积分获取修正参数c"
 },
 	[1611]={ parameter=25, explain="巅峰竞技场胜利增加积分对应参数v"
 },
@@ -679,6 +703,18 @@ local system_param=
 },
 	[1913]={ parameter=990, explain="改造属性<1为S（千分比）"
 },
+	[1914]={ parameter=300, explain="模组礼包使用上限"
+},
+	[1915]={ parameter=300, explain="模组改造材料选择上限"
+},
+	[1916]={ parameter=4, explain="模组改造可选属性数量"
+},
+	[1917]={ parameter=4, explain="模组改造可选品质数量"
+},
+	[1918]={ parameter={{15,100}}, explain="模组方案增加消耗"
+},
+	[1919]={ parameter=120, explain="模组方案增加上限"
+},
 	[1921]={ parameter=40, explain="免费重置等级"
 },
 	[1922]={ parameter=2505, explain="天赋重置道具ID"
@@ -703,7 +739,7 @@ local system_param=
 },
 	[4001]={ parameter=10, explain="初始金币"
 },
-	[4002]={ parameter=100, explain="初始生命"
+	[4002]={ parameter=0, explain="初始生命"
 },
 	[4003]={ parameter=1, explain="每次刷新消耗金币"
 },
@@ -821,6 +857,8 @@ local system_param=
 },
 	[5012]={ parameter=10, explain="大于该值显示橙色，小于等于该值显示红色"
 },
+	[5013]={ parameter=3, explain="当控制中心到多少级开放一键入驻"
+},
 	[5101]={ parameter=3, explain="前端SR和SSR天赋等级上限判定"
 },
 	[5102]={ parameter=13, explain="前端技能等级上限判定"
@@ -841,7 +879,7 @@ local system_param=
 },
 	[5302]={ parameter=0, explain=""
 },
-	[5350]={ parameter={800,1250,1800}, explain="弱点属性初始加伤（小怪、精英、boss）"
+	[5350]={ parameter={800,1250,1800}, explain="六元素弱点属性初始加伤（小怪、精英、boss）"
 },
 	[5351]={ parameter=0, explain="硬直击破飘字buffid"
 },
@@ -851,17 +889,19 @@ local system_param=
 },
 	[5357]={ parameter=9903, explain="燃烧通用buff触发技能id"
 },
+	[5358]={ parameter={600,1000,1400}, explain="虚黯属性初始加伤（小怪、精英、boss）"
+},
 	[5361]={ parameter=28, explain="1.1up的天数"
 },
 	[5362]={ parameter=28, explain="活动期间限时货币id"
 },
-	[5363]={ parameter={2,3,4,6,7,9,10,11,12,13,14,15,16,19,20,28,30,35,36,37,38,39,41,42,44}, explain="活动期间会掉落活动币的关卡战斗类型"
+	[5363]={ parameter={2,3,4,6,7,9,10,11,12,13,14,15,16,19,20,28,30,35,36,37,38,39,41,42,44,46,59}, explain="活动期间会掉落活动币的关卡战斗类型"
 },
 	[5364]={ parameter=1110, explain="特定战员id"
 },
 	[5365]={ parameter=2021, explain="给平民释加的效果id"
 },
-	[5366]={ parameter=3, explain="1.1up活动每日双倍挑战的次数"
+	[5366]={ parameter=6, explain="资源增产次数"
 },
 	[5367]={ parameter=2015, explain="普通关卡最后一关id"
 },
@@ -886,6 +926,8 @@ local system_param=
 	[5431]={ parameter=0, explain="界面模型预览"
 },
 	[5432]={ parameter={{12330,1}}, explain="累积奖励，艾克皮肤"
+},
+	[5433]={ parameter=1765900800, explain="taptap登录弹脸结束时间戳"
 },
 	[5441]={ parameter={{3,300}}, explain="联盟创建消耗"
 },
@@ -915,19 +957,23 @@ local system_param=
 },
 	[5455]={ parameter=10, explain="联盟训练场最大回合数"
 },
+	[5456]={ parameter={{3,300}}, explain="联盟改图标消耗"
+},
 	[5501]={ parameter=3, explain="联盟战每日挑战次数"
 },
 	[5502]={ parameter=12800, explain="联盟战无限周目叠加的血量成长系数（乘幂），单位：万分比"
 },
 	[5504]={ parameter=200, explain="排行榜显示数量"
 },
-	[5505]={ parameter={{{2023,12,1},{2023,12,7}},{{2024,1,12},{2024,1,18}},{{2024,2,16},{2024,2,20}},{{2024,3,22},{2024,3,26}},{{2024,4,26},{2024,4,30}},{{2024,5,25},{2024,5,29}},{{2024,6,22},{2024,6,26}},{{2024,7,20},{2024,7,24}},{{2024,8,17},{2024,8,21}}}, explain="活动{{开启时间}，{结束时间}}"
+	[5505]={ parameter={{{2026,4,15},{2026,4,19}},{{2026,5,20},{2026,5,24}},{{2026,6,24},{2026,6,28}},{{2026,7,29},{2026,8,2}},{{2026,9,2},{2026,9,6}},{{2026,10,7},{2026,10,11}},{{2026,11,11},{2026,11,15}},{{2026,12,16},{2026,12,20}}}, explain="活动{{开启时间}，{结束时间}}"
 },
 	[5506]={ parameter=10, explain="联盟战最大战斗回合数"
 },
 	[5507]={ parameter=1, explain="联盟战正常挑战回合数"
 },
-	[5508]={ parameter={10100,25}, explain="联盟战无限周目叠加的攻击成长系数（乘幂），单位：万分比"
+	[5508]={ parameter={10100,32}, explain="联盟战无限周目叠加的攻击成长系数（乘幂），单位：万分比"
+},
+	[5509]={ parameter={120,22000}, explain="周目数,效果id"
 },
 	[5521]={ parameter=150, explain="绳索的摆动角度，单位：度"
 },
@@ -943,19 +989,35 @@ local system_param=
 },
 	[5553]={ parameter=4, explain="主界面活动入口进入的地图id（配0则打开的是2D界面，配1则是进入场景）"
 },
+	[5554]={ parameter=4, explain="开心农场玩法进入的场景id"
+},
+	[5555]={ parameter=10, explain="开心农场仓库容量"
+},
+	[5556]={ parameter=1, explain="主界面活动入口关卡类型（1.主线，2.活动关卡）"
+},
+	[5557]={ parameter=16, explain="如果是类型1，这里填对应的主线章节id"
+},
 	[5571]={ parameter=6501, explain="战区1到战区2的晋升奖励"
 },
 	[5572]={ parameter=6502, explain="战区2到战区3的晋升奖励"
 },
 	[5573]={ parameter=10, explain="无限城最大战斗回合数"
 },
+	[5576]={ parameter=10, explain="最大战斗回合数"
+},
+	[5577]={ parameter=0, explain=""
+},
 	[5581]={ parameter=60, explain="1级对应消耗x钻石"
 },
-	[5582]={ parameter={1023,2}, explain="时装通行证的tid 和 时装id"
+	[5582]={ parameter={1039,3}, explain="时装通行证的tid 和 时装id"
 },
-	[5591]={ parameter=4, explain="鱼脱钩时间，单位：秒"
+	[5586]={ parameter=60, explain="1级对应消耗x钻石"
 },
-	[5592]={ parameter=30, explain="进度初始百分比"
+	[5587]={ parameter={1035,2}, explain="时装通行证的tid 和 时装id"
+},
+	[5591]={ parameter=3, explain="鱼脱钩时间，单位：秒"
+},
+	[5592]={ parameter=20, explain="进度初始百分比"
 },
 	[5593]={ parameter=100, explain="每次点击鱼移动距离（平滑移动），单位：像素"
 },
@@ -966,6 +1028,8 @@ local system_param=
 	[5597]={ parameter=30, explain="钓鱼进度颜色为红色小于等于的百分比"
 },
 	[5598]={ parameter=70, explain="钓鱼进度颜色为黄色小于等于的百分比"
+},
+	[5599]={ parameter=3, explain="自动钓鱼所需要手动钓成功鱼的数量"
 },
 	[5601]={ parameter=3, explain="小于等于该难度的不需要前置解锁"
 },
@@ -987,6 +1051,8 @@ local system_param=
 },
 	[5655]={ parameter={69,85}, explain="排行榜中级区范围"
 },
+	[5656]={ parameter=2, explain="界面boss图片显示（1.艾许，2.新的）"
+},
 	[5701]={ parameter=30, explain="月卡持续天数"
 },
 	[5702]={ parameter=6, explain="月卡限购数量"
@@ -1005,9 +1071,9 @@ local system_param=
 },
 	[5761]={ parameter=10, explain="所需庆典任务数量"
 },
-	[5762]={ parameter={{12351,1}}, explain="庆典累计奖励，丽丽拉皮肤"
+	[5762]={ parameter={{12394,1}}, explain="庆典累计奖励"
 },
-	[5763]={ parameter={1301,4}, explain="庆典任务的tid 和 时装id"
+	[5763]={ parameter={1009,4}, explain="庆典任务的tid 和 时装id"
 },
 	[5764]={ parameter={{13200,1}}, explain="庆典月卡激活奖励"
 },
@@ -1015,11 +1081,11 @@ local system_param=
 },
 	[5767]={ parameter=3, explain="战斗后抓取的收藏品数量"
 },
-	[5768]={ parameter=5, explain="商店商品buff数量"
+	[5768]={ parameter=0, explain="商店商品收藏品数量"
 },
-	[5769]={ parameter=3, explain="商店商品收藏品数量"
+	[5769]={ parameter=5, explain="商店商品buff数量"
 },
-	[5770]={ parameter=120, explain="天赋点获取上限"
+	[5770]={ parameter=95, explain="天赋点获取上限"
 },
 	[5771]={ parameter=6, explain="放弃后再次挑战cd，单位：秒"
 },
@@ -1027,9 +1093,121 @@ local system_param=
 },
 	[5773]={ parameter=10000, explain="肉鸽能量上限"
 },
-	[5774]={ parameter=500, explain="使用技能增加肉鸽能量比例"
+	[5774]={ parameter=1000, explain="使用技能增加肉鸽能量比例"
 },
 	[5775]={ parameter=0, explain="初始肉鸽能量值"
+},
+	[5776]={ parameter=1, explain="正常挑战回合数"
+},
+	[5781]={ parameter=68, explain="活动期间单次充值达到金额"
+},
+	[5782]={ parameter=810, explain="达标奖励"
+},
+	[5783]={ parameter=23, explain="跳转界面编码ID"
+},
+	[5786]={ parameter=68, explain="活动期间充值金额"
+},
+	[5787]={ parameter={1038,3}, explain="狂欢好礼角色"
+},
+	[5788]={ parameter=68, explain="活动期间充值金额"
+},
+	[5789]={ parameter={1004,4}, explain="狂欢好礼角色"
+},
+	[5791]={ parameter=9800, explain="活动期间累计充值达到金额"
+},
+	[5796]={ parameter=86400, explain="主界面倒计时显示时间"
+},
+	[5801]={ parameter=3, explain="团战每日挑战次数"
+},
+	[5802]={ parameter=3, explain="团战每日防守成功加积分次数（建筑被破坏则失效）"
+},
+	[5803]={ parameter=3600, explain="匹配阶段所需要时间，单位：秒"
+},
+	[5804]={ parameter=50, explain="进攻主城所需单个边城被破坏血量低于百分之多少"
+},
+	[5805]={ parameter=100, explain="胜利方获得积分"
+},
+	[5806]={ parameter=2190, explain="结算破坏积分x最低值限制"
+},
+	[5807]={ parameter=5, explain="主动挑战2连胜额外加分"
+},
+	[5808]={ parameter=10, explain="主动挑战3连胜额外加分"
+},
+	[5809]={ parameter=0, explain="防守中断3连胜额外加分"
+},
+	[5810]={ parameter=50, explain="平局方获得积分"
+},
+	[5811]={ parameter={{{2026,4,29},{2026,5,3}},{{2026,6,3},{2026,6,7}},{{2026,7,15},{2026,7,19}},{{2026,8,19},{2026,8,23}},{{2026,9,23},{2026,9,27}},{{2026,10,28},{2026,11,1}},{{2026,12,2},{2026,12,6}}}, explain="活动{{开启时间}，{结束时间}}"
+},
+	[5812]={ parameter=15, explain="其他15个小建筑 最少需要入驻几个才算报名成功"
+},
+	[5813]={ parameter=1, explain="1个主城最少需要入驻几个才算报名成功"
+},
+	[5814]={ parameter=3, explain="3个边城主城最少要入驻几个才算报名成功"
+},
+	[5815]={ parameter=10, explain="战斗的最大回合数"
+},
+	[5816]={ parameter=5, explain="破坏积分转化参数a(算出来的积分除以100w)"
+},
+	[5817]={ parameter=-12900, explain="破坏积分转化参数b"
+},
+	[5818]={ parameter=81727000, explain="破坏积分转化参数c"
+},
+	[5819]={ parameter=0, explain="活动可进入时间戳"
+},
+	[5820]={ parameter={{1,1,40},{2,41,100},{3,101,200},{4,201,400},{5,401,99999}}, explain="报名成功联盟数对应类型"
+},
+	[5821]={ parameter={{1,{3,600}},{2,{3,320}},{3,{3,180}},{4,{3,180}},{5,{3,140}},{6,{3,140}},{7,{3,140}},{8,{3,140}}}, explain=""
+},
+	[5901]={ parameter=1022, explain="纳源链接功能开启时默认选中的角色id"
+},
+	[5902]={ parameter=7331, explain="纳源铸痕功能开启时默认选中的烙痕id"
+},
+	[5903]={ parameter=901, explain="纳源链接重置选择道具"
+},
+	[5904]={ parameter=800, explain="聚源链接/铸痕重置选择道具"
+},
+	[5905]={ parameter=7, explain="聚源激活生效时间"
+},
+	[5900]={ parameter={1028,1023,1019}, explain="聚源链接卡池"
+},
+	[5899]={ parameter={7338,7332,7325}, explain="聚源铸痕卡池"
+},
+	[5906]={ parameter={{2607,1},{1,360000}}, explain="金色的卵孵化所需道具"
+},
+	[5907]={ parameter=4, explain="功能开启所需要的战员军阶条件"
+},
+	[5911]={ parameter=2071, explain="转转乐道具id"
+},
+	[5913]={ parameter=2072, explain="转转乐商店用的兑换道具"
+},
+	[5914]={ parameter=50, explain="必定出的抽数"
+},
+	[5915]={ parameter=2073, explain="转转乐道具id"
+},
+	[5916]={ parameter=2074, explain="转转乐商店用的兑换道具"
+},
+	[5917]={ parameter=50, explain="必定出的抽数"
+},
+	[5921]={ parameter={{"cv",93,"voice_layback"},{"cv_jp",94,"voice_layback_jp"}}, explain="{语音,选项名,语音延迟字段名}"
+},
+	[5922]={ parameter=111, explain="BOSS地鼠点击最短间隔/毫秒"
+},
+	[5931]={ parameter=2081, explain="刮刮乐道具id"
+},
+	[5941]={ parameter=2901, explain="誓约道具"
+},
+	[5942]={ parameter={{3,100}}, explain="誓约成功奖励"
+},
+	[5943]={ parameter=7, explain="战员昵称长度"
+},
+	[990111]={ parameter=28, explain="所需庆典任务数量"
+},
+	[990112]={ parameter={{11604,1}}, explain="庆典累计奖励，丽丽拉皮肤"
+},
+	[5951]={ parameter=100, explain="消除分数"
+},
+	[5952]={ parameter=200, explain="掉落分数"
 }
 }
 

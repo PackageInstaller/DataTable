@@ -43,13 +43,16 @@ function configUI(self)
     self.mSkillItem3 = self:getChildGO("mSkillItem3")
     self.mSkillItem4 = self:getChildGO("mSkillItem4")
     self.mSkillItem5 = self:getChildGO("mSkillItem5")
-
+    self.mSkillItem6 = self:getChildGO("mSkillItem6")
     table.insert(self.mSkillList, self.mSkillItem0)
     table.insert(self.mSkillList, self.mSkillItem1)
     table.insert(self.mSkillList, self.mSkillItem2)
     table.insert(self.mSkillList, self.mSkillItem3)
     table.insert(self.mSkillList, self.mSkillItem4)
     table.insert(self.mSkillList, self.mSkillItem5)
+    table.insert(self.mSkillList, self.mSkillItem6)
+
+
 
     self.mSkillInfoTips = self:getChildGO("mSkillInfoTips")
     self.mTxtSkillEleName = self:getChildGO("mTxtSkillEleName"):GetComponent(ty.Text)
@@ -169,6 +172,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mSkillItem3, self.onClickSkill, nil, 3)
     self:addUIEvent(self.mSkillItem4, self.onClickSkill, nil, 4)
     self:addUIEvent(self.mSkillItem5, self.onClickSkill, nil, 5)
+    self:addUIEvent(self.mSkillItem6, self.onClickSkill, nil, 6)
 
     self:addUIEvent(self.mBtnUpgrade, self.onBtnUpgradeClick)
 

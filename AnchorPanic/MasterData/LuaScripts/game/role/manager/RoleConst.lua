@@ -80,6 +80,14 @@ role.AttrKey = {
     DOUNDLESS_COIN = 633,
 
     CHAT_BUBBLE_TID = 634, --聊天气泡使用中id
+
+    HAPPYFARM_COIN = 635, --开心农场货币
+
+    GUILDWAR_COIN = 636, --公会战货币
+
+    GUILDWARTOP_COIN = 637, --公会战巅峰货币
+
+    VISION_MIRROR_COIN = 638, --异象残镜货币
 }
 
 role.getPageName = function(cusPageType)
@@ -119,6 +127,16 @@ role.getPageIcon = function(cusPageType)
     end
     return icon
 end
+
+
+-- 助理组类型 Gurad_hero战员 Gurad_painting图册
+role.GuradType = {
+    Gurad_hero = "Gurad_hero",
+    Gurad_painting = "Gurad_painting",
+}
+
+--默认战斗皮肤
+role.DefFightUIId = 6001
 
 --[[ 替换语言包自动生成，请勿修改！
 语言包: _TT(62060):"声音"

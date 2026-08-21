@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "gallery_config") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "gallery_config"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.gallery_config = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.gallery_config
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.gallery_config = rawget(pg, "gallery_config") or setmetatable({
+	__name = "gallery_config"
+}, confNEO)
+pg.gallery_config.all = {
 	2,
 	3,
 	4,
@@ -74,25 +51,11 @@ var_0_3.all = {
 	1010,
 	1012
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.gallery_config = {}
+pg.base = pg.base or {}
+pg.base.gallery_config = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.gallery_config
-
-	var_1_0[2] = {
+	pg.base.gallery_config[2] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -105,11 +68,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.gallery_config
-
-	var_1_1[3] = {
+	pg.base.gallery_config[3] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -122,11 +81,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.gallery_config
-
-	var_1_2[4] = {
+	pg.base.gallery_config[4] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -139,11 +94,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.gallery_config
-
-	var_1_3[6] = {
+	pg.base.gallery_config[6] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -156,11 +107,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.gallery_config
-
-	var_1_4[7] = {
+	pg.base.gallery_config[7] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -173,11 +120,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.gallery_config
-
-	var_1_5[9] = {
+	pg.base.gallery_config[9] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -190,11 +133,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.gallery_config
-
-	var_1_6[11] = {
+	pg.base.gallery_config[11] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -207,11 +146,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.gallery_config
-
-	var_1_7[12] = {
+	pg.base.gallery_config[12] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -224,11 +159,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.gallery_config
-
-	var_1_8[16] = {
+	pg.base.gallery_config[16] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -241,11 +172,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.gallery_config
-
-	var_1_9[21] = {
+	pg.base.gallery_config[21] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -258,11 +185,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.gallery_config
-
-	var_1_10[23] = {
+	pg.base.gallery_config[23] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -275,11 +198,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.gallery_config
-
-	var_1_11[24] = {
+	pg.base.gallery_config[24] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -292,11 +211,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.gallery_config
-
-	var_1_12[28] = {
+	pg.base.gallery_config[28] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -309,11 +224,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.gallery_config
-
-	var_1_13[29] = {
+	pg.base.gallery_config[29] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -326,11 +237,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.gallery_config
-
-	var_1_14[30] = {
+	pg.base.gallery_config[30] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -343,11 +250,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.gallery_config
-
-	var_1_15[31] = {
+	pg.base.gallery_config[31] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -360,11 +263,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.gallery_config
-
-	var_1_16[32] = {
+	pg.base.gallery_config[32] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -377,11 +276,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.gallery_config
-
-	var_1_17[33] = {
+	pg.base.gallery_config[33] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -394,11 +289,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.gallery_config
-
-	var_1_18[34] = {
+	pg.base.gallery_config[34] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -411,11 +302,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.gallery_config
-
-	var_1_19[35] = {
+	pg.base.gallery_config[35] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -428,11 +315,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.gallery_config
-
-	var_1_20[36] = {
+	pg.base.gallery_config[36] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -445,11 +328,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.gallery_config
-
-	var_1_21[40] = {
+	pg.base.gallery_config[40] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -462,11 +341,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.gallery_config
-
-	var_1_22[41] = {
+	pg.base.gallery_config[41] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -479,11 +354,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.gallery_config
-
-	var_1_23[42] = {
+	pg.base.gallery_config[42] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -496,11 +367,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.gallery_config
-
-	var_1_24[43] = {
+	pg.base.gallery_config[43] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -513,11 +380,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.gallery_config
-
-	var_1_25[44] = {
+	pg.base.gallery_config[44] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -530,11 +393,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.gallery_config
-
-	var_1_26[45] = {
+	pg.base.gallery_config[45] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -547,11 +406,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.gallery_config
-
-	var_1_27[46] = {
+	pg.base.gallery_config[46] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -564,11 +419,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.gallery_config
-
-	var_1_28[47] = {
+	pg.base.gallery_config[47] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -581,11 +432,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.gallery_config
-
-	var_1_29[48] = {
+	pg.base.gallery_config[48] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -598,11 +445,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.gallery_config
-
-	var_1_30[49] = {
+	pg.base.gallery_config[49] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -615,11 +458,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.gallery_config
-
-	var_1_31[50] = {
+	pg.base.gallery_config[50] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -632,11 +471,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.gallery_config
-
-	var_1_32[51] = {
+	pg.base.gallery_config[51] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -649,11 +484,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.gallery_config
-
-	var_1_33[52] = {
+	pg.base.gallery_config[52] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -666,11 +497,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.gallery_config
-
-	var_1_34[53] = {
+	pg.base.gallery_config[53] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -683,11 +510,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.gallery_config
-
-	var_1_35[54] = {
+	pg.base.gallery_config[54] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -700,11 +523,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.gallery_config
-
-	var_1_36[55] = {
+	pg.base.gallery_config[55] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -717,11 +536,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.gallery_config
-
-	var_1_37[1001] = {
+	pg.base.gallery_config[1001] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -734,11 +549,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.gallery_config
-
-	var_1_38[1002] = {
+	pg.base.gallery_config[1002] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -751,11 +562,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.gallery_config
-
-	var_1_39[1004] = {
+	pg.base.gallery_config[1004] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -768,11 +575,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.gallery_config
-
-	var_1_40[1005] = {
+	pg.base.gallery_config[1005] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -785,11 +588,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.gallery_config
-
-	var_1_41[1006] = {
+	pg.base.gallery_config[1006] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -802,11 +601,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.gallery_config
-
-	var_1_42[1007] = {
+	pg.base.gallery_config[1007] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -819,11 +614,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.gallery_config
-
-	var_1_43[1008] = {
+	pg.base.gallery_config[1008] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -836,11 +627,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.gallery_config
-
-	var_1_44[1009] = {
+	pg.base.gallery_config[1009] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -853,11 +640,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.gallery_config
-
-	var_1_45[1010] = {
+	pg.base.gallery_config[1010] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,
@@ -870,8 +653,7 @@ var_0_3.base.gallery_config = {}
 		},
 		unlock_cost = {}
 	}
-	pg = var_1_45
-	var_1_45.base.gallery_config[1012] = {
+	pg.base.gallery_config[1012] = {
 		unlock_other = 0,
 		name = "",
 		year = 1,

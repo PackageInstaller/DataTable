@@ -1,35 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MapBuilderEXSP", import(".MapBuilderSPSeriesFull"))
 
-local var_0_0 = "MapBuilderEXSP"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MapBuilderSPSeriesFull"))
-
-function var_0_1.GetType(arg_1_0)
-	MapBuilder = var_1_10001
-
-	return var_1_10001.TYPEATELIERYUMIA
+function var_0_0.GetType(arg_1_0)
+	return MapBuilder.TYPEATELIERYUMIA
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "LevelSelectEXSPUI"
 end
 
-function var_0_1.OnInit(arg_3_0)
-	var_0_1.super.OnInit(arg_3_0)
+function var_0_0.OnInit(arg_3_0)
+	var_0_0.super.OnInit(arg_3_0)
 
-	local var_3_0 = arg_3_0._tf
+	arg_3_0.personalBtn = arg_3_0._tf:Find("Story/PersonalCard")
+	arg_3_0.personalPage = SecretsAbyssPersonalPage.New(arg_3_0._tf, arg_3_0, {})
 
-	arg_3_0.personalBtn = var_1.Find(var_3_0, "Story/PersonalCard")
-	SecretsAbyssPersonalPage = var_1
-	arg_3_0.personalPage = var_1.New(arg_3_0._tf, arg_3_0, {})
-	onButton = var_1
-
-	var_1(arg_3_0, arg_3_0.personalBtn, function()
-		local var_4_0 = arg_3_0.personalPage
-
-		var_0.ExecuteAction(var_4_0, "Show")
+	onButton(arg_3_0, arg_3_0.personalBtn, function()
+		arg_3_0.personalPage:ExecuteAction("Show")
 
 		return
 	end)
@@ -37,24 +23,12 @@ function var_0_1.OnInit(arg_3_0)
 	return
 end
 
-function var_0_1.UpdateMapVO(arg_5_0, arg_5_1)
-	var_0_1.super.UpdateMapVO(arg_5_0, arg_5_1)
+function var_0_0.UpdateMapVO(arg_5_0, arg_5_1)
+	var_0_0.super.UpdateMapVO(arg_5_0, arg_5_1)
 
-	local var_5_0 = arg_5_0.activity
-
-	if var_2.getConfig(var_5_0, "config_client").roll_task then
-		local var_5_1 = arg_5_0.personalPage
-
-		var_2.RegisterRandomCallback(var_5_1, function()
-			local var_6_0 = arg_5_0.sceneParent
-			local var_6_1 = var_0.emit
-
-			LevelMediator2 = var_2_10003
-
-			local var_6_2 = var_2_10003.ON_UPDATE_LOWPRIORITY_TASK
-			local var_6_3 = arg_5_0.activity
-
-			var_6_1(var_6_0, var_6_2, var_4.getConfig(var_6_3, "config_client").roll_task)
+	if arg_5_0.activity:getConfig("config_client").roll_task then
+		arg_5_0.personalPage:RegisterRandomCallback(function()
+			arg_5_0.sceneParent:emit(LevelMediator2.ON_UPDATE_LOWPRIORITY_TASK, arg_5_0.activity:getConfig("config_client").roll_task)
 
 			return
 		end)
@@ -63,30 +37,20 @@ function var_0_1.UpdateMapVO(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.SetDisplayMode(arg_7_0, arg_7_1)
-	var_0_1.super.SetDisplayMode(arg_7_0, arg_7_1)
+function var_0_0.SetDisplayMode(arg_7_0, arg_7_1)
+	var_0_0.super.SetDisplayMode(arg_7_0, arg_7_1)
 
-	if arg_7_0.contextData.displayMode == var_0_1.DISPLAY.BATTLE then
-		quickPlayAnimation = var_3
-
-		var_3(arg_7_0._tf, "Anim_LevelSelectAtelierYumia_Battle_In")
+	if arg_7_0.contextData.displayMode == var_0_0.DISPLAY.BATTLE then
+		quickPlayAnimation(arg_7_0._tf, "Anim_LevelSelectAtelierYumia_Battle_In")
 	else
-		quickPlayAnimation = var_3
-
-		var_3(arg_7_0._tf, "Anim_LevelSelectAtelierYumia_In")
+		quickPlayAnimation(arg_7_0._tf, "Anim_LevelSelectAtelierYumia_In")
 	end
 
 	return
 end
 
-function var_0_1.PlayerLevelTplAnimation(arg_8_0, arg_8_1, arg_8_2)
-	quickPlayAnimation = var_1_10003
-
-	local var_8_0 = arg_8_1
-
-	switch = var_1_10006
-
-	var_1_10003(var_8_0, var_1_10006(arg_8_2.status, {
+function var_0_0.PlayerLevelTplAnimation(arg_8_0, arg_8_1, arg_8_2)
+	quickPlayAnimation(arg_8_1, switch(arg_8_2.status, {
 		Lock = function()
 			return "Anim_LevelSelectAtelierYumia_LevelTplLock_In"
 		end,
@@ -101,404 +65,190 @@ function var_0_1.PlayerLevelTplAnimation(arg_8_0, arg_8_1, arg_8_2)
 	return
 end
 
-function var_0_1.UpdateStory(arg_12_0)
-	local var_12_0 = {}
-
-	pg = var_1_10002
-
-	local var_12_1 = var_1_10002.NewStoryMgr.GetInstance()
+function var_0_0.UpdateStory(arg_12_0)
+	local var_12_1 = pg.NewStoryMgr.GetInstance()
 	local var_12_2 = 0
 	local var_12_3 = 0
 	local var_12_4 = {}
 
-	pairs = var_1_10006
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.storyNodesDict) do
+		local var_12_5 = arg_12_0.storyHolder:Find(tostring(iter_12_1.id))
+		local var_12_6 = iter_12_1:IsActive(arg_12_0.activity, arg_12_0.ptActivity)
+		local var_12_7 = iter_12_1:IsReaded()
 
-	for iter_12_0, iter_12_1 in var_1_10006(arg_12_0.storyNodesDict) do
-		local var_12_5 = arg_12_0.storyHolder
-		local var_12_6 = var_11.Find
-
-		tostring = var_1_10014
-
-		local var_12_7 = var_12_6(var_12_5, var_1_10014(iter_12_1.id))
-
-		var_1_10014 = iter_12_1
-
-		local var_12_8 = iter_12_1.IsActive(var_1_10014, arg_12_0.activity, arg_12_0.ptActivity)
-		local var_12_9 = iter_12_1
-		local var_12_10 = iter_12_1.IsReaded(var_12_9)
-
-		_G = var_1_10014
-
-		if not var_1_10014.isActive(var_12_7) and var_12_8 then
-			setActive = var_1_10014
-
-			var_1_10014(var_12_7, var_12_8)
-
-			quickPlayAnimation = var_1_10014
-
-			local var_12_11 = var_12_7
-
-			switch = var_17
-
-			local var_12_12 = iter_12_1
-			local var_12_13 = iter_12_1.GetType(var_12_12)
-			local var_12_14 = {}
-
-			BossRushStoryNode = var_12_12
-			var_12_14[var_12_12.NODE_TYPE.NORMAL] = function()
-				return "Anim_LevelSelectAtelierYumia_storytpl_In"
-			end
-			BossRushStoryNode = var_21
-			var_12_14[var_21.NODE_TYPE.BATTLE] = function()
-				return "Anim_LevelSelectAtelierYumia_bettletpl_In"
-			end
-			BossRushStoryNode = var_21
-			var_12_14[var_21.NODE_TYPE.LOCATION] = function()
-				return "Anim_LevelSelectAtelierYumia_Item_Lock_In"
-			end
-
-			var_1_10014(var_12_11, var_17(var_12_13, var_12_14, function()
-				assert = var_2_10000
-
-				var_2_10000(false)
+		if not _G.isActive(var_12_5) and var_12_6 then
+			setActive(var_12_5, var_12_6)
+			quickPlayAnimation(var_12_5, switch(iter_12_1:GetType(), {
+				[BossRushStoryNode.NODE_TYPE.NORMAL] = function()
+					return "Anim_LevelSelectAtelierYumia_storytpl_In"
+				end,
+				[BossRushStoryNode.NODE_TYPE.BATTLE] = function()
+					return "Anim_LevelSelectAtelierYumia_bettletpl_In"
+				end,
+				[BossRushStoryNode.NODE_TYPE.LOCATION] = function()
+					return "Anim_LevelSelectAtelierYumia_Item_Lock_In"
+				end
+			}, function()
+				assert(false)
 
 				return
 			end))
 		else
-			setActive = var_1_10014
-
-			var_1_10014(var_12_7, var_12_8)
+			setActive(var_12_5, var_12_6)
 		end
 
-		local var_12_15 = iter_12_1
-
-		var_1_10014 = iter_12_1.GetType(var_12_15)
-		BossRushStoryNode = var_12_9
-
-		if var_1_10014 ~= var_12_9.NODE_TYPE.LOCATION then
-			var_1_10014 = var_12_10 and 1 or 0
-			var_12_2 = var_12_2 + var_1_10014
+		if iter_12_1:GetType() ~= BossRushStoryNode.NODE_TYPE.LOCATION then
+			var_12_2 = var_12_2 + (var_12_7 and 1 or 0)
 			var_12_3 = var_12_3 + 1
 
-			if var_12_10 then
-				table = var_1_10014
-
-				var_1_10014.insert(var_12_4, iter_12_1)
+			if var_12_7 then
+				table.insert(var_12_4, iter_12_1)
 			end
 		end
 
-		if var_12_8 then
-			var_1_10014 = nil
-
-			local var_12_16 = iter_12_1
-
-			if iter_12_1.GetParams(var_12_16, "item_lock") then
-				Drop = var_12_15
-
-				local var_12_17
-
-				if not var_12_15.Create(var_15[2]) then
-					var_12_17 = nil
+		if var_12_6 then
+			local var_12_9 = iter_12_1:GetParams("item_lock")
+			local var_12_10 = var_12_9 and Drop.Create(var_12_9[2]) or nil
+			local var_12_11 = var_12_10 and var_12_10.count > var_12_10:getOwnedCount() and "item_lock" or switch(iter_12_1:GetType(), {
+				[BossRushStoryNode.NODE_TYPE.NORMAL] = function()
+					return "story"
+				end,
+				[BossRushStoryNode.NODE_TYPE.BATTLE] = function()
+					return "battle"
+				end,
+				[BossRushStoryNode.NODE_TYPE.LOCATION] = function()
+					return "location"
 				end
+			})
 
-				if var_12_17 and var_12_17.count > var_12_17:getOwnedCount() then
-					var_1_10014 = "item_lock"
-				else
-					switch = var_12_16
+			eachChild(var_12_5, function(arg_20_0, arg_20_1)
+				setActive(arg_20_0, arg_20_0.name == var_12_11)
 
-					local var_12_18 = iter_12_1
-					local var_12_19 = iter_12_1.GetType(var_12_18)
-					local var_12_20 = {}
-
-					BossRushStoryNode = var_12_18
-					var_12_20[var_12_18.NODE_TYPE.NORMAL] = function()
-						return "story"
-					end
-					BossRushStoryNode = var_21
-					var_12_20[var_21.NODE_TYPE.BATTLE] = function()
-						return "battle"
-					end
-					BossRushStoryNode = var_21
-					var_12_20[var_21.NODE_TYPE.LOCATION] = function()
-						return "location"
-					end
-					var_1_10014 = var_12_16(var_12_19, var_12_20)
-				end
-
-				eachChild = var_12_16
-
-				var_12_16(var_12_7, function(arg_20_0, arg_20_1)
-					setActive = var_2_10002
-
-					var_2_10002(arg_20_0, arg_20_0.name == var_1_10014)
-
-					return
-				end)
-
-				switch = var_12_16
-
-				var_12_16(var_1_10014, {
-					story = function(arg_21_0)
-						setText = var_2_10001
-
-						local var_21_0 = arg_21_0:Find("name/Text")
-						local var_21_1 = iter_12_1
-
-						var_2_10001(var_21_0, var_4.GetName(var_21_1))
-
-						onButton = var_2_10001
-
-						var_2_10001(arg_12_0, arg_21_0, function()
-							if var_12_10 then
-								return
-							end
-
-							local var_22_0 = iter_12_1
-							local var_22_1 = var_0.GetStory(var_22_0)
-							local var_22_2 = arg_12_0
-
-							var_1.PlayStory(var_22_2, var_22_1, function()
-								local var_23_0 = arg_12_0
-
-								var_0.UpdateView(var_23_0)
-
-								local var_23_1 = arg_12_0
-
-								var_0.CheckAutoShowPersonal(var_23_1)
-
-								return
-							end)
-
+				return
+			end)
+			switch(var_12_11, {
+				story = function(arg_21_0)
+					setText(arg_21_0:Find("name/Text"), iter_12_1:GetName())
+					onButton(arg_12_0, arg_21_0, function()
+						if var_12_7 then
 							return
-						end)
-
-						return
-					end,
-					battle = function(arg_24_0)
-						setText = var_2_10001
-
-						local var_24_0 = arg_24_0:Find("name/Text")
-						local var_24_1 = iter_12_1
-
-						var_2_10001(var_24_0, var_4.GetName(var_24_1))
-
-						onButton = var_2_10001
-
-						var_2_10001(arg_12_0, arg_24_0, function()
-							if var_12_10 then
-								return
-							end
-
-							local var_25_0 = iter_12_1
-							local var_25_1 = var_0.GetStory(var_25_0)
-							local var_25_2 = arg_12_0
-
-							var_1.PlayStory(var_25_2, var_25_1, function()
-								local var_26_0 = arg_12_0
-
-								var_0.UpdateView(var_26_0)
-
-								local var_26_1 = arg_12_0
-
-								var_0.CheckAutoShowPersonal(var_26_1)
-
-								return
-							end)
-
-							return
-						end)
-
-						return
-					end,
-					location = function(arg_27_0)
-						setText = var_2_10001
-
-						local var_27_0 = arg_27_0:Find("name/Text")
-						local var_27_1 = iter_12_1
-
-						var_2_10001(var_27_0, var_4.GetName(var_27_1))
-
-						PLATFORM_CODE = var_2_10001
-						PLATFORM_US = var_2_10002
-
-						if var_2_10001 ~= var_2_10002 then
-							setActive = var_2_10001
-
-							var_2_10001(arg_27_0:Find("en"), true)
-
-							setText = var_2_10001
-
-							local var_27_2 = arg_27_0:Find("en")
-							local var_27_3 = iter_12_1
-
-							var_2_10001(var_27_2, var_4.getConfig(var_27_3, "en_name"))
 						end
 
-						return
-					end
-				}, function()
-					warning = var_2_10000
+						arg_12_0:PlayStory(iter_12_1:GetStory(), function()
+							arg_12_0:UpdateView()
+							arg_12_0:CheckAutoShowPersonal()
 
-					var_2_10000("error state without any display:", var_1_10014)
+							return
+						end)
+
+						return
+					end)
 
 					return
-				end, var_12_7:Find(var_1_10014))
-			end
+				end,
+				battle = function(arg_24_0)
+					setText(arg_24_0:Find("name/Text"), iter_12_1:GetName())
+					onButton(arg_12_0, arg_24_0, function()
+						if var_12_7 then
+							return
+						end
+
+						arg_12_0:PlayStory(iter_12_1:GetStory(), function()
+							arg_12_0:UpdateView()
+							arg_12_0:CheckAutoShowPersonal()
+
+							return
+						end)
+
+						return
+					end)
+
+					return
+				end,
+				location = function(arg_27_0)
+					setText(arg_27_0:Find("name/Text"), iter_12_1:GetName())
+
+					if PLATFORM_CODE ~= PLATFORM_US then
+						setActive(arg_27_0:Find("en"), true)
+						setText(arg_27_0:Find("en"), iter_12_1:getConfig("en_name"))
+					end
+
+					return
+				end
+			}, function()
+				warning("error state without any display:", var_12_11)
+
+				return
+			end, var_12_5:Find(var_12_11))
 		end
 	end
 
-	setText = var_6
-
-	var_6(arg_12_0.progressText, var_12_2 .. "/" .. var_12_3)
-
-	setActive = var_6
-
-	local var_12_21 = arg_12_0.storyAward
-
-	tobool = var_9
-
-	var_6(var_12_21, var_9(arg_12_0.storyTask))
-
-	local var_12_23
+	setText(arg_12_0.progressText, var_12_2 .. "/" .. var_12_3)
+	setActive(arg_12_0.storyAward, tobool(arg_12_0.storyTask))
 
 	if arg_12_0.storyTask then
-		local var_12_22 = arg_12_0.storyTask
+		updateDrop(arg_12_0.storyAward:GetChild(0), (Drop.Create(arg_12_0.storyTask:getConfig("award_display")[1])))
 
-		var_12_23 = var_12_23.getConfig(var_12_22, "award_display")
-		Drop = var_7
+		local var_12_12 = arg_12_0.storyTask:getTaskStatus()
 
-		local var_12_24 = var_7.Create(var_12_23[1])
-
-		updateDrop = var_12_22
-
-		local var_12_25 = arg_12_0.storyAward
-
-		var_12_22(var_10.GetChild(var_12_25, 0), var_12_24)
-
-		local var_12_26 = arg_12_0.storyTask
-		local var_12_27 = var_8.getTaskStatus(var_12_26)
-
-		setActive = var_9
-
-		local var_12_28 = arg_12_0.storyAward
-
-		var_9(var_11.Find(var_12_28, "get"), var_12_27 == 1)
-
-		setActive = var_9
-
-		local var_12_29 = arg_12_0.storyAward
-
-		var_9(var_11.Find(var_12_29, "got"), var_12_27 == 2)
-
-		onButton = var_9
-
-		var_9(arg_12_0, arg_12_0.storyAward, function()
-			local var_29_0 = arg_12_0
-			local var_29_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_29_1(var_29_0, var_2_10003.ON_DROP, var_12_24)
+		setActive(arg_12_0.storyAward:Find("get"), var_12_12 == 1)
+		setActive(arg_12_0.storyAward:Find("got"), var_12_12 == 2)
+		onButton(arg_12_0, arg_12_0.storyAward, function()
+			arg_12_0:emit(BaseUI.ON_DROP, var_0)
 
 			return
 		end)
 	end
 
-	table = var_12_23
-
-	var_12_23.sort(var_12_4, function(arg_30_0, arg_30_1)
+	table.sort(var_12_4, function(arg_30_0, arg_30_1)
 		return arg_30_0:getConfig("id") < arg_30_1:getConfig("id")
 	end)
 
-	local var_12_30 = var_12_4[#var_12_4]
-	local var_12_31
-	local var_12_32 = #var_12_4 - 1
+	local var_12_13 = var_12_4[#var_12_4]
+	local var_12_14
+	local var_12_15 = #var_12_4 - 1
 
-	while 0 < var_12_32 do
-		local var_12_33 = arg_12_0.personalPage
-
-		if #var_9.GetActivitySingleEventOption(var_12_33, var_12_4[var_12_32]) > 0 then
-			var_12_31 = var_12_4[var_12_32]
+	while var_12_15 > 0 do
+		if #arg_12_0.personalPage:GetActivitySingleEventOption(var_12_4[var_12_15]) > 0 then
+			var_12_14 = var_12_4[var_12_15]
 
 			break
 		end
 
-		var_12_32 = var_12_32 - 1
+		var_12_15 = var_12_15 - 1
 	end
 
-	if var_12_30 then
-		local var_12_34 = arg_12_0.personalPage
-
-		if not (#var_9.GetActivitySingleEventOption(var_12_34, var_12_30) > 0) then
-			if var_12_31 then
-				local var_12_35 = arg_12_0.personalPage
-
-				if #var_9.GetActivitySingleEventOption(var_12_35, var_12_31) > 0 then
-					setActive = var_9
-
-					var_9(arg_12_0.personalBtn, true)
-
-					goto label_12_0
-				end
-			end
-
-			setActive = var_9
-
-			var_9(arg_12_0.personalBtn, false)
-
-			::label_12_0::
-
-			var_12_31 = var_12_31 and var_12_31 or var_12_30
-
-			local var_12_36 = arg_12_0.personalPage
-
-			var_9.SetBossRushNode(var_12_36, var_12_30, var_12_31)
-
-			if var_12_2 == var_12_3 then
-				local var_12_37 = arg_12_0.personalPage
-
-				var_9.UnlockRandom(var_12_37)
-			end
-
-			local var_12_38 = arg_12_0.activity
-
-			if var_9.getConfig(var_12_38, "config_client").first_story then
-				pg = var_9
-
-				local var_12_39 = var_9.NewStoryMgr.GetInstance()
-				local var_12_40 = var_9.Play
-				local var_12_41 = arg_12_0.activity
-
-				var_12_40(var_12_39, var_12.getConfig(var_12_41, "config_client").first_story)
-			end
-
-			return
-		end
+	if var_12_13 and #arg_12_0.personalPage:GetActivitySingleEventOption(var_12_13) > 0 or var_12_14 and #arg_12_0.personalPage:GetActivitySingleEventOption(var_12_14) > 0 then
+		setActive(arg_12_0.personalBtn, true)
+	else
+		setActive(arg_12_0.personalBtn, false)
 	end
-end
 
-function var_0_1.CheckAutoShowPersonal(arg_31_0)
-	local var_31_0 = arg_31_0.personalPage
-	local var_31_1 = var_1.GetActivitySingleEventOption
-	local var_31_2 = arg_31_0.personalPage
+	var_12_14 = var_12_14 and var_12_14 or var_12_13
 
-	if #var_31_1(var_31_0, var_4.GetCurrentEvent(var_31_2)) > 0 then
-		local var_31_3 = arg_31_0.personalPage
+	arg_12_0.personalPage:SetBossRushNode(var_12_13, var_12_14)
 
-		var_2.SetUpgrade(var_31_3)
+	if var_12_2 == var_12_3 then
+		arg_12_0.personalPage:UnlockRandom()
+	end
 
-		local var_31_4 = arg_31_0.personalPage
-
-		var_2.ExecuteAction(var_31_4, "Show")
-
-		local var_31_5 = arg_31_0.personalPage
-
-		var_2.ExecuteAction(var_31_5, "UpdateView")
+	if arg_12_0.activity:getConfig("config_client").first_story then
+		pg.NewStoryMgr.GetInstance():Play(arg_12_0.activity:getConfig("config_client").first_story)
 	end
 
 	return
 end
 
-var_0_1.presonalRandomData = nil
+function var_0_0.CheckAutoShowPersonal(arg_31_0)
+	if #arg_31_0.personalPage:GetActivitySingleEventOption(arg_31_0.personalPage:GetCurrentEvent()) > 0 then
+		arg_31_0.personalPage:SetUpgrade()
+		arg_31_0.personalPage:ExecuteAction("Show")
+		arg_31_0.personalPage:ExecuteAction("UpdateView")
+	end
 
-return var_0_1
+	return
+end
+
+var_0_0.presonalRandomData = nil
+
+return var_0_0

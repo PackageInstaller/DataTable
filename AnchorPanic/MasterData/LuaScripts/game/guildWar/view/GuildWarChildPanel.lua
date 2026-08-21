@@ -138,6 +138,8 @@ function active(self, args)
     GameDispatcher:addEventListener(EventName.UPDATE_GUILD_WAR_ENEMY_PLAYER_INFO, self.updateEnemyFormation, self)
     GameDispatcher:addEventListener(EventName.UPDATE_GUILD_WAR_BATTLE_LOG, self.updateLogInfo, self)
     GameDispatcher:addEventListener(EventName.UPDATE_GUILD_WAR_STATE, self.updateState, self)
+
+    GameDispatcher:addEventListener(EventName.CLOSE_GUILD_WAR_FIGHT_INFO,self.closeInfo,self)
     self:showPanel()
 end
 
@@ -150,6 +152,7 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.UPDATE_GUILD_WAR_ENEMY_PLAYER_INFO, self.updateEnemyFormation, self)
     GameDispatcher:removeEventListener(EventName.UPDATE_GUILD_WAR_BATTLE_LOG, self.updateLogInfo, self)
     GameDispatcher:removeEventListener(EventName.UPDATE_GUILD_WAR_STATE, self.updateState, self)
+    GameDispatcher:removeEventListener(EventName.CLOSE_GUILD_WAR_FIGHT_INFO,self.closeInfo,self)
     MoneyManager:setMoneyTidList({MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID})
     self:clearPlayerHeadList()
     self:clearMembersItemList()
@@ -157,6 +160,10 @@ function deActive(self)
     self:clearHeroGridList()
     self:clearBattleItemList()
     self:clearLogPlayerHeadList()
+end
+
+function closeInfo(self)
+    self:onBtnHideEnemyInfoClick()
 end
 
 function updateState(self)
@@ -661,11 +668,20 @@ function updateFightingInfo(self)
 
     local isAtk = self.isEnemy and 1 or 0
 
+   local type = guildWar.GuildWarManager:getSeasonType()
+   if type == guildWar.GuildWarType.Normal then
     GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_BATTLE_LOG, {
         buildId = self.lastShowBuild,
         page = {1, 5},
         isAtk = isAtk
     })
+    else
+   GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_TOP_BATTLE_LOG, {
+        buildId = self.lastShowBuild,
+        page = {1, 5},
+        isAtk = isAtk
+    })
+    end
 end
 
 function onBtnFightClick(self)

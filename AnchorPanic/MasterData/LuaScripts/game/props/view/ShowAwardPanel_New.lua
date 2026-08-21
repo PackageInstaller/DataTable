@@ -43,11 +43,14 @@ function configUI(self)
     self.mAnimator = self.UIObject:GetComponent(ty.Animator)
     self.mTxtNextLevel = self:getChildGO("mTxtNextLevel"):GetComponent(ty.Text)
     self.mTxtCancel = self:getChildGO("mTxtCancel"):GetComponent(ty.Text)
+
+    self.mTxtDeco = self:getChildGO("mTxtDeco"):GetComponent(ty.Text)
 end
 
 function initViewText(self)
     self.mTxtCancel.text = _TT(44219)
     self.mTxtNextLevel.text = _TT(44220)
+    self.mTxtDeco.text = _TT(71484)
 end
 
 function active(self, args)
@@ -108,9 +111,9 @@ function getCallFun(self)
 end
 
 -- 服务器奖励模版列表
-function showPropsAwardMsg(self, cusPropsList, closeCall)
+function showPropsAwardMsg(self, cusPropsList, closeCall,isDecompose)
     self.mCloseCall = closeCall
-
+    
     local list = {}
     for _, v in ipairs(cusPropsList) do
         local configVo = props.PropsManager:getPropsConfigVo(v.tid)
@@ -147,6 +150,7 @@ function showPropsAwardMsg(self, cusPropsList, closeCall)
     local instance = self:getInstance()
     instance:open()
     instance:createPropsGrid(list)
+    instance:setShowAuto(isDecompose)
 end
 
 -- 道具列表排序，升序
@@ -195,6 +199,10 @@ end
 function setClimbTowerData(self, dupId)
     local instance = self:getInstance()
     instance:showNextLevel(dupId)
+end
+
+function setShowAuto(self,isShow)
+    self.mTxtDeco.gameObject:SetActive(isShow)
 end
 
 function createPropsGrid(self, list)

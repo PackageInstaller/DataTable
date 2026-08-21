@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : sxt 
 @Description    : 商店二级tab add
@@ -16,7 +16,7 @@ UIRes = UrlManager:getUIPrefabPath("shop/ShopTabChildItem.prefab")
 function ctor(self)
     super.ctor(self)
 end
---析构  
+--析构
 function dtor(self)
 end
 
@@ -42,25 +42,29 @@ function deActive(self)
     self:removeOnClick(self.mBtnNomal)
 end
 
-function setData(self, cusVo, cusIndex, cusCallBack, cusThisObject)
-    self.vo = cusVo
-    self.index = cusIndex
+function setData(self, langId, cusType, cusCallBack, cusThisObject)
+    self.langId = langId
+    self.type = cusType
     self.callBack = cusCallBack
     self.thisObject = cusThisObject
     self:updateView()
 end
 
-function getVo(self)
-    return self.vo
+function setActive(self, isActive)
+    self.UIObject:SetActive(isActive)
 end
 
-function getLanguageList(self)
-    return self.vo.shopLang
+function getActiveState(self)
+    return self.UIObject.activeSelf
+end
+
+function getVo(self)
+    return self.langId
 end
 
 function updateView(self)
-    self:setBtnLabel(self.mBtnNomal, self:getLanguageList()[self.index])
-    self:setBtnLabel(self.mBtnSelect, self:getLanguageList()[self.index])
+    self:setBtnLabel(self.mBtnNomal, self.langId)
+    self:setBtnLabel(self.mBtnSelect, self.langId)
     self:setSelect(false)
 end
 
@@ -75,7 +79,15 @@ function setSelect(self, bool)
 end
 
 function onNomalClick(self)
-    self.callBack(self.thisObject, self.index)
+    self.callBack(self.thisObject, self.type)
+end
+
+function addBubble(self)
+    RedPointManager:add(self.UITrans, nil, -60, 9)
+end
+
+function removeBubble(self)
+    RedPointManager:remove(self.UITrans)
 end
 
 return _M

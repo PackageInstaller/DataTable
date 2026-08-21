@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_polaroid") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_polaroid"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_polaroid = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_polaroid
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_polaroid = rawget(pg, "child2_polaroid") or setmetatable({
+	__name = "child2_polaroid"
+}, confNEO)
+pg.child2_polaroid.all = {
 	1,
 	2,
 	3,
@@ -135,11 +112,7 @@ var_0_3.all = {
 	153,
 	154
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_polaroid
-
-var_0_4.get_id_list_by_character = {
+pg.child2_polaroid.get_id_list_by_character = {
 	{
 		1,
 		2,
@@ -253,25 +226,11 @@ var_0_4.get_id_list_by_character = {
 		154
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child2_polaroid = {}
+pg.base = pg.base or {}
+pg.base.child2_polaroid = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_polaroid
-
-	var_1_0[1] = {
+	pg.base.child2_polaroid[1] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_1_1_b",
 		group = 1,
@@ -287,11 +246,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_polaroid
-
-	var_1_1[2] = {
+	pg.base.child2_polaroid[2] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_1_2_b",
 		group = 1,
@@ -307,11 +262,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_polaroid
-
-	var_1_2[3] = {
+	pg.base.child2_polaroid[3] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_1_3_b",
 		group = 1,
@@ -327,11 +278,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_polaroid
-
-	var_1_3[4] = {
+	pg.base.child2_polaroid[4] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_2_1_b",
 		group = 2,
@@ -347,11 +294,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_polaroid
-
-	var_1_4[5] = {
+	pg.base.child2_polaroid[5] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_2_2_b",
 		group = 2,
@@ -367,11 +310,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_polaroid
-
-	var_1_5[6] = {
+	pg.base.child2_polaroid[6] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_2_3_b",
 		group = 2,
@@ -387,11 +326,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_polaroid
-
-	var_1_6[7] = {
+	pg.base.child2_polaroid[7] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_3_1_b",
 		group = 3,
@@ -407,11 +342,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_polaroid
-
-	var_1_7[8] = {
+	pg.base.child2_polaroid[8] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_3_2_b",
 		group = 3,
@@ -427,11 +358,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_polaroid
-
-	var_1_8[9] = {
+	pg.base.child2_polaroid[9] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_3_3_b",
 		group = 3,
@@ -447,11 +374,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_polaroid
-
-	var_1_9[10] = {
+	pg.base.child2_polaroid[10] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_4_1_b",
 		group = 4,
@@ -467,11 +390,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_polaroid
-
-	var_1_10[11] = {
+	pg.base.child2_polaroid[11] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_4_2_b",
 		group = 4,
@@ -487,11 +406,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child2_polaroid
-
-	var_1_11[12] = {
+	pg.base.child2_polaroid[12] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_4_3_b",
 		group = 4,
@@ -507,11 +422,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child2_polaroid
-
-	var_1_12[13] = {
+	pg.base.child2_polaroid[13] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_5_1_b",
 		group = 5,
@@ -527,11 +438,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child2_polaroid
-
-	var_1_13[14] = {
+	pg.base.child2_polaroid[14] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_5_2_b",
 		group = 5,
@@ -547,11 +454,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child2_polaroid
-
-	var_1_14[15] = {
+	pg.base.child2_polaroid[15] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_5_3_b",
 		group = 5,
@@ -567,11 +470,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child2_polaroid
-
-	var_1_15[16] = {
+	pg.base.child2_polaroid[16] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_6_1_b",
 		group = 6,
@@ -587,11 +486,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child2_polaroid
-
-	var_1_16[17] = {
+	pg.base.child2_polaroid[17] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_6_2_b",
 		group = 6,
@@ -607,11 +502,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child2_polaroid
-
-	var_1_17[18] = {
+	pg.base.child2_polaroid[18] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_6_3_b",
 		group = 6,
@@ -627,11 +518,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child2_polaroid
-
-	var_1_18[19] = {
+	pg.base.child2_polaroid[19] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_7_1_b",
 		group = 7,
@@ -647,11 +534,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child2_polaroid
-
-	var_1_19[20] = {
+	pg.base.child2_polaroid[20] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_7_2_b",
 		group = 7,
@@ -667,11 +550,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child2_polaroid
-
-	var_1_20[21] = {
+	pg.base.child2_polaroid[21] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_7_3_b",
 		group = 7,
@@ -687,11 +566,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child2_polaroid
-
-	var_1_21[22] = {
+	pg.base.child2_polaroid[22] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_8_1_b",
 		group = 8,
@@ -707,11 +582,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child2_polaroid
-
-	var_1_22[23] = {
+	pg.base.child2_polaroid[23] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_8_2_b",
 		group = 8,
@@ -727,11 +598,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child2_polaroid
-
-	var_1_23[24] = {
+	pg.base.child2_polaroid[24] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_8_3_b",
 		group = 8,
@@ -747,11 +614,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child2_polaroid
-
-	var_1_24[25] = {
+	pg.base.child2_polaroid[25] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_9_1_b",
 		group = 9,
@@ -768,11 +631,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child2_polaroid
-
-	var_1_25[26] = {
+	pg.base.child2_polaroid[26] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_9_2_b",
 		group = 9,
@@ -789,11 +648,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child2_polaroid
-
-	var_1_26[27] = {
+	pg.base.child2_polaroid[27] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_9_3_b",
 		group = 9,
@@ -810,11 +665,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child2_polaroid
-
-	var_1_27[28] = {
+	pg.base.child2_polaroid[28] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_10_1_b",
 		group = 10,
@@ -830,11 +681,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child2_polaroid
-
-	var_1_28[29] = {
+	pg.base.child2_polaroid[29] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_10_2_b",
 		group = 10,
@@ -850,11 +697,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child2_polaroid
-
-	var_1_29[30] = {
+	pg.base.child2_polaroid[30] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_10_3_b",
 		group = 10,
@@ -870,11 +713,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child2_polaroid
-
-	var_1_30[31] = {
+	pg.base.child2_polaroid[31] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_11_1_b",
 		group = 11,
@@ -890,11 +729,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child2_polaroid
-
-	var_1_31[32] = {
+	pg.base.child2_polaroid[32] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_11_2_b",
 		group = 11,
@@ -910,11 +745,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child2_polaroid
-
-	var_1_32[33] = {
+	pg.base.child2_polaroid[33] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_11_3_b",
 		group = 11,
@@ -930,11 +761,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child2_polaroid
-
-	var_1_33[34] = {
+	pg.base.child2_polaroid[34] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_12_1_b",
 		group = 12,
@@ -950,11 +777,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child2_polaroid
-
-	var_1_34[35] = {
+	pg.base.child2_polaroid[35] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_12_2_b",
 		group = 12,
@@ -970,11 +793,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child2_polaroid
-
-	var_1_35[36] = {
+	pg.base.child2_polaroid[36] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_12_3_b",
 		group = 12,
@@ -990,11 +809,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child2_polaroid
-
-	var_1_36[37] = {
+	pg.base.child2_polaroid[37] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_13_1_b",
 		group = 13,
@@ -1010,11 +825,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child2_polaroid
-
-	var_1_37[38] = {
+	pg.base.child2_polaroid[38] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_13_2_b",
 		group = 13,
@@ -1030,11 +841,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child2_polaroid
-
-	var_1_38[39] = {
+	pg.base.child2_polaroid[39] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_13_3_b",
 		group = 13,
@@ -1050,11 +857,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child2_polaroid
-
-	var_1_39[40] = {
+	pg.base.child2_polaroid[40] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_14_1_b",
 		group = 14,
@@ -1071,11 +874,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child2_polaroid
-
-	var_1_40[41] = {
+	pg.base.child2_polaroid[41] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_14_2_b",
 		group = 14,
@@ -1092,11 +891,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child2_polaroid
-
-	var_1_41[42] = {
+	pg.base.child2_polaroid[42] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_14_3_b",
 		group = 14,
@@ -1113,11 +908,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child2_polaroid
-
-	var_1_42[43] = {
+	pg.base.child2_polaroid[43] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_15_1_b",
 		group = 15,
@@ -1133,11 +924,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child2_polaroid
-
-	var_1_43[44] = {
+	pg.base.child2_polaroid[44] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_15_2_b",
 		group = 15,
@@ -1153,11 +940,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child2_polaroid
-
-	var_1_44[45] = {
+	pg.base.child2_polaroid[45] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_15_3_b",
 		group = 15,
@@ -1173,11 +956,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child2_polaroid
-
-	var_1_45[46] = {
+	pg.base.child2_polaroid[46] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_16_1_b",
 		group = 16,
@@ -1193,11 +972,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child2_polaroid
-
-	var_1_46[47] = {
+	pg.base.child2_polaroid[47] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_16_2_b",
 		group = 16,
@@ -1213,11 +988,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child2_polaroid
-
-	var_1_47[48] = {
+	pg.base.child2_polaroid[48] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_16_3_b",
 		group = 16,
@@ -1233,11 +1004,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child2_polaroid
-
-	var_1_48[52] = {
+	pg.base.child2_polaroid[52] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_18_1_b",
 		group = 18,
@@ -1254,11 +1021,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child2_polaroid
-
-	var_1_49[53] = {
+	pg.base.child2_polaroid[53] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_18_2_b",
 		group = 18,
@@ -1275,11 +1038,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child2_polaroid
-
-	var_1_50[54] = {
+	pg.base.child2_polaroid[54] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_18_3_b",
 		group = 18,
@@ -1296,11 +1055,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child2_polaroid
-
-	var_1_51[55] = {
+	pg.base.child2_polaroid[55] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_19_1_b",
 		group = 19,
@@ -1317,11 +1072,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child2_polaroid
-
-	var_1_52[56] = {
+	pg.base.child2_polaroid[56] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_19_2_b",
 		group = 19,
@@ -1338,11 +1089,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child2_polaroid
-
-	var_1_53[57] = {
+	pg.base.child2_polaroid[57] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_oceana_19_3_b",
 		group = 19,
@@ -1359,11 +1106,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child2_polaroid
-
-	var_1_54[101] = {
+	pg.base.child2_polaroid[101] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_1_1_b",
 		group = 101,
@@ -1379,11 +1122,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child2_polaroid
-
-	var_1_55[102] = {
+	pg.base.child2_polaroid[102] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_1_2_b",
 		group = 101,
@@ -1399,11 +1138,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child2_polaroid
-
-	var_1_56[103] = {
+	pg.base.child2_polaroid[103] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_1_3_b",
 		group = 101,
@@ -1419,11 +1154,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child2_polaroid
-
-	var_1_57[104] = {
+	pg.base.child2_polaroid[104] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_2_1_b",
 		group = 102,
@@ -1439,11 +1170,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child2_polaroid
-
-	var_1_58[105] = {
+	pg.base.child2_polaroid[105] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_2_2_b",
 		group = 102,
@@ -1459,11 +1186,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child2_polaroid
-
-	var_1_59[106] = {
+	pg.base.child2_polaroid[106] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_2_3_b",
 		group = 102,
@@ -1479,11 +1202,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child2_polaroid
-
-	var_1_60[107] = {
+	pg.base.child2_polaroid[107] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_3_1_b",
 		group = 103,
@@ -1499,11 +1218,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child2_polaroid
-
-	var_1_61[108] = {
+	pg.base.child2_polaroid[108] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_3_2_b",
 		group = 103,
@@ -1519,11 +1234,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child2_polaroid
-
-	var_1_62[109] = {
+	pg.base.child2_polaroid[109] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_3_3_b",
 		group = 103,
@@ -1539,11 +1250,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child2_polaroid
-
-	var_1_63[110] = {
+	pg.base.child2_polaroid[110] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_4_1_b",
 		group = 104,
@@ -1559,11 +1266,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child2_polaroid
-
-	var_1_64[111] = {
+	pg.base.child2_polaroid[111] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_4_2_b",
 		group = 104,
@@ -1579,11 +1282,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child2_polaroid
-
-	var_1_65[112] = {
+	pg.base.child2_polaroid[112] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_4_3_b",
 		group = 104,
@@ -1599,11 +1298,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child2_polaroid
-
-	var_1_66[113] = {
+	pg.base.child2_polaroid[113] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_5_1_b",
 		group = 105,
@@ -1619,11 +1314,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child2_polaroid
-
-	var_1_67[114] = {
+	pg.base.child2_polaroid[114] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_5_2_b",
 		group = 105,
@@ -1639,11 +1330,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child2_polaroid
-
-	var_1_68[115] = {
+	pg.base.child2_polaroid[115] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_5_3_b",
 		group = 105,
@@ -1659,11 +1346,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child2_polaroid
-
-	var_1_69[116] = {
+	pg.base.child2_polaroid[116] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_6_1_b",
 		group = 106,
@@ -1679,11 +1362,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child2_polaroid
-
-	var_1_70[117] = {
+	pg.base.child2_polaroid[117] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_6_2_b",
 		group = 106,
@@ -1699,11 +1378,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child2_polaroid
-
-	var_1_71[118] = {
+	pg.base.child2_polaroid[118] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_6_3_b",
 		group = 106,
@@ -1719,11 +1394,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child2_polaroid
-
-	var_1_72[119] = {
+	pg.base.child2_polaroid[119] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_7_1_b",
 		group = 107,
@@ -1739,11 +1410,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child2_polaroid
-
-	var_1_73[120] = {
+	pg.base.child2_polaroid[120] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_7_2_b",
 		group = 107,
@@ -1759,11 +1426,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child2_polaroid
-
-	var_1_74[121] = {
+	pg.base.child2_polaroid[121] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_7_3_b",
 		group = 107,
@@ -1779,11 +1442,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child2_polaroid
-
-	var_1_75[122] = {
+	pg.base.child2_polaroid[122] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_8_1_b",
 		group = 108,
@@ -1799,11 +1458,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child2_polaroid
-
-	var_1_76[123] = {
+	pg.base.child2_polaroid[123] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_8_2_b",
 		group = 108,
@@ -1819,11 +1474,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child2_polaroid
-
-	var_1_77[124] = {
+	pg.base.child2_polaroid[124] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_8_3_b",
 		group = 108,
@@ -1839,11 +1490,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child2_polaroid
-
-	var_1_78[125] = {
+	pg.base.child2_polaroid[125] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_9_1_b",
 		group = 109,
@@ -1859,11 +1506,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child2_polaroid
-
-	var_1_79[126] = {
+	pg.base.child2_polaroid[126] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_9_2_b",
 		group = 109,
@@ -1879,11 +1522,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child2_polaroid
-
-	var_1_80[127] = {
+	pg.base.child2_polaroid[127] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_9_3_b",
 		group = 109,
@@ -1899,11 +1538,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.child2_polaroid
-
-	var_1_81[128] = {
+	pg.base.child2_polaroid[128] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_10_1_b",
 		group = 110,
@@ -1919,11 +1554,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.child2_polaroid
-
-	var_1_82[129] = {
+	pg.base.child2_polaroid[129] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_10_2_b",
 		group = 110,
@@ -1939,11 +1570,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.child2_polaroid
-
-	var_1_83[130] = {
+	pg.base.child2_polaroid[130] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_10_3_b",
 		group = 110,
@@ -1959,11 +1586,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.child2_polaroid
-
-	var_1_84[131] = {
+	pg.base.child2_polaroid[131] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_11_1_b",
 		group = 111,
@@ -1979,11 +1602,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.child2_polaroid
-
-	var_1_85[132] = {
+	pg.base.child2_polaroid[132] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_11_2_b",
 		group = 111,
@@ -1999,11 +1618,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.child2_polaroid
-
-	var_1_86[133] = {
+	pg.base.child2_polaroid[133] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_11_3_b",
 		group = 111,
@@ -2019,11 +1634,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.child2_polaroid
-
-	var_1_87[134] = {
+	pg.base.child2_polaroid[134] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_12_1_b",
 		group = 112,
@@ -2039,11 +1650,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.child2_polaroid
-
-	var_1_88[135] = {
+	pg.base.child2_polaroid[135] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_12_2_b",
 		group = 112,
@@ -2059,11 +1666,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.child2_polaroid
-
-	var_1_89[136] = {
+	pg.base.child2_polaroid[136] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_12_3_b",
 		group = 112,
@@ -2079,11 +1682,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.child2_polaroid
-
-	var_1_90[137] = {
+	pg.base.child2_polaroid[137] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_13_1_b",
 		group = 113,
@@ -2099,11 +1698,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.child2_polaroid
-
-	var_1_91[138] = {
+	pg.base.child2_polaroid[138] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_13_2_b",
 		group = 113,
@@ -2119,11 +1714,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.child2_polaroid
-
-	var_1_92[139] = {
+	pg.base.child2_polaroid[139] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_13_3_b",
 		group = 113,
@@ -2139,11 +1730,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.child2_polaroid
-
-	var_1_93[140] = {
+	pg.base.child2_polaroid[140] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_14_1_b",
 		group = 114,
@@ -2159,11 +1746,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.child2_polaroid
-
-	var_1_94[141] = {
+	pg.base.child2_polaroid[141] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_14_2_b",
 		group = 114,
@@ -2179,11 +1762,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.child2_polaroid
-
-	var_1_95[142] = {
+	pg.base.child2_polaroid[142] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_14_3_b",
 		group = 114,
@@ -2199,11 +1778,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.child2_polaroid
-
-	var_1_96[143] = {
+	pg.base.child2_polaroid[143] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_15_1_b",
 		group = 115,
@@ -2219,11 +1794,7 @@ var_0_4.base.child2_polaroid = {}
 			1
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.child2_polaroid
-
-	var_1_97[144] = {
+	pg.base.child2_polaroid[144] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_15_2_b",
 		group = 115,
@@ -2239,11 +1810,7 @@ var_0_4.base.child2_polaroid = {}
 			2
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.child2_polaroid
-
-	var_1_98[145] = {
+	pg.base.child2_polaroid[145] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_15_3_b",
 		group = 115,
@@ -2259,8 +1826,7 @@ var_0_4.base.child2_polaroid = {}
 			3
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.child2_polaroid[146] = {
+	pg.base.child2_polaroid[146] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_16_1_b",
 		group = 116,
@@ -2280,11 +1846,7 @@ var_0_4.base.child2_polaroid = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.child2_polaroid
-
-	var_2_0[147] = {
+	pg.base.child2_polaroid[147] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_16_2_b",
 		group = 116,
@@ -2300,11 +1862,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.child2_polaroid
-
-	var_2_1[148] = {
+	pg.base.child2_polaroid[148] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_16_3_b",
 		group = 116,
@@ -2320,11 +1878,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.child2_polaroid
-
-	var_2_2[149] = {
+	pg.base.child2_polaroid[149] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_17_1_b",
 		group = 117,
@@ -2340,11 +1894,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.child2_polaroid
-
-	var_2_3[150] = {
+	pg.base.child2_polaroid[150] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_17_2_b",
 		group = 117,
@@ -2360,11 +1910,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.child2_polaroid
-
-	var_2_4[151] = {
+	pg.base.child2_polaroid[151] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_17_3_b",
 		group = 117,
@@ -2380,11 +1926,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.child2_polaroid
-
-	var_2_5[152] = {
+	pg.base.child2_polaroid[152] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_18_1_b",
 		group = 118,
@@ -2400,11 +1942,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.child2_polaroid
-
-	var_2_6[153] = {
+	pg.base.child2_polaroid[153] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_18_2_b",
 		group = 118,
@@ -2420,8 +1958,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_6
-	var_2_6.base.child2_polaroid[154] = {
+	pg.base.child2_polaroid[154] = {
 		condition = "出行-外出旅游",
 		pic_2 = "polaroid_explorer_18_3_b",
 		group = 118,

@@ -1,63 +1,83 @@
-﻿rawget = var_0_10000
-setmetatable = var_0_10001
-Vector3 = var_0_10002
-
-local var_0_0 = {
-	direction = var_0_10002.zero,
-	origin = var_0_10002.zero
+﻿local var_0_0 = rawget
+local var_0_1 = setmetatable
+local var_0_2 = {
+	direction = Vector3.zero,
+	origin = Vector3.zero
 }
+local var_0_3 = tolua.initget({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+})
 
-tolua = var_4
+;({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}).__index = function(arg_1_0, arg_1_1)
+	local var_1_0 = var_0_0(var_0_2, arg_1_1)
 
-local var_0_1 = var_4.initget(var_0_0)
+	if var_1_0 == nil then
+		var_1_0 = var_0_0(var_0_3, arg_1_1)
 
-function var_0_0.__index(arg_1_0, arg_1_1)
-	if var_0_10000(var_0_0, arg_1_1) == nil and var_0_10000(var_0_1, arg_1_1) ~= nil then
-		return var_2(arg_1_0)
+		if var_1_0 ~= nil then
+			return var_1_0(arg_1_0)
+		end
 	end
 
-	return var_2
+	return var_1_0
 end
-
-function var_0_0.__call(arg_2_0, arg_2_1, arg_2_2)
-	return var_0_0.New(arg_2_1, arg_2_2)
+;({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}).__call = function(arg_2_0, arg_2_1, arg_2_2)
+	return var_0_2.New(arg_2_1, arg_2_2)
 end
-
-function var_0_0.New(arg_3_0, arg_3_1)
+;({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}).New = function(arg_3_0, arg_3_1)
 	local var_3_0 = {
 		direction = arg_3_0:Normalize(),
 		origin = arg_3_1
 	}
 
-	var_0_10001(var_3_0, var_0_0)
+	var_0_1(var_3_0, var_0_2)
 
 	return var_3_0
 end
+;({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}).GetPoint = function(arg_4_0, arg_4_1)
+	(arg_4_0.direction * arg_4_1):Add(arg_4_0.origin)
 
-function var_0_0.GetPoint(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0.direction * arg_4_1
-
-	var_2.Add(var_4_0, arg_4_0.origin)
-
-	return var_2
+	return arg_4_0.direction * arg_4_1
 end
-
-function var_0_0.Get(arg_5_0)
-	local var_5_0 = arg_5_0.origin
-	local var_5_1 = arg_5_0.direction
-
-	return var_5_0.x, var_5_0.y, var_5_0.z, var_5_1.x, var_5_1.y, var_5_1.z
+;({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}).Get = function(arg_5_0)
+	return arg_5_0.origin.x, arg_5_0.origin.y, arg_5_0.origin.z, arg_5_0.direction.x, arg_5_0.direction.y, arg_5_0.direction.z
 end
-
-function var_0_0.__tostring(arg_6_0)
-	string = var_1_10001
-
-	return var_1_10001.format("Origin:(%f,%f,%f),Dir:(%f,%f, %f)", arg_6_0.origin.x, arg_6_0.origin.y, arg_6_0.origin.z, arg_6_0.direction.x, arg_6_0.direction.y, arg_6_0.direction.z)
+;({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}).__tostring = function(arg_6_0)
+	return string.format("Origin:(%f,%f,%f),Dir:(%f,%f, %f)", arg_6_0.origin.x, arg_6_0.origin.y, arg_6_0.origin.z, arg_6_0.direction.x, arg_6_0.direction.y, arg_6_0.direction.z)
 end
+UnityEngine.Ray = {
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}
 
-UnityEngine = var_5
-var_5.Ray = var_0_0
+setmetatable({
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}, {
+	direction = Vector3.zero,
+	origin = Vector3.zero
+})
 
-var_0_10001(var_0_0, var_0_0)
-
-return var_0_0
+return {
+	direction = Vector3.zero,
+	origin = Vector3.zero
+}

@@ -1,28 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandFurniture")
+﻿local var_0_0 = class("IslandFurniture")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.configId = arg_1_1.id
-
-	local var_1_0
-
-	if not arg_1_1.count then
-		var_1_0 = 1
-	end
-
-	arg_1_0.count = var_1_0
-
-	local var_1_1
-
-	if not arg_1_1.time then
-		var_1_1 = arg_1_1.id
-	end
-
-	arg_1_0.time = var_1_1
-	defaultValue = var_1_1
-	arg_1_0.isNew = var_1_1(arg_1_1.isNew, false)
+	arg_1_0.count = arg_1_1.count or 1
+	arg_1_0.time = arg_1_1.time or arg_1_1.id
+	arg_1_0.isNew = defaultValue(arg_1_1.isNew, false)
 
 	return
 end

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MainEffectView")
+﻿local var_0_0 = class("MainEffectView")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.tr = arg_1_1
@@ -19,21 +17,21 @@ function var_0_0.GetEffect(arg_2_0, arg_2_1)
 end
 
 function var_0_0.Init(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0:GetEffect(arg_3_1)
-
-	arg_3_0:Load(var_3_0)
+	arg_3_0:Load((arg_3_0:GetEffect(arg_3_1)))
 
 	return
 end
 
 function var_0_0.Refresh(arg_4_0, arg_4_1)
-	if arg_4_0:GetEffect(arg_4_1) and arg_4_0.loading then
-		arg_4_0:SetDirty(var_2)
+	local var_4_0 = arg_4_0:GetEffect(arg_4_1)
+
+	if var_4_0 and arg_4_0.loading then
+		arg_4_0:SetDirty(var_4_0)
 
 		return
 	end
 
-	arg_4_0:Load(var_2)
+	arg_4_0:Load(var_4_0)
 
 	return
 end
@@ -55,16 +53,8 @@ function var_0_0.Load(arg_5_0, arg_5_1)
 
 	arg_5_0:LoadEffect(arg_5_1, function(arg_6_0)
 		arg_5_0.loading = false
-
-		local var_6_0 = arg_6_0.transform
-
-		Vector3 = var_2
-		var_6_0.localPosition = var_2.zero
-
-		local var_6_1 = arg_6_0.transform
-
-		Vector3 = var_2
-		var_6_1.localScale = var_2.one
+		arg_6_0.transform.localPosition = Vector3.zero
+		arg_6_0.transform.localScale = Vector3.one
 		arg_5_0.effectGo = arg_6_0
 		arg_5_0.effectName = arg_5_1
 
@@ -77,46 +67,26 @@ function var_0_0.Load(arg_5_0, arg_5_1)
 end
 
 function var_0_0.LoadEffect(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0
-
 	if arg_7_0.caches[arg_7_1] then
-		var_7_0 = arg_7_0.caches[arg_7_1]
-		setActive = var_1_10004
-
-		var_1_10004(var_7_0, true)
-		arg_7_2(var_7_0)
+		setActive(arg_7_0.caches[arg_7_1], true)
+		arg_7_2(arg_7_0.caches[arg_7_1])
 	else
-		ResourceMgr = var_7_0
-
-		local var_7_1 = var_7_0.Inst
-		local var_7_2 = var_3.getAssetAsync
-		local var_7_3 = "Effect/" .. arg_7_1
-		local var_7_4 = ""
-
-		UnityEngine = var_1_10008
-
-		var_7_2(var_7_1, var_7_3, var_7_4, var_1_10008.Events.UnityAction_UnityEngine_Object(function(arg_8_0)
+		ResourceMgr.Inst:getAssetAsync("Effect/" .. arg_7_1, "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_8_0)
 			if arg_7_0.exited then
 				return
 			end
 
-			local var_8_0 = arg_7_0
-
-			if var_1.IsDirty(var_8_0) then
-				local var_8_1 = arg_7_0
-
-				var_1.Load(var_8_1, arg_7_0.dirty)
+			if arg_7_0:IsDirty() then
+				arg_7_0:Load(arg_7_0.dirty)
 
 				return
 			end
 
-			Object = var_1
+			local var_8_0 = Object.Instantiate(arg_8_0, arg_7_0.tr)
 
-			local var_8_2 = var_1.Instantiate(arg_8_0, arg_7_0.tr)
+			arg_7_0.caches[arg_7_1] = var_8_0
 
-			arg_7_0.caches[arg_7_1] = var_8_2
-
-			arg_7_2(var_8_2)
+			arg_7_2(var_8_0)
 
 			return
 		end), true, true)
@@ -137,9 +107,7 @@ end
 
 function var_0_0.Clear(arg_11_0)
 	if arg_11_0.effectGo then
-		setActive = var_1
-
-		var_1(arg_11_0.effectGo, false)
+		setActive(arg_11_0.effectGo, false)
 
 		arg_11_0.effectGo = nil
 	end
@@ -153,12 +121,8 @@ end
 function var_0_0.Dispose(arg_12_0)
 	arg_12_0:Clear()
 
-	pairs = var_1
-
-	for iter_12_0, iter_12_1 in var_1(arg_12_0.caches) do
-		Object = var_1_10006
-
-		var_1_10006.Destroy(iter_12_1)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.caches) do
+		Object.Destroy(iter_12_1)
 	end
 
 	arg_12_0.caches = nil

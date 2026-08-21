@@ -1,68 +1,38 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleBuffHealingSteal = class("BattleBuffHealingSteal", ys.Battle.BattleBuffEffect)
+ys.Battle.BattleBuffHealingSteal.__name = "BattleBuffHealingSteal"
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleBuffHealingSteal
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleBuffHealingSteal.FX_TYPE = ys.Battle.BattleBuffEffect.FX_TYPE_LINK
 
-local var_0_1 = var_0.Battle
-
-class = var_0_10002
-var_0_1.BattleBuffHealingSteal = var_0_10002("BattleBuffHealingSteal", var_0.Battle.BattleBuffEffect)
-var_0.Battle.BattleBuffHealingSteal.__name = "BattleBuffHealingSteal"
-
-local var_0_2 = var_0.Battle.BattleBuffHealingSteal
-
-var_0_2.FX_TYPE = var_0.Battle.BattleBuffEffect.FX_TYPE_LINK
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.BattleBuffHealingSteal.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
 	return
 end
 
-function var_0_2.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0
-
-	if not arg_2_0._tempData.arg_list.stealingRate then
-		var_2_0 = 1
-	end
-
-	arg_2_0._stealRate = var_2_0
-
-	local var_2_1
-
-	if not var_3.arsorbRate then
-		var_2_1 = 1
-	end
-
-	arg_2_0._absorbRate = var_2_1
+function ys.Battle.BattleBuffHealingSteal.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._stealRate = arg_2_0._tempData.arg_list.stealingRate or 1
+	arg_2_0._absorbRate = arg_2_0._tempData.arg_list.arsorbRate or 1
 
 	return
 end
 
-function var_0_2.onTakeHealing(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	local var_3_0 = arg_3_3.damage
+function ys.Battle.BattleBuffHealingSteal.onTakeHealing(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = arg_3_2:GetCaster()
 
-	if arg_3_2:GetCaster() and var_5:IsAlive() and var_5 ~= arg_3_1 then
-		math = var_6
-		arg_3_3.damage = var_3_0 - var_6.ceil(var_3_0 * arg_3_0._stealRate)
+	if var_3_0 and var_3_0:IsAlive() and var_3_0 ~= arg_3_1 then
+		local var_3_1 = math.ceil(arg_3_3.damage * arg_3_0._stealRate)
 
-		local var_3_1 = var_5
-		local var_3_2 = var_5.GetAttrByName(var_3_1, "healingRate")
-		local var_3_3 = var_6 * arg_3_0._absorbRate
+		arg_3_3.damage = arg_3_3.damage - var_3_1
 
-		math = var_3_1
-
-		local var_3_4 = var_3_1.ceil(var_3_2 * var_3_3)
-		local var_3_5 = {
+		var_3_0:UpdateHP(math.ceil(var_3_0:GetAttrByName("healingRate") * (var_3_1 * arg_3_0._absorbRate)), {
 			isMiss = false,
 			isCri = false,
 			isShare = false,
 			isHeal = true
-		}
-
-		var_5:UpdateHP(var_3_4, var_3_5)
+		})
 	end
 
 	return

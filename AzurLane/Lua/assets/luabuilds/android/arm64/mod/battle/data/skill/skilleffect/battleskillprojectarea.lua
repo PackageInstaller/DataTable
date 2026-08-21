@@ -1,29 +1,13 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleConst
+local var_0_3 = class("BattleSkillProjectArea", ys.Battle.BattleSkillEffect)
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleSkillProjectArea = var_0_3
+var_0_3.__name = "BattleSkillProjectArea"
 
-local var_0_1 = var_0.Battle.BattleConst
-local var_0_2 = var_0.Battle.BattleConfig
-local var_0_3 = var_0.Battle.BattleEvent
-
-class = var_0_10004
-
-local var_0_4 = var_0_10004("BattleSkillProjectArea", var_0.Battle.BattleSkillEffect)
-
-var_0.Battle.BattleSkillProjectArea = var_0_4
-var_0_4.__name = "BattleSkillProjectArea"
-
-function var_0_4.Ctor(arg_1_0, arg_1_1)
-	local var_1_0 = var_0_4.super.Ctor
-	local var_1_1 = arg_1_0
-	local var_1_2 = arg_1_1
-
-	lv = var_1_10006
-
-	var_1_0(var_1_1, var_1_2, var_1_10006)
+function var_0_3.Ctor(arg_1_0, arg_1_1)
+	var_0_3.super.Ctor(arg_1_0, arg_1_1, lv)
 
 	arg_1_0._posX = arg_1_0._tempData.arg_list.offset_x
 	arg_1_0._posZ = arg_1_0._tempData.arg_list.offset_z
@@ -39,67 +23,45 @@ function var_0_4.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_4.DoDataEffect(arg_2_0, arg_2_1)
+function var_0_3.DoDataEffect(arg_2_0, arg_2_1)
 	arg_2_0:doSpawnAOE(arg_2_1)
 
 	return
 end
 
-function var_0_4.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
+function var_0_3.DoDataEffectWithoutTarget(arg_3_0, arg_3_1)
 	arg_3_0:doSpawnAOE(arg_3_1)
 
 	return
 end
 
-function var_0_4.doSpawnAOE(arg_4_0, arg_4_1)
+function var_0_3.doSpawnAOE(arg_4_0, arg_4_1)
 	local var_4_0 = var_0.Battle.BattleDataProxy.GetInstance()
-
-	local function var_4_1(arg_5_0)
-		ipairs = var_2_10001
-
-		for iter_5_0, iter_5_1 in var_2_10001(arg_5_0) do
-			if iter_5_1.Active then
-				local var_5_0 = var_4_0
-				local var_5_1 = var_6.GetUnitList(var_5_0)[iter_5_1.UID]
-				local var_5_2 = var_0.Battle.BattleBuffUnit.New(arg_4_0._buffID)
-
-				var_5_1:AddBuff(var_5_2, true)
-			end
-		end
-
-		return
-	end
-
-	local function var_4_2(arg_6_0)
-		if arg_6_0.Active then
-			local var_6_0 = var_4_0
-			local var_6_1 = var_1.GetUnitList(var_6_0)[arg_6_0.UID]
-
-			var_1.RemoveBuff(var_6_1, arg_4_0._buffID, true)
-		end
-
-		return
-	end
-
-	local var_4_3 = arg_4_1:GetPosition()
-
-	Vector3 = var_1_10006
-
-	local var_4_4 = var_1_10006(var_4_3.x + arg_4_0._posX, 0, var_4_3.z + arg_4_0._posZ)
-	local var_4_5 = var_4_0:SpawnLastingCubeArea(var_0_1.AOEField.SURFACE, arg_4_1:GetIFF(), var_4_4, arg_4_0._width, arg_4_0._height, arg_4_0._lifeTime, var_4_1, var_4_2, true, arg_4_0._fx, nil)
+	local var_4_1 = arg_4_1:GetPosition()
 
 	if arg_4_0._expendDuration > 0 then
-		local var_4_6 = var_0.Battle.BattleAOEScaleableComponent.New(var_4_5)
+		local var_4_2 = var_0.Battle.BattleAOEScaleableComponent.New((var_0.Battle.BattleDataProxy.GetInstance():SpawnLastingCubeArea(var_0_0.AOEField.SURFACE, arg_4_1:GetIFF(), Vector3(var_4_1.x + arg_4_0._posX, 0, var_4_1.z + arg_4_0._posZ), arg_4_0._width, arg_4_0._height, arg_4_0._lifeTime, function(arg_5_0)
+			for iter_5_0, iter_5_1 in ipairs(arg_5_0) do
+				if iter_5_1.Active then
+					var_4_0:GetUnitList()[iter_5_1.UID]:AddBuff(var_0.Battle.BattleBuffUnit.New(arg_4_0._buffID), true)
+				end
+			end
 
-		var_8.SetReferenceUnit(var_4_6, arg_4_1)
+			return
+		end, function(arg_6_0)
+			if arg_6_0.Active then
+				var_4_0:GetUnitList()[arg_6_0.UID]:RemoveBuff(arg_4_0._buffID, true)
+			end
 
-		local var_4_7 = {
+			return
+		end, true, arg_4_0._fx, nil)))
+
+		var_4_2:SetReferenceUnit(arg_4_1)
+		var_4_2:ConfigData(var_4_2.EXPEND, {
 			expendDuration = arg_4_0._expendDuration,
 			widthSpeed = arg_4_0._widthSpeed,
 			heightSpeed = arg_4_0._heightSpeed
-		}
-
-		var_8:ConfigData(var_8.EXPEND, var_4_7)
+		})
 	end
 
 	return

@@ -32,10 +32,26 @@ function configUI(self)
 
     self.mGroupRemakeLvl = self:getChildGO("GroupRemakeLvl")
     self.mLinkItem = self:getChildGO("mLinkItem")
+
+    self.mTxtNotTips = self:getChildGO("mTxtNotTips"):GetComponent(ty.Text)
+
+    self.mGroupMaxContent = self:getChildGO("mGroupMaxContent")
+    self.mGroupMaxContent:SetActive(false)
+
+    self.mTxtMaxTitle = self:getChildGO("mTxtMaxTitle"):GetComponent(ty.Text)
+    self.isMax = false
+    self.mMaxClick = self:getChildGO("mMaxClick")
+
+    self.mGroupOpen = self:getChildGO("mGroupOpen")
+    self.mGroupClose = self:getChildGO("mGroupClose")
+
+    self.mGroupOpen:SetActive(self.isMax)
+    self.mGroupClose:SetActive(not self.isMax)
 end
 
 function active(self, args)
     super.active(self, args)
+
     if (self.base_childGos["gImgBg2"]) then
         self.base_childGos["gImgBg2"]:SetActive(true)
     end
@@ -64,6 +80,15 @@ end
 function addAllUIEvent(self)
     self:addUIEvent(self:getChildGO("mBtnGoToCul"), self.goToCultivate)
     self:addUIEvent(self.mClose, self.onCloseHandler)
+    self:addUIEvent(self.mMaxClick, self.onMaxChangeHandler)
+end
+
+function onMaxChangeHandler(self)
+    self.isMax = not self.isMax
+    self.mGroupOpen:SetActive(self.isMax)
+    self.mGroupClose:SetActive(not self.isMax)
+
+    self:__updateView()
 end
 
 function onCloseHandler(self)
@@ -84,8 +109,9 @@ end
 function deActive(self)
     super.deActive(self)
     self.m_childTrans["Content"].anchoredPosition = gs.Vector2.zero
-
+    GameDispatcher:removeEventListener(EventName.UPDATE_PROPS_LOCK_STATE, self.updateLockState, self)
     if (self.m_equipVo) then
+       
         self.m_equipVo:removeEventListener(self.m_equipVo.UPDATE_EQUIP_DETAIL_DATA, self.__updateView, self)
         self.m_equipVo:removeEventListener(props.PropsVo.UPDATE, self.__updateView, self)
     end
@@ -118,6 +144,9 @@ function initViewText(self)
     self:setBtnLabel(self.m_childGos["BtnLoad"], 4324, "穿戴")
     self:setBtnLabel(self.m_childGos["BtnUnLoad"], 4327, "卸下")
     self:setBtnLabel(self:getChildGO("mBtnGoToCul"), 3516, "强化")
+    self.m_childGos["mTxtNotTips"]:GetComponent(ty.Text).text = _TT(4399)
+
+    self.mTxtMaxTitle.text = _TT(93127) -- "获取途径"
 end
 
 function __getGoUniqueName(self, goName)
@@ -206,8 +235,18 @@ function __checkIsAbleToCul(self)
     end
 end
 
+function updateLockState(self,args)
+    if self.m_equipVo.id == args.id then
+        self.m_equipVo:setLockState(args.lock)
+    end
+    self:__updateTop()
+end
+
 function __updateView(self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_PROPS_LOCK_STATE, self.updateLockState, self)
     self.m_equipVo:removeEventListener(self.m_equipVo.UPDATE_EQUIP_DETAIL_DATA, self.__updateView, self)
+    
+    GameDispatcher:addEventListener(EventName.UPDATE_PROPS_LOCK_STATE, self.updateLockState, self)
     local totalAttrList, totalAttrDic = self.m_equipVo:getTotalAttr()
     if (totalAttrList == nil and totalAttrDic == nil) then
         self.m_equipVo:addEventListener(self.m_equipVo.UPDATE_EQUIP_DETAIL_DATA, self.__updateView, self)
@@ -396,6 +435,7 @@ end
 function __updateBaseAttr(self)
 
     local mainAttrList, _ = self.m_equipVo:getMainAttr()
+    self.mGroupMaxContent:SetActive(#mainAttrList == 0 and self.m_equipVo.subType == PropsEquipSubType.SLOT_7)
     if next(mainAttrList) then
         for i = 1, #mainAttrList do
             local attrVo = mainAttrList[i]
@@ -414,8 +454,9 @@ function __updateBaseAttr(self)
             -- end
         end
     else
+        
         local equipConfigVo = equip.EquipManager:getEquipConfigVo(self.m_equipVo.tid)
-        local attrList = equipConfigVo.defaultAttrList
+        local attrList = self.isMax and equipConfigVo.braceletsMaxData or equipConfigVo.defaultAttrList
         for i = 1, #attrList do
             local vo = attrList[i]
             local itemCloneGo = self:__getTxtGo("AttrItem")
@@ -430,6 +471,9 @@ function __updateBaseAttr(self)
             end
         end
     end
+
+    self.mTxtNotTips.gameObject:SetActive(#mainAttrList==0 and 
+    self.m_equipVo.subType ~= PropsEquipSubType.SLOT_7)
 
     gs.LayoutRebuilder.ForceRebuildLayoutImmediate(self.m_childTrans["BaseAttrContent"]);
 end
@@ -508,12 +552,21 @@ function __updateSkill(self)
             local des = equip.EquipSkillManager:getBraceletTipsSkillDes(self.m_equipVo, skillEffectList[1])
             local txtCloneGo = self:__getTxtGo("TextSkill")
             txtCloneGo.transform:SetParent(self.m_childTrans["ShowSkill"], false)
-            txtCloneGo:GetComponent(ty.Text).text = des -- HtmlUtil:color(des, "bababaff")
+            local tmpLink_txtCloneGo = txtCloneGo:GetComponent(ty.TextMeshProLink)
+            tmpLink_txtCloneGo:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
+            txtCloneGo:GetComponent(ty.TMP_Text).text = des -- HtmlUtil:color(des, "bababaff")
         else
             local equipConfigVo = equip.EquipManager:getEquipConfigVo(self.m_equipVo.tid)
             local txtCloneGo = self:__getTxtGo("TextSkill")
             txtCloneGo.transform:SetParent(self.m_childTrans["ShowSkill"], false)
-            txtCloneGo:GetComponent(ty.Text).text = equipConfigVo.defaultSkillDes -- HtmlUtil:color(des, "bababaff")
+            local tmpLink_txtCloneGo = txtCloneGo:GetComponent(ty.TextMeshProLink)
+            tmpLink_txtCloneGo:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
+            txtCloneGo:GetComponent(ty.TMP_Text).text = equipConfigVo.defaultSkillDes -- HtmlUtil:color(des, "bababaff")
+
+            if self.isMax then
+                local configVo = braceletBuild.BraceletBuildManager:getRefineConfigVo(self.m_equipVo.tid,6) -- 获取强化配置
+                txtCloneGo:GetComponent(ty.TMP_Text).text = configVo.desc
+            end
         end
     else
         self.m_childGos["GroupSkill"]:SetActive(false)
@@ -526,7 +579,9 @@ function __updateSkill(self)
                 local des = equip.EquipSkillManager:getSkillDes(self.m_equipVo, skillEffectList[i])
                 local txtCloneGo = self:__getTxtGo("TextSkill")
                 txtCloneGo.transform:SetParent(self.m_childTrans["ShowSkill"], false)
-                txtCloneGo:GetComponent(ty.Text).text = des -- HtmlUtil:color(des, "bababaff")
+                local tmpLink_txtCloneGo = txtCloneGo:GetComponent(ty.TextMeshProLink)
+                tmpLink_txtCloneGo:SetEventCall(notice.HrefUtil.commonTitleDesLinkData)
+                txtCloneGo:GetComponent(ty.TMP_Text).text = des -- HtmlUtil:color(des, "bababaff")
             end
         end
     end

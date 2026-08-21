@@ -1,42 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MapBuilderSenrankagura", import(".MapBuilderNormal"))
 
-local var_0_0 = "MapBuilderSenrankagura"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MapBuilderNormal"))
-
-function var_0_1.GetType(arg_1_0)
-	MapBuilder = var_1_10001
-
-	return var_1_10001.TYPESENRANKAGURA
+function var_0_0.GetType(arg_1_0)
+	return MapBuilder.TYPESENRANKAGURA
 end
 
-function var_0_1.OnShow(arg_2_0)
-	var_0_1.super.OnShow(arg_2_0)
-
-	GetSpriteFromAtlas = var_1
-
-	local var_2_0 = var_1("ui/levelmainscene_atlas", "btn_challenge")
-
-	setImageSprite = var_1_10002
-
-	var_1_10002(arg_2_0.sceneParent.actEliteBtn, var_2_0, true)
+function var_0_0.OnShow(arg_2_0)
+	var_0_0.super.OnShow(arg_2_0)
+	setImageSprite(arg_2_0.sceneParent.actEliteBtn, GetSpriteFromAtlas("ui/levelmainscene_atlas", "btn_challenge"), true)
 
 	return
 end
 
-function var_0_1.OnHide(arg_3_0)
-	GetSpriteFromAtlas = var_1_10001
-
-	local var_3_0 = var_1_10001("ui/levelmainscene_atlas", "btn_elite")
-
-	setImageSprite = var_1_10002
-
-	var_1_10002(arg_3_0.sceneParent.actEliteBtn, var_3_0, true)
-	var_0_1.super.OnHide(arg_3_0)
+function var_0_0.OnHide(arg_3_0)
+	setImageSprite(arg_3_0.sceneParent.actEliteBtn, GetSpriteFromAtlas("ui/levelmainscene_atlas", "btn_elite"), true)
+	var_0_0.super.OnHide(arg_3_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

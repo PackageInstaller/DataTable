@@ -56,27 +56,27 @@ function getStateTip(self, state)
 		state = download.ResDownLoadManager:getUpdateState()
 	end
 	if(state == download.ResState.Init) then
-		tip = "准备检查更新中"
+		tip = _TT(10000238)--[["准备检查更新中"]]
 	elseif(state == download.ResState.ReadLocalVersion) then
-		tip = "读取客户端版本中"
+		tip = _TT(10000239)--[["读取客户端版本中"]]
 	elseif(state == download.ResState.ReadCdnVersion) then
-		tip = "读取服务器版本中"
+		tip = _TT(10000240)--[["读取服务器版本中"]]
 	elseif(state == download.ResState.CompareVersion) then
-		tip = "版本号比对中"
+		tip = _TT(10000241)--[["版本号比对中"]]
 	elseif(state == download.ResState.CompareAssetVersion) then
-		tip = "差异资源比对中"
+		tip = _TT(10000242)--[["差异资源比对中"]]
 	elseif(state == download.ResState.DownloadFiles) then
-		tip = "正在下载"
+		tip = _TT(10000243)--[["正在下载"]]
 	elseif(state == download.ResState.DownloadFilesMove) then
-		tip = "正在下载"
+		tip = _TT(10000243)--[["正在下载"]]
 	elseif(state == download.ResState.DownloadFilesSuc) then
-		tip = "正在下载"
+		tip = _TT(10000243)--[["正在下载"]]
 	elseif(state == download.ResState.DownloadFilesFail) then
-		tip = "网络异常"
+		tip = _TT(10000244)--[["网络异常"]]
 	elseif(state == download.ResState.SaveVersion) then
-		tip = "正在保存版本中"
+		tip = _TT(10000245)--[["正在保存版本中"]]
 	elseif(state == download.ResState.Finished) then
-		tip = "更新完毕，正在检查环境中"
+		tip = _TT(10000246)--[["更新完毕，正在检查环境中"]]
 	end
 	return tip
 end

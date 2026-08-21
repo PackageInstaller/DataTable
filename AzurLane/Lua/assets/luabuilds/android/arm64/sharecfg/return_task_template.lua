@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "return_task_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "return_task_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.return_task_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.return_task_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.return_task_template = rawget(pg, "return_task_template") or setmetatable({
+	__name = "return_task_template"
+}, confNEO)
+pg.return_task_template.all = {
 	56011,
 	56012,
 	56013,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	56102,
 	56103
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.return_task_template = {}
+pg.base = pg.base or {}
+pg.base.return_task_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.return_task_template
-
-	var_1_0[56011] = {
+	pg.base.return_task_template[56011] = {
 		reward_date = 1,
 		pt_award = 80,
 		pt_item = 59616,
@@ -117,11 +80,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.return_task_template
-
-	var_1_1[56012] = {
+	pg.base.return_task_template[56012] = {
 		reward_date = 1,
 		pt_award = 80,
 		pt_item = 59616,
@@ -163,11 +122,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.return_task_template
-
-	var_1_2[56013] = {
+	pg.base.return_task_template[56013] = {
 		reward_date = 1,
 		pt_award = 80,
 		pt_item = 59616,
@@ -209,11 +164,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.return_task_template
-
-	var_1_3[56021] = {
+	pg.base.return_task_template[56021] = {
 		reward_date = 2,
 		pt_award = 80,
 		pt_item = 59616,
@@ -255,11 +206,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.return_task_template
-
-	var_1_4[56022] = {
+	pg.base.return_task_template[56022] = {
 		reward_date = 2,
 		pt_award = 80,
 		pt_item = 59616,
@@ -301,11 +248,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.return_task_template
-
-	var_1_5[56023] = {
+	pg.base.return_task_template[56023] = {
 		reward_date = 2,
 		pt_award = 80,
 		pt_item = 59616,
@@ -347,11 +290,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.return_task_template
-
-	var_1_6[56031] = {
+	pg.base.return_task_template[56031] = {
 		reward_date = 3,
 		pt_award = 80,
 		pt_item = 59616,
@@ -393,11 +332,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.return_task_template
-
-	var_1_7[56032] = {
+	pg.base.return_task_template[56032] = {
 		reward_date = 3,
 		pt_award = 80,
 		pt_item = 59616,
@@ -439,11 +374,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.return_task_template
-
-	var_1_8[56033] = {
+	pg.base.return_task_template[56033] = {
 		reward_date = 3,
 		pt_award = 80,
 		pt_item = 59616,
@@ -485,11 +416,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.return_task_template
-
-	var_1_9[56041] = {
+	pg.base.return_task_template[56041] = {
 		reward_date = 4,
 		pt_award = 80,
 		pt_item = 59616,
@@ -531,11 +458,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.return_task_template
-
-	var_1_10[56042] = {
+	pg.base.return_task_template[56042] = {
 		reward_date = 4,
 		pt_award = 80,
 		pt_item = 59616,
@@ -577,11 +500,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.return_task_template
-
-	var_1_11[56043] = {
+	pg.base.return_task_template[56043] = {
 		reward_date = 4,
 		pt_award = 80,
 		pt_item = 59616,
@@ -623,11 +542,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.return_task_template
-
-	var_1_12[56051] = {
+	pg.base.return_task_template[56051] = {
 		reward_date = 5,
 		pt_award = 80,
 		pt_item = 59616,
@@ -669,11 +584,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.return_task_template
-
-	var_1_13[56052] = {
+	pg.base.return_task_template[56052] = {
 		reward_date = 5,
 		pt_award = 80,
 		pt_item = 59616,
@@ -715,11 +626,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.return_task_template
-
-	var_1_14[56053] = {
+	pg.base.return_task_template[56053] = {
 		reward_date = 5,
 		pt_award = 80,
 		pt_item = 59616,
@@ -761,11 +668,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.return_task_template
-
-	var_1_15[56061] = {
+	pg.base.return_task_template[56061] = {
 		reward_date = 6,
 		pt_award = 80,
 		pt_item = 59616,
@@ -807,11 +710,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.return_task_template
-
-	var_1_16[56062] = {
+	pg.base.return_task_template[56062] = {
 		reward_date = 6,
 		pt_award = 80,
 		pt_item = 59616,
@@ -853,11 +752,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.return_task_template
-
-	var_1_17[56063] = {
+	pg.base.return_task_template[56063] = {
 		reward_date = 6,
 		pt_award = 80,
 		pt_item = 59616,
@@ -899,11 +794,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.return_task_template
-
-	var_1_18[7] = {
+	pg.base.return_task_template[7] = {
 		reward_date = 7,
 		pt_award = 80,
 		pt_item = 59616,
@@ -945,11 +836,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.return_task_template
-
-	var_1_19[8] = {
+	pg.base.return_task_template[8] = {
 		reward_date = 7,
 		pt_award = 80,
 		pt_item = 59616,
@@ -991,11 +878,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.return_task_template
-
-	var_1_20[9] = {
+	pg.base.return_task_template[9] = {
 		reward_date = 7,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1037,11 +920,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.return_task_template
-
-	var_1_21[17] = {
+	pg.base.return_task_template[17] = {
 		reward_date = 8,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1083,11 +962,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.return_task_template
-
-	var_1_22[18] = {
+	pg.base.return_task_template[18] = {
 		reward_date = 8,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1129,11 +1004,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.return_task_template
-
-	var_1_23[19] = {
+	pg.base.return_task_template[19] = {
 		reward_date = 8,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1175,11 +1046,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.return_task_template
-
-	var_1_24[27] = {
+	pg.base.return_task_template[27] = {
 		reward_date = 9,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1221,11 +1088,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.return_task_template
-
-	var_1_25[28] = {
+	pg.base.return_task_template[28] = {
 		reward_date = 9,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1267,11 +1130,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.return_task_template
-
-	var_1_26[29] = {
+	pg.base.return_task_template[29] = {
 		reward_date = 9,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1313,11 +1172,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.return_task_template
-
-	var_1_27[56101] = {
+	pg.base.return_task_template[56101] = {
 		reward_date = 10,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1359,11 +1214,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.return_task_template
-
-	var_1_28[56102] = {
+	pg.base.return_task_template[56102] = {
 		reward_date = 10,
 		pt_award = 80,
 		pt_item = 59616,
@@ -1405,8 +1256,7 @@ var_0_3.base.return_task_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.return_task_template[56103] = {
+	pg.base.return_task_template[56103] = {
 		reward_date = 10,
 		pt_award = 80,
 		pt_item = 59616,

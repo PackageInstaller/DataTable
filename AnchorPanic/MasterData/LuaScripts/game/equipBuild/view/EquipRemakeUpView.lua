@@ -457,11 +457,12 @@ end
 
 function updateTextView(self)
     local costMoneyTid = self.remakeConfigVo:getPayId()
-    local costMoneyCount = self.remakeConfigVo:getPayNum()
+    local count =  self.m_equipMaterialVo==nil and 0 or 1
+    local costMoneyCount = self.remakeConfigVo:getPayNum() * count
     self.mImgCost:SetImg(MoneyUtil.getMoneyIconUrlByTid(costMoneyTid), true)
     self.mTextCost.text = costMoneyCount
     self.mTextCost.color = gs.ColorUtil.GetColor(MoneyUtil.judgeNeedMoneyCountByTid(costMoneyTid,costMoneyCount,false,false) and "FFFFFFFF" or "ed1941FF")
-
+    self.mTextCost.gameObject:SetActive(costMoneyCount > 0)
     self.mImgCostGO:SetActive(costMoneyCount > 0)
 
     if (self.m_equipMaterialVo == nil) then

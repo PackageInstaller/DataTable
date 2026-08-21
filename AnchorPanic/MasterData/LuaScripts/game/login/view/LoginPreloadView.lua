@@ -188,6 +188,7 @@ function __localSceneList(self)
         web.WebController:reqReportStep(web.REPORT_STEP.PRE_LOAD_SCENE_SUC)
         GameManager:setIsLoadPreResComplete(true)
         if(self.mFinishCall)then
+            sdk.SdkManager:foreignNotifyStartUp("load_ok")
             self.mFinishCall()
             self.mFinishCall = nil
         end

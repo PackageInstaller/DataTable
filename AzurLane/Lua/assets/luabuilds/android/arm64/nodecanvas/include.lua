@@ -1,9 +1,4 @@
-﻿require = var_0_10000
-
-var_0_10000("nodecanvas/IslandEvt")
-
-require = var_0_10000
-
-var_0_10000("nodecanvas/IslandNodeCanvasHelper")
+﻿require("nodecanvas/IslandEvt")
+require("nodecanvas/IslandNodeCanvasHelper")
 
 return

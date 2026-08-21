@@ -1,36 +1,19 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MusicBeatNoteCtrl")
+﻿local var_0_0 = class("MusicBeatNoteCtrl")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._content = arg_1_1
 	arg_1_0._event = arg_1_2
 
-	local var_1_0 = arg_1_0._event
-	local var_1_1 = var_3.bind
-
-	MusicBeatGameEvent = var_1_10006
-
-	var_1_1(var_1_0, var_1_10006.TRACK_EVENT_MATCH, function(arg_2_0, arg_2_1, arg_2_2)
+	arg_1_0._event:bind(MusicBeatGameEvent.TRACK_EVENT_MATCH, function(arg_2_0, arg_2_1, arg_2_2)
 		if arg_2_1 then
-			local var_2_0 = arg_2_1.id
-
 			for iter_2_0 = 1, #arg_1_0.prepareTracks do
-				if arg_1_0.prepareTracks[iter_2_0].id == var_2_0 then
-					local var_2_1 = arg_1_0.prepareTracks[iter_2_0]
-					local var_2_2 = arg_1_0
-					local var_2_3, var_2_4 = var_9.matchTrack(var_2_2, var_2_1)
+				if arg_1_0.prepareTracks[iter_2_0].id == arg_2_1.id then
+					local var_2_0, var_2_1 = arg_1_0:matchTrack(arg_1_0.prepareTracks[iter_2_0])
 
-					print = var_2_2
-
-					local var_2_5 = "match is "
-
-					tostring = var_2_10014
-
-					var_2_2(var_2_5 .. var_2_10014(var_2_3) .. " subtime is " .. var_2_4)
+					print("match is " .. tostring(var_2_0) .. " subtime is " .. var_2_1)
 
 					if arg_2_2 then
-						arg_2_2(var_2_3, var_2_4)
+						arg_2_2(var_2_0, var_2_1)
 					end
 
 					return
@@ -53,15 +36,9 @@ end
 function var_0_0.readyStart(arg_4_0)
 	arg_4_0:clear()
 
-	local var_4_0 = arg_4_0._gameVo
-
-	arg_4_0.mapData = var_1.getMapData(var_4_0)
-
-	local var_4_1 = arg_4_0._gameVo
-
-	arg_4_0.nodeData = var_1.getNodeData(var_4_1)
-	MusicBeatGameConst = var_1
-	arg_4_0.beatOffset = var_1.beat_offset
+	arg_4_0.mapData = arg_4_0._gameVo:getMapData()
+	arg_4_0.nodeData = arg_4_0._gameVo:getNodeData()
+	arg_4_0.beatOffset = MusicBeatGameConst.beat_offset
 
 	arg_4_0:createTrackList()
 
@@ -73,71 +50,36 @@ function var_0_0.start(arg_5_0)
 end
 
 function var_0_0.step(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_0._gameVo
-
-	if var_2.isBgmPlaying(var_6_0) then
+	if arg_6_0._gameVo:isBgmPlaying() then
 		if arg_6_0.trackData == nil and #arg_6_0.trackList > 0 then
-			table = var_2
-			arg_6_0.trackData = var_2.remove(arg_6_0.trackList, 1)
+			arg_6_0.trackData = table.remove(arg_6_0.trackList, 1)
 		end
 
 		if arg_6_0.trackData then
-			local var_6_1 = arg_6_0._gameVo
-			local var_6_2 = var_2.getCriInfoTime(var_6_1)
-			local var_6_3 = arg_6_0.trackData.begin_time - var_6_2
+			local var_6_0 = arg_6_0.trackData.begin_time - arg_6_0._gameVo:getCriInfoTime()
 
-			if 0 <= var_6_3 then
-				MusicBeatGameConst = var_4
+			if var_6_0 >= 0 and var_6_0 <= MusicBeatGameConst.beat_prepare then
+				arg_6_0._event:emit(MusicBeatGameEvent.TRACK_TRIGGER, {
+					track = arg_6_0.trackData,
+					final = #arg_6_0.trackList <= 0
+				})
+				table.insert(arg_6_0.prepareTracks, arg_6_0.trackData)
 
-				if var_6_3 <= var_4.beat_prepare then
-					local var_6_4 = arg_6_0._event
-					local var_6_5 = var_4.emit
+				arg_6_0.trackData = nil
+			elseif var_6_0 <= 0 and arg_6_0.trackData.begin_time == arg_6_0.trackData.end_time and math.abs(var_6_0) >= arg_6_0.beatOffset then
+				arg_6_0._event:emit(MusicBeatGameEvent.TRACK_REMOVE, arg_6_0.trackData)
 
-					MusicBeatGameEvent = var_1_10007
-
-					var_6_5(var_6_4, var_1_10007.TRACK_TRIGGER, {
-						track = arg_6_0.trackData,
-						final = #arg_6_0.trackList <= 0
-					})
-
-					table = var_6_5
-
-					var_6_5.insert(arg_6_0.prepareTracks, arg_6_0.trackData)
-
-					arg_6_0.trackData = nil
-
-					goto label_6_0
-				end
-			end
-
-			if var_6_3 <= 0 and arg_6_0.trackData.begin_time == arg_6_0.trackData.end_time then
-				math = var_4
-
-				if var_4.abs(var_6_3) >= arg_6_0.beatOffset then
-					local var_6_6 = arg_6_0._event
-					local var_6_7 = var_4.emit
-
-					MusicBeatGameEvent = var_1_10007
-
-					var_6_7(var_6_6, var_1_10007.TRACK_REMOVE, arg_6_0.trackData)
-
-					arg_6_0.trackData = nil
-				end
+				arg_6_0.trackData = nil
 			end
 		end
 	end
 
-	::label_6_0::
-
 	if #arg_6_0.prepareTracks > 0 then
-		local var_6_8 = arg_6_0._gameVo
-		local var_6_9 = var_2.getCriInfoTime(var_6_8)
+		local var_6_1 = arg_6_0._gameVo:getCriInfoTime()
 
 		for iter_6_0 = #arg_6_0.prepareTracks, 1, -1 do
-			if var_6_9 - arg_6_0.prepareTracks[iter_6_0].end_time >= arg_6_0.beatOffset then
-				table = var_8
-
-				local var_6_10 = var_8.remove(arg_6_0.prepareTracks, iter_6_0)
+			if var_6_1 - arg_6_0.prepareTracks[iter_6_0].end_time >= arg_6_0.beatOffset then
+				local var_6_2 = table.remove(arg_6_0.prepareTracks, iter_6_0)
 			end
 		end
 	end
@@ -166,29 +108,22 @@ function var_0_0.dispose(arg_10_0)
 end
 
 function var_0_0.matchTrack(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0._gameVo
+	local var_11_0 = arg_11_0._gameVo:getCriInfoTime()
 
-	if var_2.getCriInfoTime(var_11_0) > 0 then
-		local var_11_1
+	if var_11_0 > 0 then
 		local var_11_2
 
 		if arg_11_1.begin_time == arg_11_1.end_time then
-			local var_11_3 = arg_11_1.begin_time
+			var_11_2 = math.abs(arg_11_1.begin_time - var_11_0)
 
-			math = var_5
-
-			if var_5.abs(var_11_3 - var_2) <= arg_11_0.beatOffset then
+			if var_11_2 <= arg_11_0.beatOffset then
 				return true, var_11_2
 			end
 		elseif arg_11_1.data.begin_time ~= arg_11_1.data.end_time then
-			local var_11_4 = arg_11_1.matchBegin and arg_11_1.data.end_time or arg_11_1.data.begin_time
+			var_11_2 = math.abs((arg_11_1.matchBegin and arg_11_1.data.end_time or arg_11_1.data.begin_time) - var_11_0)
 
-			math = var_5
-
-			if var_5.abs(var_11_4 - var_2) <= arg_11_0.beatOffset then
-				if not arg_11_1.matchBegin then
-					arg_11_1.matchBegin = true
-				end
+			if var_11_2 <= arg_11_0.beatOffset then
+				arg_11_1.matchBegin = arg_11_1.matchBegin or true
 
 				return true, var_11_2
 			end
@@ -201,38 +136,16 @@ function var_0_0.matchTrack(arg_11_0, arg_11_1)
 end
 
 function var_0_0.createTrackList(arg_12_0)
-	Clone = var_1_10001
-
-	local var_12_0 = var_1_10001(arg_12_0.nodeData.touch_track)
-
 	arg_12_0.trackList = {}
-	ipairs = var_2
 
-	for iter_12_0, iter_12_1 in var_2(var_12_0) do
-		table = var_1_10007
-		var_1_10007 = var_1_10007.insert
-
-		local var_12_1 = arg_12_0.trackList
-		local var_12_2 = {
+	for iter_12_0, iter_12_1 in ipairs((Clone(arg_12_0.nodeData.touch_track))) do
+		table.insert(arg_12_0.trackList, {
 			key_flag = iter_12_1.key_flag,
-			key_index = iter_12_1.key_index
-		}
-
-		math = var_11
-
-		local var_12_3 = var_11.floor
-
-		tonumber = var_1_10013
-		var_12_2.begin_time = var_12_3(var_1_10013(iter_12_1.begin_time) * 1000)
-		math = var_11
-
-		local var_12_4 = var_11.floor
-
-		tonumber = var_1_10013
-		var_12_2.end_time = var_12_4(var_1_10013(iter_12_1.end_time) * 1000)
-		var_12_2.id = iter_12_0
-
-		var_1_10007(var_12_1, var_12_2)
+			key_index = iter_12_1.key_index,
+			begin_time = math.floor(tonumber(iter_12_1.begin_time) * 1000),
+			end_time = math.floor(tonumber(iter_12_1.end_time) * 1000),
+			id = iter_12_0
+		})
 	end
 
 	return

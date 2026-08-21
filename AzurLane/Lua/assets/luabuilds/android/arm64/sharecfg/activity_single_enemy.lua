@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_single_enemy") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_single_enemy"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_single_enemy = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_single_enemy
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_single_enemy = rawget(pg, "activity_single_enemy") or setmetatable({
+	__name = "activity_single_enemy"
+}, confNEO)
+pg.activity_single_enemy.all = {
 	1001,
 	1002,
 	1003,
@@ -56,25 +33,11 @@ var_0_3.all = {
 	1000004,
 	1000005
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_single_enemy = {}
+pg.base = pg.base or {}
+pg.base.activity_single_enemy = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_single_enemy
-
-	var_1_0[1001] = {
+	pg.base.activity_single_enemy[1001] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -98,11 +61,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_single_enemy
-
-	var_1_1[1002] = {
+	pg.base.activity_single_enemy[1002] = {
 		pre_chapter = 1001,
 		count = 0,
 		type = 2,
@@ -126,11 +85,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_single_enemy
-
-	var_1_2[1003] = {
+	pg.base.activity_single_enemy[1003] = {
 		pre_chapter = 1002,
 		count = 0,
 		type = 3,
@@ -154,11 +109,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_single_enemy
-
-	var_1_3[1004] = {
+	pg.base.activity_single_enemy[1004] = {
 		pre_chapter = 1003,
 		count = 1,
 		type = 4,
@@ -188,11 +139,7 @@ var_0_3.base.activity_single_enemy = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_single_enemy
-
-	var_1_4[1005] = {
+	pg.base.activity_single_enemy[1005] = {
 		pre_chapter = 1003,
 		count = 0,
 		type = 5,
@@ -222,11 +169,7 @@ var_0_3.base.activity_single_enemy = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_single_enemy
-
-	var_1_5[2001] = {
+	pg.base.activity_single_enemy[2001] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -267,11 +210,7 @@ var_0_3.base.activity_single_enemy = {}
 			201311
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_single_enemy
-
-	var_1_6[2002] = {
+	pg.base.activity_single_enemy[2002] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -311,11 +250,7 @@ var_0_3.base.activity_single_enemy = {}
 			201312
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_single_enemy
-
-	var_1_7[2003] = {
+	pg.base.activity_single_enemy[2003] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -355,11 +290,7 @@ var_0_3.base.activity_single_enemy = {}
 			201313
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_single_enemy
-
-	var_1_8[2004] = {
+	pg.base.activity_single_enemy[2004] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -402,11 +333,7 @@ var_0_3.base.activity_single_enemy = {}
 			201318
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_single_enemy
-
-	var_1_9[2005] = {
+	pg.base.activity_single_enemy[2005] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 2,
@@ -451,11 +378,7 @@ var_0_3.base.activity_single_enemy = {}
 			201311
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_single_enemy
-
-	var_1_10[2006] = {
+	pg.base.activity_single_enemy[2006] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 2,
@@ -499,11 +422,7 @@ var_0_3.base.activity_single_enemy = {}
 			201312
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_single_enemy
-
-	var_1_11[2007] = {
+	pg.base.activity_single_enemy[2007] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 2,
@@ -547,11 +466,7 @@ var_0_3.base.activity_single_enemy = {}
 			201313
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_single_enemy
-
-	var_1_12[2008] = {
+	pg.base.activity_single_enemy[2008] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 2,
@@ -598,11 +513,7 @@ var_0_3.base.activity_single_enemy = {}
 			201318
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_single_enemy
-
-	var_1_13[2009] = {
+	pg.base.activity_single_enemy[2009] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 3,
@@ -651,11 +562,7 @@ var_0_3.base.activity_single_enemy = {}
 			201311
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_single_enemy
-
-	var_1_14[2010] = {
+	pg.base.activity_single_enemy[2010] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 3,
@@ -703,11 +610,7 @@ var_0_3.base.activity_single_enemy = {}
 			201312
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_single_enemy
-
-	var_1_15[2011] = {
+	pg.base.activity_single_enemy[2011] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 3,
@@ -755,11 +658,7 @@ var_0_3.base.activity_single_enemy = {}
 			201313
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_single_enemy
-
-	var_1_16[2012] = {
+	pg.base.activity_single_enemy[2012] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 3,
@@ -810,11 +709,7 @@ var_0_3.base.activity_single_enemy = {}
 			201318
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_single_enemy
-
-	var_1_17[2013] = {
+	pg.base.activity_single_enemy[2013] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 4,
@@ -863,11 +758,7 @@ var_0_3.base.activity_single_enemy = {}
 			201320
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_single_enemy
-
-	var_1_18[3001] = {
+	pg.base.activity_single_enemy[3001] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -891,11 +782,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_single_enemy
-
-	var_1_19[3002] = {
+	pg.base.activity_single_enemy[3002] = {
 		pre_chapter = 3001,
 		count = 0,
 		type = 1,
@@ -919,11 +806,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_single_enemy
-
-	var_1_20[3003] = {
+	pg.base.activity_single_enemy[3003] = {
 		pre_chapter = 3002,
 		count = 0,
 		type = 1,
@@ -947,11 +830,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_single_enemy
-
-	var_1_21[4001] = {
+	pg.base.activity_single_enemy[4001] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -975,11 +854,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_single_enemy
-
-	var_1_22[4002] = {
+	pg.base.activity_single_enemy[4002] = {
 		pre_chapter = 4001,
 		count = 0,
 		type = 1,
@@ -1003,11 +878,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_single_enemy
-
-	var_1_23[4003] = {
+	pg.base.activity_single_enemy[4003] = {
 		pre_chapter = 4002,
 		count = 0,
 		type = 1,
@@ -1031,11 +902,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_single_enemy
-
-	var_1_24[1000001] = {
+	pg.base.activity_single_enemy[1000001] = {
 		pre_chapter = 0,
 		count = 0,
 		type = 1,
@@ -1059,11 +926,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_single_enemy
-
-	var_1_25[1000002] = {
+	pg.base.activity_single_enemy[1000002] = {
 		pre_chapter = 1000001,
 		count = 0,
 		type = 2,
@@ -1087,11 +950,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_single_enemy
-
-	var_1_26[1000003] = {
+	pg.base.activity_single_enemy[1000003] = {
 		pre_chapter = 1000002,
 		count = 0,
 		type = 3,
@@ -1115,11 +974,7 @@ var_0_3.base.activity_single_enemy = {}
 		limitation = {},
 		property_limitation = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_single_enemy
-
-	var_1_27[1000004] = {
+	pg.base.activity_single_enemy[1000004] = {
 		pre_chapter = 1000003,
 		count = 1,
 		type = 4,
@@ -1149,8 +1004,7 @@ var_0_3.base.activity_single_enemy = {}
 			}
 		}
 	}
-	pg = var_1_27
-	var_1_27.base.activity_single_enemy[1000005] = {
+	pg.base.activity_single_enemy[1000005] = {
 		pre_chapter = 1000003,
 		count = 0,
 		type = 5,

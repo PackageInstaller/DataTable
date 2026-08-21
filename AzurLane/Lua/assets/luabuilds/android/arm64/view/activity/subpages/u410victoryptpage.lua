@@ -1,35 +1,14 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("U410VictoryPtPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "U410VictoryPtPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
-
-function var_0_1.OnFirstFlush(arg_1_0)
-	var_0_1.super.OnFirstFlush(arg_1_0)
-
-	onButton = var_1
-
-	local var_1_0 = arg_1_0
-	local var_1_1 = arg_1_0.battleBtn
-
-	local function var_1_2()
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_2_1(var_2_0, var_2_10003.SPECIAL_BATTLE_OPERA)
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.battleBtn, function()
+		arg_1_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_1_0, var_1_1, var_1_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-return var_0_1
+return var_0_0

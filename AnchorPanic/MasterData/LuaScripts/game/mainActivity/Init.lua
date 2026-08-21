@@ -5,6 +5,7 @@ mainActivity.MainActivitySignVo = require("game/mainActivity/manager/vo/MainActi
 mainActivity.MainActivityShopVo = require("game/mainActivity/manager/vo/MainActivityShopVo")
 mainActivity.MainActivityTaskVo = require("game/mainActivity/manager/vo/MainActivityTaskVo")
 mainActivity.MainActivityTaskMsgVo = require("game/mainActivity/manager/vo/MainActivityTaskMsgVo")
+mainActivity.MainActivityTrialConfigVo = require("game/mainActivity/manager/vo/MainActivityTrialConfigVo")
 
 mainActivity.MainActivityPanel = require("game/mainActivity/view/MainActivityPanel")
 mainActivity.MainActivityUpView = require("game/mainActivity/view/MainActivityUpView")
@@ -30,14 +31,18 @@ mainActivity.MainActivityShopItem = require("game/mainActivity/view/item/MainAct
 mainActivity.MainActivityTaskItem = require("game/mainActivity/view/item/MainActivityTaskItem")
 
 -------------------------------------------周年庆典----------------------------------------------------
+Celebration.CelebrationSuperGiftView = require("game/mainActivity/celebration/view/CelebrationSuperGiftView")
+
+
 Celebration.CelebrationPanel = require("game/mainActivity/celebration/view/CelebrationPanel")
 Celebration.CelebrationConst = require("game/mainActivity/celebration/manager/CelebrationConst")
 Celebration.CelebrationTaskVo = require("game/mainActivity/celebration/manager/vo/CelebrationTaskVo")
-Celebration.CelebrationTaskItem= require("game/mainActivity/celebration/view/item/CelebrationTaskItem")
+Celebration.CelebrationTaskItem = require("game/mainActivity/celebration/view/item/CelebrationTaskItem")
 Celebration.CelebrationTaskSubView = require("game/mainActivity/celebration/view/CelebrationTaskSubView")
 Celebration.CeleSsrOptionalSubView = require("game/mainActivity/celebration/view/CeleSsrOptionalSubView")
 Celebration.CelebrationManager = require("game/mainActivity/celebration/manager/CelebrationManager").new()
 Celebration.CelebrationRechargeVo = require("game/mainActivity/celebration/manager/vo/CelebrationRechargeVo")
+Celebration.CelebrationRechargeTwoVo = require("game/mainActivity/celebration/manager/vo/CelebrationRechargeTwoVo")
 Celebration.CelebrationAccRechargeView = require("game/mainActivity/celebration/view/CelebrationAccRechargeView")
 Celebration.CelebrationAccRechargeItem = require("game/mainActivity/celebration/view/item/CelebrationAccRechargeItem")
 Celebration.CelebrationController = require("game/mainActivity/celebration/controller/CelebrationController").new(Celebration.CelebrationManager)
@@ -56,8 +61,7 @@ mainActivity.ActiveDupStarVo = require("game/mainActivity/activeDup/manager/vo/A
 mainActivity.ActiveDupManager = require("game/mainActivity/activeDup/manager/ActiveDupManager").new()
 mainActivity.ActiveDupController = require('game/mainActivity/activeDup/controller/ActiveDupController').new(mainActivity.ActiveDupManager)
 
-
-local module = {_c, mainActivity.ActiveDupController}
+local module = {_c, mainActivity.ActiveDupController,Celebration.CelebrationController}
 
 return module
 

@@ -1,62 +1,30 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LatestSkinGiftPackLayer", import(".LatestSkinShopLayer"))
 
-local var_0_0 = "LatestSkinGiftPackLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".LatestSkinShopLayer"))
-
-function var_0_1.Overlay(arg_1_0)
-	pg = var_1_10001
-
-	local var_1_0 = var_1_10001.UIMgr.GetInstance()
-	local var_1_1 = var_1.OverlayPanel
-	local var_1_2 = arg_1_0.adapt
-	local var_1_3 = {}
-	local var_1_4 = {}
-	local var_1_5 = arg_1_0.charContainer
-
-	var_1_4[1] = var_7.Find(var_1_5, "bg")
-
-	local var_1_6 = arg_1_0.filterUI
-
-	var_1_4[2] = var_7.Find(var_1_6, "panel")
-	var_1_3.pbList = var_1_4
-
-	var_1_1(var_1_0, var_1_2, var_1_3)
+function var_0_0.Overlay(arg_1_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_1_0.adapt, {
+		pbList = {
+			arg_1_0.charContainer:Find("bg"),
+			arg_1_0.filterUI:Find("panel")
+		}
+	})
 
 	return
 end
 
-function var_0_1.UnOverlay(arg_2_0)
-	pg = var_1_10001
-
-	local var_2_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_2_0, arg_2_0.adapt, arg_2_0._tf)
+function var_0_0.UnOverlay(arg_2_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_2_0.adapt, arg_2_0._tf)
 
 	return
 end
 
-function var_0_1.GetAllCommodities(arg_3_0)
+function var_0_0.GetAllCommodities(arg_3_0)
 	if arg_3_0.contextData.commodityId then
 		arg_3_0.giftPackCommodity = arg_3_0:GetCommodity(arg_3_0.contextData.commodityId)
 
-		local var_3_0 = arg_3_0.giftPackCommodity
-		local var_3_1 = var_1.GetSkinProbability(var_3_0)
+		local var_3_0 = arg_3_0.giftPackCommodity:GetSkinProbability()
 
-		getProxy = var_1_10002
-		ShipSkinProxy = var_4
-
-		local var_3_2 = var_1_10002(var_4)
-
-		arg_3_0.commodities = var_2.GetProbabilitySkins(var_3_2, var_3_1)
-		getProxy = var_2
-		ShipSkinProxy = var_3_2
-
-		local var_3_3 = var_2(var_3_2)
-
-		arg_3_0.skinProbabilitys = var_2.GetSkinProbabilitys(var_3_3, var_3_1)
+		arg_3_0.commodities = getProxy(ShipSkinProxy):GetProbabilitySkins(var_3_0)
+		arg_3_0.skinProbabilitys = getProxy(ShipSkinProxy):GetSkinProbabilitys(var_3_0)
 	else
 		arg_3_0.giftPackCommodity = arg_3_0.contextData.giftPackCommodity
 		arg_3_0.commodities = arg_3_0.contextData.skinCommodities
@@ -66,385 +34,139 @@ function var_0_1.GetAllCommodities(arg_3_0)
 	return
 end
 
-function var_0_1.GetCommodity(arg_4_0, arg_4_1)
-	Goods = var_1_10002
-
-	local var_4_0 = var_1_10002.Create
-	local var_4_1 = {
+function var_0_0.GetCommodity(arg_4_0, arg_4_1)
+	local var_4_0 = Goods.Create({
 		shop_id = arg_4_1
-	}
+	}, Goods.TYPE_CHARGE)
+	local var_4_1 = getProxy(ShopsProxy):getChargedList() or {}
 
-	Goods = var_1_10005
+	var_4_0:updateBuyCount((ChargeConst.getBuyCount(var_4_1, var_4_0.id)))
 
-	local var_4_2 = var_4_0(var_4_1, var_1_10005.TYPE_CHARGE)
-
-	getProxy = var_1_10003
-	ShopsProxy = var_5
-
-	local var_4_3 = var_1_10003(var_5)
-	local var_4_4
-
-	if not var_3.getChargedList(var_4_3) then
-		var_4_4 = {}
-	end
-
-	ChargeConst = var_4_1
-
-	local var_4_5 = var_4_1.getBuyCount(var_4_4, var_4_2.id)
-
-	var_4_2:updateBuyCount(var_4_5)
-
-	return var_4_2
+	return var_4_0
 end
 
-function var_0_1.SetGiftPackLayer(arg_5_0)
-	setActive = var_1_10001
+function var_0_0.SetGiftPackLayer(arg_5_0)
+	setActive(arg_5_0.mainTitle, true)
+	setActive(arg_5_0.backBtn, true)
+	setActive(arg_5_0.homeBtn, true)
+	setActive(arg_5_0.giftPack, true)
+	setActive(arg_5_0.showOwnBtn, false)
+	setActive(arg_5_0.filterBtn, false)
+	setActive(arg_5_0.search, false)
+	setActive(arg_5_0.giftPackBtn, false)
+	setActive(arg_5_0.price, false)
 
-	var_1_10001(arg_5_0.mainTitle, true)
+	arg_5_0.top:Find("title").anchoredPosition = Vector2(544.6, -208.3)
+	arg_5_0.top:Find("change_skin").anchoredPosition = Vector2(431.1, -337.8)
+	arg_5_0.bottom:Find("scroll").offsetMin = Vector2(378, 0)
+	arg_5_0.bottom:Find("scroll").offsetMax = Vector2(-19.6, 227.9)
 
-	setActive = var_1_10001
+	setText(arg_5_0.giftPack:Find("panel/name"), arg_5_0.giftPackCommodity:getConfig("name_display"))
 
-	var_1_10001(arg_5_0.backBtn, true)
+	local var_5_0 = arg_5_0.giftPackCommodity:getConfig("time")
 
-	setActive = var_1_10001
+	setActive(arg_5_0.giftPack:Find("panel/leftTimeText"), type(var_5_0) == "table")
 
-	var_1_10001(arg_5_0.homeBtn, true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0.giftPack, true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0.showOwnBtn, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0.filterBtn, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0.search, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0.giftPackBtn, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0.price, false)
-
-	local var_5_0 = arg_5_0.top
-	local var_5_1 = var_1.Find(var_5_0, "title")
-
-	Vector2 = var_1_10002
-	var_5_1.anchoredPosition = var_1_10002(544.6, -208.3)
-
-	local var_5_2 = arg_5_0.top
-	local var_5_3 = var_1.Find(var_5_2, "change_skin")
-
-	Vector2 = var_2
-	var_5_3.anchoredPosition = var_2(431.1, -337.8)
-
-	local var_5_4 = arg_5_0.bottom
-	local var_5_5 = var_1.Find(var_5_4, "scroll")
-
-	Vector2 = var_2
-	var_5_5.offsetMin = var_2(378, 0)
-
-	local var_5_6 = arg_5_0.bottom
-	local var_5_7 = var_1.Find(var_5_6, "scroll")
-
-	Vector2 = var_2
-	var_5_7.offsetMax = var_2(-19.6, 227.9)
-	setText = var_5_7
-
-	local var_5_8 = arg_5_0.giftPack
-	local var_5_9 = var_3.Find(var_5_8, "panel/name")
-	local var_5_10 = arg_5_0.giftPackCommodity
-
-	var_5_7(var_5_9, var_4.getConfig(var_5_10, "name_display"))
-
-	local var_5_11 = arg_5_0.giftPackCommodity
-	local var_5_12 = var_1.getConfig(var_5_11, "time")
-
-	setActive = var_2
-
-	local var_5_13 = arg_5_0.giftPack
-	local var_5_14 = var_4.Find(var_5_13, "panel/leftTimeText")
-
-	type = var_5_8
-
-	var_2(var_5_14, var_5_8(var_5_12) == "table")
-
-	type = var_2
-
-	local var_5_15
-
-	if var_2(var_5_12) == "table" then
-		var_5_15 = var_5_12[2]
-		pg = var_5_11
-
-		local var_5_16 = var_5_11.TimeMgr.GetInstance()
-		local var_5_17 = var_3.Table2ServerTime(var_5_16, {
-			year = var_5_15[1][1],
-			month = var_5_15[1][2],
-			day = var_5_15[1][3],
-			hour = var_5_15[2][1],
-			min = var_5_15[2][2],
-			sec = var_5_15[2][3]
+	if type(var_5_0) == "table" then
+		local var_5_1 = pg.TimeMgr.GetInstance():Table2ServerTime({
+			year = var_5_0[2][1][1],
+			month = var_5_0[2][1][2],
+			day = var_5_0[2][1][3],
+			hour = var_5_0[2][2][1],
+			min = var_5_0[2][2][2],
+			sec = var_5_0[2][2][3]
 		})
 
 		arg_5_0:StartTimer(function()
-			pg = var_2_10000
+			local var_6_9000
+			local var_6_0 = pg.TimeMgr.GetInstance()
+			local var_6_1 = var_5_1 - var_6_0.GetServerTime(var_6_9000)
+			local var_6_2 = math.floor(var_6_1 % 0 / 16)
 
-			local var_6_0 = var_2_10000.TimeMgr.GetInstance()
-			local var_6_1 = var_0.GetServerTime(var_6_0)
-			local var_6_2 = var_5_17 - var_6_1
-
-			math = var_6_0
-
-			local var_6_3 = var_6_0.floor(var_6_2 / 0)
-
-			math = var_2_10003
-
-			local var_6_4 = var_2_10003.floor(var_6_2 % 0 / 16)
-
-			math = var_4
-
-			local var_6_5 = var_4.floor(var_6_2 % 0 % 16 / 60)
-
-			if 0 < var_6_3 then
-				setText = var_5
-
-				local var_6_6 = arg_5_0.giftPack
-				local var_6_7 = var_7.Find(var_6_6, "panel/leftTimeText")
-
-				i18n = var_2_10008
-
-				var_5(var_6_7, var_2_10008("shop_new_during_day", var_6_3))
-			elseif 0 < var_6_4 then
-				setText = var_5
-
-				local var_6_8 = arg_5_0.giftPack
-				local var_6_9 = var_7.Find(var_6_8, "panel/leftTimeText")
-
-				i18n = var_2_10008
-
-				var_5(var_6_9, var_2_10008("shop_new_during_hour", var_6_4))
+			if var_6_0 > 0 then
+				setText(arg_5_0.giftPack:Find("panel/leftTimeText"), i18n("shop_new_during_day", (math.floor(var_6_1 / 0))))
+			elseif var_6_2 > 0 then
+				setText(arg_5_0.giftPack:Find("panel/leftTimeText"), i18n("shop_new_during_hour", var_6_2))
 			else
-				setText = var_5
-
-				local var_6_10 = arg_5_0.giftPack
-				local var_6_11 = var_7.Find(var_6_10, "panel/leftTimeText")
-
-				i18n = var_2_10008
-
-				var_5(var_6_11, var_2_10008("shop_new_during_minite", var_6_5))
+				setText(arg_5_0.giftPack:Find("panel/leftTimeText"), i18n("shop_new_during_minite", (math.floor(var_6_1 % 0 % 16 / 60))))
 			end
 
 			return
 		end)
 	end
 
-	GetImageSpriteFromAtlasAsync = var_5_15
+	GetImageSpriteFromAtlasAsync("chargeicon/" .. arg_5_0.giftPackCommodity:getConfig("picture"), "", arg_5_0.giftPack:Find("panel/icon"))
+	setText(arg_5_0.giftPack:Find("panel/tip1/Text"), arg_5_0.giftPackCommodity:getConfig("first_text"))
+	setText(arg_5_0.giftPack:Find("panel/tip2/Text"), arg_5_0.giftPackCommodity:getConfig("second_text"))
 
-	local var_5_18 = "chargeicon/"
-	local var_5_19 = arg_5_0.giftPackCommodity
-	local var_5_20 = var_5_18 .. var_5.getConfig(var_5_19, "picture")
-	local var_5_21 = ""
-	local var_5_22 = arg_5_0.giftPack
+	local var_5_2 = {}
 
-	var_5_15(var_5_20, var_5_21, var_6.Find(var_5_22, "panel/icon"))
-
-	setText = var_5_15
-
-	local var_5_23 = arg_5_0.giftPack
-	local var_5_24 = var_4.Find(var_5_23, "panel/tip1/Text")
-	local var_5_25 = arg_5_0.giftPackCommodity
-
-	var_5_15(var_5_24, var_5.getConfig(var_5_25, "first_text"))
-
-	setText = var_5_15
-
-	local var_5_26 = arg_5_0.giftPack
-	local var_5_27 = var_4.Find(var_5_26, "panel/tip2/Text")
-	local var_5_28 = arg_5_0.giftPackCommodity
-
-	var_5_15(var_5_27, var_5.getConfig(var_5_28, "second_text"))
-
-	local var_5_29 = arg_5_0.giftPackCommodity
-	local var_5_30 = var_2.getConfig(var_5_29, "first_icon")
-	local var_5_31 = {}
-
-	ipairs = var_5_29
-
-	for iter_5_0, iter_5_1 in var_5_29(var_5_30) do
-		table = var_5_32
-
-		local var_5_32 = var_5_32.insert
-		local var_5_33 = var_5_31
-
-		Drop = var_1_10012
-
-		var_5_32(var_5_33, var_1_10012.Create(iter_5_1))
+	for iter_5_0, iter_5_1 in ipairs((arg_5_0.giftPackCommodity:getConfig("first_icon"))) do
+		table.insert({}, Drop.Create(iter_5_1))
 	end
 
-	while #var_5_31 > 3 do
-		table = var_4
-
-		var_4.remove(var_5_31, #var_5_31)
+	while #{} > 3 do
+		table.remove({}, #{})
 	end
 
-	UIItemList = var_4
+	local var_5_3 = UIItemList.New(arg_5_0.giftPack:Find("panel/firstItems"), arg_5_0.giftPack:Find("panel/firstItems/item"))
 
-	local var_5_34 = var_4.New
-	local var_5_35 = arg_5_0.giftPack
-	local var_5_36 = var_6.Find(var_5_35, "panel/firstItems")
-	local var_5_37 = arg_5_0.giftPack
-	local var_5_38 = var_5_34(var_5_36, var_7.Find(var_5_37, "panel/firstItems/item"))
-
-	var_4.make(var_5_38, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			local var_7_0 = var_5_31[arg_7_1 + 1]
-
-			updateDrop = var_4
-
-			var_4(arg_7_2:Find("mask/item"), var_7_0)
+	var_5_3:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			updateDrop(arg_7_2:Find("mask/item"), var_5_2[arg_7_1 + 1])
 		end
 
 		return
 	end)
-	var_4:align(#var_5_31)
+	var_5_3:align(#{})
 
-	local var_5_39 = arg_5_0.giftPackCommodity
-	local var_5_40 = var_5.GetDropList(var_5_39)
+	local var_5_4 = arg_5_0.giftPackCommodity:GetDropList()
 
-	while #var_5_40 > 3 do
-		table = var_6
-
-		var_6.remove(var_5_40, #var_5_40)
+	while #var_5_4 > 3 do
+		table.remove(var_5_4, #var_5_4)
 	end
 
-	UIItemList = var_6
+	local var_5_5 = UIItemList.New(arg_5_0.giftPack:Find("panel/items"), arg_5_0.giftPack:Find("panel/items/item"))
 
-	local var_5_41 = var_6.New
-	local var_5_42 = arg_5_0.giftPack
-	local var_5_43 = var_8.Find(var_5_42, "panel/items")
-	local var_5_44 = arg_5_0.giftPack
-	local var_5_45 = var_5_41(var_5_43, var_9.Find(var_5_44, "panel/items/item"))
-
-	var_6.make(var_5_45, function(arg_8_0, arg_8_1, arg_8_2)
-		UIItemList = var_2_10003
-
-		if arg_8_0 == var_2_10003.EventUpdate then
-			local var_8_0 = var_5_40[arg_8_1 + 1]
-
-			updateDrop = var_4
-
-			var_4(arg_8_2:Find("mask/item"), var_8_0)
+	var_5_5:make(function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_0 == UIItemList.EventUpdate then
+			updateDrop(arg_8_2:Find("mask/item"), var_5_4[arg_8_1 + 1])
 		end
 
 		return
 	end)
-	var_6:align(#var_5_40)
+	var_5_5:align(#var_5_4)
+	setText(arg_5_0.giftPack:Find("price/consume/Text"), arg_5_0.giftPackCommodity:GetLimitDesc())
+	setText(arg_5_0.giftPack:Find("price/btns/goumai_button/Text"), GetMoneySymbol() .. arg_5_0.giftPackCommodity:getConfig("money"))
 
-	setText = var_7
-
-	local var_5_46 = arg_5_0.giftPack
-	local var_5_47 = var_9.Find(var_5_46, "price/consume/Text")
-	local var_5_48 = arg_5_0.giftPackCommodity
-
-	var_7(var_5_47, var_10.GetLimitDesc(var_5_48))
-
-	setText = var_7
-
-	local var_5_49 = arg_5_0.giftPack
-	local var_5_50 = var_9.Find(var_5_49, "price/btns/goumai_button/Text")
-
-	GetMoneySymbol = var_10
-
-	local var_5_51 = var_10()
-	local var_5_52 = arg_5_0.giftPackCommodity
-
-	var_7(var_5_50, var_5_51 .. var_11.getConfig(var_5_52, "money"))
-
-	PLATFORM_CODE = var_7
-	PLATFORM_CHT = var_5_43
-
-	if var_7 == var_5_43 then
-		local var_5_53 = arg_5_0.giftPackCommodity
-
-		if var_7.IsLocalPrice(var_5_53) then
-			setText = var_7
-
-			local var_5_54 = arg_5_0.giftPack
-			local var_5_55 = var_9.Find(var_5_54, "price/btns/goumai_button/Text")
-			local var_5_56 = arg_5_0.giftPackCommodity
-
-			var_7(var_5_55, var_10.getConfig(var_5_56, "money"))
-		end
+	if PLATFORM_CODE == PLATFORM_CHT and arg_5_0.giftPackCommodity:IsLocalPrice() then
+		setText(arg_5_0.giftPack:Find("price/btns/goumai_button/Text"), arg_5_0.giftPackCommodity:getConfig("money"))
 	end
 
-	setGray = var_7
+	setGray(arg_5_0.giftPack:Find("price/btns/yigoumai_button"), true, true)
 
-	local var_5_57 = arg_5_0.giftPack
+	local var_5_6 = arg_5_0.giftPackCommodity:getLimitCount()
+	local var_5_7 = arg_5_0.giftPackCommodity.buyCount or 0
 
-	var_7(var_9.Find(var_5_57, "price/btns/yigoumai_button"), true, true)
-
-	local var_5_58 = arg_5_0.giftPackCommodity
-	local var_5_59 = var_7.getLimitCount(var_5_58)
-	local var_5_60
-
-	if not arg_5_0.giftPackCommodity.buyCount then
-		var_5_60 = 0
-	end
-
-	setActive = var_5_58
-
-	local var_5_61 = arg_5_0.giftPack
-
-	var_5_58(var_11.Find(var_5_61, "price/btns/goumai_button"), var_5_60 < var_5_59)
-
-	setActive = var_5_58
-
-	local var_5_62 = arg_5_0.giftPack
-
-	var_5_58(var_11.Find(var_5_62, "price/btns/yigoumai_button"), var_5_59 <= var_5_60)
-
-	onButton = var_5_58
-
-	local var_5_63 = arg_5_0
-	local var_5_64 = arg_5_0.giftPack
-	local var_5_65 = var_12.Find(var_5_64, "price/btns/goumai_button")
-
-	local function var_5_66()
-		local var_9_0 = arg_5_0
-
-		var_0.confirm(var_9_0, arg_5_0.giftPackCommodity)
+	setActive(arg_5_0.giftPack:Find("price/btns/goumai_button"), var_5_7 < var_5_6)
+	setActive(arg_5_0.giftPack:Find("price/btns/yigoumai_button"), var_5_6 <= var_5_7)
+	onButton(arg_5_0, arg_5_0.giftPack:Find("price/btns/goumai_button"), function()
+		arg_5_0:confirm(arg_5_0.giftPackCommodity)
 
 		return
-	end
-
-	SFX_PANEL = var_5_64
-
-	var_5_58(var_5_63, var_5_65, var_5_66, var_5_64)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.FlushGifgPackBtn(arg_10_0, arg_10_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_10_0.giftPackBtn, false)
+function var_0_0.FlushGifgPackBtn(arg_10_0, arg_10_1)
+	setActive(arg_10_0.giftPackBtn, false)
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0
+function var_0_0.OnUpdateItem(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_0.cards[arg_11_2]
 
 	if not arg_11_0.cards[arg_11_2] then
 		arg_11_0:OnInitItem(arg_11_2)
@@ -452,41 +174,36 @@ function var_0_1.OnUpdateItem(arg_11_0, arg_11_1, arg_11_2)
 		var_11_0 = arg_11_0.cards[arg_11_2]
 	end
 
+	local var_11_1 = arg_11_0.displays[arg_11_1 + 1]
+	local var_11_2
+
 	if not arg_11_0.displays[arg_11_1 + 1] then
-		return
+		do return end
+
+		var_11_2 = table.contains(arg_11_0.returnSkins, var_11_1.id)
 	end
 
-	local var_11_1 = arg_11_0.selectedId == var_4.id
-
-	table = var_6
-
-	local var_11_2 = var_6.contains(arg_11_0.returnSkins, var_4.id)
-
-	var_11_0:Update(var_4, var_11_1, var_11_2, arg_11_0.skinProbabilitys[var_4:getSkinId()])
+	var_11_0:Update(var_11_1, arg_11_0.selectedId == var_11_1.id, var_11_2, arg_11_0.skinProbabilitys[var_11_1:getSkinId()])
 
 	if arg_11_0.triggerFirstCard and arg_11_1 == 0 then
 		arg_11_0.triggerFirstCard = false
-		triggerButton = var_7
 
-		var_7(var_11_0._go)
+		triggerButton(var_11_0._go)
 	end
 
 	return
 end
 
-function var_0_1.confirm(arg_12_0, arg_12_1)
+function var_0_0.confirm(arg_12_0, arg_12_1)
 	if not arg_12_1 then
 		return
 	end
 
-	Clone = var_1_10002
+	arg_12_1 = Clone(arg_12_1)
 
-	local var_12_0 = var_1_10002(arg_12_1)
-
-	if arg_12_1.isChargeType(var_12_0) then
-		local var_12_1 = false
-
-		var_12_0 = var_12_1 and arg_12_1:firstPayDouble() and 4 or arg_12_1:getConfig("tag")
+	if arg_12_1:isChargeType() then
+		local var_12_0 = false and arg_12_1:firstPayDouble()
+		local var_12_1 = var_12_0 and 4 or arg_12_1:getConfig("tag")
 
 		if arg_12_1:isMonthCard() or arg_12_1:isGiftBox() or arg_12_1:isItemBox() or arg_12_1:isPassItem() then
 			local var_12_2 = arg_12_1:GetExtraServiceItem()
@@ -496,144 +213,74 @@ function var_0_1.confirm(arg_12_0, arg_12_1)
 			local var_12_6
 
 			if arg_12_1:isPassItem() then
-				i18n = var_10
-				var_12_5 = var_10("battlepass_pay_tip")
+				var_12_5 = i18n("battlepass_pay_tip")
 			elseif arg_12_1:isMonthCard() then
-				i18n = var_10
-				var_12_5 = var_10("charge_title_getitem_month")
-				i18n = var_10
-				var_12_6 = var_10("charge_title_getitem_soon")
+				var_12_5 = i18n("charge_title_getitem_month")
+				var_12_6 = i18n("charge_title_getitem_soon")
 			else
-				i18n = var_10
-				var_12_5 = var_10("charge_title_getitem")
+				var_12_5 = i18n("charge_title_getitem")
 			end
 
-			local var_12_7 = {
+			arg_12_0:emit(LatestSkinGiftPackMediator.OPEN_CHARGE_ITEM_PANEL, {
 				isChargeType = true,
 				commodity = arg_12_1,
-				infoTip = arg_12_1:GetInfoTip()
-			}
+				infoTip = arg_12_1:GetInfoTip(),
+				icon = "chargeicon/" .. arg_12_1:getConfig("picture"),
+				name = arg_12_1:getConfig("name_display"),
+				tipExtra = var_12_5,
+				extraItems = var_12_2,
+				price = arg_12_1:getConfig("money"),
+				isLocalPrice = arg_12_1:IsLocalPrice(),
+				tagType = var_12_1,
+				isMonthCard = arg_12_1:isMonthCard(),
+				tipBonus = var_12_6,
+				bonusItem = var_12_4,
+				extraDrop = var_12_3,
+				descExtra = arg_12_1:getConfig("descrip_extra"),
+				limitArgs = arg_12_1:getConfig("limit_args"),
+				onYes = function()
+					if ChargeConst.isNeedSetBirth() then
+						arg_12_0:emit(LatestSkinGiftPackMediator.OPEN_CHARGE_BIRTHDAY)
+					else
+						arg_12_0:emit(LatestSkinGiftPackMediator.CHARGE, arg_12_1.id)
+					end
 
-			var_1_10011 = "chargeicon/"
-			var_1_10014 = arg_12_1
-			var_12_7.icon = var_1_10011 .. arg_12_1.getConfig(var_1_10014, "picture")
-			var_12_7.name = arg_12_1:getConfig("name_display")
-			var_12_7.tipExtra = var_12_5
-			var_12_7.extraItems = var_12_2
-			var_12_7.price = arg_12_1:getConfig("money")
-			var_12_7.isLocalPrice = arg_12_1:IsLocalPrice()
-			var_12_7.tagType = var_12_0
-			var_12_7.isMonthCard = arg_12_1:isMonthCard()
-			var_12_7.tipBonus = var_12_6
-			var_12_7.bonusItem = var_12_4
-			var_12_7.extraDrop = var_12_3
-			var_12_7.descExtra = arg_12_1:getConfig("descrip_extra")
-			var_12_7.limitArgs = arg_12_1:getConfig("limit_args")
-
-			function var_12_7.onYes()
-				ChargeConst = var_2_10000
-
-				if var_2_10000.isNeedSetBirth() then
-					local var_13_0 = arg_12_0
-					local var_13_1 = var_0.emit
-
-					LatestSkinGiftPackMediator = var_2_10003
-
-					var_13_1(var_13_0, var_2_10003.OPEN_CHARGE_BIRTHDAY)
-				else
-					local var_13_2 = arg_12_0
-					local var_13_3 = var_0.emit
-
-					LatestSkinGiftPackMediator = var_2_10003
-
-					var_13_3(var_13_2, var_2_10003.CHARGE, arg_12_1.id)
+					return
 				end
-
-				return
-			end
-
-			local var_12_8 = arg_12_0
-
-			var_1_10011 = arg_12_0.emit
-			LatestSkinGiftPackMediator = var_1_10014
-
-			var_1_10011(var_12_8, var_1_10014.OPEN_CHARGE_ITEM_PANEL, var_12_7)
+			})
 		elseif arg_12_1:isGem() then
-			local var_12_9 = arg_12_1:getConfig("money")
-			local var_12_10 = arg_12_1:getConfig("gem")
+			local var_12_7 = arg_12_1:getConfig("money")
+			local var_12_8 = arg_12_1:getConfig("gem")
 
-			if var_3 then
-				var_12_10 = var_12_10 + arg_12_1:getConfig("gem")
-			else
-				var_12_10 = var_12_10 + arg_12_1:getConfig("extra_gem")
-			end
+			var_12_8 = var_12_0 and var_12_8 + arg_12_1:getConfig("gem") or var_12_8 + arg_12_1:getConfig("extra_gem")
 
-			local var_12_11 = {
+			arg_12_0:emit(LatestSkinGiftPackMediator.OPEN_CHARGE_ITEM_BOX, {
 				isChargeType = true,
-				commodity = arg_12_1
-			}
-			local var_12_12 = "chargeicon/"
+				commodity = arg_12_1,
+				icon = "chargeicon/" .. arg_12_1:getConfig("picture"),
+				name = arg_12_1:getConfig("name_display"),
+				price = arg_12_1:getConfig("money"),
+				isLocalPrice = arg_12_1:IsLocalPrice(),
+				tagType = var_12_1,
+				normalTip = i18n("charge_start_tip", var_12_7, var_12_8),
+				onYes = function()
+					if ChargeConst.isNeedSetBirth() then
+						arg_12_0:emit(LatestSkinGiftPackMediator.OPEN_CHARGE_BIRTHDAY)
+					else
+						arg_12_0:emit(LatestSkinGiftPackMediator.CHARGE, arg_12_1.id)
+					end
 
-			var_1_10011 = arg_12_1
-			var_12_11.icon = var_12_12 .. arg_12_1.getConfig(var_1_10011, "picture")
-			var_12_11.name = arg_12_1:getConfig("name_display")
-			var_12_11.price = arg_12_1:getConfig("money")
-			var_12_11.isLocalPrice = arg_12_1:IsLocalPrice()
-			var_12_11.tagType = var_12_0
-			i18n = var_8
-			var_12_11.normalTip = var_8("charge_start_tip", var_12_9, var_12_10)
-
-			function var_12_11.onYes()
-				ChargeConst = var_2_10000
-
-				if var_2_10000.isNeedSetBirth() then
-					local var_14_0 = arg_12_0
-					local var_14_1 = var_0.emit
-
-					LatestSkinGiftPackMediator = var_2_10003
-
-					var_14_1(var_14_0, var_2_10003.OPEN_CHARGE_BIRTHDAY)
-				else
-					local var_14_2 = arg_12_0
-					local var_14_3 = var_0.emit
-
-					LatestSkinGiftPackMediator = var_2_10003
-
-					var_14_3(var_14_2, var_2_10003.CHARGE, arg_12_1.id)
+					return
 				end
-
-				return
-			end
-
-			local var_12_13 = arg_12_0
-			local var_12_14 = arg_12_0.emit
-
-			LatestSkinGiftPackMediator = var_1_10011
-
-			var_12_14(var_12_13, var_1_10011.OPEN_CHARGE_ITEM_BOX, var_12_11)
+			})
 		end
 	else
-		local var_12_15 = {}
-		local var_12_16 = arg_12_1:getConfig("effect_args")
+		local var_12_9 = {}
+		local var_12_10 = Item.getConfigData(arg_12_1:getConfig("effect_args")[1])
 
-		Item = var_12_0
-
-		local var_12_17 = var_12_0.getConfigData(var_12_16[1]).display_icon
-
-		type = var_6
-
-		if var_6(var_12_17) == "table" then
-			ipairs = var_6
-
-			for iter_12_0, iter_12_1 in var_6(var_12_17) do
-				table = var_1_10011
-				var_1_10011 = var_1_10011.insert
-
-				local var_12_18 = var_12_15
-
-				Drop = var_1_10014
-
-				var_1_10011(var_12_18, var_1_10014.New({
+		if type(var_12_10.display_icon) == "table" then
+			for iter_12_0, iter_12_1 in ipairs(var_12_10.display_icon) do
+				table.insert(var_12_9, Drop.New({
 					type = iter_12_1[1],
 					id = iter_12_1[2],
 					count = iter_12_1[3]
@@ -641,84 +288,51 @@ function var_0_1.confirm(arg_12_0, arg_12_1)
 			end
 		end
 
-		local var_12_19 = {
+		arg_12_0:emit(LatestSkinGiftPackMediator.OPEN_CHARGE_ITEM_PANEL, {
 			isLocalPrice = false,
 			isChargeType = false,
 			isMonthCard = false,
 			commodity = arg_12_1,
-			icon = var_4.icon,
-			name = var_4.name
-		}
+			icon = var_12_10.icon,
+			name = var_12_10.name,
+			tipExtra = i18n("charge_title_getitem"),
+			extraItems = var_12_9,
+			price = arg_12_1:getConfig("resource_num"),
+			tagType = arg_12_1:getConfig("tag"),
+			onYes = function()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = i18n("charge_scene_buy_confirm", arg_12_1:getConfig("resource_num"), var_12_10.name),
+					onYes = function()
+						arg_12_0:emit(LatestSkinGiftPackMediator.BUY_ITEM, arg_12_1.id, 1)
 
-		i18n = var_7
-		var_12_19.tipExtra = var_7("charge_title_getitem")
-		var_12_19.extraItems = var_12_15
-		var_12_19.price = arg_12_1:getConfig("resource_num")
-		var_12_19.tagType = arg_12_1:getConfig("tag")
-
-		function var_12_19.onYes()
-			pg = var_2_10000
-
-			local var_15_0 = var_2_10000.MsgboxMgr.GetInstance()
-			local var_15_1 = var_0.ShowMsgBox
-			local var_15_2 = {}
-
-			i18n = var_2_10004
-
-			local var_15_3 = "charge_scene_buy_confirm"
-			local var_15_4 = arg_12_1
-
-			var_15_2.content = var_2_10004(var_15_3, var_7.getConfig(var_15_4, "resource_num"), var_0.name)
-
-			function var_15_2.onYes()
-				local var_16_0 = arg_12_0
-				local var_16_1 = var_0.emit
-
-				LatestSkinGiftPackMediator = var_3_10003
-
-				var_16_1(var_16_0, var_3_10003.BUY_ITEM, arg_12_1.id, 1)
+						return
+					end
+				})
 
 				return
 			end
-
-			var_15_1(var_15_0, var_15_2)
-
-			return
-		end
-
-		local var_12_20 = arg_12_0
-		local var_12_21 = arg_12_0.emit
-
-		LatestSkinGiftPackMediator = var_10
-
-		var_12_21(var_12_20, var_10.OPEN_CHARGE_ITEM_PANEL, var_12_19)
+		})
 	end
 
 	return
 end
 
-function var_0_1.StartTimer(arg_17_0, arg_17_1)
-	Timer = var_1_10002
-	arg_17_0.cardTimer = var_1_10002.New(function()
+function var_0_0.StartTimer(arg_17_0, arg_17_1)
+	arg_17_0.cardTimer = Timer.New(function()
 		arg_17_1()
 
 		return
 	end, 1, -1)
 
 	arg_17_1()
-
-	local var_17_0 = arg_17_0.cardTimer
-
-	var_2.Start(var_17_0)
+	arg_17_0.cardTimer:Start()
 
 	return
 end
 
-function var_0_1.RemoveAllTimer(arg_19_0)
+function var_0_0.RemoveAllTimer(arg_19_0)
 	if arg_19_0.cardTimer then
-		local var_19_0 = arg_19_0.cardTimer
-
-		var_1.Stop(var_19_0)
+		arg_19_0.cardTimer:Stop()
 
 		arg_19_0.cardTimer = nil
 	end
@@ -726,11 +340,11 @@ function var_0_1.RemoveAllTimer(arg_19_0)
 	return
 end
 
-function var_0_1.willExit(arg_20_0)
-	var_0_1.super.willExit(arg_20_0)
+function var_0_0.willExit(arg_20_0)
+	var_0_0.super.willExit(arg_20_0)
 	arg_20_0:RemoveAllTimer()
 
 	return
 end
 
-return var_0_1
+return var_0_0

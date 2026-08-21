@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_wild_gather") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_wild_gather"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_wild_gather = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_wild_gather
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_wild_gather = rawget(pg, "island_wild_gather") or setmetatable({
+	__name = "island_wild_gather"
+}, confNEO)
+pg.island_wild_gather.all = {
 	1,
 	2,
 	3,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	1023,
 	1024
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_wild_gather = {}
+pg.base = pg.base or {}
+pg.base.island_wild_gather = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_wild_gather
-
-	var_1_0[1] = {
+	pg.base.island_wild_gather[1] = {
 		name = "蜂巢",
 		refresh = 1,
 		type = 1,
@@ -96,11 +59,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_wild_gather
-
-	var_1_1[2] = {
+	pg.base.island_wild_gather[2] = {
 		name = "蜂巢",
 		refresh = 1,
 		type = 1,
@@ -120,11 +79,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_wild_gather
-
-	var_1_2[3] = {
+	pg.base.island_wild_gather[3] = {
 		name = "蜂巢",
 		refresh = 1,
 		type = 1,
@@ -145,11 +100,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_wild_gather
-
-	var_1_3[4] = {
+	pg.base.island_wild_gather[4] = {
 		name = "蜂蜜桶",
 		refresh = 1,
 		type = 1,
@@ -168,11 +119,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_wild_gather
-
-	var_1_4[5] = {
+	pg.base.island_wild_gather[5] = {
 		name = "蜂巢",
 		refresh = 1,
 		type = 1,
@@ -191,11 +138,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_wild_gather
-
-	var_1_5[6] = {
+	pg.base.island_wild_gather[6] = {
 		name = "蜂巢",
 		refresh = 1,
 		type = 1,
@@ -214,11 +157,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_wild_gather
-
-	var_1_6[1001] = {
+	pg.base.island_wild_gather[1001] = {
 		name = "秋菊花丛",
 		refresh = 1,
 		type = 2,
@@ -237,11 +176,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_wild_gather
-
-	var_1_7[1002] = {
+	pg.base.island_wild_gather[1002] = {
 		name = "秋菊花丛",
 		refresh = 1,
 		type = 2,
@@ -260,11 +195,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_wild_gather
-
-	var_1_8[1003] = {
+	pg.base.island_wild_gather[1003] = {
 		name = "芦苇丛",
 		refresh = 1,
 		type = 2,
@@ -283,11 +214,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_wild_gather
-
-	var_1_9[1004] = {
+	pg.base.island_wild_gather[1004] = {
 		name = "芦苇丛",
 		refresh = 1,
 		type = 2,
@@ -306,11 +233,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_wild_gather
-
-	var_1_10[1005] = {
+	pg.base.island_wild_gather[1005] = {
 		name = "花生",
 		refresh = 1,
 		type = 2,
@@ -329,11 +252,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_wild_gather
-
-	var_1_11[1006] = {
+	pg.base.island_wild_gather[1006] = {
 		name = "花生",
 		refresh = 1,
 		type = 2,
@@ -352,11 +271,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_wild_gather
-
-	var_1_12[1007] = {
+	pg.base.island_wild_gather[1007] = {
 		name = "松茸丛",
 		refresh = 1,
 		type = 2,
@@ -375,11 +290,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_wild_gather
-
-	var_1_13[1008] = {
+	pg.base.island_wild_gather[1008] = {
 		name = "松茸丛",
 		refresh = 1,
 		type = 2,
@@ -398,11 +309,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_wild_gather
-
-	var_1_14[1009] = {
+	pg.base.island_wild_gather[1009] = {
 		name = "春笋",
 		refresh = 1,
 		type = 2,
@@ -421,11 +328,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_wild_gather
-
-	var_1_15[1010] = {
+	pg.base.island_wild_gather[1010] = {
 		name = "春笋",
 		refresh = 1,
 		type = 2,
@@ -444,11 +347,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_wild_gather
-
-	var_1_16[1011] = {
+	pg.base.island_wild_gather[1011] = {
 		name = "荠菜",
 		refresh = 1,
 		type = 2,
@@ -467,11 +366,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_wild_gather
-
-	var_1_17[1012] = {
+	pg.base.island_wild_gather[1012] = {
 		name = "荠菜",
 		refresh = 1,
 		type = 2,
@@ -490,11 +385,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_wild_gather
-
-	var_1_18[1013] = {
+	pg.base.island_wild_gather[1013] = {
 		name = "迎春花",
 		refresh = 1,
 		type = 2,
@@ -513,11 +404,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_wild_gather
-
-	var_1_19[1014] = {
+	pg.base.island_wild_gather[1014] = {
 		name = "迎春花",
 		refresh = 1,
 		type = 2,
@@ -536,11 +423,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_wild_gather
-
-	var_1_20[1015] = {
+	pg.base.island_wild_gather[1015] = {
 		name = "风信子",
 		refresh = 1,
 		type = 2,
@@ -559,11 +442,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_wild_gather
-
-	var_1_21[1016] = {
+	pg.base.island_wild_gather[1016] = {
 		name = "风信子",
 		refresh = 1,
 		type = 2,
@@ -582,11 +461,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_wild_gather
-
-	var_1_22[1017] = {
+	pg.base.island_wild_gather[1017] = {
 		name = "茉莉花",
 		refresh = 1,
 		type = 2,
@@ -605,11 +480,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_wild_gather
-
-	var_1_23[1018] = {
+	pg.base.island_wild_gather[1018] = {
 		name = "茉莉花",
 		refresh = 1,
 		type = 2,
@@ -628,11 +499,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_wild_gather
-
-	var_1_24[1019] = {
+	pg.base.island_wild_gather[1019] = {
 		name = "向日葵",
 		refresh = 1,
 		type = 2,
@@ -651,11 +518,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_wild_gather
-
-	var_1_25[1020] = {
+	pg.base.island_wild_gather[1020] = {
 		name = "向日葵",
 		refresh = 1,
 		type = 2,
@@ -674,11 +537,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_wild_gather
-
-	var_1_26[1021] = {
+	pg.base.island_wild_gather[1021] = {
 		name = "西瓜",
 		refresh = 1,
 		type = 2,
@@ -697,11 +556,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_wild_gather
-
-	var_1_27[1022] = {
+	pg.base.island_wild_gather[1022] = {
 		name = "西瓜",
 		refresh = 1,
 		type = 2,
@@ -720,11 +575,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_wild_gather
-
-	var_1_28[1023] = {
+	pg.base.island_wild_gather[1023] = {
 		name = "红米苋",
 		refresh = 1,
 		type = 2,
@@ -743,8 +594,7 @@ var_0_3.base.island_wild_gather = {}
 			50
 		}
 	}
-	pg = var_1_28
-	var_1_28.base.island_wild_gather[1024] = {
+	pg.base.island_wild_gather[1024] = {
 		name = "红米苋",
 		refresh = 1,
 		type = 2,

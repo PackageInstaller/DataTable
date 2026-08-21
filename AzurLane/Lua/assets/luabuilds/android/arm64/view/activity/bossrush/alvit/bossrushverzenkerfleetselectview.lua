@@ -1,66 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BossRushVerZenkerFleetSelectView", import("view.activity.BossRush.BossRushFleetSelectView"))
 
-local var_0_0 = "BossRushVerZenkerFleetSelectView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.BossRush.BossRushFleetSelectView"))
-
-function var_0_1.GetTextColor(arg_1_0)
-	Color = var_1_10001
-
-	local var_1_0 = var_1_10001.NewHex("1C231F")
-
-	Color = var_1_10002
-
-	local var_1_1 = var_1_10002.NewHex("979A98")
+function var_0_0.GetTextColor(arg_1_0)
+	local var_1_0 = Color.NewHex("1C231F")
+	local var_1_1 = Color.NewHex("979A98")
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "BossRushVerZenkerFleetSelectUI"
 end
 
-function var_0_1.tempCache(arg_3_0)
+function var_0_0.tempCache(arg_3_0)
 	return true
 end
 
-function var_0_1.didEnter(arg_4_0)
-	var_0_1.super.didEnter(arg_4_0)
-
-	removeOnButton = var_1
-
-	local var_4_0 = arg_4_0._tf
-
-	var_1(var_3.Find(var_4_0, "BG"))
-
-	setText = var_1
-
-	local var_4_1 = arg_4_0.btnGo
-	local var_4_2 = var_3.Find(var_4_1, "Text")
-
-	i18n = var_1_10004
-
-	var_1(var_4_2, var_1_10004("zengke_series_confirm"))
-
-	onButton = var_1
-
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0._tf
-	local var_4_5 = var_4.Find(var_4_4, "BG/close")
-
-	local function var_4_6()
-		local var_5_0 = arg_4_0
-
-		var_0.onCancelHard(var_5_0)
+function var_0_0.didEnter(arg_4_0)
+	var_0_0.super.didEnter(arg_4_0)
+	removeOnButton(arg_4_0._tf:Find("BG"))
+	setText(arg_4_0.btnGo:Find("Text"), i18n("zengke_series_confirm"))
+	onButton(arg_4_0, arg_4_0._tf:Find("BG/close"), function()
+		arg_4_0:onCancelHard()
 
 		return
-	end
-
-	SFX_CANCEL = var_4_4
-
-	var_1(var_4_3, var_4_5, var_4_6, var_4_4)
+	end, SFX_CANCEL)
 
 	return
 end
 
-return var_0_1
+return var_0_0

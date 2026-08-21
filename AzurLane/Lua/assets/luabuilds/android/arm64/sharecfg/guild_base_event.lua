@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "guild_base_event") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "guild_base_event"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.guild_base_event = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.guild_base_event
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.guild_base_event
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.guild_base_event = rawget(pg, "guild_base_event") or setmetatable({
+	__name = "guild_base_event"
+}, confNEO)
+pg.guild_base_event.__namecode__ = true
+pg.guild_base_event.all = {
 	1001,
 	1002,
 	1003,
@@ -231,25 +204,11 @@ var_0_4.all = {
 	4213,
 	4214
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.guild_base_event = {}
+pg.base = pg.base or {}
+pg.base.guild_base_event = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.guild_base_event
-
-	var_1_0[1001] = {
+	pg.base.guild_base_event[1001] = {
 		extra_squedron_ratio = 0,
 		name = "北方海域清扫作战",
 		extra_squadron = "",
@@ -316,11 +275,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.guild_base_event
-
-	var_1_1[1002] = {
+	pg.base.guild_base_event[1002] = {
 		extra_squedron_ratio = 0,
 		name = "南方海域清扫作战",
 		extra_squadron = "",
@@ -387,11 +342,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.guild_base_event
-
-	var_1_2[1003] = {
+	pg.base.guild_base_event[1003] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港航路清扫",
 		extra_squadron = "",
@@ -459,11 +410,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.guild_base_event
-
-	var_1_3[1004] = {
+	pg.base.guild_base_event[1004] = {
 		extra_squedron_ratio = 0,
 		name = "航迹岛航路清扫",
 		extra_squadron = "",
@@ -531,11 +478,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.guild_base_event
-
-	var_1_4[1005] = {
+	pg.base.guild_base_event[1005] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港物资接收护卫",
 		extra_squadron = "",
@@ -598,11 +541,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.guild_base_event
-
-	var_1_5[1006] = {
+	pg.base.guild_base_event[1006] = {
 		extra_squedron_ratio = 0,
 		name = "航迹岛物资运输护卫",
 		extra_squadron = "",
@@ -665,11 +604,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.guild_base_event
-
-	var_1_6[1007] = {
+	pg.base.guild_base_event[1007] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港飞机接收护卫",
 		extra_squadron = "",
@@ -736,11 +671,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.guild_base_event
-
-	var_1_7[1008] = {
+	pg.base.guild_base_event[1008] = {
 		extra_squedron_ratio = 0,
 		name = "航迹岛飞机运输护卫",
 		extra_squadron = "",
@@ -807,11 +738,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.guild_base_event
-
-	var_1_8[1009] = {
+	pg.base.guild_base_event[1009] = {
 		extra_squedron_ratio = 0,
 		name = "米德维近海巡逻",
 		extra_squadron = "",
@@ -873,11 +800,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.guild_base_event
-
-	var_1_9[1010] = {
+	pg.base.guild_base_event[1010] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港近海巡逻",
 		extra_squadron = "",
@@ -939,11 +862,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.guild_base_event
-
-	var_1_10[1011] = {
+	pg.base.guild_base_event[1011] = {
 		extra_squedron_ratio = 0,
 		name = "查尔斯环礁海域巡逻",
 		extra_squadron = "",
@@ -1005,11 +924,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.guild_base_event
-
-	var_1_11[1012] = {
+	pg.base.guild_base_event[1012] = {
 		extra_squedron_ratio = 0,
 		name = "航迹岛海域巡逻",
 		extra_squadron = "",
@@ -1071,11 +986,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.guild_base_event
-
-	var_1_12[1013] = {
+	pg.base.guild_base_event[1013] = {
 		extra_squedron_ratio = 0,
 		name = "玛丽安娜群岛侦察",
 		extra_squadron = "",
@@ -1143,11 +1054,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.guild_base_event
-
-	var_1_13[1014] = {
+	pg.base.guild_base_event[1014] = {
 		extra_squedron_ratio = 0,
 		name = "米德维岛南部海域侦察",
 		extra_squadron = "",
@@ -1214,11 +1121,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.guild_base_event
-
-	var_1_14[1015] = {
+	pg.base.guild_base_event[1015] = {
 		extra_squedron_ratio = 0,
 		name = "莫沙尔群岛侦察",
 		extra_squadron = "",
@@ -1286,11 +1189,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.guild_base_event
-
-	var_1_15[1101] = {
+	pg.base.guild_base_event[1101] = {
 		extra_squedron_ratio = 200,
 		name = "新楠塔基特岛航路清扫",
 		extra_squadron = "Brooklyn-Class",
@@ -1366,11 +1265,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.guild_base_event
-
-	var_1_16[1102] = {
+	pg.base.guild_base_event[1102] = {
 		extra_squedron_ratio = 200,
 		name = "查尔斯环礁航路清扫",
 		extra_squadron = "Northampton-Class",
@@ -1446,11 +1341,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.guild_base_event
-
-	var_1_17[1103] = {
+	pg.base.guild_base_event[1103] = {
 		extra_squedron_ratio = 200,
 		name = "古阿姆岛护航任务",
 		extra_squadron = "Fletcher-Class",
@@ -1525,11 +1416,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.guild_base_event
-
-	var_1_18[1104] = {
+	pg.base.guild_base_event[1104] = {
 		extra_squedron_ratio = 200,
 		name = "新楠塔基特岛护航任务",
 		extra_squadron = "Cleveland-Class",
@@ -1604,11 +1491,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.guild_base_event
-
-	var_1_19[1105] = {
+	pg.base.guild_base_event[1105] = {
 		extra_squedron_ratio = 200,
 		name = "查尔斯环礁护航任务",
 		extra_squadron = "Benson-Class",
@@ -1682,11 +1565,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.guild_base_event
-
-	var_1_20[1106] = {
+	pg.base.guild_base_event[1106] = {
 		extra_squedron_ratio = 200,
 		name = "西部海岸护航任务",
 		extra_squadron = "Omaha-Class",
@@ -1760,11 +1639,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.guild_base_event
-
-	var_1_21[1107] = {
+	pg.base.guild_base_event[1107] = {
 		extra_squedron_ratio = 200,
 		name = "利亚辛海域警戒",
 		extra_squadron = "Sims-Class",
@@ -1838,11 +1713,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.guild_base_event
-
-	var_1_22[1108] = {
+	pg.base.guild_base_event[1108] = {
 		extra_squedron_ratio = 200,
 		name = "莱珊海域警戒",
 		extra_squadron = "Gridley-Class",
@@ -1917,11 +1788,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.guild_base_event
-
-	var_1_23[1109] = {
+	pg.base.guild_base_event[1109] = {
 		extra_squedron_ratio = 200,
 		name = "爱丽丝环礁海域警戒",
 		extra_squadron = "Pensacola-Class",
@@ -1996,11 +1863,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.guild_base_event
-
-	var_1_24[1110] = {
+	pg.base.guild_base_event[1110] = {
 		extra_squedron_ratio = 200,
 		name = "玛库纳马纳海域警戒",
 		extra_squadron = "Farragut-Class",
@@ -2075,11 +1938,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.guild_base_event
-
-	var_1_25[1111] = {
+	pg.base.guild_base_event[1111] = {
 		extra_squedron_ratio = 200,
 		name = "尼阿霍海域警戒",
 		extra_squadron = "Mahan-Class",
@@ -2153,11 +2012,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.guild_base_event
-
-	var_1_26[1112] = {
+	pg.base.guild_base_event[1112] = {
 		extra_squedron_ratio = 200,
 		name = "北方海域侦察",
 		extra_squadron = "Fletcher-Class",
@@ -2227,11 +2082,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.guild_base_event
-
-	var_1_27[1113] = {
+	pg.base.guild_base_event[1113] = {
 		extra_squedron_ratio = 200,
 		name = "查尔斯环礁南部海域侦察",
 		extra_squadron = "Benson-Class",
@@ -2301,11 +2152,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.guild_base_event
-
-	var_1_28[1114] = {
+	pg.base.guild_base_event[1114] = {
 		extra_squedron_ratio = 200,
 		name = "新楠塔基特岛海域侦察",
 		extra_squadron = "Lexington-Class",
@@ -2380,11 +2227,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.guild_base_event
-
-	var_1_29[1201] = {
+	pg.base.guild_base_event[1201] = {
 		extra_squedron_ratio = 0,
 		name = "米德维近海夜间警戒",
 		extra_squadron = "",
@@ -2446,11 +2289,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.guild_base_event
-
-	var_1_30[1202] = {
+	pg.base.guild_base_event[1202] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港近海夜间警戒",
 		extra_squadron = "",
@@ -2512,11 +2351,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.guild_base_event
-
-	var_1_31[1203] = {
+	pg.base.guild_base_event[1203] = {
 		extra_squedron_ratio = 0,
 		name = "环礁海域夜间警戒",
 		extra_squadron = "",
@@ -2578,11 +2413,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.guild_base_event
-
-	var_1_32[1204] = {
+	pg.base.guild_base_event[1204] = {
 		extra_squedron_ratio = 0,
 		name = "航迹岛海域夜间警戒",
 		extra_squadron = "",
@@ -2644,11 +2475,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.guild_base_event
-
-	var_1_33[1205] = {
+	pg.base.guild_base_event[1205] = {
 		extra_squedron_ratio = 0,
 		name = "米德维岛后勤整备",
 		extra_squadron = "",
@@ -2710,11 +2537,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.guild_base_event
-
-	var_1_34[1206] = {
+	pg.base.guild_base_event[1206] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港后勤整备",
 		extra_squadron = "",
@@ -2777,11 +2600,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.guild_base_event
-
-	var_1_35[1207] = {
+	pg.base.guild_base_event[1207] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港舰装维修",
 		extra_squadron = "",
@@ -2845,11 +2664,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.guild_base_event
-
-	var_1_36[1208] = {
+	pg.base.guild_base_event[1208] = {
 		extra_squedron_ratio = 0,
 		name = "米德维岛物资整备",
 		extra_squadron = "",
@@ -2911,11 +2726,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.guild_base_event
-
-	var_1_37[1209] = {
+	pg.base.guild_base_event[1209] = {
 		extra_squedron_ratio = 0,
 		name = "波尔港物资整备",
 		extra_squadron = "",
@@ -2978,11 +2789,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.guild_base_event
-
-	var_1_38[2001] = {
+	pg.base.guild_base_event[2001] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域西南护航战",
 		extra_squadron = "",
@@ -3050,11 +2857,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.guild_base_event
-
-	var_1_39[2002] = {
+	pg.base.guild_base_event[2002] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域东南护航战",
 		extra_squadron = "",
@@ -3122,11 +2925,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.guild_base_event
-
-	var_1_40[2003] = {
+	pg.base.guild_base_event[2003] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域西北护航战",
 		extra_squadron = "",
@@ -3194,11 +2993,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.guild_base_event
-
-	var_1_41[2004] = {
+	pg.base.guild_base_event[2004] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域东北护航战",
 		extra_squadron = "",
@@ -3266,11 +3061,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.guild_base_event
-
-	var_1_42[2005] = {
+	pg.base.guild_base_event[2005] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域西部护航战",
 		extra_squadron = "",
@@ -3338,11 +3129,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.guild_base_event
-
-	var_1_43[2006] = {
+	pg.base.guild_base_event[2006] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域东部护航战",
 		extra_squadron = "",
@@ -3410,11 +3197,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.guild_base_event
-
-	var_1_44[2007] = {
+	pg.base.guild_base_event[2007] = {
 		extra_squedron_ratio = 0,
 		name = "NA海域北部护航战",
 		extra_squadron = "",
@@ -3482,11 +3265,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.guild_base_event
-
-	var_1_45[2008] = {
+	pg.base.guild_base_event[2008] = {
 		extra_squedron_ratio = 0,
 		name = "极地航线西段护卫",
 		extra_squadron = "",
@@ -3554,11 +3333,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.guild_base_event
-
-	var_1_46[2009] = {
+	pg.base.guild_base_event[2009] = {
 		extra_squedron_ratio = 0,
 		name = "LD至SP西段护卫",
 		extra_squadron = "",
@@ -3621,11 +3396,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.guild_base_event
-
-	var_1_47[2010] = {
+	pg.base.guild_base_event[2010] = {
 		extra_squedron_ratio = 0,
 		name = "NY至LD西段护卫",
 		extra_squadron = "",
@@ -3688,11 +3459,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.guild_base_event
-
-	var_1_48[2011] = {
+	pg.base.guild_base_event[2011] = {
 		extra_squedron_ratio = 0,
 		name = "极地航线东段护卫",
 		extra_squadron = "",
@@ -3760,11 +3527,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.guild_base_event
-
-	var_1_49[2012] = {
+	pg.base.guild_base_event[2012] = {
 		extra_squedron_ratio = 0,
 		name = "LD至SP东段护卫",
 		extra_squadron = "",
@@ -3827,11 +3590,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.guild_base_event
-
-	var_1_50[2013] = {
+	pg.base.guild_base_event[2013] = {
 		extra_squedron_ratio = 0,
 		name = "NY至LD东段护卫",
 		extra_squadron = "",
@@ -3894,11 +3653,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.guild_base_event
-
-	var_1_51[2014] = {
+	pg.base.guild_base_event[2014] = {
 		extra_squedron_ratio = 0,
 		name = "NY近海巡逻",
 		extra_squadron = "",
@@ -3960,11 +3715,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.guild_base_event
-
-	var_1_52[2015] = {
+	pg.base.guild_base_event[2015] = {
 		extra_squedron_ratio = 0,
 		name = "王家海峡巡逻",
 		extra_squadron = "",
@@ -4026,11 +3777,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.guild_base_event
-
-	var_1_53[2016] = {
+	pg.base.guild_base_event[2016] = {
 		extra_squedron_ratio = 0,
 		name = "摩斯科尔曼近海巡逻",
 		extra_squadron = "",
@@ -4092,11 +3839,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.guild_base_event
-
-	var_1_54[2017] = {
+	pg.base.guild_base_event[2017] = {
 		extra_squedron_ratio = 0,
 		name = "萨默斯群岛侦察",
 		extra_squadron = "",
@@ -4163,11 +3906,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.guild_base_event
-
-	var_1_55[2018] = {
+	pg.base.guild_base_event[2018] = {
 		extra_squedron_ratio = 0,
 		name = "简·梅恩岛侦察",
 		extra_squadron = "",
@@ -4234,11 +3973,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.guild_base_event
-
-	var_1_56[2019] = {
+	pg.base.guild_base_event[2019] = {
 		extra_squedron_ratio = 0,
 		name = "拉布多拉海侦察",
 		extra_squadron = "",
@@ -4301,11 +4036,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.guild_base_event
-
-	var_1_57[2020] = {
+	pg.base.guild_base_event[2020] = {
 		extra_squedron_ratio = 0,
 		name = "巴伦支海侦察",
 		extra_squadron = "",
@@ -4368,11 +4099,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.guild_base_event
-
-	var_1_58[2021] = {
+	pg.base.guild_base_event[2021] = {
 		extra_squedron_ratio = 0,
 		name = "诺斯克哈维特海侦察",
 		extra_squadron = "",
@@ -4435,11 +4162,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.guild_base_event
-
-	var_1_59[2101] = {
+	pg.base.guild_base_event[2101] = {
 		extra_squedron_ratio = 200,
 		name = "拉布多拉护航战",
 		extra_squadron = "Leander-Class",
@@ -4515,11 +4238,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.guild_base_event
-
-	var_1_60[2102] = {
+	pg.base.guild_base_event[2102] = {
 		extra_squedron_ratio = 200,
 		name = "诺斯克哈维特护航战",
 		extra_squadron = "Nelson-Class",
@@ -4595,11 +4314,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.guild_base_event
-
-	var_1_61[2103] = {
+	pg.base.guild_base_event[2103] = {
 		extra_squedron_ratio = 200,
 		name = "巴伦支海护航战",
 		extra_squadron = "Northern Union-DD",
@@ -4679,11 +4394,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.guild_base_event
-
-	var_1_62[2104] = {
+	pg.base.guild_base_event[2104] = {
 		extra_squedron_ratio = 200,
 		name = "圣洛伦茨湾护航战",
 		extra_squadron = "County-Class",
@@ -4759,11 +4470,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.guild_base_event
-
-	var_1_63[2105] = {
+	pg.base.guild_base_event[2105] = {
 		extra_squedron_ratio = 200,
 		name = "极地航线中段护卫",
 		extra_squadron = "Northern Union-DD",
@@ -4838,11 +4545,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.guild_base_event
-
-	var_1_64[2106] = {
+	pg.base.guild_base_event[2106] = {
 		extra_squedron_ratio = 200,
 		name = "LD至SP中段护卫",
 		extra_squadron = "C-Class",
@@ -4912,11 +4615,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.guild_base_event
-
-	var_1_65[2107] = {
+	pg.base.guild_base_event[2107] = {
 		extra_squedron_ratio = 200,
 		name = "NY至LD中段护卫",
 		extra_squadron = "B-Class",
@@ -4986,11 +4685,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.guild_base_event
-
-	var_1_66[2108] = {
+	pg.base.guild_base_event[2108] = {
 		extra_squedron_ratio = 200,
 		name = "林鸽群岛警戒",
 		extra_squadron = "J-Class",
@@ -5065,11 +4760,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.guild_base_event
-
-	var_1_67[2109] = {
+	pg.base.guild_base_event[2109] = {
 		extra_squedron_ratio = 200,
 		name = "凯尔特海警戒",
 		extra_squadron = "F-Class",
@@ -5144,11 +4835,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.guild_base_event
-
-	var_1_68[2110] = {
+	pg.base.guild_base_event[2110] = {
 		extra_squedron_ratio = 200,
 		name = "北方海域警戒",
 		extra_squadron = "County-Class",
@@ -5223,11 +4910,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.guild_base_event
-
-	var_1_69[2111] = {
+	pg.base.guild_base_event[2111] = {
 		extra_squedron_ratio = 200,
 		name = "白海警戒",
 		extra_squadron = "Town-Class",
@@ -5302,11 +4985,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.guild_base_event
-
-	var_1_70[2112] = {
+	pg.base.guild_base_event[2112] = {
 		extra_squedron_ratio = 200,
 		name = "冲沙湾警戒",
 		extra_squadron = "Northern Union-CL",
@@ -5385,11 +5064,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.guild_base_event
-
-	var_1_71[2113] = {
+	pg.base.guild_base_event[2113] = {
 		extra_squedron_ratio = 200,
 		name = "绍伯拉海警戒",
 		extra_squadron = "Northern Union-CL",
@@ -5468,11 +5143,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.guild_base_event
-
-	var_1_72[2114] = {
+	pg.base.guild_base_event[2114] = {
 		extra_squedron_ratio = 200,
 		name = "绿地海深处侦察",
 		extra_squadron = "Royal Fleet-CVL",
@@ -5548,11 +5219,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.guild_base_event
-
-	var_1_73[2115] = {
+	pg.base.guild_base_event[2115] = {
 		extra_squedron_ratio = 200,
 		name = "NA海域深处侦察",
 		extra_squadron = "F-Class",
@@ -5628,11 +5295,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.guild_base_event
-
-	var_1_74[2116] = {
+	pg.base.guild_base_event[2116] = {
 		extra_squedron_ratio = 200,
 		name = "巴弗因湾侦察",
 		extra_squadron = "Eagle Union-CVL",
@@ -5712,11 +5375,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.guild_base_event
-
-	var_1_75[2201] = {
+	pg.base.guild_base_event[2201] = {
 		extra_squedron_ratio = 0,
 		name = "NY近海夜间警戒",
 		extra_squadron = "",
@@ -5778,11 +5437,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.guild_base_event
-
-	var_1_76[2202] = {
+	pg.base.guild_base_event[2202] = {
 		extra_squedron_ratio = 0,
 		name = "王家海峡夜间警戒",
 		extra_squadron = "",
@@ -5844,11 +5499,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.guild_base_event
-
-	var_1_77[2203] = {
+	pg.base.guild_base_event[2203] = {
 		extra_squedron_ratio = 0,
 		name = "摩斯科尔曼夜间警戒",
 		extra_squadron = "",
@@ -5910,11 +5561,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.guild_base_event
-
-	var_1_78[2204] = {
+	pg.base.guild_base_event[2204] = {
 		extra_squedron_ratio = 0,
 		name = "贝尔岛侦察",
 		extra_squadron = "",
@@ -5981,11 +5628,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.guild_base_event
-
-	var_1_79[2205] = {
+	pg.base.guild_base_event[2205] = {
 		extra_squedron_ratio = 0,
 		name = "霍本岛侦察",
 		extra_squadron = "",
@@ -6052,11 +5695,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.guild_base_event
-
-	var_1_80[2206] = {
+	pg.base.guild_base_event[2206] = {
 		extra_squedron_ratio = 0,
 		name = "圣洛伦茨湾侦察",
 		extra_squadron = "",
@@ -6119,11 +5758,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.guild_base_event
-
-	var_1_81[2207] = {
+	pg.base.guild_base_event[2207] = {
 		extra_squedron_ratio = 0,
 		name = "卡坦布里安海侦察",
 		extra_squadron = "",
@@ -6186,11 +5821,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.guild_base_event
-
-	var_1_82[3001] = {
+	pg.base.guild_base_event[3001] = {
 		extra_squedron_ratio = 0,
 		name = "西部峡湾海战",
 		extra_squadron = "",
@@ -6261,11 +5892,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.guild_base_event
-
-	var_1_83[3002] = {
+	pg.base.guild_base_event[3002] = {
 		extra_squedron_ratio = 0,
 		name = "哈特里岛海域遭遇战",
 		extra_squadron = "",
@@ -6336,11 +5963,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.guild_base_event
-
-	var_1_84[3003] = {
+	pg.base.guild_base_event[3003] = {
 		extra_squedron_ratio = 0,
 		name = "伯克纳峡湾海战",
 		extra_squadron = "",
@@ -6411,11 +6034,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.guild_base_event
-
-	var_1_85[3004] = {
+	pg.base.guild_base_event[3004] = {
 		extra_squedron_ratio = 0,
 		name = "北海海战",
 		extra_squadron = "",
@@ -6486,11 +6105,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.guild_base_event
-
-	var_1_86[3005] = {
+	pg.base.guild_base_event[3005] = {
 		extra_squedron_ratio = 0,
 		name = "尼尔瓦克运输线破袭",
 		extra_squadron = "",
@@ -6557,11 +6172,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.guild_base_event
-
-	var_1_87[3006] = {
+	pg.base.guild_base_event[3006] = {
 		extra_squedron_ratio = 0,
 		name = "南索斯运输线破袭",
 		extra_squadron = "",
@@ -6628,11 +6239,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.guild_base_event
-
-	var_1_88[3007] = {
+	pg.base.guild_base_event[3007] = {
 		extra_squedron_ratio = 0,
 		name = "夸特运输线破袭",
 		extra_squadron = "",
@@ -6699,11 +6306,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.guild_base_event
-
-	var_1_89[3008] = {
+	pg.base.guild_base_event[3008] = {
 		extra_squedron_ratio = 0,
 		name = "斯特凡格运输线破袭",
 		extra_squadron = "",
@@ -6770,11 +6373,7 @@ var_0_4.base.guild_base_event = {}
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.guild_base_event
-
-	var_1_90[3009] = {
+	pg.base.guild_base_event[3009] = {
 		extra_squedron_ratio = 0,
 		name = "尼尔瓦克港制海权夺取",
 		extra_squadron = "",
@@ -6845,11 +6444,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.guild_base_event
-
-	var_1_91[3010] = {
+	pg.base.guild_base_event[3010] = {
 		extra_squedron_ratio = 0,
 		name = "南索斯港制海权夺取",
 		extra_squadron = "",
@@ -6920,11 +6515,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.guild_base_event
-
-	var_1_92[3011] = {
+	pg.base.guild_base_event[3011] = {
 		extra_squedron_ratio = 0,
 		name = "夸特港制海权夺取",
 		extra_squadron = "",
@@ -6995,11 +6586,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.guild_base_event
-
-	var_1_93[3012] = {
+	pg.base.guild_base_event[3012] = {
 		extra_squedron_ratio = 0,
 		name = "斯特凡格港制海权夺取",
 		extra_squadron = "",
@@ -7070,11 +6657,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.guild_base_event
-
-	var_1_94[3013] = {
+	pg.base.guild_base_event[3013] = {
 		extra_squedron_ratio = 0,
 		name = "尼尔瓦克港制空权夺取",
 		extra_squadron = "",
@@ -7137,11 +6720,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.guild_base_event
-
-	var_1_95[3014] = {
+	pg.base.guild_base_event[3014] = {
 		extra_squedron_ratio = 0,
 		name = "南索斯港制空权夺取",
 		extra_squadron = "",
@@ -7204,11 +6783,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.guild_base_event
-
-	var_1_96[3015] = {
+	pg.base.guild_base_event[3015] = {
 		extra_squedron_ratio = 0,
 		name = "夸特港制空权夺取",
 		extra_squadron = "",
@@ -7271,11 +6846,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.guild_base_event
-
-	var_1_97[3016] = {
+	pg.base.guild_base_event[3016] = {
 		extra_squedron_ratio = 0,
 		name = "斯特凡格港制空权夺取",
 		extra_squadron = "",
@@ -7338,11 +6909,7 @@ var_0_4.base.guild_base_event = {}
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.guild_base_event
-
-	var_1_98[3017] = {
+	pg.base.guild_base_event[3017] = {
 		extra_squedron_ratio = 0,
 		name = "奥福托峡湾侦察",
 		extra_squadron = "",
@@ -7414,8 +6981,7 @@ var_0_4.base.guild_base_event = {}
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.guild_base_event[3018] = {
+	pg.base.guild_base_event[3018] = {
 		extra_squedron_ratio = 0,
 		name = "诺斯海峡侦察",
 		extra_squadron = "",
@@ -7491,11 +7057,7 @@ var_0_4.base.guild_base_event = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.guild_base_event
-
-	var_2_0[3019] = {
+	pg.base.guild_base_event[3019] = {
 		extra_squedron_ratio = 0,
 		name = "伯克纳峡湾侦察",
 		extra_squadron = "",
@@ -7567,11 +7129,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.guild_base_event
-
-	var_2_1[3020] = {
+	pg.base.guild_base_event[3020] = {
 		extra_squedron_ratio = 0,
 		name = "马特拉斯峡湾侦察",
 		extra_squadron = "",
@@ -7643,11 +7201,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.guild_base_event
-
-	var_2_2[3021] = {
+	pg.base.guild_base_event[3021] = {
 		extra_squedron_ratio = 0,
 		name = "布列斯特舰装维修",
 		extra_squadron = "",
@@ -7710,11 +7264,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.guild_base_event
-
-	var_2_3[3022] = {
+	pg.base.guild_base_event[3022] = {
 		extra_squedron_ratio = 0,
 		name = "威尔海姆港舰装维修",
 		extra_squadron = "",
@@ -7777,11 +7327,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.guild_base_event
-
-	var_2_4[3023] = {
+	pg.base.guild_base_event[3023] = {
 		extra_squedron_ratio = 0,
 		name = "布列斯特物资整备",
 		extra_squadron = "",
@@ -7844,11 +7390,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.guild_base_event
-
-	var_2_5[3024] = {
+	pg.base.guild_base_event[3024] = {
 		extra_squedron_ratio = 0,
 		name = "威尔海姆港物资整备",
 		extra_squadron = "",
@@ -7911,11 +7453,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.guild_base_event
-
-	var_2_6[3101] = {
+	pg.base.guild_base_event[3101] = {
 		extra_squedron_ratio = 200,
 		name = "萨特罗岛海域遭遇战",
 		extra_squadron = "H-Class",
@@ -7994,11 +7532,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.guild_base_event
-
-	var_2_7[3102] = {
+	pg.base.guild_base_event[3102] = {
 		extra_squedron_ratio = 200,
 		name = "诺斯海峡海战",
 		extra_squadron = "Nelson-Class",
@@ -8077,11 +7611,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.guild_base_event
-
-	var_2_8[3103] = {
+	pg.base.guild_base_event[3103] = {
 		extra_squedron_ratio = 200,
 		name = "尼德罗斯运输线破袭",
 		extra_squadron = "U-boat",
@@ -8156,11 +7686,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.guild_base_event
-
-	var_2_9[3104] = {
+	pg.base.guild_base_event[3104] = {
 		extra_squedron_ratio = 200,
 		name = "布丽根运输线破袭",
 		extra_squadron = "U-boat",
@@ -8235,11 +7761,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.guild_base_event
-
-	var_2_10[3105] = {
+	pg.base.guild_base_event[3105] = {
 		extra_squedron_ratio = 200,
 		name = "阿克斯胡斯运输线破袭",
 		extra_squadron = "Admiral Hipper-Class",
@@ -8314,11 +7836,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.guild_base_event
-
-	var_2_11[3106] = {
+	pg.base.guild_base_event[3106] = {
 		extra_squedron_ratio = 200,
 		name = "尼德罗斯港制海权夺取",
 		extra_squadron = "Leander-Class",
@@ -8397,11 +7915,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.guild_base_event
-
-	var_2_12[3107] = {
+	pg.base.guild_base_event[3107] = {
 		extra_squedron_ratio = 200,
 		name = "布丽根港制海权夺取",
 		extra_squadron = "Konigsberg-Class",
@@ -8480,11 +7994,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.guild_base_event
-
-	var_2_13[3108] = {
+	pg.base.guild_base_event[3108] = {
 		extra_squedron_ratio = 200,
 		name = "阿克斯胡斯港制海权夺取",
 		extra_squadron = "Admiral Hipper-Class",
@@ -8563,11 +8073,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.guild_base_event
-
-	var_2_14[3109] = {
+	pg.base.guild_base_event[3109] = {
 		extra_squedron_ratio = 200,
 		name = "尼德罗斯港制空权夺取",
 		extra_squadron = "Illustrious-Class",
@@ -8638,11 +8144,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.guild_base_event
-
-	var_2_15[3110] = {
+	pg.base.guild_base_event[3110] = {
 		extra_squedron_ratio = 200,
 		name = "布丽根港制空权夺取",
 		extra_squadron = "Illustrious-Class",
@@ -8713,11 +8215,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.guild_base_event
-
-	var_2_16[3111] = {
+	pg.base.guild_base_event[3111] = {
 		extra_squedron_ratio = 200,
 		name = "阿克斯胡斯港制空权夺取",
 		extra_squadron = "Illustrious-Class",
@@ -8788,11 +8286,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.guild_base_event
-
-	var_2_17[3112] = {
+	pg.base.guild_base_event[3112] = {
 		extra_squedron_ratio = 200,
 		name = "尼德罗斯峡湾侦察",
 		extra_squadron = "Royal Fleet-CVL",
@@ -8872,11 +8366,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.guild_base_event
-
-	var_2_18[3113] = {
+	pg.base.guild_base_event[3113] = {
 		extra_squedron_ratio = 200,
 		name = "森弗峡湾侦察",
 		extra_squadron = "F-Class",
@@ -8956,11 +8446,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.guild_base_event
-
-	var_2_19[3114] = {
+	pg.base.guild_base_event[3114] = {
 		extra_squedron_ratio = 200,
 		name = "巴约纳峡湾侦察",
 		extra_squadron = "C-Class",
@@ -9040,11 +8526,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.guild_base_event
-
-	var_2_20[3115] = {
+	pg.base.guild_base_event[3115] = {
 		extra_squedron_ratio = 200,
 		name = "阿克斯胡斯峡湾侦察",
 		extra_squadron = "Royal Fleet-CVL",
@@ -9124,11 +8606,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.guild_base_event
-
-	var_2_21[3201] = {
+	pg.base.guild_base_event[3201] = {
 		extra_squedron_ratio = 0,
 		name = "布列斯特运输护航",
 		extra_squadron = "",
@@ -9195,11 +8673,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.guild_base_event
-
-	var_2_22[3202] = {
+	pg.base.guild_base_event[3202] = {
 		extra_squedron_ratio = 0,
 		name = "威尔海姆港运输护航",
 		extra_squadron = "",
@@ -9266,11 +8740,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.guild_base_event
-
-	var_2_23[3203] = {
+	pg.base.guild_base_event[3203] = {
 		extra_squedron_ratio = 0,
 		name = "利维浦运输护航",
 		extra_squadron = "",
@@ -9338,11 +8808,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.guild_base_event
-
-	var_2_24[3204] = {
+	pg.base.guild_base_event[3204] = {
 		extra_squedron_ratio = 0,
 		name = "霍尔斯坦港运输护航",
 		extra_squadron = "",
@@ -9410,11 +8876,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.guild_base_event
-
-	var_2_25[3205] = {
+	pg.base.guild_base_event[3205] = {
 		extra_squedron_ratio = 0,
 		name = "尼尔瓦克运输拦截",
 		extra_squadron = "",
@@ -9480,11 +8942,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.guild_base_event
-
-	var_2_26[3206] = {
+	pg.base.guild_base_event[3206] = {
 		extra_squedron_ratio = 0,
 		name = "南索斯运输拦截",
 		extra_squadron = "",
@@ -9550,11 +9008,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.guild_base_event
-
-	var_2_27[3207] = {
+	pg.base.guild_base_event[3207] = {
 		extra_squedron_ratio = 0,
 		name = "斯特凡格运输拦截",
 		extra_squadron = "",
@@ -9621,11 +9075,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.guild_base_event
-
-	var_2_28[3208] = {
+	pg.base.guild_base_event[3208] = {
 		extra_squedron_ratio = 0,
 		name = "夸特运输拦截",
 		extra_squadron = "",
@@ -9692,11 +9142,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.guild_base_event
-
-	var_2_29[3209] = {
+	pg.base.guild_base_event[3209] = {
 		extra_squedron_ratio = 0,
 		name = "尼尔瓦克港控制权确保",
 		extra_squadron = "",
@@ -9763,11 +9209,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.guild_base_event
-
-	var_2_30[3210] = {
+	pg.base.guild_base_event[3210] = {
 		extra_squedron_ratio = 0,
 		name = "南索斯港控制权确保",
 		extra_squadron = "",
@@ -9834,11 +9276,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.guild_base_event
-
-	var_2_31[3211] = {
+	pg.base.guild_base_event[3211] = {
 		extra_squedron_ratio = 0,
 		name = "斯特凡格港控制权确保",
 		extra_squadron = "",
@@ -9901,11 +9339,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.guild_base_event
-
-	var_2_32[3212] = {
+	pg.base.guild_base_event[3212] = {
 		extra_squedron_ratio = 0,
 		name = "夸特港控制权确保",
 		extra_squadron = "",
@@ -9968,11 +9402,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.guild_base_event
-
-	var_2_33[3213] = {
+	pg.base.guild_base_event[3213] = {
 		extra_squedron_ratio = 0,
 		name = "利维浦舰装维修",
 		extra_squadron = "",
@@ -10036,11 +9466,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.guild_base_event
-
-	var_2_34[3214] = {
+	pg.base.guild_base_event[3214] = {
 		extra_squedron_ratio = 0,
 		name = "霍尔斯坦港舰装维修",
 		extra_squadron = "",
@@ -10104,11 +9530,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.guild_base_event
-
-	var_2_35[3215] = {
+	pg.base.guild_base_event[3215] = {
 		extra_squedron_ratio = 0,
 		name = "利维浦物资整备",
 		extra_squadron = "",
@@ -10172,11 +9594,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.guild_base_event
-
-	var_2_36[3216] = {
+	pg.base.guild_base_event[3216] = {
 		extra_squedron_ratio = 0,
 		name = "霍尔斯坦港物资整备",
 		extra_squadron = "",
@@ -10240,11 +9658,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.guild_base_event
-
-	var_2_37[4001] = {
+	pg.base.guild_base_event[4001] = {
 		extra_squedron_ratio = 0,
 		name = "北方海域塞壬清理",
 		extra_squadron = "",
@@ -10315,11 +9729,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.guild_base_event
-
-	var_2_38[4002] = {
+	pg.base.guild_base_event[4002] = {
 		extra_squedron_ratio = 0,
 		name = "克罗尔海塞壬清理",
 		extra_squadron = "",
@@ -10390,11 +9800,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.guild_base_event
-
-	var_2_39[4003] = {
+	pg.base.guild_base_event[4003] = {
 		extra_squedron_ratio = 0,
 		name = "木偶环礁塞壬歼灭",
 		extra_squadron = "",
@@ -10465,11 +9871,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.guild_base_event
-
-	var_2_40[4004] = {
+	pg.base.guild_base_event[4004] = {
 		extra_squedron_ratio = 0,
 		name = "因迪萨布海峡控制权确保",
 		extra_squadron = "",
@@ -10536,11 +9938,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.guild_base_event
-
-	var_2_41[4005] = {
+	pg.base.guild_base_event[4005] = {
 		extra_squedron_ratio = 0,
 		name = "拉维湾控制权确保",
 		extra_squadron = "",
@@ -10607,11 +10005,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.guild_base_event
-
-	var_2_42[4006] = {
+	pg.base.guild_base_event[4006] = {
 		extra_squedron_ratio = 0,
 		name = "布伦查海峡阻击战",
 		extra_squadron = "",
@@ -10683,11 +10077,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.guild_base_event
-
-	var_2_43[4007] = {
+	pg.base.guild_base_event[4007] = {
 		extra_squedron_ratio = 0,
 		name = "黑色海峡遭遇战",
 		extra_squadron = "",
@@ -10759,11 +10149,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.guild_base_event
-
-	var_2_44[4008] = {
+	pg.base.guild_base_event[4008] = {
 		extra_squedron_ratio = 0,
 		name = "马恩宁海峡遭遇战",
 		extra_squadron = "",
@@ -10835,11 +10221,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.guild_base_event
-
-	var_2_45[4009] = {
+	pg.base.guild_base_event[4009] = {
 		extra_squedron_ratio = 0,
 		name = "北方海域制空权夺取",
 		extra_squadron = "",
@@ -10910,11 +10292,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.guild_base_event
-
-	var_2_46[4010] = {
+	pg.base.guild_base_event[4010] = {
 		extra_squedron_ratio = 0,
 		name = "南方海域制空权夺取",
 		extra_squadron = "",
@@ -10985,11 +10363,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.guild_base_event
-
-	var_2_47[4011] = {
+	pg.base.guild_base_event[4011] = {
 		extra_squedron_ratio = 0,
 		name = "达古康纳尔制空权夺取",
 		extra_squadron = "",
@@ -11060,11 +10434,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.guild_base_event
-
-	var_2_48[4012] = {
+	pg.base.guild_base_event[4012] = {
 		extra_squedron_ratio = 0,
 		name = "北方海域对空护航",
 		extra_squadron = "",
@@ -11135,11 +10505,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.guild_base_event
-
-	var_2_49[4013] = {
+	pg.base.guild_base_event[4013] = {
 		extra_squedron_ratio = 0,
 		name = "南方海域对空护航",
 		extra_squadron = "",
@@ -11210,11 +10576,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.guild_base_event
-
-	var_2_50[4014] = {
+	pg.base.guild_base_event[4014] = {
 		extra_squedron_ratio = 0,
 		name = "达古康纳尔对空护航",
 		extra_squadron = "",
@@ -11285,11 +10647,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.guild_base_event
-
-	var_2_51[4015] = {
+	pg.base.guild_base_event[4015] = {
 		extra_squedron_ratio = 0,
 		name = "塔里古岛航空支援",
 		extra_squadron = "",
@@ -11360,11 +10718,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.guild_base_event
-
-	var_2_52[4018] = {
+	pg.base.guild_base_event[4018] = {
 		extra_squedron_ratio = 0,
 		name = "塔里古岛战役支援",
 		extra_squadron = "",
@@ -11431,11 +10785,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.guild_base_event
-
-	var_2_53[4019] = {
+	pg.base.guild_base_event[4019] = {
 		extra_squedron_ratio = 0,
 		name = "塔里古岛制海权夺取",
 		extra_squadron = "",
@@ -11506,11 +10856,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.guild_base_event
-
-	var_2_54[4020] = {
+	pg.base.guild_base_event[4020] = {
 		extra_squedron_ratio = 0,
 		name = "塔里古岛制空权夺取",
 		extra_squadron = "",
@@ -11577,11 +10923,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.guild_base_event
-
-	var_2_55[4021] = {
+	pg.base.guild_base_event[4021] = {
 		extra_squedron_ratio = 0,
 		name = "恩德群岛警戒",
 		extra_squadron = "",
@@ -11652,11 +10994,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.guild_base_event
-
-	var_2_56[4022] = {
+	pg.base.guild_base_event[4022] = {
 		extra_squedron_ratio = 0,
 		name = "圣佩欧卡机场警戒",
 		extra_squadron = "",
@@ -11723,11 +11061,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.guild_base_event
-
-	var_2_57[4023] = {
+	pg.base.guild_base_event[4023] = {
 		extra_squedron_ratio = 0,
 		name = "瓦里港警戒",
 		extra_squadron = "",
@@ -11794,11 +11128,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.guild_base_event
-
-	var_2_58[4024] = {
+	pg.base.guild_base_event[4024] = {
 		extra_squedron_ratio = 0,
 		name = "诺埃姆港警戒",
 		extra_squadron = "",
@@ -11865,11 +11195,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.guild_base_event
-
-	var_2_59[4025] = {
+	pg.base.guild_base_event[4025] = {
 		extra_squedron_ratio = 0,
 		name = "辛普森港警戒",
 		extra_squadron = "",
@@ -11936,11 +11262,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.guild_base_event
-
-	var_2_60[4026] = {
+	pg.base.guild_base_event[4026] = {
 		extra_squedron_ratio = 0,
 		name = "乌古拉特警戒",
 		extra_squadron = "",
@@ -12007,11 +11329,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.guild_base_event
-
-	var_2_61[4027] = {
+	pg.base.guild_base_event[4027] = {
 		extra_squedron_ratio = 0,
 		name = "罗默斯岛水道警戒",
 		extra_squadron = "",
@@ -12083,11 +11401,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.guild_base_event
-
-	var_2_62[4028] = {
+	pg.base.guild_base_event[4028] = {
 		extra_squedron_ratio = 0,
 		name = "巴弗尔水道警戒",
 		extra_squadron = "",
@@ -12159,11 +11473,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.guild_base_event
-
-	var_2_63[4101] = {
+	pg.base.guild_base_event[4101] = {
 		extra_squedron_ratio = 200,
 		name = "佐治亚海峡塞壬清理",
 		extra_squadron = "Gato-Class",
@@ -12242,11 +11552,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.guild_base_event
-
-	var_2_64[4102] = {
+	pg.base.guild_base_event[4102] = {
 		extra_squedron_ratio = 200,
 		name = "恩加瓦南部暗礁塞壬清理",
 		extra_squadron = "Brooklyn-Class",
@@ -12325,11 +11631,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.guild_base_event
-
-	var_2_65[4103] = {
+	pg.base.guild_base_event[4103] = {
 		extra_squedron_ratio = 200,
 		name = "喀特蕾特群岛塞壬歼灭",
 		extra_squadron = "Cleveland-Class",
@@ -12408,11 +11710,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.guild_base_event
-
-	var_2_66[4104] = {
+	pg.base.guild_base_event[4104] = {
 		extra_squedron_ratio = 200,
 		name = "索瓦岛海战",
 		extra_squadron = "Northampton-Class",
@@ -12492,11 +11790,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.guild_base_event
-
-	var_2_67[4105] = {
+	pg.base.guild_base_event[4105] = {
 		extra_squedron_ratio = 200,
 		name = "特努拉河口决战",
 		extra_squadron = "Furutaka-Class",
@@ -12576,11 +11870,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.guild_base_event
-
-	var_2_68[4106] = {
+	pg.base.guild_base_event[4106] = {
 		extra_squedron_ratio = 200,
 		name = "埃隆勃特姆炮击战",
 		extra_squadron = "Kongo-Class",
@@ -12656,11 +11946,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.guild_base_event
-
-	var_2_69[4107] = {
+	pg.base.guild_base_event[4107] = {
 		extra_squedron_ratio = 200,
 		name = "萨塔弗隆加遭遇战",
 		extra_squadron = "Kagero-Class",
@@ -12740,11 +12026,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.guild_base_event
-
-	var_2_70[4108] = {
+	pg.base.guild_base_event[4108] = {
 		extra_squedron_ratio = 200,
 		name = "埃隆勃特姆夜战",
 		extra_squadron = "Special Type",
@@ -12819,11 +12101,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.guild_base_event
-
-	var_2_71[4109] = {
+	pg.base.guild_base_event[4109] = {
 		extra_squedron_ratio = 200,
 		name = "拉克湾夜战",
 		extra_squadron = "Special Type",
@@ -12898,11 +12176,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.guild_base_event
-
-	var_2_72[4110] = {
+	pg.base.guild_base_event[4110] = {
 		extra_squedron_ratio = 200,
 		name = "萨塔弗隆加夜战",
 		extra_squadron = "Kongo-Class",
@@ -12981,11 +12255,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.guild_base_event
-
-	var_2_73[4111] = {
+	pg.base.guild_base_event[4111] = {
 		extra_squedron_ratio = 200,
 		name = "特努拉河口制空权夺取",
 		extra_squadron = "Eagle Union-CVL",
@@ -13060,11 +12330,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.guild_base_event
-
-	var_2_74[4112] = {
+	pg.base.guild_base_event[4112] = {
 		extra_squedron_ratio = 200,
 		name = "星雨岛制空权夺取",
 		extra_squadron = "Essex-Class",
@@ -13143,11 +12409,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.guild_base_event
-
-	var_2_75[4113] = {
+	pg.base.guild_base_event[4113] = {
 		extra_squedron_ratio = 200,
 		name = "因迪萨布海峡制空权夺取",
 		extra_squadron = "Independence-Class",
@@ -13222,11 +12484,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.guild_base_event
-
-	var_2_76[4114] = {
+	pg.base.guild_base_event[4114] = {
 		extra_squedron_ratio = 200,
 		name = "恩德群岛制空权夺取",
 		extra_squadron = "Yorktown-Class",
@@ -13301,11 +12559,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.guild_base_event
-
-	var_2_77[4115] = {
+	pg.base.guild_base_event[4115] = {
 		extra_squedron_ratio = 200,
 		name = "恩加瓦岛对空护航",
 		extra_squadron = "Atlanta-Class",
@@ -13384,11 +12638,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.guild_base_event
-
-	var_2_78[4116] = {
+	pg.base.guild_base_event[4116] = {
 		extra_squedron_ratio = 200,
 		name = "加隆角航空支援",
 		extra_squadron = "5th-airfleet",
@@ -13467,11 +12717,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.guild_base_event
-
-	var_2_79[4117] = {
+	pg.base.guild_base_event[4117] = {
 		extra_squedron_ratio = 200,
 		name = "古斯塔奥湾海战",
 		extra_squadron = "Essex-Class",
@@ -13550,11 +12796,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.guild_base_event
-
-	var_2_80[4118] = {
+	pg.base.guild_base_event[4118] = {
 		extra_squedron_ratio = 200,
 		name = "加拉班科海战",
 		extra_squadron = "Yorktown-Class",
@@ -13629,11 +12871,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.guild_base_event
-
-	var_2_81[4120] = {
+	pg.base.guild_base_event[4120] = {
 		extra_squedron_ratio = 200,
 		name = "加隆角战役支援",
 		extra_squadron = "Astoria-Class",
@@ -13711,11 +12949,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.guild_base_event
-
-	var_2_82[4121] = {
+	pg.base.guild_base_event[4121] = {
 		extra_squedron_ratio = 200,
 		name = "加隆角制海权夺取",
 		extra_squadron = "Kongo-Class",
@@ -13793,11 +13027,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.guild_base_event
-
-	var_2_83[4122] = {
+	pg.base.guild_base_event[4122] = {
 		extra_squedron_ratio = 200,
 		name = "加隆角制空权夺取",
 		extra_squadron = "Essex-Class",
@@ -13867,11 +13097,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.guild_base_event
-
-	var_2_84[4123] = {
+	pg.base.guild_base_event[4123] = {
 		extra_squedron_ratio = 200,
 		name = "佐治亚海峡警戒",
 		extra_squadron = "Fletcher-Class",
@@ -13951,11 +13177,7 @@ end)()
 			"调查失败，获得如下奖励"
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.guild_base_event
-
-	var_2_85[4201] = {
+	pg.base.guild_base_event[4201] = {
 		extra_squedron_ratio = 0,
 		name = "威尔森海峡控制权确保",
 		extra_squadron = "",
@@ -14027,11 +13249,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.guild_base_event
-
-	var_2_86[4202] = {
+	pg.base.guild_base_event[4202] = {
 		extra_squedron_ratio = 0,
 		name = "哈留那湾伏击战",
 		extra_squadron = "",
@@ -14102,11 +13320,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.guild_base_event
-
-	var_2_87[4203] = {
+	pg.base.guild_base_event[4203] = {
 		extra_squedron_ratio = 0,
 		name = "露缇湾伏击战",
 		extra_squadron = "",
@@ -14173,11 +13387,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.guild_base_event
-
-	var_2_88[4204] = {
+	pg.base.guild_base_event[4204] = {
 		extra_squedron_ratio = 0,
 		name = "马罗乌湾塞壬歼灭",
 		extra_squadron = "",
@@ -14243,11 +13453,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.guild_base_event
-
-	var_2_89[4205] = {
+	pg.base.guild_base_event[4205] = {
 		extra_squedron_ratio = 0,
 		name = "怀拉哈湾塞壬歼灭",
 		extra_squadron = "",
@@ -14317,11 +13523,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.guild_base_event
-
-	var_2_90[4206] = {
+	pg.base.guild_base_event[4206] = {
 		extra_squedron_ratio = 0,
 		name = "苏皮内湾塞壬歼灭",
 		extra_squadron = "",
@@ -14391,11 +13593,7 @@ end)()
 			"作战基本成功，获得如下奖励"
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.guild_base_event
-
-	var_2_91[4207] = {
+	pg.base.guild_base_event[4207] = {
 		extra_squedron_ratio = 0,
 		name = "近海制空权夺取",
 		extra_squadron = "",
@@ -14461,11 +13659,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.guild_base_event
-
-	var_2_92[4208] = {
+	pg.base.guild_base_event[4208] = {
 		extra_squedron_ratio = 0,
 		name = "近海制空权夺取",
 		extra_squadron = "",
@@ -14531,11 +13725,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.guild_base_event
-
-	var_2_93[4209] = {
+	pg.base.guild_base_event[4209] = {
 		extra_squedron_ratio = 0,
 		name = "近海对空护航",
 		extra_squadron = "",
@@ -14601,11 +13791,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.guild_base_event
-
-	var_2_94[4210] = {
+	pg.base.guild_base_event[4210] = {
 		extra_squedron_ratio = 0,
 		name = "近海对空护航",
 		extra_squadron = "",
@@ -14671,11 +13857,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.guild_base_event
-
-	var_2_95[4211] = {
+	pg.base.guild_base_event[4211] = {
 		extra_squedron_ratio = 0,
 		name = "圣佩欧卡机场补给运输",
 		extra_squadron = "",
@@ -14738,11 +13920,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.guild_base_event
-
-	var_2_96[4212] = {
+	pg.base.guild_base_event[4212] = {
 		extra_squedron_ratio = 0,
 		name = "辛普森港补给运输",
 		extra_squadron = "",
@@ -14805,11 +13983,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.guild_base_event
-
-	var_2_97[4213] = {
+	pg.base.guild_base_event[4213] = {
 		extra_squedron_ratio = 0,
 		name = "诺埃姆港后勤整备",
 		extra_squadron = "",
@@ -14873,8 +14047,7 @@ end)()
 			"任务基本完成，获得如下奖励"
 		}
 	}
-	pg = var_2_97
-	var_2_97.base.guild_base_event[4214] = {
+	pg.base.guild_base_event[4214] = {
 		extra_squedron_ratio = 0,
 		name = "辛普森港后勤整备",
 		extra_squadron = "",

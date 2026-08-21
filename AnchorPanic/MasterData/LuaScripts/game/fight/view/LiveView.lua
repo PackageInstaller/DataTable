@@ -23,6 +23,7 @@ end
 -- end
 
 function destroy(self)
+    self:destroyTimeSn()
     GameDispatcher:removeEventListener(EventName.UPDATE_LIVEVIEWUPDATEACTION, self.setupClickPlayList, self)
     self:removeStartEndCall(self.m_aniStartSn)
     self.m_aniStartSn = nil
@@ -154,7 +155,31 @@ end
 function setMaterial(self)
     local fashionColorVo = fashion.FashionManager:getFashionColorData(self:getModelId())
     if fashionColorVo then
-        self:updateMaterial(fashionColorVo.posList, fashionColorVo.materials)
+        self:updateMaterial(fashionColorVo.posList, fashionColorVo.materials, fashionColorVo.dissolves)
+    end
+end
+
+-- 设置拖鞋模型高度
+function setOffShoePos(self, shoePosY)
+    self.standComplete = true
+    if shoePosY then
+        self:updateShoePos(shoePosY)
+    else
+        local fashionColorVo = fashion.FashionManager:getFashionColorData(self:getModelId())
+        if fashionColorVo then
+            self:updateShoePos(fashionColorVo.posY)
+        end
+    end
+end
+
+function setWeaponData(self, modelId, showWeaponSn)
+    modelId = modelId or self:getModelId()
+    local sRo = fight.RoleShowManager:getShowData(modelId)
+    if sRo and sRo:getWeaponNode() ~= 0 then
+        self:setWeaponLoadFightAni(true)
+        showWeaponSn = showWeaponSn or 1
+        local wpath = UrlManager:getWeaponPath(string.format("%s_wq_%02d/model%s_wq_%02d.prefab", modelId, showWeaponSn, modelId, showWeaponSn))
+        self:addWeapon(wpath, sRo:getWeaponNode(), true)
     end
 end
 
@@ -330,14 +355,20 @@ function playClickAction(self, actionFinishCall, startPlayCvCall, finishPlayCvCa
                     local function _playCV()
                         if not self.canPlayCv then return end
 
-                        local audioData = AudioManager:playHeroCVOnReplace(baseData.cv_id, finishPlayCvCall)
+                        local audioData
+                        if AudioManager:preloadCvByCvId(baseData.cv_id, true) then
+                            audioData = AudioManager:playHeroCVOnReplace(baseData.cv_id, finishPlayCvCall)
+                        else
+                            self.mTimeSn = LoopManager:setTimeout(10, nil, finishPlayCvCall)
+                        end
                         if startPlayCvCall then
                             startPlayCvCall(audioData)
                         end
                     end
-                    LoopManager:setTimeout(math.max(baseData.voice_layback / 1000, 0.1), self, _playCV)
+                    LoopManager:setTimeout(math.max(hero.HeroInteractManager:getCvDataLayBack(baseData), 0.1), self, _playCV)
                 end
 
+                self:destroyTimeSn()
                 self:playAction(hash, _startCall, _resultCall)
             end
             self.m_isPlayIngClick = true
@@ -598,6 +629,13 @@ function setModelScale(self, cusScale)
         gs.TransQuick:Scale0(self.m_modelTrans, defaultScale)
     end
 
+end
+
+function destroyTimeSn(self)
+    if self.mTimeSn then
+        LoopManager:clearTimeout(self.mTimeSn)
+        self.mTimeSn = nil
+    end
 end
 
 return _M

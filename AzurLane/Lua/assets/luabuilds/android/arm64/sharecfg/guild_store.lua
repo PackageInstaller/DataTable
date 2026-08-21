@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "guild_store") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "guild_store"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.guild_store = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.guild_store
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.guild_store = rawget(pg, "guild_store") or setmetatable({
+	__name = "guild_store"
+}, confNEO)
+pg.guild_store.all = {
 	1,
 	2,
 	3,
@@ -48,25 +25,11 @@ var_0_3.all = {
 	302,
 	303
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.guild_store = {}
+pg.base = pg.base or {}
+pg.base.guild_store = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.guild_store
-
-	var_1_0[1] = {
+	pg.base.guild_store[1] = {
 		goods_icon = "Props/15008",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -83,11 +46,7 @@ var_0_3.base.guild_store = {}
 			15008
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.guild_store
-
-	var_1_1[2] = {
+	pg.base.guild_store[2] = {
 		goods_icon = "Props/20011",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -104,11 +63,7 @@ var_0_3.base.guild_store = {}
 			20011
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.guild_store
-
-	var_1_2[3] = {
+	pg.base.guild_store[3] = {
 		goods_icon = "Props/20012",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -125,11 +80,7 @@ var_0_3.base.guild_store = {}
 			20012
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.guild_store
-
-	var_1_3[4] = {
+	pg.base.guild_store[4] = {
 		goods_icon = "Props/20013",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -146,11 +97,7 @@ var_0_3.base.guild_store = {}
 			20013
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.guild_store
-
-	var_1_4[5] = {
+	pg.base.guild_store[5] = {
 		goods_icon = "Props/huangjialiaoli",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -167,11 +114,7 @@ var_0_3.base.guild_store = {}
 			50005
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.guild_store
-
-	var_1_5[6] = {
+	pg.base.guild_store[6] = {
 		goods_icon = "Props/manhanquanxi",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -188,11 +131,7 @@ var_0_3.base.guild_store = {}
 			50006
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.guild_store
-
-	var_1_6[101] = {
+	pg.base.guild_store[101] = {
 		goods_icon = "Props/54002",
 		goods_purchase_limit = 3,
 		ensure = 0,
@@ -211,11 +150,7 @@ var_0_3.base.guild_store = {}
 			16022
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.guild_store
-
-	var_1_7[102] = {
+	pg.base.guild_store[102] = {
 		goods_icon = "Props/54003",
 		goods_purchase_limit = 3,
 		ensure = 0,
@@ -234,11 +169,7 @@ var_0_3.base.guild_store = {}
 			16023
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.guild_store
-
-	var_1_8[111] = {
+	pg.base.guild_store[111] = {
 		goods_icon = "Props/54012",
 		goods_purchase_limit = 5,
 		ensure = 0,
@@ -259,11 +190,7 @@ var_0_3.base.guild_store = {}
 			17042
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.guild_store
-
-	var_1_9[112] = {
+	pg.base.guild_store[112] = {
 		goods_icon = "Props/54013",
 		goods_purchase_limit = 5,
 		ensure = 0,
@@ -284,11 +211,7 @@ var_0_3.base.guild_store = {}
 			17043
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.guild_store
-
-	var_1_10[113] = {
+	pg.base.guild_store[113] = {
 		goods_icon = "Props/54014",
 		goods_purchase_limit = 5,
 		ensure = 1,
@@ -309,11 +232,7 @@ var_0_3.base.guild_store = {}
 			17044
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.guild_store
-
-	var_1_11[121] = {
+	pg.base.guild_store[121] = {
 		goods_icon = "Props/54032",
 		goods_purchase_limit = 2,
 		ensure = 0,
@@ -333,11 +252,7 @@ var_0_3.base.guild_store = {}
 			18032
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.guild_store
-
-	var_1_12[122] = {
+	pg.base.guild_store[122] = {
 		goods_icon = "Props/54033",
 		goods_purchase_limit = 2,
 		ensure = 0,
@@ -357,11 +272,7 @@ var_0_3.base.guild_store = {}
 			18033
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.guild_store
-
-	var_1_13[131] = {
+	pg.base.guild_store[131] = {
 		goods_icon = "Props/30003",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -381,11 +292,7 @@ var_0_3.base.guild_store = {}
 			30043
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.guild_store
-
-	var_1_14[132] = {
+	pg.base.guild_store[132] = {
 		goods_icon = "Props/30004",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -405,11 +312,7 @@ var_0_3.base.guild_store = {}
 			30044
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.guild_store
-
-	var_1_15[201] = {
+	pg.base.guild_store[201] = {
 		goods_icon = "Props/54000",
 		goods_purchase_limit = 1,
 		ensure = 1,
@@ -475,11 +378,7 @@ var_0_3.base.guild_store = {}
 			501021
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.guild_store
-
-	var_1_16[202] = {
+	pg.base.guild_store[202] = {
 		goods_icon = "Props/54000",
 		goods_purchase_limit = 1,
 		ensure = 1,
@@ -504,11 +403,7 @@ var_0_3.base.guild_store = {}
 			101431
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.guild_store
-
-	var_1_17[203] = {
+	pg.base.guild_store[203] = {
 		goods_icon = "Props/54000",
 		goods_purchase_limit = 1,
 		ensure = 1,
@@ -543,11 +438,7 @@ var_0_3.base.guild_store = {}
 			301391
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.guild_store
-
-	var_1_18[301] = {
+	pg.base.guild_store[301] = {
 		goods_icon = "Props/52001",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -569,11 +460,7 @@ var_0_3.base.guild_store = {}
 			42006
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.guild_store
-
-	var_1_19[302] = {
+	pg.base.guild_store[302] = {
 		goods_icon = "Props/52001",
 		goods_purchase_limit = 1,
 		ensure = 0,
@@ -593,8 +480,7 @@ var_0_3.base.guild_store = {}
 			42016
 		}
 	}
-	pg = var_1_19
-	var_1_19.base.guild_store[303] = {
+	pg.base.guild_store[303] = {
 		goods_icon = "Props/52001",
 		goods_purchase_limit = 1,
 		ensure = 0,

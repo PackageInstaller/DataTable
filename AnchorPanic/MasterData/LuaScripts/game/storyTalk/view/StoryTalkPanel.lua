@@ -44,7 +44,6 @@ function open(self, talkID)
     if self.UIObject then
         self:addOnParent()
     end
-
     GameDispatcher:dispatchEvent(EventName.EVENT_UI_OPEN, self)
 end
 
@@ -112,7 +111,7 @@ function customCloseStory(self)
             self.fightCameraObj:SetActive(self.fightCameraActive)
         end
     end
-
+    GameView:setUIDNode(true)
     self:destoryPrefabCall(true)
     self:destoryClickPrefabCall()
     self:destoryMultipPrefabCall()
@@ -128,8 +127,6 @@ function customCloseStory(self)
     -- gs.ColorUtil.SetColorA(self.mFlashEff, 0)
     -- self.mFlashEff:DOFadeR(1, self.mCloseTime)
     -- self:setTimeout(self.mCloseTime, function()
-
-
 
     storyTalk.StoryTalkManager:setNotAllowdPlay(false)
     AudioManager:stopStoryMusic()
@@ -178,14 +175,17 @@ function configUI(self)
 
     self.mStoryBGComponent:SetEndEvnet(function(eventType, url)
         if eventType == 3 then
-            AudioManager:stopAudioByUrl(url)
+            local index = string.find(url, "story_cv/")
+            if index == nil then
+                AudioManager:stopAudioByUrl(url)
+            end
             --self:stopAllAudio()
             -- for _, audioData in pairs(self.mPlayAudioList) do
 
-            --     if audioData.m_path == url then
-            --         AudioManager:stopAudioSound(audioData)
-            --     end
-            -- end
+                --     if audioData.m_path == url then
+                    --         AudioManager:stopAudioSound(audioData)
+                    --     end
+                    -- end
         end
     end)
 
@@ -219,6 +219,8 @@ function configUI(self)
     self.mNameLayout = self:getChildGO("mNameLayout")
     self.mNameTxt = self:getChildGO("mNameTxt"):GetComponent(ty.Text)
     self.mMsgTxt = self:getChildGO("mMsgTxt"):GetComponent(ty.Text)
+    self.mMsgScroll = self:getChildGO("mMsgScroll"):GetComponent(ty.ScrollRect)
+    self.mMsgScrollLayoutElement = self.mMsgScroll:GetComponent(ty.LayoutElement)
     self.mTalkHeadImg = self:getChildGO("mTalkHeadImg"):GetComponent(ty.AutoRefImage)
     self.mTalkHeadImg.gameObject:SetActive(false)
 
@@ -249,6 +251,9 @@ function configUI(self)
 
     self.mSkipBtn = self:getChildGO("mSkipBtn")
     self.mSkipTxt = self:getChildGO("mSkipTxt"):GetComponent(ty.Text)
+
+    self.mHideBtn = self:getChildGO("mHideBtn")
+    self.mHideTxt = self:getChildGO("mHideTxt"):GetComponent(ty.Text)
 
     -- ================================历史层================================ --
     self.mHistoryLayer = self:getChildGO("mHistoryLayer")
@@ -290,6 +295,7 @@ function configUI(self)
         end
     end)
 
+    self.mBtnResetHide = self:getChildGO("mBtnResetHide")
     self.mJumpVideoBtn = self:getChildGO("mJumpVideoBtn")
     self.mJumpVideoBtn:SetActive(false)
     self:addBtnClickOption()
@@ -302,12 +308,12 @@ end
 
 -- 未被管理的自定义数据值
 function initCustomDataValue(self)
-    self.mAutoIntTime = 3      -- 自动点击的间隔时间
-    self.mAutoNeedTime = 3     -- 自动点击最短时间
-    self.mAutoRunImgFrame = 1  -- 自动背景旋转帧间隔
-    self.mPlayAudioDatas = {}  -- 在播放中的音效
-    self.mWaitPrintTime = 0.04 -- Msg打字时间间隔
-    self.mOptionData = {}      -- 分支选项记录 [1] 普通分支 [2] 特殊分支(需要全选)
+    self.mAutoOneWordTime = 0.2 -- 自动点击单字时间
+    self.mAutoNeedTime = 3      -- 自动点击最短时间
+    self.mAutoRunImgFrame = 1   -- 自动背景旋转帧间隔
+    self.mPlayAudioDatas = {}   -- 在播放中的音效
+    self.mWaitPrintTime = 0.04  -- Msg打字时间间隔
+    self.mOptionData = {}       -- 分支选项记录 [1] 普通分支 [2] 特殊分支(需要全选)
     -- self.mDisableAuto = false -- 禁止自动操作
 
     self.mNeedWaitSomething = 0
@@ -328,6 +334,43 @@ function addBtnClickOption(self)
     self:addOnClick(self.mSkipBtn, self.onSkipClick)
 
     self:addOnClick(self.mJumpVideoBtn, self.onJumVideoClick)
+
+    self:addOnClick(self.mHideBtn, self.onHideClick)
+    self:addOnClick(self.mBtnResetHide, self.onBtnResetHideClick)
+end
+
+function onHideClick(self)
+    self.isHideLayer = true
+    self.mTalkBlockLayer:SetActive(false)
+    self.mBtnResetHide:SetActive(true)
+
+    self.mBtnLayer:SetActive(false)
+    self.mChooseLayer:SetActive(false)
+
+    StorageUtil:saveBool0(gstor.STORY_AUTO, false) -- 保存自动状态到本地
+
+    if self.mAutoSn then
+        LoopManager:removeFrameByIndex(self.mAutoSn)
+        self.mAutoSn = nil
+    end
+    if self.mRotationAutoSn then
+        LoopManager:removeFrameByIndex(self.mRotationAutoSn)
+        self.mRotationAutoSn = nil
+    end
+    self.mIsAutoEnable = false
+    StorageUtil:saveBool0(gstor.STORY_AUTO, self.mIsAutoEnable) -- 保存自动状态到本地
+    GameView:setUIDNode(false)
+end
+
+function onBtnResetHideClick(self)
+    GameView:setUIDNode(true)
+    self.mTalkBlockLayer:SetActive(self.dialog == 1)
+    self.mBtnResetHide:SetActive(false)
+
+    self.mBtnLayer:SetActive(true)
+    self.mChooseLayer:SetActive(true)
+
+    self.isHideLayer = false
 end
 
 -- 更新默认的点击状态
@@ -398,7 +441,9 @@ end
 -- 自动点击逻辑
 function autoRunTalk(self)
     self.mAutoTime = self.mAutoTime + gs.Time.deltaTime
-    if self.mOneTalkFinishedLock:isAllUnlocked() and self.mAutoTime >= self.mAutoNeedTime and self.mNeedWaitSomething <= 0 then
+
+    if self.mOneTalkFinishedLock:isAllUnlocked() and self.mAutoTime >= self.mReadTotalTime and self.mAutoTime >=
+        self.mAutoNeedTime and self.mNeedWaitSomething <= 0 then
         self.mAutoTime = 0
         self:runTalk()
     end
@@ -419,6 +464,7 @@ function showMask(self)
 end
 
 function active(self)
+    self.isHideLayer = false
     GameDispatcher:addEventListener(EventName.STORY_CHOOSE_CLICK, self.onChooseClick, self)
     GameDispatcher:addEventListener(EventName.CLOSE_CHOOSE_CLICK, self.onChooseClose, self)
     GameDispatcher:addEventListener(EventName.STORY_SHOW_MASK, self.showMask, self)
@@ -447,7 +493,6 @@ function deActive(self)
     if sceneCtrl then
         sceneCtrl:resumeMapEnvAudio()
     end
-
 
     if self.mAvproPlayer then
         self.mAvproPlayer:Stop()
@@ -503,6 +548,7 @@ end
 
 -- 初始化剧情信息
 function initView(self)
+    self.mBtnResetHide:SetActive(false)
     self.mCurStoryRo = storyTalk.StoryTalkManager:getCurStoryRo()
 
     if not self.mCurStoryRo then
@@ -579,11 +625,9 @@ function runTalk(self)
     -- 当前段落初始化
     curData.curTalkId = self.curTalkId
 
-
     -- 音效相关
     self:stopAllAudio()
     self:playMusic(curData)
-
 
     if curData.pType ~= 5 and curData.dialog == 1 then
         self.mHistoryView:addTalkID(self.curTalkId) -- 添加到历史列表
@@ -696,8 +740,12 @@ function playMusic(self, data)
     end
 end
 
--- 设置剧情内容
+-- 新一帧动画的开始，设置剧情内容
 function setTalkData(self, curData)
+    -- 关闭原对话框
+    if self.mTalkBlockLayer and self.mTalkBlockLayer.name == "mTalkBlockLayer" then
+        self.mTalkBlockLayer:SetActive(false)
+    end
     -- 回忆效果
     self.mRecallEff.gameObject:SetActive(curData.is_memory == 1)
 
@@ -754,14 +802,18 @@ function setTalkTraditionalDialogContent(self, curData)
     self.mGroupRect.anchorMax = gs.Vector2(0.5, 0.5)
     self.mGroup.transform.localPosition = gs.Vector3(self.mGroupOriPosX, self.mGroupOriPosY,
         self.mGroup.transform.localPosition.z)
+    self.mMsgScrollLayoutElement.preferredHeight = false
     self.mMsgTxt.fontSize = curData.msg_size == 0 and 24 or curData.msg_size
     self.mMsgTxt.color = curData.msg_color == "" and gs.ColorUtil.GetColor(ColorUtil.WHITE_NUM) or
         gs.ColorUtil.GetColor(curData.msg_color)
 
     self.msg = string.gsub(curData.msg, _TT(72202), playerName)
-    self.mMsgChar = string.toCharArray(self.msg)
-    self.mLastPrintIndex = 1
-    self.mCurrentMsgLen = #self.mMsgChar
+    -- 富文本逐字特殊处理 
+    self.mRichTokens, self.mVisibleIndexMap, self.mVisibleCount = parseRichTextToTokens(self.msg)
+    self.mTypedVisible = 0 -- 当前已显示的可见字符数
+    self.mActiveTags = {}
+    self.mCompletedTextCache = {} -- 懒缓存：每步已完成文本
+    self.mReadTotalTime = self.mVisibleCount * self.mAutoOneWordTime
 
     self.mMsgTxt.text = ""
 
@@ -769,8 +821,10 @@ function setTalkTraditionalDialogContent(self, curData)
     -- self.mNeedWaitSomething = self.mNeedWaitSomething + 1
     self:onStartPrint()
 
+    self.dialog = curData.dialog
+
     -- ================================头像层================================ --
-    self.mTalkBlockLayer:SetActive(curData.dialog == 1)
+    self.mTalkBlockLayer:SetActive(curData.dialog == 1 and self.isHideLayer == false)
 end
 
 -- 设置策划自定义的对话剧情内容
@@ -786,34 +840,35 @@ function setTalkCustomDialogContent(self, curData)
 
     -- ================================内容================================ --
     -- 设置锚点为左上角
-    self.mGroupRect.anchorMin        = gs.Vector2(0, 0.5)
-    self.mGroupRect.anchorMax        = gs.Vector2(0, 0.5)
-    self.mGroupRect.anchoredPosition = gs.Vector2(
-        curData.page_show_effect[storyTalk.PageShowEffect.wordOffsetX],
+    self.mGroupRect.anchorMin = gs.Vector2(0, 0.5)
+    self.mGroupRect.anchorMax = gs.Vector2(0, 0.5)
+    self.mGroupRect.anchoredPosition = gs.Vector2(curData.page_show_effect[storyTalk.PageShowEffect.wordOffsetX],
         curData.page_show_effect[storyTalk.PageShowEffect.wordOffsetY])
+    self.mMsgScrollLayoutElement.preferredHeight = 500
 
-    local playerName                 = role.RoleManager:getRoleVo():getPlayerName() or _TT(72202)
+    local playerName = role.RoleManager:getRoleVo():getPlayerName() or _TT(72202)
     -- 文字框
-    self.mMsgTxtRect                 = self.mMsgTxt:GetComponent(ty.RectTransform)
-    self.mMsgTxtRect.sizeDelta       = gs.Vector2(1000, self.mMsgTxtRect.sizeDelta.y) -- 设置文字框的宽度
-    self.mMsgTxt.fontSize            = curData.msg_size == 0 and 24 or curData.msg_size
-    self.mMsgTxt.color               = curData.msg_color == "" and
-        gs.ColorUtil.GetColor(ColorUtil.WHITE_NUM) or
+    self.mMsgScrollTf = self.mMsgScroll.transform
+    self.mMsgScrollTf.sizeDelta       = gs.Vector2(1000, self.mMsgScrollTf.sizeDelta.y) -- 设置文字框的宽度
+    self.mMsgTxt.fontSize = curData.msg_size == 0 and 24 or curData.msg_size
+    self.mMsgTxt.color = curData.msg_color == "" and gs.ColorUtil.GetColor(ColorUtil.WHITE_NUM) or
         gs.ColorUtil.GetColor(curData.msg_color)
 
-    self.msg                         = string.gsub(curData.msg, _TT(72202), playerName)
-    self.mMsgChar                    = string.toCharArray(self.msg)
-    self.mLastPrintIndex             = 1
-    self.mCurrentMsgLen              = #self.mMsgChar
+    self.msg = string.gsub(curData.msg, _TT(72202), playerName)
+    self.mRichTokens, self.mVisibleIndexMap, self.mVisibleCount = parseRichTextToTokens(self.msg)
+    self.mTypedVisible = 0 -- 当前已显示的可见字符数
+    self.mActiveTags = {}
+    self.mCompletedTextCache = {} -- 懒缓存：每步已完成文本
+    self.mReadTotalTime = self.mVisibleCount * self.mAutoOneWordTime
 
-    self.mMsgTxt.text                = ""
+    self.mMsgTxt.text = ""
 
     self:addWaitEvent("printMsg")
     -- self.mNeedWaitSomething = self.mNeedWaitSomething + 1
     self:onStartPrint()
 
     -- ================================头像层================================ --
-    self.mTalkBlockLayer:SetActive(true)
+    self.mTalkBlockLayer:SetActive(true and self.isHideLayer == false)
 end
 
 -- 区分主线和活动剧情
@@ -825,16 +880,169 @@ function isMainStory(self)
 end
 
 -- 开始打字
+function parseRichTextToTokens(msg)
+    local tokens = {}
+    local visible_index_map = {}
+    local visible_count = 0
+    local i = 1
+    local n = #msg
+    while i <= n do
+        local c = string.sub(msg, i, i)
+        if c == "<" then
+            -- 解析标签
+            local tag_end = string.find(msg, ">", i)
+            if tag_end then
+                local tag_str = string.sub(msg, i + 1, tag_end - 1)
+                local is_end = string.sub(tag_str, 1, 1) == "/"
+                if is_end then
+                    local tag_name = string.match(tag_str, "^/%s*([%w_]+)")
+                    table.insert(tokens, { type = "endTag", name = tag_name })
+                else
+                    local tag_name, attrs = string.match(tag_str, "^([%w_]+)%s*(.-)$")
+                    table.insert(tokens, { type = "startTag", name = tag_name, attrs = attrs })
+                end
+                i = tag_end + 1
+            else
+                -- 非法标签直接按普通字符处理
+                table.insert(tokens, { type = "char", ch = c })
+                visible_count = visible_count + 1
+                table.insert(visible_index_map, #tokens)
+                i = i + 1
+            end
+        elseif c == "&" then
+            -- 处理实体，比如 &lt; &amp; 形如 &word;
+            local ent_end = string.find(msg, ";", i)
+            if ent_end and ent_end - i <= 8 then
+                local ent = string.sub(msg, i, ent_end)
+                table.insert(tokens, { type = "char", ch = ent })
+                visible_count = visible_count + 1
+                table.insert(visible_index_map, #tokens)
+                i = ent_end + 1
+            else
+                table.insert(tokens, { type = "char", ch = c })
+                visible_count = visible_count + 1
+                table.insert(visible_index_map, #tokens)
+                i = i + 1
+            end
+        else
+            -- UTF8单字符，不拆分emoji，可按现有 string.sub
+            local byte = string.byte(msg, i)
+            local ch_len = 1
+            if byte >= 0xF0 then
+                ch_len = 4
+            elseif byte >= 0xE0 then
+                ch_len = 3
+            elseif byte >= 0xC0 then
+                ch_len = 2
+            end
+            local ch = string.sub(msg, i, i + ch_len - 1)
+            table.insert(tokens, { type = "char", ch = ch })
+            visible_count = visible_count + 1
+            table.insert(visible_index_map, #tokens)
+            i = i + ch_len
+        end
+    end
+    return tokens, visible_index_map, visible_count
+end
+
+function buildOpenPrefix(active_tags)
+    local s = ""
+    for _, tag_info in ipairs(active_tags) do
+        s = s .. "<" .. tag_info.name .. (tag_info.attrs and ("" .. tag_info.attrs) or "") .. ">"
+    end
+    return s
+end
+
+function buildCloseSuffix(active_tags)
+    local s = ""
+    for i = #active_tags, 1, -1 do
+        s = s .. "</" .. active_tags[i].name .. ">"
+    end
+    return s
+end
+
+-- 懒缓存：构建第 visible_target 步的可见文本（原位插入标签，末尾补未闭合后缀）
+local function __buildStepText(tokens, visible_target)
+    local result = {}
+    local curr_tags = {}
+    local curr_visible = 0
+
+    for i = 1, #tokens do
+        local t = tokens[i]
+        if t.type == "startTag" then
+            table.insert(curr_tags, { name = t.name, attrs = t.attrs })
+            -- 原位输出打开标签
+            table.insert(result, "<" .. t.name .. (t.attrs and ("" .. t.attrs) or "") .. ">")
+        elseif t.type == "endTag" then
+            -- 若该关闭在边界前出现，则原位输出
+            local idx = nil
+            for j = #curr_tags, 1, -1 do
+                if curr_tags[j].name == t.name then
+                    idx = j
+                    break
+                end
+            end
+            if idx then
+                for j = #curr_tags, idx, -1 do
+                    table.remove(curr_tags, j)
+                end
+                table.insert(result, "</" .. t.name .. ">")
+            end
+        elseif t.type == "char" then
+            curr_visible = curr_visible + 1
+            if curr_visible <= visible_target then
+                table.insert(result, t.ch)
+                if curr_visible == visible_target then
+                    break
+                end
+            end
+        end
+    end
+
+    local suffix = buildCloseSuffix(curr_tags)
+    if #suffix > 0 then
+        table.insert(result, suffix)
+    end
+    return table.concat(result)
+end
+
+-- 确保缓存到指定步数（懒生成）
+local function ensureCacheUpTo(self, visible_target)
+    if not self.mCompletedTextCache then
+        self.mCompletedTextCache = {}
+    end
+    local last = 0
+    for i = visible_target, 1, -1 do
+        if self.mCompletedTextCache[i] ~= nil then
+            last = i
+            break
+        end
+    end
+    for i = last + 1, visible_target do
+        self.mCompletedTextCache[i] = __buildStepText(self.mRichTokens, i)
+    end
+end
+
 function onStartPrint(self)
-    if self.mCurrentMsgLen > self.mLastPrintIndex then
-        local char = self.mMsgChar[self.mLastPrintIndex]
-        self.mMsgTxt.text = self.mMsgTxt.text .. char
-        self.mLastPrintIndex = self.mLastPrintIndex + 1
+    -- 自己已完成的可见字符数
+    if self.mTypedVisible < self.mVisibleCount then
+        local visible_target = self.mTypedVisible + 1
+        if self.mTypedVisible == 0 then
+            -- 新一段开始，清空懒缓存
+            self.mCompletedTextCache = {}
+        end
+        if not self.mCompletedTextCache or not self.mCompletedTextCache[visible_target] then
+            ensureCacheUpTo(self, visible_target)
+        end
+        -- 使用缓存文本
+        self.mMsgTxt.text = self.mCompletedTextCache[visible_target]
+        self.mMsgScroll.verticalNormalizedPosition = 0
+        self.mTypedVisible = self.mTypedVisible + 1
+
         self.mPrintSn = LoopManager:setTimeout(self.mWaitPrintTime, self, self.onStartPrint)
         -- 打字音(短)
         if not self:isMainStory() and self.mPrintSoundEffect == nil then -- 主线剧情都有配音，无需打字音
-            self.mPrintSoundEffect = AudioManager:playSoundEffect(UrlManager:getStorySoundPath("sfx_jq_1.4_01.prefab"),
-                true)
+            self.mPrintSoundEffect = AudioManager:playSoundEffect(UrlManager:getStorySoundPath("sfx_jq_1.4_01.prefab"),true)
             if self.mPrintSoundEffect then
                 table.insert(self.mPlayAudioList, self.mPrintSoundEffect.m_snId)
             end
@@ -857,6 +1065,7 @@ function onStopPrint(self)
     -- self.mDisableAuto = false
     self.mPrintSn = nil
     self.mMsgTxt.text = self.msg
+    self.mMsgScroll.verticalNormalizedPosition = 0
 
     -- if self.waitChooseCall then
     --     self.waitChooseCall()
@@ -1048,7 +1257,8 @@ function runCGType(self, curData)
                 end)
     end
 
-    if curData.cg_type ~= storyTalk.CGType.Model and curData.cg_type ~= storyTalk.CGType.Model2D and curData.cg_type ~= storyTalk.CGType.Texture2D then
+    if curData.cg_type ~= storyTalk.CGType.Model and curData.cg_type ~= storyTalk.CGType.Model2D and curData.cg_type ~=
+        storyTalk.CGType.Texture2D then
         self.mStoryBGComponent:StartPlayTimeLine(self.mCurSotryID, curData.refId)
     end
 end

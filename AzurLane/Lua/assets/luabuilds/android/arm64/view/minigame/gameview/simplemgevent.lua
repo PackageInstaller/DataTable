@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SimpleMGEvent")
+﻿local var_0_0 = class("SimpleMGEvent")
 
 var_0_0.LEVEL_GAME = "SimpleMGEvent: leavel game"
 var_0_0.PAUSE_GAME = "SimpleMGEvent: pause game "

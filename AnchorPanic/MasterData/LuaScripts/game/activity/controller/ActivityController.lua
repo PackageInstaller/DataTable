@@ -38,14 +38,39 @@ end
 
 --模块间事件监听
 function listNotification(self)
-    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_PANEL, self.onOpenActivityPanel, self)
     GameDispatcher:addEventListener(EventName.UPDATE_ACTIVITY_RED, self.updateRed, self)
-    GameDispatcher:addEventListener(EventName.SHOW_MAIN_UI, self.onMainUIFinish, self)
-    GameDispatcher:addEventListener(EventName.UPDATE_SIGNIN_STATE, self.onSigninPanelClose, self)
-    GameDispatcher:addEventListener(EventName.SIGNIN_PANEL_CLOSE, self.onSigninPanelClose, self)
-    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_WECHAT, self.onOpenActivityWeChatHandler, self)
-    --GameDispatcher:addEventListener(EventName.UPDATE_ACTIVITY_RED, self.updateRed, self)
+    GameDispatcher:addEventListener(EventName.ACTIVITY_OPEN_UPDATE, self.updateRed, self)
+    GameDispatcher:addEventListener(EventName.ACTIVITY_CLOSE_UPDATE, self.updateRed, self)
+    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_PANEL, self.onOpenActivityPanel, self)
+    GameDispatcher:addEventListener(EventName.REQ_LIMIT_SHOP_BUY, self.onReqLimitShopGiftHandler, self)
     role.RoleManager:getRoleVo():addEventListener(role.RoleVo.CHANGE_PLAYER_MONEY, self.updateRed, self)
+    GameDispatcher:addEventListener(EventName.REQ_ACTIVITY_INVEST_BUY, self.onReqInvestBuyHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_ACTIVITY_INVEST_GET, self.onReqInvestGetHandler, self)  
+    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_WECHAT, self.onOpenActivityWeChatHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_INVEST_BUY_VIEW, self.onOpenInvestBuyView, self)
+    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_SELECT_VIEW, self.onOpenActivitySelectView, self)
+    
+    GameDispatcher:addEventListener(EventName.REQ_REC_CARNIVAL_GIFT_AWARD, self.onReqCarnivalGiftAwardHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_LIMIT_SHOP_BUY_PANEL, self.onOpenActivityLimitShopGiftHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_OPEN_SOME_VIEW_UNLOCK_GIFT, self.onReqOpenSomeViewUnlockHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_SPECIAL_SUPPLY_PANEL, self.onOpenActivitySpecialSupplyPanel, self)
+    GameDispatcher:addEventListener(EventName.REQ_REC_RECHARGENICE_GIFT_AWARD, self.onReqRecRechargeNiceGuftAwardHandler, self)
+
+    GameDispatcher:addEventListener(EventName.REQ_ACTIVITY_SELECT_BUY_SAVE, self.onReqActivitySaveHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_GET_ACTIVITY_DAILY_REWARD, self.onReqGetActivityDayReward, self)
+
+    GameDispatcher:addEventListener(EventName.OPEN_ACTIVITY_FASHION_HIS_VIEW, self.onOpenActivityFashionHisView, self)
+    
+    GameDispatcher:addEventListener(EventName.REQ_BIND_PLAYER, self.onReqBindPlayerHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_JOINT_BIND_AGREE, self.onReqAgreePlayerHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_JOINT_BIND_REJECT, self.onReqRejectPlayerHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_JOINT_OPS_APPLY_LIST, self.onReqJointOpsApplyListHandler, self)
+    GameDispatcher:addEventListener(EventName.REQ_JOINT_TASK_RECEIVE, self.onReqJointTaskHandler, self)
+    
+    GameDispatcher:addEventListener(EventName.OPEN_JOINT_BIND_TIPS, self.onOpenJointBindTipsHandler, self)
+    GameDispatcher:addEventListener(EventName.OPEN_JOINT_OPS_APPLY_LIST, self.onOpenJointBindApplyListViewHandler, self)
+    GameDispatcher:addEventListener(EventName.CLOSE_JOINT_BIND_APPLY_LIST, self.onCloseJointBindApplyListViewHandler, self)
+    
 end
 
 --注册server发来的数据
@@ -59,6 +84,43 @@ function registerMsgHandler(self)
         SC_CONCERN_GIFT_PANEL = self.onActivitySubcribe_Panel_Handler,
         --- *s2c* 领取关注有礼奖励返回结果 24217
         SC_GAIN_CONCERN_GIFT = self.onActivitySubcribe_Receiove_Handler,
+        --- *s2c* 限时礼包面板信息 24097
+        SC_LIMITED_GIFT_PANEL = self.onLimitShopGiftHandler,
+        --- *s2c* 购买直购礼包道具 24404
+        SC_LIMITED_GIFT_BUY=self.onUpdateBuyLimitShopGiftHandler,
+        --- *s2c* 狂欢好礼面板 24420
+        SC_ACTIVITY_PAY_SIGN_PANEL = self.onUpdateRechargeNiceGiftHandler,
+        --- *s2c* 充值好礼状态 24415
+        SC_ACTIVITY_PAY_PANEL = self.onRechargeNiceGiftStateHandler,        
+        SC_INVEST_PANEL = self.onInvestPanelHandler,
+
+        SC_INVEST_BUY_GEAR = self.onInvestBuyGearHandler,
+
+        SC_GET_INVEST = self.onInvestGetHandler,
+    
+        SC_SELECT_GIFT_LIST_INFO = self.onSelectGiftInfoHandler,
+        --- *s2c* 活动每日礼包 24462
+        SC_ACTIVITY_DAY_REWARD_PANEL = self.onReceive_SC_ACTIVITY_DAY_REWARD_PANEL_Handler,
+        
+        ---往期商品 时装回廊
+        SC_ACTIVITY_EXPIRED_GOODS = self.onActivityExpiredGoodsHandler,
+        --联结作战面板信息
+        SC_JOINT_OPS_PANEL = self.onJointOpsPanelHandler,
+        -- 联结作战联结申请结果
+        SC_JOINT_OPS_APPLY_RESULT = self.onJointOpsResultHandler,
+        -- 联结作战同意结果
+        SC_JOINT_OPS_AGREE_RESULT = self.onJointOpsAgreeResultHandler,
+        -- 联结作战拒绝结果
+        SC_JOINT_OPS_REJECT_RESULT = self.onJointOpsRejectResultHandler,
+        -- 联结作战申请列表
+        SC_JOINT_OPS_APPLY_LIST = self.onJointOpsApplyListHandler,
+        -- 联结作战任务面板信息
+        SC_JOINT_OPS_TASK_PANEL = self.onJointTaskPanelHandler,
+        -- 联结作战任务领取
+        SC_JOINT_OPS_TASK_RECEIVE = self.onJointTaskReceiveHandler,
+        -- 联结作战任务更新
+        SC_JOINT_OPS_TASK_UPDATE = self.onJointTaskUpdateHandler,
+
     }
 end
 
@@ -67,97 +129,212 @@ function updateRed(self)
         local isFlag = activityVo.isBubble
         mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_ACTIVITY, isFlag, activityVo.funcId)
     end
+
+    -- 问题：【特供】活动结束后未领的小红点没有消失
+    -- 原因：活动关闭之后就获取不到这个tab数据了没办法设置红点flag
+    -- 尝试：getTabList接口增加了isNeedCloseAct参数获取所有活动tab发现部分活动关闭之后获取到的isBubble 为true
+    -- 所以直接事先获取所有tab设施红点flag为false初始化
+    for _, activityVo in ipairs(activity.ActivitySpecialSupplyConst:getTabList(true)) do
+        mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_SPECIALSUPPLY, false, activityVo.funcId)
+    end
+
+    for _, activityVo in ipairs(activity.ActivitySpecialSupplyConst:getTabList()) do
+        local isFlag = activityVo.isBubble
+        mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_SPECIALSUPPLY, isFlag, activityVo.funcId)
+    end
+
+    for _, pageVo in pairs(Celebration.CelebrationConst:getTabList()) do
+        local isFlag=false
+        if (pageVo.isBubble and activity.ActivityManager:getActivityVoById(pageVo.activityId) and activity.ActivityManager:getActivityVoById(pageVo.activityId):isOpen()) then
+            isFlag=true
+        end
+        mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_CELEBRATION, isFlag ,pageVo.funcId)
+    end
 end
 
+
+-- 限时商店礼包界面
+function onLimitShopGiftHandler(self, msg)
+    activity.ActitvityExtraManager:parsenLimitShopGiftMsg(msg)
+end
+-- 限时商店礼包购买
+function onReqLimitShopGiftHandler(self, msg)
+    SOCKET_SEND(Protocol.CS_LIMITED_GIFT_BUY, {goods_id=msg.id,num=msg.num}, Protocol.SC_LIMITED_GIFT_BUY)
+end
+
+--- *c2s* 打开某个面板解锁限时礼包 24405
+function onReqOpenSomeViewUnlockHandler(self, msg)
+    SOCKET_SEND(Protocol.CS_LIMITED_GIFT_OPEN_PANEL, {panel_id=msg.id}, Protocol.SC_LIMITED_GIFT_PANEL)
+end
+
+--- *c2s* 活动每日礼包领取 24463
+function onReqGetActivityDayReward(self, msg)
+    -- logError("*c2s* 活动每日礼包领取 24463\n" .. table.tostring(msg))
+    SOCKET_SEND(Protocol.CS_GET_ACTIVITY_DAY_REWARD, {activity_id = msg.activity_id})
+end
+
+--- *c2s* 联结作战申请 19902
+function onReqBindPlayerHandler(self,args)
+    SOCKET_SEND(Protocol.CS_JOINT_OPS_APPLY, {show_code = args.linkCode}, Protocol.SC_JOINT_OPS_APPLY_RESULT)
+end
+
+--- *c2s* 同意联结作战 19904
+function onReqAgreePlayerHandler(self,args)
+    SOCKET_SEND(Protocol.CS_JOINT_OPS_AGREE, {player_id = args.playerId}, Protocol.SC_JOINT_OPS_AGREE_RESULT)
+end
+
+--- *c2s* 拒绝联结作战 19906
+function onReqRejectPlayerHandler(self,args)
+    SOCKET_SEND(Protocol.CS_JOINT_OPS_REJECT, {player_id = args.playerId}, Protocol.SC_JOINT_OPS_REJECT_RESULT)
+end
+--- *c2s* 请求联结作战申请列表 19908
+function onReqJointOpsApplyListHandler(self,args)
+    SOCKET_SEND(Protocol.CS_JOINT_OPS_APPLY_LIST, {}, Protocol.SC_JOINT_OPS_APPLY_LIST)
+end
+
+--- *c2s* 任务领取奖励 19911
+function onReqJointTaskHandler(self,args)
+    SOCKET_SEND(Protocol.CS_JOINT_OPS_TASK_RECEIVE, {task_id_list = args.taskIdList}, Protocol.SC_JOINT_OPS_TASK_RECEIVE)
+end
+
+-- 狂欢好礼面板
+function onUpdateRechargeNiceGiftHandler(self, msg)
+    activity.ActitvityExtraManager:updateRechargeNiceGiftInfoMsg(msg)
+end
+-- 充值好礼状态
+function onRechargeNiceGiftStateHandler(self, msg)
+    activity.ActitvityExtraManager:updateRechargeNiceGiftStateMsg(msg)
+end
+-- 充值好礼领取奖励
+function onReqRecRechargeNiceGuftAwardHandler(self)
+    SOCKET_SEND(Protocol.CS_ACTIVITY_PAY_GAIN_AWARD, nil, Protocol.SC_ACTIVITY_PAY_PANEL)
+end
+
+function onReqActivitySaveHandler(self,args)
+    SOCKET_SEND(Protocol.CS_SELECT_GIFT_SELECT, {gift_id = args.giftId,grid_select_list = args.gridSelectList}, Protocol.SC_SELECT_GIFT_LIST_INFO)
+end
+
+function onReqInvestBuyHandler(self,msg)
+    SOCKET_SEND(Protocol.CS_INVEST_BUY_GEAR, {grade_id=msg.id}, Protocol.SC_INVEST_BUY_GEAR)
+end
+
+function onReqInvestGetHandler(self,msg)
+    SOCKET_SEND(Protocol.CS_GET_INVEST, {type=msg.type,reward_id = msg.id}, Protocol.SC_GET_INVEST)
+end
+
+-- 狂欢好礼礼包领取
+function onReqCarnivalGiftAwardHandler(self, msg)
+    SOCKET_SEND(Protocol.CS_ACTIVITY_PAY_SIGN_GAIN_AWARD, {id=msg}, Protocol.SC_ACTIVITY_PAY_SIGN_PANEL)
+end
+
+
+function onInvestPanelHandler(self,msg)
+    activity.ActivityManager:parseInvestPanelMsg(msg)
+end
+
+function onInvestBuyGearHandler(self,msg)
+    if msg.result == 1 then
+        activity.ActivityManager:updateInvestBuy(msg)
+    else
+        gs.Message.Show("购买失败")
+    end
+end
+
+function onInvestGetHandler(self,msg)
+    if msg.result == 1 then
+        activity.ActivityManager:updateInvestGet(msg)
+    else
+        gs.Message.Show("领取失败")
+    end
+end
+
+function onSelectGiftInfoHandler(self,msg)
+    activity.ActitvityExtraManager:updateSelectGiftMsgData(msg)
+    local rmbBuy ,buyId = activity.ActitvityExtraManager:getIsRMBBuy()
+    if rmbBuy then
+        activity.ActitvityExtraManager:setIsRMBBuy(buyId,false)
+        recharge.sendRecharge(recharge.RechargeType.SELECT_GIFT, nil, buyId)
+    end
+end
+
+---*s2c* 活动每日礼包 24462
+function onReceive_SC_ACTIVITY_DAY_REWARD_PANEL_Handler(self, msg)
+    -- logError("*s2c* 活动每日礼包 24462\n" .. table.tostring(msg))
+    activity.ActivityManager:updateDayRewardMsg(msg)
+end
+
+-- 限时商店礼包购买
+function onUpdateBuyLimitShopGiftHandler(self, msg)
+    activity.ActitvityExtraManager:updateLimitShopGiftMsg(msg)
+end
 -- 活动开启登录推送
 function onActivityOpenHandler(self, msg)
-    self.mMgr.ActivityManager:parseActivityOpenMsg(msg)
+    activity.ActivityManager:parseActivityOpenMsg(msg)
 end
 
 -- 活动关闭推送
 function onActivityOverHandler(self, msg)
-    self.mMgr.ActivityManager:parseActivityOverMsg(msg)
+    activity.ActivityManager:parseActivityOverMsg(msg)
 end
 
 --- *s2c* 新手活动-入口开启 24250
 function onActivityNoviceStartHandler(self, msg)
-    self.mMgr.ActivityManager:parseActivityNoviceUpdateMsg(msg.end_time)
+    activity.ActivityManager:parseActivityNoviceUpdateMsg(msg.end_time)
 end
-
-
 
 ---  *s2c* 关注有礼面板信息 24215
 function onActivitySubcribe_Panel_Handler(self, msg)
-    self.mMgr.ActitvityExtraManager:parsenMsg(msg)
+    activity.ActitvityExtraManager:parsenMsg(msg)
 end
 
 --- *s2c* 领取关注有礼奖励返回结果 24217
 function onActivitySubcribe_Receiove_Handler(self, msg)
     if msg.result == 1 then
-        self.mMgr.ActitvityExtraManager:updateMsg(msg)
+        activity.ActitvityExtraManager:updateMsg(msg)
     else
         gs.Message.Show("领取失败")
     end
 end
+
+
+function onActivityExpiredGoodsHandler(self,msg)
+    activity.ActitvityExtraManager:parseFashionHisBuyMsg(msg)
+    
+end
+
+
+function onJointOpsPanelHandler(self,msg)
+    activity.ActitvityExtraManager:parseBindMsg(msg)
+end
+
+function onJointOpsResultHandler(self,msg)
+    activity.ActitvityExtraManager:parseBindResult(msg)
+end
+
+function onJointOpsAgreeResultHandler(self,msg)
+    activity.ActitvityExtraManager:parseBindAgreeResult(msg)
+end
+
+function onJointOpsRejectResultHandler(self,msg)
+    activity.ActitvityExtraManager:parseBindRejectResult(msg)
+end
+
+function onJointOpsApplyListHandler(self,msg)
+    activity.ActitvityExtraManager:parseBindApplyList(msg)
+end
+
+function onJointTaskPanelHandler(self,msg)
+    activity.ActitvityExtraManager:parseJointTaskPanel(msg)
+end
+
+function onJointTaskReceiveHandler(self,msg)
+    activity.ActitvityExtraManager:parseJointTaskReceive(msg)
+end
+
+function onJointTaskUpdateHandler(self,msg)
+    activity.ActitvityExtraManager:parseJointTaskUpdate(msg)
+end
 ----------------------------------------------------------
-
--- 签到界面关闭
-function onSigninPanelClose(self)
-    self:onActivityPromoOpenHandler()
-end
-
--- 主界面打开完成
-function onMainUIFinish(self)
-    self.mMainUIFinish = true
-    self:onActivityPromoOpenHandler()
-end
-
--- 活动推介打开处理
-function onActivityPromoOpenHandler(self, args)
-    if self.mMgr.ActivityManager:getPromoIsShow() then
-        return
-    end
-
-    local isNotRemind = remind.RemindManager:isTodayNotRemain(RemindConst.ACTIVITY_PROMO_SHOW)
-    if isNotRemind then
-        -- 今天不再提示
-        return
-    end
-
-    if not self.mMainUIFinish then
-        -- 主界面未准备好
-        return
-    end
-
-    if dailyCheckIn.DailyCheckInManager:getIsSign() == false then
-        -- 未签到，不弹
-        return
-    end
-    self.mMgr.ActivityManager:setPromoIsShow(true)
-    -- 首次回到主界面则会弹出 1元超值链接补给包推荐购买 （优先弹出签到，签到界面关闭后再弹出推广页），
-    -- 若1元超值礼包已被购买则会弹出 首充弹窗界面，若首充已购买则会弹出月卡推荐界面，若月卡已激活则会弹出成长礼遇推荐购买界面
-    print("=========================onActivityPromoOpenHandler")
-
-    local finishCall = function ()
-        if not recharge.RechargeManager:getIsBuyOneGift() then
-            self:onOpenActivityPromo1Handler()
-        elseif not firstCharge.FirstChargeManager:getIsReCharge() then
-            GameDispatcher:dispatchEvent(EventName.OPEN_FIRSTCHARGE_PANEL, { isShowToggle = true })
-        elseif not purchase.MonthCardManager:getIsBuyMonthlyed() and not purchase.MonthCardManager:getIsPurchased() then
-            self:onOpenActivityPromo2Handler()
-        elseif not purchase.GrowthFundManager:getIsGrowthFundMoney() then
-            self:onOpenActivityPromo3Handler()
-        end
-    end
-
-    if taptapAward.TaptapAwardManager:canOpenTaptapAwardPanel() then
-        GameDispatcher:dispatchEvent(EventName.OPEN_TAPTAP_AWARD_PANEL,{finishCall = finishCall})
-    else
-        finishCall()
-    end
-
-end
-
 ----------------------------------------------------------
 
 function onOpenActivityPanel(self, args)
@@ -188,50 +365,29 @@ function onDestroyActivityPanel(self)
     self.mActivityPanel = nil
 end
 
----------------------------------活动推广--------------------------------------
-
--- 一元礼包
-function onOpenActivityPromo1Handler(self, args)
-    if self.mActivityPromoView1 == nil then
-        self.mActivityPromoView1 = UI.new(activity.ActivityPromoView1)
-        self.mActivityPromoView1:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityPromo1Panel, self)
+function onOpenActivitySpecialSupplyPanel(self, args)
+    if not args then
+        args = {}
     end
-    self.mActivityPromoView1:open(args)
-end
-
-function onDestroyActivityPromo1Panel(self)
-    self.mActivityPromoView1:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityPromo1Panel, self)
-    self.mActivityPromoView1 = nil
-end
-
--- 晶耀供给（月卡）
-function onOpenActivityPromo2Handler(self, args)
-    if self.mActivityPromoView2 == nil then
-        self.mActivityPromoView2 = UI.new(activity.ActivityPromoView2)
-        self.mActivityPromoView2:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityPromo2Panel, self)
+    if not args.type then
+        if activity.ActivitySpecialSupplyConst:getTabList()[1] then
+            args.type = activity.ActivitySpecialSupplyConst:getTabList()[1].page
+        else
+            gs.Message.Show("活动尚未开启")
+            return
+        end
     end
-    self.mActivityPromoView2:open(args)
-end
-
-function onDestroyActivityPromo2Panel(self)
-    self.mActivityPromoView2:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityPromo2Panel, self)
-    self.mActivityPromoView2 = nil
-end
-
--- 成长礼遇
-function onOpenActivityPromo3Handler(self, args)
-    if self.mActivityPromoView3 == nil then
-        self.mActivityPromoView3 = UI.new(activity.ActivityPromoView3)
-        self.mActivityPromoView3:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityPromo3Panel, self)
+    if self.mActivitySpecialSupplyPanel == nil then
+        self.mActivitySpecialSupplyPanel = activity.ActivitySpecialSupplyPanel.new()
+        self.mActivitySpecialSupplyPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivitySpecialSupplyPanel, self)
     end
-    self.mActivityPromoView3:open(args)
+    self.mActivitySpecialSupplyPanel:open(args)
 end
 
-function onDestroyActivityPromo3Panel(self)
-    self.mActivityPromoView3:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityPromo3Panel, self)
-    self.mActivityPromoView3 = nil
+function onDestroyActivitySpecialSupplyPanel(self)
+    self.mActivitySpecialSupplyPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivitySpecialSupplyPanel, self)
+    self.mActivitySpecialSupplyPanel = nil
 end
-
 
 -- 打开关注活动 微信界面
 function onOpenActivityWeChatHandler(self, args)
@@ -247,6 +403,112 @@ function onDestroyActivityWeChatPanel(self)
     self.mActivitySubscribe = nil
 end
 
+-- 限时礼包
+function onOpenActivityLimitShopGiftHandler(self, args)
+    if not activity.ActitvityExtraManager:getLimitShopTypeDic()[args.type] then
+        return
+    end
+    if fight.SceneManager:isInFightScene() then--策划要求非战斗界面再打开当前弹窗
+        if self.waitTimeSn then
+            LoopManager:removeTimerByIndex(self.waitTimeSn)
+            self.waitTimeSn=nil
+        end
+        self.waitTimeSn = LoopManager:addTimer(1.3,1.3,self,function ()
+            GameDispatcher:dispatchEvent(EventName.OPEN_LIMIT_SHOP_BUY_PANEL,{type=args.type})
+        end)
+        return
+    end
+    if self.waitTimeSn then
+        LoopManager:removeTimerByIndex(self.waitTimeSn)
+        self.waitTimeSn=nil
+    end
+    if self.mActivityLimitShopGift == nil then
+        self.mActivityLimitShopGift = UI.new(activity.ActivityLimitShopGift)
+        self.mActivityLimitShopGift:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityLimitShopGiftPanel, self)
+    end
+    self.mActivityLimitShopGift:open(args)
+end
+
+function onDestroyActivityLimitShopGiftPanel(self)
+    self.mActivityLimitShopGift:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityLimitShopGiftPanel, self)
+    self.mActivityLimitShopGift = nil
+end
+
+
+function onOpenInvestBuyView(self,args)
+    if self.mActivityInvestBuyView == nil then
+        self.mActivityInvestBuyView = UI.new(activity.ActivityInvestBuyView)
+        self.mActivityInvestBuyView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityInvestBuyView, self)
+    end
+    self.mActivityInvestBuyView:open(args)
+end
+
+function onDestroyActivityInvestBuyView(self)
+    self.mActivityInvestBuyView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityInvestBuyView, self)
+    self.mActivityInvestBuyView = nil
+end
+
+
+function onOpenActivitySelectView(self,args)
+    if self.mActivitySelectView == nil then
+        self.mActivitySelectView = UI.new(activity.ActivitySelectView)
+        self.mActivitySelectView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivitySelectView, self)
+    end
+    self.mActivitySelectView:open(args)
+end
+
+function onDestroyActivitySelectView(self)
+    self.mActivitySelectView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivitySelectView, self)
+    self.mActivitySelectView = nil
+end
+
+
+function onOpenActivityFashionHisView(self,args)
+    if self.mActivityFahsionHisView == nil then
+        self.mActivityFahsionHisView = UI.new(activity.ActivityFashionHisView)
+        self.mActivityFahsionHisView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityFashionHisView, self)
+    end
+    self.mActivityFahsionHisView:open(args)
+end
+
+function onDestroyActivityFashionHisView(self)
+    self.mActivityFahsionHisView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityFashionHisView, self)
+    self.mActivityFahsionHisView = nil
+end
+
+
+function onOpenJointBindTipsHandler(self,args)
+    if self.mActivityJointBindTips == nil then
+        self.mActivityJointBindTips = activity.ActivityBindTabTipsView.new()
+        self.mActivityJointBindTips:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityJointBindTips, self)
+    end
+    self.mActivityJointBindTips:open(args)
+end
+
+function onDestroyActivityJointBindTips(self)
+    self.mActivityJointBindTips:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityJointBindTips, self)
+    self.mActivityJointBindTips = nil
+end
+
+function onOpenJointBindApplyListViewHandler(self,args)
+    if self.mActivityJointBindApplyListView == nil then
+        self.mActivityJointBindApplyListView = activity.ActivityBindApplyListView.new()
+        self.mActivityJointBindApplyListView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityJointBindApplyListView, self)
+    end
+    self.mActivityJointBindApplyListView:open(args)
+    
+end
+
+function onDestroyActivityJointBindApplyListView(self)
+    self.mActivityJointBindApplyListView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyActivityJointBindApplyListView, self)
+    self.mActivityJointBindApplyListView = nil
+end
+
+function onCloseJointBindApplyListViewHandler(self)
+    if self.mActivityJointBindApplyListView then
+        self.mActivityJointBindApplyListView:close()
+    end
+end
 
 return _M
 

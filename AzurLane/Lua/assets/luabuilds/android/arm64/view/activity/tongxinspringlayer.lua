@@ -1,302 +1,134 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("TongXinSpringLayer", import("..base.BaseUI"))
 
-local var_0_0 = "TongXinSpringLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "TongXinSpringUI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0.closedFlag = false
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	findTF = var_1_10001
-	arg_3_0.ad = var_1_10001(arg_3_0._tf, "ad")
-	GetComponent = var_1
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0.ad = findTF(arg_3_0._tf, "ad")
+	arg_3_0.animator = GetComponent(arg_3_0.ad, typeof(Animator))
+	arg_3_0.dftAniEvent = GetComponent(arg_3_0.ad, typeof(DftAniEvent))
 
-	local var_3_0 = arg_3_0.ad
-
-	typeof = var_4
-	Animator = var_1_10006
-	arg_3_0.animator = var_1(var_3_0, var_4(var_1_10006))
-	GetComponent = var_1
-
-	local var_3_1 = arg_3_0.ad
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_3_0.dftAniEvent = var_1(var_3_1, var_4(var_1_10006))
-
-	local var_3_2 = arg_3_0.dftAniEvent
-
-	var_1.SetEndEvent(var_3_2, function()
-		local var_4_0 = arg_3_0
-
-		var_0.closeView(var_4_0)
+	arg_3_0.dftAniEvent:SetEndEvent(function()
+		arg_3_0:closeView()
 
 		return
 	end)
-
-	onButton = var_1
-
-	local var_3_3 = arg_3_0
-
-	findTF = var_4
-
-	var_1(var_3_3, var_4(arg_3_0._tf, "ad/clickClose"), function()
+	onButton(arg_3_0, findTF(arg_3_0._tf, "ad/clickClose"), function()
 		if arg_3_0.closedFlag then
 			return
 		end
 
 		arg_3_0.closedFlag = true
 
-		local var_5_0 = arg_3_0.animator
-
-		var_0.Play(var_5_0, "anim_kinder_spring_out")
+		arg_3_0.animator:Play("anim_kinder_spring_out")
 
 		return
 	end)
-
-	onButton = var_1
-
-	local var_3_4 = arg_3_0
-
-	findTF = var_4
-
-	var_1(var_3_4, var_4(arg_3_0._tf, "ad/btnBack"), function()
+	onButton(arg_3_0, findTF(arg_3_0._tf, "ad/btnBack"), function()
 		if arg_3_0.closedFlag then
 			return
 		end
 
 		arg_3_0.closedFlag = true
 
-		local var_6_0 = arg_3_0.animator
-
-		var_0.Play(var_6_0, "anim_kinder_spring_out")
+		arg_3_0.animator:Play("anim_kinder_spring_out")
 
 		return
 	end)
-
-	onButton = var_1
-
-	local var_3_5 = arg_3_0
-
-	findTF = var_4
-
-	var_1(var_3_5, var_4(arg_3_0._tf, "ad/btnHome"), function()
-		local var_7_0 = arg_3_0
-		local var_7_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.ON_HOME)
+	onButton(arg_3_0, findTF(arg_3_0._tf, "ad/btnHome"), function()
+		arg_3_0:emit(BaseUI.ON_HOME)
 
 		return
 	end)
-
-	pg = var_1
-
-	local var_3_6 = var_1.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_3_6, arg_3_0.ad)
-
-	GetComponent = var_1
-	findTF = var_3_6
-
-	local var_3_7 = var_3_6(arg_3_0.ad, "bg/img")
-
-	typeof = var_4
-	Image = var_6
-
-	local var_3_8 = var_1(var_3_7, var_4(var_6))
-
-	var_1.SetNativeSize(var_3_8)
-
-	GetComponent = var_1
-	findTF = var_3_8
-
-	local var_3_9 = var_3_8(arg_3_0.ad, "title/img")
-
-	typeof = var_4
-	Image = var_6
-
-	local var_3_10 = var_1(var_3_9, var_4(var_6))
-
-	var_1.SetNativeSize(var_3_10)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0.ad)
+	GetComponent(findTF(arg_3_0.ad, "bg/img"), typeof(Image)):SetNativeSize()
+	GetComponent(findTF(arg_3_0.ad, "title/img"), typeof(Image)):SetNativeSize()
 
 	return
 end
 
-function var_0_1.createUI(arg_8_0)
-	findTF = var_1_10001
-	arg_8_0.iconTpl = var_1_10001(arg_8_0._tf, "ad/list/iconTpl")
-	setActive = var_1
+function var_0_0.createUI(arg_8_0)
+	arg_8_0.iconTpl = findTF(arg_8_0._tf, "ad/list/iconTpl")
 
-	var_1(arg_8_0.iconTpl, false)
+	setActive(arg_8_0.iconTpl, false)
 
-	findTF = var_1
-	arg_8_0.iconContent = var_1(arg_8_0._tf, "ad/list")
-
-	local var_8_0 = arg_8_0.activity
-	local var_8_1 = var_1.GetTotalSlotCount(var_8_0)
-
+	arg_8_0.iconContent = findTF(arg_8_0._tf, "ad/list")
 	arg_8_0.iconTfs = {}
 
-	for iter_8_0 = 1, var_8_1 do
-		local var_8_2 = iter_8_0
+	for iter_8_0 = 1, arg_8_0.activity:GetTotalSlotCount() do
+		local var_8_0 = iter_8_0
+		local var_8_1 = tf(instantiate(arg_8_0.iconTpl))
 
-		tf = var_1_10007
-		instantiate = var_1_10009
-		var_1_10007 = var_1_10007(var_1_10009(arg_8_0.iconTpl))
-		setActive = var_1_10008
-
-		var_1_10008(var_1_10007, true)
-
-		SetParent = var_1_10008
-
-		var_1_10008(var_1_10007, arg_8_0.iconContent)
-
-		onButton = var_1_10008
-
-		var_1_10008(arg_8_0, var_1_10007, function()
-			local var_9_0 = arg_8_0
-
-			var_0.clickIcon(var_9_0, var_8_2)
+		setActive(var_8_1, true)
+		SetParent(var_8_1, arg_8_0.iconContent)
+		onButton(arg_8_0, var_8_1, function()
+			arg_8_0:clickIcon(var_8_0)
 
 			return
 		end)
-
-		table = var_1_10008
-
-		var_1_10008.insert(arg_8_0.iconTfs, var_1_10007)
+		table.insert(arg_8_0.iconTfs, var_8_1)
 	end
 
 	return
 end
 
-function var_0_1.updateUI(arg_10_0)
-	local var_10_0 = arg_10_0.activity
-	local var_10_1 = var_1.GetShipIds(var_10_0)
-	local var_10_2 = arg_10_0.activity
-	local var_10_3 = var_2.GetSlotCount(var_10_2)
-	local var_10_4 = arg_10_0.activity
-	local var_10_5 = var_3.GetTotalSlotCount(var_10_4)
+function var_0_0.updateUI(arg_10_0)
+	local var_10_0 = arg_10_0.activity:GetShipIds()
+	local var_10_1 = arg_10_0.activity:GetSlotCount()
 
-	for iter_10_0 = 1, var_10_5 do
-		local var_10_6 = arg_10_0.iconTfs[iter_10_0]
+	for iter_10_0 = 1, arg_10_0.activity:GetTotalSlotCount() do
+		local var_10_2 = findTF(arg_10_0.iconTfs[iter_10_0], "add")
+		local var_10_3 = findTF(arg_10_0.iconTfs[iter_10_0], "lock")
+		local var_10_4 = findTF(arg_10_0.iconTfs[iter_10_0], "char")
 
-		findTF = var_1_10009
-		var_1_10009 = var_1_10009(var_10_6, "add")
-		findTF = var_1_10010
-		var_1_10010 = var_1_10010(var_10_6, "lock")
-		findTF = var_11
+		setActive(var_10_2, false)
+		setActive(var_10_3, false)
+		setActive(var_10_4, false)
 
-		local var_10_7 = var_11(var_10_6, "char")
+		if iter_10_0 <= var_10_1 then
+			if var_10_0[iter_10_0] and var_10_0[iter_10_0] ~= 0 then
+				local var_10_5 = getProxy(BayProxy):RawGetShipById(var_10_0[iter_10_0])
 
-		setActive = var_12
-
-		var_12(var_1_10009, false)
-
-		setActive = var_12
-
-		var_12(var_1_10010, false)
-
-		setActive = var_12
-
-		var_12(var_10_7, false)
-
-		if iter_10_0 <= var_10_3 then
-			if var_10_1[iter_10_0] and var_10_1[iter_10_0] ~= 0 then
-				getProxy = var_12
-				BayProxy = var_14
-
-				local var_10_8 = var_12(var_14)
-				local var_10_9
-
-				if var_12.RawGetShipById(var_10_8, var_10_1[iter_10_0]) then
-					LoadSprite = var_10_9
-					var_10_9 = var_10_9("qicon/" .. var_12:getPainting())
-					setImageSprite = var_10_8
-					findTF = var_16
-
-					var_10_8(var_16(var_10_7, "mask/icon"), var_10_9)
-
-					setActive = var_10_8
-
-					var_10_8(var_10_7, true)
+				if var_10_5 then
+					setImageSprite(findTF(var_10_4, "mask/icon"), (LoadSprite("qicon/" .. var_10_5:getPainting())))
+					setActive(var_10_4, true)
 				else
-					setActive = var_10_9
-
-					var_10_9(var_1_10009, true)
+					setActive(var_10_2, true)
 				end
 			else
-				setActive = var_12
-
-				var_12(var_1_10009, true)
+				setActive(var_10_2, true)
 			end
 		else
-			setActive = var_12
-
-			var_12(var_1_10010, true)
+			setActive(var_10_3, true)
 		end
 	end
 
 	return
 end
 
-function var_0_1.clickIcon(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0.activity
+function var_0_0.clickIcon(arg_11_0, arg_11_1)
+	if arg_11_1 <= arg_11_0.activity:GetSlotCount() then
+		local var_11_0 = arg_11_0.activity:GetShipIds()[arg_11_1]
+		local var_11_1 = var_11_0 > 0 and getProxy(BayProxy):RawGetShipById(var_11_0)
 
-	if arg_11_1 <= var_2.GetSlotCount(var_11_0) then
-		local var_11_1 = arg_11_0.activity
-		local var_11_2 = var_1_10003.GetShipIds(var_11_1)[arg_11_1]
-		local var_11_4
-
-		if 0 < var_11_2 then
-			getProxy = var_5
-			BayProxy = var_1_10007
-
-			local var_11_3 = var_5(var_1_10007)
-
-			var_11_4 = var_5.RawGetShipById(var_11_3, var_11_2)
-		else
-			var_11_4 = false
-		end
-
-		if false then
-			var_11_4 = true
-		end
-
-		local var_11_5 = arg_11_0
-
-		var_1_10006 = arg_11_0.emit
-		TongXinSpringMediator = var_1_10009
-
-		var_1_10006(var_11_5, var_1_10009.OPEN_CHUANWU, arg_11_1, var_11_4 and var_11_4 or nil)
+		arg_11_0:emit(TongXinSpringMediator.OPEN_CHUANWU, arg_11_1, var_11_1 and var_11_1 or nil)
 	else
-		local var_11_6 = arg_11_0
-
-		var_1_10003 = arg_11_0.emit
-		TongXinSpringMediator = var_1_10006
-
-		var_1_10003(var_11_6, var_1_10006.UNLOCK_SLOT, arg_11_0.activity.id)
+		arg_11_0:emit(TongXinSpringMediator.UNLOCK_SLOT, arg_11_0.activity.id)
 	end
 
-	print = var_1_10003
-
-	var_1_10003("点击了第" .. arg_11_1 .. "个")
+	print("点击了第" .. arg_11_1 .. "个")
 
 	return
 end
 
-function var_0_1.InitActivity(arg_12_0, arg_12_1)
+function var_0_0.InitActivity(arg_12_0, arg_12_1)
 	arg_12_0.activity = arg_12_1
 
 	arg_12_0:createUI()
@@ -305,7 +137,7 @@ function var_0_1.InitActivity(arg_12_0, arg_12_1)
 	return
 end
 
-function var_0_1.UpdateActivity(arg_13_0, arg_13_1)
+function var_0_0.UpdateActivity(arg_13_0, arg_13_1)
 	arg_13_0.activity = arg_13_1
 
 	arg_13_0:updateUI()
@@ -313,33 +145,26 @@ function var_0_1.UpdateActivity(arg_13_0, arg_13_1)
 	return
 end
 
-function var_0_1.willExit(arg_14_0)
-	local var_14_0 = arg_14_0.dftAniEvent
-
-	var_1.SetEndEvent(var_14_0, nil)
+function var_0_0.willExit(arg_14_0)
+	arg_14_0.dftAniEvent:SetEndEvent(nil)
 
 	arg_14_0.closedFlag = true
-	pg = var_1
 
-	local var_14_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_14_1, arg_14_0.ad, arg_14_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0.ad, arg_14_0._tf)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_15_0)
+function var_0_0.onBackPressed(arg_15_0)
 	if arg_15_0.closedFlag then
 		return
 	end
 
 	arg_15_0.closedFlag = true
 
-	local var_15_0 = arg_15_0.animator
-
-	var_1.Play(var_15_0, "anim_kinder_spring_out")
+	arg_15_0.animator:Play("anim_kinder_spring_out")
 
 	return
 end
 
-return var_0_1
+return var_0_0

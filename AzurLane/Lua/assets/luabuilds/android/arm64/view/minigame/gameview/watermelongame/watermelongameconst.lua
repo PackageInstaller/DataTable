@@ -1,21 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("WatermelonGameConst")
+﻿local var_0_0 = class("WatermelonGameConst")
 
 var_0_0.menu_bgm = "story-richang-rosy-short"
 var_0_0.game_bgm = "story-richang-rosy-short"
 var_0_0.game_time = 0
 var_0_0.rule_tip = "watermelon_minigame_help"
 var_0_0.rank_tip = "pipe_minigame_rank"
-Application = var_1
-
-local var_0_1
-
-if not var_1.targetFrameRate then
-	var_0_1 = 60
-end
-
-var_0_0.frame_rate = var_0_1
+var_0_0.frame_rate = Application.targetFrameRate or 60
 var_0_0.ui_atlas = "ui/minigameui/watermelongameui_atlas"
 var_0_0.game_ui = "WatermelonGameUI"
 var_0_0.game_room_ui = "GameRoomWatermelonUI"

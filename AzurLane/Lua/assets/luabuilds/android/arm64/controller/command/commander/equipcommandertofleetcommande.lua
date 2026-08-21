@@ -1,100 +1,52 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EquipCommanderToFleetCommande", pm.SimpleCommand)
 
-local var_0_0 = "EquipCommanderToFleetCommande"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.pos
+	local var_1_2 = var_1_0.callback
+	local var_1_3
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().commanderId
-	local var_1_1 = var_2.pos
-	local var_1_2 = var_2.fleetId
-	local var_1_3 = var_2.callback
-	local var_1_4
-
-	if var_1_0 ~= 0 then
-		getProxy = var_1_10008
-		CommanderProxy = var_1_10010
-		var_1_10010 = var_1_10008(var_1_10010)
-
-		if not var_1_10008.getCommanderById(var_1_10010, var_1_0) then
-			pg = var_1_10008
-			var_1_10010 = var_1_10008.TipsMgr.GetInstance()
-			var_1_10008 = var_1_10008.ShowTips
-			i18n = var_11
-
-			var_1_10008(var_1_10010, var_11("commander_not_exist"))
+	if var_1_0.commanderId ~= 0 then
+		if not getProxy(CommanderProxy):getCommanderById(var_1_0.commanderId) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_not_exist"))
 
 			return
 		end
 	end
 
-	getProxy = var_1_10008
-	FleetProxy = var_1_10010
+	local var_1_4 = getProxy(FleetProxy)
+	local var_1_5 = var_1_4:getFleetById(var_1_0.fleetId)
 
-	local var_1_5 = var_1_10008(var_1_10010)
-
-	if not var_8.getFleetById(var_1_5, var_1_2) then
-		pg = var_1_10010
-
-		local var_1_6 = var_1_10010.TipsMgr.GetInstance()
-
-		var_1_10010 = var_1_10010.ShowTips
-		i18n = var_1_10013
-
-		var_1_10010(var_1_6, var_1_10013("commander_fleet_not_exist"))
+	if not var_1_5 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("commander_fleet_not_exist"))
 
 		return
 	end
 
-	if var_1_0 == 0 and not var_9:getCommanderByPos(var_1_1) then
-		if var_1_3 then
-			var_1_3()
+	if var_1_0.commanderId == 0 and not var_1_5:getCommanderByPos(var_1_0.pos) then
+		if var_1_0.callback then
+			var_1_0.callback()
 		end
 
 		return
 	end
 
-	pg = var_1_10010
-
-	local var_1_7 = var_1_10010.ConnectionMgr.GetInstance()
-
-	var_10.Send(var_1_7, 25006, {
-		groupid = var_1_2,
-		pos = var_1_1,
-		commanderid = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(25006, {
+		groupid = var_1_0.fleetId,
+		pos = var_1_0.pos,
+		commanderid = var_1_0.commanderId
 	}, 25007, function(arg_2_0)
-		local var_2_3
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
+			var_1_5:updateCommanderByPos(var_1_1, var_1_3)
+			var_1_4:updateFleet(var_1_5)
 
-			var_2_3.updateCommanderByPos(var_2_0, var_1_1, var_1_4)
-
-			local var_2_1 = var_0
-
-			var_2_3.updateFleet(var_2_1, var_0)
-
-			if var_1_3 then
-				var_1_3(var_0)
+			if var_1_2 then
+				var_1_2(var_1_5)
 			end
 
-			local var_2_2 = arg_1_0
-
-			var_2_3 = var_2_3.sendNotification
-			GAME = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004.COOMMANDER_EQUIP_TO_FLEET_DONE)
+			arg_1_0:sendNotification(GAME.COOMMANDER_EQUIP_TO_FLEET_DONE)
 		else
-			pg = var_2_3
-
-			local var_2_4 = var_2_3.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004("commander_equip_to_fleet_erro", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("commander_equip_to_fleet_erro", arg_2_0.result))
 		end
 
 		return
@@ -103,4 +55,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

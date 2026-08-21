@@ -90,7 +90,7 @@ function __updateInfo(self)
             self.mImgBg:SetImg(UrlManager:getPackPath("dup4/dup_challenge_enter_no.png"), true)
         else
             self.mImgBg:SetImg(UrlManager:getPackPath(string.format("dup4/dup_challenge_enter_%d.png", self:getData().type)), true)
-            local isPass = battleMap.MainMapManager:isStagePass(9086)
+            local isPass = seabed.SeabedManager:getSeabedEndIsPass()
             if self:getData().type == DupType.Seaded and isPass then
                 self.mImgBg:SetImg(UrlManager:getPackPath(string.format("dup4/dup_challenge_enter_%d_end.png", self:getData().type)), true)
             end
@@ -184,6 +184,13 @@ function __updateTime(self)
         onTimer()
     elseif self:getData().type == DupType.Seaded then
         self.m_childGos["reTime"]:SetActive(false)
+    elseif self:getData().type == DupType.Vision then
+        local onTimer = function()
+            self.mTxtTime.text = _TT(71318, self:getMonthResetTime())
+        end
+        --self.m_childGos["reTime"]:SetActive(false)
+        self.timerId = LoopManager:addTimer(1, 0, self, onTimer)
+        onTimer()
     else
         self.mTxtTime.text = ""
     end
@@ -193,6 +200,13 @@ end
 function getResetTimeStr(self)
     local currentTime = GameManager:getClientTime()
     local reamainTime = GameManager:getWeekResetTime() - currentTime
+    return TimeUtil.getFormatTimeBySeconds_1(reamainTime)
+end
+
+--每月一号5点重置
+function getMonthResetTime(self)
+    local currentTime = GameManager:getClientTime()
+    local reamainTime = GameManager:getMonthResetTime() - currentTime
     return TimeUtil.getFormatTimeBySeconds_1(reamainTime)
 end
 
@@ -260,6 +274,8 @@ function isPass(self)
         return false
     elseif self:getData().type == DupType.Seaded then
         return false
+    elseif self:getData().type == DupType.Vision then
+        return false
     else
         curId = infoVo.curId
     end
@@ -309,6 +325,10 @@ function __updateRed(self)
 
         if self:getData().type == DupType.Seaded then
             flag = seabed.SeabedManager:getRedFlag()
+        end
+
+        if self:getData().type == DupType.Vision then
+            flag = vision.VisionManager:getRedFlag()
         end
 
         if flag then

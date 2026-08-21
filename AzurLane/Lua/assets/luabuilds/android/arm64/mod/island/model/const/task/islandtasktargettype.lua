@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandTaskTargetType")
+﻿local var_0_0 = class("IslandTaskTargetType")
 
 var_0_0.INTERACTION = 1
 var_0_0.APPROACH = 2

@@ -56,9 +56,9 @@ function active(self, args)
 
     self.mTextBossName.text = monsterVo.name
     self.mTextBossStage.text = args.stage .._TT(2912)
-    self.mText_Damage.text = args.damage
+    self.mText_Damage.text = string.formatChineseNumber( args.damage)
 
-    self.mText_Hp.text = args.now_hp .. "/" .. args.max_hp
+    self.mText_Hp.text = string.formatChineseNumber(args.now_hp) .. "/" .. string.formatChineseNumber(args.max_hp)
     self.mImgProgress.fillAmount = args.now_hp / args.max_hp
 end
 

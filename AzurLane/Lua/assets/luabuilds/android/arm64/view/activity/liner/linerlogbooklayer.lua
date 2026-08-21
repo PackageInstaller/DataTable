@@ -1,174 +1,76 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LinerLogBookLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "LinerLogBookLayer"
+var_0_0.PAGE_SCHEDULE = 1
+var_0_0.PAGE_ROOM = 2
+var_0_0.PAGE_EVENT = 3
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-var_0_1.PAGE_SCHEDULE = 1
-var_0_1.PAGE_ROOM = 2
-var_0_1.PAGE_EVENT = 3
-
-local var_0_2 = {
+local var_0_1 = {
 	"liner_log_schedule_title",
 	"liner_log_room_title",
 	"liner_log_event_title"
 }
-local var_0_3 = var_0_1.PAGE_SCHEDULE
+local var_0_2 = var_0_0.PAGE_SCHEDULE
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "LinerLogBookUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.GetComponent
+function var_0_0.init(arg_2_0)
+	arg_2_0.anim = arg_2_0._tf:GetComponent(typeof(Animation))
+	arg_2_0.animEvent = arg_2_0._tf:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_1_10004
-	Animation = var_1_10006
-	arg_2_0.anim = var_2_1(var_2_0, var_1_10004(var_1_10006))
-
-	local var_2_2 = arg_2_0._tf
-	local var_2_3 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_2_0.animEvent = var_2_3(var_2_2, var_4(var_1_10006))
-
-	local var_2_4 = arg_2_0.animEvent
-
-	var_1.SetEndEvent(var_2_4, function()
-		local var_3_0 = arg_2_0
-
-		var_0.emit(var_3_0, var_0_1.ON_CLOSE)
+	arg_2_0.animEvent:SetEndEvent(function()
+		arg_2_0:emit(var_0_0.ON_CLOSE)
 
 		return
 	end)
 
-	local var_2_5 = arg_2_0._tf
+	arg_2_0.togglesTF = arg_2_0._tf:Find("frame/toggles")
 
-	arg_2_0.togglesTF = var_1.Find(var_2_5, "frame/toggles")
+	local var_2_0 = arg_2_0._tf:Find("frame/pages")
 
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_1.Find(var_2_6, "frame/pages")
-
-	LinerLogSchedulePage = var_1_10002
-	arg_2_0.schedulePage = var_1_10002.New(var_2_7, arg_2_0)
-	LinerLogRoomPage = var_2
-	arg_2_0.roomPage = var_2.New(var_2_7, arg_2_0)
-	LinerLogEventPage = var_2
-	arg_2_0.eventPage = var_2.New(var_2_7, arg_2_0)
+	arg_2_0.schedulePage = LinerLogSchedulePage.New(var_2_0, arg_2_0)
+	arg_2_0.roomPage = LinerLogRoomPage.New(var_2_0, arg_2_0)
+	arg_2_0.eventPage = LinerLogEventPage.New(var_2_0, arg_2_0)
 	arg_2_0.pages = {
-		[var_0_1.PAGE_SCHEDULE] = arg_2_0.schedulePage,
-		[var_0_1.PAGE_ROOM] = arg_2_0.roomPage,
-		[var_0_1.PAGE_EVENT] = arg_2_0.eventPage
+		[var_0_0.PAGE_SCHEDULE] = arg_2_0.schedulePage,
+		[var_0_0.PAGE_ROOM] = arg_2_0.roomPage,
+		[var_0_0.PAGE_EVENT] = arg_2_0.eventPage
 	}
-	LinerReasoningPage = var_2
-
-	local var_2_8 = var_2.New
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.reasoningPage = var_2_8(var_4.Find(var_2_9, "pages"), arg_2_0)
+	arg_2_0.reasoningPage = LinerReasoningPage.New(arg_2_0._tf:Find("pages"), arg_2_0)
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0)
-	onButton = var_1_10001
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_4.Find(var_4_1, "frame/close")
-
-	local function var_4_3()
-		local var_5_0 = arg_4_0
-
-		var_0.onBackPressed(var_5_0)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("frame/close"), function()
+		arg_4_0:onBackPressed()
 
 		return
-	end
-
-	SFX_PANEL = var_4_1
-
-	var_1_10001(var_4_0, var_4_2, var_4_3, var_4_1)
-
-	onButton = var_1_10001
-
-	local var_4_4 = arg_4_0
-	local var_4_5 = arg_4_0._tf
-	local var_4_6 = var_4.Find(var_4_5, "mask")
-
-	local function var_4_7()
-		local var_6_0 = arg_4_0
-
-		var_0.onBackPressed(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0._tf:Find("mask"), function()
+		arg_4_0:onBackPressed()
 
 		return
-	end
+	end, SFX_PANEL)
+	eachChild(arg_4_0.togglesTF, function(arg_7_0)
+		setText(arg_7_0:Find("Text"), i18n(var_0_1[tonumber(arg_7_0.name)]))
+		onButton(arg_4_0, arg_7_0, function()
+			local var_8_0 = tonumber(arg_7_0.name)
 
-	SFX_PANEL = var_4_5
-
-	var_1_10001(var_4_4, var_4_6, var_4_7, var_4_5)
-
-	eachChild = var_1_10001
-
-	var_1_10001(arg_4_0.togglesTF, function(arg_7_0)
-		setText = var_2_10001
-
-		local var_7_0 = arg_7_0:Find("Text")
-
-		i18n = var_2_10004
-
-		local var_7_1 = var_0_2
-
-		tonumber = var_2_10007
-
-		var_2_10001(var_7_0, var_2_10004(var_7_1[var_2_10007(arg_7_0.name)]))
-
-		onButton = var_2_10001
-
-		var_2_10001(arg_4_0, arg_7_0, function()
-			tonumber = var_3_10000
-
-			if var_3_10000(arg_7_0.name) == var_0_1.PAGE_EVENT then
-				LinerLogEventPage = var_1
-
-				if not var_1.IsUnlcok() then
-					pg = var_1
-
-					local var_8_0 = var_1.TipsMgr.GetInstance()
-					local var_8_1 = var_1.ShowTips
-
-					i18n = var_3_10004
-
-					var_8_1(var_8_0, var_3_10004("liner_event_lock"))
-
-					goto label_8_0
+			if var_8_0 == var_0_0.PAGE_EVENT and not LinerLogEventPage.IsUnlcok() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("liner_event_lock"))
+			else
+				if arg_4_0.curPageIdx and arg_4_0.curPageIdx == var_8_0 then
+					return
 				end
+
+				arg_4_0.curPageIdx = var_8_0
+
+				arg_4_0:SwitchPage()
+				arg_7_0:SetAsLastSibling()
+				arg_4_0:UpdateToggles()
 			end
-
-			if arg_4_0.curPageIdx and arg_4_0.curPageIdx == var_0 then
-				return
-			end
-
-			arg_4_0.curPageIdx = var_0
-
-			do
-				local var_8_2 = arg_4_0
-
-				var_1.SwitchPage(var_8_2)
-
-				local var_8_3 = arg_7_0
-
-				var_1.SetAsLastSibling(var_8_3)
-
-				local var_8_4 = arg_4_0
-
-				var_1.UpdateToggles(var_8_4)
-			end
-
-			::label_8_0::
 
 			return
 		end)
@@ -176,45 +78,18 @@ function var_0_1.didEnter(arg_4_0)
 		return
 	end)
 
-	local var_4_8
+	local var_4_0 = arg_4_0.contextData.page or var_0_2
 
-	if not arg_4_0.contextData.page then
-		var_4_8 = var_0_3
-	end
-
-	triggerButton = var_1_10002
-
-	local var_4_9 = arg_4_0._tf
-	local var_4_10 = var_4.Find
-
-	tostring = var_7
-
-	var_1_10002(var_4_10(var_4_9, var_7(var_4_8), arg_4_0.togglesTF), true)
+	triggerButton(arg_4_0._tf:Find(tostring(var_4_0), arg_4_0.togglesTF), true)
 	arg_4_0:UpdateTips()
 
 	return
 end
 
-function var_0_1.UpdateToggles(arg_9_0)
-	setActive = var_1_10001
-
-	local var_9_0 = arg_9_0.togglesTF
-	local var_9_1 = var_3.Find(var_9_0, "3/lock")
-
-	LinerLogEventPage = var_1_10004
-
-	var_1_10001(var_9_1, not var_1_10004.IsUnlcok())
-
-	eachChild = var_1_10001
-
-	var_1_10001(arg_9_0.togglesTF, function(arg_10_0)
-		setActive = var_2_10001
-
-		local var_10_0 = arg_10_0:Find("selected")
-
-		tonumber = var_2_10004
-
-		var_2_10001(var_10_0, var_2_10004(arg_10_0.name) == arg_9_0.curPageIdx)
+function var_0_0.UpdateToggles(arg_9_0)
+	setActive(arg_9_0.togglesTF:Find("3/lock"), not LinerLogEventPage.IsUnlcok())
+	eachChild(arg_9_0.togglesTF, function(arg_10_0)
+		setActive(arg_10_0:Find("selected"), tonumber(arg_10_0.name) == arg_9_0.curPageIdx)
 
 		return
 	end)
@@ -222,10 +97,8 @@ function var_0_1.UpdateToggles(arg_9_0)
 	return
 end
 
-function var_0_1.SwitchPage(arg_11_0)
-	pairs = var_1_10001
-
-	for iter_11_0, iter_11_1 in var_1_10001(arg_11_0.pages) do
+function var_0_0.SwitchPage(arg_11_0)
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.pages) do
 		if iter_11_0 == arg_11_0.curPageIdx then
 			iter_11_1:ExecuteAction("FlushPage")
 
@@ -238,32 +111,20 @@ function var_0_1.SwitchPage(arg_11_0)
 	return
 end
 
-function var_0_1.UpdateView(arg_12_0)
-	pairs = var_1_10001
-
-	for iter_12_0, iter_12_1 in var_1_10001(arg_12_0.pages) do
+function var_0_0.UpdateView(arg_12_0)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0.pages) do
 		iter_12_1:ExecuteAction("UpdateActivity")
 	end
 
-	local var_12_0 = arg_12_0.curPage
-
-	var_1.ExecuteAction(var_12_0, "FlushPage")
+	arg_12_0.curPage:ExecuteAction("FlushPage")
 	arg_12_0:UpdateTips()
 
 	return
 end
 
-function var_0_1.UpdateTips(arg_13_0)
-	eachChild = var_1_10001
-
-	var_1_10001(arg_13_0.togglesTF, function(arg_14_0)
-		tonumber = var_2_10001
-
-		local var_14_0 = var_2_10001(arg_14_0.name)
-
-		setActive = var_2_10002
-
-		var_2_10002(arg_14_0:Find("tip"), arg_13_0.pages[var_14_0].IsTip())
+function var_0_0.UpdateTips(arg_13_0)
+	eachChild(arg_13_0.togglesTF, function(arg_14_0)
+		setActive(arg_14_0:Find("tip"), arg_13_0.pages[tonumber(arg_14_0.name)].IsTip())
 
 		return
 	end)
@@ -271,38 +132,28 @@ function var_0_1.UpdateTips(arg_13_0)
 	return
 end
 
-function var_0_1.OnStartReasoning(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = arg_15_0.reasoningPage
-
-	var_3.ExecuteAction(var_15_0, "ShowOptions", arg_15_1, arg_15_2)
+function var_0_0.OnStartReasoning(arg_15_0, arg_15_1, arg_15_2)
+	arg_15_0.reasoningPage:ExecuteAction("ShowOptions", arg_15_1, arg_15_2)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_16_0)
-	local var_16_0 = arg_16_0.anim
-
-	var_1.Play(var_16_0, "anim_liner_logbook_out")
+function var_0_0.onBackPressed(arg_16_0)
+	arg_16_0.anim:Play("anim_liner_logbook_out")
 
 	return
 end
 
-function var_0_1.willExit(arg_17_0)
-	local var_17_0 = arg_17_0.animEvent
+function var_0_0.willExit(arg_17_0)
+	arg_17_0.animEvent:SetEndEvent(nil)
 
-	var_1.SetEndEvent(var_17_0, nil)
-
-	pairs = var_1
-
-	for iter_17_0, iter_17_1 in var_1(arg_17_0.pages) do
+	for iter_17_0, iter_17_1 in pairs(arg_17_0.pages) do
 		iter_17_1:Destroy()
 
 		iter_17_1 = nil
 	end
 
-	local var_17_1 = arg_17_0.reasoningPage
-
-	var_1.Destroy(var_17_1)
+	arg_17_0.reasoningPage:Destroy()
 
 	arg_17_0.reasoningPage = nil
 
@@ -315,21 +166,8 @@ function var_0_1.willExit(arg_17_0)
 	return
 end
 
-function var_0_1.IsTip()
-	LinerLogSchedulePage = var_1_10000
-
-	local var_18_0
-
-	if not var_1_10000.IsTip() then
-		LinerLogRoomPage = var_18_0
-
-		if not var_18_0.IsTip() then
-			LinerLogEventPage = var_18_0
-			var_18_0 = var_18_0.IsTip()
-		end
-	end
-
-	return var_18_0
+function var_0_0.IsTip()
+	return LinerLogSchedulePage.IsTip() or LinerLogRoomPage.IsTip() or LinerLogEventPage.IsTip()
 end
 
-return var_0_1
+return var_0_0

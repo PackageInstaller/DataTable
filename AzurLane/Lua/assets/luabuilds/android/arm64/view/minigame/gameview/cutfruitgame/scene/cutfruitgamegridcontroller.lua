@@ -1,16 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CutFruitGameGridController")
+﻿local var_0_0 = class("CutFruitGameGridController")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
 	arg_1_0._data = arg_1_3
-	findTF = var_1_10004
-	arg_1_0._gridTpl = var_1_10004(arg_1_1, "grids/grid_tpl")
-	setActive = var_4
+	arg_1_0._gridTpl = findTF(arg_1_1, "grids/grid_tpl")
 
-	var_4(arg_1_0._gridTpl, false)
+	setActive(arg_1_0._gridTpl, false)
 
 	arg_1_0._grids = {}
 
@@ -18,11 +14,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 end
 
 function var_0_0.Prepare(arg_2_0)
-	local var_2_0 = arg_2_0._data
-	local var_2_1 = var_1.GetBoundsData
-	local var_2_2 = arg_2_0._data
-
-	arg_2_0.boundsData = var_2_1(var_2_0, var_4.GetChapterConfig(var_2_2, "bound"))
+	arg_2_0.boundsData = arg_2_0._data:GetBoundsData(arg_2_0._data:GetChapterConfig("bound"))
 
 	return
 end

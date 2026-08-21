@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("AgoraBaseTheme")
+﻿local var_0_0 = class("AgoraBaseTheme")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
@@ -17,25 +15,21 @@ function var_0_0.GetPlacedData(arg_2_0)
 end
 
 function var_0_0.GetSeparatedPlacedData(arg_3_0)
-	local var_3_0 = {}
-	local var_3_1
-	local var_3_2
+	local var_3_0
 
-	ipairs = var_1_10004
+	for iter_3_0, iter_3_1 in ipairs(arg_3_0.placedlist) do
+		local var_3_1
 
-	for iter_3_0, iter_3_1 in var_1_10004(arg_3_0.placedlist) do
 		if iter_3_1:IsFoundationType() then
-			var_3_1 = iter_3_1
+			var_3_0 = iter_3_1
 		elseif iter_3_1:IsBuildingType() then
-			var_3_2 = iter_3_1
+			var_3_1 = iter_3_1
 		else
-			table = var_9
-
-			var_9.insert(var_3_0, iter_3_1)
+			table.insert({}, iter_3_1)
 		end
 	end
 
-	return var_3_0, var_3_1, var_3_2
+	return {}, var_3_0, nil
 end
 
 function var_0_0.GetFloorData(arg_4_0)

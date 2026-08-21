@@ -185,6 +185,11 @@ function updateView(self, tabType)
                         local teamPos = posVo.y * 4 - (posVo.x - 1)
                         local grid = HeroHeadGrid:poolGet()
                         grid:setData(hero.HeroManager:getHeroVoByTid(posVo.heroTid))
+                        grid:setFashionId(posVo.fashionId)
+                        grid:setScale(0.65)
+                        grid:setStarLvl(posVo.evolution)
+                        grid:setLvl(posVo.lv)
+                        
                         grid:setScale(0.65)
                         grid:setParent(item:getChildTrans("mImgL" .. teamPos))
 

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BeatMonsterModel")
+﻿local var_0_0 = class("BeatMonsterModel")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.controller = arg_1_1
@@ -50,11 +48,7 @@ function var_0_0.SetAttackCnt(arg_6_0, arg_6_1)
 end
 
 function var_0_0.UpdateActionStr(arg_7_0, arg_7_1)
-	if not arg_7_1 or arg_7_1 == "" then
-		arg_7_0.actionStr = ""
-	else
-		arg_7_0.actionStr = arg_7_0.actionStr .. arg_7_1
-	end
+	arg_7_0.actionStr = (not arg_7_1 or arg_7_1 == "") and "" or arg_7_0.actionStr .. arg_7_1
 
 	return
 end
@@ -66,30 +60,19 @@ function var_0_0.SetStorys(arg_8_0, arg_8_1)
 end
 
 function var_0_0.GetPlayableStory(arg_9_0)
-	if arg_9_0.storys then
-		type = var_1_10002
-
-		if var_1_10002(var_1) ~= "table" then
-			return
-		end
-
-		pg = var_1_10002
-
-		local var_9_0 = var_1_10002.NewStoryMgr.GetInstance()
-
-		pairs = var_1_10003
-
-		for iter_9_0, iter_9_1 in var_1_10003(var_1) do
-			local var_9_1 = iter_9_1[1]
-			local var_9_2 = iter_9_1[2]
-
-			if var_9_1 >= arg_9_0.mosterNian.hp and not var_9_0:IsPlayed(var_9_2) then
-				return var_9_2
-			end
-		end
-
+	if not arg_9_0.storys or type(arg_9_0.storys) ~= "table" then
 		return
 	end
+
+	local var_9_0 = pg.NewStoryMgr.GetInstance()
+
+	for iter_9_0, iter_9_1 in pairs(arg_9_0.storys) do
+		if iter_9_1[1] >= arg_9_0.mosterNian.hp and not var_9_0:IsPlayed(iter_9_1[2]) then
+			return iter_9_1[2]
+		end
+	end
+
+	return
 end
 
 function var_0_0.GetActionStr(arg_10_0)
@@ -97,31 +80,19 @@ function var_0_0.GetActionStr(arg_10_0)
 end
 
 function var_0_0.IsMatchAction(arg_11_0)
-	BeatMonsterNianConst = var_1_10001
-
-	return var_1_10001.MatchAction(arg_11_0.actionStr)
+	return BeatMonsterNianConst.MatchAction(arg_11_0.actionStr)
 end
 
 function var_0_0.GetMatchAction(arg_12_0)
-	BeatMonsterNianConst = var_1_10001
-
-	return var_1_10001.GetMatchAction(arg_12_0.actionStr)
+	return BeatMonsterNianConst.GetMatchAction(arg_12_0.actionStr)
 end
 
 function var_0_0.GetMonsterAction(arg_13_0)
-	BeatMonsterNianConst = var_1_10001
-
-	return var_1_10001.GetMonsterAction(arg_13_0.actionStr)
+	return BeatMonsterNianConst.GetMonsterAction(arg_13_0.actionStr)
 end
 
 function var_0_0.RandomDamage(arg_14_0)
-	math = var_1_10001
-
-	local var_14_0 = var_1_10001.random(1, 2)
-
-	math = var_1_10002
-
-	return var_1_10002.max(arg_14_0.mosterNian.hp - var_14_0, 0)
+	return math.max(arg_14_0.mosterNian.hp - math.random(1, 2), 0)
 end
 
 function var_0_0.GetMonsterMaxHp(arg_15_0)

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "puzzle_card_affix") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "puzzle_card_affix"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.puzzle_card_affix = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.puzzle_card_affix
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.puzzle_card_affix = rawget(pg, "puzzle_card_affix") or setmetatable({
+	__name = "puzzle_card_affix"
+}, confNEO)
+pg.puzzle_card_affix.all = {
 	100,
 	101,
 	102,
@@ -33,25 +10,11 @@ var_0_3.all = {
 	301,
 	306
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.puzzle_card_affix = {}
+pg.base = pg.base or {}
+pg.base.puzzle_card_affix = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.puzzle_card_affix
-
-	var_1_0[100] = {
+	pg.base.puzzle_card_affix[100] = {
 		name = "跨射",
 		affix_type = 0,
 		name_EN = "",
@@ -61,11 +24,7 @@ var_0_3.base.puzzle_card_affix = {}
 		condition = 2,
 		show = 1
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.puzzle_card_affix
-
-	var_1_1[101] = {
+	pg.base.puzzle_card_affix[101] = {
 		name = "空袭",
 		affix_type = 0,
 		name_EN = "",
@@ -75,11 +34,7 @@ var_0_3.base.puzzle_card_affix = {}
 		condition = 2,
 		show = 1
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.puzzle_card_affix
-
-	var_1_2[102] = {
+	pg.base.puzzle_card_affix[102] = {
 		name = "雷击",
 		affix_type = 0,
 		name_EN = "",
@@ -89,11 +44,7 @@ var_0_3.base.puzzle_card_affix = {}
 		condition = 1,
 		show = 1
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.puzzle_card_affix
-
-	var_1_3[103] = {
+	pg.base.puzzle_card_affix[103] = {
 		name = "维修",
 		affix_type = 0,
 		name_EN = "",
@@ -103,11 +54,7 @@ var_0_3.base.puzzle_card_affix = {}
 		condition = 0,
 		show = 1
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.puzzle_card_affix
-
-	var_1_4[301] = {
+	pg.base.puzzle_card_affix[301] = {
 		name = "循环",
 		affix_type = 2,
 		name_EN = "Reload",
@@ -117,8 +64,7 @@ var_0_3.base.puzzle_card_affix = {}
 		condition = 0,
 		show = 0
 	}
-	pg = var_1_4
-	var_1_4.base.puzzle_card_affix[306] = {
+	pg.base.puzzle_card_affix[306] = {
 		name = "自动武器",
 		affix_type = 2,
 		name_EN = "Auto Fire",

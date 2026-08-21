@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BackYardLargeSpriteLoader")
+﻿local var_0_0 = class("BackYardLargeSpriteLoader")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.cnt = arg_1_1 or 6
@@ -18,20 +16,12 @@ function var_0_0.LoadSpriteAsync(arg_2_0, arg_2_1, arg_2_2)
 		return
 	end
 
-	LoadSpriteAsync = var_3
+	LoadSpriteAsync(arg_2_1, function(arg_3_0)
+		arg_2_0.cache[arg_2_1] = arg_3_0
 
-	var_3(arg_2_1, function(arg_3_0)
-		local var_3_0 = arg_2_0.cache
-
-		var_3_0[arg_2_1] = arg_3_0
-		table = var_3_0
-
-		var_3_0.insert(arg_2_0.paths, arg_2_1)
+		table.insert(arg_2_0.paths, arg_2_1)
 		arg_2_2(arg_3_0)
-
-		local var_3_1 = arg_2_0
-
-		var_1.Check(var_3_1)
+		arg_2_0:Check()
 
 		return
 	end)
@@ -49,18 +39,12 @@ end
 
 function var_0_0.Clear(arg_5_0)
 	for iter_5_0 = arg_5_0.cnt, 1, -1 do
-		local var_5_0 = arg_5_0.paths[iter_5_0]
-		local var_5_1 = arg_5_0.cache
+		arg_5_0.cache[arg_5_0.paths[iter_5_0]] = nil
 
-		var_5_1[var_5_0] = nil
-		table = var_5_1
-
-		var_5_1.remove(arg_5_0.paths, iter_5_0)
+		table.remove(arg_5_0.paths, iter_5_0)
 	end
 
-	gcAll = var_1
-
-	var_1(false)
+	gcAll(false)
 
 	return
 end

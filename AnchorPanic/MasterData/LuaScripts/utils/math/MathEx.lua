@@ -233,3 +233,14 @@ function math.pointLineRectangular (x1,y1, x2,y2, xr1, yr1, xr2, yr2, xr3, yr3)
     end
 end
 
+--四舍五入保留n位小数
+function math.round(num, n)
+    local mult = 10^(n or 0)
+    return math.floor(num * mult + 0.5) / mult
+end
+
+--直接舍去保留n位小数
+function math.truncate(num, n)
+    local mult = 10^(n or 0)
+    return math.floor(num * mult) / mult
+end

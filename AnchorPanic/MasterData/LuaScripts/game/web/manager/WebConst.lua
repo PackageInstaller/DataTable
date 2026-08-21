@@ -262,10 +262,11 @@ web.REPORT_STEP = {
     UNITY_INIT_FINISH = 20,
     -- 游戏开始请求资源密钥
     START_REQ_AB_KEY = 21,
+    
     -- 游戏开始进入初始逻辑
-    START = 22,
+    START = 40,
     -- 进入更新界面
-    OPEN_UPDATE_RES_VIEW = 30,
+    OPEN_UPDATE_RES_VIEW = 41,
 
     -- 请求CDN地址
     REQ_CDN_URL = 50,

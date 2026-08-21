@@ -159,7 +159,7 @@ function onReceiveShootBrickPanelInfo(self, msg)
         shootBrick.ShootBrickManager:setPassStageStar(stage_info)
     end
 
-    for _, reward_id in pairs(msg.star_reward_list) do
+    for reward_id, state in pairs(msg.star_reward_list) do
         shootBrick.ShootBrickManager:setRewardInfo(reward_id)
     end
 

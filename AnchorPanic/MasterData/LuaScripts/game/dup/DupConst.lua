@@ -93,5 +93,10 @@ DupType.Disaster= 43
 DupType.GuildImitate = 44
 --海底
 DupType.Seaded = 45
+
+--虚黯潜能副本
+DupType.Dup_Dark_Potential = 46
+--异象残境
+DupType.Vision = 47
 --[[ 替换语言包自动生成，请勿修改！
 ]]

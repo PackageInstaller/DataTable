@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("Fushun3GameEvent")
+﻿local var_0_0 = class("Fushun3GameEvent")
 
 var_0_0.game_over_call = "game over call"
 var_0_0.catch_item_call = "catch item call"

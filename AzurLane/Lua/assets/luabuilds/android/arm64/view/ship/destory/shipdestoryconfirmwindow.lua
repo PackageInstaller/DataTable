@@ -1,280 +1,106 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShipDestoryConfirmWindow", import("...base.BaseSubView"))
 
-local var_0_0 = "ShipDestoryConfirmWindow"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "DestoryConfirmWindow"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.closeBtn = arg_2_0._tf:Find("window/top/btnBack")
 
-	arg_2_0.closeBtn = var_1.Find(var_2_0, "window/top/btnBack")
-	setActive = var_1
+	setActive(arg_2_0._tf:Find("window/top/bg/infomation/title_en"), PLATFORM_CODE ~= PLATFORM_US)
+	setText(arg_2_0._tf:Find("window/top/bg/infomation/title"), i18n("title_info"))
 
-	local var_2_1 = arg_2_0._tf
-	local var_2_2 = var_3.Find(var_2_1, "window/top/bg/infomation/title_en")
+	arg_2_0.cancelBtn = arg_2_0._tf:Find("window/cancel_btn")
+	arg_2_0.confirmBtn = arg_2_0._tf:Find("window/confirm_btn")
 
-	PLATFORM_CODE = var_4
-	PLATFORM_US = var_2_1
+	setText(findTF(arg_2_0.confirmBtn, "pic"), i18n("destroy_confirm_access"))
+	setText(findTF(arg_2_0.cancelBtn, "pic"), i18n("destroy_confirm_cancel"))
 
-	var_1(var_2_2, var_4 ~= var_2_1)
+	arg_2_0.title = arg_2_0._tf:Find("window/content/Text")
+	arg_2_0.label = arg_2_0._tf:Find("window/content/desc/label")
 
-	setText = var_1
+	setText(arg_2_0.label, i18n("destory_ship_before_tip"))
 
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_3.Find(var_2_3, "window/top/bg/infomation/title")
+	arg_2_0.urLabel = arg_2_0._tf:Find("window/content/desc/label1")
+	arg_2_0.urInput = arg_2_0._tf:Find("window/content/desc/InputField")
+	arg_2_0.urOverflowLabel = arg_2_0._tf:Find("window/content/desc/label2")
 
-	i18n = var_4
-
-	var_1(var_2_4, var_4("title_info"))
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.cancelBtn = var_1.Find(var_2_5, "window/cancel_btn")
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.confirmBtn = var_1.Find(var_2_6, "window/confirm_btn")
-	setText = var_1
-	findTF = var_2_6
-
-	local var_2_7 = var_2_6(arg_2_0.confirmBtn, "pic")
-
-	i18n = var_4
-
-	var_1(var_2_7, var_4("destroy_confirm_access"))
-
-	setText = var_1
-	findTF = var_2_7
-
-	local var_2_8 = var_2_7(arg_2_0.cancelBtn, "pic")
-
-	i18n = var_4
-
-	var_1(var_2_8, var_4("destroy_confirm_cancel"))
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.title = var_1.Find(var_2_9, "window/content/Text")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.label = var_1.Find(var_2_10, "window/content/desc/label")
-	setText = var_1
-
-	local var_2_11 = arg_2_0.label
-
-	i18n = var_4
-
-	var_1(var_2_11, var_4("destory_ship_before_tip"))
-
-	local var_2_12 = arg_2_0._tf
-
-	arg_2_0.urLabel = var_1.Find(var_2_12, "window/content/desc/label1")
-
-	local var_2_13 = arg_2_0._tf
-
-	arg_2_0.urInput = var_1.Find(var_2_13, "window/content/desc/InputField")
-
-	local var_2_14 = arg_2_0._tf
-
-	arg_2_0.urOverflowLabel = var_1.Find(var_2_14, "window/content/desc/label2")
-	setText = var_1
-
-	local var_2_15 = arg_2_0.urOverflowLabel
-
-	i18n = var_4
-
-	var_1(var_2_15, var_4("destory_ur_pt_overflowa"))
-
-	local var_2_16 = arg_2_0.urInput
-	local var_2_17
-
-	var_2_17, setText = var_1.Find(var_2_16, "Placeholder"), var_1_10002
-	i18n = var_5
-
-	var_1_10002(var_2_17, var_5("box_ship_del_click"))
+	setText(arg_2_0.urOverflowLabel, i18n("destory_ur_pt_overflowa"))
+	setText(arg_2_0.urInput:Find("Placeholder"), i18n("box_ship_del_click"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.cancelBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.confirmBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Confirm(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		arg_3_0:Confirm()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0._tf
-	local var_3_8 = var_4.Find(var_3_7, "bg")
-
-	local function var_3_9()
-		local var_6_0 = arg_3_0
-
-		var_0.Hide(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_7
-
-	var_1_10001(var_3_6, var_3_8, var_3_9, var_3_7)
-
-	onButton = var_1_10001
-
-	local var_3_10 = arg_3_0
-	local var_3_11 = arg_3_0.closeBtn
-
-	local function var_3_12()
-		local var_7_0 = arg_3_0
-
-		var_0.Hide(var_7_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_7
-
-	var_1_10001(var_3_10, var_3_11, var_3_12, var_3_7)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.SetCallBack(arg_8_0, arg_8_1)
+function var_0_0.SetCallBack(arg_8_0, arg_8_1)
 	arg_8_0.callback = arg_8_1
 
 	return
 end
 
-function var_0_1.Confirm(arg_9_0)
+function var_0_0.Confirm(arg_9_0)
 	if arg_9_0.key then
-		getInputText = var_1
-
-		local var_9_0 = var_1(arg_9_0.urInput)
-		local var_9_1 = arg_9_0.key
-
-		tonumber = var_3
-
-		if var_9_1 ~= var_3(var_9_0) then
-			pg = var_9_1
-
-			local var_9_2 = var_9_1.TipsMgr.GetInstance()
-			local var_9_3 = var_2.ShowTips
-
-			i18n = var_5
-
-			var_9_3(var_9_2, var_5("destory_ship_input_erro"))
+		if arg_9_0.key ~= tonumber((getInputText(arg_9_0.urInput))) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("destory_ship_input_erro"))
 
 			return
 		end
 
-		local var_9_4 = arg_9_0.callback
+		local var_9_0 = arg_9_0.callback
 
 		arg_9_0:Hide()
-
-		existCall = var_3
-
-		var_3(var_9_4)
+		existCall(var_9_0)
 	else
-		local var_9_5 = arg_9_0.callback
+		local var_9_1 = arg_9_0.callback
 
 		arg_9_0:Hide()
-
-		existCall = var_2
-
-		var_2(var_9_5)
+		existCall(var_9_1)
 	end
 
 	return
 end
 
-function var_0_1.ShowOneShipProtect(arg_10_0, arg_10_1, arg_10_2)
-	var_0_1.super.Show(arg_10_0)
-
-	pg = var_3
-
-	local var_10_0 = var_3.UIMgr.GetInstance()
-
-	var_3.BlurPanel(var_10_0, arg_10_0._tf)
+function var_0_0.ShowOneShipProtect(arg_10_0, arg_10_1, arg_10_2)
+	var_0_0.super.Show(arg_10_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_10_0._tf)
 
 	arg_10_0.key = nil
 	arg_10_0.ships = arg_10_1
 
 	arg_10_0:SetCallBack(arg_10_2)
+	setText(arg_10_0.title, i18n("unique_ship_tip1"))
 
-	setText = var_3
+	arg_10_0.key = math.random(100000, 999999)
 
-	local var_10_1 = arg_10_0.title
-
-	i18n = var_6
-
-	var_3(var_10_1, var_6("unique_ship_tip1"))
-
-	math = var_3
-	arg_10_0.key = var_3.random(100000, 999999)
-	setText = var_3
-
-	local var_10_2 = arg_10_0.urLabel
-
-	i18n = var_6
-
-	var_3(var_10_2, var_6("unique_ship_tip2", arg_10_0.key))
-
-	setActive = var_3
-
-	var_3(arg_10_0.urLabel, true)
-
-	setActive = var_3
-
-	var_3(arg_10_0.urInput, true)
-
-	setActive = var_3
-
-	var_3(arg_10_0.urOverflowLabel, false)
-
-	mergeSort = var_3
-
-	local var_10_3 = arg_10_0.ships
-
-	CompareFuncs = var_6
-
-	var_3(var_10_3, var_6({
+	setText(arg_10_0.urLabel, i18n("unique_ship_tip2", arg_10_0.key))
+	setActive(arg_10_0.urLabel, true)
+	setActive(arg_10_0.urInput, true)
+	setActive(arg_10_0.urOverflowLabel, false)
+	mergeSort(arg_10_0.ships, CompareFuncs({
 		function(arg_11_0)
 			return -arg_11_0.level
 		end,
@@ -283,90 +109,46 @@ function var_0_1.ShowOneShipProtect(arg_10_0, arg_10_1, arg_10_2)
 		end
 	}, true))
 
-	local var_10_4 = #arg_10_0.ships
-	local var_10_9
+	if #arg_10_0.ships > 5 then
+		setActive(arg_10_0._tf:Find("window/content/ships"), true)
+		setActive(arg_10_0._tf:Find("window/content/ships_single"), false)
 
-	if 5 < var_10_4 then
-		setActive = var_10_4
+		local var_10_0 = arg_10_0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect")
 
-		local var_10_5 = arg_10_0._tf
-
-		var_10_4(var_5.Find(var_10_5, "window/content/ships"), true)
-
-		setActive = var_10_4
-
-		local var_10_6 = arg_10_0._tf
-
-		var_10_4(var_5.Find(var_10_6, "window/content/ships_single"), false)
-
-		local var_10_7 = arg_10_0._tf
-		local var_10_8 = var_10_4.Find(var_10_7, "window/content/ships/content")
-
-		var_10_9 = var_10_4.GetComponent(var_10_8, "LScrollRect")
-
-		function var_10_9.onUpdateItem(arg_13_0, arg_13_1)
-			updateShip = var_2_10002
-			tf = var_2_10004
-
-			var_2_10002(var_2_10004(arg_13_1), arg_10_0.ships[arg_13_0 + 1])
+		arg_10_0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect").onUpdateItem = function(arg_13_0, arg_13_1)
+			updateShip(tf(arg_13_1), arg_10_0.ships[arg_13_0 + 1])
 
 			return
 		end
 
-		onNextTick = var_5
-
-		var_5(function()
-			local var_14_0 = var_10_9
-
-			var_0.SetTotalCount(var_14_0, #arg_10_0.ships)
+		onNextTick(function()
+			var_10_0:SetTotalCount(#arg_10_0.ships)
 
 			return
 		end)
 	else
-		setActive = var_10_4
+		setActive(arg_10_0._tf:Find("window/content/ships"), false)
+		setActive(arg_10_0._tf:Find("window/content/ships_single"), true)
 
-		local var_10_10 = arg_10_0._tf
+		local var_10_1 = arg_10_0._tf:Find("window/content/ships_single")
+		local var_10_2 = UIItemList.New(var_10_1, var_10_1:Find("IconTpl"))
 
-		var_10_4(var_5.Find(var_10_10, "window/content/ships"), false)
-
-		setActive = var_10_4
-
-		local var_10_11 = arg_10_0._tf
-
-		var_10_4(var_5.Find(var_10_11, "window/content/ships_single"), true)
-
-		local var_10_12 = arg_10_0._tf
-		local var_10_13 = var_3.Find(var_10_12, "window/content/ships_single")
-
-		UIItemList = var_10_9
-
-		local var_10_14 = var_10_9.New(var_10_13, var_10_13:Find("IconTpl"))
-
-		var_4.make(var_10_14, function(arg_15_0, arg_15_1, arg_15_2)
-			UIItemList = var_2_10003
-
-			if arg_15_0 == var_2_10003.EventUpdate then
-				updateShip = var_3
-
-				var_3(arg_15_2, arg_10_0.ships[arg_15_1 + 1])
+		var_10_2:make(function(arg_15_0, arg_15_1, arg_15_2)
+			if arg_15_0 == UIItemList.EventUpdate then
+				updateShip(arg_15_2, arg_10_0.ships[arg_15_1 + 1])
 			end
 
 			return
 		end)
-		var_4:align(#arg_10_0.ships)
+		var_10_2:align(#arg_10_0.ships)
 	end
 
 	return
 end
 
-function var_0_1.Show(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4)
-	var_0_1.super.Show(arg_16_0)
-
-	pg = var_5
-
-	local var_16_0 = var_5.UIMgr.GetInstance()
-
-	var_5.BlurPanel(var_16_0, arg_16_0._tf)
+function var_0_0.Show(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4)
+	var_0_0.super.Show(arg_16_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_16_0._tf)
 
 	arg_16_0.key = nil
 	arg_16_0.eliteShips = arg_16_1
@@ -380,215 +162,91 @@ function var_0_1.Show(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4)
 	return
 end
 
-function var_0_1.ShowEliteTag(arg_17_0, arg_17_1, arg_17_2)
-	var_0_1.super.Show(arg_17_0)
-
-	pg = var_3
-
-	local var_17_0 = var_3.UIMgr.GetInstance()
-
-	var_3.BlurPanel(var_17_0, arg_17_0._tf)
+function var_0_0.ShowEliteTag(arg_17_0, arg_17_1, arg_17_2)
+	var_0_0.super.Show(arg_17_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_17_0._tf)
 	arg_17_0:SetCallBack(arg_17_2)
-
-	setText = var_3
-
-	local var_17_1 = arg_17_0.title
-
-	i18n = var_6
-
-	local var_17_2 = "destroy_eliteship_tip"
-
-	i18n = var_1_10009
-
-	var_3(var_17_1, var_6(var_17_2, var_1_10009("destroy_inHardFormation_tip")))
-
-	setActive = var_3
-
-	var_3(arg_17_0.urOverflowLabel, false)
-
-	setActive = var_3
-
-	var_3(arg_17_0.urLabel, false)
-
-	setActive = var_3
-
-	var_3(arg_17_0.urInput, false)
+	setText(arg_17_0.title, i18n("destroy_eliteship_tip", i18n("destroy_inHardFormation_tip")))
+	setActive(arg_17_0.urOverflowLabel, false)
+	setActive(arg_17_0.urLabel, false)
+	setActive(arg_17_0.urInput, false)
 
 	arg_17_0.ships = arg_17_1
 
-	local var_17_3 = #arg_17_0.ships
-	local var_17_8
+	if #arg_17_0.ships > 5 then
+		setActive(arg_17_0._tf:Find("window/content/ships"), true)
+		setActive(arg_17_0._tf:Find("window/content/ships_single"), false)
 
-	if 5 < var_17_3 then
-		setActive = var_17_3
+		local var_17_0 = arg_17_0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect")
 
-		local var_17_4 = arg_17_0._tf
-
-		var_17_3(var_5.Find(var_17_4, "window/content/ships"), true)
-
-		setActive = var_17_3
-
-		local var_17_5 = arg_17_0._tf
-
-		var_17_3(var_5.Find(var_17_5, "window/content/ships_single"), false)
-
-		local var_17_6 = arg_17_0._tf
-		local var_17_7 = var_17_3.Find(var_17_6, "window/content/ships/content")
-
-		var_17_8 = var_17_3.GetComponent(var_17_7, "LScrollRect")
-
-		function var_17_8.onUpdateItem(arg_18_0, arg_18_1)
-			updateShip = var_2_10002
-			tf = var_2_10004
-
-			var_2_10002(var_2_10004(arg_18_1), arg_17_0.ships[arg_18_0 + 1])
+		arg_17_0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect").onUpdateItem = function(arg_18_0, arg_18_1)
+			updateShip(tf(arg_18_1), arg_17_0.ships[arg_18_0 + 1])
 
 			return
 		end
 
-		onNextTick = var_5
-
-		var_5(function()
-			local var_19_0 = var_17_8
-
-			var_0.SetTotalCount(var_19_0, #arg_17_0.ships)
+		onNextTick(function()
+			var_17_0:SetTotalCount(#arg_17_0.ships)
 
 			return
 		end)
 	else
-		setActive = var_17_3
+		setActive(arg_17_0._tf:Find("window/content/ships"), false)
+		setActive(arg_17_0._tf:Find("window/content/ships_single"), true)
 
-		local var_17_9 = arg_17_0._tf
+		local var_17_1 = arg_17_0._tf:Find("window/content/ships_single")
+		local var_17_2 = UIItemList.New(var_17_1, var_17_1:Find("IconTpl"))
 
-		var_17_3(var_5.Find(var_17_9, "window/content/ships"), false)
-
-		setActive = var_17_3
-
-		local var_17_10 = arg_17_0._tf
-
-		var_17_3(var_5.Find(var_17_10, "window/content/ships_single"), true)
-
-		local var_17_11 = arg_17_0._tf
-		local var_17_12 = var_3.Find(var_17_11, "window/content/ships_single")
-
-		UIItemList = var_17_8
-
-		local var_17_13 = var_17_8.New(var_17_12, var_17_12:Find("IconTpl"))
-
-		var_4.make(var_17_13, function(arg_20_0, arg_20_1, arg_20_2)
-			UIItemList = var_2_10003
-
-			if arg_20_0 == var_2_10003.EventUpdate then
-				updateShip = var_3
-
-				var_3(arg_20_2, arg_17_0.ships[arg_20_1 + 1])
+		var_17_2:make(function(arg_20_0, arg_20_1, arg_20_2)
+			if arg_20_0 == UIItemList.EventUpdate then
+				updateShip(arg_20_2, arg_17_0.ships[arg_20_1 + 1])
 			end
 
 			return
 		end)
-		var_4:align(#arg_17_0.ships)
+		var_17_2:align(#arg_17_0.ships)
 	end
 
 	return
 end
 
-function var_0_1.Updatelayout(arg_21_0)
-	local var_21_0 = arg_21_0.eliteShips
-	local var_21_1 = arg_21_0.highLevelShips
-	local var_21_2 = {}
-
-	if #var_21_0 > 0 then
-		table = var_4
-
-		local var_21_3 = var_4.insert
-		local var_21_4 = var_21_2
-
-		i18n = var_1_10007
-
-		var_21_3(var_21_4, var_1_10007("destroy_high_rarity_tip"))
+function var_0_0.Updatelayout(arg_21_0)
+	if #arg_21_0.eliteShips > 0 then
+		table.insert({}, i18n("destroy_high_rarity_tip"))
 	end
 
-	local var_21_5 = #var_21_1
-
-	if 0 < var_21_5 then
-		table = var_21_5
-		var_21_5 = var_21_5.insert
-
-		local var_21_6 = var_21_2
-
-		i18n = var_1_10007
-
-		var_21_5(var_21_6, var_1_10007("destroy_high_level_tip", ""))
+	if #arg_21_0.highLevelShips > 0 then
+		table.insert({}, i18n("destroy_high_level_tip", ""))
 	end
 
-	setText = var_21_5
+	setText(arg_21_0.title, i18n("destroy_eliteship_tip", table.concat({}, "、")))
 
-	local var_21_7 = arg_21_0.title
+	local var_21_0 = _.any(arg_21_0.eliteShips, function(arg_22_0)
+		return arg_22_0:getConfig("rarity") >= ShipRarity.SSR
+	end)
+	local var_21_1
 
-	i18n = var_1_10007
+	if var_21_0 and not arg_21_0.key then
+		arg_21_0.key = math.random(100000, 999999)
 
-	local var_21_8 = "destroy_eliteship_tip"
-
-	table = var_1_10010
-
-	var_21_5(var_21_7, var_1_10007(var_21_8, var_1_10010.concat(var_21_2, "、")))
-
-	_ = var_21_5
-
-	if var_21_5.any(var_21_0, function(arg_22_0)
-		local var_22_0 = arg_22_0:getConfig("rarity")
-
-		ShipRarity = var_2_10002
-
-		return var_22_0 >= var_2_10002.SSR
-	end) and not arg_21_0.key then
-		math = var_5
-		arg_21_0.key = var_5.random(100000, 999999)
-		setText = var_5
-
-		local var_21_9 = arg_21_0.urLabel
-
-		i18n = var_8
-
-		var_5(var_21_9, var_8("destroy_ur_rarity_tip", arg_21_0.key))
+		setText(arg_21_0.urLabel, i18n("destroy_ur_rarity_tip", arg_21_0.key))
 	else
-		setText = var_5
+		setText(arg_21_0.urLabel, "")
 
-		var_5(arg_21_0.urLabel, "")
+		var_21_1 = setActive
 	end
 
-	local var_21_10 = var_4 and arg_21_0.overflow
-
-	setActive = var_6
-
-	var_6(arg_21_0.urOverflowLabel, var_21_10)
-
-	setActive = var_6
-
-	var_6(arg_21_0.urLabel, var_4)
-
-	setActive = var_6
-
-	var_6(arg_21_0.urInput, var_4)
+	var_21_1(arg_21_0.urOverflowLabel, var_21_0 and arg_21_0.overflow)
+	setActive(arg_21_0.urLabel, var_21_0)
+	setActive(arg_21_0.urInput, var_21_0)
 
 	return
 end
 
-function var_0_1.UpdateShips(arg_23_0)
-	local var_23_0 = arg_23_0.eliteShips
-	local var_23_1 = arg_23_0.highLevelShips
+function var_0_0.UpdateShips(arg_23_0)
+	local var_23_0 = table.mergeArray(arg_23_0.highLevelShips, arg_23_0.eliteShips)
 
-	table = var_1_10003
-
-	local var_23_2 = var_1_10003.mergeArray(var_23_1, var_23_0)
-
-	mergeSort = var_1_10004
-
-	local var_23_3 = var_23_2
-
-	CompareFuncs = var_1_10007
-
-	var_1_10004(var_23_3, var_1_10007({
+	mergeSort(var_23_0, CompareFuncs({
 		function(arg_24_0)
 			return -arg_24_0.level
 		end,
@@ -597,103 +255,58 @@ function var_0_1.UpdateShips(arg_23_0)
 		end
 	}, true))
 
-	arg_23_0.ships = var_23_2
+	arg_23_0.ships = var_23_0
 
-	local var_23_4 = #arg_23_0.ships
-	local var_23_9
+	if #arg_23_0.ships > 5 then
+		setActive(arg_23_0._tf:Find("window/content/ships"), true)
+		setActive(arg_23_0._tf:Find("window/content/ships_single"), false)
 
-	if 5 < var_23_4 then
-		setActive = var_23_4
+		local var_23_1 = arg_23_0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect")
 
-		local var_23_5 = arg_23_0._tf
-
-		var_23_4(var_6.Find(var_23_5, "window/content/ships"), true)
-
-		setActive = var_23_4
-
-		local var_23_6 = arg_23_0._tf
-
-		var_23_4(var_6.Find(var_23_6, "window/content/ships_single"), false)
-
-		local var_23_7 = arg_23_0._tf
-		local var_23_8 = var_23_4.Find(var_23_7, "window/content/ships/content")
-
-		var_23_9 = var_23_4.GetComponent(var_23_8, "LScrollRect")
-
-		function var_23_9.onUpdateItem(arg_26_0, arg_26_1)
-			updateShip = var_2_10002
-			tf = var_2_10004
-
-			var_2_10002(var_2_10004(arg_26_1), arg_23_0.ships[arg_26_0 + 1])
+		arg_23_0._tf:Find("window/content/ships/content"):GetComponent("LScrollRect").onUpdateItem = function(arg_26_0, arg_26_1)
+			updateShip(tf(arg_26_1), arg_23_0.ships[arg_26_0 + 1])
 
 			return
 		end
 
-		onNextTick = var_6
-
-		var_6(function()
-			local var_27_0 = var_23_9
-
-			var_0.SetTotalCount(var_27_0, #arg_23_0.ships)
+		onNextTick(function()
+			var_23_1:SetTotalCount(#arg_23_0.ships)
 
 			return
 		end)
 	else
-		setActive = var_23_4
+		setActive(arg_23_0._tf:Find("window/content/ships"), false)
+		setActive(arg_23_0._tf:Find("window/content/ships_single"), true)
 
-		local var_23_10 = arg_23_0._tf
+		local var_23_2 = arg_23_0._tf:Find("window/content/ships_single")
+		local var_23_3 = UIItemList.New(var_23_2, var_23_2:Find("IconTpl"))
 
-		var_23_4(var_6.Find(var_23_10, "window/content/ships"), false)
-
-		setActive = var_23_4
-
-		local var_23_11 = arg_23_0._tf
-
-		var_23_4(var_6.Find(var_23_11, "window/content/ships_single"), true)
-
-		local var_23_12 = arg_23_0._tf
-		local var_23_13 = var_4.Find(var_23_12, "window/content/ships_single")
-
-		UIItemList = var_23_9
-
-		local var_23_14 = var_23_9.New(var_23_13, var_23_13:Find("IconTpl"))
-
-		var_5.make(var_23_14, function(arg_28_0, arg_28_1, arg_28_2)
-			UIItemList = var_2_10003
-
-			if arg_28_0 == var_2_10003.EventUpdate then
-				updateShip = var_3
-
-				var_3(arg_28_2, arg_23_0.ships[arg_28_1 + 1])
+		var_23_3:make(function(arg_28_0, arg_28_1, arg_28_2)
+			if arg_28_0 == UIItemList.EventUpdate then
+				updateShip(arg_28_2, arg_23_0.ships[arg_28_1 + 1])
 			end
 
 			return
 		end)
-		var_5:align(#arg_23_0.ships)
+		var_23_3:align(#arg_23_0.ships)
 	end
 
 	return
 end
 
-function var_0_1.Hide(arg_29_0)
-	var_0_1.super.Hide(arg_29_0)
-
-	pg = var_1
-
-	local var_29_0 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_29_0, arg_29_0._tf, arg_29_0._parentTf)
+function var_0_0.Hide(arg_29_0)
+	var_0_0.super.Hide(arg_29_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_29_0._tf, arg_29_0._parentTf)
 
 	arg_29_0.key = nil
 	arg_29_0.callback = nil
-	setInputText = var_1
 
-	var_1(arg_29_0.urInput, "")
+	setInputText(arg_29_0.urInput, "")
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_30_0)
+function var_0_0.OnDestroy(arg_30_0)
 	if arg_30_0:isShowing() then
 		arg_30_0:Hide()
 	end
@@ -701,4 +314,4 @@ function var_0_1.OnDestroy(arg_30_0)
 	return
 end
 
-return var_0_1
+return var_0_0

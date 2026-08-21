@@ -161,17 +161,8 @@
 				2
 			},
 			doFunc = function()
-				_IslandCore = var_1_10000
-
-				if var_1_10000 then
-					_IslandCore = var_1_10000
-
-					local var_1_0 = var_1_10000:GetView()
-					local var_1_1 = var_0.NotifiyIsland
-
-					ISLAND_EX_EVT = var_1_10003
-
-					var_1_1(var_1_0, var_1_10003.PLAY_STORY, {
+				if _IslandCore then
+					_IslandCore:GetView():NotifiyIsland(ISLAND_EX_EVT.PLAY_STORY, {
 						name = "ISLAND1001012"
 					})
 				end

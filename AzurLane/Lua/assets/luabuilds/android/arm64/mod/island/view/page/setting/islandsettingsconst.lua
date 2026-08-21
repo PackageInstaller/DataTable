@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandSettingsConst")
+﻿local var_0_0 = class("IslandSettingsConst")
 
 var_0_0.ISLAND_JOY_STICK_DEFAULT_PREFERENCE = {
 	scale = 1,

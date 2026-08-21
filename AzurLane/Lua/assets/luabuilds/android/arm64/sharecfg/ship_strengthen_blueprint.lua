@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_strengthen_blueprint") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_strengthen_blueprint"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_strengthen_blueprint = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_strengthen_blueprint
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_strengthen_blueprint = rawget(pg, "ship_strengthen_blueprint") or setmetatable({
+	__name = "ship_strengthen_blueprint"
+}, confNEO)
+pg.ship_strengthen_blueprint.all = {
 	101,
 	102,
 	103,
@@ -1316,6 +1293,11 @@ var_0_3.all = {
 	3828,
 	3829,
 	3830,
+	3831,
+	3832,
+	3833,
+	3834,
+	3835,
 	3901,
 	3902,
 	3903,
@@ -1376,6 +1358,11 @@ var_0_3.all = {
 	4028,
 	4029,
 	4030,
+	4031,
+	4032,
+	4033,
+	4034,
+	4035,
 	4101,
 	4102,
 	4103,
@@ -1406,6 +1393,11 @@ var_0_3.all = {
 	4128,
 	4129,
 	4130,
+	4131,
+	4132,
+	4133,
+	4134,
+	4135,
 	4201,
 	4202,
 	4203,
@@ -1587,25 +1579,11 @@ var_0_3.all = {
 	4729,
 	4730
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_strengthen_blueprint = {}
+pg.base = pg.base or {}
+pg.base.ship_strengthen_blueprint = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_1_0[101] = {
+	pg.base.ship_strengthen_blueprint[101] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -1634,11 +1612,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"profile"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_strengthen_blueprint
-
-	var_1_1[102] = {
+	pg.base.ship_strengthen_blueprint[102] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1663,11 +1637,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			45
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_strengthen_blueprint
-
-	var_1_2[103] = {
+	pg.base.ship_strengthen_blueprint[103] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1692,11 +1662,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			45
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_strengthen_blueprint
-
-	var_1_3[104] = {
+	pg.base.ship_strengthen_blueprint[104] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1721,11 +1687,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			45
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_strengthen_blueprint
-
-	var_1_4[105] = {
+	pg.base.ship_strengthen_blueprint[105] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+199|防空+17|鱼雷底座+1|鱼雷预装填+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -1771,11 +1733,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"mission"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_strengthen_blueprint
-
-	var_1_5[106] = {
+	pg.base.ship_strengthen_blueprint[106] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1800,11 +1758,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			90
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_strengthen_blueprint
-
-	var_1_6[107] = {
+	pg.base.ship_strengthen_blueprint[107] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1829,11 +1783,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			90
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_strengthen_blueprint
-
-	var_1_7[108] = {
+	pg.base.ship_strengthen_blueprint[108] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1858,11 +1808,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			90
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_strengthen_blueprint
-
-	var_1_8[109] = {
+	pg.base.ship_strengthen_blueprint[109] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1887,11 +1833,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			90
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_strengthen_blueprint
-
-	var_1_9[110] = {
+	pg.base.ship_strengthen_blueprint[110] = {
 		effect_breakout = 299012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -1924,11 +1866,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_strengthen_blueprint
-
-	var_1_10[111] = {
+	pg.base.ship_strengthen_blueprint[111] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1953,11 +1891,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			135
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_strengthen_blueprint
-
-	var_1_11[112] = {
+	pg.base.ship_strengthen_blueprint[112] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -1982,11 +1916,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			135
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_strengthen_blueprint
-
-	var_1_12[113] = {
+	pg.base.ship_strengthen_blueprint[113] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2011,11 +1941,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			135
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_strengthen_blueprint
-
-	var_1_13[114] = {
+	pg.base.ship_strengthen_blueprint[114] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2040,11 +1966,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			135
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_strengthen_blueprint
-
-	var_1_14[115] = {
+	pg.base.ship_strengthen_blueprint[115] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+398|防空+34|主炮效率提高5%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -2085,11 +2007,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"mission_complete"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_strengthen_blueprint
-
-	var_1_15[116] = {
+	pg.base.ship_strengthen_blueprint[116] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2114,11 +2032,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			180
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_strengthen_blueprint
-
-	var_1_16[117] = {
+	pg.base.ship_strengthen_blueprint[117] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2143,11 +2057,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			180
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_strengthen_blueprint
-
-	var_1_17[118] = {
+	pg.base.ship_strengthen_blueprint[118] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2172,11 +2082,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			180
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_strengthen_blueprint
-
-	var_1_18[119] = {
+	pg.base.ship_strengthen_blueprint[119] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2201,11 +2107,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			180
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_strengthen_blueprint
-
-	var_1_19[120] = {
+	pg.base.ship_strengthen_blueprint[120] = {
 		effect_breakout = 299013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -2237,11 +2139,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_strengthen_blueprint
-
-	var_1_20[121] = {
+	pg.base.ship_strengthen_blueprint[121] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2266,11 +2164,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_strengthen_blueprint
-
-	var_1_21[122] = {
+	pg.base.ship_strengthen_blueprint[122] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2295,11 +2189,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_strengthen_blueprint
-
-	var_1_22[123] = {
+	pg.base.ship_strengthen_blueprint[123] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2324,11 +2214,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_strengthen_blueprint
-
-	var_1_23[124] = {
+	pg.base.ship_strengthen_blueprint[124] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2353,11 +2239,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_strengthen_blueprint
-
-	var_1_24[125] = {
+	pg.base.ship_strengthen_blueprint[125] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+596|防空+51|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -2397,11 +2279,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"hp_warning"
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_strengthen_blueprint
-
-	var_1_25[126] = {
+	pg.base.ship_strengthen_blueprint[126] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2426,11 +2304,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_strengthen_blueprint
-
-	var_1_26[127] = {
+	pg.base.ship_strengthen_blueprint[127] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2455,11 +2329,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_strengthen_blueprint
-
-	var_1_27[128] = {
+	pg.base.ship_strengthen_blueprint[128] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2484,11 +2354,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_strengthen_blueprint
-
-	var_1_28[129] = {
+	pg.base.ship_strengthen_blueprint[129] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2513,11 +2379,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			225
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_strengthen_blueprint
-
-	var_1_29[130] = {
+	pg.base.ship_strengthen_blueprint[130] = {
 		effect_breakout = 299014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -2546,11 +2408,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_strengthen_blueprint
-
-	var_1_30[131] = {
+	pg.base.ship_strengthen_blueprint[131] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -2580,11 +2438,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_strengthen_blueprint
-
-	var_1_31[132] = {
+	pg.base.ship_strengthen_blueprint[132] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -2614,11 +2468,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_strengthen_blueprint
-
-	var_1_32[133] = {
+	pg.base.ship_strengthen_blueprint[133] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -2648,11 +2498,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_strengthen_blueprint
-
-	var_1_33[134] = {
+	pg.base.ship_strengthen_blueprint[134] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -2682,11 +2528,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_strengthen_blueprint
-
-	var_1_34[135] = {
+	pg.base.ship_strengthen_blueprint[135] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【MKV型穿甲弹】技能强化为【MKV型穿甲弹 +】",
 		extra_desc = "",
@@ -2719,11 +2561,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			18010
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_strengthen_blueprint
-
-	var_1_35[201] = {
+	pg.base.ship_strengthen_blueprint[201] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -2752,11 +2590,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"profile"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_strengthen_blueprint
-
-	var_1_36[202] = {
+	pg.base.ship_strengthen_blueprint[202] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2781,11 +2615,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			46
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_strengthen_blueprint
-
-	var_1_37[203] = {
+	pg.base.ship_strengthen_blueprint[203] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2810,11 +2640,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			46
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_strengthen_blueprint
-
-	var_1_38[204] = {
+	pg.base.ship_strengthen_blueprint[204] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2839,11 +2665,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			46
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_strengthen_blueprint
-
-	var_1_39[205] = {
+	pg.base.ship_strengthen_blueprint[205] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+325|防空+11|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -2884,11 +2706,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"mission"
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_strengthen_blueprint
-
-	var_1_40[206] = {
+	pg.base.ship_strengthen_blueprint[206] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2913,11 +2731,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			92
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_strengthen_blueprint
-
-	var_1_41[207] = {
+	pg.base.ship_strengthen_blueprint[207] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2942,11 +2756,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			92
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_strengthen_blueprint
-
-	var_1_42[208] = {
+	pg.base.ship_strengthen_blueprint[208] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -2971,11 +2781,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			92
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_strengthen_blueprint
-
-	var_1_43[209] = {
+	pg.base.ship_strengthen_blueprint[209] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3000,11 +2806,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			92
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_strengthen_blueprint
-
-	var_1_44[210] = {
+	pg.base.ship_strengthen_blueprint[210] = {
 		effect_breakout = 299022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -3037,11 +2839,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_strengthen_blueprint
-
-	var_1_45[211] = {
+	pg.base.ship_strengthen_blueprint[211] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3066,11 +2864,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			138
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_strengthen_blueprint
-
-	var_1_46[212] = {
+	pg.base.ship_strengthen_blueprint[212] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3095,11 +2889,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			138
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_strengthen_blueprint
-
-	var_1_47[213] = {
+	pg.base.ship_strengthen_blueprint[213] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3124,11 +2914,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			138
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_strengthen_blueprint
-
-	var_1_48[214] = {
+	pg.base.ship_strengthen_blueprint[214] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3153,11 +2939,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			138
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_strengthen_blueprint
-
-	var_1_49[215] = {
+	pg.base.ship_strengthen_blueprint[215] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+651|防空+21|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -3198,11 +2980,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"mission_complete"
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_strengthen_blueprint
-
-	var_1_50[216] = {
+	pg.base.ship_strengthen_blueprint[216] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3227,11 +3005,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			184
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_strengthen_blueprint
-
-	var_1_51[217] = {
+	pg.base.ship_strengthen_blueprint[217] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3256,11 +3030,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			184
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_strengthen_blueprint
-
-	var_1_52[218] = {
+	pg.base.ship_strengthen_blueprint[218] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3285,11 +3055,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			184
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_strengthen_blueprint
-
-	var_1_53[219] = {
+	pg.base.ship_strengthen_blueprint[219] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3314,11 +3080,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			184
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_strengthen_blueprint
-
-	var_1_54[220] = {
+	pg.base.ship_strengthen_blueprint[220] = {
 		effect_breakout = 299023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -3351,11 +3113,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_strengthen_blueprint
-
-	var_1_55[221] = {
+	pg.base.ship_strengthen_blueprint[221] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3380,11 +3138,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_strengthen_blueprint
-
-	var_1_56[222] = {
+	pg.base.ship_strengthen_blueprint[222] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3409,11 +3163,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_strengthen_blueprint
-
-	var_1_57[223] = {
+	pg.base.ship_strengthen_blueprint[223] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3438,11 +3188,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_strengthen_blueprint
-
-	var_1_58[224] = {
+	pg.base.ship_strengthen_blueprint[224] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3467,11 +3213,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_strengthen_blueprint
-
-	var_1_59[225] = {
+	pg.base.ship_strengthen_blueprint[225] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+976|防空+31|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -3511,11 +3253,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"hp_warning"
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_strengthen_blueprint
-
-	var_1_60[226] = {
+	pg.base.ship_strengthen_blueprint[226] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3540,11 +3278,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_strengthen_blueprint
-
-	var_1_61[227] = {
+	pg.base.ship_strengthen_blueprint[227] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3569,11 +3303,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_strengthen_blueprint
-
-	var_1_62[228] = {
+	pg.base.ship_strengthen_blueprint[228] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3598,11 +3328,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_strengthen_blueprint
-
-	var_1_63[229] = {
+	pg.base.ship_strengthen_blueprint[229] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3627,11 +3353,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			230
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_strengthen_blueprint
-
-	var_1_64[230] = {
+	pg.base.ship_strengthen_blueprint[230] = {
 		effect_breakout = 299024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -3660,11 +3382,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_strengthen_blueprint
-
-	var_1_65[231] = {
+	pg.base.ship_strengthen_blueprint[231] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -3694,11 +3412,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_strengthen_blueprint
-
-	var_1_66[232] = {
+	pg.base.ship_strengthen_blueprint[232] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -3728,11 +3442,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_strengthen_blueprint
-
-	var_1_67[233] = {
+	pg.base.ship_strengthen_blueprint[233] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -3762,11 +3472,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_strengthen_blueprint
-
-	var_1_68[234] = {
+	pg.base.ship_strengthen_blueprint[234] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -3796,11 +3502,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_strengthen_blueprint
-
-	var_1_69[235] = {
+	pg.base.ship_strengthen_blueprint[235] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【底力爆发】技能强化为【底力爆发 +】",
 		extra_desc = "",
@@ -3833,11 +3535,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			18040
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_strengthen_blueprint
-
-	var_1_70[301] = {
+	pg.base.ship_strengthen_blueprint[301] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -3866,11 +3564,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"profile"
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_strengthen_blueprint
-
-	var_1_71[302] = {
+	pg.base.ship_strengthen_blueprint[302] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3895,11 +3589,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			51
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_strengthen_blueprint
-
-	var_1_72[303] = {
+	pg.base.ship_strengthen_blueprint[303] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3924,11 +3614,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			51
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_strengthen_blueprint
-
-	var_1_73[304] = {
+	pg.base.ship_strengthen_blueprint[304] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -3953,11 +3639,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			51
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_strengthen_blueprint
-
-	var_1_74[305] = {
+	pg.base.ship_strengthen_blueprint[305] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+201|防空+9|机动+5|鱼雷底座+1|鱼雷预装填+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -4007,11 +3689,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"mission"
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_strengthen_blueprint
-
-	var_1_75[306] = {
+	pg.base.ship_strengthen_blueprint[306] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4036,11 +3714,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			102
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_strengthen_blueprint
-
-	var_1_76[307] = {
+	pg.base.ship_strengthen_blueprint[307] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4065,11 +3739,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			102
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_strengthen_blueprint
-
-	var_1_77[308] = {
+	pg.base.ship_strengthen_blueprint[308] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4094,11 +3764,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			102
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_strengthen_blueprint
-
-	var_1_78[309] = {
+	pg.base.ship_strengthen_blueprint[309] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4123,11 +3789,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			102
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_strengthen_blueprint
-
-	var_1_79[310] = {
+	pg.base.ship_strengthen_blueprint[310] = {
 		effect_breakout = 399012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -4160,11 +3822,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_strengthen_blueprint
-
-	var_1_80[311] = {
+	pg.base.ship_strengthen_blueprint[311] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4189,11 +3847,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			153
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_strengthen_blueprint
-
-	var_1_81[312] = {
+	pg.base.ship_strengthen_blueprint[312] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4218,11 +3872,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			153
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_strengthen_blueprint
-
-	var_1_82[313] = {
+	pg.base.ship_strengthen_blueprint[313] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4247,11 +3897,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			153
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_strengthen_blueprint
-
-	var_1_83[314] = {
+	pg.base.ship_strengthen_blueprint[314] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4276,11 +3922,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			153
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_strengthen_blueprint
-
-	var_1_84[315] = {
+	pg.base.ship_strengthen_blueprint[315] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+402|防空+18|主炮效率提高10%|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -4325,11 +3967,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"mission_complete"
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_strengthen_blueprint
-
-	var_1_85[316] = {
+	pg.base.ship_strengthen_blueprint[316] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4354,11 +3992,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			204
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_strengthen_blueprint
-
-	var_1_86[317] = {
+	pg.base.ship_strengthen_blueprint[317] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4383,11 +4017,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			204
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_strengthen_blueprint
-
-	var_1_87[318] = {
+	pg.base.ship_strengthen_blueprint[318] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4412,11 +4042,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			204
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_strengthen_blueprint
-
-	var_1_88[319] = {
+	pg.base.ship_strengthen_blueprint[319] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4441,11 +4067,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			204
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_strengthen_blueprint
-
-	var_1_89[320] = {
+	pg.base.ship_strengthen_blueprint[320] = {
 		effect_breakout = 399013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -4477,11 +4099,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_strengthen_blueprint
-
-	var_1_90[321] = {
+	pg.base.ship_strengthen_blueprint[321] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4506,11 +4124,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_strengthen_blueprint
-
-	var_1_91[322] = {
+	pg.base.ship_strengthen_blueprint[322] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4535,11 +4149,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_strengthen_blueprint
-
-	var_1_92[323] = {
+	pg.base.ship_strengthen_blueprint[323] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4564,11 +4174,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_strengthen_blueprint
-
-	var_1_93[324] = {
+	pg.base.ship_strengthen_blueprint[324] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4593,11 +4199,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_strengthen_blueprint
-
-	var_1_94[325] = {
+	pg.base.ship_strengthen_blueprint[325] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+603|防空+26|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -4638,11 +4240,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			"hp_warning"
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_strengthen_blueprint
-
-	var_1_95[326] = {
+	pg.base.ship_strengthen_blueprint[326] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4667,11 +4265,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_strengthen_blueprint
-
-	var_1_96[327] = {
+	pg.base.ship_strengthen_blueprint[327] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4696,11 +4290,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_strengthen_blueprint
-
-	var_1_97[328] = {
+	pg.base.ship_strengthen_blueprint[328] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4725,11 +4315,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_strengthen_blueprint
-
-	var_1_98[329] = {
+	pg.base.ship_strengthen_blueprint[329] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -4754,8 +4340,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 			255
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_strengthen_blueprint[330] = {
+	pg.base.ship_strengthen_blueprint[330] = {
 		effect_breakout = 399014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -4788,11 +4373,7 @@ var_0_3.base.ship_strengthen_blueprint = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_2_0[331] = {
+	pg.base.ship_strengthen_blueprint[331] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -4822,11 +4403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_strengthen_blueprint
-
-	var_2_1[332] = {
+	pg.base.ship_strengthen_blueprint[332] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -4856,11 +4433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_strengthen_blueprint
-
-	var_2_2[333] = {
+	pg.base.ship_strengthen_blueprint[333] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -4890,11 +4463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_strengthen_blueprint
-
-	var_2_3[334] = {
+	pg.base.ship_strengthen_blueprint[334] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -4924,11 +4493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_strengthen_blueprint
-
-	var_2_4[335] = {
+	pg.base.ship_strengthen_blueprint[335] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【心神合一】技能强化为【心神合一 +】",
 		extra_desc = "",
@@ -4961,11 +4526,7 @@ end)()
 			18050
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_strengthen_blueprint
-
-	var_2_5[401] = {
+	pg.base.ship_strengthen_blueprint[401] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -4994,11 +4555,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_strengthen_blueprint
-
-	var_2_6[402] = {
+	pg.base.ship_strengthen_blueprint[402] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5023,11 +4580,7 @@ end)()
 			40
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_strengthen_blueprint
-
-	var_2_7[403] = {
+	pg.base.ship_strengthen_blueprint[403] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5052,11 +4605,7 @@ end)()
 			40
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_strengthen_blueprint
-
-	var_2_8[404] = {
+	pg.base.ship_strengthen_blueprint[404] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5081,11 +4630,7 @@ end)()
 			40
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_strengthen_blueprint
-
-	var_2_9[405] = {
+	pg.base.ship_strengthen_blueprint[405] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+347|防空+11|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -5126,11 +4671,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_strengthen_blueprint
-
-	var_2_10[406] = {
+	pg.base.ship_strengthen_blueprint[406] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5155,11 +4696,7 @@ end)()
 			80
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_strengthen_blueprint
-
-	var_2_11[407] = {
+	pg.base.ship_strengthen_blueprint[407] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5184,11 +4721,7 @@ end)()
 			80
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_strengthen_blueprint
-
-	var_2_12[408] = {
+	pg.base.ship_strengthen_blueprint[408] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5213,11 +4746,7 @@ end)()
 			80
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_strengthen_blueprint
-
-	var_2_13[409] = {
+	pg.base.ship_strengthen_blueprint[409] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5242,11 +4771,7 @@ end)()
 			80
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_strengthen_blueprint
-
-	var_2_14[410] = {
+	pg.base.ship_strengthen_blueprint[410] = {
 		effect_breakout = 399022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -5279,11 +4804,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_strengthen_blueprint
-
-	var_2_15[411] = {
+	pg.base.ship_strengthen_blueprint[411] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5308,11 +4829,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_strengthen_blueprint
-
-	var_2_16[412] = {
+	pg.base.ship_strengthen_blueprint[412] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5337,11 +4854,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_strengthen_blueprint
-
-	var_2_17[413] = {
+	pg.base.ship_strengthen_blueprint[413] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5366,11 +4879,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_strengthen_blueprint
-
-	var_2_18[414] = {
+	pg.base.ship_strengthen_blueprint[414] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5395,11 +4904,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_strengthen_blueprint
-
-	var_2_19[415] = {
+	pg.base.ship_strengthen_blueprint[415] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+694|防空+21|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -5440,11 +4945,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_strengthen_blueprint
-
-	var_2_20[416] = {
+	pg.base.ship_strengthen_blueprint[416] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5469,11 +4970,7 @@ end)()
 			160
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_strengthen_blueprint
-
-	var_2_21[417] = {
+	pg.base.ship_strengthen_blueprint[417] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5498,11 +4995,7 @@ end)()
 			160
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_strengthen_blueprint
-
-	var_2_22[418] = {
+	pg.base.ship_strengthen_blueprint[418] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5527,11 +5020,7 @@ end)()
 			160
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_strengthen_blueprint
-
-	var_2_23[419] = {
+	pg.base.ship_strengthen_blueprint[419] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5556,11 +5045,7 @@ end)()
 			160
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_strengthen_blueprint
-
-	var_2_24[420] = {
+	pg.base.ship_strengthen_blueprint[420] = {
 		effect_breakout = 399023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -5593,11 +5078,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_strengthen_blueprint
-
-	var_2_25[421] = {
+	pg.base.ship_strengthen_blueprint[421] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5622,11 +5103,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_strengthen_blueprint
-
-	var_2_26[422] = {
+	pg.base.ship_strengthen_blueprint[422] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5651,11 +5128,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_strengthen_blueprint
-
-	var_2_27[423] = {
+	pg.base.ship_strengthen_blueprint[423] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5680,11 +5153,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_strengthen_blueprint
-
-	var_2_28[424] = {
+	pg.base.ship_strengthen_blueprint[424] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5709,11 +5178,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_strengthen_blueprint
-
-	var_2_29[425] = {
+	pg.base.ship_strengthen_blueprint[425] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1041|防空+33|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -5753,11 +5218,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_strengthen_blueprint
-
-	var_2_30[426] = {
+	pg.base.ship_strengthen_blueprint[426] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5782,11 +5243,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_strengthen_blueprint
-
-	var_2_31[427] = {
+	pg.base.ship_strengthen_blueprint[427] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5811,11 +5268,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_strengthen_blueprint
-
-	var_2_32[428] = {
+	pg.base.ship_strengthen_blueprint[428] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5840,11 +5293,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_strengthen_blueprint
-
-	var_2_33[429] = {
+	pg.base.ship_strengthen_blueprint[429] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -5869,11 +5318,7 @@ end)()
 			200
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_strengthen_blueprint
-
-	var_2_34[430] = {
+	pg.base.ship_strengthen_blueprint[430] = {
 		effect_breakout = 399024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -5902,11 +5347,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_strengthen_blueprint
-
-	var_2_35[431] = {
+	pg.base.ship_strengthen_blueprint[431] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -5936,11 +5377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_strengthen_blueprint
-
-	var_2_36[432] = {
+	pg.base.ship_strengthen_blueprint[432] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -5970,11 +5407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_strengthen_blueprint
-
-	var_2_37[433] = {
+	pg.base.ship_strengthen_blueprint[433] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -6004,11 +5437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_strengthen_blueprint
-
-	var_2_38[434] = {
+	pg.base.ship_strengthen_blueprint[434] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -6038,11 +5467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_strengthen_blueprint
-
-	var_2_39[435] = {
+	pg.base.ship_strengthen_blueprint[435] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【神话之传承】技能强化为【神话之传承 +】",
 		extra_desc = "",
@@ -6075,11 +5500,7 @@ end)()
 			18070
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_strengthen_blueprint
-
-	var_2_40[501] = {
+	pg.base.ship_strengthen_blueprint[501] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -6108,11 +5529,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_strengthen_blueprint
-
-	var_2_41[502] = {
+	pg.base.ship_strengthen_blueprint[502] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6137,11 +5554,7 @@ end)()
 			47
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_strengthen_blueprint
-
-	var_2_42[503] = {
+	pg.base.ship_strengthen_blueprint[503] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6166,11 +5579,7 @@ end)()
 			47
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_strengthen_blueprint
-
-	var_2_43[504] = {
+	pg.base.ship_strengthen_blueprint[504] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6195,11 +5604,7 @@ end)()
 			47
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_strengthen_blueprint
-
-	var_2_44[505] = {
+	pg.base.ship_strengthen_blueprint[505] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+254|防空+11|机动+5|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -6245,11 +5650,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_strengthen_blueprint
-
-	var_2_45[506] = {
+	pg.base.ship_strengthen_blueprint[506] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6274,11 +5675,7 @@ end)()
 			94
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_strengthen_blueprint
-
-	var_2_46[507] = {
+	pg.base.ship_strengthen_blueprint[507] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6303,11 +5700,7 @@ end)()
 			94
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_strengthen_blueprint
-
-	var_2_47[508] = {
+	pg.base.ship_strengthen_blueprint[508] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6332,11 +5725,7 @@ end)()
 			94
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_strengthen_blueprint
-
-	var_2_48[509] = {
+	pg.base.ship_strengthen_blueprint[509] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6361,11 +5750,7 @@ end)()
 			94
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_strengthen_blueprint
-
-	var_2_49[510] = {
+	pg.base.ship_strengthen_blueprint[510] = {
 		effect_breakout = 499012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -6398,11 +5783,7 @@ end)()
 			"全武器效率提高2%"
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_strengthen_blueprint
-
-	var_2_50[511] = {
+	pg.base.ship_strengthen_blueprint[511] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6427,11 +5808,7 @@ end)()
 			141
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_strengthen_blueprint
-
-	var_2_51[512] = {
+	pg.base.ship_strengthen_blueprint[512] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6456,11 +5833,7 @@ end)()
 			141
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_strengthen_blueprint
-
-	var_2_52[513] = {
+	pg.base.ship_strengthen_blueprint[513] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6485,11 +5858,7 @@ end)()
 			141
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_strengthen_blueprint
-
-	var_2_53[514] = {
+	pg.base.ship_strengthen_blueprint[514] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6514,11 +5883,7 @@ end)()
 			141
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_strengthen_blueprint
-
-	var_2_54[515] = {
+	pg.base.ship_strengthen_blueprint[515] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+508|防空+21|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -6559,11 +5924,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_strengthen_blueprint
-
-	var_2_55[516] = {
+	pg.base.ship_strengthen_blueprint[516] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6588,11 +5949,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_strengthen_blueprint
-
-	var_2_56[517] = {
+	pg.base.ship_strengthen_blueprint[517] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6617,11 +5974,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_strengthen_blueprint
-
-	var_2_57[518] = {
+	pg.base.ship_strengthen_blueprint[518] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6646,11 +5999,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_strengthen_blueprint
-
-	var_2_58[519] = {
+	pg.base.ship_strengthen_blueprint[519] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6675,11 +6024,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_strengthen_blueprint
-
-	var_2_59[520] = {
+	pg.base.ship_strengthen_blueprint[520] = {
 		effect_breakout = 499013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -6711,11 +6056,7 @@ end)()
 			"全武器效率提高3%"
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_strengthen_blueprint
-
-	var_2_60[521] = {
+	pg.base.ship_strengthen_blueprint[521] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6740,11 +6081,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_strengthen_blueprint
-
-	var_2_61[522] = {
+	pg.base.ship_strengthen_blueprint[522] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6769,11 +6106,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_strengthen_blueprint
-
-	var_2_62[523] = {
+	pg.base.ship_strengthen_blueprint[523] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6798,11 +6131,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_strengthen_blueprint
-
-	var_2_63[524] = {
+	pg.base.ship_strengthen_blueprint[524] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6827,11 +6156,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_strengthen_blueprint
-
-	var_2_64[525] = {
+	pg.base.ship_strengthen_blueprint[525] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+761|防空+32|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -6872,11 +6197,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_strengthen_blueprint
-
-	var_2_65[526] = {
+	pg.base.ship_strengthen_blueprint[526] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6901,11 +6222,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_strengthen_blueprint
-
-	var_2_66[527] = {
+	pg.base.ship_strengthen_blueprint[527] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6930,11 +6247,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_strengthen_blueprint
-
-	var_2_67[528] = {
+	pg.base.ship_strengthen_blueprint[528] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6959,11 +6272,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_strengthen_blueprint
-
-	var_2_68[529] = {
+	pg.base.ship_strengthen_blueprint[529] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -6988,11 +6297,7 @@ end)()
 			235
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_strengthen_blueprint
-
-	var_2_69[530] = {
+	pg.base.ship_strengthen_blueprint[530] = {
 		effect_breakout = 499014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -7021,11 +6326,7 @@ end)()
 			"专属弹幕升级"
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_strengthen_blueprint
-
-	var_2_70[531] = {
+	pg.base.ship_strengthen_blueprint[531] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -7055,11 +6356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_strengthen_blueprint
-
-	var_2_71[532] = {
+	pg.base.ship_strengthen_blueprint[532] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -7089,11 +6386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_strengthen_blueprint
-
-	var_2_72[533] = {
+	pg.base.ship_strengthen_blueprint[533] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -7123,11 +6416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_strengthen_blueprint
-
-	var_2_73[534] = {
+	pg.base.ship_strengthen_blueprint[534] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -7157,11 +6446,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_strengthen_blueprint
-
-	var_2_74[535] = {
+	pg.base.ship_strengthen_blueprint[535] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【全方位装甲】技能强化为【全方位装甲 +】",
 		extra_desc = "",
@@ -7194,11 +6479,7 @@ end)()
 			18100
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_strengthen_blueprint
-
-	var_2_75[601] = {
+	pg.base.ship_strengthen_blueprint[601] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -7227,11 +6508,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_strengthen_blueprint
-
-	var_2_76[602] = {
+	pg.base.ship_strengthen_blueprint[602] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7256,11 +6533,7 @@ end)()
 			52
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_strengthen_blueprint
-
-	var_2_77[603] = {
+	pg.base.ship_strengthen_blueprint[603] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7285,11 +6558,7 @@ end)()
 			52
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_strengthen_blueprint
-
-	var_2_78[604] = {
+	pg.base.ship_strengthen_blueprint[604] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7314,11 +6583,7 @@ end)()
 			52
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_strengthen_blueprint
-
-	var_2_79[605] = {
+	pg.base.ship_strengthen_blueprint[605] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+230|防空+11|机动+5|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -7364,11 +6629,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_strengthen_blueprint
-
-	var_2_80[606] = {
+	pg.base.ship_strengthen_blueprint[606] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7393,11 +6654,7 @@ end)()
 			104
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_strengthen_blueprint
-
-	var_2_81[607] = {
+	pg.base.ship_strengthen_blueprint[607] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7422,11 +6679,7 @@ end)()
 			104
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_strengthen_blueprint
-
-	var_2_82[608] = {
+	pg.base.ship_strengthen_blueprint[608] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7451,11 +6704,7 @@ end)()
 			104
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_strengthen_blueprint
-
-	var_2_83[609] = {
+	pg.base.ship_strengthen_blueprint[609] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7480,11 +6729,7 @@ end)()
 			104
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_strengthen_blueprint
-
-	var_2_84[610] = {
+	pg.base.ship_strengthen_blueprint[610] = {
 		effect_breakout = 899012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -7517,11 +6762,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_strengthen_blueprint
-
-	var_2_85[611] = {
+	pg.base.ship_strengthen_blueprint[611] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7546,11 +6787,7 @@ end)()
 			156
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_strengthen_blueprint
-
-	var_2_86[612] = {
+	pg.base.ship_strengthen_blueprint[612] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7575,11 +6812,7 @@ end)()
 			156
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_strengthen_blueprint
-
-	var_2_87[613] = {
+	pg.base.ship_strengthen_blueprint[613] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7604,11 +6837,7 @@ end)()
 			156
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_strengthen_blueprint
-
-	var_2_88[614] = {
+	pg.base.ship_strengthen_blueprint[614] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7633,11 +6862,7 @@ end)()
 			156
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_strengthen_blueprint
-
-	var_2_89[615] = {
+	pg.base.ship_strengthen_blueprint[615] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+460|防空+23|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -7678,11 +6903,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_strengthen_blueprint
-
-	var_2_90[616] = {
+	pg.base.ship_strengthen_blueprint[616] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7707,11 +6928,7 @@ end)()
 			208
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_strengthen_blueprint
-
-	var_2_91[617] = {
+	pg.base.ship_strengthen_blueprint[617] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7736,11 +6953,7 @@ end)()
 			208
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_strengthen_blueprint
-
-	var_2_92[618] = {
+	pg.base.ship_strengthen_blueprint[618] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7765,11 +6978,7 @@ end)()
 			208
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_strengthen_blueprint
-
-	var_2_93[619] = {
+	pg.base.ship_strengthen_blueprint[619] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7794,11 +7003,7 @@ end)()
 			208
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_strengthen_blueprint
-
-	var_2_94[620] = {
+	pg.base.ship_strengthen_blueprint[620] = {
 		effect_breakout = 899013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -7830,11 +7035,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_strengthen_blueprint
-
-	var_2_95[621] = {
+	pg.base.ship_strengthen_blueprint[621] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7859,11 +7060,7 @@ end)()
 			260
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_strengthen_blueprint
-
-	var_2_96[622] = {
+	pg.base.ship_strengthen_blueprint[622] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7888,11 +7085,7 @@ end)()
 			260
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_strengthen_blueprint
-
-	var_2_97[623] = {
+	pg.base.ship_strengthen_blueprint[623] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7917,11 +7110,7 @@ end)()
 			260
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_strengthen_blueprint
-
-	var_2_98[624] = {
+	pg.base.ship_strengthen_blueprint[624] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -7946,8 +7135,7 @@ end)()
 			260
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_strengthen_blueprint[625] = {
+	pg.base.ship_strengthen_blueprint[625] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+690|防空+34|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -7992,11 +7180,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_3_0[626] = {
+	pg.base.ship_strengthen_blueprint[626] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8021,11 +7205,7 @@ end)()
 			260
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_strengthen_blueprint
-
-	var_3_1[627] = {
+	pg.base.ship_strengthen_blueprint[627] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8050,11 +7230,7 @@ end)()
 			260
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_strengthen_blueprint
-
-	var_3_2[628] = {
+	pg.base.ship_strengthen_blueprint[628] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8079,11 +7255,7 @@ end)()
 			260
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_strengthen_blueprint
-
-	var_3_3[629] = {
+	pg.base.ship_strengthen_blueprint[629] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8108,11 +7280,7 @@ end)()
 			260
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_strengthen_blueprint
-
-	var_3_4[630] = {
+	pg.base.ship_strengthen_blueprint[630] = {
 		effect_breakout = 899014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -8141,11 +7309,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_strengthen_blueprint
-
-	var_3_5[631] = {
+	pg.base.ship_strengthen_blueprint[631] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -8175,11 +7339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_strengthen_blueprint
-
-	var_3_6[632] = {
+	pg.base.ship_strengthen_blueprint[632] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -8209,11 +7369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_strengthen_blueprint
-
-	var_3_7[633] = {
+	pg.base.ship_strengthen_blueprint[633] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -8243,11 +7399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_strengthen_blueprint
-
-	var_3_8[634] = {
+	pg.base.ship_strengthen_blueprint[634] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -8277,11 +7429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_strengthen_blueprint
-
-	var_3_9[635] = {
+	pg.base.ship_strengthen_blueprint[635] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【Engine boost】技能强化为【Engine boost +】",
 		extra_desc = "",
@@ -8314,11 +7462,7 @@ end)()
 			18120
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_strengthen_blueprint
-
-	var_3_10[701] = {
+	pg.base.ship_strengthen_blueprint[701] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -8347,11 +7491,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_strengthen_blueprint
-
-	var_3_11[702] = {
+	pg.base.ship_strengthen_blueprint[702] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8376,11 +7516,7 @@ end)()
 			43
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_strengthen_blueprint
-
-	var_3_12[703] = {
+	pg.base.ship_strengthen_blueprint[703] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8405,11 +7541,7 @@ end)()
 			43
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_strengthen_blueprint
-
-	var_3_13[704] = {
+	pg.base.ship_strengthen_blueprint[704] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8434,11 +7566,7 @@ end)()
 			43
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_strengthen_blueprint
-
-	var_3_14[705] = {
+	pg.base.ship_strengthen_blueprint[705] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+225|防空+17|主武器底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -8480,11 +7608,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_strengthen_blueprint
-
-	var_3_15[706] = {
+	pg.base.ship_strengthen_blueprint[706] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8509,11 +7633,7 @@ end)()
 			86
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_strengthen_blueprint
-
-	var_3_16[707] = {
+	pg.base.ship_strengthen_blueprint[707] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8538,11 +7658,7 @@ end)()
 			86
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_strengthen_blueprint
-
-	var_3_17[708] = {
+	pg.base.ship_strengthen_blueprint[708] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8567,11 +7683,7 @@ end)()
 			86
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_strengthen_blueprint
-
-	var_3_18[709] = {
+	pg.base.ship_strengthen_blueprint[709] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8596,11 +7708,7 @@ end)()
 			86
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_strengthen_blueprint
-
-	var_3_19[710] = {
+	pg.base.ship_strengthen_blueprint[710] = {
 		effect_breakout = 199012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -8633,11 +7741,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_strengthen_blueprint
-
-	var_3_20[711] = {
+	pg.base.ship_strengthen_blueprint[711] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8662,11 +7766,7 @@ end)()
 			129
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_strengthen_blueprint
-
-	var_3_21[712] = {
+	pg.base.ship_strengthen_blueprint[712] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8691,11 +7791,7 @@ end)()
 			129
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_strengthen_blueprint
-
-	var_3_22[713] = {
+	pg.base.ship_strengthen_blueprint[713] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8720,11 +7816,7 @@ end)()
 			129
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_strengthen_blueprint
-
-	var_3_23[714] = {
+	pg.base.ship_strengthen_blueprint[714] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8749,11 +7841,7 @@ end)()
 			129
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_strengthen_blueprint
-
-	var_3_24[715] = {
+	pg.base.ship_strengthen_blueprint[715] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+451|防空+34|主炮效率提高5%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -8794,11 +7882,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_strengthen_blueprint
-
-	var_3_25[716] = {
+	pg.base.ship_strengthen_blueprint[716] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8823,11 +7907,7 @@ end)()
 			172
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_strengthen_blueprint
-
-	var_3_26[717] = {
+	pg.base.ship_strengthen_blueprint[717] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8852,11 +7932,7 @@ end)()
 			172
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_strengthen_blueprint
-
-	var_3_27[718] = {
+	pg.base.ship_strengthen_blueprint[718] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8881,11 +7957,7 @@ end)()
 			172
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_strengthen_blueprint
-
-	var_3_28[719] = {
+	pg.base.ship_strengthen_blueprint[719] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8910,11 +7982,7 @@ end)()
 			172
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_strengthen_blueprint
-
-	var_3_29[720] = {
+	pg.base.ship_strengthen_blueprint[720] = {
 		effect_breakout = 199013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -8947,11 +8015,7 @@ end)()
 			"副武器栏位可以装备主炮"
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_strengthen_blueprint
-
-	var_3_30[721] = {
+	pg.base.ship_strengthen_blueprint[721] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -8976,11 +8040,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_strengthen_blueprint
-
-	var_3_31[722] = {
+	pg.base.ship_strengthen_blueprint[722] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9005,11 +8065,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_strengthen_blueprint
-
-	var_3_32[723] = {
+	pg.base.ship_strengthen_blueprint[723] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9034,11 +8090,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_strengthen_blueprint
-
-	var_3_33[724] = {
+	pg.base.ship_strengthen_blueprint[724] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9063,11 +8115,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_strengthen_blueprint
-
-	var_3_34[725] = {
+	pg.base.ship_strengthen_blueprint[725] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+677|防空+51|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -9107,11 +8155,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_strengthen_blueprint
-
-	var_3_35[726] = {
+	pg.base.ship_strengthen_blueprint[726] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9136,11 +8180,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_strengthen_blueprint
-
-	var_3_36[727] = {
+	pg.base.ship_strengthen_blueprint[727] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9165,11 +8205,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_strengthen_blueprint
-
-	var_3_37[728] = {
+	pg.base.ship_strengthen_blueprint[728] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9194,11 +8230,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_strengthen_blueprint
-
-	var_3_38[729] = {
+	pg.base.ship_strengthen_blueprint[729] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9223,11 +8255,7 @@ end)()
 			215
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_strengthen_blueprint
-
-	var_3_39[730] = {
+	pg.base.ship_strengthen_blueprint[730] = {
 		effect_breakout = 199014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -9256,11 +8284,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_strengthen_blueprint
-
-	var_3_40[731] = {
+	pg.base.ship_strengthen_blueprint[731] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -9290,11 +8314,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_strengthen_blueprint
-
-	var_3_41[732] = {
+	pg.base.ship_strengthen_blueprint[732] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -9324,11 +8344,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_strengthen_blueprint
-
-	var_3_42[733] = {
+	pg.base.ship_strengthen_blueprint[733] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -9358,11 +8374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_strengthen_blueprint
-
-	var_3_43[734] = {
+	pg.base.ship_strengthen_blueprint[734] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -9392,11 +8404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_strengthen_blueprint
-
-	var_3_44[735] = {
+	pg.base.ship_strengthen_blueprint[735] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【飞行NG!】技能强化为【飞行NG! +】",
 		extra_desc = "",
@@ -9429,11 +8437,7 @@ end)()
 			18130
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_strengthen_blueprint
-
-	var_3_45[801] = {
+	pg.base.ship_strengthen_blueprint[801] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -9462,11 +8466,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_strengthen_blueprint
-
-	var_3_46[802] = {
+	pg.base.ship_strengthen_blueprint[802] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9491,11 +8491,7 @@ end)()
 			45
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_strengthen_blueprint
-
-	var_3_47[803] = {
+	pg.base.ship_strengthen_blueprint[803] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9520,11 +8516,7 @@ end)()
 			45
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_strengthen_blueprint
-
-	var_3_48[804] = {
+	pg.base.ship_strengthen_blueprint[804] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9549,11 +8541,7 @@ end)()
 			45
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_strengthen_blueprint
-
-	var_3_49[805] = {
+	pg.base.ship_strengthen_blueprint[805] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+356|防空+19|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -9594,11 +8582,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_strengthen_blueprint
-
-	var_3_50[806] = {
+	pg.base.ship_strengthen_blueprint[806] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9623,11 +8607,7 @@ end)()
 			90
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_strengthen_blueprint
-
-	var_3_51[807] = {
+	pg.base.ship_strengthen_blueprint[807] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9652,11 +8632,7 @@ end)()
 			90
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_strengthen_blueprint
-
-	var_3_52[808] = {
+	pg.base.ship_strengthen_blueprint[808] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9681,11 +8657,7 @@ end)()
 			90
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_strengthen_blueprint
-
-	var_3_53[809] = {
+	pg.base.ship_strengthen_blueprint[809] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9710,11 +8682,7 @@ end)()
 			90
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_strengthen_blueprint
-
-	var_3_54[810] = {
+	pg.base.ship_strengthen_blueprint[810] = {
 		effect_breakout = 199022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -9747,11 +8715,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_strengthen_blueprint
-
-	var_3_55[811] = {
+	pg.base.ship_strengthen_blueprint[811] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9776,11 +8740,7 @@ end)()
 			135
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_strengthen_blueprint
-
-	var_3_56[812] = {
+	pg.base.ship_strengthen_blueprint[812] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9805,11 +8765,7 @@ end)()
 			135
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_strengthen_blueprint
-
-	var_3_57[813] = {
+	pg.base.ship_strengthen_blueprint[813] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9834,11 +8790,7 @@ end)()
 			135
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_strengthen_blueprint
-
-	var_3_58[814] = {
+	pg.base.ship_strengthen_blueprint[814] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9863,11 +8815,7 @@ end)()
 			135
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_strengthen_blueprint
-
-	var_3_59[815] = {
+	pg.base.ship_strengthen_blueprint[815] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+711|防空+39|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -9908,11 +8856,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_strengthen_blueprint
-
-	var_3_60[816] = {
+	pg.base.ship_strengthen_blueprint[816] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9937,11 +8881,7 @@ end)()
 			180
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_strengthen_blueprint
-
-	var_3_61[817] = {
+	pg.base.ship_strengthen_blueprint[817] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9966,11 +8906,7 @@ end)()
 			180
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_strengthen_blueprint
-
-	var_3_62[818] = {
+	pg.base.ship_strengthen_blueprint[818] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -9995,11 +8931,7 @@ end)()
 			180
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_strengthen_blueprint
-
-	var_3_63[819] = {
+	pg.base.ship_strengthen_blueprint[819] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10024,11 +8956,7 @@ end)()
 			180
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_strengthen_blueprint
-
-	var_3_64[820] = {
+	pg.base.ship_strengthen_blueprint[820] = {
 		effect_breakout = 199023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -10061,11 +8989,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_strengthen_blueprint
-
-	var_3_65[821] = {
+	pg.base.ship_strengthen_blueprint[821] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10090,11 +9014,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_strengthen_blueprint
-
-	var_3_66[822] = {
+	pg.base.ship_strengthen_blueprint[822] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10119,11 +9039,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_strengthen_blueprint
-
-	var_3_67[823] = {
+	pg.base.ship_strengthen_blueprint[823] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10148,11 +9064,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_strengthen_blueprint
-
-	var_3_68[824] = {
+	pg.base.ship_strengthen_blueprint[824] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10177,11 +9089,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_strengthen_blueprint
-
-	var_3_69[825] = {
+	pg.base.ship_strengthen_blueprint[825] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1068|防空+58|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -10221,11 +9129,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_strengthen_blueprint
-
-	var_3_70[826] = {
+	pg.base.ship_strengthen_blueprint[826] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10250,11 +9154,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_strengthen_blueprint
-
-	var_3_71[827] = {
+	pg.base.ship_strengthen_blueprint[827] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10279,11 +9179,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_strengthen_blueprint
-
-	var_3_72[828] = {
+	pg.base.ship_strengthen_blueprint[828] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10308,11 +9204,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_strengthen_blueprint
-
-	var_3_73[829] = {
+	pg.base.ship_strengthen_blueprint[829] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10337,11 +9229,7 @@ end)()
 			225
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_strengthen_blueprint
-
-	var_3_74[830] = {
+	pg.base.ship_strengthen_blueprint[830] = {
 		effect_breakout = 199024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -10369,11 +9257,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_strengthen_blueprint
-
-	var_3_75[831] = {
+	pg.base.ship_strengthen_blueprint[831] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -10403,11 +9287,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_strengthen_blueprint
-
-	var_3_76[832] = {
+	pg.base.ship_strengthen_blueprint[832] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -10437,11 +9317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_strengthen_blueprint
-
-	var_3_77[833] = {
+	pg.base.ship_strengthen_blueprint[833] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -10471,11 +9347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_strengthen_blueprint
-
-	var_3_78[834] = {
+	pg.base.ship_strengthen_blueprint[834] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -10505,11 +9377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_strengthen_blueprint
-
-	var_3_79[835] = {
+	pg.base.ship_strengthen_blueprint[835] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【Iron Sight Caliber】技能强化为【Iron Sight Caliber +】",
 		extra_desc = "",
@@ -10542,11 +9410,7 @@ end)()
 			18150
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_strengthen_blueprint
-
-	var_3_80[901] = {
+	pg.base.ship_strengthen_blueprint[901] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -10575,11 +9439,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_strengthen_blueprint
-
-	var_3_81[902] = {
+	pg.base.ship_strengthen_blueprint[902] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10604,11 +9464,7 @@ end)()
 			61
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_strengthen_blueprint
-
-	var_3_82[903] = {
+	pg.base.ship_strengthen_blueprint[903] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10633,11 +9489,7 @@ end)()
 			61
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_strengthen_blueprint
-
-	var_3_83[904] = {
+	pg.base.ship_strengthen_blueprint[904] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10662,11 +9514,7 @@ end)()
 			61
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_strengthen_blueprint
-
-	var_3_84[905] = {
+	pg.base.ship_strengthen_blueprint[905] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+111|防空+9|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -10708,11 +9556,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_strengthen_blueprint
-
-	var_3_85[906] = {
+	pg.base.ship_strengthen_blueprint[906] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10737,11 +9581,7 @@ end)()
 			122
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_strengthen_blueprint
-
-	var_3_86[907] = {
+	pg.base.ship_strengthen_blueprint[907] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10766,11 +9606,7 @@ end)()
 			122
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_strengthen_blueprint
-
-	var_3_87[908] = {
+	pg.base.ship_strengthen_blueprint[908] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10795,11 +9631,7 @@ end)()
 			122
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_strengthen_blueprint
-
-	var_3_88[909] = {
+	pg.base.ship_strengthen_blueprint[909] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10824,11 +9656,7 @@ end)()
 			122
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_strengthen_blueprint
-
-	var_3_89[910] = {
+	pg.base.ship_strengthen_blueprint[910] = {
 		effect_breakout = 399032,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -10861,11 +9689,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_strengthen_blueprint
-
-	var_3_90[911] = {
+	pg.base.ship_strengthen_blueprint[911] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10890,11 +9714,7 @@ end)()
 			183
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_strengthen_blueprint
-
-	var_3_91[912] = {
+	pg.base.ship_strengthen_blueprint[912] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10919,11 +9739,7 @@ end)()
 			183
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_strengthen_blueprint
-
-	var_3_92[913] = {
+	pg.base.ship_strengthen_blueprint[913] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10948,11 +9764,7 @@ end)()
 			183
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_strengthen_blueprint
-
-	var_3_93[914] = {
+	pg.base.ship_strengthen_blueprint[914] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -10977,11 +9789,7 @@ end)()
 			183
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.ship_strengthen_blueprint
-
-	var_3_94[915] = {
+	pg.base.ship_strengthen_blueprint[915] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+221|防空+18|主炮效率提高10%|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -11026,11 +9834,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_strengthen_blueprint
-
-	var_3_95[916] = {
+	pg.base.ship_strengthen_blueprint[916] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11055,11 +9859,7 @@ end)()
 			244
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_strengthen_blueprint
-
-	var_3_96[917] = {
+	pg.base.ship_strengthen_blueprint[917] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11084,11 +9884,7 @@ end)()
 			244
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_strengthen_blueprint
-
-	var_3_97[918] = {
+	pg.base.ship_strengthen_blueprint[918] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11113,11 +9909,7 @@ end)()
 			244
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_strengthen_blueprint
-
-	var_3_98[919] = {
+	pg.base.ship_strengthen_blueprint[919] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11142,8 +9934,7 @@ end)()
 			244
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.ship_strengthen_blueprint[920] = {
+	pg.base.ship_strengthen_blueprint[920] = {
 		effect_breakout = 399033,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -11179,11 +9970,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_4_0[921] = {
+	pg.base.ship_strengthen_blueprint[921] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11208,11 +9995,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_strengthen_blueprint
-
-	var_4_1[922] = {
+	pg.base.ship_strengthen_blueprint[922] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11237,11 +10020,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_strengthen_blueprint
-
-	var_4_2[923] = {
+	pg.base.ship_strengthen_blueprint[923] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11266,11 +10045,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_strengthen_blueprint
-
-	var_4_3[924] = {
+	pg.base.ship_strengthen_blueprint[924] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11295,11 +10070,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_strengthen_blueprint
-
-	var_4_4[925] = {
+	pg.base.ship_strengthen_blueprint[925] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+333|防空+27|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -11336,11 +10107,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_strengthen_blueprint
-
-	var_4_5[926] = {
+	pg.base.ship_strengthen_blueprint[926] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11365,11 +10132,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_strengthen_blueprint
-
-	var_4_6[927] = {
+	pg.base.ship_strengthen_blueprint[927] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11394,11 +10157,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_strengthen_blueprint
-
-	var_4_7[928] = {
+	pg.base.ship_strengthen_blueprint[928] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11423,11 +10182,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_strengthen_blueprint
-
-	var_4_8[929] = {
+	pg.base.ship_strengthen_blueprint[929] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11452,11 +10207,7 @@ end)()
 			305
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_strengthen_blueprint
-
-	var_4_9[930] = {
+	pg.base.ship_strengthen_blueprint[930] = {
 		effect_breakout = 399034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -11486,11 +10237,7 @@ end)()
 			"触发专属弹幕所需主炮射击次数减半"
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_strengthen_blueprint
-
-	var_4_10[931] = {
+	pg.base.ship_strengthen_blueprint[931] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -11520,11 +10267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_strengthen_blueprint
-
-	var_4_11[932] = {
+	pg.base.ship_strengthen_blueprint[932] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -11554,11 +10297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_strengthen_blueprint
-
-	var_4_12[933] = {
+	pg.base.ship_strengthen_blueprint[933] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -11588,11 +10327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_strengthen_blueprint
-
-	var_4_13[934] = {
+	pg.base.ship_strengthen_blueprint[934] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -11622,11 +10357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_strengthen_blueprint
-
-	var_4_14[935] = {
+	pg.base.ship_strengthen_blueprint[935] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【苝流·六莲雷】技能强化为【苝流·六莲雷 +】",
 		extra_desc = "",
@@ -11659,11 +10390,7 @@ end)()
 			18180
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_strengthen_blueprint
-
-	var_4_15[1001] = {
+	pg.base.ship_strengthen_blueprint[1001] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -11692,11 +10419,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_strengthen_blueprint
-
-	var_4_16[1002] = {
+	pg.base.ship_strengthen_blueprint[1002] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11721,11 +10444,7 @@ end)()
 			47
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_strengthen_blueprint
-
-	var_4_17[1003] = {
+	pg.base.ship_strengthen_blueprint[1003] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11750,11 +10469,7 @@ end)()
 			47
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_strengthen_blueprint
-
-	var_4_18[1004] = {
+	pg.base.ship_strengthen_blueprint[1004] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11779,11 +10494,7 @@ end)()
 			47
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_strengthen_blueprint
-
-	var_4_19[1005] = {
+	pg.base.ship_strengthen_blueprint[1005] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+315|防空+10|主炮效率提高5%|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -11828,11 +10539,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_strengthen_blueprint
-
-	var_4_20[1006] = {
+	pg.base.ship_strengthen_blueprint[1006] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11857,11 +10564,7 @@ end)()
 			94
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_strengthen_blueprint
-
-	var_4_21[1007] = {
+	pg.base.ship_strengthen_blueprint[1007] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11886,11 +10589,7 @@ end)()
 			94
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_strengthen_blueprint
-
-	var_4_22[1008] = {
+	pg.base.ship_strengthen_blueprint[1008] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11915,11 +10614,7 @@ end)()
 			94
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_strengthen_blueprint
-
-	var_4_23[1009] = {
+	pg.base.ship_strengthen_blueprint[1009] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -11944,11 +10639,7 @@ end)()
 			94
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_strengthen_blueprint
-
-	var_4_24[1010] = {
+	pg.base.ship_strengthen_blueprint[1010] = {
 		effect_breakout = 399042,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -11980,11 +10671,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_strengthen_blueprint
-
-	var_4_25[1011] = {
+	pg.base.ship_strengthen_blueprint[1011] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12009,11 +10696,7 @@ end)()
 			141
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_strengthen_blueprint
-
-	var_4_26[1012] = {
+	pg.base.ship_strengthen_blueprint[1012] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12038,11 +10721,7 @@ end)()
 			141
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_strengthen_blueprint
-
-	var_4_27[1013] = {
+	pg.base.ship_strengthen_blueprint[1013] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12067,11 +10746,7 @@ end)()
 			141
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_strengthen_blueprint
-
-	var_4_28[1014] = {
+	pg.base.ship_strengthen_blueprint[1014] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12096,11 +10771,7 @@ end)()
 			141
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_strengthen_blueprint
-
-	var_4_29[1015] = {
+	pg.base.ship_strengthen_blueprint[1015] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+629|防空+21|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -12141,11 +10812,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_strengthen_blueprint
-
-	var_4_30[1016] = {
+	pg.base.ship_strengthen_blueprint[1016] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12170,11 +10837,7 @@ end)()
 			188
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_strengthen_blueprint
-
-	var_4_31[1017] = {
+	pg.base.ship_strengthen_blueprint[1017] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12199,11 +10862,7 @@ end)()
 			188
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_strengthen_blueprint
-
-	var_4_32[1018] = {
+	pg.base.ship_strengthen_blueprint[1018] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12228,11 +10887,7 @@ end)()
 			188
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_strengthen_blueprint
-
-	var_4_33[1019] = {
+	pg.base.ship_strengthen_blueprint[1019] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12257,11 +10912,7 @@ end)()
 			188
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_strengthen_blueprint
-
-	var_4_34[1020] = {
+	pg.base.ship_strengthen_blueprint[1020] = {
 		effect_breakout = 399043,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -12293,11 +10944,7 @@ end)()
 			"副炮效率提高10%"
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_strengthen_blueprint
-
-	var_4_35[1021] = {
+	pg.base.ship_strengthen_blueprint[1021] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12322,11 +10969,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_strengthen_blueprint
-
-	var_4_36[1022] = {
+	pg.base.ship_strengthen_blueprint[1022] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12351,11 +10994,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_strengthen_blueprint
-
-	var_4_37[1023] = {
+	pg.base.ship_strengthen_blueprint[1023] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12380,11 +11019,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_strengthen_blueprint
-
-	var_4_38[1024] = {
+	pg.base.ship_strengthen_blueprint[1024] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12409,11 +11044,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_strengthen_blueprint
-
-	var_4_39[1025] = {
+	pg.base.ship_strengthen_blueprint[1025] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+945|防空+31|机动+5|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -12457,11 +11088,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_strengthen_blueprint
-
-	var_4_40[1026] = {
+	pg.base.ship_strengthen_blueprint[1026] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12486,11 +11113,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_strengthen_blueprint
-
-	var_4_41[1027] = {
+	pg.base.ship_strengthen_blueprint[1027] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12515,11 +11138,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_strengthen_blueprint
-
-	var_4_42[1028] = {
+	pg.base.ship_strengthen_blueprint[1028] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12544,11 +11163,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_strengthen_blueprint
-
-	var_4_43[1029] = {
+	pg.base.ship_strengthen_blueprint[1029] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12573,11 +11188,7 @@ end)()
 			235
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_strengthen_blueprint
-
-	var_4_44[1030] = {
+	pg.base.ship_strengthen_blueprint[1030] = {
 		effect_breakout = 399044,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -12605,11 +11216,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_strengthen_blueprint
-
-	var_4_45[1031] = {
+	pg.base.ship_strengthen_blueprint[1031] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -12639,11 +11246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_strengthen_blueprint
-
-	var_4_46[1032] = {
+	pg.base.ship_strengthen_blueprint[1032] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -12673,11 +11276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_strengthen_blueprint
-
-	var_4_47[1033] = {
+	pg.base.ship_strengthen_blueprint[1033] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【战场嗅觉】技能强化为【战场嗅觉 +】",
 		extra_desc = "",
@@ -12710,11 +11309,7 @@ end)()
 			18200
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_strengthen_blueprint
-
-	var_4_48[1034] = {
+	pg.base.ship_strengthen_blueprint[1034] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+6",
 		extra_desc = "",
@@ -12744,11 +11339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_strengthen_blueprint
-
-	var_4_49[1035] = {
+	pg.base.ship_strengthen_blueprint[1035] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+7|【特殊炮击训练】技能强化为【特殊炮击训练 +】",
 		extra_desc = "",
@@ -12781,11 +11372,7 @@ end)()
 			18210
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_strengthen_blueprint
-
-	var_4_50[1101] = {
+	pg.base.ship_strengthen_blueprint[1101] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -12814,11 +11401,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_strengthen_blueprint
-
-	var_4_51[1102] = {
+	pg.base.ship_strengthen_blueprint[1102] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12843,11 +11426,7 @@ end)()
 			43
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_strengthen_blueprint
-
-	var_4_52[1103] = {
+	pg.base.ship_strengthen_blueprint[1103] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12872,11 +11451,7 @@ end)()
 			43
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_strengthen_blueprint
-
-	var_4_53[1104] = {
+	pg.base.ship_strengthen_blueprint[1104] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12901,11 +11476,7 @@ end)()
 			43
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_strengthen_blueprint
-
-	var_4_54[1105] = {
+	pg.base.ship_strengthen_blueprint[1105] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+400|防空+11|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -12946,11 +11517,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_strengthen_blueprint
-
-	var_4_55[1106] = {
+	pg.base.ship_strengthen_blueprint[1106] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -12975,11 +11542,7 @@ end)()
 			86
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_strengthen_blueprint
-
-	var_4_56[1107] = {
+	pg.base.ship_strengthen_blueprint[1107] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13004,11 +11567,7 @@ end)()
 			86
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_strengthen_blueprint
-
-	var_4_57[1108] = {
+	pg.base.ship_strengthen_blueprint[1108] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13033,11 +11592,7 @@ end)()
 			86
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_strengthen_blueprint
-
-	var_4_58[1109] = {
+	pg.base.ship_strengthen_blueprint[1109] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13062,11 +11617,7 @@ end)()
 			86
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_strengthen_blueprint
-
-	var_4_59[1110] = {
+	pg.base.ship_strengthen_blueprint[1110] = {
 		effect_breakout = 499022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -13099,11 +11650,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_strengthen_blueprint
-
-	var_4_60[1111] = {
+	pg.base.ship_strengthen_blueprint[1111] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13128,11 +11675,7 @@ end)()
 			129
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_strengthen_blueprint
-
-	var_4_61[1112] = {
+	pg.base.ship_strengthen_blueprint[1112] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13157,11 +11700,7 @@ end)()
 			129
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_strengthen_blueprint
-
-	var_4_62[1113] = {
+	pg.base.ship_strengthen_blueprint[1113] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13186,11 +11725,7 @@ end)()
 			129
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_strengthen_blueprint
-
-	var_4_63[1114] = {
+	pg.base.ship_strengthen_blueprint[1114] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13215,11 +11750,7 @@ end)()
 			129
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_strengthen_blueprint
-
-	var_4_64[1115] = {
+	pg.base.ship_strengthen_blueprint[1115] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+797|防空+22|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -13260,11 +11791,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_strengthen_blueprint
-
-	var_4_65[1116] = {
+	pg.base.ship_strengthen_blueprint[1116] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13289,11 +11816,7 @@ end)()
 			172
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_strengthen_blueprint
-
-	var_4_66[1117] = {
+	pg.base.ship_strengthen_blueprint[1117] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13318,11 +11841,7 @@ end)()
 			172
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_strengthen_blueprint
-
-	var_4_67[1118] = {
+	pg.base.ship_strengthen_blueprint[1118] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13347,11 +11866,7 @@ end)()
 			172
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_strengthen_blueprint
-
-	var_4_68[1119] = {
+	pg.base.ship_strengthen_blueprint[1119] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13376,11 +11891,7 @@ end)()
 			172
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_strengthen_blueprint
-
-	var_4_69[1120] = {
+	pg.base.ship_strengthen_blueprint[1120] = {
 		effect_breakout = 499023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -13413,11 +11924,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_strengthen_blueprint
-
-	var_4_70[1121] = {
+	pg.base.ship_strengthen_blueprint[1121] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13442,11 +11949,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_strengthen_blueprint
-
-	var_4_71[1122] = {
+	pg.base.ship_strengthen_blueprint[1122] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13471,11 +11974,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_strengthen_blueprint
-
-	var_4_72[1123] = {
+	pg.base.ship_strengthen_blueprint[1123] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13500,11 +11999,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_strengthen_blueprint
-
-	var_4_73[1124] = {
+	pg.base.ship_strengthen_blueprint[1124] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13529,11 +12024,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_strengthen_blueprint
-
-	var_4_74[1125] = {
+	pg.base.ship_strengthen_blueprint[1125] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1195|防空+33|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -13573,11 +12064,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_strengthen_blueprint
-
-	var_4_75[1126] = {
+	pg.base.ship_strengthen_blueprint[1126] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13602,11 +12089,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_strengthen_blueprint
-
-	var_4_76[1127] = {
+	pg.base.ship_strengthen_blueprint[1127] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13631,11 +12114,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_strengthen_blueprint
-
-	var_4_77[1128] = {
+	pg.base.ship_strengthen_blueprint[1128] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13660,11 +12139,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_strengthen_blueprint
-
-	var_4_78[1129] = {
+	pg.base.ship_strengthen_blueprint[1129] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13689,11 +12164,7 @@ end)()
 			215
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_strengthen_blueprint
-
-	var_4_79[1130] = {
+	pg.base.ship_strengthen_blueprint[1130] = {
 		effect_breakout = 499024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -13722,11 +12193,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_strengthen_blueprint
-
-	var_4_80[1131] = {
+	pg.base.ship_strengthen_blueprint[1131] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -13756,11 +12223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_strengthen_blueprint
-
-	var_4_81[1132] = {
+	pg.base.ship_strengthen_blueprint[1132] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -13790,11 +12253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_strengthen_blueprint
-
-	var_4_82[1133] = {
+	pg.base.ship_strengthen_blueprint[1133] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【暗黑的狂想曲】技能强化为【暗黑的狂想曲 +】",
 		extra_desc = "",
@@ -13827,11 +12286,7 @@ end)()
 			18240
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_strengthen_blueprint
-
-	var_4_83[1134] = {
+	pg.base.ship_strengthen_blueprint[1134] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+6",
 		extra_desc = "",
@@ -13861,11 +12316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_strengthen_blueprint
-
-	var_4_84[1135] = {
+	pg.base.ship_strengthen_blueprint[1135] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+7|【破坏的交响曲】技能强化为【破坏的交响曲 +】",
 		extra_desc = "",
@@ -13898,11 +12349,7 @@ end)()
 			18220
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_strengthen_blueprint
-
-	var_4_85[1201] = {
+	pg.base.ship_strengthen_blueprint[1201] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -13931,11 +12378,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_strengthen_blueprint
-
-	var_4_86[1202] = {
+	pg.base.ship_strengthen_blueprint[1202] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13960,11 +12403,7 @@ end)()
 			46
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_strengthen_blueprint
-
-	var_4_87[1203] = {
+	pg.base.ship_strengthen_blueprint[1203] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -13989,11 +12428,7 @@ end)()
 			46
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_strengthen_blueprint
-
-	var_4_88[1204] = {
+	pg.base.ship_strengthen_blueprint[1204] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14018,11 +12453,7 @@ end)()
 			46
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_strengthen_blueprint
-
-	var_4_89[1205] = {
+	pg.base.ship_strengthen_blueprint[1205] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+325|防空+11|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -14063,11 +12494,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_strengthen_blueprint
-
-	var_4_90[1206] = {
+	pg.base.ship_strengthen_blueprint[1206] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14092,11 +12519,7 @@ end)()
 			92
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_strengthen_blueprint
-
-	var_4_91[1207] = {
+	pg.base.ship_strengthen_blueprint[1207] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14121,11 +12544,7 @@ end)()
 			92
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_strengthen_blueprint
-
-	var_4_92[1208] = {
+	pg.base.ship_strengthen_blueprint[1208] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14150,11 +12569,7 @@ end)()
 			92
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_strengthen_blueprint
-
-	var_4_93[1209] = {
+	pg.base.ship_strengthen_blueprint[1209] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14179,11 +12594,7 @@ end)()
 			92
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.ship_strengthen_blueprint
-
-	var_4_94[1210] = {
+	pg.base.ship_strengthen_blueprint[1210] = {
 		effect_breakout = 999012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -14215,11 +12626,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_strengthen_blueprint
-
-	var_4_95[1211] = {
+	pg.base.ship_strengthen_blueprint[1211] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14244,11 +12651,7 @@ end)()
 			138
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_strengthen_blueprint
-
-	var_4_96[1212] = {
+	pg.base.ship_strengthen_blueprint[1212] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14273,11 +12676,7 @@ end)()
 			138
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_strengthen_blueprint
-
-	var_4_97[1213] = {
+	pg.base.ship_strengthen_blueprint[1213] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14302,11 +12701,7 @@ end)()
 			138
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_strengthen_blueprint
-
-	var_4_98[1214] = {
+	pg.base.ship_strengthen_blueprint[1214] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14331,8 +12726,7 @@ end)()
 			138
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.ship_strengthen_blueprint[1215] = {
+	pg.base.ship_strengthen_blueprint[1215] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+651|防空+22|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -14377,11 +12771,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_5_0[1216] = {
+	pg.base.ship_strengthen_blueprint[1216] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14406,11 +12796,7 @@ end)()
 			184
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_strengthen_blueprint
-
-	var_5_1[1217] = {
+	pg.base.ship_strengthen_blueprint[1217] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14435,11 +12821,7 @@ end)()
 			184
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_strengthen_blueprint
-
-	var_5_2[1218] = {
+	pg.base.ship_strengthen_blueprint[1218] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14464,11 +12846,7 @@ end)()
 			184
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_strengthen_blueprint
-
-	var_5_3[1219] = {
+	pg.base.ship_strengthen_blueprint[1219] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14493,11 +12871,7 @@ end)()
 			184
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_strengthen_blueprint
-
-	var_5_4[1220] = {
+	pg.base.ship_strengthen_blueprint[1220] = {
 		effect_breakout = 999013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -14530,11 +12904,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_strengthen_blueprint
-
-	var_5_5[1221] = {
+	pg.base.ship_strengthen_blueprint[1221] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14559,11 +12929,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_strengthen_blueprint
-
-	var_5_6[1222] = {
+	pg.base.ship_strengthen_blueprint[1222] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14588,11 +12954,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_strengthen_blueprint
-
-	var_5_7[1223] = {
+	pg.base.ship_strengthen_blueprint[1223] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14617,11 +12979,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_strengthen_blueprint
-
-	var_5_8[1224] = {
+	pg.base.ship_strengthen_blueprint[1224] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14646,11 +13004,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_strengthen_blueprint
-
-	var_5_9[1225] = {
+	pg.base.ship_strengthen_blueprint[1225] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+976|防空+33|主炮效率提高5%|鉴赏解锁：主界面4、血量警报",
 		extra_desc = "",
@@ -14691,11 +13045,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_strengthen_blueprint
-
-	var_5_10[1226] = {
+	pg.base.ship_strengthen_blueprint[1226] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14720,11 +13070,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_strengthen_blueprint
-
-	var_5_11[1227] = {
+	pg.base.ship_strengthen_blueprint[1227] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14749,11 +13095,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_strengthen_blueprint
-
-	var_5_12[1228] = {
+	pg.base.ship_strengthen_blueprint[1228] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14778,11 +13120,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_strengthen_blueprint
-
-	var_5_13[1229] = {
+	pg.base.ship_strengthen_blueprint[1229] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -14807,11 +13145,7 @@ end)()
 			230
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_strengthen_blueprint
-
-	var_5_14[1230] = {
+	pg.base.ship_strengthen_blueprint[1230] = {
 		effect_breakout = 999014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -14839,11 +13173,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_strengthen_blueprint
-
-	var_5_15[1231] = {
+	pg.base.ship_strengthen_blueprint[1231] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -14873,11 +13203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_strengthen_blueprint
-
-	var_5_16[1232] = {
+	pg.base.ship_strengthen_blueprint[1232] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -14907,11 +13233,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_strengthen_blueprint
-
-	var_5_17[1233] = {
+	pg.base.ship_strengthen_blueprint[1233] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -14941,11 +13263,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_strengthen_blueprint
-
-	var_5_18[1234] = {
+	pg.base.ship_strengthen_blueprint[1234] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -14975,11 +13293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_strengthen_blueprint
-
-	var_5_19[1235] = {
+	pg.base.ship_strengthen_blueprint[1235] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【感知抑制模块】技能强化为【感知抑制模块 +】",
 		extra_desc = "",
@@ -15012,11 +13326,7 @@ end)()
 			18250
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_strengthen_blueprint
-
-	var_5_20[1301] = {
+	pg.base.ship_strengthen_blueprint[1301] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -15045,11 +13355,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_strengthen_blueprint
-
-	var_5_21[1302] = {
+	pg.base.ship_strengthen_blueprint[1302] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15074,11 +13380,7 @@ end)()
 			43
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_strengthen_blueprint
-
-	var_5_22[1303] = {
+	pg.base.ship_strengthen_blueprint[1303] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15103,11 +13405,7 @@ end)()
 			43
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_strengthen_blueprint
-
-	var_5_23[1304] = {
+	pg.base.ship_strengthen_blueprint[1304] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15132,11 +13430,7 @@ end)()
 			43
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_strengthen_blueprint
-
-	var_5_24[1305] = {
+	pg.base.ship_strengthen_blueprint[1305] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+217|防空+19|机动+5|防空炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -15182,11 +13476,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_strengthen_blueprint
-
-	var_5_25[1306] = {
+	pg.base.ship_strengthen_blueprint[1306] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15211,11 +13501,7 @@ end)()
 			86
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_strengthen_blueprint
-
-	var_5_26[1307] = {
+	pg.base.ship_strengthen_blueprint[1307] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15240,11 +13526,7 @@ end)()
 			86
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_strengthen_blueprint
-
-	var_5_27[1308] = {
+	pg.base.ship_strengthen_blueprint[1308] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15269,11 +13551,7 @@ end)()
 			86
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_strengthen_blueprint
-
-	var_5_28[1309] = {
+	pg.base.ship_strengthen_blueprint[1309] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15298,11 +13576,7 @@ end)()
 			86
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_strengthen_blueprint
-
-	var_5_29[1310] = {
+	pg.base.ship_strengthen_blueprint[1310] = {
 		effect_breakout = 299032,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -15335,11 +13609,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_strengthen_blueprint
-
-	var_5_30[1311] = {
+	pg.base.ship_strengthen_blueprint[1311] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15364,11 +13634,7 @@ end)()
 			129
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_strengthen_blueprint
-
-	var_5_31[1312] = {
+	pg.base.ship_strengthen_blueprint[1312] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15393,11 +13659,7 @@ end)()
 			129
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_strengthen_blueprint
-
-	var_5_32[1313] = {
+	pg.base.ship_strengthen_blueprint[1313] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15422,11 +13684,7 @@ end)()
 			129
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_strengthen_blueprint
-
-	var_5_33[1314] = {
+	pg.base.ship_strengthen_blueprint[1314] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15451,11 +13709,7 @@ end)()
 			129
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_strengthen_blueprint
-
-	var_5_34[1315] = {
+	pg.base.ship_strengthen_blueprint[1315] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+433|防空+39|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -15496,11 +13750,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.ship_strengthen_blueprint
-
-	var_5_35[1316] = {
+	pg.base.ship_strengthen_blueprint[1316] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15525,11 +13775,7 @@ end)()
 			172
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.ship_strengthen_blueprint
-
-	var_5_36[1317] = {
+	pg.base.ship_strengthen_blueprint[1317] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15554,11 +13800,7 @@ end)()
 			172
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.ship_strengthen_blueprint
-
-	var_5_37[1318] = {
+	pg.base.ship_strengthen_blueprint[1318] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15583,11 +13825,7 @@ end)()
 			172
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.ship_strengthen_blueprint
-
-	var_5_38[1319] = {
+	pg.base.ship_strengthen_blueprint[1319] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15612,11 +13850,7 @@ end)()
 			172
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.ship_strengthen_blueprint
-
-	var_5_39[1320] = {
+	pg.base.ship_strengthen_blueprint[1320] = {
 		effect_breakout = 299033,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -15648,11 +13882,7 @@ end)()
 			"防空炮效率提高10%"
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.ship_strengthen_blueprint
-
-	var_5_40[1321] = {
+	pg.base.ship_strengthen_blueprint[1321] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15677,11 +13907,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.ship_strengthen_blueprint
-
-	var_5_41[1322] = {
+	pg.base.ship_strengthen_blueprint[1322] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15706,11 +13932,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.ship_strengthen_blueprint
-
-	var_5_42[1323] = {
+	pg.base.ship_strengthen_blueprint[1323] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15735,11 +13957,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.ship_strengthen_blueprint
-
-	var_5_43[1324] = {
+	pg.base.ship_strengthen_blueprint[1324] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15764,11 +13982,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.ship_strengthen_blueprint
-
-	var_5_44[1325] = {
+	pg.base.ship_strengthen_blueprint[1325] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+649|防空+58|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -15809,11 +14023,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.ship_strengthen_blueprint
-
-	var_5_45[1326] = {
+	pg.base.ship_strengthen_blueprint[1326] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15838,11 +14048,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.ship_strengthen_blueprint
-
-	var_5_46[1327] = {
+	pg.base.ship_strengthen_blueprint[1327] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15867,11 +14073,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.ship_strengthen_blueprint
-
-	var_5_47[1328] = {
+	pg.base.ship_strengthen_blueprint[1328] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15896,11 +14098,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.ship_strengthen_blueprint
-
-	var_5_48[1329] = {
+	pg.base.ship_strengthen_blueprint[1329] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -15925,11 +14123,7 @@ end)()
 			215
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.ship_strengthen_blueprint
-
-	var_5_49[1330] = {
+	pg.base.ship_strengthen_blueprint[1330] = {
 		effect_breakout = 299034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -15958,11 +14152,7 @@ end)()
 			"全武器效率提高5%"
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.ship_strengthen_blueprint
-
-	var_5_50[1331] = {
+	pg.base.ship_strengthen_blueprint[1331] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -15992,11 +14182,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.ship_strengthen_blueprint
-
-	var_5_51[1332] = {
+	pg.base.ship_strengthen_blueprint[1332] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -16026,11 +14212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.ship_strengthen_blueprint
-
-	var_5_52[1333] = {
+	pg.base.ship_strengthen_blueprint[1333] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -16060,11 +14242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.ship_strengthen_blueprint
-
-	var_5_53[1334] = {
+	pg.base.ship_strengthen_blueprint[1334] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -16094,11 +14272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.ship_strengthen_blueprint
-
-	var_5_54[1335] = {
+	pg.base.ship_strengthen_blueprint[1335] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【柴郡PowerUp！】技能强化为【柴郡PowerUp！ +】",
 		extra_desc = "",
@@ -16131,11 +14305,7 @@ end)()
 			18270
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.ship_strengthen_blueprint
-
-	var_5_55[1401] = {
+	pg.base.ship_strengthen_blueprint[1401] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -16164,11 +14334,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.ship_strengthen_blueprint
-
-	var_5_56[1402] = {
+	pg.base.ship_strengthen_blueprint[1402] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16193,11 +14359,7 @@ end)()
 			38
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.ship_strengthen_blueprint
-
-	var_5_57[1403] = {
+	pg.base.ship_strengthen_blueprint[1403] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16222,11 +14384,7 @@ end)()
 			38
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.ship_strengthen_blueprint
-
-	var_5_58[1404] = {
+	pg.base.ship_strengthen_blueprint[1404] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16251,11 +14409,7 @@ end)()
 			38
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.ship_strengthen_blueprint
-
-	var_5_59[1405] = {
+	pg.base.ship_strengthen_blueprint[1405] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+237|防空+13|机动+5|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -16301,11 +14455,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.ship_strengthen_blueprint
-
-	var_5_60[1406] = {
+	pg.base.ship_strengthen_blueprint[1406] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16330,11 +14480,7 @@ end)()
 			76
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.ship_strengthen_blueprint
-
-	var_5_61[1407] = {
+	pg.base.ship_strengthen_blueprint[1407] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16359,11 +14505,7 @@ end)()
 			76
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.ship_strengthen_blueprint
-
-	var_5_62[1408] = {
+	pg.base.ship_strengthen_blueprint[1408] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16388,11 +14530,7 @@ end)()
 			76
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.ship_strengthen_blueprint
-
-	var_5_63[1409] = {
+	pg.base.ship_strengthen_blueprint[1409] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16417,11 +14555,7 @@ end)()
 			76
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.ship_strengthen_blueprint
-
-	var_5_64[1410] = {
+	pg.base.ship_strengthen_blueprint[1410] = {
 		effect_breakout = 299042,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -16454,11 +14588,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.ship_strengthen_blueprint
-
-	var_5_65[1411] = {
+	pg.base.ship_strengthen_blueprint[1411] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16483,11 +14613,7 @@ end)()
 			114
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.ship_strengthen_blueprint
-
-	var_5_66[1412] = {
+	pg.base.ship_strengthen_blueprint[1412] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16512,11 +14638,7 @@ end)()
 			114
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.ship_strengthen_blueprint
-
-	var_5_67[1413] = {
+	pg.base.ship_strengthen_blueprint[1413] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16541,11 +14663,7 @@ end)()
 			114
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.ship_strengthen_blueprint
-
-	var_5_68[1414] = {
+	pg.base.ship_strengthen_blueprint[1414] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16570,11 +14688,7 @@ end)()
 			114
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.ship_strengthen_blueprint
-
-	var_5_69[1415] = {
+	pg.base.ship_strengthen_blueprint[1415] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+473|防空+27|鱼雷预装填+1|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -16619,11 +14733,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.ship_strengthen_blueprint
-
-	var_5_70[1416] = {
+	pg.base.ship_strengthen_blueprint[1416] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16648,11 +14758,7 @@ end)()
 			152
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.ship_strengthen_blueprint
-
-	var_5_71[1417] = {
+	pg.base.ship_strengthen_blueprint[1417] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16677,11 +14783,7 @@ end)()
 			152
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.ship_strengthen_blueprint
-
-	var_5_72[1418] = {
+	pg.base.ship_strengthen_blueprint[1418] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16706,11 +14808,7 @@ end)()
 			152
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.ship_strengthen_blueprint
-
-	var_5_73[1419] = {
+	pg.base.ship_strengthen_blueprint[1419] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16735,11 +14833,7 @@ end)()
 			152
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.ship_strengthen_blueprint
-
-	var_5_74[1420] = {
+	pg.base.ship_strengthen_blueprint[1420] = {
 		effect_breakout = 299043,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -16771,11 +14865,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.ship_strengthen_blueprint
-
-	var_5_75[1421] = {
+	pg.base.ship_strengthen_blueprint[1421] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16800,11 +14890,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.ship_strengthen_blueprint
-
-	var_5_76[1422] = {
+	pg.base.ship_strengthen_blueprint[1422] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16829,11 +14915,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.ship_strengthen_blueprint
-
-	var_5_77[1423] = {
+	pg.base.ship_strengthen_blueprint[1423] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16858,11 +14940,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.ship_strengthen_blueprint
-
-	var_5_78[1424] = {
+	pg.base.ship_strengthen_blueprint[1424] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16887,11 +14965,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.ship_strengthen_blueprint
-
-	var_5_79[1425] = {
+	pg.base.ship_strengthen_blueprint[1425] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+710|防空+40|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -16932,11 +15006,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.ship_strengthen_blueprint
-
-	var_5_80[1426] = {
+	pg.base.ship_strengthen_blueprint[1426] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16961,11 +15031,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.ship_strengthen_blueprint
-
-	var_5_81[1427] = {
+	pg.base.ship_strengthen_blueprint[1427] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -16990,11 +15056,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.ship_strengthen_blueprint
-
-	var_5_82[1428] = {
+	pg.base.ship_strengthen_blueprint[1428] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17019,11 +15081,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.ship_strengthen_blueprint
-
-	var_5_83[1429] = {
+	pg.base.ship_strengthen_blueprint[1429] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17048,11 +15106,7 @@ end)()
 			190
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.ship_strengthen_blueprint
-
-	var_5_84[1430] = {
+	pg.base.ship_strengthen_blueprint[1430] = {
 		effect_breakout = 299044,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -17081,11 +15135,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.ship_strengthen_blueprint
-
-	var_5_85[1431] = {
+	pg.base.ship_strengthen_blueprint[1431] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -17115,11 +15165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.ship_strengthen_blueprint
-
-	var_5_86[1432] = {
+	pg.base.ship_strengthen_blueprint[1432] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -17149,11 +15195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.ship_strengthen_blueprint
-
-	var_5_87[1433] = {
+	pg.base.ship_strengthen_blueprint[1433] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【断罪之炎】技能强化为【断罪之炎 +】",
 		extra_desc = "",
@@ -17186,11 +15228,7 @@ end)()
 			18300
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.ship_strengthen_blueprint
-
-	var_5_88[1434] = {
+	pg.base.ship_strengthen_blueprint[1434] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+6",
 		extra_desc = "",
@@ -17220,11 +15258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.ship_strengthen_blueprint
-
-	var_5_89[1435] = {
+	pg.base.ship_strengthen_blueprint[1435] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+7|【勇斗的Privateer】技能强化为【勇斗的Privateer +】",
 		extra_desc = "",
@@ -17257,11 +15291,7 @@ end)()
 			18290
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.ship_strengthen_blueprint
-
-	var_5_90[1501] = {
+	pg.base.ship_strengthen_blueprint[1501] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -17290,11 +15320,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.ship_strengthen_blueprint
-
-	var_5_91[1502] = {
+	pg.base.ship_strengthen_blueprint[1502] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17319,11 +15345,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.ship_strengthen_blueprint
-
-	var_5_92[1503] = {
+	pg.base.ship_strengthen_blueprint[1503] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17348,11 +15370,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.ship_strengthen_blueprint
-
-	var_5_93[1504] = {
+	pg.base.ship_strengthen_blueprint[1504] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17377,11 +15395,7 @@ end)()
 			50
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.ship_strengthen_blueprint
-
-	var_5_94[1505] = {
+	pg.base.ship_strengthen_blueprint[1505] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+226|防空+17|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -17423,11 +15437,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.ship_strengthen_blueprint
-
-	var_5_95[1506] = {
+	pg.base.ship_strengthen_blueprint[1506] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17452,11 +15462,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.ship_strengthen_blueprint
-
-	var_5_96[1507] = {
+	pg.base.ship_strengthen_blueprint[1507] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17481,11 +15487,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.ship_strengthen_blueprint
-
-	var_5_97[1508] = {
+	pg.base.ship_strengthen_blueprint[1508] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17510,11 +15512,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.ship_strengthen_blueprint
-
-	var_5_98[1509] = {
+	pg.base.ship_strengthen_blueprint[1509] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17539,8 +15537,7 @@ end)()
 			100
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.ship_strengthen_blueprint[1510] = {
+	pg.base.ship_strengthen_blueprint[1510] = {
 		effect_breakout = 499032,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -17577,11 +15574,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_6_0[1511] = {
+	pg.base.ship_strengthen_blueprint[1511] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17606,11 +15599,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.ship_strengthen_blueprint
-
-	var_6_1[1512] = {
+	pg.base.ship_strengthen_blueprint[1512] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17635,11 +15624,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.ship_strengthen_blueprint
-
-	var_6_2[1513] = {
+	pg.base.ship_strengthen_blueprint[1513] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17664,11 +15649,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.ship_strengthen_blueprint
-
-	var_6_3[1514] = {
+	pg.base.ship_strengthen_blueprint[1514] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17693,11 +15674,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.ship_strengthen_blueprint
-
-	var_6_4[1515] = {
+	pg.base.ship_strengthen_blueprint[1515] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+451|防空+33|主炮效率提高10%|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -17742,11 +15719,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.ship_strengthen_blueprint
-
-	var_6_5[1516] = {
+	pg.base.ship_strengthen_blueprint[1516] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17771,11 +15744,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.ship_strengthen_blueprint
-
-	var_6_6[1517] = {
+	pg.base.ship_strengthen_blueprint[1517] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17800,11 +15769,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.ship_strengthen_blueprint
-
-	var_6_7[1518] = {
+	pg.base.ship_strengthen_blueprint[1518] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17829,11 +15794,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.ship_strengthen_blueprint
-
-	var_6_8[1519] = {
+	pg.base.ship_strengthen_blueprint[1519] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17858,11 +15819,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.ship_strengthen_blueprint
-
-	var_6_9[1520] = {
+	pg.base.ship_strengthen_blueprint[1520] = {
 		effect_breakout = 499033,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -17894,11 +15851,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.ship_strengthen_blueprint
-
-	var_6_10[1521] = {
+	pg.base.ship_strengthen_blueprint[1521] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17923,11 +15876,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.ship_strengthen_blueprint
-
-	var_6_11[1522] = {
+	pg.base.ship_strengthen_blueprint[1522] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17952,11 +15901,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.ship_strengthen_blueprint
-
-	var_6_12[1523] = {
+	pg.base.ship_strengthen_blueprint[1523] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -17981,11 +15926,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.ship_strengthen_blueprint
-
-	var_6_13[1524] = {
+	pg.base.ship_strengthen_blueprint[1524] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18010,11 +15951,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.ship_strengthen_blueprint
-
-	var_6_14[1525] = {
+	pg.base.ship_strengthen_blueprint[1525] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+677|防空+49|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -18051,11 +15988,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.ship_strengthen_blueprint
-
-	var_6_15[1526] = {
+	pg.base.ship_strengthen_blueprint[1526] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18080,11 +16013,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.ship_strengthen_blueprint
-
-	var_6_16[1527] = {
+	pg.base.ship_strengthen_blueprint[1527] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18109,11 +16038,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.ship_strengthen_blueprint
-
-	var_6_17[1528] = {
+	pg.base.ship_strengthen_blueprint[1528] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18138,11 +16063,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.ship_strengthen_blueprint
-
-	var_6_18[1529] = {
+	pg.base.ship_strengthen_blueprint[1529] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18167,11 +16088,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.ship_strengthen_blueprint
-
-	var_6_19[1530] = {
+	pg.base.ship_strengthen_blueprint[1530] = {
 		effect_breakout = 499034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -18200,11 +16117,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.ship_strengthen_blueprint
-
-	var_6_20[1531] = {
+	pg.base.ship_strengthen_blueprint[1531] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -18234,11 +16147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.ship_strengthen_blueprint
-
-	var_6_21[1532] = {
+	pg.base.ship_strengthen_blueprint[1532] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -18268,11 +16177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.ship_strengthen_blueprint
-
-	var_6_22[1533] = {
+	pg.base.ship_strengthen_blueprint[1533] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -18302,11 +16207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.ship_strengthen_blueprint
-
-	var_6_23[1534] = {
+	pg.base.ship_strengthen_blueprint[1534] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -18336,11 +16237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.ship_strengthen_blueprint
-
-	var_6_24[1535] = {
+	pg.base.ship_strengthen_blueprint[1535] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【「Ausgewogen」】技能强化为【「Ausgewogen」 +】",
 		extra_desc = "",
@@ -18373,11 +16270,7 @@ end)()
 			18320
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.ship_strengthen_blueprint
-
-	var_6_25[1601] = {
+	pg.base.ship_strengthen_blueprint[1601] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -18406,11 +16299,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.ship_strengthen_blueprint
-
-	var_6_26[1602] = {
+	pg.base.ship_strengthen_blueprint[1602] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18435,11 +16324,7 @@ end)()
 			47
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.ship_strengthen_blueprint
-
-	var_6_27[1603] = {
+	pg.base.ship_strengthen_blueprint[1603] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18464,11 +16349,7 @@ end)()
 			47
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.ship_strengthen_blueprint
-
-	var_6_28[1604] = {
+	pg.base.ship_strengthen_blueprint[1604] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18493,11 +16374,7 @@ end)()
 			47
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.ship_strengthen_blueprint
-
-	var_6_29[1605] = {
+	pg.base.ship_strengthen_blueprint[1605] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+289|防空+16|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -18538,11 +16415,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.ship_strengthen_blueprint
-
-	var_6_30[1606] = {
+	pg.base.ship_strengthen_blueprint[1606] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18567,11 +16440,7 @@ end)()
 			94
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.ship_strengthen_blueprint
-
-	var_6_31[1607] = {
+	pg.base.ship_strengthen_blueprint[1607] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18596,11 +16465,7 @@ end)()
 			94
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.ship_strengthen_blueprint
-
-	var_6_32[1608] = {
+	pg.base.ship_strengthen_blueprint[1608] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18625,11 +16490,7 @@ end)()
 			94
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.ship_strengthen_blueprint
-
-	var_6_33[1609] = {
+	pg.base.ship_strengthen_blueprint[1609] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18654,11 +16515,7 @@ end)()
 			94
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.ship_strengthen_blueprint
-
-	var_6_34[1610] = {
+	pg.base.ship_strengthen_blueprint[1610] = {
 		effect_breakout = 499042,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -18691,11 +16548,7 @@ end)()
 			"装备特殊副炮"
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.ship_strengthen_blueprint
-
-	var_6_35[1611] = {
+	pg.base.ship_strengthen_blueprint[1611] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18720,11 +16573,7 @@ end)()
 			141
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.ship_strengthen_blueprint
-
-	var_6_36[1612] = {
+	pg.base.ship_strengthen_blueprint[1612] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18749,11 +16598,7 @@ end)()
 			141
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.ship_strengthen_blueprint
-
-	var_6_37[1613] = {
+	pg.base.ship_strengthen_blueprint[1613] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18778,11 +16623,7 @@ end)()
 			141
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.ship_strengthen_blueprint
-
-	var_6_38[1614] = {
+	pg.base.ship_strengthen_blueprint[1614] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18807,11 +16648,7 @@ end)()
 			141
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.ship_strengthen_blueprint
-
-	var_6_39[1615] = {
+	pg.base.ship_strengthen_blueprint[1615] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+579|防空+31|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -18852,11 +16689,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.ship_strengthen_blueprint
-
-	var_6_40[1616] = {
+	pg.base.ship_strengthen_blueprint[1616] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18881,11 +16714,7 @@ end)()
 			188
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.ship_strengthen_blueprint
-
-	var_6_41[1617] = {
+	pg.base.ship_strengthen_blueprint[1617] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18910,11 +16739,7 @@ end)()
 			188
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.ship_strengthen_blueprint
-
-	var_6_42[1618] = {
+	pg.base.ship_strengthen_blueprint[1618] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18939,11 +16764,7 @@ end)()
 			188
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.ship_strengthen_blueprint
-
-	var_6_43[1619] = {
+	pg.base.ship_strengthen_blueprint[1619] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -18968,11 +16789,7 @@ end)()
 			188
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.ship_strengthen_blueprint
-
-	var_6_44[1620] = {
+	pg.base.ship_strengthen_blueprint[1620] = {
 		effect_breakout = 499043,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -19004,11 +16821,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.ship_strengthen_blueprint
-
-	var_6_45[1621] = {
+	pg.base.ship_strengthen_blueprint[1621] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19033,11 +16846,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.ship_strengthen_blueprint
-
-	var_6_46[1622] = {
+	pg.base.ship_strengthen_blueprint[1622] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19062,11 +16871,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.ship_strengthen_blueprint
-
-	var_6_47[1623] = {
+	pg.base.ship_strengthen_blueprint[1623] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19091,11 +16896,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.ship_strengthen_blueprint
-
-	var_6_48[1624] = {
+	pg.base.ship_strengthen_blueprint[1624] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19120,11 +16921,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.ship_strengthen_blueprint
-
-	var_6_49[1625] = {
+	pg.base.ship_strengthen_blueprint[1625] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+868|防空+47|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -19164,11 +16961,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.ship_strengthen_blueprint
-
-	var_6_50[1626] = {
+	pg.base.ship_strengthen_blueprint[1626] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19193,11 +16986,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.ship_strengthen_blueprint
-
-	var_6_51[1627] = {
+	pg.base.ship_strengthen_blueprint[1627] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19222,11 +17011,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.ship_strengthen_blueprint
-
-	var_6_52[1628] = {
+	pg.base.ship_strengthen_blueprint[1628] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19251,11 +17036,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.ship_strengthen_blueprint
-
-	var_6_53[1629] = {
+	pg.base.ship_strengthen_blueprint[1629] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19280,11 +17061,7 @@ end)()
 			235
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.ship_strengthen_blueprint
-
-	var_6_54[1630] = {
+	pg.base.ship_strengthen_blueprint[1630] = {
 		effect_breakout = 499044,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -19313,11 +17090,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.ship_strengthen_blueprint
-
-	var_6_55[1631] = {
+	pg.base.ship_strengthen_blueprint[1631] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -19347,11 +17120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.ship_strengthen_blueprint
-
-	var_6_56[1632] = {
+	pg.base.ship_strengthen_blueprint[1632] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -19381,11 +17150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.ship_strengthen_blueprint
-
-	var_6_57[1633] = {
+	pg.base.ship_strengthen_blueprint[1633] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -19415,11 +17180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.ship_strengthen_blueprint
-
-	var_6_58[1634] = {
+	pg.base.ship_strengthen_blueprint[1634] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -19449,11 +17210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.ship_strengthen_blueprint
-
-	var_6_59[1635] = {
+	pg.base.ship_strengthen_blueprint[1635] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【贯穿之轰雷】技能强化为【贯穿之轰雷 +】",
 		extra_desc = "",
@@ -19486,11 +17243,7 @@ end)()
 			18340
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.ship_strengthen_blueprint
-
-	var_6_60[1701] = {
+	pg.base.ship_strengthen_blueprint[1701] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -19519,11 +17272,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.ship_strengthen_blueprint
-
-	var_6_61[1702] = {
+	pg.base.ship_strengthen_blueprint[1702] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19548,11 +17297,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.ship_strengthen_blueprint
-
-	var_6_62[1703] = {
+	pg.base.ship_strengthen_blueprint[1703] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19577,11 +17322,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.ship_strengthen_blueprint
-
-	var_6_63[1704] = {
+	pg.base.ship_strengthen_blueprint[1704] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19606,11 +17347,7 @@ end)()
 			50
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.ship_strengthen_blueprint
-
-	var_6_64[1705] = {
+	pg.base.ship_strengthen_blueprint[1705] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+285|防空+11|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务|主炮预装填+1",
 		extra_desc = "",
@@ -19655,11 +17392,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.ship_strengthen_blueprint
-
-	var_6_65[1706] = {
+	pg.base.ship_strengthen_blueprint[1706] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19684,11 +17417,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.ship_strengthen_blueprint
-
-	var_6_66[1707] = {
+	pg.base.ship_strengthen_blueprint[1707] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19713,11 +17442,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.ship_strengthen_blueprint
-
-	var_6_67[1708] = {
+	pg.base.ship_strengthen_blueprint[1708] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19742,11 +17467,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.ship_strengthen_blueprint
-
-	var_6_68[1709] = {
+	pg.base.ship_strengthen_blueprint[1709] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19771,11 +17492,7 @@ end)()
 			100
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.ship_strengthen_blueprint
-
-	var_6_69[1710] = {
+	pg.base.ship_strengthen_blueprint[1710] = {
 		effect_breakout = 899022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -19807,11 +17524,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.ship_strengthen_blueprint
-
-	var_6_70[1711] = {
+	pg.base.ship_strengthen_blueprint[1711] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19836,11 +17549,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.ship_strengthen_blueprint
-
-	var_6_71[1712] = {
+	pg.base.ship_strengthen_blueprint[1712] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19865,11 +17574,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.ship_strengthen_blueprint
-
-	var_6_72[1713] = {
+	pg.base.ship_strengthen_blueprint[1713] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19894,11 +17599,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.ship_strengthen_blueprint
-
-	var_6_73[1714] = {
+	pg.base.ship_strengthen_blueprint[1714] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19923,11 +17624,7 @@ end)()
 			150
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.ship_strengthen_blueprint
-
-	var_6_74[1715] = {
+	pg.base.ship_strengthen_blueprint[1715] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+571|防空+22|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -19968,11 +17665,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.ship_strengthen_blueprint
-
-	var_6_75[1716] = {
+	pg.base.ship_strengthen_blueprint[1716] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -19997,11 +17690,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.ship_strengthen_blueprint
-
-	var_6_76[1717] = {
+	pg.base.ship_strengthen_blueprint[1717] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20026,11 +17715,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.ship_strengthen_blueprint
-
-	var_6_77[1718] = {
+	pg.base.ship_strengthen_blueprint[1718] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20055,11 +17740,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.ship_strengthen_blueprint
-
-	var_6_78[1719] = {
+	pg.base.ship_strengthen_blueprint[1719] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20084,11 +17765,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.ship_strengthen_blueprint
-
-	var_6_79[1720] = {
+	pg.base.ship_strengthen_blueprint[1720] = {
 		effect_breakout = 899023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -20121,11 +17798,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.ship_strengthen_blueprint
-
-	var_6_80[1721] = {
+	pg.base.ship_strengthen_blueprint[1721] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20150,11 +17823,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.ship_strengthen_blueprint
-
-	var_6_81[1722] = {
+	pg.base.ship_strengthen_blueprint[1722] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20179,11 +17848,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.ship_strengthen_blueprint
-
-	var_6_82[1723] = {
+	pg.base.ship_strengthen_blueprint[1723] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20208,11 +17873,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.ship_strengthen_blueprint
-
-	var_6_83[1724] = {
+	pg.base.ship_strengthen_blueprint[1724] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20237,11 +17898,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.ship_strengthen_blueprint
-
-	var_6_84[1725] = {
+	pg.base.ship_strengthen_blueprint[1725] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+856|防空+33|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -20281,11 +17938,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.ship_strengthen_blueprint
-
-	var_6_85[1726] = {
+	pg.base.ship_strengthen_blueprint[1726] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20310,11 +17963,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.ship_strengthen_blueprint
-
-	var_6_86[1727] = {
+	pg.base.ship_strengthen_blueprint[1727] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20339,11 +17988,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.ship_strengthen_blueprint
-
-	var_6_87[1728] = {
+	pg.base.ship_strengthen_blueprint[1728] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20368,11 +18013,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.ship_strengthen_blueprint
-
-	var_6_88[1729] = {
+	pg.base.ship_strengthen_blueprint[1729] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20397,11 +18038,7 @@ end)()
 			250
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.ship_strengthen_blueprint
-
-	var_6_89[1730] = {
+	pg.base.ship_strengthen_blueprint[1730] = {
 		effect_breakout = 899024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -20429,11 +18066,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.ship_strengthen_blueprint
-
-	var_6_90[1731] = {
+	pg.base.ship_strengthen_blueprint[1731] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -20463,11 +18096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.ship_strengthen_blueprint
-
-	var_6_91[1732] = {
+	pg.base.ship_strengthen_blueprint[1732] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -20497,11 +18126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.ship_strengthen_blueprint
-
-	var_6_92[1733] = {
+	pg.base.ship_strengthen_blueprint[1733] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -20531,11 +18156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.ship_strengthen_blueprint
-
-	var_6_93[1734] = {
+	pg.base.ship_strengthen_blueprint[1734] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -20565,11 +18186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.ship_strengthen_blueprint
-
-	var_6_94[1735] = {
+	pg.base.ship_strengthen_blueprint[1735] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【辅助机构「S.P.」】技能强化为【辅助机构「S.P.」 +】",
 		extra_desc = "",
@@ -20602,11 +18219,7 @@ end)()
 			18350
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.ship_strengthen_blueprint
-
-	var_6_95[1801] = {
+	pg.base.ship_strengthen_blueprint[1801] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -20635,11 +18248,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.ship_strengthen_blueprint
-
-	var_6_96[1802] = {
+	pg.base.ship_strengthen_blueprint[1802] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20664,11 +18273,7 @@ end)()
 			45
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.ship_strengthen_blueprint
-
-	var_6_97[1803] = {
+	pg.base.ship_strengthen_blueprint[1803] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20693,11 +18298,7 @@ end)()
 			45
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.ship_strengthen_blueprint
-
-	var_6_98[1804] = {
+	pg.base.ship_strengthen_blueprint[1804] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20722,8 +18323,7 @@ end)()
 			45
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.ship_strengthen_blueprint[1805] = {
+	pg.base.ship_strengthen_blueprint[1805] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+268|防空+10|机动+5|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -20773,11 +18373,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_7_0[1806] = {
+	pg.base.ship_strengthen_blueprint[1806] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20802,11 +18398,7 @@ end)()
 			90
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.ship_strengthen_blueprint
-
-	var_7_1[1807] = {
+	pg.base.ship_strengthen_blueprint[1807] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20831,11 +18423,7 @@ end)()
 			90
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.ship_strengthen_blueprint
-
-	var_7_2[1808] = {
+	pg.base.ship_strengthen_blueprint[1808] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20860,11 +18448,7 @@ end)()
 			90
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.ship_strengthen_blueprint
-
-	var_7_3[1809] = {
+	pg.base.ship_strengthen_blueprint[1809] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20889,11 +18473,7 @@ end)()
 			90
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.ship_strengthen_blueprint
-
-	var_7_4[1810] = {
+	pg.base.ship_strengthen_blueprint[1810] = {
 		effect_breakout = 199032,
 		effect_desc = "突破至4星|鱼雷预装填+1|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -20926,11 +18506,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.ship_strengthen_blueprint
-
-	var_7_5[1811] = {
+	pg.base.ship_strengthen_blueprint[1811] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20955,11 +18531,7 @@ end)()
 			135
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.ship_strengthen_blueprint
-
-	var_7_6[1812] = {
+	pg.base.ship_strengthen_blueprint[1812] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -20984,11 +18556,7 @@ end)()
 			135
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.ship_strengthen_blueprint
-
-	var_7_7[1813] = {
+	pg.base.ship_strengthen_blueprint[1813] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21013,11 +18581,7 @@ end)()
 			135
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.ship_strengthen_blueprint
-
-	var_7_8[1814] = {
+	pg.base.ship_strengthen_blueprint[1814] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21042,11 +18606,7 @@ end)()
 			135
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.ship_strengthen_blueprint
-
-	var_7_9[1815] = {
+	pg.base.ship_strengthen_blueprint[1815] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+537|防空+21|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -21087,11 +18647,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.ship_strengthen_blueprint
-
-	var_7_10[1816] = {
+	pg.base.ship_strengthen_blueprint[1816] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21116,11 +18672,7 @@ end)()
 			180
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.ship_strengthen_blueprint
-
-	var_7_11[1817] = {
+	pg.base.ship_strengthen_blueprint[1817] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21145,11 +18697,7 @@ end)()
 			180
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.ship_strengthen_blueprint
-
-	var_7_12[1818] = {
+	pg.base.ship_strengthen_blueprint[1818] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21174,11 +18722,7 @@ end)()
 			180
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.ship_strengthen_blueprint
-
-	var_7_13[1819] = {
+	pg.base.ship_strengthen_blueprint[1819] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21203,11 +18747,7 @@ end)()
 			180
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.ship_strengthen_blueprint
-
-	var_7_14[1820] = {
+	pg.base.ship_strengthen_blueprint[1820] = {
 		effect_breakout = 199033,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -21239,11 +18779,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.ship_strengthen_blueprint
-
-	var_7_15[1821] = {
+	pg.base.ship_strengthen_blueprint[1821] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21268,11 +18804,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.ship_strengthen_blueprint
-
-	var_7_16[1822] = {
+	pg.base.ship_strengthen_blueprint[1822] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21297,11 +18829,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.ship_strengthen_blueprint
-
-	var_7_17[1823] = {
+	pg.base.ship_strengthen_blueprint[1823] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21326,11 +18854,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.ship_strengthen_blueprint
-
-	var_7_18[1824] = {
+	pg.base.ship_strengthen_blueprint[1824] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21355,11 +18879,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.ship_strengthen_blueprint
-
-	var_7_19[1825] = {
+	pg.base.ship_strengthen_blueprint[1825] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+805|防空+31|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -21400,11 +18920,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.ship_strengthen_blueprint
-
-	var_7_20[1826] = {
+	pg.base.ship_strengthen_blueprint[1826] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21429,11 +18945,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.ship_strengthen_blueprint
-
-	var_7_21[1827] = {
+	pg.base.ship_strengthen_blueprint[1827] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21458,11 +18970,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.ship_strengthen_blueprint
-
-	var_7_22[1828] = {
+	pg.base.ship_strengthen_blueprint[1828] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21487,11 +18995,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.ship_strengthen_blueprint
-
-	var_7_23[1829] = {
+	pg.base.ship_strengthen_blueprint[1829] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21516,11 +19020,7 @@ end)()
 			225
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.ship_strengthen_blueprint
-
-	var_7_24[1830] = {
+	pg.base.ship_strengthen_blueprint[1830] = {
 		effect_breakout = 199034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -21549,11 +19049,7 @@ end)()
 			"全武器效率提高5%"
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.ship_strengthen_blueprint
-
-	var_7_25[1831] = {
+	pg.base.ship_strengthen_blueprint[1831] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -21583,11 +19079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.ship_strengthen_blueprint
-
-	var_7_26[1832] = {
+	pg.base.ship_strengthen_blueprint[1832] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -21617,11 +19109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.ship_strengthen_blueprint
-
-	var_7_27[1833] = {
+	pg.base.ship_strengthen_blueprint[1833] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -21651,11 +19139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.ship_strengthen_blueprint
-
-	var_7_28[1834] = {
+	pg.base.ship_strengthen_blueprint[1834] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -21685,11 +19169,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.ship_strengthen_blueprint
-
-	var_7_29[1835] = {
+	pg.base.ship_strengthen_blueprint[1835] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【Riddle a riddle】技能强化为【Riddle a riddle +】",
 		extra_desc = "",
@@ -21722,11 +19202,7 @@ end)()
 			18440
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.ship_strengthen_blueprint
-
-	var_7_30[1901] = {
+	pg.base.ship_strengthen_blueprint[1901] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -21755,11 +19231,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.ship_strengthen_blueprint
-
-	var_7_31[1902] = {
+	pg.base.ship_strengthen_blueprint[1902] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21784,11 +19256,7 @@ end)()
 			35
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.ship_strengthen_blueprint
-
-	var_7_32[1903] = {
+	pg.base.ship_strengthen_blueprint[1903] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21813,11 +19281,7 @@ end)()
 			35
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.ship_strengthen_blueprint
-
-	var_7_33[1904] = {
+	pg.base.ship_strengthen_blueprint[1904] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21842,11 +19306,7 @@ end)()
 			35
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.ship_strengthen_blueprint
-
-	var_7_34[1905] = {
+	pg.base.ship_strengthen_blueprint[1905] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+346|防空+15|战斗机效率提高5%|所有战斗机+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -21891,11 +19351,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.ship_strengthen_blueprint
-
-	var_7_35[1906] = {
+	pg.base.ship_strengthen_blueprint[1906] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21920,11 +19376,7 @@ end)()
 			70
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.ship_strengthen_blueprint
-
-	var_7_36[1907] = {
+	pg.base.ship_strengthen_blueprint[1907] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21949,11 +19401,7 @@ end)()
 			70
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.ship_strengthen_blueprint
-
-	var_7_37[1908] = {
+	pg.base.ship_strengthen_blueprint[1908] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -21978,11 +19426,7 @@ end)()
 			70
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.ship_strengthen_blueprint
-
-	var_7_38[1909] = {
+	pg.base.ship_strengthen_blueprint[1909] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22007,11 +19451,7 @@ end)()
 			70
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.ship_strengthen_blueprint
-
-	var_7_39[1910] = {
+	pg.base.ship_strengthen_blueprint[1910] = {
 		effect_breakout = 399052,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -22044,11 +19484,7 @@ end)()
 			"战斗机栏位可以装备鱼雷机"
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.ship_strengthen_blueprint
-
-	var_7_40[1911] = {
+	pg.base.ship_strengthen_blueprint[1911] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22073,11 +19509,7 @@ end)()
 			105
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.ship_strengthen_blueprint
-
-	var_7_41[1912] = {
+	pg.base.ship_strengthen_blueprint[1912] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22102,11 +19534,7 @@ end)()
 			105
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.ship_strengthen_blueprint
-
-	var_7_42[1913] = {
+	pg.base.ship_strengthen_blueprint[1913] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22131,11 +19559,7 @@ end)()
 			105
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.ship_strengthen_blueprint
-
-	var_7_43[1914] = {
+	pg.base.ship_strengthen_blueprint[1914] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22160,11 +19584,7 @@ end)()
 			105
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.ship_strengthen_blueprint
-
-	var_7_44[1915] = {
+	pg.base.ship_strengthen_blueprint[1915] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+691|防空+30|所有轰炸机+2|轰炸机效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -22209,11 +19629,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.ship_strengthen_blueprint
-
-	var_7_45[1916] = {
+	pg.base.ship_strengthen_blueprint[1916] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22238,11 +19654,7 @@ end)()
 			140
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.ship_strengthen_blueprint
-
-	var_7_46[1917] = {
+	pg.base.ship_strengthen_blueprint[1917] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22267,11 +19679,7 @@ end)()
 			140
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.ship_strengthen_blueprint
-
-	var_7_47[1918] = {
+	pg.base.ship_strengthen_blueprint[1918] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22296,11 +19704,7 @@ end)()
 			140
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.ship_strengthen_blueprint
-
-	var_7_48[1919] = {
+	pg.base.ship_strengthen_blueprint[1919] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22325,11 +19729,7 @@ end)()
 			140
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.ship_strengthen_blueprint
-
-	var_7_49[1920] = {
+	pg.base.ship_strengthen_blueprint[1920] = {
 		effect_breakout = 399053,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -22362,11 +19762,7 @@ end)()
 			"轰炸机效率提高10%"
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.ship_strengthen_blueprint
-
-	var_7_50[1921] = {
+	pg.base.ship_strengthen_blueprint[1921] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22391,11 +19787,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.ship_strengthen_blueprint
-
-	var_7_51[1922] = {
+	pg.base.ship_strengthen_blueprint[1922] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22420,11 +19812,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.ship_strengthen_blueprint
-
-	var_7_52[1923] = {
+	pg.base.ship_strengthen_blueprint[1923] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22449,11 +19837,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.ship_strengthen_blueprint
-
-	var_7_53[1924] = {
+	pg.base.ship_strengthen_blueprint[1924] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22478,11 +19862,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.ship_strengthen_blueprint
-
-	var_7_54[1925] = {
+	pg.base.ship_strengthen_blueprint[1925] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1037|防空+45|鱼雷机效率提高5%|所有舰载机+1|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -22526,11 +19906,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.ship_strengthen_blueprint
-
-	var_7_55[1926] = {
+	pg.base.ship_strengthen_blueprint[1926] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22555,11 +19931,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.ship_strengthen_blueprint
-
-	var_7_56[1927] = {
+	pg.base.ship_strengthen_blueprint[1927] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22584,11 +19956,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.ship_strengthen_blueprint
-
-	var_7_57[1928] = {
+	pg.base.ship_strengthen_blueprint[1928] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22613,11 +19981,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.ship_strengthen_blueprint
-
-	var_7_58[1929] = {
+	pg.base.ship_strengthen_blueprint[1929] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22642,11 +20006,7 @@ end)()
 			175
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.ship_strengthen_blueprint
-
-	var_7_59[1930] = {
+	pg.base.ship_strengthen_blueprint[1930] = {
 		effect_breakout = 399054,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -22675,11 +20035,7 @@ end)()
 			"鱼雷机栏位可以装备轰炸机"
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.ship_strengthen_blueprint
-
-	var_7_60[1931] = {
+	pg.base.ship_strengthen_blueprint[1931] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -22709,11 +20065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.ship_strengthen_blueprint
-
-	var_7_61[1932] = {
+	pg.base.ship_strengthen_blueprint[1932] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -22743,11 +20095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.ship_strengthen_blueprint
-
-	var_7_62[1933] = {
+	pg.base.ship_strengthen_blueprint[1933] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【白龙云影】技能强化为【白龙云影 +】",
 		extra_desc = "",
@@ -22780,11 +20128,7 @@ end)()
 			18400
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.ship_strengthen_blueprint
-
-	var_7_63[1934] = {
+	pg.base.ship_strengthen_blueprint[1934] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+6",
 		extra_desc = "",
@@ -22814,11 +20158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.ship_strengthen_blueprint
-
-	var_7_64[1935] = {
+	pg.base.ship_strengthen_blueprint[1935] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+7|【天雷罪灭】技能强化为【天雷罪灭 +】",
 		extra_desc = "",
@@ -22851,11 +20191,7 @@ end)()
 			18380
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.ship_strengthen_blueprint
-
-	var_7_65[2001] = {
+	pg.base.ship_strengthen_blueprint[2001] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -22884,11 +20220,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.ship_strengthen_blueprint
-
-	var_7_66[2002] = {
+	pg.base.ship_strengthen_blueprint[2002] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22913,11 +20245,7 @@ end)()
 			46
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.ship_strengthen_blueprint
-
-	var_7_67[2003] = {
+	pg.base.ship_strengthen_blueprint[2003] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22942,11 +20270,7 @@ end)()
 			46
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.ship_strengthen_blueprint
-
-	var_7_68[2004] = {
+	pg.base.ship_strengthen_blueprint[2004] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -22971,11 +20295,7 @@ end)()
 			46
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.ship_strengthen_blueprint
-
-	var_7_69[2005] = {
+	pg.base.ship_strengthen_blueprint[2005] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+338|防空+12|主炮效率提高5%|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -23020,11 +20340,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.ship_strengthen_blueprint
-
-	var_7_70[2006] = {
+	pg.base.ship_strengthen_blueprint[2006] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23049,11 +20365,7 @@ end)()
 			92
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.ship_strengthen_blueprint
-
-	var_7_71[2007] = {
+	pg.base.ship_strengthen_blueprint[2007] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23078,11 +20390,7 @@ end)()
 			92
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.ship_strengthen_blueprint
-
-	var_7_72[2008] = {
+	pg.base.ship_strengthen_blueprint[2008] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23107,11 +20415,7 @@ end)()
 			92
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.ship_strengthen_blueprint
-
-	var_7_73[2009] = {
+	pg.base.ship_strengthen_blueprint[2009] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23136,11 +20440,7 @@ end)()
 			92
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.ship_strengthen_blueprint
-
-	var_7_74[2010] = {
+	pg.base.ship_strengthen_blueprint[2010] = {
 		effect_breakout = 499052,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -23173,11 +20473,7 @@ end)()
 			"装备特殊副炮"
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.ship_strengthen_blueprint
-
-	var_7_75[2011] = {
+	pg.base.ship_strengthen_blueprint[2011] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23202,11 +20498,7 @@ end)()
 			138
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.ship_strengthen_blueprint
-
-	var_7_76[2012] = {
+	pg.base.ship_strengthen_blueprint[2012] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23231,11 +20523,7 @@ end)()
 			138
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.ship_strengthen_blueprint
-
-	var_7_77[2013] = {
+	pg.base.ship_strengthen_blueprint[2013] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23260,11 +20548,7 @@ end)()
 			138
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.ship_strengthen_blueprint
-
-	var_7_78[2014] = {
+	pg.base.ship_strengthen_blueprint[2014] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23289,11 +20573,7 @@ end)()
 			138
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.ship_strengthen_blueprint
-
-	var_7_79[2015] = {
+	pg.base.ship_strengthen_blueprint[2015] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+675|防空+23|防空炮效率提高10%|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -23338,11 +20618,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.ship_strengthen_blueprint
-
-	var_7_80[2016] = {
+	pg.base.ship_strengthen_blueprint[2016] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23367,11 +20643,7 @@ end)()
 			184
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.ship_strengthen_blueprint
-
-	var_7_81[2017] = {
+	pg.base.ship_strengthen_blueprint[2017] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23396,11 +20668,7 @@ end)()
 			184
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.ship_strengthen_blueprint
-
-	var_7_82[2018] = {
+	pg.base.ship_strengthen_blueprint[2018] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23425,11 +20693,7 @@ end)()
 			184
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.ship_strengthen_blueprint
-
-	var_7_83[2019] = {
+	pg.base.ship_strengthen_blueprint[2019] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23454,11 +20718,7 @@ end)()
 			184
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.ship_strengthen_blueprint
-
-	var_7_84[2020] = {
+	pg.base.ship_strengthen_blueprint[2020] = {
 		effect_breakout = 499053,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -23490,11 +20750,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.ship_strengthen_blueprint
-
-	var_7_85[2021] = {
+	pg.base.ship_strengthen_blueprint[2021] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23519,11 +20775,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.ship_strengthen_blueprint
-
-	var_7_86[2022] = {
+	pg.base.ship_strengthen_blueprint[2022] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23548,11 +20800,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.ship_strengthen_blueprint
-
-	var_7_87[2023] = {
+	pg.base.ship_strengthen_blueprint[2023] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23577,11 +20825,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.ship_strengthen_blueprint
-
-	var_7_88[2024] = {
+	pg.base.ship_strengthen_blueprint[2024] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23606,11 +20850,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.ship_strengthen_blueprint
-
-	var_7_89[2025] = {
+	pg.base.ship_strengthen_blueprint[2025] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1014|防空+34|机动+5|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -23654,11 +20894,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.ship_strengthen_blueprint
-
-	var_7_90[2026] = {
+	pg.base.ship_strengthen_blueprint[2026] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23683,11 +20919,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.ship_strengthen_blueprint
-
-	var_7_91[2027] = {
+	pg.base.ship_strengthen_blueprint[2027] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23712,11 +20944,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.ship_strengthen_blueprint
-
-	var_7_92[2028] = {
+	pg.base.ship_strengthen_blueprint[2028] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23741,11 +20969,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.ship_strengthen_blueprint
-
-	var_7_93[2029] = {
+	pg.base.ship_strengthen_blueprint[2029] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23770,11 +20994,7 @@ end)()
 			230
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.ship_strengthen_blueprint
-
-	var_7_94[2030] = {
+	pg.base.ship_strengthen_blueprint[2030] = {
 		effect_breakout = 499054,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -23802,11 +21022,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.ship_strengthen_blueprint
-
-	var_7_95[2101] = {
+	pg.base.ship_strengthen_blueprint[2101] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -23835,11 +21051,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.ship_strengthen_blueprint
-
-	var_7_96[2102] = {
+	pg.base.ship_strengthen_blueprint[2102] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23864,11 +21076,7 @@ end)()
 			33
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.ship_strengthen_blueprint
-
-	var_7_97[2103] = {
+	pg.base.ship_strengthen_blueprint[2103] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23893,11 +21101,7 @@ end)()
 			33
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.ship_strengthen_blueprint
-
-	var_7_98[2104] = {
+	pg.base.ship_strengthen_blueprint[2104] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -23922,8 +21126,7 @@ end)()
 			33
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.ship_strengthen_blueprint[2105] = {
+	pg.base.ship_strengthen_blueprint[2105] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+310|防空+15|战斗机效率提高5%|所有轰炸机+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -23972,11 +21175,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_8_0[2106] = {
+	pg.base.ship_strengthen_blueprint[2106] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24001,11 +21200,7 @@ end)()
 			66
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.ship_strengthen_blueprint
-
-	var_8_1[2107] = {
+	pg.base.ship_strengthen_blueprint[2107] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24030,11 +21225,7 @@ end)()
 			66
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.ship_strengthen_blueprint
-
-	var_8_2[2108] = {
+	pg.base.ship_strengthen_blueprint[2108] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24059,11 +21250,7 @@ end)()
 			66
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.ship_strengthen_blueprint
-
-	var_8_3[2109] = {
+	pg.base.ship_strengthen_blueprint[2109] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24088,11 +21275,7 @@ end)()
 			66
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.ship_strengthen_blueprint
-
-	var_8_4[2110] = {
+	pg.base.ship_strengthen_blueprint[2110] = {
 		effect_breakout = 499062,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -24124,11 +21307,7 @@ end)()
 			"战斗机效率提高5%"
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.ship_strengthen_blueprint
-
-	var_8_5[2111] = {
+	pg.base.ship_strengthen_blueprint[2111] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24153,11 +21332,7 @@ end)()
 			99
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.ship_strengthen_blueprint
-
-	var_8_6[2112] = {
+	pg.base.ship_strengthen_blueprint[2112] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24182,11 +21357,7 @@ end)()
 			99
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.ship_strengthen_blueprint
-
-	var_8_7[2113] = {
+	pg.base.ship_strengthen_blueprint[2113] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24211,11 +21382,7 @@ end)()
 			99
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.ship_strengthen_blueprint
-
-	var_8_8[2114] = {
+	pg.base.ship_strengthen_blueprint[2114] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24240,11 +21407,7 @@ end)()
 			99
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.ship_strengthen_blueprint
-
-	var_8_9[2115] = {
+	pg.base.ship_strengthen_blueprint[2115] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+621|防空+30|鱼雷机效率提高5%|所有鱼雷机+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -24289,11 +21452,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.ship_strengthen_blueprint
-
-	var_8_10[2116] = {
+	pg.base.ship_strengthen_blueprint[2116] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24318,11 +21477,7 @@ end)()
 			132
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.ship_strengthen_blueprint
-
-	var_8_11[2117] = {
+	pg.base.ship_strengthen_blueprint[2117] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24347,11 +21502,7 @@ end)()
 			132
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.ship_strengthen_blueprint
-
-	var_8_12[2118] = {
+	pg.base.ship_strengthen_blueprint[2118] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24376,11 +21527,7 @@ end)()
 			132
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.ship_strengthen_blueprint
-
-	var_8_13[2119] = {
+	pg.base.ship_strengthen_blueprint[2119] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24405,11 +21552,7 @@ end)()
 			132
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.ship_strengthen_blueprint
-
-	var_8_14[2120] = {
+	pg.base.ship_strengthen_blueprint[2120] = {
 		effect_breakout = 499063,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -24442,11 +21585,7 @@ end)()
 			"鱼雷机效率提高10%"
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.ship_strengthen_blueprint
-
-	var_8_15[2121] = {
+	pg.base.ship_strengthen_blueprint[2121] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24471,11 +21610,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.ship_strengthen_blueprint
-
-	var_8_16[2122] = {
+	pg.base.ship_strengthen_blueprint[2122] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24500,11 +21635,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.ship_strengthen_blueprint
-
-	var_8_17[2123] = {
+	pg.base.ship_strengthen_blueprint[2123] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24529,11 +21660,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.ship_strengthen_blueprint
-
-	var_8_18[2124] = {
+	pg.base.ship_strengthen_blueprint[2124] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24558,11 +21685,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.ship_strengthen_blueprint
-
-	var_8_19[2125] = {
+	pg.base.ship_strengthen_blueprint[2125] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+931|防空+46|所有舰载机+1|战斗机效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -24606,11 +21729,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.ship_strengthen_blueprint
-
-	var_8_20[2126] = {
+	pg.base.ship_strengthen_blueprint[2126] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24635,11 +21754,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.ship_strengthen_blueprint
-
-	var_8_21[2127] = {
+	pg.base.ship_strengthen_blueprint[2127] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24664,11 +21779,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.ship_strengthen_blueprint
-
-	var_8_22[2128] = {
+	pg.base.ship_strengthen_blueprint[2128] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24693,11 +21804,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.ship_strengthen_blueprint
-
-	var_8_23[2129] = {
+	pg.base.ship_strengthen_blueprint[2129] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24722,11 +21829,7 @@ end)()
 			165
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.ship_strengthen_blueprint
-
-	var_8_24[2130] = {
+	pg.base.ship_strengthen_blueprint[2130] = {
 		effect_breakout = 499064,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -24754,11 +21857,7 @@ end)()
 			"舰载机效率提高5%"
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.ship_strengthen_blueprint
-
-	var_8_25[2131] = {
+	pg.base.ship_strengthen_blueprint[2131] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -24788,11 +21887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.ship_strengthen_blueprint
-
-	var_8_26[2132] = {
+	pg.base.ship_strengthen_blueprint[2132] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -24822,11 +21917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.ship_strengthen_blueprint
-
-	var_8_27[2133] = {
+	pg.base.ship_strengthen_blueprint[2133] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -24856,11 +21947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.ship_strengthen_blueprint
-
-	var_8_28[2134] = {
+	pg.base.ship_strengthen_blueprint[2134] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -24890,11 +21977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.ship_strengthen_blueprint
-
-	var_8_29[2135] = {
+	pg.base.ship_strengthen_blueprint[2135] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【洞察技术-思想掌握】技能强化为【洞察技术-思想掌握 +】",
 		extra_desc = "",
@@ -24927,11 +22010,7 @@ end)()
 			18460
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.ship_strengthen_blueprint
-
-	var_8_30[2201] = {
+	pg.base.ship_strengthen_blueprint[2201] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -24960,11 +22039,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.ship_strengthen_blueprint
-
-	var_8_31[2202] = {
+	pg.base.ship_strengthen_blueprint[2202] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -24989,11 +22064,7 @@ end)()
 			43
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.ship_strengthen_blueprint
-
-	var_8_32[2203] = {
+	pg.base.ship_strengthen_blueprint[2203] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25018,11 +22089,7 @@ end)()
 			43
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.ship_strengthen_blueprint
-
-	var_8_33[2204] = {
+	pg.base.ship_strengthen_blueprint[2204] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25047,11 +22114,7 @@ end)()
 			43
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.ship_strengthen_blueprint
-
-	var_8_34[2205] = {
+	pg.base.ship_strengthen_blueprint[2205] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+344|防空+12|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -25092,11 +22155,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.ship_strengthen_blueprint
-
-	var_8_35[2206] = {
+	pg.base.ship_strengthen_blueprint[2206] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25121,11 +22180,7 @@ end)()
 			86
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.ship_strengthen_blueprint
-
-	var_8_36[2207] = {
+	pg.base.ship_strengthen_blueprint[2207] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25150,11 +22205,7 @@ end)()
 			86
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.ship_strengthen_blueprint
-
-	var_8_37[2208] = {
+	pg.base.ship_strengthen_blueprint[2208] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25179,11 +22230,7 @@ end)()
 			86
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.ship_strengthen_blueprint
-
-	var_8_38[2209] = {
+	pg.base.ship_strengthen_blueprint[2209] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25208,11 +22255,7 @@ end)()
 			86
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.ship_strengthen_blueprint
-
-	var_8_39[2210] = {
+	pg.base.ship_strengthen_blueprint[2210] = {
 		effect_breakout = 699012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -25245,11 +22288,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.ship_strengthen_blueprint
-
-	var_8_40[2211] = {
+	pg.base.ship_strengthen_blueprint[2211] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25274,11 +22313,7 @@ end)()
 			129
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.ship_strengthen_blueprint
-
-	var_8_41[2212] = {
+	pg.base.ship_strengthen_blueprint[2212] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25303,11 +22338,7 @@ end)()
 			129
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.ship_strengthen_blueprint
-
-	var_8_42[2213] = {
+	pg.base.ship_strengthen_blueprint[2213] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25332,11 +22363,7 @@ end)()
 			129
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.ship_strengthen_blueprint
-
-	var_8_43[2214] = {
+	pg.base.ship_strengthen_blueprint[2214] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25361,11 +22388,7 @@ end)()
 			129
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.ship_strengthen_blueprint
-
-	var_8_44[2215] = {
+	pg.base.ship_strengthen_blueprint[2215] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+688|防空+24|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -25406,11 +22429,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.ship_strengthen_blueprint
-
-	var_8_45[2216] = {
+	pg.base.ship_strengthen_blueprint[2216] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25435,11 +22454,7 @@ end)()
 			172
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.ship_strengthen_blueprint
-
-	var_8_46[2217] = {
+	pg.base.ship_strengthen_blueprint[2217] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25464,11 +22479,7 @@ end)()
 			172
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.ship_strengthen_blueprint
-
-	var_8_47[2218] = {
+	pg.base.ship_strengthen_blueprint[2218] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25493,11 +22504,7 @@ end)()
 			172
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.ship_strengthen_blueprint
-
-	var_8_48[2219] = {
+	pg.base.ship_strengthen_blueprint[2219] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25522,11 +22529,7 @@ end)()
 			172
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.ship_strengthen_blueprint
-
-	var_8_49[2220] = {
+	pg.base.ship_strengthen_blueprint[2220] = {
 		effect_breakout = 699013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -25559,11 +22562,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.ship_strengthen_blueprint
-
-	var_8_50[2221] = {
+	pg.base.ship_strengthen_blueprint[2221] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25588,11 +22587,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.ship_strengthen_blueprint
-
-	var_8_51[2222] = {
+	pg.base.ship_strengthen_blueprint[2222] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25617,11 +22612,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.ship_strengthen_blueprint
-
-	var_8_52[2223] = {
+	pg.base.ship_strengthen_blueprint[2223] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25646,11 +22637,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.ship_strengthen_blueprint
-
-	var_8_53[2224] = {
+	pg.base.ship_strengthen_blueprint[2224] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25675,11 +22662,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.ship_strengthen_blueprint
-
-	var_8_54[2225] = {
+	pg.base.ship_strengthen_blueprint[2225] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1032|防空+35|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -25719,11 +22702,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.ship_strengthen_blueprint
-
-	var_8_55[2226] = {
+	pg.base.ship_strengthen_blueprint[2226] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25748,11 +22727,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.ship_strengthen_blueprint
-
-	var_8_56[2227] = {
+	pg.base.ship_strengthen_blueprint[2227] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25777,11 +22752,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.ship_strengthen_blueprint
-
-	var_8_57[2228] = {
+	pg.base.ship_strengthen_blueprint[2228] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25806,11 +22777,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.ship_strengthen_blueprint
-
-	var_8_58[2229] = {
+	pg.base.ship_strengthen_blueprint[2229] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -25835,11 +22802,7 @@ end)()
 			215
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.ship_strengthen_blueprint
-
-	var_8_59[2230] = {
+	pg.base.ship_strengthen_blueprint[2230] = {
 		effect_breakout = 699014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -25868,11 +22831,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.ship_strengthen_blueprint
-
-	var_8_60[2231] = {
+	pg.base.ship_strengthen_blueprint[2231] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -25902,11 +22861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.ship_strengthen_blueprint
-
-	var_8_61[2232] = {
+	pg.base.ship_strengthen_blueprint[2232] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -25936,11 +22891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.ship_strengthen_blueprint
-
-	var_8_62[2233] = {
+	pg.base.ship_strengthen_blueprint[2233] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -25970,11 +22921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.ship_strengthen_blueprint
-
-	var_8_63[2234] = {
+	pg.base.ship_strengthen_blueprint[2234] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -26004,11 +22951,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.ship_strengthen_blueprint
-
-	var_8_64[2235] = {
+	pg.base.ship_strengthen_blueprint[2235] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【野心与恩泽之威】技能强化为【野心与恩泽之威 +】",
 		extra_desc = "",
@@ -26041,11 +22984,7 @@ end)()
 			18500
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.ship_strengthen_blueprint
-
-	var_8_65[2301] = {
+	pg.base.ship_strengthen_blueprint[2301] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -26074,11 +23013,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.ship_strengthen_blueprint
-
-	var_8_66[2302] = {
+	pg.base.ship_strengthen_blueprint[2302] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26103,11 +23038,7 @@ end)()
 			49
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.ship_strengthen_blueprint
-
-	var_8_67[2303] = {
+	pg.base.ship_strengthen_blueprint[2303] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26132,11 +23063,7 @@ end)()
 			49
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.ship_strengthen_blueprint
-
-	var_8_68[2304] = {
+	pg.base.ship_strengthen_blueprint[2304] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26161,11 +23088,7 @@ end)()
 			49
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.ship_strengthen_blueprint
-
-	var_8_69[2305] = {
+	pg.base.ship_strengthen_blueprint[2305] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+227|防空+16|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -26207,11 +23130,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.ship_strengthen_blueprint
-
-	var_8_70[2306] = {
+	pg.base.ship_strengthen_blueprint[2306] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26236,11 +23155,7 @@ end)()
 			98
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.ship_strengthen_blueprint
-
-	var_8_71[2307] = {
+	pg.base.ship_strengthen_blueprint[2307] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26265,11 +23180,7 @@ end)()
 			98
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.ship_strengthen_blueprint
-
-	var_8_72[2308] = {
+	pg.base.ship_strengthen_blueprint[2308] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26294,11 +23205,7 @@ end)()
 			98
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.ship_strengthen_blueprint
-
-	var_8_73[2309] = {
+	pg.base.ship_strengthen_blueprint[2309] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26323,11 +23230,7 @@ end)()
 			98
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.ship_strengthen_blueprint
-
-	var_8_74[2310] = {
+	pg.base.ship_strengthen_blueprint[2310] = {
 		effect_breakout = 299052,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -26360,11 +23263,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.ship_strengthen_blueprint
-
-	var_8_75[2311] = {
+	pg.base.ship_strengthen_blueprint[2311] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26389,11 +23288,7 @@ end)()
 			147
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.ship_strengthen_blueprint
-
-	var_8_76[2312] = {
+	pg.base.ship_strengthen_blueprint[2312] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26418,11 +23313,7 @@ end)()
 			147
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.ship_strengthen_blueprint
-
-	var_8_77[2313] = {
+	pg.base.ship_strengthen_blueprint[2313] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26447,11 +23338,7 @@ end)()
 			147
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.ship_strengthen_blueprint
-
-	var_8_78[2314] = {
+	pg.base.ship_strengthen_blueprint[2314] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26476,11 +23363,7 @@ end)()
 			147
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.ship_strengthen_blueprint
-
-	var_8_79[2315] = {
+	pg.base.ship_strengthen_blueprint[2315] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+453|防空+31|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -26518,11 +23401,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.ship_strengthen_blueprint
-
-	var_8_80[2316] = {
+	pg.base.ship_strengthen_blueprint[2316] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26547,11 +23426,7 @@ end)()
 			196
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.ship_strengthen_blueprint
-
-	var_8_81[2317] = {
+	pg.base.ship_strengthen_blueprint[2317] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26576,11 +23451,7 @@ end)()
 			196
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.ship_strengthen_blueprint
-
-	var_8_82[2318] = {
+	pg.base.ship_strengthen_blueprint[2318] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26605,11 +23476,7 @@ end)()
 			196
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.ship_strengthen_blueprint
-
-	var_8_83[2319] = {
+	pg.base.ship_strengthen_blueprint[2319] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26634,11 +23501,7 @@ end)()
 			196
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.ship_strengthen_blueprint
-
-	var_8_84[2320] = {
+	pg.base.ship_strengthen_blueprint[2320] = {
 		effect_breakout = 299053,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -26670,11 +23533,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.ship_strengthen_blueprint
-
-	var_8_85[2321] = {
+	pg.base.ship_strengthen_blueprint[2321] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26699,11 +23558,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.ship_strengthen_blueprint
-
-	var_8_86[2322] = {
+	pg.base.ship_strengthen_blueprint[2322] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26728,11 +23583,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.ship_strengthen_blueprint
-
-	var_8_87[2323] = {
+	pg.base.ship_strengthen_blueprint[2323] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26757,11 +23608,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.ship_strengthen_blueprint
-
-	var_8_88[2324] = {
+	pg.base.ship_strengthen_blueprint[2324] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26786,11 +23633,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.ship_strengthen_blueprint
-
-	var_8_89[2325] = {
+	pg.base.ship_strengthen_blueprint[2325] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+681|防空+46|主炮效率提高15%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -26830,11 +23673,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.ship_strengthen_blueprint
-
-	var_8_90[2326] = {
+	pg.base.ship_strengthen_blueprint[2326] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26859,11 +23698,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.ship_strengthen_blueprint
-
-	var_8_91[2327] = {
+	pg.base.ship_strengthen_blueprint[2327] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26888,11 +23723,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.ship_strengthen_blueprint
-
-	var_8_92[2328] = {
+	pg.base.ship_strengthen_blueprint[2328] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26917,11 +23748,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.ship_strengthen_blueprint
-
-	var_8_93[2329] = {
+	pg.base.ship_strengthen_blueprint[2329] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -26946,11 +23773,7 @@ end)()
 			245
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.ship_strengthen_blueprint
-
-	var_8_94[2330] = {
+	pg.base.ship_strengthen_blueprint[2330] = {
 		effect_breakout = 299054,
 		effect_desc = "突破至6星|主炮底座+1",
 		effect_attr = "",
@@ -26982,11 +23805,7 @@ end)()
 			"专属弹幕升级"
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.ship_strengthen_blueprint
-
-	var_8_95[2401] = {
+	pg.base.ship_strengthen_blueprint[2401] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -27015,11 +23834,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.ship_strengthen_blueprint
-
-	var_8_96[2402] = {
+	pg.base.ship_strengthen_blueprint[2402] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27044,11 +23859,7 @@ end)()
 			41
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.ship_strengthen_blueprint
-
-	var_8_97[2403] = {
+	pg.base.ship_strengthen_blueprint[2403] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27073,11 +23884,7 @@ end)()
 			41
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.ship_strengthen_blueprint
-
-	var_8_98[2404] = {
+	pg.base.ship_strengthen_blueprint[2404] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27102,8 +23909,7 @@ end)()
 			41
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.ship_strengthen_blueprint[2405] = {
+	pg.base.ship_strengthen_blueprint[2405] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+344|防空+15|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -27148,11 +23954,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_9_0[2406] = {
+	pg.base.ship_strengthen_blueprint[2406] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27177,11 +23979,7 @@ end)()
 			82
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.ship_strengthen_blueprint
-
-	var_9_1[2407] = {
+	pg.base.ship_strengthen_blueprint[2407] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27206,11 +24004,7 @@ end)()
 			82
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.ship_strengthen_blueprint
-
-	var_9_2[2408] = {
+	pg.base.ship_strengthen_blueprint[2408] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27235,11 +24029,7 @@ end)()
 			82
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.ship_strengthen_blueprint
-
-	var_9_3[2409] = {
+	pg.base.ship_strengthen_blueprint[2409] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27264,11 +24054,7 @@ end)()
 			82
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.ship_strengthen_blueprint
-
-	var_9_4[2410] = {
+	pg.base.ship_strengthen_blueprint[2410] = {
 		effect_breakout = 499072,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -27300,11 +24086,7 @@ end)()
 			"主炮底座+1"
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.ship_strengthen_blueprint
-
-	var_9_5[2411] = {
+	pg.base.ship_strengthen_blueprint[2411] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27329,11 +24111,7 @@ end)()
 			123
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.ship_strengthen_blueprint
-
-	var_9_6[2412] = {
+	pg.base.ship_strengthen_blueprint[2412] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27358,11 +24136,7 @@ end)()
 			123
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.ship_strengthen_blueprint
-
-	var_9_7[2413] = {
+	pg.base.ship_strengthen_blueprint[2413] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27387,11 +24161,7 @@ end)()
 			123
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.ship_strengthen_blueprint
-
-	var_9_8[2414] = {
+	pg.base.ship_strengthen_blueprint[2414] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27416,11 +24186,7 @@ end)()
 			123
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.ship_strengthen_blueprint
-
-	var_9_9[2415] = {
+	pg.base.ship_strengthen_blueprint[2415] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+688|防空+29|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -27461,11 +24227,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.ship_strengthen_blueprint
-
-	var_9_10[2416] = {
+	pg.base.ship_strengthen_blueprint[2416] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27490,11 +24252,7 @@ end)()
 			164
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.ship_strengthen_blueprint
-
-	var_9_11[2417] = {
+	pg.base.ship_strengthen_blueprint[2417] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27519,11 +24277,7 @@ end)()
 			164
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.ship_strengthen_blueprint
-
-	var_9_12[2418] = {
+	pg.base.ship_strengthen_blueprint[2418] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27548,11 +24302,7 @@ end)()
 			164
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.ship_strengthen_blueprint
-
-	var_9_13[2419] = {
+	pg.base.ship_strengthen_blueprint[2419] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27577,11 +24327,7 @@ end)()
 			164
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.ship_strengthen_blueprint
-
-	var_9_14[2420] = {
+	pg.base.ship_strengthen_blueprint[2420] = {
 		effect_breakout = 499073,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -27614,11 +24360,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.ship_strengthen_blueprint
-
-	var_9_15[2421] = {
+	pg.base.ship_strengthen_blueprint[2421] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27643,11 +24385,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.ship_strengthen_blueprint
-
-	var_9_16[2422] = {
+	pg.base.ship_strengthen_blueprint[2422] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27672,11 +24410,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.ship_strengthen_blueprint
-
-	var_9_17[2423] = {
+	pg.base.ship_strengthen_blueprint[2423] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27701,11 +24435,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.ship_strengthen_blueprint
-
-	var_9_18[2424] = {
+	pg.base.ship_strengthen_blueprint[2424] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27730,11 +24460,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.ship_strengthen_blueprint
-
-	var_9_19[2425] = {
+	pg.base.ship_strengthen_blueprint[2425] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1032|防空+45|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -27771,11 +24497,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.ship_strengthen_blueprint
-
-	var_9_20[2426] = {
+	pg.base.ship_strengthen_blueprint[2426] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27800,11 +24522,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.ship_strengthen_blueprint
-
-	var_9_21[2427] = {
+	pg.base.ship_strengthen_blueprint[2427] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27829,11 +24547,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.ship_strengthen_blueprint
-
-	var_9_22[2428] = {
+	pg.base.ship_strengthen_blueprint[2428] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27858,11 +24572,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.ship_strengthen_blueprint
-
-	var_9_23[2429] = {
+	pg.base.ship_strengthen_blueprint[2429] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -27887,11 +24597,7 @@ end)()
 			205
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.ship_strengthen_blueprint
-
-	var_9_24[2430] = {
+	pg.base.ship_strengthen_blueprint[2430] = {
 		effect_breakout = 499074,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -27920,11 +24626,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.ship_strengthen_blueprint
-
-	var_9_25[2431] = {
+	pg.base.ship_strengthen_blueprint[2431] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -27954,11 +24656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.ship_strengthen_blueprint
-
-	var_9_26[2432] = {
+	pg.base.ship_strengthen_blueprint[2432] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -27988,11 +24686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.ship_strengthen_blueprint
-
-	var_9_27[2433] = {
+	pg.base.ship_strengthen_blueprint[2433] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -28022,11 +24716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.ship_strengthen_blueprint
-
-	var_9_28[2434] = {
+	pg.base.ship_strengthen_blueprint[2434] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -28056,11 +24746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.ship_strengthen_blueprint
-
-	var_9_29[2435] = {
+	pg.base.ship_strengthen_blueprint[2435] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【邪龙舰装·欲求之刃】技能强化为【邪龙舰装·欲求之刃 +】",
 		extra_desc = "",
@@ -28093,11 +24779,7 @@ end)()
 			18550
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.ship_strengthen_blueprint
-
-	var_9_30[2501] = {
+	pg.base.ship_strengthen_blueprint[2501] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -28126,11 +24808,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.ship_strengthen_blueprint
-
-	var_9_31[2502] = {
+	pg.base.ship_strengthen_blueprint[2502] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28155,11 +24833,7 @@ end)()
 			53
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.ship_strengthen_blueprint
-
-	var_9_32[2503] = {
+	pg.base.ship_strengthen_blueprint[2503] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28184,11 +24858,7 @@ end)()
 			53
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.ship_strengthen_blueprint
-
-	var_9_33[2504] = {
+	pg.base.ship_strengthen_blueprint[2504] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28213,11 +24883,7 @@ end)()
 			53
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.ship_strengthen_blueprint
-
-	var_9_34[2505] = {
+	pg.base.ship_strengthen_blueprint[2505] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+152|防空+19|鱼雷底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -28259,11 +24925,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.ship_strengthen_blueprint
-
-	var_9_35[2506] = {
+	pg.base.ship_strengthen_blueprint[2506] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28288,11 +24950,7 @@ end)()
 			106
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.ship_strengthen_blueprint
-
-	var_9_36[2507] = {
+	pg.base.ship_strengthen_blueprint[2507] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28317,11 +24975,7 @@ end)()
 			106
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.ship_strengthen_blueprint
-
-	var_9_37[2508] = {
+	pg.base.ship_strengthen_blueprint[2508] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28346,11 +25000,7 @@ end)()
 			106
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.ship_strengthen_blueprint
-
-	var_9_38[2509] = {
+	pg.base.ship_strengthen_blueprint[2509] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28375,11 +25025,7 @@ end)()
 			106
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.ship_strengthen_blueprint
-
-	var_9_39[2510] = {
+	pg.base.ship_strengthen_blueprint[2510] = {
 		effect_breakout = 599012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -28413,11 +25059,7 @@ end)()
 			"鱼雷预装填+1"
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.ship_strengthen_blueprint
-
-	var_9_40[2511] = {
+	pg.base.ship_strengthen_blueprint[2511] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28442,11 +25084,7 @@ end)()
 			159
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.ship_strengthen_blueprint
-
-	var_9_41[2512] = {
+	pg.base.ship_strengthen_blueprint[2512] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28471,11 +25109,7 @@ end)()
 			159
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.ship_strengthen_blueprint
-
-	var_9_42[2513] = {
+	pg.base.ship_strengthen_blueprint[2513] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28500,11 +25134,7 @@ end)()
 			159
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.ship_strengthen_blueprint
-
-	var_9_43[2514] = {
+	pg.base.ship_strengthen_blueprint[2514] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28529,11 +25159,7 @@ end)()
 			159
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.ship_strengthen_blueprint
-
-	var_9_44[2515] = {
+	pg.base.ship_strengthen_blueprint[2515] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+305|防空+38|鱼雷效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -28574,11 +25200,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.ship_strengthen_blueprint
-
-	var_9_45[2516] = {
+	pg.base.ship_strengthen_blueprint[2516] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28603,11 +25225,7 @@ end)()
 			212
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.ship_strengthen_blueprint
-
-	var_9_46[2517] = {
+	pg.base.ship_strengthen_blueprint[2517] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28632,11 +25250,7 @@ end)()
 			212
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.ship_strengthen_blueprint
-
-	var_9_47[2518] = {
+	pg.base.ship_strengthen_blueprint[2518] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28661,11 +25275,7 @@ end)()
 			212
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.ship_strengthen_blueprint
-
-	var_9_48[2519] = {
+	pg.base.ship_strengthen_blueprint[2519] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28690,11 +25300,7 @@ end)()
 			212
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.ship_strengthen_blueprint
-
-	var_9_49[2520] = {
+	pg.base.ship_strengthen_blueprint[2520] = {
 		effect_breakout = 599013,
 		effect_desc = "突破至5星|主炮底座+1|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -28730,11 +25336,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.ship_strengthen_blueprint
-
-	var_9_50[2521] = {
+	pg.base.ship_strengthen_blueprint[2521] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28759,11 +25361,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.ship_strengthen_blueprint
-
-	var_9_51[2522] = {
+	pg.base.ship_strengthen_blueprint[2522] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28788,11 +25386,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.ship_strengthen_blueprint
-
-	var_9_52[2523] = {
+	pg.base.ship_strengthen_blueprint[2523] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28817,11 +25411,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.ship_strengthen_blueprint
-
-	var_9_53[2524] = {
+	pg.base.ship_strengthen_blueprint[2524] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28846,11 +25436,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.ship_strengthen_blueprint
-
-	var_9_54[2525] = {
+	pg.base.ship_strengthen_blueprint[2525] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+457|防空+58|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -28887,11 +25473,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.ship_strengthen_blueprint
-
-	var_9_55[2526] = {
+	pg.base.ship_strengthen_blueprint[2526] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28916,11 +25498,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.ship_strengthen_blueprint
-
-	var_9_56[2527] = {
+	pg.base.ship_strengthen_blueprint[2527] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28945,11 +25523,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.ship_strengthen_blueprint
-
-	var_9_57[2528] = {
+	pg.base.ship_strengthen_blueprint[2528] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -28974,11 +25548,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.ship_strengthen_blueprint
-
-	var_9_58[2529] = {
+	pg.base.ship_strengthen_blueprint[2529] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29003,11 +25573,7 @@ end)()
 			265
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.ship_strengthen_blueprint
-
-	var_9_59[2530] = {
+	pg.base.ship_strengthen_blueprint[2530] = {
 		effect_breakout = 599014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -29037,11 +25603,7 @@ end)()
 			"自身装备的鱼雷武器散布角减小"
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.ship_strengthen_blueprint
-
-	var_9_60[2531] = {
+	pg.base.ship_strengthen_blueprint[2531] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -29071,11 +25633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.ship_strengthen_blueprint
-
-	var_9_61[2532] = {
+	pg.base.ship_strengthen_blueprint[2532] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -29105,11 +25663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.ship_strengthen_blueprint
-
-	var_9_62[2533] = {
+	pg.base.ship_strengthen_blueprint[2533] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -29139,11 +25693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.ship_strengthen_blueprint
-
-	var_9_63[2534] = {
+	pg.base.ship_strengthen_blueprint[2534] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -29173,11 +25723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.ship_strengthen_blueprint
-
-	var_9_64[2535] = {
+	pg.base.ship_strengthen_blueprint[2535] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【炮火，倾泻如瀑！】技能强化为【炮火，倾泻如瀑！ +】",
 		extra_desc = "",
@@ -29210,11 +25756,7 @@ end)()
 			18590
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.ship_strengthen_blueprint
-
-	var_9_65[2601] = {
+	pg.base.ship_strengthen_blueprint[2601] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -29243,11 +25785,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.ship_strengthen_blueprint
-
-	var_9_66[2602] = {
+	pg.base.ship_strengthen_blueprint[2602] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29272,11 +25810,7 @@ end)()
 			33
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.ship_strengthen_blueprint
-
-	var_9_67[2603] = {
+	pg.base.ship_strengthen_blueprint[2603] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29301,11 +25835,7 @@ end)()
 			33
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.ship_strengthen_blueprint
-
-	var_9_68[2604] = {
+	pg.base.ship_strengthen_blueprint[2604] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29330,11 +25860,7 @@ end)()
 			33
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.ship_strengthen_blueprint
-
-	var_9_69[2605] = {
+	pg.base.ship_strengthen_blueprint[2605] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+269|防空+15|所有鱼雷机+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -29376,11 +25902,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.ship_strengthen_blueprint
-
-	var_9_70[2606] = {
+	pg.base.ship_strengthen_blueprint[2606] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29405,11 +25927,7 @@ end)()
 			66
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.ship_strengthen_blueprint
-
-	var_9_71[2607] = {
+	pg.base.ship_strengthen_blueprint[2607] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29434,11 +25952,7 @@ end)()
 			66
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.ship_strengthen_blueprint
-
-	var_9_72[2608] = {
+	pg.base.ship_strengthen_blueprint[2608] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29463,11 +25977,7 @@ end)()
 			66
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.ship_strengthen_blueprint
-
-	var_9_73[2609] = {
+	pg.base.ship_strengthen_blueprint[2609] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29492,11 +26002,7 @@ end)()
 			66
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.ship_strengthen_blueprint
-
-	var_9_74[2610] = {
+	pg.base.ship_strengthen_blueprint[2610] = {
 		effect_breakout = 799012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -29528,11 +26034,7 @@ end)()
 			"鱼雷机效率提高5%"
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.ship_strengthen_blueprint
-
-	var_9_75[2611] = {
+	pg.base.ship_strengthen_blueprint[2611] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29557,11 +26059,7 @@ end)()
 			99
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.ship_strengthen_blueprint
-
-	var_9_76[2612] = {
+	pg.base.ship_strengthen_blueprint[2612] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29586,11 +26084,7 @@ end)()
 			99
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.ship_strengthen_blueprint
-
-	var_9_77[2613] = {
+	pg.base.ship_strengthen_blueprint[2613] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29615,11 +26109,7 @@ end)()
 			99
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.ship_strengthen_blueprint
-
-	var_9_78[2614] = {
+	pg.base.ship_strengthen_blueprint[2614] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29644,11 +26134,7 @@ end)()
 			99
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.ship_strengthen_blueprint
-
-	var_9_79[2615] = {
+	pg.base.ship_strengthen_blueprint[2615] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+539|防空+30|鱼雷机效率提高5%|所有舰载机+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -29693,11 +26179,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.ship_strengthen_blueprint
-
-	var_9_80[2616] = {
+	pg.base.ship_strengthen_blueprint[2616] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29722,11 +26204,7 @@ end)()
 			132
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.ship_strengthen_blueprint
-
-	var_9_81[2617] = {
+	pg.base.ship_strengthen_blueprint[2617] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29751,11 +26229,7 @@ end)()
 			132
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.ship_strengthen_blueprint
-
-	var_9_82[2618] = {
+	pg.base.ship_strengthen_blueprint[2618] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29780,11 +26254,7 @@ end)()
 			132
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.ship_strengthen_blueprint
-
-	var_9_83[2619] = {
+	pg.base.ship_strengthen_blueprint[2619] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29809,11 +26279,7 @@ end)()
 			132
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.ship_strengthen_blueprint
-
-	var_9_84[2620] = {
+	pg.base.ship_strengthen_blueprint[2620] = {
 		effect_breakout = 799013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -29846,11 +26312,7 @@ end)()
 			"鱼雷机效率提高10%"
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.ship_strengthen_blueprint
-
-	var_9_85[2621] = {
+	pg.base.ship_strengthen_blueprint[2621] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29875,11 +26337,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.ship_strengthen_blueprint
-
-	var_9_86[2622] = {
+	pg.base.ship_strengthen_blueprint[2622] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29904,11 +26362,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.ship_strengthen_blueprint
-
-	var_9_87[2623] = {
+	pg.base.ship_strengthen_blueprint[2623] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29933,11 +26387,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.ship_strengthen_blueprint
-
-	var_9_88[2624] = {
+	pg.base.ship_strengthen_blueprint[2624] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -29962,11 +26412,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.ship_strengthen_blueprint
-
-	var_9_89[2625] = {
+	pg.base.ship_strengthen_blueprint[2625] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+809|防空+44|所有鱼雷机+1|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -30007,11 +26453,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.ship_strengthen_blueprint
-
-	var_9_90[2626] = {
+	pg.base.ship_strengthen_blueprint[2626] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30036,11 +26478,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.ship_strengthen_blueprint
-
-	var_9_91[2627] = {
+	pg.base.ship_strengthen_blueprint[2627] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30065,11 +26503,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.ship_strengthen_blueprint
-
-	var_9_92[2628] = {
+	pg.base.ship_strengthen_blueprint[2628] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30094,11 +26528,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.ship_strengthen_blueprint
-
-	var_9_93[2629] = {
+	pg.base.ship_strengthen_blueprint[2629] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30123,11 +26553,7 @@ end)()
 			165
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.ship_strengthen_blueprint
-
-	var_9_94[2630] = {
+	pg.base.ship_strengthen_blueprint[2630] = {
 		effect_breakout = 799014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -30155,11 +26581,7 @@ end)()
 			"鱼雷机效率提高15%"
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.ship_strengthen_blueprint
-
-	var_9_95[2631] = {
+	pg.base.ship_strengthen_blueprint[2631] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -30189,11 +26611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.ship_strengthen_blueprint
-
-	var_9_96[2632] = {
+	pg.base.ship_strengthen_blueprint[2632] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -30223,11 +26641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.ship_strengthen_blueprint
-
-	var_9_97[2633] = {
+	pg.base.ship_strengthen_blueprint[2633] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -30257,11 +26671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.ship_strengthen_blueprint
-
-	var_9_98[2634] = {
+	pg.base.ship_strengthen_blueprint[2634] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -30291,8 +26701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.ship_strengthen_blueprint[2635] = {
+	pg.base.ship_strengthen_blueprint[2635] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【辅助试验·冻结射击】技能强化为【辅助试验·冻结射击 +】",
 		extra_desc = "",
@@ -30329,11 +26738,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_10_0[2701] = {
+	pg.base.ship_strengthen_blueprint[2701] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -30362,11 +26767,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.ship_strengthen_blueprint
-
-	var_10_1[2702] = {
+	pg.base.ship_strengthen_blueprint[2702] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30391,11 +26792,7 @@ end)()
 			52
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.ship_strengthen_blueprint
-
-	var_10_2[2703] = {
+	pg.base.ship_strengthen_blueprint[2703] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30420,11 +26817,7 @@ end)()
 			52
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.ship_strengthen_blueprint
-
-	var_10_3[2704] = {
+	pg.base.ship_strengthen_blueprint[2704] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30449,11 +26842,7 @@ end)()
 			52
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.ship_strengthen_blueprint
-
-	var_10_4[2705] = {
+	pg.base.ship_strengthen_blueprint[2705] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+307|防空+12|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -30495,11 +26884,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.ship_strengthen_blueprint
-
-	var_10_5[2706] = {
+	pg.base.ship_strengthen_blueprint[2706] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30524,11 +26909,7 @@ end)()
 			104
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.ship_strengthen_blueprint
-
-	var_10_6[2707] = {
+	pg.base.ship_strengthen_blueprint[2707] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30553,11 +26934,7 @@ end)()
 			104
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.ship_strengthen_blueprint
-
-	var_10_7[2708] = {
+	pg.base.ship_strengthen_blueprint[2708] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30582,11 +26959,7 @@ end)()
 			104
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.ship_strengthen_blueprint
-
-	var_10_8[2709] = {
+	pg.base.ship_strengthen_blueprint[2709] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30611,11 +26984,7 @@ end)()
 			104
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.ship_strengthen_blueprint
-
-	var_10_9[2710] = {
+	pg.base.ship_strengthen_blueprint[2710] = {
 		effect_breakout = 899032,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -30648,11 +27017,7 @@ end)()
 			"装备特殊后向副炮"
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.ship_strengthen_blueprint
-
-	var_10_10[2711] = {
+	pg.base.ship_strengthen_blueprint[2711] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30677,11 +27042,7 @@ end)()
 			156
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.ship_strengthen_blueprint
-
-	var_10_11[2712] = {
+	pg.base.ship_strengthen_blueprint[2712] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30706,11 +27067,7 @@ end)()
 			156
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.ship_strengthen_blueprint
-
-	var_10_12[2713] = {
+	pg.base.ship_strengthen_blueprint[2713] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30735,11 +27092,7 @@ end)()
 			156
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.ship_strengthen_blueprint
-
-	var_10_13[2714] = {
+	pg.base.ship_strengthen_blueprint[2714] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30764,11 +27117,7 @@ end)()
 			156
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.ship_strengthen_blueprint
-
-	var_10_14[2715] = {
+	pg.base.ship_strengthen_blueprint[2715] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+614|防空+23|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -30809,11 +27158,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.ship_strengthen_blueprint
-
-	var_10_15[2716] = {
+	pg.base.ship_strengthen_blueprint[2716] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30838,11 +27183,7 @@ end)()
 			208
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.ship_strengthen_blueprint
-
-	var_10_16[2717] = {
+	pg.base.ship_strengthen_blueprint[2717] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30867,11 +27208,7 @@ end)()
 			208
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.ship_strengthen_blueprint
-
-	var_10_17[2718] = {
+	pg.base.ship_strengthen_blueprint[2718] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30896,11 +27233,7 @@ end)()
 			208
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.ship_strengthen_blueprint
-
-	var_10_18[2719] = {
+	pg.base.ship_strengthen_blueprint[2719] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30925,11 +27258,7 @@ end)()
 			208
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.ship_strengthen_blueprint
-
-	var_10_19[2720] = {
+	pg.base.ship_strengthen_blueprint[2720] = {
 		effect_breakout = 899033,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -30961,11 +27290,7 @@ end)()
 			"副炮效率提高10%"
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.ship_strengthen_blueprint
-
-	var_10_20[2721] = {
+	pg.base.ship_strengthen_blueprint[2721] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -30990,11 +27315,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.ship_strengthen_blueprint
-
-	var_10_21[2722] = {
+	pg.base.ship_strengthen_blueprint[2722] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31019,11 +27340,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.ship_strengthen_blueprint
-
-	var_10_22[2723] = {
+	pg.base.ship_strengthen_blueprint[2723] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31048,11 +27365,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.ship_strengthen_blueprint
-
-	var_10_23[2724] = {
+	pg.base.ship_strengthen_blueprint[2724] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31077,11 +27390,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.ship_strengthen_blueprint
-
-	var_10_24[2725] = {
+	pg.base.ship_strengthen_blueprint[2725] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+921|防空+35|机动+5|防空炮效率提高10%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -31125,11 +27434,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.ship_strengthen_blueprint
-
-	var_10_25[2726] = {
+	pg.base.ship_strengthen_blueprint[2726] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31154,11 +27459,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.ship_strengthen_blueprint
-
-	var_10_26[2727] = {
+	pg.base.ship_strengthen_blueprint[2727] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31183,11 +27484,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.ship_strengthen_blueprint
-
-	var_10_27[2728] = {
+	pg.base.ship_strengthen_blueprint[2728] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31212,11 +27509,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.ship_strengthen_blueprint
-
-	var_10_28[2729] = {
+	pg.base.ship_strengthen_blueprint[2729] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31241,11 +27534,7 @@ end)()
 			260
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.ship_strengthen_blueprint
-
-	var_10_29[2730] = {
+	pg.base.ship_strengthen_blueprint[2730] = {
 		effect_breakout = 899034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -31273,11 +27562,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.ship_strengthen_blueprint
-
-	var_10_30[2801] = {
+	pg.base.ship_strengthen_blueprint[2801] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -31306,11 +27591,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.ship_strengthen_blueprint
-
-	var_10_31[2802] = {
+	pg.base.ship_strengthen_blueprint[2802] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31335,11 +27616,7 @@ end)()
 			42
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.ship_strengthen_blueprint
-
-	var_10_32[2803] = {
+	pg.base.ship_strengthen_blueprint[2803] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31364,11 +27641,7 @@ end)()
 			42
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.ship_strengthen_blueprint
-
-	var_10_33[2804] = {
+	pg.base.ship_strengthen_blueprint[2804] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31393,11 +27666,7 @@ end)()
 			42
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.ship_strengthen_blueprint
-
-	var_10_34[2805] = {
+	pg.base.ship_strengthen_blueprint[2805] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+383|防空+15|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -31438,11 +27707,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.ship_strengthen_blueprint
-
-	var_10_35[2806] = {
+	pg.base.ship_strengthen_blueprint[2806] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31467,11 +27732,7 @@ end)()
 			84
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.ship_strengthen_blueprint
-
-	var_10_36[2807] = {
+	pg.base.ship_strengthen_blueprint[2807] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31496,11 +27757,7 @@ end)()
 			84
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.ship_strengthen_blueprint
-
-	var_10_37[2808] = {
+	pg.base.ship_strengthen_blueprint[2808] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31525,11 +27782,7 @@ end)()
 			84
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.ship_strengthen_blueprint
-
-	var_10_38[2809] = {
+	pg.base.ship_strengthen_blueprint[2809] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31554,11 +27807,7 @@ end)()
 			84
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.ship_strengthen_blueprint
-
-	var_10_39[2810] = {
+	pg.base.ship_strengthen_blueprint[2810] = {
 		effect_breakout = 199042,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -31592,11 +27841,7 @@ end)()
 			"装备特殊副炮"
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.ship_strengthen_blueprint
-
-	var_10_40[2811] = {
+	pg.base.ship_strengthen_blueprint[2811] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31621,11 +27866,7 @@ end)()
 			126
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.ship_strengthen_blueprint
-
-	var_10_41[2812] = {
+	pg.base.ship_strengthen_blueprint[2812] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31650,11 +27891,7 @@ end)()
 			126
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.ship_strengthen_blueprint
-
-	var_10_42[2813] = {
+	pg.base.ship_strengthen_blueprint[2813] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31679,11 +27916,7 @@ end)()
 			126
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.ship_strengthen_blueprint
-
-	var_10_43[2814] = {
+	pg.base.ship_strengthen_blueprint[2814] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31708,11 +27941,7 @@ end)()
 			126
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.ship_strengthen_blueprint
-
-	var_10_44[2815] = {
+	pg.base.ship_strengthen_blueprint[2815] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+766|防空+31|战斗机效率提高20%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -31753,11 +27982,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.ship_strengthen_blueprint
-
-	var_10_45[2816] = {
+	pg.base.ship_strengthen_blueprint[2816] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31782,11 +28007,7 @@ end)()
 			168
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.ship_strengthen_blueprint
-
-	var_10_46[2817] = {
+	pg.base.ship_strengthen_blueprint[2817] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31811,11 +28032,7 @@ end)()
 			168
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.ship_strengthen_blueprint
-
-	var_10_47[2818] = {
+	pg.base.ship_strengthen_blueprint[2818] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31840,11 +28057,7 @@ end)()
 			168
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.ship_strengthen_blueprint
-
-	var_10_48[2819] = {
+	pg.base.ship_strengthen_blueprint[2819] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31869,11 +28082,7 @@ end)()
 			168
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.ship_strengthen_blueprint
-
-	var_10_49[2820] = {
+	pg.base.ship_strengthen_blueprint[2820] = {
 		effect_breakout = 199043,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -31907,11 +28116,7 @@ end)()
 			"战斗机效率提高10%"
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.ship_strengthen_blueprint
-
-	var_10_50[2821] = {
+	pg.base.ship_strengthen_blueprint[2821] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31936,11 +28141,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.ship_strengthen_blueprint
-
-	var_10_51[2822] = {
+	pg.base.ship_strengthen_blueprint[2822] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31965,11 +28166,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.ship_strengthen_blueprint
-
-	var_10_52[2823] = {
+	pg.base.ship_strengthen_blueprint[2823] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -31994,11 +28191,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.ship_strengthen_blueprint
-
-	var_10_53[2824] = {
+	pg.base.ship_strengthen_blueprint[2824] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32023,11 +28216,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.ship_strengthen_blueprint
-
-	var_10_54[2825] = {
+	pg.base.ship_strengthen_blueprint[2825] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1195|防空+33|主炮效率提高5%|所有战斗机+1|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -32071,11 +28260,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.ship_strengthen_blueprint
-
-	var_10_55[2826] = {
+	pg.base.ship_strengthen_blueprint[2826] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32100,11 +28285,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.ship_strengthen_blueprint
-
-	var_10_56[2827] = {
+	pg.base.ship_strengthen_blueprint[2827] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32129,11 +28310,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.ship_strengthen_blueprint
-
-	var_10_57[2828] = {
+	pg.base.ship_strengthen_blueprint[2828] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32158,11 +28335,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.ship_strengthen_blueprint
-
-	var_10_58[2829] = {
+	pg.base.ship_strengthen_blueprint[2829] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32187,11 +28360,7 @@ end)()
 			210
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.ship_strengthen_blueprint
-
-	var_10_59[2830] = {
+	pg.base.ship_strengthen_blueprint[2830] = {
 		effect_breakout = 199044,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -32221,11 +28390,7 @@ end)()
 			"战斗机效率提高10%"
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.ship_strengthen_blueprint
-
-	var_10_60[2901] = {
+	pg.base.ship_strengthen_blueprint[2901] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -32254,11 +28419,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.ship_strengthen_blueprint
-
-	var_10_61[2902] = {
+	pg.base.ship_strengthen_blueprint[2902] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32283,11 +28444,7 @@ end)()
 			43
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.ship_strengthen_blueprint
-
-	var_10_62[2903] = {
+	pg.base.ship_strengthen_blueprint[2903] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32312,11 +28469,7 @@ end)()
 			43
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.ship_strengthen_blueprint
-
-	var_10_63[2904] = {
+	pg.base.ship_strengthen_blueprint[2904] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32341,11 +28494,7 @@ end)()
 			43
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.ship_strengthen_blueprint
-
-	var_10_64[2905] = {
+	pg.base.ship_strengthen_blueprint[2905] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+223|防空+21|鱼雷底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -32387,11 +28536,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.ship_strengthen_blueprint
-
-	var_10_65[2906] = {
+	pg.base.ship_strengthen_blueprint[2906] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32416,11 +28561,7 @@ end)()
 			86
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.ship_strengthen_blueprint
-
-	var_10_66[2907] = {
+	pg.base.ship_strengthen_blueprint[2907] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32445,11 +28586,7 @@ end)()
 			86
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.ship_strengthen_blueprint
-
-	var_10_67[2908] = {
+	pg.base.ship_strengthen_blueprint[2908] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32474,11 +28611,7 @@ end)()
 			86
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.ship_strengthen_blueprint
-
-	var_10_68[2909] = {
+	pg.base.ship_strengthen_blueprint[2909] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32503,11 +28636,7 @@ end)()
 			86
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.ship_strengthen_blueprint
-
-	var_10_69[2910] = {
+	pg.base.ship_strengthen_blueprint[2910] = {
 		effect_breakout = 399062,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -32540,11 +28669,7 @@ end)()
 			"鱼雷效率提高5%"
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.ship_strengthen_blueprint
-
-	var_10_70[2911] = {
+	pg.base.ship_strengthen_blueprint[2911] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32569,11 +28694,7 @@ end)()
 			129
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.ship_strengthen_blueprint
-
-	var_10_71[2912] = {
+	pg.base.ship_strengthen_blueprint[2912] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32598,11 +28719,7 @@ end)()
 			129
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.ship_strengthen_blueprint
-
-	var_10_72[2913] = {
+	pg.base.ship_strengthen_blueprint[2913] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32627,11 +28744,7 @@ end)()
 			129
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.ship_strengthen_blueprint
-
-	var_10_73[2914] = {
+	pg.base.ship_strengthen_blueprint[2914] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32656,11 +28769,7 @@ end)()
 			129
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.ship_strengthen_blueprint
-
-	var_10_74[2915] = {
+	pg.base.ship_strengthen_blueprint[2915] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+447|防空+43|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -32701,11 +28810,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.ship_strengthen_blueprint
-
-	var_10_75[2916] = {
+	pg.base.ship_strengthen_blueprint[2916] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32730,11 +28835,7 @@ end)()
 			172
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.ship_strengthen_blueprint
-
-	var_10_76[2917] = {
+	pg.base.ship_strengthen_blueprint[2917] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32759,11 +28860,7 @@ end)()
 			172
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.ship_strengthen_blueprint
-
-	var_10_77[2918] = {
+	pg.base.ship_strengthen_blueprint[2918] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32788,11 +28885,7 @@ end)()
 			172
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.ship_strengthen_blueprint
-
-	var_10_78[2919] = {
+	pg.base.ship_strengthen_blueprint[2919] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32817,11 +28910,7 @@ end)()
 			172
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.ship_strengthen_blueprint
-
-	var_10_79[2920] = {
+	pg.base.ship_strengthen_blueprint[2920] = {
 		effect_breakout = 399063,
 		effect_desc = "突破至5星|主炮底座+1|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -32857,11 +28946,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.ship_strengthen_blueprint
-
-	var_10_80[2921] = {
+	pg.base.ship_strengthen_blueprint[2921] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32886,11 +28971,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.ship_strengthen_blueprint
-
-	var_10_81[2922] = {
+	pg.base.ship_strengthen_blueprint[2922] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32915,11 +28996,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.ship_strengthen_blueprint
-
-	var_10_82[2923] = {
+	pg.base.ship_strengthen_blueprint[2923] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32944,11 +29021,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.ship_strengthen_blueprint
-
-	var_10_83[2924] = {
+	pg.base.ship_strengthen_blueprint[2924] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -32973,11 +29046,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.ship_strengthen_blueprint
-
-	var_10_84[2925] = {
+	pg.base.ship_strengthen_blueprint[2925] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+670|防空+63|防空炮效率提高10%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -33017,11 +29086,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.ship_strengthen_blueprint
-
-	var_10_85[2926] = {
+	pg.base.ship_strengthen_blueprint[2926] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33046,11 +29111,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.ship_strengthen_blueprint
-
-	var_10_86[2927] = {
+	pg.base.ship_strengthen_blueprint[2927] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33075,11 +29136,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.ship_strengthen_blueprint
-
-	var_10_87[2928] = {
+	pg.base.ship_strengthen_blueprint[2928] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33104,11 +29161,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.ship_strengthen_blueprint
-
-	var_10_88[2929] = {
+	pg.base.ship_strengthen_blueprint[2929] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33133,11 +29186,7 @@ end)()
 			215
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.ship_strengthen_blueprint
-
-	var_10_89[2930] = {
+	pg.base.ship_strengthen_blueprint[2930] = {
 		effect_breakout = 399064,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -33166,11 +29215,7 @@ end)()
 			"鱼雷效率提高15%"
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.ship_strengthen_blueprint
-
-	var_10_90[2931] = {
+	pg.base.ship_strengthen_blueprint[2931] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -33200,11 +29245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.ship_strengthen_blueprint
-
-	var_10_91[2932] = {
+	pg.base.ship_strengthen_blueprint[2932] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -33234,11 +29275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.ship_strengthen_blueprint
-
-	var_10_92[2933] = {
+	pg.base.ship_strengthen_blueprint[2933] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -33268,11 +29305,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.ship_strengthen_blueprint
-
-	var_10_93[2934] = {
+	pg.base.ship_strengthen_blueprint[2934] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -33302,11 +29335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.ship_strengthen_blueprint
-
-	var_10_94[2935] = {
+	pg.base.ship_strengthen_blueprint[2935] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【水龙神威】技能强化为【水龙神威 +】",
 		extra_desc = "",
@@ -33339,11 +29368,7 @@ end)()
 			18760
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.ship_strengthen_blueprint
-
-	var_10_95[3001] = {
+	pg.base.ship_strengthen_blueprint[3001] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -33372,11 +29397,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.ship_strengthen_blueprint
-
-	var_10_96[3002] = {
+	pg.base.ship_strengthen_blueprint[3002] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33401,11 +29422,7 @@ end)()
 			59
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.ship_strengthen_blueprint
-
-	var_10_97[3003] = {
+	pg.base.ship_strengthen_blueprint[3003] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33430,11 +29447,7 @@ end)()
 			59
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.ship_strengthen_blueprint
-
-	var_10_98[3004] = {
+	pg.base.ship_strengthen_blueprint[3004] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33459,8 +29472,7 @@ end)()
 			59
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.ship_strengthen_blueprint[3005] = {
+	pg.base.ship_strengthen_blueprint[3005] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+134|防空+7|鱼雷底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -33506,11 +29518,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_11_0[3006] = {
+	pg.base.ship_strengthen_blueprint[3006] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33535,11 +29543,7 @@ end)()
 			118
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.ship_strengthen_blueprint
-
-	var_11_1[3007] = {
+	pg.base.ship_strengthen_blueprint[3007] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33564,11 +29568,7 @@ end)()
 			118
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.ship_strengthen_blueprint
-
-	var_11_2[3008] = {
+	pg.base.ship_strengthen_blueprint[3008] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33593,11 +29593,7 @@ end)()
 			118
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.ship_strengthen_blueprint
-
-	var_11_3[3009] = {
+	pg.base.ship_strengthen_blueprint[3009] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33622,11 +29618,7 @@ end)()
 			118
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.ship_strengthen_blueprint
-
-	var_11_4[3010] = {
+	pg.base.ship_strengthen_blueprint[3010] = {
 		effect_breakout = 499082,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -33659,11 +29651,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.ship_strengthen_blueprint
-
-	var_11_5[3011] = {
+	pg.base.ship_strengthen_blueprint[3011] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33688,11 +29676,7 @@ end)()
 			177
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.ship_strengthen_blueprint
-
-	var_11_6[3012] = {
+	pg.base.ship_strengthen_blueprint[3012] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33717,11 +29701,7 @@ end)()
 			177
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.ship_strengthen_blueprint
-
-	var_11_7[3013] = {
+	pg.base.ship_strengthen_blueprint[3013] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33746,11 +29726,7 @@ end)()
 			177
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.ship_strengthen_blueprint
-
-	var_11_8[3014] = {
+	pg.base.ship_strengthen_blueprint[3014] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33775,11 +29751,7 @@ end)()
 			177
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.ship_strengthen_blueprint
-
-	var_11_9[3015] = {
+	pg.base.ship_strengthen_blueprint[3015] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+269|防空+15|主炮效率提高10%|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -33824,11 +29796,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.ship_strengthen_blueprint
-
-	var_11_10[3016] = {
+	pg.base.ship_strengthen_blueprint[3016] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33853,11 +29821,7 @@ end)()
 			236
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.ship_strengthen_blueprint
-
-	var_11_11[3017] = {
+	pg.base.ship_strengthen_blueprint[3017] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33882,11 +29846,7 @@ end)()
 			236
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.ship_strengthen_blueprint
-
-	var_11_12[3018] = {
+	pg.base.ship_strengthen_blueprint[3018] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33911,11 +29871,7 @@ end)()
 			236
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.ship_strengthen_blueprint
-
-	var_11_13[3019] = {
+	pg.base.ship_strengthen_blueprint[3019] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -33940,11 +29896,7 @@ end)()
 			236
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.ship_strengthen_blueprint
-
-	var_11_14[3020] = {
+	pg.base.ship_strengthen_blueprint[3020] = {
 		effect_breakout = 499083,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -33976,11 +29928,7 @@ end)()
 			"防空炮效率提高10%"
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.ship_strengthen_blueprint
-
-	var_11_15[3021] = {
+	pg.base.ship_strengthen_blueprint[3021] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34005,11 +29953,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.ship_strengthen_blueprint
-
-	var_11_16[3022] = {
+	pg.base.ship_strengthen_blueprint[3022] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34034,11 +29978,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.ship_strengthen_blueprint
-
-	var_11_17[3023] = {
+	pg.base.ship_strengthen_blueprint[3023] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34063,11 +30003,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.ship_strengthen_blueprint
-
-	var_11_18[3024] = {
+	pg.base.ship_strengthen_blueprint[3024] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34092,11 +30028,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.ship_strengthen_blueprint
-
-	var_11_19[3025] = {
+	pg.base.ship_strengthen_blueprint[3025] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+403|防空+22|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -34133,11 +30065,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.ship_strengthen_blueprint
-
-	var_11_20[3026] = {
+	pg.base.ship_strengthen_blueprint[3026] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34162,11 +30090,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.ship_strengthen_blueprint
-
-	var_11_21[3027] = {
+	pg.base.ship_strengthen_blueprint[3027] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34191,11 +30115,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.ship_strengthen_blueprint
-
-	var_11_22[3028] = {
+	pg.base.ship_strengthen_blueprint[3028] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34220,11 +30140,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.ship_strengthen_blueprint
-
-	var_11_23[3029] = {
+	pg.base.ship_strengthen_blueprint[3029] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34249,11 +30165,7 @@ end)()
 			295
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.ship_strengthen_blueprint
-
-	var_11_24[3030] = {
+	pg.base.ship_strengthen_blueprint[3030] = {
 		effect_breakout = 499084,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -34283,11 +30195,7 @@ end)()
 			"设备提供的基础属性额外提高30%"
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.ship_strengthen_blueprint
-
-	var_11_25[3031] = {
+	pg.base.ship_strengthen_blueprint[3031] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -34317,11 +30225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.ship_strengthen_blueprint
-
-	var_11_26[3032] = {
+	pg.base.ship_strengthen_blueprint[3032] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -34351,11 +30255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.ship_strengthen_blueprint
-
-	var_11_27[3033] = {
+	pg.base.ship_strengthen_blueprint[3033] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -34385,11 +30285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.ship_strengthen_blueprint
-
-	var_11_28[3034] = {
+	pg.base.ship_strengthen_blueprint[3034] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -34419,11 +30315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.ship_strengthen_blueprint
-
-	var_11_29[3035] = {
+	pg.base.ship_strengthen_blueprint[3035] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【弱者的苦痛之源】技能强化为【弱者的苦痛之源 +】",
 		extra_desc = "",
@@ -34456,11 +30348,7 @@ end)()
 			18620
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.ship_strengthen_blueprint
-
-	var_11_30[3101] = {
+	pg.base.ship_strengthen_blueprint[3101] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -34489,11 +30377,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.ship_strengthen_blueprint
-
-	var_11_31[3102] = {
+	pg.base.ship_strengthen_blueprint[3102] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34518,11 +30402,7 @@ end)()
 			48
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.ship_strengthen_blueprint
-
-	var_11_32[3103] = {
+	pg.base.ship_strengthen_blueprint[3103] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34547,11 +30427,7 @@ end)()
 			48
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.ship_strengthen_blueprint
-
-	var_11_33[3104] = {
+	pg.base.ship_strengthen_blueprint[3104] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34576,11 +30452,7 @@ end)()
 			48
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.ship_strengthen_blueprint
-
-	var_11_34[3105] = {
+	pg.base.ship_strengthen_blueprint[3105] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+253|防空+11|机动+5|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -34626,11 +30498,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.ship_strengthen_blueprint
-
-	var_11_35[3106] = {
+	pg.base.ship_strengthen_blueprint[3106] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34655,11 +30523,7 @@ end)()
 			96
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.ship_strengthen_blueprint
-
-	var_11_36[3107] = {
+	pg.base.ship_strengthen_blueprint[3107] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34684,11 +30548,7 @@ end)()
 			96
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.ship_strengthen_blueprint
-
-	var_11_37[3108] = {
+	pg.base.ship_strengthen_blueprint[3108] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34713,11 +30573,7 @@ end)()
 			96
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.ship_strengthen_blueprint
-
-	var_11_38[3109] = {
+	pg.base.ship_strengthen_blueprint[3109] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34742,11 +30598,7 @@ end)()
 			96
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.ship_strengthen_blueprint
-
-	var_11_39[3110] = {
+	pg.base.ship_strengthen_blueprint[3110] = {
 		effect_breakout = 499092,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -34779,11 +30631,7 @@ end)()
 			"全武器效率提高2%"
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.ship_strengthen_blueprint
-
-	var_11_40[3111] = {
+	pg.base.ship_strengthen_blueprint[3111] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34808,11 +30656,7 @@ end)()
 			144
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.ship_strengthen_blueprint
-
-	var_11_41[3112] = {
+	pg.base.ship_strengthen_blueprint[3112] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34837,11 +30681,7 @@ end)()
 			144
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.ship_strengthen_blueprint
-
-	var_11_42[3113] = {
+	pg.base.ship_strengthen_blueprint[3113] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34866,11 +30706,7 @@ end)()
 			144
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.ship_strengthen_blueprint
-
-	var_11_43[3114] = {
+	pg.base.ship_strengthen_blueprint[3114] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34895,11 +30731,7 @@ end)()
 			144
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.ship_strengthen_blueprint
-
-	var_11_44[3115] = {
+	pg.base.ship_strengthen_blueprint[3115] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+506|防空+21|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -34940,11 +30772,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.ship_strengthen_blueprint
-
-	var_11_45[3116] = {
+	pg.base.ship_strengthen_blueprint[3116] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34969,11 +30797,7 @@ end)()
 			192
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.ship_strengthen_blueprint
-
-	var_11_46[3117] = {
+	pg.base.ship_strengthen_blueprint[3117] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -34998,11 +30822,7 @@ end)()
 			192
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.ship_strengthen_blueprint
-
-	var_11_47[3118] = {
+	pg.base.ship_strengthen_blueprint[3118] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35027,11 +30847,7 @@ end)()
 			192
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.ship_strengthen_blueprint
-
-	var_11_48[3119] = {
+	pg.base.ship_strengthen_blueprint[3119] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35056,11 +30872,7 @@ end)()
 			192
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.ship_strengthen_blueprint
-
-	var_11_49[3120] = {
+	pg.base.ship_strengthen_blueprint[3120] = {
 		effect_breakout = 499093,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -35092,11 +30904,7 @@ end)()
 			"全武器效率提高3%"
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.ship_strengthen_blueprint
-
-	var_11_50[3121] = {
+	pg.base.ship_strengthen_blueprint[3121] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35121,11 +30929,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.ship_strengthen_blueprint
-
-	var_11_51[3122] = {
+	pg.base.ship_strengthen_blueprint[3122] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35150,11 +30954,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.ship_strengthen_blueprint
-
-	var_11_52[3123] = {
+	pg.base.ship_strengthen_blueprint[3123] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35179,11 +30979,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.ship_strengthen_blueprint
-
-	var_11_53[3124] = {
+	pg.base.ship_strengthen_blueprint[3124] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35208,11 +31004,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.ship_strengthen_blueprint
-
-	var_11_54[3125] = {
+	pg.base.ship_strengthen_blueprint[3125] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+759|防空+32|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -35253,11 +31045,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.ship_strengthen_blueprint
-
-	var_11_55[3126] = {
+	pg.base.ship_strengthen_blueprint[3126] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35282,11 +31070,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.ship_strengthen_blueprint
-
-	var_11_56[3127] = {
+	pg.base.ship_strengthen_blueprint[3127] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35311,11 +31095,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.ship_strengthen_blueprint
-
-	var_11_57[3128] = {
+	pg.base.ship_strengthen_blueprint[3128] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35340,11 +31120,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.ship_strengthen_blueprint
-
-	var_11_58[3129] = {
+	pg.base.ship_strengthen_blueprint[3129] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35369,11 +31145,7 @@ end)()
 			240
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.ship_strengthen_blueprint
-
-	var_11_59[3130] = {
+	pg.base.ship_strengthen_blueprint[3130] = {
 		effect_breakout = 499094,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -35403,11 +31175,7 @@ end)()
 			"第三武器栏位可以装备主炮武器"
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.ship_strengthen_blueprint
-
-	var_11_60[3201] = {
+	pg.base.ship_strengthen_blueprint[3201] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -35436,11 +31204,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.ship_strengthen_blueprint
-
-	var_11_61[3202] = {
+	pg.base.ship_strengthen_blueprint[3202] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35465,11 +31229,7 @@ end)()
 			46
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.ship_strengthen_blueprint
-
-	var_11_62[3203] = {
+	pg.base.ship_strengthen_blueprint[3203] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35494,11 +31254,7 @@ end)()
 			46
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.ship_strengthen_blueprint
-
-	var_11_63[3204] = {
+	pg.base.ship_strengthen_blueprint[3204] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35523,11 +31279,7 @@ end)()
 			46
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.ship_strengthen_blueprint
-
-	var_11_64[3205] = {
+	pg.base.ship_strengthen_blueprint[3205] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+356|防空+12|主炮效率提高5%|主炮预装填+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -35572,11 +31324,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.ship_strengthen_blueprint
-
-	var_11_65[3206] = {
+	pg.base.ship_strengthen_blueprint[3206] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35601,11 +31349,7 @@ end)()
 			92
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.ship_strengthen_blueprint
-
-	var_11_66[3207] = {
+	pg.base.ship_strengthen_blueprint[3207] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35630,11 +31374,7 @@ end)()
 			92
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.ship_strengthen_blueprint
-
-	var_11_67[3208] = {
+	pg.base.ship_strengthen_blueprint[3208] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35659,11 +31399,7 @@ end)()
 			92
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.ship_strengthen_blueprint
-
-	var_11_68[3209] = {
+	pg.base.ship_strengthen_blueprint[3209] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35688,11 +31424,7 @@ end)()
 			92
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.ship_strengthen_blueprint
-
-	var_11_69[3210] = {
+	pg.base.ship_strengthen_blueprint[3210] = {
 		effect_breakout = 999022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -35725,11 +31457,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.ship_strengthen_blueprint
-
-	var_11_70[3211] = {
+	pg.base.ship_strengthen_blueprint[3211] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35754,11 +31482,7 @@ end)()
 			138
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.ship_strengthen_blueprint
-
-	var_11_71[3212] = {
+	pg.base.ship_strengthen_blueprint[3212] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35783,11 +31507,7 @@ end)()
 			138
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.ship_strengthen_blueprint
-
-	var_11_72[3213] = {
+	pg.base.ship_strengthen_blueprint[3213] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35812,11 +31532,7 @@ end)()
 			138
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.ship_strengthen_blueprint
-
-	var_11_73[3214] = {
+	pg.base.ship_strengthen_blueprint[3214] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35841,11 +31557,7 @@ end)()
 			138
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.ship_strengthen_blueprint
-
-	var_11_74[3215] = {
+	pg.base.ship_strengthen_blueprint[3215] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+712|防空+25|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -35886,11 +31598,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.ship_strengthen_blueprint
-
-	var_11_75[3216] = {
+	pg.base.ship_strengthen_blueprint[3216] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35915,11 +31623,7 @@ end)()
 			184
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.ship_strengthen_blueprint
-
-	var_11_76[3217] = {
+	pg.base.ship_strengthen_blueprint[3217] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35944,11 +31648,7 @@ end)()
 			184
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.ship_strengthen_blueprint
-
-	var_11_77[3218] = {
+	pg.base.ship_strengthen_blueprint[3218] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -35973,11 +31673,7 @@ end)()
 			184
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.ship_strengthen_blueprint
-
-	var_11_78[3219] = {
+	pg.base.ship_strengthen_blueprint[3219] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36002,11 +31698,7 @@ end)()
 			184
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.ship_strengthen_blueprint
-
-	var_11_79[3220] = {
+	pg.base.ship_strengthen_blueprint[3220] = {
 		effect_breakout = 999023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -36039,11 +31731,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.ship_strengthen_blueprint
-
-	var_11_80[3221] = {
+	pg.base.ship_strengthen_blueprint[3221] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36068,11 +31756,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.ship_strengthen_blueprint
-
-	var_11_81[3222] = {
+	pg.base.ship_strengthen_blueprint[3222] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36097,11 +31781,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.ship_strengthen_blueprint
-
-	var_11_82[3223] = {
+	pg.base.ship_strengthen_blueprint[3223] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36126,11 +31806,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.ship_strengthen_blueprint
-
-	var_11_83[3224] = {
+	pg.base.ship_strengthen_blueprint[3224] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36155,11 +31831,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.ship_strengthen_blueprint
-
-	var_11_84[3225] = {
+	pg.base.ship_strengthen_blueprint[3225] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1068|防空+37|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -36199,11 +31871,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.ship_strengthen_blueprint
-
-	var_11_85[3226] = {
+	pg.base.ship_strengthen_blueprint[3226] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36228,11 +31896,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.ship_strengthen_blueprint
-
-	var_11_86[3227] = {
+	pg.base.ship_strengthen_blueprint[3227] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36257,11 +31921,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.ship_strengthen_blueprint
-
-	var_11_87[3228] = {
+	pg.base.ship_strengthen_blueprint[3228] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36286,11 +31946,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.ship_strengthen_blueprint
-
-	var_11_88[3229] = {
+	pg.base.ship_strengthen_blueprint[3229] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36315,11 +31971,7 @@ end)()
 			230
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.ship_strengthen_blueprint
-
-	var_11_89[3230] = {
+	pg.base.ship_strengthen_blueprint[3230] = {
 		effect_breakout = 999024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -36348,11 +32000,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.ship_strengthen_blueprint
-
-	var_11_90[3231] = {
+	pg.base.ship_strengthen_blueprint[3231] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -36382,11 +32030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.ship_strengthen_blueprint
-
-	var_11_91[3232] = {
+	pg.base.ship_strengthen_blueprint[3232] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -36416,11 +32060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.ship_strengthen_blueprint
-
-	var_11_92[3233] = {
+	pg.base.ship_strengthen_blueprint[3233] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -36450,11 +32090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.ship_strengthen_blueprint
-
-	var_11_93[3234] = {
+	pg.base.ship_strengthen_blueprint[3234] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -36484,11 +32120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.ship_strengthen_blueprint
-
-	var_11_94[3235] = {
+	pg.base.ship_strengthen_blueprint[3235] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【战斗命令「急袭突破」】技能强化为【战斗命令「急袭突破」 +】",
 		extra_desc = "",
@@ -36521,11 +32153,7 @@ end)()
 			18730
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.ship_strengthen_blueprint
-
-	var_11_95[3301] = {
+	pg.base.ship_strengthen_blueprint[3301] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -36554,11 +32182,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.ship_strengthen_blueprint
-
-	var_11_96[3302] = {
+	pg.base.ship_strengthen_blueprint[3302] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36583,11 +32207,7 @@ end)()
 			61
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.ship_strengthen_blueprint
-
-	var_11_97[3303] = {
+	pg.base.ship_strengthen_blueprint[3303] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36612,11 +32232,7 @@ end)()
 			61
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.ship_strengthen_blueprint
-
-	var_11_98[3304] = {
+	pg.base.ship_strengthen_blueprint[3304] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36641,8 +32257,7 @@ end)()
 			61
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.ship_strengthen_blueprint[3305] = {
+	pg.base.ship_strengthen_blueprint[3305] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+100|防空+8|主炮效率提高10%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -36687,11 +32302,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_12_0[3306] = {
+	pg.base.ship_strengthen_blueprint[3306] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36716,11 +32327,7 @@ end)()
 			122
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.ship_strengthen_blueprint
-
-	var_12_1[3307] = {
+	pg.base.ship_strengthen_blueprint[3307] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36745,11 +32352,7 @@ end)()
 			122
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.ship_strengthen_blueprint
-
-	var_12_2[3308] = {
+	pg.base.ship_strengthen_blueprint[3308] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36774,11 +32377,7 @@ end)()
 			122
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.ship_strengthen_blueprint
-
-	var_12_3[3309] = {
+	pg.base.ship_strengthen_blueprint[3309] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36803,11 +32402,7 @@ end)()
 			122
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.ship_strengthen_blueprint
-
-	var_12_4[3310] = {
+	pg.base.ship_strengthen_blueprint[3310] = {
 		effect_breakout = 199052,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -36841,11 +32436,7 @@ end)()
 			"第三武器栏位可以装备水上机"
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.ship_strengthen_blueprint
-
-	var_12_5[3311] = {
+	pg.base.ship_strengthen_blueprint[3311] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36870,11 +32461,7 @@ end)()
 			183
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.ship_strengthen_blueprint
-
-	var_12_6[3312] = {
+	pg.base.ship_strengthen_blueprint[3312] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36899,11 +32486,7 @@ end)()
 			183
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.ship_strengthen_blueprint
-
-	var_12_7[3313] = {
+	pg.base.ship_strengthen_blueprint[3313] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36928,11 +32511,7 @@ end)()
 			183
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.ship_strengthen_blueprint
-
-	var_12_8[3314] = {
+	pg.base.ship_strengthen_blueprint[3314] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -36957,11 +32536,7 @@ end)()
 			183
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.ship_strengthen_blueprint
-
-	var_12_9[3315] = {
+	pg.base.ship_strengthen_blueprint[3315] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+201|防空+16|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -37003,11 +32578,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.ship_strengthen_blueprint
-
-	var_12_10[3316] = {
+	pg.base.ship_strengthen_blueprint[3316] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37032,11 +32603,7 @@ end)()
 			244
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.ship_strengthen_blueprint
-
-	var_12_11[3317] = {
+	pg.base.ship_strengthen_blueprint[3317] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37061,11 +32628,7 @@ end)()
 			244
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.ship_strengthen_blueprint
-
-	var_12_12[3318] = {
+	pg.base.ship_strengthen_blueprint[3318] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37090,11 +32653,7 @@ end)()
 			244
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.ship_strengthen_blueprint
-
-	var_12_13[3319] = {
+	pg.base.ship_strengthen_blueprint[3319] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37119,11 +32678,7 @@ end)()
 			244
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.ship_strengthen_blueprint
-
-	var_12_14[3320] = {
+	pg.base.ship_strengthen_blueprint[3320] = {
 		effect_breakout = 199053,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -37155,11 +32710,7 @@ end)()
 			"全武器效率提高3%"
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.ship_strengthen_blueprint
-
-	var_12_15[3321] = {
+	pg.base.ship_strengthen_blueprint[3321] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37184,11 +32735,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.ship_strengthen_blueprint
-
-	var_12_16[3322] = {
+	pg.base.ship_strengthen_blueprint[3322] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37213,11 +32760,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.ship_strengthen_blueprint
-
-	var_12_17[3323] = {
+	pg.base.ship_strengthen_blueprint[3323] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37242,11 +32785,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.ship_strengthen_blueprint
-
-	var_12_18[3324] = {
+	pg.base.ship_strengthen_blueprint[3324] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37271,11 +32810,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.ship_strengthen_blueprint
-
-	var_12_19[3325] = {
+	pg.base.ship_strengthen_blueprint[3325] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+301|防空+24|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -37312,11 +32847,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.ship_strengthen_blueprint
-
-	var_12_20[3326] = {
+	pg.base.ship_strengthen_blueprint[3326] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37341,11 +32872,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.ship_strengthen_blueprint
-
-	var_12_21[3327] = {
+	pg.base.ship_strengthen_blueprint[3327] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37370,11 +32897,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.ship_strengthen_blueprint
-
-	var_12_22[3328] = {
+	pg.base.ship_strengthen_blueprint[3328] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37399,11 +32922,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.ship_strengthen_blueprint
-
-	var_12_23[3329] = {
+	pg.base.ship_strengthen_blueprint[3329] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37428,11 +32947,7 @@ end)()
 			305
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.ship_strengthen_blueprint
-
-	var_12_24[3330] = {
+	pg.base.ship_strengthen_blueprint[3330] = {
 		effect_breakout = 199054,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -37462,11 +32977,7 @@ end)()
 			"设备提供的基础属性额外提高30%"
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.ship_strengthen_blueprint
-
-	var_12_25[3331] = {
+	pg.base.ship_strengthen_blueprint[3331] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -37496,11 +33007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.ship_strengthen_blueprint
-
-	var_12_26[3332] = {
+	pg.base.ship_strengthen_blueprint[3332] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -37530,11 +33037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.ship_strengthen_blueprint
-
-	var_12_27[3333] = {
+	pg.base.ship_strengthen_blueprint[3333] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -37568,11 +33071,7 @@ end)()
 			2
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.ship_strengthen_blueprint
-
-	var_12_28[3334] = {
+	pg.base.ship_strengthen_blueprint[3334] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -37602,11 +33101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.ship_strengthen_blueprint
-
-	var_12_29[3335] = {
+	pg.base.ship_strengthen_blueprint[3335] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5 |【暗夜的制裁】技能强化为【暗夜的制裁 +】",
 		extra_desc = "",
@@ -37639,11 +33134,7 @@ end)()
 			18790
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.ship_strengthen_blueprint
-
-	var_12_30[3401] = {
+	pg.base.ship_strengthen_blueprint[3401] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -37672,11 +33163,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.ship_strengthen_blueprint
-
-	var_12_31[3402] = {
+	pg.base.ship_strengthen_blueprint[3402] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37701,11 +33188,7 @@ end)()
 			52
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.ship_strengthen_blueprint
-
-	var_12_32[3403] = {
+	pg.base.ship_strengthen_blueprint[3403] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37730,11 +33213,7 @@ end)()
 			52
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.ship_strengthen_blueprint
-
-	var_12_33[3404] = {
+	pg.base.ship_strengthen_blueprint[3404] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37759,11 +33238,7 @@ end)()
 			52
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.ship_strengthen_blueprint
-
-	var_12_34[3405] = {
+	pg.base.ship_strengthen_blueprint[3405] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+337|防空+12|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -37804,11 +33279,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.ship_strengthen_blueprint
-
-	var_12_35[3406] = {
+	pg.base.ship_strengthen_blueprint[3406] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37833,11 +33304,7 @@ end)()
 			104
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.ship_strengthen_blueprint
-
-	var_12_36[3407] = {
+	pg.base.ship_strengthen_blueprint[3407] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37862,11 +33329,7 @@ end)()
 			104
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.ship_strengthen_blueprint
-
-	var_12_37[3408] = {
+	pg.base.ship_strengthen_blueprint[3408] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37891,11 +33354,7 @@ end)()
 			104
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.ship_strengthen_blueprint
-
-	var_12_38[3409] = {
+	pg.base.ship_strengthen_blueprint[3409] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37920,11 +33379,7 @@ end)()
 			104
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.ship_strengthen_blueprint
-
-	var_12_39[3410] = {
+	pg.base.ship_strengthen_blueprint[3410] = {
 		effect_breakout = 399072,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -37957,11 +33412,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.ship_strengthen_blueprint
-
-	var_12_40[3411] = {
+	pg.base.ship_strengthen_blueprint[3411] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -37986,11 +33437,7 @@ end)()
 			156
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.ship_strengthen_blueprint
-
-	var_12_41[3412] = {
+	pg.base.ship_strengthen_blueprint[3412] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38015,11 +33462,7 @@ end)()
 			156
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.ship_strengthen_blueprint
-
-	var_12_42[3413] = {
+	pg.base.ship_strengthen_blueprint[3413] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38044,11 +33487,7 @@ end)()
 			156
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.ship_strengthen_blueprint
-
-	var_12_43[3414] = {
+	pg.base.ship_strengthen_blueprint[3414] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38073,11 +33512,7 @@ end)()
 			156
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.ship_strengthen_blueprint
-
-	var_12_44[3415] = {
+	pg.base.ship_strengthen_blueprint[3415] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+674|防空+25|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -38118,11 +33553,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.ship_strengthen_blueprint
-
-	var_12_45[3416] = {
+	pg.base.ship_strengthen_blueprint[3416] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38147,11 +33578,7 @@ end)()
 			208
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.ship_strengthen_blueprint
-
-	var_12_46[3417] = {
+	pg.base.ship_strengthen_blueprint[3417] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38176,11 +33603,7 @@ end)()
 			208
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.ship_strengthen_blueprint
-
-	var_12_47[3418] = {
+	pg.base.ship_strengthen_blueprint[3418] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38205,11 +33628,7 @@ end)()
 			208
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.ship_strengthen_blueprint
-
-	var_12_48[3419] = {
+	pg.base.ship_strengthen_blueprint[3419] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38234,11 +33653,7 @@ end)()
 			208
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.ship_strengthen_blueprint
-
-	var_12_49[3420] = {
+	pg.base.ship_strengthen_blueprint[3420] = {
 		effect_breakout = 399073,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -38271,11 +33686,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.ship_strengthen_blueprint
-
-	var_12_50[3421] = {
+	pg.base.ship_strengthen_blueprint[3421] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38300,11 +33711,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.ship_strengthen_blueprint
-
-	var_12_51[3422] = {
+	pg.base.ship_strengthen_blueprint[3422] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38329,11 +33736,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.ship_strengthen_blueprint
-
-	var_12_52[3423] = {
+	pg.base.ship_strengthen_blueprint[3423] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38358,11 +33761,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.ship_strengthen_blueprint
-
-	var_12_53[3424] = {
+	pg.base.ship_strengthen_blueprint[3424] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38387,11 +33786,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.ship_strengthen_blueprint
-
-	var_12_54[3425] = {
+	pg.base.ship_strengthen_blueprint[3425] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1010|防空+35|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -38431,11 +33826,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.ship_strengthen_blueprint
-
-	var_12_55[3426] = {
+	pg.base.ship_strengthen_blueprint[3426] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38460,11 +33851,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.ship_strengthen_blueprint
-
-	var_12_56[3427] = {
+	pg.base.ship_strengthen_blueprint[3427] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38489,11 +33876,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.ship_strengthen_blueprint
-
-	var_12_57[3428] = {
+	pg.base.ship_strengthen_blueprint[3428] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38518,11 +33901,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.ship_strengthen_blueprint
-
-	var_12_58[3429] = {
+	pg.base.ship_strengthen_blueprint[3429] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38547,11 +33926,7 @@ end)()
 			260
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.ship_strengthen_blueprint
-
-	var_12_59[3430] = {
+	pg.base.ship_strengthen_blueprint[3430] = {
 		effect_breakout = 399074,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -38580,11 +33955,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.ship_strengthen_blueprint
-
-	var_12_60[3431] = {
+	pg.base.ship_strengthen_blueprint[3431] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -38614,11 +33985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.ship_strengthen_blueprint
-
-	var_12_61[3432] = {
+	pg.base.ship_strengthen_blueprint[3432] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -38648,11 +34015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.ship_strengthen_blueprint
-
-	var_12_62[3433] = {
+	pg.base.ship_strengthen_blueprint[3433] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -38682,11 +34045,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.ship_strengthen_blueprint
-
-	var_12_63[3434] = {
+	pg.base.ship_strengthen_blueprint[3434] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -38716,11 +34075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.ship_strengthen_blueprint
-
-	var_12_64[3435] = {
+	pg.base.ship_strengthen_blueprint[3435] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【因果锚定】技能强化为【因果锚定 +】",
 		extra_desc = "",
@@ -38753,11 +34108,7 @@ end)()
 			18860
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.ship_strengthen_blueprint
-
-	var_12_65[3501] = {
+	pg.base.ship_strengthen_blueprint[3501] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -38786,11 +34137,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.ship_strengthen_blueprint
-
-	var_12_66[3502] = {
+	pg.base.ship_strengthen_blueprint[3502] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38815,11 +34162,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.ship_strengthen_blueprint
-
-	var_12_67[3503] = {
+	pg.base.ship_strengthen_blueprint[3503] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38844,11 +34187,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.ship_strengthen_blueprint
-
-	var_12_68[3504] = {
+	pg.base.ship_strengthen_blueprint[3504] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38873,11 +34212,7 @@ end)()
 			50
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.ship_strengthen_blueprint
-
-	var_12_69[3505] = {
+	pg.base.ship_strengthen_blueprint[3505] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+298|防空+12|机动+5|副炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -38923,11 +34258,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.ship_strengthen_blueprint
-
-	var_12_70[3506] = {
+	pg.base.ship_strengthen_blueprint[3506] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38952,11 +34283,7 @@ end)()
 			100
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.ship_strengthen_blueprint
-
-	var_12_71[3507] = {
+	pg.base.ship_strengthen_blueprint[3507] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -38981,11 +34308,7 @@ end)()
 			100
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.ship_strengthen_blueprint
-
-	var_12_72[3508] = {
+	pg.base.ship_strengthen_blueprint[3508] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39010,11 +34333,7 @@ end)()
 			100
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.ship_strengthen_blueprint
-
-	var_12_73[3509] = {
+	pg.base.ship_strengthen_blueprint[3509] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39039,11 +34358,7 @@ end)()
 			100
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.ship_strengthen_blueprint
-
-	var_12_74[3510] = {
+	pg.base.ship_strengthen_blueprint[3510] = {
 		effect_breakout = 699022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -39076,11 +34391,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.ship_strengthen_blueprint
-
-	var_12_75[3511] = {
+	pg.base.ship_strengthen_blueprint[3511] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39105,11 +34416,7 @@ end)()
 			150
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.ship_strengthen_blueprint
-
-	var_12_76[3512] = {
+	pg.base.ship_strengthen_blueprint[3512] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39134,11 +34441,7 @@ end)()
 			150
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.ship_strengthen_blueprint
-
-	var_12_77[3513] = {
+	pg.base.ship_strengthen_blueprint[3513] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39163,11 +34466,7 @@ end)()
 			150
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.ship_strengthen_blueprint
-
-	var_12_78[3514] = {
+	pg.base.ship_strengthen_blueprint[3514] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39192,11 +34491,7 @@ end)()
 			150
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.ship_strengthen_blueprint
-
-	var_12_79[3515] = {
+	pg.base.ship_strengthen_blueprint[3515] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+597|防空+23|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -39237,11 +34532,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.ship_strengthen_blueprint
-
-	var_12_80[3516] = {
+	pg.base.ship_strengthen_blueprint[3516] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39266,11 +34557,7 @@ end)()
 			200
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.ship_strengthen_blueprint
-
-	var_12_81[3517] = {
+	pg.base.ship_strengthen_blueprint[3517] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39295,11 +34582,7 @@ end)()
 			200
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.ship_strengthen_blueprint
-
-	var_12_82[3518] = {
+	pg.base.ship_strengthen_blueprint[3518] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39324,11 +34607,7 @@ end)()
 			200
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.ship_strengthen_blueprint
-
-	var_12_83[3519] = {
+	pg.base.ship_strengthen_blueprint[3519] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39353,11 +34632,7 @@ end)()
 			200
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.ship_strengthen_blueprint
-
-	var_12_84[3520] = {
+	pg.base.ship_strengthen_blueprint[3520] = {
 		effect_breakout = 699023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -39389,11 +34664,7 @@ end)()
 			"副炮效率提高10%"
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.ship_strengthen_blueprint
-
-	var_12_85[3521] = {
+	pg.base.ship_strengthen_blueprint[3521] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39418,11 +34689,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.ship_strengthen_blueprint
-
-	var_12_86[3522] = {
+	pg.base.ship_strengthen_blueprint[3522] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39447,11 +34714,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.ship_strengthen_blueprint
-
-	var_12_87[3523] = {
+	pg.base.ship_strengthen_blueprint[3523] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39476,11 +34739,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.ship_strengthen_blueprint
-
-	var_12_88[3524] = {
+	pg.base.ship_strengthen_blueprint[3524] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39505,11 +34764,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.ship_strengthen_blueprint
-
-	var_12_89[3525] = {
+	pg.base.ship_strengthen_blueprint[3525] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+894|防空+36|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -39550,11 +34805,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.ship_strengthen_blueprint
-
-	var_12_90[3526] = {
+	pg.base.ship_strengthen_blueprint[3526] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39579,11 +34830,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.ship_strengthen_blueprint
-
-	var_12_91[3527] = {
+	pg.base.ship_strengthen_blueprint[3527] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39608,11 +34855,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.ship_strengthen_blueprint
-
-	var_12_92[3528] = {
+	pg.base.ship_strengthen_blueprint[3528] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39637,11 +34880,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.ship_strengthen_blueprint
-
-	var_12_93[3529] = {
+	pg.base.ship_strengthen_blueprint[3529] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39666,11 +34905,7 @@ end)()
 			250
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.ship_strengthen_blueprint
-
-	var_12_94[3530] = {
+	pg.base.ship_strengthen_blueprint[3530] = {
 		effect_breakout = 699024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -39699,11 +34934,7 @@ end)()
 			"全武器效率提高5%"
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.ship_strengthen_blueprint
-
-	var_12_95[3601] = {
+	pg.base.ship_strengthen_blueprint[3601] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -39732,11 +34963,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.ship_strengthen_blueprint
-
-	var_12_96[3602] = {
+	pg.base.ship_strengthen_blueprint[3602] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39761,11 +34988,7 @@ end)()
 			35
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.ship_strengthen_blueprint
-
-	var_12_97[3603] = {
+	pg.base.ship_strengthen_blueprint[3603] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39790,11 +35013,7 @@ end)()
 			35
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.ship_strengthen_blueprint
-
-	var_12_98[3604] = {
+	pg.base.ship_strengthen_blueprint[3604] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39819,8 +35038,7 @@ end)()
 			35
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.ship_strengthen_blueprint[3605] = {
+	pg.base.ship_strengthen_blueprint[3605] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+393|防空+14|所有轰炸机+1|所有鱼雷机+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -39866,11 +35084,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_13_0[3606] = {
+	pg.base.ship_strengthen_blueprint[3606] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39895,11 +35109,7 @@ end)()
 			70
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.ship_strengthen_blueprint
-
-	var_13_1[3607] = {
+	pg.base.ship_strengthen_blueprint[3607] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39924,11 +35134,7 @@ end)()
 			70
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.ship_strengthen_blueprint
-
-	var_13_2[3608] = {
+	pg.base.ship_strengthen_blueprint[3608] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39953,11 +35159,7 @@ end)()
 			70
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.ship_strengthen_blueprint
-
-	var_13_3[3609] = {
+	pg.base.ship_strengthen_blueprint[3609] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -39982,11 +35184,7 @@ end)()
 			70
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.ship_strengthen_blueprint
-
-	var_13_4[3610] = {
+	pg.base.ship_strengthen_blueprint[3610] = {
 		effect_breakout = 799022,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -40019,11 +35217,7 @@ end)()
 			"鱼雷机效率提高5%"
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.ship_strengthen_blueprint
-
-	var_13_5[3611] = {
+	pg.base.ship_strengthen_blueprint[3611] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40048,11 +35242,7 @@ end)()
 			105
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.ship_strengthen_blueprint
-
-	var_13_6[3612] = {
+	pg.base.ship_strengthen_blueprint[3612] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40077,11 +35267,7 @@ end)()
 			105
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.ship_strengthen_blueprint
-
-	var_13_7[3613] = {
+	pg.base.ship_strengthen_blueprint[3613] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40106,11 +35292,7 @@ end)()
 			105
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.ship_strengthen_blueprint
-
-	var_13_8[3614] = {
+	pg.base.ship_strengthen_blueprint[3614] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40135,11 +35317,7 @@ end)()
 			105
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.ship_strengthen_blueprint
-
-	var_13_9[3615] = {
+	pg.base.ship_strengthen_blueprint[3615] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+787|防空+27|所有战斗机+1|轰炸机效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -40184,11 +35362,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.ship_strengthen_blueprint
-
-	var_13_10[3616] = {
+	pg.base.ship_strengthen_blueprint[3616] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40213,11 +35387,7 @@ end)()
 			140
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.ship_strengthen_blueprint
-
-	var_13_11[3617] = {
+	pg.base.ship_strengthen_blueprint[3617] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40242,11 +35412,7 @@ end)()
 			140
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.ship_strengthen_blueprint
-
-	var_13_12[3618] = {
+	pg.base.ship_strengthen_blueprint[3618] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40271,11 +35437,7 @@ end)()
 			140
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.ship_strengthen_blueprint
-
-	var_13_13[3619] = {
+	pg.base.ship_strengthen_blueprint[3619] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40300,11 +35462,7 @@ end)()
 			140
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.ship_strengthen_blueprint
-
-	var_13_14[3620] = {
+	pg.base.ship_strengthen_blueprint[3620] = {
 		effect_breakout = 799023,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -40337,11 +35495,7 @@ end)()
 			"战斗机效率提高10%"
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.ship_strengthen_blueprint
-
-	var_13_15[3621] = {
+	pg.base.ship_strengthen_blueprint[3621] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40366,11 +35520,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.ship_strengthen_blueprint
-
-	var_13_16[3622] = {
+	pg.base.ship_strengthen_blueprint[3622] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40395,11 +35545,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.ship_strengthen_blueprint
-
-	var_13_17[3623] = {
+	pg.base.ship_strengthen_blueprint[3623] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40424,11 +35570,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.ship_strengthen_blueprint
-
-	var_13_18[3624] = {
+	pg.base.ship_strengthen_blueprint[3624] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40453,11 +35595,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.ship_strengthen_blueprint
-
-	var_13_19[3625] = {
+	pg.base.ship_strengthen_blueprint[3625] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1180|防空+41|鱼雷机效率提高10%|所有舰载机+1|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -40501,11 +35639,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.ship_strengthen_blueprint
-
-	var_13_20[3626] = {
+	pg.base.ship_strengthen_blueprint[3626] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40530,11 +35664,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.ship_strengthen_blueprint
-
-	var_13_21[3627] = {
+	pg.base.ship_strengthen_blueprint[3627] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40559,11 +35689,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.ship_strengthen_blueprint
-
-	var_13_22[3628] = {
+	pg.base.ship_strengthen_blueprint[3628] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40588,11 +35714,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.ship_strengthen_blueprint
-
-	var_13_23[3629] = {
+	pg.base.ship_strengthen_blueprint[3629] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40617,11 +35739,7 @@ end)()
 			175
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.ship_strengthen_blueprint
-
-	var_13_24[3630] = {
+	pg.base.ship_strengthen_blueprint[3630] = {
 		effect_breakout = 799024,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -40650,11 +35768,7 @@ end)()
 			"轰炸机栏位可以装备任意类型舰载机"
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.ship_strengthen_blueprint
-
-	var_13_25[3701] = {
+	pg.base.ship_strengthen_blueprint[3701] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -40683,11 +35797,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.ship_strengthen_blueprint
-
-	var_13_26[3702] = {
+	pg.base.ship_strengthen_blueprint[3702] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40712,11 +35822,7 @@ end)()
 			56
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.ship_strengthen_blueprint
-
-	var_13_27[3703] = {
+	pg.base.ship_strengthen_blueprint[3703] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40741,11 +35847,7 @@ end)()
 			56
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.ship_strengthen_blueprint
-
-	var_13_28[3704] = {
+	pg.base.ship_strengthen_blueprint[3704] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40770,11 +35872,7 @@ end)()
 			56
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.ship_strengthen_blueprint
-
-	var_13_29[3705] = {
+	pg.base.ship_strengthen_blueprint[3705] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+202|防空+17|鱼雷效率提高10%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -40815,11 +35913,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.ship_strengthen_blueprint
-
-	var_13_30[3706] = {
+	pg.base.ship_strengthen_blueprint[3706] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40844,11 +35938,7 @@ end)()
 			112
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.ship_strengthen_blueprint
-
-	var_13_31[3707] = {
+	pg.base.ship_strengthen_blueprint[3707] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40873,11 +35963,7 @@ end)()
 			112
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.ship_strengthen_blueprint
-
-	var_13_32[3708] = {
+	pg.base.ship_strengthen_blueprint[3708] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40902,11 +35988,7 @@ end)()
 			112
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.ship_strengthen_blueprint
-
-	var_13_33[3709] = {
+	pg.base.ship_strengthen_blueprint[3709] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40931,11 +36013,7 @@ end)()
 			112
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.ship_strengthen_blueprint
-
-	var_13_34[3710] = {
+	pg.base.ship_strengthen_blueprint[3710] = {
 		effect_breakout = 899042,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -40968,11 +36046,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.ship_strengthen_blueprint
-
-	var_13_35[3711] = {
+	pg.base.ship_strengthen_blueprint[3711] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -40997,11 +36071,7 @@ end)()
 			168
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.ship_strengthen_blueprint
-
-	var_13_36[3712] = {
+	pg.base.ship_strengthen_blueprint[3712] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41026,11 +36096,7 @@ end)()
 			168
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.ship_strengthen_blueprint
-
-	var_13_37[3713] = {
+	pg.base.ship_strengthen_blueprint[3713] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41055,11 +36121,7 @@ end)()
 			168
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.ship_strengthen_blueprint
-
-	var_13_38[3714] = {
+	pg.base.ship_strengthen_blueprint[3714] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41084,11 +36146,7 @@ end)()
 			168
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.ship_strengthen_blueprint
-
-	var_13_39[3715] = {
+	pg.base.ship_strengthen_blueprint[3715] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+405|防空+35|鱼雷底座+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -41130,11 +36188,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.ship_strengthen_blueprint
-
-	var_13_40[3716] = {
+	pg.base.ship_strengthen_blueprint[3716] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41159,11 +36213,7 @@ end)()
 			224
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.ship_strengthen_blueprint
-
-	var_13_41[3717] = {
+	pg.base.ship_strengthen_blueprint[3717] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41188,11 +36238,7 @@ end)()
 			224
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.ship_strengthen_blueprint
-
-	var_13_42[3718] = {
+	pg.base.ship_strengthen_blueprint[3718] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41217,11 +36263,7 @@ end)()
 			224
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.ship_strengthen_blueprint
-
-	var_13_43[3719] = {
+	pg.base.ship_strengthen_blueprint[3719] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41246,11 +36288,7 @@ end)()
 			224
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.ship_strengthen_blueprint
-
-	var_13_44[3720] = {
+	pg.base.ship_strengthen_blueprint[3720] = {
 		effect_breakout = 899043,
 		effect_desc = "突破至5星|主炮底座+1|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -41286,11 +36324,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.ship_strengthen_blueprint
-
-	var_13_45[3721] = {
+	pg.base.ship_strengthen_blueprint[3721] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41315,11 +36349,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.ship_strengthen_blueprint
-
-	var_13_46[3722] = {
+	pg.base.ship_strengthen_blueprint[3722] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41344,11 +36374,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.ship_strengthen_blueprint
-
-	var_13_47[3723] = {
+	pg.base.ship_strengthen_blueprint[3723] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41373,11 +36399,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.ship_strengthen_blueprint
-
-	var_13_48[3724] = {
+	pg.base.ship_strengthen_blueprint[3724] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41402,11 +36424,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.ship_strengthen_blueprint
-
-	var_13_49[3725] = {
+	pg.base.ship_strengthen_blueprint[3725] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+607|防空+51|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -41443,11 +36461,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.ship_strengthen_blueprint
-
-	var_13_50[3726] = {
+	pg.base.ship_strengthen_blueprint[3726] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41472,11 +36486,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.ship_strengthen_blueprint
-
-	var_13_51[3727] = {
+	pg.base.ship_strengthen_blueprint[3727] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41501,11 +36511,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.ship_strengthen_blueprint
-
-	var_13_52[3728] = {
+	pg.base.ship_strengthen_blueprint[3728] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41530,11 +36536,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.ship_strengthen_blueprint
-
-	var_13_53[3729] = {
+	pg.base.ship_strengthen_blueprint[3729] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41559,11 +36561,7 @@ end)()
 			280
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.ship_strengthen_blueprint
-
-	var_13_54[3730] = {
+	pg.base.ship_strengthen_blueprint[3730] = {
 		effect_breakout = 899044,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -41592,11 +36590,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.ship_strengthen_blueprint
-
-	var_13_55[3731] = {
+	pg.base.ship_strengthen_blueprint[3731] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+1",
 		extra_desc = "",
@@ -41626,11 +36620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.ship_strengthen_blueprint
-
-	var_13_56[3732] = {
+	pg.base.ship_strengthen_blueprint[3732] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+2",
 		extra_desc = "",
@@ -41660,11 +36650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.ship_strengthen_blueprint
-
-	var_13_57[3733] = {
+	pg.base.ship_strengthen_blueprint[3733] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+3",
 		extra_desc = "",
@@ -41694,11 +36680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.ship_strengthen_blueprint
-
-	var_13_58[3734] = {
+	pg.base.ship_strengthen_blueprint[3734] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+4",
 		extra_desc = "",
@@ -41728,11 +36710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.ship_strengthen_blueprint
-
-	var_13_59[3735] = {
+	pg.base.ship_strengthen_blueprint[3735] = {
 		effect_breakout = 0,
 		effect_desc = "幸运+5|【承接期望的鸢尾之剑】技能强化为【承接期望的鸢尾之剑 +】",
 		extra_desc = "",
@@ -41765,11 +36743,7 @@ end)()
 			18780
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.ship_strengthen_blueprint
-
-	var_13_60[3801] = {
+	pg.base.ship_strengthen_blueprint[3801] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -41798,11 +36772,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.ship_strengthen_blueprint
-
-	var_13_61[3802] = {
+	pg.base.ship_strengthen_blueprint[3802] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41827,11 +36797,7 @@ end)()
 			40
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.ship_strengthen_blueprint
-
-	var_13_62[3803] = {
+	pg.base.ship_strengthen_blueprint[3803] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41856,11 +36822,7 @@ end)()
 			40
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.ship_strengthen_blueprint
-
-	var_13_63[3804] = {
+	pg.base.ship_strengthen_blueprint[3804] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41885,11 +36847,7 @@ end)()
 			40
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.ship_strengthen_blueprint
-
-	var_13_64[3805] = {
+	pg.base.ship_strengthen_blueprint[3805] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+350|防空+19|副炮效率提高10%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -41930,11 +36888,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.ship_strengthen_blueprint
-
-	var_13_65[3806] = {
+	pg.base.ship_strengthen_blueprint[3806] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41959,11 +36913,7 @@ end)()
 			80
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.ship_strengthen_blueprint
-
-	var_13_66[3807] = {
+	pg.base.ship_strengthen_blueprint[3807] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -41988,11 +36938,7 @@ end)()
 			80
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.ship_strengthen_blueprint
-
-	var_13_67[3808] = {
+	pg.base.ship_strengthen_blueprint[3808] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42017,11 +36963,7 @@ end)()
 			80
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.ship_strengthen_blueprint
-
-	var_13_68[3809] = {
+	pg.base.ship_strengthen_blueprint[3809] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42046,11 +36988,7 @@ end)()
 			80
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.ship_strengthen_blueprint
-
-	var_13_69[3810] = {
+	pg.base.ship_strengthen_blueprint[3810] = {
 		effect_breakout = 199062,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -42083,11 +37021,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.ship_strengthen_blueprint
-
-	var_13_70[3811] = {
+	pg.base.ship_strengthen_blueprint[3811] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42112,11 +37046,7 @@ end)()
 			120
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.ship_strengthen_blueprint
-
-	var_13_71[3812] = {
+	pg.base.ship_strengthen_blueprint[3812] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42141,11 +37071,7 @@ end)()
 			120
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.ship_strengthen_blueprint
-
-	var_13_72[3813] = {
+	pg.base.ship_strengthen_blueprint[3813] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42170,11 +37096,7 @@ end)()
 			120
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.ship_strengthen_blueprint
-
-	var_13_73[3814] = {
+	pg.base.ship_strengthen_blueprint[3814] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42199,11 +37121,7 @@ end)()
 			120
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.ship_strengthen_blueprint
-
-	var_13_74[3815] = {
+	pg.base.ship_strengthen_blueprint[3815] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+700|防空+37|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -42244,11 +37162,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.ship_strengthen_blueprint
-
-	var_13_75[3816] = {
+	pg.base.ship_strengthen_blueprint[3816] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42273,11 +37187,7 @@ end)()
 			160
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.ship_strengthen_blueprint
-
-	var_13_76[3817] = {
+	pg.base.ship_strengthen_blueprint[3817] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42302,11 +37212,7 @@ end)()
 			160
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.ship_strengthen_blueprint
-
-	var_13_77[3818] = {
+	pg.base.ship_strengthen_blueprint[3818] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42331,11 +37237,7 @@ end)()
 			160
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.ship_strengthen_blueprint
-
-	var_13_78[3819] = {
+	pg.base.ship_strengthen_blueprint[3819] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42360,11 +37262,7 @@ end)()
 			160
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.ship_strengthen_blueprint
-
-	var_13_79[3820] = {
+	pg.base.ship_strengthen_blueprint[3820] = {
 		effect_breakout = 199063,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -42397,11 +37295,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.ship_strengthen_blueprint
-
-	var_13_80[3821] = {
+	pg.base.ship_strengthen_blueprint[3821] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42426,11 +37320,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.ship_strengthen_blueprint
-
-	var_13_81[3822] = {
+	pg.base.ship_strengthen_blueprint[3822] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42455,11 +37345,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.ship_strengthen_blueprint
-
-	var_13_82[3823] = {
+	pg.base.ship_strengthen_blueprint[3823] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42484,11 +37370,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.ship_strengthen_blueprint
-
-	var_13_83[3824] = {
+	pg.base.ship_strengthen_blueprint[3824] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42513,11 +37395,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.ship_strengthen_blueprint
-
-	var_13_84[3825] = {
+	pg.base.ship_strengthen_blueprint[3825] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1049|防空+56|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -42557,11 +37435,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.ship_strengthen_blueprint
-
-	var_13_85[3826] = {
+	pg.base.ship_strengthen_blueprint[3826] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42586,11 +37460,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.ship_strengthen_blueprint
-
-	var_13_86[3827] = {
+	pg.base.ship_strengthen_blueprint[3827] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42615,11 +37485,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.ship_strengthen_blueprint
-
-	var_13_87[3828] = {
+	pg.base.ship_strengthen_blueprint[3828] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42644,11 +37510,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.ship_strengthen_blueprint
-
-	var_13_88[3829] = {
+	pg.base.ship_strengthen_blueprint[3829] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42673,11 +37535,7 @@ end)()
 			200
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.ship_strengthen_blueprint
-
-	var_13_89[3830] = {
+	pg.base.ship_strengthen_blueprint[3830] = {
 		effect_breakout = 199064,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -42706,11 +37564,160 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.ship_strengthen_blueprint
-
-	var_13_90[3901] = {
+	pg.base.ship_strengthen_blueprint[3831] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+1",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 3831,
+		need_exp = 100,
+		lv = 31,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				1
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[3832] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+2",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 3832,
+		need_exp = 200,
+		lv = 32,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				2
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[3833] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+3",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 3833,
+		need_exp = 300,
+		lv = 33,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				3
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[3834] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+4",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 3834,
+		need_exp = 400,
+		lv = 34,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				4
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[3835] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+5|【蓄能爆发】技能强化为【蓄能爆发 +】",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 100,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 3835,
+		need_exp = 650,
+		lv = 35,
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				5
+			}
+		},
+		change_skill = {
+			19980,
+			18980
+		}
+	}
+	pg.base.ship_strengthen_blueprint[3901] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -42739,11 +37746,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.ship_strengthen_blueprint
-
-	var_13_91[3902] = {
+	pg.base.ship_strengthen_blueprint[3902] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42768,11 +37771,7 @@ end)()
 			46
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.ship_strengthen_blueprint
-
-	var_13_92[3903] = {
+	pg.base.ship_strengthen_blueprint[3903] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42797,11 +37796,7 @@ end)()
 			46
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.ship_strengthen_blueprint
-
-	var_13_93[3904] = {
+	pg.base.ship_strengthen_blueprint[3904] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42826,11 +37821,7 @@ end)()
 			46
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.ship_strengthen_blueprint
-
-	var_13_94[3905] = {
+	pg.base.ship_strengthen_blueprint[3905] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+409|防空+12|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -42871,11 +37862,11 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_13_94
 
-	local var_13_95 = var_13_94.base.ship_strengthen_blueprint
-
-	var_13_95[3906] = {
+	return
+end)()
+;(function()
+	pg.base.ship_strengthen_blueprint[3906] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42900,11 +37891,7 @@ end)()
 			92
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.ship_strengthen_blueprint
-
-	var_13_96[3907] = {
+	pg.base.ship_strengthen_blueprint[3907] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42929,11 +37916,7 @@ end)()
 			92
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.ship_strengthen_blueprint
-
-	var_13_97[3908] = {
+	pg.base.ship_strengthen_blueprint[3908] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42958,11 +37941,7 @@ end)()
 			92
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.ship_strengthen_blueprint
-
-	var_13_98[3909] = {
+	pg.base.ship_strengthen_blueprint[3909] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -42987,8 +37966,7 @@ end)()
 			92
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.ship_strengthen_blueprint[3910] = {
+	pg.base.ship_strengthen_blueprint[3910] = {
 		effect_breakout = 499102,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -43021,15 +37999,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_14_0[3911] = {
+	pg.base.ship_strengthen_blueprint[3911] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43054,11 +38024,7 @@ end)()
 			138
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.ship_strengthen_blueprint
-
-	var_14_1[3912] = {
+	pg.base.ship_strengthen_blueprint[3912] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43083,11 +38049,7 @@ end)()
 			138
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.ship_strengthen_blueprint
-
-	var_14_2[3913] = {
+	pg.base.ship_strengthen_blueprint[3913] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43112,11 +38074,7 @@ end)()
 			138
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.ship_strengthen_blueprint
-
-	var_14_3[3914] = {
+	pg.base.ship_strengthen_blueprint[3914] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43141,11 +38099,7 @@ end)()
 			138
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.ship_strengthen_blueprint
-
-	var_14_4[3915] = {
+	pg.base.ship_strengthen_blueprint[3915] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+818|防空+24|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -43186,11 +38140,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.ship_strengthen_blueprint
-
-	var_14_5[3916] = {
+	pg.base.ship_strengthen_blueprint[3916] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43215,11 +38165,7 @@ end)()
 			184
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.ship_strengthen_blueprint
-
-	var_14_6[3917] = {
+	pg.base.ship_strengthen_blueprint[3917] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43244,11 +38190,7 @@ end)()
 			184
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.ship_strengthen_blueprint
-
-	var_14_7[3918] = {
+	pg.base.ship_strengthen_blueprint[3918] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43273,11 +38215,7 @@ end)()
 			184
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.ship_strengthen_blueprint
-
-	var_14_8[3919] = {
+	pg.base.ship_strengthen_blueprint[3919] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43302,11 +38240,7 @@ end)()
 			184
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.ship_strengthen_blueprint
-
-	var_14_9[3920] = {
+	pg.base.ship_strengthen_blueprint[3920] = {
 		effect_breakout = 499103,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -43340,11 +38274,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.ship_strengthen_blueprint
-
-	var_14_10[3921] = {
+	pg.base.ship_strengthen_blueprint[3921] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43369,11 +38299,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.ship_strengthen_blueprint
-
-	var_14_11[3922] = {
+	pg.base.ship_strengthen_blueprint[3922] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43398,11 +38324,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.ship_strengthen_blueprint
-
-	var_14_12[3923] = {
+	pg.base.ship_strengthen_blueprint[3923] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43427,11 +38349,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.ship_strengthen_blueprint
-
-	var_14_13[3924] = {
+	pg.base.ship_strengthen_blueprint[3924] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43456,11 +38374,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.ship_strengthen_blueprint
-
-	var_14_14[3925] = {
+	pg.base.ship_strengthen_blueprint[3925] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1226|防空+35|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -43500,11 +38414,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.ship_strengthen_blueprint
-
-	var_14_15[3926] = {
+	pg.base.ship_strengthen_blueprint[3926] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43529,11 +38439,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.ship_strengthen_blueprint
-
-	var_14_16[3927] = {
+	pg.base.ship_strengthen_blueprint[3927] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43558,11 +38464,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.ship_strengthen_blueprint
-
-	var_14_17[3928] = {
+	pg.base.ship_strengthen_blueprint[3928] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43587,11 +38489,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.ship_strengthen_blueprint
-
-	var_14_18[3929] = {
+	pg.base.ship_strengthen_blueprint[3929] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43616,11 +38514,7 @@ end)()
 			230
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.ship_strengthen_blueprint
-
-	var_14_19[3930] = {
+	pg.base.ship_strengthen_blueprint[3930] = {
 		effect_breakout = 499104,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -43649,11 +38543,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.ship_strengthen_blueprint
-
-	var_14_20[4001] = {
+	pg.base.ship_strengthen_blueprint[4001] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -43682,11 +38572,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.ship_strengthen_blueprint
-
-	var_14_21[4002] = {
+	pg.base.ship_strengthen_blueprint[4002] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43711,11 +38597,7 @@ end)()
 			59
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.ship_strengthen_blueprint
-
-	var_14_22[4003] = {
+	pg.base.ship_strengthen_blueprint[4003] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43740,11 +38622,7 @@ end)()
 			59
 		}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.ship_strengthen_blueprint
-
-	var_14_23[4004] = {
+	pg.base.ship_strengthen_blueprint[4004] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43769,11 +38647,7 @@ end)()
 			59
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.ship_strengthen_blueprint
-
-	var_14_24[4005] = {
+	pg.base.ship_strengthen_blueprint[4005] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+84|防空+9|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -43814,11 +38688,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.ship_strengthen_blueprint
-
-	var_14_25[4006] = {
+	pg.base.ship_strengthen_blueprint[4006] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43843,11 +38713,7 @@ end)()
 			118
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.ship_strengthen_blueprint
-
-	var_14_26[4007] = {
+	pg.base.ship_strengthen_blueprint[4007] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43872,11 +38738,7 @@ end)()
 			118
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.ship_strengthen_blueprint
-
-	var_14_27[4008] = {
+	pg.base.ship_strengthen_blueprint[4008] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43901,11 +38763,7 @@ end)()
 			118
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.ship_strengthen_blueprint
-
-	var_14_28[4009] = {
+	pg.base.ship_strengthen_blueprint[4009] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43930,11 +38788,7 @@ end)()
 			118
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.ship_strengthen_blueprint
-
-	var_14_29[4010] = {
+	pg.base.ship_strengthen_blueprint[4010] = {
 		effect_breakout = 699032,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -43967,11 +38821,7 @@ end)()
 			"获得专属弹幕I"
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.ship_strengthen_blueprint
-
-	var_14_30[4011] = {
+	pg.base.ship_strengthen_blueprint[4011] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -43996,11 +38846,7 @@ end)()
 			177
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.ship_strengthen_blueprint
-
-	var_14_31[4012] = {
+	pg.base.ship_strengthen_blueprint[4012] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44025,11 +38871,7 @@ end)()
 			177
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.ship_strengthen_blueprint
-
-	var_14_32[4013] = {
+	pg.base.ship_strengthen_blueprint[4013] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44054,11 +38896,7 @@ end)()
 			177
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.ship_strengthen_blueprint
-
-	var_14_33[4014] = {
+	pg.base.ship_strengthen_blueprint[4014] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44083,11 +38921,7 @@ end)()
 			177
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.ship_strengthen_blueprint
-
-	var_14_34[4015] = {
+	pg.base.ship_strengthen_blueprint[4015] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+168|防空+17|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -44129,11 +38963,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.ship_strengthen_blueprint
-
-	var_14_35[4016] = {
+	pg.base.ship_strengthen_blueprint[4016] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44158,11 +38988,7 @@ end)()
 			236
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.ship_strengthen_blueprint
-
-	var_14_36[4017] = {
+	pg.base.ship_strengthen_blueprint[4017] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44187,11 +39013,7 @@ end)()
 			236
 		}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.ship_strengthen_blueprint
-
-	var_14_37[4018] = {
+	pg.base.ship_strengthen_blueprint[4018] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44216,11 +39038,7 @@ end)()
 			236
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.ship_strengthen_blueprint
-
-	var_14_38[4019] = {
+	pg.base.ship_strengthen_blueprint[4019] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44245,11 +39063,7 @@ end)()
 			236
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.ship_strengthen_blueprint
-
-	var_14_39[4020] = {
+	pg.base.ship_strengthen_blueprint[4020] = {
 		effect_breakout = 699033,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -44281,11 +39095,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.ship_strengthen_blueprint
-
-	var_14_40[4021] = {
+	pg.base.ship_strengthen_blueprint[4021] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44310,11 +39120,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.ship_strengthen_blueprint
-
-	var_14_41[4022] = {
+	pg.base.ship_strengthen_blueprint[4022] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44339,11 +39145,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.ship_strengthen_blueprint
-
-	var_14_42[4023] = {
+	pg.base.ship_strengthen_blueprint[4023] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44368,11 +39170,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.ship_strengthen_blueprint
-
-	var_14_43[4024] = {
+	pg.base.ship_strengthen_blueprint[4024] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44397,11 +39195,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.ship_strengthen_blueprint
-
-	var_14_44[4025] = {
+	pg.base.ship_strengthen_blueprint[4025] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+252|防空+26|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -44438,11 +39232,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.ship_strengthen_blueprint
-
-	var_14_45[4026] = {
+	pg.base.ship_strengthen_blueprint[4026] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44467,11 +39257,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.ship_strengthen_blueprint
-
-	var_14_46[4027] = {
+	pg.base.ship_strengthen_blueprint[4027] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44496,11 +39282,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.ship_strengthen_blueprint
-
-	var_14_47[4028] = {
+	pg.base.ship_strengthen_blueprint[4028] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44525,11 +39307,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.ship_strengthen_blueprint
-
-	var_14_48[4029] = {
+	pg.base.ship_strengthen_blueprint[4029] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44554,11 +39332,7 @@ end)()
 			295
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.ship_strengthen_blueprint
-
-	var_14_49[4030] = {
+	pg.base.ship_strengthen_blueprint[4030] = {
 		effect_breakout = 699034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -44588,11 +39362,160 @@ end)()
 			"触发专属弹幕所需主炮射击次数减半"
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.ship_strengthen_blueprint
-
-	var_14_50[4101] = {
+	pg.base.ship_strengthen_blueprint[4031] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+1",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4031,
+		need_exp = 100,
+		lv = 31,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				1
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4032] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+2",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4032,
+		need_exp = 200,
+		lv = 32,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				2
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4033] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+3",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4033,
+		need_exp = 300,
+		lv = 33,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				3
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4034] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+4",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4034,
+		need_exp = 400,
+		lv = 34,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				4
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4035] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+5|【朦胧映紫月】技能强化为【朦胧映紫月 +】",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 100,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4035,
+		need_exp = 650,
+		lv = 35,
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				5
+			}
+		},
+		change_skill = {
+			19950,
+			18950
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4101] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -44621,11 +39544,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.ship_strengthen_blueprint
-
-	var_14_51[4102] = {
+	pg.base.ship_strengthen_blueprint[4102] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44650,11 +39569,7 @@ end)()
 			53
 		}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.ship_strengthen_blueprint
-
-	var_14_52[4103] = {
+	pg.base.ship_strengthen_blueprint[4103] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44679,11 +39594,7 @@ end)()
 			53
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.ship_strengthen_blueprint
-
-	var_14_53[4104] = {
+	pg.base.ship_strengthen_blueprint[4104] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44708,11 +39619,7 @@ end)()
 			53
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.ship_strengthen_blueprint
-
-	var_14_54[4105] = {
+	pg.base.ship_strengthen_blueprint[4105] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+200|防空+18|鱼雷效率提高10%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -44753,11 +39660,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.ship_strengthen_blueprint
-
-	var_14_55[4106] = {
+	pg.base.ship_strengthen_blueprint[4106] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44782,11 +39685,7 @@ end)()
 			106
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.ship_strengthen_blueprint
-
-	var_14_56[4107] = {
+	pg.base.ship_strengthen_blueprint[4107] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44811,11 +39710,7 @@ end)()
 			106
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.ship_strengthen_blueprint
-
-	var_14_57[4108] = {
+	pg.base.ship_strengthen_blueprint[4108] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44840,11 +39735,7 @@ end)()
 			106
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.ship_strengthen_blueprint
-
-	var_14_58[4109] = {
+	pg.base.ship_strengthen_blueprint[4109] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44869,11 +39760,7 @@ end)()
 			106
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.ship_strengthen_blueprint
-
-	var_14_59[4110] = {
+	pg.base.ship_strengthen_blueprint[4110] = {
 		effect_breakout = 799032,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -44906,11 +39793,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.ship_strengthen_blueprint
-
-	var_14_60[4111] = {
+	pg.base.ship_strengthen_blueprint[4111] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44935,11 +39818,7 @@ end)()
 			159
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.ship_strengthen_blueprint
-
-	var_14_61[4112] = {
+	pg.base.ship_strengthen_blueprint[4112] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44964,11 +39843,7 @@ end)()
 			159
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.ship_strengthen_blueprint
-
-	var_14_62[4113] = {
+	pg.base.ship_strengthen_blueprint[4113] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -44993,11 +39868,7 @@ end)()
 			159
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.ship_strengthen_blueprint
-
-	var_14_63[4114] = {
+	pg.base.ship_strengthen_blueprint[4114] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45022,11 +39893,7 @@ end)()
 			159
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.ship_strengthen_blueprint
-
-	var_14_64[4115] = {
+	pg.base.ship_strengthen_blueprint[4115] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+400|防空+35|鱼雷底座+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -45068,11 +39935,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.ship_strengthen_blueprint
-
-	var_14_65[4116] = {
+	pg.base.ship_strengthen_blueprint[4116] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45097,11 +39960,7 @@ end)()
 			212
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.ship_strengthen_blueprint
-
-	var_14_66[4117] = {
+	pg.base.ship_strengthen_blueprint[4117] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45126,11 +39985,7 @@ end)()
 			212
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.ship_strengthen_blueprint
-
-	var_14_67[4118] = {
+	pg.base.ship_strengthen_blueprint[4118] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45155,11 +40010,7 @@ end)()
 			212
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.ship_strengthen_blueprint
-
-	var_14_68[4119] = {
+	pg.base.ship_strengthen_blueprint[4119] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45184,11 +40035,7 @@ end)()
 			212
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.ship_strengthen_blueprint
-
-	var_14_69[4120] = {
+	pg.base.ship_strengthen_blueprint[4120] = {
 		effect_breakout = 799033,
 		effect_desc = "突破至5星|主炮底座+1|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -45224,11 +40071,7 @@ end)()
 			"鱼雷效率提高10%"
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.ship_strengthen_blueprint
-
-	var_14_70[4121] = {
+	pg.base.ship_strengthen_blueprint[4121] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45253,11 +40096,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.ship_strengthen_blueprint
-
-	var_14_71[4122] = {
+	pg.base.ship_strengthen_blueprint[4122] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45282,11 +40121,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.ship_strengthen_blueprint
-
-	var_14_72[4123] = {
+	pg.base.ship_strengthen_blueprint[4123] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45311,11 +40146,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.ship_strengthen_blueprint
-
-	var_14_73[4124] = {
+	pg.base.ship_strengthen_blueprint[4124] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45340,11 +40171,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.ship_strengthen_blueprint
-
-	var_14_74[4125] = {
+	pg.base.ship_strengthen_blueprint[4125] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+600|防空+53|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -45381,11 +40208,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.ship_strengthen_blueprint
-
-	var_14_75[4126] = {
+	pg.base.ship_strengthen_blueprint[4126] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45410,11 +40233,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.ship_strengthen_blueprint
-
-	var_14_76[4127] = {
+	pg.base.ship_strengthen_blueprint[4127] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45439,11 +40258,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.ship_strengthen_blueprint
-
-	var_14_77[4128] = {
+	pg.base.ship_strengthen_blueprint[4128] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45468,11 +40283,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.ship_strengthen_blueprint
-
-	var_14_78[4129] = {
+	pg.base.ship_strengthen_blueprint[4129] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45497,11 +40308,7 @@ end)()
 			265
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.ship_strengthen_blueprint
-
-	var_14_79[4130] = {
+	pg.base.ship_strengthen_blueprint[4130] = {
 		effect_breakout = 799034,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -45530,11 +40337,160 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.ship_strengthen_blueprint
-
-	var_14_80[4201] = {
+	pg.base.ship_strengthen_blueprint[4131] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+1",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4131,
+		need_exp = 100,
+		lv = 31,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				1
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4132] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+2",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4132,
+		need_exp = 200,
+		lv = 32,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				2
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4133] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+3",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4133,
+		need_exp = 300,
+		lv = 33,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				3
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4134] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+4",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 70,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4134,
+		need_exp = 400,
+		lv = 34,
+		change_skill = "",
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				4
+			}
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4135] = {
+		effect_breakout = 0,
+		effect_desc = "幸运+5|【钢铁洪流的和声】技能强化为【钢铁洪流的和声 +】",
+		extra_desc = "",
+		effect_base = "",
+		effect_preload = "",
+		need_lv = 100,
+		effect_equipment_proficiency = "",
+		effect_skill = "",
+		effect_dialog = "",
+		special = 1,
+		effect_skin = 0,
+		id = 4135,
+		need_exp = 650,
+		lv = 35,
+		effect = {
+			0,
+			0,
+			0,
+			0,
+			0
+		},
+		effect_attr = {
+			{
+				"luck",
+				5
+			}
+		},
+		change_skill = {
+			190000,
+			180000
+		}
+	}
+	pg.base.ship_strengthen_blueprint[4201] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -45563,11 +40519,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.ship_strengthen_blueprint
-
-	var_14_81[4202] = {
+	pg.base.ship_strengthen_blueprint[4202] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45592,11 +40544,7 @@ end)()
 			49
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.ship_strengthen_blueprint
-
-	var_14_82[4203] = {
+	pg.base.ship_strengthen_blueprint[4203] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45621,11 +40569,7 @@ end)()
 			49
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.ship_strengthen_blueprint
-
-	var_14_83[4204] = {
+	pg.base.ship_strengthen_blueprint[4204] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45650,11 +40594,7 @@ end)()
 			49
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.ship_strengthen_blueprint
-
-	var_14_84[4205] = {
+	pg.base.ship_strengthen_blueprint[4205] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+296|防空+22|机动+5|主炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -45700,11 +40640,11 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_14_84
 
-	local var_14_85 = var_14_84.base.ship_strengthen_blueprint
-
-	var_14_85[4206] = {
+	return
+end)()
+;(function()
+	pg.base.ship_strengthen_blueprint[4206] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45729,11 +40669,7 @@ end)()
 			98
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.ship_strengthen_blueprint
-
-	var_14_86[4207] = {
+	pg.base.ship_strengthen_blueprint[4207] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45758,11 +40694,7 @@ end)()
 			98
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.ship_strengthen_blueprint
-
-	var_14_87[4208] = {
+	pg.base.ship_strengthen_blueprint[4208] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45787,11 +40719,7 @@ end)()
 			98
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.ship_strengthen_blueprint
-
-	var_14_88[4209] = {
+	pg.base.ship_strengthen_blueprint[4209] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45816,11 +40744,7 @@ end)()
 			98
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.ship_strengthen_blueprint
-
-	var_14_89[4210] = {
+	pg.base.ship_strengthen_blueprint[4210] = {
 		effect_breakout = 1199012,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -45853,11 +40777,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.ship_strengthen_blueprint
-
-	var_14_90[4211] = {
+	pg.base.ship_strengthen_blueprint[4211] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45882,11 +40802,7 @@ end)()
 			147
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.ship_strengthen_blueprint
-
-	var_14_91[4212] = {
+	pg.base.ship_strengthen_blueprint[4212] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45911,11 +40827,7 @@ end)()
 			147
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.ship_strengthen_blueprint
-
-	var_14_92[4213] = {
+	pg.base.ship_strengthen_blueprint[4213] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45940,11 +40852,7 @@ end)()
 			147
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.ship_strengthen_blueprint
-
-	var_14_93[4214] = {
+	pg.base.ship_strengthen_blueprint[4214] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -45969,11 +40877,7 @@ end)()
 			147
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.ship_strengthen_blueprint
-
-	var_14_94[4215] = {
+	pg.base.ship_strengthen_blueprint[4215] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+592|防空+43|副炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -46014,11 +40918,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.ship_strengthen_blueprint
-
-	var_14_95[4216] = {
+	pg.base.ship_strengthen_blueprint[4216] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46043,11 +40943,7 @@ end)()
 			196
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.ship_strengthen_blueprint
-
-	var_14_96[4217] = {
+	pg.base.ship_strengthen_blueprint[4217] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46072,11 +40968,7 @@ end)()
 			196
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.ship_strengthen_blueprint
-
-	var_14_97[4218] = {
+	pg.base.ship_strengthen_blueprint[4218] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46101,11 +40993,7 @@ end)()
 			196
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.ship_strengthen_blueprint
-
-	var_14_98[4219] = {
+	pg.base.ship_strengthen_blueprint[4219] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46130,8 +41018,7 @@ end)()
 			196
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.ship_strengthen_blueprint[4220] = {
+	pg.base.ship_strengthen_blueprint[4220] = {
 		effect_breakout = 1199013,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -46164,15 +41051,7 @@ end)()
 			"防空炮底座+1"
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_15_0[4221] = {
+	pg.base.ship_strengthen_blueprint[4221] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46197,11 +41076,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.ship_strengthen_blueprint
-
-	var_15_1[4222] = {
+	pg.base.ship_strengthen_blueprint[4222] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46226,11 +41101,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.ship_strengthen_blueprint
-
-	var_15_2[4223] = {
+	pg.base.ship_strengthen_blueprint[4223] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46255,11 +41126,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.ship_strengthen_blueprint
-
-	var_15_3[4224] = {
+	pg.base.ship_strengthen_blueprint[4224] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46284,11 +41151,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.ship_strengthen_blueprint
-
-	var_15_4[4225] = {
+	pg.base.ship_strengthen_blueprint[4225] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+887|防空+65|机动+10|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -46329,11 +41192,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.ship_strengthen_blueprint
-
-	var_15_5[4226] = {
+	pg.base.ship_strengthen_blueprint[4226] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46358,11 +41217,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.ship_strengthen_blueprint
-
-	var_15_6[4227] = {
+	pg.base.ship_strengthen_blueprint[4227] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46387,11 +41242,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.ship_strengthen_blueprint
-
-	var_15_7[4228] = {
+	pg.base.ship_strengthen_blueprint[4228] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46416,11 +41267,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.ship_strengthen_blueprint
-
-	var_15_8[4229] = {
+	pg.base.ship_strengthen_blueprint[4229] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46445,11 +41292,7 @@ end)()
 			245
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.ship_strengthen_blueprint
-
-	var_15_9[4230] = {
+	pg.base.ship_strengthen_blueprint[4230] = {
 		effect_breakout = 1199014,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -46478,11 +41321,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.ship_strengthen_blueprint
-
-	var_15_10[4301] = {
+	pg.base.ship_strengthen_blueprint[4301] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -46511,11 +41350,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.ship_strengthen_blueprint
-
-	var_15_11[4302] = {
+	pg.base.ship_strengthen_blueprint[4302] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46540,11 +41375,7 @@ end)()
 			46
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.ship_strengthen_blueprint
-
-	var_15_12[4303] = {
+	pg.base.ship_strengthen_blueprint[4303] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46569,11 +41400,7 @@ end)()
 			46
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.ship_strengthen_blueprint
-
-	var_15_13[4304] = {
+	pg.base.ship_strengthen_blueprint[4304] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46598,11 +41425,7 @@ end)()
 			46
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.ship_strengthen_blueprint
-
-	var_15_14[4305] = {
+	pg.base.ship_strengthen_blueprint[4305] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+364|防空+15|主炮效率提高5%|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -46643,11 +41466,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.ship_strengthen_blueprint
-
-	var_15_15[4306] = {
+	pg.base.ship_strengthen_blueprint[4306] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46672,11 +41491,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.ship_strengthen_blueprint
-
-	var_15_16[4307] = {
+	pg.base.ship_strengthen_blueprint[4307] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46701,11 +41516,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.ship_strengthen_blueprint
-
-	var_15_17[4308] = {
+	pg.base.ship_strengthen_blueprint[4308] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46730,11 +41541,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.ship_strengthen_blueprint
-
-	var_15_18[4309] = {
+	pg.base.ship_strengthen_blueprint[4309] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46759,11 +41566,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.ship_strengthen_blueprint
-
-	var_15_19[4310] = {
+	pg.base.ship_strengthen_blueprint[4310] = {
 		effect_breakout = 299062,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -46795,11 +41598,7 @@ end)()
 			"主炮底座+1"
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.ship_strengthen_blueprint
-
-	var_15_20[4311] = {
+	pg.base.ship_strengthen_blueprint[4311] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46824,11 +41623,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.ship_strengthen_blueprint
-
-	var_15_21[4312] = {
+	pg.base.ship_strengthen_blueprint[4312] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46853,11 +41648,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.ship_strengthen_blueprint
-
-	var_15_22[4313] = {
+	pg.base.ship_strengthen_blueprint[4313] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46882,11 +41673,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.ship_strengthen_blueprint
-
-	var_15_23[4314] = {
+	pg.base.ship_strengthen_blueprint[4314] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46911,11 +41698,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.ship_strengthen_blueprint
-
-	var_15_24[4315] = {
+	pg.base.ship_strengthen_blueprint[4315] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+728|防空+31|防空炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -46956,11 +41739,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.ship_strengthen_blueprint
-
-	var_15_25[4316] = {
+	pg.base.ship_strengthen_blueprint[4316] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -46985,11 +41764,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.ship_strengthen_blueprint
-
-	var_15_26[4317] = {
+	pg.base.ship_strengthen_blueprint[4317] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47014,11 +41789,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.ship_strengthen_blueprint
-
-	var_15_27[4318] = {
+	pg.base.ship_strengthen_blueprint[4318] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47043,11 +41814,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.ship_strengthen_blueprint
-
-	var_15_28[4319] = {
+	pg.base.ship_strengthen_blueprint[4319] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47072,11 +41839,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.ship_strengthen_blueprint
-
-	var_15_29[4320] = {
+	pg.base.ship_strengthen_blueprint[4320] = {
 		effect_breakout = 299063,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -47109,11 +41872,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.ship_strengthen_blueprint
-
-	var_15_30[4321] = {
+	pg.base.ship_strengthen_blueprint[4321] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47138,11 +41897,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.ship_strengthen_blueprint
-
-	var_15_31[4322] = {
+	pg.base.ship_strengthen_blueprint[4322] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47167,11 +41922,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.ship_strengthen_blueprint
-
-	var_15_32[4323] = {
+	pg.base.ship_strengthen_blueprint[4323] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47196,11 +41947,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.ship_strengthen_blueprint
-
-	var_15_33[4324] = {
+	pg.base.ship_strengthen_blueprint[4324] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47225,11 +41972,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.ship_strengthen_blueprint
-
-	var_15_34[4325] = {
+	pg.base.ship_strengthen_blueprint[4325] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1091|防空+46|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -47266,11 +42009,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.ship_strengthen_blueprint
-
-	var_15_35[4326] = {
+	pg.base.ship_strengthen_blueprint[4326] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47295,11 +42034,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.ship_strengthen_blueprint
-
-	var_15_36[4327] = {
+	pg.base.ship_strengthen_blueprint[4327] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47324,11 +42059,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.ship_strengthen_blueprint
-
-	var_15_37[4328] = {
+	pg.base.ship_strengthen_blueprint[4328] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47353,11 +42084,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.ship_strengthen_blueprint
-
-	var_15_38[4329] = {
+	pg.base.ship_strengthen_blueprint[4329] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47382,11 +42109,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.ship_strengthen_blueprint
-
-	var_15_39[4330] = {
+	pg.base.ship_strengthen_blueprint[4330] = {
 		effect_breakout = 299064,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -47415,11 +42138,7 @@ end)()
 			"主炮效率提高15%"
 		}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.ship_strengthen_blueprint
-
-	var_15_40[4401] = {
+	pg.base.ship_strengthen_blueprint[4401] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -47448,11 +42167,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.ship_strengthen_blueprint
-
-	var_15_41[4402] = {
+	pg.base.ship_strengthen_blueprint[4402] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47477,11 +42192,7 @@ end)()
 			46
 		}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.ship_strengthen_blueprint
-
-	var_15_42[4403] = {
+	pg.base.ship_strengthen_blueprint[4403] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47506,11 +42217,7 @@ end)()
 			46
 		}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.ship_strengthen_blueprint
-
-	var_15_43[4404] = {
+	pg.base.ship_strengthen_blueprint[4404] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47535,11 +42242,7 @@ end)()
 			46
 		}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.ship_strengthen_blueprint
-
-	var_15_44[4405] = {
+	pg.base.ship_strengthen_blueprint[4405] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+254|防空+23|鱼雷底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -47581,11 +42284,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.ship_strengthen_blueprint
-
-	var_15_45[4406] = {
+	pg.base.ship_strengthen_blueprint[4406] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47610,11 +42309,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.ship_strengthen_blueprint
-
-	var_15_46[4407] = {
+	pg.base.ship_strengthen_blueprint[4407] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47639,11 +42334,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.ship_strengthen_blueprint
-
-	var_15_47[4408] = {
+	pg.base.ship_strengthen_blueprint[4408] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47668,11 +42359,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.ship_strengthen_blueprint
-
-	var_15_48[4409] = {
+	pg.base.ship_strengthen_blueprint[4409] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47697,11 +42384,7 @@ end)()
 			92
 		}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.ship_strengthen_blueprint
-
-	var_15_49[4410] = {
+	pg.base.ship_strengthen_blueprint[4410] = {
 		effect_breakout = 399082,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -47735,11 +42418,7 @@ end)()
 			"鱼雷效率提高5%"
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.ship_strengthen_blueprint
-
-	var_15_50[4411] = {
+	pg.base.ship_strengthen_blueprint[4411] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47764,11 +42443,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.ship_strengthen_blueprint
-
-	var_15_51[4412] = {
+	pg.base.ship_strengthen_blueprint[4412] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47793,11 +42468,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.ship_strengthen_blueprint
-
-	var_15_52[4413] = {
+	pg.base.ship_strengthen_blueprint[4413] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47822,11 +42493,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.ship_strengthen_blueprint
-
-	var_15_53[4414] = {
+	pg.base.ship_strengthen_blueprint[4414] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47851,11 +42518,7 @@ end)()
 			138
 		}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.ship_strengthen_blueprint
-
-	var_15_54[4415] = {
+	pg.base.ship_strengthen_blueprint[4415] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+507|防空+46|鱼雷预装填+1|主炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -47900,11 +42563,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.ship_strengthen_blueprint
-
-	var_15_55[4416] = {
+	pg.base.ship_strengthen_blueprint[4416] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47929,11 +42588,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.ship_strengthen_blueprint
-
-	var_15_56[4417] = {
+	pg.base.ship_strengthen_blueprint[4417] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47958,11 +42613,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.ship_strengthen_blueprint
-
-	var_15_57[4418] = {
+	pg.base.ship_strengthen_blueprint[4418] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -47987,11 +42638,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.ship_strengthen_blueprint
-
-	var_15_58[4419] = {
+	pg.base.ship_strengthen_blueprint[4419] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48016,11 +42663,7 @@ end)()
 			184
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.ship_strengthen_blueprint
-
-	var_15_59[4420] = {
+	pg.base.ship_strengthen_blueprint[4420] = {
 		effect_breakout = 399083,
 		effect_desc = "突破至5星|主炮底座+1|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -48057,11 +42700,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.ship_strengthen_blueprint
-
-	var_15_60[4421] = {
+	pg.base.ship_strengthen_blueprint[4421] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48086,11 +42725,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.ship_strengthen_blueprint
-
-	var_15_61[4422] = {
+	pg.base.ship_strengthen_blueprint[4422] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48115,11 +42750,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.ship_strengthen_blueprint
-
-	var_15_62[4423] = {
+	pg.base.ship_strengthen_blueprint[4423] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48144,11 +42775,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.ship_strengthen_blueprint
-
-	var_15_63[4424] = {
+	pg.base.ship_strengthen_blueprint[4424] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48173,11 +42800,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.ship_strengthen_blueprint
-
-	var_15_64[4425] = {
+	pg.base.ship_strengthen_blueprint[4425] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+761|防空+70|防空炮效率提高10%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -48217,11 +42840,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.ship_strengthen_blueprint
-
-	var_15_65[4426] = {
+	pg.base.ship_strengthen_blueprint[4426] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48246,11 +42865,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.ship_strengthen_blueprint
-
-	var_15_66[4427] = {
+	pg.base.ship_strengthen_blueprint[4427] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48275,11 +42890,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.ship_strengthen_blueprint
-
-	var_15_67[4428] = {
+	pg.base.ship_strengthen_blueprint[4428] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48304,11 +42915,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.ship_strengthen_blueprint
-
-	var_15_68[4429] = {
+	pg.base.ship_strengthen_blueprint[4429] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48333,11 +42940,7 @@ end)()
 			230
 		}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.ship_strengthen_blueprint
-
-	var_15_69[4430] = {
+	pg.base.ship_strengthen_blueprint[4430] = {
 		effect_breakout = 399084,
 		effect_desc = "突破至6星|鱼雷预装填+1",
 		effect_attr = "",
@@ -48370,11 +42973,7 @@ end)()
 			"鱼雷效率提高15%"
 		}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.ship_strengthen_blueprint
-
-	var_15_70[4501] = {
+	pg.base.ship_strengthen_blueprint[4501] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -48403,11 +43002,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.ship_strengthen_blueprint
-
-	var_15_71[4502] = {
+	pg.base.ship_strengthen_blueprint[4502] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48432,11 +43027,7 @@ end)()
 			36
 		}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.ship_strengthen_blueprint
-
-	var_15_72[4503] = {
+	pg.base.ship_strengthen_blueprint[4503] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48461,11 +43052,7 @@ end)()
 			36
 		}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.ship_strengthen_blueprint
-
-	var_15_73[4504] = {
+	pg.base.ship_strengthen_blueprint[4504] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48490,11 +43077,7 @@ end)()
 			36
 		}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.ship_strengthen_blueprint
-
-	var_15_74[4505] = {
+	pg.base.ship_strengthen_blueprint[4505] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+373|防空+14|所有轰炸机+1|所有鱼雷机+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -48536,11 +43119,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.ship_strengthen_blueprint
-
-	var_15_75[4506] = {
+	pg.base.ship_strengthen_blueprint[4506] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48565,11 +43144,7 @@ end)()
 			72
 		}
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.ship_strengthen_blueprint
-
-	var_15_76[4507] = {
+	pg.base.ship_strengthen_blueprint[4507] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48594,11 +43169,7 @@ end)()
 			72
 		}
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.ship_strengthen_blueprint
-
-	var_15_77[4508] = {
+	pg.base.ship_strengthen_blueprint[4508] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48623,11 +43194,7 @@ end)()
 			72
 		}
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.ship_strengthen_blueprint
-
-	var_15_78[4509] = {
+	pg.base.ship_strengthen_blueprint[4509] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48652,11 +43219,7 @@ end)()
 			72
 		}
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.ship_strengthen_blueprint
-
-	var_15_79[4510] = {
+	pg.base.ship_strengthen_blueprint[4510] = {
 		effect_breakout = 499112,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -48689,11 +43252,7 @@ end)()
 			"鱼雷机效率提高5%"
 		}
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.ship_strengthen_blueprint
-
-	var_15_80[4511] = {
+	pg.base.ship_strengthen_blueprint[4511] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48718,11 +43277,7 @@ end)()
 			108
 		}
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.ship_strengthen_blueprint
-
-	var_15_81[4512] = {
+	pg.base.ship_strengthen_blueprint[4512] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48747,11 +43302,7 @@ end)()
 			108
 		}
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.ship_strengthen_blueprint
-
-	var_15_82[4513] = {
+	pg.base.ship_strengthen_blueprint[4513] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48776,11 +43327,7 @@ end)()
 			108
 		}
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.ship_strengthen_blueprint
-
-	var_15_83[4514] = {
+	pg.base.ship_strengthen_blueprint[4514] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48805,11 +43352,7 @@ end)()
 			108
 		}
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.ship_strengthen_blueprint
-
-	var_15_84[4515] = {
+	pg.base.ship_strengthen_blueprint[4515] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+747|防空+28|所有战斗机+1|轰炸机效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -48854,11 +43397,11 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_15_84
 
-	local var_15_85 = var_15_84.base.ship_strengthen_blueprint
-
-	var_15_85[4516] = {
+	return
+end)()
+;(function()
+	pg.base.ship_strengthen_blueprint[4516] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48883,11 +43426,7 @@ end)()
 			144
 		}
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.ship_strengthen_blueprint
-
-	var_15_86[4517] = {
+	pg.base.ship_strengthen_blueprint[4517] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48912,11 +43451,7 @@ end)()
 			144
 		}
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.ship_strengthen_blueprint
-
-	var_15_87[4518] = {
+	pg.base.ship_strengthen_blueprint[4518] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48941,11 +43476,7 @@ end)()
 			144
 		}
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.ship_strengthen_blueprint
-
-	var_15_88[4519] = {
+	pg.base.ship_strengthen_blueprint[4519] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -48970,11 +43501,7 @@ end)()
 			144
 		}
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.ship_strengthen_blueprint
-
-	var_15_89[4520] = {
+	pg.base.ship_strengthen_blueprint[4520] = {
 		effect_breakout = 499113,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -49008,11 +43535,7 @@ end)()
 			"轰炸机栏位可以装备鱼雷机"
 		}
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.ship_strengthen_blueprint
-
-	var_15_90[4521] = {
+	pg.base.ship_strengthen_blueprint[4521] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49037,11 +43560,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.ship_strengthen_blueprint
-
-	var_15_91[4522] = {
+	pg.base.ship_strengthen_blueprint[4522] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49066,11 +43585,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.ship_strengthen_blueprint
-
-	var_15_92[4523] = {
+	pg.base.ship_strengthen_blueprint[4523] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49095,11 +43610,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.ship_strengthen_blueprint
-
-	var_15_93[4524] = {
+	pg.base.ship_strengthen_blueprint[4524] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49124,11 +43635,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.ship_strengthen_blueprint
-
-	var_15_94[4525] = {
+	pg.base.ship_strengthen_blueprint[4525] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1120|防空+41|鱼雷机效率提高10%|所有舰载机+1|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -49172,11 +43679,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.ship_strengthen_blueprint
-
-	var_15_95[4526] = {
+	pg.base.ship_strengthen_blueprint[4526] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49201,11 +43704,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.ship_strengthen_blueprint
-
-	var_15_96[4527] = {
+	pg.base.ship_strengthen_blueprint[4527] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49230,11 +43729,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.ship_strengthen_blueprint
-
-	var_15_97[4528] = {
+	pg.base.ship_strengthen_blueprint[4528] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49259,11 +43754,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.ship_strengthen_blueprint
-
-	var_15_98[4529] = {
+	pg.base.ship_strengthen_blueprint[4529] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49288,8 +43779,7 @@ end)()
 			180
 		}
 	}
-	pg = var_15_98
-	var_15_98.base.ship_strengthen_blueprint[4530] = {
+	pg.base.ship_strengthen_blueprint[4530] = {
 		effect_breakout = 499114,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -49318,15 +43808,7 @@ end)()
 			"鱼雷机栏位可以装备战斗机"
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.ship_strengthen_blueprint
-
-	var_16_0[4601] = {
+	pg.base.ship_strengthen_blueprint[4601] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -49355,11 +43837,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.ship_strengthen_blueprint
-
-	var_16_1[4602] = {
+	pg.base.ship_strengthen_blueprint[4602] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49384,11 +43862,7 @@ end)()
 			59
 		}
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.ship_strengthen_blueprint
-
-	var_16_2[4603] = {
+	pg.base.ship_strengthen_blueprint[4603] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49413,11 +43887,7 @@ end)()
 			59
 		}
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.ship_strengthen_blueprint
-
-	var_16_3[4604] = {
+	pg.base.ship_strengthen_blueprint[4604] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49442,11 +43912,7 @@ end)()
 			59
 		}
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.ship_strengthen_blueprint
-
-	var_16_4[4605] = {
+	pg.base.ship_strengthen_blueprint[4605] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+104|防空+8|鱼雷底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -49488,11 +43954,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.ship_strengthen_blueprint
-
-	var_16_5[4606] = {
+	pg.base.ship_strengthen_blueprint[4606] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49517,11 +43979,7 @@ end)()
 			118
 		}
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.ship_strengthen_blueprint
-
-	var_16_6[4607] = {
+	pg.base.ship_strengthen_blueprint[4607] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49546,11 +44004,7 @@ end)()
 			118
 		}
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.ship_strengthen_blueprint
-
-	var_16_7[4608] = {
+	pg.base.ship_strengthen_blueprint[4608] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49575,11 +44029,7 @@ end)()
 			118
 		}
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.ship_strengthen_blueprint
-
-	var_16_8[4609] = {
+	pg.base.ship_strengthen_blueprint[4609] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49604,11 +44054,7 @@ end)()
 			118
 		}
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.ship_strengthen_blueprint
-
-	var_16_9[4610] = {
+	pg.base.ship_strengthen_blueprint[4610] = {
 		effect_breakout = 899052,
 		effect_desc = "突破至4星|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -49641,11 +44087,7 @@ end)()
 			"主炮效率提高5%"
 		}
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.ship_strengthen_blueprint
-
-	var_16_10[4611] = {
+	pg.base.ship_strengthen_blueprint[4611] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49670,11 +44112,7 @@ end)()
 			177
 		}
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.ship_strengthen_blueprint
-
-	var_16_11[4612] = {
+	pg.base.ship_strengthen_blueprint[4612] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49699,11 +44137,7 @@ end)()
 			177
 		}
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.ship_strengthen_blueprint
-
-	var_16_12[4613] = {
+	pg.base.ship_strengthen_blueprint[4613] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49728,11 +44162,7 @@ end)()
 			177
 		}
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.ship_strengthen_blueprint
-
-	var_16_13[4614] = {
+	pg.base.ship_strengthen_blueprint[4614] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49757,11 +44187,7 @@ end)()
 			177
 		}
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.ship_strengthen_blueprint
-
-	var_16_14[4615] = {
+	pg.base.ship_strengthen_blueprint[4615] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+207|防空+15|鱼雷效率提高10%|鱼雷预装填+1|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -49806,11 +44232,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.ship_strengthen_blueprint
-
-	var_16_15[4616] = {
+	pg.base.ship_strengthen_blueprint[4616] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49835,11 +44257,7 @@ end)()
 			236
 		}
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.ship_strengthen_blueprint
-
-	var_16_16[4617] = {
+	pg.base.ship_strengthen_blueprint[4617] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49864,11 +44282,7 @@ end)()
 			236
 		}
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.ship_strengthen_blueprint
-
-	var_16_17[4618] = {
+	pg.base.ship_strengthen_blueprint[4618] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49893,11 +44307,7 @@ end)()
 			236
 		}
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.ship_strengthen_blueprint
-
-	var_16_18[4619] = {
+	pg.base.ship_strengthen_blueprint[4619] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49922,11 +44332,7 @@ end)()
 			236
 		}
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.ship_strengthen_blueprint
-
-	var_16_19[4620] = {
+	pg.base.ship_strengthen_blueprint[4620] = {
 		effect_breakout = 899053,
 		effect_desc = "突破至5星|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -49958,11 +44364,7 @@ end)()
 			"防空炮效率提高10%"
 		}
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.ship_strengthen_blueprint
-
-	var_16_20[4621] = {
+	pg.base.ship_strengthen_blueprint[4621] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -49987,11 +44389,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.ship_strengthen_blueprint
-
-	var_16_21[4622] = {
+	pg.base.ship_strengthen_blueprint[4622] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50016,11 +44414,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.ship_strengthen_blueprint
-
-	var_16_22[4623] = {
+	pg.base.ship_strengthen_blueprint[4623] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50045,11 +44439,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.ship_strengthen_blueprint
-
-	var_16_23[4624] = {
+	pg.base.ship_strengthen_blueprint[4624] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50074,11 +44464,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.ship_strengthen_blueprint
-
-	var_16_24[4625] = {
+	pg.base.ship_strengthen_blueprint[4625] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+311|防空+23|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -50115,11 +44501,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.ship_strengthen_blueprint
-
-	var_16_25[4626] = {
+	pg.base.ship_strengthen_blueprint[4626] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50144,11 +44526,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.ship_strengthen_blueprint
-
-	var_16_26[4627] = {
+	pg.base.ship_strengthen_blueprint[4627] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50173,11 +44551,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.ship_strengthen_blueprint
-
-	var_16_27[4628] = {
+	pg.base.ship_strengthen_blueprint[4628] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50202,11 +44576,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.ship_strengthen_blueprint
-
-	var_16_28[4629] = {
+	pg.base.ship_strengthen_blueprint[4629] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50231,11 +44601,7 @@ end)()
 			295
 		}
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.ship_strengthen_blueprint
-
-	var_16_29[4630] = {
+	pg.base.ship_strengthen_blueprint[4630] = {
 		effect_breakout = 899054,
 		effect_desc = "突破至6星",
 		effect_attr = "",
@@ -50265,11 +44631,7 @@ end)()
 			"设备提供的基础属性额外提高30%"
 		}
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.ship_strengthen_blueprint
-
-	var_16_30[4701] = {
+	pg.base.ship_strengthen_blueprint[4701] = {
 		effect_breakout = 0,
 		effect_desc = "鉴赏解锁：登录、回港、图鉴",
 		extra_desc = "",
@@ -50298,11 +44660,7 @@ end)()
 			"profile"
 		}
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.ship_strengthen_blueprint
-
-	var_16_31[4702] = {
+	pg.base.ship_strengthen_blueprint[4702] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50327,11 +44685,7 @@ end)()
 			48
 		}
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.ship_strengthen_blueprint
-
-	var_16_32[4703] = {
+	pg.base.ship_strengthen_blueprint[4703] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50356,11 +44710,7 @@ end)()
 			48
 		}
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.ship_strengthen_blueprint
-
-	var_16_33[4704] = {
+	pg.base.ship_strengthen_blueprint[4704] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50385,11 +44735,7 @@ end)()
 			48
 		}
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.ship_strengthen_blueprint
-
-	var_16_34[4705] = {
+	pg.base.ship_strengthen_blueprint[4705] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+387|防空+20|主炮效率提高5%|副炮底座+1|鉴赏解锁：主界面1、旗舰开战、任务",
 		extra_desc = "",
@@ -50434,11 +44780,7 @@ end)()
 			"mission"
 		}
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.ship_strengthen_blueprint
-
-	var_16_35[4706] = {
+	pg.base.ship_strengthen_blueprint[4706] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50463,11 +44805,7 @@ end)()
 			96
 		}
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.ship_strengthen_blueprint
-
-	var_16_36[4707] = {
+	pg.base.ship_strengthen_blueprint[4707] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50492,11 +44830,7 @@ end)()
 			96
 		}
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.ship_strengthen_blueprint
-
-	var_16_37[4708] = {
+	pg.base.ship_strengthen_blueprint[4708] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50521,11 +44855,7 @@ end)()
 			96
 		}
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.ship_strengthen_blueprint
-
-	var_16_38[4709] = {
+	pg.base.ship_strengthen_blueprint[4709] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50550,11 +44880,7 @@ end)()
 			96
 		}
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.ship_strengthen_blueprint
-
-	var_16_39[4710] = {
+	pg.base.ship_strengthen_blueprint[4710] = {
 		effect_breakout = 1299012,
 		effect_desc = "突破至4星|主炮效率提高5%|鉴赏解锁：主界面2、战斗MVP、失败",
 		effect_attr = "",
@@ -50590,11 +44916,7 @@ end)()
 			"主炮底座+1"
 		}
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.ship_strengthen_blueprint
-
-	var_16_40[4711] = {
+	pg.base.ship_strengthen_blueprint[4711] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50619,11 +44941,7 @@ end)()
 			144
 		}
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.ship_strengthen_blueprint
-
-	var_16_41[4712] = {
+	pg.base.ship_strengthen_blueprint[4712] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50648,11 +44966,7 @@ end)()
 			144
 		}
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.ship_strengthen_blueprint
-
-	var_16_42[4713] = {
+	pg.base.ship_strengthen_blueprint[4713] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50677,11 +44991,7 @@ end)()
 			144
 		}
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.ship_strengthen_blueprint
-
-	var_16_43[4714] = {
+	pg.base.ship_strengthen_blueprint[4714] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50706,11 +45016,7 @@ end)()
 			144
 		}
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.ship_strengthen_blueprint
-
-	var_16_44[4715] = {
+	pg.base.ship_strengthen_blueprint[4715] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+773|防空+40|副炮效率提高10%|鉴赏解锁：主界面3、触摸1、任务完成",
 		extra_desc = "",
@@ -50751,11 +45057,7 @@ end)()
 			"mission_complete"
 		}
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.ship_strengthen_blueprint
-
-	var_16_45[4716] = {
+	pg.base.ship_strengthen_blueprint[4716] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50780,11 +45082,7 @@ end)()
 			192
 		}
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.ship_strengthen_blueprint
-
-	var_16_46[4717] = {
+	pg.base.ship_strengthen_blueprint[4717] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50809,11 +45107,7 @@ end)()
 			192
 		}
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.ship_strengthen_blueprint
-
-	var_16_47[4718] = {
+	pg.base.ship_strengthen_blueprint[4718] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50838,11 +45132,7 @@ end)()
 			192
 		}
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.ship_strengthen_blueprint
-
-	var_16_48[4719] = {
+	pg.base.ship_strengthen_blueprint[4719] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50867,11 +45157,7 @@ end)()
 			192
 		}
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.ship_strengthen_blueprint
-
-	var_16_49[4720] = {
+	pg.base.ship_strengthen_blueprint[4720] = {
 		effect_breakout = 1299013,
 		effect_desc = "突破至5星|副炮底座+1|鉴赏解锁：技能、邮件、委托完成",
 		effect_attr = "",
@@ -50908,11 +45194,7 @@ end)()
 			"主炮效率提高10%"
 		}
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.ship_strengthen_blueprint
-
-	var_16_50[4721] = {
+	pg.base.ship_strengthen_blueprint[4721] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50937,11 +45219,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.ship_strengthen_blueprint
-
-	var_16_51[4722] = {
+	pg.base.ship_strengthen_blueprint[4722] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50966,11 +45244,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.ship_strengthen_blueprint
-
-	var_16_52[4723] = {
+	pg.base.ship_strengthen_blueprint[4723] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -50995,11 +45269,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.ship_strengthen_blueprint
-
-	var_16_53[4724] = {
+	pg.base.ship_strengthen_blueprint[4724] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -51024,11 +45294,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.ship_strengthen_blueprint
-
-	var_16_54[4725] = {
+	pg.base.ship_strengthen_blueprint[4725] = {
 		effect_breakout = 0,
 		effect_desc = "耐久+1160|防空+61|主炮效率提高5%|鉴赏解锁：血量警报",
 		extra_desc = "",
@@ -51068,11 +45334,7 @@ end)()
 			"hp_warning"
 		}
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.ship_strengthen_blueprint
-
-	var_16_55[4726] = {
+	pg.base.ship_strengthen_blueprint[4726] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -51097,11 +45359,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.ship_strengthen_blueprint
-
-	var_16_56[4727] = {
+	pg.base.ship_strengthen_blueprint[4727] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -51126,11 +45384,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.ship_strengthen_blueprint
-
-	var_16_57[4728] = {
+	pg.base.ship_strengthen_blueprint[4728] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -51155,11 +45409,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.ship_strengthen_blueprint
-
-	var_16_58[4729] = {
+	pg.base.ship_strengthen_blueprint[4729] = {
 		effect_breakout = 0,
 		effect_desc = "",
 		extra_desc = "",
@@ -51184,8 +45434,7 @@ end)()
 			240
 		}
 	}
-	pg = var_16_58
-	var_16_58.base.ship_strengthen_blueprint[4730] = {
+	pg.base.ship_strengthen_blueprint[4730] = {
 		effect_breakout = 1299014,
 		effect_desc = "突破至6星|主炮底座+1",
 		effect_attr = "",

@@ -1,49 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FinishStageCommand", pm.SimpleCommand)
 
-local var_0_0 = "FinishStageCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.system
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().system
-
-	if var_0_1.CheaterVertify() then
+	if var_0_0.CheaterVertify() then
 		return
 	end
 
-	SYSTEM_WORLD_BOSS = var_4
-
-	if var_1_0 == var_4 and var_2.isSimulate then
-		SYSTEM_WORLD_BOSS_SIMULATE = var_1_0
+	if var_1_1 == SYSTEM_WORLD_BOSS and var_1_0.isSimulate then
+		var_1_1 = SYSTEM_WORLD_BOSS_SIMULATE
 	end
 
-	ys = var_4
-
-	var_4.Battle.BattleGate.Gates[var_1_0].Exit(var_2, arg_1_0)
+	ys.Battle.BattleGate.Gates[var_1_1].Exit(var_1_0, arg_1_0)
 
 	return
 end
 
-function var_0_1.CheaterVertify()
-	ys = var_1_10000
+function var_0_0.CheaterVertify()
+	ys.Battle.BattleState.GenerateVertifyData()
 
-	var_1_10000.Battle.BattleState.GenerateVertifyData()
-
-	ys = var_0
-
-	local var_2_0, var_2_1 = var_0.Battle.BattleState.Vertify()
+	local var_2_0, var_2_1 = ys.Battle.BattleState.Vertify()
 
 	if not var_2_0 then
-		pg = var_1_10002
-
-		local var_2_2 = var_1_10002.m02
-		local var_2_3 = var_2.sendNotification
-
-		GAME = var_1_10005
-
-		var_2_3(var_2_2, var_1_10005.CHEATER_MARK, {
+		pg.m02:sendNotification(GAME.CHEATER_MARK, {
 			reason = var_2_1
 		})
 	end
@@ -51,119 +31,62 @@ function var_0_1.CheaterVertify()
 	return not var_2_0
 end
 
-function var_0_1.GeneralPackage(arg_3_0, arg_3_1)
+function var_0_0.GeneralPackage(arg_3_0, arg_3_1)
 	local var_3_0 = 0
 	local var_3_1 = {}
 	local var_3_2 = arg_3_0.system
-	local var_3_3
-	local var_3_4 = arg_3_0.system
+	local var_3_3 = arg_3_0.system == SYSTEM_DUEL and arg_3_0.rivalId or arg_3_0.system == SYSTEM_WORLD_BOSS and arg_3_0.bossId or arg_3_0.stageId
+	local var_3_4 = arg_3_0.statistics._battleScore
+	local var_3_5 = var_3_2 + var_3_3 + arg_3_0.statistics._battleScore
 
-	SYSTEM_DUEL = var_1_10007
-
-	if var_3_4 == var_1_10007 then
-		var_3_3 = arg_3_0.rivalId
-	else
-		local var_3_5 = arg_3_0.system
-
-		SYSTEM_WORLD_BOSS = var_1_10007
-
-		if var_3_5 == var_1_10007 then
-			var_3_3 = arg_3_0.bossId
-		else
-			var_3_3 = arg_3_0.stageId
-		end
-	end
-
-	local var_3_6 = arg_3_0.statistics._battleScore
-	local var_3_7 = var_3_2 + var_3_3 + var_3_6
-
-	ipairs = var_1_10008
-
-	for iter_3_0, iter_3_1 in var_1_10008(arg_3_1) do
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
 		if arg_3_0.statistics[iter_3_1.id] then
-			local var_3_8 = var_13.id
+			local var_3_6 = math.floor(arg_3_0.statistics[iter_3_1.id].bp)
+			local var_3_7 = math.floor(arg_3_0.statistics[iter_3_1.id].output)
+			local var_3_8 = math.floor(arg_3_0.statistics[iter_3_1.id].maxDamageOnce)
 
-			math = var_1_10015
-			var_1_10015 = var_1_10015.floor(var_13.bp)
-			math = var_1_10016
-			var_1_10016 = var_1_10016.floor(var_13.output)
-			math = var_17
-
-			local var_3_9 = var_17.max
-			local var_3_10 = 0
-
-			math = var_1_10020
-
-			local var_3_11 = var_3_9(var_3_10, var_1_10020.floor(var_13.damage))
-
-			math = var_18
-
-			local var_3_12 = var_18.floor(var_13.maxDamageOnce)
-
-			math = var_3_10
-
-			local var_3_13 = var_3_10.floor(var_13.gearScore)
-
-			table = var_1_10020
-
-			var_1_10020.insert(var_3_1, {
-				ship_id = var_3_8,
-				hp_rest = var_1_10015,
-				damage_cause = var_1_10016,
-				damage_caused = var_3_11,
-				max_damage_once = var_3_12,
-				ship_gear_score = var_3_13
+			table.insert(var_3_1, {
+				ship_id = arg_3_0.statistics[iter_3_1.id].id,
+				hp_rest = var_3_6,
+				damage_cause = var_3_7,
+				damage_caused = math.max(0, math.floor(arg_3_0.statistics[iter_3_1.id].damage)),
+				max_damage_once = var_3_8,
+				ship_gear_score = math.floor(arg_3_0.statistics[iter_3_1.id].gearScore)
 			})
 
-			var_3_7 = var_3_7 + var_3_8 + var_1_10015 + var_1_10016 + var_3_12
+			var_3_5 = var_3_5 + arg_3_0.statistics[iter_3_1.id].id + var_3_6 + var_3_7 + var_3_8
 			var_3_0 = var_3_0 + iter_3_1:getShipCombatPower()
 		end
 	end
 
-	GetBattleCheckResult = var_8
-
-	local var_3_14, var_3_15 = var_8(var_3_7, arg_3_0.token, arg_3_0.statistics._totalTime)
-
-	math = var_10
-
-	local var_3_16 = var_10.fmod(arg_3_0.statistics._autoCount, 2)
-
-	math = var_11
-
-	local var_3_17 = var_11.fmod(var_3_16 + arg_3_0.statistics._autoInit, 2)
+	local var_3_9, var_3_10 = GetBattleCheckResult(var_3_5, arg_3_0.token, arg_3_0.statistics._totalTime)
 
 	return {
 		system = var_3_2,
 		data = var_3_3,
-		score = var_3_6,
-		key = var_3_14,
+		score = var_3_4,
+		key = var_3_9,
 		statistics = var_3_1,
 		kill_id_list = arg_3_0.statistics.kill_id_list,
 		total_time = arg_3_0.statistics._totalTime,
 		bot_percentage = arg_3_0.statistics._botPercentage,
 		extra_param = var_3_0,
-		file_check = var_3_15,
+		file_check = var_3_10,
 		boss_hp = arg_3_0.statistics._maxBossHP,
 		enemy_info = {},
 		data2 = {},
 		auto_before = arg_3_0.statistics._autoInit,
 		auto_switch_time = arg_3_0.statistics._autoCount,
-		auto_after = var_3_17
+		auto_after = math.fmod(math.fmod(arg_3_0.statistics._autoCount, 2) + arg_3_0.statistics._autoInit, 2)
 	}
 end
 
-function var_0_1.SendRequest(arg_4_0, arg_4_1, arg_4_2)
-	pg = var_1_10003
-
-	local var_4_0 = var_1_10003.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_4_0, 40003, arg_4_1, 40004, function(arg_5_0)
+function var_0_0.SendRequest(arg_4_0, arg_4_1, arg_4_2)
+	pg.ConnectionMgr.GetInstance():Send(40003, arg_4_1, 40004, function(arg_5_0)
 		if arg_5_0.result == 0 or arg_5_0.result == 6 then
 			arg_4_2(arg_5_0)
 		else
-			local var_5_0 = arg_4_0
-
-			var_1.RequestFailStandardProcess(var_5_0, arg_5_0)
+			arg_4_0:RequestFailStandardProcess(arg_5_0)
 		end
 
 		return
@@ -172,266 +95,209 @@ function var_0_1.SendRequest(arg_4_0, arg_4_1, arg_4_2)
 	return
 end
 
-function var_0_1.RequestFailStandardProcess(arg_6_0, arg_6_1)
-	local var_6_1
-
+function var_0_0.RequestFailStandardProcess(arg_6_0, arg_6_1)
 	if arg_6_1.result == 2 then
-		originalPrint = var_6_1
-
-		var_6_1("stage_finishStage error--" .. arg_6_1.result)
-
-		pg = var_6_1
-
-		local var_6_0 = var_6_1.TipsMgr.GetInstance()
-
-		var_6_1 = var_6_1.ShowTips
-		errorTip = var_5
-
-		var_6_1(var_6_0, var_5("stage_finishStage", arg_6_1.result))
-
-		local var_6_2 = arg_6_0
-
-		var_6_1 = arg_6_0.sendNotification
-		GAME = var_5
-
-		var_6_1(var_6_2, var_5.FINISH_STAGE_ERROR, {})
+		originalPrint("stage_finishStage error--" .. arg_6_1.result)
+		pg.TipsMgr.GetInstance():ShowTips(errorTip("stage_finishStage", arg_6_1.result))
+		arg_6_0:sendNotification(GAME.FINISH_STAGE_ERROR, {})
 	else
-		originalPrint = var_6_1
-
-		var_6_1("stage_finishStage error--" .. arg_6_1.result)
-
-		pg = var_6_1
-
-		local var_6_3 = var_6_1.TipsMgr.GetInstance()
-		local var_6_4 = var_2.ShowTips
-
-		errorTip = var_5
-
-		var_6_4(var_6_3, var_5("stage_finishStage", arg_6_1.result))
+		originalPrint("stage_finishStage error--" .. arg_6_1.result)
+		pg.TipsMgr.GetInstance():ShowTips(errorTip("stage_finishStage", arg_6_1.result))
 	end
 
 	return
 end
 
-function var_0_1.addShipsExp(arg_7_0, arg_7_1, arg_7_2)
-	getProxy = var_1_10003
-	BayProxy = var_1_10005
+function var_0_0.addShipsExp(arg_7_0, arg_7_1, arg_7_2)
+	local var_7_0 = getProxy(BayProxy)
 
-	local var_7_0 = var_1_10003(var_1_10005)
-	local var_7_1 = {}
-	local var_7_2 = {}
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0) do
+		local var_7_3 = iter_7_1.exp or 0
+		local var_7_4 = iter_7_1.intimacy
 
-	ipairs = var_1_10006
+		if arg_7_1[iter_7_1.ship_id] then
+			local var_7_5 = var_7_0:getShipById(iter_7_1.ship_id)
 
-	for iter_7_0, iter_7_1 in var_1_10006(arg_7_0) do
-		local var_7_3 = iter_7_1.ship_id
-		local var_7_4
-
-		if not iter_7_1.exp then
-			var_7_4 = 0
-		end
-
-		local var_7_5 = iter_7_1.intimacy
-		local var_7_6 = iter_7_1.energy
-
-		if arg_7_1[var_7_3] then
-			local var_7_7 = var_7_0:getShipById(var_7_3)
-
-			var_15.addExp(var_7_7, var_7_4, arg_7_2)
+			var_7_5:addExp(var_7_3, arg_7_2)
 
 			if arg_7_2 then
-				pg = var_16
-
-				if var_16.gameset.level_get_proficency.key_value < var_15.level or var_15.level == var_16 and var_15.exp > 0 then
-					pg = var_17
-
-					if var_17.ship_data_template[var_15.configId].can_get_proficency == 1 then
-						getProxy = var_18
-						NavalAcademyProxy = var_20
-
-						local var_7_8 = var_18(var_20)
-
-						var_18.AddCourseProficiency(var_7_8, var_7_4)
-					end
+				if (pg.gameset.level_get_proficency.key_value < var_7_5.level or var_7_5.level == pg.gameset.level_get_proficency.key_value and var_7_5.exp > 0) and pg.ship_data_template[var_7_5.configId].can_get_proficency == 1 then
+					getProxy(NavalAcademyProxy):AddCourseProficiency(var_7_3)
 				end
 			end
 
-			if var_7_5 then
-				var_15:addLikability(var_7_5 - 16)
+			if var_7_4 then
+				var_7_5:addLikability(var_7_4 - 16)
 			end
 
-			if var_7_6 then
-				var_15:cosumeEnergy(var_7_6)
+			if iter_7_1.energy then
+				var_7_5:cosumeEnergy(iter_7_1.energy)
 			end
 
-			var_7_0:updateShip(var_15)
+			var_7_0:updateShip(var_7_5)
 		end
 	end
 
 	return
 end
 
-function var_0_1.DeadShipEnergyCosume(arg_8_0, arg_8_1)
-	pg = var_1_10002
+function var_0_0.DeadShipEnergyCosume(arg_8_0, arg_8_1)
+	local var_8_0 = getProxy(BayProxy)
 
-	local var_8_0 = var_1_10002.gameset.battle_dead_energy.key_value
+	for iter_8_0, iter_8_1 in ipairs(arg_8_1) do
+		if arg_8_0.statistics[iter_8_1.id] and arg_8_0.statistics[iter_8_1.id].bp == 0 then
+			local var_8_1 = var_8_0:getShipById(iter_8_1.id)
 
-	getProxy = var_1_10003
-	BayProxy = var_1_10005
-
-	local var_8_1 = var_1_10003(var_1_10005)
-
-	ipairs = var_1_10004
-
-	for iter_8_0, iter_8_1 in var_1_10004(arg_8_1) do
-		if arg_8_0.statistics[iter_8_1.id] and var_9.bp == 0 then
-			local var_8_2 = var_8_1:getShipById(iter_8_1.id)
-
-			var_10.cosumeEnergy(var_8_2, var_8_0)
-			var_8_1:updateShip(var_10)
+			var_8_1:cosumeEnergy(pg.gameset.battle_dead_energy.key_value)
+			var_8_0:updateShip(var_8_1)
 		end
 	end
 
 	return
 end
 
-function var_0_1.GeneralPlayerCosume(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
-	getProxy = var_1_10005
-	PlayerProxy = var_1_10007
+function var_0_0.GeneralPlayerCosume(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+	local var_9_0 = getProxy(PlayerProxy)
+	local var_9_1 = var_9_0:getData()
 
-	local var_9_0 = var_1_10005(var_1_10007)
-	local var_9_1 = var_5.getData(var_9_0)
+	var_9_1:addExp(arg_9_3)
 
-	var_6.addExp(var_9_1, arg_9_3)
-
-	pg = var_7
-
-	if var_7.battle_cost_template[arg_9_0].oil_cost > 0 and arg_9_1 then
-		var_6:consume({
+	if pg.battle_cost_template[arg_9_0].oil_cost > 0 and arg_9_1 then
+		var_9_1:consume({
 			gold = 0,
 			oil = arg_9_2
 		})
 	end
 
-	if var_7.attack_count > 0 and not arg_9_4 then
-		if var_7.attack_count == 1 then
-			var_6:increaseAttackCount()
+	if pg.battle_cost_template[arg_9_0].attack_count > 0 and not arg_9_4 then
+		if pg.battle_cost_template[arg_9_0].attack_count == 1 then
+			var_9_1:increaseAttackCount()
 
 			if arg_9_1 then
-				var_6:increaseAttackWinCount()
+				var_9_1:increaseAttackWinCount()
 			end
-		elseif var_7.attack_count == 2 then
-			var_6:increasePvpCount()
+		elseif pg.battle_cost_template[arg_9_0].attack_count == 2 then
+			var_9_1:increasePvpCount()
 
 			if arg_9_1 then
-				var_6:increasePvpWinCount()
+				var_9_1:increasePvpWinCount()
 			end
 		end
 	end
 
-	var_5:updatePlayer(var_6)
+	var_9_0:updatePlayer(var_9_1)
 
 	return
 end
 
-function var_0_1.GeneralLoot(arg_10_0, arg_10_1)
-	local var_10_0 = {
+function var_0_0.GeneralLoot(arg_10_0, arg_10_1)
+	for iter_10_0, iter_10_1 in pairs({
 		drops = arg_10_1.drop_info,
 		extraDrops = arg_10_1.extra_drop_info
-	}
+	}) do
+		({
+			drops = arg_10_1.drop_info,
+			extraDrops = arg_10_1.extra_drop_info
+		})[iter_10_0] = PlayerConst.addTranDrop(iter_10_1)
 
-	pairs = var_3
+		underscore.each(({
+			drops = arg_10_1.drop_info,
+			extraDrops = arg_10_1.extra_drop_info
+		})[iter_10_0], function(arg_11_0)
+			if arg_11_0.type == DROP_TYPE_SHIP then
+				local var_11_0 = getProxy(CollectionProxy)
 
-	for iter_10_0, iter_10_1 in var_3(var_10_0) do
-		PlayerConst = var_1_10008
-		var_10_0[iter_10_0] = var_1_10008.addTranDrop(iter_10_1)
-		underscore = var_1_10008
-
-		var_1_10008.each(var_10_0[iter_10_0], function(arg_11_0)
-			local var_11_0 = arg_11_0.type
-
-			DROP_TYPE_SHIP = var_2_10002
-
-			if var_11_0 == var_2_10002 then
-				pg = var_11_0
-
-				local var_11_1 = var_11_0.ship_data_template[arg_11_0.id].group_type
-
-				getProxy = var_2
-				CollectionProxy = var_2_10004
-				arg_11_0.virgin = var_2(var_2_10004) and var_2.shipGroups[var_11_1] == nil
+				arg_11_0.virgin = var_11_0 and var_11_0.shipGroups[pg.ship_data_template[arg_11_0.id].group_type] == nil
 			end
 
 			return
 		end)
 	end
 
-	return var_10_0.drops, var_10_0.extraDrops
+	return ({
+		drops = arg_10_1.drop_info,
+		extraDrops = arg_10_1.extra_drop_info
+	}).drops, ({
+		drops = arg_10_1.drop_info,
+		extraDrops = arg_10_1.extra_drop_info
+	}).extraDrops
 end
 
-function var_0_1.GenerateCommanderExp(arg_12_0, arg_12_1, arg_12_2)
+function var_0_0.GenerateCommanderExp(arg_12_0, arg_12_1, arg_12_2)
 	local var_12_0 = arg_12_0.commander_exp
+	local var_12_1 = getProxy(CommanderProxy)
+	local var_12_2 = {}
 
-	getProxy = var_1_10004
-	CommanderProxy = var_1_10006
+	if arg_12_2 then
+		var_12_2 = (function(arg_13_0)
+			local var_13_0 = {}
 
-	local var_12_1 = var_1_10004(var_1_10006)
-	local var_12_2 = (function(arg_13_0)
-		local var_13_0 = arg_13_0
-		local var_13_1 = arg_13_0.getCommanders(var_13_0)
-		local var_13_2 = {}
+			for iter_13_0, iter_13_1 in pairs((arg_13_0:getCommanders())) do
+				local var_13_1 = iter_13_1.id
+				local var_13_2 = var_12_1:getCommanderById(iter_13_1.id)
+				local var_13_3 = var_13_2.exp
+				local var_13_4
 
-		pairs = var_13_0
+				for iter_13_2, iter_13_3 in ipairs(var_12_0) do
+					if iter_13_3.commander_id == var_13_1 then
+						var_13_4 = iter_13_3
 
-		for iter_13_0, iter_13_1 in var_13_0(var_13_1) do
-			local var_13_3 = iter_13_1.id
-			local var_13_4 = var_12_1
-			local var_13_5 = var_9.getCommanderById(var_13_4, var_13_3).exp
-			local var_13_6
+						break
+					end
+				end
 
-			ipairs = var_12
+				if var_13_4 then
+					local var_13_5 = var_13_4.exp or 0
 
-			for iter_13_2, iter_13_3 in var_12(var_12_0) do
-				if iter_13_3.commander_id == var_13_3 then
-					var_13_6 = iter_13_3
-
-					break
+					var_13_2:addExp(var_13_5)
+					var_12_1:updateCommander(var_13_2)
+					table.insert(var_13_0, {
+						commander_id = var_13_1,
+						exp = var_13_5,
+						curExp = var_13_3
+					})
 				end
 			end
 
-			local var_13_7
-
-			if not var_13_6 or not var_13_6.exp then
-				var_13_7 = 0
-			end
-
-			var_9:addExp(var_13_7)
-
-			local var_13_8 = var_12_1
-
-			var_13.updateCommander(var_13_8, var_9)
-
-			table = var_13
-
-			var_13.insert(var_13_2, {
-				commander_id = var_13_3,
-				exp = var_13_7,
-				curExp = var_13_5
-			})
-		end
-
-		return var_13_2
-	end)(arg_12_1)
-	local var_12_3 = {}
-
-	if arg_12_2 then
-		var_12_3 = var_5(arg_12_2)
+			return var_13_0
+		end)(arg_12_2)
 	end
 
 	return {
-		surfaceCMD = var_12_2,
-		submarineCMD = var_12_3
+		surfaceCMD = (function(arg_13_0)
+			local var_13_0 = {}
+
+			for iter_13_0, iter_13_1 in pairs((arg_13_0:getCommanders())) do
+				local var_13_1 = iter_13_1.id
+				local var_13_2 = var_12_1:getCommanderById(iter_13_1.id)
+				local var_13_3 = var_13_2.exp
+				local var_13_4
+
+				for iter_13_2, iter_13_3 in ipairs(var_12_0) do
+					if iter_13_3.commander_id == var_13_1 then
+						var_13_4 = iter_13_3
+
+						break
+					end
+				end
+
+				if var_13_4 then
+					local var_13_5 = var_13_4.exp or 0
+
+					var_13_2:addExp(var_13_5)
+					var_12_1:updateCommander(var_13_2)
+					table.insert(var_13_0, {
+						commander_id = var_13_1,
+						exp = var_13_5,
+						curExp = var_13_3
+					})
+				end
+			end
+
+			return var_13_0
+		end)(arg_12_1),
+		submarineCMD = var_12_2
 	}
 end
 
-return var_0_1
+return var_0_0

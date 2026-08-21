@@ -131,8 +131,12 @@ function onSubDownLoadSuccessUpdateHandler(self, args)
         download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
     end
     
-    if(not self:isExistNeedUpdate() and not subPack.SubDownLoadManager:isDownGiftHadRec())then
-        GameDispatcher:dispatchEvent(EventName.REQ_REC_SUB_DOWNLOAD_GIFT)
+    if(not self:isExistNeedUpdate())then
+        gs.GOPoolMgr:ClearAll()
+        gs.ResMgr:ForceUnload(false, false)
+        if(not subPack.SubDownLoadManager:isDownGiftHadRec())then
+            GameDispatcher:dispatchEvent(EventName.REQ_REC_SUB_DOWNLOAD_GIFT)
+        end
     end
 end
 
@@ -178,18 +182,20 @@ function isExistNeedUpdate(self, isSetModuleAssetsSign)
     local isExist = false
     local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
     for moduleType in pairs(assetsDic) do
-        local data = assetsDic[moduleType]
-        if (data.startup_auto_update == 0) then
-            if (download.ResDownLoadManager:isModuleAssetsNeedUpdate({moduleType})) then
-                isExist = true
-                if(not isSetModuleAssetsSign)then
-                    break
-                end
-            else
-                if(isSetModuleAssetsSign)then
-                    if(not download.ResDownLoadManager:getModuleAssetsSign(moduleType))then
-                        print("设置归并热更标识：", moduleType)
-                        download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
+        if(moduleType ~= download.ModuleType.Super)then
+            local data = assetsDic[moduleType]
+            if (data.startup_auto_update == 0) then
+                if (download.ResDownLoadManager:isModuleAssetsNeedUpdate({moduleType})) then
+                    isExist = true
+                    if(not isSetModuleAssetsSign)then
+                        break
+                    end
+                else
+                    if(isSetModuleAssetsSign)then
+                        if(not download.ResDownLoadManager:getModuleAssetsSign(moduleType))then
+                            print("设置归并热更标识：", moduleType)
+                            download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
+                        end
                     end
                 end
             end
@@ -202,12 +208,14 @@ end
 function isExistDownLoading(self)
     local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
     for moduleType in pairs(assetsDic) do
-        local data = assetsDic[moduleType]
-        if (data.startup_auto_update == 0) then
-            local moduleTypeList = {moduleType}
-            if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(moduleTypeList)) then
-                if (download.ResDownLoadManager:isModuleAssetsDownloading(moduleTypeList)) then
-                    return true
+        if(moduleType ~= download.ModuleType.Super)then
+            local data = assetsDic[moduleType]
+            if (data.startup_auto_update == 0) then
+                local moduleTypeList = {moduleType}
+                if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(moduleTypeList)) then
+                    if (download.ResDownLoadManager:isModuleAssetsDownloading(moduleTypeList)) then
+                        return true
+                    end
                 end
             end
         end
@@ -230,45 +238,47 @@ function checkTriggerDownLoad(self, args, isFunOpen)
             local moduleTypeList = {}
             local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
             for moduleType in pairs(assetsDic) do
-                local data = assetsDic[moduleType]
-                if (data.startup_auto_update == 0) then
-                    -- 功能开启检测
-                    if(table.indexof(moduleTypeList, tonumber(moduleType)) == false and (isFunOpen == nil or isFunOpen == true))then
-                        if(data.fun_open_id ~= -1)then
-                            if(not args or args.funcId == data.fun_open_id)then
-                                local funcIsOpen = funcopen.FuncOpenManager:isOpen(data.fun_open_id, false)
-                                if (funcIsOpen) then
-                                    tempList[1] = moduleType
-                                    if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
-                                        if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
-                                            table.insert(moduleTypeList, tonumber(moduleType))
-                                        end
-                                    else
-                                        if(not download.ResDownLoadManager:getModuleAssetsSign(moduleType))then
-                                            print("功能开启监听设置归并热更标识：", moduleType)
-                                            download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
+                if(moduleType ~= download.ModuleType.Super)then
+                    local data = assetsDic[moduleType]
+                    if (data.startup_auto_update == 0) then
+                        -- 功能开启检测
+                        if(table.indexof(moduleTypeList, tonumber(moduleType)) == false and (isFunOpen == nil or isFunOpen == true))then
+                            if(data.fun_open_id ~= -1)then
+                                if(not args or args.funcId == data.fun_open_id)then
+                                    local funcIsOpen = funcopen.FuncOpenManager:isOpen(data.fun_open_id, false)
+                                    if (funcIsOpen) then
+                                        tempList[1] = moduleType
+                                        if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
+                                            if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
+                                                table.insert(moduleTypeList, tonumber(moduleType))
+                                            end
+                                        else
+                                            if(not download.ResDownLoadManager:getModuleAssetsSign(moduleType))then
+                                                print("功能开启监听设置归并热更标识：", moduleType)
+                                                download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
+                                            end
                                         end
                                     end
                                 end
                             end
                         end
-                    end
-                    -- 关卡等级检查
-                    if(table.indexof(moduleTypeList, tonumber(moduleType)) == false and (isFunOpen == nil or isFunOpen == false))then
-                        if (
-                            (data.role_lvl ~= -1 and data.main_stage_id == -1 and roleLvl >= data.role_lvl) or 
-                            (data.role_lvl == -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id) or 
-                            (data.role_lvl ~= -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id and roleLvl >= data.role_lvl) 
-                        ) then
-                            tempList[1] = moduleType
-                            if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
-                                if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
-                                    table.insert(moduleTypeList, tonumber(moduleType))
-                                end
-                            else
-                                if(not download.ResDownLoadManager:getModuleAssetsSign(moduleType))then
-                                    print("等级关卡监听设置归并热更标识：", moduleType)
-                                    download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
+                        -- 关卡等级检查
+                        if(table.indexof(moduleTypeList, tonumber(moduleType)) == false and (isFunOpen == nil or isFunOpen == false))then
+                            if (
+                                (data.role_lvl ~= -1 and data.main_stage_id == -1 and roleLvl >= data.role_lvl) or 
+                                (data.role_lvl == -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id) or 
+                                (data.role_lvl ~= -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id and roleLvl >= data.role_lvl) 
+                            ) then
+                                tempList[1] = moduleType
+                                if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
+                                    if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
+                                        table.insert(moduleTypeList, tonumber(moduleType))
+                                    end
+                                else
+                                    if(not download.ResDownLoadManager:getModuleAssetsSign(moduleType))then
+                                        print("等级关卡监听设置归并热更标识：", moduleType)
+                                        download.ResDownLoadManager:setModuleAssetsSign(moduleType, true)
+                                    end
                                 end
                             end
                         end
@@ -294,7 +304,7 @@ function checkTriggerDownLoad(self, args, isFunOpen)
 
                 local isHasNetWork, isMobileNet, isWifi = web.getNetStatus()
                 if(isWifi)then
-                    gs.Message.Show("正在为您静默下载完整版所需资源")
+                    gs.Message.Show(_TT(10000308))
                     _downLoad()
                 else
                     local giftId = sysParam.SysParamManager:getValue(SysParamType.DOWN_LOAD_GIFT_ID)
@@ -307,10 +317,10 @@ function checkTriggerDownLoad(self, args, isFunOpen)
                     end
                     local kbSize = download.ResDownLoadManager:getModuleAssetsSize(moduleTypeList)
                     local formatSize, unit = download.GetFormatSize(kbSize)
-                    UIFactory:alertMessge(string.format("当前版本仅能体验部分游戏内容\n是否下载完整版？下载过程为后台静默\n资源大小：%s，奖励：%s", tostring(formatSize) .. unit, propsTip),
+                    UIFactory:alertMessge(string.format(_TT(10000309), tostring(formatSize) .. unit, propsTip),
                     true, function() _downLoad() end, _TT(1), -- "确定"
                     nil, true, function() end, _TT(2), -- "取消"
-                    "下载提示",
+                    _TT(10000310),
                     nil, RemindConst.BACKGROUND_DOWNLOAD)
                 end
                 
@@ -393,39 +403,41 @@ function checkBattleDownLoadState(self, dupType, dupId)
         local tempList = {}
         local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
         for moduleType in pairs(assetsDic) do
-            local data = assetsDic[moduleType]
-            if (data.startup_auto_update == 0) then
-                -- if (
-                --     (data.role_lvl ~= -1 and data.main_stage_id == -1 and roleLvl >= data.role_lvl) or 
-                --     (data.role_lvl == -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id) or 
-                --     (data.role_lvl ~= -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id and roleLvl >= data.role_lvl) 
-                -- ) then
-                --     tempList[1] = moduleType
-                --     if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
-                --         if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
-                --             self:checkTriggerDownLoad(nil, nil)
-                --         else
-                --             self:showDownLoadMsg(tempList)
-                --         end
-                --         isForbidByDownLoad = true
-                --         break
-                --     end
-                -- end
-                
-                if(#data.main_stage_id_forbid_list > 0 and table.indexof(data.main_stage_id_forbid_list, mainStageId) ~= false)then
-                    tempList[1] = moduleType
-                    if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
-                        if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
-                            local isTrigger = self:checkTriggerDownLoad(nil, nil)
-                            if(not isTrigger)then
-                                -- 如果限制的入口在配置条件之前就检测了，是不会触发下载的，这里再单独给提示，或者让策划把配置的触发条件设置再提前一点
-                                gs.Message.Show("需要先下载完剩余资源")
+            if(moduleType ~= download.ModuleType.Super)then
+                local data = assetsDic[moduleType]
+                if (data.startup_auto_update == 0) then
+                    -- if (
+                    --     (data.role_lvl ~= -1 and data.main_stage_id == -1 and roleLvl >= data.role_lvl) or 
+                    --     (data.role_lvl == -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id) or 
+                    --     (data.role_lvl ~= -1 and data.main_stage_id ~= -1 and mainStageId > data.main_stage_id and roleLvl >= data.role_lvl) 
+                    -- ) then
+                    --     tempList[1] = moduleType
+                    --     if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
+                    --         if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
+                    --             self:checkTriggerDownLoad(nil, nil)
+                    --         else
+                    --             self:showDownLoadMsg(tempList)
+                    --         end
+                    --         isForbidByDownLoad = true
+                    --         break
+                    --     end
+                    -- end
+                    
+                    if(#data.main_stage_id_forbid_list > 0 and table.indexof(data.main_stage_id_forbid_list, mainStageId) ~= false)then
+                        tempList[1] = moduleType
+                        if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
+                            if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
+                                local isTrigger = self:checkTriggerDownLoad(nil, nil)
+                                if(not isTrigger)then
+                                    -- 如果限制的入口在配置条件之前就检测了，是不会触发下载的，这里再单独给提示，或者让策划把配置的触发条件设置再提前一点
+                                    gs.Message.Show(_TT(10000311))
+                                end
+                            else
+                                self:showDownLoadMsg(tempList)
                             end
-                        else
-                            self:showDownLoadMsg(tempList)
+                            isForbidByDownLoad = true
+                            break
                         end
-                        isForbidByDownLoad = true
-                        break
                     end
                 end
             end
@@ -440,22 +452,24 @@ function isForbidUIByDownload(self, uiCode)
     local tempList = {}
     local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
     for moduleType in pairs(assetsDic) do
-        local data = assetsDic[moduleType]
-        if (data.startup_auto_update == 0) then
-            if(#data.ui_code_forbid_list > 0 and table.indexof(data.ui_code_forbid_list, uiCode) ~= false)then
-                tempList[1] = moduleType
-                if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
-                    if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
-                        local isTrigger = self:checkTriggerDownLoad(nil, nil)
-                        if(not isTrigger)then
-                            -- 如果限制的入口在配置条件之前就检测了，是不会触发下载的，这里再单独给提示，或者让策划把配置的触发条件设置再提前一点
-                            gs.Message.Show("需要先下载完剩余资源")
+        if(moduleType ~= download.ModuleType.Super)then
+            local data = assetsDic[moduleType]
+            if (data.startup_auto_update == 0) then
+                if(#data.ui_code_forbid_list > 0 and table.indexof(data.ui_code_forbid_list, uiCode) ~= false)then
+                    tempList[1] = moduleType
+                    if (download.ResDownLoadManager:isModuleAssetsNeedUpdate(tempList)) then
+                        if (not download.ResDownLoadManager:isModuleAssetsDownloading(tempList)) then
+                            local isTrigger = self:checkTriggerDownLoad(nil, nil)
+                            if(not isTrigger)then
+                                -- 如果限制的入口在配置条件之前就检测了，是不会触发下载的，这里再单独给提示，或者让策划把配置的触发条件设置再提前一点
+                                gs.Message.Show(_TT(10000311))
+                            end
+                        else
+                            self:showDownLoadMsg(tempList)
                         end
-                    else
-                        self:showDownLoadMsg(tempList)
+                        isForbidByDownLoad = true
+                        break
                     end
-                    isForbidByDownLoad = true
-                    break
                 end
             end
         end
@@ -474,7 +488,7 @@ function checkEventNameDownLoadState(self, eventName, args)
     --                 local isTrigger = self:checkTriggerDownLoad(nil, nil)
     --                 if(not isTrigger)then
     --                     -- 如果限制的入口在配置条件之前就检测了，是不会触发下载的，这里再单独给提示，或者让策划把配置的触发条件设置再提前一点
-    --                     gs.Message.Show("需要先下载完剩余资源")
+    --                     gs.Message.Show(_TT(10000311))
     --                 end
     --             else
     --                 self:showDownLoadMsg(moduleTypeList)
@@ -495,7 +509,7 @@ function checkPropUseDownLoadState(self)
             local isTrigger = self:checkTriggerDownLoad(nil, nil)
             if(not isTrigger)then
                 -- 如果限制的入口在配置条件之前就检测了，是不会触发下载的，这里再单独给提示，或者让策划把配置的触发条件设置再提前一点
-                gs.Message.Show("需要先下载完剩余资源")
+                gs.Message.Show(_TT(10000311))
             end
         else
             self:showDownLoadMsg(moduleTypeList)
@@ -508,13 +522,15 @@ end
 function showDownLoadMsg(self, moduleTypeList)
     local downloadedKbSize, downloadMaxKbSize, downloadedCount, downloadMaxCount, movedCount, moveTotalCount = download.ResDownLoadManager:getDownLoadTaskData(moduleTypeList)
     if(downloadedKbSize < downloadMaxKbSize)then
-        gs.Message.Show(string.format("正在下载所需资源，进度%s", string.format("%.2f", downloadedKbSize / downloadMaxKbSize * 100) .. "%"))
+        -- gs.Message.Show(string.format("正在下载所需资源，进度%s", string.format("%.2f", downloadedKbSize / downloadMaxKbSize * 100) .. "%"))
+        gs.Message.Show(string.format(_TT(10000312), string.format("%.2f", downloadedKbSize / downloadMaxKbSize * 100) .. "%"))
     elseif(downloadedKbSize >= downloadMaxKbSize)then
         if(movedCount < moveTotalCount)then
             -- gs.Message.Show(string.format("正在整理所需资源，进度%s", string.format("%.2f", movedCount / moveTotalCount * 100) .. "%"))
-            gs.Message.Show("正在整理所需资源：" .. movedCount .. "/" .. moveTotalCount .. "，请稍等")
+            gs.Message.Show(_TT(10000313, string.format("%.2f", movedCount / moveTotalCount * 100) .. "%"))
         else
-            gs.Message.Show("正在整理所需资源，请稍等")
+            -- gs.Message.Show("正在整理所需资源，请稍等")
+            gs.Message.Show(_TT(10000314))
         end
     end
 end
@@ -534,10 +550,10 @@ function onTickCheckNetHandler(self)
     if(self.mIsWifiNet ~= isWifi)then
         self.mIsWifiNet = isWifi
         if(not self.mIsWifiNet and self:isExistDownLoading())then
-            UIFactory:alertMessge("当前正在静默下载，检测到网络数据变化，请检查是否继续下载",
+            UIFactory:alertMessge(_TT(10000315),
             true, function() end, _TT(1), -- "确定"
             nil, false, function() end, _TT(2), -- "取消"
-            "下载提示",
+            _TT(10000310),
             nil, nil)
         end
     end

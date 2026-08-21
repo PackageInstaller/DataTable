@@ -53,8 +53,9 @@ function active(self, args)
     super.active(self, args)
     self.mItemScroll.gameObject:SetActive(false)
     self.curSeason = guildWar.GuildWarManager:getGuildWarSeasonId()
+    local type = guildWar.GuildWarManager:getSeasonType()
     local state = guildWar.GuildWarManager:getGuildWarState()
-    if state == guildWar.GuildWarState.GuildWarSignUp then
+    if state == guildWar.GuildWarState.GuildWarSignUp or type == guildWar.GuildWarType.Top then
         self.curSeason = math.max(1, self.curSeason - 1)
     end
     self.mTxtCurrent.text = _TT(149106, self.curSeason)
@@ -169,9 +170,9 @@ function updatePanel(self)
     self.mTxtCurrentPoint.text = point
 
     local list = guildWar.GuildWarManager:getGuildWarRankList()
-    table.sort(list, function(a, b)
-        return a.rank < b.rank
-    end)
+    -- table.sort(list, function(a, b)
+    --     return a.rank < b.rank
+    -- end)
     self.mLogNo:SetActive(#list == 0)
     if self.mScrollReward.Count <= 0 then
         self.mScrollReward.DataProvider = list

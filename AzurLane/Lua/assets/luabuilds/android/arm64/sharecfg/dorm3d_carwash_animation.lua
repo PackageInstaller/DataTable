@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_carwash_animation") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_carwash_animation"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_carwash_animation = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_carwash_animation
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_carwash_animation = rawget(pg, "dorm3d_carwash_animation") or setmetatable({
+	__name = "dorm3d_carwash_animation"
+}, confNEO)
+pg.dorm3d_carwash_animation.all = {
 	1,
 	2,
 	3,
@@ -40,25 +17,11 @@ var_0_3.all = {
 	11,
 	99
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_carwash_animation = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_carwash_animation = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_carwash_animation
-
-	var_1_0[1] = {
+	pg.base.dorm3d_carwash_animation[1] = {
 		anim_r = "XC1_idle_fb01_R",
 		hidden_reaction = "",
 		anim_l = "XC1_idle_fb01_L",
@@ -73,11 +36,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			3
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_carwash_animation
-
-	var_1_1[2] = {
+	pg.base.dorm3d_carwash_animation[2] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -95,11 +54,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_carwash_animation
-
-	var_1_2[3] = {
+	pg.base.dorm3d_carwash_animation[3] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -116,11 +71,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			2
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_carwash_animation
-
-	var_1_3[4] = {
+	pg.base.dorm3d_carwash_animation[4] = {
 		anim_r = "",
 		anim_l = "",
 		anim = "",
@@ -140,11 +91,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			2
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_carwash_animation
-
-	var_1_4[5] = {
+	pg.base.dorm3d_carwash_animation[5] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -162,11 +109,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_carwash_animation
-
-	var_1_5[6] = {
+	pg.base.dorm3d_carwash_animation[6] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -185,11 +128,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			2
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_carwash_animation
-
-	var_1_6[7] = {
+	pg.base.dorm3d_carwash_animation[7] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -207,11 +146,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			2
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_carwash_animation
-
-	var_1_7[8] = {
+	pg.base.dorm3d_carwash_animation[8] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -229,11 +164,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			3
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_carwash_animation
-
-	var_1_8[9] = {
+	pg.base.dorm3d_carwash_animation[9] = {
 		anim_r = "XC3_idle_CW_fb01_R",
 		hidden_reaction = "",
 		anim_l = "XC3_idle_CW_fb01_L",
@@ -253,11 +184,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			3
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_carwash_animation
-
-	var_1_9[12] = {
+	pg.base.dorm3d_carwash_animation[12] = {
 		anim_r = "XC3_idle_CW_fb01_R",
 		hidden_reaction = "",
 		anim_l = "XC3_idle_CW_fb01_L",
@@ -278,11 +205,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 			3
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_carwash_animation
-
-	var_1_10[10] = {
+	pg.base.dorm3d_carwash_animation[10] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -294,11 +217,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 		},
 		gun_type = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_carwash_animation
-
-	var_1_11[11] = {
+	pg.base.dorm3d_carwash_animation[11] = {
 		anim_r = "",
 		hidden_reaction = "",
 		anim_l = "",
@@ -310,8 +229,7 @@ var_0_3.base.dorm3d_carwash_animation = {}
 		},
 		gun_type = {}
 	}
-	pg = var_1_11
-	var_1_11.base.dorm3d_carwash_animation[99] = {
+	pg.base.dorm3d_carwash_animation[99] = {
 		anim_r = "",
 		anim_l = "",
 		anim = "",

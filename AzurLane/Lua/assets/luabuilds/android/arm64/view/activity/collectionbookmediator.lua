@@ -1,48 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CollectionBookMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "CollectionBookMediator"
+var_0_0.ACT_ID = ActivityConst.HOLIDAY_ACT_ID
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-ActivityConst = var_0_10001
-var_0_1.ACT_ID = var_0_10001.HOLIDAY_ACT_ID
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_2_0)
-	local var_2_0 = {}
-
-	GAME = var_1_10002
-	var_2_0[1] = var_1_10002.SUBMIT_TASK_AWARD_DOWN
-
-	return var_2_0
+function var_0_0.listNotificationInterests(arg_2_0)
+	return {
+		GAME.SUBMIT_TASK_AWARD_DOWN
+	}
 end
 
-function var_0_1.handleNotification(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1
-	local var_3_1 = arg_3_1.getName(var_3_0)
-	local var_3_2 = arg_3_1:getBody()
-
-	GAME = var_3_0
-
-	if var_3_1 == var_3_0.SUBMIT_TASK_AWARD_DOWN then
-		local var_3_3 = arg_3_0.viewComponent
-		local var_3_4 = var_4.emit
-
-		BaseUI = var_1_10007
-
-		var_3_4(var_3_3, var_1_10007.ON_ACHIEVE, var_3_2.awards, function()
-			local var_4_0 = arg_3_0.viewComponent
-
-			var_0.updateAwardPanel(var_4_0)
-
-			local var_4_1 = arg_3_0.viewComponent
-
-			var_0.updateTag(var_4_1)
+function var_0_0.handleNotification(arg_3_0, arg_3_1)
+	if arg_3_1:getName() == GAME.SUBMIT_TASK_AWARD_DOWN then
+		arg_3_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_3_1:getBody().awards, function()
+			arg_3_0.viewComponent:updateAwardPanel()
+			arg_3_0.viewComponent:updateTag()
 
 			return
 		end)
@@ -51,24 +25,13 @@ function var_0_1.handleNotification(arg_3_0, arg_3_1)
 	return
 end
 
-function var_0_1.GetCollectionBookTip()
-	CollectionBookMediator = var_1_10000
+function var_0_0.GetCollectionBookTip()
+	local var_5_0 = getProxy(ActivityProxy):getActivityById(CollectionBookMediator.ACT_ID):getConfig("config_client").collect_task
 
-	local var_5_0 = var_1_10000.ACT_ID
+	for iter_5_0 = 1, #var_5_0 do
+		local var_5_1 = getProxy(TaskProxy):getTaskById(var_5_0[iter_5_0])
 
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_5_1 = var_1_10001(var_1_10003)
-	local var_5_2 = var_1.getActivityById(var_5_1, var_5_0)
-	local var_5_3 = var_1.getConfig(var_5_2, "config_client").collect_task
-
-	for iter_5_0 = 1, #var_5_3 do
-		getProxy = var_1_10007
-		TaskProxy = var_1_10009
-		var_1_10009 = var_1_10007(var_1_10009)
-
-		if var_1_10007.getTaskById(var_1_10009, var_5_3[iter_5_0]) and var_1_10007:getTaskStatus() == 1 then
+		if var_5_1 and var_5_1:getTaskStatus() == 1 then
 			return true
 		end
 	end
@@ -76,4 +39,4 @@ function var_0_1.GetCollectionBookTip()
 	return false
 end
 
-return var_0_1
+return var_0_0

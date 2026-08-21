@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_level") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_level"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_level = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_level
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_level = rawget(pg, "ship_level") or setmetatable({
+	__name = "ship_level"
+}, confNEO)
+pg.ship_level.all = {
 	1,
 	2,
 	3,
@@ -152,25 +129,11 @@ var_0_3.all = {
 	124,
 	125
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_level = {}
+pg.base = pg.base or {}
+pg.base.ship_level = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_level
-
-	var_1_0[1] = {
+	pg.base.ship_level[1] = {
 		arena_durability_add = 0,
 		exp = 100,
 		energy_recover_time_ratio = 5,
@@ -185,11 +148,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_level
-
-	var_1_1[2] = {
+	pg.base.ship_level[2] = {
 		arena_durability_add = 0,
 		exp = 200,
 		energy_recover_time_ratio = 5,
@@ -204,11 +163,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_level
-
-	var_1_2[3] = {
+	pg.base.ship_level[3] = {
 		arena_durability_add = 0,
 		exp = 300,
 		energy_recover_time_ratio = 5,
@@ -223,11 +178,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_level
-
-	var_1_3[4] = {
+	pg.base.ship_level[4] = {
 		arena_durability_add = 0,
 		exp = 400,
 		energy_recover_time_ratio = 10,
@@ -242,11 +193,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_level
-
-	var_1_4[5] = {
+	pg.base.ship_level[5] = {
 		arena_durability_add = 0,
 		exp = 500,
 		energy_recover_time_ratio = 10,
@@ -261,11 +208,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_level
-
-	var_1_5[6] = {
+	pg.base.ship_level[6] = {
 		arena_durability_add = 0,
 		exp = 600,
 		energy_recover_time_ratio = 10,
@@ -280,11 +223,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_level
-
-	var_1_6[7] = {
+	pg.base.ship_level[7] = {
 		arena_durability_add = 0,
 		exp = 700,
 		energy_recover_time_ratio = 10,
@@ -299,11 +238,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_level
-
-	var_1_7[8] = {
+	pg.base.ship_level[8] = {
 		arena_durability_add = 0,
 		exp = 800,
 		energy_recover_time_ratio = 10,
@@ -318,11 +253,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_level
-
-	var_1_8[9] = {
+	pg.base.ship_level[9] = {
 		arena_durability_add = 0,
 		exp = 900,
 		energy_recover_time_ratio = 15,
@@ -337,11 +268,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_level
-
-	var_1_9[10] = {
+	pg.base.ship_level[10] = {
 		arena_durability_add = 0,
 		exp = 1000,
 		energy_recover_time_ratio = 15,
@@ -356,11 +283,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_level
-
-	var_1_10[11] = {
+	pg.base.ship_level[11] = {
 		arena_durability_add = 0,
 		exp = 1100,
 		energy_recover_time_ratio = 15,
@@ -375,11 +298,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_level
-
-	var_1_11[12] = {
+	pg.base.ship_level[12] = {
 		arena_durability_add = 0,
 		exp = 1200,
 		energy_recover_time_ratio = 15,
@@ -394,11 +313,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_level
-
-	var_1_12[13] = {
+	pg.base.ship_level[13] = {
 		arena_durability_add = 0,
 		exp = 1300,
 		energy_recover_time_ratio = 15,
@@ -413,11 +328,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_level
-
-	var_1_13[14] = {
+	pg.base.ship_level[14] = {
 		arena_durability_add = 0,
 		exp = 1400,
 		energy_recover_time_ratio = 15,
@@ -432,11 +343,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_level
-
-	var_1_14[15] = {
+	pg.base.ship_level[15] = {
 		arena_durability_add = 0,
 		exp = 1500,
 		energy_recover_time_ratio = 15,
@@ -451,11 +358,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_level
-
-	var_1_15[16] = {
+	pg.base.ship_level[16] = {
 		arena_durability_add = 0,
 		exp = 1600,
 		energy_recover_time_ratio = 20,
@@ -470,11 +373,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_level
-
-	var_1_16[17] = {
+	pg.base.ship_level[17] = {
 		arena_durability_add = 0,
 		exp = 1700,
 		energy_recover_time_ratio = 20,
@@ -489,11 +388,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_level
-
-	var_1_17[18] = {
+	pg.base.ship_level[18] = {
 		arena_durability_add = 0,
 		exp = 1800,
 		energy_recover_time_ratio = 20,
@@ -508,11 +403,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_level
-
-	var_1_18[19] = {
+	pg.base.ship_level[19] = {
 		arena_durability_add = 0,
 		exp = 1900,
 		energy_recover_time_ratio = 20,
@@ -527,11 +418,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_level
-
-	var_1_19[20] = {
+	pg.base.ship_level[20] = {
 		arena_durability_add = 0,
 		exp = 2000,
 		energy_recover_time_ratio = 20,
@@ -546,11 +433,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_level
-
-	var_1_20[21] = {
+	pg.base.ship_level[21] = {
 		arena_durability_add = 0,
 		exp = 2100,
 		energy_recover_time_ratio = 20,
@@ -565,11 +448,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_level
-
-	var_1_21[22] = {
+	pg.base.ship_level[22] = {
 		arena_durability_add = 0,
 		exp = 2200,
 		energy_recover_time_ratio = 20,
@@ -584,11 +463,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_level
-
-	var_1_22[23] = {
+	pg.base.ship_level[23] = {
 		arena_durability_add = 0,
 		exp = 2300,
 		energy_recover_time_ratio = 20,
@@ -603,11 +478,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_level
-
-	var_1_23[24] = {
+	pg.base.ship_level[24] = {
 		arena_durability_add = 0,
 		exp = 2400,
 		energy_recover_time_ratio = 20,
@@ -622,11 +493,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_level
-
-	var_1_24[25] = {
+	pg.base.ship_level[25] = {
 		arena_durability_add = 0,
 		exp = 2500,
 		energy_recover_time_ratio = 25,
@@ -641,11 +508,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_level
-
-	var_1_25[26] = {
+	pg.base.ship_level[26] = {
 		arena_durability_add = 0,
 		exp = 2600,
 		energy_recover_time_ratio = 25,
@@ -660,11 +523,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_level
-
-	var_1_26[27] = {
+	pg.base.ship_level[27] = {
 		arena_durability_add = 0,
 		exp = 2700,
 		energy_recover_time_ratio = 25,
@@ -679,11 +538,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_level
-
-	var_1_27[28] = {
+	pg.base.ship_level[28] = {
 		arena_durability_add = 0,
 		exp = 2800,
 		energy_recover_time_ratio = 25,
@@ -698,11 +553,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_level
-
-	var_1_28[29] = {
+	pg.base.ship_level[29] = {
 		arena_durability_add = 0,
 		exp = 2900,
 		energy_recover_time_ratio = 25,
@@ -717,11 +568,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_level
-
-	var_1_29[30] = {
+	pg.base.ship_level[30] = {
 		arena_durability_add = 0,
 		exp = 3000,
 		energy_recover_time_ratio = 25,
@@ -736,11 +583,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_level
-
-	var_1_30[31] = {
+	pg.base.ship_level[31] = {
 		arena_durability_add = 0,
 		exp = 3100,
 		energy_recover_time_ratio = 25,
@@ -755,11 +598,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_level
-
-	var_1_31[32] = {
+	pg.base.ship_level[32] = {
 		arena_durability_add = 0,
 		exp = 3200,
 		energy_recover_time_ratio = 25,
@@ -774,11 +613,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_level
-
-	var_1_32[33] = {
+	pg.base.ship_level[33] = {
 		arena_durability_add = 0,
 		exp = 3300,
 		energy_recover_time_ratio = 25,
@@ -793,11 +628,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_level
-
-	var_1_33[34] = {
+	pg.base.ship_level[34] = {
 		arena_durability_add = 0,
 		exp = 3400,
 		energy_recover_time_ratio = 25,
@@ -812,11 +643,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_level
-
-	var_1_34[35] = {
+	pg.base.ship_level[35] = {
 		arena_durability_add = 0,
 		exp = 3500,
 		energy_recover_time_ratio = 25,
@@ -831,11 +658,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_level
-
-	var_1_35[36] = {
+	pg.base.ship_level[36] = {
 		arena_durability_add = 0,
 		exp = 3600,
 		energy_recover_time_ratio = 30,
@@ -850,11 +673,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_level
-
-	var_1_36[37] = {
+	pg.base.ship_level[37] = {
 		arena_durability_add = 0,
 		exp = 3700,
 		energy_recover_time_ratio = 30,
@@ -869,11 +688,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_level
-
-	var_1_37[38] = {
+	pg.base.ship_level[38] = {
 		arena_durability_add = 0,
 		exp = 3800,
 		energy_recover_time_ratio = 30,
@@ -888,11 +703,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_level
-
-	var_1_38[39] = {
+	pg.base.ship_level[39] = {
 		arena_durability_add = 0,
 		exp = 3900,
 		energy_recover_time_ratio = 30,
@@ -907,11 +718,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_level
-
-	var_1_39[40] = {
+	pg.base.ship_level[40] = {
 		arena_durability_add = 0,
 		exp = 4000,
 		energy_recover_time_ratio = 30,
@@ -926,11 +733,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_level
-
-	var_1_40[41] = {
+	pg.base.ship_level[41] = {
 		arena_durability_add = 0,
 		exp = 4200,
 		energy_recover_time_ratio = 30,
@@ -945,11 +748,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_level
-
-	var_1_41[42] = {
+	pg.base.ship_level[42] = {
 		arena_durability_add = 0,
 		exp = 4400,
 		energy_recover_time_ratio = 30,
@@ -964,11 +763,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_level
-
-	var_1_42[43] = {
+	pg.base.ship_level[43] = {
 		arena_durability_add = 0,
 		exp = 4600,
 		energy_recover_time_ratio = 30,
@@ -983,11 +778,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_level
-
-	var_1_43[44] = {
+	pg.base.ship_level[44] = {
 		arena_durability_add = 0,
 		exp = 4800,
 		energy_recover_time_ratio = 30,
@@ -1002,11 +793,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_level
-
-	var_1_44[45] = {
+	pg.base.ship_level[45] = {
 		arena_durability_add = 0,
 		exp = 5000,
 		energy_recover_time_ratio = 30,
@@ -1021,11 +808,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_level
-
-	var_1_45[46] = {
+	pg.base.ship_level[46] = {
 		arena_durability_add = 0,
 		exp = 5200,
 		energy_recover_time_ratio = 30,
@@ -1040,11 +823,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_level
-
-	var_1_46[47] = {
+	pg.base.ship_level[47] = {
 		arena_durability_add = 0,
 		exp = 5400,
 		energy_recover_time_ratio = 30,
@@ -1059,11 +838,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_level
-
-	var_1_47[48] = {
+	pg.base.ship_level[48] = {
 		arena_durability_add = 0,
 		exp = 5600,
 		energy_recover_time_ratio = 30,
@@ -1078,11 +853,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_level
-
-	var_1_48[49] = {
+	pg.base.ship_level[49] = {
 		arena_durability_add = 0,
 		exp = 5800,
 		energy_recover_time_ratio = 35,
@@ -1097,11 +868,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_level
-
-	var_1_49[50] = {
+	pg.base.ship_level[50] = {
 		arena_durability_add = 0,
 		exp = 6000,
 		energy_recover_time_ratio = 35,
@@ -1116,11 +883,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_level
-
-	var_1_50[51] = {
+	pg.base.ship_level[51] = {
 		arena_durability_add = 0,
 		exp = 6200,
 		energy_recover_time_ratio = 35,
@@ -1135,11 +898,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_level
-
-	var_1_51[52] = {
+	pg.base.ship_level[52] = {
 		arena_durability_add = 0,
 		exp = 6400,
 		energy_recover_time_ratio = 35,
@@ -1154,11 +913,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_level
-
-	var_1_52[53] = {
+	pg.base.ship_level[53] = {
 		arena_durability_add = 0,
 		exp = 6600,
 		energy_recover_time_ratio = 35,
@@ -1173,11 +928,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_level
-
-	var_1_53[54] = {
+	pg.base.ship_level[54] = {
 		arena_durability_add = 0,
 		exp = 6800,
 		energy_recover_time_ratio = 35,
@@ -1192,11 +943,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_level
-
-	var_1_54[55] = {
+	pg.base.ship_level[55] = {
 		arena_durability_add = 0,
 		exp = 7000,
 		energy_recover_time_ratio = 35,
@@ -1211,11 +958,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_level
-
-	var_1_55[56] = {
+	pg.base.ship_level[56] = {
 		arena_durability_add = 0,
 		exp = 7200,
 		energy_recover_time_ratio = 35,
@@ -1230,11 +973,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_level
-
-	var_1_56[57] = {
+	pg.base.ship_level[57] = {
 		arena_durability_add = 0,
 		exp = 7400,
 		energy_recover_time_ratio = 35,
@@ -1249,11 +988,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_level
-
-	var_1_57[58] = {
+	pg.base.ship_level[58] = {
 		arena_durability_add = 0,
 		exp = 7600,
 		energy_recover_time_ratio = 35,
@@ -1268,11 +1003,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_level
-
-	var_1_58[59] = {
+	pg.base.ship_level[59] = {
 		arena_durability_add = 0,
 		exp = 7800,
 		energy_recover_time_ratio = 35,
@@ -1287,11 +1018,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_level
-
-	var_1_59[60] = {
+	pg.base.ship_level[60] = {
 		arena_durability_add = 0,
 		exp = 8000,
 		energy_recover_time_ratio = 35,
@@ -1306,11 +1033,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_level
-
-	var_1_60[61] = {
+	pg.base.ship_level[61] = {
 		arena_durability_add = 0,
 		exp = 8300,
 		energy_recover_time_ratio = 35,
@@ -1325,11 +1048,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_level
-
-	var_1_61[62] = {
+	pg.base.ship_level[62] = {
 		arena_durability_add = 0,
 		exp = 8600,
 		energy_recover_time_ratio = 35,
@@ -1344,11 +1063,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_level
-
-	var_1_62[63] = {
+	pg.base.ship_level[63] = {
 		arena_durability_add = 0,
 		exp = 8900,
 		energy_recover_time_ratio = 35,
@@ -1363,11 +1078,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_level
-
-	var_1_63[64] = {
+	pg.base.ship_level[64] = {
 		arena_durability_add = 0,
 		exp = 9200,
 		energy_recover_time_ratio = 40,
@@ -1382,11 +1093,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_level
-
-	var_1_64[65] = {
+	pg.base.ship_level[65] = {
 		arena_durability_add = 0,
 		exp = 9500,
 		energy_recover_time_ratio = 40,
@@ -1401,11 +1108,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_level
-
-	var_1_65[66] = {
+	pg.base.ship_level[66] = {
 		arena_durability_add = 0,
 		exp = 9800,
 		energy_recover_time_ratio = 40,
@@ -1420,11 +1123,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_level
-
-	var_1_66[67] = {
+	pg.base.ship_level[67] = {
 		arena_durability_add = 0,
 		exp = 10100,
 		energy_recover_time_ratio = 40,
@@ -1439,11 +1138,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_level
-
-	var_1_67[68] = {
+	pg.base.ship_level[68] = {
 		arena_durability_add = 0,
 		exp = 10400,
 		energy_recover_time_ratio = 40,
@@ -1458,11 +1153,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_level
-
-	var_1_68[69] = {
+	pg.base.ship_level[69] = {
 		arena_durability_add = 0,
 		exp = 10700,
 		energy_recover_time_ratio = 40,
@@ -1477,11 +1168,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_level
-
-	var_1_69[70] = {
+	pg.base.ship_level[70] = {
 		arena_durability_add = 0,
 		exp = 11000,
 		energy_recover_time_ratio = 40,
@@ -1496,11 +1183,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_level
-
-	var_1_70[71] = {
+	pg.base.ship_level[71] = {
 		arena_durability_add = 0,
 		exp = 11400,
 		energy_recover_time_ratio = 40,
@@ -1515,11 +1198,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_level
-
-	var_1_71[72] = {
+	pg.base.ship_level[72] = {
 		arena_durability_add = 0,
 		exp = 11800,
 		energy_recover_time_ratio = 40,
@@ -1534,11 +1213,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_level
-
-	var_1_72[73] = {
+	pg.base.ship_level[73] = {
 		arena_durability_add = 0,
 		exp = 12200,
 		energy_recover_time_ratio = 40,
@@ -1553,11 +1228,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_level
-
-	var_1_73[74] = {
+	pg.base.ship_level[74] = {
 		arena_durability_add = 0,
 		exp = 12600,
 		energy_recover_time_ratio = 40,
@@ -1572,11 +1243,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_level
-
-	var_1_74[75] = {
+	pg.base.ship_level[75] = {
 		arena_durability_add = 0,
 		exp = 13000,
 		energy_recover_time_ratio = 40,
@@ -1591,11 +1258,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_level
-
-	var_1_75[76] = {
+	pg.base.ship_level[76] = {
 		arena_durability_add = 0,
 		exp = 13400,
 		energy_recover_time_ratio = 40,
@@ -1610,11 +1273,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_level
-
-	var_1_76[77] = {
+	pg.base.ship_level[77] = {
 		arena_durability_add = 0,
 		exp = 13800,
 		energy_recover_time_ratio = 40,
@@ -1629,11 +1288,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_level
-
-	var_1_77[78] = {
+	pg.base.ship_level[78] = {
 		arena_durability_add = 0,
 		exp = 14200,
 		energy_recover_time_ratio = 40,
@@ -1648,11 +1303,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_level
-
-	var_1_78[79] = {
+	pg.base.ship_level[79] = {
 		arena_durability_add = 0,
 		exp = 14600,
 		energy_recover_time_ratio = 40,
@@ -1667,11 +1318,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_level
-
-	var_1_79[80] = {
+	pg.base.ship_level[80] = {
 		arena_durability_add = 0,
 		exp = 15000,
 		energy_recover_time_ratio = 40,
@@ -1686,11 +1333,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_level
-
-	var_1_80[81] = {
+	pg.base.ship_level[81] = {
 		arena_durability_add = 0,
 		exp = 15500,
 		energy_recover_time_ratio = 45,
@@ -1705,11 +1348,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_level
-
-	var_1_81[82] = {
+	pg.base.ship_level[82] = {
 		arena_durability_add = 0,
 		exp = 16000,
 		energy_recover_time_ratio = 45,
@@ -1724,11 +1363,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_level
-
-	var_1_82[83] = {
+	pg.base.ship_level[83] = {
 		arena_durability_add = 0,
 		exp = 16500,
 		energy_recover_time_ratio = 45,
@@ -1743,11 +1378,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_level
-
-	var_1_83[84] = {
+	pg.base.ship_level[84] = {
 		arena_durability_add = 0,
 		exp = 17000,
 		energy_recover_time_ratio = 45,
@@ -1762,11 +1393,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_level
-
-	var_1_84[85] = {
+	pg.base.ship_level[85] = {
 		arena_durability_add = 0,
 		exp = 17500,
 		energy_recover_time_ratio = 45,
@@ -1781,11 +1408,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_level
-
-	var_1_85[86] = {
+	pg.base.ship_level[86] = {
 		arena_durability_add = 0,
 		exp = 18000,
 		energy_recover_time_ratio = 45,
@@ -1800,11 +1423,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_level
-
-	var_1_86[87] = {
+	pg.base.ship_level[87] = {
 		arena_durability_add = 0,
 		exp = 18500,
 		energy_recover_time_ratio = 45,
@@ -1819,11 +1438,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_level
-
-	var_1_87[88] = {
+	pg.base.ship_level[88] = {
 		arena_durability_add = 0,
 		exp = 19000,
 		energy_recover_time_ratio = 45,
@@ -1838,11 +1453,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_level
-
-	var_1_88[89] = {
+	pg.base.ship_level[89] = {
 		arena_durability_add = 0,
 		exp = 19500,
 		energy_recover_time_ratio = 45,
@@ -1857,11 +1468,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_level
-
-	var_1_89[90] = {
+	pg.base.ship_level[90] = {
 		arena_durability_add = 0,
 		exp = 20000,
 		energy_recover_time_ratio = 45,
@@ -1876,11 +1483,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_level
-
-	var_1_90[91] = {
+	pg.base.ship_level[91] = {
 		arena_durability_add = 0,
 		exp = 21000,
 		energy_recover_time_ratio = 45,
@@ -1895,11 +1498,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_level
-
-	var_1_91[92] = {
+	pg.base.ship_level[92] = {
 		arena_durability_add = 0,
 		exp = 22000,
 		energy_recover_time_ratio = 45,
@@ -1914,11 +1513,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_level
-
-	var_1_92[93] = {
+	pg.base.ship_level[93] = {
 		arena_durability_add = 0,
 		exp = 24000,
 		energy_recover_time_ratio = 45,
@@ -1933,11 +1528,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_level
-
-	var_1_93[94] = {
+	pg.base.ship_level[94] = {
 		arena_durability_add = 0,
 		exp = 26000,
 		energy_recover_time_ratio = 45,
@@ -1952,11 +1543,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_level
-
-	var_1_94[95] = {
+	pg.base.ship_level[95] = {
 		arena_durability_add = 0,
 		exp = 30000,
 		energy_recover_time_ratio = 45,
@@ -1971,11 +1558,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_level
-
-	var_1_95[96] = {
+	pg.base.ship_level[96] = {
 		arena_durability_add = 0,
 		exp = 35000,
 		energy_recover_time_ratio = 45,
@@ -1990,11 +1573,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_level
-
-	var_1_96[97] = {
+	pg.base.ship_level[97] = {
 		arena_durability_add = 0,
 		exp = 40000,
 		energy_recover_time_ratio = 45,
@@ -2009,11 +1588,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_level
-
-	var_1_97[98] = {
+	pg.base.ship_level[98] = {
 		arena_durability_add = 0,
 		exp = 60000,
 		energy_recover_time_ratio = 45,
@@ -2028,11 +1603,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_level
-
-	var_1_98[99] = {
+	pg.base.ship_level[99] = {
 		arena_durability_add = 0,
 		exp = 132000,
 		energy_recover_time_ratio = 45,
@@ -2047,8 +1618,7 @@ var_0_3.base.ship_level = {}
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_level[100] = {
+	pg.base.ship_level[100] = {
 		arena_durability_add = 0,
 		exp = 50000,
 		energy_recover_time_ratio = 45,
@@ -2122,11 +1692,7 @@ var_0_3.base.ship_level = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_level
-
-	var_2_0[101] = {
+	pg.base.ship_level[101] = {
 		arena_durability_add = 0,
 		exp = 53000,
 		energy_recover_time_ratio = 45,
@@ -2141,11 +1707,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_level
-
-	var_2_1[102] = {
+	pg.base.ship_level[102] = {
 		arena_durability_add = 0,
 		exp = 56000,
 		energy_recover_time_ratio = 45,
@@ -2160,11 +1722,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_level
-
-	var_2_2[103] = {
+	pg.base.ship_level[103] = {
 		arena_durability_add = 0,
 		exp = 59000,
 		energy_recover_time_ratio = 45,
@@ -2179,11 +1737,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_level
-
-	var_2_3[104] = {
+	pg.base.ship_level[104] = {
 		arena_durability_add = 0,
 		exp = 62000,
 		energy_recover_time_ratio = 45,
@@ -2198,11 +1752,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_level
-
-	var_2_4[105] = {
+	pg.base.ship_level[105] = {
 		arena_durability_add = 0,
 		exp = 65000,
 		energy_recover_time_ratio = 45,
@@ -2272,11 +1822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_level
-
-	var_2_5[106] = {
+	pg.base.ship_level[106] = {
 		arena_durability_add = 0,
 		exp = 71000,
 		energy_recover_time_ratio = 45,
@@ -2291,11 +1837,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_level
-
-	var_2_6[107] = {
+	pg.base.ship_level[107] = {
 		arena_durability_add = 0,
 		exp = 77000,
 		energy_recover_time_ratio = 45,
@@ -2310,11 +1852,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_level
-
-	var_2_7[108] = {
+	pg.base.ship_level[108] = {
 		arena_durability_add = 0,
 		exp = 83000,
 		energy_recover_time_ratio = 45,
@@ -2329,11 +1867,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_level
-
-	var_2_8[109] = {
+	pg.base.ship_level[109] = {
 		arena_durability_add = 0,
 		exp = 89000,
 		energy_recover_time_ratio = 45,
@@ -2348,11 +1882,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_level
-
-	var_2_9[110] = {
+	pg.base.ship_level[110] = {
 		arena_durability_add = 0,
 		exp = 95000,
 		energy_recover_time_ratio = 45,
@@ -2422,11 +1952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_level
-
-	var_2_10[111] = {
+	pg.base.ship_level[111] = {
 		arena_durability_add = 0,
 		exp = 105000,
 		energy_recover_time_ratio = 45,
@@ -2441,11 +1967,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_level
-
-	var_2_11[112] = {
+	pg.base.ship_level[112] = {
 		arena_durability_add = 0,
 		exp = 115000,
 		energy_recover_time_ratio = 45,
@@ -2460,11 +1982,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_level
-
-	var_2_12[113] = {
+	pg.base.ship_level[113] = {
 		arena_durability_add = 0,
 		exp = 125000,
 		energy_recover_time_ratio = 45,
@@ -2479,11 +1997,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_level
-
-	var_2_13[114] = {
+	pg.base.ship_level[114] = {
 		arena_durability_add = 0,
 		exp = 135000,
 		energy_recover_time_ratio = 45,
@@ -2498,11 +2012,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_level
-
-	var_2_14[115] = {
+	pg.base.ship_level[115] = {
 		arena_durability_add = 0,
 		exp = 145000,
 		energy_recover_time_ratio = 45,
@@ -2572,11 +2082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_level
-
-	var_2_15[116] = {
+	pg.base.ship_level[116] = {
 		arena_durability_add = 0,
 		exp = 160000,
 		energy_recover_time_ratio = 45,
@@ -2591,11 +2097,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_level
-
-	var_2_16[117] = {
+	pg.base.ship_level[117] = {
 		arena_durability_add = 0,
 		exp = 175000,
 		energy_recover_time_ratio = 45,
@@ -2610,11 +2112,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_level
-
-	var_2_17[118] = {
+	pg.base.ship_level[118] = {
 		arena_durability_add = 0,
 		exp = 190000,
 		energy_recover_time_ratio = 45,
@@ -2629,11 +2127,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_level
-
-	var_2_18[119] = {
+	pg.base.ship_level[119] = {
 		arena_durability_add = 0,
 		exp = 205000,
 		energy_recover_time_ratio = 45,
@@ -2648,11 +2142,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_level
-
-	var_2_19[120] = {
+	pg.base.ship_level[120] = {
 		arena_durability_add = 0,
 		exp = 220000,
 		energy_recover_time_ratio = 45,
@@ -2747,11 +2237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_level
-
-	var_2_20[121] = {
+	pg.base.ship_level[121] = {
 		arena_durability_add = 0,
 		exp = 241000,
 		energy_recover_time_ratio = 45,
@@ -2766,11 +2252,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_level
-
-	var_2_21[122] = {
+	pg.base.ship_level[122] = {
 		arena_durability_add = 0,
 		exp = 262000,
 		energy_recover_time_ratio = 45,
@@ -2785,11 +2267,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_level
-
-	var_2_22[123] = {
+	pg.base.ship_level[123] = {
 		arena_durability_add = 0,
 		exp = 283000,
 		energy_recover_time_ratio = 45,
@@ -2804,11 +2282,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_level
-
-	var_2_23[124] = {
+	pg.base.ship_level[124] = {
 		arena_durability_add = 0,
 		exp = 304000,
 		energy_recover_time_ratio = 45,
@@ -2823,8 +2297,7 @@ end)()
 		need_item_rarity5 = {},
 		need_item_rarity6 = {}
 	}
-	pg = var_2_23
-	var_2_23.base.ship_level[125] = {
+	pg.base.ship_level[125] = {
 		arena_durability_add = 0,
 		exp = 0,
 		energy_recover_time_ratio = 45,

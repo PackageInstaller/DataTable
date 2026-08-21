@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WSMapTransport", import("...BaseEntity"))
 
-local var_0_0 = "WSMapTransport"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	map = "table",
 	column = "number",
 	wsMapPath = "table",
@@ -19,57 +13,35 @@ var_0_1.Fields = {
 	rtBottom = "userdata",
 	rtDanger = "userdata"
 }
-var_0_1.Listeners = {
+var_0_0.Listeners = {
 	onArrived = "OnArrived",
 	onStartTrip = "OnStartTrip"
 }
 
-function var_0_1.GetResName()
+function var_0_0.GetResName()
 	return "world_cell_transport"
 end
 
-function var_0_1.GetName(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.GetName(arg_2_0, arg_2_1, arg_2_2)
 	return "transport_" .. arg_2_0 .. "_" .. arg_2_1 .. "_" .. arg_2_2
 end
 
-function var_0_1.Setup(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+function var_0_0.Setup(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 	arg_3_0.row = arg_3_1
 	arg_3_0.column = arg_3_2
 	arg_3_0.dir = arg_3_3
 	arg_3_0.map = arg_3_4
 
-	local var_3_0 = arg_3_0.wsMapPath
-	local var_3_1 = var_5.AddListener
-
-	WSMapPath = var_1_10008
-
-	var_3_1(var_3_0, var_1_10008.EventStartTrip, arg_3_0.onStartTrip)
-
-	local var_3_2 = arg_3_0.wsMapPath
-	local var_3_3 = var_5.AddListener
-
-	WSMapPath = var_8
-
-	var_3_3(var_3_2, var_8.EventArrived, arg_3_0.onArrived)
+	arg_3_0.wsMapPath:AddListener(WSMapPath.EventStartTrip, arg_3_0.onStartTrip)
+	arg_3_0.wsMapPath:AddListener(WSMapPath.EventArrived, arg_3_0.onArrived)
 	arg_3_0:Init()
 
 	return
 end
 
-function var_0_1.Dispose(arg_4_0)
-	local var_4_0 = arg_4_0.wsMapPath
-	local var_4_1 = var_1.RemoveListener
-
-	WSMapPath = var_1_10004
-
-	var_4_1(var_4_0, var_1_10004.EventStartTrip, arg_4_0.onStartTrip)
-
-	local var_4_2 = arg_4_0.wsMapPath
-	local var_4_3 = var_1.RemoveListener
-
-	WSMapPath = var_4
-
-	var_4_3(var_4_2, var_4.EventArrived, arg_4_0.onArrived)
+function var_0_0.Dispose(arg_4_0)
+	arg_4_0.wsMapPath:RemoveListener(WSMapPath.EventStartTrip, arg_4_0.onStartTrip)
+	arg_4_0.wsMapPath:RemoveListener(WSMapPath.EventArrived, arg_4_0.onArrived)
 	arg_4_0:DisposeUpdateTimer()
 	arg_4_0:UpdateAlpha(1)
 	arg_4_0:Clear()
@@ -77,165 +49,95 @@ function var_0_1.Dispose(arg_4_0)
 	return
 end
 
-function var_0_1.Init(arg_5_0)
-	local var_5_0 = arg_5_0.transform
+function var_0_0.Init(arg_5_0)
+	arg_5_0.rtClick = arg_5_0.transform:Find("click")
+	arg_5_0.rtBottom = arg_5_0.transform:Find("bottom")
+	arg_5_0.rtDanger = arg_5_0.transform:Find("danger")
+	arg_5_0.rtForbid = arg_5_0.transform:Find("forbid")
 
-	arg_5_0.rtClick = var_1.Find(var_5_0, "click")
-	arg_5_0.rtBottom = var_1:Find("bottom")
-	arg_5_0.rtDanger = var_1:Find("danger")
-	arg_5_0.rtForbid = var_1:Find("forbid")
+	local var_5_0 = arg_5_0.row
+	local var_5_1 = arg_5_0.column
 
-	local var_5_1 = arg_5_0.row
-	local var_5_2 = arg_5_0.column
-	local var_5_3 = arg_5_0.dir
+	arg_5_0.transform.name = var_0_0.GetName(arg_5_0.row, arg_5_0.column, arg_5_0.dir)
 
-	var_1.name = var_0_1.GetName(var_5_1, var_5_2, var_5_3)
+	local var_5_2 = 0
 
-	local var_5_4 = 0
-
-	WorldConst = var_1_10006
-
-	if var_5_3 == var_1_10006.DirDown then
+	if arg_5_0.dir == WorldConst.DirDown then
+		var_5_0 = var_5_0 + 1
+		var_5_2 = -90
+	elseif arg_5_0.dir == WorldConst.DirLeft then
+		var_5_1 = var_5_1 - 1
+		var_5_2 = 180
+	elseif arg_5_0.dir == WorldConst.DirUp then
+		var_5_0 = var_5_0 - 1
+		var_5_2 = 90
+	elseif arg_5_0.dir == WorldConst.DirRight then
 		var_5_1 = var_5_1 + 1
-		var_5_4 = -90
-	else
-		WorldConst = var_6
-
-		if var_5_3 == var_6.DirLeft then
-			var_5_2 = var_5_2 - 1
-			var_5_4 = 180
-		else
-			WorldConst = var_6
-
-			if var_5_3 == var_6.DirUp then
-				var_5_1 = var_5_1 - 1
-				var_5_4 = 90
-			else
-				WorldConst = var_6
-
-				if var_5_3 == var_6.DirRight then
-					var_5_2 = var_5_2 + 1
-					var_5_4 = 0
-				end
-			end
-		end
+		var_5_2 = 0
 	end
 
-	Vector3 = var_6
-	var_1.localEulerAngles = var_6(0, 0, var_5_4)
+	arg_5_0.transform.localEulerAngles = Vector3(0, 0, var_5_2)
+	arg_5_0.transform.anchoredPosition = arg_5_0.map.theme:GetLinePosition(var_5_0, var_5_1)
+	arg_5_0.transform.localScale = Vector3(arg_5_0.map.theme.cellSize.x / arg_5_0.transform.sizeDelta.x, arg_5_0.map.theme.cellSize.y / arg_5_0.transform.sizeDelta.y, 1)
 
-	local var_5_5 = arg_5_0.map.theme
-
-	var_1.anchoredPosition = var_6.GetLinePosition(var_5_5, var_5_1, var_5_2)
-
-	local var_5_6 = arg_5_0.map.theme.cellSize
-
-	Vector3 = var_7
-	var_1.localScale = var_7(var_5_6.x / var_1.sizeDelta.x, var_5_6.y / var_1.sizeDelta.y, 1)
-
-	local var_5_7 = arg_5_0.wsMapPath
-
-	if var_7.IsMoving(var_5_7) then
+	if arg_5_0.wsMapPath:IsMoving() then
 		arg_5_0:OnStartTrip()
 	end
 
 	return
 end
 
-function var_0_1.UpdateAlpha(arg_6_0, arg_6_1)
-	setImageAlpha = var_1_10002
-
-	var_1_10002(arg_6_0.rtBottom, arg_6_1)
-
-	setImageAlpha = var_1_10002
-
-	var_1_10002(arg_6_0.rtDanger, arg_6_1)
-
-	setImageAlpha = var_1_10002
-
-	var_1_10002(arg_6_0.rtForbid, arg_6_1)
+function var_0_0.UpdateAlpha(arg_6_0, arg_6_1)
+	setImageAlpha(arg_6_0.rtBottom, arg_6_1)
+	setImageAlpha(arg_6_0.rtDanger, arg_6_1)
+	setImageAlpha(arg_6_0.rtForbid, arg_6_1)
 
 	return
 end
 
-function var_0_1.OnStartTrip(arg_7_0)
+function var_0_0.OnStartTrip(arg_7_0)
 	arg_7_0:StartUpdateTimer()
 
 	return
 end
 
-function var_0_1.OnArrived(arg_8_0)
+function var_0_0.OnArrived(arg_8_0)
 	arg_8_0:DisposeUpdateTimer()
 
 	return
 end
 
-function var_0_1.StartUpdateTimer(arg_9_0)
-	local var_9_0 = arg_9_0.wsMapPath.wsObject.class
+function var_0_0.StartUpdateTimer(arg_9_0)
+	local var_9_0 = arg_9_0.wsMapPath.wsObject
 
-	WSMapFleet = var_1_10003
+	if arg_9_0.wsMapPath.wsObject.class == WSMapFleet then
+		arg_9_0:DisposeUpdateTimer()
 
-	if var_9_0 == var_1_10003 then
-		local var_9_1 = arg_9_0
-
-		arg_9_0.DisposeUpdateTimer(var_9_1)
-
-		local var_9_2 = arg_9_0.map.theme
-		local var_9_3 = var_2.GetLinePosition(var_9_2, arg_9_0.row, arg_9_0.column)
-
-		math = var_9_1
-
-		local var_9_4 = var_9_1.min(var_2.cellSize.x + var_2.cellSpace.x, var_2.cellSize.y + var_2.cellSpace.y)
-		local var_9_5 = var_1.fleet
-		local var_9_6 = arg_9_0.map
-		local var_9_7 = var_6.GetNormalFleets(var_9_6)
-
-		_ = var_7
-
-		local var_9_8 = var_7.map(var_9_7, function(arg_10_0)
-			local var_10_0 = var_0
-			local var_10_1 = var_1.GetLinePosition(var_10_0, arg_10_0.row, arg_10_0.column)
-
-			Vector3 = var_2_10002
-
-			return var_2_10002.Distance(var_10_1, var_9_3)
+		local var_9_1 = arg_9_0.map.theme:GetLinePosition(arg_9_0.row, arg_9_0.column)
+		local var_9_2 = math.min(arg_9_0.map.theme.cellSize.x + arg_9_0.map.theme.cellSpace.x, arg_9_0.map.theme.cellSize.y + arg_9_0.map.theme.cellSpace.y)
+		local var_9_3 = arg_9_0.wsMapPath.wsObject.fleet
+		local var_9_4 = _.map(arg_9_0.map:GetNormalFleets(), function(arg_10_0)
+			return Vector3.Distance(var_0:GetLinePosition(arg_10_0.row, arg_10_0.column), var_9_1)
 		end)
 
-		Timer = var_9_6
-		arg_9_0.updateTimer = var_9_6.New(function()
-			local var_11_0 = var_9_8
-			local var_11_1 = var_9_5.index
+		arg_9_0.updateTimer = Timer.New(function()
+			var_9_4[var_9_3.index] = Vector3.Distance(var_9_0.transform.anchoredPosition3D, var_9_1)
 
-			Vector3 = var_2_10002
-			var_11_0[var_11_1] = var_2_10002.Distance(var_0.transform.anchoredPosition3D, var_9_3)
-			math = var_11_0
-
-			local var_11_2 = var_11_0.max
-
-			_ = var_2
-
-			local var_11_3 = var_11_2(1 - var_2.min(var_9_8) / var_9_4, 0)
-			local var_11_4 = arg_9_0
-
-			var_1.UpdateAlpha(var_11_4, var_11_3)
+			arg_9_0:UpdateAlpha((math.max(1 - _.min(var_9_4) / var_9_2, 0)))
 
 			return
 		end, 0.033, -1)
 
-		local var_9_9 = arg_9_0.updateTimer
-
-		var_8.Start(var_9_9)
+		arg_9_0.updateTimer:Start()
 		arg_9_0.updateTimer.func()
 	end
 
 	return
 end
 
-function var_0_1.DisposeUpdateTimer(arg_12_0)
+function var_0_0.DisposeUpdateTimer(arg_12_0)
 	if arg_12_0.updateTimer then
-		local var_12_0 = arg_12_0.updateTimer
-
-		var_1.Stop(var_12_0)
+		arg_12_0.updateTimer:Stop()
 
 		arg_12_0.updateTimer = nil
 	end
@@ -243,4 +145,4 @@ function var_0_1.DisposeUpdateTimer(arg_12_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,933 +1,507 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "voice_bgm") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "voice_bgm"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.voice_bgm = var_0_2
-pg = var_0
-pg = var_0_2
-
-local var_0_3
-
-if not var_0_2.base then
-	var_0_3 = {}
-end
-
-var_0.base = var_0_3
-pg = var_0
-var_0.base.voice_bgm = {}
+﻿pg = pg or {}
+pg.voice_bgm = rawget(pg, "voice_bgm") or setmetatable({
+	__name = "voice_bgm"
+}, confNEO)
+pg.base = pg.base or {}
+pg.base.voice_bgm = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.voice_bgm
-
-	var_1_0.ActivityMainScene = {
+	pg.base.voice_bgm.ActivityMainScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.voice_bgm
-
-	var_1_1.HoloLiveLinkLinkSelectScene = {
+	pg.base.voice_bgm.HoloLiveLinkLinkSelectScene = {
 		default_bgm = "holo-fff-inst",
 		special_bgm = "",
 		bgm = "holo-fff-inst"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.voice_bgm
-
-	var_1_2.HololiveMedalCollectionView = {
+	pg.base.voice_bgm.HololiveMedalCollectionView = {
 		default_bgm = "holo-inochi-inst",
 		special_bgm = "",
 		bgm = "holo-inochi-inst"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.voice_bgm
-
-	var_1_3.MusicFestivalUI = {
+	pg.base.voice_bgm.MusicFestivalUI = {
 		default_bgm = "azumaster-ins",
 		special_bgm = "",
 		bgm = "azumaster-ins"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.voice_bgm
-
-	var_1_4.NewyearFestivalScene = {
+	pg.base.voice_bgm.NewyearFestivalScene = {
 		default_bgm = "newyear2",
 		special_bgm = "",
 		bgm = "newyear2"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.voice_bgm
-
-	var_1_5.ActivityBossBattleScene = {
+	pg.base.voice_bgm.ActivityBossBattleScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.voice_bgm
-
-	var_1_6.ActivityBossBattleScene2 = {
+	pg.base.voice_bgm.ActivityBossBattleScene2 = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.voice_bgm
-
-	var_1_7.ActivityBossBattleScene3 = {
+	pg.base.voice_bgm.ActivityBossBattleScene3 = {
 		default_bgm = "cw-level",
 		special_bgm = "",
 		bgm = "cw-level"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.voice_bgm
-
-	var_1_8.CourtYardScene = {
+	pg.base.voice_bgm.CourtYardScene = {
 		default_bgm = "backyard",
 		special_bgm = "",
 		bgm = "backyard"
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.voice_bgm
-
-	var_1_9.BattleScene = {
+	pg.base.voice_bgm.BattleScene = {
 		default_bgm = "battle-1",
 		special_bgm = "",
 		bgm = "battle-1"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.voice_bgm
-
-	var_1_10.DailyLevelScene = {
+	pg.base.voice_bgm.DailyLevelScene = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.voice_bgm
-
-	var_1_11.MilitaryExerciseScene = {
+	pg.base.voice_bgm.MilitaryExerciseScene = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.voice_bgm
-
-	var_1_12.CommanderCatScene = {
+	pg.base.voice_bgm.CommanderCatScene = {
 		default_bgm = "backyard",
 		special_bgm = "",
 		bgm = "backyard"
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.voice_bgm
-
-	var_1_13.NewCommanderScene = {
+	pg.base.voice_bgm.NewCommanderScene = {
 		default_bgm = "backyard",
 		special_bgm = "",
 		bgm = "backyard"
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.voice_bgm
-
-	var_1_14.NewPlayerScene = {
+	pg.base.voice_bgm.NewPlayerScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.voice_bgm
-
-	var_1_15.LoginScene = {
+	pg.base.voice_bgm.LoginScene = {
 		default_bgm = "login",
 		special_bgm = "",
 		bgm = "login"
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.voice_bgm
-
-	var_1_16.NewMainScene = {
+	pg.base.voice_bgm.NewMainScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.voice_bgm
-
-	var_1_17.HoloLiveLinkGameView = {
+	pg.base.voice_bgm.HoloLiveLinkGameView = {
 		default_bgm = "holo-fff-inst",
 		special_bgm = "",
 		bgm = "holo-fff-inst"
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.voice_bgm
-
-	var_1_18.CollectionScene = {
+	pg.base.voice_bgm.CollectionScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.voice_bgm
-
-	var_1_19.ActivityBossSPFScene = {
+	pg.base.voice_bgm.ActivityBossSPFScene = {
 		default_bgm = "level02",
 		special_bgm = "",
 		bgm = "level02"
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.voice_bgm
-
-	var_1_20.SpringFestivalTownScene = {
+	pg.base.voice_bgm.SpringFestivalTownScene = {
 		default_bgm = "story-china",
 		special_bgm = "",
 		bgm = "story-china"
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.voice_bgm
-
-	var_1_21.Match3GameUI = {
+	pg.base.voice_bgm.Match3GameUI = {
 		default_bgm = "backyard",
 		special_bgm = "",
 		bgm = "backyard"
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.voice_bgm
-
-	var_1_22.ActivityBossAisaikesiScene = {
+	pg.base.voice_bgm.ActivityBossAisaikesiScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.voice_bgm
-
-	var_1_23.FriendScene = {
+	pg.base.voice_bgm.FriendScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.voice_bgm
-
-	var_1_24.WorldScene = {
+	pg.base.voice_bgm.WorldScene = {
 		default_bgm = "level02",
 		special_bgm = "",
 		bgm = "level02"
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.voice_bgm
-
-	var_1_25.ShipBluePrintScene = {
+	pg.base.voice_bgm.ShipBluePrintScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.voice_bgm
-
-	var_1_26.MusicFestivalScene2 = {
+	pg.base.voice_bgm.MusicFestivalScene2 = {
 		default_bgm = "idol-BlueSpirit-inst",
 		special_bgm = "",
 		bgm = "idol-BlueSpirit-inst"
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.voice_bgm
-
-	var_1_27.ActivityShop51032 = {
+	pg.base.voice_bgm.ActivityShop51032 = {
 		default_bgm = "story-startravel",
 		special_bgm = "",
 		bgm = "story-startravel"
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.voice_bgm
-
-	var_1_28.ActivityShop50486 = {
+	pg.base.voice_bgm.ActivityShop50486 = {
 		default_bgm = "story-wanderingcity-future",
 		special_bgm = "",
 		bgm = "story-wanderingcity-future"
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.voice_bgm
-
-	var_1_29.ActivityShop50430 = {
+	pg.base.voice_bgm.ActivityShop50430 = {
 		default_bgm = "story-china-0226-pv",
 		special_bgm = "",
 		bgm = "story-china-0226-pv"
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.voice_bgm
-
-	var_1_30.ActivityShop50464 = {
+	pg.base.voice_bgm.ActivityShop50464 = {
 		default_bgm = "theme-merkuriameta",
 		special_bgm = "",
 		bgm = "theme-merkuriameta"
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.voice_bgm
-
-	var_1_31.ActivityShop6035 = {
+	pg.base.voice_bgm.ActivityShop6035 = {
 		default_bgm = "doa_story1",
 		special_bgm = "",
 		bgm = "doa_story1"
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.voice_bgm
-
-	var_1_32.ActivityShop50807 = {
+	pg.base.voice_bgm.ActivityShop50807 = {
 		default_bgm = "doa_huanzhuang",
 		special_bgm = "",
 		bgm = "doa_huanzhuang"
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.voice_bgm
-
-	var_1_33.ActivityShop50829 = {
+	pg.base.voice_bgm.ActivityShop50829 = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.voice_bgm
-
-	var_1_34.ActivityShop50611 = {
+	pg.base.voice_bgm.ActivityShop50611 = {
 		default_bgm = "theme-hrr",
 		special_bgm = "",
 		bgm = "theme-hrr"
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.voice_bgm
-
-	var_1_35.ActivityShop50655 = {
+	pg.base.voice_bgm.ActivityShop50655 = {
 		default_bgm = "story-magicalnight-pv",
 		special_bgm = "",
 		bgm = "story-magicalnight-pv"
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.voice_bgm
-
-	var_1_36.BuildShipScene = {
+	pg.base.voice_bgm.BuildShipScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.voice_bgm
-
-	var_1_37.VolleyballGameView = {
+	pg.base.voice_bgm.VolleyballGameView = {
 		default_bgm = "doa_story1",
 		special_bgm = "",
 		bgm = "doa_story1"
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.voice_bgm
-
-	var_1_38.DOALinkIslandScene = {
+	pg.base.voice_bgm.DOALinkIslandScene = {
 		default_bgm = "doa_story1",
 		special_bgm = "",
 		bgm = "doa_story1"
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.voice_bgm
-
-	var_1_39.GuildMainScene = {
+	pg.base.voice_bgm.GuildMainScene = {
 		default_bgm = "story-richang",
 		special_bgm = "",
 		bgm = "story-richang"
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.voice_bgm
-
-	var_1_40.LevelScene = {
+	pg.base.voice_bgm.LevelScene = {
 		default_bgm = "SailAwayJustice",
 		special_bgm = "",
 		bgm = "SailAwayJustice"
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.voice_bgm
-
-	var_1_41.WorldBossScene = {
+	pg.base.voice_bgm.WorldBossScene = {
 		default_bgm = "bsm-3",
 		special_bgm = "",
 		bgm = "bsm-3"
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.voice_bgm
-
-	var_1_42.NewYearFestivalScene2 = {
+	pg.base.voice_bgm.NewYearFestivalScene2 = {
 		default_bgm = "newyear2",
 		special_bgm = "",
 		bgm = "newyear2"
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.voice_bgm
-
-	var_1_43.SpringFestivalTownScene2 = {
+	pg.base.voice_bgm.SpringFestivalTownScene2 = {
 		default_bgm = "main-chunjie2",
 		special_bgm = "",
 		bgm = "main-chunjie2"
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.voice_bgm
-
-	var_1_44.PlayerSecondSummaryInfoScene = {
+	pg.base.voice_bgm.PlayerSecondSummaryInfoScene = {
 		default_bgm = "login",
 		special_bgm = "",
 		bgm = "login"
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.voice_bgm
-
-	var_1_45.AmusementParkScene = {
+	pg.base.voice_bgm.AmusementParkScene = {
 		default_bgm = "story-richang",
 		special_bgm = "",
 		bgm = "story-richang"
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.voice_bgm
-
-	var_1_46.AmusementParkShopPage = {
+	pg.base.voice_bgm.AmusementParkShopPage = {
 		default_bgm = "story-richang",
 		special_bgm = "",
 		bgm = "story-richang"
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.voice_bgm
-
-	var_1_47.NewMeixiV4Scene = {
+	pg.base.voice_bgm.NewMeixiV4Scene = {
 		default_bgm = "level02",
 		special_bgm = "",
 		bgm = "level02"
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.voice_bgm
-
-	var_1_48.IdolMasterStageScene = {
+	pg.base.voice_bgm.IdolMasterStageScene = {
 		default_bgm = "idom-GOMYWAY",
 		special_bgm = "",
 		bgm = "idom-GOMYWAY"
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.voice_bgm
-
-	var_1_49.ChargeScene = {
+	pg.base.voice_bgm.ChargeScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.voice_bgm
-
-	var_1_50.AmusementParkScene2 = {
+	pg.base.voice_bgm.AmusementParkScene2 = {
 		default_bgm = "Story-richang",
 		special_bgm = "",
 		bgm = "Story-richang"
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.voice_bgm
-
-	var_1_51.CrusingScene = {
+	pg.base.voice_bgm.CrusingScene = {
 		default_bgm = "Blueocean-image",
 		special_bgm = "",
 		bgm = "Blueocean-image"
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.voice_bgm
-
-	var_1_52.SSSSMedalCollectionView = {
+	pg.base.voice_bgm.SSSSMedalCollectionView = {
 		default_bgm = "bsm-2",
 		special_bgm = "",
 		bgm = "Bsm-2"
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.voice_bgm
-
-	var_1_53.MonopolyWorldScene = {
+	pg.base.voice_bgm.MonopolyWorldScene = {
 		default_bgm = "story-richang",
 		special_bgm = "",
 		bgm = "story-richang"
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.voice_bgm
-
-	var_1_54.SSSSLinkAcademyScene = {
+	pg.base.voice_bgm.SSSSLinkAcademyScene = {
 		default_bgm = "ssss-az-pv",
 		special_bgm = "",
 		bgm = "ssss-1114A"
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.voice_bgm
-
-	var_1_55.GridGameView = {
+	pg.base.voice_bgm.GridGameView = {
 		default_bgm = "ssss-az-pv",
 		special_bgm = "",
 		bgm = "ssss-1114A"
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.voice_bgm
-
-	var_1_56.ActivityBossBristolScene = {
+	pg.base.voice_bgm.ActivityBossBristolScene = {
 		default_bgm = "xinnong-3",
 		special_bgm = "",
 		bgm = "xinnong-3"
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.voice_bgm
-
-	var_1_57.SpringFestivalBackHill2022Scene = {
+	pg.base.voice_bgm.SpringFestivalBackHill2022Scene = {
 		default_bgm = "main-chunjie-pv",
 		special_bgm = "",
 		bgm = "main-chunjie-pv"
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.voice_bgm
-
-	var_1_58.WorldInPictureScene = {
+	pg.base.voice_bgm.WorldInPictureScene = {
 		default_bgm = "main-chunjie",
 		special_bgm = "",
 		bgm = "main-chunjie"
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.voice_bgm
-
-	var_1_59.RedPacketLayer = {
+	pg.base.voice_bgm.RedPacketLayer = {
 		default_bgm = "main-chunjie2",
 		special_bgm = "",
 		bgm = "main-chunjie2"
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.voice_bgm
-
-	var_1_60.ColoringScene = {
+	pg.base.voice_bgm.ColoringScene = {
 		default_bgm = "main-chunjie",
 		special_bgm = "",
 		bgm = "main-chunjie"
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.voice_bgm
-
-	var_1_61.Fushun3GameView = {
+	pg.base.voice_bgm.Fushun3GameView = {
 		default_bgm = "main-chunjie-pv",
 		special_bgm = "",
 		bgm = "main-chunjie-pv"
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.voice_bgm
-
-	var_1_62.BackHillFifthAnniversaryScene = {
+	pg.base.voice_bgm.BackHillFifthAnniversaryScene = {
 		default_bgm = "Main-chunjie-pv",
 		special_bgm = "",
 		bgm = "Main-chunjie-pv"
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.voice_bgm
-
-	var_1_63.ActivityBossJofferScene = {
+	pg.base.voice_bgm.ActivityBossJofferScene = {
 		default_bgm = "theme-richelieu",
 		special_bgm = "",
 		bgm = "theme-richelieu"
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.voice_bgm
-
-	var_1_64.IceCreamGameView = {
+	pg.base.voice_bgm.IceCreamGameView = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.voice_bgm
-
-	var_1_65.CookGameView = {
+	pg.base.voice_bgm.CookGameView = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.voice_bgm
-
-	var_1_66.BackHillCampusFestival2022Scene = {
+	pg.base.voice_bgm.BackHillCampusFestival2022Scene = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.voice_bgm
-
-	var_1_67.ActivityBossAlbionScene = {
+	pg.base.voice_bgm.ActivityBossAlbionScene = {
 		default_bgm = "theme-royalknights-battle",
 		special_bgm = "",
 		bgm = "theme-royalknights-battle"
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.voice_bgm
-
-	var_1_68.RyzaMiniGameView = {
+	pg.base.voice_bgm.RyzaMiniGameView = {
 		default_bgm = "ryza-5",
 		special_bgm = "",
 		bgm = "ryza-5"
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.voice_bgm
-
-	var_1_69.RyzaUrbanAreaScene = {
+	pg.base.voice_bgm.RyzaUrbanAreaScene = {
 		default_bgm = "ryza-4",
 		special_bgm = "",
 		bgm = "ryza-4"
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.voice_bgm
-
-	var_1_70.RyzaTaskScene = {
+	pg.base.voice_bgm.RyzaTaskScene = {
 		default_bgm = "ryza-2",
 		special_bgm = "",
 		bgm = "ryza-2"
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.voice_bgm
-
-	var_1_71.AtelierCompositeScene = {
+	pg.base.voice_bgm.AtelierCompositeScene = {
 		default_bgm = "ryza-10",
 		special_bgm = "",
 		bgm = "ryza-10"
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.voice_bgm
-
-	var_1_72.AtelierBuffLayer = {
+	pg.base.voice_bgm.AtelierBuffLayer = {
 		default_bgm = "ryza-12",
 		special_bgm = "",
 		bgm = "ryza-12"
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.voice_bgm
-
-	var_1_73.BeachGuardGameView = {
+	pg.base.voice_bgm.BeachGuardGameView = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.voice_bgm
-
-	var_1_74.NewYearFestival2023Scene = {
+	pg.base.voice_bgm.NewYearFestival2023Scene = {
 		default_bgm = "theme-summersky",
 		special_bgm = "",
 		bgm = "theme-summersky"
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.voice_bgm
-
-	var_1_75.NewYearHotSpringScene = {
+	pg.base.voice_bgm.NewYearHotSpringScene = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.voice_bgm
-
-	var_1_76.ActivityBossKuybyshevScene = {
+	pg.base.voice_bgm.ActivityBossKuybyshevScene = {
 		default_bgm = "bgm-cccp2",
 		special_bgm = "",
 		bgm = "bgm-cccp2"
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.voice_bgm
-
-	var_1_77.NenjuuMiniGameView = {
+	pg.base.voice_bgm.NenjuuMiniGameView = {
 		default_bgm = "main-chunjie",
 		special_bgm = "",
 		bgm = "main-chunjie"
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.voice_bgm
-
-	var_1_78.SpringFestival2023Scene = {
+	pg.base.voice_bgm.SpringFestival2023Scene = {
 		default_bgm = "main-chunjie4-1",
 		special_bgm = "",
 		bgm = "main-chunjie4-1"
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.voice_bgm
-
-	var_1_79.ValentineQteGameView = {
+	pg.base.voice_bgm.ValentineQteGameView = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.voice_bgm
-
-	var_1_80.BossRushKurskScene = {
+	pg.base.voice_bgm.BossRushKurskScene = {
 		default_bgm = "bgm-cccp3",
 		special_bgm = "",
 		bgm = "bgm-cccp3"
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.voice_bgm
-
-	var_1_81.DOAPPMiniGameView = {
+	pg.base.voice_bgm.DOAPPMiniGameView = {
 		default_bgm = "doa_minigame",
 		special_bgm = "",
 		bgm = "doa_minigame"
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.voice_bgm
-
-	var_1_82.AnniversaryIsland2023Scene = {
+	pg.base.voice_bgm.AnniversaryIsland2023Scene = {
 		default_bgm = "theme-SeaAndSun-soft",
 		special_bgm = "",
 		bgm = "theme-SeaAndSun-soft"
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.voice_bgm
-
-	var_1_83.SixthAnniversaryIslandScene = {
+	pg.base.voice_bgm.SixthAnniversaryIslandScene = {
 		default_bgm = "theme-SeaAndSun-image",
 		special_bgm = "",
 		bgm = "theme-SeaAndSun-image"
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.voice_bgm
-
-	var_1_84.OreMiniGameView = {
+	pg.base.voice_bgm.OreMiniGameView = {
 		default_bgm = "story-richang-3",
 		special_bgm = "",
 		bgm = "story-richang-3"
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.voice_bgm
-
-	var_1_85.IslandCatchTreasureGameView = {
+	pg.base.voice_bgm.IslandCatchTreasureGameView = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.voice_bgm
-
-	var_1_86.IslandTowerClimbingGameView = {
+	pg.base.voice_bgm.IslandTowerClimbingGameView = {
 		default_bgm = "story-richang-6",
 		special_bgm = "",
 		bgm = "story-richang-6"
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.voice_bgm
-
-	var_1_87.AnniversaryIslandComposite2023Scene = {
+	pg.base.voice_bgm.AnniversaryIslandComposite2023Scene = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.voice_bgm
-
-	var_1_88.IslandTaskScene = {
+	pg.base.voice_bgm.IslandTaskScene = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.voice_bgm
-
-	var_1_89.AnniversaryIslandSpringTask2023Scene = {
+	pg.base.voice_bgm.AnniversaryIslandSpringTask2023Scene = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.voice_bgm
-
-	var_1_90.AnniversaryIslandHotSpringScene = {
+	pg.base.voice_bgm.AnniversaryIslandHotSpringScene = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.voice_bgm
-
-	var_1_91.IslandQTEMiniGameLayer = {
+	pg.base.voice_bgm.IslandQTEMiniGameLayer = {
 		default_bgm = "story-richang-3",
 		special_bgm = "",
 		bgm = "story-richang-3"
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.voice_bgm
-
-	var_1_92.IslandFlowerFieldLayer = {
+	pg.base.voice_bgm.IslandFlowerFieldLayer = {
 		default_bgm = "story-richang-3",
 		special_bgm = "",
 		bgm = "story-richang-3"
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.voice_bgm
-
-	var_1_93.SculptureScene = {
+	pg.base.voice_bgm.SculptureScene = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.voice_bgm
-
-	var_1_94.DexiV5MainPage = {
+	pg.base.voice_bgm.DexiV5MainPage = {
 		default_bgm = "theme-bismark-reborn",
 		special_bgm = "",
 		bgm = "theme-bismark-reborn"
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.voice_bgm
-
-	var_1_95.DexiV5PtPage = {
+	pg.base.voice_bgm.DexiV5PtPage = {
 		default_bgm = "theme-bismark-reborn",
 		special_bgm = "",
 		bgm = "theme-bismark-reborn"
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.voice_bgm
-
-	var_1_96.IslandMainPage = {
+	pg.base.voice_bgm.IslandMainPage = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.voice_bgm
-
-	var_1_97.MakeTeaPtPage = {
+	pg.base.voice_bgm.MakeTeaPtPage = {
 		default_bgm = "theme-yixian-soft-loop",
 		special_bgm = "",
 		bgm = "theme-yixian-soft-loop"
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.voice_bgm
-
-	var_1_98.SkinGuide1Page = {
+	pg.base.voice_bgm.SkinGuide1Page = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_1_98
-	var_1_98.base.voice_bgm.ReturnAwardPage = {
+	pg.base.voice_bgm.ReturnAwardPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
@@ -936,587 +510,327 @@ var_0.base.voice_bgm = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.voice_bgm
-
-	var_2_0.AnniversarySixInvitationPage = {
+	pg.base.voice_bgm.AnniversarySixInvitationPage = {
 		default_bgm = "theme-partydress",
 		special_bgm = "",
 		bgm = "theme-partydress"
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.voice_bgm
-
-	var_2_1.AnniversarySixLoginPage = {
+	pg.base.voice_bgm.AnniversarySixLoginPage = {
 		default_bgm = "theme-partydress",
 		special_bgm = "",
 		bgm = "theme-partydress"
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.voice_bgm
-
-	var_2_2.RyzaPtPage = {
+	pg.base.voice_bgm.RyzaPtPage = {
 		default_bgm = "ryza-4",
 		special_bgm = "",
 		bgm = "ryza-4"
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.voice_bgm
-
-	var_2_3.KelifulanSkinPage = {
+	pg.base.voice_bgm.KelifulanSkinPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.voice_bgm
-
-	var_2_4.LinkDunHuangPage = {
+	pg.base.voice_bgm.LinkDunHuangPage = {
 		default_bgm = "theme-haitian-soft-loop",
 		special_bgm = "",
 		bgm = "theme-haitian-soft-loop"
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.voice_bgm
-
-	var_2_5.NewMeixiV4MainPage = {
+	pg.base.voice_bgm.NewMeixiV4MainPage = {
 		default_bgm = "hunhe-eagle",
 		special_bgm = "",
 		bgm = "hunhe-eagle"
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.voice_bgm
-
-	var_2_6.NewMeixiV4PtPage = {
+	pg.base.voice_bgm.NewMeixiV4PtPage = {
 		default_bgm = "hunhe-story",
 		special_bgm = "",
 		bgm = "hunhe-story"
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.voice_bgm
-
-	var_2_7.NewMeixiV4frameRePage = {
+	pg.base.voice_bgm.NewMeixiV4frameRePage = {
 		default_bgm = "hunhe-story",
 		special_bgm = "",
 		bgm = "hunhe-story"
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.voice_bgm
-
-	var_2_8.NewMeixiV4SkirmishPage = {
+	pg.base.voice_bgm.NewMeixiV4SkirmishPage = {
 		default_bgm = "Beverly_short_inst",
 		special_bgm = "",
 		bgm = "Beverly_short_inst"
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.voice_bgm
-
-	var_2_9.BuildLoginPage = {
+	pg.base.voice_bgm.BuildLoginPage = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.voice_bgm
-
-	var_2_10.LimitChallengeScene = {
+	pg.base.voice_bgm.LimitChallengeScene = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.voice_bgm
-
-	var_2_11.LimitChallengePreCombatLayer = {
+	pg.base.voice_bgm.LimitChallengePreCombatLayer = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.voice_bgm
-
-	var_2_12.ActivityBossGoriziaScene = {
+	pg.base.voice_bgm.ActivityBossGoriziaScene = {
 		default_bgm = "battle-boss-italy",
 		special_bgm = "",
 		bgm = "battle-boss-italy"
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.voice_bgm
-
-	var_2_13.SkinGuide3Page = {
+	pg.base.voice_bgm.SkinGuide3Page = {
 		default_bgm = "theme-schoolfuture",
 		special_bgm = "",
 		bgm = "theme-schoolfuture"
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.voice_bgm
-
-	var_2_14.SSSSCollectPage = {
+	pg.base.voice_bgm.SSSSCollectPage = {
 		default_bgm = "ssss-az-pv",
 		special_bgm = "",
 		bgm = "ssss-az-pv"
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.voice_bgm
-
-	var_2_15.SSSSMainPage = {
+	pg.base.voice_bgm.SSSSMainPage = {
 		default_bgm = "ssss-az-pv",
 		special_bgm = "",
 		bgm = "ssss-1114A"
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.voice_bgm
-
-	var_2_16.SSSSPtPage = {
+	pg.base.voice_bgm.SSSSPtPage = {
 		default_bgm = "ssss-az-story",
 		special_bgm = "",
 		bgm = "ssss-az-story"
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.voice_bgm
-
-	var_2_17.GridGameReView = {
+	pg.base.voice_bgm.GridGameReView = {
 		default_bgm = "ssss-az-pv",
 		special_bgm = "",
 		bgm = "ssss-1114A"
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.voice_bgm
-
-	var_2_18.USCastle2023Scene = {
+	pg.base.voice_bgm.USCastle2023Scene = {
 		default_bgm = "story-expo-lastday",
 		special_bgm = "",
 		bgm = "story-expo-lastday"
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.voice_bgm
-
-	var_2_19.FeastScene = {
+	pg.base.voice_bgm.FeastScene = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.voice_bgm
-
-	var_2_20.CastleGameView = {
+	pg.base.voice_bgm.CastleGameView = {
 		default_bgm = "story-richang-3",
 		special_bgm = "",
 		bgm = "story-richang-3"
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.voice_bgm
-
-	var_2_21.ClemenceauMainPage = {
+	pg.base.voice_bgm.ClemenceauMainPage = {
 		default_bgm = "story-clemenceau-judgement",
 		special_bgm = "",
 		bgm = "story-clemenceau-judgement"
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.voice_bgm
-
-	var_2_22.SaDingPtPage = {
+	pg.base.voice_bgm.SaDingPtPage = {
 		default_bgm = "story-clemenceau-judgement",
 		special_bgm = "",
 		bgm = "story-clemenceau-judgement"
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.voice_bgm
-
-	var_2_23.SaDingFramePage = {
+	pg.base.voice_bgm.SaDingFramePage = {
 		default_bgm = "theme-marcopolo",
 		special_bgm = "",
 		bgm = "theme-marcopolo"
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.voice_bgm
-
-	var_2_24.ExpoTicketTaskPage = {
+	pg.base.voice_bgm.ExpoTicketTaskPage = {
 		default_bgm = "theme-clemenceau",
 		special_bgm = "",
 		bgm = "theme-clemenceau"
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.voice_bgm
-
-	var_2_25.AugustTecCatchupPage = {
+	pg.base.voice_bgm.AugustTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.voice_bgm
-
-	var_2_26.SurveyPage = {
+	pg.base.voice_bgm.SurveyPage = {
 		default_bgm = "level02",
 		special_bgm = "",
 		bgm = "level02"
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.voice_bgm
-
-	var_2_27.CrusingDisplayActPage = {
+	pg.base.voice_bgm.CrusingDisplayActPage = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.voice_bgm
-
-	var_2_28.YueYeWeiYangPage = {
+	pg.base.voice_bgm.YueYeWeiYangPage = {
 		default_bgm = "xinnong-1",
 		special_bgm = "",
 		bgm = "xinnong-1"
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.voice_bgm
-
-	var_2_29.ChongYingFramePage = {
+	pg.base.voice_bgm.ChongYingFramePage = {
 		default_bgm = "newyear2",
 		special_bgm = "",
 		bgm = "newyear2"
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.voice_bgm
-
-	var_2_30.HakuryuuTecCatchupPage = {
+	pg.base.voice_bgm.HakuryuuTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.voice_bgm
-
-	var_2_31.SixthAnniversaryJPScene = {
+	pg.base.voice_bgm.SixthAnniversaryJPScene = {
 		default_bgm = "cw-level",
 		special_bgm = "",
 		bgm = "cw-level"
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.voice_bgm
-
-	var_2_32.SixthAnniversaryJPHotSpringScene = {
+	pg.base.voice_bgm.SixthAnniversaryJPHotSpringScene = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.voice_bgm
-
-	var_2_33.YunXianMainPage = {
+	pg.base.voice_bgm.YunXianMainPage = {
 		default_bgm = "theme-unzen",
 		special_bgm = "",
 		bgm = "theme-unzen"
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.voice_bgm
-
-	var_2_34.ChaoZhiPtPage = {
+	pg.base.voice_bgm.ChaoZhiPtPage = {
 		default_bgm = "theme-sakuraholyplace",
 		special_bgm = "",
 		bgm = "theme-sakuraholyplace"
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.voice_bgm
-
-	var_2_35.SkinMagazinePage1 = {
+	pg.base.voice_bgm.SkinMagazinePage1 = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.voice_bgm
-
-	var_2_36.JapanSixthLoginPage = {
+	pg.base.voice_bgm.JapanSixthLoginPage = {
 		default_bgm = "bgm-story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "bgm-story-musicanniversary-gorgeous"
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.voice_bgm
-
-	var_2_37.SixInvitePage = {
+	pg.base.voice_bgm.SixInvitePage = {
 		default_bgm = "qe-ova-15",
 		special_bgm = "",
 		bgm = "qe-ova-15"
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.voice_bgm
-
-	var_2_38.SixthAnniversaryJPDarkScene = {
+	pg.base.voice_bgm.SixthAnniversaryJPDarkScene = {
 		default_bgm = "map-longgong",
 		special_bgm = "",
 		bgm = "map-longgong"
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.voice_bgm
-
-	var_2_39.RacingMiniGameView = {
+	pg.base.voice_bgm.RacingMiniGameView = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.voice_bgm
-
-	var_2_40.RacePage = {
+	pg.base.voice_bgm.RacePage = {
 		default_bgm = "story-richang-7",
 		special_bgm = "",
 		bgm = "story-richang-7"
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.voice_bgm
-
-	var_2_41.PiratePage = {
+	pg.base.voice_bgm.PiratePage = {
 		default_bgm = "theme-SeaAndSun-image",
 		special_bgm = "",
 		bgm = "theme-SeaAndSun-image"
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.voice_bgm
-
-	var_2_42.SecretShipyardScene = {
+	pg.base.voice_bgm.SecretShipyardScene = {
 		default_bgm = "theme-SeaAndSun-image",
 		special_bgm = "",
 		bgm = "theme-SeaAndSun-image"
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.voice_bgm
-
-	var_2_43.TempestaMedalCollectionScene = {
+	pg.base.voice_bgm.TempestaMedalCollectionScene = {
 		default_bgm = "theme-tempest-up",
 		special_bgm = "",
 		bgm = "theme-tempest-up"
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.voice_bgm
-
-	var_2_44.PiratePtPage = {
+	pg.base.voice_bgm.PiratePtPage = {
 		default_bgm = "Story-temepest-2",
 		special_bgm = "",
 		bgm = "Story-temepest-2"
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.voice_bgm
-
-	var_2_45.PirateMainPage = {
+	pg.base.voice_bgm.PirateMainPage = {
 		default_bgm = "theme-tempest",
 		special_bgm = "",
 		bgm = "theme-tempest"
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.voice_bgm
-
-	var_2_46.HarborBackHillScene = {
+	pg.base.voice_bgm.HarborBackHillScene = {
 		default_bgm = "Theme-SeaAndSun-soft",
 		special_bgm = "",
 		bgm = "Theme-SeaAndSun-soft"
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.voice_bgm
-
-	var_2_47.CastlePtPage = {
+	pg.base.voice_bgm.CastlePtPage = {
 		default_bgm = "story-oldcastle-carnival",
 		special_bgm = "",
 		bgm = "story-oldcastle-carnival"
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.voice_bgm
-
-	var_2_48.CastleMainScene = {
+	pg.base.voice_bgm.CastleMainScene = {
 		default_bgm = "story-oldcastle-carnival",
 		special_bgm = "",
 		bgm = "story-oldcastle-carnival"
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.voice_bgm
-
-	var_2_49.DaofengV2LoginPage = {
+	pg.base.voice_bgm.DaofengV2LoginPage = {
 		default_bgm = "theme-IJNdailymeeting",
 		special_bgm = "",
 		bgm = "theme-IJNdailymeeting"
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.voice_bgm
-
-	var_2_50.JapanV2frameRePage = {
+	pg.base.voice_bgm.JapanV2frameRePage = {
 		default_bgm = "battle-longgong",
 		special_bgm = "",
 		bgm = "battle-longgong"
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.voice_bgm
-
-	var_2_51.DaofengMainRePage = {
+	pg.base.voice_bgm.DaofengMainRePage = {
 		default_bgm = "Map-longgong",
 		special_bgm = "",
 		bgm = "Map-longgong"
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.voice_bgm
-
-	var_2_52.DaofengPTRePage = {
+	pg.base.voice_bgm.DaofengPTRePage = {
 		default_bgm = "Theme-longgong",
 		special_bgm = "",
 		bgm = "Theme-longgong"
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.voice_bgm
-
-	var_2_53.CollectionEventPtPage = {
+	pg.base.voice_bgm.CollectionEventPtPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.voice_bgm
-
-	var_2_54.BlackFridayGiftPage = {
+	pg.base.voice_bgm.BlackFridayGiftPage = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.voice_bgm
-
-	var_2_55.BlackFridayWithManualSignPage = {
+	pg.base.voice_bgm.BlackFridayWithManualSignPage = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.voice_bgm
-
-	var_2_56.SenrankaguraMainPage = {
+	pg.base.voice_bgm.SenrankaguraMainPage = {
 		default_bgm = "sk-az-battle",
 		special_bgm = "",
 		bgm = "sk-az-battle"
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.voice_bgm
-
-	var_2_57.SenrankaguraPtPage = {
+	pg.base.voice_bgm.SenrankaguraPtPage = {
 		default_bgm = "sk-az-pv2",
 		special_bgm = "",
 		bgm = "sk-az-pv2"
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.voice_bgm
-
-	var_2_58.SenrankaguraBackHillScene = {
+	pg.base.voice_bgm.SenrankaguraBackHillScene = {
 		default_bgm = "sk-az-story",
 		special_bgm = "",
 		bgm = "sk-az-story"
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.voice_bgm
-
-	var_2_59.SenrankaguraTaskPage = {
+	pg.base.voice_bgm.SenrankaguraTaskPage = {
 		default_bgm = "sk-az-pv1",
 		special_bgm = "",
 		bgm = "sk-az-pv1"
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.voice_bgm
-
-	var_2_60.SenrankaguraMedalScene = {
+	pg.base.voice_bgm.SenrankaguraMedalScene = {
 		default_bgm = "sk-az-battle",
 		special_bgm = "",
 		bgm = "sk-az-battle"
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.voice_bgm
-
-	var_2_61.SenrankaguraTrainScene = {
+	pg.base.voice_bgm.SenrankaguraTrainScene = {
 		default_bgm = "sk-az-pv2",
 		special_bgm = "",
 		bgm = "sk-az-pv2"
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.voice_bgm
-
-	var_2_62.NewServerMainPage = {
+	pg.base.voice_bgm.NewServerMainPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.voice_bgm
-
-	var_2_63.NewServerLoginPage = {
+	pg.base.voice_bgm.NewServerLoginPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.voice_bgm
-
-	var_2_64.VoteEntranceScene = {
+	pg.base.voice_bgm.VoteEntranceScene = {
 		default_bgm = "votefes-start",
 		bgm = "votefes-start",
 		special_bgm = {
@@ -1560,11 +874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.voice_bgm
-
-	var_2_65.VoteScene = {
+	pg.base.voice_bgm.VoteScene = {
 		default_bgm = "votefes-start",
 		bgm = "votefes-start",
 		special_bgm = {
@@ -1608,11 +918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.voice_bgm
-
-	var_2_66.VoteExchangeScene = {
+	pg.base.voice_bgm.VoteExchangeScene = {
 		default_bgm = "votefes-start",
 		bgm = "votefes-start",
 		special_bgm = {
@@ -1656,11 +962,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.voice_bgm
-
-	var_2_67.VoteRankScene = {
+	pg.base.voice_bgm.VoteRankScene = {
 		default_bgm = "votefes-start",
 		bgm = "votefes-start",
 		special_bgm = {
@@ -1704,11 +1006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.voice_bgm
-
-	var_2_68.VoteScheduleScene = {
+	pg.base.voice_bgm.VoteScheduleScene = {
 		default_bgm = "votefes-start",
 		bgm = "votefes-start",
 		special_bgm = {
@@ -1752,278 +1050,157 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.voice_bgm
-
-	var_2_69.VoteFameHallLayer = {
+	pg.base.voice_bgm.VoteFameHallLayer = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.voice_bgm
-
-	var_2_70.StarSeaFramePage = {
+	pg.base.voice_bgm.StarSeaFramePage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.voice_bgm
-
-	var_2_71.StarSeaFacilityPage = {
+	pg.base.voice_bgm.StarSeaFacilityPage = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.voice_bgm
-
-	var_2_72.AnchorageTecCatchupPage = {
+	pg.base.voice_bgm.AnchorageTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.voice_bgm
-
-	var_2_73.BlackFridayWithManualSignPageInCH = {
+	pg.base.voice_bgm.BlackFridayWithManualSignPageInCH = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.voice_bgm
-
-	var_2_74.BlackFridayGiftPageInCH = {
+	pg.base.voice_bgm.BlackFridayGiftPageInCH = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.voice_bgm
-
-	var_2_75.StarSeaMainPage = {
+	pg.base.voice_bgm.StarSeaMainPage = {
 		default_bgm = "theme-ucnf-image",
 		special_bgm = "",
 		bgm = "theme-ucnf-image"
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.voice_bgm
-
-	var_2_76.StarSeaPtPage = {
+	pg.base.voice_bgm.StarSeaPtPage = {
 		default_bgm = "theme-ucnf-image",
 		special_bgm = "",
 		bgm = "theme-ucnf-image"
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.voice_bgm
-
-	var_2_77.SkinGuide5Page = {
+	pg.base.voice_bgm.SkinGuide5Page = {
 		default_bgm = "story-dazy-style",
 		special_bgm = "",
 		bgm = "story-dazy-style"
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.voice_bgm
-
-	var_2_78.VampireSkinPage2 = {
+	pg.base.voice_bgm.VampireSkinPage2 = {
 		default_bgm = "theme-highseasfleet-reborn",
 		special_bgm = "",
 		bgm = "theme-highseasfleet-reborn"
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.voice_bgm
-
-	var_2_79.NewYearShrinePage2024 = {
+	pg.base.voice_bgm.NewYearShrinePage2024 = {
 		default_bgm = "newyear2",
 		special_bgm = "",
 		bgm = "newyear2"
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.voice_bgm
-
-	var_2_80.NewYearFestival2024Scene = {
+	pg.base.voice_bgm.NewYearFestival2024Scene = {
 		default_bgm = "qe-ova-15",
 		special_bgm = "",
 		bgm = "qe-ova-15"
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.voice_bgm
-
-	var_2_81.Shrine2022View = {
+	pg.base.voice_bgm.Shrine2022View = {
 		default_bgm = "newyear2",
 		special_bgm = "",
 		bgm = "newyear2"
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.voice_bgm
-
-	var_2_82.SkinMagazinePage4 = {
+	pg.base.voice_bgm.SkinMagazinePage4 = {
 		default_bgm = "story-dazy-style",
 		special_bgm = "",
 		bgm = "story-dazy-style"
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.voice_bgm
-
-	var_2_83.NewYear24LoginPage = {
+	pg.base.voice_bgm.NewYear24LoginPage = {
 		default_bgm = "theme-SeaAndSun-image",
 		special_bgm = "",
 		bgm = "theme-SeaAndSun-image"
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.voice_bgm
-
-	var_2_84.BeachGamePage = {
+	pg.base.voice_bgm.BeachGamePage = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.voice_bgm
-
-	var_2_85.DeXiMainPage = {
+	pg.base.voice_bgm.DeXiMainPage = {
 		default_bgm = "story-midgard",
 		special_bgm = "",
 		bgm = "story-midgard"
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.voice_bgm
-
-	var_2_86.DexiV4PtPage = {
+	pg.base.voice_bgm.DexiV4PtPage = {
 		default_bgm = "story-midgard",
 		special_bgm = "",
 		bgm = "story-midgard"
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.voice_bgm
-
-	var_2_87.DeXiQianShaoReRePtPage = {
+	pg.base.voice_bgm.DeXiQianShaoReRePtPage = {
 		default_bgm = "bsm-6",
 		special_bgm = "",
 		bgm = "bsm-6"
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.voice_bgm
-
-	var_2_88.HuttenV2LoginPage = {
+	pg.base.voice_bgm.HuttenV2LoginPage = {
 		default_bgm = "bsm-4",
 		special_bgm = "",
 		bgm = "bsm-4"
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.voice_bgm
-
-	var_2_89.FeiyunLoginPage = {
+	pg.base.voice_bgm.FeiyunLoginPage = {
 		default_bgm = "main-chunjie3",
 		special_bgm = "",
 		bgm = "main-chunjie3"
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.voice_bgm
-
-	var_2_90.ColoringAnshanUI = {
+	pg.base.voice_bgm.ColoringAnshanUI = {
 		default_bgm = "main-chunjie",
 		special_bgm = "",
 		bgm = "main-chunjie"
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.voice_bgm
-
-	var_2_91.TaiyuanAlterItemPage = {
+	pg.base.voice_bgm.TaiyuanAlterItemPage = {
 		default_bgm = "main-chunjie3",
 		special_bgm = "",
 		bgm = "main-chunjie3"
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.voice_bgm
-
-	var_2_92.SkinMagazineSpringPage1 = {
+	pg.base.voice_bgm.SkinMagazineSpringPage1 = {
 		default_bgm = "main-chunjie4-2",
 		special_bgm = "",
 		bgm = "main-chunjie4-2"
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.voice_bgm
-
-	var_2_93.NewYearGreetingPtPage = {
+	pg.base.voice_bgm.NewYearGreetingPtPage = {
 		default_bgm = "main-chunjie3",
 		special_bgm = "",
 		bgm = "main-chunjie3"
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.voice_bgm
-
-	var_2_94.FireworksPt2024Page = {
+	pg.base.voice_bgm.FireworksPt2024Page = {
 		default_bgm = "main-chunjie3",
 		special_bgm = "",
 		bgm = "main-chunjie3"
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.voice_bgm
-
-	var_2_95.SpringFestival2024Scene = {
+	pg.base.voice_bgm.SpringFestival2024Scene = {
 		default_bgm = "main-chunjie2",
 		special_bgm = "",
 		bgm = "main-chunjie2"
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.voice_bgm
-
-	var_2_96.ActivityBossHuanChangScene = {
+	pg.base.voice_bgm.ActivityBossHuanChangScene = {
 		default_bgm = "main-chunjie5-1",
 		special_bgm = "",
 		bgm = "main-chunjie5-1"
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.voice_bgm
-
-	var_2_97.EducateMemoryLayer = {
+	pg.base.voice_bgm.EducateMemoryLayer = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.voice_bgm
-
-	var_2_98.EducatePolaroidLayer = {
+	pg.base.voice_bgm.EducatePolaroidLayer = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_2_98
-	var_2_98.base.voice_bgm.EducateEndingLayer = {
+	pg.base.voice_bgm.EducateEndingLayer = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
@@ -2032,3651 +1209,2096 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.voice_bgm
-
-	var_3_0.EducateScheduleScene = {
+	pg.base.voice_bgm.EducateScheduleScene = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.voice_bgm
-
-	var_3_1.EducateMapScene = {
+	pg.base.voice_bgm.EducateMapScene = {
 		default_bgm = "votefes-start",
 		special_bgm = "",
 		bgm = "votefes-start"
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.voice_bgm
-
-	var_3_2.EducateCharDockScene = {
+	pg.base.voice_bgm.EducateCharDockScene = {
 		default_bgm = "story-richang-8",
 		special_bgm = "",
 		bgm = "story-richang-8"
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.voice_bgm
-
-	var_3_3.EducateCharProfileScene = {
+	pg.base.voice_bgm.EducateCharProfileScene = {
 		default_bgm = "story-richang-8",
 		special_bgm = "",
 		bgm = "story-richang-8"
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.voice_bgm
-
-	var_3_4.SkinMagazineSpringPage2 = {
+	pg.base.voice_bgm.SkinMagazineSpringPage2 = {
 		default_bgm = "Main-chunjie4-2",
 		special_bgm = "",
 		bgm = "Main-chunjie4-2"
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.voice_bgm
-
-	var_3_5.LanternFestivalView = {
+	pg.base.voice_bgm.LanternFestivalView = {
 		default_bgm = "main-chunjie2",
 		special_bgm = "",
 		bgm = "main-chunjie2"
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.voice_bgm
-
-	var_3_6.ChkalovTecCatchupPage = {
+	pg.base.voice_bgm.ChkalovTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.voice_bgm
-
-	var_3_7.MaoxiV4FramePage = {
+	pg.base.voice_bgm.MaoxiV4FramePage = {
 		default_bgm = "story-richang-sooth",
 		special_bgm = "",
 		bgm = "story-richang-sooth"
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.voice_bgm
-
-	var_3_8.MaoxiV4TaskPage = {
+	pg.base.voice_bgm.MaoxiV4TaskPage = {
 		default_bgm = "story-richang-sooth",
 		special_bgm = "",
 		bgm = "story-richang-sooth"
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.voice_bgm
-
-	var_3_9.MaoxiV4MainPage = {
+	pg.base.voice_bgm.MaoxiV4MainPage = {
 		default_bgm = "theme-antarctica",
 		special_bgm = "",
 		bgm = "theme-antarctica"
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.voice_bgm
-
-	var_3_10.MaoxiV4PtPage = {
+	pg.base.voice_bgm.MaoxiV4PtPage = {
 		default_bgm = "story-antarctica-serious",
 		special_bgm = "",
 		bgm = "story-antarctica-serious"
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.voice_bgm
-
-	var_3_11.SleeplessCityPage = {
+	pg.base.voice_bgm.SleeplessCityPage = {
 		default_bgm = "story-nonightcity",
 		special_bgm = "",
 		bgm = "story-nonightcity"
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.voice_bgm
-
-	var_3_12.YidaliSPMainPage = {
+	pg.base.voice_bgm.YidaliSPMainPage = {
 		default_bgm = "battle-boss-italy",
 		special_bgm = "",
 		bgm = "battle-boss-italy"
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.voice_bgm
-
-	var_3_13.YidaliSPPTPage = {
+	pg.base.voice_bgm.YidaliSPPTPage = {
 		default_bgm = "theme-arbitrator-tower",
 		special_bgm = "",
 		bgm = "theme-arbitrator-tower"
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.voice_bgm
-
-	var_3_14.YidaliSPV2LoginPage = {
+	pg.base.voice_bgm.YidaliSPV2LoginPage = {
 		default_bgm = "story-italy",
 		special_bgm = "",
 		bgm = "story-italy"
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.voice_bgm
-
-	var_3_15.MonopolyPtPage = {
+	pg.base.voice_bgm.MonopolyPtPage = {
 		default_bgm = "story-richang-2",
 		special_bgm = "",
 		bgm = "story-richang-2"
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.voice_bgm
-
-	var_3_16.MonopolyPtScene = {
+	pg.base.voice_bgm.MonopolyPtScene = {
 		default_bgm = "story-richang-3",
 		special_bgm = "",
 		bgm = "story-richang-3"
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.voice_bgm
-
-	var_3_17.OtherWorldMainPage = {
+	pg.base.voice_bgm.OtherWorldMainPage = {
 		default_bgm = "story-mmorpg",
 		special_bgm = "",
 		bgm = "story-mmorpg"
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.voice_bgm
-
-	var_3_18.OtherworldTerminalLayer = {
+	pg.base.voice_bgm.OtherworldTerminalLayer = {
 		default_bgm = "story-mmorpg",
 		special_bgm = "",
 		bgm = "story-mmorpg"
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.voice_bgm
-
-	var_3_19.OtherworldBackHillScene = {
+	pg.base.voice_bgm.OtherworldBackHillScene = {
 		default_bgm = "Story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "Story-musicanniversary-gorgeous"
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.voice_bgm
-
-	var_3_20.OtherWorldTempleScene = {
+	pg.base.voice_bgm.OtherWorldTempleScene = {
 		default_bgm = "Theme-SeaAndSun-soft",
 		special_bgm = "",
 		bgm = "Theme-SeaAndSun-soft"
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.voice_bgm
-
-	var_3_21.OtherWorldTaskLayer = {
+	pg.base.voice_bgm.OtherWorldTaskLayer = {
 		default_bgm = "story-mmorpg",
 		special_bgm = "",
 		bgm = "story-mmorpg"
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.voice_bgm
-
-	var_3_22.OtherworldMapScene = {
+	pg.base.voice_bgm.OtherworldMapScene = {
 		default_bgm = "story-mmorpg",
 		special_bgm = "",
 		bgm = "story-mmorpg"
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.voice_bgm
-
-	var_3_23.AprilFoolDiscovery2024Page = {
+	pg.base.voice_bgm.AprilFoolDiscovery2024Page = {
 		default_bgm = "story-battle-16bit-SFC",
 		special_bgm = "",
 		bgm = "story-battle-16bit-SFC"
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.voice_bgm
-
-	var_3_24.MaoxiV3MainPage = {
+	pg.base.voice_bgm.MaoxiV3MainPage = {
 		default_bgm = "battle-deepecho",
 		special_bgm = "",
 		bgm = "battle-deepecho"
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.voice_bgm
-
-	var_3_25.MaoxiV3PtPage = {
+	pg.base.voice_bgm.MaoxiV3PtPage = {
 		default_bgm = "battle-deepecho",
 		special_bgm = "",
 		bgm = "battle-deepecho"
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.voice_bgm
-
-	var_3_26.LoginSignRe1Page = {
+	pg.base.voice_bgm.LoginSignRe1Page = {
 		default_bgm = "battle-boss-deepecho",
 		special_bgm = "",
 		bgm = "battle-boss-deepecho"
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.voice_bgm
-
-	var_3_27.MaoxiV3FrameLightPage = {
+	pg.base.voice_bgm.MaoxiV3FrameLightPage = {
 		default_bgm = "bgm-cccp2",
 		special_bgm = "",
 		bgm = "bgm-cccp2"
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.voice_bgm
-
-	var_3_28.VotingResulitAwardPage = {
+	pg.base.voice_bgm.VotingResulitAwardPage = {
 		default_bgm = "votefes-up",
 		special_bgm = "",
 		bgm = "votefes-up"
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.voice_bgm
-
-	var_3_29.LittleChaijunRePage = {
+	pg.base.voice_bgm.LittleChaijunRePage = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.voice_bgm
-
-	var_3_30.LycorisActivationPage = {
+	pg.base.voice_bgm.LycorisActivationPage = {
 		default_bgm = "theme-akagi-inside",
 		special_bgm = "",
 		bgm = "theme-akagi-inside"
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.voice_bgm
-
-	var_3_31.IdolV3MainPage = {
+	pg.base.voice_bgm.IdolV3MainPage = {
 		default_bgm = "song-Alizarin-full",
 		special_bgm = "",
 		bgm = "song-Alizarin-full"
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.voice_bgm
-
-	var_3_32.IdolV3PtPage = {
+	pg.base.voice_bgm.IdolV3PtPage = {
 		default_bgm = "song-Cyanidin-full-inst",
 		special_bgm = "",
 		bgm = "song-Cyanidin-full-inst"
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.voice_bgm
-
-	var_3_33.MusicFestivalScene3 = {
+	pg.base.voice_bgm.MusicFestivalScene3 = {
 		default_bgm = "song-Cyanidin-full-inst",
 		special_bgm = "",
 		bgm = "song-Cyanidin-full-inst"
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.voice_bgm
-
-	var_3_34.SkinMagazinePage5 = {
+	pg.base.voice_bgm.SkinMagazinePage5 = {
 		default_bgm = "story-richang-11",
 		special_bgm = "",
 		bgm = "story-richang-11"
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.voice_bgm
-
-	var_3_35.XiaoXinNongPtPage = {
+	pg.base.voice_bgm.XiaoXinNongPtPage = {
 		default_bgm = "story-richang-10",
 		special_bgm = "",
 		bgm = "story-richang-10"
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.voice_bgm
-
-	var_3_36.XiefeierIdolMusicPage = {
+	pg.base.voice_bgm.XiefeierIdolMusicPage = {
 		default_bgm = "song-Alizarin-full-inst",
 		special_bgm = "",
 		bgm = "song-Alizarin-full-inst"
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.voice_bgm
-
-	var_3_37.LittleSpeeRePage = {
+	pg.base.voice_bgm.LittleSpeeRePage = {
 		default_bgm = "story-richang-12",
 		special_bgm = "",
 		bgm = "story-richang-12"
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.voice_bgm
-
-	var_3_38.BrestTecCatchupPage = {
+	pg.base.voice_bgm.BrestTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.voice_bgm
-
-	var_3_39.LinerSignPage = {
+	pg.base.voice_bgm.LinerSignPage = {
 		default_bgm = "story-richang-10",
 		special_bgm = "",
 		bgm = "story-richang-10"
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.voice_bgm
-
-	var_3_40.FaxiV4FramePage = {
+	pg.base.voice_bgm.FaxiV4FramePage = {
 		default_bgm = "theme-schoolfuture",
 		special_bgm = "",
 		bgm = "theme-schoolfuture"
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.voice_bgm
-
-	var_3_41.LuodeniTaskPage = {
+	pg.base.voice_bgm.LuodeniTaskPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.voice_bgm
-
-	var_3_42.SeventhAnniversaryMainPage = {
+	pg.base.voice_bgm.SeventhAnniversaryMainPage = {
 		default_bgm = "theme-lightheven",
 		special_bgm = "",
 		bgm = "theme-lightheven"
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.voice_bgm
-
-	var_3_43.AersasiPtPage = {
+	pg.base.voice_bgm.AersasiPtPage = {
 		default_bgm = "theme-lightheven",
 		special_bgm = "",
 		bgm = "theme-lightheven"
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.voice_bgm
-
-	var_3_44.AnniversarySevenLoginPage = {
+	pg.base.voice_bgm.AnniversarySevenLoginPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.voice_bgm
-
-	var_3_45.LinerBackHillScene = {
+	pg.base.voice_bgm.LinerBackHillScene = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.voice_bgm
-
-	var_3_46.LinerLogBookLayer = {
+	pg.base.voice_bgm.LinerLogBookLayer = {
 		default_bgm = "story-niceship-soft",
 		special_bgm = "",
 		bgm = "story-niceship-soft"
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.voice_bgm
-
-	var_3_47.PrayPoolScene = {
+	pg.base.voice_bgm.PrayPoolScene = {
 		default_bgm = "level02",
 		special_bgm = "",
 		bgm = "level02"
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.voice_bgm
-
-	var_3_48.UrExchangeMogadorPage = {
+	pg.base.voice_bgm.UrExchangeMogadorPage = {
 		default_bgm = "theme-vichy-church",
 		special_bgm = "",
 		bgm = "theme-vichy-church"
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.voice_bgm
-
-	var_3_49.SeventhInvitePage = {
+	pg.base.voice_bgm.SeventhInvitePage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.voice_bgm
-
-	var_3_50.XiaoDaDiPtPage = {
+	pg.base.voice_bgm.XiaoDaDiPtPage = {
 		default_bgm = "login-orchestral-ver",
 		special_bgm = "",
 		bgm = "login-orchestral-ver"
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.voice_bgm
-
-	var_3_51.ZhenhaiMuseumPage = {
+	pg.base.voice_bgm.ZhenhaiMuseumPage = {
 		default_bgm = "theme-yixian-soft-loop",
 		special_bgm = "",
 		bgm = "theme-yixian-soft-loop"
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.voice_bgm
-
-	var_3_52.LongwuSkinPage = {
+	pg.base.voice_bgm.LongwuSkinPage = {
 		default_bgm = "story-richang-7",
 		special_bgm = "",
 		bgm = "story-richang-7"
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.voice_bgm
-
-	var_3_53.KelifulanSkinRePage = {
+	pg.base.voice_bgm.KelifulanSkinRePage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.voice_bgm
-
-	var_3_54.GonghaiLoginPage = {
+	pg.base.voice_bgm.GonghaiLoginPage = {
 		default_bgm = "battle-highseasfleet-reborn",
 		special_bgm = "",
 		bgm = "battle-highseasfleet-reborn"
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.voice_bgm
-
-	var_3_55.GongHaiMainPage = {
+	pg.base.voice_bgm.GongHaiMainPage = {
 		default_bgm = "battle-highseasfleet-reborn",
 		special_bgm = "",
 		bgm = "battle-highseasfleet-reborn"
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.voice_bgm
-
-	var_3_56.GongHaiPtRePage = {
+	pg.base.voice_bgm.GongHaiPtRePage = {
 		default_bgm = "theme-highseasfleet",
 		special_bgm = "",
 		bgm = "theme-highseasfleet"
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.voice_bgm
-
-	var_3_57.DexiV4FrameReRePage = {
+	pg.base.voice_bgm.DexiV4FrameReRePage = {
 		default_bgm = "theme-frederick",
 		special_bgm = "",
 		bgm = "theme-frederick"
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.voice_bgm
-
-	var_3_58.ChildishnessMainPage = {
+	pg.base.voice_bgm.ChildishnessMainPage = {
 		default_bgm = "story-richang-7",
 		special_bgm = "",
 		bgm = "story-richang-7"
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.voice_bgm
-
-	var_3_59.KindergartenScene = {
+	pg.base.voice_bgm.KindergartenScene = {
 		default_bgm = "story-richang-9",
 		special_bgm = "",
 		bgm = "story-richang-9"
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.voice_bgm
-
-	var_3_60.TongXinSpringLayer = {
+	pg.base.voice_bgm.TongXinSpringLayer = {
 		default_bgm = "story-richang-10",
 		special_bgm = "",
 		bgm = "story-richang-10"
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.voice_bgm
-
-	var_3_61.BossRushAlvitScene = {
+	pg.base.voice_bgm.BossRushAlvitScene = {
 		default_bgm = "story-richang-12",
 		special_bgm = "",
 		bgm = "story-richang-12"
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.voice_bgm
-
-	var_3_62.HaitianSkinPage = {
+	pg.base.voice_bgm.HaitianSkinPage = {
 		default_bgm = "story-china",
 		special_bgm = "",
 		bgm = "story-china"
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.voice_bgm
-
-	var_3_63.YingxiV3MainPage = {
+	pg.base.voice_bgm.YingxiV3MainPage = {
 		default_bgm = "theme-vanguard",
 		special_bgm = "",
 		bgm = "theme-vanguard"
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.voice_bgm
-
-	var_3_64.YingxiV3PtRePage = {
+	pg.base.voice_bgm.YingxiV3PtRePage = {
 		default_bgm = "theme-royalknights-battle",
 		special_bgm = "",
 		bgm = "theme-royalknights-battle"
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.voice_bgm
-
-	var_3_65.YingxiV3FrameRePage = {
+	pg.base.voice_bgm.YingxiV3FrameRePage = {
 		default_bgm = "level03",
 		special_bgm = "",
 		bgm = "level03"
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.voice_bgm
-
-	var_3_66.LoginSignRe2Page = {
+	pg.base.voice_bgm.LoginSignRe2Page = {
 		default_bgm = "theme-partydress",
 		special_bgm = "",
 		bgm = "theme-partydress"
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.voice_bgm
-
-	var_3_67.HuanMengMainPtHybridPage = {
+	pg.base.voice_bgm.HuanMengMainPtHybridPage = {
 		default_bgm = "theme-clemenceau",
 		special_bgm = "",
 		bgm = "theme-clemenceau"
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.voice_bgm
-
-	var_3_68.SkinMagazinePageSummerRacing = {
+	pg.base.voice_bgm.SkinMagazinePageSummerRacing = {
 		default_bgm = "story-richang-light",
 		special_bgm = "",
 		bgm = "story-richang-light"
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.voice_bgm
-
-	var_3_69.MonopolyCar2024Page = {
+	pg.base.voice_bgm.MonopolyCar2024Page = {
 		default_bgm = "votefes-start",
 		special_bgm = "",
 		bgm = "votefes-start"
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.voice_bgm
-
-	var_3_70.MonopolyCar2024Scene = {
+	pg.base.voice_bgm.MonopolyCar2024Scene = {
 		default_bgm = "votefes-up",
 		special_bgm = "",
 		bgm = "votefes-up"
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.voice_bgm
-
-	var_3_71.JamaicaSkinRePage = {
+	pg.base.voice_bgm.MonopolyCar2026Scene = {
+		default_bgm = "votefes-up",
+		special_bgm = "",
+		bgm = "votefes-up"
+	}
+	pg.base.voice_bgm.JamaicaSkinRePage = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.voice_bgm
-
-	var_3_72.RupprechtTecCatchupPage = {
+	pg.base.voice_bgm.RupprechtTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.voice_bgm
-
-	var_3_73.OutPostTaskPage = {
+	pg.base.voice_bgm.OutPostTaskPage = {
 		default_bgm = "theme-akagi-inside",
 		special_bgm = "",
 		bgm = "theme-akagi-inside"
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.voice_bgm
-
-	var_3_74.MeixiV5FramePage = {
+	pg.base.voice_bgm.MeixiV5FramePage = {
 		default_bgm = "theme-akagi-inside",
 		special_bgm = "",
 		bgm = "theme-akagi-inside"
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.voice_bgm
-
-	var_3_75.MetalWingMainPage = {
+	pg.base.voice_bgm.MetalWingMainPage = {
 		default_bgm = "battle-eagleunion",
 		special_bgm = "",
 		bgm = "battle-eagleunion"
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.voice_bgm
-
-	var_3_76.PittsburghPtPage = {
+	pg.base.voice_bgm.PittsburghPtPage = {
 		default_bgm = "theme-designfleet-VII",
 		special_bgm = "",
 		bgm = "theme-designfleet-VII"
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.voice_bgm
-
-	var_3_77.CowboyTownBackHillScene = {
+	pg.base.voice_bgm.CowboyTownBackHillScene = {
 		default_bgm = "story-richang-westdaily",
 		special_bgm = "",
 		bgm = "story-richang-westdaily"
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.voice_bgm
-
-	var_3_78.TownScene = {
+	pg.base.voice_bgm.TownScene = {
 		default_bgm = "story-richang-westdaily",
 		special_bgm = "",
 		bgm = "story-richang-westdaily"
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.voice_bgm
-
-	var_3_79.RuiFengSpPage = {
+	pg.base.voice_bgm.RuiFengSpPage = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.voice_bgm
-
-	var_3_80.DreamSignPage = {
+	pg.base.voice_bgm.DreamSignPage = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.voice_bgm
-
-	var_3_81.PlymouthTecCatchupPage = {
+	pg.base.voice_bgm.PlymouthTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.voice_bgm
-
-	var_3_82.AmagiACTaskPage = {
+	pg.base.voice_bgm.AmagiACTaskPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.voice_bgm
-
-	var_3_83.AnniV5FramePage = {
+	pg.base.voice_bgm.AnniV5FramePage = {
 		default_bgm = "story-nailuo-theme",
 		special_bgm = "",
 		bgm = "story-nailuo-theme"
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.voice_bgm
-
-	var_3_84.Japan2024AnniversaryMainPage = {
+	pg.base.voice_bgm.Japan2024AnniversaryMainPage = {
 		default_bgm = "theme-amagi-cv",
 		special_bgm = "",
 		bgm = "theme-amagi-cv"
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.voice_bgm
-
-	var_3_85.Jp7thPtPage = {
+	pg.base.voice_bgm.Jp7thPtPage = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.voice_bgm
-
-	var_3_86.DreamlandFullPreviewScene = {
+	pg.base.voice_bgm.DreamlandFullPreviewScene = {
 		default_bgm = "story-fantasyland-summer",
 		special_bgm = "",
 		bgm = "story-fantasyland-summer"
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.voice_bgm
-
-	var_3_87.SeventhInviteJPPage = {
+	pg.base.voice_bgm.SeventhInviteJPPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.voice_bgm
-
-	var_3_88.AnniversarySevenLoginJPPage = {
+	pg.base.voice_bgm.AnniversarySevenLoginJPPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.voice_bgm
-
-	var_3_89.TianlangxingEmojiPage = {
+	pg.base.voice_bgm.TianlangxingEmojiPage = {
 		default_bgm = "story-fantasyland-light",
 		special_bgm = "",
 		bgm = "story-fantasyland-light"
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.voice_bgm
-
-	var_3_90.Dorm3dVolleyballScene = {
+	pg.base.voice_bgm.Dorm3dVolleyballScene = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.voice_bgm
-
-	var_3_91.Dorm3dRoomScene = {
+	pg.base.voice_bgm.Dorm3dRoomScene = {
 		default_bgm = "story-room-sirius",
 		special_bgm = "",
 		bgm = "story-room-sirius"
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.voice_bgm
-
-	var_3_92.DormSignPage = {
+	pg.base.voice_bgm.DormSignPage = {
 		default_bgm = "story-room-sirius",
 		special_bgm = "",
 		bgm = "story-room-sirius"
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.voice_bgm
-
-	var_3_93.JavelinDressSkinPage = {
+	pg.base.voice_bgm.JavelinDressSkinPage = {
 		default_bgm = "theme-partydress",
 		special_bgm = "",
 		bgm = "theme-partydress"
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.voice_bgm
-
-	var_3_94.WorldCruiseTaskPage = {
+	pg.base.voice_bgm.WorldCruiseTaskPage = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.voice_bgm
-
-	var_3_95.WorldCruiseShopPage = {
+	pg.base.voice_bgm.WorldCruiseShopPage = {
 		default_bgm = "theme-SeaAndSun-soft",
 		special_bgm = "",
 		bgm = "theme-SeaAndSun-soft"
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.voice_bgm
-
-	var_3_96.WorldCruiseAwardPage = {
+	pg.base.voice_bgm.WorldCruiseAwardPage = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.voice_bgm
-
-	var_3_97.EatFoodLayer = {
+	pg.base.voice_bgm.EatFoodLayer = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.voice_bgm
-
-	var_3_98.SaDingSkinPage = {
+	pg.base.voice_bgm.SaDingSkinPage = {
 		default_bgm = "story-richang-11",
 		special_bgm = "",
 		bgm = "story-richang-11"
-	}
-	pg = var_3_98
-	var_3_98.base.voice_bgm.YidaliV3FrameRePage = {
-		default_bgm = "story-italy",
-		special_bgm = "",
-		bgm = "story-italy"
 	}
 
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.voice_bgm
-
-	var_4_0.Yidaliv3LoginRePage = {
+	pg.base.voice_bgm.YidaliV3FrameRePage = {
+		default_bgm = "story-italy",
+		special_bgm = "",
+		bgm = "story-italy"
+	}
+	pg.base.voice_bgm.Yidaliv3LoginRePage = {
 		default_bgm = "battle-boss-italy",
 		special_bgm = "",
 		bgm = "battle-boss-italy"
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.voice_bgm
-
-	var_4_1.YidaliV3MainRePage = {
+	pg.base.voice_bgm.YidaliV3MainRePage = {
 		default_bgm = "story-roma-inside",
 		special_bgm = "",
 		bgm = "story-roma-inside"
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.voice_bgm
-
-	var_4_2.YidaliV3PtRePage = {
+	pg.base.voice_bgm.YidaliV3PtRePage = {
 		default_bgm = "story-roma-outside",
 		special_bgm = "",
 		bgm = "story-roma-outside"
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.voice_bgm
-
-	var_4_3.YidaliV3SkinRePage = {
+	pg.base.voice_bgm.YidaliV3SkinRePage = {
 		default_bgm = "story-italy",
 		special_bgm = "",
 		bgm = "story-italy"
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.voice_bgm
-
-	var_4_4.StormSeaMainPage = {
+	pg.base.voice_bgm.StormSeaMainPage = {
 		default_bgm = "theme-ganjisawai",
 		special_bgm = "",
 		bgm = "theme-ganjisawai"
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.voice_bgm
-
-	var_4_5.StormSeaPtPage = {
+	pg.base.voice_bgm.StormSeaPtPage = {
 		default_bgm = "battle-nightmare-theme",
 		special_bgm = "",
 		bgm = "battle-nightmare-theme"
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.voice_bgm
-
-	var_4_6.GhostSkinStoryActPage = {
+	pg.base.voice_bgm.GhostSkinStoryActPage = {
 		default_bgm = "story-ghostnight-fascinsting",
 		special_bgm = "",
 		bgm = "story-ghostnight-fascinsting"
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.voice_bgm
-
-	var_4_7.AirForceActivityPage = {
+	pg.base.voice_bgm.AirForceActivityPage = {
 		default_bgm = "theme-donghuang",
 		special_bgm = "",
 		bgm = "theme-donghuang"
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.voice_bgm
-
-	var_4_8.AirForceOfDragonEmperyUI = {
+	pg.base.voice_bgm.AirForceOfDragonEmperyUI = {
 		default_bgm = "theme-donghuang",
 		special_bgm = "",
 		bgm = "theme-donghuang"
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.voice_bgm
-
-	var_4_9.JapanV3REMainPage = {
+	pg.base.voice_bgm.JapanV3REMainPage = {
 		default_bgm = "story-maystorm",
 		special_bgm = "",
 		bgm = "story-maystorm"
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.voice_bgm
-
-	var_4_10.JapanV3PtPage = {
+	pg.base.voice_bgm.JapanV3PtPage = {
 		default_bgm = "story-mayrain",
 		special_bgm = "",
 		bgm = "story-mayrain"
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.voice_bgm
-
-	var_4_11.JapanV3FrameRePage = {
+	pg.base.voice_bgm.JapanV3FrameRePage = {
 		default_bgm = "theme-misaka",
 		special_bgm = "",
 		bgm = "theme-misaka"
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.voice_bgm
-
-	var_4_12.RuoyueLoginRePage = {
+	pg.base.voice_bgm.RuoyueLoginRePage = {
 		default_bgm = "musashi-1",
 		special_bgm = "",
 		bgm = "musashi-1"
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.voice_bgm
-
-	var_4_13.JapanV3SkinPage = {
+	pg.base.voice_bgm.JapanV3SkinPage = {
 		default_bgm = "story-richang-light",
 		special_bgm = "",
 		bgm = "story-richang-light"
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.voice_bgm
-
-	var_4_14.BlackFridaySalesScene = {
+	pg.base.voice_bgm.BlackFridaySalesScene = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.voice_bgm
-
-	var_4_15.BlackFridayWithManualSignPage_2024 = {
+	pg.base.voice_bgm.BlackFridayWithManualSignPage_2024 = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.voice_bgm
-
-	var_4_16.CryptolaliaScene = {
+	pg.base.voice_bgm.CryptolaliaScene = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.voice_bgm
-
-	var_4_17.WorldMediaCollectionEntranceScene = {
+	pg.base.voice_bgm.WorldMediaCollectionEntranceScene = {
 		default_bgm = "story-2",
 		special_bgm = "",
 		bgm = "story-2"
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.voice_bgm
-
-	var_4_18.WorldMediaCollectionMemoryLayer = {
+	pg.base.voice_bgm.WorldMediaCollectionMemoryLayer = {
 		default_bgm = "story-2",
 		special_bgm = "",
 		bgm = "story-2"
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.voice_bgm
-
-	var_4_19.WorldMediaCollectionRecordLayer = {
+	pg.base.voice_bgm.WorldMediaCollectionRecordLayer = {
 		default_bgm = "story-2",
 		special_bgm = "",
 		bgm = "story-2"
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.voice_bgm
-
-	var_4_20.WorldMediaCollectionFileLayer = {
+	pg.base.voice_bgm.WorldMediaCollectionFileLayer = {
 		default_bgm = "story-2",
 		special_bgm = "",
 		bgm = "story-2"
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.voice_bgm
-
-	var_4_21.ToLoveMainPage = {
+	pg.base.voice_bgm.ToLoveMainPage = {
 		default_bgm = "story-richang-rosy-short",
 		special_bgm = "",
 		bgm = "story-richang-rosy-short"
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.voice_bgm
-
-	var_4_22.ToLovePtPage = {
+	pg.base.voice_bgm.ToLovePtPage = {
 		default_bgm = "story-richang-rosy-short",
 		special_bgm = "",
 		bgm = "story-richang-rosy-short"
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.voice_bgm
-
-	var_4_23.ToloveCollectPage = {
+	pg.base.voice_bgm.ToloveCollectPage = {
 		default_bgm = "story-richang-rosy-short",
 		special_bgm = "",
 		bgm = "story-richang-rosy-short"
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.voice_bgm
-
-	var_4_24.ToLoveCollabBackHillScene = {
+	pg.base.voice_bgm.ToLoveCollabBackHillScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.voice_bgm
-
-	var_4_25.PuzzleConnectLayer = {
+	pg.base.voice_bgm.PuzzleConnectLayer = {
 		default_bgm = "story-richang-refreshing",
 		special_bgm = "",
 		bgm = "story-richang-refreshing"
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.voice_bgm
-
-	var_4_26.PuzzleConnectPlayingUI = {
+	pg.base.voice_bgm.PuzzleConnectPlayingUI = {
 		default_bgm = "story-richang-refreshing",
 		special_bgm = "",
 		bgm = "story-richang-refreshing"
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.voice_bgm
-
-	var_4_27.DeXiV6TaskPage = {
+	pg.base.voice_bgm.DeXiV6TaskPage = {
 		default_bgm = "theme-akagi-meta",
 		special_bgm = "",
 		bgm = "theme-akagi-meta"
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.voice_bgm
-
-	var_4_28.DexiV6FramePage = {
+	pg.base.voice_bgm.DexiV6FramePage = {
 		default_bgm = "story-ironblood-strong",
 		special_bgm = "",
 		bgm = "story-ironblood-strong"
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.voice_bgm
-
-	var_4_29.NewPlymouthTecCatchupPage = {
+	pg.base.voice_bgm.NewPlymouthTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.voice_bgm
-
-	var_4_30.ActiveStarlightHomepage = {
+	pg.base.voice_bgm.ActiveStarlightHomepage = {
 		default_bgm = "story-ironblood-strong",
 		special_bgm = "",
 		bgm = "story-ironblood-strong"
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.voice_bgm
-
-	var_4_31.StarlightAccumulate = {
+	pg.base.voice_bgm.StarlightAccumulate = {
 		default_bgm = "story-ironblood-light",
 		special_bgm = "",
 		bgm = "story-ironblood-light"
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.voice_bgm
-
-	var_4_32.NewYearShrinePage2025 = {
+	pg.base.voice_bgm.NewYearShrinePage2025 = {
 		default_bgm = "newyear2",
 		special_bgm = "",
 		bgm = "newyear2"
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.voice_bgm
-
-	var_4_33.UrExchangeZ52Page = {
+	pg.base.voice_bgm.UrExchangeZ52Page = {
 		default_bgm = "story-richang-partynight",
 		special_bgm = "",
 		bgm = "story-richang-partynight"
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.voice_bgm
-
-	var_4_34.SkinMagazinePage6 = {
+	pg.base.voice_bgm.SkinMagazinePage6 = {
 		default_bgm = "story-richang-light",
 		special_bgm = "",
 		bgm = "story-richang-light"
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.voice_bgm
-
-	var_4_35.StarLightMedalAlbumView = {
+	pg.base.voice_bgm.StarLightMedalAlbumView = {
 		default_bgm = "theme-starbeast",
 		special_bgm = "",
 		bgm = "theme-starbeast"
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.voice_bgm
-
-	var_4_36.USChristmas2024Page = {
+	pg.base.voice_bgm.USChristmas2024Page = {
 		default_bgm = "main-christmas",
 		special_bgm = "",
 		bgm = "main-christmas"
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.voice_bgm
-
-	var_4_37.CurlingGameView = {
+	pg.base.voice_bgm.CurlingGameView = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.voice_bgm
-
-	var_4_38.WorldMediaCollectionAlbumGroupLayer = {
+	pg.base.voice_bgm.WorldMediaCollectionAlbumGroupLayer = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.voice_bgm
-
-	var_4_39.NavalAcademyScene = {
+	pg.base.voice_bgm.NavalAcademyScene = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.voice_bgm
-
-	var_4_40.SkinMagazinePage7 = {
+	pg.base.voice_bgm.SkinMagazinePage7 = {
 		default_bgm = "story-richang-partynight",
 		special_bgm = "",
 		bgm = "story-richang-partynight"
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.voice_bgm
-
-	var_4_41.AmericanIIPtPage = {
+	pg.base.voice_bgm.AmericanIIPtPage = {
 		default_bgm = "theme-aostelab",
 		special_bgm = "",
 		bgm = "theme-aostelab"
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.voice_bgm
-
-	var_4_42.SeaStarsPage = {
+	pg.base.voice_bgm.SeaStarsPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.voice_bgm
-
-	var_4_43.AmericanIISkinRePage = {
+	pg.base.voice_bgm.AmericanIISkinRePage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.voice_bgm
-
-	var_4_44.HornetLoginRePage = {
+	pg.base.voice_bgm.HornetLoginRePage = {
 		default_bgm = "theme-starsea-explo",
 		special_bgm = "",
 		bgm = "theme-starsea-explo"
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.voice_bgm
-
-	var_4_45.OrientedFoldingAmericanIIMainPage = {
+	pg.base.voice_bgm.OrientedFoldingAmericanIIMainPage = {
 		default_bgm = "Beverly_short_inst",
 		special_bgm = "",
 		bgm = "Beverly_short_inst"
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.voice_bgm
-
-	var_4_46.HuaShangQiaoPage = {
+	pg.base.voice_bgm.HuaShangQiaoPage = {
 		default_bgm = "theme-china-jianwu",
 		special_bgm = "",
 		bgm = "theme-china-jianwu"
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.voice_bgm
-
-	var_4_47.FuboLoginPage = {
+	pg.base.voice_bgm.FuboLoginPage = {
 		default_bgm = "theme-china-jianwu",
 		special_bgm = "",
 		bgm = "theme-china-jianwu"
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.voice_bgm
-
-	var_4_48.NewYearWishesPtPage = {
+	pg.base.voice_bgm.NewYearWishesPtPage = {
 		default_bgm = "main-chunjie3",
 		special_bgm = "",
 		bgm = "main-chunjie3"
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.voice_bgm
-
-	var_4_49.NewYearSkinMagazinePage03 = {
+	pg.base.voice_bgm.NewYearSkinMagazinePage03 = {
 		default_bgm = "theme-china-jianwu",
 		special_bgm = "",
 		bgm = "theme-china-jianwu"
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.voice_bgm
-
-	var_4_50.ActivityBossJianwuScene = {
+	pg.base.voice_bgm.ActivityBossJianwuScene = {
 		default_bgm = "theme-china-jianwu",
 		special_bgm = "",
 		bgm = "theme-china-jianwu"
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.voice_bgm
-
-	var_4_51.SpringFashionFestaMedalAlbumView = {
+	pg.base.voice_bgm.SpringFashionFestaMedalAlbumView = {
 		default_bgm = "theme-china-jianwu",
 		special_bgm = "",
 		bgm = "theme-china-jianwu"
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.voice_bgm
-
-	var_4_52.NewEducateMapScene = {
+	pg.base.voice_bgm.NewEducateMapScene = {
 		default_bgm = "votefes-start",
 		special_bgm = "",
 		bgm = "votefes-start"
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.voice_bgm
-
-	var_4_53.NewEducateMemoryLayer = {
+	pg.base.voice_bgm.NewEducateMemoryLayer = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.voice_bgm
-
-	var_4_54.NewEducatePolaroidLayer = {
+	pg.base.voice_bgm.NewEducatePolaroidLayer = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.voice_bgm
-
-	var_4_55.NewEducateEndingLayer = {
+	pg.base.voice_bgm.NewEducateEndingLayer = {
 		default_bgm = "story-richang-quiet",
 		special_bgm = "",
 		bgm = "story-richang-quiet"
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.voice_bgm
-
-	var_4_56.NewEducateScheduleScene = {
+	pg.base.voice_bgm.NewEducateScheduleScene = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.voice_bgm
-
-	var_4_57.NewEducateSelectScene = {
+	pg.base.voice_bgm.NewEducateSelectScene = {
 		default_bgm = "qe-ova-10",
 		special_bgm = "",
 		bgm = "qe-ova-10"
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.voice_bgm
-
-	var_4_58.FireworkAndSpringScene = {
+	pg.base.voice_bgm.FireworkAndSpringScene = {
 		default_bgm = "theme-chunjie2025-2",
 		special_bgm = "",
 		bgm = "theme-chunjie2025-2"
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.voice_bgm
-
-	var_4_59.NewSkinMagazinePage4 = {
+	pg.base.voice_bgm.NewSkinMagazinePage4 = {
 		default_bgm = "theme-chunjie2025-2",
 		special_bgm = "",
 		bgm = "theme-chunjie2025-2"
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.voice_bgm
-
-	var_4_60.CrusingDisplayActPage2 = {
+	pg.base.voice_bgm.CrusingDisplayActPage2 = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.voice_bgm
-
-	var_4_61.ReproductionBulvxieerSPMainPage = {
+	pg.base.voice_bgm.ReproductionBulvxieerSPMainPage = {
 		default_bgm = "story-midgard",
 		special_bgm = "",
 		bgm = "story-midgard"
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.voice_bgm
-
-	var_4_62.ReproductionBulvxieerSPPtPage = {
+	pg.base.voice_bgm.ReproductionBulvxieerSPPtPage = {
 		default_bgm = "story-midgard",
 		special_bgm = "",
 		bgm = "story-midgard"
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.voice_bgm
-
-	var_4_63.ReproductionHornetLoginRePage = {
+	pg.base.voice_bgm.ReproductionHornetLoginRePage = {
 		default_bgm = "bsm-7",
 		special_bgm = "",
 		bgm = "bsm-7"
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.voice_bgm
-
-	var_4_64.ValentineQte2Page = {
+	pg.base.voice_bgm.ValentineQte2Page = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.voice_bgm
-
-	var_4_65.FlandreTecCatchupPage = {
+	pg.base.voice_bgm.FlandreTecCatchupPage = {
 		default_bgm = "theme-kerguelen",
 		special_bgm = "",
 		bgm = "theme-kerguelen"
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.voice_bgm
-
-	var_4_66.YidaliV4SkinPage = {
+	pg.base.voice_bgm.YidaliV4SkinPage = {
 		default_bgm = "theme-marcopolo",
 		special_bgm = "",
 		bgm = "theme-marcopolo"
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.voice_bgm
-
-	var_4_67.YidaliV4FramePage = {
+	pg.base.voice_bgm.YidaliV4FramePage = {
 		default_bgm = "story-theme-sardinia",
 		special_bgm = "",
 		bgm = "story-theme-sardinia"
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.voice_bgm
-
-	var_4_68.CagePage = {
+	pg.base.voice_bgm.CagePage = {
 		default_bgm = "battle-shenguang-holy",
 		special_bgm = "",
 		bgm = "battle-shenguang-holy"
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.voice_bgm
-
-	var_4_69.RaphaelSPPtPage = {
+	pg.base.voice_bgm.RaphaelSPPtPage = {
 		default_bgm = "story-shenguang-holy",
 		special_bgm = "",
 		bgm = "story-shenguang-holy"
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.voice_bgm
-
-	var_4_70.TheNileRiverSkinMagazinePage1 = {
+	pg.base.voice_bgm.TheNileRiverSkinMagazinePage1 = {
 		default_bgm = "story-egypt-mystic",
 		special_bgm = "",
 		bgm = "story-egypt-mystic"
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.voice_bgm
-
-	var_4_71.DivineLightMedalAlbumView = {
+	pg.base.voice_bgm.DivineLightMedalAlbumView = {
 		default_bgm = "story-theme-sardinia",
 		special_bgm = "",
 		bgm = "story-theme-sardinia"
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.voice_bgm
-
-	var_4_72.YingxiV4MainRePage = {
+	pg.base.voice_bgm.YingxiV4MainRePage = {
 		default_bgm = "theme-kerguelen",
 		special_bgm = "",
 		bgm = "theme-kerguelen"
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.voice_bgm
-
-	var_4_73.YingxiV4PtRePage = {
+	pg.base.voice_bgm.YingxiV4PtRePage = {
 		default_bgm = "theme-vichy-revelation",
 		special_bgm = "",
 		bgm = "theme-vichy-revelation"
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.voice_bgm
-
-	var_4_74.YingxiV4FrameRePage = {
+	pg.base.voice_bgm.YingxiV4FrameRePage = {
 		default_bgm = "theme-elizabeth-andmeta",
 		special_bgm = "",
 		bgm = "theme-elizabeth-andmeta"
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.voice_bgm
-
-	var_4_75.YingxiV4LoginRePage = {
+	pg.base.voice_bgm.YingxiV4LoginRePage = {
 		default_bgm = "qe-ova-12",
 		special_bgm = "",
 		bgm = "qe-ova-12"
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.voice_bgm
-
-	var_4_76.YingxiV4SkirmishRePage = {
+	pg.base.voice_bgm.YingxiV4SkirmishRePage = {
 		default_bgm = "qe-ova-1",
 		special_bgm = "",
 		bgm = "qe-ova-1"
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.voice_bgm
-
-	var_4_77.SkinEncoreLoginPage = {
+	pg.base.voice_bgm.SkinEncoreLoginPage = {
 		default_bgm = "story-richang-light",
 		special_bgm = "",
 		bgm = "story-richang-light"
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.voice_bgm
-
-	var_4_78.FulankelinMainPage = {
+	pg.base.voice_bgm.FulankelinMainPage = {
 		default_bgm = "theme-hospital-deep",
 		special_bgm = "",
 		bgm = "theme-hospital-deep"
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.voice_bgm
-
-	var_4_79.FulankelinPtPage = {
+	pg.base.voice_bgm.FulankelinPtPage = {
 		default_bgm = "theme-hospital-deep",
 		special_bgm = "",
 		bgm = "theme-hospital-deep"
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.voice_bgm
-
-	var_4_80.ValleyMessageAlbumView = {
+	pg.base.voice_bgm.ValleyMessageAlbumView = {
 		default_bgm = "theme-hospital-deep",
 		special_bgm = "",
 		bgm = "theme-hospital-deep"
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.voice_bgm
-
-	var_4_81.AprilFoolDiscovery2025Page = {
+	pg.base.voice_bgm.AprilFoolDiscovery2025Page = {
 		default_bgm = "story-battle-16bit",
 		special_bgm = "",
 		bgm = "story-battle-16bit"
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.voice_bgm
-
-	var_4_82.XiaoKeWeiPtRePage = {
+	pg.base.voice_bgm.XiaoKeWeiPtRePage = {
 		default_bgm = "qe-ova-10",
 		special_bgm = "",
 		bgm = "qe-ova-10"
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.voice_bgm
-
-	var_4_83.KurskSPPtRePage = {
+	pg.base.voice_bgm.KurskSPPtRePage = {
 		default_bgm = "battle-deepecho",
 		special_bgm = "",
 		bgm = "battle-deepecho"
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.voice_bgm
-
-	var_4_84.LoginSign1Page = {
+	pg.base.voice_bgm.LoginSign1Page = {
 		default_bgm = "battle-deepecho",
 		special_bgm = "",
 		bgm = "battle-deepecho"
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.voice_bgm
-
-	var_4_85.HeLanMainPage = {
+	pg.base.voice_bgm.HeLanMainPage = {
 		default_bgm = "theme-tulipa",
 		special_bgm = "",
 		bgm = "theme-tulipa"
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.voice_bgm
-
-	var_4_86.HeLanPtPage = {
+	pg.base.voice_bgm.HeLanPtPage = {
 		default_bgm = "story-tulipa-pv",
 		special_bgm = "",
 		bgm = "story-tulipa-pv"
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.voice_bgm
-
-	var_4_87.HeLanLoginRePage = {
+	pg.base.voice_bgm.HeLanLoginRePage = {
 		default_bgm = "story-tulipa-pv",
 		special_bgm = "",
 		bgm = "story-tulipa-pv"
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.voice_bgm
-
-	var_4_88.LittleMusashiPage = {
+	pg.base.voice_bgm.LittleMusashiPage = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.voice_bgm
-
-	var_4_89.XiaoAnKeLeiPtPage = {
+	pg.base.voice_bgm.XiaoAnKeLeiPtPage = {
 		default_bgm = "story-richang-flexible",
 		special_bgm = "",
 		bgm = "story-richang-flexible"
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.voice_bgm
-
-	var_4_90.SpringMagazinePage = {
+	pg.base.voice_bgm.SpringMagazinePage = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.voice_bgm
-
-	var_4_91.TulipKingdomMedalAlbumView = {
+	pg.base.voice_bgm.TulipKingdomMedalAlbumView = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.voice_bgm
-
-	var_4_92.ExpeditionSkinPage = {
+	pg.base.voice_bgm.ExpeditionSkinPage = {
 		default_bgm = "theme-camelot",
 		special_bgm = "",
 		bgm = "theme-camelot"
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.voice_bgm
-
-	var_4_93.HMSFramePage = {
+	pg.base.voice_bgm.HMSFramePage = {
 		default_bgm = "theme-glorious-meta",
 		special_bgm = "",
 		bgm = "theme-glorious-meta"
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.voice_bgm
-
-	var_4_94.HolidayVillaPage = {
+	pg.base.voice_bgm.HolidayVillaPage = {
 		default_bgm = "story-richang-1",
 		special_bgm = "",
 		bgm = "story-richang-1"
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.voice_bgm
-
-	var_4_95.FrancescaPage = {
+	pg.base.voice_bgm.FrancescaPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.voice_bgm
-
-	var_4_96.TrinidadMainPage = {
+	pg.base.voice_bgm.TrinidadMainPage = {
 		default_bgm = "theme-lion",
 		special_bgm = "",
 		bgm = "theme-lion"
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.voice_bgm
-
-	var_4_97.RosePtPage = {
+	pg.base.voice_bgm.RosePtPage = {
 		default_bgm = "story-egypt-mystic",
 		special_bgm = "",
 		bgm = "story-egypt-mystic"
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.voice_bgm
-
-	var_4_98.HolidayVillaIslandMainPage = {
+	pg.base.voice_bgm.HolidayVillaIslandMainPage = {
 		default_bgm = "story-villaisland-light",
 		special_bgm = "",
 		bgm = "story-villaisland-light"
-	}
-	pg = var_4_98
-	var_4_98.base.voice_bgm.HolidayVillaHotSpringScene = {
-		default_bgm = "theme-warmwinter-daily",
-		special_bgm = "",
-		bgm = "theme-warmwinter-daily"
 	}
 
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.voice_bgm
-
-	var_5_0.UrExTrafalgarPage = {
+	pg.base.voice_bgm.HolidayVillaHotSpringScene = {
+		default_bgm = "theme-warmwinter-daily",
+		special_bgm = "",
+		bgm = "theme-warmwinter-daily"
+	}
+	pg.base.voice_bgm.UrExTrafalgarPage = {
 		default_bgm = "story-royalnavy-serious",
 		special_bgm = "",
 		bgm = "story-royalnavy-serious"
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.voice_bgm
-
-	var_5_1.CelebrationPage = {
+	pg.base.voice_bgm.CelebrationPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.voice_bgm
-
-	var_5_2.AnniversaryEightLoginPage = {
+	pg.base.voice_bgm.AnniversaryEightLoginPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.voice_bgm
-
-	var_5_3.CommanderManualLayer = {
+	pg.base.voice_bgm.CommanderManualLayer = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.voice_bgm
-
-	var_5_4.TowerRoseMedalAlbumView = {
+	pg.base.voice_bgm.TowerRoseMedalAlbumView = {
 		default_bgm = "theme-glorious-meta",
 		special_bgm = "",
 		bgm = "theme-glorious-meta"
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.voice_bgm
-
-	var_5_5.HolidayVillaMedalAlbumView = {
+	pg.base.voice_bgm.HolidayVillaMedalAlbumView = {
 		default_bgm = "story-villaisland-light",
 		special_bgm = "",
 		bgm = "story-villaisland-light"
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.voice_bgm
-
-	var_5_6.ChangFengSkinPage = {
+	pg.base.voice_bgm.ChangFengSkinPage = {
 		default_bgm = "china-party",
 		special_bgm = "",
 		bgm = "china-party"
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.voice_bgm
-
-	var_5_7.XiaoAiJiErPage = {
+	pg.base.voice_bgm.XiaoAiJiErPage = {
 		default_bgm = "story-richang-12",
 		special_bgm = "",
 		bgm = "story-richang-12"
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.voice_bgm
-
-	var_5_8.WillOfDeathPage = {
+	pg.base.voice_bgm.WillOfDeathPage = {
 		default_bgm = "brs-1-inst",
 		special_bgm = "",
 		bgm = "brs-1-inst"
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.voice_bgm
-
-	var_5_9.BRSMainPage = {
+	pg.base.voice_bgm.BRSMainPage = {
 		default_bgm = "brs-1",
 		special_bgm = "",
 		bgm = "brs-1"
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.voice_bgm
-
-	var_5_10.HeiYanPtPage = {
+	pg.base.voice_bgm.HeiYanPtPage = {
 		default_bgm = "brs-1-inst",
 		special_bgm = "",
 		bgm = "brs-1-inst"
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.voice_bgm
-
-	var_5_11.HeiYanAwardPage = {
+	pg.base.voice_bgm.HeiYanAwardPage = {
 		default_bgm = "brs-1-inst",
 		special_bgm = "",
 		bgm = "brs-1-inst"
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.voice_bgm
-
-	var_5_12.BRSStagePage = {
+	pg.base.voice_bgm.BRSStagePage = {
 		default_bgm = "brs-1-inst",
 		special_bgm = "",
 		bgm = "brs-1-inst"
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.voice_bgm
-
-	var_5_13.PlantNaximofuPage = {
+	pg.base.voice_bgm.PlantNaximofuPage = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.voice_bgm
-
-	var_5_14.LittleDaihoRePage = {
+	pg.base.voice_bgm.LittleDaihoRePage = {
 		default_bgm = "story-richang-7",
 		special_bgm = "",
 		bgm = "story-richang-7"
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.voice_bgm
-
-	var_5_15.DormSignTwoPage = {
+	pg.base.voice_bgm.DormSignTwoPage = {
 		default_bgm = "story-room-newjersey",
 		special_bgm = "",
 		bgm = "story-room-newjersey"
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.voice_bgm
-
-	var_5_16.BisimaiFrameRePage = {
+	pg.base.voice_bgm.BisimaiFrameRePage = {
 		default_bgm = "bsm-4",
 		special_bgm = "",
 		bgm = "bsm-4"
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.voice_bgm
-
-	var_5_17.BisimaiStoryActRePage = {
+	pg.base.voice_bgm.BisimaiStoryActRePage = {
 		default_bgm = "theme-ulrich",
 		special_bgm = "",
 		bgm = "theme-ulrich"
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.voice_bgm
-
-	var_5_18.BisimaiLoginPage = {
+	pg.base.voice_bgm.BisimaiLoginPage = {
 		default_bgm = "bsm-5",
 		special_bgm = "",
 		bgm = "bsm-5"
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.voice_bgm
-
-	var_5_19.DexiV7MainRePage = {
+	pg.base.voice_bgm.DexiV7MainRePage = {
 		default_bgm = "theme-bismark-reborn",
 		special_bgm = "",
 		bgm = "theme-bismark-reborn"
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.voice_bgm
-
-	var_5_20.DexiV7PtRePage = {
+	pg.base.voice_bgm.DexiV7PtRePage = {
 		default_bgm = "theme-bismark-reborn",
 		special_bgm = "",
 		bgm = "theme-bismark-reborn"
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.voice_bgm
-
-	var_5_21.ZengKeMainPage = {
+	pg.base.voice_bgm.ZengKeMainPage = {
 		default_bgm = "story-spycity-fashion",
 		special_bgm = "",
 		bgm = "story-spycity-fashion"
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.voice_bgm
-
-	var_5_22.ZengKePtPage = {
+	pg.base.voice_bgm.ZengKePtPage = {
 		default_bgm = "story-spycity-fashion",
 		special_bgm = "",
 		bgm = "story-spycity-fashion"
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.voice_bgm
-
-	var_5_23.CamouflageCityMedalAlbumView = {
+	pg.base.voice_bgm.CamouflageCityMedalAlbumView = {
 		default_bgm = "story-spycity-fashion",
 		special_bgm = "",
 		bgm = "story-spycity-fashion"
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.voice_bgm
-
-	var_5_24.SkinEncoreLoginRePage = {
+	pg.base.voice_bgm.SkinEncoreLoginRePage = {
 		default_bgm = "story-dazy-style",
 		special_bgm = "",
 		bgm = "story-dazy-style"
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.voice_bgm
-
-	var_5_25.DailyLevelPage = {
+	pg.base.voice_bgm.DailyLevelPage = {
 		default_bgm = "level",
 		special_bgm = "",
 		bgm = "level"
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.voice_bgm
-
-	var_5_26.LuXieErSkinPage = {
+	pg.base.voice_bgm.LuXieErSkinPage = {
 		default_bgm = "story-richang-7",
 		special_bgm = "",
 		bgm = "story-richang-7"
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.voice_bgm
-
-	var_5_27.RyzaMainRePage = {
+	pg.base.voice_bgm.RyzaMainRePage = {
 		default_bgm = "ryza-1",
 		special_bgm = "",
 		bgm = "ryza-1"
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.voice_bgm
-
-	var_5_28.RyzaPtRePage = {
+	pg.base.voice_bgm.RyzaPtRePage = {
 		default_bgm = "ryza-4",
 		special_bgm = "",
 		bgm = "ryza-4"
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.voice_bgm
-
-	var_5_29.RyzaMGPage = {
+	pg.base.voice_bgm.RyzaMGPage = {
 		default_bgm = "ryza-5",
 		special_bgm = "",
 		bgm = "ryza-5"
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.voice_bgm
-
-	var_5_30.RyzaAwardRePage = {
+	pg.base.voice_bgm.RyzaAwardRePage = {
 		default_bgm = "ryza-1",
 		special_bgm = "",
 		bgm = "ryza-1"
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.voice_bgm
-
-	var_5_31.RyzaTaskRePage = {
+	pg.base.voice_bgm.RyzaTaskRePage = {
 		default_bgm = "ryza-2",
 		special_bgm = "",
 		bgm = "ryza-2"
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.voice_bgm
-
-	var_5_32.RyzaAtelierCompositeRePage = {
+	pg.base.voice_bgm.RyzaAtelierCompositeRePage = {
 		default_bgm = "ryza-10",
 		special_bgm = "",
 		bgm = "ryza-10"
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.voice_bgm
-
-	var_5_33.ALYMainPage = {
+	pg.base.voice_bgm.ALYMainPage = {
 		default_bgm = "yumia-79",
 		special_bgm = "",
 		bgm = "yumia-79"
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.voice_bgm
-
-	var_5_34.ALYAwardPage = {
+	pg.base.voice_bgm.ALYAwardPage = {
 		default_bgm = "yumia-az-story",
 		special_bgm = "",
 		bgm = "yumia-az-story"
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.voice_bgm
-
-	var_5_35.ALYPtPage = {
+	pg.base.voice_bgm.ALYPtPage = {
 		default_bgm = "yumia-70",
 		special_bgm = "",
 		bgm = "yumia-70"
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.voice_bgm
-
-	var_5_36.YoumiyaStrongholdActPage = {
+	pg.base.voice_bgm.YoumiyaStrongholdActPage = {
 		default_bgm = "yumia-46",
 		special_bgm = "",
 		bgm = "yumia-46"
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.voice_bgm
-
-	var_5_37.ALYAtelierCompositeRePage = {
+	pg.base.voice_bgm.ALYAtelierCompositeRePage = {
 		default_bgm = "yumia-70",
 		special_bgm = "",
 		bgm = "yumia-70"
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.voice_bgm
-
-	var_5_38.AterialYumiaCoreBuffLayer = {
+	pg.base.voice_bgm.AterialYumiaCoreBuffLayer = {
 		default_bgm = "yumia-az-theme-pv",
 		special_bgm = "",
 		bgm = "yumia-az-theme-pv"
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.voice_bgm
-
-	var_5_39.KearsargeTecCatchUpPage = {
+	pg.base.voice_bgm.KearsargeTecCatchUpPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.voice_bgm
-
-	var_5_40.Z46SkinRePage = {
+	pg.base.voice_bgm.Z46SkinRePage = {
 		default_bgm = "theme-tulipa",
 		special_bgm = "",
 		bgm = "theme-tulipa"
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.voice_bgm
-
-	var_5_41.ForestVacationSkinPage = {
+	pg.base.voice_bgm.ForestVacationSkinPage = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.voice_bgm
-
-	var_5_42.SecretsAbyssMainPage = {
+	pg.base.voice_bgm.SecretsAbyssMainPage = {
 		default_bgm = "story-enzecheng-theme",
 		special_bgm = "",
 		bgm = "story-enzecheng-theme"
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.voice_bgm
-
-	var_5_43.SecretsAbyssPtPage = {
+	pg.base.voice_bgm.SecretsAbyssPtPage = {
 		default_bgm = "theme-fushun-adventure",
 		special_bgm = "",
 		bgm = "theme-fushun-adventure"
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.voice_bgm
-
-	var_5_44.SecretsAbyssSkinMagazinePage = {
+	pg.base.voice_bgm.SecretsAbyssSkinMagazinePage = {
 		default_bgm = "bar-soft",
 		special_bgm = "",
 		bgm = "bar-soft"
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.voice_bgm
-
-	var_5_45.SecretsAbyssMGPage = {
+	pg.base.voice_bgm.SecretsAbyssMGPage = {
 		default_bgm = "story-game-rhythm",
 		special_bgm = "",
 		bgm = "story-game-rhythm"
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.voice_bgm
-
-	var_5_46.MassenaMedalAlbumView = {
+	pg.base.voice_bgm.MassenaMedalAlbumView = {
 		default_bgm = "story-enzecheng-theme",
 		special_bgm = "",
 		bgm = "story-enzecheng-theme"
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.voice_bgm
-
-	var_5_47.AierdeliqiAlterItemRePage = {
+	pg.base.voice_bgm.AierdeliqiAlterItemRePage = {
 		default_bgm = "story-masazhusai",
 		special_bgm = "",
 		bgm = "story-masazhusai"
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.voice_bgm
-
-	var_5_48.ShimantoTecCatchupPage = {
+	pg.base.voice_bgm.ShimantoTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.voice_bgm
-
-	var_5_49.TianYuTianYuanFramePage = {
+	pg.base.voice_bgm.TianYuTianYuanFramePage = {
 		default_bgm = "theme-akagi-inside",
 		special_bgm = "",
 		bgm = "theme-akagi-inside"
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.voice_bgm
-
-	var_5_50.TianYuTianYuanLoginPage = {
+	pg.base.voice_bgm.TianYuTianYuanLoginPage = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.voice_bgm
-
-	var_5_51.TianYuTianYuanURExchangePage = {
+	pg.base.voice_bgm.TianYuTianYuanURExchangePage = {
 		default_bgm = "story-amahara-stage3",
 		special_bgm = "",
 		bgm = "story-amahara-stage3"
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.voice_bgm
-
-	var_5_52.TianYuTianYuanMainPage = {
+	pg.base.voice_bgm.TianYuTianYuanMainPage = {
 		default_bgm = "story-amahara-stage2",
 		special_bgm = "",
 		bgm = "story-amahara-stage2"
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.voice_bgm
-
-	var_5_53.TianYuTianYuanPtPage = {
+	pg.base.voice_bgm.TianYuTianYuanPtPage = {
 		default_bgm = "story-amahara-stage1",
 		special_bgm = "",
 		bgm = "story-amahara-stage1"
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.voice_bgm
-
-	var_5_54.AnniversaryEightMainPage = {
+	pg.base.voice_bgm.AnniversaryEightMainPage = {
 		default_bgm = "story-ninjacity",
 		special_bgm = "",
 		bgm = "story-ninjacity"
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.voice_bgm
-
-	var_5_55.EighthHotSpringScene = {
+	pg.base.voice_bgm.EighthHotSpringScene = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.voice_bgm
-
-	var_5_56.CityRebuildMapScene = {
+	pg.base.voice_bgm.CityRebuildMapScene = {
 		default_bgm = "story-ninjacity",
 		special_bgm = "",
 		bgm = "story-ninjacity"
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.voice_bgm
-
-	var_5_57.CityRebuildGameLayer = {
+	pg.base.voice_bgm.CityRebuildGameLayer = {
 		default_bgm = "sk-az-battle",
 		special_bgm = "",
 		bgm = "sk-az-battle"
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.voice_bgm
-
-	var_5_58.AnniversaryEightInvitePage = {
+	pg.base.voice_bgm.AnniversaryEightInvitePage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.voice_bgm
-
-	var_5_59.AnniversaryEightLoginJpPage = {
+	pg.base.voice_bgm.AnniversaryEightLoginJpPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.voice_bgm
-
-	var_5_60.AnniversaryEightJpReturnAwardPage = {
+	pg.base.voice_bgm.AnniversaryEightJpReturnAwardPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.voice_bgm
-
-	var_5_61.TianYuTianYuanMedalAlbumView = {
+	pg.base.voice_bgm.TianYuTianYuanMedalAlbumView = {
 		default_bgm = "story-amahara-stage2",
 		special_bgm = "",
 		bgm = "story-amahara-stage2"
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.voice_bgm
-
-	var_5_62.SportAndRacingSkinEncoreLoginPage = {
+	pg.base.voice_bgm.SportAndRacingSkinEncoreLoginPage = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.voice_bgm
-
-	var_5_63.IslandSignPage = {
+	pg.base.voice_bgm.IslandSignPage = {
 		default_bgm = "theme-myisland",
 		special_bgm = "",
 		bgm = "theme-myisland"
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.voice_bgm
-
-	var_5_64.AEBCSMainPage = {
+	pg.base.voice_bgm.AEBCSMainPage = {
 		default_bgm = "danmachi-1",
 		special_bgm = "",
 		bgm = "danmachi-1"
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.voice_bgm
-
-	var_5_65.AEBCSPtPage = {
+	pg.base.voice_bgm.AEBCSPtPage = {
 		default_bgm = "danmachi-2",
 		special_bgm = "",
 		bgm = "danmachi-2"
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.voice_bgm
-
-	var_5_66.AEBCSAwardPage = {
+	pg.base.voice_bgm.AEBCSAwardPage = {
 		default_bgm = "danmachi-az-story",
 		special_bgm = "",
 		bgm = "danmachi-az-story"
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.voice_bgm
-
-	var_5_67.AEBCSHestiaPage = {
+	pg.base.voice_bgm.AEBCSHestiaPage = {
 		default_bgm = "danmachi-3",
 		special_bgm = "",
 		bgm = "danmachi-3"
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.voice_bgm
-
-	var_5_68.AEBCSStoryPage = {
+	pg.base.voice_bgm.AEBCSStoryPage = {
 		default_bgm = "danmachi-3",
 		special_bgm = "",
 		bgm = "danmachi-3"
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.voice_bgm
-
-	var_5_69.ClemenceauMainRePage = {
+	pg.base.voice_bgm.ClemenceauMainRePage = {
 		default_bgm = "theme-clemenceau",
 		special_bgm = "",
 		bgm = "theme-clemenceau"
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.voice_bgm
-
-	var_5_70.ExpoTicketTaskRePage = {
+	pg.base.voice_bgm.ExpoTicketTaskRePage = {
 		default_bgm = "story-clemenceau-judgement",
 		special_bgm = "",
 		bgm = "story-clemenceau-judgement"
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.voice_bgm
-
-	var_5_71.SaDingPtRePage = {
+	pg.base.voice_bgm.SaDingPtRePage = {
 		default_bgm = "story-expo-lastday",
 		special_bgm = "",
 		bgm = "story-expo-lastday"
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.voice_bgm
-
-	var_5_72.SaDingFrameRePage = {
+	pg.base.voice_bgm.SaDingFrameRePage = {
 		default_bgm = "theme-marcopolo",
 		special_bgm = "",
 		bgm = "theme-marcopolo"
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.voice_bgm
-
-	var_5_73.SaDingLoginRePage = {
+	pg.base.voice_bgm.SaDingLoginRePage = {
 		default_bgm = "theme-irisangel",
 		special_bgm = "",
 		bgm = "theme-irisangel"
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.voice_bgm
-
-	var_5_74.SailingShip3MainPage = {
+	pg.base.voice_bgm.SailingShip3MainPage = {
 		default_bgm = "theme-tempest-light",
 		special_bgm = "",
 		bgm = "theme-tempest-light"
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.voice_bgm
-
-	var_5_75.SailingShip3PtPage = {
+	pg.base.voice_bgm.SailingShip3PtPage = {
 		default_bgm = "theme-tempest-light",
 		special_bgm = "",
 		bgm = "theme-tempest-light"
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.voice_bgm
-
-	var_5_76.SailingShip3SkinActPage = {
+	pg.base.voice_bgm.SailingShip3SkinActPage = {
 		default_bgm = "story-ghostnight-fascinsting",
 		special_bgm = "",
 		bgm = "story-ghostnight-fascinsting"
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.voice_bgm
-
-	var_5_77.SailingShip3MedalAlbumView = {
+	pg.base.voice_bgm.SailingShip3MedalAlbumView = {
 		default_bgm = "theme-tempest-light",
 		special_bgm = "",
 		bgm = "theme-tempest-light"
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.voice_bgm
-
-	var_5_78.MarseillaiseSpRePage = {
+	pg.base.voice_bgm.MarseillaiseSpRePage = {
 		default_bgm = "theme-irisangel",
 		special_bgm = "",
 		bgm = "theme-irisangel"
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.voice_bgm
-
-	var_5_79.YunXianMainRePage = {
+	pg.base.voice_bgm.YunXianMainRePage = {
 		default_bgm = "theme-unzen",
 		special_bgm = "",
 		bgm = "theme-unzen"
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.voice_bgm
-
-	var_5_80.XuYuWangYueChaoPtRePage = {
+	pg.base.voice_bgm.XuYuWangYueChaoPtRePage = {
 		default_bgm = "story-unzen",
 		special_bgm = "",
 		bgm = "story-unzen"
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.voice_bgm
-
-	var_5_81.ChongYingFrameRePage = {
+	pg.base.voice_bgm.ChongYingFrameRePage = {
 		default_bgm = "nagato-map",
 		special_bgm = "",
 		bgm = "nagato-map"
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.voice_bgm
-
-	var_5_82.YueYeWeiYangRePage = {
+	pg.base.voice_bgm.YueYeWeiYangRePage = {
 		default_bgm = "story-unzen-heart",
 		special_bgm = "",
 		bgm = "story-unzen-heart"
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.voice_bgm
-
-	var_5_83.ChongYingLoginRePage = {
+	pg.base.voice_bgm.ChongYingLoginRePage = {
 		default_bgm = "story-afterrain-soft",
 		special_bgm = "",
 		bgm = "story-afterrain-soft"
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.voice_bgm
-
-	var_5_84.PSSSkinPage = {
+	pg.base.voice_bgm.PSSSkinPage = {
 		default_bgm = "story-richang-11",
 		special_bgm = "",
 		bgm = "story-richang-11"
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.voice_bgm
-
-	var_5_85.PSSSkinMagazinePage = {
+	pg.base.voice_bgm.PSSSkinMagazinePage = {
 		default_bgm = "story-richang-5",
 		special_bgm = "",
 		bgm = "story-richang-5"
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.voice_bgm
-
-	var_5_86.DALMainPage = {
+	pg.base.voice_bgm.DALMainPage = {
 		default_bgm = "dal-az-battle",
 		special_bgm = "",
 		bgm = "dal-az-battle"
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.voice_bgm
-
-	var_5_87.DALptPage = {
+	pg.base.voice_bgm.DALptPage = {
 		default_bgm = "dal-az-story-up",
 		special_bgm = "",
 		bgm = "dal-az-story-up"
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.voice_bgm
-
-	var_5_88.DALFavorabilityPage = {
+	pg.base.voice_bgm.DALFavorabilityPage = {
 		default_bgm = "dal-az-story-up",
 		special_bgm = "",
 		bgm = "dal-az-story-up"
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.voice_bgm
-
-	var_5_89.DALStagePage = {
+	pg.base.voice_bgm.DALStagePage = {
 		default_bgm = "dal-az-theme",
 		special_bgm = "",
 		bgm = "dal-az-theme"
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.voice_bgm
-
-	var_5_90.DALAwardPage = {
+	pg.base.voice_bgm.DALAwardPage = {
 		default_bgm = "dal-az-theme",
 		special_bgm = "",
 		bgm = "dal-az-theme"
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.voice_bgm
-
-	var_5_91.HelenaCoreActivityUI = {
+	pg.base.voice_bgm.HelenaCoreActivityUI = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.voice_bgm
-
-	var_5_92.XingdengbaoTecCatchupPage = {
+	pg.base.voice_bgm.XingdengbaoTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.voice_bgm
-
-	var_5_93.HelenaFramePage = {
+	pg.base.voice_bgm.HelenaFramePage = {
 		default_bgm = "theme-objectX-spread",
 		special_bgm = "",
 		bgm = "theme-objectX-spread"
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.voice_bgm
-
-	var_5_94.HelenaLoginPage = {
+	pg.base.voice_bgm.HelenaLoginPage = {
 		default_bgm = "story-newsakura",
 		special_bgm = "",
 		bgm = "story-newsakura"
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.voice_bgm
-
-	var_5_95.WinterFestival2025SkinReSellPage = {
+	pg.base.voice_bgm.WinterFestival2025SkinReSellPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.voice_bgm
-
-	var_5_96.WinterFestival2025PassPage = {
+	pg.base.voice_bgm.WinterFestival2025PassPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.voice_bgm
-
-	var_5_97.HelenaMainPage = {
+	pg.base.voice_bgm.HelenaMainPage = {
 		default_bgm = "story-weimu-link",
 		special_bgm = "",
 		bgm = "story-weimu-link"
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.voice_bgm
-
-	var_5_98.HelenaPtNewPage = {
+	pg.base.voice_bgm.HelenaPtNewPage = {
 		default_bgm = "story-date-light",
 		special_bgm = "",
 		bgm = "story-date-light"
 	}
-	pg = var_5_98
-	var_5_98.base.voice_bgm.HelenaUrExchangePage = {
-		default_bgm = "theme-fushun-adventure",
-		special_bgm = "",
-		bgm = "theme-fushun-adventure"
-	}
 
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.voice_bgm
-
-	var_6_0.WinterFestival2025SkinMagazinePage = {
+	pg.base.voice_bgm.HelenaUrExchangePage = {
+		default_bgm = "theme-fushun-adventure",
+		special_bgm = "",
+		bgm = "theme-fushun-adventure"
+	}
+	pg.base.voice_bgm.WinterFestival2025SkinMagazinePage = {
 		default_bgm = "story-fantasyland-summer",
 		special_bgm = "",
 		bgm = "story-fantasyland-summer"
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.voice_bgm
-
-	var_6_1.HamanIITaskSkinPage = {
+	pg.base.voice_bgm.HamanIITaskSkinPage = {
 		default_bgm = "story-richang-9",
 		special_bgm = "",
 		bgm = "story-richang-9"
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.voice_bgm
-
-	var_6_2.TianqiongMedalAlbumView = {
+	pg.base.voice_bgm.TianqiongMedalAlbumView = {
 		default_bgm = "story-weimu-link",
 		special_bgm = "",
 		bgm = "story-weimu-link"
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.voice_bgm
-
-	var_6_3.WinterFestival2025SkinMagazinePage2 = {
+	pg.base.voice_bgm.WinterFestival2025SkinMagazinePage2 = {
 		default_bgm = "story-fantasyland-light",
 		special_bgm = "",
 		bgm = "story-fantasyland-light"
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.voice_bgm
-
-	var_6_4.WinterFestival2025ShrinePage = {
+	pg.base.voice_bgm.WinterFestival2025ShrinePage = {
 		default_bgm = "theme-warmwinter-daily",
 		special_bgm = "",
 		bgm = "theme-warmwinter-daily"
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.voice_bgm
-
-	var_6_5.ANTTFFStoryCollectionPage = {
+	pg.base.voice_bgm.ANTTFFStoryCollectionPage = {
 		default_bgm = "story-weimu-link",
 		special_bgm = "",
 		bgm = "story-weimu-link"
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.voice_bgm
-
-	var_6_6.MeixiT2FrameRePage = {
+	pg.base.voice_bgm.MeixiT2FrameRePage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.voice_bgm
-
-	var_6_7.StarSeaFacilityRePage = {
+	pg.base.voice_bgm.StarSeaFacilityRePage = {
 		default_bgm = "blueocean-image",
 		special_bgm = "",
 		bgm = "blueocean-image"
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.voice_bgm
-
-	var_6_8.BuildLoginRePage = {
+	pg.base.voice_bgm.BuildLoginRePage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.voice_bgm
-
-	var_6_9.StarSeaMainRePage = {
+	pg.base.voice_bgm.StarSeaMainRePage = {
 		default_bgm = "theme-ucnf-image",
 		special_bgm = "",
 		bgm = "theme-ucnf-image"
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.voice_bgm
-
-	var_6_10.StarSeaPtRePage = {
+	pg.base.voice_bgm.StarSeaPtRePage = {
 		default_bgm = "theme-ucnf-image",
 		special_bgm = "",
 		bgm = "theme-ucnf-image"
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.voice_bgm
-
-	var_6_11.LaFeiUrExchangeTemplatePage = {
+	pg.base.voice_bgm.LaFeiUrExchangeTemplatePage = {
 		default_bgm = "theme-ucnf-image",
 		special_bgm = "",
 		bgm = "theme-ucnf-image"
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.voice_bgm
-
-	var_6_12.SardiniaSPMainPage = {
+	pg.base.voice_bgm.SardiniaSPMainPage = {
 		default_bgm = "theme-richang-fashion",
 		special_bgm = "",
 		bgm = "theme-richang-fashion"
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.voice_bgm
-
-	var_6_13.SardiniaSPPtPage = {
+	pg.base.voice_bgm.SardiniaSPPtPage = {
 		default_bgm = "story-richang-fashion-pv",
 		special_bgm = "",
 		bgm = "story-richang-fashion-pv"
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.voice_bgm
-
-	var_6_14.SardiniaSPMedalAlbumView = {
+	pg.base.voice_bgm.SardiniaSPMedalAlbumView = {
 		default_bgm = "theme-richang-fashion",
 		special_bgm = "",
 		bgm = "theme-richang-fashion"
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.voice_bgm
-
-	var_6_15.BossRushVerSardiniaSPScene = {
+	pg.base.voice_bgm.BossRushVerSardiniaSPScene = {
 		default_bgm = "story-richang-fashion-pv",
 		special_bgm = "",
 		bgm = "story-richang-fashion-pv"
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.voice_bgm
-
-	var_6_16.SpringFestival2026MainPage = {
+	pg.base.voice_bgm.SpringFestival2026MainPage = {
 		default_bgm = "story-zhangwu-china",
 		special_bgm = "",
 		bgm = "story-zhangwu-china"
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.voice_bgm
-
-	var_6_17.SpringFestival2026FuboLoginPage = {
+	pg.base.voice_bgm.SpringFestival2026FuboLoginPage = {
 		default_bgm = "theme-fushun-adventure",
 		special_bgm = "",
 		bgm = "theme-fushun-adventure"
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.voice_bgm
-
-	var_6_18.SpringFestival2026SkinMagazinePage = {
+	pg.base.voice_bgm.SpringFestival2026SkinMagazinePage = {
 		default_bgm = "story-zhangwu-china",
 		special_bgm = "",
 		bgm = "story-zhangwu-china"
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.voice_bgm
-
-	var_6_19.SpringFestival2026RedPacketPage = {
+	pg.base.voice_bgm.SpringFestival2026RedPacketPage = {
 		default_bgm = "main-chunjie2",
 		special_bgm = "",
 		bgm = "main-chunjie2"
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.voice_bgm
-
-	var_6_20.SpringFestival2026FireworkAndSpringPage = {
+	pg.base.voice_bgm.SpringFestival2026FireworkAndSpringPage = {
 		default_bgm = "main-chunjie4-2",
 		special_bgm = "",
 		bgm = "main-chunjie4-2"
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.voice_bgm
-
-	var_6_21.SpringFestival2026NewYearWishesPtPage = {
+	pg.base.voice_bgm.SpringFestival2026NewYearWishesPtPage = {
 		default_bgm = "main-chunjie",
 		special_bgm = "",
 		bgm = "main-chunjie"
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.voice_bgm
-
-	var_6_22.SpringFestival2026PacGamePage = {
+	pg.base.voice_bgm.SpringFestival2026PacGamePage = {
 		default_bgm = "theme-fushun-adventure",
 		special_bgm = "",
 		bgm = "theme-fushun-adventure"
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.voice_bgm
-
-	var_6_23.DonghuangMedalAlbumView = {
+	pg.base.voice_bgm.DonghuangMedalAlbumView = {
 		default_bgm = "theme-china-zhangwu",
 		special_bgm = "",
 		bgm = "theme-china-zhangwu"
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.voice_bgm
-
-	var_6_24.ActivityBossZhangwuUI = {
+	pg.base.voice_bgm.ActivityBossZhangwuUI = {
 		default_bgm = "story-zhangwu-china",
 		special_bgm = "",
 		bgm = "story-zhangwu-china"
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.voice_bgm
-
-	var_6_25.SpringFestival2026ColoringAnshanscene = {
+	pg.base.voice_bgm.SpringFestival2026ColoringAnshanscene = {
 		default_bgm = "story-china",
 		special_bgm = "",
 		bgm = "story-china"
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.voice_bgm
-
-	var_6_26.LoveLetterActivityScene = {
+	pg.base.voice_bgm.LoveLetterActivityScene = {
 		default_bgm = "story-richang-rosy-short",
 		special_bgm = "",
 		bgm = "story-richang-rosy-short"
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.voice_bgm
-
-	var_6_27.LightLoginTemplatePage = {
+	pg.base.voice_bgm.LightLoginTemplatePage = {
 		default_bgm = "theme-fushun-adventure",
 		special_bgm = "",
 		bgm = "theme-fushun-adventure"
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.voice_bgm
-
-	var_6_28.MoscowURMainPage = {
+	pg.base.voice_bgm.MoscowURMainPage = {
 		default_bgm = "story-kezhan-china",
 		special_bgm = "",
 		bgm = "story-kezhan-china"
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.voice_bgm
-
-	var_6_29.MoscowURPtPage = {
+	pg.base.voice_bgm.MoscowURPtPage = {
 		default_bgm = "story-china-0226-pv",
 		special_bgm = "",
 		bgm = "story-china-0226-pv"
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.voice_bgm
-
-	var_6_30.MedalAlbumMoskvaView = {
+	pg.base.voice_bgm.MedalAlbumMoskvaView = {
 		default_bgm = "story-china-0226-pv",
 		special_bgm = "",
 		bgm = "story-china-0226-pv"
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.voice_bgm
-
-	var_6_31.LiquorFloorUI = {
+	pg.base.voice_bgm.LiquorFloorUI = {
 		default_bgm = "story-kezhan-china",
 		special_bgm = "",
 		bgm = "story-kezhan-china"
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.voice_bgm
-
-	var_6_32.AprilFoolDiscovery2026Page = {
+	pg.base.voice_bgm.AprilFoolDiscovery2026Page = {
 		default_bgm = "story-dazy-style",
 		special_bgm = "",
 		bgm = "story-dazy-style"
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.voice_bgm
-
-	var_6_33.YunLongSPMainPage = {
+	pg.base.voice_bgm.YunLongSPMainPage = {
 		default_bgm = "story-wanderingcity-future",
 		special_bgm = "",
 		bgm = "story-wanderingcity-future"
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.voice_bgm
-
-	var_6_34.YunLongSPPtPage = {
+	pg.base.voice_bgm.YunLongSPPtPage = {
 		default_bgm = "story-wanderingcity-future",
 		special_bgm = "",
 		bgm = "story-wanderingcity-future"
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.voice_bgm
-
-	var_6_35.YunLongSPMedalAlbumView = {
+	pg.base.voice_bgm.YunLongSPMedalAlbumView = {
 		default_bgm = "story-wanderingcity-future",
 		special_bgm = "",
 		bgm = "story-wanderingcity-future"
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.voice_bgm
-
-	var_6_36.XiaoDaDiPtRePage = {
+	pg.base.voice_bgm.XiaoDaDiPtRePage = {
 		default_bgm = "login-orchestral-ver",
 		special_bgm = "",
 		bgm = "login-orchestral-ver"
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.voice_bgm
-
-	var_6_37.MaoxiV5MainPage = {
+	pg.base.voice_bgm.MaoxiV5MainPage = {
 		default_bgm = "theme-antarctica",
 		special_bgm = "",
 		bgm = "theme-antarctica"
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.voice_bgm
-
-	var_6_38.MaoxiV5PtPage = {
+	pg.base.voice_bgm.MaoxiV5PtPage = {
 		default_bgm = "story-antarctica-serious",
 		special_bgm = "",
 		bgm = "story-antarctica-serious"
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.voice_bgm
-
-	var_6_39.MaoxiV5LoginPage = {
+	pg.base.voice_bgm.MaoxiV5LoginPage = {
 		default_bgm = "theme-merkuriameta",
 		special_bgm = "",
 		bgm = "theme-merkuriameta"
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.voice_bgm
-
-	var_6_40.MaoxiV5TaskPage = {
+	pg.base.voice_bgm.MaoxiV5TaskPage = {
 		default_bgm = "story-richang-sooth",
 		special_bgm = "",
 		bgm = "story-richang-sooth"
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.voice_bgm
-
-	var_6_41.MaoxiV5FramePage = {
+	pg.base.voice_bgm.MaoxiV5FramePage = {
 		default_bgm = "battle-eagleunion",
 		special_bgm = "",
 		bgm = "battle-eagleunion"
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.voice_bgm
-
-	var_6_42.SleeplessCityRePage = {
+	pg.base.voice_bgm.SleeplessCityRePage = {
 		default_bgm = "story-nonightcity",
 		special_bgm = "",
 		bgm = "story-nonightcity"
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.voice_bgm
-
-	var_6_43.HolidayCoreActivityZ52Page = {
+	pg.base.voice_bgm.HolidayCoreActivityZ52Page = {
 		default_bgm = "main-SeaAndSun",
 		special_bgm = "",
 		bgm = "main-SeaAndSun"
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.voice_bgm
-
-	var_6_44.OutPostOmenPage = {
+	pg.base.voice_bgm.OutPostOmenPage = {
 		default_bgm = "theme-threat-typeV",
 		special_bgm = "",
 		bgm = "theme-threat-typeV"
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.voice_bgm
-
-	var_6_45.YidaliV5FramePage = {
+	pg.base.voice_bgm.YidaliV5FramePage = {
 		default_bgm = "story-shenguang-holy",
 		special_bgm = "",
 		bgm = "story-shenguang-holy"
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.voice_bgm
-
-	var_6_46.HaerfudeTecCatchupPage = {
+	pg.base.voice_bgm.HaerfudeTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.voice_bgm
-
-	var_6_47.DOACoreActivityMainPage = {
+	pg.base.voice_bgm.DOACoreActivityMainPage = {
 		default_bgm = "doa-az-pv-1",
 		special_bgm = "",
 		bgm = "doa-az-pv-1"
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.voice_bgm
-
-	var_6_48.DOACoreActivityPtPage = {
+	pg.base.voice_bgm.DOACoreActivityPtPage = {
 		default_bgm = "doa-song-night03",
 		special_bgm = "",
 		bgm = "doa-song-night03"
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.voice_bgm
-
-	var_6_49.DOACoreActivityCollectPage = {
+	pg.base.voice_bgm.DOACoreActivityCollectPage = {
 		default_bgm = "doa_story1",
 		special_bgm = "",
 		bgm = "doa_story1"
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.voice_bgm
-
-	var_6_50.DOACharacterGiftPage = {
+	pg.base.voice_bgm.DOACharacterGiftPage = {
 		default_bgm = "doa_huanzhuang",
 		special_bgm = "",
 		bgm = "doa_huanzhuang"
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.voice_bgm
-
-	var_6_51.DOADailyStoryPage = {
+	pg.base.voice_bgm.DOADailyStoryPage = {
 		default_bgm = "doa-song-day05",
 		special_bgm = "",
 		bgm = "doa-song-day05"
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.voice_bgm
-
-	var_6_52.DOAYearHotSpringUI = {
+	pg.base.voice_bgm.DOAYearHotSpringUI = {
 		default_bgm = "doa_story3",
 		special_bgm = "",
 		bgm = "doa_story3"
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.voice_bgm
-
-	var_6_53.DOACoreMiniGamePage = {
+	pg.base.voice_bgm.DOACoreMiniGamePage = {
 		default_bgm = "doa_minigame",
 		special_bgm = "",
 		bgm = "doa_minigame"
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.voice_bgm
-
-	var_6_54.LatestSkinShopLayer = {
+	pg.base.voice_bgm.LatestSkinShopLayer = {
 		default_bgm = "main",
 		special_bgm = "",
 		bgm = "main"
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.voice_bgm
-
-	var_6_55.map_xyd_bar_01 = {
+	pg.base.voice_bgm.map_xyd_bar_01 = {
 		default_bgm = "danmachi-az-story ",
 		special_bgm = "",
 		bgm = "danmachi-az-story "
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.voice_bgm
-
-	var_6_56.VotingResulitAward2Page = {
+	pg.base.voice_bgm.VotingResulitAward2Page = {
 		default_bgm = "votefes-up",
 		special_bgm = "",
 		bgm = "votefes-up"
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.voice_bgm
-
-	var_6_57.DOALinkIslandReScene = {
+	pg.base.voice_bgm.DOALinkIslandReScene = {
 		default_bgm = "doa_guanqia",
 		special_bgm = "",
 		bgm = "doa_guanqia"
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.voice_bgm
-
-	var_6_58.DoaMainRePage = {
+	pg.base.voice_bgm.DoaMainRePage = {
 		default_bgm = "doa_story3",
 		special_bgm = "",
 		bgm = "doa_story3"
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.voice_bgm
-
-	var_6_59.DOAPtPage = {
+	pg.base.voice_bgm.DOAPtPage = {
 		default_bgm = "doa_story3",
 		special_bgm = "",
 		bgm = "doa_story3"
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.voice_bgm
-
-	var_6_60.LoginSignRe3Page = {
+	pg.base.voice_bgm.LoginSignRe3Page = {
 		default_bgm = "doa_story3",
 		special_bgm = "",
 		bgm = "doa_story3"
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.voice_bgm
-
-	var_6_61.HolidayHwahJahSkinPage = {
+	pg.base.voice_bgm.HolidayHwahJahSkinPage = {
 		default_bgm = "story-richang-light",
 		special_bgm = "",
 		bgm = "story-richang-light"
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.voice_bgm
-
-	var_6_62.AnniversaryNineHwahJahSkinPage = {
+	pg.base.voice_bgm.AnniversaryNineHwahJahSkinPage = {
 		default_bgm = "story-richang-light",
 		special_bgm = "",
 		bgm = "story-richang-light"
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.voice_bgm
-
-	var_6_63.LittleYunXianPage = {
+	pg.base.voice_bgm.LittleYunXianPage = {
 		default_bgm = "story-afterrain-soft",
 		special_bgm = "",
 		bgm = "story-afterrain-soft"
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.voice_bgm
-
-	var_6_64.HeLanMainRePage = {
+	pg.base.voice_bgm.HeLanMainRePage = {
 		default_bgm = "theme-tulipa",
 		special_bgm = "",
 		bgm = "theme-tulipa"
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.voice_bgm
-
-	var_6_65.XiaoXinNongPtPage2 = {
+	pg.base.voice_bgm.XiaoXinNongPtPage2 = {
 		default_bgm = "story-richang-10",
 		special_bgm = "",
 		bgm = "story-richang-10"
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.voice_bgm
-
-	var_6_66.GeZiURMainPage = {
+	pg.base.voice_bgm.GeZiURMainPage = {
 		default_bgm = "story-hrr",
 		special_bgm = "",
 		bgm = "story-hrr"
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.voice_bgm
-
-	var_6_67.GeZiURExchangePage = {
+	pg.base.voice_bgm.GeZiURExchangePage = {
 		default_bgm = "theme-hrr",
 		special_bgm = "",
 		bgm = "theme-hrr"
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.voice_bgm
-
-	var_6_68.GeZiURPTPage = {
+	pg.base.voice_bgm.GeZiURPTPage = {
 		default_bgm = "battle-hrr",
 		special_bgm = "",
 		bgm = "battle-hrr"
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.voice_bgm
-
-	var_6_69.AnniversaryNineMainPage = {
+	pg.base.voice_bgm.AnniversaryNineMainPage = {
 		default_bgm = "theme-goldensea",
 		special_bgm = "",
 		bgm = "theme-goldensea"
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.voice_bgm
-
-	var_6_70.MallMapScene = {
+	pg.base.voice_bgm.MallMapScene = {
 		default_bgm = "theme-goldensea",
 		special_bgm = "",
 		bgm = "theme-goldensea"
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.voice_bgm
-
-	var_6_71.MallScene = {
+	pg.base.voice_bgm.MallScene = {
 		default_bgm = "story-richang-wavelight",
 		special_bgm = "",
 		bgm = "story-richang-wavelight"
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.voice_bgm
-
-	var_6_72.AnniversaryNineGamePage = {
+	pg.base.voice_bgm.AnniversaryNineGamePage = {
 		default_bgm = "story-richang-softlight",
 		special_bgm = "",
 		bgm = "story-richang-softlight"
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.voice_bgm
-
-	var_6_73.AnniversaryNinthReturnAwardPage = {
+	pg.base.voice_bgm.AnniversaryNinthReturnAwardPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.voice_bgm
-
-	var_6_74.AnniversaryNineLoginPage = {
+	pg.base.voice_bgm.AnniversaryNineLoginPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.voice_bgm
-
-	var_6_75.AnniversaryNineInvitationPage = {
+	pg.base.voice_bgm.AnniversaryNineInvitationPage = {
 		default_bgm = "story-musicanniversary-gorgeous",
 		special_bgm = "",
 		bgm = "story-musicanniversary-gorgeous"
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.voice_bgm
-
-	var_6_76.GeZiMedalAlbumView = {
+	pg.base.voice_bgm.GeZiMedalAlbumView = {
 		default_bgm = "theme-hrr",
 		special_bgm = "",
 		bgm = "theme-hrr"
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.voice_bgm
-
-	var_6_77.FujinBayMedalAlbumView = {
+	pg.base.voice_bgm.FujinBayMedalAlbumView = {
 		default_bgm = "theme-goldensea",
 		special_bgm = "",
 		bgm = "theme-goldensea"
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.voice_bgm
-
-	var_6_78.AnniversaryNineEvertsenSkinPage = {
+	pg.base.voice_bgm.AnniversaryNineEvertsenSkinPage = {
 		default_bgm = "story-tulipa",
 		special_bgm = "",
 		bgm = "story-tulipa"
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.voice_bgm
-
-	var_6_79.LuminousMainPage = {
+	pg.base.voice_bgm.LuminousMainPage = {
 		default_bgm = "theme-lightheven",
 		special_bgm = "",
 		bgm = "theme-lightheven"
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.voice_bgm
-
-	var_6_80.LuminousPtPage = {
+	pg.base.voice_bgm.LuminousPtPage = {
 		default_bgm = "theme-lightheven",
 		special_bgm = "",
 		bgm = "theme-lightheven"
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.voice_bgm
-
-	var_6_81.LuminousFramePage = {
+	pg.base.voice_bgm.LuminousFramePage = {
 		default_bgm = "theme-schoolfuture",
 		special_bgm = "",
 		bgm = "theme-schoolfuture"
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.voice_bgm
-
-	var_6_82.LuminousTaskPage = {
+	pg.base.voice_bgm.LuminousTaskPage = {
 		default_bgm = "theme-starsea-core",
 		special_bgm = "",
 		bgm = "theme-starsea-core"
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.voice_bgm
-
-	var_6_83.LuminousLoginPage = {
+	pg.base.voice_bgm.LuminousLoginPage = {
 		default_bgm = "story-startravel",
 		special_bgm = "",
 		bgm = "story-startravel"
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.voice_bgm
-
-	var_6_84.DreamTourMainPage = {
+	pg.base.voice_bgm.DreamTourMainPage = {
 		default_bgm = "theme-magicalnight-mystic",
 		special_bgm = "",
 		bgm = "theme-magicalnight-mystic"
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.voice_bgm
-
-	var_6_85.DreamTourPtPage = {
+	pg.base.voice_bgm.DreamTourPtPage = {
 		default_bgm = "story-magicalnight-pv",
 		special_bgm = "",
 		bgm = "story-magicalnight-pv"
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.voice_bgm
-
-	var_6_86.DreamTourMedalAlbumView = {
+	pg.base.voice_bgm.DreamTourMedalAlbumView = {
 		default_bgm = "story-magicalnight-pv",
 		special_bgm = "",
 		bgm = "story-magicalnight-pv"
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.voice_bgm
-
-	var_6_87.DormSignThirdPage = {
+	pg.base.voice_bgm.DormSignThirdPage = {
 		default_bgm = "story-room-pit",
 		special_bgm = "",
 		bgm = "story-room-pit"
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.voice_bgm
-
-	var_6_88.DormTaskPage = {
+	pg.base.voice_bgm.DormTaskPage = {
 		default_bgm = "story-room-nakhimov",
 		special_bgm = "",
 		bgm = "story-room-nakhimov"
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.voice_bgm
-
-	var_6_89.EelTecCatchupPage = {
+	pg.base.voice_bgm.EelTecCatchupPage = {
 		default_bgm = "theme-designshipVI",
 		special_bgm = "",
 		bgm = "theme-designshipVI"
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.voice_bgm
-
-	var_6_90.EssexFramePage = {
+	pg.base.voice_bgm.EssexFramePage = {
 		default_bgm = "theme-designfleet-VII",
 		special_bgm = "",
 		bgm = "theme-designfleet-VII"
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.voice_bgm
-
-	var_6_91.StarsCityOmenPage = {
+	pg.base.voice_bgm.StarsCityOmenPage = {
 		default_bgm = "story-nonightcity",
 		special_bgm = "",
 		bgm = "story-nonightcity"
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.voice_bgm
-
-	var_6_92.RapidSeasideMusicGamePage = {
+	pg.base.voice_bgm.RapidSeasideMusicGamePage = {
 		default_bgm = "story-game-rhythm",
 		special_bgm = "",
 		bgm = "story-game-rhythm"
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.voice_bgm
-
-	var_6_93.EscapeManorMainPage = {
+	pg.base.voice_bgm.EscapeManorMainPage = {
 		default_bgm = "story-hospitalnight-outshow",
 		special_bgm = "",
 		bgm = "story-hospitalnight-outshow"
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.voice_bgm
-
-	var_6_94.EscapeManorPtPage = {
+	pg.base.voice_bgm.EscapeManorPtPage = {
 		default_bgm = "story-hospitalnight-outshow",
 		special_bgm = "",
 		bgm = "story-hospitalnight-outshow"
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.voice_bgm
-
-	var_6_95.EscapeManorCollectPage = {
+	pg.base.voice_bgm.EscapeManorCollectPage = {
 		default_bgm = "story-hospitalnight-outshow",
 		special_bgm = "",
 		bgm = "story-hospitalnight-outshow"
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.voice_bgm
-
-	var_6_96.NieRAutomataKillPage = {
+	pg.base.voice_bgm.NieRAutomataKillPage = {
 		default_bgm = "nier-ruinscity-b-1",
 		special_bgm = "",
 		bgm = "nier-ruinscity-b-1"
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.voice_bgm
-
-	var_6_97.NieRAutomataMainPage = {
+	pg.base.voice_bgm.NieRAutomataMainPage = {
 		default_bgm = "nier-az-story",
 		special_bgm = "",
 		bgm = "nier-az-story"
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.voice_bgm
-
-	var_6_98.NieRAutomataAwardPage = {
+	pg.base.voice_bgm.NieRAutomataAwardPage = {
 		default_bgm = "nier-ruinscity-a-2",
 		special_bgm = "",
 		bgm = "nier-ruinscity-a-2"
-	}
-	pg = var_6_98
-	var_6_98.base.voice_bgm.NieRAutomataStagePage = {
-		default_bgm = "nier-ruinscity-b-2",
-		special_bgm = "",
-		bgm = "nier-ruinscity-b-2"
 	}
 
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.voice_bgm
-
-	var_7_0.NieRAutomataOmenPage = {
+	pg.base.voice_bgm.NieRAutomataStagePage = {
+		default_bgm = "nier-ruinscity-b-2",
+		special_bgm = "",
+		bgm = "nier-ruinscity-b-2"
+	}
+	pg.base.voice_bgm.NieRAutomataOmenPage = {
 		default_bgm = "nier-ruinscity-a-1",
 		special_bgm = "",
 		bgm = "nier-ruinscity-a-1"
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.voice_bgm
-
-	var_7_1.ConsumeGemSignInPage = {
+	pg.base.voice_bgm.ConsumeGemSignInPage = {
 		default_bgm = "story-richang-partynight",
 		special_bgm = "",
 		bgm = "story-richang-partynight"
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.voice_bgm
-
-	var_7_2.AuctionGameCoreActivityUI = {
+	pg.base.voice_bgm.AuctionGameCoreActivityUI = {
 		default_bgm = "story-room-pit",
 		special_bgm = "",
 		bgm = "story-room-pit"
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.voice_bgm
-
-	var_7_3.AuctionGameEntranceScene = {
+	pg.base.voice_bgm.AuctionGameEntranceScene = {
 		default_bgm = "story-room-pit",
 		special_bgm = "",
 		bgm = "story-room-pit"
 	}
-	pg = var_7_3
-	var_7_3.base.voice_bgm.BossRushEscapeManorScene = {
+	pg.base.voice_bgm.BossRushEscapeManorScene = {
 		default_bgm = "theme-hospitalnight-mystic",
 		special_bgm = "",
 		bgm = "theme-hospitalnight-mystic"
+	}
+	pg.base.voice_bgm.StarsCityMainPage = {
+		default_bgm = "battle-starcity-rhythm",
+		special_bgm = "",
+		bgm = "battle-starcity-rhythm"
+	}
+	pg.base.voice_bgm.StarsCityCollectPage = {
+		default_bgm = "theme-commander-ally",
+		special_bgm = "",
+		bgm = "theme-commander-ally"
+	}
+	pg.base.voice_bgm.StarsCityPtPage = {
+		default_bgm = "theme-richard-white",
+		special_bgm = "",
+		bgm = "theme-richard-white"
+	}
+	pg.base.voice_bgm.RapidSeasideGamePage = {
+		default_bgm = "level",
+		special_bgm = "",
+		bgm = "level"
+	}
+	pg.base.voice_bgm.RapidSeasideMonopolyPage = {
+		default_bgm = "story-cardrive-stand",
+		special_bgm = "",
+		bgm = "story-cardrive-stand"
+	}
+	pg.base.voice_bgm.MonopolyCar2026UI = {
+		default_bgm = "story-cardrive-racing",
+		special_bgm = "",
+		bgm = "story-cardrive-racing"
+	}
+	pg.base.voice_bgm.LeMarsSkinPage = {
+		default_bgm = "story-richang-light",
+		special_bgm = "",
+		bgm = "story-richang-light"
+	}
+	pg.base.voice_bgm.MedalAlbumRapidSeasidePage = {
+		default_bgm = "story-cardrive-racing",
+		special_bgm = "",
+		bgm = "story-cardrive-racing"
+	}
+	pg.base.voice_bgm.MedalAlbumStarsCityPage = {
+		default_bgm = "battle-starcity-rhythm",
+		special_bgm = "",
+		bgm = "battle-starcity-rhythm"
 	}
 
 	return

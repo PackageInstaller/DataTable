@@ -1,23 +1,12 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleCameraSlider = class("BattleCameraSlider")
 
-local var_0_0
+local var_0_1 = class("BattleCameraSlider")
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleCameraSlider = var_0_1
+var_0_1.__name = "BattleCameraSlider"
 
-local var_0_1 = var_0.Battle.BattleConfig
-local var_0_2 = var_0.Battle
-
-class = var_0_10003
-var_0_2.BattleCameraSlider = var_0_10003("BattleCameraSlider")
-class = var_0_2
-
-local var_0_3 = var_0_2("BattleCameraSlider")
-
-var_0.Battle.BattleCameraSlider = var_0_3
-var_0_3.__name = "BattleCameraSlider"
-
-function var_0_3.Ctor(arg_1_0, arg_1_1)
+function var_0_1.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 
 	arg_1_0:Init()
@@ -25,24 +14,19 @@ function var_0_3.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_3.Init(arg_2_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_2_0._go, true)
+function var_0_1.Init(arg_2_0)
+	SetActive(arg_2_0._go, true)
 
 	arg_2_0._distX, arg_2_0._distY = 0, 0
 	arg_2_0._dirX, arg_2_0._dirY = 0, 0
 	arg_2_0._isPress = false
-	pg = var_1
-	arg_2_0._screenWidth, arg_2_0._screenHeight = var_1.CameraFixMgr.GetInstance().actualWidth, var_1.actualHeight
 
-	local var_2_0 = arg_2_0._go
-	local var_2_1 = var_2.GetComponent(var_2_0, "StickController")
+	local var_2_0 = pg.CameraFixMgr.GetInstance()
 
-	var_2.SetStickFunc(var_2_1, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_2_0
+	arg_2_0._screenWidth, arg_2_0._screenHeight = var_2_0.actualWidth, var_2_0.actualHeight
 
-		var_2.updateStick(var_3_0, arg_3_0, arg_3_1)
+	arg_2_0._go:GetComponent("StickController"):SetStickFunc(function(arg_3_0, arg_3_1)
+		arg_2_0:updateStick(arg_3_0, arg_3_1)
 
 		return
 	end)
@@ -50,7 +34,7 @@ function var_0_3.Init(arg_2_0)
 	return
 end
 
-function var_0_3.updateStick(arg_4_0, arg_4_1, arg_4_2)
+function var_0_1.updateStick(arg_4_0, arg_4_1, arg_4_2)
 	arg_4_0._initX = false
 	arg_4_0._initY = false
 
@@ -70,22 +54,26 @@ function var_0_3.updateStick(arg_4_0, arg_4_1, arg_4_2)
 			arg_4_0._initX = true
 			arg_4_0._initY = true
 		else
+			local var_4_2 = var_4_0 - arg_4_0._lastPosX
+
 			if (var_4_0 - arg_4_0._lastPosX) * arg_4_0._dirX < 0 then
 				arg_4_0._startX = var_4_0
 				arg_4_0._initX = true
 			end
 
-			if var_5 ~= 0 then
-				arg_4_0._dirX = var_5
+			if var_4_2 ~= 0 then
+				arg_4_0._dirX = var_4_2
 			end
+
+			local var_4_3 = var_4_1 - arg_4_0._lastPosY
 
 			if (var_4_1 - arg_4_0._lastPosY) * arg_4_0._dirY < 0 then
 				arg_4_0._startY = var_4_1
 				arg_4_0._initY = true
 			end
 
-			if var_6 ~= 0 then
-				arg_4_0._dirY = var_6
+			if var_4_3 ~= 0 then
+				arg_4_0._dirY = var_4_3
 			end
 		end
 
@@ -99,15 +87,15 @@ function var_0_3.updateStick(arg_4_0, arg_4_1, arg_4_2)
 	return
 end
 
-function var_0_3.GetDistance(arg_5_0)
+function var_0_1.GetDistance(arg_5_0)
 	return arg_5_0._distX, arg_5_0._distY
 end
 
-function var_0_3.IsFirstPress(arg_6_0)
+function var_0_1.IsFirstPress(arg_6_0)
 	return arg_6_0._initX, arg_6_0._initY
 end
 
-function var_0_3.IsPress(arg_7_0)
+function var_0_1.IsPress(arg_7_0)
 	return arg_7_0._isPress
 end
 

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_medal_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_medal_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_medal_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_medal_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_medal_group = rawget(pg, "activity_medal_group") or setmetatable({
+	__name = "activity_medal_group"
+}, confNEO)
+pg.activity_medal_group.all = {
 	5711,
 	5769,
 	5812,
@@ -45,27 +22,15 @@ var_0_3.all = {
 	50607,
 	50616,
 	50659,
-	51078
+	51078,
+	51110,
+	51113
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_medal_group = {}
+pg.base = pg.base or {}
+pg.base.activity_medal_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_medal_group
-
-	var_1_0[5711] = {
+	pg.base.activity_medal_group[5711] = {
 		id = 5711,
 		entrance_picture = "medalAlbum/5711",
 		group_name = "星光下的余晖",
@@ -108,11 +73,7 @@ var_0_3.base.activity_medal_group = {}
 			21043
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_medal_group
-
-	var_1_1[5769] = {
+	pg.base.activity_medal_group[5769] = {
 		id = 5769,
 		entrance_picture = "medalAlbum/5769",
 		group_name = "华裳巧展喜事长",
@@ -151,11 +112,7 @@ var_0_3.base.activity_medal_group = {}
 			21126
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_medal_group
-
-	var_1_2[5812] = {
+	pg.base.activity_medal_group[5812] = {
 		id = 5812,
 		entrance_picture = "medalAlbum/5812",
 		group_name = "樊笼内的神光",
@@ -198,11 +155,7 @@ var_0_3.base.activity_medal_group = {}
 			21286
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_medal_group
-
-	var_1_3[5875] = {
+	pg.base.activity_medal_group[5875] = {
 		id = 5875,
 		entrance_picture = "medalAlbum/5875",
 		group_name = "深谷来信",
@@ -245,11 +198,7 @@ var_0_3.base.activity_medal_group = {}
 			21659
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_medal_group
-
-	var_1_4[5913] = {
+	pg.base.activity_medal_group[5913] = {
 		id = 5913,
 		entrance_picture = "medalAlbum/5913",
 		group_name = "扬起郁金之旗",
@@ -307,11 +256,7 @@ var_0_3.base.activity_medal_group = {}
 			21952
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_medal_group
-
-	var_1_5[5970] = {
+	pg.base.activity_medal_group[5970] = {
 		id = 5970,
 		entrance_picture = "medalAlbum/5970",
 		group_name = "高塔上的蔷薇",
@@ -354,11 +299,7 @@ var_0_3.base.activity_medal_group = {}
 			21714
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_medal_group
-
-	var_1_6[5971] = {
+	pg.base.activity_medal_group[5971] = {
 		id = 5971,
 		entrance_picture = "medalAlbum/5971",
 		group_name = "夏日重建",
@@ -400,11 +341,7 @@ var_0_3.base.activity_medal_group = {}
 			21723
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_medal_group
-
-	var_1_7[50021] = {
+	pg.base.activity_medal_group[50021] = {
 		id = 50021,
 		entrance_picture = "MedalAlbum/50021",
 		group_name = "迷彩都市的寻踪者",
@@ -443,11 +380,7 @@ var_0_3.base.activity_medal_group = {}
 			21776
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_medal_group
-
-	var_1_8[50087] = {
+	pg.base.activity_medal_group[50087] = {
 		id = 50087,
 		entrance_picture = "medalAlbum/50087",
 		group_name = "奇渊下的秘密",
@@ -490,11 +423,7 @@ var_0_3.base.activity_medal_group = {}
 			21802
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_medal_group
-
-	var_1_9[50136] = {
+	pg.base.activity_medal_group[50136] = {
 		id = 50136,
 		entrance_picture = "medalAlbum/50136",
 		group_name = "起舞于天原之上",
@@ -538,11 +467,7 @@ var_0_3.base.activity_medal_group = {}
 			21835
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_medal_group
-
-	var_1_10[50209] = {
+	pg.base.activity_medal_group[50209] = {
 		id = 50209,
 		entrance_picture = "medalAlbum/50209",
 		group_name = "飓风与自由群岛",
@@ -586,11 +511,7 @@ var_0_3.base.activity_medal_group = {}
 			21849
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_medal_group
-
-	var_1_11[50295] = {
+	pg.base.activity_medal_group[50295] = {
 		id = 50295,
 		entrance_picture = "medalAlbum/50295",
 		group_name = "响彻于天穹之音",
@@ -634,11 +555,7 @@ var_0_3.base.activity_medal_group = {}
 			21873
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_medal_group
-
-	var_1_12[50359] = {
+	pg.base.activity_medal_group[50359] = {
 		id = 50359,
 		entrance_picture = "medalAlbum/50359",
 		group_name = "光影风尚——拍摄进行时！",
@@ -677,11 +594,7 @@ var_0_3.base.activity_medal_group = {}
 			21883
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_medal_group
-
-	var_1_13[50405] = {
+	pg.base.activity_medal_group[50405] = {
 		id = 50405,
 		entrance_picture = "medalAlbum/50405",
 		group_name = "春宴怀玉香满庭",
@@ -720,11 +633,7 @@ var_0_3.base.activity_medal_group = {}
 			21892
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_medal_group
-
-	var_1_14[9] = {
+	pg.base.activity_medal_group[9] = {
 		id = 50441,
 		entrance_picture = "medalAlbum/50441",
 		group_name = "春满客栈online",
@@ -768,11 +677,7 @@ var_0_3.base.activity_medal_group = {}
 			21901
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_medal_group
-
-	var_1_15[50482] = {
+	pg.base.activity_medal_group[50482] = {
 		id = 50482,
 		entrance_picture = "medalAlbum/50482",
 		group_name = "漫游者招募计划",
@@ -816,11 +721,7 @@ var_0_3.base.activity_medal_group = {}
 			21914
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_medal_group
-
-	var_1_16[50607] = {
+	pg.base.activity_medal_group[50607] = {
 		id = 50607,
 		entrance_picture = "MedalAlbum/50607",
 		group_name = "圣印前的同盟",
@@ -864,11 +765,7 @@ var_0_3.base.activity_medal_group = {}
 			21924
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_medal_group
-
-	var_1_17[50616] = {
+	pg.base.activity_medal_group[50616] = {
 		id = 50616,
 		entrance_picture = "MedalAlbum/50616",
 		group_name = "奢华！享梦！浮金湾！",
@@ -911,11 +808,7 @@ var_0_3.base.activity_medal_group = {}
 			21934
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_medal_group
-
-	var_1_18[50659] = {
+	pg.base.activity_medal_group[50659] = {
 		id = 50659,
 		entrance_picture = "MedalAlbum/50659",
 		group_name = "美梦巡演奇妙夜",
@@ -959,8 +852,7 @@ var_0_3.base.activity_medal_group = {}
 			21975
 		}
 	}
-	pg = var_1_18
-	var_1_18.base.activity_medal_group[6] = {
+	pg.base.activity_medal_group[6] = {
 		id = 51078,
 		entrance_picture = "medalAlbum/51078",
 		group_name = "怪谈纪实：逃离白夜山庄！",
@@ -997,6 +889,92 @@ var_0_3.base.activity_medal_group = {}
 		task_show = {
 			-1,
 			21988
+		}
+	}
+	pg.base.activity_medal_group[51110] = {
+		id = 51110,
+		entrance_picture = "medalAlbum/51110",
+		group_name = "沉溺于星光之城",
+		is_out_of_print = 0,
+		activity_link = {
+			{
+				1,
+				51110,
+				{
+					25701,
+					25702,
+					25703,
+					25704,
+					25705,
+					25706,
+					25707,
+					25708,
+					25709,
+					25710
+				}
+			}
+		},
+		ui_prefab = {
+			scene = "StarsCityMedalAlbumView",
+			mediator = "MedalAlbumTemplateMediator"
+		},
+		item_show = {
+			{
+				5,
+				343,
+				1
+			},
+			{
+				8,
+				66065,
+				1
+			}
+		},
+		task_show = {
+			25710,
+			25701
+		}
+	}
+	pg.base.activity_medal_group[51113] = {
+		id = 51113,
+		entrance_picture = "medalAlbum/51113",
+		group_name = "滨海极速",
+		is_out_of_print = 0,
+		activity_link = {
+			{
+				1,
+				51113,
+				{
+					25711,
+					25712,
+					25713,
+					25714,
+					25715,
+					25716,
+					25717,
+					25718
+				}
+			}
+		},
+		ui_prefab = {
+			scene = "RapidSeasideMedalAlbumView",
+			mediator = "MedalAlbumTemplateMediator"
+		},
+		item_show = {
+			{
+				5,
+				344,
+				1
+			},
+			{
+				8,
+				66074,
+				1
+			}
+		},
+		task_show = {
+			-1,
+			25711
 		}
 	}
 

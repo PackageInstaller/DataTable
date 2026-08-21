@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_town_work_level_2") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_town_work_level_2"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_town_work_level_2 = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_town_work_level_2
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_town_work_level_2 = rawget(pg, "activity_town_work_level_2") or setmetatable({
+	__name = "activity_town_work_level_2"
+}, confNEO)
+pg.activity_town_work_level_2.all = {
 	1,
 	2,
 	3,
@@ -116,25 +93,11 @@ var_0_3.all = {
 	105,
 	106
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_town_work_level_2 = {}
+pg.base = pg.base or {}
+pg.base.activity_town_work_level_2 = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_town_work_level_2
-
-	var_1_0[1] = {
+	pg.base.activity_town_work_level_2[1] = {
 		town_level = 1,
 		name = "酒楼",
 		type_param = 0,
@@ -153,11 +116,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_town_work_level_2
-
-	var_1_1[2] = {
+	pg.base.activity_town_work_level_2[2] = {
 		town_level = 2,
 		name = "酒楼",
 		type_param = 100,
@@ -176,11 +135,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_town_work_level_2
-
-	var_1_2[3] = {
+	pg.base.activity_town_work_level_2[3] = {
 		town_level = 3,
 		name = "酒楼",
 		type_param = 130,
@@ -199,11 +154,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_town_work_level_2
-
-	var_1_3[4] = {
+	pg.base.activity_town_work_level_2[4] = {
 		town_level = 4,
 		name = "酒楼",
 		type_param = 170,
@@ -222,11 +173,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_town_work_level_2
-
-	var_1_4[5] = {
+	pg.base.activity_town_work_level_2[5] = {
 		town_level = 5,
 		name = "酒楼",
 		type_param = 220,
@@ -245,11 +192,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_town_work_level_2
-
-	var_1_5[6] = {
+	pg.base.activity_town_work_level_2[6] = {
 		town_level = 6,
 		name = "酒楼",
 		type_param = 285,
@@ -273,11 +216,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_town_work_level_2
-
-	var_1_6[7] = {
+	pg.base.activity_town_work_level_2[7] = {
 		town_level = 7,
 		name = "酒楼",
 		type_param = 355,
@@ -296,11 +235,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_town_work_level_2
-
-	var_1_7[8] = {
+	pg.base.activity_town_work_level_2[8] = {
 		town_level = 8,
 		name = "酒楼",
 		type_param = 445,
@@ -319,11 +254,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_town_work_level_2
-
-	var_1_8[9] = {
+	pg.base.activity_town_work_level_2[9] = {
 		town_level = 9,
 		name = "酒楼",
 		type_param = 555,
@@ -342,11 +273,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_town_work_level_2
-
-	var_1_9[10] = {
+	pg.base.activity_town_work_level_2[10] = {
 		town_level = 10,
 		name = "酒楼",
 		type_param = 695,
@@ -365,11 +292,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_town_work_level_2
-
-	var_1_10[11] = {
+	pg.base.activity_town_work_level_2[11] = {
 		town_level = 11,
 		name = "酒楼",
 		type_param = 870,
@@ -393,11 +316,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_town_work_level_2
-
-	var_1_11[12] = {
+	pg.base.activity_town_work_level_2[12] = {
 		town_level = 12,
 		name = "酒楼",
 		type_param = 1040,
@@ -416,11 +335,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_town_work_level_2
-
-	var_1_12[13] = {
+	pg.base.activity_town_work_level_2[13] = {
 		town_level = 13,
 		name = "酒楼",
 		type_param = 1250,
@@ -439,11 +354,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_town_work_level_2
-
-	var_1_13[14] = {
+	pg.base.activity_town_work_level_2[14] = {
 		town_level = 14,
 		name = "酒楼",
 		type_param = 1500,
@@ -462,11 +373,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_town_work_level_2
-
-	var_1_14[15] = {
+	pg.base.activity_town_work_level_2[15] = {
 		town_level = 15,
 		name = "酒楼",
 		type_param = 1750,
@@ -485,11 +392,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_town_work_level_2
-
-	var_1_15[16] = {
+	pg.base.activity_town_work_level_2[16] = {
 		town_level = 0,
 		name = "酒楼",
 		type_param = 2000,
@@ -502,11 +405,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 		level = 15,
 		upgrade = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_town_work_level_2
-
-	var_1_16[21] = {
+	pg.base.activity_town_work_level_2[21] = {
 		town_level = 1,
 		name = "神秘仓库",
 		type_param = 20000,
@@ -525,11 +424,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_town_work_level_2
-
-	var_1_17[22] = {
+	pg.base.activity_town_work_level_2[22] = {
 		town_level = 2,
 		name = "神秘仓库",
 		type_param = 50000,
@@ -548,11 +443,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_town_work_level_2
-
-	var_1_18[23] = {
+	pg.base.activity_town_work_level_2[23] = {
 		town_level = 3,
 		name = "神秘仓库",
 		type_param = 150000,
@@ -571,11 +462,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_town_work_level_2
-
-	var_1_19[24] = {
+	pg.base.activity_town_work_level_2[24] = {
 		town_level = 4,
 		name = "神秘仓库",
 		type_param = 500000,
@@ -594,11 +481,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_town_work_level_2
-
-	var_1_20[25] = {
+	pg.base.activity_town_work_level_2[25] = {
 		town_level = 5,
 		name = "神秘仓库",
 		type_param = 2000000,
@@ -622,11 +505,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_town_work_level_2
-
-	var_1_21[26] = {
+	pg.base.activity_town_work_level_2[26] = {
 		town_level = 6,
 		name = "神秘仓库",
 		type_param = 8000000,
@@ -645,11 +524,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_town_work_level_2
-
-	var_1_22[27] = {
+	pg.base.activity_town_work_level_2[27] = {
 		town_level = 7,
 		name = "神秘仓库",
 		type_param = 20000000,
@@ -668,11 +543,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_town_work_level_2
-
-	var_1_23[28] = {
+	pg.base.activity_town_work_level_2[28] = {
 		town_level = 8,
 		name = "神秘仓库",
 		type_param = 40000000,
@@ -691,11 +562,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_town_work_level_2
-
-	var_1_24[29] = {
+	pg.base.activity_town_work_level_2[29] = {
 		town_level = 9,
 		name = "神秘仓库",
 		type_param = 100000000,
@@ -714,11 +581,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_town_work_level_2
-
-	var_1_25[30] = {
+	pg.base.activity_town_work_level_2[30] = {
 		town_level = 10,
 		name = "神秘仓库",
 		type_param = 200000000,
@@ -742,11 +605,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_town_work_level_2
-
-	var_1_26[31] = {
+	pg.base.activity_town_work_level_2[31] = {
 		town_level = 11,
 		name = "神秘仓库",
 		type_param = 400000000,
@@ -765,11 +624,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_town_work_level_2
-
-	var_1_27[32] = {
+	pg.base.activity_town_work_level_2[32] = {
 		town_level = 12,
 		name = "神秘仓库",
 		type_param = 800000000,
@@ -788,11 +643,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_town_work_level_2
-
-	var_1_28[33] = {
+	pg.base.activity_town_work_level_2[33] = {
 		town_level = 13,
 		name = "神秘仓库",
 		type_param = 1000000000,
@@ -811,11 +662,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_town_work_level_2
-
-	var_1_29[34] = {
+	pg.base.activity_town_work_level_2[34] = {
 		town_level = 14,
 		name = "神秘仓库",
 		type_param = 2000000000,
@@ -834,11 +681,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_town_work_level_2
-
-	var_1_30[35] = {
+	pg.base.activity_town_work_level_2[35] = {
 		town_level = 0,
 		name = "神秘仓库",
 		type_param = 3000000000,
@@ -851,11 +694,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 		level = 15,
 		upgrade = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_town_work_level_2
-
-	var_1_31[36] = {
+	pg.base.activity_town_work_level_2[36] = {
 		town_level = 1,
 		name = "旅舍",
 		type_param = 0,
@@ -874,11 +713,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_town_work_level_2
-
-	var_1_32[37] = {
+	pg.base.activity_town_work_level_2[37] = {
 		town_level = 2,
 		name = "旅舍",
 		type_param = 1,
@@ -897,11 +732,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_town_work_level_2
-
-	var_1_33[38] = {
+	pg.base.activity_town_work_level_2[38] = {
 		town_level = 3,
 		name = "旅舍",
 		type_param = 2,
@@ -920,11 +751,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_town_work_level_2
-
-	var_1_34[39] = {
+	pg.base.activity_town_work_level_2[39] = {
 		town_level = 4,
 		name = "旅舍",
 		type_param = 3,
@@ -948,11 +775,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_town_work_level_2
-
-	var_1_35[40] = {
+	pg.base.activity_town_work_level_2[40] = {
 		town_level = 5,
 		name = "旅舍",
 		type_param = 4,
@@ -971,11 +794,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_town_work_level_2
-
-	var_1_36[41] = {
+	pg.base.activity_town_work_level_2[41] = {
 		town_level = 6,
 		name = "旅舍",
 		type_param = 5,
@@ -994,11 +813,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_town_work_level_2
-
-	var_1_37[42] = {
+	pg.base.activity_town_work_level_2[42] = {
 		town_level = 7,
 		name = "旅舍",
 		type_param = 6,
@@ -1022,11 +837,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_town_work_level_2
-
-	var_1_38[43] = {
+	pg.base.activity_town_work_level_2[43] = {
 		town_level = 8,
 		name = "旅舍",
 		type_param = 7,
@@ -1045,11 +856,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_town_work_level_2
-
-	var_1_39[44] = {
+	pg.base.activity_town_work_level_2[44] = {
 		town_level = 9,
 		name = "旅舍",
 		type_param = 8,
@@ -1068,11 +875,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_town_work_level_2
-
-	var_1_40[45] = {
+	pg.base.activity_town_work_level_2[45] = {
 		town_level = 0,
 		name = "旅舍",
 		type_param = 9,
@@ -1085,11 +888,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 		level = 9,
 		upgrade = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_town_work_level_2
-
-	var_1_41[51] = {
+	pg.base.activity_town_work_level_2[51] = {
 		town_level = 1,
 		name = "水榭楼台",
 		type_param = 0,
@@ -1108,11 +907,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_town_work_level_2
-
-	var_1_42[52] = {
+	pg.base.activity_town_work_level_2[52] = {
 		town_level = 2,
 		name = "水榭楼台",
 		type_param = 100,
@@ -1131,11 +926,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_town_work_level_2
-
-	var_1_43[53] = {
+	pg.base.activity_town_work_level_2[53] = {
 		town_level = 3,
 		name = "水榭楼台",
 		type_param = 130,
@@ -1154,11 +945,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_town_work_level_2
-
-	var_1_44[54] = {
+	pg.base.activity_town_work_level_2[54] = {
 		town_level = 4,
 		name = "水榭楼台",
 		type_param = 170,
@@ -1177,11 +964,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_town_work_level_2
-
-	var_1_45[55] = {
+	pg.base.activity_town_work_level_2[55] = {
 		town_level = 5,
 		name = "水榭楼台",
 		type_param = 220,
@@ -1200,11 +983,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_town_work_level_2
-
-	var_1_46[56] = {
+	pg.base.activity_town_work_level_2[56] = {
 		town_level = 6,
 		name = "水榭楼台",
 		type_param = 285,
@@ -1228,11 +1007,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_town_work_level_2
-
-	var_1_47[57] = {
+	pg.base.activity_town_work_level_2[57] = {
 		town_level = 7,
 		name = "水榭楼台",
 		type_param = 355,
@@ -1251,11 +1026,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_town_work_level_2
-
-	var_1_48[58] = {
+	pg.base.activity_town_work_level_2[58] = {
 		town_level = 8,
 		name = "水榭楼台",
 		type_param = 445,
@@ -1274,11 +1045,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_town_work_level_2
-
-	var_1_49[59] = {
+	pg.base.activity_town_work_level_2[59] = {
 		town_level = 9,
 		name = "水榭楼台",
 		type_param = 555,
@@ -1297,11 +1064,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_town_work_level_2
-
-	var_1_50[60] = {
+	pg.base.activity_town_work_level_2[60] = {
 		town_level = 10,
 		name = "水榭楼台",
 		type_param = 695,
@@ -1320,11 +1083,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_town_work_level_2
-
-	var_1_51[61] = {
+	pg.base.activity_town_work_level_2[61] = {
 		town_level = 11,
 		name = "水榭楼台",
 		type_param = 870,
@@ -1348,11 +1107,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_town_work_level_2
-
-	var_1_52[62] = {
+	pg.base.activity_town_work_level_2[62] = {
 		town_level = 12,
 		name = "水榭楼台",
 		type_param = 1040,
@@ -1371,11 +1126,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_town_work_level_2
-
-	var_1_53[63] = {
+	pg.base.activity_town_work_level_2[63] = {
 		town_level = 13,
 		name = "水榭楼台",
 		type_param = 1250,
@@ -1394,11 +1145,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_town_work_level_2
-
-	var_1_54[64] = {
+	pg.base.activity_town_work_level_2[64] = {
 		town_level = 14,
 		name = "水榭楼台",
 		type_param = 1500,
@@ -1417,11 +1164,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_town_work_level_2
-
-	var_1_55[65] = {
+	pg.base.activity_town_work_level_2[65] = {
 		town_level = 15,
 		name = "水榭楼台",
 		type_param = 1750,
@@ -1440,11 +1183,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_town_work_level_2
-
-	var_1_56[66] = {
+	pg.base.activity_town_work_level_2[66] = {
 		town_level = 0,
 		name = "水榭楼台",
 		type_param = 2000,
@@ -1457,11 +1196,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 		level = 15,
 		upgrade = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_town_work_level_2
-
-	var_1_57[71] = {
+	pg.base.activity_town_work_level_2[71] = {
 		town_level = 1,
 		name = "池塘",
 		type_param = 0,
@@ -1480,11 +1215,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_town_work_level_2
-
-	var_1_58[72] = {
+	pg.base.activity_town_work_level_2[72] = {
 		town_level = 2,
 		name = "池塘",
 		type_param = 100,
@@ -1503,11 +1234,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_town_work_level_2
-
-	var_1_59[73] = {
+	pg.base.activity_town_work_level_2[73] = {
 		town_level = 3,
 		name = "池塘",
 		type_param = 130,
@@ -1526,11 +1253,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_town_work_level_2
-
-	var_1_60[74] = {
+	pg.base.activity_town_work_level_2[74] = {
 		town_level = 4,
 		name = "池塘",
 		type_param = 170,
@@ -1549,11 +1272,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_town_work_level_2
-
-	var_1_61[75] = {
+	pg.base.activity_town_work_level_2[75] = {
 		town_level = 5,
 		name = "池塘",
 		type_param = 220,
@@ -1572,11 +1291,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_town_work_level_2
-
-	var_1_62[76] = {
+	pg.base.activity_town_work_level_2[76] = {
 		town_level = 6,
 		name = "池塘",
 		type_param = 285,
@@ -1600,11 +1315,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_town_work_level_2
-
-	var_1_63[77] = {
+	pg.base.activity_town_work_level_2[77] = {
 		town_level = 7,
 		name = "池塘",
 		type_param = 355,
@@ -1623,11 +1334,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_town_work_level_2
-
-	var_1_64[78] = {
+	pg.base.activity_town_work_level_2[78] = {
 		town_level = 8,
 		name = "池塘",
 		type_param = 445,
@@ -1646,11 +1353,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_town_work_level_2
-
-	var_1_65[79] = {
+	pg.base.activity_town_work_level_2[79] = {
 		town_level = 9,
 		name = "池塘",
 		type_param = 555,
@@ -1669,11 +1372,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_town_work_level_2
-
-	var_1_66[80] = {
+	pg.base.activity_town_work_level_2[80] = {
 		town_level = 10,
 		name = "池塘",
 		type_param = 695,
@@ -1692,11 +1391,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_town_work_level_2
-
-	var_1_67[81] = {
+	pg.base.activity_town_work_level_2[81] = {
 		town_level = 11,
 		name = "池塘",
 		type_param = 870,
@@ -1720,11 +1415,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_town_work_level_2
-
-	var_1_68[82] = {
+	pg.base.activity_town_work_level_2[82] = {
 		town_level = 12,
 		name = "池塘",
 		type_param = 1040,
@@ -1743,11 +1434,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_town_work_level_2
-
-	var_1_69[83] = {
+	pg.base.activity_town_work_level_2[83] = {
 		town_level = 13,
 		name = "池塘",
 		type_param = 1250,
@@ -1766,11 +1453,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_town_work_level_2
-
-	var_1_70[84] = {
+	pg.base.activity_town_work_level_2[84] = {
 		town_level = 14,
 		name = "池塘",
 		type_param = 1500,
@@ -1789,11 +1472,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_town_work_level_2
-
-	var_1_71[85] = {
+	pg.base.activity_town_work_level_2[85] = {
 		town_level = 15,
 		name = "池塘",
 		type_param = 1750,
@@ -1812,11 +1491,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_town_work_level_2
-
-	var_1_72[86] = {
+	pg.base.activity_town_work_level_2[86] = {
 		town_level = 0,
 		name = "池塘",
 		type_param = 2000,
@@ -1829,11 +1504,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 		level = 15,
 		upgrade = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_town_work_level_2
-
-	var_1_73[91] = {
+	pg.base.activity_town_work_level_2[91] = {
 		town_level = 1,
 		name = "花园",
 		type_param = 0,
@@ -1852,11 +1523,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_town_work_level_2
-
-	var_1_74[92] = {
+	pg.base.activity_town_work_level_2[92] = {
 		town_level = 2,
 		name = "花园",
 		type_param = 100,
@@ -1875,11 +1542,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_town_work_level_2
-
-	var_1_75[93] = {
+	pg.base.activity_town_work_level_2[93] = {
 		town_level = 3,
 		name = "花园",
 		type_param = 130,
@@ -1898,11 +1561,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_town_work_level_2
-
-	var_1_76[94] = {
+	pg.base.activity_town_work_level_2[94] = {
 		town_level = 4,
 		name = "花园",
 		type_param = 170,
@@ -1921,11 +1580,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_town_work_level_2
-
-	var_1_77[95] = {
+	pg.base.activity_town_work_level_2[95] = {
 		town_level = 5,
 		name = "花园",
 		type_param = 220,
@@ -1944,11 +1599,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_town_work_level_2
-
-	var_1_78[96] = {
+	pg.base.activity_town_work_level_2[96] = {
 		town_level = 6,
 		name = "花园",
 		type_param = 285,
@@ -1972,11 +1623,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_town_work_level_2
-
-	var_1_79[97] = {
+	pg.base.activity_town_work_level_2[97] = {
 		town_level = 7,
 		name = "花园",
 		type_param = 355,
@@ -1995,11 +1642,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_town_work_level_2
-
-	var_1_80[98] = {
+	pg.base.activity_town_work_level_2[98] = {
 		town_level = 8,
 		name = "花园",
 		type_param = 445,
@@ -2018,11 +1661,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_town_work_level_2
-
-	var_1_81[99] = {
+	pg.base.activity_town_work_level_2[99] = {
 		town_level = 9,
 		name = "花园",
 		type_param = 555,
@@ -2041,11 +1680,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_town_work_level_2
-
-	var_1_82[100] = {
+	pg.base.activity_town_work_level_2[100] = {
 		town_level = 10,
 		name = "花园",
 		type_param = 695,
@@ -2064,11 +1699,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_town_work_level_2
-
-	var_1_83[101] = {
+	pg.base.activity_town_work_level_2[101] = {
 		town_level = 11,
 		name = "花园",
 		type_param = 870,
@@ -2092,11 +1723,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_town_work_level_2
-
-	var_1_84[102] = {
+	pg.base.activity_town_work_level_2[102] = {
 		town_level = 12,
 		name = "花园",
 		type_param = 1040,
@@ -2115,11 +1742,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_town_work_level_2
-
-	var_1_85[103] = {
+	pg.base.activity_town_work_level_2[103] = {
 		town_level = 13,
 		name = "花园",
 		type_param = 1250,
@@ -2138,11 +1761,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_town_work_level_2
-
-	var_1_86[104] = {
+	pg.base.activity_town_work_level_2[104] = {
 		town_level = 14,
 		name = "花园",
 		type_param = 1500,
@@ -2161,11 +1780,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_town_work_level_2
-
-	var_1_87[105] = {
+	pg.base.activity_town_work_level_2[105] = {
 		town_level = 15,
 		name = "花园",
 		type_param = 1750,
@@ -2184,8 +1799,7 @@ var_0_3.base.activity_town_work_level_2 = {}
 			}
 		}
 	}
-	pg = var_1_87
-	var_1_87.base.activity_town_work_level_2[106] = {
+	pg.base.activity_town_work_level_2[106] = {
 		town_level = 0,
 		name = "花园",
 		type_param = 2000,

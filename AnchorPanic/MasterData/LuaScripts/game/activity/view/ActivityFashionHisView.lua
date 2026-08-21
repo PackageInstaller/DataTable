@@ -20,7 +20,7 @@ function configUI(self)
     super.configUI(self)
     self.mBuyScrollContent = self:getChildGO("mBuyScroll"):GetComponent(ty.ScrollRect).content
     self.mBuyItem = self:getChildGO("mBuyItem")
-    
+
     self.mTxtTimer = self:getChildGO("mTxtTimer"):GetComponent(ty.Text)
 end
 
@@ -48,7 +48,7 @@ function deActive(self)
 
     if self.mTimeSn then
         LoopManager:removeTimerByIndex(self.mTimeSn)
-        self.mTimeSn=nil
+        self.mTimeSn = nil
     end
 end
 
@@ -56,28 +56,38 @@ function showPanel(self)
 
     self:clearListItem()
     local list = activity.ActitvityExtraManager:getFashionHisDataByType(self.openType)
+
+    if RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious(sdk.ChannelData.HAR_LEVEL_2) then
+        for k, v in pairs(list) do
+            if v.id == 1014 then
+                -- 特殊渠道不上架该皮肤
+                table.remove(list, k)
+                break
+            end
+        end
+    end
+
     for i = 1, #list, 1 do
         local isBuy = activity.ActitvityExtraManager:getFashionHisIsBuy(list[i].id)
         list[i].isBuy = isBuy
         list[i].isBuySort = isBuy and 1 or 0
     end
 
-    table.sort(list, function(a, b) 
+    table.sort(list, function(a, b)
         if a.isBuySort == b.isBuySort then
-            return a.id < b.id
+            return a.sort < b.sort
         else
             return a.isBuySort < b.isBuySort
         end
-       
-     end)
+
+    end)
 
     for i = 1, #list do
         local item = SimpleInsItem:create(self.mBuyItem, self.mBuyScrollContent, "mFashionHisBuyItem")
         local fashionVo = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, list[i].expiredFashion[1],
-            list[i].expiredFashion[2])
+        list[i].expiredFashion[2])
 
-        local url = UrlManager:getFashionShopBodyPath(fashionVo.fashionIcon)
-        item:getChildGO("mIconFashion"):GetComponent(ty.AutoRefImage):SetImg(url, false)
+        item:getChildGO("mIconFashion"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getFashionShopBodyPath(fashionVo.fashionIcon), false)
         local tapList = fashionVo.tap
         item:getChildGO("mTag1"):SetActive(table.indexof01(tapList, 1) > 0)
         item:getChildGO("mTag2"):SetActive(table.indexof01(tapList, 2) > 0)
@@ -87,10 +97,10 @@ function showPanel(self)
         item:getChildGO("mBtnBuy"):SetActive(list[i].isBuy == false)
         item:getChildGO("mIsBuy"):SetActive(list[i].isBuy)
 
-        item:getChildGO("mTxtPrice"):GetComponent(ty.Text).text = "¥".. list[i].price/100
+        item:getChildGO("mTxtPrice"):GetComponent(ty.Text).text = "¥" .. list[i].price / 100
 
         local propsList = AwardPackManager:getAwardListById(list[i].dropId)
-        for k,v in pairs( propsList) do
+        for k, v in pairs(propsList) do
             local vo = props.PropsManager:getTypePropsVoByTid(v.tid)
             if vo.effectType ~= UseEffectType.ADD_HERO_FASHION_CLOTHES then
                 local propsGrid = PropsGrid:createByData({
@@ -132,14 +142,14 @@ function updateTime(self)
     if activity.ActivityManager:getActivityVoById(activity.ActivityId.PermitFashionHis) then
         local clientTime = GameManager:getClientTime()
         local RemainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.PermitFashionHis)
-            :getEndTime() - clientTime
+        :getEndTime() - clientTime
         local timeTxt = RemainingTime <= 0 and "活动已结束" or _TT(3530) ..
-                            TimeUtil.getFormatTimeBySeconds_9(RemainingTime)
+        TimeUtil.getFormatTimeBySeconds_9(RemainingTime)
         self.mTxtTimer.text = timeTxt
         if RemainingTime <= 0 then
             if self.mTimeSn then
                 LoopManager:removeTimerByIndex(self.mTimeSn)
-                self.mTimeSn=nil
+                self.mTimeSn = nil
             end
             self:close()
             return

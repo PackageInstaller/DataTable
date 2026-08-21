@@ -1,70 +1,45 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldMediaCollectionMemoryLayer", import(".WorldMediaCollectionTemplateLayer"))
 
-local var_0_0 = "WorldMediaCollectionMemoryLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".WorldMediaCollectionTemplateLayer"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldMediaCollectionMemoryUI"
 end
 
-function var_0_1.OnInit(arg_2_0)
-	var_0_1.super.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
+	var_0_0.super.OnInit(arg_2_0)
+	assert(arg_2_0.viewParent, "Need assign ViewParent for " .. arg_2_0.__cname)
 
-	assert = var_1
+	arg_2_0._top = arg_2_0._tf:Find("Top")
+	arg_2_0.memoryMask = arg_2_0._top:Find("StoryMask")
 
-	var_1(arg_2_0.viewParent, "Need assign ViewParent for " .. arg_2_0.__cname)
-
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0._top = var_1.Find(var_2_0, "Top")
-
-	local var_2_1 = arg_2_0._top
-
-	arg_2_0.memoryMask = var_1.Find(var_2_1, "StoryMask")
-	setActive = var_1
-
-	var_1(arg_2_0.memoryMask, false)
+	setActive(arg_2_0.memoryMask, false)
 
 	return
 end
 
-function var_0_1.GetDetailLayer(arg_3_0)
+function var_0_0.GetDetailLayer(arg_3_0)
 	if not arg_3_0.detailUI then
-		WorldMediaCollectionMemoryDetailLayer = var_1
-		arg_3_0.detailUI = var_1.New(arg_3_0, arg_3_0._tf, arg_3_0.event, arg_3_0.contextData)
+		arg_3_0.detailUI = WorldMediaCollectionMemoryDetailLayer.New(arg_3_0, arg_3_0._tf, arg_3_0.event, arg_3_0.contextData)
 
-		local var_3_0 = arg_3_0.detailUI
-
-		var_1.Load(var_3_0)
-
-		local var_3_1 = arg_3_0.detailUI
-
-		var_1.SetStoryMask(var_3_1, arg_3_0.memoryMask)
+		arg_3_0.detailUI:Load()
+		arg_3_0.detailUI:SetStoryMask(arg_3_0.memoryMask)
 	end
 
 	return arg_3_0.detailUI
 end
 
-function var_0_1.HideDetailLayer(arg_4_0)
+function var_0_0.HideDetailLayer(arg_4_0)
 	if not arg_4_0.detailUI then
 		return
 	end
 
-	local var_4_0 = arg_4_0.detailUI.buffer
-
-	var_1.Hide(var_4_0)
+	arg_4_0.detailUI.buffer:Hide()
 
 	return
 end
 
-function var_0_1.CloseDetailLayer(arg_5_0)
+function var_0_0.CloseDetailLayer(arg_5_0)
 	if arg_5_0.detailUI then
-		local var_5_0 = arg_5_0.detailUI
-
-		var_1.Destroy(var_5_0)
+		arg_5_0.detailUI:Destroy()
 
 		arg_5_0.detailUI = nil
 	end
@@ -72,40 +47,30 @@ function var_0_1.CloseDetailLayer(arg_5_0)
 	return
 end
 
-function var_0_1.GetGroupLayer(arg_6_0)
+function var_0_0.GetGroupLayer(arg_6_0)
 	if not arg_6_0.groupUI then
-		WorldMediaCollectionMemoryGroupLayer = var_1
-		arg_6_0.groupUI = var_1.New(arg_6_0, arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
+		arg_6_0.groupUI = WorldMediaCollectionMemoryGroupLayer.New(arg_6_0, arg_6_0._tf, arg_6_0.event, arg_6_0.contextData)
 
-		local var_6_0 = arg_6_0.groupUI
-
-		var_1.RegisterView(var_6_0, arg_6_0)
-
-		local var_6_1 = arg_6_0.groupUI
-
-		var_1.Load(var_6_1)
+		arg_6_0.groupUI:RegisterView(arg_6_0)
+		arg_6_0.groupUI:Load()
 	end
 
 	return arg_6_0.groupUI
 end
 
-function var_0_1.HideGroupLayer(arg_7_0)
+function var_0_0.HideGroupLayer(arg_7_0)
 	if not arg_7_0.groupUI then
 		return
 	end
 
-	local var_7_0 = arg_7_0.groupUI.buffer
-
-	var_1.Hide(var_7_0)
+	arg_7_0.groupUI.buffer:Hide()
 
 	return
 end
 
-function var_0_1.CloseGroupLayer(arg_8_0)
+function var_0_0.CloseGroupLayer(arg_8_0)
 	if arg_8_0.groupUI then
-		local var_8_0 = arg_8_0.groupUI
-
-		var_1.Destroy(var_8_0)
+		arg_8_0.groupUI:Destroy()
 
 		arg_8_0.groupUI = nil
 	end
@@ -113,59 +78,32 @@ function var_0_1.CloseGroupLayer(arg_8_0)
 	return
 end
 
-function var_0_1.SwitchBetweenGroupsAndItems(arg_9_0, arg_9_1)
+function var_0_0.SwitchBetweenGroupsAndItems(arg_9_0, arg_9_1)
 	if arg_9_0.groupUI then
-		local var_9_0 = arg_9_0.groupUI.buffer
-
-		var_2.SetActive(var_9_0, arg_9_1)
+		arg_9_0.groupUI.buffer:SetActive(arg_9_1)
 	end
 
 	if arg_9_0.detailUI then
-		local var_9_1 = arg_9_0.detailUI.buffer
-
-		var_2.SetActive(var_9_1, not arg_9_1)
+		arg_9_0.detailUI.buffer:SetActive(not arg_9_1)
 	end
 
 	return
 end
 
-function var_0_1.OnSelected(arg_10_0)
-	var_0_1.super.OnSelected(arg_10_0)
+function var_0_0.OnSelected(arg_10_0)
+	var_0_0.super.OnSelected(arg_10_0)
 
-	getProxy = var_1
-	ActivityProxy = var_3
+	local var_10_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.QIXI_ACTIVITY_ID)
 
-	local var_10_0 = var_1(var_3)
-	local var_10_1 = var_1.getActivityById
+	if var_10_0 and not var_10_0:isEnd() then
+		local var_10_1 = _.flatten((var_10_0:getConfig("config_data")))
+		local var_10_2 = getProxy(TaskProxy):getTaskById(var_10_1[#var_10_1])
 
-	ActivityConst = var_1_10005
-
-	if var_10_1(var_10_0, var_1_10005.QIXI_ACTIVITY_ID) and not var_2:isEnd() then
-		local var_10_2 = var_2:getConfig("config_data")
-
-		_ = var_10_0
-
-		local var_10_3 = var_4[#var_10_0.flatten(var_10_2)]
-
-		getProxy = var_6
-		TaskProxy = var_1_10008
-
-		local var_10_4 = var_6(var_1_10008)
-
-		if var_6.getTaskById(var_10_4, var_10_3) and not var_1_10007:isFinish() then
-			pg = var_8
-
-			local var_10_5 = var_8.NewStoryMgr.GetInstance()
-
-			var_8.Play(var_10_5, "HOSHO8", function()
-				local var_11_0 = arg_10_0
-				local var_11_1 = var_0.emit
-
-				CollectionScene = var_2_10003
-
-				var_11_1(var_11_0, var_2_10003.ACTIVITY_OP, {
+		if var_10_2 and not var_10_2:isFinish() then
+			pg.NewStoryMgr.GetInstance():Play("HOSHO8", function()
+				arg_10_0:emit(CollectionScene.ACTIVITY_OP, {
 					cmd = 2,
-					activity_id = var_0.id
+					activity_id = var_10_0.id
 				})
 
 				return
@@ -173,61 +111,47 @@ function var_0_1.OnSelected(arg_10_0)
 		end
 	end
 
-	local var_10_6 = arg_10_0.contextData.memoryGroup
-	local var_10_7 = arg_10_0.contextData
+	local var_10_3 = arg_10_0.contextData.memoryGroup
 
-	var_10_7.memoryGroup = nil
+	arg_10_0.contextData.memoryGroup = nil
 
-	if var_10_6 then
-		pg = var_10_7
-
-		if var_10_7.memory_group[var_10_6] then
-			local var_10_8 = arg_10_0
-			local var_10_9 = arg_10_0.ShowSubMemories
-
-			pg = var_1_10007
-
-			var_10_9(var_10_8, var_1_10007.memory_group[var_10_6])
-
-			goto label_10_0
-		end
+	if var_10_3 and pg.memory_group[var_10_3] then
+		arg_10_0:ShowSubMemories(pg.memory_group[var_10_3])
+	else
+		arg_10_0:MemoryFilter()
+		arg_10_0:SwitchReddotMemory()
 	end
-
-	arg_10_0:MemoryFilter()
-	arg_10_0:SwitchReddotMemory()
-
-	::label_10_0::
 
 	return
 end
 
-function var_0_1.OnReselected(arg_12_0)
+function var_0_0.OnReselected(arg_12_0)
 	arg_12_0:Return2MemoryGroup()
 
 	return
 end
 
-function var_0_1.OnDeselected(arg_13_0)
+function var_0_0.OnDeselected(arg_13_0)
 	arg_13_0.contextData.memoryGroup = nil
 
-	var_0_1.super.OnDeselected(arg_13_0)
+	var_0_0.super.OnDeselected(arg_13_0)
 
 	return
 end
 
-function var_0_1.Hide(arg_14_0)
+function var_0_0.Hide(arg_14_0)
 	arg_14_0:HideDetailLayer()
 	arg_14_0:HideGroupLayer()
-	var_0_1.super.Hide(arg_14_0)
+	var_0_0.super.Hide(arg_14_0)
 
 	return
 end
 
-function var_0_1.OnBackward(arg_15_0)
+function var_0_0.OnBackward(arg_15_0)
 	return arg_15_0:Return2MemoryGroup()
 end
 
-function var_0_1.SwitchMemoryFilter(arg_16_0, arg_16_1)
+function var_0_0.SwitchMemoryFilter(arg_16_0, arg_16_1)
 	if arg_16_1 == 1 then
 		arg_16_0.memoryFilterIndex = {
 			true,
@@ -235,9 +159,7 @@ function var_0_1.SwitchMemoryFilter(arg_16_0, arg_16_1)
 			true
 		}
 	else
-		ipairs = var_1_10002
-
-		for iter_16_0 in var_1_10002(arg_16_0.memoryFilterIndex) do
+		for iter_16_0 in ipairs(arg_16_0.memoryFilterIndex) do
 			arg_16_0.memoryFilterIndex[iter_16_0] = arg_16_1 - 1 == iter_16_0
 		end
 	end
@@ -245,35 +167,27 @@ function var_0_1.SwitchMemoryFilter(arg_16_0, arg_16_1)
 	return
 end
 
-function var_0_1.MemoryFilter(arg_17_0)
-	local var_17_0 = arg_17_0:GetGroupLayer().buffer
+function var_0_0.MemoryFilter(arg_17_0)
+	local var_17_0 = arg_17_0:GetGroupLayer()
 
-	var_2.Show(var_17_0)
-
-	local var_17_1 = var_1.buffer
-
-	var_2.MemoryFilter(var_17_1)
+	var_17_0.buffer:Show()
+	var_17_0.buffer:MemoryFilter()
 	arg_17_0:HideDetailLayer()
 
 	return
 end
 
-function var_0_1.SwitchReddotMemory(arg_18_0)
-	local var_18_0 = arg_18_0:GetGroupLayer().buffer
-
-	var_2.SwitchReddotMemory(var_18_0)
+function var_0_0.SwitchReddotMemory(arg_18_0)
+	arg_18_0:GetGroupLayer().buffer:SwitchReddotMemory()
 
 	return
 end
 
-function var_0_1.ShowSubMemories(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	local var_19_0 = arg_19_0:GetDetailLayer().buffer
+function var_0_0.ShowSubMemories(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
+	local var_19_0 = arg_19_0:GetDetailLayer()
 
-	var_5.Show(var_19_0)
-
-	local var_19_1 = var_4.buffer
-
-	var_5.ShowSubMemories(var_19_1, arg_19_1, arg_19_3)
+	var_19_0.buffer:Show()
+	var_19_0.buffer:ShowSubMemories(arg_19_1, arg_19_3)
 
 	if not arg_19_2 then
 		arg_19_0:HideGroupLayer()
@@ -282,29 +196,21 @@ function var_0_1.ShowSubMemories(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
 	return
 end
 
-function var_0_1.Return2MemoryGroup(arg_20_0)
-	local var_20_0 = arg_20_0.contextData.memoryGroup
-	local var_20_1 = arg_20_0:GetGroupLayer()
+function var_0_0.Return2MemoryGroup(arg_20_0)
+	local var_20_0 = arg_20_0:GetGroupLayer()
 
-	if var_2.GetCurrentMode(var_20_1) == var_2.LINE_MODE then
-		if not var_20_0 then
-			var_2:SwitchStoryLineMode(var_2.FORM_MODE)
+	if var_20_0:GetCurrentMode() == var_20_0.LINE_MODE then
+		if not arg_20_0.contextData.memoryGroup then
+			var_20_0:SwitchStoryLineMode(var_20_0.FORM_MODE)
 		else
-			local var_20_2 = var_2.storyLineView
-
-			var_3.TryPlayBGM(var_20_2)
+			var_20_0.storyLineView:TryPlayBGM()
 		end
-	elseif not var_20_0 then
+	elseif not arg_20_0.contextData.memoryGroup then
 		return
 	end
 
-	local var_20_3 = var_2.buffer
-
-	var_3.Show(var_20_3)
-
-	local var_20_4 = var_2.buffer
-
-	var_3.Return2MemoryGroup(var_20_4)
+	var_20_0.buffer:Show()
+	var_20_0.buffer:Return2MemoryGroup()
 
 	arg_20_0.contextData.memoryGroup = nil
 
@@ -313,48 +219,37 @@ function var_0_1.Return2MemoryGroup(arg_20_0)
 	return true
 end
 
-function var_0_1.Return2Line(arg_21_0)
+function var_0_0.Return2Line(arg_21_0)
 	return
 end
 
-function var_0_1.UpdateView(arg_22_0)
-	local var_22_0
-
-	if arg_22_0.contextData.memoryGroup then
-		var_22_0 = arg_22_0.groupUI
-	else
-		var_22_0 = arg_22_0.detailUI
-	end
+function var_0_0.UpdateView(arg_22_0)
+	local var_22_0 = arg_22_0.contextData.memoryGroup and arg_22_0.groupUI or arg_22_0.detailUI
 
 	if not var_22_0 then
 		return
 	end
 
-	local var_22_1 = var_22_0.buffer
-
-	var_2.UpdateView(var_22_1)
+	var_22_0.buffer:UpdateView()
 
 	return
 end
 
-function var_0_1.WrapToStoryLine(arg_23_0, arg_23_1)
+function var_0_0.WrapToStoryLine(arg_23_0, arg_23_1)
 	local var_23_0 = arg_23_0:GetGroupLayer()
 
-	var_2.SwitchStoryLineMode(var_23_0, var_2.LINE_MODE)
-
-	local var_23_1 = var_2.storyLineView
-
-	var_3.ShowNodeDetail(var_23_1, arg_23_1)
+	var_23_0:SwitchStoryLineMode(var_23_0.LINE_MODE)
+	var_23_0.storyLineView:ShowNodeDetail(arg_23_1)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_24_0)
+function var_0_0.OnDestroy(arg_24_0)
 	arg_24_0:CloseDetailLayer()
 	arg_24_0:CloseGroupLayer()
-	var_0_1.super.OnDestroy(arg_24_0)
+	var_0_0.super.OnDestroy(arg_24_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

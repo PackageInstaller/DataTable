@@ -158,7 +158,7 @@ function updateGetBtn(self)
         MoneyTid.RECRUIT_BRACELETS_TICKET_TID,
         MoneyTid.RECRUIT_ACT_BRACELETS_TICKET_TID,
         MoneyTid.FASHION_TID,
-        MoneyTid.ITEM_2171, MoneyTid.ITEM_2172, MoneyTid.ITEM_2173, MoneyTid.ITEM_2174, MoneyTid.ITEM_2175, MoneyTid.ITEM_2176,
+        MoneyTid.ITEM_2171, MoneyTid.ITEM_2172, MoneyTid.ITEM_2173, MoneyTid.ITEM_2174, MoneyTid.ITEM_2175, MoneyTid.ITEM_2176,MoneyTid.ITEM_2177,MoneyTid.ROUNDPRIZE_PROPS,MoneyTid.ROUNDPRIZE_PROPS_TWO
     }
 
     for k, v in pairs(showTidList) do
@@ -229,6 +229,10 @@ function onGetClick(self)
         GameDispatcher:dispatchEvent(EventName.OPEN_UAV_SPEEDUP_VIEW)
     elseif table.indexof(MoneyTid.GUILD_SKILL_ITEM_LIST, self.mTid) ~= false then
         self:checkOpenShopBuyPanel(ShopType.GUILD, self.mTid)
+    elseif self.mTid == MoneyTid.ROUNDPRIZE_PROPS then
+        self:checkOpenShopBuyPanel(ShopType.HIDE_SHOP, self.mTid)
+    elseif self.mTid == MoneyTid.ROUNDPRIZE_PROPS_TWO then
+        self:checkOpenShopBuyPanel(ShopType.HIDE_SHOP_TWO, self.mTid)
     else
 
         -- gs.Message.Show(MoneyUtil.getMoneyNameByTid(self.mTid))

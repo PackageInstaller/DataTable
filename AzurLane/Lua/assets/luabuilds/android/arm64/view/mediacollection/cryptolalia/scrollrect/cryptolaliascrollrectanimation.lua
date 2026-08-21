@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CryptolaliaScrollRectAnimation")
+﻿local var_0_0 = class("CryptolaliaScrollRectAnimation")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._tf = arg_1_1
@@ -10,23 +8,10 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.Init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.GetComponent
+	arg_2_0.animation = arg_2_0._tf:GetComponent(typeof(Animation))
+	arg_2_0.dftAniEvent = arg_2_0._tf:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_1_10004
-	Animation = var_1_10006
-	arg_2_0.animation = var_2_1(var_2_0, var_1_10004(var_1_10006))
-
-	local var_2_2 = arg_2_0._tf
-	local var_2_3 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_2_0.dftAniEvent = var_2_3(var_2_2, var_4(var_1_10006))
-
-	local var_2_4 = arg_2_0.dftAniEvent
-
-	var_1.SetTriggerEvent(var_2_4, function()
+	arg_2_0.dftAniEvent:SetTriggerEvent(function()
 		if arg_2_0.onTrigger then
 			arg_2_0.onTrigger()
 		end
@@ -35,10 +20,7 @@ function var_0_0.Init(arg_2_0)
 
 		return
 	end)
-
-	local var_2_5 = arg_2_0.dftAniEvent
-
-	var_1.SetEndEvent(var_2_5, function()
+	arg_2_0.dftAniEvent:SetEndEvent(function()
 		if arg_2_0.callback then
 			arg_2_0.callback()
 		end
@@ -46,35 +28,16 @@ function var_0_0.Init(arg_2_0)
 		return
 	end)
 
-	local var_2_6 = arg_2_0._tf
+	arg_2_0.subAnim = arg_2_0._tf:Find("Main/anim")
+	arg_2_0.subAnimation = arg_2_0.subAnim:GetComponent(typeof(Animation))
+	arg_2_0.subDftAniEvent = arg_2_0.subAnim:GetComponent(typeof(DftAniEvent))
 
-	arg_2_0.subAnim = var_1.Find(var_2_6, "Main/anim")
-
-	local var_2_7 = arg_2_0.subAnim
-	local var_2_8 = var_1.GetComponent
-
-	typeof = var_4
-	Animation = var_1_10006
-	arg_2_0.subAnimation = var_2_8(var_2_7, var_4(var_1_10006))
-
-	local var_2_9 = arg_2_0.subAnim
-	local var_2_10 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_1_10006
-	arg_2_0.subDftAniEvent = var_2_10(var_2_9, var_4(var_1_10006))
-
-	local var_2_11 = arg_2_0.subDftAniEvent
-
-	var_1.SetStartEvent(var_2_11, function()
+	arg_2_0.subDftAniEvent:SetStartEvent(function()
 		arg_2_0.playing = true
 
 		return
 	end)
-
-	local var_2_12 = arg_2_0.subDftAniEvent
-
-	var_1.SetEndEvent(var_2_12, function()
+	arg_2_0.subDftAniEvent:SetEndEvent(function()
 		arg_2_0.playing = false
 
 		if arg_2_0.onLastUpdate then
@@ -87,15 +50,9 @@ function var_0_0.Init(arg_2_0)
 	end)
 
 	arg_2_0.playing = false
+	arg_2_0.handle = arg_2_0.handle or UpdateBeat:CreateListener(arg_2_0.Update, arg_2_0)
 
-	if not arg_2_0.handle then
-		UpdateBeat = var_1
-		arg_2_0.handle = var_1:CreateListener(arg_2_0.Update, arg_2_0)
-	end
-
-	UpdateBeat = var_1
-
-	var_1:AddListener(arg_2_0.handle)
+	UpdateBeat:AddListener(arg_2_0.handle)
 
 	arg_2_0.isInit = true
 
@@ -104,9 +61,7 @@ end
 
 function var_0_0.Update(arg_7_0)
 	if arg_7_0.playing and arg_7_0.onUpdate then
-		local var_7_0 = arg_7_0:Evaluate()
-
-		arg_7_0.onUpdate(var_7_0)
+		arg_7_0.onUpdate((arg_7_0:Evaluate()))
 	elseif not arg_7_0.playing and arg_7_0.onUpdate then
 		arg_7_0.onUpdate = nil
 	end
@@ -120,15 +75,8 @@ function var_0_0.Play(arg_8_0, arg_8_1)
 	end
 
 	arg_8_0:Stop()
-
-	local var_8_0 = arg_8_0.animation
-
-	var_2.Play(var_8_0, "anim_Cryptolalia_change")
-
-	local var_8_1 = arg_8_1 <= 0 and "anim_Cryptolalia_listup" or "anim_Cryptolalia_listdown"
-	local var_8_2 = arg_8_0.subAnimation
-
-	var_3.Play(var_8_2, var_8_1)
+	arg_8_0.animation:Play("anim_Cryptolalia_change")
+	arg_8_0.subAnimation:Play(arg_8_1 <= 0 and "anim_Cryptolalia_listup" or "anim_Cryptolalia_listdown")
 
 	return var_0_0
 end
@@ -164,38 +112,20 @@ end
 function var_0_0.Stop(arg_14_0)
 	arg_14_0.playing = false
 
-	local var_14_0 = arg_14_0.animation
-
-	var_1.Stop(var_14_0)
-
-	local var_14_1 = arg_14_0.subAnimation
-
-	var_1.Stop(var_14_1)
+	arg_14_0.animation:Stop()
+	arg_14_0.subAnimation:Stop()
 
 	return
 end
 
 function var_0_0.Dispose(arg_15_0)
-	local var_15_0 = arg_15_0.dftAniEvent
-
-	var_1.SetTriggerEvent(var_15_0, nil)
-
-	local var_15_1 = arg_15_0.dftAniEvent
-
-	var_1.SetEndEvent(var_15_1, nil)
-
-	local var_15_2 = arg_15_0.subDftAniEvent
-
-	var_1.SetStartEvent(var_15_2, nil)
-
-	local var_15_3 = arg_15_0.subDftAniEvent
-
-	var_1.SetEndEvent(var_15_3, nil)
+	arg_15_0.dftAniEvent:SetTriggerEvent(nil)
+	arg_15_0.dftAniEvent:SetEndEvent(nil)
+	arg_15_0.subDftAniEvent:SetStartEvent(nil)
+	arg_15_0.subDftAniEvent:SetEndEvent(nil)
 
 	if arg_15_0.handle then
-		UpdateBeat = var_1
-
-		var_1:RemoveListener(arg_15_0.handle)
+		UpdateBeat:RemoveListener(arg_15_0.handle)
 	end
 
 	return

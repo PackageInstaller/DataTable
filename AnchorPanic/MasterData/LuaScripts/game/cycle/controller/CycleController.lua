@@ -111,6 +111,7 @@ function listNotification(self)
     --打开事影循回领奖界面
     GameDispatcher:addEventListener(EventName.OPEN_CYCLE_STORY_AWARD_PANEL,self.onOpenCycleStoryTargetPanel,self)
     
+    GameDispatcher:addEventListener(EventName.OPEN_CYCLE_MONTH_PANEL,self.onOpenCycleMonthPanel,self)
     --更新无限城红点
     GameDispatcher:addEventListener(EventName.UPDATE_CYCLE_RED,self.onUpdateRed,self)
     ----------------------------------------------------------请求后端----------------------------------------------------------
@@ -142,7 +143,8 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_CYCLE_COLLECTION_AWARD, self.onReqCollectionAwardHandler, self)
     --请求领取剧情奖励
     GameDispatcher:addEventListener(EventName.REQ_CYCLE_STORY_AWARD, self.onReqStoryAwardHandler, self)
-
+    GameDispatcher:addEventListener(EventName.REQ_CYCLE_MONTH_REWARD, self.onReqCycleMonthAwardHandler, self)
+    
     
 end
 
@@ -171,6 +173,9 @@ function registerMsgHandler(self)
         SC_EVENT_CYCLE_GAIN_COLLAGE_REWARD = self.onCollageInfoHandler,
 
         SC_EVENT_CYCLE_GAIN_SHOWROOM_REWARD = self.onShowRoomInfoHandler,
+
+        SC_EVENT_CYCLE_MONTH_REWARD_PANEL = self.onCycleMonthRewardHandler,
+        SC_EVENT_CYCLE_GAIN_MONTH_REWARD = self.onCycleMonthGainRewardHandler,
     }
 end
 
@@ -267,6 +272,18 @@ end
 function onShowRoomInfoHandler(self,args)
     if args.result == 1 then
         cycle.CycleManager:updateCycleStoryAwardInfo(args.id)
+    end
+end
+
+--- *s2c* 月奖励面板 19535
+function onCycleMonthRewardHandler(self,args)
+    cycle.CycleManager:parseCycleMonthRewardInfo(args)
+end
+
+--- *s2c* 月奖励领取 19537
+function onCycleMonthGainRewardHandler(self,args)
+    if args.result == 1 then
+        cycle.CycleManager:parseCycleMonthGainInfo(args)
     end
 end
 
@@ -372,6 +389,21 @@ function onReqStoryAwardHandler(self,args)
     SOCKET_SEND(Protocol.CS_EVENT_CYCLE_GAIN_SHOWROOM_REWARD, {
         id = args.id
     })
+end
+
+function onReqCycleMonthAwardHandler(self)
+    local list= {}
+    local task = cycle.CycleManager:getCycleMonthRewardData()
+    local allPoint = cycle.CycleManager:getCycleMonthPoint()
+    for i = 1, #task, 1 do
+        if task[i].id <= allPoint and cycle.CycleManager:getGainedList(task[i].id) == false then
+            table.insert(list,task[i].id)
+        end
+    end
+    --table.insert(list,args.id)
+    SOCKET_SEND(Protocol.CS_EVENT_CYCLE_GAIN_MONTH_REWARD, {
+        gain_list = list
+    },Protocol.SC_EVENT_CYCLE_GAIN_MONTH_REWARD)
 end
 
 ------------------------------------------------------------关闭所有步骤界面------------------------------------------------------------
@@ -847,6 +879,21 @@ function onDestoryCycleStoryTargetHandler(self)
     self.mCycleStoryTargetPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestoryCycleStoryTargetHandler, self)
     self.mCycleStoryTargetPanel = nil
 end
+
+
+function onOpenCycleMonthPanel(self,args)
+    if self.mCycleMonthPanel == nil then
+        self.mCycleMonthPanel = cycle.CycleMonthPanel.new()
+        self.mCycleMonthPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestoryCycleMonthHandler, self)
+    end
+    self.mCycleMonthPanel:open(args)
+end
+
+function onDestoryCycleMonthHandler(self)
+    self.mCycleMonthPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestoryCycleMonthHandler, self)
+    self.mCycleMonthPanel = nil
+end
+
 
 
 ------------------------------------------------------------更新红点------------------------------------------------------------

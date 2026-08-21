@@ -88,6 +88,8 @@ function setResState(self, updateState, data)
     elseif(self.m_state == download.ResState.DownloadFilesSuc)then
         self.m_data = {}
         self.m_data.moduleTypeList = {data[1]}
+        self.m_data.movedCount = data[2]
+        self.m_data.moveTotalCount = data[3]
     elseif(self.m_state == download.ResState.DownloadFilesFail)then
         self.m_data = {}
         self.m_data.moduleTypeList = data

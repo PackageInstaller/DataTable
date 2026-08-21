@@ -1,44 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DreamTourMedalDetailPanel", import("view.mediaCollection.album.MedalDetailPanel"))
 
-local var_0_0 = "DreamTourMedalDetailPanel"
+function var_0_0.InitUI(arg_1_0)
+	var_0_0.super.InitUI(arg_1_0)
 
-import = var_0_10003
+	arg_1_0._stateBg = findTF(arg_1_0._tf, "state_bg")
+	arg_1_0._progressLockText = findTF(arg_1_0._tf, "progress/lock/label")
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.mediaCollection.album.MedalDetailPanel"))
-
-function var_0_1.InitUI(arg_1_0)
-	var_0_1.super.InitUI(arg_1_0)
-
-	findTF = var_1
-	arg_1_0._stateBg = var_1(arg_1_0._tf, "state_bg")
-	findTF = var_1
-	arg_1_0._progressLockText = var_1(arg_1_0._tf, "progress/lock/label")
-	setText = var_1
-
-	local var_1_0 = arg_1_0._progressLockText
-
-	i18n = var_4
-
-	var_1(var_1_0, var_4("word_lock"))
+	setText(arg_1_0._progressLockText, i18n("word_lock"))
 
 	return
 end
 
-function var_0_1.UpdateMedal(arg_2_0)
-	var_0_1.super.UpdateMedal(arg_2_0)
-
-	local var_2_0 = arg_2_0._medalGroup
-	local var_2_1 = var_1.GetMedalGroupState(var_2_0)
-
-	SetActive = var_1_10002
-
-	local var_2_2 = arg_2_0._stateBg
-
-	ActivityMedalGroup = var_1_10005
-
-	var_1_10002(var_2_2, var_2_1 ~= var_1_10005.STATE_ACTIVE)
+function var_0_0.UpdateMedal(arg_2_0)
+	var_0_0.super.UpdateMedal(arg_2_0)
+	SetActive(arg_2_0._stateBg, arg_2_0._medalGroup:GetMedalGroupState() ~= ActivityMedalGroup.STATE_ACTIVE)
 
 	return
 end
 
-return var_0_1
+return var_0_0

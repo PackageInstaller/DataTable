@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "blackfriday_shop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "blackfriday_shop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.blackfriday_shop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.blackfriday_shop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.blackfriday_shop_template = rawget(pg, "blackfriday_shop_template") or setmetatable({
+	__name = "blackfriday_shop_template"
+}, confNEO)
+pg.blackfriday_shop_template.all = {
 	27,
 	28,
 	29,
@@ -40,25 +17,11 @@ var_0_3.all = {
 	38,
 	39
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.blackfriday_shop_template = {}
+pg.base = pg.base or {}
+pg.base.blackfriday_shop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.blackfriday_shop_template
-
-	var_1_0[27] = {
+	pg.base.blackfriday_shop_template[27] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -75,11 +38,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			609
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.blackfriday_shop_template
-
-	var_1_1[28] = {
+	pg.base.blackfriday_shop_template[28] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -96,11 +55,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			3024
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.blackfriday_shop_template
-
-	var_1_2[29] = {
+	pg.base.blackfriday_shop_template[29] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -117,11 +72,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			3025
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.blackfriday_shop_template
-
-	var_1_3[30] = {
+	pg.base.blackfriday_shop_template[30] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -138,11 +89,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			3026
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.blackfriday_shop_template
-
-	var_1_4[31] = {
+	pg.base.blackfriday_shop_template[31] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -159,11 +106,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			3027
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.blackfriday_shop_template
-
-	var_1_5[32] = {
+	pg.base.blackfriday_shop_template[32] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -180,11 +123,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			3028
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.blackfriday_shop_template
-
-	var_1_6[33] = {
+	pg.base.blackfriday_shop_template[33] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -201,11 +140,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			3029
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.blackfriday_shop_template
-
-	var_1_7[34] = {
+	pg.base.blackfriday_shop_template[34] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -222,11 +157,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			42060
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.blackfriday_shop_template
-
-	var_1_8[35] = {
+	pg.base.blackfriday_shop_template[35] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -243,11 +174,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			42066
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.blackfriday_shop_template
-
-	var_1_9[36] = {
+	pg.base.blackfriday_shop_template[36] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -264,11 +191,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			50006
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.blackfriday_shop_template
-
-	var_1_10[37] = {
+	pg.base.blackfriday_shop_template[37] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -285,11 +208,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			100011
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.blackfriday_shop_template
-
-	var_1_11[38] = {
+	pg.base.blackfriday_shop_template[38] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -306,8 +225,7 @@ var_0_3.base.blackfriday_shop_template = {}
 			20013
 		}
 	}
-	pg = var_1_11
-	var_1_11.base.blackfriday_shop_template[39] = {
+	pg.base.blackfriday_shop_template[39] = {
 		resource_type = 444,
 		resource_category = 1,
 		goods_rarity = 5,

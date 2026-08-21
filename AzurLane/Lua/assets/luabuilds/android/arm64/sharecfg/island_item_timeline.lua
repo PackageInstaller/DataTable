@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_item_timeline") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_item_timeline"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_item_timeline = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_item_timeline
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_item_timeline = rawget(pg, "island_item_timeline") or setmetatable({
+	__name = "island_item_timeline"
+}, confNEO)
+pg.island_item_timeline.all = {
 	1,
 	2,
 	3,
@@ -60,25 +37,11 @@ var_0_3.all = {
 	32,
 	33
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_item_timeline = {}
+pg.base = pg.base or {}
+pg.base.island_item_timeline = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_item_timeline
-
-	var_1_0[1] = {
+	pg.base.island_item_timeline[1] = {
 		name = "island/timeline/04/interactive_50128/pla_interactive_50128_01",
 		model = "Assets/Island/Item/05/50128/Prefab/pre_item_05_50128a.prefab",
 		is_loop = 1,
@@ -91,11 +54,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_item_timeline
-
-	var_1_1[2] = {
+	pg.base.island_item_timeline[2] = {
 		name = "island/timeline/04/interactive_50128/pla_interactive_50128_02",
 		model = "Assets/Island/Item/05/50128/Prefab/pre_item_05_50128b.prefab",
 		is_loop = 1,
@@ -104,11 +63,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_item_timeline
-
-	var_1_2[3] = {
+	pg.base.island_item_timeline[3] = {
 		name = "island/timeline/04/interactive_50128/pla_interactive_50128_03",
 		model = "Assets/Island/Item/05/50128/Prefab/pre_item_05_50128c.prefab",
 		is_loop = 1,
@@ -117,11 +72,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_item_timeline
-
-	var_1_3[4] = {
+	pg.base.island_item_timeline[4] = {
 		name = "island/timeline/04/interactive_50104/pla_interactive_50104_01",
 		model = "Assets/Island/Item/05/50104/Prefab/pre_item_05_50104.prefab",
 		is_loop = 1,
@@ -130,11 +81,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_item_timeline
-
-	var_1_4[5] = {
+	pg.base.island_item_timeline[5] = {
 		name = "island/timeline/04/interactive_50105/pla_interactive_50105_01",
 		model = "Assets/Island/Item/05/50105/Prefab/pre_item_05_50105.prefab",
 		is_loop = 1,
@@ -143,11 +90,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_item_timeline
-
-	var_1_5[6] = {
+	pg.base.island_item_timeline[6] = {
 		name = "island/timeline/04/interactive_50103/pla_interactive_50103_01",
 		model = "Assets/Island/Item/05/50103/Prefab/pre_item_05_50103.prefab",
 		is_loop = 1,
@@ -156,11 +99,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_item_timeline
-
-	var_1_6[7] = {
+	pg.base.island_item_timeline[7] = {
 		name = "island/timeline/04/interactive_50107/pla_interactive_50107_01",
 		model = "Assets/Island/Item/05/50107/Prefab/pre_item_05_50107.prefab",
 		is_loop = 1,
@@ -173,11 +112,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_item_timeline
-
-	var_1_7[8] = {
+	pg.base.island_item_timeline[8] = {
 		name = "island/timeline/04/interactive_50119/pla_interactive_50119_01",
 		model = "Assets/Island/Item/05/50119/Prefab/pre_item_05_50119.prefab",
 		is_loop = 1,
@@ -190,11 +125,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_item_timeline
-
-	var_1_8[9] = {
+	pg.base.island_item_timeline[9] = {
 		name = "island/timeline/04/interactive_50201/pla_interactive_50201_01",
 		model = "Assets/Island/Item/05/50201/Prefab/pre_item_05_50201a.prefab",
 		is_loop = 1,
@@ -203,11 +134,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_item_timeline
-
-	var_1_9[10] = {
+	pg.base.island_item_timeline[10] = {
 		name = "island/timeline/04/interactive_50201/pla_interactive_50201_02",
 		model = "Assets/Island/Item/05/50201/Prefab/pre_item_05_50201b.prefab",
 		is_loop = 1,
@@ -216,11 +143,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_item_timeline
-
-	var_1_10[11] = {
+	pg.base.island_item_timeline[11] = {
 		name = "island/timeline/04/interactive_50202/pla_interactive_50202_01",
 		model = "Assets/Island/Item/05/50202/Prefab/pre_item_05_50202.prefab",
 		is_loop = 1,
@@ -235,11 +158,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_item_timeline
-
-	var_1_11[12] = {
+	pg.base.island_item_timeline[12] = {
 		name = "island/timeline/04/interactive_50205/pla_interactive_50205_01",
 		model = "Assets/Island/Item/05/50205/Prefab/pre_item_05_50205.prefab",
 		is_loop = 1,
@@ -254,11 +173,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_item_timeline
-
-	var_1_12[13] = {
+	pg.base.island_item_timeline[13] = {
 		name = "island/timeline/04/interactive_50212/pla_interactive_50212_01",
 		model = "Assets/Island/Item/05/50212/Prefab/pre_item_05_50212.prefab",
 		is_loop = 1,
@@ -271,11 +186,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_item_timeline
-
-	var_1_13[14] = {
+	pg.base.island_item_timeline[14] = {
 		name = "Island/Timeline/05/interative_sit/pla_interative_sit",
 		model = "",
 		is_loop = 1,
@@ -284,11 +195,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_item_timeline
-
-	var_1_14[15] = {
+	pg.base.island_item_timeline[15] = {
 		name = "Island/Timeline/05/interative_lie/pla_interative_lie",
 		model = "",
 		is_loop = 1,
@@ -297,11 +204,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_item_timeline
-
-	var_1_15[16] = {
+	pg.base.island_item_timeline[16] = {
 		name = "Island/Timeline/05/interative_lay/pla_interative_lay",
 		model = "",
 		is_loop = 1,
@@ -310,11 +213,7 @@ var_0_3.base.island_item_timeline = {}
 		binding_track = {},
 		control_binding = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_item_timeline
-
-	var_1_16[17] = {
+	pg.base.island_item_timeline[17] = {
 		name = "island/timeline/04/interactive_50251/pla_interactive_50251_01",
 		model = "Assets/Island/Item/05/50251/Prefab/pre_item_05_50251.prefab",
 		is_loop = 0,
@@ -333,11 +232,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_item_timeline
-
-	var_1_17[18] = {
+	pg.base.island_item_timeline[18] = {
 		name = "island/timeline/04/interactive_50251/pla_interactive_50251_02",
 		model = "Assets/Island/Item/05/50251/Prefab/pre_item_05_50251.prefab",
 		is_loop = 0,
@@ -356,11 +251,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_item_timeline
-
-	var_1_18[19] = {
+	pg.base.island_item_timeline[19] = {
 		name = "island/timeline/04/interactive_50277/pla_interactive_50277_01",
 		model = "Assets/Island/Item/05/50277/Prefab/pre_item_05_50277.prefab",
 		is_loop = 1,
@@ -373,11 +264,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_item_timeline
-
-	var_1_19[20] = {
+	pg.base.island_item_timeline[20] = {
 		name = "island/timeline/04/interactive_50253/pla_interactive_50253_01",
 		model = "Assets/Island/Item/05/50253/Prefab/pre_item_05_50253.prefab",
 		is_loop = 1,
@@ -390,11 +277,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_item_timeline
-
-	var_1_20[21] = {
+	pg.base.island_item_timeline[21] = {
 		name = "island/timeline/04/interactive_50254/pla_interactive_50254_01",
 		model = "Assets/Island/Item/05/50254/Prefab/pre_item_05_50254.prefab",
 		is_loop = 0,
@@ -411,11 +294,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_item_timeline
-
-	var_1_21[22] = {
+	pg.base.island_item_timeline[22] = {
 		name = "island/timeline/04/interactive_50257/pla_interactive_50257_a-b",
 		model = "Assets/Island/Item/05/50257/Prefab/pre_item_05_50257.prefab",
 		is_loop = 0,
@@ -430,11 +309,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_item_timeline
-
-	var_1_22[23] = {
+	pg.base.island_item_timeline[23] = {
 		name = "island/timeline/04/interactive_50257/pla_interactive_50257_b-c",
 		model = "Assets/Island/Item/05/50257/Prefab/pre_item_05_50257.prefab",
 		is_loop = 0,
@@ -449,11 +324,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_item_timeline
-
-	var_1_23[24] = {
+	pg.base.island_item_timeline[24] = {
 		name = "island/timeline/04/interactive_50257/pla_interactive_50257_c-a",
 		model = "Assets/Island/Item/05/50257/Prefab/pre_item_05_50257.prefab",
 		is_loop = 0,
@@ -468,11 +339,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_item_timeline
-
-	var_1_24[25] = {
+	pg.base.island_item_timeline[25] = {
 		name = "island/timeline/04/interactive_50153/pla_interactive_50153_01",
 		model = "Assets/Island/Item/05/50153/Prefab/pre_item_05_50153.prefab",
 		is_loop = 1,
@@ -493,11 +360,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_item_timeline
-
-	var_1_25[26] = {
+	pg.base.island_item_timeline[26] = {
 		name = "island/timeline/04/interactive_50159/pla_interactive_50159_01",
 		model = "Assets/Island/Item/05/50159/Prefab/pre_item_05_50159.prefab",
 		is_loop = 1,
@@ -516,11 +379,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_item_timeline
-
-	var_1_26[27] = {
+	pg.base.island_item_timeline[27] = {
 		name = "island/timeline/04/interactive_50152/pla_interactive_50152_01",
 		model = "Assets/Island/Item/05/50152/Prefab/pre_item_05_50152.prefab",
 		is_loop = 1,
@@ -537,11 +396,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_item_timeline
-
-	var_1_27[28] = {
+	pg.base.island_item_timeline[28] = {
 		name = "island/timeline/04/interactive_50170/pla_interactive_50170_01",
 		model = "Assets/Island/Item/05/50170/Prefab/pre_item_05_50170.prefab",
 		is_loop = 1,
@@ -556,11 +411,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_item_timeline
-
-	var_1_28[29] = {
+	pg.base.island_item_timeline[29] = {
 		name = "island/timeline/04/interactive_50301/pla_interactive_50301_01",
 		model = "Assets/Island/Item/05/50301/Prefab/pre_item_05_50301.prefab",
 		is_loop = 1,
@@ -579,11 +430,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_item_timeline
-
-	var_1_29[30] = {
+	pg.base.island_item_timeline[30] = {
 		name = "island/timeline/04/interactive_50302/pla_interactive_50302_01",
 		model = "Assets/Island/Item/05/50302/Prefab/pre_item_05_50302.prefab",
 		is_loop = 1,
@@ -596,11 +443,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_item_timeline
-
-	var_1_30[31] = {
+	pg.base.island_item_timeline[31] = {
 		name = "island/timeline/04/interactive_50304/pla_interactive_50304_01",
 		model = "Assets/Island/Item/05/50304/Prefab/pre_item_05_50304.prefab",
 		is_loop = 1,
@@ -613,11 +456,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_item_timeline
-
-	var_1_31[32] = {
+	pg.base.island_item_timeline[32] = {
 		name = "island/timeline/04/interactive_50306/pla_interactive_50306_01",
 		model = "Assets/Island/Item/05/50306/Prefab/pre_item_05_50306.prefab",
 		is_loop = 1,
@@ -632,8 +471,7 @@ var_0_3.base.island_item_timeline = {}
 		},
 		control_binding = {}
 	}
-	pg = var_1_31
-	var_1_31.base.island_item_timeline[33] = {
+	pg.base.island_item_timeline[33] = {
 		name = "island/timeline/04/interactive_50314/pla_interactive_50314_01",
 		model = "Assets/Island/Item/05/50314/Prefab/pre_item_05_50314.prefab",
 		is_loop = 1,

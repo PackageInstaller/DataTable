@@ -1,36 +1,24 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateGoods", import("model.vo.BaseVO"))
 
-local var_0_0 = "NewEducateGoods"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.BaseVO"))
-
-var_0_1.TYPE = {
+var_0_0.TYPE = {
 	ATTR = 2,
 	RES = 3,
 	UP_ENTRY = 5,
 	BENEFIT = 1,
 	CHOOSE = 4
 }
-var_0_1.COST_TYPE = {
+var_0_0.COST_TYPE = {
 	GOLD = 1
 }
+var_0_0.COST_TYPE_2_RES_TYPE = {
+	[var_0_0.COST_TYPE.GOLD] = NewEducateChar.RES_TYPE.MONEY
+}
 
-local var_0_2 = {}
-local var_0_3 = var_0_1.COST_TYPE.GOLD
-
-NewEducateChar = var_3
-var_0_2[var_0_3] = var_3.RES_TYPE.MONEY
-var_0_1.COST_TYPE_2_RES_TYPE = var_0_2
-
-function var_0_1.bindConfigTable(arg_1_0)
-	pg = var_1_10001
-
-	return var_1_10001.child2_shop
+function var_0_0.bindConfigTable(arg_1_0)
+	return pg.child2_shop
 end
 
-function var_0_1.Ctor(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.Ctor(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0.id = arg_2_1
 	arg_2_0.configId = arg_2_0.id
 	arg_2_0.buyCnt = arg_2_2 or 0
@@ -38,70 +26,55 @@ function var_0_1.Ctor(arg_2_0, arg_2_1, arg_2_2)
 	return
 end
 
-function var_0_1.IsLimitTime(arg_3_0)
+function var_0_0.IsLimitTime(arg_3_0)
 	return arg_3_0:getConfig("is_refresh") == 1
 end
 
-function var_0_1.GetLimitCnt(arg_4_0)
+function var_0_0.GetLimitCnt(arg_4_0)
 	return arg_4_0:getConfig("limit_num")
 end
 
-function var_0_1.IsLimitCnt(arg_5_0)
+function var_0_0.IsLimitCnt(arg_5_0)
 	return arg_5_0:GetLimitCnt() ~= -1
 end
 
-function var_0_1.GetRemainCnt(arg_6_0)
-	local var_6_0
-
-	if not arg_6_0:IsLimitCnt() or not (arg_6_0:GetLimitCnt() - arg_6_0.buyCnt) then
-		var_6_0 = 9999
-	end
-
-	return var_6_0
+function var_0_0.GetRemainCnt(arg_6_0)
+	return arg_6_0:IsLimitCnt() and arg_6_0:GetLimitCnt() - arg_6_0.buyCnt or 9999
 end
 
-function var_0_1.GetCostCondition(arg_7_0)
-	getProxy = var_1_10001
-	NewEducateProxy = var_1_10003
-
-	local var_7_0 = var_1_10001(var_1_10003)
-	local var_7_1 = var_1.GetCurChar(var_7_0)
-	local var_7_2 = var_1.GetResIdByType(var_7_1, var_0_1.COST_TYPE_2_RES_TYPE[arg_7_0:getConfig("resource_type")])
-	local var_7_3 = {
-		operator = ">="
+function var_0_0.GetCostCondition(arg_7_0)
+	return {
+		operator = ">=",
+		type = NewEducateConst.DROP_TYPE.RES,
+		id = getProxy(NewEducateProxy):GetCurChar():GetResIdByType(var_0_0.COST_TYPE_2_RES_TYPE[arg_7_0:getConfig("resource_type")]),
+		number = arg_7_0:getConfig("resource_num")
 	}
-
-	NewEducateConst = var_7_1
-	var_7_3.type = var_7_1.DROP_TYPE.RES
-	var_7_3.id = var_7_2
-	var_7_3.number = arg_7_0:getConfig("resource_num")
-
-	return var_7_3
 end
 
-function var_0_1.GetCostWithBenefit(arg_8_0, arg_8_1)
-	Clone = var_1_10002
+function var_0_0.GetCostWithBenefit(arg_8_0, arg_8_1)
+	local var_8_0 = Clone(arg_8_0:GetCostCondition())
 
-	if arg_8_1[var_1_10002(arg_8_0:GetCostCondition()).type] and arg_8_1[var_2.type][var_2.id] then
-		NewEducateHelper = var_4
-		var_2.number = var_4.GetBenefitValue(var_2.number, var_3)
+	if arg_8_1[var_8_0.type] then
+		if arg_8_1[var_8_0.type][var_8_0.id] then
+			var_8_0.number = NewEducateHelper.GetBenefitValue(var_8_0.number, arg_8_1[var_8_0.type][var_8_0.id])
+		end
 	end
 
-	return var_2
+	return var_8_0
 end
 
-function var_0_1.AddBuyCnt(arg_9_0, arg_9_1)
+function var_0_0.AddBuyCnt(arg_9_0, arg_9_1)
 	arg_9_0.buyCnt = arg_9_0.buyCnt + arg_9_1
 
 	return
 end
 
-function var_0_1.IsBenefitType(arg_10_0)
-	return arg_10_0:getConfig("goods_type") == var_0_1.TYPE.BENEFIT
+function var_0_0.IsBenefitType(arg_10_0)
+	return arg_10_0:getConfig("goods_type") == var_0_0.TYPE.BENEFIT
 end
 
-function var_0_1.IsResType(arg_11_0)
-	return arg_11_0:getConfig("goods_type") == var_0_1.TYPE.RES
+function var_0_0.IsResType(arg_11_0)
+	return arg_11_0:getConfig("goods_type") == var_0_0.TYPE.RES
 end
 
-return var_0_1
+return var_0_0

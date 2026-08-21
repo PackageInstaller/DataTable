@@ -46,8 +46,13 @@ gs.AssetSetting = CS.Lylibs.AssetSetting
 gs.LifeCyclelManager = CS.Lylibs.LifeCyclelManager
 gs.LifeCycleCompoment = CS.LifeCycleCompoment
 gs.SceneToUIComponent = CS.Lylibs.SceneToUIComponent
+gs.CharacterDualViewPanel = CS.Lylibs.CharacterDualViewPanel
+gs.DualViewQuality = CS.Lylibs.DualViewQuality
 gs.TextToolsComponent = CS.Lylibs.TextToolsComponent
 gs.ColliderCall = CS.Lylibs.ColliderCall
+gs.PhysicsFrame = CS.Lylibs.PhysicsFrame
+gs.PhysicsCollision2D = CS.Lylibs.PhysicsCollision2D
+gs.PhysicsTrigger2D = CS.Lylibs.PhysicsTrigger2D
 
 -- gs.Message = CS.Lylibs.MessageUtil
 gs._Message = CS.Lylibs.MessageUtil
@@ -135,6 +140,7 @@ gs.MonoStrDict = CS.Lylibs.MonoStrDict
 
 gs.UIDrawLineComponent = CS.Lylibs.UIDrawLineComponent
 gs.StoryBGComponent = CS.Lylibs.StoryBGComponent
+gs.OutlineComponent = CS.Lylibs.OutlineComponen
 -- gs.FAnimationManager = CS.Lylibs.FAnimationManager
 gs.SimpleAnimation = CS.SimpleAnimation
 gs.FlipCameraComponent = CS.Lylibs.FlipCameraComponent
@@ -178,6 +184,7 @@ gs.DoTweenUtil = CS.Lylibs.DoTweenUtil
 gs.PlayMakerFSM = CS.PlayMakerFSM
 
 --UCLASS BEGIN------------------------------
+gs.SystemLanguage = CS.UnityEngine.SystemLanguage
 gs.TouchPhase = CS.UnityEngine.TouchPhase
 gs.Object = CS.UnityEngine.Object
 gs.Transform = CS.UnityEngine.Transform
@@ -200,6 +207,7 @@ gs.KeyCode = CS.UnityEngine.KeyCode
 gs.TextAsset = CS.UnityEngine.TextAsset
 gs.RuntimeAnimatorController = CS.UnityEngine.RuntimeAnimatorController
 gs.AnimatorOverrideController = CS.UnityEngine.AnimatorOverrideController
+gs.AnimatorControllerParameterType = CS.UnityEngine.AnimatorControllerParameterType
 gs.MeshFilter = CS.UnityEngine.MeshFilter
 gs.MeshRenderer = CS.UnityEngine.MeshRenderer
 gs.SkinnedMeshRenderer = CS.UnityEngine.SkinnedMeshRenderer
@@ -226,6 +234,8 @@ gs.QualityLevel = CS.UnityEngine.QualityLevel
 gs.AudioListener = CS.UnityEngine.AudioListener
 gs.Material = CS.UnityEngine.Material
 gs.Profiler = CS.UnityEngine.Profiling.Profiler
+gs.Physics = CS.UnityEngine.Physics
+gs.Physics2D = CS.UnityEngine.Physics2D
 gs.PhysicsRaycaster = CS.UnityEngine.EventSystems.PhysicsRaycaster
 gs.Plane = CS.UnityEngine.Plane
 gs.FullScreenMode = CS.UnityEngine.FullScreenMode
@@ -237,10 +247,19 @@ gs.ObstacleAvoidanceType = CS.UnityEngine.AI.ObstacleAvoidanceType
 gs.ShadowResolution = CS.UnityEngine.ShadowResolution
 gs.VideoPlayer = CS.UnityEngine.Video.VideoPlayer
 gs.RenderSettings = CS.UnityEngine.RenderSettings
+gs.AnimationEvent = CS.UnityEngine.AnimationEvent
 gs.TMP_Text = CS.TMPro.TMP_Text
 gs.TMP_LinkInfo = CS.TMPro.TMP_LinkInfo
 gs.TMP_TextUtilities = CS.TMPro.TMP_TextUtilities
 gs.TextMeshProLink = CS.TextMeshProLink
+gs.Debug = CS.UnityEngine.Debug
+
+---Final IK
+gs.FinalIKUtil = CS.Lylibs.FinalIKUtil
+
+gs.LookAtIK = CS.RootMotion.FinalIK.LookAtIK
+gs.BipedIK = CS.RootMotion.FinalIK.BipedIK
+gs.FullBodyBipedIK = CS.RootMotion.FinalIK.FullBodyBipedIK
 
 -- 手机视频播放器
 gs.Handheld = CS.UnityEngine.Handheld
@@ -260,7 +279,10 @@ gs.InputField = CS.UnityEngine.UI.InputField
 gs.ScrollRect = CS.UnityEngine.UI.ScrollRect
 gs.BoxCollider = CS.UnityEngine.BoxCollider
 gs.BoxCollider2D = CS.UnityEngine.BoxCollider2D
+gs.CircleCollider2D = CS.UnityEngine.CircleCollider2D
+
 gs.Collider = CS.UnityEngine.Collider
+gs.Collider2D = CS.UnityEngine.Collider2D
 
 gs.SphereCollider = CS.UnityEngine.SphereCollider
 gs.MeshCollider = CS.UnityEngine.MeshCollider

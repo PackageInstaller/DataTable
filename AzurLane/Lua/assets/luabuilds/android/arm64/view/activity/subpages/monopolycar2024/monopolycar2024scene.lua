@@ -1,69 +1,65 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MonopolyCar2024Scene", import("view.base.BaseUI"))
 
-local var_0_0 = "MonopolyCar2024Scene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MonopolyCar2024UI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	local var_3_0 = arg_3_0.contextData.actId
-
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
-
-	local var_3_1 = var_1_10002(var_1_10004)
-	local var_3_2 = var_2.getActivityById(var_3_1, var_3_0)
-
-	arg_3_0:UpdateGame(var_3_2)
+function var_0_0.didEnter(arg_3_0)
+	arg_3_0:UpdateGame((getProxy(ActivityProxy):getActivityById(arg_3_0.contextData.actId)))
 
 	return
 end
 
-function var_0_1.UpdateGame(arg_4_0, arg_4_1)
+function var_0_0.UpdateGame(arg_4_0, arg_4_1)
 	arg_4_0.activity = arg_4_1
 
 	if arg_4_0.gameUI then
-		local var_4_0 = arg_4_0.gameUI
-
-		var_2.UpdateActivity(var_4_0, arg_4_0.activity)
+		arg_4_0.gameUI:UpdateActivity(arg_4_0.activity)
 	else
-		MonopolyCar2024Game = var_2
+		arg_4_0.gameUI = arg_4_0:NewGame()
 
-		local var_4_1 = var_2.New
-		local var_4_2 = arg_4_0.activity
-		local var_4_3 = arg_4_0._tf
-
-		arg_4_0.gameUI = var_4_1(var_4_2, var_5.Find(var_4_3, "adapt"), arg_4_0.event)
+		arg_4_0.gameUI:Setup()
 	end
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_5_0)
-	var_0_1.super.onBackPressed(arg_5_0)
+function var_0_0.UpdateStory(arg_5_0)
+	if not arg_5_0.gameUI then
+		return
+	end
+
+	arg_5_0.gameUI:UpdateStory()
 
 	return
 end
 
-function var_0_1.willExit(arg_6_0)
-	if arg_6_0.gameUI then
-		local var_6_0 = arg_6_0.gameUI
+function var_0_0.NewGame(arg_6_0)
+	return MonopolyCar2024Game.New(arg_6_0.activity, arg_6_0._tf:Find("adapt"), arg_6_0.event)
+end
 
-		var_1.Dispose(var_6_0)
+function var_0_0.onBackPressed(arg_7_0)
+	if arg_7_0.gameUI and arg_7_0.gameUI.isBlocksRaycasts then
+		return
+	end
 
-		arg_6_0.gameUI = nil
+	var_0_0.super.onBackPressed(arg_7_0)
+
+	return
+end
+
+function var_0_0.willExit(arg_8_0)
+	if arg_8_0.gameUI then
+		arg_8_0.gameUI:Dispose()
+
+		arg_8_0.gameUI = nil
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

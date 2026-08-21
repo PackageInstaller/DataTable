@@ -1,50 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SettingsMiniProgramPanle", import(".SettingsBasePanel"))
 
-local var_0_0 = "SettingsMiniProgramPanle"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SettingsBasePanel"))
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsMiniProgramCH"
 end
 
-function var_0_1.GetTitle(arg_2_0)
+function var_0_0.GetTitle(arg_2_0)
 	return "小程序"
 end
 
-function var_0_1.GetTitleEn(arg_3_0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "/ MiniProgram"
 end
 
-function var_0_1.OnInit(arg_4_0)
-	findTF = var_1_10001
-	arg_4_0.serviceBtn = var_1_10001(arg_4_0._tf, "delete")
-	onButton = var_1
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.serviceBtn = findTF(arg_4_0._tf, "delete")
 
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.serviceBtn
-
-	local function var_4_2()
-		pg = var_2_10000
-
-		local var_5_0 = var_2_10000.SdkMgr.GetInstance()
-
-		var_0.OpenMiniProgram(var_5_0)
+	onButton(arg_4_0, arg_4_0.serviceBtn, function()
+		pg.SdkMgr.GetInstance():OpenMiniProgram()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_0, var_4_1, var_4_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdate(arg_6_0)
+function var_0_0.OnUpdate(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

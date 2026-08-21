@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_data_blueprint") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_data_blueprint"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_data_blueprint = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_data_blueprint
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_data_blueprint = rawget(pg, "ship_data_blueprint") or setmetatable({
+	__name = "ship_data_blueprint"
+}, confNEO)
+pg.ship_data_blueprint.all = {
 	29901,
 	29902,
 	39901,
@@ -74,25 +51,11 @@ var_0_3.all = {
 	89905,
 	129901
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_data_blueprint = {}
+pg.base = pg.base or {}
+pg.base.ship_data_blueprint = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_data_blueprint
-
-	var_1_0[29901] = {
+	pg.base.ship_data_blueprint[29901] = {
 		unlock_word = "皇家先锋角色图鉴登录数达到<color=#92fc63>20</color>个以上 ",
 		name = "海王星",
 		normal_display = "",
@@ -197,11 +160,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_data_blueprint
-
-	var_1_1[29902] = {
+	pg.base.ship_data_blueprint[29902] = {
 		unlock_word = "皇家主力角色图鉴登录数达到<color=#92fc63>10</color>个以上 ",
 		name = "君主",
 		normal_display = "",
@@ -306,11 +265,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_data_blueprint
-
-	var_1_2[39901] = {
+	pg.base.ship_data_blueprint[39901] = {
 		unlock_word = "重樱先锋角色图鉴登录数达到<color=#92fc63>20</color>个以上 ",
 		name = "伊吹",
 		normal_display = "",
@@ -415,11 +370,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_data_blueprint
-
-	var_1_3[39902] = {
+	pg.base.ship_data_blueprint[39902] = {
 		unlock_word = "重樱主力角色图鉴登录数达到<color=#92fc63>10</color>个以上 ",
 		name = "出云",
 		normal_display = "",
@@ -524,11 +475,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_data_blueprint
-
-	var_1_4[49901] = {
+	pg.base.ship_data_blueprint[49901] = {
 		unlock_word = "铁血先锋角色图鉴登录数达到<color=#92fc63>7</color>个以上 ",
 		name = "罗恩",
 		normal_display = "",
@@ -633,11 +580,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_data_blueprint
-
-	var_1_5[89901] = {
+	pg.base.ship_data_blueprint[89901] = {
 		unlock_word = "白鹰先锋角色图鉴登录数达到<color=#92fc63>20</color>个以上 ",
 		name = "路易九世",
 		normal_display = "",
@@ -742,11 +685,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_data_blueprint
-
-	var_1_6[19901] = {
+	pg.base.ship_data_blueprint[19901] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>760</color>",
 		name = "西雅图",
 		normal_display = "",
@@ -851,11 +790,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_data_blueprint
-
-	var_1_7[19902] = {
+	pg.base.ship_data_blueprint[19902] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>810</color>",
 		name = "佐治亚",
 		normal_display = "",
@@ -960,11 +895,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_data_blueprint
-
-	var_1_8[39903] = {
+	pg.base.ship_data_blueprint[39903] = {
 		unlock_word = "重樱阵营科技点数达到<color=#92fc63>780</color>",
 		name = "北风",
 		normal_display = "",
@@ -1069,11 +1000,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_data_blueprint
-
-	var_1_9[39904] = {
+	pg.base.ship_data_blueprint[39904] = {
 		unlock_word = "重樱阵营科技点数达到<color=#92fc63>900</color>",
 		name = "吾妻",
 		normal_display = "",
@@ -1179,11 +1106,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_data_blueprint
-
-	var_1_10[49902] = {
+	pg.base.ship_data_blueprint[49902] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>630</color>",
 		name = "腓特烈大帝",
 		normal_display = "",
@@ -1289,11 +1212,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_data_blueprint
-
-	var_1_11[99901] = {
+	pg.base.ship_data_blueprint[99901] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>760</color>、铁血阵营科技点数达到<color=#92fc63>420</color>",
 		name = "加斯科涅",
 		normal_display = "",
@@ -1399,11 +1318,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_data_blueprint
-
-	var_1_12[29903] = {
+	pg.base.ship_data_blueprint[29903] = {
 		unlock_word = "皇家阵营科技点数达到<color=#92fc63>700</color>",
 		name = "柴郡",
 		normal_display = "",
@@ -1508,11 +1423,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_data_blueprint
-
-	var_1_13[29904] = {
+	pg.base.ship_data_blueprint[29904] = {
 		unlock_word = "皇家阵营科技点数达到<color=#92fc63>820</color>",
 		name = "德雷克",
 		normal_display = "",
@@ -1618,11 +1529,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_data_blueprint
-
-	var_1_14[49903] = {
+	pg.base.ship_data_blueprint[49903] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>550</color>",
 		name = "美因茨",
 		normal_display = "",
@@ -1727,11 +1634,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_data_blueprint
-
-	var_1_15[49904] = {
+	pg.base.ship_data_blueprint[49904] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>600</color>",
 		name = "奥丁",
 		normal_display = "",
@@ -1836,11 +1739,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_data_blueprint
-
-	var_1_16[89902] = {
+	pg.base.ship_data_blueprint[89902] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>760</color>、皇家阵营科技点数达到<color=#92fc63>700</color>",
 		name = "香槟",
 		normal_display = "",
@@ -1946,11 +1845,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_data_blueprint
-
-	var_1_17[19903] = {
+	pg.base.ship_data_blueprint[19903] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>850</color>",
 		name = "安克雷奇",
 		normal_display = "",
@@ -2055,11 +1950,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_data_blueprint
-
-	var_1_18[39905] = {
+	pg.base.ship_data_blueprint[39905] = {
 		unlock_word = "重樱阵营科技点数达到<color=#92fc63>950</color>",
 		name = "白龙",
 		normal_display = "",
@@ -2165,11 +2056,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_data_blueprint
-
-	var_1_19[49905] = {
+	pg.base.ship_data_blueprint[49905] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>700</color>",
 		name = "埃吉尔",
 		normal_display = "",
@@ -2260,11 +2147,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_data_blueprint
-
-	var_1_20[49906] = {
+	pg.base.ship_data_blueprint[49906] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>600</color>",
 		name = "奥古斯特·冯·帕塞瓦尔",
 		normal_display = "",
@@ -2369,11 +2252,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_data_blueprint
-
-	var_1_21[13] = {
+	pg.base.ship_data_blueprint[13] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>600</color>、皇家阵营科技点数达到<color=#92fc63>700</color>",
 		name = "马可波罗",
 		normal_display = "",
@@ -2479,11 +2358,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40142
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_data_blueprint
-
-	var_1_22[29905] = {
+	pg.base.ship_data_blueprint[29905] = {
 		unlock_word = "皇家阵营科技点数达到<color=#92fc63>900</color>",
 		name = "普利茅斯",
 		normal_display = "",
@@ -2574,11 +2449,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_data_blueprint
-
-	var_1_23[49907] = {
+	pg.base.ship_data_blueprint[49907] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>700</color>",
 		name = "鲁普雷希特亲王",
 		normal_display = "",
@@ -2682,11 +2553,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40140
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_data_blueprint
-
-	var_1_24[59901] = {
+	pg.base.ship_data_blueprint[59901] = {
 		unlock_word = "东煌阵营科技点数达到<color=#92fc63>160</color>",
 		name = "哈尔滨",
 		normal_display = "",
@@ -2790,11 +2657,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40140
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_data_blueprint
-
-	var_1_25[29] = {
+	pg.base.ship_data_blueprint[29] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>760</color>、撒丁阵营科技点数达到<color=#92fc63>300</color>",
 		name = "契卡洛夫",
 		normal_display = "",
@@ -2899,11 +2762,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40140
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_data_blueprint
-
-	var_1_26[89903] = {
+	pg.base.ship_data_blueprint[89903] = {
 		unlock_word = "自由鸢尾阵营科技点数达到<color=#92fc63>250</color>",
 		name = "布雷斯特",
 		normal_display = "",
@@ -2994,11 +2853,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_data_blueprint
-
-	var_1_27[19904] = {
+	pg.base.ship_data_blueprint[19904] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>1000</color>",
 		name = "奇尔沙治",
 		normal_display = "",
@@ -3089,11 +2944,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_data_blueprint
-
-	var_1_28[39906] = {
+	pg.base.ship_data_blueprint[39906] = {
 		unlock_word = "重樱阵营科技点数达到<color=#92fc63>900</color>",
 		name = "四万十",
 		normal_display = "",
@@ -3197,11 +3048,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40145
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_data_blueprint
-
-	var_1_29[49908] = {
+	pg.base.ship_data_blueprint[49908] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>850</color>",
 		name = "菲利克斯·舒尔茨",
 		normal_display = "",
@@ -3305,11 +3152,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40145
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_data_blueprint
-
-	var_1_30[49909] = {
+	pg.base.ship_data_blueprint[49909] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>950</color>",
 		name = "兴登堡",
 		normal_display = "",
@@ -3400,11 +3243,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_data_blueprint
-
-	var_1_31[99902] = {
+	pg.base.ship_data_blueprint[99902] = {
 		unlock_word = "维希教廷阵营科技点数达到<color=#92fc63>180</color>、铁血阵营科技点数达到<color=#92fc63>800</color>",
 		name = "弗兰德尔",
 		normal_display = "",
@@ -3509,11 +3348,7 @@ var_0_3.base.ship_data_blueprint = {}
 			40145
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_data_blueprint
-
-	var_1_32[19905] = {
+	pg.base.ship_data_blueprint[19905] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>950</color>",
 		name = "哈尔福德",
 		normal_display = "",
@@ -3615,11 +3450,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_data_blueprint
-
-	var_1_33[39907] = {
+	pg.base.ship_data_blueprint[39907] = {
 		unlock_word = "重樱阵营科技点数达到<color=#92fc63>950</color>",
 		name = "大山",
 		normal_display = "",
@@ -3721,11 +3552,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_data_blueprint
-
-	var_1_34[14] = {
+	pg.base.ship_data_blueprint[14] = {
 		unlock_word = "撒丁帝国阵营科技点数达到<color=#92fc63>300</color>、北方联合阵营科技点数达到<color=#92fc63>200</color>",
 		name = "那不勒斯",
 		normal_display = "",
@@ -3817,11 +3644,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_data_blueprint
-
-	var_1_35[30] = {
+	pg.base.ship_data_blueprint[30] = {
 		unlock_word = "北方联合阵营科技点数达到<color=#92fc63>300</color>、撒丁帝国阵营科技点数达到<color=#92fc63>200</color>",
 		name = "纳希莫夫",
 		normal_display = "",
@@ -3913,11 +3736,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_data_blueprint
-
-	var_1_36[89904] = {
+	pg.base.ship_data_blueprint[89904] = {
 		unlock_word = "自由鸢尾阵营科技点数达到<color=#92fc63>230</color>",
 		name = "贝亚德",
 		normal_display = "",
@@ -4019,24 +3838,25 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_data_blueprint
-
-	var_1_37[19906] = {
+	pg.base.ship_data_blueprint[19906] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>950</color>",
 		name = "堪萨斯",
 		price = 1500,
 		is_pursuing = 0,
 		simulate_dungeon = 9938,
-		luck_story = "",
+		luck_story = "LUCK19906",
 		strengthen_item = 42071,
 		blueprint_version = 8,
 		id = 19906,
 		unlock_task_open_condition = {
 			60381
 		},
-		change_skill = {},
+		change_skill = {
+			{
+				19980,
+				18980
+			}
+		},
 		unlock_task = {
 			{
 				60382,
@@ -4103,7 +3923,13 @@ var_0_3.base.ship_data_blueprint = {}
 			3829,
 			3830
 		},
-		fate_strengthen = {},
+		fate_strengthen = {
+			3831,
+			3832,
+			3833,
+			3834,
+			3835
+		},
 		attr_exp = {
 			100,
 			100,
@@ -4116,11 +3942,7 @@ var_0_3.base.ship_data_blueprint = {}
 			"主炮底座+1"
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_data_blueprint
-
-	var_1_38[49910] = {
+	pg.base.ship_data_blueprint[49910] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>950</color>",
 		name = "梅克伦堡",
 		normal_display = "",
@@ -4211,25 +4033,26 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_data_blueprint
-
-	var_1_39[15] = {
+	pg.base.ship_data_blueprint[15] = {
 		unlock_word = "撒丁帝国阵营科技点数达到<color=#92fc63>300</color>",
 		name = "维托里奥·库尼贝尔蒂",
 		normal_display = "",
 		price = 1500,
 		is_pursuing = 0,
 		simulate_dungeon = 9940,
-		luck_story = "",
+		luck_story = "LUCK69903",
 		strengthen_item = 42073,
 		blueprint_version = 8,
 		id = 69903,
 		unlock_task_open_condition = {
 			60401
 		},
-		change_skill = {},
+		change_skill = {
+			{
+				19950,
+				18950
+			}
+		},
 		unlock_task = {
 			{
 				60402,
@@ -4296,7 +4119,13 @@ var_0_3.base.ship_data_blueprint = {}
 			4029,
 			4030
 		},
-		fate_strengthen = {},
+		fate_strengthen = {
+			4031,
+			4032,
+			4033,
+			4034,
+			4035
+		},
 		attr_exp = {
 			100,
 			100,
@@ -4306,25 +4135,26 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_data_blueprint
-
-	var_1_40[31] = {
+	pg.base.ship_data_blueprint[31] = {
 		unlock_word = "北方联合阵营科技点数达到<color=#92fc63>300</color>",
 		name = "迪米特里·顿斯科伊",
 		normal_display = "",
 		price = 1500,
 		is_pursuing = 0,
 		simulate_dungeon = 9941,
-		luck_story = "",
+		luck_story = "LUCK79903",
 		strengthen_item = 42074,
 		blueprint_version = 8,
 		id = 79903,
 		unlock_task_open_condition = {
 			60411
 		},
-		change_skill = {},
+		change_skill = {
+			{
+				190000,
+				180000
+			}
+		},
 		unlock_task = {
 			{
 				60412,
@@ -4391,7 +4221,13 @@ var_0_3.base.ship_data_blueprint = {}
 			4129,
 			4130
 		},
-		fate_strengthen = {},
+		fate_strengthen = {
+			4131,
+			4132,
+			4133,
+			4134,
+			4135
+		},
 		attr_exp = {
 			100,
 			100,
@@ -4401,11 +4237,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_data_blueprint
-
-	var_1_41[119901] = {
+	pg.base.ship_data_blueprint[119901] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>800</color>、撒丁帝国阵营科技点数达到<color=#92fc63>200</color>",
 		name = "金狮",
 		price = 6000,
@@ -4499,11 +4331,7 @@ var_0_3.base.ship_data_blueprint = {}
 			"空袭航空属性Lv.1"
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_data_blueprint
-
-	var_1_42[29906] = {
+	pg.base.ship_data_blueprint[29906] = {
 		unlock_word = "皇家阵营科技点数达到<color=#92fc63>700</color>",
 		name = "邓肯",
 		normal_display = "",
@@ -4594,11 +4422,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_data_blueprint
-
-	var_1_43[39908] = {
+	pg.base.ship_data_blueprint[39908] = {
 		unlock_word = "重樱阵营科技点数达到<color=#92fc63>1000</color>",
 		name = "高梁",
 		normal_display = "",
@@ -4689,11 +4513,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_data_blueprint
-
-	var_1_44[49911] = {
+	pg.base.ship_data_blueprint[49911] = {
 		unlock_word = "铁血阵营科技点数达到<color=#92fc63>1050</color>",
 		name = "马克斯·殷麦曼",
 		normal_display = "",
@@ -4784,11 +4604,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_data_blueprint
-
-	var_1_45[89905] = {
+	pg.base.ship_data_blueprint[89905] = {
 		unlock_word = "自由鸢尾阵营科技点数达到<color=#92fc63>280</color>",
 		name = "暴风雨",
 		normal_display = "",
@@ -4879,8 +4695,7 @@ var_0_3.base.ship_data_blueprint = {}
 		},
 		gain_item_id = {}
 	}
-	pg = var_1_45
-	var_1_45.base.ship_data_blueprint[129901] = {
+	pg.base.ship_data_blueprint[129901] = {
 		unlock_word = "白鹰阵营科技点数达到<color=#92fc63>950</color>、皇家阵营科技点数达到<color=#92fc63>1000</color>",
 		name = "瓦尔帕莱索",
 		normal_display = "",

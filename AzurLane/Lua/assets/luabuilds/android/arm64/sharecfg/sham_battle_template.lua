@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "sham_battle_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "sham_battle_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.sham_battle_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.sham_battle_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.sham_battle_template = rawget(pg, "sham_battle_template") or setmetatable({
+	__name = "sham_battle_template"
+}, confNEO)
+pg.sham_battle_template.all = {
 	1,
 	2,
 	3,
@@ -41,25 +18,11 @@ var_0_3.all = {
 	80000,
 	90000
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.sham_battle_template = {}
+pg.base = pg.base or {}
+pg.base.sham_battle_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.sham_battle_template
-
-	var_1_0[1] = {
+	pg.base.sham_battle_template[1] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -566,11 +529,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.sham_battle_template
-
-	var_1_1[2] = {
+	pg.base.sham_battle_template[2] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -1077,11 +1036,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.sham_battle_template
-
-	var_1_2[3] = {
+	pg.base.sham_battle_template[3] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -1588,11 +1543,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.sham_battle_template
-
-	var_1_3[4] = {
+	pg.base.sham_battle_template[4] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -2099,11 +2050,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.sham_battle_template
-
-	var_1_4[5] = {
+	pg.base.sham_battle_template[5] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -2610,11 +2557,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.sham_battle_template
-
-	var_1_5[6] = {
+	pg.base.sham_battle_template[6] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -3121,11 +3064,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.sham_battle_template
-
-	var_1_6[7] = {
+	pg.base.sham_battle_template[7] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -3632,11 +3571,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.sham_battle_template
-
-	var_1_7[8] = {
+	pg.base.sham_battle_template[8] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -4143,11 +4078,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.sham_battle_template
-
-	var_1_8[9] = {
+	pg.base.sham_battle_template[9] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -4654,11 +4585,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.sham_battle_template
-
-	var_1_9[10] = {
+	pg.base.sham_battle_template[10] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -5165,11 +5092,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.sham_battle_template
-
-	var_1_10[11] = {
+	pg.base.sham_battle_template[11] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -5676,11 +5599,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.sham_battle_template
-
-	var_1_11[12] = {
+	pg.base.sham_battle_template[12] = {
 		map = 90001,
 		name = "模拟战",
 		time = 99999999,
@@ -6187,11 +6106,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.sham_battle_template
-
-	var_1_12[0] = {
+	pg.base.sham_battle_template[0] = {
 		map = 90000,
 		name = "公会BOSS",
 		time = 99999999,
@@ -6653,8 +6568,7 @@ var_0_3.base.sham_battle_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-	var_1_12.base.sham_battle_template[16] = {
+	pg.base.sham_battle_template[16] = {
 		map = 90000,
 		name = "镜面海域",
 		time = 99999999,

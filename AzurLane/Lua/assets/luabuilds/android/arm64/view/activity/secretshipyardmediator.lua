@@ -1,43 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SecretShipyardMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "SecretShipyardMediator"
+var_0_0.GO_MINI_GAME = "go minigame"
+var_0_0.SUBMIT_TASK = "submit task"
+var_0_0.TASK_GO = "task go"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.GO_MINI_GAME = "go minigame"
-var_0_1.SUBMIT_TASK = "submit task"
-var_0_1.TASK_GO = "task go"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GO_MINI_GAME, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.GO_MINI_GAME, arg_2_1)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GO_MINI_GAME, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.GO_MINI_GAME, arg_2_1)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.SUBMIT_TASK, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.SUBMIT_TASK, arg_3_1)
+	arg_1_0:bind(var_0_0.SUBMIT_TASK, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_TASK, arg_3_1)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.TASK_GO, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_4_1(var_4_0, var_2_10005.TASK_GO, {
+	arg_1_0:bind(var_0_0.TASK_GO, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.TASK_GO, {
 			taskVO = arg_4_1
 		})
 
@@ -47,50 +26,27 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	GAME = var_1_10002
-	var_5_0[1] = var_1_10002.SUBMIT_TASK_DONE
-	ActivityProxy = var_2
-	var_5_0[2] = var_2.ACTIVITY_OPERATION_DONE
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		GAME.SUBMIT_TASK_DONE,
+		ActivityProxy.ACTIVITY_OPERATION_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1
-	local var_6_1 = arg_6_1.getName(var_6_0)
-	local var_6_2 = arg_6_1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
 
-	GAME = var_6_0
-
-	local var_6_4
-
-	if var_6_1 == var_6_0.SUBMIT_TASK_DONE then
-		local var_6_3 = arg_6_0.viewComponent
-
-		var_6_4 = var_6_4.emit
-		BaseUI = var_1_10007
-
-		var_6_4(var_6_3, var_1_10007.ON_ACHIEVE, var_6_2, function()
-			local var_7_0 = arg_6_0.viewComponent
-
-			var_0.updateTaskLayers(var_7_0)
+	if var_6_0 == GAME.SUBMIT_TASK_DONE then
+		arg_6_0.viewComponent:emit(BaseUI.ON_ACHIEVE, arg_6_1:getBody(), function()
+			arg_6_0.viewComponent:updateTaskLayers()
 
 			return
 		end)
-	else
-		ActivityProxy = var_6_4
-
-		if var_6_1 == var_6_4.ACTIVITY_OPERATION_DONE then
-			local var_6_5 = arg_6_0.viewComponent
-
-			var_4.updateTaskLayers(var_6_5)
-		end
+	elseif var_6_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		arg_6_0.viewComponent:updateTaskLayers()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

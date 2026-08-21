@@ -1,40 +1,14 @@
-﻿type = var_0_10000
-string = var_0_10001
-
-local var_0_0 = var_0_10001.sub
-
-string = var_0_10002
-
-local var_0_1 = var_0_10002.byte
-
-string = var_0_10003
-
-local var_0_2 = var_0_10003.format
-
-string = var_0_10004
-
-local var_0_3 = var_0_10004.match
-
-string = var_0_10005
-
-local var_0_4 = var_0_10005.gmatch
-
-string = var_0_10006
-
-local var_0_5 = var_0_10006.gsub
-
-string = var_0_10007
-
-local var_0_6 = var_0_10007.lower
-
-string = var_0_10008
-
-local var_0_7 = var_0_10008.rep
-
-require = var_0_10009
-
-local var_0_8 = var_0_10009("bit").tohex
-local var_0_9 = {
+﻿local var_0_0 = type
+local var_0_1 = string.sub
+local var_0_2 = string.byte
+local var_0_3 = string.format
+local var_0_4 = string.match
+local var_0_5 = string.gmatch
+local var_0_6 = string.gsub
+local var_0_7 = string.lower
+local var_0_8 = string.rep
+local var_0_9 = require("bit").tohex
+local var_0_10 = {
 	[0] = "addBmr",
 	"addVmr",
 	"addBrm",
@@ -293,13 +267,266 @@ local var_0_9 = {
 	"incd!Vm"
 }
 
-assert = var_0_10012
+assert(#{
+	[0] = "addBmr",
+	"addVmr",
+	"addBrm",
+	"addVrm",
+	"addBai",
+	"addVai",
+	"push es",
+	"pop es",
+	"orBmr",
+	"orVmr",
+	"orBrm",
+	"orVrm",
+	"orBai",
+	"orVai",
+	"push cs",
+	"opc2*",
+	"adcBmr",
+	"adcVmr",
+	"adcBrm",
+	"adcVrm",
+	"adcBai",
+	"adcVai",
+	"push ss",
+	"pop ss",
+	"sbbBmr",
+	"sbbVmr",
+	"sbbBrm",
+	"sbbVrm",
+	"sbbBai",
+	"sbbVai",
+	"push ds",
+	"pop ds",
+	"andBmr",
+	"andVmr",
+	"andBrm",
+	"andVrm",
+	"andBai",
+	"andVai",
+	"es:seg",
+	"daa",
+	"subBmr",
+	"subVmr",
+	"subBrm",
+	"subVrm",
+	"subBai",
+	"subVai",
+	"cs:seg",
+	"das",
+	"xorBmr",
+	"xorVmr",
+	"xorBrm",
+	"xorVrm",
+	"xorBai",
+	"xorVai",
+	"ss:seg",
+	"aaa",
+	"cmpBmr",
+	"cmpVmr",
+	"cmpBrm",
+	"cmpVrm",
+	"cmpBai",
+	"cmpVai",
+	"ds:seg",
+	"aas",
+	"incVR",
+	"incVR",
+	"incVR",
+	"incVR",
+	"incVR",
+	"incVR",
+	"incVR",
+	"incVR",
+	"decVR",
+	"decVR",
+	"decVR",
+	"decVR",
+	"decVR",
+	"decVR",
+	"decVR",
+	"decVR",
+	"pushUR",
+	"pushUR",
+	"pushUR",
+	"pushUR",
+	"pushUR",
+	"pushUR",
+	"pushUR",
+	"pushUR",
+	"popUR",
+	"popUR",
+	"popUR",
+	"popUR",
+	"popUR",
+	"popUR",
+	"popUR",
+	"popUR",
+	"sz*pushaw,pusha",
+	"sz*popaw,popa",
+	"boundVrm",
+	"arplWmr",
+	"fs:seg",
+	"gs:seg",
+	"o16:",
+	"a16",
+	"pushUi",
+	"imulVrmi",
+	"pushBs",
+	"imulVrms",
+	"insb",
+	"insVS",
+	"outsb",
+	"outsVS",
+	"joBj",
+	"jnoBj",
+	"jbBj",
+	"jnbBj",
+	"jzBj",
+	"jnzBj",
+	"jbeBj",
+	"jaBj",
+	"jsBj",
+	"jnsBj",
+	"jpeBj",
+	"jpoBj",
+	"jlBj",
+	"jgeBj",
+	"jleBj",
+	"jgBj",
+	"arith!Bmi",
+	"arith!Vmi",
+	"arith!Bmi",
+	"arith!Vms",
+	"testBmr",
+	"testVmr",
+	"xchgBrm",
+	"xchgVrm",
+	"movBmr",
+	"movVmr",
+	"movBrm",
+	"movVrm",
+	"movVmg",
+	"leaVrm",
+	"movWgm",
+	"popUm",
+	"nop*xchgVaR|pause|xchgWaR|repne nop",
+	"xchgVaR",
+	"xchgVaR",
+	"xchgVaR",
+	"xchgVaR",
+	"xchgVaR",
+	"xchgVaR",
+	"xchgVaR",
+	"sz*cbw,cwde,cdqe",
+	"sz*cwd,cdq,cqo",
+	"call farViw",
+	"wait",
+	"sz*pushfw,pushf",
+	"sz*popfw,popf",
+	"sahf",
+	"lahf",
+	"movBao",
+	"movVao",
+	"movBoa",
+	"movVoa",
+	"movsb",
+	"movsVS",
+	"cmpsb",
+	"cmpsVS",
+	"testBai",
+	"testVai",
+	"stosb",
+	"stosVS",
+	"lodsb",
+	"lodsVS",
+	"scasb",
+	"scasVS",
+	"movBRi",
+	"movBRi",
+	"movBRi",
+	"movBRi",
+	"movBRi",
+	"movBRi",
+	"movBRi",
+	"movBRi",
+	"movVRI",
+	"movVRI",
+	"movVRI",
+	"movVRI",
+	"movVRI",
+	"movVRI",
+	"movVRI",
+	"movVRI",
+	"shift!Bmu",
+	"shift!Vmu",
+	"retBw",
+	"ret",
+	"vex*3$lesVrm",
+	"vex*2$ldsVrm",
+	"movBmi",
+	"movVmi",
+	"enterBwu",
+	"leave",
+	"retfBw",
+	"retf",
+	"int3",
+	"intBu",
+	"into",
+	"iretVS",
+	"shift!Bm1",
+	"shift!Vm1",
+	"shift!Bmc",
+	"shift!Vmc",
+	"aamBu",
+	"aadBu",
+	"salc",
+	"xlatb",
+	"fp*0",
+	"fp*1",
+	"fp*2",
+	"fp*3",
+	"fp*4",
+	"fp*5",
+	"fp*6",
+	"fp*7",
+	"loopneBj",
+	"loopeBj",
+	"loopBj",
+	"sz*jcxzBj,jecxzBj,jrcxzBj",
+	"inBau",
+	"inVau",
+	"outBua",
+	"outVua",
+	"callVj",
+	"jmpVj",
+	"jmp farViw",
+	"jmpBj",
+	"inBad",
+	"inVad",
+	"outBda",
+	"outVda",
+	"lock:",
+	"int1",
+	"repne:rep",
+	"rep:",
+	"hlt",
+	"cmc",
+	"testb!Bm",
+	"testv!Vm",
+	"clc",
+	"stc",
+	"cli",
+	"sti",
+	"cld",
+	"std",
+	"incb!Bm",
+	"incd!Vm"
+} == 255)
 
-var_0_10012(#var_0_9 == 255)
-
-setmetatable = var_0_10012
-
-local var_0_10 = var_0_10012({
+local var_0_11 = setmetatable({
 	[96] = false,
 	[7] = false,
 	[39] = false,
@@ -342,9 +569,10 @@ local var_0_10 = var_0_10012({
 	[99] = "movsxdVrDmt",
 	[67] = "rex*xb"
 }, {
-	__index = var_0_9
+	__index = var_0_10
 })
-local var_0_11 = {
+
+assert(({
 	[0] = "sldt!Dmp",
 	"sgdt!Ump",
 	"larVrm",
@@ -601,11 +829,7 @@ local var_0_11 = {
 	"paddwPrvm",
 	"padddPrvm",
 	"ud"
-}
-
-assert = var_14
-
-var_14(var_0_11[255] == "ud")
+})[255] == "ud")
 
 local var_0_12 = {
 	["38"] = {
@@ -981,7 +1205,8 @@ local var_0_13 = {
 	[216] = "vmrun",
 	[195] = "vmresume"
 }
-local var_0_14 = {
+
+assert(({
 	[0] = "faddFm",
 	"fmulFm",
 	"fcomFm",
@@ -1157,13 +1382,9 @@ local var_0_14 = {
 	},
 	"fucomipFf",
 	"fcomipFf"
-}
+})[126] == "fcomipFf")
 
-assert = var_17
-
-var_17(var_0_14[126] == "fcomipFf")
-
-local var_0_15 = {
+local var_0_14 = {
 	arith = {
 		"add",
 		"or",
@@ -1313,7 +1534,7 @@ local var_0_15 = {
 		"prefetcht2"
 	}
 }
-local var_0_16 = {
+local var_0_15 = {
 	B = {
 		"al",
 		"cl",
@@ -1459,7 +1680,7 @@ local var_0_16 = {
 		"ymm15"
 	}
 }
-local var_0_17 = {
+local var_0_16 = {
 	"es",
 	"cs",
 	"ss",
@@ -1469,7 +1690,7 @@ local var_0_17 = {
 	"segr6",
 	"segr7"
 }
-local var_0_18 = {
+local var_0_17 = {
 	X = 16,
 	Y = 32,
 	D = 4,
@@ -1478,7 +1699,7 @@ local var_0_18 = {
 	M = 8,
 	B = 1
 }
-local var_0_19 = {
+local var_0_18 = {
 	G = "qword",
 	X = "xword",
 	F = "dword",
@@ -1490,21 +1711,15 @@ local var_0_19 = {
 	B = "byte"
 }
 
-local function var_0_20(arg_1_0, arg_1_1, arg_1_2)
-	local var_1_0 = arg_1_0.code
-	local var_1_1 = arg_1_0.pos
-	local var_1_2 = ""
+local function var_0_19(arg_1_0, arg_1_1, arg_1_2)
+	local var_1_0 = ""
 
 	if arg_1_0.hexdump > 0 then
-		for iter_1_0 = arg_1_0.start, var_1_1 - 1 do
-			var_1_2 = var_1_2 .. var_0_2("%02X", var_0_1(var_1_0, iter_1_0, iter_1_0))
+		for iter_1_0 = arg_1_0.start, arg_1_0.pos - 1 do
+			var_1_0 = var_1_0 .. var_0_3("%02X", var_0_2(arg_1_0.code, iter_1_0, iter_1_0))
 		end
 
-		if var_6 < #var_1_2 then
-			var_1_2 = var_0_0(var_1_2, 1, var_6) .. ". "
-		else
-			var_1_2 = var_1_2 .. var_0_7(" ", var_6 - #var_1_2 + 2)
-		end
+		var_1_0 = arg_1_0.hexdump < #var_1_0 and var_0_1(var_1_0, 1, arg_1_0.hexdump) .. ". " or var_1_0 .. var_0_8(" ", arg_1_0.hexdump - #var_1_0 + 2)
 	end
 
 	if arg_1_2 then
@@ -1527,16 +1742,16 @@ local function var_0_20(arg_1_0, arg_1_1, arg_1_2)
 	end
 
 	if arg_1_0.rex then
-		local var_1_3 = (arg_1_0.rexw and "w" or "") .. (arg_1_0.rexr and "r" or "") .. (arg_1_0.rexx and "x" or "") .. (arg_1_0.rexb and "b" or "") .. (arg_1_0.vexl and "l" or "")
+		local var_1_1 = (arg_1_0.rexw and "w" or "") .. (arg_1_0.rexr and "r" or "") .. (arg_1_0.rexx and "x" or "") .. (arg_1_0.rexb and "b" or "") .. (arg_1_0.vexl and "l" or "")
 
 		if arg_1_0.vexv and arg_1_0.vexv ~= 0 then
-			var_1_3 = var_1_3 .. "v" .. arg_1_0.vexv
+			var_1_1 = var_1_1 .. "v" .. arg_1_0.vexv
 		end
 
-		if var_1_3 ~= "" then
-			arg_1_1 = arg_1_0.rex .. "." .. var_1_3 .. " " .. var_0_5(arg_1_1, "^ ", "")
+		if var_1_1 ~= "" then
+			arg_1_1 = arg_1_0.rex .. "." .. var_1_1 .. " " .. var_0_6(arg_1_1, "^ ", "")
 		elseif arg_1_0.rex == "vex" then
-			arg_1_1 = var_0_5("v" .. arg_1_1, "^v ", "")
+			arg_1_1 = var_0_6("v" .. arg_1_1, "^v ", "")
 		end
 
 		arg_1_0.rexw = false
@@ -1549,14 +1764,9 @@ local function var_0_20(arg_1_0, arg_1_1, arg_1_2)
 	end
 
 	if arg_1_0.seg then
-		local var_1_4, var_1_5 = var_0_5(arg_1_1, "%[", "[" .. arg_1_0.seg .. ":")
+		local var_1_2, var_1_3 = var_0_6(arg_1_1, "%[", "[" .. arg_1_0.seg .. ":")
 
-		if var_1_5 == 0 then
-			arg_1_1 = arg_1_0.seg .. " " .. arg_1_1
-		else
-			arg_1_1 = var_1_4
-		end
-
+		arg_1_1 = var_1_3 == 0 and arg_1_0.seg .. " " .. arg_1_1 or var_1_2
 		arg_1_0.seg = false
 	end
 
@@ -1565,21 +1775,25 @@ local function var_0_20(arg_1_0, arg_1_1, arg_1_2)
 		arg_1_0.lock = false
 	end
 
-	if arg_1_0.imm and arg_1_0.symtab[var_7] then
-		arg_1_1 = arg_1_1 .. "\t->" .. var_8
+	local var_1_4 = arg_1_0.imm
+
+	if arg_1_0.imm then
+		if arg_1_0.symtab[var_1_4] then
+			arg_1_1 = arg_1_1 .. "\t->" .. arg_1_0.symtab[var_1_4]
+		end
 	end
 
-	arg_1_0.out(var_0_2("%08x  %s%s\n", arg_1_0.addr + arg_1_0.start, var_1_2, arg_1_1))
+	arg_1_0.out(var_0_3("%08x  %s%s\n", arg_1_0.addr + arg_1_0.start, var_1_0, arg_1_1))
 
 	arg_1_0.mrm = false
 	arg_1_0.vexv = false
-	arg_1_0.start = var_1_1
+	arg_1_0.start = arg_1_0.pos
 	arg_1_0.imm = nil
 
 	return
 end
 
-local function var_0_21(arg_2_0)
+local function var_0_20(arg_2_0)
 	arg_2_0.o16 = false
 	arg_2_0.seg = false
 	arg_2_0.lock = false
@@ -1595,419 +1809,68 @@ local function var_0_21(arg_2_0)
 	return
 end
 
-local function var_0_22(arg_3_0)
+local function var_0_21(arg_3_0)
 	arg_3_0.pos = arg_3_0.stop + 1
 
-	var_0_21(arg_3_0)
+	var_0_20(arg_3_0)
 
-	return var_0_20(arg_3_0, "(incomplete)")
+	return var_0_19(arg_3_0, "(incomplete)")
 end
 
-local function var_0_23(arg_4_0)
-	var_0_21(arg_4_0)
+local function var_0_22(arg_4_0)
+	var_0_20(arg_4_0)
 
-	return var_0_20(arg_4_0, "(unknown)")
+	return var_0_19(arg_4_0, "(unknown)")
 end
 
-local function var_0_24(arg_5_0, arg_5_1, arg_5_2)
+local function var_0_23(arg_5_0, arg_5_1, arg_5_2)
 	if arg_5_1 + arg_5_2 - 1 > arg_5_0.stop then
-		return var_0_22(arg_5_0)
+		return var_0_21(arg_5_0)
 	end
 
 	local var_5_0 = arg_5_0.code
 
 	if arg_5_2 == 1 then
-		return (var_0_1(var_5_0, arg_5_1, arg_5_1))
+		return (var_0_2(var_5_0, arg_5_1, arg_5_1))
 	elseif arg_5_2 == 2 then
-		local var_5_1, var_5_2 = var_0_1(var_5_0, arg_5_1, arg_5_1 + 1)
+		local var_5_1, var_5_2 = var_0_2(var_5_0, arg_5_1, arg_5_1 + 1)
 
 		return var_5_1 + var_5_2 * 0
 	else
-		local var_5_3, var_5_4, var_5_5, var_5_6 = var_0_1(var_5_0, arg_5_1, arg_5_1 + 3)
+		local var_5_3, var_5_4, var_5_5, var_5_6 = var_0_2(var_5_0, arg_5_1, arg_5_1 + 3)
 
 		arg_5_0.imm = var_5_3 + var_5_4 * 0 + var_5_5 * 0 + var_5_6 * 0
 
-		return var_8
+		return var_5_3 + var_5_4 * 0 + var_5_5 * 0 + var_5_6 * 0
 	end
 
 	return
 end
 
-local function var_0_25(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0
-	local var_6_1
-	local var_6_2
-	local var_6_3
-	local var_6_4
-	local var_6_5
-	local var_6_6
-	local var_6_7
-	local var_6_8
-	local var_6_9 = arg_6_0.code
-	local var_6_10 = arg_6_0.pos
-	local var_6_11 = arg_6_0.stop
-	local var_6_12 = arg_6_0.vexl
+local var_0_24
 
-	for iter_6_0 in var_0_4(arg_6_2, ".") do
-		local var_6_13
-
-		if iter_6_0 == "V" or iter_6_0 == "U" then
-			if arg_6_0.rexw then
-				var_6_2 = "Q"
-				arg_6_0.rexw = false
-			elseif arg_6_0.o16 then
-				var_6_2 = "W"
-				arg_6_0.o16 = false
-			else
-				var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
-			end
-
-			var_6_1 = var_0_16[var_6_2]
-		elseif iter_6_0 == "T" then
-			if arg_6_0.rexw then
-				var_6_2 = "Q"
-				arg_6_0.rexw = false
-			else
-				var_6_2 = "D"
-			end
-
-			var_6_1 = var_0_16[var_6_2]
-		elseif iter_6_0 == "B" then
-			var_6_2 = "B"
-			var_6_1 = arg_6_0.rex and var_0_16.B64 or var_0_16.B
-		elseif var_0_3(iter_6_0, "[WDQMXYFG]") then
-			if iter_6_0 == "X" and var_6_12 then
-				var_6_2 = "Y"
-				arg_6_0.vexl = false
-			end
-
-			var_6_1 = var_0_16[var_6_2]
-		elseif iter_6_0 == "P" then
-			var_6_2 = arg_6_0.o16 and "X" or "M"
-			arg_6_0.o16 = false
-
-			if var_6_2 == "X" and var_6_12 then
-				var_6_2 = "Y"
-				arg_6_0.vexl = false
-			end
-
-			var_6_1 = var_0_16[var_6_2]
-		elseif iter_6_0 == "S" then
-			arg_6_1 = arg_6_1 .. var_0_6(var_6_2)
-		elseif iter_6_0 == "s" then
-			if not var_0_24(arg_6_0, var_6_10, 1) then
-				return
-			end
-
-			var_6_13 = var_6_14 <= 127 and var_0_2("+0x%02x", var_6_14) or var_0_2("-0x%02x", 0 - var_6_14)
-			var_6_10 = var_6_10 + 1
-		elseif iter_6_0 == "u" then
-			if not var_0_24(arg_6_0, var_6_10, 1) then
-				return
-			end
-
-			var_6_13 = var_0_2("0x%02x", var_6_14)
-			var_6_10 = var_6_10 + 1
-		elseif iter_6_0 == "b" then
-			if not var_0_24(arg_6_0, var_6_10, 1) then
-				return
-			end
-
-			var_6_13 = var_6_1[var_6_14 / 16 + 1]
-			var_6_10 = var_6_10 + 1
-		elseif iter_6_0 == "w" then
-			if not var_0_24(arg_6_0, var_6_10, 2) then
-				return
-			end
-
-			var_6_13 = var_0_2("0x%x", var_6_14)
-			var_6_10 = var_6_10 + 2
-		elseif iter_6_0 == "o" then
-			if arg_6_0.x64 then
-				if not var_0_24(arg_6_0, var_6_10, 4) then
-					return
-				end
-
-				if not var_0_24(arg_6_0, var_6_10 + 4, 4) then
-					return
-				end
-
-				var_6_13 = var_0_2("[0x%08x%08x]", var_22, var_6_14)
-				var_6_10 = var_6_10 + 8
-			else
-				if not var_0_24(arg_6_0, var_6_10, 4) then
-					return
-				end
-
-				var_6_13 = var_0_2("[0x%08x]", var_6_14)
-				var_6_10 = var_6_10 + 4
-			end
-		else
-			local var_6_14
-
-			if iter_6_0 == "i" or iter_6_0 == "I" then
-				if var_0_18[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
-					if not var_0_24(arg_6_0, var_6_10, 4) then
-						return
-					end
-
-					if not var_0_24(arg_6_0, var_6_10 + 4, 4) then
-						return
-					end
-
-					var_6_13 = var_0_2("0x%08x%08x", var_23, var_22)
-				else
-					if var_6_14 == 8 then
-						var_6_14 = 4
-					end
-
-					if not var_0_24(arg_6_0, var_6_10, var_6_14) then
-						return
-					end
-
-					local var_6_15
-
-					if var_6_2 == "Q" and (var_6_15 < 0 or var_6_15 > 2147483647) then
-						var_6_15 = 4294967296 - var_6_15
-						var_6_13 = var_0_2(var_6_15 > 65535 and "-0x%08x" or "-0x%x", var_6_15)
-					else
-						var_6_13 = var_0_2(var_6_15 > 65535 and "0x%08x" or "0x%x", var_6_15)
-					end
-				end
-
-				var_6_10 = var_6_10 + var_6_14
-			elseif iter_6_0 == "j" then
-				if var_0_18[var_6_2] == 8 then
-					var_6_14 = 4
-				end
-
-				if not var_0_24(arg_6_0, var_6_10, var_6_14) then
-					return
-				end
-
-				local var_6_16
-
-				if var_6_2 == "B" and var_6_16 > 127 then
-					var_6_16 = var_6_16 - 0
-				elseif var_6_16 > 2147483647 then
-					var_6_16 = var_6_16 - 4294967296
-				end
-
-				local var_6_17
-
-				if var_6_16 + (var_6_10 + var_6_14) + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
-					var_6_17 = var_6_17 - 4294967296
-				end
-
-				arg_6_0.imm = var_6_17
-
-				if var_6_2 == "W" then
-					var_6_13 = var_0_2("word 0x%04x", var_6_17 % 0)
-				elseif arg_6_0.x64 then
-					local var_6_18 = var_6_17 % 0
-
-					var_6_13 = var_0_2("0x%02x%06x", (var_6_17 - var_6_18) / 0, var_6_18)
-				else
-					var_6_13 = "0x" .. var_0_8(var_6_17)
-				end
-			elseif iter_6_0 == "R" then
-				var_6_14 = var_0_1(var_6_9, var_6_10 - 1, var_6_10 - 1) % 8
-
-				if arg_6_0.rexb then
-					var_6_14 = var_6_14 + 8
-					arg_6_0.rexb = false
-				end
-
-				var_6_13 = var_6_1[var_6_14 + 1]
-			elseif iter_6_0 == "a" then
-				var_6_13 = var_6_1[1]
-			elseif iter_6_0 == "c" then
-				var_6_13 = "cl"
-			elseif iter_6_0 == "d" then
-				var_6_13 = "dx"
-			elseif iter_6_0 == "1" then
-				var_6_13 = "1"
-			else
-				if not var_6_3 then
-					if not arg_6_0.mrm then
-						if var_6_11 < var_6_10 then
-							return var_0_22(arg_6_0)
-						end
-
-						var_6_3 = var_0_1(var_6_9, var_6_10, var_6_10)
-						var_6_10 = var_6_10 + 1
-					end
-
-					var_6_3 = (var_6_3 - (var_6_3 - var_6_3 % 8) / 8 % 8) / 8
-					var_6_8 = ""
-
-					if var_6_3 < 3 then
-						if var_6_5 == 4 then
-							if var_6_11 < var_6_10 then
-								return var_0_22(arg_6_0)
-							end
-
-							var_6_6 = var_0_1(var_6_9, var_6_10, var_6_10)
-							var_6_10 = var_6_10 + 1
-							var_6_6 = (var_6_6 - (var_6_6 - var_6_6 % 8) / 8 % 8) / 8
-
-							if arg_6_0.rexx then
-								var_6_7 = var_6_7 + 8
-								arg_6_0.rexx = false
-							end
-
-							if var_6_7 == 4 then
-								var_6_7 = nil
-							end
-						end
-
-						if 0 < var_6_3 or var_6_5 == 5 then
-							if var_6_3 ~= 1 then
-								var_6_14 = 4
-							end
-
-							if not var_0_24(arg_6_0, var_6_10, var_6_14) then
-								return
-							end
-
-							if var_6_3 == 0 then
-								var_6_5 = nil
-							end
-
-							if var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
-								if var_6_14 == 1 and var_22 > 127 then
-									var_6_8 = var_0_2("-0x%x", 0 - var_22)
-								elseif var_22 >= 0 and var_22 <= 2147483647 then
-									var_6_8 = var_0_2("+0x%x", var_22)
-								else
-									var_6_8 = var_0_2("-0x%x", 4294967296 - var_22)
-								end
-							else
-								var_6_8 = var_0_2(arg_6_0.x64 and not arg_6_0.a32 and (not (var_22 >= 0) or not (var_22 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_22)
-							end
-
-							var_6_10 = var_6_10 + var_6_14
-						end
-					end
-
-					if var_6_5 and arg_6_0.rexb then
-						var_6_5 = var_6_5 + 8
-						arg_6_0.rexb = false
-					end
-
-					if arg_6_0.rexr then
-						var_6_4 = var_6_4 + 8
-						arg_6_0.rexr = false
-					end
-				end
-
-				if iter_6_0 == "m" then
-					if var_6_3 == 3 then
-						var_6_13 = var_6_1[var_6_5 + 1]
-					else
-						if not arg_6_0.a32 or not var_0_16.D then
-							var_6_14 = arg_6_0.aregs
-						end
-
-						local var_6_19 = ""
-						local var_6_20 = ""
-
-						if var_6_5 then
-							var_6_19 = var_6_14[var_6_5 + 1]
-						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
-							var_6_19 = "rip"
-						end
-
-						arg_6_0.a32 = false
-
-						if var_6_7 then
-							if var_6_5 then
-								var_6_19 = var_6_19 .. "+"
-							end
-
-							var_6_20 = var_6_14[var_6_7 + 1]
-
-							if var_6_6 > 0 then
-								var_6_20 = var_6_20 .. "*" .. 2^var_6_6
-							end
-						end
-
-						var_6_13 = var_0_2("[%s%s%s]", var_6_19, var_6_20, var_6_8)
-					end
-
-					if var_6_3 < 3 and (not var_0_3(arg_6_2, "[aRrgp]") or var_0_3(arg_6_2, "t")) then
-						var_6_13 = var_0_19[var_6_2] .. " " .. var_6_13
-					end
-				elseif iter_6_0 == "r" then
-					var_6_13 = var_6_1[var_6_4 + 1]
-				elseif iter_6_0 == "g" then
-					var_6_13 = var_0_17[var_6_4 + 1]
-				elseif iter_6_0 == "p" then
-					-- block empty
-				elseif iter_6_0 == "f" then
-					var_6_13 = "st" .. var_6_5
-				elseif iter_6_0 == "x" then
-					if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
-						var_6_13 = "CR8"
-						arg_6_0.lock = false
-					else
-						var_6_13 = "CR" .. var_6_4
-					end
-				elseif iter_6_0 == "v" then
-					if arg_6_0.vexv then
-						var_6_13 = var_6_1[arg_6_0.vexv + 1]
-						arg_6_0.vexv = false
-					end
-				elseif iter_6_0 == "y" then
-					var_6_13 = "DR" .. var_6_4
-				elseif iter_6_0 == "z" then
-					var_6_13 = "TR" .. var_6_4
-				elseif iter_6_0 == "l" then
-					var_6_12 = false
-				elseif iter_6_0 == "t" then
-					-- block empty
-				else
-					error = var_6_14
-
-					var_6_14("bad pattern `" .. arg_6_2 .. "'")
-				end
-			end
-		end
-
-		if var_6_13 then
-			var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_13 or var_6_13
-		end
-	end
-
-	arg_6_0.pos = var_6_10
-
-	return var_0_20(arg_6_0, arg_6_1, var_6_0)
-end
-
-local var_0_26
-
-local function var_0_27(arg_7_0)
-	local var_7_0
+local function var_0_25(arg_7_0)
+	local var_7_0 = arg_7_0.mrm
 
 	if not arg_7_0.mrm then
 		if arg_7_0.pos > arg_7_0.stop then
 			return nil
 		end
 
-		var_7_0 = var_0_1(arg_7_0.code, var_2, var_2)
-		arg_7_0.pos = var_2 + 1
+		var_7_0 = var_0_2(arg_7_0.code, arg_7_0.pos, arg_7_0.pos)
+		arg_7_0.pos = arg_7_0.pos + 1
 		arg_7_0.mrm = var_7_0
 	end
 
 	return var_7_0
 end
 
-local function var_0_28(arg_8_0, arg_8_1, arg_8_2)
+local function var_0_26(arg_8_0, arg_8_1, arg_8_2)
 	if not arg_8_1 then
-		return var_0_23(arg_8_0)
+		return var_0_22(arg_8_0)
 	end
 
-	if var_0_3(arg_8_1, "%|") then
+	if var_0_4(arg_8_1, "%|") then
 		local var_8_0
 
 		if arg_8_0.rep then
@@ -2020,130 +1883,5861 @@ local function var_0_28(arg_8_0, arg_8_1, arg_8_2)
 			var_8_0 = "^[^%|]*"
 		end
 
-		if not var_0_3(arg_8_1, var_8_0) then
-			return var_0_23(arg_8_0)
+		arg_8_1 = var_0_4(arg_8_1, var_8_0)
+
+		if not arg_8_1 then
+			return var_0_22(arg_8_0)
 		end
 	end
 
-	if var_0_3(arg_8_1, "%$") then
-		if not var_0_27(arg_8_0) then
-			return var_0_22(arg_8_0)
+	if var_0_4(arg_8_1, "%$") then
+		local var_8_1 = var_0_25(arg_8_0)
+
+		if not var_8_1 then
+			return var_0_21(arg_8_0)
 		end
 
-		if var_0_3(arg_8_1, var_3 >= 192 and "^[^%$]*" or "%$(.*)") == "" then
-			return var_0_23(arg_8_0)
+		arg_8_1 = var_0_4(arg_8_1, var_8_1 >= 192 and "^[^%$]*" or "%$(.*)")
+
+		if arg_8_1 == "" then
+			return var_0_22(arg_8_0)
 		end
 	end
 
 	if arg_8_1 == "" then
-		return var_0_23(arg_8_0)
+		return var_0_22(arg_8_0)
 	end
 
-	local var_8_1, var_8_2 = var_0_3(arg_8_1, "^([a-z0-9 ]*)(.*)")
+	local var_8_2, var_8_3 = var_0_4(arg_8_1, "^([a-z0-9 ]*)(.*)")
 
-	if var_8_2 == "" and arg_8_2 then
-		var_8_2 = arg_8_2
+	if var_8_3 == "" and arg_8_2 then
+		var_8_3 = arg_8_2
 	end
 
-	return var_0_26[var_0_0(var_8_2, 1, 1)](arg_8_0, var_8_1, var_8_2)
+	return var_0_24[var_0_1(var_8_3, 1, 1)](arg_8_0, var_8_2, var_8_3)
 end
 
-local function var_0_29(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0.pos
-	local var_9_1 = arg_9_1[var_0_1(arg_9_0.code, var_9_0, var_9_0)]
+local function var_0_27(arg_9_0, arg_9_1)
+	arg_9_0.pos = arg_9_0.pos + 1
 
-	arg_9_0.pos = var_9_0 + 1
-
-	return var_0_28(arg_9_0, var_9_1)
+	return var_0_26(arg_9_0, arg_9_1[var_0_2(arg_9_0.code, arg_9_0.pos, arg_9_0.pos)])
 end
 
-var_0_26 = {
+var_0_24 = {
 	[""] = function(arg_10_0, arg_10_1, arg_10_2)
-		return var_0_20(arg_10_0, arg_10_1)
+		return var_0_19(arg_10_0, arg_10_1)
 	end,
-	B = var_0_25,
-	W = var_0_25,
-	D = var_0_25,
-	Q = var_0_25,
-	V = var_0_25,
-	U = var_0_25,
-	T = var_0_25,
-	M = var_0_25,
-	X = var_0_25,
-	P = var_0_25,
-	F = var_0_25,
-	G = var_0_25,
-	Y = var_0_25,
+	B = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	W = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	D = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	Q = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	V = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	U = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	T = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	M = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	X = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	P = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	F = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	G = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
+	Y = function(arg_6_0, arg_6_1, arg_6_2)
+		local var_6_0
+		local var_6_1
+		local var_6_2
+		local var_6_3
+		local var_6_4
+		local var_6_5
+		local var_6_6
+		local var_6_7
+		local var_6_8
+		local var_6_9 = arg_6_0.pos
+		local var_6_10 = arg_6_0.vexl
+
+		for iter_6_0 in var_0_5(arg_6_2, ".") do
+			local var_6_11
+
+			if iter_6_0 == "V" or iter_6_0 == "U" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				elseif arg_6_0.o16 then
+					var_6_2 = "W"
+					arg_6_0.o16 = false
+				else
+					var_6_2 = iter_6_0 == "U" and arg_6_0.x64 and "Q" or "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "T" then
+				if arg_6_0.rexw then
+					var_6_2 = "Q"
+					arg_6_0.rexw = false
+				else
+					var_6_2 = "D"
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "B" then
+				var_6_2 = "B"
+				var_6_1 = arg_6_0.rex and var_0_15.B64 or var_0_15.B
+
+				goto label_6_1
+			end
+
+			if var_0_4(iter_6_0, "[WDQMXYFG]") then
+				var_6_2 = iter_6_0
+
+				if iter_6_0 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "P" then
+				var_6_2 = arg_6_0.o16 and "X" or "M"
+				arg_6_0.o16 = false
+
+				if var_6_2 == "X" and var_6_10 then
+					var_6_2 = "Y"
+					arg_6_0.vexl = false
+				end
+
+				var_6_1 = var_0_15[var_6_2]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "S" then
+				arg_6_1 = arg_6_1 .. var_0_7(var_6_2)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "s" then
+				local var_6_12 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_12 then
+					return
+				end
+
+				var_6_11 = var_6_12 <= 127 and var_0_3("+0x%02x", var_6_12) or var_0_3("-0x%02x", 0 - var_6_12)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "u" then
+				local var_6_13 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_13 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%02x", var_6_13)
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "b" then
+				local var_6_14 = var_0_23(arg_6_0, var_6_9, 1)
+
+				if not var_6_14 then
+					return
+				end
+
+				var_6_11 = var_6_1[var_6_14 / 16 + 1]
+				var_6_9 = var_6_9 + 1
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "w" then
+				local var_6_15 = var_0_23(arg_6_0, var_6_9, 2)
+
+				if not var_6_15 then
+					return
+				end
+
+				var_6_11 = var_0_3("0x%x", var_6_15)
+				var_6_9 = var_6_9 + 2
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "o" then
+				if arg_6_0.x64 then
+					local var_6_16 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_16 then
+						return
+					end
+
+					local var_6_17 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_17 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x%08x]", var_6_17, var_6_16)
+					var_6_9 = var_6_9 + 8
+				else
+					local var_6_18 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_18 then
+						return
+					end
+
+					var_6_11 = var_0_3("[0x%08x]", var_6_18)
+					var_6_9 = var_6_9 + 4
+				end
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "i" or iter_6_0 == "I" then
+				local var_6_19 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 and arg_6_0.x64 and iter_6_0 == "I" then
+					local var_6_20 = var_0_23(arg_6_0, var_6_9, 4)
+
+					if not var_6_20 then
+						return
+					end
+
+					local var_6_21 = var_0_23(arg_6_0, var_6_9 + 4, 4)
+
+					if not var_6_21 then
+						return
+					end
+
+					var_6_11 = var_0_3("0x%08x%08x", var_6_21, var_6_20)
+				else
+					if var_6_19 == 8 then
+						var_6_19 = 4
+					end
+
+					local var_6_22 = var_0_23(arg_6_0, var_6_9, var_6_19)
+
+					if not var_6_22 then
+						return
+					end
+
+					if var_6_2 == "Q" and (var_6_22 < 0 or var_6_22 > 2147483647) then
+						var_6_22 = 4294967296 - var_6_22
+						var_6_11 = var_0_3(var_6_22 > 65535 and "-0x%08x" or "-0x%x", var_6_22)
+					else
+						var_6_11 = var_0_3(var_6_22 > 65535 and "0x%08x" or "0x%x", var_6_22)
+					end
+				end
+
+				var_6_9 = var_6_9 + var_6_19
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "j" then
+				local var_6_23 = var_0_17[var_6_2]
+
+				if var_0_17[var_6_2] == 8 then
+					var_6_23 = 4
+				end
+
+				local var_6_24 = var_0_23(arg_6_0, var_6_9, var_6_23)
+
+				if not var_6_24 then
+					return
+				end
+
+				if var_6_2 == "B" and var_6_24 > 127 then
+					var_6_24 = var_6_24 - 0
+				elseif var_6_24 > 2147483647 then
+					var_6_24 = var_6_24 - 4294967296
+				end
+
+				var_6_9 = var_6_9 + var_6_23
+
+				local var_6_25 = var_6_24 + var_6_9 + arg_6_0.addr
+
+				if var_6_24 + var_6_9 + arg_6_0.addr > 4294967295 and not arg_6_0.x64 then
+					var_6_25 = var_6_25 - 4294967296
+				end
+
+				arg_6_0.imm = var_6_25
+				var_6_11 = var_6_2 == "W" and var_0_3("word 0x%04x", var_6_25 % 0) or arg_6_0.x64 and var_0_3("0x%02x%06x", (var_6_25 - var_6_25 % 0) / 0, var_6_25 % 0) or "0x" .. var_0_9(var_6_25)
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "R" then
+				local var_6_26 = var_0_2(arg_6_0.code, var_6_9 - 1, var_6_9 - 1) % 8
+
+				if arg_6_0.rexb then
+					var_6_26 = var_6_26 + 8
+					arg_6_0.rexb = false
+				end
+
+				var_6_11 = var_6_1[var_6_26 + 1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "a" then
+				var_6_11 = var_6_1[1]
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "c" then
+				var_6_11 = "cl"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "d" then
+				var_6_11 = "dx"
+
+				goto label_6_1
+			end
+
+			if iter_6_0 == "1" then
+				var_6_11 = "1"
+
+				goto label_6_1
+			end
+
+			if not var_6_3 then
+				var_6_3 = arg_6_0.mrm
+
+				if not arg_6_0.mrm then
+					if arg_6_0.stop < var_6_9 then
+						return var_0_21(arg_6_0)
+					end
+
+					var_6_3 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+					var_6_9 = var_6_9 + 1
+				end
+
+				var_6_5 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_3 % 8) / 8
+				var_6_4 = var_6_3 % 8
+				var_6_3 = (var_6_3 - var_6_4) / 8
+				var_6_8 = ""
+
+				if var_6_3 < 3 then
+					if var_6_5 == 4 then
+						if arg_6_0.stop < var_6_9 then
+							return var_0_21(arg_6_0)
+						end
+
+						var_6_6 = var_0_2(arg_6_0.code, var_6_9, var_6_9)
+						var_6_9 = var_6_9 + 1
+						var_6_5 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_5) / 8
+						var_6_7 = var_6_6 % 8
+						var_6_6 = (var_6_6 - var_6_7) / 8
+
+						if arg_6_0.rexx then
+							var_6_7 = var_6_7 + 8
+							arg_6_0.rexx = false
+						end
+
+						if var_6_7 == 4 then
+							var_6_7 = nil
+						end
+					end
+
+					if var_6_3 > 0 or var_6_5 == 5 then
+						local var_6_27 = var_6_3
+
+						if var_6_3 ~= 1 then
+							var_6_27 = 4
+						end
+
+						local var_6_28 = var_0_23(arg_6_0, var_6_9, var_6_27)
+
+						if not var_6_28 then
+							return
+						end
+
+						if var_6_3 == 0 then
+							var_6_5 = nil
+						end
+
+						var_6_8 = (var_6_5 or var_6_7 or not var_6_6 and arg_6_0.x64 and not arg_6_0.a32) and (var_6_27 == 1 and var_6_28 > 127 and var_0_3("-0x%x", 0 - var_6_28) or var_6_28 >= 0 and var_6_28 <= 2147483647 and var_0_3("+0x%x", var_6_28) or var_0_3("-0x%x", 4294967296 - var_6_28)) or var_0_3(arg_6_0.x64 and not arg_6_0.a32 and (not (var_6_28 >= 0) or not (var_6_28 <= 2147483647)) and "0xffffffff%08x" or "0x%08x", var_6_28)
+						var_6_9 = var_6_9 + var_6_27
+					end
+				end
+
+				if var_6_5 and arg_6_0.rexb then
+					var_6_5 = var_6_5 + 8
+					arg_6_0.rexb = false
+				end
+
+				if arg_6_0.rexr then
+					var_6_4 = var_6_4 + 8
+					arg_6_0.rexr = false
+				end
+			end
+
+			::label_6_1::
+
+			if iter_6_0 == "m" then
+				if var_6_3 == 3 then
+					var_6_11 = var_6_1[var_6_5 + 1]
+
+					goto label_6_0
+				end
+
+				::label_6_0::
+
+				if arg_6_0.a32 then
+					do
+						local var_6_29 = var_0_15.D or arg_6_0.aregs
+						local var_6_30 = ""
+						local var_6_31 = ""
+
+						if var_6_5 then
+							var_6_30 = var_6_29[var_6_5 + 1]
+						elseif not var_6_6 and arg_6_0.x64 and not arg_6_0.a32 then
+							var_6_30 = "rip"
+						end
+
+						arg_6_0.a32 = false
+
+						if var_6_7 then
+							if var_6_5 then
+								var_6_30 = var_6_30 .. "+"
+							end
+
+							var_6_31 = var_6_29[var_6_7 + 1]
+
+							if var_6_6 > 0 then
+								var_6_31 = var_6_31 .. "*" .. 2^var_6_6
+							end
+						end
+
+						var_6_11 = var_0_3("[%s%s%s]", var_6_30, var_6_31, var_6_8)
+					end
+
+					if var_6_3 < 3 and (not var_0_4(arg_6_2, "[aRrgp]") or var_0_4(arg_6_2, "t")) then
+						var_6_11 = var_0_18[var_6_2] .. " " .. var_6_11
+					end
+
+					if false then
+						if iter_6_0 == "r" then
+							var_6_11 = var_6_1[var_6_4 + 1]
+						elseif iter_6_0 == "g" then
+							var_6_11 = var_0_16[var_6_4 + 1]
+						elseif iter_6_0 == "p" then
+							-- block empty
+						elseif iter_6_0 == "f" then
+							var_6_11 = "st" .. var_6_5
+						elseif iter_6_0 == "x" then
+							if var_6_4 == 0 and arg_6_0.lock and not arg_6_0.x64 then
+								var_6_11 = "CR8"
+								arg_6_0.lock = false
+							else
+								var_6_11 = "CR" .. var_6_4
+							end
+						elseif iter_6_0 == "v" then
+							if arg_6_0.vexv then
+								var_6_11 = var_6_1[arg_6_0.vexv + 1]
+								arg_6_0.vexv = false
+							end
+						elseif iter_6_0 == "y" then
+							var_6_11 = "DR" .. var_6_4
+						elseif iter_6_0 == "z" then
+							var_6_11 = "TR" .. var_6_4
+						elseif iter_6_0 == "l" then
+							var_6_10 = false
+						elseif iter_6_0 == "t" then
+							-- block empty
+						else
+							error("bad pattern `" .. arg_6_2 .. "'")
+						end
+					end
+
+					if var_6_11 then
+						var_6_0 = var_6_0 and var_6_0 .. ", " .. var_6_11 or var_6_11
+					end
+				end
+			end
+		end
+
+		arg_6_0.pos = var_6_9
+
+		return var_0_19(arg_6_0, arg_6_1, var_6_0)
+	end,
 	[":"] = function(arg_11_0, arg_11_1, arg_11_2)
-		arg_11_0[arg_11_2 == ":" and arg_11_1 or var_0_0(arg_11_2, 2)] = arg_11_1
+		arg_11_0[arg_11_2 == ":" and arg_11_1 or var_0_1(arg_11_2, 2)] = arg_11_1
 
 		if arg_11_0.pos - arg_11_0.start > 5 then
-			return var_0_23(arg_11_0)
+			return var_0_22(arg_11_0)
 		end
 
 		return
 	end,
 	["*"] = function(arg_12_0, arg_12_1, arg_12_2)
-		return var_0_26[arg_12_1](arg_12_0, arg_12_1, var_0_0(arg_12_2, 2))
+		return var_0_24[arg_12_1](arg_12_0, arg_12_1, var_0_1(arg_12_2, 2))
 	end,
 	["!"] = function(arg_13_0, arg_13_1, arg_13_2)
-		if not var_0_27(arg_13_0) then
-			return var_0_22(arg_13_0)
+		local var_13_0 = var_0_25(arg_13_0)
+
+		if not var_13_0 then
+			return var_0_21(arg_13_0)
 		end
 
-		return var_0_28(arg_13_0, var_0_15[arg_13_1][(var_3 - var_3 % 8) / 8 % 8 + 1], var_0_0(arg_13_2, 2))
+		return var_0_26(arg_13_0, var_0_14[arg_13_1][(var_13_0 - var_13_0 % 8) / 8 % 8 + 1], var_0_1(arg_13_2, 2))
 	end,
 	sz = function(arg_14_0, arg_14_1, arg_14_2)
 		if arg_14_0.o16 then
 			arg_14_0.o16 = false
 		else
-			arg_14_2 = var_0_3(arg_14_2, ",(.*)")
+			arg_14_2 = var_0_4(arg_14_2, ",(.*)")
 
-			if arg_14_0.rexw and var_0_3(arg_14_2, ",(.*)") then
-				arg_14_2 = var_3
-				arg_14_0.rexw = false
+			if arg_14_0.rexw then
+				local var_14_0 = var_0_4(arg_14_2, ",(.*)")
+
+				if var_14_0 then
+					arg_14_2 = var_14_0
+					arg_14_0.rexw = false
+				end
 			end
 		end
 
-		arg_14_2 = var_0_3(arg_14_2, "^[^,]*")
+		arg_14_2 = var_0_4(arg_14_2, "^[^,]*")
 
-		return var_0_28(arg_14_0, arg_14_2)
+		return var_0_26(arg_14_0, arg_14_2)
 	end,
 	opc2 = function(arg_15_0, arg_15_1, arg_15_2)
-		return var_0_29(arg_15_0, var_0_11)
+		return var_0_27(arg_15_0, var_0)
 	end,
 	opc3 = function(arg_16_0, arg_16_1, arg_16_2)
-		return var_0_29(arg_16_0, var_0_12[arg_16_2])
+		return var_0_27(arg_16_0, var_0_12[arg_16_2])
 	end,
 	vm = function(arg_17_0, arg_17_1, arg_17_2)
-		return var_0_28(arg_17_0, var_0_13[arg_17_0.mrm])
+		return var_0_26(arg_17_0, var_0_13[arg_17_0.mrm])
 	end,
 	fp = function(arg_18_0, arg_18_1, arg_18_2)
-		if not var_0_27(arg_18_0) then
-			return var_0_22(arg_18_0)
+		local var_18_0 = var_0_25(arg_18_0)
+
+		if not var_18_0 then
+			return var_0_21(arg_18_0)
 		end
 
-		local var_18_0 = var_3 % 8
-		local var_18_1 = arg_18_2 * 8 + (var_3 - var_18_0) / 8 % 8
+		local var_18_1 = var_18_0 % 8
+		local var_18_2 = arg_18_2 * 8 + (var_18_0 - var_18_0 % 8) / 8 % 8
 
-		if var_3 >= 192 then
-			var_18_1 = var_18_1 + 64
+		if var_18_0 >= 192 then
+			var_18_2 = var_18_2 + 64
 		end
 
-		local var_18_2 = var_0_14[var_18_1]
+		local var_18_3 = var_0[var_18_2]
 
-		if var_0_10000(var_18_2) == "table" then
-			var_18_2 = var_18_2[var_18_0 + 1]
+		if var_0_0(var_0[var_18_2]) == "table" then
+			var_18_3 = var_18_3[var_18_1 + 1]
 		end
 
-		return var_0_28(arg_18_0, var_18_2)
+		return var_0_26(arg_18_0, var_18_3)
 	end,
 	rex = function(arg_19_0, arg_19_1, arg_19_2)
 		if arg_19_0.rex then
-			return var_0_23(arg_19_0)
+			return var_0_22(arg_19_0)
 		end
 
-		for iter_19_0 in var_0_4(arg_19_2, ".") do
+		for iter_19_0 in var_0_5(arg_19_2, ".") do
 			arg_19_0["rex" .. iter_19_0] = true
 		end
 
@@ -2153,7 +7747,7 @@ var_0_26 = {
 	end,
 	vex = function(arg_20_0, arg_20_1, arg_20_2)
 		if arg_20_0.rex then
-			return var_0_23(arg_20_0)
+			return var_0_22(arg_20_0)
 		end
 
 		arg_20_0.rex = "vex"
@@ -2165,193 +7759,194 @@ var_0_26 = {
 			var_20_0 = var_20_0 - 1
 		end
 
-		if not var_0_1(arg_20_0.code, var_20_0, var_20_0) then
-			return var_0_22(arg_20_0)
+		local var_20_1 = var_0_2(arg_20_0.code, var_20_0, var_20_0)
+
+		if not var_20_1 then
+			return var_0_21(arg_20_0)
 		end
 
-		local var_20_1 = var_20_0 + 1
+		local var_20_2 = var_20_0 + 1
 
-		if var_20_3 < 128 then
+		if var_20_1 < 128 then
 			arg_20_0.rexr = true
 		end
 
-		local var_20_2 = 1
-		local var_20_3
+		local var_20_3 = 1
 
 		if arg_20_2 == "3" then
-			var_20_3 = (var_20_3 - (var_20_3 - var_20_3 % 32) / 32 % 2) / 2
+			var_20_3 = var_20_1 % 32
+			var_20_1 = (var_20_1 - var_20_1 % 32) / 32
+			var_20_1 = (var_20_1 - var_20_1 % 2) / 2
 
-			if var_6 == 0 then
+			if var_20_1 % 2 == 0 then
 				arg_20_0.rexb = true
 			end
 
-			if var_20_3 % 2 == 0 then
+			if var_20_1 % 2 == 0 then
 				arg_20_0.rexx = true
 			end
 
-			if not var_0_1(arg_20_0.code, var_20_1, var_20_1) then
-				return var_0_22(arg_20_0)
+			var_20_1 = var_0_2(arg_20_0.code, var_20_2, var_20_2)
+
+			if not var_20_1 then
+				return var_0_21(arg_20_0)
 			end
 
-			var_20_1 = var_20_1 + 1
+			var_20_2 = var_20_2 + 1
 
-			if var_20_3 >= 128 then
+			if var_20_1 >= 128 then
 				arg_20_0.rexw = true
 			end
 		end
 
-		arg_20_0.pos = var_20_1
+		arg_20_0.pos = var_20_2
 
 		local var_20_4
 
-		if var_20_2 == 1 then
-			var_20_4 = var_0_11
-		elseif var_20_2 == 2 then
+		if var_20_3 == 1 then
+			var_20_4 = var_0
+		elseif var_20_3 == 2 then
 			var_20_4 = var_0_12["38"]
-		elseif var_20_2 == 3 then
+		elseif var_20_3 == 3 then
 			var_20_4 = var_0_12["3a"]
 		else
-			return var_0_23(arg_20_0)
+			return var_0_22(arg_20_0)
 		end
 
-		local var_20_5 = (var_20_3 - var_20_3 % 4) / 4
+		local var_20_5 = var_20_1 % 4
+		local var_20_6 = (var_20_1 - var_20_1 % 4) / 4
 
-		if var_7 == 1 then
+		if var_20_1 % 4 == 1 then
 			arg_20_0.o16 = "o16"
-		elseif var_7 == 2 then
+		elseif var_20_5 == 2 then
 			arg_20_0.rep = "rep"
-		elseif var_7 == 3 then
+		elseif var_20_5 == 3 then
 			arg_20_0.rep = "repne"
 		end
 
-		local var_20_6 = (var_20_5 - var_20_5 % 2) / 2
-
-		if var_8 ~= 0 then
+		if var_20_6 % 2 ~= 0 then
 			arg_20_0.vexl = true
 		end
 
-		arg_20_0.vexv = (-1 - var_20_6) % 16
+		arg_20_0.vexv = (-1 - (var_20_6 - var_20_6 % 2) / 2) % 16
 
-		return var_0_29(arg_20_0, var_20_4)
+		return var_0_27(arg_20_0, var_20_4)
 	end,
 	nop = function(arg_21_0, arg_21_1, arg_21_2)
-		return var_0_28(arg_21_0, arg_21_0.rex and arg_21_2 or "nop")
+		return var_0_26(arg_21_0, arg_21_0.rex and arg_21_2 or "nop")
 	end,
 	emms = function(arg_22_0, arg_22_1, arg_22_2)
 		if arg_22_0.rex ~= "vex" then
-			return var_0_20(arg_22_0, "emms")
+			return var_0_19(arg_22_0, "emms")
 		elseif arg_22_0.vexl then
 			arg_22_0.vexl = false
 
-			return var_0_20(arg_22_0, "zeroall")
+			return var_0_19(arg_22_0, "zeroall")
 		else
-			return var_0_20(arg_22_0, "zeroupper")
+			return var_0_19(arg_22_0, "zeroupper")
 		end
 
 		return
 	end
 }
 
-local function var_0_30(arg_23_0, arg_23_1, arg_23_2)
+local function var_0_28(arg_23_0, arg_23_1, arg_23_2)
 	arg_23_1 = arg_23_1 or 0
 
-	local var_23_0
+	if arg_23_2 then
+		local var_23_0 = arg_23_1 + arg_23_2 or #arg_23_0.code
 
-	if not arg_23_2 or not (arg_23_1 + arg_23_2) then
-		var_23_0 = #arg_23_0.code
+		arg_23_1 = arg_23_1 + 1
+		arg_23_0.start = arg_23_1
+		arg_23_0.pos = arg_23_1
+		arg_23_0.stop = var_23_0
+		arg_23_0.imm = nil
+		arg_23_0.mrm = false
+
+		var_0_20(arg_23_0)
+
+		while var_23_0 >= arg_23_0.pos do
+			var_0_27(arg_23_0, arg_23_0.map1)
+		end
+
+		if arg_23_0.pos ~= arg_23_0.start then
+			var_0_21(arg_23_0)
+		end
+
+		return
 	end
-
-	arg_23_0.start = arg_23_1 + 1
-	arg_23_0.pos = arg_23_1
-	arg_23_0.stop = var_23_0
-	arg_23_0.imm = nil
-	arg_23_0.mrm = false
-
-	var_0_21(arg_23_0)
-
-	while var_23_0 >= arg_23_0.pos do
-		var_0_29(arg_23_0, arg_23_0.map1)
-	end
-
-	if arg_23_0.pos ~= arg_23_0.start then
-		var_0_22(arg_23_0)
-	end
-
-	return
-end
-
-local function var_0_31(arg_24_0, arg_24_1, arg_24_2)
-	local var_24_0 = {
-		code = arg_24_0,
-		addr = (arg_24_1 or 0) - 1
-	}
-	local var_24_1
-
-	if not arg_24_2 then
-		::label_24_0::
-
-		io = var_24_1
-		var_24_1 = var_24_1.write
-	end
-
-	var_24_0.out = var_24_1
-	var_24_0.symtab = {}
-	var_24_0.disass = var_0_30
-	var_24_0.hexdump = 16
-	var_24_0.x64 = false
-	var_24_0.map1 = var_0_9
-	var_24_0.aregs = var_0_16.D
-
-	return var_24_0
-end
-
-local function var_0_32(arg_25_0, arg_25_1, arg_25_2)
-	local var_25_0 = var_0_31(arg_25_0, arg_25_1, arg_25_2)
-
-	var_25_0.x64 = true
-	var_25_0.map1 = var_0_10
-	var_25_0.aregs = var_0_16.Q
-
-	return var_25_0
-end
-
-local function var_0_33(arg_26_0, arg_26_1, arg_26_2)
-	local var_26_0 = var_0_31(arg_26_0, arg_26_1, arg_26_2)
-
-	var_3.disass(var_26_0)
-
-	return
-end
-
-local function var_0_34(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = var_0_32(arg_27_0, arg_27_1, arg_27_2)
-
-	var_3.disass(var_27_0)
-
-	return
-end
-
-local function var_0_35(arg_28_0)
-	if arg_28_0 < 8 then
-		return var_0_16.D[arg_28_0 + 1]
-	end
-
-	return var_0_16.X[arg_28_0 - 7]
-end
-
-local function var_0_36(arg_29_0)
-	if arg_29_0 < 16 then
-		return var_0_16.Q[arg_29_0 + 1]
-	end
-
-	return var_0_16.X[arg_29_0 - 15]
 end
 
 return {
-	create = var_0_31,
-	create64 = var_0_32,
-	disass = var_0_33,
-	disass64 = var_0_34,
-	regname = var_0_35,
-	regname64 = var_0_36
+	create = function(arg_24_0, arg_24_1, arg_24_2)
+		({
+			code = arg_24_0,
+			addr = (arg_24_1 or 0) - 1,
+			out = arg_24_2 or io.write,
+			symtab = {},
+			disass = var_0_28
+		}).hexdump = 16
+		;({
+			code = arg_24_0,
+			addr = (arg_24_1 or 0) - 1,
+			out = arg_24_2 or io.write,
+			symtab = {},
+			disass = var_0_28
+		}).x64 = false
+		;({
+			code = arg_24_0,
+			addr = (arg_24_1 or 0) - 1,
+			out = arg_24_2 or io.write,
+			symtab = {},
+			disass = var_0_28
+		}).map1 = var_0_10
+		;({
+			code = arg_24_0,
+			addr = (arg_24_1 or 0) - 1,
+			out = arg_24_2 or io.write,
+			symtab = {},
+			disass = var_0_28
+		}).aregs = var_0_15.D
+
+		return {
+			code = arg_24_0,
+			addr = (arg_24_1 or 0) - 1,
+			out = arg_24_2 or io.write,
+			symtab = {},
+			disass = var_0_28
+		}
+	end,
+	create64 = function(arg_25_0, arg_25_1, arg_25_2)
+		local var_25_0 = var_0(arg_25_0, arg_25_1, arg_25_2)
+
+		var_25_0.x64 = true
+		var_25_0.map1 = var_0_11
+		var_25_0.aregs = var_0_15.Q
+
+		return var_25_0
+	end,
+	disass = function(arg_26_0, arg_26_1, arg_26_2)
+		var_0(arg_26_0, arg_26_1, arg_26_2):disass()
+
+		return
+	end,
+	disass64 = function(arg_27_0, arg_27_1, arg_27_2)
+		var_0(arg_27_0, arg_27_1, arg_27_2):disass()
+
+		return
+	end,
+	regname = function(arg_28_0)
+		if arg_28_0 < 8 then
+			return var_0_15.D[arg_28_0 + 1]
+		end
+
+		return var_0_15.X[arg_28_0 - 7]
+	end,
+	regname64 = function(arg_29_0)
+		if arg_29_0 < 16 then
+			return var_0_15.Q[arg_29_0 + 1]
+		end
+
+		return var_0_15.X[arg_29_0 - 15]
+	end
 }

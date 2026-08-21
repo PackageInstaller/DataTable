@@ -1,68 +1,32 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MinigameHallBuilding", import(".NavalAcademyBuilding"))
 
-local var_0_0 = "MinigameHallBuilding"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".NavalAcademyBuilding"))
-
-function var_0_1.GetGameObjectName(arg_1_0)
+function var_0_0.GetGameObjectName(arg_1_0)
 	return "minigamehall"
 end
 
-function var_0_1.GetTitle(arg_2_0)
-	i18n = var_1_10001
-
-	return var_1_10001("school_title_xiaoyouxiting")
+function var_0_0.GetTitle(arg_2_0)
+	return i18n("school_title_xiaoyouxiting")
 end
 
-function var_0_1.OnInit(arg_3_0)
-	setActive = var_1_10001
-
-	local var_3_0 = arg_3_0._tf
-
-	LOCK_MINIGAME_HALL = var_1_10004
-
-	var_1_10001(var_3_0, not var_1_10004)
-
-	local var_3_1 = arg_3_0:IsUnlock()
-
-	setActive = var_1_10002
-
-	local var_3_2 = arg_3_0._tf
-
-	var_1_10002(var_4.Find(var_3_2, "name/lock"), not var_3_1)
+function var_0_0.OnInit(arg_3_0)
+	setActive(arg_3_0._tf, not LOCK_MINIGAME_HALL)
+	setActive(arg_3_0._tf:Find("name/lock"), not arg_3_0:IsUnlock())
 
 	return
 end
 
-function var_0_1.OnClick(arg_4_0)
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.emit
-
-	NavalAcademyMediator = var_1_10004
-
-	var_4_1(var_4_0, var_1_10004.ON_OPEN_MINIGAMEHALL)
+function var_0_0.OnClick(arg_4_0)
+	arg_4_0:emit(NavalAcademyMediator.ON_OPEN_MINIGAMEHALL)
 
 	return
 end
 
-function var_0_1.IsUnlock(arg_5_0)
-	pg = var_1_10001
-
-	local var_5_0 = var_1_10001.SystemOpenMgr.GetInstance()
-	local var_5_1 = var_1.isOpenSystem
-
-	getProxy = var_1_10004
-	PlayerProxy = var_1_10006
-
-	local var_5_2 = var_1_10004(var_1_10006)
-
-	return var_5_1(var_5_0, var_4.getRawData(var_5_2).level, "GameHallMediator")
+function var_0_0.IsUnlock(arg_5_0)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "GameHallMediator")
 end
 
-function var_0_1.IsTip(arg_6_0)
+function var_0_0.IsTip(arg_6_0)
 	return false
 end
 
-return var_0_1
+return var_0_0

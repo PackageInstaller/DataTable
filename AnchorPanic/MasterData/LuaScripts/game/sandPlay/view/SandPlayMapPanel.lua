@@ -71,6 +71,8 @@ function active(self, args)
 
     GameDispatcher:addEventListener(EventName.SANDPLAY_PLAYERSTATE_MOVE, self.refreshPlayerIcon, self)
 
+    self.m_childGos["mImgNpcMinSign"]:SetActive(false)
+
     self:refreshPlayerIcon()
     self:createIconList()
     self:createMinMapIcon()

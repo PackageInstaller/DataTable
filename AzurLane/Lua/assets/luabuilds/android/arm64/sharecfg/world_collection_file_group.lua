@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_collection_file_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_collection_file_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_collection_file_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_collection_file_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_collection_file_group = rawget(pg, "world_collection_file_group") or setmetatable({
+	__name = "world_collection_file_group"
+}, confNEO)
+pg.world_collection_file_group.all = {
 	110,
 	210,
 	310,
@@ -55,25 +32,11 @@ var_0_3.all = {
 	1800,
 	1900
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_collection_file_group = {}
+pg.base = pg.base or {}
+pg.base.world_collection_file_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_collection_file_group
-
-	var_1_0[110] = {
+	pg.base.world_collection_file_group[110] = {
 		id_2 = "011",
 		name = "陨石事件",
 		name_abbreviate = "1",
@@ -88,11 +51,7 @@ var_0_3.base.world_collection_file_group = {}
 			1106
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_collection_file_group
-
-	var_1_1[210] = {
+	pg.base.world_collection_file_group[210] = {
 		id_2 = "021",
 		name = "能源革命",
 		name_abbreviate = "2",
@@ -107,11 +66,7 @@ var_0_3.base.world_collection_file_group = {}
 			2106
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_collection_file_group
-
-	var_1_2[310] = {
+	pg.base.world_collection_file_group[310] = {
 		id_2 = "031",
 		name = "科技与生活",
 		name_abbreviate = "3",
@@ -126,11 +81,7 @@ var_0_3.base.world_collection_file_group = {}
 			3106
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_collection_file_group
-
-	var_1_3[320] = {
+	pg.base.world_collection_file_group[320] = {
 		id_2 = "032",
 		name = "生活的变革",
 		name_abbreviate = "4",
@@ -145,11 +96,7 @@ var_0_3.base.world_collection_file_group = {}
 			3206
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_collection_file_group
-
-	var_1_4[330] = {
+	pg.base.world_collection_file_group[330] = {
 		id_2 = "033",
 		name = "魔方军用化",
 		name_abbreviate = "5",
@@ -164,11 +111,7 @@ var_0_3.base.world_collection_file_group = {}
 			3306
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_collection_file_group
-
-	var_1_5[410] = {
+	pg.base.world_collection_file_group[410] = {
 		id_2 = "041",
 		name = "魔方军用化II",
 		name_abbreviate = "6",
@@ -183,11 +126,7 @@ var_0_3.base.world_collection_file_group = {}
 			4106
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_collection_file_group
-
-	var_1_6[510] = {
+	pg.base.world_collection_file_group[510] = {
 		id_2 = "051",
 		name = "「微光」计划",
 		name_abbreviate = "7",
@@ -202,11 +141,7 @@ var_0_3.base.world_collection_file_group = {}
 			5106
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_collection_file_group
-
-	var_1_7[610] = {
+	pg.base.world_collection_file_group[610] = {
 		id_2 = "061",
 		name = "魔方的奥秘",
 		name_abbreviate = "8",
@@ -221,11 +156,7 @@ var_0_3.base.world_collection_file_group = {}
 			6106
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_collection_file_group
-
-	var_1_8[710] = {
+	pg.base.world_collection_file_group[710] = {
 		id_2 = "071",
 		name = "代号：CodeG",
 		name_abbreviate = "9",
@@ -240,11 +171,7 @@ var_0_3.base.world_collection_file_group = {}
 			7106
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_collection_file_group
-
-	var_1_9[810] = {
+	pg.base.world_collection_file_group[810] = {
 		id_2 = "081",
 		name = "军备竞赛",
 		name_abbreviate = "10",
@@ -259,11 +186,7 @@ var_0_3.base.world_collection_file_group = {}
 			8106
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_collection_file_group
-
-	var_1_10[910] = {
+	pg.base.world_collection_file_group[910] = {
 		id_2 = "091",
 		name = "机密记录I",
 		name_abbreviate = "11",
@@ -278,11 +201,7 @@ var_0_3.base.world_collection_file_group = {}
 			9106
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_collection_file_group
-
-	var_1_11[1010] = {
+	pg.base.world_collection_file_group[1010] = {
 		id_2 = "101",
 		name = "冷战升级",
 		name_abbreviate = "12",
@@ -297,11 +216,7 @@ var_0_3.base.world_collection_file_group = {}
 			10106
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_collection_file_group
-
-	var_1_12[1110] = {
+	pg.base.world_collection_file_group[1110] = {
 		id_2 = "111",
 		name = "大学时代",
 		name_abbreviate = "15",
@@ -318,11 +233,7 @@ var_0_3.base.world_collection_file_group = {}
 			11108
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_collection_file_group
-
-	var_1_13[1130] = {
+	pg.base.world_collection_file_group[1130] = {
 		id_2 = "113",
 		name = "再次交汇的红线",
 		name_abbreviate = "21",
@@ -337,11 +248,7 @@ var_0_3.base.world_collection_file_group = {}
 			11306
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_collection_file_group
-
-	var_1_14[1150] = {
+	pg.base.world_collection_file_group[1150] = {
 		id_2 = "115",
 		name = "现在与未来",
 		name_abbreviate = "16",
@@ -356,11 +263,7 @@ var_0_3.base.world_collection_file_group = {}
 			11506
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_collection_file_group
-
-	var_1_15[1160] = {
+	pg.base.world_collection_file_group[1160] = {
 		id_2 = "116",
 		name = "技术竞争",
 		name_abbreviate = "24",
@@ -378,11 +281,7 @@ var_0_3.base.world_collection_file_group = {}
 			11609
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_collection_file_group
-
-	var_1_16[1310] = {
+	pg.base.world_collection_file_group[1310] = {
 		id_2 = "131",
 		name = "异常冲击事件I",
 		name_abbreviate = "17",
@@ -397,11 +296,7 @@ var_0_3.base.world_collection_file_group = {}
 			13106
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_collection_file_group
-
-	var_1_17[1320] = {
+	pg.base.world_collection_file_group[1320] = {
 		id_2 = "132",
 		name = "异常冲击事件II",
 		name_abbreviate = "18",
@@ -416,11 +311,7 @@ var_0_3.base.world_collection_file_group = {}
 			13206
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_collection_file_group
-
-	var_1_18[1330] = {
+	pg.base.world_collection_file_group[1330] = {
 		id_2 = "133",
 		name = "危机四伏",
 		name_abbreviate = "22",
@@ -435,11 +326,7 @@ var_0_3.base.world_collection_file_group = {}
 			13306
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_collection_file_group
-
-	var_1_19[1410] = {
+	pg.base.world_collection_file_group[1410] = {
 		id_2 = "141",
 		name = "理查德事件I",
 		name_abbreviate = "13",
@@ -454,11 +341,7 @@ var_0_3.base.world_collection_file_group = {}
 			14106
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_collection_file_group
-
-	var_1_20[1420] = {
+	pg.base.world_collection_file_group[1420] = {
 		id_2 = "142",
 		name = "理查德事件II",
 		name_abbreviate = "14",
@@ -473,11 +356,7 @@ var_0_3.base.world_collection_file_group = {}
 			14206
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_collection_file_group
-
-	var_1_21[1430] = {
+	pg.base.world_collection_file_group[1430] = {
 		id_2 = "143",
 		name = "理查德事件III",
 		name_abbreviate = "19",
@@ -492,11 +371,7 @@ var_0_3.base.world_collection_file_group = {}
 			14306
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_collection_file_group
-
-	var_1_22[1440] = {
+	pg.base.world_collection_file_group[1440] = {
 		id_2 = "144",
 		name = "理查德事件IV",
 		name_abbreviate = "20",
@@ -516,11 +391,7 @@ var_0_3.base.world_collection_file_group = {}
 			14411
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_collection_file_group
-
-	var_1_23[1460] = {
+	pg.base.world_collection_file_group[1460] = {
 		id_2 = "146",
 		name = "理查德档案I",
 		name_abbreviate = "23",
@@ -538,11 +409,7 @@ var_0_3.base.world_collection_file_group = {}
 			14609
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_collection_file_group
-
-	var_1_24[1500] = {
+	pg.base.world_collection_file_group[1500] = {
 		id_2 = "150",
 		name = "舰船处置",
 		name_abbreviate = "25",
@@ -552,11 +419,7 @@ var_0_3.base.world_collection_file_group = {}
 			15004
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_collection_file_group
-
-	var_1_25[1510] = {
+	pg.base.world_collection_file_group[1510] = {
 		id_2 = "151",
 		name = "局势恶化",
 		name_abbreviate = "26",
@@ -567,11 +430,7 @@ var_0_3.base.world_collection_file_group = {}
 			15106
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_collection_file_group
-
-	var_1_26[1800] = {
+	pg.base.world_collection_file_group[1800] = {
 		id_2 = "180",
 		name = "第二次对峙",
 		name_abbreviate = "27",
@@ -581,8 +440,7 @@ var_0_3.base.world_collection_file_group = {}
 			18001
 		}
 	}
-	pg = var_1_26
-	var_1_26.base.world_collection_file_group[1900] = {
+	pg.base.world_collection_file_group[1900] = {
 		id_2 = "190",
 		name = "重叠未来I",
 		name_abbreviate = "28",

@@ -1,169 +1,76 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GameTrackerBuilder")
+﻿local var_0_0 = class("GameTrackerBuilder")
 local var_0_1 = ";"
 local var_0_2 = "`"
 
 function var_0_0.SerializedItem(arg_1_0)
-	table = var_1_10001
+	local var_1_0 = arg_1_0.int_args or {}
+	local var_1_1 = table.concat(var_1_0, var_0_2)
+	local var_1_2 = arg_1_0.str_args or {}
+	local var_1_3 = table.concat(var_1_2, var_0_2)
 
-	local var_1_0 = var_1_10001.concat
-	local var_1_1
+	;({})[1] = arg_1_0.track_typ or ""
+	;({})[2] = arg_1_0.track_time or ""
+	;({})[3] = var_1_1 or ""
+	;({})[4] = var_1_3 or ""
 
-	if not arg_1_0.int_args then
-		var_1_1 = {}
-	end
-
-	local var_1_2 = var_1_0(var_1_1, var_0_2)
-
-	table = var_1_10002
-
-	local var_1_3 = var_1_10002.concat
-	local var_1_4
-
-	if not arg_1_0.str_args then
-		var_1_4 = {}
-	end
-
-	local var_1_5 = var_1_3(var_1_4, var_0_2)
-
-	table = var_1_1
-
-	local var_1_6 = var_1_1.concat
-	local var_1_7 = {}
-	local var_1_8
-
-	if not arg_1_0.track_typ then
-		var_1_8 = ""
-	end
-
-	var_1_7[1] = var_1_8
-
-	local var_1_9
-
-	if not arg_1_0.track_time then
-		var_1_9 = ""
-	end
-
-	var_1_7[2] = var_1_9
-	var_1_7[3] = var_1_2 or ""
-	var_1_7[4] = var_1_5 or ""
-
-	return var_1_6(var_1_7, var_0_1)
+	return table.concat({}, var_0_1)
 end
 
 function var_0_0.DeSerializedItem(arg_2_0)
-	string = var_1_10001
+	local var_2_0 = string.split(arg_2_0, var_0_1)
 
-	if #var_1_10001.split(arg_2_0, var_0_1) < 2 then
+	if #var_2_0 < 2 then
 		return false
 	end
 
-	tonumber = var_2
+	local var_2_2 = var_2_0[1] or ""
+	local var_2_3 = var_2_1(var_2_2)
+	local var_2_4 = var_2_0[2] or ""
+	local var_2_5 = tonumber(var_2_4)
 
-	local var_2_0
-
-	if not var_1[1] then
-		var_2_0 = ""
-	end
-
-	local var_2_1 = var_2(var_2_0)
-
-	tonumber = var_3
-
-	local var_2_2
-
-	if not var_1[2] then
-		var_2_2 = ""
-	end
-
-	local var_2_3 = var_3(var_2_2)
-
-	if var_2_1 == nil or var_2_3 == nil then
+	if var_2_3 == nil or var_2_5 == nil then
 		return false
 	end
 
-	local var_2_4
+	local var_2_6 = var_2_0[3] or ""
 
-	if not var_1[3] then
-		var_2_4 = ""
-	end
+	for iter_2_0, iter_2_1 in ipairs((string.split(var_2_6, var_0_2))) do
+		local var_2_7 = tonumber(iter_2_1)
 
-	string = var_2_2
-
-	local var_2_5 = var_2_2.split(var_2_4, var_0_2)
-	local var_2_6 = {}
-
-	ipairs = var_7
-
-	for iter_2_0, iter_2_1 in var_7(var_2_5) do
-		tonumber = var_1_10012
-
-		if var_1_10012(iter_2_1) then
-			table = var_1_10013
-
-			var_1_10013.insert(var_2_6, var_1_10012)
+		if var_2_7 then
+			table.insert({}, var_2_7)
 		end
 	end
 
-	local var_2_7
+	local var_2_8 = var_2_0[4] or ""
 
-	if not var_1[4] then
-		var_2_7 = ""
-	end
-
-	string = var_8
-
-	local var_2_8 = var_8.split(var_2_7, var_0_2)
+	;({
+		track_typ = var_2_3,
+		track_time = var_2_5,
+		int_args = {}
+	}).str_args = string.split(var_2_8, var_0_2)
 
 	return {
-		track_typ = var_2_1,
-		track_time = var_2_3,
-		int_args = var_2_6,
-		str_args = var_2_8
+		track_typ = var_2_3,
+		track_time = var_2_5,
+		int_args = {}
 	}
 end
 
 local function var_0_3(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = {}
-	local var_3_1 = {}
-
-	ipairs = var_1_10005
-
-	for iter_3_0, iter_3_1 in var_1_10005(arg_3_1) do
-		table = var_1_10010
-		var_1_10010 = var_1_10010.insert
-
-		local var_3_2 = var_3_0
-
-		tonumber = var_1_10013
-
-		var_1_10010(var_3_2, var_1_10013(iter_3_1 .. ""))
+	for iter_3_0, iter_3_1 in ipairs(arg_3_1) do
+		table.insert({}, tonumber(iter_3_1 .. ""))
 	end
 
-	ipairs = var_5
-
-	for iter_3_2, iter_3_3 in var_5(arg_3_2) do
-		table = var_1_10010
-		var_1_10010 = var_1_10010.insert
-
-		local var_3_3 = var_3_1
-
-		tostring = var_1_10013
-
-		var_1_10010(var_3_3, var_1_10013(iter_3_3))
+	for iter_3_2, iter_3_3 in ipairs(arg_3_2) do
+		table.insert({}, tostring(iter_3_3))
 	end
-
-	pg = var_5
-
-	local var_3_4 = var_5.TimeMgr.GetInstance()
-	local var_3_5 = var_5.GetServerTime(var_3_4)
 
 	return {
 		track_typ = arg_3_0,
-		track_time = var_3_5,
-		int_args = var_3_0,
-		str_args = var_3_1
+		track_time = pg.TimeMgr.GetInstance():GetServerTime(),
+		int_args = {},
+		str_args = {}
 	}
 end
 
@@ -198,14 +105,11 @@ function var_0_0.BuildStoryOption(arg_7_0, arg_7_1)
 end
 
 function var_0_0.BuildEmoji(arg_8_0)
-	local var_8_0 = "777#(%d+)#777"
-	local var_8_1 = arg_8_0:match(var_8_0)
+	local var_8_0 = tonumber((arg_8_0:match("777#(%d+)#777")))
 
-	tonumber = var_1_10003
-
-	if var_1_10003(var_8_1) and var_2 > 0 then
+	if var_8_0 and var_8_0 > 0 then
 		return var_0_3(21, {
-			var_2
+			var_8_0
 		}, {})
 	else
 		return var_0_3(21, {
@@ -315,24 +219,16 @@ function var_0_0.BuildAllCollection(arg_21_0, arg_21_1)
 end
 
 function var_0_0.BuildIslandVisit(arg_22_0)
-	getProxy = var_1_10001
-	FriendProxy = var_1_10003
-
-	local var_22_0 = var_1_10001(var_1_10003)
-
-	if var_1.getFriend(var_22_0, arg_22_0) then
+	if getProxy(FriendProxy):getFriend(arg_22_0) then
 		return var_0_3(30046, {
 			arg_22_0,
 			1
 		}, {})
 	end
 
-	getProxy = var_1_10002
-	GuildProxy = var_4
+	local var_22_0 = getProxy(GuildProxy):getRawData()
 
-	local var_22_1 = var_1_10002(var_4)
-
-	if var_2.getRawData(var_22_1) and var_2:getMemberById(arg_22_0) then
+	if var_22_0 and var_22_0:getMemberById(arg_22_0) then
 		return var_0_3(30046, {
 			arg_22_0,
 			2
@@ -453,77 +349,28 @@ function var_0_0.BuildIslandShipGiveGift(arg_38_0, arg_38_1)
 end
 
 function var_0_0.BuildIslandShipAttrUpgrade(arg_39_0, arg_39_1)
-	local var_39_0 = {}
-	local var_39_1 = {}
-
-	pairs = var_1_10004
-
-	for iter_39_0, iter_39_1 in var_1_10004(arg_39_1:GetAttrs()) do
-		local var_39_2 = arg_39_0:GetAttr(iter_39_0)
-
-		table = var_1_10010
-		var_1_10010 = var_1_10010.insert
-
-		local var_39_3 = var_39_0
-
-		string = var_1_10013
-
-		var_1_10010(var_39_3, var_1_10013.format("{%s,%s}", iter_39_0, iter_39_1 - var_39_2))
-
-		table = var_1_10010
-		var_1_10010 = var_1_10010.insert
-
-		local var_39_4 = var_39_1
-
-		string = var_1_10013
-
-		var_1_10010(var_39_4, var_1_10013.format("{%s,%s}", iter_39_0, iter_39_1))
+	for iter_39_0, iter_39_1 in pairs(arg_39_1:GetAttrs()) do
+		table.insert({}, string.format("{%s,%s}", iter_39_0, iter_39_1 - arg_39_0:GetAttr(iter_39_0)))
+		table.insert({}, string.format("{%s,%s}", iter_39_0, iter_39_1))
 	end
-
-	table = var_4
-
-	local var_39_5 = var_4.concat(var_39_0, ",")
-
-	table = var_5
-
-	local var_39_6 = var_5.concat(var_39_1, ",")
 
 	return var_0_3(30017, {
 		arg_39_0.id
 	}, {
-		var_39_5,
-		var_39_6
+		table.concat({}, ","),
+		(table.concat({}, ","))
 	})
 end
 
 function var_0_0.BuildIslandShipAttrLimit(arg_40_0, arg_40_1)
-	local var_40_0 = {}
-
-	pairs = var_1_10003
-
-	for iter_40_0, iter_40_1 in var_1_10003(arg_40_1:GetAttrs()) do
-		local var_40_1 = arg_40_1
-		local var_40_2 = arg_40_1.GetExtraAttrLimit(var_40_1, iter_40_0)
-		local var_40_3 = arg_40_0:GetExtraAttrLimit(iter_40_0)
-
-		table = var_40_1
-
-		local var_40_4 = var_40_1.insert
-		local var_40_5 = var_40_0
-
-		string = var_1_10013
-
-		var_40_4(var_40_5, var_1_10013.format("{%s,%s,%s}", iter_40_0, var_40_3, var_40_2))
+	for iter_40_0, iter_40_1 in pairs(arg_40_1:GetAttrs()) do
+		table.insert({}, string.format("{%s,%s,%s}", iter_40_0, arg_40_0:GetExtraAttrLimit(iter_40_0), (arg_40_1:GetExtraAttrLimit(iter_40_0))))
 	end
-
-	table = var_3
-
-	local var_40_6 = var_3.concat(var_40_0, ",")
 
 	return var_0_3(30018, {
 		arg_40_0.id
 	}, {
-		var_40_6
+		(table.concat({}, ","))
 	})
 end
 
@@ -618,28 +465,18 @@ end
 function var_0_0.BuildIslandWearDress(arg_54_0, arg_54_1)
 	local var_54_0 = "["
 
-	ipairs = var_1_10003
-
-	for iter_54_0, iter_54_1 in var_1_10003(arg_54_1) do
-		pg = var_1_10008
-		var_1_10008 = var_1_10008.island_dress_template[iter_54_1.dress_id].type
-
-		local var_54_1 = var_54_0
-
-		string = var_1_10010
-		var_54_0 = var_54_1 .. var_1_10010.format("{\"type\":%d,\"id\":%d}", var_1_10008, iter_54_1.dress_id)
+	for iter_54_0, iter_54_1 in ipairs(arg_54_1) do
+		var_54_0 = var_54_0 .. string.format("{\"type\":%d,\"id\":%d}", pg.island_dress_template[iter_54_1.dress_id].type, iter_54_1.dress_id)
 
 		if iter_54_0 ~= #arg_54_1 then
 			var_54_0 = var_54_0 .. ","
 		end
 	end
 
-	local var_54_2 = var_54_0 .. "]"
-
 	return var_0_3(30039, {
 		arg_54_0
 	}, {
-		var_54_2
+		var_54_0 .. "]"
 	})
 end
 
@@ -656,25 +493,18 @@ end
 function var_0_0.BuildIslandGetDelegationAward(arg_56_0, arg_56_1)
 	local var_56_0 = "["
 
-	ipairs = var_1_10003
-
-	for iter_56_0, iter_56_1 in var_1_10003(arg_56_1) do
-		local var_56_1 = var_56_0
-
-		string = var_1_10009
-		var_56_0 = var_56_1 .. var_1_10009.format("{\"type\":%d,\"id\":%d,\"num\":%d}", iter_56_1.type, iter_56_1.id, iter_56_1.number)
+	for iter_56_0, iter_56_1 in ipairs(arg_56_1) do
+		var_56_0 = var_56_0 .. string.format("{\"type\":%d,\"id\":%d,\"num\":%d}", iter_56_1.type, iter_56_1.id, iter_56_1.number)
 
 		if iter_56_0 ~= #arg_56_1 then
 			var_56_0 = var_56_0 .. ","
 		end
 	end
 
-	local var_56_2 = var_56_0 .. "]"
-
 	return var_0_3(30023, {
 		arg_56_0
 	}, {
-		var_56_2
+		var_56_0 .. "]"
 	})
 end
 
@@ -706,25 +536,18 @@ end
 function var_0_0.BuildIslandCloseRest(arg_60_0, arg_60_1)
 	local var_60_0 = "["
 
-	ipairs = var_1_10003
-
-	for iter_60_0, iter_60_1 in var_1_10003(arg_60_1) do
-		local var_60_1 = var_60_0
-
-		string = var_1_10009
-		var_60_0 = var_60_1 .. var_1_10009.format("{\"type\":%d,\"id\":%d,\"num\":%d}", iter_60_1.type, iter_60_1.id, iter_60_1.number)
+	for iter_60_0, iter_60_1 in ipairs(arg_60_1) do
+		var_60_0 = var_60_0 .. string.format("{\"type\":%d,\"id\":%d,\"num\":%d}", iter_60_1.type, iter_60_1.id, iter_60_1.number)
 
 		if iter_60_0 ~= #arg_60_1 then
 			var_60_0 = var_60_0 .. ","
 		end
 	end
 
-	local var_60_2 = var_60_0 .. "]"
-
 	return var_0_3(30059, {
 		arg_60_0
 	}, {
-		var_60_2
+		var_60_0 .. "]"
 	})
 end
 

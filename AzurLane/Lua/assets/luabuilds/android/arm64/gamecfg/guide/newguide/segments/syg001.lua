@@ -1,35 +1,11 @@
-﻿local var_0_0 = {
-	"让我们打开<color=#ff7d36>生活区</color>",
-	"<color=#ff7d36>后宅</color>从这里进入哟",
-	"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
-	"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
-	"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
-	"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
-	"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
-	"我们来<color=#ff7d36>添加存粮</color>吧~",
-	"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
-	"点击第一个可乐添加一次食粮",
-	"关闭存粮界面",
-	"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
-	"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
-	"选择需要休息的角色",
-	"点击确定按钮",
-	"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
-}
-
-return {
+﻿return {
 	id = "SYG001",
 	events = {
 		{
 			alpha = 0.4,
 			ui = {
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/live"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/liveButton"
@@ -50,16 +26,31 @@ return {
 				dir = -1,
 				posY = -269.6,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[1]
 			}
 		},
 		{
 			alpha = 0.4,
 			ui = {
 				dynamicPath = function()
-					USE_OLD_MAIN_LIVE_AREA_UI = var_1_10000
-
-					if var_1_10000 then
+					if USE_OLD_MAIN_LIVE_AREA_UI then
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaOldUI(Clone)/backyard_btn"
 					else
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaUI(Clone)/backyard_btn"
@@ -80,7 +71,24 @@ return {
 				dir = -1,
 				posY = 328.3,
 				posX = 23.2,
-				text = var_0_0[2]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[2]
 			}
 		},
 		{
@@ -91,7 +99,24 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[3]
 			}
 		},
 		{
@@ -102,7 +127,24 @@ return {
 				dir = -1,
 				posY = -98.9,
 				posX = -595.6,
-				text = var_0_0[4],
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[4],
 				ui = {
 					lineMode = 1,
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomleft/train_btn"
@@ -116,7 +158,24 @@ return {
 				dir = 1,
 				posY = 396.81,
 				posX = 348.85,
-				text = var_0_0[5],
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[5],
 				ui = {
 					lineMode = 1,
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/topPanel/btns/topright/comfortable"
@@ -130,7 +189,24 @@ return {
 				dir = 1,
 				posY = -238.4,
 				posX = 562.01,
-				text = var_0_0[6],
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[6],
 				ui = {
 					lineMode = 1,
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomright/shop_btn"
@@ -144,7 +220,24 @@ return {
 				dir = 1,
 				posY = -222.4,
 				posX = 395.2,
-				text = var_0_0[7],
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[7],
 				ui = {
 					lineMode = 1,
 					path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomright/decorate_btn"
@@ -168,7 +261,24 @@ return {
 				dir = -1,
 				posY = -284.9,
 				posX = -327.5,
-				text = var_0_0[8]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[8]
 			}
 		},
 		{
@@ -178,7 +288,24 @@ return {
 				dir = -1,
 				posY = -331.3,
 				posX = 0,
-				text = var_0_0[9]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[9]
 			}
 		},
 		{
@@ -188,7 +315,24 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 200,
-				text = var_0_0[10]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[10]
 			},
 			ui = {
 				scale = 1,
@@ -215,7 +359,24 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[11]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[11]
 			}
 		},
 		{
@@ -225,7 +386,24 @@ return {
 				dir = -1,
 				posY = -108.2,
 				posX = -628.9,
-				text = var_0_0[12]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[12]
 			},
 			ui = {
 				path = "/UICamera/Canvas/UIMain/CourtYardUI(Clone)/main/bottomPanel/bottomleft/train_btn",
@@ -241,7 +419,24 @@ return {
 				dir = -1,
 				posY = -1.63,
 				posX = -317.61,
-				text = var_0_0[13]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[13]
 			},
 			ui = {
 				scale = 1.5,
@@ -269,7 +464,24 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[14]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[14]
 			}
 		},
 		{
@@ -290,7 +502,24 @@ return {
 				dir = 1,
 				posY = -198.94,
 				posX = 475.1,
-				text = var_0_0[15]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[15]
 			}
 		},
 		{
@@ -300,7 +529,24 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[16]
+				text = ({
+					"让我们打开<color=#ff7d36>生活区</color>",
+					"<color=#ff7d36>后宅</color>从这里进入哟",
+					"这就是指挥官的<color=#ff7d36>后宅</color>啦~ 虽然现在看起来还很破旧..咳咳",
+					"指挥官可以安排舰娘在<color=#ff7d36>后宅休息</color>，将能够<color=#ff7d36>回复心情</color>并且还能<color=#ff7d36>获得角色经验</color>，但需要<color=#ff7d36>消耗存粮</color>哟",
+					"后宅布置的<color=#ff7d36>家具会影响舒适度</color>",
+					"在商店内，可通过<color=#ff7d36>家居币购买新家具</color>",
+					"<color=#ff7d36>管理可对后宅家具进行排布与改变</color>",
+					"我们来<color=#ff7d36>添加存粮</color>吧~",
+					"这里展示了多种食物可选择，<color=#ff7d36>高级食材还有附带经验值加成奖励</color>",
+					"点击第一个可乐添加一次食粮",
+					"关闭存粮界面",
+					"我们来选择需要休息的舰娘吧，<color=#ff7d36>舰娘在后宅休息，会回复心情</color>哦",
+					"点击<color=#ff7d36>空位添加角色</color>，随后指引点击空位，添加第一个角色进入后宅",
+					"选择需要休息的角色",
+					"点击确定按钮",
+					"指挥官可不要在后宅干坏事哦，那女将就先告辞啦！"
+				})[16]
 			}
 		}
 	}

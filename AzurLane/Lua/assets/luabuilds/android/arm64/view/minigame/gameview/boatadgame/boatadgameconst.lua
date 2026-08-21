@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BoatAdGameConst")
+﻿local var_0_0 = class("BoatAdGameConst")
 
 var_0_0.battle_sub_hp = 15
 var_0_0.battle_sub_hp_boss = 30
@@ -104,32 +102,22 @@ var_0_0.char_change_hp = {
 	2000,
 	3000
 }
-
-local var_0_1 = {}
-local var_0_2 = {
-	hp = 300,
-	id = 1,
-	tpl = "players/char_1"
+var_0_0.game_char = {
+	{
+		hp = 300,
+		id = 1,
+		tpl = "players/char_1",
+		speed = Vector2(1000, 0),
+		start_pos = Vector2(0, -400)
+	},
+	{
+		hp = 300,
+		id = 2,
+		tpl = "players/char_2",
+		speed = Vector2(1000, 0),
+		start_pos = Vector2(0, -400)
+	}
 }
-
-Vector2 = var_0_10003
-var_0_2.speed = var_0_10003(1000, 0)
-Vector2 = var_3
-var_0_2.start_pos = var_3(0, -400)
-var_0_1[1] = var_0_2
-
-local var_0_3 = {
-	hp = 300,
-	id = 2,
-	tpl = "players/char_2"
-}
-
-Vector2 = var_3
-var_0_3.speed = var_3(1000, 0)
-Vector2 = var_3
-var_0_3.start_pos = var_3(0, -400)
-var_0_1[2] = var_0_3
-var_0_0.game_char = var_0_1
 var_0_0.game_bg = {
 	[601] = {
 		id = 601,

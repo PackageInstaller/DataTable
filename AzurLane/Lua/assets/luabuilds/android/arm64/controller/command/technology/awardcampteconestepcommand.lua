@@ -1,60 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AwardCampTecCommand", pm.SimpleCommand)
 
-local var_0_0 = "AwardCampTecCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	({}).type = 1
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = 1
-	local var_1_1 = {
-		type = var_1_0
-	}
-
-	print = var_1_10004
-
-	var_1_10004("64007 Get TecCamp Award OneStep", var_1_0)
-
-	pg = var_1_10004
-
-	local var_1_2 = var_1_10004.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_2, 7, var_1_1, 8, function(arg_2_0)
-		local var_2_0
-
+	print("64007 Get TecCamp Award OneStep", 1)
+	pg.ConnectionMgr.GetInstance():Send(7, {}, 8, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			PlayerConst = var_2_0
-			var_2_0 = var_2_0.addTranDrop(arg_2_0.rewards)
-			getProxy = var_2_10002
-			TechnologyNationProxy = var_2_10004
+			local var_2_0 = getProxy(TechnologyNationProxy)
 
-			local var_2_1 = var_2_10002(var_2_10004)
-
-			var_2.updateTecItemAwardOneStep(var_2_1)
-
-			local var_2_2 = arg_1_0
-			local var_2_3 = var_3.sendNotification
-
-			TechnologyConst = var_2_10006
-
-			var_2_3(var_2_2, var_2_10006.GOT_TEC_CAMP_AWARD_ONESTEP, {
-				awardList = var_2_0
+			var_2_0:updateTecItemAwardOneStep()
+			arg_1_0:sendNotification(TechnologyConst.GOT_TEC_CAMP_AWARD_ONESTEP, {
+				awardList = PlayerConst.addTranDrop(arg_2_0.rewards)
 			})
-			var_2:refreshRedPoint()
-
-			local var_2_4 = arg_1_0
-			local var_2_5 = var_3.sendNotification
-
-			TechnologyConst = var_6
-
-			var_2_5(var_2_4, var_6.UPDATE_REDPOINT_ON_TOP)
+			var_2_0:refreshRedPoint()
+			arg_1_0:sendNotification(TechnologyConst.UPDATE_REDPOINT_ON_TOP)
 		else
-			pg = var_2_0
-
-			local var_2_6 = var_2_0.TipsMgr.GetInstance()
-
-			var_1.ShowTips(var_2_6, "64007 Error Code:" .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("64007 Error Code:" .. arg_2_0.result)
 		end
 
 		return
@@ -63,4 +24,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

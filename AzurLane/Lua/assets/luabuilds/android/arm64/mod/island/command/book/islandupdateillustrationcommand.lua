@@ -1,50 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandUpdateIllustrationCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandUpdateIllustrationCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().type
-	local var_1_1 = var_2.linkId
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 21340, {
-		type = var_1_0,
-		cond_id = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(21340, {
+		type = var_1_0.type,
+		cond_id = var_1_0.linkId
 	}, 21341, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			IslandProxy = var_2_10003
-
-			local var_2_0 = var_1(var_2_10003)
-			local var_2_1 = var_1.GetIsland(var_2_0)
-
-			var_2_10004 = var_1.GetBookAgency(var_2_1)
-
-			var_1.AddCanUnlock(var_2_10004, var_1_0, var_1_1)
-
-			var_2_10004 = arg_1_0
-
-			local var_2_2 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_2(var_2_10004, var_5.ISLAND_UPDATE_ILLUSTRATION_DONE)
+			getProxy(IslandProxy):GetIsland():GetBookAgency():AddCanUnlock(var_0, var_0)
+			arg_1_0:sendNotification(GAME.ISLAND_UPDATE_ILLUSTRATION_DONE)
 		else
-			pg = var_1
-
-			local var_2_3 = var_1.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -53,4 +20,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

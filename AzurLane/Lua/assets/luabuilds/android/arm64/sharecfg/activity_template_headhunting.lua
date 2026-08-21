@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_template_headhunting") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_template_headhunting"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_template_headhunting = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_template_headhunting
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_template_headhunting = rawget(pg, "activity_template_headhunting") or setmetatable({
+	__name = "activity_template_headhunting"
+}, confNEO)
+pg.activity_template_headhunting.all = {
 	300,
 	369,
 	590,
@@ -47,27 +24,14 @@ var_0_3.all = {
 	41327,
 	50118,
 	21011,
-	50612
+	50612,
+	30908
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_template_headhunting = {}
+pg.base = pg.base or {}
+pg.base.activity_template_headhunting = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_template_headhunting
-
-	var_1_0[300] = {
+	pg.base.activity_template_headhunting[300] = {
 		man_num = 2,
 		id = 300,
 		pt = 124,
@@ -258,11 +222,7 @@ var_0_3.base.activity_template_headhunting = {}
 		},
 		tasklist = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_template_headhunting
-
-	var_1_1[369] = {
+	pg.base.activity_template_headhunting[369] = {
 		man_num = 2,
 		id = 369,
 		pt = 135,
@@ -468,11 +428,7 @@ var_0_3.base.activity_template_headhunting = {}
 			14979
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_template_headhunting
-
-	var_1_2[590] = {
+	pg.base.activity_template_headhunting[590] = {
 		man_num = 2,
 		id = 590,
 		pt = 156,
@@ -678,11 +634,7 @@ var_0_3.base.activity_template_headhunting = {}
 			15661
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_template_headhunting
-
-	var_1_3[687] = {
+	pg.base.activity_template_headhunting[687] = {
 		man_num = 2,
 		id = 687,
 		pt = 168,
@@ -888,11 +840,7 @@ var_0_3.base.activity_template_headhunting = {}
 			16041
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_template_headhunting
-
-	var_1_4[990] = {
+	pg.base.activity_template_headhunting[990] = {
 		man_num = 2,
 		id = 990,
 		pt = 204,
@@ -1098,11 +1046,7 @@ var_0_3.base.activity_template_headhunting = {}
 			16665
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_template_headhunting
-
-	var_1_5[4111] = {
+	pg.base.activity_template_headhunting[4111] = {
 		man_num = 2,
 		id = 4111,
 		pt = 220,
@@ -1308,11 +1252,7 @@ var_0_3.base.activity_template_headhunting = {}
 			17007
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_template_headhunting
-
-	var_1_6[4416] = {
+	pg.base.activity_template_headhunting[4416] = {
 		man_num = 2,
 		id = 4416,
 		pt = 264,
@@ -1518,11 +1458,7 @@ var_0_3.base.activity_template_headhunting = {}
 			17688
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_template_headhunting
-
-	var_1_7[4526] = {
+	pg.base.activity_template_headhunting[4526] = {
 		man_num = 2,
 		id = 4526,
 		pt = 279,
@@ -1728,11 +1664,7 @@ var_0_3.base.activity_template_headhunting = {}
 			17946
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_template_headhunting
-
-	var_1_8[4876] = {
+	pg.base.activity_template_headhunting[4876] = {
 		man_num = 2,
 		id = 4876,
 		pt = 353,
@@ -1938,11 +1870,7 @@ var_0_3.base.activity_template_headhunting = {}
 			18841
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_template_headhunting
-
-	var_1_9[5011] = {
+	pg.base.activity_template_headhunting[5011] = {
 		man_num = 2,
 		id = 5011,
 		pt = 371,
@@ -2148,11 +2076,7 @@ var_0_3.base.activity_template_headhunting = {}
 			19262
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_template_headhunting
-
-	var_1_10[5349] = {
+	pg.base.activity_template_headhunting[5349] = {
 		man_num = 2,
 		id = 5349,
 		pt = 412,
@@ -2358,11 +2282,7 @@ var_0_3.base.activity_template_headhunting = {}
 			20124
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_template_headhunting
-
-	var_1_11[30887] = {
+	pg.base.activity_template_headhunting[30887] = {
 		man_num = 2,
 		id = 30887,
 		pt = 412,
@@ -2568,11 +2488,7 @@ var_0_3.base.activity_template_headhunting = {}
 			20124
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_template_headhunting
-
-	var_1_12[5570] = {
+	pg.base.activity_template_headhunting[5570] = {
 		man_num = 2,
 		id = 5570,
 		pt = 430,
@@ -2778,11 +2694,7 @@ var_0_3.base.activity_template_headhunting = {}
 			20542
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_template_headhunting
-
-	var_1_13[5961] = {
+	pg.base.activity_template_headhunting[5961] = {
 		man_num = 2,
 		id = 5961,
 		pt = 500,
@@ -2988,11 +2900,7 @@ var_0_3.base.activity_template_headhunting = {}
 			23614
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_template_headhunting
-
-	var_1_14[30893] = {
+	pg.base.activity_template_headhunting[30893] = {
 		man_num = 2,
 		id = 30893,
 		pt = 500,
@@ -3198,11 +3106,7 @@ var_0_3.base.activity_template_headhunting = {}
 			23614
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_template_headhunting
-
-	var_1_15[40428] = {
+	pg.base.activity_template_headhunting[40428] = {
 		man_num = 2,
 		id = 40428,
 		pt = 220,
@@ -3408,11 +3312,7 @@ var_0_3.base.activity_template_headhunting = {}
 			17007
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_template_headhunting
-
-	var_1_16[40674] = {
+	pg.base.activity_template_headhunting[40674] = {
 		man_num = 2,
 		id = 40674,
 		pt = 264,
@@ -3618,11 +3518,7 @@ var_0_3.base.activity_template_headhunting = {}
 			17688
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_template_headhunting
-
-	var_1_17[40807] = {
+	pg.base.activity_template_headhunting[40807] = {
 		man_num = 2,
 		id = 40807,
 		pt = 40807,
@@ -3828,11 +3724,7 @@ var_0_3.base.activity_template_headhunting = {}
 			80334
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_template_headhunting
-
-	var_1_18[41327] = {
+	pg.base.activity_template_headhunting[41327] = {
 		man_num = 2,
 		id = 41327,
 		pt = 40935,
@@ -4038,11 +3930,7 @@ var_0_3.base.activity_template_headhunting = {}
 			80434
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_template_headhunting
-
-	var_1_19[50118] = {
+	pg.base.activity_template_headhunting[50118] = {
 		man_num = 2,
 		id = 50118,
 		pt = 544,
@@ -4248,11 +4136,7 @@ var_0_3.base.activity_template_headhunting = {}
 			24407
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_template_headhunting
-
-	var_1_20[21011] = {
+	pg.base.activity_template_headhunting[21011] = {
 		man_num = 2,
 		id = 21011,
 		pt = 957,
@@ -4458,8 +4342,7 @@ var_0_3.base.activity_template_headhunting = {}
 			1000123
 		}
 	}
-	pg = var_1_20
-	var_1_20.base.activity_template_headhunting[50612] = {
+	pg.base.activity_template_headhunting[50612] = {
 		man_num = 2,
 		id = 50612,
 		pt = 711,
@@ -4640,6 +4523,212 @@ var_0_3.base.activity_template_headhunting = {}
 			{
 				2,
 				42070,
+				4
+			},
+			{
+				2,
+				30307,
+				5
+			}
+		},
+		tasklist = {
+			25641,
+			25642,
+			25643,
+			25644,
+			25645,
+			25646,
+			25647,
+			25648,
+			25649,
+			25650,
+			25651,
+			25652,
+			25653,
+			25654
+		}
+	}
+	pg.base.activity_template_headhunting[30908] = {
+		man_num = 2,
+		id = 30908,
+		pt = 711,
+		level = 1,
+		target = {
+			25,
+			50,
+			75,
+			100,
+			125,
+			150,
+			175,
+			200,
+			225,
+			250,
+			275,
+			300,
+			325,
+			350,
+			375,
+			400,
+			425,
+			450,
+			475,
+			500,
+			550,
+			600,
+			650,
+			700,
+			750,
+			800,
+			850,
+			900,
+			950,
+			1000
+		},
+		drop_client = {
+			{
+				1,
+				2,
+				300
+			},
+			{
+				1,
+				1,
+				1000
+			},
+			{
+				2,
+				54006,
+				3
+			},
+			{
+				2,
+				30305,
+				5
+			},
+			{
+				2,
+				50005,
+				2
+			},
+			{
+				1,
+				2,
+				500
+			},
+			{
+				2,
+				50006,
+				2
+			},
+			{
+				2,
+				42080,
+				1
+			},
+			{
+				2,
+				42080,
+				4
+			},
+			{
+				2,
+				54006,
+				5
+			},
+			{
+				2,
+				50005,
+				3
+			},
+			{
+				2,
+				54034,
+				5
+			},
+			{
+				1,
+				2,
+				400
+			},
+			{
+				2,
+				30310,
+				5
+			},
+			{
+				2,
+				54006,
+				4
+			},
+			{
+				2,
+				42080,
+				2
+			},
+			{
+				15,
+				300,
+				1
+			},
+			{
+				14,
+				300,
+				1
+			},
+			{
+				2,
+				42080,
+				4
+			},
+			{
+				2,
+				30309,
+				5
+			},
+			{
+				2,
+				15003,
+				4
+			},
+			{
+				2,
+				54006,
+				3
+			},
+			{
+				1,
+				2,
+				400
+			},
+			{
+				2,
+				42080,
+				3
+			},
+			{
+				2,
+				50006,
+				2
+			},
+			{
+				1,
+				1,
+				3000
+			},
+			{
+				2,
+				15003,
+				4
+			},
+			{
+				2,
+				20001,
+				3
+			},
+			{
+				2,
+				42080,
 				4
 			},
 			{

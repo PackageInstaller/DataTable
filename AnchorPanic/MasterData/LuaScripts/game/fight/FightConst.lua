@@ -112,6 +112,14 @@ PreFightBattleType = {
 
     --海底
     Seabed = 56 ,
+    --联盟团战
+    GuildWar = 57,
+    -- 皮肤试玩
+    Fashion_Imitate = 58,
+    --虚黯潜能副
+    Dup_Darkpotential = 59,
+    --异象残境（需与服务器战斗类型保持一致）
+    Vision = 60,
 }
 
 --[[ 替换语言包自动生成，请勿修改！

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_shop") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_shop"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_shop = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_shop
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_shop = rawget(pg, "child_shop") or setmetatable({
+	__name = "child_shop"
+}, confNEO)
+pg.child_shop.all = {
 	2,
 	3,
 	4,
@@ -35,25 +12,11 @@ var_0_3.all = {
 	42,
 	43
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_shop = {}
+pg.base = pg.base or {}
+pg.base.child_shop = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_shop
-
-	var_1_0[2] = {
+	pg.base.child_shop[2] = {
 		id = 2,
 		goods_num = 5,
 		goods_refresh_time = 1,
@@ -90,11 +53,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_shop
-
-	var_1_1[3] = {
+	pg.base.child_shop[3] = {
 		id = 3,
 		goods_num = 6,
 		goods_refresh_time = -1,
@@ -137,11 +96,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_shop
-
-	var_1_2[4] = {
+	pg.base.child_shop[4] = {
 		id = 4,
 		goods_num = 3,
 		goods_refresh_time = -1,
@@ -166,11 +121,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_shop
-
-	var_1_3[6] = {
+	pg.base.child_shop[6] = {
 		id = 6,
 		goods_num = 6,
 		goods_refresh_time = -1,
@@ -213,11 +164,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_shop
-
-	var_1_4[22] = {
+	pg.base.child_shop[22] = {
 		id = 22,
 		goods_num = 4,
 		goods_refresh_time = 1,
@@ -248,11 +195,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_shop
-
-	var_1_5[23] = {
+	pg.base.child_shop[23] = {
 		id = 23,
 		goods_num = 4,
 		goods_refresh_time = 1,
@@ -283,11 +226,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_shop
-
-	var_1_6[42] = {
+	pg.base.child_shop[42] = {
 		id = 42,
 		goods_num = 5,
 		goods_refresh_time = -1,
@@ -324,8 +263,7 @@ var_0_3.base.child_shop = {}
 			}
 		}
 	}
-	pg = var_1_6
-	var_1_6.base.child_shop[43] = {
+	pg.base.child_shop[43] = {
 		id = 43,
 		goods_num = 5,
 		goods_refresh_time = -1,

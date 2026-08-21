@@ -29,4 +29,23 @@ function HasReNameFilterWord(self, t)
     return gs.FilterWordMgr:HasReNameFilterWord(t)
 end
 
+-- 额外屏蔽词，用于快速屏蔽违禁词，仅客户端显示时使用 替换**
+function filterTemp(self, t)
+    local content = string.lower(t)
+    local baseData = RefMgr:getData("filter_word_temp")
+    for key, data in pairs(baseData) do
+        local machStr = string.lower(data.language)
+        local machLen = string.getStringCharCount(machStr)
+        local machIndex = string.find(content, machStr)
+        if machIndex ~= nil then
+            local replaceStr = ""
+            for i = 1, machLen do
+                replaceStr = replaceStr .. "*"
+            end
+            content = string.gsub(content, machStr, replaceStr)
+        end
+    end
+    return content
+end
+
 return _M

@@ -1,14 +1,4 @@
-﻿local var_0_0 = {
-	"让我们前往<color=#ff7d36>船坞</color>",
-	"选择一名角色，查看她的详细情况",
-	"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
-	"在这里能看到该角色所有武器的装备情况哦！",
-	"点击<color=#ff7d36>装备栏</color>添加新装备",
-	"选择刚刚制作的新装备",
-	"点击确认按钮"
-}
-
-return {
+﻿return {
 	id = "S017",
 	events = {
 		{
@@ -18,17 +8,20 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/dock"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/dockBtn"
@@ -53,7 +46,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[2]
 			},
 			ui = {
 				pathIndex = 0,
@@ -81,7 +82,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = -366.9,
-				text = var_0_0[3]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -102,7 +111,15 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[4]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[4]
 			}
 		},
 		{
@@ -112,7 +129,15 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 13.5,
-				text = var_0_0[5]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,
@@ -130,7 +155,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0.37,
-				text = var_0_0[6]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[6]
 			},
 			ui = {
 				pathIndex = 0,
@@ -152,7 +185,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[7]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"在这里能看到该角色所有武器的装备情况哦！",
+					"点击<color=#ff7d36>装备栏</color>添加新装备",
+					"选择刚刚制作的新装备",
+					"点击确认按钮"
+				})[7]
 			},
 			ui = {
 				pathIndex = -1,

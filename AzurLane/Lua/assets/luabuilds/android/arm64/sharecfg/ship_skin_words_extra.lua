@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_skin_words_extra") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_skin_words_extra"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_skin_words_extra = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_skin_words_extra
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.ship_skin_words_extra
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.ship_skin_words_extra = rawget(pg, "ship_skin_words_extra") or setmetatable({
+	__name = "ship_skin_words_extra"
+}, confNEO)
+pg.ship_skin_words_extra.__namecode__ = true
+pg.ship_skin_words_extra.all = {
 	999010,
 	801040,
 	108030,
@@ -466,27 +439,19 @@ var_0_4.all = {
 	399080,
 	899050,
 	11700010,
-	11700020
+	11700020,
+	107200,
+	102360,
+	101560,
+	101570,
+	101580,
+	202120
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.ship_skin_words_extra = {}
+pg.base = pg.base or {}
+pg.base.ship_skin_words_extra = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_skin_words_extra
-
-	var_1_0[999010] = {
+	pg.base.ship_skin_words_extra[999010] = {
 		feeling3 = "",
 		win_mvp = "",
 		main_extra = "",
@@ -574,11 +539,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_skin_words_extra
-
-	var_1_1[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -611,11 +572,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_skin_words_extra
-
-	var_1_2[108030] = {
+	pg.base.ship_skin_words_extra[108030] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -648,11 +605,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_skin_words_extra
-
-	var_1_3[999011] = {
+	pg.base.ship_skin_words_extra[999011] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -715,11 +668,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_skin_words_extra
-
-	var_1_4[207050] = {
+	pg.base.ship_skin_words_extra[207050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -797,11 +746,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_skin_words_extra
-
-	var_1_5[905030] = {
+	pg.base.ship_skin_words_extra[905030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -884,11 +829,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_skin_words_extra
-
-	var_1_6[301090] = {
+	pg.base.ship_skin_words_extra[301090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -926,11 +867,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_skin_words_extra
-
-	var_1_7[301091] = {
+	pg.base.ship_skin_words_extra[301091] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -963,11 +900,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_skin_words_extra
-
-	var_1_8[305140] = {
+	pg.base.ship_skin_words_extra[305140] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -1045,11 +978,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_skin_words_extra
-
-	var_1_9[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -1097,11 +1026,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_skin_words_extra
-
-	var_1_10[301260] = {
+	pg.base.ship_skin_words_extra[301260] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -1139,11 +1064,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_skin_words_extra
-
-	var_1_11[202100] = {
+	pg.base.ship_skin_words_extra[202100] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -1176,11 +1097,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_skin_words_extra
-
-	var_1_12[705010] = {
+	pg.base.ship_skin_words_extra[705010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -1223,11 +1140,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_skin_words_extra
-
-	var_1_13[702030] = {
+	pg.base.ship_skin_words_extra[702030] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -1300,11 +1213,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_skin_words_extra
-
-	var_1_14[702020] = {
+	pg.base.ship_skin_words_extra[702020] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -1357,11 +1266,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_skin_words_extra
-
-	var_1_15[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -1414,11 +1319,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_skin_words_extra
-
-	var_1_16[106550] = {
+	pg.base.ship_skin_words_extra[106550] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -1481,11 +1382,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_skin_words_extra
-
-	var_1_17[103240] = {
+	pg.base.ship_skin_words_extra[103240] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -1543,11 +1440,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_skin_words_extra
-
-	var_1_18[102270] = {
+	pg.base.ship_skin_words_extra[102270] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -1600,11 +1493,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_skin_words_extra
-
-	var_1_19[107110] = {
+	pg.base.ship_skin_words_extra[107110] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -1677,11 +1566,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_skin_words_extra
-
-	var_1_20[207020] = {
+	pg.base.ship_skin_words_extra[207020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -1739,11 +1624,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_skin_words_extra
-
-	var_1_21[105030] = {
+	pg.base.ship_skin_words_extra[105030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -1801,11 +1682,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_skin_words_extra
-
-	var_1_22[302140] = {
+	pg.base.ship_skin_words_extra[302140] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -1868,11 +1745,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_skin_words_extra
-
-	var_1_23[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -1935,11 +1808,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_skin_words_extra
-
-	var_1_24[905010] = {
+	pg.base.ship_skin_words_extra[905010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -2017,11 +1886,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_skin_words_extra
-
-	var_1_25[301820] = {
+	pg.base.ship_skin_words_extra[301820] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -2079,11 +1944,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_skin_words_extra
-
-	var_1_26[305080] = {
+	pg.base.ship_skin_words_extra[305080] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -2166,11 +2027,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_skin_words_extra
-
-	var_1_27[903020] = {
+	pg.base.ship_skin_words_extra[903020] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -2248,11 +2105,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_skin_words_extra
-
-	var_1_28[802020] = {
+	pg.base.ship_skin_words_extra[802020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -2310,11 +2163,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_skin_words_extra
-
-	var_1_29[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -2372,11 +2221,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_skin_words_extra
-
-	var_1_30[901030] = {
+	pg.base.ship_skin_words_extra[901030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -2424,11 +2269,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_skin_words_extra
-
-	var_1_31[202030] = {
+	pg.base.ship_skin_words_extra[202030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -2501,11 +2342,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_skin_words_extra
-
-	var_1_32[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -2573,11 +2410,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_skin_words_extra
-
-	var_1_33[901110] = {
+	pg.base.ship_skin_words_extra[901110] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -2660,11 +2493,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_skin_words_extra
-
-	var_1_34[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -2742,11 +2571,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_skin_words_extra
-
-	var_1_35[14] = {
+	pg.base.ship_skin_words_extra[14] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -2804,11 +2629,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_skin_words_extra
-
-	var_1_36[902010] = {
+	pg.base.ship_skin_words_extra[902010] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -2861,11 +2682,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_skin_words_extra
-
-	var_1_37[205100] = {
+	pg.base.ship_skin_words_extra[205100] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -2918,11 +2735,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_skin_words_extra
-
-	var_1_38[207010] = {
+	pg.base.ship_skin_words_extra[207010] = {
 		feeling3 = "",
 		win_mvp = "",
 		expedition = "",
@@ -2985,11 +2798,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_skin_words_extra
-
-	var_1_39[201330] = {
+	pg.base.ship_skin_words_extra[201330] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -3047,11 +2856,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_skin_words_extra
-
-	var_1_40[30] = {
+	pg.base.ship_skin_words_extra[30] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -3104,11 +2909,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_skin_words_extra
-
-	var_1_41[205090] = {
+	pg.base.ship_skin_words_extra[205090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -3166,11 +2967,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_skin_words_extra
-
-	var_1_42[206060] = {
+	pg.base.ship_skin_words_extra[206060] = {
 		feeling3 = "",
 		win_mvp = "",
 		home = "",
@@ -3243,11 +3040,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_skin_words_extra
-
-	var_1_43[499040] = {
+	pg.base.ship_skin_words_extra[499040] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -3305,11 +3098,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_skin_words_extra
-
-	var_1_44[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -3372,11 +3161,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_skin_words_extra
-
-	var_1_45[299040] = {
+	pg.base.ship_skin_words_extra[299040] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -3419,11 +3204,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_skin_words_extra
-
-	var_1_46[499030] = {
+	pg.base.ship_skin_words_extra[499030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -3496,11 +3277,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_skin_words_extra
-
-	var_1_47[305120] = {
+	pg.base.ship_skin_words_extra[305120] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -3553,11 +3330,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_skin_words_extra
-
-	var_1_48[319010] = {
+	pg.base.ship_skin_words_extra[319010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -3620,11 +3393,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_skin_words_extra
-
-	var_1_49[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -3687,11 +3456,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_skin_words_extra
-
-	var_1_50[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -3744,11 +3509,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_skin_words_extra
-
-	var_1_51[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -3831,11 +3592,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_skin_words_extra
-
-	var_1_52[201320] = {
+	pg.base.ship_skin_words_extra[201320] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -3883,11 +3640,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_skin_words_extra
-
-	var_1_53[0] = {
+	pg.base.ship_skin_words_extra[0] = {
 		feeling3 = "",
 		upgrade = "",
 		main_extra = "",
@@ -3970,11 +3723,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_skin_words_extra
-
-	var_1_54[107230] = {
+	pg.base.ship_skin_words_extra[107230] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -4037,11 +3786,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_skin_words_extra
-
-	var_1_55[407030] = {
+	pg.base.ship_skin_words_extra[407030] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4084,11 +3829,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_skin_words_extra
-
-	var_1_56[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -4156,11 +3897,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_skin_words_extra
-
-	var_1_57[401240] = {
+	pg.base.ship_skin_words_extra[401240] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -4213,11 +3950,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_skin_words_extra
-
-	var_1_58[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -4275,11 +4008,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_skin_words_extra
-
-	var_1_59[301630] = {
+	pg.base.ship_skin_words_extra[301630] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -4352,11 +4081,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_skin_words_extra
-
-	var_1_60[202290] = {
+	pg.base.ship_skin_words_extra[202290] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -4409,11 +4134,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_skin_words_extra
-
-	var_1_61[24] = {
+	pg.base.ship_skin_words_extra[24] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4461,11 +4182,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_skin_words_extra
-
-	var_1_62[502050] = {
+	pg.base.ship_skin_words_extra[502050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -4543,11 +4260,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_skin_words_extra
-
-	var_1_63[14] = {
+	pg.base.ship_skin_words_extra[14] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4615,11 +4328,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_skin_words_extra
-
-	var_1_64[24] = {
+	pg.base.ship_skin_words_extra[24] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -4672,11 +4381,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_skin_words_extra
-
-	var_1_65[702060] = {
+	pg.base.ship_skin_words_extra[702060] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4719,11 +4424,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_skin_words_extra
-
-	var_1_66[703010] = {
+	pg.base.ship_skin_words_extra[703010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -4781,11 +4482,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_skin_words_extra
-
-	var_1_67[702040] = {
+	pg.base.ship_skin_words_extra[702040] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4833,11 +4530,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_skin_words_extra
-
-	var_1_68[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4900,11 +4593,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_skin_words_extra
-
-	var_1_69[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -4937,11 +4626,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_skin_words_extra
-
-	var_1_70[101450] = {
+	pg.base.ship_skin_words_extra[101450] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -5004,11 +4689,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_skin_words_extra
-
-	var_1_71[101460] = {
+	pg.base.ship_skin_words_extra[101460] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -5061,11 +4742,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_skin_words_extra
-
-	var_1_72[605010] = {
+	pg.base.ship_skin_words_extra[605010] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -5138,11 +4815,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_skin_words_extra
-
-	var_1_73[304070] = {
+	pg.base.ship_skin_words_extra[304070] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -5210,11 +4883,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_skin_words_extra
-
-	var_1_74[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -5277,11 +4946,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_skin_words_extra
-
-	var_1_75[607010] = {
+	pg.base.ship_skin_words_extra[607010] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -5354,11 +5019,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_skin_words_extra
-
-	var_1_76[601040] = {
+	pg.base.ship_skin_words_extra[601040] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -5426,11 +5087,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_skin_words_extra
-
-	var_1_77[601050] = {
+	pg.base.ship_skin_words_extra[601050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -5483,11 +5140,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_skin_words_extra
-
-	var_1_78[601060] = {
+	pg.base.ship_skin_words_extra[601060] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -5545,11 +5198,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_skin_words_extra
-
-	var_1_79[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -5607,11 +5256,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_skin_words_extra
-
-	var_1_80[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -5679,11 +5324,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_skin_words_extra
-
-	var_1_81[103140] = {
+	pg.base.ship_skin_words_extra[103140] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -5741,11 +5382,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_skin_words_extra
-
-	var_1_82[101470] = {
+	pg.base.ship_skin_words_extra[101470] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -5828,11 +5465,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_skin_words_extra
-
-	var_1_83[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -5885,11 +5518,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_skin_words_extra
-
-	var_1_84[105170] = {
+	pg.base.ship_skin_words_extra[105170] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -5957,11 +5586,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_skin_words_extra
-
-	var_1_85[107990] = {
+	pg.base.ship_skin_words_extra[107990] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -6014,11 +5639,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_skin_words_extra
-
-	var_1_86[207052] = {
+	pg.base.ship_skin_words_extra[207052] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -6076,11 +5697,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_skin_words_extra
-
-	var_1_87[301860] = {
+	pg.base.ship_skin_words_extra[301860] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -6138,11 +5755,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_skin_words_extra
-
-	var_1_88[399050] = {
+	pg.base.ship_skin_words_extra[399050] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -6205,11 +5818,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_skin_words_extra
-
-	var_1_89[10700010] = {
+	pg.base.ship_skin_words_extra[10700010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6282,11 +5891,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_skin_words_extra
-
-	var_1_90[10700020] = {
+	pg.base.ship_skin_words_extra[10700020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6359,11 +5964,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_skin_words_extra
-
-	var_1_91[10700030] = {
+	pg.base.ship_skin_words_extra[10700030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6436,11 +6037,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_skin_words_extra
-
-	var_1_92[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6513,11 +6110,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_skin_words_extra
-
-	var_1_93[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6590,11 +6183,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_skin_words_extra
-
-	var_1_94[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6667,11 +6256,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_skin_words_extra
-
-	var_1_95[10700070] = {
+	pg.base.ship_skin_words_extra[10700070] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -6744,11 +6329,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_skin_words_extra
-
-	var_1_96[108070] = {
+	pg.base.ship_skin_words_extra[108070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -6811,11 +6392,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_skin_words_extra
-
-	var_1_97[301290] = {
+	pg.base.ship_skin_words_extra[301290] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -6903,11 +6480,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_skin_words_extra
-
-	var_1_98[307120] = {
+	pg.base.ship_skin_words_extra[307120] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -6970,8 +6543,7 @@ var_0_4.base.ship_skin_words_extra = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_skin_words_extra[30] = {
+	pg.base.ship_skin_words_extra[30] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -7048,11 +6620,7 @@ var_0_4.base.ship_skin_words_extra = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_skin_words_extra
-
-	var_2_0[301480] = {
+	pg.base.ship_skin_words_extra[301480] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -7125,11 +6693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_skin_words_extra
-
-	var_2_1[302070] = {
+	pg.base.ship_skin_words_extra[302070] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -7207,11 +6771,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_skin_words_extra
-
-	var_2_2[303060] = {
+	pg.base.ship_skin_words_extra[303060] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -7289,11 +6849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_skin_words_extra
-
-	var_2_3[801070] = {
+	pg.base.ship_skin_words_extra[801070] = {
 		feeling3 = "",
 		expedition = "",
 		home = "",
@@ -7366,11 +6922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_skin_words_extra
-
-	var_2_4[801080] = {
+	pg.base.ship_skin_words_extra[801080] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7433,11 +6985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_skin_words_extra
-
-	var_2_5[903010] = {
+	pg.base.ship_skin_words_extra[903010] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -7515,11 +7063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_skin_words_extra
-
-	var_2_6[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7592,11 +7136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_skin_words_extra
-
-	var_2_7[10800060] = {
+	pg.base.ship_skin_words_extra[10800060] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7669,11 +7209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_skin_words_extra
-
-	var_2_8[10800070] = {
+	pg.base.ship_skin_words_extra[10800070] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7741,11 +7277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_skin_words_extra
-
-	var_2_9[10800040] = {
+	pg.base.ship_skin_words_extra[10800040] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7818,11 +7350,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_skin_words_extra
-
-	var_2_10[30] = {
+	pg.base.ship_skin_words_extra[30] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7895,11 +7423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_skin_words_extra
-
-	var_2_11[10800050] = {
+	pg.base.ship_skin_words_extra[10800050] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -7972,11 +7496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_skin_words_extra
-
-	var_2_12[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -8049,11 +7569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_skin_words_extra
-
-	var_2_13[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -8121,11 +7637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_skin_words_extra
-
-	var_2_14[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -8198,11 +7710,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_skin_words_extra
-
-	var_2_15[405030] = {
+	pg.base.ship_skin_words_extra[405030] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 405030,
@@ -8305,11 +7813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_skin_words_extra
-
-	var_2_16[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -8387,11 +7891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_skin_words_extra
-
-	var_2_17[408120] = {
+	pg.base.ship_skin_words_extra[408120] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -8469,11 +7969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_skin_words_extra
-
-	var_2_18[101490] = {
+	pg.base.ship_skin_words_extra[101490] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -8536,11 +8032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_skin_words_extra
-
-	var_2_19[502080] = {
+	pg.base.ship_skin_words_extra[502080] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -8588,11 +8080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_skin_words_extra
-
-	var_2_20[502070] = {
+	pg.base.ship_skin_words_extra[502070] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -8655,11 +8143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_skin_words_extra
-
-	var_2_21[202300] = {
+	pg.base.ship_skin_words_extra[202300] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -8737,11 +8221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_skin_words_extra
-
-	var_2_22[705060] = {
+	pg.base.ship_skin_words_extra[705060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -8814,11 +8294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_skin_words_extra
-
-	var_2_23[707010] = {
+	pg.base.ship_skin_words_extra[707010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -8886,11 +8362,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_skin_words_extra
-
-	var_2_24[701100] = {
+	pg.base.ship_skin_words_extra[701100] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -8973,11 +8445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_skin_words_extra
-
-	var_2_25[718010] = {
+	pg.base.ship_skin_words_extra[718010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -9055,11 +8523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_skin_words_extra
-
-	var_2_26[701090] = {
+	pg.base.ship_skin_words_extra[701090] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -9142,11 +8606,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_skin_words_extra
-
-	var_2_27[601070] = {
+	pg.base.ship_skin_words_extra[601070] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -9214,11 +8674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_skin_words_extra
-
-	var_2_28[603040] = {
+	pg.base.ship_skin_words_extra[603040] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -9296,11 +8752,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_skin_words_extra
-
-	var_2_29[607020] = {
+	pg.base.ship_skin_words_extra[607020] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 607020,
@@ -9398,11 +8850,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_skin_words_extra
-
-	var_2_30[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -9460,11 +8908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_skin_words_extra
-
-	var_2_31[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -9547,11 +8991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_skin_words_extra
-
-	var_2_32[402080] = {
+	pg.base.ship_skin_words_extra[402080] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -9629,11 +9069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_skin_words_extra
-
-	var_2_33[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -9711,11 +9147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_skin_words_extra
-
-	var_2_34[404040] = {
+	pg.base.ship_skin_words_extra[404040] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -9773,11 +9205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_skin_words_extra
-
-	var_2_35[404030] = {
+	pg.base.ship_skin_words_extra[404030] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -9860,11 +9288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_skin_words_extra
-
-	var_2_36[403110] = {
+	pg.base.ship_skin_words_extra[403110] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -9927,11 +9351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_skin_words_extra
-
-	var_2_37[405040] = {
+	pg.base.ship_skin_words_extra[405040] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -9984,11 +9404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_skin_words_extra
-
-	var_2_38[403120] = {
+	pg.base.ship_skin_words_extra[403120] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -10056,11 +9472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_skin_words_extra
-
-	var_2_39[205130] = {
+	pg.base.ship_skin_words_extra[205130] = {
 		feeling3 = "",
 		upgrade = "",
 		home = "",
@@ -10153,11 +9565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_skin_words_extra
-
-	var_2_40[201340] = {
+	pg.base.ship_skin_words_extra[201340] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -10245,11 +9653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_skin_words_extra
-
-	var_2_41[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -10263,7 +9667,6 @@ end)()
 		main = "",
 		profile = "",
 		mission_complete = "",
-		headtouch = "",
 		feeling2 = "",
 		login = {
 			{
@@ -10293,6 +9696,12 @@ end)()
 			{
 				1100,
 				"为了指挥官，稍微认真一点也不是不行…"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"感觉身体放松了许多……"
 			}
 		},
 		detail = {
@@ -10332,11 +9741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_skin_words_extra
-
-	var_2_42[205110] = {
+	pg.base.ship_skin_words_extra[205110] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -10409,11 +9814,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_skin_words_extra
-
-	var_2_43[202310] = {
+	pg.base.ship_skin_words_extra[202310] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -10471,11 +9872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_skin_words_extra
-
-	var_2_44[203100] = {
+	pg.base.ship_skin_words_extra[203100] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -10533,11 +9930,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_skin_words_extra
-
-	var_2_45[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -10605,11 +9998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_skin_words_extra
-
-	var_2_46[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -10692,11 +10081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_skin_words_extra
-
-	var_2_47[202320] = {
+	pg.base.ship_skin_words_extra[202320] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -10769,11 +10154,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_skin_words_extra
-
-	var_2_48[299050] = {
+	pg.base.ship_skin_words_extra[299050] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -10846,11 +10227,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_skin_words_extra
-
-	var_2_49[499070] = {
+	pg.base.ship_skin_words_extra[499070] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -10933,11 +10310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_skin_words_extra
-
-	var_2_50[599010] = {
+	pg.base.ship_skin_words_extra[599010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -11025,11 +10398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_skin_words_extra
-
-	var_2_51[799010] = {
+	pg.base.ship_skin_words_extra[799010] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -11107,11 +10476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_skin_words_extra
-
-	var_2_52[899030] = {
+	pg.base.ship_skin_words_extra[899030] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -11184,11 +10549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_skin_words_extra
-
-	var_2_53[605030] = {
+	pg.base.ship_skin_words_extra[605030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -11251,11 +10612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_skin_words_extra
-
-	var_2_54[602020] = {
+	pg.base.ship_skin_words_extra[602020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -11323,11 +10680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_skin_words_extra
-
-	var_2_55[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 608020,
@@ -11420,11 +10773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_skin_words_extra
-
-	var_2_56[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -11492,11 +10841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_skin_words_extra
-
-	var_2_57[601080] = {
+	pg.base.ship_skin_words_extra[601080] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -11579,11 +10924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_skin_words_extra
-
-	var_2_58[603050] = {
+	pg.base.ship_skin_words_extra[603050] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -11666,11 +11007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_skin_words_extra
-
-	var_2_59[305100] = {
+	pg.base.ship_skin_words_extra[305100] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -11743,11 +11080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_skin_words_extra
-
-	var_2_60[301880] = {
+	pg.base.ship_skin_words_extra[301880] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -11800,11 +11133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_skin_words_extra
-
-	var_2_61[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -11892,11 +11221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_skin_words_extra
-
-	var_2_62[303100] = {
+	pg.base.ship_skin_words_extra[303100] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -11969,11 +11294,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_skin_words_extra
-
-	var_2_63[301040] = {
+	pg.base.ship_skin_words_extra[301040] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12051,11 +11372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_skin_words_extra
-
-	var_2_64[404050] = {
+	pg.base.ship_skin_words_extra[404050] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12113,11 +11430,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_skin_words_extra
-
-	var_2_65[403020] = {
+	pg.base.ship_skin_words_extra[403020] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12175,11 +11488,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_skin_words_extra
-
-	var_2_66[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12262,11 +11571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_skin_words_extra
-
-	var_2_67[101110] = {
+	pg.base.ship_skin_words_extra[101110] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12329,11 +11634,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_skin_words_extra
-
-	var_2_68[403130] = {
+	pg.base.ship_skin_words_extra[403130] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -12416,11 +11717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_skin_words_extra
-
-	var_2_69[206070] = {
+	pg.base.ship_skin_words_extra[206070] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -12493,11 +11790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_skin_words_extra
-
-	var_2_70[6] = {
+	pg.base.ship_skin_words_extra[6] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -12565,11 +11858,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_skin_words_extra
-
-	var_2_71[202090] = {
+	pg.base.ship_skin_words_extra[202090] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12632,11 +11921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_skin_words_extra
-
-	var_2_72[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -12704,11 +11989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_skin_words_extra
-
-	var_2_73[10900010] = {
+	pg.base.ship_skin_words_extra[10900010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -12781,11 +12062,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_skin_words_extra
-
-	var_2_74[10900020] = {
+	pg.base.ship_skin_words_extra[10900020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -12858,11 +12135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_skin_words_extra
-
-	var_2_75[10900030] = {
+	pg.base.ship_skin_words_extra[10900030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -12935,11 +12208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_skin_words_extra
-
-	var_2_76[10900040] = {
+	pg.base.ship_skin_words_extra[10900040] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -13012,11 +12281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_skin_words_extra
-
-	var_2_77[10900050] = {
+	pg.base.ship_skin_words_extra[10900050] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -13089,11 +12354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_skin_words_extra
-
-	var_2_78[10900060] = {
+	pg.base.ship_skin_words_extra[10900060] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -13166,11 +12427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_skin_words_extra
-
-	var_2_79[103260] = {
+	pg.base.ship_skin_words_extra[103260] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -13223,11 +12480,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_skin_words_extra
-
-	var_2_80[107100] = {
+	pg.base.ship_skin_words_extra[107100] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -13295,11 +12548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_skin_words_extra
-
-	var_2_81[107120] = {
+	pg.base.ship_skin_words_extra[107120] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -13367,11 +12616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_skin_words_extra
-
-	var_2_82[101500] = {
+	pg.base.ship_skin_words_extra[101500] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -13429,11 +12674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_skin_words_extra
-
-	var_2_83[6] = {
+	pg.base.ship_skin_words_extra[6] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -13491,11 +12732,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_skin_words_extra
-
-	var_2_84[702050] = {
+	pg.base.ship_skin_words_extra[702050] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -13583,11 +12820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_skin_words_extra
-
-	var_2_85[0] = {
+	pg.base.ship_skin_words_extra[0] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -13665,11 +12898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_skin_words_extra
-
-	var_2_86[519010] = {
+	pg.base.ship_skin_words_extra[519010] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -13717,11 +12946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_skin_words_extra
-
-	var_2_87[506020] = {
+	pg.base.ship_skin_words_extra[506020] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -13789,11 +13014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_skin_words_extra
-
-	var_2_88[207070] = {
+	pg.base.ship_skin_words_extra[207070] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -13871,11 +13092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_skin_words_extra
-
-	var_2_89[202330] = {
+	pg.base.ship_skin_words_extra[202330] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -13958,11 +13175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_skin_words_extra
-
-	var_2_90[205140] = {
+	pg.base.ship_skin_words_extra[205140] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -14025,11 +13238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_skin_words_extra
-
-	var_2_91[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -14092,11 +13301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_skin_words_extra
-
-	var_2_92[206020] = {
+	pg.base.ship_skin_words_extra[206020] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 206020,
@@ -14174,11 +13379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_skin_words_extra
-
-	var_2_93[702070] = {
+	pg.base.ship_skin_words_extra[702070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -14241,11 +13442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_skin_words_extra
-
-	var_2_94[703020] = {
+	pg.base.ship_skin_words_extra[703020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -14318,11 +13515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_skin_words_extra
-
-	var_2_95[705070] = {
+	pg.base.ship_skin_words_extra[705070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -14380,11 +13573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_skin_words_extra
-
-	var_2_96[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -14457,11 +13646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_skin_words_extra
-
-	var_2_97[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -14534,11 +13719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_skin_words_extra
-
-	var_2_98[405050] = {
+	pg.base.ship_skin_words_extra[405050] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -14631,8 +13812,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_skin_words_extra[402100] = {
+	pg.base.ship_skin_words_extra[402100] = {
 		feeling3 = "",
 		upgrade = "",
 		home = "",
@@ -14719,11 +13899,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_skin_words_extra
-
-	var_3_0[14] = {
+	pg.base.ship_skin_words_extra[14] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -14796,11 +13972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_skin_words_extra
-
-	var_3_1[401990] = {
+	pg.base.ship_skin_words_extra[401990] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -14848,11 +14020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_skin_words_extra
-
-	var_3_2[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 207130,
@@ -14945,11 +14113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_skin_words_extra
-
-	var_3_3[307130] = {
+	pg.base.ship_skin_words_extra[307130] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -15002,11 +14166,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_skin_words_extra
-
-	var_3_4[603060] = {
+	pg.base.ship_skin_words_extra[603060] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -15089,11 +14249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_skin_words_extra
-
-	var_3_5[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -15151,11 +14307,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_skin_words_extra
-
-	var_3_6[14] = {
+	pg.base.ship_skin_words_extra[14] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 605070,
@@ -15238,11 +14390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_skin_words_extra
-
-	var_3_7[0] = {
+	pg.base.ship_skin_words_extra[0] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -15256,7 +14404,6 @@ end)()
 		hp_warning = "",
 		main = "",
 		profile = "",
-		headtouch = "",
 		feeling2 = "",
 		battle = "",
 		login = {
@@ -15275,6 +14422,12 @@ end)()
 			{
 				1100,
 				"指挥官，出击结果如何？虽然以你的能力我不应该担心，但以防万一，还是请让我检查下生命体征？"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"温暖的感觉……我该露出什么样的表情才好呢？"
 			}
 		},
 		detail = {
@@ -15320,11 +14473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_skin_words_extra
-
-	var_3_8[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -15417,11 +14566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_skin_words_extra
-
-	var_3_9[399060] = {
+	pg.base.ship_skin_words_extra[399060] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 399060,
@@ -15514,11 +14659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_skin_words_extra
-
-	var_3_10[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 499080,
@@ -15621,11 +14762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_skin_words_extra
-
-	var_3_11[999020] = {
+	pg.base.ship_skin_words_extra[999020] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 999020,
@@ -15738,11 +14875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_skin_words_extra
-
-	var_3_12[10800090] = {
+	pg.base.ship_skin_words_extra[10800090] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -15810,11 +14943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_skin_words_extra
-
-	var_3_13[10800080] = {
+	pg.base.ship_skin_words_extra[10800080] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -15887,11 +15016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_skin_words_extra
-
-	var_3_14[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -15954,11 +15079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_skin_words_extra
-
-	var_3_15[905020] = {
+	pg.base.ship_skin_words_extra[905020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -16026,11 +15147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_skin_words_extra
-
-	var_3_16[802030] = {
+	pg.base.ship_skin_words_extra[802030] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -16103,11 +15220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_skin_words_extra
-
-	var_3_17[807020] = {
+	pg.base.ship_skin_words_extra[807020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -16175,11 +15288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_skin_words_extra
-
-	var_3_18[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16242,11 +15351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_skin_words_extra
-
-	var_3_19[803010] = {
+	pg.base.ship_skin_words_extra[803010] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16319,11 +15424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_skin_words_extra
-
-	var_3_20[901040] = {
+	pg.base.ship_skin_words_extra[901040] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16386,11 +15487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_skin_words_extra
-
-	var_3_21[303190] = {
+	pg.base.ship_skin_words_extra[303190] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16463,11 +15560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_skin_words_extra
-
-	var_3_22[305130] = {
+	pg.base.ship_skin_words_extra[305130] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -16540,11 +15633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_skin_words_extra
-
-	var_3_23[301890] = {
+	pg.base.ship_skin_words_extra[301890] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16627,11 +15716,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_skin_words_extra
-
-	var_3_24[302060] = {
+	pg.base.ship_skin_words_extra[302060] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16709,11 +15794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_skin_words_extra
-
-	var_3_25[301900] = {
+	pg.base.ship_skin_words_extra[301900] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16786,11 +15867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_skin_words_extra
-
-	var_3_26[102310] = {
+	pg.base.ship_skin_words_extra[102310] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -16848,11 +15925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_skin_words_extra
-
-	var_3_27[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -16915,11 +15988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_skin_words_extra
-
-	var_3_28[30] = {
+	pg.base.ship_skin_words_extra[30] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -16992,11 +16061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_skin_words_extra
-
-	var_3_29[9600040] = {
+	pg.base.ship_skin_words_extra[9600040] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 9600040,
@@ -17084,11 +16149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_skin_words_extra
-
-	var_3_30[9600050] = {
+	pg.base.ship_skin_words_extra[9600050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -17156,11 +16217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_skin_words_extra
-
-	var_3_31[9600060] = {
+	pg.base.ship_skin_words_extra[9600060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -17228,11 +16285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_skin_words_extra
-
-	var_3_32[11000010] = {
+	pg.base.ship_skin_words_extra[11000010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17305,11 +16358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_skin_words_extra
-
-	var_3_33[11000020] = {
+	pg.base.ship_skin_words_extra[11000020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17382,11 +16431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_skin_words_extra
-
-	var_3_34[11000030] = {
+	pg.base.ship_skin_words_extra[11000030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17459,11 +16504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_skin_words_extra
-
-	var_3_35[11000040] = {
+	pg.base.ship_skin_words_extra[11000040] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17536,11 +16577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_skin_words_extra
-
-	var_3_36[11000050] = {
+	pg.base.ship_skin_words_extra[11000050] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17613,11 +16650,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_skin_words_extra
-
-	var_3_37[11000060] = {
+	pg.base.ship_skin_words_extra[11000060] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17690,11 +16723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_skin_words_extra
-
-	var_3_38[6] = {
+	pg.base.ship_skin_words_extra[6] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -17767,11 +16796,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_skin_words_extra
-
-	var_3_39[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -17844,11 +16869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_skin_words_extra
-
-	var_3_40[6] = {
+	pg.base.ship_skin_words_extra[6] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 101510,
@@ -17951,11 +16972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_skin_words_extra
-
-	var_3_41[104010] = {
+	pg.base.ship_skin_words_extra[104010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18038,11 +17055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_skin_words_extra
-
-	var_3_42[108080] = {
+	pg.base.ship_skin_words_extra[108080] = {
 		feeling3 = "",
 		win_mvp = "",
 		expedition = "",
@@ -18110,11 +17123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_skin_words_extra
-
-	var_3_43[107300] = {
+	pg.base.ship_skin_words_extra[107300] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -18187,11 +17196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_skin_words_extra
-
-	var_3_44[103270] = {
+	pg.base.ship_skin_words_extra[103270] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18264,11 +17269,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_skin_words_extra
-
-	var_3_45[504010] = {
+	pg.base.ship_skin_words_extra[504010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18331,11 +17332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_skin_words_extra
-
-	var_3_46[502090] = {
+	pg.base.ship_skin_words_extra[502090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18393,11 +17390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_skin_words_extra
-
-	var_3_47[501050] = {
+	pg.base.ship_skin_words_extra[501050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18475,11 +17468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_skin_words_extra
-
-	var_3_48[501060] = {
+	pg.base.ship_skin_words_extra[501060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18537,11 +17526,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_skin_words_extra
-
-	var_3_49[501070] = {
+	pg.base.ship_skin_words_extra[501070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18604,11 +17589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_skin_words_extra
-
-	var_3_50[705020] = {
+	pg.base.ship_skin_words_extra[705020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -18671,11 +17652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_skin_words_extra
-
-	var_3_51[701110] = {
+	pg.base.ship_skin_words_extra[701110] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18753,11 +17730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_skin_words_extra
-
-	var_3_52[705080] = {
+	pg.base.ship_skin_words_extra[705080] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -18825,11 +17798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_skin_words_extra
-
-	var_3_53[701120] = {
+	pg.base.ship_skin_words_extra[701120] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -18897,11 +17866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_skin_words_extra
-
-	var_3_54[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -18964,11 +17929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_skin_words_extra
-
-	var_3_55[202340] = {
+	pg.base.ship_skin_words_extra[202340] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -19051,11 +18012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_skin_words_extra
-
-	var_3_56[203130] = {
+	pg.base.ship_skin_words_extra[203130] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -19128,11 +18085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_skin_words_extra
-
-	var_3_57[207053] = {
+	pg.base.ship_skin_words_extra[207053] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -19180,11 +18133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_skin_words_extra
-
-	var_3_58[307140] = {
+	pg.base.ship_skin_words_extra[307140] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -19237,11 +18186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_skin_words_extra
-
-	var_3_59[403140] = {
+	pg.base.ship_skin_words_extra[403140] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -19304,11 +18249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_skin_words_extra
-
-	var_3_60[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -19376,11 +18317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_skin_words_extra
-
-	var_3_61[805030] = {
+	pg.base.ship_skin_words_extra[805030] = {
 		feeling3 = "",
 		id = 805030,
 		skill = "",
@@ -19478,11 +18415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_skin_words_extra
-
-	var_3_62[901070] = {
+	pg.base.ship_skin_words_extra[901070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -19565,11 +18498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_skin_words_extra
-
-	var_3_63[803020] = {
+	pg.base.ship_skin_words_extra[803020] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -19627,11 +18556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_skin_words_extra
-
-	var_3_64[901050] = {
+	pg.base.ship_skin_words_extra[901050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -19689,11 +18614,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_skin_words_extra
-
-	var_3_65[901060] = {
+	pg.base.ship_skin_words_extra[901060] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -19771,11 +18692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_skin_words_extra
-
-	var_3_66[405060] = {
+	pg.base.ship_skin_words_extra[405060] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -19828,11 +18745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_skin_words_extra
-
-	var_3_67[404060] = {
+	pg.base.ship_skin_words_extra[404060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -19890,11 +18803,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_skin_words_extra
-
-	var_3_68[401470] = {
+	pg.base.ship_skin_words_extra[401470] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 401470,
@@ -19977,11 +18886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_skin_words_extra
-
-	var_3_69[408130] = {
+	pg.base.ship_skin_words_extra[408130] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -20044,11 +18949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_skin_words_extra
-
-	var_3_70[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -20121,11 +19022,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_skin_words_extra
-
-	var_3_71[799020] = {
+	pg.base.ship_skin_words_extra[799020] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 799020,
@@ -20223,11 +19120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_skin_words_extra
-
-	var_3_72[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		feeling3 = "",
 		id = 199050,
 		skill = "",
@@ -20330,11 +19223,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_skin_words_extra
-
-	var_3_73[399070] = {
+	pg.base.ship_skin_words_extra[399070] = {
 		feeling3 = "",
 		id = 399070,
 		skill = "",
@@ -20437,11 +19326,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_skin_words_extra
-
-	var_3_74[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		feeling3 = "",
 		id = 699020,
 		skill = "",
@@ -20544,11 +19429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_skin_words_extra
-
-	var_3_75[899040] = {
+	pg.base.ship_skin_words_extra[899040] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 899040,
@@ -20641,11 +19522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_skin_words_extra
-
-	var_3_76[904020] = {
+	pg.base.ship_skin_words_extra[904020] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 904020,
@@ -20723,11 +19600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_skin_words_extra
-
-	var_3_77[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -20785,11 +19658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_skin_words_extra
-
-	var_3_78[903030] = {
+	pg.base.ship_skin_words_extra[903030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -20852,11 +19721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_skin_words_extra
-
-	var_3_79[103280] = {
+	pg.base.ship_skin_words_extra[103280] = {
 		feeling3 = "",
 		win_mvp = "",
 		expedition = "",
@@ -20929,11 +19794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_skin_words_extra
-
-	var_3_80[105150] = {
+	pg.base.ship_skin_words_extra[105150] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -21006,11 +19867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_skin_words_extra
-
-	var_3_81[102330] = {
+	pg.base.ship_skin_words_extra[102330] = {
 		feeling3 = "",
 		mission = "",
 		id = 102330,
@@ -21098,11 +19955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_skin_words_extra
-
-	var_3_82[108090] = {
+	pg.base.ship_skin_words_extra[108090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -21165,11 +20018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_skin_words_extra
-
-	var_3_83[16] = {
+	pg.base.ship_skin_words_extra[16] = {
 		feeling3 = "",
 		upgrade = "",
 		mission = "",
@@ -21242,11 +20091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_skin_words_extra
-
-	var_3_84[199030] = {
+	pg.base.ship_skin_words_extra[199030] = {
 		feeling3 = "",
 		mission = "",
 		id = 199030,
@@ -21339,11 +20184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_skin_words_extra
-
-	var_3_85[306040] = {
+	pg.base.ship_skin_words_extra[306040] = {
 		feeling3 = "",
 		expedition = "",
 		mission = "",
@@ -21431,11 +20272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_skin_words_extra
-
-	var_3_86[307150] = {
+	pg.base.ship_skin_words_extra[307150] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -21493,11 +20330,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_skin_words_extra
-
-	var_3_87[302250] = {
+	pg.base.ship_skin_words_extra[302250] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -21575,11 +20408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_skin_words_extra
-
-	var_3_88[302260] = {
+	pg.base.ship_skin_words_extra[302260] = {
 		feeling3 = "",
 		win_mvp = "",
 		expedition = "",
@@ -21652,11 +20481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_skin_words_extra
-
-	var_3_89[301910] = {
+	pg.base.ship_skin_words_extra[301910] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -21724,11 +20549,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_skin_words_extra
-
-	var_3_90[304050] = {
+	pg.base.ship_skin_words_extra[304050] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -21781,11 +20602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_skin_words_extra
-
-	var_3_91[9600070] = {
+	pg.base.ship_skin_words_extra[9600070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -21853,11 +20670,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_skin_words_extra
-
-	var_3_92[9600080] = {
+	pg.base.ship_skin_words_extra[9600080] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -21925,11 +20738,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_skin_words_extra
-
-	var_3_93[9600090] = {
+	pg.base.ship_skin_words_extra[9600090] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -22002,11 +20811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.ship_skin_words_extra
-
-	var_3_94[9600100] = {
+	pg.base.ship_skin_words_extra[9600100] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22074,11 +20879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_skin_words_extra
-
-	var_3_95[9600110] = {
+	pg.base.ship_skin_words_extra[9600110] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22146,11 +20947,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_skin_words_extra
-
-	var_3_96[11100010] = {
+	pg.base.ship_skin_words_extra[11100010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22218,11 +21015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_skin_words_extra
-
-	var_3_97[11100020] = {
+	pg.base.ship_skin_words_extra[11100020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22295,11 +21088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_skin_words_extra
-
-	var_3_98[11100030] = {
+	pg.base.ship_skin_words_extra[11100030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22367,8 +21156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.ship_skin_words_extra[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22440,11 +21228,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_skin_words_extra
-
-	var_4_0[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -22522,11 +21306,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_skin_words_extra
-
-	var_4_1[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -22594,11 +21374,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_skin_words_extra
-
-	var_4_2[0] = {
+	pg.base.ship_skin_words_extra[0] = {
 		feeling3 = "",
 		upgrade = "",
 		id = 407040,
@@ -22686,11 +21462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_skin_words_extra
-
-	var_4_3[401520] = {
+	pg.base.ship_skin_words_extra[401520] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22758,11 +21530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_skin_words_extra
-
-	var_4_4[402110] = {
+	pg.base.ship_skin_words_extra[402110] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -22830,11 +21598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_skin_words_extra
-
-	var_4_5[401090] = {
+	pg.base.ship_skin_words_extra[401090] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -22912,11 +21676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_skin_words_extra
-
-	var_4_6[401110] = {
+	pg.base.ship_skin_words_extra[401110] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -22994,11 +21754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_skin_words_extra
-
-	var_4_7[499050] = {
+	pg.base.ship_skin_words_extra[499050] = {
 		feeling3 = "",
 		expedition = "",
 		mission = "",
@@ -23076,11 +21832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_skin_words_extra
-
-	var_4_8[207054] = {
+	pg.base.ship_skin_words_extra[207054] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -23123,11 +21875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_skin_words_extra
-
-	var_4_9[503010] = {
+	pg.base.ship_skin_words_extra[503010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23210,11 +21958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_skin_words_extra
-
-	var_4_10[502100] = {
+	pg.base.ship_skin_words_extra[502100] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23277,11 +22021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_skin_words_extra
-
-	var_4_11[501080] = {
+	pg.base.ship_skin_words_extra[501080] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23349,11 +22089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_skin_words_extra
-
-	var_4_12[501090] = {
+	pg.base.ship_skin_words_extra[501090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23426,11 +22162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_skin_words_extra
-
-	var_4_13[24] = {
+	pg.base.ship_skin_words_extra[24] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23493,11 +22225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_skin_words_extra
-
-	var_4_14[30] = {
+	pg.base.ship_skin_words_extra[30] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23560,11 +22288,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_skin_words_extra
-
-	var_4_15[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -23627,11 +22351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_skin_words_extra
-
-	var_4_16[602030] = {
+	pg.base.ship_skin_words_extra[602030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23694,11 +22414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_skin_words_extra
-
-	var_4_17[107130] = {
+	pg.base.ship_skin_words_extra[107130] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23766,11 +22482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_skin_words_extra
-
-	var_4_18[102340] = {
+	pg.base.ship_skin_words_extra[102340] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23838,11 +22550,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_skin_words_extra
-
-	var_4_19[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23910,11 +22618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_skin_words_extra
-
-	var_4_20[1102010] = {
+	pg.base.ship_skin_words_extra[1102010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -23982,11 +22686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_skin_words_extra
-
-	var_4_21[705090] = {
+	pg.base.ship_skin_words_extra[705090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24054,11 +22754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_skin_words_extra
-
-	var_4_22[1101010] = {
+	pg.base.ship_skin_words_extra[1101010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24126,11 +22822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_skin_words_extra
-
-	var_4_23[0] = {
+	pg.base.ship_skin_words_extra[0] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24193,11 +22885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_skin_words_extra
-
-	var_4_24[103290] = {
+	pg.base.ship_skin_words_extra[103290] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24265,11 +22953,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_skin_words_extra
-
-	var_4_25[201390] = {
+	pg.base.ship_skin_words_extra[201390] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24337,11 +23021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_skin_words_extra
-
-	var_4_26[205160] = {
+	pg.base.ship_skin_words_extra[205160] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24409,11 +23089,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_skin_words_extra
-
-	var_4_27[201380] = {
+	pg.base.ship_skin_words_extra[201380] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24481,11 +23157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_skin_words_extra
-
-	var_4_28[202350] = {
+	pg.base.ship_skin_words_extra[202350] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24553,11 +23225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_skin_words_extra
-
-	var_4_29[202360] = {
+	pg.base.ship_skin_words_extra[202360] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24625,11 +23293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_skin_words_extra
-
-	var_4_30[403160] = {
+	pg.base.ship_skin_words_extra[403160] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24697,11 +23361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_skin_words_extra
-
-	var_4_31[207055] = {
+	pg.base.ship_skin_words_extra[207055] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24749,11 +23409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_skin_words_extra
-
-	var_4_32[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -24826,11 +23482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_skin_words_extra
-
-	var_4_33[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -24903,11 +23555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_skin_words_extra
-
-	var_4_34[103160] = {
+	pg.base.ship_skin_words_extra[103160] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -24975,11 +23623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_skin_words_extra
-
-	var_4_35[404070] = {
+	pg.base.ship_skin_words_extra[404070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -25047,11 +23691,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_skin_words_extra
-
-	var_4_36[408140] = {
+	pg.base.ship_skin_words_extra[408140] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -25119,11 +23759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_skin_words_extra
-
-	var_4_37[401130] = {
+	pg.base.ship_skin_words_extra[401130] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -25196,11 +23832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_skin_words_extra
-
-	var_4_38[408100] = {
+	pg.base.ship_skin_words_extra[408100] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -25268,11 +23900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_skin_words_extra
-
-	var_4_39[1199010] = {
+	pg.base.ship_skin_words_extra[1199010] = {
 		feeling3 = "",
 		id = 1199010,
 		skill = "",
@@ -25380,11 +24008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_skin_words_extra
-
-	var_4_40[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		feeling3 = "",
 		id = 499100,
 		skill = "",
@@ -25487,11 +24111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_skin_words_extra
-
-	var_4_41[799030] = {
+	pg.base.ship_skin_words_extra[799030] = {
 		feeling3 = "",
 		id = 799030,
 		skill = "",
@@ -25594,11 +24214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_skin_words_extra
-
-	var_4_42[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		feeling3 = "",
 		id = 199060,
 		skill = "",
@@ -25706,11 +24322,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_skin_words_extra
-
-	var_4_43[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		feeling3 = "",
 		id = 699030,
 		skill = "",
@@ -25813,11 +24425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_skin_words_extra
-
-	var_4_44[11300010] = {
+	pg.base.ship_skin_words_extra[11300010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -25890,11 +24498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_skin_words_extra
-
-	var_4_45[11300020] = {
+	pg.base.ship_skin_words_extra[11300020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -25967,11 +24571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_skin_words_extra
-
-	var_4_46[11300030] = {
+	pg.base.ship_skin_words_extra[11300030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -26044,11 +24644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_skin_words_extra
-
-	var_4_47[11300040] = {
+	pg.base.ship_skin_words_extra[11300040] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -26121,11 +24717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_skin_words_extra
-
-	var_4_48[804010] = {
+	pg.base.ship_skin_words_extra[804010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26193,11 +24785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_skin_words_extra
-
-	var_4_49[806010] = {
+	pg.base.ship_skin_words_extra[806010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26265,11 +24853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_skin_words_extra
-
-	var_4_50[803030] = {
+	pg.base.ship_skin_words_extra[803030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26337,11 +24921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_skin_words_extra
-
-	var_4_51[802040] = {
+	pg.base.ship_skin_words_extra[802040] = {
 		feeling3 = "",
 		id = 802040,
 		skill = "",
@@ -26444,11 +25024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_skin_words_extra
-
-	var_4_52[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26516,11 +25092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_skin_words_extra
-
-	var_4_53[307160] = {
+	pg.base.ship_skin_words_extra[307160] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26588,11 +25160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_skin_words_extra
-
-	var_4_54[317020] = {
+	pg.base.ship_skin_words_extra[317020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26660,11 +25228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_skin_words_extra
-
-	var_4_55[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26727,11 +25291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_skin_words_extra
-
-	var_4_56[303200] = {
+	pg.base.ship_skin_words_extra[303200] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26804,11 +25364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_skin_words_extra
-
-	var_4_57[302270] = {
+	pg.base.ship_skin_words_extra[302270] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26876,11 +25432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_skin_words_extra
-
-	var_4_58[301920] = {
+	pg.base.ship_skin_words_extra[301920] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -26948,11 +25500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_skin_words_extra
-
-	var_4_59[999012] = {
+	pg.base.ship_skin_words_extra[999012] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27005,11 +25553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_skin_words_extra
-
-	var_4_60[11400010] = {
+	pg.base.ship_skin_words_extra[11400010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -27082,11 +25626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_skin_words_extra
-
-	var_4_61[11400020] = {
+	pg.base.ship_skin_words_extra[11400020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -27159,11 +25699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_skin_words_extra
-
-	var_4_62[9600120] = {
+	pg.base.ship_skin_words_extra[9600120] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27226,11 +25762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_skin_words_extra
-
-	var_4_63[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27298,11 +25830,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_skin_words_extra
-
-	var_4_64[12] = {
+	pg.base.ship_skin_words_extra[12] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27370,11 +25898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_skin_words_extra
-
-	var_4_65[22] = {
+	pg.base.ship_skin_words_extra[22] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27432,11 +25956,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_skin_words_extra
-
-	var_4_66[9600160] = {
+	pg.base.ship_skin_words_extra[9600160] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27504,11 +26024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_skin_words_extra
-
-	var_4_67[107090] = {
+	pg.base.ship_skin_words_extra[107090] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27566,11 +26082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_skin_words_extra
-
-	var_4_68[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -27623,11 +26135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_skin_words_extra
-
-	var_4_69[11500010] = {
+	pg.base.ship_skin_words_extra[11500010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -27700,11 +26208,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_skin_words_extra
-
-	var_4_70[11500020] = {
+	pg.base.ship_skin_words_extra[11500020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -27777,11 +26281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_skin_words_extra
-
-	var_4_71[11500030] = {
+	pg.base.ship_skin_words_extra[11500030] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -27854,11 +26354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_skin_words_extra
-
-	var_4_72[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -27931,11 +26427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_skin_words_extra
-
-	var_4_73[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -28008,11 +26500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_skin_words_extra
-
-	var_4_74[28] = {
+	pg.base.ship_skin_words_extra[28] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -28085,11 +26573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_skin_words_extra
-
-	var_4_75[317010] = {
+	pg.base.ship_skin_words_extra[317010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28157,11 +26641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_skin_words_extra
-
-	var_4_76[24] = {
+	pg.base.ship_skin_words_extra[24] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -28229,11 +26709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_skin_words_extra
-
-	var_4_77[101100] = {
+	pg.base.ship_skin_words_extra[101100] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28291,11 +26767,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_skin_words_extra
-
-	var_4_78[101550] = {
+	pg.base.ship_skin_words_extra[101550] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28353,11 +26825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_skin_words_extra
-
-	var_4_79[102350] = {
+	pg.base.ship_skin_words_extra[102350] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28425,11 +26893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_skin_words_extra
-
-	var_4_80[107250] = {
+	pg.base.ship_skin_words_extra[107250] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -28512,11 +26976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_skin_words_extra
-
-	var_4_81[301940] = {
+	pg.base.ship_skin_words_extra[301940] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28579,11 +27039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_skin_words_extra
-
-	var_4_82[605090] = {
+	pg.base.ship_skin_words_extra[605090] = {
 		feeling3 = "",
 		expedition = "",
 		mission = "",
@@ -28671,11 +27127,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_skin_words_extra
-
-	var_4_83[601120] = {
+	pg.base.ship_skin_words_extra[601120] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28738,11 +27190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_skin_words_extra
-
-	var_4_84[602040] = {
+	pg.base.ship_skin_words_extra[602040] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28805,11 +27253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_skin_words_extra
-
-	var_4_85[6] = {
+	pg.base.ship_skin_words_extra[6] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28867,11 +27311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_skin_words_extra
-
-	var_4_86[105200] = {
+	pg.base.ship_skin_words_extra[105200] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28924,11 +27364,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_skin_words_extra
-
-	var_4_87[503020] = {
+	pg.base.ship_skin_words_extra[503020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -28996,11 +27432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_skin_words_extra
-
-	var_4_88[502120] = {
+	pg.base.ship_skin_words_extra[502120] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29063,11 +27495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_skin_words_extra
-
-	var_4_89[499020] = {
+	pg.base.ship_skin_words_extra[499020] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29125,11 +27553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_skin_words_extra
-
-	var_4_90[8] = {
+	pg.base.ship_skin_words_extra[8] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29192,11 +27616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_skin_words_extra
-
-	var_4_91[407010] = {
+	pg.base.ship_skin_words_extra[407010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29264,11 +27684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_skin_words_extra
-
-	var_4_92[703030] = {
+	pg.base.ship_skin_words_extra[703030] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -29346,11 +27762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_skin_words_extra
-
-	var_4_93[701130] = {
+	pg.base.ship_skin_words_extra[701130] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29408,11 +27820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.ship_skin_words_extra
-
-	var_4_94[10] = {
+	pg.base.ship_skin_words_extra[10] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29480,11 +27888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_skin_words_extra
-
-	var_4_95[20] = {
+	pg.base.ship_skin_words_extra[20] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29542,11 +27946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_skin_words_extra
-
-	var_4_96[100000] = {
+	pg.base.ship_skin_words_extra[100000] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29604,11 +28004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_skin_words_extra
-
-	var_4_97[302290] = {
+	pg.base.ship_skin_words_extra[302290] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -29681,11 +28077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_skin_words_extra
-
-	var_4_98[302280] = {
+	pg.base.ship_skin_words_extra[302280] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29753,8 +28145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.ship_skin_words_extra[307170] = {
+	pg.base.ship_skin_words_extra[307170] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29826,11 +28217,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_skin_words_extra
-
-	var_5_0[303140] = {
+	pg.base.ship_skin_words_extra[303140] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29898,11 +28285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_skin_words_extra
-
-	var_5_1[26] = {
+	pg.base.ship_skin_words_extra[26] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -29970,11 +28353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_skin_words_extra
-
-	var_5_2[702010] = {
+	pg.base.ship_skin_words_extra[702010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -30037,11 +28416,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_skin_words_extra
-
-	var_5_3[10600100] = {
+	pg.base.ship_skin_words_extra[10600100] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -30114,11 +28489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_skin_words_extra
-
-	var_5_4[10600110] = {
+	pg.base.ship_skin_words_extra[10600110] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -30191,11 +28562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_skin_words_extra
-
-	var_5_5[10600120] = {
+	pg.base.ship_skin_words_extra[10600120] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -30268,11 +28635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_skin_words_extra
-
-	var_5_6[10600130] = {
+	pg.base.ship_skin_words_extra[10600130] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -30345,11 +28708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_skin_words_extra
-
-	var_5_7[10600140] = {
+	pg.base.ship_skin_words_extra[10600140] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -30422,11 +28781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_skin_words_extra
-
-	var_5_8[10600150] = {
+	pg.base.ship_skin_words_extra[10600150] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -30499,11 +28854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_skin_words_extra
-
-	var_5_9[399010] = {
+	pg.base.ship_skin_words_extra[399010] = {
 		feeling3 = "",
 		win_mvp = "",
 		expedition = "",
@@ -30576,11 +28927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_skin_words_extra
-
-	var_5_10[105120] = {
+	pg.base.ship_skin_words_extra[105120] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -30648,11 +28995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_skin_words_extra
-
-	var_5_11[303210] = {
+	pg.base.ship_skin_words_extra[303210] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -30715,11 +29058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_skin_words_extra
-
-	var_5_12[899010] = {
+	pg.base.ship_skin_words_extra[899010] = {
 		feeling3 = "",
 		win_mvp = "",
 		expedition = "",
@@ -30797,11 +29136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_skin_words_extra
-
-	var_5_13[499060] = {
+	pg.base.ship_skin_words_extra[499060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -30869,11 +29204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_skin_words_extra
-
-	var_5_14[18] = {
+	pg.base.ship_skin_words_extra[18] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -30936,11 +29267,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_skin_words_extra
-
-	var_5_15[405070] = {
+	pg.base.ship_skin_words_extra[405070] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31008,11 +29335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_skin_words_extra
-
-	var_5_16[408150] = {
+	pg.base.ship_skin_words_extra[408150] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -31095,11 +29418,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_skin_words_extra
-
-	var_5_17[403170] = {
+	pg.base.ship_skin_words_extra[403170] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31162,11 +29481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_skin_words_extra
-
-	var_5_18[401140] = {
+	pg.base.ship_skin_words_extra[401140] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31239,11 +29554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_skin_words_extra
-
-	var_5_19[401150] = {
+	pg.base.ship_skin_words_extra[401150] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31306,11 +29617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_skin_words_extra
-
-	var_5_20[204030] = {
+	pg.base.ship_skin_words_extra[204030] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31378,11 +29685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_skin_words_extra
-
-	var_5_21[202200] = {
+	pg.base.ship_skin_words_extra[202200] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31455,11 +29758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_skin_words_extra
-
-	var_5_22[818010] = {
+	pg.base.ship_skin_words_extra[818010] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31522,11 +29821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_skin_words_extra
-
-	var_5_23[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31594,11 +29889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_skin_words_extra
-
-	var_5_24[801060] = {
+	pg.base.ship_skin_words_extra[801060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31661,11 +29952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_skin_words_extra
-
-	var_5_25[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31733,11 +30020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_skin_words_extra
-
-	var_5_26[201150] = {
+	pg.base.ship_skin_words_extra[201150] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -31795,11 +30078,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_skin_words_extra
-
-	var_5_27[2] = {
+	pg.base.ship_skin_words_extra[2] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -31867,11 +30146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_skin_words_extra
-
-	var_5_28[4] = {
+	pg.base.ship_skin_words_extra[4] = {
 		touch = "",
 		feeling3 = "",
 		win_mvp = "",
@@ -31929,11 +30204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_skin_words_extra
-
-	var_5_29[499110] = {
+	pg.base.ship_skin_words_extra[499110] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -32001,11 +30272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_skin_words_extra
-
-	var_5_30[1299010] = {
+	pg.base.ship_skin_words_extra[1299010] = {
 		feeling3 = "",
 		upgrade = "",
 		expedition = "",
@@ -32073,11 +30340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_skin_words_extra
-
-	var_5_31[299060] = {
+	pg.base.ship_skin_words_extra[299060] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -32145,11 +30408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_skin_words_extra
-
-	var_5_32[399080] = {
+	pg.base.ship_skin_words_extra[399080] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -32212,11 +30471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_skin_words_extra
-
-	var_5_33[899050] = {
+	pg.base.ship_skin_words_extra[899050] = {
 		feeling3 = "",
 		win_mvp = "",
 		upgrade = "",
@@ -32279,11 +30534,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_skin_words_extra
-
-	var_5_34[11700010] = {
+	pg.base.ship_skin_words_extra[11700010] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -32361,8 +30612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-	var_5_34.base.ship_skin_words_extra[11700020] = {
+	pg.base.ship_skin_words_extra[11700020] = {
 		touch = "",
 		feeling3 = "",
 		upgrade = "",
@@ -32432,6 +30682,404 @@ end)()
 			{
 				1100,
 				"与机械生命体的战斗看不到尽头，那与塞壬的战斗会有结束的一天吗……在你们迎来和平之前，我会助你们一臂之力。"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[107200] = {
+		feeling3 = "",
+		upgrade = "",
+		expedition = "",
+		mission = "",
+		id = 107200,
+		skill = "",
+		unlock = "",
+		mail = "",
+		lose = "",
+		feeling4 = "",
+		feeling1 = "",
+		hp_warning = "",
+		main = "",
+		profile = "",
+		mission_complete = "",
+		feeling2 = "",
+		battle = "",
+		login = {
+			{
+				1100,
+				"Hi~指挥官！我正在给今天的阳光质量打分哦……嗯，原本满分十分，现在加上你在身边，我给一百分！"
+			}
+		},
+		win_mvp = {
+			{
+				1100,
+				"Victory！你看我都说会赢啦！没骗你吧！"
+			}
+		},
+		home = {
+			{
+				1100,
+				"快看快看！我刚才拍到了超棒的景色……要是镜头里有你的话，啊——我们去补拍一个吧！现在、立刻、马上▷！"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"唔~可以把墨镜拿下来继续摸吗？和阳光一样舒服呢~"
+			}
+		},
+		detail = {
+			{
+				1100,
+				"我最新的Vlog企划？那可是个超——长期项目哦~名字就叫……《关于指挥官的生活观察日记》，我有决心更新10期……最少100期……啊，得一直更新才行！"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"看我拍到了什么？指挥官高清睡颜！想让我删掉？行啊，答应坐我副驾、陪我去玩儿~嘿嘿，答应了也不删！|指挥官快看！我那个“播放破万就去蹦极”的视频，数据已经爆了！这热度，这话题——要不要陪我一起去表演个终极双人跳？|指挥官，在看我的墨镜吗？我还有很多不同款式哦~快选一副，我们来拍一个双人墨镜的系列Vlog吧！"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"喔哦——偷袭？！那现在该换我来啦！"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"这就等不及了吗？要在这里……继续吗，呵呵~"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"哇——突然发现，最近拍的视频里已经全是指挥官了！不如我的频道改名叫“本宁顿与指挥官的日常”吧~听起来好像真的不错？"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[102360] = {
+		feeling3 = "",
+		win_mvp = "",
+		upgrade = "",
+		expedition = "",
+		mission = "",
+		id = 102360,
+		skill = "",
+		unlock = "",
+		mail = "",
+		lose = "",
+		feeling4 = "",
+		feeling1 = "",
+		hp_warning = "",
+		main = "",
+		profile = "",
+		mission_complete = "",
+		feeling2 = "",
+		battle = "",
+		detail = "",
+		login = {
+			{
+				1100,
+				"锵锵——！指挥官是不是完全没有想到，我会躲在办公桌下等你？听说偶像要以意想不到的方式登场，才最有“节目效果”哦！"
+			}
+		},
+		home = {
+			{
+				1100,
+				"指挥官你回来了~身体有哪里感觉不舒服吗？我听说，只要像这样用舌头舔伤口的话，疼痛就会减轻……有没有感觉好一点点？要是没有的话……我再多试几次？"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"嘿嘿，摸摸四叶草，今天更幸运哦~"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"指挥官喜欢这家店今天的限定菜单？决定了！我要把这家店整个买下来！这样指挥官每天就都能吃到爱吃的菜啦～|最近的生活好充实呀~每天都有新的训练目标和挑战，感觉自己在一点点进步呢！指挥官也一直陪在我身边……真的好幸福~|偶像也有小秘密哦~我的秘密就是……啾~最喜欢指挥官了~！"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"指挥官是感觉冷了吗？快来我的怀里~这样就暖和多了吧？"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"好舒服~接下来，轮到我来让指挥官舒服一下啦~"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"最喜欢指挥官啦——！今天超级喜欢！明天还会更喜欢！我听说，表达爱意时应该要——啵——指挥官……我、我刚刚有没有做对呀……？"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[101560] = {
+		feeling3 = "",
+		win_mvp = "",
+		upgrade = "",
+		expedition = "",
+		mission = "",
+		id = 101560,
+		skill = "",
+		unlock = "",
+		mail = "",
+		lose = "",
+		feeling4 = "",
+		feeling1 = "",
+		hp_warning = "",
+		main = "",
+		profile = "",
+		mission_complete = "",
+		feeling2 = "",
+		battle = "",
+		login = {
+			{
+				1100,
+				"指挥官，检测到你终端上有上百条啾信轰炸和不下十种活动邀请，还都处于处理状态……这样都没死机可真是不可思议。"
+			}
+		},
+		home = {
+			{
+				1100,
+				"欢迎回来……餐点已经送到了哦，快垫垫肚子吧。嗯？为什么时间这么凑巧？……保密。我才没有以权谋私。"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"唔~我大概知道电子猫猫为什么也喜欢被摸脑袋了……好舒服……"
+			}
+		},
+		detail = {
+			{
+				1100,
+				"指挥官……我帮你迭代了个人账号的消息处理方式，现在整理线上消息和文件更方便了……啊，这个是免费的哦，毕竟你是我的指挥官嘛~"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"……养一只可以陪伴在身边的小宠物？我之前倒不是没考虑过……但一想到会遇到很多、很多复杂而繁琐的事就放弃了……|（好好奇指挥官前几天的行动轨迹，要不要再黑进监控看看……但是不太好吧？这可是指挥官的隐私啊……好，顺利黑入监控~♪）|指挥官，我预约了一家很有名的饭店，等工作处理完一起去吃吧？嗯，为了陪指挥官吃饭而出门是必要的……！"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"嗯？我正在刷萌宠视频……你也想看吗？（凑近）一起吧~"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"唔……！偷袭的话，我可能会醒一下下……只有一下下哦……"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"指挥官，宠物们的“家”已经搭好了，现在这里就由我们共同经营了呢~嘿嘿，那我们是不是也该……做点家人之间应该做的事了？"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[101570] = {
+		feeling3 = "",
+		win_mvp = "",
+		upgrade = "",
+		expedition = "",
+		mission = "",
+		id = 101570,
+		skill = "",
+		unlock = "",
+		mail = "",
+		lose = "",
+		feeling4 = "",
+		feeling1 = "",
+		hp_warning = "",
+		main = "",
+		profile = "",
+		mission_complete = "",
+		feeling2 = "",
+		battle = "",
+		detail = "",
+		login = {
+			{
+				1100,
+				"今天也要擦擦脸哦，热乎乎的毛巾来啦~嘿咻~好啦，这样就精神满满了！"
+			}
+		},
+		home = {
+			{
+				1100,
+				"辛苦了，摸摸头哦~桌上放了你最爱的点心，接下来的事情就交给我吧！"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"嘿嘿，指挥官的手最温暖了，要是可以的话……也请抱抱我吧！"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"检查一下……水壶满满，物资满满，对指挥官的爱意也满满，很好，该开始工作啦！|指挥官今天的表现也是超——棒！想要什么奖励吗？嗯……什么样的都可以哟~|有点累了吗？一个满满的拥抱可以恢复精神哦~准备好了吗指挥官？我来了哟~"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"指挥官，今天也做得很棒了哦！"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"呀~果然很喜欢撒娇呢~"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"床单、被套、枕头……指挥官？我在看要采买哪些生活用品啦，想找耐用又合适的，毕竟后面日子还长嘛，嘿嘿……"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[101580] = {
+		feeling3 = "",
+		win_mvp = "",
+		upgrade = "",
+		expedition = "",
+		mission = "",
+		id = 101580,
+		skill = "",
+		unlock = "",
+		mail = "",
+		lose = "",
+		feeling4 = "",
+		feeling1 = "",
+		hp_warning = "",
+		main = "",
+		profile = "",
+		mission_complete = "",
+		feeling2 = "",
+		battle = "",
+		detail = "",
+		login = {
+			{
+				1100,
+				"热毛巾放在那边了，开工之前先洗把脸吧……想要我来帮你擦脸的话，也、也不是不可以……"
+			}
+		},
+		home = {
+			{
+				1100,
+				"已经在外面忙了半天，回来还要接着忙吗……我当然也会心疼了！真是的，要是还这样勉强自己的话，我就不理你了！"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"唔……唔，再摸一下……怎么了，成熟的大人也可以喜欢被摸头吧？"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"虽然指挥官喜欢我现在做的饭菜，但偶尔也会想尝试下新菜式吧？我都想……咳，都想满足你啦！|指挥官……认了吧，我有你昨晚偷偷加班的证据！你再这样我就、就……今晚盯着你直到睡着为止！|今天有空的话就一起去逛逛商场吧，我、我在杂志上看到几件衣服……想让你看看合不合适。"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"真是的，有这种时间就快点把工作做完吧，我还等着跟你出门约会呢！"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"唔啊！至、至少等到回家以后再说吧……"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"我最、最喜欢指挥官了……你还想听我说几遍啦？每天都想听？真是的，那你也得说给我听才行！"
+			}
+		}
+	}
+	pg.base.ship_skin_words_extra[8] = {
+		feeling3 = "",
+		win_mvp = "",
+		upgrade = "",
+		expedition = "",
+		mission = "",
+		id = 202120,
+		skill = "",
+		unlock = "",
+		mail = "",
+		lose = "",
+		feeling4 = "",
+		feeling1 = "",
+		hp_warning = "",
+		main = "",
+		profile = "",
+		mission_complete = "",
+		feeling2 = "",
+		battle = "",
+		login = {
+			{
+				1100,
+				"欢迎回来，我的指挥官。虽然已经逐渐适应了新的身份……但今日，请允许我像往常那般，以女仆的身份在您身旁服侍吧。"
+			}
+		},
+		home = {
+			{
+				1100,
+				"欢迎归来。已经为您准备好了沐浴的热水和美味的茶点，您希望我先陪您享用哪一边呢？"
+			}
+		},
+		headtouch = {
+			{
+				1100,
+				"礼尚往来。那么，也让我为您整理一下发型吧。"
+			}
+		},
+		detail = {
+			{
+				1100,
+				"有什么我能为您做的吗？……只是希望我待在您身旁吗？呵呵，请放心，只要您需要，我会一直在您身边。"
+			}
+		},
+		main_extra = {
+			{
+				1100,
+				"我希望能够成为最理解您的人——这份心愿对我而言，早已不亚于女仆长的职责了呢，呵呵~|您手边的红茶有些凉了呢，我来为您换新的吧。……呵呵，我知道您在工作时会格外投入，已经提前准备好替换的茶水了。|偶尔，我也想让您尝尝我新学的点心呢。这并不是服务，而是……出自私心的分享哦？"
+			}
+		},
+		touch = {
+			{
+				1100,
+				"像这样被触碰时，心跳便会稍稍加快……这就是您想要的反应吗，我的指挥官？"
+			}
+		},
+		touch2 = {
+			{
+				1100,
+				"如果是主人的意愿的话，随时都可以哦？毕竟，贝尔法斯特的一切都早已属于您了。"
+			}
+		},
+		feeling5 = {
+			{
+				1100,
+				"对我而言，守护在您的身边不仅仅是职责，也是我的幸福。所以……请永远不要让我离开您的身旁。"
 			}
 		}
 	}

@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_mall_custom_order") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_mall_custom_order"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_mall_custom_order = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_mall_custom_order
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_mall_custom_order
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.activity_mall_custom_order = rawget(pg, "activity_mall_custom_order") or setmetatable({
+	__name = "activity_mall_custom_order"
+}, confNEO)
+pg.activity_mall_custom_order.__namecode__ = true
+pg.activity_mall_custom_order.all = {
 	1,
 	2,
 	3,
@@ -42,25 +15,11 @@ var_0_4.all = {
 	9,
 	10
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_mall_custom_order = {}
+pg.base = pg.base or {}
+pg.base.activity_mall_custom_order = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_mall_custom_order
-
-	var_1_0[1] = {
+	pg.base.activity_mall_custom_order[1] = {
 		unlock_time = 1,
 		char = 201350,
 		char_name = "雅努斯",
@@ -106,11 +65,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_mall_custom_order
-
-	var_1_1[2] = {
+	pg.base.activity_mall_custom_order[2] = {
 		unlock_time = 1,
 		char = 901070,
 		char_name = "莫加多尔",
@@ -156,11 +111,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			40
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_mall_custom_order
-
-	var_1_2[3] = {
+	pg.base.activity_mall_custom_order[3] = {
 		unlock_time = 1,
 		char = 899010,
 		char_name = "路易九世",
@@ -206,11 +157,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			60
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_mall_custom_order
-
-	var_1_3[4] = {
+	pg.base.activity_mall_custom_order[4] = {
 		unlock_time = 1,
 		char = 408150,
 		char_name = "{namecode:558}",
@@ -256,11 +203,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_mall_custom_order
-
-	var_1_4[5] = {
+	pg.base.activity_mall_custom_order[5] = {
 		unlock_time = 1,
 		char = 402070,
 		char_name = "{namecode:448}",
@@ -306,11 +249,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			120
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_mall_custom_order
-
-	var_1_5[6] = {
+	pg.base.activity_mall_custom_order[6] = {
 		unlock_time = 1,
 		char = 405070,
 		char_name = "{namecode:557}",
@@ -356,11 +295,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			90
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_mall_custom_order
-
-	var_1_6[7] = {
+	pg.base.activity_mall_custom_order[7] = {
 		unlock_time = 1,
 		char = 307150,
 		char_name = "{namecode:161}",
@@ -406,11 +341,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_mall_custom_order
-
-	var_1_7[8] = {
+	pg.base.activity_mall_custom_order[8] = {
 		unlock_time = 2,
 		char = 403170,
 		char_name = "{namecode:559}",
@@ -456,11 +387,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			150
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_mall_custom_order
-
-	var_1_8[9] = {
+	pg.base.activity_mall_custom_order[9] = {
 		unlock_time = 2,
 		char = 499060,
 		char_name = "{namecode:481}",
@@ -501,8 +428,7 @@ var_0_4.base.activity_mall_custom_order = {}
 			160
 		}
 	}
-	pg = var_1_8
-	var_1_8.base.activity_mall_custom_order[10] = {
+	pg.base.activity_mall_custom_order[10] = {
 		unlock_time = 3,
 		char = 401150,
 		char_name = "{namecode:561}",

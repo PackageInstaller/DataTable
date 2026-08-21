@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CrossRoadGameQue")
+﻿local var_0_0 = class("CrossRoadGameQue")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0.hh = 0
@@ -56,10 +54,7 @@ function var_0_0.queryHasVal(arg_6_0, arg_6_1)
 end
 
 function var_0_0.clear(arg_7_0)
-	local var_7_0 = arg_7_0.hh
-	local var_7_1 = arg_7_0.tt
-
-	for iter_7_0 = var_7_0, var_7_1 do
+	for iter_7_0 = arg_7_0.hh, arg_7_0.tt do
 		arg_7_0._q[iter_7_0] = nil
 	end
 

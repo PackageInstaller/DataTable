@@ -1,25 +1,14 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ArchivesWorldBossDetailPage", import(".BaseWorldBossDetailPage"))
 
-local var_0_0 = "ArchivesWorldBossDetailPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BaseWorldBossDetailPage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ArchivesWorldBossDetailUI"
 end
 
-function var_0_1.OnAutoBattleResult(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_1.cnt
-	local var_2_1 = arg_2_1.damage
-	local var_2_2 = arg_2_1.oil
-	local var_2_3 = arg_2_0.autoBattleResultMsg
-
-	var_5.ExecuteAction(var_2_3, "Show", {
-		battleCnt = var_2_0,
-		damage = var_2_1,
-		oil = var_2_2
+function var_0_0.OnAutoBattleResult(arg_2_0, arg_2_1)
+	arg_2_0.autoBattleResultMsg:ExecuteAction("Show", {
+		battleCnt = arg_2_1.cnt,
+		damage = arg_2_1.damage,
+		oil = arg_2_1.oil
 	})
 	arg_2_0:Flush()
 	arg_2_0:UpdatePainting(arg_2_0.groupId)
@@ -27,600 +16,276 @@ function var_0_1.OnAutoBattleResult(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.OnAutoBattleStart(arg_3_0)
+function var_0_0.OnAutoBattleStart(arg_3_0)
 	arg_3_0:Flush()
 	arg_3_0:UpdatePainting(arg_3_0.groupId)
 
 	return
 end
 
-function var_0_1.GetResSuffix(arg_4_0)
+function var_0_0.GetResSuffix(arg_4_0)
 	return "_archives"
 end
 
-function var_0_1.OnLoaded(arg_5_0)
-	var_0_1.super.OnLoaded(arg_5_0)
+function var_0_0.OnLoaded(arg_5_0)
+	var_0_0.super.OnLoaded(arg_5_0)
 
-	local var_5_0 = arg_5_0._tf
-
-	arg_5_0.currProgressTr = var_1.Find(var_5_0, "progress")
-
-	local var_5_1 = arg_5_0._tf
-	local var_5_2 = var_1.Find(var_5_1, "progress/value")
-	local var_5_3 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_5_0.currProgressTxt = var_5_3(var_5_2, var_4(var_1_10006))
-
-	local var_5_4 = arg_5_0._tf
-
-	arg_5_0.listBtn = var_1.Find(var_5_4, "list_btn")
-	ArchivesWorldbossBtn = var_1
-
-	local var_5_5 = var_1.New
-	local var_5_6 = arg_5_0._tf
-
-	arg_5_0.archivesWorldbossBtn = var_5_5(var_3.Find(var_5_6, "archives_btn"), arg_5_0.event)
-
-	local var_5_7 = arg_5_0._tf
-
-	arg_5_0.autoBattleBtn = var_1.Find(var_5_7, "btns/auto_btn")
-
-	local var_5_8 = arg_5_0.autoBattleBtn
-	local var_5_9 = var_1.Find(var_5_8, "Text")
-	local var_5_10 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_6
-	arg_5_0.autoBattleTimeTxt = var_5_10(var_5_9, var_4(var_6))
-
-	local var_5_11 = arg_5_0._tf
-
-	arg_5_0.battleMask = var_1.Find(var_5_11, "battle_mask")
-	ArchivesWorldBossHelpPage = var_1
-	arg_5_0.helpWindow = var_1.New(arg_5_0._parentTf.parent, arg_5_0.event)
-	ArchivesWorldBossAutoBattleTipPage = var_1
-	arg_5_0.autoBattleTip = var_1.New(arg_5_0._parentTf.parent, arg_5_0.event)
-	ArchivesWorldBossAutoBattleMsgbox = var_1
-	arg_5_0.autoBattleMsg = var_1.New(arg_5_0._parentTf.parent, arg_5_0.event)
-	ArchivesWorldBossAutoBattleResultMsg = var_1
-	arg_5_0.autoBattleResultMsg = var_1.New(arg_5_0._parentTf.parent, arg_5_0.event)
+	arg_5_0.currProgressTr = arg_5_0._tf:Find("progress")
+	arg_5_0.currProgressTxt = arg_5_0._tf:Find("progress/value"):GetComponent(typeof(Text))
+	arg_5_0.listBtn = arg_5_0._tf:Find("list_btn")
+	arg_5_0.archivesWorldbossBtn = ArchivesWorldbossBtn.New(arg_5_0._tf:Find("archives_btn"), arg_5_0.event)
+	arg_5_0.autoBattleBtn = arg_5_0._tf:Find("btns/auto_btn")
+	arg_5_0.autoBattleTimeTxt = arg_5_0.autoBattleBtn:Find("Text"):GetComponent(typeof(Text))
+	arg_5_0.battleMask = arg_5_0._tf:Find("battle_mask")
+	arg_5_0.helpWindow = ArchivesWorldBossHelpPage.New(arg_5_0._parentTf.parent, arg_5_0.event)
+	arg_5_0.autoBattleTip = ArchivesWorldBossAutoBattleTipPage.New(arg_5_0._parentTf.parent, arg_5_0.event)
+	arg_5_0.autoBattleMsg = ArchivesWorldBossAutoBattleMsgbox.New(arg_5_0._parentTf.parent, arg_5_0.event)
+	arg_5_0.autoBattleResultMsg = ArchivesWorldBossAutoBattleResultMsg.New(arg_5_0._parentTf.parent, arg_5_0.event)
 
 	return
 end
 
-function var_0_1.OnInit(arg_6_0)
-	var_0_1.super.OnInit(arg_6_0)
-
-	onButton = var_1
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.listBtn
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-		local var_7_1 = var_0.emit
-
-		WorldBossScene = var_2_10003
-
-		local var_7_2 = var_2_10003.ON_SWITCH
-
-		WorldBossScene = var_2_10004
-
-		var_7_1(var_7_0, var_7_2, var_2_10004.PAGE_ARCHIVES_CHALLENGE)
+function var_0_0.OnInit(arg_6_0)
+	var_0_0.super.OnInit(arg_6_0)
+	onButton(arg_6_0, arg_6_0.listBtn, function()
+		arg_6_0:emit(WorldBossScene.ON_SWITCH, WorldBossScene.PAGE_ARCHIVES_CHALLENGE)
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.currProgressTr, function()
+		local var_8_0 = WorldBossConst.GetAchieveBossItemInfo()
 
-	SFX_PANEL = var_1_10006
-
-	var_1(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.currProgressTr
-
-	local function var_6_5()
-		WorldBossConst = var_2_10000
-
-		local var_8_0 = var_2_10000.GetAchieveBossItemInfo()
-
-		pg = var_2_10001
-
-		local var_8_1 = var_2_10001.MsgboxMgr.GetInstance()
-		local var_8_2 = var_1.ShowMsgBox
-		local var_8_3 = {
-			hideNo = true
-		}
-
-		MSGBOX_TYPE_DROP_ITEM = var_2_10005
-		var_8_3.type = var_2_10005
-		var_8_3.name = var_8_0.name
-		var_8_3.content = var_8_0.display
-		var_8_3.iconPath = var_8_0.icon
-		var_8_3.frame = var_8_0.rarity
-
-		var_8_2(var_8_1, var_8_3)
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			hideNo = true,
+			type = MSGBOX_TYPE_DROP_ITEM,
+			name = var_8_0.name,
+			content = var_8_0.display,
+			iconPath = var_8_0.icon,
+			frame = var_8_0.rarity
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onButton = var_1
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0._tf
-	local var_6_8 = var_4.Find(var_6_7, "help")
-
-	local function var_6_9()
-		pg = var_2_10000
-
-		local var_9_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_9_1 = var_0.ShowMsgBox
-		local var_9_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_9_2.type = var_2_10004
-		pg = var_2_10004
-		var_9_2.helps = var_2_10004.gametip.world_archives_boss_help.tip
-
-		var_9_1(var_9_0, var_9_2)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0._tf:Find("help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.world_archives_boss_help.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_6_7
-
-	var_1(var_6_6, var_6_8, var_6_9, var_6_7)
-
-	onButton = var_1
-
-	local var_6_10 = arg_6_0
-	local var_6_11 = arg_6_0.battleMask
-
-	local function var_6_12()
-		triggerButton = var_2_10000
-
-		var_2_10000(arg_6_0.autoBattleBtn)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.battleMask, function()
+		triggerButton(arg_6_0.autoBattleBtn)
 
 		return
-	end
-
-	SFX_PANEL = var_6_7
-
-	var_1(var_6_10, var_6_11, var_6_12, var_6_7)
-
-	onButton = var_1
-
-	local var_6_13 = arg_6_0
-	local var_6_14 = arg_6_0.autoBattleBtn
-
-	local function var_6_15()
-		pg = var_2_10000
-
-		local var_11_0 = var_2_10000.TimeMgr.GetInstance()
-		local var_11_1 = var_0.GetServerTime(var_11_0)
-
-		WorldBossConst = var_2_10001
-
-		local var_11_2 = var_11_1 + var_2_10001.GetArchivesBossAutoBattleSecond()
-		local var_11_3 = arg_6_0.boss
-		local var_11_5
-
-		if var_1.GetExpiredTime(var_11_3) < var_11_2 then
-			pg = var_11_5
-
-			local var_11_4 = var_11_5.TipsMgr.GetInstance()
-
-			var_11_5 = var_11_5.ShowTips
-			i18n = var_2_10004
-
-			var_11_5(var_11_4, var_2_10004("world_no_time_to_auto_battle"))
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.autoBattleBtn, function()
+		if pg.TimeMgr.GetInstance():GetServerTime() + WorldBossConst.GetArchivesBossAutoBattleSecond() > arg_6_0.boss:GetExpiredTime() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_no_time_to_auto_battle"))
 
 			return
 		end
 
-		WorldBossConst = var_11_5
+		local var_11_0 = WorldBossConst.GetAutoBattleState(arg_6_0.boss)
 
-		local var_11_6 = var_11_5.GetAutoBattleState(arg_6_0.boss)
-
-		WorldBossConst = var_11_0
-
-		local var_11_7
-
-		if var_11_6 == var_11_0.AUTO_BATTLE_STATE_STARTING then
-			var_2_10004 = arg_6_0.autoBattleMsg
-			var_11_7 = var_11_7.ExecuteAction
-			var_2_10005 = "Show"
-
-			local var_11_8 = {
+		if var_11_0 == WorldBossConst.AUTO_BATTLE_STATE_STARTING then
+			arg_6_0.autoBattleMsg:ExecuteAction("Show", {
 				onContent = function()
-					WorldBossConst = var_3_10000
+					local var_12_0 = WorldBossConst.GetAutoBattleLeftTime()
 
-					if var_3_10000.GetAutoBattleLeftTime() <= 0 then
+					if var_12_0 <= 0 then
 						return nil
 					end
 
-					pg = var_1
+					local var_12_1 = pg.TimeMgr.GetInstance()
 
-					local var_12_0 = var_1.TimeMgr.GetInstance()
+					return (var_12_1:DescCDTime(var_12_0))
+				end,
+				title = i18n("world_boss_archives_stop_auto_battle_title"),
+				yesText = i18n("world_boss_archives_continue_auto_battle"),
+				noText = i18n("world_boss_archives_stop_auto_battle"),
+				onNo = function()
+					arg_6_0:emit(WorldBossMediator.ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE, arg_6_0.boss.id)
 
-					return (var_1.DescCDTime(var_12_0, var_0))
+					return
 				end
-			}
-
-			i18n = var_7
-			var_11_8.title = var_7("world_boss_archives_stop_auto_battle_title")
-			i18n = var_7
-			var_11_8.yesText = var_7("world_boss_archives_continue_auto_battle")
-			i18n = var_7
-			var_11_8.noText = var_7("world_boss_archives_stop_auto_battle")
-
-			function var_11_8.onNo()
-				local var_13_0 = arg_6_0
-				local var_13_1 = var_0.emit
-
-				WorldBossMediator = var_3_10003
-
-				var_13_1(var_13_0, var_3_10003.ON_ARCHIVES_BOSS_STOP_AUTO_BATTLE, arg_6_0.boss.id)
+			})
+		elseif var_11_0 == WorldBossConst.AUTO_BATTLE_STATE_HIDE then
+			pg.TipsMgr.GetInstance():ShowTip(i18n("world_word_expired"))
+		elseif var_11_0 == WorldBossConst.AUTO_BATTLE_STATE_LOCK then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_archives_auto_battle_unopen"))
+		else
+			({}).highestDamage = WorldBossConst.GetHighestDamage()
+			;({}).autoBattleCnt = WorldBossConst.GetAutoBattleCnt()
+			;({}).oil = WorldBossConst.GetAutoBattleOilConsume()
+			;({}).time = WorldBossConst.GetArchivesBossAutoBattleMinute()
+			;({}).onYes = function()
+				arg_6_0:emit(WorldBossMediator.ON_ARCHIVES_BOSS_AUTO_BATTLE, arg_6_0.boss.id)
 
 				return
 			end
 
-			var_11_7(var_2_10004, var_2_10005, var_11_8)
-		else
-			WorldBossConst = var_11_7
-
-			local var_11_9
-
-			if var_11_6 == var_11_7.AUTO_BATTLE_STATE_HIDE then
-				pg = var_11_9
-				var_2_10004 = var_11_9.TipsMgr.GetInstance()
-				var_11_9 = var_11_9.ShowTip
-				i18n = var_2_10005
-
-				var_11_9(var_2_10004, var_2_10005("world_word_expired"))
-			else
-				WorldBossConst = var_11_9
-
-				local var_11_10
-
-				if var_11_6 == var_11_9.AUTO_BATTLE_STATE_LOCK then
-					pg = var_11_10
-					var_2_10004 = var_11_10.TipsMgr.GetInstance()
-					var_11_10 = var_11_10.ShowTips
-					i18n = var_2_10005
-
-					var_11_10(var_2_10004, var_2_10005("world_boss_archives_auto_battle_unopen"))
-				else
-					WorldBossConst = var_11_10
-
-					local var_11_11 = var_11_10.GetHighestDamage()
-
-					WorldBossConst = var_3
-
-					local var_11_12 = var_3.GetAutoBattleCnt()
-
-					WorldBossConst = var_2_10004
-
-					local var_11_13 = var_2_10004.GetAutoBattleOilConsume()
-
-					WorldBossConst = var_2_10005
-
-					local var_11_14 = var_2_10005.GetArchivesBossAutoBattleMinute()
-					local var_11_15 = arg_6_0.autoBattleTip
-
-					var_6.ExecuteAction(var_11_15, "Show", {
-						highestDamage = var_11_11,
-						autoBattleCnt = var_11_12,
-						oil = var_11_13,
-						time = var_11_14,
-						onYes = function()
-							local var_14_0 = arg_6_0
-							local var_14_1 = var_0.emit
-
-							WorldBossMediator = var_3_10003
-
-							var_14_1(var_14_0, var_3_10003.ON_ARCHIVES_BOSS_AUTO_BATTLE, arg_6_0.boss.id)
-
-							return
-						end
-					})
-				end
-			end
+			arg_6_0.autoBattleTip:ExecuteAction("Show", {})
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_6_7
-
-	var_1(var_6_13, var_6_14, var_6_15, var_6_7)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnStart(arg_15_0)
-	nowWorld = var_1_10001
-
-	local var_15_0 = var_1_10001()
-	local var_15_1 = var_1.GetBossProxy(var_15_0)
-
-	if var_1.InAutoBattle(var_15_1) then
-		pg = var_1
-
-		local var_15_2 = var_1.TipsMgr.GetInstance()
-		local var_15_3 = var_1.ShowTips
-
-		i18n = var_1_10004
-
-		var_15_3(var_15_2, var_1_10004("world_boss_archives_need_stop_auto_battle"))
+function var_0_0.OnStart(arg_15_0)
+	if nowWorld():GetBossProxy():InAutoBattle() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("world_boss_archives_need_stop_auto_battle"))
 
 		return
 	end
 
-	var_0_1.super.OnStart(arg_15_0)
+	var_0_0.super.OnStart(arg_15_0)
 
 	return
 end
 
-function var_0_1.OnRescue(arg_16_0)
+function var_0_0.OnRescue(arg_16_0)
 	if arg_16_0.helpWindow then
-		local var_16_0 = arg_16_0.helpWindow
-
-		var_1.ExecuteAction(var_16_0, "Update", arg_16_0.boss)
+		arg_16_0.helpWindow:ExecuteAction("Update", arg_16_0.boss)
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateRes(arg_17_0)
+function var_0_0.OnUpdateRes(arg_17_0)
 	if not arg_17_0.currProgressTxt then
 		return
 	end
 
-	WorldBossConst = var_1
+	local var_17_0, var_17_1, var_17_2 = WorldBossConst.GetAchieveBossConsume()
 
-	local var_17_0, var_17_1, var_17_2 = var_1.GetAchieveBossConsume()
-
-	WorldBossConst = var_1_10004
-
-	local var_17_3 = var_1_10004.GetAchieveBossItemProgress()
-
-	arg_17_0.currProgressTxt.text = var_17_3 .. "/" .. var_17_2
+	arg_17_0.currProgressTxt.text = WorldBossConst.GetAchieveBossItemProgress() .. "/" .. var_17_2
 
 	return
 end
 
-function var_0_1.UpdateMainInfo(arg_18_0)
-	var_0_1.super.UpdateMainInfo(arg_18_0)
+function var_0_0.UpdateMainInfo(arg_18_0)
+	var_0_0.super.UpdateMainInfo(arg_18_0)
 
-	local var_18_0 = arg_18_0.boss
-	local var_18_1 = var_1.GetHP(var_18_0)
-	local var_18_2 = var_1:GetMaxHp()
-
-	arg_18_0.levelTxt.text = var_1:GetLevel()
-	arg_18_0.hpTxt.text = var_18_1 .. "/<color=#CF4E24>" .. var_18_2 .. "</color>"
+	arg_18_0.levelTxt.text = arg_18_0.boss:GetLevel()
+	arg_18_0.hpTxt.text = arg_18_0.boss:GetHP() .. "/<color=#CF4E24>" .. arg_18_0.boss:GetMaxHp() .. "</color>"
 
 	return
 end
 
-function var_0_1.OnPaintingLoad(arg_19_0)
-	local var_19_0 = arg_19_0.painting
-	local var_19_1 = var_1.Find(var_19_0, "fitter").childCount
+function var_0_0.OnPaintingLoad(arg_19_0)
+	local var_19_0 = arg_19_0.painting:Find("fitter")
 
-	if 0 < var_19_1 then
-		local var_19_2 = var_1
-		local var_19_3 = var_1.GetChild(var_19_2, 0)
+	if var_19_0.childCount > 0 then
+		local var_19_1 = WorldBossConst.GetAutoBattleState(arg_19_0.boss) == WorldBossConst.AUTO_BATTLE_STATE_STARTING
+		local var_19_2 = GetOrAddComponent(var_19_0:GetChild(0), typeof(Gradient))
 
-		WorldBossConst = var_3
-
-		local var_19_4 = var_3.GetAutoBattleState(arg_19_0.boss)
-
-		WorldBossConst = var_19_2
-
-		local var_19_5 = var_19_4 == var_19_2.AUTO_BATTLE_STATE_STARTING
-
-		GetOrAddComponent = var_5
-
-		local var_19_6 = var_19_3
-
-		typeof = var_1_10008
-		Gradient = var_1_10010
-
-		if var_5(var_19_6, var_1_10008(var_1_10010)) then
-			var_5.enabled = var_19_5
+		if var_19_2 then
+			var_19_2.enabled = var_19_1
 		end
 	end
 
 	return
 end
 
-function var_0_1.Show(arg_20_0)
-	var_0_1.super.Show(arg_20_0)
+function var_0_0.Show(arg_20_0)
+	var_0_0.super.Show(arg_20_0)
 	arg_20_0:Flush()
 
 	return
 end
 
-function var_0_1.OnBossExpired(arg_21_0)
-	WorldBossConst = var_1_10001
-
-	local var_21_0 = var_1_10001.GetAutoBattleState(arg_21_0.boss)
-
-	WorldBossConst = var_1_10002
-
-	if var_21_0 == var_1_10002.AUTO_BATTLE_STATE_STARTING then
-		WorldBossConst = var_2
-
-		if var_2.GetAutoBattleLeftTime() <= 0 then
-			local var_21_1 = arg_21_0
-			local var_21_2 = arg_21_0.emit
-
-			WorldBossMediator = var_1_10005
-
-			var_21_2(var_21_1, var_1_10005.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, arg_21_0.boss.id)
+function var_0_0.OnBossExpired(arg_21_0)
+	if WorldBossConst.GetAutoBattleState(arg_21_0.boss) == WorldBossConst.AUTO_BATTLE_STATE_STARTING then
+		if WorldBossConst.GetAutoBattleLeftTime() <= 0 then
+			arg_21_0:emit(WorldBossMediator.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, arg_21_0.boss.id)
 		end
 
 		return
 	end
 
-	local var_21_3 = arg_21_0
-	local var_21_4 = arg_21_0.emit
-
-	WorldBossMediator = var_1_10005
-
-	var_21_4(var_21_3, var_1_10005.ON_SELF_BOSS_OVERTIME)
+	arg_21_0:emit(WorldBossMediator.ON_SELF_BOSS_OVERTIME)
 
 	return
 end
 
-function var_0_1.Flush(arg_22_0)
-	local var_22_0 = arg_22_0.archivesWorldbossBtn
+function var_0_0.Flush(arg_22_0)
+	arg_22_0.archivesWorldbossBtn:Flush()
 
-	var_1.Flush(var_22_0)
-
-	WorldBossConst = var_1
-
-	local var_22_1 = var_1.GetAutoBattleState(arg_22_0.boss)
-	local var_22_2 = arg_22_0.autoBattleBtn
-	local var_22_3 = var_2.GetComponent
-
-	typeof = var_1_10005
-	Image = var_1_10007
-
-	local var_22_4 = var_22_3(var_22_2, var_1_10005(var_1_10007))
+	local var_22_0 = WorldBossConst.GetAutoBattleState(arg_22_0.boss)
+	local var_22_1 = arg_22_0.autoBattleBtn:GetComponent(typeof(Image))
 
 	arg_22_0:RemoveBattleTimer()
-
-	setActive = var_3
-
-	var_3(arg_22_0.battleMask, false)
+	setActive(arg_22_0.battleMask, false)
 
 	arg_22_0.autoBattleTimeTxt.text = ""
 
-	local var_22_5
+	local var_22_2
 
-	WorldBossConst = var_4
+	if var_22_0 == WorldBossConst.AUTO_BATTLE_STATE_LOCK then
+		var_22_2 = "auto_03"
+	elseif var_22_0 == WorldBossConst.AUTO_BATTLE_STATE_STARTING then
+		var_22_2 = "auto_02"
 
-	if var_22_1 == var_4.AUTO_BATTLE_STATE_LOCK then
-		var_22_5 = "auto_03"
+		arg_22_0:AddBattleTimer()
+		setActive(arg_22_0.battleMask, true)
 	else
-		WorldBossConst = var_4
-
-		if var_22_1 == var_4.AUTO_BATTLE_STATE_STARTING then
-			var_22_5 = "auto_02"
-
-			arg_22_0:AddBattleTimer()
-
-			setActive = var_4
-
-			var_4(arg_22_0.battleMask, true)
-		else
-			var_22_5 = "auto_01"
-		end
+		var_22_2 = "auto_01"
 	end
 
-	GetSpriteFromAtlasAsync = var_4
-
-	var_4("ui/WorldBossUI_atlas", var_22_5, function(arg_23_0)
-		var_22_4.sprite = arg_23_0
+	GetSpriteFromAtlasAsync("ui/WorldBossUI_atlas", var_22_2, function(arg_23_0)
+		var_22_1.sprite = arg_23_0
 
 		return
 	end)
-
-	setActive = var_4
-
-	local var_22_6 = arg_22_0.autoBattleBtn
-
-	WorldBossConst = var_7
-
-	var_4(var_22_6, var_22_1 ~= var_7.AUTO_BATTLE_STATE_HIDE)
-
-	setGray = var_4
-
-	local var_22_7 = arg_22_0.startBtn
-
-	WorldBossConst = var_7
-
-	var_4(var_22_7, var_7.AUTO_BATTLE_STATE_STARTING == var_22_1, true)
+	setActive(arg_22_0.autoBattleBtn, var_22_0 ~= WorldBossConst.AUTO_BATTLE_STATE_HIDE)
+	setGray(arg_22_0.startBtn, WorldBossConst.AUTO_BATTLE_STATE_STARTING == var_22_0, true)
 
 	return
 end
 
-function var_0_1.AddBattleTimer(arg_24_0)
-	local var_24_0 = arg_24_0.boss
-
-	if var_1.IsExpired(var_24_0) then
+function var_0_0.AddBattleTimer(arg_24_0)
+	if arg_24_0.boss:IsExpired() then
 		return
 	end
 
-	WorldBossConst = var_1
-
-	local var_24_2
-
-	if var_1.GetAutoBattleLeftTime() <= 0 then
-		local var_24_1 = arg_24_0
-
-		var_24_2 = arg_24_0.emit
-		WorldBossMediator = var_1_10004
-
-		var_24_2(var_24_1, var_1_10004.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, arg_24_0.boss.id)
+	if WorldBossConst.GetAutoBattleLeftTime() <= 0 then
+		arg_24_0:emit(WorldBossMediator.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, arg_24_0.boss.id)
 
 		return
 	end
 
-	Timer = var_24_2
-	arg_24_0.timer = var_24_2.New(function()
-		WorldBossConst = var_2_10000
+	arg_24_0.timer = Timer.New(function()
+		local var_25_0 = WorldBossConst.GetAutoBattleLeftTime()
 
-		if var_2_10000.GetAutoBattleLeftTime() < 0 then
-			local var_25_0 = arg_24_0
-
-			var_1.RemoveBattleTimer(var_25_0)
+		if var_25_0 < 0 then
+			arg_24_0:RemoveBattleTimer()
 
 			arg_24_0.autoBattleTimeTxt.text = ""
 		end
 
-		if var_0 < 0 and arg_24_0.boss then
-			local var_25_1 = arg_24_0
-			local var_25_2 = var_1.emit
-
-			WorldBossMediator = var_2_10004
-
-			var_25_2(var_25_1, var_2_10004.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, arg_24_0.boss.id)
+		if var_25_0 < 0 and arg_24_0.boss then
+			arg_24_0:emit(WorldBossMediator.ON_ARCHIVES_BOSS_AUTO_BATTLE_TIMEOVER, arg_24_0.boss.id)
 		else
-			local var_25_3 = arg_24_0.autoBattleTimeTxt
+			local var_25_1 = arg_24_0.autoBattleTimeTxt
 
-			pg = var_2_10002
-
-			local var_25_4 = var_2_10002.TimeMgr.GetInstance()
-
-			var_25_3.text = var_2.DescCDTime(var_25_4, var_0)
+			var_25_1.text = pg.TimeMgr.GetInstance():DescCDTime(var_25_0)
 		end
 
 		return
 	end, 1, -1)
 
 	arg_24_0.timer.func()
-
-	local var_24_3 = arg_24_0.timer
-
-	var_1.Start(var_24_3)
+	arg_24_0.timer:Start()
 
 	return
 end
 
-function var_0_1.RemoveBattleTimer(arg_26_0)
+function var_0_0.RemoveBattleTimer(arg_26_0)
 	if arg_26_0.timer then
-		local var_26_0 = arg_26_0.timer
-
-		var_1.Stop(var_26_0)
+		arg_26_0.timer:Stop()
 
 		arg_26_0.timer = nil
 	end
@@ -628,72 +293,48 @@ function var_0_1.RemoveBattleTimer(arg_26_0)
 	return
 end
 
-function var_0_1.Hide(arg_27_0)
-	var_0_1.super.Hide(arg_27_0)
+function var_0_0.Hide(arg_27_0)
+	var_0_0.super.Hide(arg_27_0)
 	arg_27_0:RemoveBattleTimer()
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_28_0)
-	local var_28_0 = arg_28_0.painting
-	local var_28_1 = var_1.Find(var_28_0, "fitter")
+function var_0_0.OnDestroy(arg_28_0)
+	local var_28_0 = arg_28_0.painting:Find("fitter"):GetChild(0)
 
-	if var_1.GetChild(var_28_1, 0) then
-		local var_28_2 = var_1
-		local var_28_3 = var_1.GetComponent
-
-		typeof = var_1_10005
-		Gradient = var_1_10007
-
-		if var_28_3(var_28_2, var_1_10005(var_1_10007)) then
-			local var_28_4 = var_1
-			local var_28_5 = var_1.GetComponent
-
-			typeof = var_5
-			Gradient = var_1_10007
-			var_28_5(var_28_4, var_5(var_1_10007)).enabled = false
-		end
+	if var_28_0 and var_28_0:GetComponent(typeof(Gradient)) then
+		var_28_0:GetComponent(typeof(Gradient)).enabled = false
 	end
 
-	var_0_1.super.OnDestroy(arg_28_0)
+	var_0_0.super.OnDestroy(arg_28_0)
 
 	if arg_28_0.helpWindow then
-		local var_28_6 = arg_28_0.helpWindow
-
-		var_2.Destroy(var_28_6)
+		arg_28_0.helpWindow:Destroy()
 
 		arg_28_0.helpWindow = nil
 	end
 
 	if arg_28_0.autoBattleTip then
-		local var_28_7 = arg_28_0.autoBattleTip
-
-		var_2.Destroy(var_28_7)
+		arg_28_0.autoBattleTip:Destroy()
 
 		arg_28_0.autoBattleTip = nil
 	end
 
 	if arg_28_0.autoBattleMsg then
-		local var_28_8 = arg_28_0.autoBattleMsg
-
-		var_2.Destroy(var_28_8)
+		arg_28_0.autoBattleMsg:Destroy()
 
 		arg_28_0.autoBattleMsg = nil
 	end
 
 	if arg_28_0.archivesWorldbossBtn then
-		local var_28_9 = arg_28_0.archivesWorldbossBtn
-
-		var_2.Dispose(var_28_9)
+		arg_28_0.archivesWorldbossBtn:Dispose()
 
 		arg_28_0.archivesWorldbossBtn = nil
 	end
 
 	if arg_28_0.autoBattleResultMsg then
-		local var_28_10 = arg_28_0.autoBattleResultMsg
-
-		var_2.Destroy(var_28_10)
+		arg_28_0.autoBattleResultMsg:Destroy()
 
 		arg_28_0.autoBattleResultMsg = nil
 	end
@@ -701,4 +342,4 @@ function var_0_1.OnDestroy(arg_28_0)
 	return
 end
 
-return var_0_1
+return var_0_0

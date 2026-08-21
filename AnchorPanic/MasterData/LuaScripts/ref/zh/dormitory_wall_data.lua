@@ -36,6 +36,24 @@ local dormitory_wall_data=
 	[17243]={ front="dormitory_113_01_wall_a", back="dormitory_113_01_wall_b", left="dormitory_113_01_wall_c", right="dormitory_113_01_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
 },
 	[17250]={ front="dormitory_114_01_wall_a", back="dormitory_114_01_wall_b", left="dormitory_114_01_wall_c", right="dormitory_114_01_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17286]={ front="dormitory_115_02_qiangmian_a", back="dormitory_115_02_qiangmian_b", left="dormitory_115_02_qiangmian_c", right="dormitory_115_02_qiangmian_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17291]={ front="dormitory_116_04_wall_a", back="dormitory_116_04_wall_b", left="dormitory_116_04_wall_c", right="dormitory_116_04_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17310]={ front="dormitory_117_02_wall_a", back="dormitory_117_02_wall_b", left="dormitory_117_02_wall_c", right="dormitory_117_02_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17327]={ front="dormitory_118_wall_a", back="dormitory_118_wall_b", left="dormitory_118_wall_c", right="dormitory_118_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17346]={ front="dormitory_119_01_wall_a", back="dormitory_119_01_wall_b", left="dormitory_119_01_wall_c", right="dormitory_119_01_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17363]={ front="dormitory_120_01_wall_a", back="dormitory_120_01_wall_b", left="dormitory_120_01_wall_c", right="dormitory_120_01_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17382]={ front="dormitory_121_wall_a", back="dormitory_121_wall_b", left="dormitory_121_wall_c", right="dormitory_121_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17401]={ front="dormitory_122_01_wall_a", back="dormitory_122_01_wall_b", left="dormitory_122_wall_c", right="dormitory_122_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
+},
+	[17429]={ front="dormitory_125_05_wall_a", back="dormitory_125_05_wall_b", left="dormitory_125_05_wall_c", right="dormitory_125_05_wall_d", door="dormitory_empty_door", col=26, wall_id=3, door_width=18, door_deep=2, door_height=15
 }
 }
 

@@ -1,17 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandPathFinder", import("..IslandBaseUnit"))
 
-local var_0_0 = "IslandPathFinder"
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..IslandBaseUnit"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
-
-	local var_1_0 = arg_1_0:GetView()
-
-	arg_1_0.unitList = var_2.GetAllUnits(var_1_0)
+	arg_1_0.unitList = arg_1_0:GetView():GetAllUnits()
 	arg_1_0.starting = false
 
 	arg_1_0:Init()
@@ -19,60 +11,38 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.Start(arg_2_0, arg_2_1, arg_2_2)
-	BuildVector3 = var_1_10003
+function var_0_0.Start(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_1.unitId or 0
+	local var_2_1 = arg_2_1.speed or 1.5
+	local var_2_2 = arg_2_1.unitType or IslandConst.UNIT_LIST_OBJ
 
-	local var_2_0 = var_1_10003(arg_2_1.position)
-	local var_2_1
+	arg_2_0.hideFlag = defaultValue(arg_2_1.hide, false)
 
-	if not arg_2_1.unitId then
-		var_2_1 = 0
-	end
+	local var_2_3 = arg_2_0:FindUnit(var_2_0, var_2_2)
 
-	local var_2_2
-
-	if not arg_2_1.speed then
-		var_2_2 = 1.5
-	end
-
-	local var_2_3
-
-	if not arg_2_1.unitType then
-		IslandConst = var_2_3
-		var_2_3 = var_2_3.UNIT_LIST_OBJ
-	end
-
-	defaultValue = var_1_10007
-	arg_2_0.hideFlag = var_1_10007(arg_2_1.hide, false)
-
-	if not arg_2_0:FindUnit(var_2_1, var_2_3) then
-		onNextTick = var_1_10008
-
-		var_1_10008(arg_2_2)
+	if not var_2_3 then
+		onNextTick(arg_2_2)
 
 		return
 	end
 
-	var_7:Enable()
-	var_7:WarpAgent()
+	var_2_3:Enable()
+	var_2_3:WarpAgent()
+	assert(var_2_3, "unit is nil" .. var_2_0)
 
-	assert = var_8
-
-	var_8(var_7, "unit is nil" .. var_2_1)
-
-	arg_2_0.unit = var_7
+	arg_2_0.unit = var_2_3
 	arg_2_0.callback = arg_2_2
 
-	var_7:SetNavAgentStopDistance(0.26)
-	var_7:SetDestination(var_2_0, var_2_2, arg_2_1.radius, arg_2_1.charaRadius)
-	var_7:CheckMovement()
+	var_2_3:SetNavAgentStopDistance(0.26)
+	var_2_3:SetDestination(BuildVector3(arg_2_1.position), var_2_1, arg_2_1.radius, arg_2_1.charaRadius)
+	var_2_3:CheckMovement()
 
 	arg_2_0.starting = true
 
 	return
 end
 
-function var_0_1.IsSameUnit(arg_3_0, arg_3_1)
+function var_0_0.IsSameUnit(arg_3_0, arg_3_1)
 	if not arg_3_0.unit then
 		return false
 	end
@@ -80,14 +50,12 @@ function var_0_1.IsSameUnit(arg_3_0, arg_3_1)
 	return arg_3_1.id == arg_3_0.unit.id and arg_3_1.unitType == arg_3_0.unit.unitType
 end
 
-function var_0_1.FindUnit(arg_4_0, arg_4_1, arg_4_2)
+function var_0_0.FindUnit(arg_4_0, arg_4_1, arg_4_2)
 	if arg_4_1 == 0 then
 		return arg_4_0:GetView().player
 	end
 
-	ipairs = var_1_10003
-
-	for iter_4_0, iter_4_1 in var_1_10003(arg_4_0.unitList) do
+	for iter_4_0, iter_4_1 in ipairs(arg_4_0.unitList) do
 		if iter_4_1:GetUnitType() == arg_4_2 and iter_4_1.id == arg_4_1 then
 			return iter_4_1
 		end
@@ -96,31 +64,26 @@ function var_0_1.FindUnit(arg_4_0, arg_4_1, arg_4_2)
 	return nil
 end
 
-function var_0_1.OnUpdate(arg_5_0)
+function var_0_0.OnUpdate(arg_5_0)
 	if not arg_5_0.starting then
 		return
 	end
 
-	if not arg_5_0.unit.agent.pathPending and var_2.remainingDistance <= var_2.stoppingDistance then
+	local var_5_0 = arg_5_0.unit.agent
+
+	if not arg_5_0.unit.agent.pathPending and var_5_0.remainingDistance <= var_5_0.stoppingDistance then
 		arg_5_0:EndAction()
 	end
 
 	return
 end
 
-function var_0_1.EndAction(arg_6_0)
-	local var_6_0 = arg_6_0.unit
-
-	var_1.SetNavAgentStopDistance(var_6_0, 2)
-
-	local var_6_1 = arg_6_0.unit
-
-	var_1.StopMove(var_6_1)
+function var_0_0.EndAction(arg_6_0)
+	arg_6_0.unit:SetNavAgentStopDistance(2)
+	arg_6_0.unit:StopMove()
 
 	if arg_6_0.hideFlag then
-		local var_6_2 = arg_6_0.unit
-
-		var_1.Disable(var_6_2)
+		arg_6_0.unit:Disable()
 	end
 
 	arg_6_0.callback()
@@ -130,13 +93,13 @@ function var_0_1.EndAction(arg_6_0)
 	return
 end
 
-function var_0_1.Stop(arg_7_0)
+function var_0_0.Stop(arg_7_0)
 	arg_7_0:EndAction()
 
 	return
 end
 
-function var_0_1.OnDispose(arg_8_0)
+function var_0_0.OnDispose(arg_8_0)
 	arg_8_0.starting = nil
 	arg_8_0.callback = nil
 	arg_8_0.unitList = nil
@@ -144,4 +107,4 @@ function var_0_1.OnDispose(arg_8_0)
 	return
 end
 
-return var_0_1
+return var_0_0

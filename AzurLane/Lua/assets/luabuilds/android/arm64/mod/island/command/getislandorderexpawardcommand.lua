@@ -1,72 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GetIslandOrderExpAwardCommand", pm.SimpleCommand)
 
-local var_0_0 = "GetIslandOrderExpAwardCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.level
+	local var_1_2 = var_1_0.callback
+	local var_1_3 = getProxy(IslandProxy):GetIsland():GetOrderAgency()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().level
-	local var_1_1 = var_2.callback
-
-	getProxy = var_1_10005
-	IslandProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-	local var_1_3 = var_5.GetIsland(var_1_2)
-	local var_1_4 = var_5.GetOrderAgency(var_1_3)
-	local var_1_6
-
-	if not var_5.CanGetAward(var_1_4, var_1_0) then
-		pg = var_1_6
-
-		local var_1_5 = var_1_6.TipsMgr.GetInstance()
-
-		var_1_6 = var_1_6.ShowTips
-		i18n = var_9
-
-		var_1_6(var_1_5, var_9("island_order_not_get_award"))
+	if not getProxy(IslandProxy):GetIsland():GetOrderAgency():CanGetAward(var_1_0.level) then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("island_order_not_get_award"))
 
 		return
 	end
 
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_7, 21412, {
-		lv = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(21412, {
+		lv = var_1_0.level
 	}, 21413, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_1.UpdateGotAwardList(var_2_0, var_1_0)
-
-			IslandDropHelper = var_2_1
-			var_2_1 = var_2_1.AddItems(arg_2_0)
-			var_2_10004 = arg_1_0
-
-			local var_2_2 = var_2.sendNotification
-
-			GAME = var_2_10005
-
-			var_2_2(var_2_10004, var_2_10005.ISLAND_GET_ORDER_EXP_AWARD_DONE, {
-				dropData = var_2_1,
-				callback = var_1_1,
-				level = var_1_0
+			var_1_3:UpdateGotAwardList(var_1_1)
+			arg_1_0:sendNotification(GAME.ISLAND_GET_ORDER_EXP_AWARD_DONE, {
+				dropData = IslandDropHelper.AddItems(arg_2_0),
+				callback = var_1_2,
+				level = var_1_1
 			})
 		else
-			pg = var_2_1
-
-			local var_2_3 = var_2_1.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -75,4 +32,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

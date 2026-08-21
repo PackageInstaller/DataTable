@@ -1,108 +1,53 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CityRebuildMapMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "CityRebuildMapMediator"
+var_0_0.GET_DATA = "CityRebuildMapMediator.GET_DATA"
+var_0_0.OPEN_BOOK = "CityRebuildMapMediator.OPEN_BOOK"
+var_0_0.OPEN_BATTLE = "CityRebuildMapMediator.OPEN_BATTLE"
+var_0_0.OPEN_STORY = "CityRebuildMapMediator.OPEN_STORY"
+var_0_0.OPEN_TASKS = "CityRebuildMapMediator.OPEN_TASKS"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.GET_DATA = "CityRebuildMapMediator.GET_DATA"
-var_0_1.OPEN_BOOK = "CityRebuildMapMediator.OPEN_BOOK"
-var_0_1.OPEN_BATTLE = "CityRebuildMapMediator.OPEN_BATTLE"
-var_0_1.OPEN_STORY = "CityRebuildMapMediator.OPEN_STORY"
-var_0_1.OPEN_TASKS = "CityRebuildMapMediator.OPEN_TASKS"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GET_DATA, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		local var_2_2 = var_2_10005.CITY_REBUILD
-		local var_2_3 = {}
-
-		CityRebuildProxy = var_2_10007
-		var_2_3.operation = var_2_10007.GET_DATA
-		var_2_3.activityId = arg_2_1
-
-		var_2_1(var_2_0, var_2_2, var_2_3)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GET_DATA, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.CITY_REBUILD, {
+			operation = CityRebuildProxy.GET_DATA,
+			activityId = arg_2_1
+		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_BOOK, function(arg_3_0, arg_3_1, arg_3_2)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_3.addSubLayers
-
-		Context = var_2_10006
-
-		local var_3_2 = var_2_10006.New
-		local var_3_3 = {}
-
-		CityRebuildBookMediator = var_2_10009
-		var_3_3.mediator = var_2_10009
-		CityRebuildBookLayer = var_2_10009
-		var_3_3.viewComponent = var_2_10009
-		var_3_3.data = {
-			page = arg_3_1,
-			showId = arg_3_2
-		}
-
-		var_3_1(var_3_0, var_3_2(var_3_3))
+	arg_1_0:bind(var_0_0.OPEN_BOOK, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = CityRebuildBookMediator,
+			viewComponent = CityRebuildBookLayer,
+			data = {
+				page = arg_3_1,
+				showId = arg_3_2
+			}
+		}))
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_TASKS, function(arg_4_0)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_1.addSubLayers
-
-		Context = var_2_10004
-
-		local var_4_2 = var_2_10004.New
-		local var_4_3 = {}
-
-		CityRebuildTasksMediator = var_2_10007
-		var_4_3.mediator = var_2_10007
-		CityRebuildTasksLayer = var_2_10007
-		var_4_3.viewComponent = var_2_10007
-
-		var_4_1(var_4_0, var_4_2(var_4_3))
+	arg_1_0:bind(var_0_0.OPEN_TASKS, function(arg_4_0)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = CityRebuildTasksMediator,
+			viewComponent = CityRebuildTasksLayer
+		}))
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_BATTLE, function(arg_5_0)
-		local var_5_0 = arg_1_0
-		local var_5_1 = var_1.addSubLayers
-
-		Context = var_2_10004
-
-		local var_5_2 = var_2_10004.New
-		local var_5_3 = {}
-
-		CityRebuildGameMediator = var_2_10007
-		var_5_3.mediator = var_2_10007
-		CityRebuildGameLayer = var_2_10007
-		var_5_3.viewComponent = var_2_10007
-
-		var_5_1(var_5_0, var_5_2(var_5_3))
+	arg_1_0:bind(var_0_0.OPEN_BATTLE, function(arg_5_0)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = CityRebuildGameMediator,
+			viewComponent = CityRebuildGameLayer
+		}))
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_STORY, function(arg_6_0)
-		local var_6_0 = arg_1_0
-		local var_6_1 = var_1.addSubLayers
-
-		Context = var_2_10004
-
-		local var_6_2 = var_2_10004.New
-		local var_6_3 = {}
-
-		CityRebuildStoryMediator = var_2_10007
-		var_6_3.mediator = var_2_10007
-		CityRebuildStoryLayer = var_2_10007
-		var_6_3.viewComponent = var_2_10007
-
-		var_6_1(var_6_0, var_6_2(var_6_3))
+	arg_1_0:bind(var_0_0.OPEN_STORY, function(arg_6_0)
+		arg_1_0:addSubLayers(Context.New({
+			mediator = CityRebuildStoryMediator,
+			viewComponent = CityRebuildStoryLayer
+		}))
 
 		return
 	end)
@@ -110,76 +55,27 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_7_0)
-	local var_7_0 = {}
-
-	GAME = var_1_10002
-	var_7_0[1] = var_1_10002.CITY_REBUILD_DONE
-	GAME = var_2
-	var_7_0[2] = var_2.STORY_UPDATE_DONE
-	GAME = var_2
-	var_7_0[3] = var_2.SUBMIT_TASK_AWARD_DOWN
-
-	return var_7_0
+function var_0_0.listNotificationInterests(arg_7_0)
+	return {
+		GAME.CITY_REBUILD_DONE,
+		GAME.STORY_UPDATE_DONE,
+		GAME.SUBMIT_TASK_AWARD_DOWN
+	}
 end
 
-function var_0_1.handleNotification(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1
-	local var_8_1 = arg_8_1.getName(var_8_0)
-	local var_8_2 = arg_8_1
-	local var_8_3 = arg_8_1.getBody(var_8_2)
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
 
-	GAME = var_8_0
-
-	if var_8_1 == var_8_0.CITY_REBUILD_DONE then
-		local var_8_4 = var_8_3.operation
-
-		CityRebuildProxy = var_8_2
-
-		if var_8_4 ~= var_8_2.GET_DATA then
-			var_8_4 = var_8_3.operation
-			CityRebuildProxy = var_5
-
-			if var_8_4 ~= var_5.REBUILD_OR_START_RECRUIT then
-				var_8_4 = var_8_3.operation
-				CityRebuildProxy = var_5
-
-				if var_8_4 ~= var_5.END_RECRUIT then
-					var_8_4 = var_8_3.operation
-					CityRebuildProxy = var_5
-
-					if var_8_4 ~= var_5.CHOOSE_LEVEL then
-						var_8_4 = var_8_3.operation
-						CityRebuildProxy = var_5
-
-						if var_8_4 == var_5.INIT_TIME then
-							local var_8_5 = arg_8_0.viewComponent
-
-							var_8_4.Refresh(var_8_5)
-
-							goto label_8_0
-
-							GAME = var_8_4
-
-							if var_8_1 ~= var_8_4.STORY_UPDATE_DONE then
-								GAME = var_4
-
-								if var_8_1 == var_4.SUBMIT_TASK_AWARD_DOWN then
-									local var_8_6 = arg_8_0.viewComponent
-
-									var_4.Refresh(var_8_6)
-								end
-
-								::label_8_0::
-
-								return
-							end
-						end
-					end
-				end
-			end
+	if var_8_0 == GAME.CITY_REBUILD_DONE then
+		if var_8_1.operation == CityRebuildProxy.GET_DATA or var_8_1.operation == CityRebuildProxy.REBUILD_OR_START_RECRUIT or var_8_1.operation == CityRebuildProxy.END_RECRUIT or var_8_1.operation == CityRebuildProxy.CHOOSE_LEVEL or var_8_1.operation == CityRebuildProxy.INIT_TIME then
+			arg_8_0.viewComponent:Refresh()
 		end
+	elseif var_8_0 == GAME.STORY_UPDATE_DONE or var_8_0 == GAME.SUBMIT_TASK_AWARD_DOWN then
+		arg_8_0.viewComponent:Refresh()
 	end
+
+	return
 end
 
-return var_0_1
+return var_0_0

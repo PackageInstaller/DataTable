@@ -14,6 +14,7 @@ panelType = 1 -- 窗口类型 1 全屏 2 弹窗 -1无底图弹窗
 function ctor(self)
     super.ctor(self)
     self:setTxtTitle(_TT(149186))
+   
     self:setSize(0, 0)
     self:setBg("guild_bg.jpg", false, "guild")
     self:setUICode(LinkCode.GuildWar)
@@ -90,6 +91,7 @@ function configUI(self)
 
     self.mBtnHero = self:getChildGO("mBtnHero")
     self.mBtnGuildLog = self:getChildGO("mBtnGuildLog")
+    self.mBtnFinal = self:getChildGO("mBtnFinal")
 
     self.mBtnAuto = self:getChildGO("mBtnAuto")
     self.mTxtAuto = self:getChildGO("mTxtAuto"):GetComponent(ty.Text)
@@ -100,6 +102,7 @@ function configUI(self)
     self.mTxtRank = self:getChildGO("mTxtRank"):GetComponent(ty.Text)
     self.mTxtDef = self:getChildGO("mTxtDef"):GetComponent(ty.Text)
     self.mTxtAtk = self:getChildGO("mTxtAtk"):GetComponent(ty.Text)
+    self.mTxtFinal = self:getChildGO("mTxtFinal"):GetComponent(ty.Text)
 
     self:setGuideTrans("functips_guild_info", self:getChildTrans("functips_guild_info"))
     self:setGuideTrans("functips_guild_auto", self.mBtnAuto.transform)
@@ -107,6 +110,7 @@ function configUI(self)
     self:setGuideTrans("functips_guild_hero", self.mBtnHero.transform)
     self:setGuideTrans("functips_guild_def", self.mBtnDef.transform)
     self:setGuideTrans("functips_guild_atk", self.mBtnAtk.transform)
+    self:setGuideTrans("functips_guild_final", self.mBtnFinal.transform)
 
     self.mBtnFuncTips = self:getChildGO("mBtnFuncTips")
 
@@ -115,7 +119,7 @@ end
 
 function initViewText(self)
     self.mTxtInfo.text = _TT(149164)
-    self.mTxtTips.text = _TT(149165)
+    --self.mTxtTips.text = _TT(149165)
     self.mTxtAuto.text = _TT(149166)
 
     self.mTxtGuildLog.text = _TT(149150)
@@ -126,6 +130,8 @@ function initViewText(self)
     self.mTxtAtk.text = _TT(149190)
 
     self.mTxtEnemyNull.text = _TT(149210)
+
+    self.mTxtFinal.text = _TT(149219)
 end
 
 -- 激活
@@ -160,6 +166,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnHero, self.onBtnHeroClick)
     self:addUIEvent(self.mBtnRank, self.onBtnRankClick)
     self:addUIEvent(self.mBtnGuildLog, self.onBtnGuildLogClick)
+    self:addUIEvent(self.mBtnFinal, self.onBtnFinalClick)
 
     self:addUIEvent(self.mBtnAuto, self.onBtnAutoClick)
     self:addUIEvent(self.mBtnFuncTips, self.onClickFuncTipsHandler)
@@ -173,7 +180,6 @@ function onClickFuncTipsHandler(self)
 end
 
 function onBtnAutoClick(self)
-
     local startTime = sysParam.SysParamManager:getValue(SysParamType.GUILDWAR_OPEN_START_TIMER)
     local clientTime = GameManager:getClientTime()
     if startTime and startTime ~= 0 and clientTime < startTime then
@@ -199,13 +205,23 @@ function onBtnGuildLogClick(self)
     GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_GUILD_LOG_PANEL)
 end
 
+function onBtnFinalClick(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.GuildWarTopBet })
+    -- local type = guildWar.GuildWarManager:getSeasonType()
+    -- if type == guildWar.GuildWarType.Top then
+    --     GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_WAR_GUILD_FINAL_PANEL)
+    -- else
+    --     gs.Message.Show(_TT(149220))
+    -- end
+end
+
 function onBtnAtkClick(self)
     formation.openFormation(formation.TYPE.GUILDWARATK, nil, nil, nil)
 end
 
 function onBtnDefClick(self)
     if self.state == guildWar.GuildWarState.GuildWarSignUp or self.state ==
-        guildWar.GuildWarState.GuildWarMatchAndSettle then
+        guildWar.GuildWarState.GuildWarMatchAndSettle or self.state == guildWar.GuildWarState.GuildWarTopMatch then
         formation.openFormation(formation.TYPE.GUILDWARDEF, nil, nil, nil)
     else
         gs.Message.Show(_TT(149191))
@@ -224,8 +240,12 @@ function showPanel(self)
     self:clearBuildItemList()
     self.state = guildWar.GuildWarManager:getGuildWarState()
     GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_CURRENT_DAY_LOG)
+    GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_TOP_CURRENT_DAY_LOG)
 
-    if guild.GuildManager:getIsJoinGuildWar() and guildWar.GuildWarCanReqEnemy() then
+     local type = guildWar.GuildWarManager:getSeasonType()
+    self:setTxtTitle(type == guildWar.GuildWarType.Normal and _TT(149186) or _TT(149219))
+
+    if (guild.GuildManager:getIsJoinGuildWar() or guild.GuildManager:getIsJoinGuildWarTop()) and guildWar.GuildWarCanReqEnemy() then
         GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_ENEMY_PANEL)
         return
     else
@@ -262,9 +282,34 @@ function updateInfo(self)
     elseif self.state == guildWar.GuildWarState.GuildWarSettle then
         self.mStateNoInit:SetActive(true)
         self.mTxtStep.text = _TT(149172)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopFail then
+        self.mStateNoInit:SetActive(true)
+        self.mTxtTips.text = _TT(149222)
+        self.mTxtStep.text = _TT(149221)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopMatch then
+        self.mStateNoInit:SetActive(true)
+        self.mTxtTips.text = _TT(149224)
+        self.mTxtStep.text = _TT(149223)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopStart then
+        self.mStateNoInit:SetActive(false)
+        self.mTxtTips.text = _TT(149225)
+        self.mTxtStep.text = _TT(149226)
+        self.mStartInfo:SetActive(true)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopSettle then
+        self.mStateNoInit:SetActive(true)
+        self.mTxtTips.text = _TT(149227)
+        self.mTxtStep.text = _TT(149228)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopFightFail then
+        self.mStateNoInit:SetActive(true)
+        self.mTxtTips.text = _TT(149248)
+        self.mTxtStep.text = _TT(149248)
     end
-
-    self.mTxtWarId.text = _TT(149173, guildWar.GuildWarManager:getGuildWarSeasonId())
+    if guildWar.GuildWarManager:getSeasonType() == guildWar.GuildWarType.Normal then
+        self.mTxtWarId.text = _TT(149173, guildWar.GuildWarManager:getGuildWarSeasonId())
+    else
+        self.mTxtWarId.text = _TT(149173, guildWar.GuildWarManager:getGuildWarTopSeasonId())
+    end
+    
 
     local url = guild.GuildManager:getIconDataById(guild.GuildManager:getGuildIconId()).icon
     self.mImgGuildIcon:SetImg(UrlManager:getIconPath(url), false)
@@ -297,7 +342,7 @@ function updateInfo(self)
 
     local enemyGuildPanel = guildWar.GuildWarManager:getGuildWarEnemyPanelInfo()
 
-    if enemyGuildPanel ~= nil and self.state == guildWar.GuildWarState.GuildWarStart then
+    if enemyGuildPanel ~= nil and (self.state == guildWar.GuildWarState.GuildWarStart or self.state == guildWar.GuildWarState.GuildWarTopStart) then
         local url = guild.GuildManager:getIconDataById(enemyGuildPanel.icon).icon
         self.mImgGuildIconEnemy:SetImg(UrlManager:getIconPath(url), false)
 
@@ -344,6 +389,12 @@ function updateDefFormationRed(self)
         RedPointManager:add(self.mBtnDef.transform, nil, 71, 18)
     else
         RedPointManager:remove(self.mBtnDef.transform)
+    end
+    local betRed = guildWar.GuildWarManager:getGuildBetRed()
+    if betRed then
+        RedPointManager:add(self.mBtnFinal.transform, nil, 71, 18)
+    else
+        RedPointManager:remove(self.mBtnFinal.transform)
     end
 end
 
@@ -480,11 +531,11 @@ function showMemberInfo(self, memberList, hasBuildList, isEnemy)
 
         local isRed = guildWar.GuildWarManager:getNeedNumberCount(id) and isEnemy == false
         if isRed then
-            RedPointManager:add(item:getChildTrans("mBuildNameBg"),nil,72.3,4.1)
+            RedPointManager:add(item:getChildTrans("mBuildNameBg"), nil, 72.3, 4.1)
         else
             RedPointManager:remove(item:getChildTrans("mBuildNameBg"))
         end
-        
+
         table.insert(self.mBuildItemList, item)
     end
 end
@@ -527,10 +578,16 @@ end
 
 function refreshWarTime(self)
     local clientTime = GameManager:getClientTime()
+    local type = guildWar.GuildWarManager:getSeasonType()
     local nextStartTime = guildWar.GuildWarManager:getGuildWarNextStartTime()
 
     local endTime = guildWar.GuildWarManager:getGuildWarEndTime()
     local startTime = guildWar.GuildWarManager:getGuildStartTime()
+    if type == guildWar.GuildWarType.Top then
+        nextStartTime = guildWar.GuildWarManager:getGuildWarTopNextStartTime()
+        endTime = guildWar.GuildWarManager:getGuildWarTopEndTime()
+        startTime = guildWar.GuildWarManager:getGuildWarStartTime()
+    end
 
     if self.state == guildWar.GuildWarState.GuildWarSignUp then
         self.mTxtWarTime.text = _TT(149175) .. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
@@ -544,6 +601,16 @@ function refreshWarTime(self)
         self.mTxtWarTime.text = _TT(149179) .. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
     elseif self.state == guildWar.GuildWarState.GuildWarSettle then
         self.mTxtWarTime.text = _TT(149180) .. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopFail then
+        self.mTxtWarTime.text = _TT(149176) .. TimeUtil.getNewRoleShowTime(endTime - clientTime)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopMatch then
+        self.mTxtWarTime.text = _TT(149177).. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopStart then
+        self.mTxtWarTime.text = _TT(149178) .. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopSettle then
+        self.mTxtWarTime.text = _TT(149180) .. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
+    elseif self.state == guildWar.GuildWarState.GuildWarTopFightFail then
+        self.mTxtWarTime.text = _TT(149176) .. TimeUtil.getNewRoleShowTime(nextStartTime - clientTime)
     end
 
     if clientTime < startTime then
@@ -551,7 +618,6 @@ function refreshWarTime(self)
     else
         self.mTxtWarEndTime.text = _TT(149204) .. TimeUtil.getNewRoleShowTime(endTime - clientTime)
     end
-
 end
 
 function clearBuildItemList(self)

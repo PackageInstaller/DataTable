@@ -1,111 +1,50 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CommanderCatCard")
+﻿local var_0_0 = class("CommanderCatCard")
 
 var_0_0.MARK_TYPE_CIRCLE = 1
 var_0_0.MARK_TYPE_TICK = 2
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1
-	tf = var_1_10003
-	arg_1_0._tf = var_1_10003(arg_1_1)
+	arg_1_0._tf = tf(arg_1_1)
+	arg_1_0.infoTF = arg_1_0._tf:Find("info")
+	arg_1_0.emptyTF = arg_1_0._tf:Find("empty")
+	arg_1_0.quitTF = arg_1_0._tf:Find("quit")
+	arg_1_0.scrollTxt = arg_1_0.infoTF:Find("name_bg/mask/Text"):GetComponent("ScrollText")
+	arg_1_0.levelTF = arg_1_0.infoTF:Find("level_bg/Text"):GetComponent(typeof(Text))
+	arg_1_0.iconTF = arg_1_0.infoTF:Find("icon")
+	arg_1_0.marks = {
+		arg_1_0.infoTF:Find("mark1"),
+		arg_1_0.infoTF:Find("mark2")
+	}
+	arg_1_0.expUp = arg_1_0._tf:Find("up")
+	arg_1_0.formationTF = arg_1_0.infoTF:Find("formation")
 
-	local var_1_0 = arg_1_0._tf
+	setActive(arg_1_0.formationTF, false)
 
-	arg_1_0.infoTF = var_3.Find(var_1_0, "info")
+	arg_1_0.inbattleTF = arg_1_0.infoTF:Find("inbattle")
 
-	local var_1_1 = arg_1_0._tf
+	setActive(arg_1_0.inbattleTF, false)
 
-	arg_1_0.emptyTF = var_3.Find(var_1_1, "empty")
+	arg_1_0.tip = arg_1_0._tf:Find("tip")
 
-	local var_1_2 = arg_1_0._tf
+	setActive(arg_1_0.tip, false)
 
-	arg_1_0.quitTF = var_3.Find(var_1_2, "quit")
+	arg_1_0.lockTr = arg_1_0._tf:Find("lock")
 
-	local var_1_3 = arg_1_0.infoTF
-	local var_1_4 = var_3.Find(var_1_3, "name_bg/mask/Text")
-
-	arg_1_0.scrollTxt = var_3.GetComponent(var_1_4, "ScrollText")
-
-	local var_1_5 = arg_1_0.infoTF
-	local var_1_6 = var_3.Find(var_1_5, "level_bg/Text")
-	local var_1_7 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.levelTF = var_1_7(var_1_6, var_6(var_1_10008))
-
-	local var_1_8 = arg_1_0.infoTF
-
-	arg_1_0.iconTF = var_3.Find(var_1_8, "icon")
-
-	local var_1_9 = {}
-	local var_1_10 = arg_1_0.infoTF
-
-	var_1_9[1] = var_4.Find(var_1_10, "mark1")
-
-	local var_1_11 = arg_1_0.infoTF
-
-	var_1_9[2] = var_4.Find(var_1_11, "mark2")
-	arg_1_0.marks = var_1_9
-
-	local var_1_12 = arg_1_0._tf
-
-	arg_1_0.expUp = var_3.Find(var_1_12, "up")
-
-	local var_1_13 = arg_1_0.infoTF
-
-	arg_1_0.formationTF = var_3.Find(var_1_13, "formation")
-	setActive = var_3
-
-	var_3(arg_1_0.formationTF, false)
-
-	local var_1_14 = arg_1_0.infoTF
-
-	arg_1_0.inbattleTF = var_3.Find(var_1_14, "inbattle")
-	setActive = var_3
-
-	var_3(arg_1_0.inbattleTF, false)
-
-	local var_1_15 = arg_1_0._tf
-
-	arg_1_0.tip = var_3.Find(var_1_15, "tip")
-	setActive = var_3
-
-	var_3(arg_1_0.tip, false)
-
-	local var_1_16 = arg_1_0._tf
-
-	arg_1_0.lockTr = var_3.Find(var_1_16, "lock")
-	ipairs = var_3
-
-	for iter_1_0, iter_1_1 in var_3(arg_1_0.marks) do
-		setActive = var_1_10008
-
-		var_1_10008(iter_1_1, false)
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0.marks) do
+		setActive(iter_1_1, false)
 	end
 
-	local var_1_17
+	arg_1_0.mark = arg_1_0.marks[arg_1_2] or arg_1_0.marks[1]
 
-	if not arg_1_0.marks[arg_1_2] then
-		var_1_17 = arg_1_0.marks[1]
-	end
-
-	arg_1_0.mark = var_1_17
-	setActive = var_1_17
-
-	var_1_17(arg_1_0.expUp, false)
+	setActive(arg_1_0.expUp, false)
 
 	return
 end
 
 function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	IsNil = var_1_10004
-
-	if not var_1_10004(arg_2_0.lockTr) then
-		setActive = var_4
-
-		var_4(arg_2_0.lockTr, false)
+	if not IsNil(arg_2_0.lockTr) then
+		setActive(arg_2_0.lockTr, false)
 	end
 
 	if arg_2_1 then
@@ -116,73 +55,31 @@ function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 		end
 	end
 
-	setActive = var_4
-
-	local var_2_0 = arg_2_0.formationTF
 	local var_2_1
 
-	if arg_2_1 and arg_2_1.inFleet then
-		var_2_1 = not arg_2_1.inBattle
-	end
-
-	var_4(var_2_0, var_2_1)
-
-	setActive = var_4
-
-	var_4(arg_2_0.inbattleTF, arg_2_1 and arg_2_1.inBattle)
-
-	setActive = var_4
-
-	var_4(arg_2_0.infoTF, arg_2_1 and arg_2_1.id ~= 0)
-
-	setActive = var_4
-
-	var_4(arg_2_0.emptyTF, not arg_2_1)
-
-	setActive = var_4
-
-	var_4(arg_2_0.quitTF, arg_2_1 and arg_2_1.id == 0)
-
-	setActive = var_4
-
-	local var_2_2 = arg_2_0.tip
-	local var_2_3
-
 	if arg_2_1 then
-		::label_2_1::
+		::label_2_0::
 
-		if arg_2_1.id ~= 0 and arg_2_1:getTalentPoint() > 0 then
-			LOCK_COMMANDER_TALENT_TIP = var_2_3
-			var_2_3 = not var_2_3
-		else
-			var_2_3 = false
-		end
-
-		if false then
-			var_2_3 = true
-		end
+		var_2_1 = arg_2_1.inFleet and not arg_2_1.inBattle
 	end
 
-	var_4(var_2_2, var_2_3)
+	var_2_0(arg_2_0.formationTF, var_2_1)
+	setActive(arg_2_0.inbattleTF, arg_2_1 and arg_2_1.inBattle)
+	setActive(arg_2_0.infoTF, arg_2_1 and arg_2_1.id ~= 0)
+	setActive(arg_2_0.emptyTF, not arg_2_1)
+	setActive(arg_2_0.quitTF, arg_2_1 and arg_2_1.id == 0)
+	setActive(arg_2_0.tip, arg_2_1 and arg_2_1.id ~= 0 and arg_2_1:getTalentPoint() > 0 and not LOCK_COMMANDER_TALENT_TIP)
 
 	return
 end
 
 function var_0_0.UpdateCommander(arg_3_0, arg_3_1, arg_3_2)
-	local var_3_0 = arg_3_0.commanderVO
-	local var_3_1 = arg_3_0.levelTF
+	arg_3_0.levelTF.text = arg_3_0.commanderVO.level
 
-	var_3_1.text = var_3_0.level
-	GetImageSpriteFromAtlasAsync = var_3_1
+	GetImageSpriteFromAtlasAsync("commandericon/" .. arg_3_0.commanderVO:getPainting(), "", arg_3_0.iconTF)
 
-	var_3_1("commandericon/" .. var_3_0:getPainting(), "", arg_3_0.iconTF)
-
-	IsNil = var_3_1
-
-	if not var_3_1(arg_3_0.lockTr) then
-		setActive = var_4
-
-		var_4(arg_3_0.lockTr, var_3_0:isLocked())
+	if not IsNil(arg_3_0.lockTr) then
+		setActive(arg_3_0.lockTr, arg_3_0.commanderVO:isLocked())
 	end
 
 	arg_3_0:UpdateSelected(arg_3_1, arg_3_2)
@@ -191,48 +88,35 @@ function var_0_0.UpdateCommander(arg_3_0, arg_3_1, arg_3_2)
 end
 
 function var_0_0.UpdateSelected(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0
+
 	if not arg_4_0.commanderVO then
-		setActive = var_3
+		setActive(arg_4_0.mark, false)
 
-		var_3(arg_4_0.mark, false)
+		do return end
 
-		return
+		var_4_0 = table.contains
 	end
 
-	local var_4_0 = arg_4_1 or {}
+	local var_4_1 = var_4_0(arg_4_1 or {}, arg_4_0.commanderVO.id)
 
-	table = var_1_10004
-
-	local var_4_1 = var_1_10004.contains(var_4_0, arg_4_0.commanderVO.id)
-
-	setActive = var_1_10005
-
-	var_1_10005(arg_4_0.mark, var_4_1)
+	setActive(arg_4_0.mark, var_4_1)
 	arg_4_0:UpdateCommanderName(var_4_1, arg_4_2)
 
 	return
 end
 
 function var_0_0.UpdateCommanderName(arg_5_0, arg_5_1, arg_5_2)
-	if not arg_5_0.commanderVO or var_3.id == 0 then
-		local var_5_0 = arg_5_0.scrollTxt
-
-		var_4.SetText(var_5_0, "")
+	if not arg_5_0.commanderVO or arg_5_0.commanderVO.id == 0 then
+		arg_5_0.scrollTxt:SetText("")
 
 		return
 	end
 
 	if arg_5_1 then
-		local var_5_1 = arg_5_0.scrollTxt
-
-		var_4.SetText(var_5_1, var_3:getName(arg_5_2))
+		arg_5_0.scrollTxt:SetText(arg_5_0.commanderVO:getName(arg_5_2))
 	else
-		local var_5_2 = arg_5_0.scrollTxt
-		local var_5_3 = var_4.SetText
-
-		CommanderCatUtil = var_1_10007
-
-		var_5_3(var_5_2, var_1_10007.ShortenString(var_3:getName(arg_5_2), 6))
+		arg_5_0.scrollTxt:SetText(CommanderCatUtil.ShortenString(arg_5_0.commanderVO:getName(arg_5_2), 6))
 	end
 
 	return

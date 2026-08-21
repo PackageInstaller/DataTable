@@ -204,6 +204,8 @@ function getModel(self, model, monsterTid, col_x, row_y, pos)
         --     formation.FormationPreviewManager:dispatchEvent(formation.FormationPreviewManager.CHANGE_SELECT)
         -- end)
         -- model.trigger = trigger
+
+        model:setBlackEnable(mVo.showBlack == 1)
     end
 
     if (model and model:getTrans() and model.m_modeID == mVo:getModel()) then

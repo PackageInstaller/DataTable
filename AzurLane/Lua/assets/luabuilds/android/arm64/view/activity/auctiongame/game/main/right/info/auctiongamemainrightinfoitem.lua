@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainRightInfoItem", import("view.base.BasePanel"))
 
-local var_0_0 = "AuctionGameMainRightInfoItem"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,101 +13,51 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
+function var_0_0.Init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	pg = var_1_10004
+function var_0_0.didEnter(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	local var_3_0 = pg.auction_round[arg_3_1.round].name
 
-	local var_3_0 = var_1_10004.auction_round[arg_3_1.round].name
-	local var_3_1 = arg_3_1.type
+	if arg_3_1.type == AuctionGameConst.EVENT_TYPE_GROUP.COMMON then
+		var_3_0 = var_3_0 .. i18n("auction_main_public_event")
 
-	AuctionGameConst = var_1_10006
-
-	if var_3_1 == var_1_10006.EVENT_TYPE_GROUP.COMMON then
-		var_3_1 = var_3_0
-		i18n = var_6
-		var_3_0 = var_3_1 .. var_6("auction_main_public_event")
-		setActive = var_3_1
-
-		var_3_1(arg_3_0._go, arg_3_3)
+		setActive(arg_3_0._go, arg_3_3)
 	else
-		var_3_1 = var_3_0
-		i18n = var_6
-		var_3_0 = var_3_1 .. var_6("auction_main_personal_event")
-		setActive = var_3_1
+		var_3_0 = var_3_0 .. i18n("auction_main_personal_event")
 
-		var_3_1(arg_3_0._go, arg_3_2)
+		setActive(arg_3_0._go, arg_3_2)
 	end
 
-	setText = var_3_1
+	setText(arg_3_0.uiTitleText, var_3_0)
 
-	var_3_1(arg_3_0.uiTitleText, var_3_0)
+	local var_3_1 = getProxy(AuctionGameProxy):GetRound() == arg_3_1.round
+	local var_3_2 = pg.auction_event[arg_3_1.eventData.eventID]
 
-	getProxy = var_3_1
-	AuctionGameProxy = var_7
-
-	local var_3_2 = var_3_1(var_7)
-	local var_3_3 = var_5.GetRound(var_3_2) == arg_3_1.round
-
-	pg = var_7
-
-	local var_3_4 = var_7.auction_event[arg_3_1.eventData.eventID]
-	local var_3_5 = var_3_3 and "#324bca" or "#676c7d"
-
-	if var_3_4.information_bar == 1 then
-		setText = var_9
-		var_1_10011 = arg_3_0.uiResultText
-		string = var_1_10012
-
-		var_9(var_1_10011, var_1_10012.format("<color=%s>%s</color>", var_3_5, var_3_4.describe))
+	if pg.auction_event[arg_3_1.eventData.eventID].information_bar == 1 then
+		setText(arg_3_0.uiResultText, string.format("<color=%s>%s</color>", var_3_3, var_3_2.describe))
 	else
-		local var_3_6 = arg_3_1.eventData.value
-		local var_3_7 = var_3_4.type
+		local var_3_4 = arg_3_1.eventData.value
 
-		AuctionGameConst = var_1_10011
+		var_3_4 = var_3_2.type == AuctionGameConst.EVENT_TYPE.MAX_RARITY and i18n("auction_game_rarity_" .. var_3_4) or var_3_2.type == AuctionGameConst.EVENT_TYPE.RARITY_ITEMS_CELL_COUNT and var_3_4 / 100 or StringHelper.ForamtNumber(var_3_4)
 
-		if var_3_7 == var_1_10011.EVENT_TYPE.MAX_RARITY then
-			i18n = var_3_7
-			var_3_6 = var_3_7("auction_game_rarity_" .. var_3_6)
-		else
-			var_3_7 = var_3_4.type
-			AuctionGameConst = var_11
-
-			if var_3_7 == var_11.EVENT_TYPE.RARITY_ITEMS_CELL_COUNT then
-				var_3_6 = var_3_6 / 100
-			else
-				StringHelper = var_3_7
-				var_3_6 = var_3_7.ForamtNumber(var_3_6)
-			end
-		end
-
-		setText = var_3_7
-
-		local var_3_8 = arg_3_0.uiResultText
-
-		string = var_1_10013
-
-		var_3_7(var_3_8, var_1_10013.format("<color=%s>%s</color>", var_3_5, var_3_4.describe .. "   " .. var_3_6))
+		setText(arg_3_0.uiResultText, string.format("<color=%s>%s</color>", var_3_3, var_3_2.describe .. "   " .. var_3_4))
 	end
 
-	local var_3_9 = arg_3_0.uiResultBg.color
+	local var_3_5 = arg_3_0.uiResultBg.color
 
-	var_3_9.a = var_3_3 and 0.3 or 0.1
-	arg_3_0.uiResultBg.color = var_3_9
+	var_3_5.a = var_3_1 and 0.3 or 0.1
+	arg_3_0.uiResultBg.color = var_3_5
 
 	return
 end
 
-function var_0_1.willExit(arg_4_0)
+function var_0_0.willExit(arg_4_0)
 	arg_4_0:detach()
-
-	Object = var_1
-
-	var_1.Destroy(arg_4_0._go)
+	Object.Destroy(arg_4_0._go)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,159 +1,60 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandEditCardNameBox", import("view.base.BaseSubView"))
 
-local var_0_0 = "IslandEditCardNameBox"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandEditCardNameBox"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.input = arg_2_0._tf:Find("frame/name/InputField")
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close")
+	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/confirm")
+	arg_2_0.content = arg_2_0._tf:Find("frame/Text")
 
-	arg_2_0.input = var_1.Find(var_2_0, "frame/name/InputField")
+	setText(arg_2_0._tf:Find("frame/title"), i18n("island_rename_title"))
+	setText(arg_2_0._tf:Find("frame/confirm/Text"), i18n("word_ok"))
+	setText(arg_2_0._tf:Find("frame/name/InputField/Placeholder"), i18n("island_rename_input_tip"))
 
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_1, "frame/close")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.confirmBtn = var_1.Find(var_2_2, "frame/confirm")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.content = var_1.Find(var_2_3, "frame/Text")
-	setText = var_1
-
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_3.Find(var_2_4, "frame/title")
-
-	i18n = var_4
-
-	var_1(var_2_5, var_4("island_rename_title"))
-
-	setText = var_1
-
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_3.Find(var_2_6, "frame/confirm/Text")
-
-	i18n = var_4
-
-	var_1(var_2_7, var_4("word_ok"))
-
-	setText = var_1
-
-	local var_2_8 = arg_2_0._tf
-	local var_2_9 = var_3.Find(var_2_8, "frame/name/InputField/Placeholder")
-
-	i18n = var_4
-
-	var_1(var_2_9, var_4("island_rename_input_tip"))
-
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_1.GetComponent
-
-	typeof = var_4
-	Animation = var_6
-	arg_2_0.animator = var_2_11(var_2_10, var_4(var_6))
-
-	local var_2_12 = arg_2_0._tf
-	local var_2_13 = var_1.GetComponent
-
-	typeof = var_4
-	DftAniEvent = var_6
-	arg_2_0.aniDft = var_2_13(var_2_12, var_4(var_6))
+	arg_2_0.animator = arg_2_0._tf:GetComponent(typeof(Animation))
+	arg_2_0.aniDft = arg_2_0._tf:GetComponent(typeof(DftAniEvent))
 	arg_2_0.isPlayingAnimation = false
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.closeBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.confirmBtn
-
-	local function var_3_8()
-		getInputText = var_2_10000
-
-		local var_6_0 = var_2_10000(arg_3_0.input)
-		local var_6_1 = arg_3_0
-		local var_6_2 = var_1.emit
-
-		IslandSelfCardMediator = var_2_10004
-
-		var_6_2(var_6_1, var_2_10004.SET_CARD_NAME, var_6_0, 1)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		arg_3_0:emit(IslandSelfCardMediator.SET_CARD_NAME, getInputText(arg_3_0.input), 1)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_7_0, arg_7_1)
-	var_0_1.super.Show(arg_7_0)
+function var_0_0.Show(arg_7_0, arg_7_1)
+	var_0_0.super.Show(arg_7_0)
 
 	arg_7_0.isPlayingAnimation = false
 	arg_7_0.callback = arg_7_1
 
 	arg_7_0:UpdateContent()
-
-	pg = var_2
-
-	local var_7_0 = var_2.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_7_0, arg_7_0._tf)
-
-	local var_7_1 = arg_7_0.animator
-
-	var_2.Play(var_7_1, "anim_IslandEditNameUI_In")
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf)
+	arg_7_0.animator:Play("anim_IslandEditNameUI_In")
 
 	return
 end
 
-function var_0_1.Hide(arg_8_0)
+function var_0_0.Hide(arg_8_0)
 	if arg_8_0.isPlayingAnimation then
 		return
 	end
@@ -163,16 +64,9 @@ function var_0_1.Hide(arg_8_0)
 	arg_8_0:PlayExitAniamtion(function()
 		arg_8_0.isPlayingAnimation = false
 
-		local var_9_0 = arg_8_0.aniDft
-
-		var_0.SetEndEvent(var_9_0, nil)
-		var_0_1.super.Hide(arg_8_0)
-
-		pg = var_0
-
-		local var_9_1 = var_0.UIMgr.GetInstance()
-
-		var_0.UnOverlayPanel(var_9_1, arg_8_0._tf, arg_8_0._parentTf)
+		arg_8_0.aniDft:SetEndEvent(nil)
+		var_0_0.super.Hide(arg_8_0)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_8_0._tf, arg_8_0._parentTf)
 
 		return
 	end)
@@ -180,52 +74,31 @@ function var_0_1.Hide(arg_8_0)
 	return
 end
 
-function var_0_1.PlayExitAniamtion(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_0.aniDft
-
-	var_2.SetEndEvent(var_10_0, function()
+function var_0_0.PlayExitAniamtion(arg_10_0, arg_10_1)
+	arg_10_0.aniDft:SetEndEvent(function()
 		if arg_10_1 then
 			arg_10_1()
 		end
 
 		return
 	end)
-
-	local var_10_1 = arg_10_0.animator
-
-	var_2.Play(var_10_1, "anim_IslandEditNameUI_Out")
+	arg_10_0.animator:Play("anim_IslandEditNameUI_Out")
 
 	return
 end
 
-function var_0_1.UpdateContent(arg_12_0)
-	setInputText = var_1_10001
-
-	var_1_10001(arg_12_0.input, "")
-
-	setText = var_1_10001
-
-	local var_12_0 = arg_12_0.content
-
-	i18n = var_4
-
-	var_1_10001(var_12_0, var_4("island_rename_consutme_tip"))
+function var_0_0.UpdateContent(arg_12_0)
+	setInputText(arg_12_0.input, "")
+	setText(arg_12_0.content, i18n("island_rename_consutme_tip"))
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_13_0)
-	pg = var_1_10001
-
-	local var_13_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_13_0, arg_13_0._tf, arg_13_0._parentTf)
-
-	local var_13_1 = arg_13_0.aniDft
-
-	var_1.SetEndEvent(var_13_1, nil)
+function var_0_0.OnDestroy(arg_13_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_13_0._tf, arg_13_0._parentTf)
+	arg_13_0.aniDft:SetEndEvent(nil)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,217 +1,95 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PiratePage", import("view.base.BaseActivityPage"))
 
-local var_0_0 = "PiratePage"
+var_0_0.PROGRESS_TEXT = "%d/7"
+var_0_0.DIALOG_DELAY = 15
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseActivityPage"))
-
-var_0_1.PROGRESS_TEXT = "%d/7"
-var_0_1.DIALOG_DELAY = 15
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.progress = var_1.Find(var_1_1, "progress")
-
-	local var_1_2 = arg_1_0.progress
-
-	arg_1_0.progressText = var_1.Find(var_1_2, "Text")
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.complete = var_1.Find(var_1_3, "complete")
-
-	local var_1_4 = arg_1_0.bg
-
-	arg_1_0.goBtn = var_1.Find(var_1_4, "go_btn")
-
-	local var_1_5 = arg_1_0.goBtn
-
-	arg_1_0.red = var_1.Find(var_1_5, "red")
-
-	local var_1_6 = arg_1_0.bg
-
-	arg_1_0.dialogTf = var_1.Find(var_1_6, "dialog")
-
-	local var_1_7 = arg_1_0.dialogTf
-
-	arg_1_0.dialogText = var_1.Find(var_1_7, "Text")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.progress = arg_1_0.bg:Find("progress")
+	arg_1_0.progressText = arg_1_0.progress:Find("Text")
+	arg_1_0.complete = arg_1_0.bg:Find("complete")
+	arg_1_0.goBtn = arg_1_0.bg:Find("go_btn")
+	arg_1_0.red = arg_1_0.goBtn:Find("red")
+	arg_1_0.dialogTf = arg_1_0.bg:Find("dialog")
+	arg_1_0.dialogText = arg_1_0.dialogTf:Find("Text")
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
+function var_0_0.OnDataSetting(arg_2_0)
 	arg_2_0.count = 0
-	getProxy = var_1
-	TaskProxy = var_1_10003
-	arg_2_0.taskProxy = var_1(var_1_10003)
-
-	local var_2_0 = arg_2_0.activity
-
-	arg_2_0.taskGroup = var_1.getConfig(var_2_0, "config_data")
+	arg_2_0.taskProxy = getProxy(TaskProxy)
+	arg_2_0.taskGroup = arg_2_0.activity:getConfig("config_data")
 	arg_2_0.totoalCount = #arg_2_0.taskGroup
+	arg_2_0.dialog_progress = arg_2_0.activity:getConfig("config_client").shipyard_phase_1
+	arg_2_0.dialog_complete = arg_2_0.activity:getConfig("config_client").shipyard_phase_2
 
-	local var_2_1 = arg_2_0.activity
-
-	arg_2_0.dialog_progress = var_1.getConfig(var_2_1, "config_client").shipyard_phase_1
-
-	local var_2_2 = arg_2_0.activity
-
-	arg_2_0.dialog_complete = var_1.getConfig(var_2_2, "config_client").shipyard_phase_2
-	updateActivityTaskStatus = var_1
-
-	return var_1(arg_2_0.activity)
+	return updateActivityTaskStatus(arg_2_0.activity)
 end
 
-function var_0_1.OnShowFlush(arg_3_0)
-	setActive = var_1_10001
+function var_0_0.OnShowFlush(arg_3_0)
+	setActive(arg_3_0.dialogTf, true)
+	setImageAlpha(arg_3_0.dialogTf, 1)
 
-	var_1_10001(arg_3_0.dialogTf, true)
+	local var_3_0 = not arg_3_0.activity:canPermanentFinish() and arg_3_0.dialog_progress[math.random(#arg_3_0.dialog_progress)] or arg_3_0.dialog_complete[math.random(#arg_3_0.dialog_complete)]
 
-	setImageAlpha = var_1_10001
-
-	var_1_10001(arg_3_0.dialogTf, 1)
-
-	setText = var_1_10001
-
-	local var_3_0 = arg_3_0.dialogText
-	local var_3_1 = arg_3_0.activity
-
-	if not var_4.canPermanentFinish(var_3_1) then
-		local var_3_2 = arg_3_0.dialog_progress
-
-		math = var_1_10005
-
-		if not var_3_2[var_1_10005.random(#arg_3_0.dialog_progress)] then
-			var_3_2 = arg_3_0.dialog_complete
-			math = var_1_10005
-			var_3_2 = var_3_2[var_1_10005.random(#arg_3_0.dialog_complete)]
-		end
-
-		var_1_10001(var_3_0, var_3_2)
-
-		LeanTween = var_1_10001
-
-		local var_3_3 = var_1_10001.alpha(arg_3_0.dialogTf, 0, 0.5)
-		local var_3_4 = var_1.setDelay(var_3_3, var_0_1.DIALOG_DELAY)
-		local var_3_5 = var_1.setOnComplete
-
-		System = var_4
-
-		var_3_5(var_3_4, var_4.Action(function()
-			SetActive = var_2_10000
-
-			var_2_10000(arg_3_0.dialogTf, false)
-
-			return
-		end))
+	setText(arg_3_0.dialogText, var_3_0)
+	LeanTween.alpha(arg_3_0.dialogTf, 0, 0.5):setDelay(var_0_0.DIALOG_DELAY):setOnComplete(System.Action(function()
+		SetActive(arg_3_0.dialogTf, false)
 
 		return
-	end
-end
-
-function var_0_1.OnHideFlush(arg_5_0)
-	LeanTween = var_1_10001
-
-	var_1_10001.cancel(arg_5_0.dialogTf)
+	end))
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_6_0)
+function var_0_0.OnHideFlush(arg_5_0)
+	LeanTween.cancel(arg_5_0.dialogTf)
+
+	return
+end
+
+function var_0_0.OnFirstFlush(arg_6_0)
 	arg_6_0.count = arg_6_0.activity.data3
-	setActive = var_1
 
-	local var_6_0 = arg_6_0.red
-	local var_6_1 = arg_6_0
-
-	var_1(var_6_0, arg_6_0.CheckRed(var_6_1))
-
-	onButton = var_1
-
-	local var_6_2 = arg_6_0
-	local var_6_3 = arg_6_0.goBtn
-
-	local function var_6_4()
-		local var_7_0 = arg_6_0
-		local var_7_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_7_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_7_1(var_7_0, var_7_2, var_2_10004.SECRET_SHIPYARD)
+	setActive(arg_6_0.red, arg_6_0:CheckRed())
+	onButton(arg_6_0, arg_6_0.goBtn, function()
+		arg_6_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.SECRET_SHIPYARD)
 
 		return
-	end
-
-	SFX_PANEL = var_6_1
-
-	var_1(var_6_2, var_6_3, var_6_4, var_6_1)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.CheckRed(arg_8_0)
+function var_0_0.CheckRed(arg_8_0)
 	local var_8_0 = false
-	local var_8_1 = arg_8_0.activity
 
-	if var_2.readyToAchieve(var_8_1) then
+	if arg_8_0.activity:readyToAchieve() then
 		var_8_0 = true
 	end
 
-	local var_8_2 = arg_8_0.activity
+	local var_8_1 = arg_8_0.activity:getNDay()
 
-	if var_2.getNDay(var_8_2) < 8 then
-		PlayerPrefs = var_3
+	if var_8_1 < 8 and PlayerPrefs.GetInt("PiratePage" .. var_8_1, 0) == 0 then
+		PlayerPrefs.SetInt("PiratePage" .. var_8_1, 1)
 
-		if var_3.GetInt("PiratePage" .. var_2, 0) == 0 then
-			PlayerPrefs = var_3
-
-			var_3.SetInt("PiratePage" .. var_2, 1)
-
-			var_8_0 = true
-		end
+		var_8_0 = true
 	end
 
 	return var_8_0
 end
 
-function var_0_1.OnUpdateFlush(arg_9_0)
+function var_0_0.OnUpdateFlush(arg_9_0)
 	arg_9_0.count = arg_9_0.activity.data3
 
 	if arg_9_0.progress then
-		setText = var_1
-
-		local var_9_0 = arg_9_0.progressText
-
-		string = var_1_10004
-
-		var_1(var_9_0, var_1_10004.format(var_0_1.PROGRESS_TEXT, arg_9_0.count))
-
-		setActive = var_1
-
-		local var_9_1 = arg_9_0.progress
-		local var_9_2 = arg_9_0.activity
-
-		var_1(var_9_1, not var_4.canPermanentFinish(var_9_2))
-
-		setActive = var_1
-
-		local var_9_3 = arg_9_0.complete
-		local var_9_4 = arg_9_0.activity
-
-		var_1(var_9_3, var_4.canPermanentFinish(var_9_4))
+		setText(arg_9_0.progressText, string.format(var_0_0.PROGRESS_TEXT, arg_9_0.count))
+		setActive(arg_9_0.progress, not arg_9_0.activity:canPermanentFinish())
+		setActive(arg_9_0.complete, arg_9_0.activity:canPermanentFinish())
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

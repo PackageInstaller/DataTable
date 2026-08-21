@@ -47,6 +47,7 @@ function configUI(self)
     self.mToggleB = self:getChildGO("mToggleB"):GetComponent(ty.Toggle)
     self.mToggleP = self:getChildGO("mToggleP"):GetComponent(ty.Toggle)
     self.mToggleO = self:getChildGO("mToggleO"):GetComponent(ty.Toggle)
+
     -- 道具格子列表
     self.mGridScrollerGo = self:getChildGO("mGridScrollerGo")
     self.mGridScroller = self.mGridScrollerGo:GetComponent(ty.LyScroller)
@@ -86,6 +87,10 @@ function active(self, args)
     self:addToggleGEvent()
     self:addToggleBEvent()
     self:addTogglePEvent()
+    self:addToggleOEvent()
+    if not bag.BagManager.propsOpState then
+        bag.BagManager.propsOpState = bag.getTabOpType(bag.BagTabType.EQUIP)
+end
 end
 
 --反激活（销毁工作）
@@ -132,10 +137,12 @@ function showSortView(self)
     self.mSortView:addPosMenu({-1, PropsEquipSubType.SLOT_1, PropsEquipSubType.SLOT_2, PropsEquipSubType.SLOT_3, PropsEquipSubType.SLOT_4, PropsEquipSubType.SLOT_5, PropsEquipSubType.SLOT_6}, nil, false)
 
     self.mSortView:addSortMenu(bag.getSortList(self.tabType), nil, true, false)
+    self.mSortView:setShowTipGroup(true)
 end
 
-function onBagUpdateHandler(self)
-    self:updateView()
+function onBagUpdateHandler(self, changeData)
+    local isInit = next(changeData.addList) ~= nil and next(changeData.delList) ~= nil
+    self:updateView(isInit)
     self:showBreakView()
 end
 

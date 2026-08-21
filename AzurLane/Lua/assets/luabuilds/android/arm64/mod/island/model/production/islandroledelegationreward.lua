@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandRoleDelegationReward")
+﻿local var_0_0 = class("IslandRoleDelegationReward")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0:UpdateData(arg_1_1)

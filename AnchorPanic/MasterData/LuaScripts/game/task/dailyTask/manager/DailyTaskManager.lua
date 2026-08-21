@@ -184,6 +184,9 @@ end
 
 -- 更新日常任务积分
 function updateDailyTaskScore(self, msg)
+    if(self.dailyTaskScore ~= msg.total_score)then
+        sdk.SdkManager:foreignNotifyDailyScoreSuc(math.min(self.dailyTaskScore, self.maxDailyTaskScore))
+    end
     self.dailyTaskScore = msg.total_score
     GameDispatcher:dispatchEvent(EventName.UPDATE_DAILY_TASK_SCORE, { type = task.TYPE_DAILY_TASK })
     self:setRedFlag()

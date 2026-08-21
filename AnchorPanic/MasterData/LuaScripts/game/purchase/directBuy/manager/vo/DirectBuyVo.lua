@@ -31,6 +31,8 @@ function parseMsg(self, cusMsg)
     self.priceRatio = cusMsg.value or 0
     --背景颜色
     self.color = cusMsg.color
+    --原价
+    self.original_cost = cusMsg.original_cost
 end
 
 -- 商品id

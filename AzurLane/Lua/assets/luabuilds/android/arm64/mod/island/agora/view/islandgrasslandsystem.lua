@@ -1,53 +1,33 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandGrassLandSystem", import("Mod.Island.Core.View.SceneObject.IslandSceneUnit"))
 
-local var_0_0 = "IslandGrassLandSystem"
+function var_0_0.OnLaterAttach(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_0.data:GetSize()
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("Mod.Island.Core.View.SceneObject.IslandSceneUnit"))
-
-function var_0_1.OnLaterAttach(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0._go.transform.position
-	local var_1_1 = arg_1_0.data
-	local var_1_2 = var_3.GetSize(var_1_1)
-
-	BLHX = var_1_10004
-
-	local var_1_3 = var_1_10004.Rendering.TerrainDetailTileMask.Instance
-
-	var_4.Init(var_1_3, var_1_0.x, var_1_0.z, var_1_2.x, var_1_2.y, 1)
+	BLHX.Rendering.TerrainDetailTileMask.Instance:Init(arg_1_0._go.transform.position.x, arg_1_0._go.transform.position.z, var_1_0.x, var_1_0.y, 1)
 
 	return
 end
 
-function var_0_1.SetVisible(arg_2_0, arg_2_1, arg_2_2)
+function var_0_0.SetVisible(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0
+
 	if arg_2_1:IsBuildingType() then
-		return
+		do return end
+
+		var_2_0 = arg_2_1:GetSizeWithRotation()
 	end
 
-	local var_2_0 = arg_2_1:GetPosition()
-	local var_2_1 = arg_2_1
-	local var_2_2 = arg_2_1.GetSizeWithRotation(var_2_1)
-	local var_2_3 = arg_2_0.data
-	local var_2_4 = var_5.MapPoint2GroundPoint(var_2_3, var_2_0)
+	local var_2_1 = arg_2_0.data:MapPoint2GroundPoint((arg_2_1:GetPosition()))
 
-	BLHX = var_2_1
-
-	local var_2_5 = var_2_1.Rendering.TerrainDetailTileMask.Instance
-
-	var_6.SetVisible(var_2_5, var_2_4.x, var_2_4.y, var_2_2.x, var_2_2.y, arg_2_2)
+	BLHX.Rendering.TerrainDetailTileMask.Instance:SetVisible(var_2_1.x, var_2_1.y, var_2_0.x, var_2_0.y, arg_2_2)
 
 	return
 end
 
-function var_0_1.OnDetach(arg_3_0)
-	BLHX = var_1_10001
-
-	local var_3_0 = var_1_10001.Rendering.TerrainDetailTileMask.Instance
-
-	var_1.Dispose(var_3_0)
+function var_0_0.OnDetach(arg_3_0)
+	BLHX.Rendering.TerrainDetailTileMask.Instance:Dispose()
 
 	return
 end
 
-return var_0_1
+return var_0_0

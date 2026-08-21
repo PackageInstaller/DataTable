@@ -1,274 +1,132 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BattleGateBossRushEX")
 
-local var_0_0 = var_0_10000("BattleGateBossRushEX")
-
-ys = var_0_10001
-var_0_10001.Battle.BattleGateBossRushEX = var_0_0
+ys.Battle.BattleGateBossRushEX = var_0_0
 var_0_0.__name = "BattleGateBossRushEX"
 
 function var_0_0.Entrance(arg_1_0, arg_1_1)
+	local var_1_9000
 	local var_1_0 = arg_1_0.actId
-
-	getProxy = var_1_10003
-	PlayerProxy = var_1_10005
-
-	local var_1_1 = var_1_10003(var_1_10005)
-
-	getProxy = var_1_10004
-	FleetProxy = var_1_10006
-
-	local var_1_2 = var_1_10004(var_1_10006)
-
-	getProxy = var_1_10005
-	BayProxy = var_1_10007
-
-	local var_1_3 = var_1_10005(var_1_10007)
-
-	pg = var_1_10006
-
-	local var_1_4 = var_1_10006.battle_cost_template
-
-	SYSTEM_BOSS_RUSH_EX = var_1_10007
-
-	local var_1_5 = var_1_4[var_1_10007].oil_cost > 0
+	local var_1_1 = getProxy(PlayerProxy)
+	local var_1_2 = getProxy(FleetProxy)
+	local var_1_3 = getProxy(BayProxy)
+	local var_1_4 = pg.battle_cost_template[SYSTEM_BOSS_RUSH_EX].oil_cost > 0
 	local var_1_6 = 0
-	local var_1_7 = 0
-	local var_1_8 = 0
-	local var_1_9 = 0
+	local var_1_8 = getProxy(ActivityProxy)
+	local var_1_9 = var_1_8.getActivityById(var_1_9000, arg_1_0.actId):GetSeriesData()
+	local var_1_10 = var_1_9:GetExpeditionIds()[var_1_8]
+	local var_1_11, var_1_12 = var_1_9:GetStageFleets(var_1_9:GetMode(), var_1_9:GetStaegLevel() + 1)
+	local var_1_13 = var_1_2:getActivityFleets()[arg_1_0.actId]
 
-	getProxy = var_1_10012
-	ActivityProxy = var_1_10014
-
-	local var_1_10 = var_1_10012(var_1_10014)
-	local var_1_11 = var_12.getActivityById(var_1_10, var_1_0)
-	local var_1_12 = var_12.GetSeriesData(var_1_11)
-	local var_1_13 = var_13.GetStaegLevel(var_1_12) + 1
-	local var_1_14 = var_13:GetExpeditionIds()[var_1_13]
-	local var_1_15 = var_13:GetMode()
-	local var_1_16, var_1_17 = var_13:GetStageFleets(var_1_15, var_1_13)
-	local var_1_18 = var_1_2:getActivityFleets()[var_1_0][var_1_16]
-	local var_1_19 = var_19[var_1_17]
-	local var_1_20 = {}
-	local var_1_21 = var_1_3:getSortShipsByFleet(var_1_18)
-
-	ipairs = var_1_10024
-
-	for iter_1_0, iter_1_1 in var_1_10024(var_1_21) do
-		var_1_20[#var_1_20 + 1] = iter_1_1.id
+	for iter_1_0, iter_1_1 in ipairs((var_1_3:getSortShipsByFleet(var_1_13[var_1_11]))) do
+		({})[#{} + 1] = iter_1_1.id
 	end
 
-	local var_1_22 = var_1_1:getRawData()
+	local var_1_15 = var_1_1:getRawData()
 
-	if var_1_5 and var_1_22.oil < var_1_9 then
-		pg = var_25
-		iter_1_0 = var_25.TipsMgr.GetInstance()
-
-		local var_1_23 = var_25.ShowTips
-
-		i18n = iter_1_1
-
-		var_1_23(iter_1_0, iter_1_1("stage_beginStage_error_noResource"))
+	if var_1_4 and 0 > var_1_1:getRawData().oil then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("stage_beginStage_error_noResource"))
 
 		return
 	end
 
 	arg_1_1.ShipVertify()
-
-	local function var_1_24(arg_2_0)
-		if var_1_5 then
-			local var_2_0 = var_1_22
-
-			var_1.consume(var_2_0, {
+	BeginStageCommand.SendRequest(SYSTEM_BOSS_RUSH_EX, {}, {
+		var_1_9:GetExpeditionIds()[var_1_8]
+	}, function(arg_2_0)
+		if var_1_4 then
+			var_1_15:consume({
 				gold = 0,
-				oil = var_1_7
+				oil = var_1_6
 			})
 		end
 
-		local var_2_1 = var_0.enter_energy_cost
-
-		if 0 < var_2_1 then
-			pg = var_2_1
-
-			local var_2_2 = var_2_1.gameset.battle_consume_energy.key_value
-
-			ipairs = var_2
-
-			for iter_2_0, iter_2_1 in var_2(var_1_21) do
-				iter_2_1:cosumeEnergy(var_2_2)
-
-				local var_2_3 = var_1_3
-
-				var_7.updateShip(var_2_3, iter_2_1)
+		if var_0.enter_energy_cost > 0 then
+			for iter_2_0, iter_2_1 in ipairs(var_0) do
+				iter_2_1:cosumeEnergy(pg.gameset.battle_consume_energy.key_value)
+				var_1_3:updateShip(iter_2_1)
 			end
 		end
 
-		local var_2_4 = var_1_1
-
-		var_1.updatePlayer(var_2_4, var_1_22)
-
-		local var_2_5 = {
+		var_1_1:updatePlayer(var_1_15)
+		arg_1_1:sendNotification(GAME.BEGIN_STAGE_DONE, {
 			prefabFleet = {},
-			stageId = var_1_14
-		}
-
-		SYSTEM_BOSS_RUSH_EX = var_2
-		var_2_5.system = var_2
-		var_2_5.actId = var_1_0
-		var_2_5.token = arg_2_0.key
-
-		local var_2_6 = arg_1_1
-		local var_2_7 = var_2.sendNotification
-
-		GAME = iter_2_0
-
-		var_2_7(var_2_6, iter_2_0.BEGIN_STAGE_DONE, var_2_5)
+			stageId = var_1_10,
+			system = SYSTEM_BOSS_RUSH_EX,
+			actId = var_1_0,
+			token = arg_2_0.key
+		})
 
 		return
-	end
-
-	local function var_1_25(arg_3_0)
-		local var_3_0 = arg_1_1
-
-		var_1.RequestFailStandardProcess(var_3_0, arg_3_0)
+	end, function(arg_3_0)
+		arg_1_1:RequestFailStandardProcess(arg_3_0)
 
 		return
-	end
-
-	BeginStageCommand = iter_1_0
-
-	local var_1_26 = iter_1_0.SendRequest
-
-	SYSTEM_BOSS_RUSH_EX = var_1_10029
-
-	var_1_26(var_1_10029, var_1_20, {
-		var_1_14
-	}, var_1_24, var_1_25)
+	end)
 
 	return
 end
 
 function var_0_0.Exit(arg_4_0, arg_4_1)
-	pg = var_1_10002
-
-	local var_4_0 = var_1_10002.battle_cost_template
-
-	SYSTEM_BOSS_RUSH_EX = var_1_10003
-
-	local var_4_1 = var_4_0[var_1_10003]
-
-	getProxy = var_1_10003
-	FleetProxy = var_1_10005
-
-	local var_4_2 = var_1_10003(var_1_10005)
-
-	getProxy = var_1_10004
-	BayProxy = var_1_10006
-
-	local var_4_3 = var_1_10004(var_1_10006)
-	local var_4_4 = arg_4_0.statistics._battleScore
-
-	ys = var_1_10006
-
-	local var_4_5 = var_4_4 > var_1_10006.Battle.BattleConst.BattleScore.C
-	local var_4_6 = 0
-	local var_4_7 = {}
-	local var_4_8 = {}
+	local var_4_1 = getProxy(FleetProxy)
+	local var_4_2 = getProxy(BayProxy)
+	local var_4_3 = arg_4_0.statistics._battleScore > ys.Battle.BattleConst.BattleScore.C
+	local var_4_5 = {}
+	local var_4_6 = {}
 
 	;(function()
-		local var_5_0 = arg_4_0.actId
-
-		getProxy = var_2_10001
-		ActivityProxy = var_2_10003
-
-		local var_5_1 = var_2_10001(var_2_10003)
-		local var_5_2 = var_1.getActivityById(var_5_1, var_5_0)
-		local var_5_3 = var_1.GetSeriesData(var_5_2)
-		local var_5_4 = var_2.GetStaegLevel(var_5_3) + 1
-		local var_5_5 = var_2:GetMode()
-		local var_5_6, var_5_7 = var_2:GetStageFleets(var_5_5, var_5_4)
-		local var_5_8 = var_4_2
-		local var_5_9 = var_7.getActivityFleets(var_5_8)[var_5_0][var_5_6]
-		local var_5_10 = var_7[var_5_7]
+		local var_5_0 = getProxy(ActivityProxy):getActivityById(arg_4_0.actId):GetSeriesData()
+		local var_5_1, var_5_2 = var_5_0:GetStageFleets(var_5_0:GetMode(), var_5_0:GetStaegLevel() + 1)
+		local var_5_3 = var_4_1:getActivityFleets()[arg_4_0.actId]
 
 		;(function(arg_6_0)
-			table = var_3_10001
-
-			local var_6_0 = var_3_10001.insertto
-			local var_6_1 = var_4_8
-
-			_ = var_3_10004
-
-			var_6_0(var_6_1, var_3_10004.values(arg_6_0.commanderIds))
-
-			table = var_6_0
-
-			local var_6_2 = var_6_0.insertto
-			local var_6_3 = var_4_7
-			local var_6_4 = var_4_3
-
-			var_6_2(var_6_3, var_4.getSortShipsByFleet(var_6_4, arg_6_0))
+			table.insertto(var_4_6, _.values(arg_6_0.commanderIds))
+			table.insertto(var_4_5, var_4_2:getSortShipsByFleet(arg_6_0))
 
 			return
-		end)(var_5_9)
+		end)(var_5_3[var_5_1])
 
 		if arg_4_0.statistics.submarineAid then
-			var_10(var_5_10)
+			(function(arg_6_0)
+				table.insertto(var_4_6, _.values(arg_6_0.commanderIds))
+				table.insertto(var_4_5, var_4_2:getSortShipsByFleet(arg_6_0))
+
+				return
+			end)(var_5_3[var_5_2])
 		end
 
 		return
 	end)()
 
-	local var_4_9 = arg_4_1.GeneralPackage(arg_4_0, var_4_7)
+	local var_4_7 = arg_4_1.GeneralPackage(arg_4_0, {})
 
-	var_4_9.commander_id_list = var_4_8
+	arg_4_1.GeneralPackage(arg_4_0, {}).commander_id_list = {}
 
-	local function var_4_10(arg_7_0)
+	local function var_4_8(arg_7_0)
 		arg_4_0.statistics.mvpShipID = arg_7_0.mvp
 
-		local var_7_0 = {}
+		local var_7_0 = getProxy(ActivityProxy):getActivityById(arg_4_0.actId)
 
-		SYSTEM_BOSS_RUSH_EX = var_2
-		var_7_0.system = var_2
-		var_7_0.statistics = arg_4_0.statistics
-		var_7_0.score = var_4_4
-		var_7_0.result = arg_7_0.result
-
-		local var_7_1 = arg_4_0.actId
-
-		getProxy = var_2_10003
-		ActivityProxy = var_2_10005
-
-		local var_7_2 = var_2_10003(var_2_10005)
-		local var_7_3 = var_3.getActivityById(var_7_2, var_7_1)
-		local var_7_4 = var_3.GetSeriesData(var_7_3)
-
-		var_4.PassStage(var_7_4, var_7_0)
-
-		getProxy = var_5
-		ActivityProxy = var_7_4
-
-		local var_7_5 = var_5(var_7_4)
-
-		var_5.updateActivity(var_7_5, var_3)
-
-		local var_7_6 = arg_4_1
-		local var_7_7 = var_5.sendNotification
-
-		GAME = var_8
-
-		var_7_7(var_7_6, var_8.FINISH_STAGE_DONE, var_7_0)
+		var_7_0:GetSeriesData():PassStage({
+			system = SYSTEM_BOSS_RUSH_EX,
+			statistics = arg_4_0.statistics,
+			score = var_0,
+			result = arg_7_0.result
+		})
+		getProxy(ActivityProxy):updateActivity(var_7_0)
+		arg_4_1:sendNotification(GAME.FINISH_STAGE_DONE, {
+			system = SYSTEM_BOSS_RUSH_EX,
+			statistics = arg_4_0.statistics,
+			score = var_0,
+			result = arg_7_0.result
+		})
 
 		return
 	end
 
-	seriesAsync = var_13
-
-	var_13({
+	seriesAsync({
 		function(arg_8_0)
-			if var_4_5 then
-				local var_8_0 = arg_4_1
-
-				var_1.SendRequest(var_8_0, var_4_9, function(arg_9_0)
+			if var_4_3 then
+				arg_4_1:SendRequest(var_4_7, function(arg_9_0)
 					arg_8_0(arg_9_0)
 
 					return
@@ -282,7 +140,7 @@ function var_0_0.Exit(arg_4_0, arg_4_1)
 			return
 		end,
 		function(arg_10_0, arg_10_1)
-			var_4_10(arg_10_1)
+			var_4_8(arg_10_1)
 
 			return
 		end
@@ -292,9 +150,7 @@ function var_0_0.Exit(arg_4_0, arg_4_1)
 end
 
 function var_0_0.GetPreloadList(arg_11_0)
-	ys = var_1_10001
-
-	local var_11_0, var_11_1 = var_1_10001.Battle.BattleGateBossRush.GetPreloadList(arg_11_0)
+	local var_11_0, var_11_1 = ys.Battle.BattleGateBossRush.GetPreloadList(arg_11_0)
 
 	return var_11_0, var_11_1
 end

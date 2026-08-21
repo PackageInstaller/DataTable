@@ -1,23 +1,16 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = class("Sequence")
 
-var_0_0 = var_0_10000 or {}
-class = ys
+ys.Sequence = var_0_0
+var_0_0.Name = ""
+var_0_0._list = nil
+var_0_0.Center = nil
+var_0_0._wait = false
 
-local var_0_1 = var_0("Sequence")
-
-ys = var_0_10001
-var_0_10001.Sequence = var_0_1
-var_0_1.Name = ""
-var_0_1._list = nil
-var_0_1.Center = nil
-var_0_1._wait = false
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.Name = arg_1_1
-	ys = var_1_10003
-	arg_1_0._list = var_1_10003.LinkList.New()
+	arg_1_0._list = ys.LinkList.New()
 	arg_1_0.Center = arg_1_2
 
 	arg_1_2:AddSeq(arg_1_0)
@@ -25,75 +18,59 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Dispose(arg_2_0)
-	local var_2_0 = arg_2_0._list.Head
-
+function var_0_0.Dispose(arg_2_0)
 	for iter_2_0 = 1, arg_2_0._list.Count do
-		local var_2_1 = var_2_0.Data
-
-		var_6.Dispose(var_2_1)
-
-		var_2_0 = var_2_0.Next
+		arg_2_0._list.Head.Data:Dispose()
 	end
 
-	local var_2_2 = arg_2_0._list
-
-	var_2.Clear(var_2_2)
+	arg_2_0._list:Clear()
 
 	return
 end
 
-function var_0_1.Add(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0._list
-
-	var_2.AddLast(var_3_0, arg_3_1)
+function var_0_0.Add(arg_3_0, arg_3_1)
+	arg_3_0._list:AddLast(arg_3_1)
 
 	return
 end
 
-function var_0_1.Wait(arg_4_0)
+function var_0_0.Wait(arg_4_0)
 	arg_4_0._wait = true
 
 	return
 end
 
-function var_0_1.Resume(arg_5_0)
+function var_0_0.Resume(arg_5_0)
 	arg_5_0._wait = false
 
 	return
 end
 
-function var_0_1.Update(arg_6_0)
+function var_0_0.Update(arg_6_0)
 	if arg_6_0._wait then
 		return false
 	end
 
 	while arg_6_0._list.Count > 0 do
 		if not arg_6_0._list.Head.Data.Finish then
-			var_1:UpdateNode()
+			arg_6_0._list.Head.Data:UpdateNode()
 
-			if not var_1.Finish then
+			if not arg_6_0._list.Head.Data.Finish then
 				return false
 			else
-				local var_6_0 = arg_6_0._list
-
-				var_2.RemoveFirst(var_6_0)
+				arg_6_0._list:RemoveFirst()
 			end
 		else
-			local var_6_1 = arg_6_0._list
-
-			var_2.RemoveFirst(var_6_1)
+			arg_6_0._list:RemoveFirst()
 		end
 	end
 
 	return true
 end
 
-function var_0_1.IsFinish(arg_7_0)
-	local var_7_0 = arg_7_0._list.Head
-
+function var_0_0.IsFinish(arg_7_0)
 	for iter_7_0 = 1, arg_7_0._list.Count do
-		if not var_7_0.Data.Finish then
+		if not arg_7_0._list.Head.Data.Finish then
 			return false
 		end
 	end

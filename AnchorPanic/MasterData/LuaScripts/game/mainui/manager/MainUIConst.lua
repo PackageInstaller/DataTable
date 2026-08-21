@@ -24,6 +24,10 @@ MAIN_UI_FUNC_TYPE= {
 	LEFT_TOP_HEAD = 4,
 	-- 左侧活动区
 	LEFT_ACTIVTY = 5,
+	--简化功能区
+	SIMPLE = 6,
+	--独立
+	SINGLE = 7,
 }
  
 --[[ 替换语言包自动生成，请勿修改！

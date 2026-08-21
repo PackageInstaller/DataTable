@@ -1,109 +1,51 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Physics2dScene", import("..base.BaseUI"))
 
-local var_0_0 = "Physics2dScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "PhysicsTest"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0._backBtn = arg_2_0._tf:Find("back_btn")
+	arg_2_0._box = arg_2_0._tf:Find("box")
+	arg_2_0._boxRig = GetComponent(arg_2_0._box, "Rigidbody2D")
+	arg_2_0._boxPhyItem = GetComponent(arg_2_0._box, "Physics2DItem")
 
-	arg_2_0._backBtn = var_1.Find(var_2_0, "back_btn")
+	Physics2DMgr.Inst:AddSimulateItem(arg_2_0._boxPhyItem)
 
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0._box = var_1.Find(var_2_1, "box")
-	GetComponent = var_1
-	arg_2_0._boxRig = var_1(arg_2_0._box, "Rigidbody2D")
-	GetComponent = var_1
-	arg_2_0._boxPhyItem = var_1(arg_2_0._box, "Physics2DItem")
-	Physics2DMgr = var_1
-
-	local var_2_2 = var_1.Inst
-
-	var_1.AddSimulateItem(var_2_2, arg_2_0._boxPhyItem)
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0._gizmos = var_1.Find(var_2_3, "res/gizmos")
+	arg_2_0._gizmos = arg_2_0._tf:Find("res/gizmos")
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	onButton = var_1_10001
-
-	var_1_10001(arg_3_0, arg_3_0._backBtn, function()
-		local var_4_0 = arg_3_0
-
-		var_0.emit(var_4_0, var_0_1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._backBtn, function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 
 		return
 	end)
 
-	local var_3_0 = arg_3_0._tf
-	local var_3_1 = var_1.TransformPoint
+	arg_3_0._boxRig.position = arg_3_0._tf:TransformPoint(Vector3(-578, -390))
 
-	Vector3 = var_4
-
-	local var_3_2 = var_3_1(var_3_0, var_4(-578, -390))
-
-	arg_3_0._boxRig.position = var_3_2
-
-	local var_3_3 = arg_3_0._boxPhyItem.CollisionEnter
-
-	var_2.AddListener(var_3_3, function(arg_5_0)
-		Physics2D = var_2_10001
-
-		if var_2_10001.autoSimulation then
-			print = var_1
-
-			var_1("=========================")
-
-			print = var_1
-
-			var_1(arg_5_0.collider.gameObject.name)
-
-			print = var_1
-
-			var_1(arg_5_0.otherCollider.gameObject.name)
+	arg_3_0._boxPhyItem.CollisionEnter:AddListener(function(arg_5_0)
+		if Physics2D.autoSimulation then
+			print("=========================")
+			print(arg_5_0.collider.gameObject.name)
+			print(arg_5_0.otherCollider.gameObject.name)
 
 			if arg_5_0.collider.gameObject.name ~= "ground" then
-				LeanTween = var_1
-
-				local var_5_0 = var_1.scale
-				local var_5_1 = arg_5_0.collider.gameObject
-
-				Vector3 = var_2_10004
-
-				var_5_0(var_5_1, var_2_10004(0, 0, 0), 1)
+				LeanTween.scale(arg_5_0.collider.gameObject, Vector3(0, 0, 0), 1)
 			end
 		end
 
 		return
 	end)
-
-	onDelayTick = var_2
-
-	var_2(function()
-		local var_6_0 = arg_3_0
-
-		var_0.simulateDrawPath(var_6_0)
+	onDelayTick(function()
+		arg_3_0:simulateDrawPath()
 
 		return
 	end, 1)
-
-	onDelayTick = var_2
-
-	var_2(function()
-		local var_7_0 = arg_3_0
-
-		var_0.jump(var_7_0)
+	onDelayTick(function()
+		arg_3_0:jump()
 
 		return
 	end, 3)
@@ -111,51 +53,23 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.jump(arg_8_0)
-	local var_8_0 = arg_8_0._tf
-	local var_8_1 = var_1.TransformPoint
-
-	Vector3 = var_1_10004
-
-	local var_8_2 = var_8_1(var_8_0, var_1_10004(-578, -390))
-
-	arg_8_0._boxRig.position = var_8_2
-
-	local var_8_3 = arg_8_0._boxRig
-
-	Vector2 = var_8_0
-	var_8_3.velocity = var_8_0(10, 10)
+function var_0_0.jump(arg_8_0)
+	arg_8_0._boxRig.position = arg_8_0._tf:TransformPoint(Vector3(-578, -390))
+	arg_8_0._boxRig.velocity = Vector2(10, 10)
 
 	return
 end
 
-function var_0_1.simulateDrawPath(arg_9_0)
-	Physics2DMgr = var_1_10001
-
-	local var_9_0 = var_1_10001.Inst
-
-	var_1.DoPrediction(var_9_0, 0.1, 50, function()
-		local var_10_0 = arg_9_0
-
-		var_0.jump(var_10_0)
+function var_0_0.simulateDrawPath(arg_9_0)
+	Physics2DMgr.Inst:DoPrediction(0.1, 50, function()
+		arg_9_0:jump()
 
 		return
 	end, function()
-		instantiate = var_2_10000
+		local var_11_0 = instantiate(arg_9_0._gizmos)
 
-		local var_11_0 = var_2_10000(arg_9_0._gizmos)
-
-		setParent = var_2_10001
-		tf = var_2_10003
-
-		var_2_10001(var_2_10003(var_11_0), arg_9_0._tf, false)
-
-		setAnchoredPosition = var_2_10001
-
-		local var_11_1 = var_11_0
-		local var_11_2 = arg_9_0._tf
-
-		var_2_10001(var_11_1, var_4.InverseTransformVector(var_11_2, arg_9_0._boxRig.position))
+		setParent(tf(var_11_0), arg_9_0._tf, false)
+		setAnchoredPosition(var_11_0, arg_9_0._tf:InverseTransformVector(arg_9_0._boxRig.position))
 
 		return
 	end)
@@ -163,18 +77,11 @@ function var_0_1.simulateDrawPath(arg_9_0)
 	return
 end
 
-function var_0_1.willExit(arg_12_0)
-	Physics2DMgr = var_1_10001
-
-	local var_12_0 = var_1_10001.Inst
-
-	var_1.RemoveSimulateItem(var_12_0, arg_12_0._boxPhyItem)
-
-	local var_12_1 = arg_12_0._boxPhyItem.CollisionEnter
-
-	var_1.RemoveAllListeners(var_12_1)
+function var_0_0.willExit(arg_12_0)
+	Physics2DMgr.Inst:RemoveSimulateItem(arg_12_0._boxPhyItem)
+	arg_12_0._boxPhyItem.CollisionEnter:RemoveAllListeners()
 
 	return
 end
 
-return var_0_1
+return var_0_0

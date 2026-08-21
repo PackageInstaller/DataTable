@@ -46,6 +46,16 @@ function configUI(self)
     self.mPretBtn = self:getChildGO("mPretBtn")
     self.mNextBtn = self:getChildGO("mNextBtn")
     self.mTxtNum = self:getChildGO("mTxtNum"):GetComponent(ty.Text)
+
+    self.mSelectType = self:getChildGO("mSelectType")
+    self.mTypeList = {}
+    self.mBtnType1 = self:getChildGO("mBtnType1")
+    self.mBtnType2 = self:getChildGO("mBtnType2")
+    table.insert(self.mTypeList, self.mBtnType1)
+    table.insert(self.mTypeList, self.mBtnType2)
+
+  
+   
 end
 
 function initViewText(self)
@@ -56,6 +66,32 @@ end
 function addAllUIEvent(self)
     self:addUIEvent(self.mPretBtn, self.onPreClick)
     self:addUIEvent(self.mNextBtn, self.onNextClick)
+
+    self:addUIEvent(self.mBtnType1, self.onBtnType1Click)
+    self:addUIEvent(self.mBtnType2, self.onBtnType2Click)
+end
+
+function onBtnType1Click(self)
+    self:updateClickType(1)
+end
+
+function onBtnType2Click(self)
+    self:updateClickType(2)
+end
+
+function updateClickType(self,index)
+    self.defIndex = index
+    for i = 1,#self.mTypeList do
+        if i ~= index then
+            self.mTypeList[i]:GetComponent(ty.Image).color = gs.ColorUtil.GetColor("2d3646FF")
+            self.mTypeList[i].transform:Find("Text"):GetComponent(ty.Text).color = gs.ColorUtil.GetColor("ddddddFF")
+        else
+            self.mTypeList[i]:GetComponent(ty.Image).color = gs.ColorUtil.GetColor("FFFFFFFF")
+            self.mTypeList[i].transform:Find("Text"):GetComponent(ty.Text).color = gs.ColorUtil.GetColor("40484bFF")
+        end
+    end
+    self.curPage = 1
+    self:updatePageInfo()
 end
 
 function onPreClick(self)
@@ -69,11 +105,19 @@ function onPreClick(self)
 end
 
 function updatePageInfo(self)
-    GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_BATTLE_LOG, {
-        buildId = 0,
-        page = {(self.curPage - 1) * 5 + 1, self.curPage * 5},
-        isAtk = 2
-    })
+    if self.defIndex == guildWar.GuildWarType.Normal then
+        GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_BATTLE_LOG, {
+            buildId = 0,
+            page = {(self.curPage - 1) * 5 + 1, self.curPage * 5},
+            isAtk = 2
+        })
+    else
+        GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_TOP_BATTLE_LOG, {
+            buildId = 0,
+            page = {(self.curPage - 1) * 5 + 1, self.curPage * 5},
+            isAtk = 2
+        })
+    end
 end
 
 function onNextClick(self)
@@ -89,8 +133,15 @@ end
 function active(self, args)
     super.active(self)
     self.curPage = 1
+    self.defIndex = guildWar.GuildWarManager:getSeasonType()
     GameDispatcher:addEventListener(EventName.UPDATE_GUILD_WAR_BATTLE_LOG, self.updateLogInfo, self)
-    self:updatePageInfo()
+   
+    for i = 1, #self.mTypeList do
+        self.mTypeList[i].transform:Find("Text"):GetComponent(ty.Text).text = i == guildWar.GuildWarType.Normal and _TT(149238) or _TT(149239)
+    end
+
+    self:updateClickType(self.defIndex)
+    --self:updatePageInfo()
 end
 
 -- 反激活（销毁工作）
@@ -115,7 +166,7 @@ function updateLogInfo(self, args)
 
     self.mPageContent:SetActive(self.mLogCount > 5)
 
-    gs.TransQuick:SizeDelta02(self.mLogScrollRect, self.mLogCount > 5 and 378 or 444)
+    gs.TransQuick:SizeDelta02(self.mLogScrollRect, self.mLogCount > 5 and 320 or 400)
     
 
     for i = 1, #self.mLogList do

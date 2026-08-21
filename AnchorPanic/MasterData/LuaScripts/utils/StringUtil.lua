@@ -274,7 +274,7 @@ function string.toMoneyStr(numTmp)
 end
 
 function string.replaceSpacesToFullAngle(str)
-    if(str)then
+    if (str) then
         return string.gsub(str, " ", "　")
     end
     return str
@@ -282,10 +282,10 @@ end
 
 -- 删除所有空格（\u{00A0} ：不换行空格的Unicode编码）
 function string.deleteSpaces(str)
-    if(str)then
-        if(gs.Application.platform ~= gs.RuntimePlatform.IPhonePlayer)then
+    if (str) then
+        if (gs.Application.platform ~= gs.RuntimePlatform.IPhonePlayer) then
             -- \u{00A0} 这种编码ios不支持
-            str = string.gsub(str, "\u{00A0}", "")
+            str = string.gsub(str, "u{00A0}", "")
         end
         str = string.gsub(str, "　", "")
         str = string.gsub(str, " ", "")
@@ -299,4 +299,158 @@ function string.NullOrEmpty(str)
         return true
     end
     return false
+end
+
+-- 星期几文本
+function string.getWeekNumParseWeekStr(weekStr, num)
+    local weekList = string.split(weekStr, ",")
+    return weekList[num]
+end
+
+-- local __mDayTypeStr = {53613, 53614, 53615, 53616, 53617, 53618, 53619}
+-- --周幾的阿拉伯數字轉換為語言表配置的文本
+-- --例如傳入7 返回的是日 6返回六
+-- function string.getWeekNumParseWeekStr(weekNum)
+--     return _TT(__mDayTypeStr[weekNum])
+-- end
+
+local __mNumTypeStr = { 53613, 53614, 53615, 53616, 53617, 53618, 53622, 53623, 53624 }
+--123456789的阿拉伯數字轉換為語言表配置的文本
+--例如傳入7 返回的是七 6返回六 9返回九
+function string.getNumParseStr(num)
+    return _TT(__mNumTypeStr[num])
+end
+
+-- 罗马数字转换
+local romanStrlist = { "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ", "Ⅶ", "Ⅷ", "Ⅸ", "Ⅹ" }
+function string.getRomanConversion(num)
+    return romanStrlist[num]
+end
+
+-- 单数转换例如1变成01 双数以上照旧
+function string.singleNumConverZeroNum(num)
+    num = tonumber(num)
+    if num > 0 then
+        if num < 10 then
+            return "0" .. num
+        else
+            return tostring(num)
+        end
+    elseif num < 0 then
+        num = math.abs(num)
+        return "-" .. string.singleNumConverZeroNum(num)
+    else
+        return "0"
+    end
+
+end
+
+-- 判断字符是否以指定的前缀开头
+function string.startsWith(path, prefix)
+    return string.sub(path, 1, string.len(prefix)) == prefix
+end
+
+-- 替换字符中的前缀
+function string.replacePrefix(path, prefix, newPrefix)
+    if string.startsWith(path, prefix) then
+        return newPrefix .. string.sub(path, string.len(prefix) + 1)
+    else
+        return path
+    end
+end
+
+local units = {
+    "", "万", "亿", "兆", "京", "垓", "秭", "穰", "沟", "涧",
+    "正", "载", "极", "恒河沙", "阿僧祇", "那由他", "不可思议", "无量大数"
+}
+--1000 0000 0000 00000000
+function string.formatChineseNumber(num, decimalPlaces, formatCount)
+    -- if type(num) ~= "number" then
+    --     return "0"
+    -- end
+    if type(num) == "string" then
+        num = tonumber(num)
+    end
+
+    if num == 0 then
+        return "0"
+    end
+
+    local isNegative = false
+    if num < 0 then
+        isNegative = true
+        num = math.abs(num)
+    end
+
+    if formatCount ~= nil and #tostring(num) <= formatCount then
+        return num
+    end
+
+    local unitIndex = 0
+    local divisor = 1
+
+    while num >= 10000 and unitIndex < #units do
+        num = num / 10000
+        unitIndex = unitIndex + 1
+    end
+
+    decimalPlaces = decimalPlaces or 2
+    local decimalFormat = "%." .. decimalPlaces .. "f"
+
+    local result = string.format(decimalFormat, num)
+
+    if decimalPlaces > 0 then
+        result = result:gsub("0+$", ""):gsub("%.$", "")
+    end
+
+    if unitIndex > 0 then
+        result = result .. units[unitIndex + 1]
+    end
+
+    if isNegative then
+        result = "-" .. result
+    end
+
+    return result
+end
+
+
+-- 把科学计数法转化为完整字符串数值显示(14位后不精确，仅补0)
+function string.formatSciNotationNumber(str)
+    -- 提取开头的非数字字符作为前缀
+    local prefix = str:match("^[^0-9+-]*") or ""
+    local number_str = str:sub(#prefix + 1)
+
+    local digits = number_str
+    local e_index = number_str:find("[eE]")
+    if e_index then
+        local mantissa = number_str:sub(1, e_index - 1)
+        local exponent = tonumber(number_str:sub(e_index + 1))
+        local integer_part, fractional_part = mantissa:match("^(%d*)%.?(%d*)$")
+
+        -- 确保integer_part和fractional_part都有值
+        integer_part = integer_part or ""
+        fractional_part = fractional_part or ""
+
+        -- 移除小数点并补零
+        digits = integer_part .. fractional_part
+        if exponent > 0 then
+            if #fractional_part > exponent then
+                -- 指数小于小数位数
+                local move_point = integer_part .. fractional_part:sub(1, exponent)
+                local remain = fractional_part:sub(exponent + 1)
+                digits = move_point .. "." .. remain
+            else
+                -- 指数大于等于小数位数
+                digits = integer_part .. fractional_part .. string.rep("0", exponent - #fractional_part)
+            end
+        else
+            -- 负指数
+            exponent = -exponent
+            digits = "0." .. string.rep("0", exponent - 1) .. integer_part .. fractional_part
+        end
+    end
+
+    -- 返回前缀 + 转换后的数字
+    return prefix .. digits
 end

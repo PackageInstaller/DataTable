@@ -1,532 +1,236 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldPortLayer", import("..base.BaseUI"))
 
-local var_0_0 = "WorldPortLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-var_0_1.Listeners = {
+var_0_0.Listeners = {
 	onUpdateNGoods = "OnUpdateNGoods",
 	onUpdateMoneyCount = "OnUpdateMoneyCount",
 	onUpdateTasks = "OnUpdateTasks",
 	onUpdateGoods = "OnUpdateGoods"
 }
-var_0_1.TitleName = {
+var_0_0.TitleName = {
 	"text_gangkou",
 	"text_operation",
 	"text_supply"
 }
-var_0_1.PageMain = 0
-var_0_1.PageTask = 1
-var_0_1.PageShop = 2
-var_0_1.PageDockyard = 3
-var_0_1.PageNShop = 4
-var_0_1.BlurPages = {
-	[var_0_1.PageTask] = true,
-	[var_0_1.PageShop] = true,
-	[var_0_1.PageNShop] = true
+var_0_0.PageMain = 0
+var_0_0.PageTask = 1
+var_0_0.PageShop = 2
+var_0_0.PageDockyard = 3
+var_0_0.PageNShop = 4
+var_0_0.BlurPages = {
+	[var_0_0.PageTask] = true,
+	[var_0_0.PageShop] = true,
+	[var_0_0.PageNShop] = true
 }
-var_0_1.optionsPath = {
+var_0_0.optionsPath = {
 	"blur_panel/adapt/top/title/option"
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldPortUI"
 end
 
-function var_0_1.init(arg_2_0)
-	pairs = var_1_10001
-
-	for iter_2_0, iter_2_1 in var_1_10001(var_0_1.Listeners) do
+function var_0_0.init(arg_2_0)
+	for iter_2_0, iter_2_1 in pairs(var_0_0.Listeners) do
 		arg_2_0[iter_2_0] = function(...)
-			var_0_1[iter_2_1](arg_2_0, ...)
+			var_0_0[iter_2_1](arg_2_0, ...)
 
 			return
 		end
 	end
 
-	local var_2_0 = arg_2_0._tf
+	arg_2_0.rtBg = arg_2_0._tf:Find("bg")
+	arg_2_0.rtEnterIcon = arg_2_0.rtBg:Find("enter_icon")
+	arg_2_0.rtBgNShop = arg_2_0._tf:Find("bg_2")
+	arg_2_0.rtBlurPanel = arg_2_0._tf:Find("blur_panel")
+	arg_2_0.rtTasks = arg_2_0.rtBlurPanel:Find("adapt/tasks")
+	arg_2_0.rtShop = arg_2_0.rtBlurPanel:Find("adapt/shop")
+	arg_2_0.rtPainting = arg_2_0.rtShop:Find("paint")
+	arg_2_0.btnPainting = arg_2_0.rtShop:Find("paint_touch")
 
-	arg_2_0.rtBg = var_1.Find(var_2_0, "bg")
+	setActive(arg_2_0.btnPainting, false)
 
-	local var_2_1 = arg_2_0.rtBg
+	arg_2_0.rtChat = arg_2_0.rtShop:Find("chat")
 
-	arg_2_0.rtEnterIcon = var_1.Find(var_2_1, "enter_icon")
+	setActive(arg_2_0.rtChat, false)
 
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.rtBgNShop = var_1.Find(var_2_2, "bg_2")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.rtBlurPanel = var_1.Find(var_2_3, "blur_panel")
-
-	local var_2_4 = arg_2_0.rtBlurPanel
-
-	arg_2_0.rtTasks = var_1.Find(var_2_4, "adapt/tasks")
-
-	local var_2_5 = arg_2_0.rtBlurPanel
-
-	arg_2_0.rtShop = var_1.Find(var_2_5, "adapt/shop")
-
-	local var_2_6 = arg_2_0.rtShop
-
-	arg_2_0.rtPainting = var_1.Find(var_2_6, "paint")
-
-	local var_2_7 = arg_2_0.rtShop
-
-	arg_2_0.btnPainting = var_1.Find(var_2_7, "paint_touch")
-	setActive = var_1
-
-	var_1(arg_2_0.btnPainting, false)
-
-	local var_2_8 = arg_2_0.rtShop
-
-	arg_2_0.rtChat = var_1.Find(var_2_8, "chat")
-	setActive = var_1
-
-	var_1(arg_2_0.rtChat, false)
-
-	local var_2_9 = arg_2_0.rtBlurPanel
-
-	arg_2_0.rtNShop = var_1.Find(var_2_9, "adapt/new_shop")
-
-	local var_2_10 = arg_2_0.rtNShop
-
-	arg_2_0.containerPort = var_1.Find(var_2_10, "frame/content/left")
-
-	local var_2_11 = arg_2_0.containerPort
-
-	arg_2_0.tplPort = var_1.Find(var_2_11, "port_tpl")
+	arg_2_0.rtNShop = arg_2_0.rtBlurPanel:Find("adapt/new_shop")
+	arg_2_0.containerPort = arg_2_0.rtNShop:Find("frame/content/left")
+	arg_2_0.tplPort = arg_2_0.containerPort:Find("port_tpl")
 	arg_2_0.poolTplPort = {
 		arg_2_0.tplPort
 	}
-
-	local var_2_12 = arg_2_0.rtNShop
-
-	arg_2_0.rtNGoodsContainer = var_1.Find(var_2_12, "frame/content/right/page/view/content")
-
-	local var_2_13 = arg_2_0.rtNShop
-
-	arg_2_0.rtNShopRes = var_1.Find(var_2_13, "frame/content/right/page/title/res")
-	Drop = var_1
-
-	local var_2_14 = var_1.New
-	local var_2_15 = {}
-
-	DROP_TYPE_WORLD_ITEM = var_4
-	var_2_15.type = var_4
-	WorldItem = var_4
-	var_2_15.id = var_4.PortMoneyId
-
-	local var_2_16 = var_2_14(var_2_15)
-
-	GetImageSpriteFromAtlasAsync = var_2
-
-	local var_2_17 = var_2_16:getIcon()
-	local var_2_18 = ""
-	local var_2_19 = arg_2_0.rtNShopRes
-
-	var_2(var_2_17, var_2_18, var_6.Find(var_2_19, "icon/Image"), false)
-
-	setText = var_2
-
-	local var_2_20 = arg_2_0.rtNShopRes
-
-	var_2(var_4.Find(var_2_20, "icon/name"), var_2_16:getName())
-
-	local var_2_21 = arg_2_0.rtBlurPanel
-
-	arg_2_0.rtTop = var_2.Find(var_2_21, "adapt/top")
-
-	local var_2_22 = arg_2_0.rtTop
-
-	arg_2_0.btnBack = var_2.Find(var_2_22, "title/back_button")
-
-	local var_2_23 = arg_2_0.rtTop
-
-	arg_2_0.rtTopTitle = var_2.Find(var_2_23, "title")
-
-	local var_2_24 = arg_2_0.rtTopTitle
-
-	arg_2_0.rtImageTitle = var_2.Find(var_2_24, "print/title")
-
-	local var_2_25 = arg_2_0.rtTopTitle
-
-	arg_2_0.rtImageTitleTask = var_2.Find(var_2_25, "print/title_task")
-
-	local var_2_26 = arg_2_0.rtTopTitle
-
-	arg_2_0.rtImageTitleShop = var_2.Find(var_2_26, "print/title_shop")
-
-	local var_2_27 = arg_2_0.rtTop
-
-	arg_2_0.rtTopLeft = var_2.Find(var_2_27, "left_stage")
-
-	local var_2_28 = arg_2_0.rtTop
-
-	arg_2_0.rtTopRight = var_2.Find(var_2_28, "right_stage")
-	WSWorldInfo = var_2
-	arg_2_0.wsWorldInfo = var_2.New()
-
-	local var_2_29 = arg_2_0.wsWorldInfo
-	local var_2_30 = arg_2_0.rtTopRight
-
-	var_2_29.transform = var_3.Find(var_2_30, "display_panel/world_info")
-
-	local var_2_31 = arg_2_0.wsWorldInfo
-
-	var_2.Setup(var_2_31)
-
-	setText = var_2
-
-	local var_2_32 = arg_2_0.rtTopRight
-	local var_2_33 = var_4.Find(var_2_32, "display_panel/title/title")
-
-	i18n = var_2_30
-
-	var_2(var_2_33, var_2_30("world_map_title_tips"))
-
-	setText = var_2
-
-	local var_2_34 = arg_2_0.rtTopRight
-	local var_2_35 = var_4.Find(var_2_34, "display_panel/title/title_en")
-
-	i18n = var_5
-
-	var_2(var_2_35, var_5("world_map_title_tips_en"))
-
-	setText = var_2
-
-	local var_2_36 = arg_2_0.wsWorldInfo.transform
-	local var_2_37 = var_4.Find(var_2_36, "power/bg/Word")
-
-	i18n = var_5
-
-	var_2(var_2_37, var_5("world_total_power"))
-
-	setText = var_2
-
-	local var_2_38 = arg_2_0.wsWorldInfo.transform
-	local var_2_39 = var_4.Find(var_2_38, "explore/mileage/Text")
-
-	i18n = var_5
-
-	var_2(var_2_39, var_5("world_mileage"))
-
-	setText = var_2
-
-	local var_2_40 = arg_2_0.wsWorldInfo.transform
-	local var_2_41 = var_4.Find(var_2_40, "explore/pressing/Text")
-
-	i18n = var_5
-
-	var_2(var_2_41, var_5("world_pressing"))
-
-	local var_2_42 = arg_2_0.rtTop
-
-	arg_2_0.rtTopBottom = var_2.Find(var_2_42, "bottom_stage")
-
-	local var_2_43 = arg_2_0.rtTopBottom
-
-	arg_2_0.btnOperation = var_2.Find(var_2_43, "btn/operation")
-
-	local var_2_44 = arg_2_0.rtTopBottom
-
-	arg_2_0.btnSupply = var_2.Find(var_2_44, "btn/supply")
-
-	local var_2_45 = arg_2_0.rtTopBottom
-
-	arg_2_0.btnDockyard = var_2.Find(var_2_45, "btn/dockyard")
-	WorldResource = var_2
-	arg_2_0.resPanel = var_2.New()
-
-	local var_2_46 = arg_2_0.resPanel._tf
-	local var_2_47 = var_2.SetParent
-	local var_2_48 = arg_2_0.rtTop
-
-	var_2_47(var_2_46, var_5.Find(var_2_48, "title/resources"), false)
-
-	local var_2_49 = arg_2_0._tf
-
-	arg_2_0.rtTaskWindow = var_2.Find(var_2_49, "task_window")
+	arg_2_0.rtNGoodsContainer = arg_2_0.rtNShop:Find("frame/content/right/page/view/content")
+	arg_2_0.rtNShopRes = arg_2_0.rtNShop:Find("frame/content/right/page/title/res")
+
+	local var_2_0 = Drop.New({
+		type = DROP_TYPE_WORLD_ITEM,
+		id = WorldItem.PortMoneyId
+	})
+
+	GetImageSpriteFromAtlasAsync(var_2_0:getIcon(), "", arg_2_0.rtNShopRes:Find("icon/Image"), false)
+	setText(arg_2_0.rtNShopRes:Find("icon/name"), var_2_0:getName())
+
+	arg_2_0.rtTop = arg_2_0.rtBlurPanel:Find("adapt/top")
+	arg_2_0.btnBack = arg_2_0.rtTop:Find("title/back_button")
+	arg_2_0.rtTopTitle = arg_2_0.rtTop:Find("title")
+	arg_2_0.rtImageTitle = arg_2_0.rtTopTitle:Find("print/title")
+	arg_2_0.rtImageTitleTask = arg_2_0.rtTopTitle:Find("print/title_task")
+	arg_2_0.rtImageTitleShop = arg_2_0.rtTopTitle:Find("print/title_shop")
+	arg_2_0.rtTopLeft = arg_2_0.rtTop:Find("left_stage")
+	arg_2_0.rtTopRight = arg_2_0.rtTop:Find("right_stage")
+	arg_2_0.wsWorldInfo = WSWorldInfo.New()
+	arg_2_0.wsWorldInfo.transform = arg_2_0.rtTopRight:Find("display_panel/world_info")
+
+	arg_2_0.wsWorldInfo:Setup()
+	setText(arg_2_0.rtTopRight:Find("display_panel/title/title"), i18n("world_map_title_tips"))
+	setText(arg_2_0.rtTopRight:Find("display_panel/title/title_en"), i18n("world_map_title_tips_en"))
+	setText(arg_2_0.wsWorldInfo.transform:Find("power/bg/Word"), i18n("world_total_power"))
+	setText(arg_2_0.wsWorldInfo.transform:Find("explore/mileage/Text"), i18n("world_mileage"))
+	setText(arg_2_0.wsWorldInfo.transform:Find("explore/pressing/Text"), i18n("world_pressing"))
+
+	arg_2_0.rtTopBottom = arg_2_0.rtTop:Find("bottom_stage")
+	arg_2_0.btnOperation = arg_2_0.rtTopBottom:Find("btn/operation")
+	arg_2_0.btnSupply = arg_2_0.rtTopBottom:Find("btn/supply")
+	arg_2_0.btnDockyard = arg_2_0.rtTopBottom:Find("btn/dockyard")
+	arg_2_0.resPanel = WorldResource.New()
+
+	arg_2_0.resPanel._tf:SetParent(arg_2_0.rtTop:Find("title/resources"), false)
+
+	arg_2_0.rtTaskWindow = arg_2_0._tf:Find("task_window")
 	arg_2_0.wsTasks = {}
 	arg_2_0.wsGoods = {}
 	arg_2_0.page = -1
 	arg_2_0.dirtyFlags = {}
+	arg_2_0.cdTF = arg_2_0.rtShop:Find("timer_bg")
+	arg_2_0.emptyTF = arg_2_0.rtShop:Find("frame/scrollview/empty")
+	arg_2_0.refreshBtn = arg_2_0.rtShop:Find("refresh_btn")
 
-	local var_2_50 = arg_2_0.rtShop
+	setActive(arg_2_0.refreshBtn, false)
 
-	arg_2_0.cdTF = var_2.Find(var_2_50, "timer_bg")
-
-	local var_2_51 = arg_2_0.rtShop
-
-	arg_2_0.emptyTF = var_2.Find(var_2_51, "frame/scrollview/empty")
-
-	local var_2_52 = arg_2_0.rtShop
-
-	arg_2_0.refreshBtn = var_2.Find(var_2_52, "refresh_btn")
-	setActive = var_2
-
-	var_2(arg_2_0.refreshBtn, false)
-
-	local var_2_53 = arg_2_0._tf
-	local var_2_54 = var_2.Find(var_2_53, "resource/material1")
-	local var_2_55 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_2_48
-	arg_2_0.glitchArtMaterial = var_2_55(var_2_54, var_5(var_2_48)).material
-	OriginShopSingleWindow = var_2
-	arg_2_0.singleWindow = var_2.New(arg_2_0._tf, arg_2_0.event)
-	OriginShopMultiWindow = var_2
-	arg_2_0.multiWindow = var_2.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.glitchArtMaterial = arg_2_0._tf:Find("resource/material1"):GetComponent(typeof(Image)).material
+	arg_2_0.singleWindow = OriginShopSingleWindow.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.multiWindow = OriginShopMultiWindow.New(arg_2_0._tf, arg_2_0.event)
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0)
+function var_0_0.didEnter(arg_4_0)
 	arg_4_0:BlurPanel(arg_4_0._tf)
-
-	onButton = var_1
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.btnBack
-
-	local function var_4_2()
+	onButton(arg_4_0, arg_4_0.btnBack, function()
 		if arg_4_0.isTweening then
 			return
 		end
 
-		local var_5_0 = arg_4_0.port
-
-		if var_0.IsTempPort(var_5_0) or arg_4_0.page == var_0_1.PageMain then
-			local var_5_1 = arg_4_0
-
-			var_0.EaseOutUI(var_5_1, function()
-				local var_6_0 = arg_4_0
-
-				var_0.closeView(var_6_0)
+		if arg_4_0.port:IsTempPort() or arg_4_0.page == var_0_0.PageMain then
+			arg_4_0:EaseOutUI(function()
+				arg_4_0:closeView()
 
 				return
 			end)
 		else
-			local var_5_2 = arg_4_0
-
-			var_0.SetPage(var_5_2, var_0_1.PageMain)
+			arg_4_0:SetPage(var_0_0.PageMain)
 		end
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_4_0, var_4_1, var_4_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0.btnOperation
-
-	local function var_4_5()
-		local var_7_0 = arg_4_0
-
-		var_0.SetPage(var_7_0, var_0_1.PageTask)
+	end, SFX_CANCEL)
+	onButton(arg_4_0, arg_4_0.btnOperation, function()
+		arg_4_0:SetPage(var_0_0.PageTask)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_3, var_4_4, var_4_5, var_1_10006)
-
-	onButton = var_1
-
-	local var_4_6 = arg_4_0
-	local var_4_7 = arg_4_0.btnSupply
-
-	local function var_4_8()
-		nowWorld = var_2_10000
-
-		local var_8_0 = var_2_10000()
-
-		if var_0.UsePortNShop(var_8_0) then
-			local var_8_1 = arg_4_0
-
-			var_0.SetPage(var_8_1, var_0_1.PageNShop)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.btnSupply, function()
+		if nowWorld():UsePortNShop() then
+			arg_4_0:SetPage(var_0_0.PageNShop)
 		else
-			local var_8_2 = arg_4_0
-
-			var_0.SetPage(var_8_2, var_0_1.PageShop)
+			arg_4_0:SetPage(var_0_0.PageShop)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_6, var_4_7, var_4_8, var_1_10006)
-
-	onButton = var_1
-
-	local var_4_9 = arg_4_0
-	local var_4_10 = arg_4_0.btnDockyard
-
-	local function var_4_11()
-		local var_9_0 = arg_4_0
-		local var_9_1 = var_0.emit
-
-		WorldPortMediator = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.OnOpenBay)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.btnDockyard, function()
+		arg_4_0:emit(WorldPortMediator.OnOpenBay)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_9, var_4_10, var_4_11, var_1_10006)
+	end, SFX_PANEL)
 	arg_4_0:UpdatePainting(arg_4_0:GetPaintingInfo())
 	arg_4_0:UpdateTaskTip()
 	arg_4_0:UpdateCDTip()
 	arg_4_0:UpdateNShopTip()
 
-	local var_4_12 = arg_4_0.port
+	if arg_4_0.port:IsTempPort() then
+		arg_4_0.contextData.page = WorldPortLayer.PageShop
 
-	if var_1.IsTempPort(var_4_12) then
-		local var_4_13 = arg_4_0.contextData
-
-		WorldPortLayer = var_1_10002
-		var_4_13.page = var_1_10002.PageShop
-	else
-		local var_4_14 = arg_4_0.contextData.page
-
-		WorldPortLayer = var_1_10002
-
-		if var_4_14 == var_1_10002.PageDockyard then
-			arg_4_0.contextData.page = nil
-		end
+		goto label_4_0
 	end
 
-	local var_4_15 = arg_4_0
-	local var_4_16 = arg_4_0.SetPage
-	local var_4_17
+	if arg_4_0.contextData.page == WorldPortLayer.PageDockyard then
+		arg_4_0.contextData.page = nil
 
-	if not arg_4_0.contextData.page then
-		WorldPortLayer = var_4_17
-		var_4_17 = var_4_17.PageMain
+		local var_4_0 = arg_4_0.contextData.page or WorldPortLayer.PageMain
+
+		arg_4_0:SetPage(var_4_0)
+		arg_4_0:EaseInUI()
+
+		return
 	end
+end
 
-	var_4_16(var_4_15, var_4_17)
-	arg_4_0:EaseInUI()
+function var_0_0.onBackPressed(arg_10_0)
+	triggerButton(arg_10_0.btnBack)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_10_0)
-	triggerButton = var_1_10001
-
-	var_1_10001(arg_10_0.btnBack)
-
-	return
-end
-
-function var_0_1.willExit(arg_11_0)
+function var_0_0.willExit(arg_11_0)
 	arg_11_0:UnOverlayPanel(arg_11_0._tf)
 	arg_11_0:RecyclePainting(arg_11_0.rtPainting)
-
-	local var_11_0 = arg_11_0.singleWindow
-
-	var_1.Destroy(var_11_0)
-
-	local var_11_1 = arg_11_0.multiWindow
-
-	var_1.Destroy(var_11_1)
+	arg_11_0.singleWindow:Destroy()
+	arg_11_0.multiWindow:Destroy()
 
 	arg_11_0.contextData.isEnter = true
 
-	if var_0_1.BlurPages[arg_11_0.page] then
-		pg = var_1
-
-		local var_11_2 = var_1.UIMgr.GetInstance()
-
-		var_1.UnOverlayPanel(var_11_2, arg_11_0.rtBlurPanel, arg_11_0._tf)
+	if var_0_0.BlurPages[arg_11_0.page] then
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_11_0.rtBlurPanel, arg_11_0._tf)
 	end
 
 	arg_11_0:CancelUITween()
 	arg_11_0:DisposeTopUI()
 	arg_11_0:DisposeTasks()
 	arg_11_0:DisposeGoods()
-
-	local var_11_3 = arg_11_0.atlas
-	local var_11_4 = var_1.RemoveListener
-
-	WorldAtlas = var_4
-
-	var_11_4(var_11_3, var_4.EventUpdateNGoodsCount, arg_11_0.onUpdateNGoods)
+	arg_11_0.atlas:RemoveListener(WorldAtlas.EventUpdateNGoodsCount, arg_11_0.onUpdateNGoods)
 
 	arg_11_0.atlas = nil
 
-	local var_11_5 = arg_11_0.port
-	local var_11_6 = var_1.RemoveListener
-
-	WorldMapPort = var_4
-
-	var_11_6(var_11_5, var_4.EventUpdateTaskIds, arg_11_0.onUpdateTasks)
-
-	local var_11_7 = arg_11_0.port
-	local var_11_8 = var_1.RemoveListener
-
-	WorldMapPort = var_4
-
-	var_11_8(var_11_7, var_4.EventUpdateGoods, arg_11_0.onUpdateGoods)
+	arg_11_0.port:RemoveListener(WorldMapPort.EventUpdateTaskIds, arg_11_0.onUpdateTasks)
+	arg_11_0.port:RemoveListener(WorldMapPort.EventUpdateGoods, arg_11_0.onUpdateGoods)
 
 	arg_11_0.port = nil
 
-	local var_11_9 = arg_11_0.resPanel
-
-	var_1.exit(var_11_9)
+	arg_11_0.resPanel:exit()
 
 	arg_11_0.resPanel = nil
 
-	local var_11_10 = arg_11_0.refreshTimer
-
-	var_1.Stop(var_11_10)
+	arg_11_0.refreshTimer:Stop()
 
 	arg_11_0.refreshTimer = nil
 
-	local var_11_11 = arg_11_0.inventory
-	local var_11_12 = var_1.RemoveListener
-
-	WorldInventoryProxy = var_4
-
-	var_11_12(var_11_11, var_4.EventUpdateItem, arg_11_0.onUpdateMoneyCount)
+	arg_11_0.inventory:RemoveListener(WorldInventoryProxy.EventUpdateItem, arg_11_0.onUpdateMoneyCount)
 
 	arg_11_0.inventory = nil
 
-	local var_11_13 = arg_11_0.taskProxy
-	local var_11_14 = var_1.RemoveListener
-
-	WorldTaskProxy = var_4
-
-	var_11_14(var_11_13, var_4.EventUpdateTask, arg_11_0.onUpdateTasks)
+	arg_11_0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, arg_11_0.onUpdateTasks)
 
 	arg_11_0.taskProxy = nil
 
-	local var_11_15 = arg_11_0.wsWorldInfo
-
-	var_1.Dispose(var_11_15)
+	arg_11_0.wsWorldInfo:Dispose()
 
 	arg_11_0.wsWorldInfo = nil
 
 	return
 end
 
-function var_0_1.GetPaintingInfo(arg_12_0)
-	local var_12_0 = arg_12_0.port
-
-	if var_1.IsTempPort(var_12_0) then
+function var_0_0.GetPaintingInfo(arg_12_0)
+	if arg_12_0.port:IsTempPort() then
 		return "mingshi", false
 	else
 		return "tbniang", true
@@ -535,11 +239,10 @@ function var_0_1.GetPaintingInfo(arg_12_0)
 	return
 end
 
-function var_0_1.UpdatePainting(arg_13_0, arg_13_1, arg_13_2)
+function var_0_0.UpdatePainting(arg_13_0, arg_13_1, arg_13_2)
 	arg_13_0.paintingName = arg_13_1
-	setPaintingPrefab = var_1_10003
 
-	var_1_10003(arg_13_0.rtPainting, arg_13_1, "chuanwu")
+	setPaintingPrefab(arg_13_0.rtPainting, arg_13_1, "chuanwu")
 
 	if arg_13_2 then
 		arg_13_0:AddGlitchArtEffectForPating(arg_13_0.rtPainting)
@@ -548,169 +251,92 @@ function var_0_1.UpdatePainting(arg_13_0, arg_13_1, arg_13_2)
 	return
 end
 
-function var_0_1.AddGlitchArtEffectForPating(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_1
-	local var_14_1 = arg_14_1.GetComponentsInChildren
-
-	typeof = var_1_10005
-	Image = var_1_10007
-
-	local var_14_2 = var_14_1(var_14_0, var_1_10005(var_1_10007))
-	local var_14_3 = var_2.ToTable(var_14_2)
-
-	ipairs = var_1_10003
-
-	for iter_14_0, iter_14_1 in var_1_10003(var_14_3) do
+function var_0_0.AddGlitchArtEffectForPating(arg_14_0, arg_14_1)
+	for iter_14_0, iter_14_1 in ipairs((arg_14_1:GetComponentsInChildren(typeof(Image)):ToTable())) do
 		iter_14_1.material = arg_14_0.glitchArtMaterial
 	end
 
 	return
 end
 
-function var_0_1.RecyclePainting(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_1:Find("fitter").childCount
-
-	if 0 < var_15_0 then
-		local var_15_1 = arg_15_1
-		local var_15_2 = arg_15_1.GetComponentsInChildren
-
-		typeof = var_5
-		Image = var_1_10007
-
-		local var_15_3 = var_15_2(var_15_1, var_5(var_1_10007))
-		local var_15_4 = var_2.ToTable(var_15_3)
-
-		ipairs = var_3
-
-		for iter_15_0, iter_15_1 in var_3(var_15_4) do
-			Color = var_1_10008
-			var_1_10008 = var_1_10008.white
-
+function var_0_0.RecyclePainting(arg_15_0, arg_15_1)
+	if arg_15_1:Find("fitter").childCount > 0 then
+		for iter_15_0, iter_15_1 in ipairs((arg_15_1:GetComponentsInChildren(typeof(Image)):ToTable())) do
 			if iter_15_1.material ~= iter_15_1.defaultGraphicMaterial then
 				iter_15_1.material = iter_15_1.defaultGraphicMaterial
 
-				local var_15_5 = iter_15_1.material
-
-				var_9.SetColor(var_15_5, "_Color", var_1_10008)
+				iter_15_1.material:SetColor("_Color", Color.white)
 			end
 		end
 
-		setGray = var_3
+		setGray(arg_15_1, false, true)
 
-		var_3(arg_15_1, false, true)
+		local var_15_0 = arg_15_1:Find("fitter"):GetChild(0)
 
-		local var_15_6 = arg_15_1:Find("fitter")
-		local var_15_7 = var_3.GetChild(var_15_6, 0)
+		retPaintingPrefab(arg_15_1, var_15_0.name)
 
-		retPaintingPrefab = var_4
+		local var_15_1 = var_15_0:Find("temp_mask")
 
-		var_4(arg_15_1, var_15_7.name)
-
-		if var_15_7:Find("temp_mask") then
-			Destroy = var_15_6
-
-			var_15_6(var_4)
+		if var_15_1 then
+			Destroy(var_15_1)
 		end
 	end
 
 	return
 end
 
-function var_0_1.DisplayTopUI(arg_16_0, arg_16_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtImageTitle, arg_16_1 == var_0_1.PageMain)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtImageTitleTask, arg_16_1 == var_0_1.PageTask)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtImageTitleShop, arg_16_1 == var_0_1.PageShop or arg_16_1 == var_0_1.PageNShop)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtTopLeft, arg_16_1 ~= var_0_1.PageNShop)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtTopRight, arg_16_1 == var_0_1.PageMain)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtTopBottom, arg_16_1 == var_0_1.PageMain)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtBg, arg_16_1 ~= var_0_1.PageNShop)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_16_0.rtBgNShop, arg_16_1 == var_0_1.PageNShop)
+function var_0_0.DisplayTopUI(arg_16_0, arg_16_1)
+	setActive(arg_16_0.rtImageTitle, arg_16_1 == var_0_0.PageMain)
+	setActive(arg_16_0.rtImageTitleTask, arg_16_1 == var_0_0.PageTask)
+	setActive(arg_16_0.rtImageTitleShop, arg_16_1 == var_0_0.PageShop or arg_16_1 == var_0_0.PageNShop)
+	setActive(arg_16_0.rtTopLeft, arg_16_1 ~= var_0_0.PageNShop)
+	setActive(arg_16_0.rtTopRight, arg_16_1 == var_0_0.PageMain)
+	setActive(arg_16_0.rtTopBottom, arg_16_1 == var_0_0.PageMain)
+	setActive(arg_16_0.rtBg, arg_16_1 ~= var_0_0.PageNShop)
+	setActive(arg_16_0.rtBgNShop, arg_16_1 == var_0_0.PageNShop)
 
 	return
 end
 
-function var_0_1.DisposeTopUI(arg_17_0)
-	local var_17_0 = arg_17_0.wsPortLeft
-
-	var_1.Dispose(var_17_0)
+function var_0_0.DisposeTopUI(arg_17_0)
+	arg_17_0.wsPortLeft:Dispose()
 
 	return
 end
 
-function var_0_1.NewPortLeft(arg_18_0)
-	WSPortLeft = var_1_10001
-
-	local var_18_0 = var_1_10001.New()
+function var_0_0.NewPortLeft(arg_18_0)
+	local var_18_0 = WSPortLeft.New()
 
 	var_18_0.transform = arg_18_0.rtTopLeft
 
 	var_18_0:Setup()
-
-	local var_18_1 = var_18_0
-	local var_18_2 = var_18_0.UpdateMap
-
-	nowWorld = var_1_10005
-
-	local var_18_3 = var_1_10005()
-
-	var_18_2(var_18_1, var_5.GetActiveMap(var_18_3))
+	var_18_0:UpdateMap(nowWorld():GetActiveMap())
 
 	return var_18_0
 end
 
-function var_0_1.EnterPortAnim(arg_19_0, arg_19_1)
-	local var_19_0 = arg_19_0.rtEnterIcon
-	local var_19_1 = var_2.GetComponent
+function var_0_0.EnterPortAnim(arg_19_0, arg_19_1)
+	local var_19_0 = arg_19_0.rtEnterIcon:GetComponent(typeof(DftAniEvent))
 
-	typeof = var_1_10005
-	DftAniEvent = var_1_10007
-
-	if var_19_1(var_19_0, var_1_10005(var_1_10007)) then
-		var_2:SetTriggerEvent(function(arg_20_0)
+	if var_19_0 then
+		var_19_0:SetTriggerEvent(function(arg_20_0)
 			arg_19_1()
 
 			return
 		end)
-		var_2:SetEndEvent(function(arg_21_0)
-			setActive = var_2_10001
-
-			var_2_10001(arg_19_0.rtEnterIcon, false)
+		var_19_0:SetEndEvent(function(arg_21_0)
+			setActive(arg_19_0.rtEnterIcon, false)
 
 			return
 		end)
 	end
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_19_0.rtEnterIcon, true)
+	setActive(arg_19_0.rtEnterIcon, true)
 
 	return
 end
 
-function var_0_1.EaseInUI(arg_22_0, arg_22_1)
+function var_0_0.EaseInUI(arg_22_0, arg_22_1)
 	arg_22_0.isTweening = true
 
 	local var_22_0 = {}
@@ -718,19 +344,10 @@ function var_0_1.EaseInUI(arg_22_0, arg_22_1)
 	arg_22_0:CancelUITween()
 
 	if #arg_22_0.enterIcon > 0 and not arg_22_0.contextData.isEnter then
-		table = var_3
-
-		var_3.insert(var_22_0, function(arg_23_0)
-			setActive = var_2_10001
-
-			var_2_10001(arg_22_0.rtTop, false)
-
-			local var_23_0 = arg_22_0
-
-			var_1.EnterPortAnim(var_23_0, function()
-				setActive = var_3_10000
-
-				var_3_10000(arg_22_0.rtTop, true)
+		table.insert(var_22_0, function(arg_23_0)
+			setActive(arg_22_0.rtTop, false)
+			arg_22_0:EnterPortAnim(function()
+				setActive(arg_22_0.rtTop, true)
 
 				return arg_23_0()
 			end)
@@ -738,108 +355,29 @@ function var_0_1.EaseInUI(arg_22_0, arg_22_1)
 			return
 		end)
 	else
-		setActive = var_3
-
-		var_3(arg_22_0.rtEnterIcon, false)
+		setActive(arg_22_0.rtEnterIcon, false)
 	end
 
-	seriesAsync = var_3
-
-	var_3(var_22_0, function()
-		setAnchoredPosition = var_2_10000
-
-		var_2_10000(arg_22_0.rtTopLeft, {
+	seriesAsync(var_22_0, function()
+		setAnchoredPosition(arg_22_0.rtTopLeft, {
 			x = -arg_22_0.rtTopLeft.rect.width
 		})
-
-		setAnchoredPosition = var_2_10000
-
-		var_2_10000(arg_22_0.rtTopRight, {
+		setAnchoredPosition(arg_22_0.rtTopRight, {
 			x = arg_22_0.rtTopRight.rect.width
 		})
-
-		setAnchoredPosition = var_2_10000
-
-		var_2_10000(arg_22_0.rtTopTitle, {
+		setAnchoredPosition(arg_22_0.rtTopTitle, {
 			y = arg_22_0.rtTopTitle.rect.height
 		})
-
-		setAnchoredPosition = var_2_10000
-
-		var_2_10000(arg_22_0.rtTopBottom, {
+		setAnchoredPosition(arg_22_0.rtTopBottom, {
 			y = -arg_22_0.rtTopRight.rect.height
 		})
+		LeanTween.moveX(arg_22_0.rtTopLeft, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveX(arg_22_0.rtTopRight, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveY(arg_22_0.rtTopTitle, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+		LeanTween.moveY(arg_22_0.rtTopBottom, 0, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
+			arg_22_0.isTweening = false
 
-		LeanTween = var_2_10000
-
-		local var_25_0 = var_2_10000.moveX
-		local var_25_1 = arg_22_0.rtTopLeft
-		local var_25_2 = 0
-
-		WorldConst = var_4
-
-		local var_25_3 = var_25_0(var_25_1, var_25_2, var_4.UIEaseDuration)
-		local var_25_4 = var_0.setEase
-
-		LeanTweenType = var_25_2
-
-		var_25_4(var_25_3, var_25_2.easeOutSine)
-
-		LeanTween = var_25_4
-
-		local var_25_5 = var_25_4.moveX
-		local var_25_6 = arg_22_0.rtTopRight
-		local var_25_7 = 0
-
-		WorldConst = var_4
-
-		local var_25_8 = var_25_5(var_25_6, var_25_7, var_4.UIEaseDuration)
-		local var_25_9 = var_0.setEase
-
-		LeanTweenType = var_25_7
-
-		var_25_9(var_25_8, var_25_7.easeOutSine)
-
-		LeanTween = var_25_9
-
-		local var_25_10 = var_25_9.moveY
-		local var_25_11 = arg_22_0.rtTopTitle
-		local var_25_12 = 0
-
-		WorldConst = var_4
-
-		local var_25_13 = var_25_10(var_25_11, var_25_12, var_4.UIEaseDuration)
-		local var_25_14 = var_0.setEase
-
-		LeanTweenType = var_25_12
-
-		var_25_14(var_25_13, var_25_12.easeOutSine)
-
-		LeanTween = var_25_14
-
-		local var_25_15 = var_25_14.moveY
-		local var_25_16 = arg_22_0.rtTopBottom
-		local var_25_17 = 0
-
-		WorldConst = var_4
-
-		local var_25_18 = var_25_15(var_25_16, var_25_17, var_4.UIEaseDuration)
-		local var_25_19 = var_0.setEase
-
-		LeanTweenType = var_25_17
-
-		local var_25_20 = var_25_19(var_25_18, var_25_17.easeOutSine)
-		local var_25_21 = var_0.setOnComplete
-
-		System = var_3
-
-		var_25_21(var_25_20, var_3.Action(function()
-			local var_26_0 = arg_22_0
-
-			var_26_0.isTweening = false
-			existCall = var_26_0
-
-			return var_26_0(arg_22_1)
+			return existCall(arg_22_1)
 		end))
 
 		return
@@ -848,183 +386,60 @@ function var_0_1.EaseInUI(arg_22_0, arg_22_1)
 	return
 end
 
-function var_0_1.EaseOutUI(arg_27_0, arg_27_1)
+function var_0_0.EaseOutUI(arg_27_0, arg_27_1)
 	arg_27_0:CancelUITween()
+	LeanTween.moveX(arg_27_0.rtTopLeft, -arg_27_0.rtTopLeft.rect.width, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveX(arg_27_0.rtTopRight, arg_27_0.rtTopRight.rect.width, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveY(arg_27_0.rtTopTitle, arg_27_0.rtTopTitle.rect.height, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine)
+	LeanTween.moveY(arg_27_0.rtTopBottom, -arg_27_0.rtTopRight.rect.height, WorldConst.UIEaseDuration):setEase(LeanTweenType.easeOutSine):setOnComplete(System.Action(function()
+		arg_27_0.isTweening = false
 
-	LeanTween = var_2
-
-	local var_27_0 = var_2.moveX
-	local var_27_1 = arg_27_0.rtTopLeft
-	local var_27_2 = -arg_27_0.rtTopLeft.rect.width
-
-	WorldConst = var_1_10006
-
-	local var_27_3 = var_27_0(var_27_1, var_27_2, var_1_10006.UIEaseDuration)
-	local var_27_4 = var_2.setEase
-
-	LeanTweenType = var_27_2
-
-	var_27_4(var_27_3, var_27_2.easeOutSine)
-
-	LeanTween = var_27_4
-
-	local var_27_5 = var_27_4.moveX
-	local var_27_6 = arg_27_0.rtTopRight
-	local var_27_7 = arg_27_0.rtTopRight.rect.width
-
-	WorldConst = var_6
-
-	local var_27_8 = var_27_5(var_27_6, var_27_7, var_6.UIEaseDuration)
-	local var_27_9 = var_2.setEase
-
-	LeanTweenType = var_27_7
-
-	var_27_9(var_27_8, var_27_7.easeOutSine)
-
-	LeanTween = var_27_9
-
-	local var_27_10 = var_27_9.moveY
-	local var_27_11 = arg_27_0.rtTopTitle
-	local var_27_12 = arg_27_0.rtTopTitle.rect.height
-
-	WorldConst = var_6
-
-	local var_27_13 = var_27_10(var_27_11, var_27_12, var_6.UIEaseDuration)
-	local var_27_14 = var_2.setEase
-
-	LeanTweenType = var_27_12
-
-	var_27_14(var_27_13, var_27_12.easeOutSine)
-
-	LeanTween = var_27_14
-
-	local var_27_15 = var_27_14.moveY
-	local var_27_16 = arg_27_0.rtTopBottom
-	local var_27_17 = -arg_27_0.rtTopRight.rect.height
-
-	WorldConst = var_6
-
-	local var_27_18 = var_27_15(var_27_16, var_27_17, var_6.UIEaseDuration)
-	local var_27_19 = var_2.setEase
-
-	LeanTweenType = var_27_17
-
-	local var_27_20 = var_27_19(var_27_18, var_27_17.easeOutSine)
-	local var_27_21 = var_2.setOnComplete
-
-	System = var_5
-
-	var_27_21(var_27_20, var_5.Action(function()
-		local var_28_0 = arg_27_0
-
-		var_28_0.isTweening = false
-		existCall = var_28_0
-
-		return var_28_0(arg_27_1)
+		return existCall(arg_27_1)
 	end))
 
 	return
 end
 
-function var_0_1.CancelUITween(arg_29_0)
-	LeanTween = var_1_10001
-
-	local var_29_0 = var_1_10001.cancel
-
-	go = var_1_10003
-
-	var_29_0(var_1_10003(arg_29_0.rtTopTitle))
-
-	LeanTween = var_29_0
-
-	local var_29_1 = var_29_0.cancel
-
-	go = var_3
-
-	var_29_1(var_3(arg_29_0.rtTopLeft))
-
-	LeanTween = var_29_1
-
-	local var_29_2 = var_29_1.cancel
-
-	go = var_3
-
-	var_29_2(var_3(arg_29_0.rtTopRight))
-
-	LeanTween = var_29_2
-
-	local var_29_3 = var_29_2.cancel
-
-	go = var_3
-
-	var_29_3(var_3(arg_29_0.rtTopBottom))
+function var_0_0.CancelUITween(arg_29_0)
+	LeanTween.cancel(go(arg_29_0.rtTopTitle))
+	LeanTween.cancel(go(arg_29_0.rtTopLeft))
+	LeanTween.cancel(go(arg_29_0.rtTopRight))
+	LeanTween.cancel(go(arg_29_0.rtTopBottom))
 
 	return
 end
 
-function var_0_1.SetPlayer(arg_30_0, arg_30_1)
+function var_0_0.SetPlayer(arg_30_0, arg_30_1)
 	arg_30_0.player = arg_30_1
 
-	local var_30_0 = arg_30_0.resPanel
-
-	var_2.setPlayer(var_30_0, arg_30_1)
+	arg_30_0.resPanel:setPlayer(arg_30_1)
 
 	return
 end
 
-function var_0_1.SetAtlas(arg_31_0, arg_31_1)
+function var_0_0.SetAtlas(arg_31_0, arg_31_1)
 	arg_31_0.atlas = arg_31_1
 
-	local var_31_0 = arg_31_0.atlas
-	local var_31_1 = var_2.AddListener
-
-	WorldAtlas = var_1_10005
-
-	var_31_1(var_31_0, var_1_10005.EventUpdateNGoodsCount, arg_31_0.onUpdateNGoods)
+	arg_31_0.atlas:AddListener(WorldAtlas.EventUpdateNGoodsCount, arg_31_0.onUpdateNGoods)
 
 	arg_31_0.nGoodsDic = {}
 	arg_31_0.nGoodsPortDic = {}
-	pairs = var_2
 
-	for iter_31_0, iter_31_1 in var_2(arg_31_1.nShopGoodsDic) do
-		var_1_10007 = arg_31_0.nGoodsDic
-		Goods = var_1_10008
-		var_1_10008 = var_1_10008.Create
-		var_1_10010 = {
+	for iter_31_0, iter_31_1 in pairs(arg_31_1.nShopGoodsDic) do
+		arg_31_0.nGoodsDic[iter_31_0] = Goods.Create({
 			id = iter_31_0,
 			count = iter_31_1
-		}
-		Goods = var_1_10011
-		var_1_10007[iter_31_0] = var_1_10008(var_1_10010, var_1_10011.TYPE_WORLD_NSHOP)
+		}, Goods.TYPE_WORLD_NSHOP)
 
-		local var_31_2 = arg_31_0.nGoodsDic[iter_31_0]
+		local var_31_0 = arg_31_0.nGoodsDic[iter_31_0]:getConfig("port_id")
 
-		var_1_10007 = var_1_10007.getConfig(var_31_2, "port_id")
-		var_1_10008 = arg_31_0.nGoodsPortDic
+		arg_31_0.nGoodsPortDic[var_31_0] = arg_31_0.nGoodsPortDic[var_31_0] or {}
 
-		local var_31_3
-
-		if not arg_31_0.nGoodsPortDic[var_1_10007] then
-			var_31_3 = {}
-		end
-
-		var_1_10008[var_1_10007] = var_31_3
-		table = var_1_10008
-
-		var_1_10008.insert(arg_31_0.nGoodsPortDic[var_1_10007], arg_31_0.nGoodsDic[iter_31_0])
+		table.insert(arg_31_0.nGoodsPortDic[var_31_0], arg_31_0.nGoodsDic[iter_31_0])
 	end
 
-	pairs = var_2
-
-	for iter_31_2, iter_31_3 in var_2(arg_31_0.nGoodsPortDic) do
-		table = var_1_10007
-		var_1_10007 = var_1_10007.sort
-
-		local var_31_4 = iter_31_3
-
-		CompareFuncs = var_1_10010
-
-		var_1_10007(var_31_4, var_1_10010({
+	for iter_31_2, iter_31_3 in pairs(arg_31_0.nGoodsPortDic) do
+		table.sort(iter_31_3, CompareFuncs({
 			function(arg_32_0)
 				return -arg_32_0:getConfig("priority")
 			end,
@@ -1037,234 +452,125 @@ function var_0_1.SetAtlas(arg_31_0, arg_31_1)
 	return
 end
 
-function var_0_1.SetPort(arg_34_0, arg_34_1)
-	nowWorld = var_1_10002
-
-	local var_34_0 = var_1_10002()
+function var_0_0.SetPort(arg_34_0, arg_34_1)
+	local var_34_0 = nowWorld()
 
 	arg_34_0.port = arg_34_1
 
-	local var_34_1 = arg_34_0.port
-	local var_34_2 = var_3.AddListener
-
-	WorldMapPort = var_1_10006
-
-	var_34_2(var_34_1, var_1_10006.EventUpdateTaskIds, arg_34_0.onUpdateTasks)
-
-	local var_34_3 = arg_34_0.port
-	local var_34_4 = var_3.AddListener
-
-	WorldMapPort = var_6
-
-	var_34_4(var_34_3, var_6.EventUpdateGoods, arg_34_0.onUpdateGoods)
+	arg_34_0.port:AddListener(WorldMapPort.EventUpdateTaskIds, arg_34_0.onUpdateTasks)
+	arg_34_0.port:AddListener(WorldMapPort.EventUpdateGoods, arg_34_0.onUpdateGoods)
 	arg_34_0:SetBg(arg_34_0.port.id)
 
-	Timer = var_3
-	arg_34_0.refreshTimer = var_3.New(function()
-		local var_35_0 = arg_34_0.port
-
-		if var_0.IsValid(var_35_0) then
-			local var_35_1 = arg_34_0
-			local var_35_2 = var_0.UpdateRefreshTime
-
-			var_2_10003 = arg_34_0.port.expiredTime
-			pg = var_2_10004
-
-			local var_35_3 = var_2_10004.TimeMgr.GetInstance()
-
-			var_35_2(var_35_1, var_2_10003 - var_4.GetServerTime(var_35_3))
+	arg_34_0.refreshTimer = Timer.New(function()
+		if arg_34_0.port:IsValid() then
+			arg_34_0:UpdateRefreshTime(arg_34_0.port.expiredTime - pg.TimeMgr.GetInstance():GetServerTime())
 		else
-			local var_35_4 = arg_34_0
-			local var_35_5 = var_0.emit
-
-			WorldPortMediator = var_2_10003
-
-			local var_35_6 = var_2_10003.OnReqPort
-			local var_35_7 = var_34_0
-
-			var_35_5(var_35_4, var_35_6, var_4.GetActiveMap(var_35_7).id)
+			arg_34_0:emit(WorldPortMediator.OnReqPort, var_34_0:GetActiveMap().id)
 		end
 
 		return
 	end, 1, -1)
 
-	local var_34_5 = arg_34_0.refreshTimer
-
-	var_3.Start(var_34_5)
+	arg_34_0.refreshTimer:Start()
 	arg_34_0.refreshTimer.func()
 
-	local var_34_6 = var_34_0:GetActiveMap()
-	local var_34_7 = var_3.GetFleet(var_34_6)
+	local var_34_1 = var_34_0:GetActiveMap():GetFleet()
 
 	arg_34_0.wsPortLeft = arg_34_0:NewPortLeft()
 
-	local var_34_8 = arg_34_0.port
-	local var_34_9 = var_4.GetRealm(var_34_8)
+	local var_34_2 = arg_34_0.port:GetRealm()
 
-	setActive = var_34_6
-
-	var_34_6(arg_34_0.btnOperation, var_34_9 == 0 or var_34_9 == var_34_0:GetRealm())
-
-	setActive = var_34_6
-
-	var_34_6(arg_34_0.btnDockyard, var_34_9 == 0 or var_34_9 == var_34_0:GetRealm())
-
-	setActive = var_34_6
-
-	var_34_6(arg_34_0.btnSupply, arg_34_0.nGoodsPortDic[arg_34_1.id])
-
-	setActive = var_34_6
-
-	local var_34_10 = arg_34_0.resPanel._tf
-	local var_34_11 = var_34_0
-	local var_34_12 = var_34_0.IsSystemOpen
-
-	WorldConst = var_1_10011
-
-	var_34_6(var_34_10, var_34_12(var_34_11, var_1_10011.SystemResource))
+	setActive(arg_34_0.btnOperation, var_34_2 == 0 or var_34_2 == var_34_0:GetRealm())
+	setActive(arg_34_0.btnDockyard, var_34_2 == 0 or var_34_2 == var_34_0:GetRealm())
+	setActive(arg_34_0.btnSupply, arg_34_0.nGoodsPortDic[arg_34_1.id])
+	setActive(arg_34_0.resPanel._tf, var_34_0:IsSystemOpen(WorldConst.SystemResource))
 
 	arg_34_0.inventory = var_34_0:GetInventoryProxy()
 
-	local var_34_13 = arg_34_0.inventory
-	local var_34_14 = var_5.AddListener
-
-	WorldInventoryProxy = var_8
-
-	var_34_14(var_34_13, var_8.EventUpdateItem, arg_34_0.onUpdateMoneyCount)
+	arg_34_0.inventory:AddListener(WorldInventoryProxy.EventUpdateItem, arg_34_0.onUpdateMoneyCount)
 	arg_34_0:OnUpdateMoneyCount()
 
 	arg_34_0.taskProxy = var_34_0:GetTaskProxy()
 
-	local var_34_15 = arg_34_0.taskProxy
-	local var_34_16 = var_5.AddListener
-
-	WorldTaskProxy = var_8
-
-	var_34_16(var_34_15, var_8.EventUpdateTask, arg_34_0.onUpdateTasks)
+	arg_34_0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, arg_34_0.onUpdateTasks)
 
 	return
 end
 
-function var_0_1.SetBg(arg_36_0, arg_36_1)
-	pg = var_1_10002
-	arg_36_0.portBg = var_1_10002.world_port_data[arg_36_1].port_bg
-	setImageAlpha = var_2
+function var_0_0.SetBg(arg_36_0, arg_36_1)
+	arg_36_0.portBg = pg.world_port_data[arg_36_1].port_bg
 
-	var_2(arg_36_0.rtBg, #arg_36_0.portBg > 0 and 1 or 0)
+	setImageAlpha(arg_36_0.rtBg, #arg_36_0.portBg > 0 and 1 or 0)
 
 	if #arg_36_0.portBg > 0 then
-		GetImageSpriteFromAtlasAsync = var_2
-
-		var_2("world/port/" .. arg_36_0.portBg, "", arg_36_0.rtBg)
+		GetImageSpriteFromAtlasAsync("world/port/" .. arg_36_0.portBg, "", arg_36_0.rtBg)
 	end
 
-	pg = var_2
-	arg_36_0.enterIcon = var_2.world_port_data[arg_36_1].port_entrance_icon
-	setActive = var_2
+	arg_36_0.enterIcon = pg.world_port_data[arg_36_1].port_entrance_icon
 
-	var_2(arg_36_0.rtEnterIcon, #arg_36_0.enterIcon > 0)
+	setActive(arg_36_0.rtEnterIcon, #arg_36_0.enterIcon > 0)
 
 	if #arg_36_0.enterIcon > 0 then
-		GetImageSpriteFromAtlasAsync = var_2
-
-		var_2("world/porttitle/" .. arg_36_0.enterIcon, "", arg_36_0.rtEnterIcon, false)
+		GetImageSpriteFromAtlasAsync("world/porttitle/" .. arg_36_0.enterIcon, "", arg_36_0.rtEnterIcon, false)
 	end
 
-	GetImageSpriteFromAtlasAsync = var_2
-
-	var_2("world/portword/" .. arg_36_0.portBg, "", arg_36_0.rtImageTitle, true)
-
-	GetImageSpriteFromAtlasAsync = var_2
-
-	local var_36_0 = "world/portword/" .. arg_36_0.portBg .. "_en"
-	local var_36_1 = ""
-	local var_36_2 = arg_36_0.rtImageTitle
-
-	var_2(var_36_0, var_36_1, var_6.Find(var_36_2, "Image"), true)
+	GetImageSpriteFromAtlasAsync("world/portword/" .. arg_36_0.portBg, "", arg_36_0.rtImageTitle, true)
+	GetImageSpriteFromAtlasAsync("world/portword/" .. arg_36_0.portBg .. "_en", "", arg_36_0.rtImageTitle:Find("Image"), true)
 
 	return
 end
 
-function var_0_1.OnUpdateTasks(arg_37_0)
+function var_0_0.OnUpdateTasks(arg_37_0)
 	arg_37_0:UpdateTaskTip()
-	arg_37_0:SetPageDirty(var_0_1.PageTask)
+	arg_37_0:SetPageDirty(var_0_0.PageTask)
 
-	if arg_37_0.page == var_0_1.PageTask then
+	if arg_37_0.page == var_0_0.PageTask then
 		arg_37_0:UpdateTasks()
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateGoods(arg_38_0)
+function var_0_0.OnUpdateGoods(arg_38_0)
 	arg_38_0:UpdateCDTip()
-	arg_38_0:SetPageDirty(var_0_1.PageShop)
+	arg_38_0:SetPageDirty(var_0_0.PageShop)
 
-	if arg_38_0.page == var_0_1.PageShop then
+	if arg_38_0.page == var_0_0.PageShop then
 		arg_38_0:UpdateGoods()
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateNGoods(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4)
-	if arg_39_0.page == var_0_1.PageNShop then
-		local var_39_0 = arg_39_0.nGoodsDic[arg_39_3]
+function var_0_0.OnUpdateNGoods(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4)
+	if arg_39_0.page == var_0_0.PageNShop then
+		arg_39_0.nGoodsDic[arg_39_3].buyCount = arg_39_4
 
-		var_39_0.buyCount = arg_39_4
-
-		local var_39_1 = arg_39_0.rtNGoodsDic[arg_39_3]
-
-		setText = var_1_10007
-
-		var_1_10007(var_39_1:Find("count_contain/count"), var_39_0:GetPurchasableCnt() .. "/" .. var_39_0:GetLimitGoodCount())
-
-		setActive = var_1_10007
-
-		var_1_10007(var_39_1:Find("mask"), not var_39_0:canPurchase())
-
-		setActive = var_1_10007
-
-		var_1_10007(var_39_1:Find("new"), false)
+		setText(arg_39_0.rtNGoodsDic[arg_39_3]:Find("count_contain/count"), arg_39_0.nGoodsDic[arg_39_3]:GetPurchasableCnt() .. "/" .. arg_39_0.nGoodsDic[arg_39_3]:GetLimitGoodCount())
+		setActive(arg_39_0.rtNGoodsDic[arg_39_3]:Find("mask"), not arg_39_0.nGoodsDic[arg_39_3]:canPurchase())
+		setActive(arg_39_0.rtNGoodsDic[arg_39_3]:Find("new"), false)
 	else
-		arg_39_0:SetPageDirty(var_0_1.PageNShop)
+		arg_39_0:SetPageDirty(var_0_0.PageNShop)
 	end
 
 	return
 end
 
-function var_0_1.SetPage(arg_40_0, arg_40_1)
+function var_0_0.SetPage(arg_40_0, arg_40_1)
 	if arg_40_0.page ~= arg_40_1 then
-		local var_40_0 = var_0_1.BlurPages
-		local var_40_1
+		local var_40_0 = arg_40_0.page or 0
+		local var_40_1 = var_0_0.BlurPages[var_40_0]
 
-		if not arg_40_0.page then
-			var_40_1 = 0
-		end
-
-		if var_40_0[var_40_1] ~= var_0_1.BlurPages[arg_40_1] then
-			if var_0_1.BlurPages[arg_40_1] then
-				pg = var_2
-
-				local var_40_2 = var_2.UIMgr.GetInstance()
-
-				var_2.BlurPanel(var_40_2, arg_40_0.rtBlurPanel)
+		if var_40_1 ~= var_0_0.BlurPages[arg_40_1] then
+			if var_0_0.BlurPages[arg_40_1] then
+				pg.UIMgr.GetInstance():BlurPanel(arg_40_0.rtBlurPanel)
 			else
-				pg = var_2
-
-				local var_40_3 = var_2.UIMgr.GetInstance()
-
-				var_2.UnOverlayPanel(var_40_3, arg_40_0.rtBlurPanel, arg_40_0._tf)
+				pg.UIMgr.GetInstance():UnOverlayPanel(arg_40_0.rtBlurPanel, arg_40_0._tf)
 			end
 		end
 
-		if arg_40_1 == var_0_1.PageShop and arg_40_0.paintingName == "buzhihuo_shop" then
-			local var_40_4 = arg_40_0
-			local var_40_5 = arg_40_0.showRandomShipWord
-
-			pg = var_1_10005
-
-			var_40_5(var_40_4, var_1_10005.navalacademy_shoppingstreet_template[1].words_enter, true, "enter")
+		if arg_40_1 == var_0_0.PageShop and arg_40_0.paintingName == "buzhihuo_shop" then
+			arg_40_0:showRandomShipWord(pg.navalacademy_shoppingstreet_template[1].words_enter, true, "enter")
 		end
 
 		arg_40_0.page = arg_40_1
@@ -1277,39 +583,28 @@ function var_0_1.SetPage(arg_40_0, arg_40_1)
 	return
 end
 
-function var_0_1.SetPageDirty(arg_41_0, arg_41_1)
+function var_0_0.SetPageDirty(arg_41_0, arg_41_1)
 	arg_41_0.dirtyFlags[arg_41_1] = true
 
 	return
 end
 
-function var_0_1.IsPageDirty(arg_42_0, arg_42_1)
+function var_0_0.IsPageDirty(arg_42_0, arg_42_1)
 	return arg_42_0.dirtyFlags[arg_42_1] == true or arg_42_0.dirtyFlags[arg_42_1] == nil
 end
 
-function var_0_1.UpdatePage(arg_43_0)
-	local var_43_0 = arg_43_0.page
+function var_0_0.UpdatePage(arg_43_0)
+	arg_43_0:DisplayTopUI(arg_43_0.page)
+	setActive(arg_43_0.rtTasks, arg_43_0.page == var_0_0.PageTask)
+	setActive(arg_43_0.rtShop, arg_43_0.page == var_0_0.PageShop)
+	setActive(arg_43_0.rtNShop, arg_43_0.page == var_0_0.PageNShop)
 
-	arg_43_0:DisplayTopUI(var_43_0)
-
-	setActive = var_2
-
-	var_2(arg_43_0.rtTasks, var_43_0 == var_0_1.PageTask)
-
-	setActive = var_2
-
-	var_2(arg_43_0.rtShop, var_43_0 == var_0_1.PageShop)
-
-	setActive = var_2
-
-	var_2(arg_43_0.rtNShop, var_43_0 == var_0_1.PageNShop)
-
-	if arg_43_0:IsPageDirty(var_43_0) then
-		if var_43_0 == var_0_1.PageTask then
+	if arg_43_0:IsPageDirty(arg_43_0.page) then
+		if arg_43_0.page == var_0_0.PageTask then
 			arg_43_0:UpdateTasks()
-		elseif var_43_0 == var_0_1.PageShop then
+		elseif arg_43_0.page == var_0_0.PageShop then
 			arg_43_0:UpdateGoods()
-		elseif var_43_0 == var_0_1.PageNShop then
+		elseif arg_43_0.page == var_0_0.PageNShop then
 			arg_43_0:UpdateNShopPorts()
 		end
 	end
@@ -1317,117 +612,42 @@ function var_0_1.UpdatePage(arg_43_0)
 	return
 end
 
-function var_0_1.UpdateTasks(arg_44_0)
-	arg_44_0.dirtyFlags[var_0_1.PageTask] = false
+function var_0_0.UpdateTasks(arg_44_0)
+	arg_44_0.dirtyFlags[var_0_0.PageTask] = false
 
-	local var_44_0 = arg_44_0.rtTasks
-	local var_44_1 = var_1.Find(var_44_0, "frame/viewport/content")
-	local var_44_2 = var_1.GetChild(var_44_1, 0)
-
-	_ = var_44_0
-
-	local var_44_3 = var_44_0.map(arg_44_0.port.taskIds, function(arg_45_0)
-		WorldTask = var_2_10001
-
-		return var_2_10001.New({
+	local var_44_0 = arg_44_0.rtTasks:Find("frame/viewport/content")
+	local var_44_1 = _.map(arg_44_0.port.taskIds, function(arg_45_0)
+		return WorldTask.New({
 			id = arg_45_0
 		})
 	end)
 
-	table = var_44_1
+	table.sort(var_44_1, CompareFuncs(WorldTask.sortDic))
+	UIItemList.StaticAlign(var_44_0, var_44_0:GetChild(0), #var_44_1, function(arg_46_0, arg_46_1, arg_46_2)
+		if arg_46_0 == UIItemList.EventUpdate then
+			local var_46_0 = var_44_1[arg_46_1 + 1]
 
-	local var_44_4 = var_44_1.sort
-	local var_44_5 = var_44_3
+			arg_44_0.wsTasks[arg_46_1 + 1] = arg_44_0.wsTasks[arg_46_1 + 1] or WSPortTask.New(arg_46_2)
 
-	CompareFuncs = var_1_10007
-	WorldTask = var_1_10009
-
-	var_44_4(var_44_5, var_1_10007(var_1_10009.sortDic))
-
-	UIItemList = var_44_4
-
-	var_44_4.StaticAlign(var_1, var_44_2, #var_44_3, function(arg_46_0, arg_46_1, arg_46_2)
-		local var_46_0 = arg_46_1 + 1
-
-		UIItemList = var_2_10004
-
-		if arg_46_0 == var_2_10004.EventUpdate then
-			local var_46_1 = var_44_3[var_46_0]
-			local var_46_2 = arg_44_0.wsTasks
-			local var_46_3
-
-			if not arg_44_0.wsTasks[var_46_0] then
-				WSPortTask = var_46_3
-				var_46_3 = var_46_3.New(arg_46_2)
-			end
-
-			var_46_2[var_46_0] = var_46_3
-
-			local var_46_4 = arg_44_0.wsTasks[var_46_0]
-
-			var_5.Setup(var_46_4, var_46_1)
-
-			onButton = var_6
-
-			local var_46_5 = arg_44_0
-			local var_46_6 = var_5.btnInactive
-
-			local function var_46_7()
-				local var_47_0 = arg_44_0
-				local var_47_1 = var_0.emit
-
-				WorldPortMediator = var_3_10003
-
-				var_47_1(var_47_0, var_3_10003.OnAccepetTask, var_46_1, arg_44_0.port.id)
+			arg_44_0.wsTasks[arg_46_1 + 1]:Setup(var_44_1[arg_46_1 + 1])
+			onButton(arg_44_0, arg_44_0.wsTasks[arg_46_1 + 1].btnInactive, function()
+				arg_44_0:emit(WorldPortMediator.OnAccepetTask, var_46_0, arg_44_0.port.id)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10011
-
-			var_6(var_46_5, var_46_6, var_46_7, var_2_10011)
-
-			onButton = var_6
-
-			local var_46_8 = arg_44_0
-			local var_46_9 = var_5.btnOnGoing
-
-			local function var_46_10()
-				local var_48_0 = arg_44_0
-
-				var_0.showTaskWindow(var_48_0, var_46_1)
+			end, SFX_PANEL)
+			onButton(arg_44_0, arg_44_0.wsTasks[arg_46_1 + 1].btnOnGoing, function()
+				arg_44_0:showTaskWindow(var_46_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10011
-
-			var_6(var_46_8, var_46_9, var_46_10, var_2_10011)
-
-			onButton = var_6
-
-			local var_46_11 = arg_44_0
-			local var_46_12 = var_5.btnFinished
-
-			local function var_46_13()
-				local var_49_0 = arg_44_0
-				local var_49_1 = var_0.emit
-
-				WorldPortMediator = var_3_10003
-
-				var_49_1(var_49_0, var_3_10003.OnSubmitTask, var_46_1)
+			end, SFX_PANEL)
+			onButton(arg_44_0, arg_44_0.wsTasks[arg_46_1 + 1].btnFinished, function()
+				arg_44_0:emit(WorldPortMediator.OnSubmitTask, var_46_0)
 
 				return
-			end
+			end, SFX_PANEL)
 
-			SFX_PANEL = var_2_10011
-
-			var_6(var_46_11, var_46_12, var_46_13, var_2_10011)
-
-			function var_5.onDrop(arg_50_0)
-				local var_50_0 = arg_44_0
-
-				var_1.emit(var_50_0, var_0_1.ON_DROP, arg_50_0)
+			arg_44_0.wsTasks[arg_46_1 + 1].onDrop = function(arg_50_0)
+				arg_44_0:emit(var_0_0.ON_DROP, arg_50_0)
 
 				return
 			end
@@ -1435,21 +655,13 @@ function var_0_1.UpdateTasks(arg_44_0)
 
 		return
 	end)
-
-	local var_44_6 = arg_44_0.rtTasks
-	local var_44_7 = var_4.Find(var_44_6, "frame/empty")
-
-	setActive = var_5
-
-	var_5(var_44_7, #var_44_3 == 0)
+	setActive(arg_44_0.rtTasks:Find("frame/empty"), #var_44_1 == 0)
 
 	return
 end
 
-function var_0_1.DisposeTasks(arg_51_0)
-	_ = var_1_10001
-
-	var_1_10001.each(arg_51_0.wsTasks, function(arg_52_0)
+function var_0_0.DisposeTasks(arg_51_0)
+	_.each(arg_51_0.wsTasks, function(arg_52_0)
 		arg_52_0:Dispose()
 
 		return
@@ -1460,25 +672,13 @@ function var_0_1.DisposeTasks(arg_51_0)
 	return
 end
 
-function var_0_1.UpdateGoods(arg_53_0)
-	arg_53_0.dirtyFlags[var_0_1.PageShop] = false
+function var_0_0.UpdateGoods(arg_53_0)
+	arg_53_0.dirtyFlags[var_0_0.PageShop] = false
 
-	local var_53_0 = arg_53_0.rtShop
-	local var_53_1 = var_1.Find(var_53_0, "frame/scrollview/view")
-	local var_53_2 = var_1.GetChild(var_53_1, 0)
+	local var_53_0 = arg_53_0.rtShop:Find("frame/scrollview/view")
+	local var_53_1 = underscore.rest(arg_53_0.port.goods, 1)
 
-	underscore = var_53_0
-
-	local var_53_3 = var_53_0.rest(arg_53_0.port.goods, 1)
-
-	table = var_53_1
-
-	local var_53_4 = var_53_1.sort
-	local var_53_5 = var_53_3
-
-	CompareFuncs = var_1_10007
-
-	var_53_4(var_53_5, var_1_10007({
+	table.sort(var_53_1, CompareFuncs({
 		function(arg_54_0)
 			return -arg_54_0.config.priority
 		end,
@@ -1486,68 +686,31 @@ function var_0_1.UpdateGoods(arg_53_0)
 			return arg_55_0.id
 		end
 	}))
-
-	UIItemList = var_53_4
-
-	var_53_4.StaticAlign(var_1, var_53_2, #var_53_3, function(arg_56_0, arg_56_1, arg_56_2)
+	UIItemList.StaticAlign(var_53_0, var_53_0:GetChild(0), #var_53_1, function(arg_56_0, arg_56_1, arg_56_2)
 		arg_56_1 = arg_56_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_56_0 == var_2_10003.EventUpdate then
-			local var_56_0 = var_53_3[arg_56_1]
-			local var_56_1 = arg_53_0.wsGoods
-			local var_56_2
+		if arg_56_0 == UIItemList.EventUpdate then
+			local var_56_0 = var_53_1[arg_56_1]
 
-			if not arg_53_0.wsGoods[arg_56_1] then
-				WSPortGoods = var_56_2
-				var_56_2 = var_56_2.New(arg_56_2)
-			end
+			arg_53_0.wsGoods[arg_56_1] = arg_53_0.wsGoods[arg_56_1] or WSPortGoods.New(arg_56_2)
 
-			var_56_1[arg_56_1] = var_56_2
-
-			local var_56_3 = arg_53_0.wsGoods[arg_56_1]
-
-			var_4.Setup(var_56_3, var_56_0)
-
-			onButton = var_5
-
-			local var_56_4 = arg_53_0
-			local var_56_5 = var_4.transform
-
-			local function var_56_6()
+			arg_53_0.wsGoods[arg_56_1]:Setup(var_53_1[arg_56_1])
+			onButton(arg_53_0, arg_53_0.wsGoods[arg_56_1].transform, function()
 				if var_56_0.count > 0 then
-					pg = var_0
+					pg.MsgboxMgr.GetInstance():ShowMsgBox({
+						yesText = "text_buy",
+						type = MSGBOX_TYPE_SINGLE_ITEM,
+						drop = var_56_0.item,
+						onYes = function()
+							arg_53_0:emit(WorldPortMediator.OnBuyGoods, var_56_0)
 
-					local var_57_0 = var_0.MsgboxMgr.GetInstance()
-					local var_57_1 = var_0.ShowMsgBox
-					local var_57_2 = {
-						yesText = "text_buy"
-					}
-
-					MSGBOX_TYPE_SINGLE_ITEM = var_3_10004
-					var_57_2.type = var_3_10004
-					var_57_2.drop = var_56_0.item
-
-					function var_57_2.onYes()
-						local var_58_0 = arg_53_0
-						local var_58_1 = var_0.emit
-
-						WorldPortMediator = var_4_10003
-
-						var_58_1(var_58_0, var_4_10003.OnBuyGoods, var_56_0)
-
-						return
-					end
-
-					var_57_1(var_57_0, var_57_2)
+							return
+						end
+					})
 				end
 
 				return
-			end
-
-			SFX_PANEL = var_2_10010
-
-			var_5(var_56_4, var_56_5, var_56_6, var_2_10010)
+			end, SFX_PANEL)
 		end
 
 		return
@@ -1556,10 +719,8 @@ function var_0_1.UpdateGoods(arg_53_0)
 	return
 end
 
-function var_0_1.DisposeGoods(arg_59_0)
-	_ = var_1_10001
-
-	var_1_10001.each(arg_59_0.wsGoods, function(arg_60_0)
+function var_0_0.DisposeGoods(arg_59_0)
+	_.each(arg_59_0.wsGoods, function(arg_60_0)
 		arg_60_0:Dispose()
 
 		return
@@ -1570,264 +731,114 @@ function var_0_1.DisposeGoods(arg_59_0)
 	return
 end
 
-function var_0_1.UpdateNShopPorts(arg_61_0)
-	local var_61_0 = arg_61_0.dirtyFlags
+function var_0_0.UpdateNShopPorts(arg_61_0)
+	arg_61_0.dirtyFlags[var_0_0.PageNShop] = false
 
-	var_61_0[var_0_1.PageNShop] = false
-	underscore = var_61_0
+	local var_61_0 = underscore.keys(arg_61_0.nGoodsPortDic)
 
-	local var_61_1 = var_61_0.keys(arg_61_0.nGoodsPortDic)
+	table.sort(var_61_0)
 
-	table = var_2
-
-	var_2.sort(var_61_1)
-
-	ipairs = var_2
-
-	for iter_61_0, iter_61_1 in var_2(var_61_1) do
+	for iter_61_0, iter_61_1 in ipairs(var_61_0) do
 		if not arg_61_0.poolTplPort[iter_61_0] then
-			table = var_7
-
-			local var_61_2 = var_7.insert
-			local var_61_3 = arg_61_0.poolTplPort
-
-			cloneTplTo = var_1_10010
-
-			var_61_2(var_61_3, var_1_10010(arg_61_0.tplPort, arg_61_0.containerPort))
+			table.insert(arg_61_0.poolTplPort, cloneTplTo(arg_61_0.tplPort, arg_61_0.containerPort))
 		end
 
-		local var_61_4 = arg_61_0.poolTplPort[iter_61_0]
+		local var_61_1 = arg_61_0.poolTplPort[iter_61_0]
 
-		setText = var_1_10008
-		var_1_10010 = var_61_4:Find("Text")
-		pg = var_1_10011
-
-		var_1_10008(var_1_10010, var_1_10011.world_port_data[iter_61_1].name)
-
-		setActive = var_1_10008
-
-		var_1_10008(var_61_4:Find("tip"), arg_61_0.atlas.markPortDic.newGoods[iter_61_1])
-
-		onToggle = var_1_10008
-		var_1_10010 = arg_61_0
-		var_1_10011 = var_61_4
-
-		local function var_61_5(arg_62_0)
+		setText(arg_61_0.poolTplPort[iter_61_0]:Find("Text"), pg.world_port_data[iter_61_1].name)
+		setActive(var_61_1:Find("tip"), arg_61_0.atlas.markPortDic.newGoods[iter_61_1])
+		onToggle(arg_61_0, var_61_1, function(arg_62_0)
 			if arg_62_0 then
 				if arg_61_0.nShopPortId == iter_61_1 then
 					return
 				end
 
-				setActive = var_1
-
-				local var_62_0 = var_61_4
-
-				var_1(var_3.Find(var_62_0, "tip"), false)
-
-				local var_62_1 = arg_61_0.atlas
-
-				var_1.UpdatePortMarkNShop(var_62_1, iter_61_1, false)
-
-				local var_62_2 = arg_61_0
-
-				var_1.UpdateNShopTip(var_62_2)
-
-				local var_62_3 = arg_61_0
-
-				var_1.UpdateNShopGoods(var_62_3, iter_61_1)
+				setActive(var_61_1:Find("tip"), false)
+				arg_61_0.atlas:UpdatePortMarkNShop(iter_61_1, false)
+				arg_61_0:UpdateNShopTip()
+				arg_61_0:UpdateNShopGoods(iter_61_1)
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_13
-
-		var_1_10008(var_1_10010, var_1_10011, var_61_5, var_13)
-
-		triggerToggle = var_1_10008
-		var_1_10010 = var_61_4
-		var_1_10011 = iter_61_1 == arg_61_0.port.id
-
-		var_1_10008(var_1_10010, var_1_10011)
+		end, SFX_PANEL)
+		triggerToggle(var_61_1, iter_61_1 == arg_61_0.port.id)
 	end
 
 	return
 end
 
-function var_0_1.UpdateNShopGoods(arg_63_0, arg_63_1)
+function var_0_0.UpdateNShopGoods(arg_63_0, arg_63_1)
 	arg_63_0.nShopPortId = arg_63_1
 
-	local var_63_0 = arg_63_0.atlas
-	local var_63_1 = var_2.GetPressingUnlockCount(var_63_0)
-	local var_63_2 = arg_63_0.atlas
-	local var_63_3 = var_3.GetPressingUnlockRecordCount(var_63_2, arg_63_1)
-	local var_63_4 = {}
+	local var_63_0 = arg_63_0.atlas:GetPressingUnlockCount()
+	local var_63_1 = arg_63_0.atlas:GetPressingUnlockRecordCount(arg_63_1)
+	local var_63_2 = {}
 
-	ipairs = var_63_2
+	for iter_63_0, iter_63_1 in ipairs(arg_63_0.nGoodsPortDic[arg_63_1]) do
+		local var_63_3 = iter_63_1:getConfig("unlock_num")
+		local var_63_4 = ({})[var_63_3]
 
-	for iter_63_0, iter_63_1 in var_63_2(arg_63_0.nGoodsPortDic[arg_63_1]) do
-		local var_63_5
-
-		if not var_63_4[iter_63_1:getConfig("unlock_num")] then
-			var_63_5 = {}
+		if not ({})[var_63_3] then
+			var_63_4 = {}
 		end
 
-		var_63_4[var_10] = var_63_5
-		table = var_63_5
+		;({})[var_63_3] = var_63_4
 
-		var_63_5.insert(var_63_4[var_10], iter_63_1)
+		table.insert(({})[var_63_3], iter_63_1)
 	end
 
 	arg_63_0.rtNGoodsDic = {}
-	underscore = var_5
 
-	local var_63_6 = var_5.keys(var_63_4)
+	local var_63_5 = underscore.keys({})
 
-	table = var_6
-
-	var_6.sort(var_63_6)
-
-	UIItemList = var_6
-
-	local var_63_7 = var_6.StaticAlign
-	local var_63_8 = arg_63_0.rtNGoodsContainer
-	local var_63_9 = arg_63_0.rtNGoodsContainer
-
-	var_63_7(var_63_8, var_9.Find(var_63_9, "group"), #var_63_6, function(arg_64_0, arg_64_1, arg_64_2)
+	table.sort(var_63_5)
+	UIItemList.StaticAlign(arg_63_0.rtNGoodsContainer, arg_63_0.rtNGoodsContainer:Find("group"), #var_63_5, function(arg_64_0, arg_64_1, arg_64_2)
 		arg_64_1 = arg_64_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_64_0 == var_2_10003.EventUpdate then
-			local var_64_0 = var_63_6[arg_64_1]
+		if arg_64_0 == UIItemList.EventUpdate then
+			local var_64_0 = var_63_5[arg_64_1]
 
-			setActive = var_2_10004
+			setActive(arg_64_2:Find("title"), arg_64_1 > 1)
+			setText(arg_64_2:Find("title/other/Text"), i18n("world_instruction_port_goods_locked"))
+			setText(arg_64_2:Find("title/other/progress"), math.min(var_63_0, var_64_0) .. "/" .. var_64_0)
 
-			var_2_10004(arg_64_2:Find("title"), arg_64_1 > 1)
+			local var_64_1 = arg_64_2:Find("container")
 
-			setText = var_2_10004
-
-			local var_64_1 = arg_64_2:Find("title/other/Text")
-
-			i18n = var_7
-
-			var_2_10004(var_64_1, var_7("world_instruction_port_goods_locked"))
-
-			setText = var_2_10004
-
-			local var_64_2 = arg_64_2:Find("title/other/progress")
-
-			math = var_7
-
-			var_2_10004(var_64_2, var_7.min(var_63_1, var_64_0) .. "/" .. var_64_0)
-
-			local var_64_3 = arg_64_2:Find("container")
-
-			UIItemList = var_2_10005
-
-			var_2_10005.StaticAlign(var_64_3, var_64_3:Find("item_tpl"), #var_63_4[var_64_0], function(arg_65_0, arg_65_1, arg_65_2)
+			UIItemList.StaticAlign(var_64_1, var_64_1:Find("item_tpl"), #var_63_2[var_64_0], function(arg_65_0, arg_65_1, arg_65_2)
 				arg_65_1 = arg_65_1 + 1
-				UIItemList = var_3_10003
 
-				if arg_65_0 == var_3_10003.EventUpdate then
-					local var_65_0 = var_63_4[var_64_0][arg_65_1]
+				if arg_65_0 == UIItemList.EventUpdate then
+					local var_65_0 = var_63_2[var_64_0][arg_65_1]
 
-					arg_63_0.rtNGoodsDic[var_65_0.id] = arg_65_2
+					arg_63_0.rtNGoodsDic[var_63_2[var_64_0][arg_65_1].id] = arg_65_2
 
-					local var_65_1 = var_65_0
-					local var_65_2 = var_65_0.GetDropInfo(var_65_1)
+					local var_65_1 = var_65_0:GetDropInfo()
 
-					updateDrop = var_5
+					updateDrop(arg_65_2:Find("IconTpl"), var_65_1)
+					setText(arg_65_2:Find("name_mask/name"), shortenString(var_65_1:getConfig("name"), 6))
 
-					var_5(arg_65_2:Find("IconTpl"), var_65_2)
+					local var_65_2 = var_65_0:GetPriceInfo()
 
-					setText = var_5
+					GetImageSpriteFromAtlasAsync(var_65_2:getIcon(), "", arg_65_2:Find("consume/contain/icon"), false)
+					setText(arg_65_2:Find("consume/contain/Text"), var_65_2.count)
+					setText(arg_65_2:Find("count_contain/count"), var_65_0:GetPurchasableCnt() .. "/" .. var_65_0:GetLimitGoodCount())
+					setText(arg_65_2:Find("count_contain/label"), i18n("activity_shop_exchange_count"))
+					setText(arg_65_2:Find("mask/tag/sellout_tag"), i18n("word_sell_out"))
+					setActive(arg_65_2:Find("mask"), not var_65_0:canPurchase())
+					setText(arg_65_2:Find("lock/Image/Text"), i18n("word_sell_lock"))
+					setActive(arg_65_2:Find("lock"), var_63_0 < var_64_0)
+					setActive(arg_65_2:Find("new"), var_65_0.buyCount == 0 and var_63_1 < var_64_0 and var_64_0 <= var_63_0)
+					onButton(arg_63_0, arg_65_2, function()
+						if var_65_0:GetLimitGoodCount() > 1 then
+							var_66_0:ExecuteAction("Open", var_65_0, function(arg_67_0, arg_67_1)
+								arg_63_0:emit(WorldPortMediator.OnBuyNShopGoods, arg_67_0, arg_67_1)
 
-					local var_65_3 = arg_65_2:Find("name_mask/name")
-
-					shortenString = var_8
-
-					var_5(var_65_3, var_8(var_65_2:getConfig("name"), 6))
-
-					local var_65_4 = var_65_0:GetPriceInfo()
-
-					GetImageSpriteFromAtlasAsync = var_65_1
-
-					var_65_1(var_65_4:getIcon(), "", arg_65_2:Find("consume/contain/icon"), false)
-
-					setText = var_65_1
-
-					var_65_1(arg_65_2:Find("consume/contain/Text"), var_65_4.count)
-
-					setText = var_65_1
-
-					var_65_1(arg_65_2:Find("count_contain/count"), var_65_0:GetPurchasableCnt() .. "/" .. var_65_0:GetLimitGoodCount())
-
-					setText = var_65_1
-
-					local var_65_5 = arg_65_2:Find("count_contain/label")
-
-					i18n = var_9
-
-					var_65_1(var_65_5, var_9("activity_shop_exchange_count"))
-
-					setText = var_65_1
-
-					local var_65_6 = arg_65_2:Find("mask/tag/sellout_tag")
-
-					i18n = var_9
-
-					var_65_1(var_65_6, var_9("word_sell_out"))
-
-					setActive = var_65_1
-
-					var_65_1(arg_65_2:Find("mask"), not var_65_0:canPurchase())
-
-					setText = var_65_1
-
-					local var_65_7 = arg_65_2:Find("lock/Image/Text")
-
-					i18n = var_9
-
-					var_65_1(var_65_7, var_9("word_sell_lock"))
-
-					setActive = var_65_1
-
-					var_65_1(arg_65_2:Find("lock"), var_63_1 < var_64_0)
-
-					setActive = var_65_1
-
-					var_65_1(arg_65_2:Find("new"), var_65_0.buyCount == 0 and var_63_3 < var_64_0 and var_64_0 <= var_63_1)
-
-					onButton = var_65_1
-
-					local var_65_8 = arg_63_0
-					local var_65_9 = arg_65_2
-
-					local function var_65_10()
-						local var_66_0 = var_65_0
-						local var_66_1
-
-						if not (var_0.GetLimitGoodCount(var_66_0) > 1) or not arg_63_0.multiWindow then
-							var_66_1 = arg_63_0.singleWindow
-						end
-
-						var_66_1:ExecuteAction("Open", var_65_0, function(arg_67_0, arg_67_1)
-							local var_67_0 = arg_63_0
-							local var_67_1 = var_2.emit
-
-							WorldPortMediator = var_5_10005
-
-							var_67_1(var_67_0, var_5_10005.OnBuyNShopGoods, arg_67_0, arg_67_1)
+								return
+							end)
 
 							return
-						end)
-
-						return
-					end
-
-					SFX_PANEL = var_11
-
-					var_65_1(var_65_8, var_65_9, var_65_10, var_11)
+						end
+					end, SFX_PANEL)
 				end
 
 				return
@@ -1836,324 +847,126 @@ function var_0_1.UpdateNShopGoods(arg_63_0, arg_63_1)
 
 		return
 	end)
-
-	local var_63_10 = arg_63_0.atlas
-
-	var_6.SetPressingUnlockRecordCount(var_63_10, arg_63_1, var_63_1)
+	arg_63_0.atlas:SetPressingUnlockRecordCount(arg_63_1, (arg_63_0.atlas:GetPressingUnlockCount()))
 
 	return
 end
 
-function var_0_1.OnUpdateMoneyCount(arg_68_0, arg_68_1, arg_68_2, arg_68_3)
-	if arg_68_1 then
-		local var_68_0 = arg_68_3.id
+function var_0_0.OnUpdateMoneyCount(arg_68_0, arg_68_1, arg_68_2, arg_68_3)
+	if not arg_68_1 or arg_68_3.id == WorldItem.PortMoneyId then
+		local var_68_0 = arg_68_0.inventory:GetItemCount(WorldItem.PortMoneyId)
 
-		WorldItem = var_1_10005
-
-		if var_68_0 == var_1_10005.PortMoneyId then
-			local var_68_1 = arg_68_0.inventory
-			local var_68_2 = var_4.GetItemCount
-
-			WorldItem = var_1_10007
-
-			local var_68_3 = var_68_2(var_68_1, var_1_10007.PortMoneyId)
-
-			setText = var_1_10005
-
-			local var_68_4 = arg_68_0.rtShop
-
-			var_1_10005(var_7.Find(var_68_4, "quick_count/value"), var_68_3)
-
-			setText = var_1_10005
-
-			local var_68_5 = arg_68_0.rtNShopRes
-
-			var_1_10005(var_7.Find(var_68_5, "Text"), var_68_3)
-		end
-
-		return
+		setText(arg_68_0.rtShop:Find("quick_count/value"), var_68_0)
+		setText(arg_68_0.rtNShopRes:Find("Text"), var_68_0)
 	end
-end
-
-function var_0_1.UpdateRefreshTime(arg_69_0, arg_69_1)
-	setText = var_1_10002
-
-	local var_69_0 = arg_69_0.cdTF
-	local var_69_1 = var_4.Find(var_69_0, "Text")
-
-	pg = var_1_10005
-
-	local var_69_2 = var_1_10005.TimeMgr.GetInstance()
-
-	var_1_10002(var_69_1, var_5.DescCDTime(var_69_2, arg_69_1))
 
 	return
 end
 
-function var_0_1.UpdateCDTip(arg_70_0)
-	setActive = var_1_10001
+function var_0_0.UpdateRefreshTime(arg_69_0, arg_69_1)
+	setText(arg_69_0.cdTF:Find("Text"), pg.TimeMgr.GetInstance():DescCDTime(arg_69_1))
 
-	local var_70_0 = arg_70_0.cdTF
-	local var_70_2
+	return
+end
 
-	if #arg_70_0.port.goods > 0 then
-		local var_70_1 = arg_70_0.port
+function var_0_0.UpdateCDTip(arg_70_0)
+	setActive(arg_70_0.cdTF, #arg_70_0.port.goods > 0 and not arg_70_0.port:IsTempPort())
+	setActive(arg_70_0.emptyTF, #arg_70_0.port.goods == 0)
 
-		var_70_2 = not var_4.IsTempPort(var_70_1)
+	if not nowWorld():UsePortNShop() then
+		setActive(arg_70_0.btnSupply:Find("new"), nowWorld():GetAtlas().markPortDic.goods[arg_70_0.port.id])
+	end
+
+	return
+end
+
+function var_0_0.UpdateTaskTip(arg_71_0)
+	setActive(arg_71_0.btnOperation:Find("new"), false)
+
+	return
+end
+
+function var_0_0.UpdateNShopTip(arg_72_0)
+	if nowWorld():UsePortNShop() then
+		setActive(arg_72_0.btnSupply:Find("new"), arg_72_0.atlas:GetAnyPortMarkNShop())
+	end
+
+	return
+end
+
+function var_0_0.showTaskWindow(arg_73_0, arg_73_1)
+	local var_73_0 = arg_73_0.rtTaskWindow:Find("main_window/left_panel")
+
+	setActive(var_73_0:Find("bg"), arg_73_1:IsSpecialType())
+
+	if #arg_73_1.config.rare_task_icon > 0 then
+		GetImageSpriteFromAtlasAsync("shipyardicon/" .. arg_73_1.config.rare_task_icon, "", var_73_0:Find("card"), true)
 	else
-		var_70_2 = false
+		GetImageSpriteFromAtlasAsync("ui/worldportui_atlas", "nobody", var_73_0:Find("card"), true)
 	end
 
-	if false then
-		var_70_2 = true
-	end
+	local var_73_1 = arg_73_0.rtTaskWindow:Find("main_window/right_panel")
 
-	var_1_10001(var_70_0, var_70_2)
+	setText(var_73_1:Find("title/Text"), arg_73_1.config.name)
+	setText(var_73_1:Find("content/desc"), arg_73_1.config.rare_task_text)
+	setText(var_73_1:Find("content/slider_progress/Text"), arg_73_1:getProgress() .. "/" .. arg_73_1:getMaxProgress())
+	setSlider(var_73_1:Find("content/slider"), 0, arg_73_1:getMaxProgress(), arg_73_1:getProgress())
 
-	setActive = var_1_10001
+	local var_73_2 = var_73_1:Find("content/item_tpl")
+	local var_73_3 = var_73_1:Find("content/award_bg/panel/content")
+	local var_73_4 = arg_73_1.config.show
 
-	var_1_10001(arg_70_0.emptyTF, #arg_70_0.port.goods == 0)
+	removeAllChildren(var_73_3)
 
-	nowWorld = var_1_10001
+	for iter_73_0, iter_73_1 in ipairs(var_73_4) do
+		local var_73_5 = cloneTplTo(var_73_2, var_73_3)
 
-	local var_70_3 = var_1_10001()
-
-	if not var_1.UsePortNShop(var_70_3) then
-		setActive = var_1
-
-		local var_70_4 = arg_70_0.btnSupply
-		local var_70_5 = var_3.Find(var_70_4, "new")
-
-		nowWorld = var_4
-
-		local var_70_6 = var_4()
-
-		var_1(var_70_5, var_4.GetAtlas(var_70_6).markPortDic.goods[arg_70_0.port.id])
-	end
-
-	return
-end
-
-function var_0_1.UpdateTaskTip(arg_71_0)
-	setActive = var_1_10001
-
-	local var_71_0 = arg_71_0.btnOperation
-
-	var_1_10001(var_3.Find(var_71_0, "new"), false)
-
-	return
-end
-
-function var_0_1.UpdateNShopTip(arg_72_0)
-	nowWorld = var_1_10001
-
-	local var_72_0 = var_1_10001()
-
-	if var_1.UsePortNShop(var_72_0) then
-		setActive = var_1
-
-		local var_72_1 = arg_72_0.btnSupply
-		local var_72_2 = var_3.Find(var_72_1, "new")
-		local var_72_3 = arg_72_0.atlas
-
-		var_1(var_72_2, var_4.GetAnyPortMarkNShop(var_72_3))
-	end
-
-	return
-end
-
-function var_0_1.showTaskWindow(arg_73_0, arg_73_1)
-	local var_73_0 = arg_73_1.config.rare_task_icon
-	local var_73_1 = arg_73_0.rtTaskWindow
-	local var_73_2 = var_3.Find(var_73_1, "main_window/left_panel")
-
-	setActive = var_1_10004
-
-	var_1_10004(var_73_2:Find("bg"), arg_73_1:IsSpecialType())
-
-	local var_73_3 = #var_73_0
-
-	if 0 < var_73_3 then
-		GetImageSpriteFromAtlasAsync = var_73_3
-
-		var_73_3("shipyardicon/" .. var_73_0, "", var_73_2:Find("card"), true)
-	else
-		GetImageSpriteFromAtlasAsync = var_73_3
-
-		var_73_3("ui/worldportui_atlas", "nobody", var_73_2:Find("card"), true)
-	end
-
-	local var_73_4 = arg_73_0.rtTaskWindow
-	local var_73_5 = var_4.Find(var_73_4, "main_window/right_panel")
-
-	setText = var_5
-
-	var_5(var_73_5:Find("title/Text"), arg_73_1.config.name)
-
-	setText = var_5
-
-	var_5(var_73_5:Find("content/desc"), arg_73_1.config.rare_task_text)
-
-	setText = var_5
-
-	var_5(var_73_5:Find("content/slider_progress/Text"), arg_73_1:getProgress() .. "/" .. arg_73_1:getMaxProgress())
-
-	setSlider = var_5
-
-	var_5(var_73_5:Find("content/slider"), 0, arg_73_1:getMaxProgress(), arg_73_1:getProgress())
-
-	local var_73_6 = var_73_5:Find("content/item_tpl")
-	local var_73_7 = var_73_5
-	local var_73_8 = var_73_5.Find(var_73_7, "content/award_bg/panel/content")
-	local var_73_9 = arg_73_1.config.show
-
-	removeAllChildren = var_73_7
-
-	var_73_7(var_73_8)
-
-	ipairs = var_73_7
-
-	for iter_73_0, iter_73_1 in var_73_7(var_73_9) do
-		cloneTplTo = var_1_10013
-		var_1_10013 = var_1_10013(var_73_6, var_73_8)
-
-		local var_73_10 = {
+		updateDrop(var_73_5, {
 			type = iter_73_1[1],
 			id = iter_73_1[2],
 			count = iter_73_1[3]
-		}
-
-		updateDrop = var_15
-
-		var_15(var_1_10013, var_73_10)
-
-		onButton = var_15
-
-		local var_73_11 = arg_73_0
-		local var_73_12 = var_1_10013
-
-		local function var_73_13()
-			local var_74_0 = arg_73_0
-
-			var_0.emit(var_74_0, var_0_1.ON_DROP, var_73_10)
+		})
+		onButton(arg_73_0, var_73_5, function()
+			arg_73_0:emit(var_0_0.ON_DROP, var_0)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10020
-
-		var_15(var_73_11, var_73_12, var_73_13, var_1_10020)
-
-		setActive = var_15
-
-		var_15(var_1_10013, true)
+		end, SFX_PANEL)
+		setActive(var_73_5, true)
 	end
 
-	setActive = var_8
-
-	var_8(var_73_6, false)
-
-	setActive = var_8
-
-	var_8(var_73_5:Find("content/award_bg/arror"), #var_73_9 > 3)
-
-	onButton = var_8
-
-	local var_73_14 = arg_73_0
-	local var_73_15 = var_73_5
-	local var_73_16 = var_73_5.Find(var_73_15, "btn_close")
-
-	local function var_73_17()
-		local var_75_0 = arg_73_0
-
-		var_0.hideTaskWindow(var_75_0)
+	setActive(var_73_2, false)
+	setActive(var_73_1:Find("content/award_bg/arror"), #var_73_4 > 3)
+	onButton(arg_73_0, var_73_1:Find("btn_close"), function()
+		arg_73_0:hideTaskWindow()
 
 		return
-	end
-
-	SFX_CANCEL = var_73_15
-
-	var_8(var_73_14, var_73_16, var_73_17, var_73_15)
-
-	onButton = var_8
-
-	local var_73_18 = arg_73_0
-	local var_73_19 = arg_73_0.rtTaskWindow
-	local var_73_20 = var_11.Find(var_73_19, "bg")
-
-	local function var_73_21()
-		local var_76_0 = arg_73_0
-
-		var_0.hideTaskWindow(var_76_0)
+	end, SFX_CANCEL)
+	onButton(arg_73_0, arg_73_0.rtTaskWindow:Find("bg"), function()
+		arg_73_0:hideTaskWindow()
 
 		return
-	end
-
-	SFX_CANCEL = var_73_19
-
-	var_8(var_73_18, var_73_20, var_73_21, var_73_19)
-
-	onButton = var_8
-
-	local var_73_22 = arg_73_0
-	local var_73_23 = var_73_5
-	local var_73_24 = var_73_5.Find(var_73_23, "btn_go")
-
-	local function var_73_25()
-		local var_77_0 = arg_73_0
-
-		var_0.hideTaskWindow(var_77_0)
-
-		local var_77_1 = arg_73_0
-		local var_77_2 = var_0.emit
-
-		WorldPortMediator = var_2_10003
-
-		var_77_2(var_77_1, var_2_10003.OnTaskGoto, arg_73_1.id)
+	end, SFX_CANCEL)
+	onButton(arg_73_0, var_73_1:Find("btn_go"), function()
+		arg_73_0:hideTaskWindow()
+		arg_73_0:emit(WorldPortMediator.OnTaskGoto, arg_73_1.id)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_73_23
+	local var_73_6 = arg_73_1:GetFollowingAreaId() or arg_73_1:GetFollowingEntrance()
 
-	var_8(var_73_22, var_73_24, var_73_25, var_73_23)
-
-	setButtonEnabled = var_8
-
-	local var_73_26 = var_73_5:Find("btn_go")
-	local var_73_27
-
-	if not arg_73_1:GetFollowingAreaId() then
-		var_73_27 = arg_73_1:GetFollowingEntrance()
-	end
-
-	var_8(var_73_26, var_73_27)
-
-	setActive = var_8
-
-	var_8(arg_73_0.rtTaskWindow, true)
-
-	pg = var_8
-
-	local var_73_28 = var_8.UIMgr.GetInstance()
-
-	var_8.BlurPanel(var_73_28, arg_73_0.rtTaskWindow)
+	setButtonEnabled(var_73_1:Find("btn_go"), var_73_6)
+	setActive(arg_73_0.rtTaskWindow, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_73_0.rtTaskWindow)
 
 	return
 end
 
-function var_0_1.hideTaskWindow(arg_78_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_78_0.rtTaskWindow, false)
-
-	pg = var_1_10001
-
-	local var_78_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_78_0, arg_78_0.rtTaskWindow, arg_78_0._tf)
+function var_0_0.hideTaskWindow(arg_78_0)
+	setActive(arg_78_0.rtTaskWindow, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_78_0.rtTaskWindow, arg_78_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_partyinvitation_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_partyinvitation_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_partyinvitation_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_partyinvitation_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_partyinvitation_template = rawget(pg, "activity_partyinvitation_template") or setmetatable({
+	__name = "activity_partyinvitation_template"
+}, confNEO)
+pg.activity_partyinvitation_template.all = {
 	1,
 	2,
 	3,
@@ -34,25 +11,11 @@ var_0_3.all = {
 	6,
 	7
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_partyinvitation_template = {}
+pg.base = pg.base or {}
+pg.base.activity_partyinvitation_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_partyinvitation_template
-
-	var_1_0[1] = {
+	pg.base.activity_partyinvitation_template[1] = {
 		skinId = 107065,
 		groupid = 10706,
 		getletter_story = "YUANWEIFANGXINMIMANSHI2",
@@ -89,11 +52,7 @@ var_0_3.base.activity_partyinvitation_template = {}
 			"舞步，也是必须要掌握的技能呢！"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_partyinvitation_template
-
-	var_1_1[2] = {
+	pg.base.activity_partyinvitation_template[2] = {
 		skinId = 107092,
 		groupid = 10709,
 		getletter_story = "YUANWEIFANGXINMIMANSHI3",
@@ -130,11 +89,7 @@ var_0_3.base.activity_partyinvitation_template = {}
 			"一哒哒~二哒哒~我的舞步应该还没有生疏。"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_partyinvitation_template
-
-	var_1_2[3] = {
+	pg.base.activity_partyinvitation_template[3] = {
 		skinId = 305101,
 		groupid = 30510,
 		getletter_story = "YUANWEIFANGXINMIMANSHI4",
@@ -171,11 +126,7 @@ var_0_3.base.activity_partyinvitation_template = {}
 			"跳舞时的肌肤之亲也是不可避免的吧~"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_partyinvitation_template
-
-	var_1_3[4] = {
+	pg.base.activity_partyinvitation_template[4] = {
 		skinId = 905011,
 		groupid = 90501,
 		getletter_story = "YUANWEIFANGXINMIMANSHI5",
@@ -212,11 +163,7 @@ var_0_3.base.activity_partyinvitation_template = {}
 			"先说好，我并不太擅长跳舞，说不定会踩到你哦……"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_partyinvitation_template
-
-	var_1_4[5] = {
+	pg.base.activity_partyinvitation_template[5] = {
 		skinId = 702010,
 		groupid = 70201,
 		getletter_story = "YUANWEIFANGXINMIMANSHI6",
@@ -253,11 +200,7 @@ var_0_3.base.activity_partyinvitation_template = {}
 			"跳舞时两个人的距离……再靠近一些也没关系。"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_partyinvitation_template
-
-	var_1_5[6] = {
+	pg.base.activity_partyinvitation_template[6] = {
 		skinId = 205011,
 		groupid = 20501,
 		getletter_story = "YUANWEIFANGXINMIMANSHI8",
@@ -294,8 +237,7 @@ var_0_3.base.activity_partyinvitation_template = {}
 			"仆从，你要努力跟上本王的舞步啊。"
 		}
 	}
-	pg = var_1_5
-	var_1_5.base.activity_partyinvitation_template[7] = {
+	pg.base.activity_partyinvitation_template[7] = {
 		skinId = 405011,
 		groupid = 40501,
 		getletter_story = "YUANWEIFANGXINMIMANSHI7",

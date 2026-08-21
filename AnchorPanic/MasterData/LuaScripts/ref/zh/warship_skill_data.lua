@@ -660,6 +660,272 @@ local warship_skill_data=
 		[375]={ skill_lv=3, value={2100}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+21%" },
 		[376]={ skill_lv=4, value={2350}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+23.5%" },
 }, build_type=4, produce_type=0
+},
+	[10241]={ type=11, effect_para={1150}, is_coincide=95, icon="warship_11.png", name=76107, rank=0, skill_attr={
+		[377]={ skill_lv=1, value={1150}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+11.5%" },
+		[378]={ skill_lv=2, value={1400}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+14%" },
+		[379]={ skill_lv=3, value={1650}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+16.5%" },
+		[380]={ skill_lv=4, value={1900}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+19%" },
+}, build_type=1, produce_type=0
+},
+	[10242]={ type=4, effect_para={1800,2750}, is_coincide=96, icon="warship_4.png", name=76162, rank=4, skill_attr={
+		[381]={ skill_lv=1, value={1800,2750}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+18%，建筑生产仓库容量+27.5%" },
+		[382]={ skill_lv=2, value={2400,3250}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+24%，建筑生产仓库容量+32.5%" },
+		[383]={ skill_lv=3, value={3000,3750}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+30%，建筑生产仓库容量+37.5%" },
+		[384]={ skill_lv=4, value={3600,4250}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+36%，建筑生产仓库容量+42.5%" },
+}, build_type=2, produce_type=0
+},
+	[10251]={ type=13, effect_para={700}, is_coincide=97, icon="warship_13.png", name=76167, rank=0, skill_attr={
+		[385]={ skill_lv=1, value={700}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+7%" },
+		[386]={ skill_lv=2, value={950}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+9.5%" },
+		[387]={ skill_lv=3, value={1200}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+12%" },
+		[388]={ skill_lv=4, value={1450}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+14.5%" },
+}, build_type=1, produce_type=0
+},
+	[10252]={ type=17, effect_para={0,2250}, is_coincide=98, icon="warship_14.png", name=76171, rank=4, skill_attr={
+		[389]={ skill_lv=1, value={0,2250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>所有材料</color>的生产效率+22.5%" },
+		[390]={ skill_lv=2, value={0,3250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>所有材料</color>的生产效率+32.5%" },
+		[391]={ skill_lv=3, value={0,4250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>所有材料</color>的生产效率+42.5%" },
+		[392]={ skill_lv=4, value={0,5250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>所有材料</color>的生产效率+52.5%" },
+}, build_type=6, produce_type=0
+},
+	[10261]={ type=4, effect_para={1800,2750}, is_coincide=99, icon="warship_4.png", name=76162, rank=0, skill_attr={
+		[393]={ skill_lv=1, value={1800,2750}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+18%，建筑生产仓库容量+27.5%" },
+		[394]={ skill_lv=2, value={2400,3250}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+24%，建筑生产仓库容量+32.5%" },
+		[395]={ skill_lv=3, value={3000,3750}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+30%，建筑生产仓库容量+37.5%" },
+		[396]={ skill_lv=4, value={3600,4250}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+36%，建筑生产仓库容量+42.5%" },
+}, build_type=2, produce_type=0
+},
+	[10262]={ type=14, effect_para={4,3250}, is_coincide=100, icon="warship_14.png", name=76171, rank=4, skill_attr={
+		[397]={ skill_lv=1, value={4,3250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+32.5%" },
+		[398]={ skill_lv=2, value={4,4250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+42.5%" },
+		[399]={ skill_lv=3, value={4,5250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+52.5%" },
+		[400]={ skill_lv=4, value={4,6250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+62.5%" },
+}, build_type=6, produce_type=0
+},
+	[10271]={ type=5, effect_para={2500,{2,10}}, is_coincide=101, icon="warship_5.png", name=76114, rank=0, skill_attr={
+		[393]={ skill_lv=1, value={2500,{2,10}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+25%；处于晚上时自身疲劳消耗速度+10" },
+		[394]={ skill_lv=2, value={3000,{2,7}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+30%；处于晚上时自身疲劳消耗速度+7" },
+		[395]={ skill_lv=3, value={3500,{2,4}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+35%；处于晚上时自身疲劳消耗速度+4" },
+		[396]={ skill_lv=4, value={4000,{2,1}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+40%；处于晚上时自身疲劳消耗速度+1" },
+}, build_type=2, produce_type=0
+},
+	[10272]={ type=7, effect_para={1350,2750}, is_coincide=102, icon="warship_7.png", name=76167, rank=4, skill_attr={
+		[397]={ skill_lv=1, value={1350,2750}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+13.5%，建筑生产仓库容量+27.5%" },
+		[398]={ skill_lv=2, value={1850,3250}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+18.5%，建筑生产仓库容量+32.5%" },
+		[399]={ skill_lv=3, value={2350,3750}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+23.5%，建筑生产仓库容量+37.5%" },
+		[400]={ skill_lv=4, value={2850,4250}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+28.5%，建筑生产仓库容量+42.5%" },
+}, build_type=3, produce_type=0
+},
+	[10281]={ type=8, effect_para={1850,{1,10}}, is_coincide=103, icon="warship_8.png", name=76174, rank=0, skill_attr={
+		[401]={ skill_lv=1, value={1850,{1,10}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+18.5%；处于白天时自身疲劳消耗速度+10" },
+		[402]={ skill_lv=2, value={2350,{1,7}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+23.5%；处于白天时自身疲劳消耗速度+7" },
+		[403]={ skill_lv=3, value={2850,{1,4}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+28.5%；处于白天时自身疲劳消耗速度+4" },
+		[404]={ skill_lv=4, value={3350,{1,1}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+33.5%；处于白天时自身疲劳消耗速度+1" },
+}, build_type=3, produce_type=0
+},
+	[10282]={ type=13, effect_para={700}, is_coincide=104, icon="warship_13.png", name=76167, rank=4, skill_attr={
+		[405]={ skill_lv=1, value={700}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+7%" },
+		[406]={ skill_lv=2, value={950}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+9.5%" },
+		[407]={ skill_lv=3, value={1200}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+12%" },
+		[408]={ skill_lv=4, value={1450}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+14.5%" },
+}, build_type=1, produce_type=0
+},
+	[10291]={ type=14, effect_para={2,3250}, is_coincide=105, icon="warship_14.png", name=76171, rank=0, skill_attr={
+		[417]={ skill_lv=1, value={2,3250}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+32.5%" },
+		[418]={ skill_lv=2, value={2,4250}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+42.5%" },
+		[419]={ skill_lv=3, value={2,5250}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+52.5%" },
+		[420]={ skill_lv=4, value={2,6250}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+62.5%" },
+}, build_type=6, produce_type=0
+},
+	[10292]={ type=5, effect_para={2500,{2,10}}, is_coincide=106, icon="warship_5.png", name=76138, rank=4, skill_attr={
+		[421]={ skill_lv=1, value={2500,{2,10}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+25%；处于晚上时自身疲劳消耗速度+10" },
+		[422]={ skill_lv=2, value={3000,{2,7}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+30%；处于晚上时自身疲劳消耗速度+7" },
+		[423]={ skill_lv=3, value={3500,{2,4}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+35%；处于晚上时自身疲劳消耗速度+4" },
+		[424]={ skill_lv=4, value={4000,{2,1}}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+40%；处于晚上时自身疲劳消耗速度+1" },
+}, build_type=2, produce_type=0
+},
+	[10301]={ type=11, effect_para={1150}, is_coincide=107, icon="warship_11.png", name=76107, rank=0, skill_attr={
+		[425]={ skill_lv=1, value={1150}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+11.5%" },
+		[426]={ skill_lv=2, value={1400}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+14%" },
+		[427]={ skill_lv=3, value={1650}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+16.5%" },
+		[428]={ skill_lv=4, value={1900}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>动力模块</color>的机器人获取效率+19%" },
+}, build_type=1, produce_type=0
+},
+	[10302]={ type=10, effect_para={6}, is_coincide=108, icon="warship_10.png", name=76169, rank=4, skill_attr={
+		[429]={ skill_lv=1, value={6}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复6点疲劳" },
+		[430]={ skill_lv=2, value={8}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复8点疲劳" },
+		[431]={ skill_lv=3, value={10}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复10点疲劳" },
+		[432]={ skill_lv=4, value={12}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复12点疲劳" },
+}, build_type=5, produce_type=0
+},
+	[10311]={ type=2, effect_para={1750,{2,10}}, is_coincide=109, icon="warship_2.png", name=76143, rank=0, skill_attr={
+		[433]={ skill_lv=1, value={1750,{2,10}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+17.5%；处于晚上时自身疲劳消耗速度+10" },
+		[434]={ skill_lv=2, value={2000,{2,7}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+20%；处于晚上时自身疲劳消耗速度+7" },
+		[435]={ skill_lv=3, value={2250,{2,4}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+22.5%；处于晚上时自身疲劳消耗速度+4" },
+		[436]={ skill_lv=4, value={2500,{2,1}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+25%；处于晚上时自身疲劳消耗速度+1" },
+}, build_type=4, produce_type=0
+},
+	[10312]={ type=16, effect_para={3}, is_coincide=110, icon="warship_16.png", name=76157, rank=4, skill_attr={
+		[437]={ skill_lv=1, value={3}, des="在<color=#1792ff>舰员宿舍</color>时，其他人每小时疲劳恢复+3" },
+		[438]={ skill_lv=2, value={5}, des="在<color=#1792ff>舰员宿舍</color>时，其他人每小时疲劳恢复+5" },
+		[439]={ skill_lv=3, value={7}, des="在<color=#1792ff>舰员宿舍</color>时，其他人每小时疲劳恢复+7" },
+		[440]={ skill_lv=4, value={9}, des="在<color=#1792ff>舰员宿舍</color>时，其他人每小时疲劳恢复+9" },
+}, build_type=5, produce_type=0
+},
+	[10321]={ type=14, effect_para={1,3250}, is_coincide=111, icon="warship_14.png", name=76171, rank=0, skill_attr={
+		[441]={ skill_lv=1, value={1,3250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>潜能材料</color>的生产效率+32.5%" },
+		[442]={ skill_lv=2, value={1,4250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>潜能材料</color>的生产效率+42.5%" },
+		[443]={ skill_lv=3, value={1,5250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>潜能材料</color>的生产效率+52.5%" },
+		[444]={ skill_lv=4, value={1,6250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>潜能材料</color>的生产效率+62.5%" },
+}, build_type=6, produce_type=0
+},
+	[10322]={ type=2, effect_para={1500,{1,10}}, is_coincide=112, icon="warship_2.png", name=76143, rank=4, skill_attr={
+		[445]={ skill_lv=1, value={1500,{1,10}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+15%；处于白天时自身疲劳消耗速度+10" },
+		[446]={ skill_lv=2, value={1750,{1,7}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+17.5%；处于白天时自身疲劳消耗速度+7" },
+		[447]={ skill_lv=3, value={2000,{1,4}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+20%；处于白天时自身疲劳消耗速度+4" },
+		[448]={ skill_lv=4, value={2250,{1,1}}, des="在<color=#1792ff>动力模块</color>工作时，机器人获取效率+22.5%；处于白天时自身疲劳消耗速度+1" },
+}, build_type=6, produce_type=0
+},
+	[10331]={ type=14, effect_para={3,3000}, is_coincide=113, icon="warship_14.png", name=76173, rank=0, skill_attr={
+		[449]={ skill_lv=1, value={3,3000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+30%" },
+		[450]={ skill_lv=2, value={3,4000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+40%" },
+		[451]={ skill_lv=3, value={3,5000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+50%" },
+		[452]={ skill_lv=4, value={3,6000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+60%" },
+}, build_type=6, produce_type=0
+},
+	[10332]={ type=8, effect_para={1750,{1,10}}, is_coincide=114, icon="warship_8.png", name=76174, rank=4, skill_attr={
+		[453]={ skill_lv=1, value={1750,{1,10}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+17.5%；处于白天时自身疲劳消耗速度+10" },
+		[454]={ skill_lv=2, value={2250,{1,7}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+22.5%；处于白天时自身疲劳消耗速度+7" },
+		[455]={ skill_lv=3, value={2750,{1,4}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+27.5%；处于白天时自身疲劳消耗速度+4" },
+		[456]={ skill_lv=4, value={3250,{1,1}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+32.5%；处于白天时自身疲劳消耗速度+1" },
+}, build_type=3, produce_type=0
+},
+	[10341]={ type=10, effect_para={6}, is_coincide=115, icon="warship_10.png", name=76169, rank=0, skill_attr={
+		[457]={ skill_lv=1, value={6}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复6点疲劳" },
+		[458]={ skill_lv=2, value={8}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复8点疲劳" },
+		[459]={ skill_lv=3, value={10}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复10点疲劳" },
+		[460]={ skill_lv=4, value={12}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复12点疲劳" },
+}, build_type=5, produce_type=0
+},
+	[10342]={ type=14, effect_para={4,3000}, is_coincide=116, icon="warship_14.png", name=76127, rank=4, skill_attr={
+		[461]={ skill_lv=1, value={4,3000}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+30%" },
+		[462]={ skill_lv=2, value={4,4000}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+40%" },
+		[463]={ skill_lv=3, value={4,5000}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+50%" },
+		[464]={ skill_lv=4, value={4,6000}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+60%" },
+}, build_type=6, produce_type=0
+},
+	[10351]={ type=15, effect_para={2000}, is_coincide=117, icon="warship_15.png", name=76150, rank=0, skill_attr={
+		[465]={ skill_lv=1, value={2000}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+20%" },
+		[466]={ skill_lv=2, value={2500}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+25%" },
+		[467]={ skill_lv=3, value={3000}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+30%" },
+		[468]={ skill_lv=4, value={3500}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+35%" },
+}, build_type=7, produce_type=0
+},
+	[10352]={ type=1, effect_para={1500}, is_coincide=118, icon="warship_1.png", name=76171, rank=4, skill_attr={
+		[469]={ skill_lv=1, value={1500}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+15%" },
+		[470]={ skill_lv=2, value={1750}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+17.5%" },
+		[471]={ skill_lv=3, value={2000}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+20%" },
+		[472]={ skill_lv=4, value={2250}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+22.5%" },
+}, build_type=4, produce_type=0
+},
+	[10361]={ type=14, effect_para={2,3000}, is_coincide=119, icon="warship_14.png", name=76102, rank=0, skill_attr={
+		[473]={ skill_lv=1, value={2,3000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+30%" },
+		[474]={ skill_lv=2, value={2,4000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+40%" },
+		[475]={ skill_lv=3, value={2,5000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+50%" },
+		[476]={ skill_lv=4, value={2,6000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>模组/烙痕材料</color>的生产效率+60%" },
+}, build_type=6, produce_type=0
+},
+	[10362]={ type=10, effect_para={6}, is_coincide=120, icon="warship_10.png", name=76169, rank=4, skill_attr={
+		[477]={ skill_lv=1, value={6}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复6点疲劳" },
+		[478]={ skill_lv=2, value={8}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复8点疲劳" },
+		[479]={ skill_lv=3, value={10}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复10点疲劳" },
+		[480]={ skill_lv=4, value={12}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复12点疲劳" },
+}, build_type=5, produce_type=0
+},
+	[10371]={ type=12, effect_para={750}, is_coincide=121, icon="warship_12.png", name=76111, rank=0, skill_attr={
+		[481]={ skill_lv=1, value={750}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+7.5%" },
+		[482]={ skill_lv=2, value={1000}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+10%" },
+		[483]={ skill_lv=3, value={1250}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+12.5%" },
+		[484]={ skill_lv=4, value={1500}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+15%" },
+}, build_type=1, produce_type=0
+},
+	[10372]={ type=8, effect_para={1750,{2,10}}, is_coincide=122, icon="warship_8.png", name=76174, rank=4, skill_attr={
+		[485]={ skill_lv=1, value={1750,{2,10}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+17.5%；处于晚上时自身疲劳消耗速度+10" },
+		[486]={ skill_lv=2, value={2250,{2,7}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+22.5%；处于晚上时自身疲劳消耗速度+7" },
+		[487]={ skill_lv=3, value={2750,{2,4}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+27.5%；处于晚上时自身疲劳消耗速度+4" },
+		[488]={ skill_lv=4, value={3250,{2,1}}, des="在<color=#1792ff>提纯车间</color>工作时，钛基材料生产效率+32.5%；处于晚上时自身疲劳消耗速度+1" },
+}, build_type=3, produce_type=0
+},
+	[10381]={ type=1, effect_para={1500}, is_coincide=123, icon="warship_1.png", name=76171, rank=0, skill_attr={
+		[489]={ skill_lv=1, value={1500}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+15%" },
+		[490]={ skill_lv=2, value={1750}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+17.5%" },
+		[491]={ skill_lv=3, value={2000}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+20%" },
+		[492]={ skill_lv=4, value={2250}, des="在<color=#1792ff>动力模块</color>工作时机器人获取效率+22.5%" },
+}, build_type=4, produce_type=0
+},
+	[10382]={ type=13, effect_para={600}, is_coincide=124, icon="warship_13.png", name=76167, rank=4, skill_attr={
+		[493]={ skill_lv=1, value={600}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+6%" },
+		[494]={ skill_lv=2, value={800}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+8%" },
+		[495]={ skill_lv=3, value={1000}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+10%" },
+		[496]={ skill_lv=4, value={1200}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>提纯车间</color>的钛基材料生产效率+12%" },
+}, build_type=1, produce_type=0
+},
+	[10391]={ type=7, effect_para={1350,2750}, is_coincide=125, icon="warship_7.png", name=76167, rank=0, skill_attr={
+		[497]={ skill_lv=1, value={1350,2750}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+13.5%，建筑生产仓库容量+27.5%" },
+		[498]={ skill_lv=2, value={1850,3250}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+18.5%，建筑生产仓库容量+32.5%" },
+		[499]={ skill_lv=3, value={2350,3750}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+23.5%，建筑生产仓库容量+37.5%" },
+		[500]={ skill_lv=4, value={2850,4250}, des="在<color=#1792ff>提纯车间</color>工作时钛基材料生产效率+28.5%，建筑生产仓库容量+42.5%" },
+}, build_type=3, produce_type=0
+},
+	[10392]={ type=10, effect_para={6}, is_coincide=126, icon="warship_10.png", name=76169, rank=4, skill_attr={
+		[501]={ skill_lv=1, value={6}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复6点疲劳" },
+		[502]={ skill_lv=2, value={8}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复8点疲劳" },
+		[503]={ skill_lv=3, value={10}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复10点疲劳" },
+		[504]={ skill_lv=4, value={12}, des="在<color=#1792ff>舰员宿舍</color>时，每小时额外恢复12点疲劳" },
+}, build_type=5, produce_type=0
+},
+	[10401]={ type=4, effect_para={1800,2750}, is_coincide=127, icon="warship_4.png", name=76118, rank=0, skill_attr={
+		[505]={ skill_lv=1, value={1800,2750}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+18%，建筑生产仓库容量+27.5%" },
+		[506]={ skill_lv=2, value={2400,3250}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+24%，建筑生产仓库容量+32.5%" },
+		[507]={ skill_lv=3, value={3000,3750}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+30%，建筑生产仓库容量+37.5%" },
+		[508]={ skill_lv=4, value={3600,4250}, des="在<color=#1792ff>训练模块</color>工作时，作战经验报告的生产效率+36%，建筑生产仓库容量+42.5%" },
+}, build_type=2, produce_type=0
+},
+	[10402]={ type=15, effect_para={2000}, is_coincide=128, icon="warship_15.png", name=76123, rank=4, skill_attr={
+		[509]={ skill_lv=1, value={2000}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+20%" },
+		[510]={ skill_lv=2, value={2500}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+25%" },
+		[511]={ skill_lv=3, value={3000}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+30%" },
+		[512]={ skill_lv=4, value={3500}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+35%" },
+}, build_type=7, produce_type=0
+},
+	[10411]={ type=15, effect_para={2000}, is_coincide=129, icon="warship_15.png", name=76123, rank=0, skill_attr={
+		[513]={ skill_lv=1, value={2000}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+20%" },
+		[514]={ skill_lv=2, value={2500}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+25%" },
+		[515]={ skill_lv=3, value={3000}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+30%" },
+		[516]={ skill_lv=4, value={3500}, des="在<color=#1792ff>派遣坞</color>工作时，派遣任务获取效率+35%" },
+}, build_type=7, produce_type=0
+},
+	[10412]={ type=14, effect_para={43250}, is_coincide=130, icon="warship_14.png", name=76127, rank=4, skill_attr={
+		[517]={ skill_lv=1, value={4,3250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+32.5%" },
+		[518]={ skill_lv=2, value={4,4250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+42.5%" },
+		[519]={ skill_lv=3, value={4,5250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+52.5%" },
+		[520]={ skill_lv=4, value={4,6250}, des="在<color=#1792ff>总生产线</color>工作时，<color=#1792ff>资源转化</color>的效率+62.5%" },
+}, build_type=6, produce_type=0
+},
+	[10421]={ type=12, effect_para={750}, is_coincide=131, icon="warship_12.png", name=76111, rank=0, skill_attr={
+		[521]={ skill_lv=1, value={750}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+7.5%" },
+		[522]={ skill_lv=2, value={1000}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+10%" },
+		[523]={ skill_lv=3, value={1250}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+12.5%" },
+		[524]={ skill_lv=4, value={1500}, des="在<color=#1792ff>烽火之心</color>工作时，<color=#1792ff>训练模块</color>作战经验报告的生产效率+15%" },
+}, build_type=1, produce_type=0
+},
+	[10422]={ type=14, effect_para={3,3000}, is_coincide=132, icon="warship_14.png", name=76151, rank=4, skill_attr={
+		[525]={ skill_lv=1, value={3,3000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+30%" },
+		[526]={ skill_lv=2, value={3,4000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+40%" },
+		[527]={ skill_lv=3, value={3,5000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+50%" },
+		[528]={ skill_lv=4, value={3,6000}, des="在<color=#1792ff>总生产线</color>工作时,<color=#1792ff>礼物</color>的生产效率+60%" },
+}, build_type=6, produce_type=0
 }
 }
 

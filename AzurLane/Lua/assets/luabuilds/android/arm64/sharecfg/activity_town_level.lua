@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_town_level") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_town_level"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_town_level = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_town_level
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_town_level = rawget(pg, "activity_town_level") or setmetatable({
+	__name = "activity_town_level"
+}, confNEO)
+pg.activity_town_level.all = {
 	1,
 	2,
 	3,
@@ -42,25 +19,11 @@ var_0_3.all = {
 	14,
 	15
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_town_level = {}
+pg.base = pg.base or {}
+pg.base.activity_town_level = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_town_level
-
-	var_1_0[1] = {
+	pg.base.activity_town_level[1] = {
 		gold = 50000,
 		unlock_story = "HUANGYEJIARIKAITUOJI1",
 		exp = 30,
@@ -75,11 +38,7 @@ var_0_3.base.activity_town_level = {}
 			{}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_town_level
-
-	var_1_1[2] = {
+	pg.base.activity_town_level[2] = {
 		gold = 200000,
 		unlock_story = "",
 		exp = 60,
@@ -94,11 +53,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_town_level
-
-	var_1_2[3] = {
+	pg.base.activity_town_level[3] = {
 		gold = 500000,
 		unlock_story = "HUANGYEJIARIKAITUOJI2",
 		exp = 100,
@@ -113,11 +68,7 @@ var_0_3.base.activity_town_level = {}
 			{}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_town_level
-
-	var_1_3[4] = {
+	pg.base.activity_town_level[4] = {
 		gold = 1500000,
 		unlock_story = "",
 		exp = 200,
@@ -134,11 +85,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_town_level
-
-	var_1_4[5] = {
+	pg.base.activity_town_level[5] = {
 		gold = 5000000,
 		unlock_story = "HUANGYEJIARIKAITUOJI3",
 		exp = 300,
@@ -155,11 +102,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_town_level
-
-	var_1_5[6] = {
+	pg.base.activity_town_level[6] = {
 		gold = 10000000,
 		unlock_story = "",
 		exp = 400,
@@ -176,11 +119,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_town_level
-
-	var_1_6[7] = {
+	pg.base.activity_town_level[7] = {
 		gold = 20000000,
 		unlock_story = "HUANGYEJIARIKAITUOJI4",
 		exp = 600,
@@ -197,11 +136,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_town_level
-
-	var_1_7[8] = {
+	pg.base.activity_town_level[8] = {
 		gold = 40000000,
 		unlock_story = "",
 		exp = 800,
@@ -218,11 +153,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_town_level
-
-	var_1_8[9] = {
+	pg.base.activity_town_level[9] = {
 		gold = 80000000,
 		unlock_story = "",
 		exp = 1000,
@@ -239,11 +170,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_town_level
-
-	var_1_9[10] = {
+	pg.base.activity_town_level[10] = {
 		gold = 160000000,
 		unlock_story = "HUANGYEJIARIKAITUOJI5",
 		exp = 1100,
@@ -258,11 +185,7 @@ var_0_3.base.activity_town_level = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_town_level
-
-	var_1_10[11] = {
+	pg.base.activity_town_level[11] = {
 		gold = 240000000,
 		unlock_story = "",
 		exp = 1200,
@@ -275,11 +198,7 @@ var_0_3.base.activity_town_level = {}
 			{}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_town_level
-
-	var_1_11[12] = {
+	pg.base.activity_town_level[12] = {
 		gold = 320000000,
 		unlock_story = "",
 		exp = 1300,
@@ -292,11 +211,7 @@ var_0_3.base.activity_town_level = {}
 			{}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_town_level
-
-	var_1_12[13] = {
+	pg.base.activity_town_level[13] = {
 		gold = 640000000,
 		unlock_story = "",
 		exp = 1400,
@@ -309,11 +224,7 @@ var_0_3.base.activity_town_level = {}
 			{}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_town_level
-
-	var_1_13[14] = {
+	pg.base.activity_town_level[14] = {
 		gold = 1000000000,
 		unlock_story = "",
 		exp = 1500,
@@ -326,8 +237,7 @@ var_0_3.base.activity_town_level = {}
 			{}
 		}
 	}
-	pg = var_1_13
-	var_1_13.base.activity_town_level[15] = {
+	pg.base.activity_town_level[15] = {
 		gold = 0,
 		unlock_story = "",
 		exp = 0,

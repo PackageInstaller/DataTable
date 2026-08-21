@@ -34,7 +34,7 @@ function initData(self)
     self.mVoiceSn = nil
     self.mIsFirstShow = false
     self.mOnClickFun = nil
-    self.mIsPlaying=false
+    self.mIsPlaying = false
 end
 
 function configUI(self)
@@ -352,9 +352,9 @@ function updateTab(self)
     --     self.tabBar:setPage(favorable.FavorableConst.HERO_DETAIL)
     --     self.tabBar:setHideItem({ favorable.FavorableConst.HERO_FILE_CASE, favorable.FavorableConst.HERO_FILE_VOICE, favorable.FavorableConst.HERO_FILE_INTERACT })
     -- else
-        self.tabBar:setPage(favorable.FavorableConst.HERO_STORY)
+    self.tabBar:setPage(favorable.FavorableConst.HERO_STORY)
 
-        self.tabBar:setDefIsSelect(false)
+    self.tabBar:setDefIsSelect(false)
     --    self.tabBar:setHideItem({ favorable.FavorableConst.HERO_DETAIL })
     --end
     self:updateView()
@@ -453,9 +453,24 @@ function updateModelView(self, heroVo, type)
     if (heroVo and (favorable.FavorableManager.mDetailShow3D or not self.mIsFirstShow)) then
         local model = heroVo:getUIModel()
         if type == 2 then
-            self.mModelPlayer:setModelData(model, false, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, nil, self.mClickerArea, true)
+            self.mModelPlayer:setModelData(model, false, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, nil, self.mClickerArea, true, function()
+                local data = fashion.FashionManager:getModelHarData(heroVo:getUIModel())
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                    -- 替换材质球预览
+                    self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                        self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                    end)
+                end
+            end)
         else
             self.mModelPlayer:setModelData(model, false, true, 1, true, MainCityConst.ROLE_MODE_CLIP, nil, self.mClickerArea, true, function()
+                local data = fashion.FashionManager:getModelHarData(heroVo:getUIModel())
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                    -- 替换材质球预览
+                    self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                        self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                    end)
+                end
                 if not self.mIsFirstShow then
                     self.mIsFirstShow = true
                 end
@@ -487,25 +502,25 @@ function playAction(self, args)
                 self.mVoiceSn = nil
             end
             local baseData = hero.HeroInteractManager:getConfigData01(self.curHeroVo.model, nil, args.actName)
-            self.mIsPlaying=true
+            self.mIsPlaying = true
             self.mVoiceSn = LoopManager:addTimer(math.max(hero.HeroInteractManager:getCvDataLayBack(baseData), 0.1), 1, self, function()
                 if AudioManager:preloadCvByCvId(args.cvId) then
                     self.mAudioData = AudioManager:playHeroCVOnReplace(args.cvId, function()
                         self.mAudioData = nil
-                        self.mIsPlaying=false
+                        self.mIsPlaying = false
                         self:onShowHeroInTeractTextOnlyHandler(nil)
                     end)
                 else
-                    self.mTimeSn = LoopManager:setTimeout(5, self, function (instance)
+                    self.mTimeSn = LoopManager:setTimeout(5, self, function(instance)
                         instance:destroyTimeSn()
                         instance.mAudioData = nil
-                        instance.mIsPlaying=false
+                        instance.mIsPlaying = false
                         instance:onShowHeroInTeractTextOnlyHandler(nil)
                     end)
                 end
             end)
         else
-            self.mIsPlaying=false
+            self.mIsPlaying = false
             self.mModelPlayer.m_modelView:playAction(self.mAlwayHash)
             if self.mAudioData then
                 AudioManager:stopAudioSound(self.mAudioData)
@@ -574,6 +589,10 @@ end
 
 function recoverModel(self, isResetMaincity)
     self.mModelPlayer:reset(isResetMaincity)
+    if self.mHarFrameSn then
+        LoopManager:removeFrameByIndex(self.mHarFrameSn)
+        self.mHarFrameSn = nil
+    end
 end
 
 function destroyTimeSn(self)

@@ -1,33 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LimitChallengeProxy", import(".NetProxy"))
 
-local var_0_0 = "LimitChallengeProxy"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".NetProxy"))
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	arg_1_0:initData()
 
 	return
 end
 
-function var_0_1.timeCall(arg_2_0)
-	local var_2_0 = {}
+function var_0_0.timeCall(arg_2_0)
+	return {
+		[ProxyRegister.DayCall] = function(arg_3_0)
+			LimitChallengeConst.RequestInfo()
 
-	ProxyRegister = var_1_10002
-	var_2_0[var_1_10002.DayCall] = function(arg_3_0)
-		LimitChallengeConst = var_2_10001
-
-		var_2_10001.RequestInfo()
-
-		return
-	end
-
-	return var_2_0
+			return
+		end
+	}
 end
 
-function var_0_1.initData(arg_4_0)
+function var_0_0.initData(arg_4_0)
 	arg_4_0.passTimeDict = {}
 	arg_4_0.awardedDict = {}
 	arg_4_0.curMonthPassedIDList = {}
@@ -35,124 +24,82 @@ function var_0_1.initData(arg_4_0)
 	return
 end
 
-function var_0_1.setTimeDataFromServer(arg_5_0, arg_5_1)
-	ipairs = var_1_10002
-
-	for iter_5_0, iter_5_1 in var_1_10002(arg_5_1) do
-		local var_5_0 = iter_5_1.key
-		local var_5_1 = iter_5_1.value
-
-		arg_5_0.passTimeDict[var_5_0] = var_5_1
+function var_0_0.setTimeDataFromServer(arg_5_0, arg_5_1)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_1) do
+		arg_5_0.passTimeDict[iter_5_1.key] = iter_5_1.value
 	end
 
 	return
 end
 
-function var_0_1.setAwardedDataFromServer(arg_6_0, arg_6_1)
-	ipairs = var_1_10002
-
-	for iter_6_0, iter_6_1 in var_1_10002(arg_6_1) do
-		local var_6_0 = iter_6_1.key
-		local var_6_1 = iter_6_1.value > 0
-
-		arg_6_0.awardedDict[var_6_0] = var_6_1
+function var_0_0.setAwardedDataFromServer(arg_6_0, arg_6_1)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_1) do
+		arg_6_0.awardedDict[iter_6_1.key] = iter_6_1.value > 0
 	end
 
 	return
 end
 
-function var_0_1.setCurMonthPassedIDList(arg_7_0, arg_7_1)
-	ipairs = var_1_10002
-
-	for iter_7_0, iter_7_1 in var_1_10002(arg_7_1) do
-		table = var_1_10007
-
-		var_1_10007.insert(arg_7_0.curMonthPassedIDList, iter_7_1)
+function var_0_0.setCurMonthPassedIDList(arg_7_0, arg_7_1)
+	for iter_7_0, iter_7_1 in ipairs(arg_7_1) do
+		table.insert(arg_7_0.curMonthPassedIDList, iter_7_1)
 	end
 
 	return
 end
 
-function var_0_1.setPassTime(arg_8_0, arg_8_1, arg_8_2)
+function var_0_0.setPassTime(arg_8_0, arg_8_1, arg_8_2)
 	if not arg_8_0.passTimeDict[arg_8_1] then
-		var_1_10004 = arg_8_0.passTimeDict
-		var_1_10004[arg_8_1] = arg_8_2
-	elseif arg_8_2 < var_3 then
-		var_1_10004 = arg_8_0.passTimeDict
-		var_1_10004[arg_8_1] = arg_8_2
+		arg_8_0.passTimeDict[arg_8_1] = arg_8_2
+	elseif arg_8_2 < arg_8_0.passTimeDict[arg_8_1] then
+		arg_8_0.passTimeDict[arg_8_1] = arg_8_2
 
-		local var_8_0 = arg_8_0
-
-		var_1_10004 = arg_8_0.sendNotification
-		LimitChallengeConst = var_1_10007
-
-		var_1_10004(var_8_0, var_1_10007.UPDATE_PASS_TIME)
+		arg_8_0:sendNotification(LimitChallengeConst.UPDATE_PASS_TIME)
 	end
 
-	table = var_1_10004
-
-	if not var_1_10004.contains(arg_8_0.curMonthPassedIDList, arg_8_1) then
-		table = var_4
-
-		var_4.insert(arg_8_0.curMonthPassedIDList, arg_8_1)
+	if not table.contains(arg_8_0.curMonthPassedIDList, arg_8_1) then
+		table.insert(arg_8_0.curMonthPassedIDList, arg_8_1)
 	end
 
 	return
 end
 
-function var_0_1.setAwarded(arg_9_0, arg_9_1)
+function var_0_0.setAwarded(arg_9_0, arg_9_1)
 	arg_9_0.awardedDict[arg_9_1] = true
 
 	return
 end
 
-function var_0_1.getPassTimeByChallengeID(arg_10_0, arg_10_1)
+function var_0_0.getPassTimeByChallengeID(arg_10_0, arg_10_1)
 	return arg_10_0.passTimeDict[arg_10_1]
 end
 
-function var_0_1.getMissAwardChallengeIDLIst(arg_11_0)
-	local var_11_0 = {}
+function var_0_0.getMissAwardChallengeIDLIst(arg_11_0)
+	for iter_11_0, iter_11_1 in ipairs(LimitChallengeConst.GetCurMonthConfig().stage) do
+		local var_11_0 = arg_11_0:isAwardedByChallengeID(iter_11_1)
 
-	LimitChallengeConst = var_1_10002
-
-	local var_11_1 = var_1_10002.GetCurMonthConfig().stage
-
-	ipairs = var_1_10004
-
-	for iter_11_0, iter_11_1 in var_1_10004(var_11_1) do
-		table = var_1_10009
-		var_1_10009 = var_1_10009.contains(arg_11_0.curMonthPassedIDList, iter_11_1)
-
-		local var_11_2 = arg_11_0:isAwardedByChallengeID(iter_11_1)
-
-		if var_1_10009 and not var_11_2 then
-			table = var_11
-
-			var_11.insert(var_11_0, iter_11_1)
+		if table.contains(arg_11_0.curMonthPassedIDList, iter_11_1) and not var_11_0 then
+			table.insert({}, iter_11_1)
 		end
 	end
 
-	return var_11_0
+	return {}
 end
 
-function var_0_1.isAwardedByChallengeID(arg_12_0, arg_12_1)
+function var_0_0.isAwardedByChallengeID(arg_12_0, arg_12_1)
 	return arg_12_0.awardedDict[arg_12_1]
 end
 
-function var_0_1.isLevelUnlock(arg_13_0, arg_13_1)
+function var_0_0.isLevelUnlock(arg_13_0, arg_13_1)
 	if arg_13_1 == 1 then
 		return true
 	end
 
-	if 1 < arg_13_1 then
-		LimitChallengeConst = var_2
-
-		local var_13_0 = var_2.GetChallengeIDByLevel(arg_13_1 - 1)
-
-		return arg_13_0.awardedDict[var_13_0]
+	if arg_13_1 > 1 then
+		return arg_13_0.awardedDict[LimitChallengeConst.GetChallengeIDByLevel(arg_13_1 - 1)]
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

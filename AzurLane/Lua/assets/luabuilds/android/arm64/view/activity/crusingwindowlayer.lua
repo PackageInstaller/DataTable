@@ -1,33 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CrusingWindowLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "CrusingWindowLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "CrusingWindowUI"
 end
 
-function var_0_1.preload(arg_2_0, arg_2_1)
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
-
-	local var_2_0 = var_1_10002(var_1_10004)
-	local var_2_1 = var_2.getAliveActivityByType
-
-	ActivityConst = var_1_10005
-
-	local var_2_2 = var_2_1(var_2_0, var_1_10005.ACTIVITY_TYPE_PT_CRUSING)
-
-	GetSpriteFromAtlasAsync = var_1_10003
-
-	local var_2_3 = "crusingwindow/map_20"
-
-	pg = var_1_10006
-
-	var_1_10003(var_2_3 .. var_1_10006.battlepass_event_pt[var_2_2.id].map_name, "", function(arg_3_0)
+function var_0_0.preload(arg_2_0, arg_2_1)
+	GetSpriteFromAtlasAsync("crusingwindow/map_20" .. pg.battlepass_event_pt[getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING).id].map_name, "", function(arg_3_0)
 		arg_2_0.windowSprite = arg_3_0
 
 		arg_2_1()
@@ -38,174 +16,66 @@ function var_0_1.preload(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.init(arg_4_0)
-	setImageSprite = var_1_10001
+function var_0_0.init(arg_4_0)
+	setImageSprite(arg_4_0._tf:Find("panel"), arg_4_0.windowSprite, true)
 
-	local var_4_0 = arg_4_0._tf
+	arg_4_0.rtBg = arg_4_0._tf:Find("bg")
+	arg_4_0.btnBack = arg_4_0._tf:Find("panel/btn_back")
+	arg_4_0.btnGo = arg_4_0._tf:Find("panel/btn_go")
+	arg_4_0.itemContent = arg_4_0._tf:Find("panel/content")
 
-	var_1_10001(var_3.Find(var_4_0, "panel"), arg_4_0.windowSprite, true)
+	local var_4_0 = pg.battlepass_event_pt[getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING).id].equip_skin or {}
 
-	local var_4_1 = arg_4_0._tf
+	arg_4_0.itemList = UIItemList.New(arg_4_0.itemContent, arg_4_0.itemContent:GetChild(0))
 
-	arg_4_0.rtBg = var_1.Find(var_4_1, "bg")
-
-	local var_4_2 = arg_4_0._tf
-
-	arg_4_0.btnBack = var_1.Find(var_4_2, "panel/btn_back")
-
-	local var_4_3 = arg_4_0._tf
-
-	arg_4_0.btnGo = var_1.Find(var_4_3, "panel/btn_go")
-
-	local var_4_4 = arg_4_0._tf
-
-	arg_4_0.itemContent = var_1.Find(var_4_4, "panel/content")
-	getProxy = var_1
-	ActivityProxy = var_4_4
-
-	local var_4_5 = var_1(var_4_4)
-	local var_4_6 = var_1.getAliveActivityByType
-
-	ActivityConst = var_4
-
-	local var_4_7 = var_4_6(var_4_5, var_4.ACTIVITY_TYPE_PT_CRUSING)
-
-	pg = var_1_10002
-
-	local var_4_8
-
-	if not var_1_10002.battlepass_event_pt[var_4_7.id].equip_skin then
-		var_4_8 = {}
-	end
-
-	UIItemList = var_3
-
-	local var_4_9 = var_3.New
-	local var_4_10 = arg_4_0.itemContent
-	local var_4_11 = arg_4_0.itemContent
-
-	arg_4_0.itemList = var_4_9(var_4_10, var_6.GetChild(var_4_11, 0))
-
-	local var_4_12 = arg_4_0.itemList
-
-	var_3.make(var_4_12, function(arg_5_0, arg_5_1, arg_5_2)
+	arg_4_0.itemList:make(function(arg_5_0, arg_5_1, arg_5_2)
 		arg_5_1 = arg_5_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_5_0 == var_2_10003.EventUpdate then
+		if arg_5_0 == UIItemList.EventUpdate then
 			local var_5_0 = {}
 
-			unpack = var_2_10004
+			var_5_0.type, var_5_0.id, var_5_0.count = unpack(var_4_0[arg_5_1])
 
-			local var_5_1, var_5_2, var_5_3 = var_2_10004(var_4_8[arg_5_1])
-
-			var_5_0.count = var_5_3
-			var_5_0.id = var_5_2
-			var_5_0.type = var_5_1
-			updateDrop = var_5_1
-
-			var_5_1(arg_5_2, var_5_0)
-
-			onButton = var_5_1
-
-			local var_5_4 = arg_4_0
-			local var_5_5 = arg_5_2
-
-			local function var_5_6()
-				local var_6_0 = arg_4_0
-
-				var_0.emit(var_6_0, var_0_1.ON_DROP, var_5_0)
+			updateDrop(arg_5_2, {})
+			onButton(arg_4_0, arg_5_2, function()
+				arg_4_0:emit(var_0_0.ON_DROP, var_5_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10009
-
-			var_5_1(var_5_4, var_5_5, var_5_6, var_2_10009)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
-
-	local var_4_13 = arg_4_0.itemList
-
-	var_3.align(var_4_13, #var_4_8)
+	arg_4_0.itemList:align(#var_4_0)
 
 	return
 end
 
-function var_0_1.didEnter(arg_7_0)
-	pg = var_1_10001
-
-	local var_7_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_7_0, arg_7_0._tf)
-
-	onButton = var_1
-
-	local var_7_1 = arg_7_0
-	local var_7_2 = arg_7_0.rtBg
-
-	local function var_7_3()
-		local var_8_0 = arg_7_0
-
-		var_0.closeView(var_8_0)
+function var_0_0.didEnter(arg_7_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_0._tf)
+	onButton(arg_7_0, arg_7_0.rtBg, function()
+		arg_7_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_7_1, var_7_2, var_7_3, var_1_10006)
-
-	onButton = var_1
-
-	local var_7_4 = arg_7_0
-	local var_7_5 = arg_7_0.btnBack
-
-	local function var_7_6()
-		local var_9_0 = arg_7_0
-
-		var_0.closeView(var_9_0)
+	end, SFX_CANCEL)
+	onButton(arg_7_0, arg_7_0.btnBack, function()
+		arg_7_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_7_4, var_7_5, var_7_6, var_1_10006)
-
-	onButton = var_1
-
-	local var_7_7 = arg_7_0
-	local var_7_8 = arg_7_0.btnGo
-
-	local function var_7_9()
-		local var_10_0 = arg_7_0
-		local var_10_1 = var_0.emit
-
-		CrusingWindowMediator = var_2_10003
-
-		var_10_1(var_10_0, var_2_10003.GO_CRUSING)
+	end, SFX_CANCEL)
+	onButton(arg_7_0, arg_7_0.btnGo, function()
+		arg_7_0:emit(CrusingWindowMediator.GO_CRUSING)
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10006
-
-	var_1(var_7_7, var_7_8, var_7_9, var_1_10006)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.willExit(arg_11_0)
-	pg = var_1_10001
-
-	local var_11_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_11_0, arg_11_0._tf)
+function var_0_0.willExit(arg_11_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_11_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

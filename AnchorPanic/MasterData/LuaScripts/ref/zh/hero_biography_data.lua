@@ -89,9 +89,9 @@ local hero_biography_data=
 },
 	[1016]={ biography_list={101601}, type=4
 },
-	[1017]={ biography_list={101701}, type=4
+	[1017]={ biography_list={101701}, type=2
 },
-	[1018]={ biography_list={101801}, type=3
+	[1018]={ biography_list={101801}, type=2
 },
 	[1019]={ biography_list={101901}, type=3
 },
@@ -104,6 +104,44 @@ local hero_biography_data=
 	[1022]={ biography_list={102201}, type=4
 },
 	[1023]={ biography_list={102301}, type=3
+},
+	[1024]={ biography_list={102401}, type=4
+},
+	[1025]={ biography_list={102501}, type=3
+},
+	[1026]={ biography_list={102601}, type=2
+},
+	[1027]={ biography_list={102701}, type=2
+},
+	[1028]={ biography_list={102801}, type=2
+},
+	[1029]={ biography_list={102901}, type=3
+},
+	[1030]={ biography_list={103001}, type=2
+},
+	[1031]={ biography_list={103101}, type=3
+},
+	[1032]={ biography_list={103201}, type=4
+},
+	[1033]={ biography_list={103301}, type=3
+},
+	[1034]={ biography_list={103401}, type=2
+},
+	[1035]={ biography_list={103501}, type=3
+},
+	[1036]={ biography_list={103601}, type=4
+},
+	[1037]={ biography_list={103701}, type=3
+},
+	[1038]={ biography_list={103801}, type=3
+},
+	[1039]={ biography_list={103901}, type=2
+},
+	[1040]={ biography_list={104001}, type=1
+},
+	[1041]={ biography_list={104101}, type=4
+},
+	[1042]={ biography_list={104201}, type=3
 }
 }
 

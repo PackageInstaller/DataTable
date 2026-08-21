@@ -1,200 +1,118 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
+local var_0_2 = ys.Battle.BattleCardPuzzleEvent
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.CardPuzzleHandPool = class("CardPuzzleHandPool")
+ys.Battle.CardPuzzleHandPool.__name = "CardPuzzleHandPool"
 
-local var_0_1 = var_0.Battle.BattleConfig
-local var_0_2 = var_0.Battle.BattleCardPuzzleEvent
-local var_0_3 = var_0.Battle
-
-class = var_0_10004
-var_0_3.CardPuzzleHandPool = var_0_10004("CardPuzzleHandPool")
-
-local var_0_4 = var_0.Battle.CardPuzzleHandPool
-
-var_0_4.__name = "CardPuzzleHandPool"
-
-function var_0_4.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.CardPuzzleHandPool.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 
 	arg_1_0:init()
-
-	pg = var_2
-
-	var_2.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
 	return
 end
 
-function var_0_4.SetCardPuzzleComponent(arg_2_0, arg_2_1)
+function ys.Battle.CardPuzzleHandPool.SetCardPuzzleComponent(arg_2_0, arg_2_1)
 	arg_2_0._cardPuzzleInfo = arg_2_1
+	arg_2_0._hand = arg_2_0._cardPuzzleInfo:GetHand()
 
-	local var_2_0 = arg_2_0._cardPuzzleInfo
-
-	arg_2_0._hand = var_2.GetHand(var_2_0)
-
-	for iter_2_0 = 1, var_0.Battle.BattleFleetCardPuzzleHand.MAX_HAND do
+	for iter_2_0 = 1, var_0_0.Battle.BattleFleetCardPuzzleHand.MAX_HAND do
 		arg_2_0:instCardView()
 	end
 
-	local var_2_1 = arg_2_0._hand
-
-	var_2.RegisterEventListener(var_2_1, arg_2_0, var_0_2.UPDATE_CARDS, arg_2_0.onUpdateCards)
-
-	local var_2_2 = arg_2_0._cardPuzzleInfo
-
-	var_2.RegisterEventListener(var_2_2, arg_2_0, var_0_2.UPDATE_FLEET_ATTR, arg_2_0.onUpdateFleetAttr)
+	arg_2_0._hand:RegisterEventListener(arg_2_0, var_0_2.UPDATE_CARDS, arg_2_0.onUpdateCards)
+	arg_2_0._cardPuzzleInfo:RegisterEventListener(arg_2_0, var_0_2.UPDATE_FLEET_ATTR, arg_2_0.onUpdateFleetAttr)
 	arg_2_0:onUpdateCards()
 
 	return
 end
 
-function var_0_4.onUpdateCards(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0._hand
-	local var_3_1 = var_2.GetCardList(var_3_0)
+function ys.Battle.CardPuzzleHandPool.onUpdateCards(arg_3_0, arg_3_1)
+	local var_3_0 = arg_3_0._hand:GetCardList()
 
 	for iter_3_0 = 1, arg_3_0._hand.MAX_HAND do
-		local var_3_2 = arg_3_0._cardList[iter_3_0]
-
-		var_7.SetCardInfo(var_3_2, var_3_1[iter_3_0])
+		arg_3_0._cardList[iter_3_0]:SetCardInfo(var_3_0[iter_3_0])
 	end
 
 	return
 end
 
-function var_0_4.onUpdateFleetAttr(arg_4_0, arg_4_1)
+function ys.Battle.CardPuzzleHandPool.onUpdateFleetAttr(arg_4_0, arg_4_1)
 	for iter_4_0 = 1, arg_4_0._hand.MAX_HAND do
-		local var_4_0 = arg_4_0._cardList[iter_4_0]
-
-		var_6.UpdateTotalCost(var_4_0)
+		arg_4_0._cardList[iter_4_0]:UpdateTotalCost()
 	end
 
 	return
 end
 
-function var_0_4.init(arg_5_0)
-	var_0.EventListener.AttachEventListener(arg_5_0)
+function ys.Battle.CardPuzzleHandPool.init(arg_5_0)
+	var_0_0.EventListener.AttachEventListener(arg_5_0)
 
 	arg_5_0._cardList = {}
-
-	local var_5_0 = arg_5_0._go.transform
-
-	arg_5_0._cardContainer = var_1.Find(var_5_0, "card_container")
-
-	local var_5_1 = arg_5_0._go.transform
-
-	arg_5_0._cardTpl = var_1.Find(var_5_1, "card_tpl")
+	arg_5_0._cardContainer = arg_5_0._go.transform:Find("card_container")
+	arg_5_0._cardTpl = arg_5_0._go.transform:Find("card_tpl")
 
 	return
 end
 
-function var_0_4.updateHandCard(arg_6_0)
-	ipairs = var_1_10001
-
-	for iter_6_0, iter_6_1 in var_1_10001(arg_6_0._cardList) do
+function ys.Battle.CardPuzzleHandPool.updateHandCard(arg_6_0)
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0._cardList) do
 		iter_6_1:updateCardView()
 	end
 
 	return
 end
 
-function var_0_4.sort(arg_7_0)
+function ys.Battle.CardPuzzleHandPool.sort(arg_7_0)
 	return
 end
 
-function var_0_4.instCardView(arg_8_0)
-	cloneTplTo = var_1_10001
+function ys.Battle.CardPuzzleHandPool.instCardView(arg_8_0)
+	local var_8_0 = var_0_0.Battle.CardPuzzleHandCardButton.New(go((cloneTplTo(arg_8_0._cardTpl, arg_8_0._cardContainer))))
 
-	local var_8_0 = var_1_10001(arg_8_0._cardTpl, arg_8_0._cardContainer)
-	local var_8_1 = var_0.Battle.CardPuzzleHandCardButton.New
-
-	go = var_4
-
-	local var_8_2 = var_8_1(var_4(var_8_0))
-
-	table = var_3
-
-	var_3.insert(arg_8_0._cardList, var_8_2)
-	var_8_2:ConfigCallback(function(arg_9_0)
-		local var_9_0 = arg_8_0._cardPuzzleInfo
-
-		var_1.PlayCard(var_9_0, arg_9_0)
+	table.insert(arg_8_0._cardList, var_8_0)
+	var_8_0:ConfigCallback(function(arg_9_0)
+		arg_8_0._cardPuzzleInfo:PlayCard(arg_9_0)
 
 		return
 	end)
 
-	return var_8_2
+	return var_8_0
 end
 
-function var_0_4.test(arg_10_0, arg_10_1)
+function ys.Battle.CardPuzzleHandPool.test(arg_10_0, arg_10_1)
 	arg_10_0._testContainer = arg_10_1
-	LoadAndInstantiateAsync = var_1_10002
 
-	var_1_10002("UI", "CardTowerCardCombat", function(arg_11_0)
-		local var_11_0 = arg_10_0
+	LoadAndInstantiateAsync("UI", "CardTowerCardCombat", function(arg_11_0)
+		arg_10_0._cardPool = pg.Pool.New(arg_10_0._testContainer, arg_11_0, 7, 20, false, false):InitSize()
 
-		pg = var_2_10002
+		for iter_11_0, iter_11_1 in ipairs((arg_10_0._hand:GetCardList())) do
+			local var_11_0 = arg_10_0._cardPool:GetObject()
 
-		local var_11_1 = var_2_10002.Pool.New(arg_10_0._testContainer, arg_11_0, 7, 20, false, false)
+			var_11_0.transform.localScale = Vector3(0.57, 0.57, 0)
 
-		var_11_0._cardPool = var_2.InitSize(var_11_1)
+			local var_11_1 = var_0_0.Battle.CardPuzzleCombatCard.New(var_11_0.transform)
 
-		local var_11_2 = arg_10_0._hand
-		local var_11_3 = var_1.GetCardList(var_11_2)
+			var_11_1:SetCardInfo(iter_11_1)
+			var_11_1:UpdateView()
 
-		ipairs = var_2
+			arg_10_0._modelClick = GetOrAddComponent(var_11_0, "ModelDrag")
+			arg_10_0._modelPress = GetOrAddComponent(var_11_0, "UILongPressTrigger")
+			arg_10_0._dragDelegate = GetOrAddComponent(var_11_0, "EventTriggerListener")
 
-		for iter_11_0, iter_11_1 in var_2(var_11_3) do
-			local var_11_4 = arg_10_0._cardPool
-			local var_11_5 = var_7.GetObject(var_11_4).transform
-
-			Vector3 = var_11_4
-			var_11_5.localScale = var_11_4(0.57, 0.57, 0)
-
-			local var_11_6 = var_0.Battle.CardPuzzleCombatCard.New(var_11_5)
-
-			var_9.SetCardInfo(var_11_6, iter_11_1)
-			var_9:UpdateView()
-
-			local var_11_7 = arg_10_0
-
-			GetOrAddComponent = var_11
-			var_11_7._modelClick = var_11(var_7, "ModelDrag")
-
-			local var_11_8 = arg_10_0
-
-			GetOrAddComponent = var_11
-			var_11_8._modelPress = var_11(var_7, "UILongPressTrigger")
-
-			local var_11_9 = arg_10_0
-
-			GetOrAddComponent = var_11
-			var_11_9._dragDelegate = var_11(var_7, "EventTriggerListener")
-			pg = var_11_9
-
-			var_11_9.DelegateInfo.Add(arg_10_0, arg_10_0._modelClick.onModelClick)
-
-			local var_11_10 = arg_10_0._modelClick.onModelClick
-
-			var_10.AddListener(var_11_10, function()
+			pg.DelegateInfo.Add(arg_10_0, arg_10_0._modelClick.onModelClick)
+			arg_10_0._modelClick.onModelClick:AddListener(function()
 				return
 			end)
-
-			pg = var_10
-
-			var_10.DelegateInfo.Add(arg_10_0, arg_10_0._modelPress.onLongPressed)
+			pg.DelegateInfo.Add(arg_10_0, arg_10_0._modelPress.onLongPressed)
 
 			arg_10_0._modelPress.longPressThreshold = 1
 
-			local var_11_11 = arg_10_0._modelPress.onLongPressed
-
-			var_10.RemoveAllListeners(var_11_11)
-
-			local var_11_12 = arg_10_0._modelPress.onLongPressed
-
-			var_10.AddListener(var_11_12, function()
+			arg_10_0._modelPress.onLongPressed:RemoveAllListeners()
+			arg_10_0._modelPress.onLongPressed:AddListener(function()
 				return
 			end)
 		end
@@ -205,13 +123,12 @@ function var_0_4.test(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_4.Dispose(arg_14_0)
+function ys.Battle.CardPuzzleHandPool.Dispose(arg_14_0)
 	arg_14_0._cardTpl = nil
 	arg_14_0._cardContainer = nil
 	arg_14_0._cardList = nil
-	pg = var_1
 
-	var_1.DelegateInfo.Dispose(arg_14_0)
+	pg.DelegateInfo.Dispose(arg_14_0)
 
 	return
 end

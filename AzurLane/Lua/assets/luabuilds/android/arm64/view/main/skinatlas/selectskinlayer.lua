@@ -1,75 +1,58 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SelectSkinLayer", import(".SkinAtlasScene"))
 
-local var_0_0 = "SelectSkinLayer"
+var_0_0.MODE_SELECT = 1
+var_0_0.MODE_VIEW = 2
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SkinAtlasScene"))
-
-var_0_1.MODE_SELECT = 1
-var_0_1.MODE_VIEW = 2
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SelectSkinUI"
 end
 
-function var_0_1.init(arg_2_0)
-	var_0_1.super.init(arg_2_0)
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_2_0._tf)
 
-	pg = var_1
-
-	local var_2_0 = var_1.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_2_0, arg_2_0._tf)
-
-	SelectSkinMsgbox = var_1
-	arg_2_0.msgBox = var_1.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.msgBox = SelectSkinMsgbox.New(arg_2_0._tf, arg_2_0.event)
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	var_0_1.super.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
+	var_0_0.super.didEnter(arg_3_0)
 
 	return
 end
 
-function var_0_1.GetSkinList(arg_4_0, arg_4_1, arg_4_2)
-	local var_4_0
-
-	if not arg_4_0.contextData.selectableSkinList then
-		var_4_0 = {}
-	end
-
+function var_0_0.GetSkinList(arg_4_0, arg_4_1, arg_4_2)
+	local var_4_0 = arg_4_0.contextData.selectableSkinList or {}
 	local var_4_1 = {}
 
-	ipairs = var_1_10005
-
-	for iter_4_0, iter_4_1 in var_1_10005(var_4_0) do
+	for iter_4_0, iter_4_1 in ipairs(var_4_0) do
 		local var_4_2 = iter_4_1:ToShipSkin()
 
-		if (arg_4_1 == var_0_1.PAGE_ALL or var_4_2:IsType(arg_4_1)) and not var_4_2:IsDefault() and var_4_2:IsMatchKey(arg_4_2) and arg_4_0:MatchIndex(var_4_2) then
-			table = var_11
-
-			var_11.insert(var_4_1, iter_4_1)
+		if (arg_4_1 == var_0_0.PAGE_ALL or var_4_2:IsType(arg_4_1)) and not var_4_2:IsDefault() and var_4_2:IsMatchKey(arg_4_2) and arg_4_0:MatchIndex(var_4_2) then
+			table.insert(var_4_1, iter_4_1)
 		end
 	end
 
 	return var_4_1
 end
 
-function var_0_1.SortDisplay(arg_5_0, arg_5_1)
-	table = var_1_10002
+function var_0_0.SortDisplay(arg_5_0, arg_5_1)
+	table.sort(arg_5_1, function(arg_6_0, arg_6_1)
+		local var_6_0 = arg_6_0:GetTimeLimitWeight()
+		local var_6_1 = arg_6_1:GetTimeLimitWeight()
 
-	var_1_10002.sort(arg_5_1, function(arg_6_0, arg_6_1)
-		if arg_6_0:GetTimeLimitWeight() == arg_6_1:GetTimeLimitWeight() then
-			if arg_6_0:GetOwnWeight() == arg_6_1:GetOwnWeight() then
+		if var_6_0 == var_6_1 then
+			local var_6_2 = arg_6_0:GetOwnWeight()
+			local var_6_3 = arg_6_1:GetOwnWeight()
+
+			if var_6_2 == var_6_3 then
 				return arg_6_0.skinId > arg_6_1.skinId
 			else
-				return var_5 < var_4
+				return var_6_3 < var_6_2
 			end
 		else
-			return var_3 < var_2
+			return var_6_1 < var_6_0
 		end
 
 		return
@@ -78,120 +61,77 @@ function var_0_1.SortDisplay(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.OnInitItem(arg_7_0, arg_7_1)
-	SelectSkinCard = var_1_10002
+function var_0_0.OnInitItem(arg_7_0, arg_7_1)
+	local var_7_0 = SelectSkinCard.New(arg_7_1)
 
-	local var_7_0 = var_1_10002.New(arg_7_1)
-
-	onButton = var_1_10003
-
-	local var_7_1 = arg_7_0
-	local var_7_2 = var_7_0._tf
-
-	local function var_7_3()
-		if arg_7_0.contextData.mode == var_0_1.MODE_VIEW then
+	onButton(arg_7_0, var_7_0._tf, function()
+		if arg_7_0.contextData.mode == var_0_0.MODE_VIEW then
 			return
 		end
 
-		local var_8_0 = arg_7_0
-
-		var_0.Check(var_8_0, var_7_0.skin)
+		arg_7_0:Check(var_7_0.skin)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_7_1, var_7_2, var_7_3, var_1_10008)
+	end, SFX_PANEL)
 
 	arg_7_0.cards[arg_7_1] = var_7_0
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_9_0, arg_9_1, arg_9_2)
+function var_0_0.OnUpdateItem(arg_9_0, arg_9_1, arg_9_2)
 	if not arg_9_0.cards[arg_9_2] then
 		arg_9_0:OnInitItem(arg_9_2)
 	end
 
-	local var_9_0 = arg_9_0.cards[arg_9_2]
-	local var_9_1 = arg_9_0.displays[arg_9_1 + 1]
-	local var_9_2 = var_4.ToShipSkin(var_9_1)
-
-	var_9_0:Update(var_9_2, arg_9_1 + 1, var_4:IsTimeLimit(), var_4:OwnSkin())
+	arg_9_0.cards[arg_9_2]:Update(arg_9_0.displays[arg_9_1 + 1]:ToShipSkin(), arg_9_1 + 1, arg_9_0.displays[arg_9_1 + 1]:IsTimeLimit(), arg_9_0.displays[arg_9_1 + 1]:OwnSkin())
 
 	return
 end
 
-function var_0_1.Check(arg_10_0, arg_10_1)
-	getProxy = var_1_10002
-	ShipSkinProxy = var_1_10004
+function var_0_0.Check(arg_10_0, arg_10_1)
+	local var_10_0
 
-	local var_10_0 = var_1_10002(var_1_10004)
+	if getProxy(ShipSkinProxy):hasSkin(arg_10_1.id) then
+		do return end
 
-	if var_2.hasSkin(var_10_0, arg_10_1.id) then
-		return
+		var_10_0 = {
+			content = i18n("skin_exchange_confirm", Item.getConfigData(arg_10_0.contextData.itemId).name, arg_10_1.skinName)
+		}
 	end
 
-	local var_10_1 = arg_10_0.contextData.itemId
-
-	Item = var_10_0
-
-	local var_10_2 = var_10_0.getConfigData(var_10_1).name
-	local var_10_3 = arg_10_0.msgBox
-	local var_10_4 = var_5.ExecuteAction
-	local var_10_5 = "Show"
-	local var_10_6 = {}
-
-	i18n = var_1_10010
-	var_10_6.content = var_1_10010("skin_exchange_confirm", var_10_2, arg_10_1.skinName)
-
-	local var_10_7 = {
-		count = 1
+	;({
+		count = 1,
+		type = DROP_TYPE_ITEM
+	}).id = arg_10_0.contextData.itemId
+	var_10_0.leftDrop = {
+		count = 1,
+		type = DROP_TYPE_ITEM
+	}
+	var_10_0.rightDrop = {
+		count = 1,
+		type = DROP_TYPE_SKIN,
+		id = arg_10_1.id
 	}
 
-	DROP_TYPE_ITEM = var_1_10011
-	var_10_7.type = var_1_10011
-	var_10_7.id = var_10_1
-	var_10_6.leftDrop = var_10_7
-
-	local var_10_8 = {
-		count = 1
-	}
-
-	DROP_TYPE_SKIN = var_1_10011
-	var_10_8.type = var_1_10011
-	var_10_8.id = arg_10_1.id
-	var_10_6.rightDrop = var_10_8
-
-	function var_10_6.onYes()
+	function var_10_0.onYes()
 		arg_10_0.contextData.OnConfirm(arg_10_1.id)
-
-		local var_11_0 = arg_10_0
-
-		var_0.closeView(var_11_0)
+		arg_10_0:closeView()
 
 		return
 	end
 
-	var_10_4(var_10_3, var_10_5, var_10_6)
+	arg_10_0.msgBox:ExecuteAction("Show", var_10_0)
 
 	return
 end
 
-function var_0_1.willExit(arg_12_0)
-	pg = var_1_10001
-
-	local var_12_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_12_0, arg_12_0._tf)
-
-	local var_12_1 = arg_12_0.msgBox
-
-	var_1.Destroy(var_12_1)
-	var_0_1.super.willExit(arg_12_0)
+function var_0_0.willExit(arg_12_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_12_0._tf)
+	arg_12_0.msgBox:Destroy()
+	var_0_0.super.willExit(arg_12_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

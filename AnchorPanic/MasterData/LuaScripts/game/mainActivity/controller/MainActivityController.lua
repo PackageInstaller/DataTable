@@ -46,13 +46,12 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPEN_MAINACTIVITY_SHOP_BUY_VIEW, self.onOpenMainActivityShopBuyViewHandler, self)
     --打开主题活动 任务界面
     GameDispatcher:addEventListener(EventName.OPEN_MAINACTIVITYTASK_PANEL, self.onOpenMainActivityTaskPanelHandler, self)
-    --打开试玩副本的状态
-    GameDispatcher:addEventListener(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL, self.onReqOpenMainActivityTrialPanel, self)
-    --监听活动刷新开启刷新
-    GameDispatcher:addEventListener(EventName.ACTIVITY_OPEN_UPDATE, self.updateMainActivityTrialState, self)
-    --监听活动刷新开启刷新
+
+    --主界面关闭
     GameDispatcher:addEventListener(EventName.CLOSE_MAINACTIVITY_PANEL, self.onCloseMainActivityPanel, self)
 
+    --活动开启
+    GameDispatcher:addEventListener(EventName.ACTIVITY_OPEN_UPDATE, self.onOpenActivityHandler, self)
     --关闭活动
     GameDispatcher:addEventListener(EventName.ACTIVITY_CLOSE_UPDATE, self.onCloseActivityHandler, self)
 
@@ -77,8 +76,6 @@ function registerMsgHandler(self)
         SC_ACTIVITY_TASK_RECEIVE = self.onRes_Activity_TaskReceive_Handler,
         --- *s2c* 更新活动任务的任务进度 24283
         SC_ACTIVITY_TASK_UPDATE = self.onRes_Activity_TaskUpdate_Handler,
-        --- *s2c* 战员试玩信息 19601
-        SC_HERO_TRY_INFO = self.onRes_Activity_Trial_Handler,
     }
 end
 
@@ -89,7 +86,7 @@ function updateMainUIRedState(self)
     if dup_id == nil then
         dup_id = sysParam.SysParamManager:getValue(SysParamType.SandPlayDupId)
     end
-    
+
     if dup_id ~= 0 then
         local sceneConfigVo = sandPlay.SandPlayManager:getSceneConfigVo(dup_id)
         for j = 1, #sceneConfigVo.guideList do
@@ -105,16 +102,27 @@ function updateMainUIRedState(self)
 
     else
         for _, btnVo in ipairs(MainActivityConst.getBtnList()) do
-            local activityVo = mainActivity.MainActivityManager:getMainActivityVoById(btnVo.activity_id)
-            local showRed = MainActivityConst.getActivityRedState(btnVo.activity_id)
-            if showRed and activityVo:getIsCanOpen() then
+            if MainActivityConst.getActivityRedState(btnVo.activity_id) then
                 isShowRed = true
                 break
+            end
+        end
+
+        if not isShowRed then ---下方小游戏的红点
+            for _, activity_id in ipairs(MainActivityConst.bottomBtns) do
+                if MainActivityConst.getActivityRedState(activity_id) then
+                    isShowRed = true
+                    break
+                end
             end
         end
     end
 
     mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_MAIN_ACTIVITY, isShowRed, funcopen.FuncOpenConst.FUNC_ID_MAIN_ACTIVITY_SIGN)
+end
+
+function onOpenActivityHandler(self, args)
+    self:updateMainUIRedState()
 end
 
 --关闭活动的通知
@@ -124,6 +132,8 @@ function onCloseActivityHandler(self, args)
             self:closeAllView()
         end
     end
+
+    self:updateMainUIRedState()
 end
 
 --添加到活动页面
@@ -229,40 +239,6 @@ function onDestroyMainActivityTaskPanel(self)
     self.mMainActivityTaskPanel = nil
 end
 
----------------------------------1,1活动 试玩-----------------------
-function updateMainActivityTrialState(self, args)
-    for index, activityVo in ipairs(args.openList) do
-        if activityVo.id == activity.ActivityId.TrialPlayLevel then
-            self:onReqTrialState()
-            return
-        end
-    end
-end
-
-function onReqOpenMainActivityTrialPanel(self)
-    self.mNeedOpenMainActivityTrialPanel = true
-    self:onReqTrialState()
-end
-
-function onOpenMainActivityTrialPanelHandler(self, args)
-    if not self.mNeedOpenMainActivityTrialPanel then return end
-
-    if self.mMainActivityTrialPanel == nil then
-        self.mMainActivityTrialPanel = mainActivity.MainActivityTrialPanel.new()
-        self.mMainActivityTrialPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMainActivityTrialPanel, self)
-        self:addViewToPool(self.mMainActivityTrialPanel)
-    end
-    self.mMainActivityTrialPanel:open(args)
-
-    self.mNeedOpenMainActivityTrialPanel = false
-end
-
-function onDestroyMainActivityTrialPanel(self)
-    self:removeViewToPool(self.mMainActivityTrialPanel)
-    self.mMainActivityTrialPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMainActivityTrialPanel, self)
-    self.mMainActivityTrialPanel = nil
-end
-
 ---------------------------------1,1活动协议请求-----------------------
 ------ *c2s* 领取活动奖励 24215
 function onReqSignHandler(self, daily)
@@ -277,13 +253,6 @@ end
 --- *c2s* 活动任务领取任务奖励 24281
 function onReqTaskAwardReceiveHandler(self, taskList)
     SOCKET_SEND(Protocol.CS_ACTIVITY_TASK_RECEIVE, {task_id_list = taskList})
-end
-
---- *c2s* 战员试玩信息 19600
-function onReqTrialState(self)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(recruit.RecruitType.RECRUIT_ACTIVITY_1)
-    local dupId = configVo:getTry_hero()
-    SOCKET_SEND(Protocol.CS_HERO_TRY_INFO, {dup_id = dupId}, Protocol.SC_HERO_TRY_INFO)
 end
 
 ---------------------------------1,1活动协议返回-----------------------
@@ -325,11 +294,6 @@ function onRes_Activity_TaskUpdate_Handler(self, msg)
     mainActivity.MainActivityManager:updateTaskMsg(msg)
 end
 
---- *s2c* 战员试玩信息 19601
-function onRes_Activity_Trial_Handler(self, msg)
-    self:onOpenMainActivityTrialPanelHandler(msg)
-    mainActivity.MainActivityManager:updateTrialStateMsg(msg)
-end
 
 return _M
 

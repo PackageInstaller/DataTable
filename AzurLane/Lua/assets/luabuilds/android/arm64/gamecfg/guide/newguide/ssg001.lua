@@ -3,116 +3,71 @@
 		{
 			id = "NG002",
 			condition = function()
-				getProxy = var_1_10000
-				TaskProxy = var_1_10002
+				local var_1_9000
+				local var_1_0 = getProxy(TaskProxy)
+				local var_1_1 = var_1_0.getTaskById(var_1_9000, 10302)
+				local var_1_2 = getProxy(FleetProxy):getFleetById(11)
+				local var_1_3 = var_1_1 and var_1_1:isFinish() and not var_1_1:isReceive() and var_1_2:isEmpty()
 
-				local var_1_0 = var_1_10000(var_1_10002)
-				local var_1_1 = var_0.getTaskById(var_1_0, 10302)
-
-				getProxy = var_1_10001
-				FleetProxy = var_3
-
-				local var_1_2 = var_1_10001(var_3)
-				local var_1_3 = var_1.getFleetById(var_1_2, 11)
-				local var_1_4
-
-				if var_1_1 and var_1_1:isFinish() then
-					var_1_4 = not var_1_1:isReceive() and var_1_3:isEmpty()
-				end
-
-				return var_1_4
+				return var_1_0
 			end,
 			args = function(arg_2_0)
-				getProxy = var_1_10001
-				ChapterProxy = var_1_10003
-
-				local var_2_0 = var_1_10001(var_1_10003)
-
-				if var_1.getActiveChapter(var_2_0) then
-					var_2_0 = arg_2_0
-
-					arg_2_0.switchToMap(var_2_0)
+				if getProxy(ChapterProxy):getActiveChapter() then
+					arg_2_0:switchToMap()
 				end
 
-				_ = var_2
-
-				local var_2_1 = var_2.any
-
-				getProxy = var_2_0
-				BayProxy = var_1_10006
-
-				local var_2_2 = var_2_0(var_1_10006)
-				local var_2_3
-
-				if not var_2_1(var_4.getShips(var_2_2), function(arg_3_0)
+				if _.any(getProxy(BayProxy):getShips(), function(arg_3_0)
 					return arg_3_0 and arg_3_0.configId == 308031
-				end) or not {
-					2
-				} then
-					var_2_3 = {
-						2,
-						1
+				end) then
+					local var_2_0 = {
+						2
 					}
-				end
 
-				return var_2_3
+					if not {
+						2
+					} then
+						var_2_0 = {
+							2,
+							1
+						}
+					end
+
+					return var_2_0
+				end
 			end
 		},
 		{
 			id = "NG0030",
 			condition = function()
-				getProxy = var_1_10000
-				ActivityProxy = var_1_10002
-
-				local var_4_0 = var_1_10000(var_1_10002)
-				local var_4_1 = var_0.getActivityByType
-
-				ActivityConst = var_1_10003
-
-				local var_4_2 = var_4_1(var_4_0, var_1_10003.ACTIVITY_TYPE_ATELIER_LINK)
-
-				tobool = var_1_10001
-
-				if not var_1_10001(var_4_2) then
+				if not tobool((getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK))) then
 					return false
 				end
 
-				getProxy = var_4_0
-				ChapterProxy = var_1_10004
+				local var_4_0 = getProxy(ChapterProxy)
+				local var_4_1 = var_4_0:getChapterById(21)
 
-				local var_4_3 = var_4_0(var_1_10004)
-				local var_4_4
-
-				if var_2.getChapterById(var_4_3, 21) and var_3:isClear() then
-					var_4_4 = var_2:getMapById(var_2:getLastMapForActivity())
-				end
-
-				return var_4_4
+				return var_4_1 and var_4_1:isClear() and var_4_0:getMapById(var_4_0:getLastMapForActivity())
 			end,
 			args = function()
-				getProxy = var_1_10000
-				ChapterProxy = var_1_10002
+				local var_5_0 = getProxy(ChapterProxy)
+				local var_5_1 = var_5_0:getMapById((var_5_0:getLastMapForActivity()))
 
-				local var_5_0 = var_1_10000(var_1_10002)
-				local var_5_1 = var_0.getLastMapForActivity(var_5_0)
-				local var_5_2 = var_0
-				local var_5_3 = var_0.getMapById(var_5_2, var_5_1)
-				local var_5_4 = var_2.getConfig(var_5_3, "type")
-
-				Map = var_5_2
-
-				local var_5_5
-
-				if not (var_5_4 == var_5_2.ACTIVITY_HARD) or not {
-					3
-				} then
-					var_5_5 = {
-						2,
+				if var_5_1:getConfig("type") == Map.ACTIVITY_HARD then
+					local var_5_2 = {
 						3
 					}
-				end
 
-				return var_5_5
+					if not {
+						3
+					} then
+						var_5_2 = {
+							2,
+							3
+						}
+					end
+
+					return var_5_2
+				end
 			end
 		}
 	},
@@ -142,11 +97,7 @@
 		{
 			id = "NG0019",
 			condition = function(arg_10_0)
-				local var_10_0 = arg_10_0.contextData.mode
-
-				DockyardScene = var_1_10002
-
-				return var_10_0 == var_1_10002.MODE_DESTROY
+				return arg_10_0.contextData.mode == DockyardScene.MODE_DESTROY
 			end,
 			args = function()
 				return {}
@@ -157,10 +108,7 @@
 		{
 			id = "NG0039",
 			condition = function(arg_12_0)
-				PLATFORM_CODE = var_1_10001
-				PLATFORM_CHT = var_1_10002
-
-				return var_1_10001 ~= var_1_10002
+				return PLATFORM_CODE ~= PLATFORM_CHT
 			end,
 			args = function()
 				return {}
@@ -169,10 +117,7 @@
 		{
 			id = "NG0040",
 			condition = function(arg_14_0)
-				PLATFORM_CODE = var_1_10001
-				PLATFORM_CHT = var_1_10002
-
-				return var_1_10001 ~= var_1_10002
+				return PLATFORM_CODE ~= PLATFORM_CHT
 			end,
 			args = function()
 				return {}

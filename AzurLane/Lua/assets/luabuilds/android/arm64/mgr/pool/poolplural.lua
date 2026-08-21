@@ -1,44 +1,34 @@
-﻿require = var_0_10000
-
-local var_0_0 = var_0_10000("Mgr/Pool/PoolUtil")
-
-class = var_0_10001
-
-local var_0_1 = var_0_10001("PoolPlural")
+﻿local var_0_0 = require("Mgr/Pool/PoolUtil")
+local var_0_1 = class("PoolPlural")
 local var_0_2 = "UnityEngine.GameObject"
 
 function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	getmetatable = var_1_10003
+	local var_1_0 = getmetatable(arg_1_1)
 
-	if not var_1_10003(arg_1_1) or var_3[".name"] ~= var_0_2 then
-		warning = var_1_10004
+	if not var_1_0 or var_1_0[".name"] ~= var_0_2 then
+		local var_1_2 = "Poolplural should use gameobject as prefab not transform "
 
-		local var_1_0 = "Poolplural should use gameobject as prefab not transform "
-		local var_1_1
+		if arg_1_1 then
+			local var_1_3 = arg_1_1.name or "NIL"
 
-		if not arg_1_1 or not arg_1_1.name then
-			var_1_1 = "NIL"
+			var_1_1(var_1_2 .. var_1_3)
+
+			arg_1_0.prefab = arg_1_1
+			arg_1_0.capacity = arg_1_2
+			arg_1_0.index = 0
+			arg_1_0.items = {}
+			arg_1_0.balance = 0
+
+			return
 		end
-
-		var_1_10004(var_1_0 .. var_1_1)
 	end
-
-	arg_1_0.prefab = arg_1_1
-	arg_1_0.capacity = arg_1_2
-	arg_1_0.index = 0
-	arg_1_0.items = {}
-	arg_1_0.balance = 0
-
-	return
 end
 
 function var_0_1.Enqueue(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0.balance = arg_2_0.balance - 1
 
 	if #arg_2_0.items < arg_2_0.capacity and (arg_2_0.keep or not arg_2_2) then
-		table = var_3
-
-		var_3.insert(arg_2_0.items, arg_2_1)
+		table.insert(arg_2_0.items, arg_2_1)
 
 		return false
 	else
@@ -55,22 +45,11 @@ function var_0_1.Dequeue(arg_3_0)
 
 	local var_3_0
 
-	::label_3_0::
-
-	IsNil = var_1_10002
-
-	if var_1_10002(var_3_0) and #arg_3_0.items > 0 then
-		repeat
-			table = var_1_10002
-			var_3_0 = var_1_10002.remove(arg_3_0.items)
-
-			goto label_3_0
-		until true
+	while IsNil(var_3_0) and #arg_3_0.items > 0 do
+		var_3_0 = table.remove(arg_3_0.items)
 	end
 
-	IsNil = var_1_10002
-
-	if var_1_10002(var_3_0) then
+	if IsNil(var_3_0) then
 		var_3_0 = arg_3_0:NewItem()
 	end
 
@@ -78,9 +57,7 @@ function var_0_1.Dequeue(arg_3_0)
 end
 
 function var_0_1.NewItem(arg_4_0)
-	Object = var_1_10001
-
-	return var_1_10001.Instantiate(arg_4_0.prefab)
+	return Object.Instantiate(arg_4_0.prefab)
 end
 
 function var_0_1.AllReturned(arg_5_0)
@@ -97,11 +74,7 @@ end
 
 function var_0_1.ClearItems(arg_7_0)
 	while #arg_7_0.items > 0 do
-		local var_7_0 = var_0_0.Destroy
-
-		table = var_1_10003
-
-		var_7_0(var_1_10003.remove(arg_7_0.items))
+		var_0_0.Destroy(table.remove(arg_7_0.items))
 	end
 
 	arg_7_0.balance = 0

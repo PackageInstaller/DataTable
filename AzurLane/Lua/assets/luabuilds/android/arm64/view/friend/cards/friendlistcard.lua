@@ -1,93 +1,30 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FriendListCard", import(".FriendCard"))
 
-local var_0_0 = "FriendListCard"
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".FriendCard"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
-
-	local var_1_0 = arg_1_0.tf
-
-	arg_1_0.occuptBtn = var_2.Find(var_1_0, "frame/btns/occupy_btn")
-
-	local var_1_1 = arg_1_0.tf
-
-	arg_1_0.deleteBtn = var_2.Find(var_1_1, "frame/btns/delete_btn")
-
-	local var_1_2 = arg_1_0.tf
-
-	arg_1_0.backYardBtn = var_2.Find(var_1_2, "frame/btns/backyard_btn")
-
-	local var_1_3 = arg_1_0.tf
-
-	arg_1_0.chatTip = var_2.Find(var_1_3, "frame/btns/occupy_btn/tip")
-
-	local var_1_4 = arg_1_0.tf
-	local var_1_5 = var_2.Find(var_1_4, "frame/request_info/date")
-	local var_1_6 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.date = var_1_6(var_1_5, var_5(var_1_10007))
-
-	local var_1_7 = arg_1_0.tf
-
-	arg_1_0.online = var_2.Find(var_1_7, "frame/request_info/online")
-
-	local var_1_8 = arg_1_0.tf
-	local var_1_9 = var_2.Find(var_1_8, "frame/request_info/lv_bg/Text")
-	local var_1_10 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.levelTF = var_1_10(var_1_9, var_5(var_1_10007))
+	arg_1_0.occuptBtn = arg_1_0.tf:Find("frame/btns/occupy_btn")
+	arg_1_0.deleteBtn = arg_1_0.tf:Find("frame/btns/delete_btn")
+	arg_1_0.backYardBtn = arg_1_0.tf:Find("frame/btns/backyard_btn")
+	arg_1_0.chatTip = arg_1_0.tf:Find("frame/btns/occupy_btn/tip")
+	arg_1_0.date = arg_1_0.tf:Find("frame/request_info/date"):GetComponent(typeof(Text))
+	arg_1_0.online = arg_1_0.tf:Find("frame/request_info/online")
+	arg_1_0.levelTF = arg_1_0.tf:Find("frame/request_info/lv_bg/Text"):GetComponent(typeof(Text))
 
 	return
 end
 
-function var_0_1.update(arg_2_0, arg_2_1)
-	var_0_1.super.update(arg_2_0, arg_2_1)
+function var_0_0.update(arg_2_0, arg_2_1)
+	var_0_0.super.update(arg_2_0, arg_2_1)
+	setActive(arg_2_0.chatTip, arg_2_1.unreadCount > 0)
 
-	setActive = var_2
+	arg_2_0.manifestoTF.text = arg_2_1:GetManifesto()
 
-	local var_2_0 = arg_2_0.chatTip
-	local var_2_1 = arg_2_1.unreadCount
+	setActive(arg_2_0.online, arg_2_1.online == Friend.ONLINE)
+	setActive(arg_2_0.date.gameObject, arg_2_1.online ~= Friend.ONLINE)
 
-	var_2(var_2_0, 0 < var_2_1)
-
-	local var_2_2 = arg_2_0.manifestoTF
-
-	var_2_2.text = arg_2_1:GetManifesto()
-	setActive = var_2_2
-
-	local var_2_3 = arg_2_0.online
-	local var_2_4 = arg_2_1.online
-
-	Friend = var_6
-
-	var_2_2(var_2_3, var_2_4 == var_6.ONLINE)
-
-	setActive = var_2_2
-
-	local var_2_5 = arg_2_0.date.gameObject
-	local var_2_6 = arg_2_1.online
-
-	Friend = var_6
-
-	var_2_2(var_2_5, var_2_6 ~= var_6.ONLINE)
-
-	local var_2_7 = arg_2_1.online
-
-	Friend = var_3
-
-	if var_2_7 ~= var_3.ONLINE then
-		local var_2_8 = arg_2_0.date
-
-		getOfflineTimeStamp = var_3
-		var_2_8.text = var_3(arg_2_1.preOnLineTime)
+	if arg_2_1.online ~= Friend.ONLINE then
+		arg_2_0.date.text = getOfflineTimeStamp(arg_2_1.preOnLineTime)
 	end
 
 	arg_2_0.levelTF.text = "Lv." .. arg_2_1.level
@@ -95,4 +32,4 @@ function var_0_1.update(arg_2_0, arg_2_1)
 	return
 end
 
-return var_0_1
+return var_0_0

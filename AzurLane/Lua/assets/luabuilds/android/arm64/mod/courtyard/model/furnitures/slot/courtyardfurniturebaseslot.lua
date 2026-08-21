@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CourtYardFurnitureBaseSlot")
+﻿local var_0_0 = class("CourtYardFurnitureBaseSlot")
 local var_0_1 = 0
 local var_0_2 = 1
 local var_0_3 = 2
@@ -13,12 +11,9 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0.controller = arg_1_4
 	arg_1_0.id = arg_1_1
 	arg_1_0.mask = nil
-	Vector3 = var_5
-	arg_1_0.scale = var_5.one
-	Vector3 = var_5
-	arg_1_0.offset = var_5.zero
-	Vector3 = var_5
-	arg_1_0.skewValue = var_5.zero
+	arg_1_0.scale = Vector3.one
+	arg_1_0.offset = Vector3.zero
+	arg_1_0.skewValue = Vector3.zero
 	arg_1_0.follower = nil
 	arg_1_0.animatorIndex = 0
 	arg_1_0.animators = {}
@@ -58,13 +53,8 @@ function var_0_0.Occupy(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
 		arg_4_3:StartInteraction(arg_4_0)
 		arg_4_2:StartInteraction(arg_4_0)
 		arg_4_1:StartInteraction(arg_4_0)
-
-		onNextTick = var_4
-
-		var_4(function()
-			local var_5_0 = arg_4_0
-
-			var_0.OnStart(var_5_0)
+		onNextTick(function()
+			arg_4_0:OnStart()
 
 			return
 		end)
@@ -97,21 +87,10 @@ function var_0_0.Clear(arg_10_0, arg_10_1)
 	if arg_10_0.state == var_0_2 then
 		arg_10_0.state = var_0_1
 
-		local var_10_0 = arg_10_0.observer
-
-		var_2.WillClearInteraction(var_10_0, arg_10_0, arg_10_1)
-
-		local var_10_1 = arg_10_0.user
-
-		var_2.ClearInteraction(var_10_1, arg_10_0, arg_10_1)
-
-		local var_10_2 = arg_10_0.owner
-
-		var_2.ClearInteraction(var_10_2, arg_10_0, arg_10_1)
-
-		local var_10_3 = arg_10_0.observer
-
-		var_2.ClearInteraction(var_10_3, arg_10_0, arg_10_1)
+		arg_10_0.observer:WillClearInteraction(arg_10_0, arg_10_1)
+		arg_10_0.user:ClearInteraction(arg_10_0, arg_10_1)
+		arg_10_0.owner:ClearInteraction(arg_10_0, arg_10_1)
+		arg_10_0.observer:ClearInteraction(arg_10_0, arg_10_1)
 
 		arg_10_0.user = nil
 		arg_10_0.owner = nil
@@ -182,15 +161,11 @@ function var_0_0.GetSkew(arg_23_0)
 end
 
 function var_0_0.GetCombineFurnitureAnimator(arg_24_0)
-	type = var_1_10001
-
-	if var_1_10001(arg_24_0.combineData) ~= "table" then
+	if type(arg_24_0.combineData) ~= "table" then
 		return
 	end
 
-	ipairs = var_1
-
-	for iter_24_0, iter_24_1 in var_1(arg_24_0.combineData) do
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.combineData) do
 		if arg_24_0:HasFurnitureList(iter_24_1[1]) then
 			return iter_24_1
 		end
@@ -200,9 +175,7 @@ function var_0_0.GetCombineFurnitureAnimator(arg_24_0)
 end
 
 function var_0_0.HasFurnitureList(arg_25_0, arg_25_1)
-	ipairs = var_1_10002
-
-	for iter_25_0, iter_25_1 in var_1_10002(arg_25_1) do
+	for iter_25_0, iter_25_1 in ipairs(arg_25_1) do
 		if arg_25_0:HasFurniture(iter_25_1) == false then
 			return false
 		end
@@ -212,12 +185,7 @@ function var_0_0.HasFurnitureList(arg_25_0, arg_25_1)
 end
 
 function var_0_0.HasFurniture(arg_26_0, arg_26_1)
-	pairs = var_1_10002
-
-	local var_26_0 = arg_26_0.controller
-	local var_26_1 = var_4.GetStorey(var_26_0)
-
-	for iter_26_0, iter_26_1 in var_1_10002(var_4.GetFurnitures(var_26_1)) do
+	for iter_26_0, iter_26_1 in pairs(arg_26_0.controller:GetStorey():GetFurnitures()) do
 		if iter_26_1.configId == arg_26_1 then
 			return true
 		end

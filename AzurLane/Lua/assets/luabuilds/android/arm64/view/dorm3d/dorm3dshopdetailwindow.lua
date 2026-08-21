@@ -1,149 +1,68 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dShopDetailWindow", import("view.base.BaseUI"))
 
-local var_0_0 = "Dorm3dShopDetailWindow"
+var_0_0.SELECTED_WIDTH = 52
+var_0_0.UNSELECTED_WIDTH = 12
+var_0_0.LOOP_DURATION = 5
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-var_0_1.SELECTED_WIDTH = 52
-var_0_1.UNSELECTED_WIDTH = 12
-var_0_1.LOOP_DURATION = 5
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "Dorm3dShopDetailWindow"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0.previewTf = arg_2_0._tf:Find("Window/Preview")
+	arg_2_0.bubbleContent = arg_2_0._tf:Find("Window/Bubbles/content")
+	arg_2_0.bubbleTpl = arg_2_0._tf:Find("Window/Bubbles/tpl")
+	arg_2_0.bubbleList = UIItemList.New(arg_2_0.bubbleContent, arg_2_0.bubbleTpl)
+	arg_2_0.scrollSnap = BannerScrollRect4Dorm.New(arg_2_0._tf:Find("Window/banner/mask/content"), arg_2_0._tf:Find("Window/banner/dots"))
 
-	arg_2_0.previewTf = var_1.Find(var_2_0, "Window/Preview")
+	setActive(arg_2_0.bubbleTpl, false)
 
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.bubbleContent = var_1.Find(var_2_1, "Window/Bubbles/content")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.bubbleTpl = var_1.Find(var_2_2, "Window/Bubbles/tpl")
-	UIItemList = var_1
-	arg_2_0.bubbleList = var_1.New(arg_2_0.bubbleContent, arg_2_0.bubbleTpl)
-	BannerScrollRect4Dorm = var_1
-
-	local var_2_3 = var_1.New
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_3.Find(var_2_4, "Window/banner/mask/content")
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.scrollSnap = var_2_3(var_2_5, var_4.Find(var_2_6, "Window/banner/dots"))
-	setActive = var_1
-
-	var_1(arg_2_0.bubbleTpl, false)
-
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.minusBtn = var_1.Find(var_2_7, "Window/countList/minusBtn")
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.addBtn = var_1.Find(var_2_8, "Window/countList/addBtn")
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.maxBtn = var_1.Find(var_2_9, "Window/countList/maxBtn")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.countText = var_1.Find(var_2_10, "Window/countList/count/Text")
+	arg_2_0.minusBtn = arg_2_0._tf:Find("Window/countList/minusBtn")
+	arg_2_0.addBtn = arg_2_0._tf:Find("Window/countList/addBtn")
+	arg_2_0.maxBtn = arg_2_0._tf:Find("Window/countList/maxBtn")
+	arg_2_0.countText = arg_2_0._tf:Find("Window/countList/count/Text")
 	arg_2_0.shopCfg = arg_2_0.contextData.shopCfg
-	pg = var_1
+	arg_2_0.unlockTips = pg.dorm3d_gift[arg_2_0.shopCfg.item_id].unlock_tips or {}
 
-	local var_2_11
-
-	if not var_1.dorm3d_gift[arg_2_0.shopCfg.item_id].unlock_tips then
-		var_2_11 = {}
-	end
-
-	arg_2_0.unlockTips = var_2_11
-
-	local var_2_12 = arg_2_0.shopCfg.room_id
+	local var_2_0 = arg_2_0.shopCfg.room_id
 
 	arg_2_0.unlockBanners = arg_2_0.shopCfg.banners
 
-	local var_2_13
-
 	if arg_2_0.contextData.groupId ~= 0 then
-		var_2_12 = arg_2_0.contextData.groupId
-		pg = var_2_13
+		var_2_0 = arg_2_0.contextData.groupId
 
-		if not var_2_13.dorm3d_gift[arg_2_0.shopCfg.item_id].unlock_banners then
-			var_2_13 = {}
-		end
-
-		table = var_3
-		arg_2_0.unlockBanners = var_3.Find(var_2_13, function(arg_3_0, arg_3_1)
-			if arg_3_1[1] == var_2_12 then
+		local var_2_1 = pg.dorm3d_gift[arg_2_0.shopCfg.item_id].unlock_banners or {}
+		local var_2_2 = table.Find(var_2_1, function(arg_3_0, arg_3_1)
+			if arg_3_1[1] == var_2_0 then
 				return true
 			end
 
 			return
-		end) and var_3[2]
+		end)
+
+		arg_2_0.unlockBanners = var_2_2 and var_2_2[2]
 	end
 
-	pg = var_2_13
-	arg_2_0.isExclusive = var_2_13.dorm3d_gift[arg_2_0.shopCfg.item_id].ship_group_id ~= 0
+	arg_2_0.isExclusive = pg.dorm3d_gift[arg_2_0.shopCfg.item_id].ship_group_id ~= 0
 	arg_2_0.isSpecial = false
-	pg = var_2
+	arg_2_0.addFavor = pg.dorm3d_favor_trigger[pg.dorm3d_gift[arg_2_0.shopCfg.item_id].favor_trigger_id].num
 
-	local var_2_14 = var_2.dorm3d_favor_trigger
-
-	pg = var_3
-	arg_2_0.addFavor = var_2_14[var_3.dorm3d_gift[arg_2_0.shopCfg.item_id].favor_trigger_id].num
-	setActive = var_2
-
-	local var_2_15 = arg_2_0._tf
-
-	var_2(var_4.Find(var_2_15, "Window/Title/gift"), true)
+	setActive(arg_2_0._tf:Find("Window/Title/gift"), true)
 
 	arg_2_0.curCount = 1
-	getProxy = var_2
-	ApartmentProxy = var_4
-
-	local var_2_16 = var_2(var_4)
-
-	arg_2_0.buyCount = var_2.GetGiftShopCount(var_2_16, arg_2_0.shopCfg.item_id)
+	arg_2_0.buyCount = getProxy(ApartmentProxy):GetGiftShopCount(arg_2_0.shopCfg.item_id)
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0)
-	onButton = var_1_10001
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_4.Find(var_4_1, "Window/Cancel")
-
-	local function var_4_3()
-		local var_5_0 = arg_4_0
-
-		var_0.closeView(var_5_0)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("Window/Cancel"), function()
+		arg_4_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_4_1
-
-	var_1_10001(var_4_0, var_4_2, var_4_3, var_4_1)
-
-	onButton = var_1_10001
-
-	local var_4_4 = arg_4_0
-	local var_4_5 = arg_4_0._tf
-
-	var_1_10001(var_4_4, var_4.Find(var_4_5, "Mask"), function()
-		local var_6_0 = arg_4_0
-
-		var_0.closeView(var_6_0)
+	end, SFX_CANCEL)
+	onButton(arg_4_0, arg_4_0._tf:Find("Mask"), function()
+		arg_4_0:closeView()
 
 		return
 	end)
@@ -151,434 +70,177 @@ function var_0_1.didEnter(arg_4_0)
 	arg_4_0:InitDropIcon()
 	arg_4_0:InitBanner()
 
-	Dorm3dGift = var_1
-
-	local var_4_6 = var_1.New({
+	local var_4_0 = Dorm3dGift.New({
 		configId = arg_4_0.shopCfg.item_id
 	})
+	local var_4_1 = CommonCommodity.New({
+		id = var_4_0:GetShopID()
+	}, Goods.TYPE_SHOPSTREET)
+	local var_4_2, var_4_3, var_4_4 = var_4_1:GetPrice()
+	local var_4_5 = Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = var_4_1:GetResType(),
+		count = var_4_2
+	})
+	local var_4_6 = i18n("dorm3d_shop_buy_tips", "<icon name=" .. var_4_1:GetResIcon() .. " w=1.1 h=1.1/>", "x" .. var_4_5.count, "x" .. var_4_5.count, arg_4_0.shopCfg.name)
+	local var_4_7
+	local var_4_8 = 0
 
-	CommonCommodity = var_1_10002
-
-	local var_4_7 = var_1_10002.New
-	local var_4_8 = {}
-	local var_4_9 = var_4_6
-
-	var_4_8.id = var_4_6.GetShopID(var_4_9)
-	Goods = var_5
-
-	local var_4_10 = var_4_7(var_4_8, var_5.TYPE_SHOPSTREET)
-	local var_4_11, var_4_12, var_4_13 = var_2.GetPrice(var_4_10)
-
-	Drop = var_4_5
-
-	local var_4_14 = var_4_5.New
-	local var_4_15 = {}
-
-	DROP_TYPE_RESOURCE = var_1_10009
-	var_4_15.type = var_1_10009
-	var_4_15.id = var_2:GetResType()
-	var_4_15.count = var_4_11
-
-	local var_4_16 = var_4_14(var_4_15)
-
-	i18n = var_4_9
-
-	local var_4_17 = var_4_9("dorm3d_shop_buy_tips", "<icon name=" .. var_2:GetResIcon() .. " w=1.1 h=1.1/>", "x" .. var_4_16.count, "x" .. var_4_16.count, arg_4_0.shopCfg.name)
-	local var_4_18
-	local var_4_19 = 0
-
-	_ = var_10
-
-	var_10.each(var_4_6:getConfig("shop_id"), function(arg_7_0)
-		pg = var_2_10001
-
-		if var_2_10001.shop_template[arg_7_0].group_type == 2 then
-			math = var_2
-			var_4_19 = var_2.max(var_1.group_limit, var_4_19)
+	_.each(var_4_0:getConfig("shop_id"), function(arg_7_0)
+		if pg.shop_template[arg_7_0].group_type == 2 then
+			var_4_8 = math.max(pg.shop_template[arg_7_0].group_limit, var_4_8)
 		end
 
 		return
 	end)
 
-	if 0 < var_4_19 then
-		var_4_18 = {
+	if 0 > 0 then
+		var_4_7 = {
 			arg_4_0.buyCount,
-			var_4_19
+			0
 		}
 	end
 
-	local var_4_20
-
-	if var_4_18 then
-		var_4_20 = var_4_17
-		i18n = var_11
-		var_4_17 = var_4_20 .. var_11("dorm3d_purchase_weekly_limit", var_4_18[1], var_4_18[2])
+	if var_4_7 then
+		var_4_6 = var_4_6 .. i18n("dorm3d_purchase_weekly_limit", var_4_7[1], var_4_7[2])
 	end
 
-	setText = var_4_20
+	setText(arg_4_0._tf:Find("Window/Content"), var_4_6)
+	setText(arg_4_0._tf:Find("Window/Confirm/Text"), i18n("msgbox_text_confirm"))
+	setText(arg_4_0._tf:Find("Window/Cancel/Text"), i18n("msgbox_text_cancel"))
+	pg.UIMgr.GetInstance():OverlayPanel(arg_4_0._tf)
 
-	local var_4_21 = arg_4_0._tf
-
-	var_4_20(var_12.Find(var_4_21, "Window/Content"), var_4_17)
-
-	setText = var_4_20
-
-	local var_4_22 = arg_4_0._tf
-	local var_4_23 = var_12.Find(var_4_22, "Window/Confirm/Text")
-
-	i18n = var_13
-
-	var_4_20(var_4_23, var_13("msgbox_text_confirm"))
-
-	setText = var_4_20
-
-	local var_4_24 = arg_4_0._tf
-	local var_4_25 = var_12.Find(var_4_24, "Window/Cancel/Text")
-
-	i18n = var_13
-
-	var_4_20(var_4_25, var_13("msgbox_text_cancel"))
-
-	pg = var_4_20
-
-	local var_4_26 = var_4_20.UIMgr.GetInstance()
-
-	var_10.OverlayPanel(var_4_26, arg_4_0._tf)
-
-	local var_4_27 = var_4_6:GetShopID()
+	local var_4_9 = var_4_0:GetShopID()
 
 	arg_4_0.itemList = {
-		var_4_27
+		var_4_9
 	}
-	arg_4_0.sumPrice = arg_4_0:GetGoodPrice(var_4_27)
-	setText = var_11
+	arg_4_0.sumPrice = arg_4_0:GetGoodPrice(var_4_9)
 
-	var_11(arg_4_0.countText, arg_4_0.curCount)
+	setText(arg_4_0.countText, arg_4_0.curCount)
 
-	local var_4_28 = 1
+	local var_4_10 = 1
 
-	if var_4_18 then
-		var_4_28 = var_4_18[2] - var_4_18[1]
+	if var_4_7 then
+		var_4_10 = var_4_7[2] - var_4_7[1]
 	end
 
-	local function var_4_29(arg_8_0)
-		math = var_2_10001
-		arg_8_0 = var_2_10001.max(arg_8_0, 1)
-		math = var_1
-		arg_8_0 = var_1.min(arg_8_0, var_4_28)
+	local function var_4_11(arg_8_0)
+		arg_8_0 = math.max(arg_8_0, 1)
+		arg_8_0 = math.min(arg_8_0, var_4_10)
+		arg_4_0.curCount = arg_8_0
 
-		local var_8_0 = arg_4_0
-
-		var_8_0.curCount = arg_8_0
-		setText = var_8_0
-
-		var_8_0(arg_4_0.countText, arg_8_0)
-
-		local var_8_1 = arg_4_0
-		local var_8_2 = var_1.GetShopId(var_8_1, arg_4_0.buyCount + arg_4_0.curCount - 1)
-		local var_8_3 = arg_4_0
-		local var_8_4 = var_2.GetGoodPrice(var_8_3, var_8_2)
+		setText(arg_4_0.countText, arg_8_0)
 
 		arg_4_0.sumPrice = 0
 
 		for iter_8_0 = arg_4_0.buyCount, arg_4_0.buyCount + arg_4_0.curCount - 1 do
-			local var_8_5 = arg_4_0
-			local var_8_6 = arg_4_0.sumPrice
-			local var_8_7 = arg_4_0
-			local var_8_8 = var_9.GetGoodPrice
-			local var_8_9 = arg_4_0
-
-			var_8_5.sumPrice = var_8_6 + var_8_8(var_8_7, var_12.GetShopId(var_8_9, iter_8_0))
+			arg_4_0.sumPrice = arg_4_0.sumPrice + arg_4_0:GetGoodPrice(arg_4_0:GetShopId(iter_8_0))
 		end
 
-		i18n = var_3
+		local var_8_0 = i18n("dorm3d_shop_buy_tips", "<icon name=" .. var_4_1:GetResIcon() .. " w=1.1 h=1.1/>", "x" .. arg_4_0:GetGoodPrice((arg_4_0:GetShopId(arg_4_0.buyCount + arg_4_0.curCount - 1))), "x" .. arg_4_0.sumPrice, arg_4_0.shopCfg.name)
 
-		local var_8_10 = "dorm3d_shop_buy_tips"
-		local var_8_11 = "<icon name="
-		local var_8_12 = var_0
-		local var_8_13 = var_3(var_8_10, var_8_11 .. var_7.GetResIcon(var_8_12) .. " w=1.1 h=1.1/>", "x" .. var_8_4, "x" .. arg_4_0.sumPrice, arg_4_0.shopCfg.name)
-		local var_8_14
-
-		if var_4_18 then
-			var_8_14 = var_8_13
-			i18n = var_8_10
-			var_8_13 = var_8_14 .. var_8_10("dorm3d_purchase_weekly_limit", var_4_18[1], var_4_18[2])
+		if var_4_7 then
+			var_8_0 = var_8_0 .. i18n("dorm3d_purchase_weekly_limit", var_4_7[1], var_4_7[2])
 		end
 
-		setText = var_8_14
-
-		local var_8_15 = arg_4_0._tf
-
-		var_8_14(var_6.Find(var_8_15, "Window/Content"), var_8_13)
+		setText(arg_4_0._tf:Find("Window/Content"), var_8_0)
 		arg_4_0.contextData.changeCount(arg_8_0)
 
 		return
 	end
 
-	onButton = var_13
-
-	local var_4_30 = arg_4_0
-	local var_4_31 = arg_4_0.minusBtn
-
-	local function var_4_32()
+	onButton(arg_4_0, arg_4_0.minusBtn, function()
 		if arg_4_0.curCount - 1 > 0 then
-			table = var_0
-
-			var_0.remove(arg_4_0.itemList, #arg_4_0.itemList)
+			table.remove(arg_4_0.itemList, #arg_4_0.itemList)
 		end
 
-		var_4_29(arg_4_0.curCount - 1)
+		var_4_11(arg_4_0.curCount - 1)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10018
-
-	var_13(var_4_30, var_4_31, var_4_32, var_1_10018)
-
-	onButton = var_13
-
-	local var_4_33 = arg_4_0
-	local var_4_34 = arg_4_0.addBtn
-
-	local function var_4_35()
-		if arg_4_0.buyCount + arg_4_0.curCount + 1 <= var_4_19 then
-			table = var_0
-
-			local var_10_0 = var_0.insert
-			local var_10_1 = arg_4_0.itemList
-			local var_10_2 = arg_4_0
-
-			var_10_0(var_10_1, var_3.GetShopId(var_10_2, arg_4_0.buyCount + arg_4_0.curCount))
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.addBtn, function()
+		if arg_4_0.buyCount + arg_4_0.curCount + 1 <= var_4_8 then
+			table.insert(arg_4_0.itemList, arg_4_0:GetShopId(arg_4_0.buyCount + arg_4_0.curCount))
 		end
 
-		var_4_29(arg_4_0.curCount + 1)
+		var_4_11(arg_4_0.curCount + 1)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10018
-
-	var_13(var_4_33, var_4_34, var_4_35, var_1_10018)
-
-	onButton = var_13
-
-	local var_4_36 = arg_4_0
-	local var_4_37 = arg_4_0.maxBtn
-
-	local function var_4_38()
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.maxBtn, function()
 		arg_4_0.itemList = {}
 
-		for iter_11_0 = arg_4_0.buyCount, var_4_19 - 1 do
-			table = var_2_10004
-			var_2_10004 = var_2_10004.insert
-
-			local var_11_0 = arg_4_0.itemList
-			local var_11_1 = arg_4_0
-
-			var_2_10004(var_11_0, var_7.GetShopId(var_11_1, iter_11_0))
+		for iter_11_0 = arg_4_0.buyCount, var_4_8 - 1 do
+			table.insert(arg_4_0.itemList, arg_4_0:GetShopId(iter_11_0))
 		end
 
-		var_4_29(var_4_28)
+		var_4_11(var_4_10)
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0._tf:Find("Window/Confirm"), function()
+		local var_12_0 = getProxy(PlayerProxy):getData()
 
-	SFX_PANEL = var_1_10018
-
-	var_13(var_4_36, var_4_37, var_4_38, var_1_10018)
-
-	onButton = var_13
-
-	local var_4_39 = arg_4_0
-	local var_4_40 = arg_4_0._tf
-	local var_4_41 = var_16.Find(var_4_40, "Window/Confirm")
-
-	local function var_4_42()
-		getProxy = var_2_10000
-		PlayerProxy = var_2_10002
-
-		local var_12_0 = var_2_10000(var_2_10002)
-		local var_12_1 = var_0.getData(var_12_0)
-
-		pg = var_2_10001
-
-		local var_12_2 = var_2_10001.shop_template[arg_4_0.itemList[1]]
-
-		id2res = var_2
-
-		local var_12_3
-
-		if var_12_1[var_2(var_12_2.resource_type)] < arg_4_0.sumPrice then
-			Drop = var_12_3
-			var_12_3 = var_12_3.New
-
-			local var_12_4 = {}
-
-			DROP_TYPE_RESOURCE = var_2_10005
-			var_12_4.type = var_2_10005
-			var_12_4.id = var_12_2.resource_type
-
-			local var_12_5 = var_12_3(var_12_4)
-
-			var_12_3 = var_12_3.getName(var_12_5)
-
-			local var_12_7
-
-			if var_12_2.resource_type == 1 then
-				GoShoppingMsgBox = var_3
-				i18n = var_12_7
-
-				local var_12_6 = "switch_to_shop_tip_2"
-
-				i18n = var_2_10008
-				var_12_7 = var_12_7(var_12_6, var_2_10008("word_gold"))
-				ChargeScene = var_2_10006
-				var_2_10006 = var_2_10006.TYPE_ITEM
-
-				local var_12_8 = {}
-
-				var_2_10008 = {
-					59001
-				}
-
-				local var_12_9 = arg_4_0.sumPrice
-
-				id2res = var_2_10010
-				var_2_10008[2] = var_12_9 - var_12_1[var_2_10010(var_12_2.resource_type)]
-				var_2_10008[3] = arg_4_0.sumPrice
-				var_12_8[1] = var_2_10008
-
-				var_3(var_12_7, var_2_10006, var_12_8)
-			elseif var_12_2.resource_type == 4 or var_12_2.resource_type == 14 then
-				GoShoppingMsgBox = var_3
-				i18n = var_12_7
-
-				local var_12_10 = "switch_to_shop_tip_3"
-
-				i18n = var_2_10008
-				var_12_7 = var_12_7(var_12_10, var_2_10008("word_gem"))
-				ChargeScene = var_2_10006
-
-				var_3(var_12_7, var_2_10006.TYPE_DIAMOND)
-			else
-				ItemTipPanel = var_3
-
-				local var_12_11 = var_3.ShowItemTip
-
-				DROP_TYPE_RESOURCE = var_12_7
-
-				if not var_12_11(var_12_7, var_12_2.resource_type) then
-					pg = var_3
-
-					local var_12_12 = var_3.TipsMgr.GetInstance()
-					local var_12_13 = var_3.ShowTips
-
-					i18n = var_6
-
-					var_12_13(var_12_12, var_6("buyProp_noResource_error", var_12_3))
-				end
+		if var_12_0[id2res(pg.shop_template[arg_4_0.itemList[1]].resource_type)] < arg_4_0.sumPrice then
+			if pg.shop_template[arg_4_0.itemList[1]].resource_type == 1 then
+				GoShoppingMsgBox(i18n("switch_to_shop_tip_2", i18n("word_gold")), ChargeScene.TYPE_ITEM, {
+					{
+						59001,
+						arg_4_0.sumPrice - var_12_0[id2res(pg.shop_template[arg_4_0.itemList[1]].resource_type)],
+						arg_4_0.sumPrice
+					}
+				})
+			elseif pg.shop_template[arg_4_0.itemList[1]].resource_type == 4 or pg.shop_template[arg_4_0.itemList[1]].resource_type == 14 then
+				GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
+			elseif not ItemTipPanel.ShowItemTip(DROP_TYPE_RESOURCE, pg.shop_template[arg_4_0.itemList[1]].resource_type) then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("buyProp_noResource_error", (Drop.New({
+					type = DROP_TYPE_RESOURCE,
+					id = pg.shop_template[arg_4_0.itemList[1]].resource_type
+				}):getName())))
 			end
 
-			local var_12_14 = arg_4_0
-
-			var_3.closeView(var_12_14)
+			arg_4_0:closeView()
 
 			return
 		end
 
-		ipairs = var_12_3
-
-		for iter_12_0, iter_12_1 in var_12_3(arg_4_0.itemList) do
-			local var_12_15 = arg_4_0
-			local var_12_16 = var_7.emit
-
-			Dorm3dShopDetailMediator = var_2_10010
-
-			var_12_16(var_12_15, var_2_10010.SHOPPING, {
+		for iter_12_0, iter_12_1 in ipairs(arg_4_0.itemList) do
+			arg_4_0:emit(Dorm3dShopDetailMediator.SHOPPING, {
 				silentTip = true,
 				count = 1,
 				shopId = iter_12_1
 			})
 		end
 
-		local var_12_17 = arg_4_0
-
-		var_2.closeView(var_12_17)
+		arg_4_0:closeView()
 
 		return
-	end
-
-	SFX_PANEL = var_4_40
-
-	var_13(var_4_39, var_4_41, var_4_42, var_4_40)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.InitBanner(arg_13_0)
+function var_0_0.InitBanner(arg_13_0)
 	for iter_13_0 = 1, #arg_13_0.unlockBanners do
-		local var_13_0 = arg_13_0.scrollSnap
-		local var_13_1 = var_5.AddChild(var_13_0)
-
-		LoadImageSpriteAsync = var_1_10006
-
-		var_1_10006("dorm3dbanner/" .. arg_13_0.unlockBanners[iter_13_0], var_13_1)
+		LoadImageSpriteAsync("dorm3dbanner/" .. arg_13_0.unlockBanners[iter_13_0], (arg_13_0.scrollSnap:AddChild()))
 	end
 
-	local var_13_2 = arg_13_0.scrollSnap
-
-	var_1.SetUp(var_13_2)
+	arg_13_0.scrollSnap:SetUp()
 
 	return
 end
 
-function var_0_1.InitUIList(arg_14_0)
-	local var_14_0 = arg_14_0.bubbleList
-
-	var_1.make(var_14_0, function(arg_15_0, arg_15_1, arg_15_2)
-		UIItemList = var_2_10003
-
-		if arg_15_0 == var_2_10003.EventInit then
-			local var_15_0 = arg_15_1 + 1
-			local var_15_1 = arg_14_0.unlockTips[var_15_0]
-
-			LoadImageSpriteAtlasAsync = var_2_10005
-
-			var_2_10005("ui/shoptip_atlas", "icon_" .. var_15_1, arg_15_2:Find("icon/icon"), true)
-
-			setText = var_2_10005
-
-			local var_15_2 = arg_15_2:Find("bubble/Text")
-
-			i18n = var_8
-
-			var_2_10005(var_15_2, var_8("dorm3d_shop_tag" .. var_15_1))
-
-			setActive = var_2_10005
-
-			var_2_10005(arg_15_2:Find("bubble"), false)
-
-			onToggle = var_2_10005
-
-			var_2_10005(arg_14_0, arg_15_2, function(arg_16_0)
-				setActive = var_3_10001
-
-				local var_16_0 = arg_15_2
-
-				var_3_10001(var_3.Find(var_16_0, "icon/select"), arg_16_0)
-
-				setActive = var_3_10001
-
-				local var_16_1 = arg_15_2
-
-				var_3_10001(var_3.Find(var_16_1, "icon/unselect"), not arg_16_0)
-
-				setActive = var_3_10001
-
-				local var_16_2 = arg_15_2
-
-				var_3_10001(var_3.Find(var_16_2, "bubble"), arg_16_0)
+function var_0_0.InitUIList(arg_14_0)
+	arg_14_0.bubbleList:make(function(arg_15_0, arg_15_1, arg_15_2)
+		if arg_15_0 == UIItemList.EventInit then
+			LoadImageSpriteAtlasAsync("ui/shoptip_atlas", "icon_" .. arg_14_0.unlockTips[arg_15_1 + 1], arg_15_2:Find("icon/icon"), true)
+			setText(arg_15_2:Find("bubble/Text"), i18n("dorm3d_shop_tag" .. arg_14_0.unlockTips[arg_15_1 + 1]))
+			setActive(arg_15_2:Find("bubble"), false)
+			onToggle(arg_14_0, arg_15_2, function(arg_16_0)
+				setActive(arg_15_2:Find("icon/select"), arg_16_0)
+				setActive(arg_15_2:Find("icon/unselect"), not arg_16_0)
+				setActive(arg_15_2:Find("bubble"), arg_16_0)
 
 				return
 			end)
@@ -586,169 +248,81 @@ function var_0_1.InitUIList(arg_14_0)
 
 		return
 	end)
-
-	local var_14_1 = arg_14_0.bubbleList
-
-	var_1.align(var_14_1, #arg_14_0.unlockTips)
+	arg_14_0.bubbleList:align(#arg_14_0.unlockTips)
 
 	return
 end
 
-function var_0_1.InitDropIcon(arg_17_0)
-	Drop = var_1_10001
+function var_0_0.InitDropIcon(arg_17_0)
+	({
+		type = DROP_TYPE_DORM3D_GIFT,
+		id = arg_17_0.shopCfg.item_id
+	}).count = getProxy(ApartmentProxy):getGiftCount(arg_17_0.shopCfg.item_id)
 
-	local var_17_0 = var_1_10001.New
-	local var_17_1 = {}
+	LoadImageSpriteAtlasAsync(Drop.New({
+		type = DROP_TYPE_DORM3D_GIFT,
+		id = arg_17_0.shopCfg.item_id
+	}):getIcon(), "", arg_17_0._tf:Find("Window/Item/Dorm3dIconTpl/icon"), true)
+	GetImageSpriteFromAtlasAsync("weaponframes", "dorm3d_" .. ItemRarity.Rarity2Print(arg_17_0.shopCfg.rarity), arg_17_0._tf:Find("Window/Item/Dorm3dIconTpl"))
 
-	DROP_TYPE_DORM3D_GIFT = var_1_10004
-	var_17_1.type = var_1_10004
-	var_17_1.id = arg_17_0.shopCfg.item_id
-	getProxy = var_4
-	ApartmentProxy = var_1_10006
+	local var_17_0 = arg_17_0.isExclusive or arg_17_0.isSpecial
 
-	local var_17_2 = var_4(var_1_10006)
-
-	var_17_1.count = var_4.getGiftCount(var_17_2, arg_17_0.shopCfg.item_id)
-
-	local var_17_3 = var_17_0(var_17_1)
-
-	LoadImageSpriteAtlasAsync = var_1_10002
-
-	local var_17_4 = var_17_3:getIcon()
-	local var_17_5 = ""
-	local var_17_6 = arg_17_0._tf
-
-	var_1_10002(var_17_4, var_17_5, var_6.Find(var_17_6, "Window/Item/Dorm3dIconTpl/icon"), true)
-
-	GetImageSpriteFromAtlasAsync = var_1_10002
-
-	local var_17_7 = "weaponframes"
-	local var_17_8 = "dorm3d_"
-
-	ItemRarity = var_6
-
-	local var_17_9 = var_17_8 .. var_6.Rarity2Print(arg_17_0.shopCfg.rarity)
-	local var_17_10 = arg_17_0._tf
-
-	var_1_10002(var_17_7, var_17_9, var_6.Find(var_17_10, "Window/Item/Dorm3dIconTpl"))
-
-	setActive = var_1_10002
-
-	local var_17_11 = arg_17_0._tf
-	local var_17_12 = var_4.Find(var_17_11, "Window/Item/sp")
-	local var_17_13
-
-	if not arg_17_0.isExclusive then
-		var_17_13 = arg_17_0.isSpecial
-	end
-
-	var_1_10002(var_17_12, var_17_13)
+	setActive(arg_17_0._tf:Find("Window/Item/sp"), var_17_0)
 
 	if arg_17_0.isSpecial then
-		setText = var_2
-
-		local var_17_14 = arg_17_0._tf
-		local var_17_15 = var_4.Find(var_17_14, "Window/Item/sp/Text")
-
-		i18n = var_17_13
-
-		var_2(var_17_15, var_17_13("dorm3d_purchase_label_special"))
+		setText(arg_17_0._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_label_special"))
 	elseif arg_17_0.isExclusive then
-		setText = var_2
-
-		local var_17_16 = arg_17_0._tf
-		local var_17_17 = var_4.Find(var_17_16, "Window/Item/sp/Text")
-
-		i18n = var_17_13
-
-		var_2(var_17_17, var_17_13("dorm3d_purchase_confirm_tip"))
+		setText(arg_17_0._tf:Find("Window/Item/sp/Text"), i18n("dorm3d_purchase_confirm_tip"))
 	end
 
 	if arg_17_0.addFavor then
-		setActive = var_2
-
-		local var_17_18 = arg_17_0._tf
-
-		var_2(var_4.Find(var_17_18, "Window/Item/gift"), true)
-
-		setText = var_2
-
-		local var_17_19 = arg_17_0._tf
-
-		var_2(var_4.Find(var_17_19, "Window/Item/gift/Text"), "+" .. arg_17_0.addFavor)
+		setActive(arg_17_0._tf:Find("Window/Item/gift"), true)
+		setText(arg_17_0._tf:Find("Window/Item/gift/Text"), "+" .. arg_17_0.addFavor)
 	end
 
 	return
 end
 
-function var_0_1.GetShopId(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0.shopCfg.shop_id
-
-	for iter_18_0 = 1, #var_18_0 - 1 do
-		local var_18_1 = var_18_0[iter_18_0]
-
-		pg = var_1_10008
-
-		if not var_1_10008.shop_template[var_18_1].limit_args[1] and var_1_10008.group_type == 0 then
-			return var_18_1
-		elseif var_9 and (var_9[1] == "dailycount" or var_9[1] == "count") then
-			if arg_18_1 < var_9[3] then
-				return var_18_1
+function var_0_0.GetShopId(arg_18_0, arg_18_1)
+	for iter_18_0 = 1, #arg_18_0.shopCfg.shop_id - 1 do
+		if not pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].limit_args[1] and pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].group_type == 0 then
+			return arg_18_0.shopCfg.shop_id[iter_18_0]
+		elseif pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].limit_args[1] and (pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].limit_args[1][1] == "dailycount" or pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].limit_args[1][1] == "count") then
+			if arg_18_1 < pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].limit_args[1][3] then
+				return arg_18_0.shopCfg.shop_id[iter_18_0]
 			end
-		elseif var_1_10008.group_type == 2 then
-			if arg_18_1 < var_1_10008.group_limit then
-				return var_18_1
+		elseif pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].group_type == 2 then
+			if arg_18_1 < pg.shop_template[arg_18_0.shopCfg.shop_id[iter_18_0]].group_limit then
+				return arg_18_0.shopCfg.shop_id[iter_18_0]
 			end
 		else
-			return var_18_1
+			return arg_18_0.shopCfg.shop_id[iter_18_0]
 		end
 	end
 
-	local var_18_2
-
-	if not var_18_0[#var_18_0] then
-		var_18_2 = 0
-	end
-
-	return var_18_2
+	return arg_18_0.shopCfg.shop_id[#arg_18_0.shopCfg.shop_id] or 0
 end
 
-function var_0_1.GetGoodPrice(arg_19_0, arg_19_1)
-	CommonCommodity = var_1_10002
-
-	local var_19_0 = var_1_10002.New
-	local var_19_1 = {
+function var_0_0.GetGoodPrice(arg_19_0, arg_19_1)
+	return (CommonCommodity.New({
 		id = arg_19_1
-	}
-
-	Goods = var_1_10005
-
-	local var_19_2 = var_19_0(var_19_1, var_1_10005.TYPE_SHOPSTREET)
-
-	return (var_2.GetPrice(var_19_2))
+	}, Goods.TYPE_SHOPSTREET):GetPrice())
 end
 
-function var_0_1.willExit(arg_20_0)
+function var_0_0.willExit(arg_20_0)
 	if arg_20_0.timerRefreshTime then
-		local var_20_0 = arg_20_0.timerRefreshTime
-
-		var_1.Stop(var_20_0)
+		arg_20_0.timerRefreshTime:Stop()
 
 		arg_20_0.timerRefreshTime = nil
 	end
 
-	local var_20_1 = arg_20_0.scrollSnap
-
-	var_1.Dispose(var_20_1)
+	arg_20_0.scrollSnap:Dispose()
 
 	arg_20_0.scrollSnap = nil
-	pg = var_1
 
-	local var_20_2 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_20_2, arg_20_0._tf)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_20_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

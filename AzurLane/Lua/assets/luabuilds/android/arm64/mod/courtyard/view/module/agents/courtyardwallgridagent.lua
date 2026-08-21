@@ -1,31 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CourtYardWallGridAgent", import(".CourtYardGridAgent"))
 
-local var_0_0 = "CourtYardWallGridAgent"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".CourtYardGridAgent"))
-
-function var_0_1.Reset(arg_1_0, arg_1_1)
-	table = var_1_10002
-
-	var_1_10002.clear(arg_1_0.grids)
+function var_0_0.Reset(arg_1_0, arg_1_1)
+	table.clear(arg_1_0.grids)
 
 	for iter_1_0 = 1, #arg_1_1 do
 		if iter_1_0 % 2 == 0 then
-			local var_1_0 = arg_1_0:GetPool()
-			local var_1_1 = var_6.Dequeue(var_1_0).transform
+			local var_1_0 = arg_1_0:GetPool():Dequeue()
 
-			var_7.SetParent(var_1_1, arg_1_0.gridsTF)
+			var_1_0.transform:SetParent(arg_1_0.gridsTF)
 
-			local var_1_2 = var_6.transform
+			var_1_0.transform.localScale = Vector3.one
 
-			Vector3 = var_1_0
-			var_1_2.localScale = var_1_0.one
-			table = var_1_2
-
-			var_1_2.insert(arg_1_0.grids, var_6)
-			arg_1_0:UpdatePositionAndColor(var_6, {
+			table.insert(arg_1_0.grids, var_1_0)
+			arg_1_0:UpdatePositionAndColor(var_1_0, {
 				arg_1_1[iter_1_0 - 1],
 				arg_1_1[iter_1_0]
 			})
@@ -35,15 +22,11 @@ function var_0_1.Reset(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.Flush(arg_2_0, arg_2_1)
+function var_0_0.Flush(arg_2_0, arg_2_1)
 	for iter_2_0 = 1, #arg_2_1 do
 		if iter_2_0 % 2 == 0 then
-			local var_2_0 = arg_2_0.grids[iter_2_0 * 0.5]
-
-			assert = var_7
-
-			var_7(var_2_0)
-			arg_2_0:UpdatePositionAndColor(var_2_0, {
+			assert(arg_2_0.grids[iter_2_0 * 0.5])
+			arg_2_0:UpdatePositionAndColor(arg_2_0.grids[iter_2_0 * 0.5], {
 				arg_2_1[iter_2_0 - 1],
 				arg_2_1[iter_2_0]
 			})
@@ -53,54 +36,27 @@ function var_0_1.Flush(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.UpdatePositionAndColor(arg_3_0, arg_3_1, arg_3_2)
-	table = var_1_10003
-
-	var_1_10003.sort(arg_3_2, function(arg_4_0, arg_4_1)
+function var_0_0.UpdatePositionAndColor(arg_3_0, arg_3_1, arg_3_2)
+	table.sort(arg_3_2, function(arg_4_0, arg_4_1)
 		return arg_4_0.position.x + arg_4_0.position.y < arg_4_1.position.x + arg_4_1.position.y
 	end)
 
 	local var_3_0 = arg_3_2[1]
 
-	CourtYardCalcUtil = var_1_10004
-
-	local var_3_1
-
-	var_3_1.localPosition, var_3_1 = var_1_10004.Map2Local(var_3_0.position), arg_3_1.transform
-	_ = var_3_1
-
-	local var_3_2 = var_3_1.all(arg_3_2, function(arg_5_0)
+	arg_3_1.transform.localPosition = CourtYardCalcUtil.Map2Local(arg_3_2[1].position)
+	arg_3_1:GetComponent(typeof(Image)).color = arg_3_0:GetColor(_.all(arg_3_2, function(arg_5_0)
 		return arg_5_0.flag == 1
-	end)
-	local var_3_3 = arg_3_0:GetColor(var_3_2 and 1 or 2)
-	local var_3_4 = arg_3_1
-	local var_3_5 = arg_3_1.GetComponent
+	end) and 1 or 2)
 
-	typeof = var_1_10010
-	Image = var_1_10012
-	var_3_5(var_3_4, var_1_10010(var_1_10012)).color = var_3_3
+	local var_3_1 = arg_3_1.transform
 
-	local var_3_6 = var_3_0.position.y - var_3_0.position.x >= 1
-	local var_3_7 = arg_3_1.transform
+	var_3_1.localScale = var_3_0.position.y - var_3_0.position.x >= 1 and Vector3(-1, 1, 1) or Vector3(1, 1, 1)
 
-	if var_3_6 then
-		Vector3 = var_3_4
-
-		if not var_3_4(-1, 1, 1) then
-			Vector3 = var_3_4
-			var_3_4 = var_3_4(1, 1, 1)
-		end
-
-		var_3_7.localScale = var_3_4
-
-		return
-	end
+	return
 end
 
-function var_0_1.GetPool(arg_6_0)
-	local var_6_0 = arg_6_0:GetView().poolMgr
-
-	return var_1.GetWallGridPool(var_6_0)
+function var_0_0.GetPool(arg_6_0)
+	return arg_6_0:GetView().poolMgr:GetWallGridPool()
 end
 
-return var_0_1
+return var_0_0

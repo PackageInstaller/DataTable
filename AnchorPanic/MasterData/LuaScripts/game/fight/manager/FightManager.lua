@@ -1,5 +1,4 @@
---[[   
-     战斗数据管理器
+--[[     战斗数据管理器
 ]]
 module('fight.FightManager', Class.impl(Manager))
 
@@ -38,6 +37,19 @@ end
 -- Override 重置数据
 function resetData(self)
     self:initData()
+end
+
+function setSettingInfo(self, msg)
+    self.settingList = msg.setting_list
+end
+
+function getSettingInfo(self, id)
+    for _, v in ipairs(self.settingList) do
+        if v.key == id then
+            return v.value
+        end
+    end
+    return 0
 end
 
 -- 重置唯一ID标识
@@ -84,7 +96,6 @@ function parseUniqueID(self, uniqueID)
         return data[1], data[2]
     end
 end
-
 
 function parseHeroList(self, heroList)
     local tmp = {}
@@ -499,6 +510,60 @@ function getDupSettingData(self, dupType)
     return self.m_dupSettingData[dupType]
 end
 
+--播放驻唱BGM
+function playZCBGM(self, liveVo)
+    if self.mZCBgmData and self.mZCBgmData[liveVo.id] then
+        return
+    end
+
+    self:stopZCBGM()
+
+    if not self.mZCBgmData then
+        self.mZCBgmData = {}
+    end
+    self.mZCBgmData[liveVo.id] = true
+
+    local model_id = liveVo:getModelID()
+
+    self.m_bgmAudio = AudioManager:playOtherMusic(string.format("arts/audio/sfx/%s/sfx_role_%s_berserk.prefab", model_id, model_id), true)
+    if self.m_bgmAudio then
+        local volume = self.m_bgmAudio.m_source.volume
+        self.m_bgmAudio.m_source.volume = 0
+        self.m_bgmAudio:resumeByFade(1, volume)
+
+        AudioManager:pauseMusicByFade(1)
+    end
+end
+
+-- 直接回场景bgm
+function stopZCBGM(self, liveVo)
+    if liveVo then
+        if not self.mZCBgmData or not self.mZCBgmData[liveVo.id] or next(self.mZCBgmData) ~= nil then
+            return
+        end
+        self.mZCBgmData[liveVo.id] = nil
+    end
+    if self.m_bgmAudio  then
+        AudioManager:stopAudioSound(self.m_bgmAudio)
+        self.m_bgmAudio = nil
+    end
+end
+
+-- 过渡回场景bgm
+function fadeStopZCBGM(self, liveVo)
+    if not self.mZCBgmData or not self.mZCBgmData[liveVo.id] then
+        return
+    end
+    self.mZCBgmData[liveVo.id] = nil
+    if self.m_bgmAudio and next(self.mZCBgmData) == nil then
+        self.m_bgmAudio:pauseByFade(1, function()
+            self:stopZCBGM()
+        end)
+
+        AudioManager:resumeMusicByFade(1)
+    end
+end
+
 -- 是否战斗中
 function setIsFighting(self, cusB)
     if self.mIsFighting ~= cusB then
@@ -580,7 +645,7 @@ end
 
 --Net function-----BEGIN---------------------------------------
 -- 请求进入战斗
--- battleType: 战场类型 
+-- battleType: 战场类型
 -- fieldID: 战场ID
 function reqBattleEnter(self, battleType, fieldID, multiTimes, assaultType)
     --logError(string.format("reqBattleEnter %s %s", battleType, fieldID))
@@ -651,11 +716,11 @@ function reqAuto(self, autoType)
 end
 
 -- 请求回放
-function reqReplay(self, battleType, replayID,teamId)
+function reqReplay(self, battleType, replayID, teamId)
     if teamId == nil then
         teamId = 0
     end
-    SOCKET_SEND(Protocol.CS_BATTLE_REPLAY, { type = battleType, id = replayID,team_id = teamId })
+    SOCKET_SEND(Protocol.CS_BATTLE_REPLAY, { type = battleType, id = replayID, team_id = teamId })
 end
 
 -- 请求释放盟约技能
@@ -668,6 +733,13 @@ function reqAutoFightSkillChange(self, liveId, ruleType)
     local side, heroId = fight.FightManager:parseUniqueID(liveId)
     -- print("================reqAutoFightSkillChange ", heroId, ruleType)
     SOCKET_SEND(Protocol.CS_HERO_AUTO_RULE_CHANGE, { hero_id = heroId, rule_type = ruleType })
+end
+
+--请求变更奥义开关
+function reqAoyiStateChange(self, liveId, ruleType)
+    local side, heroId = fight.FightManager:parseUniqueID(liveId)
+    SOCKET_SEND(Protocol.CS_HERO_AUTO_AOYI_RULE_CHANGE, { hero_id = heroId, rule_type = ruleType })
+    cusLog("发送了规则" .. ruleType)
 end
 
 --Net function-----END---------------------------------------
@@ -687,6 +759,8 @@ function exitBattleLogic(self)
     self.m_actionQueue = {}
 
     self.m_SyncWord = 0
+
+    self.mZCBgmData = nil
 end
 
 function getBattleType(self)
@@ -953,7 +1027,6 @@ function getPriorityDict(self, actionID, heroID)
     end
 end
 
-
 function getPriorityVoList(self, actionID, heroID, priorityID)
     local pDict = self:getPriorityDict(actionID, heroID)
     if pDict then
@@ -1116,7 +1189,6 @@ function getHeroSkill02(self, skillID)
     end
 end
 
-
 -- 保存出场队伍
 function setTeamData(self, attTeam, defTeam)
     self.m_teamAttr = attTeam
@@ -1244,7 +1316,7 @@ function setResultData(self, msg)
             end
         end
     else
-        if (msg.is_replay == 1) then  --表示是战斗回放
+        if (msg.is_replay == 1) then --表示是战斗回放
             local heroDic = fight.SceneManager:getSideThingIDs(1)
             for i, id in ipairs(heroDic) do
                 local thingVo = fight.SceneManager:getThing(id)
@@ -1336,6 +1408,8 @@ function _battleFinish(self)
             -- AudioManager:pauseMusicByFade(2, function()
             AudioManager:playMusicById(31, false) --胜利音乐
             -- end)
+        elseif self.m_resultData.result == 4 then
+            GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_SHOW)
         else
             GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, { isWin = true })
         end
@@ -1508,6 +1582,14 @@ end
 
 function getIsUIByFightEnd(self)
     return self.mIsByFightEnd
+end
+
+function setLastReqInfoBattleType(self, battleType)
+    self.mLastReqInfoBattleType = battleType
+end
+
+function getLastReqInfoBattleType(self)
+    return self.mLastReqInfoBattleType
 end
 
 return _M

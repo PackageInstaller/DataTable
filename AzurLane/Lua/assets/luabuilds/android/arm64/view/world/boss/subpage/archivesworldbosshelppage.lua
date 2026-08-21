@@ -1,19 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ArchivesWorldBossHelpPage", import(".WorldBossHelpPage"))
 
-local var_0_0 = "ArchivesWorldBossHelpPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".WorldBossHelpPage"))
-
-function var_0_1.OnLoaded(arg_1_0)
-	var_0_1.super.OnLoaded(arg_1_0)
-
-	setActive = var_1
-
-	var_1(arg_1_0.worldBtn, false)
+function var_0_0.OnLoaded(arg_1_0)
+	var_0_0.super.OnLoaded(arg_1_0)
+	setActive(arg_1_0.worldBtn, false)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,47 +1,34 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatBgControl")
+﻿local var_0_0 = class("SailBoatBgControl")
 local var_0_1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	SailBoatGameVo = var_1_10003
-	var_0_1 = var_1_10003
+	var_0_1 = SailBoatGameVo
 	arg_1_0._tf = arg_1_1
 	arg_1_0._event = arg_1_2
 	arg_1_0._followTarget = nil
 	arg_1_0._backGrounds = {}
 	arg_1_0._bgs = {}
 	arg_1_0._bgPool = {}
-	Vector2 = var_3
-	arg_1_0._bgMoveSpeed = var_3(0, 0)
-	Vector2 = var_3
-	arg_1_0._bgMoveAmount = var_3(0, 0)
+	arg_1_0._bgMoveSpeed = Vector2(0, 0)
+	arg_1_0._bgMoveAmount = Vector2(0, 0)
 
 	return
 end
 
 function var_0_0.start(arg_2_0)
 	for iter_2_0 = #arg_2_0._bgs, 1, -1 do
-		table = var_1_10005
+		local var_2_0 = table.remove(arg_2_0._bgs, iter_2_0)
 
-		local var_2_0 = var_1_10005.remove(arg_2_0._bgs, iter_2_0)
-
-		var_1_10005.clear(var_2_0)
-
-		table = var_6
-
-		var_6.insert(arg_2_0._bgPool, var_1_10005)
+		var_2_0:clear()
+		table.insert(arg_2_0._bgPool, var_2_0)
 	end
 
-	Vector2 = var_1
-	arg_2_0._bgMoveAmount = var_1(0, 0)
+	arg_2_0._bgMoveAmount = Vector2(0, 0)
 
 	arg_2_0:initBgRound()
 
 	for iter_2_1 = 1, #arg_2_0._bgs do
-		local var_2_1 = arg_2_0._bgs[iter_2_1]
-
-		var_5.start(var_2_1)
+		arg_2_0._bgs[iter_2_1]:start()
 	end
 
 	arg_2_0._bgMoveSpeed.x = var_0_1.moveAmount.x
@@ -59,13 +46,8 @@ function var_0_0.step(arg_3_0, arg_3_1)
 	arg_3_0._bgMoveAmount.y = arg_3_0._bgMoveAmount.y + var_3_0.y
 
 	for iter_3_0 = 1, #arg_3_0._bgs do
-		local var_3_1 = arg_3_0._bgs[iter_3_0]
-
-		var_7.setMoveAmount(var_3_1, arg_3_0._bgMoveAmount)
-
-		local var_3_2 = arg_3_0._bgs[iter_3_0]
-
-		var_7.step(var_3_2)
+		arg_3_0._bgs[iter_3_0]:setMoveAmount(arg_3_0._bgMoveAmount)
+		arg_3_0._bgs[iter_3_0]:step()
 	end
 
 	return
@@ -86,17 +68,9 @@ function var_0_0.clear(arg_6_0)
 end
 
 function var_0_0.getBgRoundData(arg_7_0, arg_7_1)
-	local var_7_0 = 1
-
-	SailBoatGameConst = var_1_10003
-
-	for iter_7_0 = var_7_0, #var_1_10003.game_bg_round do
-		SailBoatGameConst = var_1_10006
-
-		if var_1_10006.game_bg_round[iter_7_0].round == arg_7_1 then
-			Clone = var_7
-
-			return var_7(var_1_10006)
+	for iter_7_0 = 1, #SailBoatGameConst.game_bg_round do
+		if SailBoatGameConst.game_bg_round[iter_7_0].round == arg_7_1 then
+			return Clone(SailBoatGameConst.game_bg_round[iter_7_0])
 		end
 	end
 
@@ -104,19 +78,14 @@ function var_0_0.getBgRoundData(arg_7_0, arg_7_1)
 end
 
 function var_0_0.initBgRound(arg_8_0)
-	if not var_0_1.GetRoundData() then
+	local var_8_0 = var_0_1.GetRoundData()
+
+	if not var_8_0 then
 		return
 	end
 
-	for iter_8_0 = 1, #var_1.bg_rule do
-		SailBoatGameConst = var_1_10006
-		var_1_10006 = var_1_10006.bg_rule[var_1.bg_rule[iter_8_0]]
-
-		local var_8_0 = arg_8_0:createAndInitBg(var_1_10006)
-
-		table = var_1_10008
-
-		var_1_10008.insert(arg_8_0._bgs, var_8_0)
+	for iter_8_0 = 1, #var_8_0.bg_rule do
+		table.insert(arg_8_0._bgs, (arg_8_0:createAndInitBg(SailBoatGameConst.bg_rule[var_8_0.bg_rule[iter_8_0]])))
 	end
 
 	return
@@ -126,14 +95,10 @@ function var_0_0.createAndInitBg(arg_9_0, arg_9_1)
 	local var_9_0
 
 	if arg_9_0._bgPool and #arg_9_0._bgPool > 0 then
-		table = var_3
-		var_9_0 = var_3.remove(arg_9_0._bgPool, 1)
+		var_9_0 = table.remove(arg_9_0._bgPool, 1)
 	end
 
-	if not var_9_0 then
-		SailBoatBg = var_3
-		var_9_0 = var_3.New(arg_9_0._tf, arg_9_0._event)
-	end
+	var_9_0 = var_9_0 or SailBoatBg.New(arg_9_0._tf, arg_9_0._event)
 
 	var_9_0:setRuleData(arg_9_1)
 

@@ -1,190 +1,74 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FurnitureSlideExtraLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "FurnitureSlideExtraLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "Dorm3dFurnitureSlideExtraUI"
 end
 
-function var_0_1.init(arg_2_0)
-	ApartmentProxy = var_1_10001
-	arg_2_0.slideList = var_1_10001.GetSlideInviteList()
+function var_0_0.init(arg_2_0)
+	arg_2_0.slideList = ApartmentProxy.GetSlideInviteList()
 
 	arg_2_0:InitUI()
 
 	return
 end
 
-function var_0_1.InitUI(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.InitUI(arg_3_0)
+	arg_3_0.queuePanel = arg_3_0._tf:Find("top")
+	arg_3_0.performancePanel = arg_3_0._tf:Find("performance")
+	arg_3_0.queueContainer = arg_3_0._tf:Find("top/bg/container")
+	arg_3_0.performanceContainer = arg_3_0._tf:Find("performance/line/container")
 
-	arg_3_0.queuePanel = var_1.Find(var_3_0, "top")
+	setText(arg_3_0._tf:Find("top/bg/Text"), i18n("3ddorm_beach_slide_tip2"))
+	setText(arg_3_0._tf:Find("performance/btn_invite/Text"), i18n("3ddorm_beach_slide_tip1"))
 
-	local var_3_1 = arg_3_0._tf
+	arg_3_0.queueItemList = UIItemList.New(arg_3_0.queueContainer, arg_3_0.queueContainer:Find("tpl"))
+	arg_3_0.performanceItemList = UIItemList.New(arg_3_0.performanceContainer, arg_3_0.performanceContainer:Find("tpl"))
 
-	arg_3_0.performancePanel = var_1.Find(var_3_1, "performance")
-
-	local var_3_2 = arg_3_0._tf
-
-	arg_3_0.queueContainer = var_1.Find(var_3_2, "top/bg/container")
-
-	local var_3_3 = arg_3_0._tf
-
-	arg_3_0.performanceContainer = var_1.Find(var_3_3, "performance/line/container")
-	setText = var_1
-
-	local var_3_4 = arg_3_0._tf
-	local var_3_5 = var_3.Find(var_3_4, "top/bg/Text")
-
-	i18n = var_4
-
-	var_1(var_3_5, var_4("3ddorm_beach_slide_tip2"))
-
-	setText = var_1
-
-	local var_3_6 = arg_3_0._tf
-	local var_3_7 = var_3.Find(var_3_6, "performance/btn_invite/Text")
-
-	i18n = var_4
-
-	var_1(var_3_7, var_4("3ddorm_beach_slide_tip1"))
-
-	UIItemList = var_1
-
-	local var_3_8 = var_1.New
-	local var_3_9 = arg_3_0.queueContainer
-	local var_3_10 = arg_3_0.queueContainer
-
-	arg_3_0.queueItemList = var_3_8(var_3_9, var_4.Find(var_3_10, "tpl"))
-	UIItemList = var_1
-
-	local var_3_11 = var_1.New
-	local var_3_12 = arg_3_0.performanceContainer
-	local var_3_13 = arg_3_0.performanceContainer
-
-	arg_3_0.performanceItemList = var_3_11(var_3_12, var_4.Find(var_3_13, "tpl"))
-
-	local var_3_14 = arg_3_0.queueItemList
-
-	var_1.make(var_3_14, function(arg_4_0, arg_4_1, arg_4_2)
+	arg_3_0.queueItemList:make(function(arg_4_0, arg_4_1, arg_4_2)
 		local var_4_0 = arg_4_1 + 1 > #arg_3_0.slideList
 
-		setActive = var_2_10005
-
-		var_2_10005(arg_4_2:Find("icon"), not var_4_0)
-
-		setActive = var_2_10005
-
-		var_2_10005(arg_4_2:Find("front"), not var_4_0)
-
-		setActive = var_2_10005
-
-		local var_4_1 = arg_4_2
-
-		var_2_10005(arg_4_2.Find(var_4_1, "plus"), var_4_0)
+		setActive(arg_4_2:Find("icon"), not (arg_4_1 + 1 > #arg_3_0.slideList))
+		setActive(arg_4_2:Find("front"), not var_4_0)
+		setActive(arg_4_2:Find("plus"), var_4_0)
 
 		if not var_4_0 then
-			local var_4_2 = arg_3_0.slideList[var_3]
-
-			pg = var_2_10006
-
-			local var_4_3 = var_2_10006.dorm3d_resource.get_id_list_by_ship_group[var_4_2][2]
-
-			GetImageSpriteFromAtlasAsync = var_7
-			pg = var_4_1
-
-			var_7(var_4_1.dorm3d_resource[var_4_3].head_Icon, "", arg_4_2:Find("icon"), true)
+			GetImageSpriteFromAtlasAsync(pg.dorm3d_resource[pg.dorm3d_resource.get_id_list_by_ship_group[arg_3_0.slideList[arg_4_1 + 1]][2]].head_Icon, "", arg_4_2:Find("icon"), true)
 		end
 
 		return
 	end)
+	arg_3_0.performanceItemList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		local var_5_0 = arg_3_0.slideList[arg_5_1 + 1]
 
-	local var_3_15 = arg_3_0.performanceItemList
-
-	var_1.make(var_3_15, function(arg_5_0, arg_5_1, arg_5_2)
-		local var_5_0 = arg_5_1 + 1
-		local var_5_1 = arg_3_0.slideList[var_5_0]
-
-		UIItemList = var_2_10005
-
-		if arg_5_0 == var_2_10005.EventUpdate then
-			pg = var_5
-
-			local var_5_2 = var_5.dorm3d_resource.get_id_list_by_ship_group[var_5_1][2]
-
-			GetImageSpriteFromAtlasAsync = var_2_10006
-			pg = var_2_10008
-
-			var_2_10006(var_2_10008.dorm3d_resource[var_5_2].head_Icon, "", arg_5_2:Find("icon"), true)
-
-			setText = var_2_10006
-
-			local var_5_3 = arg_5_2:Find("name")
-
-			ShipGroup = var_9
-
-			var_2_10006(var_5_3, var_9.getDefaultShipNameByGroupID(var_5_1))
-
-			onButton = var_2_10006
-
-			local var_5_4 = arg_3_0
-			local var_5_5 = arg_5_2
-
-			local function var_5_6()
-				local var_6_0 = arg_3_0
-				local var_6_1 = var_0.emit
-
-				FurnitureSlideExtraMediator = var_3_10003
-
-				var_6_1(var_6_0, var_3_10003.GO_SLIDE_PERFORMANCE, var_5_1)
+		if arg_5_0 == UIItemList.EventUpdate then
+			GetImageSpriteFromAtlasAsync(pg.dorm3d_resource[pg.dorm3d_resource.get_id_list_by_ship_group[arg_3_0.slideList[arg_5_1 + 1]][2]].head_Icon, "", arg_5_2:Find("icon"), true)
+			setText(arg_5_2:Find("name"), ShipGroup.getDefaultShipNameByGroupID(arg_3_0.slideList[arg_5_1 + 1]))
+			onButton(arg_3_0, arg_5_2, function()
+				arg_3_0:emit(FurnitureSlideExtraMediator.GO_SLIDE_PERFORMANCE, var_5_0)
 
 				return
-			end
-
-			SFX_DORM_CLICK = var_11
-
-			var_2_10006(var_5_4, var_5_5, var_5_6, var_11)
+			end, SFX_DORM_CLICK)
 		end
 
 		return
 	end)
-
-	onButton = var_1
-
-	local var_3_16 = arg_3_0
-	local var_3_17 = arg_3_0._tf
-	local var_3_18 = var_4.Find(var_3_17, "top/bg")
-
-	local function var_3_19()
-		local var_7_0 = arg_3_0
-		local var_7_1 = var_0.emit
-
-		FurnitureSlideExtraMediator = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.OPEN_INVITE_LAYER, arg_3_0.slideList)
+	onButton(arg_3_0, arg_3_0._tf:Find("top/bg"), function()
+		arg_3_0:emit(FurnitureSlideExtraMediator.OPEN_INVITE_LAYER, arg_3_0.slideList)
 
 		return
-	end
-
-	SFX_DORM_CLICK = var_3_17
-
-	var_1(var_3_16, var_3_18, var_3_19, var_3_17)
+	end, SFX_DORM_CLICK)
 
 	return
 end
 
-function var_0_1.didEnter(arg_8_0)
+function var_0_0.didEnter(arg_8_0)
 	arg_8_0:HideInteraction()
 	arg_8_0:HidePerformance()
 
 	return
 end
 
-function var_0_1.UpdateSlideInviteList(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
+function var_0_0.UpdateSlideInviteList(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
 	arg_9_0.slideList = arg_9_1
 
 	arg_9_0:Flush()
@@ -192,70 +76,47 @@ function var_0_1.UpdateSlideInviteList(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
 	return
 end
 
-function var_0_1.Flush(arg_10_0)
-	local var_10_0 = arg_10_0.queueItemList
-
-	var_1.align(var_10_0, #arg_10_0.slideList + 1)
-
-	local var_10_1 = arg_10_0.performanceItemList
-
-	var_1.align(var_10_1, #arg_10_0.slideList)
+function var_0_0.Flush(arg_10_0)
+	arg_10_0.queueItemList:align(#arg_10_0.slideList + 1)
+	arg_10_0.performanceItemList:align(#arg_10_0.slideList)
 
 	return
 end
 
-function var_0_1.HandleDormUIState(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_1 == "base"
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_11_0._tf, var_11_0)
+function var_0_0.HandleDormUIState(arg_11_0, arg_11_1)
+	setActive(arg_11_0._tf, arg_11_1 == "base")
 
 	return
 end
 
-function var_0_1.ShowInteraction(arg_12_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_12_0.queuePanel, true)
-
-	local var_12_0 = arg_12_0.queueItemList
-
-	var_1.align(var_12_0, #arg_12_0.slideList + 1)
+function var_0_0.ShowInteraction(arg_12_0)
+	setActive(arg_12_0.queuePanel, true)
+	arg_12_0.queueItemList:align(#arg_12_0.slideList + 1)
 
 	return
 end
 
-function var_0_1.HideInteraction(arg_13_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_13_0.queuePanel, false)
+function var_0_0.HideInteraction(arg_13_0)
+	setActive(arg_13_0.queuePanel, false)
 
 	return
 end
 
-function var_0_1.ShowPerformance(arg_14_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_14_0.performancePanel, true)
-
-	local var_14_0 = arg_14_0.performanceItemList
-
-	var_1.align(var_14_0, #arg_14_0.slideList)
+function var_0_0.ShowPerformance(arg_14_0)
+	setActive(arg_14_0.performancePanel, true)
+	arg_14_0.performanceItemList:align(#arg_14_0.slideList)
 
 	return
 end
 
-function var_0_1.HidePerformance(arg_15_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_15_0.performancePanel, false)
+function var_0_0.HidePerformance(arg_15_0)
+	setActive(arg_15_0.performancePanel, false)
 
 	return
 end
 
-function var_0_1.willExit(arg_16_0)
+function var_0_0.willExit(arg_16_0)
 	return
 end
 
-return var_0_1
+return var_0_0

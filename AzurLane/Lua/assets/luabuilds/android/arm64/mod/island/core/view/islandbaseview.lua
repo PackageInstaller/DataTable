@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandBaseView")
+﻿local var_0_0 = class("IslandBaseView")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.core = arg_1_1
@@ -17,28 +15,18 @@ function var_0_0.GetCacheOpCount(arg_2_0)
 end
 
 function var_0_0.SetUp(arg_3_0)
-	pg = var_1_10001
+	local var_3_0 = pg.UIMgr.GetInstance().UIMain:Find("UIIsland")
 
-	local var_3_0 = var_1_10001.UIMgr.GetInstance().UIMain
-	local var_3_1 = var_1.Find(var_3_0, "UIIsland")
-	local var_3_2 = arg_3_0.core
-
-	arg_3_0.poolMgr = var_2.GetPoolMgr(var_3_2)
-	arg_3_0.layer1Container = var_3_1:Find("layer1")
-	GetOrAddComponent = var_2
-
-	local var_3_3 = arg_3_0.layer1Container
-
-	typeof = var_5
-	CanvasGroup = var_1_10007
-	arg_3_0.layer1ContainerCg = var_2(var_3_3, var_5(var_1_10007))
-	arg_3_0.topContainer = var_3_1:Find("layer1/top")
-	arg_3_0.opContainer = var_3_1:Find("layer1/op")
-	arg_3_0.interactionContainer = var_3_1:Find("layer1/interaction")
-	arg_3_0.hudContainer = var_3_1:Find("layer1/hud")
-	arg_3_0.pageContianer = var_3_1:Find("layer1/page")
-	arg_3_0.layer2UIContianer = var_3_1:Find("layer2/ui")
-	arg_3_0.layer2OpContianer = var_3_1:Find("layer2/op")
+	arg_3_0.poolMgr = arg_3_0.core:GetPoolMgr()
+	arg_3_0.layer1Container = var_3_0:Find("layer1")
+	arg_3_0.layer1ContainerCg = GetOrAddComponent(arg_3_0.layer1Container, typeof(CanvasGroup))
+	arg_3_0.topContainer = var_3_0:Find("layer1/top")
+	arg_3_0.opContainer = var_3_0:Find("layer1/op")
+	arg_3_0.interactionContainer = var_3_0:Find("layer1/interaction")
+	arg_3_0.hudContainer = var_3_0:Find("layer1/hud")
+	arg_3_0.pageContianer = var_3_0:Find("layer1/page")
+	arg_3_0.layer2UIContianer = var_3_0:Find("layer2/ui")
+	arg_3_0.layer2OpContianer = var_3_0:Find("layer2/op")
 	arg_3_0.root = arg_3_0:CreateRoot()
 
 	arg_3_0:Init()
@@ -66,13 +54,8 @@ function var_0_0.SetBgm(arg_6_0, arg_6_1)
 end
 
 function var_0_0.ShowOrHideContainer(arg_7_0, arg_7_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_7_0.opContainer, arg_7_1)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_7_0.pageContianer, arg_7_1)
+	setActive(arg_7_0.opContainer, arg_7_1)
+	setActive(arg_7_0.pageContianer, arg_7_1)
 
 	return
 end
@@ -84,9 +67,7 @@ function var_0_0.RegisterUnitList(arg_8_0, arg_8_1)
 		arg_8_0.registerIndex = var_8_0
 	end
 
-	assert = var_1_10003
-
-	var_1_10003(arg_8_0.unitRegister[var_8_0] == nil, "UnitList already exist")
+	assert(arg_8_0.unitRegister[var_8_0] == nil, "UnitList already exist")
 
 	arg_8_0.unitRegister[var_8_0] = {}
 
@@ -98,53 +79,21 @@ function var_0_0.GetUnitListRegitser(arg_9_0)
 end
 
 function var_0_0.GetUnitListByKey(arg_10_0, arg_10_1)
-	assert = var_1_10002
+	assert(arg_10_1 and arg_10_0.unitRegister[arg_10_1], "key should be exist>>>." .. arg_10_1)
 
-	var_1_10002(arg_10_1 and arg_10_0.unitRegister[arg_10_1], "key should be exist>>>." .. arg_10_1)
-
-	local var_10_0
-
-	if not arg_10_0.unitRegister[arg_10_1] then
-		var_10_0 = {}
-	end
-
-	return var_10_0
+	return arg_10_0.unitRegister[arg_10_1] or {}
 end
 
 function var_0_0.AddUnit(arg_11_0, arg_11_1)
-	assert = var_1_10002
-	isa = var_1_10004
-
-	local var_11_0 = arg_11_1
-
-	IslandSceneUnit = var_1_10007
-
-	var_1_10002(var_1_10004(var_11_0, var_1_10007), "unit should be IslandSceneUnit")
-
-	local var_11_1 = arg_11_0:GetUnitListByKey(arg_11_1:GetUnitType())
-
-	table = var_1_10003
-
-	var_1_10003.insert(var_11_1, arg_11_1)
+	assert(isa(arg_11_1, IslandSceneUnit), "unit should be IslandSceneUnit")
+	table.insert(arg_11_0:GetUnitListByKey(arg_11_1:GetUnitType()), arg_11_1)
 
 	return
 end
 
 function var_0_0.RemoveUnit(arg_12_0, arg_12_1)
-	assert = var_1_10002
-	isa = var_1_10004
-
-	local var_12_0 = arg_12_1
-
-	IslandSceneUnit = var_1_10007
-
-	var_1_10002(var_1_10004(var_12_0, var_1_10007), "unit should be IslandSceneUnit")
-
-	local var_12_1 = arg_12_0:GetUnitListByKey(arg_12_1:GetUnitType())
-
-	table = var_1_10003
-
-	var_1_10003.removebyvalue(var_12_1, arg_12_1)
+	assert(isa(arg_12_1, IslandSceneUnit), "unit should be IslandSceneUnit")
+	table.removebyvalue(arg_12_0:GetUnitListByKey(arg_12_1:GetUnitType()), arg_12_1)
 
 	return
 end
@@ -154,15 +103,11 @@ function var_0_0.GetPoolMgr(arg_13_0)
 end
 
 function var_0_0.CreateRoot(arg_14_0)
-	GameObject = var_1_10001
-
-	return var_1_10001.New("Root")
+	return GameObject.New("Root")
 end
 
 function var_0_0.OnCoreStateChanged(arg_15_0, arg_15_1)
-	IslandCore = var_1_10002
-
-	if arg_15_1 == var_1_10002.STATE_INIT_FINISH then
+	if arg_15_1 == IslandCore.STATE_INIT_FINISH then
 		arg_15_0:PlayBGM()
 	end
 
@@ -170,24 +115,13 @@ function var_0_0.OnCoreStateChanged(arg_15_0, arg_15_1)
 end
 
 function var_0_0.PlayBGM(arg_16_0)
-	pg = var_1_10001
-
-	local var_16_0 = var_1_10001.BgmMgr.GetInstance()
-
-	var_1.Push(var_16_0, "IslandScene", arg_16_0.bgm)
+	pg.BgmMgr.GetInstance():Push("IslandScene", arg_16_0.bgm)
 
 	return
 end
 
 function var_0_0.NotifiyCore(arg_17_0, arg_17_1, ...)
-	local var_17_0 = arg_17_0
-	local var_17_1 = arg_17_0.Op
-	local var_17_2 = "NotifiyCore"
-	local var_17_3 = arg_17_1
-
-	unpack = var_1_10007
-
-	var_17_1(var_17_0, var_17_2, var_17_3, var_1_10007({
+	arg_17_0:Op("NotifiyCore", arg_17_1, unpack({
 		...
 	}))
 
@@ -207,50 +141,29 @@ function var_0_0.NotifiyMeditor(arg_19_0, arg_19_1, ...)
 end
 
 function var_0_0.Op(arg_20_0, arg_20_1, ...)
-	local var_20_0 = arg_20_0:GetCore()
-	local var_20_1 = var_2.GetController(var_20_0)
-
-	var_2.Receive(var_20_1, arg_20_1, ...)
+	arg_20_0:GetCore():GetController():Receive(arg_20_1, ...)
 
 	return
 end
 
 function var_0_0.IsSelfIsland(arg_21_0)
-	local var_21_0 = arg_21_0:GetCore()
-	local var_21_1 = var_1.GetController(var_21_0)
-
-	return var_1.IsSelfIsland(var_21_1)
+	return arg_21_0:GetCore():GetController():IsSelfIsland()
 end
 
 function var_0_0.GetIsland(arg_22_0)
-	local var_22_0 = arg_22_0:GetCore()
-	local var_22_1 = var_1.GetController(var_22_0)
-
-	return var_1.GetIsland(var_22_1)
+	return arg_22_0:GetCore():GetController():GetIsland()
 end
 
 function var_0_0.GetSelfIsland(arg_23_0)
-	getProxy = var_1_10001
-	IslandProxy = var_1_10003
-
-	local var_23_0 = var_1_10001(var_1_10003)
-
-	return var_1.GetIsland(var_23_0)
+	return getProxy(IslandProxy):GetIsland()
 end
 
 function var_0_0.GetController(arg_24_0)
-	local var_24_0 = arg_24_0.core
-
-	return var_1.GetController(var_24_0)
+	return arg_24_0.core:GetController()
 end
 
 function var_0_0.ShowMsgbox(arg_25_0, arg_25_1)
-	local var_25_0 = arg_25_0
-	local var_25_1 = arg_25_0.NotifiyIsland
-
-	ISLAND_EX_EVT = var_1_10005
-
-	var_25_1(var_25_0, var_1_10005.SHOW_MSG, arg_25_1)
+	arg_25_0:NotifiyIsland(ISLAND_EX_EVT.SHOW_MSG, arg_25_1)
 
 	return
 end
@@ -262,53 +175,43 @@ end
 function var_0_0.InMap(arg_27_0, arg_27_1)
 	local var_27_0 = arg_27_0:GetCore()
 
-	return var_2.GetMapId(var_27_0) == arg_27_1
+	return var_27_0:GetMapId() == arg_27_1
 end
 
 function var_0_0.GetMapId(arg_28_0)
-	local var_28_0 = arg_28_0:GetCore()
-
-	return var_1.GetMapId(var_28_0)
+	return arg_28_0:GetCore():GetMapId()
 end
 
 function var_0_0.AddListener(arg_29_0, arg_29_1, arg_29_2)
-	local function var_29_0(arg_30_0, ...)
+	assert(arg_29_0.callbacks[arg_29_2] == nil, "This method has been monitored. Please use another one" .. arg_29_1)
+
+	arg_29_0.callbacks[arg_29_2] = function(arg_30_0, ...)
 		arg_29_2(arg_29_0, ...)
 
 		return
 	end
 
-	assert = var_1_10004
+	arg_29_0.core:AddListener(arg_29_1, function(arg_30_0, ...)
+		arg_29_2(arg_29_0, ...)
 
-	var_1_10004(arg_29_0.callbacks[arg_29_2] == nil, "This method has been monitored. Please use another one" .. arg_29_1)
-
-	arg_29_0.callbacks[arg_29_2] = var_29_0
-
-	local var_29_1 = arg_29_0.core
-
-	var_4.AddListener(var_29_1, arg_29_1, var_29_0)
+		return
+	end)
 
 	return
 end
 
 function var_0_0.RemoveListener(arg_31_0, arg_31_1, arg_31_2)
 	if arg_31_0.callbacks[arg_31_2] then
-		local var_31_0 = arg_31_0.core
+		arg_31_0.core:RemoveListener(arg_31_1, arg_31_0.callbacks[arg_31_2])
 
-		var_4.RemoveListener(var_31_0, arg_31_1, var_3)
-
-		arg_31_0.callbacks[var_3] = nil
+		arg_31_0.callbacks[arg_31_0.callbacks[arg_31_2]] = nil
 	end
 
 	return
 end
 
 function var_0_0.Dispose(arg_32_0)
-	pg = var_1_10001
-
-	local var_32_0 = var_1_10001.BgmMgr.GetInstance()
-
-	var_1.StopPlay(var_32_0)
+	pg.BgmMgr.GetInstance():StopPlay()
 	arg_32_0:RemoveListeners()
 	arg_32_0:OnDispose()
 

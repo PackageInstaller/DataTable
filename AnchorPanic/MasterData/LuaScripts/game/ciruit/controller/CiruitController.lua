@@ -44,6 +44,8 @@ end
 function onReceivePassDupMsg(self, msg)
     -- logAll(msg, "*s2c* 水管工面板信息 18179")
     ciruit.CiruitManager:setPassDupId(msg.dup_list)
+
+    GameDispatcher:dispatchEvent(EventName.MAINACTIVITY_REDSTATE_UPDATE)
 end
 
 --- *c2s* 通关玩法 18180

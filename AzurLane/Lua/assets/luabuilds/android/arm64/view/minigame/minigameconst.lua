@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MiniGameConst")
+﻿local var_0_0 = class("MiniGameConst")
 
 var_0_0.MG_TYPE_1 = 1
 var_0_0.MG_TYPE_2 = 2

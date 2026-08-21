@@ -1,38 +1,38 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BackYardUploadThemeTemplateCommand", pm.SimpleCommand)
 
-local var_0_0 = "BackYardUploadThemeTemplateCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(DormProxy)
+	local var_1_1 = getProxy(DormProxy):GetCustomThemeTemplateById(arg_1_1:getBody().templateId)
 
-pm = var_0_10003
+	local function var_1_2(arg_8_0)
+		var_1_1:Upload()
+		var_1_0:UpdateCustomThemeTemplate(var_1_1)
+		arg_1_0:sendNotification(GAME.BACKYARD_UPLOAD_THEME_TEMPLATE_DONE)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
+		return
+	end
 
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).templateId
+	local function var_1_3()
+		pg.ConnectionMgr.GetInstance():Send(19111, {
+			pos = var_1_1.pos
+		}, 19112, function(arg_10_0)
+			if arg_10_0.result == 0 then
+				var_1_2(arg_10_0)
+			else
+				pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_10_0.result] .. arg_10_0.result)
+			end
 
-	getProxy = var_1_0
-	DormProxy = var_1_10006
+			return
+		end)
 
-	local var_1_2 = var_1_0(var_1_10006)
-	local var_1_3 = var_4.GetCustomThemeTemplateById(var_1_2, var_1_1)
+		return
+	end
 
-	local function var_1_4(arg_2_0)
-		pg = var_2_10001
-
-		local var_2_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOn(var_2_0)
-
-		seriesAsync = var_1
-
-		var_1({
+	;(function(arg_2_0)
+		pg.UIMgr.GetInstance():LoadingOn()
+		seriesAsync({
 			function(arg_3_0)
-				BackYardThemeTempalteUtil = var_3_10001
-
-				local var_3_0 = var_3_10001.UploadTexture
-				local var_3_1 = var_1_3
-
-				var_3_0(var_3.GetTextureName(var_3_1), function(arg_4_0)
+				BackYardThemeTempalteUtil.UploadTexture(var_1_1:GetTextureName(), function(arg_4_0)
 					if arg_4_0 then
 						arg_3_0()
 					end
@@ -43,12 +43,7 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 				return
 			end,
 			function(arg_5_0)
-				BackYardThemeTempalteUtil = var_3_10001
-
-				local var_5_0 = var_3_10001.UploadTexture
-				local var_5_1 = var_1_3
-
-				var_5_0(var_3.GetTextureIconName(var_5_1), function(arg_6_0)
+				BackYardThemeTempalteUtil.UploadTexture(var_1_1:GetTextureIconName(), function(arg_6_0)
 					if arg_6_0 then
 						arg_5_0()
 					end
@@ -59,67 +54,15 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 				return
 			end
 		}, function()
-			pg = var_3_10000
-
-			local var_7_0 = var_3_10000.UIMgr.GetInstance()
-
-			var_0.LoadingOff(var_7_0)
+			pg.UIMgr.GetInstance():LoadingOff()
 			arg_2_0()
 
 			return
 		end)
 
 		return
-	end
-
-	local function var_1_5(arg_8_0)
-		local var_8_0 = var_1_3
-
-		var_1.Upload(var_8_0)
-
-		local var_8_1 = var_0
-
-		var_1.UpdateCustomThemeTemplate(var_8_1, var_1_3)
-
-		local var_8_2 = arg_1_0
-		local var_8_3 = var_1.sendNotification
-
-		GAME = var_4
-
-		var_8_3(var_8_2, var_4.BACKYARD_UPLOAD_THEME_TEMPLATE_DONE)
-
-		return
-	end
-
-	local function var_1_6()
-		pg = var_2_10000
-
-		local var_9_0 = var_2_10000.ConnectionMgr.GetInstance()
-
-		var_0.Send(var_9_0, 19111, {
-			pos = var_1_3.pos
-		}, 19112, function(arg_10_0)
-			if arg_10_0.result == 0 then
-				var_1_5(arg_10_0)
-			else
-				pg = var_1
-
-				local var_10_0 = var_1.TipsMgr.GetInstance()
-				local var_10_1 = var_1.ShowTips
-
-				ERROR_MESSAGE = var_3_10004
-
-				var_10_1(var_10_0, var_3_10004[arg_10_0.result] .. arg_10_0.result)
-			end
-
-			return
-		end)
-
-		return
-	end
-
-	var_1_4(function()
-		var_1_6()
+	end)(function()
+		var_1_3()
 
 		return
 	end)
@@ -127,4 +70,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

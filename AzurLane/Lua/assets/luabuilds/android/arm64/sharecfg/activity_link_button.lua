@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_link_button") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_link_button"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_link_button = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_link_button
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_link_button = rawget(pg, "activity_link_button") or setmetatable({
+	__name = "activity_link_button"
+}, confNEO)
+pg.activity_link_button.all = {
 	1,
 	2,
 	9,
@@ -61,11 +38,7 @@ var_0_3.all = {
 	121,
 	122
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_link_button
-
-var_0_4.get_id_list_by_name = {
+pg.activity_link_button.get_id_list_by_name = {
 	event_Atelier = {
 		80
 	},
@@ -98,6 +71,7 @@ var_0_4.get_id_list_by_name = {
 		116
 	},
 	event_core_2 = {
+		110,
 		113,
 		115
 	},
@@ -129,7 +103,6 @@ var_0_4.get_id_list_by_name = {
 	event_minigame = {
 		20,
 		108,
-		110,
 		122
 	},
 	event_old_act = {
@@ -151,25 +124,11 @@ var_0_4.get_id_list_by_name = {
 		107
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_link_button = {}
+pg.base = pg.base or {}
+pg.base.activity_link_button = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_link_button
-
-	var_1_0[1] = {
+	pg.base.activity_link_button[1] = {
 		param = "0",
 		name = "event_all",
 		text_pic = "text_event_all",
@@ -183,11 +142,7 @@ var_0_4.base.activity_link_button = {}
 			51033
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_link_button
-
-	var_1_1[2] = {
+	pg.base.activity_link_button[2] = {
 		param = "5871",
 		name = "event_all",
 		time = "stop",
@@ -198,11 +153,7 @@ var_0_4.base.activity_link_button = {}
 		group_id = 1,
 		order = 2
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_link_button
-
-	var_1_2[9] = {
+	pg.base.activity_link_button[9] = {
 		param = "0",
 		name = "event_all",
 		time = "always",
@@ -213,11 +164,7 @@ var_0_4.base.activity_link_button = {}
 		group_id = 1,
 		order = 99
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_link_button
-
-	var_1_3[10] = {
+	pg.base.activity_link_button[10] = {
 		param = "",
 		name = "event_map",
 		text_pic = "text_event_map",
@@ -228,14 +175,10 @@ var_0_4.base.activity_link_button = {}
 		order = 1,
 		time = {
 			"default",
-			51071
+			51101
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_link_button
-
-	var_1_4[11] = {
+	pg.base.activity_link_button[11] = {
 		name = "event_map_sub",
 		time = "stop",
 		text_pic = "text_event_map_sub",
@@ -248,11 +191,7 @@ var_0_4.base.activity_link_button = {}
 			"LiquorFloor"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_link_button
-
-	var_1_5[12] = {
+	pg.base.activity_link_button[12] = {
 		name = "event_sub_act",
 		text_pic = "text_event_map_sub",
 		type = 2,
@@ -268,11 +207,7 @@ var_0_4.base.activity_link_button = {}
 			"LiquorFloor"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_link_button
-
-	var_1_6[13] = {
+	pg.base.activity_link_button[13] = {
 		name = "event_old_act",
 		text_pic = "",
 		type = 2,
@@ -288,11 +223,7 @@ var_0_4.base.activity_link_button = {}
 			"LiquorFloor"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_link_button
-
-	var_1_7[20] = {
+	pg.base.activity_link_button[20] = {
 		name = "event_minigame",
 		time = "stop",
 		text_pic = "text_event_minigame",
@@ -305,11 +236,7 @@ var_0_4.base.activity_link_button = {}
 			"holiday villa map"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_link_button
-
-	var_1_8[21] = {
+	pg.base.activity_link_button[21] = {
 		name = "event_holidayVilla",
 		time = "stop",
 		text_pic = "text_event_minigame",
@@ -323,11 +250,7 @@ var_0_4.base.activity_link_button = {}
 			5922
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_link_button
-
-	var_1_9[30] = {
+	pg.base.activity_link_button[30] = {
 		param = "0",
 		name = "event_boss",
 		time = "stop",
@@ -338,11 +261,7 @@ var_0_4.base.activity_link_button = {}
 		group_id = 3,
 		order = 1
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_link_button
-
-	var_1_10[40] = {
+	pg.base.activity_link_button[40] = {
 		param = "0",
 		name = "event_escort",
 		text_pic = "text_event_escort",
@@ -355,11 +274,7 @@ var_0_4.base.activity_link_button = {}
 			"default"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_link_button
-
-	var_1_11[60] = {
+	pg.base.activity_link_button[60] = {
 		param = "0",
 		name = "event_LanternFestival",
 		text_pic = "text_event_LanternFestival",
@@ -373,11 +288,7 @@ var_0_4.base.activity_link_button = {}
 			5803
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_link_button
-
-	var_1_12[70] = {
+	pg.base.activity_link_button[70] = {
 		param = "0",
 		name = "event_aprilFool",
 		text_pic = "text_event_aprilFool",
@@ -391,11 +302,7 @@ var_0_4.base.activity_link_button = {}
 			5267
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_link_button
-
-	var_1_13[80] = {
+	pg.base.activity_link_button[80] = {
 		name = "event_Atelier",
 		text_pic = "text_event_Atelier",
 		type = 2,
@@ -411,11 +318,7 @@ var_0_4.base.activity_link_button = {}
 			"ATELIER_COMPOSITE"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_link_button
-
-	var_1_14[90] = {
+	pg.base.activity_link_button[90] = {
 		param = "0",
 		name = "event_series",
 		time = "stop",
@@ -426,11 +329,7 @@ var_0_4.base.activity_link_button = {}
 		group_id = 4,
 		order = 1
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_link_button
-
-	var_1_15[100] = {
+	pg.base.activity_link_button[100] = {
 		name = "event_medal",
 		text_pic = "text_event_medal",
 		type = 2,
@@ -446,11 +345,7 @@ var_0_4.base.activity_link_button = {}
 			"SENRANKAGURA_MEDAL"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_link_button
-
-	var_1_16[101] = {
+	pg.base.activity_link_button[101] = {
 		name = "event_senran",
 		text_pic = "text_event_senran",
 		type = 2,
@@ -466,11 +361,7 @@ var_0_4.base.activity_link_button = {}
 			"SENRANKAGURA_TRAIN"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_link_button
-
-	var_1_17[102] = {
+	pg.base.activity_link_button[102] = {
 		param = "0",
 		name = "event_boss_single",
 		time = "stop",
@@ -481,11 +372,7 @@ var_0_4.base.activity_link_button = {}
 		group_id = 4,
 		order = 1
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_link_button
-
-	var_1_18[103] = {
+	pg.base.activity_link_button[103] = {
 		name = "event_dreamland",
 		time = "stop",
 		text_pic = "text_event_minigame",
@@ -498,11 +385,7 @@ var_0_4.base.activity_link_button = {}
 			"DREAMLAND"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_link_button
-
-	var_1_19[104] = {
+	pg.base.activity_link_button[104] = {
 		name = "event_layer",
 		text_pic = "text_event_layer",
 		type = 14,
@@ -519,11 +402,7 @@ var_0_4.base.activity_link_button = {}
 			view = "ChildishnessSchoolPtPage"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_link_button
-
-	var_1_20[105] = {
+	pg.base.activity_link_button[105] = {
 		name = "event_boat_ad_game",
 		text_pic = "text_event_boat_ad_game",
 		type = 7,
@@ -539,11 +418,7 @@ var_0_4.base.activity_link_button = {}
 			68
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_link_button
-
-	var_1_21[106] = {
+	pg.base.activity_link_button[106] = {
 		name = "event_blackFriday",
 		text_pic = "text_event_blackfriday",
 		type = 2,
@@ -559,11 +434,7 @@ var_0_4.base.activity_link_button = {}
 			"BlackFridaySales"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_link_button
-
-	var_1_22[107] = {
+	pg.base.activity_link_button[107] = {
 		name = "event_tolove",
 		text_pic = "text_event_minigame",
 		type = 2,
@@ -579,11 +450,7 @@ var_0_4.base.activity_link_button = {}
 			"TOLOVE_COLLAB_BACKHILL"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_link_button
-
-	var_1_23[108] = {
+	pg.base.activity_link_button[108] = {
 		name = "event_minigame",
 		text_pic = "text_event_minigame",
 		type = 2,
@@ -599,11 +466,7 @@ var_0_4.base.activity_link_button = {}
 			"firework and spring"
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_link_button
-
-	var_1_24[109] = {
+	pg.base.activity_link_button[109] = {
 		param = "StarsCityCoreActivityUI",
 		name = "event_core",
 		text_pic = "text_event_core",
@@ -614,16 +477,12 @@ var_0_4.base.activity_link_button = {}
 		order = 1,
 		time = {
 			"default",
-			51086
+			51101
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_link_button
-
-	var_1_25[110] = {
+	pg.base.activity_link_button[110] = {
 		param = "RapidSeasideCoreActivityUI",
-		name = "event_minigame",
+		name = "event_core_2",
 		text_pic = "text_event_core3",
 		type = 16,
 		pic = "event_core3",
@@ -635,11 +494,7 @@ var_0_4.base.activity_link_button = {}
 			51090
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_link_button
-
-	var_1_26[111] = {
+	pg.base.activity_link_button[111] = {
 		param = "ALYCoreActivityUI",
 		name = "event_map_2",
 		text_pic = "text_event_ryzaAtelierRe",
@@ -653,11 +508,7 @@ var_0_4.base.activity_link_button = {}
 			50042
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_link_button
-
-	var_1_27[112] = {
+	pg.base.activity_link_button[112] = {
 		param = "0",
 		name = "event_second_map",
 		text_pic = "text_event_ryza_map",
@@ -671,11 +522,7 @@ var_0_4.base.activity_link_button = {}
 			50042
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_link_button
-
-	var_1_28[113] = {
+	pg.base.activity_link_button[113] = {
 		param = "EighthAnniversaryJpCoreActivityUI",
 		name = "event_core_2",
 		text_pic = "text_event_special",
@@ -689,11 +536,7 @@ var_0_4.base.activity_link_button = {}
 			50118
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_link_button
-
-	var_1_29[114] = {
+	pg.base.activity_link_button[114] = {
 		param = "WinterFestival2025CoreActivityUI",
 		name = "event_core",
 		text_pic = "text_event_core3",
@@ -707,11 +550,7 @@ var_0_4.base.activity_link_button = {}
 			50298
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_link_button
-
-	var_1_30[115] = {
+	pg.base.activity_link_button[115] = {
 		param = "AnniversaryNineCoreActivityUI",
 		name = "event_core_2",
 		text_pic = "text_event_core2",
@@ -725,11 +564,7 @@ var_0_4.base.activity_link_button = {}
 			50630
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_link_button
-
-	var_1_31[116] = {
+	pg.base.activity_link_button[116] = {
 		param = "HolidayCoreActivityUI",
 		name = "event_core",
 		text_pic = "text_event_core3",
@@ -743,11 +578,7 @@ var_0_4.base.activity_link_button = {}
 			51001
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_link_button
-
-	var_1_32[121] = {
+	pg.base.activity_link_button[121] = {
 		param = "",
 		name = "event_map",
 		text_pic = "text_event_map",
@@ -761,8 +592,7 @@ var_0_4.base.activity_link_button = {}
 			50825
 		}
 	}
-	pg = var_1_32
-	var_1_32.base.activity_link_button[122] = {
+	pg.base.activity_link_button[122] = {
 		param = "NieRAutomataCoreActivityUI",
 		name = "event_minigame",
 		text_pic = "text_event_core3",

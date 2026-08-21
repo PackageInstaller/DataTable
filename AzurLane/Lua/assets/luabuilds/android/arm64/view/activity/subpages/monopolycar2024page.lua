@@ -1,536 +1,237 @@
-﻿class = var_0_10000
-
-local var_0_0 = "MonopolyCar2024Page"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.startBtn = var_1.Find(var_1_0, "AD/start")
-
-	local var_1_1 = arg_1_0.startBtn
-	local var_1_2 = var_1.Find(var_1_1, "Text")
-	local var_1_3 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.leftCountTxt = var_1_3(var_1_2, var_4(var_1_10006))
-
-	local var_1_4 = arg_1_0._tf
-	local var_1_5 = var_1.Find(var_1_4, "AD/turn")
-	local var_1_6 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.turnCntTxt = var_1_6(var_1_5, var_4(var_1_10006))
-
-	local var_1_7 = arg_1_0._tf
-	local var_1_8 = var_1.Find(var_1_7, "AD/progress")
-	local var_1_9 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.progressTxt = var_1_9(var_1_8, var_4(var_1_10006))
-
-	local var_1_10 = {}
-	local var_1_11 = arg_1_0._tf
-
-	var_1_10[1] = var_2.Find(var_1_11, "AD/turn_awards/award_1")
-
-	local var_1_12 = arg_1_0._tf
-
-	var_1_10[2] = var_2.Find(var_1_12, "AD/turn_awards/award_2")
-
-	local var_1_13 = arg_1_0._tf
-
-	var_1_10[3] = var_2.Find(var_1_13, "AD/turn_awards/award_3")
-	arg_1_0.turnAwards = var_1_10
-
-	local var_1_14 = arg_1_0._tf
-
-	arg_1_0.turnGoBtn = var_1.Find(var_1_14, "AD/turn_awards/battle_btn")
-
-	local var_1_15 = arg_1_0._tf
-
-	arg_1_0.turnGetBtn = var_1.Find(var_1_15, "AD/turn_awards/get_btn")
-
-	local var_1_16 = arg_1_0._tf
-
-	arg_1_0.progressImage = var_1.Find(var_1_16, "AD/turn_awards/progress/bar")
-	onButton = var_1
-
-	local var_1_17 = arg_1_0
-	local var_1_18 = arg_1_0.startBtn
-
-	local function var_1_19()
-		if arg_1_0.activity then
-			local var_2_0 = arg_1_0.activity
-			local var_2_2
-
-			if var_2_2.isEnd(var_2_0) then
-				pg = var_2_2
-
-				local var_2_1 = var_2_2.TipsMgr.GetInstance()
-
-				var_2_2 = var_2_2.ShowTips
-				i18n = var_2_10003
-
-				var_2_2(var_2_1, var_2_10003("common_activity_end"))
-
-				return
-			end
-
-			ipairs = var_2_2
-
-			for iter_2_0, iter_2_1 in var_2_2(arg_1_0.turnAwards) do
-				setActive = var_2_10005
-
-				var_2_10005(iter_2_1:Find("mark/get"), false)
-			end
-
-			local var_2_3 = arg_1_0
-			local var_2_4 = var_0.emit
-
-			ActivityMediator = iter_2_0
-
-			var_2_4(var_2_3, iter_2_0.GO_MONOPOLY2024, arg_1_0.activity.id, function()
-				ipairs = var_3_10000
-
-				for iter_3_0, iter_3_1 in var_3_10000(arg_1_0.turnAwards) do
-					setActive = var_3_10005
-
-					var_3_10005(iter_3_1:Find("mark/get"), true)
-				end
-
-				return
-			end)
-
-			return
-		end
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_1_17, var_1_18, var_1_19, var_1_10006)
-
-	local var_1_20 = arg_1_0._tf
-
-	arg_1_0.taskGoBtn = var_1.Find(var_1_20, "AD/battle_btn")
-
-	local var_1_21 = arg_1_0._tf
-
-	arg_1_0.taskGetBtn = var_1.Find(var_1_21, "AD/get_btn")
-
-	local var_1_22 = arg_1_0._tf
-
-	arg_1_0.taskGotBtn = var_1.Find(var_1_22, "AD/got_btn")
-
-	local var_1_23 = arg_1_0._tf
-	local var_1_24 = var_1.Find(var_1_23, "AD/Text")
-	local var_1_25 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.taskDesc = var_1_25(var_1_24, var_4(var_1_10006))
-
-	local var_1_26 = arg_1_0._tf
-
-	arg_1_0.taskAward = var_1.Find(var_1_26, "AD/award")
-
-	local var_1_27 = arg_1_0._tf
-
-	arg_1_0.taskProgress = var_1.Find(var_1_27, "AD/taskProgress")
-
-	return
-end
-
-function var_0_1.OnDataSetting(arg_4_0)
-	return
-end
-
-function var_0_1.OnFirstFlush(arg_5_0)
-	return
-end
-
-function var_0_1.OnUpdateFlush(arg_6_0)
-	arg_6_0:UpdateTurnAwards()
-	arg_6_0:UpdateTask()
-
-	return
-end
-
-function var_0_1.UpdateTurnAwards(arg_7_0)
-	local var_7_0 = arg_7_0.activity
-	local var_7_1 = 3
-	local var_7_2
-
-	if not var_7_0.data1_list[3] then
-		var_7_2 = 1
-	end
-
-	local var_7_3 = var_7_2 - 1
-	local var_7_4
-
-	if not var_7_0.data1_list[6] then
-		var_7_4 = 0
-	end
-
-	local var_7_5 = arg_7_0.turnCntTxt
-
-	var_7_5.text = var_7_3 .. "/" .. var_7_1
-	math = var_7_5
-
-	local var_7_6 = var_7_5.max(var_7_0.data2, 1) - 1
-	local var_7_7
-
-	if not var_7_0:getDataConfig("map") then
-		var_7_7 = {}
-	end
-
-	local var_7_8
-
-	if var_7_6 / #var_7_7 == 0 and var_7_3 > 0 then
-		var_7_8 = 1
-	end
-
-	local var_7_9 = arg_7_0.progressTxt
-
-	string = var_10
-	var_7_9.text = var_10.format("%.1f", var_7_8 * 100) .. "%"
-
-	local var_7_10 = var_7_4 + 1
-	local var_7_11 = var_7_0:getDataConfig("sum_lap_reward_show")
-
-	ipairs = var_11
-
-	for iter_7_0, iter_7_1 in var_11(arg_7_0.turnAwards) do
-		local var_7_12 = var_7_11[iter_7_0]
-
-		Drop = var_1_10017
-		var_1_10017 = var_1_10017.New({
-			type = var_7_12[1],
-			id = var_7_12[2],
-			count = var_7_12[3]
-		})
-		updateDrop = var_1_10018
-
-		var_1_10018(iter_7_1:Find("mask"), var_1_10017)
-
-		onButton = var_1_10018
-
-		local var_7_13 = arg_7_0
-		local var_7_14 = iter_7_1
-
-		local function var_7_15()
-			local var_8_0 = arg_7_0
-			local var_8_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_8_1(var_8_0, var_2_10003.ON_DROP, var_1_10017)
-
-			return
-		end
-
-		SFX_PANEL = var_1_10023
-
-		var_1_10018(var_7_13, var_7_14, var_7_15, var_1_10023)
-
-		setActive = var_1_10018
-
-		var_1_10018(iter_7_1:Find("mark"), iter_7_0 == var_7_10)
-
-		setActive = var_1_10018
-
-		var_1_10018(iter_7_1:Find("got"), iter_7_0 <= var_7_4)
-	end
-
-	local var_7_16 = var_7_1 < var_7_10
-	local var_7_17 = var_7_10 <= var_7_3
-
-	setActive = var_13
-
-	var_13(arg_7_0.turnGoBtn, not var_7_17 and not var_7_16)
-
-	setActive = var_13
-
-	var_13(arg_7_0.turnGetBtn, var_7_17 and not var_7_16)
-
-	local var_7_18 = {
-		0.183,
-		0.587,
-		1
+﻿local var_0_0 = class("MonopolyCar2024Page", import("view.base.BaseActivityPage"))
+
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.startBtn = arg_1_0._tf:Find("AD/start")
+	arg_1_0.leftCountTxt = arg_1_0.startBtn:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.turnCntTxt = arg_1_0._tf:Find("AD/turn"):GetComponent(typeof(Text))
+	arg_1_0.progressTxt = arg_1_0._tf:Find("AD/progress"):GetComponent(typeof(Text))
+	arg_1_0.turnAwards = {
+		arg_1_0._tf:Find("AD/turn_awards/award_1"),
+		arg_1_0._tf:Find("AD/turn_awards/award_2"),
+		arg_1_0._tf:Find("AD/turn_awards/award_3")
 	}
+	arg_1_0.turnGoBtn = arg_1_0._tf:Find("AD/turn_awards/battle_btn")
+	arg_1_0.turnGetBtn = arg_1_0._tf:Find("AD/turn_awards/get_btn")
+	arg_1_0.progressImage = arg_1_0._tf:Find("AD/turn_awards/progress/bar")
 
-	if var_7_3 <= 0 then
-		setFillAmount = var_14
+	onButton(arg_1_0, arg_1_0.startBtn, function()
+		if not arg_1_0.activity or arg_1_0.activity:isEnd() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 
-		var_14(arg_7_0.progressImage, 0)
-	else
-		setFillAmount = var_14
-
-		local var_7_19 = arg_7_0.progressImage
-		local var_7_20
-
-		if not var_7_18[var_7_3] then
-			var_7_20 = 1
+			return
 		end
 
-		var_14(var_7_19, var_7_20)
-	end
-
-	pg = var_14
-
-	local var_7_21 = var_14.TimeMgr.GetInstance()
-	local var_7_22 = var_14.GetServerTime(var_7_21)
-	local var_7_23 = var_7_0.data1
-
-	math = var_7_21
-
-	local var_7_24 = var_7_21.ceil((var_7_22 - var_7_23) / 0) * var_7_0:getDataConfig("daily_time")
-	local var_7_25
-
-	if not var_7_0.data1_list[1] then
-		var_7_25 = 0
-	end
-
-	local var_7_26 = var_7_24 + var_7_25
-	local var_7_27
-
-	if not var_7_0.data1_list[2] then
-		var_7_27 = 0
-	end
-
-	local var_7_28 = var_7_26 - var_7_27
-	local var_7_29 = arg_7_0.leftCountTxt
-
-	i18n = var_1_10023
-	var_7_29.text = var_1_10023("MonopolyCar2024Game_total_num_tip", var_7_28)
-	onButton = var_7_29
-
-	local var_7_30 = arg_7_0
-	local var_7_31 = arg_7_0.turnGetBtn
-
-	local function var_7_32()
-		pg = var_2_10000
-
-		local var_9_0 = var_2_10000.m02
-		local var_9_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		local var_9_2 = var_2_10003.MONOPOLY_OP
-		local var_9_3 = {
-			activity_id = var_7_0.id,
-			arg1 = var_7_10
-		}
-
-		ActivityConst = var_5
-		var_9_3.cmd = var_5.MONOPOLY_OP_ROUND_AWD
-
-		var_9_1(var_9_0, var_9_2, var_9_3)
-
-		return
-	end
-
-	SFX_PANEL = var_1_10027
-
-	var_7_29(var_7_30, var_7_31, var_7_32, var_1_10027)
-
-	return
-end
-
-function var_0_1.UpdateTask(arg_10_0)
-	pg = var_1_10001
-
-	local var_10_0 = var_1_10001.activity_const.MONOPOLY_TASK_ACT_ID.act_id
-
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
-
-	local var_10_1 = var_1_10002(var_1_10004)
-
-	if not var_2.getActivityById(var_10_1, var_10_0) or var_2:isEnd() then
-		return
-	end
-
-	local var_10_2 = var_2:getConfig("config_data")[1]
-
-	getProxy = var_10_1
-	TaskProxy = var_6
-
-	local var_10_3 = var_10_1(var_6)
-	local var_10_4
-
-	if not var_4.getTaskById(var_10_3, var_10_2) and not var_4:getFinishTaskById(var_10_2) then
-		Task = var_10_4
-		var_10_4 = var_10_4.New({
-			id = var_10_2
-		})
-	end
-
-	local var_10_5 = var_4
-	local var_10_6 = var_4.getTaskById(var_10_5, var_10_2)
-	local var_10_7 = var_10_4
-	local var_10_8 = var_10_4.getConfig(var_10_7, "award_display")[1]
-
-	Drop = var_10_5
-
-	local var_10_9 = var_10_5.New({
-		type = var_10_8[1],
-		id = var_10_8[2],
-		count = var_10_8[3]
-	})
-
-	updateDrop = var_10_7
-
-	local var_10_10 = arg_10_0.taskAward
-
-	var_10_7(var_11.Find(var_10_10, "mask"), var_10_9)
-
-	onButton = var_10_7
-
-	local var_10_11 = arg_10_0
-	local var_10_12 = arg_10_0.taskAward
-
-	local function var_10_13()
-		local var_11_0 = arg_10_0
-		local var_11_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_11_1(var_11_0, var_2_10003.ON_DROP, var_10_9)
-
-		return
-	end
-
-	SFX_PANEL = var_14
-
-	var_10_7(var_10_11, var_10_12, var_10_13, var_14)
-
-	local var_10_14 = var_10_4
-	local var_10_15 = var_10_4.getConfig(var_10_14, "target_num")
-	local var_10_16, var_10_17
-
-	if var_10_6 ~= nil then
-		math = var_10_16
-		var_10_16 = var_10_16.min(var_10_4:getProgress(), var_10_15)
-		setSlider = var_10_14
-
-		var_10_14(arg_10_0.taskProgress, 0, var_10_15, var_10_16)
-
-		var_10_14 = var_10_4:getConfig("desc")
-		ipairs = var_10_17
-
-		for iter_10_2, iter_10_1 in var_10_17({
-			var_10_16
-		}) do
-			string = var_1_10017
-			var_10_14 = var_1_10017.gsub(var_10_14, "$" .. iter_10_2, iter_10_1)
+		for iter_2_0, iter_2_1 in ipairs(arg_1_0.turnAwards) do
+			setActive(iter_2_1:Find("mark/get"), false)
 		end
 
-		var_10_17 = arg_10_0.taskDesc
-		var_10_17.text = var_10_14
-
-		local var_10_18 = var_10_4
-
-		var_10_17 = var_10_4.isFinish(var_10_18)
-		iter_10_2 = var_10_4
-
-		local var_10_19 = var_10_4.isReceive(iter_10_2)
-
-		setActive = var_10_18
-
-		local var_10_20 = arg_10_0.taskGoBtn
-
-		var_1_10017 = not var_10_17 and not var_10_19
-
-		var_10_18(var_10_20, var_1_10017)
-
-		setActive = var_10_18
-
-		local var_10_21 = arg_10_0.taskGetBtn
-
-		var_1_10017 = var_10_17 and not var_10_19
-
-		var_10_18(var_10_21, var_1_10017)
-
-		setActive = var_10_18
-
-		var_10_18(arg_10_0.taskGotBtn, var_10_19)
-	else
-		var_10_16 = var_10_15
-		setSlider = var_10_14
-
-		var_10_14(arg_10_0.taskProgress, 0, var_10_15, var_10_16)
-
-		local var_10_22 = var_10_4:getConfig("desc")
-
-		ipairs = var_10_17
-
-		for iter_10_2, iter_10_3 in var_10_17({
-			var_10_16
-		}) do
-			string = var_1_10017
-			var_10_22 = var_1_10017.gsub(var_10_22, "$" .. iter_10_2, iter_10_3)
-		end
-
-		local var_10_23 = arg_10_0.taskDesc
-
-		var_10_23.text = var_10_22
-		setActive = var_10_23
-
-		var_10_23(arg_10_0.taskGoBtn, false)
-
-		setActive = var_10_23
-
-		var_10_23(arg_10_0.taskGetBtn, false)
-
-		setActive = var_10_23
-
-		var_10_23(arg_10_0.taskGotBtn, true)
-	end
-
-	onButton = var_10_16
-
-	local var_10_24 = arg_10_0
-	local var_10_25 = arg_10_0.taskGetBtn
-
-	local function var_10_26()
-		local var_12_0 = arg_10_0
-		local var_12_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_12_1(var_12_0, var_2_10003.ON_TASK_SUBMIT, var_10_4, function(arg_13_0)
-			if arg_13_0 then
-				local var_13_0 = arg_10_0
-
-				var_1.OnUpdateFlush(var_13_0)
+		arg_1_0:emit(ActivityMediator.GO_MONOPOLY2024, arg_1_0.activity.id, function()
+			for iter_3_0, iter_3_1 in ipairs(arg_1_0.turnAwards) do
+				setActive(iter_3_1:Find("mark/get"), true)
 			end
 
 			return
 		end)
 
 		return
+	end, SFX_PANEL)
+
+	arg_1_0.taskGoBtn = arg_1_0._tf:Find("AD/battle_btn")
+	arg_1_0.taskGetBtn = arg_1_0._tf:Find("AD/get_btn")
+	arg_1_0.taskGotBtn = arg_1_0._tf:Find("AD/got_btn")
+	arg_1_0.taskDesc = arg_1_0._tf:Find("AD/Text"):GetComponent(typeof(Text))
+	arg_1_0.taskAward = arg_1_0._tf:Find("AD/award")
+	arg_1_0.taskProgress = arg_1_0._tf:Find("AD/taskProgress")
+
+	return
+end
+
+function var_0_0.OnDataSetting(arg_4_0)
+	return
+end
+
+function var_0_0.OnFirstFlush(arg_5_0)
+	return
+end
+
+function var_0_0.OnUpdateFlush(arg_6_0)
+	arg_6_0:UpdateTurnAwards()
+	arg_6_0:UpdateTask()
+
+	return
+end
+
+function var_0_0.UpdateTurnAwards(arg_7_0)
+	local var_7_0 = arg_7_0.activity
+	local var_7_1 = arg_7_0.activity.data1_list[3] or 1
+	local var_7_2 = var_7_1 - 1
+	local var_7_3 = arg_7_0.activity.data1_list[6] or 0
+
+	arg_7_0.turnCntTxt.text = var_7_2 .. "/" .. 3
+
+	local var_7_4 = arg_7_0.activity:getDataConfig("map") or {}
+	local var_7_5 = (math.max(arg_7_0.activity.data2, 1) - 1) / #var_7_4
+
+	if var_7_5 == 0 and var_7_2 > 0 then
+		var_7_5 = 1
 	end
 
-	SFX_PANEL = iter_10_2
+	arg_7_0.progressTxt.text = string.format("%.1f", var_7_5 * 100) .. "%"
 
-	var_10_16(var_10_24, var_10_25, var_10_26, iter_10_2)
+	local var_7_6 = var_7_3 + 1
+	local var_7_7 = arg_7_0.activity:getDataConfig("sum_lap_reward_show")
+
+	for iter_7_0, iter_7_1 in ipairs(arg_7_0.turnAwards) do
+		updateDrop(iter_7_1:Find("mask"), (Drop.New({
+			type = var_7_7[iter_7_0][1],
+			id = var_7_7[iter_7_0][2],
+			count = var_7_7[iter_7_0][3]
+		})))
+		onButton(arg_7_0, iter_7_1, function()
+			arg_7_0:emit(BaseUI.ON_DROP, var_0)
+
+			return
+		end, SFX_PANEL)
+		setActive(iter_7_1:Find("mark"), iter_7_0 == var_7_6)
+		setActive(iter_7_1:Find("got"), iter_7_0 <= var_7_3)
+	end
+
+	local var_7_8 = 3 < var_7_6
+	local var_7_9 = var_7_6 <= var_7_2
+
+	setActive(arg_7_0.turnGoBtn, not (var_7_6 <= var_7_2) and not var_7_8)
+	setActive(arg_7_0.turnGetBtn, var_7_9 and not var_7_8)
+
+	if var_7_2 <= 0 then
+		setFillAmount(arg_7_0.progressImage, 0)
+	else
+		local var_7_11 = ({
+			0.183,
+			0.587,
+			1
+		})[var_7_2]
+
+		if not ({
+			0.183,
+			0.587,
+			1
+		})[var_7_2] then
+			var_7_11 = 1
+		end
+
+		var_7_10(arg_7_0.progressImage, var_7_11)
+	end
+
+	local var_7_12 = pg.TimeMgr.GetInstance()
+	local var_7_13 = arg_7_0.activity.data1_list[1] or 0
+	local var_7_14 = math.ceil((var_7_12:GetServerTime() - arg_7_0.activity.data1) / 0) * arg_7_0.activity:getDataConfig("daily_time") + var_7_13
+	local var_7_15 = arg_7_0.activity.data1_list[2] or 0
+
+	arg_7_0.leftCountTxt.text = i18n("MonopolyCar2024Game_total_num_tip", var_7_14 - var_7_15)
+
+	onButton(arg_7_0, arg_7_0.turnGetBtn, function()
+		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
+			activity_id = var_7_0.id,
+			arg1 = var_7_6,
+			cmd = ActivityConst.MONOPOLY_OP_ROUND_AWD
+		})
+
+		return
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnHideFlush(arg_14_0)
+function var_0_0.UpdateTask(arg_10_0)
+	local var_10_0 = getProxy(ActivityProxy):getActivityById(pg.activity_const.MONOPOLY_TASK_ACT_ID.act_id)
+
+	if not var_10_0 or var_10_0:isEnd() then
+		return
+	end
+
+	local var_10_1 = var_10_0:getConfig("config_data")[1]
+	local var_10_2 = getProxy(TaskProxy)
+	local var_10_3 = var_10_2:getTaskById(var_10_1) or var_10_2:getFinishTaskById(var_10_1) or Task.New({
+		id = var_10_1
+	})
+	local var_10_4 = var_10_2:getTaskById(var_10_1)
+	local var_10_5 = var_10_3:getConfig("award_display")[1]
+
+	updateDrop(arg_10_0.taskAward:Find("mask"), (Drop.New({
+		type = var_10_5[1],
+		id = var_10_5[2],
+		count = var_10_5[3]
+	})))
+	onButton(arg_10_0, arg_10_0.taskAward, function()
+		arg_10_0:emit(BaseUI.ON_DROP, var_0)
+
+		return
+	end, SFX_PANEL)
+
+	local var_10_6 = var_10_3:getConfig("target_num")
+
+	if var_10_4 ~= nil then
+		local var_10_7 = math.min(var_10_3:getProgress(), var_10_6)
+
+		setSlider(arg_10_0.taskProgress, 0, var_10_6, var_10_7)
+
+		local var_10_8 = var_10_3:getConfig("desc")
+
+		for iter_10_0, iter_10_1 in ipairs({
+			var_10_7
+		}) do
+			var_10_8 = string.gsub(var_10_8, "$" .. iter_10_0, iter_10_1)
+		end
+
+		arg_10_0.taskDesc.text = var_10_8
+
+		local var_10_9 = var_10_3:isFinish()
+		local var_10_10 = var_10_3:isReceive()
+
+		setActive(arg_10_0.taskGoBtn, not var_10_9 and not var_10_10)
+		setActive(arg_10_0.taskGetBtn, var_10_9 and not var_10_10)
+		setActive(arg_10_0.taskGotBtn, var_10_10)
+	else
+		local var_10_11 = var_10_6
+
+		setSlider(arg_10_0.taskProgress, 0, var_10_6, var_10_6)
+
+		local var_10_12 = var_10_3:getConfig("desc")
+
+		for iter_10_2, iter_10_3 in ipairs({
+			var_10_11
+		}) do
+			var_10_12 = string.gsub(var_10_12, "$" .. iter_10_2, iter_10_3)
+		end
+
+		arg_10_0.taskDesc.text = var_10_12
+
+		setActive(arg_10_0.taskGoBtn, false)
+		setActive(arg_10_0.taskGetBtn, false)
+		setActive(arg_10_0.taskGotBtn, true)
+	end
+
+	onButton(arg_10_0, arg_10_0.taskGetBtn, function()
+		arg_10_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_10_3, function(arg_13_0)
+			if arg_13_0 then
+				arg_10_0:OnUpdateFlush()
+			end
+
+			return
+		end)
+
+		return
+	end, SFX_PANEL)
+
 	return
 end
 
-function var_0_1.OnDestroy(arg_15_0)
+function var_0_0.OnHideFlush(arg_14_0)
 	return
 end
 
-return var_0_1
+function var_0_0.OnDestroy(arg_15_0)
+	return
+end
+
+return var_0_0

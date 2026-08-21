@@ -231,7 +231,22 @@ function getHeroScrollList(self, cusHeroList, selectSortType, isDescending, sele
     end
     -- end
 
-    return heroScrollList, idDic
+    local list = {}
+    local likeList = {}
+    for i = 1, #heroScrollList, 1 do
+        local heroVo = heroScrollList[i]:getDataVo()
+        if heroVo.isLike == 1 then
+            table.insert(likeList, heroScrollList[i])
+        else
+            table.insert(list, heroScrollList[i])
+        end
+    end
+
+    for i = 1, #list, 1 do
+        table.insert(likeList, list[i])
+    end
+
+    return likeList, idDic
 end
 
 function getHeroStarLevel(self, star)

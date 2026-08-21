@@ -19,16 +19,22 @@ function __initData(self)
 
     self.mAddBuffList = {}
     self.mRemoveBuffList = {}
+
+    self.mAddCollList = {}
+    self.mRemoveCollList = {}
 end
 
 -- 析构函数
 function dtor(self)
 end
 
-
 --- 判断当前是否是调试模式
 function getIsDebug(self)
-    return true
+    return false
+end
+
+function getSeabedEndIsPass(self)
+    return self:getSeabedStoryListIsUnLock(101002)
 end
 
 --- 判断是否可以显示红点
@@ -42,56 +48,70 @@ function getRedFlag(self)
     return canRed
 end
 
-
 --- 判断是否能够获取某个天赋
 -- @return 如果可以获取天赋则返回true，否则返回false
 function canGetTalent(self)
     -- 获取海底天赋数据字典
     local dic = self:getSeabedTalentData()
     -- 获取当前拥有的天赋点数量
-    local hasTalentPoint = seabed.SeabedManager:getSeabedTalentPoint()
-    
+    -- local hasTalentPoint = seabed.SeabedManager:getSeabedTalentPoint()
+
     -- 遍历字典中的每个天赋项
     for id, vo in pairs(dic) do
-        -- 初始化预设解锁状态为true
-        local isPreUnLock = true 
-        
-        -- 检查前置条件是否全部满足
-        for i = 1, #vo.preId, 1 do
-            isPreUnLock = isPreUnLock and self:getSeabedTalentMsgDataById(vo.preId[i])
-        end
-        
-        -- 检查当前天赋是否未解锁
-        local isUnLock = self:getSeabedTalentMsgDataById(vo.id)
-        
-        -- 如果拥有的天赋点足够，且当前天赋未解锁，且前置条件全部满足，则可以获取该天赋
-        if hasTalentPoint >= vo.needTalent and isUnLock == false and isPreUnLock == true then
+        if self:canGetTalentSingle(vo) then
             return true
         end
+        -- -- 初始化预设解锁状态为true
+        -- local isPreUnLock = true 
+
+        -- -- 检查前置条件是否全部满足
+        -- for i = 1, #vo.preId, 1 do
+        --     isPreUnLock = isPreUnLock and self:getSeabedTalentMsgDataById(vo.preId[i])
+        -- end
+
+        -- -- 检查当前天赋是否未解锁
+        -- local isUnLock = self:getSeabedTalentMsgDataById(vo.id)
+
+        -- -- 如果拥有的天赋点足够，且当前天赋未解锁，且前置条件全部满足，则可以获取该天赋
+        -- if hasTalentPoint >= vo.needTalent and isUnLock == false and isPreUnLock == true then
+        --     return true
+        -- end
     end
-    
+
     -- 如果没有可以获取的天赋，则返回false
     return false
 end
 
+function canGetTalentSingle(self, vo)
+    local hasTalentPoint = seabed.SeabedManager:getSeabedTalentPoint()
+    local isPreUnLock = true
+    for i = 1, #vo.preId, 1 do
+        isPreUnLock = isPreUnLock and self:getSeabedTalentMsgDataById(vo.preId[i])
+    end
+    local isUnLock = self:getSeabedTalentMsgDataById(vo.id)
+    if hasTalentPoint >= vo.needTalent and isUnLock == false and isPreUnLock == true then
+        return true
+    end
+    return false
+end
 
 -- 判断是否可以获取任务
 -- @return 如果存在未开始的任务，则返回true，否则返回false
 function canGetTask(self)
-    -- 检查是否有任务信息
-    if self.taskInfo then
-        -- 遍历任务列表
-        for i = 1, #self.taskInfo, 1 do
-            if self.taskInfo[i].state == 0 then
-                -- 可以获取任务
-                return true
-            end
-        end
-    end
     -- 没有可以获取的任务
-    return false
+    return self:canGetTaskByType(seabed.SeabedTaskType.Def) or self:canGetTaskByType(seabed.SeabedTaskType.High)
 end
 
+function canGetTaskByType(self, type)
+    local taskList = self:getSeabedTaskDataByType(type)
+    for i = 1, #taskList do
+        local msg = self:getSeabedTaskMsgData(taskList[i].id)
+        if msg and msg.state == 0 then
+            return true
+        end
+    end
+    return false
+end
 
 --- 判断是否能够获取增益或收藏品奖励
 -- @return 如果可以获取任一类型的奖励，则返回true，否则返回false
@@ -104,11 +124,10 @@ function canGetBuffOrColl(self)
 
 end
 
-
 --- 判断是否能够获取特定类型的增益或收藏品奖励
 -- @param type 奖励类型，应为seabed.SeabedBattleType.Collage或seabed.SeabedBattleType.Buff
 -- @return 如果可以获取指定类型的奖励，则返回true，否则返回false
-function canGetGain(self,type)
+function canGetGain(self, type)
     local hasNum = 0
     local dic = {}
     local rewardData = seabed.SeabedManager:getSeabedCollectionRewardData()
@@ -136,7 +155,6 @@ function canGetGain(self,type)
 
 end
 
-
 -- 判断是否可以获取故事
 -- @param self 当前对象实例
 -- @return 如果存在未获取但已解锁的故事，则返回true，否则返回false
@@ -148,7 +166,7 @@ function canGetStory(self)
         -- 判断指定ID的故事是否已获取
         local isGet = self:getSeabedStoryAwardIsGet(id)
         -- 判断指定ID的故事是否已解锁
-        local isUnLock = self:getSeabedStoryListIsUnLock(id)
+        local isUnLock = self:getSeabedStoryListIsUnLock(vo.storyId)
         -- 如果故事未获取且已解锁，则可以获取故事
         if isGet == false and isUnLock == true then
             return true
@@ -187,27 +205,37 @@ function parseSeabedTaskMsgUpdate(self, msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TASK_PANEL)
 end
 
-function getSeabedStoryListIsUnLock(self,id)
+function parseSeabedStoryListMsg(self, msg)
+    for i = 1, #msg.story_list do
+        table.insert(self.storyList, msg.story_list[i])
+    end
+    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
+end
+
+function getSeabedStoryListIsUnLock(self, id)
     if self.storyList then
-        return table.indexof01(self.storyList,id) > 0
+        return table.indexof01(self.storyList, id) > 0
     else
         return false
     end
 end
 
-function getSeabedStoryAwardIsGet(self,id)
-    return table.indexof01(self.gainedShowroomReward, id) > 0
+function getSeabedStoryAwardIsGet(self, id)
+    if self.gainedShowroomReward then
+        return table.indexof01(self.gainedShowroomReward, id) > 0
+    end
+    return false
 end
 
-function parseSeabedStoryAwardMsg(self,msg)
+function parseSeabedStoryAwardMsg(self, msg)
     table.insert(self.gainedShowroomReward, msg.id)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_STORY_AWARD_PANEL)
 end
 
-function parseSeabedRankListMsg(self,msg)
-    self.rankId = msg.rankId 
-    self.myRank = msg.my_rank 
+function parseSeabedRankListMsg(self, msg)
+    self.rankId = msg.rankId
+    self.myRank = msg.my_rank
     self.myRankValue = msg.my_rank_val
     self.rankList = msg.rank_list
 
@@ -226,8 +254,7 @@ function getSeabedRankList(self)
     return self.rankList
 end
 
-
-function parseSeabedTalentMsg(self,msg)
+function parseSeabedTalentMsg(self, msg)
     self.talentInfo = msg.talent_info
     self.talentAttr = msg.talent_attr
 
@@ -239,9 +266,9 @@ function getTalentAttr(self)
     return self.talentAttr
 end
 
-function getSeabedTalentMsgDataById(self,id)
+function getSeabedTalentMsgDataById(self, id)
     if self.talentList then
-        return table.indexof01(self.talentList,id) > 0
+        return table.indexof01(self.talentList, id) > 0
     else
         return false
     end
@@ -251,8 +278,10 @@ function getSeabedTalentUnlockNum(self)
     return #self.talentList
 end
 
-function parseSeabedTalentPointMsg(self,msg)
+function parseSeabedTalentPointMsg(self, msg)
     self.talentPoint = msg.talent_point
+
+    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TALENT_PANEL)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
 end
 
@@ -260,10 +289,12 @@ function getSeabedTalentPoint(self)
     return self.talentPoint and self.talentPoint or 0
 end
 
-function parseSeabedUnlockTalentMsg(self,msg)
+function parseSeabedUnlockTalentMsg(self, msg)
     table.insert(self.talentList, msg.talent_id)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
-    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TALENT_PANEL)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TALENT_PANEL, {
+        id = msg.talent_id
+    })
 end
 
 function getSeabedTaskMsgData(self, id)
@@ -283,10 +314,16 @@ function getSeabedTaskMsgData(self, id)
 end
 
 function getCurBuffList(self)
+    table.sort(self.buffList, function(a, b)
+        return a < b
+    end)
     return self.buffList
 end
 
 function getCurCollectionList(self)
+    table.sort(self.collageList, function(a, b)
+        return a < b
+    end)
     return self.collageList
 end
 
@@ -306,10 +343,27 @@ function parseSeabedPrewarMsg(self, msg)
         if self.curStep == seabed.SeabedStepType.Skill then
             GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_SKILL_PANEL)
         elseif self.curStep == seabed.SeabedStepType.Finish then
-            GameDispatcher:dispatchEvent(EventName.SHOW_SEABED_TOP_PANEL)
-            GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAP_PANEL)
+            local function openMapPanel()
+                self:setIsFirstShowMap()
+                GameDispatcher:dispatchEvent(EventName.SHOW_SEABED_TOP_PANEL)
+                GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAP_PANEL)
+            end
+            self:resetNeedShowFirstLayer()
+            GameDispatcher:dispatchEvent(EventName.OPEB_SEABED_SHOW_LAYER_PANEL, {
+                callback = openMapPanel
+            })
         end
     end
+end
+
+function setIsFirstShowMap(self)
+    self.firstShowMap = true
+end
+
+function getIsFirstShowMap(self)
+    local firstShowMap = self.firstShowMap
+    self.firstShowMap = false
+    return firstShowMap
 end
 
 function getHeroList(self)
@@ -336,15 +390,13 @@ end
 function parseSeabedResourceMsg(self, msg)
     self.oldCoin = self.coin and self.coin or 0
     self.oldActionPoint = self.actionPoint and self.actionPoint or 0
-
     self.coin = msg.resource_info.coin
     self.actionPoint = msg.resource_info.action_point
-
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TOP_PANEL)
 end
 
 function getOldSeabedResource(self)
-    return self.oldActionPoint,self.oldCoin
+    return self.oldActionPoint, self.oldCoin
 end
 
 function getSeabedResource(self)
@@ -356,7 +408,18 @@ function parseSeabedLineMsg(self, msg)
     self.lineId = self.lineInfo.id
     self.layer = self.lineInfo.layer
     self.cellList = self.lineInfo.cell_list
+
+    self.needShowFirstLayer = true
+    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TOP_PANEL)
     cusLog("获得了初始化的线段数据|线段id:" .. self.lineId .. " 层数:" .. self.layer)
+end
+
+function resetNeedShowFirstLayer(self)
+    self.needShowFirstLayer = nil
+end
+
+function getNeedShowFirstLayer(self)
+    return self.needShowFirstLayer
 end
 
 function getCurEventType(self)
@@ -372,7 +435,6 @@ function getMsgCellDataById(self, cellId)
 end
 
 function parseSeabedUpdateCellMsg(self, msg)
-
     if self.cellList then
         for i = 1, #self.cellList do
             if self.cellList[i].id == msg.cell_info.id then
@@ -380,17 +442,14 @@ function parseSeabedUpdateCellMsg(self, msg)
             end
         end
     end
-
-    -- self.cellInfo = msg.cell_info
     self.curCell = msg.cur_cell
     self.eventType = msg.event_type
     self.hisEventType = msg.history_event_type
     self.battleInfo = msg.battle_info
-
     self.shopInfo = msg.shop_info
     self.passCell = msg.pass_cell
+    self.passBranchCell = msg.pass_branch_cell
     self.eventSelectBuff = msg.event_select_buff
-
     self.battleStep = self.battleInfo.battle_step
     self.battleDupId = self.battleInfo.battle_dup_id
     self.postwarArgs = self.battleInfo.postwar_args
@@ -398,11 +457,16 @@ function parseSeabedUpdateCellMsg(self, msg)
     self.costCount = self.battleInfo.cost_coin
     self.postwarBuffReset = self.battleInfo.postwar_buff_reset
     self.heroInfo = self.battleInfo.hero_list
-    
 
-    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_MAP_PANEL)
-    GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_SHOP_PANEL)
+    LoopManager:addFrame(1, 1, self, function()
+        GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_SHOP_PANEL)
+        GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_MAP_PANEL)
+    end)
     cusLog("更新了格子数据| 当前格子:" .. self.curCell .. " 事件类型:" .. self.eventType)
+end
+
+function getIsFirstBranchCell(self)
+    return #self.passBranchCell == 0
 end
 
 function getEventSelectBuff(self)
@@ -410,12 +474,28 @@ function getEventSelectBuff(self)
 end
 
 function getCanResest(self)
-    return self.postwarBuffReset == 0 
+    return self.postwarBuffReset == 0
 end
 
 function getTodoSomeEvent(self, call)
     cusLog("执行格子事件 当前格子:" .. self.curCell .. " 事件类型:" .. self.eventType ..
                " 历史事件类型:" .. self.hisEventType)
+
+    if self.needShowFirstLayer then
+        local function openMapPanel()
+            seabed.SeabedManager:setIsFirstShowMap()
+            GameDispatcher:dispatchEvent(EventName.SHOW_SEABED_TOP_PANEL)
+            GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_MAP_PANEL)
+        end
+
+        GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_ALL_PANEL)
+
+        seabed.SeabedManager:resetNeedShowFirstLayer()
+        GameDispatcher:dispatchEvent(EventName.OPEB_SEABED_SHOW_LAYER_PANEL, {
+            callback = openMapPanel
+        })
+        return
+    end
 
     -- 以前是默认的地图界面
     if self.hisEventType == seabed.SeabedEventType.Def or self.hisEventType == seabed.SeabedEventType.Cycle then
@@ -423,7 +503,8 @@ function getTodoSomeEvent(self, call)
         if self.eventType == seabed.SeabedEventType.Def then
             if self.eventType == seabed.SeabedEventType.Def then
                 -- 无需执行任何操作
-                if self:canShowAddBuff() or self:canShowRemoveBuff() then
+                if self:canShowAddBuff() or self:canShowRemoveBuff() or self:canShowAddColl() or
+                    self:canShowRemoveColl() then
                     GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_BUFF_CHANGE_PANEL)
                 end
             end
@@ -435,8 +516,12 @@ function getTodoSomeEvent(self, call)
             local battleStep = seabed.SeabedManager:getSeabedBattleStep()
             if battleStep == seabed.SeabedBattleStep.Formation then
                 seabed.SeabedManager:setIsDefFormation(true)
+
+                -- LoopManager:setTimeout(0.1, self, function()
                 formation.checkFormationFight(PreFightBattleType.Seabed, DupType.Seaded,
                     seabed.SeabedManager:getSeabedBattleDupId(), formation.TYPE.SEABED, nil, nil)
+                -- end)
+
             end
             -- 地图->商店
         elseif self.eventType == seabed.SeabedEventType.Shop then
@@ -451,10 +536,10 @@ function getTodoSomeEvent(self, call)
     if self.hisEventType == seabed.SeabedEventType.Fight then
         -- 从战斗直接跳到地图界面
         if self.eventType == seabed.SeabedEventType.Def then
-            -- 如果有变更的buff需要先显示
-            if self:canShowAddBuff() or self:canShowRemoveBuff() then
-                GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_BUFF_CHANGE_PANEL)
-            end
+            -- -- 如果有变更的buff需要先显示
+            -- if self:canShowAddBuff() or self:canShowRemoveBuff() then
+            --     GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_BUFF_CHANGE_PANEL)
+            -- end
         end
 
         -- 如果是之前战斗类事件 现在还是战斗类界面事件 
@@ -472,6 +557,8 @@ function getTodoSomeEvent(self, call)
                     type = seabed.SeabedBattleType.Collage
                 })
             end
+        elseif self.eventType == seabed.SeabedEventType.Shop then
+            GameDispatcher:dispatchEvent(EventName.OPEN_SEABED_SHOP_PANEL)
         end
     end
 
@@ -488,6 +575,7 @@ function getTodoSomeEvent(self, call)
             })
         end
     end
+
 end
 
 function getCurCellId(self)
@@ -517,7 +605,10 @@ end
 function parseSeabedAddBuffMsg(self, msg)
     for i = 1, #msg.buff_list, 1 do
         table.insert(self.buffList, msg.buff_list[i])
-        table.insert(self.mAddBuffList, msg.buff_list[i])
+        if self.eventType == seabed.SeabedEventType.Def or self.eventType == seabed.SeabedEventType.Cycle or
+            self.eventType == seabed.SeabedEventType.Fight then
+            table.insert(self.mAddBuffList, msg.buff_list[i])
+        end
     end
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_BUFF_OPT)
 end
@@ -527,7 +618,10 @@ function parseSeabedDelectBuffMsg(self, msg)
         for j = 1, #msg.buff_list, 1 do
             if self.buffList[i] == msg.buff_list[j] then
                 table.remove(self.buffList, i)
-                table.insert(self.mRemoveBuffList, msg.buff_list[j])
+                if self.eventType == seabed.SeabedEventType.Def or self.eventType == seabed.SeabedEventType.Cycle or
+                    self.eventType == seabed.SeabedEventType.Fight then
+                    table.insert(self.mRemoveBuffList, msg.buff_list[j])
+                end
             end
         end
     end
@@ -561,27 +655,64 @@ end
 function parseSeabedAddCollectionMsg(self, msg)
     for i = 1, #msg.collage_list, 1 do
         table.insert(self.collageList, msg.collage_list[i])
+        if self.eventType == seabed.SeabedEventType.Def or self.eventType == seabed.SeabedEventType.Cycle or
+            self.eventType == seabed.SeabedEventType.Fight then
+            table.insert(self.mAddCollList, msg.collage_list[i])
+        end
     end
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_BUFF_OPT)
 end
 
 function parseSeabedDelectCollectionMsg(self, msg)
-    for i = #self.collage_list, 1, -1 do
-        for j = 1, #msg.buff_list, 1 do
-            if self.collage_list[i].id == msg.collage_list[j] then
-                table.remove(self.collage_list, i)
+    for i = #self.collageList, 1, -1 do
+        for j = 1, #msg.collage_list, 1 do
+            if self.collageList[i] == msg.collage_list[j] then
+                table.remove(self.collageList, i)
+                if self.eventType == seabed.SeabedEventType.Def or self.eventType == seabed.SeabedEventType.Cycle or
+                    self.eventType == seabed.SeabedEventType.Fight then
+                    table.insert(self.mRemoveCollList, msg.collage_list[j])
+                end
             end
         end
     end
+
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_BUFF_OPT)
+end
+
+function canShowAddColl(self)
+    return #self.mAddCollList > 0
+end
+
+function canShowRemoveColl(self)
+    return #self.mRemoveCollList > 0
+end
+
+function getAddCollList(self)
+    return self.mAddCollList
+end
+
+function getRemoveCollList(self)
+    return self.mRemoveCollList
+end
+
+function resetAddCollList(self)
+    self.mAddCollList = {}
+end
+
+function resetRemoveCollList(self)
+    self.mRemoveCollList = {}
 end
 
 function parseSeabedSettleMsg(self, msg)
     self.isPass = msg.is_pass
     self.point = msg.point
     self.statsList = msg.stats_list
-    self.talentPoint = msg.talent_point
+    self.addTalentPoint = msg.talent_point
     self.hasSettleData = true
+
+    self.pointMultiple = msg.point_multiple
+    self.difficulty = msg.difficulty
+    -- GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_TALENT_PANEL)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_MAIN_PANEL)
 end
@@ -597,12 +728,16 @@ function getSeabedIsPass(self)
 end
 
 function getSeabedSettInfo(self)
-    return self.point, self.talentPoint, self.statsList
+    return self.point, self.addTalentPoint, self.statsList
+end
+
+function getSeabedPointMultipleData(self)
+    return self.difficulty, self.pointMultiple
 end
 
 function resSeabedSettInfo(self)
     self.point = 0
-    self.talentPoint = 0
+    self.addTalentPoint = 0
     self.statsList = {}
     self.hasSettleData = false
 end
@@ -617,32 +752,56 @@ function parseSeabedHistoryMsg(self, msg)
     self.gainedShowroomReward = self.historyInfo.gained_showroom_reward_list
 
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
+
 end
 
-function parseSeabedGetCollectionOrBuffMsg(self,msg)
-    table.insert(self.gainCollageOrBuffRewardList,msg.id)
+function parseSeabedGetCollectionOrBuffMsg(self, msg)
+    table.insert(self.gainCollageOrBuffRewardList, msg.id)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_RED)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_COLLECTION_PANEL)
     GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_COLLECTION_AWARD_PANEL)
+
 end
 
 function getHisBuffNum(self)
-    return #self.hisBuffList
+    if self.hisBuffList ~= nil then
+        return #self.hisBuffList
+    else
+        return 0 
+    end
 end
 
 function getHisCollNum(self)
-    return #self.hisCollageList    
+    if self.hisCollageList ~= nil then
+        return #self.hisCollageList
+    else 
+        return 0
+    end
 end
 
-function getCollageOrBuffIsHas(self,id)
-    return table.indexof01(self.gainCollageOrBuffRewardList,id) > 0
+function getCollageOrBuffIsHas(self, id)
+    if self.gainCollageOrBuffRewardList then
+        return table.indexof01(self.gainCollageOrBuffRewardList, id) > 0
+    else
+        return false
+    end
+   
 end
 
 function getHisBuffIsHas(self, id)
-    return table.indexof01(self.hisBuffList,id) > 0
+    if self.hisBuffList then
+        return table.indexof01(self.hisBuffList, id) > 0
+    else
+        return false
+    end
 end
 
 function getHisCollectionIsHas(self, id)
-    return table.indexof01(self.hisCollageList,id) > 0
+    if self.hisCollageList then
+        return table.indexof01(self.hisCollageList, id) > 0
+    else
+        return false
+    end
 end
 
 function parseSeabedBuyGoodsMsg(self, msg)
@@ -652,7 +811,9 @@ function parseSeabedBuyGoodsMsg(self, msg)
         end
     end
 
-    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_SHOP_PANEL)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_SEABED_SHOP_PANEL, {
+        id = msg.goods_id
+    })
 end
 
 function getSeabedShopInfo(self)
@@ -697,15 +858,19 @@ end
 
 -- 获取解锁的难度
 function getDifficultyIsLock(self, id)
-    if id <= self:getHisMaxDifficulty() then
+    if id <= self:getHisUnLockMaxDifficulty() then
         return false
     else
         return true
     end
 end
 
-function getHisMaxDifficulty(self)
+function getHisUnLockMaxDifficulty(self)
     return gs.Mathf.Clamp(self.hisMaxDifficulty + 1, 0, self.mSeabedMaxDifficulty)
+end
+
+function getHisMaxDifficulty(self)
+    return self.hisMaxDifficulty
 end
 
 function getLineId(self)
@@ -822,6 +987,22 @@ function getSeabedMaxTeaser(self)
         self:parseSeabedTeaserData()
     end
     return self.mSeabedMaxTeaser
+end
+
+-- 获取额外的行动点
+function getExtraActionPoint(self)
+    local extra = 0
+    if self.teaserId ~= nil then
+        if self.mSeabedTeaserData == nil then
+            self:parseSeabedTeaserData()
+        end
+        for i = 1, #self.mSeabedTeaserData do
+            if self.mSeabedTeaserData[i].id <= self.teaserId then
+                extra = self.mSeabedTeaserData[i].extraActionPoint + extra
+            end
+        end
+    end
+    return extra
 end
 
 ------------------------------------------指挥官技能相关------------------------------------------
@@ -1177,20 +1358,20 @@ function getIsDefFormation(self)
     return self.isDefFormation
 end
 
-function setOpenIsPass(self,isPass)
-    self.isPass = isPass
+function setOpenIsPass(self, isPass)
+    self.openIsPass = isPass
 end
 
 function getOpenIsPass(self)
-    return self.isPass
+    return self.openIsPass
 end
 
-function setNeedShowTips(self,isNeed)
+function setNeedShowTips(self, isNeed)
     self.isNeedShowTips = isNeed
 end
 
 function getNeedShowTips(self)
-    return self.isNeedShowTips and self:getIsNotFirstShowTips()
+    return self.isNeedShowTips and self:getIsFirstShowTips()
 end
 
 function setFirstShowTips(self, isShow)
@@ -1203,6 +1384,14 @@ end
 
 function getDupName(self, cusId)
     return ""
+end
+
+function setLastTeaser(self, teaser)
+    self.lastTeaser = teaser
+end
+
+function getLastTeaser(self)
+    return self.lastTeaser and self.lastTeaser or 0
 end
 
 return _M

@@ -1,244 +1,83 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BackyardFeedExtendPage", import("....base.BaseSubView"))
 
-local var_0_0 = "BackyardFeedExtendPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("....base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackYardFeedExtendPanel"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "frame/tip/icon")
-	local var_2_2 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_2_0.icon = var_2_2(var_2_1, var_4(var_1_10006))
-
-	local var_2_3 = arg_2_0._tf
-	local var_2_4 = var_1.Find(var_2_3, "frame/tip/Text")
-	local var_2_5 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.consume = var_2_5(var_2_4, var_4(var_1_10006))
-
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_1.Find(var_2_6, "frame/desc")
-	local var_2_8 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.desc = var_2_8(var_2_7, var_4(var_1_10006))
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.addBtn = var_1.Find(var_2_9, "frame/confirm")
-
-	local var_2_10 = arg_2_0._tf
-
-	arg_2_0.cancelBtn = var_1.Find(var_2_10, "frame/cancel")
-
-	local var_2_11 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_11, "frame/close")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.icon = arg_2_0._tf:Find("frame/tip/icon"):GetComponent(typeof(Image))
+	arg_2_0.consume = arg_2_0._tf:Find("frame/tip/Text"):GetComponent(typeof(Text))
+	arg_2_0.desc = arg_2_0._tf:Find("frame/desc"):GetComponent(typeof(Text))
+	arg_2_0.addBtn = arg_2_0._tf:Find("frame/confirm")
+	arg_2_0.cancelBtn = arg_2_0._tf:Find("frame/cancel")
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close")
 	arg_2_0._parentTF = arg_2_0._tf.parent
-	setText = var_1
 
-	local var_2_12 = arg_2_0.cancelBtn
-	local var_2_13 = var_3.Find(var_2_12, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_13, var_4("word_cancel"))
-
-	setText = var_1
-
-	local var_2_14 = arg_2_0.addBtn
-	local var_2_15 = var_3.Find(var_2_14, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_15, var_4("word_ok"))
-
-	setText = var_1
-
-	local var_2_16 = arg_2_0._tf
-	local var_2_17 = var_3.Find(var_2_16, "frame/tip")
-
-	i18n = var_4
-
-	var_1(var_2_17, var_4("backyard_food_shop_tip"))
-
-	setText = var_1
-
-	local var_2_18 = arg_2_0._tf
-	local var_2_19 = var_3.Find(var_2_18, "frame/title")
-
-	i18n = var_4
-
-	var_1(var_2_19, var_4("words_information"))
+	setText(arg_2_0.cancelBtn:Find("Text"), i18n("word_cancel"))
+	setText(arg_2_0.addBtn:Find("Text"), i18n("word_ok"))
+	setText(arg_2_0._tf:Find("frame/tip"), i18n("backyard_food_shop_tip"))
+	setText(arg_2_0._tf:Find("frame/title"), i18n("words_information"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.cancelBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.closeBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0._tf
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-
-		var_0.Hide(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_7_0, arg_7_1, arg_7_2)
-	var_0_1.super.Show(arg_7_0)
+function var_0_0.Show(arg_7_0, arg_7_1, arg_7_2)
+	var_0_0.super.Show(arg_7_0)
 
-	pg = var_3
+	local var_7_0 = pg.shop_template[arg_7_1].resource_num
 
-	local var_7_0 = var_3.shop_template[arg_7_1].resource_type
-	local var_7_1 = var_3.resource_num
-
-	LoadSpriteAtlasAsync = var_1_10006
-
-	local var_7_2 = "props/"
-
-	id2res = var_1_10009
-
-	var_1_10006(var_7_2 .. var_1_10009(var_7_0), "", function(arg_8_0)
-		local var_8_0 = arg_7_0.icon
-
-		var_8_0.sprite = arg_8_0
-		tf = var_8_0
-
-		local var_8_1 = var_8_0(arg_7_0.icon.gameObject)
-
-		Vector2 = var_2_10002
-		var_8_1.sizeDelta = var_2_10002(50, 50)
+	LoadSpriteAtlasAsync("props/" .. id2res(pg.shop_template[arg_7_1].resource_type), "", function(arg_8_0)
+		arg_7_0.icon.sprite = arg_8_0
+		tf(arg_7_0.icon.gameObject).sizeDelta = Vector2(50, 50)
 
 		return
 	end)
 
-	arg_7_0.consume.text = var_7_1
+	arg_7_0.consume.text = pg.shop_template[arg_7_1].resource_num
+	arg_7_0.desc.text = i18n("backyard_backyardGranaryLayer_foodMaxIncreaseNotice", arg_7_2, arg_7_2 + pg.shop_template[arg_7_1].num)
 
-	local var_7_3 = arg_7_0.desc
-
-	i18n = var_1_10007
-	var_7_3.text = var_1_10007("backyard_backyardGranaryLayer_foodMaxIncreaseNotice", arg_7_2, arg_7_2 + var_3.num)
-	onButton = var_7_3
-
-	local var_7_4 = arg_7_0
-	local var_7_5 = arg_7_0.addBtn
-
-	local function var_7_6()
-		local var_9_0 = arg_7_0
-
-		var_0.Extend(var_9_0, {
-			resType = var_7_0,
-			resCount = var_7_1,
+	onButton(arg_7_0, arg_7_0.addBtn, function()
+		arg_7_0:Extend({
+			resType = var_0,
+			resCount = var_7_0,
 			shopId = arg_7_1
 		})
 
 		return
-	end
-
-	SFX_CONFIRM = var_11
-
-	var_7_3(var_7_4, var_7_5, var_7_6, var_11)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.Extend(arg_10_0, arg_10_1)
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
-
-	local var_10_0 = var_1_10002(var_1_10004)
-	local var_10_1 = var_2.getRawData(var_10_0)
-
-	id2res = var_1_10003
-
-	if var_10_1[var_1_10003(arg_10_1.resType)] < arg_10_1.resCount then
+function var_0_0.Extend(arg_10_0, arg_10_1)
+	if getProxy(PlayerProxy):getRawData()[id2res(arg_10_1.resType)] < arg_10_1.resCount then
 		if arg_10_1.resType == 4 then
-			GoShoppingMsgBox = var_3
-			i18n = var_5
-
-			local var_10_2 = "switch_to_shop_tip_3"
-
-			i18n = var_1_10008
-
-			local var_10_3 = var_5(var_10_2, var_1_10008("word_gem"))
-
-			ChargeScene = var_1_10006
-
-			var_3(var_10_3, var_1_10006.TYPE_DIAMOND)
+			GoShoppingMsgBox(i18n("switch_to_shop_tip_3", i18n("word_gem")), ChargeScene.TYPE_DIAMOND)
 		else
-			pg = var_3
-
-			local var_10_4 = var_3.TipsMgr.GetInstance()
-			local var_10_5 = var_3.ShowTips
-
-			i18n = var_1_10006
-
-			var_10_5(var_10_4, var_1_10006("backyard_backyardGranaryLayer_error_entendFail"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardGranaryLayer_error_entendFail"))
 		end
 	else
-		local var_10_6 = arg_10_0
-		local var_10_7 = arg_10_0.emit
-
-		BackyardFeedMediator = var_1_10006
-
-		var_10_7(var_10_6, var_1_10006.EXTEND, arg_10_1.shopId, 1)
+		arg_10_0:emit(BackyardFeedMediator.EXTEND, arg_10_1.shopId, 1)
 	end
 
 	arg_10_0:Hide()
@@ -246,16 +85,16 @@ function var_0_1.Extend(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.Hide(arg_11_0)
-	var_0_1.super.Hide(arg_11_0)
+function var_0_0.Hide(arg_11_0)
+	var_0_0.super.Hide(arg_11_0)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_12_0)
+function var_0_0.OnDestroy(arg_12_0)
 	arg_12_0:Hide()
 
 	return
 end
 
-return var_0_1
+return var_0_0

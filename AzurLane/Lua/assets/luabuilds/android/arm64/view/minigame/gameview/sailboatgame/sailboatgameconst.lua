@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatGameConst")
+﻿local var_0_0 = class("SailBoatGameConst")
 
 var_0_0.bg_layer_back = 1
 var_0_0.bg_layer_mid = 2
@@ -606,163 +604,110 @@ var_0_0.game_round = {
 		}
 	}
 }
-
-local var_0_1 = {}
-local var_0_2 = {
-	hp = 100,
-	id = 1,
-	tpl = "players/char_1"
+var_0_0.game_char = {
+	{
+		hp = 100,
+		id = 1,
+		tpl = "players/char_1",
+		speed = Vector2(300, 200),
+		group = var_0_0.player_group,
+		hit_group = {
+			var_0_0.enemy_group
+		},
+		range = Vector2(90, 140)
+	}
 }
-
-Vector2 = var_3
-var_0_2.speed = var_3(300, 200)
-var_0_2.group = var_0_0.player_group
-var_0_2.hit_group = {
-	var_0_0.enemy_group
+var_0_0.game_item = {
+	{
+		score = 0,
+		skill = false,
+		id = 1,
+		hp = 50,
+		tpl = "items/Aid",
+		type = var_0_0.item_used,
+		speed = Vector2(0, 0),
+		range = Vector2(130, 130)
+	},
+	{
+		score = 0,
+		skill = true,
+		id = 2,
+		hp = 0,
+		tpl = "items/Buff",
+		type = var_0_0.item_used,
+		speed = Vector2(0, 0),
+		range = Vector2(130, 130)
+	},
+	{
+		score = 1000,
+		skill = false,
+		id = 3,
+		hp = 0,
+		tpl = "items/Treasure",
+		type = var_0_0.item_used,
+		speed = Vector2(0, 0),
+		range = Vector2(130, 130)
+	},
+	{
+		id = 4,
+		tpl = "Object/Island_Medium",
+		type = var_0_0.item_static,
+		speed = Vector2(0, 0),
+		range = Vector2(214, 240)
+	},
+	{
+		id = 5,
+		tpl = "Object/Island_Small",
+		type = var_0_0.item_static,
+		speed = Vector2(0, 0),
+		range = Vector2(180, 180)
+	},
+	{
+		id = 6,
+		tpl = "Object/Rock_Large",
+		type = var_0_0.item_static,
+		speed = Vector2(0, 0),
+		range = Vector2(270, 160)
+	},
+	{
+		id = 7,
+		tpl = "Object/Rock_Medium",
+		type = var_0_0.item_static,
+		speed = Vector2(0, 0),
+		range = Vector2(190, 180)
+	},
+	{
+		id = 8,
+		tpl = "Object/Rock_Small",
+		type = var_0_0.item_static,
+		speed = Vector2(0, 0),
+		range = Vector2(120, 110)
+	}
 }
-Vector2 = var_3
-var_0_2.range = var_3(90, 140)
-var_0_1[1] = var_0_2
-var_0_0.game_char = var_0_1
-
-local var_0_3 = {}
-local var_0_4 = {
-	score = 0,
-	skill = false,
-	id = 1,
-	hp = 50,
-	tpl = "items/Aid",
-	type = var_0_0.item_used
+var_0_0.bg_rule = {
+	{
+		height = 1536,
+		move_rate = 1,
+		content = "bg_1",
+		id = 1,
+		width = 3072,
+		tpl = "bgs/bg_base",
+		layer = var_0_0.bg_layer_back,
+		show = var_0_0.bg_show_circle,
+		remove_bound = Vector2(3100, 1600)
+	},
+	{
+		height = 1536,
+		move_rate = 1,
+		content = "bg_5",
+		id = 2,
+		width = 3072,
+		tpl = "bgs/bg_wave",
+		layer = var_0_0.bg_layer_back,
+		show = var_0_0.bg_show_circle,
+		remove_bound = Vector2(3100, 1600)
+	}
 }
-
-Vector2 = var_3
-var_0_4.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_4.range = var_3(130, 130)
-var_0_3[1] = var_0_4
-
-local var_0_5 = {
-	score = 0,
-	skill = true,
-	id = 2,
-	hp = 0,
-	tpl = "items/Buff",
-	type = var_0_0.item_used
-}
-
-Vector2 = var_3
-var_0_5.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_5.range = var_3(130, 130)
-var_0_3[2] = var_0_5
-
-local var_0_6 = {
-	score = 1000,
-	skill = false,
-	id = 3,
-	hp = 0,
-	tpl = "items/Treasure",
-	type = var_0_0.item_used
-}
-
-Vector2 = var_3
-var_0_6.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_6.range = var_3(130, 130)
-var_0_3[3] = var_0_6
-
-local var_0_7 = {
-	id = 4,
-	tpl = "Object/Island_Medium",
-	type = var_0_0.item_static
-}
-
-Vector2 = var_3
-var_0_7.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_7.range = var_3(214, 240)
-var_0_3[4] = var_0_7
-
-local var_0_8 = {
-	id = 5,
-	tpl = "Object/Island_Small",
-	type = var_0_0.item_static
-}
-
-Vector2 = var_3
-var_0_8.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_8.range = var_3(180, 180)
-var_0_3[5] = var_0_8
-
-local var_0_9 = {
-	id = 6,
-	tpl = "Object/Rock_Large",
-	type = var_0_0.item_static
-}
-
-Vector2 = var_3
-var_0_9.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_9.range = var_3(270, 160)
-var_0_3[6] = var_0_9
-
-local var_0_10 = {
-	id = 7,
-	tpl = "Object/Rock_Medium",
-	type = var_0_0.item_static
-}
-
-Vector2 = var_3
-var_0_10.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_10.range = var_3(190, 180)
-var_0_3[7] = var_0_10
-
-local var_0_11 = {
-	id = 8,
-	tpl = "Object/Rock_Small",
-	type = var_0_0.item_static
-}
-
-Vector2 = var_3
-var_0_11.speed = var_3(0, 0)
-Vector2 = var_3
-var_0_11.range = var_3(120, 110)
-var_0_3[8] = var_0_11
-var_0_0.game_item = var_0_3
-
-local var_0_12 = {}
-local var_0_13 = {
-	height = 1536,
-	move_rate = 1,
-	content = "bg_1",
-	id = 1,
-	width = 3072,
-	tpl = "bgs/bg_base",
-	layer = var_0_0.bg_layer_back,
-	show = var_0_0.bg_show_circle
-}
-
-Vector2 = var_3
-var_0_13.remove_bound = var_3(3100, 1600)
-var_0_12[1] = var_0_13
-
-local var_0_14 = {
-	height = 1536,
-	move_rate = 1,
-	content = "bg_5",
-	id = 2,
-	width = 3072,
-	tpl = "bgs/bg_wave",
-	layer = var_0_0.bg_layer_back,
-	show = var_0_0.bg_show_circle
-}
-
-Vector2 = var_3
-var_0_14.remove_bound = var_3(3100, 1600)
-var_0_12[2] = var_0_14
-var_0_0.bg_rule = var_0_12
 var_0_0.item_rule = {
 	{
 		id = 1,
@@ -8895,825 +8840,650 @@ var_0_0.enemy_rule = {
 		}
 	}
 }
-
-local var_0_15 = "game_enemy"
-local var_0_16 = {}
-local var_0_17 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 101,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_18 = {
-	{
-		101
+var_0_0.game_enemy = {
+	[101] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 101,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
 	},
-	{
-		101
+	[102] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 102,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(4, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[103] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 103,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(-5, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[104] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 104,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(-3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[105] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 105,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(0, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[106] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 5,
+		id = 106,
+		boom = 40,
+		tpl = "Enemys/Enemy_Bomb",
+		weapons = {
+			{},
+			{}
+		},
+		speed = Vector2(0, -75),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[107] = {
+		score = 500,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 107,
+		tpl = "Enemys/Enemy_Bonus",
+		weapons = {
+			{},
+			{}
+		},
+		speed = Vector2(0, -120),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[108] = {
+		score = 200,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 108,
+		tpl = "Enemys/Enemy_S",
+		weapons = {
+			{
+				102,
+				101
+			},
+			{
+				102,
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[109] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 109,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[110] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 110,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(4, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[111] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 10,
+		id = 111,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(-5, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[201] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 201,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[202] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 202,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(4, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[203] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 203,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(-5, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[204] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 204,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(-3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[205] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 205,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(0, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[806] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 5,
+		id = 806,
+		boom = 40,
+		tpl = "Enemys/Enemy_Bomb",
+		weapons = {
+			{},
+			{}
+		},
+		speed = Vector2(0, -70),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[807] = {
+		score = 500,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 807,
+		tpl = "Enemys/Enemy_Bonus",
+		weapons = {
+			{},
+			{}
+		},
+		speed = Vector2(0, -120),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[208] = {
+		score = 200,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 40,
+		id = 208,
+		tpl = "Enemys/Enemy_S",
+		weapons = {
+			{
+				102,
+				101
+			},
+			{
+				102,
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[209] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 209,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[210] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 210,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(4, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[211] = {
+		score = 100,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 20,
+		id = 211,
+		tpl = "Enemys/Enemy_SS",
+		weapons = {
+			{
+				101
+			},
+			{
+				101
+			}
+		},
+		speed = Vector2(-5, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[212] = {
+		score = 200,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 40,
+		id = 212,
+		tpl = "Enemys/Enemy_S",
+		weapons = {
+			{
+				102,
+				101
+			},
+			{
+				102,
+				101
+			}
+		},
+		speed = Vector2(3, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[213] = {
+		score = 200,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 40,
+		id = 213,
+		tpl = "Enemys/Enemy_S",
+		weapons = {
+			{
+				102,
+				101
+			},
+			{
+				102,
+				101
+			}
+		},
+		speed = Vector2(4, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[214] = {
+		score = 200,
+		dead_type = 0,
+		remove_time = 1,
+		hp = 40,
+		id = 214,
+		tpl = "Enemys/Enemy_S",
+		weapons = {
+			{
+				102,
+				101
+			},
+			{
+				102,
+				101
+			}
+		},
+		speed = Vector2(-5, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[215] = {
+		score = 100,
+		dead_type = 1,
+		hp = 100,
+		id = 215,
+		tpl = "Enemys/Enemy_M",
+		weapons = {
+			{
+				103,
+				104
+			},
+			{
+				103,
+				104
+			}
+		},
+		speed = Vector2(-2, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[216] = {
+		score = 100,
+		dead_type = 1,
+		hp = 250,
+		id = 216,
+		tpl = "Enemys/Enemy_L",
+		weapons = {
+			{
+				105,
+				106,
+				107
+			},
+			{
+				105,
+				106,
+				107
+			}
+		},
+		speed = Vector2(0, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[217] = {
+		score = 100,
+		dead_type = 1,
+		hp = 400,
+		id = 217,
+		tpl = "Enemys/Enemy_L",
+		weapons = {
+			{
+				105,
+				106,
+				107
+			},
+			{
+				105,
+				106,
+				107
+			}
+		},
+		speed = Vector2(0, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
+	},
+	[618] = {
+		score = 100,
+		dead_type = 1,
+		hp = 100,
+		id = 618,
+		tpl = "Enemys/Enemy_M",
+		weapons = {
+			{
+				103,
+				104
+			},
+			{
+				103,
+				104
+			}
+		},
+		speed = Vector2(-2, -15),
+		range = Vector2(140, 140),
+		group = var_0_0.enemy_group,
+		hit_group = {
+			var_0_0.player_group
+		}
 	}
 }
-
-var_0_17.weapons = var_0_18
-Vector2 = var_0_18
-var_0_17.speed = var_0_18(3, -15)
-Vector2 = var_4
-var_0_17.range = var_4(140, 140)
-var_0_17.group = var_0_0.enemy_group
-var_0_17.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[101] = var_0_17
-
-local var_0_19 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 102,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_20 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_19.weapons = var_0_20
-Vector2 = var_0_20
-var_0_19.speed = var_0_20(4, -15)
-Vector2 = var_4
-var_0_19.range = var_4(140, 140)
-var_0_19.group = var_0_0.enemy_group
-var_0_19.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[102] = var_0_19
-
-local var_0_21 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 103,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_22 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_21.weapons = var_0_22
-Vector2 = var_0_22
-var_0_21.speed = var_0_22(-5, -15)
-Vector2 = var_4
-var_0_21.range = var_4(140, 140)
-var_0_21.group = var_0_0.enemy_group
-var_0_21.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[103] = var_0_21
-
-local var_0_23 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 104,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_24 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_23.weapons = var_0_24
-Vector2 = var_0_24
-var_0_23.speed = var_0_24(-3, -15)
-Vector2 = var_4
-var_0_23.range = var_4(140, 140)
-var_0_23.group = var_0_0.enemy_group
-var_0_23.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[104] = var_0_23
-
-local var_0_25 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 105,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_26 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_25.weapons = var_0_26
-Vector2 = var_0_26
-var_0_25.speed = var_0_26(0, -15)
-Vector2 = var_4
-var_0_25.range = var_4(140, 140)
-var_0_25.group = var_0_0.enemy_group
-var_0_25.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[105] = var_0_25
-
-local var_0_27 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 5,
-	id = 106,
-	boom = 40,
-	tpl = "Enemys/Enemy_Bomb"
-}
-local var_0_28 = {
-	{},
-	{}
-}
-
-var_0_27.weapons = var_0_28
-Vector2 = var_0_28
-var_0_27.speed = var_0_28(0, -75)
-Vector2 = var_4
-var_0_27.range = var_4(140, 140)
-var_0_27.group = var_0_0.enemy_group
-var_0_27.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[106] = var_0_27
-
-local var_0_29 = {
-	score = 500,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 107,
-	tpl = "Enemys/Enemy_Bonus"
-}
-local var_0_30 = {
-	{},
-	{}
-}
-
-var_0_29.weapons = var_0_30
-Vector2 = var_0_30
-var_0_29.speed = var_0_30(0, -120)
-Vector2 = var_4
-var_0_29.range = var_4(140, 140)
-var_0_29.group = var_0_0.enemy_group
-var_0_29.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[107] = var_0_29
-
-local var_0_31 = {
-	score = 200,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 108,
-	tpl = "Enemys/Enemy_S"
-}
-local var_0_32 = {
-	{
-		102,
-		101
-	},
-	{
-		102,
-		101
-	}
-}
-
-var_0_31.weapons = var_0_32
-Vector2 = var_0_32
-var_0_31.speed = var_0_32(3, -15)
-Vector2 = var_4
-var_0_31.range = var_4(140, 140)
-var_0_31.group = var_0_0.enemy_group
-var_0_31.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[108] = var_0_31
-
-local var_0_33 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 109,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_34 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_33.weapons = var_0_34
-Vector2 = var_0_34
-var_0_33.speed = var_0_34(3, -15)
-Vector2 = var_4
-var_0_33.range = var_4(140, 140)
-var_0_33.group = var_0_0.enemy_group
-var_0_33.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[109] = var_0_33
-
-local var_0_35 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 110,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_36 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_35.weapons = var_0_36
-Vector2 = var_0_36
-var_0_35.speed = var_0_36(4, -15)
-Vector2 = var_4
-var_0_35.range = var_4(140, 140)
-var_0_35.group = var_0_0.enemy_group
-var_0_35.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[110] = var_0_35
-
-local var_0_37 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 10,
-	id = 111,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_38 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_37.weapons = var_0_38
-Vector2 = var_0_38
-var_0_37.speed = var_0_38(-5, -15)
-Vector2 = var_4
-var_0_37.range = var_4(140, 140)
-var_0_37.group = var_0_0.enemy_group
-var_0_37.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[111] = var_0_37
-
-local var_0_39 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 201,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_40 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_39.weapons = var_0_40
-Vector2 = var_0_40
-var_0_39.speed = var_0_40(3, -15)
-Vector2 = var_4
-var_0_39.range = var_4(140, 140)
-var_0_39.group = var_0_0.enemy_group
-var_0_39.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[201] = var_0_39
-
-local var_0_41 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 202,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_42 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_41.weapons = var_0_42
-Vector2 = var_0_42
-var_0_41.speed = var_0_42(4, -15)
-Vector2 = var_4
-var_0_41.range = var_4(140, 140)
-var_0_41.group = var_0_0.enemy_group
-var_0_41.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[202] = var_0_41
-
-local var_0_43 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 203,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_44 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_43.weapons = var_0_44
-Vector2 = var_0_44
-var_0_43.speed = var_0_44(-5, -15)
-Vector2 = var_4
-var_0_43.range = var_4(140, 140)
-var_0_43.group = var_0_0.enemy_group
-var_0_43.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[203] = var_0_43
-
-local var_0_45 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 204,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_46 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_45.weapons = var_0_46
-Vector2 = var_0_46
-var_0_45.speed = var_0_46(-3, -15)
-Vector2 = var_4
-var_0_45.range = var_4(140, 140)
-var_0_45.group = var_0_0.enemy_group
-var_0_45.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[204] = var_0_45
-
-local var_0_47 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 205,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_48 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_47.weapons = var_0_48
-Vector2 = var_0_48
-var_0_47.speed = var_0_48(0, -15)
-Vector2 = var_4
-var_0_47.range = var_4(140, 140)
-var_0_47.group = var_0_0.enemy_group
-var_0_47.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[205] = var_0_47
-
-local var_0_49 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 5,
-	id = 806,
-	boom = 40,
-	tpl = "Enemys/Enemy_Bomb"
-}
-local var_0_50 = {
-	{},
-	{}
-}
-
-var_0_49.weapons = var_0_50
-Vector2 = var_0_50
-var_0_49.speed = var_0_50(0, -70)
-Vector2 = var_4
-var_0_49.range = var_4(140, 140)
-var_0_49.group = var_0_0.enemy_group
-var_0_49.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[806] = var_0_49
-
-local var_0_51 = {
-	score = 500,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 807,
-	tpl = "Enemys/Enemy_Bonus"
-}
-local var_0_52 = {
-	{},
-	{}
-}
-
-var_0_51.weapons = var_0_52
-Vector2 = var_0_52
-var_0_51.speed = var_0_52(0, -120)
-Vector2 = var_4
-var_0_51.range = var_4(140, 140)
-var_0_51.group = var_0_0.enemy_group
-var_0_51.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[807] = var_0_51
-
-local var_0_53 = {
-	score = 200,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 40,
-	id = 208,
-	tpl = "Enemys/Enemy_S"
-}
-local var_0_54 = {
-	{
-		102,
-		101
-	},
-	{
-		102,
-		101
-	}
-}
-
-var_0_53.weapons = var_0_54
-Vector2 = var_0_54
-var_0_53.speed = var_0_54(3, -15)
-Vector2 = var_4
-var_0_53.range = var_4(140, 140)
-var_0_53.group = var_0_0.enemy_group
-var_0_53.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[208] = var_0_53
-
-local var_0_55 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 209,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_56 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_55.weapons = var_0_56
-Vector2 = var_0_56
-var_0_55.speed = var_0_56(3, -15)
-Vector2 = var_4
-var_0_55.range = var_4(140, 140)
-var_0_55.group = var_0_0.enemy_group
-var_0_55.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[209] = var_0_55
-
-local var_0_57 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 210,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_58 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_57.weapons = var_0_58
-Vector2 = var_0_58
-var_0_57.speed = var_0_58(4, -15)
-Vector2 = var_4
-var_0_57.range = var_4(140, 140)
-var_0_57.group = var_0_0.enemy_group
-var_0_57.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[210] = var_0_57
-
-local var_0_59 = {
-	score = 100,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 20,
-	id = 211,
-	tpl = "Enemys/Enemy_SS"
-}
-local var_0_60 = {
-	{
-		101
-	},
-	{
-		101
-	}
-}
-
-var_0_59.weapons = var_0_60
-Vector2 = var_0_60
-var_0_59.speed = var_0_60(-5, -15)
-Vector2 = var_4
-var_0_59.range = var_4(140, 140)
-var_0_59.group = var_0_0.enemy_group
-var_0_59.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[211] = var_0_59
-
-local var_0_61 = {
-	score = 200,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 40,
-	id = 212,
-	tpl = "Enemys/Enemy_S"
-}
-local var_0_62 = {
-	{
-		102,
-		101
-	},
-	{
-		102,
-		101
-	}
-}
-
-var_0_61.weapons = var_0_62
-Vector2 = var_0_62
-var_0_61.speed = var_0_62(3, -15)
-Vector2 = var_4
-var_0_61.range = var_4(140, 140)
-var_0_61.group = var_0_0.enemy_group
-var_0_61.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[212] = var_0_61
-
-local var_0_63 = {
-	score = 200,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 40,
-	id = 213,
-	tpl = "Enemys/Enemy_S"
-}
-local var_0_64 = {
-	{
-		102,
-		101
-	},
-	{
-		102,
-		101
-	}
-}
-
-var_0_63.weapons = var_0_64
-Vector2 = var_0_64
-var_0_63.speed = var_0_64(4, -15)
-Vector2 = var_4
-var_0_63.range = var_4(140, 140)
-var_0_63.group = var_0_0.enemy_group
-var_0_63.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[213] = var_0_63
-
-local var_0_65 = {
-	score = 200,
-	dead_type = 0,
-	remove_time = 1,
-	hp = 40,
-	id = 214,
-	tpl = "Enemys/Enemy_S"
-}
-local var_0_66 = {
-	{
-		102,
-		101
-	},
-	{
-		102,
-		101
-	}
-}
-
-var_0_65.weapons = var_0_66
-Vector2 = var_0_66
-var_0_65.speed = var_0_66(-5, -15)
-Vector2 = var_4
-var_0_65.range = var_4(140, 140)
-var_0_65.group = var_0_0.enemy_group
-var_0_65.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[214] = var_0_65
-
-local var_0_67 = {
-	score = 100,
-	dead_type = 1,
-	hp = 100,
-	id = 215,
-	tpl = "Enemys/Enemy_M"
-}
-local var_0_68 = {
-	{
-		103,
-		104
-	},
-	{
-		103,
-		104
-	}
-}
-
-var_0_67.weapons = var_0_68
-Vector2 = var_0_68
-var_0_67.speed = var_0_68(-2, -15)
-Vector2 = var_4
-var_0_67.range = var_4(140, 140)
-var_0_67.group = var_0_0.enemy_group
-var_0_67.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[215] = var_0_67
-
-local var_0_69 = {
-	score = 100,
-	dead_type = 1,
-	hp = 250,
-	id = 216,
-	tpl = "Enemys/Enemy_L"
-}
-local var_0_70 = {
-	{
-		105,
-		106,
-		107
-	},
-	{
-		105,
-		106,
-		107
-	}
-}
-
-var_0_69.weapons = var_0_70
-Vector2 = var_0_70
-var_0_69.speed = var_0_70(0, -15)
-Vector2 = var_4
-var_0_69.range = var_4(140, 140)
-var_0_69.group = var_0_0.enemy_group
-var_0_69.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[216] = var_0_69
-
-local var_0_71 = {
-	score = 100,
-	dead_type = 1,
-	hp = 400,
-	id = 217,
-	tpl = "Enemys/Enemy_L"
-}
-local var_0_72 = {
-	{
-		105,
-		106,
-		107
-	},
-	{
-		105,
-		106,
-		107
-	}
-}
-
-var_0_71.weapons = var_0_72
-Vector2 = var_0_72
-var_0_71.speed = var_0_72(0, -15)
-Vector2 = var_4
-var_0_71.range = var_4(140, 140)
-var_0_71.group = var_0_0.enemy_group
-var_0_71.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[217] = var_0_71
-
-local var_0_73 = {
-	score = 100,
-	dead_type = 1,
-	hp = 100,
-	id = 618,
-	tpl = "Enemys/Enemy_M"
-}
-local var_0_74 = {
-	{
-		103,
-		104
-	},
-	{
-		103,
-		104
-	}
-}
-
-var_0_73.weapons = var_0_74
-Vector2 = var_0_74
-var_0_73.speed = var_0_74(-2, -15)
-Vector2 = var_4
-var_0_73.range = var_4(140, 140)
-var_0_73.group = var_0_0.enemy_group
-var_0_73.hit_group = {
-	var_0_0.player_group
-}
-var_0_16[618] = var_0_73
-var_0_0[var_0_15] = var_0_16
 var_0_0.game_weapon = {
 	[101] = {
 		speed = 650,

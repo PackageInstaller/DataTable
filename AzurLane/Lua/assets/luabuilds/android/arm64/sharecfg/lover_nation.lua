@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "lover_nation") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "lover_nation"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.lover_nation = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.lover_nation
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.lover_nation = rawget(pg, "lover_nation") or setmetatable({
+	__name = "lover_nation"
+}, confNEO)
+pg.lover_nation.all = {
 	0,
 	1,
 	2,
@@ -42,25 +19,11 @@ var_0_3.all = {
 	97,
 	98
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.lover_nation = {}
+pg.base = pg.base or {}
+pg.base.lover_nation = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.lover_nation
-
-	var_1_0[0] = {
+	pg.base.lover_nation[0] = {
 		bg = "star_level_bg_108",
 		letter = "en",
 		nation = 0,
@@ -70,11 +33,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.lover_nation
-
-	var_1_1[1] = {
+	pg.base.lover_nation[1] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 1,
@@ -84,11 +43,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.lover_nation
-
-	var_1_2[2] = {
+	pg.base.lover_nation[2] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 2,
@@ -98,11 +53,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.lover_nation
-
-	var_1_3[3] = {
+	pg.base.lover_nation[3] = {
 		bg = "star_level_bg_509",
 		letter = "jp",
 		nation = 3,
@@ -112,11 +63,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.lover_nation
-
-	var_1_4[4] = {
+	pg.base.lover_nation[4] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 4,
@@ -126,11 +73,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.lover_nation
-
-	var_1_5[5] = {
+	pg.base.lover_nation[5] = {
 		bg = "star_level_bg_102",
 		letter = "cn",
 		nation = 5,
@@ -140,11 +83,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.lover_nation
-
-	var_1_6[6] = {
+	pg.base.lover_nation[6] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 6,
@@ -154,11 +93,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.lover_nation
-
-	var_1_7[7] = {
+	pg.base.lover_nation[7] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 7,
@@ -168,11 +103,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.lover_nation
-
-	var_1_8[8] = {
+	pg.base.lover_nation[8] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 8,
@@ -182,11 +113,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.lover_nation
-
-	var_1_9[9] = {
+	pg.base.lover_nation[9] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 9,
@@ -196,11 +123,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.lover_nation
-
-	var_1_10[10] = {
+	pg.base.lover_nation[10] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 10,
@@ -210,11 +133,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.lover_nation
-
-	var_1_11[11] = {
+	pg.base.lover_nation[11] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 11,
@@ -224,11 +143,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.lover_nation
-
-	var_1_12[96] = {
+	pg.base.lover_nation[96] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 96,
@@ -238,11 +153,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.lover_nation
-
-	var_1_13[97] = {
+	pg.base.lover_nation[97] = {
 		bg = "star_level_bg_542",
 		letter = "meta",
 		nation = 97,
@@ -252,8 +163,7 @@ var_0_3.base.lover_nation = {}
 			1
 		}
 	}
-	pg = var_1_13
-	var_1_13.base.lover_nation[98] = {
+	pg.base.lover_nation[98] = {
 		bg = "star_level_bg_541",
 		letter = "en",
 		nation = 98,

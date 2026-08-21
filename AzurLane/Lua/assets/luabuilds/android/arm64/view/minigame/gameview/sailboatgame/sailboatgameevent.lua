@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SailBoatGameEvent")
+﻿local var_0_0 = class("SailBoatGameEvent")
 
 var_0_0.PLAYER_EVENT_DAMAGE = "player event damage"
 var_0_0.BOAT_EVENT_FIRE = "boat event fire"

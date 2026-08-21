@@ -1,5 +1,4 @@
---[[
------------------------------------------------------
+--[[-----------------------------------------------------
 @filename       : RoleInfoView
 @Description    : 玩家信息面板
 @date           : 2022-05-25 11:15:40
@@ -34,7 +33,6 @@ function configUI(self)
     self.mBtnNote = self:getChildGO('mBtnNote')
     self.mBtnCopy = self:getChildGO("mBtnCopy")
     self.mBtnGuild = self:getChildGO("mBtnGuild")
-    self.mTxtGuildName = self:getChildGO("mTxtGuildName"):GetComponent(ty.Text)
     self.mImgNote = self:getChildGO("mImgNote")
     self.mImgBarBg = self:getChildGO("mImgBarBg")
     self.mBtnDelect = self:getChildGO("mBtnDelect")
@@ -43,6 +41,8 @@ function configUI(self)
     self.mHeadGrid = self:getChildTrans("mHeadGrid")
     self.mBtnAddBlack = self:getChildGO("mBtnAddBlack")
     self.mBtnChangeBg = self:getChildGO("mBtnChangeBg")
+    self.mBtnHeroGroup = self:getChildGO("mBtnHeroGroup")
+    self.mBtnFightSkin = self:getChildGO("mBtnFightSkin")
     self.mBtnSignature = self:getChildGO("mBtnSignature")
     self.mAimator = self.UIObject:GetComponent(ty.Animator)
     self.mHeroShowList = self:getChildTrans("mHeroShowList")
@@ -55,11 +55,15 @@ function configUI(self)
     self.mTxtHeroName = self:getChildGO("mTxtHeroName"):GetComponent(ty.Text)
     self.mTxtCurLevel = self:getChildGO("mTxtCurLevel"):GetComponent(ty.Text)
     self.mTxtPlayerlv = self:getChildGO("mTxtPlayerlv"):GetComponent(ty.Text)
+    self.mTxtProgress = self:getChildGO("mTxtProgress"):GetComponent(ty.Text)
+    self.mTxtGuildName = self:getChildGO("mTxtGuildName"):GetComponent(ty.Text)
     self.mTxtLevelName = self:getChildGO("mTxtLevelName"):GetComponent(ty.Text)
     self.mTxtSignature = self:getChildGO("mTxtSignature"):GetComponent(ty.Text)
     self.mTxtTowerName = self:getChildGO("mTxtTowerName"):GetComponent(ty.Text)
+    self.mTxtFashionPro = self:getChildGO("mTxtFashionPro"):GetComponent(ty.Text)
     self.mTxtPlayerName = self:getChildGO("mTxtPlayerName"):GetComponent(ty.Text)
     self.mTxtTowerStage = self:getChildGO("mTxtTowerStage"):GetComponent(ty.Text)
+    self.mTxtFashionName = self:getChildGO("mTxtFashionName"):GetComponent(ty.Text)
     self.mImgContentBg = self:getChildGO("mImgContentBg"):GetComponent(ty.AutoRefImage)
     self.mTxtAchievementNum = self:getChildGO("mTxtAchievementNum"):GetComponent(ty.Text)
     self.mTxtAchievementSum = self:getChildGO("mTxtAchievementSum"):GetComponent(ty.Text)
@@ -72,12 +76,13 @@ function configUI(self)
     self.mBtnFight = self:getChildGO("mBtnFight")
 end
 
---[[
-    初始化界面的静态文本，图片字
+--[[    初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
 function initViewText(self)
+    self:setBtnLabel(self.mBtnFightSkin, 153003, "战斗皮肤")
     self:setBtnLabel(self.mBtnChangeBg, 25188, "更换背景")
+    self:setBtnLabel(self.mBtnHeroGroup, 41733, "助理组")
     self:setBtnLabel(self.mBtnAddBlack, 25177, "加入黑名单")
     self:setBtnLabel(self.mBtnDelect, 417, "删除")
     self.mTxtLevelName.text = _TT(25184)--主线进度
@@ -85,12 +90,16 @@ function initViewText(self)
     self.mTxtTowerName.text = _TT(25186)--边境映射
     self.mTxtAchievementName.text = _TT(25185)--成就进度
     self.mTxtDoundlessName.text = _TT(97004)
+    self.mTxtFashionName.text = _TT(25225)
+    self.mTxtProgress.text = _TT(25226)
 end
 
 function addAllUIEvent(self)
     super.addAllUIEvent(self)
     self:addUIEvent(self.mBtnNote, self.onOpenNoteHandler)
     self:addUIEvent(self.mBtnChangeBg, self.onClickChangeBgHandler)
+    self:addUIEvent(self.mBtnFightSkin, self.onClickFightSkinHandler)
+
     self:addUIEvent(self.mBtnDelect, self.onDelectHandler)
     self:addUIEvent(self.mBtnSignature, self.onClickModifyAutographHandler)
     self:addUIEvent(self.mBtnAddBlack, self.onAddBlackHandler)
@@ -100,6 +109,7 @@ function addAllUIEvent(self)
 
     self:addUIEvent(self.mBtnGuild, self.onClickGuildHandler)
     self:addUIEvent(self.mBtnChat, self.onBtnChatHanlder)
+    self:addUIEvent(self.mBtnHeroGroup, self.onClickHeroGroupHandler)
 end
 
 function onClickFightHandler(self)
@@ -123,7 +133,7 @@ function onClickGuildHandler(self)
         if self.data.guildInfo.uid == "0" then
             gs.Message.Show(_TT(97053))
         else
-            GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_TIPS_PANEL, {guildInfo = self.data.guildInfo})
+            GameDispatcher:dispatchEvent(EventName.OPEN_GUILD_TIPS_PANEL, { guildInfo = self.data.guildInfo })
         end
     end
 end
@@ -140,6 +150,8 @@ function active(self, args)
     --self.mBtnNote:SetActive(self.mIsShowFriend ~= true)
     self.mBtnChat:SetActive(self.mIsShowFriend == true and funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FRIEND_CHAT, false))
 
+    self.mBtnFightSkin:SetActive(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_FIGHT_SKIN, false))
+    
     self.mBtnFight:SetActive(self.mIsShowFriend == true)
     self.mImgNote:SetActive(self.mBtnNote.activeSelf == true)
     self.mAimator:Play("RoleInfoView_Enter")
@@ -160,8 +172,11 @@ function active(self, args)
     role.RoleManager:getRoleVo():addEventListener(role.RoleVo.CHANGE_SHOW_HERO_LIST, self.onUpdateShowHeroListHandler, self)
     self.mBtnChangeBg:SetActive(funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HOME_TITLE, false) == true)
     self.mBtnChangeBg:SetActive(self.mIsShowFriend ~= true)
+    self.mBtnHeroGroup:SetActive(self.mIsShowFriend ~= true and funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_HERO_GURAD_GROUP, false))
     self:updateBgBubble()
     self:updateBaseInfo()
+
+    self:updateFightSkinBubble()
     MoneyManager:setMoneyTidList()
     if role.RoleManager:getBgIsOpen() == true then
         self:onClickChangeBgHandler()
@@ -219,6 +234,7 @@ function updateBaseInfo(self, data)
     self.mTxtCurLevel.text = self.data:getMainStage()
     self.mImgContentBg:SetImg(self.data:getBackGround(), false)
     self.mTxtTowerStage.text = self.data:getTowerStage()
+    self.mTxtFashionPro.text = _TT(45013, self.data:getFashionNum(), #fashion.FashionManager:getAllFashionListByType(fashion.Type.CLOTHES))
     self.mTxtAchievementSum.text = task.AchievementManager:getAchievementConfigPointNum(nil)
 
     if self.mIsShowFriend then
@@ -288,15 +304,15 @@ function onPreviewBgHandler(self, iconIndex)
             if self.loopSn then
                 self:removeTimerByIndex(self.loopSn)
                 self.loopSn = nil
-                self.mImgContentBg:SetImg(UrlManager:getBgPath("friend/bigBg/friend_bg_" .. self.mCurBgIndex .. ".jpg"), false)
+                self.mImgContentBg:SetImg(UrlManager:getFriendBigBgPath(self.mCurBgIndex), false)
             end
         end
         self.loopSn = self:addTimer(0.8, 1, function()
-            self.mImgContentBg:SetImg(UrlManager:getBgPath("friend/bigBg/friend_bg_" .. iconIndex .. ".jpg"), false)
+            self.mImgContentBg:SetImg(UrlManager:getFriendBigBgPath(iconIndex), false)
         end)
         self.mCurBgIndex = iconIndex
     end
-    self.mImgContentBg_1:SetImg(UrlManager:getBgPath("friend/bigBg/friend_bg_" .. iconIndex .. ".jpg"), false)
+    self.mImgContentBg_1:SetImg(UrlManager:getFriendBigBgPath(iconIndex), false)
     self.mImgContentBg_1.gameObject:GetComponent(ty.UIDoTween):EndTween()
     self.mImgContentBg_1.gameObject:GetComponent(ty.UIDoTween):BeginTween()
     self:updateBubble()
@@ -310,9 +326,20 @@ function updateBgBubble(self)
         RedPointManager:remove(self.mBtnChangeBg.transform)
     end
 end
+
+function updateFightSkinBubble(self)
+    if decorate.DecorateManager:getIsFightSkinRed() == true then
+        RedPointManager:add(self.mBtnFightSkin.transform, nil, 25.5, 14)
+    else
+        RedPointManager:remove(self.mBtnFightSkin.transform)
+    end
+end
+
 -- 关闭背景界面
 function onCloseBgHandler(self)
     self.mBtnChangeBg:SetActive(true)
+    self.mBtnHeroGroup:SetActive(true)
+    self.mBtnFightSkin:SetActive(true)
     if self.loopSn then
         self:removeTimerByIndex(self.loopSn)
         self.loopSn = nil
@@ -369,17 +396,28 @@ function onUpdateShowHeroListHandler(self)
     end
 end
 
+-- 看板娘值班组
+function onClickHeroGroupHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_GROUP_PANEL)
+end
+
+function onClickFightSkinHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_FIGHT_SKIN_PANEL)
+end
+
 --更换背景
 function onClickChangeBgHandler(self)
     if self.mIsShowFriend == false then
         self.mBtnChangeBg:SetActive(false)
+        self.mBtnHeroGroup:SetActive(false)
+        self.mBtnFightSkin:SetActive(false)
         GameDispatcher:dispatchEvent(EventName.OPEN_SHOWROLE_BG_VIEW)
     end
 end
 --打开战员信息面板
 function onClickOpenHeroInfoHandler(self, heroVo)
     if heroVo then
-        GameDispatcher:dispatchEvent(EventName.SHOW_SINGLE_HERO_INFO, {heroVo = heroVo})
+        GameDispatcher:dispatchEvent(EventName.SHOW_SINGLE_HERO_INFO, { heroVo = heroVo })
     end
 end
 
@@ -427,7 +465,7 @@ function onClickHeadViewHandler(self)
 end
 -- 点击英雄展示空格子
 function onClickShowGridHandler(self, item)
-    GameDispatcher:dispatchEvent(EventName.OPEN_ROLE_SELECT_HERO_PANEL, {pos = item:getPos(), heroId = item:getData() and item:getData().id or nil})
+    GameDispatcher:dispatchEvent(EventName.OPEN_ROLE_SELECT_HERO_PANEL, { pos = item:getPos(), heroId = item:getData() and item:getData().id or nil })
 end
 --删除好友
 function onDelectHandler(self)
@@ -498,6 +536,8 @@ function updateBubble(self)
             RedPointManager:remove(self.mHeadGrid)
         end
     end
+
+
 
     if self.mIsShowFriend then
         local friendVo = friend.FriendManager:getFriendVo(self.data.id)

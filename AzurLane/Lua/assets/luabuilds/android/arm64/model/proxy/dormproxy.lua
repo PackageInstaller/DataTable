@@ -1,52 +1,36 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("DormProxy", import(".NetProxy"))
 
-local var_0_0 = "DormProxy"
+var_0_0.DORM_UPDATEED = "DormProxy updated"
+var_0_0.LEVEL_UP = "DormProxy level up"
+var_0_0.FURNITURE_ADDED = "DormProxy FURNITURE ADDED"
+var_0_0.FURNITURE_UPDATED = "DormProxy FURNITURE UPDATED"
+var_0_0.SHIP_ADDED = "DormProxy ship added"
+var_0_0.SHIP_EXIT = "DormProxy ship exit"
+var_0_0.INIMACY_AND_MONEY_ADD = "DormProxy inimacy and money added"
+var_0_0.SHIPS_EXP_ADDED = "DormProxy SHIPS_EXP_ADDED"
+var_0_0.THEME_ADDED = "DormProxy THEME_ADDED"
+var_0_0.THEME_DELETED = "DormProxy THEME_DELETED"
+var_0_0.THEME_TEMPLATE_UPDATED = "DormProxy THEME_TEMPLATE_UPDATED"
+var_0_0.THEME_TEMPLATE_DELTETED = "DormProxy THEME_TEMPLATE_DELTETED"
+var_0_0.COLLECTION_THEME_TEMPLATE_ADDED = "DormProxy COLLECTION_THEME_TEMPLATE_ADDED"
+var_0_0.COLLECTION_THEME_TEMPLATE_DELETED = "DormProxy COLLECTION_THEME_TEMPLATE_DELETED"
+var_0_0.THEME_TEMPLATE_ADDED = "DormProxy THEME_TEMPLATE_ADDED"
+var_0_0.SHOP_THEME_TEMPLATE_DELETED = "DormProxy SHOP_THEME_TEMPLATE_DELETED"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".NetProxy"))
-
-var_0_1.DORM_UPDATEED = "DormProxy updated"
-var_0_1.LEVEL_UP = "DormProxy level up"
-var_0_1.FURNITURE_ADDED = "DormProxy FURNITURE ADDED"
-var_0_1.FURNITURE_UPDATED = "DormProxy FURNITURE UPDATED"
-var_0_1.SHIP_ADDED = "DormProxy ship added"
-var_0_1.SHIP_EXIT = "DormProxy ship exit"
-var_0_1.INIMACY_AND_MONEY_ADD = "DormProxy inimacy and money added"
-var_0_1.SHIPS_EXP_ADDED = "DormProxy SHIPS_EXP_ADDED"
-var_0_1.THEME_ADDED = "DormProxy THEME_ADDED"
-var_0_1.THEME_DELETED = "DormProxy THEME_DELETED"
-var_0_1.THEME_TEMPLATE_UPDATED = "DormProxy THEME_TEMPLATE_UPDATED"
-var_0_1.THEME_TEMPLATE_DELTETED = "DormProxy THEME_TEMPLATE_DELTETED"
-var_0_1.COLLECTION_THEME_TEMPLATE_ADDED = "DormProxy COLLECTION_THEME_TEMPLATE_ADDED"
-var_0_1.COLLECTION_THEME_TEMPLATE_DELETED = "DormProxy COLLECTION_THEME_TEMPLATE_DELETED"
-var_0_1.THEME_TEMPLATE_ADDED = "DormProxy THEME_TEMPLATE_ADDED"
-var_0_1.SHOP_THEME_TEMPLATE_DELETED = "DormProxy SHOP_THEME_TEMPLATE_DELETED"
-
-function var_0_1.register(arg_1_0)
+function var_0_0.register(arg_1_0)
 	arg_1_0.TYPE = 2
 	arg_1_0.PAGE = 1
 	arg_1_0.MAX_PAGE = 10
-
-	local var_1_0 = {}
-
-	math = var_1_10002
-	var_1_0[2] = var_1_10002.huge
-	math = var_2
-	var_1_0[3] = var_2.huge
-	math = var_2
-	var_1_0[5] = var_2.huge
-	arg_1_0.lastPages = var_1_0
+	arg_1_0.lastPages = {
+		[2] = math.huge,
+		[3] = math.huge,
+		[5] = math.huge
+	}
 	arg_1_0.friendData = nil
 	arg_1_0.systemThemes = {}
 
 	arg_1_0:on(19001, function(arg_2_0)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_2_1(var_2_0, var_2_10004.GET_BACKYARD_DATA, {
+		arg_1_0:sendNotification(GAME.GET_BACKYARD_DATA, {
 			isMine = true,
 			data = arg_2_0
 		})
@@ -58,30 +42,23 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.OnEnterBackyard(arg_3_0)
+function var_0_0.OnEnterBackyard(arg_3_0)
 	arg_3_0:SettlementShipExp()
 
 	return
 end
 
-function var_0_1.OnExitBackyard(arg_4_0)
+function var_0_0.OnExitBackyard(arg_4_0)
 	arg_4_0:ClearRequestShipExp()
 
 	return
 end
 
-function var_0_1.SettlementShipExp(arg_5_0)
+function var_0_0.SettlementShipExp(arg_5_0)
 	arg_5_0:ClearRequestShipExp()
 
-	local var_5_0 = arg_5_0.data
-
-	if var_1.ShouldRequestShipExp(var_5_0) then
-		local var_5_1 = arg_5_0
-		local var_5_2 = arg_5_0.sendNotification
-
-		GAME = var_1_10006
-
-		var_5_2(var_5_1, var_1_10006.BACKYARD_REQUEST_SHIP_EXP)
+	if arg_5_0.data:ShouldRequestShipExp() then
+		arg_5_0:sendNotification(GAME.BACKYARD_REQUEST_SHIP_EXP)
 	else
 		arg_5_0:RequestShipExp()
 	end
@@ -89,43 +66,22 @@ function var_0_1.SettlementShipExp(arg_5_0)
 	return
 end
 
-function var_0_1.RequestShipExp(arg_6_0)
-	local var_6_0 = arg_6_0.data
-	local var_6_1 = var_1.GetNextSettlementShipExpTime(var_6_0)
-
-	pg = var_1_10003
-
-	local var_6_2 = var_1_10003.TimeMgr.GetInstance()
-	local var_6_3 = var_6_1 - var_3.GetServerTime(var_6_2)
-
-	Timer = var_6_2
-	arg_6_0.requestShipExpTimer = var_6_2.New(function()
-		local var_7_0 = arg_6_0
-
-		var_0.ClearRequestShipExp(var_7_0)
-
-		local var_7_1 = arg_6_0
-		local var_7_2 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_7_2(var_7_1, var_2_10003.BACKYARD_REQUEST_SHIP_EXP)
+function var_0_0.RequestShipExp(arg_6_0)
+	arg_6_0.requestShipExpTimer = Timer.New(function()
+		arg_6_0:ClearRequestShipExp()
+		arg_6_0:sendNotification(GAME.BACKYARD_REQUEST_SHIP_EXP)
 
 		return
-	end, var_6_3, 1)
+	end, arg_6_0.data:GetNextSettlementShipExpTime() - pg.TimeMgr.GetInstance():GetServerTime(), 1)
 
-	local var_6_4 = arg_6_0.requestShipExpTimer
-
-	var_5.Start(var_6_4)
+	arg_6_0.requestShipExpTimer:Start()
 
 	return
 end
 
-function var_0_1.ClearRequestShipExp(arg_8_0)
+function var_0_0.ClearRequestShipExp(arg_8_0)
 	if arg_8_0.requestShipExpTimer then
-		local var_8_0 = arg_8_0.requestShipExpTimer
-
-		var_1.Stop(var_8_0)
+		arg_8_0.requestShipExpTimer:Stop()
 
 		arg_8_0.requestShipExpTimer = nil
 	end
@@ -133,37 +89,23 @@ function var_0_1.ClearRequestShipExp(arg_8_0)
 	return
 end
 
-function var_0_1.RequestPopEvent(arg_9_0)
+function var_0_0.RequestPopEvent(arg_9_0)
 	arg_9_0:ClearRequestPopEvent()
 
-	pg = var_1
-
-	local var_9_0 = var_1.gameset.dorm_pop_time.key_value
-
-	Timer = var_1_10002
-	arg_9_0.requestEventTimer = var_1_10002.New(function()
-		local var_10_0 = arg_9_0
-		local var_10_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_10_1(var_10_0, var_2_10003.BACKYARD_REQUEST_POP_EVENT)
+	arg_9_0.requestEventTimer = Timer.New(function()
+		arg_9_0:sendNotification(GAME.BACKYARD_REQUEST_POP_EVENT)
 
 		return
-	end, var_9_0, -1)
+	end, pg.gameset.dorm_pop_time.key_value, -1)
 
-	local var_9_1 = arg_9_0.requestEventTimer
-
-	var_2.Start(var_9_1)
+	arg_9_0.requestEventTimer:Start()
 
 	return
 end
 
-function var_0_1.ClearRequestPopEvent(arg_11_0)
+function var_0_0.ClearRequestPopEvent(arg_11_0)
 	if arg_11_0.requestEventTimer then
-		local var_11_0 = arg_11_0.requestEventTimer
-
-		var_1.Stop(var_11_0)
+		arg_11_0.requestEventTimer:Stop()
 
 		arg_11_0.requestEventTimer = nil
 	end
@@ -171,134 +113,97 @@ function var_0_1.ClearRequestPopEvent(arg_11_0)
 	return
 end
 
-function var_0_1.GetVisitorShip(arg_12_0)
+function var_0_0.GetVisitorShip(arg_12_0)
 	return arg_12_0.visitorShip
 end
 
-function var_0_1.SetVisitorShip(arg_13_0, arg_13_1)
+function var_0_0.SetVisitorShip(arg_13_0, arg_13_1)
 	arg_13_0.visitorShip = arg_13_1
 
 	return
 end
 
-function var_0_1.addDorm(arg_14_0, arg_14_1)
-	assert = var_1_10002
-	isa = var_1_10004
-
-	local var_14_0 = arg_14_1
-
-	Dorm = var_1_10007
-
-	var_1_10002(var_1_10004(var_14_0, var_1_10007), "dorm should instance of Dorm")
+function var_0_0.addDorm(arg_14_0, arg_14_1)
+	assert(isa(arg_14_1, Dorm), "dorm should instance of Dorm")
 
 	arg_14_0.data = arg_14_1
-	pg = var_1_10002
 
-	local var_14_1 = var_1_10002.ShipFlagMgr.GetInstance()
-
-	var_2.UpdateFlagShips(var_14_1, "inBackyard")
+	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inBackyard")
 
 	return
 end
 
-function var_0_1.updateDrom(arg_15_0, arg_15_1, arg_15_2)
-	assert = var_1_10003
-	isa = var_1_10005
-
-	local var_15_0 = arg_15_1
-
-	Dorm = var_1_10008
-
-	var_1_10003(var_1_10005(var_15_0, var_1_10008), "dorm should instance of Dorm")
-
-	assert = var_1_10003
-
-	var_1_10003(arg_15_1, "drom should exist")
+function var_0_0.updateDrom(arg_15_0, arg_15_1, arg_15_2)
+	assert(isa(arg_15_1, Dorm), "dorm should instance of Dorm")
+	assert(arg_15_1, "drom should exist")
 
 	arg_15_0.data = arg_15_1
-	pg = var_1_10003
 
-	local var_15_1 = var_1_10003.ShipFlagMgr.GetInstance()
-
-	var_3.UpdateFlagShips(var_15_1, "inBackyard")
-
-	local var_15_2 = arg_15_0.facade
-
-	var_3.sendNotification(var_15_2, var_0_1.DORM_UPDATEED, {}, arg_15_2)
+	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inBackyard")
+	arg_15_0.facade:sendNotification(var_0_0.DORM_UPDATEED, {}, arg_15_2)
 
 	return
 end
 
-function var_0_1.getData(arg_16_0)
-	local var_16_0
-
+function var_0_0.getData(arg_16_0)
 	if not arg_16_0.data then
-		Dorm = var_16_0
-		var_16_0 = var_16_0.New({
-			id = 1
-		})
+		-- block empty
 	end
 
-	return var_16_0:clone()
+	return Dorm.New({
+		id = 1
+	}):clone()
 end
 
-function var_0_1.GetCustomThemeTemplates(arg_17_0)
+function var_0_0.GetCustomThemeTemplates(arg_17_0)
 	return arg_17_0.customThemeTemplates
 end
 
-function var_0_1.SetCustomThemeTemplates(arg_18_0, arg_18_1)
+function var_0_0.SetCustomThemeTemplates(arg_18_0, arg_18_1)
 	arg_18_0.customThemeTemplates = arg_18_1
 
 	return
 end
 
-function var_0_1.GetCustomThemeTemplateById(arg_19_0, arg_19_1)
+function var_0_0.GetCustomThemeTemplateById(arg_19_0, arg_19_1)
 	return arg_19_0.customThemeTemplates[arg_19_1]
 end
 
-function var_0_1.UpdateCustomThemeTemplate(arg_20_0, arg_20_1)
+function var_0_0.UpdateCustomThemeTemplate(arg_20_0, arg_20_1)
 	arg_20_0.customThemeTemplates[arg_20_1.id] = arg_20_1
 
-	local var_20_0 = arg_20_0
-	local var_20_1 = arg_20_0.sendNotification
-	local var_20_2 = var_0_1.THEME_TEMPLATE_UPDATED
-	local var_20_3 = {}
-
-	BackYardConst = var_1_10007
-	var_20_3.type = var_1_10007.THEME_TEMPLATE_TYPE_CUSTOM
-	var_20_3.template = arg_20_1
-
-	var_20_1(var_20_0, var_20_2, var_20_3)
+	arg_20_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
+		type = BackYardConst.THEME_TEMPLATE_TYPE_CUSTOM,
+		template = arg_20_1
+	})
 
 	return
 end
 
-function var_0_1.DeleteCustomThemeTemplate(arg_21_0, arg_21_1)
+function var_0_0.DeleteCustomThemeTemplate(arg_21_0, arg_21_1)
 	arg_21_0.customThemeTemplates[arg_21_1] = nil
 
-	arg_21_0:sendNotification(var_0_1.THEME_TEMPLATE_DELTETED, {
+	arg_21_0:sendNotification(var_0_0.THEME_TEMPLATE_DELTETED, {
 		templateId = arg_21_1
 	})
 
 	return
 end
 
-function var_0_1.AddCustomThemeTemplate(arg_22_0, arg_22_1)
+function var_0_0.AddCustomThemeTemplate(arg_22_0, arg_22_1)
 	arg_22_0.customThemeTemplates[arg_22_1.id] = arg_22_1
 
-	arg_22_0:sendNotification(var_0_1.THEME_TEMPLATE_ADDED, {
+	arg_22_0:sendNotification(var_0_0.THEME_TEMPLATE_ADDED, {
 		template = arg_22_1
 	})
 
 	return
 end
 
-function var_0_1.GetUploadThemeTemplateCnt(arg_23_0)
+function var_0_0.GetUploadThemeTemplateCnt(arg_23_0)
 	local var_23_0 = 0
 
-	pairs = var_1_10002
-
-	for iter_23_0, iter_23_1 in var_1_10002(arg_23_0.customThemeTemplates) do
+	for iter_23_0, iter_23_1 in pairs(arg_23_0.customThemeTemplates) do
 		if iter_23_1:IsPushed() then
 			var_23_0 = var_23_0 + 1
 		end
@@ -307,137 +212,104 @@ function var_0_1.GetUploadThemeTemplateCnt(arg_23_0)
 	return var_23_0
 end
 
-function var_0_1.GetShopThemeTemplates(arg_24_0)
+function var_0_0.GetShopThemeTemplates(arg_24_0)
 	return arg_24_0.shopThemeTemplates
 end
 
-function var_0_1.SetShopThemeTemplates(arg_25_0, arg_25_1)
+function var_0_0.SetShopThemeTemplates(arg_25_0, arg_25_1)
 	arg_25_0.shopThemeTemplates = arg_25_1
 
 	return
 end
 
-function var_0_1.GetShopThemeTemplateById(arg_26_0, arg_26_1)
+function var_0_0.GetShopThemeTemplateById(arg_26_0, arg_26_1)
 	return arg_26_0.shopThemeTemplates[arg_26_1]
 end
 
-function var_0_1.IsInitShopThemeTemplates(arg_27_0)
+function var_0_0.IsInitShopThemeTemplates(arg_27_0)
 	return arg_27_0.shopThemeTemplates ~= nil
 end
 
-function var_0_1.UpdateShopThemeTemplate(arg_28_0, arg_28_1)
+function var_0_0.UpdateShopThemeTemplate(arg_28_0, arg_28_1)
 	arg_28_0.shopThemeTemplates[arg_28_1.id] = arg_28_1
 
-	local var_28_0 = arg_28_0
-	local var_28_1 = arg_28_0.sendNotification
-	local var_28_2 = var_0_1.THEME_TEMPLATE_UPDATED
-	local var_28_3 = {}
-
-	BackYardConst = var_1_10007
-	var_28_3.type = var_1_10007.THEME_TEMPLATE_TYPE_SHOP
-	var_28_3.template = arg_28_1
-
-	var_28_1(var_28_0, var_28_2, var_28_3)
+	arg_28_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
+		type = BackYardConst.THEME_TEMPLATE_TYPE_SHOP,
+		template = arg_28_1
+	})
 
 	return
 end
 
-function var_0_1.DeleteShopThemeTemplate(arg_29_0, arg_29_1)
+function var_0_0.DeleteShopThemeTemplate(arg_29_0, arg_29_1)
 	arg_29_0.shopThemeTemplates[arg_29_1] = nil
 
-	arg_29_0:sendNotification(var_0_1.SHOP_THEME_TEMPLATE_DELETED, {
+	arg_29_0:sendNotification(var_0_0.SHOP_THEME_TEMPLATE_DELETED, {
 		id = arg_29_1
 	})
 
 	return
 end
 
-function var_0_1.GetCollectionThemeTemplates(arg_30_0)
+function var_0_0.GetCollectionThemeTemplates(arg_30_0)
 	return arg_30_0.collectionThemeTemplates
 end
 
-function var_0_1.SetCollectionThemeTemplates(arg_31_0, arg_31_1)
+function var_0_0.SetCollectionThemeTemplates(arg_31_0, arg_31_1)
 	arg_31_0.collectionThemeTemplates = arg_31_1
 
 	return
 end
 
-function var_0_1.GetCollectionThemeTemplateById(arg_32_0, arg_32_1)
+function var_0_0.GetCollectionThemeTemplateById(arg_32_0, arg_32_1)
 	return arg_32_0.collectionThemeTemplates[arg_32_1]
 end
 
-function var_0_1.AddCollectionThemeTemplate(arg_33_0, arg_33_1)
+function var_0_0.AddCollectionThemeTemplate(arg_33_0, arg_33_1)
 	arg_33_0.collectionThemeTemplates[arg_33_1.id] = arg_33_1
 
-	arg_33_0:sendNotification(var_0_1.COLLECTION_THEME_TEMPLATE_ADDED, {
+	arg_33_0:sendNotification(var_0_0.COLLECTION_THEME_TEMPLATE_ADDED, {
 		template = arg_33_1
 	})
 
 	return
 end
 
-function var_0_1.DeleteCollectionThemeTemplate(arg_34_0, arg_34_1)
+function var_0_0.DeleteCollectionThemeTemplate(arg_34_0, arg_34_1)
 	arg_34_0.collectionThemeTemplates[arg_34_1] = nil
 
-	arg_34_0:sendNotification(var_0_1.COLLECTION_THEME_TEMPLATE_DELETED, {
+	arg_34_0:sendNotification(var_0_0.COLLECTION_THEME_TEMPLATE_DELETED, {
 		id = arg_34_1
 	})
 
 	return
 end
 
-function var_0_1.GetThemeTemplateCollectionCnt(arg_35_0)
-	table = var_1_10001
+function var_0_0.GetThemeTemplateCollectionCnt(arg_35_0)
+	local var_35_0 = arg_35_0.collectionThemeTemplates or {}
 
-	local var_35_0 = var_1_10001.getCount
-	local var_35_1
-
-	if not arg_35_0.collectionThemeTemplates then
-		var_35_1 = {}
-	end
-
-	return var_35_0(var_35_1)
+	return table.getCount(var_35_0)
 end
 
-function var_0_1.UpdateCollectionThemeTemplate(arg_36_0, arg_36_1)
+function var_0_0.UpdateCollectionThemeTemplate(arg_36_0, arg_36_1)
 	arg_36_0.collectionThemeTemplates[arg_36_1.id] = arg_36_1
 
-	local var_36_0 = arg_36_0
-	local var_36_1 = arg_36_0.sendNotification
-	local var_36_2 = var_0_1.THEME_TEMPLATE_UPDATED
-	local var_36_3 = {}
-
-	BackYardConst = var_1_10007
-	var_36_3.type = var_1_10007.THEME_TEMPLATE_TYPE_COLLECTION
-	var_36_3.template = arg_36_1
-
-	var_36_1(var_36_0, var_36_2, var_36_3)
+	arg_36_0:sendNotification(var_0_0.THEME_TEMPLATE_UPDATED, {
+		type = BackYardConst.THEME_TEMPLATE_TYPE_COLLECTION,
+		template = arg_36_1
+	})
 
 	return
 end
 
-function var_0_1.GetTemplateNewID(arg_37_0)
-	_ = var_1_10001
-
-	local var_37_0 = var_1_10001.map
-
-	_ = var_1_10003
-
-	local var_37_1 = var_1_10003.values
-	local var_37_2
-
-	if not arg_37_0.customThemeTemplates then
-		var_37_2 = {}
-	end
-
-	local var_37_3 = var_37_0(var_37_1(var_37_2), function(arg_38_0)
+function var_0_0.GetTemplateNewID(arg_37_0)
+	local var_37_0 = arg_37_0.customThemeTemplates or {}
+	local var_37_1 = _.map(_.values(var_37_0), function(arg_38_0)
 		return arg_38_0:GetPos()
 	end)
 
 	for iter_37_0 = 1, 10 do
-		table = var_1_10006
-
-		if not var_1_10006.contains(var_37_3, iter_37_0) then
+		if not table.contains(var_37_1, iter_37_0) then
 			return iter_37_0
 		end
 	end
@@ -445,25 +317,15 @@ function var_0_1.GetTemplateNewID(arg_37_0)
 	return
 end
 
-function var_0_1.GetSystemThemes(arg_39_0)
+function var_0_0.GetSystemThemes(arg_39_0)
 	if not arg_39_0.systemThemes or #arg_39_0.systemThemes == 0 then
-		pg = var_1
+		local var_39_0 = pg.backyard_theme_template
 
-		local var_39_0 = var_1.backyard_theme_template
-
-		ipairs = var_1_10002
-
-		for iter_39_0, iter_39_1 in var_1_10002(var_39_0.all) do
+		for iter_39_0, iter_39_1 in ipairs(pg.backyard_theme_template.all) do
 			if var_39_0[iter_39_1].is_view == 1 then
-				BackYardSystemTheme = var_7
-
-				local var_39_1 = var_7.New({
+				table.insert(arg_39_0.systemThemes, (BackYardSystemTheme.New({
 					id = iter_39_1
-				})
-
-				table = var_1_10008
-
-				var_1_10008.insert(arg_39_0.systemThemes, var_39_1)
+				})))
 			end
 		end
 	end
@@ -471,19 +333,14 @@ function var_0_1.GetSystemThemes(arg_39_0)
 	return arg_39_0.systemThemes
 end
 
-function var_0_1.ResetSystemTheme(arg_40_0, arg_40_1)
+function var_0_0.ResetSystemTheme(arg_40_0, arg_40_1)
 	if not arg_40_0.systemThemes or #arg_40_0.systemThemes == 0 then
 		return
 	end
 
-	ipairs = var_2
-
-	for iter_40_0, iter_40_1 in var_2(arg_40_0.systemThemes) do
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0.systemThemes) do
 		if iter_40_1.id == arg_40_1 then
-			local var_40_0 = arg_40_0.systemThemes
-
-			BackYardSystemTheme = var_1_10008
-			var_40_0[iter_40_0] = var_1_10008.New({
+			arg_40_0.systemThemes[iter_40_0] = BackYardSystemTheme.New({
 				id = arg_40_1
 			})
 
@@ -494,19 +351,13 @@ function var_0_1.ResetSystemTheme(arg_40_0, arg_40_1)
 	return
 end
 
-function var_0_1.NeedRefreshThemeTemplateShop(arg_41_0)
-	if not arg_41_0.refreshThemeTemplateShopTime then
-		arg_41_0.refreshThemeTemplateShopTime = 0
-	end
+function var_0_0.NeedRefreshThemeTemplateShop(arg_41_0)
+	arg_41_0.refreshThemeTemplateShopTime = arg_41_0.refreshThemeTemplateShopTime or 0
 
-	pg = var_1
+	local var_41_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	local var_41_0 = var_1.TimeMgr.GetInstance()
-	local var_41_1 = var_1.GetServerTime(var_41_0)
-
-	if arg_41_0.refreshThemeTemplateShopTime < var_41_1 then
-		BackYardConst = var_2
-		arg_41_0.refreshThemeTemplateShopTime = var_41_1 + var_2.AUTO_REFRESH_THEME_TEMPLATE_TIME
+	if var_41_0 > arg_41_0.refreshThemeTemplateShopTime then
+		arg_41_0.refreshThemeTemplateShopTime = var_41_0 + BackYardConst.AUTO_REFRESH_THEME_TEMPLATE_TIME
 
 		return true
 	end
@@ -514,53 +365,31 @@ function var_0_1.NeedRefreshThemeTemplateShop(arg_41_0)
 	return false
 end
 
-function var_0_1.NeedCollectionTip(arg_42_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
+function var_0_0.NeedCollectionTip(arg_42_0)
+	local var_42_9000
+	local var_42_0 = getProxy(PlayerProxy)
+	local var_42_1 = var_42_0.getRawData(var_42_9000).id
+	local var_42_2 = PlayerPrefs.GetInt("backyard_template" .. var_42_1, 0)
+	local var_42_3 = arg_42_0:GetThemeTemplateCollectionCnt()
 
-	local var_42_0 = var_1_10001(var_1_10003)
-	local var_42_1 = var_1.getRawData(var_42_0).id
-
-	PlayerPrefs = var_1_10002
-
-	local var_42_2 = var_1_10002.GetInt("backyard_template" .. var_42_1, 0)
-
-	if arg_42_0:GetThemeTemplateCollectionCnt() ~= var_42_2 then
-		PlayerPrefs = var_4
-
-		var_4.SetInt("backyard_template" .. var_42_1, var_3)
-
-		PlayerPrefs = var_4
-
-		var_4.Save()
+	if var_42_0 ~= var_42_2 then
+		PlayerPrefs.SetInt("backyard_template" .. var_42_1, var_42_3)
+		PlayerPrefs.Save()
 	end
 
-	if var_3 < var_42_2 then
+	if var_42_3 < var_42_2 then
 		return true
 	end
 
 	return false
 end
 
-function var_0_1.NeedShopShowHelp(arg_43_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
+function var_0_0.NeedShopShowHelp(arg_43_0)
+	local var_43_0 = getProxy(PlayerProxy):getRawData().id
 
-	local var_43_0 = var_1_10001(var_1_10003)
-	local var_43_1 = var_1.getRawData(var_43_0).id
-
-	PlayerPrefs = var_1_10002
-
-	local var_43_2 = var_1_10002.GetInt("backyard_template_help" .. var_43_1, 0)
-
-	if not (0 < var_43_2) then
-		PlayerPrefs = var_3
-
-		var_3.SetInt("backyard_template_help" .. var_43_1, 1)
-
-		PlayerPrefs = var_3
-
-		var_3.Save()
+	if PlayerPrefs.GetInt("backyard_template_help" .. var_43_0, 0) <= 0 then
+		PlayerPrefs.SetInt("backyard_template_help" .. var_43_0, 1)
+		PlayerPrefs.Save()
 
 		return true
 	end
@@ -568,80 +397,43 @@ function var_0_1.NeedShopShowHelp(arg_43_0)
 	return false
 end
 
-function var_0_1.GetTag7Furnitures(arg_44_0)
-	local var_44_0 = {}
+function var_0_0.GetTag7Furnitures(arg_44_0)
+	for iter_44_0, iter_44_1 in ipairs(pg.furniture_data_template.get_id_list_by_tag[7]) do
+		if pg.furniture_shop_template[iter_44_1] and pg.furniture_shop_template[iter_44_1].not_for_sale == 0 then
+			local var_44_0 = pg.TimeMgr.GetInstance()
 
-	pg = var_1_10002
-
-	local var_44_1 = var_1_10002.furniture_data_template.get_id_list_by_tag[7]
-
-	ipairs = var_1_10003
-
-	for iter_44_0, iter_44_1 in var_1_10003(var_44_1) do
-		pg = var_1_10008
-
-		if var_1_10008.furniture_shop_template[iter_44_1] and var_1_10008.not_for_sale == 0 then
-			pg = var_9
-
-			local var_44_2 = var_9.TimeMgr.GetInstance()
-
-			if var_9.inTime(var_44_2, var_1_10008.time) then
-				table = var_9
-
-				var_9.insert(var_44_0, iter_44_1)
+			if var_44_0:inTime(pg.furniture_shop_template[iter_44_1].time) then
+				table.insert({}, iter_44_1)
 			end
 		end
 	end
 
-	return var_44_0
+	return {}
 end
 
-function var_0_1.IsShowRedDot(arg_45_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
+function var_0_0.IsShowRedDot(arg_45_0)
+	local var_45_9001
+	local var_45_9000
+	local var_45_0 = getProxy(PlayerProxy)
+	local var_45_1 = pg.SystemOpenMgr.GetInstance()
+	local var_45_2 = getProxy(DormProxy).getRawData(var_45_0)
+	local var_45_3
 
-	local var_45_0 = var_1_10001(var_1_10003)
-	local var_45_1 = var_1.getRawData(var_45_0)
-
-	pg = var_1_10002
-
-	local var_45_2 = var_1_10002.SystemOpenMgr.GetInstance()
-	local var_45_3 = var_2.isOpenSystem(var_45_2, var_45_1.level, "CourtYardMediator")
-
-	getProxy = var_45_0
-	DormProxy = var_5
-
-	local var_45_4 = var_45_0(var_5)
-	local var_45_5 = var_3.getRawData(var_45_4)
-	local var_45_6 = var_4.IsLackOfFood(var_45_5)
-	local var_45_7 = var_4:AnyShipExistIntimacyOrMoney()
-
-	if var_45_3 and not var_45_6 and not var_45_7 then
+	if var_45_1.isOpenSystem(var_45_9001, var_45_0.getRawData(var_45_9000).level, "CourtYardMediator") and not var_45_2.IsLackOfFood(var_45_1) and not var_45_2:AnyShipExistIntimacyOrMoney() then
 		::label_45_2::
 
-		getProxy = var_45_5
-		SettingsProxy = var_1_10009
-
-		local var_45_8 = var_45_5(var_1_10009)
-
-		if not var_45_5.IsTipNewTheme(var_45_8) then
-			getProxy = var_45_5
-			SettingsProxy = var_45_8
-
-			local var_45_9 = var_45_5(var_45_8)
-
-			var_45_5 = var_45_5.IsTipNewGemFurniture(var_45_9)
-		end
+		var_45_3 = getProxy(SettingsProxy):IsTipNewTheme()
+		var_45_3 = var_45_3 or getProxy(SettingsProxy):IsTipNewGemFurniture()
 	end
 
-	return var_45_5
+	return var_45_3
 end
 
-function var_0_1.remove(arg_46_0)
+function var_0_0.remove(arg_46_0)
 	arg_46_0:ClearRequestPopEvent()
 	arg_46_0:ClearRequestShipExp()
 
 	return
 end
 
-return var_0_1
+return var_0_0

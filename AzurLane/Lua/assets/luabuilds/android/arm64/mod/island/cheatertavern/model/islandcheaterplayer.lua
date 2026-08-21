@@ -1,15 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandCheaterPlayer")
+﻿local var_0_0 = class("IslandCheaterPlayer")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.user_id = arg_1_1.user_id
 	arg_1_0.seat = arg_1_1.seat
 	arg_1_0.card_num = arg_1_1.card_num
 	arg_1_0.bomb_dic = {}
-	ipairs = var_2
 
-	for iter_1_0, iter_1_1 in var_2(arg_1_1.bomb_list) do
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.bomb_list) do
 		arg_1_0.bomb_dic[iter_1_1.bomb_id] = iter_1_1.state == 1
 	end
 
@@ -77,22 +74,14 @@ function var_0_0.IsOut(arg_12_0)
 end
 
 function var_0_0.GetBombState(arg_13_0, arg_13_1)
-	local var_13_0
-
-	if not arg_13_0.bomb_dic[arg_13_1] then
-		var_13_0 = false
-	end
-
-	return var_13_0
+	return arg_13_0.bomb_dic[arg_13_1] or false
 end
 
 function var_0_0.GetCurrentAndAllHp(arg_14_0)
 	local var_14_0 = 0
 	local var_14_1 = 0
 
-	pairs = var_1_10003
-
-	for iter_14_0, iter_14_1 in var_1_10003(arg_14_0.bomb_dic) do
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.bomb_dic) do
 		if iter_14_1 then
 			var_14_0 = var_14_0 + 1
 		end
@@ -107,11 +96,7 @@ function var_0_0.GetCurrentBombId(arg_15_0)
 	local var_15_0
 	local var_15_1 = 0
 
-	pg = var_1_10003
-
-	local var_15_2 = var_1_10003.gameset.bar_punishment_limit.key_value
-
-	for iter_15_0 = 1, var_15_2 do
+	for iter_15_0 = 1, pg.gameset.bar_punishment_limit.key_value do
 		if arg_15_0.bomb_dic[iter_15_0] == false and not var_15_0 then
 			var_15_0 = iter_15_0 - 1
 		elseif arg_15_0.bomb_dic[iter_15_0] == true then
@@ -120,7 +105,7 @@ function var_0_0.GetCurrentBombId(arg_15_0)
 	end
 
 	if var_15_0 == 0 then
-		var_15_0 = var_15_2
+		var_15_0 = pg.gameset.bar_punishment_limit.key_value
 	end
 
 	return var_15_0 or 1, var_15_1

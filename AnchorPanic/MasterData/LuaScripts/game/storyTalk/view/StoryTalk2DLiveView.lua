@@ -1,25 +1,94 @@
 module('game.storyTalk.view.StoryTalk2DLiveView', Class.impl())
 
+local storyCharactorUrlCache = {}
+local storyCharactorFaceUrlCache = {}
+
 function initData(self, go, modelID, modelLocation, nodeTrans, charactorType, isVideoCall, facePosX, facePosY,
                   modelOffset, isBright, modelShowEffect)
+    local roleParam = storyTalk.StoryTalkManager:getStoryRoleParam(modelID)
+    if roleParam then
+        self.mRoleAlpha = roleParam.m_alpha
+        self.mRoleScale = roleParam.m_scale
+        self.mRoleOffset = roleParam.m_offset
+    else
+        self.mRoleAlpha = 1
+        self.mRoleScale = 1
+        self.mRoleOffset = {0, 0}
+    end
     self.mParentRoot = go
     self.mParentRootTrans = self.mParentRoot.transform
     self.mModelID = modelID
     self.mCharactorType = charactorType
-    self.mFacePosX = facePosX
-    self.mFacePosY = facePosY
+    self.mFacePosX = facePosX * self.mRoleScale
+    self.mFacePosY = facePosY * self.mRoleScale
     self.modelOffset = modelOffset
     self.mTweenTime = 0.5
     self.modelShowEffect = modelShowEffect
     self.mStory2DViewShakeObj = go:GetComponent(ty.ShakeObject)
 
 
-    -- self.mGrayColor = gs.ColorUtil.GetColor("313131FF")
-    -- self.mLightColor = gs.ColorUtil.GetColor("D7D2D2FF")
-
     self:initDataUI(modelID, modelLocation, nodeTrans, facePosX, facePosY, modelOffset, isBright, isVideoCall)
 
     self:shakeAni()
+end
+
+-- 根据屏幕宽高和贴图的宽高调整贴图的位置，保证贴图底部贴近屏幕底部
+function adjustViewPosY(self, liveView)
+    local offsetY = 0
+    if liveView then
+        local sw, sh = ScreenUtil:getScreenSize()
+        self.mParentRootRectTrans = liveView.transform.parent:GetComponent(ty.RectTransform)
+        local liveViewHeight = liveView.Height
+        local liveViewRectTrans = liveView.transform:GetComponent(ty.RectTransform)
+        local scaleY = liveViewRectTrans and liveViewRectTrans.localScale.y or 1
+        local liveViewHalfHeight = (liveViewHeight * scaleY) / 2
+        offsetY = liveViewHalfHeight - sh / 2 - self.mParentRootRectTrans.localPosition.y
+    end
+    return offsetY
+end
+
+function isStoryChannelHarmonious(self)
+    return RefMgr and RefMgr:getSpecialConfig() and sdk and sdk.ChannelData and sdk.ChannelData:getIsChannelHarmonious()
+end
+
+function getStoryHarCharactorUrl(self, modelID)
+    return UrlManager:getStoryHarCharactorUrl(modelID)
+end
+
+function getStoryHarCharactorFaceUrl(self, modelID, faceID)
+    return UrlManager:getStoryHarCharactorFaceUrl(modelID, faceID)
+end
+
+function getStoryAssetPath(self, cache, cacheKey, normalPath, harPath)
+    if not self:isStoryChannelHarmonious() then
+        return normalPath
+    end
+
+    local path = cache[cacheKey]
+    if path then
+        return path
+    end
+
+    if AssetLoader.GetAsset(harPath) ~= nil then
+        path = harPath
+    else
+        path = normalPath
+    end
+    cache[cacheKey] = path
+    return path
+end
+
+function getStoryCharactorUrl(self, modelID)
+    local normalPath = UrlManager:getStoryCharactorUrl(modelID)
+    local harPath = self:getStoryHarCharactorUrl(modelID)
+    return self:getStoryAssetPath(storyCharactorUrlCache, tostring(modelID), normalPath, harPath)
+end
+
+function getStoryCharactorFaceUrl(self, modelID, faceID)
+    local normalPath = UrlManager:getStoryCharactorFaceUrl(modelID, faceID)
+    local harPath = self:getStoryHarCharactorFaceUrl(modelID, faceID)
+    local cacheKey = string.format("%s_%s", modelID, faceID)
+    return self:getStoryAssetPath(storyCharactorFaceUrlCache, cacheKey, normalPath, harPath)
 end
 
 function initDataUI(self, modelID, modelLocation, nodeTrans, facePosX, facePosY, modelOffset, isBright, isVideoCall)
@@ -29,18 +98,23 @@ function initDataUI(self, modelID, modelLocation, nodeTrans, facePosX, facePosY,
     self:resetTransform(self.mRootTrans, modelLocation)
     self.mModelTexImg = self.mRoot:GetComponent(ty.AutoRefImage)
     self.mModelTexImg.material = gs.Material(self.mModelTexImg.material)
-    self.mModelTexImg:SetImg(UrlManager:getStoryCharactorUrl(modelID), false)
+    self.mModelTexImg.material:SetFloat("_FadeEffect", self.mRoleAlpha)
+    self.mModelTexImg:SetImg(self:getStoryCharactorUrl(modelID), false)
     -- 设置底图宽高
     self.mModelTexImgRectTrans = self.mRoot:GetComponent(ty.RectTransform)
     self.mModelTexImgRectTrans.sizeDelta = gs.Vector2(self.mModelTexImg.Width, self.mModelTexImg.Height)
+    self.mModelTexImgRectTrans.localScale = gs.Vector3(self.mRoleScale, self.mRoleScale, 1)
+    local rectOffset = gs.Vector3(self.mRoleOffset[1], self.mRoleOffset[2] + self:adjustViewPosY(self.mModelTexImg), 0)
+    self.mModelTexImgRectTrans.localPosition = self.mModelTexImgRectTrans.localPosition + rectOffset
 
-
+    -- 设置表情贴图
     self.mFaceGo = self.mRootTrans:Find("Face").gameObject
     self.mFaceGoTrans = self.mFaceGo.transform
     self.mFaceGoTrans.localPosition = gs.Vector3(facePosX, facePosY, -1)
     self.mFaceTexImg = self.mFaceGo:GetComponent(ty.AutoRefImage)
     self.mFaceTexImg.material = gs.Material(self.mFaceTexImg.material)
-    self.mFaceTexImg:SetImg(UrlManager:getStoryCharactorFaceUrl(modelID, "1"), false)
+    self.mFaceTexImg.material:SetFloat("_FadeEffect", self.mRoleAlpha)
+    self.mFaceTexImg:SetImg(self:getStoryCharactorFaceUrl(modelID, "1"), false)
     self.mFaceTexImgRectTrans = self.mFaceGo:GetComponent(ty.RectTransform)
     self.mFaceTexImgRectTrans.sizeDelta = gs.Vector2(self.mFaceTexImg.Width, self.mFaceTexImg.Height)
 
@@ -52,6 +126,7 @@ function initDataUI(self, modelID, modelLocation, nodeTrans, facePosX, facePosY,
     self:moveTransform(self.mRootTrans, modelOffset)
 end
 
+-- 3D模型的显示（前期六章为主，后期改用2D）
 function initDataScene(self, modelID, nodeTrans, facePosX, facePosY, modelOffset)
     self.mCamGo = nodeTrans:Find("RTCam").gameObject
     self.mCamGo:SetActive(true)
@@ -62,12 +137,12 @@ function initDataScene(self, modelID, nodeTrans, facePosX, facePosY, modelOffset
     -- 获取模型贴图的 SpriteRenderer 组件
     self.mModelTexImg = self.mRoot:GetComponent(ty.SpriteRenderer)
     -- 根据相机设置根节点的 position 和 rotation
-    self.mModelTexImg.sprite, self.mModelTexImgWidth, self.mModelTexImgHeight = self:getImgInfo(UrlManager
-        :getStoryCharactorUrl(self.mModelID))
-    local faceTexSprite, faceTexWidth, faceTexHeight
-    faceTexSprite, faceTexWidth, faceTexHeight = self:getImgInfo(UrlManager:getStoryCharactorFaceUrl(modelID, "1"))
+    self.mModelTexImg.sprite, self.mModelTexImgWidth, self.mModelTexImgHeight = self:getImgInfo(self:getStoryCharactorUrl(self.mModelID))
+    local faceTexSprite, faceTexWidth, faceTexHeight = self:getImgInfo(self:getStoryCharactorFaceUrl(modelID, "1"))
     self:setSceneRootTransform(self.mModelTexImg.sprite, self.mModelTexImgWidth, self.mModelTexImgHeight,
         self.mCamGo.transform, facePosX, facePosY, faceTexWidth)
+    local rectOffset = gs.Vector3(self.mRoleOffset[1], self.mRoleOffset[2] + self:adjustViewPosY(self.mModelTexImg), 0)
+    self.mModelTexImgRectTrans.localPosition = self.mModelTexImgRectTrans.localPosition + rectOffset
 
     -- 设置表情相关内容
     self.mFaceGo = self.mRootTrans:Find("Face").gameObject
@@ -219,9 +294,12 @@ function updateModel(self, newEnterTrans, modelData)
 
 
     -- 更新位置
-    local offset = gs.Vector3(self.modelOffset[1] / 100, self.modelOffset[2] / 100, self.modelOffset[3] / 100)
+    local adjustPosY = self:adjustViewPosY(self.mModelTexImg)
+    local rectOffset = newEnterTrans:InverseTransformPoint(newEnterTrans.position) +
+        gs.Vector3(self.modelOffset[1] + self.mRoleOffset[1], self.mRoleOffset[2] + self.modelOffset[2] + adjustPosY, self.modelOffset[3])
+    local pos = newEnterTrans:TransformPoint(rectOffset)
     self:setBrightActive(isBright)
-    self:setPositionTween(newEnterTrans.position + offset, self.mTweenTime, function()
+    self:setPositionTween(pos, self.mTweenTime, function()
         self:shakeAni()
     end)
 
@@ -236,9 +314,13 @@ function destroy(self)
         LoopManager:clearTimeout(self.shakeSn)
     end
 
+
     if self.mRoot then
         self:destroyObject(self.mRoot)
+        self.mRoot = nil
         self.mRootTrans = nil
+        self.mModelTexImg = nil
+        self.mFaceTexImg = nil
         if self.mCamGo then
             self.mCamGo:SetActive(false)
             self.mCamGo = nil
@@ -263,7 +345,7 @@ function faceChange(self, animationClipID)
     -- if self.mIsVideoCall then
     --     self.mFaceTexImg.sprite = AssetLoader.GetAsset(UrlManager:getStoryCharactorFaceUrl(self.mModelID, animationClipID))
     -- else
-    self.mFaceTexImg:SetImg(UrlManager:getStoryCharactorFaceUrl(self.mModelID, animationClipID), false)
+    self.mFaceTexImg:SetImg(self:getStoryCharactorFaceUrl(self.mModelID, animationClipID), false)
     -- end
 end
 

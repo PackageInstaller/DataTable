@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿return {
 	fadeOut = 1.5,
 	dialogbox = 2,
 	alpha = 0,
@@ -9,248 +9,207 @@
 	id = "DORM3DDAILYCONVERSATION14048",
 	placeholder = {
 		"dorm3d"
-	}
-}
-local var_0_1 = {}
-local var_0_2 = {
-	actorName = 49905,
-	side = 2,
-	hidePaintObj = true,
-	dir = 1,
-	nameColor = "#FFFFFF",
-	say = "切片的全麦面包……",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_3 = {}
-
-STORY_EVENT = var_0_10004
-var_0_3.name = var_0_10004.TEST
-var_0_3.data = {
-	op_list = {
+	},
+	scripts = {
 		{
-			param = "Play",
-			name = "talk_01-start",
-			time = 0,
-			type = "action",
-			skip = true
+			actorName = 49905,
+			side = 2,
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#FFFFFF",
+			say = "切片的全麦面包……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "talk_01-start",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = true,
+							name = "Face_smile_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
 		},
 		{
-			skip = true,
-			name = "Face_smile_start",
-			type = "action"
+			actorName = 49905,
+			side = 2,
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#FFFFFF",
+			say = "在上方涂满口味浓烈的林堡奶酪……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "Idle",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = true,
+							name = "Face_think_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
 		},
 		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
+			actorName = 49905,
+			side = 2,
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#FFFFFF",
+			say = "再堆砌上煎制过的培根条和切好的蔬菜碎……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "Idle",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = true,
+							name = "Face_happy_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
+		},
+		{
+			actorName = 49905,
+			side = 2,
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#FFFFFF",
+			say = "锵锵，一道营养丰富的铁血早餐就这样新鲜出炉了。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "nod_01",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = true,
+							name = "Face_smile_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
+		},
+		{
+			actorName = 49905,
+			side = 2,
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#FFFFFF",
+			say = "{dorm3d}快来尝尝，让深渊之神征服你的味蕾吧！",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "talk_02-start",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = true,
+							name = "Face_happy_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
 		}
 	}
 }
-
-local var_0_4 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_4.name = var_5.TEST_DONE
-var_0_3.callbackData = var_0_4
-var_0_2.dispatcher = var_0_3
-var_0_1[1] = var_0_2
-
-local var_0_5 = {
-	actorName = 49905,
-	side = 2,
-	hidePaintObj = true,
-	dir = 1,
-	nameColor = "#FFFFFF",
-	say = "在上方涂满口味浓烈的林堡奶酪……",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_6 = {}
-
-STORY_EVENT = var_0_4
-var_0_6.name = var_0_4.TEST
-var_0_6.data = {
-	op_list = {
-		{
-			param = "Play",
-			name = "Idle",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			skip = true,
-			name = "Face_think_start",
-			type = "action"
-		},
-		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
-		}
-	}
-}
-
-local var_0_7 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_7.name = var_5.TEST_DONE
-var_0_6.callbackData = var_0_7
-var_0_5.dispatcher = var_0_6
-var_0_1[2] = var_0_5
-
-local var_0_8 = {
-	actorName = 49905,
-	side = 2,
-	hidePaintObj = true,
-	dir = 1,
-	nameColor = "#FFFFFF",
-	say = "再堆砌上煎制过的培根条和切好的蔬菜碎……",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_9 = {}
-
-STORY_EVENT = var_0_7
-var_0_9.name = var_0_7.TEST
-var_0_9.data = {
-	op_list = {
-		{
-			param = "Play",
-			name = "Idle",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			skip = true,
-			name = "Face_happy_start",
-			type = "action"
-		},
-		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
-		}
-	}
-}
-
-local var_0_10 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_10.name = var_5.TEST_DONE
-var_0_9.callbackData = var_0_10
-var_0_8.dispatcher = var_0_9
-var_0_1[3] = var_0_8
-
-local var_0_11 = {
-	actorName = 49905,
-	side = 2,
-	hidePaintObj = true,
-	dir = 1,
-	nameColor = "#FFFFFF",
-	say = "锵锵，一道营养丰富的铁血早餐就这样新鲜出炉了。",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_12 = {}
-
-STORY_EVENT = var_0_10
-var_0_12.name = var_0_10.TEST
-var_0_12.data = {
-	op_list = {
-		{
-			param = "Play",
-			name = "nod_01",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			skip = true,
-			name = "Face_smile_start",
-			type = "action"
-		},
-		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
-		}
-	}
-}
-
-local var_0_13 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_13.name = var_5.TEST_DONE
-var_0_12.callbackData = var_0_13
-var_0_11.dispatcher = var_0_12
-var_0_1[4] = var_0_11
-
-local var_0_14 = {
-	actorName = 49905,
-	side = 2,
-	hidePaintObj = true,
-	dir = 1,
-	nameColor = "#FFFFFF",
-	say = "{dorm3d}快来尝尝，让深渊之神征服你的味蕾吧！",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_15 = {}
-
-STORY_EVENT = var_0_13
-var_0_15.name = var_0_13.TEST
-var_0_15.data = {
-	op_list = {
-		{
-			param = "Play",
-			name = "talk_02-start",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			skip = true,
-			name = "Face_happy_start",
-			type = "action"
-		},
-		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
-		}
-	}
-}
-
-local var_0_16 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_16.name = var_5.TEST_DONE
-var_0_15.callbackData = var_0_16
-var_0_14.dispatcher = var_0_15
-var_0_1[5] = var_0_14
-var_0_0.scripts = var_0_1
-
-return var_0_0

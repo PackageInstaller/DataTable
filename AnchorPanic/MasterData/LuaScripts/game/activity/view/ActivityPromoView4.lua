@@ -26,12 +26,20 @@ function configUI(self)
     self.mBtnBuy = self:getChildGO("mBtnBuy")
     self.mToggleRemaid = self:getChildGO("mToggleRemaid"):GetComponent(ty.Toggle)
     self.mAwardTrans = self:getChildTrans("mAwardTrans")
+    self.mImgNor = self:getChildGO("mImgNor")
+    self.mImgHar = self:getChildGO("mImgHar")
 end
 
 --激活
 function active(self)
     super.active(self)
-
+    if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) then
+        self.mImgNor.gameObject:SetActive(false)
+        self.mImgHar.gameObject:SetActive(true)
+    else
+        self.mImgNor.gameObject:SetActive(true)
+        self.mImgHar.gameObject:SetActive(false)
+    end
     self.id = sysParam.SysParamManager:getValue(SysParamType.MAIN_BANNER_PROMO4_ID, 0)
     local fashionComboConfigVo = purchase.FashionShopManager:getFashionComboData(self.id)
     if not fashionComboConfigVo then
@@ -40,7 +48,7 @@ function active(self)
     end
 
     self:getChildGO("mTxtOriginal"):GetComponent(ty.Text).text = _TT(50011, fashionComboConfigVo.originalCost / 100)
-    self:getChildGO("mTxtDisco"):GetComponent(ty.Text).text = fashionComboConfigVo.scaleOff / 100
+    self:getChildGO("mTxtDisco"):GetComponent(ty.Text).text = string.format("%.1f",fashionComboConfigVo.scaleOff / 100)
     -- self:getChildGO("mImgBannerBg"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(fashionComboConfigVo.main_img))
     self:setBtnLabel(self.mBtnBuy, nil, 
         string.format("￥  <size=45><i>%s</i></size>    <size=30>%s</size>", fashionComboConfigVo.cost / 100, _TT(9))

@@ -1,182 +1,87 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandDistanceView", import("..IslandBaseOpView"))
 
-local var_0_0 = "IslandDistanceView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..IslandBaseOpView"))
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "IslandDistanceUI"
 end
 
-function var_0_1.GetUIParent(arg_2_0, arg_2_1)
+function var_0_0.GetUIParent(arg_2_0, arg_2_1)
 	return arg_2_0:GetView().interactionContainer
 end
 
-function var_0_1.OnInit(arg_3_0, arg_3_1)
-	IslandTargetTracker = var_1_10002
-
-	local var_3_0 = var_1_10002.New
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.targetTracker = var_3_0(var_4.Find(var_3_1, "distance"))
-
-	local var_3_2 = arg_3_0._tf
-	local var_3_3 = var_2.Find(var_3_2, "distance/Image")
-	local var_3_4 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_3_0.iconImg = var_3_4(var_3_3, var_5(var_7))
-
-	local var_3_5 = arg_3_0._tf
-	local var_3_6 = var_2.Find(var_3_5, "distance/arr/arr")
-	local var_3_7 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_7
-	arg_3_0.arrImg = var_3_7(var_3_6, var_5(var_7))
-	IslandTargetTracker = var_2
-
-	local var_3_8 = var_2.New
-	local var_3_9 = arg_3_0._tf
-
-	arg_3_0.mainTargetTracker = var_3_8(var_4.Find(var_3_9, "main_distance"))
+function var_0_0.OnInit(arg_3_0, arg_3_1)
+	arg_3_0.targetTracker = IslandTargetTracker.New(arg_3_0._tf:Find("distance"))
+	arg_3_0.iconImg = arg_3_0._tf:Find("distance/Image"):GetComponent(typeof(Image))
+	arg_3_0.arrImg = arg_3_0._tf:Find("distance/arr/arr"):GetComponent(typeof(Image))
+	arg_3_0.mainTargetTracker = IslandTargetTracker.New(arg_3_0._tf:Find("main_distance"))
 
 	return
 end
 
-function var_0_1.OnUpdate(arg_4_0)
-	local var_4_0 = arg_4_0.mainTargetTracker
-
-	var_1.Update(var_4_0)
-
-	local var_4_1 = arg_4_0.targetTracker
-	local var_4_2 = var_1.Update
-	local var_4_3 = arg_4_0.mainTargetTracker
-
-	var_4_2(var_4_1, var_4.GetShowTargetPosition(var_4_3))
+function var_0_0.OnUpdate(arg_4_0)
+	arg_4_0.mainTargetTracker:Update()
+	arg_4_0.targetTracker:Update(arg_4_0.mainTargetTracker:GetShowTargetPosition())
 
 	return
 end
 
-function var_0_1.SetTrackingTarget(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4, arg_5_5)
-	IslandTaskTrackCard = var_1_10006
-
-	if arg_5_5 == var_1_10006.TYPES.MAIN then
-		local var_5_0 = arg_5_0.mainTargetTracker
-
-		var_6.Tracking(var_5_0, arg_5_1._go, arg_5_2._go, arg_5_3)
-	else
-		IslandTaskTrackCard = var_6
-
-		if arg_5_5 == var_6.TYPES.OTHER then
-			arg_5_0:UpdateTrackerStyle(arg_5_4)
-
-			local var_5_1 = arg_5_0.targetTracker
-
-			var_6.Tracking(var_5_1, arg_5_1._go, arg_5_2._go, arg_5_3)
-		end
+function var_0_0.SetTrackingTarget(arg_5_0, arg_5_1, arg_5_2, arg_5_3, arg_5_4, arg_5_5)
+	if arg_5_5 == IslandTaskTrackCard.TYPES.MAIN then
+		arg_5_0.mainTargetTracker:Tracking(arg_5_1._go, arg_5_2._go, arg_5_3)
+	elseif arg_5_5 == IslandTaskTrackCard.TYPES.OTHER then
+		arg_5_0:UpdateTrackerStyle(arg_5_4)
+		arg_5_0.targetTracker:Tracking(arg_5_1._go, arg_5_2._go, arg_5_3)
 	end
 
 	return
 end
 
-function var_0_1.UpdateTrackerStyle(arg_6_0, arg_6_1)
-	IslandTaskType = var_1_10002
+function var_0_0.UpdateTrackerStyle(arg_6_0, arg_6_1)
+	local var_6_0 = IslandTaskType.GetTrackingIconName(arg_6_1 or IslandTaskType.MAIN)
 
-	local var_6_0 = var_1_10002.GetTrackingIconName
+	arg_6_0.iconImg.sprite = GetSpriteFromAtlas("ui/IslandUI_atlas", var_6_0)
 
-	if not arg_6_1 then
-		::label_6_0::
+	arg_6_0.iconImg:SetNativeSize()
 
-		IslandTaskType = var_1_10004
-		var_1_10004 = var_1_10004.MAIN
-	end
+	arg_6_0.arrImg.sprite = GetSpriteFromAtlas("ui/IslandUI_atlas", var_6_0 .. "_1")
 
-	local var_6_1 = var_6_0(var_1_10004)
-
-	GetSpriteFromAtlas = var_1_10003
-
-	local var_6_2 = var_1_10003("ui/IslandUI_atlas", var_6_1)
-
-	arg_6_0.iconImg.sprite = var_6_2
-
-	local var_6_3 = arg_6_0.iconImg
-
-	var_4.SetNativeSize(var_6_3)
-
-	GetSpriteFromAtlas = var_4
-
-	local var_6_4 = var_4("ui/IslandUI_atlas", var_6_1 .. "_1")
-
-	arg_6_0.arrImg.sprite = var_6_4
-
-	local var_6_5 = arg_6_0.arrImg
-
-	var_5.SetNativeSize(var_6_5)
+	arg_6_0.arrImg:SetNativeSize()
 
 	return
 end
 
-function var_0_1.CancelTracking(arg_7_0, arg_7_1)
-	IslandTaskTrackCard = var_1_10002
-
-	if arg_7_1 == var_1_10002.TYPES.MAIN then
-		local var_7_0 = arg_7_0.mainTargetTracker
-
-		var_2.UnTracking(var_7_0)
-	else
-		IslandTaskTrackCard = var_2
-
-		if arg_7_1 == var_2.TYPES.OTHER then
-			local var_7_1 = arg_7_0.targetTracker
-
-			var_2.UnTracking(var_7_1)
-		end
+function var_0_0.CancelTracking(arg_7_0, arg_7_1)
+	if arg_7_1 == IslandTaskTrackCard.TYPES.MAIN then
+		arg_7_0.mainTargetTracker:UnTracking()
+	elseif arg_7_1 == IslandTaskTrackCard.TYPES.OTHER then
+		arg_7_0.targetTracker:UnTracking()
 	end
 
 	return
 end
 
-function var_0_1.ShowHud(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_0.mainTargetTracker
-
-	var_2.OnShowHud(var_8_0, arg_8_1)
-
-	local var_8_1 = arg_8_0.targetTracker
-
-	var_2.OnShowHud(var_8_1, arg_8_1)
+function var_0_0.ShowHud(arg_8_0, arg_8_1)
+	arg_8_0.mainTargetTracker:OnShowHud(arg_8_1)
+	arg_8_0.targetTracker:OnShowHud(arg_8_1)
 
 	return
 end
 
-function var_0_1.HideHud(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0.mainTargetTracker
-
-	var_2.OnHideHud(var_9_0, arg_9_1)
-
-	local var_9_1 = arg_9_0.targetTracker
-
-	var_2.OnHideHud(var_9_1, arg_9_1)
+function var_0_0.HideHud(arg_9_0, arg_9_1)
+	arg_9_0.mainTargetTracker:OnHideHud(arg_9_1)
+	arg_9_0.targetTracker:OnHideHud(arg_9_1)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_10_0)
+function var_0_0.OnDestroy(arg_10_0)
 	if arg_10_0.targetTracker then
-		local var_10_0 = arg_10_0.targetTracker
-
-		var_1.Dispose(var_10_0)
+		arg_10_0.targetTracker:Dispose()
 
 		arg_10_0.targetTracker = nil
 	end
 
 	if arg_10_0.mainTargetTracker then
-		local var_10_1 = arg_10_0.mainTargetTracker
-
-		var_1.Dispose(var_10_1)
+		arg_10_0.mainTargetTracker:Dispose()
 
 		arg_10_0.mainTargetTracker = nil
 	end
@@ -184,4 +89,4 @@ function var_0_1.OnDestroy(arg_10_0)
 	return
 end
 
-return var_0_1
+return var_0_0

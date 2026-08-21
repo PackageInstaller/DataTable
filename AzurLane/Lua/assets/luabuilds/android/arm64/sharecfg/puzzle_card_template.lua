@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "puzzle_card_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "puzzle_card_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.puzzle_card_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.puzzle_card_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.puzzle_card_template = rawget(pg, "puzzle_card_template") or setmetatable({
+	__name = "puzzle_card_template"
+}, confNEO)
+pg.puzzle_card_template.all = {
 	20001,
 	999970,
 	999971,
@@ -43,25 +20,11 @@ var_0_3.all = {
 	999991,
 	999992
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.puzzle_card_template = {}
+pg.base = pg.base or {}
+pg.base.puzzle_card_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.puzzle_card_template
-
-	var_1_0[20001] = {
+	pg.base.puzzle_card_template[20001] = {
 		cost = 0,
 		name = "测试移动单卡",
 		action = "",
@@ -83,11 +46,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.puzzle_card_template
-
-	var_1_1[999970] = {
+	pg.base.puzzle_card_template[999970] = {
 		cost = 2,
 		name = "鱼雷攻击",
 		action = "",
@@ -109,11 +68,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.puzzle_card_template
-
-	var_1_2[999971] = {
+	pg.base.puzzle_card_template[999971] = {
 		cost = 7,
 		name = "强袭雷击",
 		action = "",
@@ -134,11 +89,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.puzzle_card_template
-
-	var_1_3[999972] = {
+	pg.base.puzzle_card_template[999972] = {
 		cost = 8,
 		name = "火力覆盖",
 		action = "",
@@ -159,11 +110,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.puzzle_card_template
-
-	var_1_4[999973] = {
+	pg.base.puzzle_card_template[999973] = {
 		cost = 5,
 		name = "自动速射",
 		action = "",
@@ -184,11 +131,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.puzzle_card_template
-
-	var_1_5[999974] = {
+	pg.base.puzzle_card_template[999974] = {
 		cost = 7,
 		name = "自动鱼雷",
 		action = "",
@@ -209,11 +152,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.puzzle_card_template
-
-	var_1_6[999975] = {
+	pg.base.puzzle_card_template[999975] = {
 		cost = 10,
 		name = "自动跨射",
 		action = "",
@@ -235,11 +174,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.puzzle_card_template
-
-	var_1_7[999977] = {
+	pg.base.puzzle_card_template[999977] = {
 		cost = 8,
 		name = "强力跨射",
 		action = "",
@@ -261,11 +196,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.puzzle_card_template
-
-	var_1_8[999978] = {
+	pg.base.puzzle_card_template[999978] = {
 		cost = 5,
 		name = "强力射击",
 		action = "",
@@ -286,11 +217,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.puzzle_card_template
-
-	var_1_9[999979] = {
+	pg.base.puzzle_card_template[999979] = {
 		cost = 5,
 		name = "跨射指令",
 		action = "",
@@ -311,11 +238,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.puzzle_card_template
-
-	var_1_10[999984] = {
+	pg.base.puzzle_card_template[999984] = {
 		cost = 3,
 		name = "维修指令",
 		action = "",
@@ -336,11 +259,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.puzzle_card_template
-
-	var_1_11[999985] = {
+	pg.base.puzzle_card_template[999985] = {
 		cost = 5,
 		name = "应急维修指令",
 		action = "",
@@ -359,11 +278,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.puzzle_card_template
-
-	var_1_12[999989] = {
+	pg.base.puzzle_card_template[999989] = {
 		cost = 5,
 		name = "破甲跨射",
 		action = "",
@@ -385,11 +300,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.puzzle_card_template
-
-	var_1_13[999990] = {
+	pg.base.puzzle_card_template[999990] = {
 		cost = 2,
 		name = "基础射击",
 		action = "",
@@ -410,11 +321,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.puzzle_card_template
-
-	var_1_14[999991] = {
+	pg.base.puzzle_card_template[999991] = {
 		cost = 6,
 		name = "强力护盾",
 		action = "",
@@ -435,8 +342,7 @@ var_0_3.base.puzzle_card_template = {}
 		},
 		weapon_ids = {}
 	}
-	pg = var_1_14
-	var_1_14.base.puzzle_card_template[999992] = {
+	pg.base.puzzle_card_template[999992] = {
 		cost = 8,
 		name = "全炮门齐射",
 		action = "",

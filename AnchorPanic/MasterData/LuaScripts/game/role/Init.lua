@@ -5,6 +5,9 @@ role.RoleLvlUpVo = require('game/role/manager/vo/RoleLvlUpVo')
 role.RoleVo = require('game/role/manager/vo/RoleVo')
 role.RoleBackGroundVo = require('game/role/manager/vo/RoleBackGroundVo')
 role.PersonalInfoVo = require('game/role/manager/vo/PersonalInfoVo')
+
+
+role.FightSkinVo = require('game/role/manager/vo/FightSkinVo')
 role.RoleManager = require('game/role/manager/RoleManager').new()
 
 role.InfoTabView = require('game/role/view/tabView/InfoTabView')
@@ -13,6 +16,13 @@ role.RolePanel = require('game/role/view/RolePanel')
 role.RoleInfoView = require('game/role/view/tabView/RoleInfoView')
 role.RoleInfoTipsView = require('game/role/view/RoleInfoTipsView')
 role.RoleBgView = require('game/role/view/RoleBgView')
+
+
+role.FightSkinItem = require('game/role/view/item/FightSkinItem')
+role.RoleFightSkinPanel = require('game/role/view/RoleFightSkinPanel')
+
+role.RoleFightSkinPreView = require('game/role/view/RoleFightSkinPreView')
+
 
 role.RoleModifyNamePanel = require('game/role/view/RoleModifyNamePanel')
 role.RoleToNamePanel = require('game/role/view/RoleToNamePanel')
@@ -29,12 +39,17 @@ role.RoleSelectHeroItem = require('game/role/view/item/RoleSelectHeroItem')
 role.RoleShowHeroItem = require('game/role/view/item/RoleShowHeroItem')
 role.OtherRoleShowHeroItem = require('game/role/view/item/OtherRoleShowHeroItem')
 role.RoleHeroShowEquipGrid = require('game/role/view/item/RoleHeroShowEquipGrid')
+role.RoleGuradGroupSelectItem = require('game/role/view/item/RoleGuradGroupSelectItem')
+role.RoleGuradGroupFashionItem = require('game/role/view/item/RoleGuradGroupFashionItem')
 
 role.OtherRoleVo = require('game/role/manager/vo/OtherRoleVo')
 role.MyRoleInfoPreView = require('game/role/view/MyRoleInfoPreView')
 role.OtherRoleInfoView = 'game/role/view/OtherRoleInfoView'
 role.OtherRoleMarkView = 'game/role/view/OtherRoleMarkView'
 role.SingleHeroInfoView = 'game/role/view/SingleHeroInfoView'
+role.RoleGuradGroupPanel = 'game/role/view/RoleGuradGroupPanel'
+role.RoleGuradGroupSelectView = 'game/role/view/RoleGuradGroupSelectView'
+role.RoleGuradGroupFashionView = 'game/role/view/RoleGuradGroupFashionView'
 
 role.RoleController = require('game/role/controller/RoleController').new(role.RoleManager)
 

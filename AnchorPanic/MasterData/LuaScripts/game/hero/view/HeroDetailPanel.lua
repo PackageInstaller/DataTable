@@ -36,7 +36,7 @@ function initData(self)
     self.mVoiceSn = nil
     self.mIsFirstShow = false
     self.mOnClickFun = nil
-    self.mIsPlaying=false
+    self.mIsPlaying = false
 end
 
 function configUI(self)
@@ -120,6 +120,7 @@ function deActive(self)
     GameDispatcher:removeEventListener(EventName.FAVORABLE_REWARD_GAIN_UPDATE, self.updateBubble, self)
     GameDispatcher:removeEventListener(EventName.HERO_DETAIL_CLOSE, self.onClosePanel, self)
     GameDispatcher:removeEventListener(EventName.HERO_FILES_SHOW_ACTION, self.playAction, self)
+    self:destroyTimeSn()
     self:updateRoleNodeState(true)
     if self.mAudioData then
         AudioManager:stopAudioSound(self.mAudioData)
@@ -425,6 +426,7 @@ end
 --切换当前按钮状态  0:无语音播放 1：语音播放
 function changeHero(self, state, heroId, heroTid)
     GameDispatcher:dispatchEvent(EventName.CHANGE_SHOW_HERO, { state = state, heroId = heroId, heroTid = heroTid })
+    hero.HeroManager:setPanelShowHeroId(heroId)
 end
 
 function updateHeroNode(self)
@@ -449,9 +451,26 @@ function updateModelView(self, heroVo, type)
     if (heroVo and (favorable.FavorableManager.mDetailShow3D or not self.mIsFirstShow)) then
         local model = heroVo:getUIModel()
         if type == 2 then
-            self.mModelPlayer:setModelData(model, false, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, nil, self.mClickerArea, true)
+            self.mModelPlayer:setModelData(model, false, true, 1, true, MainCityConst.ROLE_MODE_OVERVIEW, nil, self.mClickerArea, true, function()
+                local data = fashion.FashionManager:getModelHarData(heroVo:getHeroModel())
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                    -- 替换材质球预览
+                    self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                        self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                    end)
+                end
+            end)
         else
             self.mModelPlayer:setModelData(model, false, true, 1, true, MainCityConst.ROLE_MODE_CLIP, nil, self.mClickerArea, true, function()
+
+                local data = fashion.FashionManager:getModelHarData(heroVo:getHeroModel())
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                    -- 替换材质球预览
+                    self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                        self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                    end)
+                end
+
                 if not self.mIsFirstShow then
                     self.mIsFirstShow = true
                 end
@@ -466,6 +485,7 @@ end
 function playAction(self, args)
     if self.mModelPlayer then
         if args.state then
+            self:destroyTimeSn()
             self.mModelPlayer.m_modelView:playAction(gs.Animator.StringToHash(args.actName))
             local cvData = AudioManager:getCVData(args.cvId)
             self:onShowHeroInTeractTextOnlyHandler(cvData.lines)
@@ -482,16 +502,25 @@ function playAction(self, args)
                 self.mVoiceSn = nil
             end
             local baseData = hero.HeroInteractManager:getConfigData01(self.curHeroVo.model, nil, args.actName)
-            self.mIsPlaying=true
-            self.mVoiceSn = LoopManager:addTimer(math.max(baseData.voice_layback / 1000, 0.1), 1, self, function()
-                self.mAudioData = AudioManager:playHeroCVOnReplace(args.cvId, function()
-                    self.mAudioData = nil
-                    self.mIsPlaying=false
-                    self:onShowHeroInTeractTextOnlyHandler(nil)
-                end)
+            self.mIsPlaying = true
+            self.mVoiceSn = LoopManager:addTimer(math.max(hero.HeroInteractManager:getCvDataLayBack(baseData), 0.1), 1, self, function()
+                if AudioManager:preloadCvByCvId(args.cvId) then
+                    self.mAudioData = AudioManager:playHeroCVOnReplace(args.cvId, function()
+                        self.mAudioData = nil
+                        self.mIsPlaying = false
+                        self:onShowHeroInTeractTextOnlyHandler(nil)
+                    end)
+                else
+                    self.mTimeSn = LoopManager:setTimeout(5, self, function(instance)
+                        instance:destroyTimeSn()
+                        instance.mAudioData = nil
+                        instance.mIsPlaying = false
+                        instance:onShowHeroInTeractTextOnlyHandler(nil)
+                    end)
+                end
             end)
         else
-            self.mIsPlaying=false
+            self.mIsPlaying = false
             self.mModelPlayer.m_modelView:playAction(self.mAlwayHash)
             if self.mAudioData then
                 AudioManager:stopAudioSound(self.mAudioData)
@@ -560,8 +589,18 @@ end
 
 function recoverModel(self, isResetMaincity)
     self.mModelPlayer:reset(isResetMaincity)
+    if self.mHarFrameSn then
+        LoopManager:removeFrameByIndex(self.mHarFrameSn)
+        self.mHarFrameSn = nil
+    end
 end
 
+function destroyTimeSn(self)
+    if self.mTimeSn then
+        LoopManager:clearTimeout(self.mTimeSn)
+        self.mTimeSn = nil
+    end
+end
 
 return _M
 

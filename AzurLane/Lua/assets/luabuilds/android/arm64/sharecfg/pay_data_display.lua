@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "pay_data_display") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "pay_data_display"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.pay_data_display = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.pay_data_display
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.pay_data_display
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.pay_data_display = rawget(pg, "pay_data_display") or setmetatable({
+	__name = "pay_data_display"
+}, confNEO)
+pg.pay_data_display.__namecode__ = true
+pg.pay_data_display.all = {
 	1,
 	2,
 	3,
@@ -145,6 +118,7 @@ var_0_4.all = {
 	9017,
 	9018,
 	9019,
+	9020,
 	1000,
 	1001,
 	1002,
@@ -271,25 +245,11 @@ var_0_4.all = {
 	5016,
 	5017
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.pay_data_display = {}
+pg.base = pg.base or {}
+pg.base.pay_data_display = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.pay_data_display
-
-	var_1_0[1] = {
+	pg.base.pay_data_display[1] = {
 		picture = "month",
 		name = "贸易许可证（30日）",
 		type = 0,
@@ -383,11 +343,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.pay_data_display
-
-	var_1_1[2] = {
+	pg.base.pay_data_display[2] = {
 		picture = "boxNewplayer",
 		name = "新手启航补给",
 		type = 0,
@@ -465,11 +421,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.pay_data_display
-
-	var_1_2[3] = {
+	pg.base.pay_data_display[3] = {
 		picture = "1",
 		name = "几个钻石",
 		type = 0,
@@ -509,11 +461,7 @@ var_0_4.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.pay_data_display
-
-	var_1_3[4] = {
+	pg.base.pay_data_display[4] = {
 		picture = "2",
 		name = "一小堆钻石",
 		type = 0,
@@ -553,11 +501,7 @@ var_0_4.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.pay_data_display
-
-	var_1_4[5] = {
+	pg.base.pay_data_display[5] = {
 		picture = "3",
 		name = "一大袋钻石",
 		type = 0,
@@ -597,11 +541,7 @@ var_0_4.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.pay_data_display
-
-	var_1_5[6] = {
+	pg.base.pay_data_display[6] = {
 		picture = "4",
 		name = "一小箱钻石",
 		type = 0,
@@ -641,11 +581,7 @@ var_0_4.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.pay_data_display
-
-	var_1_6[7] = {
+	pg.base.pay_data_display[7] = {
 		picture = "5",
 		name = "一大箱钻石",
 		type = 0,
@@ -685,11 +621,7 @@ var_0_4.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.pay_data_display
-
-	var_1_7[8] = {
+	pg.base.pay_data_display[8] = {
 		picture = "6",
 		name = "一整船钻石",
 		type = 0,
@@ -729,11 +661,7 @@ var_0_4.base.pay_data_display = {}
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.pay_data_display
-
-	var_1_8[9] = {
+	pg.base.pay_data_display[9] = {
 		picture = "fudai",
 		name = "新年福袋",
 		type = 1,
@@ -851,11 +779,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.pay_data_display
-
-	var_1_9[11] = {
+	pg.base.pay_data_display[11] = {
 		picture = "fudai",
 		name = "国庆福袋",
 		type = 1,
@@ -973,11 +897,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.pay_data_display
-
-	var_1_10[12] = {
+	pg.base.pay_data_display[12] = {
 		picture = "fudai",
 		name = "2019新年福袋",
 		type = 1,
@@ -1095,11 +1015,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.pay_data_display
-
-	var_1_11[13] = {
+	pg.base.pay_data_display[13] = {
 		picture = "fudai",
 		name = "2019春节福袋",
 		type = 1,
@@ -1217,11 +1133,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.pay_data_display
-
-	var_1_12[14] = {
+	pg.base.pay_data_display[14] = {
 		picture = "lihe2_l",
 		name = "二周年礼盒",
 		type = 1,
@@ -1339,11 +1251,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.pay_data_display
-
-	var_1_13[15] = {
+	pg.base.pay_data_display[15] = {
 		picture = "lihe1_l",
 		name = "2019国庆礼盒",
 		type = 1,
@@ -1461,11 +1369,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.pay_data_display
-
-	var_1_14[16] = {
+	pg.base.pay_data_display[16] = {
 		picture = "fudai1",
 		name = "新年福袋2020",
 		type = 1,
@@ -1588,11 +1492,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.pay_data_display
-
-	var_1_15[17] = {
+	pg.base.pay_data_display[17] = {
 		picture = "fudai",
 		name = "新年福袋复刻(2019)",
 		type = 1,
@@ -1710,11 +1610,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.pay_data_display
-
-	var_1_16[18] = {
+	pg.base.pay_data_display[18] = {
 		picture = "fudai2",
 		name = "春节福袋2020",
 		type = 1,
@@ -1837,11 +1733,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.pay_data_display
-
-	var_1_17[19] = {
+	pg.base.pay_data_display[19] = {
 		picture = "fudai",
 		name = "春节福袋复刻(2019)",
 		type = 1,
@@ -1959,11 +1851,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.pay_data_display
-
-	var_1_18[20] = {
+	pg.base.pay_data_display[20] = {
 		picture = "support1",
 		name = "新晋指挥官支援包·I",
 		type = 0,
@@ -2072,11 +1960,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.pay_data_display
-
-	var_1_19[21] = {
+	pg.base.pay_data_display[21] = {
 		picture = "support2",
 		name = "新晋指挥官支援包·II",
 		type = 0,
@@ -2210,11 +2094,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.pay_data_display
-
-	var_1_20[22] = {
+	pg.base.pay_data_display[22] = {
 		picture = "support3",
 		name = "新晋指挥官支援包·III",
 		type = 0,
@@ -2353,11 +2233,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.pay_data_display
-
-	var_1_21[23] = {
+	pg.base.pay_data_display[23] = {
 		picture = "lihe4_l",
 		name = "三周年礼盒",
 		type = 1,
@@ -2480,11 +2356,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.pay_data_display
-
-	var_1_22[24] = {
+	pg.base.pay_data_display[24] = {
 		picture = "lihe3_l",
 		name = "2020国庆礼盒",
 		type = 1,
@@ -2607,11 +2479,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.pay_data_display
-
-	var_1_23[25] = {
+	pg.base.pay_data_display[25] = {
 		picture = "fudai3",
 		name = "新年福袋2021",
 		type = 1,
@@ -2734,11 +2602,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.pay_data_display
-
-	var_1_24[26] = {
+	pg.base.pay_data_display[26] = {
 		picture = "fudai1",
 		name = "新年福袋复刻(2020)",
 		type = 1,
@@ -2861,11 +2725,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.pay_data_display
-
-	var_1_25[27] = {
+	pg.base.pay_data_display[27] = {
 		picture = "fudai4",
 		name = "春节福袋2021",
 		type = 1,
@@ -2988,11 +2848,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.pay_data_display
-
-	var_1_26[28] = {
+	pg.base.pay_data_display[28] = {
 		picture = "fudai2",
 		name = "春节福袋复刻(2020)",
 		type = 1,
@@ -3115,11 +2971,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.pay_data_display
-
-	var_1_27[29] = {
+	pg.base.pay_data_display[29] = {
 		picture = "lihe5_l",
 		name = "四周年礼盒",
 		type = 1,
@@ -3242,11 +3094,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.pay_data_display
-
-	var_1_28[30] = {
+	pg.base.pay_data_display[30] = {
 		picture = "lihe4_l",
 		name = "三周年礼盒复刻",
 		type = 1,
@@ -3369,11 +3217,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.pay_data_display
-
-	var_1_29[31] = {
+	pg.base.pay_data_display[31] = {
 		picture = "support4",
 		name = "大型作战攻略支援包",
 		type = 1,
@@ -3502,11 +3346,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.pay_data_display
-
-	var_1_30[32] = {
+	pg.base.pay_data_display[32] = {
 		picture = "lihe6_l",
 		name = "2021国庆礼盒",
 		type = 1,
@@ -3629,11 +3469,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.pay_data_display
-
-	var_1_31[33] = {
+	pg.base.pay_data_display[33] = {
 		picture = "lihe3_l",
 		name = "国庆礼盒复刻（2020）",
 		type = 1,
@@ -3756,11 +3592,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.pay_data_display
-
-	var_1_32[34] = {
+	pg.base.pay_data_display[34] = {
 		picture = "fudai6",
 		name = "新年福袋2022",
 		type = 1,
@@ -3883,11 +3715,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.pay_data_display
-
-	var_1_33[35] = {
+	pg.base.pay_data_display[35] = {
 		picture = "fudai3",
 		name = "新年福袋复刻(2021)",
 		type = 1,
@@ -4010,11 +3838,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.pay_data_display
-
-	var_1_34[36] = {
+	pg.base.pay_data_display[36] = {
 		picture = "fudai7",
 		name = "春节福袋2022",
 		type = 1,
@@ -4137,11 +3961,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.pay_data_display
-
-	var_1_35[37] = {
+	pg.base.pay_data_display[37] = {
 		picture = "fudai4",
 		name = "春节福袋复刻(2021)",
 		type = 1,
@@ -4264,11 +4084,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.pay_data_display
-
-	var_1_36[38] = {
+	pg.base.pay_data_display[38] = {
 		picture = "lihe7_l",
 		name = "五周年礼盒",
 		type = 1,
@@ -4391,11 +4207,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.pay_data_display
-
-	var_1_37[39] = {
+	pg.base.pay_data_display[39] = {
 		picture = "lihe5_l",
 		name = "四周年礼盒复刻",
 		type = 1,
@@ -4518,11 +4330,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.pay_data_display
-
-	var_1_38[40] = {
+	pg.base.pay_data_display[40] = {
 		picture = "lihe8_l",
 		name = "金秋庆典礼盒",
 		type = 1,
@@ -4645,11 +4453,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.pay_data_display
-
-	var_1_39[41] = {
+	pg.base.pay_data_display[41] = {
 		picture = "lihe6_l",
 		name = "金秋庆典礼盒（2021）",
 		type = 1,
@@ -4772,11 +4576,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.pay_data_display
-
-	var_1_40[44] = {
+	pg.base.pay_data_display[44] = {
 		picture = "support6",
 		name = "回归礼包",
 		type = 1,
@@ -4939,11 +4739,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.pay_data_display
-
-	var_1_41[45] = {
+	pg.base.pay_data_display[45] = {
 		picture = "lihe10_l",
 		name = "2023泳装礼盒·I",
 		type = 1,
@@ -5066,11 +4862,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.pay_data_display
-
-	var_1_42[46] = {
+	pg.base.pay_data_display[46] = {
 		picture = "lihe11_l",
 		name = "2023泳装礼盒·II",
 		type = 1,
@@ -5193,11 +4985,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.pay_data_display
-
-	var_1_43[47] = {
+	pg.base.pay_data_display[47] = {
 		picture = "fudai6",
 		name = "新年福袋复刻(2022)",
 		type = 1,
@@ -5320,11 +5108,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.pay_data_display
-
-	var_1_44[48] = {
+	pg.base.pay_data_display[48] = {
 		picture = "fudaiqp1",
 		name = "2023年春节福袋·I",
 		type = 1,
@@ -5447,11 +5231,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.pay_data_display
-
-	var_1_45[49] = {
+	pg.base.pay_data_display[49] = {
 		picture = "fudaiqp2",
 		name = "2023年春节福袋·II",
 		type = 1,
@@ -5574,11 +5354,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.pay_data_display
-
-	var_1_46[50] = {
+	pg.base.pay_data_display[50] = {
 		picture = "fudai7",
 		name = "春节福袋复刻(2022)",
 		type = 1,
@@ -5701,11 +5477,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.pay_data_display
-
-	var_1_47[51] = {
+	pg.base.pay_data_display[51] = {
 		picture = "lihecn6ss_l",
 		name = "六周年泳装礼盒",
 		type = 1,
@@ -5839,11 +5611,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.pay_data_display
-
-	var_1_48[52] = {
+	pg.base.pay_data_display[52] = {
 		picture = "lihecn6lf_l",
 		name = "六周年礼盒",
 		type = 1,
@@ -5977,11 +5745,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.pay_data_display
-
-	var_1_49[53] = {
+	pg.base.pay_data_display[53] = {
 		picture = "lihe7_l",
 		name = "五周年礼盒复刻",
 		type = 1,
@@ -6115,11 +5879,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.pay_data_display
-
-	var_1_50[55] = {
+	pg.base.pay_data_display[55] = {
 		picture = "lihejp6lf_l",
 		name = "金秋庆典礼盒(2023)",
 		type = 1,
@@ -6253,11 +6013,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.pay_data_display
-
-	var_1_51[56] = {
+	pg.base.pay_data_display[56] = {
 		picture = "lihe8_l",
 		name = "金秋庆典礼盒复刻(2022)",
 		type = 1,
@@ -6391,11 +6147,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.pay_data_display
-
-	var_1_52[57] = {
+	pg.base.pay_data_display[57] = {
 		picture = "lihejp6ss_l",
 		name = "金秋礼盒2023",
 		type = 1,
@@ -6529,11 +6281,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.pay_data_display
-
-	var_1_53[58] = {
+	pg.base.pay_data_display[58] = {
 		picture = "pack_198",
 		name = "茗的促销大礼包",
 		type = 0,
@@ -6641,11 +6389,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.pay_data_display
-
-	var_1_54[59] = {
+	pg.base.pay_data_display[59] = {
 		picture = "pack_328",
 		name = "茗的豪华促销大礼包",
 		type = 0,
@@ -6748,11 +6492,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.pay_data_display
-
-	var_1_55[60] = {
+	pg.base.pay_data_display[60] = {
 		picture = "fudai8",
 		name = "促销心动福袋",
 		type = 1,
@@ -6861,11 +6601,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.pay_data_display
-
-	var_1_56[61] = {
+	pg.base.pay_data_display[61] = {
 		picture = "fudai9",
 		name = "绚烂缤纷夜福袋·I",
 		type = 1,
@@ -6999,11 +6735,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.pay_data_display
-
-	var_1_57[62] = {
+	pg.base.pay_data_display[62] = {
 		picture = "lihe10_l",
 		name = "2023泳装礼盒·I复刻",
 		type = 1,
@@ -7137,11 +6869,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.pay_data_display
-
-	var_1_58[63] = {
+	pg.base.pay_data_display[63] = {
 		picture = "fudai10",
 		name = "绚烂缤纷夜福袋·Ⅱ",
 		type = 1,
@@ -7275,11 +7003,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.pay_data_display
-
-	var_1_59[64] = {
+	pg.base.pay_data_display[64] = {
 		picture = "lihe11_l",
 		name = "2023泳装礼盒·Ⅱ复刻",
 		type = 1,
@@ -7413,11 +7137,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.pay_data_display
-
-	var_1_60[65] = {
+	pg.base.pay_data_display[65] = {
 		picture = "fudai11",
 		name = "2024年春节福袋·I",
 		type = 1,
@@ -7551,11 +7271,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.pay_data_display
-
-	var_1_61[66] = {
+	pg.base.pay_data_display[66] = {
 		picture = "fudaiqp1",
 		name = "2023年春节福袋·I复刻",
 		type = 1,
@@ -7689,11 +7405,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.pay_data_display
-
-	var_1_62[67] = {
+	pg.base.pay_data_display[67] = {
 		picture = "fudai12",
 		name = "2024年春节福袋·II",
 		type = 1,
@@ -7827,11 +7539,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.pay_data_display
-
-	var_1_63[68] = {
+	pg.base.pay_data_display[68] = {
 		picture = "fudaiqp2",
 		name = "2023年春节福袋·II复刻",
 		type = 1,
@@ -7965,11 +7673,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.pay_data_display
-
-	var_1_64[69] = {
+	pg.base.pay_data_display[69] = {
 		picture = "fudai13",
 		name = "七周年泳装礼盒",
 		type = 1,
@@ -8103,11 +7807,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.pay_data_display
-
-	var_1_65[70] = {
+	pg.base.pay_data_display[70] = {
 		picture = "lihecn6ss_l",
 		name = "六周年泳装礼盒复刻",
 		type = 1,
@@ -8241,11 +7941,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.pay_data_display
-
-	var_1_66[71] = {
+	pg.base.pay_data_display[71] = {
 		picture = "fudai14",
 		name = "七周年礼盒",
 		type = 1,
@@ -8379,11 +8075,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.pay_data_display
-
-	var_1_67[72] = {
+	pg.base.pay_data_display[72] = {
 		picture = "lihecn6lf_l",
 		name = "六周年礼盒复刻",
 		type = 1,
@@ -8517,11 +8209,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.pay_data_display
-
-	var_1_68[73] = {
+	pg.base.pay_data_display[73] = {
 		picture = "fudai15",
 		name = "梦幻乐园换装礼盒I",
 		type = 1,
@@ -8655,11 +8343,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.pay_data_display
-
-	var_1_69[74] = {
+	pg.base.pay_data_display[74] = {
 		picture = "lihejp6ss_l",
 		name = "金秋礼盒2023复刻",
 		type = 1,
@@ -8793,11 +8477,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.pay_data_display
-
-	var_1_70[75] = {
+	pg.base.pay_data_display[75] = {
 		picture = "fudai16",
 		name = "梦幻乐园换装礼盒II",
 		type = 1,
@@ -8931,11 +8611,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.pay_data_display
-
-	var_1_71[76] = {
+	pg.base.pay_data_display[76] = {
 		picture = "lihejp6lf_l",
 		name = "金秋庆典礼盒(2023)复刻",
 		type = 1,
@@ -9069,11 +8745,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.pay_data_display
-
-	var_1_72[77] = {
+	pg.base.pay_data_display[77] = {
 		picture = "pack_2024_98",
 		name = "冬日自选礼包1",
 		type = 0,
@@ -9181,11 +8853,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.pay_data_display
-
-	var_1_73[78] = {
+	pg.base.pay_data_display[78] = {
 		picture = "pack_2024_198",
 		name = "冬日自选礼包2",
 		type = 0,
@@ -9298,11 +8966,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.pay_data_display
-
-	var_1_74[79] = {
+	pg.base.pay_data_display[79] = {
 		picture = "pack_2024_328",
 		name = "冬日自选礼包3",
 		type = 0,
@@ -9430,11 +9094,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.pay_data_display
-
-	var_1_75[80] = {
+	pg.base.pay_data_display[80] = {
 		picture = "fudai17",
 		name = "豪华冬至促销礼盒(2024)",
 		type = 1,
@@ -9543,11 +9203,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.pay_data_display
-
-	var_1_76[81] = {
+	pg.base.pay_data_display[81] = {
 		picture = "fudai18",
 		name = "冬至促销礼盒(2024)",
 		type = 1,
@@ -9636,11 +9292,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.pay_data_display
-
-	var_1_77[82] = {
+	pg.base.pay_data_display[82] = {
 		picture = "fudai19",
 		name = "港区游戏之夜礼盒·I",
 		type = 1,
@@ -9774,11 +9426,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.pay_data_display
-
-	var_1_78[83] = {
+	pg.base.pay_data_display[83] = {
 		picture = "fudai9",
 		name = "绚烂缤纷夜福袋·I复刻",
 		type = 1,
@@ -9912,11 +9560,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.pay_data_display
-
-	var_1_79[84] = {
+	pg.base.pay_data_display[84] = {
 		picture = "fudai20",
 		name = "港区游戏之夜礼盒·II",
 		type = 1,
@@ -10050,11 +9694,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.pay_data_display
-
-	var_1_80[85] = {
+	pg.base.pay_data_display[85] = {
 		picture = "fudai10",
 		name = "绚烂缤纷夜福袋·II复刻",
 		type = 1,
@@ -10188,11 +9828,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.pay_data_display
-
-	var_1_81[86] = {
+	pg.base.pay_data_display[86] = {
 		picture = "fudai21",
 		name = "2025年春节福袋一",
 		type = 1,
@@ -10326,11 +9962,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.pay_data_display
-
-	var_1_82[87] = {
+	pg.base.pay_data_display[87] = {
 		picture = "fudai22",
 		name = "2025年春节福袋·II",
 		type = 1,
@@ -10464,11 +10096,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.pay_data_display
-
-	var_1_83[88] = {
+	pg.base.pay_data_display[88] = {
 		picture = "fudai11",
 		name = "2024年春节福袋·I复刻",
 		type = 1,
@@ -10602,11 +10230,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.pay_data_display
-
-	var_1_84[89] = {
+	pg.base.pay_data_display[89] = {
 		picture = "fudai12",
 		name = "2024年春节福袋·II复刻",
 		type = 1,
@@ -10740,11 +10364,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.pay_data_display
-
-	var_1_85[90] = {
+	pg.base.pay_data_display[90] = {
 		picture = "fudai23",
 		name = "换装礼盒(校园生活)",
 		type = 1,
@@ -10858,11 +10478,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.pay_data_display
-
-	var_1_86[91] = {
+	pg.base.pay_data_display[91] = {
 		picture = "fudai24",
 		name = "八周年泳装礼盒·I",
 		type = 1,
@@ -10996,11 +10612,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.pay_data_display
-
-	var_1_87[92] = {
+	pg.base.pay_data_display[92] = {
 		picture = "fudai13",
 		name = "七周年泳装礼盒复刻",
 		type = 1,
@@ -11134,11 +10746,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.pay_data_display
-
-	var_1_88[93] = {
+	pg.base.pay_data_display[93] = {
 		picture = "fudai25",
 		name = "八周年泳装礼盒·II",
 		type = 1,
@@ -11272,11 +10880,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.pay_data_display
-
-	var_1_89[94] = {
+	pg.base.pay_data_display[94] = {
 		picture = "fudai14",
 		name = "七周年礼盒复刻",
 		type = 1,
@@ -11410,11 +11014,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.pay_data_display
-
-	var_1_90[95] = {
+	pg.base.pay_data_display[95] = {
 		picture = "fudai26",
 		name = "换装礼盒(嘉年华)",
 		type = 1,
@@ -11528,11 +11128,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.pay_data_display
-
-	var_1_91[96] = {
+	pg.base.pay_data_display[96] = {
 		picture = "fudai27",
 		name = "忍者之城换装礼盒I",
 		type = 1,
@@ -11666,11 +11262,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.pay_data_display
-
-	var_1_92[97] = {
+	pg.base.pay_data_display[97] = {
 		picture = "fudai15",
 		name = "梦幻乐园换装礼盒I复刻",
 		type = 1,
@@ -11804,11 +11396,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.pay_data_display
-
-	var_1_93[98] = {
+	pg.base.pay_data_display[98] = {
 		picture = "fudai28",
 		name = "忍者之城换装礼盒II",
 		type = 1,
@@ -11942,11 +11530,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.pay_data_display
-
-	var_1_94[99] = {
+	pg.base.pay_data_display[99] = {
 		picture = "fudai16",
 		name = "梦幻乐园换装礼盒II复刻",
 		type = 1,
@@ -12080,11 +11664,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.pay_data_display
-
-	var_1_95[9001] = {
+	pg.base.pay_data_display[9001] = {
 		picture = "fudai29",
 		name = "换装礼盒(疾速狂热)",
 		type = 1,
@@ -12198,11 +11778,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.pay_data_display
-
-	var_1_96[9002] = {
+	pg.base.pay_data_display[9002] = {
 		picture = "pack_2024_98",
 		name = "冬日自选礼包1(2025)",
 		type = 0,
@@ -12310,11 +11886,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.pay_data_display
-
-	var_1_97[9003] = {
+	pg.base.pay_data_display[9003] = {
 		picture = "pack_2024_198",
 		name = "冬日自选礼包2(2025)",
 		type = 0,
@@ -12427,11 +11999,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.pay_data_display
-
-	var_1_98[9004] = {
+	pg.base.pay_data_display[9004] = {
 		picture = "pack_2024_328",
 		name = "冬日自选礼包3(2025)",
 		type = 0,
@@ -12559,8 +12127,7 @@ var_0_4.base.pay_data_display = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.pay_data_display[9005] = {
+	pg.base.pay_data_display[9005] = {
 		picture = "fudai99",
 		name = "豪华冬日促销礼盒(2025)",
 		type = 1,
@@ -12698,11 +12265,7 @@ var_0_4.base.pay_data_display = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.pay_data_display
-
-	var_2_0[9006] = {
+	pg.base.pay_data_display[9006] = {
 		picture = "fudai_L2d_new",
 		name = "冬日促销礼盒(2025)",
 		type = 1,
@@ -12816,11 +12379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.pay_data_display
-
-	var_2_1[9007] = {
+	pg.base.pay_data_display[9007] = {
 		picture = "fudai30",
 		name = "庆典狂欢夜礼盒·I",
 		type = 1,
@@ -12954,11 +12513,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.pay_data_display
-
-	var_2_2[9008] = {
+	pg.base.pay_data_display[9008] = {
 		picture = "fudai19",
 		name = "港区游戏之夜礼盒·I复刻",
 		type = 1,
@@ -13092,11 +12647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.pay_data_display
-
-	var_2_3[9009] = {
+	pg.base.pay_data_display[9009] = {
 		picture = "fudai31",
 		name = "庆典狂欢夜礼盒·II",
 		type = 1,
@@ -13230,11 +12781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.pay_data_display
-
-	var_2_4[9010] = {
+	pg.base.pay_data_display[9010] = {
 		picture = "fudai20",
 		name = "港区游戏之夜礼盒·II复刻",
 		type = 1,
@@ -13368,11 +12915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.pay_data_display
-
-	var_2_5[9011] = {
+	pg.base.pay_data_display[9011] = {
 		picture = "fudai32",
 		name = "2026年春节福袋·I",
 		type = 1,
@@ -13506,11 +13049,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.pay_data_display
-
-	var_2_6[9012] = {
+	pg.base.pay_data_display[9012] = {
 		picture = "fudai21",
 		name = "2025年春节福袋·I复刻",
 		type = 1,
@@ -13644,11 +13183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.pay_data_display
-
-	var_2_7[9013] = {
+	pg.base.pay_data_display[9013] = {
 		picture = "fudai33",
 		name = "2026年春节福袋·II",
 		type = 1,
@@ -13782,11 +13317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.pay_data_display
-
-	var_2_8[9014] = {
+	pg.base.pay_data_display[9014] = {
 		picture = "fudai22",
 		name = "2025年春节福袋·II复刻",
 		type = 1,
@@ -13920,11 +13451,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.pay_data_display
-
-	var_2_9[9015] = {
+	pg.base.pay_data_display[9015] = {
 		picture = "fudai34",
 		name = "换装礼盒(宴会礼服)",
 		type = 1,
@@ -14038,11 +13565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.pay_data_display
-
-	var_2_10[9016] = {
+	pg.base.pay_data_display[9016] = {
 		picture = "fudai35",
 		name = "九周年泳装礼盒·I",
 		type = 1,
@@ -14176,11 +13699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.pay_data_display
-
-	var_2_11[9017] = {
+	pg.base.pay_data_display[9017] = {
 		picture = "fudai24",
 		name = "八周年泳装礼盒·I复刻",
 		type = 1,
@@ -14314,11 +13833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.pay_data_display
-
-	var_2_12[9018] = {
+	pg.base.pay_data_display[9018] = {
 		picture = "fudai36",
 		name = "九周年泳装礼盒·II",
 		type = 1,
@@ -14452,11 +13967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.pay_data_display
-
-	var_2_13[9019] = {
+	pg.base.pay_data_display[9019] = {
 		picture = "fudai25",
 		name = "八周年泳装礼盒·II复刻",
 		type = 1,
@@ -14590,11 +14101,141 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.pay_data_display
-
-	var_2_14[1000] = {
+	pg.base.pay_data_display[9020] = {
+		picture = "fudai37",
+		name = "滨海极速福袋",
+		type = 1,
+		second_text = "大量奖励",
+		descrip = "可获得一件角色换装，2026钻，和大量其他奖励",
+		subject = "滨海极速福袋",
+		first_pay_double = 0,
+		gem = 0,
+		tag = 2,
+		money = 198,
+		descrip_extra = "*福袋将发送到邮箱，请注意查收。\n*重复获得已拥有的换装时，则自动置换成等价的钻石。",
+		limit_group = 0,
+		package_tag = "",
+		type_order = 2,
+		package_sort_id = 0,
+		limit_type = 2,
+		limit_arg = 1,
+		tip = "",
+		tip_open = 0,
+		id_str = "com.bilibili.blhx.zuanshi219",
+		extra_gem = 0,
+		id = 9020,
+		airijp_id = "com.yostarjp.azurlane.diamond207",
+		name_display = "滨海极速福袋",
+		first_text = "随机换装和大量钻石",
+		akashi_pick = 1,
+		skin_inquire_relation = 86229,
+		extra_service = 3,
+		show_group = "",
+		package_tag_open = 0,
+		extra_service_item = {
+			{
+				2,
+				86229,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			},
+			{
+				2,
+				15003,
+				10
+			},
+			{
+				1,
+				6,
+				100
+			}
+		},
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		},
+		display = {
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				50
+			},
+			{
+				2,
+				20001,
+				20
+			}
+		},
+		sub_display = {},
+		ignorePlatform = {},
+		limit_args = {},
+		drop_item = {
+			{
+				2,
+				81237,
+				1
+			}
+		},
+		first_icon = {
+			{
+				2,
+				86229,
+				1
+			},
+			{
+				1,
+				14,
+				2026
+			}
+		}
+	}
+	pg.base.pay_data_display[1000] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证",
 		type = 0,
@@ -14679,11 +14320,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.pay_data_display
-
-	var_2_15[1001] = {
+	pg.base.pay_data_display[1001] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2021.12.1-1.31)",
 		type = 0,
@@ -14768,11 +14405,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.pay_data_display
-
-	var_2_16[1002] = {
+	pg.base.pay_data_display[1002] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2022.2)",
 		type = 0,
@@ -14857,11 +14490,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.pay_data_display
-
-	var_2_17[1003] = {
+	pg.base.pay_data_display[1003] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2022.4)",
 		type = 0,
@@ -14946,11 +14575,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.pay_data_display
-
-	var_2_18[1004] = {
+	pg.base.pay_data_display[1004] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2022.6)",
 		type = 0,
@@ -15035,11 +14660,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.pay_data_display
-
-	var_2_19[1005] = {
+	pg.base.pay_data_display[1005] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2022.8)",
 		type = 0,
@@ -15124,11 +14745,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.pay_data_display
-
-	var_2_20[1006] = {
+	pg.base.pay_data_display[1006] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2022.10)",
 		type = 0,
@@ -15213,11 +14830,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.pay_data_display
-
-	var_2_21[1007] = {
+	pg.base.pay_data_display[1007] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2022.12)",
 		type = 0,
@@ -15302,11 +14915,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.pay_data_display
-
-	var_2_22[1008] = {
+	pg.base.pay_data_display[1008] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2023.2)",
 		type = 0,
@@ -15391,11 +15000,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.pay_data_display
-
-	var_2_23[1009] = {
+	pg.base.pay_data_display[1009] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2023.4)",
 		type = 0,
@@ -15480,11 +15085,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.pay_data_display
-
-	var_2_24[1010] = {
+	pg.base.pay_data_display[1010] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2023.6)",
 		type = 0,
@@ -15569,11 +15170,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.pay_data_display
-
-	var_2_25[1011] = {
+	pg.base.pay_data_display[1011] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2023.8)",
 		type = 0,
@@ -15658,11 +15255,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.pay_data_display
-
-	var_2_26[1012] = {
+	pg.base.pay_data_display[1012] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2023.10)",
 		type = 0,
@@ -15747,11 +15340,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.pay_data_display
-
-	var_2_27[1013] = {
+	pg.base.pay_data_display[1013] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2023.12)",
 		type = 0,
@@ -15836,11 +15425,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.pay_data_display
-
-	var_2_28[1014] = {
+	pg.base.pay_data_display[1014] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2024.2)",
 		type = 0,
@@ -15925,11 +15510,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.pay_data_display
-
-	var_2_29[1015] = {
+	pg.base.pay_data_display[1015] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2024.4)",
 		type = 0,
@@ -16014,11 +15595,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.pay_data_display
-
-	var_2_30[1016] = {
+	pg.base.pay_data_display[1016] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2024.6)",
 		type = 0,
@@ -16103,11 +15680,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.pay_data_display
-
-	var_2_31[1017] = {
+	pg.base.pay_data_display[1017] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2024.8)",
 		type = 0,
@@ -16192,11 +15765,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.pay_data_display
-
-	var_2_32[1018] = {
+	pg.base.pay_data_display[1018] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2024.10)",
 		type = 0,
@@ -16281,11 +15850,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.pay_data_display
-
-	var_2_33[1019] = {
+	pg.base.pay_data_display[1019] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2024.12)",
 		type = 0,
@@ -16370,11 +15935,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.pay_data_display
-
-	var_2_34[1020] = {
+	pg.base.pay_data_display[1020] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2025.2)",
 		type = 0,
@@ -16459,11 +16020,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.pay_data_display
-
-	var_2_35[1021] = {
+	pg.base.pay_data_display[1021] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2025.4)",
 		type = 0,
@@ -16548,11 +16105,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.pay_data_display
-
-	var_2_36[1022] = {
+	pg.base.pay_data_display[1022] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2025.6)",
 		type = 0,
@@ -16637,11 +16190,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.pay_data_display
-
-	var_2_37[1023] = {
+	pg.base.pay_data_display[1023] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2025.8)",
 		type = 0,
@@ -16726,11 +16275,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.pay_data_display
-
-	var_2_38[1024] = {
+	pg.base.pay_data_display[1024] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2025.10)",
 		type = 0,
@@ -16815,11 +16360,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.pay_data_display
-
-	var_2_39[1025] = {
+	pg.base.pay_data_display[1025] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2025.12)",
 		type = 0,
@@ -16904,11 +16445,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.pay_data_display
-
-	var_2_40[1026] = {
+	pg.base.pay_data_display[1026] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2026.2)",
 		type = 0,
@@ -16993,11 +16530,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.pay_data_display
-
-	var_2_41[1027] = {
+	pg.base.pay_data_display[1027] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2026.4)",
 		type = 0,
@@ -17082,11 +16615,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.pay_data_display
-
-	var_2_42[1028] = {
+	pg.base.pay_data_display[1028] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2026.6)",
 		type = 0,
@@ -17171,11 +16700,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.pay_data_display
-
-	var_2_43[1029] = {
+	pg.base.pay_data_display[1029] = {
 		picture = "battlepass_1",
 		name = "特许巡游凭证(2026.8)",
 		type = 0,
@@ -17260,11 +16785,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.pay_data_display
-
-	var_2_44[1302] = {
+	pg.base.pay_data_display[1302] = {
 		picture = "battlepass_winter_1",
 		name = "冬日特许巡游凭证(2025.12)",
 		type = 0,
@@ -17349,11 +16870,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.pay_data_display
-
-	var_2_45[2001] = {
+	pg.base.pay_data_display[2001] = {
 		picture = "tech1_display",
 		name = "最高方案研发礼包(一期)",
 		type = 0,
@@ -17421,11 +16938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.pay_data_display
-
-	var_2_46[2002] = {
+	pg.base.pay_data_display[2002] = {
 		picture = "tech1_promotion",
 		name = "最高方案研发礼包(一期)高级版",
 		type = 0,
@@ -17498,11 +17011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.pay_data_display
-
-	var_2_47[2003] = {
+	pg.base.pay_data_display[2003] = {
 		picture = "tech1_normal",
 		name = "最高方案研发礼包(一期)标准版",
 		type = 0,
@@ -17565,11 +17074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.pay_data_display
-
-	var_2_48[2004] = {
+	pg.base.pay_data_display[2004] = {
 		picture = "tech1_promotion",
 		name = "最高方案研发礼包(一期)升级版",
 		type = 0,
@@ -17632,11 +17137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.pay_data_display
-
-	var_2_49[2005] = {
+	pg.base.pay_data_display[2005] = {
 		picture = "tech2_display",
 		name = "最高方案研发礼包(二期)",
 		type = 0,
@@ -17704,11 +17205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.pay_data_display
-
-	var_2_50[2006] = {
+	pg.base.pay_data_display[2006] = {
 		picture = "tech2_promotion",
 		name = "最高方案研发礼包(二期)高级版",
 		type = 0,
@@ -17781,11 +17278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.pay_data_display
-
-	var_2_51[2007] = {
+	pg.base.pay_data_display[2007] = {
 		picture = "tech2_normal",
 		name = "最高方案研发礼包(二期)标准版",
 		type = 0,
@@ -17848,11 +17341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.pay_data_display
-
-	var_2_52[2008] = {
+	pg.base.pay_data_display[2008] = {
 		picture = "tech2_promotion",
 		name = "最高方案研发礼包(二期)升级版",
 		type = 0,
@@ -17915,11 +17404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.pay_data_display
-
-	var_2_53[2009] = {
+	pg.base.pay_data_display[2009] = {
 		picture = "lv_70",
 		name = "即刻出战礼包",
 		type = 0,
@@ -18013,11 +17498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.pay_data_display
-
-	var_2_54[2010] = {
+	pg.base.pay_data_display[2010] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包",
 		type = 0,
@@ -18135,11 +17616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.pay_data_display
-
-	var_2_55[2011] = {
+	pg.base.pay_data_display[2011] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2022秋)",
 		type = 0,
@@ -18257,11 +17734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.pay_data_display
-
-	var_2_56[2012] = {
+	pg.base.pay_data_display[2012] = {
 		picture = "dongzhi1",
 		name = "冬至礼包1",
 		type = 0,
@@ -18379,11 +17852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.pay_data_display
-
-	var_2_57[2013] = {
+	pg.base.pay_data_display[2013] = {
 		picture = "dongzhi2",
 		name = "冬至礼包2",
 		type = 0,
@@ -18501,11 +17970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.pay_data_display
-
-	var_2_58[2014] = {
+	pg.base.pay_data_display[2014] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2023春)",
 		type = 0,
@@ -18623,11 +18088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.pay_data_display
-
-	var_2_59[2015] = {
+	pg.base.pay_data_display[2015] = {
 		picture = "tech3_display",
 		name = "最高方案研发礼包(三期)",
 		type = 0,
@@ -18695,11 +18156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.pay_data_display
-
-	var_2_60[2016] = {
+	pg.base.pay_data_display[2016] = {
 		picture = "tech3_promotion",
 		name = "最高方案研发礼包(三期)高级版",
 		type = 0,
@@ -18772,11 +18229,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.pay_data_display
-
-	var_2_61[2017] = {
+	pg.base.pay_data_display[2017] = {
 		picture = "tech3_normal",
 		name = "最高方案研发礼包(三期)标准版",
 		type = 0,
@@ -18839,11 +18292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.pay_data_display
-
-	var_2_62[2018] = {
+	pg.base.pay_data_display[2018] = {
 		picture = "tech3_promotion",
 		name = "最高方案研发礼包(三期)升级版",
 		type = 0,
@@ -18906,11 +18355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.pay_data_display
-
-	var_2_63[2019] = {
+	pg.base.pay_data_display[2019] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2023秋)",
 		type = 0,
@@ -19028,11 +18473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.pay_data_display
-
-	var_2_64[2020] = {
+	pg.base.pay_data_display[2020] = {
 		picture = "dongzhi3",
 		name = "冬至礼包(2023冬)",
 		type = 0,
@@ -19150,11 +18591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.pay_data_display
-
-	var_2_65[2021] = {
+	pg.base.pay_data_display[2021] = {
 		picture = "haishangchuanqi",
 		name = "海上传奇支援组合包",
 		type = 0,
@@ -19262,11 +18699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.pay_data_display
-
-	var_2_66[2022] = {
+	pg.base.pay_data_display[2022] = {
 		picture = "mofangzhiyuan1",
 		name = "魔方支援礼包1",
 		type = 0,
@@ -19349,11 +18782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.pay_data_display
-
-	var_2_67[2023] = {
+	pg.base.pay_data_display[2023] = {
 		picture = "mofangzhiyuan2",
 		name = "魔方支援礼包2",
 		type = 0,
@@ -19436,11 +18865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.pay_data_display
-
-	var_2_68[2024] = {
+	pg.base.pay_data_display[2024] = {
 		picture = "mofangzhiyuan3",
 		name = "魔方支援礼包3",
 		type = 0,
@@ -19523,11 +18948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.pay_data_display
-
-	var_2_69[2025] = {
+	pg.base.pay_data_display[2025] = {
 		picture = "richang",
 		name = "日常补给礼包",
 		type = 0,
@@ -19595,11 +19016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.pay_data_display
-
-	var_2_70[2026] = {
+	pg.base.pay_data_display[2026] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2024春)",
 		type = 0,
@@ -19717,11 +19134,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.pay_data_display
-
-	var_2_71[2027] = {
+	pg.base.pay_data_display[2027] = {
 		picture = "tech4_display",
 		name = "最高方案研发礼包(四期)",
 		type = 0,
@@ -19789,11 +19202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.pay_data_display
-
-	var_2_72[2028] = {
+	pg.base.pay_data_display[2028] = {
 		picture = "tech4_promotion",
 		name = "最高方案研发礼包(四期)高级版",
 		type = 0,
@@ -19866,11 +19275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.pay_data_display
-
-	var_2_73[2029] = {
+	pg.base.pay_data_display[2029] = {
 		picture = "tech4_normal",
 		name = "最高方案研发礼包(四期)标准版",
 		type = 0,
@@ -19933,11 +19338,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.pay_data_display
-
-	var_2_74[2030] = {
+	pg.base.pay_data_display[2030] = {
 		picture = "tech4_promotion",
 		name = "最高方案研发礼包(四期)升级版",
 		type = 0,
@@ -20000,11 +19401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.pay_data_display
-
-	var_2_75[2031] = {
+	pg.base.pay_data_display[2031] = {
 		picture = "daofeng_package",
 		name = "海上传奇支援组合包(240718)",
 		type = 0,
@@ -20112,11 +19509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.pay_data_display
-
-	var_2_76[2032] = {
+	pg.base.pay_data_display[2032] = {
 		picture = "ui1",
 		name = "梦幻霓虹主题礼包",
 		type = 0,
@@ -20193,11 +19586,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.pay_data_display
-
-	var_2_77[2033] = {
+	pg.base.pay_data_display[2033] = {
 		picture = "ui1",
 		name = "梦幻霓虹主题礼包（基础版）",
 		type = 0,
@@ -20280,11 +19669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.pay_data_display
-
-	var_2_78[2034] = {
+	pg.base.pay_data_display[2034] = {
 		picture = "ui1",
 		name = "梦幻霓虹主题礼包（豪华版）",
 		type = 0,
@@ -20377,11 +19762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.pay_data_display
-
-	var_2_79[2035] = {
+	pg.base.pay_data_display[2035] = {
 		picture = "huteng_package",
 		name = "海上传奇支援组合包(241017)",
 		type = 0,
@@ -20489,11 +19870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.pay_data_display
-
-	var_2_80[2036] = {
+	pg.base.pay_data_display[2036] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2024冬)",
 		type = 0,
@@ -20611,11 +19988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.pay_data_display
-
-	var_2_81[2037] = {
+	pg.base.pay_data_display[2037] = {
 		picture = "ui2",
 		name = "圣诞雪境主题礼包",
 		type = 0,
@@ -20692,11 +20065,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.pay_data_display
-
-	var_2_82[2038] = {
+	pg.base.pay_data_display[2038] = {
 		picture = "ui2",
 		name = "圣诞雪境主题礼包（基础版）",
 		type = 0,
@@ -20779,11 +20148,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.pay_data_display
-
-	var_2_83[2039] = {
+	pg.base.pay_data_display[2039] = {
 		picture = "ui2",
 		name = "圣诞雪境主题礼包（豪华版）",
 		type = 0,
@@ -20876,11 +20241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.pay_data_display
-
-	var_2_84[2040] = {
+	pg.base.pay_data_display[2040] = {
 		picture = "dongzhi3",
 		name = "冬至礼包(2024冬)",
 		type = 0,
@@ -20998,11 +20359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.pay_data_display
-
-	var_2_85[2041] = {
+	pg.base.pay_data_display[2041] = {
 		picture = "huteng_package",
 		name = "海上传奇支援组合包(250109)",
 		type = 0,
@@ -21110,11 +20467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.pay_data_display
-
-	var_2_86[2042] = {
+	pg.base.pay_data_display[2042] = {
 		picture = "ui3",
 		name = "圣砂之约主题礼包",
 		type = 0,
@@ -21191,11 +20544,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.pay_data_display
-
-	var_2_87[2043] = {
+	pg.base.pay_data_display[2043] = {
 		picture = "ui3",
 		name = "圣砂之约主题礼包(基础版)",
 		type = 0,
@@ -21278,11 +20627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.pay_data_display
-
-	var_2_88[2044] = {
+	pg.base.pay_data_display[2044] = {
 		picture = "ui3",
 		name = "圣砂之约主题礼包(豪华版)",
 		type = 0,
@@ -21375,11 +20720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.pay_data_display
-
-	var_2_89[2045] = {
+	pg.base.pay_data_display[2045] = {
 		picture = "ui4",
 		name = "基因之源主题礼包",
 		type = 0,
@@ -21456,11 +20797,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.pay_data_display
-
-	var_2_90[2046] = {
+	pg.base.pay_data_display[2046] = {
 		picture = "ui4",
 		name = "基因之源主题礼包(基础版)",
 		type = 0,
@@ -21543,11 +20880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.pay_data_display
-
-	var_2_91[2047] = {
+	pg.base.pay_data_display[2047] = {
 		picture = "ui4",
 		name = "基因之源主题礼包(豪华版)",
 		type = 0,
@@ -21640,11 +20973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.pay_data_display
-
-	var_2_92[2048] = {
+	pg.base.pay_data_display[2048] = {
 		picture = "huteng_package",
 		name = "海上传奇支援组合包(250417)",
 		type = 0,
@@ -21752,11 +21081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.pay_data_display
-
-	var_2_93[2049] = {
+	pg.base.pay_data_display[2049] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2025春)",
 		type = 0,
@@ -21874,11 +21199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.pay_data_display
-
-	var_2_94[2050] = {
+	pg.base.pay_data_display[2050] = {
 		picture = "ui5",
 		name = "海滨假日主题礼包",
 		type = 0,
@@ -21955,11 +21276,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.pay_data_display
-
-	var_2_95[2051] = {
+	pg.base.pay_data_display[2051] = {
 		picture = "ui5",
 		name = "海滨假日主题礼包(基础版)",
 		type = 0,
@@ -22052,11 +21369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.pay_data_display
-
-	var_2_96[2052] = {
+	pg.base.pay_data_display[2052] = {
 		picture = "ui5",
 		name = "海滨假日主题礼包(豪华版)",
 		type = 0,
@@ -22149,11 +21462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.pay_data_display
-
-	var_2_97[2053] = {
+	pg.base.pay_data_display[2053] = {
 		picture = "tech5_display",
 		name = "最高方案研发礼包(五期)",
 		type = 0,
@@ -22221,11 +21530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.pay_data_display
-
-	var_2_98[2054] = {
+	pg.base.pay_data_display[2054] = {
 		picture = "tech5_promotion",
 		name = "最高方案研发礼包(五期)高级版",
 		type = 0,
@@ -22298,8 +21603,11 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.pay_data_display[2055] = {
+
+	return
+end)()
+;(function()
+	pg.base.pay_data_display[2055] = {
 		picture = "tech5_normal",
 		name = "最高方案研发礼包(五期)标准版",
 		type = 0,
@@ -22362,15 +21670,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.pay_data_display
-
-	var_3_0[2056] = {
+	pg.base.pay_data_display[2056] = {
 		picture = "tech5_promotion",
 		name = "最高方案研发礼包(五期)升级版",
 		type = 0,
@@ -22433,11 +21733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.pay_data_display
-
-	var_3_1[2057] = {
+	pg.base.pay_data_display[2057] = {
 		picture = "ui6",
 		name = "忍者之城主题礼包",
 		type = 0,
@@ -22514,11 +21810,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.pay_data_display
-
-	var_3_2[2058] = {
+	pg.base.pay_data_display[2058] = {
 		picture = "ui6",
 		name = "忍者之城主题礼包(基础版)",
 		type = 0,
@@ -22611,11 +21903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.pay_data_display
-
-	var_3_3[2059] = {
+	pg.base.pay_data_display[2059] = {
 		picture = "ui6",
 		name = "忍者之城主题礼包(豪华版)",
 		type = 0,
@@ -22708,11 +21996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.pay_data_display
-
-	var_3_4[2063] = {
+	pg.base.pay_data_display[2063] = {
 		picture = "huteng_package",
 		name = "海上传奇支援组合包(251106)",
 		type = 0,
@@ -22820,11 +22104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.pay_data_display
-
-	var_3_5[2064] = {
+	pg.base.pay_data_display[2064] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2025秋)",
 		type = 0,
@@ -22942,11 +22222,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.pay_data_display
-
-	var_3_6[2068] = {
+	pg.base.pay_data_display[2068] = {
 		picture = "ui7",
 		name = "甜点女仆屋主题礼包",
 		type = 0,
@@ -23023,11 +22299,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.pay_data_display
-
-	var_3_7[2069] = {
+	pg.base.pay_data_display[2069] = {
 		picture = "ui7",
 		name = "甜点女仆屋主题礼包(基础版)",
 		type = 0,
@@ -23120,11 +22392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.pay_data_display
-
-	var_3_8[2070] = {
+	pg.base.pay_data_display[2070] = {
 		picture = "ui7",
 		name = "甜点女仆屋主题礼包(豪华版)",
 		type = 0,
@@ -23217,11 +22485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.pay_data_display
-
-	var_3_9[2071] = {
+	pg.base.pay_data_display[2071] = {
 		picture = "dongzhi3",
 		name = "冬至礼包(2025冬)",
 		type = 0,
@@ -23339,11 +22603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.pay_data_display
-
-	var_3_10[2074] = {
+	pg.base.pay_data_display[2074] = {
 		picture = "ui8",
 		name = "春满客栈主题礼包",
 		type = 0,
@@ -23420,11 +22680,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.pay_data_display
-
-	var_3_11[2075] = {
+	pg.base.pay_data_display[2075] = {
 		picture = "ui8",
 		name = "春满客栈主题礼包(基础版)",
 		type = 0,
@@ -23517,11 +22773,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.pay_data_display
-
-	var_3_12[2076] = {
+	pg.base.pay_data_display[2076] = {
 		picture = "ui8",
 		name = "春满客栈主题礼包(豪华版)",
 		type = 0,
@@ -23614,11 +22866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.pay_data_display
-
-	var_3_13[2077] = {
+	pg.base.pay_data_display[2077] = {
 		picture = "libao260212",
 		name = "战略统合补给包",
 		type = 0,
@@ -23757,11 +23005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.pay_data_display
-
-	var_3_14[2078] = {
+	pg.base.pay_data_display[2078] = {
 		picture = "boxSkill",
 		name = "舰艇教材礼包(2026春)",
 		type = 0,
@@ -23879,11 +23123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.pay_data_display
-
-	var_3_15[2079] = {
+	pg.base.pay_data_display[2079] = {
 		picture = "ui9",
 		name = "奢梦浮金主题礼包",
 		type = 0,
@@ -23960,11 +23200,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.pay_data_display
-
-	var_3_16[2080] = {
+	pg.base.pay_data_display[2080] = {
 		picture = "ui9",
 		name = "奢梦浮金主题礼包(基础版)",
 		type = 0,
@@ -24057,11 +23293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.pay_data_display
-
-	var_3_17[2081] = {
+	pg.base.pay_data_display[2081] = {
 		picture = "ui9",
 		name = "奢梦浮金主题礼包(豪华版)",
 		type = 0,
@@ -24154,11 +23386,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.pay_data_display
-
-	var_3_18[2085] = {
+	pg.base.pay_data_display[2085] = {
 		picture = "ui10",
 		name = "寄叶协议主题礼包",
 		type = 0,
@@ -24235,11 +23463,7 @@ end)()
 		limit_args = {},
 		drop_item = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.pay_data_display
-
-	var_3_19[2086] = {
+	pg.base.pay_data_display[2086] = {
 		picture = "ui10",
 		name = "寄叶协议主题礼包(基础版)",
 		type = 0,
@@ -24332,11 +23556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.pay_data_display
-
-	var_3_20[2087] = {
+	pg.base.pay_data_display[2087] = {
 		picture = "ui10",
 		name = "寄叶协议主题礼包(豪华版)",
 		type = 0,
@@ -24429,11 +23649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.pay_data_display
-
-	var_3_21[2088] = {
+	pg.base.pay_data_display[2088] = {
 		picture = "tech6_display",
 		name = "最高方案研发礼包(六期)",
 		type = 0,
@@ -24501,11 +23717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.pay_data_display
-
-	var_3_22[2089] = {
+	pg.base.pay_data_display[2089] = {
 		picture = "tech6_promotion",
 		name = "最高方案研发礼包(六期)高级版",
 		type = 0,
@@ -24578,11 +23790,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.pay_data_display
-
-	var_3_23[2090] = {
+	pg.base.pay_data_display[2090] = {
 		picture = "tech6_normal",
 		name = "最高方案研发礼包(六期)标准版",
 		type = 0,
@@ -24645,11 +23853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.pay_data_display
-
-	var_3_24[2091] = {
+	pg.base.pay_data_display[2091] = {
 		picture = "tech6_promotion",
 		name = "最高方案研发礼包(六期)升级版",
 		type = 0,
@@ -24712,11 +23916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.pay_data_display
-
-	var_3_25[5001] = {
+	pg.base.pay_data_display[5001] = {
 		picture = "pack_day1",
 		name = "促销礼包I",
 		type = 0,
@@ -24784,11 +23984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.pay_data_display
-
-	var_3_26[5002] = {
+	pg.base.pay_data_display[5002] = {
 		picture = "pack_day2",
 		name = "促销礼包II",
 		type = 0,
@@ -24846,11 +24042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.pay_data_display
-
-	var_3_27[5003] = {
+	pg.base.pay_data_display[5003] = {
 		picture = "pack_day3",
 		name = "促销礼包III",
 		type = 0,
@@ -24918,11 +24110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.pay_data_display
-
-	var_3_28[5004] = {
+	pg.base.pay_data_display[5004] = {
 		picture = "pack_day4",
 		name = "促销礼包IV",
 		type = 0,
@@ -24990,11 +24178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.pay_data_display
-
-	var_3_29[5005] = {
+	pg.base.pay_data_display[5005] = {
 		picture = "pack_day5",
 		name = "促销礼包V",
 		type = 0,
@@ -25052,11 +24236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.pay_data_display
-
-	var_3_30[5006] = {
+	pg.base.pay_data_display[5006] = {
 		picture = "pack_day6",
 		name = "促销礼包VI",
 		type = 0,
@@ -25124,11 +24304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.pay_data_display
-
-	var_3_31[5007] = {
+	pg.base.pay_data_display[5007] = {
 		picture = "pack_day7",
 		name = "促销礼包VII",
 		type = 0,
@@ -25196,11 +24372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.pay_data_display
-
-	var_3_32[5011] = {
+	pg.base.pay_data_display[5011] = {
 		picture = "pack_day1",
 		name = "促销礼包I(2024)",
 		type = 0,
@@ -25268,11 +24440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.pay_data_display
-
-	var_3_33[5012] = {
+	pg.base.pay_data_display[5012] = {
 		picture = "pack_day2",
 		name = "促销礼包II(2024)",
 		type = 0,
@@ -25330,11 +24498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.pay_data_display
-
-	var_3_34[5013] = {
+	pg.base.pay_data_display[5013] = {
 		picture = "pack_day3",
 		name = "促销礼包III(2024)",
 		type = 0,
@@ -25402,11 +24566,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.pay_data_display
-
-	var_3_35[5014] = {
+	pg.base.pay_data_display[5014] = {
 		picture = "pack_day4",
 		name = "促销礼包IV(2024)",
 		type = 0,
@@ -25474,11 +24634,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.pay_data_display
-
-	var_3_36[5015] = {
+	pg.base.pay_data_display[5015] = {
 		picture = "pack_day5",
 		name = "促销礼包V(2024)",
 		type = 0,
@@ -25536,11 +24692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.pay_data_display
-
-	var_3_37[5016] = {
+	pg.base.pay_data_display[5016] = {
 		picture = "pack_day6",
 		name = "促销礼包VI(2024)",
 		type = 0,
@@ -25608,8 +24760,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-	var_3_37.base.pay_data_display[5017] = {
+	pg.base.pay_data_display[5017] = {
 		picture = "pack_day7",
 		name = "促销礼包VII(2024)",
 		type = 0,

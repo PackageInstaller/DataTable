@@ -1,16 +1,8 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dGameBaseSubView", import("view.base.BaseEventLogic"))
 
-local var_0_0 = "Dorm3dGameBaseSubView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseEventLogic"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
-	pg = var_1_10004
-
-	var_1_10004.DelegateInfo.New(arg_1_0)
-	var_0_1.super.Ctor(arg_1_0, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
+	pg.DelegateInfo.New(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0, arg_1_2)
 
 	arg_1_0._tf = arg_1_1
 	arg_1_0.go = arg_1_1.gameObject
@@ -21,39 +13,32 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
+function var_0_0.Init(arg_2_0)
 	return
 end
 
-function var_0_1.Flush(arg_3_0)
+function var_0_0.Flush(arg_3_0)
 	return
 end
 
-function var_0_1.Show(arg_4_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_4_0._tf, true)
-
-	return
-end
-
-function var_0_1.Hide(arg_5_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_5_0._tf, false)
+function var_0_0.Show(arg_4_0)
+	setActive(arg_4_0._tf, true)
 
 	return
 end
 
-function var_0_1.Dispose(arg_6_0)
+function var_0_0.Hide(arg_5_0)
+	setActive(arg_5_0._tf, false)
+
+	return
+end
+
+function var_0_0.Dispose(arg_6_0)
 	arg_6_0:cleanManagedTween()
 	arg_6_0:disposeEvent()
-
-	pg = var_1
-
-	var_1.DelegateInfo.Dispose(arg_6_0)
+	pg.DelegateInfo.Dispose(arg_6_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

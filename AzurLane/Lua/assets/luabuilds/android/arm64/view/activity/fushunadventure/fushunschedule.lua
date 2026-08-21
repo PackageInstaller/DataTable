@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("FushunSchedule")
+﻿local var_0_0 = class("FushunSchedule")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0.time = 0
@@ -11,34 +9,25 @@ end
 
 function var_0_0.Update(arg_2_0)
 	for iter_2_0 = #arg_2_0.schedules, 1, -1 do
-		local var_2_0 = arg_2_0.schedules[iter_2_0]
+		if arg_2_0.time - arg_2_0.schedules[iter_2_0].nowtime >= arg_2_0.schedules[iter_2_0].targetTime then
+			arg_2_0.schedules[iter_2_0].callback()
 
-		if arg_2_0.time - var_2_0.nowtime >= var_2_0.targetTime then
-			var_2_0.callback()
+			arg_2_0.schedules[iter_2_0].count = arg_2_0.schedules[iter_2_0].count - 1
+			arg_2_0.schedules[iter_2_0].nowtime = arg_2_0.time
 
-			var_2_0.count = var_2_0.count - 1
-			var_2_0.nowtime = arg_2_0.time
-
-			if var_2_0.count == 0 then
-				table = var_6
-
-				var_6.remove(arg_2_0.schedules, iter_2_0)
+			if arg_2_0.schedules[iter_2_0].count == 0 then
+				table.remove(arg_2_0.schedules, iter_2_0)
 			end
 		end
 	end
 
-	local var_2_1 = arg_2_0.time
-
-	Time = var_2
-	arg_2_0.time = var_2_1 + var_2.deltaTime
+	arg_2_0.time = arg_2_0.time + Time.deltaTime
 
 	return
 end
 
 function var_0_0.AddSchedule(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	table = var_1_10004
-
-	var_1_10004.insert(arg_3_0.schedules, {
+	table.insert(arg_3_0.schedules, {
 		targetTime = arg_3_1,
 		count = arg_3_2,
 		callback = arg_3_3,

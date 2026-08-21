@@ -1,38 +1,29 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleJammingWave = class("BattleJammingWave", ys.Battle.BattleWaveInfo)
+ys.Battle.BattleJammingWave.__name = "BattleJammingWave"
 
-local var_0_1 = var_0.Battle
+local var_0_1 = ys.Battle.BattleJammingWave
 
-class = var_0_10002
-var_0_1.BattleJammingWave = var_0_10002("BattleJammingWave", var_0.Battle.BattleWaveInfo)
-var_0.Battle.BattleJammingWave.__name = "BattleJammingWave"
+ys.Battle.BattleJammingWave.JAMMING_ENGAGE = 1
+ys.Battle.BattleJammingWave.JAMMING_DODGE = 2
 
-local var_0_2 = var_0.Battle.BattleJammingWave
-
-var_0_2.JAMMING_ENGAGE = 1
-var_0_2.JAMMING_DODGE = 2
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0)
+function ys.Battle.BattleJammingWave.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 
 	return
 end
 
-function var_0_2.DoWave(arg_2_0)
-	var_0_2.super.DoWave(arg_2_0)
+function ys.Battle.BattleJammingWave.DoWave(arg_2_0)
+	var_0_1.super.DoWave(arg_2_0)
 
-	local var_2_0 = var_0.Battle.BattleDataProxy.GetInstance()
+	local var_2_0 = var_0_0.Battle.BattleDataProxy.GetInstance()
+	local var_2_1 = var_2_0:GetInitData().KizunaJamming
 
-	if var_1.GetInitData(var_2_0).KizunaJamming then
-		table = var_2_0
-
-		if var_2_0.contains(var_3, var_0_2.JAMMING_ENGAGE) then
-			var_1:KizunaJamming()
-		end
+	if var_2_1 and table.contains(var_2_1, var_0_1.JAMMING_ENGAGE) then
+		var_2_0:KizunaJamming()
 	end
 
 	arg_2_0:doFinish()

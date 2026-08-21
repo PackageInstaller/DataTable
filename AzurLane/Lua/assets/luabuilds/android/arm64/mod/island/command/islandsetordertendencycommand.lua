@@ -1,55 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSetOrderTendencyCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandSetOrderTendencyCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().value
+	local var_1_1 = getProxy(IslandProxy):GetIsland():GetOrderAgency()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).value
-
-	getProxy = var_1_0
-	IslandProxy = var_1_10006
-
-	local var_1_2 = var_1_0(var_1_10006)
-	local var_1_3 = var_4.GetIsland(var_1_2)
-	local var_1_4 = var_4.GetOrderAgency(var_1_3)
-
-	if var_4.GetTendency(var_1_4) == var_1_1 then
+	if getProxy(IslandProxy):GetIsland():GetOrderAgency():GetTendency() == var_1_0 then
 		return
 	end
 
-	pg = var_5
-
-	local var_1_5 = var_5.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_5, 21410, {
-		type = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(21410, {
+		type = var_1_0
 	}, 21411, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_2.SetTendency(var_2_0, var_1_1)
-
-			local var_2_1 = arg_1_0
-
-			var_2_2 = var_2_2.sendNotification
-			GAME = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004.ISLAND_SET_ORDER_TENDENCY_DONE)
+			var_1_1:SetTendency(var_1_0)
+			arg_1_0:sendNotification(GAME.ISLAND_SET_ORDER_TENDENCY_DONE)
 		else
-			pg = var_2_2
-
-			local var_2_3 = var_2_2.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -58,4 +24,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

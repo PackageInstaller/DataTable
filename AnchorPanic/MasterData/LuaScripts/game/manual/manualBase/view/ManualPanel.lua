@@ -40,6 +40,7 @@ function addAllUIEvent(self)
     for viewType, btnVo in pairs(manual.getMainBtnList()) do
         self:addUIEvent(self:getChildGO(btnVo.btnName), self.onClickOpenView, nil, { viewType = viewType, funcopenId = btnVo.funcopen_id })
     end
+
 end
 
 -- 激活
@@ -64,6 +65,9 @@ end
 function updateView(self)
     for _, btnVo in pairs(manual.getMainBtnList()) do
         self:updateBtnInfo(self:getChildGO(btnVo.btnName), btnVo.progress, btnVo.funcopen_id, btnVo.nomalLan, btnVo.isNew)
+        if btnVo.funcopen_id == funcopen.FuncOpenConst.FUNC_ID_MANUAL_FASHION and GameManager:getIsInCommiting() then
+            self:getChildGO(btnVo.btnName):SetActive(false)
+        end
     end
 end
 

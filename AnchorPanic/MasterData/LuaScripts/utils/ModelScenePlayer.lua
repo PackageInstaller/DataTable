@@ -84,7 +84,8 @@ function __initData(self)
     self.isCanScale = false
 
     -- 进场动作需要等待动作完成才可以缩放的模型id列表
-    self.mWaitActionModels = { "4510", "4510_2", "4511", "4508_3", "4511_2", "4514", "4514_2", "4515", "4515_2", "3108_3", "4516_2", "4512_3" }
+    self.mWaitActionModels = { "4510", "4510_2", "4511", "4508_3", "4511_2", "4514", "4514_2", "4515", "4515_2", "3108_3", "4516", "4516_2", "4512_3",
+    "4517", "4517_2", "4519", "4519_2", "1105_2", "4520", "4520_2", "4515_3" }
 end
 
 function reset(self, isResetMainCity)
@@ -197,6 +198,7 @@ function setData(self, heroId, isEffect, weaponIndex, isUIAction, showType, show
         if (self.m_modelView.heroId ~= heroId) then
             self.m_modelView:setModeType(showType)
             self.m_modelView:setHeroId(heroId, isEffect, weaponIndex, __finishCall)
+            self.m_modelView:setDynamicBoneEnable(not (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()))
         end
     end
 
@@ -205,16 +207,17 @@ function setData(self, heroId, isEffect, weaponIndex, isUIAction, showType, show
     -- else
     --     self:setAction(fight.FightDef.ACT_STAND)
     -- end
-    local heroVo = hero.HeroManager:getHeroVo(heroId)
-    if heroVo and table.indexof(self.mWaitActionModels, heroVo:getUIModel()) ~= false then
-        local finishCall = function()
-            self.isCanScale = true
-            self:__updateCameraPos()
-        end
-        self.m_modelView:setStartActionFinishCall(finishCall)
-    else
+    -- local heroVo = hero.HeroManager:getHeroVo(heroId)
+    -- if heroVo and table.indexof(self.mWaitActionModels, heroVo:getUIModel()) ~= false then
+    local finishCall = function()
         self.isCanScale = true
+        self.m_modelView:setOffShoePos(self.shoePosY)
+        self:__updateCameraPos()
     end
+    self.m_modelView:setStartActionFinishCall(finishCall)
+    -- else
+    --     self.isCanScale = true
+    -- end
     -- self.m_modelView:playStartAction()
     self:setShowType(showType, showBgPath)
 end
@@ -260,25 +263,37 @@ function setModelData(self, modelId, isMonster, isEffect, weaponIndex, isUIActio
         if (self.m_modelView:getModelId() ~= modelId) then
             self.m_modelView:setModelID(isMonster and 1 or 0, modelId, isEffect, weaponIndex, __finishCall)
             self.m_modelView:setModeType(showType)
+            self.m_modelView:setDynamicBoneEnable(not (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()))
         end
     end
 
-    if table.indexof(self.mWaitActionModels, modelId) ~= false then
-        local finishCall = function()
-            self.isCanScale = true
-            self:__updateCameraPos()
-        end
-        self.m_modelView:setStartActionFinishCall(finishCall)
-    else
+    -- if table.indexof(self.mWaitActionModels, modelId) ~= false then
+    local finishCall = function()
         self.isCanScale = true
+        self.m_modelView:setOffShoePos(self.shoePosY)
+        self:__updateCameraPos()
     end
+    self.m_modelView:setStartActionFinishCall(finishCall)
+    -- else
+    --     self.isCanScale = true
+    -- end
     -- self.m_modelView:playStartAction()
     self:setShowType(showType, showBgPath)
 end
 
 -- 外部设置模型材质球变化
-function setMaterial(self, pos, mats)
-    self.m_modelView:updateMaterial(pos, mats)
+function setMaterial(self, pos, mats, dissolves, posY, weaponId)
+    if self.m_modelView then
+        if not self.m_modelView.standComplete then
+            self.shoePosY = posY
+        else
+            self.shoePosY = nil
+        end
+        self.m_modelView:updateMaterial(pos, mats, dissolves, posY)
+        if weaponId then
+            self.m_modelView:setWeaponData(nil, weaponId)
+        end
+    end
 end
 
 function __updateRefreshEffect(self)
@@ -293,6 +308,13 @@ function getModelTrans(self)
         return self.m_modelView:getTrans()
     end
     return nil
+end
+
+function getModelViewHeroId(self)
+    if not self:getModelTrans() then
+        return
+    end
+    return self.m_modelView.heroId
 end
 
 function setShowType(self, showType, showBgPath)
@@ -486,14 +508,25 @@ function onTouchFrameHandler(self)
 end
 
 function showSiwai(self)
-    if not self.isCanScale then
+    if not self.isCanScale or not self.m_modelView then
         return
     end
-    local tragetDis = gs.Vector3.Distance(gs.Vector3(0, -0.3, 2.4), self.mScenceCamera.transform.position)
-    local normal = (gs.Vector3(0, -0.3, 2.4) - self.mScenceCamera.transform.position).normalized
 
-    local targetPos = normal * (tragetDis * 1) + self.mScenceCamera.transform.position
-    table.insert(self.mTweenList, TweenFactory:move2Lpos(self.mScenceCamera.transform, targetPos, 0.5))
+    if self:getModelTrans() == nil or not self:getModelTrans().parent or not self.mScenceCamera then
+        return
+    end
+
+    local baseVo = fashion.FashionManager:getFColorBaseVoByModeId(self.m_modelView:getModelId())
+    if baseVo.cameraType == 1 then
+        local tragetDis = gs.Vector3.Distance(gs.Vector3(0, -0.3, 2.4), self.mScenceCamera.transform.position)
+        local normal = (gs.Vector3(0, -0.3, 2.4) - self.mScenceCamera.transform.position).normalized
+
+        local targetPos = normal * (tragetDis * 1) + self.mScenceCamera.transform.position
+        table.insert(self.mTweenList, TweenFactory:move2Lpos(self.mScenceCamera.transform, targetPos, 0.5))
+
+        table.insert(self.mTweenList, TweenFactory:move2Lpos(self:getModelTrans().parent, self.modelVerticalInitPos, 0.5))
+        self.mIsMoveZMax = false
+    end
 end
 
 -- 更新模型缩放效果（相机移动） 

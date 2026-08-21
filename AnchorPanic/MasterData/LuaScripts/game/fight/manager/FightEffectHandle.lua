@@ -137,7 +137,7 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
         if targetLiveVo then
             -- print("fight.FightDef.BATTLE_TYPE_EXILE")
             targetLiveVo:setAtt(AttConst.STATE_BATTLE_EXILE, true)
-            targetLiveVo:setVisible(false)
+            targetLiveVo:setVisibleByScale(false)
             local target = fight.SceneItemManager:getLivething(targetLiveID)
             if target then
                 target:closeHeadBar()
@@ -151,12 +151,28 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
             local pos = fight.SceneGrid:getPos(targetLiveVo:isAttacker(), gridID)
             targetLiveVo:updatePosition(pos)
             targetLiveVo:setAtt(AttConst.STATE_BATTLE_EXILE, nil)
-            targetLiveVo:setVisible(true)
+            targetLiveVo:setVisibleByScale(true)
             local target = fight.SceneItemManager:getLivething(targetLiveID)
             if target then
                 target:showHeadBar()
             end
+
+            local cameraPos
+            if targetLiveVo:isAttacker() == 1 then
+                cameraPos, _ = fight.SceneGrid:getACenter()
+            else
+                cameraPos, _ = fight.SceneGrid:getDCenter()
+            end
+            fight.FightCamera:moveScFilpTrans(true, cameraPos, 10, targetLiveVo.position.z, targetLiveVo.position.z, 0)
+
+            RateLooper:setTimeout(1.5, self, function()
+                if finishCall then
+                    finishCall()
+                end
+            end)
+            isImmedCall = false
         end
+
     elseif eftType == fight.FightDef.BATTLE_TYPE_SHIELD_ADD then
         if targetLiveVo then
             local curVal = targetLiveVo:getAtt(AttConst.SHIELD)
@@ -348,6 +364,7 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
                         GameDispatcher:dispatchEvent(EventName.FIHGT_HERO_IN_SCENE, heroLogicId)
                         if finishCall then
                             finishCall()
+                            finishCall = nil
                         end
                     else
                         num = num + 1
@@ -358,10 +375,10 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
                     if vo.monType == monster.MonsterType.SUPER_BOSS then
                         fight.LivePerformManager:playEnter(heroLogicId, type, _allHeroEnter)
                     else
-                        fight.FightLoader:loadEnterSceneList({ heroLogicId }, _allHeroEnter)
+                        fight.FightLoader:loadEnterSceneList({heroLogicId}, _allHeroEnter)
                     end
                 end
-                fight.SceneManager:removeSideThing(heroData.__side, true)
+                -- fight.SceneManager:removeSideThing(heroData.__side, true) --清除死亡会导致复活失败
                 fight.FightLoader:loadHeroLive(heroData.__side, heroData, false, _enterHero)
             end
         end
@@ -465,6 +482,19 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
                 -- 退出狂暴状态
                 -- print("====================BATTLE_TYPE_CHANGE_MON_DISPLAY 4 退出狂暴状态")
                 targetLiveVo:setOtherAniClipBind(fight.FightDef.ACT_STAND, fight.FightDef.ACTION_NAMEs[fight.FightDef.ACT_STAND])
+            elseif effectInfo.count_list[1] == 5 then
+                -- 进入驻唱状态
+                print("====================BATTLE_TYPE_CHANGE_MON_DISPLAY 5 战员弦枝驻唱状态进入")
+                targetLiveVo:setOtherAniClipBind(fight.FightDef.ACT_BERSERK, fight.FightDef.ACTION_NAMEs[fight.FightDef.ACT_STAND])
+
+                fight.FightManager:playZCBGM(targetLiveVo)
+               
+            elseif effectInfo.count_list[1] == 6 then
+                -- 退出驻唱状态
+                print("====================BATTLE_TYPE_CHANGE_MON_DISPLAY 6 战员弦枝驻唱状态退出")
+                targetLiveVo:setOtherAniClipBind(fight.FightDef.ACT_STAND, fight.FightDef.ACTION_NAMEs[fight.FightDef.ACT_STAND])
+
+                fight.FightManager:fadeStopZCBGM(targetLiveVo)
             end
         end
     elseif eftType == fight.FightDef.BATTLE_TYPE_BOSS_STATE_SHOW_VALUE then
@@ -475,6 +505,32 @@ function action(self, effectInfo, senderLiveID, targetLiveID, finishCall)
         end
     elseif eftType == fight.FightDef.BATTLE_TYPE_BOSS_SUFFER_DAMAGE then
         GameDispatcher:dispatchEvent(EventName.FIGHT_GUILDBOSS_DAMAGE_UPDATE, eftVal)
+    elseif eftType == fight.FightDef.BATTLE_TYPE_ADD_SCENE_SHIELD then
+        -- print("====================BATTLE_TYPE_ADD_SCENE_SHIELD")
+        self:seeFly(actionID, targetLiveID, eftType, eftVal)
+    elseif eftType == fight.FightDef.BATTLE_TYPE_HURT_ON_SCENE_SHIELD then
+        -- print("====================BATTLE_TYPE_HURT_ON_SCENE_SHIELD")
+        self:seeFly(actionID, targetLiveID, eftType, eftVal)
+    elseif eftType == fight.FightDef.BATTLE_TYPE_SHANDIE_ELE_CAMERA then
+        -- print("====================BATTLE_TYPE_SHANDIE_ELE_CAMERA")
+        local liveId = fight.FightManager:toUniqueID(effectInfo.count_list[1], effectInfo.count_list[2])
+        local liveVo = fight.SceneManager:getThing(liveId)
+        local cameraPos
+        if liveVo:isAttacker() == 1 then
+            cameraPos, _ = fight.SceneGrid:getACenter()
+        else
+            cameraPos, _ = fight.SceneGrid:getDCenter()
+        end
+        fight.FightCamera:moveScFilpTrans(true, cameraPos, 10, liveVo.position.z, liveVo.position.z, 0)
+        fight.LivePerformManager:playSoundEff(liveId, "4522/sfx_role_4522_tianfu_buff_02_jing.prefab")
+
+        -- fight.FightCamera:focusAttacker(liveVo)
+        RateLooper:setTimeout(1.5, self, function()
+            if finishCall then
+                finishCall()
+            end
+        end)
+        isImmedCall = false
     end
 
     -- 优先级效果直接回调，需要等待的参考isImmedCall用法

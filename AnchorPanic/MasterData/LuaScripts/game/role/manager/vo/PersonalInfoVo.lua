@@ -36,15 +36,31 @@ function parsePersonalInfoMsg(self, curData)
     self.achievementNum = curData.achievement_num
     -- 无限城
     self.cityId = curData.city_id
+    -- 皮肤数量
+    self.fashionNum = curData.fashion_num
     --好友备注
     self.remarks = curData.friend_remarks
     -- 展示战员列表
     self.heroList = {}
+	--战斗皮肤id
+    self.fightUi = curData.fight_ui
+
     for i = 1, #curData.show_hero_list do
         local heroVo = curData.show_hero_list[i]
         table.insert(self.heroList, heroVo)
     end
 end
+
+--战斗UI
+function getCurFightSkin(self)
+    return self.fightUi
+end
+
+--更新战斗UI
+function updateCurFightSkin(self,skin)
+    self.fightUi = skin
+end
+
 --获取小图片地址
 function getShowHeroList(self)
     table.sort(self.heroList, function(vo1, vo2)
@@ -94,6 +110,10 @@ end
 function getAchievementNum(self)
     return self.achievementNum
 end
+--皮肤数量
+function getFashionNum(self)
+    return self.fashionNum
+end
 --战员数量
 function getHeroNum(self)
     return self.heroNum
@@ -101,8 +121,10 @@ end
 --背景图
 function getBackGround(self)
     local icon = role.RoleManager:getBackGroundVo(self.background).icon
-    return UrlManager:getBgPath("friend/bigBg/friend_bg_" .. icon .. ".jpg")
+    return UrlManager:getFriendBigBgPath(icon)
 end
+
+
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！

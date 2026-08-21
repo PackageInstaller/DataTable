@@ -1,64 +1,46 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CatchTreasureGameView", import("..BaseMiniGameView"))
+local var_0_1 = "story-richang-5"
+local var_0_2 = "event:/ui/ddldaoshu2"
+local var_0_3 = "event:/ui/taosheng"
+local var_0_4 = "event:/ui/zhuahuo"
+local var_0_5 = "event:/ui/deshou"
+local var_0_6 = "event:/ui/shibai"
+local var_0_7 = 60
+local var_0_8 = "ui/minigameui/catchtreasuregameui_atlas"
+local var_0_9 = "salvage_tips"
+local var_0_10 = "event item done"
+local var_0_11 = "boat state stand"
+local var_0_12 = "boat state thorw"
+local var_0_13 = "boat state wait"
+local var_0_14 = "item act dynamic"
+local var_0_15 = "item catch normal"
+local var_0_16 = "item catch release"
+local var_0_17 = "item catch unable"
+local var_0_18 = "item good happy"
+local var_0_19 = "item good surprise"
+local var_0_20 = "item good release"
+local var_0_21 = "item good none"
+local var_0_22 = "item scene back"
 
-local var_0_0 = "CatchTreasureGameView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-local var_0_2 = "story-richang-5"
-local var_0_3 = "event:/ui/ddldaoshu2"
-local var_0_4 = "event:/ui/taosheng"
-local var_0_5 = "event:/ui/zhuahuo"
-local var_0_6 = "event:/ui/deshou"
-local var_0_7 = "event:/ui/shibai"
-local var_0_8 = 60
-local var_0_9 = "ui/minigameui/catchtreasuregameui_atlas"
-local var_0_10 = "salvage_tips"
-local var_0_11 = "event item done"
-local var_0_12 = "boat state stand"
-local var_0_13 = "boat state thorw"
-local var_0_14 = "boat state wait"
-local var_0_15 = "item act static"
-local var_0_16 = "item act dynamic"
-local var_0_17 = "item catch normal"
-local var_0_18 = "item catch release"
-local var_0_19 = "item catch unable"
-local var_0_20 = "item good happy"
-local var_0_21 = "item good surprise"
-local var_0_22 = "item good release"
-local var_0_23 = "item good none"
-local var_0_24 = "item scene back"
-local var_0_25 = "item scene middle"
-local var_0_26 = "item scene front"
-local var_0_27 = "item type fish"
-local var_0_28 = "item type submarine"
-local var_0_29 = "item type goods"
-local var_0_30 = "item type sundries"
-local var_0_31 = "item type time"
-local var_0_32 = "item type back"
-local var_0_33 = "item type bind"
-local var_0_34 = "item type name "
-local var_0_35 = {
-	{
-		type = var_0_15,
-		range = {
-			5,
-			8
-		}
-	},
-	{
-		type = var_0_16,
-		range = {
-			5,
-			8
-		}
+;({}).type = "item act static"
+;({}).range = {
+	5,
+	8
+}
+;({})[1] = {}
+;({})[2] = {
+	type = "item act dynamic",
+	range = {
+		5,
+		8
 	}
 }
-local var_0_36 = {
+
+local var_0_26 = {
 	{
 		{
 			repeated = true,
-			type = var_0_32,
+			type = "item type back",
 			amount = {
 				8,
 				10
@@ -66,7 +48,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				6,
 				6
@@ -78,7 +60,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				2,
 				2
@@ -89,7 +71,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				4,
 				4
@@ -100,7 +82,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_30,
+			type = "item type sundries",
 			amount = {
 				3,
 				3
@@ -108,7 +90,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_31,
+			type = "item type time",
 			amount = {
 				2,
 				2
@@ -116,7 +98,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				2,
 				2
@@ -130,7 +112,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				1,
 				1
@@ -141,7 +123,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				1,
 				1
@@ -152,7 +134,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				0,
 				0
@@ -163,7 +145,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				0,
 				0
@@ -174,7 +156,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				1,
 				1
@@ -187,7 +169,7 @@ local var_0_36 = {
 	{
 		{
 			repeated = true,
-			type = var_0_32,
+			type = "item type back",
 			amount = {
 				8,
 				10
@@ -195,7 +177,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				2,
 				2
@@ -208,7 +190,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				0,
 				0
@@ -219,7 +201,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_30,
+			type = "item type sundries",
 			amount = {
 				0,
 				0
@@ -227,7 +209,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_31,
+			type = "item type time",
 			amount = {
 				2,
 				2
@@ -235,7 +217,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				2,
 				2
@@ -247,7 +229,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				3,
 				3
@@ -258,7 +240,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				6,
 				6
@@ -269,7 +251,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				5,
 				5
@@ -280,7 +262,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				0,
 				0
@@ -291,7 +273,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				1,
 				1
@@ -302,7 +284,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				1,
 				1
@@ -313,7 +295,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				0,
 				0
@@ -326,7 +308,7 @@ local var_0_36 = {
 	{
 		{
 			repeated = true,
-			type = var_0_32,
+			type = "item type back",
 			amount = {
 				8,
 				10
@@ -334,7 +316,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				2,
 				2
@@ -345,7 +327,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				1,
 				1
@@ -356,7 +338,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				2,
 				2
@@ -367,7 +349,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_29,
+			type = "item type goods",
 			amount = {
 				2,
 				2
@@ -378,7 +360,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_30,
+			type = "item type sundries",
 			amount = {
 				1,
 				1
@@ -386,7 +368,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_31,
+			type = "item type time",
 			amount = {
 				2,
 				2
@@ -394,7 +376,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				2,
 				2
@@ -406,7 +388,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				2,
 				2
@@ -417,7 +399,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				3,
 				3
@@ -428,7 +410,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = true,
-			type = var_0_27,
+			type = "item type fish",
 			amount = {
 				2,
 				2
@@ -439,7 +421,7 @@ local var_0_36 = {
 		},
 		{
 			repeated = false,
-			type = var_0_28,
+			type = "item type submarine",
 			amount = {
 				3,
 				3
@@ -453,16 +435,16 @@ local var_0_36 = {
 		}
 	}
 }
-local var_0_37 = {
+local var_0_27 = {
 	{
 		score = 200,
 		name = "fish_1",
 		catch_speed = 130,
 		speed = 150,
 		release_speed = 200,
-		type = var_0_27,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type fish",
+		act = "item act dynamic",
+		catch = "item catch release",
 		create_range = {
 			0,
 			9999,
@@ -475,7 +457,7 @@ local var_0_37 = {
 			0,
 			0
 		},
-		good = var_0_22
+		good = "item good release"
 	},
 	{
 		score = 250,
@@ -484,9 +466,9 @@ local var_0_37 = {
 		speed = 100,
 		leave_direct = -1,
 		release_speed = 200,
-		type = var_0_27,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type fish",
+		act = "item act dynamic",
+		catch = "item catch release",
 		create_range = {
 			0,
 			9999,
@@ -499,7 +481,7 @@ local var_0_37 = {
 			0,
 			0
 		},
-		good = var_0_21
+		good = "item good surprise"
 	},
 	{
 		score = 400,
@@ -507,9 +489,9 @@ local var_0_37 = {
 		catch_speed = 220,
 		speed = 350,
 		release_speed = 300,
-		type = var_0_27,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type fish",
+		act = "item act dynamic",
+		catch = "item catch release",
 		create_range = {
 			0,
 			9999,
@@ -522,7 +504,7 @@ local var_0_37 = {
 			0,
 			0
 		},
-		good = var_0_22
+		good = "item good release"
 	},
 	{
 		score = 150,
@@ -530,9 +512,9 @@ local var_0_37 = {
 		catch_speed = 160,
 		speed = 120,
 		release_speed = 200,
-		type = var_0_27,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type fish",
+		act = "item act dynamic",
+		catch = "item catch release",
 		create_range = {
 			0,
 			9999,
@@ -545,7 +527,7 @@ local var_0_37 = {
 			0,
 			0
 		},
-		good = var_0_22
+		good = "item good release"
 	},
 	{
 		score = 180,
@@ -553,9 +535,9 @@ local var_0_37 = {
 		catch_speed = 100,
 		speed = 80,
 		release_speed = 100,
-		type = var_0_27,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type fish",
+		act = "item act dynamic",
+		catch = "item catch release",
 		create_range = {
 			0,
 			9999,
@@ -568,7 +550,7 @@ local var_0_37 = {
 			0,
 			0
 		},
-		good = var_0_22
+		good = "item good release"
 	},
 	{
 		score = -150,
@@ -576,16 +558,16 @@ local var_0_37 = {
 		speed = 200,
 		catch_speed = 100,
 		release_speed = 200,
-		type = var_0_28,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type submarine",
+		act = "item act dynamic",
+		catch = "item catch release",
 		move_range = {
 			-300,
 			1800,
 			0,
 			0
 		},
-		good = var_0_22,
+		good = "item good release",
 		interaction = {
 			time = {
 				3,
@@ -602,16 +584,16 @@ local var_0_37 = {
 		speed = 150,
 		catch_speed = 100,
 		release_speed = 200,
-		type = var_0_28,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type submarine",
+		act = "item act dynamic",
+		catch = "item catch release",
 		move_range = {
 			-300,
 			1800,
 			0,
 			0
 		},
-		good = var_0_22,
+		good = "item good release",
 		interaction = {
 			time = {
 				3,
@@ -628,16 +610,16 @@ local var_0_37 = {
 		speed = 120,
 		catch_speed = 100,
 		release_speed = 200,
-		type = var_0_28,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type submarine",
+		act = "item act dynamic",
+		catch = "item catch release",
 		move_range = {
 			-300,
 			1800,
 			0,
 			0
 		},
-		good = var_0_22,
+		good = "item good release",
 		interaction = {
 			time = {
 				3,
@@ -654,16 +636,16 @@ local var_0_37 = {
 		speed = 90,
 		catch_speed = 100,
 		release_speed = 200,
-		type = var_0_28,
-		act = var_0_16,
-		catch = var_0_18,
+		type = "item type submarine",
+		act = "item act dynamic",
+		catch = "item catch release",
 		move_range = {
 			-300,
 			1800,
 			0,
 			0
 		},
-		good = var_0_22,
+		good = "item good release",
 		interaction = {
 			time = {
 				3,
@@ -679,58 +661,58 @@ local var_0_37 = {
 		name = "boom",
 		speed = 500,
 		catch_speed = 300,
-		type = var_0_30,
-		act = var_0_16,
-		catch = var_0_17,
+		type = "item type sundries",
+		act = "item act dynamic",
+		catch = "item catch normal",
 		move_range = {
 			-300,
 			1800,
 			0,
 			0
 		},
-		good = var_0_21
+		good = "item good surprise"
 	},
 	{
 		speed = 0,
 		name = "rock",
 		score = 50,
 		catch_speed = 80,
-		type = var_0_29,
-		act = var_0_15,
-		catch = var_0_17,
-		good = var_0_23
+		type = "item type goods",
+		act = "item act static",
+		catch = "item catch normal",
+		good = "item good none"
 	},
 	{
 		score = 300,
 		name = "gold",
 		speed = 0,
 		catch_speed = 160,
-		type = var_0_29,
-		act = var_0_15,
-		catch = var_0_17,
+		type = "item type goods",
+		act = "item act static",
+		catch = "item catch normal",
 		create_range = {
 			0,
 			9999,
 			0,
 			130
 		},
-		good = var_0_20
+		good = "item good happy"
 	},
 	{
 		score = 600,
 		name = "treasure",
 		speed = 0,
 		catch_speed = 55,
-		type = var_0_29,
-		act = var_0_15,
-		catch = var_0_17,
+		type = "item type goods",
+		act = "item act static",
+		catch = "item catch normal",
 		create_range = {
 			0,
 			9999,
 			0,
 			130
 		},
-		good = var_0_20
+		good = "item good happy"
 	},
 	{
 		score = 600,
@@ -738,32 +720,32 @@ local var_0_37 = {
 		time = 20,
 		catch_speed = 180,
 		speed = 0,
-		type = var_0_31,
-		act = var_0_15,
-		catch = var_0_17,
+		type = "item type time",
+		act = "item act static",
+		catch = "item catch normal",
 		create_range = {
 			0,
 			9999,
 			0,
 			130
 		},
-		good = var_0_20
+		good = "item good happy"
 	},
 	{
 		score = 200,
 		name = "shell",
 		speed = 0,
 		catch_speed = 100,
-		type = var_0_29,
-		act = var_0_15,
-		catch = var_0_17,
+		type = "item type goods",
+		act = "item act static",
+		catch = "item catch normal",
 		create_range = {
 			0,
 			9999,
 			0,
 			130
 		},
-		good = var_0_20,
+		good = "item good happy",
 		catch_rule = {
 			targetName = "pearl",
 			state = {
@@ -786,19 +768,19 @@ local var_0_37 = {
 		name = "pearl",
 		score = 500,
 		catch_speed = 200,
-		type = var_0_33,
-		act = var_0_15,
-		catch = var_0_17,
-		good = var_0_20
+		type = "item type bind",
+		act = "item act static",
+		catch = "item catch normal",
+		good = "item good happy"
 	},
 	{
 		name = "Anglerfish",
 		direct = -1,
 		speed = 30,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -816,10 +798,10 @@ local var_0_37 = {
 		name = "Fish_A",
 		direct = -1,
 		speed = 20,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -837,10 +819,10 @@ local var_0_37 = {
 		name = "Fish_B",
 		direct = -1,
 		speed = 20,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -858,10 +840,10 @@ local var_0_37 = {
 		name = "Fish_C",
 		direct = -1,
 		speed = 20,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -879,10 +861,10 @@ local var_0_37 = {
 		name = "Fish_D",
 		direct = -1,
 		speed = 10,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -900,10 +882,10 @@ local var_0_37 = {
 		name = "Fish_E",
 		direct = -1,
 		speed = 30,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -921,10 +903,10 @@ local var_0_37 = {
 		name = "Fish_manjuu",
 		direct = -1,
 		speed = 20,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -942,10 +924,10 @@ local var_0_37 = {
 		name = "Seal",
 		direct = -1,
 		speed = 30,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -963,10 +945,10 @@ local var_0_37 = {
 		name = "Submarine",
 		direct = -1,
 		speed = 30,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -984,10 +966,10 @@ local var_0_37 = {
 		name = "Sunfish",
 		direct = -1,
 		speed = 30,
-		type = var_0_32,
-		act = var_0_16,
-		scene = var_0_24,
-		catch = var_0_19,
+		type = "item type back",
+		act = "item act dynamic",
+		scene = "item scene back",
+		catch = "item catch unable",
 		create_range = {
 			-9999,
 			9999,
@@ -1002,17 +984,17 @@ local var_0_37 = {
 		}
 	}
 }
-local var_0_38 = 500
-local var_0_39 = 300
-local var_0_40 = 200
-local var_0_41 = 200
-local var_0_42 = 45
-local var_0_43 = 2.5
-local var_0_44 = 50
-local var_0_45 = 100
-local var_0_46 = 580
-local var_0_47 = 130
-local var_0_48 = {
+local var_0_28 = 500
+local var_0_29 = 300
+local var_0_30 = 200
+local var_0_31 = 200
+local var_0_32 = 45
+local var_0_33 = 2.5
+local var_0_34 = 50
+local var_0_35 = 100
+local var_0_36 = 580
+local var_0_37 = 130
+local var_0_38 = {
 	{
 		color = "8dff1e",
 		font = 44,
@@ -1049,310 +1031,284 @@ local var_0_48 = {
 		color = "6f1807"
 	}
 }
-local var_0_49 = "char apply position"
-local var_0_50 = "char apply move"
-local var_0_51 = "char apply act"
-local var_0_52 = {
-	{
-		speed = 3,
-		tf = "Shiratsuyu",
-		id = 1,
-		bindIds = {
-			2
+local var_0_39 = "char apply position"
+local var_0_40 = "char apply move"
+local var_0_41 = "char apply act"
+local var_0_42 = {}
+
+;({
+	posX = -1200
+}).type = "char apply position"
+;({})[1] = {
+	posX = -1200
+}
+;({})[2] = {
+	trigger = "moveA",
+	type = "char apply act"
+}
+;({})[3] = {
+	sync = true,
+	direct = -1,
+	offsetX = -50,
+	type = "char apply move",
+	moveToX = {
+		300,
+		400
+	}
+}
+;({})[4] = {
+	time = 2,
+	trigger = "actA",
+	type = "char apply act"
+}
+;({})[5] = {
+	time = 2,
+	trigger = "actB",
+	type = "char apply act"
+}
+;({})[6] = {
+	time = 0,
+	trigger = "moveB",
+	type = "char apply act"
+}
+;({})[7] = {
+	direct = -1,
+	type = "char apply move",
+	moveToX = {
+		2000,
+		2000
+	}
+}
+;({
+	speed = 3,
+	tf = "Shiratsuyu",
+	id = 1,
+	bindIds = {
+		2
+	}
+}).actions = {}
+;({})[1] = {
+	speed = 3,
+	tf = "Shiratsuyu",
+	id = 1,
+	bindIds = {
+		2
+	}
+}
+;({})[2] = {
+	id = 2,
+	tf = "Shigure",
+	speed = 3,
+	actions = {
+		{
+			posX = 1200,
+			type = "char apply position"
 		},
-		actions = {
-			{
-				posX = -1200,
-				type = var_0_49
-			},
-			{
-				trigger = "moveA",
-				type = var_0_51
-			},
-			{
-				sync = true,
-				direct = -1,
-				offsetX = -50,
-				type = var_0_50,
-				moveToX = {
-					300,
-					400
-				}
-			},
-			{
-				time = 2,
-				trigger = "actA",
-				type = var_0_51
-			},
-			{
-				time = 2,
-				trigger = "actB",
-				type = var_0_51
-			},
-			{
-				time = 0,
-				trigger = "moveB",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					2000,
-					2000
-				}
-			}
-		}
-	},
-	{
-		id = 2,
-		tf = "Shigure",
-		speed = 3,
-		actions = {
-			{
-				posX = 1200,
-				type = var_0_49
-			},
-			{
-				trigger = "moveA",
-				type = var_0_51
-			},
-			{
-				sync = true,
-				direct = -1,
-				offsetX = 50,
-				type = var_0_50
-			},
-			{
-				time = 2,
-				trigger = "actA",
-				type = var_0_51
-			},
-			{
-				time = 2,
-				trigger = "actB",
-				type = var_0_51
-			},
-			{
-				time = 0,
-				trigger = "moveB",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					2100,
-					2200
-				}
-			}
-		}
-	},
-	{
-		id = 3,
-		tf = "eldridge",
-		speed = 2,
-		actions = {
-			{
-				posX = -1200,
-				type = var_0_49
-			},
-			{
-				trigger = "move",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					100,
-					300
-				}
-			},
-			{
-				trigger = "act",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					600,
-					700
-				}
-			},
-			{
-				trigger = "act",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					1300,
-					1300
-				}
-			}
-		}
-	},
-	{
-		id = 4,
-		tf = "bombBoat",
-		speed = 4,
-		actions = {
-			{
-				posX = 1200,
-				type = var_0_49
-			},
-			{
-				trigger = "move",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					-1100,
-					-1300
-				}
-			}
-		}
-	},
-	{
-		id = 5,
-		tf = "Fleet",
-		speed = 3,
-		actions = {
-			{
-				posX = -1200,
-				type = var_0_49
-			},
-			{
-				trigger = "move",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					500,
-					700
-				}
-			},
-			{
-				time = 4,
-				trigger = "act",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					1300,
-					1500
-				}
-			}
-		}
-	},
-	{
-		id = 6,
-		tf = "Glowworm",
-		speed = 4,
-		actions = {
-			{
-				posX = 1200,
-				type = var_0_49
-			},
-			{
-				trigger = "move",
-				type = var_0_51
-			},
-			{
-				direct = -1,
-				type = var_0_50,
-				moveToX = {
-					-550,
-					-1000
-				}
-			},
-			{
-				time = 2,
-				trigger = "act",
-				type = var_0_51
+		{
+			trigger = "moveA",
+			type = "char apply act"
+		},
+		{
+			sync = true,
+			direct = -1,
+			offsetX = 50,
+			type = "char apply move"
+		},
+		{
+			time = 2,
+			trigger = "actA",
+			type = "char apply act"
+		},
+		{
+			time = 2,
+			trigger = "actB",
+			type = "char apply act"
+		},
+		{
+			time = 0,
+			trigger = "moveB",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				2100,
+				2200
 			}
 		}
 	}
 }
-local var_0_53 = {
+;({})[3] = {
+	id = 3,
+	tf = "eldridge",
+	speed = 2,
+	actions = {
+		{
+			posX = -1200,
+			type = "char apply position"
+		},
+		{
+			trigger = "move",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				100,
+				300
+			}
+		},
+		{
+			trigger = "act",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				600,
+				700
+			}
+		},
+		{
+			trigger = "act",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				1300,
+				1300
+			}
+		}
+	}
+}
+;({})[4] = {
+	id = 4,
+	tf = "bombBoat",
+	speed = 4,
+	actions = {
+		{
+			posX = 1200,
+			type = "char apply position"
+		},
+		{
+			trigger = "move",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				-1100,
+				-1300
+			}
+		}
+	}
+}
+;({})[5] = {
+	id = 5,
+	tf = "Fleet",
+	speed = 3,
+	actions = {
+		{
+			posX = -1200,
+			type = "char apply position"
+		},
+		{
+			trigger = "move",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				500,
+				700
+			}
+		},
+		{
+			time = 4,
+			trigger = "act",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				1300,
+				1500
+			}
+		}
+	}
+}
+;({})[6] = {
+	id = 6,
+	tf = "Glowworm",
+	speed = 4,
+	actions = {
+		{
+			posX = 1200,
+			type = "char apply position"
+		},
+		{
+			trigger = "move",
+			type = "char apply act"
+		},
+		{
+			direct = -1,
+			type = "char apply move",
+			moveToX = {
+				-550,
+				-1000
+			}
+		},
+		{
+			time = 2,
+			trigger = "act",
+			type = "char apply act"
+		}
+	}
+}
+
+local var_0_43 = {
 	25,
 	30
 }
-local var_0_54 = {
+local var_0_44 = {
 	1,
 	3,
 	4,
 	5,
 	6
 }
-local var_0_55 = {
+local var_0_45 = {
 	"actA",
 	"actB"
 }
-local var_0_56 = {
+local var_0_46 = {
 	10,
 	15
 }
 
-local function var_0_57(arg_1_0, arg_1_1)
-	local var_1_0 = {
+local function var_0_47(arg_1_0, arg_1_1)
+	({
 		ctor = function(arg_2_0)
 			arg_2_0._sceneTf = arg_1_0
-			findTF = var_1
-			arg_2_0._boatTf = var_1(arg_1_0, "boat")
+			arg_2_0._boatTf = findTF(arg_1_0, "boat")
 			arg_2_0._event = arg_1_1
-			findTF = var_1
-			arg_2_0._hookTf = var_1(arg_2_0._boatTf, "body/hook")
-			findTF = var_1
-			arg_2_0._hookContent = var_1(arg_2_0._hookTf, "container/content")
-			findTF = var_1
-			arg_2_0._hookCollider = var_1(arg_2_0._hookTf, "container/collider")
-			findTF = var_1
-			arg_2_0._sceneContent = var_1(arg_2_0._sceneTf, "container/content")
-			GetComponent = var_1
-			findTF = var_3
+			arg_2_0._hookTf = findTF(arg_2_0._boatTf, "body/hook")
+			arg_2_0._hookContent = findTF(arg_2_0._hookTf, "container/content")
+			arg_2_0._hookCollider = findTF(arg_2_0._hookTf, "container/collider")
+			arg_2_0._sceneContent = findTF(arg_2_0._sceneTf, "container/content")
+			arg_2_0.hookAnimator = GetComponent(findTF(arg_2_0._hookTf, "bottom"), typeof(Animator))
+			arg_2_0.hookMaskAnimator = GetComponent(findTF(arg_2_0._hookTf, "mask/img"), typeof(Animator))
+			arg_2_0.captainAnimator = GetComponent(findTF(arg_2_0._boatTf, "body/captain/img"), typeof(Animator))
 
-			local var_2_0 = var_3(arg_2_0._hookTf, "bottom")
-
-			typeof = var_4
-			Animator = var_6
-			arg_2_0.hookAnimator = var_1(var_2_0, var_4(var_6))
-			GetComponent = var_1
-			findTF = var_2_0
-
-			local var_2_1 = var_2_0(arg_2_0._hookTf, "mask/img")
-
-			typeof = var_4
-			Animator = var_6
-			arg_2_0.hookMaskAnimator = var_1(var_2_1, var_4(var_6))
-			GetComponent = var_1
-			findTF = var_2_1
-
-			local var_2_2 = var_2_1(arg_2_0._boatTf, "body/captain/img")
-
-			typeof = var_4
-			Animator = var_6
-			arg_2_0.captainAnimator = var_1(var_2_2, var_4(var_6))
-			GetComponent = var_1
-			findTF = var_2_2
-
-			local var_2_3 = var_2_2(arg_2_0._boatTf, "body/captain/img")
-
-			typeof = var_4
-			DftAniEvent = var_6
-
-			local var_2_4 = var_1(var_2_3, var_4(var_6))
-
-			var_1.SetEndEvent(var_2_4, function()
+			GetComponent(findTF(arg_2_0._boatTf, "body/captain/img"), typeof(DftAniEvent)):SetEndEvent(function()
 				if arg_2_0.inGoodAct then
 					arg_2_0.inGoodAct = false
 				end
@@ -1360,33 +1316,21 @@ local function var_0_57(arg_1_0, arg_1_1)
 				return
 			end)
 
-			GetComponent = var_2
-			findTF = var_2_4
-
-			local var_2_5 = var_2_4(arg_2_0._boatTf, "body/mariner/img")
-
-			typeof = var_5
-			Animator = var_7
-			arg_2_0.marinerAnimator = var_2(var_2_5, var_5(var_7))
+			arg_2_0.marinerAnimator = GetComponent(findTF(arg_2_0._boatTf, "body/mariner/img"), typeof(Animator))
 
 			return
 		end,
 		start = function(arg_4_0)
-			local var_4_0 = arg_4_0._hookTf
-
-			Vector2 = var_2_10002
-			var_4_0.sizeDelta = var_2_10002(0, 1)
-			arg_4_0.boatState = var_0_12
-			arg_4_0.hookRotation = var_0_42
+			arg_4_0._hookTf.sizeDelta = Vector2(0, 1)
+			arg_4_0.boatState = var_0_11
+			arg_4_0.hookRotation = var_0_32
 			arg_4_0.hookRotationSpeed = 0
-			arg_4_0.hookTargetRotation = var_0_42
+			arg_4_0.hookTargetRotation = var_0_32
 			arg_4_0.throwHook = false
 			arg_4_0.inGoodAct = false
 
 			if arg_4_0.catchItem then
-				destroy = var_1
-
-				var_1(arg_4_0.catchItem.tf)
+				destroy(arg_4_0.catchItem.tf)
 
 				arg_4_0.catchItem = nil
 			end
@@ -1399,66 +1343,36 @@ local function var_0_57(arg_1_0, arg_1_1)
 			return
 		end,
 		step = function(arg_5_0)
-			if arg_5_0.boatState == var_0_12 then
-				var_2_10003 = arg_5_0
-
-				arg_5_0.checkChangeRotation(var_2_10003)
+			if arg_5_0.boatState == var_0_11 then
+				arg_5_0:checkChangeRotation()
 
 				arg_5_0.hookRotation = arg_5_0.hookRotation + arg_5_0:getSpringRotation()
-
-				local var_5_0 = arg_5_0._hookTf
-
-				Vector3 = var_2
-				var_5_0.localEulerAngles = var_2(0, 0, arg_5_0.hookRotation)
-			elseif arg_5_0.boatState == var_0_13 then
+				arg_5_0._hookTf.localEulerAngles = Vector3(0, 0, arg_5_0.hookRotation)
+			elseif arg_5_0.boatState == var_0_12 then
 				if arg_5_0.throwHook then
-					local var_5_1 = arg_5_0._hookTf
+					arg_5_0._hookTf.sizeDelta = Vector2(0, arg_5_0._hookTf.sizeDelta.y + var_0_30 * Time.deltaTime)
 
-					Vector2 = var_2
-
-					local var_5_2 = 0
-					local var_5_3 = arg_5_0._hookTf.sizeDelta.y
-					local var_5_4 = var_0_40
-
-					Time = var_2_10007
-					var_5_1.sizeDelta = var_2(var_5_2, var_5_3 + var_5_4 * var_2_10007.deltaTime)
-					math = var_5_1
-
-					local var_5_5 = var_5_1.cos
-
-					math = var_2_10003
-
-					local var_5_6 = var_2_10003.deg2Rad
-
-					math = var_5_2
-
-					local var_5_7 = var_5_5(var_5_6 * var_5_2.abs(arg_5_0.hookRotation))
-
-					if arg_5_0._hookTf.sizeDelta.y * var_5_7 > var_0_39 or arg_5_0._hookTf.sizeDelta.y > var_0_38 then
+					if arg_5_0._hookTf.sizeDelta.y * math.cos(math.deg2Rad * math.abs(arg_5_0.hookRotation)) > var_0_29 or arg_5_0._hookTf.sizeDelta.y > var_0_28 then
 						arg_5_0.throwHook = false
 					end
 				else
-					local var_5_8 = arg_5_0:hookBack()
+					local var_5_0 = arg_5_0:hookBack()
 
-					if not arg_5_0.catchItem and var_5_8 then
-						arg_5_0.boatState = var_0_12
+					if not arg_5_0.catchItem and var_5_0 then
+						arg_5_0.boatState = var_0_11
 					elseif arg_5_0.catchItem then
-						local var_5_9 = arg_5_0._hookContent.position
-						local var_5_10 = arg_5_0._sceneContent
-						local var_5_11 = var_3.InverseTransformPoint(var_5_10, var_5_9)
-
-						if (arg_5_0.catchItem.data.catch == var_0_18 or arg_5_0.catchItem.data.act == var_0_16) and var_5_11.y > var_0_46 then
-							arg_5_0.boatState = var_0_14
+						if (arg_5_0.catchItem.data.catch == var_0_16 or arg_5_0.catchItem.data.act == var_0_14) and arg_5_0._sceneContent:InverseTransformPoint(arg_5_0._hookContent.position).y > var_0_36 then
+							arg_5_0.boatState = var_0_13
 
 							arg_5_0:leaveItem()
-						elseif var_5_8 then
-							arg_5_0.boatState = var_0_14
+						elseif var_5_0 then
+							arg_5_0.boatState = var_0_13
 
 							arg_5_0:leaveItem()
 						end
 					end
 				end
-			elseif arg_5_0.boatState == var_0_14 then
+			elseif arg_5_0.boatState == var_0_13 then
 				if not arg_5_0:hookBack() then
 					return
 				end
@@ -1467,106 +1381,60 @@ local function var_0_57(arg_1_0, arg_1_1)
 					return
 				end
 
-				arg_5_0.boatState = var_0_12
+				arg_5_0.boatState = var_0_11
 			end
 
-			if arg_5_0.boatState == var_0_13 and arg_5_0.throwHook then
-				local var_5_12 = arg_5_0.hookAnimator
-
-				var_1.SetBool(var_5_12, "hook", true)
-
-				local var_5_13 = arg_5_0.hookMaskAnimator
-
-				var_1.SetBool(var_5_13, "hook", true)
+			if arg_5_0.boatState == var_0_12 and arg_5_0.throwHook then
+				arg_5_0.hookAnimator:SetBool("hook", true)
+				arg_5_0.hookMaskAnimator:SetBool("hook", true)
 			else
-				local var_5_14 = arg_5_0.hookAnimator
-
-				var_1.SetBool(var_5_14, "hook", false)
-
-				local var_5_15 = arg_5_0.hookMaskAnimator
-
-				var_1.SetBool(var_5_15, "hook", false)
+				arg_5_0.hookAnimator:SetBool("hook", false)
+				arg_5_0.hookMaskAnimator:SetBool("hook", false)
 			end
 
-			if arg_5_0.boatState == var_0_13 then
+			if arg_5_0.boatState == var_0_12 then
 				if arg_5_0.throwHook then
-					local var_5_16 = arg_5_0.captainAnimator
-
-					var_1.SetInteger(var_5_16, "state", 4)
+					arg_5_0.captainAnimator:SetInteger("state", 4)
 				else
-					local var_5_17 = 1
+					local var_5_1 = 1
 
 					if arg_5_0.catchItem then
-						var_5_17 = arg_5_0.catchItem.data.catch_speed >= 100 and 1 or arg_5_0.catchItem.data.catch_speed >= 50 and arg_5_0.catchItem.data.catch_speed <= 100 and 2 or 3
+						var_5_1 = arg_5_0.catchItem.data.catch_speed >= 100 and 1 or arg_5_0.catchItem.data.catch_speed >= 50 and arg_5_0.catchItem.data.catch_speed <= 100 and 2 or 3
 					end
 
-					local var_5_18 = arg_5_0.captainAnimator
-
-					var_2.SetInteger(var_5_18, "state", var_5_17)
+					arg_5_0.captainAnimator:SetInteger("state", var_5_1)
 				end
 			else
-				local var_5_19 = arg_5_0.captainAnimator
-
-				var_1.SetInteger(var_5_19, "state", 0)
+				arg_5_0.captainAnimator:SetInteger("state", 0)
 			end
 
 			if not arg_5_0.marinerActTime then
-				math = var_1
-				arg_5_0.marinerActTime = var_1.random(var_0_56[1], var_0_56[2])
-
-				local var_5_20 = var_0_55
-
-				math = var_2
-				arg_5_0.marinerActName = var_5_20[var_2.random(1, #var_0_55)]
+				arg_5_0.marinerActTime = math.random(var_0_46[1], var_0_46[2])
+				arg_5_0.marinerActName = var_0_45[math.random(1, #var_0_45)]
 			elseif arg_5_0.marinerActTime <= 0 then
-				local var_5_21 = arg_5_0.marinerAnimator
+				arg_5_0.marinerAnimator:SetTrigger(arg_5_0.marinerActName)
 
-				var_1.SetTrigger(var_5_21, arg_5_0.marinerActName)
-
-				math = var_1
-				arg_5_0.marinerActTime = var_1.random(var_0_56[1], var_0_56[2])
-
-				local var_5_22 = var_0_55
-
-				math = var_2
-				arg_5_0.marinerActName = var_5_22[var_2.random(1, #var_0_55)]
+				arg_5_0.marinerActTime = math.random(var_0_46[1], var_0_46[2])
+				arg_5_0.marinerActName = var_0_45[math.random(1, #var_0_45)]
 			else
-				local var_5_23 = arg_5_0.marinerActTime
-
-				Time = var_2
-				arg_5_0.marinerActTime = var_5_23 - var_2.deltaTime
+				arg_5_0.marinerActTime = arg_5_0.marinerActTime - Time.deltaTime
 			end
 
 			return
 		end,
 		hookBack = function(arg_6_0)
-			local var_6_0 = arg_6_0._hookTf.sizeDelta.y
-
-			if 1 < var_6_0 then
-				local var_6_1 = var_0_41
-
-				Time = var_2
-
-				local var_6_2 = var_6_1 * var_2.deltaTime
+			if arg_6_0._hookTf.sizeDelta.y > 1 then
+				local var_6_0 = var_0_31 * Time.deltaTime
 
 				if arg_6_0.catchItem then
-					local var_6_3 = arg_6_0.catchItem.data.catch_speed
-
-					Time = var_2_10003
-					var_6_2 = var_6_3 * var_2_10003.deltaTime
+					var_6_0 = arg_6_0.catchItem.data.catch_speed * Time.deltaTime
 				end
 
-				local var_6_4 = arg_6_0._hookTf
-
-				Vector2 = var_2_10003
-				var_6_4.sizeDelta = var_2_10003(0, arg_6_0._hookTf.sizeDelta.y - var_6_2)
+				arg_6_0._hookTf.sizeDelta = Vector2(0, arg_6_0._hookTf.sizeDelta.y - var_6_0)
 
 				return false
 			elseif arg_6_0._hookTf.sizeDelta.y < 1 then
-				local var_6_5 = arg_6_0._hookTf
-
-				Vector2 = var_2
-				var_6_5.sizeDelta = var_2(0, 1)
+				arg_6_0._hookTf.sizeDelta = Vector2(0, 1)
 
 				return false
 			end
@@ -1575,35 +1443,21 @@ local function var_0_57(arg_1_0, arg_1_1)
 		end,
 		leaveItem = function(arg_7_0)
 			if arg_7_0.catchItem then
-				local var_7_0 = arg_7_0._event
-
-				var_1.emit(var_7_0, var_0_11, arg_7_0.catchItem, function()
+				arg_7_0._event:emit(var_0_10, arg_7_0.catchItem, function()
 					return
 				end)
 
 				arg_7_0.inGoodAct = true
 
-				if arg_7_0.catchItem.data.good == var_0_20 then
-					local var_7_1 = arg_7_0.captainAnimator
-
-					var_1.SetTrigger(var_7_1, "happy")
-
-					local var_7_2 = arg_7_0.marinerAnimator
-
-					var_1.SetTrigger(var_7_2, "happy")
-				elseif arg_7_0.catchItem.data.good == var_0_22 then
-					local var_7_3 = arg_7_0.captainAnimator
-
-					var_1.SetTrigger(var_7_3, "release")
+				if arg_7_0.catchItem.data.good == var_0_18 then
+					arg_7_0.captainAnimator:SetTrigger("happy")
+					arg_7_0.marinerAnimator:SetTrigger("happy")
+				elseif arg_7_0.catchItem.data.good == var_0_20 then
+					arg_7_0.captainAnimator:SetTrigger("release")
+				elseif arg_7_0.catchItem.data.good == var_0_19 then
+					arg_7_0.captainAnimator:SetTrigger("surprise")
+					arg_7_0.marinerAnimator:SetTrigger("surprise")
 				elseif arg_7_0.catchItem.data.good == var_0_21 then
-					local var_7_4 = arg_7_0.captainAnimator
-
-					var_1.SetTrigger(var_7_4, "surprise")
-
-					local var_7_5 = arg_7_0.marinerAnimator
-
-					var_1.SetTrigger(var_7_5, "surprise")
-				elseif arg_7_0.catchItem.data.good == var_0_23 then
 					arg_7_0.inGoodAct = false
 				end
 
@@ -1613,69 +1467,40 @@ local function var_0_57(arg_1_0, arg_1_1)
 			return
 		end,
 		throw = function(arg_9_0)
-			if arg_9_0.boatState ~= var_0_12 then
+			if arg_9_0.boatState ~= var_0_11 then
 				return
 			end
 
-			pg = var_1
-
-			local var_9_0 = var_1.CriMgr.GetInstance()
-
-			var_1.PlaySoundEffect_V3(var_9_0, var_0_4)
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_3)
 
 			arg_9_0.throwHook = true
-			arg_9_0.boatState = var_0_13
+			arg_9_0.boatState = var_0_12
 
 			return
 		end,
 		setCatchItem = function(arg_10_0, arg_10_1)
-			if arg_10_0.boatState == var_0_13 and arg_10_0.throwHook then
+			if arg_10_0.boatState == var_0_12 and arg_10_0.throwHook then
 				arg_10_0.catchItem = arg_10_1
 				arg_10_0.throwHook = false
+				arg_10_1.tf.localScale = Vector3(math.sign(arg_10_1.tf.localScale.x), 1, 1)
 
-				local var_10_0 = arg_10_1.tf
+				SetParent(arg_10_1.tf, arg_10_0._hookContent)
 
-				Vector3 = var_3
-				math = var_2_10005
-				var_10_0.localScale = var_3(var_2_10005.sign(arg_10_1.tf.localScale.x), 1, 1)
-				SetParent = var_10_0
+				arg_10_1.tf.anchoredPosition = Vector2(0, 0)
 
-				var_10_0(arg_10_1.tf, arg_10_0._hookContent)
-
-				local var_10_1 = arg_10_1.tf
-
-				Vector2 = var_3
-				var_10_1.anchoredPosition = var_3(0, 0)
-				pg = var_10_1
-
-				local var_10_2 = var_10_1.CriMgr.GetInstance()
-
-				var_2.PlaySoundEffect_V3(var_10_2, var_0_5)
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_4)
 			end
 
 			return
 		end,
 		getSpringRotation = function(arg_11_0)
-			local var_11_0 = arg_11_0.hookRotationSpeed
+			arg_11_0.hookRotationSpeed = arg_11_0.hookRotationSpeed + math.sign(arg_11_0.hookTargetRotation) * var_0_33
 
-			math = var_2_10002
-			arg_11_0.hookRotationSpeed = var_11_0 + var_2_10002.sign(arg_11_0.hookTargetRotation) * var_0_43
-			math = var_1
-
-			local var_11_1 = var_1.abs(arg_11_0.hookRotationSpeed)
-
-			if var_0_44 < var_11_1 then
-				local var_11_2 = var_0_44
-
-				math = var_2
-				arg_11_0.hookRotationSpeed = var_11_2 * var_2.sign(arg_11_0.hookTargetRotation)
+			if math.abs(arg_11_0.hookRotationSpeed) > var_0_34 then
+				arg_11_0.hookRotationSpeed = var_0_34 * math.sign(arg_11_0.hookTargetRotation)
 			end
 
-			local var_11_3 = arg_11_0.hookRotationSpeed
-
-			Time = var_2
-
-			return var_11_3 * var_2.deltaTime
+			return arg_11_0.hookRotationSpeed * Time.deltaTime
 		end,
 		checkChangeRotation = function(arg_12_0)
 			if arg_12_0.hookTargetRotation > 0 and arg_12_0.hookRotation > arg_12_0.hookTargetRotation then
@@ -1687,19 +1512,478 @@ local function var_0_57(arg_1_0, arg_1_1)
 			return
 		end,
 		inCatch = function(arg_13_0)
-			return arg_13_0.boatState == var_0_13 and arg_13_0.throwHook
+			return arg_13_0.boatState == var_0_12 and arg_13_0.throwHook
 		end,
 		getHookPosition = function(arg_14_0)
 			return arg_14_0._hookCollider.position
 		end,
 		gameOver = function(arg_15_0)
-			local var_15_0 = arg_15_0.captainAnimator
+			arg_15_0.captainAnimator:SetTrigger("end")
+			arg_15_0.marinerAnimator:SetTrigger("end")
 
-			var_1.SetTrigger(var_15_0, "end")
+			return
+		end,
+		destroy = function(arg_16_0)
+			return
+		end
+	}).ctor({
+		ctor = function(arg_2_0)
+			arg_2_0._sceneTf = arg_1_0
+			arg_2_0._boatTf = findTF(arg_1_0, "boat")
+			arg_2_0._event = arg_1_1
+			arg_2_0._hookTf = findTF(arg_2_0._boatTf, "body/hook")
+			arg_2_0._hookContent = findTF(arg_2_0._hookTf, "container/content")
+			arg_2_0._hookCollider = findTF(arg_2_0._hookTf, "container/collider")
+			arg_2_0._sceneContent = findTF(arg_2_0._sceneTf, "container/content")
+			arg_2_0.hookAnimator = GetComponent(findTF(arg_2_0._hookTf, "bottom"), typeof(Animator))
+			arg_2_0.hookMaskAnimator = GetComponent(findTF(arg_2_0._hookTf, "mask/img"), typeof(Animator))
+			arg_2_0.captainAnimator = GetComponent(findTF(arg_2_0._boatTf, "body/captain/img"), typeof(Animator))
 
-			local var_15_1 = arg_15_0.marinerAnimator
+			GetComponent(findTF(arg_2_0._boatTf, "body/captain/img"), typeof(DftAniEvent)):SetEndEvent(function()
+				if arg_2_0.inGoodAct then
+					arg_2_0.inGoodAct = false
+				end
 
-			var_1.SetTrigger(var_15_1, "end")
+				return
+			end)
+
+			arg_2_0.marinerAnimator = GetComponent(findTF(arg_2_0._boatTf, "body/mariner/img"), typeof(Animator))
+
+			return
+		end,
+		start = function(arg_4_0)
+			arg_4_0._hookTf.sizeDelta = Vector2(0, 1)
+			arg_4_0.boatState = var_0_11
+			arg_4_0.hookRotation = var_0_32
+			arg_4_0.hookRotationSpeed = 0
+			arg_4_0.hookTargetRotation = var_0_32
+			arg_4_0.throwHook = false
+			arg_4_0.inGoodAct = false
+
+			if arg_4_0.catchItem then
+				destroy(arg_4_0.catchItem.tf)
+
+				arg_4_0.catchItem = nil
+			end
+
+			arg_4_0.marinerActTime = nil
+			arg_4_0.marinerActName = nil
+
+			arg_4_0:leaveItem()
+
+			return
+		end,
+		step = function(arg_5_0)
+			if arg_5_0.boatState == var_0_11 then
+				arg_5_0:checkChangeRotation()
+
+				arg_5_0.hookRotation = arg_5_0.hookRotation + arg_5_0:getSpringRotation()
+				arg_5_0._hookTf.localEulerAngles = Vector3(0, 0, arg_5_0.hookRotation)
+			elseif arg_5_0.boatState == var_0_12 then
+				if arg_5_0.throwHook then
+					arg_5_0._hookTf.sizeDelta = Vector2(0, arg_5_0._hookTf.sizeDelta.y + var_0_30 * Time.deltaTime)
+
+					if arg_5_0._hookTf.sizeDelta.y * math.cos(math.deg2Rad * math.abs(arg_5_0.hookRotation)) > var_0_29 or arg_5_0._hookTf.sizeDelta.y > var_0_28 then
+						arg_5_0.throwHook = false
+					end
+				else
+					local var_5_0 = arg_5_0:hookBack()
+
+					if not arg_5_0.catchItem and var_5_0 then
+						arg_5_0.boatState = var_0_11
+					elseif arg_5_0.catchItem then
+						if (arg_5_0.catchItem.data.catch == var_0_16 or arg_5_0.catchItem.data.act == var_0_14) and arg_5_0._sceneContent:InverseTransformPoint(arg_5_0._hookContent.position).y > var_0_36 then
+							arg_5_0.boatState = var_0_13
+
+							arg_5_0:leaveItem()
+						elseif var_5_0 then
+							arg_5_0.boatState = var_0_13
+
+							arg_5_0:leaveItem()
+						end
+					end
+				end
+			elseif arg_5_0.boatState == var_0_13 then
+				if not arg_5_0:hookBack() then
+					return
+				end
+
+				if arg_5_0.inGoodAct then
+					return
+				end
+
+				arg_5_0.boatState = var_0_11
+			end
+
+			if arg_5_0.boatState == var_0_12 and arg_5_0.throwHook then
+				arg_5_0.hookAnimator:SetBool("hook", true)
+				arg_5_0.hookMaskAnimator:SetBool("hook", true)
+			else
+				arg_5_0.hookAnimator:SetBool("hook", false)
+				arg_5_0.hookMaskAnimator:SetBool("hook", false)
+			end
+
+			if arg_5_0.boatState == var_0_12 then
+				if arg_5_0.throwHook then
+					arg_5_0.captainAnimator:SetInteger("state", 4)
+				else
+					local var_5_1 = 1
+
+					if arg_5_0.catchItem then
+						var_5_1 = arg_5_0.catchItem.data.catch_speed >= 100 and 1 or arg_5_0.catchItem.data.catch_speed >= 50 and arg_5_0.catchItem.data.catch_speed <= 100 and 2 or 3
+					end
+
+					arg_5_0.captainAnimator:SetInteger("state", var_5_1)
+				end
+			else
+				arg_5_0.captainAnimator:SetInteger("state", 0)
+			end
+
+			if not arg_5_0.marinerActTime then
+				arg_5_0.marinerActTime = math.random(var_0_46[1], var_0_46[2])
+				arg_5_0.marinerActName = var_0_45[math.random(1, #var_0_45)]
+			elseif arg_5_0.marinerActTime <= 0 then
+				arg_5_0.marinerAnimator:SetTrigger(arg_5_0.marinerActName)
+
+				arg_5_0.marinerActTime = math.random(var_0_46[1], var_0_46[2])
+				arg_5_0.marinerActName = var_0_45[math.random(1, #var_0_45)]
+			else
+				arg_5_0.marinerActTime = arg_5_0.marinerActTime - Time.deltaTime
+			end
+
+			return
+		end,
+		hookBack = function(arg_6_0)
+			if arg_6_0._hookTf.sizeDelta.y > 1 then
+				local var_6_0 = var_0_31 * Time.deltaTime
+
+				if arg_6_0.catchItem then
+					var_6_0 = arg_6_0.catchItem.data.catch_speed * Time.deltaTime
+				end
+
+				arg_6_0._hookTf.sizeDelta = Vector2(0, arg_6_0._hookTf.sizeDelta.y - var_6_0)
+
+				return false
+			elseif arg_6_0._hookTf.sizeDelta.y < 1 then
+				arg_6_0._hookTf.sizeDelta = Vector2(0, 1)
+
+				return false
+			end
+
+			return true
+		end,
+		leaveItem = function(arg_7_0)
+			if arg_7_0.catchItem then
+				arg_7_0._event:emit(var_0_10, arg_7_0.catchItem, function()
+					return
+				end)
+
+				arg_7_0.inGoodAct = true
+
+				if arg_7_0.catchItem.data.good == var_0_18 then
+					arg_7_0.captainAnimator:SetTrigger("happy")
+					arg_7_0.marinerAnimator:SetTrigger("happy")
+				elseif arg_7_0.catchItem.data.good == var_0_20 then
+					arg_7_0.captainAnimator:SetTrigger("release")
+				elseif arg_7_0.catchItem.data.good == var_0_19 then
+					arg_7_0.captainAnimator:SetTrigger("surprise")
+					arg_7_0.marinerAnimator:SetTrigger("surprise")
+				elseif arg_7_0.catchItem.data.good == var_0_21 then
+					arg_7_0.inGoodAct = false
+				end
+
+				arg_7_0.catchItem = nil
+			end
+
+			return
+		end,
+		throw = function(arg_9_0)
+			if arg_9_0.boatState ~= var_0_11 then
+				return
+			end
+
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_3)
+
+			arg_9_0.throwHook = true
+			arg_9_0.boatState = var_0_12
+
+			return
+		end,
+		setCatchItem = function(arg_10_0, arg_10_1)
+			if arg_10_0.boatState == var_0_12 and arg_10_0.throwHook then
+				arg_10_0.catchItem = arg_10_1
+				arg_10_0.throwHook = false
+				arg_10_1.tf.localScale = Vector3(math.sign(arg_10_1.tf.localScale.x), 1, 1)
+
+				SetParent(arg_10_1.tf, arg_10_0._hookContent)
+
+				arg_10_1.tf.anchoredPosition = Vector2(0, 0)
+
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_4)
+			end
+
+			return
+		end,
+		getSpringRotation = function(arg_11_0)
+			arg_11_0.hookRotationSpeed = arg_11_0.hookRotationSpeed + math.sign(arg_11_0.hookTargetRotation) * var_0_33
+
+			if math.abs(arg_11_0.hookRotationSpeed) > var_0_34 then
+				arg_11_0.hookRotationSpeed = var_0_34 * math.sign(arg_11_0.hookTargetRotation)
+			end
+
+			return arg_11_0.hookRotationSpeed * Time.deltaTime
+		end,
+		checkChangeRotation = function(arg_12_0)
+			if arg_12_0.hookTargetRotation > 0 and arg_12_0.hookRotation > arg_12_0.hookTargetRotation then
+				arg_12_0.hookTargetRotation = -arg_12_0.hookTargetRotation
+			elseif arg_12_0.hookTargetRotation < 0 and arg_12_0.hookRotation < arg_12_0.hookTargetRotation then
+				arg_12_0.hookTargetRotation = -arg_12_0.hookTargetRotation
+			end
+
+			return
+		end,
+		inCatch = function(arg_13_0)
+			return arg_13_0.boatState == var_0_12 and arg_13_0.throwHook
+		end,
+		getHookPosition = function(arg_14_0)
+			return arg_14_0._hookCollider.position
+		end,
+		gameOver = function(arg_15_0)
+			arg_15_0.captainAnimator:SetTrigger("end")
+			arg_15_0.marinerAnimator:SetTrigger("end")
+
+			return
+		end,
+		destroy = function(arg_16_0)
+			return
+		end
+	})
+
+	return {
+		ctor = function(arg_2_0)
+			arg_2_0._sceneTf = arg_1_0
+			arg_2_0._boatTf = findTF(arg_1_0, "boat")
+			arg_2_0._event = arg_1_1
+			arg_2_0._hookTf = findTF(arg_2_0._boatTf, "body/hook")
+			arg_2_0._hookContent = findTF(arg_2_0._hookTf, "container/content")
+			arg_2_0._hookCollider = findTF(arg_2_0._hookTf, "container/collider")
+			arg_2_0._sceneContent = findTF(arg_2_0._sceneTf, "container/content")
+			arg_2_0.hookAnimator = GetComponent(findTF(arg_2_0._hookTf, "bottom"), typeof(Animator))
+			arg_2_0.hookMaskAnimator = GetComponent(findTF(arg_2_0._hookTf, "mask/img"), typeof(Animator))
+			arg_2_0.captainAnimator = GetComponent(findTF(arg_2_0._boatTf, "body/captain/img"), typeof(Animator))
+
+			GetComponent(findTF(arg_2_0._boatTf, "body/captain/img"), typeof(DftAniEvent)):SetEndEvent(function()
+				if arg_2_0.inGoodAct then
+					arg_2_0.inGoodAct = false
+				end
+
+				return
+			end)
+
+			arg_2_0.marinerAnimator = GetComponent(findTF(arg_2_0._boatTf, "body/mariner/img"), typeof(Animator))
+
+			return
+		end,
+		start = function(arg_4_0)
+			arg_4_0._hookTf.sizeDelta = Vector2(0, 1)
+			arg_4_0.boatState = var_0_11
+			arg_4_0.hookRotation = var_0_32
+			arg_4_0.hookRotationSpeed = 0
+			arg_4_0.hookTargetRotation = var_0_32
+			arg_4_0.throwHook = false
+			arg_4_0.inGoodAct = false
+
+			if arg_4_0.catchItem then
+				destroy(arg_4_0.catchItem.tf)
+
+				arg_4_0.catchItem = nil
+			end
+
+			arg_4_0.marinerActTime = nil
+			arg_4_0.marinerActName = nil
+
+			arg_4_0:leaveItem()
+
+			return
+		end,
+		step = function(arg_5_0)
+			if arg_5_0.boatState == var_0_11 then
+				arg_5_0:checkChangeRotation()
+
+				arg_5_0.hookRotation = arg_5_0.hookRotation + arg_5_0:getSpringRotation()
+				arg_5_0._hookTf.localEulerAngles = Vector3(0, 0, arg_5_0.hookRotation)
+			elseif arg_5_0.boatState == var_0_12 then
+				if arg_5_0.throwHook then
+					arg_5_0._hookTf.sizeDelta = Vector2(0, arg_5_0._hookTf.sizeDelta.y + var_0_30 * Time.deltaTime)
+
+					if arg_5_0._hookTf.sizeDelta.y * math.cos(math.deg2Rad * math.abs(arg_5_0.hookRotation)) > var_0_29 or arg_5_0._hookTf.sizeDelta.y > var_0_28 then
+						arg_5_0.throwHook = false
+					end
+				else
+					local var_5_0 = arg_5_0:hookBack()
+
+					if not arg_5_0.catchItem and var_5_0 then
+						arg_5_0.boatState = var_0_11
+					elseif arg_5_0.catchItem then
+						if (arg_5_0.catchItem.data.catch == var_0_16 or arg_5_0.catchItem.data.act == var_0_14) and arg_5_0._sceneContent:InverseTransformPoint(arg_5_0._hookContent.position).y > var_0_36 then
+							arg_5_0.boatState = var_0_13
+
+							arg_5_0:leaveItem()
+						elseif var_5_0 then
+							arg_5_0.boatState = var_0_13
+
+							arg_5_0:leaveItem()
+						end
+					end
+				end
+			elseif arg_5_0.boatState == var_0_13 then
+				if not arg_5_0:hookBack() then
+					return
+				end
+
+				if arg_5_0.inGoodAct then
+					return
+				end
+
+				arg_5_0.boatState = var_0_11
+			end
+
+			if arg_5_0.boatState == var_0_12 and arg_5_0.throwHook then
+				arg_5_0.hookAnimator:SetBool("hook", true)
+				arg_5_0.hookMaskAnimator:SetBool("hook", true)
+			else
+				arg_5_0.hookAnimator:SetBool("hook", false)
+				arg_5_0.hookMaskAnimator:SetBool("hook", false)
+			end
+
+			if arg_5_0.boatState == var_0_12 then
+				if arg_5_0.throwHook then
+					arg_5_0.captainAnimator:SetInteger("state", 4)
+				else
+					local var_5_1 = 1
+
+					if arg_5_0.catchItem then
+						var_5_1 = arg_5_0.catchItem.data.catch_speed >= 100 and 1 or arg_5_0.catchItem.data.catch_speed >= 50 and arg_5_0.catchItem.data.catch_speed <= 100 and 2 or 3
+					end
+
+					arg_5_0.captainAnimator:SetInteger("state", var_5_1)
+				end
+			else
+				arg_5_0.captainAnimator:SetInteger("state", 0)
+			end
+
+			if not arg_5_0.marinerActTime then
+				arg_5_0.marinerActTime = math.random(var_0_46[1], var_0_46[2])
+				arg_5_0.marinerActName = var_0_45[math.random(1, #var_0_45)]
+			elseif arg_5_0.marinerActTime <= 0 then
+				arg_5_0.marinerAnimator:SetTrigger(arg_5_0.marinerActName)
+
+				arg_5_0.marinerActTime = math.random(var_0_46[1], var_0_46[2])
+				arg_5_0.marinerActName = var_0_45[math.random(1, #var_0_45)]
+			else
+				arg_5_0.marinerActTime = arg_5_0.marinerActTime - Time.deltaTime
+			end
+
+			return
+		end,
+		hookBack = function(arg_6_0)
+			if arg_6_0._hookTf.sizeDelta.y > 1 then
+				local var_6_0 = var_0_31 * Time.deltaTime
+
+				if arg_6_0.catchItem then
+					var_6_0 = arg_6_0.catchItem.data.catch_speed * Time.deltaTime
+				end
+
+				arg_6_0._hookTf.sizeDelta = Vector2(0, arg_6_0._hookTf.sizeDelta.y - var_6_0)
+
+				return false
+			elseif arg_6_0._hookTf.sizeDelta.y < 1 then
+				arg_6_0._hookTf.sizeDelta = Vector2(0, 1)
+
+				return false
+			end
+
+			return true
+		end,
+		leaveItem = function(arg_7_0)
+			if arg_7_0.catchItem then
+				arg_7_0._event:emit(var_0_10, arg_7_0.catchItem, function()
+					return
+				end)
+
+				arg_7_0.inGoodAct = true
+
+				if arg_7_0.catchItem.data.good == var_0_18 then
+					arg_7_0.captainAnimator:SetTrigger("happy")
+					arg_7_0.marinerAnimator:SetTrigger("happy")
+				elseif arg_7_0.catchItem.data.good == var_0_20 then
+					arg_7_0.captainAnimator:SetTrigger("release")
+				elseif arg_7_0.catchItem.data.good == var_0_19 then
+					arg_7_0.captainAnimator:SetTrigger("surprise")
+					arg_7_0.marinerAnimator:SetTrigger("surprise")
+				elseif arg_7_0.catchItem.data.good == var_0_21 then
+					arg_7_0.inGoodAct = false
+				end
+
+				arg_7_0.catchItem = nil
+			end
+
+			return
+		end,
+		throw = function(arg_9_0)
+			if arg_9_0.boatState ~= var_0_11 then
+				return
+			end
+
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_3)
+
+			arg_9_0.throwHook = true
+			arg_9_0.boatState = var_0_12
+
+			return
+		end,
+		setCatchItem = function(arg_10_0, arg_10_1)
+			if arg_10_0.boatState == var_0_12 and arg_10_0.throwHook then
+				arg_10_0.catchItem = arg_10_1
+				arg_10_0.throwHook = false
+				arg_10_1.tf.localScale = Vector3(math.sign(arg_10_1.tf.localScale.x), 1, 1)
+
+				SetParent(arg_10_1.tf, arg_10_0._hookContent)
+
+				arg_10_1.tf.anchoredPosition = Vector2(0, 0)
+
+				pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_4)
+			end
+
+			return
+		end,
+		getSpringRotation = function(arg_11_0)
+			arg_11_0.hookRotationSpeed = arg_11_0.hookRotationSpeed + math.sign(arg_11_0.hookTargetRotation) * var_0_33
+
+			if math.abs(arg_11_0.hookRotationSpeed) > var_0_34 then
+				arg_11_0.hookRotationSpeed = var_0_34 * math.sign(arg_11_0.hookTargetRotation)
+			end
+
+			return arg_11_0.hookRotationSpeed * Time.deltaTime
+		end,
+		checkChangeRotation = function(arg_12_0)
+			if arg_12_0.hookTargetRotation > 0 and arg_12_0.hookRotation > arg_12_0.hookTargetRotation then
+				arg_12_0.hookTargetRotation = -arg_12_0.hookTargetRotation
+			elseif arg_12_0.hookTargetRotation < 0 and arg_12_0.hookRotation < arg_12_0.hookTargetRotation then
+				arg_12_0.hookTargetRotation = -arg_12_0.hookTargetRotation
+			end
+
+			return
+		end,
+		inCatch = function(arg_13_0)
+			return arg_13_0.boatState == var_0_12 and arg_13_0.throwHook
+		end,
+		getHookPosition = function(arg_14_0)
+			return arg_14_0._hookCollider.position
+		end,
+		gameOver = function(arg_15_0)
+			arg_15_0.captainAnimator:SetTrigger("end")
+			arg_15_0.marinerAnimator:SetTrigger("end")
 
 			return
 		end,
@@ -1707,161 +1991,82 @@ local function var_0_57(arg_1_0, arg_1_1)
 			return
 		end
 	}
-
-	var_2.ctor(var_1_0)
-
-	return var_2
 end
 
-local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-	local var_17_0 = {
+local function var_0_48(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+	({
 		ctor = function(arg_18_0)
 			arg_18_0._event = arg_17_3
-			findTF = var_1
-			arg_18_0._sceneTpls = var_1(arg_17_0, "sceneTpls")
-			findTF = var_1
-			arg_18_0._backSceneTpls = var_1(arg_17_1, "bgTpls")
+			arg_18_0._sceneTpls = findTF(arg_17_0, "sceneTpls")
+			arg_18_0._backSceneTpls = findTF(arg_17_1, "bgTpls")
 			arg_18_0._gameMission = arg_17_2 + 1
-			findTF = var_1
 
-			local var_18_0 = var_1(arg_17_0, "container")
+			local var_18_0 = findTF(arg_17_0, "container")
 
 			arg_18_0._createBounds = {
 				var_18_0.sizeDelta.x,
 				var_18_0.sizeDelta.y
 			}
-			findTF = var_2
-			arg_18_0._parentTf = var_2(var_18_0, "content")
-			findTF = var_2
-			arg_18_0._backParentTf = var_2(arg_17_1, "container/content")
+			arg_18_0._parentTf = findTF(var_18_0, "content")
+			arg_18_0._backParentTf = findTF(arg_17_1, "container/content")
 			arg_18_0.items = {}
 
 			return
 		end,
 		getParentInversePos = function(arg_19_0, arg_19_1)
-			local var_19_0 = arg_19_1.tf.position
-			local var_19_1
-
-			if arg_19_1.data.scene then
-				if arg_19_1.data.scene == var_0_24 then
-					local var_19_2 = arg_19_0._backParentTf
-
-					var_19_1 = var_4.InverseTransformPoint(var_19_2, var_19_0)
-				else
-					local var_19_3 = arg_19_0._parentTf
-
-					var_19_1 = var_4.InverseTransformPoint(var_19_3, var_19_0)
-				end
-			else
-				local var_19_4 = arg_19_0._parentTf
-
-				var_19_1 = var_4.InverseTransformPoint(var_19_4, var_19_0)
-			end
-
-			return var_19_1
+			return arg_19_1.data.scene and (arg_19_1.data.scene == var_0_22 and arg_19_0._backParentTf:InverseTransformPoint(arg_19_1.tf.position) or arg_19_0._parentTf:InverseTransformPoint(arg_19_1.tf.position)) or arg_19_0._parentTf:InverseTransformPoint(arg_19_1.tf.position)
 		end,
 		addItemDone = function(arg_20_0, arg_20_1, arg_20_2)
 			local var_20_0 = arg_20_0:getParentInversePos(arg_20_1)
 
-			if arg_20_1.data.act == var_0_16 or arg_20_1.data.catch == var_0_18 then
-				var_20_0.y = var_0_46
+			if arg_20_1.data.act == var_0_14 or arg_20_1.data.catch == var_0_16 then
+				var_20_0.y = var_0_36
 			end
 
 			arg_20_1.tf.anchoredPosition = var_20_0
 
 			arg_20_0:addItemParent(arg_20_1)
 
-			local var_20_1 = arg_20_1.tf
-
-			Vector3 = var_5
-			math = var_7
-			var_20_1.localScale = var_5(2.5 * var_7.sign(arg_20_1.tf.localScale.x), 2.5, 2.5)
-
-			local var_20_2 = arg_20_1.tf
-
-			Vector3 = var_5
-			var_20_2.localEulerAngles = var_5(0, 0, 0)
+			arg_20_1.tf.localScale = Vector3(2.5 * math.sign(arg_20_1.tf.localScale.x), 2.5, 2.5)
+			arg_20_1.tf.localEulerAngles = Vector3(0, 0, 0)
 			arg_20_1.catchAble = false
 			arg_20_1.targetRemove = true
 
-			if arg_20_1.data.catch == var_0_17 then
-				GetComponent = var_4
-
-				local var_20_3 = arg_20_1.tf
-
-				typeof = var_7
-				DftAniEvent = var_9
-
-				local var_20_4 = var_4(var_20_3, var_7(var_9))
-
-				var_4.SetEndEvent(var_20_4, function()
-					local var_21_0 = arg_20_0
-
-					var_0.destroyItem(var_21_0, arg_20_1)
+			if arg_20_1.data.catch == var_0_15 then
+				GetComponent(arg_20_1.tf, typeof(DftAniEvent)):SetEndEvent(function()
+					arg_20_0:destroyItem(arg_20_1)
 
 					return
 				end)
+				GetComponent(arg_20_1.tf, typeof(Animator)):SetTrigger("catch")
 
-				GetComponent = var_5
-
-				local var_20_5 = arg_20_1.tf
-
-				typeof = var_8
-				Animator = var_2_10010
-
-				local var_20_6 = var_5(var_20_5, var_8(var_2_10010))
-
-				var_5.SetTrigger(var_20_6, "catch")
-			elseif arg_20_1.data.catch == var_0_18 then
-				local var_20_7
-
-				if not arg_20_1.data.leave_direct then
-					var_20_7 = 1
-				end
-
-				arg_20_1.direct = var_20_7
-				math = var_5
-
-				local var_20_8
-
-				if var_20_7 * var_5.sign(arg_20_1.tf.localScale.x) ~= -1 or not arg_20_1.data.move_range[2] then
-					var_20_8 = arg_20_1.data.move_range[1]
-				end
-
-				arg_20_1.targetX = var_20_8
-				GetComponent = var_20_8
-
-				local var_20_9 = arg_20_1.tf
-
-				typeof = var_9
-				DftAniEvent = var_2_10011
-
-				local var_20_10 = var_20_8(var_20_9, var_9(var_2_10011))
-
-				var_6.SetEndEvent(var_20_10, function()
-					arg_20_1.moveAble = true
-
-					return
-				end)
-
-				arg_20_1.moveAble = false
-				GetComponent = var_7
-
-				local var_20_11 = arg_20_1.tf
-
-				typeof = var_10
-				Animator = var_2_10012
-
-				local var_20_12 = var_7(var_20_11, var_10(var_2_10012))
-
-				var_7.SetTrigger(var_20_12, "release")
-
-				table = var_7
-
-				var_7.insert(arg_20_0.items, arg_20_1)
+				goto label_20_0
 			end
 
-			return
+			::label_20_0::
+
+			if arg_20_1.data.catch == var_0_16 then
+				local var_20_1 = arg_20_1.data.leave_direct or 1
+
+				arg_20_1.direct = var_20_1
+
+				if var_20_1 * math.sign(arg_20_1.tf.localScale.x) == -1 then
+					arg_20_1.targetX = arg_20_1.data.move_range[2] or arg_20_1.data.move_range[1]
+
+					GetComponent(arg_20_1.tf, typeof(DftAniEvent)):SetEndEvent(function()
+						arg_20_1.moveAble = true
+
+						return
+					end)
+
+					arg_20_1.moveAble = false
+
+					GetComponent(arg_20_1.tf, typeof(Animator)):SetTrigger("release")
+					table.insert(arg_20_0.items, arg_20_1)
+
+					return
+				end
+			end
 		end,
 		start = function(arg_23_0)
 			arg_23_0:clearItems()
@@ -1872,12 +2077,7 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 		end,
 		clearItems = function(arg_24_0)
 			for iter_24_0 = #arg_24_0.items, 1, -1 do
-				table = var_2_10005
-				var_2_10005 = var_2_10005.remove(arg_24_0.items, iter_24_0)
-
-				arg_24_0:destroyItem(var_2_10005)
-
-				var_2_10005 = nil
+				arg_24_0:destroyItem((table.remove(arg_24_0.items, iter_24_0)))
 			end
 
 			arg_24_0.items = {}
@@ -1885,48 +2085,20 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 			return
 		end,
 		prepareItems = function(arg_25_0)
-			local var_25_0 = var_0_36
+			for iter_25_0, iter_25_1 in pairs(var_0_26[math.random(1, #var_0_26)]) do
+				local var_25_0 = arg_25_0:getItemsByType(iter_25_1.type, iter_25_1.name)
 
-			math = var_2_10002
+				for iter_25_2 = 1, math.random(iter_25_1.amount[1], iter_25_1.amount[2]) do
+					local var_25_1
 
-			local var_25_1 = var_25_0[var_2_10002.random(1, #var_0_36)]
-
-			pairs = var_2
-
-			for iter_25_0, iter_25_1 in var_2(var_25_1) do
-				math = var_2_10007
-				var_2_10007 = var_2_10007.random(iter_25_1.amount[1], iter_25_1.amount[2])
-
-				local var_25_2 = iter_25_1.type
-				local var_25_3 = iter_25_1.repeated
-				local var_25_4 = iter_25_1.name
-				local var_25_5 = arg_25_0:getItemsByType(var_25_2, var_25_4)
-
-				for iter_25_2 = 1, var_2_10007 do
-					local var_25_6
-
-					if var_25_3 then
-						math = var_2_10017
-						var_25_6 = var_25_5[var_2_10017.random(1, #var_25_5)]
-					else
-						var_2_10017 = #var_25_5
-
-						if 0 < var_2_10017 then
-							table = var_2_10017
-							var_2_10017 = var_2_10017.remove
-
-							local var_25_7 = var_25_5
-
-							math = var_2_10020
-							var_25_6 = var_2_10017(var_25_7, var_2_10020.random(1, #var_25_5))
-						end
+					if iter_25_1.repeated then
+						var_25_1 = var_25_0[math.random(1, #var_25_0)]
+					elseif #var_25_0 > 0 then
+						var_25_1 = table.remove(var_25_0, math.random(1, #var_25_0))
 					end
 
-					if var_25_6 then
-						var_2_10017 = arg_25_0:createItem(var_25_6)
-						table = var_2_10018
-
-						var_2_10018.insert(arg_25_0.items, var_2_10017)
+					if var_25_1 then
+						table.insert(arg_25_0.items, (arg_25_0:createItem(var_25_1)))
 					end
 				end
 			end
@@ -1934,105 +2106,94 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 			return
 		end,
 		getItemsByType = function(arg_26_0, arg_26_1, arg_26_2)
-			local var_26_0 = {}
-
-			for iter_26_0 = 1, #var_0_37 do
-				if var_0_37[iter_26_0].type == arg_26_1 then
+			for iter_26_0 = 1, #var_0_27 do
+				if var_0_27[iter_26_0].type == arg_26_1 then
 					if arg_26_2 then
-						table = var_8
-
-						if var_8.contains(arg_26_2, var_0_37[iter_26_0].name) then
-							table = var_8
-
-							var_8.insert(var_26_0, var_0_37[iter_26_0])
+						if table.contains(arg_26_2, var_0_27[iter_26_0].name) then
+							table.insert({}, var_0_27[iter_26_0])
 						end
 					else
-						table = var_8
-
-						var_8.insert(var_26_0, var_0_37[iter_26_0])
+						table.insert({}, var_0_27[iter_26_0])
 					end
 				end
 			end
 
-			return var_26_0
+			return {}
 		end,
 		getItemDataByName = function(arg_27_0, arg_27_1)
-			for iter_27_0 = 1, #var_0_37 do
-				if var_0_37[iter_27_0].name == arg_27_1 then
-					return var_0_37[iter_27_0]
+			for iter_27_0 = 1, #var_0_27 do
+				if var_0_27[iter_27_0].name == arg_27_1 then
+					return var_0_27[iter_27_0]
 				end
 			end
 
 			return nil
 		end,
 		createItem = function(arg_28_0, arg_28_1)
-			local var_28_0 = {
+			({
+				data = arg_28_1
+			}).tf = nil
+			;({
+				data = arg_28_1
+			}).targetX = nil
+			;({
+				data = arg_28_1
+			}).targetY = nil
+			;({
+				data = arg_28_1
+			}).direct = arg_28_1.direct or 1
+			;({
+				data = arg_28_1
+			}).moveAble = true
+			;({
+				data = arg_28_1
+			}).catchAble = true
+			;({
+				data = arg_28_1
+			}).targetRemove = false
+			;({
+				data = arg_28_1
+			}).interaction = not not arg_28_1.interaction
+			;({
+				data = arg_28_1
+			}).interactionName = nil
+			;({
+				data = arg_28_1
+			}).interactionTime = nil
+			;({
+				data = arg_28_1
+			}).animStateIndex = nil
+			;({
+				data = arg_28_1
+			}).nextAnimTime = nil
+
+			arg_28_0:instantiateItem({
+				data = arg_28_1
+			})
+
+			return {
 				data = arg_28_1
 			}
-
-			var_28_0.tf = nil
-			var_28_0.targetX = nil
-			var_28_0.targetY = nil
-
-			local var_28_1
-
-			if not arg_28_1.direct then
-				var_28_1 = 1
-			end
-
-			var_28_0.direct = var_28_1
-			var_28_0.moveAble = true
-			var_28_0.catchAble = true
-			var_28_0.targetRemove = false
-			var_28_0.interaction = arg_28_1.interaction and true or false
-			var_28_0.interactionName = nil
-			var_28_0.interactionTime = nil
-			var_28_0.animStateIndex = nil
-			var_28_0.nextAnimTime = nil
-
-			arg_28_0:instantiateItem(var_28_0)
-
-			return var_28_0
 		end,
 		instantiateItem = function(arg_29_0, arg_29_1)
-			local var_29_0
+			local var_29_0 = arg_29_1.data.scene == var_0_22 and findTF(arg_29_0._backSceneTpls, arg_29_1.data.name) or findTF(arg_29_0._sceneTpls, arg_29_1.data.name)
 
-			if arg_29_1.data.scene == var_0_24 then
-				findTF = var_3
-				var_29_0 = var_3(arg_29_0._backSceneTpls, arg_29_1.data.name)
-			else
-				findTF = var_3
-				var_29_0 = var_3(arg_29_0._sceneTpls, arg_29_1.data.name)
-			end
+			arg_29_1.tf = tf((Instantiate(var_29_0)))
 
-			Instantiate = var_3
-
-			local var_29_1 = var_3(var_29_0)
-
-			tf = var_4
-			arg_29_1.tf = var_4(var_29_1)
-			setActive = var_4
-
-			var_4(arg_29_1.tf, true)
+			setActive(arg_29_1.tf, true)
 			arg_29_0:addItemParent(arg_29_1)
 
 			return
 		end,
 		addItemParent = function(arg_30_0, arg_30_1)
 			if arg_30_1.data.scene then
-				if arg_30_1.data.scene == var_0_24 then
-					SetParent = var_2
-
-					var_2(arg_30_1.tf, arg_30_0._backParentTf)
+				if arg_30_1.data.scene == var_0_22 then
+					SetParent(arg_30_1.tf, arg_30_0._backParentTf)
 				else
-					SetParent = var_2
-
-					var_2(arg_30_1.tf, arg_30_0._parentTf)
+					SetParent(arg_30_1.tf, arg_30_0._parentTf)
 				end
 			else
-				SetParent = var_2
-
-				var_2(arg_30_1.tf, arg_30_0._parentTf)
+				SetParent(arg_30_1.tf, arg_30_0._parentTf)
 			end
 
 			return
@@ -2042,218 +2203,124 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 				return
 			end
 
-			local var_31_0 = arg_31_0:splitePositions(0, arg_31_0._createBounds[1])
-			local var_31_1 = arg_31_0:splitePositions(0, arg_31_0._createBounds[2])
-			local var_31_2 = arg_31_0:mixSplitePos(var_31_0, var_31_1)
+			local var_31_0 = arg_31_0:mixSplitePos(arg_31_0:splitePositions(0, arg_31_0._createBounds[1]), (arg_31_0:splitePositions(0, arg_31_0._createBounds[2])))
 
-			local function var_31_3(arg_32_0)
-				if arg_32_0 then
-					local var_32_0 = {}
+			for iter_31_0 = 1, #arg_31_0.items do
+				local var_31_1 = (function(arg_32_0)
+					if arg_32_0 then
+						for iter_32_0 = 1, #var_31_0 do
+							if arg_32_0[1] <= var_31_0[iter_32_0][1][1] and var_31_0[iter_32_0][1][2] <= arg_32_0[2] and arg_32_0[3] <= var_31_0[iter_32_0][2][1] and var_31_0[iter_32_0][2][2] <= arg_32_0[4] then
+								table.insert({}, iter_32_0)
+							end
+						end
 
-					for iter_32_0 = 1, #var_31_2 do
-						local var_32_1 = iter_32_0
-						local var_32_2 = var_31_2[iter_32_0]
-						local var_32_3 = arg_32_0[1]
-						local var_32_4 = arg_32_0[2]
-						local var_32_5 = arg_32_0[3]
-						local var_32_6 = arg_32_0[4]
-						local var_32_7 = var_32_2[1][1]
-						local var_32_8 = var_32_2[1][2]
-						local var_32_9 = var_32_2[2][1]
-						local var_32_10 = var_32_2[2][2]
-
-						if var_32_3 <= var_32_7 and var_32_8 <= var_32_4 and var_32_5 <= var_32_9 and var_32_10 <= var_32_6 then
-							table = var_3_10016
-
-							var_3_10016.insert(var_32_0, var_32_1)
+						if #{} > 0 then
+							return table.remove(var_31_0, ({})[math.random(1, #{})])
 						end
 					end
 
-					if #var_32_0 > 0 then
-						table = var_2
-
-						local var_32_11 = var_2.remove
-
-						var_3_10004 = var_31_2
-						math = iter_32_0
-
-						return var_32_11(var_3_10004, var_32_0[iter_32_0.random(1, #var_32_0)])
-					end
-				end
-
-				if #var_31_2 > 0 then
-					table = var_1
-
-					local var_32_12 = var_1.remove
-					local var_32_13 = var_31_2
-
-					math = var_3_10004
-
-					return var_32_12(var_32_13, var_3_10004.random(1, #var_31_2))
-				else
-					return {
-						{
-							0,
-							1300
-						},
-						{
-							100,
-							300
+					if #var_31_0 > 0 then
+						return table.remove(var_31_0, math.random(1, #var_31_0))
+					else
+						return {
+							{
+								0,
+								1300
+							},
+							{
+								100,
+								300
+							}
 						}
-					}
-				end
+					end
 
-				return
-			end
+					return
+				end)(arg_31_0.items[iter_31_0].data.create_range)
 
-			for iter_31_0 = 1, #arg_31_0.items do
-				if var_31_3(arg_31_0.items[iter_31_0].data.create_range) then
-					local var_31_4 = var_9[1][1]
-
-					math = var_11
-
-					local var_31_5 = var_31_4 + var_11.random() * (var_9[1][2] - var_9[1][1]) / 2
-					local var_31_6 = var_9[2][1]
-
-					math = var_12
-
-					local var_31_7 = var_31_6 + var_12.random() * (var_9[2][2] - var_9[2][1]) / 2
-					local var_31_8 = arg_31_0.items[iter_31_0].tf
-
-					Vector2 = var_13
-					var_31_8.anchoredPosition = var_13(var_31_5, var_31_7)
+				if var_31_1 then
+					arg_31_0.items[iter_31_0].tf.anchoredPosition = Vector2(var_31_1[1][1] + math.random() * (var_31_1[1][2] - var_31_1[1][1]) / 2, var_31_1[2][1] + math.random() * (var_31_1[2][2] - var_31_1[2][1]) / 2)
 				end
 			end
 
 			return
 		end,
 		mixSplitePos = function(arg_33_0, arg_33_1, arg_33_2)
-			local var_33_0 = {}
-
 			for iter_33_0 = 1, #arg_33_1 do
-				local var_33_1 = arg_33_1[iter_33_0]
-
 				for iter_33_1 = 1, #arg_33_2 do
-					local var_33_2 = arg_33_2[iter_33_1]
-
-					table = var_2_10014
-
-					var_2_10014.insert(var_33_0, {
-						var_33_1,
-						var_33_2
+					table.insert({}, {
+						arg_33_1[iter_33_0],
+						arg_33_2[iter_33_1]
 					})
 				end
 			end
 
-			return var_33_0
+			return {}
 		end,
 		splitePositions = function(arg_34_0, arg_34_1, arg_34_2)
-			local var_34_0 = {}
-
 			if not arg_34_1 or not arg_34_2 or arg_34_2 < arg_34_1 then
 				return nil
 			end
 
-			local var_34_1 = (arg_34_2 - arg_34_1) / var_0_47
-
-			for iter_34_0 = 1, var_34_1 do
-				table = var_2_10009
-
-				var_2_10009.insert(var_34_0, {
-					arg_34_1 + (iter_34_0 - 1) * var_0_47,
-					arg_34_1 + iter_34_0 * var_0_47
+			for iter_34_0 = 1, (arg_34_2 - arg_34_1) / var_0_37 do
+				table.insert({}, {
+					arg_34_1 + (iter_34_0 - 1) * var_0_37,
+					arg_34_1 + iter_34_0 * var_0_37
 				})
 			end
 
-			return var_34_0
+			return {}
 		end,
 		getItemByPos = function(arg_35_0, arg_35_1)
-			if arg_35_0:checkPosInCollider(arg_35_1) then
-				if var_2.data.catch_rule then
-					GetComponent = var_3
+			local var_35_0 = arg_35_0:checkPosInCollider(arg_35_1)
 
-					local var_35_0 = var_2.tf
+			if var_35_0 then
+				if var_35_0.data.catch_rule then
+					if table.contains(var_35_0.data.catch_rule.state, (GetComponent(var_35_0.tf, typeof(Animator)):GetInteger("state"))) then
+						arg_35_0:addItemDone(var_35_0)
 
-					typeof = var_2_10006
-					Animator = var_2_10008
-
-					local var_35_1 = var_3(var_35_0, var_2_10006(var_2_10008))
-					local var_35_2 = var_3.GetInteger(var_35_1, "state")
-					local var_35_3 = var_2.data.catch_rule.state
-
-					table = var_35_1
-
-					if var_35_1.contains(var_35_3, var_35_2) then
-						arg_35_0:addItemDone(var_2)
-
-						return (arg_35_0:createItem(arg_35_0:getItemDataByName(var_2.data.catch_rule.targetName)))
+						return (arg_35_0:createItem(arg_35_0:getItemDataByName(var_35_0.data.catch_rule.targetName)))
 					end
 				else
-					return var_2
+					return var_35_0
 				end
 
-				return var_2
+				return var_35_0
 			end
 
 			return nil
 		end,
 		checkPosInCollider = function(arg_36_0, arg_36_1)
-			local var_36_0 = {}
-			local var_36_1 = arg_36_0._parentTf
-			local var_36_2 = var_3.InverseTransformPoint(var_36_1, arg_36_1.x, arg_36_1.y, arg_36_1.z)
+			local var_36_0 = arg_36_0._parentTf:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z)
 
 			for iter_36_0 = 1, #arg_36_0.items do
-				local var_36_3
-
-				if arg_36_0.items[iter_36_0].data.catch ~= var_0_19 then
-					var_36_3 = arg_36_0.items[iter_36_0].tf
-					math = var_2_10009
-
-					if var_2_10009.abs(var_36_2.x - var_36_3.anchoredPosition.x) < var_0_45 then
-						math = var_2_10009
-
-						if var_2_10009.abs(var_36_2.y - var_36_3.anchoredPosition.y) < var_0_45 and arg_36_0.items[iter_36_0].data.catch ~= var_0_19 and arg_36_0.items[iter_36_0].catchAble then
-							table = var_2_10009
-
-							var_2_10009.insert(var_36_0, arg_36_0.items[iter_36_0])
-						end
+				if arg_36_0.items[iter_36_0].data.catch ~= var_0_17 then
+					if math.abs(var_36_0.x - arg_36_0.items[iter_36_0].tf.anchoredPosition.x) < var_0_35 and math.abs(var_36_0.y - arg_36_0.items[iter_36_0].tf.anchoredPosition.y) < var_0_35 and arg_36_0.items[iter_36_0].data.catch ~= var_0_17 and arg_36_0.items[iter_36_0].catchAble then
+						table.insert({}, arg_36_0.items[iter_36_0])
 					end
 				end
 			end
 
-			for iter_36_1 = 1, #var_36_0 do
-				findTF = var_36_3
+			for iter_36_1 = 1, #{} do
+				local var_36_1 = findTF(({})[iter_36_1].tf, "collider")
+				local var_36_2, var_36_3, var_36_4, var_36_5, var_36_6
 
-				if not var_36_3(var_36_0[iter_36_1].tf, "collider") then
-					print = var_2_10009
+				if not var_36_1 then
+					print("can not find collider by" .. ({})[iter_36_1].data.name)
 
-					var_2_10009("can not find collider by" .. var_36_0[iter_36_1].data.name)
-				else
-					var_2_10009 = var_36_3:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z)
+					goto label_36_0
 
-					local var_36_4 = var_36_3.rect.xMin
-					local var_36_5 = var_36_3.rect.yMin
-					local var_36_6 = var_36_3.rect.width
-					local var_36_7 = var_36_3.rect.height
-					local var_36_8 = arg_36_0
-					local var_36_9 = arg_36_0.isPointInMatrix
-
-					Vector2 = var_2_10017
-					var_2_10017 = var_2_10017(var_36_4, var_36_5 + var_36_7)
-					Vector2 = var_2_10018
-					var_2_10018 = var_2_10018(var_36_4 + var_36_6, var_36_5 + var_36_7)
-					Vector2 = var_19
-
-					local var_36_10 = var_19(var_36_4 + var_36_6, var_36_5)
-
-					Vector2 = var_20
-
-					if var_36_9(var_36_8, var_2_10017, var_2_10018, var_36_10, var_20(var_36_4, var_36_5), var_2_10009) then
-						var_2_10017 = arg_36_0
-
-						return arg_36_0.removeItem(var_2_10017, var_36_0[iter_36_1])
-					end
+					var_36_2 = arg_36_0
+					var_36_3 = Vector2(var_36_1.rect.xMin, var_36_1.rect.yMin + var_36_1.rect.height)
+					var_36_4 = Vector2(var_36_1.rect.xMin + var_36_1.rect.width, var_36_1.rect.yMin + var_36_1.rect.height)
+					var_36_5 = Vector2(var_36_1.rect.xMin + var_36_1.rect.width, var_36_1.rect.yMin)
+					var_36_6 = Vector2(var_36_1.rect.xMin, var_36_1.rect.yMin)
 				end
+
+				if arg_36_0:isPointInMatrix(var_36_3, var_36_4, var_36_5, var_36_6, (var_36_1:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z))) then
+					return arg_36_0:removeItem(({})[iter_36_1])
+				end
+
+				::label_36_0::
 			end
 
 			return nil
@@ -2261,9 +2328,7 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 		removeItem = function(arg_37_0, arg_37_1)
 			for iter_37_0 = 1, #arg_37_0.items do
 				if arg_37_0.items[iter_37_0] == arg_37_1 then
-					table = var_6
-
-					return var_6.remove(arg_37_0.items, iter_37_0)
+					return table.remove(arg_37_0.items, iter_37_0)
 				end
 			end
 
@@ -2277,139 +2342,71 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 		end,
 		step = function(arg_40_0)
 			for iter_40_0 = #arg_40_0.items, 1, -1 do
-				if arg_40_0.items[iter_40_0].data.act == var_0_16 and var_5.moveAble then
-					local var_40_0
+				local var_40_0 = arg_40_0.items[iter_40_0]
 
-					if not var_5.targetX then
-						var_40_0 = var_5.data.move_range[1]
+				if arg_40_0.items[iter_40_0].data.act == var_0_14 and var_40_0.moveAble then
+					local var_40_3 = math.sign(var_40_0.targetX - var_40_0.tf.anchoredPosition.x)
 
-						local var_40_1 = var_5.data.move_range[2]
+					if not var_40_0.targetX then
+						local var_40_1 = var_40_0.data.move_range[1]
+						local var_40_2 = var_40_0.data.move_range[2]
 
-						if var_5.tf.anchoredPosition.x == var_40_0 then
-							var_5.targetX = var_40_1
-						elseif var_5.tf.anchoredPosition.x == var_40_1 then
-							var_5.targetX = var_40_0
-						else
-							math = var_8
-
-							local var_40_2 = var_8.random()
-
-							var_5.targetX = 0.5 < var_40_2 and var_40_0 or var_40_1
-						end
+						var_40_0.targetX = var_40_0.tf.anchoredPosition.x == var_40_0.data.move_range[1] and var_40_2 or var_40_0.tf.anchoredPosition.x == var_40_2 and var_40_1 or math.random() > 0.5 and var_40_1 or var_40_2
 
 						goto label_40_0
 					end
 
-					math = var_40_0
+					::label_40_0::
 
-					local var_40_3 = var_40_0.sign(var_5.targetX - var_5.tf.anchoredPosition.x)
-					local var_40_4
+					if var_40_0.targetRemove then
+						do
+							local var_40_4 = var_40_0.data.release_speed or var_40_0.data.speed
 
-					if not var_5.targetRemove or not var_5.data.release_speed then
-						var_40_4 = var_5.data.speed
-					end
+							var_40_0.tf.localScale = Vector3(-1 * var_40_3 * var_40_0.direct * math.abs(var_40_0.tf.localScale.x), var_40_0.tf.localScale.y, var_40_0.tf.localScale.z)
+							var_40_0.tf.anchoredPosition = Vector2(var_40_0.tf.anchoredPosition.x + var_40_3 * var_40_4 * Time.deltaTime, var_40_0.tf.anchoredPosition.y)
 
-					local var_40_5 = var_5.tf
-
-					Vector3 = var_2_10009
-					var_2_10011 = -1 * var_40_3 * var_5.direct
-					math = var_12
-					var_40_5.localScale = var_2_10009(var_2_10011 * var_12.abs(var_5.tf.localScale.x), var_5.tf.localScale.y, var_5.tf.localScale.z)
-
-					local var_40_6 = var_40_3 * var_40_4
-
-					Time = var_2_10009
-
-					local var_40_7 = var_40_6 * var_2_10009.deltaTime
-
-					var_2_10009 = var_5.tf
-					Vector2 = var_2_10010
-					var_2_10009.anchoredPosition = var_2_10010(var_5.tf.anchoredPosition.x + var_40_7, var_5.tf.anchoredPosition.y)
-
-					if var_40_3 == 1 then
-						var_2_10009 = var_5.tf.anchoredPosition.x
-
-						if not (var_5.targetX <= var_2_10009) then
-							if var_40_3 == -1 and var_5.tf.anchoredPosition.x <= var_5.targetX then
-								var_2_10009 = var_5.tf
-								Vector2 = var_2_10010
-								var_2_10009.anchoredPosition = var_2_10010(var_5.targetX, var_5.tf.anchoredPosition.y)
-								var_5.targetX = nil
+							if var_40_3 == 1 and var_40_0.tf.anchoredPosition.x >= var_40_0.targetX or var_40_3 == -1 and var_40_0.tf.anchoredPosition.x <= var_40_0.targetX then
+								var_40_0.tf.anchoredPosition = Vector2(var_40_0.targetX, var_40_0.tf.anchoredPosition.y)
+								var_40_0.targetX = nil
 							end
+						end
 
-							::label_40_0::
+						if var_40_0.data.anim_data then
+							local var_40_5 = var_40_0.data.anim_data.state_change
 
-							if var_5.data.anim_data then
-								local var_40_8 = var_5.data.anim_data.state_change
-								local var_40_9 = var_5.data.anim_data.time
+							if var_40_0.data.anim_data.state_change and var_40_0.data.anim_data.time then
+								if not var_40_0.nextAnimTime then
+									var_40_0.nextAnimTime = math.random(var_40_0.data.anim_data.time[1], var_40_0.data.anim_data.time[2])
+									var_40_0.animStateIndex = 1
+								elseif var_40_0.nextAnimTime <= 0 then
+									GetComponent(var_40_0.tf, typeof(Animator)):SetInteger("state", var_40_5[var_40_0.animStateIndex])
 
-								if var_40_8 and var_40_9 then
-									if not var_5.nextAnimTime then
-										math = var_8
-										var_5.nextAnimTime = var_8.random(var_40_9[1], var_40_9[2])
-										var_5.animStateIndex = 1
-									elseif var_5.nextAnimTime <= 0 then
-										GetComponent = var_8
-										var_2_10010 = var_5.tf
-										typeof = var_2_10011
-										Animator = var_2_10013
-										var_2_10010 = var_8(var_2_10010, var_2_10011(var_2_10013))
-
-										var_8.SetInteger(var_2_10010, "state", var_40_8[var_5.animStateIndex])
-
-										math = var_8
-										var_5.nextAnimTime = var_8.random(var_40_9[1], var_40_9[2])
-										var_5.animStateIndex = var_5.animStateIndex + 1
-
-										local var_40_10 = var_5.animStateIndex
-
-										var_5.animStateIndex = #var_40_8 < var_40_10 and 1 or var_5.animStateIndex
-									else
-										local var_40_11 = var_5.nextAnimTime
-
-										Time = var_2_10009
-										var_5.nextAnimTime = var_40_11 - var_2_10009.deltaTime
-									end
-								end
-							end
-
-							if var_5.interaction and not var_5.targetRemove then
-								if not var_5.interactionTime then
-									math = var_6
-									var_5.interactionTime = var_6.random() * (var_5.data.interaction.time[2] - var_5.data.interaction.time[1]) + var_5.data.interaction.time[1]
-
-									local var_40_12 = var_5.data.interaction.parame
-
-									math = var_7
-									var_5.interactionName = var_40_12[var_7.random(1, #var_5.data.interaction.parame)]
-								elseif var_5.interactionTime <= 0 then
-									GetComponent = var_6
-
-									local var_40_13 = var_5.tf
-
-									typeof = var_2_10009
-									Animator = var_2_10011
-
-									local var_40_14 = var_6(var_40_13, var_2_10009(var_2_10011))
-
-									var_6.SetTrigger(var_40_14, var_5.interactionName)
-
-									var_5.interactionTime = nil
-									var_5.interactionName = nil
+									var_40_0.nextAnimTime = math.random(var_40_0.data.anim_data.time[1], var_40_0.data.anim_data.time[2])
+									var_40_0.animStateIndex = var_40_0.animStateIndex + 1
+									var_40_0.animStateIndex = var_40_0.animStateIndex > #var_40_5 and 1 or var_40_0.animStateIndex
 								else
-									local var_40_15 = var_5.interactionTime
-
-									Time = var_7
-									var_5.interactionTime = var_40_15 - var_7.deltaTime
+									var_40_0.nextAnimTime = var_40_0.nextAnimTime - Time.deltaTime
 								end
 							end
+						end
 
-							if var_5.targetRemove and not var_5.targetX then
-								table = var_6
+						if var_40_0.interaction and not var_40_0.targetRemove then
+							if not var_40_0.interactionTime then
+								var_40_0.interactionTime = math.random() * (var_40_0.data.interaction.time[2] - var_40_0.data.interaction.time[1]) + var_40_0.data.interaction.time[1]
+								var_40_0.interactionName = var_40_0.data.interaction.parame[math.random(1, #var_40_0.data.interaction.parame)]
+							elseif var_40_0.interactionTime <= 0 then
+								GetComponent(var_40_0.tf, typeof(Animator)):SetTrigger(var_40_0.interactionName)
 
-								var_6.remove(arg_40_0.items, iter_40_0)
-								arg_40_0:destroyItem(var_5)
+								var_40_0.interactionTime = nil
+								var_40_0.interactionName = nil
+							else
+								var_40_0.interactionTime = var_40_0.interactionTime - Time.deltaTime
 							end
+						end
+
+						if var_40_0.targetRemove and not var_40_0.targetX then
+							table.remove(arg_40_0.items, iter_40_0)
+							arg_40_0:destroyItem(var_40_0)
 						end
 					end
 				end
@@ -2418,9 +2415,865 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 			return
 		end,
 		destroyItem = function(arg_41_0, arg_41_1)
-			destroy = var_2_10002
+			destroy(arg_41_1.tf)
 
-			var_2_10002(arg_41_1.tf)
+			return
+		end,
+		destroy = function(arg_42_0)
+			return
+		end
+	}).ctor({
+		ctor = function(arg_18_0)
+			arg_18_0._event = arg_17_3
+			arg_18_0._sceneTpls = findTF(arg_17_0, "sceneTpls")
+			arg_18_0._backSceneTpls = findTF(arg_17_1, "bgTpls")
+			arg_18_0._gameMission = arg_17_2 + 1
+
+			local var_18_0 = findTF(arg_17_0, "container")
+
+			arg_18_0._createBounds = {
+				var_18_0.sizeDelta.x,
+				var_18_0.sizeDelta.y
+			}
+			arg_18_0._parentTf = findTF(var_18_0, "content")
+			arg_18_0._backParentTf = findTF(arg_17_1, "container/content")
+			arg_18_0.items = {}
+
+			return
+		end,
+		getParentInversePos = function(arg_19_0, arg_19_1)
+			return arg_19_1.data.scene and (arg_19_1.data.scene == var_0_22 and arg_19_0._backParentTf:InverseTransformPoint(arg_19_1.tf.position) or arg_19_0._parentTf:InverseTransformPoint(arg_19_1.tf.position)) or arg_19_0._parentTf:InverseTransformPoint(arg_19_1.tf.position)
+		end,
+		addItemDone = function(arg_20_0, arg_20_1, arg_20_2)
+			local var_20_0 = arg_20_0:getParentInversePos(arg_20_1)
+
+			if arg_20_1.data.act == var_0_14 or arg_20_1.data.catch == var_0_16 then
+				var_20_0.y = var_0_36
+			end
+
+			arg_20_1.tf.anchoredPosition = var_20_0
+
+			arg_20_0:addItemParent(arg_20_1)
+
+			arg_20_1.tf.localScale = Vector3(2.5 * math.sign(arg_20_1.tf.localScale.x), 2.5, 2.5)
+			arg_20_1.tf.localEulerAngles = Vector3(0, 0, 0)
+			arg_20_1.catchAble = false
+			arg_20_1.targetRemove = true
+
+			if arg_20_1.data.catch == var_0_15 then
+				GetComponent(arg_20_1.tf, typeof(DftAniEvent)):SetEndEvent(function()
+					arg_20_0:destroyItem(arg_20_1)
+
+					return
+				end)
+				GetComponent(arg_20_1.tf, typeof(Animator)):SetTrigger("catch")
+
+				goto label_20_0
+			end
+
+			::label_20_0::
+
+			if arg_20_1.data.catch == var_0_16 then
+				local var_20_1 = arg_20_1.data.leave_direct or 1
+
+				arg_20_1.direct = var_20_1
+
+				if var_20_1 * math.sign(arg_20_1.tf.localScale.x) == -1 then
+					arg_20_1.targetX = arg_20_1.data.move_range[2] or arg_20_1.data.move_range[1]
+
+					GetComponent(arg_20_1.tf, typeof(DftAniEvent)):SetEndEvent(function()
+						arg_20_1.moveAble = true
+
+						return
+					end)
+
+					arg_20_1.moveAble = false
+
+					GetComponent(arg_20_1.tf, typeof(Animator)):SetTrigger("release")
+					table.insert(arg_20_0.items, arg_20_1)
+
+					return
+				end
+			end
+		end,
+		start = function(arg_23_0)
+			arg_23_0:clearItems()
+			arg_23_0:prepareItems()
+			arg_23_0:setItemPosition()
+
+			return
+		end,
+		clearItems = function(arg_24_0)
+			for iter_24_0 = #arg_24_0.items, 1, -1 do
+				arg_24_0:destroyItem((table.remove(arg_24_0.items, iter_24_0)))
+			end
+
+			arg_24_0.items = {}
+
+			return
+		end,
+		prepareItems = function(arg_25_0)
+			for iter_25_0, iter_25_1 in pairs(var_0_26[math.random(1, #var_0_26)]) do
+				local var_25_0 = arg_25_0:getItemsByType(iter_25_1.type, iter_25_1.name)
+
+				for iter_25_2 = 1, math.random(iter_25_1.amount[1], iter_25_1.amount[2]) do
+					local var_25_1
+
+					if iter_25_1.repeated then
+						var_25_1 = var_25_0[math.random(1, #var_25_0)]
+					elseif #var_25_0 > 0 then
+						var_25_1 = table.remove(var_25_0, math.random(1, #var_25_0))
+					end
+
+					if var_25_1 then
+						table.insert(arg_25_0.items, (arg_25_0:createItem(var_25_1)))
+					end
+				end
+			end
+
+			return
+		end,
+		getItemsByType = function(arg_26_0, arg_26_1, arg_26_2)
+			for iter_26_0 = 1, #var_0_27 do
+				if var_0_27[iter_26_0].type == arg_26_1 then
+					if arg_26_2 then
+						if table.contains(arg_26_2, var_0_27[iter_26_0].name) then
+							table.insert({}, var_0_27[iter_26_0])
+						end
+					else
+						table.insert({}, var_0_27[iter_26_0])
+					end
+				end
+			end
+
+			return {}
+		end,
+		getItemDataByName = function(arg_27_0, arg_27_1)
+			for iter_27_0 = 1, #var_0_27 do
+				if var_0_27[iter_27_0].name == arg_27_1 then
+					return var_0_27[iter_27_0]
+				end
+			end
+
+			return nil
+		end,
+		createItem = function(arg_28_0, arg_28_1)
+			({
+				data = arg_28_1
+			}).tf = nil
+			;({
+				data = arg_28_1
+			}).targetX = nil
+			;({
+				data = arg_28_1
+			}).targetY = nil
+			;({
+				data = arg_28_1
+			}).direct = arg_28_1.direct or 1
+			;({
+				data = arg_28_1
+			}).moveAble = true
+			;({
+				data = arg_28_1
+			}).catchAble = true
+			;({
+				data = arg_28_1
+			}).targetRemove = false
+			;({
+				data = arg_28_1
+			}).interaction = not not arg_28_1.interaction
+			;({
+				data = arg_28_1
+			}).interactionName = nil
+			;({
+				data = arg_28_1
+			}).interactionTime = nil
+			;({
+				data = arg_28_1
+			}).animStateIndex = nil
+			;({
+				data = arg_28_1
+			}).nextAnimTime = nil
+
+			arg_28_0:instantiateItem({
+				data = arg_28_1
+			})
+
+			return {
+				data = arg_28_1
+			}
+		end,
+		instantiateItem = function(arg_29_0, arg_29_1)
+			local var_29_0 = arg_29_1.data.scene == var_0_22 and findTF(arg_29_0._backSceneTpls, arg_29_1.data.name) or findTF(arg_29_0._sceneTpls, arg_29_1.data.name)
+
+			arg_29_1.tf = tf((Instantiate(var_29_0)))
+
+			setActive(arg_29_1.tf, true)
+			arg_29_0:addItemParent(arg_29_1)
+
+			return
+		end,
+		addItemParent = function(arg_30_0, arg_30_1)
+			if arg_30_1.data.scene then
+				if arg_30_1.data.scene == var_0_22 then
+					SetParent(arg_30_1.tf, arg_30_0._backParentTf)
+				else
+					SetParent(arg_30_1.tf, arg_30_0._parentTf)
+				end
+			else
+				SetParent(arg_30_1.tf, arg_30_0._parentTf)
+			end
+
+			return
+		end,
+		setItemPosition = function(arg_31_0)
+			if not arg_31_0.items or #arg_31_0.items == 0 then
+				return
+			end
+
+			local var_31_0 = arg_31_0:mixSplitePos(arg_31_0:splitePositions(0, arg_31_0._createBounds[1]), (arg_31_0:splitePositions(0, arg_31_0._createBounds[2])))
+
+			for iter_31_0 = 1, #arg_31_0.items do
+				local var_31_1 = (function(arg_32_0)
+					if arg_32_0 then
+						for iter_32_0 = 1, #var_31_0 do
+							if arg_32_0[1] <= var_31_0[iter_32_0][1][1] and var_31_0[iter_32_0][1][2] <= arg_32_0[2] and arg_32_0[3] <= var_31_0[iter_32_0][2][1] and var_31_0[iter_32_0][2][2] <= arg_32_0[4] then
+								table.insert({}, iter_32_0)
+							end
+						end
+
+						if #{} > 0 then
+							return table.remove(var_31_0, ({})[math.random(1, #{})])
+						end
+					end
+
+					if #var_31_0 > 0 then
+						return table.remove(var_31_0, math.random(1, #var_31_0))
+					else
+						return {
+							{
+								0,
+								1300
+							},
+							{
+								100,
+								300
+							}
+						}
+					end
+
+					return
+				end)(arg_31_0.items[iter_31_0].data.create_range)
+
+				if var_31_1 then
+					arg_31_0.items[iter_31_0].tf.anchoredPosition = Vector2(var_31_1[1][1] + math.random() * (var_31_1[1][2] - var_31_1[1][1]) / 2, var_31_1[2][1] + math.random() * (var_31_1[2][2] - var_31_1[2][1]) / 2)
+				end
+			end
+
+			return
+		end,
+		mixSplitePos = function(arg_33_0, arg_33_1, arg_33_2)
+			for iter_33_0 = 1, #arg_33_1 do
+				for iter_33_1 = 1, #arg_33_2 do
+					table.insert({}, {
+						arg_33_1[iter_33_0],
+						arg_33_2[iter_33_1]
+					})
+				end
+			end
+
+			return {}
+		end,
+		splitePositions = function(arg_34_0, arg_34_1, arg_34_2)
+			if not arg_34_1 or not arg_34_2 or arg_34_2 < arg_34_1 then
+				return nil
+			end
+
+			for iter_34_0 = 1, (arg_34_2 - arg_34_1) / var_0_37 do
+				table.insert({}, {
+					arg_34_1 + (iter_34_0 - 1) * var_0_37,
+					arg_34_1 + iter_34_0 * var_0_37
+				})
+			end
+
+			return {}
+		end,
+		getItemByPos = function(arg_35_0, arg_35_1)
+			local var_35_0 = arg_35_0:checkPosInCollider(arg_35_1)
+
+			if var_35_0 then
+				if var_35_0.data.catch_rule then
+					if table.contains(var_35_0.data.catch_rule.state, (GetComponent(var_35_0.tf, typeof(Animator)):GetInteger("state"))) then
+						arg_35_0:addItemDone(var_35_0)
+
+						return (arg_35_0:createItem(arg_35_0:getItemDataByName(var_35_0.data.catch_rule.targetName)))
+					end
+				else
+					return var_35_0
+				end
+
+				return var_35_0
+			end
+
+			return nil
+		end,
+		checkPosInCollider = function(arg_36_0, arg_36_1)
+			local var_36_0 = arg_36_0._parentTf:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z)
+
+			for iter_36_0 = 1, #arg_36_0.items do
+				if arg_36_0.items[iter_36_0].data.catch ~= var_0_17 then
+					if math.abs(var_36_0.x - arg_36_0.items[iter_36_0].tf.anchoredPosition.x) < var_0_35 and math.abs(var_36_0.y - arg_36_0.items[iter_36_0].tf.anchoredPosition.y) < var_0_35 and arg_36_0.items[iter_36_0].data.catch ~= var_0_17 and arg_36_0.items[iter_36_0].catchAble then
+						table.insert({}, arg_36_0.items[iter_36_0])
+					end
+				end
+			end
+
+			for iter_36_1 = 1, #{} do
+				local var_36_1 = findTF(({})[iter_36_1].tf, "collider")
+				local var_36_2, var_36_3, var_36_4, var_36_5, var_36_6
+
+				if not var_36_1 then
+					print("can not find collider by" .. ({})[iter_36_1].data.name)
+
+					goto label_36_0
+
+					var_36_2 = arg_36_0
+					var_36_3 = Vector2(var_36_1.rect.xMin, var_36_1.rect.yMin + var_36_1.rect.height)
+					var_36_4 = Vector2(var_36_1.rect.xMin + var_36_1.rect.width, var_36_1.rect.yMin + var_36_1.rect.height)
+					var_36_5 = Vector2(var_36_1.rect.xMin + var_36_1.rect.width, var_36_1.rect.yMin)
+					var_36_6 = Vector2(var_36_1.rect.xMin, var_36_1.rect.yMin)
+				end
+
+				if arg_36_0:isPointInMatrix(var_36_3, var_36_4, var_36_5, var_36_6, (var_36_1:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z))) then
+					return arg_36_0:removeItem(({})[iter_36_1])
+				end
+
+				::label_36_0::
+			end
+
+			return nil
+		end,
+		removeItem = function(arg_37_0, arg_37_1)
+			for iter_37_0 = 1, #arg_37_0.items do
+				if arg_37_0.items[iter_37_0] == arg_37_1 then
+					return table.remove(arg_37_0.items, iter_37_0)
+				end
+			end
+
+			return
+		end,
+		getCross = function(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
+			return (arg_38_2.x - arg_38_1.x) * (arg_38_3.y - arg_38_1.y) - (arg_38_3.x - arg_38_1.x) * (arg_38_2.y - arg_38_1.y)
+		end,
+		isPointInMatrix = function(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4, arg_39_5)
+			return arg_39_0:getCross(arg_39_1, arg_39_2, arg_39_5) * arg_39_0:getCross(arg_39_3, arg_39_4, arg_39_5) >= 0 and arg_39_0:getCross(arg_39_2, arg_39_3, arg_39_5) * arg_39_0:getCross(arg_39_4, arg_39_1, arg_39_5) >= 0
+		end,
+		step = function(arg_40_0)
+			for iter_40_0 = #arg_40_0.items, 1, -1 do
+				local var_40_0 = arg_40_0.items[iter_40_0]
+
+				if arg_40_0.items[iter_40_0].data.act == var_0_14 and var_40_0.moveAble then
+					local var_40_3 = math.sign(var_40_0.targetX - var_40_0.tf.anchoredPosition.x)
+
+					if not var_40_0.targetX then
+						local var_40_1 = var_40_0.data.move_range[1]
+						local var_40_2 = var_40_0.data.move_range[2]
+
+						var_40_0.targetX = var_40_0.tf.anchoredPosition.x == var_40_0.data.move_range[1] and var_40_2 or var_40_0.tf.anchoredPosition.x == var_40_2 and var_40_1 or math.random() > 0.5 and var_40_1 or var_40_2
+
+						goto label_40_0
+					end
+
+					::label_40_0::
+
+					if var_40_0.targetRemove then
+						do
+							local var_40_4 = var_40_0.data.release_speed or var_40_0.data.speed
+
+							var_40_0.tf.localScale = Vector3(-1 * var_40_3 * var_40_0.direct * math.abs(var_40_0.tf.localScale.x), var_40_0.tf.localScale.y, var_40_0.tf.localScale.z)
+							var_40_0.tf.anchoredPosition = Vector2(var_40_0.tf.anchoredPosition.x + var_40_3 * var_40_4 * Time.deltaTime, var_40_0.tf.anchoredPosition.y)
+
+							if var_40_3 == 1 and var_40_0.tf.anchoredPosition.x >= var_40_0.targetX or var_40_3 == -1 and var_40_0.tf.anchoredPosition.x <= var_40_0.targetX then
+								var_40_0.tf.anchoredPosition = Vector2(var_40_0.targetX, var_40_0.tf.anchoredPosition.y)
+								var_40_0.targetX = nil
+							end
+						end
+
+						if var_40_0.data.anim_data then
+							local var_40_5 = var_40_0.data.anim_data.state_change
+
+							if var_40_0.data.anim_data.state_change and var_40_0.data.anim_data.time then
+								if not var_40_0.nextAnimTime then
+									var_40_0.nextAnimTime = math.random(var_40_0.data.anim_data.time[1], var_40_0.data.anim_data.time[2])
+									var_40_0.animStateIndex = 1
+								elseif var_40_0.nextAnimTime <= 0 then
+									GetComponent(var_40_0.tf, typeof(Animator)):SetInteger("state", var_40_5[var_40_0.animStateIndex])
+
+									var_40_0.nextAnimTime = math.random(var_40_0.data.anim_data.time[1], var_40_0.data.anim_data.time[2])
+									var_40_0.animStateIndex = var_40_0.animStateIndex + 1
+									var_40_0.animStateIndex = var_40_0.animStateIndex > #var_40_5 and 1 or var_40_0.animStateIndex
+								else
+									var_40_0.nextAnimTime = var_40_0.nextAnimTime - Time.deltaTime
+								end
+							end
+						end
+
+						if var_40_0.interaction and not var_40_0.targetRemove then
+							if not var_40_0.interactionTime then
+								var_40_0.interactionTime = math.random() * (var_40_0.data.interaction.time[2] - var_40_0.data.interaction.time[1]) + var_40_0.data.interaction.time[1]
+								var_40_0.interactionName = var_40_0.data.interaction.parame[math.random(1, #var_40_0.data.interaction.parame)]
+							elseif var_40_0.interactionTime <= 0 then
+								GetComponent(var_40_0.tf, typeof(Animator)):SetTrigger(var_40_0.interactionName)
+
+								var_40_0.interactionTime = nil
+								var_40_0.interactionName = nil
+							else
+								var_40_0.interactionTime = var_40_0.interactionTime - Time.deltaTime
+							end
+						end
+
+						if var_40_0.targetRemove and not var_40_0.targetX then
+							table.remove(arg_40_0.items, iter_40_0)
+							arg_40_0:destroyItem(var_40_0)
+						end
+					end
+				end
+			end
+
+			return
+		end,
+		destroyItem = function(arg_41_0, arg_41_1)
+			destroy(arg_41_1.tf)
+
+			return
+		end,
+		destroy = function(arg_42_0)
+			return
+		end
+	})
+
+	return {
+		ctor = function(arg_18_0)
+			arg_18_0._event = arg_17_3
+			arg_18_0._sceneTpls = findTF(arg_17_0, "sceneTpls")
+			arg_18_0._backSceneTpls = findTF(arg_17_1, "bgTpls")
+			arg_18_0._gameMission = arg_17_2 + 1
+
+			local var_18_0 = findTF(arg_17_0, "container")
+
+			arg_18_0._createBounds = {
+				var_18_0.sizeDelta.x,
+				var_18_0.sizeDelta.y
+			}
+			arg_18_0._parentTf = findTF(var_18_0, "content")
+			arg_18_0._backParentTf = findTF(arg_17_1, "container/content")
+			arg_18_0.items = {}
+
+			return
+		end,
+		getParentInversePos = function(arg_19_0, arg_19_1)
+			return arg_19_1.data.scene and (arg_19_1.data.scene == var_0_22 and arg_19_0._backParentTf:InverseTransformPoint(arg_19_1.tf.position) or arg_19_0._parentTf:InverseTransformPoint(arg_19_1.tf.position)) or arg_19_0._parentTf:InverseTransformPoint(arg_19_1.tf.position)
+		end,
+		addItemDone = function(arg_20_0, arg_20_1, arg_20_2)
+			local var_20_0 = arg_20_0:getParentInversePos(arg_20_1)
+
+			if arg_20_1.data.act == var_0_14 or arg_20_1.data.catch == var_0_16 then
+				var_20_0.y = var_0_36
+			end
+
+			arg_20_1.tf.anchoredPosition = var_20_0
+
+			arg_20_0:addItemParent(arg_20_1)
+
+			arg_20_1.tf.localScale = Vector3(2.5 * math.sign(arg_20_1.tf.localScale.x), 2.5, 2.5)
+			arg_20_1.tf.localEulerAngles = Vector3(0, 0, 0)
+			arg_20_1.catchAble = false
+			arg_20_1.targetRemove = true
+
+			if arg_20_1.data.catch == var_0_15 then
+				GetComponent(arg_20_1.tf, typeof(DftAniEvent)):SetEndEvent(function()
+					arg_20_0:destroyItem(arg_20_1)
+
+					return
+				end)
+				GetComponent(arg_20_1.tf, typeof(Animator)):SetTrigger("catch")
+
+				goto label_20_0
+			end
+
+			::label_20_0::
+
+			if arg_20_1.data.catch == var_0_16 then
+				local var_20_1 = arg_20_1.data.leave_direct or 1
+
+				arg_20_1.direct = var_20_1
+
+				if var_20_1 * math.sign(arg_20_1.tf.localScale.x) == -1 then
+					arg_20_1.targetX = arg_20_1.data.move_range[2] or arg_20_1.data.move_range[1]
+
+					GetComponent(arg_20_1.tf, typeof(DftAniEvent)):SetEndEvent(function()
+						arg_20_1.moveAble = true
+
+						return
+					end)
+
+					arg_20_1.moveAble = false
+
+					GetComponent(arg_20_1.tf, typeof(Animator)):SetTrigger("release")
+					table.insert(arg_20_0.items, arg_20_1)
+
+					return
+				end
+			end
+		end,
+		start = function(arg_23_0)
+			arg_23_0:clearItems()
+			arg_23_0:prepareItems()
+			arg_23_0:setItemPosition()
+
+			return
+		end,
+		clearItems = function(arg_24_0)
+			for iter_24_0 = #arg_24_0.items, 1, -1 do
+				arg_24_0:destroyItem((table.remove(arg_24_0.items, iter_24_0)))
+			end
+
+			arg_24_0.items = {}
+
+			return
+		end,
+		prepareItems = function(arg_25_0)
+			for iter_25_0, iter_25_1 in pairs(var_0_26[math.random(1, #var_0_26)]) do
+				local var_25_0 = arg_25_0:getItemsByType(iter_25_1.type, iter_25_1.name)
+
+				for iter_25_2 = 1, math.random(iter_25_1.amount[1], iter_25_1.amount[2]) do
+					local var_25_1
+
+					if iter_25_1.repeated then
+						var_25_1 = var_25_0[math.random(1, #var_25_0)]
+					elseif #var_25_0 > 0 then
+						var_25_1 = table.remove(var_25_0, math.random(1, #var_25_0))
+					end
+
+					if var_25_1 then
+						table.insert(arg_25_0.items, (arg_25_0:createItem(var_25_1)))
+					end
+				end
+			end
+
+			return
+		end,
+		getItemsByType = function(arg_26_0, arg_26_1, arg_26_2)
+			for iter_26_0 = 1, #var_0_27 do
+				if var_0_27[iter_26_0].type == arg_26_1 then
+					if arg_26_2 then
+						if table.contains(arg_26_2, var_0_27[iter_26_0].name) then
+							table.insert({}, var_0_27[iter_26_0])
+						end
+					else
+						table.insert({}, var_0_27[iter_26_0])
+					end
+				end
+			end
+
+			return {}
+		end,
+		getItemDataByName = function(arg_27_0, arg_27_1)
+			for iter_27_0 = 1, #var_0_27 do
+				if var_0_27[iter_27_0].name == arg_27_1 then
+					return var_0_27[iter_27_0]
+				end
+			end
+
+			return nil
+		end,
+		createItem = function(arg_28_0, arg_28_1)
+			({
+				data = arg_28_1
+			}).tf = nil
+			;({
+				data = arg_28_1
+			}).targetX = nil
+			;({
+				data = arg_28_1
+			}).targetY = nil
+			;({
+				data = arg_28_1
+			}).direct = arg_28_1.direct or 1
+			;({
+				data = arg_28_1
+			}).moveAble = true
+			;({
+				data = arg_28_1
+			}).catchAble = true
+			;({
+				data = arg_28_1
+			}).targetRemove = false
+			;({
+				data = arg_28_1
+			}).interaction = not not arg_28_1.interaction
+			;({
+				data = arg_28_1
+			}).interactionName = nil
+			;({
+				data = arg_28_1
+			}).interactionTime = nil
+			;({
+				data = arg_28_1
+			}).animStateIndex = nil
+			;({
+				data = arg_28_1
+			}).nextAnimTime = nil
+
+			arg_28_0:instantiateItem({
+				data = arg_28_1
+			})
+
+			return {
+				data = arg_28_1
+			}
+		end,
+		instantiateItem = function(arg_29_0, arg_29_1)
+			local var_29_0 = arg_29_1.data.scene == var_0_22 and findTF(arg_29_0._backSceneTpls, arg_29_1.data.name) or findTF(arg_29_0._sceneTpls, arg_29_1.data.name)
+
+			arg_29_1.tf = tf((Instantiate(var_29_0)))
+
+			setActive(arg_29_1.tf, true)
+			arg_29_0:addItemParent(arg_29_1)
+
+			return
+		end,
+		addItemParent = function(arg_30_0, arg_30_1)
+			if arg_30_1.data.scene then
+				if arg_30_1.data.scene == var_0_22 then
+					SetParent(arg_30_1.tf, arg_30_0._backParentTf)
+				else
+					SetParent(arg_30_1.tf, arg_30_0._parentTf)
+				end
+			else
+				SetParent(arg_30_1.tf, arg_30_0._parentTf)
+			end
+
+			return
+		end,
+		setItemPosition = function(arg_31_0)
+			if not arg_31_0.items or #arg_31_0.items == 0 then
+				return
+			end
+
+			local var_31_0 = arg_31_0:mixSplitePos(arg_31_0:splitePositions(0, arg_31_0._createBounds[1]), (arg_31_0:splitePositions(0, arg_31_0._createBounds[2])))
+
+			for iter_31_0 = 1, #arg_31_0.items do
+				local var_31_1 = (function(arg_32_0)
+					if arg_32_0 then
+						for iter_32_0 = 1, #var_31_0 do
+							if arg_32_0[1] <= var_31_0[iter_32_0][1][1] and var_31_0[iter_32_0][1][2] <= arg_32_0[2] and arg_32_0[3] <= var_31_0[iter_32_0][2][1] and var_31_0[iter_32_0][2][2] <= arg_32_0[4] then
+								table.insert({}, iter_32_0)
+							end
+						end
+
+						if #{} > 0 then
+							return table.remove(var_31_0, ({})[math.random(1, #{})])
+						end
+					end
+
+					if #var_31_0 > 0 then
+						return table.remove(var_31_0, math.random(1, #var_31_0))
+					else
+						return {
+							{
+								0,
+								1300
+							},
+							{
+								100,
+								300
+							}
+						}
+					end
+
+					return
+				end)(arg_31_0.items[iter_31_0].data.create_range)
+
+				if var_31_1 then
+					arg_31_0.items[iter_31_0].tf.anchoredPosition = Vector2(var_31_1[1][1] + math.random() * (var_31_1[1][2] - var_31_1[1][1]) / 2, var_31_1[2][1] + math.random() * (var_31_1[2][2] - var_31_1[2][1]) / 2)
+				end
+			end
+
+			return
+		end,
+		mixSplitePos = function(arg_33_0, arg_33_1, arg_33_2)
+			for iter_33_0 = 1, #arg_33_1 do
+				for iter_33_1 = 1, #arg_33_2 do
+					table.insert({}, {
+						arg_33_1[iter_33_0],
+						arg_33_2[iter_33_1]
+					})
+				end
+			end
+
+			return {}
+		end,
+		splitePositions = function(arg_34_0, arg_34_1, arg_34_2)
+			if not arg_34_1 or not arg_34_2 or arg_34_2 < arg_34_1 then
+				return nil
+			end
+
+			for iter_34_0 = 1, (arg_34_2 - arg_34_1) / var_0_37 do
+				table.insert({}, {
+					arg_34_1 + (iter_34_0 - 1) * var_0_37,
+					arg_34_1 + iter_34_0 * var_0_37
+				})
+			end
+
+			return {}
+		end,
+		getItemByPos = function(arg_35_0, arg_35_1)
+			local var_35_0 = arg_35_0:checkPosInCollider(arg_35_1)
+
+			if var_35_0 then
+				if var_35_0.data.catch_rule then
+					if table.contains(var_35_0.data.catch_rule.state, (GetComponent(var_35_0.tf, typeof(Animator)):GetInteger("state"))) then
+						arg_35_0:addItemDone(var_35_0)
+
+						return (arg_35_0:createItem(arg_35_0:getItemDataByName(var_35_0.data.catch_rule.targetName)))
+					end
+				else
+					return var_35_0
+				end
+
+				return var_35_0
+			end
+
+			return nil
+		end,
+		checkPosInCollider = function(arg_36_0, arg_36_1)
+			local var_36_0 = arg_36_0._parentTf:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z)
+
+			for iter_36_0 = 1, #arg_36_0.items do
+				if arg_36_0.items[iter_36_0].data.catch ~= var_0_17 then
+					if math.abs(var_36_0.x - arg_36_0.items[iter_36_0].tf.anchoredPosition.x) < var_0_35 and math.abs(var_36_0.y - arg_36_0.items[iter_36_0].tf.anchoredPosition.y) < var_0_35 and arg_36_0.items[iter_36_0].data.catch ~= var_0_17 and arg_36_0.items[iter_36_0].catchAble then
+						table.insert({}, arg_36_0.items[iter_36_0])
+					end
+				end
+			end
+
+			for iter_36_1 = 1, #{} do
+				local var_36_1 = findTF(({})[iter_36_1].tf, "collider")
+				local var_36_2, var_36_3, var_36_4, var_36_5, var_36_6
+
+				if not var_36_1 then
+					print("can not find collider by" .. ({})[iter_36_1].data.name)
+
+					goto label_36_0
+
+					var_36_2 = arg_36_0
+					var_36_3 = Vector2(var_36_1.rect.xMin, var_36_1.rect.yMin + var_36_1.rect.height)
+					var_36_4 = Vector2(var_36_1.rect.xMin + var_36_1.rect.width, var_36_1.rect.yMin + var_36_1.rect.height)
+					var_36_5 = Vector2(var_36_1.rect.xMin + var_36_1.rect.width, var_36_1.rect.yMin)
+					var_36_6 = Vector2(var_36_1.rect.xMin, var_36_1.rect.yMin)
+				end
+
+				if arg_36_0:isPointInMatrix(var_36_3, var_36_4, var_36_5, var_36_6, (var_36_1:InverseTransformPoint(arg_36_1.x, arg_36_1.y, arg_36_1.z))) then
+					return arg_36_0:removeItem(({})[iter_36_1])
+				end
+
+				::label_36_0::
+			end
+
+			return nil
+		end,
+		removeItem = function(arg_37_0, arg_37_1)
+			for iter_37_0 = 1, #arg_37_0.items do
+				if arg_37_0.items[iter_37_0] == arg_37_1 then
+					return table.remove(arg_37_0.items, iter_37_0)
+				end
+			end
+
+			return
+		end,
+		getCross = function(arg_38_0, arg_38_1, arg_38_2, arg_38_3)
+			return (arg_38_2.x - arg_38_1.x) * (arg_38_3.y - arg_38_1.y) - (arg_38_3.x - arg_38_1.x) * (arg_38_2.y - arg_38_1.y)
+		end,
+		isPointInMatrix = function(arg_39_0, arg_39_1, arg_39_2, arg_39_3, arg_39_4, arg_39_5)
+			return arg_39_0:getCross(arg_39_1, arg_39_2, arg_39_5) * arg_39_0:getCross(arg_39_3, arg_39_4, arg_39_5) >= 0 and arg_39_0:getCross(arg_39_2, arg_39_3, arg_39_5) * arg_39_0:getCross(arg_39_4, arg_39_1, arg_39_5) >= 0
+		end,
+		step = function(arg_40_0)
+			for iter_40_0 = #arg_40_0.items, 1, -1 do
+				local var_40_0 = arg_40_0.items[iter_40_0]
+
+				if arg_40_0.items[iter_40_0].data.act == var_0_14 and var_40_0.moveAble then
+					local var_40_3 = math.sign(var_40_0.targetX - var_40_0.tf.anchoredPosition.x)
+
+					if not var_40_0.targetX then
+						local var_40_1 = var_40_0.data.move_range[1]
+						local var_40_2 = var_40_0.data.move_range[2]
+
+						var_40_0.targetX = var_40_0.tf.anchoredPosition.x == var_40_0.data.move_range[1] and var_40_2 or var_40_0.tf.anchoredPosition.x == var_40_2 and var_40_1 or math.random() > 0.5 and var_40_1 or var_40_2
+
+						goto label_40_0
+					end
+
+					::label_40_0::
+
+					if var_40_0.targetRemove then
+						do
+							local var_40_4 = var_40_0.data.release_speed or var_40_0.data.speed
+
+							var_40_0.tf.localScale = Vector3(-1 * var_40_3 * var_40_0.direct * math.abs(var_40_0.tf.localScale.x), var_40_0.tf.localScale.y, var_40_0.tf.localScale.z)
+							var_40_0.tf.anchoredPosition = Vector2(var_40_0.tf.anchoredPosition.x + var_40_3 * var_40_4 * Time.deltaTime, var_40_0.tf.anchoredPosition.y)
+
+							if var_40_3 == 1 and var_40_0.tf.anchoredPosition.x >= var_40_0.targetX or var_40_3 == -1 and var_40_0.tf.anchoredPosition.x <= var_40_0.targetX then
+								var_40_0.tf.anchoredPosition = Vector2(var_40_0.targetX, var_40_0.tf.anchoredPosition.y)
+								var_40_0.targetX = nil
+							end
+						end
+
+						if var_40_0.data.anim_data then
+							local var_40_5 = var_40_0.data.anim_data.state_change
+
+							if var_40_0.data.anim_data.state_change and var_40_0.data.anim_data.time then
+								if not var_40_0.nextAnimTime then
+									var_40_0.nextAnimTime = math.random(var_40_0.data.anim_data.time[1], var_40_0.data.anim_data.time[2])
+									var_40_0.animStateIndex = 1
+								elseif var_40_0.nextAnimTime <= 0 then
+									GetComponent(var_40_0.tf, typeof(Animator)):SetInteger("state", var_40_5[var_40_0.animStateIndex])
+
+									var_40_0.nextAnimTime = math.random(var_40_0.data.anim_data.time[1], var_40_0.data.anim_data.time[2])
+									var_40_0.animStateIndex = var_40_0.animStateIndex + 1
+									var_40_0.animStateIndex = var_40_0.animStateIndex > #var_40_5 and 1 or var_40_0.animStateIndex
+								else
+									var_40_0.nextAnimTime = var_40_0.nextAnimTime - Time.deltaTime
+								end
+							end
+						end
+
+						if var_40_0.interaction and not var_40_0.targetRemove then
+							if not var_40_0.interactionTime then
+								var_40_0.interactionTime = math.random() * (var_40_0.data.interaction.time[2] - var_40_0.data.interaction.time[1]) + var_40_0.data.interaction.time[1]
+								var_40_0.interactionName = var_40_0.data.interaction.parame[math.random(1, #var_40_0.data.interaction.parame)]
+							elseif var_40_0.interactionTime <= 0 then
+								GetComponent(var_40_0.tf, typeof(Animator)):SetTrigger(var_40_0.interactionName)
+
+								var_40_0.interactionTime = nil
+								var_40_0.interactionName = nil
+							else
+								var_40_0.interactionTime = var_40_0.interactionTime - Time.deltaTime
+							end
+						end
+
+						if var_40_0.targetRemove and not var_40_0.targetX then
+							table.remove(arg_40_0.items, iter_40_0)
+							arg_40_0:destroyItem(var_40_0)
+						end
+					end
+				end
+			end
+
+			return
+		end,
+		destroyItem = function(arg_41_0, arg_41_1)
+			destroy(arg_41_1.tf)
 
 			return
 		end,
@@ -2428,14 +3281,10 @@ local function var_0_58(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
 			return
 		end
 	}
-
-	var_4.ctor(var_17_0)
-
-	return var_4
 end
 
-local function var_0_59(arg_43_0, arg_43_1)
-	local var_43_0 = {
+local function var_0_49(arg_43_0, arg_43_1)
+	({
 		ctor = function(arg_44_0)
 			arg_44_0._boatController = arg_43_0
 			arg_44_0._itemController = arg_43_1
@@ -2446,28 +3295,64 @@ local function var_0_59(arg_43_0, arg_43_1)
 			return
 		end,
 		step = function(arg_46_0)
-			local var_46_0 = arg_46_0._boatController
+			if arg_46_0._boatController:inCatch() then
+				local var_46_0 = arg_46_0._itemController:getItemByPos((arg_46_0._boatController:getHookPosition()))
 
-			if var_1.inCatch(var_46_0) then
-				local var_46_1 = arg_46_0._boatController
-				local var_46_2 = var_1.getHookPosition(var_46_1)
-				local var_46_3 = arg_46_0._itemController
+				if var_46_0 then
+					GetComponent(var_46_0.tf, typeof(Animator)):SetTrigger("hold")
+					arg_46_0._boatController:setCatchItem(var_46_0)
+				end
+			end
 
-				if var_2.getItemByPos(var_46_3, var_46_2) then
-					GetComponent = var_46_1
+			return
+		end,
+		destroy = function(arg_47_0)
+			return
+		end
+	}).ctor({
+		ctor = function(arg_44_0)
+			arg_44_0._boatController = arg_43_0
+			arg_44_0._itemController = arg_43_1
 
-					local var_46_4 = var_2.tf
+			return
+		end,
+		start = function(arg_45_0)
+			return
+		end,
+		step = function(arg_46_0)
+			if arg_46_0._boatController:inCatch() then
+				local var_46_0 = arg_46_0._itemController:getItemByPos((arg_46_0._boatController:getHookPosition()))
 
-					typeof = var_2_10006
-					Animator = var_2_10008
+				if var_46_0 then
+					GetComponent(var_46_0.tf, typeof(Animator)):SetTrigger("hold")
+					arg_46_0._boatController:setCatchItem(var_46_0)
+				end
+			end
 
-					local var_46_5 = var_46_1(var_46_4, var_2_10006(var_2_10008))
+			return
+		end,
+		destroy = function(arg_47_0)
+			return
+		end
+	})
 
-					var_3.SetTrigger(var_46_5, "hold")
+	return {
+		ctor = function(arg_44_0)
+			arg_44_0._boatController = arg_43_0
+			arg_44_0._itemController = arg_43_1
 
-					local var_46_6 = arg_46_0._boatController
+			return
+		end,
+		start = function(arg_45_0)
+			return
+		end,
+		step = function(arg_46_0)
+			if arg_46_0._boatController:inCatch() then
+				local var_46_0 = arg_46_0._itemController:getItemByPos((arg_46_0._boatController:getHookPosition()))
 
-					var_3.setCatchItem(var_46_6, var_2)
+				if var_46_0 then
+					GetComponent(var_46_0.tf, typeof(Animator)):SetTrigger("hold")
+					arg_46_0._boatController:setCatchItem(var_46_0)
 				end
 			end
 
@@ -2477,19 +3362,13 @@ local function var_0_59(arg_43_0, arg_43_1)
 			return
 		end
 	}
-
-	var_2.ctor(var_43_0)
-
-	return var_2
 end
 
-local function var_0_60(arg_48_0, arg_48_1)
-	local var_48_0 = {
+local function var_0_50(arg_48_0, arg_48_1)
+	({
 		ctor = function(arg_49_0)
-			findTF = var_2_10001
-			arg_49_0._charTpls = var_2_10001(arg_48_0, "charTpls")
-			findTF = var_1
-			arg_49_0._content = var_1(arg_48_0, "charContainer/content")
+			arg_49_0._charTpls = findTF(arg_48_0, "charTpls")
+			arg_49_0._content = findTF(arg_48_0, "charContainer/content")
 			arg_49_0._event = arg_48_1
 
 			return
@@ -2498,37 +3377,19 @@ local function var_0_60(arg_48_0, arg_48_1)
 			arg_50_0:clear()
 
 			arg_50_0.chars = {}
-			math = var_1
-			arg_50_0.nextTime = var_1.random(var_0_53[1], var_0_53[2])
-			Clone = var_1
-			arg_50_0.showChars = var_1(var_0_54)
+			arg_50_0.nextTime = math.random(var_0_43[1], var_0_43[2])
+			arg_50_0.showChars = Clone(var_0_44)
 
 			return
 		end,
 		step = function(arg_51_0)
-			if arg_51_0.nextTime <= 0 then
-				local var_51_0 = #arg_51_0.showChars
+			if arg_51_0.nextTime <= 0 and #arg_51_0.showChars > 0 then
+				table.insert(arg_51_0.chars, arg_51_0:createChar())
 
-				if 0 < var_51_0 then
-					table = var_51_0
-
-					var_51_0.insert(arg_51_0.chars, arg_51_0:createChar())
-
-					math = var_1
-					arg_51_0.nextTime = var_1.random(var_0_53[1], var_0_53[2])
-
-					goto label_51_0
-				end
+				arg_51_0.nextTime = math.random(var_0_43[1], var_0_43[2])
+			else
+				arg_51_0.nextTime = arg_51_0.nextTime - Time.deltaTime
 			end
-
-			do
-				local var_51_1 = arg_51_0.nextTime
-
-				Time = var_2
-				arg_51_0.nextTime = var_51_1 - var_2.deltaTime
-			end
-
-			::label_51_0::
 
 			arg_51_0:setCharAction()
 
@@ -2536,12 +3397,7 @@ local function var_0_60(arg_48_0, arg_48_1)
 				arg_51_0:stepChar(arg_51_0.chars[iter_51_0])
 
 				if arg_51_0.chars[iter_51_0].removeFlag then
-					local var_51_2 = arg_51_0
-					local var_51_3 = arg_51_0.removeChar
-
-					table = var_8
-
-					var_51_3(var_51_2, var_8.remove(arg_51_0.chars, iter_51_0))
+					arg_51_0:removeChar(table.remove(arg_51_0.chars, iter_51_0))
 				end
 			end
 
@@ -2551,46 +3407,21 @@ local function var_0_60(arg_48_0, arg_48_1)
 			local var_52_0 = false
 
 			if arg_52_1.posX then
-				local var_52_1 = arg_52_1.tf
+				local var_52_1 = arg_52_1.offsetX or 0
+				local var_52_2 = arg_52_1.posX + var_52_1
 
-				Vector2 = var_2_10004
+				arg_52_1.tf.anchoredPosition = Vector2(var_52_2, 0)
 
-				local var_52_2 = arg_52_1.posX
-				local var_52_3
-
-				if not arg_52_1.offsetX then
-					var_52_3 = 0
-				end
-
-				var_52_1.anchoredPosition = var_2_10004(var_52_2 + var_52_3, 0)
-				setActive = var_52_1
-
-				var_52_1(arg_52_1.tf, true)
+				setActive(arg_52_1.tf, true)
 
 				arg_52_1.posX = nil
 				arg_52_1.offsetX = nil
 			end
 
 			if arg_52_1.moveToX then
-				local var_52_4 = arg_52_1.moveToX + arg_52_1.offsetX
+				arg_52_1.tf.anchoredPosition = Vector3(arg_52_1.tf.anchoredPosition.x + math.sign(arg_52_1.moveToX + arg_52_1.offsetX - arg_52_1.tf.anchoredPosition.x) * arg_52_1.speed, 0)
 
-				var_2_10004 = arg_52_1.tf.anchoredPosition
-				math = var_2_10005
-
-				local var_52_5 = var_2_10005.sign(var_52_4 - var_2_10004.x)
-				local var_52_6 = arg_52_1.tf
-
-				Vector3 = var_7
-				var_52_6.anchoredPosition = var_7(var_2_10004.x + var_52_5 * arg_52_1.speed, 0)
-				math = var_52_6
-
-				local var_52_7 = var_52_6.sign(var_2_10004.x - var_52_4)
-
-				math = var_7
-
-				local var_52_8 = var_7.sign(arg_52_1.tf.anchoredPosition.x - var_52_4)
-
-				if arg_52_1.tf.anchoredPosition.x == var_52_4 or var_52_7 ~= var_52_8 then
+				if arg_52_1.tf.anchoredPosition.x == arg_52_1.moveToX + arg_52_1.offsetX or math.sign(arg_52_1.tf.anchoredPosition.x - (arg_52_1.moveToX + arg_52_1.offsetX)) ~= math.sign(arg_52_1.tf.anchoredPosition.x - (arg_52_1.moveToX + arg_52_1.offsetX)) then
 					arg_52_1.moveToX = nil
 					arg_52_1.offsetX = nil
 				else
@@ -2600,17 +3431,12 @@ local function var_0_60(arg_48_0, arg_48_1)
 
 			if arg_52_1.triggerName or arg_52_1.time then
 				if arg_52_1.triggerName and arg_52_1.animator then
-					local var_52_9 = arg_52_1.animator
-
-					var_3.SetTrigger(var_52_9, arg_52_1.triggerName)
+					arg_52_1.animator:SetTrigger(arg_52_1.triggerName)
 
 					arg_52_1.triggerName = nil
 				end
 
-				local var_52_10 = arg_52_1.time
-
-				Time = var_2_10004
-				arg_52_1.time = var_52_10 - var_2_10004.deltaTime
+				arg_52_1.time = arg_52_1.time - Time.deltaTime
 
 				if arg_52_1.triggerName == nil and arg_52_1.time <= 0 then
 					arg_52_1.time = nil
@@ -2624,93 +3450,63 @@ local function var_0_60(arg_48_0, arg_48_1)
 			return
 		end,
 		getRandomMoveX = function(arg_53_0, arg_53_1, arg_53_2)
-			math = var_2_10003
-
-			return arg_53_1 + var_2_10003.random(0, arg_53_2 - arg_53_1)
+			return arg_53_1 + math.random(0, arg_53_2 - arg_53_1)
 		end,
 		removeChar = function(arg_54_0, arg_54_1)
 			if arg_54_1.bindChars then
 				arg_54_1.bindChars = {}
 			end
 
-			destroy = var_2
-
-			var_2(arg_54_1.tf)
+			destroy(arg_54_1.tf)
 
 			return
 		end,
 		setCharAction = function(arg_55_0)
 			for iter_55_0 = 1, #arg_55_0.chars do
-				if not arg_55_0.chars[iter_55_0].currentActionInfo and #var_5.actionInfos > 0 and not var_5.inAction then
-					if var_5.sync and var_5.bindIds then
-						local var_55_0 = #var_5.bindIds
+				if not arg_55_0.chars[iter_55_0].currentActionInfo and #arg_55_0.chars[iter_55_0].actionInfos > 0 and not arg_55_0.chars[iter_55_0].inAction then
+					if arg_55_0.chars[iter_55_0].sync and arg_55_0.chars[iter_55_0].bindIds and #arg_55_0.chars[iter_55_0].bindIds > 0 then
+						local var_55_0 = true
 
-						if 0 < var_55_0 then
-							local var_55_1 = true
-
-							ipairs = var_7
-
-							for iter_55_1, iter_55_2 in var_7(var_5.bindChars) do
-								if iter_55_2.inAction or not iter_55_2.sync then
-									var_55_1 = false
-								end
-							end
-
-							if var_55_1 then
-								table = var_7
-								var_5.currentActionInfo = var_7.remove(var_5.actionInfos, 1)
-								ipairs = var_8
-
-								for iter_55_3, iter_55_4 in var_8(var_5.bindChars) do
-									iter_55_4.sync = false
-								end
-							end
-
-							goto label_55_0
+						for iter_55_1, iter_55_2 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+							var_55_0 = not iter_55_2.inAction and iter_55_2.sync or false
 						end
-					end
 
-					if not var_5.sync then
-						table = var_6
-						var_5.currentActionInfo = var_6.remove(var_5.actionInfos, 1)
+						if var_55_0 then
+							arg_55_0.chars[iter_55_0].currentActionInfo = table.remove(arg_55_0.chars[iter_55_0].actionInfos, 1)
+
+							for iter_55_3, iter_55_4 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+								iter_55_4.sync = false
+							end
+						end
+					elseif not arg_55_0.chars[iter_55_0].sync then
+						arg_55_0.chars[iter_55_0].currentActionInfo = table.remove(arg_55_0.chars[iter_55_0].actionInfos, 1)
 					end
 				end
 
-				::label_55_0::
+				if arg_55_0.chars[iter_55_0].currentActionInfo and not arg_55_0.chars[iter_55_0].currentActionInfo.sync then
+					arg_55_0:addCharAction(arg_55_0.chars[iter_55_0])
+				elseif arg_55_0.chars[iter_55_0].currentActionInfo and arg_55_0.chars[iter_55_0].currentActionInfo.sync and arg_55_0.chars[iter_55_0].bindIds then
+					arg_55_0:addCharAction(arg_55_0.chars[iter_55_0])
 
-				if var_5.currentActionInfo and not var_5.currentActionInfo.sync then
-					arg_55_0:addCharAction(var_5)
-				elseif var_5.currentActionInfo and var_5.currentActionInfo.sync and var_5.bindIds then
-					arg_55_0:addCharAction(var_5)
-
-					ipairs = var_6
-
-					for iter_55_5, iter_55_6 in var_6(var_5.bindChars) do
+					for iter_55_5, iter_55_6 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
 						if iter_55_6 and iter_55_6.currentActionInfo and iter_55_6.currentActionInfo.sync then
-							arg_55_0:addBindCharAction(var_5, iter_55_6)
+							arg_55_0:addBindCharAction(arg_55_0.chars[iter_55_0], iter_55_6)
 						end
 					end
-				elseif not var_5.currentActionInfo and #var_5.actionInfos == 0 and not var_5.inAction then
-					var_5.removeFlag = true
+				elseif not arg_55_0.chars[iter_55_0].currentActionInfo and #arg_55_0.chars[iter_55_0].actionInfos == 0 and not arg_55_0.chars[iter_55_0].inAction then
+					arg_55_0.chars[iter_55_0].removeFlag = true
 				end
 			end
 
 			return
 		end,
 		addBindCharAction = function(arg_56_0, arg_56_1, arg_56_2)
-			if arg_56_2.currentActionInfo.type == var_0_50 then
+			if arg_56_2.currentActionInfo.type == var_0_40 then
 				arg_56_2.moveToX = arg_56_1.moveToX
-
-				local var_56_0
-
-				if not arg_56_2.currentActionInfo.offsetX then
-					var_56_0 = 0
-				end
-
-				arg_56_2.offsetX = var_56_0
-			elseif arg_56_2.currentActionInfo.type == var_0_49 then
+				arg_56_2.offsetX = arg_56_2.currentActionInfo.offsetX or 0
+			elseif arg_56_2.currentActionInfo.type == var_0_39 then
 				-- block empty
-			elseif arg_56_2.currentActionInfo.type == var_0_51 then
+			elseif arg_56_2.currentActionInfo.type == var_0_41 then
 				-- block empty
 			end
 
@@ -2721,7 +3517,7 @@ local function var_0_60(arg_48_0, arg_48_1)
 			return
 		end,
 		addCharAction = function(arg_57_0, arg_57_1)
-			if arg_57_1.currentActionInfo.type == var_0_50 then
+			if arg_57_1.currentActionInfo.type == var_0_40 then
 				local var_57_0
 
 				if arg_57_1.currentActionInfo.moveToX then
@@ -2729,40 +3525,13 @@ local function var_0_60(arg_48_0, arg_48_1)
 				end
 
 				arg_57_1.moveToX = var_57_0 or 0
-
-				local var_57_1
-
-				if not arg_57_1.currentActionInfo.offsetX then
-					var_57_1 = 0
-				end
-
-				arg_57_1.offsetX = var_57_1
-			elseif var_2 == var_0_49 then
-				local var_57_2
-
-				if not arg_57_1.currentActionInfo.posX then
-					var_57_2 = 0
-				end
-
-				arg_57_1.posX = var_57_2
-
-				local var_57_3
-
-				if not arg_57_1.currentActionInfo.offsetX then
-					var_57_3 = 0
-				end
-
-				arg_57_1.offsetX = var_57_3
-			elseif var_2 == var_0_51 then
+				arg_57_1.offsetX = arg_57_1.currentActionInfo.offsetX or 0
+			elseif arg_57_1.currentActionInfo.type == var_0_39 then
+				arg_57_1.posX = arg_57_1.currentActionInfo.posX or 0
+				arg_57_1.offsetX = arg_57_1.currentActionInfo.offsetX or 0
+			elseif arg_57_1.currentActionInfo.type == var_0_41 then
 				arg_57_1.triggerName = arg_57_1.currentActionInfo.trigger
-
-				local var_57_4
-
-				if not arg_57_1.currentActionInfo.time then
-					var_57_4 = 0
-				end
-
-				arg_57_1.time = var_57_4
+				arg_57_1.time = arg_57_1.currentActionInfo.time or 0
 			end
 
 			arg_57_1.sync = arg_57_1.currentActionInfo.sync
@@ -2772,126 +3541,563 @@ local function var_0_60(arg_48_0, arg_48_1)
 			return
 		end,
 		createChar = function(arg_58_0, arg_58_1)
-			local var_58_0 = {}
+			local var_58_0 = Clone(arg_58_1) or arg_58_0:getRandomData()
 
-			Clone = var_2_10003
-
-			local var_58_1
-
-			if not var_2_10003(arg_58_1) then
-				var_58_1 = arg_58_0:getRandomData()
-			end
-
-			if not var_58_1 then
+			if not var_58_0 then
 				return
 			end
 
-			var_58_0.data = var_58_1
-			var_58_0.id = var_58_1.id
-			var_58_0.bindIds = var_58_1.bindIds
-			var_58_0.bindChars = {}
-			var_58_0.actionInfos = var_58_1.actions
-			var_58_0.speed = var_58_1.speed
+			;({}).data = var_58_0
+			;({}).id = var_58_0.id
+			;({}).bindIds = var_58_0.bindIds
+			;({}).bindChars = {}
+			;({}).actionInfos = var_58_0.actions
+			;({}).speed = var_58_0.speed
+			;({}).tf = arg_58_0:getCharTf(var_58_0.tf)
+			;({}).animator = GetComponent(findTF(({}).tf, "anim"), typeof(Animator))
+			;({}).dft = GetComponent(findTF(({}).tf, "anim"), typeof(DftAniEvent))
+			;({}).currentActionInfo = nil
+			;({}).posX = nil
+			;({}).moveToX = nil
+			;({}).offsetX = nil
+			;({}).triggerName = nil
+			;({}).time = nil
+			;({}).inAction = false
+			;({}).removeFlag = false
 
-			local var_58_2 = arg_58_0
+			if ({}).bindIds then
+				for iter_58_0 = 1, #({}).bindIds do
+					local var_58_1 = arg_58_0:createChar(arg_58_0:getCharDataById(({}).bindIds[iter_58_0]))
 
-			var_58_0.tf = arg_58_0.getCharTf(var_58_2, var_58_1.tf)
-			GetComponent = var_4
-			findTF = var_58_2
-
-			local var_58_3 = var_58_2(var_58_0.tf, "anim")
-
-			typeof = var_7
-			Animator = var_9
-			var_58_0.animator = var_4(var_58_3, var_7(var_9))
-			GetComponent = var_4
-			findTF = var_58_3
-
-			local var_58_4 = var_58_3(var_58_0.tf, "anim")
-
-			typeof = var_7
-			DftAniEvent = var_9
-			var_58_0.dft = var_4(var_58_4, var_7(var_9))
-			var_58_0.currentActionInfo = nil
-			var_58_0.posX = nil
-			var_58_0.moveToX = nil
-			var_58_0.offsetX = nil
-			var_58_0.triggerName = nil
-			var_58_0.time = nil
-			var_58_0.inAction = false
-			var_58_0.removeFlag = false
-
-			if var_58_0.bindIds then
-				for iter_58_0 = 1, #var_58_0.bindIds do
-					local var_58_5 = arg_58_0:createChar(arg_58_0:getCharDataById(var_58_0.bindIds[iter_58_0]))
-
-					table = var_9
-
-					var_9.insert(arg_58_0.chars, var_58_5)
-
-					table = var_9
-
-					var_9.insert(var_58_0.bindChars, var_58_5)
+					table.insert(arg_58_0.chars, var_58_1)
+					table.insert(({}).bindChars, var_58_1)
 				end
 			end
 
-			return var_58_0
+			return {}
 		end,
 		getRandomData = function(arg_59_0)
 			if arg_59_0.showChars and #arg_59_0.showChars > 0 then
-				table = var_1
-
-				local var_59_0 = var_1.remove
-				local var_59_1 = arg_59_0.showChars
-
-				math = var_2_10004
-
-				local var_59_2 = var_59_0(var_59_1, var_2_10004.random(1, #arg_59_0.showChars))
-
-				return arg_59_0:getCharDataById(var_59_2)
+				return arg_59_0:getCharDataById((table.remove(arg_59_0.showChars, math.random(1, #arg_59_0.showChars))))
 			end
 
 			return nil
 		end,
 		getCharDataById = function(arg_60_0, arg_60_1)
-			ipairs = var_2_10002
-
-			for iter_60_0, iter_60_1 in var_2_10002(var_0_52) do
+			for iter_60_0, iter_60_1 in ipairs(var_0_42) do
 				if iter_60_1.id == arg_60_1 then
-					Clone = var_7
-
-					return var_7(iter_60_1)
+					return Clone(iter_60_1)
 				end
 			end
 
 			return
 		end,
 		getCharTf = function(arg_61_0, arg_61_1)
-			tf = var_2_10002
-			instantiate = var_2_10004
-			findTF = var_2_10006
+			local var_61_0 = tf(instantiate(findTF(arg_61_0._charTpls, arg_61_1)))
 
-			local var_61_0 = var_2_10002(var_2_10004(var_2_10006(arg_61_0._charTpls, arg_61_1)))
-
-			SetParent = var_2_10003
-
-			var_2_10003(var_61_0, arg_61_0._content)
-
-			SetActive = var_2_10003
-
-			var_2_10003(var_61_0, false)
+			SetParent(var_61_0, arg_61_0._content)
+			SetActive(var_61_0, false)
 
 			return var_61_0
 		end,
 		clear = function(arg_62_0)
 			if arg_62_0.chars then
 				for iter_62_0 = #arg_62_0.chars, 1, -1 do
-					local var_62_0 = arg_62_0
-					local var_62_1 = arg_62_0.removeChar
+					arg_62_0:removeChar(table.remove(arg_62_0.chars, iter_62_0))
+				end
 
-					table = var_2_10008
+				arg_62_0.chars = {}
+			end
 
-					var_62_1(var_62_0, var_2_10008.remove(arg_62_0.chars, iter_62_0))
+			return
+		end
+	}).ctor({
+		ctor = function(arg_49_0)
+			arg_49_0._charTpls = findTF(arg_48_0, "charTpls")
+			arg_49_0._content = findTF(arg_48_0, "charContainer/content")
+			arg_49_0._event = arg_48_1
+
+			return
+		end,
+		start = function(arg_50_0)
+			arg_50_0:clear()
+
+			arg_50_0.chars = {}
+			arg_50_0.nextTime = math.random(var_0_43[1], var_0_43[2])
+			arg_50_0.showChars = Clone(var_0_44)
+
+			return
+		end,
+		step = function(arg_51_0)
+			if arg_51_0.nextTime <= 0 and #arg_51_0.showChars > 0 then
+				table.insert(arg_51_0.chars, arg_51_0:createChar())
+
+				arg_51_0.nextTime = math.random(var_0_43[1], var_0_43[2])
+			else
+				arg_51_0.nextTime = arg_51_0.nextTime - Time.deltaTime
+			end
+
+			arg_51_0:setCharAction()
+
+			for iter_51_0 = #arg_51_0.chars, 1, -1 do
+				arg_51_0:stepChar(arg_51_0.chars[iter_51_0])
+
+				if arg_51_0.chars[iter_51_0].removeFlag then
+					arg_51_0:removeChar(table.remove(arg_51_0.chars, iter_51_0))
+				end
+			end
+
+			return
+		end,
+		stepChar = function(arg_52_0, arg_52_1)
+			local var_52_0 = false
+
+			if arg_52_1.posX then
+				local var_52_1 = arg_52_1.offsetX or 0
+				local var_52_2 = arg_52_1.posX + var_52_1
+
+				arg_52_1.tf.anchoredPosition = Vector2(var_52_2, 0)
+
+				setActive(arg_52_1.tf, true)
+
+				arg_52_1.posX = nil
+				arg_52_1.offsetX = nil
+			end
+
+			if arg_52_1.moveToX then
+				arg_52_1.tf.anchoredPosition = Vector3(arg_52_1.tf.anchoredPosition.x + math.sign(arg_52_1.moveToX + arg_52_1.offsetX - arg_52_1.tf.anchoredPosition.x) * arg_52_1.speed, 0)
+
+				if arg_52_1.tf.anchoredPosition.x == arg_52_1.moveToX + arg_52_1.offsetX or math.sign(arg_52_1.tf.anchoredPosition.x - (arg_52_1.moveToX + arg_52_1.offsetX)) ~= math.sign(arg_52_1.tf.anchoredPosition.x - (arg_52_1.moveToX + arg_52_1.offsetX)) then
+					arg_52_1.moveToX = nil
+					arg_52_1.offsetX = nil
+				else
+					var_52_0 = true
+				end
+			end
+
+			if arg_52_1.triggerName or arg_52_1.time then
+				if arg_52_1.triggerName and arg_52_1.animator then
+					arg_52_1.animator:SetTrigger(arg_52_1.triggerName)
+
+					arg_52_1.triggerName = nil
+				end
+
+				arg_52_1.time = arg_52_1.time - Time.deltaTime
+
+				if arg_52_1.triggerName == nil and arg_52_1.time <= 0 then
+					arg_52_1.time = nil
+				else
+					var_52_0 = true
+				end
+			end
+
+			arg_52_1.inAction = var_52_0
+
+			return
+		end,
+		getRandomMoveX = function(arg_53_0, arg_53_1, arg_53_2)
+			return arg_53_1 + math.random(0, arg_53_2 - arg_53_1)
+		end,
+		removeChar = function(arg_54_0, arg_54_1)
+			if arg_54_1.bindChars then
+				arg_54_1.bindChars = {}
+			end
+
+			destroy(arg_54_1.tf)
+
+			return
+		end,
+		setCharAction = function(arg_55_0)
+			for iter_55_0 = 1, #arg_55_0.chars do
+				if not arg_55_0.chars[iter_55_0].currentActionInfo and #arg_55_0.chars[iter_55_0].actionInfos > 0 and not arg_55_0.chars[iter_55_0].inAction then
+					if arg_55_0.chars[iter_55_0].sync and arg_55_0.chars[iter_55_0].bindIds and #arg_55_0.chars[iter_55_0].bindIds > 0 then
+						local var_55_0 = true
+
+						for iter_55_1, iter_55_2 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+							var_55_0 = not iter_55_2.inAction and iter_55_2.sync or false
+						end
+
+						if var_55_0 then
+							arg_55_0.chars[iter_55_0].currentActionInfo = table.remove(arg_55_0.chars[iter_55_0].actionInfos, 1)
+
+							for iter_55_3, iter_55_4 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+								iter_55_4.sync = false
+							end
+						end
+					elseif not arg_55_0.chars[iter_55_0].sync then
+						arg_55_0.chars[iter_55_0].currentActionInfo = table.remove(arg_55_0.chars[iter_55_0].actionInfos, 1)
+					end
+				end
+
+				if arg_55_0.chars[iter_55_0].currentActionInfo and not arg_55_0.chars[iter_55_0].currentActionInfo.sync then
+					arg_55_0:addCharAction(arg_55_0.chars[iter_55_0])
+				elseif arg_55_0.chars[iter_55_0].currentActionInfo and arg_55_0.chars[iter_55_0].currentActionInfo.sync and arg_55_0.chars[iter_55_0].bindIds then
+					arg_55_0:addCharAction(arg_55_0.chars[iter_55_0])
+
+					for iter_55_5, iter_55_6 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+						if iter_55_6 and iter_55_6.currentActionInfo and iter_55_6.currentActionInfo.sync then
+							arg_55_0:addBindCharAction(arg_55_0.chars[iter_55_0], iter_55_6)
+						end
+					end
+				elseif not arg_55_0.chars[iter_55_0].currentActionInfo and #arg_55_0.chars[iter_55_0].actionInfos == 0 and not arg_55_0.chars[iter_55_0].inAction then
+					arg_55_0.chars[iter_55_0].removeFlag = true
+				end
+			end
+
+			return
+		end,
+		addBindCharAction = function(arg_56_0, arg_56_1, arg_56_2)
+			if arg_56_2.currentActionInfo.type == var_0_40 then
+				arg_56_2.moveToX = arg_56_1.moveToX
+				arg_56_2.offsetX = arg_56_2.currentActionInfo.offsetX or 0
+			elseif arg_56_2.currentActionInfo.type == var_0_39 then
+				-- block empty
+			elseif arg_56_2.currentActionInfo.type == var_0_41 then
+				-- block empty
+			end
+
+			arg_56_2.sync = arg_56_2.currentActionInfo.sync
+			arg_56_2.currentActionInfo = nil
+			arg_56_2.inAction = true
+
+			return
+		end,
+		addCharAction = function(arg_57_0, arg_57_1)
+			if arg_57_1.currentActionInfo.type == var_0_40 then
+				local var_57_0
+
+				if arg_57_1.currentActionInfo.moveToX then
+					var_57_0 = arg_57_0:getRandomMoveX(arg_57_1.currentActionInfo.moveToX[1], arg_57_1.currentActionInfo.moveToX[2])
+				end
+
+				arg_57_1.moveToX = var_57_0 or 0
+				arg_57_1.offsetX = arg_57_1.currentActionInfo.offsetX or 0
+			elseif arg_57_1.currentActionInfo.type == var_0_39 then
+				arg_57_1.posX = arg_57_1.currentActionInfo.posX or 0
+				arg_57_1.offsetX = arg_57_1.currentActionInfo.offsetX or 0
+			elseif arg_57_1.currentActionInfo.type == var_0_41 then
+				arg_57_1.triggerName = arg_57_1.currentActionInfo.trigger
+				arg_57_1.time = arg_57_1.currentActionInfo.time or 0
+			end
+
+			arg_57_1.sync = arg_57_1.currentActionInfo.sync
+			arg_57_1.inAction = true
+			arg_57_1.currentActionInfo = nil
+
+			return
+		end,
+		createChar = function(arg_58_0, arg_58_1)
+			local var_58_0 = Clone(arg_58_1) or arg_58_0:getRandomData()
+
+			if not var_58_0 then
+				return
+			end
+
+			;({}).data = var_58_0
+			;({}).id = var_58_0.id
+			;({}).bindIds = var_58_0.bindIds
+			;({}).bindChars = {}
+			;({}).actionInfos = var_58_0.actions
+			;({}).speed = var_58_0.speed
+			;({}).tf = arg_58_0:getCharTf(var_58_0.tf)
+			;({}).animator = GetComponent(findTF(({}).tf, "anim"), typeof(Animator))
+			;({}).dft = GetComponent(findTF(({}).tf, "anim"), typeof(DftAniEvent))
+			;({}).currentActionInfo = nil
+			;({}).posX = nil
+			;({}).moveToX = nil
+			;({}).offsetX = nil
+			;({}).triggerName = nil
+			;({}).time = nil
+			;({}).inAction = false
+			;({}).removeFlag = false
+
+			if ({}).bindIds then
+				for iter_58_0 = 1, #({}).bindIds do
+					local var_58_1 = arg_58_0:createChar(arg_58_0:getCharDataById(({}).bindIds[iter_58_0]))
+
+					table.insert(arg_58_0.chars, var_58_1)
+					table.insert(({}).bindChars, var_58_1)
+				end
+			end
+
+			return {}
+		end,
+		getRandomData = function(arg_59_0)
+			if arg_59_0.showChars and #arg_59_0.showChars > 0 then
+				return arg_59_0:getCharDataById((table.remove(arg_59_0.showChars, math.random(1, #arg_59_0.showChars))))
+			end
+
+			return nil
+		end,
+		getCharDataById = function(arg_60_0, arg_60_1)
+			for iter_60_0, iter_60_1 in ipairs(var_0_42) do
+				if iter_60_1.id == arg_60_1 then
+					return Clone(iter_60_1)
+				end
+			end
+
+			return
+		end,
+		getCharTf = function(arg_61_0, arg_61_1)
+			local var_61_0 = tf(instantiate(findTF(arg_61_0._charTpls, arg_61_1)))
+
+			SetParent(var_61_0, arg_61_0._content)
+			SetActive(var_61_0, false)
+
+			return var_61_0
+		end,
+		clear = function(arg_62_0)
+			if arg_62_0.chars then
+				for iter_62_0 = #arg_62_0.chars, 1, -1 do
+					arg_62_0:removeChar(table.remove(arg_62_0.chars, iter_62_0))
+				end
+
+				arg_62_0.chars = {}
+			end
+
+			return
+		end
+	})
+
+	return {
+		ctor = function(arg_49_0)
+			arg_49_0._charTpls = findTF(arg_48_0, "charTpls")
+			arg_49_0._content = findTF(arg_48_0, "charContainer/content")
+			arg_49_0._event = arg_48_1
+
+			return
+		end,
+		start = function(arg_50_0)
+			arg_50_0:clear()
+
+			arg_50_0.chars = {}
+			arg_50_0.nextTime = math.random(var_0_43[1], var_0_43[2])
+			arg_50_0.showChars = Clone(var_0_44)
+
+			return
+		end,
+		step = function(arg_51_0)
+			if arg_51_0.nextTime <= 0 and #arg_51_0.showChars > 0 then
+				table.insert(arg_51_0.chars, arg_51_0:createChar())
+
+				arg_51_0.nextTime = math.random(var_0_43[1], var_0_43[2])
+			else
+				arg_51_0.nextTime = arg_51_0.nextTime - Time.deltaTime
+			end
+
+			arg_51_0:setCharAction()
+
+			for iter_51_0 = #arg_51_0.chars, 1, -1 do
+				arg_51_0:stepChar(arg_51_0.chars[iter_51_0])
+
+				if arg_51_0.chars[iter_51_0].removeFlag then
+					arg_51_0:removeChar(table.remove(arg_51_0.chars, iter_51_0))
+				end
+			end
+
+			return
+		end,
+		stepChar = function(arg_52_0, arg_52_1)
+			local var_52_0 = false
+
+			if arg_52_1.posX then
+				local var_52_1 = arg_52_1.offsetX or 0
+				local var_52_2 = arg_52_1.posX + var_52_1
+
+				arg_52_1.tf.anchoredPosition = Vector2(var_52_2, 0)
+
+				setActive(arg_52_1.tf, true)
+
+				arg_52_1.posX = nil
+				arg_52_1.offsetX = nil
+			end
+
+			if arg_52_1.moveToX then
+				arg_52_1.tf.anchoredPosition = Vector3(arg_52_1.tf.anchoredPosition.x + math.sign(arg_52_1.moveToX + arg_52_1.offsetX - arg_52_1.tf.anchoredPosition.x) * arg_52_1.speed, 0)
+
+				if arg_52_1.tf.anchoredPosition.x == arg_52_1.moveToX + arg_52_1.offsetX or math.sign(arg_52_1.tf.anchoredPosition.x - (arg_52_1.moveToX + arg_52_1.offsetX)) ~= math.sign(arg_52_1.tf.anchoredPosition.x - (arg_52_1.moveToX + arg_52_1.offsetX)) then
+					arg_52_1.moveToX = nil
+					arg_52_1.offsetX = nil
+				else
+					var_52_0 = true
+				end
+			end
+
+			if arg_52_1.triggerName or arg_52_1.time then
+				if arg_52_1.triggerName and arg_52_1.animator then
+					arg_52_1.animator:SetTrigger(arg_52_1.triggerName)
+
+					arg_52_1.triggerName = nil
+				end
+
+				arg_52_1.time = arg_52_1.time - Time.deltaTime
+
+				if arg_52_1.triggerName == nil and arg_52_1.time <= 0 then
+					arg_52_1.time = nil
+				else
+					var_52_0 = true
+				end
+			end
+
+			arg_52_1.inAction = var_52_0
+
+			return
+		end,
+		getRandomMoveX = function(arg_53_0, arg_53_1, arg_53_2)
+			return arg_53_1 + math.random(0, arg_53_2 - arg_53_1)
+		end,
+		removeChar = function(arg_54_0, arg_54_1)
+			if arg_54_1.bindChars then
+				arg_54_1.bindChars = {}
+			end
+
+			destroy(arg_54_1.tf)
+
+			return
+		end,
+		setCharAction = function(arg_55_0)
+			for iter_55_0 = 1, #arg_55_0.chars do
+				if not arg_55_0.chars[iter_55_0].currentActionInfo and #arg_55_0.chars[iter_55_0].actionInfos > 0 and not arg_55_0.chars[iter_55_0].inAction then
+					if arg_55_0.chars[iter_55_0].sync and arg_55_0.chars[iter_55_0].bindIds and #arg_55_0.chars[iter_55_0].bindIds > 0 then
+						local var_55_0 = true
+
+						for iter_55_1, iter_55_2 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+							var_55_0 = not iter_55_2.inAction and iter_55_2.sync or false
+						end
+
+						if var_55_0 then
+							arg_55_0.chars[iter_55_0].currentActionInfo = table.remove(arg_55_0.chars[iter_55_0].actionInfos, 1)
+
+							for iter_55_3, iter_55_4 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+								iter_55_4.sync = false
+							end
+						end
+					elseif not arg_55_0.chars[iter_55_0].sync then
+						arg_55_0.chars[iter_55_0].currentActionInfo = table.remove(arg_55_0.chars[iter_55_0].actionInfos, 1)
+					end
+				end
+
+				if arg_55_0.chars[iter_55_0].currentActionInfo and not arg_55_0.chars[iter_55_0].currentActionInfo.sync then
+					arg_55_0:addCharAction(arg_55_0.chars[iter_55_0])
+				elseif arg_55_0.chars[iter_55_0].currentActionInfo and arg_55_0.chars[iter_55_0].currentActionInfo.sync and arg_55_0.chars[iter_55_0].bindIds then
+					arg_55_0:addCharAction(arg_55_0.chars[iter_55_0])
+
+					for iter_55_5, iter_55_6 in ipairs(arg_55_0.chars[iter_55_0].bindChars) do
+						if iter_55_6 and iter_55_6.currentActionInfo and iter_55_6.currentActionInfo.sync then
+							arg_55_0:addBindCharAction(arg_55_0.chars[iter_55_0], iter_55_6)
+						end
+					end
+				elseif not arg_55_0.chars[iter_55_0].currentActionInfo and #arg_55_0.chars[iter_55_0].actionInfos == 0 and not arg_55_0.chars[iter_55_0].inAction then
+					arg_55_0.chars[iter_55_0].removeFlag = true
+				end
+			end
+
+			return
+		end,
+		addBindCharAction = function(arg_56_0, arg_56_1, arg_56_2)
+			if arg_56_2.currentActionInfo.type == var_0_40 then
+				arg_56_2.moveToX = arg_56_1.moveToX
+				arg_56_2.offsetX = arg_56_2.currentActionInfo.offsetX or 0
+			elseif arg_56_2.currentActionInfo.type == var_0_39 then
+				-- block empty
+			elseif arg_56_2.currentActionInfo.type == var_0_41 then
+				-- block empty
+			end
+
+			arg_56_2.sync = arg_56_2.currentActionInfo.sync
+			arg_56_2.currentActionInfo = nil
+			arg_56_2.inAction = true
+
+			return
+		end,
+		addCharAction = function(arg_57_0, arg_57_1)
+			if arg_57_1.currentActionInfo.type == var_0_40 then
+				local var_57_0
+
+				if arg_57_1.currentActionInfo.moveToX then
+					var_57_0 = arg_57_0:getRandomMoveX(arg_57_1.currentActionInfo.moveToX[1], arg_57_1.currentActionInfo.moveToX[2])
+				end
+
+				arg_57_1.moveToX = var_57_0 or 0
+				arg_57_1.offsetX = arg_57_1.currentActionInfo.offsetX or 0
+			elseif arg_57_1.currentActionInfo.type == var_0_39 then
+				arg_57_1.posX = arg_57_1.currentActionInfo.posX or 0
+				arg_57_1.offsetX = arg_57_1.currentActionInfo.offsetX or 0
+			elseif arg_57_1.currentActionInfo.type == var_0_41 then
+				arg_57_1.triggerName = arg_57_1.currentActionInfo.trigger
+				arg_57_1.time = arg_57_1.currentActionInfo.time or 0
+			end
+
+			arg_57_1.sync = arg_57_1.currentActionInfo.sync
+			arg_57_1.inAction = true
+			arg_57_1.currentActionInfo = nil
+
+			return
+		end,
+		createChar = function(arg_58_0, arg_58_1)
+			local var_58_0 = Clone(arg_58_1) or arg_58_0:getRandomData()
+
+			if not var_58_0 then
+				return
+			end
+
+			;({}).data = var_58_0
+			;({}).id = var_58_0.id
+			;({}).bindIds = var_58_0.bindIds
+			;({}).bindChars = {}
+			;({}).actionInfos = var_58_0.actions
+			;({}).speed = var_58_0.speed
+			;({}).tf = arg_58_0:getCharTf(var_58_0.tf)
+			;({}).animator = GetComponent(findTF(({}).tf, "anim"), typeof(Animator))
+			;({}).dft = GetComponent(findTF(({}).tf, "anim"), typeof(DftAniEvent))
+			;({}).currentActionInfo = nil
+			;({}).posX = nil
+			;({}).moveToX = nil
+			;({}).offsetX = nil
+			;({}).triggerName = nil
+			;({}).time = nil
+			;({}).inAction = false
+			;({}).removeFlag = false
+
+			if ({}).bindIds then
+				for iter_58_0 = 1, #({}).bindIds do
+					local var_58_1 = arg_58_0:createChar(arg_58_0:getCharDataById(({}).bindIds[iter_58_0]))
+
+					table.insert(arg_58_0.chars, var_58_1)
+					table.insert(({}).bindChars, var_58_1)
+				end
+			end
+
+			return {}
+		end,
+		getRandomData = function(arg_59_0)
+			if arg_59_0.showChars and #arg_59_0.showChars > 0 then
+				return arg_59_0:getCharDataById((table.remove(arg_59_0.showChars, math.random(1, #arg_59_0.showChars))))
+			end
+
+			return nil
+		end,
+		getCharDataById = function(arg_60_0, arg_60_1)
+			for iter_60_0, iter_60_1 in ipairs(var_0_42) do
+				if iter_60_1.id == arg_60_1 then
+					return Clone(iter_60_1)
+				end
+			end
+
+			return
+		end,
+		getCharTf = function(arg_61_0, arg_61_1)
+			local var_61_0 = tf(instantiate(findTF(arg_61_0._charTpls, arg_61_1)))
+
+			SetParent(var_61_0, arg_61_0._content)
+			SetActive(var_61_0, false)
+
+			return var_61_0
+		end,
+		clear = function(arg_62_0)
+			if arg_62_0.chars then
+				for iter_62_0 = #arg_62_0.chars, 1, -1 do
+					arg_62_0:removeChar(table.remove(arg_62_0.chars, iter_62_0))
 				end
 
 				arg_62_0.chars = {}
@@ -2900,21 +4106,17 @@ local function var_0_60(arg_48_0, arg_48_1)
 			return
 		end
 	}
-
-	var_2.ctor(var_48_0)
-
-	return var_2
 end
 
-function var_0_1.getUIName(arg_63_0)
+function var_0_0.getUIName(arg_63_0)
 	return "CatchTreasureGameUI"
 end
 
-function var_0_1.getBGM(arg_64_0)
-	return var_0_2
+function var_0_0.getBGM(arg_64_0)
+	return var_0_1
 end
 
-function var_0_1.didEnter(arg_65_0)
+function var_0_0.didEnter(arg_65_0)
 	arg_65_0:initEvent()
 	arg_65_0:initData()
 	arg_65_0:initUI()
@@ -2925,17 +4127,13 @@ function var_0_1.didEnter(arg_65_0)
 	return
 end
 
-function var_0_1.initEvent(arg_66_0)
-	arg_66_0:bind(var_0_11, function(arg_67_0, arg_67_1, arg_67_2)
+function var_0_0.initEvent(arg_66_0)
+	arg_66_0:bind(var_0_10, function(arg_67_0, arg_67_1, arg_67_2)
 		if arg_66_0.itemController then
-			local var_67_0 = arg_66_0.itemController
-
-			var_3.addItemDone(var_67_0, arg_67_1, arg_67_2)
+			arg_66_0.itemController:addItemDone(arg_67_1, arg_67_2)
 		end
 
-		local var_67_1 = arg_66_0
-
-		var_3.addScore(var_67_1, arg_67_1.data.score, arg_67_1.data.time)
+		arg_66_0:addScore(arg_67_1.data.score, arg_67_1.data.time)
 
 		return
 	end)
@@ -2943,26 +4141,17 @@ function var_0_1.initEvent(arg_66_0)
 	return
 end
 
-function var_0_1.initData(arg_68_0)
-	pg = var_1_10001
-	arg_68_0.dropData = var_1_10001.mini_game[arg_68_0:GetMGData().id].simple_config_data.drop_ids
-	Application = var_1
+function var_0_0.initData(arg_68_0)
+	arg_68_0.dropData = pg.mini_game[arg_68_0:GetMGData().id].simple_config_data.drop_ids
 
-	local var_68_0
+	local var_68_0 = Application.targetFrameRate or 60
 
-	if not var_1.targetFrameRate then
+	if var_68_0 > 60 then
 		var_68_0 = 60
 	end
 
-	if 60 < var_68_0 then
-		var_68_0 = 60
-	end
-
-	Timer = var_2
-	arg_68_0.timer = var_2.New(function()
-		local var_69_0 = arg_68_0
-
-		var_0.onTimer(var_69_0)
+	arg_68_0.timer = Timer.New(function()
+		arg_68_0:onTimer()
 
 		return
 	end, 1 / var_68_0, -1)
@@ -2970,660 +4159,249 @@ function var_0_1.initData(arg_68_0)
 	return
 end
 
-function var_0_1.initUI(arg_70_0)
-	findTF = var_1_10001
-	arg_70_0.backSceneTf = var_1_10001(arg_70_0._tf, "scene_container/scene_background")
-	findTF = var_1
-	arg_70_0.sceneTf = var_1(arg_70_0._tf, "scene_container/scene")
-	findTF = var_1
-	arg_70_0.bgTf = var_1(arg_70_0._tf, "bg")
-	findTF = var_1
-	arg_70_0.clickMask = var_1(arg_70_0._tf, "clickMask")
-	findTF = var_1
-	arg_70_0.countUI = var_1(arg_70_0._tf, "pop/CountUI")
-	GetComponent = var_1
-	findTF = var_3
+function var_0_0.initUI(arg_70_0)
+	arg_70_0.backSceneTf = findTF(arg_70_0._tf, "scene_container/scene_background")
+	arg_70_0.sceneTf = findTF(arg_70_0._tf, "scene_container/scene")
+	arg_70_0.bgTf = findTF(arg_70_0._tf, "bg")
+	arg_70_0.clickMask = findTF(arg_70_0._tf, "clickMask")
+	arg_70_0.countUI = findTF(arg_70_0._tf, "pop/CountUI")
+	arg_70_0.countAnimator = GetComponent(findTF(arg_70_0.countUI, "count"), typeof(Animator))
+	arg_70_0.countDft = GetOrAddComponent(findTF(arg_70_0.countUI, "count"), typeof(DftAniEvent))
 
-	local var_70_0 = var_3(arg_70_0.countUI, "count")
-
-	typeof = var_4
-	Animator = var_6
-	arg_70_0.countAnimator = var_1(var_70_0, var_4(var_6))
-	GetOrAddComponent = var_1
-	findTF = var_70_0
-
-	local var_70_1 = var_70_0(arg_70_0.countUI, "count")
-
-	typeof = var_4
-	DftAniEvent = var_6
-	arg_70_0.countDft = var_1(var_70_1, var_4(var_6))
-
-	local var_70_2 = arg_70_0.countDft
-
-	var_1.SetTriggerEvent(var_70_2, function()
+	arg_70_0.countDft:SetTriggerEvent(function()
 		return
 	end)
-
-	local var_70_3 = arg_70_0.countDft
-
-	var_1.SetEndEvent(var_70_3, function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_70_0.countUI, false)
-
-		local var_72_0 = arg_70_0
-
-		var_0.gameStart(var_72_0)
+	arg_70_0.countDft:SetEndEvent(function()
+		setActive(arg_70_0.countUI, false)
+		arg_70_0:gameStart()
 
 		return
 	end)
+	SetActive(arg_70_0.countUI, false)
 
-	SetActive = var_1
+	arg_70_0.leaveUI = findTF(arg_70_0._tf, "pop/LeaveUI")
 
-	var_1(arg_70_0.countUI, false)
-
-	findTF = var_1
-	arg_70_0.leaveUI = var_1(arg_70_0._tf, "pop/LeaveUI")
-	GetComponent = var_1
-	findTF = var_3
-
-	local var_70_4 = var_3(arg_70_0.leaveUI, "ad/desc")
-
-	typeof = var_4
-	Image = var_6
-
-	local var_70_5 = var_1(var_70_4, var_4(var_6))
-
-	var_1.SetNativeSize(var_70_5)
-
-	onButton = var_1
-
-	local var_70_6 = arg_70_0
-
-	findTF = var_4
-
-	local var_70_7 = var_4(arg_70_0.leaveUI, "ad/btnOk")
-
-	local function var_70_8()
-		local var_73_0 = arg_70_0
-
-		var_0.resumeGame(var_73_0)
-
-		local var_73_1 = arg_70_0
-
-		var_0.onGameOver(var_73_1, false)
+	GetComponent(findTF(arg_70_0.leaveUI, "ad/desc"), typeof(Image)):SetNativeSize()
+	onButton(arg_70_0, findTF(arg_70_0.leaveUI, "ad/btnOk"), function()
+		arg_70_0:resumeGame()
+		arg_70_0:onGameOver(false)
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_70_6, var_70_7, var_70_8, var_6)
-
-	onButton = var_1
-
-	local var_70_9 = arg_70_0
-
-	findTF = var_70_7
-
-	local var_70_10 = var_70_7(arg_70_0.leaveUI, "ad/btnCancel")
-
-	local function var_70_11()
-		local var_74_0 = arg_70_0
-
-		var_0.resumeGame(var_74_0)
+	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.leaveUI, "ad/btnCancel"), function()
+		arg_70_0:resumeGame()
 
 		return
-	end
+	end, SFX_CANCEL)
+	SetActive(arg_70_0.leaveUI, false)
 
-	SFX_CANCEL = var_6
+	arg_70_0.pauseUI = findTF(arg_70_0._tf, "pop/pauseUI")
 
-	var_1(var_70_9, var_70_10, var_70_11, var_6)
-
-	SetActive = var_1
-
-	var_1(arg_70_0.leaveUI, false)
-
-	findTF = var_1
-	arg_70_0.pauseUI = var_1(arg_70_0._tf, "pop/pauseUI")
-	GetComponent = var_1
-	findTF = var_3
-
-	local var_70_12 = var_3(arg_70_0.pauseUI, "ad/desc")
-
-	typeof = var_4
-	Image = var_6
-
-	local var_70_13 = var_1(var_70_12, var_4(var_6))
-
-	var_1.SetNativeSize(var_70_13)
-
-	onButton = var_1
-
-	local var_70_14 = arg_70_0
-
-	findTF = var_4
-
-	local var_70_15 = var_4(arg_70_0.pauseUI, "ad/btnOk")
-
-	local function var_70_16()
-		setActive = var_2_10000
-
-		var_2_10000(arg_70_0.pauseUI, false)
-
-		local var_75_0 = arg_70_0
-
-		var_0.resumeGame(var_75_0)
+	GetComponent(findTF(arg_70_0.pauseUI, "ad/desc"), typeof(Image)):SetNativeSize()
+	onButton(arg_70_0, findTF(arg_70_0.pauseUI, "ad/btnOk"), function()
+		setActive(arg_70_0.pauseUI, false)
+		arg_70_0:resumeGame()
 
 		return
-	end
+	end, SFX_CANCEL)
+	SetActive(arg_70_0.pauseUI, false)
 
-	SFX_CANCEL = var_6
+	arg_70_0.settlementUI = findTF(arg_70_0._tf, "pop/SettleMentUI")
 
-	var_1(var_70_14, var_70_15, var_70_16, var_6)
-
-	SetActive = var_1
-
-	var_1(arg_70_0.pauseUI, false)
-
-	findTF = var_1
-	arg_70_0.settlementUI = var_1(arg_70_0._tf, "pop/SettleMentUI")
-	onButton = var_1
-
-	local var_70_17 = arg_70_0
-
-	findTF = var_4
-
-	local var_70_18 = var_4(arg_70_0.settlementUI, "ad/btnOver")
-
-	local function var_70_19()
-		setActive = var_2_10000
-
-		var_2_10000(arg_70_0.settlementUI, false)
-
-		local var_76_0 = arg_70_0
-
-		var_0.openMenuUI(var_76_0)
+	onButton(arg_70_0, findTF(arg_70_0.settlementUI, "ad/btnOver"), function()
+		setActive(arg_70_0.settlementUI, false)
+		arg_70_0:openMenuUI()
 
 		return
-	end
+	end, SFX_CANCEL)
+	SetActive(arg_70_0.settlementUI, false)
 
-	SFX_CANCEL = var_6
+	arg_70_0.menuUI = findTF(arg_70_0._tf, "pop/menuUI")
+	arg_70_0.battleScrollRect = GetComponent(findTF(arg_70_0.menuUI, "battList"), typeof(ScrollRect))
+	arg_70_0.titleDesc = findTF(arg_70_0.menuUI, "desc")
 
-	var_1(var_70_17, var_70_18, var_70_19, var_6)
-
-	SetActive = var_1
-
-	var_1(arg_70_0.settlementUI, false)
-
-	findTF = var_1
-	arg_70_0.menuUI = var_1(arg_70_0._tf, "pop/menuUI")
-	GetComponent = var_1
-	findTF = var_3
-
-	local var_70_20 = var_3(arg_70_0.menuUI, "battList")
-
-	typeof = var_4
-	ScrollRect = var_6
-	arg_70_0.battleScrollRect = var_1(var_70_20, var_4(var_6))
-	findTF = var_1
-	arg_70_0.titleDesc = var_1(arg_70_0.menuUI, "desc")
-	GetComponent = var_1
-
-	local var_70_21 = arg_70_0.titleDesc
-
-	typeof = var_4
-	Image = var_6
-
-	local var_70_22 = var_1(var_70_21, var_4(var_6))
-
-	var_1.SetNativeSize(var_70_22)
+	GetComponent(arg_70_0.titleDesc, typeof(Image)):SetNativeSize()
 
 	arg_70_0.totalTimes = arg_70_0:getGameTotalTime()
 
-	local var_70_23 = arg_70_0:getGameUsedTimes() - 4 < 0 and 0 or arg_70_0:getGameUsedTimes() - 4
-
-	scrollTo = var_2
-
-	var_2(arg_70_0.battleScrollRect, 0, 1 - var_70_23 / (arg_70_0.totalTimes - 4))
-
-	onButton = var_2
-
-	local var_70_24 = arg_70_0
-
-	findTF = var_5
-
-	local var_70_25 = var_5(arg_70_0.menuUI, "rightPanelBg/arrowUp")
-
-	local function var_70_26()
+	scrollTo(arg_70_0.battleScrollRect, 0, 1 - (arg_70_0:getGameUsedTimes() - 4 < 0 and 0 or arg_70_0:getGameUsedTimes() - 4) / (arg_70_0.totalTimes - 4))
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "rightPanelBg/arrowUp"), function()
 		local var_77_0 = arg_70_0.battleScrollRect.normalizedPosition.y + 1 / (arg_70_0.totalTimes - 4)
 
-		if 1 < var_77_0 then
+		if arg_70_0.battleScrollRect.normalizedPosition.y + 1 / (arg_70_0.totalTimes - 4) > 1 then
 			var_77_0 = 1
 		end
 
-		scrollTo = var_1
-
-		var_1(arg_70_0.battleScrollRect, 0, var_77_0)
+		scrollTo(arg_70_0.battleScrollRect, 0, var_77_0)
 
 		return
-	end
-
-	SFX_CANCEL = var_7
-
-	var_2(var_70_24, var_70_25, var_70_26, var_7)
-
-	onButton = var_2
-
-	local var_70_27 = arg_70_0
-
-	findTF = var_70_25
-
-	local var_70_28 = var_70_25(arg_70_0.menuUI, "rightPanelBg/arrowDown")
-
-	local function var_70_29()
-		local var_78_0
+	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "rightPanelBg/arrowDown"), function()
+		local var_78_0 = arg_70_0.battleScrollRect.normalizedPosition.y - 1 / (arg_70_0.totalTimes - 4)
 
 		if arg_70_0.battleScrollRect.normalizedPosition.y - 1 / (arg_70_0.totalTimes - 4) < 0 then
 			var_78_0 = 0
 		end
 
-		scrollTo = var_1
-
-		var_1(arg_70_0.battleScrollRect, 0, var_78_0)
+		scrollTo(arg_70_0.battleScrollRect, 0, var_78_0)
 
 		return
-	end
-
-	SFX_CANCEL = var_7
-
-	var_2(var_70_27, var_70_28, var_70_29, var_7)
-
-	onButton = var_2
-
-	local var_70_30 = arg_70_0
-
-	findTF = var_70_28
-
-	local var_70_31 = var_70_28(arg_70_0.menuUI, "btnBack")
-
-	local function var_70_32()
-		local var_79_0 = arg_70_0
-
-		var_0.closeView(var_79_0)
+	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "btnBack"), function()
+		arg_70_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_7
-
-	var_2(var_70_30, var_70_31, var_70_32, var_7)
-
-	onButton = var_2
-
-	local var_70_33 = arg_70_0
-
-	findTF = var_70_31
-
-	local var_70_34 = var_70_31(arg_70_0.menuUI, "btnRule")
-
-	local function var_70_35()
-		pg = var_2_10000
-
-		local var_80_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_80_1 = var_0.ShowMsgBox
-		local var_80_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_80_2.type = var_2_10004
-		pg = var_2_10004
-		var_80_2.helps = var_2_10004.gametip[var_0_10].tip
-
-		var_80_1(var_80_0, var_80_2)
+	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "btnRule"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip[var_0_9].tip
+		})
 
 		return
-	end
-
-	SFX_CANCEL = var_7
-
-	var_2(var_70_33, var_70_34, var_70_35, var_7)
-
-	onButton = var_2
-
-	local var_70_36 = arg_70_0
-
-	findTF = var_70_34
-
-	local var_70_37 = var_70_34(arg_70_0.menuUI, "btnStart")
-
-	local function var_70_38()
-		setActive = var_2_10000
-
-		var_2_10000(arg_70_0.menuUI, false)
-
-		local var_81_0 = arg_70_0
-
-		var_0.readyStart(var_81_0)
+	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "btnStart"), function()
+		setActive(arg_70_0.menuUI, false)
+		arg_70_0:readyStart()
 
 		return
-	end
-
-	SFX_CANCEL = var_7
-
-	var_2(var_70_36, var_70_37, var_70_38, var_7)
-
-	onButton = var_2
-
-	local var_70_39 = arg_70_0
-
-	findTF = var_70_37
-
-	local var_70_40 = var_70_37(arg_70_0.menuUI, "home")
-
-	local function var_70_41()
-		local var_82_0 = arg_70_0
-		local var_82_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_82_1(var_82_0, var_2_10003.ON_HOME)
+	end, SFX_CANCEL)
+	onButton(arg_70_0, findTF(arg_70_0.menuUI, "home"), function()
+		arg_70_0:emit(BaseUI.ON_HOME)
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_7
-
-	var_2(var_70_39, var_70_40, var_70_41, var_7)
-
-	findTF = var_2
-
-	local var_70_42 = var_2(arg_70_0.menuUI, "tplBattleItem")
+	local var_70_0 = findTF(arg_70_0.menuUI, "tplBattleItem")
 
 	arg_70_0.battleItems = {}
 	arg_70_0.dropItems = {}
 
-	local var_70_43 = arg_70_0.dropData
-
 	for iter_70_0 = 1, 7 do
-		local var_70_44 = iter_70_0
+		local var_70_2 = tf(instantiate(var_70_0))
 
-		tf = var_1_10009
-		instantiate = var_1_10011
-		var_1_10009 = var_1_10009(var_1_10011(var_70_42))
-		var_1_10009.name = "battleItem_" .. iter_70_0
-		setParent = var_10
+		var_70_2.name = "battleItem_" .. iter_70_0
 
-		local var_70_45 = var_1_10009
-
-		findTF = var_13
-
-		var_10(var_70_45, var_13(arg_70_0.menuUI, "battList/Viewport/Content"))
-
-		local var_70_46 = iter_70_0
-
-		GetSpriteFromAtlasAsync = var_1_10011
-
-		var_1_10011(var_0_9, "buttomDesc" .. var_70_46, function(arg_83_0)
+		setParent(var_70_2, findTF(arg_70_0.menuUI, "battList/Viewport/Content"))
+		GetSpriteFromAtlasAsync(var_0_8, "buttomDesc" .. iter_70_0, function(arg_83_0)
 			if arg_83_0 then
-				setImageSprite = var_2_10001
-				findTF = var_2_10003
-
-				var_2_10001(var_2_10003(var_1_10009, "state_open/bg"), arg_83_0, true)
-
-				setImageSprite = var_2_10001
-				findTF = var_3
-
-				var_2_10001(var_3(var_1_10009, "state_clear/bg"), arg_83_0, true)
-
-				setImageSprite = var_2_10001
-				findTF = var_3
-
-				var_2_10001(var_3(var_1_10009, "state_current/bg"), arg_83_0, true)
-
-				setImageSprite = var_2_10001
-				findTF = var_3
-
-				var_2_10001(var_3(var_1_10009, "state_closed/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_2, "state_open/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_2, "state_clear/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_2, "state_current/bg"), arg_83_0, true)
+				setImageSprite(findTF(var_70_2, "state_closed/bg"), arg_83_0, true)
 			end
 
 			return
 		end)
 
-		findTF = var_1_10011
-		var_1_10011 = var_1_10011(var_1_10009, "icon")
+		local var_70_3 = findTF(var_70_2, "icon")
 
-		local var_70_47 = {
-			type = var_70_43[iter_70_0][1],
-			id = var_70_43[iter_70_0][2],
-			count = var_70_43[iter_70_0][3]
-		}
-
-		updateDrop = var_13
-
-		var_13(var_1_10011, var_70_47)
-
-		onButton = var_13
-
-		local var_70_48 = arg_70_0._event
-		local var_70_49 = var_1_10011
-
-		local function var_70_50()
-			local var_84_0 = arg_70_0
-			local var_84_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_84_1(var_84_0, var_2_10003.ON_DROP, var_70_47)
+		updateDrop(var_70_3, {
+			type = arg_70_0.dropData[iter_70_0][1],
+			id = arg_70_0.dropData[iter_70_0][2],
+			count = arg_70_0.dropData[iter_70_0][3]
+		})
+		onButton(arg_70_0._event, var_70_3, function()
+			arg_70_0:emit(BaseUI.ON_DROP, var_0)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10018
-
-		var_13(var_70_48, var_70_49, var_70_50, var_1_10018)
-
-		table = var_13
-
-		var_13.insert(arg_70_0.dropItems, var_1_10011)
-
-		setActive = var_13
-
-		var_13(var_1_10009, true)
-
-		table = var_13
-
-		var_13.insert(arg_70_0.battleItems, var_1_10009)
+		end, SFX_PANEL)
+		table.insert(arg_70_0.dropItems, var_70_3)
+		setActive(var_70_2, true)
+		table.insert(arg_70_0.battleItems, var_70_2)
 	end
 
-	if not arg_70_0.handle then
-		UpdateBeat = var_4
-		arg_70_0.handle = var_4:CreateListener(arg_70_0.Update, arg_70_0)
-	end
+	arg_70_0.handle = arg_70_0.handle or UpdateBeat:CreateListener(arg_70_0.Update, arg_70_0)
 
-	UpdateBeat = var_4
-
-	var_4:AddListener(arg_70_0.handle)
+	UpdateBeat:AddListener(arg_70_0.handle)
 
 	return
 end
 
-function var_0_1.initGameUI(arg_85_0)
-	findTF = var_1_10001
-	arg_85_0.gameUI = var_1_10001(arg_85_0._tf, "ui/gameUI")
-	onButton = var_1
+function var_0_0.initGameUI(arg_85_0)
+	arg_85_0.gameUI = findTF(arg_85_0._tf, "ui/gameUI")
 
-	local var_85_0 = arg_85_0
+	onButton(arg_85_0, findTF(arg_85_0.gameUI, "topRight/btnStop"), function()
+		arg_85_0:stopGame()
+		setActive(arg_85_0.pauseUI, true)
 
-	findTF = var_4
-
-	var_1(var_85_0, var_4(arg_85_0.gameUI, "topRight/btnStop"), function()
-		local var_86_0 = arg_85_0
-
-		var_0.stopGame(var_86_0)
-
-		setActive = var_0
-
-		var_0(arg_85_0.pauseUI, true)
+		return
+	end)
+	onButton(arg_85_0, findTF(arg_85_0.gameUI, "btnLeave"), function()
+		arg_85_0:stopGame()
+		setActive(arg_85_0.leaveUI, true)
 
 		return
 	end)
 
-	onButton = var_1
-
-	local var_85_1 = arg_85_0
-
-	findTF = var_4
-
-	var_1(var_85_1, var_4(arg_85_0.gameUI, "btnLeave"), function()
-		local var_87_0 = arg_85_0
-
-		var_0.stopGame(var_87_0)
-
-		setActive = var_0
-
-		var_0(arg_85_0.leaveUI, true)
-
-		return
-	end)
-
-	GetOrAddComponent = var_1
-	arg_85_0.dragDelegate = var_1(arg_85_0.sceneTf, "EventTriggerListener")
+	arg_85_0.dragDelegate = GetOrAddComponent(arg_85_0.sceneTf, "EventTriggerListener")
 	arg_85_0.dragDelegate.enabled = true
 
-	local var_85_2 = arg_85_0.dragDelegate
-
-	var_1.AddPointDownFunc(var_85_2, function(arg_88_0, arg_88_1)
+	arg_85_0.dragDelegate:AddPointDownFunc(function(arg_88_0, arg_88_1)
 		if arg_85_0.boatController then
-			local var_88_0 = arg_85_0.boatController
-
-			var_2.throw(var_88_0)
+			arg_85_0.boatController:throw()
 		end
 
 		return
 	end)
 
-	findTF = var_1
-	arg_85_0.gameTimeS = var_1(arg_85_0.gameUI, "top/time/s")
-	findTF = var_1
-	arg_85_0.scoreTf = var_1(arg_85_0.gameUI, "top/score")
-	arg_85_0.boatController = var_0_57(arg_85_0.sceneTf, arg_85_0)
-	arg_85_0.itemController = var_0_58(arg_85_0.sceneTf, arg_85_0.backSceneTf, arg_85_0:getGameUsedTimes(), arg_85_0)
-	arg_85_0.catchController = var_0_59(arg_85_0.boatController, arg_85_0.itemController)
-	arg_85_0.charController = var_0_60(arg_85_0.backSceneTf, arg_85_0)
-	findTF = var_1
-	arg_85_0.sceneScoreTf = var_1(arg_85_0.sceneTf, "scoreTf")
-	setActive = var_1
+	arg_85_0.gameTimeS = findTF(arg_85_0.gameUI, "top/time/s")
+	arg_85_0.scoreTf = findTF(arg_85_0.gameUI, "top/score")
+	arg_85_0.boatController = var_0_47(arg_85_0.sceneTf, arg_85_0)
+	arg_85_0.itemController = var_0_48(arg_85_0.sceneTf, arg_85_0.backSceneTf, arg_85_0:getGameUsedTimes(), arg_85_0)
+	arg_85_0.catchController = var_0_49(arg_85_0.boatController, arg_85_0.itemController)
+	arg_85_0.charController = var_0_50(arg_85_0.backSceneTf, arg_85_0)
+	arg_85_0.sceneScoreTf = findTF(arg_85_0.sceneTf, "scoreTf")
 
-	var_1(arg_85_0.sceneScoreTf, false)
+	setActive(arg_85_0.sceneScoreTf, false)
 
 	return
 end
 
-function var_0_1.Update(arg_89_0)
+function var_0_0.Update(arg_89_0)
 	arg_89_0:AddDebugInput()
 
 	return
 end
 
-function var_0_1.AddDebugInput(arg_90_0)
+function var_0_0.AddDebugInput(arg_90_0)
 	if arg_90_0.gameStop or arg_90_0.settlementFlag then
 		return
 	end
 
-	IsUnityEditor = var_1
-
-	if var_1 then
+	if IsUnityEditor then
 		-- block empty
 	end
 
 	return
 end
 
-function var_0_1.updateMenuUI(arg_91_0)
+function var_0_0.updateMenuUI(arg_91_0)
 	local var_91_0 = arg_91_0:getGameUsedTimes()
 	local var_91_1 = arg_91_0:getGameTimes()
 
 	for iter_91_0 = 1, 7 do
-		setActive = var_1_10007
-		findTF = var_1_10009
-
-		var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_open"), false)
-
-		setActive = var_1_10007
-		findTF = var_1_10009
-
-		var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_closed"), false)
-
-		setActive = var_1_10007
-		findTF = var_1_10009
-
-		var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_clear"), false)
-
-		setActive = var_1_10007
-		findTF = var_1_10009
-
-		var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_current"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_open"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_closed"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_clear"), false)
+		setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_current"), false)
 
 		if iter_91_0 <= var_91_0 then
-			SetParent = var_1_10007
-			var_1_10009 = arg_91_0.dropItems[iter_91_0]
-			findTF = var_10
-
-			var_1_10007(var_1_10009, var_10(arg_91_0.battleItems[iter_91_0], "state_clear/icon"))
-
-			setActive = var_1_10007
-
-			var_1_10007(arg_91_0.dropItems[iter_91_0], true)
-
-			setActive = var_1_10007
-			findTF = var_1_10009
-
-			var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_clear"), true)
-		elseif iter_91_0 == var_91_0 + 1 and 1 <= var_91_1 then
-			setActive = var_1_10007
-			findTF = var_1_10009
-
-			var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_current"), true)
-
-			SetParent = var_1_10007
-			var_1_10009 = arg_91_0.dropItems[iter_91_0]
-			findTF = var_10
-
-			var_1_10007(var_1_10009, var_10(arg_91_0.battleItems[iter_91_0], "state_current/icon"))
-
-			setActive = var_1_10007
-
-			var_1_10007(arg_91_0.dropItems[iter_91_0], true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_clear/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_clear"), true)
+		elseif iter_91_0 == var_91_0 + 1 and var_91_1 >= 1 then
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_current"), true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_current/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
 		elseif var_91_0 < iter_91_0 and iter_91_0 <= var_91_0 + var_91_1 then
-			setActive = var_1_10007
-			findTF = var_1_10009
-
-			var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_open"), true)
-
-			SetParent = var_1_10007
-			var_1_10009 = arg_91_0.dropItems[iter_91_0]
-			findTF = var_10
-
-			var_1_10007(var_1_10009, var_10(arg_91_0.battleItems[iter_91_0], "state_open/icon"))
-
-			setActive = var_1_10007
-
-			var_1_10007(arg_91_0.dropItems[iter_91_0], true)
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_open"), true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_open/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
 		else
-			setActive = var_1_10007
-			findTF = var_1_10009
-
-			var_1_10007(var_1_10009(arg_91_0.battleItems[iter_91_0], "state_closed"), true)
-
-			SetParent = var_1_10007
-			var_1_10009 = arg_91_0.dropItems[iter_91_0]
-			findTF = var_10
-
-			var_1_10007(var_1_10009, var_10(arg_91_0.battleItems[iter_91_0], "state_closed/icon"))
-
-			setActive = var_1_10007
-
-			var_1_10007(arg_91_0.dropItems[iter_91_0], true)
+			setActive(findTF(arg_91_0.battleItems[iter_91_0], "state_closed"), true)
+			SetParent(arg_91_0.dropItems[iter_91_0], findTF(arg_91_0.battleItems[iter_91_0], "state_closed/icon"))
+			setActive(arg_91_0.dropItems[iter_91_0], true)
 		end
 	end
 
@@ -3631,220 +4409,120 @@ function var_0_1.updateMenuUI(arg_91_0)
 
 	local var_91_2 = 1 - (arg_91_0:getGameUsedTimes() - 3 < 0 and 0 or arg_91_0:getGameUsedTimes() - 3) / (arg_91_0.totalTimes - 4)
 
-	if 1 < var_91_2 then
+	if var_91_2 > 1 then
 		var_91_2 = 1
 	end
 
-	scrollTo = var_5
-
-	var_5(arg_91_0.battleScrollRect, 0, var_91_2)
-
-	setActive = var_5
-	findTF = var_7
-
-	var_5(var_7(arg_91_0.menuUI, "btnStart/tip"), var_91_1 > 0)
+	scrollTo(arg_91_0.battleScrollRect, 0, var_91_2)
+	setActive(findTF(arg_91_0.menuUI, "btnStart/tip"), var_91_1 > 0)
 	arg_91_0:CheckGet()
 
-	local var_91_3 = arg_91_0:GetMGData()
+	local var_91_3 = arg_91_0:GetMGData():GetRuntimeData("elements")
 
-	if var_5.GetRuntimeData(var_91_3, "elements") then
-		local var_91_4 = #var_5
-		local var_91_5
+	if var_91_3 and #var_91_3 > 0 then
+		local var_91_4 = var_91_3[1] or 0
 
-		if not (0 < var_91_4) or not var_5[1] then
-			var_91_5 = 0
-		end
-
-		setText = var_91_3
-		findTF = var_9
-
-		var_91_3(var_9(arg_91_0.menuUI, "high"), var_91_5)
+		setText(findTF(arg_91_0.menuUI, "high"), var_91_4)
 
 		return
 	end
 end
 
-function var_0_1.CheckGet(arg_92_0)
-	setActive = var_1_10001
-	findTF = var_1_10003
+function var_0_0.CheckGet(arg_92_0)
+	setActive(findTF(arg_92_0.menuUI, "got"), false)
 
-	var_1_10001(var_1_10003(arg_92_0.menuUI, "got"), false)
-
-	if arg_92_0:getUltimate() then
-		local var_92_0 = arg_92_0
-
-		if arg_92_0.getUltimate(var_92_0) ~= 0 then
-			setActive = var_1
-			findTF = var_92_0
-
-			var_1(var_92_0(arg_92_0.menuUI, "got"), true)
-		end
+	if arg_92_0:getUltimate() and arg_92_0:getUltimate() ~= 0 then
+		setActive(findTF(arg_92_0.menuUI, "got"), true)
 	end
 
 	if arg_92_0:getUltimate() == 0 then
-		local var_92_1 = arg_92_0
-
-		if arg_92_0.getGameTotalTime(var_92_1) > arg_92_0:getGameUsedTimes() then
+		if arg_92_0:getGameTotalTime() > arg_92_0:getGameUsedTimes() then
 			return
 		end
 
-		pg = var_92_1
-
-		local var_92_2 = var_92_1.m02
-		local var_92_3 = var_3.sendNotification
-
-		GAME = var_6
-
-		local var_92_4 = var_6.SEND_MINI_GAME_OP
-		local var_92_5 = {
-			hubid = arg_92_0:GetMGHubData().id
-		}
-
-		MiniGameOPCommand = var_8
-		var_92_5.cmd = var_8.CMD_ULTIMATE
-		var_92_5.args1 = {}
-
-		var_92_3(var_92_2, var_92_4, var_92_5)
-
-		setActive = var_92_3
-		findTF = var_92_2
-
-		var_92_3(var_92_2(arg_92_0.menuUI, "got"), true)
+		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg_92_0:GetMGHubData().id,
+			cmd = MiniGameOPCommand.CMD_ULTIMATE,
+			args1 = {}
+		})
+		setActive(findTF(arg_92_0.menuUI, "got"), true)
 	end
 
 	return
 end
 
-function var_0_1.openMenuUI(arg_93_0)
-	setActive = var_1_10001
-	findTF = var_1_10003
-
-	var_1_10001(var_1_10003(arg_93_0._tf, "scene_container"), false)
-
-	setActive = var_1_10001
-	findTF = var_3
-
-	var_1_10001(var_3(arg_93_0.bgTf, "on"), true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_93_0.gameUI, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_93_0.menuUI, true)
+function var_0_0.openMenuUI(arg_93_0)
+	setActive(findTF(arg_93_0._tf, "scene_container"), false)
+	setActive(findTF(arg_93_0.bgTf, "on"), true)
+	setActive(arg_93_0.gameUI, false)
+	setActive(arg_93_0.menuUI, true)
 	arg_93_0:updateMenuUI()
 
 	return
 end
 
-function var_0_1.clearUI(arg_94_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_94_0.sceneTf, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_94_0.settlementUI, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_94_0.countUI, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_94_0.menuUI, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_94_0.gameUI, false)
+function var_0_0.clearUI(arg_94_0)
+	setActive(arg_94_0.sceneTf, false)
+	setActive(arg_94_0.settlementUI, false)
+	setActive(arg_94_0.countUI, false)
+	setActive(arg_94_0.menuUI, false)
+	setActive(arg_94_0.gameUI, false)
 
 	return
 end
 
-function var_0_1.readyStart(arg_95_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_95_0.countUI, true)
-
-	local var_95_0 = arg_95_0.countAnimator
-
-	var_1.Play(var_95_0, "count")
-
-	pg = var_1
-
-	local var_95_1 = var_1.CriMgr.GetInstance()
-
-	var_1.PlaySoundEffect_V3(var_95_1, var_0_3)
+function var_0_0.readyStart(arg_95_0)
+	setActive(arg_95_0.countUI, true)
+	arg_95_0.countAnimator:Play("count")
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_2)
 
 	return
 end
 
-function var_0_1.getGameTimes(arg_96_0)
+function var_0_0.getGameTimes(arg_96_0)
 	return arg_96_0:GetMGHubData().count
 end
 
-function var_0_1.getGameUsedTimes(arg_97_0)
+function var_0_0.getGameUsedTimes(arg_97_0)
 	return arg_97_0:GetMGHubData().usedtime
 end
 
-function var_0_1.getUltimate(arg_98_0)
+function var_0_0.getUltimate(arg_98_0)
 	return arg_98_0:GetMGHubData().ultimate
 end
 
-function var_0_1.getGameTotalTime(arg_99_0)
-	local var_99_0 = arg_99_0:GetMGHubData()
-
-	return (var_1.getConfig(var_99_0, "reward_need"))
+function var_0_0.getGameTotalTime(arg_99_0)
+	return (arg_99_0:GetMGHubData():getConfig("reward_need"))
 end
 
-function var_0_1.gameStart(arg_100_0)
-	setActive = var_1_10001
-	findTF = var_1_10003
-
-	var_1_10001(var_1_10003(arg_100_0._tf, "scene_container"), true)
-
-	setActive = var_1_10001
-	findTF = var_3
-
-	var_1_10001(var_3(arg_100_0.bgTf, "on"), false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_100_0.gameUI, true)
+function var_0_0.gameStart(arg_100_0)
+	setActive(findTF(arg_100_0._tf, "scene_container"), true)
+	setActive(findTF(arg_100_0.bgTf, "on"), false)
+	setActive(arg_100_0.gameUI, true)
 
 	arg_100_0.gameStartFlag = true
 	arg_100_0.scoreNum = 0
 	arg_100_0.playerPosIndex = 2
 	arg_100_0.gameStepTime = 0
 	arg_100_0.heart = 3
-	arg_100_0.gameTime = var_0_8
-	SetActive = var_1
+	arg_100_0.gameTime = var_0_7
 
-	var_1(arg_100_0.sceneScoreTf, false)
+	SetActive(arg_100_0.sceneScoreTf, false)
 
 	if arg_100_0.boatController then
-		local var_100_0 = arg_100_0.boatController
-
-		var_1.start(var_100_0)
+		arg_100_0.boatController:start()
 	end
 
 	if arg_100_0.itemController then
-		local var_100_1 = arg_100_0.itemController
-
-		var_1.start(var_100_1)
+		arg_100_0.itemController:start()
 	end
 
 	if arg_100_0.catchController then
-		local var_100_2 = arg_100_0.catchController
-
-		var_1.start(var_100_2)
+		arg_100_0.catchController:start()
 	end
 
 	if arg_100_0.charController then
-		local var_100_3 = arg_100_0.charController
-
-		var_1.start(var_100_3)
+		arg_100_0.charController:start()
 	end
 
 	arg_100_0:updateGameUI()
@@ -3853,154 +4531,90 @@ function var_0_1.gameStart(arg_100_0)
 	return
 end
 
-function var_0_1.transformColor(arg_101_0, arg_101_1)
-	tonumber = var_1_10002
-	string = var_1_10004
-
-	local var_101_0 = var_1_10002(var_1_10004.sub(arg_101_1, 1, 2), 16)
-
-	tonumber = var_1_10003
-	string = var_5
-
-	local var_101_1 = var_1_10003(var_5.sub(arg_101_1, 3, 4), 16)
-
-	tonumber = var_4
-	string = var_6
-
-	local var_101_2 = var_4(var_6.sub(arg_101_1, 5, 6), 16)
-
-	Color = var_5
-
-	return var_5.New(var_101_0 / 255, var_101_1 / 255, var_101_2 / 255)
+function var_0_0.transformColor(arg_101_0, arg_101_1)
+	return Color.New(tonumber(string.sub(arg_101_1, 1, 2), 16) / 255, tonumber(string.sub(arg_101_1, 3, 4), 16) / 255, tonumber(string.sub(arg_101_1, 5, 6), 16) / 255)
 end
 
-function var_0_1.addScore(arg_102_0, arg_102_1, arg_102_2)
-	if arg_102_1 and 0 < arg_102_1 or arg_102_2 and 0 < arg_102_2 then
-		pg = var_1_10003
-
-		local var_102_0 = var_1_10003.CriMgr.GetInstance()
-
-		var_1_10003.PlaySoundEffect_V3(var_102_0, var_0_6)
+function var_0_0.addScore(arg_102_0, arg_102_1, arg_102_2)
+	if arg_102_1 and arg_102_1 > 0 or arg_102_2 and arg_102_2 > 0 then
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_5)
 	elseif arg_102_1 and arg_102_1 < 0 then
-		pg = var_1_10003
-
-		local var_102_1 = var_1_10003.CriMgr.GetInstance()
-
-		var_1_10003.PlaySoundEffect_V3(var_102_1, var_0_7)
+		pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_0_6)
 	end
 
-	setActive = var_1_10003
+	setActive(arg_102_0.sceneScoreTf, false)
 
-	var_1_10003(arg_102_0.sceneScoreTf, false)
-
-	findTF = var_1_10003
-
-	local var_102_2 = var_1_10003(arg_102_0.sceneScoreTf, "img")
-
-	GetComponent = var_1_10004
-
-	local var_102_3 = var_102_2
-
-	typeof = var_1_10007
-	Text = var_1_10009
-
-	local var_102_4 = var_1_10004(var_102_3, var_1_10007(var_1_10009))
-	local var_102_5 = "6f1807"
+	local var_102_0 = findTF(arg_102_0.sceneScoreTf, "img")
+	local var_102_1 = GetComponent(var_102_0, typeof(Text))
+	local var_102_2 = "6f1807"
 
 	if arg_102_1 then
-		var_102_3 = nil
+		local var_102_3
 
-		for iter_102_0 = 1, #var_0_48 do
-			if arg_102_1 and arg_102_1 >= var_0_48[iter_102_0].score then
-				var_102_5 = var_0_48[iter_102_0].color
-				var_102_3 = var_0_48[iter_102_0].font
+		for iter_102_0 = 1, #var_0_38 do
+			if arg_102_1 and arg_102_1 >= var_0_38[iter_102_0].score then
+				var_102_2 = var_0_38[iter_102_0].color
+				var_102_3 = var_0_38[iter_102_0].font
 
 				break
 			end
 		end
 
-		local var_102_6 = arg_102_0:transformColor(var_102_5)
+		local var_102_4 = arg_102_0:transformColor(var_102_2)
 
 		arg_102_0.scoreNum = arg_102_0.scoreNum + arg_102_1
 
-		local var_102_7 = arg_102_1 >= 0 and "+" or ""
+		setText(var_102_0, (arg_102_1 >= 0 and "+" or "") .. arg_102_1)
 
-		setText = var_8
+		var_102_1.fontSize = var_102_3 or 40
 
-		var_8(var_102_2, var_102_7 .. arg_102_1)
-
-		var_102_4.fontSize = var_102_3 or 40
-		setTextColor = var_8
-
-		var_8(var_102_2, var_102_6)
+		setTextColor(var_102_0, var_102_4)
 	end
 
 	if arg_102_2 then
-		local var_102_8 = arg_102_0:transformColor("66f2fb")
+		var_102_1.fontSize = 40
 
-		var_102_4.fontSize = 40
-		setTextColor = var_102_3
+		setTextColor(var_102_0, (arg_102_0:transformColor("66f2fb")))
 
-		var_102_3(var_102_2, var_102_8)
+		local var_102_5
 
-		var_102_3 = arg_102_0.gameTime
-
-		if 0 < var_102_3 then
+		if arg_102_0.gameTime > 0 then
 			arg_102_0.gameTime = arg_102_0.gameTime + arg_102_2
+			var_102_5 = setText
 		end
 
-		var_102_3 = 0 < arg_102_2 and "+" or ""
-		setText = var_7
-
-		var_7(var_102_2, var_102_3 .. arg_102_2 .. "s")
+		var_102_5(var_102_0, (arg_102_2 > 0 and "+" or "") .. arg_102_2 .. "s")
 	end
 
-	setActive = var_102_3
-
-	var_102_3(arg_102_0.sceneScoreTf, true)
+	setActive(arg_102_0.sceneScoreTf, true)
 
 	return
 end
 
-function var_0_1.onTimer(arg_103_0)
+function var_0_0.onTimer(arg_103_0)
 	arg_103_0:gameStep()
 
 	return
 end
 
-function var_0_1.gameStep(arg_104_0)
-	local var_104_0 = arg_104_0.gameTime
-
-	Time = var_1_10002
-	arg_104_0.gameTime = var_104_0 - var_1_10002.deltaTime
-
-	local var_104_1 = arg_104_0.gameStepTime
-
-	Time = var_2
-	arg_104_0.gameStepTime = var_104_1 + var_2.deltaTime
+function var_0_0.gameStep(arg_104_0)
+	arg_104_0.gameTime = arg_104_0.gameTime - Time.deltaTime
+	arg_104_0.gameStepTime = arg_104_0.gameStepTime + Time.deltaTime
 
 	if arg_104_0.boatController then
-		local var_104_2 = arg_104_0.boatController
-
-		var_1.step(var_104_2)
+		arg_104_0.boatController:step()
 	end
 
 	if arg_104_0.itemController then
-		local var_104_3 = arg_104_0.itemController
-
-		var_1.step(var_104_3)
+		arg_104_0.itemController:step()
 	end
 
 	if arg_104_0.catchController then
-		local var_104_4 = arg_104_0.catchController
-
-		var_1.step(var_104_4)
+		arg_104_0.catchController:step()
 	end
 
 	if arg_104_0.charController then
-		local var_104_5 = arg_104_0.charController
-
-		var_1.step(var_104_5)
+		arg_104_0.charController:step()
 	end
 
 	if arg_104_0.gameTime < 0 then
@@ -4018,43 +4632,30 @@ function var_0_1.gameStep(arg_104_0)
 	return
 end
 
-function var_0_1.timerStart(arg_105_0)
+function var_0_0.timerStart(arg_105_0)
 	if not arg_105_0.timer.running then
-		local var_105_0 = arg_105_0.timer
-
-		var_1.Start(var_105_0)
+		arg_105_0.timer:Start()
 	end
 
 	return
 end
 
-function var_0_1.timerStop(arg_106_0)
+function var_0_0.timerStop(arg_106_0)
 	if arg_106_0.timer.running then
-		local var_106_0 = arg_106_0.timer
-
-		var_1.Stop(var_106_0)
+		arg_106_0.timer:Stop()
 	end
 
 	return
 end
 
-function var_0_1.updateGameUI(arg_107_0)
-	setText = var_1_10001
-
-	var_1_10001(arg_107_0.scoreTf, arg_107_0.scoreNum)
-
-	setText = var_1_10001
-
-	local var_107_0 = arg_107_0.gameTimeS
-
-	math = var_4
-
-	var_1_10001(var_107_0, var_4.ceil(arg_107_0.gameTime))
+function var_0_0.updateGameUI(arg_107_0)
+	setText(arg_107_0.scoreTf, arg_107_0.scoreNum)
+	setText(arg_107_0.gameTimeS, math.ceil(arg_107_0.gameTime))
 
 	return
 end
 
-function var_0_1.onGameOver(arg_108_0, arg_108_1)
+function var_0_0.onGameOver(arg_108_0, arg_108_1)
 	if arg_108_0.settlementFlag then
 		return
 	end
@@ -4062,118 +4663,53 @@ function var_0_1.onGameOver(arg_108_0, arg_108_1)
 	arg_108_0:timerStop()
 
 	arg_108_0.settlementFlag = true
-	setActive = var_2
 
-	var_2(arg_108_0.clickMask, true)
-
-	local var_108_0
+	setActive(arg_108_0.clickMask, true)
 
 	if arg_108_0.boatController then
-		var_108_0 = arg_108_0.boatController
-
-		var_2.gameOver(var_108_0)
+		arg_108_0.boatController:gameOver()
 	end
 
-	LeanTween = var_2
-
-	local var_108_1 = var_2.delayedCall
-
-	go = var_108_0
-
-	local var_108_2 = var_108_0(arg_108_0._tf)
-	local var_108_3 = 2
-
-	System = var_6
-
-	var_108_1(var_108_2, var_108_3, var_6.Action(function()
+	LeanTween.delayedCall(go(arg_108_0._tf), 2, System.Action(function()
 		arg_108_0.settlementFlag = false
+		arg_108_0.gameStartFlag = false
 
-		local var_109_0 = arg_108_0
-
-		var_109_0.gameStartFlag = false
-		setActive = var_109_0
-
-		var_109_0(arg_108_0.clickMask, false)
-
-		local var_109_1 = arg_108_0
-
-		var_0.showSettlement(var_109_1)
+		setActive(arg_108_0.clickMask, false)
+		arg_108_0:showSettlement()
 
 		return
 	end))
-
-	local var_108_4 = arg_108_1 and 1 or 0
-	local var_108_5 = arg_108_0
-	local var_108_6 = arg_108_0.emit
-
-	BaseMiniGameMediator = var_6
-
-	var_108_6(var_108_5, var_6.GAME_FINISH_TRACKING, {
+	arg_108_0:emit(BaseMiniGameMediator.GAME_FINISH_TRACKING, {
 		game_id = arg_108_0:GetMGData().id,
 		hub_id = arg_108_0:GetMGHubData().id,
-		isComplete = var_108_4
+		isComplete = arg_108_1 and 1 or 0
 	})
 
 	return
 end
 
-function var_0_1.showSettlement(arg_110_0)
-	setActive = var_1_10001
+function var_0_0.showSettlement(arg_110_0)
+	setActive(arg_110_0.settlementUI, true)
+	GetComponent(findTF(arg_110_0.settlementUI, "ad"), typeof(Animator)):Play("settlement", -1, 0)
 
-	var_1_10001(arg_110_0.settlementUI, true)
+	local var_110_0 = arg_110_0:GetMGData():GetRuntimeData("elements")
+	local var_110_1 = arg_110_0.scoreNum
 
-	GetComponent = var_1_10001
-	findTF = var_3
+	if var_110_0 and #var_110_0 > 0 then
+		local var_110_2 = var_110_0[1] or 0
 
-	local var_110_0 = var_3(arg_110_0.settlementUI, "ad")
+		setActive(findTF(arg_110_0.settlementUI, "ad/new"), var_110_2 < var_110_1)
 
-	typeof = var_4
-	Animator = var_6
-
-	local var_110_1 = var_1_10001(var_110_0, var_4(var_6))
-
-	var_1.Play(var_110_1, "settlement", -1, 0)
-
-	local var_110_2 = arg_110_0:GetMGData()
-	local var_110_3 = var_2.GetRuntimeData(var_110_2, "elements")
-	local var_110_4 = arg_110_0.scoreNum
-
-	if var_110_3 then
-		local var_110_5 = #var_110_3
-		local var_110_6
-
-		if not (0 < var_110_5) or not var_110_3[1] then
-			var_110_6 = 0
-		end
-
-		setActive = var_5
-		findTF = var_7
-
-		var_5(var_7(arg_110_0.settlementUI, "ad/new"), var_110_6 < var_110_4)
-
-		if var_110_6 <= var_110_4 then
-			var_110_6 = var_110_4
+		if var_110_2 <= var_110_1 then
+			var_110_2 = var_110_1
 
 			arg_110_0:StoreDataToServer({
-				var_110_6
+				var_110_1
 			})
 		end
 
-		findTF = var_5
-
-		local var_110_7 = var_5(arg_110_0.settlementUI, "ad/highText")
-
-		findTF = var_6
-
-		local var_110_8 = var_6(arg_110_0.settlementUI, "ad/currentText")
-
-		setText = var_7
-
-		var_7(var_110_7, var_110_6)
-
-		setText = var_7
-
-		var_7(var_110_8, var_110_4)
+		setText(findTF(arg_110_0.settlementUI, "ad/highText"), var_110_2)
+		setText(findTF(arg_110_0.settlementUI, "ad/currentText"), var_110_1)
 
 		if arg_110_0:getGameTimes() and arg_110_0:getGameTimes() > 0 then
 			arg_110_0.sendSuccessFlag = true
@@ -4185,17 +4721,16 @@ function var_0_1.showSettlement(arg_110_0)
 	end
 end
 
-function var_0_1.resumeGame(arg_111_0)
+function var_0_0.resumeGame(arg_111_0)
 	arg_111_0.gameStop = false
-	setActive = var_1
 
-	var_1(arg_111_0.leaveUI, false)
+	setActive(arg_111_0.leaveUI, false)
 	arg_111_0:timerStart()
 
 	return
 end
 
-function var_0_1.stopGame(arg_112_0)
+function var_0_0.stopGame(arg_112_0)
 	arg_112_0.gameStop = true
 
 	arg_112_0:timerStop()
@@ -4203,69 +4738,42 @@ function var_0_1.stopGame(arg_112_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_113_0)
+function var_0_0.onBackPressed(arg_113_0)
 	if not arg_113_0.gameStartFlag then
-		arg_113_0:emit(var_0_1.ON_BACK_PRESSED)
+		arg_113_0:emit(var_0_0.ON_BACK_PRESSED)
 	else
 		if arg_113_0.settlementFlag then
 			return
 		end
 
-		isActive = var_1
-
-		if var_1(arg_113_0.pauseUI) then
-			setActive = var_1
-
-			var_1(arg_113_0.pauseUI, false)
+		if isActive(arg_113_0.pauseUI) then
+			setActive(arg_113_0.pauseUI, false)
 		end
 
 		arg_113_0:stopGame()
-
-		setActive = var_1
-
-		var_1(arg_113_0.leaveUI, true)
+		setActive(arg_113_0.leaveUI, true)
 	end
 
 	return
 end
 
-function var_0_1.willExit(arg_114_0)
+function var_0_0.willExit(arg_114_0)
 	if arg_114_0.handle then
-		UpdateBeat = var_1
-		var_1_10003 = var_1
-
-		var_1.RemoveListener(var_1_10003, arg_114_0.handle)
+		UpdateBeat:RemoveListener(arg_114_0.handle)
 	end
 
-	if arg_114_0._tf then
-		LeanTween = var_1
-
-		local var_114_0 = var_1.isTweening
-
-		go = var_1_10003
-
-		if var_114_0(var_1_10003(arg_114_0._tf)) then
-			LeanTween = var_1
-
-			local var_114_1 = var_1.cancel
-
-			go = var_3
-
-			var_114_1(var_3(arg_114_0._tf))
-		end
+	if arg_114_0._tf and LeanTween.isTweening(go(arg_114_0._tf)) then
+		LeanTween.cancel(go(arg_114_0._tf))
 	end
 
 	if arg_114_0.timer and arg_114_0.timer.running then
-		local var_114_2 = arg_114_0.timer
-
-		var_1.Stop(var_114_2)
+		arg_114_0.timer:Stop()
 	end
 
-	Time = var_1
-	var_1.timeScale = 1
+	Time.timeScale = 1
 	arg_114_0.timer = nil
 
 	return
 end
 
-return var_0_1
+return var_0_0

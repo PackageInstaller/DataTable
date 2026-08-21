@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_action") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_action"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_action = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_action
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_action = rawget(pg, "island_action") or setmetatable({
+	__name = "island_action"
+}, confNEO)
+pg.island_action.all = {
 	1000,
 	1001,
 	1002,
@@ -64,11 +41,7 @@ var_0_3.all = {
 	2005,
 	2006
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_action
-
-var_0_4.get_id_list_by_type = {
+pg.island_action.get_id_list_by_type = {
 	{
 		1000,
 		1001,
@@ -111,25 +84,11 @@ var_0_4.get_id_list_by_type = {
 		2006
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_action = {}
+pg.base = pg.base or {}
+pg.base.island_action = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_action
-
-	var_1_0[1000] = {
+	pg.base.island_action[1000] = {
 		name = "打招呼",
 		respond_point = "",
 		type = 1,
@@ -147,11 +106,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_action
-
-	var_1_1[1001] = {
+	pg.base.island_action[1001] = {
 		name = "道别",
 		respond_point = "",
 		type = 1,
@@ -167,11 +122,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_action
-
-	var_1_2[1002] = {
+	pg.base.island_action[1002] = {
 		name = "点头",
 		respond_point = "",
 		type = 1,
@@ -188,11 +139,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_action
-
-	var_1_3[1003] = {
+	pg.base.island_action[1003] = {
 		name = "摇头",
 		respond_point = "",
 		type = 1,
@@ -209,11 +156,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_action
-
-	var_1_4[1004] = {
+	pg.base.island_action[1004] = {
 		name = "拍手",
 		respond_point = "",
 		type = 1,
@@ -230,11 +173,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_action
-
-	var_1_5[1005] = {
+	pg.base.island_action[1005] = {
 		name = "赞美太阳",
 		respond_point = "",
 		type = 1,
@@ -256,11 +195,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_action
-
-	var_1_6[1006] = {
+	pg.base.island_action[1006] = {
 		name = "叉腰",
 		respond_point = "",
 		type = 1,
@@ -276,11 +211,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_action
-
-	var_1_7[1007] = {
+	pg.base.island_action[1007] = {
 		name = "鞠躬",
 		respond_point = "",
 		type = 1,
@@ -302,11 +233,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_action
-
-	var_1_8[1008] = {
+	pg.base.island_action[1008] = {
 		name = "胜利起跳",
 		respond_point = "",
 		type = 1,
@@ -328,11 +255,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_action
-
-	var_1_9[1009] = {
+	pg.base.island_action[1009] = {
 		name = "跺脚",
 		respond_point = "",
 		type = 1,
@@ -349,11 +272,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_action
-
-	var_1_10[1011] = {
+	pg.base.island_action[1011] = {
 		name = "展示肌肉",
 		respond_point = "",
 		type = 1,
@@ -375,11 +294,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_action
-
-	var_1_11[1012] = {
+	pg.base.island_action[1012] = {
 		name = "跳舞",
 		respond_point = "",
 		type = 1,
@@ -401,11 +316,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_action
-
-	var_1_12[1013] = {
+	pg.base.island_action[1013] = {
 		name = "英雄登场",
 		respond_point = "",
 		type = 1,
@@ -427,11 +338,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_action
-
-	var_1_13[1014] = {
+	pg.base.island_action[1014] = {
 		name = "伸懒腰",
 		respond_point = "",
 		type = 1,
@@ -452,11 +359,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_action
-
-	var_1_14[1015] = {
+	pg.base.island_action[1015] = {
 		name = "害怕",
 		respond_point = "",
 		type = 1,
@@ -478,11 +381,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_action
-
-	var_1_15[1016] = {
+	pg.base.island_action[1016] = {
 		name = "抱拳",
 		respond_point = "",
 		type = 1,
@@ -504,11 +403,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_action
-
-	var_1_16[1017] = {
+	pg.base.island_action[1017] = {
 		name = "自夸",
 		respond_point = "",
 		type = 1,
@@ -530,11 +425,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_action
-
-	var_1_17[1018] = {
+	pg.base.island_action[1018] = {
 		name = "打坐",
 		respond_point = "",
 		type = 1,
@@ -556,11 +447,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_action
-
-	var_1_18[1019] = {
+	pg.base.island_action[1019] = {
 		name = "拒绝",
 		respond_point = "",
 		type = 1,
@@ -582,11 +469,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_action
-
-	var_1_19[1020] = {
+	pg.base.island_action[1020] = {
 		name = "打哈欠",
 		respond_point = "",
 		type = 1,
@@ -608,11 +491,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_action
-
-	var_1_20[1021] = {
+	pg.base.island_action[1021] = {
 		name = "擦汗",
 		respond_point = "",
 		type = 1,
@@ -633,11 +512,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_action
-
-	var_1_21[1022] = {
+	pg.base.island_action[1022] = {
 		name = "挠头",
 		respond_point = "",
 		type = 1,
@@ -659,11 +534,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_action
-
-	var_1_22[1023] = {
+	pg.base.island_action[1023] = {
 		name = "投篮",
 		respond_point = "",
 		type = 1,
@@ -685,11 +556,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_action
-
-	var_1_23[1024] = {
+	pg.base.island_action[1024] = {
 		name = "飞吻",
 		respond_point = "",
 		type = 1,
@@ -712,11 +579,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_action
-
-	var_1_24[1025] = {
+	pg.base.island_action[1025] = {
 		name = "前指",
 		respond_point = "",
 		type = 1,
@@ -738,11 +601,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_action
-
-	var_1_25[1026] = {
+	pg.base.island_action[1026] = {
 		name = "迎宾",
 		respond_point = "",
 		type = 1,
@@ -764,11 +623,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_action
-
-	var_1_26[1027] = {
+	pg.base.island_action[1027] = {
 		name = "审视",
 		respond_point = "",
 		type = 1,
@@ -790,11 +645,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_action
-
-	var_1_27[1028] = {
+	pg.base.island_action[1028] = {
 		name = "拍肚皮",
 		respond_point = "",
 		type = 1,
@@ -816,11 +667,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_action
-
-	var_1_28[1029] = {
+	pg.base.island_action[1029] = {
 		name = "瞌睡",
 		respond_point = "",
 		type = 1,
@@ -842,11 +689,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_action
-
-	var_1_29[1030] = {
+	pg.base.island_action[1030] = {
 		name = "原地蹦跳",
 		respond_point = "",
 		type = 1,
@@ -868,11 +711,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_action
-
-	var_1_30[2000] = {
+	pg.base.island_action[2000] = {
 		chara_sigle_action_reply = "",
 		name = "击掌",
 		type = 2,
@@ -890,11 +729,7 @@ var_0_4.base.island_action = {}
 		},
 		jump_page = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_action
-
-	var_1_31[2001] = {
+	pg.base.island_action[2001] = {
 		chara_sigle_action_reply = "",
 		name = "握手",
 		type = 2,
@@ -917,11 +752,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_action
-
-	var_1_32[2002] = {
+	pg.base.island_action[2002] = {
 		chara_sigle_action_reply = "",
 		name = "拥抱",
 		type = 2,
@@ -944,11 +775,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_action
-
-	var_1_33[2003] = {
+	pg.base.island_action[2003] = {
 		chara_sigle_action_reply = "",
 		name = "庆祝 ",
 		type = 2,
@@ -971,11 +798,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_action
-
-	var_1_34[2004] = {
+	pg.base.island_action[2004] = {
 		chara_sigle_action_reply = "",
 		name = "比心 ",
 		type = 2,
@@ -998,11 +821,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_action
-
-	var_1_35[2005] = {
+	pg.base.island_action[2005] = {
 		chara_sigle_action_reply = "",
 		name = "谢幕",
 		type = 2,
@@ -1025,8 +844,7 @@ var_0_4.base.island_action = {}
 			}
 		}
 	}
-	pg = var_1_35
-	var_1_35.base.island_action[2006] = {
+	pg.base.island_action[2006] = {
 		chara_sigle_action_reply = "",
 		name = "多人共舞",
 		type = 2,

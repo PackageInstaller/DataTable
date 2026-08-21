@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "backyard_theme_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "backyard_theme_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.backyard_theme_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.backyard_theme_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.backyard_theme_template = rawget(pg, "backyard_theme_template") or setmetatable({
+	__name = "backyard_theme_template"
+}, confNEO)
+pg.backyard_theme_template.all = {
 	1,
 	2,
 	3,
@@ -157,27 +134,14 @@ var_0_3.all = {
 	138,
 	139,
 	140,
-	141
+	141,
+	142
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.backyard_theme_template = {}
+pg.base = pg.base or {}
+pg.base.backyard_theme_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.backyard_theme_template
-
-	var_1_0[1] = {
+	pg.base.backyard_theme_template[1] = {
 		Cfg_1 = 5,
 		name = "穷神院落",
 		desc = "白手起家不容易，穷得响叮当……",
@@ -210,11 +174,7 @@ var_0_3.base.backyard_theme_template = {}
 			1309
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.backyard_theme_template
-
-	var_1_1[2] = {
+	pg.base.backyard_theme_template[2] = {
 		Cfg_1 = 5,
 		name = "和风秋日",
 		desc = "重樱的秋日总让人感到从容自在",
@@ -254,11 +214,7 @@ var_0_3.base.backyard_theme_template = {}
 			2305
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.backyard_theme_template
-
-	var_1_2[3] = {
+	pg.base.backyard_theme_template[3] = {
 		Cfg_1 = 5,
 		name = "白鹰蓝调",
 		desc = "白鹰的日常风格，就是休闲轻松",
@@ -298,11 +254,7 @@ var_0_3.base.backyard_theme_template = {}
 			3306
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.backyard_theme_template
-
-	var_1_3[4] = {
+	pg.base.backyard_theme_template[4] = {
 		Cfg_1 = 5,
 		name = "皇家茶室",
 		desc = "皇家的大本营，下午茶不是常识嘛？",
@@ -344,11 +296,7 @@ var_0_3.base.backyard_theme_template = {}
 			4307
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.backyard_theme_template
-
-	var_1_4[5] = {
+	pg.base.backyard_theme_template[5] = {
 		Cfg_1 = 5,
 		name = "铁血指挥部",
 		desc = "铁血的指挥部，技术世界第一！",
@@ -390,11 +338,7 @@ var_0_3.base.backyard_theme_template = {}
 			5307
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.backyard_theme_template
-
-	var_1_5[6] = {
+	pg.base.backyard_theme_template[6] = {
 		Cfg_1 = 5,
 		name = "bilibili",
 		desc = "bilibili~(￣▽￣)～■干杯□～(￣▽￣)",
@@ -449,11 +393,7 @@ var_0_3.base.backyard_theme_template = {}
 			6303
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.backyard_theme_template
-
-	var_1_6[7] = {
+	pg.base.backyard_theme_template[7] = {
 		Cfg_1 = 5,
 		name = "夏日清凉",
 		desc = "炎炎夏日，吃块西瓜凉快下吧",
@@ -514,11 +454,7 @@ var_0_3.base.backyard_theme_template = {}
 			7304
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.backyard_theme_template
-
-	var_1_7[8] = {
+	pg.base.backyard_theme_template[8] = {
 		Cfg_1 = 5,
 		name = "铁血酒庄",
 		desc = "既然来了，不如来喝一杯吧",
@@ -565,11 +501,7 @@ var_0_3.base.backyard_theme_template = {}
 			8307
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.backyard_theme_template
-
-	var_1_8[9] = {
+	pg.base.backyard_theme_template[9] = {
 		Cfg_1 = 5,
 		name = "绘画教室",
 		desc = "开学啦！快来上课！",
@@ -624,11 +556,7 @@ var_0_3.base.backyard_theme_template = {}
 			9306
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.backyard_theme_template
-
-	var_1_9[10] = {
+	pg.base.backyard_theme_template[10] = {
 		Cfg_1 = 5,
 		name = "东煌古风",
 		desc = "来自东方国度的传统风格",
@@ -687,11 +615,7 @@ var_0_3.base.backyard_theme_template = {}
 			10303
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.backyard_theme_template
-
-	var_1_10[11] = {
+	pg.base.backyard_theme_template[11] = {
 		Cfg_1 = 5,
 		name = "午后茶会",
 		desc = "午后茶会,来聊些指挥官不知道的小秘密吧~",
@@ -747,11 +671,7 @@ var_0_3.base.backyard_theme_template = {}
 			11307
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.backyard_theme_template
-
-	var_1_11[13] = {
+	pg.base.backyard_theme_template[13] = {
 		Cfg_1 = 5,
 		name = "万圣节",
 		desc = "不给糖就捣蛋！",
@@ -807,11 +727,7 @@ var_0_3.base.backyard_theme_template = {}
 			13306
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.backyard_theme_template
-
-	var_1_12[14] = {
+	pg.base.backyard_theme_template[14] = {
 		Cfg_1 = 5,
 		name = "邂逅繁星",
 		desc = "深邃广袤的夜空，隐藏着无尽的秘密",
@@ -855,11 +771,7 @@ var_0_3.base.backyard_theme_template = {}
 			14304
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.backyard_theme_template
-
-	var_1_13[16] = {
+	pg.base.backyard_theme_template[16] = {
 		Cfg_1 = 5,
 		name = "圣诞节",
 		desc = "Merry Christmas！",
@@ -930,11 +842,7 @@ var_0_3.base.backyard_theme_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.backyard_theme_template
-
-	var_1_14[17] = {
+	pg.base.backyard_theme_template[17] = {
 		Cfg_1 = 5,
 		name = "新年主题",
 		desc = "今年也请多多指教！",
@@ -1002,11 +910,7 @@ var_0_3.base.backyard_theme_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.backyard_theme_template
-
-	var_1_15[18] = {
+	pg.base.backyard_theme_template[18] = {
 		Cfg_1 = 5,
 		name = "游戏业界",
 		desc = "呼呼~一起逛逛这游戏业界吧！",
@@ -1048,11 +952,7 @@ var_0_3.base.backyard_theme_template = {}
 			18306
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.backyard_theme_template
-
-	var_1_16[19] = {
+	pg.base.backyard_theme_template[19] = {
 		Cfg_1 = 5,
 		name = "恭贺新春",
 		desc = "张灯结彩，辞旧迎新！",
@@ -1125,11 +1025,7 @@ var_0_3.base.backyard_theme_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.backyard_theme_template
-
-	var_1_17[20] = {
+	pg.base.backyard_theme_template[20] = {
 		Cfg_1 = 5,
 		name = "啾啾之森",
 		desc = "欢迎来到啾啾之森！",
@@ -1163,11 +1059,7 @@ var_0_3.base.backyard_theme_template = {}
 			20114
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.backyard_theme_template
-
-	var_1_18[21] = {
+	pg.base.backyard_theme_template[21] = {
 		Cfg_1 = 5,
 		name = "MARIAGE D'AMOUR",
 		desc = "梦中的婚礼！",
@@ -1210,11 +1102,7 @@ var_0_3.base.backyard_theme_template = {}
 			21302
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.backyard_theme_template
-
-	var_1_19[22] = {
+	pg.base.backyard_theme_template[22] = {
 		Cfg_1 = 5,
 		name = "皇家都会",
 		desc = "自然流露的优雅与从容，才是皇家应有的风格",
@@ -1256,11 +1144,7 @@ var_0_3.base.backyard_theme_template = {}
 			22305
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.backyard_theme_template
-
-	var_1_20[23] = {
+	pg.base.backyard_theme_template[23] = {
 		Cfg_1 = 5,
 		name = "啾啾呦呦 ",
 		desc = "啾啾幼儿园开学咯！",
@@ -1300,11 +1184,7 @@ var_0_3.base.backyard_theme_template = {}
 			23307
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.backyard_theme_template
-
-	var_1_21[24] = {
+	pg.base.backyard_theme_template[24] = {
 		Cfg_1 = 5,
 		name = "喵喵咖啡",
 		desc = "欢迎光临《喵喵咖啡》喵!",
@@ -1352,11 +1232,7 @@ var_0_3.base.backyard_theme_template = {}
 			24306
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.backyard_theme_template
-
-	var_1_22[25] = {
+	pg.base.backyard_theme_template[25] = {
 		Cfg_1 = 5,
 		name = "乡村印象",
 		desc = "大概是久远的乡村回忆",
@@ -1409,11 +1285,7 @@ var_0_3.base.backyard_theme_template = {}
 			25305
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.backyard_theme_template
-
-	var_1_23[27] = {
+	pg.base.backyard_theme_template[27] = {
 		Cfg_1 = 5,
 		name = "水上乐园",
 		desc = "一起来玩水吧！",
@@ -1460,11 +1332,7 @@ var_0_3.base.backyard_theme_template = {}
 			27301
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.backyard_theme_template
-
-	var_1_24[28] = {
+	pg.base.backyard_theme_template[28] = {
 		Cfg_1 = 5,
 		name = "森林田园",
 		desc = "森林中的悠闲田园生活。",
@@ -1529,11 +1397,7 @@ var_0_3.base.backyard_theme_template = {}
 			28307
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.backyard_theme_template
-
-	var_1_25[29] = {
+	pg.base.backyard_theme_template[29] = {
 		Cfg_1 = 5,
 		name = "幽暗深海",
 		desc = "幽暗深海之中有什么等着你呢？",
@@ -1578,11 +1442,7 @@ var_0_3.base.backyard_theme_template = {}
 			29302
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.backyard_theme_template
-
-	var_1_26[30] = {
+	pg.base.backyard_theme_template[30] = {
 		Cfg_1 = 5,
 		name = "彩虹天堂",
 		desc = "梦幻的彩虹天堂!",
@@ -1628,11 +1488,7 @@ var_0_3.base.backyard_theme_template = {}
 			30303
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.backyard_theme_template
-
-	var_1_27[31] = {
+	pg.base.backyard_theme_template[31] = {
 		Cfg_1 = 5,
 		name = "atre秋叶原",
 		desc = "atre系列",
@@ -1654,11 +1510,7 @@ var_0_3.base.backyard_theme_template = {}
 			31104
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.backyard_theme_template
-
-	var_1_28[32] = {
+	pg.base.backyard_theme_template[32] = {
 		Cfg_1 = 5,
 		name = "lawson系列",
 		desc = "lawson系列",
@@ -1680,11 +1532,7 @@ var_0_3.base.backyard_theme_template = {}
 			32106
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.backyard_theme_template
-
-	var_1_29[33] = {
+	pg.base.backyard_theme_template[33] = {
 		Cfg_1 = 5,
 		name = "妖怪屋之夜",
 		desc = "嘻嘻嘻~欢迎来到妖怪们的夜之祭典~",
@@ -1732,11 +1580,7 @@ var_0_3.base.backyard_theme_template = {}
 			33306
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.backyard_theme_template
-
-	var_1_30[35] = {
+	pg.base.backyard_theme_template[35] = {
 		Cfg_1 = 5,
 		name = "万圣鬼夜",
 		desc = "欢迎来到万圣乐园！",
@@ -1791,11 +1635,7 @@ var_0_3.base.backyard_theme_template = {}
 			35303
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.backyard_theme_template
-
-	var_1_31[36] = {
+	pg.base.backyard_theme_template[36] = {
 		Cfg_1 = 5,
 		name = "传颂之物",
 		desc = "「一切如您所愿…」",
@@ -1835,11 +1675,7 @@ var_0_3.base.backyard_theme_template = {}
 			36305
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.backyard_theme_template
-
-	var_1_32[37] = {
+	pg.base.backyard_theme_template[37] = {
 		Cfg_1 = 5,
 		name = "圣诞街景",
 		desc = "一起逛逛下雪的商店街吧！",
@@ -1879,11 +1715,7 @@ var_0_3.base.backyard_theme_template = {}
 			37120
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.backyard_theme_template
-
-	var_1_33[38] = {
+	pg.base.backyard_theme_template[38] = {
 		Cfg_1 = 5,
 		name = "猪突猛进！",
 		desc = "新的一年也要快乐！用猪突猛进的气势gogogo~",
@@ -1942,11 +1774,7 @@ var_0_3.base.backyard_theme_template = {}
 			38305
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.backyard_theme_template
-
-	var_1_34[39] = {
+	pg.base.backyard_theme_template[39] = {
 		Cfg_1 = 5,
 		name = "粉粉猪年",
 		desc = "源自东煌的传统家具风格，为港区带来节日的喜庆与祥和。",
@@ -2001,11 +1829,7 @@ var_0_3.base.backyard_theme_template = {}
 			39307
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.backyard_theme_template
-
-	var_1_35[40] = {
+	pg.base.backyard_theme_template[40] = {
 		Cfg_1 = 5,
 		name = "雪山假日",
 		desc = "Yahooo～没人能追上我滑雪的速度～～～",
@@ -2048,11 +1872,7 @@ var_0_3.base.backyard_theme_template = {}
 			40124
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.backyard_theme_template
-
-	var_1_36[41] = {
+	pg.base.backyard_theme_template[41] = {
 		Cfg_1 = 5,
 		name = "啾啾乐园",
 		desc = "梦幻的啾啾乐园随时欢迎大家的到来啾！",
@@ -2088,11 +1908,7 @@ var_0_3.base.backyard_theme_template = {}
 			41116
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.backyard_theme_template
-
-	var_1_37[42] = {
+	pg.base.backyard_theme_template[42] = {
 		Cfg_1 = 5,
 		name = "传统风格",
 		desc = "东方国度的传统风格家具，充满了历史感～",
@@ -2135,11 +1951,7 @@ var_0_3.base.backyard_theme_template = {}
 			42304
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.backyard_theme_template
-
-	var_1_38[43] = {
+	pg.base.backyard_theme_template[43] = {
 		Cfg_1 = 5,
 		name = "虚拟空间",
 		desc = "这样一来你的房间也能变成虚拟空间！",
@@ -2183,11 +1995,7 @@ var_0_3.base.backyard_theme_template = {}
 			43307
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.backyard_theme_template
-
-	var_1_39[44] = {
+	pg.base.backyard_theme_template[44] = {
 		Cfg_1 = 5,
 		name = "下雨天",
 		desc = "哗啦啦啦~下雨啦！",
@@ -2231,11 +2039,7 @@ var_0_3.base.backyard_theme_template = {}
 			44302
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.backyard_theme_template
-
-	var_1_40[45] = {
+	pg.base.backyard_theme_template[45] = {
 		Cfg_1 = 5,
 		name = "铁血乐章",
 		desc = "侧耳聆听吧，由铁血奏响的这曲美妙乐章——",
@@ -2300,11 +2104,7 @@ var_0_3.base.backyard_theme_template = {}
 			45310
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.backyard_theme_template
-
-	var_1_41[46] = {
+	pg.base.backyard_theme_template[46] = {
 		Cfg_1 = 5,
 		name = "Cyberpunk",
 		desc = "欢迎来到数字世界！",
@@ -2357,11 +2157,7 @@ var_0_3.base.backyard_theme_template = {}
 			46305
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.backyard_theme_template
-
-	var_1_42[48] = {
+	pg.base.backyard_theme_template[48] = {
 		Cfg_1 = 5,
 		name = "撒丁风情",
 		desc = "领略迷人的撒丁文化与风情吧~",
@@ -2408,11 +2204,7 @@ var_0_3.base.backyard_theme_template = {}
 			48303
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.backyard_theme_template
-
-	var_1_43[49] = {
+	pg.base.backyard_theme_template[49] = {
 		Cfg_1 = 5,
 		name = "港区指挥室",
 		desc = "",
@@ -2459,11 +2251,7 @@ var_0_3.base.backyard_theme_template = {}
 			49305
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.backyard_theme_template
-
-	var_1_44[50] = {
+	pg.base.backyard_theme_template[50] = {
 		Cfg_1 = 5,
 		name = "公路之旅",
 		desc = "准备好坐骑和行囊，开始这场公路之旅吧~",
@@ -2506,11 +2294,7 @@ var_0_3.base.backyard_theme_template = {}
 			50123
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.backyard_theme_template
-
-	var_1_45[51] = {
+	pg.base.backyard_theme_template[51] = {
 		Cfg_1 = 5,
 		name = "热闹夜市",
 		desc = "逛逛夜市，来点好吃好玩的吧~",
@@ -2547,11 +2331,7 @@ var_0_3.base.backyard_theme_template = {}
 			51118
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.backyard_theme_template
-
-	var_1_46[52] = {
+	pg.base.backyard_theme_template[52] = {
 		Cfg_1 = 5,
 		name = "惊叫小镇",
 		desc = "Happy Halloween！",
@@ -2589,11 +2369,7 @@ var_0_3.base.backyard_theme_template = {}
 			52118
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.backyard_theme_template
-
-	var_1_47[53] = {
+	pg.base.backyard_theme_template[53] = {
 		Cfg_1 = 5,
 		name = "激奏Live！",
 		desc = "It's show time~",
@@ -2631,11 +2407,7 @@ var_0_3.base.backyard_theme_template = {}
 			53304
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.backyard_theme_template
-
-	var_1_48[54] = {
+	pg.base.backyard_theme_template[54] = {
 		Cfg_1 = 5,
 		name = "pocky联动",
 		desc = "pocky联动",
@@ -2658,11 +2430,7 @@ var_0_3.base.backyard_theme_template = {}
 			54105
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.backyard_theme_template
-
-	var_1_49[55] = {
+	pg.base.backyard_theme_template[55] = {
 		Cfg_1 = 5,
 		name = "hololive",
 		desc = "hololive-virtual idol project",
@@ -2719,11 +2487,7 @@ var_0_3.base.backyard_theme_template = {}
 			55307
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.backyard_theme_template
-
-	var_1_50[56] = {
+	pg.base.backyard_theme_template[56] = {
 		Cfg_1 = 5,
 		name = "童话小镇",
 		desc = "只有乖孩子才能收到圣诞老人的礼物哦~",
@@ -2756,11 +2520,7 @@ var_0_3.base.backyard_theme_template = {}
 			56113
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.backyard_theme_template
-
-	var_1_51[57] = {
+	pg.base.backyard_theme_template[57] = {
 		Cfg_1 = 5,
 		name = "初诣之夜",
 		desc = "希望新的一年也能平安幸福~",
@@ -2797,11 +2557,7 @@ var_0_3.base.backyard_theme_template = {}
 			57117
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.backyard_theme_template
-
-	var_1_52[58] = {
+	pg.base.backyard_theme_template[58] = {
 		Cfg_1 = 5,
 		name = "节庆团圆！",
 		desc = "大吉大利，团圆安康~",
@@ -2838,11 +2594,7 @@ var_0_3.base.backyard_theme_template = {}
 			58304
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.backyard_theme_template
-
-	var_1_53[59] = {
+	pg.base.backyard_theme_template[59] = {
 		Cfg_1 = 5,
 		name = "梦幻时刻",
 		desc = "只要和你在一起，每天都是梦幻般的节日~",
@@ -2877,11 +2629,7 @@ var_0_3.base.backyard_theme_template = {}
 			59303
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.backyard_theme_template
-
-	var_1_54[60] = {
+	pg.base.backyard_theme_template[60] = {
 		Cfg_1 = 5,
 		name = "啾狱风云",
 		desc = "哼哼哼，不要妄想着从这里逃出去哦！",
@@ -2928,11 +2676,7 @@ var_0_3.base.backyard_theme_template = {}
 			60305
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.backyard_theme_template
-
-	var_1_55[61] = {
+	pg.base.backyard_theme_template[61] = {
 		Cfg_1 = 5,
 		name = "啾啾运动会",
 		desc = "尽情挥洒青春与热情的汗水吧！",
@@ -2979,11 +2723,7 @@ var_0_3.base.backyard_theme_template = {}
 			61303
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.backyard_theme_template
-
-	var_1_56[62] = {
+	pg.base.backyard_theme_template[62] = {
 		Cfg_1 = 5,
 		name = "鸢尾印象",
 		desc = "静谧而平和，理想的生活莫过如是",
@@ -3019,11 +2759,7 @@ var_0_3.base.backyard_theme_template = {}
 			62116
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.backyard_theme_template
-
-	var_1_57[63] = {
+	pg.base.backyard_theme_template[63] = {
 		Cfg_1 = 5,
 		name = "啾啾欢乐餐厅",
 		desc = "欢迎光临~饿了就来吃点pizza啾！",
@@ -3062,11 +2798,7 @@ var_0_3.base.backyard_theme_template = {}
 			63305
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.backyard_theme_template
-
-	var_1_58[65] = {
+	pg.base.backyard_theme_template[65] = {
 		Cfg_1 = 5,
 		name = "和风庭院",
 		desc = "凝结了重樱之匠心的庭院，能从中感受到自然之美。",
@@ -3106,11 +2838,7 @@ var_0_3.base.backyard_theme_template = {}
 			65301
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.backyard_theme_template
-
-	var_1_59[66] = {
+	pg.base.backyard_theme_template[66] = {
 		Cfg_1 = 5,
 		name = "疾速狂热",
 		desc = "狂欢！呐喊！我还可以再加速啾！",
@@ -3151,11 +2879,7 @@ var_0_3.base.backyard_theme_template = {}
 			66121
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.backyard_theme_template
-
-	var_1_60[69] = {
+	pg.base.backyard_theme_template[69] = {
 		Cfg_1 = 5,
 		name = "啾啾诊疗所",
 		desc = "欢迎光临啾！先做个检查啾？",
@@ -3201,11 +2925,7 @@ var_0_3.base.backyard_theme_template = {}
 			69309
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.backyard_theme_template
-
-	var_1_61[70] = {
+	pg.base.backyard_theme_template[70] = {
 		Cfg_1 = 5,
 		name = "激唱Live！",
 		desc = "让我们的歌声响彻宇宙吧！",
@@ -3241,11 +2961,7 @@ var_0_3.base.backyard_theme_template = {}
 			70116
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.backyard_theme_template
-
-	var_1_62[71] = {
+	pg.base.backyard_theme_template[71] = {
 		Cfg_1 = 5,
 		name = "万圣惊魂",
 		desc = "准备好“享受”万圣之夜了吗~？",
@@ -3281,11 +2997,7 @@ var_0_3.base.backyard_theme_template = {}
 			71301
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.backyard_theme_template
-
-	var_1_63[72] = {
+	pg.base.backyard_theme_template[72] = {
 		Cfg_1 = 5,
 		name = "女神假期",
 		desc = "一起来享受不一样的假期啾！",
@@ -3328,11 +3040,7 @@ var_0_3.base.backyard_theme_template = {}
 			72123
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.backyard_theme_template
-
-	var_1_64[73] = {
+	pg.base.backyard_theme_template[73] = {
 		Cfg_1 = 5,
 		name = "温暖圣夜",
 		desc = "享受温馨暖和的平安夜吧~",
@@ -3378,11 +3086,7 @@ var_0_3.base.backyard_theme_template = {}
 			73305
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.backyard_theme_template
-
-	var_1_65[74] = {
+	pg.base.backyard_theme_template[74] = {
 		Cfg_1 = 5,
 		name = "新年雪街",
 		desc = "正所谓…瑞雪兆丰年？",
@@ -3420,11 +3124,7 @@ var_0_3.base.backyard_theme_template = {}
 			74118
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.backyard_theme_template
-
-	var_1_66[75] = {
+	pg.base.backyard_theme_template[75] = {
 		Cfg_1 = 5,
 		name = "敬贺新禧",
 		desc = "团圆热闹的新年又来了啾~",
@@ -3461,11 +3161,7 @@ var_0_3.base.backyard_theme_template = {}
 			75301
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.backyard_theme_template
-
-	var_1_67[76] = {
+	pg.base.backyard_theme_template[76] = {
 		Cfg_1 = 5,
 		name = "熊猫之家",
 		desc = "一起来玩吧！",
@@ -3513,11 +3209,7 @@ var_0_3.base.backyard_theme_template = {}
 			76305
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.backyard_theme_template
-
-	var_1_68[77] = {
+	pg.base.backyard_theme_template[77] = {
 		Cfg_1 = 5,
 		name = "北地雪镇",
 		desc = "在银装素裹的小镇里度过特别的一夜吧！",
@@ -3553,11 +3245,7 @@ var_0_3.base.backyard_theme_template = {}
 			77116
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.backyard_theme_template
-
-	var_1_69[78] = {
+	pg.base.backyard_theme_template[78] = {
 		Cfg_1 = 5,
 		name = "啾啾圣堂",
 		desc = "撒丁知名观光地——「神圣的威光护佑着你~」",
@@ -3592,11 +3280,7 @@ var_0_3.base.backyard_theme_template = {}
 			78115
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.backyard_theme_template
-
-	var_1_70[79] = {
+	pg.base.backyard_theme_template[79] = {
 		Cfg_1 = 5,
 		name = "765事务所",
 		desc = "欢迎来到765事务所！",
@@ -3645,11 +3329,7 @@ var_0_3.base.backyard_theme_template = {}
 			79308
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.backyard_theme_template
-
-	var_1_71[80] = {
+	pg.base.backyard_theme_template[80] = {
 		Cfg_1 = 5,
 		name = "啾啾游戏吧",
 		desc = "享受愉快的游戏之夜吧~",
@@ -3683,11 +3363,7 @@ var_0_3.base.backyard_theme_template = {}
 			80306
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.backyard_theme_template
-
-	var_1_72[81] = {
+	pg.base.backyard_theme_template[81] = {
 		Cfg_1 = 5,
 		name = "啾啾学园",
 		desc = "享受欢乐的学园生活啾！",
@@ -3729,11 +3405,7 @@ var_0_3.base.backyard_theme_template = {}
 			81306
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.backyard_theme_template
-
-	var_1_73[82] = {
+	pg.base.backyard_theme_template[82] = {
 		Cfg_1 = 5,
 		name = "西部风情",
 		desc = "梦想、友情、财富，这里是充满希望的西部小镇！",
@@ -3772,11 +3444,7 @@ var_0_3.base.backyard_theme_template = {}
 			82123
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.backyard_theme_template
-
-	var_1_74[83] = {
+	pg.base.backyard_theme_template[83] = {
 		Cfg_1 = 5,
 		name = "祭典之夜",
 		desc = "祭典时间~让夜晚热闹起来啾！",
@@ -3809,11 +3477,7 @@ var_0_3.base.backyard_theme_template = {}
 			83117
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.backyard_theme_template
-
-	var_1_75[84] = {
+	pg.base.backyard_theme_template[84] = {
 		Cfg_1 = 5,
 		name = "特摄都市",
 		desc = "“警告—警告——巨大怪兽接近中！”",
@@ -3869,11 +3533,7 @@ var_0_3.base.backyard_theme_template = {}
 			84178
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.backyard_theme_template
-
-	var_1_76[85] = {
+	pg.base.backyard_theme_template[85] = {
 		Cfg_1 = 5,
 		name = "Café in 港区",
 		desc = "欢迎光临！点单…还是要老样子吗？",
@@ -3922,11 +3582,7 @@ var_0_3.base.backyard_theme_template = {}
 			85309
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.backyard_theme_template
-
-	var_1_77[86] = {
+	pg.base.backyard_theme_template[86] = {
 		Cfg_1 = 5,
 		name = "东煌园林",
 		desc = "充满东煌意趣的园林。",
@@ -3965,11 +3621,7 @@ var_0_3.base.backyard_theme_template = {}
 			86301
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.backyard_theme_template
-
-	var_1_78[87] = {
+	pg.base.backyard_theme_template[87] = {
 		Cfg_1 = 5,
 		name = "校园之风",
 		desc = "暖风吹过，新的学期要开始啦！",
@@ -4005,11 +3657,7 @@ var_0_3.base.backyard_theme_template = {}
 			87131
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.backyard_theme_template
-
-	var_1_79[88] = {
+	pg.base.backyard_theme_template[88] = {
 		Cfg_1 = 5,
 		name = "吸血鬼古堡",
 		desc = "哼哼…欢迎来到我的城堡…啾",
@@ -4050,11 +3698,7 @@ var_0_3.base.backyard_theme_template = {}
 			88305
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.backyard_theme_template
-
-	var_1_80[89] = {
+	pg.base.backyard_theme_template[89] = {
 		Cfg_1 = 5,
 		name = "东煌时尚",
 		desc = "简约而不简单，奢华而不高调。",
@@ -4100,11 +3744,7 @@ var_0_3.base.backyard_theme_template = {}
 			89309
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.backyard_theme_template
-
-	var_1_81[90] = {
+	pg.base.backyard_theme_template[90] = {
 		Cfg_1 = 5,
 		name = "童话之森",
 		desc = "洋溢着幻想色彩的奇妙森林～",
@@ -4143,11 +3783,7 @@ var_0_3.base.backyard_theme_template = {}
 			90127
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.backyard_theme_template
-
-	var_1_82[91] = {
+	pg.base.backyard_theme_template[91] = {
 		Cfg_1 = 5,
 		name = "啾啾舞蹈室",
 		desc = "随着音乐进入舞蹈的世界吧！",
@@ -4197,11 +3833,7 @@ var_0_3.base.backyard_theme_template = {}
 			91305
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.backyard_theme_template
-
-	var_1_83[92] = {
+	pg.base.backyard_theme_template[92] = {
 		Cfg_1 = 5,
 		name = "啾啾速食餐厅",
 		desc = "生活如此多娇，尽情享受美味~",
@@ -4234,11 +3866,7 @@ var_0_3.base.backyard_theme_template = {}
 			92308
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.backyard_theme_template
-
-	var_1_84[93] = {
+	pg.base.backyard_theme_template[93] = {
 		Cfg_1 = 5,
 		name = "清凉盛夏",
 		desc = "炎炎夏日的清凉乐园！",
@@ -4277,11 +3905,7 @@ var_0_3.base.backyard_theme_template = {}
 			93120
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.backyard_theme_template
-
-	var_1_85[94] = {
+	pg.base.backyard_theme_template[94] = {
 		Cfg_1 = 5,
 		name = "啾啾学园庆典",
 		desc = "快乐的学园庆典，开催！",
@@ -4322,11 +3946,7 @@ var_0_3.base.backyard_theme_template = {}
 			94306
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.backyard_theme_template
-
-	var_1_86[95] = {
+	pg.base.backyard_theme_template[95] = {
 		Cfg_1 = 5,
 		name = "炼金工房",
 		desc = "来神秘的炼金工房一探究竟吧！",
@@ -4375,11 +3995,7 @@ var_0_3.base.backyard_theme_template = {}
 			95305
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.backyard_theme_template
-
-	var_1_87[96] = {
+	pg.base.backyard_theme_template[96] = {
 		Cfg_1 = 5,
 		name = "南方假日",
 		desc = "一起来享受阳光明媚的南方假日吧！",
@@ -4419,11 +4035,7 @@ var_0_3.base.backyard_theme_template = {}
 			96307
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.backyard_theme_template
-
-	var_1_88[97] = {
+	pg.base.backyard_theme_template[97] = {
 		Cfg_1 = 5,
 		name = "美食乐园",
 		desc = "色香味俱全的快乐之园！",
@@ -4465,11 +4077,7 @@ var_0_3.base.backyard_theme_template = {}
 			97301
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.backyard_theme_template
-
-	var_1_89[98] = {
+	pg.base.backyard_theme_template[98] = {
 		Cfg_1 = 5,
 		name = "皇家教室",
 		desc = "来感受优雅而愉快的港区校园生活吧！",
@@ -4528,11 +4136,7 @@ var_0_3.base.backyard_theme_template = {}
 			98314
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.backyard_theme_template
-
-	var_1_90[99] = {
+	pg.base.backyard_theme_template[99] = {
 		Cfg_1 = 5,
 		name = "温泉时光",
 		desc = "蒸腾的雾气，蕴含着人生至高的哲理。",
@@ -4578,11 +4182,7 @@ var_0_3.base.backyard_theme_template = {}
 			99304
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.backyard_theme_template
-
-	var_1_91[100] = {
+	pg.base.backyard_theme_template[100] = {
 		Cfg_1 = 5,
 		name = "海岛冒险",
 		desc = "在这里搭建属于自己的据点吧！",
@@ -4629,11 +4229,7 @@ var_0_3.base.backyard_theme_template = {}
 			300202
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.backyard_theme_template
-
-	var_1_92[101] = {
+	pg.base.backyard_theme_template[101] = {
 		Cfg_1 = 5,
 		name = "漫花庄园",
 		desc = "在静谧浪漫的庄园中与花草一同呼吸吧!",
@@ -4674,11 +4270,7 @@ var_0_3.base.backyard_theme_template = {}
 			301123
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.backyard_theme_template
-
-	var_1_93[102] = {
+	pg.base.backyard_theme_template[102] = {
 		Cfg_1 = 5,
 		name = "典雅宫廷",
 		desc = "古典雅致的宫廷风韵，优雅，实在是太优雅了！",
@@ -4726,11 +4318,7 @@ var_0_3.base.backyard_theme_template = {}
 			302304
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.backyard_theme_template
-
-	var_1_94[103] = {
+	pg.base.backyard_theme_template[103] = {
 		Cfg_1 = 5,
 		name = "常世温泉街",
 		desc = "开启温泉街的奇妙之夜！",
@@ -4765,11 +4353,7 @@ var_0_3.base.backyard_theme_template = {}
 			303119
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.backyard_theme_template
-
-	var_1_95[104] = {
+	pg.base.backyard_theme_template[104] = {
 		Cfg_1 = 5,
 		name = "航海之家",
 		desc = "远航船，向着自由和宝藏，起航~",
@@ -4826,11 +4410,7 @@ var_0_3.base.backyard_theme_template = {}
 			304108
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.backyard_theme_template
-
-	var_1_96[105] = {
+	pg.base.backyard_theme_template[105] = {
 		Cfg_1 = 5,
 		name = "忍者之家",
 		desc = "想体验忍者的生活么？忍者之家，你最好的选择！",
@@ -4869,11 +4449,7 @@ var_0_3.base.backyard_theme_template = {}
 			305306
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.backyard_theme_template
-
-	var_1_97[106] = {
+	pg.base.backyard_theme_template[106] = {
 		Cfg_1 = 5,
 		name = "港区喧嚣夜",
 		desc = "灯光！音乐！一起彻夜狂欢吧~",
@@ -4905,11 +4481,7 @@ var_0_3.base.backyard_theme_template = {}
 			306114
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.backyard_theme_template
-
-	var_1_98[107] = {
+	pg.base.backyard_theme_template[107] = {
 		Cfg_1 = 5,
 		name = "龙年新春",
 		desc = "龙年大吉，新春如意！",
@@ -4941,8 +4513,7 @@ var_0_3.base.backyard_theme_template = {}
 			307114
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.backyard_theme_template[108] = {
+	pg.base.backyard_theme_template[108] = {
 		Cfg_1 = 5,
 		name = "怪盗谜题",
 		desc = "一起来拜访神秘的怪盗世界吧！",
@@ -4988,11 +4559,7 @@ var_0_3.base.backyard_theme_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.backyard_theme_template
-
-	var_2_0[109] = {
+	pg.base.backyard_theme_template[109] = {
 		Cfg_1 = 5,
 		name = "森林小屋",
 		desc = "欢迎踏入充满奇幻与魔法的森林小屋！ ",
@@ -5027,11 +4594,7 @@ end)()
 			309302
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.backyard_theme_template
-
-	var_2_1[110] = {
+	pg.base.backyard_theme_template[110] = {
 		Cfg_1 = 5,
 		name = "星光化妆间",
 		desc = "做好准备，盛大演出即将开场！",
@@ -5076,11 +4639,7 @@ end)()
 			310310
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.backyard_theme_template
-
-	var_2_2[111] = {
+	pg.base.backyard_theme_template[111] = {
 		Cfg_1 = 5,
 		name = "假日邮轮",
 		desc = "跟随假日邮轮一同驶向远方吧~ ",
@@ -5115,11 +4674,7 @@ end)()
 			311115
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.backyard_theme_template
-
-	var_2_3[112] = {
+	pg.base.backyard_theme_template[112] = {
 		Cfg_1 = 5,
 		name = "燃燃咖啡厅 ",
 		desc = "速度！激情！燃烧！ ",
@@ -5154,11 +4709,7 @@ end)()
 			312302
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.backyard_theme_template
-
-	var_2_4[113] = {
+	pg.base.backyard_theme_template[113] = {
 		Cfg_1 = 5,
 		name = "西部旅店 ",
 		desc = "旅店之内，禁止火并！ ",
@@ -5193,11 +4744,7 @@ end)()
 			313303
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.backyard_theme_template
-
-	var_2_5[114] = {
+	pg.base.backyard_theme_template[114] = {
 		Cfg_1 = 5,
 		name = "梦幻乐园 ",
 		desc = "欢迎来到，梦幻乐园！ ",
@@ -5227,11 +4774,7 @@ end)()
 			314111
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.backyard_theme_template
-
-	var_2_6[115] = {
+	pg.base.backyard_theme_template[115] = {
 		Cfg_1 = 5,
 		name = "幽暗之港 ",
 		desc = "欢迎来到幽暗之港，在恐惧中颤抖吧！ ",
@@ -5263,11 +4806,7 @@ end)()
 			315112
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.backyard_theme_template
-
-	var_2_7[116] = {
+	pg.base.backyard_theme_template[116] = {
 		Cfg_1 = 5,
 		name = "王女风格 ",
 		desc = "好像童话一样，充满王女气质呢！ ",
@@ -5304,11 +4843,7 @@ end)()
 			316305
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.backyard_theme_template
-
-	var_2_8[117] = {
+	pg.base.backyard_theme_template[117] = {
 		Cfg_1 = 5,
 		name = "荒野庇护所",
 		desc = "危机四伏的荒野之上，仅有此处可以稍作休息。",
@@ -5340,11 +4875,7 @@ end)()
 			317303
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.backyard_theme_template
-
-	var_2_9[118] = {
+	pg.base.backyard_theme_template[118] = {
 		Cfg_1 = 5,
 		name = "踏雪寻梅 ",
 		desc = "踏雪寻梅，共赏春光~ ",
@@ -5381,11 +4912,7 @@ end)()
 			318304
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.backyard_theme_template
-
-	var_2_10[119] = {
+	pg.base.backyard_theme_template[119] = {
 		Cfg_1 = 5,
 		name = "法老秘境 ",
 		desc = "踏上这片金色的土地，仿佛能听见远古的回响…… ",
@@ -5425,11 +4952,7 @@ end)()
 			319304
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.backyard_theme_template
-
-	var_2_11[120] = {
+	pg.base.backyard_theme_template[120] = {
 		Cfg_1 = 5,
 		name = "深空医疗站 ",
 		desc = "深空医疗站，为您提供别具一格的新奇医疗体验。 ",
@@ -5469,11 +4992,7 @@ end)()
 			320306
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.backyard_theme_template
-
-	var_2_12[121] = {
+	pg.base.backyard_theme_template[121] = {
 		Cfg_1 = 5,
 		name = "郁金田园 ",
 		desc = "柔风与花香，这就是美妙的田园生活啊~ ",
@@ -5510,11 +5029,7 @@ end)()
 			321118
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.backyard_theme_template
-
-	var_2_13[122] = {
+	pg.base.backyard_theme_template[122] = {
 		Cfg_1 = 5,
 		name = "海滨假日",
 		desc = "沙滩与浪花，享受海滨假日的悠闲时光吧~ ",
@@ -5549,11 +5064,7 @@ end)()
 			322115
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.backyard_theme_template
-
-	var_2_14[123] = {
+	pg.base.backyard_theme_template[123] = {
 		Cfg_1 = 5,
 		name = "铁道之旅",
 		desc = "踏上列车，感受铁轨的律动与窗外的风景吧~",
@@ -5590,11 +5101,7 @@ end)()
 			324117
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.backyard_theme_template
-
-	var_2_15[124] = {
+	pg.base.backyard_theme_template[124] = {
 		Cfg_1 = 5,
 		name = "工房休息区",
 		desc = "忙碌之余也不要忘记感受生活的美好哦",
@@ -5642,11 +5149,7 @@ end)()
 			325303
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.backyard_theme_template
-
-	var_2_16[125] = {
+	pg.base.backyard_theme_template[125] = {
 		Cfg_1 = 5,
 		name = "炼金工作区",
 		desc = "置身于绿地平原，感受炼金术士的一天",
@@ -5677,11 +5180,7 @@ end)()
 			326111
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.backyard_theme_template
-
-	var_2_17[126] = {
+	pg.base.backyard_theme_template[126] = {
 		Cfg_1 = 5,
 		name = "工房庭院",
 		desc = "闲暇之余，来工房庭院里散散步吧",
@@ -5720,11 +5219,7 @@ end)()
 			327302
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.backyard_theme_template
-
-	var_2_18[127] = {
+	pg.base.backyard_theme_template[127] = {
 		Cfg_1 = 5,
 		name = "林间温泉",
 		desc = "浸入温泉，享受身心的放松与愉悦吧~",
@@ -5761,11 +5256,7 @@ end)()
 			328117
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.backyard_theme_template
-
-	var_2_19[129] = {
+	pg.base.backyard_theme_template[129] = {
 		Cfg_1 = 5,
 		name = "忍者之城",
 		desc = "步入忍者之城，开启一段惊心动魄的忍者冒险吧~",
@@ -5804,11 +5295,7 @@ end)()
 			329119
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.backyard_theme_template
-
-	var_2_20[130] = {
+	pg.base.backyard_theme_template[130] = {
 		Cfg_1 = 5,
 		name = "迷宫都市",
 		desc = "踏入迷宫都市，登上英雄们展开冒险的舞台",
@@ -5829,11 +5316,7 @@ end)()
 			330101
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.backyard_theme_template
-
-	var_2_21[131] = {
+	pg.base.backyard_theme_template[131] = {
 		Cfg_1 = 5,
 		name = "空中战舰 ",
 		desc = "登上穿梭于云端的飞船舰桥，体验被数据所包围的作战氛围 ",
@@ -5878,11 +5361,7 @@ end)()
 			331308
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.backyard_theme_template
-
-	var_2_22[132] = {
+	pg.base.backyard_theme_template[132] = {
 		Cfg_1 = 5,
 		name = "幽光神殿",
 		desc = "推开失落的门扉，在微光闪烁间，探寻古老的密语吧~",
@@ -5915,11 +5394,7 @@ end)()
 			332301
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.backyard_theme_template
-
-	var_2_23[133] = {
+	pg.base.backyard_theme_template[133] = {
 		Cfg_1 = 5,
 		name = "粉喵女仆屋",
 		desc = "以蛋糕和猫猫为主题的女仆屋，甜蜜而又温暖~",
@@ -5958,11 +5433,7 @@ end)()
 			333301
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.backyard_theme_template
-
-	var_2_24[134] = {
+	pg.base.backyard_theme_template[134] = {
 		Cfg_1 = 5,
 		name = "时尚摄影棚",
 		desc = "走进摄影棚，成为镜头下的潮流焦点吧~",
@@ -6005,11 +5476,7 @@ end)()
 			334302
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.backyard_theme_template
-
-	var_2_25[135] = {
+	pg.base.backyard_theme_template[135] = {
 		Cfg_1 = 5,
 		name = "新春拍卖会",
 		desc = "踏入拍卖会，享受举牌竞价的喜悦与心跳吧~",
@@ -6049,11 +5516,7 @@ end)()
 			335302
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.backyard_theme_template
-
-	var_2_26[136] = {
+	pg.base.backyard_theme_template[136] = {
 		Cfg_1 = 5,
 		name = "数据指挥中心",
 		desc = "进入指挥中心，在数据流光中俯瞰都市天际吧~",
@@ -6089,11 +5552,7 @@ end)()
 			336302
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.backyard_theme_template
-
-	var_2_27[137] = {
+	pg.base.backyard_theme_template[137] = {
 		Cfg_1 = 5,
 		name = "闪耀海滨",
 		desc = "让闪耀的浪花与阳光，点亮你的完美假期吧！",
@@ -6128,11 +5587,7 @@ end)()
 			337116
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.backyard_theme_template
-
-	var_2_28[138] = {
+	pg.base.backyard_theme_template[138] = {
 		Cfg_1 = 5,
 		name = "享梦浮金湾",
 		desc = "漫步于璀璨灯火之间，尽享浮金湾的奢华与梦幻时光吧~",
@@ -6167,11 +5622,7 @@ end)()
 			338115
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.backyard_theme_template
-
-	var_2_29[139] = {
+	pg.base.backyard_theme_template[139] = {
 		Cfg_1 = 5,
 		name = "惊喜马戏团",
 		desc = "步入惊喜马戏团，在欢笑中邂逅一段美好时光吧~ ",
@@ -6205,11 +5656,7 @@ end)()
 			339114
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.backyard_theme_template
-
-	var_2_30[140] = {
+	pg.base.backyard_theme_template[140] = {
 		Cfg_1 = 5,
 		name = "地堡舱室",
 		desc = "踏入环绕于轨道的地堡居住区，在这灰白基调的舱室中短暂休整",
@@ -6233,8 +5680,7 @@ end)()
 			340104
 		}
 	}
-	pg = var_2_30
-	var_2_30.base.backyard_theme_template[141] = {
+	pg.base.backyard_theme_template[141] = {
 		Cfg_1 = 5,
 		name = "废弃住院部",
 		desc = "踏入废弃住院部，在寂静病房与斑驳旧物间展开探索吧~",
@@ -6274,6 +5720,42 @@ end)()
 			341302,
 			341303,
 			341304
+		}
+	}
+	pg.base.backyard_theme_template[142] = {
+		Cfg_1 = 5,
+		name = "滨海耐力赛",
+		desc = "来到热情洋溢的滨海赛场，在呐喊、灯光与飞扬沙尘中尽情狂飙吧~",
+		deblocking = 1,
+		new = 1,
+		hot = 1,
+		Cfg_2 = 8,
+		is_view = 1,
+		discount = 0,
+		order = 142,
+		id = 142,
+		icon = "car3themeicon",
+		comfortable = 0,
+		discount_time = "",
+		ids = {
+			342001,
+			342002,
+			342101,
+			342102,
+			342103,
+			342104,
+			342105,
+			342106,
+			342107,
+			342108,
+			342109,
+			342110,
+			342111,
+			342112,
+			342113,
+			342114,
+			342115,
+			342116
 		}
 	}
 

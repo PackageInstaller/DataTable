@@ -1,16 +1,10 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = class("BattleWeaponButton")
 
-var_0_0 = var_0_10000 or {}
-ys = ys
-class = var_0_10001
-
-local var_0_1 = var_0_10001("BattleWeaponButton")
-
-var_0.Battle.BattleWeaponButton = var_0_1
-var_0_1.__name = "BattleWeaponButton"
-var_0_1.ICON_BY_INDEX = {
+ys.Battle.BattleWeaponButton = var_0_0
+var_0_0.__name = "BattleWeaponButton"
+var_0_0.ICON_BY_INDEX = {
 	"cannon",
 	"torpedo",
 	"aircraft",
@@ -25,7 +19,7 @@ var_0_1.ICON_BY_INDEX = {
 	"pointairstrike"
 }
 
-function var_0_1.Ctor(arg_1_0)
+function var_0_0.Ctor(arg_1_0)
 	var_0.EventListener.AttachEventListener(arg_1_0)
 
 	arg_1_0.eventTriggers = {}
@@ -33,7 +27,7 @@ function var_0_1.Ctor(arg_1_0)
 	return
 end
 
-function var_0_1.ConfigCallback(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+function var_0_0.ConfigCallback(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
 	arg_2_0._downFunc = arg_2_1
 	arg_2_0._upFunc = arg_2_2
 	arg_2_0._cancelFunc = arg_2_3
@@ -42,156 +36,76 @@ function var_0_1.ConfigCallback(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
 	return
 end
 
-function var_0_1.SetActive(arg_3_0, arg_3_1)
-	SetActive = var_1_10002
-
-	var_1_10002(arg_3_0._skin, arg_3_1)
+function var_0_0.SetActive(arg_3_0, arg_3_1)
+	SetActive(arg_3_0._skin, arg_3_1)
 
 	return
 end
 
-function var_0_1.SetJam(arg_4_0, arg_4_1)
-	SetActive = var_1_10002
-
-	var_1_10002(arg_4_0._jam, arg_4_1)
-
-	SetActive = var_1_10002
-
-	var_1_10002(arg_4_0._icon, not arg_4_1)
-
-	SetActive = var_1_10002
-
-	var_1_10002(arg_4_0._progress, not arg_4_1)
+function var_0_0.SetJam(arg_4_0, arg_4_1)
+	SetActive(arg_4_0._jam, arg_4_1)
+	SetActive(arg_4_0._icon, not arg_4_1)
+	SetActive(arg_4_0._progress, not arg_4_1)
 
 	return
 end
 
-function var_0_1.SwitchIcon(arg_5_0, arg_5_1, arg_5_2)
+function var_0_0.SwitchIcon(arg_5_0, arg_5_1, arg_5_2)
 	arg_5_0._iconIndex = arg_5_1
 
-	local var_5_0 = var_0_1.ICON_BY_INDEX[arg_5_1]
-	local var_5_1
+	local var_5_0 = arg_5_2 or var_0.Battle.BattleState.GetCombatSkinKey()
 
-	if (arg_5_2 or var_0.Battle.BattleState.GetCombatSkinKey()) ~= "Standard" then
-		var_5_1 = ""
+	if var_5_0 ~= "Standard" then
+		var_5_0 = ""
 	end
 
-	setImageSprite = var_1_10005
+	setImageSprite(arg_5_0._unfill, LoadSprite("ui/CombatUI" .. var_5_0 .. "_atlas", "weapon_unfill_" .. var_0_0.ICON_BY_INDEX[arg_5_1]))
+	setImageSprite(arg_5_0._filled, LoadSprite("ui/CombatUI" .. var_5_0 .. "_atlas", "filled_combined_" .. var_0_0.ICON_BY_INDEX[arg_5_1]))
 
-	local var_5_2 = arg_5_0._unfill
-
-	LoadSprite = var_1_10008
-
-	var_1_10005(var_5_2, var_1_10008("ui/CombatUI" .. var_5_1 .. "_atlas", "weapon_unfill_" .. var_5_0))
-
-	setImageSprite = var_1_10005
-
-	local var_5_3 = arg_5_0._filled
-
-	LoadSprite = var_8
-
-	var_1_10005(var_5_3, var_8("ui/CombatUI" .. var_5_1 .. "_atlas", "filled_combined_" .. var_5_0))
-
-	return var_5_1, var_5_0
+	return var_5_0, var_0_0.ICON_BY_INDEX[arg_5_1]
 end
 
-function var_0_1.SwitchIconEffect(arg_6_0, arg_6_1, arg_6_2)
-	local var_6_0 = var_0_1.ICON_BY_INDEX[arg_6_1]
-	local var_6_1
+function var_0_0.SwitchIconEffect(arg_6_0, arg_6_1, arg_6_2)
+	local var_6_0 = arg_6_2 or var_0.Battle.BattleState.GetCombatSkinKey()
 
-	if (arg_6_2 or var_0.Battle.BattleState.GetCombatSkinKey()) ~= "Standard" then
-		var_6_1 = ""
+	if var_6_0 ~= "Standard" then
+		var_6_0 = ""
 	end
 
-	setImageSprite = var_1_10005
-
-	local var_6_2 = arg_6_0._filledEffect
-
-	LoadSprite = var_1_10008
-
-	var_1_10005(var_6_2, var_1_10008("ui/CombatUI" .. var_6_1 .. "_atlas", "filled_effect_" .. var_6_0), true)
-
-	setImageSprite = var_1_10005
-
-	local var_6_3 = arg_6_0._jam
-
-	LoadSprite = var_8
-
-	var_1_10005(var_6_3, var_8("ui/CombatUI" .. var_6_1 .. "_atlas", "skill_jam_" .. var_6_0), true)
+	setImageSprite(arg_6_0._filledEffect, LoadSprite("ui/CombatUI" .. var_6_0 .. "_atlas", "filled_effect_" .. var_0_0.ICON_BY_INDEX[arg_6_1]), true)
+	setImageSprite(arg_6_0._jam, LoadSprite("ui/CombatUI" .. var_6_0 .. "_atlas", "skill_jam_" .. var_0_0.ICON_BY_INDEX[arg_6_1]), true)
 
 	return
 end
 
-function var_0_1.ConfigSkin(arg_7_0, arg_7_1)
+function var_0_0.ConfigSkin(arg_7_0, arg_7_1)
 	arg_7_0._skin = arg_7_1
 	arg_7_0._btn = arg_7_1:Find("ActCtl")
 	arg_7_0._block = arg_7_1:Find("ActCtl/block").gameObject
 	arg_7_0._progress = arg_7_1:Find("ActCtl/skill_progress")
-
-	local var_7_0 = arg_7_0._progress
-	local var_7_1 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_7_0._progressBar = var_7_1(var_7_0, var_5(var_1_10007))
+	arg_7_0._progressBar = arg_7_0._progress:GetComponent(typeof(Image))
 	arg_7_0._icon = arg_7_1:Find("ActCtl/skill_icon")
-
-	local var_7_2 = arg_7_0._icon
-
-	arg_7_0._filled = var_2.Find(var_7_2, "filled")
-
-	local var_7_3 = arg_7_0._icon
-
-	arg_7_0._unfill = var_2.Find(var_7_3, "unfill")
+	arg_7_0._filled = arg_7_0._icon:Find("filled")
+	arg_7_0._unfill = arg_7_0._icon:Find("unfill")
 	arg_7_0._count = arg_7_1:Find("ActCtl/Count")
-
-	local var_7_4 = arg_7_0._count
-
-	arg_7_0._text = var_2.Find(var_7_4, "CountText")
+	arg_7_0._text = arg_7_0._count:Find("CountText")
 	arg_7_0._selected = arg_7_1:Find("ActCtl/selected")
 	arg_7_0._unSelect = arg_7_1:Find("ActCtl/unselect")
 	arg_7_0._filledEffect = arg_7_1:Find("ActCtl/filledEffect")
 	arg_7_0._jam = arg_7_1:Find("ActCtl/jam")
+	arg_7_0._countTxt = arg_7_0._text:GetComponent(typeof(Text))
 
-	local var_7_5 = arg_7_0._text
-	local var_7_6 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_7_0._countTxt = var_7_6(var_7_5, var_5(var_1_10007))
-
-	local var_7_7 = arg_7_1.gameObject
-
-	var_2.SetActive(var_7_7, true)
-
-	local var_7_8 = arg_7_0._block
-
-	var_2.SetActive(var_7_8, false)
-
-	local var_7_9 = arg_7_0._progress.gameObject
-
-	var_2.SetActive(var_7_9, true)
-
-	local var_7_10 = arg_7_0._filledEffect.gameObject
-
-	var_2.SetActive(var_7_10, false)
-
-	local var_7_11 = var_2:GetComponent("DftAniEvent")
-
-	var_3.SetEndEvent(var_7_11, function(arg_8_0)
-		SetActive = var_2_10001
-
-		var_2_10001(arg_7_0._filledEffect, false)
+	arg_7_1.gameObject:SetActive(true)
+	arg_7_0._block:SetActive(false)
+	arg_7_0._progress.gameObject:SetActive(true)
+	arg_7_0._filledEffect.gameObject:SetActive(false)
+	arg_7_0._filledEffect.gameObject:GetComponent("DftAniEvent"):SetEndEvent(function(arg_8_0)
+		SetActive(arg_7_0._filledEffect, false)
 
 		return
 	end)
 
-	local var_7_12 = arg_7_1
-	local var_7_13 = arg_7_1.GetComponent
-
-	typeof = var_7
-	Animator = var_1_10009
-	arg_7_0._animtor = var_7_13(var_7_12, var_7(var_1_10009))
+	arg_7_0._animtor = arg_7_1:GetComponent(typeof(Animator))
 	arg_7_0._bgEff = arg_7_1:Find("ActCtl/bg_eff")
 	arg_7_0._gizmos1 = arg_7_1:Find("ActCtl/gizmos_1")
 	arg_7_0._gizmosXue = arg_7_1:Find("ActCtl/gizmos_xue")
@@ -199,18 +113,13 @@ function var_0_1.ConfigSkin(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.GetSkin(arg_9_0)
+function var_0_0.GetSkin(arg_9_0)
 	return arg_9_0._skin
 end
 
-function var_0_1.Enabled(arg_10_0, arg_10_1)
-	GetComponent = var_1_10002
-
-	local var_10_0 = var_1_10002(arg_10_0._btn, "EventTriggerListener")
-
-	GetComponent = var_1_10003
-
-	local var_10_1 = var_1_10003(arg_10_0._block, "EventTriggerListener")
+function var_0_0.Enabled(arg_10_0, arg_10_1)
+	local var_10_0 = GetComponent(arg_10_0._btn, "EventTriggerListener")
+	local var_10_1 = GetComponent(arg_10_0._block, "EventTriggerListener")
 
 	arg_10_0.eventTriggers[var_10_0] = true
 	arg_10_0.eventTriggers[var_10_1] = true
@@ -220,221 +129,140 @@ function var_0_1.Enabled(arg_10_0, arg_10_1)
 	return
 end
 
-function var_0_1.Disable(arg_11_0)
+function var_0_0.Disable(arg_11_0)
 	if arg_11_0._cancelFunc then
 		arg_11_0._cancelFunc()
 	end
 
 	arg_11_0:OnUnSelect()
 
-	GetComponent = var_1
-
-	local var_11_0 = var_1(arg_11_0._btn, "EventTriggerListener")
-
-	GetComponent = var_1_10002
-
-	local var_11_1 = var_1_10002(arg_11_0._block, "EventTriggerListener")
-
-	var_11_0.enabled = false
-	var_11_1.enabled = false
+	GetComponent(arg_11_0._btn, "EventTriggerListener").enabled = false
+	GetComponent(arg_11_0._block, "EventTriggerListener").enabled = false
 
 	return
 end
 
-function var_0_1.OnSelected(arg_12_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_12_0._unSelect, false)
-
-	SetActive = var_1_10001
-
-	var_1_10001(arg_12_0._selected, true)
+function var_0_0.OnSelected(arg_12_0)
+	SetActive(arg_12_0._unSelect, false)
+	SetActive(arg_12_0._selected, true)
 
 	return
 end
 
-function var_0_1.OnUnSelect(arg_13_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_13_0._selected, false)
-
-	SetActive = var_1_10001
-
-	var_1_10001(arg_13_0._unSelect, true)
+function var_0_0.OnUnSelect(arg_13_0)
+	SetActive(arg_13_0._selected, false)
+	SetActive(arg_13_0._unSelect, true)
 
 	return
 end
 
-function var_0_1.OnFilled(arg_14_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_14_0._filled, true)
-
-	SetActive = var_1_10001
-
-	var_1_10001(arg_14_0._unfill, false)
+function var_0_0.OnFilled(arg_14_0)
+	SetActive(arg_14_0._filled, true)
+	SetActive(arg_14_0._unfill, false)
 
 	return
 end
 
-function var_0_1.OnUnfill(arg_15_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_15_0._filled, false)
-
-	SetActive = var_1_10001
-
-	var_1_10001(arg_15_0._unfill, true)
+function var_0_0.OnUnfill(arg_15_0)
+	SetActive(arg_15_0._filled, false)
+	SetActive(arg_15_0._unfill, true)
 
 	return
 end
 
-function var_0_1.OnfilledEffect(arg_16_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_16_0._filledEffect, true)
+function var_0_0.OnfilledEffect(arg_16_0)
+	SetActive(arg_16_0._filledEffect, true)
 
 	return
 end
 
-function var_0_1.OnOverLoadChange(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_0._progressInfo
-
-	if var_2.IsOverLoad(var_17_0) then
-		local var_17_1 = arg_17_0._block
-
-		var_2.SetActive(var_17_1, true)
+function var_0_0.OnOverLoadChange(arg_17_0, arg_17_1)
+	if arg_17_0._progressInfo:IsOverLoad() then
+		arg_17_0._block:SetActive(true)
 		arg_17_0:OnUnfill()
 	else
-		local var_17_2 = arg_17_0._block
-
-		var_2.SetActive(var_17_2, false)
+		arg_17_0._block:SetActive(false)
 		arg_17_0:OnFilled()
 
-		if arg_17_1 and arg_17_1.Data and arg_17_1.Data.preCast then
-			if var_2 == 0 then
-				quickCheckAndPlayAnimator = var_1_10003
-
-				var_1_10003(arg_17_0._skin, "weapon_button_progress_filled")
-			elseif 0 < var_2 then
-				quickCheckAndPlayAnimator = var_3
-
-				var_3(arg_17_0._skin, "weapon_button_progress_charge")
+		if arg_17_1 and arg_17_1.Data then
+			if arg_17_1.Data.preCast then
+				if arg_17_1.Data.preCast == 0 then
+					quickCheckAndPlayAnimator(arg_17_0._skin, "weapon_button_progress_filled")
+				elseif arg_17_1.Data.preCast > 0 then
+					quickCheckAndPlayAnimator(arg_17_0._skin, "weapon_button_progress_charge")
+				end
 			end
 		end
 	end
 
 	if arg_17_1 and arg_17_1.Data and arg_17_1.Data.postCast then
-		quickCheckAndPlayAnimator = var_2
-
-		var_2(arg_17_0._skin, "weapon_button_progress_use")
+		quickCheckAndPlayAnimator(arg_17_0._skin, "weapon_button_progress_use")
 	end
 
-	local var_17_3 = arg_17_0._progressInfo
-
-	if var_2.GetTotal(var_17_3) > 0 then
+	if arg_17_0._progressInfo:GetTotal() > 0 then
 		arg_17_0:updateProgressBar()
 	end
 
 	return
 end
 
-function var_0_1.SetProgressActive(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_0._progress.gameObject
-
-	var_2.SetActive(var_18_0, arg_18_1)
+function var_0_0.SetProgressActive(arg_18_0, arg_18_1)
+	arg_18_0._progress.gameObject:SetActive(arg_18_1)
 
 	return
 end
 
-function var_0_1.SetTextActive(arg_19_0, arg_19_1)
-	SetActive = var_1_10002
-
-	var_1_10002(arg_19_0._count, arg_19_1)
+function var_0_0.SetTextActive(arg_19_0, arg_19_1)
+	SetActive(arg_19_0._count, arg_19_1)
 
 	return
 end
 
-function var_0_1.SetProgressInfo(arg_20_0, arg_20_1)
+function var_0_0.SetProgressInfo(arg_20_0, arg_20_1)
 	arg_20_0._progressInfo = arg_20_1
 
-	local var_20_0 = arg_20_0._progressInfo
-
-	var_2.RegisterEventListener(var_20_0, arg_20_0, var_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE, arg_20_0.OnTotalChange)
-
-	local var_20_1 = arg_20_0._progressInfo
-
-	var_2.RegisterEventListener(var_20_1, arg_20_0, var_0.Battle.BattleEvent.WEAPON_COUNT_PLUS, arg_20_0.OnfilledEffect)
-
-	local var_20_2 = arg_20_0._progressInfo
-
-	var_2.RegisterEventListener(var_20_2, arg_20_0, var_0.Battle.BattleEvent.OVER_LOAD_CHANGE, arg_20_0.OnOverLoadChange)
-
-	local var_20_3 = arg_20_0._progressInfo
-
-	var_2.RegisterEventListener(var_20_3, arg_20_0, var_0.Battle.BattleEvent.COUNT_CHANGE, arg_20_0.OnCountChange)
+	arg_20_0._progressInfo:RegisterEventListener(arg_20_0, var_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE, arg_20_0.OnTotalChange)
+	arg_20_0._progressInfo:RegisterEventListener(arg_20_0, var_0.Battle.BattleEvent.WEAPON_COUNT_PLUS, arg_20_0.OnfilledEffect)
+	arg_20_0._progressInfo:RegisterEventListener(arg_20_0, var_0.Battle.BattleEvent.OVER_LOAD_CHANGE, arg_20_0.OnOverLoadChange)
+	arg_20_0._progressInfo:RegisterEventListener(arg_20_0, var_0.Battle.BattleEvent.COUNT_CHANGE, arg_20_0.OnCountChange)
 	arg_20_0:OnTotalChange()
 	arg_20_0:OnOverLoadChange()
 
 	return
 end
 
-function var_0_1.OnCountChange(arg_21_0)
-	local var_21_0 = arg_21_0._progressInfo
-	local var_21_1 = var_1.GetCount(var_21_0)
-	local var_21_2 = arg_21_0._progressInfo
-	local var_21_3 = var_2.GetTotal(var_21_2)
-	local var_21_4 = arg_21_0._countTxt
+function var_0_0.OnCountChange(arg_21_0)
+	local var_21_0 = arg_21_0._progressInfo:GetCount()
+	local var_21_1 = arg_21_0._progressInfo:GetTotal()
 
-	string = var_21_2
-	var_21_4.text = var_21_2.format("%d/%d", var_21_1, var_21_3)
+	arg_21_0._countTxt.text = string.format("%d/%d", var_21_0, var_21_1)
 
-	local var_21_5 = arg_21_0._progressInfo
+	local var_21_2 = arg_21_0._progressInfo:GetCurrentWeaponIconIndex()
 
-	if var_3.GetCurrentWeaponIconIndex(var_21_5) ~= arg_21_0._iconIndex then
-		arg_21_0:SwitchIcon(var_3)
-		arg_21_0:SwitchIconEffect(var_3)
+	if var_21_2 ~= arg_21_0._iconIndex then
+		arg_21_0:SwitchIcon(var_21_2)
+		arg_21_0:SwitchIconEffect(var_21_2)
 	end
 
 	if arg_21_0._gizmos1 then
-		SetActive = var_4
-
-		var_4(arg_21_0._gizmos1, var_21_1 > 0)
-
-		SetActive = var_4
-
-		var_4(arg_21_0._gizmosXue, var_21_1 == var_21_3)
+		SetActive(arg_21_0._gizmos1, var_21_0 > 0)
+		SetActive(arg_21_0._gizmosXue, var_21_0 == var_21_1)
 	end
 
 	return
 end
 
-function var_0_1.OnTotalChange(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0._progressInfo
-
-	if var_2.GetTotal(var_22_0) <= 0 then
-		local var_22_1 = arg_22_0._block
-
-		var_2.SetActive(var_22_1, true)
+function var_0_0.OnTotalChange(arg_22_0, arg_22_1)
+	if arg_22_0._progressInfo:GetTotal() <= 0 then
+		arg_22_0._block:SetActive(true)
 
 		arg_22_0._progressBar.fillAmount = 0
 
 		if arg_22_0._bgEff then
-			local var_22_2 = arg_22_0._skin
-			local var_22_3 = var_2.Find(var_22_2, "ActCtl/bg_eff")
-			local var_22_4 = var_2.GetComponent
-
-			typeof = var_5
-			CanvasGroup = var_1_10007
-			var_22_4(var_22_3, var_5(var_1_10007)).alpha = 0
+			arg_22_0._skin:Find("ActCtl/bg_eff"):GetComponent(typeof(CanvasGroup)).alpha = 0
 		end
 
-		local var_22_5 = arg_22_0._text
-		local var_22_6 = var_2.GetComponent
-
-		typeof = var_5
-		Text = var_1_10007
-		var_22_6(var_22_5, var_5(var_1_10007)).text = "0/0"
+		arg_22_0._text:GetComponent(typeof(Text)).text = "0/0"
 
 		arg_22_0:SetControllerActive(false)
 		arg_22_0:OnUnfill()
@@ -443,27 +271,25 @@ function var_0_1.OnTotalChange(arg_22_0, arg_22_1)
 		arg_22_0:OnCountChange()
 		arg_22_0:SetControllerActive(true)
 
-		if arg_22_1 and arg_22_1.Data.index and var_2 == 1 then
-			arg_22_0:OnUnSelect()
+		if arg_22_1 then
+			if arg_22_1.Data.index and arg_22_1.Data.index == 1 then
+				arg_22_0:OnUnSelect()
+			end
 		end
 	end
 
 	return
 end
 
-function var_0_1.SetControllerActive(arg_23_0, arg_23_1)
+function var_0_0.SetControllerActive(arg_23_0, arg_23_1)
 	if arg_23_0._isActive == arg_23_1 then
 		return
 	end
 
 	arg_23_0._isActive = arg_23_1
-	GetComponent = var_2
 
-	local var_23_0 = var_2(arg_23_0._btn, "EventTriggerListener")
-
-	GetComponent = var_1_10003
-
-	local var_23_1 = var_1_10003(arg_23_0._block, "EventTriggerListener")
+	local var_23_0 = GetComponent(arg_23_0._btn, "EventTriggerListener")
+	local var_23_1 = GetComponent(arg_23_0._block, "EventTriggerListener")
 
 	if arg_23_1 then
 		local var_23_2
@@ -473,10 +299,7 @@ function var_0_1.SetControllerActive(arg_23_0, arg_23_1)
 				var_23_2 = true
 
 				arg_23_0._downFunc()
-
-				local var_24_0 = arg_23_0
-
-				var_0.OnSelected(var_24_0)
+				arg_23_0:OnSelected()
 
 				return
 			end)
@@ -488,10 +311,7 @@ function var_0_1.SetControllerActive(arg_23_0, arg_23_1)
 					var_23_2 = false
 
 					arg_23_0._upFunc()
-
-					local var_25_0 = arg_23_0
-
-					var_0.OnUnSelect(var_25_0)
+					arg_23_0:OnUnSelect()
 				end
 
 				return
@@ -504,10 +324,7 @@ function var_0_1.SetControllerActive(arg_23_0, arg_23_1)
 					var_23_2 = false
 
 					arg_23_0._cancelFunc()
-
-					local var_26_0 = arg_23_0
-
-					var_0.OnUnSelect(var_26_0)
+					arg_23_0:OnUnSelect()
 				end
 
 				return
@@ -525,21 +342,11 @@ function var_0_1.SetControllerActive(arg_23_0, arg_23_1)
 	return
 end
 
-function var_0_1.InitialAnima(arg_27_0, arg_27_1)
-	SetActive = var_1_10002
+function var_0_0.InitialAnima(arg_27_0, arg_27_1)
+	SetActive(arg_27_0._btn, false)
 
-	var_1_10002(arg_27_0._btn, false)
-
-	LeanTween = var_1_10002
-
-	local var_27_0 = var_1_10002.delayedCall
-	local var_27_1 = arg_27_1
-
-	System = var_5
-	arg_27_0._leanID = var_27_0(var_27_1, var_5.Action(function()
-		local var_28_0 = arg_27_0._skin
-
-		var_0.GetComponent(var_28_0, "Animator").enabled = true
+	arg_27_0._leanID = LeanTween.delayedCall(arg_27_1, System.Action(function()
+		arg_27_0._skin:GetComponent("Animator").enabled = true
 		arg_27_0._leanID = nil
 
 		return
@@ -548,140 +355,68 @@ function var_0_1.InitialAnima(arg_27_0, arg_27_1)
 	return
 end
 
-function var_0_1.Update(arg_29_0)
-	local var_29_0 = arg_29_0._progressInfo
-	local var_29_1 = var_1.GetCurrent(var_29_0)
-	local var_29_2 = arg_29_0._progressInfo
-	local var_29_3 = var_2.GetMax(var_29_2)
-	local var_29_4 = arg_29_0._progressInfo
-
-	if var_3.GetTotal(var_29_4) > 0 and var_29_1 < var_29_3 then
+function var_0_0.Update(arg_29_0)
+	if arg_29_0._progressInfo:GetTotal() > 0 and arg_29_0._progressInfo:GetCurrent() < arg_29_0._progressInfo:GetMax() then
 		arg_29_0:updateProgressBar()
 	end
 
 	return
 end
 
-function var_0_1.SetToCombatUIPreview(arg_30_0, arg_30_1)
-	CombatUIPreviewer = var_1_10002
+function var_0_0.SetToCombatUIPreview(arg_30_0, arg_30_1)
+	if arg_30_1 ~= CombatUIPreviewer.WeaponButtonPreviewMode.UNFILLED then
+		SetActive(arg_30_0._filled, true)
+		SetActive(arg_30_0._unfill, false)
 
-	if arg_30_1 ~= var_1_10002.WeaponButtonPreviewMode.UNFILLED then
-		SetActive = var_1_10004
-
-		var_1_10004(arg_30_0._filled, true)
-
-		SetActive = var_1_10004
-
-		var_1_10004(arg_30_0._unfill, false)
-
-		var_1_10004 = arg_30_0._progressBar
-		var_1_10004.fillAmount = 1
+		arg_30_0._progressBar.fillAmount = 1
 
 		if arg_30_0._bgEff then
-			local var_30_0 = arg_30_0._skin
-			local var_30_1 = var_1_10004.Find(var_30_0, "ActCtl/bg_eff")
-
-			var_1_10004 = var_1_10004.GetComponent
-			typeof = var_7
-			CanvasGroup = var_1_10009
-			var_1_10004 = var_1_10004(var_30_1, var_7(var_1_10009))
-			var_1_10004.alpha = 1
+			arg_30_0._skin:Find("ActCtl/bg_eff"):GetComponent(typeof(CanvasGroup)).alpha = 1
 		end
 
-		var_1_10004 = arg_30_0._countTxt
-		var_1_10004.text = "1/1"
+		arg_30_0._countTxt.text = "1/1"
 
 		if arg_30_0._gizmos1 then
-			SetActive = var_1_10004
-
-			var_1_10004(arg_30_0._gizmos1, true)
-
-			SetActive = var_1_10004
-
-			var_1_10004(arg_30_0._gizmosXue, true)
+			SetActive(arg_30_0._gizmos1, true)
+			SetActive(arg_30_0._gizmosXue, true)
 		end
 	else
-		SetActive = var_1_10004
-
-		var_1_10004(arg_30_0._unfill, true)
-
-		SetActive = var_1_10004
-
-		var_1_10004(arg_30_0._filled, false)
+		SetActive(arg_30_0._unfill, true)
+		SetActive(arg_30_0._filled, false)
 
 		arg_30_0._progressBar.fillAmount = 0
 
 		if arg_30_0._bgEff then
-			local var_30_2 = arg_30_0._skin
-			local var_30_3 = var_4.Find(var_30_2, "ActCtl/bg_eff")
-			local var_30_4 = var_4.GetComponent
-
-			typeof = var_7
-			CanvasGroup = var_1_10009
-			var_30_4(var_30_3, var_7(var_1_10009)).alpha = 0
+			arg_30_0._skin:Find("ActCtl/bg_eff"):GetComponent(typeof(CanvasGroup)).alpha = 0
 		end
 
 		arg_30_0._countTxt.text = "0/0"
 
 		if arg_30_0._gizmos1 then
-			SetActive = var_4
-
-			var_4(arg_30_0._gizmos1, false)
-
-			SetActive = var_4
-
-			var_4(arg_30_0._gizmosXue, false)
+			SetActive(arg_30_0._gizmos1, false)
+			SetActive(arg_30_0._gizmosXue, false)
 		end
 	end
 
 	return
 end
 
-function var_0_1.updateProgressBar(arg_31_0)
-	local var_31_0 = arg_31_0._progressInfo
-	local var_31_1 = var_1.GetCurrent(var_31_0)
-	local var_31_2 = arg_31_0._progressInfo
-	local var_31_3 = var_31_1 / var_2.GetMax(var_31_2)
+function var_0_0.updateProgressBar(arg_31_0)
+	local var_31_0 = arg_31_0._progressInfo:GetCurrent() / arg_31_0._progressInfo:GetMax()
 
-	arg_31_0._progressBar.fillAmount = var_31_3
+	arg_31_0._progressBar.fillAmount = var_31_0
 
 	if arg_31_0._bgEff then
-		if arg_31_0._progressInfo.GetCount then
-			local var_31_4 = arg_31_0._progressInfo
-
-			if var_2.GetCount(var_31_4) > 0 then
-				local var_31_5 = arg_31_0._bgEff
-				local var_31_6 = var_2.GetComponent
-
-				typeof = var_1_10005
-				CanvasGroup = var_1_10007
-				var_31_6(var_31_5, var_1_10005(var_1_10007)).alpha = 1
-
-				goto label_31_0
-			end
-		end
-
-		local var_31_7 = arg_31_0._bgEff
-		local var_31_8 = var_2.GetComponent
-
-		typeof = var_1_10005
-		CanvasGroup = var_1_10007
-		var_31_8(var_31_7, var_1_10005(var_1_10007)).alpha = var_31_3
+		arg_31_0._bgEff:GetComponent(typeof(CanvasGroup)).alpha = arg_31_0._progressInfo.GetCount and arg_31_0._progressInfo:GetCount() > 0 and 1 or var_31_0
 	end
-
-	::label_31_0::
 
 	return
 end
 
-function var_0_1.Dispose(arg_32_0)
+function var_0_0.Dispose(arg_32_0)
 	if arg_32_0.eventTriggers then
-		pairs = var_1
-
-		for iter_32_0, iter_32_1 in var_1(arg_32_0.eventTriggers) do
-			ClearEventTrigger = var_1_10006
-
-			var_1_10006(iter_32_0)
+		for iter_32_0, iter_32_1 in pairs(arg_32_0.eventTriggers) do
+			ClearEventTrigger(iter_32_0)
 		end
 
 		arg_32_0.eventTriggers = nil
@@ -690,21 +425,10 @@ function var_0_1.Dispose(arg_32_0)
 	arg_32_0._progress = nil
 	arg_32_0._progressBar = nil
 
-	local var_32_0 = arg_32_0._progressInfo
-
-	var_1.UnregisterEventListener(var_32_0, arg_32_0, var_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
-
-	local var_32_1 = arg_32_0._progressInfo
-
-	var_1.UnregisterEventListener(var_32_1, arg_32_0, var_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE)
-
-	local var_32_2 = arg_32_0._progressInfo
-
-	var_1.UnregisterEventListener(var_32_2, arg_32_0, var_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
-
-	local var_32_3 = arg_32_0._progressInfo
-
-	var_1.UnregisterEventListener(var_32_3, arg_32_0, var_0.Battle.BattleEvent.COUNT_CHANGE)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0.Battle.BattleEvent.OVER_LOAD_CHANGE)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0.Battle.BattleEvent.WEAPON_TOTAL_CHANGE)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0.Battle.BattleEvent.WEAPON_COUNT_PLUS)
+	arg_32_0._progressInfo:UnregisterEventListener(arg_32_0, var_0.Battle.BattleEvent.COUNT_CHANGE)
 	var_0.EventListener.DetachEventListener(arg_32_0)
 
 	return

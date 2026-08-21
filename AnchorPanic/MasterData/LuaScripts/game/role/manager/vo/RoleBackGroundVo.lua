@@ -29,11 +29,11 @@ function parseBackGroundData(self, refID, curData)
 end
 --获取小图片地址
 function getIconLittleUrl(self)
-    return UrlManager:getBgPath("friend/littleBg/friend_bg_little_" .. self.icon .. ".png")
+    return UrlManager:getFriendLittleBgPath(self.icon)
 end
 --获取大图片地址
 function getIconBigUrl(self)
-    return UrlManager:getBgPath("friend/bigBg/friend_bg_" .. self.icon .. ".jpg")
+    return UrlManager:getFriendBigBgPath(self.icon)
 end
 --获取图片名称
 function getName(self)

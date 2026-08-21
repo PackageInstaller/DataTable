@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ninja_buff") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ninja_buff"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ninja_buff = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ninja_buff
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ninja_buff = rawget(pg, "activity_ninja_buff") or setmetatable({
+	__name = "activity_ninja_buff"
+}, confNEO)
+pg.activity_ninja_buff.all = {
 	1001,
 	1002,
 	1003,
@@ -999,11 +976,7 @@ var_0_3.all = {
 	10059,
 	10060
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_ninja_buff
-
-var_0_4.get_id_list_by_group = {
+pg.activity_ninja_buff.get_id_list_by_group = {
 	{
 		1001,
 		1002,
@@ -1997,25 +1970,11 @@ var_0_4.get_id_list_by_group = {
 		10060
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_ninja_buff = {}
+pg.base = pg.base or {}
+pg.base.activity_ninja_buff = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ninja_buff
-
-	var_1_0[1001] = {
+	pg.base.activity_ninja_buff[1001] = {
 		cost = "1.12",
 		name = "ninja_buff_name1",
 		type = 1,
@@ -2030,11 +1989,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 1
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ninja_buff
-
-	var_1_1[1002] = {
+	pg.base.activity_ninja_buff[1002] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2049,11 +2004,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 2
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ninja_buff
-
-	var_1_2[1003] = {
+	pg.base.activity_ninja_buff[1003] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2068,11 +2019,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 3
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ninja_buff
-
-	var_1_3[1004] = {
+	pg.base.activity_ninja_buff[1004] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2087,11 +2034,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 4
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ninja_buff
-
-	var_1_4[1005] = {
+	pg.base.activity_ninja_buff[1005] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2106,11 +2049,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 5
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ninja_buff
-
-	var_1_5[1006] = {
+	pg.base.activity_ninja_buff[1006] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2125,11 +2064,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 6
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ninja_buff
-
-	var_1_6[1007] = {
+	pg.base.activity_ninja_buff[1007] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2144,11 +2079,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 7
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ninja_buff
-
-	var_1_7[1008] = {
+	pg.base.activity_ninja_buff[1008] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2163,11 +2094,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 8
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ninja_buff
-
-	var_1_8[1009] = {
+	pg.base.activity_ninja_buff[1009] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2182,11 +2109,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 9
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ninja_buff
-
-	var_1_9[1010] = {
+	pg.base.activity_ninja_buff[1010] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -2201,11 +2124,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 10
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ninja_buff
-
-	var_1_10[1011] = {
+	pg.base.activity_ninja_buff[1011] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2220,11 +2139,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 11
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ninja_buff
-
-	var_1_11[1012] = {
+	pg.base.activity_ninja_buff[1012] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2239,11 +2154,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 12
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ninja_buff
-
-	var_1_12[1013] = {
+	pg.base.activity_ninja_buff[1013] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2258,11 +2169,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 13
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ninja_buff
-
-	var_1_13[1014] = {
+	pg.base.activity_ninja_buff[1014] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2277,11 +2184,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 14
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ninja_buff
-
-	var_1_14[1015] = {
+	pg.base.activity_ninja_buff[1015] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2296,11 +2199,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 15
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ninja_buff
-
-	var_1_15[1016] = {
+	pg.base.activity_ninja_buff[1016] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2315,11 +2214,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 16
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ninja_buff
-
-	var_1_16[1017] = {
+	pg.base.activity_ninja_buff[1017] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2334,11 +2229,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 17
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ninja_buff
-
-	var_1_17[1018] = {
+	pg.base.activity_ninja_buff[1018] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2353,11 +2244,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 18
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ninja_buff
-
-	var_1_18[1019] = {
+	pg.base.activity_ninja_buff[1019] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2372,11 +2259,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 19
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ninja_buff
-
-	var_1_19[1020] = {
+	pg.base.activity_ninja_buff[1020] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2391,11 +2274,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 20
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ninja_buff
-
-	var_1_20[1021] = {
+	pg.base.activity_ninja_buff[1021] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2410,11 +2289,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 21
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ninja_buff
-
-	var_1_21[1022] = {
+	pg.base.activity_ninja_buff[1022] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2429,11 +2304,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 22
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ninja_buff
-
-	var_1_22[1023] = {
+	pg.base.activity_ninja_buff[1023] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2448,11 +2319,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 23
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ninja_buff
-
-	var_1_23[1024] = {
+	pg.base.activity_ninja_buff[1024] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2467,11 +2334,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 24
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ninja_buff
-
-	var_1_24[1025] = {
+	pg.base.activity_ninja_buff[1025] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2486,11 +2349,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 25
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ninja_buff
-
-	var_1_25[1026] = {
+	pg.base.activity_ninja_buff[1026] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2505,11 +2364,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 26
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ninja_buff
-
-	var_1_26[1027] = {
+	pg.base.activity_ninja_buff[1027] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2524,11 +2379,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 27
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ninja_buff
-
-	var_1_27[1028] = {
+	pg.base.activity_ninja_buff[1028] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2543,11 +2394,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 28
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ninja_buff
-
-	var_1_28[1029] = {
+	pg.base.activity_ninja_buff[1029] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2562,11 +2409,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 29
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ninja_buff
-
-	var_1_29[1030] = {
+	pg.base.activity_ninja_buff[1030] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -2581,11 +2424,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 30
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ninja_buff
-
-	var_1_30[1031] = {
+	pg.base.activity_ninja_buff[1031] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2600,11 +2439,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 31
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ninja_buff
-
-	var_1_31[1032] = {
+	pg.base.activity_ninja_buff[1032] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2619,11 +2454,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 32
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ninja_buff
-
-	var_1_32[1033] = {
+	pg.base.activity_ninja_buff[1033] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2638,11 +2469,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 33
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ninja_buff
-
-	var_1_33[1034] = {
+	pg.base.activity_ninja_buff[1034] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2657,11 +2484,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 34
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ninja_buff
-
-	var_1_34[1035] = {
+	pg.base.activity_ninja_buff[1035] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2676,11 +2499,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 35
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ninja_buff
-
-	var_1_35[1036] = {
+	pg.base.activity_ninja_buff[1036] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2695,11 +2514,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 36
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ninja_buff
-
-	var_1_36[1037] = {
+	pg.base.activity_ninja_buff[1037] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2714,11 +2529,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 37
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ninja_buff
-
-	var_1_37[1038] = {
+	pg.base.activity_ninja_buff[1038] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2733,11 +2544,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 38
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ninja_buff
-
-	var_1_38[1039] = {
+	pg.base.activity_ninja_buff[1039] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2752,11 +2559,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 39
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ninja_buff
-
-	var_1_39[1040] = {
+	pg.base.activity_ninja_buff[1040] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2771,11 +2574,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 40
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ninja_buff
-
-	var_1_40[1041] = {
+	pg.base.activity_ninja_buff[1041] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2790,11 +2589,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 41
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ninja_buff
-
-	var_1_41[1042] = {
+	pg.base.activity_ninja_buff[1042] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2809,11 +2604,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 42
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ninja_buff
-
-	var_1_42[1043] = {
+	pg.base.activity_ninja_buff[1043] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2828,11 +2619,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 43
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ninja_buff
-
-	var_1_43[1044] = {
+	pg.base.activity_ninja_buff[1044] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2847,11 +2634,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 44
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ninja_buff
-
-	var_1_44[1045] = {
+	pg.base.activity_ninja_buff[1045] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2866,11 +2649,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 45
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ninja_buff
-
-	var_1_45[1046] = {
+	pg.base.activity_ninja_buff[1046] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2885,11 +2664,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 46
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ninja_buff
-
-	var_1_46[1047] = {
+	pg.base.activity_ninja_buff[1047] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2904,11 +2679,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 47
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ninja_buff
-
-	var_1_47[1048] = {
+	pg.base.activity_ninja_buff[1048] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2923,11 +2694,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 48
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ninja_buff
-
-	var_1_48[1049] = {
+	pg.base.activity_ninja_buff[1049] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2942,11 +2709,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 49
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ninja_buff
-
-	var_1_49[1050] = {
+	pg.base.activity_ninja_buff[1050] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2961,11 +2724,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 50
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ninja_buff
-
-	var_1_50[1051] = {
+	pg.base.activity_ninja_buff[1051] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2980,11 +2739,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 51
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ninja_buff
-
-	var_1_51[1052] = {
+	pg.base.activity_ninja_buff[1052] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -2999,11 +2754,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 52
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ninja_buff
-
-	var_1_52[1053] = {
+	pg.base.activity_ninja_buff[1053] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3018,11 +2769,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 53
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ninja_buff
-
-	var_1_53[1054] = {
+	pg.base.activity_ninja_buff[1054] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3037,11 +2784,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 54
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ninja_buff
-
-	var_1_54[1055] = {
+	pg.base.activity_ninja_buff[1055] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3056,11 +2799,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 55
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ninja_buff
-
-	var_1_55[1056] = {
+	pg.base.activity_ninja_buff[1056] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3075,11 +2814,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 56
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ninja_buff
-
-	var_1_56[1057] = {
+	pg.base.activity_ninja_buff[1057] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3094,11 +2829,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 57
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ninja_buff
-
-	var_1_57[1058] = {
+	pg.base.activity_ninja_buff[1058] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3113,11 +2844,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 58
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ninja_buff
-
-	var_1_58[1059] = {
+	pg.base.activity_ninja_buff[1059] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3132,11 +2859,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 59
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ninja_buff
-
-	var_1_59[1060] = {
+	pg.base.activity_ninja_buff[1060] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3151,11 +2874,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 60
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ninja_buff
-
-	var_1_60[1061] = {
+	pg.base.activity_ninja_buff[1061] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3170,11 +2889,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 61
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ninja_buff
-
-	var_1_61[1062] = {
+	pg.base.activity_ninja_buff[1062] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3189,11 +2904,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 62
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ninja_buff
-
-	var_1_62[1063] = {
+	pg.base.activity_ninja_buff[1063] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3208,11 +2919,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 63
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ninja_buff
-
-	var_1_63[1064] = {
+	pg.base.activity_ninja_buff[1064] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3227,11 +2934,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 64
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ninja_buff
-
-	var_1_64[1065] = {
+	pg.base.activity_ninja_buff[1065] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3246,11 +2949,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 65
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ninja_buff
-
-	var_1_65[1066] = {
+	pg.base.activity_ninja_buff[1066] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3265,11 +2964,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 66
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ninja_buff
-
-	var_1_66[1067] = {
+	pg.base.activity_ninja_buff[1067] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3284,11 +2979,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 67
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ninja_buff
-
-	var_1_67[1068] = {
+	pg.base.activity_ninja_buff[1068] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3303,11 +2994,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 68
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ninja_buff
-
-	var_1_68[1069] = {
+	pg.base.activity_ninja_buff[1069] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3322,11 +3009,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 69
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ninja_buff
-
-	var_1_69[1070] = {
+	pg.base.activity_ninja_buff[1070] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3341,11 +3024,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 70
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ninja_buff
-
-	var_1_70[1071] = {
+	pg.base.activity_ninja_buff[1071] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3360,11 +3039,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 71
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ninja_buff
-
-	var_1_71[1072] = {
+	pg.base.activity_ninja_buff[1072] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3379,11 +3054,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 72
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ninja_buff
-
-	var_1_72[1073] = {
+	pg.base.activity_ninja_buff[1073] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3398,11 +3069,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 73
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ninja_buff
-
-	var_1_73[1074] = {
+	pg.base.activity_ninja_buff[1074] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3417,11 +3084,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 74
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ninja_buff
-
-	var_1_74[1075] = {
+	pg.base.activity_ninja_buff[1075] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3436,11 +3099,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 75
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ninja_buff
-
-	var_1_75[1076] = {
+	pg.base.activity_ninja_buff[1076] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3455,11 +3114,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 76
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ninja_buff
-
-	var_1_76[1077] = {
+	pg.base.activity_ninja_buff[1077] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3474,11 +3129,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 77
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ninja_buff
-
-	var_1_77[1078] = {
+	pg.base.activity_ninja_buff[1078] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3493,11 +3144,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 78
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ninja_buff
-
-	var_1_78[1079] = {
+	pg.base.activity_ninja_buff[1079] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3512,11 +3159,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 79
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ninja_buff
-
-	var_1_79[1080] = {
+	pg.base.activity_ninja_buff[1080] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3531,11 +3174,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 80
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ninja_buff
-
-	var_1_80[1081] = {
+	pg.base.activity_ninja_buff[1081] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3550,11 +3189,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 81
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ninja_buff
-
-	var_1_81[1082] = {
+	pg.base.activity_ninja_buff[1082] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3569,11 +3204,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 82
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ninja_buff
-
-	var_1_82[1083] = {
+	pg.base.activity_ninja_buff[1083] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3588,11 +3219,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 83
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ninja_buff
-
-	var_1_83[1084] = {
+	pg.base.activity_ninja_buff[1084] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3607,11 +3234,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 84
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ninja_buff
-
-	var_1_84[1085] = {
+	pg.base.activity_ninja_buff[1085] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3626,11 +3249,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 85
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ninja_buff
-
-	var_1_85[1086] = {
+	pg.base.activity_ninja_buff[1086] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3645,11 +3264,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 86
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ninja_buff
-
-	var_1_86[1087] = {
+	pg.base.activity_ninja_buff[1087] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3664,11 +3279,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 87
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ninja_buff
-
-	var_1_87[1088] = {
+	pg.base.activity_ninja_buff[1088] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3683,11 +3294,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 88
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ninja_buff
-
-	var_1_88[1089] = {
+	pg.base.activity_ninja_buff[1089] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3702,11 +3309,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 89
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ninja_buff
-
-	var_1_89[1090] = {
+	pg.base.activity_ninja_buff[1090] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3721,11 +3324,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 90
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ninja_buff
-
-	var_1_90[1091] = {
+	pg.base.activity_ninja_buff[1091] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3740,11 +3339,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 91
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ninja_buff
-
-	var_1_91[1092] = {
+	pg.base.activity_ninja_buff[1092] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3759,11 +3354,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 92
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_ninja_buff
-
-	var_1_92[1093] = {
+	pg.base.activity_ninja_buff[1093] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3778,11 +3369,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 93
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_ninja_buff
-
-	var_1_93[1094] = {
+	pg.base.activity_ninja_buff[1094] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3797,11 +3384,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 94
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_ninja_buff
-
-	var_1_94[1095] = {
+	pg.base.activity_ninja_buff[1095] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3816,11 +3399,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 95
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_ninja_buff
-
-	var_1_95[1096] = {
+	pg.base.activity_ninja_buff[1096] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3835,11 +3414,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 96
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_ninja_buff
-
-	var_1_96[1097] = {
+	pg.base.activity_ninja_buff[1097] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3854,11 +3429,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 97
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_ninja_buff
-
-	var_1_97[1098] = {
+	pg.base.activity_ninja_buff[1098] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3873,11 +3444,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 98
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_ninja_buff
-
-	var_1_98[1099] = {
+	pg.base.activity_ninja_buff[1099] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3892,8 +3459,7 @@ var_0_4.base.activity_ninja_buff = {}
 		icon = "ninjacityicon/buff_1",
 		level = 99
 	}
-	pg = var_1_98
-	var_1_98.base.activity_ninja_buff[1100] = {
+	pg.base.activity_ninja_buff[1100] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3912,11 +3478,7 @@ var_0_4.base.activity_ninja_buff = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_ninja_buff
-
-	var_2_0[1101] = {
+	pg.base.activity_ninja_buff[1101] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3931,11 +3493,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 101
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_ninja_buff
-
-	var_2_1[1102] = {
+	pg.base.activity_ninja_buff[1102] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3950,11 +3508,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 102
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_ninja_buff
-
-	var_2_2[1103] = {
+	pg.base.activity_ninja_buff[1103] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3969,11 +3523,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 103
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_ninja_buff
-
-	var_2_3[1104] = {
+	pg.base.activity_ninja_buff[1104] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -3988,11 +3538,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 104
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_ninja_buff
-
-	var_2_4[1105] = {
+	pg.base.activity_ninja_buff[1105] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4007,11 +3553,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 105
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_ninja_buff
-
-	var_2_5[1106] = {
+	pg.base.activity_ninja_buff[1106] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4026,11 +3568,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 106
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_ninja_buff
-
-	var_2_6[1107] = {
+	pg.base.activity_ninja_buff[1107] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4045,11 +3583,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 107
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_ninja_buff
-
-	var_2_7[1108] = {
+	pg.base.activity_ninja_buff[1108] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4064,11 +3598,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 108
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_ninja_buff
-
-	var_2_8[1109] = {
+	pg.base.activity_ninja_buff[1109] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4083,11 +3613,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 109
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_ninja_buff
-
-	var_2_9[1110] = {
+	pg.base.activity_ninja_buff[1110] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4102,11 +3628,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 110
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_ninja_buff
-
-	var_2_10[1111] = {
+	pg.base.activity_ninja_buff[1111] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4121,11 +3643,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 111
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_ninja_buff
-
-	var_2_11[1112] = {
+	pg.base.activity_ninja_buff[1112] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4140,11 +3658,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 112
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_ninja_buff
-
-	var_2_12[1113] = {
+	pg.base.activity_ninja_buff[1113] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4159,11 +3673,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 113
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_ninja_buff
-
-	var_2_13[1114] = {
+	pg.base.activity_ninja_buff[1114] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4178,11 +3688,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 114
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_ninja_buff
-
-	var_2_14[1115] = {
+	pg.base.activity_ninja_buff[1115] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4197,11 +3703,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 115
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_ninja_buff
-
-	var_2_15[1116] = {
+	pg.base.activity_ninja_buff[1116] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4216,11 +3718,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 116
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_ninja_buff
-
-	var_2_16[1117] = {
+	pg.base.activity_ninja_buff[1117] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4235,11 +3733,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 117
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_ninja_buff
-
-	var_2_17[1118] = {
+	pg.base.activity_ninja_buff[1118] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4254,11 +3748,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 118
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_ninja_buff
-
-	var_2_18[1119] = {
+	pg.base.activity_ninja_buff[1119] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4273,11 +3763,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 119
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_ninja_buff
-
-	var_2_19[1120] = {
+	pg.base.activity_ninja_buff[1120] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -4292,11 +3778,7 @@ end)()
 		icon = "ninjacityicon/buff_1",
 		level = 120
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_ninja_buff
-
-	var_2_20[2001] = {
+	pg.base.activity_ninja_buff[2001] = {
 		cost = "1.09",
 		name = "ninja_buff_name2",
 		type = 1,
@@ -4311,11 +3793,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 1
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_ninja_buff
-
-	var_2_21[2002] = {
+	pg.base.activity_ninja_buff[2002] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4330,11 +3808,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 2
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_ninja_buff
-
-	var_2_22[2003] = {
+	pg.base.activity_ninja_buff[2003] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4349,11 +3823,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 3
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_ninja_buff
-
-	var_2_23[2004] = {
+	pg.base.activity_ninja_buff[2004] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4368,11 +3838,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 4
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_ninja_buff
-
-	var_2_24[2005] = {
+	pg.base.activity_ninja_buff[2005] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4387,11 +3853,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 5
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_ninja_buff
-
-	var_2_25[2006] = {
+	pg.base.activity_ninja_buff[2006] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4406,11 +3868,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 6
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_ninja_buff
-
-	var_2_26[2007] = {
+	pg.base.activity_ninja_buff[2007] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4425,11 +3883,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 7
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_ninja_buff
-
-	var_2_27[2008] = {
+	pg.base.activity_ninja_buff[2008] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4444,11 +3898,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 8
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_ninja_buff
-
-	var_2_28[2009] = {
+	pg.base.activity_ninja_buff[2009] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4463,11 +3913,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 9
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_ninja_buff
-
-	var_2_29[2010] = {
+	pg.base.activity_ninja_buff[2010] = {
 		cost = "1.09",
 		name = "",
 		type = 1,
@@ -4482,11 +3928,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 10
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_ninja_buff
-
-	var_2_30[2011] = {
+	pg.base.activity_ninja_buff[2011] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4501,11 +3943,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 11
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_ninja_buff
-
-	var_2_31[2012] = {
+	pg.base.activity_ninja_buff[2012] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4520,11 +3958,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 12
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_ninja_buff
-
-	var_2_32[2013] = {
+	pg.base.activity_ninja_buff[2013] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4539,11 +3973,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 13
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_ninja_buff
-
-	var_2_33[2014] = {
+	pg.base.activity_ninja_buff[2014] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4558,11 +3988,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 14
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_ninja_buff
-
-	var_2_34[2015] = {
+	pg.base.activity_ninja_buff[2015] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4577,11 +4003,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 15
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_ninja_buff
-
-	var_2_35[2016] = {
+	pg.base.activity_ninja_buff[2016] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4596,11 +4018,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 16
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_ninja_buff
-
-	var_2_36[2017] = {
+	pg.base.activity_ninja_buff[2017] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4615,11 +4033,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 17
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_ninja_buff
-
-	var_2_37[2018] = {
+	pg.base.activity_ninja_buff[2018] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4634,11 +4048,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 18
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_ninja_buff
-
-	var_2_38[2019] = {
+	pg.base.activity_ninja_buff[2019] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4653,11 +4063,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 19
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_ninja_buff
-
-	var_2_39[2020] = {
+	pg.base.activity_ninja_buff[2020] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4672,11 +4078,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 20
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_ninja_buff
-
-	var_2_40[2021] = {
+	pg.base.activity_ninja_buff[2021] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4691,11 +4093,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 21
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_ninja_buff
-
-	var_2_41[2022] = {
+	pg.base.activity_ninja_buff[2022] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4710,11 +4108,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 22
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_ninja_buff
-
-	var_2_42[2023] = {
+	pg.base.activity_ninja_buff[2023] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4729,11 +4123,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 23
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_ninja_buff
-
-	var_2_43[2024] = {
+	pg.base.activity_ninja_buff[2024] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4748,11 +4138,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 24
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_ninja_buff
-
-	var_2_44[2025] = {
+	pg.base.activity_ninja_buff[2025] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4767,11 +4153,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 25
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_ninja_buff
-
-	var_2_45[2026] = {
+	pg.base.activity_ninja_buff[2026] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4786,11 +4168,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 26
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_ninja_buff
-
-	var_2_46[2027] = {
+	pg.base.activity_ninja_buff[2027] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4805,11 +4183,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 27
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_ninja_buff
-
-	var_2_47[2028] = {
+	pg.base.activity_ninja_buff[2028] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4824,11 +4198,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 28
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_ninja_buff
-
-	var_2_48[2029] = {
+	pg.base.activity_ninja_buff[2029] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4843,11 +4213,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 29
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_ninja_buff
-
-	var_2_49[2030] = {
+	pg.base.activity_ninja_buff[2030] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -4862,11 +4228,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 30
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_ninja_buff
-
-	var_2_50[2031] = {
+	pg.base.activity_ninja_buff[2031] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4881,11 +4243,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 31
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_ninja_buff
-
-	var_2_51[2032] = {
+	pg.base.activity_ninja_buff[2032] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4900,11 +4258,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 32
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_ninja_buff
-
-	var_2_52[2033] = {
+	pg.base.activity_ninja_buff[2033] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4919,11 +4273,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 33
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_ninja_buff
-
-	var_2_53[2034] = {
+	pg.base.activity_ninja_buff[2034] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4938,11 +4288,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 34
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_ninja_buff
-
-	var_2_54[2035] = {
+	pg.base.activity_ninja_buff[2035] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4957,11 +4303,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 35
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_ninja_buff
-
-	var_2_55[2036] = {
+	pg.base.activity_ninja_buff[2036] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4976,11 +4318,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 36
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_ninja_buff
-
-	var_2_56[2037] = {
+	pg.base.activity_ninja_buff[2037] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -4995,11 +4333,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 37
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_ninja_buff
-
-	var_2_57[2038] = {
+	pg.base.activity_ninja_buff[2038] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5014,11 +4348,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 38
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_ninja_buff
-
-	var_2_58[2039] = {
+	pg.base.activity_ninja_buff[2039] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5033,11 +4363,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 39
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_ninja_buff
-
-	var_2_59[2040] = {
+	pg.base.activity_ninja_buff[2040] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5052,11 +4378,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 40
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_ninja_buff
-
-	var_2_60[2041] = {
+	pg.base.activity_ninja_buff[2041] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5071,11 +4393,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 41
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_ninja_buff
-
-	var_2_61[2042] = {
+	pg.base.activity_ninja_buff[2042] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5090,11 +4408,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 42
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_ninja_buff
-
-	var_2_62[2043] = {
+	pg.base.activity_ninja_buff[2043] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5109,11 +4423,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 43
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_ninja_buff
-
-	var_2_63[2044] = {
+	pg.base.activity_ninja_buff[2044] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5128,11 +4438,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 44
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_ninja_buff
-
-	var_2_64[2045] = {
+	pg.base.activity_ninja_buff[2045] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5147,11 +4453,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 45
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_ninja_buff
-
-	var_2_65[2046] = {
+	pg.base.activity_ninja_buff[2046] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5166,11 +4468,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 46
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_ninja_buff
-
-	var_2_66[2047] = {
+	pg.base.activity_ninja_buff[2047] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5185,11 +4483,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 47
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_ninja_buff
-
-	var_2_67[2048] = {
+	pg.base.activity_ninja_buff[2048] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5204,11 +4498,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 48
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_ninja_buff
-
-	var_2_68[2049] = {
+	pg.base.activity_ninja_buff[2049] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5223,11 +4513,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 49
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_ninja_buff
-
-	var_2_69[2050] = {
+	pg.base.activity_ninja_buff[2050] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5242,11 +4528,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 50
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_ninja_buff
-
-	var_2_70[2051] = {
+	pg.base.activity_ninja_buff[2051] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5261,11 +4543,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 51
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_ninja_buff
-
-	var_2_71[2052] = {
+	pg.base.activity_ninja_buff[2052] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5280,11 +4558,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 52
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_ninja_buff
-
-	var_2_72[2053] = {
+	pg.base.activity_ninja_buff[2053] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5299,11 +4573,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 53
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_ninja_buff
-
-	var_2_73[2054] = {
+	pg.base.activity_ninja_buff[2054] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5318,11 +4588,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 54
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_ninja_buff
-
-	var_2_74[2055] = {
+	pg.base.activity_ninja_buff[2055] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5337,11 +4603,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 55
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_ninja_buff
-
-	var_2_75[2056] = {
+	pg.base.activity_ninja_buff[2056] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5356,11 +4618,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 56
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_ninja_buff
-
-	var_2_76[2057] = {
+	pg.base.activity_ninja_buff[2057] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5375,11 +4633,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 57
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_ninja_buff
-
-	var_2_77[2058] = {
+	pg.base.activity_ninja_buff[2058] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5394,11 +4648,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 58
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_ninja_buff
-
-	var_2_78[2059] = {
+	pg.base.activity_ninja_buff[2059] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5413,11 +4663,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 59
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_ninja_buff
-
-	var_2_79[2060] = {
+	pg.base.activity_ninja_buff[2060] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5432,11 +4678,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 60
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_ninja_buff
-
-	var_2_80[2061] = {
+	pg.base.activity_ninja_buff[2061] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5451,11 +4693,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 61
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_ninja_buff
-
-	var_2_81[2062] = {
+	pg.base.activity_ninja_buff[2062] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5470,11 +4708,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 62
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_ninja_buff
-
-	var_2_82[2063] = {
+	pg.base.activity_ninja_buff[2063] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5489,11 +4723,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 63
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_ninja_buff
-
-	var_2_83[2064] = {
+	pg.base.activity_ninja_buff[2064] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5508,11 +4738,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 64
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_ninja_buff
-
-	var_2_84[2065] = {
+	pg.base.activity_ninja_buff[2065] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5527,11 +4753,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 65
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_ninja_buff
-
-	var_2_85[2066] = {
+	pg.base.activity_ninja_buff[2066] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5546,11 +4768,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 66
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_ninja_buff
-
-	var_2_86[2067] = {
+	pg.base.activity_ninja_buff[2067] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5565,11 +4783,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 67
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_ninja_buff
-
-	var_2_87[2068] = {
+	pg.base.activity_ninja_buff[2068] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5584,11 +4798,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 68
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_ninja_buff
-
-	var_2_88[2069] = {
+	pg.base.activity_ninja_buff[2069] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5603,11 +4813,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 69
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_ninja_buff
-
-	var_2_89[2070] = {
+	pg.base.activity_ninja_buff[2070] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5622,11 +4828,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 70
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_ninja_buff
-
-	var_2_90[2071] = {
+	pg.base.activity_ninja_buff[2071] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5641,11 +4843,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 71
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_ninja_buff
-
-	var_2_91[2072] = {
+	pg.base.activity_ninja_buff[2072] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5660,11 +4858,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 72
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_ninja_buff
-
-	var_2_92[2073] = {
+	pg.base.activity_ninja_buff[2073] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5679,11 +4873,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 73
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_ninja_buff
-
-	var_2_93[2074] = {
+	pg.base.activity_ninja_buff[2074] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5698,11 +4888,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 74
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_ninja_buff
-
-	var_2_94[2075] = {
+	pg.base.activity_ninja_buff[2075] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5717,11 +4903,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 75
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_ninja_buff
-
-	var_2_95[2076] = {
+	pg.base.activity_ninja_buff[2076] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5736,11 +4918,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 76
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_ninja_buff
-
-	var_2_96[2077] = {
+	pg.base.activity_ninja_buff[2077] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5755,11 +4933,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 77
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_ninja_buff
-
-	var_2_97[2078] = {
+	pg.base.activity_ninja_buff[2078] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5774,11 +4948,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 78
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_ninja_buff
-
-	var_2_98[2079] = {
+	pg.base.activity_ninja_buff[2079] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5793,8 +4963,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 79
 	}
-	pg = var_2_98
-	var_2_98.base.activity_ninja_buff[2080] = {
+	pg.base.activity_ninja_buff[2080] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5813,11 +4982,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_ninja_buff
-
-	var_3_0[2081] = {
+	pg.base.activity_ninja_buff[2081] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5832,11 +4997,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 81
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_ninja_buff
-
-	var_3_1[2082] = {
+	pg.base.activity_ninja_buff[2082] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5851,11 +5012,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 82
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_ninja_buff
-
-	var_3_2[2083] = {
+	pg.base.activity_ninja_buff[2083] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5870,11 +5027,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 83
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_ninja_buff
-
-	var_3_3[2084] = {
+	pg.base.activity_ninja_buff[2084] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5889,11 +5042,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 84
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_ninja_buff
-
-	var_3_4[2085] = {
+	pg.base.activity_ninja_buff[2085] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5908,11 +5057,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 85
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_ninja_buff
-
-	var_3_5[2086] = {
+	pg.base.activity_ninja_buff[2086] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5927,11 +5072,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 86
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_ninja_buff
-
-	var_3_6[2087] = {
+	pg.base.activity_ninja_buff[2087] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5946,11 +5087,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 87
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_ninja_buff
-
-	var_3_7[2088] = {
+	pg.base.activity_ninja_buff[2088] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5965,11 +5102,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 88
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_ninja_buff
-
-	var_3_8[2089] = {
+	pg.base.activity_ninja_buff[2089] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -5984,11 +5117,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 89
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_ninja_buff
-
-	var_3_9[2090] = {
+	pg.base.activity_ninja_buff[2090] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6003,11 +5132,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 90
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_ninja_buff
-
-	var_3_10[2091] = {
+	pg.base.activity_ninja_buff[2091] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6022,11 +5147,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 91
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_ninja_buff
-
-	var_3_11[2092] = {
+	pg.base.activity_ninja_buff[2092] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6041,11 +5162,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 92
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_ninja_buff
-
-	var_3_12[2093] = {
+	pg.base.activity_ninja_buff[2093] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6060,11 +5177,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 93
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_ninja_buff
-
-	var_3_13[2094] = {
+	pg.base.activity_ninja_buff[2094] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6079,11 +5192,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 94
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_ninja_buff
-
-	var_3_14[2095] = {
+	pg.base.activity_ninja_buff[2095] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6098,11 +5207,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 95
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_ninja_buff
-
-	var_3_15[2096] = {
+	pg.base.activity_ninja_buff[2096] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6117,11 +5222,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 96
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_ninja_buff
-
-	var_3_16[2097] = {
+	pg.base.activity_ninja_buff[2097] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6136,11 +5237,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 97
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_ninja_buff
-
-	var_3_17[2098] = {
+	pg.base.activity_ninja_buff[2098] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6155,11 +5252,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 98
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_ninja_buff
-
-	var_3_18[2099] = {
+	pg.base.activity_ninja_buff[2099] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6174,11 +5267,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 99
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_ninja_buff
-
-	var_3_19[2100] = {
+	pg.base.activity_ninja_buff[2100] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6193,11 +5282,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 100
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_ninja_buff
-
-	var_3_20[2101] = {
+	pg.base.activity_ninja_buff[2101] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6212,11 +5297,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 101
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_ninja_buff
-
-	var_3_21[2102] = {
+	pg.base.activity_ninja_buff[2102] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6231,11 +5312,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 102
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_ninja_buff
-
-	var_3_22[2103] = {
+	pg.base.activity_ninja_buff[2103] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6250,11 +5327,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 103
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_ninja_buff
-
-	var_3_23[2104] = {
+	pg.base.activity_ninja_buff[2104] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6269,11 +5342,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 104
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_ninja_buff
-
-	var_3_24[2105] = {
+	pg.base.activity_ninja_buff[2105] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6288,11 +5357,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 105
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_ninja_buff
-
-	var_3_25[2106] = {
+	pg.base.activity_ninja_buff[2106] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6307,11 +5372,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 106
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_ninja_buff
-
-	var_3_26[2107] = {
+	pg.base.activity_ninja_buff[2107] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6326,11 +5387,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 107
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_ninja_buff
-
-	var_3_27[2108] = {
+	pg.base.activity_ninja_buff[2108] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6345,11 +5402,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 108
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_ninja_buff
-
-	var_3_28[2109] = {
+	pg.base.activity_ninja_buff[2109] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6364,11 +5417,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 109
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_ninja_buff
-
-	var_3_29[2110] = {
+	pg.base.activity_ninja_buff[2110] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6383,11 +5432,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 110
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_ninja_buff
-
-	var_3_30[2111] = {
+	pg.base.activity_ninja_buff[2111] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6402,11 +5447,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 111
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_ninja_buff
-
-	var_3_31[2112] = {
+	pg.base.activity_ninja_buff[2112] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6421,11 +5462,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 112
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_ninja_buff
-
-	var_3_32[2113] = {
+	pg.base.activity_ninja_buff[2113] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6440,11 +5477,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 113
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_ninja_buff
-
-	var_3_33[2114] = {
+	pg.base.activity_ninja_buff[2114] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6459,11 +5492,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 114
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_ninja_buff
-
-	var_3_34[2115] = {
+	pg.base.activity_ninja_buff[2115] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6478,11 +5507,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 115
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_ninja_buff
-
-	var_3_35[2116] = {
+	pg.base.activity_ninja_buff[2116] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6497,11 +5522,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 116
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_ninja_buff
-
-	var_3_36[2117] = {
+	pg.base.activity_ninja_buff[2117] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6516,11 +5537,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 117
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_ninja_buff
-
-	var_3_37[2118] = {
+	pg.base.activity_ninja_buff[2118] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6535,11 +5552,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 118
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_ninja_buff
-
-	var_3_38[2119] = {
+	pg.base.activity_ninja_buff[2119] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6554,11 +5567,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 119
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_ninja_buff
-
-	var_3_39[2120] = {
+	pg.base.activity_ninja_buff[2120] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6573,11 +5582,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 120
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_ninja_buff
-
-	var_3_40[2121] = {
+	pg.base.activity_ninja_buff[2121] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6592,11 +5597,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 121
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_ninja_buff
-
-	var_3_41[2122] = {
+	pg.base.activity_ninja_buff[2122] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6611,11 +5612,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 122
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_ninja_buff
-
-	var_3_42[2123] = {
+	pg.base.activity_ninja_buff[2123] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6630,11 +5627,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 123
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_ninja_buff
-
-	var_3_43[2124] = {
+	pg.base.activity_ninja_buff[2124] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6649,11 +5642,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 124
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_ninja_buff
-
-	var_3_44[2125] = {
+	pg.base.activity_ninja_buff[2125] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6668,11 +5657,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 125
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_ninja_buff
-
-	var_3_45[2126] = {
+	pg.base.activity_ninja_buff[2126] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6687,11 +5672,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 126
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_ninja_buff
-
-	var_3_46[2127] = {
+	pg.base.activity_ninja_buff[2127] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6706,11 +5687,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 127
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_ninja_buff
-
-	var_3_47[2128] = {
+	pg.base.activity_ninja_buff[2128] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6725,11 +5702,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 128
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_ninja_buff
-
-	var_3_48[2129] = {
+	pg.base.activity_ninja_buff[2129] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6744,11 +5717,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 129
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_ninja_buff
-
-	var_3_49[2130] = {
+	pg.base.activity_ninja_buff[2130] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6763,11 +5732,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 130
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_ninja_buff
-
-	var_3_50[2131] = {
+	pg.base.activity_ninja_buff[2131] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6782,11 +5747,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 131
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_ninja_buff
-
-	var_3_51[2132] = {
+	pg.base.activity_ninja_buff[2132] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6801,11 +5762,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 132
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_ninja_buff
-
-	var_3_52[2133] = {
+	pg.base.activity_ninja_buff[2133] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6820,11 +5777,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 133
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_ninja_buff
-
-	var_3_53[2134] = {
+	pg.base.activity_ninja_buff[2134] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6839,11 +5792,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 134
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_ninja_buff
-
-	var_3_54[2135] = {
+	pg.base.activity_ninja_buff[2135] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6858,11 +5807,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 135
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_ninja_buff
-
-	var_3_55[2136] = {
+	pg.base.activity_ninja_buff[2136] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6877,11 +5822,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 136
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_ninja_buff
-
-	var_3_56[2137] = {
+	pg.base.activity_ninja_buff[2137] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6896,11 +5837,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 137
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_ninja_buff
-
-	var_3_57[2138] = {
+	pg.base.activity_ninja_buff[2138] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6915,11 +5852,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 138
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_ninja_buff
-
-	var_3_58[2139] = {
+	pg.base.activity_ninja_buff[2139] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6934,11 +5867,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 139
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_ninja_buff
-
-	var_3_59[2140] = {
+	pg.base.activity_ninja_buff[2140] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6953,11 +5882,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 140
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_ninja_buff
-
-	var_3_60[2141] = {
+	pg.base.activity_ninja_buff[2141] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6972,11 +5897,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 141
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_ninja_buff
-
-	var_3_61[2142] = {
+	pg.base.activity_ninja_buff[2142] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -6991,11 +5912,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 142
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_ninja_buff
-
-	var_3_62[2143] = {
+	pg.base.activity_ninja_buff[2143] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7010,11 +5927,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 143
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_ninja_buff
-
-	var_3_63[2144] = {
+	pg.base.activity_ninja_buff[2144] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7029,11 +5942,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 144
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_ninja_buff
-
-	var_3_64[2145] = {
+	pg.base.activity_ninja_buff[2145] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7048,11 +5957,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 145
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_ninja_buff
-
-	var_3_65[2146] = {
+	pg.base.activity_ninja_buff[2146] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7067,11 +5972,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 146
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_ninja_buff
-
-	var_3_66[2147] = {
+	pg.base.activity_ninja_buff[2147] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7086,11 +5987,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 147
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_ninja_buff
-
-	var_3_67[2148] = {
+	pg.base.activity_ninja_buff[2148] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7105,11 +6002,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 148
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_ninja_buff
-
-	var_3_68[2149] = {
+	pg.base.activity_ninja_buff[2149] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7124,11 +6017,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 149
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_ninja_buff
-
-	var_3_69[2150] = {
+	pg.base.activity_ninja_buff[2150] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7143,11 +6032,7 @@ end)()
 		icon = "ninjacityicon/buff_2",
 		level = 150
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_ninja_buff
-
-	var_3_70[3001] = {
+	pg.base.activity_ninja_buff[3001] = {
 		cost = "1.13",
 		name = "ninja_buff_name3",
 		type = 1,
@@ -7162,11 +6047,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 1
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_ninja_buff
-
-	var_3_71[3002] = {
+	pg.base.activity_ninja_buff[3002] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7181,11 +6062,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 2
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_ninja_buff
-
-	var_3_72[3003] = {
+	pg.base.activity_ninja_buff[3003] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7200,11 +6077,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 3
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_ninja_buff
-
-	var_3_73[3004] = {
+	pg.base.activity_ninja_buff[3004] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7219,11 +6092,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 4
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_ninja_buff
-
-	var_3_74[3005] = {
+	pg.base.activity_ninja_buff[3005] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7238,11 +6107,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 5
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_ninja_buff
-
-	var_3_75[3006] = {
+	pg.base.activity_ninja_buff[3006] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7257,11 +6122,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 6
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_ninja_buff
-
-	var_3_76[3007] = {
+	pg.base.activity_ninja_buff[3007] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7276,11 +6137,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 7
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_ninja_buff
-
-	var_3_77[3008] = {
+	pg.base.activity_ninja_buff[3008] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7295,11 +6152,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 8
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_ninja_buff
-
-	var_3_78[3009] = {
+	pg.base.activity_ninja_buff[3009] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7314,11 +6167,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 9
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_ninja_buff
-
-	var_3_79[3010] = {
+	pg.base.activity_ninja_buff[3010] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -7333,11 +6182,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 10
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_ninja_buff
-
-	var_3_80[3011] = {
+	pg.base.activity_ninja_buff[3011] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7352,11 +6197,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 11
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_ninja_buff
-
-	var_3_81[3012] = {
+	pg.base.activity_ninja_buff[3012] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7371,11 +6212,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 12
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_ninja_buff
-
-	var_3_82[3013] = {
+	pg.base.activity_ninja_buff[3013] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7390,11 +6227,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 13
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_ninja_buff
-
-	var_3_83[3014] = {
+	pg.base.activity_ninja_buff[3014] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7409,11 +6242,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 14
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_ninja_buff
-
-	var_3_84[3015] = {
+	pg.base.activity_ninja_buff[3015] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7428,11 +6257,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 15
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_ninja_buff
-
-	var_3_85[3016] = {
+	pg.base.activity_ninja_buff[3016] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7447,11 +6272,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 16
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_ninja_buff
-
-	var_3_86[3017] = {
+	pg.base.activity_ninja_buff[3017] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7466,11 +6287,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 17
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_ninja_buff
-
-	var_3_87[3018] = {
+	pg.base.activity_ninja_buff[3018] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7485,11 +6302,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 18
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_ninja_buff
-
-	var_3_88[3019] = {
+	pg.base.activity_ninja_buff[3019] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7504,11 +6317,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 19
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_ninja_buff
-
-	var_3_89[3020] = {
+	pg.base.activity_ninja_buff[3020] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7523,11 +6332,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 20
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_ninja_buff
-
-	var_3_90[3021] = {
+	pg.base.activity_ninja_buff[3021] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7542,11 +6347,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 21
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_ninja_buff
-
-	var_3_91[3022] = {
+	pg.base.activity_ninja_buff[3022] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7561,11 +6362,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 22
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_ninja_buff
-
-	var_3_92[3023] = {
+	pg.base.activity_ninja_buff[3023] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7580,11 +6377,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 23
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_ninja_buff
-
-	var_3_93[3024] = {
+	pg.base.activity_ninja_buff[3024] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7599,11 +6392,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 24
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_ninja_buff
-
-	var_3_94[3025] = {
+	pg.base.activity_ninja_buff[3025] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7618,11 +6407,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 25
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_ninja_buff
-
-	var_3_95[3026] = {
+	pg.base.activity_ninja_buff[3026] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7637,11 +6422,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 26
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_ninja_buff
-
-	var_3_96[3027] = {
+	pg.base.activity_ninja_buff[3027] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7656,11 +6437,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 27
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_ninja_buff
-
-	var_3_97[3028] = {
+	pg.base.activity_ninja_buff[3028] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7675,11 +6452,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 28
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_ninja_buff
-
-	var_3_98[3029] = {
+	pg.base.activity_ninja_buff[3029] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7694,8 +6467,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 29
 	}
-	pg = var_3_98
-	var_3_98.base.activity_ninja_buff[3030] = {
+	pg.base.activity_ninja_buff[3030] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -7714,11 +6486,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_ninja_buff
-
-	var_4_0[3031] = {
+	pg.base.activity_ninja_buff[3031] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7733,11 +6501,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 31
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_ninja_buff
-
-	var_4_1[3032] = {
+	pg.base.activity_ninja_buff[3032] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7752,11 +6516,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 32
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_ninja_buff
-
-	var_4_2[3033] = {
+	pg.base.activity_ninja_buff[3033] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7771,11 +6531,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 33
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_ninja_buff
-
-	var_4_3[3034] = {
+	pg.base.activity_ninja_buff[3034] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7790,11 +6546,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 34
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_ninja_buff
-
-	var_4_4[3035] = {
+	pg.base.activity_ninja_buff[3035] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7809,11 +6561,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 35
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_ninja_buff
-
-	var_4_5[3036] = {
+	pg.base.activity_ninja_buff[3036] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7828,11 +6576,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 36
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_ninja_buff
-
-	var_4_6[3037] = {
+	pg.base.activity_ninja_buff[3037] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7847,11 +6591,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 37
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_ninja_buff
-
-	var_4_7[3038] = {
+	pg.base.activity_ninja_buff[3038] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7866,11 +6606,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 38
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_ninja_buff
-
-	var_4_8[3039] = {
+	pg.base.activity_ninja_buff[3039] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7885,11 +6621,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 39
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_ninja_buff
-
-	var_4_9[3040] = {
+	pg.base.activity_ninja_buff[3040] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7904,11 +6636,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 40
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_ninja_buff
-
-	var_4_10[3041] = {
+	pg.base.activity_ninja_buff[3041] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7923,11 +6651,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 41
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_ninja_buff
-
-	var_4_11[3042] = {
+	pg.base.activity_ninja_buff[3042] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7942,11 +6666,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 42
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_ninja_buff
-
-	var_4_12[3043] = {
+	pg.base.activity_ninja_buff[3043] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7961,11 +6681,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 43
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_ninja_buff
-
-	var_4_13[3044] = {
+	pg.base.activity_ninja_buff[3044] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7980,11 +6696,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 44
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_ninja_buff
-
-	var_4_14[3045] = {
+	pg.base.activity_ninja_buff[3045] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -7999,11 +6711,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 45
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_ninja_buff
-
-	var_4_15[3046] = {
+	pg.base.activity_ninja_buff[3046] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8018,11 +6726,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 46
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_ninja_buff
-
-	var_4_16[3047] = {
+	pg.base.activity_ninja_buff[3047] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8037,11 +6741,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 47
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_ninja_buff
-
-	var_4_17[3048] = {
+	pg.base.activity_ninja_buff[3048] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8056,11 +6756,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 48
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_ninja_buff
-
-	var_4_18[3049] = {
+	pg.base.activity_ninja_buff[3049] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8075,11 +6771,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 49
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_ninja_buff
-
-	var_4_19[3050] = {
+	pg.base.activity_ninja_buff[3050] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8094,11 +6786,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 50
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_ninja_buff
-
-	var_4_20[3051] = {
+	pg.base.activity_ninja_buff[3051] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8113,11 +6801,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 51
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_ninja_buff
-
-	var_4_21[3052] = {
+	pg.base.activity_ninja_buff[3052] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8132,11 +6816,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 52
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_ninja_buff
-
-	var_4_22[3053] = {
+	pg.base.activity_ninja_buff[3053] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8151,11 +6831,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 53
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_ninja_buff
-
-	var_4_23[3054] = {
+	pg.base.activity_ninja_buff[3054] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8170,11 +6846,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 54
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_ninja_buff
-
-	var_4_24[3055] = {
+	pg.base.activity_ninja_buff[3055] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8189,11 +6861,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 55
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_ninja_buff
-
-	var_4_25[3056] = {
+	pg.base.activity_ninja_buff[3056] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8208,11 +6876,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 56
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_ninja_buff
-
-	var_4_26[3057] = {
+	pg.base.activity_ninja_buff[3057] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8227,11 +6891,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 57
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_ninja_buff
-
-	var_4_27[3058] = {
+	pg.base.activity_ninja_buff[3058] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8246,11 +6906,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 58
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_ninja_buff
-
-	var_4_28[3059] = {
+	pg.base.activity_ninja_buff[3059] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8265,11 +6921,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 59
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_ninja_buff
-
-	var_4_29[3060] = {
+	pg.base.activity_ninja_buff[3060] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8284,11 +6936,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 60
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_ninja_buff
-
-	var_4_30[3061] = {
+	pg.base.activity_ninja_buff[3061] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8303,11 +6951,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 61
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_ninja_buff
-
-	var_4_31[3062] = {
+	pg.base.activity_ninja_buff[3062] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8322,11 +6966,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 62
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_ninja_buff
-
-	var_4_32[3063] = {
+	pg.base.activity_ninja_buff[3063] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8341,11 +6981,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 63
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_ninja_buff
-
-	var_4_33[3064] = {
+	pg.base.activity_ninja_buff[3064] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8360,11 +6996,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 64
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_ninja_buff
-
-	var_4_34[3065] = {
+	pg.base.activity_ninja_buff[3065] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8379,11 +7011,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 65
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_ninja_buff
-
-	var_4_35[3066] = {
+	pg.base.activity_ninja_buff[3066] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8398,11 +7026,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 66
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_ninja_buff
-
-	var_4_36[3067] = {
+	pg.base.activity_ninja_buff[3067] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8417,11 +7041,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 67
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_ninja_buff
-
-	var_4_37[3068] = {
+	pg.base.activity_ninja_buff[3068] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8436,11 +7056,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 68
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_ninja_buff
-
-	var_4_38[3069] = {
+	pg.base.activity_ninja_buff[3069] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8455,11 +7071,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 69
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_ninja_buff
-
-	var_4_39[3070] = {
+	pg.base.activity_ninja_buff[3070] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8474,11 +7086,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 70
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_ninja_buff
-
-	var_4_40[3071] = {
+	pg.base.activity_ninja_buff[3071] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8493,11 +7101,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 71
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_ninja_buff
-
-	var_4_41[3072] = {
+	pg.base.activity_ninja_buff[3072] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8512,11 +7116,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 72
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_ninja_buff
-
-	var_4_42[3073] = {
+	pg.base.activity_ninja_buff[3073] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8531,11 +7131,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 73
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_ninja_buff
-
-	var_4_43[3074] = {
+	pg.base.activity_ninja_buff[3074] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8550,11 +7146,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 74
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_ninja_buff
-
-	var_4_44[3075] = {
+	pg.base.activity_ninja_buff[3075] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8569,11 +7161,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 75
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_ninja_buff
-
-	var_4_45[3076] = {
+	pg.base.activity_ninja_buff[3076] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8588,11 +7176,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 76
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_ninja_buff
-
-	var_4_46[3077] = {
+	pg.base.activity_ninja_buff[3077] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8607,11 +7191,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 77
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_ninja_buff
-
-	var_4_47[3078] = {
+	pg.base.activity_ninja_buff[3078] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8626,11 +7206,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 78
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_ninja_buff
-
-	var_4_48[3079] = {
+	pg.base.activity_ninja_buff[3079] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8645,11 +7221,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 79
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_ninja_buff
-
-	var_4_49[3080] = {
+	pg.base.activity_ninja_buff[3080] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8664,11 +7236,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 80
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_ninja_buff
-
-	var_4_50[3081] = {
+	pg.base.activity_ninja_buff[3081] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8683,11 +7251,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 81
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_ninja_buff
-
-	var_4_51[3082] = {
+	pg.base.activity_ninja_buff[3082] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8702,11 +7266,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 82
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_ninja_buff
-
-	var_4_52[3083] = {
+	pg.base.activity_ninja_buff[3083] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8721,11 +7281,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 83
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_ninja_buff
-
-	var_4_53[3084] = {
+	pg.base.activity_ninja_buff[3084] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8740,11 +7296,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 84
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_ninja_buff
-
-	var_4_54[3085] = {
+	pg.base.activity_ninja_buff[3085] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8759,11 +7311,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 85
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_ninja_buff
-
-	var_4_55[3086] = {
+	pg.base.activity_ninja_buff[3086] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8778,11 +7326,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 86
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_ninja_buff
-
-	var_4_56[3087] = {
+	pg.base.activity_ninja_buff[3087] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8797,11 +7341,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 87
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_ninja_buff
-
-	var_4_57[3088] = {
+	pg.base.activity_ninja_buff[3088] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8816,11 +7356,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 88
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_ninja_buff
-
-	var_4_58[3089] = {
+	pg.base.activity_ninja_buff[3089] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8835,11 +7371,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 89
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_ninja_buff
-
-	var_4_59[3090] = {
+	pg.base.activity_ninja_buff[3090] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -8854,11 +7386,7 @@ end)()
 		icon = "ninjacityicon/buff_3",
 		level = 90
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_ninja_buff
-
-	var_4_60[4001] = {
+	pg.base.activity_ninja_buff[4001] = {
 		cost = "1.07",
 		name = "ninja_buff_name4",
 		type = 1,
@@ -8873,11 +7401,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 1
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_ninja_buff
-
-	var_4_61[4002] = {
+	pg.base.activity_ninja_buff[4002] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -8892,11 +7416,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 2
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_ninja_buff
-
-	var_4_62[4003] = {
+	pg.base.activity_ninja_buff[4003] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -8911,11 +7431,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 3
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_ninja_buff
-
-	var_4_63[4004] = {
+	pg.base.activity_ninja_buff[4004] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -8930,11 +7446,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 4
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_ninja_buff
-
-	var_4_64[4005] = {
+	pg.base.activity_ninja_buff[4005] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -8949,11 +7461,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 5
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_ninja_buff
-
-	var_4_65[4006] = {
+	pg.base.activity_ninja_buff[4006] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -8968,11 +7476,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 6
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_ninja_buff
-
-	var_4_66[4007] = {
+	pg.base.activity_ninja_buff[4007] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -8987,11 +7491,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 7
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_ninja_buff
-
-	var_4_67[4008] = {
+	pg.base.activity_ninja_buff[4008] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9006,11 +7506,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 8
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_ninja_buff
-
-	var_4_68[4009] = {
+	pg.base.activity_ninja_buff[4009] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9025,11 +7521,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 9
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_ninja_buff
-
-	var_4_69[4010] = {
+	pg.base.activity_ninja_buff[4010] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9044,11 +7536,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 10
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_ninja_buff
-
-	var_4_70[4011] = {
+	pg.base.activity_ninja_buff[4011] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9063,11 +7551,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 11
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_ninja_buff
-
-	var_4_71[4012] = {
+	pg.base.activity_ninja_buff[4012] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9082,11 +7566,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 12
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_ninja_buff
-
-	var_4_72[4013] = {
+	pg.base.activity_ninja_buff[4013] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9101,11 +7581,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 13
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_ninja_buff
-
-	var_4_73[4014] = {
+	pg.base.activity_ninja_buff[4014] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9120,11 +7596,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 14
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_ninja_buff
-
-	var_4_74[4015] = {
+	pg.base.activity_ninja_buff[4015] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9139,11 +7611,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 15
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_ninja_buff
-
-	var_4_75[4016] = {
+	pg.base.activity_ninja_buff[4016] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9158,11 +7626,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 16
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_ninja_buff
-
-	var_4_76[4017] = {
+	pg.base.activity_ninja_buff[4017] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9177,11 +7641,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 17
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_ninja_buff
-
-	var_4_77[4018] = {
+	pg.base.activity_ninja_buff[4018] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9196,11 +7656,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 18
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_ninja_buff
-
-	var_4_78[4019] = {
+	pg.base.activity_ninja_buff[4019] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9215,11 +7671,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 19
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_ninja_buff
-
-	var_4_79[4020] = {
+	pg.base.activity_ninja_buff[4020] = {
 		cost = "1.07",
 		name = "",
 		type = 1,
@@ -9234,11 +7686,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 20
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_ninja_buff
-
-	var_4_80[4021] = {
+	pg.base.activity_ninja_buff[4021] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9253,11 +7701,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 21
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_ninja_buff
-
-	var_4_81[4022] = {
+	pg.base.activity_ninja_buff[4022] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9272,11 +7716,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 22
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_ninja_buff
-
-	var_4_82[4023] = {
+	pg.base.activity_ninja_buff[4023] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9291,11 +7731,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 23
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_ninja_buff
-
-	var_4_83[4024] = {
+	pg.base.activity_ninja_buff[4024] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9310,11 +7746,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 24
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_ninja_buff
-
-	var_4_84[4025] = {
+	pg.base.activity_ninja_buff[4025] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9329,11 +7761,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 25
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_ninja_buff
-
-	var_4_85[4026] = {
+	pg.base.activity_ninja_buff[4026] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9348,11 +7776,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 26
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_ninja_buff
-
-	var_4_86[4027] = {
+	pg.base.activity_ninja_buff[4027] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9367,11 +7791,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 27
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_ninja_buff
-
-	var_4_87[4028] = {
+	pg.base.activity_ninja_buff[4028] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9386,11 +7806,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 28
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_ninja_buff
-
-	var_4_88[4029] = {
+	pg.base.activity_ninja_buff[4029] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9405,11 +7821,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 29
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_ninja_buff
-
-	var_4_89[4030] = {
+	pg.base.activity_ninja_buff[4030] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9424,11 +7836,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 30
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_ninja_buff
-
-	var_4_90[4031] = {
+	pg.base.activity_ninja_buff[4031] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9443,11 +7851,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 31
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_ninja_buff
-
-	var_4_91[4032] = {
+	pg.base.activity_ninja_buff[4032] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9462,11 +7866,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 32
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_ninja_buff
-
-	var_4_92[4033] = {
+	pg.base.activity_ninja_buff[4033] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9481,11 +7881,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 33
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_ninja_buff
-
-	var_4_93[4034] = {
+	pg.base.activity_ninja_buff[4034] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9500,11 +7896,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 34
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_ninja_buff
-
-	var_4_94[4035] = {
+	pg.base.activity_ninja_buff[4035] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9519,11 +7911,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 35
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_ninja_buff
-
-	var_4_95[4036] = {
+	pg.base.activity_ninja_buff[4036] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9538,11 +7926,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 36
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_ninja_buff
-
-	var_4_96[4037] = {
+	pg.base.activity_ninja_buff[4037] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9557,11 +7941,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 37
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_ninja_buff
-
-	var_4_97[4038] = {
+	pg.base.activity_ninja_buff[4038] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9576,11 +7956,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 38
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_ninja_buff
-
-	var_4_98[4039] = {
+	pg.base.activity_ninja_buff[4039] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9595,8 +7971,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 39
 	}
-	pg = var_4_98
-	var_4_98.base.activity_ninja_buff[4040] = {
+	pg.base.activity_ninja_buff[4040] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -9615,11 +7990,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_ninja_buff
-
-	var_5_0[4041] = {
+	pg.base.activity_ninja_buff[4041] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9634,11 +8005,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 41
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_ninja_buff
-
-	var_5_1[4042] = {
+	pg.base.activity_ninja_buff[4042] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9653,11 +8020,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 42
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_ninja_buff
-
-	var_5_2[4043] = {
+	pg.base.activity_ninja_buff[4043] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9672,11 +8035,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 43
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_ninja_buff
-
-	var_5_3[4044] = {
+	pg.base.activity_ninja_buff[4044] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9691,11 +8050,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 44
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.activity_ninja_buff
-
-	var_5_4[4045] = {
+	pg.base.activity_ninja_buff[4045] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9710,11 +8065,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 45
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.activity_ninja_buff
-
-	var_5_5[4046] = {
+	pg.base.activity_ninja_buff[4046] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9729,11 +8080,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 46
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.activity_ninja_buff
-
-	var_5_6[4047] = {
+	pg.base.activity_ninja_buff[4047] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9748,11 +8095,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 47
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.activity_ninja_buff
-
-	var_5_7[4048] = {
+	pg.base.activity_ninja_buff[4048] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9767,11 +8110,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 48
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.activity_ninja_buff
-
-	var_5_8[4049] = {
+	pg.base.activity_ninja_buff[4049] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9786,11 +8125,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 49
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.activity_ninja_buff
-
-	var_5_9[4050] = {
+	pg.base.activity_ninja_buff[4050] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -9805,11 +8140,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 50
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.activity_ninja_buff
-
-	var_5_10[4051] = {
+	pg.base.activity_ninja_buff[4051] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9824,11 +8155,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 51
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.activity_ninja_buff
-
-	var_5_11[4052] = {
+	pg.base.activity_ninja_buff[4052] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9843,11 +8170,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 52
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.activity_ninja_buff
-
-	var_5_12[4053] = {
+	pg.base.activity_ninja_buff[4053] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9862,11 +8185,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 53
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.activity_ninja_buff
-
-	var_5_13[4054] = {
+	pg.base.activity_ninja_buff[4054] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9881,11 +8200,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 54
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.activity_ninja_buff
-
-	var_5_14[4055] = {
+	pg.base.activity_ninja_buff[4055] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9900,11 +8215,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 55
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.activity_ninja_buff
-
-	var_5_15[4056] = {
+	pg.base.activity_ninja_buff[4056] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9919,11 +8230,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 56
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.activity_ninja_buff
-
-	var_5_16[4057] = {
+	pg.base.activity_ninja_buff[4057] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9938,11 +8245,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 57
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.activity_ninja_buff
-
-	var_5_17[4058] = {
+	pg.base.activity_ninja_buff[4058] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9957,11 +8260,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 58
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.activity_ninja_buff
-
-	var_5_18[4059] = {
+	pg.base.activity_ninja_buff[4059] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9976,11 +8275,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 59
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.activity_ninja_buff
-
-	var_5_19[4060] = {
+	pg.base.activity_ninja_buff[4060] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -9995,11 +8290,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 60
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.activity_ninja_buff
-
-	var_5_20[4061] = {
+	pg.base.activity_ninja_buff[4061] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10014,11 +8305,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 61
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.activity_ninja_buff
-
-	var_5_21[4062] = {
+	pg.base.activity_ninja_buff[4062] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10033,11 +8320,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 62
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.activity_ninja_buff
-
-	var_5_22[4063] = {
+	pg.base.activity_ninja_buff[4063] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10052,11 +8335,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 63
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.activity_ninja_buff
-
-	var_5_23[4064] = {
+	pg.base.activity_ninja_buff[4064] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10071,11 +8350,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 64
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.activity_ninja_buff
-
-	var_5_24[4065] = {
+	pg.base.activity_ninja_buff[4065] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10090,11 +8365,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 65
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.activity_ninja_buff
-
-	var_5_25[4066] = {
+	pg.base.activity_ninja_buff[4066] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10109,11 +8380,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 66
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.activity_ninja_buff
-
-	var_5_26[4067] = {
+	pg.base.activity_ninja_buff[4067] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10128,11 +8395,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 67
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.activity_ninja_buff
-
-	var_5_27[4068] = {
+	pg.base.activity_ninja_buff[4068] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10147,11 +8410,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 68
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.activity_ninja_buff
-
-	var_5_28[4069] = {
+	pg.base.activity_ninja_buff[4069] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10166,11 +8425,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 69
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.activity_ninja_buff
-
-	var_5_29[4070] = {
+	pg.base.activity_ninja_buff[4070] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -10185,11 +8440,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 70
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.activity_ninja_buff
-
-	var_5_30[4071] = {
+	pg.base.activity_ninja_buff[4071] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10204,11 +8455,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 71
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.activity_ninja_buff
-
-	var_5_31[4072] = {
+	pg.base.activity_ninja_buff[4072] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10223,11 +8470,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 72
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.activity_ninja_buff
-
-	var_5_32[4073] = {
+	pg.base.activity_ninja_buff[4073] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10242,11 +8485,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 73
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.activity_ninja_buff
-
-	var_5_33[4074] = {
+	pg.base.activity_ninja_buff[4074] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10261,11 +8500,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 74
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.activity_ninja_buff
-
-	var_5_34[4075] = {
+	pg.base.activity_ninja_buff[4075] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10280,11 +8515,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 75
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.activity_ninja_buff
-
-	var_5_35[4076] = {
+	pg.base.activity_ninja_buff[4076] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10299,11 +8530,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 76
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.activity_ninja_buff
-
-	var_5_36[4077] = {
+	pg.base.activity_ninja_buff[4077] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10318,11 +8545,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 77
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.activity_ninja_buff
-
-	var_5_37[4078] = {
+	pg.base.activity_ninja_buff[4078] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10337,11 +8560,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 78
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.activity_ninja_buff
-
-	var_5_38[4079] = {
+	pg.base.activity_ninja_buff[4079] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10356,11 +8575,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 79
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.activity_ninja_buff
-
-	var_5_39[4080] = {
+	pg.base.activity_ninja_buff[4080] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10375,11 +8590,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 80
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.activity_ninja_buff
-
-	var_5_40[4081] = {
+	pg.base.activity_ninja_buff[4081] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10394,11 +8605,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 81
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.activity_ninja_buff
-
-	var_5_41[4082] = {
+	pg.base.activity_ninja_buff[4082] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10413,11 +8620,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 82
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.activity_ninja_buff
-
-	var_5_42[4083] = {
+	pg.base.activity_ninja_buff[4083] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10432,11 +8635,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 83
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.activity_ninja_buff
-
-	var_5_43[4084] = {
+	pg.base.activity_ninja_buff[4084] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10451,11 +8650,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 84
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.activity_ninja_buff
-
-	var_5_44[4085] = {
+	pg.base.activity_ninja_buff[4085] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10470,11 +8665,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 85
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.activity_ninja_buff
-
-	var_5_45[4086] = {
+	pg.base.activity_ninja_buff[4086] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10489,11 +8680,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 86
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.activity_ninja_buff
-
-	var_5_46[4087] = {
+	pg.base.activity_ninja_buff[4087] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10508,11 +8695,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 87
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.activity_ninja_buff
-
-	var_5_47[4088] = {
+	pg.base.activity_ninja_buff[4088] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10527,11 +8710,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 88
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.activity_ninja_buff
-
-	var_5_48[4089] = {
+	pg.base.activity_ninja_buff[4089] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10546,11 +8725,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 89
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.activity_ninja_buff
-
-	var_5_49[4090] = {
+	pg.base.activity_ninja_buff[4090] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10565,11 +8740,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 90
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.activity_ninja_buff
-
-	var_5_50[4091] = {
+	pg.base.activity_ninja_buff[4091] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10584,11 +8755,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 91
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.activity_ninja_buff
-
-	var_5_51[4092] = {
+	pg.base.activity_ninja_buff[4092] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10603,11 +8770,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 92
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.activity_ninja_buff
-
-	var_5_52[4093] = {
+	pg.base.activity_ninja_buff[4093] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10622,11 +8785,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 93
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.activity_ninja_buff
-
-	var_5_53[4094] = {
+	pg.base.activity_ninja_buff[4094] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10641,11 +8800,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 94
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.activity_ninja_buff
-
-	var_5_54[4095] = {
+	pg.base.activity_ninja_buff[4095] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10660,11 +8815,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 95
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.activity_ninja_buff
-
-	var_5_55[4096] = {
+	pg.base.activity_ninja_buff[4096] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10679,11 +8830,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 96
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.activity_ninja_buff
-
-	var_5_56[4097] = {
+	pg.base.activity_ninja_buff[4097] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10698,11 +8845,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 97
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.activity_ninja_buff
-
-	var_5_57[4098] = {
+	pg.base.activity_ninja_buff[4098] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10717,11 +8860,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 98
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.activity_ninja_buff
-
-	var_5_58[4099] = {
+	pg.base.activity_ninja_buff[4099] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10736,11 +8875,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 99
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.activity_ninja_buff
-
-	var_5_59[4100] = {
+	pg.base.activity_ninja_buff[4100] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10755,11 +8890,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 100
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.activity_ninja_buff
-
-	var_5_60[4101] = {
+	pg.base.activity_ninja_buff[4101] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10774,11 +8905,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 101
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.activity_ninja_buff
-
-	var_5_61[4102] = {
+	pg.base.activity_ninja_buff[4102] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10793,11 +8920,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 102
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.activity_ninja_buff
-
-	var_5_62[4103] = {
+	pg.base.activity_ninja_buff[4103] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10812,11 +8935,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 103
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.activity_ninja_buff
-
-	var_5_63[4104] = {
+	pg.base.activity_ninja_buff[4104] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10831,11 +8950,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 104
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.activity_ninja_buff
-
-	var_5_64[4105] = {
+	pg.base.activity_ninja_buff[4105] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10850,11 +8965,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 105
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.activity_ninja_buff
-
-	var_5_65[4106] = {
+	pg.base.activity_ninja_buff[4106] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10869,11 +8980,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 106
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.activity_ninja_buff
-
-	var_5_66[4107] = {
+	pg.base.activity_ninja_buff[4107] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10888,11 +8995,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 107
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.activity_ninja_buff
-
-	var_5_67[4108] = {
+	pg.base.activity_ninja_buff[4108] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10907,11 +9010,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 108
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.activity_ninja_buff
-
-	var_5_68[4109] = {
+	pg.base.activity_ninja_buff[4109] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10926,11 +9025,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 109
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.activity_ninja_buff
-
-	var_5_69[4110] = {
+	pg.base.activity_ninja_buff[4110] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10945,11 +9040,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 110
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.activity_ninja_buff
-
-	var_5_70[4111] = {
+	pg.base.activity_ninja_buff[4111] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10964,11 +9055,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 111
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.activity_ninja_buff
-
-	var_5_71[4112] = {
+	pg.base.activity_ninja_buff[4112] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -10983,11 +9070,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 112
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.activity_ninja_buff
-
-	var_5_72[4113] = {
+	pg.base.activity_ninja_buff[4113] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11002,11 +9085,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 113
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.activity_ninja_buff
-
-	var_5_73[4114] = {
+	pg.base.activity_ninja_buff[4114] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11021,11 +9100,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 114
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.activity_ninja_buff
-
-	var_5_74[4115] = {
+	pg.base.activity_ninja_buff[4115] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11040,11 +9115,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 115
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.activity_ninja_buff
-
-	var_5_75[4116] = {
+	pg.base.activity_ninja_buff[4116] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11059,11 +9130,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 116
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.activity_ninja_buff
-
-	var_5_76[4117] = {
+	pg.base.activity_ninja_buff[4117] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11078,11 +9145,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 117
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.activity_ninja_buff
-
-	var_5_77[4118] = {
+	pg.base.activity_ninja_buff[4118] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11097,11 +9160,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 118
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.activity_ninja_buff
-
-	var_5_78[4119] = {
+	pg.base.activity_ninja_buff[4119] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11116,11 +9175,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 119
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.activity_ninja_buff
-
-	var_5_79[4120] = {
+	pg.base.activity_ninja_buff[4120] = {
 		cost = "1.17",
 		name = "",
 		type = 1,
@@ -11135,11 +9190,7 @@ end)()
 		icon = "ninjacityicon/buff_4",
 		level = 120
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.activity_ninja_buff
-
-	var_5_80[5001] = {
+	pg.base.activity_ninja_buff[5001] = {
 		cost = "1.22",
 		name = "ninja_buff_name5",
 		type = 1,
@@ -11154,11 +9205,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 1
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.activity_ninja_buff
-
-	var_5_81[5002] = {
+	pg.base.activity_ninja_buff[5002] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11173,11 +9220,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 2
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.activity_ninja_buff
-
-	var_5_82[5003] = {
+	pg.base.activity_ninja_buff[5003] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11192,11 +9235,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 3
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.activity_ninja_buff
-
-	var_5_83[5004] = {
+	pg.base.activity_ninja_buff[5004] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11211,11 +9250,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 4
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.activity_ninja_buff
-
-	var_5_84[5005] = {
+	pg.base.activity_ninja_buff[5005] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11230,11 +9265,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 5
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.activity_ninja_buff
-
-	var_5_85[5006] = {
+	pg.base.activity_ninja_buff[5006] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11249,11 +9280,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 6
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.activity_ninja_buff
-
-	var_5_86[5007] = {
+	pg.base.activity_ninja_buff[5007] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11268,11 +9295,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 7
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.activity_ninja_buff
-
-	var_5_87[5008] = {
+	pg.base.activity_ninja_buff[5008] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11287,11 +9310,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 8
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.activity_ninja_buff
-
-	var_5_88[5009] = {
+	pg.base.activity_ninja_buff[5009] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11306,11 +9325,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 9
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.activity_ninja_buff
-
-	var_5_89[5010] = {
+	pg.base.activity_ninja_buff[5010] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11325,11 +9340,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 10
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.activity_ninja_buff
-
-	var_5_90[5011] = {
+	pg.base.activity_ninja_buff[5011] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11344,11 +9355,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 11
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.activity_ninja_buff
-
-	var_5_91[5012] = {
+	pg.base.activity_ninja_buff[5012] = {
 		cost = "1.22",
 		name = "",
 		type = 1,
@@ -11363,11 +9370,7 @@ end)()
 		icon = "ninjacityicon/buff_5",
 		level = 12
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.activity_ninja_buff
-
-	var_5_92[6001] = {
+	pg.base.activity_ninja_buff[6001] = {
 		cost = "1.12",
 		name = "ninja_buff_name6",
 		type = 1,
@@ -11382,11 +9385,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 1
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.activity_ninja_buff
-
-	var_5_93[6002] = {
+	pg.base.activity_ninja_buff[6002] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11401,11 +9400,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 2
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.activity_ninja_buff
-
-	var_5_94[6003] = {
+	pg.base.activity_ninja_buff[6003] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11420,11 +9415,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 3
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.activity_ninja_buff
-
-	var_5_95[6004] = {
+	pg.base.activity_ninja_buff[6004] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11439,11 +9430,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 4
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.activity_ninja_buff
-
-	var_5_96[6005] = {
+	pg.base.activity_ninja_buff[6005] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11458,11 +9445,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 5
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.activity_ninja_buff
-
-	var_5_97[6006] = {
+	pg.base.activity_ninja_buff[6006] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11477,11 +9460,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 6
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.activity_ninja_buff
-
-	var_5_98[6007] = {
+	pg.base.activity_ninja_buff[6007] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11496,8 +9475,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 7
 	}
-	pg = var_5_98
-	var_5_98.base.activity_ninja_buff[6008] = {
+	pg.base.activity_ninja_buff[6008] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11516,11 +9494,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.activity_ninja_buff
-
-	var_6_0[6009] = {
+	pg.base.activity_ninja_buff[6009] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11535,11 +9509,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 9
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.activity_ninja_buff
-
-	var_6_1[6010] = {
+	pg.base.activity_ninja_buff[6010] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -11554,11 +9524,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 10
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.activity_ninja_buff
-
-	var_6_2[6011] = {
+	pg.base.activity_ninja_buff[6011] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11573,11 +9539,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 11
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.activity_ninja_buff
-
-	var_6_3[6012] = {
+	pg.base.activity_ninja_buff[6012] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11592,11 +9554,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 12
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.activity_ninja_buff
-
-	var_6_4[6013] = {
+	pg.base.activity_ninja_buff[6013] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11611,11 +9569,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 13
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.activity_ninja_buff
-
-	var_6_5[6014] = {
+	pg.base.activity_ninja_buff[6014] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11630,11 +9584,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 14
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.activity_ninja_buff
-
-	var_6_6[6015] = {
+	pg.base.activity_ninja_buff[6015] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11649,11 +9599,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 15
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.activity_ninja_buff
-
-	var_6_7[6016] = {
+	pg.base.activity_ninja_buff[6016] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11668,11 +9614,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 16
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.activity_ninja_buff
-
-	var_6_8[6017] = {
+	pg.base.activity_ninja_buff[6017] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11687,11 +9629,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 17
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.activity_ninja_buff
-
-	var_6_9[6018] = {
+	pg.base.activity_ninja_buff[6018] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11706,11 +9644,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 18
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.activity_ninja_buff
-
-	var_6_10[6019] = {
+	pg.base.activity_ninja_buff[6019] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11725,11 +9659,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 19
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.activity_ninja_buff
-
-	var_6_11[6020] = {
+	pg.base.activity_ninja_buff[6020] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11744,11 +9674,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 20
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.activity_ninja_buff
-
-	var_6_12[6021] = {
+	pg.base.activity_ninja_buff[6021] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11763,11 +9689,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 21
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.activity_ninja_buff
-
-	var_6_13[6022] = {
+	pg.base.activity_ninja_buff[6022] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11782,11 +9704,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 22
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.activity_ninja_buff
-
-	var_6_14[6023] = {
+	pg.base.activity_ninja_buff[6023] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11801,11 +9719,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 23
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.activity_ninja_buff
-
-	var_6_15[6024] = {
+	pg.base.activity_ninja_buff[6024] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11820,11 +9734,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 24
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.activity_ninja_buff
-
-	var_6_16[6025] = {
+	pg.base.activity_ninja_buff[6025] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11839,11 +9749,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 25
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.activity_ninja_buff
-
-	var_6_17[6026] = {
+	pg.base.activity_ninja_buff[6026] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11858,11 +9764,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 26
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.activity_ninja_buff
-
-	var_6_18[6027] = {
+	pg.base.activity_ninja_buff[6027] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11877,11 +9779,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 27
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.activity_ninja_buff
-
-	var_6_19[6028] = {
+	pg.base.activity_ninja_buff[6028] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11896,11 +9794,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 28
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.activity_ninja_buff
-
-	var_6_20[6029] = {
+	pg.base.activity_ninja_buff[6029] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11915,11 +9809,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 29
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.activity_ninja_buff
-
-	var_6_21[6030] = {
+	pg.base.activity_ninja_buff[6030] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -11934,11 +9824,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 30
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.activity_ninja_buff
-
-	var_6_22[6031] = {
+	pg.base.activity_ninja_buff[6031] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -11953,11 +9839,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 31
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.activity_ninja_buff
-
-	var_6_23[6032] = {
+	pg.base.activity_ninja_buff[6032] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -11972,11 +9854,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 32
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.activity_ninja_buff
-
-	var_6_24[6033] = {
+	pg.base.activity_ninja_buff[6033] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -11991,11 +9869,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 33
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.activity_ninja_buff
-
-	var_6_25[6034] = {
+	pg.base.activity_ninja_buff[6034] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12010,11 +9884,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 34
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.activity_ninja_buff
-
-	var_6_26[6035] = {
+	pg.base.activity_ninja_buff[6035] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12029,11 +9899,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 35
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.activity_ninja_buff
-
-	var_6_27[6036] = {
+	pg.base.activity_ninja_buff[6036] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12048,11 +9914,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 36
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.activity_ninja_buff
-
-	var_6_28[6037] = {
+	pg.base.activity_ninja_buff[6037] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12067,11 +9929,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 37
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.activity_ninja_buff
-
-	var_6_29[6038] = {
+	pg.base.activity_ninja_buff[6038] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12086,11 +9944,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 38
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.activity_ninja_buff
-
-	var_6_30[6039] = {
+	pg.base.activity_ninja_buff[6039] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12105,11 +9959,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 39
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.activity_ninja_buff
-
-	var_6_31[6040] = {
+	pg.base.activity_ninja_buff[6040] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12124,11 +9974,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 40
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.activity_ninja_buff
-
-	var_6_32[6041] = {
+	pg.base.activity_ninja_buff[6041] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12143,11 +9989,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 41
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.activity_ninja_buff
-
-	var_6_33[6042] = {
+	pg.base.activity_ninja_buff[6042] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12162,11 +10004,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 42
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.activity_ninja_buff
-
-	var_6_34[6043] = {
+	pg.base.activity_ninja_buff[6043] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12181,11 +10019,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 43
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.activity_ninja_buff
-
-	var_6_35[6044] = {
+	pg.base.activity_ninja_buff[6044] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12200,11 +10034,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 44
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.activity_ninja_buff
-
-	var_6_36[6045] = {
+	pg.base.activity_ninja_buff[6045] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12219,11 +10049,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 45
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.activity_ninja_buff
-
-	var_6_37[6046] = {
+	pg.base.activity_ninja_buff[6046] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12238,11 +10064,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 46
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.activity_ninja_buff
-
-	var_6_38[6047] = {
+	pg.base.activity_ninja_buff[6047] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12257,11 +10079,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 47
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.activity_ninja_buff
-
-	var_6_39[6048] = {
+	pg.base.activity_ninja_buff[6048] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12276,11 +10094,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 48
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.activity_ninja_buff
-
-	var_6_40[6049] = {
+	pg.base.activity_ninja_buff[6049] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12295,11 +10109,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 49
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.activity_ninja_buff
-
-	var_6_41[6050] = {
+	pg.base.activity_ninja_buff[6050] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12314,11 +10124,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 50
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.activity_ninja_buff
-
-	var_6_42[6051] = {
+	pg.base.activity_ninja_buff[6051] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12333,11 +10139,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 51
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.activity_ninja_buff
-
-	var_6_43[6052] = {
+	pg.base.activity_ninja_buff[6052] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12352,11 +10154,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 52
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.activity_ninja_buff
-
-	var_6_44[6053] = {
+	pg.base.activity_ninja_buff[6053] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12371,11 +10169,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 53
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.activity_ninja_buff
-
-	var_6_45[6054] = {
+	pg.base.activity_ninja_buff[6054] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12390,11 +10184,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 54
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.activity_ninja_buff
-
-	var_6_46[6055] = {
+	pg.base.activity_ninja_buff[6055] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12409,11 +10199,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 55
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.activity_ninja_buff
-
-	var_6_47[6056] = {
+	pg.base.activity_ninja_buff[6056] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12428,11 +10214,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 56
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.activity_ninja_buff
-
-	var_6_48[6057] = {
+	pg.base.activity_ninja_buff[6057] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12447,11 +10229,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 57
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.activity_ninja_buff
-
-	var_6_49[6058] = {
+	pg.base.activity_ninja_buff[6058] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12466,11 +10244,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 58
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.activity_ninja_buff
-
-	var_6_50[6059] = {
+	pg.base.activity_ninja_buff[6059] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12485,11 +10259,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 59
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.activity_ninja_buff
-
-	var_6_51[6060] = {
+	pg.base.activity_ninja_buff[6060] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -12504,11 +10274,7 @@ end)()
 		icon = "ninjacityicon/buff_6",
 		level = 60
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.activity_ninja_buff
-
-	var_6_52[7001] = {
+	pg.base.activity_ninja_buff[7001] = {
 		cost = "1.08",
 		name = "ninja_buff_name7",
 		type = 1,
@@ -12523,11 +10289,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 1
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.activity_ninja_buff
-
-	var_6_53[7002] = {
+	pg.base.activity_ninja_buff[7002] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12542,11 +10304,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 2
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.activity_ninja_buff
-
-	var_6_54[7003] = {
+	pg.base.activity_ninja_buff[7003] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12561,11 +10319,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 3
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.activity_ninja_buff
-
-	var_6_55[7004] = {
+	pg.base.activity_ninja_buff[7004] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12580,11 +10334,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 4
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.activity_ninja_buff
-
-	var_6_56[7005] = {
+	pg.base.activity_ninja_buff[7005] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12599,11 +10349,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 5
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.activity_ninja_buff
-
-	var_6_57[7006] = {
+	pg.base.activity_ninja_buff[7006] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12618,11 +10364,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 6
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.activity_ninja_buff
-
-	var_6_58[7007] = {
+	pg.base.activity_ninja_buff[7007] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12637,11 +10379,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 7
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.activity_ninja_buff
-
-	var_6_59[7008] = {
+	pg.base.activity_ninja_buff[7008] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12656,11 +10394,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 8
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.activity_ninja_buff
-
-	var_6_60[7009] = {
+	pg.base.activity_ninja_buff[7009] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12675,11 +10409,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 9
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.activity_ninja_buff
-
-	var_6_61[7010] = {
+	pg.base.activity_ninja_buff[7010] = {
 		cost = "1.08",
 		name = "",
 		type = 1,
@@ -12694,11 +10424,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 10
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.activity_ninja_buff
-
-	var_6_62[7011] = {
+	pg.base.activity_ninja_buff[7011] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12713,11 +10439,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 11
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.activity_ninja_buff
-
-	var_6_63[7012] = {
+	pg.base.activity_ninja_buff[7012] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12732,11 +10454,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 12
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.activity_ninja_buff
-
-	var_6_64[7013] = {
+	pg.base.activity_ninja_buff[7013] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12751,11 +10469,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 13
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.activity_ninja_buff
-
-	var_6_65[7014] = {
+	pg.base.activity_ninja_buff[7014] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12770,11 +10484,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 14
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.activity_ninja_buff
-
-	var_6_66[7015] = {
+	pg.base.activity_ninja_buff[7015] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12789,11 +10499,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 15
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.activity_ninja_buff
-
-	var_6_67[7016] = {
+	pg.base.activity_ninja_buff[7016] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12808,11 +10514,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 16
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.activity_ninja_buff
-
-	var_6_68[7017] = {
+	pg.base.activity_ninja_buff[7017] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12827,11 +10529,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 17
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.activity_ninja_buff
-
-	var_6_69[7018] = {
+	pg.base.activity_ninja_buff[7018] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12846,11 +10544,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 18
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.activity_ninja_buff
-
-	var_6_70[7019] = {
+	pg.base.activity_ninja_buff[7019] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12865,11 +10559,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 19
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.activity_ninja_buff
-
-	var_6_71[7020] = {
+	pg.base.activity_ninja_buff[7020] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12884,11 +10574,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 20
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.activity_ninja_buff
-
-	var_6_72[7021] = {
+	pg.base.activity_ninja_buff[7021] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12903,11 +10589,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 21
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.activity_ninja_buff
-
-	var_6_73[7022] = {
+	pg.base.activity_ninja_buff[7022] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12922,11 +10604,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 22
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.activity_ninja_buff
-
-	var_6_74[7023] = {
+	pg.base.activity_ninja_buff[7023] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12941,11 +10619,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 23
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.activity_ninja_buff
-
-	var_6_75[7024] = {
+	pg.base.activity_ninja_buff[7024] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12960,11 +10634,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 24
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.activity_ninja_buff
-
-	var_6_76[7025] = {
+	pg.base.activity_ninja_buff[7025] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12979,11 +10649,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 25
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.activity_ninja_buff
-
-	var_6_77[7026] = {
+	pg.base.activity_ninja_buff[7026] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -12998,11 +10664,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 26
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.activity_ninja_buff
-
-	var_6_78[7027] = {
+	pg.base.activity_ninja_buff[7027] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -13017,11 +10679,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 27
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.activity_ninja_buff
-
-	var_6_79[7028] = {
+	pg.base.activity_ninja_buff[7028] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -13036,11 +10694,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 28
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.activity_ninja_buff
-
-	var_6_80[7029] = {
+	pg.base.activity_ninja_buff[7029] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -13055,11 +10709,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 29
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.activity_ninja_buff
-
-	var_6_81[7030] = {
+	pg.base.activity_ninja_buff[7030] = {
 		cost = "1.1",
 		name = "",
 		type = 1,
@@ -13074,11 +10724,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 30
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.activity_ninja_buff
-
-	var_6_82[7031] = {
+	pg.base.activity_ninja_buff[7031] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13093,11 +10739,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 31
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.activity_ninja_buff
-
-	var_6_83[7032] = {
+	pg.base.activity_ninja_buff[7032] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13112,11 +10754,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 32
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.activity_ninja_buff
-
-	var_6_84[7033] = {
+	pg.base.activity_ninja_buff[7033] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13131,11 +10769,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 33
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.activity_ninja_buff
-
-	var_6_85[7034] = {
+	pg.base.activity_ninja_buff[7034] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13150,11 +10784,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 34
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.activity_ninja_buff
-
-	var_6_86[7035] = {
+	pg.base.activity_ninja_buff[7035] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13169,11 +10799,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 35
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.activity_ninja_buff
-
-	var_6_87[7036] = {
+	pg.base.activity_ninja_buff[7036] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13188,11 +10814,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 36
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.activity_ninja_buff
-
-	var_6_88[7037] = {
+	pg.base.activity_ninja_buff[7037] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13207,11 +10829,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 37
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.activity_ninja_buff
-
-	var_6_89[7038] = {
+	pg.base.activity_ninja_buff[7038] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13226,11 +10844,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 38
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.activity_ninja_buff
-
-	var_6_90[7039] = {
+	pg.base.activity_ninja_buff[7039] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13245,11 +10859,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 39
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.activity_ninja_buff
-
-	var_6_91[7040] = {
+	pg.base.activity_ninja_buff[7040] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13264,11 +10874,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 40
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.activity_ninja_buff
-
-	var_6_92[7041] = {
+	pg.base.activity_ninja_buff[7041] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13283,11 +10889,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 41
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.activity_ninja_buff
-
-	var_6_93[7042] = {
+	pg.base.activity_ninja_buff[7042] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13302,11 +10904,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 42
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.activity_ninja_buff
-
-	var_6_94[7043] = {
+	pg.base.activity_ninja_buff[7043] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13321,11 +10919,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 43
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.activity_ninja_buff
-
-	var_6_95[7044] = {
+	pg.base.activity_ninja_buff[7044] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13340,11 +10934,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 44
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.activity_ninja_buff
-
-	var_6_96[7045] = {
+	pg.base.activity_ninja_buff[7045] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13359,11 +10949,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 45
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.activity_ninja_buff
-
-	var_6_97[7046] = {
+	pg.base.activity_ninja_buff[7046] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13378,11 +10964,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 46
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.activity_ninja_buff
-
-	var_6_98[7047] = {
+	pg.base.activity_ninja_buff[7047] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13397,8 +10979,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 47
 	}
-	pg = var_6_98
-	var_6_98.base.activity_ninja_buff[7048] = {
+	pg.base.activity_ninja_buff[7048] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13417,11 +10998,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.activity_ninja_buff
-
-	var_7_0[7049] = {
+	pg.base.activity_ninja_buff[7049] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13436,11 +11013,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 49
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.activity_ninja_buff
-
-	var_7_1[7050] = {
+	pg.base.activity_ninja_buff[7050] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13455,11 +11028,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 50
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.activity_ninja_buff
-
-	var_7_2[7051] = {
+	pg.base.activity_ninja_buff[7051] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13474,11 +11043,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 51
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.activity_ninja_buff
-
-	var_7_3[7052] = {
+	pg.base.activity_ninja_buff[7052] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13493,11 +11058,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 52
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.activity_ninja_buff
-
-	var_7_4[7053] = {
+	pg.base.activity_ninja_buff[7053] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13512,11 +11073,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 53
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.activity_ninja_buff
-
-	var_7_5[7054] = {
+	pg.base.activity_ninja_buff[7054] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13531,11 +11088,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 54
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.activity_ninja_buff
-
-	var_7_6[7055] = {
+	pg.base.activity_ninja_buff[7055] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13550,11 +11103,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 55
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.activity_ninja_buff
-
-	var_7_7[7056] = {
+	pg.base.activity_ninja_buff[7056] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13569,11 +11118,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 56
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.activity_ninja_buff
-
-	var_7_8[7057] = {
+	pg.base.activity_ninja_buff[7057] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13588,11 +11133,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 57
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.activity_ninja_buff
-
-	var_7_9[7058] = {
+	pg.base.activity_ninja_buff[7058] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13607,11 +11148,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 58
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.activity_ninja_buff
-
-	var_7_10[7059] = {
+	pg.base.activity_ninja_buff[7059] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13626,11 +11163,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 59
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.activity_ninja_buff
-
-	var_7_11[7060] = {
+	pg.base.activity_ninja_buff[7060] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13645,11 +11178,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 60
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.activity_ninja_buff
-
-	var_7_12[7061] = {
+	pg.base.activity_ninja_buff[7061] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13664,11 +11193,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 61
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.activity_ninja_buff
-
-	var_7_13[7062] = {
+	pg.base.activity_ninja_buff[7062] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13683,11 +11208,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 62
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.activity_ninja_buff
-
-	var_7_14[7063] = {
+	pg.base.activity_ninja_buff[7063] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13702,11 +11223,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 63
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.activity_ninja_buff
-
-	var_7_15[7064] = {
+	pg.base.activity_ninja_buff[7064] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13721,11 +11238,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 64
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.activity_ninja_buff
-
-	var_7_16[7065] = {
+	pg.base.activity_ninja_buff[7065] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13740,11 +11253,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 65
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.activity_ninja_buff
-
-	var_7_17[7066] = {
+	pg.base.activity_ninja_buff[7066] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13759,11 +11268,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 66
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.activity_ninja_buff
-
-	var_7_18[7067] = {
+	pg.base.activity_ninja_buff[7067] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13778,11 +11283,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 67
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.activity_ninja_buff
-
-	var_7_19[7068] = {
+	pg.base.activity_ninja_buff[7068] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13797,11 +11298,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 68
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.activity_ninja_buff
-
-	var_7_20[7069] = {
+	pg.base.activity_ninja_buff[7069] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13816,11 +11313,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 69
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.activity_ninja_buff
-
-	var_7_21[7070] = {
+	pg.base.activity_ninja_buff[7070] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13835,11 +11328,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 70
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.activity_ninja_buff
-
-	var_7_22[7071] = {
+	pg.base.activity_ninja_buff[7071] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13854,11 +11343,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 71
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.activity_ninja_buff
-
-	var_7_23[7072] = {
+	pg.base.activity_ninja_buff[7072] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13873,11 +11358,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 72
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.activity_ninja_buff
-
-	var_7_24[7073] = {
+	pg.base.activity_ninja_buff[7073] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13892,11 +11373,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 73
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.activity_ninja_buff
-
-	var_7_25[7074] = {
+	pg.base.activity_ninja_buff[7074] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13911,11 +11388,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 74
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.activity_ninja_buff
-
-	var_7_26[7075] = {
+	pg.base.activity_ninja_buff[7075] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13930,11 +11403,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 75
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.activity_ninja_buff
-
-	var_7_27[7076] = {
+	pg.base.activity_ninja_buff[7076] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13949,11 +11418,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 76
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.activity_ninja_buff
-
-	var_7_28[7077] = {
+	pg.base.activity_ninja_buff[7077] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13968,11 +11433,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 77
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.activity_ninja_buff
-
-	var_7_29[7078] = {
+	pg.base.activity_ninja_buff[7078] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -13987,11 +11448,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 78
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.activity_ninja_buff
-
-	var_7_30[7079] = {
+	pg.base.activity_ninja_buff[7079] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14006,11 +11463,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 79
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.activity_ninja_buff
-
-	var_7_31[7080] = {
+	pg.base.activity_ninja_buff[7080] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14025,11 +11478,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 80
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.activity_ninja_buff
-
-	var_7_32[7081] = {
+	pg.base.activity_ninja_buff[7081] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14044,11 +11493,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 81
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.activity_ninja_buff
-
-	var_7_33[7082] = {
+	pg.base.activity_ninja_buff[7082] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14063,11 +11508,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 82
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.activity_ninja_buff
-
-	var_7_34[7083] = {
+	pg.base.activity_ninja_buff[7083] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14082,11 +11523,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 83
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.activity_ninja_buff
-
-	var_7_35[7084] = {
+	pg.base.activity_ninja_buff[7084] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14101,11 +11538,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 84
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.activity_ninja_buff
-
-	var_7_36[7085] = {
+	pg.base.activity_ninja_buff[7085] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14120,11 +11553,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 85
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.activity_ninja_buff
-
-	var_7_37[7086] = {
+	pg.base.activity_ninja_buff[7086] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14139,11 +11568,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 86
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.activity_ninja_buff
-
-	var_7_38[7087] = {
+	pg.base.activity_ninja_buff[7087] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14158,11 +11583,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 87
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.activity_ninja_buff
-
-	var_7_39[7088] = {
+	pg.base.activity_ninja_buff[7088] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14177,11 +11598,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 88
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.activity_ninja_buff
-
-	var_7_40[7089] = {
+	pg.base.activity_ninja_buff[7089] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14196,11 +11613,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 89
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.activity_ninja_buff
-
-	var_7_41[7090] = {
+	pg.base.activity_ninja_buff[7090] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14215,11 +11628,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 90
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.activity_ninja_buff
-
-	var_7_42[7091] = {
+	pg.base.activity_ninja_buff[7091] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14234,11 +11643,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 91
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.activity_ninja_buff
-
-	var_7_43[7092] = {
+	pg.base.activity_ninja_buff[7092] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14253,11 +11658,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 92
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.activity_ninja_buff
-
-	var_7_44[7093] = {
+	pg.base.activity_ninja_buff[7093] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14272,11 +11673,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 93
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.activity_ninja_buff
-
-	var_7_45[7094] = {
+	pg.base.activity_ninja_buff[7094] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14291,11 +11688,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 94
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.activity_ninja_buff
-
-	var_7_46[7095] = {
+	pg.base.activity_ninja_buff[7095] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14310,11 +11703,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 95
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.activity_ninja_buff
-
-	var_7_47[7096] = {
+	pg.base.activity_ninja_buff[7096] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14329,11 +11718,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 96
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.activity_ninja_buff
-
-	var_7_48[7097] = {
+	pg.base.activity_ninja_buff[7097] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14348,11 +11733,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 97
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.activity_ninja_buff
-
-	var_7_49[7098] = {
+	pg.base.activity_ninja_buff[7098] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14367,11 +11748,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 98
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.activity_ninja_buff
-
-	var_7_50[7099] = {
+	pg.base.activity_ninja_buff[7099] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14386,11 +11763,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 99
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.activity_ninja_buff
-
-	var_7_51[7100] = {
+	pg.base.activity_ninja_buff[7100] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14405,11 +11778,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 100
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.activity_ninja_buff
-
-	var_7_52[7101] = {
+	pg.base.activity_ninja_buff[7101] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14424,11 +11793,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 101
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.activity_ninja_buff
-
-	var_7_53[7102] = {
+	pg.base.activity_ninja_buff[7102] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14443,11 +11808,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 102
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.activity_ninja_buff
-
-	var_7_54[7103] = {
+	pg.base.activity_ninja_buff[7103] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14462,11 +11823,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 103
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.activity_ninja_buff
-
-	var_7_55[7104] = {
+	pg.base.activity_ninja_buff[7104] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14481,11 +11838,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 104
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.activity_ninja_buff
-
-	var_7_56[7105] = {
+	pg.base.activity_ninja_buff[7105] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14500,11 +11853,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 105
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.activity_ninja_buff
-
-	var_7_57[7106] = {
+	pg.base.activity_ninja_buff[7106] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14519,11 +11868,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 106
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.activity_ninja_buff
-
-	var_7_58[7107] = {
+	pg.base.activity_ninja_buff[7107] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14538,11 +11883,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 107
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.activity_ninja_buff
-
-	var_7_59[7108] = {
+	pg.base.activity_ninja_buff[7108] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14557,11 +11898,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 108
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.activity_ninja_buff
-
-	var_7_60[7109] = {
+	pg.base.activity_ninja_buff[7109] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14576,11 +11913,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 109
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.activity_ninja_buff
-
-	var_7_61[7110] = {
+	pg.base.activity_ninja_buff[7110] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14595,11 +11928,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 110
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.activity_ninja_buff
-
-	var_7_62[7111] = {
+	pg.base.activity_ninja_buff[7111] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14614,11 +11943,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 111
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.activity_ninja_buff
-
-	var_7_63[7112] = {
+	pg.base.activity_ninja_buff[7112] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14633,11 +11958,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 112
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.activity_ninja_buff
-
-	var_7_64[7113] = {
+	pg.base.activity_ninja_buff[7113] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14652,11 +11973,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 113
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.activity_ninja_buff
-
-	var_7_65[7114] = {
+	pg.base.activity_ninja_buff[7114] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14671,11 +11988,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 114
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.activity_ninja_buff
-
-	var_7_66[7115] = {
+	pg.base.activity_ninja_buff[7115] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14690,11 +12003,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 115
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.activity_ninja_buff
-
-	var_7_67[7116] = {
+	pg.base.activity_ninja_buff[7116] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14709,11 +12018,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 116
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.activity_ninja_buff
-
-	var_7_68[7117] = {
+	pg.base.activity_ninja_buff[7117] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14728,11 +12033,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 117
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.activity_ninja_buff
-
-	var_7_69[7118] = {
+	pg.base.activity_ninja_buff[7118] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14747,11 +12048,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 118
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.activity_ninja_buff
-
-	var_7_70[7119] = {
+	pg.base.activity_ninja_buff[7119] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14766,11 +12063,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 119
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.activity_ninja_buff
-
-	var_7_71[7120] = {
+	pg.base.activity_ninja_buff[7120] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14785,11 +12078,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 120
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.activity_ninja_buff
-
-	var_7_72[7121] = {
+	pg.base.activity_ninja_buff[7121] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14804,11 +12093,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 121
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.activity_ninja_buff
-
-	var_7_73[7122] = {
+	pg.base.activity_ninja_buff[7122] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14823,11 +12108,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 122
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.activity_ninja_buff
-
-	var_7_74[7123] = {
+	pg.base.activity_ninja_buff[7123] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14842,11 +12123,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 123
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.activity_ninja_buff
-
-	var_7_75[7124] = {
+	pg.base.activity_ninja_buff[7124] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14861,11 +12138,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 124
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.activity_ninja_buff
-
-	var_7_76[7125] = {
+	pg.base.activity_ninja_buff[7125] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14880,11 +12153,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 125
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.activity_ninja_buff
-
-	var_7_77[7126] = {
+	pg.base.activity_ninja_buff[7126] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14899,11 +12168,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 126
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.activity_ninja_buff
-
-	var_7_78[7127] = {
+	pg.base.activity_ninja_buff[7127] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14918,11 +12183,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 127
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.activity_ninja_buff
-
-	var_7_79[7128] = {
+	pg.base.activity_ninja_buff[7128] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14937,11 +12198,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 128
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.activity_ninja_buff
-
-	var_7_80[7129] = {
+	pg.base.activity_ninja_buff[7129] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14956,11 +12213,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 129
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.activity_ninja_buff
-
-	var_7_81[7130] = {
+	pg.base.activity_ninja_buff[7130] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14975,11 +12228,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 130
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.activity_ninja_buff
-
-	var_7_82[7131] = {
+	pg.base.activity_ninja_buff[7131] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -14994,11 +12243,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 131
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.activity_ninja_buff
-
-	var_7_83[7132] = {
+	pg.base.activity_ninja_buff[7132] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15013,11 +12258,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 132
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.activity_ninja_buff
-
-	var_7_84[7133] = {
+	pg.base.activity_ninja_buff[7133] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15032,11 +12273,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 133
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.activity_ninja_buff
-
-	var_7_85[7134] = {
+	pg.base.activity_ninja_buff[7134] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15051,11 +12288,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 134
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.activity_ninja_buff
-
-	var_7_86[7135] = {
+	pg.base.activity_ninja_buff[7135] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15070,11 +12303,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 135
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.activity_ninja_buff
-
-	var_7_87[7136] = {
+	pg.base.activity_ninja_buff[7136] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15089,11 +12318,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 136
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.activity_ninja_buff
-
-	var_7_88[7137] = {
+	pg.base.activity_ninja_buff[7137] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15108,11 +12333,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 137
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.activity_ninja_buff
-
-	var_7_89[7138] = {
+	pg.base.activity_ninja_buff[7138] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15127,11 +12348,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 138
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.activity_ninja_buff
-
-	var_7_90[7139] = {
+	pg.base.activity_ninja_buff[7139] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15146,11 +12363,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 139
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.activity_ninja_buff
-
-	var_7_91[7140] = {
+	pg.base.activity_ninja_buff[7140] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15165,11 +12378,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 140
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.activity_ninja_buff
-
-	var_7_92[7141] = {
+	pg.base.activity_ninja_buff[7141] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15184,11 +12393,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 141
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.activity_ninja_buff
-
-	var_7_93[7142] = {
+	pg.base.activity_ninja_buff[7142] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15203,11 +12408,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 142
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.activity_ninja_buff
-
-	var_7_94[7143] = {
+	pg.base.activity_ninja_buff[7143] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15222,11 +12423,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 143
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.activity_ninja_buff
-
-	var_7_95[7144] = {
+	pg.base.activity_ninja_buff[7144] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15241,11 +12438,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 144
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.activity_ninja_buff
-
-	var_7_96[7145] = {
+	pg.base.activity_ninja_buff[7145] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15260,11 +12453,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 145
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.activity_ninja_buff
-
-	var_7_97[7146] = {
+	pg.base.activity_ninja_buff[7146] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15279,11 +12468,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 146
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.activity_ninja_buff
-
-	var_7_98[7147] = {
+	pg.base.activity_ninja_buff[7147] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15298,8 +12483,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 147
 	}
-	pg = var_7_98
-	var_7_98.base.activity_ninja_buff[7148] = {
+	pg.base.activity_ninja_buff[7148] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15318,11 +12502,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.activity_ninja_buff
-
-	var_8_0[7149] = {
+	pg.base.activity_ninja_buff[7149] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15337,11 +12517,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 149
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.activity_ninja_buff
-
-	var_8_1[7150] = {
+	pg.base.activity_ninja_buff[7150] = {
 		cost = "1.12",
 		name = "",
 		type = 1,
@@ -15356,11 +12532,7 @@ end)()
 		icon = "ninjacityicon/buff_7",
 		level = 150
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.activity_ninja_buff
-
-	var_8_2[8001] = {
+	pg.base.activity_ninja_buff[8001] = {
 		cost = "1.11",
 		name = "ninja_buff_name8",
 		type = 1,
@@ -15375,11 +12547,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 1
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.activity_ninja_buff
-
-	var_8_3[8002] = {
+	pg.base.activity_ninja_buff[8002] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15394,11 +12562,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 2
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.activity_ninja_buff
-
-	var_8_4[8003] = {
+	pg.base.activity_ninja_buff[8003] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15413,11 +12577,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 3
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.activity_ninja_buff
-
-	var_8_5[8004] = {
+	pg.base.activity_ninja_buff[8004] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15432,11 +12592,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 4
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.activity_ninja_buff
-
-	var_8_6[8005] = {
+	pg.base.activity_ninja_buff[8005] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15451,11 +12607,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 5
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.activity_ninja_buff
-
-	var_8_7[8006] = {
+	pg.base.activity_ninja_buff[8006] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15470,11 +12622,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 6
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.activity_ninja_buff
-
-	var_8_8[8007] = {
+	pg.base.activity_ninja_buff[8007] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15489,11 +12637,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 7
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.activity_ninja_buff
-
-	var_8_9[8008] = {
+	pg.base.activity_ninja_buff[8008] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15508,11 +12652,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 8
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.activity_ninja_buff
-
-	var_8_10[8009] = {
+	pg.base.activity_ninja_buff[8009] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15527,11 +12667,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 9
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.activity_ninja_buff
-
-	var_8_11[8010] = {
+	pg.base.activity_ninja_buff[8010] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -15546,11 +12682,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 10
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.activity_ninja_buff
-
-	var_8_12[8011] = {
+	pg.base.activity_ninja_buff[8011] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15565,11 +12697,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 11
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.activity_ninja_buff
-
-	var_8_13[8012] = {
+	pg.base.activity_ninja_buff[8012] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15584,11 +12712,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 12
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.activity_ninja_buff
-
-	var_8_14[8013] = {
+	pg.base.activity_ninja_buff[8013] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15603,11 +12727,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 13
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.activity_ninja_buff
-
-	var_8_15[8014] = {
+	pg.base.activity_ninja_buff[8014] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15622,11 +12742,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 14
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.activity_ninja_buff
-
-	var_8_16[8015] = {
+	pg.base.activity_ninja_buff[8015] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15641,11 +12757,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 15
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.activity_ninja_buff
-
-	var_8_17[8016] = {
+	pg.base.activity_ninja_buff[8016] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15660,11 +12772,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 16
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.activity_ninja_buff
-
-	var_8_18[8017] = {
+	pg.base.activity_ninja_buff[8017] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15679,11 +12787,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 17
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.activity_ninja_buff
-
-	var_8_19[8018] = {
+	pg.base.activity_ninja_buff[8018] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15698,11 +12802,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 18
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.activity_ninja_buff
-
-	var_8_20[8019] = {
+	pg.base.activity_ninja_buff[8019] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15717,11 +12817,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 19
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.activity_ninja_buff
-
-	var_8_21[8020] = {
+	pg.base.activity_ninja_buff[8020] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15736,11 +12832,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 20
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.activity_ninja_buff
-
-	var_8_22[8021] = {
+	pg.base.activity_ninja_buff[8021] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15755,11 +12847,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 21
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.activity_ninja_buff
-
-	var_8_23[8022] = {
+	pg.base.activity_ninja_buff[8022] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15774,11 +12862,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 22
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.activity_ninja_buff
-
-	var_8_24[8023] = {
+	pg.base.activity_ninja_buff[8023] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15793,11 +12877,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 23
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.activity_ninja_buff
-
-	var_8_25[8024] = {
+	pg.base.activity_ninja_buff[8024] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15812,11 +12892,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 24
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.activity_ninja_buff
-
-	var_8_26[8025] = {
+	pg.base.activity_ninja_buff[8025] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15831,11 +12907,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 25
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.activity_ninja_buff
-
-	var_8_27[8026] = {
+	pg.base.activity_ninja_buff[8026] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15850,11 +12922,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 26
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.activity_ninja_buff
-
-	var_8_28[8027] = {
+	pg.base.activity_ninja_buff[8027] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15869,11 +12937,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 27
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.activity_ninja_buff
-
-	var_8_29[8028] = {
+	pg.base.activity_ninja_buff[8028] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15888,11 +12952,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 28
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.activity_ninja_buff
-
-	var_8_30[8029] = {
+	pg.base.activity_ninja_buff[8029] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15907,11 +12967,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 29
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.activity_ninja_buff
-
-	var_8_31[8030] = {
+	pg.base.activity_ninja_buff[8030] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -15926,11 +12982,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 30
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.activity_ninja_buff
-
-	var_8_32[8031] = {
+	pg.base.activity_ninja_buff[8031] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -15945,11 +12997,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 31
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.activity_ninja_buff
-
-	var_8_33[8032] = {
+	pg.base.activity_ninja_buff[8032] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -15964,11 +13012,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 32
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.activity_ninja_buff
-
-	var_8_34[8033] = {
+	pg.base.activity_ninja_buff[8033] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -15983,11 +13027,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 33
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.activity_ninja_buff
-
-	var_8_35[8034] = {
+	pg.base.activity_ninja_buff[8034] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16002,11 +13042,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 34
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.activity_ninja_buff
-
-	var_8_36[8035] = {
+	pg.base.activity_ninja_buff[8035] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16021,11 +13057,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 35
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.activity_ninja_buff
-
-	var_8_37[8036] = {
+	pg.base.activity_ninja_buff[8036] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16040,11 +13072,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 36
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.activity_ninja_buff
-
-	var_8_38[8037] = {
+	pg.base.activity_ninja_buff[8037] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16059,11 +13087,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 37
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.activity_ninja_buff
-
-	var_8_39[8038] = {
+	pg.base.activity_ninja_buff[8038] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16078,11 +13102,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 38
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.activity_ninja_buff
-
-	var_8_40[8039] = {
+	pg.base.activity_ninja_buff[8039] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16097,11 +13117,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 39
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.activity_ninja_buff
-
-	var_8_41[8040] = {
+	pg.base.activity_ninja_buff[8040] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16116,11 +13132,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 40
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.activity_ninja_buff
-
-	var_8_42[8041] = {
+	pg.base.activity_ninja_buff[8041] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16135,11 +13147,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 41
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.activity_ninja_buff
-
-	var_8_43[8042] = {
+	pg.base.activity_ninja_buff[8042] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16154,11 +13162,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 42
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.activity_ninja_buff
-
-	var_8_44[8043] = {
+	pg.base.activity_ninja_buff[8043] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16173,11 +13177,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 43
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.activity_ninja_buff
-
-	var_8_45[8044] = {
+	pg.base.activity_ninja_buff[8044] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16192,11 +13192,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 44
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.activity_ninja_buff
-
-	var_8_46[8045] = {
+	pg.base.activity_ninja_buff[8045] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16211,11 +13207,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 45
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.activity_ninja_buff
-
-	var_8_47[8046] = {
+	pg.base.activity_ninja_buff[8046] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16230,11 +13222,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 46
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.activity_ninja_buff
-
-	var_8_48[8047] = {
+	pg.base.activity_ninja_buff[8047] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16249,11 +13237,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 47
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.activity_ninja_buff
-
-	var_8_49[8048] = {
+	pg.base.activity_ninja_buff[8048] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16268,11 +13252,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 48
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.activity_ninja_buff
-
-	var_8_50[8049] = {
+	pg.base.activity_ninja_buff[8049] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16287,11 +13267,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 49
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.activity_ninja_buff
-
-	var_8_51[8050] = {
+	pg.base.activity_ninja_buff[8050] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16306,11 +13282,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 50
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.activity_ninja_buff
-
-	var_8_52[8051] = {
+	pg.base.activity_ninja_buff[8051] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16325,11 +13297,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 51
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.activity_ninja_buff
-
-	var_8_53[8052] = {
+	pg.base.activity_ninja_buff[8052] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16344,11 +13312,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 52
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.activity_ninja_buff
-
-	var_8_54[8053] = {
+	pg.base.activity_ninja_buff[8053] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16363,11 +13327,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 53
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.activity_ninja_buff
-
-	var_8_55[8054] = {
+	pg.base.activity_ninja_buff[8054] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16382,11 +13342,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 54
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.activity_ninja_buff
-
-	var_8_56[8055] = {
+	pg.base.activity_ninja_buff[8055] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16401,11 +13357,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 55
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.activity_ninja_buff
-
-	var_8_57[8056] = {
+	pg.base.activity_ninja_buff[8056] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16420,11 +13372,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 56
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.activity_ninja_buff
-
-	var_8_58[8057] = {
+	pg.base.activity_ninja_buff[8057] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16439,11 +13387,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 57
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.activity_ninja_buff
-
-	var_8_59[8058] = {
+	pg.base.activity_ninja_buff[8058] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16458,11 +13402,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 58
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.activity_ninja_buff
-
-	var_8_60[8059] = {
+	pg.base.activity_ninja_buff[8059] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16477,11 +13417,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 59
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.activity_ninja_buff
-
-	var_8_61[8060] = {
+	pg.base.activity_ninja_buff[8060] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16496,11 +13432,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 60
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.activity_ninja_buff
-
-	var_8_62[8061] = {
+	pg.base.activity_ninja_buff[8061] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16515,11 +13447,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 61
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.activity_ninja_buff
-
-	var_8_63[8062] = {
+	pg.base.activity_ninja_buff[8062] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16534,11 +13462,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 62
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.activity_ninja_buff
-
-	var_8_64[8063] = {
+	pg.base.activity_ninja_buff[8063] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16553,11 +13477,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 63
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.activity_ninja_buff
-
-	var_8_65[8064] = {
+	pg.base.activity_ninja_buff[8064] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16572,11 +13492,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 64
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.activity_ninja_buff
-
-	var_8_66[8065] = {
+	pg.base.activity_ninja_buff[8065] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16591,11 +13507,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 65
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.activity_ninja_buff
-
-	var_8_67[8066] = {
+	pg.base.activity_ninja_buff[8066] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16610,11 +13522,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 66
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.activity_ninja_buff
-
-	var_8_68[8067] = {
+	pg.base.activity_ninja_buff[8067] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16629,11 +13537,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 67
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.activity_ninja_buff
-
-	var_8_69[8068] = {
+	pg.base.activity_ninja_buff[8068] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16648,11 +13552,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 68
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.activity_ninja_buff
-
-	var_8_70[8069] = {
+	pg.base.activity_ninja_buff[8069] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16667,11 +13567,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 69
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.activity_ninja_buff
-
-	var_8_71[8070] = {
+	pg.base.activity_ninja_buff[8070] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16686,11 +13582,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 70
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.activity_ninja_buff
-
-	var_8_72[8071] = {
+	pg.base.activity_ninja_buff[8071] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16705,11 +13597,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 71
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.activity_ninja_buff
-
-	var_8_73[8072] = {
+	pg.base.activity_ninja_buff[8072] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16724,11 +13612,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 72
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.activity_ninja_buff
-
-	var_8_74[8073] = {
+	pg.base.activity_ninja_buff[8073] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16743,11 +13627,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 73
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.activity_ninja_buff
-
-	var_8_75[8074] = {
+	pg.base.activity_ninja_buff[8074] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16762,11 +13642,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 74
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.activity_ninja_buff
-
-	var_8_76[8075] = {
+	pg.base.activity_ninja_buff[8075] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16781,11 +13657,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 75
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.activity_ninja_buff
-
-	var_8_77[8076] = {
+	pg.base.activity_ninja_buff[8076] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16800,11 +13672,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 76
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.activity_ninja_buff
-
-	var_8_78[8077] = {
+	pg.base.activity_ninja_buff[8077] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16819,11 +13687,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 77
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.activity_ninja_buff
-
-	var_8_79[8078] = {
+	pg.base.activity_ninja_buff[8078] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16838,11 +13702,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 78
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.activity_ninja_buff
-
-	var_8_80[8079] = {
+	pg.base.activity_ninja_buff[8079] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16857,11 +13717,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 79
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.activity_ninja_buff
-
-	var_8_81[8080] = {
+	pg.base.activity_ninja_buff[8080] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16876,11 +13732,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 80
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.activity_ninja_buff
-
-	var_8_82[8081] = {
+	pg.base.activity_ninja_buff[8081] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16895,11 +13747,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 81
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.activity_ninja_buff
-
-	var_8_83[8082] = {
+	pg.base.activity_ninja_buff[8082] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16914,11 +13762,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 82
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.activity_ninja_buff
-
-	var_8_84[8083] = {
+	pg.base.activity_ninja_buff[8083] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16933,11 +13777,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 83
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.activity_ninja_buff
-
-	var_8_85[8084] = {
+	pg.base.activity_ninja_buff[8084] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16952,11 +13792,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 84
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.activity_ninja_buff
-
-	var_8_86[8085] = {
+	pg.base.activity_ninja_buff[8085] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16971,11 +13807,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 85
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.activity_ninja_buff
-
-	var_8_87[8086] = {
+	pg.base.activity_ninja_buff[8086] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -16990,11 +13822,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 86
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.activity_ninja_buff
-
-	var_8_88[8087] = {
+	pg.base.activity_ninja_buff[8087] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17009,11 +13837,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 87
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.activity_ninja_buff
-
-	var_8_89[8088] = {
+	pg.base.activity_ninja_buff[8088] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17028,11 +13852,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 88
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.activity_ninja_buff
-
-	var_8_90[8089] = {
+	pg.base.activity_ninja_buff[8089] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17047,11 +13867,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 89
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.activity_ninja_buff
-
-	var_8_91[8090] = {
+	pg.base.activity_ninja_buff[8090] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17066,11 +13882,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 90
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.activity_ninja_buff
-
-	var_8_92[8091] = {
+	pg.base.activity_ninja_buff[8091] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17085,11 +13897,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 91
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.activity_ninja_buff
-
-	var_8_93[8092] = {
+	pg.base.activity_ninja_buff[8092] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17104,11 +13912,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 92
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.activity_ninja_buff
-
-	var_8_94[8093] = {
+	pg.base.activity_ninja_buff[8093] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17123,11 +13927,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 93
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.activity_ninja_buff
-
-	var_8_95[8094] = {
+	pg.base.activity_ninja_buff[8094] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17142,11 +13942,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 94
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.activity_ninja_buff
-
-	var_8_96[8095] = {
+	pg.base.activity_ninja_buff[8095] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17161,11 +13957,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 95
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.activity_ninja_buff
-
-	var_8_97[8096] = {
+	pg.base.activity_ninja_buff[8096] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17180,11 +13972,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 96
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.activity_ninja_buff
-
-	var_8_98[8097] = {
+	pg.base.activity_ninja_buff[8097] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17199,8 +13987,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 97
 	}
-	pg = var_8_98
-	var_8_98.base.activity_ninja_buff[8098] = {
+	pg.base.activity_ninja_buff[8098] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17219,11 +14006,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.activity_ninja_buff
-
-	var_9_0[8099] = {
+	pg.base.activity_ninja_buff[8099] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17238,11 +14021,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 99
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.activity_ninja_buff
-
-	var_9_1[8100] = {
+	pg.base.activity_ninja_buff[8100] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17257,11 +14036,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 100
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.activity_ninja_buff
-
-	var_9_2[8101] = {
+	pg.base.activity_ninja_buff[8101] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17276,11 +14051,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 101
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.activity_ninja_buff
-
-	var_9_3[8102] = {
+	pg.base.activity_ninja_buff[8102] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17295,11 +14066,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 102
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.activity_ninja_buff
-
-	var_9_4[8103] = {
+	pg.base.activity_ninja_buff[8103] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17314,11 +14081,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 103
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.activity_ninja_buff
-
-	var_9_5[8104] = {
+	pg.base.activity_ninja_buff[8104] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17333,11 +14096,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 104
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.activity_ninja_buff
-
-	var_9_6[8105] = {
+	pg.base.activity_ninja_buff[8105] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17352,11 +14111,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 105
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.activity_ninja_buff
-
-	var_9_7[8106] = {
+	pg.base.activity_ninja_buff[8106] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17371,11 +14126,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 106
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.activity_ninja_buff
-
-	var_9_8[8107] = {
+	pg.base.activity_ninja_buff[8107] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17390,11 +14141,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 107
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.activity_ninja_buff
-
-	var_9_9[8108] = {
+	pg.base.activity_ninja_buff[8108] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17409,11 +14156,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 108
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.activity_ninja_buff
-
-	var_9_10[8109] = {
+	pg.base.activity_ninja_buff[8109] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17428,11 +14171,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 109
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.activity_ninja_buff
-
-	var_9_11[8110] = {
+	pg.base.activity_ninja_buff[8110] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17447,11 +14186,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 110
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.activity_ninja_buff
-
-	var_9_12[8111] = {
+	pg.base.activity_ninja_buff[8111] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17466,11 +14201,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 111
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.activity_ninja_buff
-
-	var_9_13[8112] = {
+	pg.base.activity_ninja_buff[8112] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17485,11 +14216,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 112
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.activity_ninja_buff
-
-	var_9_14[8113] = {
+	pg.base.activity_ninja_buff[8113] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17504,11 +14231,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 113
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.activity_ninja_buff
-
-	var_9_15[8114] = {
+	pg.base.activity_ninja_buff[8114] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17523,11 +14246,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 114
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.activity_ninja_buff
-
-	var_9_16[8115] = {
+	pg.base.activity_ninja_buff[8115] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17542,11 +14261,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 115
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.activity_ninja_buff
-
-	var_9_17[8116] = {
+	pg.base.activity_ninja_buff[8116] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17561,11 +14276,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 116
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.activity_ninja_buff
-
-	var_9_18[8117] = {
+	pg.base.activity_ninja_buff[8117] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17580,11 +14291,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 117
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.activity_ninja_buff
-
-	var_9_19[8118] = {
+	pg.base.activity_ninja_buff[8118] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17599,11 +14306,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 118
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.activity_ninja_buff
-
-	var_9_20[8119] = {
+	pg.base.activity_ninja_buff[8119] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17618,11 +14321,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 119
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.activity_ninja_buff
-
-	var_9_21[8120] = {
+	pg.base.activity_ninja_buff[8120] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -17637,11 +14336,7 @@ end)()
 		icon = "ninjacityicon/buff_8",
 		level = 120
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.activity_ninja_buff
-
-	var_9_22[9001] = {
+	pg.base.activity_ninja_buff[9001] = {
 		cost = "1.11",
 		name = "ninja_buff_name9",
 		type = 1,
@@ -17656,11 +14351,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 1
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.activity_ninja_buff
-
-	var_9_23[9002] = {
+	pg.base.activity_ninja_buff[9002] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17675,11 +14366,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 2
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.activity_ninja_buff
-
-	var_9_24[9003] = {
+	pg.base.activity_ninja_buff[9003] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17694,11 +14381,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 3
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.activity_ninja_buff
-
-	var_9_25[9004] = {
+	pg.base.activity_ninja_buff[9004] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17713,11 +14396,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 4
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.activity_ninja_buff
-
-	var_9_26[9005] = {
+	pg.base.activity_ninja_buff[9005] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17732,11 +14411,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 5
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.activity_ninja_buff
-
-	var_9_27[9006] = {
+	pg.base.activity_ninja_buff[9006] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17751,11 +14426,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 6
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.activity_ninja_buff
-
-	var_9_28[9007] = {
+	pg.base.activity_ninja_buff[9007] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17770,11 +14441,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 7
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.activity_ninja_buff
-
-	var_9_29[9008] = {
+	pg.base.activity_ninja_buff[9008] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17789,11 +14456,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 8
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.activity_ninja_buff
-
-	var_9_30[9009] = {
+	pg.base.activity_ninja_buff[9009] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17808,11 +14471,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 9
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.activity_ninja_buff
-
-	var_9_31[9010] = {
+	pg.base.activity_ninja_buff[9010] = {
 		cost = "1.11",
 		name = "",
 		type = 1,
@@ -17827,11 +14486,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 10
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.activity_ninja_buff
-
-	var_9_32[9011] = {
+	pg.base.activity_ninja_buff[9011] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17846,11 +14501,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 11
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.activity_ninja_buff
-
-	var_9_33[9012] = {
+	pg.base.activity_ninja_buff[9012] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17865,11 +14516,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 12
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.activity_ninja_buff
-
-	var_9_34[9013] = {
+	pg.base.activity_ninja_buff[9013] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17884,11 +14531,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 13
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.activity_ninja_buff
-
-	var_9_35[9014] = {
+	pg.base.activity_ninja_buff[9014] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17903,11 +14546,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 14
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.activity_ninja_buff
-
-	var_9_36[9015] = {
+	pg.base.activity_ninja_buff[9015] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17922,11 +14561,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 15
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.activity_ninja_buff
-
-	var_9_37[9016] = {
+	pg.base.activity_ninja_buff[9016] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17941,11 +14576,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 16
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.activity_ninja_buff
-
-	var_9_38[9017] = {
+	pg.base.activity_ninja_buff[9017] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17960,11 +14591,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 17
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.activity_ninja_buff
-
-	var_9_39[9018] = {
+	pg.base.activity_ninja_buff[9018] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17979,11 +14606,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 18
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.activity_ninja_buff
-
-	var_9_40[9019] = {
+	pg.base.activity_ninja_buff[9019] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -17998,11 +14621,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 19
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.activity_ninja_buff
-
-	var_9_41[9020] = {
+	pg.base.activity_ninja_buff[9020] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18017,11 +14636,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 20
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.activity_ninja_buff
-
-	var_9_42[9021] = {
+	pg.base.activity_ninja_buff[9021] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18036,11 +14651,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 21
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.activity_ninja_buff
-
-	var_9_43[9022] = {
+	pg.base.activity_ninja_buff[9022] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18055,11 +14666,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 22
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.activity_ninja_buff
-
-	var_9_44[9023] = {
+	pg.base.activity_ninja_buff[9023] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18074,11 +14681,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 23
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.activity_ninja_buff
-
-	var_9_45[9024] = {
+	pg.base.activity_ninja_buff[9024] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18093,11 +14696,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 24
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.activity_ninja_buff
-
-	var_9_46[9025] = {
+	pg.base.activity_ninja_buff[9025] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18112,11 +14711,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 25
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.activity_ninja_buff
-
-	var_9_47[9026] = {
+	pg.base.activity_ninja_buff[9026] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18131,11 +14726,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 26
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.activity_ninja_buff
-
-	var_9_48[9027] = {
+	pg.base.activity_ninja_buff[9027] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18150,11 +14741,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 27
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.activity_ninja_buff
-
-	var_9_49[9028] = {
+	pg.base.activity_ninja_buff[9028] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18169,11 +14756,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 28
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.activity_ninja_buff
-
-	var_9_50[9029] = {
+	pg.base.activity_ninja_buff[9029] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18188,11 +14771,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 29
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.activity_ninja_buff
-
-	var_9_51[9030] = {
+	pg.base.activity_ninja_buff[9030] = {
 		cost = "1.13",
 		name = "",
 		type = 1,
@@ -18207,11 +14786,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 30
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.activity_ninja_buff
-
-	var_9_52[9031] = {
+	pg.base.activity_ninja_buff[9031] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18226,11 +14801,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 31
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.activity_ninja_buff
-
-	var_9_53[9032] = {
+	pg.base.activity_ninja_buff[9032] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18245,11 +14816,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 32
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.activity_ninja_buff
-
-	var_9_54[9033] = {
+	pg.base.activity_ninja_buff[9033] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18264,11 +14831,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 33
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.activity_ninja_buff
-
-	var_9_55[9034] = {
+	pg.base.activity_ninja_buff[9034] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18283,11 +14846,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 34
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.activity_ninja_buff
-
-	var_9_56[9035] = {
+	pg.base.activity_ninja_buff[9035] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18302,11 +14861,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 35
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.activity_ninja_buff
-
-	var_9_57[9036] = {
+	pg.base.activity_ninja_buff[9036] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18321,11 +14876,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 36
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.activity_ninja_buff
-
-	var_9_58[9037] = {
+	pg.base.activity_ninja_buff[9037] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18340,11 +14891,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 37
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.activity_ninja_buff
-
-	var_9_59[9038] = {
+	pg.base.activity_ninja_buff[9038] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18359,11 +14906,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 38
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.activity_ninja_buff
-
-	var_9_60[9039] = {
+	pg.base.activity_ninja_buff[9039] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18378,11 +14921,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 39
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.activity_ninja_buff
-
-	var_9_61[9040] = {
+	pg.base.activity_ninja_buff[9040] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18397,11 +14936,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 40
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.activity_ninja_buff
-
-	var_9_62[9041] = {
+	pg.base.activity_ninja_buff[9041] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18416,11 +14951,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 41
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.activity_ninja_buff
-
-	var_9_63[9042] = {
+	pg.base.activity_ninja_buff[9042] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18435,11 +14966,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 42
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.activity_ninja_buff
-
-	var_9_64[9043] = {
+	pg.base.activity_ninja_buff[9043] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18454,11 +14981,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 43
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.activity_ninja_buff
-
-	var_9_65[9044] = {
+	pg.base.activity_ninja_buff[9044] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18473,11 +14996,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 44
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.activity_ninja_buff
-
-	var_9_66[9045] = {
+	pg.base.activity_ninja_buff[9045] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18492,11 +15011,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 45
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.activity_ninja_buff
-
-	var_9_67[9046] = {
+	pg.base.activity_ninja_buff[9046] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18511,11 +15026,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 46
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.activity_ninja_buff
-
-	var_9_68[9047] = {
+	pg.base.activity_ninja_buff[9047] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18530,11 +15041,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 47
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.activity_ninja_buff
-
-	var_9_69[9048] = {
+	pg.base.activity_ninja_buff[9048] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18549,11 +15056,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 48
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.activity_ninja_buff
-
-	var_9_70[9049] = {
+	pg.base.activity_ninja_buff[9049] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18568,11 +15071,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 49
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.activity_ninja_buff
-
-	var_9_71[9050] = {
+	pg.base.activity_ninja_buff[9050] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18587,11 +15086,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 50
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.activity_ninja_buff
-
-	var_9_72[9051] = {
+	pg.base.activity_ninja_buff[9051] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18606,11 +15101,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 51
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.activity_ninja_buff
-
-	var_9_73[9052] = {
+	pg.base.activity_ninja_buff[9052] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18625,11 +15116,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 52
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.activity_ninja_buff
-
-	var_9_74[9053] = {
+	pg.base.activity_ninja_buff[9053] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18644,11 +15131,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 53
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.activity_ninja_buff
-
-	var_9_75[9054] = {
+	pg.base.activity_ninja_buff[9054] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18663,11 +15146,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 54
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.activity_ninja_buff
-
-	var_9_76[9055] = {
+	pg.base.activity_ninja_buff[9055] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18682,11 +15161,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 55
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.activity_ninja_buff
-
-	var_9_77[9056] = {
+	pg.base.activity_ninja_buff[9056] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18701,11 +15176,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 56
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.activity_ninja_buff
-
-	var_9_78[9057] = {
+	pg.base.activity_ninja_buff[9057] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18720,11 +15191,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 57
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.activity_ninja_buff
-
-	var_9_79[9058] = {
+	pg.base.activity_ninja_buff[9058] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18739,11 +15206,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 58
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.activity_ninja_buff
-
-	var_9_80[9059] = {
+	pg.base.activity_ninja_buff[9059] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18758,11 +15221,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 59
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.activity_ninja_buff
-
-	var_9_81[9060] = {
+	pg.base.activity_ninja_buff[9060] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18777,11 +15236,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 60
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.activity_ninja_buff
-
-	var_9_82[9061] = {
+	pg.base.activity_ninja_buff[9061] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18796,11 +15251,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 61
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.activity_ninja_buff
-
-	var_9_83[9062] = {
+	pg.base.activity_ninja_buff[9062] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18815,11 +15266,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 62
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.activity_ninja_buff
-
-	var_9_84[9063] = {
+	pg.base.activity_ninja_buff[9063] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18834,11 +15281,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 63
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.activity_ninja_buff
-
-	var_9_85[9064] = {
+	pg.base.activity_ninja_buff[9064] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18853,11 +15296,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 64
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.activity_ninja_buff
-
-	var_9_86[9065] = {
+	pg.base.activity_ninja_buff[9065] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18872,11 +15311,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 65
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.activity_ninja_buff
-
-	var_9_87[9066] = {
+	pg.base.activity_ninja_buff[9066] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18891,11 +15326,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 66
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.activity_ninja_buff
-
-	var_9_88[9067] = {
+	pg.base.activity_ninja_buff[9067] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18910,11 +15341,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 67
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.activity_ninja_buff
-
-	var_9_89[9068] = {
+	pg.base.activity_ninja_buff[9068] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18929,11 +15356,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 68
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.activity_ninja_buff
-
-	var_9_90[9069] = {
+	pg.base.activity_ninja_buff[9069] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18948,11 +15371,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 69
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.activity_ninja_buff
-
-	var_9_91[9070] = {
+	pg.base.activity_ninja_buff[9070] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18967,11 +15386,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 70
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.activity_ninja_buff
-
-	var_9_92[9071] = {
+	pg.base.activity_ninja_buff[9071] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -18986,11 +15401,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 71
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.activity_ninja_buff
-
-	var_9_93[9072] = {
+	pg.base.activity_ninja_buff[9072] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19005,11 +15416,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 72
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.activity_ninja_buff
-
-	var_9_94[9073] = {
+	pg.base.activity_ninja_buff[9073] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19024,11 +15431,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 73
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.activity_ninja_buff
-
-	var_9_95[9074] = {
+	pg.base.activity_ninja_buff[9074] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19043,11 +15446,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 74
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.activity_ninja_buff
-
-	var_9_96[9075] = {
+	pg.base.activity_ninja_buff[9075] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19062,11 +15461,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 75
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.activity_ninja_buff
-
-	var_9_97[9076] = {
+	pg.base.activity_ninja_buff[9076] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19081,11 +15476,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 76
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.activity_ninja_buff
-
-	var_9_98[9077] = {
+	pg.base.activity_ninja_buff[9077] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19100,8 +15491,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 77
 	}
-	pg = var_9_98
-	var_9_98.base.activity_ninja_buff[9078] = {
+	pg.base.activity_ninja_buff[9078] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19120,11 +15510,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.activity_ninja_buff
-
-	var_10_0[9079] = {
+	pg.base.activity_ninja_buff[9079] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19139,11 +15525,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 79
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.activity_ninja_buff
-
-	var_10_1[9080] = {
+	pg.base.activity_ninja_buff[9080] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19158,11 +15540,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 80
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.activity_ninja_buff
-
-	var_10_2[9081] = {
+	pg.base.activity_ninja_buff[9081] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19177,11 +15555,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 81
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.activity_ninja_buff
-
-	var_10_3[9082] = {
+	pg.base.activity_ninja_buff[9082] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19196,11 +15570,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 82
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.activity_ninja_buff
-
-	var_10_4[9083] = {
+	pg.base.activity_ninja_buff[9083] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19215,11 +15585,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 83
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.activity_ninja_buff
-
-	var_10_5[9084] = {
+	pg.base.activity_ninja_buff[9084] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19234,11 +15600,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 84
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.activity_ninja_buff
-
-	var_10_6[9085] = {
+	pg.base.activity_ninja_buff[9085] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19253,11 +15615,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 85
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.activity_ninja_buff
-
-	var_10_7[9086] = {
+	pg.base.activity_ninja_buff[9086] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19272,11 +15630,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 86
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.activity_ninja_buff
-
-	var_10_8[9087] = {
+	pg.base.activity_ninja_buff[9087] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19291,11 +15645,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 87
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.activity_ninja_buff
-
-	var_10_9[9088] = {
+	pg.base.activity_ninja_buff[9088] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19310,11 +15660,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 88
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.activity_ninja_buff
-
-	var_10_10[9089] = {
+	pg.base.activity_ninja_buff[9089] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19329,11 +15675,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 89
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.activity_ninja_buff
-
-	var_10_11[9090] = {
+	pg.base.activity_ninja_buff[9090] = {
 		cost = "1.15",
 		name = "",
 		type = 1,
@@ -19348,11 +15690,7 @@ end)()
 		icon = "ninjacityicon/buff_9",
 		level = 90
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.activity_ninja_buff
-
-	var_10_12[10001] = {
+	pg.base.activity_ninja_buff[10001] = {
 		cost = "1.14",
 		name = "ninja_buff_name10",
 		type = 1,
@@ -19367,11 +15705,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 1
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.activity_ninja_buff
-
-	var_10_13[10002] = {
+	pg.base.activity_ninja_buff[10002] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19386,11 +15720,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 2
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.activity_ninja_buff
-
-	var_10_14[10003] = {
+	pg.base.activity_ninja_buff[10003] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19405,11 +15735,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 3
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.activity_ninja_buff
-
-	var_10_15[10004] = {
+	pg.base.activity_ninja_buff[10004] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19424,11 +15750,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 4
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.activity_ninja_buff
-
-	var_10_16[10005] = {
+	pg.base.activity_ninja_buff[10005] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19443,11 +15765,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 5
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.activity_ninja_buff
-
-	var_10_17[10006] = {
+	pg.base.activity_ninja_buff[10006] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19462,11 +15780,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 6
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.activity_ninja_buff
-
-	var_10_18[10007] = {
+	pg.base.activity_ninja_buff[10007] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19481,11 +15795,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 7
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.activity_ninja_buff
-
-	var_10_19[10008] = {
+	pg.base.activity_ninja_buff[10008] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19500,11 +15810,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 8
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.activity_ninja_buff
-
-	var_10_20[10009] = {
+	pg.base.activity_ninja_buff[10009] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19519,11 +15825,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 9
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.activity_ninja_buff
-
-	var_10_21[10010] = {
+	pg.base.activity_ninja_buff[10010] = {
 		cost = "1.14",
 		name = "",
 		type = 1,
@@ -19538,11 +15840,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 10
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.activity_ninja_buff
-
-	var_10_22[10011] = {
+	pg.base.activity_ninja_buff[10011] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19557,11 +15855,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 11
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.activity_ninja_buff
-
-	var_10_23[10012] = {
+	pg.base.activity_ninja_buff[10012] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19576,11 +15870,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 12
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.activity_ninja_buff
-
-	var_10_24[10013] = {
+	pg.base.activity_ninja_buff[10013] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19595,11 +15885,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 13
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.activity_ninja_buff
-
-	var_10_25[10014] = {
+	pg.base.activity_ninja_buff[10014] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19614,11 +15900,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 14
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.activity_ninja_buff
-
-	var_10_26[10015] = {
+	pg.base.activity_ninja_buff[10015] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19633,11 +15915,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 15
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.activity_ninja_buff
-
-	var_10_27[10016] = {
+	pg.base.activity_ninja_buff[10016] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19652,11 +15930,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 16
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.activity_ninja_buff
-
-	var_10_28[10017] = {
+	pg.base.activity_ninja_buff[10017] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19671,11 +15945,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 17
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.activity_ninja_buff
-
-	var_10_29[10018] = {
+	pg.base.activity_ninja_buff[10018] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19690,11 +15960,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 18
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.activity_ninja_buff
-
-	var_10_30[10019] = {
+	pg.base.activity_ninja_buff[10019] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19709,11 +15975,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 19
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.activity_ninja_buff
-
-	var_10_31[10020] = {
+	pg.base.activity_ninja_buff[10020] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19728,11 +15990,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 20
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.activity_ninja_buff
-
-	var_10_32[10021] = {
+	pg.base.activity_ninja_buff[10021] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19747,11 +16005,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 21
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.activity_ninja_buff
-
-	var_10_33[10022] = {
+	pg.base.activity_ninja_buff[10022] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19766,11 +16020,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 22
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.activity_ninja_buff
-
-	var_10_34[10023] = {
+	pg.base.activity_ninja_buff[10023] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19785,11 +16035,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 23
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.activity_ninja_buff
-
-	var_10_35[10024] = {
+	pg.base.activity_ninja_buff[10024] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19804,11 +16050,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 24
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.activity_ninja_buff
-
-	var_10_36[10025] = {
+	pg.base.activity_ninja_buff[10025] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19823,11 +16065,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 25
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.activity_ninja_buff
-
-	var_10_37[10026] = {
+	pg.base.activity_ninja_buff[10026] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19842,11 +16080,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 26
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.activity_ninja_buff
-
-	var_10_38[10027] = {
+	pg.base.activity_ninja_buff[10027] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19861,11 +16095,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 27
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.activity_ninja_buff
-
-	var_10_39[10028] = {
+	pg.base.activity_ninja_buff[10028] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19880,11 +16110,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 28
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.activity_ninja_buff
-
-	var_10_40[10029] = {
+	pg.base.activity_ninja_buff[10029] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19899,11 +16125,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 29
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.activity_ninja_buff
-
-	var_10_41[10030] = {
+	pg.base.activity_ninja_buff[10030] = {
 		cost = "1.16",
 		name = "",
 		type = 1,
@@ -19918,11 +16140,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 30
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.activity_ninja_buff
-
-	var_10_42[10031] = {
+	pg.base.activity_ninja_buff[10031] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -19937,11 +16155,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 31
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.activity_ninja_buff
-
-	var_10_43[10032] = {
+	pg.base.activity_ninja_buff[10032] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -19956,11 +16170,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 32
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.activity_ninja_buff
-
-	var_10_44[10033] = {
+	pg.base.activity_ninja_buff[10033] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -19975,11 +16185,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 33
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.activity_ninja_buff
-
-	var_10_45[10034] = {
+	pg.base.activity_ninja_buff[10034] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -19994,11 +16200,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 34
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.activity_ninja_buff
-
-	var_10_46[10035] = {
+	pg.base.activity_ninja_buff[10035] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20013,11 +16215,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 35
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.activity_ninja_buff
-
-	var_10_47[10036] = {
+	pg.base.activity_ninja_buff[10036] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20032,11 +16230,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 36
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.activity_ninja_buff
-
-	var_10_48[10037] = {
+	pg.base.activity_ninja_buff[10037] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20051,11 +16245,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 37
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.activity_ninja_buff
-
-	var_10_49[10038] = {
+	pg.base.activity_ninja_buff[10038] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20070,11 +16260,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 38
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.activity_ninja_buff
-
-	var_10_50[10039] = {
+	pg.base.activity_ninja_buff[10039] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20089,11 +16275,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 39
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.activity_ninja_buff
-
-	var_10_51[10040] = {
+	pg.base.activity_ninja_buff[10040] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20108,11 +16290,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 40
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.activity_ninja_buff
-
-	var_10_52[10041] = {
+	pg.base.activity_ninja_buff[10041] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20127,11 +16305,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 41
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.activity_ninja_buff
-
-	var_10_53[10042] = {
+	pg.base.activity_ninja_buff[10042] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20146,11 +16320,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 42
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.activity_ninja_buff
-
-	var_10_54[10043] = {
+	pg.base.activity_ninja_buff[10043] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20165,11 +16335,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 43
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.activity_ninja_buff
-
-	var_10_55[10044] = {
+	pg.base.activity_ninja_buff[10044] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20184,11 +16350,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 44
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.activity_ninja_buff
-
-	var_10_56[10045] = {
+	pg.base.activity_ninja_buff[10045] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20203,11 +16365,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 45
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.activity_ninja_buff
-
-	var_10_57[10046] = {
+	pg.base.activity_ninja_buff[10046] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20222,11 +16380,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 46
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.activity_ninja_buff
-
-	var_10_58[10047] = {
+	pg.base.activity_ninja_buff[10047] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20241,11 +16395,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 47
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.activity_ninja_buff
-
-	var_10_59[10048] = {
+	pg.base.activity_ninja_buff[10048] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20260,11 +16410,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 48
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.activity_ninja_buff
-
-	var_10_60[10049] = {
+	pg.base.activity_ninja_buff[10049] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20279,11 +16425,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 49
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.activity_ninja_buff
-
-	var_10_61[10050] = {
+	pg.base.activity_ninja_buff[10050] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20298,11 +16440,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 50
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.activity_ninja_buff
-
-	var_10_62[10051] = {
+	pg.base.activity_ninja_buff[10051] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20317,11 +16455,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 51
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.activity_ninja_buff
-
-	var_10_63[10052] = {
+	pg.base.activity_ninja_buff[10052] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20336,11 +16470,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 52
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.activity_ninja_buff
-
-	var_10_64[10053] = {
+	pg.base.activity_ninja_buff[10053] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20355,11 +16485,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 53
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.activity_ninja_buff
-
-	var_10_65[10054] = {
+	pg.base.activity_ninja_buff[10054] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20374,11 +16500,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 54
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.activity_ninja_buff
-
-	var_10_66[10055] = {
+	pg.base.activity_ninja_buff[10055] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20393,11 +16515,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 55
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.activity_ninja_buff
-
-	var_10_67[10056] = {
+	pg.base.activity_ninja_buff[10056] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20412,11 +16530,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 56
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.activity_ninja_buff
-
-	var_10_68[10057] = {
+	pg.base.activity_ninja_buff[10057] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20431,11 +16545,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 57
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.activity_ninja_buff
-
-	var_10_69[10058] = {
+	pg.base.activity_ninja_buff[10058] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20450,11 +16560,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 58
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.activity_ninja_buff
-
-	var_10_70[10059] = {
+	pg.base.activity_ninja_buff[10059] = {
 		cost = "1.18",
 		name = "",
 		type = 1,
@@ -20469,8 +16575,7 @@ end)()
 		icon = "ninjacityicon/buff_10",
 		level = 59
 	}
-	pg = var_10_70
-	var_10_70.base.activity_ninja_buff[10060] = {
+	pg.base.activity_ninja_buff[10060] = {
 		cost = "1.18",
 		name = "",
 		type = 1,

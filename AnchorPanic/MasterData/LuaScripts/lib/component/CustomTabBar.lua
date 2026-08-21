@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : CustomTabBar
 @Description    : 自定义页签组件
@@ -84,6 +84,10 @@ function setItems(self)
 
         if (item:getChildGO("mBtnNomal"):GetComponent(ty.Button)) then
             item:addUIEvent("mBtnNomal", function()
+                if self.m_NoClick then
+                    return
+                end
+
                 self:setPage(v.page)
                 local anim = item.m_go:GetComponent(ty.Animator)
                 if not gs.GoUtil.IsCompNull(anim) then
@@ -98,6 +102,10 @@ function setItems(self)
 
         if (item:getChildGO("mBtnSelect"):GetComponent(ty.Button)) then
             item:addUIEvent("mBtnSelect", function()
+                if self.m_NoClick then
+                    return
+                end
+
                 self:setPage(v.page)
             end)
         end
@@ -161,6 +169,11 @@ function updateBtnListInfo(self, list)
     end
 end
 
+--设置是否可以点击
+function setCanClick(self, val)
+    self.m_NoClick = val
+end
+
 -- 设置重复触发
 function setDispatcherSame(self, isFilterSame)
     self.isFilterSame = isFilterSame
@@ -212,6 +225,13 @@ end
 function setItemSelect(self, cusItem, isSelect)
     if (cusItem == nil) then
     else
+        cusItem:getChildGO("mBtnSelect"):SetActive(isSelect)
+        cusItem:getChildGO("mBtnNomal"):SetActive(isSelect == false)
+    end
+end
+
+function setDefIsSelect(self,isSelect)
+    for _, cusItem in pairs(self.btnMap) do
         cusItem:getChildGO("mBtnSelect"):SetActive(isSelect)
         cusItem:getChildGO("mBtnNomal"):SetActive(isSelect == false)
     end
@@ -290,7 +310,7 @@ function reset(self)
     LuaPoolMgr:poolRecover(self)
 end
 
--- 设置是否可以重复点击触发  
+-- 设置是否可以重复点击触发
 function setIsRepeatTrigger(self, isRepeat)
     self.m_isRepeatTrigger = isRepeat
     self:setDispatcherSame((not isRepeat))

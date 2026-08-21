@@ -26,7 +26,8 @@ CS_CREATE_GUILD =
 {
     23003, 
     {"name", "string", "公会名字"}, 
-    {"notice", "string", "公会公告"},
+    {"notice", "string", "公会公告"}, 
+    {"icon_id", "int16", "图标id"},
 }
  
 --- *s2c* 创建公会 23004
@@ -305,4 +306,328 @@ SC_GAIN_OLD_PREPARE_AWARD =
 {
     23043, 
     {"result", "int8", "结果:1-成功|0-失败"},
+}
+ 
+--- *c2s* 展示人员情报 23044
+CS_GUILD_WAR_DEF_FORMATION =
+{
+    23044, 
+    {"player_id", "int64str", "玩家id"},
+}
+ 
+--- *s2c* 展示人员情报 23045
+SC_GUILD_WAR_DEF_FORMATION =
+{
+    23045, 
+    {"player_id", "int64str", "玩家id"}, 
+    {"def_formation", pt_guild_war_def_formation, "防守阵型展示", "repeated"},
+}
+ 
+--- *c2s* 联盟团战报名 23046
+CS_GUILD_WAR_SIGN_UP =
+{
+    23046, 
+    {"sign_up_info", pt_guild_war_sign_up_info, "报名信息", "repeated"},
+}
+ 
+--- *s2c* 联盟团战报名 23047
+SC_GUILD_WAR_SIGN_UP =
+{
+    23047, 
+    {"result", "int8", "结果:1-成功|0-失败"},
+}
+ 
+--- *c2s* 联盟历史排行榜 23048
+CS_GUILD_WAR_HISTORY_RANK =
+{
+    23048, 
+    {"season_id", "int16", "赛季id"},
+}
+ 
+--- *s2c* 联盟历史排行榜 23049
+SC_GUILD_WAR_RANK =
+{
+    23049, 
+    {"my_rank", "int16", "排名"}, 
+    {"my_point", "int32", "分数"}, 
+    {"guild_name", "string", "公会名"}, 
+    {"rank_list", pt_guild_war_rank, "排名信息", "repeated"}, 
+    {"leader_name", "string", "会长名"},
+}
+ 
+--- *c2s* 联盟团战日志 23050
+CS_GUILD_WAR_DAY_LOG =
+{
+    23050, 
+    {"page", "int16", "[起始条数，结束条数]", "repeated"},
+}
+ 
+--- *s2c* 联盟团战日志 23051
+SC_GUILD_WAR_DAY_LOG =
+{
+    23051, 
+    {"log_list", pt_guild_war_day_log, "日志", "repeated"}, 
+    {"log_num", "int16", "日志总数量"},
+}
+ 
+--- *c2s* 联盟团战玩家日志 23052
+CS_GUILD_WAR_BATTLE_LOG =
+{
+    23052, 
+    {"build_id", "int16", "建筑id,0-发送全部"}, 
+    {"page", "int16", "[起始条数，结束条数]", "repeated"}, 
+    {"is_atk", "int8", "2-发全部,1-进攻,0-防守"},
+}
+ 
+--- *s2c* 联盟团战玩家日志 23053
+SC_GUILD_WAR_BATTLE_LOG =
+{
+    23053, 
+    {"log_list", pt_guild_war_battle_log, "战斗日志", "repeated"}, 
+    {"log_num", "int16", "日志总数量"},
+}
+ 
+--- *s2c* 赛季信息 23054
+SC_GUILD_WAR_SEASON_INFO =
+{
+    23054, 
+    {"guild_war_season_info", pt_guild_war_season_info, "赛季信息"}, 
+    {"guild_top_war_season_info", pt_guild_top_war_season_info, "赛季信息"}, 
+    {"sync_def_formation_state", "int8", "同步防守阵型状态0-同步,1-不同步"}, 
+    {"season_type", "int8", "1-公会团战,2-巅峰团战"},
+}
+ 
+--- *c2s* 敌人公会面板信息 23056
+CS_ENEMY_GUILD_PANEL =
+{
+    23056,
+}
+ 
+--- *s2c* 敌人公会面板信息 23057
+SC_ENEMY_GUILD_PANEL =
+{
+    23057, 
+    {"guild_info", pt_guild_detail_info, "公会信息"},
+}
+ 
+--- *c2s* 正在被挑战的建筑信息 23058
+CS_GUILD_WAR_CHALLENGE_INFO =
+{
+    23058, 
+    {"build_id", "int16", "建筑id"},
+}
+ 
+--- *s2c* 正在被挑战的建筑信息 23059
+SC_GUILD_WAR_CHALLENGE_INFO =
+{
+    23059, 
+    {"build_id", "int16", "建筑id"}, 
+    {"result", "int8", "1-挑战中,0-否"},
+}
+ 
+--- *c2s* 切换防守阵型同步状态 23060
+CS_GUILD_WAR_SWITCH_DEF_FORMATION_STATE =
+{
+    23060,
+}
+ 
+--- *s2c* 切换防守阵型同步状态结果 23061
+SC_GUILD_WAR_SWITCH_DEF_FORMATION_STATE =
+{
+    23061, 
+    {"result", "int8", "同步防守阵型状态0-同步,1-不同步"},
+}
+ 
+--- *c2s* 修改公会icon 23062
+CS_GUILD_CHANGE_COIN =
+{
+    23062, 
+    {"icon_id", "int16", "icon id"},
+}
+ 
+--- *s2c* 修改公会icon 23063
+SC_GUILD_CHANGE_COIN =
+{
+    23063, 
+    {"result", "int8", "结果:1-成功|0-失败"},
+}
+ 
+--- *c2s* 最近一次战斗日志 23064
+CS_GUILD_WAR_CURRENT_DAY_LOG =
+{
+    23064,
+}
+ 
+--- *s2c* 最近一次战斗日志 23065
+SC_GUILD_WAR_CURRENT_DAY_LOG =
+{
+    23065, 
+    {"log", pt_guild_war_day_log, "日志"}, 
+    {"is_send_guild_war_battle_result", "int8", "结果:1-已发送|0-未发送"},
+}
+ 
+--- *c2s* 自动配置 23066
+CS_GUILD_WAR_AUTO_SIGN_UP =
+{
+    23066,
+}
+ 
+--- *s2c* 自动配置 23067
+SC_GUILD_WAR_AUTO_SIGN_UP =
+{
+    23067, 
+    {"result", "int8", "结果:1-成功|0-失败"},
+}
+ 
+--- *c2s* 联盟历史排行榜 23068
+CS_GUILD_TOP_WAR_HISTORY_RANK =
+{
+    23068, 
+    {"season_id", "int16", "赛季id"},
+}
+ 
+--- *s2c* 联盟历史排行榜 23069
+SC_GUILD_TOP_WAR_HISTORY_RANK =
+{
+    23069, 
+    {"my_rank", "int16", "排名"}, 
+    {"my_point", "int32", "分数"}, 
+    {"guild_name", "string", "公会名"}, 
+    {"rank_list", pt_guild_war_rank, "排名信息", "repeated"}, 
+    {"leader_name", "string", "会长名"},
+}
+ 
+--- *c2s* 联盟团战日志 23070
+CS_GUILD_TOP_WAR_DAY_LOG =
+{
+    23070, 
+    {"page", "int16", "[起始条数，结束条数]", "repeated"},
+}
+ 
+--- *s2c* 联盟团战日志 23071
+SC_GUILD_TOP_WAR_DAY_LOG =
+{
+    23071, 
+    {"log_list", pt_guild_war_day_log, "日志", "repeated"}, 
+    {"log_num", "int16", "日志总数量"},
+}
+ 
+--- *c2s* 最近一次战斗日志 23072
+CS_GUILD_TOP_WAR_CURRENT_DAY_LOG =
+{
+    23072,
+}
+ 
+--- *s2c* 最近一次战斗日志 23073
+SC_GUILD_TOP_WAR_CURRENT_DAY_LOG =
+{
+    23073, 
+    {"log", pt_guild_war_day_log, "日志"}, 
+    {"is_send_guild_war_battle_result", "int8", "结果:1-已发送|0-未发送"},
+}
+ 
+--- *c2s* 联盟团战玩家日志 23074
+CS_GUILD_TOP_WAR_BATTLE_LOG =
+{
+    23074, 
+    {"build_id", "int16", "建筑id,0-发送全部"}, 
+    {"page", "int16", "[起始条数，结束条数]", "repeated"}, 
+    {"is_atk", "int8", "2-发全部,1-进攻,0-防守"},
+}
+ 
+--- *s2c* 联盟团战玩家日志 23075
+SC_GUILD_TOP_WAR_BATTLE_LOG =
+{
+    23075, 
+    {"log_list", pt_guild_war_battle_log, "战斗日志", "repeated"}, 
+    {"log_num", "int16", "日志总数量"},
+}
+ 
+--- *c2s* 联盟团战玩家赛事信息 23076
+CS_GUILD_TOP_WAR_GAME_INFO =
+{
+    23076, 
+    {"day", "int8", "第几天"},
+}
+ 
+--- *s2c* 联盟团战玩家赛事信息 23077
+SC_GUILD_TOP_WAR_GAME_INFO =
+{
+    23077, 
+    {"day", "int8", "第几天"}, 
+    {"bet_info", pt_guild_top_war_bet_info, "下注信息", "repeated"}, 
+    {"first_day_group", pt_guild_top_war_game_info, "第一天对战分组", "repeated"}, 
+    {"win_group", pt_guild_top_war_game_info, "胜者组", "repeated"}, 
+    {"lose_group", pt_guild_top_war_game_info, "败者组", "repeated"},
+}
+ 
+--- *c2s* 联盟团战玩家下注 23078
+CS_GUILD_TOP_WAR_BET =
+{
+    23078, 
+    {"group_id", "int8", "组id"}, 
+    {"day", "int8", "当前天数"}, 
+    {"bet_uid", "int64str", "下注id"},
+}
+ 
+--- *s2c* 联盟团战玩家下注 23079
+SC_GUILD_TOP_WAR_BET =
+{
+    23079, 
+    {"result", "int8", "0-失败,1-成功"}, 
+    {"group_id", "int8", "组id"}, 
+    {"day", "int8", "当前天数"}, 
+    {"bet_uid", "int64str", "下注id"},
+}
+ 
+--- *s2c* 当天下注红点 23080
+SC_GUILD_TOP_WAR_BET_RED_POINT =
+{
+    23080, 
+    {"day", "int8", "第几天"}, 
+    {"result", "int8", "1-显示红点,0-不显示红点"},
+}
+ 
+--- *c2s* 联盟团战观战 23081
+CS_GUILD_TOP_WAR_OB =
+{
+    23081, 
+    {"day", "int8", "当前天数"}, 
+    {"uid1", "int64str", "公会唯一id"}, 
+    {"uid2", "int64str", "公会唯一id"},
+}
+ 
+--- *s2c* 联盟团战观战 23082
+SC_GUILD_TOP_WAR_OB =
+{
+    23082, 
+    {"day", "int8", "当前天数"}, 
+    {"result", "int8", "0-失败,1-成功"}, 
+    {"guild_info_1", pt_guild_detail_info, "公会信息"}, 
+    {"guild_info_2", pt_guild_detail_info, "公会信息"},
+}
+ 
+--- *c2s* 领取下注奖励 23083
+CS_GAIN_GUILD_TOP_WAR_BET_AWARD =
+{
+    23083, 
+    {"day", "int8", "领取第几天"}, 
+    {"group_id", "int8", "组id"},
+}
+ 
+--- *s2c* 领取下注奖励 23084
+SC_GAIN_GUILD_TOP_WAR_BET_AWARD =
+{
+    23084, 
+    {"result", "int8", "0-失败,1-应援成功,2-应援失败,3-安慰奖励"}, 
+    {"group_id", "int8", "组id"}, 
+    {"day", "int8", "领取第几天"}, 
+    {"bet_uid", "int64str", "公会唯一id"},
+}
+ 
+--- *s2c* 下注奖励红点 23085
+SC_GUILD_TOP_WAR_AWARD_RED_POINT =
+{
+    23085, 
+    {"bet_award_info", pt_guild_top_war_bet_award_info, "奖励信息", "repeated"},
 }

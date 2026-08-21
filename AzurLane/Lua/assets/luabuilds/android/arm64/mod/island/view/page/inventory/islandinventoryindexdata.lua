@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandInventoryIndexData")
+﻿local var_0_0 = class("IslandInventoryIndexData")
 
 var_0_0.MODE_SINGLE = 1
 var_0_0.MODE_MULTI = 2
@@ -8,8 +6,7 @@ var_0_0.MODE_MULTI = 2
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1
 	arg_1_0.layoutData = arg_1_0:GenLayoutData(arg_1_1)
-	_ = var_2
-	arg_1_0.data = var_2.map(arg_1_0.layoutData, function(arg_2_0)
+	arg_1_0.data = _.map(arg_1_0.layoutData, function(arg_2_0)
 		return arg_2_0.list[1]
 	end)
 
@@ -17,116 +14,37 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.GenLayoutData(arg_3_0, arg_3_1)
-	pg = var_1_10002
-
-	local var_3_0 = var_1_10002.island_storage_filter_template.get_id_list_by_belong_filter_id[arg_3_1]
-	local var_3_1 = {}
-
-	ipairs = var_1_10004
-
-	for iter_3_0, iter_3_1 in var_1_10004(var_3_0) do
-		pg = var_1_10009
-		var_1_10009 = var_1_10009.island_storage_filter_template[iter_3_1].name
-		var_1_10010 = {}
-
-		local var_3_2 = {}
-
-		pg = var_1_10012
-		var_1_10012 = var_1_10012.island_storage_filter_template.get_id_list_by_belong_filter_id[iter_3_1]
-		ipairs = var_1_10013
-
-		for iter_3_2, iter_3_3 in var_1_10013(var_1_10012) do
-			bit = var_1_10018
-			var_1_10018 = var_1_10018.lshift(1, iter_3_2)
-			pg = var_1_10019
-			var_1_10019 = var_1_10019.island_storage_filter_template[iter_3_3].name
-			table = var_20
-
-			var_20.insert(var_1_10010, var_1_10018)
-
-			table = var_20
-
-			var_20.insert(var_3_2, var_1_10019)
+	for iter_3_0, iter_3_1 in ipairs(pg.island_storage_filter_template.get_id_list_by_belong_filter_id[arg_3_1]) do
+		for iter_3_2, iter_3_3 in ipairs(pg.island_storage_filter_template.get_id_list_by_belong_filter_id[iter_3_1]) do
+			table.insert({}, (bit.lshift(1, iter_3_2)))
+			table.insert({}, pg.island_storage_filter_template[iter_3_3].name)
 		end
 
-		table = var_1_10013
-		var_1_10013 = var_1_10013.insert
-		var_1_10015 = var_1_10010
-		iter_3_2 = 1
-		IndexConst = iter_3_3
-
-		var_1_10013(var_1_10015, iter_3_2, iter_3_3.BitAll(var_1_10010))
-
-		table = var_1_10013
-		var_1_10013 = var_1_10013.insert
-		var_1_10015 = var_3_2
-		iter_3_2 = 1
-		i18n = var_17
-
-		var_1_10013(var_1_10015, iter_3_2, var_17("index_all"))
-
-		table = var_1_10013
-
-		var_1_10013.insert(var_3_1, {
+		table.insert({}, 1, IndexConst.BitAll({}))
+		table.insert({}, 1, i18n("index_all"))
+		table.insert({}, {
 			mode = var_0_0.MODE_MULTI,
-			list = var_1_10010,
-			names = var_3_2,
-			title = var_1_10009
+			list = {},
+			names = {},
+			title = pg.island_storage_filter_template[iter_3_1].name
 		})
 	end
 
-	pg = var_4
-
-	local var_3_3 = var_4.island_storage_filter_template[arg_3_1].sort_id
-
-	pg = var_5
-
-	local var_3_4 = var_5.island_storage_filter_template[var_3_3]
-	local var_3_5 = {}
-	local var_3_6 = {}
-	local var_3_7 = {}
-
-	pg = var_1_10009
-
-	local var_3_8 = var_1_10009.island_storage_filter_template.get_id_list_by_belong_filter_id[var_3_3]
-
-	ipairs = var_1_10010
-
-	for iter_3_4, iter_3_5 in var_1_10010(var_3_8) do
-		pg = var_1_10015
-		var_1_10015 = var_1_10015.island_storage_filter_template[iter_3_5]
-		table = iter_3_2
-		iter_3_2 = iter_3_2.insert
-
-		local var_3_9 = var_3_5
-
-		bit = var_1_10019
-
-		iter_3_2(var_3_9, var_1_10019.lshift(1, iter_3_4))
-
-		table = iter_3_2
-
-		iter_3_2.insert(var_3_6, var_1_10015.name)
-
-		table = iter_3_2
-
-		iter_3_2.insert(var_3_7, var_1_10015.args)
+	for iter_3_4, iter_3_5 in ipairs(pg.island_storage_filter_template.get_id_list_by_belong_filter_id[pg.island_storage_filter_template[arg_3_1].sort_id]) do
+		table.insert({}, bit.lshift(1, iter_3_4))
+		table.insert({}, pg.island_storage_filter_template[iter_3_5].name)
+		table.insert({}, pg.island_storage_filter_template[iter_3_5].args)
 	end
 
-	local var_3_10 = {
+	table.insert({}, 1, {
 		mode = var_0_0.MODE_SINGLE,
-		list = var_3_5,
-		names = var_3_6,
-		sortFuncName = var_3_7
-	}
+		list = {},
+		names = {},
+		sortFuncName = {},
+		title = i18n("island_word_sort")
+	})
 
-	i18n = var_11
-	var_3_10.title = var_11("island_word_sort")
-	table = var_11
-
-	var_11.insert(var_3_1, 1, var_3_10)
-
-	return var_3_1
+	return {}
 end
 
 function var_0_0.GetLayoutData(arg_4_0)
@@ -145,49 +63,22 @@ end
 
 function var_0_0.Match(arg_7_0, arg_7_1)
 	local var_7_0 = arg_7_1:getConfig("filter")
-
-	pg = var_1_10003
-
-	local var_7_1 = var_1_10003.island_storage_filter_template.get_id_list_by_belong_filter_id[arg_7_0.id]
+	local var_7_1 = pg.island_storage_filter_template.get_id_list_by_belong_filter_id[arg_7_0.id]
 	local var_7_2 = 0
 
-	ipairs = var_5
+	for iter_7_0, iter_7_1 in ipairs(pg.island_storage_filter_template.get_id_list_by_belong_filter_id[arg_7_0.id]) do
+		for iter_7_2, iter_7_3 in ipairs(var_7_0) do
+			local var_7_3 = table.indexof(pg.island_storage_filter_template.get_id_list_by_belong_filter_id[iter_7_1], iter_7_3)
 
-	for iter_7_0, iter_7_1 in var_5(var_7_1) do
-		pg = var_1_10010
-		var_1_10010 = var_1_10010.island_storage_filter_template.get_id_list_by_belong_filter_id[iter_7_1]
-
-		local var_7_3 = {}
-
-		ipairs = var_1_10012
-
-		for iter_7_2, iter_7_3 in var_1_10012(var_7_0) do
-			table = var_1_10017
-
-			if var_1_10017.indexof(var_1_10010, iter_7_3) then
-				table = var_1_10018
-				var_1_10018 = var_1_10018.insert
-
-				local var_7_4 = var_7_3
-
-				bit = var_1_10021
-
-				var_1_10018(var_7_4, var_1_10021.lshift(1, var_1_10017))
+			if var_7_3 then
+				table.insert({}, bit.lshift(1, var_7_3))
 			end
 		end
 
-		IndexConst = var_1_10012
-		var_1_10012 = var_1_10012.BitAll(var_7_3)
+		local var_7_4 = IndexConst.BitAll({})
 
-		local var_7_5 = arg_7_0.data[iter_7_0 + 1]
-		local var_7_6 = arg_7_0.layoutData[iter_7_0 + 1].list
-
-		if not var_0_0.CheckSelectedAll(var_7_6, var_7_5) then
-			bit = var_15
-
-			if var_15.band(var_1_10012, var_7_5) > 0 then
-				var_7_2 = var_7_2 + 1
-			end
+		if var_0_0.CheckSelectedAll(arg_7_0.layoutData[iter_7_0 + 1].list, arg_7_0.data[iter_7_0 + 1]) or bit.band(var_7_4, arg_7_0.data[iter_7_0 + 1]) > 0 then
+			var_7_2 = var_7_2 + 1
 		end
 	end
 
@@ -203,25 +94,15 @@ function var_0_0.GetSortText(arg_9_0)
 	local var_9_1 = arg_9_0:GetLayoutData()[1]
 	local var_9_2 = 0
 
-	ipairs = var_1_10005
-
-	for iter_9_0, iter_9_1 in var_1_10005(var_9_1.list) do
-		bit = var_1_10010
-
-		if var_1_10010.band(var_9_0, iter_9_1) > 0 then
+	for iter_9_0, iter_9_1 in ipairs(var_9_1.list) do
+		if bit.band(var_9_0, iter_9_1) > 0 then
 			var_9_2 = iter_9_0
 
 			break
 		end
 	end
 
-	local var_9_3
-
-	if not var_9_1.names[var_9_2] then
-		var_9_3 = ""
-	end
-
-	return var_9_3
+	return var_9_1.names[var_9_2] or ""
 end
 
 function var_0_0.Sort(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
@@ -231,12 +112,8 @@ function var_0_0.Sort(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	local var_10_3 = arg_10_0:GetLayoutData()[1]
 	local var_10_4 = 0
 
-	ipairs = var_1_10010
-
-	for iter_10_0, iter_10_1 in var_1_10010(var_10_3.list) do
-		bit = var_1_10015
-
-		if var_1_10015.band(var_10_0, iter_10_1) > 0 then
+	for iter_10_0, iter_10_1 in ipairs(var_10_3.list) do
+		if bit.band(var_10_0, iter_10_1) > 0 then
 			var_10_4 = iter_10_0
 
 			break
@@ -244,66 +121,62 @@ function var_0_0.Sort(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	end
 
 	if var_10_4 > 0 then
-		local var_10_5 = var_10_3.sortFuncName[var_10_4]
+		assert(arg_10_1[var_10_3.sortFuncName[var_10_4]], "func should be exist")
 
-		assert = var_11
-
-		var_11(arg_10_1[var_10_5], "func should be exist")
-
-		var_10_1, var_10_2 = arg_10_1[var_10_5](arg_10_1), arg_10_2[var_10_5](arg_10_2)
-	end
-
-	local function var_10_6(arg_11_0, arg_11_1, arg_11_2)
-		if arg_11_0.id == arg_11_1.id then
-			return arg_11_0:GetCount() > arg_11_1:GetCount()
-		else
-			local var_11_0
-
-			if not arg_11_2 or not {
-				arg_11_0.id < arg_11_1.id
-			} then
-				var_11_0 = {
-					arg_11_0.id > arg_11_1.id
-				}
-			end
-
-			return var_11_0[1]
-		end
-
-		return
+		var_10_2 = arg_10_2[var_10_3.sortFuncName[var_10_4]](arg_10_2)
+		var_10_1 = arg_10_1[var_10_3.sortFuncName[var_10_4]](arg_10_1)
 	end
 
 	if var_10_1 == var_10_2 then
-		if arg_10_1:GetType() == arg_10_2:GetType() then
-			return var_10_6(arg_10_1, arg_10_2, arg_10_3)
-		else
-			local var_10_7
+		local var_10_6 = arg_10_1:GetType()
+		local var_10_7 = arg_10_2:GetType()
 
-			if not arg_10_3 or not {
-				var_11 < var_12
+		if var_10_6 == var_10_7 then
+			do return var_10_5(arg_10_1, arg_10_2, arg_10_3) end
+
+			goto label_10_0
+		end
+
+		::label_10_0::
+
+		if arg_10_3 then
+			local var_10_8 = {
+				var_10_6 < var_10_7
+			}
+
+			if not {
+				var_10_6 < var_10_7
 			} then
-				var_10_7 = {
-					var_12 < var_11
+				var_10_8 = {
+					var_10_7 < var_10_6
 				}
 			end
 
-			return var_10_7[1]
-		end
-	else
-		local var_10_8
+			do return var_10_8[1] end
 
-		if not arg_10_3 or not {
-			var_10_1 < var_10_2
-		} then
-			var_10_8 = {
-				var_10_2 < var_10_1
-			}
-		end
+			goto label_10_0
 
-		return var_10_8[1]
+			if arg_10_3 then
+				do
+					local var_10_9 = {
+						var_10_1 < var_10_2
+					}
+
+					if not {
+						var_10_1 < var_10_2
+					} then
+						var_10_9 = {
+							var_10_2 < var_10_1
+						}
+					end
+
+					return var_10_9[1]
+				end
+
+				return
+			end
+		end
 	end
-
-	return
 end
 
 function var_0_0.CheckSelectedAll(arg_12_0, arg_12_1)

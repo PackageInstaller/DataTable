@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "constellation_challenge_month") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "constellation_challenge_month"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.constellation_challenge_month = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.constellation_challenge_month
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.constellation_challenge_month = rawget(pg, "constellation_challenge_month") or setmetatable({
+	__name = "constellation_challenge_month"
+}, confNEO)
+pg.constellation_challenge_month.all = {
 	1,
 	2,
 	3,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.constellation_challenge_month = {}
+pg.base = pg.base or {}
+pg.base.constellation_challenge_month = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.constellation_challenge_month
-
-	var_1_0[1] = {
+	pg.base.constellation_challenge_month[1] = {
 		id = 1,
 		constellation_icon = "Capricorn",
 		stage = {
@@ -66,11 +29,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10024
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.constellation_challenge_month
-
-	var_1_1[2] = {
+	pg.base.constellation_challenge_month[2] = {
 		id = 2,
 		constellation_icon = "Aquarius",
 		stage = {
@@ -79,11 +38,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10027
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.constellation_challenge_month
-
-	var_1_2[3] = {
+	pg.base.constellation_challenge_month[3] = {
 		id = 3,
 		constellation_icon = "Pisces",
 		stage = {
@@ -92,11 +47,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10030
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.constellation_challenge_month
-
-	var_1_3[4] = {
+	pg.base.constellation_challenge_month[4] = {
 		id = 4,
 		constellation_icon = "Aries",
 		stage = {
@@ -105,11 +56,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10033
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.constellation_challenge_month
-
-	var_1_4[5] = {
+	pg.base.constellation_challenge_month[5] = {
 		id = 5,
 		constellation_icon = "Taurus",
 		stage = {
@@ -118,11 +65,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10036
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.constellation_challenge_month
-
-	var_1_5[6] = {
+	pg.base.constellation_challenge_month[6] = {
 		id = 6,
 		constellation_icon = "Gemini",
 		stage = {
@@ -131,11 +74,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10003
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.constellation_challenge_month
-
-	var_1_6[7] = {
+	pg.base.constellation_challenge_month[7] = {
 		id = 7,
 		constellation_icon = "Cancer",
 		stage = {
@@ -144,11 +83,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10006
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.constellation_challenge_month
-
-	var_1_7[8] = {
+	pg.base.constellation_challenge_month[8] = {
 		id = 8,
 		constellation_icon = "Leo",
 		stage = {
@@ -157,11 +92,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10009
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.constellation_challenge_month
-
-	var_1_8[9] = {
+	pg.base.constellation_challenge_month[9] = {
 		id = 9,
 		constellation_icon = "Virgo",
 		stage = {
@@ -170,11 +101,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10012
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.constellation_challenge_month
-
-	var_1_9[10] = {
+	pg.base.constellation_challenge_month[10] = {
 		id = 10,
 		constellation_icon = "Libra",
 		stage = {
@@ -183,11 +110,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10015
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.constellation_challenge_month
-
-	var_1_10[11] = {
+	pg.base.constellation_challenge_month[11] = {
 		id = 11,
 		constellation_icon = "Scorpio",
 		stage = {
@@ -196,8 +119,7 @@ var_0_3.base.constellation_challenge_month = {}
 			10018
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.constellation_challenge_month[12] = {
+	pg.base.constellation_challenge_month[12] = {
 		id = 12,
 		constellation_icon = "Sagittarius",
 		stage = {

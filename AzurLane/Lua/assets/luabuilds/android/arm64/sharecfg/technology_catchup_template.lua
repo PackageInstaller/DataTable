@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "technology_catchup_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "technology_catchup_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.technology_catchup_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.technology_catchup_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.technology_catchup_template = rawget(pg, "technology_catchup_template") or setmetatable({
+	__name = "technology_catchup_template"
+}, confNEO)
+pg.technology_catchup_template.all = {
 	1,
 	2,
 	3,
@@ -34,25 +11,11 @@ var_0_3.all = {
 	6,
 	7
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.technology_catchup_template = {}
+pg.base = pg.base or {}
+pg.base.technology_catchup_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.technology_catchup_template
-
-	var_1_0[1] = {
+	pg.base.technology_catchup_template[1] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 0,
 		id = 1,
@@ -74,11 +37,7 @@ var_0_3.base.technology_catchup_template = {}
 		},
 		ur_char = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.technology_catchup_template
-
-	var_1_1[2] = {
+	pg.base.technology_catchup_template[2] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 150,
 		id = 2,
@@ -103,11 +62,7 @@ var_0_3.base.technology_catchup_template = {}
 			49902
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.technology_catchup_template
-
-	var_1_2[3] = {
+	pg.base.technology_catchup_template[3] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 150,
 		id = 3,
@@ -129,11 +84,7 @@ var_0_3.base.technology_catchup_template = {}
 			29904
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.technology_catchup_template
-
-	var_1_3[4] = {
+	pg.base.technology_catchup_template[4] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 150,
 		id = 4,
@@ -156,11 +107,7 @@ var_0_3.base.technology_catchup_template = {}
 			49905
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.technology_catchup_template
-
-	var_1_4[5] = {
+	pg.base.technology_catchup_template[5] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 150,
 		id = 5,
@@ -183,11 +130,7 @@ var_0_3.base.technology_catchup_template = {}
 			89903
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.technology_catchup_template
-
-	var_1_5[6] = {
+	pg.base.technology_catchup_template[6] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 150,
 		id = 6,
@@ -210,8 +153,7 @@ var_0_3.base.technology_catchup_template = {}
 			49909
 		}
 	}
-	pg = var_1_5
-	var_1_5.base.technology_catchup_template[7] = {
+	pg.base.technology_catchup_template[7] = {
 		obtain_max = 300,
 		obtain_max_per_ur = 150,
 		id = 7,

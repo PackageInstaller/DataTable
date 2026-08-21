@@ -51,7 +51,12 @@ SC_PLAYER_BASE_DATA =
     {"competition_coin", "int64str", "综合对抗币"}, 
     {"guild_coin", "int64str", "公会币"}, 
     {"boundless_city_coin", "int64str", "无限城币"}, 
-    {"dialog_box", "int32", "玩家聊天气泡"},
+    {"dialog_box", "int32", "玩家聊天气泡"}, 
+    {"farm_coin", "int64str", "农场币"}, 
+    {"guild_war_coin", "int64str", "联盟团战币"}, 
+    {"guild_top_war_coin", "int64str", "联盟团战币"}, 
+    {"vision_mirror_coin", "int64str", "异像残镜货币"}, 
+    {"location", "int8", "地区标识"},
 }
  
 --- *s2c* 更新玩家int32属性 12002
@@ -290,7 +295,8 @@ SC_OTHER_PLAYER_PRE_INFO =
     {"hero_list", pt_other_hero_info, "展示战员列表", "repeated"}, 
     {"guild_info", pt_guild_simple_info, "公会信息"}, 
     {"city_id", "int16", "城区id"}, 
-    {"friend_remarks", "string", "好友备注"},
+    {"friend_remarks", "string", "好友备注"}, 
+    {"fashion_num", "int16", "时装数目"},
 }
  
 --- *c2s* 玩家的个人主页信息 12033
@@ -317,7 +323,9 @@ SC_PLAYER_HOMEPAGE_INFO =
     {"achievement_num", "int32", "成就进度"}, 
     {"city_id", "int8", "成就进度"}, 
     {"show_hero_list", pt_show_hero_info, "展示战员列表", "repeated"}, 
-    {"friend_remarks", "string", "好友备注"},
+    {"friend_remarks", "string", "好友备注"}, 
+    {"fashion_num", "int16", "时装数目"}, 
+    {"fight_ui", "int32", "战斗UI"},
 }
  
 --- *c2s* 获取聊天气泡列表 12035
@@ -513,6 +521,14 @@ SC_WORLD_MANUAL =
     {"world_list", "int32", "世界观id列表", "repeated"},
 }
  
+--- *s2c* 战员蛋图鉴 12106
+SC_HERO_EGG_MANUAL =
+{
+    12106, 
+    {"is_init", "int8", "是否初始化 0：否 1：是"}, 
+    {"hero_egg_list", "int32", "战员蛋id列表", "repeated"},
+}
+ 
 --- *s2c* 锚驴面板信息 12130
 SC_PET_PANEL =
 {
@@ -587,7 +603,8 @@ CS_GET_ALL_CHIP_PLAN =
 SC_GET_ALL_CHIP_PLAN =
 {
     12191, 
-    {"chip_plan_list", pt_chip_plan, "模组方案", "repeated"},
+    {"chip_plan_list", pt_chip_plan, "模组方案", "repeated"}, 
+    {"extra_num", "int16", "额外的解锁数"},
 }
  
 --- *c2s* 保存模组方案 12192
@@ -652,4 +669,40 @@ SC_EQUIP_CHIP_PLAN =
     {"chip_plan_id", "int32", "模组方案id"}, 
     {"hero_id", "int32", "战员id"}, 
     {"result", "int8", "结果0-失败，1-成功"},
+}
+ 
+--- *c2s* 排序模组方案 12200
+CS_SORT_CHIP_PLAN =
+{
+    12200, 
+    {"sort_chip_plan", pt_sort_chip_plan, "模组方案排序", "repeated"},
+}
+ 
+--- *c2s* 购买模组方案 12201
+CS_BUY_CHIP_PLAN =
+{
+    12201, 
+    {"buy_num", "int16", "额外的解锁数"},
+}
+ 
+--- *s2c* 购买模组方案 12202
+SC_BUY_CHIP_PLAN =
+{
+    12202, 
+    {"result", "int8", "结果0-失败，1-成功"}, 
+    {"buy_num", "int16", "额外的解锁数"},
+}
+ 
+--- *s2c* 获取画作列表 12210
+SC_PAINTING_LIST =
+{
+    12210, 
+    {"painting_list", "int16", "画作列表", "repeated"},
+}
+ 
+--- *s2c* 获取战斗UI列表 12220
+SC_GET_FIGHT_UI_LIST =
+{
+    12220, 
+    {"fight_ui_list", "int32", "战斗UI列表", "repeated"},
 }

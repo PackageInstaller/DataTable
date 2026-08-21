@@ -1,79 +1,40 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IdolMedalCollectionView3", import(".IdolMedalCollectionView2"))
 
-local var_0_0 = "IdolMedalCollectionView3"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IdolMedalCollectionView2"))
-
-function var_0_1.GetContainerPositions(arg_1_0)
+function var_0_0.GetContainerPositions(arg_1_0)
 	return {
 		0,
 		100
 	}
 end
 
-function var_0_1.GetActivityID(arg_2_0)
-	ActivityConst = var_1_10001
-
-	return var_1_10001.MUSIC_FESTIVAL_MEDALCOLLECTION_3
+function var_0_0.GetActivityID(arg_2_0)
+	return ActivityConst.MUSIC_FESTIVAL_MEDALCOLLECTION_3
 end
 
-function var_0_1.getUIName(arg_3_0)
+function var_0_0.getUIName(arg_3_0)
 	return "IdolMedalCollectionUI3"
 end
 
-function var_0_1.didEnter(arg_4_0)
-	math = var_1_10001
+function var_0_0.didEnter(arg_4_0)
+	local var_4_0 = math.random()
 
-	local var_4_0 = var_1_10001.random()
-
-	setActive = var_1_10002
-
-	local var_4_1 = arg_4_0.bg
-
-	var_1_10002(var_4.Find(var_4_1, "1"), var_4_0 >= 0.5)
-
-	setActive = var_1_10002
-
-	local var_4_2 = arg_4_0.bg
-
-	var_1_10002(var_4.Find(var_4_2, "2"), var_4_0 < 0.5)
-	var_0_1.super.didEnter(arg_4_0)
-
-	onButton = var_2
-
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0.helpBtn
-
-	local function var_4_5()
-		pg = var_2_10000
-
-		local var_5_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_5_1 = var_0.ShowMsgBox
-		local var_5_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_5_2.type = var_2_10004
-		pg = var_2_10004
-		var_5_2.helps = var_2_10004.gametip.idol3rd_collection.tip
-
-		var_5_1(var_5_0, var_5_2)
+	setActive(arg_4_0.bg:Find("1"), var_4_0 >= 0.5)
+	setActive(arg_4_0.bg:Find("2"), var_4_0 < 0.5)
+	var_0_0.super.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.idol3rd_collection.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_7
-
-	var_2(var_4_3, var_4_4, var_4_5, var_7)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.IsShowMainTip(arg_6_0)
-	Activity = var_1_10001
-
-	return var_1_10001.IsActivityReady(arg_6_0)
+function var_0_0.IsShowMainTip(arg_6_0)
+	return Activity.IsActivityReady(arg_6_0)
 end
 
-return var_0_1
+return var_0_0

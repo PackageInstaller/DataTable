@@ -46,6 +46,8 @@ function __init(self)
     self.IsSelfAttack = true
 
     self.mViewList = {}
+
+    LoopManager:removeTimer(self, self.updateReasonTick)
 end
 
 -- 初始机器人配置表
@@ -217,6 +219,9 @@ end
 
 function updateReasonTick(self)
     local clientTime = GameManager:getClientTime()
+    if clientTime == nil then
+        return
+    end
     local remainTime = self:getSeasonEndTime() - clientTime
     if (remainTime < 0) then
         LoopManager:removeTimer(self, self.updateReasonTick)

@@ -1,52 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateRefreshCommand", pm.SimpleCommand)
 
-local var_0_0 = "NewEducateRefreshCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.difficulty
-	local var_1_2 = var_2.callback
-
-	pg = var_1_10006
-
-	local var_1_3 = var_1_10006.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_3, 29092, {
-		id = var_1_0,
-		difficulty = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(29092, {
+		id = var_1_0.id,
+		difficulty = var_1_0.difficulty
 	}, 29093, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			getProxy = var_2_2
-			NewEducateProxy = var_2_10003
-
-			local var_2_0 = var_2_2(var_2_10003)
-
-			var_2_2.RefreshChar(var_2_0, var_1_0, arg_2_0.tb)
-
-			local var_2_1 = arg_1_0
-
-			var_2_2 = var_2_2.sendNotification
-			GAME = var_4
-
-			var_2_2(var_2_1, var_4.NEW_EDUCATE_REFRESH_DONE, {
-				id = var_1_0
+			getProxy(NewEducateProxy):RefreshChar(var_0, arg_2_0.tb)
+			arg_1_0:sendNotification(GAME.NEW_EDUCATE_REFRESH_DONE, {
+				id = var_0
 			})
-
-			existCall = var_2_2
-
-			var_2_2(var_1_2)
+			existCall(var_1_1)
 		else
-			pg = var_2_2
-
-			local var_2_3 = var_2_2.TipsMgr.GetInstance()
-
-			var_1.ShowTips(var_2_3, "NewEducate_Refresh: " .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips("NewEducate_Refresh: " .. arg_2_0.result)
 		end
 
 		return
@@ -55,4 +24,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

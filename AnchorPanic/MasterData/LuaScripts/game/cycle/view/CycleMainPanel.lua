@@ -63,6 +63,12 @@ function configUI(self)
     self:setGuideTrans("funcTips_guide_CycleMainPanel_btn_6", self:getChildTrans("mGuide_btn_6"))
     self:setGuideTrans("funcTips_guide_CycleMainPanel_btn_7", self:getChildTrans("mGuide_btn_7"))
 
+    self.mBtnMonth = self:getChildGO("mBtnMonth")
+
+    --self.mTxtMonth = self:getChildGO("mTxtMonth"):GetComponent(ty.Text)
+    self.mTxtMonthAward = self:getChildGO("mTxtMonthAward"):GetComponent(ty.Text)
+    self.mTxtMonthRemTime = self:getChildGO("mTxtMonthRemTime"):GetComponent(ty.Text)
+    self.mTxtMonthPoint = self:getChildGO("mTxtMonthPoint"):GetComponent(ty.Text)
 end
 
 -- 激活
@@ -71,6 +77,7 @@ function active(self)
     MoneyManager:setMoneyTidList({})
     GameDispatcher:dispatchEvent(EventName.HIDE_CYCLE_TOP_PANEL)
     GameDispatcher:addEventListener(EventName.UPDATE_CYCLE_MAIN_PANEL, self.updateCycleMainHandler, self)
+    GameDispatcher:addEventListener(EventName.UPDATE_CYCLE_RED, self.updateRed, self)
     self:showPanel()
     self:updateDifficultySelct()
 end
@@ -80,11 +87,15 @@ function deActive(self)
     super.deActive(self)
     MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
     GameDispatcher:removeEventListener(EventName.UPDATE_CYCLE_MAIN_PANEL, self.updateCycleMainHandler, self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_CYCLE_RED, self.updateRed, self)
     if self.mMonTimeloopSn then
         LoopManager:removeTimerByIndex(self.mMonTimeloopSn)
     end
     RedPointManager:remove(self.mBtnTalent.transform)
-
+    if self.mMonthLoopSn then
+        LoopManager:removeTimerByIndex(self.mMonthLoopSn)
+        self.mMonthLoopSn = nil
+    end
     self:closeSuggleListItem()
 end
 
@@ -93,6 +104,13 @@ function updateCycleMainHandler(self)
 end
 
 function showPanel(self)
+    local currentPoint = cycle.CycleManager:getCycleMonthPoint()
+    local maxPoint = cycle.CycleManager:getCycleMonthMaxPoint()
+    if currentPoint >maxPoint then
+        currentPoint = maxPoint
+    end
+    self.mTxtMonthPoint.text =_TT(77984, currentPoint,maxPoint)
+
 
     self.mBtnAbandon:SetActive(cycle.CycleManager:getCycleDifficult() > 0)
     self.mTxtFight.text = (self.mBtnAbandon.activeSelf == true) and _TT(77598) or _TT(77597)
@@ -131,7 +149,22 @@ function showPanel(self)
     end
     self.mMonTimeloopSn = self:addTimer(1, 0, self.onMonTimerLoop)
     self:onMonTimerLoop()
+
+    if self.mMonthLoopSn then
+        LoopManager:removeTimerByIndex(self.mMonthLoopSn)
+        self.mMonthLoopSn = nil
+    end
+    self.mMonthLoopSn = self:addTimer(1, 0, self.onMonthTimerLoop)
+    self:onMonthTimerLoop()
+
     self:updateRed()
+end
+
+function onMonthTimerLoop(self)
+    local serverTime = GameManager:getClientTime()
+    local resetTime = cycle.CycleManager:getCycleMonthEndTime()
+    local s = TimeUtil.getFormatTimeBySeconds_2(resetTime - serverTime)
+    self.mTxtMonthRemTime.text = s .. _TT(27557)
 end
 
 
@@ -174,6 +207,7 @@ function initViewText(self)
     self.mTxtAbandon.text = _TT(77606)
     self:setBtnLabel(self.mBtnLevel, 77599, "记战行录")
     self:setBtnLabel(self.mBtnInvest, 77601, "无限筹资")
+    self.mTxtMonthAward.text = _TT(77983)
 end
 
 -- UI事件管理(关闭界面会自动移除)
@@ -190,7 +224,15 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnTalent, self.onOpenTalentPanelHandle)
     self:addUIEvent(self.mBtnStory, self.onBtnStoryClickHandler)
     self:addUIEvent(self.mBtnRank, self.onOpenRank)
+
+    self:addUIEvent(self.mBtnMonth, self.onBtnMonthClickHandler)
 end
+
+function onBtnMonthClickHandler(self)
+    GameDispatcher:dispatchEvent(EventName.OPEN_CYCLE_MONTH_PANEL)
+end
+
+
 
 --打开规则说明界面
 function onClickFuncTipsHandler(self)
@@ -399,6 +441,12 @@ function updateRed(self)
         RedPointManager:add(self.mBtnLevel.transform, nil, 95.26, 16.26)
     else
         RedPointManager:remove(self.mBtnLevel.transform)
+    end
+
+    if cycle.CycleManager:canMonthReward() then
+        RedPointManager:add(self.mBtnMonth.transform, nil, 95.26, 28)
+    else
+        RedPointManager:remove(self.mBtnMonth.transform)
     end
 end
 

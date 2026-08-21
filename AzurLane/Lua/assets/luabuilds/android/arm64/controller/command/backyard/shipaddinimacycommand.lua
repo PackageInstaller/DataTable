@@ -1,86 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShipAddInimacyCommand", pm.SimpleCommand)
 
-local var_0_0 = "ShipAddInimacyCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
-	pg = var_1_10003
-
-	local var_1_1 = var_1_10003.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_1_1, 19011, {
-		id = var_1_0
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(19011, {
+		id = arg_1_1:getBody()
 	}, 19012, function(arg_2_0)
-		local var_2_1
+		local var_2_9000
 
 		if arg_2_0.result == 0 then
-			getProxy = var_2_1
-			BayProxy = var_2_10003
+			local var_2_0 = getProxy(BayProxy)
+			local var_2_1 = var_2_0.getShipById(var_2_9000, var_0)
+			local var_2_2 = getProxy(DormProxy)
+			local var_2_3 = var_2_2:getRawData()
+			local var_2_4, var_2_5 = var_2_3.HarvestInimacyAndMoney(var_2_0, var_0)
 
-			local var_2_0 = var_2_1(var_2_10003)
+			var_2_2:updateDrom(var_2_3, BackYardConst.DORM_UPDATE_TYPE_SHIP)
 
-			var_2_1 = var_2_1.getShipById(var_2_0, var_1_0)
-			getProxy = var_2_10002
-			DormProxy = var_2_10004
-
-			local var_2_2 = var_2_10002(var_2_10004)
-			local var_2_3 = var_2.getRawData(var_2_2)
-			local var_2_4
-
-			var_2_10004, var_2_4 = var_3.HarvestInimacyAndMoney(var_2_3, var_1_0)
-
-			local var_2_5 = var_2
-			local var_2_6 = var_2.updateDrom
-			local var_2_7 = var_3
-
-			BackYardConst = var_2_10010
-
-			var_2_6(var_2_5, var_2_7, var_2_10010.DORM_UPDATE_TYPE_SHIP)
-
-			inimacy = var_2_6
-
-			if var_2_6 == 0 then
-				pg = var_2_6
-
-				local var_2_8 = var_2_6.TipsMgr.GetInstance()
-
-				var_2_6 = var_2_6.ShowTips
-				i18n = var_2_7
-
-				var_2_6(var_2_8, var_2_7("backyard_getResource_emptry"))
+			if inimacy == 0 then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_getResource_emptry"))
 			else
-				pg = var_2_6
-
-				local var_2_9 = var_2_6.TipsMgr.GetInstance()
-				local var_2_10 = var_6.ShowTips
-
-				i18n = var_2_7
-
-				var_2_10(var_2_9, var_2_7("backyard_shipAddInimacy_ok", var_2_1:getName()))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_shipAddInimacy_ok", var_2_1:getName()))
 			end
 
-			local var_2_11 = arg_1_0
-			local var_2_12 = var_6.sendNotification
-
-			GAME = var_2_7
-
-			var_2_12(var_2_11, var_2_7.BACKYARD_ADD_INTIMACY_DONE, {
-				id = var_1_0
+			arg_1_0:sendNotification(GAME.BACKYARD_ADD_INTIMACY_DONE, {
+				id = var_0
 			})
 		else
-			pg = var_2_1
-
-			local var_2_13 = var_2_1.TipsMgr.GetInstance()
-			local var_2_14 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_14(var_2_13, var_2_10004("backyard_shipAddInimacy", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("backyard_shipAddInimacy", arg_2_0.result))
 		end
 
 		return
@@ -89,4 +34,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

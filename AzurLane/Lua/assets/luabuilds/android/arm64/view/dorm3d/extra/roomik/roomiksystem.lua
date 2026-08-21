@@ -1,145 +1,114 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RoomIKSystem", import("view.dorm3d.Extra.BaseExtraSystem"))
 
-local var_0_0 = "RoomIKSystem"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.dorm3d.Extra.BaseExtraSystem"))
-
-var_0_1.SET_IK_CONFIG = "RoomIKSystem.SET_IK_CONFIG"
-var_0_1.SET_IK_STATE = "RoomIKSystem.SET_IK_STATE"
-var_0_1.ON_BEGIN_DRAG_CHARACTER_BODY = "RoomIKSystem.ON_BEGIN_DRAG_CHARACTER_BODY"
-var_0_1.ON_DRAG_CHARACTER_BODY = "RoomIKSystem.ON_DRAG_CHARACTER_BODY"
-var_0_1.ON_RELEASE_CHARACTER_BODY = "RoomIKSystem.ON_RELEASE_CHARACTER_BODY"
-var_0_1.ON_IK_STATUS_CHANGED = "RoomIKSystem.ON_IK_STATUS_CHANGED"
-var_0_1.ON_IK_LAYER_ACTION = "RoomIKSystem.ON_IK_LAYER_ACTION"
-var_0_1.SET_IK_TIMELINE_STATUS = "RoomIKSystem.SET_IK_TIMELINE_STATUS"
-var_0_1.EXIT_IK_TIMELINE_STATUS = "RoomIKSystem.EXIT_IK_TIMELINE_STATUS"
-var_0_1.CYCLE_IK_CAMERA_GROUP = "RoomIKSystem.CYCLE_IK_CAMERA_GROUP"
-var_0_1.SET_IK_SPECIAL_CALL = "RoomIKSystem.SET_IK_SPECIAL_CALL"
-var_0_1.CONSUME_IK_SPECIAL_CALL = "RoomIKSystem.CONSUME_IK_SPECIAL_CALL"
-var_0_1.GET_IK_BLOCK = "RoomIKSystem.GET_IK_BLOCK"
-var_0_1.SET_IK_BLOCK = "RoomIKSystem.SET_IK_BLOCK"
-var_0_1.RESET_IK_TIP_TIMER = "RoomIKSystem.RESET_IK_TIP_TIMER"
-var_0_1.SET_IK_SWITCH_SKIN_ID = "RoomIKSystem.SET_IK_SWITCH_SKIN_ID"
-var_0_1.SWITCH_IK_SKIN = "RoomIKSystem.SWITCH_IK_SKIN"
-var_0_1.IK_STATUS_DELTA = 0.5
-var_0_1.IK_TIP_WAIT_TIME = 5
-var_0_1.IK_STATUS = {
+var_0_0.SET_IK_CONFIG = "RoomIKSystem.SET_IK_CONFIG"
+var_0_0.SET_IK_STATE = "RoomIKSystem.SET_IK_STATE"
+var_0_0.ON_BEGIN_DRAG_CHARACTER_BODY = "RoomIKSystem.ON_BEGIN_DRAG_CHARACTER_BODY"
+var_0_0.ON_DRAG_CHARACTER_BODY = "RoomIKSystem.ON_DRAG_CHARACTER_BODY"
+var_0_0.ON_RELEASE_CHARACTER_BODY = "RoomIKSystem.ON_RELEASE_CHARACTER_BODY"
+var_0_0.ON_IK_STATUS_CHANGED = "RoomIKSystem.ON_IK_STATUS_CHANGED"
+var_0_0.ON_IK_LAYER_ACTION = "RoomIKSystem.ON_IK_LAYER_ACTION"
+var_0_0.SET_IK_TIMELINE_STATUS = "RoomIKSystem.SET_IK_TIMELINE_STATUS"
+var_0_0.EXIT_IK_TIMELINE_STATUS = "RoomIKSystem.EXIT_IK_TIMELINE_STATUS"
+var_0_0.CYCLE_IK_CAMERA_GROUP = "RoomIKSystem.CYCLE_IK_CAMERA_GROUP"
+var_0_0.SET_IK_SPECIAL_CALL = "RoomIKSystem.SET_IK_SPECIAL_CALL"
+var_0_0.CONSUME_IK_SPECIAL_CALL = "RoomIKSystem.CONSUME_IK_SPECIAL_CALL"
+var_0_0.GET_IK_BLOCK = "RoomIKSystem.GET_IK_BLOCK"
+var_0_0.SET_IK_BLOCK = "RoomIKSystem.SET_IK_BLOCK"
+var_0_0.RESET_IK_TIP_TIMER = "RoomIKSystem.RESET_IK_TIP_TIMER"
+var_0_0.SET_IK_SWITCH_SKIN_ID = "RoomIKSystem.SET_IK_SWITCH_SKIN_ID"
+var_0_0.SWITCH_IK_SKIN = "RoomIKSystem.SWITCH_IK_SKIN"
+var_0_0.IK_STATUS_DELTA = 0.5
+var_0_0.IK_TIP_WAIT_TIME = 5
+var_0_0.IK_STATUS = {
 	RELEASE = 3,
 	BEGIN = 1,
 	TRIGGER = 4,
 	DRAG = 2
 }
 
-function var_0_1.OnInit(arg_1_0)
+function var_0_0.OnInit(arg_1_0)
 	arg_1_0:RegisterIKFunc()
 
 	return
 end
 
-function var_0_1.RegisterEvents(arg_2_0)
-	arg_2_0:Bind(var_0_1.SET_IK_CONFIG, function(arg_3_0, arg_3_1, arg_3_2)
-		local var_3_0 = arg_2_0
-
-		var_3.SwitchIKConfig(var_3_0, arg_3_1, arg_3_2)
+function var_0_0.RegisterEvents(arg_2_0)
+	arg_2_0:Bind(var_0_0.SET_IK_CONFIG, function(arg_3_0, arg_3_1, arg_3_2)
+		arg_2_0:SwitchIKConfig(arg_3_1, arg_3_2)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.SET_IK_STATE, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
-		local var_4_0 = arg_2_0
-
-		var_4.SetIKState(var_4_0, arg_4_1, arg_4_2, arg_4_3)
+	arg_2_0:Bind(var_0_0.SET_IK_STATE, function(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+		arg_2_0:SetIKState(arg_4_1, arg_4_2, arg_4_3)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.ON_BEGIN_DRAG_CHARACTER_BODY, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
-		local var_5_0 = arg_2_0
-
-		var_4.OnBeginDragCharacterBody(var_5_0, arg_5_1, arg_5_2, arg_5_3)
+	arg_2_0:Bind(var_0_0.ON_BEGIN_DRAG_CHARACTER_BODY, function(arg_5_0, arg_5_1, arg_5_2, arg_5_3)
+		arg_2_0:OnBeginDragCharacterBody(arg_5_1, arg_5_2, arg_5_3)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.ON_DRAG_CHARACTER_BODY, function(arg_6_0, arg_6_1, arg_6_2)
-		local var_6_0 = arg_2_0
-
-		var_3.OnDragCharacterBody(var_6_0, arg_6_1, arg_6_2)
+	arg_2_0:Bind(var_0_0.ON_DRAG_CHARACTER_BODY, function(arg_6_0, arg_6_1, arg_6_2)
+		arg_2_0:OnDragCharacterBody(arg_6_1, arg_6_2)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.ON_RELEASE_CHARACTER_BODY, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_2_0
-
-		var_2.OnReleaseCharacterBody(var_7_0, arg_7_1)
+	arg_2_0:Bind(var_0_0.ON_RELEASE_CHARACTER_BODY, function(arg_7_0, arg_7_1)
+		arg_2_0:OnReleaseCharacterBody(arg_7_1)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.SET_IK_TIMELINE_STATUS, function(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5)
-		local var_8_0 = arg_2_0
-
-		var_6.SetIKTimelineStatus(var_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5)
+	arg_2_0:Bind(var_0_0.SET_IK_TIMELINE_STATUS, function(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5)
+		arg_2_0:SetIKTimelineStatus(arg_8_1, arg_8_2, arg_8_3, arg_8_4, arg_8_5)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.EXIT_IK_TIMELINE_STATUS, function(arg_9_0, arg_9_1, arg_9_2)
-		local var_9_0 = arg_2_0
-
-		var_3.ExitIKTimelineStatus(var_9_0, arg_9_1, arg_9_2)
+	arg_2_0:Bind(var_0_0.EXIT_IK_TIMELINE_STATUS, function(arg_9_0, arg_9_1, arg_9_2)
+		arg_2_0:ExitIKTimelineStatus(arg_9_1, arg_9_2)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.CYCLE_IK_CAMERA_GROUP, function()
-		local var_10_0 = arg_2_0
-
-		var_0.CycleIKCameraGroup(var_10_0)
+	arg_2_0:Bind(var_0_0.CYCLE_IK_CAMERA_GROUP, function()
+		arg_2_0:CycleIKCameraGroup()
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.SET_IK_SPECIAL_CALL, function(arg_11_0, arg_11_1)
+	arg_2_0:Bind(var_0_0.SET_IK_SPECIAL_CALL, function(arg_11_0, arg_11_1)
 		arg_2_0.ikSpecialCall = arg_11_1
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.CONSUME_IK_SPECIAL_CALL, function(arg_12_0, arg_12_1)
-		local var_12_0 = arg_2_0
-		local var_12_1 = var_2.ConsumeIKSpecialCall(var_12_0)
-
+	arg_2_0:Bind(var_0_0.CONSUME_IK_SPECIAL_CALL, function(arg_12_0, arg_12_1)
 		if arg_12_1 then
-			arg_12_1.consumed = var_12_1
+			arg_12_1.consumed = arg_2_0:ConsumeIKSpecialCall()
 		end
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.GET_IK_BLOCK, function(arg_13_0, arg_13_1)
+	arg_2_0:Bind(var_0_0.GET_IK_BLOCK, function(arg_13_0, arg_13_1)
 		if arg_13_1 then
 			arg_13_1.blockIK = arg_2_0.blockIK
 		end
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.SET_IK_BLOCK, function(arg_14_0, arg_14_1)
+	arg_2_0:Bind(var_0_0.SET_IK_BLOCK, function(arg_14_0, arg_14_1)
 		arg_2_0.blockIK = arg_14_1
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.RESET_IK_TIP_TIMER, function()
-		local var_15_0 = arg_2_0
-
-		var_0.ResetIKTipTimer(var_15_0)
+	arg_2_0:Bind(var_0_0.RESET_IK_TIP_TIMER, function()
+		arg_2_0:ResetIKTipTimer()
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.SET_IK_SWITCH_SKIN_ID, function(arg_16_0, arg_16_1)
-		local var_16_0 = arg_2_0
-
-		var_2.SetIKSwitchSkinId(var_16_0, arg_16_1)
+	arg_2_0:Bind(var_0_0.SET_IK_SWITCH_SKIN_ID, function(arg_16_0, arg_16_1)
+		arg_2_0:SetIKSwitchSkinId(arg_16_1)
 
 		return
 	end)
-	arg_2_0:Bind(var_0_1.SWITCH_IK_SKIN, function(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
-		local var_17_0 = arg_2_0
-
-		var_4.SwitchIKSkin(var_17_0, arg_17_1, arg_17_2, arg_17_3)
+	arg_2_0:Bind(var_0_0.SWITCH_IK_SKIN, function(arg_17_0, arg_17_1, arg_17_2, arg_17_3)
+		arg_2_0:SwitchIKSkin(arg_17_1, arg_17_2, arg_17_3)
 
 		return
 	end)
@@ -147,76 +116,54 @@ function var_0_1.RegisterEvents(arg_2_0)
 	return
 end
 
-function var_0_1.OnUpdate(arg_18_0)
+function var_0_0.OnUpdate(arg_18_0)
 	arg_18_0:UpdateIKTarget()
 
 	return
 end
 
-function var_0_1.OnDispose(arg_19_0)
-	pg = var_1_10001
-
-	local var_19_0 = var_1_10001.IKMgr.GetInstance()
-
-	var_1.ReleaseDrag(var_19_0)
-
-	pg = var_1
-
-	local var_19_1 = var_1.IKMgr.GetInstance()
-
-	var_1.UnregisterEnv(var_19_1)
+function var_0_0.OnDispose(arg_19_0)
+	pg.IKMgr.GetInstance():ReleaseDrag()
+	pg.IKMgr.GetInstance():UnregisterEnv()
 
 	return
 end
 
-function var_0_1.SwitchIKConfig(arg_20_0, arg_20_1, arg_20_2)
-	warning = var_1_10003
+function var_0_0.SwitchIKConfig(arg_20_0, arg_20_1, arg_20_2)
+	warning("switchIkstatus", arg_20_2)
 
-	var_1_10003("switchIkstatus", arg_20_2)
+	local var_20_0 = pg.dorm3d_ik_status[arg_20_2]
 
-	pg = var_1_10003
+	if type(pg.dorm3d_ik_status[arg_20_2].skin_id) == "table" then
+		if not table.contains(var_20_0.skin_id, arg_20_1.skinId) then
+			(function()
+				if var_20_0.skin_id ~= arg_20_1.skinId then
+					local var_21_0 = _.detect(pg.dorm3d_ik_status.get_id_list_by_base[var_20_0.base], function(arg_22_0)
+						return pg.dorm3d_ik_status[arg_22_0].skin_id == arg_20_1.skinId
+					end)
 
-	local var_20_0 = var_1_10003.dorm3d_ik_status[arg_20_2]
+					assert(var_21_0, string.format("Missing Status Config By Skin: %s original Status: %s", arg_20_1.skinId, arg_20_2))
 
-	local function var_20_1()
-		if var_20_0.skin_id ~= arg_20_1.skinId then
-			pg = var_0
+					var_20_0 = pg.dorm3d_ik_status[var_21_0]
+				end
 
-			local var_21_0 = var_0.dorm3d_ik_status.get_id_list_by_base[var_20_0.base]
-
-			_ = var_1
-
-			local var_21_1 = var_1.detect(var_21_0, function(arg_22_0)
-				pg = var_3_10001
-
-				return var_3_10001.dorm3d_ik_status[arg_22_0].skin_id == arg_20_1.skinId
-			end)
-
-			assert = var_2_10002
-
-			local var_21_2 = var_21_1
-
-			string = var_2_10005
-
-			var_2_10002(var_21_2, var_2_10005.format("Missing Status Config By Skin: %s original Status: %s", arg_20_1.skinId, arg_20_2))
-
-			pg = var_2_10002
-			var_20_0 = var_2_10002.dorm3d_ik_status[var_21_1]
-		end
-
-		return
-	end
-
-	type = var_5
-
-	if var_5(var_20_0.skin_id) == "table" then
-		table = var_5
-
-		if not var_5.contains(var_20_0.skin_id, arg_20_1.skinId) then
-			var_20_1()
+				return
+			end)()
 		end
 	else
-		var_20_1()
+		(function()
+			if var_20_0.skin_id ~= arg_20_1.skinId then
+				local var_21_0 = _.detect(pg.dorm3d_ik_status.get_id_list_by_base[var_20_0.base], function(arg_22_0)
+					return pg.dorm3d_ik_status[arg_22_0].skin_id == arg_20_1.skinId
+				end)
+
+				assert(var_21_0, string.format("Missing Status Config By Skin: %s original Status: %s", arg_20_1.skinId, arg_20_2))
+
+				var_20_0 = pg.dorm3d_ik_status[var_21_0]
+			end
+
+			return
+		end)()
 	end
 
 	arg_20_1.ikConfig = var_20_0
@@ -224,171 +171,79 @@ function var_0_1.SwitchIKConfig(arg_20_0, arg_20_1, arg_20_2)
 	return
 end
 
-function var_0_1.SetIKState(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
+function var_0_0.SetIKState(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
 	arg_23_3 = arg_23_3 or {}
 
-	local var_23_0 = arg_23_0
-	local var_23_1 = arg_23_0.GetCurrentLadyEnv(var_23_0)
-	local var_23_2 = {}
+	local var_23_0 = arg_23_0:GetCurrentLadyEnv()
+	local var_23_1 = {}
 
 	if arg_23_1 then
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_24_0)
-			local var_24_0 = arg_23_0
-
-			var_1.Func(var_24_0, "SetBlackboardValue", var_23_1, "inIK", true)
-
-			local var_24_1 = arg_23_0
-			local var_24_2 = var_1.Emit
-
-			Dorm3dRoomTemplateScene = var_4
-
-			var_24_2(var_24_1, var_4.SHOW_BLOCK)
-
-			local var_24_3 = var_23_1.ikConfig.camera_group
-			local var_24_4 = arg_23_0
-			local var_24_5 = var_2.Emit
-
-			Dorm3dIKView = var_5
-
-			local var_24_6 = var_5.SET_CAMERA_BUTTON_ACTIVE
-
-			pg = var_6
-
-			var_24_5(var_24_4, var_24_6, #var_6.dorm3d_ik_status.get_id_list_by_camera_group[var_24_3] > 1)
-
-			local var_24_7 = arg_23_0
-			local var_24_8 = var_2.Emit
-
-			Dorm3dIKView = var_24_6
-
-			var_24_8(var_24_7, var_24_6.SET_CONTROL_ACTIVE, true)
+		table.insert(var_23_1, function(arg_24_0)
+			arg_23_0:Func("SetBlackboardValue", var_23_0, "inIK", true)
+			arg_23_0:Emit(Dorm3dRoomTemplateScene.SHOW_BLOCK)
+			arg_23_0:Emit(Dorm3dIKView.SET_CAMERA_BUTTON_ACTIVE, #pg.dorm3d_ik_status.get_id_list_by_camera_group[var_23_0.ikConfig.camera_group] > 1)
+			arg_23_0:Emit(Dorm3dIKView.SET_CONTROL_ACTIVE, true)
 			arg_24_0()
 
 			return
 		end)
 
 		if arg_23_0:Get("uiState") ~= "ik" then
-			table = var_23_0
-
-			var_23_0.insert(var_23_2, function(arg_25_0)
-				local var_25_0 = arg_23_0
-
-				var_1.Func(var_25_0, "SetUI", arg_25_0, "ik")
+			table.insert(var_23_1, function(arg_25_0)
+				arg_23_0:Func("SetUI", arg_25_0, "ik")
 
 				return
 			end)
 		end
 
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_26_0)
-			Shader = var_2_10001
-
-			var_2_10001.SetGlobalFloat("_ScreenClipOff", 0)
-
-			local var_26_0 = arg_23_0
-
-			var_1.SetIKStatus(var_26_0, var_23_1, var_23_1.ikConfig, arg_26_0, arg_23_3)
+		table.insert(var_23_1, function(arg_26_0)
+			Shader.SetGlobalFloat("_ScreenClipOff", 0)
+			arg_23_0:SetIKStatus(var_23_0, var_23_0.ikConfig, arg_26_0, arg_23_3)
 
 			return
 		end)
-
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_27_0)
-			local var_27_0 = arg_23_0
-			local var_27_1 = var_1.Emit
-
-			Dorm3dRoomTemplateScene = var_2_10004
-
-			var_27_1(var_27_0, var_2_10004.HIDE_BLOCK)
+		table.insert(var_23_1, function(arg_27_0)
+			arg_23_0:Emit(Dorm3dRoomTemplateScene.HIDE_BLOCK)
 			arg_27_0()
 
 			return
 		end)
 	else
-		assert = var_23_0
-
-		var_23_0(arg_23_0:Get("uiState") == "ik")
-
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_28_0)
-			local var_28_0 = arg_23_0
-			local var_28_1 = var_1.Emit
-
-			Dorm3dIKView = var_2_10004
-
-			var_28_1(var_28_0, var_2_10004.SET_CONTROL_ACTIVE, false)
-
-			local var_28_2 = arg_23_0
-			local var_28_3 = var_1.Emit
-
-			Dorm3dRoomTemplateScene = var_4
-
-			var_28_3(var_28_2, var_4.SHOW_BLOCK)
-
-			Shader = var_28_3
-
-			var_28_3.SetGlobalFloat("_ScreenClipOff", 1)
+		assert(arg_23_0:Get("uiState") == "ik")
+		table.insert(var_23_1, function(arg_28_0)
+			arg_23_0:Emit(Dorm3dIKView.SET_CONTROL_ACTIVE, false)
+			arg_23_0:Emit(Dorm3dRoomTemplateScene.SHOW_BLOCK)
+			Shader.SetGlobalFloat("_ScreenClipOff", 1)
 			arg_28_0()
 
 			return
 		end)
-
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_29_0)
-			local var_29_0 = arg_23_0
-
-			var_1.ExitIKStatus(var_29_0, var_23_1, var_23_1.ikConfig, arg_29_0, arg_23_3)
-
-			local var_29_1 = arg_23_0
-
-			var_1.Func(var_29_1, "ResetSceneItemAnimators")
+		table.insert(var_23_1, function(arg_29_0)
+			arg_23_0:ExitIKStatus(var_23_0, var_23_0.ikConfig, arg_29_0, arg_23_3)
+			arg_23_0:Func("ResetSceneItemAnimators")
 
 			return
 		end)
-
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_30_0)
-			local var_30_0 = arg_23_0
-
-			var_1.Func(var_30_0, "SetUI", arg_30_0, "back")
+		table.insert(var_23_1, function(arg_30_0)
+			arg_23_0:Func("SetUI", arg_30_0, "back")
 
 			return
 		end)
-
-		table = var_23_0
-
-		var_23_0.insert(var_23_2, function(arg_31_0)
-			local var_31_0 = arg_23_0
-
-			var_1.Func(var_31_0, "SetBlackboardValue", var_23_1, "inIK", false)
-
-			local var_31_1 = arg_23_0
-			local var_31_2 = var_1.Emit
-
-			Dorm3dRoomTemplateScene = var_4
-
-			var_31_2(var_31_1, var_4.HIDE_BLOCK)
+		table.insert(var_23_1, function(arg_31_0)
+			arg_23_0:Func("SetBlackboardValue", var_23_0, "inIK", false)
+			arg_23_0:Emit(Dorm3dRoomTemplateScene.HIDE_BLOCK)
 			arg_31_0()
 
 			return
 		end)
 	end
 
-	seriesAsync = var_23_0
-
-	var_23_0(var_23_2, arg_23_2)
+	seriesAsync(var_23_1, arg_23_2)
 
 	return
 end
 
-function var_0_1.OnBeginDragCharacterBody(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
+function var_0_0.OnBeginDragCharacterBody(arg_32_0, arg_32_1, arg_32_2, arg_32_3)
 	if arg_32_0.blockIK then
 		return
 	end
@@ -397,146 +252,78 @@ function var_0_1.OnBeginDragCharacterBody(arg_32_0, arg_32_1, arg_32_2, arg_32_3
 		return
 	end
 
-	pg = var_4
-
-	local var_32_0 = var_4.IKMgr.GetInstance()
-
-	var_4.OnDragBegin(var_32_0, arg_32_2, arg_32_3)
+	pg.IKMgr.GetInstance():OnDragBegin(arg_32_2, arg_32_3)
 
 	return
 end
 
-function var_0_1.OnDragCharacterBody(arg_33_0, arg_33_1, arg_33_2)
+function var_0_0.OnDragCharacterBody(arg_33_0, arg_33_1, arg_33_2)
 	if not arg_33_1.ikHandler then
 		return
 	end
 
-	pg = var_3
-
-	local var_33_0 = var_3.IKMgr.GetInstance()
-
-	var_3.HandleBodyDrag(var_33_0, arg_33_2)
+	pg.IKMgr.GetInstance():HandleBodyDrag(arg_33_2)
 
 	return
 end
 
-function var_0_1.OnReleaseCharacterBody(arg_34_0, arg_34_1)
-	pg = var_1_10002
-
-	local var_34_0 = var_1_10002.IKMgr.GetInstance()
-
-	var_2.ReleaseDrag(var_34_0)
+function var_0_0.OnReleaseCharacterBody(arg_34_0, arg_34_1)
+	pg.IKMgr.GetInstance():ReleaseDrag()
 
 	return
 end
 
-function var_0_1.RegisterIKFunc(arg_35_0)
-	pg = var_1_10001
-
-	local var_35_0 = var_1_10001.IKMgr.GetInstance()
-
-	var_1.RegisterOnIKLayerActive(var_35_0, function(arg_36_0)
+function var_0_0.RegisterIKFunc(arg_35_0)
+	pg.IKMgr.GetInstance():RegisterOnIKLayerActive(function(arg_36_0)
 		arg_35_0.blockIK = true
 
-		local var_36_0 = arg_35_0
-		local var_36_1 = var_1.GetCurrentLadyEnv(var_36_0)
+		local var_36_0 = arg_35_0:GetCurrentLadyEnv()
 
-		var_36_1.ikHandler = arg_36_0
-		_ = var_2
+		var_36_0.ikHandler = arg_36_0
 
-		local var_36_2 = var_2.detect(var_36_1.readyIKLayers, function(arg_37_0)
-			local var_37_0 = arg_37_0:GetControllerPath()
-			local var_37_1 = arg_36_0.ikData
-
-			return var_37_0 == var_2.GetControllerPath(var_37_1)
+		local var_36_1 = _.detect(var_36_0.readyIKLayers, function(arg_37_0)
+			return arg_37_0:GetControllerPath() == arg_36_0.ikData:GetControllerPath()
 		end)
-		local var_36_3 = arg_35_0
 
-		var_3.EnableIKLayer(var_36_3, var_36_2)
+		arg_35_0:EnableIKLayer(var_36_1)
 
-		local var_36_4 = arg_35_0
+		arg_35_0.ikNextCheckStamp = Time.time + var_0_0.IK_STATUS_DELTA
 
-		Time = var_4
-		var_36_4.ikNextCheckStamp = var_4.time + var_0_1.IK_STATUS_DELTA
-
-		local var_36_5 = arg_35_0
-
-		var_3.Emit(var_36_5, var_0_1.ON_IK_STATUS_CHANGED, var_36_2:GetConfigID(), var_0_1.IK_STATUS.BEGIN)
+		arg_35_0:Emit(var_0_0.ON_IK_STATUS_CHANGED, var_36_1:GetConfigID(), var_0_0.IK_STATUS.BEGIN)
 
 		return
 	end)
+	pg.IKMgr.GetInstance():RegisterOnIKLayerDrag(function(arg_38_0)
+		arg_35_0:GetCurrentLadyEnv().ikHandler = arg_38_0
 
-	pg = var_1
-
-	local var_35_1 = var_1.IKMgr.GetInstance()
-
-	var_1.RegisterOnIKLayerDrag(var_35_1, function(arg_38_0)
-		local var_38_0 = arg_35_0
-
-		var_1.GetCurrentLadyEnv(var_38_0).ikHandler = arg_38_0
-
-		local var_38_1 = arg_35_0
-
-		var_2.ResetIKTipTimer(var_38_1)
+		arg_35_0:ResetIKTipTimer()
 
 		return
 	end)
-
-	pg = var_1
-
-	local var_35_2 = var_1.IKMgr.GetInstance()
-
-	var_1.RegisterOnIKLayerDeactive(var_35_2, function(arg_39_0, arg_39_1)
-		local var_39_0 = arg_35_0
-		local var_39_1 = var_2.GetCurrentLadyEnv(var_39_0)
-
-		_ = var_2_10003
-
-		local var_39_2 = var_2_10003.detect(var_39_1.readyIKLayers, function(arg_40_0)
-			local var_40_0 = arg_40_0:GetControllerPath()
-			local var_40_1 = arg_39_0.ikData
-
-			return var_40_0 == var_2.GetControllerPath(var_40_1)
+	pg.IKMgr.GetInstance():RegisterOnIKLayerDeactive(function(arg_39_0, arg_39_1)
+		local var_39_0 = arg_35_0:GetCurrentLadyEnv()
+		local var_39_1 = _.detect(var_39_0.readyIKLayers, function(arg_40_0)
+			return arg_40_0:GetControllerPath() == arg_39_0.ikData:GetControllerPath()
 		end)
-		local var_39_3 = arg_35_0
 
-		var_4.DeactiveIKLayer(var_39_3, var_39_2)
+		arg_35_0:DeactiveIKLayer(var_39_1)
 
-		var_39_1.ikHandler = nil
+		var_39_0.ikHandler = nil
 		arg_35_0.blockIK = arg_39_1
 
-		local var_39_4 = arg_35_0
-
-		var_4.Emit(var_39_4, var_0_1.ON_IK_STATUS_CHANGED, var_39_2:GetConfigID(), var_0_1.IK_STATUS.RELEASE)
+		arg_35_0:Emit(var_0_0.ON_IK_STATUS_CHANGED, var_39_1:GetConfigID(), var_0_0.IK_STATUS.RELEASE)
 
 		return
 	end)
+	pg.IKMgr.GetInstance():RegisterOnIKLayerAction(function(arg_41_0)
+		arg_35_0.blockIK = nil
 
-	pg = var_1
-
-	local var_35_3 = var_1.IKMgr.GetInstance()
-
-	var_1.RegisterOnIKLayerAction(var_35_3, function(arg_41_0)
-		local var_41_0 = arg_35_0
-		local var_41_1 = var_1.GetCurrentLadyEnv(var_41_0)
-		local var_41_2 = arg_35_0
-
-		var_41_2.blockIK = nil
-		_ = var_41_2
-
-		local var_41_3 = var_41_2.detect(var_41_1.readyIKLayers, function(arg_42_0)
-			local var_42_0 = arg_42_0:GetControllerPath()
-			local var_42_1 = arg_41_0.ikData
-
-			return var_42_0 == var_2.GetControllerPath(var_42_1)
+		local var_41_0 = _.detect(arg_35_0:GetCurrentLadyEnv().readyIKLayers, function(arg_42_0)
+			return arg_42_0:GetControllerPath() == arg_41_0.ikData:GetControllerPath()
 		end)
-		local var_41_4 = arg_35_0
 
-		var_3.OnTriggerIK(var_41_4, var_41_3)
-
-		local var_41_5 = arg_35_0
-
-		var_3.Emit(var_41_5, var_0_1.ON_IK_STATUS_CHANGED, var_41_3:GetConfigID(), var_0_1.IK_STATUS.TRIGGER)
+		arg_35_0:OnTriggerIK(var_41_0)
+		arg_35_0:Emit(var_0_0.ON_IK_STATUS_CHANGED, var_41_0:GetConfigID(), var_0_0.IK_STATUS.TRIGGER)
 
 		return
 	end)
@@ -544,122 +331,80 @@ function var_0_1.RegisterIKFunc(arg_35_0)
 	return
 end
 
-function var_0_1.SetIKStatus(arg_43_0, arg_43_1, arg_43_2, arg_43_3, arg_43_4)
-	warning = var_1_10005
+function var_0_0.SetIKStatus(arg_43_0, arg_43_1, arg_43_2, arg_43_3, arg_43_4)
+	local var_43_0 = arg_43_2.id or "NIL"
 
-	local var_43_0 = "Set IKStatus "
-	local var_43_1
-
-	if not arg_43_2.id then
-		var_43_1 = "NIL"
-	end
-
-	var_1_10005(var_43_0 .. var_43_1)
+	warning("Set IKStatus " .. var_43_0)
 
 	arg_43_0.enableIKTip = true
 
 	arg_43_0:ResetIKTipTimer()
-
-	setActive = var_5
-
-	var_5(arg_43_1.ladyCollider, false)
-
-	_ = var_5
-
-	var_5.each(arg_43_1.ladyTouchColliders, function(arg_44_0)
-		setActive = var_2_10001
-
-		var_2_10001(arg_44_0, true)
+	setActive(arg_43_1.ladyCollider, false)
+	_.each(arg_43_1.ladyTouchColliders, function(arg_44_0)
+		setActive(arg_44_0, true)
 
 		return
 	end)
 
 	arg_43_0.blockIK = nil
 
-	local var_43_2 = arg_43_0
-	local var_43_3 = arg_43_0.Emit
-
-	RoomTouchSystem = var_8
-
-	var_43_3(var_43_2, var_8.CANCEL_TOUCH_PRESS)
+	arg_43_0:Emit(RoomTouchSystem.CANCEL_TOUCH_PRESS)
 
 	arg_43_1.currentIkStatus = arg_43_2.id
 	arg_43_1.ikActionDict = {}
 	arg_43_1.readyIKLayers = {}
 	arg_43_1.iKTouchDatas = arg_43_2.touch_data
 
-	local var_43_4 = arg_43_0
-	local var_43_5 = arg_43_0.Emit
+	arg_43_0:Emit(RoomTouchSystem.VALIDATE_TOUCH_CONFIGS, arg_43_1.iKTouchDatas, arg_43_2.id)
 
-	RoomTouchSystem = var_8
-
-	var_43_5(var_43_4, var_8.VALIDATE_TOUCH_CONFIGS, arg_43_1.iKTouchDatas, arg_43_2.id)
-
-	local var_43_6 = {
-		Colliders = arg_43_1.ladyColliders
+	arg_43_1.IKSettings = {
+		Colliders = arg_43_1.ladyColliders,
+		CameraRaycaster = arg_43_0:Get("sceneRaycaster")
 	}
-	local var_43_7 = arg_43_0
 
-	var_43_6.CameraRaycaster = arg_43_0.Get(var_43_7, "sceneRaycaster")
-	arg_43_1.IKSettings = var_43_6
-	table = var_43_6
+	local var_43_1 = table.shallowCopy(arg_43_2.ik_id)
+	local var_43_2 = {}
 
-	local var_43_8 = var_43_6.shallowCopy(arg_43_2.ik_id)
-	local var_43_9 = {}
-
-	_ = var_7
-
-	var_7.each(arg_43_1.iKTouchDatas, function(arg_45_0)
+	_.each(arg_43_1.iKTouchDatas, function(arg_45_0)
 		if arg_45_0[3][1] == 7 then
-			pg = var_2
+			local var_45_0 = pg.dorm3d_ik_touch_move[arg_45_0[3][2]].target_ik
 
-			local var_45_0 = var_2.dorm3d_ik_touch_move[var_1[2]].target_ik
-
-			_ = var_2_10004
-
-			if not var_2_10004.detect(var_43_8, function(arg_46_0)
+			if not _.detect(var_43_1, function(arg_46_0)
 				return arg_46_0[1] == var_45_0
 			end) then
-				var_43_9[var_45_0] = {
-					back_time = var_2.back_time
+				var_43_2[pg.dorm3d_ik_touch_move[arg_45_0[3][2]].target_ik] = {
+					back_time = pg.dorm3d_ik_touch_move[arg_45_0[3][2]].back_time
 				}
 
-				local var_45_1 = {
-					var_45_0,
-					0,
-					{}
-				}
-
-				if var_2.trigger_dialogue > 0 then
-					var_45_1[3] = {
+				if pg.dorm3d_ik_touch_move[arg_45_0[3][2]].trigger_dialogue > 0 then
+					({
+						pg.dorm3d_ik_touch_move[arg_45_0[3][2]].target_ik,
+						0,
+						{}
+					})[3] = {
 						4,
 						0,
-						var_2.trigger_dialogue
+						pg.dorm3d_ik_touch_move[arg_45_0[3][2]].trigger_dialogue
 					}
 				end
 
-				table = var_5
-
-				var_5.insert(var_43_8, var_45_1)
+				table.insert(var_43_1, {
+					pg.dorm3d_ik_touch_move[arg_45_0[3][2]].target_ik,
+					0,
+					{}
+				})
 			end
 		end
 
 		return
 	end)
-
-	_ = var_7
-
-	local var_43_10 = var_7.map(var_43_8, function(arg_47_0)
-		Dorm3dIK = var_2_10001
-
-		local var_47_0 = var_2_10001.New({
+	pg.IKMgr.GetInstance():RegisterEnv(arg_43_1.ladyIKRoot, arg_43_1.ladyBoneMaps)
+	arg_43_0:RegisterIKFunc()
+	pg.IKMgr.GetInstance():SetIKStatus((_.map(table.shallowCopy(arg_43_2.ik_id), function(arg_47_0)
+		local var_47_0 = Dorm3dIK.New({
 			configId = arg_47_0[1]
 		})
-		local var_47_1
-
-		var_47_1, switch = arg_47_0[3][1], var_4
-
-		local var_47_2 = {
+		local var_47_1 = switch(arg_47_0[3][1], {
 			function(arg_48_0, arg_48_1)
 				return 0
 			end,
@@ -678,131 +423,71 @@ function var_0_1.SetIKStatus(arg_43_0, arg_43_1, arg_43_2, arg_43_3, arg_43_4)
 			function(arg_53_0)
 				return 0
 			end
-		}
+		}, function(arg_54_0)
+			return type(arg_54_0) == "number" and arg_54_0 or 0
+		end, unpack(arg_47_0[3], 2))
 
-		local function var_47_3(arg_54_0)
-			type = var_3_10001
+		table.insert(arg_43_1.readyIKLayers, var_47_0)
 
-			return var_3_10001(arg_54_0) == "number" and arg_54_0 or 0
-		end
+		arg_43_1.ikActionDict[var_47_0:GetControllerPath()] = arg_47_0[3]
 
-		unpack = var_2_10009
+		local var_47_2 = var_47_0:GetRevertTime()
+		local var_47_3 = var_43_2[var_47_0:GetConfigID()]
+		local var_47_4 = tobool(var_47_3)
+		local var_47_5, var_47_6, var_47_7
 
-		local var_47_4 = var_4(var_47_1, var_47_2, var_47_3, var_2_10009(var_2, 2))
-
-		table = var_2_10005
-
-		var_2_10005.insert(arg_43_1.readyIKLayers, var_47_0)
-
-		arg_43_1.ikActionDict[var_47_0:GetControllerPath()] = var_2
-
-		local var_47_5 = var_47_0:GetRevertTime()
-		local var_47_6 = var_43_9[var_47_0:GetConfigID()]
-
-		tobool = var_7
-
-		if var_7(var_47_6) then
-			var_47_4 = var_47_6.back_time
-			var_47_5 = var_47_6.back_time
+		if var_47_4 then
+			var_47_1 = var_47_3.back_time
+			var_47_2 = var_47_3.back_time
 			var_47_0.ignoreDrag = true
+			var_47_5 = var_47_0:GetPlaneRotations()
+			var_47_6 = var_47_0:GetPlaneScales()
+			var_47_7 = {
+				triggerName = var_47_0:getConfig("trigger_param")[2],
+				controllerName = var_47_0:GetControllerPath()
+			}
 		end
 
-		local var_47_7 = var_47_0:GetSubTargets()
-		local var_47_8 = var_47_0
-		local var_47_9 = var_47_0.GetPlaneRotations(var_47_8)
-		local var_47_10 = var_47_0
-		local var_47_11 = var_47_0.GetPlaneScales(var_47_10)
-
-		_ = var_47_8
-
-		local var_47_12 = var_47_8.map
-
-		_ = var_2_10013
-
-		local var_47_13 = var_47_12(var_2_10013.range(#var_47_7), function(arg_55_0)
+		var_47_7.subTargets = _.map(_.range(#var_47_0:GetSubTargets()), function(arg_55_0)
 			return {
-				name = var_47_7[arg_55_0][1],
-				planeRot = var_47_9[arg_55_0],
-				planeScale = var_47_11[arg_55_0]
+				name = var_0[arg_55_0][1],
+				planeRot = var_47_5[arg_55_0],
+				planeScale = var_47_6[arg_55_0]
 			}
 		end)
+		var_47_7.actionType = var_47_0:GetActionTriggerParams()[1]
+		var_47_7.controlRect = var_47_0:GetRect()
+		var_47_7.actionRect = var_47_0:GetTriggerRect()
+		var_47_7.backTime = var_47_2
+		var_47_7.actionRevertTime = var_47_1
+		var_47_7.ignoreDrag = var_47_4
 
-		Dorm3dIKController = var_47_10
+		return Dorm3dIKController.New(var_47_7)
+	end)))
 
-		return var_47_10.New({
-			triggerName = var_47_0:getConfig("trigger_param")[2],
-			controllerName = var_47_0:GetControllerPath(),
-			subTargets = var_47_13,
-			actionType = var_47_0:GetActionTriggerParams()[1],
-			controlRect = var_47_0:GetRect(),
-			actionRect = var_47_0:GetTriggerRect(),
-			backTime = var_47_5,
-			actionRevertTime = var_47_4,
-			ignoreDrag = var_7
-		})
-	end)
+	local var_43_3 = {}
 
-	pg = var_43_7
-
-	local var_43_11 = var_43_7.IKMgr.GetInstance()
-
-	var_8.RegisterEnv(var_43_11, arg_43_1.ladyIKRoot, arg_43_1.ladyBoneMaps)
-	arg_43_0:RegisterIKFunc()
-
-	pg = var_8
-
-	local var_43_12 = var_8.IKMgr.GetInstance()
-
-	var_8.SetIKStatus(var_43_12, var_43_10)
-
-	local var_43_13 = {}
-
-	_ = var_9
-
-	var_9.each(arg_43_1.iKTouchDatas, function(arg_56_0)
-		local var_56_0 = arg_56_0[1]
-
-		pg = var_2_10002
-
-		if #var_2_10002.dorm3d_ik_touch[var_56_0].scene_item == 0 then
+	_.each(arg_43_1.iKTouchDatas, function(arg_56_0)
+		if #pg.dorm3d_ik_touch[arg_56_0[1]].scene_item == 0 then
 			return
 		end
 
-		if var_43_13[var_2.scene_item] then
+		if var_43_3[pg.dorm3d_ik_touch[arg_56_0[1]].scene_item] then
 			return
 		end
 
-		var_43_13[var_2.scene_item] = true
+		var_43_3[pg.dorm3d_ik_touch[arg_56_0[1]].scene_item] = true
 
-		local var_56_1 = arg_43_0
+		local var_56_0 = arg_43_0:GetSceneItem(pg.dorm3d_ik_touch[arg_56_0[1]].scene_item)
 
-		if not var_3.GetSceneItem(var_56_1, var_2.scene_item) then
-			warning = var_4
-			string = var_6
-
-			var_4(var_6.format("dorm3d_ik_touch:%d without scene_item:%s", var_56_0, var_2.scene_item))
+		if not var_56_0 then
+			warning(string.format("dorm3d_ik_touch:%d without scene_item:%s", arg_56_0[1], pg.dorm3d_ik_touch[arg_56_0[1]].scene_item))
 
 			return
 		end
 
-		IsNil = var_4
-		GetComponent = var_6
-
-		local var_56_2 = var_3
-
-		typeof = var_2_10009
-		UnityEngine = var_2_10011
-
-		if var_4(var_6(var_56_2, var_2_10009(var_2_10011.Collider))) then
-			go = var_4
-
-			local var_56_3 = var_4(var_3)
-			local var_56_4 = var_4.AddComponent
-
-			typeof = var_2_10007
-			UnityEngine = var_9
-
-			var_56_4(var_56_3, var_2_10007(var_9.BoxCollider))
+		if IsNil(GetComponent(var_56_0, typeof(UnityEngine.Collider))) then
+			go(var_56_0):AddComponent(typeof(UnityEngine.BoxCollider))
 		end
 
 		return
@@ -810,56 +495,26 @@ function var_0_1.SetIKStatus(arg_43_0, arg_43_1, arg_43_2, arg_43_3, arg_43_4)
 
 	arg_43_0:Get("camBrain").enabled = false
 
-	local var_43_14 = arg_43_0:Get("cameras")
+	if arg_43_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH] then
+		setActive(arg_43_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH], false)
 
-	Dorm3dRoomTemplateScene = var_10
-
-	if var_43_14[var_10.CAMERA.IK_WATCH] then
-		setActive = var_9
-
-		local var_43_15 = arg_43_0:Get("cameras")
-
-		Dorm3dRoomTemplateScene = var_12
-
-		var_9(var_43_15[var_12.CAMERA.IK_WATCH], false)
-
-		local var_43_16 = arg_43_0:Get("cameras")
-
-		Dorm3dRoomTemplateScene = var_10
-		var_43_16[var_10.CAMERA.IK_WATCH] = nil
+		arg_43_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH] = nil
 	end
 
-	local var_43_17 = arg_43_0:Get("cameraRoot")
-	local var_43_18 = var_9.Find(var_43_17, arg_43_2.ik_camera)
+	local var_43_4 = arg_43_0:Get("cameraRoot"):Find(arg_43_2.ik_camera)
 
-	assert = var_10
+	assert(var_43_4, "Missing IKCamera")
 
-	var_10(var_43_18, "Missing IKCamera")
+	arg_43_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH] = var_43_4
 
-	local var_43_19 = arg_43_0:Get("cameras")
-
-	Dorm3dRoomTemplateScene = var_43_17
-	var_43_19[var_43_17.CAMERA.IK_WATCH] = var_43_18
-
-	local var_43_20 = arg_43_0
-	local var_43_21 = arg_43_0.Func
-	local var_43_22 = "ActiveCamera"
-	local var_43_23 = arg_43_0:Get("cameras")
-
-	Dorm3dRoomTemplateScene = var_1_10015
-
-	var_43_21(var_43_20, var_43_22, var_43_23[var_1_10015.CAMERA.IK_WATCH])
+	arg_43_0:Func("ActiveCamera", arg_43_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH])
 
 	arg_43_0:Get("camBrain").enabled = true
 
-	local var_43_24 = var_43_18
-	local var_43_25 = var_43_18.GetComponent
+	local var_43_5 = var_43_4:GetComponent(typeof(Cinemachine.CinemachineFreeLook))
 
-	typeof = var_13
-	Cinemachine = var_15
-
-	if var_43_25(var_43_24, var_13(var_15.CinemachineFreeLook)) then
-		arg_43_0:Func("RegisterOrbits", var_10)
+	if var_43_5 then
+		arg_43_0:Func("RegisterOrbits", var_43_5)
 	else
 		arg_43_0:Func("RevertCameraOrbit")
 	end
@@ -871,29 +526,14 @@ function var_0_1.SetIKStatus(arg_43_0, arg_43_1, arg_43_2, arg_43_3, arg_43_4)
 	arg_43_0:Func("PlayEnterSceneAnim", arg_43_2.enter_scene_anim)
 	arg_43_0:Func("PlayEnterExtraItem", arg_43_1, arg_43_2.enter_extra_item)
 	arg_43_0:Func("HideSceneItem", arg_43_1, arg_43_2.hide_scene_item)
+	arg_43_0:Emit(Dorm3dIKView.UPDATE_TEXT_TIPS, arg_43_1.readyIKLayers)
+	onNextTick(function()
+		local var_57_0 = arg_43_0:Get("furnitures"):Find(arg_43_2.character_position)
 
-	local var_43_26 = arg_43_0
-	local var_43_27 = arg_43_0.Emit
+		arg_43_1.lady.position = var_57_0:Find("StayPoint").position
+		arg_43_1.lady.rotation = var_57_0:Find("StayPoint").rotation
 
-	Dorm3dIKView = var_14
-
-	var_43_27(var_43_26, var_14.UPDATE_TEXT_TIPS, arg_43_1.readyIKLayers)
-
-	onNextTick = var_43_27
-
-	var_43_27(function()
-		local var_57_0 = arg_43_0
-		local var_57_1 = var_0.Get(var_57_0, "furnitures")
-		local var_57_2 = var_0.Find(var_57_1, arg_43_2.character_position)
-
-		arg_43_1.lady.position = var_57_2:Find("StayPoint").position
-
-		local var_57_3 = arg_43_1.lady
-
-		var_57_3.rotation = var_57_2:Find("StayPoint").rotation
-		existCall = var_57_3
-
-		var_57_3(arg_43_3)
+		existCall(arg_43_3)
 
 		return
 	end)
@@ -901,57 +541,30 @@ function var_0_1.SetIKStatus(arg_43_0, arg_43_1, arg_43_2, arg_43_3, arg_43_4)
 	return
 end
 
-function var_0_1.ExitIKStatus(arg_58_0, arg_58_1, arg_58_2, arg_58_3, arg_58_4)
+function var_0_0.ExitIKStatus(arg_58_0, arg_58_1, arg_58_2, arg_58_3, arg_58_4)
 	arg_58_0.enableIKTip = false
 
-	local var_58_1
-
 	if arg_58_0.ikSwitchSkinId then
-		local var_58_0 = arg_58_0:Get("apartment")
-
-		var_58_1 = var_58_1.GetConfigID(var_58_0)
-
-		arg_58_1:SwitchCharacterSkin(var_58_1, arg_58_0.ikSwitchSkinId)
+		arg_58_1:SwitchCharacterSkin(arg_58_0:Get("apartment"):GetConfigID(), arg_58_0.ikSwitchSkinId)
 
 		arg_58_0.ikSwitchSkinId = nil
 	end
 
-	setActive = var_58_1
-
-	var_58_1(arg_58_1.ladyCollider, true)
-
-	_ = var_58_1
-
-	var_58_1.each(arg_58_1.ladyTouchColliders, function(arg_59_0)
-		setActive = var_2_10001
-
-		var_2_10001(arg_59_0, false)
+	setActive(arg_58_1.ladyCollider, true)
+	_.each(arg_58_1.ladyTouchColliders, function(arg_59_0)
+		setActive(arg_59_0, false)
 
 		return
 	end)
 
 	arg_58_0.blockIK = nil
-	pg = var_5
 
-	local var_58_2 = var_5.IKMgr.GetInstance()
-
-	var_5.UnregisterEnv(var_58_2)
+	pg.IKMgr.GetInstance():UnregisterEnv()
 
 	arg_58_1.ikHandler = nil
 
-	local var_58_3 = arg_58_0
-	local var_58_4 = arg_58_0.Emit
-
-	Dorm3dIKView = var_8
-
-	var_58_4(var_58_3, var_8.SET_TIPS_ACTIVE, false)
-
-	local var_58_5 = arg_58_0
-	local var_58_6 = arg_58_0.Emit
-
-	RoomTouchSystem = var_8
-
-	var_58_6(var_58_5, var_8.CANCEL_TOUCH_PRESS)
+	arg_58_0:Emit(Dorm3dIKView.SET_TIPS_ACTIVE, false)
+	arg_58_0:Emit(RoomTouchSystem.CANCEL_TOUCH_PRESS)
 
 	arg_58_1.currentIkStatus = nil
 	arg_58_1.ikActionDict = nil
@@ -959,19 +572,9 @@ function var_0_1.ExitIKStatus(arg_58_0, arg_58_1, arg_58_2, arg_58_3, arg_58_4)
 	arg_58_1.iKTouchDatas = nil
 
 	arg_58_0:Func("RevertCameraOrbit")
+	setActive(arg_58_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH], false)
 
-	setActive = var_5
-
-	local var_58_7 = arg_58_0:Get("cameras")
-
-	Dorm3dRoomTemplateScene = var_8
-
-	var_5(var_58_7[var_8.CAMERA.IK_WATCH], false)
-
-	local var_58_8 = arg_58_0:Get("cameras")
-
-	Dorm3dRoomTemplateScene = var_1_10006
-	var_58_8[var_1_10006.CAMERA.IK_WATCH] = nil
+	arg_58_0:Get("cameras")[Dorm3dRoomTemplateScene.CAMERA.IK_WATCH] = nil
 
 	arg_58_1:EnableCloth(false)
 	arg_58_0:ResetHeadAimIK(arg_58_1)
@@ -983,30 +586,13 @@ function var_0_1.ExitIKStatus(arg_58_0, arg_58_1, arg_58_2, arg_58_3, arg_58_4)
 		arg_58_0:Func("ResetTempHideSceneItems", arg_58_1)
 	end
 
-	onNextTick = var_5
+	onNextTick(function()
+		arg_58_1.ladyActiveZone = arg_58_2.character_position and arg_58_2.character_position or arg_58_1.ladyBaseZone
 
-	var_5(function()
-		if arg_58_2.character_position then
-			arg_58_1.ladyActiveZone = arg_58_2.character_position
-		else
-			arg_58_1.ladyActiveZone = arg_58_1.ladyBaseZone
-		end
-
-		local var_60_0 = arg_58_0
-
-		var_0.Func(var_60_0, "ChangeCharacterPosition", arg_58_1)
-
-		local var_60_1 = arg_58_0
-
-		var_0.Func(var_60_1, "TriggerLadyDistance")
-
-		local var_60_2 = arg_58_0
-
-		var_0.Func(var_60_2, "CheckInSector")
-
-		existCall = var_0
-
-		var_0(arg_58_3)
+		arg_58_0:Func("ChangeCharacterPosition", arg_58_1)
+		arg_58_0:Func("TriggerLadyDistance")
+		arg_58_0:Func("CheckInSector")
+		existCall(arg_58_3)
 
 		return
 	end)
@@ -1014,165 +600,109 @@ function var_0_1.ExitIKStatus(arg_58_0, arg_58_1, arg_58_2, arg_58_3, arg_58_4)
 	return
 end
 
-function var_0_1.SetIKTimelineStatus(arg_61_0, arg_61_1, arg_61_2, arg_61_3, arg_61_4, arg_61_5)
-	warning = var_1_10006
-
-	var_1_10006("Set IKStatus " .. (arg_61_3 or "NIL"))
+function var_0_0.SetIKTimelineStatus(arg_61_0, arg_61_1, arg_61_2, arg_61_3, arg_61_4, arg_61_5)
+	warning("Set IKStatus " .. (arg_61_3 or "NIL"))
 	arg_61_1:SetCurrentIkTimelineStatus(arg_61_3)
 
 	arg_61_0.enableIKTip = true
 
-	local var_61_0 = arg_61_0
-	local var_61_1 = arg_61_0.Emit
-
-	Dorm3dIKView = var_9
-
-	var_61_1(var_61_0, var_9.SET_CONTROL_ACTIVE, true)
-
-	local var_61_2 = arg_61_0
-
-	arg_61_0.ResetIKTipTimer(var_61_2)
+	arg_61_0:Emit(Dorm3dIKView.SET_CONTROL_ACTIVE, true)
+	arg_61_0:ResetIKTipTimer()
 
 	arg_61_0.blockIK = nil
-	pg = var_6
-
-	local var_61_3 = var_6.dorm3d_ik_timeline_status[arg_61_3]
-
 	arg_61_1.readyIKLayers = {}
 	arg_61_1.iKTouchDatas = {}
+	arg_61_1.IKSettings = {
+		CameraRaycaster = GetOrAddComponent(arg_61_4, typeof(UnityEngine.EventSystems.PhysicsRaycaster))
+	}
 
-	local var_61_4 = {}
+	assert(arg_61_1.IKSettings.CameraRaycaster)
 
-	GetOrAddComponent = var_61_2
+	local var_61_0 = {}
 
-	local var_61_5 = arg_61_4
-
-	typeof = var_1_10011
-	UnityEngine = var_1_10013
-	var_61_4.CameraRaycaster = var_61_2(var_61_5, var_1_10011(var_1_10013.EventSystems.PhysicsRaycaster))
-	arg_61_1.IKSettings = var_61_4
-	assert = var_61_4
-
-	var_61_4(arg_61_1.IKSettings.CameraRaycaster)
-
-	local var_61_6 = {}
-
-	table = var_8
-
-	local var_61_7 = var_8.IpairsCArray
-	local var_61_8 = arg_61_2
-	local var_61_9 = arg_61_2.GetComponentsInChildren
-
-	typeof = var_13
-	UnityEngine = var_1_10015
-
-	var_61_7(var_61_9(var_61_8, var_13(var_1_10015.Collider), true), function(arg_62_0, arg_62_1)
+	table.IpairsCArray(arg_61_2:GetComponentsInChildren(typeof(UnityEngine.Collider), true), function(arg_62_0, arg_62_1)
 		if arg_62_1.name == "SafeCollider" then
-			setActive = var_2
-
-			var_2(arg_62_1, false)
+			setActive(arg_62_1, false)
 
 			return
 		end
 
 		local var_62_0 = arg_62_1:GetType()
-		local var_62_1 = var_2.Equals
 
-		typeof = var_2_10005
-		UnityEngine = var_2_10007
-
-		if var_62_1(var_62_0, var_2_10005(var_2_10007.MeshCollider)) then
+		if var_62_0:Equals(typeof(UnityEngine.MeshCollider)) then
 			return
 		end
 
-		tf = var_2
+		local var_62_1 = tf(arg_62_1)
+		local var_62_2 = var_62_1.name
+		local var_62_3 = var_62_1.name and string.find(var_62_2, "Collider") or -1
 
-		if var_2(arg_62_1).name then
-			string = var_4
-
-			local var_62_2
-
-			if not var_4.find(var_3, "Collider") then
-				var_62_2 = -1
-			end
-
-			if var_62_2 <= 0 then
-				errorMsg = var_5
-
-				var_5("Wrong Name to lady Collider : " .. var_3)
-
-				return
-			end
-
-			string = var_5
-
-			if var_5.sub(var_3, 1, var_62_2 - 1) == "Body" or var_5 == "Safe" then
-				setActive = var_2_10006
-
-				var_2_10006(var_2, false)
-
-				return
-			end
-
-			DormConst = var_2_10006
-
-			if var_2_10006.BONE_TO_TOUCH[var_5] == nil then
-				return
-			end
-
-			local var_62_3 = var_61_6
-
-			var_62_3[var_5] = var_2
-			setActive = var_62_3
-
-			var_62_3(var_2, true)
+		if var_62_3 <= 0 then
+			errorMsg("Wrong Name to lady Collider : " .. var_62_2)
 
 			return
 		end
+
+		local var_62_4 = string.sub(var_62_2, 1, var_62_3 - 1)
+
+		if var_62_4 == "Body" or var_62_4 == "Safe" then
+			setActive(var_62_1, false)
+
+			return
+		end
+
+		if DormConst.BONE_TO_TOUCH[var_62_4] == nil then
+			return
+		end
+
+		var_61_0[var_62_4] = var_62_1
+
+		setActive(var_62_1, true)
+
+		return
 	end)
 
-	arg_61_1.IKSettings.Colliders = var_61_6
+	arg_61_1.IKSettings.Colliders = {}
 	arg_61_1.ikTimelineMode = true
-	_ = var_8
 
-	local var_61_10 = var_8.map(var_61_3.ik_id, function(arg_63_0)
-		Dorm3dIK = var_2_10001
+	local var_61_1 = {}
+	local var_61_2 = {}
 
-		local var_63_0 = var_2_10001.New({
+	table.Foreach(DormConst.boneMap, function(arg_65_0, arg_65_1)
+		var_61_2[arg_65_1] = arg_65_0
+
+		return
+	end)
+	table.IpairsCArray(arg_61_2.transform:GetComponentsInChildren(typeof(Transform), true), function(arg_66_0, arg_66_1)
+		if var_61_2[arg_66_1.name] then
+			var_61_1[var_61_2[arg_66_1.name]] = arg_66_1
+		end
+
+		return
+	end)
+	pg.IKMgr.GetInstance():RegisterEnv(arg_61_2.transform:Find("IKLayers"), {})
+	arg_61_0:RegisterIKFunc()
+	pg.IKMgr.GetInstance():SetIKStatus((_.map(pg.dorm3d_ik_timeline_status[arg_61_3].ik_id, function(arg_63_0)
+		local var_63_0 = Dorm3dIK.New({
 			configId = arg_63_0
 		})
 
-		table = var_2_10002
+		table.insert(arg_61_1.readyIKLayers, var_63_0)
 
-		var_2_10002.insert(arg_61_1.readyIKLayers, var_63_0)
+		local var_63_1 = var_63_0:GetPlaneRotations()
+		local var_63_2 = var_63_0:GetPlaneScales()
 
-		local var_63_1 = var_63_0:GetSubTargets()
-		local var_63_2 = var_63_0
-		local var_63_3 = var_63_0.GetPlaneRotations(var_63_2)
-		local var_63_4 = var_63_0
-		local var_63_5 = var_63_0.GetPlaneScales(var_63_4)
-
-		_ = var_63_2
-
-		local var_63_6 = var_63_2.map
-
-		_ = var_2_10007
-
-		local var_63_7 = var_63_6(var_2_10007.range(#var_63_1), function(arg_64_0)
-			return {
-				name = var_63_1[arg_64_0][1],
-				planeRot = var_63_3[arg_64_0],
-				planeScale = var_63_5[arg_64_0]
-			}
-		end)
-
-		Dorm3dIKController = var_63_4
-
-		return var_63_4.New({
+		return Dorm3dIKController.New({
 			ignoreDrag = false,
 			triggerName = var_63_0:getConfig("trigger_param")[2],
 			controllerName = var_63_0:GetControllerPath(),
-			subTargets = var_63_7,
+			subTargets = _.map(_.range(#var_63_0:GetSubTargets()), function(arg_64_0)
+				return {
+					name = var_0[arg_64_0][1],
+					planeRot = var_63_1[arg_64_0],
+					planeScale = var_63_2[arg_64_0]
+				}
+			end),
 			actionType = var_63_0:GetActionTriggerParams()[1],
 			controlRect = var_63_0:GetRect(),
 			actionRect = var_63_0:GetTriggerRect(),
@@ -1180,87 +710,23 @@ function var_0_1.SetIKTimelineStatus(arg_61_0, arg_61_1, arg_61_2, arg_61_3, arg
 			actionRevertTime = var_63_0:GetActionRevertTime(),
 			timelineActionEvent = var_63_0:GetTimelineAction()
 		})
-	end)
-	local var_61_11 = arg_61_2.transform
-	local var_61_12 = var_9.Find(var_61_11, "IKLayers")
-	local var_61_13 = {}
-	local var_61_14 = {}
-
-	table = var_12
-
-	local var_61_15 = var_12.Foreach
-
-	DormConst = var_14
-
-	var_61_15(var_14.boneMap, function(arg_65_0, arg_65_1)
-		var_61_14[arg_65_1] = arg_65_0
-
-		return
-	end)
-
-	local var_61_16 = arg_61_2.transform
-	local var_61_17 = var_12.GetComponentsInChildren
-
-	typeof = var_15
-	Transform = var_1_10017
-
-	local var_61_18 = var_61_17(var_61_16, var_15(var_1_10017), true)
-
-	table = var_13
-
-	var_13.IpairsCArray(var_61_18, function(arg_66_0, arg_66_1)
-		if var_61_14[arg_66_1.name] then
-			var_61_13[var_61_14[arg_66_1.name]] = arg_66_1
-		end
-
-		return
-	end)
-
-	pg = var_13
-
-	local var_61_19 = var_13.IKMgr.GetInstance()
-
-	var_13.RegisterEnv(var_61_19, var_61_12, var_61_13)
-	arg_61_0:RegisterIKFunc()
-
-	pg = var_13
-
-	local var_61_20 = var_13.IKMgr.GetInstance()
-
-	var_13.SetIKStatus(var_61_20, var_61_10)
-
-	local var_61_21 = arg_61_0
-	local var_61_22 = arg_61_0.Emit
-
-	Dorm3dIKView = var_16
-
-	var_61_22(var_61_21, var_16.UPDATE_TEXT_TIPS, arg_61_1.readyIKLayers)
-
-	existCall = var_61_22
-
-	var_61_22(arg_61_5)
+	end)))
+	arg_61_0:Emit(Dorm3dIKView.UPDATE_TEXT_TIPS, arg_61_1.readyIKLayers)
+	existCall(arg_61_5)
 
 	return
 end
 
-function var_0_1.ExitIKTimelineStatus(arg_67_0, arg_67_1, arg_67_2)
+function var_0_0.ExitIKTimelineStatus(arg_67_0, arg_67_1, arg_67_2)
 	arg_67_1:SetCurrentIkTimelineStatus(nil)
 
 	arg_67_0.enableIKTip = false
 
-	local var_67_0 = arg_67_0
-	local var_67_1 = arg_67_0.Emit
-
-	Dorm3dIKView = var_6
-
-	var_67_1(var_67_0, var_6.SET_CONTROL_ACTIVE, false)
+	arg_67_0:Emit(Dorm3dIKView.SET_CONTROL_ACTIVE, false)
 
 	arg_67_0.blockIK = nil
-	pg = var_3
 
-	local var_67_2 = var_3.IKMgr.GetInstance()
-
-	var_3.UnregisterEnv(var_67_2)
+	pg.IKMgr.GetInstance():UnregisterEnv()
 
 	arg_67_1.ikHandler = nil
 	arg_67_1.ikTimelineMode = nil
@@ -1268,21 +734,13 @@ function var_0_1.ExitIKTimelineStatus(arg_67_0, arg_67_1, arg_67_2)
 	arg_67_1.iKTouchDatas = nil
 	arg_67_1.IKSettings = nil
 
-	local var_67_3 = arg_67_0
-	local var_67_4 = arg_67_0.Emit
-
-	Dorm3dIKView = var_6
-
-	var_67_4(var_67_3, var_6.SET_TIPS_ACTIVE, false)
-
-	existCall = var_67_4
-
-	var_67_4(arg_67_2)
+	arg_67_0:Emit(Dorm3dIKView.SET_TIPS_ACTIVE, false)
+	existCall(arg_67_2)
 
 	return
 end
 
-function var_0_1.EnableIKLayer(arg_68_0, arg_68_1)
+function var_0_0.EnableIKLayer(arg_68_0, arg_68_1)
 	local var_68_0 = arg_68_0:GetCurrentLadyEnv()
 
 	if #arg_68_1:GetHeadTrackPath() > 0 then
@@ -1292,87 +750,60 @@ function var_0_1.EnableIKLayer(arg_68_0, arg_68_1)
 		}, true)
 	end
 
-	if #arg_68_1:GetTriggerFaceAnim() > 0 then
-		arg_68_0:Func("PlayFaceAnim", var_68_0, var_3)
+	local var_68_1 = arg_68_1:GetTriggerFaceAnim()
+
+	if #var_68_1 > 0 then
+		arg_68_0:Func("PlayFaceAnim", var_68_0, var_68_1)
 	end
 
 	if not arg_68_1.ignoreDrag then
-		local var_68_1 = arg_68_0
-		local var_68_2 = arg_68_0.Emit
-
-		Dorm3dIKView = var_1_10007
-
-		var_68_2(var_68_1, var_1_10007.PLAY_HAND_BEGIN)
+		arg_68_0:Emit(Dorm3dIKView.PLAY_HAND_BEGIN)
 	end
 
 	if not var_68_0.ikTimelineMode then
-		pg = var_4
-
-		local var_68_3 = var_4.m02
-		local var_68_4 = var_4.sendNotification
-
-		GAME = var_1_10007
-
-		local var_68_5 = var_1_10007.APARTMENT_TRACK
-
-		Dorm3dTrackCommand = var_1_10008
-
-		local var_68_6 = var_1_10008.BuildDataTouch
-		local var_68_7 = arg_68_0:Get("apartment").configId
-		local var_68_8 = arg_68_0:Get("apartment").level
-		local var_68_9 = var_68_0.ikConfig.character_action
-		local var_68_10 = arg_68_1:GetTriggerParams()[2]
-		local var_68_11 = arg_68_0:GetRoom()
-
-		var_68_4(var_68_3, var_68_5, var_68_6(var_68_7, var_68_8, var_68_9, var_68_10, var_14.GetConfigID(var_68_11)))
+		pg.m02:sendNotification(GAME.APARTMENT_TRACK, Dorm3dTrackCommand.BuildDataTouch(arg_68_0:Get("apartment").configId, arg_68_0:Get("apartment").level, var_68_0.ikConfig.character_action, arg_68_1:GetTriggerParams()[2], arg_68_0:GetRoom():GetConfigID()))
 	end
 
 	return
 end
 
-function var_0_1.DeactiveIKLayer(arg_69_0, arg_69_1)
-	if not arg_69_0:GetCurrentLadyEnv().ikTimelineMode and #arg_69_1:GetHeadTrackPath() > 0 then
-		arg_69_0:SettingHeadAimIK(var_2, var_2.ikConfig.head_track)
+function var_0_0.DeactiveIKLayer(arg_69_0, arg_69_1)
+	local var_69_0 = arg_69_0:GetCurrentLadyEnv()
+
+	if not var_69_0.ikTimelineMode and #arg_69_1:GetHeadTrackPath() > 0 then
+		arg_69_0:SettingHeadAimIK(var_69_0, var_69_0.ikConfig.head_track)
 	end
 
 	if not arg_69_1.ignoreDrag then
-		local var_69_0 = arg_69_0
-		local var_69_1 = arg_69_0.Emit
-
-		Dorm3dIKView = var_1_10006
-
-		var_69_1(var_69_0, var_1_10006.PLAY_HAND_END)
+		arg_69_0:Emit(Dorm3dIKView.PLAY_HAND_END)
 	end
 
 	return
 end
 
-function var_0_1.ResetIKTipTimer(arg_70_0)
+function var_0_0.ResetIKTipTimer(arg_70_0)
 	if not arg_70_0.enableIKTip then
 		return
 	end
 
-	Time = var_1
-	arg_70_0.nextTipIKTime = var_1.time + var_0_1.IK_TIP_WAIT_TIME
+	arg_70_0.nextTipIKTime = Time.time + var_0_0.IK_TIP_WAIT_TIME
 
 	return
 end
 
-function var_0_1.EnableCurrentHeadIK(arg_71_0, arg_71_1)
-	local var_71_0 = arg_71_0:GetCurrentLadyEnv()
-
-	arg_71_0:EnableHeadIK(var_71_0, arg_71_1)
+function var_0_0.EnableCurrentHeadIK(arg_71_0, arg_71_1)
+	arg_71_0:EnableHeadIK(arg_71_0:GetCurrentLadyEnv(), arg_71_1)
 
 	return
 end
 
-function var_0_1.EnableHeadIK(arg_72_0, arg_72_1, arg_72_2)
+function var_0_0.EnableHeadIK(arg_72_0, arg_72_1, arg_72_2)
 	arg_72_1.ladyHeadIKComp.enableIk = arg_72_2
 
 	return
 end
 
-function var_0_1.SettingHeadAimIK(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
+function var_0_0.SettingHeadAimIK(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
 	local var_73_0
 
 	if arg_73_2[1] == 0 then
@@ -1382,22 +813,10 @@ function var_0_1.SettingHeadAimIK(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
 	elseif arg_73_2[1] == 1 then
 		arg_73_0:EnableHeadIK(arg_73_1, true)
 
-		local var_73_1 = arg_73_0:Get("mainCameraTF")
-
-		var_73_0 = var_5.Find(var_73_1, "AimTarget")
+		var_73_0 = arg_73_0:Get("mainCameraTF"):Find("AimTarget")
 	elseif arg_73_2[1] == 2 then
 		arg_73_0:EnableHeadIK(arg_73_1, true)
-
-		table = var_5
-
-		local var_73_2 = var_5.IpairsCArray
-		local var_73_3 = arg_73_1.lady
-		local var_73_4 = var_7.GetComponentsInChildren
-
-		typeof = var_1_10010
-		Transform = var_1_10012
-
-		var_73_2(var_73_4(var_73_3, var_1_10010(var_1_10012), true), function(arg_74_0, arg_74_1)
+		table.IpairsCArray(arg_73_1.lady:GetComponentsInChildren(typeof(Transform), true), function(arg_74_0, arg_74_1)
 			if arg_74_1.name ~= arg_73_2[2] then
 				return
 			end
@@ -1421,48 +840,45 @@ function var_0_1.SettingHeadAimIK(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
 	return
 end
 
-function var_0_1.ResetHeadAimIK(arg_75_0, arg_75_1)
+function var_0_0.ResetHeadAimIK(arg_75_0, arg_75_1)
 	arg_75_0:EnableHeadIK(arg_75_1, true)
 
-	local var_75_0 = arg_75_1.ladyHeadIKComp
-	local var_75_1 = arg_75_0:Get("mainCameraTF")
-
-	var_75_0.AimTarget = var_3.Find(var_75_1, "AimTarget")
+	arg_75_1.ladyHeadIKComp.AimTarget = arg_75_0:Get("mainCameraTF"):Find("AimTarget")
 	arg_75_1.ladyHeadIKComp.HeadWeight = arg_75_1.ladyHeadIKData.HeadWeight
 	arg_75_1.ladyHeadIKComp.BodyWeight = arg_75_1.ladyHeadIKData.BodyWeight
 
 	return
 end
 
-function var_0_1.OnTriggerIK(arg_76_0, arg_76_1)
-	if arg_76_0:GetCurrentLadyEnv().ikTimelineMode then
-		arg_76_0:ExitIKTimelineStatus(var_2)
+function var_0_0.OnTriggerIK(arg_76_0, arg_76_1)
+	local var_76_0 = arg_76_0:GetCurrentLadyEnv()
 
-		if arg_76_1:GetTimelineAction() then
-			local var_76_0 = arg_76_0:Get("nowTimelinePlayer")
+	if var_76_0.ikTimelineMode then
+		arg_76_0:ExitIKTimelineStatus(var_76_0)
 
-			var_4.TriggerEvent(var_76_0, var_3)
+		local var_76_1 = arg_76_1:GetTimelineAction()
+
+		if var_76_1 then
+			arg_76_0:Get("nowTimelinePlayer"):TriggerEvent(var_76_1)
 		end
 
 		return
 	end
 
-	if not var_2.ikConfig then
+	if not var_76_0.ikConfig then
 		return
 	end
 
-	local var_76_1 = arg_76_1:GetControllerPath()
+	local var_76_2 = var_76_0.ikActionDict[arg_76_1:GetControllerPath()]
 
-	if not var_2.ikActionDict[var_76_1] then
+	if not var_76_2 then
 		return
 	end
 
 	arg_76_0.blockIK = true
 
-	arg_76_0:Emit(var_0_1.ON_IK_LAYER_ACTION, var_2, arg_76_1:GetConfigID(), var_4, function()
-		local var_77_0 = arg_76_0
-
-		var_0.ResetIKTipTimer(var_77_0)
+	arg_76_0:Emit(var_0_0.ON_IK_LAYER_ACTION, var_76_0, arg_76_1:GetConfigID(), var_76_2, function()
+		arg_76_0:ResetIKTipTimer()
 
 		arg_76_0.blockIK = nil
 
@@ -1472,127 +888,65 @@ function var_0_1.OnTriggerIK(arg_76_0, arg_76_1)
 	return
 end
 
-function var_0_1.UpdateIKTarget(arg_78_0)
+function var_0_0.UpdateIKTarget(arg_78_0)
 	if not arg_78_0:Get("apartment") then
 		return
 	end
 
-	local var_78_0 = arg_78_0
+	local var_78_0 = arg_78_0:GetCurrentLadyEnv()
 
-	if not arg_78_0.GetCurrentLadyEnv(var_78_0) then
+	if not var_78_0 then
 		return
 	end
 
-	if var_2.ikHandler then
-		if not var_2.readyIKLayers then
-			return
+	if var_78_0.ikHandler then
+		local var_78_1
+
+		if not var_78_0.readyIKLayers then
+			do return end
+
+			var_78_1 = pg.UIMgr.GetInstance().uiCamera:Find("Canvas").rect
 		end
 
-		local var_78_1 = var_2.ikHandler.screenPosition
+		arg_78_0:Emit(Dorm3dIKView.SET_HAND_POSITION, var_78_0.ikHandler.screenPosition - Vector2.New(var_78_1.width, var_78_1.height) * 0.5)
 
-		pg = var_78_0
+		if Time.time > arg_78_0.ikNextCheckStamp then
+			arg_78_0.ikNextCheckStamp = arg_78_0.ikNextCheckStamp + var_0_0.IK_STATUS_DELTA
 
-		local var_78_2 = var_78_0.UIMgr.GetInstance().uiCamera
-		local var_78_3 = var_4.Find(var_78_2, "Canvas").rect
-
-		Vector2 = var_78_2
-
-		local var_78_4 = var_78_1 - var_78_2.New(var_78_3.width, var_78_3.height) * 0.5
-		local var_78_5 = arg_78_0
-		local var_78_6 = arg_78_0.Emit
-
-		Dorm3dIKView = var_1_10010
-
-		var_78_6(var_78_5, var_1_10010.SET_HAND_POSITION, var_78_4)
-
-		Time = var_78_6
-
-		if var_78_6.time > arg_78_0.ikNextCheckStamp then
-			arg_78_0.ikNextCheckStamp = arg_78_0.ikNextCheckStamp + var_0_1.IK_STATUS_DELTA
-			_ = var_7
-
-			local var_78_7 = var_7.detect(var_2.readyIKLayers, function(arg_79_0)
-				local var_79_0 = arg_79_0:GetControllerPath()
-				local var_79_1 = var_0.ikHandler.ikData
-
-				return var_79_0 == var_2.GetControllerPath(var_79_1)
-			end)
-
-			arg_78_0:Emit(var_0_1.ON_IK_STATUS_CHANGED, var_78_7:GetConfigID(), var_0_1.IK_STATUS.DRAG)
+			arg_78_0:Emit(var_0_0.ON_IK_STATUS_CHANGED, _.detect(var_78_0.readyIKLayers, function(arg_79_0)
+				return arg_79_0:GetControllerPath() == var_78_0.ikHandler.ikData:GetControllerPath()
+			end):GetConfigID(), var_0_0.IK_STATUS.DRAG)
 		end
 	end
 
 	if arg_78_0.enableIKTip then
-		if not var_2.readyIKLayers or not var_2.IKSettings then
+		if not var_78_0.readyIKLayers or not var_78_0.IKSettings then
 			return
 		end
 
-		arg_78_0:UpdateIKTips(var_2)
+		arg_78_0:UpdateIKTips(var_78_0)
 	end
 
 	return
 end
 
-function var_0_1.UpdateIKTips(arg_80_0, arg_80_1)
+function var_0_0.UpdateIKTips(arg_80_0, arg_80_1)
 	if not arg_80_0.nextTipIKTime then
 		return
 	end
 
-	if not arg_80_0.blockIK then
-		Time = var_2
+	arg_80_0:Emit(Dorm3dIKView.UPDATE_TIPS, not arg_80_0.blockIK and Time.time > arg_80_0.nextTipIKTime, arg_80_1)
 
-		local var_80_0
-
-		if not (var_2.time > arg_80_0.nextTipIKTime) then
-			var_80_0 = false
-		else
-			var_80_0 = true
-		end
-
-		local var_80_1 = arg_80_0
-		local var_80_2 = arg_80_0.Emit
-
-		Dorm3dIKView = var_1_10006
-
-		var_80_2(var_80_1, var_1_10006.UPDATE_TIPS, var_80_0, arg_80_1)
-
-		return
-	end
+	return
 end
 
-function var_0_1.CycleIKCameraGroup(arg_81_0)
-	local var_81_0 = arg_81_0:GetCurrentLadyEnv()
-
-	assert = var_1_10002
-
-	var_1_10002(arg_81_0:Func("GetBlackboardValue", var_81_0, "inIK"))
-
-	seriesAsync = var_1_10002
-
-	var_1_10002({
+function var_0_0.CycleIKCameraGroup(arg_81_0)
+	assert(arg_81_0:Func("GetBlackboardValue", arg_81_0:GetCurrentLadyEnv(), "inIK"))
+	seriesAsync({
 		function(arg_82_0)
-			pg = var_2_10001
-
-			local var_82_0 = var_2_10001.IKMgr.GetInstance()
-
-			var_1.ResetActiveIKs(var_82_0)
-
-			local var_82_1 = var_81_0.ikConfig.camera_group
-
-			pg = var_82_0
-
-			local var_82_2 = var_82_0.dorm3d_ik_status.get_id_list_by_camera_group[var_82_1]
-
-			table = var_2_10004
-
-			local var_82_3 = var_82_2[var_2_10004.indexof(var_82_2, var_1.id) % #var_82_2 + 1]
-			local var_82_4 = arg_81_0
-
-			var_6.SwitchIKConfig(var_82_4, var_81_0, var_82_3)
-
-			local var_82_5 = arg_81_0
-
-			var_6.SetIKState(var_82_5, true)
+			pg.IKMgr.GetInstance():ResetActiveIKs()
+			arg_81_0:SwitchIKConfig(var_0, pg.dorm3d_ik_status.get_id_list_by_camera_group[var_0.ikConfig.camera_group][table.indexof(pg.dorm3d_ik_status.get_id_list_by_camera_group[var_0.ikConfig.camera_group], var_0.ikConfig.id) % #pg.dorm3d_ik_status.get_id_list_by_camera_group[var_0.ikConfig.camera_group] + 1])
+			arg_81_0:SetIKState(true)
 
 			return
 		end
@@ -1601,35 +955,23 @@ function var_0_1.CycleIKCameraGroup(arg_81_0)
 	return
 end
 
-function var_0_1.SetIKSwitchSkinId(arg_83_0, arg_83_1)
+function var_0_0.SetIKSwitchSkinId(arg_83_0, arg_83_1)
 	arg_83_0.ikSwitchSkinId = arg_83_1
 
 	return
 end
 
-function var_0_1.SwitchIKSkin(arg_84_0, arg_84_1, arg_84_2, arg_84_3)
-	seriesAsync = var_1_10004
-
-	var_1_10004({
+function var_0_0.SwitchIKSkin(arg_84_0, arg_84_1, arg_84_2, arg_84_3)
+	seriesAsync({
 		function(arg_85_0)
-			local var_85_0 = arg_84_0
-
-			var_1.SetIKState(var_85_0, false, arg_85_0)
+			arg_84_0:SetIKState(false, arg_85_0)
 
 			return
 		end,
 		function(arg_86_0)
-			local var_86_0 = arg_84_1
-
-			var_1.SwitchCharacterSkin(var_86_0, arg_84_2, arg_84_3)
-
-			local var_86_1 = arg_84_0
-
-			var_1.SwitchIKConfig(var_86_1, arg_84_1, arg_84_1.ikConfig.id)
-
-			local var_86_2 = arg_84_0
-
-			var_1.SetIKState(var_86_2, true, arg_86_0)
+			arg_84_1:SwitchCharacterSkin(arg_84_2, arg_84_3)
+			arg_84_0:SwitchIKConfig(arg_84_1, arg_84_1.ikConfig.id)
+			arg_84_0:SetIKState(true, arg_86_0)
 
 			return
 		end
@@ -1638,7 +980,7 @@ function var_0_1.SwitchIKSkin(arg_84_0, arg_84_1, arg_84_2, arg_84_3)
 	return
 end
 
-function var_0_1.ConsumeIKSpecialCall(arg_87_0)
+function var_0_0.ConsumeIKSpecialCall(arg_87_0)
 	if not arg_87_0.ikSpecialCall then
 		return false
 	end
@@ -1646,11 +988,10 @@ function var_0_1.ConsumeIKSpecialCall(arg_87_0)
 	local var_87_0 = arg_87_0.ikSpecialCall
 
 	arg_87_0.ikSpecialCall = nil
-	existCall = var_2
 
-	var_2(var_87_0)
+	existCall(var_87_0)
 
 	return true
 end
 
-return var_0_1
+return var_0_0

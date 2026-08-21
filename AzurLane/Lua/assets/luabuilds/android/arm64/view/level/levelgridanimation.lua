@@ -1,14 +1,6 @@
-﻿import = var_0_10000
-
-local var_0_0 = var_0_10000(".LevelGrid")
-
-Vector2 = var_0_10001
-
-local var_0_1 = var_0_10001(-60, 84.8)
-
-Vector2 = var_2
-
-local var_0_2 = var_2(-50, 20)
+﻿local var_0_0 = import(".LevelGrid")
+local var_0_1 = Vector2(-60, 84.8)
+local var_0_2 = Vector2(-50, 20)
 
 function var_0_0.PlaySubAnimation(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	if not arg_1_1 then
@@ -17,54 +9,30 @@ function var_0_0.PlaySubAnimation(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 		return
 	end
 
-	if not arg_1_1:GetSpineRole() then
+	local var_1_0 = arg_1_1:GetSpineRole()
+
+	if not var_1_0 then
 		arg_1_3()
 
 		return
 	end
 
-	local var_1_0 = arg_1_0.contextData.chapterVO
-	local var_1_1 = var_4
-	local var_1_2 = var_4.SetAction
+	local var_1_2 = var_1_0
 
 	if arg_1_2 then
-		ChapterConst = var_1_10009
+		local var_1_4 = ChapterConst.ShipSwimAction or ChapterConst.ShipIdleAction
 
-		if not var_1_10009.ShipSwimAction then
-			ChapterConst = var_1_10009
-			var_1_10009 = var_1_10009.ShipIdleAction
-		end
-
-		var_1_2(var_1_1, var_1_10009)
+		var_1_3(var_1_2, var_1_4)
 		arg_1_1:PlayShuiHua()
 
-		local var_1_3 = var_1_0:GetQuickPlayFlag() and 0.1 or 0.3
-		local var_1_4 = arg_1_2 and 1 or 0
-		local var_1_5 = arg_1_2 and 0 or 1
+		local var_1_5 = var_1_1:GetQuickPlayFlag() and 0.1 or 0.3
+		local var_1_6 = arg_1_2 and 1 or 0
+		local var_1_7 = arg_1_2 and 0 or 1
 
 		arg_1_0:frozen()
-
-		local var_1_6 = var_4
-		local var_1_7 = var_4.TweenShining
-		local var_1_8 = var_1_3
-		local var_1_9
-		local var_1_10 = var_1_4
-		local var_1_11 = var_1_5
-
-		Color = var_1_10016
-
-		local var_1_12 = var_1_10016.New(1, 1, 1, 0)
-
-		Color = var_1_10017
-
-		var_1_7(var_1_6, var_1_8, var_1_9, var_1_10, var_1_11, var_1_12, var_1_10017.New(1, 1, 1, 1), false, false, function(arg_2_0)
-			IsNil = var_2_10001
-
-			if not var_2_10001(arg_1_1.tfAmmo) then
-				local var_2_0 = arg_1_1.tfAmmo
-
-				Vector2 = var_2_10002
-				var_2_0.anchoredPosition = var_2_10002.Lerp(var_0_2, var_0_1, arg_2_0)
+		var_1_0:TweenShining(var_1_5, nil, var_1_6, var_1_7, Color.New(1, 1, 1, 0), Color.New(1, 1, 1, 1), false, false, function(arg_2_0)
+			if not IsNil(arg_1_1.tfAmmo) then
+				arg_1_1.tfAmmo.anchoredPosition = Vector2.Lerp(var_0_2, var_0_1, arg_2_0)
 			end
 
 			return
@@ -73,13 +41,8 @@ function var_0_0.PlaySubAnimation(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 				return
 			end
 
-			local var_3_0 = arg_1_0
-
-			var_0.unfrozen(var_3_0)
-
-			local var_3_1 = arg_1_1
-
-			var_0.SetActiveModel(var_3_1, not arg_1_2)
+			arg_1_0:unfrozen()
+			arg_1_1:SetActiveModel(not arg_1_2)
 
 			if arg_1_3 then
 				arg_1_3()
@@ -95,70 +58,43 @@ end
 function var_0_0.TeleportCellByPortalWithCameraMove(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4)
 	local var_4_0
 
-	local function var_4_1(arg_5_0)
-		var_4_0 = arg_5_0
-
-		return
-	end
-
-	local function var_4_2(arg_6_0)
-		local var_6_0 = arg_4_0
-
-		var_1.TeleportFleetByPortal(var_6_0, arg_4_2, arg_4_3, function()
-			local var_7_0 = arg_4_0
-
-			var_0.focusOnCell(var_7_0, arg_4_1.line, var_4_0)
+	parallelAsync({
+		function(arg_5_0)
+			var_4_0 = arg_5_0
 
 			return
-		end, arg_6_0)
+		end,
+		function(arg_6_0)
+			arg_4_0:TeleportFleetByPortal(arg_4_2, arg_4_3, function()
+				arg_4_0:focusOnCell(arg_4_1.line, var_4_0)
 
-		return
-	end
+				return
+			end, arg_6_0)
 
-	parallelAsync = var_1_10008
-
-	var_1_10008({
-		var_4_1,
-		var_4_2
+			return
+		end
 	}, arg_4_4)
 
 	return
 end
 
 function var_0_0.TeleportFleetByPortal(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8_4)
-	local var_8_0 = arg_8_0.contextData.chapterVO
-	local var_8_1 = arg_8_2[1]
-	local var_8_2 = arg_8_2[2]
-
-	if not var_8_1 or not var_8_2 then
+	if not arg_8_2[1] or not arg_8_2[2] then
 		arg_8_4()
 
 		return
 	end
 
-	if not arg_8_1:GetSpineRole() then
+	local var_8_1 = arg_8_1:GetSpineRole()
+
+	if not var_8_1 then
 		arg_8_4()
 
 		return
 	end
 
 	arg_8_0:frozen()
-
-	local var_8_3 = var_8_0:GetQuickPlayFlag() and 0.1 or 0.3
-	local var_8_4 = var_8
-	local var_8_5 = var_8.TweenShining
-	local var_8_6 = var_8_3
-	local var_8_7
-	local var_8_8 = 1
-	local var_8_9 = 0
-
-	Color = var_1_10017
-
-	local var_8_10 = var_1_10017.New(1, 1, 1, 0)
-
-	Color = var_1_10018
-
-	var_8_5(var_8_4, var_8_6, var_8_7, var_8_8, var_8_9, var_8_10, var_1_10018.New(1, 1, 1, 1), false, false, nil, function()
+	var_8_1:TweenShining(var_8_0:GetQuickPlayFlag() and 0.1 or 0.3, nil, 1, 0, Color.New(1, 1, 1, 0), Color.New(1, 1, 1, 1), false, false, nil, function()
 		if arg_8_0.exited then
 			return
 		end
@@ -167,38 +103,14 @@ function var_0_0.TeleportFleetByPortal(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8
 			arg_8_3()
 		end
 
-		local var_9_0 = arg_8_0
-		local var_9_1 = var_0.updateFleet
-
-		table = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.indexof(arg_8_0.cellFleets, arg_8_1))
-
-		local var_9_2 = var_0
-		local var_9_3 = var_0.TweenShining
-		local var_9_4 = var_8_3
-		local var_9_5
-		local var_9_6 = 0
-		local var_9_7 = 1
-
-		Color = var_2_10007
-
-		local var_9_8 = var_2_10007.New(1, 1, 1, 0)
-
-		Color = var_2_10008
-
-		var_9_3(var_9_2, var_9_4, var_9_5, var_9_6, var_9_7, var_9_8, var_2_10008.New(1, 1, 1, 1), false, false, nil, function()
+		arg_8_0:updateFleet(table.indexof(arg_8_0.cellFleets, arg_8_1))
+		var_8_1:TweenShining(var_0, nil, 0, 1, Color.New(1, 1, 1, 0), Color.New(1, 1, 1, 1), false, false, nil, function()
 			if arg_8_0.exited then
 				return
 			end
 
-			local var_10_0 = arg_8_0
-
-			var_0.unfrozen(var_10_0)
-
-			existCall = var_0
-
-			var_0(arg_8_4)
+			arg_8_0:unfrozen()
+			existCall(arg_8_4)
 
 			return
 		end)
@@ -210,93 +122,44 @@ function var_0_0.TeleportFleetByPortal(arg_8_0, arg_8_1, arg_8_2, arg_8_3, arg_8
 end
 
 function var_0_0.adjustCameraFocus(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0.contextData.chapterVO.fleets[var_2.findex].id
-
-	if arg_11_0.cellFleets[var_11_0] then
-		arg_11_0:cameraFocus(var_4.tf.position, arg_11_1)
+	if arg_11_0.cellFleets[arg_11_0.contextData.chapterVO.fleets[arg_11_0.contextData.chapterVO.findex].id] then
+		arg_11_0:cameraFocus(arg_11_0.cellFleets[arg_11_0.contextData.chapterVO.fleets[arg_11_0.contextData.chapterVO.findex].id].tf.position, arg_11_1)
 	else
-		existCall = var_1_10005
-
-		var_1_10005(arg_11_1)
+		existCall(arg_11_1)
 	end
 
 	return
 end
 
 function var_0_0.focusOnCell(arg_12_0, arg_12_1, arg_12_2)
-	ChapterCell = var_1_10003
-
-	local var_12_0 = var_1_10003.Line2Name(arg_12_1.row, arg_12_1.column)
-	local var_12_1 = arg_12_0.cellRoot
-	local var_12_2 = var_4.Find(var_12_1, var_12_0)
-
-	arg_12_0:cameraFocus(var_12_2.position, arg_12_2)
+	arg_12_0:cameraFocus(arg_12_0.cellRoot:Find((ChapterCell.Line2Name(arg_12_1.row, arg_12_1.column))).position, arg_12_2)
 
 	return
 end
 
 function var_0_0.cameraFocus(arg_13_0, arg_13_1, arg_13_2)
-	local var_13_0 = arg_13_0.contextData.chapterVO.theme
-	local var_13_1 = arg_13_0._tf
-	local var_13_2 = var_5.Find
+	local var_13_0 = arg_13_0._tf:Find(ChapterConst.PlaneName)
 
-	ChapterConst = var_1_10008
+	assert(var_13_0, "plane not exist.")
+	LeanTween.cancel(arg_13_0._tf.gameObject, true)
 
-	local var_13_3 = var_13_2(var_13_1, var_1_10008.PlaneName)
+	local var_13_1 = arg_13_0._tf.parent:InverseTransformVector(arg_13_1 - var_13_0.position)
 
-	assert = var_1_10006
+	var_13_1.x = var_13_1.x + var_13_0.localPosition.x
+	var_13_1.y = var_13_1.y + var_13_0.localPosition.y - var_13_0.localPosition.z * math.tan(math.pi / 180 * arg_13_0.contextData.chapterVO.theme.angle)
+	var_13_1.x = math.clamp(-var_13_1.x, arg_13_0.leftBound, arg_13_0.rightBound)
+	var_13_1.y = math.clamp(-var_13_1.y, arg_13_0.bottomBound, arg_13_0.topBound)
+	var_13_1.z = 0
+	arg_13_0.dragTrigger.enabled = false
 
-	var_1_10006(var_13_3, "plane not exist.")
-
-	LeanTween = var_1_10006
-
-	var_1_10006.cancel(arg_13_0._tf.gameObject, true)
-
-	local var_13_4 = arg_13_0._tf.parent
-
-	var_6.x = var_6.InverseTransformVector(var_13_4, arg_13_1 - var_13_3.position).x + var_13_3.localPosition.x
-
-	local var_13_5 = var_6.y + var_13_3.localPosition.y
-	local var_13_6 = var_13_3.localPosition.z
-
-	math = var_9
-
-	local var_13_7 = var_9.tan
-
-	math = var_1_10011
-	var_6.y = var_13_5 - var_13_6 * var_13_7(var_1_10011.pi / 180 * var_13_0.angle)
-	math = var_7
-	var_6.x = var_7.clamp(-var_6.x, arg_13_0.leftBound, arg_13_0.rightBound)
-	math = var_7
-	var_6.y = var_7.clamp(-var_6.y, arg_13_0.bottomBound, arg_13_0.topBound)
-	var_6.z = 0
-
-	local var_13_8 = arg_13_0.dragTrigger
-
-	var_13_8.enabled = false
-	LeanTween = var_13_8
-
-	local var_13_9 = var_13_8.moveLocal(arg_13_0._tf.gameObject, var_6, 0.4)
-	local var_13_10 = var_7.setEase
-
-	LeanTweenType = var_10
-
-	local var_13_11 = var_13_10(var_13_9, var_10.easeInOutSine)
-	local var_13_12 = var_7.setOnComplete
-
-	System = var_10
-
-	var_13_12(var_13_11, var_10.Action(function()
+	LeanTween.moveLocal(arg_13_0._tf.gameObject, var_13_1, 0.4):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
 		if arg_13_0.exited then
 			return
 		end
 
-		local var_14_0 = arg_13_0.dragTrigger
+		arg_13_0.dragTrigger.enabled = true
 
-		var_14_0.enabled = true
-		existCall = var_14_0
-
-		var_14_0(arg_13_2)
+		existCall(arg_13_2)
 
 		return
 	end))
@@ -305,9 +168,9 @@ function var_0_0.cameraFocus(arg_13_0, arg_13_1, arg_13_2)
 end
 
 function var_0_0.PlayChampionSubmarineAnimation(arg_15_0, arg_15_1, arg_15_2, arg_15_3)
-	local var_15_0 = arg_15_0.contextData.chapterVO
+	local var_15_0 = arg_15_0.contextData.chapterVO:getChampionIndex(arg_15_1.row, arg_15_1.column)
 
-	if not var_4.getChampionIndex(var_15_0, arg_15_1.row, arg_15_1.column) or var_5 <= 0 then
+	if not var_15_0 or var_15_0 <= 0 then
 		if arg_15_3 then
 			arg_15_3()
 		end
@@ -315,7 +178,9 @@ function var_0_0.PlayChampionSubmarineAnimation(arg_15_0, arg_15_1, arg_15_2, ar
 		return
 	end
 
-	if not arg_15_0.cellChampions[var_5] then
+	local var_15_1 = arg_15_0.cellChampions[var_15_0]
+
+	if not arg_15_0.cellChampions[var_15_0] then
 		if arg_15_3 then
 			arg_15_3()
 		end
@@ -323,74 +188,33 @@ function var_0_0.PlayChampionSubmarineAnimation(arg_15_0, arg_15_1, arg_15_2, ar
 		return
 	end
 
-	arg_15_0:PlaySubAnimation(var_6, arg_15_2, arg_15_3)
+	arg_15_0:PlaySubAnimation(var_15_1, arg_15_2, arg_15_3)
 
 	return
 end
 
 function var_0_0.shakeCell(arg_16_0, arg_16_1, arg_16_2)
-	local var_16_0 = arg_16_0.contextData.chapterVO
-	local var_16_1
-	local var_16_2 = var_16_0
-	local var_16_3 = var_16_0.getChampion(var_16_2, arg_16_1.row, arg_16_1.column)
-	local var_16_4 = var_16_0
-	local var_16_5 = var_16_0.getChapterCell(var_16_4, arg_16_1.row, arg_16_1.column)
+	local var_16_0
+	local var_16_1 = arg_16_0.contextData.chapterVO:getChampion(arg_16_1.row, arg_16_1.column)
 
-	if var_16_3 then
-		var_16_2 = var_16_3.flag
-		ChapterConst = var_16_4
+	if var_16_1 and var_16_1.flag == ChapterConst.CellFlagActive then
+		var_16_0 = arg_16_0.cellChampions[arg_16_0.contextData.chapterVO:getChampionIndex(arg_16_1.row, arg_16_1.column)].tf
+	elseif ChapterConst.IsEnemyAttach(arg_16_0.contextData.chapterVO:getChapterCell(arg_16_1.row, arg_16_1.column).attachment) then
+		var_16_0 = arg_16_0.attachmentCells[ChapterCell.Line2Name(arg_16_1.row, arg_16_1.column)].tf
+	else
+		existCall(arg_16_2)
 
-		if var_16_2 == var_16_4.CellFlagActive then
-			var_16_2 = var_16_0:getChampionIndex(arg_16_1.row, arg_16_1.column)
-			var_16_1 = arg_16_0.cellChampions[var_16_2].tf
-
-			goto label_16_0
-		end
+		return
 	end
 
-	ChapterConst = var_16_2
+	local var_16_2 = var_16_0.localPosition.x
 
-	do
-		local var_16_6
+	var_16_0.localPosition.x = var_16_0.localPosition.x + 10
+	var_16_0.localPosition = var_16_0.localPosition
 
-		if var_16_2.IsEnemyAttach(var_16_5.attachment) then
-			ChapterCell = var_16_6
-			var_16_6 = var_16_6.Line2Name(arg_16_1.row, arg_16_1.column)
-			var_16_1 = arg_16_0.attachmentCells[var_16_6].tf
-		else
-			existCall = var_16_6
-
-			var_16_6(arg_16_2)
-
-			return
-		end
-	end
-
-	::label_16_0::
-
-	local var_16_7 = var_16_1.localPosition.x
-	local var_16_8 = var_16_1.localPosition
-
-	var_16_8.x = var_16_7 + 10
-	var_16_1.localPosition = var_16_8
-	LeanTween = var_9
-
-	local var_16_9 = var_9.moveX(var_16_1, var_16_7 - 10, 0.05)
-	local var_16_10 = var_9.setEase
-
-	LeanTweenType = var_12
-
-	local var_16_11 = var_16_10(var_16_9, var_12.easeInOutSine)
-	local var_16_12 = var_9.setLoopPingPong(var_16_11, 3)
-	local var_16_13 = var_9.setOnComplete
-
-	System = var_12
-
-	var_16_13(var_16_12, var_12.Action(function()
-		local var_17_0 = var_16_1.localPosition
-
-		var_17_0.x = var_16_7
-		var_16_1.localPosition = var_17_0
+	LeanTween.moveX(var_16_0, var_16_2 - 10, 0.05):setEase(LeanTweenType.easeInOutSine):setLoopPingPong(3):setOnComplete(System.Action(function()
+		var_16_0.localPosition.x = var_16_2
+		var_16_0.localPosition = var_16_0.localPosition
 
 		if arg_16_2 then
 			arg_16_2()
@@ -398,58 +222,23 @@ function var_0_0.shakeCell(arg_16_0, arg_16_1, arg_16_2)
 
 		return
 	end))
+	arg_16_0:PlayAttachmentEffect(arg_16_1.row, arg_16_1.column, "huoqiubaozha", Vector2.zero)
 
-	local var_16_14 = arg_16_0
-	local var_16_15 = arg_16_0.PlayAttachmentEffect
-	local var_16_16 = arg_16_1.row
-	local var_16_17 = arg_16_1.column
-	local var_16_18 = "huoqiubaozha"
-
-	Vector2 = var_1_10015
-
-	var_16_15(var_16_14, var_16_16, var_16_17, var_16_18, var_1_10015.zero)
-
-	return var_16_1
+	return var_16_0
 end
 
 function var_0_0.PlayShellFx(arg_18_0, arg_18_1, arg_18_2)
-	ChapterCell = var_1_10003
+	local var_18_0 = arg_18_0.cellRoot:Find((ChapterCell.Line2Name(arg_18_1.row, arg_18_1.column))):Find(ChapterConst.ChildAttachment)
+	local var_18_1 = arg_18_1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityUpperEffect
+	local var_18_2
 
-	local var_18_0 = var_1_10003.Line2Name(arg_18_1.row, arg_18_1.column)
-	local var_18_1 = arg_18_0.cellRoot
-	local var_18_2 = var_4.Find(var_18_1, var_18_0)
-	local var_18_3 = var_4.Find
-
-	ChapterConst = var_1_10008
-
-	local var_18_4 = var_18_3(var_18_2, var_1_10008.ChildAttachment)
-	local var_18_5 = arg_18_1.row
-
-	ChapterConst = var_18_2
-
-	local var_18_6 = var_18_5 * var_18_2.PriorityPerRow
-
-	ChapterConst = var_7
-
-	local var_18_7 = var_18_6 + var_7.CellPriorityUpperEffect
-	local var_18_8
-
-	seriesAsync = var_8
-
-	var_8({
+	seriesAsync({
 		function(arg_19_0)
-			local var_19_0 = arg_18_0.loader
+			arg_18_0.loader:GetPrefab("effect/ATdun_full_SLG", "ATdun_full_SLG", function(arg_20_0)
+				setParent(arg_20_0, var_18_0)
+				pg.ViewUtils.SetSortingOrder(arg_20_0, var_18_1)
 
-			var_1.GetPrefab(var_19_0, "effect/ATdun_full_SLG", "ATdun_full_SLG", function(arg_20_0)
-				setParent = var_3_10001
-
-				var_3_10001(arg_20_0, var_18_4)
-
-				pg = var_3_10001
-
-				var_3_10001.ViewUtils.SetSortingOrder(arg_20_0, var_18_7)
-
-				var_18_8 = arg_20_0
+				var_18_2 = arg_20_0
 
 				arg_19_0()
 
@@ -459,11 +248,7 @@ function var_0_0.PlayShellFx(arg_18_0, arg_18_1, arg_18_2)
 			return
 		end,
 		function(arg_21_0)
-			Timer = var_2_10001
-
-			local var_21_0 = var_2_10001.New(arg_21_0, 1, nil, true)
-
-			var_1.Start(var_21_0)
+			Timer.New(arg_21_0, 1, nil, true):Start()
 
 			return
 		end,
@@ -472,13 +257,8 @@ function var_0_0.PlayShellFx(arg_18_0, arg_18_1, arg_18_2)
 				return
 			end
 
-			local var_22_0 = arg_18_0.loader
-
-			var_1.ReturnPrefab(var_22_0, var_18_8)
-
-			existCall = var_1
-
-			var_1(arg_18_2)
+			arg_18_0.loader:ReturnPrefab(var_18_2)
+			existCall(arg_18_2)
 
 			return
 		end
@@ -488,49 +268,20 @@ function var_0_0.PlayShellFx(arg_18_0, arg_18_1, arg_18_2)
 end
 
 function var_0_0.PlayMissileExplodAnim(arg_23_0, arg_23_1, arg_23_2)
-	ChapterCell = var_1_10003
+	local var_23_0 = arg_23_0.cellRoot:Find((ChapterCell.Line2Name(arg_23_1.row, arg_23_1.column))):Find(ChapterConst.ChildAttachment)
+	local var_23_1 = arg_23_1.row * ChapterConst.PriorityPerRow + ChapterConst.CellPriorityAttachment
+	local var_23_2
+	local var_23_3
+	local var_23_4
 
-	local var_23_0 = var_1_10003.Line2Name(arg_23_1.row, arg_23_1.column)
-	local var_23_1 = arg_23_0.cellRoot
-	local var_23_2 = var_4.Find(var_23_1, var_23_0)
-	local var_23_3 = var_4.Find
-
-	ChapterConst = var_1_10008
-
-	local var_23_4 = var_23_3(var_23_2, var_1_10008.ChildAttachment)
-	local var_23_5 = arg_23_1.row
-
-	ChapterConst = var_23_2
-
-	local var_23_6 = var_23_5 * var_23_2.PriorityPerRow
-
-	ChapterConst = var_7
-
-	local var_23_7 = var_23_6 + var_7.CellPriorityAttachment
-	local var_23_8
-	local var_23_9
-	local var_23_10
-
-	parallelAsync = var_1_10010
-
-	var_1_10010({
+	parallelAsync({
 		function(arg_24_0)
-			local var_24_0 = arg_23_0.loader
+			arg_23_0.loader:GetPrefab("effect/dexiv4_SLG_missile", "dexiv4_SLG_missile", function(arg_25_0)
+				setParent(arg_25_0, var_23_0)
+				setActive(arg_25_0, false)
+				pg.ViewUtils.SetSortingOrder(arg_25_0, var_23_1)
 
-			var_1.GetPrefab(var_24_0, "effect/dexiv4_SLG_missile", "dexiv4_SLG_missile", function(arg_25_0)
-				setParent = var_3_10001
-
-				var_3_10001(arg_25_0, var_23_4)
-
-				setActive = var_3_10001
-
-				var_3_10001(arg_25_0, false)
-
-				pg = var_3_10001
-
-				var_3_10001.ViewUtils.SetSortingOrder(arg_25_0, var_23_7)
-
-				var_23_8 = arg_25_0
+				var_23_2 = arg_25_0
 
 				arg_24_0()
 
@@ -540,22 +291,12 @@ function var_0_0.PlayMissileExplodAnim(arg_23_0, arg_23_1, arg_23_2)
 			return
 		end,
 		function(arg_26_0)
-			local var_26_0 = arg_23_0.loader
+			arg_23_0.loader:GetPrefab("effect/ShellHitBlue", "ShellHitBlue", function(arg_27_0)
+				setParent(arg_27_0, var_23_0)
+				setActive(arg_27_0, false)
+				pg.ViewUtils.SetSortingOrder(arg_27_0, var_23_1)
 
-			var_1.GetPrefab(var_26_0, "effect/ShellHitBlue", "ShellHitBlue", function(arg_27_0)
-				setParent = var_3_10001
-
-				var_3_10001(arg_27_0, var_23_4)
-
-				setActive = var_3_10001
-
-				var_3_10001(arg_27_0, false)
-
-				pg = var_3_10001
-
-				var_3_10001.ViewUtils.SetSortingOrder(arg_27_0, var_23_7)
-
-				var_23_9 = arg_27_0
+				var_23_3 = arg_27_0
 
 				arg_26_0()
 
@@ -565,96 +306,38 @@ function var_0_0.PlayMissileExplodAnim(arg_23_0, arg_23_1, arg_23_2)
 			return
 		end
 	}, function()
-		seriesAsync = var_2_10000
-
-		var_2_10000({
+		seriesAsync({
 			function(arg_29_0)
-				Vector3 = var_3_10001
+				local var_29_0 = Vector3(150, 600)
 
-				local var_29_0 = var_3_10001(150, 600)
+				setLocalPosition(var_23_2, var_29_0)
 
-				setLocalPosition = var_3_10002
+				tf(var_23_2).localRotation = Quaternion.FromToRotation(Vector3.right, -var_29_0)
 
-				var_3_10002(var_23_8, var_29_0)
+				setActive(var_23_2, true)
 
-				tf = var_3_10002
-
-				local var_29_1 = var_3_10002(var_23_8)
-
-				Quaternion = var_3
-
-				local var_29_2 = var_3.FromToRotation
-
-				Vector3 = var_5
-				var_29_1.localRotation = var_29_2(var_5.right, -var_29_0)
-				setActive = var_29_1
-
-				var_29_1(var_23_8, true)
-
-				LeanTween = var_29_1
-
-				local var_29_3 = var_29_1.moveLocal
-
-				go = var_4
-
-				local var_29_4 = var_4(var_23_8)
-
-				Vector3 = var_5
-
-				local var_29_5 = var_29_3(var_29_4, var_5.zero, 0.7)
-				local var_29_6 = var_2.setEase
-
-				LeanTweenType = var_5
-
-				local var_29_7 = var_29_6(var_29_5, var_5.easeInOutSine)
-				local var_29_8 = var_2.setOnComplete
-
-				System = var_5
-				var_23_10 = var_29_8(var_29_7, var_5.Action(arg_29_0)).id
-				arg_23_0.tweens[var_23_10] = true
+				var_23_4 = LeanTween.moveLocal(go(var_23_2), Vector3.zero, 0.7):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_29_0)).id
+				arg_23_0.tweens[var_23_4] = true
 
 				return
 			end,
 			function(arg_30_0)
-				arg_23_0.tweens[var_23_10] = nil
+				arg_23_0.tweens[var_23_4] = nil
 
-				local var_30_0 = arg_23_0.loader
+				arg_23_0.loader:ReturnPrefab(var_23_2)
 
-				var_1.ReturnPrefab(var_30_0, var_23_8)
+				var_23_2 = nil
 
-				var_23_8 = nil
-				setActive = var_1
+				setActive(var_23_3, true)
+				setLocalScale(var_23_3, Vector3.one)
 
-				var_1(var_23_9, true)
+				local var_30_0 = go(var_23_3):GetComponent(typeof(ParticleSystemEvent))
 
-				setLocalScale = var_1
+				go(var_23_3):GetComponent(typeof(ParticleSystemEvent)):SetEndEvent(function(arg_31_0)
+					var_30_0:SetEndEvent(nil)
+					arg_23_0.loader:ReturnPrefab(var_23_3)
 
-				local var_30_1 = var_23_9
-
-				Vector3 = var_4
-
-				var_1(var_30_1, var_4.one)
-
-				go = var_1
-
-				local var_30_2 = var_1(var_23_9)
-				local var_30_3 = var_1.GetComponent
-
-				typeof = var_4
-				ParticleSystemEvent = var_3_10006
-
-				local var_30_4 = var_30_3(var_30_2, var_4(var_3_10006))
-
-				var_1.SetEndEvent(var_30_4, function(arg_31_0)
-					local var_31_0 = var_0
-
-					var_1.SetEndEvent(var_31_0, nil)
-
-					local var_31_1 = arg_23_0.loader
-
-					var_1.ReturnPrefab(var_31_1, var_23_9)
-
-					var_23_9 = nil
+					var_23_3 = nil
 
 					return
 				end)
@@ -672,81 +355,41 @@ function var_0_0.PlayMissileExplodAnim(arg_23_0, arg_23_1, arg_23_2)
 end
 
 function var_0_0.PlaySonarDetectAnim(arg_32_0, arg_32_1, arg_32_2)
-	existCall = var_1_10003
-
-	var_1_10003(arg_32_2)
+	existCall(arg_32_2)
 
 	return
 end
 
 function var_0_0.PlayAttachmentEffect(arg_33_0, arg_33_1, arg_33_2, arg_33_3, arg_33_4, arg_33_5)
-	ChapterCell = var_1_10006
+	local var_33_0 = arg_33_0.cellRoot:Find((ChapterCell.Line2Name(arg_33_1, arg_33_2)))
 
-	local var_33_0 = var_1_10006.Line2Name(arg_33_1, arg_33_2)
-	local var_33_1 = arg_33_0.cellRoot
-
-	if not var_7.Find(var_33_1, var_33_0) then
-		existCall = var_8
-
-		var_8(arg_33_5)
+	if not var_33_0 then
+		existCall(arg_33_5)
 
 		return
 	end
 
-	local var_33_2 = var_7
-	local var_33_3 = var_7.Find
-
-	ChapterConst = var_1_10011
-
-	local var_33_4 = var_33_3(var_33_2, var_1_10011.ChildAttachment)
-
-	arg_33_0:PlayParticleSystem(arg_33_3, var_33_4, arg_33_4, arg_33_5)
+	arg_33_0:PlayParticleSystem(arg_33_3, var_33_0:Find(ChapterConst.ChildAttachment), arg_33_4, arg_33_5)
 
 	return
 end
 
 function var_0_0.PlayParticleSystem(arg_34_0, arg_34_1, arg_34_2, arg_34_3, arg_34_4)
-	local var_34_0 = arg_34_0.loader
-
-	var_5.GetPrefab(var_34_0, "effect/" .. arg_34_1, arg_34_1, function(arg_35_0)
-		setParent = var_2_10001
-
-		var_2_10001(arg_35_0, arg_34_2)
+	arg_34_0.loader:GetPrefab("effect/" .. arg_34_1, arg_34_1, function(arg_35_0)
+		setParent(arg_35_0, arg_34_2)
 
 		if arg_34_3 then
-			tf = var_1
-			var_1(arg_35_0).localPosition = arg_34_3
+			tf(arg_35_0).localPosition = arg_34_3
 		end
 
-		local var_35_0 = arg_35_0
-		local var_35_1 = arg_35_0.GetComponent
+		arg_35_0:GetComponent(typeof(ParticleSystem)):Play()
 
-		typeof = var_4
-		ParticleSystem = var_2_10006
+		local var_35_0 = arg_35_0:GetComponent(typeof(ParticleSystemEvent))
 
-		local var_35_2 = var_35_1(var_35_0, var_4(var_2_10006))
-
-		var_1.Play(var_35_2)
-
-		local var_35_3 = arg_35_0
-		local var_35_4 = arg_35_0.GetComponent
-
-		typeof = var_4
-		ParticleSystemEvent = var_2_10006
-
-		local var_35_5 = var_35_4(var_35_3, var_4(var_2_10006))
-
-		IsNil = var_2_10002
-
-		if not var_2_10002(var_35_5) then
-			var_35_5:SetEndEvent(function(arg_36_0)
-				local var_36_0 = arg_34_0.loader
-
-				var_1.ReturnPrefab(var_36_0, arg_35_0)
-
-				existCall = var_1
-
-				var_1(arg_34_4)
+		if not IsNil(var_35_0) then
+			var_35_0:SetEndEvent(function(arg_36_0)
+				arg_34_0.loader:ReturnPrefab(arg_35_0)
+				existCall(arg_34_4)
 
 				return
 			end)

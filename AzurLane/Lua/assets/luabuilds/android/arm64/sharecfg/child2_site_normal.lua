@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child2_site_normal") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child2_site_normal"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child2_site_normal = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child2_site_normal
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child2_site_normal = rawget(pg, "child2_site_normal") or setmetatable({
+	__name = "child2_site_normal"
+}, confNEO)
+pg.child2_site_normal.all = {
 	1,
 	2,
 	3,
@@ -39,11 +16,7 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.child2_site_normal
-
-var_0_4.get_id_list_by_character = {
+pg.child2_site_normal.get_id_list_by_character = {
 	{
 		1,
 		2,
@@ -61,25 +34,11 @@ var_0_4.get_id_list_by_character = {
 		12
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.child2_site_normal = {}
+pg.base = pg.base or {}
+pg.base.child2_site_normal = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child2_site_normal
-
-	var_1_0[1] = {
+	pg.base.child2_site_normal[1] = {
 		site_lv = 1,
 		type = 1,
 		title = "生活体验LV1（获得80金钱）",
@@ -110,11 +69,7 @@ var_0_4.base.child2_site_normal = {}
 			"oceana_ditudagong_3"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child2_site_normal
-
-	var_1_1[2] = {
+	pg.base.child2_site_normal[2] = {
 		site_lv = 2,
 		type = 1,
 		title = "生活体验LV2（获得120金钱）",
@@ -145,11 +100,7 @@ var_0_4.base.child2_site_normal = {}
 			"oceana_ditudagong_3"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child2_site_normal
-
-	var_1_2[3] = {
+	pg.base.child2_site_normal[3] = {
 		site_lv = 3,
 		type = 1,
 		title = "生活体验LV3（获得200金钱）",
@@ -175,11 +126,7 @@ var_0_4.base.child2_site_normal = {}
 			"oceana_ditudagong_3"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child2_site_normal
-
-	var_1_3[4] = {
+	pg.base.child2_site_normal[4] = {
 		site_lv = 1,
 		type = 2,
 		title = "外出旅游LV1（获得6心情）",
@@ -210,11 +157,7 @@ var_0_4.base.child2_site_normal = {}
 			"oceana_lvyou_3"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child2_site_normal
-
-	var_1_4[5] = {
+	pg.base.child2_site_normal[5] = {
 		site_lv = 2,
 		type = 2,
 		title = "外出旅游LV2（获得10心情）",
@@ -245,11 +188,7 @@ var_0_4.base.child2_site_normal = {}
 			"oceana_lvyou_3"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child2_site_normal
-
-	var_1_5[6] = {
+	pg.base.child2_site_normal[6] = {
 		site_lv = 3,
 		type = 2,
 		title = "外出旅游LV3（获得18心情）",
@@ -275,11 +214,7 @@ var_0_4.base.child2_site_normal = {}
 			"oceana_lvyou_3"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child2_site_normal
-
-	var_1_6[7] = {
+	pg.base.child2_site_normal[7] = {
 		site_lv = 1,
 		type = 1,
 		title = "生活体验LV1（获得80金钱）",
@@ -310,11 +245,7 @@ var_0_4.base.child2_site_normal = {}
 			"explorer_ditudagong_3"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child2_site_normal
-
-	var_1_7[8] = {
+	pg.base.child2_site_normal[8] = {
 		site_lv = 2,
 		type = 1,
 		title = "生活体验LV2（获得120金钱）",
@@ -345,11 +276,7 @@ var_0_4.base.child2_site_normal = {}
 			"explorer_ditudagong_3"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child2_site_normal
-
-	var_1_8[9] = {
+	pg.base.child2_site_normal[9] = {
 		site_lv = 3,
 		type = 1,
 		title = "生活体验LV3（获得200金钱）",
@@ -375,11 +302,7 @@ var_0_4.base.child2_site_normal = {}
 			"explorer_ditudagong_3"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child2_site_normal
-
-	var_1_9[10] = {
+	pg.base.child2_site_normal[10] = {
 		site_lv = 1,
 		type = 2,
 		title = "外出旅游LV1（获得6心情）",
@@ -410,11 +333,7 @@ var_0_4.base.child2_site_normal = {}
 			"explorer_ditulvyou_3"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child2_site_normal
-
-	var_1_10[11] = {
+	pg.base.child2_site_normal[11] = {
 		site_lv = 2,
 		type = 2,
 		title = "外出旅游LV2（获得10心情）",
@@ -445,8 +364,7 @@ var_0_4.base.child2_site_normal = {}
 			"explorer_ditulvyou_3"
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.child2_site_normal[12] = {
+	pg.base.child2_site_normal[12] = {
 		site_lv = 3,
 		type = 2,
 		title = "外出旅游LV3（获得18心情）",

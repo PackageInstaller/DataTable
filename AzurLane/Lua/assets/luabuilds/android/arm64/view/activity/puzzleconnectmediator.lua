@@ -1,31 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PuzzleConnectMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "PuzzleConnectMediator"
+var_0_0.CMD_ACTIVITY = "PuzzleConnectMediator:cmd_activity"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.CMD_ACTIVITY = "PuzzleConnectMediator:cmd_activity"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.CMD_ACTIVITY, function(arg_2_0, arg_2_1)
-		getProxy = var_2_10002
-		ActivityProxy = var_2_10004
-
-		local var_2_0 = var_2_10002(var_2_10004)
-		local var_2_1 = var_2.getActivityByType
-
-		ActivityConst = var_2_10005
-
-		local var_2_2 = var_2_1(var_2_0, var_2_10005.ACTIVITY_TYPE_PUZZLE_CONNECT)
-		local var_2_3 = arg_1_0
-		local var_2_4 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_4(var_2_3, var_2_10006.ACTIVITY_OPERATION, {
-			activity_id = var_2_2.id,
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.CMD_ACTIVITY, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.ACTIVITY_OPERATION, {
+			activity_id = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLE_CONNECT).id,
 			cmd = arg_2_1.index,
 			arg1 = arg_2_1.config_id
 		})
@@ -36,131 +16,76 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	local var_3_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_3_0[1] = var_1_10002.ACTIVITY_OPERATION_DONE
-	ActivityProxy = var_2
-	var_3_0[2] = var_2.ACTIVITY_SHOW_AWARDS
-
-	return var_3_0
+function var_0_0.listNotificationInterests(arg_3_0)
+	return {
+		ActivityProxy.ACTIVITY_OPERATION_DONE,
+		ActivityProxy.ACTIVITY_SHOW_AWARDS
+	}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getName(var_4_0)
-	local var_4_2 = arg_4_1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getName()
+	local var_4_1 = arg_4_1:getBody()
 
-	ActivityProxy = var_4_0
-
-	if var_4_1 == var_4_0.ACTIVITY_OPERATION_DONE then
-		local var_4_3 = arg_4_0.viewComponent
-
-		var_4.updateActivity(var_4_3)
-	else
-		ActivityProxy = var_4
-
-		if var_4_1 == var_4.ACTIVITY_SHOW_AWARDS then
-			local var_4_4 = arg_4_0.viewComponent
-			local var_4_5 = var_4.emit
-
-			BaseUI = var_1_10007
-
-			var_4_5(var_4_4, var_1_10007.ON_ACHIEVE, var_4_2.awards, var_4_2.callback)
-		end
+	if var_4_0 == ActivityProxy.ACTIVITY_OPERATION_DONE then
+		arg_4_0.viewComponent:updateActivity()
+	elseif var_4_0 == ActivityProxy.ACTIVITY_SHOW_AWARDS then
+		arg_4_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_4_1.awards, var_4_1.callback)
 	end
 
 	return
 end
 
-var_0_1.state_collection = 1
-var_0_1.state_puzzle = 2
-var_0_1.state_connection = 3
-var_0_1.state_complete = 4
+var_0_0.state_collection = 1
+var_0_0.state_puzzle = 2
+var_0_0.state_connection = 3
+var_0_0.state_complete = 4
 
-function var_0_1.GetPuzzleActivityState(arg_5_0, arg_5_1)
+function var_0_0.GetPuzzleActivityState(arg_5_0, arg_5_1)
 	if not arg_5_1 then
-		return var_0_1.state_puzzle
+		return var_0_0.state_puzzle
 	end
 
-	local var_5_0 = arg_5_1.data1_list
-	local var_5_1 = arg_5_1.data2_list
-	local var_5_2 = arg_5_1.data3_list
-
-	table = var_1_10005
-
-	if not var_1_10005.contains(var_5_0, arg_5_0) then
-		return var_0_1.state_collection
+	if not table.contains(arg_5_1.data1_list, arg_5_0) then
+		return var_0_0.state_collection
+	elseif not table.contains(arg_5_1.data2_list, arg_5_0) then
+		return var_0_0.state_puzzle
+	elseif not table.contains(arg_5_1.data3_list, arg_5_0) then
+		return var_0_0.state_connection
 	else
-		table = var_5
-
-		if not var_5.contains(var_5_1, arg_5_0) then
-			return var_0_1.state_puzzle
-		else
-			table = var_5
-
-			if not var_5.contains(var_5_2, arg_5_0) then
-				return var_0_1.state_connection
-			else
-				return var_0_1.state_complete
-			end
-		end
+		return var_0_0.state_complete
 	end
 
 	return
 end
 
-function var_0_1.GetRedTip()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+function var_0_0.GetRedTip()
+	local var_6_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_PUZZLE_CONNECT)
 
-	local var_6_0 = var_1_10000(var_1_10002)
-	local var_6_1 = var_0.getActivityByType
+	if var_6_0 then
+		local var_6_1 = var_6_0:getConfig("config_data")
+		local var_6_2 = getProxy(PlayerProxy)
+		local var_6_3 = var_6_0:getDayIndex()
 
-	ActivityConst = var_1_10003
+		for iter_6_0 = 1, #var_6_1 do
+			local var_6_5
 
-	if var_6_1(var_6_0, var_1_10003.ACTIVITY_TYPE_PUZZLE_CONNECT) then
-		local var_6_2 = var_0:getConfig("config_data")
+			if iter_6_0 <= var_6_3 then
+				if not table.contains(var_6_0.data3_list, var_6_1[iter_6_0]) then
+					if not table.contains(var_6_0.data1_list, var_6_1[iter_6_0]) and iter_6_0 == 0 + 1 then
+						local var_6_4 = var_6_2:getData()
 
-		getProxy = var_6_0
-		PlayerProxy = var_4
-
-		local var_6_3 = var_6_0(var_4)
-		local var_6_4 = var_0.data1_list
-		local var_6_5 = var_0.data2_list
-		local var_6_6 = var_0.data3_list
-		local var_6_7 = var_0:getDayIndex()
-		local var_6_8 = 0
-
-		for iter_6_0 = 1, #var_6_2 do
-			local var_6_9 = var_6_2[iter_6_0]
-
-			if iter_6_0 <= var_6_7 then
-				table = var_1_10013
-
-				if not var_1_10013.contains(var_6_6, var_6_9) then
-					table = var_1_10013
-
-					if not var_1_10013.contains(var_6_4, var_6_9) and iter_6_0 == var_6_8 + 1 then
-						pg = var_1_10013
-						var_1_10013 = var_1_10013.activity_tolove_jigsaw[var_6_9].need[3]
-						pg = var_1_10014
-						var_1_10014 = var_1_10014.activity_tolove_jigsaw[var_6_9].need[2]
-
-						local var_6_10 = var_6_3:getData()
-
-						if var_1_10013 <= var_15.getResource(var_6_10, var_1_10014) then
+						if pg.activity_tolove_jigsaw[var_6_1[iter_6_0]].need[3] <= var_6_4:getResource(pg.activity_tolove_jigsaw[var_6_1[iter_6_0]].need[2]) then
 							return true
 						end
 					end
 				else
-					var_6_8 = var_6_8 < iter_6_0 and iter_6_0 or var_6_8
+					var_6_5 = 0 < iter_6_0 and iter_6_0 or 0
 				end
 			end
 		end
 
-		if #var_6_4 > #var_6_5 or #var_6_4 > #var_6_6 then
+		if #var_6_0.data1_list > #var_6_0.data2_list or #var_6_0.data1_list > #var_6_0.data3_list then
 			return true
 		end
 	end
@@ -168,4 +93,4 @@ function var_0_1.GetRedTip()
 	return false
 end
 
-return var_0_1
+return var_0_0

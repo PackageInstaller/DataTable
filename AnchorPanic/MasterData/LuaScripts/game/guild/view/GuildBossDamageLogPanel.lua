@@ -89,7 +89,7 @@ function udpateView(self)
 
         item:getChildGO("mTextName"):GetComponent(ty.Text).text = logList[i].player_name
         item:getChildGO("mTextStage"):GetComponent(ty.Text).text = logList[i].round
-        item:getChildGO("mTextDamage"):GetComponent(ty.Text).text = logList[i].damage
+        item:getChildGO("mTextDamage"):GetComponent(ty.Text).text = string.formatChineseNumber(logList[i].damage)
         item:getChildGO("mTextTime"):GetComponent(ty.Text).text = TimeUtil.getFormatTimeBySeconds_7(logList[i].time)
 
         table.insert(self.mItemList, item)

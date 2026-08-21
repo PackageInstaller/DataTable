@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "item_data_battleui") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "item_data_battleui"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.item_data_battleui = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.item_data_battleui
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.item_data_battleui = rawget(pg, "item_data_battleui") or setmetatable({
+	__name = "item_data_battleui"
+}, confNEO)
+pg.item_data_battleui.all = {
 	0,
 	101,
 	102,
@@ -52,25 +29,11 @@ var_0_3.all = {
 	208,
 	209
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.item_data_battleui = {}
+pg.base = pg.base or {}
+pg.base.item_data_battleui = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.item_data_battleui
-
-	var_1_0[0] = {
+	pg.base.item_data_battleui[0] = {
 		name = "经典主题",
 		key = "Standard",
 		display_icon = "ui_0",
@@ -83,11 +46,7 @@ var_0_3.base.item_data_battleui = {}
 		scene = {},
 		rare_display = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.item_data_battleui
-
-	var_1_1[101] = {
+	pg.base.item_data_battleui[101] = {
 		name = "新版主题",
 		key = "SkinNormal_20240701",
 		display_icon = "ui_101",
@@ -100,11 +59,7 @@ var_0_3.base.item_data_battleui = {}
 		scene = {},
 		rare_display = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.item_data_battleui
-
-	var_1_2[102] = {
+	pg.base.item_data_battleui[102] = {
 		name = "赛博纪元",
 		key = "SkinNormal_20240912",
 		display_icon = "ui_102",
@@ -119,11 +74,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.item_data_battleui
-
-	var_1_3[103] = {
+	pg.base.item_data_battleui[103] = {
 		name = "梦幻霓虹",
 		key = "SkinNormal_20240913",
 		display_icon = "ui_103",
@@ -140,11 +91,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.item_data_battleui
-
-	var_1_4[104] = {
+	pg.base.item_data_battleui[104] = {
 		name = "幻光律动 ",
 		key = "SkinNormal_20241107",
 		display_icon = "ui_104",
@@ -159,11 +106,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.item_data_battleui
-
-	var_1_5[105] = {
+	pg.base.item_data_battleui[105] = {
 		name = "光耀之庭",
 		key = "SkinNormal_20250123",
 		display_icon = "ui_105",
@@ -178,11 +121,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.item_data_battleui
-
-	var_1_6[106] = {
+	pg.base.item_data_battleui[106] = {
 		name = "恶魔契约 ",
 		key = "SkinNormal_20250327",
 		display_icon = "ui_106",
@@ -197,11 +136,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.item_data_battleui
-
-	var_1_7[107] = {
+	pg.base.item_data_battleui[107] = {
 		name = "璀璨星辰 ",
 		key = "SkinNormal_20250529",
 		display_icon = "ui_107",
@@ -216,11 +151,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.item_data_battleui
-
-	var_1_8[108] = {
+	pg.base.item_data_battleui[108] = {
 		name = "自然律动",
 		key = "SkinNormal_20250724",
 		display_icon = "ui_108",
@@ -235,11 +166,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.item_data_battleui
-
-	var_1_9[109] = {
+	pg.base.item_data_battleui[109] = {
 		name = "墨影竹形",
 		key = "SkinNormal_20250925",
 		display_icon = "ui_109",
@@ -254,11 +181,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.item_data_battleui
-
-	var_1_10[111] = {
+	pg.base.item_data_battleui[111] = {
 		name = "月下皮影",
 		key = "SkinNormal_20251120",
 		display_icon = "ui_111",
@@ -273,11 +196,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.item_data_battleui
-
-	var_1_11[112] = {
+	pg.base.item_data_battleui[112] = {
 		name = "冬日促销",
 		key = "SkinNormal_20251211",
 		display_icon = "ui_112",
@@ -292,11 +211,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.item_data_battleui
-
-	var_1_12[113] = {
+	pg.base.item_data_battleui[113] = {
 		name = "古代王朝",
 		key = "SkinNormal_20260129",
 		display_icon = "ui_113",
@@ -311,11 +226,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.item_data_battleui
-
-	var_1_13[114] = {
+	pg.base.item_data_battleui[114] = {
 		name = "精灵古藤",
 		key = "SkinNormal_20260326",
 		display_icon = "ui_114",
@@ -330,11 +241,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.item_data_battleui
-
-	var_1_14[115] = {
+	pg.base.item_data_battleui[115] = {
 		name = "苍核回响",
 		key = "SkinNormal_20260528",
 		display_icon = "ui_115",
@@ -349,11 +256,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.item_data_battleui
-
-	var_1_15[116] = {
+	pg.base.item_data_battleui[116] = {
 		name = "皇家旧影",
 		key = "SkinNormal_20260730",
 		display_icon = "ui_116",
@@ -368,11 +271,7 @@ var_0_3.base.item_data_battleui = {}
 			1
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.item_data_battleui
-
-	var_1_16[201] = {
+	pg.base.item_data_battleui[201] = {
 		name = "圣诞雪境",
 		key = "SkinNormal_20241209",
 		display_icon = "ui_201",
@@ -389,11 +288,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.item_data_battleui
-
-	var_1_17[202] = {
+	pg.base.item_data_battleui[202] = {
 		name = "圣砂之约",
 		key = "SkinNormal_20250227",
 		display_icon = "ui_202",
@@ -410,11 +305,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.item_data_battleui
-
-	var_1_18[203] = {
+	pg.base.item_data_battleui[203] = {
 		name = "基因之源 ",
 		key = "SkinElite_20250327",
 		display_icon = "ui_203",
@@ -431,11 +322,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.item_data_battleui
-
-	var_1_19[204] = {
+	pg.base.item_data_battleui[204] = {
 		name = "海滨假日",
 		key = "SkinElite_20250520",
 		display_icon = "ui_204",
@@ -452,11 +339,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.item_data_battleui
-
-	var_1_20[205] = {
+	pg.base.item_data_battleui[205] = {
 		name = "忍者之城",
 		key = "SkinElite_20250912",
 		display_icon = "ui_205",
@@ -473,11 +356,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.item_data_battleui
-
-	var_1_21[206] = {
+	pg.base.item_data_battleui[206] = {
 		name = "甜点女仆屋",
 		key = "SkinElite_20251218",
 		display_icon = "ui_206",
@@ -494,11 +373,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.item_data_battleui
-
-	var_1_22[207] = {
+	pg.base.item_data_battleui[207] = {
 		name = "春满客栈",
 		key = "SkinElite_20260226",
 		display_icon = "ui_207",
@@ -515,11 +390,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.item_data_battleui
-
-	var_1_23[208] = {
+	pg.base.item_data_battleui[208] = {
 		name = "奢梦浮金",
 		key = "SkinElite_20260520",
 		display_icon = "ui_208",
@@ -536,8 +407,7 @@ var_0_3.base.item_data_battleui = {}
 			3
 		}
 	}
-	pg = var_1_23
-	var_1_23.base.item_data_battleui[209] = {
+	pg.base.item_data_battleui[209] = {
 		name = "寄叶协议",
 		key = "SkinElite_20260715",
 		display_icon = "ui_209",

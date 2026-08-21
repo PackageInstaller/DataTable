@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BaseShopPage", import("...base.BasePanel"))
 
-local var_0_0 = "BaseShopPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0, arg_1_2)
 	arg_1_0:attach(arg_1_1)
 
 	arg_1_0.event = arg_1_1.event
@@ -17,77 +11,33 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._go
-	local var_2_1 = var_1.GetComponent
+function var_0_0.init(arg_2_0)
+	arg_2_0.canvasGroup = arg_2_0._go:GetComponent(typeof(CanvasGroup))
+	arg_2_0.lScrollrect = GetComponent(arg_2_0._tf:Find("scroll"), "LScrollRect")
+	arg_2_0.scrollbar = arg_2_0._tf:Find("scroll/Scrollbar")
+	arg_2_0.tipTextGo = arg_2_0._tf:Find("bg/tipBg")
+	arg_2_0.tipText = arg_2_0._tf:Find("bg/tipBg/tipText"):GetComponent(typeof(Text))
+	arg_2_0.helpBtn = arg_2_0._tf:Find("bg/resList/helpBtn")
+	arg_2_0.refreshBtn = arg_2_0._tf:Find("timeBtn")
+	arg_2_0.timerText = arg_2_0._tf:Find("timeBtn/Text"):GetComponent(typeof(Text))
+	arg_2_0.resolveBtn = arg_2_0._tf:Find("resolveBtn")
 
-	typeof = var_1_10004
-	CanvasGroup = var_1_10006
-	arg_2_0.canvasGroup = var_2_1(var_2_0, var_1_10004(var_1_10006))
-	GetComponent = var_1
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.lScrollrect = var_1(var_3.Find(var_2_2, "scroll"), "LScrollRect")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.scrollbar = var_1.Find(var_2_3, "scroll/Scrollbar")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.tipTextGo = var_1.Find(var_2_4, "bg/tipBg")
-
-	local var_2_5 = arg_2_0._tf
-	local var_2_6 = var_1.Find(var_2_5, "bg/tipBg/tipText")
-	local var_2_7 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_6
-	arg_2_0.tipText = var_2_7(var_2_6, var_4(var_6))
-
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.helpBtn = var_1.Find(var_2_8, "bg/resList/helpBtn")
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.refreshBtn = var_1.Find(var_2_9, "timeBtn")
-
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_1.Find(var_2_10, "timeBtn/Text")
-	local var_2_12 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_6
-	arg_2_0.timerText = var_2_12(var_2_11, var_4(var_6))
-
-	local var_2_13 = arg_2_0._tf
-
-	arg_2_0.resolveBtn = var_1.Find(var_2_13, "resolveBtn")
-	setText = var_1
-
-	local var_2_14 = arg_2_0._tf
-	local var_2_15 = var_3.Find(var_2_14, "resolveBtn/Text")
-
-	i18n = var_4
-
-	var_1(var_2_15, var_4("shop_fragment_resolve"))
+	setText(arg_2_0._tf:Find("resolveBtn/Text"), i18n("shop_fragment_resolve"))
 
 	return
 end
 
-function var_0_1.CustomInit(arg_3_0)
+function var_0_0.CustomInit(arg_3_0)
 	return
 end
 
-function var_0_1.SetShop(arg_4_0, arg_4_1)
+function var_0_0.SetShop(arg_4_0, arg_4_1)
 	arg_4_0.shop = arg_4_1
 
 	return
 end
 
-function var_0_1.SetPlayer(arg_5_0, arg_5_1)
+function var_0_0.SetPlayer(arg_5_0, arg_5_1)
 	arg_5_0.player = arg_5_1
 
 	arg_5_0:OnUpdatePlayer()
@@ -95,7 +45,7 @@ function var_0_1.SetPlayer(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.SetItems(arg_6_0, arg_6_1)
+function var_0_0.SetItems(arg_6_0, arg_6_1)
 	arg_6_0.items = arg_6_1
 
 	arg_6_0:OnUpdateItems()
@@ -103,7 +53,7 @@ function var_0_1.SetItems(arg_6_0, arg_6_1)
 	return
 end
 
-function var_0_1.SetUp(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
+function var_0_0.SetUp(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 	arg_7_0:SetShop(arg_7_1)
 	arg_7_0:Show()
 	arg_7_0:SetPlayer(arg_7_2)
@@ -116,52 +66,33 @@ function var_0_1.SetUp(arg_7_0, arg_7_1, arg_7_2, arg_7_3)
 	return
 end
 
-function var_0_1.InitCommodities(arg_8_0)
-	local var_8_0 = arg_8_0.shop
-
-	arg_8_0.displays, arg_8_0.cards = var_1.GetCommodities(var_8_0), {}
+function var_0_0.InitCommodities(arg_8_0)
+	arg_8_0.displays, arg_8_0.cards = arg_8_0.shop:GetCommodities(), {}
 	arg_8_0.lScrollrect.enabled = true
 
-	local var_8_1 = arg_8_0.lScrollrect
-
-	var_2.SetTotalCount(var_8_1, #arg_8_0.displays, 0)
+	arg_8_0.lScrollrect:SetTotalCount(#arg_8_0.displays, 0)
 
 	return
 end
 
-function var_0_1.RefreshUI(arg_9_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_9_0.tipTextGo, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_9_0.helpBtn, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_9_0.resolveBtn, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_9_0.refreshBtn, false)
+function var_0_0.RefreshUI(arg_9_0)
+	setActive(arg_9_0.tipTextGo, false)
+	setActive(arg_9_0.helpBtn, false)
+	setActive(arg_9_0.resolveBtn, false)
+	setActive(arg_9_0.refreshBtn, false)
 
 	return
 end
 
-function var_0_1.Show(arg_10_0)
+function var_0_0.Show(arg_10_0)
 	function arg_10_0.lScrollrect.onInitItem(arg_11_0)
-		local var_11_0 = arg_10_0
-
-		var_1.OnInitItem(var_11_0, arg_11_0)
+		arg_10_0:OnInitItem(arg_11_0)
 
 		return
 	end
 
 	function arg_10_0.lScrollrect.onUpdateItem(arg_12_0, arg_12_1)
-		local var_12_0 = arg_10_0
-
-		var_2.OnUpdateItem(var_12_0, arg_12_0, arg_12_1)
+		arg_10_0:OnUpdateItem(arg_12_0, arg_12_1)
 
 		return
 	end
@@ -174,20 +105,17 @@ function var_0_1.Show(arg_10_0)
 	return
 end
 
-function var_0_1.Hide(arg_13_0)
+function var_0_0.Hide(arg_13_0)
 	arg_13_0:StopBGM()
 
-	pairs = var_1
-
-	for iter_13_0, iter_13_1 in var_1(arg_13_0.cards) do
+	for iter_13_0, iter_13_1 in pairs(arg_13_0.cards) do
 		iter_13_1:Dispose()
 	end
 
 	arg_13_0.displays = {}
 	arg_13_0.cards = {}
-	ClearLScrollrect = var_1
 
-	var_1(arg_13_0.lScrollrect)
+	ClearLScrollrect(arg_13_0.lScrollrect)
 
 	arg_13_0.canvasGroup.alpha = 0
 	arg_13_0.canvasGroup.blocksRaycasts = false
@@ -195,50 +123,38 @@ function var_0_1.Hide(arg_13_0)
 	return
 end
 
-function var_0_1.GetResDataList(arg_14_0)
+function var_0_0.GetResDataList(arg_14_0)
 	return {}
 end
 
-function var_0_1.RefreshResItemList(arg_15_0)
-	local var_15_0
+function var_0_0.RefreshResItemList(arg_15_0)
+	local var_15_0 = arg_15_0:GetResDataList() or {}
 
-	if not arg_15_0:GetResDataList() then
-		var_15_0 = {}
-	end
-
-	local var_15_1 = arg_15_0.parent
-
-	var_2.RefreshResItemList(var_15_1, var_15_0)
+	arg_15_0.parent:RefreshResItemList(var_15_0)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_16_0)
+function var_0_0.OnDestroy(arg_16_0)
 	arg_16_0:detach()
 
 	return
 end
 
-function var_0_1.SetPainting(arg_17_0)
+function var_0_0.SetPainting(arg_17_0)
 	local var_17_0, var_17_1, var_17_2 = arg_17_0:GetPaintingName()
 
 	if arg_17_0.contextData.paintingView.name ~= var_17_0 then
-		local var_17_3 = arg_17_0.contextData.paintingView
+		arg_17_0.contextData.paintingView:Init(var_17_0, var_17_1, var_17_2, function()
+			local var_18_0, var_18_1, var_18_2 = arg_17_0:GetPaintingEnterVoice()
 
-		var_4.Init(var_17_3, var_17_0, var_17_1, var_17_2, function()
-			local var_18_0 = arg_17_0
-			local var_18_1, var_18_2, var_18_3 = var_0.GetPaintingEnterVoice(var_18_0)
-			local var_18_4 = arg_17_0.contextData.paintingView
-
-			var_3.Chat(var_18_4, var_18_1, var_18_2, var_18_3, true)
+			arg_17_0.contextData.paintingView:Chat(var_18_0, var_18_1, var_18_2, true)
 
 			return
 		end, function()
-			local var_19_0 = arg_17_0
-			local var_19_1, var_19_2, var_19_3 = var_0.GetPaintingTouchVoice(var_19_0)
-			local var_19_4 = arg_17_0.contextData.paintingView
+			local var_19_0, var_19_1, var_19_2 = arg_17_0:GetPaintingTouchVoice()
 
-			var_3.Chat(var_19_4, var_19_1, var_19_2, var_19_3, false)
+			arg_17_0.contextData.paintingView:Chat(var_19_0, var_19_1, var_19_2, false)
 
 			return
 		end)
@@ -247,37 +163,16 @@ function var_0_1.SetPainting(arg_17_0)
 	return
 end
 
-function var_0_1.UpdateShop(arg_20_0, arg_20_1)
+function var_0_0.UpdateShop(arg_20_0, arg_20_1)
 	arg_20_0:SetShop(arg_20_1)
+	pg.MsgboxMgr.GetInstance():hide()
 
-	pg = var_2
-
-	local var_20_0 = var_2.MsgboxMgr.GetInstance()
-
-	var_2.hide(var_20_0)
-
-	local var_20_1 = arg_20_0.contextData.singleWindow
-
-	if var_2.GetLoaded(var_20_1) then
-		local var_20_2 = arg_20_0.contextData.singleWindow
-
-		if var_2.isShowing(var_20_2) then
-			local var_20_3 = arg_20_0.contextData.singleWindow
-
-			var_2.ExecuteAction(var_20_3, "Close")
-		end
+	if arg_20_0.contextData.singleWindow:GetLoaded() and arg_20_0.contextData.singleWindow:isShowing() then
+		arg_20_0.contextData.singleWindow:ExecuteAction("Close")
 	end
 
-	local var_20_4 = arg_20_0.contextData.multiWindow
-
-	if var_2.GetLoaded(var_20_4) then
-		local var_20_5 = arg_20_0.contextData.multiWindow
-
-		if var_2.isShowing(var_20_5) then
-			local var_20_6 = arg_20_0.contextData.multiWindow
-
-			var_2.ExecuteAction(var_20_6, "Close")
-		end
+	if arg_20_0.contextData.multiWindow:GetLoaded() and arg_20_0.contextData.multiWindow:isShowing() then
+		arg_20_0.contextData.multiWindow:ExecuteAction("Close")
 	end
 
 	arg_20_0:OnUpdateAll()
@@ -285,14 +180,12 @@ function var_0_1.UpdateShop(arg_20_0, arg_20_1)
 	return
 end
 
-function var_0_1.UpdateCommodity(arg_21_0, arg_21_1, arg_21_2)
+function var_0_0.UpdateCommodity(arg_21_0, arg_21_1, arg_21_2)
 	arg_21_0:SetShop(arg_21_1)
 
 	local var_21_0 = arg_21_1:GetCommodityById(arg_21_2)
 
-	DROP_TYPE_SHIP = var_1_10004
-
-	if var_1_10004 == var_21_0:getConfig("commodity_type") then
+	if DROP_TYPE_SHIP == var_21_0:getConfig("commodity_type") then
 		arg_21_0:OnUpdateAll()
 	else
 		arg_21_0:OnUpdateCommodity(var_21_0)
@@ -308,391 +201,202 @@ function var_0_1.UpdateCommodity(arg_21_0, arg_21_1, arg_21_2)
 		var_21_1, var_21_2, var_21_3 = arg_21_0:GetPaintingCommodityUpdateVoice()
 	end
 
-	local var_21_4 = arg_21_0.contextData.paintingView
-
-	var_7.Chat(var_21_4, var_21_1, var_21_2, var_21_3, true)
+	arg_21_0.contextData.paintingView:Chat(var_21_1, var_21_2, var_21_3, true)
 
 	return
 end
 
-function var_0_1.OnClickCommodity(arg_22_0, arg_22_1, arg_22_2)
-	Drop = var_1_10003
-
-	local var_22_0 = var_1_10003.New({
+function var_0_0.OnClickCommodity(arg_22_0, arg_22_1, arg_22_2)
+	local var_22_0 = Drop.New({
 		type = arg_22_1:getConfig("commodity_type"),
 		id = arg_22_1:getConfig("commodity_id"),
 		count = arg_22_1:getConfig("num")
-	}).type
+	})
 
-	DROP_TYPE_VITEM = var_5
+	if var_22_0.type == DROP_TYPE_VITEM and var_22_0:getConfig("virtual_type") == 22 then
+		local var_22_1 = getProxy(ActivityProxy):getActivityById(var_22_0:getConfig("link_id"))
 
-	local var_22_1
+		if not var_22_1 or var_22_1:isEnd() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("tip_build_ticket_exchange_expired", var_22_0:getName()))
 
-	if var_22_0 == var_5 then
-		var_22_1 = var_3
+			return
+		end
+	end
 
-		if var_3.getConfig(var_22_1, "virtual_type") == 22 then
-			getProxy = var_4
-			ActivityProxy = var_22_1
-
-			local var_22_2 = var_4(var_22_1)
-
-			if not var_4.getActivityById(var_22_2, var_3:getConfig("link_id")) or var_5:isEnd() then
-				pg = var_22_1
-
-				local var_22_3 = var_22_1.TipsMgr.GetInstance()
-
-				var_22_1 = var_22_1.ShowTips
-				i18n = var_9
-
-				var_22_1(var_22_3, var_9("tip_build_ticket_exchange_expired", var_3:getName()))
+	;(var_22_0.type == DROP_TYPE_EQUIPMENT_SKIN and arg_22_0.contextData.singleWindowForESkin or (arg_22_1:getConfig("num_limit") == 1 or arg_22_1:getConfig("commodity_type") == 4 or isa(arg_22_1, QuotaCommodity) and arg_22_1:GetLimitGoodCount() == 1) and arg_22_0.contextData.singleWindow or arg_22_0.contextData.multiWindow):ExecuteAction("Open", arg_22_1, function(arg_23_0, arg_23_1, arg_23_2)
+		if arg_23_0:getConfig("commodity_type") == 4 or arg_22_0.shop.type == ShopArgs.ShopActivity then
+			table.insert({}, function(arg_24_0)
+				arg_22_0:TipPurchase(arg_23_0, arg_23_1, arg_23_2, arg_24_0)
 
 				return
-			end
-		end
-	end
-
-	local var_22_4
-	local var_22_5 = var_3.type
-
-	DROP_TYPE_EQUIPMENT_SKIN = var_22_1
-
-	if var_22_5 == var_22_1 then
-		var_22_4 = arg_22_0.contextData.singleWindowForESkin
-
-		goto label_22_0
-	end
-
-	if arg_22_1:getConfig("num_limit") ~= 1 and arg_22_1:getConfig("commodity_type") ~= 4 then
-		isa = var_5
-
-		do
-			local var_22_6 = arg_22_1
-
-			QuotaCommodity = var_8
-
-			if var_5(var_22_6, var_8) and arg_22_1:GetLimitGoodCount() == 1 then
-				var_22_4 = arg_22_0.contextData.singleWindow
-			else
-				var_22_4 = arg_22_0.contextData.multiWindow
-			end
-		end
-
-		::label_22_0::
-
-		var_22_4:ExecuteAction("Open", arg_22_1, function(arg_23_0, arg_23_1, arg_23_2)
-			local var_23_0 = {}
-
-			if arg_23_0:getConfig("commodity_type") ~= 4 then
-				local var_23_1 = arg_22_0.shop.type
-
-				ShopArgs = var_2_10005
-
-				if var_23_1 == var_2_10005.ShopActivity then
-					table = var_23_1
-
-					var_23_1.insert(var_23_0, function(arg_24_0)
-						local var_24_0 = arg_22_0
-
-						var_1.TipPurchase(var_24_0, arg_23_0, arg_23_1, arg_23_2, arg_24_0)
-
-						return
-					end)
-				else
-					table = var_23_1
-
-					var_23_1.insert(var_23_0, function(arg_25_0)
-						local var_25_0 = arg_22_0
-
-						if var_1.getSpecialRule(var_25_0, arg_23_0) then
-							arg_25_0()
-						end
-
-						return
-					end)
+			end)
+		else
+			table.insert({}, function(arg_25_0)
+				if arg_22_0:getSpecialRule(arg_23_0) then
+					arg_25_0()
 				end
 
-				table = var_23_1
+				return
+			end)
+		end
 
-				var_23_1.insert(var_23_0, function(arg_26_0)
-					local var_26_0 = arg_23_0
-					local var_26_2
-
-					if not var_1.canPurchase(var_26_0) then
-						pg = var_26_2
-
-						local var_26_1 = var_26_2.TipsMgr.GetInstance()
-
-						var_26_2 = var_26_2.ShowTips
-						i18n = var_3_10004
-
-						var_26_2(var_26_1, var_3_10004("buy_countLimit"))
-
-						return
-					end
-
-					Drop = var_26_2
-
-					local var_26_3 = var_26_2.New
-					local var_26_4 = {}
-					local var_26_5 = arg_23_0
-
-					var_26_4.type = var_4.getConfig(var_26_5, "resource_category")
-
-					local var_26_6 = arg_23_0
-
-					var_26_4.id = var_4.getConfig(var_26_6, "resource_type")
-
-					local var_26_7 = var_26_3(var_26_4)
-					local var_26_8 = var_1.getOwnedCount(var_26_7)
-					local var_26_9 = arg_23_0
-
-					if var_26_8 < var_3.getConfig(var_26_9, "resource_num") * arg_23_1 then
-						ItemTipPanel = var_26_8
-
-						local var_26_10 = var_26_8.ShowItemTip
-						local var_26_11 = arg_23_0
-						local var_26_12 = var_4.getConfig(var_26_11, "resource_category")
-						local var_26_13 = arg_23_0
-
-						if not var_26_10(var_26_12, var_5.getConfig(var_26_13, "resource_type")) then
-							pg = var_2
-
-							local var_26_14 = var_2.TipsMgr.GetInstance()
-							local var_26_15 = var_2.ShowTips
-
-							i18n = var_5
-
-							var_26_15(var_26_14, var_5("common_no_x", var_1:getName()))
-						end
-
-						return
-					end
-
-					arg_26_0()
-
-					return
-				end)
-
-				seriesAsync = var_4
-
-				var_4(var_23_0, function()
-					arg_22_2(arg_23_0, arg_23_1)
-
-					return
-				end)
+		table.insert({}, function(arg_26_0)
+			if not arg_23_0:canPurchase() then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 				return
 			end
+
+			local var_26_0 = Drop.New({
+				type = arg_23_0:getConfig("resource_category"),
+				id = arg_23_0:getConfig("resource_type")
+			})
+
+			if var_26_0:getOwnedCount() < arg_23_0:getConfig("resource_num") * arg_23_1 then
+				if not ItemTipPanel.ShowItemTip(arg_23_0:getConfig("resource_category"), arg_23_0:getConfig("resource_type")) then
+					pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_x", var_26_0:getName()))
+				end
+
+				return
+			end
+
+			arg_26_0()
+
+			return
+		end)
+		seriesAsync({}, function()
+			arg_22_2(arg_23_0, arg_23_1)
+
+			return
 		end)
 
 		return
-	end
-end
-
-function var_0_1.TipPurchase(arg_28_0, arg_28_1, arg_28_2, arg_28_3, arg_28_4)
-	pg = var_1_10005
-
-	local var_28_0 = var_1_10005.MsgboxMgr.GetInstance()
-	local var_28_1 = var_5.ShowMsgBox
-	local var_28_2 = {}
-
-	i18n = var_1_10009
-	var_28_2.content = var_1_10009("pt_reconfirm", arg_28_3 or "??")
-	var_28_2.onYes = arg_28_4
-
-	var_28_1(var_28_0, var_28_2)
+	end)
 
 	return
 end
 
-function var_0_1.getSpecialRule(arg_29_0, arg_29_1)
-	local var_29_0 = arg_29_1:getConfig("commodity_type")
+function var_0_0.TipPurchase(arg_28_0, arg_28_1, arg_28_2, arg_28_3, arg_28_4)
+	pg.MsgboxMgr.GetInstance():ShowMsgBox({
+		content = i18n("pt_reconfirm", arg_28_3 or "??"),
+		onYes = arg_28_4
+	})
 
-	DROP_TYPE_ITEM = var_1_10003
+	return
+end
 
-	if var_29_0 == var_1_10003 then
-		local var_29_1 = arg_29_0.shop.type
+function var_0_0.getSpecialRule(arg_29_0, arg_29_1)
+	if arg_29_1:getConfig("commodity_type") == DROP_TYPE_ITEM and arg_29_0.shop.type == ShopArgs.ShopFragment then
+		local var_29_0 = arg_29_1:getConfig("commodity_id")
+		local var_29_1 = Item.getConfigData(var_29_0)
 
-		ShopArgs = var_1_10003
+		if var_29_1 and var_29_1.type == 7 and #var_29_1.shiptrans_id > 0 then
+			local var_29_2 = getProxy(BayProxy)
 
-		if var_29_1 == var_1_10003.ShopFragment then
-			local var_29_2 = arg_29_1:getConfig("commodity_id")
+			if getProxy(BagProxy):getItemCountById(var_29_0) > 0 or underscore.any(var_29_1.shiptrans_id, function(arg_30_0)
+				return var_29_2:getConfigShipCount(arg_30_0) > 0
+			end) then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("special_transform_limit_reach"))
 
-			Item = var_3
-
-			if var_3.getConfigData(var_29_2) and var_3.type == 7 then
-				local var_29_3 = #var_3.shiptrans_id
-
-				if 0 < var_29_3 then
-					getProxy = var_29_3
-					BayProxy = var_1_10006
-
-					local var_29_4 = var_29_3(var_1_10006)
-
-					getProxy = var_5
-					BagProxy = var_1_10007
-
-					local var_29_5 = var_5(var_1_10007)
-
-					if not (var_5.getItemCountById(var_29_5, var_29_2) > 0) then
-						underscore = var_5
-
-						if var_5.any(var_3.shiptrans_id, function(arg_30_0)
-							local var_30_0 = var_29_4
-
-							return var_1.getConfigShipCount(var_30_0, arg_30_0) > 0
-						end) then
-							pg = var_5
-
-							local var_29_6 = var_5.TipsMgr.GetInstance()
-							local var_29_7 = var_5.ShowTips
-
-							i18n = var_8
-
-							var_29_7(var_29_6, var_8("special_transform_limit_reach"))
-
-							return false
-						end
-
-						return true
-					end
-				end
+				return false
 			end
 		end
 	end
-end
 
-function var_0_1.CanOpen(arg_31_0, arg_31_1, arg_31_2)
 	return true
 end
 
-function var_0_1.GetPaintingName(arg_32_0)
+function var_0_0.CanOpen(arg_31_0, arg_31_1, arg_31_2)
+	return true
+end
+
+function var_0_0.GetPaintingName(arg_32_0)
 	return "buzhihuo_shop"
 end
 
-function var_0_1.GetPaintingEnterVoice(arg_33_0)
-	pg = var_1_10001
+function var_0_0.GetPaintingEnterVoice(arg_33_0)
+	local var_33_0 = string.split(pg.navalacademy_shoppingstreet_template[1].words_enter, "|")
+	local var_33_1 = math.random(#var_33_0)
 
-	local var_33_0 = var_1_10001.navalacademy_shoppingstreet_template[1].words_enter
-
-	string = var_1_10002
-
-	local var_33_1 = var_1_10002.split(var_33_0, "|")
-
-	math = var_1_10003
-
-	return var_33_1[var_1_10003.random(#var_33_1)], "enter_" .. var_3, false
+	return var_33_0[var_33_1], "enter_" .. var_33_1, false
 end
 
-function var_0_1.GetPaintingCommodityUpdateVoice(arg_34_0)
-	pg = var_1_10001
+function var_0_0.GetPaintingCommodityUpdateVoice(arg_34_0)
+	local var_34_0 = string.split(pg.navalacademy_shoppingstreet_template[1].words_buy, "|")
+	local var_34_1 = math.random(#var_34_0)
 
-	local var_34_0 = var_1_10001.navalacademy_shoppingstreet_template[1].words_buy
-
-	string = var_1_10002
-
-	local var_34_1 = var_1_10002.split(var_34_0, "|")
-
-	math = var_1_10003
-
-	return var_34_1[var_1_10003.random(#var_34_1)], "buy_" .. var_3, false
+	return var_34_0[var_34_1], "buy_" .. var_34_1, false
 end
 
-function var_0_1.GetPaintingAllPurchaseVoice(arg_35_0)
+function var_0_0.GetPaintingAllPurchaseVoice(arg_35_0)
 	return nil, nil, nil
 end
 
-function var_0_1.GetPaintingTouchVoice(arg_36_0)
-	pg = var_1_10001
+function var_0_0.GetPaintingTouchVoice(arg_36_0)
+	local var_36_0 = string.split(pg.navalacademy_shoppingstreet_template[1].words_touch, "|")
+	local var_36_1 = math.random(#var_36_0)
 
-	local var_36_0 = var_1_10001.navalacademy_shoppingstreet_template[1].words_touch
-
-	string = var_1_10002
-
-	local var_36_1 = var_1_10002.split(var_36_0, "|")
-
-	math = var_1_10003
-
-	return var_36_1[var_1_10003.random(#var_36_1)], "touch_" .. var_3, false
+	return var_36_0[var_36_1], "touch_" .. var_36_1, false
 end
 
-function var_0_1.GetBg(arg_37_0, arg_37_1)
+function var_0_0.GetBg(arg_37_0, arg_37_1)
 	return
 end
 
-function var_0_1.OnSetUp(arg_38_0)
+function var_0_0.OnSetUp(arg_38_0)
 	return
 end
 
-function var_0_1.getBGM(arg_39_0)
+function var_0_0.getBGM(arg_39_0)
 	return nil
 end
 
-function var_0_1.PlayBGM(arg_40_0)
-	local var_40_0 = arg_40_0
-	local var_40_1 = arg_40_0.getBGM(var_40_0)
+function var_0_0.PlayBGM(arg_40_0)
+	local var_40_0 = arg_40_0:getBGM()
 
-	pg = var_1_10002
-
-	local var_40_2 = var_1_10002.voice_bgm[var_40_1]
-
-	if var_40_1 and var_40_2 then
-		pg = var_40_0
-
-		local var_40_3 = var_40_0.BgmMgr.GetInstance()
-
-		var_3.Push(var_40_3, var_40_1, var_40_2.bgm)
+	if var_40_0 and pg.voice_bgm[var_40_0] then
+		pg.BgmMgr.GetInstance():Push(var_40_0, pg.voice_bgm[var_40_0].bgm)
 	end
 
 	return
 end
 
-function var_0_1.StopBGM(arg_41_0)
-	local var_41_0 = arg_41_0
-	local var_41_1 = arg_41_0.getBGM(var_41_0)
+function var_0_0.StopBGM(arg_41_0)
+	local var_41_0 = arg_41_0:getBGM()
 
-	pg = var_1_10002
-
-	local var_41_2 = var_1_10002.voice_bgm[var_41_1]
-
-	if var_41_1 and var_41_2 then
-		pg = var_41_0
-
-		local var_41_3 = var_41_0.BgmMgr.GetInstance()
-
-		var_3.Pop(var_41_3, var_41_1)
+	if var_41_0 and pg.voice_bgm[var_41_0] then
+		pg.BgmMgr.GetInstance():Pop(var_41_0)
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateAll(arg_42_0)
+function var_0_0.OnUpdateAll(arg_42_0)
 	return
 end
 
-function var_0_1.OnUpdateCommodity(arg_43_0, arg_43_1)
+function var_0_0.OnUpdateCommodity(arg_43_0, arg_43_1)
 	return
 end
 
-function var_0_1.OnUpdatePlayer(arg_44_0)
+function var_0_0.OnUpdatePlayer(arg_44_0)
 	return
 end
 
-function var_0_1.OnUpdateItems(arg_45_0)
+function var_0_0.OnUpdateItems(arg_45_0)
 	return
 end
 
-function var_0_1.OnInitItem(arg_46_0, arg_46_1)
+function var_0_0.OnInitItem(arg_46_0, arg_46_1)
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_47_0, arg_47_1, arg_47_2)
+function var_0_0.OnUpdateItem(arg_47_0, arg_47_1, arg_47_2)
 	return
 end
 
-function var_0_1.CanOpenPurchaseWindow(arg_48_0, arg_48_1)
+function var_0_0.CanOpenPurchaseWindow(arg_48_0, arg_48_1)
 	return arg_48_1:canPurchase()
 end
 
-return var_0_1
+return var_0_0

@@ -1,157 +1,54 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainScene", import("view.base.BaseUI"))
 
-local var_0_0 = "AuctionGameMainScene"
+var_0_0.SHOW_FILTER_EVENT = "AuctionGameMainScene::SHOW_FILTER_EVENT"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-var_0_1.SHOW_FILTER_EVENT = "AuctionGameMainScene::SHOW_FILTER_EVENT"
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "AuctionGameMainUI"
 end
 
-function var_0_1.init(arg_2_0)
-	AuctionGameMainLeftView = var_1_10001
-	arg_2_0.leftPanelView = var_1_10001.New(arg_2_0.uiLeftPanel, arg_2_0)
+function var_0_0.init(arg_2_0)
+	arg_2_0.leftPanelView = AuctionGameMainLeftView.New(arg_2_0.uiLeftPanel, arg_2_0)
 
 	arg_2_0:InitRightView()
-
-	setText = var_1
-
-	var_1(arg_2_0.uiCdText, "--")
+	setText(arg_2_0.uiCdText, "--")
 	arg_2_0:RefreshRoundText(1)
-
-	setText = var_1
-
-	local var_2_0 = arg_2_0.uiCollectionText
-
-	i18n = var_4
-
-	var_1(var_2_0, var_4("auction_main_handbook"))
-
-	setText = var_1
-
-	local var_2_1 = arg_2_0.uiBoardText
-
-	i18n = var_4
-
-	var_1(var_2_1, var_4("auction_main_public_notice"))
-
-	onButton = var_1
-
-	local var_2_2 = arg_2_0
-	local var_2_3 = arg_2_0.uiCollectionBtn
-
-	local function var_2_4()
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		local var_3_2 = var_2_10003.ON_ADD_SUBLAYER
-
-		Context = var_2_10004
-
-		local var_3_3 = var_2_10004.New
-		local var_3_4 = {}
-
-		AuctionGameCollectionListLayer = var_2_10007
-		var_3_4.viewComponent = var_2_10007
-		AuctionGameCollectionListMediator = var_2_10007
-		var_3_4.mediator = var_2_10007
-
-		var_3_1(var_3_0, var_3_2, var_3_3(var_3_4))
+	setText(arg_2_0.uiCollectionText, i18n("auction_main_handbook"))
+	setText(arg_2_0.uiBoardText, i18n("auction_main_public_notice"))
+	onButton(arg_2_0, arg_2_0.uiCollectionBtn, function()
+		arg_2_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+			viewComponent = AuctionGameCollectionListLayer,
+			mediator = AuctionGameCollectionListMediator
+		}))
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_2_2, var_2_3, var_2_4, var_6)
-
-	onButton = var_1
-
-	local var_2_5 = arg_2_0
-	local var_2_6 = arg_2_0.uiBoardBtn
-
-	local function var_2_7()
-		local var_4_0 = arg_2_0
-		local var_4_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		local var_4_2 = var_2_10003.ON_ADD_SUBLAYER
-
-		Context = var_2_10004
-
-		local var_4_3 = var_2_10004.New
-		local var_4_4 = {}
-
-		AuctionGameMainNoticeBoardLayer = var_2_10007
-		var_4_4.viewComponent = var_2_10007
-		AuctionGameMainNoticeBoardMediator = var_2_10007
-		var_4_4.mediator = var_2_10007
-
-		var_4_1(var_4_0, var_4_2, var_4_3(var_4_4))
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.uiBoardBtn, function()
+		arg_2_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+			viewComponent = AuctionGameMainNoticeBoardLayer,
+			mediator = AuctionGameMainNoticeBoardMediator
+		}))
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_2_5, var_2_6, var_2_7, var_6)
-
-	onButton = var_1
-
-	local var_2_8 = arg_2_0
-	local var_2_9 = arg_2_0.uiHideBtn
-
-	local function var_2_10()
-		local var_5_0 = arg_2_0
-
-		var_0.HideFilterEventPanel(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.uiHideBtn, function()
+		arg_2_0:HideFilterEventPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_2_8, var_2_9, var_2_10, var_6)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.didEnter(arg_6_0)
-	Screen = var_1_10001
-	SleepTimeout = var_1_10002
-	var_1_10001.sleepTimeout = var_1_10002.NeverSleep
+function var_0_0.didEnter(arg_6_0)
+	Screen.sleepTimeout = SleepTimeout.NeverSleep
 
-	local var_6_0 = arg_6_0.leftPanelView
+	arg_6_0.leftPanelView:didEnter()
+	arg_6_0.rightPanelView:didEnter()
 
-	var_1.didEnter(var_6_0)
+	local var_6_0 = getProxy(AuctionGameProxy)
 
-	local var_6_1 = arg_6_0.rightPanelView
-
-	var_1.didEnter(var_6_1)
-
-	getProxy = var_1
-	AuctionGameProxy = var_6_1
-
-	local var_6_2 = var_1(var_6_1)
-
-	if var_1.GetRound(var_6_2) < 1 then
-		table = var_3
-
-		local var_6_3 = var_3.keyof
-		local var_6_4 = var_1:GetLeaverList()
-
-		getProxy = var_1_10006
-		PlayerProxy = var_1_10008
-		var_1_10008 = var_1_10006(var_1_10008)
-
-		if var_6_3(var_6_4, var_6.getPlayerId(var_1_10008)) then
+	if var_6_0:GetRound() < 1 then
+		if table.keyof(var_6_0:GetLeaverList(), getProxy(PlayerProxy):getPlayerId()) then
 			arg_6_0:OnKick()
 		else
 			arg_6_0:RefreshReadyPanel()
@@ -160,341 +57,146 @@ function var_0_1.didEnter(arg_6_0)
 		arg_6_0:RefreshRound()
 	end
 
-	local var_6_5 = {}
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0.bind
-	local var_6_8 = var_0_1.SHOW_FILTER_EVENT
-
-	handler = var_1_10008
-	var_6_5[1] = var_6_7(var_6_6, var_6_8, var_1_10008(arg_6_0, arg_6_0.OnShowFilterEventPanel))
-	arg_6_0.eventList = var_6_5
+	arg_6_0.eventList = {
+		arg_6_0:bind(var_0_0.SHOW_FILTER_EVENT, handler(arg_6_0, arg_6_0.OnShowFilterEventPanel))
+	}
 
 	return
 end
 
-function var_0_1.InitRightView(arg_7_0)
-	AuctionGameMainRightView = var_1_10001
-	arg_7_0.rightPanelView = var_1_10001.New(arg_7_0.uiRightPanel, arg_7_0)
+function var_0_0.InitRightView(arg_7_0)
+	arg_7_0.rightPanelView = AuctionGameMainRightView.New(arg_7_0.uiRightPanel, arg_7_0)
 
 	return
 end
 
-function var_0_1.OnStartBid(arg_8_0)
-	pg = var_1_10001
-
-	local var_8_0 = var_1_10001.TipsMgr.GetInstance()
-	local var_8_1 = var_1.ShowTips
-
-	i18n = var_1_10004
-
-	var_8_1(var_8_0, var_1_10004("auction_game_bid_phase"))
-
-	local var_8_2 = arg_8_0.rightPanelView
-
-	var_1.StartBid(var_8_2)
+function var_0_0.OnStartBid(arg_8_0)
+	pg.TipsMgr.GetInstance():ShowTips(i18n("auction_game_bid_phase"))
+	arg_8_0.rightPanelView:StartBid()
 	arg_8_0:AddTimer()
 
 	return
 end
 
-function var_0_1.OnBidDone(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_0.rightPanelView
-
-	var_2.RefreshBidDone(var_9_0, arg_9_1)
+function var_0_0.OnBidDone(arg_9_0, arg_9_1)
+	arg_9_0.rightPanelView:RefreshBidDone(arg_9_1)
 
 	return
 end
 
-function var_0_1.OnStartRoundOver(arg_10_0)
+function var_0_0.OnStartRoundOver(arg_10_0)
 	arg_10_0:HideFilterEventPanel()
+	arg_10_0:AddTimer()
 
-	local var_10_0 = arg_10_0
-
-	arg_10_0.AddTimer(var_10_0)
-
-	getProxy = var_1
-	AuctionGameProxy = var_10_0
-
-	local var_10_1 = var_1(var_10_0)
-	local var_10_2 = var_1.GetTimestamp(var_10_1)
-
-	pg = var_1_10002
-
-	local var_10_3 = var_1_10002.TimeMgr.GetInstance()
-
-	if var_10_2 - var_2.GetServerTime(var_10_3) > 0 then
-		local var_10_4 = arg_10_0
-		local var_10_5 = arg_10_0.emit
-
-		BaseUI = var_1_10006
-
-		local var_10_6 = var_1_10006.ON_ADD_SUBLAYER
-
-		Context = var_1_10007
-
-		local var_10_7 = var_1_10007.New
-		local var_10_8 = {}
-
-		AuctionGameMainRoundOverLayer = var_1_10010
-		var_10_8.viewComponent = var_1_10010
-		AuctionGameMainRoundOverMediator = var_1_10010
-		var_10_8.mediator = var_1_10010
-
-		var_10_5(var_10_4, var_10_6, var_10_7(var_10_8))
+	if getProxy(AuctionGameProxy):GetTimestamp() - pg.TimeMgr.GetInstance():GetServerTime() > 0 then
+		arg_10_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+			viewComponent = AuctionGameMainRoundOverLayer,
+			mediator = AuctionGameMainRoundOverMediator
+		}))
 	end
 
 	return
 end
 
-function var_0_1.OnKick(arg_11_0)
-	getProxy = var_1_10001
-	AuctionGameProxy = var_1_10003
+function var_0_0.OnKick(arg_11_0)
+	local var_11_0 = getProxy(AuctionGameProxy)
 
-	local var_11_0 = var_1_10001(var_1_10003)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildAuctionExit(var_11_0:GetAuctionID(), var_11_0:GetRound()))
+	arg_11_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+		viewComponent = AuctionGameMainMsgLayer,
+		mediator = AuctionGameMainMsgMediator,
+		data = {
+			content = i18n("auction_game_kick"),
+			comformCallback = function()
+				arg_11_0:closeView()
 
-	pg = var_1_10002
+				return
+			end,
+			cancelCallback = function()
+				arg_11_0:closeView()
 
-	local var_11_1 = var_1_10002.GameTrackerMgr.GetInstance()
-	local var_11_2 = var_2.Record
-
-	GameTrackerBuilder = var_1_10005
-
-	local var_11_3 = var_1_10005.BuildAuctionExit
-	local var_11_4 = var_11_0
-	local var_11_5 = var_11_0.GetAuctionID(var_11_4)
-	local var_11_6 = var_11_0
-
-	var_11_2(var_11_1, var_11_3(var_11_5, var_11_0.GetRound(var_11_6)))
-
-	local var_11_7 = arg_11_0
-	local var_11_8 = arg_11_0.emit
-
-	BaseUI = var_5
-
-	local var_11_9 = var_5.ON_ADD_SUBLAYER
-
-	Context = var_1_10006
-
-	local var_11_10 = var_1_10006.New
-	local var_11_11 = {}
-
-	AuctionGameMainMsgLayer = var_11_4
-	var_11_11.viewComponent = var_11_4
-	AuctionGameMainMsgMediator = var_11_4
-	var_11_11.mediator = var_11_4
-
-	local var_11_12 = {}
-
-	i18n = var_11_6
-	var_11_12.content = var_11_6("auction_game_kick")
-
-	function var_11_12.comformCallback()
-		local var_12_0 = arg_11_0
-
-		var_0.closeView(var_12_0)
-
-		return
-	end
-
-	function var_11_12.cancelCallback()
-		local var_13_0 = arg_11_0
-
-		var_0.closeView(var_13_0)
-
-		return
-	end
-
-	var_11_11.data = var_11_12
-
-	var_11_8(var_11_7, var_11_9, var_11_10(var_11_11))
+				return
+			end
+		}
+	}))
 
 	return
 end
 
-function var_0_1.OnReconnection(arg_14_0)
-	local var_14_0 = arg_14_0
-	local var_14_1 = arg_14_0.emit
+function var_0_0.OnReconnection(arg_14_0)
+	arg_14_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+		viewComponent = AuctionGameMainMsgLayer,
+		mediator = AuctionGameMainMsgMediator,
+		data = {
+			content = i18n("auction_network_timeout"),
+			comformCallback = function()
+				arg_14_0:closeView()
 
-	BaseUI = var_1_10004
+				return
+			end,
+			cancelCallback = function()
+				arg_14_0:closeView()
 
-	local var_14_2 = var_1_10004.ON_ADD_SUBLAYER
-
-	Context = var_1_10005
-
-	local var_14_3 = var_1_10005.New
-	local var_14_4 = {}
-
-	AuctionGameMainMsgLayer = var_1_10008
-	var_14_4.viewComponent = var_1_10008
-	AuctionGameMainMsgMediator = var_1_10008
-	var_14_4.mediator = var_1_10008
-
-	local var_14_5 = {}
-
-	i18n = var_1_10009
-	var_14_5.content = var_1_10009("auction_network_timeout")
-
-	function var_14_5.comformCallback()
-		local var_15_0 = arg_14_0
-
-		var_0.closeView(var_15_0)
-
-		return
-	end
-
-	function var_14_5.cancelCallback()
-		local var_16_0 = arg_14_0
-
-		var_0.closeView(var_16_0)
-
-		return
-	end
-
-	var_14_4.data = var_14_5
-
-	var_14_1(var_14_0, var_14_2, var_14_3(var_14_4))
+				return
+			end
+		}
+	}))
 
 	return
 end
 
-function var_0_1.OnNoBid(arg_17_0)
-	getProxy = var_1_10001
-	AuctionGameProxy = var_1_10003
+function var_0_0.OnNoBid(arg_17_0)
+	local var_17_0 = getProxy(AuctionGameProxy)
 
-	local var_17_0 = var_1_10001(var_1_10003)
+	pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildAuctionFinish(var_17_0:GetAuctionID(), var_17_0:GetRound(), 1))
+	arg_17_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+		viewComponent = AuctionGameMainMsgLayer,
+		mediator = AuctionGameMainMsgMediator,
+		data = {
+			content = i18n("auction_game_nobid_tip"),
+			comformCallback = function()
+				arg_17_0:emit(AuctionGameMainMediator.EXIT)
 
-	pg = var_1_10002
+				return
+			end,
+			cancelCallback = function()
+				arg_17_0:emit(AuctionGameMainMediator.EXIT)
 
-	local var_17_1 = var_1_10002.GameTrackerMgr.GetInstance()
-	local var_17_2 = var_2.Record
-
-	GameTrackerBuilder = var_1_10005
-
-	local var_17_3 = var_1_10005.BuildAuctionFinish
-	local var_17_4 = var_17_0:GetAuctionID()
-	local var_17_5 = var_17_0
-
-	var_17_2(var_17_1, var_17_3(var_17_4, var_17_0.GetRound(var_17_5), 1))
-
-	local var_17_6 = arg_17_0
-	local var_17_7 = arg_17_0.emit
-
-	BaseUI = var_5
-
-	local var_17_8 = var_5.ON_ADD_SUBLAYER
-
-	Context = var_1_10006
-
-	local var_17_9 = var_1_10006.New
-	local var_17_10 = {}
-
-	AuctionGameMainMsgLayer = var_9
-	var_17_10.viewComponent = var_9
-	AuctionGameMainMsgMediator = var_9
-	var_17_10.mediator = var_9
-
-	local var_17_11 = {}
-
-	i18n = var_17_5
-	var_17_11.content = var_17_5("auction_game_nobid_tip")
-
-	function var_17_11.comformCallback()
-		local var_18_0 = arg_17_0
-		local var_18_1 = var_0.emit
-
-		AuctionGameMainMediator = var_2_10003
-
-		var_18_1(var_18_0, var_2_10003.EXIT)
-
-		return
-	end
-
-	function var_17_11.cancelCallback()
-		local var_19_0 = arg_17_0
-		local var_19_1 = var_0.emit
-
-		AuctionGameMainMediator = var_2_10003
-
-		var_19_1(var_19_0, var_2_10003.EXIT)
-
-		return
-	end
-
-	var_17_10.data = var_17_11
-
-	var_17_7(var_17_6, var_17_8, var_17_9(var_17_10))
+				return
+			end
+		}
+	}))
 
 	return
 end
 
-function var_0_1.RefreshReadyPanel(arg_20_0)
-	local var_20_0 = arg_20_0
-	local var_20_1 = arg_20_0.emit
-
-	BaseUI = var_1_10004
-
-	local var_20_2 = var_1_10004.ON_ADD_SUBLAYER
-
-	Context = var_1_10005
-
-	local var_20_3 = var_1_10005.New
-	local var_20_4 = {}
-
-	AuctionGameMainReadyLayer = var_1_10008
-	var_20_4.viewComponent = var_1_10008
-	AuctionGameMainReadyMediator = var_1_10008
-	var_20_4.mediator = var_1_10008
-
-	var_20_1(var_20_0, var_20_2, var_20_3(var_20_4))
+function var_0_0.RefreshReadyPanel(arg_20_0)
+	arg_20_0:emit(BaseUI.ON_ADD_SUBLAYER, Context.New({
+		viewComponent = AuctionGameMainReadyLayer,
+		mediator = AuctionGameMainReadyMediator
+	}))
 
 	return
 end
 
-function var_0_1.RefreshRound(arg_21_0)
-	getProxy = var_1_10001
-	AuctionGameProxy = var_1_10003
+function var_0_0.RefreshRound(arg_21_0)
+	local var_21_0 = getProxy(AuctionGameProxy):GetRound()
 
-	local var_21_0 = var_1_10001(var_1_10003)
-
-	if var_1.GetRound(var_21_0) == 1 then
-		SetParent = var_1_10003
-
-		local var_21_1 = arg_21_0.uiTopPanel
-
-		pg = var_1_10006
-
-		var_1_10003(var_21_1, var_1_10006.UIMgr.GetInstance().OverlayMain)
+	if var_21_0 == 1 then
+		SetParent(arg_21_0.uiTopPanel, pg.UIMgr.GetInstance().OverlayMain)
 	end
 
-	arg_21_0:RefreshRoundText(var_2)
-
-	local var_21_2 = arg_21_0.leftPanelView
-
-	var_3.RefreshRound(var_21_2)
-
-	local var_21_3 = arg_21_0.rightPanelView
-
-	var_3.RefreshRound(var_21_3)
+	arg_21_0:RefreshRoundText(var_21_0)
+	arg_21_0.leftPanelView:RefreshRound()
+	arg_21_0.rightPanelView:RefreshRound()
 	arg_21_0:AddTimer()
 
 	return
 end
 
-function var_0_1.RefreshRoundText(arg_22_0, arg_22_1)
-	pg = var_1_10002
-
-	local var_22_0 = var_1_10002.auction_round[arg_22_1]
-
-	LoadSpriteAtlasAsync = var_1_10003
-
-	local var_22_1 = "ui/auctiongameui_atlas"
-
-	string = var_1_10006
-
-	var_1_10003(var_22_1, var_1_10006.format("main_round_%s", arg_22_1), function(arg_23_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_22_0.uiRoundImage) then
+function var_0_0.RefreshRoundText(arg_22_0, arg_22_1)
+	LoadSpriteAtlasAsync("ui/auctiongameui_atlas", string.format("main_round_%s", arg_22_1), function(arg_23_0)
+		if not IsNil(arg_22_0.uiRoundImage) then
 			arg_22_0.uiRoundImage.sprite = arg_23_0
 		end
 
@@ -504,80 +206,39 @@ function var_0_1.RefreshRoundText(arg_22_0, arg_22_1)
 	return
 end
 
-function var_0_1.AddTimer(arg_24_0)
+function var_0_0.AddTimer(arg_24_0)
 	arg_24_0:StopTimer()
 
-	Timer = var_1
-	arg_24_0.timer = var_1.New(function()
-		getProxy = var_2_10000
-		AuctionGameProxy = var_2_10002
+	arg_24_0.timer = Timer.New(function()
+		local var_25_0 = getProxy(AuctionGameProxy):GetTimestamp() - pg.TimeMgr.GetInstance():GetServerTime()
 
-		local var_25_0 = var_2_10000(var_2_10002)
-		local var_25_1 = var_0.GetTimestamp(var_25_0)
+		if var_25_0 < 0 then
+			var_25_0 = 0
 
-		pg = var_2_10001
-
-		local var_25_2 = var_2_10001.TimeMgr.GetInstance()
-		local var_25_3
-
-		if var_25_1 - var_1.GetServerTime(var_25_2) < 0 then
-			var_25_3 = 0
-			getProxy = var_2
-			AuctionGameProxy = var_2_10004
-			var_2_10005 = var_2(var_2_10004)
-
-			local var_25_4 = var_2.GetAuctionState(var_2_10005)
-
-			AuctionGameConst = var_2_10004
-
-			if var_25_4 == var_2_10004.AUCTION_PHASE.ROUND_OVER then
-				AuctionGameTools = var_25_4
-
-				if var_25_4.IsNoBid() then
-					var_2_10005 = arg_24_0
-
-					var_3.StopTimer(var_2_10005)
-
-					var_2_10005 = arg_24_0
-
-					var_3.OnNoBid(var_2_10005)
-				end
+			if getProxy(AuctionGameProxy):GetAuctionState() == AuctionGameConst.AUCTION_PHASE.ROUND_OVER and AuctionGameTools.IsNoBid() then
+				arg_24_0:StopTimer()
+				arg_24_0:OnNoBid()
 			end
 		end
 
-		local var_25_6
-
-		if var_25_3 < 10 then
-			pg = var_25_6
-
-			local var_25_5 = var_25_6.CriMgr.GetInstance()
-
-			var_25_6 = var_25_6.PlaySoundEffect_V3
-			AuctionGameConst = var_2_10005
-
-			var_25_6(var_25_5, var_2_10005.SOUND_EFFECT.COUNTDOWN)
+		if var_25_0 < 10 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(AuctionGameConst.SOUND_EFFECT.COUNTDOWN)
 		end
 
-		setText = var_25_6
-
-		var_25_6(arg_24_0.uiCdText, var_25_3 .. "<size=30>s</size>")
+		setText(arg_24_0.uiCdText, var_25_0 .. "<size=30>s</size>")
 
 		return
 	end, 1, -1)
 
-	local var_24_0 = arg_24_0.timer
-
-	var_1.Start(var_24_0)
+	arg_24_0.timer:Start()
 	arg_24_0.timer.func()
 
 	return
 end
 
-function var_0_1.StopTimer(arg_26_0)
+function var_0_0.StopTimer(arg_26_0)
 	if arg_26_0.timer then
-		local var_26_0 = arg_26_0.timer
-
-		var_1.Stop(var_26_0)
+		arg_26_0.timer:Stop()
 
 		arg_26_0.timer = nil
 	end
@@ -585,97 +246,50 @@ function var_0_1.StopTimer(arg_26_0)
 	return
 end
 
-function var_0_1.OnShowFilterEventPanel(arg_27_0, arg_27_1, arg_27_2)
-	setActive = var_1_10003
-
-	var_1_10003(arg_27_0.uiHideBtn, true)
-
-	setParent = var_1_10003
-
-	var_1_10003(arg_27_2, arg_27_0.uiHideBtn, true)
-
-	setParent = var_1_10003
-
-	local var_27_0 = arg_27_0.uiHideBtn
-
-	pg = var_6
-
-	var_1_10003(var_27_0, var_6.UIMgr.GetInstance().OverlayMain)
+function var_0_0.OnShowFilterEventPanel(arg_27_0, arg_27_1, arg_27_2)
+	setActive(arg_27_0.uiHideBtn, true)
+	setParent(arg_27_2, arg_27_0.uiHideBtn, true)
+	setParent(arg_27_0.uiHideBtn, pg.UIMgr.GetInstance().OverlayMain)
 
 	return
 end
 
-function var_0_1.HideFilterEventPanel(arg_28_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_28_0.uiHideBtn, false)
+function var_0_0.HideFilterEventPanel(arg_28_0)
+	setActive(arg_28_0.uiHideBtn, false)
 
 	return
 end
 
-function var_0_1.willExit(arg_29_0)
-	setParent = var_1_10001
+function var_0_0.willExit(arg_29_0)
+	setParent(arg_29_0.uiHideBtn, arg_29_0._tf)
 
-	var_1_10001(arg_29_0.uiHideBtn, arg_29_0._tf)
-
-	ipairs = var_1_10001
-
-	for iter_29_0, iter_29_1 in var_1_10001(arg_29_0.eventList) do
+	for iter_29_0, iter_29_1 in ipairs(arg_29_0.eventList) do
 		arg_29_0:disconnect(iter_29_1)
 	end
 
 	arg_29_0.eventList = nil
-	getProxy = var_1
-	SettingsProxy = var_3
-
-	local var_29_0 = var_1(var_3)
-
-	var_2.sleepTimeout, Screen = var_1.GetMainSceneScreenSleepTime(var_29_0), var_2
+	Screen.sleepTimeout = getProxy(SettingsProxy):GetMainSceneScreenSleepTime()
 
 	arg_29_0:StopTimer()
-
-	SetParent = var_2
-
-	var_2(arg_29_0.uiTopPanel, arg_29_0._tf)
-
-	local var_29_1 = arg_29_0.leftPanelView
-
-	var_2.willExit(var_29_1)
+	SetParent(arg_29_0.uiTopPanel, arg_29_0._tf)
+	arg_29_0.leftPanelView:willExit()
 
 	arg_29_0.leftPanelView = nil
 
-	local var_29_2 = arg_29_0.rightPanelView
-
-	var_2.willExit(var_29_2)
+	arg_29_0.rightPanelView:willExit()
 
 	arg_29_0.rightPanelView = nil
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_30_0)
-	getProxy = var_1_10001
-	AuctionGameProxy = var_1_10003
-
-	local var_30_0 = var_1_10001(var_1_10003)
-
-	if var_1.GetForfeit(var_30_0) then
-		local var_30_1 = arg_30_0
-		local var_30_2 = arg_30_0.emit
-
-		PlayRoomCommonMediator = var_1_10005
-
-		var_30_2(var_30_1, var_1_10005.PLAY_ROOM_MATCH_STOP)
-
-		local var_30_3 = arg_30_0
-		local var_30_4 = arg_30_0.emit
-
-		AuctionGameMainMediator = var_5
-
-		var_30_4(var_30_3, var_5.EXIT)
+function var_0_0.onBackPressed(arg_30_0)
+	if getProxy(AuctionGameProxy):GetForfeit() then
+		arg_30_0:emit(PlayRoomCommonMediator.PLAY_ROOM_MATCH_STOP)
+		arg_30_0:emit(AuctionGameMainMediator.EXIT)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

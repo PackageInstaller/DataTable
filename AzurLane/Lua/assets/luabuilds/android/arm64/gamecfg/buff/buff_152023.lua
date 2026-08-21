@@ -1,22 +1,49 @@
 ﻿return {
-	time = 3,
-	name = "",
-	init_effect = "",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 152023,
-	icon = 152020,
-	last_effect = "Health",
 	effect_list = {
 		{
-			type = "BattleBuffHP",
+			type = "BattleBuffCastSkill",
 			trigger = {
 				"onAttach"
 			},
 			arg_list = {
-				maxHPRatio = 0.1
+				skill_id = 152022
+			}
+		},
+		{
+			type = "BattleBuffCastSkill",
+			trigger = {
+				"onAttach"
+			},
+			arg_list = {
+				minTargetNumber = 1,
+				skill_id = 152023,
+				nationality = 6,
+				check_target = {
+					"TargetSelf",
+					"TargetNationality"
+				}
 			}
 		}
-	}
+	},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	{},
+	desc_get = "",
+	name = "",
+	init_effect = "",
+	id = 152023,
+	time = 0,
+	picture = "",
+	desc = "",
+	stack = 1,
+	color = "blue",
+	icon = 152020,
+	last_effect = ""
 }

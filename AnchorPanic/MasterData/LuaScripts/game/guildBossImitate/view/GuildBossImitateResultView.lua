@@ -52,8 +52,8 @@ end
 function active(self, args)
     super.active(self, args)
 
-    self.mText_Damage.text = args.damage
-    self.mText_MaxDamage.text = args.cache_damage
+    self.mText_Damage.text = string.formatChineseNumber(args.damage)
+    self.mText_MaxDamage.text = string.formatChineseNumber(args.cache_damage)
     self.mTextRank.gameObject:SetActive(args.rank > 0)
     self.mText_Rank.text = _TT(194, args.rank)
     self.mNewRecord:SetActive(args.new_record)

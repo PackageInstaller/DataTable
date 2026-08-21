@@ -103,7 +103,7 @@ local parkour_dup_data=
 },
 	[2104]={ map_id=14, name="B-2-4", star_list={1,2,3}, first_award=22001, leader_id=1, time=60, begin_time={{2024,3,21},{5,0,0}}, settlement_type=1, settlement_param={}
 },
-	[2105]={ map_id=15, name="B-2-5", star_list={1,2,3}, first_award=22001, leader_id=1, time=60, begin_time={{2024,3,22},{5,0,0}}, settlement_type=1, settlement_param={}
+	[2105]={ map_id=15, name="index=110", star_list={1,2,3}, first_award=22001, leader_id=1, time=60, begin_time={{2024,3,22},{5,0,0}}, settlement_type=1, settlement_param={}
 },
 	[2106]={ map_id=16, name="B-2-6", star_list={1,2,3}, first_award=22001, leader_id=1, time=60, begin_time={{2024,3,23},{5,0,0}}, settlement_type=1, settlement_param={}
 },
@@ -151,23 +151,27 @@ local parkour_dup_data=
 },
 	[10110]={ map_id=50, name="1-10", star_list={4,5,6}, first_award=22001, leader_id=2, time=600, begin_time={{2024,4,11},{5,0,0}}, settlement_type=2, settlement_param={}
 },
-	[20001]={ map_id=20001, name="1-1", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={}, settlement_type=3, settlement_param={2002,2003}
+	[20000]={ map_id=20001, name="0-0", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={}, settlement_type=3, settlement_param={12001}
 },
-	[20002]={ map_id=20002, name="1-2", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={}, settlement_type=3, settlement_param={2002,2003}
+	[20001]={ map_id=20001, name="1-1", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={}, settlement_type=3, settlement_param={12001}
 },
-	[20003]={ map_id=20003, name="1-3", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={}, settlement_type=3, settlement_param={2002,2003}
+	[20002]={ map_id=20002, name="1-2", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,8,28},{5,0,0}}, settlement_type=3, settlement_param={12001}
 },
-	[20004]={ map_id=20004, name="1-4", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,7,17},{5,0,0}}, settlement_type=3, settlement_param={2002,2003}
+	[20003]={ map_id=20003, name="1-3", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,8,29},{5,0,0}}, settlement_type=3, settlement_param={12001}
 },
-	[20005]={ map_id=20005, name="1-5", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,7,18},{5,0,0}}, settlement_type=3, settlement_param={2002,2003}
+	[20004]={ map_id=20004, name="1-4", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,8,30},{5,0,0}}, settlement_type=3, settlement_param={12001}
 },
-	[20006]={ map_id=20006, name="1-6", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,7,19},{5,0,0}}, settlement_type=3, settlement_param={2002,2003}
+	[20005]={ map_id=20005, name="1-5", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,8,31},{5,0,0}}, settlement_type=3, settlement_param={12001}
 },
-	[20007]={ map_id=20007, name="1-7", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,7,20},{5,0,0}}, settlement_type=3, settlement_param={2002,2003}
+	[20006]={ map_id=20006, name="1-6", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,9,1},{5,0,0}}, settlement_type=3, settlement_param={12001}
 },
-	[20008]={ map_id=20008, name="1-8", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,7,21},{5,0,0}}, settlement_type=3, settlement_param={2002,2003}
+	[20007]={ map_id=20007, name="1-7", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,9,2},{5,0,0}}, settlement_type=3, settlement_param={12001}
 },
-	[20009]={ map_id=20009, name="1-9", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,7,22},{5,0,0}}, settlement_type=3, settlement_param={2002,2003}
+	[20008]={ map_id=20008, name="1-8", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,9,3},{5,0,0}}, settlement_type=3, settlement_param={12001}
+},
+	[20009]={ map_id=20009, name="1-9", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,9,4},{5,0,0}}, settlement_type=3, settlement_param={12001}
+},
+	[20010]={ map_id=20010, name="1-10", star_list={7}, first_award=22002, leader_id=3, time=0, begin_time={{2024,9,5},{5,0,0}}, settlement_type=3, settlement_param={12001}
 }
 }
 

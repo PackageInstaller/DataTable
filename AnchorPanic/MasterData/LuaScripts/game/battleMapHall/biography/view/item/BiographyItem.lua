@@ -5,9 +5,9 @@ function onInit(self, go)
     self.mSimpleItemList = {}
     self.mLineList = {}
     self.mItemList = {}
-    for i=1,4 do 
-        self.mLineList[i] = self:getChildGO("Line_"..i)
-        self.mItemList[i] = self:getChildGO("BiographyItem_"..i)
+    for i = 1, 4 do
+        self.mLineList[i] = self:getChildGO("Line_" .. i)
+        self.mItemList[i] = self:getChildGO("BiographyItem_" .. i)
     end
 end
 
@@ -19,14 +19,14 @@ end
 function updateView(self)
     local dataList = self.data.dataList
     self:recoverItem()
-    for i=1,4 do
-        if(i > #dataList) then
+    for i = 1, 4 do
+        if (i > #dataList) then
             self.mLineList[i]:SetActive(false)
         else
             self.mLineList[i]:SetActive(true)
             local heroConfigVo = dataList[i]
             local heroBiographyDataRo = battleMap.BiographyManager:getHeroBiographyConfigVo(heroConfigVo.tid)
-            local item = SimpleInsItem:create(self.mItemList[heroBiographyDataRo.type], self.mLineList[i].transform:Find("NodeNext"), "biographyItem"..heroBiographyDataRo.type)
+            local item = SimpleInsItem:create(self.mItemList[heroBiographyDataRo.type], self.mLineList[i].transform:Find("NodeNext"), "biographyItem" .. heroBiographyDataRo.type)
             local mImgBg = item:getChildGO('ImgBg'):GetComponent(ty.AutoRefImage)
             local mGroupUnLock = item:getChildGO('GroupUnLock')
             local mImgNew = item:getChildGO('ImgNew')
@@ -38,7 +38,7 @@ function updateView(self)
             local TxtName = item:getChildGO('TxtName'):GetComponent(ty.Text)
             local mFollow = item:getChildGO("mImgAttention")
             local mAttention = item:getChildGO("mAttention")
-            mImgBg:SetImg(UrlManager:getIconPath("biography/biography_"..heroConfigVo.showModel..".png"), false)
+            mImgBg:SetImg(UrlManager:getBiographyHeroBgPath(heroConfigVo.showModel), false)
             TxtName.text = heroConfigVo.name
             local isOpen = battleMap.BiographyManager:isBiographyOpen(heroConfigVo.tid)
             local biographyList = battleMap.BiographyManager:getBiographyList(heroConfigVo.tid)
@@ -49,7 +49,7 @@ function updateView(self)
                 local isFollow = 0
                 for i = 1, #biographyList do
                     local biographyVo = biographyList[i]
-                    if(biographyVo.heroTid == heroConfigVo.tid) then 
+                    if (biographyVo.heroTid == heroConfigVo.tid) then
                         isFollow = biographyVo.isFollow
                     end
                     local dupConfiglist = battleMap.BiographyManager:getDupList(biographyVo.biographyId)
@@ -57,7 +57,7 @@ function updateView(self)
                     allPassCount = allPassCount + #biographyVo.historyDupList
                 end
 
-                mShowTxt.text = math.ceil(allPassCount/allCount*100) .. "%"
+                mShowTxt.text = math.ceil(allPassCount / allCount * 100) .. "%"
                 mProgressBar.fillAmount = allPassCount / allCount
                 mImgBg:SetGray(false)
                 mGroupUnLock:SetActive(true)
@@ -71,16 +71,16 @@ function updateView(self)
 
             local function setFollow()
                 biographyList[1].isFollow = biographyList[1].isFollow == 0 and 1 or 0
-                GameDispatcher:dispatchEvent(EventName.REQ_HERO_FOLLOW, {tid = heroConfigVo.tid, follow = biographyList[1].isFollow})
+                GameDispatcher:dispatchEvent(EventName.REQ_HERO_FOLLOW, { tid = heroConfigVo.tid, follow = biographyList[1].isFollow })
                 -- self:updateView()
                 mFollow:SetActive(biographyList[1].isFollow == 1)
             end
 
             local function click()
-                if(isOpen)then  
+                if (isOpen) then
                     local heroBiographyDataRo = battleMap.BiographyManager:getHeroBiographyConfigVo(heroConfigVo.tid)
                     local biographyId = heroBiographyDataRo:getBiographyList()[1]
-                    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_BIOGRAPHY_PANEL, {heroTid = heroConfigVo.tid, biographyId = biographyId})
+                    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_BIOGRAPHY_PANEL, { heroTid = heroConfigVo.tid, biographyId = biographyId })
                 else
                     gs.Message.Show2(string.format(_TT(49001), heroConfigVo.name))
                 end
@@ -97,8 +97,8 @@ function deActive(self)
 end
 
 function recoverItem(self)
-    for i = 1, #self.mSimpleItemList do 
-        if self.mSimpleItemList[i] then 
+    for i = 1, #self.mSimpleItemList do
+        if self.mSimpleItemList[i] then
             self.mSimpleItemList[i]:poolRecover()
         end
     end
@@ -114,6 +114,6 @@ function deActive(self)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

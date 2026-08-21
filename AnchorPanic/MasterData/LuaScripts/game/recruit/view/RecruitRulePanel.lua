@@ -1,4 +1,4 @@
---[[   
+--[[
      英雄招募规则界面
 ]]
 module('recruit.RecruitRulePanel', Class.impl(View))
@@ -17,7 +17,7 @@ end
 -- 初始化数据
 function initData(self)
     self.m_itemList = {}
-    self.m_recruitType = nil
+    self.m_recruitId = nil
 end
 
 -- 初始化
@@ -33,9 +33,9 @@ function active(self, args)
 
     recruit.RecruitManager:SetOpenRulePanel(true)
 
-    self.m_recruitType = args.recruitType
+    self.m_recruitId = args.recruitId
 
-    local ruleConfigVo = recruit.RecruitManager:getRecruitRuleConfigVo(self.m_recruitType)
+    local ruleConfigVo = recruit.RecruitManager:getRecruitRuleConfigVo(self.m_recruitId)
     self.ruleList = ruleConfigVo:getRuleData()
     self.m_createIndex = 0
     self.mTxtTips.text = _TT(ruleConfigVo.rule)
@@ -52,7 +52,7 @@ function deActive(self)
 end
 
 function initViewText(self)
-    -- if self.m_recruitType  == recruit.RecruitType.RECRUIT_BRACELETS then
+    -- if self.m_recruitId  == recruit.RecruitType.RECRUIT_BRACELETS then
     --     self.mTxtTips.text = _TT(28029) --"*SSR战员招募的基础概率为0.500%，综合概率（含保底）为2.100%，最多60次招募必定能通过保底获取SSR战员。"
     -- else
     --     self.mTxtTips.text = _TT(28028) --"*SSR战员招募的基础概率为0.500%，综合概率（含保底）为2.100%，最多60次招募必定能通过保底获取SSR战员。"
@@ -76,8 +76,10 @@ function createItem(self)
     self.m_createIndex = self.m_createIndex + 1
     if self.m_createIndex > #self.ruleList then return end
 
+    local recruitType = recruit.RecruitManager:getRecruitTypeById(self.m_recruitId)
+
     local item = recruit.RecruitRuleItem:poolGet()
-    item:setData(self.mContent, self.ruleList, self.m_createIndex, self.m_recruitType,function ()
+    item:setData(self.mContent, self.ruleList, self.m_createIndex, recruitType, function ()
         self:createItem()
     end)
     table.insert(self.m_itemList, item)
@@ -91,6 +93,6 @@ function onClickClose(self)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

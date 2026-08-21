@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TrackConst")
+﻿local var_0_0 = class("TrackConst")
 
 function var_0_0.GetTrackData(arg_1_0, arg_1_1, ...)
 	return {
@@ -11,11 +9,7 @@ function var_0_0.GetTrackData(arg_1_0, arg_1_1, ...)
 end
 
 function var_0_0.GetDesc(arg_2_0, arg_2_1, ...)
-	local var_2_0 = var_0_0["Build" .. arg_2_0 .. "Action" .. arg_2_1 .. "Desc"]
-
-	unpack = var_4
-
-	return var_2_0(var_4({
+	return var_0_0["Build" .. arg_2_0 .. "Action" .. arg_2_1 .. "Desc"](unpack({
 		...
 	}))
 end

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_chara_skill") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_chara_skill"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_chara_skill = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_chara_skill
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_chara_skill = rawget(pg, "island_chara_skill") or setmetatable({
+	__name = "island_chara_skill"
+}, confNEO)
+pg.island_chara_skill.all = {
 	1000,
 	1001,
 	1002,
@@ -61,25 +38,11 @@ var_0_3.all = {
 	1032,
 	99999
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_chara_skill = {}
+pg.base = pg.base or {}
+pg.base.island_chara_skill = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_chara_skill
-
-	var_1_0[1000] = {
+	pg.base.island_chara_skill[1000] = {
 		name = "制造技艺",
 		id = 1000,
 		icon = "chara_all_skill_14",
@@ -207,11 +170,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_chara_skill
-
-	var_1_1[1001] = {
+	pg.base.island_chara_skill[1001] = {
 		name = "餐品销售",
 		id = 1001,
 		icon = "chara_all_skill_13",
@@ -339,11 +298,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_chara_skill
-
-	var_1_2[1002] = {
+	pg.base.island_chara_skill[1002] = {
 		name = "饮品销售",
 		id = 1002,
 		icon = "chara_all_skill_4",
@@ -481,11 +436,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_chara_skill
-
-	var_1_3[1003] = {
+	pg.base.island_chara_skill[1003] = {
 		name = "育果技艺",
 		id = 1003,
 		icon = "chara_all_skill_10",
@@ -613,11 +564,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_chara_skill
-
-	var_1_4[1004] = {
+	pg.base.island_chara_skill[1004] = {
 		name = "伐木技艺",
 		id = 1004,
 		icon = "chara_all_skill_2",
@@ -745,11 +692,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_chara_skill
-
-	var_1_5[1005] = {
+	pg.base.island_chara_skill[1005] = {
 		name = "畜牧技艺",
 		id = 1005,
 		icon = "chara_all_skill_6",
@@ -877,11 +820,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_chara_skill
-
-	var_1_6[1006] = {
+	pg.base.island_chara_skill[1006] = {
 		name = "烹饪技艺",
 		id = 1006,
 		icon = "chara_all_skill_7",
@@ -1009,11 +948,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_chara_skill
-
-	var_1_7[1007] = {
+	pg.base.island_chara_skill[1007] = {
 		name = "研发技艺",
 		id = 1007,
 		icon = "chara_all_skill_3",
@@ -1141,11 +1076,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_chara_skill
-
-	var_1_8[1008] = {
+	pg.base.island_chara_skill[1008] = {
 		name = "采矿技艺",
 		id = 1008,
 		icon = "chara_all_skill_1",
@@ -1273,11 +1204,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_chara_skill
-
-	var_1_9[1009] = {
+	pg.base.island_chara_skill[1009] = {
 		name = "耕作技艺",
 		id = 1009,
 		icon = "chara_all_skill_5",
@@ -1405,11 +1332,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_chara_skill
-
-	var_1_10[1010] = {
+	pg.base.island_chara_skill[1010] = {
 		name = "高效回复",
 		id = 1010,
 		icon = "chara_all_skill_8",
@@ -1537,11 +1460,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_chara_skill
-
-	var_1_11[1011] = {
+	pg.base.island_chara_skill[1011] = {
 		name = "培育技艺",
 		id = 1011,
 		icon = "chara_all_skill_9",
@@ -1669,11 +1588,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_chara_skill
-
-	var_1_12[1012] = {
+	pg.base.island_chara_skill[1012] = {
 		name = "餐馆专销",
 		id = 1012,
 		icon = "chara_all_skill_7",
@@ -1811,11 +1726,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_chara_skill
-
-	var_1_13[1013] = {
+	pg.base.island_chara_skill[1013] = {
 		name = "修枝技艺",
 		id = 1013,
 		icon = "chara_all_skill_10",
@@ -1943,11 +1854,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_chara_skill
-
-	var_1_14[1014] = {
+	pg.base.island_chara_skill[1014] = {
 		name = "高效研发",
 		id = 1014,
 		icon = "chara_all_skill_3",
@@ -2075,11 +1982,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_chara_skill
-
-	var_1_15[1015] = {
+	pg.base.island_chara_skill[1015] = {
 		name = "加工技艺",
 		id = 1015,
 		icon = "chara_all_skill_15",
@@ -2207,11 +2110,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_chara_skill
-
-	var_1_16[1016] = {
+	pg.base.island_chara_skill[1016] = {
 		name = "收割技艺",
 		id = 1016,
 		icon = "chara_all_skill_5",
@@ -2339,11 +2238,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_chara_skill
-
-	var_1_17[1017] = {
+	pg.base.island_chara_skill[1017] = {
 		name = "放牧技艺",
 		id = 1017,
 		icon = "chara_all_skill_6",
@@ -2471,11 +2366,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_chara_skill
-
-	var_1_18[1018] = {
+	pg.base.island_chara_skill[1018] = {
 		name = "简餐专销",
 		id = 1018,
 		icon = "chara_all_skill_12",
@@ -2613,11 +2504,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_chara_skill
-
-	var_1_19[1019] = {
+	pg.base.island_chara_skill[1019] = {
 		name = "调制技艺",
 		id = 1019,
 		icon = "chara_all_skill_4",
@@ -2745,11 +2632,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_chara_skill
-
-	var_1_20[1020] = {
+	pg.base.island_chara_skill[1020] = {
 		name = "采集技艺",
 		id = 1020,
 		icon = "chara_all_skill_2",
@@ -2877,11 +2760,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_chara_skill
-
-	var_1_21[1021] = {
+	pg.base.island_chara_skill[1021] = {
 		name = "加速回复",
 		id = 1021,
 		icon = "chara_all_skill_8",
@@ -3009,11 +2888,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_chara_skill
-
-	var_1_22[1022] = {
+	pg.base.island_chara_skill[1022] = {
 		name = "农作技艺",
 		id = 1022,
 		icon = "chara_all_skill_5",
@@ -3141,11 +3016,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_chara_skill
-
-	var_1_23[1023] = {
+	pg.base.island_chara_skill[1023] = {
 		name = "全力专注",
 		id = 1023,
 		icon = "chara_all_skill_8",
@@ -3315,11 +3186,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_chara_skill
-
-	var_1_24[1024] = {
+	pg.base.island_chara_skill[1024] = {
 		name = "采收技艺",
 		id = 1024,
 		icon = "chara_all_skill_9",
@@ -3447,11 +3314,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_chara_skill
-
-	var_1_25[1025] = {
+	pg.base.island_chara_skill[1025] = {
 		name = "爆破技艺",
 		id = 1025,
 		icon = "chara_all_skill_1",
@@ -3579,11 +3442,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_chara_skill
-
-	var_1_26[1026] = {
+	pg.base.island_chara_skill[1026] = {
 		name = "烧烤精通",
 		id = 1026,
 		icon = "chara_all_skill_13",
@@ -3721,11 +3580,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_chara_skill
-
-	var_1_27[1027] = {
+	pg.base.island_chara_skill[1027] = {
 		name = "木工技艺",
 		id = 1027,
 		icon = "chara_all_skill_16",
@@ -3853,11 +3708,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_chara_skill
-
-	var_1_28[1028] = {
+	pg.base.island_chara_skill[1028] = {
 		name = "手工技艺",
 		id = 1028,
 		icon = "chara_all_skill_14",
@@ -3985,11 +3836,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_chara_skill
-
-	var_1_29[1029] = {
+	pg.base.island_chara_skill[1029] = {
 		name = "元气满满",
 		id = 1029,
 		icon = "chara_all_skill_8",
@@ -4159,11 +4006,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_chara_skill
-
-	var_1_30[1030] = {
+	pg.base.island_chara_skill[1030] = {
 		name = "店务精通",
 		id = 1030,
 		icon = "chara_all_skill_12",
@@ -4301,11 +4144,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_chara_skill
-
-	var_1_31[1031] = {
+	pg.base.island_chara_skill[1031] = {
 		name = "幸运问候",
 		id = 1031,
 		icon = "chara_all_skill_18",
@@ -4433,11 +4272,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_chara_skill
-
-	var_1_32[1032] = {
+	pg.base.island_chara_skill[1032] = {
 		name = "调饮精通",
 		id = 1032,
 		icon = "chara_all_skill_4",
@@ -4607,8 +4442,7 @@ var_0_3.base.island_chara_skill = {}
 			}
 		}
 	}
-	pg = var_1_32
-	var_1_32.base.island_chara_skill[31] = {
+	pg.base.island_chara_skill[31] = {
 		name = "无限活力",
 		id = 99999,
 		icon = "chara_all_skill_8",

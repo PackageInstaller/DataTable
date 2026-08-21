@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("StoryTimer")
+﻿local var_0_0 = class("StoryTimer")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3)
 	arg_1_0.duration = arg_1_2
@@ -14,15 +12,9 @@ function var_0_0.Start(arg_2_0)
 	arg_2_0.passed = 0
 	arg_2_0.running = true
 	arg_2_0.paused = nil
+	arg_2_0.handle = arg_2_0.handle or UpdateBeat:CreateListener(arg_2_0.Update, arg_2_0)
 
-	if not arg_2_0.handle then
-		UpdateBeat = var_1
-		arg_2_0.handle = var_1:CreateListener(arg_2_0.Update, arg_2_0)
-	end
-
-	UpdateBeat = var_1
-
-	var_1:AddListener(arg_2_0.handle)
+	UpdateBeat:AddListener(arg_2_0.handle)
 
 	return
 end
@@ -49,9 +41,7 @@ function var_0_0.Stop(arg_5_0)
 	arg_5_0.passed = 0
 
 	if arg_5_0.handle then
-		UpdateBeat = var_1
-
-		var_1:RemoveListener(arg_5_0.handle)
+		UpdateBeat:RemoveListener(arg_5_0.handle)
 	end
 
 	return
@@ -62,10 +52,7 @@ function var_0_0.Update(arg_6_0)
 		return
 	end
 
-	local var_6_0 = arg_6_0.passed
-
-	Time = var_1_10002
-	arg_6_0.passed = var_6_0 + var_1_10002.deltaTime
+	arg_6_0.passed = arg_6_0.passed + Time.deltaTime
 
 	if arg_6_0.passed >= arg_6_0.duration then
 		arg_6_0.passed = 0

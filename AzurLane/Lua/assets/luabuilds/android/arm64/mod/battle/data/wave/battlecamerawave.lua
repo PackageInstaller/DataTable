@@ -1,98 +1,57 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
+local var_0_1 = ys.Battle.BattleConfig
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleCameraWave = class("BattleCameraWave", ys.Battle.BattleWaveInfo)
+ys.Battle.BattleCameraWave.__name = "BattleCameraWave"
 
-local var_0_1 = var_0.Battle.BattleConfig
-local var_0_2 = var_0.Battle
+local var_0_2 = ys.Battle.BattleCameraWave
 
-class = var_0_10003
-var_0_2.BattleCameraWave = var_0_10003("BattleCameraWave", var_0.Battle.BattleWaveInfo)
-var_0.Battle.BattleCameraWave.__name = "BattleCameraWave"
-
-local var_0_3 = var_0.Battle.BattleCameraWave
-
-function var_0_3.Ctor(arg_1_0)
-	var_0_3.super.Ctor(arg_1_0)
+function ys.Battle.BattleCameraWave.Ctor(arg_1_0)
+	var_0_2.super.Ctor(arg_1_0)
 
 	return
 end
 
-function var_0_3.SetWaveData(arg_2_0, arg_2_1)
-	var_0_3.super.SetWaveData(arg_2_0, arg_2_1)
+function ys.Battle.BattleCameraWave.SetWaveData(arg_2_0, arg_2_1)
+	var_0_2.super.SetWaveData(arg_2_0, arg_2_1)
 
 	arg_2_0._pause = arg_2_0._param.pause
-
-	local var_2_0
-
-	if not arg_2_0._param.type then
-		var_2_0 = 0
-	end
-
-	arg_2_0._cameraType = var_2_0
-
-	local var_2_1
-
-	if not arg_2_0._param.model then
-		var_2_1 = 900006
-	end
-
-	arg_2_0._modelID = var_2_1
-
-	local var_2_2
-
-	if not arg_2_0._param.duration then
-		var_2_2 = 1
-	end
-
-	arg_2_0._duration = var_2_2
+	arg_2_0._cameraType = arg_2_0._param.type or 0
+	arg_2_0._modelID = arg_2_0._param.model or 900006
+	arg_2_0._duration = arg_2_0._param.duration or 1
 	arg_2_0._zoomSize = arg_2_0._param.zoomSize
 	arg_2_0._zoomBounce = arg_2_0._param.zoomBounce
 
 	return
 end
 
-function var_0_3.DoWave(arg_3_0)
-	var_0_3.super.DoWave(arg_3_0)
+function ys.Battle.BattleCameraWave.DoWave(arg_3_0)
+	var_0_2.super.DoWave(arg_3_0)
 
-	local var_3_0 = var_0.Battle.BattleCameraUtil.GetInstance()
+	local var_3_0 = var_0_0.Battle.BattleCameraUtil.GetInstance()
 
 	if arg_3_0._cameraType == 1 then
-		local var_3_1 = var_0.Battle.BattleDataProxy.GetInstance()
-		local var_3_2 = var_2.GetUnitList(var_3_1)
-		local var_3_3
+		local var_3_1
 
-		pairs = var_3_1
-
-		for iter_3_0, iter_3_1 in var_3_1(var_3_2) do
+		for iter_3_0, iter_3_1 in pairs((var_0_0.Battle.BattleDataProxy.GetInstance():GetUnitList())) do
 			if iter_3_1:GetTemplateID() == arg_3_0._modelID then
-				var_3_3 = iter_3_1
+				var_3_1 = iter_3_1
 
 				break
 			end
 		end
 
-		var_3_0:FocusCharacter(var_3_3, arg_3_0._duration, 0, true, not arg_3_0._zoomBounce)
+		var_3_0:FocusCharacter(var_3_1, arg_3_0._duration, 0, true, not arg_3_0._zoomBounce)
 
 		if arg_3_0._zoomSize then
-			local var_3_4 = arg_3_0._duration * 0.5
+			local var_3_2 = arg_3_0._duration * 0.5
 
 			if arg_3_0._zoomBounce then
-				var_3_0:ZoomCamara(nil, var_0_1.CAST_CAM_OVERLOOK_SIZE, var_3_4)
-
-				LeanTween = var_5
-
-				local var_3_5 = var_5.delayedCall
-				local var_3_6 = var_3_4
-
-				System = var_8
-
-				var_3_5(var_3_6, var_8.Action(function()
-					local var_4_0 = var_3_0
-
-					var_0.ZoomCamara(var_4_0, var_0_1.CAST_CAM_OVERLOOK_SIZE, arg_3_0._zoomSize, var_3_4)
+				var_3_0:ZoomCamara(nil, var_0_1.CAST_CAM_OVERLOOK_SIZE, arg_3_0._duration * 0.5)
+				LeanTween.delayedCall(arg_3_0._duration * 0.5, System.Action(function()
+					var_3_0:ZoomCamara(var_0_1.CAST_CAM_OVERLOOK_SIZE, arg_3_0._zoomSize, var_3_2)
 
 					return
 				end))

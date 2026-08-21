@@ -1,297 +1,134 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AppreciateUnlockMsgBox", import("..base.BaseSubView"))
 
-local var_0_0 = "AppreciateUnlockMsgBox"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "AppreciateUnlockMsgBox"
 end
 
-function var_0_1.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
 	arg_2_0.customMsgbox = arg_2_0._tf
+	arg_2_0.msgBoxItemPanel = arg_2_0.customMsgbox:Find("frame/bg/item_panel")
+	arg_2_0.msgboxItemContains = arg_2_0.customMsgbox:Find("frame/bg/item_panel/items")
+	arg_2_0.msgBoxItemTpl = arg_2_0.msgboxItemContains:Find("equipmenttpl")
+	arg_2_0.msgBoxItemContent = arg_2_0.customMsgbox:Find("frame/bg/item_panel/content")
+	arg_2_0.msgBoxItemContent1 = arg_2_0.customMsgbox:Find("frame/bg/item_panel/content_num")
+	arg_2_0.msgBoxCancelBtn = arg_2_0.customMsgbox:Find("frame/btns/cancel_btn")
+	arg_2_0.msgBoxConfirmBtn = arg_2_0.customMsgbox:Find("frame/btns/confirm_btn")
+	arg_2_0.msgBoxContent = arg_2_0.customMsgbox:Find("frame/bg/content")
+	arg_2_0.msgBtnBack = arg_2_0.customMsgbox:Find("frame/top/btnBack")
 
-	local var_2_0 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBoxItemPanel = var_1.Find(var_2_0, "frame/bg/item_panel")
-
-	local var_2_1 = arg_2_0.customMsgbox
-
-	arg_2_0.msgboxItemContains = var_1.Find(var_2_1, "frame/bg/item_panel/items")
-
-	local var_2_2 = arg_2_0.msgboxItemContains
-
-	arg_2_0.msgBoxItemTpl = var_1.Find(var_2_2, "equipmenttpl")
-
-	local var_2_3 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBoxItemContent = var_1.Find(var_2_3, "frame/bg/item_panel/content")
-
-	local var_2_4 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBoxItemContent1 = var_1.Find(var_2_4, "frame/bg/item_panel/content_num")
-
-	local var_2_5 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBoxCancelBtn = var_1.Find(var_2_5, "frame/btns/cancel_btn")
-
-	local var_2_6 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBoxConfirmBtn = var_1.Find(var_2_6, "frame/btns/confirm_btn")
-
-	local var_2_7 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBoxContent = var_1.Find(var_2_7, "frame/bg/content")
-
-	local var_2_8 = arg_2_0.customMsgbox
-
-	arg_2_0.msgBtnBack = var_1.Find(var_2_8, "frame/top/btnBack")
-	SetActive = var_1
-
-	var_1(arg_2_0.customMsgbox, false)
+	SetActive(arg_2_0.customMsgbox, false)
 
 	arg_2_0.settings = {}
-	onButton = var_1
 
-	local var_2_9 = arg_2_0
-	local var_2_10 = arg_2_0.msgBoxConfirmBtn
-
-	local function var_2_11()
+	onButton(arg_2_0, arg_2_0.msgBoxConfirmBtn, function()
 		if arg_2_0.settings.onYes then
 			arg_2_0.settings.onYes()
 		else
-			local var_3_0 = arg_2_0
-
-			var_0.hideCustomMsgBox(var_3_0)
+			arg_2_0:hideCustomMsgBox()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_2_9, var_2_10, var_2_11, var_1_10006)
-
-	SetActive = var_1
-
-	local var_2_12 = arg_2_0.msgBoxCancelBtn
-
-	defaultValue = var_2_10
-
-	var_1(var_2_12, not var_2_10(arg_2_0.settings.hideNO, false))
-
-	onButton = var_1
-
-	local var_2_13 = arg_2_0
-	local var_2_14 = arg_2_0.msgBoxCancelBtn
-
-	local function var_2_15()
+	end, SFX_PANEL)
+	SetActive(arg_2_0.msgBoxCancelBtn, not defaultValue(arg_2_0.settings.hideNO, false))
+	onButton(arg_2_0, arg_2_0.msgBoxCancelBtn, function()
 		if arg_2_0.settings.onCancel then
 			arg_2_0.settings.onCancel()
 		else
-			local var_4_0 = arg_2_0
-
-			var_0.hideCustomMsgBox(var_4_0)
+			arg_2_0:hideCustomMsgBox()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_2_13, var_2_14, var_2_15, var_6)
-
-	onButton = var_1
-
-	local var_2_16 = arg_2_0
-	local var_2_17 = arg_2_0.customMsgbox
-
-	local function var_2_18()
-		local var_5_0 = arg_2_0
-
-		var_0.hideCustomMsgBox(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.customMsgbox, function()
+		arg_2_0:hideCustomMsgBox()
 
 		return
-	end
-
-	SFX_PANEL = var_6
-
-	var_1(var_2_16, var_2_17, var_2_18, var_6)
-
-	onButton = var_1
-
-	local var_2_19 = arg_2_0
-	local var_2_20 = arg_2_0.msgBtnBack
-
-	local function var_2_21()
-		local var_6_0 = arg_2_0
-
-		var_0.hideCustomMsgBox(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_2_0, arg_2_0.msgBtnBack, function()
+		arg_2_0:hideCustomMsgBox()
 
 		return
-	end
-
-	SFX_CANCEL = var_6
-
-	var_1(var_2_19, var_2_20, var_2_21, var_6)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.showCustomMsgBox(arg_7_0, arg_7_1)
+function var_0_0.showCustomMsgBox(arg_7_0, arg_7_1)
 	arg_7_0.isShowCustomMsgBox = true
 	arg_7_0.settings = arg_7_1
-	setActive = var_2
 
-	var_2(arg_7_0.customMsgbox, true)
+	setActive(arg_7_0.customMsgbox, true)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_7_0.customMsgbox)
 
-	pg = var_2
+	local var_7_0 = arg_7_1.items and #arg_7_1.items > 0
 
-	local var_7_0 = var_2.UIMgr.GetInstance()
+	setActive(arg_7_0.msgBoxItemPanel, var_7_0)
+	setActive(arg_7_0.msgBoxContent, not var_7_0)
 
-	var_2.OverlayPanel(var_7_0, arg_7_0.customMsgbox)
+	local var_7_1 = getProxy(PlayerProxy):getData()
 
-	local var_7_2
+	if var_7_0 then
+		local var_7_2 = arg_7_1.items
 
-	if arg_7_1.items then
-		local var_7_1 = #arg_7_1.items
-
-		var_7_2 = 0 < var_7_1
-	end
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_7_0.msgBoxItemPanel, var_7_2)
-
-	setActive = var_1_10003
-
-	var_1_10003(arg_7_0.msgBoxContent, not var_7_2)
-
-	getProxy = var_1_10003
-	PlayerProxy = var_5
-
-	local var_7_3 = var_1_10003(var_5)
-	local var_7_4 = var_3.getData(var_7_3)
-
-	if var_7_2 then
-		var_7_0 = arg_7_1.items
-
-		for iter_7_0 = arg_7_0.msgboxItemContains.childCount + 1, #var_7_0 do
-			cloneTplTo = var_1_10010
-
-			var_1_10010(arg_7_0.msgBoxItemTpl, arg_7_0.msgboxItemContains)
+		for iter_7_0 = arg_7_0.msgboxItemContains.childCount + 1, #arg_7_1.items do
+			cloneTplTo(arg_7_0.msgBoxItemTpl, arg_7_0.msgboxItemContains)
 		end
 
-		local var_7_5 = arg_7_0.msgboxItemContains.childCount
+		for iter_7_1 = 1, arg_7_0.msgboxItemContains.childCount do
+			local var_7_3 = arg_7_0.msgboxItemContains:GetChild(iter_7_1 - 1)
 
-		for iter_7_1 = 1, var_7_5 do
-			local var_7_6 = arg_7_0.msgboxItemContains
-			local var_7_7 = var_10.GetChild(var_7_6, iter_7_1 - 1)
+			SetActive(var_7_3, iter_7_1 <= #var_7_2)
 
-			SetActive = var_1_10011
+			if iter_7_1 <= #var_7_2 then
+				local var_7_4 = var_7_2[iter_7_1]
 
-			var_1_10011(var_7_7, iter_7_1 <= #var_7_0)
+				updateDrop(var_7_3, var_7_2[iter_7_1])
 
-			if iter_7_1 <= #var_7_0 then
-				var_1_10011 = var_7_0[iter_7_1]
-				updateDrop = var_7_6
+				local var_7_5 = 0
 
-				var_7_6(var_7_7, var_1_10011)
-
-				local var_7_8 = 0
-				local var_7_9 = var_1_10011.type
-
-				DROP_TYPE_RESOURCE = var_14
-
-				local var_7_10
-
-				if var_7_9 == var_14 then
-					var_7_10 = var_7_4
-					var_7_8 = var_7_4.getResById(var_7_10, var_1_10011.id)
-				else
-					local var_7_11 = var_1_10011.type
-
-					DROP_TYPE_ITEM = var_14
-
-					if var_7_11 == var_14 then
-						getProxy = var_7_11
-						BagProxy = var_7_10
-
-						local var_7_12 = var_7_11(var_7_10)
-
-						var_7_8 = var_13.getItemCountById(var_7_12, var_1_10011.id)
-					end
+				if var_7_4.type == DROP_TYPE_RESOURCE then
+					var_7_5 = var_7_1:getResById(var_7_4.id)
+				elseif var_7_4.type == DROP_TYPE_ITEM then
+					var_7_5 = getProxy(BagProxy):getItemCountById(var_7_4.id)
 				end
 
-				local var_7_13
+				if var_7_5 < var_7_4.count then
+					local var_7_6 = "<color=#D6341DFF>" .. var_7_4.count .. "</color>" or "<color=#A9F548FF>" .. var_7_4.count .. "</color>"
 
-				if not (var_7_8 < var_1_10011.count) or not ("<color=#D6341DFF>" .. var_1_10011.count .. "</color>") then
-					var_7_13 = "<color=#A9F548FF>" .. var_1_10011.count .. "</color>"
+					setText(var_7_3:Find("icon_bg/count"), var_7_5 .. "/" .. var_7_6)
 				end
-
-				setText = var_14
-
-				var_14(var_7_7:Find("icon_bg/count"), var_7_8 .. "/" .. var_7_13)
 			end
 		end
 
-		setText = var_6
+		local var_7_7 = arg_7_1.content or ""
 
-		local var_7_14 = arg_7_0.msgBoxItemContent
-		local var_7_15
+		setText(arg_7_0.msgBoxItemContent, var_7_7)
 
-		if not arg_7_1.content then
-			var_7_15 = ""
-		end
+		local var_7_8 = arg_7_1.content1 or ""
 
-		var_6(var_7_14, var_7_15)
-
-		setText = var_6
-
-		local var_7_16 = arg_7_0.msgBoxItemContent1
-		local var_7_17
-
-		if not arg_7_1.content1 then
-			var_7_17 = ""
-		end
-
-		var_6(var_7_16, var_7_17)
+		setText(arg_7_0.msgBoxItemContent1, var_7_8)
 	else
-		setText = var_7_0
+		local var_7_10 = arg_7_1.content or ""
 
-		local var_7_18 = arg_7_0.msgBoxContent
-		local var_7_19
-
-		if not arg_7_1.content then
-			var_7_19 = ""
-		end
-
-		var_7_0(var_7_18, var_7_19)
+		var_7_9(arg_7_0.msgBoxContent, var_7_10)
 	end
 
 	return
 end
 
-function var_0_1.hideCustomMsgBox(arg_8_0)
+function var_0_0.hideCustomMsgBox(arg_8_0)
 	arg_8_0.isShowCustomMsgBox = nil
-	SetActive = var_1
 
-	var_1(arg_8_0.customMsgbox, false)
+	SetActive(arg_8_0.customMsgbox, false)
 	arg_8_0:Destroy()
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_9_0)
-	pg = var_1_10001
-
-	local var_9_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_9_0, arg_9_0.customMsgbox, arg_9_0._tf)
+function var_0_0.OnDestroy(arg_9_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_9_0.customMsgbox, arg_9_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

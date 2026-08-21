@@ -134,6 +134,7 @@ function parseFestivalSignInfoMsg(self, msg)
 
     GameDispatcher:dispatchEvent(EventName.UPDATE_WELFAREOPT_FLAG, {tabType = welfareOpt.WelfareOptConst.WELFAREOPT_HOLIDAY})
     GameDispatcher:dispatchEvent(EventName.UPDATE_FESTIVAL_REWARD)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
     GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
 end
 
@@ -267,6 +268,10 @@ function getRedData(self, index)
         welfareOpt.WelfareOptConst.WELFAREOPT_HOLIDAY then
         if self:getSignRewardList() == false then
             isRed = self.loginDay > #self.signDayRewardList
+        end
+    elseif index == welfareOpt.WelfareOptConst.NOVICEACTIVITY_RETURN and funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN, false) then
+        if activity.ActivityManager:getNoviceActivityIsOpen() then
+            isRed = noviceActivity.NoviceActivityManager:updateBublleReturn()
         end
     end
 
@@ -422,7 +427,7 @@ end
 function getIsFestivalRed(self)
     for i, v in ipairs(self:getFestivalData()) do
         local geted = welfareOpt.WelfareOptManager:getSignRewardGeted(i)
-        if not geted and i<= self:getSignDay() then
+        if not geted and i <= self:getSignDay() then
             return true
         end
     end
@@ -617,10 +622,12 @@ function parseSevenLoadingServerData(self, msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_WELFAREOPT_FLAG, {
         tabType = welfareOpt.WelfareOptConst.WELFAREOPT_SEVENLOADING
     })
-    GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
+    -- GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CELEBRATION_RED_STATE)
     if self:getSevenLoadingServerData() and #self:getSevenLoadingServerData().list >= 7 then
         GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_HIDE, activity.ActivityConst.ACTIVITY_SEVENLOADING)
     end
+    GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
 end
 
 -- 获取7天登录服务器数据
@@ -715,7 +722,7 @@ end
 
 -- 当前GroupID是否在领取时间段
 function checkGroupisInTimeSpan(self, idx)
-    local t = os.date('*t', GameManager:getServerTime())
+    local t = TimeUtil.getServerTimeTable()
     if self:getIsStrengthSupplyTime(self:getStrengthSupplyDic()[idx], t, idx) then
         return true
     end
@@ -724,7 +731,7 @@ end
 
 -- 当前时间是否在过期领取时间
 function checkIsExpired(self, idx)
-    local time = os.date('*t', GameManager:getServerTime())
+    local time = TimeUtil.getServerTimeTable()
     if self.mStrengthSupplyDic == nil then
         self:parseStrengthSupplyData()
     end
@@ -885,7 +892,7 @@ end
 
 -- 判断领取状态
 function checkWelfareSupply(self, idx)
-    local t = os.date('*t', GameManager:getServerTime())
+    local t = TimeUtil.getServerTimeTable()
     local curTime = self:getConversionTimetoSec1(t.hour, t.min, t.sec)
     if curTime == self.m_5TimeStamp then
         self.awardList = {}
@@ -916,8 +923,7 @@ end
 
 -- taptap活动是否开启
 function getTapActivityIsOpen(self)
-    local channelId, channelName = sdk.SdkManager:getChannelData()
-    if channelId == sdk.AndroidChannelId.BILI and self.isBiliOpen == 0 then
+    if sdk.ChannelData:isChannelBili() and self.isBiliOpen == 0 then
         -- bilibili包后端控制开放
         return false
     end

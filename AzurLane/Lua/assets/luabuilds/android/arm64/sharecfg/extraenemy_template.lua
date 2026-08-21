@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "extraenemy_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "extraenemy_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.extraenemy_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.extraenemy_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.extraenemy_template = rawget(pg, "extraenemy_template") or setmetatable({
+	__name = "extraenemy_template"
+}, confNEO)
+pg.extraenemy_template.all = {
 	1,
 	2,
 	3,
@@ -46,25 +23,11 @@ var_0_3.all = {
 	18,
 	19
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.extraenemy_template = {}
+pg.base = pg.base or {}
+pg.base.extraenemy_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.extraenemy_template
-
-	var_1_0[1] = {
+	pg.base.extraenemy_template[1] = {
 		mail_title = "world_boss_title_1",
 		name = "女仆据点",
 		hp = 10000,
@@ -83,11 +46,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.extraenemy_template
-
-	var_1_1[2] = {
+	pg.base.extraenemy_template[2] = {
 		mail_title = "world_boss_title_1",
 		name = "埃塞克斯",
 		hp = 10000,
@@ -124,11 +83,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.extraenemy_template
-
-	var_1_2[3] = {
+	pg.base.extraenemy_template[3] = {
 		mail_title = "world_boss_title_4",
 		name = "骏河",
 		hp = 10000,
@@ -165,11 +120,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.extraenemy_template
-
-	var_1_3[4] = {
+	pg.base.extraenemy_template[4] = {
 		mail_title = "world_boss_title_5",
 		name = "黛朵",
 		hp = 10000,
@@ -206,11 +157,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.extraenemy_template
-
-	var_1_4[5] = {
+	pg.base.extraenemy_template[5] = {
 		mail_title = "world_boss_title_1",
 		name = "埃塞克斯",
 		hp = 10000,
@@ -247,11 +194,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.extraenemy_template
-
-	var_1_5[6] = {
+	pg.base.extraenemy_template[6] = {
 		mail_title = "world_boss_title_6",
 		name = "布里斯托尔",
 		hp = 10000,
@@ -288,11 +231,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.extraenemy_template
-
-	var_1_6[7] = {
+	pg.base.extraenemy_template[7] = {
 		mail_title = "world_boss_title_7",
 		name = "霞飞",
 		hp = 10000,
@@ -329,11 +268,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.extraenemy_template
-
-	var_1_7[8] = {
+	pg.base.extraenemy_template[8] = {
 		mail_title = "world_boss_title_8",
 		name = "阿尔比恩 ",
 		hp = 10000,
@@ -370,11 +305,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.extraenemy_template
-
-	var_1_8[9] = {
+	pg.base.extraenemy_template[9] = {
 		mail_title = "world_boss_title_9",
 		name = "古比雪夫",
 		hp = 10000,
@@ -411,11 +342,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.extraenemy_template
-
-	var_1_9[10] = {
+	pg.base.extraenemy_template[10] = {
 		mail_title = "world_boss_title_10",
 		name = "戈里齐亚",
 		hp = 10000,
@@ -452,11 +379,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.extraenemy_template
-
-	var_1_10[11] = {
+	pg.base.extraenemy_template[11] = {
 		mail_title = "world_boss_title_11",
 		name = "寰昌",
 		hp = 10000,
@@ -493,11 +416,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.extraenemy_template
-
-	var_1_11[12] = {
+	pg.base.extraenemy_template[12] = {
 		mail_title = "world_boss_title_12",
 		name = "建武",
 		hp = 10000,
@@ -534,11 +453,7 @@ var_0_3.base.extraenemy_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.extraenemy_template
-
-	var_1_12[13] = {
+	pg.base.extraenemy_template[13] = {
 		mail_title = "world_boss_title_13",
 		name = "约战1-BOSS",
 		hp = 300,
@@ -564,11 +479,7 @@ var_0_3.base.extraenemy_template = {}
 			24710
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.extraenemy_template
-
-	var_1_13[14] = {
+	pg.base.extraenemy_template[14] = {
 		mail_title = "world_boss_title_13",
 		name = "约战2-BOSS",
 		hp = 700,
@@ -594,11 +505,7 @@ var_0_3.base.extraenemy_template = {}
 			24711
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.extraenemy_template
-
-	var_1_14[15] = {
+	pg.base.extraenemy_template[15] = {
 		mail_title = "world_boss_title_13",
 		name = "约战3-BOSS",
 		hp = 700,
@@ -624,11 +531,7 @@ var_0_3.base.extraenemy_template = {}
 			24712
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.extraenemy_template
-
-	var_1_15[16] = {
+	pg.base.extraenemy_template[16] = {
 		mail_title = "world_boss_title_13",
 		name = "约战4-BOSS",
 		hp = 700,
@@ -654,11 +557,7 @@ var_0_3.base.extraenemy_template = {}
 			24713
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.extraenemy_template
-
-	var_1_16[17] = {
+	pg.base.extraenemy_template[17] = {
 		mail_title = "world_boss_title_13",
 		name = "约战5-BOSS",
 		hp = 700,
@@ -684,11 +583,7 @@ var_0_3.base.extraenemy_template = {}
 			24714
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.extraenemy_template
-
-	var_1_17[18] = {
+	pg.base.extraenemy_template[18] = {
 		mail_title = "world_boss_title_13",
 		name = "约战6-BOSS",
 		hp = 7000,
@@ -714,8 +609,7 @@ var_0_3.base.extraenemy_template = {}
 			24715
 		}
 	}
-	pg = var_1_17
-	var_1_17.base.extraenemy_template[19] = {
+	pg.base.extraenemy_template[19] = {
 		mail_title = "world_boss_title_14",
 		name = "彰武",
 		hp = 10000,

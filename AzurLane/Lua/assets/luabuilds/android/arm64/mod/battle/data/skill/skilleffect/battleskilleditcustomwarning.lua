@@ -1,28 +1,16 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = class("BattleSkillEditCustomWarning", ys.Battle.BattleSkillEffect)
 
-var_0_0 = var_0_10000 or {}
-ys = ys
-class = var_0_10001
+ys.Battle.BattleSkillEditCustomWarning = var_0_0
+var_0_0.__name = "BattleSkillEditCustomWarning"
+var_0_0.OP_ADD = 1
+var_0_0.OP_REMOVE = 0
+var_0_0.OP_REMOVE_PERMANENT = -1
+var_0_0.OP_REMOVE_TEMPLATE = -2
 
-local var_0_1 = var_0_10001("BattleSkillEditCustomWarning", var_0.Battle.BattleSkillEffect)
-
-var_0.Battle.BattleSkillEditCustomWarning = var_0_1
-var_0_1.__name = "BattleSkillEditCustomWarning"
-var_0_1.OP_ADD = 1
-var_0_1.OP_REMOVE = 0
-var_0_1.OP_REMOVE_PERMANENT = -1
-var_0_1.OP_REMOVE_TEMPLATE = -2
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	local var_1_0 = var_0_1.super.Ctor
-	local var_1_1 = arg_1_0
-	local var_1_2 = arg_1_1
-
-	lv = var_1_10006
-
-	var_1_0(var_1_1, var_1_2, var_1_10006)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1, lv)
 
 	arg_1_0._labelData = {
 		op = arg_1_0._tempData.arg_list.op,
@@ -36,22 +24,20 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.DoDataEffect(arg_2_0)
+function var_0_0.DoDataEffect(arg_2_0)
 	arg_2_0:doEditWarning()
 
 	return
 end
 
-function var_0_1.DoDataEffectWithoutTarget(arg_3_0)
+function var_0_0.DoDataEffectWithoutTarget(arg_3_0)
 	arg_3_0:doEditWarning()
 
 	return
 end
 
-function var_0_1.doEditWarning(arg_4_0)
-	local var_4_0 = var_0.Battle.BattleDataProxy.GetInstance()
-
-	var_1.DispatchCustomWarning(var_4_0, arg_4_0._labelData)
+function var_0_0.doEditWarning(arg_4_0)
+	var_0.Battle.BattleDataProxy.GetInstance():DispatchCustomWarning(arg_4_0._labelData)
 
 	return
 end

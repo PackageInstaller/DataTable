@@ -39,11 +39,11 @@ end
 
 -- 选择战员看板娘返回
 function __onResShowBoardHeroHandler(self, msg)
-    if (msg.result == 0) then
-        gs.Message.Show(_TT(1009)) --替换助理失败
-    else
+    if (msg.result == 1) then
         role.RoleManager:getRoleVo():setShowBoardHeroId(msg.id)
         gs.Message.Show(_TT(1010)) --替换助理成功
+    -- else
+    --     gs.Message.Show(_TT(1009)) --替换助理失败
     end
 end
 

@@ -12,13 +12,16 @@ end
 
 function active(self, args)
     super.active(self, args)
-
+    GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_TOP_PANEL)
     self.isDefFormation = seabed.SeabedManager:getIsDefFormation()
     if self.isDefFormation then
+        self.mBtnEnemyInfo:SetActive(true)
         self.mBtnControl:SetActive(true)
+        self.mRecommandLv:SetActive(true)
     else
         self.mBtnEnemyInfo:SetActive(false)
         self.mBtnControl:SetActive(false)
+        self.mRecommandLv:SetActive(false)
     end
 
     -- self:setTimeout(0.2, function()
@@ -29,13 +32,34 @@ function active(self, args)
     --self:updateHeroStamina()
 end
 
+-- 打开培养界面
+function __onClickDevelopHandler(self, args)
+    if self.mIsSelectHero then
+        return
+    end
+
+    GameDispatcher:dispatchEvent(EventName.CLOSE_SEABED_TOP_PANEL)
+
+    local targetId = args
+    hero.HeroManager:setPanelShowHeroId(targetId)
+    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DEVELOP_PANEL, {
+        heroId = targetId,
+        tabType = hero.DevelopTabType.LVL_UP,
+        subData = {},
+        teamId = self.m_teamId,
+        isPrepare = true
+    })
+end
+
 -- 更新阵型格子图显示
 function __updateMapView(self)
     local formationHeroList = self:getManager():getSelectFormationHeroList(self.m_teamId)
     local formationConfigVo = self:getManager():getFormationConfigVo(self.m_formationId)
     local formationConfigList = formationConfigVo:getFormationList()
-
-    local isHasEmpty = #formationConfigList > #formationHeroList
+ 
+    
+    
+    local isHasEmpty = #formationHeroList < #seabed.SeabedManager:getHeroList()
     if (isHasEmpty) then
         local selectTidList = self:getManager():getMySelectHeroTidList()
         if (not self.m_myAllHeroTidList) then
@@ -62,7 +86,7 @@ end
 
 function updatePosEff(self)
     super.updatePosEff(self)
-    self:updateHeroStamina()
+    --self:updateHeroStamina()
 end
 
 function deActive(self)
@@ -198,12 +222,12 @@ function updateHeroStamina(self)
                 local item = SimpleInsItem:create(self:getChildGO("GroupHeroStaminaItem"), self:getChildTrans("mGroupHeroInfo"),"seabedHeroInfoItem")
 
                 item:setText("mTxtCont", nil, rate.."%")
-            
+
                 local pro = rate / 100
-                if pro > 0.6 then
+                if pro >= 0.6 then
                     -- item:setText("mTxtCont", nil, string.format("耐力：%s/%s", heroStaminaInfo.remaidCount, heroStaminaInfo.maxCount))
                     item:getChildGO("mImgProBar"):GetComponent(ty.Image).color = gs.ColorUtil.GetColor("31f860FF")
-                elseif pro <= 0.6 and pro > 0.2 then
+                elseif pro > 0.2 and pro < 0.6 then
                     item:getChildGO("mImgProBar"):GetComponent(ty.Image).color = gs.ColorUtil.GetColor("d1bc39FF")
                 else
                     item:getChildGO("mImgProBar"):GetComponent(ty.Image).color = gs.ColorUtil.GetColor("e6526cFF")

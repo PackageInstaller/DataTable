@@ -28,12 +28,9 @@
 			}
 		},
 		getSegment = function()
-			getProxy = var_1_10000
-			BuildShipProxy = var_1_10002
+			local var_1_0 = getProxy(BuildShipProxy)
 
-			local var_1_0 = var_1_10000(var_1_10002)
-
-			return var_0.getFinishCount(var_1_0) > 0 and 2 or 1
+			return var_1_0:getFinishCount() > 0 and 2 or 1
 		end
 	},
 	{
@@ -110,27 +107,17 @@
 			},
 			func = function(arg_2_0, arg_2_1)
 				if arg_2_0 == "NewMainScene" then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 7
+					return pg.SeriesGuideMgr.CODES.MAINUI, 7
 				elseif arg_2_0 == "LevelScene" then
 					if not arg_2_1 then
-						pg = var_1_10002
-
-						return var_1_10002.SeriesGuideMgr.CODES.CONDITION, 7
+						return pg.SeriesGuideMgr.CODES.CONDITION, 7
 					elseif arg_2_1 then
 						if arg_2_1.score > 1 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 9
+							return pg.SeriesGuideMgr.CODES.CONDITION, 9
 						elseif arg_2_1.total_time >= 180 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 7
+							return pg.SeriesGuideMgr.CODES.CONDITION, 7
 						else
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 4
+							return pg.SeriesGuideMgr.CODES.CONDITION, 4
 						end
 					end
 				end
@@ -215,14 +202,10 @@
 			},
 			func = function(arg_3_0)
 				if arg_3_0:getEquip(2) then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 15
+					return pg.SeriesGuideMgr.CODES.MAINUI, 15
 				end
 
-				pg = var_1_10002
-
-				return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 14
+				return pg.SeriesGuideMgr.CODES.MAINUI, 14
 			end
 		},
 		segment = {
@@ -274,39 +257,17 @@
 			}
 		},
 		getSegment = function()
-			getProxy = var_1_10000
-			ActivityProxy = var_1_10002
+			local var_4_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_BUILDSHIP_1)
+			local var_4_1 = var_4_0 and not var_4_0:isEnd()
 
-			local var_4_0 = var_1_10000(var_1_10002)
-			local var_4_1 = var_0.getActivityByType
-
-			ActivityConst = var_1_10003
-
-			local var_4_2, var_4_3
-
-			if var_4_1(var_4_0, var_1_10003.ACTIVITY_TYPE_BUILDSHIP_1) then
-				::label_4_0::
-
-				var_4_2 = var_0
-				var_4_3 = not var_0.isEnd(var_4_2)
-			end
-
-			BuildShipScene = var_4_0
-
-			if not var_4_0.projectName then
-				if var_4_3 then
+			if not BuildShipScene.projectName then
+				if var_4_1 then
 					return 1
 				else
 					return 2
 				end
 			else
-				BuildShipScene = var_2
-
-				local var_4_4 = var_2.projectName
-
-				BuildShipScene = var_4_2
-
-				return var_4_4 == var_4_2.PROJECTS.HEAVY and 2 or 1
+				return BuildShipScene.projectName == BuildShipScene.PROJECTS.HEAVY and 2 or 1
 			end
 
 			return
@@ -329,12 +290,9 @@
 			}
 		},
 		getSegment = function()
-			getProxy = var_1_10000
-			BuildShipProxy = var_1_10002
+			local var_5_0 = getProxy(BuildShipProxy)
 
-			local var_5_0 = var_1_10000(var_1_10002)
-
-			return var_0.getFinishCount(var_5_0) > 0 and 2 or 1
+			return var_5_0:getFinishCount() > 0 and 2 or 1
 		end
 	},
 	{
@@ -423,27 +381,17 @@
 			},
 			func = function(arg_6_0, arg_6_1)
 				if arg_6_0 == "NewMainScene" then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 24
+					return pg.SeriesGuideMgr.CODES.MAINUI, 24
 				elseif arg_6_0 == "LevelScene" then
 					if not arg_6_1 then
-						pg = var_1_10002
-
-						return var_1_10002.SeriesGuideMgr.CODES.CONDITION, 24
+						return pg.SeriesGuideMgr.CODES.CONDITION, 24
 					elseif arg_6_1 then
 						if arg_6_1.score > 1 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 26
+							return pg.SeriesGuideMgr.CODES.CONDITION, 26
 						elseif arg_6_1.total_time >= 180 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 24
+							return pg.SeriesGuideMgr.CODES.CONDITION, 24
 						else
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 20
+							return pg.SeriesGuideMgr.CODES.CONDITION, 20
 						end
 					end
 				end
@@ -491,27 +439,17 @@
 			},
 			func = function(arg_7_0, arg_7_1)
 				if arg_7_0 == "NewMainScene" then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 27
+					return pg.SeriesGuideMgr.CODES.MAINUI, 27
 				elseif arg_7_0 == "LevelScene" then
 					if not arg_7_1 then
-						pg = var_1_10002
-
-						return var_1_10002.SeriesGuideMgr.CODES.CONDITION, 27
+						return pg.SeriesGuideMgr.CODES.CONDITION, 27
 					elseif arg_7_1 then
 						if arg_7_1.score > 1 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 29
+							return pg.SeriesGuideMgr.CODES.CONDITION, 29
 						elseif arg_7_1.total_time >= 180 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 27
+							return pg.SeriesGuideMgr.CODES.CONDITION, 27
 						else
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 20
+							return pg.SeriesGuideMgr.CODES.CONDITION, 20
 						end
 					end
 				end

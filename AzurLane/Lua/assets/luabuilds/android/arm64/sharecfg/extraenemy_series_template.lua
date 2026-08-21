@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "extraenemy_series_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "extraenemy_series_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.extraenemy_series_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.extraenemy_series_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.extraenemy_series_template = rawget(pg, "extraenemy_series_template") or setmetatable({
+	__name = "extraenemy_series_template"
+}, confNEO)
+pg.extraenemy_series_template.all = {
 	1,
 	2,
 	3,
@@ -33,25 +10,11 @@ var_0_3.all = {
 	5,
 	6
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.extraenemy_series_template = {}
+pg.base = pg.base or {}
+pg.base.extraenemy_series_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.extraenemy_series_template
-
-	var_1_0[1] = {
+	pg.base.extraenemy_series_template[1] = {
 		id = 1,
 		chapter_name = "AREA-1",
 		pos_x = 0,
@@ -125,11 +88,7 @@ var_0_3.base.extraenemy_series_template = {}
 			201602
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.extraenemy_series_template
-
-	var_1_1[2] = {
+	pg.base.extraenemy_series_template[2] = {
 		id = 2,
 		chapter_name = "AREA-2",
 		pos_x = 0,
@@ -209,11 +168,7 @@ var_0_3.base.extraenemy_series_template = {}
 			201605
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.extraenemy_series_template
-
-	var_1_2[3] = {
+	pg.base.extraenemy_series_template[3] = {
 		id = 3,
 		chapter_name = "AREA-3",
 		pos_x = 0,
@@ -293,11 +248,7 @@ var_0_3.base.extraenemy_series_template = {}
 			201610
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.extraenemy_series_template
-
-	var_1_3[4] = {
+	pg.base.extraenemy_series_template[4] = {
 		id = 4,
 		chapter_name = "AREA-4",
 		pos_x = 0,
@@ -377,11 +328,7 @@ var_0_3.base.extraenemy_series_template = {}
 			201614
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.extraenemy_series_template
-
-	var_1_4[5] = {
+	pg.base.extraenemy_series_template[5] = {
 		id = 5,
 		chapter_name = "AREA-5",
 		pos_x = 0,
@@ -461,8 +408,7 @@ var_0_3.base.extraenemy_series_template = {}
 			201618
 		}
 	}
-	pg = var_1_4
-	var_1_4.base.extraenemy_series_template[6] = {
+	pg.base.extraenemy_series_template[6] = {
 		id = 6,
 		chapter_name = "AREA-6",
 		pos_x = 0,

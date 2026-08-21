@@ -1,47 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildEventReportMediator", import("...base.ContextMediator"))
 
-local var_0_0 = "GuildEventReportMediator"
+var_0_0.ON_GET_REPORTS = "GuildEventReportMediator:ON_GET_REPORTS"
+var_0_0.ON_SUBMIT_REPORTS = "GuildEventReportMediator:ON_SUBMIT_REPORTS"
+var_0_0.GET_REPORT_RANK = "GuildEventReportMediator:GET_REPORT_RANK"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.ContextMediator"))
-
-var_0_1.ON_GET_REPORTS = "GuildEventReportMediator:ON_GET_REPORTS"
-var_0_1.ON_SUBMIT_REPORTS = "GuildEventReportMediator:ON_SUBMIT_REPORTS"
-var_0_1.GET_REPORT_RANK = "GuildEventReportMediator:GET_REPORT_RANK"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.GET_REPORT_RANK, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.GET_GUILD_REPORT_RANK, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.GET_REPORT_RANK, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.GET_GUILD_REPORT_RANK, {
 			id = arg_2_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_SUBMIT_REPORTS, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.SUBMIT_GUILD_REPORT, {
+	arg_1_0:bind(var_0_0.ON_SUBMIT_REPORTS, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(GAME.SUBMIT_GUILD_REPORT, {
 			ids = arg_3_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_GET_REPORTS, function(arg_4_0, arg_4_1)
-		local var_4_0 = arg_1_0
-		local var_4_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_4_1(var_4_0, var_2_10005.GET_GUILD_REPORT, {
+	arg_1_0:bind(var_0_0.ON_GET_REPORTS, function(arg_4_0, arg_4_1)
+		arg_1_0:sendNotification(GAME.GET_GUILD_REPORT, {
 			callback = arg_4_1
 		})
 
@@ -51,39 +30,24 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	GAME = var_1_10002
-	var_5_0[1] = var_1_10002.SUBMIT_GUILD_REPORT_DONE
-	GAME = var_2
-	var_5_0[2] = var_2.GET_GUILD_REPORT_RANK_DONE
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		GAME.SUBMIT_GUILD_REPORT_DONE,
+		GAME.GET_GUILD_REPORT_RANK_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
-	local var_6_0 = arg_6_1
-	local var_6_1 = arg_6_1.getName(var_6_0)
-	local var_6_2 = arg_6_1:getBody()
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1:getName()
+	local var_6_1 = arg_6_1:getBody()
 
-	GAME = var_6_0
-
-	if var_6_1 == var_6_0.SUBMIT_GUILD_REPORT_DONE then
-		local var_6_3 = arg_6_0.viewComponent
-
-		var_4.UpdateReports(var_6_3, var_6_2.list)
-	else
-		GAME = var_4
-
-		if var_6_1 == var_4.GET_GUILD_REPORT_RANK_DONE then
-			local var_6_4 = arg_6_0.viewComponent
-
-			var_4.OnGetReportRankList(var_6_4, var_6_2.ranks)
-		end
+	if var_6_0 == GAME.SUBMIT_GUILD_REPORT_DONE then
+		arg_6_0.viewComponent:UpdateReports(var_6_1.list)
+	elseif var_6_0 == GAME.GET_GUILD_REPORT_RANK_DONE then
+		arg_6_0.viewComponent:OnGetReportRankList(var_6_1.ranks)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

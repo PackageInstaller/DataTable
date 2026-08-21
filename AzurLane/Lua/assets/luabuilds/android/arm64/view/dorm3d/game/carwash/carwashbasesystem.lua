@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CarWashBaseSystem", import("view.dorm3d.Extra.BaseExtraSystem"))
 
-local var_0_0 = "CarWashBaseSystem"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.dorm3d.Extra.BaseExtraSystem"))
-
-function var_0_1.WrapContext(arg_1_0, arg_1_1)
+function var_0_0.WrapContext(arg_1_0, arg_1_1)
 	return {
 		_raw = arg_1_1,
 		GetMainCameraTF = function()
@@ -36,52 +30,36 @@ function var_0_1.WrapContext(arg_1_0, arg_1_1)
 	}
 end
 
-function var_0_1.GetMainCameraTF(arg_10_0)
-	local var_10_0 = arg_10_0.context
-
-	return var_1.GetMainCameraTF(var_10_0)
+function var_0_0.GetMainCameraTF(arg_10_0)
+	return arg_10_0.context:GetMainCameraTF()
 end
 
-function var_0_1.GetMainCamera(arg_11_0)
-	local var_11_0 = arg_11_0.context
-
-	return var_1.GetMainCamera(var_11_0)
+function var_0_0.GetMainCamera(arg_11_0)
+	return arg_11_0.context:GetMainCamera()
 end
 
-function var_0_1.GetCameraRoot(arg_12_0)
-	local var_12_0 = arg_12_0.context
-
-	return var_1.GetCameraRoot(var_12_0)
+function var_0_0.GetCameraRoot(arg_12_0)
+	return arg_12_0.context:GetCameraRoot()
 end
 
-function var_0_1.GetRaycaster(arg_13_0)
-	local var_13_0 = arg_13_0.context
-
-	return var_1.GetRaycaster(var_13_0)
+function var_0_0.GetRaycaster(arg_13_0)
+	return arg_13_0.context:GetRaycaster()
 end
 
-function var_0_1.GetLadyGO(arg_14_0)
-	local var_14_0 = arg_14_0.context
-
-	return var_1.GetLadyGO(var_14_0)
+function var_0_0.GetLadyGO(arg_14_0)
+	return arg_14_0.context:GetLadyGO()
 end
 
-function var_0_1.GetGameConfig(arg_15_0)
-	local var_15_0 = arg_15_0.context
-
-	return var_1.GetGameConfig(var_15_0)
+function var_0_0.GetGameConfig(arg_15_0)
+	return arg_15_0.context:GetGameConfig()
 end
 
-function var_0_1.GetContextData(arg_16_0)
-	local var_16_0 = arg_16_0.context
-
-	return var_1.GetContextData(var_16_0)
+function var_0_0.GetContextData(arg_16_0)
+	return arg_16_0.context:GetContextData()
 end
 
-function var_0_1.GetLoader(arg_17_0)
-	local var_17_0 = arg_17_0.context
-
-	return var_1.GetLoader(var_17_0)
+function var_0_0.GetLoader(arg_17_0)
+	return arg_17_0.context:GetLoader()
 end
 
-return var_0_1
+return var_0_0

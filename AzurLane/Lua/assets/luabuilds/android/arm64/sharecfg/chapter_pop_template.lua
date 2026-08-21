@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "chapter_pop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "chapter_pop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.chapter_pop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.chapter_pop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.chapter_pop_template = rawget(pg, "chapter_pop_template") or setmetatable({
+	__name = "chapter_pop_template"
+}, confNEO)
+pg.chapter_pop_template.all = {
 	1280001,
 	1280002,
 	1280003,
@@ -59,25 +36,11 @@ var_0_3.all = {
 	2200074,
 	2200075
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.chapter_pop_template = {}
+pg.base = pg.base or {}
+pg.base.chapter_pop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.chapter_pop_template
-
-	var_1_0[1] = {
+	pg.base.chapter_pop_template[1] = {
 		id = 1280001,
 		combo_on = 1,
 		sd_location = {
@@ -98,11 +61,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.chapter_pop_template
-
-	var_1_1[2] = {
+	pg.base.chapter_pop_template[2] = {
 		id = 1280002,
 		combo_on = 1,
 		sd_location = {
@@ -123,11 +82,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.chapter_pop_template
-
-	var_1_2[3] = {
+	pg.base.chapter_pop_template[3] = {
 		id = 1280003,
 		combo_on = 1,
 		sd_location = {
@@ -148,11 +103,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.chapter_pop_template
-
-	var_1_3[4] = {
+	pg.base.chapter_pop_template[4] = {
 		id = 1280004,
 		combo_on = 1,
 		sd_location = {
@@ -173,11 +124,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.chapter_pop_template
-
-	var_1_4[5] = {
+	pg.base.chapter_pop_template[5] = {
 		id = 1280005,
 		combo_on = 1,
 		sd_location = {
@@ -198,11 +145,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.chapter_pop_template
-
-	var_1_5[1430001] = {
+	pg.base.chapter_pop_template[1430001] = {
 		id = 1430001,
 		combo_on = 1,
 		sd_location = {
@@ -223,11 +166,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.chapter_pop_template
-
-	var_1_6[1430002] = {
+	pg.base.chapter_pop_template[1430002] = {
 		id = 1430002,
 		combo_on = 1,
 		sd_location = {
@@ -248,11 +187,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.chapter_pop_template
-
-	var_1_7[1430003] = {
+	pg.base.chapter_pop_template[1430003] = {
 		id = 1430003,
 		combo_on = 1,
 		sd_location = {
@@ -273,11 +208,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.chapter_pop_template
-
-	var_1_8[1430004] = {
+	pg.base.chapter_pop_template[1430004] = {
 		id = 1430004,
 		combo_on = 1,
 		sd_location = {
@@ -298,11 +229,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.chapter_pop_template
-
-	var_1_9[1430005] = {
+	pg.base.chapter_pop_template[1430005] = {
 		id = 1430005,
 		combo_on = 1,
 		sd_location = {
@@ -336,11 +263,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.chapter_pop_template
-
-	var_1_10[1800001] = {
+	pg.base.chapter_pop_template[1800001] = {
 		id = 1800001,
 		combo_on = 1,
 		sd_location = {
@@ -361,11 +284,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.chapter_pop_template
-
-	var_1_11[1800002] = {
+	pg.base.chapter_pop_template[1800002] = {
 		id = 1800002,
 		combo_on = 1,
 		sd_location = {
@@ -386,11 +305,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.chapter_pop_template
-
-	var_1_12[1800003] = {
+	pg.base.chapter_pop_template[1800003] = {
 		id = 1800003,
 		combo_on = 1,
 		sd_location = {
@@ -411,11 +326,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.chapter_pop_template
-
-	var_1_13[1800004] = {
+	pg.base.chapter_pop_template[1800004] = {
 		id = 1800004,
 		combo_on = 1,
 		sd_location = {
@@ -436,11 +347,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.chapter_pop_template
-
-	var_1_14[1800005] = {
+	pg.base.chapter_pop_template[1800005] = {
 		id = 1800005,
 		combo_on = 1,
 		sd_location = {
@@ -461,11 +368,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.chapter_pop_template
-
-	var_1_15[1800021] = {
+	pg.base.chapter_pop_template[1800021] = {
 		id = 1800021,
 		combo_on = 1,
 		sd_location = {
@@ -486,11 +389,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.chapter_pop_template
-
-	var_1_16[1800022] = {
+	pg.base.chapter_pop_template[1800022] = {
 		id = 1800022,
 		combo_on = 1,
 		sd_location = {
@@ -511,11 +410,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.chapter_pop_template
-
-	var_1_17[1800023] = {
+	pg.base.chapter_pop_template[1800023] = {
 		id = 1800023,
 		combo_on = 1,
 		sd_location = {
@@ -536,11 +431,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.chapter_pop_template
-
-	var_1_18[1800024] = {
+	pg.base.chapter_pop_template[1800024] = {
 		id = 1800024,
 		combo_on = 1,
 		sd_location = {
@@ -561,11 +452,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.chapter_pop_template
-
-	var_1_19[1800025] = {
+	pg.base.chapter_pop_template[1800025] = {
 		id = 1800025,
 		combo_on = 1,
 		sd_location = {
@@ -586,11 +473,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.chapter_pop_template
-
-	var_1_20[1800026] = {
+	pg.base.chapter_pop_template[1800026] = {
 		id = 1800026,
 		combo_on = 1,
 		sd_location = {
@@ -611,11 +494,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.chapter_pop_template
-
-	var_1_21[1800041] = {
+	pg.base.chapter_pop_template[1800041] = {
 		id = 1800041,
 		combo_on = 1,
 		sd_location = {
@@ -649,11 +528,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.chapter_pop_template
-
-	var_1_22[2200041] = {
+	pg.base.chapter_pop_template[2200041] = {
 		id = 2200041,
 		combo_on = 1,
 		sd_location = {
@@ -674,11 +549,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.chapter_pop_template
-
-	var_1_23[2200042] = {
+	pg.base.chapter_pop_template[2200042] = {
 		id = 2200042,
 		combo_on = 1,
 		sd_location = {
@@ -699,11 +570,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.chapter_pop_template
-
-	var_1_24[2200043] = {
+	pg.base.chapter_pop_template[2200043] = {
 		id = 2200043,
 		combo_on = 1,
 		sd_location = {
@@ -724,11 +591,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.chapter_pop_template
-
-	var_1_25[2200044] = {
+	pg.base.chapter_pop_template[2200044] = {
 		id = 2200044,
 		combo_on = 1,
 		sd_location = {
@@ -749,11 +612,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.chapter_pop_template
-
-	var_1_26[2200045] = {
+	pg.base.chapter_pop_template[2200045] = {
 		id = 2200045,
 		combo_on = 1,
 		sd_location = {
@@ -774,11 +633,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.chapter_pop_template
-
-	var_1_27[7] = {
+	pg.base.chapter_pop_template[7] = {
 		id = 2200071,
 		combo_on = 1,
 		sd_location = {
@@ -799,11 +654,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.chapter_pop_template
-
-	var_1_28[8] = {
+	pg.base.chapter_pop_template[8] = {
 		id = 2200072,
 		combo_on = 1,
 		sd_location = {
@@ -824,11 +675,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.chapter_pop_template
-
-	var_1_29[9] = {
+	pg.base.chapter_pop_template[9] = {
 		id = 2200073,
 		combo_on = 1,
 		sd_location = {
@@ -849,11 +696,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.chapter_pop_template
-
-	var_1_30[10] = {
+	pg.base.chapter_pop_template[10] = {
 		id = 2200074,
 		combo_on = 1,
 		sd_location = {
@@ -874,8 +717,7 @@ var_0_3.base.chapter_pop_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-	var_1_30.base.chapter_pop_template[11] = {
+	pg.base.chapter_pop_template[11] = {
 		id = 2200075,
 		combo_on = 1,
 		sd_location = {

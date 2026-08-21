@@ -107,7 +107,7 @@ function updateBar(self)
         -- end
         if self.mLiveVo:getAtt(AttConst.HP) <= 0 then
             local bType = fight.FightManager:getBattleType()
-            if bType == PreFightBattleType.Disaster or bType == PreFightBattleType.Disater_imitate then
+            if bType == PreFightBattleType.Disaster or bType == PreFightBattleType.Disater_imitate or bType == PreFightBattleType.Guild_boss_war or bType == PreFightBattleType.Guild_boss_imitate then
                 self.mImgBossHpInsBar.fillAmount = 0
                 self.mHpRate = 0
             else

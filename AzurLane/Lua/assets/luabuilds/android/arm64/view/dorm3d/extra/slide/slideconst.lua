@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SlideConst")
+﻿local var_0_0 = class("SlideConst")
 
 var_0_0.ROOM_ID = 4
 var_0_0.FURNITURE_ID = 401

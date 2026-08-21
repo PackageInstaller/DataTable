@@ -92,12 +92,13 @@ function onResStateUpdateHandler(self, args)
                 self.mLoadingView:removePrepareProgressTimerHandler()
                 local isHasNetWork, isMobileNet, isWifi = web.getNetStatus()
                 if(isHasNetWork)then
-                    local msg = "网络下载出错请重新下载"
+                    local msg = _TT(10000264) --"网络下载出错请重新下载"
                     if(errorCodeStr and errorCodeStr ~= "")then
-                        msg = msg .. "，提示码：" .. errorCodeStr
+                        -- msg = msg .. "，提示码：" .. errorCodeStr
+                        msg = msg .. _TT(10000265) .. errorCodeStr
                     end
-                    updateRes.ShowAlert(updateRes.TipType.Net, "更新提示", msg
-                        ,"确认",
+                    updateRes.ShowAlert(updateRes.TipType.Net, _TT(10000109)--[["更新提示"]], msg
+                        ,_TT(10000115)--[["确认"]],
                         function()
                             self:__removeAlertView()
                             if(callParams)then
@@ -112,8 +113,8 @@ function onResStateUpdateHandler(self, args)
                         -- end
                     )
                 else
-                    updateRes.ShowAlert(updateRes.TipType.Net, "更新提示", "请检查网络状态"
-                        ,"确认",
+                    updateRes.ShowAlert(updateRes.TipType.Net, _TT(10000109)--[["更新提示"]], _TT(10000266)--[["请检查网络状态"]]
+                        ,_TT(10000115)--[["确认"]],
                         function()
                             self:__removeAlertView()
                             download.ResDownLoadManager:start()
@@ -130,7 +131,7 @@ function onResStateUpdateHandler(self, args)
         -- 重新下载安装包
         if(not self.m_downLoadPackageCall)then
             self.m_downLoadPackageCall = function()
-                local tip = "换包"
+                local tip = _TT(10000267)--[["换包"]]
                 local confirmCall = function() CS.Lylibs.SDKManager.Ins:CloseApplication() end
                 if(web.WebManager:isReleaseApp())then
                     local version = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.VersionKey)
@@ -138,10 +139,10 @@ function onResStateUpdateHandler(self, args)
                     local prefixVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.PrefixVersionKey)
                     local proVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ProVersionKey)
                     local artVersion = download.ResDownLoadManager:getClientVersionValue(gs.AssetSetting.ArtVersionKey)
-                    tip = string.format("当前版本 %s 过低，请前往下载最新版本", web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion))
+                    tip = string.format(_TT(10000268)--[["当前版本 %s 过低，请前往下载最新版本"]], web.getFormatVersion(prefixVersion, versionStr, proVersion, artVersion))
                 else
                     if(web.WebManager.platform == web.DEVICE_TYPE.WINDOWS)then
-                        tip = "需要更新svn目录"
+                        tip = _TT(10000269)--[["需要更新svn目录"]]
                         confirmCall = function()
                             local streamAssetsPath = gs.PathUtil.StreamingPath
                             local splistList = string.split(streamAssetsPath, "/")
@@ -165,7 +166,7 @@ function onResStateUpdateHandler(self, args)
                             -- gs.ApplicationUtil.ControlPathSVn(path, "update")
                         end
                     elseif(web.WebManager.platform == web.DEVICE_TYPE.ANDROID)then
-                        tip = "请重新下载安装包安装"
+                        tip = _TT(10000270) --[["请重新下载安装包安装"]]
                         confirmCall = function()
                             local game_cdn_url = string.format("%s/%s/%s", web.WebManager.game_cdn, CS.Lylibs.AssetSetting.CdnVersionDir, CS.Lylibs.AssetSetting.VersionJsonName)
                             local function correctCall(self, webData, jsonObj)
@@ -188,7 +189,7 @@ function onResStateUpdateHandler(self, args)
                             WebInterfaceUtil:getAsyncLoop(game_cdn_url, correctCall, errorCall, self, 1)
                         end
                     elseif(web.WebManager.platform == web.DEVICE_TYPE.IOS)then
-                        tip = "请重新下载安装包安装"
+                        tip = _TT(10000270) --[["请重新下载安装包安装"]]
                         confirmCall = function()
                             gs.SdkManager:LaunchUrlDetail(web.WebManager.game_url)
                             CS.Lylibs.SDKManager.Ins:CloseApplication()
@@ -196,8 +197,8 @@ function onResStateUpdateHandler(self, args)
                     end
                 end
 
-                updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", tip
-                    ,"确认",
+                updateRes.ShowAlert(updateRes.TipType.Normal, _TT(10000109)--[["更新提示"]], tip
+                ,_TT(10000115)--[["确认"]],
                     function()
                         self:__removeAlertView()
                         confirmCall()
@@ -212,14 +213,14 @@ function onResStateUpdateHandler(self, args)
         -- 清除资源重新更新
         if(not self.m_streamErrorCall)then
             self.m_streamErrorCall = function()
-                updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", "客户端版本号异常，将清除所有资源并重新下载"
-                    ,"确认",
+                updateRes.ShowAlert(updateRes.TipType.Normal, _TT(10000109)--[["更新提示"]], _TT(10000271)--[["客户端版本号异常，将清除所有资源并重新下载"]]
+                ,_TT(10000115)--[["确认"]],
                     function()
                         print("清理资源目录重新更新")
                         self:__removeAlertView()
                         download.ResDownLoadManager:cleanGameRes(function(result) download.ResDownLoadManager:start() end)
                     end
-                    ,"退出",
+                    ,_TT(10000116)--[["退出"]],
                     function()
                         CS.Lylibs.SDKManager.Ins:CloseApplication()
                         -- CS.Lylibs.SDKManager.Ins:RestartApplication()
@@ -270,7 +271,15 @@ function onResStateUpdateHandler(self, args)
                     download.ResDownLoadManager:start()
                 end, self, nil, updateRes.ErrorCode.VersionCompareError)
             elseif(data[1] == 2)then                                            -- 需要换包更新
-                self.m_downLoadPackageCall()
+                if(web.WebManager:isReleaseApp())then
+                    -- 正式环境的允许进入到登录界面处
+                    web.WebManager.IsNeedUpdatePackage = true
+                    web.WebManager:dispatchEvent(web.WebManager.MODULE_UPDATE_CHECK_FINISH, {})
+                else
+                    -- 非正式环境的不允许进入到登录界面
+                    web.WebManager.IsNeedUpdatePackage = false
+                    self.m_downLoadPackageCall()
+                end
             elseif(data[1] == 3)then                                            -- 当前已是最新版本
                 web.WebController:reqReportStep(web.REPORT_STEP.READ_ASSETS_FILE)
                 downLoadMgr:startReadFileList(false)
@@ -347,9 +356,9 @@ function onResStateUpdateHandler(self, args)
                     LoopManager:removeTimerByIndex(self.mCheckDownloadCleanSn)
                     self.mCheckDownloadCleanSn = nil
 
-                    updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", "网络下载出错请重新下载，提示码：" .. updateRes.ErrorCode.ServerResError
-                    ,"确认",
-                    function()
+                    updateRes.ShowAlert(updateRes.TipType.Normal,  _TT(10000109)--[["更新提示"]],  _TT(10000273)--[["网络下载出错请重新下载，提示码："]] .. updateRes.ErrorCode.ServerResError
+                    ,_TT(10000115)--[["确认"]],
+                function()
                         self:judgeDownload()
                     end
                     -- ,"取消",
@@ -414,6 +423,8 @@ function judgeDownload(self)
         download.ResDownLoadManager:saveVersion()                                   -- 保存版本
         web.WebController:reqReportStep(web.REPORT_STEP.SAVE_VERSION_FINISH)
 
+        web.SetAllowLuaReConfig(true)
+
         self:resetDownload()
 
         -- 事后清理掉ZipGameRes目录
@@ -456,7 +467,7 @@ function judgeDownload(self)
             -- 其余自动判断
             local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
             for moduleType in pairs(assetsDic) do
-                if(moduleType ~= download.ModuleType.LUA and moduleType ~= download.ModuleType.CORE and moduleType ~= download.ModuleType.UPDATE_RES and moduleType ~= download.ModuleType.COMMON)then
+                if(moduleType ~= download.ModuleType.LUA and moduleType ~= download.ModuleType.CORE and moduleType ~= download.ModuleType.UPDATE_RES and moduleType ~= download.ModuleType.COMMON and moduleType ~= download.ModuleType.Super)then
                     local data = assetsDic[moduleType]
                     if(data.startup_auto_update == 1)then
                         if(download.ResDownLoadManager:isModuleAssetsNeedUpdate({moduleType}))then
@@ -473,7 +484,14 @@ function judgeDownload(self)
                     end
                 end
             end
-    
+
+            -- 给力超级资源
+            if (web.GetHotUpdateSuperState()) then
+                if(download.ResDownLoadManager:isModuleAssetsNeedUpdate({download.ModuleType.Super}))then
+                    table.insert(downLoadModuleList, download.ModuleType.Super)
+                end
+            end
+
             self.mLoadingView:removePrepareProgressTimerHandler()
             if(#downLoadModuleList > 0 or download.ResDownLoadManager:getIsNeedCheckZip())then
                 -- 打开热更时要显示的定时轮播图
@@ -501,20 +519,8 @@ function judgeDownload(self)
                 if(download.ResDownLoadManager:getIsNeedCheckZip())then
                     totalNeedZipSize, totalZipNeedFreeSize = download.ResDownLoadManager:getZipSize()
                 end
-    
-                local freeDiskSpaceMB = gs.SdkManager:GetFreeDiskSpaceMB()
-                if(freeDiskSpaceMB > 0 and totalNeedSize + totalZipNeedFreeSize >= freeDiskSpaceMB * 1024)then
-                    local tipFormatTotalSize, tipTotalUnit = download.GetFormatSize(totalNeedSize + totalZipNeedFreeSize - freeDiskSpaceMB * 1024)
-                    updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", string.format("资源更新失败，请检查您的磁盘空间（还需要%s），再重启游戏试试", tostring(tipFormatTotalSize) .. tipTotalUnit)
-                        -- ,"确认",
-                        -- function()
-                        -- end
-                        ,"退出",
-                        function()
-                            CS.Lylibs.SDKManager.Ins:CloseApplication()
-                        end
-                    )
-                else
+
+                local function confirmDownload()
                     local isHasNetWork, isMobileNet, isWifi = web.getNetStatus()
                     if(isWifi)then
                         checkDownLoadModule()
@@ -526,21 +532,21 @@ function judgeDownload(self)
                             -- local formatZipSize, zipUnit = download.GetFormatSize(totalNeedZipSize)
                             -- local tip = "游戏需要更新部分资源(" .. tostring(formatZipSize) .. zipUnit .. " + " .. tostring(formatSize) .. unit .. ")，建议您在wifi环境下更新"
                             local sizeTip = ""
-                            local tip = "游戏需要更新部分%s，建议您在wifi环境下更新"
+                            local tip = _TT(10000275)--[["游戏需要更新部分%s，建议您在wifi环境下更新"]]
                             local formatTotalSize, totalUnit = download.GetFormatSize(totalNeedSize + totalNeedZipSize)
                             if(totalNeedSize <= 0 and totalNeedZipSize >= 0)then
-                                sizeTip = string.format("资源包(%s)", tostring(formatTotalSize) .. totalUnit)
+                                sizeTip = string.format(_TT(10000112)--[["资源包(%s)"]], tostring(formatTotalSize) .. totalUnit)
                             elseif(totalNeedSize >= 0 and totalNeedZipSize <= 0)then
-                                sizeTip = string.format("资源文件(%s)", tostring(formatTotalSize) .. totalUnit)
+                                sizeTip = string.format(_TT(10000113)--[["资源文件(%s)"]], tostring(formatTotalSize) .. totalUnit)
                             elseif(totalNeedSize >= 0 and totalNeedZipSize >= 0)then
-                                sizeTip = string.format("资源(%s)", tostring(formatTotalSize) .. totalUnit)
+                                sizeTip = string.format(_TT(10000114)--[["资源(%s)"]], tostring(formatTotalSize) .. totalUnit)
                             end
-                            updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", string.format(tip, sizeTip)
-                                ,"确认",
+                            updateRes.ShowAlert(updateRes.TipType.Normal,  _TT(10000109)--[["更新提示"]], string.format(tip, sizeTip)
+                                ,_TT(10000115)--[["确认"]],
                                 function()
                                     checkDownLoadModule()
                                 end
-                                ,"退出",
+                                ,_TT(10000116)--[["退出"]],
                                 function()
                                     CS.Lylibs.SDKManager.Ins:CloseApplication()
                                 end
@@ -549,6 +555,23 @@ function judgeDownload(self)
                             checkDownLoadModule()
                         end
                     end
+                end
+
+                local freeDiskSpaceMB = gs.SdkManager:GetFreeDiskSpaceMB()
+                if(freeDiskSpaceMB > 0 and totalNeedSize + totalZipNeedFreeSize >= freeDiskSpaceMB * 1024)then
+                    local tipFormatTotalSize, tipTotalUnit = download.GetFormatSize(totalNeedSize + totalZipNeedFreeSize - freeDiskSpaceMB * 1024)
+                    updateRes.ShowAlert(updateRes.TipType.Normal, _TT(10000109)--[["更新提示"]], string.format(_TT(10000110)--[["资源更新还需要%s，您的磁盘空间可能不足，是否继续下载？"]], tostring(tipFormatTotalSize) .. tipTotalUnit)
+                        ,_TT(10000115)--[["确认"]],
+                        function()
+                            confirmDownload()
+                        end
+                        ,_TT(10000116)--[["退出"]],
+                        function()
+                            CS.Lylibs.SDKManager.Ins:CloseApplication()
+                        end
+                    )
+                else
+                    confirmDownload()
                 end
             else
                 download.ResDownLoadManager:setDownLoadModuleTypeList(nil, nil, nil)
@@ -569,7 +592,7 @@ function judgeDownload(self)
             local isForbidAllUpdateTip = true
             local assetsDic = download.ResDownLoadManager:getAssetsConfigDic()
             for moduleType in pairs(assetsDic) do
-                if(moduleType ~= download.ModuleType.LUA and moduleType ~= download.ModuleType.CORE and moduleType ~= download.ModuleType.UPDATE_RES and moduleType ~= download.ModuleType.COMMON)then
+                if(moduleType ~= download.ModuleType.LUA and moduleType ~= download.ModuleType.CORE and moduleType ~= download.ModuleType.UPDATE_RES and moduleType ~= download.ModuleType.COMMON and moduleType ~= download.ModuleType.Super)then
                     local data = assetsDic[moduleType]
                     if(data.startup_auto_update == 0)then
                         local isCheckModule = download.ResDownLoadManager:getModuleAssetsSign(moduleType)
@@ -582,7 +605,7 @@ function judgeDownload(self)
                 end
             end
             if(isForbidAllUpdateTip)then
-                checkDownLoadSizeTip()
+                checkDownLoadSizeTip() 
             else
                 -- 是否后台控制强制提示
                 local time = web.__getTime()
@@ -591,11 +614,11 @@ function judgeDownload(self)
                     print("UpdateResController", string.format("获取cdn资源更新类型->响应，耗时：%s秒", web.__getTime() - time))
                     if(jsonObj == nil)then
                         print("UpdateResController", string.format("获取cdn资源更新类型->提示码：%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR))
-                        local titleTip = string.format("网络异常请重试！提示码：%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR)
+                        local titleTip = string.format(_TT(10000237)--[["资源网络异常请重试！提示码：%s"]], web.TIP_CODE.CDN_UPDATE_TYPE_ERROR)
                         if(string.find(webData, "<html") ~= nil)then
                             titleTip = titleTip .. "，" .. web.CDN_UPDATE_TYPE_SUB_CODE.HTML_CONTENT
                         end
-                        UIFactory:alertOK0("网络提示", titleTip, 
+                        UIFactory:alertOK0(_TT(10000235)--[["网络提示"]], titleTip, 
                             function() 
                                 WebInterfaceUtil:postAsyncLoop(url, parasmDic, correctCall, function(self, errorData, jsonObj) correctCall(self, errorData, nil) end, self, tryCount) 
                             end)
@@ -609,15 +632,15 @@ function judgeDownload(self)
                             if(web.WebManager.web_force_update_type <= 0)then
                                 checkDownLoadSizeTip()
                             elseif(web.WebManager.web_force_update_type == 1)then
-                                updateRes.ShowAlert(updateRes.TipType.Normal, "更新提示", "当前版本仅能体验部分游戏内容，是否下载完整版？"
-                                ,"确认",
+                                updateRes.ShowAlert(updateRes.TipType.Normal, _TT(10000109)--[["更新提示"]], _TT(10000236) --[["当前版本仅能体验部分游戏内容，是否下载完整版？"]]
+                                ,_TT(10000115)--[["确认"]],
                                 function()
                                     local url, parasmDic = web.getReportGenericArgsUrl(web.GENERIC_ARGS_REPORT_TYPE.CHANNEL_SELECT_ALL_UPDATE, 1)
                                     WebInterfaceUtil:postAsyncLoop(url, parasmDic, nil, nil, self, nil)
                                     self.mIsForceUpdateAll = true
                                     checkDownLoadSizeTip()
                                 end
-                                ,"取消",
+                                ,_TT(2)--[["取消"]],
                                 function()
                                     local url, parasmDic = web.getReportGenericArgsUrl(web.GENERIC_ARGS_REPORT_TYPE.CHANNEL_SELECT_ALL_UPDATE, 0)
                                     WebInterfaceUtil:postAsyncLoop(url, parasmDic, nil, nil, self, nil)
@@ -631,8 +654,8 @@ function judgeDownload(self)
                                 checkDownLoadSizeTip()
                             end
                         else
-                            print("UpdateResController", string.format("网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode))
-                            UIFactory:alertOK0("网络提示", string.format("网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode), 
+                            print("UpdateResController", string.format("资源网络异常请重试！提示码：%s，%s", web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode))
+                            UIFactory:alertOK0(_TT(10000235)--[["网络提示"]], string.format(_TT(10000237)--[["资源网络异常请重试！提示码：%s"]], web.TIP_CODE.CDN_UPDATE_TYPE_ERROR, subCode), 
                                 function() 
                                     WebInterfaceUtil:postAsyncLoop(url, parasmDic, correctCall, function(self, errorData, jsonObj) correctCall(self, errorData, nil) end, self, tryCount) 
                                 end)

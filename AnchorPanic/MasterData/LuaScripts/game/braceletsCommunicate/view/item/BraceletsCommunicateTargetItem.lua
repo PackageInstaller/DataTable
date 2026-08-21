@@ -40,7 +40,7 @@ function updateView(self)
     self.mTxtChatName.color = gs.ColorUtil.GetColor(color)
 
     self.mImgHeadBg:SetActive(self.data.type == 1)
-    self.mImgHeadBgPublic:SetActive(self.data.type == 2)
+    self.mImgHeadBgPublic:SetActive(self.data.type == 2 or self.data.type == 3)
     if(self.data.type == 1) then 
         self.mTxtChatName.text = hero.HeroManager:getHeroVoByTid(self.data.heroList[1]).name
         self.mImgHead:SetImg(UrlManager:getHeroHeadUrl(self.data.heroList[1]), true)
@@ -78,6 +78,9 @@ function updateView(self)
             txt = string.substitute(self.data:getTalkMsg(newestSegId, talkId), role.RoleManager:getRoleVo():getPlayerName()) 
             break
         end
+    end
+    if string.find(txt, ".png") ~= nil then 
+        txt = "[图片]"
     end
     gs.TextExtension.SetTextWithElipsis(self.mTxtSimpleMessage, txt)
 end

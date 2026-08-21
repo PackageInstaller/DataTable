@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("SpineAnimChar")
+﻿local var_0_0 = class("SpineAnimChar")
 local var_0_1 = "normal"
 
 var_0_0.state_init = 1
@@ -10,8 +8,7 @@ var_0_0.state_dispose = 4
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	if arg_1_1 then
-		pg = var_1_10002
-		arg_1_0.config = var_1_10002.ship_skin_template[arg_1_1]
+		arg_1_0.config = pg.ship_skin_template[arg_1_1]
 		arg_1_0.prefab = arg_1_0.config.prefab
 	end
 
@@ -35,9 +32,7 @@ end
 
 function var_0_0.SetSiblingIndex(arg_4_0, arg_4_1)
 	if arg_4_0:isComplete() then
-		local var_4_0 = arg_4_0._model.transform
-
-		var_2.SetSiblingIndex(var_4_0, arg_4_1)
+		arg_4_0._model.transform:SetSiblingIndex(arg_4_1)
 	end
 
 	return
@@ -52,24 +47,13 @@ end
 function var_0_0.Load(arg_6_0, arg_6_1, arg_6_2)
 	if arg_6_0.state == var_0_0.state_init then
 		arg_6_0.state = var_0_0.state_loading
-		PoolMgr = var_3
 
-		local var_6_0 = var_3.GetInstance()
-
-		var_3.GetSpineChar(var_6_0, arg_6_0.prefab, arg_6_0.sync, function(arg_7_0)
+		PoolMgr.GetInstance():GetSpineChar(arg_6_0.prefab, arg_6_0.sync, function(arg_7_0)
 			if arg_7_0 then
-				local var_7_0 = arg_6_0
-
-				if var_1.isDispose(var_7_0) then
-					PoolMgr = var_1
-
-					local var_7_1 = var_1.GetInstance()
-
-					var_1.ReturnSpineChar(var_7_1, arg_6_0.prefab, arg_7_0)
+				if arg_6_0:isDispose() then
+					PoolMgr.GetInstance():ReturnSpineChar(arg_6_0.prefab, arg_7_0)
 				else
-					local var_7_2 = arg_6_0
-
-					var_1.start(var_7_2, arg_7_0)
+					arg_6_0:start(arg_7_0)
 
 					if arg_6_2 then
 						arg_6_2(arg_6_0)
@@ -88,8 +72,7 @@ end
 
 function var_0_0.SetPivot(arg_8_0, arg_8_1)
 	if arg_8_0:isComplete() then
-		tf = var_2
-		var_2(arg_8_0._model).pivot = arg_8_1
+		tf(arg_8_0._model).pivot = arg_8_1
 	end
 
 	return
@@ -97,8 +80,7 @@ end
 
 function var_0_0.SetSizeDelta(arg_9_0, arg_9_1)
 	if arg_9_0:isComplete() then
-		tf = var_2
-		var_2(arg_9_0._model).sizeDelta = arg_9_1
+		tf(arg_9_0._model).sizeDelta = arg_9_1
 	end
 
 	return
@@ -111,9 +93,7 @@ function var_0_0.SetParent(arg_10_0, arg_10_1, arg_10_2)
 		return
 	end
 
-	SetParent = var_3
-
-	var_3(arg_10_0._model, arg_10_1, arg_10_2 and true or false)
+	SetParent(arg_10_0._model, arg_10_1, arg_10_2 and true or false)
 
 	return
 end
@@ -130,35 +110,17 @@ function var_0_0.SetAction(arg_12_0, arg_12_1, arg_12_2)
 
 	local var_12_0, var_12_1 = arg_12_0:getDirectActonName(arg_12_1)
 
-	if not arg_12_0.modelScale then
-		tf = var_5
-		arg_12_0.modelScale = var_5(arg_12_0._model).localScale
-	end
-
-	local var_12_2
-	local var_12_4
+	arg_12_0.modelScale = arg_12_0.modelScale or tf(arg_12_0._model).localScale
 
 	if var_12_1 then
-		math = var_12_4
-
-		local var_12_3 = var_12_4.abs(arg_12_0.modelScale.x)
-
-		tf = var_12_4
-		var_12_4 = var_12_4(arg_12_0._model)
-		Vector3 = var_1_10007
-		var_12_4.localScale = var_1_10007(var_12_3, arg_12_0.modelScale.y, arg_12_0.modelScale.z)
+		tf(arg_12_0._model).localScale = Vector3(math.abs(arg_12_0.modelScale.x), arg_12_0.modelScale.y, arg_12_0.modelScale.z)
 	else
-		math = var_12_4
+		local var_12_3 = math.sign(arg_12_0.modelScale.x)
 
-		local var_12_5 = var_12_4.sign(arg_12_0.modelScale.x)
-
-		tf = var_6
-		var_6(arg_12_0._model).localScale = arg_12_0.modelScale
+		tf(arg_12_0._model).localScale = arg_12_0.modelScale
 	end
 
-	local var_12_6 = arg_12_0._animUI
-
-	var_6.SetAction(var_12_6, var_12_0, arg_12_2)
+	arg_12_0._animUI:SetAction(var_12_0, arg_12_2)
 
 	return
 end
@@ -182,18 +144,14 @@ function var_0_0.SetActionOnce(arg_13_0, arg_13_1, arg_13_2, arg_13_3, arg_13_4)
 end
 
 function var_0_0.SetActionCallBack(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_0._animUI
-
-	var_2.SetActionCallBack(var_15_0, arg_15_1)
+	arg_15_0._animUI:SetActionCallBack(arg_15_1)
 
 	return
 end
 
 function var_0_0.GetLocalScale(arg_16_0)
 	if arg_16_0:isComplete() then
-		tf = var_1
-
-		return var_1(arg_16_0._model).localScale
+		return tf(arg_16_0._model).localScale
 	end
 
 	return
@@ -201,10 +159,8 @@ end
 
 function var_0_0.SetLocalScale(arg_17_0, arg_17_1)
 	if arg_17_0:isComplete() then
-		math = var_2
-		arg_17_0.direct = var_2.sign(arg_17_1.x)
-		tf = var_2
-		var_2(arg_17_0._model).localScale = arg_17_1
+		arg_17_0.direct = math.sign(arg_17_1.x)
+		tf(arg_17_0._model).localScale = arg_17_1
 		arg_17_0.modelScale = arg_17_1
 
 		arg_17_0:updateCharDirect()
@@ -215,8 +171,7 @@ end
 
 function var_0_0.SetLocalPosition(arg_18_0, arg_18_1)
 	if arg_18_0:isComplete() then
-		tf = var_2
-		var_2(arg_18_0._model).localPosition = arg_18_1
+		tf(arg_18_0._model).localPosition = arg_18_1
 	end
 
 	return
@@ -224,8 +179,7 @@ end
 
 function var_0_0.SetAnchoredPosition(arg_19_0, arg_19_1)
 	if arg_19_0:isComplete() then
-		tf = var_2
-		var_2(arg_19_0._model).anchoredPosition = arg_19_1
+		tf(arg_19_0._model).anchoredPosition = arg_19_1
 	end
 
 	return
@@ -233,25 +187,15 @@ end
 
 function var_0_0.GetAnchoredPosition(arg_20_0)
 	if arg_20_0:isComplete() then
-		tf = var_1
-
-		return var_1(arg_20_0._model).anchoredPosition
+		return tf(arg_20_0._model).anchoredPosition
 	end
 
 	return
 end
 
 function var_0_0.SetLayer(arg_21_0, arg_21_1)
-	local var_21_0 = arg_21_0
-
-	if arg_21_0.isComplete(var_21_0) then
-		pg = var_2
-
-		local var_21_1 = var_2.ViewUtils.SetLayer
-
-		tf = var_21_0
-
-		var_21_1(var_21_0(arg_21_0._model), arg_21_1)
+	if arg_21_0:isComplete() then
+		pg.ViewUtils.SetLayer(tf(arg_21_0._model), arg_21_1)
 	end
 
 	return
@@ -259,8 +203,7 @@ end
 
 function var_0_0.SetAnchoredPosition3D(arg_22_0, arg_22_1)
 	if arg_22_0:isComplete() then
-		tf = var_2
-		var_2(arg_22_0._model).anchoredPosition3D = arg_22_1
+		tf(arg_22_0._model).anchoredPosition3D = arg_22_1
 	end
 
 	return
@@ -280,9 +223,7 @@ end
 
 function var_0_0.GetAnimationState(arg_25_0)
 	if arg_25_0._animUI then
-		local var_25_0 = arg_25_0._animUI
-
-		return var_1.GetAnimationState(var_25_0)
+		return arg_25_0._animUI:GetAnimationState()
 	end
 
 	return nil
@@ -294,9 +235,7 @@ end
 
 function var_0_0.Resume(arg_27_0)
 	if arg_27_0._animUI then
-		local var_27_0 = arg_27_0._animUI
-
-		return var_1.Resume(var_27_0)
+		return arg_27_0._animUI:Resume()
 	end
 
 	return
@@ -304,9 +243,7 @@ end
 
 function var_0_0.Pause(arg_28_0)
 	if arg_28_0._animUI then
-		local var_28_0 = arg_28_0._animUI
-
-		return var_1.Pause(var_28_0)
+		return arg_28_0._animUI:Pause()
 	end
 
 	return
@@ -315,12 +252,7 @@ end
 function var_0_0.Dispose(arg_29_0)
 	if arg_29_0.state == var_0_0.state_complete then
 		arg_29_0:SetActionCallBack(nil)
-
-		PoolMgr = var_1
-
-		local var_29_0 = var_1.GetInstance()
-
-		var_1.ReturnSpineChar(var_29_0, arg_29_0.prefab, arg_29_0._model)
+		PoolMgr.GetInstance():ReturnSpineChar(arg_29_0.prefab, arg_29_0._model)
 	end
 
 	arg_29_0._animUI = nil
@@ -335,13 +267,7 @@ end
 function var_0_0.start(arg_30_0, arg_30_1)
 	arg_30_0.state = var_0_0.state_complete
 	arg_30_0._model = arg_30_1
-
-	local var_30_0 = arg_30_1
-	local var_30_1 = arg_30_1.GetComponent
-
-	typeof = var_1_10005
-	SpineAnimUI = var_1_10007
-	arg_30_0._animUI = var_30_1(var_30_0, var_1_10005(var_1_10007))
+	arg_30_0._animUI = arg_30_1:GetComponent(typeof(SpineAnimUI))
 	arg_30_0._skeletonGraphic = arg_30_1:GetComponent("SkeletonGraphic")
 
 	if arg_30_0.loadedParent then
@@ -378,21 +304,17 @@ function var_0_0.GetActionName(arg_32_0)
 end
 
 function var_0_0.getDirectActonName(arg_33_0, arg_33_1)
+	local var_33_0
+
 	if not arg_33_0.direct then
-		math = var_2
-
-		local var_33_0 = var_2.sign
-
-		tf = var_1_10004
-		arg_33_0.direct = var_33_0(var_1_10004(arg_33_0._model).localScale.x)
+		arg_33_0.direct = math.sign(tf(arg_33_0._model).localScale.x)
+		var_33_0 = arg_33_1
 	end
 
-	local var_33_1 = arg_33_0.direct == 1 and "_R" or "_L"
-	local var_33_2 = arg_33_1 .. var_33_1
-	local var_33_3 = arg_33_0._skeletonGraphic.SkeletonData
+	local var_33_1 = var_33_0 .. (arg_33_0.direct == 1 and "_R" or "_L")
 
-	if var_4.FindAnimation(var_33_3, var_33_2) then
-		return var_33_2, true
+	if arg_33_0._skeletonGraphic.SkeletonData:FindAnimation(var_33_0 .. (arg_33_0.direct == 1 and "_R" or "_L")) then
+		return var_33_1, true
 	end
 
 	return arg_33_1, false

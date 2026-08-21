@@ -32,6 +32,8 @@ end
 function listNotification(self)
     GameDispatcher:addEventListener(EventName.REQ_RECEIVE_FIRSTCHARGE, self.onReqFirstChargeHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_FIRSTCHARGE_PANEL, self.onOpenFirstChargePanelHandler, self)
+
+    GameDispatcher:addEventListener(EventName.OPEN_FIRSTCHARGE_TWO_PANEL, self.onOpenFirstChargeTwoPanelHandler, self)
 end
 
 --注册server发来的数据
@@ -74,6 +76,20 @@ function onDestroyFirstChargePanelHandler(self)
     self.mFirstChargePanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFirstChargePanelHandler, self)
     self.mFirstChargePanel = nil
 end
+
+function onOpenFirstChargeTwoPanelHandler(self, args)
+    if self.mFirstChargeTwoPanel == nil then
+        self.mFirstChargeTwoPanel = firstCharge.FirstChargePanelTwo.new()
+        self.mFirstChargeTwoPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFirstChargeTwoPanelHandler, self)
+    end
+    self.mFirstChargeTwoPanel:open(args)
+end
+    
+function onDestroyFirstChargeTwoPanelHandler(self)
+    self.mFirstChargeTwoPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyFirstChargeTwoPanelHandler, self)
+    self.mFirstChargeTwoPanel = nil
+end
+
 
 return _M
 

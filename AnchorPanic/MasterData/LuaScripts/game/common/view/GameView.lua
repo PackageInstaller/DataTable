@@ -107,6 +107,17 @@ function ctor(self)
 
     SubLayerMgr:setTagLayer(gud.SLAYER_BAR, "BAR", UrlManager:getPrefabPath("base/EmptyLayer.prefab"), scene)
     SubLayerMgr:setTagLayer(gud.SLAYER_FLOAT, "FLOAT", UrlManager:getPrefabPath("base/EmptyLayer.prefab"), scene)
+    SubLayerMgr:setTagLayer(gud.SPINE_BLACK, "SPINE_BLACK", UrlManager:getPrefabPath("base/BlackLayer.prefab"), scene)
+    SubLayerMgr:setTagLayer(gud.SPINE_IMG_HAR, "SPINE_IMG_HAR", UrlManager:getPrefabPath("base/HeroImgHarLayer.prefab"), scene)
+
+    local blackLayer = SubLayerMgr:getLayer(gud.SPINE_BLACK)
+    if blackLayer and not gs.GoUtil.IsTransNull(blackLayer) then
+        blackLayer.gameObject:SetActive(false)
+    end
+    local heroImgHarLayer = SubLayerMgr:getLayer(gud.SPINE_IMG_HAR)
+    if heroImgHarLayer and not gs.GoUtil.IsTransNull(heroImgHarLayer) then
+        heroImgHarLayer.gameObject:SetActive(false)
+    end
     -- local floatLayer = SubLayerMgr:getLayer(gud.SLAYER_FLOAT)
     -- gs.TransQuick:SetRotation(floatLayer, 20, 0, 0)
     -- LoopManager:setTimeout(1,self, self._afterLoadRootUI)
@@ -115,10 +126,11 @@ function ctor(self)
     -- stage:GetComponent(ty.Canvas).sortingOrder = 0
     -- stage2:GetComponent(ty.Canvas).sortingOrder = 0
 
-    -- if gs.ApplicationUtil.IsPC() then
-    --     local cursor = gs.ResMgr:LoadTexture("arts/texture/customUI/MouseIcon.png")
-    --     CS.UnityEngine.Cursor.SetCursor(cursor, gs.Vector2.zero, CS.UnityEngine.CursorMode.Auto)
-    -- end
+    if gs.ApplicationUtil.IsPC() then
+        CS.UnityEngine.Cursor.visible = true
+        local cursor = gs.ResMgr:LoadTexture("arts/texture/customUI/MouseIcon.png")
+        CS.UnityEngine.Cursor.SetCursor(cursor, gs.Vector2.zero, CS.UnityEngine.CursorMode.Auto)
+    end
 
     local uidTrans = msg:Find("UID")
     if(uidTrans and not gs.GoUtil.IsTransNull(uidTrans))then
@@ -141,8 +153,12 @@ function ctor(self)
         uidRect.anchorMin = gs.Vector2(1, 0)
         uidRect.anchorMax = gs.Vector2(1, 0)
         uidRect.pivot = gs.Vector2(1, 0)
-        uidRect.anchoredPosition = gs.Vector2(-40, 0)
+        uidRect.anchoredPosition = gs.Vector2(-70, 0)
     end
+end
+
+function setUIDNode(self, isAct)
+    UINode["UID"].gameObject:SetActive(isAct)
 end
 
 function SceneStoryHideUI(self)
@@ -169,7 +185,7 @@ function SceneStoryShowUI(self)
     UINode["SCENE"].gameObject:SetActive(true)
 end
 -- function _afterLoadRootUI()
--- 	gs.LightMgr:SetOpenUIGlobalModelLigth(false)
+-- gs.LightMgr:SetOpenUIGlobalModelLigth(false)
 -- end
 
 return _M

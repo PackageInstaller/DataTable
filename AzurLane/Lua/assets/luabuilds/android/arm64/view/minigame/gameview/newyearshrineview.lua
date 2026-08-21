@@ -1,23 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewYearShrineView", import("..BaseMiniGameView"))
 
-local var_0_0 = "NewYearShrineView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewYearShrine"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:findUI()
 	arg_2_0:addListener()
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0:initData()
 	arg_3_0:updateView()
 	arg_3_0:updateBuff()
@@ -25,130 +19,51 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_4_0)
-	local var_4_0 = arg_4_0.shrineBuffView
-	local var_4_1 = var_1.CheckState
-
-	BaseSubView = var_1_10004
-
-	if var_4_1(var_4_0, var_1_10004.STATES.INITED) then
-		local var_4_2 = arg_4_0.shrineBuffView
-
-		var_1.Destroy(var_4_2)
+function var_0_0.onBackPressed(arg_4_0)
+	if arg_4_0.shrineBuffView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineBuffView:Destroy()
+	elseif arg_4_0.shrineResultView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineResultView:Destroy()
 	else
-		local var_4_3 = arg_4_0.shrineResultView
-		local var_4_4 = var_1.CheckState
-
-		BaseSubView = var_4
-
-		if var_4_4(var_4_3, var_4.STATES.INITED) then
-			local var_4_5 = arg_4_0.shrineResultView
-
-			var_1.Destroy(var_4_5)
-		else
-			arg_4_0:emit(var_0_1.ON_BACK_PRESSED)
-		end
+		arg_4_0:emit(var_0_0.ON_BACK_PRESSED)
 	end
 
 	return
 end
 
-function var_0_1.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1.argList[1]
-	local var_5_1 = var_2[2]
+function var_0_0.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
+	if arg_5_1.argList[1] == arg_5_0.miniGameId then
+		if arg_5_1.argList[2] == 1 then
+			arg_5_0:updateView()
+		elseif arg_5_1.argList[2] == 2 then
+			local var_5_0 = getProxy(PlayerProxy):getData()
 
-	if var_5_0 == arg_5_0.miniGameId then
-		if var_5_1 == 1 then
-			var_1_10007 = arg_5_0
+			;({}).gold = arg_5_0:GetMGData():getConfig("config_data")[1]
 
-			arg_5_0.updateView(var_1_10007)
-		elseif var_5_1 == 2 then
-			getProxy = var_5
-			PlayerProxy = var_1_10007
-			var_1_10007 = var_5(var_1_10007)
+			var_5_0:consume({})
+			getProxy(PlayerProxy):updatePlayer(var_5_0)
 
-			local var_5_2 = var_5.getData(var_1_10007)
-			local var_5_3 = var_5.consume
-			local var_5_4 = {}
-			local var_5_5 = arg_5_0:GetMGData()
+			local var_5_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHRINE)
+			local var_5_2
 
-			var_5_4.gold = var_10.getConfig(var_5_5, "config_data")[1]
+			if var_5_1 and not var_5_1:isEnd() then
+				var_5_1.data2 = var_5_1.data2 + 1
 
-			var_5_3(var_5_2, var_5_4)
+				getProxy(ActivityProxy):updateActivity(var_5_1)
 
-			getProxy = var_5_3
-			PlayerProxy = var_5_2
-
-			local var_5_6 = var_5_3(var_5_2)
-
-			var_6.updatePlayer(var_5_6, var_5)
-
-			getProxy = var_6
-			ActivityProxy = var_5_6
-
-			local var_5_7 = var_6(var_5_6)
-			local var_5_8 = var_6.getActivityByType
-
-			ActivityConst = var_9
-
-			local var_5_9
-
-			if var_5_8(var_5_7, var_9.ACTIVITY_TYPE_SHRINE) then
-				var_5_9 = var_6
-
-				if not var_6.isEnd(var_5_9) then
-					var_6.data2 = var_6.data2 + 1
-					getProxy = var_1_10007
-					ActivityProxy = var_5_9
-					var_5_9 = var_1_10007(var_5_9)
-
-					var_1_10007.updateActivity(var_5_9, var_6)
-				end
+				var_5_2 = pg.benefit_buff_template[arg_5_1.argList[3]].name
 			end
 
-			var_1_10007 = var_2[3]
-			pg = var_5_7
-
-			local var_5_10 = var_5_7.benefit_buff_template[var_1_10007].name
-
-			table = var_5_9
-
-			local var_5_11 = var_5_9.indexof
-			local var_5_12 = arg_5_0:GetMGData()
-			local var_5_13 = var_5_11(var_11.getConfig(var_5_12, "config_data")[2], var_1_10007, 1)
-
-			i18n = var_10
-
-			local var_5_14 = var_10("tips_shrine_buff")
-
-			arg_5_0:playAnime(var_5_14, var_5_13)
+			arg_5_0:playAnime(i18n("tips_shrine_buff"), (table.indexof(arg_5_0:GetMGData():getConfig("config_data")[2], arg_5_1.argList[3], 1)))
 			arg_5_0:updateView()
-		elseif var_5_1 == 3 then
-			getProxy = var_5
-			PlayerProxy = var_1_10007
+		elseif arg_5_1.argList[2] == 3 then
+			local var_5_3 = getProxy(PlayerProxy):getData()
 
-			local var_5_15 = var_5(var_1_10007)
-			local var_5_16 = var_5.getData(var_5_15)
-			local var_5_17 = var_5.consume
-			local var_5_18 = {}
-			local var_5_19 = arg_5_0:GetMGData()
+			;({}).gold = arg_5_0:GetMGData():getConfig("config_data")[1]
 
-			var_5_18.gold = var_10.getConfig(var_5_19, "config_data")[1]
-
-			var_5_17(var_5_16, var_5_18)
-
-			getProxy = var_5_17
-			PlayerProxy = var_5_16
-
-			local var_5_20 = var_5_17(var_5_16)
-
-			var_6.updatePlayer(var_5_20, var_5)
-
-			i18n = var_6
-
-			local var_5_21 = var_6("tips_shrine_nobuff")
-
-			arg_5_0:playAnime(var_5_21)
+			var_5_3:consume({})
+			getProxy(PlayerProxy):updatePlayer(var_5_3)
+			arg_5_0:playAnime((i18n("tips_shrine_nobuff")))
 			arg_5_0:updateView()
 		end
 	end
@@ -156,125 +71,70 @@ function var_0_1.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.OnModifyMiniGameDataDone(arg_6_0, arg_6_1)
+function var_0_0.OnModifyMiniGameDataDone(arg_6_0, arg_6_1)
 	arg_6_0:updateView()
 
 	return
 end
 
-function var_0_1.willExit(arg_7_0)
-	local var_7_0 = arg_7_0.shrineBuffView
-	local var_7_1 = var_1.CheckState
-
-	BaseSubView = var_1_10004
-
-	if var_7_1(var_7_0, var_1_10004.STATES.INITED) then
-		local var_7_2 = arg_7_0.shrineBuffView
-
-		var_1.Destroy(var_7_2)
+function var_0_0.willExit(arg_7_0)
+	if arg_7_0.shrineBuffView:CheckState(BaseSubView.STATES.INITED) then
+		arg_7_0.shrineBuffView:Destroy()
 	end
 
-	local var_7_3 = arg_7_0.shrineResultView
-	local var_7_4 = var_1.CheckState
-
-	BaseSubView = var_4
-
-	if var_7_4(var_7_3, var_4.STATES.INITED) then
-		local var_7_5 = arg_7_0.shrineResultView
-
-		var_1.Destroy(var_7_5)
+	if arg_7_0.shrineResultView:CheckState(BaseSubView.STATES.INITED) then
+		arg_7_0.shrineResultView:Destroy()
 	end
 
 	if arg_7_0._buffTextTimer then
-		local var_7_6 = arg_7_0._buffTextTimer
-
-		var_1.Stop(var_7_6)
+		arg_7_0._buffTextTimer:Stop()
 	end
 
 	if arg_7_0._buffTimeCountDownTimer then
-		local var_7_7 = arg_7_0._buffTimeCountDownTimer
-
-		var_1.Stop(var_7_7)
+		arg_7_0._buffTimeCountDownTimer:Stop()
 	end
 
 	if arg_7_0.clockSE then
-		local var_7_8 = arg_7_0.clockSE
-
-		var_1.Stop(var_7_8, true)
+		arg_7_0.clockSE:Stop(true)
 	end
 
 	return
 end
 
-function var_0_1.initData(arg_8_0)
+function var_0_0.initData(arg_8_0)
 	arg_8_0.miniGameId = arg_8_0.contextData.miniGameId
-	getProxy = var_1
-	MiniGameProxy = var_1_10003
 
-	local var_8_0 = var_1(var_1_10003)
-	local var_8_1 = var_1.GetHubByGameId(var_8_0, arg_8_0.miniGameId)
+	local var_8_0 = getProxy(MiniGameProxy):GetHubByGameId(arg_8_0.miniGameId)
 
 	if not arg_8_0:isInitedMiniGameData() then
-		local var_8_2 = arg_8_0
-		local var_8_3 = arg_8_0.SendOperator
-
-		MiniGameOPCommand = var_1_10006
-
-		var_8_3(var_8_2, var_1_10006.CMD_SPECIAL_GAME, {
+		arg_8_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 			arg_8_0.miniGameId,
 			1
 		})
 	end
 
-	local var_8_4 = {
+	arg_8_0.shrineBuffView = NewYearShrineBuffView.New(arg_8_0._tf.parent, arg_8_0.event, {
 		onSelect = function(arg_9_0)
-			getProxy = var_2_10001
-			PlayerProxy = var_2_10003
-
-			local var_9_0 = var_2_10001(var_2_10003)
-			local var_9_1 = var_1.getData(var_9_0)
-			local var_9_2 = arg_8_0
-			local var_9_3 = var_2.GetMGData(var_9_2)
-
-			if var_2.getConfig(var_9_3, "config_data")[1] > var_9_1.gold then
-				pg = var_9_3
-
-				local var_9_4 = var_9_3.TipsMgr.GetInstance()
-				local var_9_5 = var_4.ShowTips
-
-				i18n = var_2_10007
-
-				var_9_5(var_9_4, var_2_10007("common_no_resource"))
+			if arg_8_0:GetMGData():getConfig("config_data")[1] > getProxy(PlayerProxy):getData().gold then
+				pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 				return
 			end
 
-			local var_9_6 = arg_8_0
-			local var_9_7 = var_4.GetMGData(var_9_6)
+			local var_9_0 = arg_8_0:GetMGData()
 
-			if var_4.GetRuntimeData(var_9_7, "count") <= 0 then
-				local var_9_8 = arg_8_0
-				local var_9_9 = var_4.SendOperator
-
-				MiniGameOPCommand = var_7
-
-				var_9_9(var_9_8, var_7.CMD_SPECIAL_GAME, {
+			if var_9_0:GetRuntimeData("count") <= 0 then
+				arg_8_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 					arg_8_0.miniGameId,
 					3
 				})
 			else
-				local var_9_10 = arg_8_0
-				local var_9_11 = var_4.GetMGData(var_9_10)
-				local var_9_12 = var_4.getConfig(var_9_11, "config_data")[2][arg_9_0]
-				local var_9_13 = arg_8_0
-				local var_9_14 = var_5.SendOperator
+				local var_9_1 = arg_8_0:GetMGData()
 
-				MiniGameOPCommand = var_2_10008
-
-				var_9_14(var_9_13, var_2_10008.CMD_SPECIAL_GAME, {
+				arg_8_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 					arg_8_0.miniGameId,
 					2,
-					var_9_12
+					var_9_1:getConfig("config_data")[2][arg_9_0]
 				})
 			end
 
@@ -282,192 +142,82 @@ function var_0_1.initData(arg_8_0)
 		end,
 		onClose = function()
 			arg_8_0.buffEffectAni.enabled = false
+			arg_8_0.bgImg.color = Color.New(1, 1, 1)
 
-			local var_10_0 = arg_8_0.bgImg
-
-			Color = var_1
-			var_10_0.color = var_1.New(1, 1, 1)
-			setActive = var_10_0
-
-			var_10_0(arg_8_0.noAdaptPanel, true)
+			setActive(arg_8_0.noAdaptPanel, true)
 
 			return
 		end
-	}
-
-	NewYearShrineBuffView = var_4
-	arg_8_0.shrineBuffView = var_4.New(arg_8_0._tf.parent, arg_8_0.event, var_8_4)
-	ShrineResultView = var_4
-	arg_8_0.shrineResultView = var_4.New(arg_8_0._tf, arg_8_0.event)
+	})
+	arg_8_0.shrineResultView = ShrineResultView.New(arg_8_0._tf, arg_8_0.event)
 
 	return
 end
 
-function var_0_1.findUI(arg_11_0)
-	local var_11_0 = arg_11_0._tf
+function var_0_0.findUI(arg_11_0)
+	arg_11_0.noAdaptPanel = arg_11_0._tf:Find("noAdaptPanel")
+	arg_11_0.buffTF = arg_11_0.noAdaptPanel:Find("Buff")
+	arg_11_0.buffRope = arg_11_0.buffTF:Find("BuffRope")
+	arg_11_0.buffImg = arg_11_0.buffTF:Find("BuffTypeImg")
+	arg_11_0.buffText = arg_11_0.buffTF:Find("BuffText")
+	arg_11_0.buffEffectAni = GetComponent(arg_11_0.buffImg, "Animator")
+	arg_11_0.buffDftAniEvent = GetComponent(arg_11_0.buffImg, "DftAniEvent")
+	arg_11_0.bgImg = arg_11_0._tf:Find("BGImg"):GetComponent(typeof(Image))
+	arg_11_0.bgImg.color = Color.New(1, 1, 1)
 
-	arg_11_0.noAdaptPanel = var_1.Find(var_11_0, "noAdaptPanel")
+	local var_11_0 = arg_11_0.noAdaptPanel:Find("Top")
 
-	local var_11_1 = arg_11_0.noAdaptPanel
+	arg_11_0.topTF = var_11_0
+	arg_11_0.backBtn = var_11_0:Find("BackBtn")
+	arg_11_0.helpBtn = var_11_0:Find("HelpBtn")
+	arg_11_0.timesText = var_11_0:Find("Times/Text")
+	arg_11_0.goldText = var_11_0:Find("Gold/Text")
 
-	arg_11_0.buffTF = var_1.Find(var_11_1, "Buff")
+	local var_11_1 = arg_11_0._tf:Find("Main")
 
-	local var_11_2 = arg_11_0.buffTF
-
-	arg_11_0.buffRope = var_1.Find(var_11_2, "BuffRope")
-
-	local var_11_3 = arg_11_0.buffTF
-
-	arg_11_0.buffImg = var_1.Find(var_11_3, "BuffTypeImg")
-
-	local var_11_4 = arg_11_0.buffTF
-
-	arg_11_0.buffText = var_1.Find(var_11_4, "BuffText")
-	GetComponent = var_1
-	arg_11_0.buffEffectAni = var_1(arg_11_0.buffImg, "Animator")
-	GetComponent = var_1
-	arg_11_0.buffDftAniEvent = var_1(arg_11_0.buffImg, "DftAniEvent")
-
-	local var_11_5 = arg_11_0._tf
-	local var_11_6 = var_1.Find(var_11_5, "BGImg")
-	local var_11_7 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_11_0.bgImg = var_11_7(var_11_6, var_4(var_1_10006))
-
-	local var_11_8 = arg_11_0.bgImg
-
-	Color = var_1_10002
-	var_11_8.color = var_1_10002.New(1, 1, 1)
-
-	local var_11_9 = arg_11_0.noAdaptPanel
-
-	arg_11_0.topTF = var_1.Find(var_11_9, "Top")
-	arg_11_0.backBtn = var_1:Find("BackBtn")
-	arg_11_0.helpBtn = var_1:Find("HelpBtn")
-	arg_11_0.timesText = var_1:Find("Times/Text")
-	arg_11_0.goldText = var_1:Find("Gold/Text")
-
-	local var_11_10 = arg_11_0._tf
-	local var_11_11 = var_2.Find(var_11_10, "Main")
-
-	arg_11_0.clockTF = var_2.Find(var_11_11, "Clock")
-	arg_11_0.clockBtn = var_2:Find("ClockBtn")
-	GetComponent = var_3
-	arg_11_0.clockEffectAni = var_3(arg_11_0.clockTF, "Animator")
-	GetComponent = var_3
-	arg_11_0.clockDftAniEvent = var_3(arg_11_0.clockTF, "DftAniEvent")
+	arg_11_0.clockTF = var_11_1:Find("Clock")
+	arg_11_0.clockBtn = var_11_1:Find("ClockBtn")
+	arg_11_0.clockEffectAni = GetComponent(arg_11_0.clockTF, "Animator")
+	arg_11_0.clockDftAniEvent = GetComponent(arg_11_0.clockTF, "DftAniEvent")
 
 	return
 end
 
-function var_0_1.addListener(arg_12_0)
-	onButton = var_1_10001
-
-	local var_12_0 = arg_12_0
-	local var_12_1 = arg_12_0.backBtn
-
-	local function var_12_2()
-		local var_13_0 = arg_12_0
-
-		var_0.onBackPressed(var_13_0)
+function var_0_0.addListener(arg_12_0)
+	onButton(arg_12_0, arg_12_0.backBtn, function()
+		arg_12_0:onBackPressed()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_12_0, var_12_1, var_12_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_12_3 = arg_12_0
-	local var_12_4 = arg_12_0.helpBtn
-
-	local function var_12_5()
-		pg = var_2_10000
-
-		local var_14_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_14_1 = var_0.ShowMsgBox
-		local var_14_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_14_2.type = var_2_10004
-		pg = var_2_10004
-		var_14_2.helps = var_2_10004.gametip.help_xinnian2021__qiaozhong.tip
-
-		var_14_1(var_14_0, var_14_2)
+	end, SFX_CANCEL)
+	onButton(arg_12_0, arg_12_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.help_xinnian2021__qiaozhong.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_12_3, var_12_4, var_12_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_12_6 = arg_12_0
-	local var_12_7 = arg_12_0.buffImg
-
-	local function var_12_8()
-		local var_15_0 = arg_12_0
-
-		var_0.updateBuffDesc(var_15_0)
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.buffImg, function()
+		arg_12_0:updateBuffDesc()
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_12_0, arg_12_0.clockBtn, function()
+		arg_12_0.bgImg.color = Color.New(0, 0, 0)
 
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_12_6, var_12_7, var_12_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_12_9 = arg_12_0
-	local var_12_10 = arg_12_0.clockBtn
-
-	local function var_12_11()
-		local var_16_0 = arg_12_0.bgImg
-
-		Color = var_2_10001
-		var_16_0.color = var_2_10001.New(0, 0, 0)
-		setActive = var_16_0
-
-		var_16_0(arg_12_0.noAdaptPanel, false)
-
-		local var_16_1 = arg_12_0.shrineBuffView
-
-		var_0.Reset(var_16_1)
-
-		local var_16_2 = arg_12_0.shrineBuffView
-
-		var_0.Load(var_16_2)
+		setActive(arg_12_0.noAdaptPanel, false)
+		arg_12_0.shrineBuffView:Reset()
+		arg_12_0.shrineBuffView:Load()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_12_9, var_12_10, var_12_11, var_1_10006)
-
-	local var_12_12 = arg_12_0.buffDftAniEvent
-
-	var_1.SetStartEvent(var_12_12, function()
-		setButtonEnabled = var_2_10000
-
-		var_2_10000(arg_12_0.clockBtn, false)
+	end, SFX_PANEL)
+	arg_12_0.buffDftAniEvent:SetStartEvent(function()
+		setButtonEnabled(arg_12_0.clockBtn, false)
 
 		return
 	end)
-
-	local var_12_13 = arg_12_0.buffDftAniEvent
-
-	var_1.SetEndEvent(var_12_13, function()
-		setButtonEnabled = var_2_10000
-
-		var_2_10000(arg_12_0.clockBtn, true)
+	arg_12_0.buffDftAniEvent:SetEndEvent(function()
+		setButtonEnabled(arg_12_0.clockBtn, true)
 
 		return
 	end)
@@ -475,48 +225,23 @@ function var_0_1.addListener(arg_12_0)
 	return
 end
 
-function var_0_1.playAnime(arg_19_0, arg_19_1, arg_19_2)
-	pg = var_1_10003
+function var_0_0.playAnime(arg_19_0, arg_19_1, arg_19_2)
+	arg_19_0.clockSE = pg.CriMgr.GetInstance():PlaySE_V3("ui-zhongsheng")
 
-	local var_19_0 = var_1_10003.CriMgr.GetInstance()
-
-	arg_19_0.clockSE = var_3.PlaySE_V3(var_19_0, "ui-zhongsheng")
-	setButtonEnabled = var_3
-
-	var_3(arg_19_0.clockBtn, false)
-
-	local var_19_1 = arg_19_0.clockDftAniEvent
-
-	var_3.SetEndEvent(var_19_1, function()
-		setButtonEnabled = var_2_10000
-
-		var_2_10000(arg_19_0.clockBtn, true)
+	setButtonEnabled(arg_19_0.clockBtn, false)
+	arg_19_0.clockDftAniEvent:SetEndEvent(function()
+		setButtonEnabled(arg_19_0.clockBtn, true)
 
 		if arg_19_0.clockSE then
-			local var_20_0 = arg_19_0.clockSE
-
-			var_0.Stop(var_20_0, true)
+			arg_19_0.clockSE:Stop(true)
 		end
 
-		local var_20_1 = arg_19_0.shrineResultView
-
-		var_0.Reset(var_20_1)
-
-		local var_20_2 = arg_19_0.shrineResultView
-
-		var_0.Load(var_20_2)
-
-		local var_20_3 = arg_19_0.shrineResultView
-
-		var_0.ActionInvoke(var_20_3, "updateView", arg_19_1, arg_19_2)
-
-		local var_20_4 = arg_19_0.shrineResultView
-
-		var_0.ActionInvoke(var_20_4, "setCloseFunc", function()
+		arg_19_0.shrineResultView:Reset()
+		arg_19_0.shrineResultView:Load()
+		arg_19_0.shrineResultView:ActionInvoke("updateView", arg_19_1, arg_19_2)
+		arg_19_0.shrineResultView:ActionInvoke("setCloseFunc", function()
 			if arg_19_2 then
-				local var_21_0 = arg_19_0
-
-				var_0.updateBuff(var_21_0, arg_19_2)
+				arg_19_0:updateBuff(arg_19_2)
 
 				arg_19_0.buffEffectAni.enabled = true
 			end
@@ -529,144 +254,72 @@ function var_0_1.playAnime(arg_19_0, arg_19_1, arg_19_2)
 
 	arg_19_0.clockEffectAni.enabled = true
 
-	local var_19_2 = arg_19_0.clockEffectAni
-
-	var_3.Play(var_19_2, "ClockAni", -1, 0)
+	arg_19_0.clockEffectAni:Play("ClockAni", -1, 0)
 
 	return
 end
 
-function var_0_1.updateView(arg_22_0)
+function var_0_0.updateView(arg_22_0)
 	if not arg_22_0:isInitedMiniGameData() then
 		return
 	end
 
 	local var_22_0 = arg_22_0:GetMGData()
-	local var_22_1 = var_1.GetRuntimeData(var_22_0, "count")
 
-	setText = var_1_10002
-
-	var_1_10002(arg_22_0.timesText, var_22_1)
-
-	getProxy = var_1_10002
-	PlayerProxy = var_4
-
-	local var_22_2 = var_1_10002(var_4)
-	local var_22_3 = var_2.getData(var_22_2).gold
-
-	setText = var_22_2
-
-	var_22_2(arg_22_0.goldText, var_22_3)
+	setText(arg_22_0.timesText, (var_22_0:GetRuntimeData("count")))
+	setText(arg_22_0.goldText, getProxy(PlayerProxy):getData().gold)
 
 	return
 end
 
-function var_0_1.updateBuff(arg_23_0, arg_23_1)
+function var_0_0.updateBuff(arg_23_0, arg_23_1)
 	if arg_23_1 then
-		setImageSprite = var_1_10002
-		var_1_10004 = arg_23_0.buffImg
-		GetSpriteFromAtlas = var_1_10005
-
-		var_1_10002(var_1_10004, var_1_10005("ui/newyearshrineui_atlas", "buff_type_" .. arg_23_1))
-
-		setImageSprite = var_1_10002
-		var_1_10004 = arg_23_0.buffRope
-		GetSpriteFromAtlas = var_5
-
-		var_1_10002(var_1_10004, var_5("ui/newyearshrineui_atlas", "buff_rope_" .. arg_23_1))
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_23_0.buffImg, true)
+		setImageSprite(arg_23_0.buffImg, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_type_" .. arg_23_1))
+		setImageSprite(arg_23_0.buffRope, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_rope_" .. arg_23_1))
+		setActive(arg_23_0.buffImg, true)
 	else
-		getProxy = var_1_10002
-		PlayerProxy = var_1_10004
+		local var_23_0 = getProxy(PlayerProxy)
+		local var_23_1 = arg_23_0:GetMGData():getConfig("config_data")[2]
+		local var_23_2
 
-		local var_23_0 = var_1_10002(var_1_10004)
-		local var_23_1 = var_2.getData(var_23_0)
-		local var_23_2 = arg_23_0:GetMGData()
-		local var_23_3 = var_3.getConfig(var_23_2, "config_data")[2]
-		local var_23_4
+		for iter_23_0, iter_23_1 in ipairs(var_23_0:getData().buff_list) do
+			var_23_2 = table.indexof(var_23_1, iter_23_1.id, 1)
 
-		ipairs = var_23_2
+			if var_23_2 then
+				local var_23_3 = pg.TimeMgr.GetInstance()
 
-		for iter_23_0, iter_23_1 in var_23_2(var_23_1.buff_list) do
-			table = var_1_10010
-
-			if var_1_10010.indexof(var_23_3, iter_23_1.id, 1) then
-				pg = var_1_10010
-
-				local var_23_5 = var_1_10010.TimeMgr.GetInstance()
-
-				if var_1_10010.GetServerTime(var_23_5) < iter_23_1.timestamp then
-					setImageSprite = var_23_5
-
-					local var_23_6 = arg_23_0.buffImg
-
-					GetSpriteFromAtlas = var_1_10015
-
-					var_23_5(var_23_6, var_1_10015("ui/newyearshrineui_atlas", "buff_type_" .. var_23_4))
-
-					setImageSprite = var_23_5
-
-					local var_23_7 = arg_23_0.buffRope
-
-					GetSpriteFromAtlas = var_1_10015
-
-					var_23_5(var_23_7, var_1_10015("ui/newyearshrineui_atlas", "buff_rope_" .. var_23_4))
-
-					setActive = var_23_5
-
-					var_23_5(arg_23_0.buffImg, true)
+				if var_23_3:GetServerTime() < iter_23_1.timestamp then
+					setImageSprite(arg_23_0.buffImg, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_type_" .. var_23_2))
+					setImageSprite(arg_23_0.buffRope, GetSpriteFromAtlas("ui/newyearshrineui_atlas", "buff_rope_" .. var_23_2))
+					setActive(arg_23_0.buffImg, true)
 
 					break
 				end
 
-				var_23_4 = nil
+				var_23_2 = nil
 
 				break
 			end
 		end
 
-		if not var_23_4 then
-			setActive = var_5
-
-			var_5(arg_23_0.buffImg, false)
+		if not var_23_2 then
+			setActive(arg_23_0.buffImg, false)
 		end
 	end
 
 	return
 end
 
-function var_0_1.updateBuffDesc(arg_24_0)
+function var_0_0.updateBuffDesc(arg_24_0)
 	local var_24_0
+	local var_24_1 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
+	if var_24_1 and not var_24_1:isEnd() then
+		local var_24_2 = arg_24_0:GetMGData():getConfig("config_data")[2]
 
-	local var_24_1 = var_1_10002(var_1_10004)
-	local var_24_2 = var_2.getActivityByType
-
-	ActivityConst = var_1_10005
-
-	if var_24_2(var_24_1, var_1_10005.ACTIVITY_TYPE_MINIGAME) and not var_2:isEnd() then
-		local var_24_3 = arg_24_0:GetMGData()
-		local var_24_4 = var_3.getConfig(var_24_3, "config_data")[2]
-
-		getProxy = var_24_1
-		PlayerProxy = var_6
-
-		local var_24_5 = var_24_1(var_6)
-		local var_24_6 = var_4.getData(var_24_5)
-
-		pairs = var_24_3
-
-		for iter_24_0, iter_24_1 in var_24_3(var_24_6.buff_list) do
-			table = var_1_10010
-
-			if var_1_10010.contains(var_24_4, iter_24_1.id) then
-				ActivityBuff = var_1_10010
-				var_24_0 = var_1_10010.New(var_2.id, iter_24_1.id, iter_24_1.timestamp)
+		for iter_24_0, iter_24_1 in pairs(getProxy(PlayerProxy):getData().buff_list) do
+			if table.contains(var_24_2, iter_24_1.id) then
+				var_24_0 = ActivityBuff.New(var_24_1.id, iter_24_1.id, iter_24_1.timestamp)
 
 				break
 			end
@@ -674,114 +327,52 @@ function var_0_1.updateBuffDesc(arg_24_0)
 	end
 
 	if arg_24_0._buffTimeCountDownTimer then
-		local var_24_7 = arg_24_0._buffTimeCountDownTimer
-
-		var_3.Stop(var_24_7)
+		arg_24_0._buffTimeCountDownTimer:Stop()
 	end
 
 	if arg_24_0._buffTextTimer then
-		local var_24_8 = arg_24_0._buffTextTimer
-
-		var_3.Stop(var_24_8)
+		arg_24_0._buffTextTimer:Stop()
 	end
 
-	local var_24_9 = var_24_0:getConfig("desc")
-	local var_24_10 = var_24_0:getConfig("max_time")
-	local var_24_12
+	local var_24_3 = var_24_0:getConfig("desc")
 
-	if 0 < var_24_10 then
-		pg = var_24_12
-
-		local var_24_11 = var_24_12.TimeMgr.GetInstance()
-
-		var_24_12 = var_24_12.GetServerTime(var_24_11)
-
+	if var_24_0:getConfig("max_time") > 0 then
 		if var_24_0.timestamp then
-			local var_24_13 = var_6 - var_24_12
+			setText(arg_24_0.buffText:Find("Text"), string.gsub(var_24_3, "$" .. 1, (pg.TimeMgr.GetInstance():DescCDTime(var_24_0.timestamp - pg.TimeMgr.GetInstance():GetServerTime()))))
 
-			pg = iter_24_0
+			arg_24_0._buffTimeCountDownTimer = Timer.New(function()
+				if var_0 > 0 then
+					var_0 = var_0 - 1
 
-			local var_24_14 = iter_24_0.TimeMgr.GetInstance()
-			local var_24_15 = var_8.DescCDTime(var_24_14, var_24_13)
-
-			setText = iter_24_1
-
-			local var_24_16 = arg_24_0.buffText
-			local var_24_17 = var_11.Find(var_24_16, "Text")
-
-			string = var_1_10012
-
-			iter_24_1(var_24_17, var_1_10012.gsub(var_24_9, "$" .. 1, var_24_15))
-
-			Timer = iter_24_1
-			arg_24_0._buffTimeCountDownTimer = iter_24_1.New(function()
-				local var_25_0 = var_24_13
-
-				if 0 < var_25_0 then
-					var_24_13 = var_24_13 - 1
-					pg = var_0
-
-					local var_25_1 = var_0.TimeMgr.GetInstance()
-					local var_25_2 = var_0.DescCDTime(var_25_1, var_24_13)
-
-					setText = var_1
-
-					local var_25_3 = arg_24_0.buffText
-					local var_25_4 = var_3.Find(var_25_3, "Text")
-
-					string = var_2_10004
-
-					var_1(var_25_4, var_2_10004.gsub(var_24_9, "$" .. 1, var_25_2))
+					setText(arg_24_0.buffText:Find("Text"), string.gsub(var_24_3, "$" .. 1, (pg.TimeMgr.GetInstance():DescCDTime(var_0))))
 				else
-					local var_25_5 = arg_24_0._buffTimeCountDownTimer
-
-					var_0.Stop(var_25_5)
-
-					setActive = var_0
-
-					var_0(arg_24_0.buffText, false)
-
-					setActive = var_0
-
-					var_0(arg_24_0.buffImg, false)
+					arg_24_0._buffTimeCountDownTimer:Stop()
+					setActive(arg_24_0.buffText, false)
+					setActive(arg_24_0.buffImg, false)
 				end
 
 				return
 			end, 1, -1)
-			setActive = var_9
 
-			var_9(arg_24_0.buffText, true)
-
-			local var_24_18 = arg_24_0._buffTimeCountDownTimer
-
-			var_9.Start(var_24_18)
+			setActive(arg_24_0.buffText, true)
+			arg_24_0._buffTimeCountDownTimer:Start()
 		end
 	end
 
-	Timer = var_24_12
-	arg_24_0._buffTextTimer = var_24_12.New(function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_24_0.buffText, false)
-
-		local var_26_0 = arg_24_0._buffTimeCountDownTimer
-
-		var_0.Stop(var_26_0)
+	arg_24_0._buffTextTimer = Timer.New(function()
+		setActive(arg_24_0.buffText, false)
+		arg_24_0._buffTimeCountDownTimer:Stop()
 
 		return
 	end, 7, 1)
 
-	local var_24_19 = arg_24_0._buffTextTimer
-
-	var_5.Start(var_24_19)
+	arg_24_0._buffTextTimer:Start()
 
 	return
 end
 
-function var_0_1.isInitedMiniGameData(arg_27_0)
-	local var_27_0 = arg_27_0:GetMGData()
-
-	if not var_1.GetRuntimeData(var_27_0, "isInited") then
+function var_0_0.isInitedMiniGameData(arg_27_0)
+	if not arg_27_0:GetMGData():GetRuntimeData("isInited") then
 		return false
 	else
 		return true
@@ -790,82 +381,48 @@ function var_0_1.isInitedMiniGameData(arg_27_0)
 	return
 end
 
-function var_0_1.IsNeedShowTipWithoutActivityFinalReward()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+function var_0_0.IsNeedShowTipWithoutActivityFinalReward()
+	local var_28_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.NEWYEAR_SNOWBALL_FIGHT)
 
-	local var_28_0 = var_1_10000(var_1_10002)
-	local var_28_1 = var_0.getActivityById
-
-	ActivityConst = var_1_10003
-
-	if var_28_1(var_28_0, var_1_10003.NEWYEAR_SNOWBALL_FIGHT) then
-		local var_28_2 = var_0
-
-		if var_0.isEnd(var_28_2) then
-			return
-		end
-
-		local var_28_3 = false
-
-		MiniGameDataCreator = var_28_0
-
-		local var_28_4 = var_28_0.NewYearShrineGameID
-
-		getProxy = var_28_2
-		MiniGameProxy = var_1_10005
-
-		local var_28_5 = var_28_2(var_1_10005)
-		local var_28_6
-
-		if var_3.GetMiniGameData(var_28_5, var_28_4) then
-			var_28_6 = var_3
-
-			local var_28_7
-
-			if not var_3.GetRuntimeData(var_28_6, "count") then
-				var_28_7 = 0
-			end
-
-			var_28_3 = var_28_7 > 0
-		end
-
-		local var_28_8 = false
-		local var_28_9
-
-		if var_3 then
-			getProxy = var_28_6
-			PlayerProxy = var_1_10008
-
-			local var_28_10 = var_28_6(var_1_10008)
-			local var_28_11 = var_6.getData(var_28_10)
-			local var_28_12 = var_3:getConfig("config_data")[2]
-
-			ipairs = var_28_10
-
-			for iter_28_0, iter_28_1 in var_28_10(var_28_11.buff_list) do
-				table = var_1_10013
-
-				if var_1_10013.indexof(var_28_12, iter_28_1.id, 1) then
-					pg = var_1_10013
-
-					local var_28_13 = var_1_10013.TimeMgr.GetInstance()
-
-					if var_1_10013.GetServerTime(var_28_13) > iter_28_1.timestamp then
-						var_28_9 = nil
-					end
-
-					break
-				end
-			end
-		end
-
-		if var_28_9 then
-			var_28_8 = true
-		end
-
-		return var_28_3 and not var_28_8
+	if not var_28_0 or var_28_0:isEnd() then
+		return
 	end
+
+	local var_28_1 = false
+	local var_28_2 = getProxy(MiniGameProxy):GetMiniGameData(MiniGameDataCreator.NewYearShrineGameID)
+
+	if var_28_2 then
+		local var_28_3 = var_28_2:GetRuntimeData("count") or 0
+
+		var_28_1 = var_28_3 > 0
+	end
+
+	local var_28_4 = false
+	local var_28_5
+
+	if var_28_2 then
+		local var_28_6 = var_28_2:getConfig("config_data")[2]
+
+		for iter_28_0, iter_28_1 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
+			var_28_5 = table.indexof(var_28_6, iter_28_1.id, 1)
+
+			if var_28_5 then
+				local var_28_7 = pg.TimeMgr.GetInstance()
+
+				if var_28_7:GetServerTime() > iter_28_1.timestamp then
+					var_28_5 = nil
+				end
+
+				break
+			end
+		end
+	end
+
+	if var_28_5 then
+		var_28_4 = true
+	end
+
+	return var_28_1 and not var_28_4
 end
 
-return var_0_1
+return var_0_0

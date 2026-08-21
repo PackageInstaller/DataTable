@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_boss_level") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_boss_level"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_boss_level = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_boss_level
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_boss_level = rawget(pg, "world_boss_level") or setmetatable({
+	__name = "world_boss_level"
+}, confNEO)
+pg.world_boss_level.all = {
 	1,
 	2,
 	3,
@@ -372,25 +349,11 @@ var_0_3.all = {
 	344,
 	345
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_boss_level = {}
+pg.base = pg.base or {}
+pg.base.world_boss_level = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_boss_level
-
-	var_1_0[1] = {
+	pg.base.world_boss_level[1] = {
 		hp = 50000,
 		enemy_id = 295001,
 		expedition_id = 296001,
@@ -410,11 +373,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_boss_level
-
-	var_1_1[2] = {
+	pg.base.world_boss_level[2] = {
 		hp = 54000,
 		enemy_id = 295002,
 		expedition_id = 296002,
@@ -434,11 +393,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_boss_level
-
-	var_1_2[3] = {
+	pg.base.world_boss_level[3] = {
 		hp = 58000,
 		enemy_id = 295003,
 		expedition_id = 296003,
@@ -458,11 +413,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_boss_level
-
-	var_1_3[4] = {
+	pg.base.world_boss_level[4] = {
 		hp = 70000,
 		enemy_id = 295004,
 		expedition_id = 296004,
@@ -482,11 +433,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_boss_level
-
-	var_1_4[5] = {
+	pg.base.world_boss_level[5] = {
 		hp = 110000,
 		enemy_id = 295005,
 		expedition_id = 296005,
@@ -506,11 +453,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_boss_level
-
-	var_1_5[6] = {
+	pg.base.world_boss_level[6] = {
 		hp = 150000,
 		enemy_id = 295006,
 		expedition_id = 296006,
@@ -530,11 +473,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_boss_level
-
-	var_1_6[7] = {
+	pg.base.world_boss_level[7] = {
 		hp = 230000,
 		enemy_id = 295007,
 		expedition_id = 296007,
@@ -554,11 +493,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_boss_level
-
-	var_1_7[8] = {
+	pg.base.world_boss_level[8] = {
 		hp = 310000,
 		enemy_id = 295008,
 		expedition_id = 296008,
@@ -578,11 +513,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_boss_level
-
-	var_1_8[9] = {
+	pg.base.world_boss_level[9] = {
 		hp = 390000,
 		enemy_id = 295009,
 		expedition_id = 296009,
@@ -602,11 +533,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_boss_level
-
-	var_1_9[10] = {
+	pg.base.world_boss_level[10] = {
 		hp = 480000,
 		enemy_id = 295010,
 		expedition_id = 296010,
@@ -626,11 +553,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_boss_level
-
-	var_1_10[11] = {
+	pg.base.world_boss_level[11] = {
 		hp = 600000,
 		enemy_id = 295011,
 		expedition_id = 296011,
@@ -650,11 +573,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_boss_level
-
-	var_1_11[12] = {
+	pg.base.world_boss_level[12] = {
 		hp = 760000,
 		enemy_id = 295012,
 		expedition_id = 296012,
@@ -674,11 +593,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_boss_level
-
-	var_1_12[13] = {
+	pg.base.world_boss_level[13] = {
 		hp = 950000,
 		enemy_id = 295013,
 		expedition_id = 296013,
@@ -698,11 +613,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_boss_level
-
-	var_1_13[14] = {
+	pg.base.world_boss_level[14] = {
 		hp = 1170000,
 		enemy_id = 295014,
 		expedition_id = 296014,
@@ -722,11 +633,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_boss_level
-
-	var_1_14[15] = {
+	pg.base.world_boss_level[15] = {
 		hp = 1420000,
 		enemy_id = 295015,
 		expedition_id = 296015,
@@ -746,11 +653,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_boss_level
-
-	var_1_15[16] = {
+	pg.base.world_boss_level[16] = {
 		hp = 50000,
 		enemy_id = 295016,
 		expedition_id = 296016,
@@ -770,11 +673,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_boss_level
-
-	var_1_16[17] = {
+	pg.base.world_boss_level[17] = {
 		hp = 54000,
 		enemy_id = 295017,
 		expedition_id = 296017,
@@ -794,11 +693,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_boss_level
-
-	var_1_17[18] = {
+	pg.base.world_boss_level[18] = {
 		hp = 58000,
 		enemy_id = 295018,
 		expedition_id = 296018,
@@ -818,11 +713,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_boss_level
-
-	var_1_18[19] = {
+	pg.base.world_boss_level[19] = {
 		hp = 70000,
 		enemy_id = 295019,
 		expedition_id = 296019,
@@ -842,11 +733,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_boss_level
-
-	var_1_19[20] = {
+	pg.base.world_boss_level[20] = {
 		hp = 110000,
 		enemy_id = 295020,
 		expedition_id = 296020,
@@ -866,11 +753,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_boss_level
-
-	var_1_20[21] = {
+	pg.base.world_boss_level[21] = {
 		hp = 150000,
 		enemy_id = 295021,
 		expedition_id = 296021,
@@ -890,11 +773,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_boss_level
-
-	var_1_21[22] = {
+	pg.base.world_boss_level[22] = {
 		hp = 230000,
 		enemy_id = 295022,
 		expedition_id = 296022,
@@ -914,11 +793,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_boss_level
-
-	var_1_22[23] = {
+	pg.base.world_boss_level[23] = {
 		hp = 310000,
 		enemy_id = 295023,
 		expedition_id = 296023,
@@ -938,11 +813,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_boss_level
-
-	var_1_23[24] = {
+	pg.base.world_boss_level[24] = {
 		hp = 390000,
 		enemy_id = 295024,
 		expedition_id = 296024,
@@ -962,11 +833,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_boss_level
-
-	var_1_24[25] = {
+	pg.base.world_boss_level[25] = {
 		hp = 480000,
 		enemy_id = 295025,
 		expedition_id = 296025,
@@ -986,11 +853,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_boss_level
-
-	var_1_25[26] = {
+	pg.base.world_boss_level[26] = {
 		hp = 600000,
 		enemy_id = 295026,
 		expedition_id = 296026,
@@ -1010,11 +873,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_boss_level
-
-	var_1_26[27] = {
+	pg.base.world_boss_level[27] = {
 		hp = 760000,
 		enemy_id = 295027,
 		expedition_id = 296027,
@@ -1034,11 +893,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_boss_level
-
-	var_1_27[28] = {
+	pg.base.world_boss_level[28] = {
 		hp = 950000,
 		enemy_id = 295028,
 		expedition_id = 296028,
@@ -1058,11 +913,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_boss_level
-
-	var_1_28[29] = {
+	pg.base.world_boss_level[29] = {
 		hp = 1170000,
 		enemy_id = 295029,
 		expedition_id = 296029,
@@ -1082,11 +933,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_boss_level
-
-	var_1_29[30] = {
+	pg.base.world_boss_level[30] = {
 		hp = 1420000,
 		enemy_id = 295030,
 		expedition_id = 296030,
@@ -1106,11 +953,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_boss_level
-
-	var_1_30[31] = {
+	pg.base.world_boss_level[31] = {
 		hp = 40000,
 		enemy_id = 295031,
 		expedition_id = 296031,
@@ -1130,11 +973,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_boss_level
-
-	var_1_31[32] = {
+	pg.base.world_boss_level[32] = {
 		hp = 44000,
 		enemy_id = 295032,
 		expedition_id = 296032,
@@ -1154,11 +993,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_boss_level
-
-	var_1_32[33] = {
+	pg.base.world_boss_level[33] = {
 		hp = 52000,
 		enemy_id = 295033,
 		expedition_id = 296033,
@@ -1178,11 +1013,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_boss_level
-
-	var_1_33[34] = {
+	pg.base.world_boss_level[34] = {
 		hp = 68000,
 		enemy_id = 295034,
 		expedition_id = 296034,
@@ -1202,11 +1033,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_boss_level
-
-	var_1_34[35] = {
+	pg.base.world_boss_level[35] = {
 		hp = 100000,
 		enemy_id = 295035,
 		expedition_id = 296035,
@@ -1226,11 +1053,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_boss_level
-
-	var_1_35[36] = {
+	pg.base.world_boss_level[36] = {
 		hp = 140000,
 		enemy_id = 295036,
 		expedition_id = 296036,
@@ -1250,11 +1073,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_boss_level
-
-	var_1_36[37] = {
+	pg.base.world_boss_level[37] = {
 		hp = 190000,
 		enemy_id = 295037,
 		expedition_id = 296037,
@@ -1274,11 +1093,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_boss_level
-
-	var_1_37[38] = {
+	pg.base.world_boss_level[38] = {
 		hp = 260000,
 		enemy_id = 295038,
 		expedition_id = 296038,
@@ -1298,11 +1113,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_boss_level
-
-	var_1_38[39] = {
+	pg.base.world_boss_level[39] = {
 		hp = 350000,
 		enemy_id = 295039,
 		expedition_id = 296039,
@@ -1322,11 +1133,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_boss_level
-
-	var_1_39[40] = {
+	pg.base.world_boss_level[40] = {
 		hp = 460000,
 		enemy_id = 295040,
 		expedition_id = 296040,
@@ -1346,11 +1153,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_boss_level
-
-	var_1_40[41] = {
+	pg.base.world_boss_level[41] = {
 		hp = 590000,
 		enemy_id = 295041,
 		expedition_id = 296041,
@@ -1370,11 +1173,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_boss_level
-
-	var_1_41[42] = {
+	pg.base.world_boss_level[42] = {
 		hp = 740000,
 		enemy_id = 295042,
 		expedition_id = 296042,
@@ -1394,11 +1193,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_boss_level
-
-	var_1_42[43] = {
+	pg.base.world_boss_level[43] = {
 		hp = 910000,
 		enemy_id = 295043,
 		expedition_id = 296043,
@@ -1418,11 +1213,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_boss_level
-
-	var_1_43[44] = {
+	pg.base.world_boss_level[44] = {
 		hp = 1100000,
 		enemy_id = 295044,
 		expedition_id = 296044,
@@ -1442,11 +1233,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_boss_level
-
-	var_1_44[45] = {
+	pg.base.world_boss_level[45] = {
 		hp = 1320000,
 		enemy_id = 295045,
 		expedition_id = 296045,
@@ -1466,11 +1253,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_boss_level
-
-	var_1_45[46] = {
+	pg.base.world_boss_level[46] = {
 		hp = 50000,
 		enemy_id = 295046,
 		expedition_id = 296046,
@@ -1490,11 +1273,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_boss_level
-
-	var_1_46[47] = {
+	pg.base.world_boss_level[47] = {
 		hp = 54000,
 		enemy_id = 295047,
 		expedition_id = 296047,
@@ -1514,11 +1293,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_boss_level
-
-	var_1_47[48] = {
+	pg.base.world_boss_level[48] = {
 		hp = 58000,
 		enemy_id = 295048,
 		expedition_id = 296048,
@@ -1538,11 +1313,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_boss_level
-
-	var_1_48[49] = {
+	pg.base.world_boss_level[49] = {
 		hp = 70000,
 		enemy_id = 295049,
 		expedition_id = 296049,
@@ -1562,11 +1333,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_boss_level
-
-	var_1_49[50] = {
+	pg.base.world_boss_level[50] = {
 		hp = 110000,
 		enemy_id = 295050,
 		expedition_id = 296050,
@@ -1586,11 +1353,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_boss_level
-
-	var_1_50[51] = {
+	pg.base.world_boss_level[51] = {
 		hp = 150000,
 		enemy_id = 295051,
 		expedition_id = 296051,
@@ -1610,11 +1373,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_boss_level
-
-	var_1_51[52] = {
+	pg.base.world_boss_level[52] = {
 		hp = 230000,
 		enemy_id = 295052,
 		expedition_id = 296052,
@@ -1634,11 +1393,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_boss_level
-
-	var_1_52[53] = {
+	pg.base.world_boss_level[53] = {
 		hp = 310000,
 		enemy_id = 295053,
 		expedition_id = 296053,
@@ -1658,11 +1413,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_boss_level
-
-	var_1_53[54] = {
+	pg.base.world_boss_level[54] = {
 		hp = 390000,
 		enemy_id = 295054,
 		expedition_id = 296054,
@@ -1682,11 +1433,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_boss_level
-
-	var_1_54[55] = {
+	pg.base.world_boss_level[55] = {
 		hp = 480000,
 		enemy_id = 295055,
 		expedition_id = 296055,
@@ -1706,11 +1453,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_boss_level
-
-	var_1_55[56] = {
+	pg.base.world_boss_level[56] = {
 		hp = 600000,
 		enemy_id = 295056,
 		expedition_id = 296056,
@@ -1730,11 +1473,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_boss_level
-
-	var_1_56[57] = {
+	pg.base.world_boss_level[57] = {
 		hp = 750000,
 		enemy_id = 295057,
 		expedition_id = 296057,
@@ -1754,11 +1493,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_boss_level
-
-	var_1_57[58] = {
+	pg.base.world_boss_level[58] = {
 		hp = 930000,
 		enemy_id = 295058,
 		expedition_id = 296058,
@@ -1778,11 +1513,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_boss_level
-
-	var_1_58[59] = {
+	pg.base.world_boss_level[59] = {
 		hp = 1140000,
 		enemy_id = 295059,
 		expedition_id = 296059,
@@ -1802,11 +1533,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_boss_level
-
-	var_1_59[60] = {
+	pg.base.world_boss_level[60] = {
 		hp = 1380000,
 		enemy_id = 295060,
 		expedition_id = 296060,
@@ -1826,11 +1553,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_boss_level
-
-	var_1_60[61] = {
+	pg.base.world_boss_level[61] = {
 		hp = 50000,
 		enemy_id = 295061,
 		expedition_id = 296061,
@@ -1850,11 +1573,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_boss_level
-
-	var_1_61[62] = {
+	pg.base.world_boss_level[62] = {
 		hp = 54000,
 		enemy_id = 295062,
 		expedition_id = 296062,
@@ -1874,11 +1593,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_boss_level
-
-	var_1_62[63] = {
+	pg.base.world_boss_level[63] = {
 		hp = 58000,
 		enemy_id = 295063,
 		expedition_id = 296063,
@@ -1898,11 +1613,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_boss_level
-
-	var_1_63[64] = {
+	pg.base.world_boss_level[64] = {
 		hp = 70000,
 		enemy_id = 295064,
 		expedition_id = 296064,
@@ -1922,11 +1633,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_boss_level
-
-	var_1_64[65] = {
+	pg.base.world_boss_level[65] = {
 		hp = 110000,
 		enemy_id = 295065,
 		expedition_id = 296065,
@@ -1946,11 +1653,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_boss_level
-
-	var_1_65[66] = {
+	pg.base.world_boss_level[66] = {
 		hp = 150000,
 		enemy_id = 295066,
 		expedition_id = 296066,
@@ -1970,11 +1673,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_boss_level
-
-	var_1_66[67] = {
+	pg.base.world_boss_level[67] = {
 		hp = 230000,
 		enemy_id = 295067,
 		expedition_id = 296067,
@@ -1994,11 +1693,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_boss_level
-
-	var_1_67[68] = {
+	pg.base.world_boss_level[68] = {
 		hp = 310000,
 		enemy_id = 295068,
 		expedition_id = 296068,
@@ -2018,11 +1713,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_boss_level
-
-	var_1_68[69] = {
+	pg.base.world_boss_level[69] = {
 		hp = 390000,
 		enemy_id = 295069,
 		expedition_id = 296069,
@@ -2042,11 +1733,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_boss_level
-
-	var_1_69[70] = {
+	pg.base.world_boss_level[70] = {
 		hp = 480000,
 		enemy_id = 295070,
 		expedition_id = 296070,
@@ -2066,11 +1753,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_boss_level
-
-	var_1_70[71] = {
+	pg.base.world_boss_level[71] = {
 		hp = 600000,
 		enemy_id = 295071,
 		expedition_id = 296071,
@@ -2090,11 +1773,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_boss_level
-
-	var_1_71[72] = {
+	pg.base.world_boss_level[72] = {
 		hp = 780000,
 		enemy_id = 295072,
 		expedition_id = 296072,
@@ -2114,11 +1793,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_boss_level
-
-	var_1_72[73] = {
+	pg.base.world_boss_level[73] = {
 		hp = 1000000,
 		enemy_id = 295073,
 		expedition_id = 296073,
@@ -2138,11 +1813,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_boss_level
-
-	var_1_73[74] = {
+	pg.base.world_boss_level[74] = {
 		hp = 1240000,
 		enemy_id = 295074,
 		expedition_id = 296074,
@@ -2162,11 +1833,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_boss_level
-
-	var_1_74[75] = {
+	pg.base.world_boss_level[75] = {
 		hp = 1480000,
 		enemy_id = 295075,
 		expedition_id = 296075,
@@ -2186,11 +1853,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_boss_level
-
-	var_1_75[76] = {
+	pg.base.world_boss_level[76] = {
 		hp = 50000,
 		enemy_id = 295076,
 		expedition_id = 296076,
@@ -2210,11 +1873,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_boss_level
-
-	var_1_76[77] = {
+	pg.base.world_boss_level[77] = {
 		hp = 54000,
 		enemy_id = 295077,
 		expedition_id = 296077,
@@ -2234,11 +1893,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_boss_level
-
-	var_1_77[78] = {
+	pg.base.world_boss_level[78] = {
 		hp = 58000,
 		enemy_id = 295078,
 		expedition_id = 296078,
@@ -2258,11 +1913,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_boss_level
-
-	var_1_78[79] = {
+	pg.base.world_boss_level[79] = {
 		hp = 70000,
 		enemy_id = 295079,
 		expedition_id = 296079,
@@ -2282,11 +1933,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_boss_level
-
-	var_1_79[80] = {
+	pg.base.world_boss_level[80] = {
 		hp = 110000,
 		enemy_id = 295080,
 		expedition_id = 296080,
@@ -2306,11 +1953,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.world_boss_level
-
-	var_1_80[81] = {
+	pg.base.world_boss_level[81] = {
 		hp = 150000,
 		enemy_id = 295081,
 		expedition_id = 296081,
@@ -2330,11 +1973,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.world_boss_level
-
-	var_1_81[82] = {
+	pg.base.world_boss_level[82] = {
 		hp = 230000,
 		enemy_id = 295082,
 		expedition_id = 296082,
@@ -2354,11 +1993,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.world_boss_level
-
-	var_1_82[83] = {
+	pg.base.world_boss_level[83] = {
 		hp = 310000,
 		enemy_id = 295083,
 		expedition_id = 296083,
@@ -2378,11 +2013,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.world_boss_level
-
-	var_1_83[84] = {
+	pg.base.world_boss_level[84] = {
 		hp = 390000,
 		enemy_id = 295084,
 		expedition_id = 296084,
@@ -2402,11 +2033,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.world_boss_level
-
-	var_1_84[85] = {
+	pg.base.world_boss_level[85] = {
 		hp = 480000,
 		enemy_id = 295085,
 		expedition_id = 296085,
@@ -2426,11 +2053,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.world_boss_level
-
-	var_1_85[86] = {
+	pg.base.world_boss_level[86] = {
 		hp = 600000,
 		enemy_id = 295086,
 		expedition_id = 296086,
@@ -2450,11 +2073,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.world_boss_level
-
-	var_1_86[87] = {
+	pg.base.world_boss_level[87] = {
 		hp = 780000,
 		enemy_id = 295087,
 		expedition_id = 296087,
@@ -2474,11 +2093,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.world_boss_level
-
-	var_1_87[88] = {
+	pg.base.world_boss_level[88] = {
 		hp = 1000000,
 		enemy_id = 295088,
 		expedition_id = 296088,
@@ -2498,11 +2113,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.world_boss_level
-
-	var_1_88[89] = {
+	pg.base.world_boss_level[89] = {
 		hp = 1240000,
 		enemy_id = 295089,
 		expedition_id = 296089,
@@ -2522,11 +2133,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.world_boss_level
-
-	var_1_89[90] = {
+	pg.base.world_boss_level[90] = {
 		hp = 1480000,
 		enemy_id = 295090,
 		expedition_id = 296090,
@@ -2546,11 +2153,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.world_boss_level
-
-	var_1_90[91] = {
+	pg.base.world_boss_level[91] = {
 		hp = 50000,
 		enemy_id = 295091,
 		expedition_id = 296091,
@@ -2570,11 +2173,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.world_boss_level
-
-	var_1_91[92] = {
+	pg.base.world_boss_level[92] = {
 		hp = 54000,
 		enemy_id = 295092,
 		expedition_id = 296092,
@@ -2594,11 +2193,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.world_boss_level
-
-	var_1_92[93] = {
+	pg.base.world_boss_level[93] = {
 		hp = 58000,
 		enemy_id = 295093,
 		expedition_id = 296093,
@@ -2618,11 +2213,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.world_boss_level
-
-	var_1_93[94] = {
+	pg.base.world_boss_level[94] = {
 		hp = 70000,
 		enemy_id = 295094,
 		expedition_id = 296094,
@@ -2642,11 +2233,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.world_boss_level
-
-	var_1_94[95] = {
+	pg.base.world_boss_level[95] = {
 		hp = 110000,
 		enemy_id = 295095,
 		expedition_id = 296095,
@@ -2666,11 +2253,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.world_boss_level
-
-	var_1_95[96] = {
+	pg.base.world_boss_level[96] = {
 		hp = 150000,
 		enemy_id = 295096,
 		expedition_id = 296096,
@@ -2690,11 +2273,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.world_boss_level
-
-	var_1_96[97] = {
+	pg.base.world_boss_level[97] = {
 		hp = 230000,
 		enemy_id = 295097,
 		expedition_id = 296097,
@@ -2714,11 +2293,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.world_boss_level
-
-	var_1_97[98] = {
+	pg.base.world_boss_level[98] = {
 		hp = 310000,
 		enemy_id = 295098,
 		expedition_id = 296098,
@@ -2738,11 +2313,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.world_boss_level
-
-	var_1_98[99] = {
+	pg.base.world_boss_level[99] = {
 		hp = 390000,
 		enemy_id = 295099,
 		expedition_id = 296099,
@@ -2762,8 +2333,7 @@ var_0_3.base.world_boss_level = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.world_boss_level[100] = {
+	pg.base.world_boss_level[100] = {
 		hp = 480000,
 		enemy_id = 295100,
 		expedition_id = 296100,
@@ -2787,11 +2357,7 @@ var_0_3.base.world_boss_level = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.world_boss_level
-
-	var_2_0[101] = {
+	pg.base.world_boss_level[101] = {
 		hp = 600000,
 		enemy_id = 295101,
 		expedition_id = 296101,
@@ -2811,11 +2377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.world_boss_level
-
-	var_2_1[102] = {
+	pg.base.world_boss_level[102] = {
 		hp = 780000,
 		enemy_id = 295102,
 		expedition_id = 296102,
@@ -2835,11 +2397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.world_boss_level
-
-	var_2_2[103] = {
+	pg.base.world_boss_level[103] = {
 		hp = 1000000,
 		enemy_id = 295103,
 		expedition_id = 296103,
@@ -2859,11 +2417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.world_boss_level
-
-	var_2_3[104] = {
+	pg.base.world_boss_level[104] = {
 		hp = 1240000,
 		enemy_id = 295104,
 		expedition_id = 296104,
@@ -2883,11 +2437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.world_boss_level
-
-	var_2_4[105] = {
+	pg.base.world_boss_level[105] = {
 		hp = 1480000,
 		enemy_id = 295105,
 		expedition_id = 296105,
@@ -2907,11 +2457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.world_boss_level
-
-	var_2_5[106] = {
+	pg.base.world_boss_level[106] = {
 		hp = 50000,
 		enemy_id = 295106,
 		expedition_id = 296106,
@@ -2931,11 +2477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.world_boss_level
-
-	var_2_6[107] = {
+	pg.base.world_boss_level[107] = {
 		hp = 54000,
 		enemy_id = 295107,
 		expedition_id = 296107,
@@ -2955,11 +2497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.world_boss_level
-
-	var_2_7[108] = {
+	pg.base.world_boss_level[108] = {
 		hp = 58000,
 		enemy_id = 295108,
 		expedition_id = 296108,
@@ -2979,11 +2517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.world_boss_level
-
-	var_2_8[109] = {
+	pg.base.world_boss_level[109] = {
 		hp = 70000,
 		enemy_id = 295109,
 		expedition_id = 296109,
@@ -3003,11 +2537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.world_boss_level
-
-	var_2_9[110] = {
+	pg.base.world_boss_level[110] = {
 		hp = 110000,
 		enemy_id = 295110,
 		expedition_id = 296110,
@@ -3027,11 +2557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.world_boss_level
-
-	var_2_10[111] = {
+	pg.base.world_boss_level[111] = {
 		hp = 150000,
 		enemy_id = 295111,
 		expedition_id = 296111,
@@ -3051,11 +2577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.world_boss_level
-
-	var_2_11[112] = {
+	pg.base.world_boss_level[112] = {
 		hp = 230000,
 		enemy_id = 295112,
 		expedition_id = 296112,
@@ -3075,11 +2597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.world_boss_level
-
-	var_2_12[113] = {
+	pg.base.world_boss_level[113] = {
 		hp = 310000,
 		enemy_id = 295113,
 		expedition_id = 296113,
@@ -3099,11 +2617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.world_boss_level
-
-	var_2_13[114] = {
+	pg.base.world_boss_level[114] = {
 		hp = 390000,
 		enemy_id = 295114,
 		expedition_id = 296114,
@@ -3123,11 +2637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.world_boss_level
-
-	var_2_14[115] = {
+	pg.base.world_boss_level[115] = {
 		hp = 480000,
 		enemy_id = 295115,
 		expedition_id = 296115,
@@ -3147,11 +2657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.world_boss_level
-
-	var_2_15[116] = {
+	pg.base.world_boss_level[116] = {
 		hp = 600000,
 		enemy_id = 295116,
 		expedition_id = 296116,
@@ -3171,11 +2677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.world_boss_level
-
-	var_2_16[117] = {
+	pg.base.world_boss_level[117] = {
 		hp = 780000,
 		enemy_id = 295117,
 		expedition_id = 296117,
@@ -3195,11 +2697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.world_boss_level
-
-	var_2_17[118] = {
+	pg.base.world_boss_level[118] = {
 		hp = 1000000,
 		enemy_id = 295118,
 		expedition_id = 296118,
@@ -3219,11 +2717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.world_boss_level
-
-	var_2_18[119] = {
+	pg.base.world_boss_level[119] = {
 		hp = 1240000,
 		enemy_id = 295119,
 		expedition_id = 296119,
@@ -3243,11 +2737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.world_boss_level
-
-	var_2_19[120] = {
+	pg.base.world_boss_level[120] = {
 		hp = 1480000,
 		enemy_id = 295120,
 		expedition_id = 296120,
@@ -3267,11 +2757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.world_boss_level
-
-	var_2_20[121] = {
+	pg.base.world_boss_level[121] = {
 		hp = 54000,
 		enemy_id = 295121,
 		expedition_id = 296121,
@@ -3291,11 +2777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.world_boss_level
-
-	var_2_21[122] = {
+	pg.base.world_boss_level[122] = {
 		hp = 58000,
 		enemy_id = 295122,
 		expedition_id = 296122,
@@ -3315,11 +2797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.world_boss_level
-
-	var_2_22[123] = {
+	pg.base.world_boss_level[123] = {
 		hp = 63000,
 		enemy_id = 295123,
 		expedition_id = 296123,
@@ -3339,11 +2817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.world_boss_level
-
-	var_2_23[124] = {
+	pg.base.world_boss_level[124] = {
 		hp = 76000,
 		enemy_id = 295124,
 		expedition_id = 296124,
@@ -3363,11 +2837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.world_boss_level
-
-	var_2_24[125] = {
+	pg.base.world_boss_level[125] = {
 		hp = 120000,
 		enemy_id = 295125,
 		expedition_id = 296125,
@@ -3387,11 +2857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.world_boss_level
-
-	var_2_25[126] = {
+	pg.base.world_boss_level[126] = {
 		hp = 160000,
 		enemy_id = 295126,
 		expedition_id = 296126,
@@ -3411,11 +2877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.world_boss_level
-
-	var_2_26[127] = {
+	pg.base.world_boss_level[127] = {
 		hp = 250000,
 		enemy_id = 295127,
 		expedition_id = 296127,
@@ -3435,11 +2897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.world_boss_level
-
-	var_2_27[128] = {
+	pg.base.world_boss_level[128] = {
 		hp = 340000,
 		enemy_id = 295128,
 		expedition_id = 296128,
@@ -3459,11 +2917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.world_boss_level
-
-	var_2_28[129] = {
+	pg.base.world_boss_level[129] = {
 		hp = 420000,
 		enemy_id = 295129,
 		expedition_id = 296129,
@@ -3483,11 +2937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.world_boss_level
-
-	var_2_29[130] = {
+	pg.base.world_boss_level[130] = {
 		hp = 520000,
 		enemy_id = 295130,
 		expedition_id = 296130,
@@ -3507,11 +2957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.world_boss_level
-
-	var_2_30[131] = {
+	pg.base.world_boss_level[131] = {
 		hp = 650000,
 		enemy_id = 295131,
 		expedition_id = 296131,
@@ -3531,11 +2977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.world_boss_level
-
-	var_2_31[132] = {
+	pg.base.world_boss_level[132] = {
 		hp = 840000,
 		enemy_id = 295132,
 		expedition_id = 296132,
@@ -3555,11 +2997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.world_boss_level
-
-	var_2_32[133] = {
+	pg.base.world_boss_level[133] = {
 		hp = 1080000,
 		enemy_id = 295133,
 		expedition_id = 296133,
@@ -3579,11 +3017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.world_boss_level
-
-	var_2_33[134] = {
+	pg.base.world_boss_level[134] = {
 		hp = 1340000,
 		enemy_id = 295134,
 		expedition_id = 296134,
@@ -3603,11 +3037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.world_boss_level
-
-	var_2_34[135] = {
+	pg.base.world_boss_level[135] = {
 		hp = 1600000,
 		enemy_id = 295135,
 		expedition_id = 296135,
@@ -3627,11 +3057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.world_boss_level
-
-	var_2_35[136] = {
+	pg.base.world_boss_level[136] = {
 		hp = 54000,
 		enemy_id = 295136,
 		expedition_id = 296136,
@@ -3651,11 +3077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.world_boss_level
-
-	var_2_36[137] = {
+	pg.base.world_boss_level[137] = {
 		hp = 58000,
 		enemy_id = 295137,
 		expedition_id = 296137,
@@ -3675,11 +3097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.world_boss_level
-
-	var_2_37[138] = {
+	pg.base.world_boss_level[138] = {
 		hp = 63000,
 		enemy_id = 295138,
 		expedition_id = 296138,
@@ -3699,11 +3117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.world_boss_level
-
-	var_2_38[139] = {
+	pg.base.world_boss_level[139] = {
 		hp = 76000,
 		enemy_id = 295139,
 		expedition_id = 296139,
@@ -3723,11 +3137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.world_boss_level
-
-	var_2_39[140] = {
+	pg.base.world_boss_level[140] = {
 		hp = 120000,
 		enemy_id = 295140,
 		expedition_id = 296140,
@@ -3747,11 +3157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.world_boss_level
-
-	var_2_40[141] = {
+	pg.base.world_boss_level[141] = {
 		hp = 160000,
 		enemy_id = 295141,
 		expedition_id = 296141,
@@ -3771,11 +3177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.world_boss_level
-
-	var_2_41[142] = {
+	pg.base.world_boss_level[142] = {
 		hp = 250000,
 		enemy_id = 295142,
 		expedition_id = 296142,
@@ -3795,11 +3197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.world_boss_level
-
-	var_2_42[143] = {
+	pg.base.world_boss_level[143] = {
 		hp = 340000,
 		enemy_id = 295143,
 		expedition_id = 296143,
@@ -3819,11 +3217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.world_boss_level
-
-	var_2_43[144] = {
+	pg.base.world_boss_level[144] = {
 		hp = 420000,
 		enemy_id = 295144,
 		expedition_id = 296144,
@@ -3843,11 +3237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.world_boss_level
-
-	var_2_44[145] = {
+	pg.base.world_boss_level[145] = {
 		hp = 520000,
 		enemy_id = 295145,
 		expedition_id = 296145,
@@ -3867,11 +3257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.world_boss_level
-
-	var_2_45[146] = {
+	pg.base.world_boss_level[146] = {
 		hp = 650000,
 		enemy_id = 295146,
 		expedition_id = 296146,
@@ -3891,11 +3277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.world_boss_level
-
-	var_2_46[147] = {
+	pg.base.world_boss_level[147] = {
 		hp = 840000,
 		enemy_id = 295147,
 		expedition_id = 296147,
@@ -3915,11 +3297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.world_boss_level
-
-	var_2_47[148] = {
+	pg.base.world_boss_level[148] = {
 		hp = 1080000,
 		enemy_id = 295148,
 		expedition_id = 296148,
@@ -3939,11 +3317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.world_boss_level
-
-	var_2_48[149] = {
+	pg.base.world_boss_level[149] = {
 		hp = 1340000,
 		enemy_id = 295149,
 		expedition_id = 296149,
@@ -3963,11 +3337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.world_boss_level
-
-	var_2_49[150] = {
+	pg.base.world_boss_level[150] = {
 		hp = 1600000,
 		enemy_id = 295150,
 		expedition_id = 296150,
@@ -3987,11 +3357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.world_boss_level
-
-	var_2_50[151] = {
+	pg.base.world_boss_level[151] = {
 		hp = 50000,
 		enemy_id = 295151,
 		expedition_id = 296151,
@@ -4011,11 +3377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.world_boss_level
-
-	var_2_51[152] = {
+	pg.base.world_boss_level[152] = {
 		hp = 54000,
 		enemy_id = 295152,
 		expedition_id = 296152,
@@ -4035,11 +3397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.world_boss_level
-
-	var_2_52[153] = {
+	pg.base.world_boss_level[153] = {
 		hp = 58000,
 		enemy_id = 295153,
 		expedition_id = 296153,
@@ -4059,11 +3417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.world_boss_level
-
-	var_2_53[154] = {
+	pg.base.world_boss_level[154] = {
 		hp = 70000,
 		enemy_id = 295154,
 		expedition_id = 296154,
@@ -4083,11 +3437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.world_boss_level
-
-	var_2_54[155] = {
+	pg.base.world_boss_level[155] = {
 		hp = 111000,
 		enemy_id = 295155,
 		expedition_id = 296155,
@@ -4107,11 +3457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.world_boss_level
-
-	var_2_55[156] = {
+	pg.base.world_boss_level[156] = {
 		hp = 152000,
 		enemy_id = 295156,
 		expedition_id = 296156,
@@ -4131,11 +3477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.world_boss_level
-
-	var_2_56[157] = {
+	pg.base.world_boss_level[157] = {
 		hp = 233000,
 		enemy_id = 295157,
 		expedition_id = 296157,
@@ -4155,11 +3497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.world_boss_level
-
-	var_2_57[158] = {
+	pg.base.world_boss_level[158] = {
 		hp = 314000,
 		enemy_id = 295158,
 		expedition_id = 296158,
@@ -4179,11 +3517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.world_boss_level
-
-	var_2_58[159] = {
+	pg.base.world_boss_level[159] = {
 		hp = 395000,
 		enemy_id = 295159,
 		expedition_id = 296159,
@@ -4203,11 +3537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.world_boss_level
-
-	var_2_59[160] = {
+	pg.base.world_boss_level[160] = {
 		hp = 486000,
 		enemy_id = 295160,
 		expedition_id = 296160,
@@ -4227,11 +3557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.world_boss_level
-
-	var_2_60[161] = {
+	pg.base.world_boss_level[161] = {
 		hp = 608000,
 		enemy_id = 295161,
 		expedition_id = 296161,
@@ -4251,11 +3577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.world_boss_level
-
-	var_2_61[162] = {
+	pg.base.world_boss_level[162] = {
 		hp = 790000,
 		enemy_id = 295162,
 		expedition_id = 296162,
@@ -4275,11 +3597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.world_boss_level
-
-	var_2_62[163] = {
+	pg.base.world_boss_level[163] = {
 		hp = 1013000,
 		enemy_id = 295163,
 		expedition_id = 296163,
@@ -4299,11 +3617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.world_boss_level
-
-	var_2_63[164] = {
+	pg.base.world_boss_level[164] = {
 		hp = 1256000,
 		enemy_id = 295164,
 		expedition_id = 296164,
@@ -4323,11 +3637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.world_boss_level
-
-	var_2_64[165] = {
+	pg.base.world_boss_level[165] = {
 		hp = 1500000,
 		enemy_id = 295165,
 		expedition_id = 296165,
@@ -4347,11 +3657,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.world_boss_level
-
-	var_2_65[166] = {
+	pg.base.world_boss_level[166] = {
 		hp = 50000,
 		enemy_id = 295166,
 		expedition_id = 296166,
@@ -4371,11 +3677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.world_boss_level
-
-	var_2_66[167] = {
+	pg.base.world_boss_level[167] = {
 		hp = 54000,
 		enemy_id = 295167,
 		expedition_id = 296167,
@@ -4395,11 +3697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.world_boss_level
-
-	var_2_67[168] = {
+	pg.base.world_boss_level[168] = {
 		hp = 58000,
 		enemy_id = 295168,
 		expedition_id = 296168,
@@ -4419,11 +3717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.world_boss_level
-
-	var_2_68[169] = {
+	pg.base.world_boss_level[169] = {
 		hp = 70000,
 		enemy_id = 295169,
 		expedition_id = 296169,
@@ -4443,11 +3737,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.world_boss_level
-
-	var_2_69[170] = {
+	pg.base.world_boss_level[170] = {
 		hp = 110000,
 		enemy_id = 295170,
 		expedition_id = 296170,
@@ -4467,11 +3757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.world_boss_level
-
-	var_2_70[171] = {
+	pg.base.world_boss_level[171] = {
 		hp = 150000,
 		enemy_id = 295171,
 		expedition_id = 296171,
@@ -4491,11 +3777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.world_boss_level
-
-	var_2_71[172] = {
+	pg.base.world_boss_level[172] = {
 		hp = 230000,
 		enemy_id = 295172,
 		expedition_id = 296172,
@@ -4515,11 +3797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.world_boss_level
-
-	var_2_72[173] = {
+	pg.base.world_boss_level[173] = {
 		hp = 310000,
 		enemy_id = 295173,
 		expedition_id = 296173,
@@ -4539,11 +3817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.world_boss_level
-
-	var_2_73[174] = {
+	pg.base.world_boss_level[174] = {
 		hp = 390000,
 		enemy_id = 295174,
 		expedition_id = 296174,
@@ -4563,11 +3837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.world_boss_level
-
-	var_2_74[175] = {
+	pg.base.world_boss_level[175] = {
 		hp = 480000,
 		enemy_id = 295175,
 		expedition_id = 296175,
@@ -4587,11 +3857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.world_boss_level
-
-	var_2_75[176] = {
+	pg.base.world_boss_level[176] = {
 		hp = 600000,
 		enemy_id = 295176,
 		expedition_id = 296176,
@@ -4611,11 +3877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.world_boss_level
-
-	var_2_76[177] = {
+	pg.base.world_boss_level[177] = {
 		hp = 760000,
 		enemy_id = 295177,
 		expedition_id = 296177,
@@ -4635,11 +3897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.world_boss_level
-
-	var_2_77[178] = {
+	pg.base.world_boss_level[178] = {
 		hp = 950000,
 		enemy_id = 295178,
 		expedition_id = 296178,
@@ -4659,11 +3917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.world_boss_level
-
-	var_2_78[179] = {
+	pg.base.world_boss_level[179] = {
 		hp = 1170000,
 		enemy_id = 295179,
 		expedition_id = 296179,
@@ -4683,11 +3937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.world_boss_level
-
-	var_2_79[180] = {
+	pg.base.world_boss_level[180] = {
 		hp = 1420000,
 		enemy_id = 295180,
 		expedition_id = 296180,
@@ -4707,11 +3957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.world_boss_level
-
-	var_2_80[181] = {
+	pg.base.world_boss_level[181] = {
 		hp = 50000,
 		enemy_id = 295181,
 		expedition_id = 296181,
@@ -4731,11 +3977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.world_boss_level
-
-	var_2_81[182] = {
+	pg.base.world_boss_level[182] = {
 		hp = 54000,
 		enemy_id = 295182,
 		expedition_id = 296182,
@@ -4755,11 +3997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.world_boss_level
-
-	var_2_82[183] = {
+	pg.base.world_boss_level[183] = {
 		hp = 58000,
 		enemy_id = 295183,
 		expedition_id = 296183,
@@ -4779,11 +4017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.world_boss_level
-
-	var_2_83[184] = {
+	pg.base.world_boss_level[184] = {
 		hp = 70000,
 		enemy_id = 295184,
 		expedition_id = 296184,
@@ -4803,11 +4037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.world_boss_level
-
-	var_2_84[185] = {
+	pg.base.world_boss_level[185] = {
 		hp = 110000,
 		enemy_id = 295185,
 		expedition_id = 296185,
@@ -4827,11 +4057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.world_boss_level
-
-	var_2_85[186] = {
+	pg.base.world_boss_level[186] = {
 		hp = 150000,
 		enemy_id = 295186,
 		expedition_id = 296186,
@@ -4851,11 +4077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.world_boss_level
-
-	var_2_86[187] = {
+	pg.base.world_boss_level[187] = {
 		hp = 230000,
 		enemy_id = 295187,
 		expedition_id = 296187,
@@ -4875,11 +4097,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.world_boss_level
-
-	var_2_87[188] = {
+	pg.base.world_boss_level[188] = {
 		hp = 310000,
 		enemy_id = 295188,
 		expedition_id = 296188,
@@ -4899,11 +4117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.world_boss_level
-
-	var_2_88[189] = {
+	pg.base.world_boss_level[189] = {
 		hp = 390000,
 		enemy_id = 295189,
 		expedition_id = 296189,
@@ -4923,11 +4137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.world_boss_level
-
-	var_2_89[190] = {
+	pg.base.world_boss_level[190] = {
 		hp = 480000,
 		enemy_id = 295190,
 		expedition_id = 296190,
@@ -4947,11 +4157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.world_boss_level
-
-	var_2_90[191] = {
+	pg.base.world_boss_level[191] = {
 		hp = 600000,
 		enemy_id = 295191,
 		expedition_id = 296191,
@@ -4971,11 +4177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.world_boss_level
-
-	var_2_91[192] = {
+	pg.base.world_boss_level[192] = {
 		hp = 760000,
 		enemy_id = 295192,
 		expedition_id = 296192,
@@ -4995,11 +4197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.world_boss_level
-
-	var_2_92[193] = {
+	pg.base.world_boss_level[193] = {
 		hp = 950000,
 		enemy_id = 295193,
 		expedition_id = 296193,
@@ -5019,11 +4217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.world_boss_level
-
-	var_2_93[194] = {
+	pg.base.world_boss_level[194] = {
 		hp = 1170000,
 		enemy_id = 295194,
 		expedition_id = 296194,
@@ -5043,11 +4237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.world_boss_level
-
-	var_2_94[195] = {
+	pg.base.world_boss_level[195] = {
 		hp = 1420000,
 		enemy_id = 295195,
 		expedition_id = 296195,
@@ -5067,11 +4257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.world_boss_level
-
-	var_2_95[196] = {
+	pg.base.world_boss_level[196] = {
 		hp = 383000,
 		enemy_id = 295196,
 		expedition_id = 296196,
@@ -5091,11 +4277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.world_boss_level
-
-	var_2_96[197] = {
+	pg.base.world_boss_level[197] = {
 		hp = 435000,
 		enemy_id = 295197,
 		expedition_id = 296197,
@@ -5115,11 +4297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.world_boss_level
-
-	var_2_97[198] = {
+	pg.base.world_boss_level[198] = {
 		hp = 491000,
 		enemy_id = 295198,
 		expedition_id = 296198,
@@ -5139,11 +4317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.world_boss_level
-
-	var_2_98[199] = {
+	pg.base.world_boss_level[199] = {
 		hp = 547000,
 		enemy_id = 295199,
 		expedition_id = 296199,
@@ -5163,8 +4337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.world_boss_level[200] = {
+	pg.base.world_boss_level[200] = {
 		hp = 599000,
 		enemy_id = 295200,
 		expedition_id = 296200,
@@ -5188,11 +4361,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.world_boss_level
-
-	var_3_0[201] = {
+	pg.base.world_boss_level[201] = {
 		hp = 655000,
 		enemy_id = 295201,
 		expedition_id = 296201,
@@ -5212,11 +4381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.world_boss_level
-
-	var_3_1[202] = {
+	pg.base.world_boss_level[202] = {
 		hp = 711000,
 		enemy_id = 295202,
 		expedition_id = 296202,
@@ -5236,11 +4401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.world_boss_level
-
-	var_3_2[203] = {
+	pg.base.world_boss_level[203] = {
 		hp = 766000,
 		enemy_id = 295203,
 		expedition_id = 296203,
@@ -5260,11 +4421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.world_boss_level
-
-	var_3_3[204] = {
+	pg.base.world_boss_level[204] = {
 		hp = 819000,
 		enemy_id = 295204,
 		expedition_id = 296204,
@@ -5284,11 +4441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.world_boss_level
-
-	var_3_4[205] = {
+	pg.base.world_boss_level[205] = {
 		hp = 874000,
 		enemy_id = 295205,
 		expedition_id = 296205,
@@ -5308,11 +4461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.world_boss_level
-
-	var_3_5[206] = {
+	pg.base.world_boss_level[206] = {
 		hp = 930000,
 		enemy_id = 295206,
 		expedition_id = 296206,
@@ -5332,11 +4481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.world_boss_level
-
-	var_3_6[207] = {
+	pg.base.world_boss_level[207] = {
 		hp = 983000,
 		enemy_id = 295207,
 		expedition_id = 296207,
@@ -5356,11 +4501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.world_boss_level
-
-	var_3_7[208] = {
+	pg.base.world_boss_level[208] = {
 		hp = 1038000,
 		enemy_id = 295208,
 		expedition_id = 296208,
@@ -5380,11 +4521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.world_boss_level
-
-	var_3_8[209] = {
+	pg.base.world_boss_level[209] = {
 		hp = 1094000,
 		enemy_id = 295209,
 		expedition_id = 296209,
@@ -5404,11 +4541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.world_boss_level
-
-	var_3_9[210] = {
+	pg.base.world_boss_level[210] = {
 		hp = 1150000,
 		enemy_id = 295210,
 		expedition_id = 296210,
@@ -5428,11 +4561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.world_boss_level
-
-	var_3_10[211] = {
+	pg.base.world_boss_level[211] = {
 		hp = 45000,
 		enemy_id = 295211,
 		expedition_id = 296211,
@@ -5452,11 +4581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.world_boss_level
-
-	var_3_11[212] = {
+	pg.base.world_boss_level[212] = {
 		hp = 49000,
 		enemy_id = 295212,
 		expedition_id = 296212,
@@ -5476,11 +4601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.world_boss_level
-
-	var_3_12[213] = {
+	pg.base.world_boss_level[213] = {
 		hp = 52000,
 		enemy_id = 295213,
 		expedition_id = 296213,
@@ -5500,11 +4621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.world_boss_level
-
-	var_3_13[214] = {
+	pg.base.world_boss_level[214] = {
 		hp = 63000,
 		enemy_id = 295214,
 		expedition_id = 296214,
@@ -5524,11 +4641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.world_boss_level
-
-	var_3_14[215] = {
+	pg.base.world_boss_level[215] = {
 		hp = 100000,
 		enemy_id = 295215,
 		expedition_id = 296215,
@@ -5548,11 +4661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.world_boss_level
-
-	var_3_15[216] = {
+	pg.base.world_boss_level[216] = {
 		hp = 136000,
 		enemy_id = 295216,
 		expedition_id = 296216,
@@ -5572,11 +4681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.world_boss_level
-
-	var_3_16[217] = {
+	pg.base.world_boss_level[217] = {
 		hp = 209000,
 		enemy_id = 295217,
 		expedition_id = 296217,
@@ -5596,11 +4701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.world_boss_level
-
-	var_3_17[218] = {
+	pg.base.world_boss_level[218] = {
 		hp = 282000,
 		enemy_id = 295218,
 		expedition_id = 296218,
@@ -5620,11 +4721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.world_boss_level
-
-	var_3_18[219] = {
+	pg.base.world_boss_level[219] = {
 		hp = 355000,
 		enemy_id = 295219,
 		expedition_id = 296219,
@@ -5644,11 +4741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.world_boss_level
-
-	var_3_19[220] = {
+	pg.base.world_boss_level[220] = {
 		hp = 437000,
 		enemy_id = 295220,
 		expedition_id = 296220,
@@ -5668,11 +4761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.world_boss_level
-
-	var_3_20[221] = {
+	pg.base.world_boss_level[221] = {
 		hp = 547000,
 		enemy_id = 295221,
 		expedition_id = 296221,
@@ -5692,11 +4781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.world_boss_level
-
-	var_3_21[222] = {
+	pg.base.world_boss_level[222] = {
 		hp = 711000,
 		enemy_id = 295222,
 		expedition_id = 296222,
@@ -5716,11 +4801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.world_boss_level
-
-	var_3_22[223] = {
+	pg.base.world_boss_level[223] = {
 		hp = 912000,
 		enemy_id = 295223,
 		expedition_id = 296223,
@@ -5740,11 +4821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.world_boss_level
-
-	var_3_23[224] = {
+	pg.base.world_boss_level[224] = {
 		hp = 1131000,
 		enemy_id = 295224,
 		expedition_id = 296224,
@@ -5764,11 +4841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.world_boss_level
-
-	var_3_24[225] = {
+	pg.base.world_boss_level[225] = {
 		hp = 1350000,
 		enemy_id = 295225,
 		expedition_id = 296225,
@@ -5788,11 +4861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.world_boss_level
-
-	var_3_25[226] = {
+	pg.base.world_boss_level[226] = {
 		hp = 50000,
 		enemy_id = 295226,
 		expedition_id = 296226,
@@ -5812,11 +4881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.world_boss_level
-
-	var_3_26[227] = {
+	pg.base.world_boss_level[227] = {
 		hp = 54000,
 		enemy_id = 295227,
 		expedition_id = 296227,
@@ -5836,11 +4901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.world_boss_level
-
-	var_3_27[228] = {
+	pg.base.world_boss_level[228] = {
 		hp = 58000,
 		enemy_id = 295228,
 		expedition_id = 296228,
@@ -5860,11 +4921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.world_boss_level
-
-	var_3_28[229] = {
+	pg.base.world_boss_level[229] = {
 		hp = 70000,
 		enemy_id = 295229,
 		expedition_id = 296229,
@@ -5884,11 +4941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.world_boss_level
-
-	var_3_29[230] = {
+	pg.base.world_boss_level[230] = {
 		hp = 110000,
 		enemy_id = 295230,
 		expedition_id = 296230,
@@ -5908,11 +4961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.world_boss_level
-
-	var_3_30[231] = {
+	pg.base.world_boss_level[231] = {
 		hp = 150000,
 		enemy_id = 295231,
 		expedition_id = 296231,
@@ -5932,11 +4981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.world_boss_level
-
-	var_3_31[232] = {
+	pg.base.world_boss_level[232] = {
 		hp = 230000,
 		enemy_id = 295232,
 		expedition_id = 296232,
@@ -5956,11 +5001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.world_boss_level
-
-	var_3_32[233] = {
+	pg.base.world_boss_level[233] = {
 		hp = 310000,
 		enemy_id = 295233,
 		expedition_id = 296233,
@@ -5980,11 +5021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.world_boss_level
-
-	var_3_33[234] = {
+	pg.base.world_boss_level[234] = {
 		hp = 390000,
 		enemy_id = 295234,
 		expedition_id = 296234,
@@ -6004,11 +5041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.world_boss_level
-
-	var_3_34[235] = {
+	pg.base.world_boss_level[235] = {
 		hp = 480000,
 		enemy_id = 295235,
 		expedition_id = 296235,
@@ -6028,11 +5061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.world_boss_level
-
-	var_3_35[236] = {
+	pg.base.world_boss_level[236] = {
 		hp = 600000,
 		enemy_id = 295236,
 		expedition_id = 296236,
@@ -6052,11 +5081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.world_boss_level
-
-	var_3_36[237] = {
+	pg.base.world_boss_level[237] = {
 		hp = 760000,
 		enemy_id = 295237,
 		expedition_id = 296237,
@@ -6076,11 +5101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.world_boss_level
-
-	var_3_37[238] = {
+	pg.base.world_boss_level[238] = {
 		hp = 950000,
 		enemy_id = 295238,
 		expedition_id = 296238,
@@ -6100,11 +5121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.world_boss_level
-
-	var_3_38[239] = {
+	pg.base.world_boss_level[239] = {
 		hp = 1170000,
 		enemy_id = 295239,
 		expedition_id = 296239,
@@ -6124,11 +5141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.world_boss_level
-
-	var_3_39[240] = {
+	pg.base.world_boss_level[240] = {
 		hp = 1420000,
 		enemy_id = 295240,
 		expedition_id = 296240,
@@ -6148,11 +5161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.world_boss_level
-
-	var_3_40[241] = {
+	pg.base.world_boss_level[241] = {
 		hp = 54000,
 		enemy_id = 295241,
 		expedition_id = 296241,
@@ -6172,11 +5181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.world_boss_level
-
-	var_3_41[242] = {
+	pg.base.world_boss_level[242] = {
 		hp = 58000,
 		enemy_id = 295242,
 		expedition_id = 296242,
@@ -6196,11 +5201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.world_boss_level
-
-	var_3_42[243] = {
+	pg.base.world_boss_level[243] = {
 		hp = 62000,
 		enemy_id = 295243,
 		expedition_id = 296243,
@@ -6220,11 +5221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.world_boss_level
-
-	var_3_43[244] = {
+	pg.base.world_boss_level[244] = {
 		hp = 75000,
 		enemy_id = 295244,
 		expedition_id = 296244,
@@ -6244,11 +5241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.world_boss_level
-
-	var_3_44[245] = {
+	pg.base.world_boss_level[245] = {
 		hp = 118000,
 		enemy_id = 295245,
 		expedition_id = 296245,
@@ -6268,11 +5261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.world_boss_level
-
-	var_3_45[246] = {
+	pg.base.world_boss_level[246] = {
 		hp = 162000,
 		enemy_id = 295246,
 		expedition_id = 296246,
@@ -6292,11 +5281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.world_boss_level
-
-	var_3_46[247] = {
+	pg.base.world_boss_level[247] = {
 		hp = 248000,
 		enemy_id = 295247,
 		expedition_id = 296247,
@@ -6316,11 +5301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.world_boss_level
-
-	var_3_47[248] = {
+	pg.base.world_boss_level[248] = {
 		hp = 335000,
 		enemy_id = 295248,
 		expedition_id = 296248,
@@ -6340,11 +5321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.world_boss_level
-
-	var_3_48[249] = {
+	pg.base.world_boss_level[249] = {
 		hp = 421000,
 		enemy_id = 295249,
 		expedition_id = 296249,
@@ -6364,11 +5341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.world_boss_level
-
-	var_3_49[250] = {
+	pg.base.world_boss_level[250] = {
 		hp = 518000,
 		enemy_id = 295250,
 		expedition_id = 296250,
@@ -6388,11 +5361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.world_boss_level
-
-	var_3_50[251] = {
+	pg.base.world_boss_level[251] = {
 		hp = 648000,
 		enemy_id = 295251,
 		expedition_id = 296251,
@@ -6412,11 +5381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.world_boss_level
-
-	var_3_51[252] = {
+	pg.base.world_boss_level[252] = {
 		hp = 843000,
 		enemy_id = 295252,
 		expedition_id = 296252,
@@ -6436,11 +5401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.world_boss_level
-
-	var_3_52[253] = {
+	pg.base.world_boss_level[253] = {
 		hp = 1081000,
 		enemy_id = 295253,
 		expedition_id = 296253,
@@ -6460,11 +5421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.world_boss_level
-
-	var_3_53[254] = {
+	pg.base.world_boss_level[254] = {
 		hp = 1340000,
 		enemy_id = 295254,
 		expedition_id = 296254,
@@ -6484,11 +5441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.world_boss_level
-
-	var_3_54[255] = {
+	pg.base.world_boss_level[255] = {
 		hp = 1600000,
 		enemy_id = 295255,
 		expedition_id = 296255,
@@ -6508,11 +5461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.world_boss_level
-
-	var_3_55[256] = {
+	pg.base.world_boss_level[256] = {
 		hp = 43000,
 		enemy_id = 295256,
 		expedition_id = 296256,
@@ -6532,11 +5481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.world_boss_level
-
-	var_3_56[257] = {
+	pg.base.world_boss_level[257] = {
 		hp = 46000,
 		enemy_id = 295257,
 		expedition_id = 296257,
@@ -6556,11 +5501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.world_boss_level
-
-	var_3_57[258] = {
+	pg.base.world_boss_level[258] = {
 		hp = 50000,
 		enemy_id = 295258,
 		expedition_id = 296258,
@@ -6580,11 +5521,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.world_boss_level
-
-	var_3_58[259] = {
+	pg.base.world_boss_level[259] = {
 		hp = 60000,
 		enemy_id = 295259,
 		expedition_id = 296259,
@@ -6604,11 +5541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.world_boss_level
-
-	var_3_59[260] = {
+	pg.base.world_boss_level[260] = {
 		hp = 95000,
 		enemy_id = 295260,
 		expedition_id = 296260,
@@ -6628,11 +5561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.world_boss_level
-
-	var_3_60[261] = {
+	pg.base.world_boss_level[261] = {
 		hp = 129000,
 		enemy_id = 295261,
 		expedition_id = 296261,
@@ -6652,11 +5581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.world_boss_level
-
-	var_3_61[262] = {
+	pg.base.world_boss_level[262] = {
 		hp = 198000,
 		enemy_id = 295262,
 		expedition_id = 296262,
@@ -6676,11 +5601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.world_boss_level
-
-	var_3_62[263] = {
+	pg.base.world_boss_level[263] = {
 		hp = 268000,
 		enemy_id = 295263,
 		expedition_id = 296263,
@@ -6700,11 +5621,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.world_boss_level
-
-	var_3_63[264] = {
+	pg.base.world_boss_level[264] = {
 		hp = 337000,
 		enemy_id = 295264,
 		expedition_id = 296264,
@@ -6724,11 +5641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.world_boss_level
-
-	var_3_64[265] = {
+	pg.base.world_boss_level[265] = {
 		hp = 415000,
 		enemy_id = 295265,
 		expedition_id = 296265,
@@ -6748,11 +5661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.world_boss_level
-
-	var_3_65[266] = {
+	pg.base.world_boss_level[266] = {
 		hp = 518000,
 		enemy_id = 295266,
 		expedition_id = 296266,
@@ -6772,11 +5681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.world_boss_level
-
-	var_3_66[267] = {
+	pg.base.world_boss_level[267] = {
 		hp = 674000,
 		enemy_id = 295267,
 		expedition_id = 296267,
@@ -6796,11 +5701,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.world_boss_level
-
-	var_3_67[268] = {
+	pg.base.world_boss_level[268] = {
 		hp = 864000,
 		enemy_id = 295268,
 		expedition_id = 296268,
@@ -6820,11 +5721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.world_boss_level
-
-	var_3_68[269] = {
+	pg.base.world_boss_level[269] = {
 		hp = 1072000,
 		enemy_id = 295269,
 		expedition_id = 296269,
@@ -6844,11 +5741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.world_boss_level
-
-	var_3_69[270] = {
+	pg.base.world_boss_level[270] = {
 		hp = 1280000,
 		enemy_id = 295270,
 		expedition_id = 296270,
@@ -6868,11 +5761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.world_boss_level
-
-	var_3_70[271] = {
+	pg.base.world_boss_level[271] = {
 		hp = 54000,
 		enemy_id = 295271,
 		expedition_id = 296271,
@@ -6892,11 +5781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.world_boss_level
-
-	var_3_71[272] = {
+	pg.base.world_boss_level[272] = {
 		hp = 58000,
 		enemy_id = 295272,
 		expedition_id = 296272,
@@ -6916,11 +5801,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.world_boss_level
-
-	var_3_72[273] = {
+	pg.base.world_boss_level[273] = {
 		hp = 62000,
 		enemy_id = 295273,
 		expedition_id = 296273,
@@ -6940,11 +5821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.world_boss_level
-
-	var_3_73[274] = {
+	pg.base.world_boss_level[274] = {
 		hp = 75000,
 		enemy_id = 295274,
 		expedition_id = 296274,
@@ -6964,11 +5841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.world_boss_level
-
-	var_3_74[275] = {
+	pg.base.world_boss_level[275] = {
 		hp = 118000,
 		enemy_id = 295275,
 		expedition_id = 296275,
@@ -6988,11 +5861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.world_boss_level
-
-	var_3_75[276] = {
+	pg.base.world_boss_level[276] = {
 		hp = 162000,
 		enemy_id = 295276,
 		expedition_id = 296276,
@@ -7012,11 +5881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.world_boss_level
-
-	var_3_76[277] = {
+	pg.base.world_boss_level[277] = {
 		hp = 248000,
 		enemy_id = 295277,
 		expedition_id = 296277,
@@ -7036,11 +5901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.world_boss_level
-
-	var_3_77[278] = {
+	pg.base.world_boss_level[278] = {
 		hp = 335000,
 		enemy_id = 295278,
 		expedition_id = 296278,
@@ -7060,11 +5921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.world_boss_level
-
-	var_3_78[279] = {
+	pg.base.world_boss_level[279] = {
 		hp = 421000,
 		enemy_id = 295279,
 		expedition_id = 296279,
@@ -7084,11 +5941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.world_boss_level
-
-	var_3_79[280] = {
+	pg.base.world_boss_level[280] = {
 		hp = 518000,
 		enemy_id = 295280,
 		expedition_id = 296280,
@@ -7108,11 +5961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.world_boss_level
-
-	var_3_80[281] = {
+	pg.base.world_boss_level[281] = {
 		hp = 648000,
 		enemy_id = 295281,
 		expedition_id = 296281,
@@ -7132,11 +5981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.world_boss_level
-
-	var_3_81[282] = {
+	pg.base.world_boss_level[282] = {
 		hp = 843000,
 		enemy_id = 295282,
 		expedition_id = 296282,
@@ -7156,11 +6001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.world_boss_level
-
-	var_3_82[283] = {
+	pg.base.world_boss_level[283] = {
 		hp = 1081000,
 		enemy_id = 295283,
 		expedition_id = 296283,
@@ -7180,11 +6021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.world_boss_level
-
-	var_3_83[284] = {
+	pg.base.world_boss_level[284] = {
 		hp = 1340000,
 		enemy_id = 295284,
 		expedition_id = 296284,
@@ -7204,11 +6041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.world_boss_level
-
-	var_3_84[285] = {
+	pg.base.world_boss_level[285] = {
 		hp = 1600000,
 		enemy_id = 295285,
 		expedition_id = 296285,
@@ -7228,11 +6061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.world_boss_level
-
-	var_3_85[286] = {
+	pg.base.world_boss_level[286] = {
 		hp = 52000,
 		enemy_id = 295286,
 		expedition_id = 296286,
@@ -7252,11 +6081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.world_boss_level
-
-	var_3_86[287] = {
+	pg.base.world_boss_level[287] = {
 		hp = 56000,
 		enemy_id = 295287,
 		expedition_id = 296287,
@@ -7276,11 +6101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.world_boss_level
-
-	var_3_87[288] = {
+	pg.base.world_boss_level[288] = {
 		hp = 60000,
 		enemy_id = 295288,
 		expedition_id = 296288,
@@ -7300,11 +6121,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.world_boss_level
-
-	var_3_88[289] = {
+	pg.base.world_boss_level[289] = {
 		hp = 72000,
 		enemy_id = 295289,
 		expedition_id = 296289,
@@ -7324,11 +6141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.world_boss_level
-
-	var_3_89[290] = {
+	pg.base.world_boss_level[290] = {
 		hp = 114000,
 		enemy_id = 295290,
 		expedition_id = 296290,
@@ -7348,11 +6161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.world_boss_level
-
-	var_3_90[291] = {
+	pg.base.world_boss_level[291] = {
 		hp = 156000,
 		enemy_id = 295291,
 		expedition_id = 296291,
@@ -7372,11 +6181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.world_boss_level
-
-	var_3_91[292] = {
+	pg.base.world_boss_level[292] = {
 		hp = 239000,
 		enemy_id = 295292,
 		expedition_id = 296292,
@@ -7396,11 +6201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.world_boss_level
-
-	var_3_92[293] = {
+	pg.base.world_boss_level[293] = {
 		hp = 322000,
 		enemy_id = 295293,
 		expedition_id = 296293,
@@ -7420,11 +6221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.world_boss_level
-
-	var_3_93[294] = {
+	pg.base.world_boss_level[294] = {
 		hp = 405000,
 		enemy_id = 295294,
 		expedition_id = 296294,
@@ -7444,11 +6241,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.world_boss_level
-
-	var_3_94[295] = {
+	pg.base.world_boss_level[295] = {
 		hp = 499000,
 		enemy_id = 295295,
 		expedition_id = 296295,
@@ -7468,11 +6261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.world_boss_level
-
-	var_3_95[296] = {
+	pg.base.world_boss_level[296] = {
 		hp = 624000,
 		enemy_id = 295296,
 		expedition_id = 296296,
@@ -7492,11 +6281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.world_boss_level
-
-	var_3_96[297] = {
+	pg.base.world_boss_level[297] = {
 		hp = 811000,
 		enemy_id = 295297,
 		expedition_id = 296297,
@@ -7516,11 +6301,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.world_boss_level
-
-	var_3_97[298] = {
+	pg.base.world_boss_level[298] = {
 		hp = 1040000,
 		enemy_id = 295298,
 		expedition_id = 296298,
@@ -7540,11 +6321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.world_boss_level
-
-	var_3_98[299] = {
+	pg.base.world_boss_level[299] = {
 		hp = 1290000,
 		enemy_id = 295299,
 		expedition_id = 296299,
@@ -7564,8 +6341,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.world_boss_level[300] = {
+	pg.base.world_boss_level[300] = {
 		hp = 1540000,
 		enemy_id = 295300,
 		expedition_id = 296300,
@@ -7589,11 +6365,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.world_boss_level
-
-	var_4_0[301] = {
+	pg.base.world_boss_level[301] = {
 		hp = 50000,
 		enemy_id = 295301,
 		expedition_id = 296301,
@@ -7613,11 +6385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.world_boss_level
-
-	var_4_1[302] = {
+	pg.base.world_boss_level[302] = {
 		hp = 54000,
 		enemy_id = 295302,
 		expedition_id = 296302,
@@ -7637,11 +6405,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.world_boss_level
-
-	var_4_2[303] = {
+	pg.base.world_boss_level[303] = {
 		hp = 58000,
 		enemy_id = 295303,
 		expedition_id = 296303,
@@ -7661,11 +6425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.world_boss_level
-
-	var_4_3[304] = {
+	pg.base.world_boss_level[304] = {
 		hp = 70000,
 		enemy_id = 295304,
 		expedition_id = 296304,
@@ -7685,11 +6445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.world_boss_level
-
-	var_4_4[305] = {
+	pg.base.world_boss_level[305] = {
 		hp = 111000,
 		enemy_id = 295305,
 		expedition_id = 296305,
@@ -7709,11 +6465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.world_boss_level
-
-	var_4_5[306] = {
+	pg.base.world_boss_level[306] = {
 		hp = 152000,
 		enemy_id = 295306,
 		expedition_id = 296306,
@@ -7733,11 +6485,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.world_boss_level
-
-	var_4_6[307] = {
+	pg.base.world_boss_level[307] = {
 		hp = 233000,
 		enemy_id = 295307,
 		expedition_id = 296307,
@@ -7757,11 +6505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.world_boss_level
-
-	var_4_7[308] = {
+	pg.base.world_boss_level[308] = {
 		hp = 314000,
 		enemy_id = 295308,
 		expedition_id = 296308,
@@ -7781,11 +6525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.world_boss_level
-
-	var_4_8[309] = {
+	pg.base.world_boss_level[309] = {
 		hp = 395000,
 		enemy_id = 295309,
 		expedition_id = 296309,
@@ -7805,11 +6545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.world_boss_level
-
-	var_4_9[310] = {
+	pg.base.world_boss_level[310] = {
 		hp = 486000,
 		enemy_id = 295310,
 		expedition_id = 296310,
@@ -7829,11 +6565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.world_boss_level
-
-	var_4_10[311] = {
+	pg.base.world_boss_level[311] = {
 		hp = 608000,
 		enemy_id = 295311,
 		expedition_id = 296311,
@@ -7853,11 +6585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.world_boss_level
-
-	var_4_11[312] = {
+	pg.base.world_boss_level[312] = {
 		hp = 790000,
 		enemy_id = 295312,
 		expedition_id = 296312,
@@ -7877,11 +6605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.world_boss_level
-
-	var_4_12[313] = {
+	pg.base.world_boss_level[313] = {
 		hp = 1013000,
 		enemy_id = 295313,
 		expedition_id = 296313,
@@ -7901,11 +6625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.world_boss_level
-
-	var_4_13[314] = {
+	pg.base.world_boss_level[314] = {
 		hp = 1256000,
 		enemy_id = 295314,
 		expedition_id = 296314,
@@ -7925,11 +6645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.world_boss_level
-
-	var_4_14[315] = {
+	pg.base.world_boss_level[315] = {
 		hp = 1500000,
 		enemy_id = 295315,
 		expedition_id = 296315,
@@ -7949,11 +6665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.world_boss_level
-
-	var_4_15[316] = {
+	pg.base.world_boss_level[316] = {
 		hp = 60000,
 		enemy_id = 295316,
 		expedition_id = 296316,
@@ -7973,11 +6685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.world_boss_level
-
-	var_4_16[317] = {
+	pg.base.world_boss_level[317] = {
 		hp = 64000,
 		enemy_id = 295317,
 		expedition_id = 296317,
@@ -7997,11 +6705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.world_boss_level
-
-	var_4_17[318] = {
+	pg.base.world_boss_level[318] = {
 		hp = 69000,
 		enemy_id = 295318,
 		expedition_id = 296318,
@@ -8021,11 +6725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.world_boss_level
-
-	var_4_18[319] = {
+	pg.base.world_boss_level[319] = {
 		hp = 84000,
 		enemy_id = 295319,
 		expedition_id = 296319,
@@ -8045,11 +6745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.world_boss_level
-
-	var_4_19[320] = {
+	pg.base.world_boss_level[320] = {
 		hp = 132000,
 		enemy_id = 295320,
 		expedition_id = 296320,
@@ -8069,11 +6765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.world_boss_level
-
-	var_4_20[321] = {
+	pg.base.world_boss_level[321] = {
 		hp = 180000,
 		enemy_id = 295321,
 		expedition_id = 296321,
@@ -8093,11 +6785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.world_boss_level
-
-	var_4_21[322] = {
+	pg.base.world_boss_level[322] = {
 		hp = 276000,
 		enemy_id = 295322,
 		expedition_id = 296322,
@@ -8117,11 +6805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.world_boss_level
-
-	var_4_22[323] = {
+	pg.base.world_boss_level[323] = {
 		hp = 372000,
 		enemy_id = 295323,
 		expedition_id = 296323,
@@ -8141,11 +6825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.world_boss_level
-
-	var_4_23[324] = {
+	pg.base.world_boss_level[324] = {
 		hp = 469000,
 		enemy_id = 295324,
 		expedition_id = 296324,
@@ -8165,11 +6845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.world_boss_level
-
-	var_4_24[325] = {
+	pg.base.world_boss_level[325] = {
 		hp = 577000,
 		enemy_id = 295325,
 		expedition_id = 296325,
@@ -8189,11 +6865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.world_boss_level
-
-	var_4_25[326] = {
+	pg.base.world_boss_level[326] = {
 		hp = 721000,
 		enemy_id = 295326,
 		expedition_id = 296326,
@@ -8213,11 +6885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.world_boss_level
-
-	var_4_26[327] = {
+	pg.base.world_boss_level[327] = {
 		hp = 938000,
 		enemy_id = 295327,
 		expedition_id = 296327,
@@ -8237,11 +6905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.world_boss_level
-
-	var_4_27[328] = {
+	pg.base.world_boss_level[328] = {
 		hp = 1202000,
 		enemy_id = 295328,
 		expedition_id = 296328,
@@ -8261,11 +6925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.world_boss_level
-
-	var_4_28[329] = {
+	pg.base.world_boss_level[329] = {
 		hp = 1491000,
 		enemy_id = 295329,
 		expedition_id = 296329,
@@ -8285,11 +6945,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.world_boss_level
-
-	var_4_29[330] = {
+	pg.base.world_boss_level[330] = {
 		hp = 1780000,
 		enemy_id = 295330,
 		expedition_id = 296330,
@@ -8309,11 +6965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.world_boss_level
-
-	var_4_30[331] = {
+	pg.base.world_boss_level[331] = {
 		hp = 54000,
 		enemy_id = 295331,
 		expedition_id = 296331,
@@ -8333,11 +6985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.world_boss_level
-
-	var_4_31[332] = {
+	pg.base.world_boss_level[332] = {
 		hp = 58000,
 		enemy_id = 295332,
 		expedition_id = 296332,
@@ -8357,11 +7005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.world_boss_level
-
-	var_4_32[333] = {
+	pg.base.world_boss_level[333] = {
 		hp = 62000,
 		enemy_id = 295333,
 		expedition_id = 296333,
@@ -8381,11 +7025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.world_boss_level
-
-	var_4_33[334] = {
+	pg.base.world_boss_level[334] = {
 		hp = 75000,
 		enemy_id = 295334,
 		expedition_id = 296334,
@@ -8405,11 +7045,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.world_boss_level
-
-	var_4_34[335] = {
+	pg.base.world_boss_level[335] = {
 		hp = 118000,
 		enemy_id = 295335,
 		expedition_id = 296335,
@@ -8429,11 +7065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.world_boss_level
-
-	var_4_35[336] = {
+	pg.base.world_boss_level[336] = {
 		hp = 162000,
 		enemy_id = 295336,
 		expedition_id = 296336,
@@ -8453,11 +7085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.world_boss_level
-
-	var_4_36[337] = {
+	pg.base.world_boss_level[337] = {
 		hp = 248000,
 		enemy_id = 295337,
 		expedition_id = 296337,
@@ -8477,11 +7105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.world_boss_level
-
-	var_4_37[338] = {
+	pg.base.world_boss_level[338] = {
 		hp = 335000,
 		enemy_id = 295338,
 		expedition_id = 296338,
@@ -8501,11 +7125,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.world_boss_level
-
-	var_4_38[339] = {
+	pg.base.world_boss_level[339] = {
 		hp = 421000,
 		enemy_id = 295339,
 		expedition_id = 296339,
@@ -8525,11 +7145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.world_boss_level
-
-	var_4_39[340] = {
+	pg.base.world_boss_level[340] = {
 		hp = 518000,
 		enemy_id = 295340,
 		expedition_id = 296340,
@@ -8549,11 +7165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.world_boss_level
-
-	var_4_40[341] = {
+	pg.base.world_boss_level[341] = {
 		hp = 648000,
 		enemy_id = 295341,
 		expedition_id = 296341,
@@ -8573,11 +7185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.world_boss_level
-
-	var_4_41[342] = {
+	pg.base.world_boss_level[342] = {
 		hp = 843000,
 		enemy_id = 295342,
 		expedition_id = 296342,
@@ -8597,11 +7205,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.world_boss_level
-
-	var_4_42[343] = {
+	pg.base.world_boss_level[343] = {
 		hp = 1081000,
 		enemy_id = 295343,
 		expedition_id = 296343,
@@ -8621,11 +7225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.world_boss_level
-
-	var_4_43[344] = {
+	pg.base.world_boss_level[344] = {
 		hp = 1340000,
 		enemy_id = 295344,
 		expedition_id = 296344,
@@ -8645,8 +7245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-	var_4_43.base.world_boss_level[345] = {
+	pg.base.world_boss_level[345] = {
 		hp = 1600000,
 		enemy_id = 295345,
 		expedition_id = 296345,

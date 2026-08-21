@@ -38,8 +38,7 @@ function setData(self, param)
     self.mGroupTime:SetActive(false)
     self.mTxtFashionSeries.text = self.mFashionVo:getFashionSeries()
     
-    local url = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious()) and "fashionShop_Har/" or "fashionShop/"
-    local iconUrl = UrlManager:getIconPath(url .. self.mFashionVo.fashionIcon)
+    local iconUrl = UrlManager:getFashionShopBodyPath(self.mFashionVo.fashionIcon)
     self.mImgIcon:SetImg(iconUrl, true)
     self.mTxtSellOut.text = _TT(50046)--已持有
     self.mImgDiscount:SetActive(false)-- self.mFashionVo:getDiscount() > 0)

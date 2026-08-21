@@ -1,46 +1,15 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LevelContinuousOperationWindowMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "LevelContinuousOperationWindowMediator"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-function var_0_1.register(arg_1_0)
-	local var_1_0 = arg_1_0
-	local var_1_1 = arg_1_0.bind
-
-	PreCombatMediator = var_1_10004
-
-	var_1_1(var_1_0, var_1_10004.CONTINUOUS_OPERATION, function(arg_2_0)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_1.sendNotification
-
-		LevelUIConst = var_2_10004
-
-		local var_2_2 = var_2_10004.CONTINUOUS_OPERATION
-		local var_2_3 = {}
-
-		math = var_2_10006
-		var_2_3.battleTimes = var_2_10006.min(arg_1_0.contextData.battleTimes, 10)
-
-		var_2_1(var_2_0, var_2_2, var_2_3)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(PreCombatMediator.CONTINUOUS_OPERATION, function(arg_2_0)
+		arg_1_0:sendNotification(LevelUIConst.CONTINUOUS_OPERATION, {
+			battleTimes = math.min(arg_1_0.contextData.battleTimes, 10)
+		})
 
 		return
 	end)
-
-	local var_1_2 = arg_1_0
-	local var_1_3 = arg_1_0.bind
-
-	LevelMediator2 = var_4
-
-	var_1_3(var_1_2, var_4.ON_SPITEM_CHANGED, function(arg_3_0, arg_3_1)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		LevelMediator2 = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.ON_SPITEM_CHANGED, arg_3_1)
+	arg_1_0:bind(LevelMediator2.ON_SPITEM_CHANGED, function(arg_3_0, arg_3_1)
+		arg_1_0:sendNotification(LevelMediator2.ON_SPITEM_CHANGED, arg_3_1)
 
 		return
 	end)
@@ -48,51 +17,30 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_4_0)
-	local var_4_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_4_0[1] = var_1_10002.ACTIVITY_UPDATED
-	PlayerProxy = var_2
-	var_4_0[2] = var_2.UPDATED
-
-	return var_4_0
+function var_0_0.listNotificationInterests(arg_4_0)
+	return {
+		ActivityProxy.ACTIVITY_UPDATED,
+		PlayerProxy.UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1
-	local var_5_1 = arg_5_1.getName(var_5_0)
-	local var_5_2 = arg_5_1
-	local var_5_3 = arg_5_1.getBody(var_5_2)
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
+	local var_5_1 = arg_5_1:getBody()
 
-	ActivityProxy = var_5_0
-
-	local var_5_4
-
-	if var_5_1 == var_5_0.ACTIVITY_UPDATED then
-		var_5_4 = var_5_3:getConfig("type")
-		ActivityConst = var_5_2
-
-		if var_5_4 == var_5_2.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
-			local var_5_5 = arg_5_0.viewComponent
-
-			var_5_4.SetActivity(var_5_5, var_5_3)
+	if var_5_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_5_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_BOSS_BATTLE_MARK_2 then
+			arg_5_0.viewComponent:SetActivity(var_5_1)
 		end
-	else
-		PlayerProxy = var_5_4
-
-		if var_5_1 == var_5_4.UPDATED then
-			local var_5_6 = arg_5_0.viewComponent
-
-			var_4.UpdateContent(var_5_6)
-		end
+	elseif var_5_0 == PlayerProxy.UPDATED then
+		arg_5_0.viewComponent:UpdateContent()
 	end
 
 	return
 end
 
-function var_0_1.remove(arg_6_0)
+function var_0_0.remove(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

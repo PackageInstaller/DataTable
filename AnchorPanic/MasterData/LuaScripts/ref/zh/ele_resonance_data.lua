@@ -26,6 +26,10 @@ local ele_resonance_data=
 	[11]={ skill_id=9850, type=5, num=2
 },
 	[12]={ skill_id=9851, type=5, num=3
+},
+	[13]={ skill_id=9860, type=6, num=2
+},
+	[14]={ skill_id=9861, type=6, num=3
 }
 }
 

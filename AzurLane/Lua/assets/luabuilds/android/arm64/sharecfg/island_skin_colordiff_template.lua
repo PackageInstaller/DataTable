@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_skin_colordiff_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_skin_colordiff_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_skin_colordiff_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_skin_colordiff_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_skin_colordiff_template = rawget(pg, "island_skin_colordiff_template") or setmetatable({
+	__name = "island_skin_colordiff_template"
+}, confNEO)
+pg.island_skin_colordiff_template.all = {
 	1011002,
 	1011702,
 	1020502,
@@ -50,11 +27,7 @@ var_0_3.all = {
 	9010702,
 	96000102
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_skin_colordiff_template
-
-var_0_4.get_id_list_by_skin_group = {
+pg.island_skin_colordiff_template.get_id_list_by_skin_group = {
 	[1011001] = {
 		1011002
 	},
@@ -125,25 +98,11 @@ var_0_4.get_id_list_by_skin_group = {
 		96000102
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_skin_colordiff_template = {}
+pg.base = pg.base or {}
+pg.base.island_skin_colordiff_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_skin_colordiff_template
-
-	var_1_0[1011002] = {
+	pg.base.island_skin_colordiff_template[1011002] = {
 		id = 1011002,
 		model = 1011002,
 		color_icon = "color_1011002",
@@ -155,11 +114,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_skin_colordiff_template
-
-	var_1_1[1011702] = {
+	pg.base.island_skin_colordiff_template[1011702] = {
 		id = 1011702,
 		model = 1011702,
 		color_icon = "color_1011702",
@@ -171,11 +126,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_skin_colordiff_template
-
-	var_1_2[1020502] = {
+	pg.base.island_skin_colordiff_template[1020502] = {
 		id = 1020502,
 		model = 1020502,
 		color_icon = "color_1020502",
@@ -187,11 +138,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_skin_colordiff_template
-
-	var_1_3[1051702] = {
+	pg.base.island_skin_colordiff_template[1051702] = {
 		id = 1051702,
 		model = 1051702,
 		color_icon = "color_1051702",
@@ -203,11 +150,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_skin_colordiff_template
-
-	var_1_4[1070302] = {
+	pg.base.island_skin_colordiff_template[1070302] = {
 		id = 1070302,
 		model = 1070302,
 		color_icon = "color_1070302",
@@ -219,11 +162,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_skin_colordiff_template
-
-	var_1_5[30] = {
+	pg.base.island_skin_colordiff_template[30] = {
 		id = 1990302,
 		model = 1990302,
 		color_icon = "color_1990301",
@@ -235,11 +174,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_skin_colordiff_template
-
-	var_1_6[2012102] = {
+	pg.base.island_skin_colordiff_template[2012102] = {
 		id = 2012102,
 		model = 2012102,
 		color_icon = "color_2012102",
@@ -251,11 +186,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_skin_colordiff_template
-
-	var_1_7[2021202] = {
+	pg.base.island_skin_colordiff_template[2021202] = {
 		id = 2021202,
 		model = 2021202,
 		color_icon = "color_2021201",
@@ -267,11 +198,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_skin_colordiff_template
-
-	var_1_8[14] = {
+	pg.base.island_skin_colordiff_template[14] = {
 		id = 2060302,
 		model = 2060302,
 		color_icon = "color_2060302",
@@ -283,11 +210,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_skin_colordiff_template
-
-	var_1_9[2990302] = {
+	pg.base.island_skin_colordiff_template[2990302] = {
 		id = 2990302,
 		model = 2990302,
 		color_icon = "color_2990302",
@@ -299,11 +222,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_skin_colordiff_template
-
-	var_1_10[3031102] = {
+	pg.base.island_skin_colordiff_template[3031102] = {
 		id = 3031102,
 		model = 3031102,
 		color_icon = "color_3031102",
@@ -315,11 +234,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_skin_colordiff_template
-
-	var_1_11[3031202] = {
+	pg.base.island_skin_colordiff_template[3031202] = {
 		id = 3031202,
 		model = 3031202,
 		color_icon = "color_3031202",
@@ -331,11 +246,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_skin_colordiff_template
-
-	var_1_12[3040702] = {
+	pg.base.island_skin_colordiff_template[3040702] = {
 		id = 3040702,
 		model = 3040702,
 		color_icon = "color_3040702",
@@ -347,11 +258,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_skin_colordiff_template
-
-	var_1_13[3120102] = {
+	pg.base.island_skin_colordiff_template[3120102] = {
 		id = 3120102,
 		model = 3120102,
 		color_icon = "color_3120102",
@@ -363,11 +270,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_skin_colordiff_template
-
-	var_1_14[4030302] = {
+	pg.base.island_skin_colordiff_template[4030302] = {
 		id = 4030302,
 		model = 4030302,
 		color_icon = "color_4030302",
@@ -379,11 +282,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_skin_colordiff_template
-
-	var_1_15[4990202] = {
+	pg.base.island_skin_colordiff_template[4990202] = {
 		id = 4990202,
 		model = 4990202,
 		color_icon = "color_4990202",
@@ -395,11 +294,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_skin_colordiff_template
-
-	var_1_16[10] = {
+	pg.base.island_skin_colordiff_template[10] = {
 		id = 4990602,
 		model = 4990602,
 		color_icon = "color_4990602",
@@ -411,11 +306,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_skin_colordiff_template
-
-	var_1_17[14] = {
+	pg.base.island_skin_colordiff_template[14] = {
 		id = 5010702,
 		model = 5010702,
 		color_icon = "color_5010702",
@@ -427,11 +318,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_skin_colordiff_template
-
-	var_1_18[5010802] = {
+	pg.base.island_skin_colordiff_template[5010802] = {
 		id = 5010802,
 		model = 5010802,
 		color_icon = "color_5010801",
@@ -443,11 +330,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_skin_colordiff_template
-
-	var_1_19[5020102] = {
+	pg.base.island_skin_colordiff_template[5020102] = {
 		id = 5020102,
 		model = 5020102,
 		color_icon = "color_5020102",
@@ -459,11 +342,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_skin_colordiff_template
-
-	var_1_20[6] = {
+	pg.base.island_skin_colordiff_template[6] = {
 		id = 5060102,
 		model = 5060102,
 		color_icon = "color_5060102",
@@ -475,11 +354,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_skin_colordiff_template
-
-	var_1_21[14] = {
+	pg.base.island_skin_colordiff_template[14] = {
 		id = 9010702,
 		model = 9010702,
 		color_icon = "color_9010701",
@@ -491,8 +366,7 @@ var_0_4.base.island_skin_colordiff_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-	var_1_21.base.island_skin_colordiff_template[96000102] = {
+	pg.base.island_skin_colordiff_template[96000102] = {
 		id = 96000102,
 		model = 96000102,
 		color_icon = "color_96000101",

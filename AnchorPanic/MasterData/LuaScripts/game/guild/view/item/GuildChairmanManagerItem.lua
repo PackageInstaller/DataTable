@@ -61,6 +61,15 @@ function onClickRemovePlayer(self)
         return
     end
 
+    if guild.GuildManager:getIsJoinGuildWar() then
+        gs.Message.Show(_TT(149196))
+        return
+    end
+
+      if guild.GuildManager:getIsJoinGuildWarTop() then
+        gs.Message.Show(_TT(149234))
+        return
+    end
 
     UIFactory:alertMessge(_TT(94525, self.data.player_name), true, function()
         GameDispatcher:dispatchEvent(EventName.REQ_GUILD_REMOVE_MEMBER, { applyPlayerId = self.data.player_id })

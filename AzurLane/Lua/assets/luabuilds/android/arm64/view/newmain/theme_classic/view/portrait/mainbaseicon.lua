@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MainBaseIcon")
+﻿local var_0_0 = class("MainBaseIcon")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._tf = arg_1_1

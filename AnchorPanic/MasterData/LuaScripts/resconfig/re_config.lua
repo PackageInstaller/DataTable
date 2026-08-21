@@ -3,7 +3,7 @@
 local re_config=
 
 {
-	[1]={ res="You God BoBo!!!"
+	[1]={ res="You God BoBoBo 188888452188!!!!!"
 },
 }
 

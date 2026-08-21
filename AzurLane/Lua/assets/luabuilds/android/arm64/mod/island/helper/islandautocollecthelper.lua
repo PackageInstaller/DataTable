@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandAutoCollectHelper")
+﻿local var_0_0 = class("IslandAutoCollectHelper")
 
 var_0_0.SelectType = {
 	Gather = 3,
@@ -8,28 +6,13 @@ var_0_0.SelectType = {
 	Both = 4,
 	None = 1
 }
-
-local var_0_1 = {}
-
-i18n = var_2
-var_0_1[1] = var_2("island_chara_gather_power")
-i18n = var_2
-var_0_1[2] = var_2("island_chara_gather_money")
-var_0_0.CostTipList = var_0_1
+var_0_0.CostTipList = {
+	i18n("island_chara_gather_power"),
+	i18n("island_chara_gather_money")
+}
 
 function var_0_0.GetAttributeReducePercent(arg_1_0)
-	IslandProductTimeHelper = var_1_10001
-
-	local var_1_0 = var_1_10001.GetAttributeGradeId
-	local var_1_1 = arg_1_0
-
-	IslandShipAttr = var_1_10004
-
-	local var_1_2 = var_1_0(var_1_1, var_1_10004.COLLECT_KEY)
-
-	pg = var_1_10002
-
-	return var_1_10002.island_chara_att[var_1_2].gather_effect
+	return pg.island_chara_att[IslandProductTimeHelper.GetAttributeGradeId(arg_1_0, IslandShipAttr.COLLECT_KEY)].gather_effect
 end
 
 return var_0_0

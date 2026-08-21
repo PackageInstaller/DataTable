@@ -135,8 +135,10 @@ function active(self, args)
 
     if self.mBuildBasePosVo.buildType == buildBase.BuildBaseType.Dormitory then
         self.mTxtTime.text = _TT(76184)
+        self:setBtnLabel(self.mBtnClear, nil, "一键休息")  --语言包
     else
         self.mTxtTime.text = _TT(76185)
+        self:setBtnLabel(self.mBtnClear, nil, "清空选择")  --语言包
     end
     self:updateMiniMap(self.mBuildBaseVo)
     self:setSortType()
@@ -167,6 +169,10 @@ function deActive(self)
     end
     self.mLastSortFilter.selectSortType = showBoard.panelSortType.LEVEL
     hero.HeroManager:setFilterData(self.mLastSortFilter)
+    for type in pairs(showBoard.panelFilterTypeDic) do
+        self.mLastSortFilter.selectFilterDic[type] = {}
+        self.mLastSortFilter.selectFilterDic[type][showBoard.filterSubTypeAll] = true
+    end
     GameDispatcher:removeEventListener(EventName.SELECT_SETTLEIN_HERO_UI, self.updateBaseDetail, self)
     GameDispatcher:removeEventListener(EventName.RESPONSE_BUILDBASE_HERELIST_UPDATE, self.reflashView, self)
     if (self.loopSn) then
@@ -183,7 +189,6 @@ function initViewText(self)
         self.mTxtBuildId.text = self.mBuildBaseVo.id
     end
     self.mTxtBuildName.text = _TT(self.mBuildBasePosVo.name)
-    self:setBtnLabel(self.mBtnClear, nil, "自动排班")  --语言包
     self:setBtnLabel(self.mBtnCommit, nil, "确认")
 end
 
@@ -288,51 +293,47 @@ function setSortType(self, Type, isDescending)
 end
 -- 清空
 function onClearSelect(self)
+
     buildBase.BuildBaseHeroManager:clearSettleHero()
 
-    local list = {}
-    local tempList = {}
-    local heroList = {}
-    local buildType = buildBase.BuildBaseManager:getNowBuildType()
-    local orderType = buildBase.BuildBaseManager:getOrderType()
-    local staminaMax = sysParam.SysParamManager:getValue(5001)
+    if buildBase.BuildBaseManager:getNowBuildType() == buildBase.BuildBaseType.Dormitory then
+        -- 宿舍保留一键排班
+        local list = {}
+        local tempList = {}
+        local buildType = buildBase.BuildBaseManager:getNowBuildType()
+        local orderType = buildBase.BuildBaseManager:getOrderType()
+        local staminaMax = sysParam.SysParamManager:getValue(5001)
 
-    if buildType == buildBase.BuildBaseType.Dormitory then
-        heroList = showBoard.ShowBoardManager:getHeroScrollList(nil, showBoard.panelSortType.STAMINA, self.m_isDescending, self.m_selectFilterDic, self.m_isFilterSame, false, self.m_isFindLike, self.m_isFindLock, self.isFirstSort)
-    else
-        heroList = showBoard.ShowBoardManager:getHeroScrollList(nil, showBoard.panelSortType.BUILDSKILL, self.m_isDescending, self.m_selectFilterDic, self.m_isFilterSame, false, self.m_isFindLike, self.m_isFindLock, self.isFirstSort)
-    end
-
-    for idx, heroSelectVo in pairs(self.m_heroScrollList) do
-        local buildBaseHeroMsgVo = buildBase.BuildBaseHeroManager:getBuildHeroInfo(heroSelectVo:getDataVo().tid)
-        for _, warshipSkillVo in pairs(buildBaseHeroMsgVo.skillList) do
-            if buildType == buildBase.BuildBaseType.Dormitory then
-                if buildBaseHeroMsgVo.buildId == 0 or (buildBaseHeroMsgVo.buildId == buildBase.BuildBaseManager.mNowBuildId and buildBaseHeroMsgVo.stamina < staminaMax) or (buildBase.BuildBaseManager:getBuildType(buildBaseHeroMsgVo.buildId) ~= buildBase.BuildBaseType.Dormitory and buildBaseHeroMsgVo.stamina == 0) then
-                    table.insert(list, heroSelectVo)
-                end
-            else
-                local skillVo = buildBase.BuildBaseHeroManager:getSkillConfigBySkillId(warshipSkillVo.skill_id)
-                if skillVo.produceType == orderType and buildBaseHeroMsgVo.stamina > 0 and (buildBaseHeroMsgVo.buildId == 0 or (buildBaseHeroMsgVo.buildId == buildBase.BuildBaseType.Dormitory and buildBaseHeroMsgVo.stamina == staminaMax)) then
-                    table.insert(tempList, heroSelectVo)
-                end
-                if skillVo.produceType ~= orderType and buildBaseHeroMsgVo.stamina > 0 and (buildBaseHeroMsgVo.buildId == 0 or (buildBaseHeroMsgVo.buildId == buildBase.BuildBaseType.Dormitory and buildBaseHeroMsgVo.stamina == staminaMax)) then
-                    table.insert(list, heroSelectVo)
+        for idx, heroSelectVo in pairs(self.m_heroScrollList) do
+            local buildBaseHeroMsgVo = buildBase.BuildBaseHeroManager:getBuildHeroInfo(heroSelectVo:getDataVo().tid)
+            for _, warshipSkillVo in pairs(buildBaseHeroMsgVo.skillList) do
+                if buildType == buildBase.BuildBaseType.Dormitory then
+                    if buildBaseHeroMsgVo.buildId == 0 or (buildBaseHeroMsgVo.buildId == buildBase.BuildBaseManager.mNowBuildId and buildBaseHeroMsgVo.stamina < staminaMax) or (buildBase.BuildBaseManager:getBuildType(buildBaseHeroMsgVo.buildId) ~= buildBase.BuildBaseType.Dormitory and buildBaseHeroMsgVo.stamina == 0) then
+                        table.insert(list, heroSelectVo)
+                    end
+                else
+                    local skillVo = buildBase.BuildBaseHeroManager:getSkillConfigBySkillId(warshipSkillVo.skill_id)
+                    if skillVo.produceType == orderType and buildBaseHeroMsgVo.stamina > 0 and (buildBaseHeroMsgVo.buildId == 0 or (buildBaseHeroMsgVo.buildId == buildBase.BuildBaseType.Dormitory and buildBaseHeroMsgVo.stamina == staminaMax)) then
+                        table.insert(tempList, heroSelectVo)
+                    end
+                    if skillVo.produceType ~= orderType and buildBaseHeroMsgVo.stamina > 0 and (buildBaseHeroMsgVo.buildId == 0 or (buildBaseHeroMsgVo.buildId == buildBase.BuildBaseType.Dormitory and buildBaseHeroMsgVo.stamina == staminaMax)) then
+                        table.insert(list, heroSelectVo)
+                    end
                 end
             end
         end
-    end
-    if not table.empty(tempList) then
-        for i = #tempList, 1 do
-            table.insert(list, 1, tempList[i])
+        if not table.empty(tempList) then
+            for i = #tempList, 1 do
+                table.insert(list, 1, tempList[i])
+            end
+        end
+
+        for i, v in ipairs(list) do
+            if not buildBase.BuildBaseHeroManager:checkSettleIsFull() then
+                buildBase.BuildBaseHeroManager:onClickChangeHero(v:getDataVo().tid, true)
+            end
         end
     end
-
-    for i, v in ipairs(list) do
-        if not buildBase.BuildBaseHeroManager:checkSettleIsFull() then
-            buildBase.BuildBaseHeroManager:onClickChangeHero(v:getDataVo().tid, true)
-        end
-    end
-
 
     self:setData()
 end

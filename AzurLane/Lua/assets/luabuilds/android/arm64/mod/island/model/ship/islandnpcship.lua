@@ -1,21 +1,15 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandNpcShip", import(".IslandShip"))
 
-local var_0_0 = "IslandNpcShip"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandShip"))
-
-function var_0_1.GetState(arg_1_0)
-	return var_0_1.STATE_NORMAL
+function var_0_0.GetState(arg_1_0)
+	return var_0_0.STATE_NORMAL
 end
 
-function var_0_1.GetEnergy(arg_2_0)
+function var_0_0.GetEnergy(arg_2_0)
 	return arg_2_0.maxEnerey
 end
 
-function var_0_1.GetCurrentEnergy(arg_3_0)
+function var_0_0.GetCurrentEnergy(arg_3_0)
 	return arg_3_0.maxEnerey
 end
 
-return var_0_1
+return var_0_0

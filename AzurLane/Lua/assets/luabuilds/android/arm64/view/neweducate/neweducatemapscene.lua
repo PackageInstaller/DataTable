@@ -1,141 +1,71 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewEducateMapScene", import("view.newEducate.base.NewEducateBaseUI"))
 
-local var_0_0 = "NewEducateMapScene"
+var_0_0.DEFAULT_SCALE = 1
+var_0_0.SCALE = 1.15
+var_0_0.SPEED = 65
+var_0_0.ALPHA_TIME = 0.25
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.newEducate.base.NewEducateBaseUI"))
-
-var_0_1.DEFAULT_SCALE = 1
-var_0_1.SCALE = 1.15
-var_0_1.SPEED = 65
-var_0_1.ALPHA_TIME = 0.25
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewEducateMapUI"
 end
 
-function var_0_1.SetData(arg_2_0)
-	local var_2_0 = arg_2_0.contextData.char
-	local var_2_1 = var_1.GetSiteId
-
-	NewEducateConst = var_1_10004
-	arg_2_0.shopSiteId = var_2_1(var_2_0, var_1_10004.SITE_TYPE.SHOP)
-
-	local var_2_2 = arg_2_0.contextData.char
-	local var_2_3 = var_1.GetSiteId
-
-	NewEducateConst = var_4
-	arg_2_0.workSiteId = var_2_3(var_2_2, var_4.SITE_TYPE.WORK)
-
-	local var_2_4 = arg_2_0.contextData.char
-	local var_2_5 = var_1.GetSiteId
-
-	NewEducateConst = var_4
-	arg_2_0.travelSiteId = var_2_5(var_2_4, var_4.SITE_TYPE.TRAVEL)
+function var_0_0.SetData(arg_2_0)
+	arg_2_0.shopSiteId = arg_2_0.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.SHOP)
+	arg_2_0.workSiteId = arg_2_0.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.WORK)
+	arg_2_0.travelSiteId = arg_2_0.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.TRAVEL)
 
 	return
 end
 
-function var_0_1.init(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.init(arg_3_0)
+	arg_3_0.uiTF = arg_3_0._tf:Find("ui")
+	arg_3_0.mapTF = arg_3_0._tf:Find("map")
 
-	arg_3_0.uiTF = var_1.Find(var_3_0, "ui")
-
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.mapTF = var_1.Find(var_3_1, "map")
-	setLocalScale = var_1
-
-	var_1(arg_3_0.mapTF, {
-		x = var_0_1.DEFAULT_SCALE,
-		y = var_0_1.DEFAULT_SCALE,
-		z = var_0_1.DEFAULT_SCALE
+	setLocalScale(arg_3_0.mapTF, {
+		x = var_0_0.DEFAULT_SCALE,
+		y = var_0_0.DEFAULT_SCALE,
+		z = var_0_0.DEFAULT_SCALE
 	})
 
-	local var_3_2 = arg_3_0.mapTF
+	arg_3_0.travelTF = arg_3_0.mapTF:Find("content/travel")
+	arg_3_0.workTF = arg_3_0.mapTF:Find("content/work")
+	arg_3_0.shopTF = arg_3_0.mapTF:Find("content/shop")
 
-	arg_3_0.travelTF = var_1.Find(var_3_2, "content/travel")
+	local var_3_0 = arg_3_0.mapTF:Find("content/events")
 
-	local var_3_3 = arg_3_0.mapTF
+	arg_3_0.eventUIList = UIItemList.New(var_3_0, var_3_0:Find("tpl"))
 
-	arg_3_0.workTF = var_1.Find(var_3_3, "content/work")
+	local var_3_1 = arg_3_0.mapTF:Find("content/ships")
 
-	local var_3_4 = arg_3_0.mapTF
+	arg_3_0.shipUIList = UIItemList.New(var_3_1, var_3_1:Find("tpl"))
+	arg_3_0.personalityTipPanel = NewEducatePersonalityTipPanel.New(arg_3_0.adaptTF, arg_3_0.event, arg_3_0.contextData)
 
-	arg_3_0.shopTF = var_1.Find(var_3_4, "content/shop")
+	arg_3_0.personalityTipPanel:RegisterView(arg_3_0)
 
-	local var_3_5 = arg_3_0.mapTF
-	local var_3_6 = var_1.Find(var_3_5, "content/events")
-
-	UIItemList = var_1_10002
-	arg_3_0.eventUIList = var_1_10002.New(var_3_6, var_3_6:Find("tpl"))
-
-	local var_3_7 = arg_3_0.mapTF
-	local var_3_8 = var_2.Find(var_3_7, "content/ships")
-
-	UIItemList = var_3_5
-	arg_3_0.shipUIList = var_3_5.New(var_3_8, var_3_8:Find("tpl"))
-	NewEducatePersonalityTipPanel = var_3
-	arg_3_0.personalityTipPanel = var_3.New(arg_3_0.adaptTF, arg_3_0.event, arg_3_0.contextData)
-
-	local var_3_9 = arg_3_0.personalityTipPanel
-
-	var_3.RegisterView(var_3_9, arg_3_0)
-
-	NewEducateTopPanel = var_3
-
-	local var_3_10 = var_3.New
-	local var_3_11 = arg_3_0.uiTF
-	local var_3_12 = arg_3_0.event
-
-	setmetatable = var_7
-	arg_3_0.topPanel = var_3_10(var_3_11, var_3_12, var_7({
+	arg_3_0.topPanel = NewEducateTopPanel.New(arg_3_0.uiTF, arg_3_0.event, setmetatable({
 		showBack = true
 	}, {
 		__index = arg_3_0.contextData
 	}))
 
-	local var_3_13 = arg_3_0.topPanel
+	arg_3_0.topPanel:RegisterView(arg_3_0)
 
-	var_3.RegisterView(var_3_13, arg_3_0)
-
-	NewEducateInfoPanel = var_3
-
-	local var_3_14 = var_3.New
-	local var_3_15 = arg_3_0.uiTF
-	local var_3_16 = arg_3_0.event
-
-	setmetatable = var_7
-	arg_3_0.infoPanel = var_3_14(var_3_15, var_3_16, var_7({
+	arg_3_0.infoPanel = NewEducateInfoPanel.New(arg_3_0.uiTF, arg_3_0.event, setmetatable({
 		hide = true
 	}, {
 		__index = arg_3_0.contextData
 	}))
 
-	local var_3_17 = arg_3_0.infoPanel
+	arg_3_0.infoPanel:RegisterView(arg_3_0)
 
-	var_3.RegisterView(var_3_17, arg_3_0)
-
-	NewEducateSiteDetailPanel = var_3
-
-	local var_3_18 = var_3.New
-	local var_3_19 = arg_3_0.uiTF
-	local var_3_20 = arg_3_0.event
-
-	setmetatable = var_7
-	arg_3_0.detailPanel = var_3_18(var_3_19, var_3_20, var_7({
+	arg_3_0.detailPanel = NewEducateSiteDetailPanel.New(arg_3_0.uiTF, arg_3_0.event, setmetatable({
 		onHide = function()
-			local var_4_0 = arg_3_0
-
-			var_0.OnDetailHide(var_4_0)
+			arg_3_0:OnDetailHide()
 
 			return
 		end,
 		onClickUpEntryGood = function(arg_5_0)
-			local var_5_0 = arg_3_0
-
-			var_1.onClickUpEntryGood(var_5_0, arg_5_0)
+			arg_3_0:onClickUpEntryGood(arg_5_0)
 
 			return
 		end
@@ -143,44 +73,23 @@ function var_0_1.init(arg_3_0)
 		__index = arg_3_0.contextData
 	}))
 
-	local var_3_21 = arg_3_0.detailPanel
+	arg_3_0.detailPanel:RegisterView(arg_3_0)
 
-	var_3.RegisterView(var_3_21, arg_3_0)
-
-	NewEducateNodePanel = var_3
-
-	local var_3_22 = var_3.New
-	local var_3_23 = arg_3_0.adaptTF
-	local var_3_24 = arg_3_0.event
-
-	setmetatable = var_7
-	arg_3_0.nodePanel = var_3_22(var_3_23, var_3_24, var_7({
+	arg_3_0.nodePanel = NewEducateNodePanel.New(arg_3_0.adaptTF, arg_3_0.event, setmetatable({
 		onHide = function()
-			local var_6_0 = arg_3_0
-
-			var_0.OnDetailHide(var_6_0)
-
-			local var_6_1 = arg_3_0
-
-			var_0.FlushView(var_6_1)
+			arg_3_0:OnDetailHide()
+			arg_3_0:FlushView()
 
 			return
 		end,
 		onSiteEnd = function()
-			local var_7_0 = arg_3_0
-
-			var_0.ShowInfoUI(var_7_0, true)
+			arg_3_0:ShowInfoUI(true)
 
 			return
 		end,
 		onNormal = function()
-			local var_8_0 = arg_3_0.infoPanel
-
-			var_0.ExecuteAction(var_8_0, "HidePanel", true)
-
-			local var_8_1 = arg_3_0.topPanel
-
-			var_0.ExecuteAction(var_8_1, "Hide")
+			arg_3_0.infoPanel:ExecuteAction("HidePanel", true)
+			arg_3_0.topPanel:ExecuteAction("Hide")
 
 			return
 		end,
@@ -189,382 +98,167 @@ function var_0_1.init(arg_3_0)
 		__index = arg_3_0.contextData
 	}))
 
-	local var_3_25 = arg_3_0.nodePanel
+	arg_3_0.nodePanel:RegisterView(arg_3_0)
 
-	var_3.RegisterView(var_3_25, arg_3_0)
-
-	Vector2 = var_3
-	arg_3_0.extendLimit = var_3(arg_3_0.mapTF.rect.width - arg_3_0._tf.rect.width, arg_3_0.mapTF.rect.height - arg_3_0._tf.rect.height) / 2
+	arg_3_0.extendLimit = Vector2(arg_3_0.mapTF.rect.width - arg_3_0._tf.rect.width, arg_3_0.mapTF.rect.height - arg_3_0._tf.rect.height) / 2
 	arg_3_0.duration = 0.5
 	arg_3_0.curSiteId = 0
-	getProxy = var_3
-	PlayerProxy = var_5
-
-	local var_3_26 = var_3(var_5)
-
-	arg_3_0.playerID = var_3.getRawData(var_3_26).id
+	arg_3_0.playerID = getProxy(PlayerProxy):getRawData().id
 
 	return
 end
 
-function var_0_1.didEnter(arg_9_0)
+function var_0_0.didEnter(arg_9_0)
 	arg_9_0:SetData()
-
-	local var_9_0 = arg_9_0.topPanel
-
-	var_1.Load(var_9_0)
-
-	local var_9_1 = arg_9_0.infoPanel
-
-	var_1.Load(var_9_1)
-
-	onButton = var_1
-
-	local var_9_2 = arg_9_0
-	local var_9_3 = arg_9_0.travelTF
-
-	local function var_9_4()
-		local var_10_0 = arg_9_0
-
-		var_0.FocusTF(var_10_0, arg_9_0.travelTF)
+	arg_9_0.topPanel:Load()
+	arg_9_0.infoPanel:Load()
+	onButton(arg_9_0, arg_9_0.travelTF, function()
+		arg_9_0:FocusTF(arg_9_0.travelTF)
 
 		arg_9_0.curSiteId = arg_9_0.travelSiteId
 
-		local var_10_1 = arg_9_0.detailPanel
-
-		var_0.ExecuteAction(var_10_1, "Show", arg_9_0.travelSiteId)
-
-		local var_10_2 = arg_9_0
-
-		var_0.ShowInfoUI(var_10_2)
+		arg_9_0.detailPanel:ExecuteAction("Show", arg_9_0.travelSiteId)
+		arg_9_0:ShowInfoUI()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_9_2, var_9_3, var_9_4, var_1_10006)
-
-	onButton = var_1
-
-	local var_9_5 = arg_9_0
-	local var_9_6 = arg_9_0.workTF
-
-	local function var_9_7()
-		local var_11_0 = arg_9_0
-
-		var_0.FocusTF(var_11_0, arg_9_0.workTF)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_0.workTF, function()
+		arg_9_0:FocusTF(arg_9_0.workTF)
 
 		arg_9_0.curSiteId = arg_9_0.workSiteId
 
-		local var_11_1 = arg_9_0.detailPanel
-
-		var_0.ExecuteAction(var_11_1, "Show", arg_9_0.workSiteId)
-
-		local var_11_2 = arg_9_0
-
-		var_0.ShowInfoUI(var_11_2)
+		arg_9_0.detailPanel:ExecuteAction("Show", arg_9_0.workSiteId)
+		arg_9_0:ShowInfoUI()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_9_5, var_9_6, var_9_7, var_1_10006)
-
-	onButton = var_1
-
-	local var_9_8 = arg_9_0
-	local var_9_9 = arg_9_0.shopTF
-
-	local function var_9_10()
-		local var_12_0 = arg_9_0
-
-		var_0.FocusTF(var_12_0, arg_9_0.shopTF)
+	end, SFX_PANEL)
+	onButton(arg_9_0, arg_9_0.shopTF, function()
+		arg_9_0:FocusTF(arg_9_0.shopTF)
 
 		arg_9_0.curSiteId = arg_9_0.shopSiteId
 
-		local var_12_1 = arg_9_0.detailPanel
-
-		var_0.ExecuteAction(var_12_1, "Show", arg_9_0.shopSiteId)
-
-		local var_12_2 = arg_9_0
-
-		var_0.ShowInfoUI(var_12_2)
-
-		local var_12_3 = arg_9_0.infoPanel
-
-		var_0.ExecuteAction(var_12_3, "SetShopOpen", true)
+		arg_9_0.detailPanel:ExecuteAction("Show", arg_9_0.shopSiteId)
+		arg_9_0:ShowInfoUI()
+		arg_9_0.infoPanel:ExecuteAction("SetShopOpen", true)
 
 		return
-	end
+	end, SFX_PANEL)
+	arg_9_0.eventUIList:make(function(arg_13_0, arg_13_1, arg_13_2)
+		if arg_13_0 == UIItemList.EventUpdate then
+			local var_13_0 = arg_9_0.eventSiteIds[arg_13_1 + 1]
 
-	SFX_PANEL = var_1_10006
-
-	var_1(var_9_8, var_9_9, var_9_10, var_1_10006)
-
-	local var_9_11 = arg_9_0.eventUIList
-
-	var_1.make(var_9_11, function(arg_13_0, arg_13_1, arg_13_2)
-		UIItemList = var_2_10003
-
-		if arg_13_0 == var_2_10003.EventUpdate then
 			arg_13_2.name = arg_9_0.eventSiteIds[arg_13_1 + 1]
-			pg = var_4
 
-			local var_13_0 = var_4.child2_site_display[var_3]
-
-			LoadImageSpriteAsync = var_2_10005
-
-			var_2_10005("neweducateicon/" .. var_13_0.event_icon, arg_13_2, true)
-
-			LoadImageSpriteAsync = var_2_10005
-
-			local var_13_1 = "neweducateicon/" .. var_13_0.event_title
-			local var_13_2 = arg_13_2
-
-			var_2_10005(var_13_1, arg_13_2.Find(var_13_2, "name"), true)
-
-			setAnchoredPosition = var_2_10005
-
-			var_2_10005(arg_13_2, {
-				x = var_13_0.position[1],
-				y = var_13_0.position[2]
+			LoadImageSpriteAsync("neweducateicon/" .. pg.child2_site_display[arg_9_0.eventSiteIds[arg_13_1 + 1]].event_icon, arg_13_2, true)
+			LoadImageSpriteAsync("neweducateicon/" .. pg.child2_site_display[arg_9_0.eventSiteIds[arg_13_1 + 1]].event_title, arg_13_2:Find("name"), true)
+			setAnchoredPosition(arg_13_2, {
+				x = pg.child2_site_display[arg_9_0.eventSiteIds[arg_13_1 + 1]].position[1],
+				y = pg.child2_site_display[arg_9_0.eventSiteIds[arg_13_1 + 1]].position[2]
 			})
+			onButton(arg_9_0, arg_13_2, function()
+				arg_9_0:FocusTF(arg_13_2)
 
-			onButton = var_2_10005
+				arg_9_0.curSiteId = var_13_0
 
-			local var_13_3 = arg_9_0
-			local var_13_4 = arg_13_2
-
-			local function var_13_5()
-				local var_14_0 = arg_9_0
-
-				var_0.FocusTF(var_14_0, arg_13_2)
-
-				arg_9_0.curSiteId = var_0
-
-				local var_14_1 = arg_9_0.detailPanel
-
-				var_0.ExecuteAction(var_14_1, "Show", var_0)
-
-				local var_14_2 = arg_9_0
-
-				var_0.ShowInfoUI(var_14_2)
+				arg_9_0.detailPanel:ExecuteAction("Show", var_13_0)
+				arg_9_0:ShowInfoUI()
 
 				return
-			end
-
-			SFX_PANEL = var_13_2
-
-			var_2_10005(var_13_3, var_13_4, var_13_5, var_13_2)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
-
-	local var_9_12 = arg_9_0.shipUIList
-
-	var_1.make(var_9_12, function(arg_15_0, arg_15_1, arg_15_2)
-		UIItemList = var_2_10003
-
-		if arg_15_0 == var_2_10003.EventUpdate then
-			local var_15_0 = arg_9_0
-
-			var_3.UpdateShipSite(var_15_0, arg_15_1, arg_15_2)
+	arg_9_0.shipUIList:make(function(arg_15_0, arg_15_1, arg_15_2)
+		if arg_15_0 == UIItemList.EventUpdate then
+			arg_9_0:UpdateShipSite(arg_15_1, arg_15_2)
 		end
 
 		return
 	end)
 	arg_9_0:FlushView()
 
-	local var_9_13 = arg_9_0.contextData.char
-	local var_9_14 = var_1.GetFSM(var_9_13)
-
-	if var_1.GetCurNode(var_9_14) ~= 0 then
-		local var_9_15 = arg_9_0.contextData.char
-		local var_9_16 = var_1.GetFSM(var_9_15)
-		local var_9_17 = var_1.GetState
-
-		NewEducateFSM = var_4
-
-		local var_9_18 = var_9_17(var_9_16, var_4.SYSTEM.MAP)
-
-		arg_9_0.curSiteId = var_1.GetCurSiteId(var_9_18)
+	if arg_9_0.contextData.char:GetFSM():GetCurNode() ~= 0 then
+		arg_9_0.curSiteId = arg_9_0.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.MAP):GetCurSiteId()
 
 		arg_9_0:ShowInfoUI()
-
-		local var_9_19 = arg_9_0
-		local var_9_20 = arg_9_0.OnNodeStart
-		local var_9_21 = arg_9_0.contextData.char
-		local var_9_22 = var_4.GetFSM(var_9_21)
-
-		var_9_20(var_9_19, var_4.GetCurNode(var_9_22))
+		arg_9_0:OnNodeStart(arg_9_0.contextData.char:GetFSM():GetCurNode())
 	else
 		arg_9_0:CheckEventPerformance()
 
 		if arg_9_0.contextData.openShop then
-			triggerButton = var_1
-
-			var_1(arg_9_0.shopTF)
+			triggerButton(arg_9_0.shopTF)
 		end
 	end
 
 	return
 end
 
-function var_0_1.CheckEventPerformance(arg_16_0)
-	local var_16_0 = {}
+function var_0_0.CheckEventPerformance(arg_16_0)
+	for iter_16_0, iter_16_1 in ipairs(arg_16_0.eventSiteIds) do
+		local var_16_0 = pg.child2_site_display[iter_16_1].param
 
-	ipairs = var_1_10002
+		if #pg.child2_site_event_group[pg.child2_site_display[iter_16_1].param].performance > 0 and PlayerPrefs.GetInt(arg_16_0:GetEventLocalKey(pg.child2_site_display[iter_16_1].param)) ~= 1 then
+			table.insert({}, function(arg_17_0)
+				arg_16_0.nodePanel:ExecuteAction("PlayWordIds", var_0, arg_17_0)
+				PlayerPrefs.SetInt(arg_16_0:GetEventLocalKey(var_16_0), 1)
 
-	for iter_16_0, iter_16_1 in var_1_10002(arg_16_0.eventSiteIds) do
-		pg = var_1_10007
-		var_1_10007 = var_1_10007.child2_site_display[iter_16_1].param
-		pg = var_1_10008
-
-		if #var_1_10008.child2_site_event_group[var_1_10007].performance > 0 then
-			PlayerPrefs = var_9
-
-			if var_9.GetInt(arg_16_0:GetEventLocalKey(var_1_10007)) ~= 1 then
-				table = var_9
-
-				var_9.insert(var_16_0, function(arg_17_0)
-					local var_17_0 = arg_16_0.nodePanel
-
-					var_1.ExecuteAction(var_17_0, "PlayWordIds", var_1_10008, arg_17_0)
-
-					PlayerPrefs = var_1
-
-					local var_17_1 = var_1.SetInt
-					local var_17_2 = arg_16_0
-
-					var_17_1(var_3.GetEventLocalKey(var_17_2, var_1_10007), 1)
-
-					return
-				end)
-			end
+				return
+			end)
 		end
 	end
 
-	seriesAsync = var_2
-
-	var_2(var_16_0, function()
+	seriesAsync({}, function()
 		return
 	end)
 
 	return
 end
 
-function var_0_1.GetEventLocalKey(arg_19_0, arg_19_1)
-	NewEducateConst = var_1_10002
-
-	local var_19_0 = var_1_10002.NEW_EDUCATE_EVENT_TIP
-	local var_19_1 = "_"
-	local var_19_2 = arg_19_0.playerID
-	local var_19_3 = "_"
-	local var_19_4 = arg_19_0.contextData.char.id
-	local var_19_5 = "_"
-	local var_19_6 = arg_19_0.contextData.char
-
-	return var_19_0 .. var_19_1 .. var_19_2 .. var_19_3 .. var_19_4 .. var_19_5 .. var_8.GetGameCnt(var_19_6) .. "_" .. arg_19_1
+function var_0_0.GetEventLocalKey(arg_19_0, arg_19_1)
+	return NewEducateConst.NEW_EDUCATE_EVENT_TIP .. "_" .. arg_19_0.playerID .. "_" .. arg_19_0.contextData.char.id .. "_" .. arg_19_0.contextData.char:GetGameCnt() .. "_" .. arg_19_1
 end
 
-function var_0_1.ShowInfoUI(arg_20_0, arg_20_1)
-	local var_20_0 = arg_20_0.infoPanel
-
-	var_2.ExecuteAction(var_20_0, "ShowPanel")
-
-	local var_20_1 = arg_20_0.topPanel
-
-	var_2.ExecuteAction(var_20_1, "Flush")
+function var_0_0.ShowInfoUI(arg_20_0, arg_20_1)
+	arg_20_0.infoPanel:ExecuteAction("ShowPanel")
+	arg_20_0.topPanel:ExecuteAction("Flush")
 
 	if arg_20_1 then
 		return
 	end
 
 	arg_20_0.hideTFList = {}
-	pg = var_2
 
-	local var_20_2 = var_2.child2_site_display[arg_20_0.curSiteId].type
-
-	NewEducateConst = var_3
-
-	if var_20_2 ~= var_3.SITE_TYPE.WORK then
-		table = var_3
-
-		var_3.insert(arg_20_0.hideTFList, arg_20_0.workTF)
+	if pg.child2_site_display[arg_20_0.curSiteId].type ~= NewEducateConst.SITE_TYPE.WORK then
+		table.insert(arg_20_0.hideTFList, arg_20_0.workTF)
 	end
 
-	NewEducateConst = var_3
-
-	if var_20_2 ~= var_3.SITE_TYPE.TRAVEL then
-		table = var_3
-
-		var_3.insert(arg_20_0.hideTFList, arg_20_0.travelTF)
+	if pg.child2_site_display[arg_20_0.curSiteId].type ~= NewEducateConst.SITE_TYPE.TRAVEL then
+		table.insert(arg_20_0.hideTFList, arg_20_0.travelTF)
 	end
 
-	NewEducateConst = var_3
-
-	if var_20_2 ~= var_3.SITE_TYPE.SHOP then
-		table = var_3
-
-		var_3.insert(arg_20_0.hideTFList, arg_20_0.shopTF)
+	if pg.child2_site_display[arg_20_0.curSiteId].type ~= NewEducateConst.SITE_TYPE.SHOP then
+		table.insert(arg_20_0.hideTFList, arg_20_0.shopTF)
 	end
 
-	eachChild = var_3
+	eachChild(arg_20_0.eventUIList.container, function(arg_21_0)
+		if arg_20_0.curSiteId ~= tonumber(arg_21_0.name) then
+			table.insert(arg_20_0.hideTFList, arg_21_0)
+		end
 
-	var_3(arg_20_0.eventUIList.container, function(arg_21_0)
-		local var_21_0 = arg_20_0.curSiteId
-
-		tonumber = var_2_10002
-
-		if var_21_0 ~= var_2_10002(arg_21_0.name) then
-			table = var_21_0
-
-			var_21_0.insert(arg_20_0.hideTFList, arg_21_0)
+		return
+	end)
+	eachChild(arg_20_0.shipUIList.container, function(arg_22_0)
+		if arg_20_0.curSiteId ~= tonumber(arg_22_0.name) then
+			table.insert(arg_20_0.hideTFList, arg_22_0)
 		end
 
 		return
 	end)
 
-	eachChild = var_3
-
-	var_3(arg_20_0.shipUIList.container, function(arg_22_0)
-		local var_22_0 = arg_20_0.curSiteId
-
-		tonumber = var_2_10002
-
-		if var_22_0 ~= var_2_10002(arg_22_0.name) then
-			table = var_22_0
-
-			var_22_0.insert(arg_20_0.hideTFList, arg_22_0)
-		end
-
-		return
-	end)
-
-	ipairs = var_3
-
-	for iter_20_0, iter_20_1 in var_3(arg_20_0.hideTFList) do
-		local var_20_3 = arg_20_0
-		local var_20_4 = arg_20_0.managedTween
-
-		LeanTween = var_1_10011
-		var_1_10011 = var_1_10011.value
-
-		local var_20_5
-
-		go = var_1_10013
-
-		local var_20_6 = var_20_4(var_20_3, var_1_10011, var_20_5, var_1_10013(iter_20_1), 1, 0, var_0_1.ALPHA_TIME)
-		local var_20_7 = var_8.setOnUpdate
-
-		System = var_1_10011
-
-		var_20_7(var_20_6, var_1_10011.Action_float(function(arg_23_0)
-			GetOrAddComponent = var_2_10001
-			var_2_10001(iter_20_1, "CanvasGroup").alpha = arg_23_0
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.hideTFList) do
+		arg_20_0:managedTween(LeanTween.value, nil, go(iter_20_1), 1, 0, var_0_0.ALPHA_TIME):setOnUpdate(System.Action_float(function(arg_23_0)
+			GetOrAddComponent(iter_20_1, "CanvasGroup").alpha = arg_23_0
 
 			return
 		end))
@@ -573,42 +267,13 @@ function var_0_1.ShowInfoUI(arg_20_0, arg_20_1)
 	return
 end
 
-function var_0_1.OnDetailHide(arg_24_0)
-	local var_24_0 = arg_24_0.infoPanel
-
-	var_1.ExecuteAction(var_24_0, "HidePanel")
-
-	local var_24_1 = arg_24_0.infoPanel
-
-	var_1.ExecuteAction(var_24_1, "SetShopOpen", false)
-
-	local var_24_2 = arg_24_0.topPanel
-
-	var_1.ExecuteAction(var_24_2, "Flush")
-
-	local var_24_3 = arg_24_0.topPanel
-
-	var_1.ExecuteAction(var_24_3, "Show")
-
-	local var_24_4 = arg_24_0
-	local var_24_5 = arg_24_0.managedTween
-
-	LeanTween = var_4
-
-	local var_24_6 = var_4.value
-	local var_24_7
-
-	go = var_1_10006
-
-	local var_24_8 = var_24_5(var_24_4, var_24_6, var_24_7, var_1_10006(arg_24_0.mapTF), var_0_1.SCALE, var_0_1.DEFAULT_SCALE, arg_24_0.duration)
-	local var_24_9 = var_1.setOnUpdate
-
-	System = var_24_6
-
-	var_24_9(var_24_8, var_24_6.Action_float(function(arg_25_0)
-		setLocalScale = var_2_10001
-
-		var_2_10001(arg_24_0.mapTF, {
+function var_0_0.OnDetailHide(arg_24_0)
+	arg_24_0.infoPanel:ExecuteAction("HidePanel")
+	arg_24_0.infoPanel:ExecuteAction("SetShopOpen", false)
+	arg_24_0.topPanel:ExecuteAction("Flush")
+	arg_24_0.topPanel:ExecuteAction("Show")
+	arg_24_0:managedTween(LeanTween.value, nil, go(arg_24_0.mapTF), var_0_0.SCALE, var_0_0.DEFAULT_SCALE, arg_24_0.duration):setOnUpdate(System.Action_float(function(arg_25_0)
+		setLocalScale(arg_24_0.mapTF, {
 			x = arg_25_0,
 			y = arg_25_0,
 			z = arg_25_0
@@ -616,79 +281,20 @@ function var_0_1.OnDetailHide(arg_24_0)
 
 		return
 	end))
+	SetCompomentEnabled(arg_24_0.mapTF, typeof(ScrollRect), false)
 
-	SetCompomentEnabled = var_24_9
-
-	local var_24_10 = arg_24_0.mapTF
-
-	typeof = var_4
-	ScrollRect = var_6
-
-	var_24_9(var_24_10, var_4(var_6), false)
-
-	LeanTween = var_24_9
-
-	local var_24_11 = var_24_9.move
-	local var_24_12 = arg_24_0.mapTF
-
-	Vector3 = var_4
-
-	local var_24_13 = var_24_11(var_24_12, var_4(0, 0, 0), arg_24_0.duration)
-	local var_24_14 = var_1.setEase
-
-	LeanTweenType = var_4
-
-	local var_24_15 = var_24_14(var_24_13, var_4.easeInOutSine)
-	local var_24_16 = var_1.setOnComplete
-
-	System = var_4
-	arg_24_0.twFocusId = var_24_16(var_24_15, var_4.Action(function()
-		setSizeDelta = var_2_10000
-
-		local var_26_0 = arg_24_0.mapTF
-
-		Vector2 = var_2_10003
-
-		var_2_10000(var_26_0, var_2_10003(2400, 1478))
-
-		SetCompomentEnabled = var_2_10000
-
-		local var_26_1 = arg_24_0.mapTF
-
-		typeof = var_3
-		ScrollRect = var_5
-
-		var_2_10000(var_26_1, var_3(var_5), true)
+	arg_24_0.twFocusId = LeanTween.move(arg_24_0.mapTF, Vector3(0, 0, 0), arg_24_0.duration):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(function()
+		setSizeDelta(arg_24_0.mapTF, Vector2(2400, 1478))
+		SetCompomentEnabled(arg_24_0.mapTF, typeof(ScrollRect), true)
 
 		return
 	end)).uniqueId
-	ipairs = var_1
 
-	local var_24_17
+	local var_24_0 = arg_24_0.hideTFList or {}
 
-	if not arg_24_0.hideTFList then
-		var_24_17 = {}
-	end
-
-	for iter_24_0, iter_24_1 in var_1(var_24_17) do
-		local var_24_18 = arg_24_0
-		local var_24_19 = arg_24_0.managedTween
-
-		LeanTween = var_24_20
-
-		local var_24_20 = var_24_20.value
-		local var_24_21
-
-		go = var_1_10011
-
-		local var_24_22 = var_24_19(var_24_18, var_24_20, var_24_21, var_1_10011(iter_24_1), 0, 1, var_0_1.ALPHA_TIME)
-		local var_24_23 = var_6.setOnUpdate
-
-		System = var_24_20
-
-		var_24_23(var_24_22, var_24_20.Action_float(function(arg_27_0)
-			GetOrAddComponent = var_2_10001
-			var_2_10001(iter_24_1, "CanvasGroup").alpha = arg_27_0
+	for iter_24_0, iter_24_1 in ipairs(var_24_0) do
+		arg_24_0:managedTween(LeanTween.value, nil, go(iter_24_1), 0, 1, var_0_0.ALPHA_TIME):setOnUpdate(System.Action_float(function(arg_27_0)
+			GetOrAddComponent(iter_24_1, "CanvasGroup").alpha = arg_27_0
 
 			return
 		end))
@@ -697,123 +303,49 @@ function var_0_1.OnDetailHide(arg_24_0)
 	return
 end
 
-function var_0_1.onClickUpEntryGood(arg_28_0, arg_28_1)
-	local var_28_0 = arg_28_0
-	local var_28_1 = arg_28_0.emit
-	local var_28_2 = var_0_1.GO_SUBLAYER
-
-	Context = var_1_10006
-
-	local var_28_3 = var_1_10006.New
-	local var_28_4 = {}
-
-	NewEducateTarotEntryMediator = var_1_10009
-	var_28_4.mediator = var_1_10009
-	NewEducateTarotEntryLayer = var_1_10009
-	var_28_4.viewComponent = var_1_10009
-
-	local var_28_5 = {
-		goodId = arg_28_1.id
-	}
-
-	NewEducateTarotEntryLayer = var_10
-	var_28_5.type = var_10.TYPE.SHOP
-	var_28_5.cost = arg_28_1:getConfig("resource_num")
-	var_28_4.data = var_28_5
-
-	var_28_1(var_28_0, var_28_2, var_28_3(var_28_4))
+function var_0_0.onClickUpEntryGood(arg_28_0, arg_28_1)
+	arg_28_0:emit(var_0_0.GO_SUBLAYER, Context.New({
+		mediator = NewEducateTarotEntryMediator,
+		viewComponent = NewEducateTarotEntryLayer,
+		data = {
+			goodId = arg_28_1.id,
+			type = NewEducateTarotEntryLayer.TYPE.SHOP,
+			cost = arg_28_1:getConfig("resource_num")
+		}
+	}))
 
 	return
 end
 
-function var_0_1.FlushView(arg_29_0)
-	local var_29_0 = arg_29_0.contextData.char
-	local var_29_1 = var_1.GetFSM(var_29_0)
-	local var_29_2 = var_1.GetState
+function var_0_0.FlushView(arg_29_0)
+	local var_29_0 = arg_29_0.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.MAP)
 
-	NewEducateFSM = var_1_10004
-
-	local var_29_3 = var_29_2(var_29_1, var_1_10004.SYSTEM.MAP)
-
-	underscore = var_1_10002
-	arg_29_0.eventSiteIds = var_1_10002.map(var_29_3:GetEvents(), function(arg_30_0)
-		local var_30_0 = arg_29_0.contextData.char
-		local var_30_1 = var_1.GetSiteId
-
-		NewEducateConst = var_2_10004
-
-		return var_30_1(var_30_0, var_2_10004.SITE_TYPE.EVENT, arg_30_0)
+	arg_29_0.eventSiteIds = underscore.map(arg_29_0.contextData.char:GetFSM():GetState(NewEducateFSM.SYSTEM.MAP):GetEvents(), function(arg_30_0)
+		return arg_29_0.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.EVENT, arg_30_0)
 	end)
-	table = var_2
 
-	local var_29_4 = var_2.sort
-	local var_29_5 = arg_29_0.eventSiteIds
-
-	CompareFuncs = var_5
-
-	var_29_4(var_29_5, var_5({
+	table.sort(arg_29_0.eventSiteIds, CompareFuncs({
 		function(arg_31_0)
-			pg = var_2_10001
-
-			return var_2_10001.child2_site_display[arg_31_0].position[1]
+			return pg.child2_site_display[arg_31_0].position[1]
 		end
 	}))
 
-	local var_29_6 = arg_29_0.contextData.char
-	local var_29_7 = var_2.GetShipIds(var_29_6)
-
-	underscore = var_29_1
-
-	local var_29_8 = var_29_1.select(var_29_7, function(arg_32_0)
-		local var_32_0 = arg_29_0
-		local var_32_2
-
-		if not var_1.IsMaxShip(var_32_0, arg_32_0) then
-			local var_32_1 = var_29_3
-
-			var_32_2 = not var_1.IsSelectedShip(var_32_1, arg_32_0)
-		else
-			var_32_2 = false
-		end
-
-		if false then
-			var_32_2 = true
-		end
-
-		return var_32_2
+	arg_29_0.shipSiteIds = underscore.map(underscore.select(arg_29_0.contextData.char:GetShipIds(), function(arg_32_0)
+		return not arg_29_0:IsMaxShip(arg_32_0) and not var_29_0:IsSelectedShip(arg_32_0)
+	end), function(arg_33_0)
+		return arg_29_0.contextData.char:GetSiteId(NewEducateConst.SITE_TYPE.SHIP, arg_33_0)
 	end)
 
-	underscore = var_3
-	arg_29_0.shipSiteIds = var_3.map(var_29_8, function(arg_33_0)
-		local var_33_0 = arg_29_0.contextData.char
-		local var_33_1 = var_1.GetSiteId
-
-		NewEducateConst = var_2_10004
-
-		return var_33_1(var_33_0, var_2_10004.SITE_TYPE.SHIP, arg_33_0)
-	end)
-
-	local var_29_9 = arg_29_0.eventUIList
-
-	var_3.align(var_29_9, #arg_29_0.eventSiteIds)
-
-	local var_29_10 = arg_29_0.shipUIList
-
-	var_3.align(var_29_10, #arg_29_0.shipSiteIds)
+	arg_29_0.eventUIList:align(#arg_29_0.eventSiteIds)
+	arg_29_0.shipUIList:align(#arg_29_0.shipSiteIds)
 	arg_29_0:InitPermanentNodes()
-
-	setActive = var_3
-
-	local var_29_11 = arg_29_0.shopTF
-	local var_29_12 = arg_29_0.contextData.char
-
-	var_3(var_29_11, var_6.IsUnlock(var_29_12, "shop"))
+	setActive(arg_29_0.shopTF, arg_29_0.contextData.char:IsUnlock("shop"))
 	arg_29_0:CheckUpgradeNormalSite()
 
 	return
 end
 
-function var_0_1.InitPermanentNodes(arg_34_0)
+function var_0_0.InitPermanentNodes(arg_34_0)
 	if arg_34_0.travelSiteId then
 		arg_34_0:InitPermanent(arg_34_0.travelSiteId, arg_34_0.travelTF)
 	end
@@ -829,119 +361,55 @@ function var_0_1.InitPermanentNodes(arg_34_0)
 	return
 end
 
-function var_0_1.InitPermanent(arg_35_0, arg_35_1, arg_35_2)
-	pg = var_1_10003
-
-	local var_35_0 = var_1_10003.child2_site_display[arg_35_1]
-
-	LoadImageSpriteAsync = var_1_10004
-
-	var_1_10004("neweducateicon/" .. var_35_0.event_icon, arg_35_2, true)
-
-	LoadImageSpriteAsync = var_1_10004
-
-	var_1_10004("neweducateicon/" .. var_35_0.event_title, arg_35_2:Find("name"), true)
-
-	setAnchoredPosition = var_1_10004
-
-	var_1_10004(arg_35_2, {
-		x = var_35_0.position[1],
-		y = var_35_0.position[2]
+function var_0_0.InitPermanent(arg_35_0, arg_35_1, arg_35_2)
+	LoadImageSpriteAsync("neweducateicon/" .. pg.child2_site_display[arg_35_1].event_icon, arg_35_2, true)
+	LoadImageSpriteAsync("neweducateicon/" .. pg.child2_site_display[arg_35_1].event_title, arg_35_2:Find("name"), true)
+	setAnchoredPosition(arg_35_2, {
+		x = pg.child2_site_display[arg_35_1].position[1],
+		y = pg.child2_site_display[arg_35_1].position[2]
 	})
 
 	return
 end
 
-function var_0_1.IsMaxShip(arg_36_0, arg_36_1)
-	pg = var_1_10002
-
-	local var_36_0 = var_1_10002.child2_site_character[arg_36_1]
-
-	pg = var_1_10003
-
-	local var_36_1 = var_1_10003.child2_site_character.get_id_list_by_group[var_36_0.group]
-
-	underscore = var_4
-
-	return not var_4.detect(var_36_1, function(arg_37_0)
-		pg = var_2_10001
-
-		return var_2_10001.child2_site_character[arg_37_0].level == var_36_0.level + 1
+function var_0_0.IsMaxShip(arg_36_0, arg_36_1)
+	return not underscore.detect(pg.child2_site_character.get_id_list_by_group[pg.child2_site_character[arg_36_1].group], function(arg_37_0)
+		return pg.child2_site_character[arg_37_0].level == var_0.level + 1
 	end)
 end
 
-function var_0_1.IsMaxNormal(arg_38_0, arg_38_1)
-	pg = var_1_10002
+function var_0_0.IsMaxNormal(arg_38_0, arg_38_1)
+	local var_38_0 = pg.child2_site_normal[arg_38_1]
 
-	local var_38_0 = var_1_10002.child2_site_normal[arg_38_1]
+	return not underscore.detect(pg.child2_site_normal.get_id_list_by_character[arg_38_0.contextData.char.id], function(arg_39_0)
+		local var_39_0 = pg.child2_site_normal[arg_39_0]
 
-	pg = var_1_10003
-
-	local var_38_1 = var_1_10003.child2_site_normal.get_id_list_by_character[arg_38_0.contextData.char.id]
-
-	underscore = var_4
-
-	return not var_4.detect(var_38_1, function(arg_39_0)
-		pg = var_2_10001
-
-		return var_2_10001.child2_site_normal[arg_39_0].type == var_38_0.type and var_1.site_lv == var_38_0.site_lv + 1
+		return pg.child2_site_normal[arg_39_0].type == var_38_0.type and var_39_0.site_lv == var_38_0.site_lv + 1
 	end)
 end
 
-function var_0_1.CheckUpgradeNormalSite(arg_40_0)
-	local var_40_0 = {}
+function var_0_0.CheckUpgradeNormalSite(arg_40_0)
+	for iter_40_0, iter_40_1 in pairs(NewEducateConst.SITE_NORMAL_TYPE) do
+		local var_40_0 = arg_40_0.contextData.char:GetNormalIdByType(iter_40_1)
+		local var_40_1 = arg_40_0.contextData.char:IsMatchComplex(pg.child2_site_normal[var_40_0].special_args)
 
-	pairs = var_1_10002
-	NewEducateConst = var_1_10004
-
-	for iter_40_0, iter_40_1 in var_1_10002(var_1_10004.SITE_NORMAL_TYPE) do
-		local var_40_1 = arg_40_0.contextData.char
-		local var_40_2 = var_7.GetNormalIdByType(var_40_1, iter_40_1)
-
-		pg = var_1_10008
-		var_1_10008 = var_1_10008.child2_site_normal[var_40_2].special_args
-
-		local var_40_3 = arg_40_0.contextData.char
-		local var_40_4 = var_9.IsMatchComplex(var_40_3, var_1_10008)
-
-		if not arg_40_0:IsMaxNormal(var_40_2) and var_40_4 then
-			table = var_10
-
-			var_10.insert(var_40_0, var_40_2)
+		if not arg_40_0:IsMaxNormal(var_40_0) and var_40_1 then
+			table.insert({}, var_40_0)
 		end
 	end
 
-	local var_40_5 = #var_40_0
-
-	if 0 < var_40_5 then
-		local var_40_6 = {}
-
-		ipairs = var_3
-
-		for iter_40_2, iter_40_3 in var_3(var_40_0) do
-			table = var_1_10008
-
-			var_1_10008.insert(var_40_6, function(arg_41_0)
-				local var_41_0 = arg_40_0
-				local var_41_1 = var_1.emit
-
-				NewEducateMapMediator = var_2_10004
-
-				var_41_1(var_41_0, var_2_10004.ON_UPGRADE_NORMAL, iter_40_3, arg_41_0)
+	if #{} > 0 then
+		for iter_40_2, iter_40_3 in ipairs({}) do
+			table.insert({}, function(arg_41_0)
+				arg_40_0:emit(NewEducateMapMediator.ON_UPGRADE_NORMAL, iter_40_3, arg_41_0)
 
 				return
 			end)
 		end
 
-		seriesAsync = var_3
-
-		var_3(var_40_6, function()
-			local var_42_0 = arg_40_0.detailPanel
-
-			if var_0.isShowing(var_42_0) then
-				local var_42_1 = arg_40_0.detailPanel
-
-				var_0.ExecuteAction(var_42_1, "Flush")
+		seriesAsync({}, function()
+			if arg_40_0.detailPanel:isShowing() then
+				arg_40_0.detailPanel:ExecuteAction("Flush")
 			end
 
 			return
@@ -951,137 +419,59 @@ function var_0_1.CheckUpgradeNormalSite(arg_40_0)
 	return
 end
 
-function var_0_1.UpdateShipSite(arg_43_0, arg_43_1, arg_43_2)
+function var_0_0.UpdateShipSite(arg_43_0, arg_43_1, arg_43_2)
+	local var_43_0 = arg_43_0.shipSiteIds[arg_43_1 + 1]
+
 	arg_43_2.name = arg_43_0.shipSiteIds[arg_43_1 + 1]
-	pg = var_4
 
-	local var_43_0 = var_4.child2_site_display[var_3]
-	local var_43_1 = arg_43_2:Find("bottom/name_mask/name")
+	local var_43_1 = pg.child2_site_display[arg_43_0.shipSiteIds[arg_43_1 + 1]]
 
-	setScrollText = var_1_10006
-
-	var_1_10006(var_43_1, var_43_0.name)
-
-	setAnchoredPosition = var_1_10006
-
-	var_1_10006(arg_43_2, {
-		x = var_43_0.position[1],
-		y = var_43_0.position[2]
+	setScrollText(arg_43_2:Find("bottom/name_mask/name"), pg.child2_site_display[arg_43_0.shipSiteIds[arg_43_1 + 1]].name)
+	setAnchoredPosition(arg_43_2, {
+		x = var_43_1.position[1],
+		y = var_43_1.position[2]
 	})
+	LoadImageSpriteAsync("squareicon/" .. var_43_1.icon, arg_43_2:Find("top/mask/icon"), true)
 
-	LoadImageSpriteAsync = var_1_10006
+	local var_43_2 = pg.child2_site_character[var_43_1.param].level
 
-	var_1_10006("squareicon/" .. var_43_0.icon, arg_43_2:Find("top/mask/icon"), true)
-
-	pg = var_1_10006
-
-	local var_43_2 = var_1_10006.child2_site_character[var_43_0.param].level
-
-	eachChild = var_7
-
-	var_7(arg_43_2:Find("top/lv"), function(arg_44_0)
-		setActive = var_2_10001
-
-		local var_44_0 = arg_44_0
-
-		tonumber = var_2_10004
-
-		var_2_10001(var_44_0, var_2_10004(arg_44_0.name) <= var_43_2)
+	eachChild(arg_43_2:Find("top/lv"), function(arg_44_0)
+		setActive(arg_44_0, tonumber(arg_44_0.name) <= var_43_2)
 
 		return
 	end)
-
-	setActive = var_7
-
-	var_7(arg_43_2:Find("top/red"), var_43_0.bg == "red")
-
-	setActive = var_7
-
-	var_7(arg_43_2:Find("top/blue"), var_43_0.bg == "blue")
-
-	setActive = var_7
-
-	var_7(arg_43_2:Find("bottom/red"), var_43_0.bg == "red")
-
-	setActive = var_7
-
-	var_7(arg_43_2:Find("bottom/blue"), var_43_0.bg == "blue")
-
-	setActive = var_7
-
-	var_7(arg_43_2:Find("bottom/grey"), false)
-
-	onButton = var_7
-
-	local var_43_3 = arg_43_0
-	local var_43_4 = arg_43_2
-
-	local function var_43_5()
-		local var_45_0 = arg_43_0.contextData.char
-		local var_45_1 = var_0.GetFSM(var_45_0)
-
-		if var_0.CheckPriorityStystem(var_45_1) then
-			pg = var_0
-
-			local var_45_2 = var_0.TipsMgr.GetInstance()
-			local var_45_3 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_45_3(var_45_2, var_2_10003("child2_priority_tip"))
+	setActive(arg_43_2:Find("top/red"), var_43_1.bg == "red")
+	setActive(arg_43_2:Find("top/blue"), var_43_1.bg == "blue")
+	setActive(arg_43_2:Find("bottom/red"), var_43_1.bg == "red")
+	setActive(arg_43_2:Find("bottom/blue"), var_43_1.bg == "blue")
+	setActive(arg_43_2:Find("bottom/grey"), false)
+	onButton(arg_43_0, arg_43_2, function()
+		if arg_43_0.contextData.char:GetFSM():CheckPriorityStystem() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("child2_priority_tip"))
 
 			return
 		end
 
-		local var_45_4 = arg_43_0
+		arg_43_0:FocusTF(arg_43_2)
 
-		var_0.FocusTF(var_45_4, arg_43_2)
+		arg_43_0.curSiteId = var_43_0
 
-		arg_43_0.curSiteId = var_0
-
-		local var_45_5 = arg_43_0.detailPanel
-
-		var_0.ExecuteAction(var_45_5, "Show", var_0)
-
-		local var_45_6 = arg_43_0
-
-		var_0.ShowInfoUI(var_45_6)
+		arg_43_0.detailPanel:ExecuteAction("Show", var_43_0)
+		arg_43_0:ShowInfoUI()
 
 		return
-	end
-
-	SFX_PANEL = var_12
-
-	var_7(var_43_3, var_43_4, var_43_5, var_12)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.UpdateShipLv(arg_46_0)
-	eachChild = var_1_10001
+function var_0_0.UpdateShipLv(arg_46_0)
+	eachChild(arg_46_0.shipUIList.container, function(arg_47_0)
+		if tonumber(arg_47_0.name) == arg_46_0.curSiteId then
+			local var_47_0 = pg.child2_site_character[pg.child2_site_display[arg_46_0.curSiteId].param].level + 1
 
-	var_1_10001(arg_46_0.shipUIList.container, function(arg_47_0)
-		tonumber = var_2_10001
-
-		if var_2_10001(arg_47_0.name) == arg_46_0.curSiteId then
-			pg = var_1
-
-			local var_47_0 = var_1.child2_site_display[arg_46_0.curSiteId]
-
-			pg = var_2
-
-			local var_47_1 = var_2.child2_site_character[var_47_0.param].level + 1
-
-			eachChild = var_3
-
-			var_3(arg_47_0:Find("top/lv"), function(arg_48_0)
-				setActive = var_3_10001
-
-				local var_48_0 = arg_48_0
-
-				tonumber = var_3_10004
-
-				var_3_10001(var_48_0, var_3_10004(arg_48_0.name) <= var_47_1)
+			eachChild(arg_47_0:Find("top/lv"), function(arg_48_0)
+				setActive(arg_48_0, tonumber(arg_48_0.name) <= var_47_0)
 
 				return
 			end)
@@ -1093,210 +483,109 @@ function var_0_1.UpdateShipLv(arg_46_0)
 	return
 end
 
-function var_0_1.OnShoppingDone(arg_49_0)
-	local var_49_0 = arg_49_0.detailPanel
-
-	var_1.ExecuteAction(var_49_0, "FlushShop")
-	arg_49_0:emit(var_0_1.ON_PRIORITY_STATE)
+function var_0_0.OnShoppingDone(arg_49_0)
+	arg_49_0.detailPanel:ExecuteAction("FlushShop")
+	arg_49_0:emit(var_0_0.ON_PRIORITY_STATE)
 
 	return
 end
 
-function var_0_1.OnRefreshShopDone(arg_50_0)
-	local var_50_0 = arg_50_0.detailPanel
-
-	var_1.ExecuteAction(var_50_0, "FlushShop")
+function var_0_0.OnRefreshShopDone(arg_50_0)
+	arg_50_0.detailPanel:ExecuteAction("FlushShop")
 
 	return
 end
 
-function var_0_1.OnResUpdate(arg_51_0)
-	local var_51_0 = arg_51_0.topPanel
-
-	var_1.ExecuteAction(var_51_0, "FlushRes")
+function var_0_0.OnResUpdate(arg_51_0)
+	arg_51_0.topPanel:ExecuteAction("FlushRes")
 
 	return
 end
 
-function var_0_1.OnAttrUpdate(arg_52_0)
-	local var_52_0 = arg_52_0.infoPanel
-
-	var_1.ExecuteAction(var_52_0, "FlushAttrs")
-
-	local var_52_1 = arg_52_0.topPanel
-
-	var_1.ExecuteAction(var_52_1, "FlushProgress")
+function var_0_0.OnAttrUpdate(arg_52_0)
+	arg_52_0.infoPanel:ExecuteAction("FlushAttrs")
+	arg_52_0.topPanel:ExecuteAction("FlushProgress")
 
 	return
 end
 
-function var_0_1.OnPersonalityUpdate(arg_53_0, arg_53_1, arg_53_2)
-	local var_53_0 = arg_53_0.personalityTipPanel
-
-	var_3.ExecuteAction(var_53_0, "FlushPersonality", arg_53_1, arg_53_2)
+function var_0_0.OnPersonalityUpdate(arg_53_0, arg_53_1, arg_53_2)
+	arg_53_0.personalityTipPanel:ExecuteAction("FlushPersonality", arg_53_1, arg_53_2)
 
 	return
 end
 
-function var_0_1.OnTalentUpdate(arg_54_0)
-	local var_54_0 = arg_54_0.infoPanel
-
-	var_1.ExecuteAction(var_54_0, "FlushTalents")
+function var_0_0.OnTalentUpdate(arg_54_0)
+	arg_54_0.infoPanel:ExecuteAction("FlushTalents")
 
 	return
 end
 
-function var_0_1.OnStatusUpdate(arg_55_0)
-	local var_55_0 = arg_55_0.infoPanel
-
-	var_1.ExecuteAction(var_55_0, "FlushStatus")
+function var_0_0.OnStatusUpdate(arg_55_0)
+	arg_55_0.infoPanel:ExecuteAction("FlushStatus")
 
 	return
 end
 
-function var_0_1.OnTarotUpdate(arg_56_0)
-	local var_56_0 = arg_56_0.infoPanel
-
-	var_1.ExecuteAction(var_56_0, "FlushTarot")
+function var_0_0.OnTarotUpdate(arg_56_0)
+	arg_56_0.infoPanel:ExecuteAction("FlushTarot")
 
 	return
 end
 
-function var_0_1.OnNodeStart(arg_57_0, arg_57_1)
-	local var_57_0 = arg_57_0.nodePanel
-
-	var_2.ExecuteAction(var_57_0, "StartNode", arg_57_1)
+function var_0_0.OnNodeStart(arg_57_0, arg_57_1)
+	arg_57_0.nodePanel:ExecuteAction("StartNode", arg_57_1)
 
 	return
 end
 
-function var_0_1.OnNextNode(arg_58_0, arg_58_1)
-	local var_58_0 = arg_58_0.nodePanel
-
-	var_2.ExecuteAction(var_58_0, "ProceedNode", arg_58_1.node, arg_58_1.drop, arg_58_1.noNextCb)
+function var_0_0.OnNextNode(arg_58_0, arg_58_1)
+	arg_58_0.nodePanel:ExecuteAction("ProceedNode", arg_58_1.node, arg_58_1.drop, arg_58_1.noNextCb)
 
 	return
 end
 
-function var_0_1.FocusTF(arg_59_0, arg_59_1, arg_59_2)
-	setSizeDelta = var_1_10003
+function var_0_0.FocusTF(arg_59_0, arg_59_1, arg_59_2)
+	setSizeDelta(arg_59_0.mapTF, Vector2(3280, 2038))
 
-	local var_59_0 = arg_59_0.mapTF
+	arg_59_0.extendLimit = Vector2(arg_59_0.mapTF.rect.width * var_0_0.SCALE - arg_59_0._tf.rect.width, arg_59_0.mapTF.rect.height * var_0_0.SCALE - arg_59_0._tf.rect.height) / 2
 
-	Vector2 = var_1_10006
+	local var_59_0 = arg_59_1.anchoredPosition * -1
 
-	var_1_10003(var_59_0, var_1_10006(3280, 2038))
-
-	Vector2 = var_1_10003
-	arg_59_0.extendLimit = var_1_10003(arg_59_0.mapTF.rect.width * var_0_1.SCALE - arg_59_0._tf.rect.width, arg_59_0.mapTF.rect.height * var_0_1.SCALE - arg_59_0._tf.rect.height) / 2
-
-	local var_59_1 = arg_59_1.anchoredPosition * -1
-
-	math = var_1_10004
-	var_59_1.x = var_1_10004.clamp(var_59_1.x, -arg_59_0.extendLimit.x, arg_59_0.extendLimit.x) * var_0_1.SCALE
-	math = var_4
-	var_59_1.y = var_4.clamp(var_59_1.y, -arg_59_0.extendLimit.y, arg_59_0.extendLimit.y) * var_0_1.SCALE
+	;(arg_59_1.anchoredPosition * -1).x = math.clamp((arg_59_1.anchoredPosition * -1).x, -arg_59_0.extendLimit.x, arg_59_0.extendLimit.x) * var_0_0.SCALE
+	;(arg_59_1.anchoredPosition * -1).y = math.clamp((arg_59_1.anchoredPosition * -1).y, -arg_59_0.extendLimit.y, arg_59_0.extendLimit.y) * var_0_0.SCALE
 
 	if arg_59_0.twFocusId then
-		LeanTween = var_4
-
-		var_4.cancel(arg_59_0.twFocusId)
+		LeanTween.cancel(arg_59_0.twFocusId)
 
 		arg_59_0.twFocusId = nil
 	end
 
-	local var_59_2 = {}
+	local var_59_1 = {}
 
-	table = var_5
+	table.insert({}, function(arg_60_0)
+		SetCompomentEnabled(arg_59_0.mapTF, typeof(ScrollRect), false)
 
-	var_5.insert(var_59_2, function(arg_60_0)
-		SetCompomentEnabled = var_2_10001
+		local var_60_0 = arg_59_0
 
-		local var_60_0 = arg_59_0.mapTF
+		var_60_0.duration = (arg_59_0.mapTF.anchoredPosition - var_59_0).magnitude > 0 and (arg_59_0.mapTF.anchoredPosition - var_59_0).magnitude / (var_0_0.SPEED * math.sqrt((arg_59_0.mapTF.anchoredPosition - var_59_0).magnitude)) or 0
 
-		typeof = var_2_10004
-		ScrollRect = var_2_10006
-
-		var_2_10001(var_60_0, var_2_10004(var_2_10006), false)
-
-		local var_60_1 = (arg_59_0.mapTF.anchoredPosition - var_59_1).magnitude
-		local var_60_2 = arg_59_0
-
-		if var_60_1 > 0 then
-			local var_60_3 = var_0_1.SPEED
-
-			math = var_4
-
-			local var_60_4
-
-			if not (var_60_1 / (var_60_3 * var_4.sqrt(var_60_1))) then
-				var_60_4 = 0
-			end
-
-			var_60_2.duration = var_60_4
-
-			local var_60_5 = arg_59_0
-			local var_60_6 = var_2.managedTween
-
-			LeanTween = var_5
-
-			local var_60_7 = var_5.value
-			local var_60_8
-
-			go = var_2_10007
-
-			local var_60_9 = var_60_6(var_60_5, var_60_7, var_60_8, var_2_10007(arg_59_0.mapTF), var_0_1.DEFAULT_SCALE, var_0_1.SCALE, arg_59_0.duration)
-			local var_60_10 = var_2.setOnUpdate
-
-			System = var_60_7
-
-			var_60_10(var_60_9, var_60_7.Action_float(function(arg_61_0)
-				setLocalScale = var_3_10001
-
-				var_3_10001(arg_59_0.mapTF, {
-					x = arg_61_0,
-					y = arg_61_0,
-					z = arg_61_0
-				})
-
-				return
-			end))
-
-			local var_60_11 = arg_59_0
-
-			LeanTween = var_60_4
-
-			local var_60_12 = var_60_4.move
-			local var_60_13 = arg_59_0.mapTF
-
-			Vector3 = var_60_8
-
-			local var_60_14 = var_60_12(var_60_13, var_60_8(var_59_1.x, var_59_1.y, 0), arg_59_0.duration)
-			local var_60_15 = var_3.setEase
-
-			LeanTweenType = var_6
-
-			local var_60_16 = var_60_15(var_60_14, var_6.easeInOutSine)
-			local var_60_17 = var_3.setOnComplete
-
-			System = var_6
-			var_60_11.twFocusId = var_60_17(var_60_16, var_6.Action(arg_60_0)).uniqueId
+		arg_59_0:managedTween(LeanTween.value, nil, go(arg_59_0.mapTF), var_0_0.DEFAULT_SCALE, var_0_0.SCALE, arg_59_0.duration):setOnUpdate(System.Action_float(function(arg_61_0)
+			setLocalScale(arg_59_0.mapTF, {
+				x = arg_61_0,
+				y = arg_61_0,
+				z = arg_61_0
+			})
 
 			return
-		end
+		end))
+
+		arg_59_0.twFocusId = LeanTween.move(arg_59_0.mapTF, Vector3(var_59_0.x, var_59_0.y, 0), arg_59_0.duration):setEase(LeanTweenType.easeInOutSine):setOnComplete(System.Action(arg_60_0)).uniqueId
+
+		return
 	end)
-
-	seriesAsync = var_5
-
-	var_5(var_59_2, function()
-		SetCompomentEnabled = var_2_10000
-
-		local var_62_0 = arg_59_0.mapTF
-
-		typeof = var_2_10003
-		ScrollRect = var_2_10005
-
-		var_2_10000(var_62_0, var_2_10003(var_2_10005), true)
+	seriesAsync(var_59_1, function()
+		SetCompomentEnabled(arg_59_0.mapTF, typeof(ScrollRect), true)
 
 		if arg_59_2 then
 			arg_59_2()
@@ -1308,19 +597,13 @@ function var_0_1.FocusTF(arg_59_0, arg_59_1, arg_59_2)
 	return
 end
 
-function var_0_1.onBackPressed(arg_63_0)
-	local var_63_0 = arg_63_0.nodePanel
-
-	if var_1.isShowing(var_63_0) then
+function var_0_0.onBackPressed(arg_63_0)
+	if arg_63_0.nodePanel:isShowing() then
 		return
 	end
 
-	local var_63_1 = arg_63_0.detailPanel
-
-	if var_1.isShowing(var_63_1) then
-		local var_63_2 = arg_63_0.detailPanel
-
-		var_1.Hide(var_63_2)
+	if arg_63_0.detailPanel:isShowing() then
+		arg_63_0.detailPanel:Hide()
 	else
 		arg_63_0.super.onBackPressed(arg_63_0)
 	end
@@ -1328,43 +611,33 @@ function var_0_1.onBackPressed(arg_63_0)
 	return
 end
 
-function var_0_1.willExit(arg_64_0)
+function var_0_0.willExit(arg_64_0)
 	if arg_64_0.topPanel then
-		local var_64_0 = arg_64_0.topPanel
-
-		var_1.Destroy(var_64_0)
+		arg_64_0.topPanel:Destroy()
 
 		arg_64_0.topPanel = nil
 	end
 
 	if arg_64_0.infoPanel then
-		local var_64_1 = arg_64_0.infoPanel
-
-		var_1.Destroy(var_64_1)
+		arg_64_0.infoPanel:Destroy()
 
 		arg_64_0.infoPanel = nil
 	end
 
 	if arg_64_0.detailPanel then
-		local var_64_2 = arg_64_0.detailPanel
-
-		var_1.Destroy(var_64_2)
+		arg_64_0.detailPanel:Destroy()
 
 		arg_64_0.detailPanel = nil
 	end
 
 	if arg_64_0.personalityTipPanel then
-		local var_64_3 = arg_64_0.personalityTipPanel
-
-		var_1.Destroy(var_64_3)
+		arg_64_0.personalityTipPanel:Destroy()
 
 		arg_64_0.personalityTipPanel = nil
 	end
 
 	if arg_64_0.nodePanel then
-		local var_64_4 = arg_64_0.nodePanel
-
-		var_1.Destroy(var_64_4)
+		arg_64_0.nodePanel:Destroy()
 
 		arg_64_0.nodePanel = nil
 	end
@@ -1372,4 +645,4 @@ function var_0_1.willExit(arg_64_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,18 +1,12 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LinerRoomInfoPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "LinerRoomInfoPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-var_0_1.TYPEWRITE_SPEED = 0.03
-var_0_1.TYPE_EXPLORE = 1
-var_0_1.TYPE_EVENT = 2
-var_0_1.MODE_EVENT_DESC = 1
-var_0_1.MODE_OPTION_DESC = 2
-var_0_1.MODE_ROOM_DESC = 3
-var_0_1.TIME_DIFF_LIST = {
+var_0_0.TYPEWRITE_SPEED = 0.03
+var_0_0.TYPE_EXPLORE = 1
+var_0_0.TYPE_EVENT = 2
+var_0_0.MODE_EVENT_DESC = 1
+var_0_0.MODE_OPTION_DESC = 2
+var_0_0.MODE_ROOM_DESC = 3
+var_0_0.TIME_DIFF_LIST = {
 	1,
 	2,
 	3,
@@ -23,7 +17,7 @@ var_0_1.TIME_DIFF_LIST = {
 	13,
 	14
 }
-var_0_1.ICON_LIST = {
+var_0_0.ICON_LIST = {
 	2,
 	5,
 	6,
@@ -32,128 +26,53 @@ var_0_1.ICON_LIST = {
 	14
 }
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "LinerRoomInfoPage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.dotTF = arg_2_0._tf:Find("frame/bottom/name/Image")
+	arg_2_0.nameTF = arg_2_0._tf:Find("frame/bottom/name/Text")
+	arg_2_0.iconTF = arg_2_0._tf:Find("frame/bottom/icon/mask/Image")
+	arg_2_0.descTF = arg_2_0._tf:Find("frame/bottom/Text")
+	arg_2_0.nextTF = arg_2_0._tf:Find("frame/bottom/next")
+	arg_2_0.typewrite = GetComponent(arg_2_0.descTF, typeof(Typewriter))
 
-	arg_2_0.dotTF = var_1.Find(var_2_0, "frame/bottom/name/Image")
+	arg_2_0.typewrite:setSpeed(var_0_0.TYPEWRITE_SPEED)
 
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.nameTF = var_1.Find(var_2_1, "frame/bottom/name/Text")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.iconTF = var_1.Find(var_2_2, "frame/bottom/icon/mask/Image")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.descTF = var_1.Find(var_2_3, "frame/bottom/Text")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.nextTF = var_1.Find(var_2_4, "frame/bottom/next")
-	GetComponent = var_1
-
-	local var_2_5 = arg_2_0.descTF
-
-	typeof = var_4
-	Typewriter = var_1_10006
-	arg_2_0.typewrite = var_1(var_2_5, var_4(var_1_10006))
-
-	local var_2_6 = arg_2_0.typewrite
-
-	var_1.setSpeed(var_2_6, var_0_1.TYPEWRITE_SPEED)
-
-	local var_2_7 = arg_2_0._tf
-
-	arg_2_0.optionsTF = var_1.Find(var_2_7, "frame/options")
+	arg_2_0.optionsTF = arg_2_0._tf:Find("frame/options")
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "mask")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.OnClick(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("mask"), function()
+		arg_3_0:OnClick()
 
 		return
-	end
-
-	SFX_PANEL = var_3_1
-
-	var_1_10001(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	onButton = var_1_10001
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = arg_3_0._tf
-	local var_3_6 = var_4.Find(var_3_5, "frame/bottom")
-
-	local function var_3_7()
-		local var_5_0 = arg_3_0
-
-		var_0.OnClick(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("frame/bottom"), function()
+		arg_3_0:OnClick()
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_3_5
-
-	var_1_10001(var_3_4, var_3_6, var_3_7, var_3_5)
-
-	local var_3_8 = arg_3_0.typewrite
-
-	function var_3_8.endFunc()
+	function arg_3_0.typewrite.endFunc()
 		if arg_3_0.curIndex == #arg_3_0.descList then
-			switch = var_0
-
-			var_0(arg_3_0.mode, {
-				[var_0_1.MODE_EVENT_DESC] = function()
-					setActive = var_3_10000
-
-					var_3_10000(arg_3_0.optionsTF, true)
-
-					local var_7_0 = arg_3_0
-
-					var_0.ShowOptionsAnim(var_7_0)
+			switch(arg_3_0.mode, {
+				[var_0_0.MODE_EVENT_DESC] = function()
+					setActive(arg_3_0.optionsTF, true)
+					arg_3_0:ShowOptionsAnim()
 
 					return
 				end,
-				[var_0_1.MODE_OPTION_DESC] = function()
-					pg = var_3_10000
-
-					local var_8_0 = var_3_10000.TipsMgr.GetInstance()
-					local var_8_1 = var_0.ShowTips
-
-					i18n = var_3_10003
-
-					var_8_1(var_8_0, var_3_10003("liner_event_get_tip", arg_3_0.eventName))
+				[var_0_0.MODE_OPTION_DESC] = function()
+					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_event_get_tip", arg_3_0.eventName))
 
 					return
 				end,
-				[var_0_1.MODE_ROOM_DESC] = function()
-					pg = var_3_10000
-
-					local var_9_0 = var_3_10000.TipsMgr.GetInstance()
-					local var_9_1 = var_0.ShowTips
-
-					i18n = var_3_10003
-
-					local var_9_2 = "liner_room_get_tip"
-					local var_9_3 = arg_3_0.room
-
-					var_9_1(var_9_0, var_3_10003(var_9_2, var_6.GetName(var_9_3)))
+				[var_0_0.MODE_ROOM_DESC] = function()
+					pg.TipsMgr.GetInstance():ShowTips(i18n("liner_room_get_tip", arg_3_0.room:GetName()))
 
 					return
 				end
@@ -166,87 +85,36 @@ function var_0_1.OnInit(arg_3_0)
 		return
 	end
 
-	UIItemList = var_3_8
+	arg_3_0.optionsUIList = UIItemList.New(arg_3_0.optionsTF, arg_3_0.optionsTF:Find("tpl"))
 
-	local var_3_9 = var_3_8.New
-	local var_3_10 = arg_3_0.optionsTF
-	local var_3_11 = arg_3_0.optionsTF
-
-	arg_3_0.optionsUIList = var_3_9(var_3_10, var_4.Find(var_3_11, "tpl"))
-
-	local var_3_12 = arg_3_0.optionsUIList
-
-	var_1.make(var_3_12, function(arg_10_0, arg_10_1, arg_10_2)
-		UIItemList = var_2_10003
-
-		if arg_10_0 == var_2_10003.EventUpdate then
-			local var_10_0 = arg_10_1 + 1
-			local var_10_1 = arg_3_0.events[var_10_0]
-
-			setText = var_2_10005
-
-			local var_10_2 = arg_10_2:Find("Text")
-			local var_10_3 = var_10_1
-
-			var_2_10005(var_10_2, var_10_1.GetOptionName(var_10_3))
-
-			onButton = var_2_10005
-
-			local var_10_4 = arg_3_0
-			local var_10_5 = arg_10_2
-
-			local function var_10_6()
-				table = var_3_10000
-
-				if var_3_10000.contains(arg_3_0.finishEventIds, var_10_1.id) then
+	arg_3_0.optionsUIList:make(function(arg_10_0, arg_10_1, arg_10_2)
+		if arg_10_0 == UIItemList.EventUpdate then
+			setText(arg_10_2:Find("Text"), arg_3_0.events[arg_10_1 + 1]:GetOptionName())
+			onButton(arg_3_0, arg_10_2, function()
+				if table.contains(arg_3_0.finishEventIds, var_0.id) then
 					return
 				end
 
 				arg_3_0.isClickEvent = true
 
-				local var_11_0 = arg_3_0
-				local var_11_1 = var_0.emit
-
-				LinerMediator = var_3
-
-				var_11_1(var_11_0, var_3.CLICK_EVENT, {
+				arg_3_0:emit(LinerMediator.CLICK_EVENT, {
 					actId = arg_3_0.activity.id,
 					roomId = arg_3_0.room.id,
-					eventId = var_10_1.id,
+					eventId = var_0.id,
 					callback = function()
-						local var_12_0 = arg_3_0
-						local var_12_1 = var_10_1
+						arg_3_0.eventName = var_0:GetTitle()
 
-						var_12_0.eventName = var_1.GetTitle(var_12_1)
-
-						local var_12_2 = arg_3_0
-						local var_12_3 = var_0.SetContent
-						local var_12_4 = var_10_1
-
-						var_12_3(var_12_2, var_3.GetOptionDisplay(var_12_4), var_0_1.MODE_OPTION_DESC)
-
-						table = var_12_3
-
-						var_12_3.insert(arg_3_0.finishEventIds, var_10_1.id)
-
-						table = var_0
-
-						var_0.remove(arg_3_0.events, var_10_0)
-
-						local var_12_5 = arg_3_0.optionsUIList
-
-						var_0.align(var_12_5, #arg_3_0.events)
+						arg_3_0:SetContent(var_0:GetOptionDisplay(), var_0_0.MODE_OPTION_DESC)
+						table.insert(arg_3_0.finishEventIds, var_0.id)
+						table.remove(arg_3_0.events, var_0)
+						arg_3_0.optionsUIList:align(#arg_3_0.events)
 
 						return
 					end
 				})
 
 				return
-			end
-
-			SFX_CONFIRM = var_10_3
-
-			var_2_10005(var_10_4, var_10_5, var_10_6, var_10_3)
+			end, SFX_CONFIRM)
 		end
 
 		return
@@ -255,197 +123,94 @@ function var_0_1.OnInit(arg_3_0)
 	return
 end
 
-function var_0_1.ShowInfo(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
+function var_0_0.ShowInfo(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 	arg_13_0.activity = arg_13_1
-
-	local var_13_0 = arg_13_0.activity
-
-	arg_13_0.curTime = var_4.GetCurTime(var_13_0)
-	LinerRoom = var_4
-	arg_13_0.room = var_4.New(arg_13_2)
+	arg_13_0.curTime = arg_13_0.activity:GetCurTime()
+	arg_13_0.room = LinerRoom.New(arg_13_2)
 	arg_13_0.callback = arg_13_3
-	setText = var_4
 
-	local var_13_1 = arg_13_0.nameTF
-	local var_13_2 = arg_13_0.room
+	setText(arg_13_0.nameTF, arg_13_0.room:GetName())
 
-	var_4(var_13_1, var_7.GetName(var_13_2))
+	local var_13_0 = tostring(arg_13_2)
 
-	tostring = var_4
-
-	local var_13_3 = var_4(arg_13_2)
-
-	setLocalScale = var_1_10005
-
-	var_1_10005(arg_13_0.iconTF, {
+	setLocalScale(arg_13_0.iconTF, {
 		x = 0.7,
 		y = 0.7
 	})
 
-	table = var_1_10005
-
-	local var_13_5
-
-	if var_1_10005.contains(var_0_1.TIME_DIFF_LIST, arg_13_2) then
-		local var_13_4 = arg_13_0.curTime
-
-		var_13_5 = var_13_5.GetBgType(var_13_4)
-		var_13_3 = var_13_3 .. "_" .. var_13_5
+	if table.contains(var_0_0.TIME_DIFF_LIST, arg_13_2) then
+		var_13_0 = var_13_0 .. "_" .. arg_13_0.curTime:GetBgType()
 	end
 
-	table = var_13_5
+	if table.contains(var_0_0.ICON_LIST, arg_13_2) then
+		var_13_0 = "icon_" .. var_13_0
 
-	if var_13_5.contains(var_0_1.ICON_LIST, arg_13_2) then
-		var_13_3 = "icon_" .. var_13_3
-		setLocalScale = var_5
-
-		var_5(arg_13_0.iconTF, {
+		setLocalScale(arg_13_0.iconTF, {
 			x = 1,
 			y = 1
 		})
 	end
 
-	setImageSprite = var_5
+	setImageSprite(arg_13_0.iconTF, GetSpriteFromAtlas("ui/linermainui_atlas", var_13_0), true)
+	switch(arg_13_0.curTime:GetType(), {
+		[LinerTime.TYPE.EXPLORE] = function()
+			arg_13_0:ShowRoomInfos()
 
-	local var_13_6 = arg_13_0.iconTF
+			return
+		end,
+		[LinerTime.TYPE.EVENT] = function()
+			arg_13_0:ShowEventInfos()
 
-	GetSpriteFromAtlas = var_8
-
-	var_5(var_13_6, var_8("ui/linermainui_atlas", var_13_3), true)
-
-	switch = var_5
-
-	local var_13_7 = arg_13_0.curTime
-	local var_13_8 = var_7.GetType(var_13_7)
-	local var_13_9 = {}
-
-	LinerTime = var_13_7
-	var_13_9[var_13_7.TYPE.EXPLORE] = function()
-		local var_14_0 = arg_13_0
-
-		var_0.ShowRoomInfos(var_14_0)
-
-		return
-	end
-	LinerTime = var_9
-	var_13_9[var_9.TYPE.EVENT] = function()
-		local var_15_0 = arg_13_0
-
-		var_0.ShowEventInfos(var_15_0)
-
-		return
-	end
-
-	var_5(var_13_8, var_13_9)
+			return
+		end
+	})
 	arg_13_0:Show()
 
 	return
 end
 
-function var_0_1.ShowRoomInfos(arg_16_0)
-	setImageColor = var_1_10001
-
-	local var_16_0 = arg_16_0.dotTF
-
-	Color = var_1_10004
-
-	var_1_10001(var_16_0, var_1_10004.NewHex("FE9400"))
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_16_0.optionsTF, false)
-
-	local var_16_1 = arg_16_0
-	local var_16_2 = arg_16_0.emit
-
-	LinerMediator = var_4
-
-	var_16_2(var_16_1, var_4.CLICK_ROOM, arg_16_0.activity.id, arg_16_0.room.id)
-
-	local var_16_3 = arg_16_0
-	local var_16_4 = arg_16_0.SetContent
-	local var_16_5 = arg_16_0.room
-
-	var_16_4(var_16_3, var_4.GetDescList(var_16_5), var_0_1.MODE_ROOM_DESC)
+function var_0_0.ShowRoomInfos(arg_16_0)
+	setImageColor(arg_16_0.dotTF, Color.NewHex("FE9400"))
+	setActive(arg_16_0.optionsTF, false)
+	arg_16_0:emit(LinerMediator.CLICK_ROOM, arg_16_0.activity.id, arg_16_0.room.id)
+	arg_16_0:SetContent(arg_16_0.room:GetDescList(), var_0_0.MODE_ROOM_DESC)
 
 	return
 end
 
-function var_0_1.ShowEventInfos(arg_17_0)
-	setImageColor = var_1_10001
+function var_0_0.ShowEventInfos(arg_17_0)
+	setImageColor(arg_17_0.dotTF, Color.NewHex("4E5BFF"))
 
-	local var_17_0 = arg_17_0.dotTF
-
-	Color = var_1_10004
-
-	var_1_10001(var_17_0, var_1_10004.NewHex("4E5BFF"))
-
-	local var_17_1 = ""
+	local var_17_0 = ""
 
 	arg_17_0.events = {}
+	arg_17_0.finishEventIds = arg_17_0.activity:GetCurEventInfo()[arg_17_0.room.id] or {}
 
-	local var_17_2 = arg_17_0.activity
-	local var_17_3
-
-	if not var_2.GetCurEventInfo(var_17_2)[arg_17_0.room.id] then
-		var_17_3 = {}
-	end
-
-	arg_17_0.finishEventIds = var_17_3
-	ipairs = var_17_3
-
-	local var_17_4 = arg_17_0.curTime
-
-	for iter_17_0, iter_17_1 in var_17_3(var_4.GetParamInfo(var_17_4)) do
+	for iter_17_0, iter_17_1 in ipairs(arg_17_0.curTime:GetParamInfo()) do
 		if iter_17_1[1] == arg_17_0.room.id then
-			HXSet = var_7
-			var_17_1 = var_7.hxLan(iter_17_1[3])
-			ipairs = var_7
+			var_17_0 = HXSet.hxLan(iter_17_1[3])
 
-			for iter_17_2, iter_17_3 in var_7(iter_17_1[4]) do
-				table = var_1_10012
-
-				if not var_1_10012.contains(arg_17_0.finishEventIds, iter_17_3) then
-					table = var_1_10012
-					var_1_10012 = var_1_10012.insert
-
-					local var_17_5 = arg_17_0.events
-
-					LinerEvent = var_15
-
-					var_1_10012(var_17_5, var_15.New(iter_17_3))
+			for iter_17_2, iter_17_3 in ipairs(iter_17_1[4]) do
+				if not table.contains(arg_17_0.finishEventIds, iter_17_3) then
+					table.insert(arg_17_0.events, LinerEvent.New(iter_17_3))
 				end
 			end
 		end
 	end
 
 	arg_17_0:SetContent({
-		var_17_1
-	}, var_0_1.MODE_EVENT_DESC)
-
-	setActive = var_2
-
-	var_2(arg_17_0.optionsTF, false)
+		var_17_0
+	}, var_0_0.MODE_EVENT_DESC)
+	setActive(arg_17_0.optionsTF, false)
 
 	return
 end
 
-function var_0_1.ShowOptionsAnim(arg_18_0)
-	local var_18_0 = {}
-
+function var_0_0.ShowOptionsAnim(arg_18_0)
 	for iter_18_0 = 1, #arg_18_0.events do
-		table = var_1_10006
-
-		var_1_10006.insert(var_18_0, function(arg_19_0)
-			local var_19_0 = arg_18_0
-			local var_19_1 = var_1.managedTween
-
-			LeanTween = var_2_10004
-
-			var_19_1(var_19_0, var_2_10004.delayedCall, function()
-				local var_20_0 = arg_18_0.optionsUIList
-
-				var_0.align(var_20_0, #arg_18_0.events)
+		table.insert({}, function(arg_19_0)
+			arg_18_0:managedTween(LeanTween.delayedCall, function()
+				arg_18_0.optionsUIList:align(#arg_18_0.events)
 				arg_19_0()
 
 				return
@@ -455,16 +220,14 @@ function var_0_1.ShowOptionsAnim(arg_18_0)
 		end)
 	end
 
-	seriesAsync = var_2
-
-	var_2(var_18_0, function()
+	seriesAsync({}, function()
 		return
 	end)
 
 	return
 end
 
-function var_0_1.SetContent(arg_22_0, arg_22_1, arg_22_2)
+function var_0_0.SetContent(arg_22_0, arg_22_1, arg_22_2)
 	arg_22_0.mode = arg_22_2
 	arg_22_0.curIndex = 1
 	arg_22_0.descList = arg_22_1
@@ -474,63 +237,41 @@ function var_0_1.SetContent(arg_22_0, arg_22_1, arg_22_2)
 	return
 end
 
-function var_0_1.SetOnePage(arg_23_0)
+function var_0_0.SetOnePage(arg_23_0)
 	arg_23_0.isWriting = true
-	setActive = var_1
 
-	var_1(arg_23_0.nextTF, arg_23_0.curIndex < #arg_23_0.descList)
-
-	setText = var_1
-
-	var_1(arg_23_0.descTF, arg_23_0.descList[arg_23_0.curIndex])
-
-	local var_23_0 = arg_23_0.typewrite
-
-	var_1.Play(var_23_0)
+	setActive(arg_23_0.nextTF, arg_23_0.curIndex < #arg_23_0.descList)
+	setText(arg_23_0.descTF, arg_23_0.descList[arg_23_0.curIndex])
+	arg_23_0.typewrite:Play()
 
 	return
 end
 
-function var_0_1.OnClick(arg_24_0)
+function var_0_0.OnClick(arg_24_0)
 	if arg_24_0.isWriting then
 		return
 	end
 
-	local var_24_0 = #arg_24_0.descList
-
-	if arg_24_0.curIndex <= var_24_0 then
+	if #arg_24_0.descList >= arg_24_0.curIndex then
 		arg_24_0:SetOnePage()
 
 		return
 	end
 
-	if arg_24_0.events then
-		local var_24_1 = #arg_24_0.events
-
-		if 0 < var_24_1 then
-			return
-		end
+	if arg_24_0.events and #arg_24_0.events > 0 then
+		return
 	end
 
 	arg_24_0:Hide()
 
-	if arg_24_0.callback then
-		if not arg_24_0.isClickEvent then
-			local var_24_2 = arg_24_0.curTime
-			local var_24_3 = var_1.GetType(var_24_2)
+	if arg_24_0.callback and (arg_24_0.isClickEvent or arg_24_0.curTime:GetType() == LinerTime.TYPE.EXPLORE) then
+		arg_24_0.callback()
 
-			LinerTime = var_2
-
-			if var_24_3 == var_2.TYPE.EXPLORE then
-				arg_24_0.callback()
-
-				arg_24_0.callback = nil
-				arg_24_0.isClickEvent = nil
-			end
-
-			return
-		end
+		arg_24_0.callback = nil
+		arg_24_0.isClickEvent = nil
 	end
+
+	return
 end
 
-return var_0_1
+return var_0_0

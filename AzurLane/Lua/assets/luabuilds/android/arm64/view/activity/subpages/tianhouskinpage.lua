@@ -1,11 +1,5 @@
-﻿class = var_0_10000
-
-local var_0_0 = "TianHouSkinPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseActivityPage"))
-local var_0_2 = {
+﻿local var_0_0 = class("TianHouSkinPage", import("...base.BaseActivityPage"))
+local var_0_1 = {
 	[0] = {
 		color = "ffffff",
 		name = "none"
@@ -36,326 +30,120 @@ local var_0_2 = {
 	}
 }
 
-function var_0_1.GetCurrentDay()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.TimeMgr.GetInstance()
-	local var_1_1 = var_0.GetServerTime(var_1_0)
-
-	pg = var_1_10001
-
-	local var_1_2 = var_1_10001.TimeMgr.GetInstance()
-
-	return var_1.STimeDescS(var_1_2, var_1_1, "*t").yday
+function var_0_0.GetCurrentDay()
+	return pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance():GetServerTime(), "*t").yday
 end
 
-function var_0_1.OnInit(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.bg = var_1.Find(var_2_0, "AD")
-
-	local var_2_1 = arg_2_0.bg
-
-	arg_2_0.helpBtn = var_1.Find(var_2_1, "help")
-
-	local var_2_2 = arg_2_0.bg
-
-	arg_2_0.gotTag = var_1.Find(var_2_2, "got")
-
-	local var_2_3 = arg_2_0.bg
-
-	arg_2_0.medalText = var_1.Find(var_2_3, "medal")
-
-	local var_2_4 = arg_2_0.bg
-
-	arg_2_0.ticketText = var_1.Find(var_2_4, "ticket")
-
-	local var_2_5 = arg_2_0.bg
-
-	arg_2_0.fireworkBtn = var_1.Find(var_2_5, "game_list/firework")
-
-	local var_2_6 = arg_2_0.bg
-
-	arg_2_0.shootBtn = var_1.Find(var_2_6, "game_list/shoot")
-
-	local var_2_7 = arg_2_0.bg
-
-	arg_2_0.foodBtn = var_1.Find(var_2_7, "game_list/food")
-
-	local var_2_8 = arg_2_0.bg
-
-	arg_2_0.effectNode = var_1.Find(var_2_8, "effectNode")
-
-	local var_2_9 = arg_2_0.bg
-
-	arg_2_0.playEffectBtn = var_1.Find(var_2_9, "fire")
+function var_0_0.OnInit(arg_2_0)
+	arg_2_0.bg = arg_2_0._tf:Find("AD")
+	arg_2_0.helpBtn = arg_2_0.bg:Find("help")
+	arg_2_0.gotTag = arg_2_0.bg:Find("got")
+	arg_2_0.medalText = arg_2_0.bg:Find("medal")
+	arg_2_0.ticketText = arg_2_0.bg:Find("ticket")
+	arg_2_0.fireworkBtn = arg_2_0.bg:Find("game_list/firework")
+	arg_2_0.shootBtn = arg_2_0.bg:Find("game_list/shoot")
+	arg_2_0.foodBtn = arg_2_0.bg:Find("game_list/food")
+	arg_2_0.effectNode = arg_2_0.bg:Find("effectNode")
+	arg_2_0.playEffectBtn = arg_2_0.bg:Find("fire")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_3_0)
-	local var_3_0 = arg_3_0.activity
+function var_0_0.OnFirstFlush(arg_3_0)
+	arg_3_0.hubID = arg_3_0.activity:getConfig("config_id")
 
-	arg_3_0.hubID = var_1.getConfig(var_3_0, "config_id")
-	onButton = var_1
-
-	local var_3_1 = arg_3_0
-	local var_3_2 = arg_3_0.helpBtn
-
-	local function var_3_3()
-		pg = var_2_10000
-
-		local var_4_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_4_1 = var_0.ShowMsgBox
-		local var_4_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_4_2.type = var_2_10004
-		i18n = var_2_10004
-		var_4_2.helps = var_2_10004("help_summer_feast")
-
-		var_4_1(var_4_0, var_4_2)
+	onButton(arg_3_0, arg_3_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("help_summer_feast")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_1, var_3_2, var_3_3, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = arg_3_0.fireworkBtn
-
-	local function var_3_6()
-		pg = var_2_10000
-
-		local var_5_0 = var_2_10000.m02
-		local var_5_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_5_1(var_5_0, var_2_10003.GO_MINI_GAME, 26)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.fireworkBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, 26)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_4, var_3_5, var_3_6, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_7 = arg_3_0
-	local var_3_8 = arg_3_0.shootBtn
-
-	local function var_3_9()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.m02
-		local var_6_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.GO_MINI_GAME, 27)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.shootBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, 27)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_3_7, var_3_8, var_3_9, var_1_10006)
-
-	onButton = var_1
-
-	local var_3_10 = arg_3_0
-	local var_3_11 = arg_3_0.foodBtn
-
-	local function var_3_12()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.m02
-		local var_7_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.GO_MINI_GAME, 25)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.foodBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, 25)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
+	local var_3_0 = getProxy(MiniGameProxy):GetMiniGameData(26):GetRuntimeData("elements")
 
-	var_1(var_3_10, var_3_11, var_3_12, var_1_10006)
+	arg_3_0.ishow = var_3_0 and #var_3_0 >= 4 and var_3_0[4] == arg_3_0.GetCurrentDay()
 
-	getProxy = var_1
-	MiniGameProxy = var_3_10
-
-	local var_3_13 = var_1(var_3_10)
-	local var_3_14 = var_1.GetMiniGameData(var_3_13, 26)
-
-	arg_3_0.ishow = var_1.GetRuntimeData(var_3_14, "elements") and #var_2 >= 4 and var_2[4] == arg_3_0.GetCurrentDay()
-	onButton = var_3
-
-	local var_3_15 = arg_3_0
-	local var_3_16 = arg_3_0.playEffectBtn
-
-	local function var_3_17()
+	onButton(arg_3_0, arg_3_0.playEffectBtn, function()
 		if not arg_3_0.ishow then
 			return
 		end
 
-		local var_8_0 = arg_3_0
-
-		var_0.PlayFirework(var_8_0, var_0)
-
-		setActive = var_0
-
-		var_0(arg_3_0.playEffectBtn, false)
+		arg_3_0:PlayFirework(var_3_0)
+		setActive(arg_3_0.playEffectBtn, false)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_3(var_3_15, var_3_16, var_3_17, var_1_10008)
-
-	blinkAni = var_3
-
-	local var_3_18 = arg_3_0.playEffectBtn
-
-	var_3(var_5.Find(var_3_18, "light"), 0.5)
+	end, SFX_PANEL)
+	blinkAni(arg_3_0.playEffectBtn:Find("light"), 0.5)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_9_0)
-	getProxy = var_1_10001
-	MiniGameProxy = var_1_10003
+function var_0_0.OnUpdateFlush(arg_9_0)
+	local var_9_0 = getProxy(MiniGameProxy):GetHubByHubId(arg_9_0.hubID)
+	local var_9_1 = var_9_0:getConfig("reward_need")
 
-	local var_9_0 = var_1_10001(var_1_10003)
-	local var_9_1 = var_1.GetHubByHubId(var_9_0, arg_9_0.hubID)
-	local var_9_2 = var_2.getConfig(var_9_1, "reward_need")
+	setText(arg_9_0.ticketText, var_9_0.count)
+	setText(arg_9_0.medalText, var_9_0.usedtime .. "/" .. var_9_1)
+	setActive(arg_9_0.gotTag, var_9_0.ultimate ~= 0)
 
-	setText = var_9_0
-
-	var_9_0(arg_9_0.ticketText, var_2.count)
-
-	setText = var_9_0
-
-	var_9_0(arg_9_0.medalText, var_2.usedtime .. "/" .. var_9_2)
-
-	setActive = var_9_0
-
-	var_9_0(arg_9_0.gotTag, var_2.ultimate ~= 0)
-
-	local var_9_4
-
-	if var_2.ultimate == 0 and var_9_2 <= var_2.usedtime then
-		pg = var_9_4
-
-		local var_9_3 = var_9_4.m02
-
-		var_9_4 = var_9_4.sendNotification
-		GAME = var_7
-
-		local var_9_5 = var_7.SEND_MINI_GAME_OP
-		local var_9_6 = {
-			hubid = arg_9_0.hubID
-		}
-
-		MiniGameOPCommand = var_9
-		var_9_6.cmd = var_9.CMD_ULTIMATE
-		var_9_6.args1 = {}
-
-		var_9_4(var_9_3, var_9_5, var_9_6)
+	if var_9_0.ultimate == 0 and var_9_1 <= var_9_0.usedtime then
+		pg.m02:sendNotification(GAME.SEND_MINI_GAME_OP, {
+			hubid = arg_9_0.hubID,
+			cmd = MiniGameOPCommand.CMD_ULTIMATE,
+			args1 = {}
+		})
 	end
 
-	setActive = var_9_4
-
-	var_9_4(arg_9_0.playEffectBtn, arg_9_0.ishow)
-
-	pg = var_9_4
-
-	local var_9_7 = var_9_4.NewStoryMgr.GetInstance()
-
-	var_4.Play(var_9_7, "TIANHOUYUYI1")
+	setActive(arg_9_0.playEffectBtn, arg_9_0.ishow)
+	pg.NewStoryMgr.GetInstance():Play("TIANHOUYUYI1")
 
 	return
 end
 
-function var_0_1.TransformColor(arg_10_0)
-	tonumber = var_1_10001
-	string = var_1_10003
-
-	local var_10_0 = var_1_10001(var_1_10003.sub(arg_10_0, 1, 2), 16)
-
-	tonumber = var_1_10002
-	string = var_4
-
-	local var_10_1 = var_1_10002(var_4.sub(arg_10_0, 3, 4), 16)
-
-	tonumber = var_3
-	string = var_5
-
-	local var_10_2 = var_3(var_5.sub(arg_10_0, 5, 6), 16)
-
-	Color = var_4
-
-	return var_4.New(var_10_0 / 255, var_10_1 / 255, var_10_2 / 255)
+function var_0_0.TransformColor(arg_10_0)
+	return Color.New(tonumber(string.sub(arg_10_0, 1, 2), 16) / 255, tonumber(string.sub(arg_10_0, 3, 4), 16) / 255, tonumber(string.sub(arg_10_0, 5, 6), 16) / 255)
 end
 
-function var_0_1.PlayFirework(arg_11_0, arg_11_1)
+function var_0_0.PlayFirework(arg_11_0, arg_11_1)
 	arg_11_1 = arg_11_1 or {
 		0,
 		0,
 		0
 	}
-	UnityEngine = var_1_10002
 
-	local var_11_0 = var_1_10002.ParticleSystem.MinMaxGradient.New
+	local var_11_0 = UnityEngine.ParticleSystem.MinMaxGradient.New
 
-	pg = var_1_10003
+	pg.PoolMgr.GetInstance():GetPrefab("ui/firework", "", false, function(arg_12_0)
+		local var_12_9001
+		local var_12_9000
+		local var_12_0 = tf(arg_12_0)
+		local var_12_1 = var_12_0.Find(var_12_9001, "Fire")
+		local var_12_2 = var_12_1.GetComponent(var_12_9000, "ParticleSystem").main.startColor
 
-	local var_11_1 = var_1_10003.PoolMgr.GetInstance()
+		tf(arg_12_0).Find(var_12_1, "Fire").GetComponent(var_12_0, "ParticleSystem").main.startColor = var_11_0(arg_11_0.TransformColor(var_0_1[arg_11_1[1]].color))
+		tf(arg_12_0):Find("Fire/par_small"):GetComponent("ParticleSystem").main.startColor = var_11_0(arg_11_0.TransformColor(var_0_1[arg_11_1[2]].color))
+		tf(arg_12_0):Find("Fire/par_small/par_big"):GetComponent("ParticleSystem").main.startColor = var_11_0(arg_11_0.TransformColor(var_0_1[arg_11_1[3]].color))
 
-	var_3.GetPrefab(var_11_1, "ui/firework", "", false, function(arg_12_0)
-		tf = var_2_10001
+		setParent(arg_12_0, arg_11_0.effectNode)
 
-		local var_12_0 = var_2_10001(arg_12_0)
-		local var_12_1 = var_1.Find(var_12_0, "Fire")
-		local var_12_2 = var_1.GetComponent(var_12_1, "ParticleSystem").main.startColor
-
-		tf = var_12_1
-
-		local var_12_3 = var_12_1(arg_12_0)
-		local var_12_4 = var_3.Find(var_12_3, "Fire")
-		local var_12_5 = var_3.GetComponent(var_12_4, "ParticleSystem").main
-
-		var_12_5.startColor = var_11_0(arg_11_0.TransformColor(var_0_2[arg_11_1[1]].color))
-		tf = var_12_5
-
-		local var_12_6 = var_12_5(arg_12_0)
-		local var_12_7 = var_3.Find(var_12_6, "Fire/par_small")
-		local var_12_8 = var_3.GetComponent(var_12_7, "ParticleSystem").main
-
-		var_12_8.startColor = var_11_0(arg_11_0.TransformColor(var_0_2[arg_11_1[2]].color))
-		tf = var_12_8
-
-		local var_12_9 = var_12_8(arg_12_0)
-		local var_12_10 = var_3.Find(var_12_9, "Fire/par_small/par_big")
-		local var_12_11 = var_3.GetComponent(var_12_10, "ParticleSystem").main
-
-		var_12_11.startColor = var_11_0(arg_11_0.TransformColor(var_0_2[arg_11_1[3]].color))
-		setParent = var_12_11
-
-		var_12_11(arg_12_0, arg_11_0.effectNode)
-
-		local var_12_12 = arg_12_0.transform
-
-		Vector2 = var_4
-		var_12_12.localPosition = var_4(0, 0)
+		arg_12_0.transform.localPosition = Vector2(0, 0)
 		arg_11_0.fireEffect = arg_12_0
 
 		return
@@ -365,63 +153,43 @@ function var_0_1.PlayFirework(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.ClearEffectFirework(arg_13_0)
+function var_0_0.ClearEffectFirework(arg_13_0)
 	arg_13_0:StopSE()
 
 	if arg_13_0.fireEffect then
-		pg = var_1
-
-		local var_13_0 = var_1.PoolMgr.GetInstance()
-
-		var_1.ReturnPrefab(var_13_0, "ui/firework", "", arg_13_0.fireEffect)
+		pg.PoolMgr.GetInstance():ReturnPrefab("ui/firework", "", arg_13_0.fireEffect)
 	end
 
 	return
 end
 
-function var_0_1.PlaySE(arg_14_0)
+function var_0_0.PlaySE(arg_14_0)
 	if arg_14_0.SETimer then
 		return
 	end
 
 	arg_14_0.SECount = 10
-	Timer = var_1
-	arg_14_0.SETimer = var_1.New(function()
+	arg_14_0.SETimer = Timer.New(function()
 		arg_14_0.SECount = arg_14_0.SECount - 1
 
 		if arg_14_0.SECount <= 0 then
-			local var_15_0 = arg_14_0
+			arg_14_0.SECount = math.random(5, 20)
 
-			math = var_1
-			var_15_0.SECount = var_1.random(5, 20)
-			pg = var_15_0
-
-			local var_15_1 = var_15_0.CriMgr.GetInstance()
-
-			var_0.PlaySE_V3(var_15_1, "battle-firework")
+			pg.CriMgr.GetInstance():PlaySE_V3("battle-firework")
 		end
 
 		return
 	end, 0.1, -1)
 
-	local var_14_0 = arg_14_0.SETimer
-
-	var_1.Start(var_14_0)
+	arg_14_0.SETimer:Start()
 
 	return
 end
 
-function var_0_1.StopSE(arg_16_0)
+function var_0_0.StopSE(arg_16_0)
 	if arg_16_0.SETimer then
-		pg = var_1
-
-		local var_16_0 = var_1.CriMgr.GetInstance()
-
-		var_1.StopSEBattle_V3(var_16_0)
-
-		local var_16_1 = arg_16_0.SETimer
-
-		var_1.Stop(var_16_1)
+		pg.CriMgr.GetInstance():StopSEBattle_V3()
+		arg_16_0.SETimer:Stop()
 
 		arg_16_0.SETimer = nil
 	end
@@ -429,16 +197,16 @@ function var_0_1.StopSE(arg_16_0)
 	return
 end
 
-function var_0_1.OnHideFlush(arg_17_0)
+function var_0_0.OnHideFlush(arg_17_0)
 	arg_17_0:ClearEffectFirework()
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_18_0)
+function var_0_0.OnDestroy(arg_18_0)
 	arg_18_0:ClearEffectFirework()
 
 	return
 end
 
-return var_0_1
+return var_0_0

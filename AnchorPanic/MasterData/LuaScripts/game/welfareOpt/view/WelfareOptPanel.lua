@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : WelfareOptPanel
 @Description    : 福利相关页面
@@ -25,6 +25,7 @@ end
 -- 初始化数据
 function initData(self)
     super.initData(self)
+
     self.showTabType = 2
 end
 
@@ -41,7 +42,7 @@ function getTabDatas(self)
     self.tabDataList = {}
     local list = welfareOpt.WelfareOptConst:getTabList()
     for _, vo in pairs(list) do
-        table.insert(self.tabDataList, { type = vo.page, content = { vo.nomalLan }, nomalIcon = vo.nomalIcon, selectIcon = vo.nomalIcon })
+        table.insert(self.tabDataList, {type = vo.page, content = {vo.nomalLan}, nomalIcon = vo.nomalIcon, selectIcon = vo.nomalIcon})
     end
     return self.tabDataList
 end
@@ -50,6 +51,8 @@ end
 function active(self, args)
     super.active(self, args)
     welfareOpt.WelfareOptOpenBetaManager:addEventListener(welfareOpt.WelfareOptOpenBetaManager.ON_FIVE_RESET, self.close, self)
+    GameDispatcher:addEventListener(EventName.ACTIVITY_NOVICE_UPDATE, self.setTabBar, self)
+
     -- if args.subType then
     --     self:setPage(args.subType)
     -- end
@@ -62,15 +65,21 @@ function deActive(self)
     super.deActive(self)
     welfareOpt.WelfareOptOpenBetaManager:removeEventListener(welfareOpt.WelfareOptOpenBetaManager.ON_FIVE_RESET, self.close, self)
     -- GameDispatcher:removeEventListener(EventName.UPDATE_WELFAREOPT_FLAG, self.__onUpdateWelfareOptFlagHandler, self)
-    MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
+    MoneyManager:setMoneyTidList({MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID})
+
+    GameDispatcher:removeEventListener(EventName.ACTIVITY_NOVICE_UPDATE, self.setTabBar, self)
+
 end
 
 function setTabBar(self)
     if #self:getTabDataList() <= 0 then
         return
     end
-    self.tabBar = CustomTabBar:create(self:getChildGO("GroupTabItem"), self:getChildTrans("TabBarNode"), self.onClickMenuHandler, self, nil, "TabViewTabBar")
+    if self.tabBar == nil then
+        self.tabBar = CustomTabBar:create(self:getChildGO("GroupTabItem"), self:getChildTrans("TabBarNode"), self.onClickMenuHandler, self, nil, "TabViewTabBar")
+    end
     self.tabBar:setData(self:getTabDataList())
+    self.tabBar:setType(self:getTabDatas()[1].type)
 end
 
 function addBubble(self, tabType, x, y)
@@ -81,8 +90,8 @@ function updateTabImg(self)
     for id, _ in pairs(self.tabBar.btnMap) do
         local item = self.tabBar.btnMap[id]
         item:getChildGO("mIcon"):GetComponent(ty.AutoRefImage):SetImg(
-        UrlManager:getPackPath("welfareOpt/welfareOpt_icon_" .. id .. ".png"),
-        false
+            UrlManager:getPackPath("welfareOpt/welfareOpt_icon_" .. id .. ".png"),
+            false
         )
     end
 end
@@ -130,7 +139,7 @@ function setPage(self, cusType)
     elseif cusType == welfareOpt.WelfareOptConst.WELFAREOPT_HOLIDAY then
         self:setBg("holiday_bg.jpg", false, "holiday")
     elseif cusType == welfareOpt.WelfareOptConst.WELFAREOPT_TAPTAP then
-       self:setBg("taptap_bg_01.jpg", false, "taptap")
+        self:setBg("taptap_bg_01.jpg", false, "taptap")
     end
 end
 

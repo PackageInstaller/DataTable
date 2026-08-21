@@ -1,20 +1,14 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewBattleResultScene", import("view.base.BaseUI"))
 
-local var_0_0 = "NewBattleResultScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewBattleResultEmptyUI"
 end
 
-function var_0_1.getGroupName(arg_2_0)
+function var_0_0.getGroupName(arg_2_0)
 	return "BattleScene"
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0._parentTf = arg_3_0._tf.parent
 
 	arg_3_0:InitData()
@@ -29,14 +23,9 @@ function var_0_1.didEnter(arg_3_0)
 		staticBlur = true,
 		lockGlobalBlur = true
 	})
-
-	onDelayTick = var_1
-
-	var_1(function()
+	onDelayTick(function()
 		if arg_3_0.contextData.needCloseCamera then
-			local var_4_0 = arg_3_0
-
-			var_0.CloseCamera(var_4_0)
+			arg_3_0:CloseCamera()
 		end
 
 		return
@@ -45,27 +34,13 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.Adjustion(arg_5_0)
-	GetComponent = var_1_10001
+function var_0_0.Adjustion(arg_5_0)
+	local var_5_0 = GetComponent(arg_5_0._tf, typeof(AspectRatioFitter))
 
-	local var_5_0 = arg_5_0._tf
-
-	typeof = var_1_10004
-	AspectRatioFitter = var_1_10006
-
-	local var_5_1 = var_1_10001(var_5_0, var_1_10004(var_1_10006))
-
-	var_5_1.enabled = true
-	pg = var_2
-	var_5_1.aspectRatio = var_2.CameraFixMgr.GetInstance().targetRatio
-	pg = var_2
-
-	local var_5_2 = var_2.CameraFixMgr.GetInstance()
-	local var_5_3 = var_2.bind
-
-	pg = var_1_10005
-	arg_5_0.camEventId = var_5_3(var_5_2, var_1_10005.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg_6_0, arg_6_1)
-		var_5_1.aspectRatio = arg_6_1
+	var_5_0.enabled = true
+	var_5_0.aspectRatio = pg.CameraFixMgr.GetInstance().targetRatio
+	arg_5_0.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg_6_0, arg_6_1)
+		var_5_0.aspectRatio = arg_6_1
 
 		return
 	end)
@@ -73,179 +48,99 @@ function var_0_1.Adjustion(arg_5_0)
 	return
 end
 
-local function var_0_2(arg_7_0)
-	getProxy = var_1_10001
-	SettingsProxy = var_1_10003
-
-	local var_7_0 = var_1_10001(var_1_10003)
-
-	if var_1.IsDisplayResultPainting(var_7_0) then
+local function var_0_1(arg_7_0)
+	if getProxy(SettingsProxy):IsDisplayResultPainting() then
 		return
 	end
 
 	for iter_7_0 = #arg_7_0, 1, -1 do
-		local var_7_1 = arg_7_0[iter_7_0]
-
-		NewBattleResultDisplayPaintingsPage = var_1_10007
-
-		if var_7_1 == var_1_10007 then
-			table = var_7_1
-
-			var_7_1.remove(arg_7_0, iter_7_0)
+		if arg_7_0[iter_7_0] == NewBattleResultDisplayPaintingsPage then
+			table.remove(arg_7_0, iter_7_0)
 		end
 	end
 
 	return
 end
 
-function var_0_1.InitData(arg_8_0)
-	NewBattleResultYumiaMaterialPage = var_1_10001
+function var_0_0.InitData(arg_8_0)
+	if NewBattleResultYumiaMaterialPage.NeedShowYumiaMaterailDrop(arg_8_0.contextData.drops) then
+		local var_8_0 = {
+			NewBattleResultGradePage,
+			NewBattleResultDisplayAwardPage,
+			NewBattleResultYumiaMaterialPage,
+			NewBattleResultDisplayPaintingsPage,
+			NewBattleResultStatisticsPage
+		}
 
-	if var_1_10001.NeedShowYumiaMaterailDrop(arg_8_0.contextData.drops) then
-		local var_8_0 = {}
-
-		NewBattleResultGradePage = var_1_10002
-		var_8_0[1] = var_1_10002
-		NewBattleResultDisplayAwardPage = var_1_10002
-		var_8_0[2] = var_1_10002
-		NewBattleResultYumiaMaterialPage = var_1_10002
-		var_8_0[3] = var_1_10002
-		NewBattleResultDisplayPaintingsPage = var_1_10002
-		var_8_0[4] = var_1_10002
-		NewBattleResultStatisticsPage = var_1_10002
-		var_8_0[5] = var_1_10002
-
-		if not var_8_0 then
-			var_8_0 = {}
-			NewBattleResultGradePage = var_1_10002
-			var_8_0[1] = var_1_10002
-			NewBattleResultDisplayAwardPage = var_1_10002
-			var_8_0[2] = var_1_10002
-			NewBattleResultDisplayPaintingsPage = var_1_10002
-			var_8_0[3] = var_1_10002
-			NewBattleResultStatisticsPage = var_1_10002
-			var_8_0[4] = var_1_10002
+		if not {
+			NewBattleResultGradePage,
+			NewBattleResultDisplayAwardPage,
+			NewBattleResultYumiaMaterialPage,
+			NewBattleResultDisplayPaintingsPage,
+			NewBattleResultStatisticsPage
+		} then
+			var_8_0 = {
+				NewBattleResultGradePage,
+				NewBattleResultDisplayAwardPage,
+				NewBattleResultDisplayPaintingsPage,
+				NewBattleResultStatisticsPage
+			}
 		end
 
-		NewBattleResultSystem2Pages = var_1_10002
+		arg_8_0.pages = NewBattleResultSystem2Pages[arg_8_0.contextData.system] or var_8_0
 
-		local var_8_1
+		var_0_1(arg_8_0.pages)
 
-		if not var_1_10002[arg_8_0.contextData.system] then
-			var_8_1 = var_8_0
-		end
-
-		arg_8_0.pages = var_8_1
-
-		var_0_2(arg_8_0.pages)
-
-		local var_8_2 = arg_8_0.contextData
-
-		NewBattleResultUtil = var_3
-		var_8_2.oldMainShips = var_3.RemoveNonStatisticShips(arg_8_0.contextData.oldMainShips, arg_8_0.contextData.statistics)
-
-		local var_8_3 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_3.newMainShips = var_3.GetNewMainShips(arg_8_0.contextData)
-
-		local var_8_4 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_4.autoSkipFlag = var_3.GetAutoSkipFlag(arg_8_0.contextData, arg_8_0.contextData.system)
-
-		local var_8_5 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_5.needVibrate = var_3.NeedVibrate(arg_8_0.contextData.autoSkipFlag)
-
-		local var_8_6 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_6.needCloseCamera = var_3.NeedCloseCamera(arg_8_0.contextData.system)
-
-		local var_8_7 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_7.needHelpMessage = var_3.NeedHelpMessage(arg_8_0.contextData.system, arg_8_0.contextData.score)
-
-		local var_8_8 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_8.expBuff = var_3.GetExpBuffs(arg_8_0.contextData.system)
-
-		local var_8_9 = arg_8_0.contextData
-
-		NewBattleResultDataExtender = var_3
-		var_8_9.buffShips = var_3.GetShipBuffs(arg_8_0.contextData.system)
+		arg_8_0.contextData.oldMainShips = NewBattleResultUtil.RemoveNonStatisticShips(arg_8_0.contextData.oldMainShips, arg_8_0.contextData.statistics)
+		arg_8_0.contextData.newMainShips = NewBattleResultDataExtender.GetNewMainShips(arg_8_0.contextData)
+		arg_8_0.contextData.autoSkipFlag = NewBattleResultDataExtender.GetAutoSkipFlag(arg_8_0.contextData, arg_8_0.contextData.system)
+		arg_8_0.contextData.needVibrate = NewBattleResultDataExtender.NeedVibrate(arg_8_0.contextData.autoSkipFlag)
+		arg_8_0.contextData.needCloseCamera = NewBattleResultDataExtender.NeedCloseCamera(arg_8_0.contextData.system)
+		arg_8_0.contextData.needHelpMessage = NewBattleResultDataExtender.NeedHelpMessage(arg_8_0.contextData.system, arg_8_0.contextData.score)
+		arg_8_0.contextData.expBuff = NewBattleResultDataExtender.GetExpBuffs(arg_8_0.contextData.system)
+		arg_8_0.contextData.buffShips = NewBattleResultDataExtender.GetShipBuffs(arg_8_0.contextData.system)
 
 		return
 	end
 end
 
-function var_0_1.CloseCamera(arg_9_0)
-	ys = var_1_10001
-
-	var_1_10001.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
+function var_0_0.CloseCamera(arg_9_0)
+	ys.Battle.BattleCameraUtil.GetInstance().ActiveMainCamera(false)
 
 	return
 end
 
-function var_0_1.Vibrate(arg_10_0)
-	pg = var_1_10001
-
-	local var_10_0 = var_1_10001.CriMgr.GetInstance()
-	local var_10_1 = var_1.PlaySoundEffect_V3
-
-	SFX_AUTO_BATTLE = var_1_10004
-
-	var_10_1(var_10_0, var_1_10004)
-
-	LuaHelper = var_10_1
-
-	var_10_1.Vibrate()
+function var_0_0.Vibrate(arg_10_0)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_AUTO_BATTLE)
+	LuaHelper.Vibrate()
 
 	return
 end
 
-function var_0_1.SetUp(arg_11_0, arg_11_1)
-	local var_11_0 = {}
-
+function var_0_0.SetUp(arg_11_0, arg_11_1)
 	arg_11_0.history = {}
-	ipairs = var_3
 
-	for iter_11_0, iter_11_1 in var_3(arg_11_1) do
-		table = var_1_10008
-
-		var_1_10008.insert(var_11_0, function(arg_12_0)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_1) do
+		table.insert({}, function(arg_12_0)
 			if arg_11_0.exited then
 				return
 			end
 
 			local var_12_0 = iter_11_1.New(arg_11_0._tf, arg_11_0.event, arg_11_0.contextData)
 
-			var_1.ExecuteAction(var_12_0, "SetUp", arg_12_0, function()
-				local var_13_0 = arg_11_0
-
-				var_0.DestroyHistory(var_13_0)
+			var_12_0:ExecuteAction("SetUp", arg_12_0, function()
+				arg_11_0:DestroyHistory()
 
 				return
 			end)
-
-			table = var_2
-
-			var_2.insert(arg_11_0.history, var_1)
+			table.insert(arg_11_0.history, var_12_0)
 
 			return
 		end)
 	end
 
-	seriesAsync = var_3
-
-	var_3(var_11_0, function()
-		local var_14_0 = arg_11_0
-
-		var_0.GoBack(var_14_0)
+	seriesAsync({}, function()
+		arg_11_0:GoBack()
 
 		return
 	end)
@@ -253,17 +148,9 @@ function var_0_1.SetUp(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.DestroyHistory(arg_15_0)
-	ipairs = var_1_10001
-
-	for iter_15_0, iter_15_1 in var_1_10001(arg_15_0.history) do
-		isa = var_1_10006
-
-		local var_15_0 = iter_15_1
-
-		NewBattleResultStatisticsPage = var_1_10009
-
-		if not var_1_10006(var_15_0, var_1_10009) then
+function var_0_0.DestroyHistory(arg_15_0)
+	for iter_15_0, iter_15_1 in ipairs(arg_15_0.history) do
+		if not isa(iter_15_1, NewBattleResultStatisticsPage) then
 			iter_15_1:Destroy()
 		end
 	end
@@ -271,67 +158,49 @@ function var_0_1.DestroyHistory(arg_15_0)
 	return
 end
 
-function var_0_1.GoBack(arg_16_0)
-	local function var_16_0()
-		local var_17_0 = arg_16_0
-
-		NewBattleResultBackSceneHandler = var_2_10001
-		var_17_0.backSceneHandler = var_2_10001.New(arg_16_0.contextData)
-
-		local var_17_1 = arg_16_0.backSceneHandler
-
-		var_0.Execute(var_17_1)
-
-		return
-	end
-
+function var_0_0.GoBack(arg_16_0)
 	if arg_16_0.contextData.needHelpMessage then
-		local var_16_1 = arg_16_0
-		local var_16_2 = arg_16_0.emit
+		arg_16_0:emit(NewBattleResultMediator.OPEN_FIALED_HELP, function()
+			arg_16_0.backSceneHandler = NewBattleResultBackSceneHandler.New(arg_16_0.contextData)
 
-		NewBattleResultMediator = var_1_10005
+			arg_16_0.backSceneHandler:Execute()
 
-		var_16_2(var_16_1, var_1_10005.OPEN_FIALED_HELP, var_16_0)
+			return
+		end)
 	else
-		var_16_0()
+		(function()
+			arg_16_0.backSceneHandler = NewBattleResultBackSceneHandler.New(arg_16_0.contextData)
+
+			arg_16_0.backSceneHandler:Execute()
+
+			return
+		end)()
 	end
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_18_0)
+function var_0_0.onBackPressed(arg_18_0)
 	return
 end
 
-function var_0_1.willExit(arg_19_0)
-	pg = var_1_10001
-
-	local var_19_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_19_0, arg_19_0._tf, arg_19_0._parentTf)
+function var_0_0.willExit(arg_19_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_19_0._tf, arg_19_0._parentTf)
 
 	if arg_19_0.camEventId then
-		pg = var_1
-
-		local var_19_1 = var_1.CameraFixMgr.GetInstance()
-
-		var_1.disconnect(var_19_1, arg_19_0.camEventId)
+		pg.CameraFixMgr.GetInstance():disconnect(arg_19_0.camEventId)
 
 		arg_19_0.camEventId = nil
 	end
 
 	if arg_19_0.backSceneHandler then
-		local var_19_2 = arg_19_0.backSceneHandler
-
-		var_1.Dispose(var_19_2)
+		arg_19_0.backSceneHandler:Dispose()
 
 		arg_19_0.backSceneHandler = nil
 	end
 
 	if arg_19_0.history then
-		ipairs = var_1
-
-		for iter_19_0, iter_19_1 in var_1(arg_19_0.history) do
+		for iter_19_0, iter_19_1 in ipairs(arg_19_0.history) do
 			iter_19_1:Destroy()
 		end
 
@@ -341,4 +210,4 @@ function var_0_1.willExit(arg_19_0)
 	return
 end
 
-return var_0_1
+return var_0_0

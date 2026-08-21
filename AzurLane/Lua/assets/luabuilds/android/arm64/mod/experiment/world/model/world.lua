@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("World", import("...BaseEntity"))
 
-local var_0_0 = "World"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	isAutoFight = "boolean",
 	stepCount = "number",
 	cdTimeList = "table",
@@ -43,40 +37,34 @@ var_0_1.Fields = {
 	pressingAwardDic = "table",
 	submarineSupport = "boolean"
 }
-var_0_1.EventUpdateSubmarineSupport = "World.EventUpdateSubmarineSupport"
-var_0_1.EventSwitchMap = "World.EventSwitchMap"
-var_0_1.EventUpdateProgress = "World.EventUpdateProgress"
-var_0_1.EventUpdateShopGoods = "World.EventUpdateShopGoods"
-var_0_1.EventUpdateGlobalBuff = "World.EventUpdateGlobalBuff"
-var_0_1.EventAddPortShip = "World.EventAddPortShip"
-var_0_1.EventRemovePortShip = "World.EventRemovePortShip"
-var_0_1.EventAchieved = "World.EventAchieved"
-var_0_1.Listeners = {
+var_0_0.EventUpdateSubmarineSupport = "World.EventUpdateSubmarineSupport"
+var_0_0.EventSwitchMap = "World.EventSwitchMap"
+var_0_0.EventUpdateProgress = "World.EventUpdateProgress"
+var_0_0.EventUpdateShopGoods = "World.EventUpdateShopGoods"
+var_0_0.EventUpdateGlobalBuff = "World.EventUpdateGlobalBuff"
+var_0_0.EventAddPortShip = "World.EventAddPortShip"
+var_0_0.EventRemovePortShip = "World.EventRemovePortShip"
+var_0_0.EventAchieved = "World.EventAchieved"
+var_0_0.Listeners = {
 	onUpdateItem = "OnUpdateItem",
 	onUpdateTask = "OnUpdateTask"
 }
-var_0_1.TypeBase = 0
-var_0_1.TypeFull = 1
-var_0_1.InheritNameList = {
+var_0_0.TypeBase = 0
+var_0_0.TypeFull = 1
+var_0_0.InheritNameList = {
 	staminaMgr = function()
-		WorldStaminaManager = var_1_10000
-
-		return var_1_10000.New()
+		return WorldStaminaManager.New()
 	end,
 	collectionProxy = function()
-		WorldCollectionProxy = var_1_10000
-
-		return var_1_10000.New()
+		return WorldCollectionProxy.New()
 	end,
 	worldBossProxy = function()
-		WorldBossProxy = var_1_10000
-
-		return var_1_10000.New()
+		return WorldBossProxy.New()
 	end
 }
 
-function var_0_1.Ctor(arg_4_0, arg_4_1, arg_4_2)
-	var_0_1.super.Ctor(arg_4_0)
+function var_0_0.Ctor(arg_4_0, arg_4_1, arg_4_2)
+	var_0_0.super.Ctor(arg_4_0)
 
 	arg_4_0.type = arg_4_1
 
@@ -85,13 +73,8 @@ function var_0_1.Ctor(arg_4_0, arg_4_1, arg_4_2)
 	return
 end
 
-function var_0_1.Build(arg_5_0)
-	WorldAtlas = var_1_10001
-
-	local var_5_0 = var_1_10001.New
-
-	WorldConst = var_1_10003
-	arg_5_0.atlas = var_5_0(var_1_10003.DefaultAtlas)
+function var_0_0.Build(arg_5_0)
+	arg_5_0.atlas = WorldAtlas.New(WorldConst.DefaultAtlas)
 	arg_5_0.realm = 0
 	arg_5_0.fleets = {}
 	arg_5_0.defaultFleets = {}
@@ -118,25 +101,13 @@ function var_0_1.Build(arg_5_0)
 
 	arg_5_0:InitAutoInfos()
 
-	WorldInventoryProxy = var_1
-	arg_5_0.inventoryProxy = var_1.New()
+	arg_5_0.inventoryProxy = WorldInventoryProxy.New()
 
-	local var_5_1 = arg_5_0.inventoryProxy
-	local var_5_2 = var_1.AddListener
+	arg_5_0.inventoryProxy:AddListener(WorldInventoryProxy.EventUpdateItem, arg_5_0.onUpdateItem)
 
-	WorldInventoryProxy = var_1_10004
+	arg_5_0.taskProxy = WorldTaskProxy.New()
 
-	var_5_2(var_5_1, var_1_10004.EventUpdateItem, arg_5_0.onUpdateItem)
-
-	WorldTaskProxy = var_5_2
-	arg_5_0.taskProxy = var_5_2.New()
-
-	local var_5_3 = arg_5_0.taskProxy
-	local var_5_4 = var_1.AddListener
-
-	WorldTaskProxy = var_4
-
-	var_5_4(var_5_3, var_4.EventUpdateTask, arg_5_0.onUpdateTask)
+	arg_5_0.taskProxy:AddListener(WorldTaskProxy.EventUpdateTask, arg_5_0.onUpdateTask)
 
 	arg_5_0.baseShipIds = {}
 	arg_5_0.baseCmdIds = {}
@@ -144,64 +115,52 @@ function var_0_1.Build(arg_5_0)
 	return
 end
 
-function var_0_1.Dispose(arg_6_0, arg_6_1)
-	local var_6_0
+function var_0_0.Dispose(arg_6_0, arg_6_1)
+	if arg_6_1 then
+		local var_6_0 = {
+			realm = arg_6_0.realm,
+			defaultFleets = arg_6_0.defaultFleets,
+			achievements = arg_6_0.achievements,
+			achieveEntranceStar = arg_6_0.achieveEntranceStar,
+			activateCount = arg_6_0.activateCount,
+			progress = arg_6_0.progress,
+			staminaMgr = arg_6_0.staminaMgr,
+			collectionProxy = arg_6_0.collectionProxy
+		}
 
-	if not arg_6_1 or not {
-		realm = arg_6_0.realm,
-		defaultFleets = arg_6_0.defaultFleets,
-		achievements = arg_6_0.achievements,
-		achieveEntranceStar = arg_6_0.achieveEntranceStar,
-		activateCount = arg_6_0.activateCount,
-		progress = arg_6_0.progress,
-		staminaMgr = arg_6_0.staminaMgr,
-		collectionProxy = arg_6_0.collectionProxy
-	} then
-		var_6_0 = {}
-	end
-
-	var_6_0.worldBossProxy = arg_6_0.worldBossProxy
-	pairs = var_3
-
-	for iter_6_0 in var_3(var_0_1.InheritNameList) do
-		if not var_6_0[iter_6_0] then
-			local var_6_1 = arg_6_0[iter_6_0]
-
-			var_7.Dispose(var_6_1)
+		if not {
+			realm = arg_6_0.realm,
+			defaultFleets = arg_6_0.defaultFleets,
+			achievements = arg_6_0.achievements,
+			achieveEntranceStar = arg_6_0.achieveEntranceStar,
+			activateCount = arg_6_0.activateCount,
+			progress = arg_6_0.progress,
+			staminaMgr = arg_6_0.staminaMgr,
+			collectionProxy = arg_6_0.collectionProxy
+		} then
+			var_6_0 = {}
 		end
+
+		var_6_0.worldBossProxy = arg_6_0.worldBossProxy
+
+		for iter_6_0 in pairs(var_0_0.InheritNameList) do
+			if not var_6_0[iter_6_0] then
+				arg_6_0[iter_6_0]:Dispose()
+			end
+		end
+
+		arg_6_0.inventoryProxy:RemoveListener(WorldInventoryProxy.EventUpdateItem, arg_6_0.onUpdateItem)
+		arg_6_0.inventoryProxy:Dispose()
+		arg_6_0.taskProxy:RemoveListener(WorldTaskProxy.EventUpdateTask, arg_6_0.onUpdateTask)
+		arg_6_0.taskProxy:Dispose()
+		arg_6_0.atlas:Dispose()
+		arg_6_0:Clear()
+
+		return var_6_0
 	end
-
-	local var_6_2 = arg_6_0.inventoryProxy
-	local var_6_3 = var_3.RemoveListener
-
-	WorldInventoryProxy = iter_6_0
-
-	var_6_3(var_6_2, iter_6_0.EventUpdateItem, arg_6_0.onUpdateItem)
-
-	local var_6_4 = arg_6_0.inventoryProxy
-
-	var_3.Dispose(var_6_4)
-
-	local var_6_5 = arg_6_0.taskProxy
-	local var_6_6 = var_3.RemoveListener
-
-	WorldTaskProxy = var_6
-
-	var_6_6(var_6_5, var_6.EventUpdateTask, arg_6_0.onUpdateTask)
-
-	local var_6_7 = arg_6_0.taskProxy
-
-	var_3.Dispose(var_6_7)
-
-	local var_6_8 = arg_6_0.atlas
-
-	var_3.Dispose(var_6_8)
-	arg_6_0:Clear()
-
-	return var_6_0
 end
 
-function var_0_1.InheritReset(arg_7_0, arg_7_1)
+function var_0_0.InheritReset(arg_7_0, arg_7_1)
 	arg_7_1 = arg_7_1 or {}
 
 	if arg_7_1.progress then
@@ -210,15 +169,11 @@ function var_0_1.InheritReset(arg_7_0, arg_7_1)
 		arg_7_1.progress = nil
 	end
 
-	pairs = var_2
-
-	for iter_7_0, iter_7_1 in var_2(arg_7_1) do
+	for iter_7_0, iter_7_1 in pairs(arg_7_1) do
 		arg_7_0[iter_7_0] = iter_7_1
 	end
 
-	pairs = var_2
-
-	for iter_7_2, iter_7_3 in var_2(var_0_1.InheritNameList) do
+	for iter_7_2, iter_7_3 in pairs(var_0_0.InheritNameList) do
 		if not arg_7_1[iter_7_2] then
 			arg_7_0[iter_7_2] = iter_7_3()
 		end
@@ -227,162 +182,103 @@ function var_0_1.InheritReset(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.UsePortNShop(arg_8_0)
-	local var_8_0
-
-	if arg_8_0:IsReseted() then
-		var_8_0 = arg_8_0.activateTime
-		WorldConst = var_1_10002
-		var_8_0 = var_8_0 >= var_1_10002.GetNShopTimeStamp()
-	end
-
-	return var_8_0
+function var_0_0.UsePortNShop(arg_8_0)
+	return arg_8_0:IsReseted() and arg_8_0.activateTime >= WorldConst.GetNShopTimeStamp()
 end
 
-function var_0_1.IsReseted(arg_9_0)
+function var_0_0.IsReseted(arg_9_0)
 	return arg_9_0.activateCount > (arg_9_0:IsActivate() and 1 or 0)
 end
 
-function var_0_1.IsActivate(arg_10_0)
-	local var_10_0 = arg_10_0.type
-
-	World = var_1_10002
-
-	if var_10_0 == var_1_10002.TypeBase then
-		var_10_0 = #arg_10_0.baseShipIds > 0
-
-		return var_10_0
+function var_0_0.IsActivate(arg_10_0)
+	if arg_10_0.type == World.TypeBase then
+		return #arg_10_0.baseShipIds > 0
 	else
-		tobool = var_10_0
-
-		return var_10_0(arg_10_0:GetActiveMap())
+		return tobool(arg_10_0:GetActiveMap())
 	end
 
 	return
 end
 
-function var_0_1.CheckResetProgress(arg_11_0)
-	pg = var_1_10001
-
-	return var_1_10001.gameset.world_resetting_stage.key_value <= arg_11_0.progress
+function var_0_0.CheckResetProgress(arg_11_0)
+	return pg.gameset.world_resetting_stage.key_value <= arg_11_0.progress
 end
 
-function var_0_1.GetResetWaitingTime(arg_12_0)
-	local var_12_0 = arg_12_0.expiredTime
-
-	pg = var_1_10002
-
-	local var_12_1 = var_1_10002.TimeMgr.GetInstance()
-
-	return var_12_0 - var_2.GetServerTime(var_12_1)
+function var_0_0.GetResetWaitingTime(arg_12_0)
+	return arg_12_0.expiredTime - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_1.CheckReset(arg_13_0, arg_13_1)
-	local var_13_0
-
-	if arg_13_0:IsActivate() and (arg_13_1 or arg_13_0:CheckResetProgress()) then
-		var_13_0 = arg_13_0:GetResetWaitingTime() < 0
-	end
-
-	return var_13_0
+function var_0_0.CheckReset(arg_13_0, arg_13_1)
+	return arg_13_0:IsActivate() and (arg_13_1 or arg_13_0:CheckResetProgress()) and arg_13_0:GetResetWaitingTime() < 0
 end
 
-function var_0_1.GetAtlas(arg_14_0)
+function var_0_0.GetAtlas(arg_14_0)
 	return arg_14_0.atlas
 end
 
-function var_0_1.GetEntrance(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_0.atlas
-
-	return var_2.GetEntrance(var_15_0, arg_15_1)
+function var_0_0.GetEntrance(arg_15_0, arg_15_1)
+	return arg_15_0.atlas:GetEntrance(arg_15_1)
 end
 
-function var_0_1.GetActiveEntrance(arg_16_0)
-	local var_16_0 = arg_16_0.atlas
-
-	return var_1.GetActiveEntrance(var_16_0)
+function var_0_0.GetActiveEntrance(arg_16_0)
+	return arg_16_0.atlas:GetActiveEntrance()
 end
 
-function var_0_1.GetMap(arg_17_0, arg_17_1)
-	local var_17_0 = arg_17_0.atlas
-
-	return var_2.GetMap(var_17_0, arg_17_1)
+function var_0_0.GetMap(arg_17_0, arg_17_1)
+	return arg_17_0.atlas:GetMap(arg_17_1)
 end
 
-function var_0_1.GetActiveMap(arg_18_0)
-	local var_18_0 = arg_18_0.atlas
-
-	return var_1.GetActiveMap(var_18_0)
+function var_0_0.GetActiveMap(arg_18_0)
+	return arg_18_0.atlas:GetActiveMap()
 end
 
-function var_0_1.OnSwitchMap(arg_19_0)
+function var_0_0.OnSwitchMap(arg_19_0)
 	arg_19_0:ResetRound()
 
 	if arg_19_0.submarineSupport then
-		pg = var_1
-
-		local var_19_0 = var_1.TipsMgr.GetInstance()
-		local var_19_1 = var_1.ShowTips
-
-		i18n = var_1_10004
-
-		var_19_1(var_19_0, var_1_10004("world_instruction_submarine_5"))
+		pg.TipsMgr.GetInstance():ShowTips(i18n("world_instruction_submarine_5"))
 		arg_19_0:ResetSubmarine()
 		arg_19_0:UpdateSubmarineSupport(false)
 	end
 
-	arg_19_0:DispatchEvent(var_0_1.EventSwitchMap)
-
-	print = var_1
-
-	local var_19_2 = "switch 2 map: "
-	local var_19_3 = arg_19_0
-	local var_19_4 = arg_19_0.GetActiveMap(var_19_3).id
-	local var_19_5 = ", "
-
-	tostring = var_19_3
-
-	var_1(var_19_2 .. var_19_4 .. var_19_5 .. var_19_3(arg_19_0:GetActiveMap().gid))
+	arg_19_0:DispatchEvent(var_0_0.EventSwitchMap)
+	print("switch 2 map: " .. arg_19_0:GetActiveMap().id .. ", " .. tostring(arg_19_0:GetActiveMap().gid))
 
 	return
 end
 
-function var_0_1.GetRound(arg_20_0)
+function var_0_0.GetRound(arg_20_0)
 	return arg_20_0.roundIndex % 2
 end
 
-function var_0_1.IncRound(arg_21_0)
+function var_0_0.IncRound(arg_21_0)
 	arg_21_0.roundIndex = arg_21_0.roundIndex + 1
 
 	return
 end
 
-function var_0_1.ResetRound(arg_22_0)
+function var_0_0.ResetRound(arg_22_0)
 	arg_22_0.roundIndex = 0
 
 	return
 end
 
-function var_0_1.UpdateProgress(arg_23_0, arg_23_1)
+function var_0_0.UpdateProgress(arg_23_0, arg_23_1)
 	if arg_23_1 > arg_23_0.progress then
-		local var_23_0 = arg_23_0.progress
-
 		arg_23_0.progress = arg_23_1
 
-		local var_23_1 = arg_23_0.atlas
-
-		var_3.UpdateProgress(var_23_1, var_23_0, arg_23_1)
-		arg_23_0:DispatchEvent(var_0_1.EventUpdateProgress)
+		arg_23_0.atlas:UpdateProgress(arg_23_0.progress, arg_23_1)
+		arg_23_0:DispatchEvent(var_0_0.EventUpdateProgress)
 	end
 
 	return
 end
 
-function var_0_1.GetProgress(arg_24_0)
+function var_0_0.GetProgress(arg_24_0)
 	return arg_24_0.progress
 end
 
-function var_0_1.SetRealm(arg_25_0, arg_25_1)
+function var_0_0.SetRealm(arg_25_0, arg_25_1)
 	if arg_25_0.realm ~= arg_25_1 then
 		arg_25_0.realm = arg_25_1
 	end
@@ -390,117 +286,84 @@ function var_0_1.SetRealm(arg_25_0, arg_25_1)
 	return
 end
 
-function var_0_1.GetRealm(arg_26_0)
+function var_0_0.GetRealm(arg_26_0)
 	return 1
 end
 
-function var_0_1.CanCallSubmarineSupport(arg_27_0)
+function var_0_0.CanCallSubmarineSupport(arg_27_0)
 	return arg_27_0:GetSubmarineFleet()
 end
 
-function var_0_1.IsSubmarineSupporting(arg_28_0)
+function var_0_0.IsSubmarineSupporting(arg_28_0)
 	return arg_28_0.submarineSupport
 end
 
-function var_0_1.UpdateSubmarineSupport(arg_29_0, arg_29_1)
+function var_0_0.UpdateSubmarineSupport(arg_29_0, arg_29_1)
 	arg_29_0.submarineSupport = arg_29_1
 
-	arg_29_0:DispatchEvent(var_0_1.EventUpdateSubmarineSupport)
+	arg_29_0:DispatchEvent(var_0_0.EventUpdateSubmarineSupport)
 
 	return
 end
 
-function var_0_1.GetSubAidFlag(arg_30_0)
-	local var_30_1
+function var_0_0.GetSubAidFlag(arg_30_0)
+	local var_30_0 = arg_30_0:IsSubmarineSupporting()
 
-	if arg_30_0:IsSubmarineSupporting() then
-		local var_30_0 = arg_30_0:GetSubmarineFleet()
-
-		var_30_1 = var_1.GetAmmo(var_30_0) > 0
+	if var_30_0 then
+		var_30_0 = arg_30_0:GetSubmarineFleet():GetAmmo() > 0
 	end
 
-	return var_30_1
+	return var_30_0
 end
 
-function var_0_1.ResetSubmarine(arg_31_0)
-	if arg_31_0:GetSubmarineFleet() then
-		var_1:RepairSubmarine()
+function var_0_0.ResetSubmarine(arg_31_0)
+	local var_31_0 = arg_31_0:GetSubmarineFleet()
+
+	if var_31_0 then
+		var_31_0:RepairSubmarine()
 	end
 
 	return
 end
 
-function var_0_1.SetFleets(arg_32_0, arg_32_1)
+function var_0_0.SetFleets(arg_32_0, arg_32_1)
 	arg_32_0.fleets = arg_32_1
-	pg = var_1_10002
 
-	local var_32_0 = var_1_10002.ShipFlagMgr.GetInstance()
-
-	var_2.UpdateFlagShips(var_32_0, "inWorld")
+	pg.ShipFlagMgr.GetInstance():UpdateFlagShips("inWorld")
 
 	return
 end
 
-function var_0_1.GetFleets(arg_33_0)
-	_ = var_1_10001
-
-	return var_1_10001.rest(arg_33_0.fleets, 1)
+function var_0_0.GetFleets(arg_33_0)
+	return _.rest(arg_33_0.fleets, 1)
 end
 
-function var_0_1.GetFleet(arg_34_0, arg_34_1)
+function var_0_0.GetFleet(arg_34_0, arg_34_1)
 	if arg_34_1 then
-		_ = var_1_10002
-
-		local var_34_1
-
-		if not var_1_10002.detect(arg_34_0.fleets, function(arg_35_0)
+		return _.detect(arg_34_0.fleets, function(arg_35_0)
 			return arg_35_0.id == arg_34_1
-		end) then
-			local var_34_0 = arg_34_0:GetActiveMap()
-
-			var_34_1 = var_2.GetFleet(var_34_0)
-		end
-
-		return var_34_1
+		end) or arg_34_0:GetActiveMap():GetFleet()
 	end
 end
 
-function var_0_1.GetNormalFleets(arg_36_0)
-	_ = var_1_10001
-
-	return var_1_10001.filter(arg_36_0.fleets, function(arg_37_0)
-		local var_37_0 = arg_37_0:GetFleetType()
-
-		FleetType = var_2_10002
-
-		return var_37_0 == var_2_10002.Normal
+function var_0_0.GetNormalFleets(arg_36_0)
+	return _.filter(arg_36_0.fleets, function(arg_37_0)
+		return arg_37_0:GetFleetType() == FleetType.Normal
 	end)
 end
 
-function var_0_1.GetSubmarineFleet(arg_38_0)
-	_ = var_1_10001
-
-	return var_1_10001.detect(arg_38_0.fleets, function(arg_39_0)
-		local var_39_0 = arg_39_0:GetFleetType()
-
-		FleetType = var_2_10002
-
-		return var_39_0 == var_2_10002.Submarine
+function var_0_0.GetSubmarineFleet(arg_38_0)
+	return _.detect(arg_38_0.fleets, function(arg_39_0)
+		return arg_39_0:GetFleetType() == FleetType.Submarine
 	end)
 end
 
-function var_0_1.GetShips(arg_40_0)
+function var_0_0.GetShips(arg_40_0)
 	local var_40_0 = {}
 
-	_ = var_1_10002
-
-	var_1_10002.each(arg_40_0:GetFleets(), function(arg_41_0)
-		_ = var_2_10001
-
-		var_2_10001.each(arg_41_0:GetShips(true), function(arg_42_0)
-			table = var_3_10001
-
-			var_3_10001.insert(var_40_0, arg_42_0)
+	_.each(arg_40_0:GetFleets(), function(arg_41_0)
+		_.each(arg_41_0:GetShips(true), function(arg_42_0)
+			table.insert(var_40_0, arg_42_0)
 
 			return
 		end)
@@ -508,194 +371,125 @@ function var_0_1.GetShips(arg_40_0)
 		return
 	end)
 
-	return var_40_0
+	return {}
 end
 
-function var_0_1.GetShipVOs(arg_43_0)
-	local var_43_0 = arg_43_0.type
-
-	World = var_1_10002
-
-	if var_43_0 == var_1_10002.TypeBase then
-		underscore = var_43_0
-
-		return var_43_0.map(arg_43_0.baseShipIds, function(arg_44_0)
-			WorldConst = var_2_10001
-
-			return var_2_10001.FetchShipVO(arg_44_0)
+function var_0_0.GetShipVOs(arg_43_0)
+	if arg_43_0.type == World.TypeBase then
+		return underscore.map(arg_43_0.baseShipIds, function(arg_44_0)
+			return WorldConst.FetchShipVO(arg_44_0)
 		end)
 	else
-		_ = var_43_0
-
-		return var_43_0.map(arg_43_0:GetShips(), function(arg_45_0)
-			WorldConst = var_2_10001
-
-			return var_2_10001.FetchShipVO(arg_45_0.id)
+		return _.map(arg_43_0:GetShips(), function(arg_45_0)
+			return WorldConst.FetchShipVO(arg_45_0.id)
 		end)
 	end
 
 	return
 end
 
-function var_0_1.GetShip(arg_46_0, arg_46_1)
-	_ = var_1_10002
-
-	return var_1_10002.detect(arg_46_0:GetShips(), function(arg_47_0)
+function var_0_0.GetShip(arg_46_0, arg_46_1)
+	return _.detect(arg_46_0:GetShips(), function(arg_47_0)
 		return arg_47_0.id == arg_46_1
 	end)
 end
 
-function var_0_1.GetShipVO(arg_48_0, arg_48_1)
-	if arg_48_0:GetShip(arg_48_1) then
-		::label_48_0::
+function var_0_0.GetShipVO(arg_48_0, arg_48_1)
+	local var_48_0 = arg_48_0:GetShip(arg_48_1)
 
-		WorldConst = var_1_10003
-		var_1_10003 = var_1_10003.FetchShipVO(var_2.id)
-	end
-
-	return var_1_10003
+	return var_48_0 and WorldConst.FetchShipVO(var_48_0.id)
 end
 
-function var_0_1.SetDefaultFleets(arg_49_0, arg_49_1)
+function var_0_0.SetDefaultFleets(arg_49_0, arg_49_1)
 	arg_49_0.defaultFleets = arg_49_1
 
 	return
 end
 
-function var_0_1.GetDefaultFleets(arg_50_0)
-	underscore = var_1_10001
-
-	return var_1_10001.rest(arg_50_0.defaultFleets, 1)
+function var_0_0.GetDefaultFleets(arg_50_0)
+	return underscore.rest(arg_50_0.defaultFleets, 1)
 end
 
-function var_0_1.TransDefaultFleets(arg_51_0)
-	underscore = var_1_10001
-	arg_51_0.defaultFleets = var_1_10001.map(arg_51_0.fleets, function(arg_52_0)
-		local var_52_0 = arg_52_0
-		local var_52_1 = arg_52_0.Trans
-
-		WorldBaseFleet = var_2_10004
-
-		return var_52_1(var_52_0, var_2_10004)
+function var_0_0.TransDefaultFleets(arg_51_0)
+	arg_51_0.defaultFleets = underscore.map(arg_51_0.fleets, function(arg_52_0)
+		return arg_52_0:Trans(WorldBaseFleet)
 	end)
 
 	return
 end
 
-function var_0_1.GetLevel(arg_53_0)
-	_ = var_1_10001
-
-	local var_53_0 = var_1_10001(arg_53_0:GetFleets())
-	local var_53_1 = var_1.chain(var_53_0)
-	local var_53_2 = var_1.map(var_53_1, function(arg_54_0)
+function var_0_0.GetLevel(arg_53_0)
+	return _(arg_53_0:GetFleets()):chain():map(function(arg_54_0)
 		return arg_54_0:GetLevel()
-	end)
-	local var_53_3 = var_1.max(var_53_2)
-
-	return var_1.value(var_53_3)
+	end):max():value()
 end
 
-function var_0_1.GetWorldPower(arg_55_0)
+function var_0_0.GetWorldPower(arg_55_0)
 	local var_55_0 = 0
 
-	underscore = var_1_10002
-
-	var_1_10002.each(arg_55_0.fleets, function(arg_56_0)
+	underscore.each(arg_55_0.fleets, function(arg_56_0)
 		var_55_0 = var_55_0 + arg_56_0:GetGearScoreSum()
 
 		return
 	end)
 
-	math = var_2
-
-	local var_55_1 = var_2.floor
-	local var_55_2 = arg_55_0:GetWorldMapBuffAverageLevel()
-
-	pg = var_5
-
-	return var_55_1(var_55_0 * (1 + var_55_2 / var_5.gameset.world_strength_correct.key_value))
+	return math.floor(0 * (1 + arg_55_0:GetWorldMapBuffAverageLevel() / pg.gameset.world_strength_correct.key_value))
 end
 
-function var_0_1.GetWorldRank(arg_57_0)
+function var_0_0.GetWorldRank(arg_57_0)
 	local var_57_0 = 0
 
-	underscore = var_1_10002
-
-	local var_57_1 = var_1_10002.map(arg_57_0:GetNormalFleets(), function(arg_58_0)
+	for iter_57_0, iter_57_1 in ipairs((underscore.map(arg_57_0:GetNormalFleets(), function(arg_58_0)
 		return arg_58_0:GetLevelCount() / 6
-	end)
-
-	pg = var_1_10003
-
-	local var_57_2 = var_1_10003.gameset.world_level_correct.description
-
-	ipairs = var_4
-
-	for iter_57_0, iter_57_1 in var_4(var_57_1) do
-		var_57_0 = var_57_0 + iter_57_1 * var_57_2[iter_57_0]
+	end))) do
+		var_57_0 = var_57_0 + iter_57_1 * pg.gameset.world_level_correct.description[iter_57_0]
 	end
 
-	local var_57_3 = arg_57_0
+	local var_57_1 = arg_57_0:GetSubmarineFleet()
 
-	if arg_57_0.GetSubmarineFleet(var_57_3) then
-		var_57_0 = var_57_0 + var_4:GetLevelCount() / 3 * var_57_2[5]
+	if var_57_1 then
+		var_57_0 = var_57_0 + var_57_1:GetLevelCount() / 3 * pg.gameset.world_level_correct.description[5]
 	end
 
-	local var_57_4 = arg_57_0
-	local var_57_5 = var_57_0 * arg_57_0.GetWorldMapBuffAverageLevel(var_57_4)
-	local var_57_6
+	local var_57_2 = var_57_0 * arg_57_0:GetWorldMapBuffAverageLevel()
+	local var_57_3
 
-	pg = var_57_3
-
-	local var_57_7 = var_57_3.gameset.world_suggest_level.description
-
-	ipairs = var_57_4
-
-	for iter_57_2, iter_57_3 in var_57_4(var_57_7) do
-		if var_57_5 < iter_57_3 then
+	for iter_57_2, iter_57_3 in ipairs(pg.gameset.world_suggest_level.description) do
+		if var_57_2 < iter_57_3 then
 			break
 		else
-			var_57_6 = iter_57_2
+			var_57_3 = iter_57_2
 		end
 	end
 
-	return var_57_6
+	return var_57_3
 end
 
-function var_0_1.GetBossProxy(arg_59_0)
+function var_0_0.GetBossProxy(arg_59_0)
 	return arg_59_0.worldBossProxy
 end
 
-function var_0_1.GetTaskProxy(arg_60_0)
+function var_0_0.GetTaskProxy(arg_60_0)
 	return arg_60_0.taskProxy
 end
 
-function var_0_1.GetInventoryProxy(arg_61_0)
+function var_0_0.GetInventoryProxy(arg_61_0)
 	return arg_61_0.inventoryProxy
 end
 
-function var_0_1.GetCollectionProxy(arg_62_0)
+function var_0_0.GetCollectionProxy(arg_62_0)
 	return arg_62_0.collectionProxy
 end
 
-function var_0_1.VerifyFormation(arg_63_0)
+function var_0_0.VerifyFormation(arg_63_0)
 	local var_63_0 = {}
 
-	_ = var_1_10002
+	_.each(arg_63_0:GetShips(), function(arg_64_0)
+		local var_64_0 = var_63_0[arg_64_0.id] or 0
 
-	var_1_10002.each(arg_63_0:GetShips(), function(arg_64_0)
-		local var_64_0 = var_63_0
-		local var_64_1 = arg_64_0.id
-		local var_64_2
+		var_63_0[arg_64_0.id] = var_64_0 + 1
 
-		if not var_63_0[arg_64_0.id] then
-			var_64_2 = 0
-		end
-
-		var_64_0[var_64_1] = var_64_2 + 1
-		assert = var_64_0
-
-		var_64_0(var_63_0[arg_64_0.id] <= 1, "repeated ship id: " .. arg_64_0.id)
+		assert(var_63_0[arg_64_0.id] <= 1, "repeated ship id: " .. arg_64_0.id)
 
 		return
 	end)
@@ -703,167 +497,91 @@ function var_0_1.VerifyFormation(arg_63_0)
 	return
 end
 
-function var_0_1.CalcRepairCost(arg_65_0, arg_65_1)
-	WorldConst = var_1_10002
-
-	local var_65_0 = var_1_10002.FetchShipVO(arg_65_1.id).level - arg_65_0:GetLevel()
+function var_0_0.CalcRepairCost(arg_65_0, arg_65_1)
+	local var_65_0 = WorldConst.FetchShipVO(arg_65_1.id).level - arg_65_0:GetLevel()
 
 	if arg_65_1:IsBroken() then
-		pg = var_4
-
-		local var_65_1 = var_4.gameset.world_port_service_2_interval.description
-
-		_ = var_1_10005
-
-		if not var_1_10005.detect(var_65_1, function(arg_66_0)
+		local var_65_1 = _.detect(pg.gameset.world_port_service_2_interval.description, function(arg_66_0)
 			return arg_66_0[1] >= var_65_0
-		end) then
-			var_1_10005 = var_65_1[#var_65_1]
-		end
+		end) or pg.gameset.world_port_service_2_interval.description[#pg.gameset.world_port_service_2_interval.description]
 
-		local var_65_2 = var_1_10005[2]
+		return var_65_1[2] * pg.gameset.world_port_service_2_price.key_value
+	elseif not arg_65_1:IsHpFull() then
+		local var_65_2 = _.detect(pg.gameset.world_port_service_1_interval.description, function(arg_67_0)
+			return arg_67_0[1] >= var_65_0
+		end) or pg.gameset.world_port_service_1_interval.description[#pg.gameset.world_port_service_1_interval.description]
+		local var_65_3 = _.detect(pg.gameset.world_port_service_1_price.description, function(arg_68_0)
+			return arg_68_0[1] >= arg_65_1.hpRant
+		end) or pg.gameset.world_port_service_1_price.description[#pg.gameset.world_port_service_1_price.description]
 
-		pg = var_7
-
-		return var_65_2 * var_7.gameset.world_port_service_2_price.key_value
-	else
-		local var_65_3 = arg_65_1
-
-		if not arg_65_1.IsHpFull(var_65_3) then
-			pg = var_4
-
-			local var_65_4 = var_4.gameset.world_port_service_1_interval.description
-
-			pg = var_1_10005
-
-			local var_65_5 = var_1_10005.gameset.world_port_service_1_price.description
-
-			_ = var_65_3
-
-			local var_65_6
-
-			if not var_65_3.detect(var_65_4, function(arg_67_0)
-				return arg_67_0[1] >= var_65_0
-			end) then
-				var_65_6 = var_65_4[#var_65_4]
-			end
-
-			local var_65_7 = var_65_6[2]
-
-			_ = var_8
-
-			local var_65_8
-
-			if not var_8.detect(var_65_5, function(arg_68_0)
-				return arg_68_0[1] >= arg_65_1.hpRant
-			end) then
-				var_65_8 = var_65_5[#var_65_5]
-			end
-
-			return var_65_7 * var_65_8[2]
-		end
+		return var_65_2[2] * var_65_3[2]
 	end
 
 	return 0
 end
 
-function var_0_1.GetMoveRange(arg_69_0, arg_69_1)
+function var_0_0.GetMoveRange(arg_69_0, arg_69_1)
 	local var_69_0 = arg_69_0:GetActiveMap()
 
-	if var_2.CanLongMove(var_69_0, arg_69_1) then
-		return var_2:GetLongMoveRange(arg_69_1)
+	if var_69_0:CanLongMove(arg_69_1) then
+		return var_69_0:GetLongMoveRange(arg_69_1)
 	else
-		return var_2:GetMoveRange(arg_69_1)
+		return var_69_0:GetMoveRange(arg_69_1)
 	end
 
 	return
 end
 
-function var_0_1.IsRookie(arg_70_0)
+function var_0_0.IsRookie(arg_70_0)
 	return arg_70_0.activateCount == 0 and arg_70_0.progress <= 0
 end
 
-function var_0_1.EntranceToReplacementMapList(arg_71_0, arg_71_1)
-	local var_71_0 = {}
-
-	ipairs = var_1_10003
-
-	for iter_71_0, iter_71_1 in var_1_10003(arg_71_1.config.stage_chapter) do
+function var_0_0.EntranceToReplacementMapList(arg_71_0, arg_71_1)
+	for iter_71_0, iter_71_1 in ipairs(arg_71_1.config.stage_chapter) do
 		if arg_71_0:GetProgress() >= iter_71_1[1] and arg_71_0:GetProgress() <= iter_71_1[2] then
-			table = var_8
-
-			var_8.insert(var_71_0, arg_71_0:GetMap(iter_71_1[3]))
+			table.insert({}, arg_71_0:GetMap(iter_71_1[3]))
 		end
 	end
 
-	ipairs = var_3
+	for iter_71_2, iter_71_3 in ipairs(arg_71_1.config.task_chapter) do
+		local var_71_0 = arg_71_0.taskProxy:getTaskById(iter_71_3[1])
 
-	for iter_71_2, iter_71_3 in var_3(arg_71_1.config.task_chapter) do
-		local var_71_1 = arg_71_0.taskProxy
-
-		if var_8.getTaskById(var_71_1, iter_71_3[1]) and var_8:isAlive() then
-			table = var_9
-
-			var_9.insert(var_71_0, arg_71_0:GetMap(iter_71_3[2]))
+		if var_71_0 and var_71_0:isAlive() then
+			table.insert({}, arg_71_0:GetMap(iter_71_3[2]))
 		end
 	end
 
 	if arg_71_1.becomeSairen then
-		table = var_3
-
-		var_3.insert(var_71_0, arg_71_0:GetMap(arg_71_1.config.sairen_chapter[1]))
+		table.insert({}, arg_71_0:GetMap(arg_71_1.config.sairen_chapter[1]))
 	end
 
-	ipairs = var_3
-
-	for iter_71_4, iter_71_5 in var_3(arg_71_1.config.teasure_chapter) do
-		local var_71_2 = arg_71_0.inventoryProxy
-
-		if var_8.GetItemCount(var_71_2, iter_71_5[1]) > 0 then
-			table = var_8
-
-			var_8.insert(var_71_0, arg_71_0:GetMap(iter_71_5[2]))
+	for iter_71_4, iter_71_5 in ipairs(arg_71_1.config.teasure_chapter) do
+		if arg_71_0.inventoryProxy:GetItemCount(iter_71_5[1]) > 0 then
+			table.insert({}, arg_71_0:GetMap(iter_71_5[2]))
 		end
 	end
 
-	local var_71_3 = arg_71_1
-	local var_71_4
+	local var_71_1 = arg_71_1:GetBaseMap()
 
-	if arg_71_1.GetBaseMap(var_71_3).isPressing then
-		var_71_4 = #arg_71_1.config.complete_chapter
-
-		if 0 < var_71_4 then
-			table = var_71_4
-
-			var_71_4.insert(var_71_0, arg_71_0:GetMap(arg_71_1.config.complete_chapter[1]))
-		end
+	if var_71_1.isPressing and #arg_71_1.config.complete_chapter > 0 then
+		table.insert({}, arg_71_0:GetMap(arg_71_1.config.complete_chapter[1]))
 	end
 
-	table = var_71_4
+	table.insert({}, var_71_1)
 
-	var_71_4.insert(var_71_0, var_3)
-
-	if arg_71_1.active then
-		underscore = var_4
-
-		if not var_4.any(var_71_0, function(arg_72_0)
-			return arg_72_0.active
-		end) then
-			table = var_4
-
-			var_4.insert(var_71_0, arg_71_0:GetActiveMap())
-		end
+	if arg_71_1.active and not underscore.any({}, function(arg_72_0)
+		return arg_72_0.active
+	end) then
+		table.insert({}, arg_71_0:GetActiveMap())
 	end
 
-	local var_71_5 = {}
+	local var_71_2 = {}
 
-	underscore = var_71_3
-
-	return (var_71_3.filter(var_71_0, function(arg_73_0)
-		if var_71_5[arg_73_0.id] then
+	return (underscore.filter({}, function(arg_73_0)
+		if var_71_2[arg_73_0.id] then
 			return false
 		else
-			var_71_5[arg_73_0.id] = true
+			var_71_2[arg_73_0.id] = true
 
 			return true
 		end
@@ -872,127 +590,68 @@ function var_0_1.EntranceToReplacementMapList(arg_71_0, arg_71_1)
 	end))
 end
 
-function var_0_1.ReplacementMapType(arg_74_0, arg_74_1)
-	ipairs = var_1_10002
-
-	for iter_74_0, iter_74_1 in var_1_10002(arg_74_0.config.stage_chapter) do
+function var_0_0.ReplacementMapType(arg_74_0, arg_74_1)
+	for iter_74_0, iter_74_1 in ipairs(arg_74_0.config.stage_chapter) do
 		if iter_74_1[3] == arg_74_1.id then
-			local var_74_0 = "stage_chapter"
-
-			i18n = var_8
-
-			local var_74_1 = var_8("area_zhuxian")
+			local var_74_1 = i18n("area_zhuxian")
 
 			return
 		end
 	end
 
-	ipairs = var_2
-
-	for iter_74_2, iter_74_3 in var_2(arg_74_0.config.task_chapter) do
+	for iter_74_2, iter_74_3 in ipairs(arg_74_0.config.task_chapter) do
 		if iter_74_3[2] == arg_74_1.id then
-			pg = var_7
-
-			if var_7.world_task_data[iter_74_3[1]].type == 0 then
-				local var_74_2 = "task_chapter"
-
-				i18n = var_1_10009
-				var_1_10009 = var_1_10009("area_zhuxian")
+			if pg.world_task_data[iter_74_3[1]].type == 0 then
+				local var_74_3 = i18n("area_zhuxian")
 
 				return
-			elseif var_7 == 6 then
-				local var_74_3 = "task_chapter"
-
-				i18n = var_1_10009
-				var_1_10009 = var_1_10009("area_dangan")
+			elseif pg.world_task_data[iter_74_3[1]].type == 6 then
+				local var_74_5 = i18n("area_dangan")
 
 				return
 			else
-				local var_74_4 = "task_chapter"
-
-				i18n = var_1_10009
-				var_1_10009 = var_1_10009("area_renwu")
+				local var_74_7 = i18n("area_renwu")
 
 				return
 			end
 		end
 	end
 
-	ipairs = var_2
-
-	for iter_74_4, iter_74_5 in var_2(arg_74_0.config.teasure_chapter) do
+	for iter_74_4, iter_74_5 in ipairs(arg_74_0.config.teasure_chapter) do
 		if iter_74_5[2] == arg_74_1.id then
-			pg = var_7
+			local var_74_8 = pg.world_item_data_template[iter_74_5[1]].usage_arg[1] == 1 and i18n("area_shenyuan") or i18n("area_yinmi")
 
-			local var_74_5 = var_7.world_item_data_template[iter_74_5[1]].usage_arg[1] == 1
-			local var_74_6 = "teasure_chapter"
-
-			if var_74_5 then
-				i18n = var_1_10010
-
-				if not var_1_10010("area_shenyuan") then
-					i18n = var_1_10010
-					var_1_10010 = var_1_10010("area_yinmi")
-				end
-
-				return var_74_6, var_1_10010
-			end
+			return "teasure_chapter", var_74_8
 		end
 	end
 
 	if arg_74_0.config.sairen_chapter[1] == arg_74_1.id then
-		local var_74_7 = "sairen_chapter"
-
-		i18n = var_3
-
-		local var_74_8 = var_3("area_yaosai")
+		local var_74_10 = i18n("area_yaosai")
 
 		return
 	end
 
 	if arg_74_0.config.complete_chapter[1] == arg_74_1.id then
-		local var_74_9 = "complete_chapter"
-
-		i18n = var_3
-
-		local var_74_10 = var_3("area_anquan")
+		local var_74_12 = i18n("area_anquan")
 
 		return
 	end
-
-	local var_74_12
 
 	if arg_74_0:GetBaseMapId() == arg_74_1.id then
-		local var_74_11 = "base_chapter"
-
-		i18n = var_74_12
-		var_74_12 = var_74_12("area_putong")
+		local var_74_14 = i18n("area_putong")
 
 		return
 	end
 
-	local var_74_13 = "test_chapter"
-
-	i18n = var_74_12
-
-	local var_74_14 = var_74_12("area_unkown")
+	local var_74_16 = i18n("area_unkown")
 end
 
-function var_0_1.FindTreasureEntrance(arg_75_0, arg_75_1)
-	underscore = var_1_10002
-
-	local var_75_0 = var_1_10002.values
-	local var_75_1 = arg_75_0.atlas
-
-	return var_75_0(var_4.GetTreasureDic(var_75_1, arg_75_1))[1]
+function var_0_0.FindTreasureEntrance(arg_75_0, arg_75_1)
+	return underscore.values(arg_75_0.atlas:GetTreasureDic(arg_75_1))[1]
 end
 
-function var_0_1.TreasureMap2ItemId(arg_76_0, arg_76_1, arg_76_2)
-	local var_76_0 = arg_76_0:GetEntrance(arg_76_2)
-
-	ipairs = var_1_10004
-
-	for iter_76_0, iter_76_1 in var_1_10004(var_76_0.config.teasure_chapter) do
+function var_0_0.TreasureMap2ItemId(arg_76_0, arg_76_1, arg_76_2)
+	for iter_76_0, iter_76_1 in ipairs(arg_76_0:GetEntrance(arg_76_2).config.teasure_chapter) do
 		if iter_76_1[2] == arg_76_1 then
 			return iter_76_1[1]
 		end
@@ -1001,507 +660,302 @@ function var_0_1.TreasureMap2ItemId(arg_76_0, arg_76_1, arg_76_2)
 	return
 end
 
-function var_0_1.CheckFleetMovable(arg_77_0)
+function var_0_0.CheckFleetMovable(arg_77_0)
 	local var_77_0 = arg_77_0:GetActiveMap()
-	local var_77_1 = var_1.GetFleet(var_77_0)
-	local var_77_2 = arg_77_0:GetRound()
+	local var_77_1 = var_77_0:GetFleet()
 
-	WorldConst = var_77_0
-
-	local var_77_3
-
-	if var_77_2 == var_77_0.RoundPlayer then
-		if var_1:CheckFleetMovable(var_77_1) then
-			var_77_3 = not var_1:CheckInteractive()
-		end
-	else
-		var_77_3 = false
-	end
-
-	if false then
-		var_77_3 = true
-	end
-
-	return var_77_3
+	return arg_77_0:GetRound() == WorldConst.RoundPlayer and var_77_0:CheckFleetMovable(var_77_1) and not var_77_0:CheckInteractive()
 end
 
-function var_0_1.SetAchieveSuccess(arg_78_0, arg_78_1, arg_78_2)
-	local var_78_0 = arg_78_0.achieveEntranceStar
-	local var_78_1
-
-	if not arg_78_0.achieveEntranceStar[arg_78_1] then
-		var_78_1 = {}
-	end
-
-	var_78_0[arg_78_1] = var_78_1
+function var_0_0.SetAchieveSuccess(arg_78_0, arg_78_1, arg_78_2)
+	arg_78_0.achieveEntranceStar[arg_78_1] = arg_78_0.achieveEntranceStar[arg_78_1] or {}
 	arg_78_0.achieveEntranceStar[arg_78_1][arg_78_2] = true
 
 	return
 end
 
-function var_0_1.GetMapAchieveStarDic(arg_79_0, arg_79_1)
-	local var_79_0
-
-	if not arg_79_0.achieveEntranceStar[arg_79_1] then
-		var_79_0 = {}
-	end
-
-	return var_79_0
+function var_0_0.GetMapAchieveStarDic(arg_79_0, arg_79_1)
+	return arg_79_0.achieveEntranceStar[arg_79_1] or {}
 end
 
-function var_0_1.GetAchievement(arg_80_0, arg_80_1)
+function var_0_0.GetAchievement(arg_80_0, arg_80_1)
 	if not arg_80_0.achievements[arg_80_1] then
-		local var_80_0 = arg_80_0.achievements
+		arg_80_0.achievements[arg_80_1] = WorldAchievement.New()
 
-		WorldAchievement = var_1_10003
-		var_80_0[arg_80_1] = var_1_10003.New()
-
-		local var_80_1 = arg_80_0.achievements[arg_80_1]
-
-		var_2.Setup(var_80_1, arg_80_1)
+		arg_80_0.achievements[arg_80_1]:Setup(arg_80_1)
 	end
 
 	return arg_80_0.achievements[arg_80_1]
 end
 
-function var_0_1.GetAchievements(arg_81_0, arg_81_1)
+function var_0_0.GetAchievements(arg_81_0, arg_81_1)
 	local var_81_0 = {}
 
-	_ = var_1_10003
+	_.each(arg_81_1.config.normal_target, function(arg_82_0)
+		table.insert(var_81_0, arg_81_0:GetAchievement(arg_82_0))
 
-	var_1_10003.each(arg_81_1.config.normal_target, function(arg_82_0)
-		table = var_2_10001
-
-		local var_82_0 = var_2_10001.insert
-		local var_82_1 = var_81_0
-		local var_82_2 = arg_81_0
-
-		var_82_0(var_82_1, var_4.GetAchievement(var_82_2, arg_82_0))
+		return
+	end)
+	_.each(arg_81_1.config.cryptic_target, function(arg_83_0)
+		table.insert(var_81_0, arg_81_0:GetAchievement(arg_83_0))
 
 		return
 	end)
 
-	_ = var_3
-
-	var_3.each(arg_81_1.config.cryptic_target, function(arg_83_0)
-		table = var_2_10001
-
-		local var_83_0 = var_2_10001.insert
-		local var_83_1 = var_81_0
-		local var_83_2 = arg_81_0
-
-		var_83_0(var_83_1, var_4.GetAchievement(var_83_2, arg_83_0))
-
-		return
-	end)
-
-	return var_81_0
+	return {}
 end
 
-function var_0_1.IsNormalAchievementAchieved(arg_84_0, arg_84_1)
+function var_0_0.IsNormalAchievementAchieved(arg_84_0, arg_84_1)
 	return arg_84_0:CountAchievements(arg_84_1) >= #arg_84_1.config.normal_target
 end
 
-function var_0_1.AnyUnachievedAchievement(arg_85_0, arg_85_1)
+function var_0_0.AnyUnachievedAchievement(arg_85_0, arg_85_1)
 	local var_85_0 = arg_85_0:GetMapAchieveStarDic(arg_85_1.id)
-
-	_ = var_1_10003
-
-	if var_1_10003.detect(arg_85_1:GetAchievementAwards(), function(arg_86_0)
+	local var_85_1 = _.detect(arg_85_1:GetAchievementAwards(), function(arg_86_0)
 		return not var_85_0[arg_86_0.star]
-	end) then
-		local var_85_1, var_85_2 = arg_85_0:CountAchievements(arg_85_1)
+	end)
 
-		return var_85_1 + var_85_2 >= var_3.star, var_3
+	if var_85_1 then
+		local var_85_2, var_85_3 = arg_85_0:CountAchievements(arg_85_1)
+
+		return var_85_2 + var_85_3 >= var_85_1.star, var_85_1
 	end
 
 	return
 end
 
-function var_0_1.GetFinishAchievements(arg_87_0, arg_87_1)
-	if not arg_87_1 then
-		var_1_10004 = arg_87_0.atlas
-		arg_87_1 = var_2.GetAchEntranceList(var_1_10004)
-	end
+function var_0_0.GetFinishAchievements(arg_87_0, arg_87_1)
+	arg_87_1 = arg_87_1 or arg_87_0.atlas:GetAchEntranceList()
 
 	local var_87_0 = {}
-	local var_87_1 = {}
 
-	ipairs = var_1_10004
+	for iter_87_0, iter_87_1 in ipairs(arg_87_1) do
+		local var_87_1, var_87_2 = arg_87_0:CountAchievements(iter_87_1)
+		local var_87_3 = arg_87_0:GetMapAchieveStarDic(iter_87_1.id)
 
-	for iter_87_0, iter_87_1 in var_1_10004(arg_87_1) do
-		local var_87_2, var_87_3 = arg_87_0:CountAchievements(iter_87_1)
-		local var_87_4 = arg_87_0
-		local var_87_5 = arg_87_0.GetMapAchieveStarDic(var_87_4, iter_87_1.id)
-		local var_87_6 = {}
-
-		ipairs = var_87_4
-
-		for iter_87_2, iter_87_3 in var_87_4(iter_87_1:GetAchievementAwards()) do
-			if not var_87_5[iter_87_3.star] and var_87_2 + var_87_3 >= iter_87_3.star then
-				table = var_18
-
-				var_18.insert(var_87_6, iter_87_3.star)
+		for iter_87_2, iter_87_3 in ipairs(iter_87_1:GetAchievementAwards()) do
+			if not var_87_3[iter_87_3.star] and var_87_1 + var_87_2 >= iter_87_3.star then
+				table.insert({}, iter_87_3.star)
 			end
 		end
 
-		if #var_87_6 > 0 then
-			table = var_13
-
-			var_13.insert(var_87_0, {
+		if #{} > 0 then
+			table.insert(var_87_0, {
 				id = iter_87_1.id,
-				star_list = var_87_6
+				star_list = {}
 			})
-
-			table = var_13
-
-			var_13.insert(var_87_1, iter_87_1.id)
+			table.insert({}, iter_87_1.id)
 		end
 	end
 
-	return var_87_0, var_87_1
+	return var_87_0, {}
 end
 
-function var_0_1.CountAchievements(arg_88_0, arg_88_1)
+function var_0_0.CountAchievements(arg_88_0, arg_88_1)
 	local var_88_0 = 0
 	local var_88_1 = 0
 	local var_88_2 = 0
-	local var_88_4
 
-	if not arg_88_1 or not {
-		arg_88_1
-	} then
-		local var_88_3 = arg_88_0.atlas
+	if arg_88_1 then
+		local var_88_3 = {
+			arg_88_1
+		}
 
-		var_88_4 = var_5.GetAchEntranceList(var_88_3)
-	end
-
-	ipairs = var_1_10006
-
-	for iter_88_0, iter_88_1 in var_1_10006(var_88_4) do
-		ipairs = var_1_10011
-
-		for iter_88_2, iter_88_3 in var_1_10011(iter_88_1.config.normal_target) do
-			local var_88_6
-
-			if arg_88_0.achievements[iter_88_3] then
-				local var_88_5 = arg_88_0.achievements[iter_88_3]
-
-				if var_16.IsAchieved(var_88_5) then
-					var_88_6 = 1
-
-					goto label_88_0
-				end
-			end
-
-			var_88_6 = 0
-
-			::label_88_0::
-
-			var_88_0 = var_88_0 + var_88_6
+		if not {
+			arg_88_1
+		} then
+			var_88_3 = arg_88_0.atlas:GetAchEntranceList()
 		end
 
-		ipairs = var_1_10011
-
-		for iter_88_4, iter_88_5 in var_1_10011(iter_88_1.config.cryptic_target) do
-			local var_88_8
-
-			if arg_88_0.achievements[iter_88_5] then
-				local var_88_7 = arg_88_0.achievements[iter_88_5]
-
-				if var_16.IsAchieved(var_88_7) then
-					var_88_8 = 1
-
-					goto label_88_1
-				end
+		for iter_88_0, iter_88_1 in ipairs(var_88_3) do
+			for iter_88_2, iter_88_3 in ipairs(iter_88_1.config.normal_target) do
+				var_88_0 = var_88_0 + (arg_88_0.achievements[iter_88_3] and arg_88_0.achievements[iter_88_3]:IsAchieved() and 1 or 0)
 			end
 
-			var_88_8 = 0
+			for iter_88_4, iter_88_5 in ipairs(iter_88_1.config.cryptic_target) do
+				var_88_1 = var_88_1 + (arg_88_0.achievements[iter_88_5] and arg_88_0.achievements[iter_88_5]:IsAchieved() and 1 or 0)
+			end
 
-			::label_88_1::
-
-			var_88_1 = var_88_1 + var_88_8
+			var_88_2 = var_88_2 + #iter_88_1.config.normal_target + #iter_88_1.config.cryptic_target
 		end
 
-		var_88_2 = var_88_2 + #iter_88_1.config.normal_target + #iter_88_1.config.cryptic_target
+		return var_88_0, var_88_1, var_88_2
 	end
-
-	return var_88_0, var_88_1, var_88_2
 end
 
-local function var_0_2()
-	local var_89_0 = {}
-
-	TeamType = var_1_10001
-	var_89_0[var_1_10001.Main] = {}
-	TeamType = var_1
-	var_89_0[var_1.Vanguard] = {}
-	TeamType = var_1
-	var_89_0[var_1.Submarine] = {}
-	var_89_0.commanders = {}
-
-	return var_89_0
+local function var_0_1()
+	return {
+		[TeamType.Main] = {},
+		[TeamType.Vanguard] = {},
+		[TeamType.Submarine] = {},
+		commanders = {}
+	}
 end
 
-function var_0_1.BuildFormationIds(arg_90_0)
-	local var_90_0 = {}
+function var_0_0.BuildFormationIds(arg_90_0)
+	local var_90_0 = {
+		[FleetType.Normal] = 2,
+		[FleetType.Submarine] = 0
+	}
 
-	FleetType = var_1_10002
-	var_90_0[var_1_10002.Normal] = {}
-	FleetType = var_2
-	var_90_0[var_2.Submarine] = {}
-
-	local var_90_1 = {}
-
-	FleetType = var_3
-	var_90_1[var_3.Normal] = 2
-	FleetType = var_3
-	var_90_1[var_3.Submarine] = 0
-	ipairs = var_3
-	pg = var_1_10005
-
-	for iter_90_0, iter_90_1 in var_3(var_1_10005.world_stage_template.all) do
-		pg = var_1_10008
-		var_1_10008 = var_1_10008.world_stage_template[iter_90_1]
-		iter_90_6 = arg_90_0
-
-		local var_90_2 = arg_90_0.GetProgress(iter_90_6)
-
-		if var_1_10008.stage_key <= var_90_2 then
-			FleetType = var_90_2
-
-			local var_90_3 = var_90_2.Normal
-
-			math = var_10
-
-			local var_90_4 = var_10.max
-
-			FleetType = var_1_10012
-			var_90_1[var_90_3] = var_90_4(var_90_1[var_1_10012.Normal], var_1_10008.fleet_num)
+	for iter_90_0, iter_90_1 in ipairs(pg.world_stage_template.all) do
+		if arg_90_0:GetProgress() >= pg.world_stage_template[iter_90_1].stage_key then
+			var_90_0[FleetType.Normal] = math.max(var_90_0[FleetType.Normal], pg.world_stage_template[iter_90_1].fleet_num)
 		else
 			break
 		end
 	end
 
-	local var_90_5 = arg_90_0
-	local var_90_6 = arg_90_0.IsSystemOpen
+	local var_90_1
 
-	WorldConst = iter_90_0
-
-	if var_90_6(var_90_5, iter_90_0.SystemSubmarine) then
-		FleetType = var_3
-		var_90_1[var_3.Submarine] = 1
+	if arg_90_0:IsSystemOpen(WorldConst.SystemSubmarine) then
+		var_90_0[FleetType.Submarine] = 1
+		var_90_1 = arg_90_0:IsActivate() and arg_90_0:GetFleets() or arg_90_0:GetDefaultFleets()
 	end
 
-	ipairs = var_3
+	for iter_90_2, iter_90_3 in ipairs(var_90_1) do
+		local var_90_2 = iter_90_3:GetFleetType()
 
-	local var_90_7
-
-	if not arg_90_0:IsActivate() or not arg_90_0:GetFleets() then
-		var_90_7 = arg_90_0:GetDefaultFleets()
-	end
-
-	for iter_90_2, iter_90_3 in var_3(var_90_7) do
-		if #var_90_0[iter_90_3:GetFleetType()] < var_90_1[var_8] then
-			table = var_9
-
-			var_9.insert(var_90_0[var_8], iter_90_3:BuildFormationIds())
+		if #({
+			[FleetType.Normal] = {},
+			[FleetType.Submarine] = {}
+		})[var_90_2] < var_90_0[var_90_2] then
+			table.insert(({
+				[FleetType.Normal] = {},
+				[FleetType.Submarine] = {}
+			})[var_90_2], iter_90_3:BuildFormationIds())
 		end
 	end
 
-	pairs = var_3
-
-	for iter_90_4, iter_90_5 in var_3(var_90_0) do
-		for iter_90_6 = 1, var_90_1[iter_90_4] do
-			local var_90_8
-
-			if not iter_90_5[iter_90_6] then
-				var_90_8 = var_0_2()
-			end
-
-			iter_90_5[iter_90_6] = var_90_8
+	for iter_90_4, iter_90_5 in pairs({
+		[FleetType.Normal] = {},
+		[FleetType.Submarine] = {}
+	}) do
+		for iter_90_6 = 1, var_90_0[iter_90_4] do
+			iter_90_5[iter_90_6] = iter_90_5[iter_90_6] or var_0_1()
 		end
 	end
 
-	local var_90_9
-	local var_90_10 = arg_90_0:GetTaskProxy()
-	local var_90_11 = var_4.getTasks(var_90_10)
+	local var_90_3
 
-	pairs = var_5
-
-	for iter_90_7, iter_90_8 in var_5(var_90_11) do
-		local var_90_12 = iter_90_8.config.complete_condition
-
-		WorldConst = iter_90_6
-
-		if var_90_12 == iter_90_6.TaskTypeFleetExpansion and iter_90_8:isAlive() then
-			var_90_9 = iter_90_8.config.complete_parameter[1]
+	for iter_90_7, iter_90_8 in pairs((arg_90_0:GetTaskProxy():getTasks())) do
+		if iter_90_8.config.complete_condition == WorldConst.TaskTypeFleetExpansion and iter_90_8:isAlive() then
+			var_90_3 = iter_90_8.config.complete_parameter[1]
 
 			break
 		end
 	end
 
-	if var_90_9 then
-		FleetType = var_5
-
-		for iter_90_9 = #var_90_0[var_5.Normal] + 1, var_90_9 do
-			FleetType = iter_90_8
-			iter_90_8 = var_90_0[iter_90_8.Normal]
-			iter_90_8[iter_90_9] = var_0_2()
+	if var_90_3 then
+		for iter_90_9 = #({
+			[FleetType.Normal] = {},
+			[FleetType.Submarine] = {}
+		})[FleetType.Normal] + 1, var_90_3 do
+			({
+				[FleetType.Normal] = {},
+				[FleetType.Submarine] = {}
+			})[FleetType.Normal][iter_90_9] = var_0_1()
 		end
 	end
 
-	local var_90_13 = 0
+	local var_90_4 = 0
 
-	pairs = var_6
-
-	for iter_90_10, iter_90_11 in var_6(var_90_0) do
-		var_90_13 = var_90_13 + #iter_90_11
+	for iter_90_10, iter_90_11 in pairs({
+		[FleetType.Normal] = {},
+		[FleetType.Submarine] = {}
+	}) do
+		var_90_4 = var_90_4 + #iter_90_11
 	end
 
-	if var_90_9 then
-		WorldConst = var_90_14
+	if var_90_3 then
+		local var_90_5 = WorldConst.FleetExpansion or WorldConst.FleetRedeploy
 
-		local var_90_14
-
-		if not var_90_14.FleetExpansion then
-			WorldConst = var_90_14
-			var_90_14 = var_90_14.FleetRedeploy
-		end
-
-		return var_90_14, var_90_0, var_90_13
+		return var_90_5, {
+			[FleetType.Normal] = {},
+			[FleetType.Submarine] = {}
+		}, var_90_4
 	end
 end
 
-function var_0_1.FormationIds2NetIds(arg_91_0, arg_91_1)
-	local var_91_0 = {}
-
-	ipairs = var_1_10003
-
-	local var_91_1 = {}
-
-	FleetType = var_1_10006
-	var_91_1[1] = var_1_10006.Normal
-	FleetType = var_6
-	var_91_1[2] = var_6.Submarine
-
-	for iter_91_0, iter_91_1 in var_1_10003(var_91_1) do
-		ipairs = var_1_10008
-
-		for iter_91_2, iter_91_3 in var_1_10008(arg_91_1[iter_91_1]) do
-			local var_91_2 = {}
-
-			ipairs = var_1_10014
-
-			local var_91_3 = {}
-
-			TeamType = iter_91_4
-			var_91_3[1] = iter_91_4.Main
-			TeamType = iter_91_4
-			var_91_3[2] = iter_91_4.Vanguard
-			TeamType = iter_91_4
-			var_91_3[3] = iter_91_4.Submarine
-
-			for iter_91_4, iter_91_5 in var_1_10014(var_91_3) do
+function var_0_0.FormationIds2NetIds(arg_91_0, arg_91_1)
+	for iter_91_0, iter_91_1 in ipairs({
+		FleetType.Normal,
+		FleetType.Submarine
+	}) do
+		for iter_91_2, iter_91_3 in ipairs(arg_91_1[iter_91_1]) do
+			for iter_91_4, iter_91_5 in ipairs({
+				TeamType.Main,
+				TeamType.Vanguard,
+				TeamType.Submarine
+			}) do
 				for iter_91_6 = 1, 3 do
 					if iter_91_3[iter_91_5][iter_91_6] then
-						table = var_23
-
-						var_23.insert(var_91_2, iter_91_3[iter_91_5][iter_91_6])
+						table.insert({}, iter_91_3[iter_91_5][iter_91_6])
 					end
 				end
 			end
 
-			if #var_91_2 > 0 then
-				table = var_1_10014
-				var_1_10014 = var_1_10014.insert
-
-				local var_91_4 = var_91_0
-
-				iter_91_4 = {
-					ship_id_list = var_91_2
-				}
-				Clone = iter_91_5
-				iter_91_4.commanders = iter_91_5(iter_91_3.commanders)
-
-				var_1_10014(var_91_4, iter_91_4)
+			if #{} > 0 then
+				table.insert({}, {
+					ship_id_list = {},
+					commanders = Clone(iter_91_3.commanders)
+				})
 			end
 		end
 	end
 
-	return var_91_0
+	return {}
 end
 
-function var_0_1.CompareRedeploy(arg_92_0, arg_92_1)
-	local var_92_0 = {}
+function var_0_0.CompareRedeploy(arg_92_0, arg_92_1)
+	local var_92_0 = 0
 
-	TeamType = var_1_10003
-	var_92_0[1] = var_1_10003.Main
-	TeamType = var_3
-	var_92_0[2] = var_3.Vanguard
-	TeamType = var_3
-	var_92_0[3] = var_3.Submarine
-
-	local var_92_1 = {}
-	local var_92_2 = 0
-
-	pairs = var_1_10005
-
-	for iter_92_0, iter_92_1 in var_1_10005(arg_92_1) do
-		ipairs = var_1_10010
-
-		for iter_92_2, iter_92_3 in var_1_10010(iter_92_1) do
-			ipairs = var_1_10015
-
-			for iter_92_4, iter_92_5 in var_1_10015(var_92_0) do
+	for iter_92_0, iter_92_1 in pairs(arg_92_1) do
+		for iter_92_2, iter_92_3 in ipairs(iter_92_1) do
+			for iter_92_4, iter_92_5 in ipairs({
+				TeamType.Main,
+				TeamType.Vanguard,
+				TeamType.Submarine
+			}) do
 				for iter_92_6 = 1, 3 do
-					if iter_92_3[iter_92_5][iter_92_6] and not var_92_1[var_24] then
-						var_92_1[var_24] = true
-						var_92_2 = var_92_2 + 1
+					if iter_92_3[iter_92_5][iter_92_6] and not ({})[iter_92_3[iter_92_5][iter_92_6]] then
+						({})[iter_92_3[iter_92_5][iter_92_6]] = true
+						var_92_0 = var_92_0 + 1
 					end
 				end
 			end
 		end
 	end
 
-	local var_92_3 = {}
-	local var_92_4 = 0
+	local var_92_1 = 0
 
-	ipairs = var_7
-
-	for iter_92_7, iter_92_8 in var_7(arg_92_0:GetFleets()) do
-		ipairs = var_1_10012
-
-		for iter_92_9, iter_92_10 in var_1_10012(var_92_0) do
-			local var_92_5 = iter_92_8:GetTeamShips(iter_92_10, true)
-
-			ipairs = iter_92_4
-
-			for iter_92_11, iter_92_12 in iter_92_4(var_92_5) do
-				if not var_92_3[iter_92_12.id] then
-					var_92_3[iter_92_12.id] = true
-					var_92_4 = var_92_4 + 1
+	for iter_92_7, iter_92_8 in ipairs(arg_92_0:GetFleets()) do
+		for iter_92_9, iter_92_10 in ipairs({
+			TeamType.Main,
+			TeamType.Vanguard,
+			TeamType.Submarine
+		}) do
+			for iter_92_11, iter_92_12 in ipairs((iter_92_8:GetTeamShips(iter_92_10, true))) do
+				if not ({})[iter_92_12.id] then
+					({})[iter_92_12.id] = true
+					var_92_1 = var_92_1 + 1
 				end
 			end
 		end
 	end
 
-	if var_92_4 ~= var_92_2 then
+	if var_92_1 ~= var_92_0 then
 		return true
 	end
 
-	pairs = var_7
-
-	for iter_92_13, iter_92_14 in var_7(var_92_3) do
-		if not var_92_1[iter_92_13] then
+	for iter_92_13, iter_92_14 in pairs({}) do
+		if not ({})[iter_92_13] then
 			return true
 		end
 	end
 
-	pairs = var_7
-
-	for iter_92_15, iter_92_16 in var_7(var_92_1) do
-		if not var_92_3[iter_92_15] then
+	for iter_92_15, iter_92_16 in pairs({}) do
+		if not ({})[iter_92_15] then
 			return true
 		end
 	end
@@ -1509,79 +963,42 @@ function var_0_1.CompareRedeploy(arg_92_0, arg_92_1)
 	return false
 end
 
-function var_0_1.IsSystemOpen(arg_93_0, arg_93_1)
+function var_0_0.IsSystemOpen(arg_93_0, arg_93_1)
 	local var_93_0 = arg_93_0:GetRealm()
 
-	ipairs = var_1_10003
-	pg = var_1_10005
+	for iter_93_0, iter_93_1 in ipairs(pg.world_stage_template.all) do
+		local var_93_1 = pg.world_stage_template[iter_93_1]
 
-	for iter_93_0, iter_93_1 in var_1_10003(var_1_10005.world_stage_template.all) do
-		pg = var_1_10008
-
-		if var_1_10008.world_stage_template[iter_93_1].stage_ui[1] == arg_93_1 and (var_1_10008.stage_ui[2] == 0 or var_1_10008.stage_ui[2] == var_93_0) then
-			return arg_93_0:GetProgress() >= var_1_10008.stage_key
+		if pg.world_stage_template[iter_93_1].stage_ui[1] == arg_93_1 and (var_93_1.stage_ui[2] == 0 or var_93_1.stage_ui[2] == var_93_0) then
+			return arg_93_0:GetProgress() >= var_93_1.stage_key
 		end
 	end
 
 	return true
 end
 
-function var_0_1.CalcCDTimeCost(arg_94_0, arg_94_1, arg_94_2)
-	math = var_1_10003
-
-	local var_94_0 = var_1_10003.max
-
-	pg = var_1_10005
-
-	local var_94_1 = var_1_10005.TimeMgr.GetInstance()
-	local var_94_2 = var_94_0(var_5.GetServerTime(var_94_1) - arg_94_1, 0)
-
-	math = var_1_10004
-
-	local var_94_3 = var_1_10004.floor
-	local var_94_4 = arg_94_0[1]
-
-	math = var_94_1
-
-	local var_94_5 = var_94_4 * var_94_1.max(arg_94_0[2] - var_94_2, 0) / arg_94_0[2]
-
-	math = var_7
-
-	return var_94_3(var_94_5 * var_7.max(16 - arg_94_2, 0) / 16)
+function var_0_0.CalcCDTimeCost(arg_94_0, arg_94_1, arg_94_2)
+	return math.floor(arg_94_0[1] * math.max(arg_94_0[2] - math.max(pg.TimeMgr.GetInstance():GetServerTime() - arg_94_1, 0), 0) / arg_94_0[2] * math.max(16 - arg_94_2, 0) / 16)
 end
 
-function var_0_1.GetReqCDTime(arg_95_0, arg_95_1)
-	local var_95_0
-
-	if not arg_95_0.cdTimeList[arg_95_1] then
-		var_95_0 = 0
-	end
-
-	return var_95_0
+function var_0_0.GetReqCDTime(arg_95_0, arg_95_1)
+	return arg_95_0.cdTimeList[arg_95_1] or 0
 end
 
-function var_0_1.SetReqCDTime(arg_96_0, arg_96_1, arg_96_2)
+function var_0_0.SetReqCDTime(arg_96_0, arg_96_1, arg_96_2)
 	arg_96_0.cdTimeList[arg_96_1] = arg_96_2
 
 	return
 end
 
-function var_0_1.InitWorldShopGoods(arg_97_0)
+function var_0_0.InitWorldShopGoods(arg_97_0)
 	arg_97_0.goodDic = {}
-	ipairs = var_1
 
-	local var_97_0 = {}
-
-	ShopArgs = var_1_10004
-	var_97_0[1] = var_1_10004.WorldShop
-	ShopArgs = var_4
-	var_97_0[2] = var_4.WorldCollection
-
-	for iter_97_0, iter_97_1 in var_1(var_97_0) do
-		ipairs = var_1_10006
-		pg = var_1_10008
-
-		for iter_97_2, iter_97_3 in var_1_10006(var_1_10008.shop_template.get_id_list_by_genre[iter_97_1]) do
+	for iter_97_0, iter_97_1 in ipairs({
+		ShopArgs.WorldShop,
+		ShopArgs.WorldCollection
+	}) do
+		for iter_97_2, iter_97_3 in ipairs(pg.shop_template.get_id_list_by_genre[iter_97_1]) do
 			arg_97_0.goodDic[iter_97_3] = 0
 		end
 	end
@@ -1589,45 +1006,28 @@ function var_0_1.InitWorldShopGoods(arg_97_0)
 	return
 end
 
-function var_0_1.UpdateWorldShopGoods(arg_98_0, arg_98_1)
-	_ = var_1_10002
-
-	var_1_10002.each(arg_98_1, function(arg_99_0)
-		assert = var_2_10001
-
-		var_2_10001(arg_98_0.goodDic[arg_99_0.goods_id], "without this good in id " .. arg_99_0.goods_id)
+function var_0_0.UpdateWorldShopGoods(arg_98_0, arg_98_1)
+	_.each(arg_98_1, function(arg_99_0)
+		assert(arg_98_0.goodDic[arg_99_0.goods_id], "without this good in id " .. arg_99_0.goods_id)
 
 		arg_98_0.goodDic[arg_99_0.goods_id] = arg_98_0.goodDic[arg_99_0.goods_id] + arg_99_0.count
 
 		return
 	end)
-	arg_98_0:DispatchEvent(var_0_1.EventUpdateShopGoods, arg_98_0.goodDic)
+	arg_98_0:DispatchEvent(var_0_0.EventUpdateShopGoods, arg_98_0.goodDic)
 
 	return
 end
 
-function var_0_1.GetWorldShopGoodsDictionary(arg_100_0)
+function var_0_0.GetWorldShopGoodsDictionary(arg_100_0)
 	return arg_100_0.goodDic
 end
 
-function var_0_1.InitWorldColorDictionary(arg_101_0)
+function var_0_0.InitWorldColorDictionary(arg_101_0)
 	arg_101_0.colorDic = {}
-	_ = var_1
 
-	local var_101_0 = var_1.each
-
-	pg = var_1_10003
-
-	var_101_0(var_1_10003.world_chapter_colormask.all, function(arg_102_0)
-		pg = var_2_10001
-
-		local var_102_0 = var_2_10001.world_chapter_colormask[arg_102_0]
-
-		Color = var_2_10002
-
-		local var_102_1 = var_2_10002.New(var_102_0.color[1] / 255, var_102_0.color[2] / 255, var_102_0.color[3] / 255)
-
-		arg_101_0.colorDic[var_102_1:ToHex()] = var_102_0.id
+	_.each(pg.world_chapter_colormask.all, function(arg_102_0)
+		arg_101_0.colorDic[Color.New(pg.world_chapter_colormask[arg_102_0].color[1] / 255, pg.world_chapter_colormask[arg_102_0].color[2] / 255, pg.world_chapter_colormask[arg_102_0].color[3] / 255):ToHex()] = pg.world_chapter_colormask[arg_102_0].id
 
 		return
 	end)
@@ -1635,225 +1035,149 @@ function var_0_1.InitWorldColorDictionary(arg_101_0)
 	return
 end
 
-function var_0_1.ColorToEntrance(arg_103_0, arg_103_1)
-	local var_103_0
-
-	if arg_103_0.colorDic[arg_103_1:ToHex()] then
-		var_103_0 = arg_103_0:GetEntrance(arg_103_0.colorDic[arg_103_1:ToHex()])
-	end
-
-	return var_103_0
+function var_0_0.ColorToEntrance(arg_103_0, arg_103_1)
+	return arg_103_0.colorDic[arg_103_1:ToHex()] and arg_103_0:GetEntrance(arg_103_0.colorDic[arg_103_1:ToHex()])
 end
 
-function var_0_1.GetGlobalBuff(arg_104_0, arg_104_1)
+function var_0_0.GetGlobalBuff(arg_104_0, arg_104_1)
 	if not arg_104_0.globalBuffDic[arg_104_1] then
-		WorldBuff = var_2
+		local var_104_0 = WorldBuff.New()
 
-		local var_104_0 = var_2.New()
-
-		var_2.Setup(var_104_0, {
+		var_104_0:Setup({
 			floor = 0,
 			id = arg_104_1
 		})
 
-		arg_104_0.globalBuffDic[arg_104_1] = var_2
+		arg_104_0.globalBuffDic[arg_104_1] = var_104_0
 	end
 
 	return arg_104_0.globalBuffDic[arg_104_1]
 end
 
-function var_0_1.AddGlobalBuff(arg_105_0, arg_105_1, arg_105_2)
-	assert = var_1_10003
-
-	var_1_10003(arg_105_1 and arg_105_2)
-
-	local var_105_0 = arg_105_0:GetGlobalBuff(arg_105_1)
-
-	var_3.AddFloor(var_105_0, arg_105_2)
-	arg_105_0:DispatchEvent(var_0_1.EventUpdateGlobalBuff)
+function var_0_0.AddGlobalBuff(arg_105_0, arg_105_1, arg_105_2)
+	assert(arg_105_1 and arg_105_2)
+	arg_105_0:GetGlobalBuff(arg_105_1):AddFloor(arg_105_2)
+	arg_105_0:DispatchEvent(var_0_0.EventUpdateGlobalBuff)
 
 	return
 end
 
-function var_0_1.RemoveBuff(arg_106_0, arg_106_1, arg_106_2)
-	assert = var_1_10003
-
-	var_1_10003(arg_106_1)
-
-	local var_106_0 = arg_106_0:GetGlobalBuff(arg_106_1)
+function var_0_0.RemoveBuff(arg_106_0, arg_106_1, arg_106_2)
+	assert(arg_106_1)
 
 	if arg_106_2 then
-		var_106_0:AddFloor(arg_106_2 * -1)
+		arg_106_0:GetGlobalBuff(arg_106_1):AddFloor(arg_106_2 * -1)
 	else
 		arg_106_0.globalBuffDic[arg_106_1] = nil
 	end
 
-	arg_106_0:DispatchEvent(var_0_1.EventUpdateGlobalBuff)
+	arg_106_0:DispatchEvent(var_0_0.EventUpdateGlobalBuff)
 
 	return
 end
 
-function var_0_1.GetWorldMapBuffLevel(arg_107_0)
-	pg = var_1_10001
-
-	local var_107_0 = var_1_10001.gameset.world_mapbuff_list.description
-
-	_ = var_1_10002
-
-	return var_1_10002.map(var_107_0, function(arg_108_0)
-		local var_108_0 = arg_107_0
-
-		return var_1.GetGlobalBuff(var_108_0, arg_108_0).floor
+function var_0_0.GetWorldMapBuffLevel(arg_107_0)
+	return _.map(pg.gameset.world_mapbuff_list.description, function(arg_108_0)
+		return arg_107_0:GetGlobalBuff(arg_108_0).floor
 	end)
 end
 
-function var_0_1.GetWorldMapBuffAverageLevel(arg_109_0)
-	local var_109_0 = arg_109_0
-	local var_109_1 = arg_109_0.GetWorldMapBuffLevel(var_109_0)
-	local var_109_2 = 0
+function var_0_0.GetWorldMapBuffAverageLevel(arg_109_0)
+	local var_109_0 = arg_109_0:GetWorldMapBuffLevel()
+	local var_109_1 = 0
 
-	underscore = var_109_0
-
-	var_109_0.each(var_109_1, function(arg_110_0)
-		var_109_2 = var_109_2 + arg_110_0
+	underscore.each(var_109_0, function(arg_110_0)
+		var_109_1 = var_109_1 + arg_110_0
 
 		return
 	end)
 
-	return var_109_2 / #var_109_1
+	return 0 / #var_109_0
 end
 
-function var_0_1.GetWorldMapBuffs(arg_111_0)
-	pg = var_1_10001
-
-	local var_111_0 = var_1_10001.gameset.world_mapbuff_list.description
-
-	_ = var_1_10002
-
-	return var_1_10002.map(var_111_0, function(arg_112_0)
-		local var_112_0 = arg_111_0
-
-		return var_1.GetGlobalBuff(var_112_0, arg_112_0)
+function var_0_0.GetWorldMapBuffs(arg_111_0)
+	return _.map(pg.gameset.world_mapbuff_list.description, function(arg_112_0)
+		return arg_111_0:GetGlobalBuff(arg_112_0)
 	end)
 end
 
-function var_0_1.GetWorldMapDifficultyBuffLevel(arg_113_0)
-	local var_113_0 = arg_113_0:GetActiveMap().config.difficulty
-
-	pg = var_1_10002
-
-	return var_1_10002.gameset.world_difficult_value.description[var_113_0]
+function var_0_0.GetWorldMapDifficultyBuffLevel(arg_113_0)
+	return pg.gameset.world_difficult_value.description[arg_113_0:GetActiveMap().config.difficulty]
 end
 
-function var_0_1.OnUpdateItem(arg_114_0, arg_114_1, arg_114_2, arg_114_3)
-	local var_114_0 = arg_114_3:getWorldItemType()
-
-	WorldItem = var_1_10005
-
-	if var_114_0 == var_1_10005.UsageWorldMap and arg_114_0.atlas then
-		local var_114_1 = arg_114_0.atlas
-
-		var_5.UpdateTreasure(var_114_1, arg_114_3.id)
+function var_0_0.OnUpdateItem(arg_114_0, arg_114_1, arg_114_2, arg_114_3)
+	if arg_114_3:getWorldItemType() == WorldItem.UsageWorldMap and arg_114_0.atlas then
+		arg_114_0.atlas:UpdateTreasure(arg_114_3.id)
 	end
 
-	local var_114_2 = arg_114_0.taskProxy
-
-	var_5.doUpdateTaskByItem(var_114_2, arg_114_3)
+	arg_114_0.taskProxy:doUpdateTaskByItem(arg_114_3)
 
 	return
 end
 
-function var_0_1.OnUpdateTask(arg_115_0, arg_115_1, arg_115_2, arg_115_3)
+function var_0_0.OnUpdateTask(arg_115_0, arg_115_1, arg_115_2, arg_115_3)
 	if arg_115_0.atlas then
-		local var_115_0 = arg_115_0.atlas
-
-		var_4.UpdateTask(var_115_0, arg_115_3)
+		arg_115_0.atlas:UpdateTask(arg_115_3)
 	end
 
 	return
 end
 
-function var_0_1.GetPressingAward(arg_116_0, arg_116_1)
+function var_0_0.GetPressingAward(arg_116_0, arg_116_1)
 	return arg_116_0.pressingAwardDic[arg_116_1]
 end
 
-function var_0_1.FlagMapPressingAward(arg_117_0, arg_117_1)
-	if arg_117_0:GetPressingAward(arg_117_1) then
-		var_2.flag = false
+function var_0_0.FlagMapPressingAward(arg_117_0, arg_117_1)
+	local var_117_0 = arg_117_0:GetPressingAward(arg_117_1)
+
+	if var_117_0 then
+		var_117_0.flag = false
 	end
 
 	return
 end
 
-function var_0_1.IsMapPressingAwardFlag(arg_118_0, arg_118_1)
-	return arg_118_0:GetPressingAward(arg_118_1) and var_2.flag == false
+function var_0_0.IsMapPressingAwardFlag(arg_118_0, arg_118_1)
+	local var_118_0 = arg_118_0:GetPressingAward(arg_118_1)
+
+	return var_118_0 and var_118_0.flag == false
 end
 
-function var_0_1.CheckAreaUnlock(arg_119_0, arg_119_1)
-	local var_119_0 = arg_119_0.progress
-
-	pg = var_1_10003
-
-	return var_119_0 >= var_1_10003.world_regions_data[arg_119_1].open_stage[1]
+function var_0_0.CheckAreaUnlock(arg_119_0, arg_119_1)
+	return arg_119_0.progress >= pg.world_regions_data[arg_119_1].open_stage[1]
 end
 
-function var_0_1.CheckTaskLockMap(arg_120_0)
-	local var_120_0 = arg_120_0.taskProxy
-	local var_120_1 = var_1.getTaskVOs(var_120_0)
-	local var_120_2 = arg_120_0:GetActiveMap().gid
+function var_0_0.CheckTaskLockMap(arg_120_0)
+	local var_120_0 = arg_120_0:GetActiveMap().gid
 
-	_ = var_120_0
-
-	return var_120_0.any(var_120_1, function(arg_121_0)
-		local var_121_0 = arg_121_0.config.task_target_map
-		local var_121_1
-
-		if arg_121_0:isAlive() and arg_121_0:IsLockMap() then
-			_ = var_121_1
-			var_121_1 = var_121_1.any(var_121_0, function(arg_122_0)
-				return arg_122_0 == var_120_2
-			end)
-		end
-
-		return var_121_1
+	return _.any(arg_120_0.taskProxy:getTaskVOs(), function(arg_121_0)
+		return arg_121_0:isAlive() and arg_121_0:IsLockMap() and _.any(arg_121_0.config.task_target_map, function(arg_122_0)
+			return arg_122_0 == var_120_0
+		end)
 	end)
 end
 
-function var_0_1.CheckResetAward(arg_123_0, arg_123_1)
+function var_0_0.CheckResetAward(arg_123_0, arg_123_1)
 	arg_123_0.resetAward = arg_123_1
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
 
-	local var_123_0 = var_1_10002(var_1_10004)
-	local var_123_1 = var_2.getData(var_123_0)
-	local var_123_2 = var_2.getResource
-
-	WorldConst = var_1_10005
-
-	local var_123_3 = var_123_2(var_123_1, var_1_10005.ResourceID)
-
-	pg = var_1_10003
-
-	if var_123_3 == var_1_10003.gameset.world_resource_max.key_value then
+	if getProxy(PlayerProxy):getData():getResource(WorldConst.ResourceID) == pg.gameset.world_resource_max.key_value then
 		arg_123_0.resetLimitTip = true
 	end
 
 	return
 end
 
-function var_0_1.ClearResetAward(arg_124_0)
+function var_0_0.ClearResetAward(arg_124_0)
 	arg_124_0.resetAward = nil
 	arg_124_0.resetLimitTip = nil
 
 	return
 end
 
-function var_0_1.GetTargetMapPressingCount(arg_125_0, arg_125_1)
+function var_0_0.GetTargetMapPressingCount(arg_125_0, arg_125_1)
 	local var_125_0 = 0
 
-	ipairs = var_1_10003
-
-	for iter_125_0, iter_125_1 in var_1_10003(arg_125_1) do
+	for iter_125_0, iter_125_1 in ipairs(arg_125_1) do
 		if arg_125_0:GetMap(iter_125_1).isPressing then
 			var_125_0 = var_125_0 + 1
 		end
@@ -1862,10 +1186,8 @@ function var_0_1.GetTargetMapPressingCount(arg_125_0, arg_125_1)
 	return var_125_0
 end
 
-function var_0_1.ClearAllFleetDefeatEnemies(arg_126_0)
-	underscore = var_1_10001
-
-	var_1_10001.each(arg_126_0:GetFleets(), function(arg_127_0)
+function var_0_0.ClearAllFleetDefeatEnemies(arg_126_0)
+	underscore.each(arg_126_0:GetFleets(), function(arg_127_0)
 		arg_127_0:ClearDefeatEnemies()
 
 		return
@@ -1874,115 +1196,45 @@ function var_0_1.ClearAllFleetDefeatEnemies(arg_126_0)
 	return
 end
 
-function var_0_1.GetAreaEntranceIds(arg_128_0, arg_128_1)
+function var_0_0.GetAreaEntranceIds(arg_128_0, arg_128_1)
 	return arg_128_0.atlas.areaEntranceList[arg_128_1]
 end
 
-function var_0_1.CalcOrderCost(arg_129_0, arg_129_1)
+function var_0_0.CalcOrderCost(arg_129_0, arg_129_1)
 	local var_129_0 = 0
 
-	WorldConst = var_1_10003
+	if arg_129_1 == WorldConst.OpReqRedeploy then
+		return World.CalcCDTimeCost(pg.gameset.world_fleet_redeploy_cost.description, arg_129_0:GetReqCDTime(WorldConst.OpReqRedeploy), 0)
+	elseif arg_129_1 == WorldConst.OpReqMaintenance then
+		return pg.gameset.world_instruction_maintenance.description[1] * math.max(16 - 0, 0) / 16
+	elseif arg_129_1 == WorldConst.OpReqSub then
+		local var_129_1 = arg_129_0:GetSubmarineFleet()
 
-	local var_129_1
+		if var_129_1 then
+			underscore.each(var_129_1:GetShips(true), function(arg_130_0)
+				var_129_0 = var_129_0 + arg_130_0:GetImportWorldShipVO():GetStaminaDiscount(WorldConst.OpReqSub)
 
-	if arg_129_1 == var_1_10003.OpReqRedeploy then
-		World = var_129_1
-		var_129_1 = var_129_1.CalcCDTimeCost
-		pg = var_1_10005
-		var_1_10005 = var_1_10005.gameset.world_fleet_redeploy_cost.description
-
-		local var_129_2 = arg_129_0
-
-		var_1_10006 = arg_129_0.GetReqCDTime
-		WorldConst = var_1_10009
-
-		return var_129_1(var_1_10005, var_1_10006(var_129_2, var_1_10009.OpReqRedeploy), var_129_0)
-	else
-		WorldConst = var_129_1
-
-		local var_129_3
-
-		if arg_129_1 == var_129_1.OpReqMaintenance then
-			pg = var_129_3
-			var_129_3 = var_129_3.gameset.world_instruction_maintenance.description[1]
-			math = var_1_10004
-
-			return var_129_3 * var_1_10004.max(16 - var_129_0, 0) / 16
-		else
-			WorldConst = var_129_3
-
-			if arg_129_1 == var_129_3.OpReqSub then
-				var_1_10005 = arg_129_0
-
-				if arg_129_0.GetSubmarineFleet(var_1_10005) then
-					underscore = var_1_10004
-
-					var_1_10004.each(var_3:GetShips(true), function(arg_130_0)
-						local var_130_0 = var_129_0
-						local var_130_1 = arg_130_0:GetImportWorldShipVO()
-						local var_130_2 = var_2.GetStaminaDiscount
-
-						WorldConst = var_2_10005
-						var_129_0 = var_130_0 + var_130_2(var_130_1, var_2_10005.OpReqSub)
-
-						return
-					end)
-				end
-
-				World = var_1_10004
-
-				local var_129_4 = var_1_10004.CalcCDTimeCost
-
-				pg = var_1_10006
-
-				local var_129_5 = var_1_10006.gameset.world_instruction_submarine.description
-
-				var_1_10009 = arg_129_0
-
-				local var_129_6 = arg_129_0.GetReqCDTime
-
-				WorldConst = var_1_10010
-
-				return var_129_4(var_129_5, var_129_6(var_1_10009, var_1_10010.OpReqSub), var_129_0)
-			else
-				WorldConst = var_3
-
-				local var_129_7
-
-				if arg_129_1 == var_3.OpReqVision then
-					World = var_129_7
-					var_129_7 = var_129_7.CalcCDTimeCost
-					pg = var_1_10005
-
-					local var_129_8 = var_1_10005.gameset.world_instruction_detect.description
-					local var_129_9 = arg_129_0
-					local var_129_10 = arg_129_0.GetReqCDTime
-
-					WorldConst = var_1_10009
-
-					return var_129_7(var_129_8, var_129_10(var_129_9, var_1_10009.OpReqVision), var_129_0)
-				else
-					assert = var_129_7
-
-					var_129_7(false, "op type error: " .. arg_129_1)
-				end
-			end
+				return
+			end)
 		end
+
+		return World.CalcCDTimeCost(pg.gameset.world_instruction_submarine.description, arg_129_0:GetReqCDTime(WorldConst.OpReqSub), 0)
+	elseif arg_129_1 == WorldConst.OpReqVision then
+		return World.CalcCDTimeCost(pg.gameset.world_instruction_detect.description, arg_129_0:GetReqCDTime(WorldConst.OpReqVision), 0)
+	else
+		assert(false, "op type error: " .. arg_129_1)
 	end
 
 	return
 end
 
-function var_0_1.GetDisplayPressingCount(arg_131_0)
+function var_0_0.GetDisplayPressingCount(arg_131_0)
 	local var_131_0 = 0
 
-	ipairs = var_1_10002
+	for iter_131_0, iter_131_1 in ipairs(arg_131_0.atlas.pressingMapList) do
+		local var_131_1 = arg_131_0.atlas:GetMap(iter_131_1)
 
-	for iter_131_0, iter_131_1 in var_1_10002(arg_131_0.atlas.pressingMapList) do
-		local var_131_1 = arg_131_0.atlas
-		local var_131_2 = var_7.GetMap(var_131_1, iter_131_1)
-
-		if var_7.CheckMapPressingDisplay(var_131_2) then
+		if var_131_1:CheckMapPressingDisplay() then
 			var_131_0 = var_131_0 + 1
 		end
 	end
@@ -1990,21 +1242,13 @@ function var_0_1.GetDisplayPressingCount(arg_131_0)
 	return var_131_0
 end
 
-function var_0_1.CheckCommanderInFleet(arg_132_0, arg_132_1)
-	local var_132_0 = arg_132_0.type
-
-	World = var_1_10003
-
-	if var_132_0 == var_1_10003.TypeBase then
-		underscore = var_132_0
-
-		return var_132_0.any(arg_132_0.baseCmdIds, function(arg_133_0)
+function var_0_0.CheckCommanderInFleet(arg_132_0, arg_132_1)
+	if arg_132_0.type == World.TypeBase then
+		return underscore.any(arg_132_0.baseCmdIds, function(arg_133_0)
 			return arg_133_0 == arg_132_1
 		end)
 	else
-		ipairs = var_132_0
-
-		for iter_132_0, iter_132_1 in var_132_0(arg_132_0.fleets) do
+		for iter_132_0, iter_132_1 in ipairs(arg_132_0.fleets) do
 			if iter_132_1:HasCommander(arg_132_1) then
 				return true
 			end
@@ -2016,99 +1260,51 @@ function var_0_1.CheckCommanderInFleet(arg_132_0, arg_132_1)
 	return
 end
 
-function var_0_1.CheckSkipBattle(arg_134_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_134_0 = var_1_10001(var_1_10003)
-	local var_134_1 = var_1.getRawData(var_134_0)
-	local var_134_2
-
-	if var_1.CheckIdentityFlag(var_134_1) then
-		world_skip_battle = var_134_2
-		var_134_2 = var_134_2 == 1
-	end
-
-	return var_134_2
+function var_0_0.CheckSkipBattle(arg_134_0)
+	return getProxy(PlayerProxy):getRawData():CheckIdentityFlag() and world_skip_battle == 1
 end
 
-function var_0_1.IsMapVisioned(arg_135_0, arg_135_1)
-	if arg_135_0:GetActiveMap().id == arg_135_1 then
-		local var_135_0 = arg_135_0:GetActiveEntrance()
-		local var_135_1, var_135_2 = var_0_1.ReplacementMapType(var_135_0, var_2)
+function var_0_0.IsMapVisioned(arg_135_0, arg_135_1)
+	local var_135_0 = arg_135_0:GetActiveMap()
 
-		if var_135_1 == "base_chapter" and var_2.isPressing then
+	if var_135_0.id == arg_135_1 then
+		local var_135_1, var_135_2 = var_0_0.ReplacementMapType(arg_135_0:GetActiveEntrance(), var_135_0)
+
+		if var_135_1 == "base_chapter" and var_135_0.isPressing then
 			return true
-		elseif var_135_1 == "teasure_chapter" then
-			i18n = var_6
-
-			if var_135_2 == var_6("area_yinmi") and arg_135_0:GetGobalFlag("treasure_flag") then
-				return true
-			end
+		elseif var_135_1 == "teasure_chapter" and var_135_2 == i18n("area_yinmi") and arg_135_0:GetGobalFlag("treasure_flag") then
+			return true
 		end
 	end
 
 	return arg_135_0:IsMapPressingAwardFlag(arg_135_1)
 end
 
-function var_0_1.HasAutoFightDrops(arg_136_0)
-	if not (#arg_136_0.autoInfos.drops > 0) then
-		underscore = var_2
-
-		local var_136_0
-
-		if not var_2.any(var_1.salvage, function(arg_137_0)
-			return #arg_137_0 > 0
-		end) then
-			if not (#var_1.buffs > 0) and not (#var_1.message > 0) then
-				var_136_0 = false
-
-				goto label_136_0
-			end
-
-			var_136_0 = true
-		end
-
-		::label_136_0::
-
-		return var_136_0
-	end
+function var_0_0.HasAutoFightDrops(arg_136_0)
+	return #arg_136_0.autoInfos.drops > 0 or underscore.any(arg_136_0.autoInfos.salvage, function(arg_137_0)
+		return #arg_137_0 > 0
+	end) or #arg_136_0.autoInfos.buffs > 0 or #arg_136_0.autoInfos.message > 0
 end
 
-function var_0_1.AddAutoInfo(arg_138_0, arg_138_1, arg_138_2)
+function var_0_0.AddAutoInfo(arg_138_0, arg_138_1, arg_138_2)
 	if arg_138_1 == "drops" then
-		var_1_10003 = arg_138_0.autoInfos
-		table = var_1_10004
-		var_1_10003.drops = var_1_10004.mergeArray(arg_138_0.autoInfos.drops, arg_138_2)
+		arg_138_0.autoInfos.drops = table.mergeArray(arg_138_0.autoInfos.drops, arg_138_2)
 	elseif arg_138_1 == "salvage" then
-		var_1_10003 = arg_138_0.autoInfos.salvage
-
-		local var_138_0 = arg_138_2.rarity
-
-		table = var_1_10005
-		var_1_10003[var_138_0] = var_1_10005.mergeArray(arg_138_0.autoInfos.salvage[arg_138_2.rarity], arg_138_2.drops)
+		arg_138_0.autoInfos.salvage[arg_138_2.rarity] = table.mergeArray(arg_138_0.autoInfos.salvage[arg_138_2.rarity], arg_138_2.drops)
 	elseif arg_138_1 == "events" then
-		table = var_1_10003
-
-		var_1_10003.insert(arg_138_0.autoInfos.events, arg_138_2)
+		table.insert(arg_138_0.autoInfos.events, arg_138_2)
 	elseif arg_138_1 == "buffs" then
-		table = var_1_10003
-
-		var_1_10003.insert(arg_138_0.autoInfos.buffs, arg_138_2)
+		table.insert(arg_138_0.autoInfos.buffs, arg_138_2)
 	elseif arg_138_1 == "message" then
-		table = var_1_10003
-
-		var_1_10003.insert(arg_138_0.autoInfos.message, arg_138_2)
+		table.insert(arg_138_0.autoInfos.message, arg_138_2)
 	else
-		assert = var_1_10003
-
-		var_1_10003(false, "type error:" .. arg_138_1)
+		assert(false, "type error:" .. arg_138_1)
 	end
 
 	return
 end
 
-function var_0_1.InitAutoInfos(arg_139_0)
+function var_0_0.InitAutoInfos(arg_139_0)
 	arg_139_0.autoInfos = {
 		drops = {},
 		salvage = {
@@ -2123,94 +1319,32 @@ function var_0_1.InitAutoInfos(arg_139_0)
 	return
 end
 
-function var_0_1.TriggerAutoFight(arg_140_0, arg_140_1)
-	if arg_140_1 then
-		local var_140_0 = arg_140_0:GetActiveMap()
+function var_0_0.TriggerAutoFight(arg_140_0, arg_140_1)
+	arg_140_1 = arg_140_1 and arg_140_0:GetActiveMap():CanAutoFight()
 
-		arg_140_1 = var_1_10002.CanAutoFight(var_140_0)
-	end
-
-	tobool = var_1_10002
-
-	local var_140_1 = var_1_10002(arg_140_1)
-
-	tobool = var_1_10003
-
-	if var_140_1 ~= var_1_10003(arg_140_0.isAutoFight) then
+	if tobool(arg_140_1) ~= tobool(arg_140_0.isAutoFight) then
 		arg_140_0.isAutoFight = arg_140_1
-		pg = var_140_1
 
-		local var_140_2 = var_140_1.BrightnessMgr.GetInstance()
-
-		var_2.SetScreenNeverSleep(var_140_2, arg_140_1)
-
-		local var_140_3
+		pg.BrightnessMgr.GetInstance():SetScreenNeverSleep(arg_140_1)
 
 		if arg_140_1 then
-			LOCK_BATTERY_SAVEMODE = var_140_3
+			if not LOCK_BATTERY_SAVEMODE and PlayerPrefs.GetInt(AUTOFIGHT_BATTERY_SAVEMODE, 0) == 1 then
+				if pg.BrightnessMgr.GetInstance():IsPermissionGranted() then
+					pg.BrightnessMgr.GetInstance():EnterManualMode()
 
-			if not var_140_3 then
-				PlayerPrefs = var_140_3
-				var_140_3 = var_140_3.GetInt
-				AUTOFIGHT_BATTERY_SAVEMODE = var_140_2
+					if PlayerPrefs.GetInt(AUTOFIGHT_DOWN_FRAME, 0) == 1 then
+						getProxy(SettingsProxy):RecordFrameRate()
 
-				if var_140_3(var_140_2, 0) == 1 then
-					pg = var_140_3
-
-					local var_140_4 = var_140_3.BrightnessMgr.GetInstance()
-
-					if var_140_3.IsPermissionGranted(var_140_4) then
-						pg = var_140_3
-
-						local var_140_5 = var_140_3.BrightnessMgr.GetInstance()
-
-						var_140_3.EnterManualMode(var_140_5)
-
-						PlayerPrefs = var_140_3
-						var_140_3 = var_140_3.GetInt
-						AUTOFIGHT_DOWN_FRAME = var_140_5
-
-						if var_140_3(var_140_5, 0) == 1 then
-							getProxy = var_140_3
-							SettingsProxy = var_140_5
-
-							local var_140_6 = var_140_3(var_140_5)
-
-							var_140_3.RecordFrameRate(var_140_6)
-
-							Application = var_140_3
-							var_140_3.targetFrameRate = 30
-						end
+						Application.targetFrameRate = 30
 					end
 				end
 			end
-		else
-			LOCK_BATTERY_SAVEMODE = var_140_3
-
-			if not var_140_3 then
-				pg = var_140_3
-
-				local var_140_7 = var_140_3.BrightnessMgr.GetInstance()
-
-				var_140_3.ExitManualMode(var_140_7)
-
-				getProxy = var_140_3
-				SettingsProxy = var_140_7
-
-				local var_140_8 = var_140_3(var_140_7)
-
-				var_140_3.RestoreFrameRate(var_140_8)
-			end
+		elseif not LOCK_BATTERY_SAVEMODE then
+			pg.BrightnessMgr.GetInstance():ExitManualMode()
+			getProxy(SettingsProxy):RestoreFrameRate()
 		end
 
-		pg = var_140_3
-
-		local var_140_9 = var_140_3.m02
-		local var_140_10 = var_2.sendNotification
-
-		GAME = var_5
-
-		var_140_10(var_140_9, var_5.WORLD_TRIGGER_AUTO_FIGHT)
+		pg.m02:sendNotification(GAME.WORLD_TRIGGER_AUTO_FIGHT)
 	end
 
 	if not arg_140_1 then
@@ -2220,56 +1354,38 @@ function var_0_1.TriggerAutoFight(arg_140_0, arg_140_1)
 	return
 end
 
-function var_0_1.TriggerAutoSwitch(arg_141_0, arg_141_1)
-	tobool = var_1_10002
-
-	local var_141_0 = var_1_10002(arg_141_1)
-
-	tobool = var_1_10003
-
-	if var_141_0 ~= var_1_10003(arg_141_0.isAutoSwitch) then
+function var_0_0.TriggerAutoSwitch(arg_141_0, arg_141_1)
+	if tobool(arg_141_1) ~= tobool(arg_141_0.isAutoSwitch) then
 		arg_141_0.isAutoSwitch = arg_141_1
-		pg = var_141_0
 
-		local var_141_1 = var_141_0.m02
-		local var_141_2 = var_2.sendNotification
-
-		GAME = var_5
-
-		var_141_2(var_141_1, var_5.WORLD_TRIGGER_AUTO_SWITCH)
+		pg.m02:sendNotification(GAME.WORLD_TRIGGER_AUTO_SWITCH)
 	end
 
 	return
 end
 
-function var_0_1.GetHistoryLowestHP(arg_142_0, arg_142_1)
-	local var_142_0
-
-	if not arg_142_0.lowestHP[arg_142_1] then
-		var_142_0 = 10000
-	end
-
-	return var_142_0
+function var_0_0.GetHistoryLowestHP(arg_142_0, arg_142_1)
+	return arg_142_0.lowestHP[arg_142_1] or 10000
 end
 
-function var_0_1.SetHistoryLowestHP(arg_143_0, arg_143_1, arg_143_2)
+function var_0_0.SetHistoryLowestHP(arg_143_0, arg_143_1, arg_143_2)
 	arg_143_0.lowestHP[arg_143_1] = arg_143_2
 
 	return
 end
 
-local var_0_3 = {
+local var_0_2 = {
 	treasure_flag = 1
 }
 
-function var_0_1.SetGlobalFlag(arg_144_0, arg_144_1, arg_144_2)
-	arg_144_0.gobalFlag[var_0_3[arg_144_1]] = arg_144_2
+function var_0_0.SetGlobalFlag(arg_144_0, arg_144_1, arg_144_2)
+	arg_144_0.gobalFlag[var_0_2[arg_144_1]] = arg_144_2
 
 	return
 end
 
-function var_0_1.GetGobalFlag(arg_145_0, arg_145_1)
-	return arg_145_0.gobalFlag[var_0_3[arg_145_1]]
+function var_0_0.GetGobalFlag(arg_145_0, arg_145_1)
+	return arg_145_0.gobalFlag[var_0_2[arg_145_1]]
 end
 
-return var_0_1
+return var_0_0

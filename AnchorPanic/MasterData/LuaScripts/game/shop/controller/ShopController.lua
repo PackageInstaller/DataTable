@@ -22,12 +22,16 @@ end
 function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPEN_SHOP_PANEL, self.onOpenShoppingPanel, self)
     GameDispatcher:addEventListener(EventName.OPEN_SHOP_BUY_PANEL, self.onOpenBuyPanel, self)
+    GameDispatcher:addEventListener(EventName.OPEN_SHOP_BUY_PAINTING_PANEL, self.onOpenBuyPanel3, self)
     GameDispatcher:addEventListener(EventName.OPEN_SHOP_BUY_VIEW, self.onOpenShopBuyPanel, self)
     GameDispatcher:addEventListener(EventName.OPEN_COVENANT_SHOP_PANEL, self.onOpenCovenantShopPanel, self)
     GameDispatcher:addEventListener(EventName.REQ_SHOP_BUY, self.__onReqShopBuyHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_SHOP_TYPE_DATA, self.__onReqShopTypeDataHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_SHOP_REFRESH, self.__onReqShopRefreshHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_SHOPPING_PANEL, self.onOpenShoppingPanel, self)
+
+    GameDispatcher:addEventListener(EventName.CLOSE_FASHION_SHOP_BUY_3_VIEW, self.onCloseShopBuyPaintingPanel, self)
+    
 end
 
 --注册server发来的数据
@@ -209,10 +213,29 @@ function onOpenBuyPanel(self, cusShopVo)
     end
 end
 
--- ui销毁
-function __onDestroyShopBuyViewHandler(self)
-    self.mBuyView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyViewHandler, self)
+function __onDestroyShopBuyViewHandler(self, view)
+    self.mBuyView:removeEventListener(View.EVENT_VIEW_DESTROY, self.__onDestroyShopBuyViewHandler, self)
     self.mBuyView = nil
+end
+
+function onOpenBuyPanel3(self,args)
+    if self.mBuyView3 == nil then
+        self.mBuyView3 = UI.new(shop.ShopBuyView3)
+        self.mBuyView3:addEventListener(View.EVENT_VIEW_DESTROY, self.__onDestroyShopBuy3ViewHandler, self)
+    end
+    self.mBuyView3:open(args)
+end
+
+-- ui销毁
+function __onDestroyShopBuy3ViewHandler(self)
+    self.mBuyView3:removeEventListener(View.EVENT_VIEW_DESTROY, self.__onDestroyShopBuy3ViewHandler, self)
+    self.mBuyView3 = nil
+end
+
+function onCloseShopBuyPaintingPanel(self)
+    if self.mBuyView3 then
+        self.mBuyView3:close()
+    end
 end
 
 -- 商店购买界面
@@ -223,6 +246,7 @@ function onOpenShopBuyPanel(self, cusShopVo)
     end
     self.mBuyView2:open(cusShopVo)
 end
+
 -- ui销毁
 function onDestroyBuyViewHandler(self)
     self.mBuyView2:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyViewHandler, self)

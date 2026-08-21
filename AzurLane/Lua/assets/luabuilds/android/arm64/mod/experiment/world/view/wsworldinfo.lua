@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WSWorldInfo", import("...BaseEntity"))
 
-local var_0_0 = "WSWorldInfo"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	btnAchievement = "userdata",
 	stepCount = "userdata",
 	powerCount = "userdata",
@@ -17,271 +11,115 @@ var_0_1.Fields = {
 	buffListTF = "userdata",
 	pressingCount = "userdata"
 }
-var_0_1.Listeners = {
+var_0_0.Listeners = {
 	onUpdate = "Update"
 }
 
-function var_0_1.Build(arg_1_0)
-	pg = var_1_10001
+function var_0_0.Build(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
-	var_1_10001.DelegateInfo.New(arg_1_0)
+	local var_1_0 = nowWorld()
 
-	nowWorld = var_1
-
-	local var_1_0 = var_1()
-	local var_1_1 = var_1.AddListener
-
-	World = var_1_10005
-
-	var_1_1(var_1_0, var_1_10005.EventUpdateGlobalBuff, arg_1_0.onUpdate)
-
-	local var_1_2 = var_1
-	local var_1_3 = var_1.AddListener
-
-	World = var_5
-
-	var_1_3(var_1_2, var_5.EventAchieved, arg_1_0.onUpdate)
-
-	local var_1_4 = var_1:GetAtlas()
-	local var_1_5 = var_2.AddListener
-
-	WorldAtlas = var_6
-
-	var_1_5(var_1_4, var_6.EventAddPressingMap, arg_1_0.onUpdate)
+	var_1_0:AddListener(World.EventUpdateGlobalBuff, arg_1_0.onUpdate)
+	var_1_0:AddListener(World.EventAchieved, arg_1_0.onUpdate)
+	var_1_0:GetAtlas():AddListener(WorldAtlas.EventAddPressingMap, arg_1_0.onUpdate)
 
 	return
 end
 
-function var_0_1.Dispose(arg_2_0)
-	nowWorld = var_1_10001
+function var_0_0.Dispose(arg_2_0)
+	local var_2_0 = nowWorld()
 
-	local var_2_0 = var_1_10001()
-	local var_2_1 = var_1.RemoveListener
-
-	World = var_1_10005
-
-	var_2_1(var_2_0, var_1_10005.EventUpdateGlobalBuff, arg_2_0.onUpdate)
-
-	local var_2_2 = var_1
-	local var_2_3 = var_1.RemoveListener
-
-	World = var_5
-
-	var_2_3(var_2_2, var_5.EventAchieved, arg_2_0.onUpdate)
-
-	local var_2_4 = var_1:GetAtlas()
-	local var_2_5 = var_2.RemoveListener
-
-	WorldAtlas = var_6
-
-	var_2_5(var_2_4, var_6.EventAddPressingMap, arg_2_0.onUpdate)
+	var_2_0:RemoveListener(World.EventUpdateGlobalBuff, arg_2_0.onUpdate)
+	var_2_0:RemoveListener(World.EventAchieved, arg_2_0.onUpdate)
+	var_2_0:GetAtlas():RemoveListener(WorldAtlas.EventAddPressingMap, arg_2_0.onUpdate)
 	arg_2_0:Clear()
-
-	pg = var_3
-
-	var_3.DelegateInfo.Dispose(arg_2_0)
+	pg.DelegateInfo.Dispose(arg_2_0)
 
 	return
 end
 
-function var_0_1.Setup(arg_3_0)
+function var_0_0.Setup(arg_3_0)
 	arg_3_0:Init()
 	arg_3_0:Update()
 
 	return
 end
 
-function var_0_1.Init(arg_4_0)
-	local var_4_0 = arg_4_0.transform
+function var_0_0.Init(arg_4_0)
+	arg_4_0.powerIconTF = arg_4_0.transform:Find("power/level")
 
-	arg_4_0.powerIconTF = var_1.Find(var_4_0, "power/level")
-	onToggle = var_1
-
-	var_1(arg_4_0, arg_4_0.powerIconTF, function(arg_5_0)
-		if arg_5_0 then
-			isActive = var_2_10001
-
-			local var_5_0 = arg_4_0.powerIconTF
-
-			if var_2_10001(var_3.Find(var_5_0, "effect")) then
-				getProxy = var_1
-				PlayerProxy = var_3
-
-				local var_5_1 = var_1(var_3)
-				local var_5_2 = var_1.getRawData(var_5_1)
-
-				setActive = var_2_10002
-
-				local var_5_3 = arg_4_0.powerIconTF
-
-				var_2_10002(var_4.Find(var_5_3, "effect"), false)
-
-				PlayerPrefs = var_2_10002
-
-				var_2_10002.SetInt("world_rank_icon_click_" .. var_5_2.id, 1)
-			end
+	onToggle(arg_4_0, arg_4_0.powerIconTF, function(arg_5_0)
+		if arg_5_0 and isActive(arg_4_0.powerIconTF:Find("effect")) then
+			setActive(arg_4_0.powerIconTF:Find("effect"), false)
+			PlayerPrefs.SetInt("world_rank_icon_click_" .. getProxy(PlayerProxy):getRawData().id, 1)
 		end
 
 		return
 	end)
 
-	local var_4_1 = arg_4_0.transform
+	arg_4_0.powerCount = arg_4_0.transform:Find("power/bg/Number")
+	arg_4_0.buffListTF = arg_4_0.transform:Find("buff")
+	arg_4_0.stepCount = arg_4_0.transform:Find("explore/mileage/number")
+	arg_4_0.pressingCount = arg_4_0.transform:Find("explore/pressing/number")
+	arg_4_0.btnAchievement = arg_4_0.transform:Find("explore/achievement")
 
-	arg_4_0.powerCount = var_1.Find(var_4_1, "power/bg/Number")
+	onButton(arg_4_0, arg_4_0.btnAchievement, function()
+		({
+			page = WorldCollectionLayer.PAGE_ACHIEVEMENT
+		}).entranceId = nowWorld():GetActiveEntrance().id
+		;({
+			mediator = WorldCollectionMediator,
+			viewComponent = WorldCollectionLayer
+		}).data = {
+			page = WorldCollectionLayer.PAGE_ACHIEVEMENT
+		}
+		;({}).context = Context.New({
+			mediator = WorldCollectionMediator,
+			viewComponent = WorldCollectionLayer
+		})
 
-	local var_4_2 = arg_4_0.transform
-
-	arg_4_0.buffListTF = var_1.Find(var_4_2, "buff")
-
-	local var_4_3 = arg_4_0.transform
-
-	arg_4_0.stepCount = var_1.Find(var_4_3, "explore/mileage/number")
-
-	local var_4_4 = arg_4_0.transform
-
-	arg_4_0.pressingCount = var_1.Find(var_4_4, "explore/pressing/number")
-
-	local var_4_5 = arg_4_0.transform
-
-	arg_4_0.btnAchievement = var_1.Find(var_4_5, "explore/achievement")
-	onButton = var_1
-
-	local var_4_6 = arg_4_0
-	local var_4_7 = arg_4_0.btnAchievement
-
-	local function var_4_8()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.m02
-		local var_6_1 = var_0.sendNotification
-
-		WorldMediator = var_2_10003
-
-		local var_6_2 = var_2_10003.OnNotificationOpenLayer
-		local var_6_3 = {}
-
-		Context = var_2_10005
-
-		local var_6_4 = var_2_10005.New
-		local var_6_5 = {}
-
-		WorldCollectionMediator = var_2_10008
-		var_6_5.mediator = var_2_10008
-		WorldCollectionLayer = var_2_10008
-		var_6_5.viewComponent = var_2_10008
-
-		local var_6_6 = {}
-
-		WorldCollectionLayer = var_2_10009
-		var_6_6.page = var_2_10009.PAGE_ACHIEVEMENT
-		nowWorld = var_9
-
-		local var_6_7 = var_9()
-
-		var_6_6.entranceId = var_9.GetActiveEntrance(var_6_7).id
-		var_6_5.data = var_6_6
-		var_6_3.context = var_6_4(var_6_5)
-
-		var_6_1(var_6_0, var_6_2, var_6_3)
+		pg.m02:sendNotification(WorldMediator.OnNotificationOpenLayer, {})
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_6, var_4_7, var_4_8, var_1_10006)
-
-	local var_4_9 = arg_4_0.btnAchievement
-
-	arg_4_0.achievementCount = var_1.Find(var_4_9, "number")
-
-	local var_4_10 = arg_4_0.btnAchievement
-
-	arg_4_0.achievementTip = var_1.Find(var_4_10, "tip")
+	arg_4_0.achievementCount = arg_4_0.btnAchievement:Find("number")
+	arg_4_0.achievementTip = arg_4_0.btnAchievement:Find("tip")
 
 	return
 end
 
-function var_0_1.Update(arg_7_0)
-	nowWorld = var_1_10001
+function var_0_0.Update(arg_7_0)
+	local var_7_0 = nowWorld()
+	local var_7_1 = var_7_0:GetWorldRank()
 
-	local var_7_0 = var_1_10001()
-	local var_7_1 = var_1.GetWorldRank(var_7_0)
+	LoadImageSpriteAtlasAsync("ui/share/world_info_atlas", "level_phase_" .. var_7_1, arg_7_0.powerIconTF)
+	setActive(arg_7_0.powerIconTF:Find("effect"), not PlayerPrefs.HasKey("world_rank_icon_click_" .. getProxy(PlayerProxy):getRawData().id))
+	setText(arg_7_0.powerIconTF:Find("info/Text"), i18n("world_map_level", var_7_1))
+	setText(arg_7_0.powerCount, var_7_0:GetWorldPower())
 
-	LoadImageSpriteAtlasAsync = var_1_10003
-
-	var_1_10003("ui/share/world_info_atlas", "level_phase_" .. var_7_1, arg_7_0.powerIconTF)
-
-	getProxy = var_1_10003
-	PlayerProxy = var_5
-
-	local var_7_2 = var_1_10003(var_5)
-	local var_7_3 = var_3.getRawData(var_7_2)
-
-	setActive = var_7_0
-
-	local var_7_4 = arg_7_0.powerIconTF
-	local var_7_5 = var_6.Find(var_7_4, "effect")
-
-	PlayerPrefs = var_7
-
-	var_7_0(var_7_5, not var_7.HasKey("world_rank_icon_click_" .. var_7_3.id))
-
-	setText = var_7_0
-
-	local var_7_6 = arg_7_0.powerIconTF
-	local var_7_7 = var_6.Find(var_7_6, "info/Text")
-
-	i18n = var_7
-
-	var_7_0(var_7_7, var_7("world_map_level", var_7_1))
-
-	setText = var_7_0
-
-	local var_7_8 = arg_7_0.powerCount
-	local var_7_9 = var_1
-
-	var_7_0(var_7_8, var_1.GetWorldPower(var_7_9))
-
-	local var_7_10 = var_1:GetWorldMapBuffLevel()
+	local var_7_2 = var_7_0:GetWorldMapBuffLevel()
 
 	for iter_7_0 = 1, 3 do
-		setText = var_7_9
+		local var_7_3 = arg_7_0.buffListTF:GetChild(iter_7_0 - 1):Find("Text")
+		local var_7_4 = var_7_2[iter_7_0] or 0
 
-		local var_7_11 = arg_7_0.buffListTF
-		local var_7_12 = var_11.GetChild(var_7_11, iter_7_0 - 1)
-		local var_7_13 = var_11.Find(var_7_12, "Text")
-		local var_7_14
-
-		if not var_7_10[iter_7_0] then
-			var_7_14 = 0
-		end
-
-		var_7_9(var_7_13, var_7_14)
+		setText(var_7_3, var_7_4)
 	end
 
-	setText = var_5
+	setText(arg_7_0.stepCount, var_7_0.stepCount)
+	setText(arg_7_0.pressingCount, var_7_0:GetDisplayPressingCount())
 
-	var_5(arg_7_0.stepCount, var_1.stepCount)
+	local var_7_5, var_7_6, var_7_7 = var_7_0:CountAchievements()
 
-	setText = var_5
+	setText(arg_7_0.achievementCount, var_7_5 + var_7_6 .. "/" .. var_7_7)
 
-	var_5(arg_7_0.pressingCount, var_1:GetDisplayPressingCount())
+	local var_7_8, var_7_9 = var_7_0:GetFinishAchievements(arg_7_0.achEntranceList)
 
-	local var_7_15, var_7_16, var_7_17 = var_1:CountAchievements()
-
-	setText = var_8
-
-	var_8(arg_7_0.achievementCount, var_7_15 + var_7_16 .. "/" .. var_7_17)
-
-	local var_7_18 = var_1
-	local var_7_19, var_7_20 = var_1.GetFinishAchievements(var_7_18, arg_7_0.achEntranceList)
-
-	setActive = var_7_18
-
-	var_7_18(arg_7_0.achievementTip, #var_7_19 > 0)
+	setActive(arg_7_0.achievementTip, #var_7_8 > 0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

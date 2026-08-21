@@ -1,33 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandGetFriendResumeCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandGetFriendResumeCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.callback
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.callback
-
-	LOCK_ISLAND_DISPLAY = var_1_10005
-
-	if var_1_10005 then
+	if LOCK_ISLAND_DISPLAY then
 		return
 	end
 
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 21200, {
-		island_id = var_1_0
+	pg.ConnectionMgr.GetInstance():Send(21200, {
+		island_id = var_1_0.id
 	}, 21201, function(arg_2_0)
-		SharedIsland = var_2_10001
-
-		local var_2_0 = var_2_10001.New(arg_2_0.island)
-
-		var_1_1(var_2_0)
+		var_1_1((SharedIsland.New(arg_2_0.island)))
 
 		return
 	end)
@@ -35,4 +19,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

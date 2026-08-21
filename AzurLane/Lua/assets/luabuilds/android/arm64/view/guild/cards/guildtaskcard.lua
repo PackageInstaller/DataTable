@@ -1,82 +1,22 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GuildTaskCard")
+﻿local var_0_0 = class("GuildTaskCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._tf = arg_1_1
-	go = var_1_10002
-	arg_1_0._go = var_1_10002(arg_1_1)
-
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.acceptBtn = var_2.Find(var_1_0, "accept")
-
-	local var_1_1 = arg_1_0._tf
-	local var_1_2 = var_2.Find(var_1_1, "icon")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.icon = var_1_3(var_1_2, var_5(var_1_10007))
-
-	local var_1_4 = arg_1_0._tf
-	local var_1_5 = var_2.Find(var_1_4, "desc/Text")
-	local var_1_6 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.descTxt = var_1_6(var_1_5, var_5(var_1_10007))
-
-	local var_1_7 = arg_1_0._tf
-	local var_1_8 = var_2.Find(var_1_7, "res_1/Text")
-	local var_1_9 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.publicResTxt = var_1_9(var_1_8, var_5(var_1_10007))
-
-	local var_1_10 = arg_1_0._tf
-	local var_1_11 = var_2.Find(var_1_10, "res_2/Text")
-	local var_1_12 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.privateResTxt = var_1_12(var_1_11, var_5(var_1_10007))
-
-	local var_1_13 = arg_1_0._tf
-	local var_1_14 = var_2.Find(var_1_13, "res_1/label")
-	local var_1_15 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-
-	local var_1_16 = var_1_15(var_1_14, var_5(var_1_10007))
-
-	i18n = var_1_10003
-	var_1_16.text = var_1_10003("guild_public_awards")
-
-	local var_1_17 = arg_1_0._tf
-	local var_1_18 = var_2.Find(var_1_17, "res_2/label")
-	local var_1_19 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-
-	local var_1_20 = var_1_19(var_1_18, var_5(var_1_10007))
-
-	i18n = var_3
-	var_1_20.text = var_3("guild_private_awards")
+	arg_1_0._go = go(arg_1_1)
+	arg_1_0.acceptBtn = arg_1_0._tf:Find("accept")
+	arg_1_0.icon = arg_1_0._tf:Find("icon"):GetComponent(typeof(Image))
+	arg_1_0.descTxt = arg_1_0._tf:Find("desc/Text"):GetComponent(typeof(Text))
+	arg_1_0.publicResTxt = arg_1_0._tf:Find("res_1/Text"):GetComponent(typeof(Text))
+	arg_1_0.privateResTxt = arg_1_0._tf:Find("res_2/Text"):GetComponent(typeof(Text))
+	arg_1_0._tf:Find("res_1/label"):GetComponent(typeof(Text)).text = i18n("guild_public_awards")
+	arg_1_0._tf:Find("res_2/label"):GetComponent(typeof(Text)).text = i18n("guild_private_awards")
 
 	return
 end
 
 function var_0_0.Update(arg_2_0, arg_2_1)
 	arg_2_0.task = arg_2_1
-
-	local var_2_0 = arg_2_0.icon
-
-	GetSpriteFromAtlas = var_1_10003
-	var_2_0.sprite = var_1_10003("ui/GuildMainUI_atlas", "frame_" .. arg_2_1:GetScale())
+	arg_2_0.icon.sprite = GetSpriteFromAtlas("ui/GuildMainUI_atlas", "frame_" .. arg_2_1:GetScale())
 	arg_2_0.descTxt.text = arg_2_1:GetDesc()
 	arg_2_0.publicResTxt.text = arg_2_1:GetCaptailAward()
 	arg_2_0.privateResTxt.text = arg_2_1:GetPrivateAward()

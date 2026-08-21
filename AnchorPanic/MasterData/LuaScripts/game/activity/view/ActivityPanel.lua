@@ -33,6 +33,7 @@ end
 function configUI(self)
     super.configUI(self)
     self.GroupTabItem = self:getChildGO("GroupTabItem")
+    self:getChildGO("mNoClick"):SetActive(false)
 end
 -- 激活
 function active(self, args)
@@ -98,7 +99,7 @@ end
 function getTabDatas(self)
     self.tabDataList = {}
     for index, vo in pairs(activity.ActivityConst:getTabList()) do
-        self.tabDataList[index] = { type = vo.page, content = { vo.nomalLan }, nomalIcon = vo.nomalIcon, selectIcon = vo.nomalIcon }
+        self.tabDataList[index] = { type = vo.page, content = { vo.nomalLan }, nomalIcon = vo.nomalIcon, selectIcon = vo.nomalIcon, funcId = vo.funcId }
         --  activity.ActivityManager:registerActivityVo(vo, vo.isLimit)
     end
     return self.tabDataList
@@ -126,11 +127,30 @@ function getTabClass(self)
     return self.tabClassDic
 end
 
-function updateActivityLimit(self)
+function updateActivityLimit(self, list)
+    local tempList = {}
+    for i, v in pairs(list.openList) do
+        table.insert(tempList, v.id)
+    end
+    if not self:CheckIsCurActivity(tempList) then
+        return
+    end
     self:refreshTab(self.curPage)
 end
+--检测是否是当前界面的活动，防止活动开启导致的界面刷新
+function CheckIsCurActivity(self, checkList)
+    for i, v in pairs(activity.ActivityConst:getActivityList()) do
+        if table.indexof(checkList, v) then
+            return true
+        end
+    end
+    return false
+end
 
-function updateActivityLimitClose(self)
+function updateActivityLimitClose(self, msg)
+    if not self:CheckIsCurActivity(msg.closeList) then
+        return
+    end
     self:removeBubble(activity.ActivityConst.ACTIVITY_PERMIT)
     local tabindex = self:getLastTabIndex(activity.ActivityConst.ACTIVITY_PERMIT)
     local tabType = self.curPage
@@ -156,6 +176,9 @@ function updateHideEntrance(self, tabType)
     elseif tabType == activity.ActivityConst.ACTIVITY_SUBSCRIBE then
         isHide = activity.ActitvityExtraManager:checkIsOpen()
         funcId = activity.ActivitySubscribeGift
+        -- elseif tabType == activity.ActivityConst.ACTIVITY_RECHARGE_NICEGIFT then
+        --     isHide = false
+        --     funcId = funcopen.FuncOpenConst.FUNC_ID_ACTIVITY_RECHARGE_NICE_GIFT
     end
     if isHide then
         self:removeBubble(tabType)

@@ -1,81 +1,33 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildGetReportsCommand", import(".GuildEventBaseCommand"))
 
-local var_0_0 = "GuildGetReportsCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody().callback
+	local var_1_1 = getProxy(GuildProxy)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".GuildEventBaseCommand"))
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).callback
-
-	getProxy = var_1_0
-	GuildProxy = var_1_10006
-
-	local var_1_2 = var_1_0(var_1_10006)
-	local var_1_3
-
-	if not var_4.ShouldRequestReport(var_1_2) then
-		var_1_2 = var_4
-		var_1_3 = var_4.GetReports(var_1_2)
-
-		if var_1_1 then
-			var_1_1(var_1_3)
+	if not var_1_1:ShouldRequestReport() then
+		if var_1_0 then
+			var_1_0((var_1_1:GetReports()))
 		end
 
 		return
 	end
 
-	getProxy = var_1_3
-	GuildProxy = var_1_2
+	local var_1_2 = getProxy(GuildProxy)
 
-	local var_1_4 = var_1_3(var_1_2)
-	local var_1_5 = var_5.GetMaxReportId(var_1_4)
-
-	pg = var_1_10006
-
-	local var_1_6 = var_1_10006.ConnectionMgr.GetInstance()
-
-	var_6.Send(var_1_6, 61017, {
-		index = var_1_5
+	pg.ConnectionMgr.GetInstance():Send(61017, {
+		index = var_1_2:GetMaxReportId()
 	}, 61018, function(arg_2_0)
-		local var_2_0 = {}
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.reports) do
+			local var_2_1 = iter_2_1.event_type == GuildConst.REPORT_TYPE_BOSS and GuildBossReport.New(iter_2_1) or GuildReport.New(iter_2_1)
 
-		ipairs = var_2_10002
-
-		for iter_2_0, iter_2_1 in var_2_10002(arg_2_0.reports) do
-			local var_2_1
-			local var_2_2 = iter_2_1.event_type
-
-			GuildConst = var_2_10009
-
-			if var_2_2 == var_2_10009.REPORT_TYPE_BOSS then
-				GuildBossReport = var_2_2
-				var_2_1 = var_2_2.New(iter_2_1)
-			else
-				GuildReport = var_2_2
-				var_2_1 = var_2_2.New(iter_2_1)
-			end
-
-			local var_2_3 = var_0
-
-			var_8.AddReport(var_2_3, var_2_1)
+			var_1_1:AddReport(var_2_1)
 		end
 
-		if var_1_1 then
-			local var_2_4 = var_0
-			local var_2_5 = var_2.GetReports(var_2_4)
-
-			var_1_1(var_2_5)
+		if var_1_0 then
+			var_1_0((var_1_1:GetReports()))
 		end
 
-		local var_2_6 = arg_1_0
-		local var_2_7 = var_2.sendNotification
-
-		GAME = iter_2_0
-
-		var_2_7(var_2_6, iter_2_0.GET_GUILD_REPORT_DONE)
+		arg_1_0:sendNotification(GAME.GET_GUILD_REPORT_DONE)
 
 		return
 	end)
@@ -83,4 +35,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

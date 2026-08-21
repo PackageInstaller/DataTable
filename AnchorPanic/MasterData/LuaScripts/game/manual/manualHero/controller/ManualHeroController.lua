@@ -13,6 +13,10 @@ module("manual.ManualHeroController", Class.impl(manual.ManualController))
 function listNotification(self)
     --打开战员界面
     GameDispatcher:addEventListener(EventName.REQ_MANUALHERO_READ, self.updateRead, self)
+     --打开战员界面
+     GameDispatcher:addEventListener(EventName.OPEN_MANUALHERO_VIEW, self.onOpenManualHeroViewHandler, self)
+     GameDispatcher:addEventListener(EventName.CLOSE_MANUALHERO_VIEW, self.onCloseManualHeroViewHandler, self)
+     
 end
 
 function registerMsgHandler(self)
@@ -21,6 +25,25 @@ end
 
 function updateRead(self, camp)
     manual.ManualHeroManager:reqUpdateNew(camp)
+end
+
+function onOpenManualHeroViewHandler(self, args)
+    if self.mManualHeroView == nil then
+        self.mManualHeroView = manual.ManualMapHeroView.new()
+        self.mManualHeroView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyManualHeroViewHandler, self)
+    end
+    self.mManualHeroView:open(args)
+end
+
+function onDestroyManualHeroViewHandler(self)
+    self.mManualHeroView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyManualHeroViewHandler, self)
+    self.mManualHeroView = nil
+end
+
+function onCloseManualHeroViewHandler(self)
+    if self.mManualHeroView then
+        self.mManualHeroView:close()
+    end
 end
 
 return _M

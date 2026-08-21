@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_avatarframe") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_avatarframe"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_avatarframe = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_avatarframe
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_avatarframe = rawget(pg, "activity_event_avatarframe") or setmetatable({
+	__name = "activity_event_avatarframe"
+}, confNEO)
+pg.activity_event_avatarframe.all = {
 	1,
 	2,
 	3,
@@ -66,25 +43,11 @@ var_0_3.all = {
 	39,
 	40
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_avatarframe = {}
+pg.base = pg.base or {}
+pg.base.activity_event_avatarframe = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_avatarframe
-
-	var_1_0[1] = {
+	pg.base.activity_event_avatarframe[1] = {
 		link_event = 4451,
 		icon_frame = 311,
 		target = 3600,
@@ -200,11 +163,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_avatarframe
-
-	var_1_1[2] = {
+	pg.base.activity_event_avatarframe[2] = {
 		link_event = 4471,
 		icon_frame = 321,
 		target = 3000,
@@ -314,11 +273,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_avatarframe
-
-	var_1_2[3] = {
+	pg.base.activity_event_avatarframe[3] = {
 		link_event = 4520,
 		icon_frame = 322,
 		target = 2800,
@@ -422,11 +377,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_avatarframe
-
-	var_1_3[4] = {
+	pg.base.activity_event_avatarframe[4] = {
 		link_event = 4565,
 		icon_frame = 312,
 		target = 3400,
@@ -536,11 +487,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_avatarframe
-
-	var_1_4[5] = {
+	pg.base.activity_event_avatarframe[5] = {
 		link_event = 4607,
 		icon_frame = 323,
 		target = 2800,
@@ -644,11 +591,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_avatarframe
-
-	var_1_5[6] = {
+	pg.base.activity_event_avatarframe[6] = {
 		link_event = 4626,
 		icon_frame = 313,
 		target = 3000,
@@ -758,11 +701,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_avatarframe
-
-	var_1_6[7] = {
+	pg.base.activity_event_avatarframe[7] = {
 		link_event = 4701,
 		icon_frame = 324,
 		target = 2800,
@@ -866,11 +805,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_avatarframe
-
-	var_1_7[8] = {
+	pg.base.activity_event_avatarframe[8] = {
 		link_event = 4718,
 		icon_frame = 314,
 		target = 3400,
@@ -986,11 +921,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_avatarframe
-
-	var_1_8[9] = {
+	pg.base.activity_event_avatarframe[9] = {
 		link_event = 4853,
 		icon_frame = 325,
 		target = 3000,
@@ -1094,11 +1025,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_avatarframe
-
-	var_1_9[10] = {
+	pg.base.activity_event_avatarframe[10] = {
 		link_event = 4898,
 		icon_frame = 315,
 		target = 3400,
@@ -1208,11 +1135,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_event_avatarframe
-
-	var_1_10[11] = {
+	pg.base.activity_event_avatarframe[11] = {
 		link_event = 4967,
 		icon_frame = 326,
 		target = 3000,
@@ -1322,11 +1245,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_event_avatarframe
-
-	var_1_11[12] = {
+	pg.base.activity_event_avatarframe[12] = {
 		link_event = 5001,
 		icon_frame = 327,
 		target = 2800,
@@ -1430,11 +1349,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_event_avatarframe
-
-	var_1_12[13] = {
+	pg.base.activity_event_avatarframe[13] = {
 		link_event = 5069,
 		icon_frame = 316,
 		target = 3200,
@@ -1544,11 +1459,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_event_avatarframe
-
-	var_1_13[14] = {
+	pg.base.activity_event_avatarframe[14] = {
 		link_event = 5131,
 		icon_frame = 328,
 		target = 2800,
@@ -1652,11 +1563,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_event_avatarframe
-
-	var_1_14[15] = {
+	pg.base.activity_event_avatarframe[15] = {
 		link_event = 5167,
 		icon_frame = 317,
 		target = 2800,
@@ -1760,11 +1667,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_event_avatarframe
-
-	var_1_15[16] = {
+	pg.base.activity_event_avatarframe[16] = {
 		link_event = 5221,
 		icon_frame = 329,
 		target = 2800,
@@ -1868,11 +1771,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_event_avatarframe
-
-	var_1_16[17] = {
+	pg.base.activity_event_avatarframe[17] = {
 		link_event = 5287,
 		icon_frame = 318,
 		target = 2800,
@@ -1976,11 +1875,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_event_avatarframe
-
-	var_1_17[18] = {
+	pg.base.activity_event_avatarframe[18] = {
 		link_event = 5331,
 		icon_frame = 330,
 		target = 2800,
@@ -2095,11 +1990,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_event_avatarframe
-
-	var_1_18[19] = {
+	pg.base.activity_event_avatarframe[19] = {
 		link_event = 5374,
 		icon_frame = 319,
 		target = 3000,
@@ -2209,11 +2100,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_event_avatarframe
-
-	var_1_19[20] = {
+	pg.base.activity_event_avatarframe[20] = {
 		link_event = 5427,
 		icon_frame = 320,
 		target = 2800,
@@ -2317,11 +2204,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_event_avatarframe
-
-	var_1_20[21] = {
+	pg.base.activity_event_avatarframe[21] = {
 		link_event = 5521,
 		icon_frame = 331,
 		target = 2600,
@@ -2447,11 +2330,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_event_avatarframe
-
-	var_1_21[22] = {
+	pg.base.activity_event_avatarframe[22] = {
 		link_event = 5562,
 		icon_frame = 332,
 		target = 2800,
@@ -2566,11 +2445,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_event_avatarframe
-
-	var_1_22[23] = {
+	pg.base.activity_event_avatarframe[23] = {
 		link_event = 5597,
 		icon_frame = 321,
 		target = 3000,
@@ -2680,11 +2555,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_event_avatarframe
-
-	var_1_23[24] = {
+	pg.base.activity_event_avatarframe[24] = {
 		link_event = 5641,
 		icon_frame = 322,
 		target = 2800,
@@ -2788,11 +2659,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_event_avatarframe
-
-	var_1_24[25] = {
+	pg.base.activity_event_avatarframe[25] = {
 		link_event = 5711,
 		icon_frame = 333,
 		target = 2800,
@@ -2918,11 +2785,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_event_avatarframe
-
-	var_1_25[26] = {
+	pg.base.activity_event_avatarframe[26] = {
 		link_event = 5749,
 		icon_frame = 323,
 		target = 2800,
@@ -3026,11 +2889,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_event_avatarframe
-
-	var_1_26[27] = {
+	pg.base.activity_event_avatarframe[27] = {
 		link_event = 5821,
 		icon_frame = 334,
 		target = 2800,
@@ -3145,11 +3004,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_event_avatarframe
-
-	var_1_27[28] = {
+	pg.base.activity_event_avatarframe[28] = {
 		link_event = 5860,
 		icon_frame = 324,
 		target = 2800,
@@ -3253,11 +3108,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_event_avatarframe
-
-	var_1_28[29] = {
+	pg.base.activity_event_avatarframe[29] = {
 		link_event = 5941,
 		icon_frame = 335,
 		target = 2800,
@@ -3361,11 +3212,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_event_avatarframe
-
-	var_1_29[30] = {
+	pg.base.activity_event_avatarframe[30] = {
 		link_event = 50003,
 		icon_frame = 325,
 		target = 3000,
@@ -3469,11 +3316,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_event_avatarframe
-
-	var_1_30[31] = {
+	pg.base.activity_event_avatarframe[31] = {
 		link_event = 50114,
 		icon_frame = 336,
 		target = 2800,
@@ -3588,11 +3431,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_event_avatarframe
-
-	var_1_31[32] = {
+	pg.base.activity_event_avatarframe[32] = {
 		link_event = 50166,
 		icon_frame = 326,
 		target = 3000,
@@ -3702,11 +3541,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_event_avatarframe
-
-	var_1_32[33] = {
+	pg.base.activity_event_avatarframe[33] = {
 		link_event = 50222,
 		icon_frame = 327,
 		target = 2800,
@@ -3810,11 +3645,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_event_avatarframe
-
-	var_1_33[34] = {
+	pg.base.activity_event_avatarframe[34] = {
 		link_event = 50281,
 		icon_frame = 337,
 		target = 2800,
@@ -3929,11 +3760,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_event_avatarframe
-
-	var_1_34[35] = {
+	pg.base.activity_event_avatarframe[35] = {
 		link_event = 50321,
 		icon_frame = 328,
 		target = 2800,
@@ -4037,11 +3864,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_event_avatarframe
-
-	var_1_35[36] = {
+	pg.base.activity_event_avatarframe[36] = {
 		link_event = 50470,
 		icon_frame = 329,
 		target = 2800,
@@ -4145,11 +3968,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_event_avatarframe
-
-	var_1_36[37] = {
+	pg.base.activity_event_avatarframe[37] = {
 		link_event = 50605,
 		icon_frame = 341,
 		target = 2800,
@@ -4264,11 +4083,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_event_avatarframe
-
-	var_1_37[39] = {
+	pg.base.activity_event_avatarframe[39] = {
 		link_event = 51040,
 		icon_frame = 330,
 		target = 2800,
@@ -4383,9 +4198,8 @@ var_0_3.base.activity_event_avatarframe = {}
 			}
 		}
 	}
-	pg = var_1_37
-	var_1_37.base.activity_event_avatarframe[40] = {
-		link_event = 51040,
+	pg.base.activity_event_avatarframe[40] = {
+		link_event = 51101,
 		icon_frame = 342,
 		target = 2600,
 		id = 40,
@@ -4394,7 +4208,7 @@ var_0_3.base.activity_event_avatarframe = {}
 			{
 				2026,
 				8,
-				14
+				13
 			},
 			{
 				0,
@@ -4405,55 +4219,55 @@ var_0_3.base.activity_event_avatarframe = {}
 		task_level = {
 			{
 				1,
-				30179,
+				10709,
 				3,
 				{
-					1810002,
-					1810022
+					2050006,
+					2050026
 				},
 				10,
-				100
+				300
 			},
 			{
 				2,
-				10138,
+				10149,
 				3,
 				{
-					1810002,
-					1810022
+					2050006,
+					2050026
 				},
 				10,
-				100
+				300
 			},
 			{
 				3,
-				10205,
+				10703,
 				3,
 				{
-					1810003,
-					1810023
+					2050005,
+					2050025
 				},
 				10,
-				200
+				300
 			},
 			{
 				4,
-				20501,
+				70202,
 				3,
 				{
-					1810005,
-					1810025
+					2050003,
+					2050023
 				},
 				10,
 				300
 			},
 			{
 				5,
-				20504,
+				70109,
 				3,
 				{
-					1810006,
-					1810026
+					2050002,
+					2050022
 				},
 				10,
 				300
@@ -4462,39 +4276,39 @@ var_0_3.base.activity_event_avatarframe = {}
 		task_ship = {
 			{
 				6,
-				80503,
-				1,
-				800
+				10720,
+				2,
+				600
 			},
 			{
 				7,
-				80302,
-				1,
+				10236,
+				2,
 				600
 			},
 			{
 				8,
-				970704,
-				1,
+				10156,
+				2,
 				600
 			},
 			{
 				9,
-				90105,
-				1,
+				10157,
+				2,
 				400
 			},
 			{
 				10,
-				90106,
-				1,
+				10158,
+				2,
 				400
 			}
 		},
 		award_display = {
 			{
 				8,
-				66052,
+				66063,
 				1
 			}
 		}

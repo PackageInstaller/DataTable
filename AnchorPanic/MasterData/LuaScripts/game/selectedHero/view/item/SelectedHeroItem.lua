@@ -1,4 +1,4 @@
-module("selectedHero.SelectedHeroItem",Class.impl(BaseReuseItem))
+module("selectedHero.SelectedHeroItem", Class.impl(BaseReuseItem))
 
 UIRes = UrlManager:getUIPrefabPath("selectedHero/item/SelectedHeroItem.prefab")
 
@@ -23,10 +23,14 @@ function setData(self, cusParent, cusItemVo)
     self:setParentTrans(cusParent)
     self.vo = cusItemVo[1]
     self.id = cusItemVo[2]
+
     self:updateView()
+
+    self.btn:SetActive(cusItemVo[3])
+    -- self.isSelectMask:SetActive(cusItemVo[3])
 end
 
-function setIsSelect(self,is)
+function setIsSelect(self, is)
     self.isSelect = is
     self.isSelectMask:SetActive(self.isSelect)
 end
@@ -45,12 +49,12 @@ function updateView(self)
     if isObtain then
         self.mHeroState:SetActive(true)
         local maxStarLvl = hero.HeroStarManager:getHeroMaxStarLvl()
-         if heroVo.evolutionLvl == maxStarLvl  then 
+        if heroVo.evolutionLvl == maxStarLvl then
             self.mTxtHeroState.text = "已满星"
-         else
+        else
             self.mTxtHeroState.text = "已拥有"
-         end
-         self.heroHeadGrid:setLvl(heroVo.lvl)
+        end
+        self.heroHeadGrid:setLvl(heroVo.lvl)
         self.heroHeadGrid:setStarLvl(heroVo.evolutionLvl)
     else
         self.mHeroState:SetActive(false)
@@ -63,36 +67,35 @@ function updateView(self)
     self.isSelectMask:SetActive(false)
 end
 
-
 function addAllUIEvent(self)
-    self:addUIEvent(self.btn,self.onSelfClick)
-    self:addUIEvent(self.mBtnChack,self.onCheckHandler)
+    self:addUIEvent(self.btn, self.onSelfClick)
+    self:addUIEvent(self.mBtnChack, self.onCheckHandler)
 end
 
 function onSelfClick(self)
-    if selectedHero.SelectedHeroManager:getCurrentCount() < selectedHero.SelectedHeroManager:getMaxCount() or self.isSelect==true then
+    if selectedHero.SelectedHeroManager:getCurrentCount() < selectedHero.SelectedHeroManager:getMaxCount() or self.isSelect == true then
         self.isSelect = not self.isSelect
         self.isSelectMask:SetActive(self.isSelect)
-        selectedHero.SelectedHeroManager:dispatchEvent( selectedHero.SelectedHeroManager.EVENT_HERO_SELECT,self.id)
-    else 
+        selectedHero.SelectedHeroManager:dispatchEvent(selectedHero.SelectedHeroManager.EVENT_HERO_SELECT, self.id)
+    else
         gs.Message.Show(_TT(4046))
     end
 end
 
 function onCheckHandler(self)
     GameDispatcher:dispatchEvent(EventName.DEACTIVE_SELECT_HERO_VIEW, false)
-    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DETAILSINFOPANEL,{heroTid = self.vo.tid})
+    GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DETAILSINFOPANEL, {heroTid = self.vo.tid})
 end
 
 function poolRecover(self)
     if(self.heroHeadGrid)then
-		self.heroHeadGrid:poolRecover()
-		self.heroHeadGrid = nil
+        self.heroHeadGrid:poolRecover()
+        self.heroHeadGrid = nil
     end
     super.poolRecover(self)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

@@ -1,41 +1,32 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CardPairsScene", import("..base.BaseUI"))
 
-local var_0_0 = "CardPairsScene"
+var_0_0.CARD_NUM = 18
+var_0_0.GAME_STATE_BEGIN = 0
+var_0_0.GAME_STATE_GAMING = 1
+var_0_0.GAME_STATE_END = 2
+var_0_0.config_init = false
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-var_0_1.CARD_NUM = 18
-var_0_1.GAME_STATE_BEGIN = 0
-var_0_1.GAME_STATE_GAMING = 1
-var_0_1.GAME_STATE_END = 2
-var_0_1.config_init = false
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "CardPairsUI"
 end
 
-function var_0_1.setPlayerData(arg_2_0, arg_2_1)
+function var_0_0.setPlayerData(arg_2_0, arg_2_1)
 	arg_2_0.playerData = arg_2_1
 
 	return
 end
 
-function var_0_1.setActivityData(arg_3_0, arg_3_1)
+function var_0_0.setActivityData(arg_3_0, arg_3_1)
 	arg_3_0.activityData = arg_3_1
 
 	if not arg_3_0.config_init then
-		local var_3_0 = arg_3_0.activityData
+		local var_3_0 = arg_3_0.activityData:getConfig("config_client")[2]
 
-		if var_2.getConfig(var_3_0, "config_client")[2] then
-			arg_3_0.firstShowingTime = var_2.firstShowingTime
-			arg_3_0.showingTime = var_2.showingTime
-			arg_3_0.aniTime = var_2.aniTime
-
-			local var_3_1 = arg_3_0.activityData
-
-			arg_3_0.cardEffectTimesMax = var_1_10003.getConfig(var_3_1, "config_data")[4]
+		if var_3_0 then
+			arg_3_0.firstShowingTime = var_3_0.firstShowingTime
+			arg_3_0.showingTime = var_3_0.showingTime
+			arg_3_0.aniTime = var_3_0.aniTime
+			arg_3_0.cardEffectTimesMax = arg_3_0.activityData:getConfig("config_data")[4]
 		else
 			arg_3_0.firstShowingTime = 2
 			arg_3_0.showingTime = 0.3
@@ -43,239 +34,107 @@ function var_0_1.setActivityData(arg_3_0, arg_3_1)
 			arg_3_0.cardEffectTimesMax = 7
 		end
 
-		CardPairsCard = var_1_10003
-		var_1_10003.ANI_TIME = arg_3_0.aniTime
+		CardPairsCard.ANI_TIME = arg_3_0.aniTime
 		arg_3_0.config_init = true
 	end
 
 	arg_3_0:updateTimes()
 
 	if arg_3_0.activityData.data4 <= 0 then
-		setText = var_2
-
-		var_2(arg_3_0.bestTxt, "--'--'--")
+		setText(arg_3_0.bestTxt, "--'--'--")
 	else
-		setText = var_2
-
-		var_2(arg_3_0.bestTxt, arg_3_0:getTimeFormat(arg_3_0.activityData.data4))
+		setText(arg_3_0.bestTxt, arg_3_0:getTimeFormat(arg_3_0.activityData.data4))
 	end
 
 	return
 end
 
-function var_0_1.checkActivityEnd(arg_4_0)
+function var_0_0.checkActivityEnd(arg_4_0)
 	return
 end
 
-function var_0_1.init(arg_5_0)
-	local var_5_0 = arg_5_0._tf
+function var_0_0.init(arg_5_0)
+	arg_5_0.backBtn = arg_5_0._tf:Find("top/back")
+	arg_5_0.cardTpl = arg_5_0._tf:Find("res/card")
+	arg_5_0.cardCon = arg_5_0._tf:Find("card_con/layout")
+	arg_5_0.pics = arg_5_0._tf:Find("res/pics")
+	arg_5_0.helpBtn = arg_5_0._tf:Find("top/help_btn")
+	arg_5_0.timesTxt = arg_5_0._tf:Find("num_txt")
+	arg_5_0.timeTxt = arg_5_0._tf:Find("time_txt")
+	arg_5_0.bestTxt = arg_5_0._tf:Find("best_txt")
+	arg_5_0.maskBtn = arg_5_0._tf:Find("mask_btn")
+	arg_5_0.endTips = arg_5_0._tf:Find("end_tips")
 
-	arg_5_0.backBtn = var_1.Find(var_5_0, "top/back")
-
-	local var_5_1 = arg_5_0._tf
-
-	arg_5_0.cardTpl = var_1.Find(var_5_1, "res/card")
-
-	local var_5_2 = arg_5_0._tf
-
-	arg_5_0.cardCon = var_1.Find(var_5_2, "card_con/layout")
-
-	local var_5_3 = arg_5_0._tf
-
-	arg_5_0.pics = var_1.Find(var_5_3, "res/pics")
-
-	local var_5_4 = arg_5_0._tf
-
-	arg_5_0.helpBtn = var_1.Find(var_5_4, "top/help_btn")
-
-	local var_5_5 = arg_5_0._tf
-
-	arg_5_0.timesTxt = var_1.Find(var_5_5, "num_txt")
-
-	local var_5_6 = arg_5_0._tf
-
-	arg_5_0.timeTxt = var_1.Find(var_5_6, "time_txt")
-
-	local var_5_7 = arg_5_0._tf
-
-	arg_5_0.bestTxt = var_1.Find(var_5_7, "best_txt")
-
-	local var_5_8 = arg_5_0._tf
-
-	arg_5_0.maskBtn = var_1.Find(var_5_8, "mask_btn")
-
-	local var_5_9 = arg_5_0._tf
-
-	arg_5_0.endTips = var_1.Find(var_5_9, "end_tips")
-
-	local var_5_10 = arg_5_0
-	local var_5_11 = arg_5_0.hideChild
-	local var_5_12 = arg_5_0._tf
-
-	var_5_11(var_5_10, var_4.Find(var_5_12, "res"))
+	arg_5_0:hideChild(arg_5_0._tf:Find("res"))
 
 	return
 end
 
-function var_0_1.didEnter(arg_6_0)
-	onButton = var_1_10001
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.backBtn
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-
-		var_0.emit(var_7_0, var_0_1.ON_BACK)
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0.backBtn, function()
+		arg_6_0:emit(var_0_0.ON_BACK)
 
 		return
-	end
-
-	SOUND_BACK = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.helpBtn
-
-	local function var_6_5()
-		pg = var_2_10000
-
-		local var_8_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_8_1 = var_0.ShowMsgBox
-		local var_8_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_8_2.type = var_2_10004
-		i18n = var_2_10004
-		var_8_2.helps = var_2_10004("card_pairs_help_tip")
-
-		var_8_1(var_8_0, var_8_2)
+	end, SOUND_BACK)
+	onButton(arg_6_0, arg_6_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("card_pairs_help_tip")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0.maskBtn
-
-	local function var_6_8()
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.maskBtn, function()
 		if arg_6_0.lastTimes > 0 then
-			local var_9_0 = arg_6_0
-
-			var_0.gameInit(var_9_0)
+			arg_6_0:gameInit()
 		else
-			pg = var_0
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				content = i18n("card_pairs_tips"),
+				onYes = function()
+					arg_6_0:gameInit()
 
-			local var_9_1 = var_0.MsgboxMgr.GetInstance()
-			local var_9_2 = var_0.ShowMsgBox
-			local var_9_3 = {}
-
-			i18n = var_2_10004
-			var_9_3.content = var_2_10004("card_pairs_tips")
-
-			function var_9_3.onYes()
-				local var_10_0 = arg_6_0
-
-				var_0.gameInit(var_10_0)
-
-				return
-			end
-
-			var_9_2(var_9_1, var_9_3)
+					return
+				end
+			})
 		end
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_6, var_6_7, var_6_8, var_1_10006)
-
-	Timer = var_1_10001
-	arg_6_0.updateTimer = var_1_10001.New(function()
-		local var_11_0 = arg_6_0
-
-		var_0.updateTimes(var_11_0)
+	arg_6_0.updateTimer = Timer.New(function()
+		arg_6_0:updateTimes()
 
 		return
 	end, 10, -1)
 
-	local var_6_9 = arg_6_0.updateTimer
-
-	var_1.Start(var_6_9)
+	arg_6_0.updateTimer:Start()
 
 	arg_6_0.showCards = {}
 	arg_6_0.showingCards = {}
 	arg_6_0.cardList = {}
-	UIItemList = var_1
-	arg_6_0.cardUIList = var_1.New(arg_6_0.cardCon, arg_6_0.cardTpl)
+	arg_6_0.cardUIList = UIItemList.New(arg_6_0.cardCon, arg_6_0.cardTpl)
 
-	local var_6_10 = arg_6_0.cardUIList
-
-	var_1.make(var_6_10, function(arg_12_0, arg_12_1, arg_12_2)
-		UIItemList = var_2_10003
-
-		if arg_12_0 == var_2_10003.EventUpdate then
+	arg_6_0.cardUIList:make(function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 == UIItemList.EventUpdate then
 			if arg_6_0.cardList[arg_12_1 + 1] ~= nil then
-				var_3:initCard(arg_6_0.cardIndexList[arg_12_1 + 1][1])
+				arg_6_0.cardList[arg_12_1 + 1]:initCard(arg_6_0.cardIndexList[arg_12_1 + 1][1])
 			else
-				table = var_4
-
-				local var_12_0 = var_4.insert
-				local var_12_1 = arg_6_0.cardList
-				local var_12_2 = arg_12_1 + 1
-
-				CardPairsCard = var_2_10008
-
-				var_12_0(var_12_1, var_12_2, var_2_10008.New(arg_12_2, arg_6_0.pics, arg_6_0.cardIndexList[arg_12_1 + 1][1], function(arg_13_0)
+				table.insert(arg_6_0.cardList, arg_12_1 + 1, CardPairsCard.New(arg_12_2, arg_6_0.pics, arg_6_0.cardIndexList[arg_12_1 + 1][1], function(arg_13_0)
 					if arg_6_0.gameState == arg_6_0.GAME_STATE_GAMING then
 						if arg_6_0.isFrist then
 							arg_6_0.isFrist = false
-
-							local var_13_0 = arg_6_0
-
-							Time = var_2
-							var_13_0.beginTime = var_2.realtimeSinceStartup
-
-							local var_13_1 = arg_6_0
-
-							Timer = var_2
-							var_13_1.countTimer = var_2.New(function()
-								math = var_4_10000
-
-								local var_14_0 = var_4_10000.floor
-
-								Time = var_4_10002
-
-								local var_14_1 = var_14_0((var_4_10002.realtimeSinceStartup - arg_6_0.beginTime) * 1000)
-								local var_14_2 = arg_6_0
-
-								var_1.setTimeTxt(var_14_2, var_14_1)
+							arg_6_0.beginTime = Time.realtimeSinceStartup
+							arg_6_0.countTimer = Timer.New(function()
+								arg_6_0:setTimeTxt((math.floor((Time.realtimeSinceStartup - arg_6_0.beginTime) * 1000)))
 
 								return
 							end, 0.12, -1)
 
-							local var_13_2 = arg_6_0.countTimer
-
-							var_1.Start(var_13_2)
+							arg_6_0.countTimer:Start()
 						end
 
 						if arg_13_0.canClick and arg_13_0.enable and #arg_6_0.showCards < 2 then
-							local var_13_3 = arg_13_0
-							local var_13_4 = arg_13_0.aniShowBack
-							local var_13_5 = arg_13_0.cardState
-
-							CardPairsCard = var_3_10005
-
-							var_13_4(var_13_3, var_13_5 == var_3_10005.CARD_STATE_BACK)
+							arg_13_0:aniShowBack(arg_13_0.cardState == CardPairsCard.CARD_STATE_BACK)
 						end
 					end
 
@@ -285,14 +144,10 @@ function var_0_1.didEnter(arg_6_0)
 						arg_15_0:setEnable(false)
 
 						if arg_15_1 then
-							table = var_2
-
-							var_2.insert(arg_6_0.showCards, #arg_6_0.showCards + 1, arg_15_0)
+							table.insert(arg_6_0.showCards, #arg_6_0.showCards + 1, arg_15_0)
 
 							if #arg_6_0.showCards == 2 then
-								local var_15_0 = arg_6_0
-
-								var_2.setAllCardEnale(var_15_0, false)
+								arg_6_0:setAllCardEnale(false)
 							end
 						end
 					end
@@ -300,64 +155,37 @@ function var_0_1.didEnter(arg_6_0)
 					return
 				end, function(arg_16_0, arg_16_1)
 					if arg_6_0.gameState == arg_6_0.GAME_STATE_GAMING then
-						local var_16_0
-
 						if arg_16_1 then
 							arg_16_0:setOutline(true)
-
-							table = var_16_0
-
-							var_16_0.insert(arg_6_0.showingCards, #arg_6_0.showingCards + 1, arg_16_0)
+							table.insert(arg_6_0.showingCards, #arg_6_0.showingCards + 1, arg_16_0)
 
 							if #arg_6_0.showingCards % 2 == 0 then
-								var_16_0 = #arg_6_0.showingCards
+								table.remove(arg_6_0.showingCards, #arg_6_0.showingCards)
+								table.remove(arg_6_0.showingCards, #arg_6_0.showingCards - 1)
 
-								local var_16_1 = #arg_6_0.showingCards - 1
-								local var_16_2 = arg_6_0.showingCards[var_16_1]
-								local var_16_3 = arg_6_0.showingCards[var_16_0]
-
-								table = var_6
-
-								var_6.remove(arg_6_0.showingCards, var_16_0)
-
-								table = var_6
-
-								var_6.remove(arg_6_0.showingCards, var_16_1)
-
-								if var_16_2:getCardIndex() == var_16_3:getCardIndex() then
-									var_16_2:setClear(true)
-									var_16_3:setClear(true)
+								if arg_6_0.showingCards[#arg_6_0.showingCards - 1]:getCardIndex() == arg_6_0.showingCards[#arg_6_0.showingCards]:getCardIndex() then
+									arg_6_0.showingCards[#arg_6_0.showingCards - 1]:setClear(true)
+									arg_6_0.showingCards[#arg_6_0.showingCards]:setClear(true)
 
 									arg_6_0.curValue = arg_6_0.curValue + 2
 
 									if arg_6_0.curValue >= arg_6_0.CARD_NUM then
-										local var_16_4 = arg_6_0
-
-										var_6.gameEndHandler(var_16_4)
+										arg_6_0:gameEndHandler()
 									else
 										for iter_16_0 = #arg_6_0.showCards, 0, -1 do
-											table = var_3_10010
-
-											var_3_10010.remove(arg_6_0.showCards, iter_16_0)
+											table.remove(arg_6_0.showCards, iter_16_0)
 										end
 
-										local var_16_5 = arg_6_0
-
-										var_6.setAllCardEnale(var_16_5, true)
+										arg_6_0:setAllCardEnale(true)
 									end
 								else
-									var_16_2:aniShowBack(false, false, arg_6_0.showingTime)
-									var_16_3:aniShowBack(false, false, arg_6_0.showingTime)
+									arg_6_0.showingCards[#arg_6_0.showingCards - 1]:aniShowBack(false, false, arg_6_0.showingTime)
+									arg_6_0.showingCards[#arg_6_0.showingCards]:aniShowBack(false, false, arg_6_0.showingTime)
 								end
 							end
 						else
-							table = var_16_0
-
-							var_16_0.remove(arg_6_0.showCards, #arg_6_0.showCards)
-
-							local var_16_6 = arg_6_0
-
-							var_2.setAllCardEnale(var_16_6, #arg_6_0.showingCards == 0)
+							table.remove(arg_6_0.showCards, #arg_6_0.showCards)
+							arg_6_0:setAllCardEnale(#arg_6_0.showingCards == 0)
 						end
 					end
 
@@ -370,88 +198,63 @@ function var_0_1.didEnter(arg_6_0)
 	end)
 
 	if not arg_6_0:tryFirstPlayStory() then
-		triggerButton = var_1
-
-		var_1(arg_6_0.maskBtn)
+		triggerButton(arg_6_0.maskBtn)
 	end
 
 	return
 end
 
-function var_0_1.setAllCardEnale(arg_17_0, arg_17_1)
-	pairs = var_1_10002
-
-	for iter_17_0, iter_17_1 in var_1_10002(arg_17_0.cardList) do
+function var_0_0.setAllCardEnale(arg_17_0, arg_17_1)
+	for iter_17_0, iter_17_1 in pairs(arg_17_0.cardList) do
 		iter_17_1:setEnable(arg_17_1)
 	end
 
 	return
 end
 
-function var_0_1.setTimeTxt(arg_18_0, arg_18_1)
-	setText = var_1_10002
-
-	var_1_10002(arg_18_0.timeTxt, arg_18_0:getTimeFormat(arg_18_1))
+function var_0_0.setTimeTxt(arg_18_0, arg_18_1)
+	setText(arg_18_0.timeTxt, arg_18_0:getTimeFormat(arg_18_1))
 
 	return
 end
 
-function var_0_1.getTimeFormat(arg_19_0, arg_19_1)
-	math = var_1_10002
+function var_0_0.getTimeFormat(arg_19_0, arg_19_1)
+	local var_19_0 = math.floor(arg_19_1 / 60000)
 
-	local var_19_0 = var_1_10002.floor(arg_19_1 / 60000)
+	var_19_0 = var_19_0 >= 10 and var_19_0 or "0" .. var_19_0
 
-	var_19_0 = 10 <= var_19_0 and var_19_0 or "0" .. var_19_0
-	math = var_3
+	local var_19_1 = math.floor(arg_19_1 % 60000 / 1000)
 
-	local var_19_1 = var_3.floor(arg_19_1 % 60000 / 1000)
+	var_19_1 = var_19_1 >= 10 and var_19_1 or "0" .. var_19_1
 
-	var_19_1 = 10 <= var_19_1 and var_19_1 or "0" .. var_19_1
-	math = var_4
+	local var_19_2 = math.floor(arg_19_1 % 1000 / 10)
 
-	local var_19_2 = var_4.floor(arg_19_1 % 1000 / 10) >= 10 and var_19_2 or "0" .. var_19_2
+	var_19_2 = var_19_2 >= 10 and var_19_2 or "0" .. var_19_2
 
 	return var_19_0 .. "'" .. var_19_1 .. "'" .. var_19_2
 end
 
-function var_0_1.updateTimes(arg_20_0)
-	os = var_1_10001
+function var_0_0.updateTimes(arg_20_0)
+	local var_20_0 = math.ceil(os.difftime(pg.TimeMgr.GetInstance():GetServerTime(), arg_20_0.activityData.data3) / 0)
 
-	local var_20_0 = var_1_10001.difftime
+	var_20_0 = var_20_0 < 0 and 0 or var_20_0
+	var_20_0 = var_20_0 > arg_20_0.cardEffectTimesMax and arg_20_0.cardEffectTimesMax or var_20_0
+	arg_20_0.lastTimes = var_20_0 - arg_20_0.activityData.data2
 
-	pg = var_1_10003
+	local var_20_2 = arg_20_0.timesTxt
 
-	local var_20_1 = var_1_10003.TimeMgr.GetInstance()
-	local var_20_2 = var_20_0(var_3.GetServerTime(var_20_1), arg_20_0.activityData.data3)
+	if arg_20_0.lastTimes >= 0 then
+		local var_20_3 = arg_20_0.lastTimes or 0
 
-	math = var_1_10002
+		var_20_1(var_20_2, var_20_3)
 
-	local var_20_3 = var_1_10002.ceil(var_20_2 / 0) < 0 and 0 or var_20_3
-
-	var_20_3 = var_20_3 > arg_20_0.cardEffectTimesMax and arg_20_0.cardEffectTimesMax or var_20_3
-	arg_20_0.lastTimes = var_20_3 - arg_20_0.activityData.data2
-	setText = var_3
-
-	local var_20_4 = arg_20_0.timesTxt
-	local var_20_5
-
-	if not (arg_20_0.lastTimes >= 0) or not arg_20_0.lastTimes then
-		var_20_5 = 0
+		return
 	end
-
-	var_3(var_20_4, var_20_5)
-
-	return
 end
 
-function var_0_1.gameInit(arg_21_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_21_0.maskBtn, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_21_0.endTips, false)
+function var_0_0.gameInit(arg_21_0)
+	setActive(arg_21_0.maskBtn, false)
+	setActive(arg_21_0.endTips, false)
 
 	arg_21_0.isFrist = true
 	arg_21_0.curValue = 0
@@ -460,38 +263,17 @@ function var_0_1.gameInit(arg_21_0)
 	arg_21_0.cardIndexList = {}
 
 	for iter_21_0 = 1, arg_21_0.CARD_NUM / 2 do
-		table = var_1_10005
-		var_1_10005 = var_1_10005.insert
-
-		local var_21_0 = arg_21_0.cardIndexList
-		local var_21_1 = #arg_21_0.cardIndexList + 1
-		local var_21_2 = {
-			iter_21_0
-		}
-
-		math = var_1_10010
-		var_21_2[2] = var_1_10010.random(0, 100)
-
-		var_1_10005(var_21_0, var_21_1, var_21_2)
-
-		table = var_1_10005
-		var_1_10005 = var_1_10005.insert
-
-		local var_21_3 = arg_21_0.cardIndexList
-		local var_21_4 = #arg_21_0.cardIndexList + 1
-		local var_21_5 = {
-			iter_21_0
-		}
-
-		math = var_1_10010
-		var_21_5[2] = var_1_10010.random(0, 100)
-
-		var_1_10005(var_21_3, var_21_4, var_21_5)
+		table.insert(arg_21_0.cardIndexList, #arg_21_0.cardIndexList + 1, {
+			iter_21_0,
+			math.random(0, 100)
+		})
+		table.insert(arg_21_0.cardIndexList, #arg_21_0.cardIndexList + 1, {
+			iter_21_0,
+			math.random(0, 100)
+		})
 	end
 
-	table = var_1
-
-	var_1.sort(arg_21_0.cardIndexList, function(arg_22_0, arg_22_1)
+	table.sort(arg_21_0.cardIndexList, function(arg_22_0, arg_22_1)
 		if arg_22_0[2] > arg_22_1[2] then
 			return true
 		end
@@ -501,10 +283,7 @@ function var_0_1.gameInit(arg_21_0)
 	arg_21_0:setTimeTxt(0)
 	arg_21_0:clearCountTimer()
 	arg_21_0:clearAllCard()
-
-	local var_21_6 = arg_21_0.cardUIList
-
-	var_1.align(var_21_6, arg_21_0.CARD_NUM)
+	arg_21_0.cardUIList:align(arg_21_0.CARD_NUM)
 
 	arg_21_0.gameState = arg_21_0.GAME_STATE_BEGIN
 
@@ -513,7 +292,7 @@ function var_0_1.gameInit(arg_21_0)
 	return
 end
 
-function var_0_1.checkGameState(arg_23_0)
+function var_0_0.checkGameState(arg_23_0)
 	if arg_23_0.gameState == arg_23_0.GAME_STATE_BEGIN then
 		arg_23_0:showAllCard()
 	elseif arg_23_0.gameState == arg_23_0.GAME_STATE_GAMING then
@@ -525,136 +304,90 @@ function var_0_1.checkGameState(arg_23_0)
 	return
 end
 
-function var_0_1.gameEndHandler(arg_24_0)
+function var_0_0.gameEndHandler(arg_24_0)
 	arg_24_0.gameState = arg_24_0.GAME_STATE_END
 
 	arg_24_0:checkGameState()
+	setActive(arg_24_0.maskBtn, true)
 
-	setActive = var_1
+	local var_24_0 = math.floor((Time.realtimeSinceStartup - arg_24_0.beginTime) * 1000)
 
-	var_1(arg_24_0.maskBtn, true)
+	var_24_0 = var_24_0 < 0 and 9 * arg_24_0.aniTime or var_24_0
 
-	math = var_1
+	arg_24_0:setTimeTxt(var_24_0)
 
-	local var_24_0 = var_1.floor
+	if arg_24_0.lastTimes > 0 then
+		local var_24_1 = arg_24_0.activityData.data2 + 1 or arg_24_0.activityData.data2
 
-	Time = var_3
+		var_24_1 = var_24_1 > arg_24_0.cardEffectTimesMax and arg_24_0.cardEffectTimesMax or var_24_1
 
-	local var_24_1 = var_24_0((var_3.realtimeSinceStartup - arg_24_0.beginTime) * 1000) < 0 and 9 * arg_24_0.aniTime or var_24_1
+		if arg_24_0.lastTimes > 0 or var_24_0 < arg_24_0.activityData.data4 then
+			arg_24_0:emit(CardPairsMediator.EVENT_OPERATION, {
+				cmd = 1,
+				activity_id = arg_24_0.activityData.id,
+				arg1 = var_24_1,
+				arg2 = var_24_0
+			})
+		end
 
-	arg_24_0:setTimeTxt(var_24_1)
+		setActive(arg_24_0.endTips, true)
 
-	local var_24_2
-
-	if not (arg_24_0.lastTimes > 0) or not (arg_24_0.activityData.data2 + 1) then
-		var_24_2 = arg_24_0.activityData.data2
+		return
 	end
-
-	var_24_2 = var_24_2 > arg_24_0.cardEffectTimesMax and arg_24_0.cardEffectTimesMax or var_24_2
-
-	local var_24_4
-
-	if arg_24_0.lastTimes > 0 or var_24_1 < arg_24_0.activityData.data4 then
-		local var_24_3 = arg_24_0
-
-		var_24_4 = arg_24_0.emit
-		CardPairsMediator = var_1_10006
-
-		var_24_4(var_24_3, var_1_10006.EVENT_OPERATION, {
-			cmd = 1,
-			activity_id = arg_24_0.activityData.id,
-			arg1 = var_24_2,
-			arg2 = var_24_1
-		})
-	end
-
-	setActive = var_24_4
-
-	var_24_4(arg_24_0.endTips, true)
-
-	return
 end
 
-function var_0_1.showAllCard(arg_25_0)
+function var_0_0.showAllCard(arg_25_0)
 	arg_25_0:setAllCardEnale(false)
 
-	Timer = var_1
-	arg_25_0.timer = var_1.New(function()
-		pairs = var_2_10000
-
-		for iter_26_0, iter_26_1 in var_2_10000(arg_25_0.cardList) do
+	arg_25_0.timer = Timer.New(function()
+		for iter_26_0, iter_26_1 in pairs(arg_25_0.cardList) do
 			iter_26_1:aniShowBack(true)
 		end
 
-		local var_26_0 = arg_25_0
-
-		Timer = var_1
-		var_26_0.timer = var_1.New(function()
-			pairs = var_3_10000
-
-			for iter_27_0, iter_27_1 in var_3_10000(arg_25_0.cardList) do
+		arg_25_0.timer = Timer.New(function()
+			for iter_27_0, iter_27_1 in pairs(arg_25_0.cardList) do
 				iter_27_1:aniShowBack()
 			end
 
-			local var_27_0 = arg_25_0
-
-			Timer = var_1
-			var_27_0.timer = var_1.New(function()
+			arg_25_0.timer = Timer.New(function()
 				arg_25_0.gameState = arg_25_0.GAME_STATE_GAMING
 
-				local var_28_0 = arg_25_0
-
-				var_0.checkGameState(var_28_0)
-
-				local var_28_1 = arg_25_0
-
-				var_0.setAllCardEnale(var_28_1, true)
+				arg_25_0:checkGameState()
+				arg_25_0:setAllCardEnale(true)
 
 				return
 			end, arg_25_0.aniTime, 1)
 
-			local var_27_1 = arg_25_0.timer
-
-			var_0.Start(var_27_1)
+			arg_25_0.timer:Start()
 
 			return
 		end, arg_25_0.firstShowingTime, 1)
 
-		local var_26_1 = arg_25_0.timer
-
-		var_0.Start(var_26_1)
+		arg_25_0.timer:Start()
 
 		return
 	end, 0.5, 1)
 
-	local var_25_0 = arg_25_0.timer
-
-	var_1.Start(var_25_0)
+	arg_25_0.timer:Start()
 
 	return
 end
 
-function var_0_1.clearAllCard(arg_29_0, arg_29_1)
+function var_0_0.clearAllCard(arg_29_0, arg_29_1)
 	if arg_29_0.timer ~= nil then
-		local var_29_0 = arg_29_0.timer
-
-		var_2.Stop(var_29_0)
+		arg_29_0.timer:Stop()
 
 		arg_29_0.timer = nil
 	end
 
 	if arg_29_1 then
-		pairs = var_2
-
-		for iter_29_0, iter_29_1 in var_2(arg_29_0.cardList) do
+		for iter_29_0, iter_29_1 in pairs(arg_29_0.cardList) do
 			iter_29_1:destroy()
 		end
 
 		arg_29_0.cardList = {}
 	else
-		pairs = var_2
-
-		for iter_29_2, iter_29_3 in var_2(arg_29_0.cardList) do
+		for iter_29_2, iter_29_3 in pairs(arg_29_0.cardList) do
 			iter_29_3:clear()
 		end
 	end
@@ -662,40 +395,22 @@ function var_0_1.clearAllCard(arg_29_0, arg_29_1)
 	return
 end
 
-function var_0_1.hideChild(arg_30_0, arg_30_1)
-	local var_30_0 = arg_30_1.childCount
-
-	for iter_30_0 = 0, var_30_0 - 1 do
-		local var_30_1 = arg_30_1:GetChild(iter_30_0)
-
-		setActive = var_1_10008
-
-		var_1_10008(var_30_1, false)
+function var_0_0.hideChild(arg_30_0, arg_30_1)
+	for iter_30_0 = 0, arg_30_1.childCount - 1 do
+		setActive(arg_30_1:GetChild(iter_30_0), false)
 	end
 
 	return
 end
 
-function var_0_1.tryFirstPlayStory(arg_31_0)
-	local var_31_0 = arg_31_0.activityData
+function var_0_0.tryFirstPlayStory(arg_31_0)
+	if arg_31_0.activityData:getConfig("config_client")[1] then
+		local var_31_0 = arg_31_0.activityData:getConfig("config_client")[1][1]
 
-	if var_1.getConfig(var_31_0, "config_client")[1] then
-		local var_31_1 = arg_31_0.activityData
-
-		if var_1.getConfig(var_31_1, "config_client")[1][1] ~= nil then
-			pg = var_1_10002
-
-			local var_31_2 = var_1_10002.NewStoryMgr.GetInstance()
-
-			if not var_2.IsPlayed(var_31_2, var_1) then
-				pg = var_2
-
-				local var_31_3 = var_2.NewStoryMgr.GetInstance()
-
-				var_2.Play(var_31_3, var_1, function()
-					triggerButton = var_2_10000
-
-					var_2_10000(arg_31_0.maskBtn)
+		if var_31_0 ~= nil then
+			if not pg.NewStoryMgr.GetInstance():IsPlayed(var_31_0) then
+				pg.NewStoryMgr.GetInstance():Play(var_31_0, function()
+					triggerButton(arg_31_0.maskBtn)
 
 					return
 				end)
@@ -712,11 +427,9 @@ function var_0_1.tryFirstPlayStory(arg_31_0)
 	return
 end
 
-function var_0_1.clearCountTimer(arg_33_0)
+function var_0_0.clearCountTimer(arg_33_0)
 	if arg_33_0.countTimer ~= nil then
-		local var_33_0 = arg_33_0.countTimer
-
-		var_1.Stop(var_33_0)
+		arg_33_0.countTimer:Stop()
 
 		arg_33_0.countTimer = nil
 	end
@@ -724,14 +437,12 @@ function var_0_1.clearCountTimer(arg_33_0)
 	return
 end
 
-function var_0_1.willExit(arg_34_0)
+function var_0_0.willExit(arg_34_0)
 	arg_34_0:clearAllCard(true)
 	arg_34_0:clearCountTimer()
 
 	if arg_34_0.updateTimer ~= nil then
-		local var_34_0 = arg_34_0.updateTimer
-
-		var_1.Stop(var_34_0)
+		arg_34_0.updateTimer:Stop()
 
 		arg_34_0.updateTimer = nil
 	end
@@ -739,4 +450,4 @@ function var_0_1.willExit(arg_34_0)
 	return
 end
 
-return var_0_1
+return var_0_0

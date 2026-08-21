@@ -1,81 +1,16 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.barrage_template = rawget(pg, "barrage_template") or setmetatable({
+	__name = "barrage_template"
+}, confNEO)
+pg.barrage_template.__stream__ = true
+pg.barrage_template.__sub__ = rawget(pg.barrage_template, "__sub__") or {}
 
-local var_0_0
+table.insert(pg.barrage_template.__sub__, "barrage_template_1")
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_1
-
-if not var_0_10001(var_0_10003, "barrage_template") then
-	setmetatable = var_0_1
-	var_0_10003 = {
-		__name = "barrage_template"
-	}
-	confNEO = var_4
-	var_0_1 = var_0_1(var_0_10003, var_4)
-end
-
-var_0.barrage_template = var_0_1
-pg = var_0
-
-local var_0_2 = var_0.barrage_template
-
-var_0_2.__stream__ = true
-pg = var_0_2
-
-local var_0_3 = var_0_2.barrage_template
-
-rawget = var_1
-pg = var_0_10003
-
-local var_0_4
-
-if not var_1(var_0_10003.barrage_template, "__sub__") then
-	var_0_4 = {}
-end
-
-var_0_3.__sub__ = var_0_4
-table = var_0_3
-
-local var_0_5 = var_0_3.insert
-
-pg = var_0_10002
-
-var_0_5(var_0_10002.barrage_template.__sub__, "barrage_template_1")
-
-pg = var_0_5
-pg = var_0_4
-
-local var_0_6
-
-if not var_0_4.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-
-local var_0_7 = var_0_5.base
-
-pg = var_0_6
-
-local var_0_8
-
-if not var_0_6.base.barrage_template_1 then
-	var_0_8 = {}
-end
-
-var_0_7.barrage_template_1 = var_0_8
-cs = var_0_7
-
-local var_0_9
-
-var_0_9 = var_0_7 or {}
-cs = cs
-var_0.barrage_template_1 = {
+pg.base = pg.base or {}
+pg.base.barrage_template_1 = pg.base.barrage_template_1 or {}
+cs = cs or {}
+cs.barrage_template_1 = {
 	{
 		0,
 		284

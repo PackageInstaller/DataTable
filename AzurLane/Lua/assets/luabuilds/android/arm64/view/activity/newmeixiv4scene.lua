@@ -1,143 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewMeixiV4Scene", import("..base.BaseUI"))
 
-local var_0_0 = "NewMeixiV4Scene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewMeixiV4UI"
 end
 
-function var_0_1.ResUISettings(arg_2_0)
+function var_0_0.ResUISettings(arg_2_0)
 	return true
 end
 
-function var_0_1.init(arg_3_0)
-	local var_3_0 = arg_3_0._tf
-
-	arg_3_0.ani = var_1.Find(var_3_0, "TV01")
-
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.progress = var_1.Find(var_3_1, "progress/Text")
-
-	local var_3_2 = arg_3_0._tf
-
-	arg_3_0.nodes = var_1.Find(var_3_2, "nodes")
-
-	local var_3_3 = arg_3_0._tf
-
-	arg_3_0.nodeInfo = var_1.Find(var_3_3, "node_info")
-
-	local var_3_4 = arg_3_0._tf
-
-	arg_3_0.titleTxt = var_1.Find(var_3_4, "progress/title")
-
-	local var_3_5 = arg_3_0._tf
-
-	arg_3_0.titleNum = var_1.Find(var_3_5, "progress/cur")
-
-	local var_3_6 = arg_3_0._tf
-
-	arg_3_0.helpBtn = var_1.Find(var_3_6, "help_btn")
-
-	local var_3_7 = arg_3_0._tf
-
-	arg_3_0.storyTip = var_1.Find(var_3_7, "get_story")
-	getProxy = var_1
-	TaskProxy = var_3_7
-	arg_3_0.taskProxy = var_1(var_3_7)
-	pg = var_1
-
-	local var_3_8 = var_1.activity_template
-
-	ActivityConst = var_1_10002
-	arg_3_0.storyGroup = var_3_8[var_1_10002.NEWMEIXIV4_SKIRMISH_ID].config_client.storys
-	arg_3_0.memoryGroup = var_1.config_client.memoryGroup
+function var_0_0.init(arg_3_0)
+	arg_3_0.ani = arg_3_0._tf:Find("TV01")
+	arg_3_0.progress = arg_3_0._tf:Find("progress/Text")
+	arg_3_0.nodes = arg_3_0._tf:Find("nodes")
+	arg_3_0.nodeInfo = arg_3_0._tf:Find("node_info")
+	arg_3_0.titleTxt = arg_3_0._tf:Find("progress/title")
+	arg_3_0.titleNum = arg_3_0._tf:Find("progress/cur")
+	arg_3_0.helpBtn = arg_3_0._tf:Find("help_btn")
+	arg_3_0.storyTip = arg_3_0._tf:Find("get_story")
+	arg_3_0.taskProxy = getProxy(TaskProxy)
+	arg_3_0.storyGroup = pg.activity_template[ActivityConst.NEWMEIXIV4_SKIRMISH_ID].config_client.storys
+	arg_3_0.memoryGroup = pg.activity_template[ActivityConst.NEWMEIXIV4_SKIRMISH_ID].config_client.memoryGroup
 
 	return
 end
 
-function var_0_1.didEnter(arg_4_0)
-	onButton = var_1_10001
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_4.Find(var_4_1, "top/back_btn")
-
-	local function var_4_3()
-		local var_5_0 = arg_4_0
-
-		var_0.emit(var_5_0, var_0_1.ON_BACK)
+function var_0_0.didEnter(arg_4_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("top/back_btn"), function()
+		arg_4_0:emit(var_0_0.ON_BACK)
 
 		return
-	end
-
-	SOUND_BACK = var_4_1
-
-	var_1_10001(var_4_0, var_4_2, var_4_3, var_4_1)
-
-	onButton = var_1_10001
-
-	local var_4_4 = arg_4_0
-	local var_4_5 = arg_4_0._tf
-	local var_4_6 = var_4.Find(var_4_5, "top/option")
-
-	local function var_4_7()
-		local var_6_0 = arg_4_0
-
-		var_0.emit(var_6_0, var_0_1.ON_HOME)
+	end, SOUND_BACK)
+	onButton(arg_4_0, arg_4_0._tf:Find("top/option"), function()
+		arg_4_0:emit(var_0_0.ON_HOME)
 
 		return
-	end
-
-	SFX_CANCEL = var_4_5
-
-	var_1_10001(var_4_4, var_4_6, var_4_7, var_4_5)
-
-	onButton = var_1_10001
-
-	local var_4_8 = arg_4_0
-	local var_4_9 = arg_4_0.helpBtn
-
-	local function var_4_10()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_7_1 = var_0.ShowMsgBox
-		local var_7_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_7_2.type = var_2_10004
-		i18n = var_2_10004
-		var_7_2.helps = var_2_10004("MeixiV4_help")
-
-		var_7_1(var_7_0, var_7_2)
+	end, SFX_CANCEL)
+	onButton(arg_4_0, arg_4_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = i18n("MeixiV4_help")
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_4_5
-
-	var_1_10001(var_4_8, var_4_9, var_4_10, var_4_5)
-
-	setText = var_1_10001
-
-	local var_4_11 = arg_4_0.storyTip
-	local var_4_12 = var_3.Find(var_4_11, "bar/tip")
-
-	i18n = var_4_9
-
-	var_1_10001(var_4_12, var_4_9("world_collection_back"))
+	end, SFX_PANEL)
+	setText(arg_4_0.storyTip:Find("bar/tip"), i18n("world_collection_back"))
 	arg_4_0:playAni()
 	arg_4_0:updateNodes()
 
 	return
 end
 
-function var_0_1.setPlayer(arg_8_0, arg_8_1)
+function var_0_0.setPlayer(arg_8_0, arg_8_1)
 	arg_8_0.player = arg_8_1
 
 	arg_8_0:onUpdateRes(arg_8_1)
@@ -145,89 +58,48 @@ function var_0_1.setPlayer(arg_8_0, arg_8_1)
 	return
 end
 
-function var_0_1.onUpdateRes(arg_9_0, arg_9_1)
+function var_0_0.onUpdateRes(arg_9_0, arg_9_1)
 	arg_9_0.player = arg_9_1
 
 	return
 end
 
-function var_0_1.playAni(arg_10_0)
-	SetActive = var_1_10001
-
-	var_1_10001(arg_10_0.ani, true)
-
-	local var_10_0 = arg_10_0.ani
-	local var_10_1 = var_1.GetComponent(var_10_0, "DftAniEvent")
-
-	var_1.SetEndEvent(var_10_1, function(arg_11_0)
-		SetActive = var_2_10001
-
-		var_2_10001(arg_10_0.ani, false)
+function var_0_0.playAni(arg_10_0)
+	SetActive(arg_10_0.ani, true)
+	arg_10_0.ani:GetComponent("DftAniEvent"):SetEndEvent(function(arg_11_0)
+		SetActive(arg_10_0.ani, false)
 
 		return
 	end)
-
-	pg = var_2
-
-	local var_10_2 = var_2.CriMgr.GetInstance()
-	local var_10_3 = var_2.PlaySoundEffect_V3
-
-	SFX_UI_WARNING = var_5
-
-	var_10_3(var_10_2, var_5)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_UI_WARNING)
 
 	return
 end
 
-function var_0_1.setCurIndex(arg_12_0)
+function var_0_0.setCurIndex(arg_12_0)
 	arg_12_0.curIndex = 1
 	arg_12_0.clearTaskNum = 0
 	arg_12_0.clearTaskNum = (function()
-		ipairs = var_2_10000
+		for iter_13_0, iter_13_1 in ipairs(arg_12_0.contextData.taskList) do
+			local var_13_0 = arg_12_0.taskProxy:getTaskById(iter_13_1) or arg_12_0.taskProxy:getFinishTaskById(iter_13_1)
 
-		for iter_13_0, iter_13_1 in var_2_10000(arg_12_0.contextData.taskList) do
-			local var_13_0 = arg_12_0.taskProxy
-			local var_13_2
-
-			if not var_5.getTaskById(var_13_0, iter_13_1) then
-				local var_13_1 = arg_12_0.taskProxy
-
-				var_13_2 = var_5.getFinishTaskById(var_13_1, iter_13_1)
-			end
-
-			if var_13_2 then
+			if var_13_0 then
 				return iter_13_0 - 1
 			end
 		end
 
 		return
 	end)()
-	ipairs = var_2
 
-	for iter_12_0, iter_12_1 in var_2(arg_12_0.contextData.taskList) do
-		local var_12_0 = arg_12_0.taskProxy
-		local var_12_2
+	for iter_12_0, iter_12_1 in ipairs(arg_12_0.contextData.taskList) do
+		local var_12_0 = arg_12_0.taskProxy:getTaskById(iter_12_1) or arg_12_0.taskProxy:getFinishTaskById(iter_12_1)
+		local var_12_1 = arg_12_0.contextData.taskList[iter_12_0 + 1]
+		local var_12_2 = arg_12_0.taskProxy:getTaskById(arg_12_0.contextData.taskList[iter_12_0 + 1]) or arg_12_0.taskProxy:getFinishTaskById(var_12_1)
 
-		if not var_7.getTaskById(var_12_0, iter_12_1) then
-			local var_12_1 = arg_12_0.taskProxy
-
-			var_12_2 = var_7.getFinishTaskById(var_12_1, iter_12_1)
-		end
-
-		local var_12_3 = arg_12_0.contextData.taskList[iter_12_0 + 1]
-		local var_12_4 = arg_12_0.taskProxy
-		local var_12_6
-
-		if not var_9.getTaskById(var_12_4, var_12_3) then
-			local var_12_5 = arg_12_0.taskProxy
-
-			var_12_6 = var_9.getFinishTaskById(var_12_5, var_12_3)
-		end
-
-		if var_12_2 and var_12_2:getTaskStatus() == 2 then
+		if var_12_0 and var_12_0:getTaskStatus() == 2 then
 			arg_12_0.curIndex = arg_12_0.curIndex + 1
 
-			if not var_12_3 or not var_12_6 then
+			if not var_12_1 or not var_12_2 then
 				arg_12_0.curIndex = arg_12_0.curIndex - 1
 			end
 		end
@@ -238,60 +110,23 @@ function var_0_1.setCurIndex(arg_12_0)
 	return
 end
 
-function var_0_1.updateNodes(arg_14_0)
+function var_0_0.updateNodes(arg_14_0)
 	arg_14_0:setCurIndex()
+	setText(arg_14_0.titleTxt, "POSITION " .. string.format("%02d", arg_14_0.curIndex))
+	setText(arg_14_0.titleNum, string.format("%02d", arg_14_0.curIndex))
+	eachChild(arg_14_0.nodes, function(arg_15_0)
+		local var_15_0 = tonumber(arg_15_0.name)
 
-	setText = var_1
-
-	local var_14_0 = arg_14_0.titleTxt
-	local var_14_1 = "POSITION "
-
-	string = var_1_10005
-
-	var_1(var_14_0, var_14_1 .. var_1_10005.format("%02d", arg_14_0.curIndex))
-
-	setText = var_1
-
-	local var_14_2 = arg_14_0.titleNum
-
-	string = var_4
-
-	var_1(var_14_2, var_4.format("%02d", arg_14_0.curIndex))
-
-	eachChild = var_1
-
-	var_1(arg_14_0.nodes, function(arg_15_0)
-		tonumber = var_2_10001
-
-		local var_15_0 = var_2_10001(arg_15_0.name)
-		local var_15_1 = arg_14_0.contextData.taskList[var_15_0]
-		local var_15_2 = arg_14_0.taskProxy
-
-		if not var_3.getTaskById(var_15_2, var_15_1) then
-			local var_15_3 = arg_14_0.taskProxy
-			local var_15_4 = var_3.getFinishTaskById(var_15_3, var_15_1)
+		if not arg_14_0.taskProxy:getTaskById(arg_14_0.contextData.taskList[var_15_0]) then
+			local var_15_1 = arg_14_0.taskProxy:getFinishTaskById(arg_14_0.contextData.taskList[var_15_0])
 		end
 
-		setActive = var_2_10004
-
-		var_2_10004(arg_15_0, var_15_0 <= arg_14_0.curIndex)
-
-		onButton = var_2_10004
-
-		local var_15_5 = arg_14_0
-		local var_15_6 = arg_15_0
-
-		local function var_15_7()
-			local var_16_0 = arg_14_0
-
-			var_0.updateNodeInfo(var_16_0, var_15_0)
+		setActive(arg_15_0, var_15_0 <= arg_14_0.curIndex)
+		onButton(arg_14_0, arg_15_0, function()
+			arg_14_0:updateNodeInfo(var_15_0)
 
 			return
-		end
-
-		SFX_PANEL = var_2_10009
-
-		var_2_10004(var_15_5, var_15_6, var_15_7, var_2_10009)
+		end, SFX_PANEL)
 
 		return
 	end)
@@ -300,303 +135,101 @@ function var_0_1.updateNodes(arg_14_0)
 	return
 end
 
-function var_0_1.nodeInfoTween(arg_17_0, arg_17_1)
-	tf = var_1_10002
-
-	local var_17_0 = arg_17_0._tf
-	local var_17_1 = var_4.Find
-
-	tostring = var_1_10007
-
-	local var_17_2 = var_1_10002(var_17_1(var_17_0, var_1_10007(arg_17_1), arg_17_0.nodes)).localPosition
+function var_0_0.nodeInfoTween(arg_17_0, arg_17_1)
+	local var_17_0 = tf(arg_17_0._tf:Find(tostring(arg_17_1), arg_17_0.nodes)).localPosition
 
 	if arg_17_1 == 9 then
-		var_17_2.x = var_17_2.x - 80
+		var_17_0.x = var_17_0.x - 80
 	end
 
 	if arg_17_1 == 7 then
-		var_17_2.y = var_17_2.y - 20
+		var_17_0.y = var_17_0.y - 20
 	end
 
-	local function var_17_3()
-		setLocalPosition = var_2_10000
-
-		local var_18_0 = arg_17_0.nodeInfo
-
-		Vector3 = var_2_10003
-
-		var_2_10000(var_18_0, var_2_10003(var_17_2.x, var_17_2.y + 120, 0))
-
-		setLocalScale = var_2_10000
-
-		local var_18_1 = arg_17_0.nodeInfo
-
-		Vector3 = var_3
-
-		var_2_10000(var_18_1, var_3(0, 0, 0))
-
-		LeanTween = var_2_10000
-
-		local var_18_2 = var_2_10000.scale
-
-		tf = var_18_1
-
-		local var_18_3 = var_18_1(arg_17_0.nodeInfo)
-
-		Vector3 = var_3
-
-		var_18_2(var_18_3, var_3.one, 0.1)
+	local function var_17_1()
+		setLocalPosition(arg_17_0.nodeInfo, Vector3(var_17_0.x, var_17_0.y + 120, 0))
+		setLocalScale(arg_17_0.nodeInfo, Vector3(0, 0, 0))
+		LeanTween.scale(tf(arg_17_0.nodeInfo), Vector3.one, 0.1)
 
 		return
 	end
 
-	local function var_17_4(arg_19_0)
-		setLocalScale = var_2_10001
+	if not isActive(arg_17_0.nodeInfo) then
+		setActive(arg_17_0.nodeInfo, true)
+		var_17_1()
+	else
+		(function(arg_19_0)
+			setLocalScale(arg_17_0.nodeInfo, Vector3(1, 1, 1))
+			LeanTween.scale(tf(arg_17_0.nodeInfo), Vector3.zero, 0.1):setOnComplete(System.Action(function()
+				if arg_19_0 then
+					arg_19_0()
+				end
 
-		local var_19_0 = arg_17_0.nodeInfo
-
-		Vector3 = var_2_10004
-
-		var_2_10001(var_19_0, var_2_10004(1, 1, 1))
-
-		LeanTween = var_2_10001
-
-		local var_19_1 = var_2_10001.scale
-
-		tf = var_19_0
-
-		local var_19_2 = var_19_0(arg_17_0.nodeInfo)
-
-		Vector3 = var_4
-
-		local var_19_3 = var_19_1(var_19_2, var_4.zero, 0.1)
-		local var_19_4 = var_1.setOnComplete
-
-		System = var_4
-
-		var_19_4(var_19_3, var_4.Action(function()
-			if arg_19_0 then
-				arg_19_0()
-			end
+				return
+			end))
 
 			return
-		end))
-
-		return
-	end
-
-	isActive = var_1_10005
-
-	if not var_1_10005(arg_17_0.nodeInfo) then
-		setActive = var_5
-
-		var_5(arg_17_0.nodeInfo, true)
-		var_17_3()
-	else
-		var_17_4(var_17_3)
+		end)(var_17_1)
 	end
 
 	return
 end
 
-function var_0_1.updateNodeInfo(arg_21_0, arg_21_1)
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
-
-	local var_21_0 = var_1_10002(var_1_10004)
-	local var_21_1 = var_2.getActivityById
-
-	ActivityConst = var_1_10005
-
-	local var_21_2 = var_21_1(var_21_0, var_1_10005.NEWMEIXIV4_SKIRMISH_ID)
-
-	updateActivityTaskStatus = var_1_10003
-
-	var_1_10003(var_21_2)
-
-	local var_21_3 = arg_21_0.contextData.taskList[arg_21_1]
-	local var_21_4 = arg_21_0.taskProxy
-	local var_21_6
-
-	if not var_4.getTaskById(var_21_4, var_21_3) then
-		local var_21_5 = arg_21_0.taskProxy
-
-		var_21_6 = var_4.getFinishTaskById(var_21_5, var_21_3)
-	end
-
-	pg = var_5
-
-	local var_21_7 = var_5.task_data_template[var_21_3]
-	local var_21_8
-
-	if not var_21_6 or not var_21_6:getProgress() then
-		var_21_8 = var_21_7.target_num
-	end
-
-	local var_21_9
-
-	if not var_21_6 or not var_21_6:getConfig("target_num") then
-		var_21_9 = var_21_7.target_num
-	end
-
-	if var_21_6 then
-		var_1_10010 = var_21_6
-
-		local var_21_10
-
-		if not var_21_6.getTaskStatus(var_1_10010) then
-			var_21_10 = 2
-		end
-
-		local var_21_11
-
-		if not var_21_6 or not var_21_6:getConfig("desc") then
-			var_21_11 = var_21_7.desc
-		end
-
-		setSlider = var_1_10010
-
-		local var_21_12 = arg_21_0.nodeInfo
-
-		var_1_10010(var_12.Find(var_21_12, "progress"), 0, var_21_9, var_21_8)
-
-		setText = var_1_10010
-
-		local var_21_13 = arg_21_0.nodeInfo
-
-		var_1_10010(var_12.Find(var_21_13, "step"), var_21_8 .. "/" .. var_21_9)
-
-		setText = var_1_10010
-
-		local var_21_14 = arg_21_0.nodeInfo
-
-		var_1_10010(var_12.Find(var_21_14, "content"), var_21_11)
-
-		setText = var_1_10010
-
-		local var_21_15 = arg_21_0.nodeInfo
-		local var_21_16 = var_12.Find(var_21_15, "title")
-
-		string = var_13
-
-		var_1_10010(var_21_16, var_13.format("%02d", arg_21_1))
-
-		local var_21_17 = arg_21_0.nodeInfo
-		local var_21_18 = var_10.Find(var_21_17, "go_btn")
-		local var_21_19 = arg_21_0.nodeInfo
-		local var_21_20 = var_11.Find(var_21_19, "get_btn")
-		local var_21_21 = arg_21_0.nodeInfo
-		local var_21_22 = var_12.Find(var_21_21, "step/finish")
-
-		setActive = var_21_19
-
-		var_21_19(var_21_18, var_21_10 == 0)
-
-		setActive = var_21_19
-
-		var_21_19(var_21_20, var_21_10 == 1)
-
-		setActive = var_21_19
-
-		var_21_19(var_21_22, var_21_10 == 2)
-
-		onButton = var_21_19
-
-		local var_21_23 = arg_21_0
-		local var_21_24 = var_21_18
-
-		local function var_21_25()
-			local var_22_0 = arg_21_0
-			local var_22_1 = var_0.emit
-
-			NewMeixiV4Mediator = var_2_10003
-
-			var_22_1(var_22_0, var_2_10003.ON_TASK_GO, var_21_6)
-
-			return
-		end
-
-		SFX_PANEL = var_1_10018
-
-		var_21_19(var_21_23, var_21_24, var_21_25, var_1_10018)
-
-		onButton = var_21_19
-
-		local var_21_26 = arg_21_0
-		local var_21_27 = var_21_20
-
-		local function var_21_28()
-			local var_23_0 = arg_21_0
-			local var_23_1 = var_0.emit
-
-			NewMeixiV4Mediator = var_2_10003
-
-			var_23_1(var_23_0, var_2_10003.ON_TASK_SUBMIT, var_21_6)
-
-			return
-		end
-
-		SFX_PANEL = var_1_10018
-
-		var_21_19(var_21_26, var_21_27, var_21_28, var_1_10018)
-
-		eachChild = var_21_19
-
-		var_21_19(arg_21_0.nodes, function(arg_24_0)
-			local var_24_0 = arg_24_0:Find("arrow")
-
-			LeanTween = var_2_10002
-
-			var_2_10002.cancel(var_24_0.gameObject)
-
-			setLocalPosition = var_2
-
-			local var_24_1 = var_24_0
-
-			Vector3 = var_2_10005
-
-			var_2(var_24_1, var_2_10005(0, 27, 0))
-
-			tonumber = var_2
-
-			local var_24_3
-
-			if var_2(arg_24_0.name) == arg_21_1 then
-				setActive = var_24_3
-
-				var_24_3(var_24_0, true)
-
-				LeanTween = var_24_3
-
-				local var_24_2 = var_24_3.moveY(var_24_0, 40, 0.5)
-
-				var_24_3 = var_24_3.setEase
-				LeanTweenType = var_6
-
-				local var_24_4 = var_24_3(var_24_2, var_6.easeInOutSine)
-
-				var_24_3.setLoopPingPong(var_24_4)
-			else
-				setActive = var_24_3
-
-				var_24_3(var_24_0, false)
-			end
-
-			return
-		end)
-		arg_21_0:nodeInfoTween(arg_21_1)
+function var_0_0.updateNodeInfo(arg_21_0, arg_21_1)
+	updateActivityTaskStatus((getProxy(ActivityProxy):getActivityById(ActivityConst.NEWMEIXIV4_SKIRMISH_ID)))
+
+	local var_21_0 = arg_21_0.taskProxy:getTaskById(arg_21_0.contextData.taskList[arg_21_1]) or arg_21_0.taskProxy:getFinishTaskById(arg_21_0.contextData.taskList[arg_21_1])
+	local var_21_1 = pg.task_data_template[arg_21_0.contextData.taskList[arg_21_1]]
+	local var_21_2 = var_21_0 and var_21_0:getProgress() or var_21_1.target_num
+	local var_21_3 = var_21_0 and var_21_0:getConfig("target_num") or var_21_1.target_num
+	local var_21_4 = var_21_0 and var_21_0:getTaskStatus() or 2
+	local var_21_5 = var_21_0 and var_21_0:getConfig("desc") or var_21_1.desc
+
+	setSlider(arg_21_0.nodeInfo:Find("progress"), 0, var_21_3, var_21_2)
+	setText(arg_21_0.nodeInfo:Find("step"), var_21_2 .. "/" .. var_21_3)
+	setText(arg_21_0.nodeInfo:Find("content"), var_21_5)
+	setText(arg_21_0.nodeInfo:Find("title"), string.format("%02d", arg_21_1))
+
+	local var_21_6 = arg_21_0.nodeInfo:Find("go_btn")
+	local var_21_7 = arg_21_0.nodeInfo:Find("get_btn")
+	local var_21_8 = arg_21_0.nodeInfo:Find("step/finish")
+
+	setActive(var_21_6, var_21_4 == 0)
+	setActive(var_21_7, var_21_4 == 1)
+	setActive(var_21_8, var_21_4 == 2)
+	onButton(arg_21_0, var_21_6, function()
+		arg_21_0:emit(NewMeixiV4Mediator.ON_TASK_GO, var_21_0)
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_21_0, var_21_7, function()
+		arg_21_0:emit(NewMeixiV4Mediator.ON_TASK_SUBMIT, var_21_0)
+
+		return
+	end, SFX_PANEL)
+	eachChild(arg_21_0.nodes, function(arg_24_0)
+		local var_24_0 = arg_24_0:Find("arrow")
+
+		LeanTween.cancel(var_24_0.gameObject)
+		setLocalPosition(var_24_0, Vector3(0, 27, 0))
+
+		if tonumber(arg_24_0.name) == arg_21_1 then
+			setActive(var_24_0, true)
+			LeanTween.moveY(var_24_0, 40, 0.5):setEase(LeanTweenType.easeInOutSine):setLoopPingPong()
+		else
+			setActive(var_24_0, false)
+		end
+
+		return
+	end)
+	arg_21_0:nodeInfoTween(arg_21_1)
+
+	return
 end
 
-function var_0_1.onUpdateTask(arg_25_0)
-	local var_25_0 = arg_25_0.contextData.taskList[arg_25_0.curIndex]
-
-	pairs = var_2
-
-	for iter_25_0, iter_25_1 in var_2(arg_25_0.storyGroup) do
-		if var_25_0 == iter_25_1[1] then
+function var_0_0.onUpdateTask(arg_25_0)
+	for iter_25_0, iter_25_1 in pairs(arg_25_0.storyGroup) do
+		if arg_25_0.contextData.taskList[arg_25_0.curIndex] == iter_25_1[1] then
 			arg_25_0:getStory(iter_25_1[2], iter_25_1[3])
 		end
 	end
@@ -606,114 +239,38 @@ function var_0_1.onUpdateTask(arg_25_0)
 	return
 end
 
-function var_0_1.getStory(arg_26_0, arg_26_1, arg_26_2)
-	setActive = var_1_10003
-
-	var_1_10003(arg_26_0.storyTip, true)
-
-	pg = var_1_10003
-
-	local var_26_0 = var_1_10003.memory_template[arg_26_1].title
-
-	pg = var_1_10004
-
-	local var_26_1 = var_1_10004.NewStoryMgr.GetInstance()
-
-	var_4.SetPlayedFlag(var_26_1, arg_26_2)
-
-	setText = var_4
-
-	local var_26_2 = arg_26_0.storyTip
-
-	var_4(var_6.Find(var_26_2, "bar/Anim/Frame/Mask/Name"), var_26_0)
-
-	removeOnButton = var_4
-
-	var_4(arg_26_0.storyTip)
-
-	removeOnButton = var_4
-
-	local var_26_3 = arg_26_0.storyTip
-
-	var_4(var_6.Find(var_26_3, "bar/Button"))
-
-	pg = var_4
-
-	local var_26_4 = var_4.UIMgr.GetInstance()
-
-	var_4.BlurPanel(var_26_4, arg_26_0.storyTip)
-
-	local var_26_5 = arg_26_0.storyTip
-	local var_26_6 = var_4.Find(var_26_5, "bar")
-	local var_26_7 = var_4.GetComponent
-
-	typeof = var_7
-	DftAniEvent = var_9
-
-	local var_26_8 = var_26_7(var_26_6, var_7(var_9))
-
-	local function var_26_9()
-		onButton = var_2_10000
-
-		var_2_10000(arg_26_0, arg_26_0.storyTip, function()
-			pg = var_3_10000
-
-			local var_28_0 = var_3_10000.UIMgr.GetInstance()
-
-			var_0.UnOverlayPanel(var_28_0, arg_26_0.storyTip)
-
-			setActive = var_0
-
-			var_0(arg_26_0.storyTip, false)
+function var_0_0.getStory(arg_26_0, arg_26_1, arg_26_2)
+	setActive(arg_26_0.storyTip, true)
+	pg.NewStoryMgr.GetInstance():SetPlayedFlag(arg_26_2)
+	setText(arg_26_0.storyTip:Find("bar/Anim/Frame/Mask/Name"), pg.memory_template[arg_26_1].title)
+	removeOnButton(arg_26_0.storyTip)
+	removeOnButton(arg_26_0.storyTip:Find("bar/Button"))
+	pg.UIMgr.GetInstance():BlurPanel(arg_26_0.storyTip)
+	arg_26_0.storyTip:Find("bar"):GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		onButton(arg_26_0, arg_26_0.storyTip, function()
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_26_0.storyTip)
+			setActive(arg_26_0.storyTip, false)
 
 			return
 		end)
-
-		onButton = var_2_10000
-
-		local var_27_0 = arg_26_0
-		local var_27_1 = arg_26_0.storyTip
-		local var_27_2 = var_3.Find(var_27_1, "bar/Button")
-
-		local function var_27_3()
-			local var_29_0 = arg_26_0
-			local var_29_1 = var_0.emit
-
-			NewMeixiV4Mediator = var_3_10003
-
-			var_29_1(var_29_0, var_3_10003.GO_STORY, arg_26_0.memoryGroup)
-
-			triggerButton = var_29_1
-
-			var_29_1(arg_26_0.storyTip)
+		onButton(arg_26_0, arg_26_0.storyTip:Find("bar/Button"), function()
+			arg_26_0:emit(NewMeixiV4Mediator.GO_STORY, arg_26_0.memoryGroup)
+			triggerButton(arg_26_0.storyTip)
 
 			return
-		end
-
-		SFX_PANEL = var_27_1
-
-		var_2_10000(var_27_0, var_27_2, var_27_3, var_27_1)
+		end, SFX_PANEL)
 
 		return
-	end
-
-	var_26_8:SetEndEvent(var_26_9)
+	end)
 
 	return
 end
 
-function var_0_1.willExit(arg_30_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_30_0.storyTip, false)
-
-	pg = var_1_10001
-
-	local var_30_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_30_0, arg_30_0.storyTip)
+function var_0_0.willExit(arg_30_0)
+	setActive(arg_30_0.storyTip, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_30_0.storyTip)
 
 	return
 end
 
-return var_0_1
+return var_0_0

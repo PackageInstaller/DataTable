@@ -1,106 +1,72 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TagTipHelper")
+﻿local var_0_0 = class("TagTipHelper")
 
 function var_0_0.FuDaiTagTip(arg_1_0)
-	triggerToggle = var_1_10001
-
-	var_1_10001(arg_1_0, false)
+	triggerToggle(arg_1_0, false)
 
 	local var_1_0 = {}
 
-	pg = var_1_10002
+	for iter_1_0, iter_1_1 in ipairs(pg.pay_data_display.all) do
+		if pg.pay_data_display[iter_1_1].type == 1 then
+			local var_1_1 = pg.TimeMgr.GetInstance()
 
-	local var_1_1 = var_1_10002.pay_data_display
-
-	ipairs = var_3
-
-	for iter_1_0, iter_1_1 in var_3(var_1_1.all) do
-		if var_1_1[iter_1_1].type == 1 then
-			pg = var_8
-
-			local var_1_2 = var_8.TimeMgr.GetInstance()
-
-			if var_8.inTime(var_1_2, var_1_1[iter_1_1].time) then
-				type = var_8
-
-				if var_8(var_1_1[iter_1_1].time) == "table" then
-					table = var_8
-
-					var_8.insert(var_1_0, var_1_1[iter_1_1])
-				end
+			if var_1_1:inTime(pg.pay_data_display[iter_1_1].time) and type(pg.pay_data_display[iter_1_1].time) == "table" then
+				table.insert({}, pg.pay_data_display[iter_1_1])
 			end
 		end
 	end
 
-	local var_1_3 = #var_1_0
+	if #{} > 0 then
+		local function var_1_2(arg_2_0)
+			table.sort(var_1_0, function(arg_3_0, arg_3_1)
+				local var_3_0 = pg.TimeMgr.GetInstance()
+				local var_3_1 = pg.TimeMgr.GetInstance()
 
-	if 0 < var_1_3 then
-		local function var_1_4(arg_2_0)
-			table = var_2_10001
-
-			var_2_10001.sort(var_1_0, function(arg_3_0, arg_3_1)
-				pg = var_3_10002
-
-				local var_3_0 = var_3_10002.TimeMgr.GetInstance()
-				local var_3_1 = var_2.parseTimeFromConfig(var_3_0, arg_3_0.time[1])
-
-				pg = var_3_10003
-
-				local var_3_2 = var_3_10003.TimeMgr.GetInstance()
-
-				return var_3_1 > var_3.parseTimeFromConfig(var_3_2, arg_3_1.time[1])
+				return var_3_0:parseTimeFromConfig(arg_3_0.time[1]) > var_3_1:parseTimeFromConfig(arg_3_1.time[1])
 			end)
 
-			local var_2_0 = arg_2_0[var_1_0[1].id] ~= nil
+			local var_2_0 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_1_0[1].time[1])
 
-			pg = var_3
+			if arg_2_0[var_1_0[1].id] == nil and PlayerPrefs.GetInt("Ever_Enter_Mall_", 0) < var_2_0 then
+				var_0_0.FudaiTime = var_2_0
 
-			local var_2_1 = var_3.TimeMgr.GetInstance()
-			local var_2_2 = var_3.parseTimeFromConfig(var_2_1, var_1.time[1])
-
-			PlayerPrefs = var_4
-
-			local var_2_3 = var_4.GetInt("Ever_Enter_Mall_", 0)
-
-			if not var_2_0 and var_2_3 < var_2_2 then
-				local var_2_4 = var_0_0
-
-				var_2_4.FudaiTime = var_2_2
-				triggerToggle = var_2_4
-
-				var_2_4(arg_1_0, true)
+				triggerToggle(arg_1_0, true)
 			end
 
 			return
 		end
 
-		getProxy = var_4
-		ShopsProxy = iter_1_0
+		local var_1_3 = getProxy(ShopsProxy)
+		local var_1_4 = getProxy(ShopsProxy):getChargedList()
 
-		local var_1_5 = var_4(iter_1_0)
-
-		if not var_4.getChargedList(var_1_5) then
-			pg = iter_1_0
-
-			local var_1_6 = iter_1_0.m02
-			local var_1_7 = var_6.sendNotification
-
-			GAME = var_1_10009
-
-			var_1_7(var_1_6, var_1_10009.GET_CHARGE_LIST, {
+		if not var_1_4 then
+			pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
 				callback = function()
-					local var_4_0 = var_0
+					var_1_4 = var_1_3:getChargedList()
 
-					var_0 = var_0.getChargedList(var_4_0)
-
-					var_1_4(var_0)
+					var_1_2(var_1_4)
 
 					return
 				end
 			})
 		else
-			var_1_4(var_5)
+			(function(arg_2_0)
+				table.sort(var_1_0, function(arg_3_0, arg_3_1)
+					local var_3_0 = pg.TimeMgr.GetInstance()
+					local var_3_1 = pg.TimeMgr.GetInstance()
+
+					return var_3_0:parseTimeFromConfig(arg_3_0.time[1]) > var_3_1:parseTimeFromConfig(arg_3_1.time[1])
+				end)
+
+				local var_2_0 = pg.TimeMgr.GetInstance():parseTimeFromConfig(var_1_0[1].time[1])
+
+				if arg_2_0[var_1_0[1].id] == nil and PlayerPrefs.GetInt("Ever_Enter_Mall_", 0) < var_2_0 then
+					var_0_0.FudaiTime = var_2_0
+
+					triggerToggle(arg_1_0, true)
+				end
+
+				return
+			end)(var_1_4)
 		end
 	end
 
@@ -109,13 +75,8 @@ end
 
 function var_0_0.SetFuDaiTagMark()
 	if var_0_0.FudaiTime then
-		PlayerPrefs = var_0
-
-		var_0.SetInt("Ever_Enter_Mall_", var_0_0.FudaiTime)
-
-		PlayerPrefs = var_0
-
-		var_0.Save()
+		PlayerPrefs.SetInt("Ever_Enter_Mall_", var_0_0.FudaiTime)
+		PlayerPrefs.Save()
 
 		var_0_0.FudaiTime = nil
 	end
@@ -124,71 +85,31 @@ function var_0_0.SetFuDaiTagMark()
 end
 
 function var_0_0.SkinTagTip(arg_6_0)
-	triggerToggle = var_1_10001
+	triggerToggle(arg_6_0, false)
 
-	var_1_10001(arg_6_0, false)
+	local var_6_0 = {}
 
-	getProxy = var_1_10001
-	ShipSkinProxy = var_3
+	for iter_6_0, iter_6_1 in ipairs((getProxy(ShipSkinProxy):GetAllSkins())) do
+		if iter_6_1.type == Goods.TYPE_SKIN and type(iter_6_1:getConfig("time")) == "table" and iter_6_1.genre ~= ShopArgs.SkinShopTimeLimit then
+			local var_6_1 = pg.TimeMgr.GetInstance()
 
-	local var_6_0 = var_1_10001(var_3)
-	local var_6_1 = var_1.GetAllSkins(var_6_0)
-	local var_6_2 = {}
-
-	ipairs = var_6_0
-
-	for iter_6_0, iter_6_1 in var_6_0(var_6_1) do
-		local var_6_3 = iter_6_1.type
-
-		Goods = var_1_10009
-
-		if var_6_3 == var_1_10009.TYPE_SKIN then
-			type = var_6_3
-
-			if var_6_3(iter_6_1:getConfig("time")) == "table" then
-				local var_6_4 = iter_6_1.genre
-
-				ShopArgs = var_1_10009
-
-				if var_6_4 ~= var_1_10009.SkinShopTimeLimit then
-					table = var_6_4
-
-					local var_6_5 = var_6_4.insert
-					local var_6_6 = var_6_2
-
-					pg = var_1_10011
-
-					local var_6_7 = var_1_10011.TimeMgr.GetInstance()
-
-					var_6_5(var_6_6, var_1_10011.parseTimeFromConfig(var_6_7, iter_6_1:getConfig("time")[1]))
-				end
-			end
+			table.insert(var_6_0, var_6_1:parseTimeFromConfig(iter_6_1:getConfig("time")[1]))
 		end
 	end
 
-	local var_6_8 = #var_6_2
-
-	if 0 < var_6_8 then
-		table = var_4
-
-		var_4.sort(var_6_2, function(arg_7_0, arg_7_1)
+	if #var_6_0 > 0 then
+		table.sort(var_6_0, function(arg_7_0, arg_7_1)
 			return arg_7_1 < arg_7_0
 		end)
 
-		local var_6_9 = var_6_2[1]
+		local var_6_2 = var_6_0[1]
+		local var_6_3 = var_6_0[1] > PlayerPrefs.GetInt("Ever_Enter_Skin_Shop_", 0)
 
-		PlayerPrefs = var_5
-
-		local var_6_10
-
-		if var_6_9 > var_5.GetInt("Ever_Enter_Skin_Shop_", 0) then
-			var_6_10 = var_0_0
-			var_6_10.SkinTime = var_6_9
+		if var_6_3 then
+			var_0_0.SkinTime = var_6_2
 		end
 
-		triggerToggle = var_6_10
-
-		var_6_10(arg_6_0, var_6)
+		triggerToggle(arg_6_0, var_6_3)
 	end
 
 	return
@@ -196,13 +117,8 @@ end
 
 function var_0_0.SetSkinTagMark()
 	if var_0_0.SkinTime then
-		PlayerPrefs = var_0
-
-		var_0.SetInt("Ever_Enter_Skin_Shop_", var_0_0.SkinTime)
-
-		PlayerPrefs = var_0
-
-		var_0.Save()
+		PlayerPrefs.SetInt("Ever_Enter_Skin_Shop_", var_0_0.SkinTime)
+		PlayerPrefs.Save()
 
 		var_0_0.SkinTime = nil
 	end
@@ -211,60 +127,28 @@ function var_0_0.SetSkinTagMark()
 end
 
 function var_0_0.MonthCardTagTip(arg_9_0)
-	MonthCardOutDateTipPanel = var_1_10001
-
-	local var_9_0 = var_1_10001.GetShowMonthCardTag()
-
-	triggerToggle = var_1_10002
-
-	var_1_10002(arg_9_0, var_9_0)
+	triggerToggle(arg_9_0, (MonthCardOutDateTipPanel.GetShowMonthCardTag()))
 
 	return
 end
 
 function var_0_0.GiftPackagesTag(arg_10_0)
-	getProxy = var_1_10001
-	ShopsProxy = var_1_10003
-
-	local var_10_0 = var_1_10001(var_1_10003)
-
-	var_1.GiftPackageRedDotTip(var_10_0, arg_10_0, nil)
+	getProxy(ShopsProxy):GiftPackageRedDotTip(arg_10_0, nil)
 
 	return
 end
 
 function var_0_0.FreeGiftTag(arg_11_0)
-	getProxy = var_1_10001
-	ShopsProxy = var_1_10003
+	local var_11_0 = getProxy(ShopsProxy)
 
-	local var_11_0 = var_1_10001(var_1_10003)
-
-	if not var_1.getChargedList(var_11_0) then
-		pg = var_1_10003
-
-		local var_11_1 = var_1_10003.m02
-
-		var_1_10003 = var_1_10003.sendNotification
-		GAME = var_1_10006
-
-		var_1_10003(var_11_1, var_1_10006.GET_CHARGE_LIST, {
+	if not var_11_0:getChargedList() then
+		pg.m02:sendNotification(GAME.GET_CHARGE_LIST, {
 			callback = function()
-				_ = var_2_10000
-
-				if var_2_10000.all(arg_11_0, function(arg_13_0)
-					IsNil = var_3_10001
-
-					return not var_3_10001(arg_13_0)
+				if _.all(arg_11_0, function(arg_13_0)
+					return not IsNil(arg_13_0)
 				end) then
-					ipairs = var_0
-
-					for iter_12_0, iter_12_1 in var_0(arg_11_0) do
-						setActive = var_2_10005
-
-						local var_12_0 = iter_12_1
-						local var_12_1 = var_0
-
-						var_2_10005(var_12_0, var_8.checkHasFreeNormal(var_12_1))
+					for iter_12_0, iter_12_1 in ipairs(arg_11_0) do
+						setActive(iter_12_1, var_11_0:checkHasFreeNormal())
 					end
 				end
 
@@ -272,12 +156,8 @@ function var_0_0.FreeGiftTag(arg_11_0)
 			end
 		})
 	else
-		ipairs = var_1_10003
-
-		for iter_11_0, iter_11_1 in var_1_10003(arg_11_0) do
-			setActive = var_1_10008
-
-			var_1_10008(iter_11_1, var_1:checkHasFreeNormal())
+		for iter_11_0, iter_11_1 in ipairs(arg_11_0) do
+			setActive(iter_11_1, var_11_0:checkHasFreeNormal())
 		end
 	end
 
@@ -285,100 +165,57 @@ function var_0_0.FreeGiftTag(arg_11_0)
 end
 
 function var_0_0.FreeBuildTicketTip(arg_14_0, arg_14_1)
-	getProxy = var_1_10002
-	ActivityProxy = var_1_10004
+	local var_14_0 = getProxy(ActivityProxy):IsShowFreeBuildMark(false)
 
-	local var_14_0 = var_1_10002(var_1_10004)
+	if var_14_0 then
+		setActive(arg_14_0, true)
+		LoadImageSpriteAtlasAsync(Drop.New({
+			type = DROP_TYPE_VITEM,
+			id = var_14_0:getConfig("config_client")[1]
+		}):getIcon(), "", arg_14_0:Find("Image"))
 
-	if var_2.IsShowFreeBuildMark(var_14_0, false) then
-		setActive = var_1_10004
+		local var_14_1 = tostring(var_14_0.data1)
 
-		var_1_10004(arg_14_0, true)
-
-		LoadImageSpriteAtlasAsync = var_1_10004
-		Drop = var_6
-
-		local var_14_1 = var_6.New
-		local var_14_2 = {}
-
-		DROP_TYPE_VITEM = var_1_10009
-		var_14_2.type = var_1_10009
-		var_14_2.id = var_3:getConfig("config_client")[1]
-
-		local var_14_3 = var_14_1(var_14_2)
-
-		var_1_10004(var_6.getIcon(var_14_3), "", arg_14_0:Find("Image"))
-
-		tostring = var_1_10004
-		var_1_10004 = var_1_10004(var_3.data1)
-
-		if var_3.data1 < 10 then
-			var_1_10004 = var_1_10004 .. " "
+		if var_14_0.data1 < 10 then
+			var_14_1 = var_14_1 .. " "
 		end
 
-		setText = var_5
-
-		local var_14_4 = arg_14_0:Find("Text")
-
-		i18n = var_8
-
-		var_5(var_14_4, var_8("build_ticket_expire_warning", var_1_10004))
+		setText(arg_14_0:Find("Text"), i18n("build_ticket_expire_warning", var_14_1))
 
 		var_0_0.BuildMark = true
 	else
-		setActive = var_1_10004
-
-		var_1_10004(arg_14_0, false)
+		setActive(arg_14_0, false)
 	end
 
 	return
 end
 
 function var_0_0.TecShipGiftTip(arg_15_0)
-	local var_15_0 = {
-		2001,
-		2002,
-		2003,
-		2004,
-		2005,
-		2006,
-		2007,
-		2008
-	}
-	local var_15_1 = 30
+	local var_15_0 = 30 <= getProxy(PlayerProxy):getData().level
+	local var_15_1 = PlayerPrefs.GetInt("Tec_Ship_Gift_Enter_Tag", 0) > 0
+	local var_15_2 = false
 
-	getProxy = var_1_10003
-	PlayerProxy = var_1_10005
-
-	local var_15_2 = var_1_10003(var_1_10005)
-	local var_15_3 = var_15_1 <= var_3.getData(var_15_2).level
-
-	PlayerPrefs = var_15_2
-
-	local var_15_4 = var_15_2.GetInt("Tec_Ship_Gift_Enter_Tag", 0) > 0
-	local var_15_5 = false
-
-	ipairs = var_7
-	pg = var_1_10009
-
-	for iter_15_0, iter_15_1 in var_7(var_1_10009.pay_data_display.all) do
-		table = var_1_10012
-
-		if var_1_10012.contains(var_15_0, iter_15_1) then
-			var_15_5 = true
+	for iter_15_0, iter_15_1 in ipairs(pg.pay_data_display.all) do
+		if table.contains({
+			2001,
+			2002,
+			2003,
+			2004,
+			2005,
+			2006,
+			2007,
+			2008
+		}, iter_15_1) then
+			var_15_2 = true
 
 			break
 		end
 	end
 
-	if var_15_5 and var_15_3 and not var_15_4 then
-		triggerToggle = var_7
-
-		var_7(arg_15_0, true)
+	if var_15_2 and var_15_0 and not var_15_1 then
+		triggerToggle(arg_15_0, true)
 	else
-		triggerToggle = var_7
-
-		var_7(arg_15_0, false)
+		triggerToggle(arg_15_0, false)
 	end
 
 	return
@@ -386,26 +223,11 @@ end
 
 function var_0_0.SetFreeBuildMark()
 	if var_0_0.BuildMark then
-		getProxy = var_0
-		ActivityProxy = var_1_10002
+		local var_16_0 = getProxy(ActivityProxy):IsShowFreeBuildMark(false)
 
-		local var_16_0 = var_0(var_1_10002)
-
-		if var_0.IsShowFreeBuildMark(var_16_0, false) then
-			PlayerPrefs = var_1_10001
-
-			local var_16_1 = var_1_10001.SetString
-			local var_16_2 = "Free_Build_Ticket_" .. var_0.id
-
-			pg = var_4
-
-			local var_16_3 = var_4.TimeMgr.GetInstance()
-
-			var_16_1(var_16_2, var_4.CurrentSTimeDesc(var_16_3, "%Y/%m/%d"))
-
-			PlayerPrefs = var_16_1
-
-			var_16_1.Save()
+		if var_16_0 then
+			PlayerPrefs.SetString("Free_Build_Ticket_" .. var_16_0.id, pg.TimeMgr.GetInstance():CurrentSTimeDesc("%Y/%m/%d"))
+			PlayerPrefs.Save()
 		end
 
 		var_0_0.BuildMark = nil

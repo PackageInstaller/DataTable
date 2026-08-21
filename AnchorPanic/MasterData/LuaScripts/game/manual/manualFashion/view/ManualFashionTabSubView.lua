@@ -28,6 +28,11 @@ function active(self, args)
     super.active(self, args)
     self.colorType = manual.getTabList(manual.ManualType.Fashion)[args.type].colorType
     --manual.ManualManager:addEventListener(manual.ManualManager.MANUAL_DATA_UPDATE, self.updateView, self)
+    if not self.isReshow then
+        self.mScroller:CleanAllItem()
+        --manual.ManualFashionManager:setCanClear(false)
+    end
+    
     self:updateView()
 end
 
@@ -35,7 +40,7 @@ end
 function deActive(self)
     super.deActive(self)
     --manual.ManualManager:removeEventListener(manual.ManualManager.MANUAL_DATA_UPDATE, self.updateView, self)
-    self.mScroller:CleanAllItem()
+    --
 end
 
 function updateView(self)

@@ -1,14 +1,4 @@
-﻿local var_0_0 = {
-	"前往<color=#ff7d36>编队</color>，将角色编入队伍",
-	"指挥官还记得怎么操作吗？",
-	"点击队伍空位上的<color=#ff7d36>添加</color>",
-	"选择需要上场的角色",
-	"点击<color=#ff7d36>确定</color>按钮",
-	"前锋舰队满员啦！现在的实力可不容小觑",
-	"让我们返回到主界面吧！"
-}
-
-return {
+﻿return {
 	id = "S021",
 	events = {
 		{
@@ -18,17 +8,20 @@ return {
 				dir = 1,
 				posY = 104.87,
 				posX = 4.77,
-				text = var_0_0[1]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/formation"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/formationButton"
@@ -53,7 +46,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[2]
 			}
 		},
 		{
@@ -63,7 +64,15 @@ return {
 				dir = 1,
 				posY = 240,
 				posX = -88.52,
-				text = var_0_0[3]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -84,7 +93,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[4]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[4]
 			},
 			ui = {
 				pathIndex = "#",
@@ -111,7 +128,15 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 239.42,
-				text = var_0_0[5]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,
@@ -133,7 +158,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[6]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[6]
 			}
 		},
 		{
@@ -143,7 +176,15 @@ return {
 				dir = -1,
 				posY = 226.21,
 				posX = -130.49,
-				text = var_0_0[7]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"指挥官还记得怎么操作吗？",
+					"点击队伍空位上的<color=#ff7d36>添加</color>",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"前锋舰队满员啦！现在的实力可不容小觑",
+					"让我们返回到主界面吧！"
+				})[7]
 			},
 			ui = {
 				pathIndex = -1,

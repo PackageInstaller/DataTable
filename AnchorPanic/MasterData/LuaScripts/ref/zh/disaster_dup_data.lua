@@ -3,25 +3,25 @@
 local disaster_dup_data=
 
 {
-	[101]={ difficulty=1, stage_name=42001, dup_guard={60001}, boss_id=60001, formation_id=106, music_id=0, scene_id=100, suggest_level={0,75}, suggest_ele={1,3}, pos_effect_id={4501,4505}, first_award=4401, boss_img="Sweep_boss_19", extra_hero={}
+	[101]={ difficulty=1, stage_name=42001, dup_guard={60041}, boss_id=60041, formation_id=106, music_id=0, scene_id=132, suggest_level={0,75}, suggest_ele={3,5}, pos_effect_id={4524,4530,4528,4529}, first_award=4401, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[102]={ difficulty=2, stage_name=42001, dup_guard={60002}, boss_id=60002, formation_id=106, music_id=0, scene_id=100, suggest_level={0,80}, suggest_ele={1,3}, pos_effect_id={4501,4505}, first_award=4402, boss_img="Sweep_boss_19", extra_hero={}
+	[102]={ difficulty=2, stage_name=42001, dup_guard={60042}, boss_id=60042, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4524,4530,4528,4529}, first_award=4402, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[103]={ difficulty=3, stage_name=42001, dup_guard={60003}, boss_id=60003, formation_id=106, music_id=0, scene_id=100, suggest_level={0,85}, suggest_ele={1,3}, pos_effect_id={4501,4505}, first_award=4403, boss_img="Sweep_boss_19", extra_hero={}
+	[103]={ difficulty=3, stage_name=42001, dup_guard={60043}, boss_id=60043, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4524,4530,4528,4529}, first_award=4403, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[104]={ difficulty=4, stage_name=42001, dup_guard={60004}, boss_id=60004, formation_id=106, music_id=0, scene_id=100, suggest_level={0,90}, suggest_ele={1,3}, pos_effect_id={4502,4505}, first_award=4404, boss_img="Sweep_boss_19", extra_hero={}
+	[104]={ difficulty=4, stage_name=42001, dup_guard={60044}, boss_id=60044, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4525,4530,4528,4529}, first_award=4404, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[105]={ difficulty=5, stage_name=42001, dup_guard={60005}, boss_id=60005, formation_id=106, music_id=0, scene_id=100, suggest_level={0,95}, suggest_ele={1,3}, pos_effect_id={4502,4505}, first_award=4405, boss_img="Sweep_boss_19", extra_hero={}
+	[105]={ difficulty=5, stage_name=42001, dup_guard={60045}, boss_id=60045, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4525,4530,4528,4529}, first_award=4405, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[106]={ difficulty=6, stage_name=42001, dup_guard={60006}, boss_id=60006, formation_id=106, music_id=0, scene_id=100, suggest_level={0,100}, suggest_ele={1,3}, pos_effect_id={4502,4505}, first_award=4406, boss_img="Sweep_boss_19", extra_hero={}
+	[106]={ difficulty=6, stage_name=42001, dup_guard={60046}, boss_id=60046, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4525,4530,4528,4529}, first_award=4406, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[107]={ difficulty=7, stage_name=42001, dup_guard={60007}, boss_id=60007, formation_id=106, music_id=0, scene_id=100, suggest_level={0,105}, suggest_ele={1,3}, pos_effect_id={4503,4505}, first_award=4407, boss_img="Sweep_boss_19", extra_hero={}
+	[107]={ difficulty=7, stage_name=42001, dup_guard={60047}, boss_id=60047, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4526,4530,4528,4529}, first_award=4407, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[108]={ difficulty=8, stage_name=42001, dup_guard={60008}, boss_id=60008, formation_id=106, music_id=0, scene_id=100, suggest_level={0,110}, suggest_ele={1,3}, pos_effect_id={4503,4505}, first_award=4408, boss_img="Sweep_boss_19", extra_hero={}
+	[108]={ difficulty=8, stage_name=42001, dup_guard={60048}, boss_id=60048, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4526,4530,4528,4529}, first_award=4408, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[109]={ difficulty=9, stage_name=42001, dup_guard={60009}, boss_id=60009, formation_id=106, music_id=0, scene_id=100, suggest_level={0,115}, suggest_ele={1,3}, pos_effect_id={4503,4505}, first_award=4409, boss_img="Sweep_boss_19", extra_hero={}
+	[109]={ difficulty=9, stage_name=42001, dup_guard={60049}, boss_id=60049, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4526,4530,4528,4529}, first_award=4409, boss_img="Sweep_boss_20", extra_hero={}
 },
-	[110]={ difficulty=10, stage_name=42001, dup_guard={60010}, boss_id=60010, formation_id=106, music_id=0, scene_id=100, suggest_level={0,120}, suggest_ele={1,3}, pos_effect_id={4504,4505}, first_award=0, boss_img="Sweep_boss_19", extra_hero={}
+	[110]={ difficulty=10, stage_name=42001, dup_guard={60050}, boss_id=60050, formation_id=106, music_id=0, scene_id=132, suggest_level={0,80}, suggest_ele={3,5}, pos_effect_id={4527,4530,4531,4532,4528,4529}, first_award=0, boss_img="Sweep_boss_20", extra_hero={}
 }
 }
 

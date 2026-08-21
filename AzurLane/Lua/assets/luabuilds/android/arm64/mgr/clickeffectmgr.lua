@@ -1,16 +1,6 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-singletonClass = var_0_10001
-var_0.ClickEffectMgr = var_0_10001("ClickEffectMgr")
-pg = var_0
-
-local var_0_1 = var_0.ClickEffectMgr
-
-var_0_1.CONFIG = {
+﻿pg = pg or {}
+pg.ClickEffectMgr = singletonClass("ClickEffectMgr")
+pg.ClickEffectMgr.CONFIG = {
 	NORMAL = {
 		"ui",
 		"clickeffect"
@@ -21,57 +11,28 @@ var_0_1.CONFIG = {
 	}
 }
 
-function var_0_1.Init(arg_1_0, arg_1_1)
-	print = var_1_10002
+function pg.ClickEffectMgr.Init(arg_1_0, arg_1_1)
+	print("initializing click effect manager...")
 
-	var_1_10002("initializing click effect manager...")
+	arg_1_0.OverlayCamera = tf(GameObject.Find("OverlayCamera"))
+	arg_1_0.OverlayEffect = arg_1_0.OverlayCamera:Find("Overlay/UIEffect")
+	arg_1_0.OverlayEffectClickCom = arg_1_0.OverlayEffect:GetComponent("ClickEffectBehaviour")
 
-	tf = var_1_10002
-	GameObject = var_4
-	arg_1_0.OverlayCamera = var_1_10002(var_4.Find("OverlayCamera"))
-
-	local var_1_0 = arg_1_0.OverlayCamera
-
-	arg_1_0.OverlayEffect = var_2.Find(var_1_0, "Overlay/UIEffect")
-
-	local var_1_1 = arg_1_0.OverlayEffect
-
-	arg_1_0.OverlayEffectClickCom = var_2.GetComponent(var_1_1, "ClickEffectBehaviour")
-
-	local var_1_2 = arg_1_0.OverlayEffectClickCom
-	local var_1_3 = var_2.Init
-	local var_1_4 = arg_1_0.OverlayCamera
-
-	var_1_3(var_1_2, var_5.GetComponent(var_1_4, "Camera"), arg_1_0.OverlayEffect)
+	arg_1_0.OverlayEffectClickCom:Init(arg_1_0.OverlayCamera:GetComponent("Camera"), arg_1_0.OverlayEffect)
 
 	arg_1_0.effectClick = nil
 	arg_1_0.effectDic = {}
-	PlayerPrefs = var_2
 
-	local var_1_5 = var_2.GetInt
-
-	SHOW_TOUCH_EFFECT = var_1_2
-
-	local var_1_6 = var_1_5(var_1_2, 1)
-	local var_1_7 = 0 < var_1_6
-
-	SetActive = var_3
-
-	var_3(arg_1_0.OverlayEffect, var_1_7)
+	SetActive(arg_1_0.OverlayEffect, PlayerPrefs.GetInt(SHOW_TOUCH_EFFECT, 1) > 0)
 	arg_1_0:SetClickEffect("NORMAL", nil, nil, arg_1_1)
 
 	return
 end
 
-function var_0_1.ClearClickEffect(arg_2_0)
+function pg.ClickEffectMgr.ClearClickEffect(arg_2_0)
 	if arg_2_0.clickEffect then
-		local var_2_0 = arg_2_0.OverlayEffectClickCom
-
-		var_1.UnRegisterEffect(var_2_0)
-
-		SetActive = var_1
-
-		var_1(arg_2_0.clickEffect, false)
+		arg_2_0.OverlayEffectClickCom:UnRegisterEffect()
+		SetActive(arg_2_0.clickEffect, false)
 
 		arg_2_0.clickEffect = nil
 	end
@@ -79,7 +40,7 @@ function var_0_1.ClearClickEffect(arg_2_0)
 	return
 end
 
-function var_0_1.SetClickEffect(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+function pg.ClickEffectMgr.SetClickEffect(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 	if not arg_3_0.CONFIG[arg_3_1] then
 		return
 	end
@@ -89,12 +50,10 @@ function var_0_1.SetClickEffect(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 
 	arg_3_0:ClearClickEffect()
 
-	arg_3_0.clickEffect = arg_3_0.effectDic[var_3_1]
+	arg_3_0.clickEffect = arg_3_0.effectDic[arg_3_0.CONFIG[arg_3_1][2]]
 
 	local function var_3_2()
-		local var_4_0 = arg_3_0.OverlayEffectClickCom
-
-		var_0.RegisterEffect(var_4_0, arg_3_0.clickEffect, arg_3_2, arg_3_3)
+		arg_3_0.OverlayEffectClickCom:RegisterEffect(arg_3_0.clickEffect, arg_3_2, arg_3_3)
 
 		if arg_3_4 then
 			arg_3_4()
@@ -104,19 +63,20 @@ function var_0_1.SetClickEffect(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 	end
 
 	if arg_3_0.clickEffect then
-		var_3_2()
+		(function()
+			arg_3_0.OverlayEffectClickCom:RegisterEffect(arg_3_0.clickEffect, arg_3_2, arg_3_3)
+
+			if arg_3_4 then
+				arg_3_4()
+			end
+
+			return
+		end)()
 	else
-		LoadAndInstantiateAsync = var_8
+		LoadAndInstantiateAsync(var_3_0, arg_3_0.CONFIG[arg_3_1][2], function(arg_5_0)
+			arg_3_0.effectDic[var_3_1] = go(arg_5_0)
 
-		var_8(var_3_0, var_3_1, function(arg_5_0)
-			local var_5_0 = arg_3_0.effectDic
-			local var_5_1 = var_3_1
-
-			go = var_2_10003
-			var_5_0[var_5_1] = var_2_10003(arg_5_0)
-			setParent = var_5_0
-
-			var_5_0(arg_3_0.effectDic[var_3_1], arg_3_0.OverlayEffect)
+			setParent(arg_3_0.effectDic[var_3_1], arg_3_0.OverlayEffect)
 
 			arg_3_0.clickEffect = arg_3_0.effectDic[var_3_1]
 

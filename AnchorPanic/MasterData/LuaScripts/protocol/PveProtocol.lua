@@ -1276,6 +1276,30 @@ SC_EVENT_CYCLE_GAIN_SHOWROOM_REWARD =
     {"result", "int8", "返回结果"},
 }
  
+--- *s2c* 月奖励面板 19535
+SC_EVENT_CYCLE_MONTH_REWARD_PANEL =
+{
+    19535, 
+    {"gained_list", "int32", "已领取奖励id", "repeated"}, 
+    {"all_point", "int32", "当前总积分"}, 
+    {"end_time", "int32", "结束时间"},
+}
+ 
+--- *c2s* 月奖励领取 19536
+CS_EVENT_CYCLE_GAIN_MONTH_REWARD =
+{
+    19536, 
+    {"gain_list", "int32", "奖励id", "repeated"},
+}
+ 
+--- *s2c* 月奖励领取 19537
+SC_EVENT_CYCLE_GAIN_MONTH_REWARD =
+{
+    19537, 
+    {"gain_list", "int32", "奖励id", "repeated"}, 
+    {"result", "int8", "返回结果"},
+}
+ 
 --- *c2s* 自走棋面板信息 19550
 CS_AUTO_CHESS_PANEL =
 {
@@ -1550,19 +1574,11 @@ SC_AUTO_CHESS_RECEIVE_TASK_AWARD =
     {"coin", "int32", "已拥有的自走棋币"},
 }
  
---- *c2s* 战员试玩信息 19600
-CS_HERO_TRY_INFO =
-{
-    19600, 
-    {"dup_id", "int16", "副本id"},
-}
- 
 --- *s2c* 战员试玩信息 19601
 SC_HERO_TRY_INFO =
 {
     19601, 
-    {"dup_id", "int16", "副本id"}, 
-    {"is_pass", "int8", "是否通关 0：否 1：是"},
+    {"pass_dup", "int16", "已通关副本id", "repeated"},
 }
  
 --- *s2c* 保护刁民面板信息 19610
@@ -1751,7 +1767,8 @@ SC_GUILD_FIGHT_PANEL_INFO =
     {"guild_rank", "int16", "公会排名"}, 
     {"boss_list", pt_guild_fight_boss, "当前开放boss", "repeated"}, 
     {"lock_hero_list", "int32", "锁定的战员id列表", "repeated"}, 
-    {"result", "int8", "结果 0：失败 1：成功"},
+    {"result", "int8", "结果 0：失败 1：成功"}, 
+    {"pos_effect", "int32", "战场环境", "repeated"},
 }
  
 --- *c2s* 公会战(联合围剿)boss战斗记录 19735
@@ -2110,14 +2127,15 @@ SC_SEABED_UPDATE_CELL_INFO =
     {"battle_info", pt_seabed_battle_info, "战斗信息"}, 
     {"shop_info", pt_seabed_shop_info, "商店信息"}, 
     {"event_select_buff", "int32", "触发事件后开始选buff", "repeated"}, 
-    {"pass_cell", "int16", "已走过格子", "repeated"},
+    {"pass_cell", "int16", "已走过格子", "repeated"}, 
+    {"pass_branch_cell", "int16", "已走过分支格子", "repeated"},
 }
  
 --- *c2s* 战后选择 19857
 CS_SEABED_POSTWAR_SELECT =
 {
     19857, 
-    {"select_type", "int8", "选择类型1-buff选择,2-收藏品选择,3-事件buff选择"}, 
+    {"select_type", "int8", "选择类型1-收藏品选择,2-buff选择,3-事件buff选择"}, 
     {"select_id", "int32", "选择的id"},
 }
  
@@ -2168,7 +2186,9 @@ SC_SEABED_SETTLE_INFO =
     {"is_pass", "int8", "是否通关"}, 
     {"point", "int32", "结算总分"}, 
     {"talent_point", "int32", "天赋点"}, 
-    {"stats_list", pt_seabed_stats_detail, "统计信息", "repeated"},
+    {"stats_list", pt_seabed_stats_detail, "统计信息", "repeated"}, 
+    {"point_multiple", "int32", "积分倍率"}, 
+    {"difficulty", "int8", "通关难度"},
 }
  
 --- *s2c* 历史信息 19865
@@ -2309,4 +2329,141 @@ SC_SEABED_RANK_PANEL =
     {"my_rank", "int32", "我的排名"}, 
     {"my_rank_val", "int32", "我的排行值"}, 
     {"rank_list", pt_rank_info, "排行榜列表", "repeated"},
+}
+ 
+--- *s2c* 联结作战面板信息 19901
+SC_JOINT_OPS_PANEL =
+{
+    19901, 
+    {"show_code", "string", "联结代码"}, 
+    {"type", "int8", "0-普通玩家,1-回归玩家,2-活跃玩家"}, 
+    {"joint_ops_player", pt_joint_ops_player_info, "联结的玩家信息"},
+}
+ 
+--- *c2s* 联结作战申请 19902
+CS_JOINT_OPS_APPLY =
+{
+    19902, 
+    {"show_code", "string", "联结代码"},
+}
+ 
+--- *s2c* 联结作战申请结果 19903
+SC_JOINT_OPS_APPLY_RESULT =
+{
+    19903, 
+    {"result", "int8", "0-失败,1-成功,2-已被联结,3-错误联结代码,4-重复申请,5-点击过快"},
+}
+ 
+--- *c2s* 同意联结作战 19904
+CS_JOINT_OPS_AGREE =
+{
+    19904, 
+    {"player_id", "int64str", "玩家id"},
+}
+ 
+--- *s2c* 同意联结作战结果 19905
+SC_JOINT_OPS_AGREE_RESULT =
+{
+    19905, 
+    {"result", "int16", "0-失败,1-成功,2-已被联结,3-错误联结代码,4-重复申请,5-点击过快"},
+}
+ 
+--- *c2s* 拒绝联结作战 19906
+CS_JOINT_OPS_REJECT =
+{
+    19906, 
+    {"player_id", "int64str", "玩家id"},
+}
+ 
+--- *s2c* 拒绝联结作战 19907
+SC_JOINT_OPS_REJECT_RESULT =
+{
+    19907, 
+    {"result", "int8", "0-失败,1-成功"},
+}
+ 
+--- *s2c* 返回联结作战申请列表 19909
+SC_JOINT_OPS_APPLY_LIST =
+{
+    19909, 
+    {"joint_ops_apply_list", pt_joint_ops_player_info, "联结作战申请列表", "repeated"},
+}
+ 
+--- *s2c* 任务面板 19910
+SC_JOINT_OPS_TASK_PANEL =
+{
+    19910, 
+    {"task_list", pt_task_info_base, "任务列表", "repeated"},
+}
+ 
+--- *c2s* 任务领取奖励 19911
+CS_JOINT_OPS_TASK_RECEIVE =
+{
+    19911, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 任务领取奖励 19912
+SC_JOINT_OPS_TASK_RECEIVE =
+{
+    19912, 
+    {"result", "int8", "结果，1：成功 0：失败"}, 
+    {"task_id_list", "int16", "领取的任务id列表", "repeated"},
+}
+ 
+--- *s2c* 更新任务进度 19913
+SC_JOINT_OPS_TASK_UPDATE =
+{
+    19913, 
+    {"task_info", pt_task_info_base, "任务信息"},
+}
+ 
+--- *s2c* 返回异象残镜通关面板信息 19921
+SC_VISION_MIRROR_PASS_DUP_PANEL =
+{
+    19921, 
+    {"pass_layer_list", pt_pass_vision_mirror_layer, "已通关的层信息", "repeated"},
+}
+ 
+--- *s2c* 返回异象残镜全部面板信息 19922
+SC_VISION_MIRROR_ALL_DUP_PANEL =
+{
+    19922, 
+    {"dup_list", pt_vision_mirror_dup, "每月的关卡信息", "repeated"},
+}
+ 
+--- *c2s* 请求异象残镜排行榜 19923
+CS_VISION_MIRROR_RANK_PANEL =
+{
+    19923,
+}
+ 
+--- *s2c* 返回异象残镜排行榜 19924
+SC_VISION_MIRROR_RANK_PANEL =
+{
+    19924, 
+    {"rank_id", "int16", "排行榜类型"}, 
+    {"my_rank", "int32", "我的排名"}, 
+    {"layer", "int16", "所在的层数"}, 
+    {"my_rank_val", "int32", "我的排行值"}, 
+    {"rank_list", pt_vision_mirror_rank_info, "排行榜列表", "repeated"},
+}
+ 
+--- *c2s* 通关层手动结算 19925
+CS_VISION_MIRROR_SETTLE =
+{
+    19925,
+}
+ 
+--- *c2s* 消除红点 19926
+CS_DEL_VISION_MIRROR_RED_POINT =
+{
+    19926,
+}
+ 
+--- *s2c* 红点显示 19927
+SC_VISION_MIRROR_RED_POINT =
+{
+    19927, 
+    {"red_point", "int8", "0-不显示，1-显示"},
 }

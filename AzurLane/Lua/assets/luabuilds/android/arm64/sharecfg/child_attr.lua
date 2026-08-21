@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_attr") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_attr"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_attr = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_attr
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_attr = rawget(pg, "child_attr") or setmetatable({
+	__name = "child_attr"
+}, confNEO)
+pg.child_attr.all = {
 	101,
 	102,
 	103,
@@ -40,25 +17,11 @@ var_0_3.all = {
 	305,
 	306
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_attr = {}
+pg.base = pg.base or {}
+pg.base.child_attr = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_attr
-
-	var_1_0[101] = {
+	pg.base.child_attr[101] = {
 		name = "体能",
 		type = 1,
 		id = 101,
@@ -94,11 +57,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_attr
-
-	var_1_1[102] = {
+	pg.base.child_attr[102] = {
 		name = "智慧",
 		type = 1,
 		id = 102,
@@ -134,11 +93,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_attr
-
-	var_1_2[103] = {
+	pg.base.child_attr[103] = {
 		name = "气质",
 		type = 1,
 		id = 103,
@@ -174,11 +129,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_attr
-
-	var_1_3[104] = {
+	pg.base.child_attr[104] = {
 		name = "感知",
 		type = 1,
 		id = 104,
@@ -214,44 +165,28 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_attr
-
-	var_1_4[201] = {
+	pg.base.child_attr[201] = {
 		name = "安静",
 		type = 2,
 		id = 201,
 		icon = "child_wukou",
 		rank = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_attr
-
-	var_1_5[202] = {
+	pg.base.child_attr[202] = {
 		name = "开朗",
 		type = 2,
 		id = 202,
 		icon = "child_kailang",
 		rank = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_attr
-
-	var_1_6[203] = {
+	pg.base.child_attr[203] = {
 		name = "温柔",
 		type = 2,
 		id = 203,
 		icon = "child_wenrou",
 		rank = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_attr
-
-	var_1_7[301] = {
+	pg.base.child_attr[301] = {
 		name = "表现",
 		type = 3,
 		id = 301,
@@ -287,11 +222,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_attr
-
-	var_1_8[302] = {
+	pg.base.child_attr[302] = {
 		name = "乐理",
 		type = 3,
 		id = 302,
@@ -327,11 +258,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_attr
-
-	var_1_9[303] = {
+	pg.base.child_attr[303] = {
 		name = "细心",
 		type = 3,
 		id = 303,
@@ -367,11 +294,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_attr
-
-	var_1_10[304] = {
+	pg.base.child_attr[304] = {
 		name = "想象",
 		type = 3,
 		id = 304,
@@ -407,11 +330,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_attr
-
-	var_1_11[305] = {
+	pg.base.child_attr[305] = {
 		name = "运动",
 		type = 3,
 		id = 305,
@@ -447,8 +366,7 @@ var_0_3.base.child_attr = {}
 			}
 		}
 	}
-	pg = var_1_11
-	var_1_11.base.child_attr[306] = {
+	pg.base.child_attr[306] = {
 		name = "实践",
 		type = 3,
 		id = 306,

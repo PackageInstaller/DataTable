@@ -1,326 +1,184 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MapBuilderNormal", import(".MapBuilderPermanent"))
 
-local var_0_0 = "MapBuilderNormal"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MapBuilderPermanent"))
-
-function var_0_1.GetType(arg_1_0)
-	MapBuilder = var_1_10001
-
-	return var_1_10001.TYPENORMAL
+function var_0_0.GetType(arg_1_0)
+	return MapBuilder.TYPENORMAL
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "levels"
 end
 
-function var_0_1.Load(arg_3_0)
-	if arg_3_0._state ~= var_0_1.STATES.NONE then
+function var_0_0.Load(arg_3_0)
+	if arg_3_0._state ~= var_0_0.STATES.NONE then
 		return
 	end
 
-	arg_3_0._state = var_0_1.STATES.LOADING
-	pg = var_1
+	arg_3_0._state = var_0_0.STATES.LOADING
 
-	local var_3_0 = var_1.UIMgr.GetInstance()
-
-	var_1.LoadingOn(var_3_0)
-
-	local var_3_1 = arg_3_0.float
-	local var_3_2 = var_1.Find(var_3_1, "levels").gameObject
-
-	arg_3_0:Loaded(var_3_2)
+	pg.UIMgr.GetInstance():LoadingOn()
+	arg_3_0:Loaded(arg_3_0.float:Find("levels").gameObject)
 	arg_3_0:Init()
 
 	return
 end
 
-function var_0_1.Destroy(arg_4_0)
-	if arg_4_0._state == var_0_1.STATES.DESTROY then
+function var_0_0.Destroy(arg_4_0)
+	if arg_4_0._state == var_0_0.STATES.DESTROY then
 		return
 	end
 
 	if not arg_4_0:GetLoaded() then
-		arg_4_0._state = var_0_1.STATES.DESTROY
+		arg_4_0._state = var_0_0.STATES.DESTROY
 
 		return
 	end
 
 	arg_4_0:Hide()
 	arg_4_0:OnDestroy()
-
-	pg = var_1
-
-	var_1.DelegateInfo.Dispose(arg_4_0)
+	pg.DelegateInfo.Dispose(arg_4_0)
 
 	arg_4_0._go = nil
 
 	arg_4_0:disposeEvent()
 	arg_4_0:cleanManagedTween()
 
-	arg_4_0._state = var_0_1.STATES.DESTROY
+	arg_4_0._state = var_0_0.STATES.DESTROY
 
 	return
 end
 
-function var_0_1.OnInit(arg_5_0)
-	local var_5_0 = arg_5_0._tf
+function var_0_0.OnInit(arg_5_0)
+	arg_5_0.chapterTpl = arg_5_0._tf:Find("level_tpl")
 
-	arg_5_0.chapterTpl = var_1.Find(var_5_0, "level_tpl")
-	setActive = var_1
+	setActive(arg_5_0.chapterTpl, false)
 
-	var_1(arg_5_0.chapterTpl, false)
+	arg_5_0.storyTpl = arg_5_0._tf:Find("story_tpl")
 
-	local var_5_1 = arg_5_0._tf
+	setActive(arg_5_0.storyTpl, false)
 
-	arg_5_0.storyTpl = var_1.Find(var_5_1, "story_tpl")
-	setActive = var_1
-
-	var_1(arg_5_0.storyTpl, false)
-
-	local var_5_2 = arg_5_0._tf
-
-	arg_5_0.itemHolder = var_1.Find(var_5_2, "items")
-
-	local var_5_3 = arg_5_0._tf
-
-	arg_5_0.storyHolder = var_1.Find(var_5_3, "stories")
+	arg_5_0.itemHolder = arg_5_0._tf:Find("items")
+	arg_5_0.storyHolder = arg_5_0._tf:Find("stories")
 	arg_5_0.chapterTFsById = {}
 	arg_5_0.chaptersInBackAnimating = {}
 
 	return
 end
 
-function var_0_1.OnShow(arg_6_0)
-	var_0_1.super.OnShow(arg_6_0)
-
-	setActive = var_1
-
-	local var_6_0 = arg_6_0.sceneParent.mainLayer
-
-	var_1(var_3.Find(var_6_0, "title_chapter_lines"), true)
-
-	setActive = var_1
-
-	local var_6_1 = arg_6_0.sceneParent.topChapter
-
-	var_1(var_3.Find(var_6_1, "title_chapter"), true)
-
-	setActive = var_1
-
-	local var_6_2 = arg_6_0.sceneParent.topChapter
-
-	var_1(var_3.Find(var_6_2, "type_chapter"), true)
+function var_0_0.OnShow(arg_6_0)
+	var_0_0.super.OnShow(arg_6_0)
+	setActive(arg_6_0.sceneParent.mainLayer:Find("title_chapter_lines"), true)
+	setActive(arg_6_0.sceneParent.topChapter:Find("title_chapter"), true)
+	setActive(arg_6_0.sceneParent.topChapter:Find("type_chapter"), true)
 
 	return
 end
 
-function var_0_1.OnHide(arg_7_0)
-	setActive = var_1_10001
+function var_0_0.OnHide(arg_7_0)
+	setActive(arg_7_0.sceneParent.mainLayer:Find("title_chapter_lines"), false)
+	setActive(arg_7_0.sceneParent.topChapter:Find("title_chapter"), false)
+	setActive(arg_7_0.sceneParent.topChapter:Find("type_chapter"), false)
+	table.clear(arg_7_0.chaptersInBackAnimating)
 
-	local var_7_0 = arg_7_0.sceneParent.mainLayer
-
-	var_1_10001(var_3.Find(var_7_0, "title_chapter_lines"), false)
-
-	setActive = var_1_10001
-
-	local var_7_1 = arg_7_0.sceneParent.topChapter
-
-	var_1_10001(var_3.Find(var_7_1, "title_chapter"), false)
-
-	setActive = var_1_10001
-
-	local var_7_2 = arg_7_0.sceneParent.topChapter
-
-	var_1_10001(var_3.Find(var_7_2, "type_chapter"), false)
-
-	table = var_1_10001
-
-	var_1_10001.clear(arg_7_0.chaptersInBackAnimating)
-
-	pairs = var_1
-
-	for iter_7_0, iter_7_1 in var_1(arg_7_0.chapterTFsById) do
-		findTF = var_7_3
-
-		local var_7_3 = var_7_3(iter_7_1, "main/info/bk")
-
-		LeanTween = var_1_10007
-		var_1_10007 = var_1_10007.cancel
-		rtf = var_9
-
-		var_1_10007(var_9(var_7_3))
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.chapterTFsById) do
+		LeanTween.cancel(rtf((findTF(iter_7_1, "main/info/bk"))))
 	end
 
-	var_0_1.super.OnHide(arg_7_0)
+	var_0_0.super.OnHide(arg_7_0)
 
 	return
 end
 
-function var_0_1.UpdateView(arg_8_0)
-	string = var_1_10001
-
-	local var_8_0 = var_1_10001.split
-	local var_8_1 = arg_8_0.contextData.map
-	local var_8_2 = var_8_0(var_3.getConfig(var_8_1, "name"), "||")
-
-	setText = var_1_10002
-
-	var_1_10002(arg_8_0.sceneParent.chapterName, var_8_2[1])
-
-	local var_8_3 = arg_8_0.contextData.map
-	local var_8_4 = var_2.getMapTitleNumber(var_8_3)
-	local var_8_5 = arg_8_0.sceneParent.loader
-
-	var_3.GetSpriteQuiet(var_8_5, "chapterno", "chapter" .. var_8_4, arg_8_0.sceneParent.chapterNoTitle, true)
-	var_0_1.super.UpdateView(arg_8_0)
+function var_0_0.UpdateView(arg_8_0)
+	setText(arg_8_0.sceneParent.chapterName, string.split(arg_8_0.contextData.map:getConfig("name"), "||")[1])
+	arg_8_0.sceneParent.loader:GetSpriteQuiet("chapterno", "chapter" .. arg_8_0.contextData.map:getMapTitleNumber(), arg_8_0.sceneParent.chapterNoTitle, true)
+	var_0_0.super.UpdateView(arg_8_0)
 
 	return
 end
 
-function var_0_1.UpdateBonusPtIconPath(arg_9_0)
+function var_0_0.UpdateBonusPtIconPath(arg_9_0)
 	arg_9_0.bonusPtIconPath = nil
 
-	local var_9_0
-
-	if not arg_9_0.data then
-		var_9_0 = arg_9_0.contextData.map
-	end
+	local var_9_0 = arg_9_0.data or arg_9_0.contextData.map
 
 	if not var_9_0 then
 		return
 	end
 
-	if not var_9_0:getConfig("on_activity") or var_2 == 0 then
+	local var_9_1 = var_9_0:getConfig("on_activity")
+
+	if not var_9_1 or var_9_1 == 0 then
 		return
 	end
 
-	getProxy = var_1_10003
-	ActivityProxy = var_5
+	local var_9_2 = getProxy(ActivityProxy)
+	local var_9_3 = var_9_2:getActivityById(var_9_1)
 
-	local var_9_1 = var_1_10003(var_5)
-
-	if not var_3.getActivityById(var_9_1, var_2) or var_4:isEnd() then
+	if not var_9_3 or var_9_3:isEnd() then
 		return
 	end
 
-	local var_9_2 = var_4
-
-	if not var_4.GetConfigClientSetting(var_9_2, "PTID") then
+	if not var_9_3:GetConfigClientSetting("PTID") then
 		return
 	end
 
-	underscore = var_9_1
-
-	local var_9_3 = var_9_1.detect
-	local var_9_4 = var_3
-	local var_9_5 = var_3.getActivitiesByType
-
-	ActivityConst = var_1_10011
-
-	if not var_9_3(var_9_5(var_9_4, var_1_10011.ACTIVITY_TYPE_PT_RANK), function(arg_10_0)
+	local var_9_4 = underscore.detect(var_9_2:getActivitiesByType(ActivityConst.ACTIVITY_TYPE_PT_RANK), function(arg_10_0)
 		return arg_10_0 and not arg_10_0:isEnd() and arg_10_0:getConfig("config_id") == var_0
-	end) then
+	end)
+
+	if not var_9_4 then
 		return
 	end
 
-	tonumber = var_9_2
+	local var_9_5 = tonumber(var_9_4:getConfig("config_id"))
 
-	local var_9_6 = var_6
-
-	if not var_9_2(var_6.getConfig(var_9_6, "config_id")) then
+	if not var_9_5 then
 		return
 	end
 
-	Drop = var_8
-
-	local var_9_7 = var_8.New
-	local var_9_8 = {}
-
-	DROP_TYPE_RESOURCE = var_9_6
-	var_9_8.type = var_9_6
-	var_9_8.id = var_7
-
-	local var_9_9 = var_9_7(var_9_8)
-
-	arg_9_0.bonusPtIconPath = var_8.getIcon(var_9_9)
+	arg_9_0.bonusPtIconPath = Drop.New({
+		type = DROP_TYPE_RESOURCE,
+		id = var_9_5
+	}):getIcon()
 
 	return
 end
 
-function var_0_1.UpdateMapItems(arg_11_0)
-	var_0_1.super.UpdateMapItems(arg_11_0)
+function var_0_0.UpdateMapItems(arg_11_0)
+	var_0_0.super.UpdateMapItems(arg_11_0)
 
-	local var_11_0 = arg_11_0.data
+	local var_11_0 = arg_11_0.data:GetChapterInProgress()
 
-	if var_1.GetChapterInProgress(var_11_0) then
-		isa = var_3
+	if var_11_0 and isa(var_11_0, ChapterStoryGroup) then
+		setActive(arg_11_0.itemHolder, false)
+		setActive(arg_11_0.storyHolder, true)
+		arg_11_0:UpdateStoryGroup()
 
-		local var_11_1 = var_2
+		return
+	end
 
-		ChapterStoryGroup = var_1_10006
+	setActive(arg_11_0.itemHolder, true)
+	setActive(arg_11_0.storyHolder, false)
+	arg_11_0:UpdateBonusPtIconPath()
 
-		if var_3(var_11_1, var_1_10006) then
-			setActive = var_3
+	local var_11_1 = getProxy(ChapterProxy)
+	local var_11_2 = {}
 
-			var_3(arg_11_0.itemHolder, false)
-
-			setActive = var_3
-
-			var_3(arg_11_0.storyHolder, true)
-			arg_11_0:UpdateStoryGroup()
-
-			return
+	for iter_11_0, iter_11_1 in pairs(arg_11_0.data:getChapters()) do
+		if (iter_11_1:isUnlock() or iter_11_1:activeAlways()) and (not iter_11_1:ifNeedHide() or var_11_1:GetJustClearChapters(iter_11_1.id)) then
+			table.insert({}, iter_11_1)
 		end
 	end
 
-	setActive = var_3
-
-	var_3(arg_11_0.itemHolder, true)
-
-	setActive = var_3
-
-	var_3(arg_11_0.storyHolder, false)
-
-	local var_11_2 = arg_11_0
-
-	arg_11_0.UpdateBonusPtIconPath(var_11_2)
-
-	getProxy = var_3
-	ChapterProxy = var_11_2
-
-	local var_11_3 = var_3(var_11_2)
-	local var_11_4 = {}
-
-	pairs = var_11_2
-
-	for iter_11_0, iter_11_1 in var_11_2(var_1:getChapters()) do
-		if (iter_11_1:isUnlock() or iter_11_1:activeAlways()) and (not iter_11_1:ifNeedHide() or var_11_3:GetJustClearChapters(iter_11_1.id)) then
-			table = var_10
-
-			var_10.insert(var_11_4, iter_11_1)
-		end
-	end
-
-	table = var_5
-
-	var_5.clear(arg_11_0.chapterTFsById)
-
-	UIItemList = var_5
-
-	var_5.StaticAlign(arg_11_0.itemHolder, arg_11_0.chapterTpl, #var_11_4, function(arg_12_0, arg_12_1, arg_12_2)
-		UIItemList = var_2_10003
-
-		if arg_12_0 ~= var_2_10003.EventUpdate then
+	table.clear(arg_11_0.chapterTFsById)
+	UIItemList.StaticAlign(arg_11_0.itemHolder, arg_11_0.chapterTpl, #{}, function(arg_12_0, arg_12_1, arg_12_2)
+		if arg_12_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var_12_0 = var_11_4[arg_12_1 + 1]
-		local var_12_1 = arg_11_0
+		local var_12_0 = var_11_2[arg_12_1 + 1]
 
-		var_4.UpdateMapItem(var_12_1, arg_12_2, var_12_0)
+		arg_11_0:UpdateMapItem(arg_12_2, var_11_2[arg_12_1 + 1])
 
 		arg_12_2.name = "Chapter_" .. var_12_0.id
 		arg_11_0.chapterTFsById[var_12_0.id] = arg_12_2
@@ -328,98 +186,59 @@ function var_0_1.UpdateMapItems(arg_11_0)
 		return
 	end)
 
-	local var_11_5 = {}
+	for iter_11_2, iter_11_3 in pairs({}) do
+		local var_11_3 = iter_11_3:getConfigTable()
+		local var_11_4 = ({})[var_11_3.pos_x]
 
-	pairs = var_6
-
-	for iter_11_2, iter_11_3 in var_6(var_11_4) do
-		local var_11_6 = iter_11_3:getConfigTable().pos_x
-		local var_11_7
-
-		if not var_11_5[var_1_10011.pos_x] then
-			var_11_7 = {}
+		if not ({})[var_11_3.pos_x] then
+			var_11_4 = {}
 		end
 
-		var_11_5[var_11_6] = var_11_7
+		;({})[var_11_3.pos_x] = var_11_4
 
-		local var_11_8 = var_11_5[var_1_10011.pos_x]
-		local var_11_9 = var_1_10011.pos_y
-		local var_11_10
+		local var_11_5 = ({})[var_11_3.pos_x][var_11_3.pos_y]
 
-		if not var_11_8[var_1_10011.pos_y] then
-			var_11_10 = {}
+		if not ({})[var_11_3.pos_x][var_11_3.pos_y] then
+			var_11_5 = {}
 		end
 
-		var_11_8[var_11_9] = var_11_10
+		;({})[var_11_3.pos_x][var_11_3.pos_y] = var_11_5
 
-		local var_11_11 = var_11_8[var_1_10011.pos_y]
-
-		table = var_11_10
-
-		var_11_10.insert(var_11_11, iter_11_3)
+		table.insert(({})[var_11_3.pos_x][var_11_3.pos_y], iter_11_3)
 	end
 
-	pairs = var_6
+	for iter_11_4, iter_11_5 in pairs({}) do
+		for iter_11_6, iter_11_7 in pairs(iter_11_5) do
+			local var_11_6 = {}
 
-	for iter_11_4, iter_11_5 in var_6(var_11_5) do
-		pairs = var_1_10011
-
-		for iter_11_6, iter_11_7 in var_1_10011(iter_11_5) do
-			local var_11_12 = {}
-
-			seriesAsync = var_1_10017
-
-			var_1_10017({
+			seriesAsync({
 				function(arg_13_0)
 					local var_13_0 = 0
 
-					pairs = var_2_10002
+					for iter_13_0, iter_13_1 in pairs(iter_11_7) do
+						if iter_13_1:ifNeedHide() and var_11_1:GetJustClearChapters(iter_13_1.id) and arg_11_0.chapterTFsById[iter_13_1.id] then
+							var_13_0 = var_13_0 + 1
 
-					for iter_13_0, iter_13_1 in var_2_10002(iter_11_7) do
-						if iter_13_1:ifNeedHide() then
-							local var_13_1 = var_11_3
+							local var_13_1 = arg_11_0.chapterTFsById[iter_13_1.id]
 
-							if var_7.GetJustClearChapters(var_13_1, iter_13_1.id) and arg_11_0.chapterTFsById[iter_13_1.id] then
-								var_13_0 = var_13_0 + 1
+							setActive(arg_11_0.chapterTFsById[iter_13_1.id], true)
+							arg_11_0:PlayChapterItemAnimationBackward(arg_11_0.chapterTFsById[iter_13_1.id], iter_13_1, function()
+								var_13_0 = var_13_0 - 1
 
-								local var_13_2 = arg_11_0.chapterTFsById[iter_13_1.id]
+								setActive(var_13_1, false)
+								var_11_1:RecordJustClearChapters(iter_13_1.id, nil)
 
-								setActive = var_8
+								if var_13_0 <= 0 then
+									arg_13_0()
+								end
 
-								var_8(var_13_2, true)
+								return
+							end)
 
-								local var_13_3 = arg_11_0
-
-								var_8.PlayChapterItemAnimationBackward(var_13_3, var_13_2, iter_13_1, function()
-									var_13_0 = var_13_0 - 1
-									setActive = var_0
-
-									var_0(var_13_2, false)
-
-									local var_14_0 = var_11_3
-
-									var_0.RecordJustClearChapters(var_14_0, iter_13_1.id, nil)
-
-									if var_13_0 <= 0 then
-										arg_13_0()
-									end
-
-									return
-								end)
-
-								var_11_12[iter_13_1.id] = true
-
-								goto label_13_0
-							end
+							var_11_6[iter_13_1.id] = true
+						elseif arg_11_0.chapterTFsById[iter_13_1.id] then
+							setActive(arg_11_0.chapterTFsById[iter_13_1.id], false)
 						end
-
-						if arg_11_0.chapterTFsById[iter_13_1.id] then
-							setActive = var_7
-
-							var_7(arg_11_0.chapterTFsById[iter_13_1.id], false)
-						end
-
-						::label_13_0::
 					end
 
 					if var_13_0 <= 0 then
@@ -431,18 +250,12 @@ function var_0_1.UpdateMapItems(arg_11_0)
 				function(arg_15_0)
 					local var_15_0 = 0
 
-					pairs = var_2_10002
+					for iter_15_0, iter_15_1 in pairs(iter_11_7) do
+						if not var_11_6[iter_15_1.id] then
+							var_15_0 = 0 + 1
 
-					for iter_15_0, iter_15_1 in var_2_10002(iter_11_7) do
-						if not var_11_12[iter_15_1.id] then
-							var_15_0 = var_15_0 + 1
-							setActive = var_7
-
-							var_7(arg_11_0.chapterTFsById[iter_15_1.id], true)
-
-							local var_15_1 = arg_11_0
-
-							var_7.PlayChapterItemAnimation(var_15_1, arg_11_0.chapterTFsById[iter_15_1.id], iter_15_1, function()
+							setActive(arg_11_0.chapterTFsById[iter_15_1.id], true)
+							arg_11_0:PlayChapterItemAnimation(arg_11_0.chapterTFsById[iter_15_1.id], iter_15_1, function()
 								var_15_0 = var_15_0 - 1
 
 								if var_15_0 <= 0 then
@@ -463,509 +276,188 @@ function var_0_1.UpdateMapItems(arg_11_0)
 	return
 end
 
-function var_0_1.UpdateMapItem(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_2
-	local var_17_1 = arg_17_2.getConfigTable(var_17_0)
+function var_0_0.UpdateMapItem(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_2:getConfigTable()
 
-	warning = var_1_10004
-
-	var_1_10004(0 * var_17_1.pos_x, 1080 * var_17_1.pos_y)
-
-	setLocalPosition = var_1_10004
-
-	var_1_10004(arg_17_1, {
-		x = 0 * var_17_1.pos_x,
-		y = 1080 * var_17_1.pos_y
+	warning(0 * var_17_0.pos_x, 1080 * var_17_0.pos_y)
+	setLocalPosition(arg_17_1, {
+		x = 0 * var_17_0.pos_x,
+		y = 1080 * var_17_0.pos_y
 	})
 
-	findTF = var_1_10004
+	local var_17_1 = findTF(arg_17_1, "main")
 
-	local var_17_2 = var_1_10004(arg_17_1, "main")
+	setActive(var_17_1, true)
 
-	setActive = var_17_0
+	local var_17_2 = findTF(var_17_1, "info/bk/fordark")
 
-	var_17_0(var_17_2, true)
+	setActive(findTF(var_17_1, "circle/fordark"), var_17_0.icon_outline == 1)
+	setActive(var_17_2, var_17_0.icon_outline == 1)
 
-	findTF = var_17_0
+	local var_17_3 = findTF(var_17_1, "circle/clear_flag")
+	local var_17_4 = findTF(var_17_1, "circle/progress_text")
+	local var_17_5 = findTF(var_17_1, "circle/stars")
+	local var_17_6 = string.split(var_17_0.name, "|")
 
-	local var_17_3 = var_17_0(var_17_2, "circle/fordark")
+	setText(findTF(var_17_1, "info/bk/title_form/title_index"), var_17_0.chapter_name .. "  ")
+	setText(findTF(var_17_1, "info/bk/title_form/title"), var_17_6[1])
 
-	findTF = var_6
+	local var_17_7 = var_17_6[2] or ""
 
-	local var_17_4 = var_6(var_17_2, "info/bk/fordark")
+	setText(findTF(var_17_1, "info/bk/title_form/title_en"), var_17_7)
+	setFillAmount(findTF(var_17_1, "circle/progress"), arg_17_2.progress / 100)
+	setText(var_17_4, string.format("%d%%", arg_17_2.progress))
+	setActive(var_17_5, arg_17_2:existAchieve())
 
-	setActive = var_7
-
-	var_7(var_17_3, var_17_1.icon_outline == 1)
-
-	setActive = var_7
-
-	var_7(var_17_4, var_17_1.icon_outline == 1)
-
-	findTF = var_7
-
-	local var_17_5 = var_7(var_17_2, "circle/clear_flag")
-
-	findTF = var_8
-
-	local var_17_6 = var_8(var_17_2, "circle/progress")
-
-	findTF = var_9
-
-	local var_17_7 = var_9(var_17_2, "circle/progress_text")
-
-	findTF = var_10
-
-	local var_17_8 = var_10(var_17_2, "circle/stars")
-
-	string = var_11
-
-	local var_17_9 = var_11.split(var_17_1.name, "|")
-
-	setText = var_12
-	findTF = var_14
-
-	var_12(var_14(var_17_2, "info/bk/title_form/title_index"), var_17_1.chapter_name .. "  ")
-
-	setText = var_12
-	findTF = var_14
-
-	var_12(var_14(var_17_2, "info/bk/title_form/title"), var_17_9[1])
-
-	setText = var_12
-	findTF = var_14
-
-	local var_17_10 = var_14(var_17_2, "info/bk/title_form/title_en")
-	local var_17_11
-
-	if not var_17_9[2] then
-		var_17_11 = ""
-	end
-
-	var_12(var_17_10, var_17_11)
-
-	setFillAmount = var_12
-
-	var_12(var_17_6, arg_17_2.progress / 100)
-
-	setText = var_12
-
-	local var_17_12 = var_17_7
-
-	string = var_15
-
-	var_12(var_17_12, var_15.format("%d%%", arg_17_2.progress))
-
-	setActive = var_12
-
-	local var_17_13 = var_17_8
-	local var_17_14 = arg_17_2
-
-	var_12(var_17_13, arg_17_2.existAchieve(var_17_14))
-
-	local var_17_15 = arg_17_2
-
-	if arg_17_2.existAchieve(var_17_15) then
-		ipairs = var_12
-
-		for iter_17_0, iter_17_1 in var_12(arg_17_2.achieves) do
-			ChapterConst = var_17_14
-			var_17_14 = var_17_14.IsAchieved(iter_17_1)
-
-			local var_17_16 = var_17_8:Find("star" .. iter_17_0 .. "/light")
-
-			setActive = var_19
-
-			var_19(var_17_16, var_17_14)
+	if arg_17_2:existAchieve() then
+		for iter_17_0, iter_17_1 in ipairs(arg_17_2.achieves) do
+			setActive(var_17_5:Find("star" .. iter_17_0 .. "/light"), (ChapterConst.IsAchieved(iter_17_1)))
 		end
 	end
 
-	local var_17_17
+	local var_17_8 = not arg_17_2.active and arg_17_2:isClear()
 
-	if not arg_17_2.active then
-		var_17_15 = arg_17_2
-		var_17_17 = arg_17_2.isClear(var_17_15)
-	else
-		var_17_17 = false
-	end
-
-	if false then
-		var_17_17 = true
-	end
-
-	setActive = var_13
-
-	var_13(var_17_5, var_17_17)
-
-	setActive = var_13
-
-	var_13(var_17_7, not var_17_17)
+	setActive(var_17_3, var_17_8)
+	setActive(var_17_4, not var_17_8)
 	arg_17_0:DeleteTween("fighting" .. arg_17_2.id)
 
-	findTF = var_13
+	local var_17_9 = findTF(var_17_1, "circle/fighting")
 
-	local var_17_18 = var_13(var_17_2, "circle/fighting")
+	setText(findTF(var_17_9, "Text"), i18n("tag_level_fighting"))
 
-	setText = var_17_15
-	findTF = var_16
+	local var_17_10 = findTF(var_17_1, "circle/oni")
 
-	local var_17_19 = var_16(var_17_18, "Text")
+	setText(findTF(var_17_10, "Text"), i18n("tag_level_oni"))
 
-	i18n = var_17
+	local var_17_11 = findTF(var_17_1, "circle/narrative")
 
-	var_17_15(var_17_19, var_17("tag_level_fighting"))
+	setText(findTF(var_17_11, "Text"), i18n("tag_level_narrative"))
+	setActive(var_17_9, false)
+	setActive(var_17_10, false)
+	setActive(var_17_11, false)
 
-	findTF = var_17_15
-
-	local var_17_20 = var_17_15(var_17_2, "circle/oni")
-
-	setText = var_15
-	findTF = var_17
-
-	local var_17_21 = var_17(var_17_20, "Text")
-
-	i18n = var_18
-
-	var_15(var_17_21, var_18("tag_level_oni"))
-
-	findTF = var_15
-
-	local var_17_22 = var_15(var_17_2, "circle/narrative")
-
-	setText = var_16
-	findTF = var_18
-
-	local var_17_23 = var_18(var_17_22, "Text")
-
-	i18n = var_19
-
-	var_16(var_17_23, var_19("tag_level_narrative"))
-
-	setActive = var_16
-
-	var_16(var_17_18, false)
-
-	setActive = var_16
-
-	var_16(var_17_20, false)
-
-	setActive = var_16
-
-	var_16(var_17_22, false)
-
-	local var_17_24
-	local var_17_25
+	local var_17_12
 
 	if arg_17_2:getConfig("chapter_tag") == 1 then
-		var_17_24 = var_17_22
+		var_17_12 = var_17_11
 	end
 
 	if arg_17_2.active then
-		var_17_24 = arg_17_2:existOni() and var_17_20 or var_17_18
+		var_17_12 = arg_17_2:existOni() and var_17_10 or var_17_9
 	end
 
-	local var_17_28
+	if var_17_12 then
+		setActive(var_17_12, true)
 
-	if var_17_24 then
-		setActive = var_17_28
+		local var_17_14 = GetOrAddComponent(var_17_12, "CanvasGroup")
 
-		var_17_28(var_17_24, true)
+		var_17_14.alpha = 1
 
-		GetOrAddComponent = var_17_28
-
-		local var_17_26 = var_17_28(var_17_24, "CanvasGroup")
-
-		var_17_26.alpha = 1
-
-		local var_17_27 = arg_17_0
-
-		var_17_28 = arg_17_0.RecordTween
-
-		local var_17_29 = "fighting" .. arg_17_2.id
-
-		LeanTween = var_22
-
-		local var_17_30 = var_22.alphaCanvas(var_17_26, 0, 0.5)
-		local var_17_31 = var_22.setFrom(var_17_30, 1)
-		local var_17_32 = var_22.setEase
-
-		LeanTweenType = var_1_10025
-
-		local var_17_33 = var_17_32(var_17_31, var_1_10025.easeInOutSine)
-
-		var_17_28(var_17_27, var_17_29, var_22.setLoopPingPong(var_17_33).uniqueId)
+		arg_17_0:RecordTween("fighting" .. arg_17_2.id, LeanTween.alphaCanvas(var_17_14, 0, 0.5):setFrom(1):setEase(LeanTweenType.easeInOutSine):setLoopPingPong().uniqueId)
 	end
 
-	findTF = var_17_28
+	local var_17_15 = findTF(var_17_1, "triesLimit")
 
-	local var_17_34 = var_17_28(var_17_2, "triesLimit")
+	setActive(var_17_15, false)
 
-	setActive = var_19
+	if arg_17_2:isTriesLimit() then
+		local var_17_16 = arg_17_2:getConfig("count")
 
-	var_19(var_17_34, false)
+		setText(var_17_15:Find("label"), i18n("levelScene_chapter_count_tip"))
 
-	local var_17_35 = arg_17_2
+		local var_17_18 = var_17_15:Find("Text")
+		local var_17_20 = var_17_16 - arg_17_2:getTodayDefeatCount() .. "/" .. var_17_16
 
-	if arg_17_2.isTriesLimit(var_17_35) then
-		var_17_35 = arg_17_2:getConfig("count") - arg_17_2:getTodayDefeatCount() .. "/" .. var_20
-		setText = var_22
+		if var_17_16 <= arg_17_2:getTodayDefeatCount() then
+			var_17_17(var_17_18, var_17_19(var_17_20, var_17_21))
 
-		local var_17_36 = var_17_34:Find("label")
+			local var_17_22 = getProxy(ChapterProxy):IsActivitySPChapterActive(pg.expedition_data_by_map[arg_17_2:getConfig("map")].on_activity)
 
-		i18n = var_1_10025
+			var_17_22 = var_17_22 and SettingsProxy.IsShowActivityMapSPTip()
 
-		var_22(var_17_36, var_1_10025("levelScene_chapter_count_tip"))
+			setActive(var_17_15:Find("TipRect"), var_17_22)
 
-		setText = var_22
+			local var_17_23 = arg_17_2:GetDailyBonusQuota()
+			local var_17_24 = findTF(var_17_1, "mark")
+			local var_17_25 = var_17_24:Find("bonus")
+			local var_17_26 = var_17_25:Find("icon")
+			local var_17_27 = findTF(var_17_25, "icon/Image")
 
-		local var_17_37 = var_17_34:Find("Text")
+			setActive(var_17_25, var_17_23)
+			setActive(var_17_24, var_17_23)
 
-		setColorStr = var_25
-
-		local var_17_38 = var_17_35
-
-		var_1_10030 = arg_17_2
-
-		if var_20 <= arg_17_2.getTodayDefeatCount(var_1_10030) then
-			COLOR_RED = var_28
-
-			if not var_28 then
-				COLOR_GREEN = var_28
+			if var_17_26 then
+				setActive(var_17_26, var_17_23 and arg_17_0.bonusPtIconPath)
 			end
 
-			var_22(var_17_37, var_25(var_17_38, var_28))
+			if var_17_23 then
+				local var_17_28 = var_17_24:GetComponent(typeof(CanvasGroup))
 
-			pg = var_22
+				arg_17_0.sceneParent.loader:GetSprite("ui/levelmainscene_atlas", arg_17_2:GetDailyBonusIconName(), var_17_25)
 
-			local var_17_39 = var_22.expedition_data_by_map
-			local var_17_40 = arg_17_2
-			local var_17_41 = var_17_39[arg_17_2.getConfig(var_17_40, "map")].on_activity
-
-			getProxy = var_23
-			ChapterProxy = var_17_40
-
-			local var_17_42 = var_23(var_17_40)
-			local var_17_43
-
-			if var_23.IsActivitySPChapterActive(var_17_42, var_17_41) then
-				SettingsProxy = var_17_43
-				var_17_43 = var_17_43.IsShowActivityMapSPTip()
-			end
-
-			setActive = var_17_37
-
-			var_17_37(var_17_34:Find("TipRect"), var_17_43)
-
-			local var_17_44 = arg_17_2:GetDailyBonusQuota()
-
-			findTF = var_17_35
-
-			local var_17_45 = var_17_35(var_17_2, "mark")
-			local var_17_46 = var_21.Find(var_17_45, "bonus")
-			local var_17_47 = var_22.Find(var_17_46, "icon")
-
-			findTF = var_17_45
-
-			local var_17_48 = var_17_45(var_22, "icon/Image")
-
-			setActive = var_17_46
-
-			var_17_46(var_22, var_17_44)
-
-			setActive = var_17_46
-
-			var_17_46(var_21, var_17_44)
-
-			local var_17_50
-
-			if var_17_47 then
-				setActive = var_17_46
-
-				local var_17_49 = var_17_47
-
-				var_17_50 = var_17_44 and arg_17_0.bonusPtIconPath
-
-				var_17_46(var_17_49, var_17_50)
-			end
-
-			local var_17_54
-
-			if var_17_44 then
-				local var_17_51 = var_21
-				local var_17_52 = var_21.GetComponent
-
-				typeof = var_17_50
-				CanvasGroup = var_1_10030
-
-				local var_17_53 = var_17_52(var_17_51, var_17_50(var_1_10030))
-
-				var_17_54 = arg_17_2:GetDailyBonusIconName()
-
-				local var_17_55 = arg_17_0.sceneParent.loader
-
-				var_27.GetSprite(var_17_55, "ui/levelmainscene_atlas", var_17_54, var_22)
-
-				if var_17_47 and arg_17_0.bonusPtIconPath then
-					if var_17_48 then
-						GetImageSpriteFromAtlasAsync = var_27
-
-						var_27(arg_17_0.bonusPtIconPath, "", var_17_48, true)
+				if var_17_26 and arg_17_0.bonusPtIconPath then
+					if var_17_27 then
+						GetImageSpriteFromAtlasAsync(arg_17_0.bonusPtIconPath, "", var_17_27, true)
 					else
-						GetImageSpriteFromAtlasAsync = var_27
-
-						var_27(arg_17_0.bonusPtIconPath, "", var_17_47, true)
+						GetImageSpriteFromAtlasAsync(arg_17_0.bonusPtIconPath, "", var_17_26, true)
 					end
 				end
 
-				LeanTween = var_27
+				LeanTween.cancel(go(var_17_24), true)
 
-				local var_17_56 = var_27.cancel
+				local var_17_29 = var_17_24.anchoredPosition.y
 
-				go = var_17_55
+				var_17_24:GetComponent(typeof(CanvasGroup)).alpha = 0
 
-				var_17_56(var_17_55(var_21), true)
-
-				local var_17_57 = var_21.anchoredPosition.y
-
-				var_17_53.alpha = 0
-				LeanTween = var_28
-
-				local var_17_58 = var_28.value
-
-				go = var_30
-
-				local var_17_59 = var_17_58(var_30(var_21), 0, 1, 0.2)
-				local var_17_60 = var_28.setOnUpdate
-
-				System = var_1_10031
-
-				local var_17_61 = var_17_60(var_17_59, var_1_10031.Action_float(function(arg_18_0)
-					var_17_53.alpha = arg_18_0
-
-					local var_18_0 = var_0.anchoredPosition
-
-					var_18_0.y = var_17_57 * arg_18_0
-					var_0.anchoredPosition = var_18_0
+				LeanTween.value(go(var_17_24), 0, 1, 0.2):setOnUpdate(System.Action_float(function(arg_18_0)
+					var_17_28.alpha = arg_18_0
+					var_17_24.anchoredPosition.y = var_17_29 * arg_18_0
+					var_17_24.anchoredPosition = var_17_24.anchoredPosition
 
 					return
-				end))
-				local var_17_62 = var_28.setOnComplete
-
-				System = var_1_10031
-
-				local var_17_63 = var_17_62(var_17_61, var_1_10031.Action(function()
-					var_17_53.alpha = 1
-
-					local var_19_0 = var_0.anchoredPosition
-
-					var_19_0.y = var_17_57
-					var_0.anchoredPosition = var_19_0
+				end)):setOnComplete(System.Action(function()
+					var_17_28.alpha = 1
+					var_17_24.anchoredPosition.y = var_17_29
+					var_17_24.anchoredPosition = var_17_24.anchoredPosition
 
 					return
-				end))
-				local var_17_64 = var_28.setEase
-
-				LeanTweenType = var_1_10031
-
-				local var_17_65 = var_17_64(var_17_63, var_1_10031.easeOutSine)
-
-				var_28.setDelay(var_17_65, 0.7)
+				end)):setEase(LeanTweenType.easeOutSine):setDelay(0.7)
 			end
 
-			local var_17_66 = arg_17_2.id
+			local var_17_30 = arg_17_2.id
 
-			onButton = var_17_54
-
-			local var_17_67 = arg_17_0
-			local var_17_68 = var_17_2
-
-			local function var_17_69()
-				if arg_17_0.chaptersInBackAnimating[var_17_66] then
+			onButton(arg_17_0, var_17_1, function()
+				if arg_17_0.chaptersInBackAnimating[var_17_30] then
 					return
 				end
 
-				local var_20_0 = arg_17_1.localPosition
-				local var_20_1 = arg_17_0
-				local var_20_2 = var_1.TryOpenChapterInfo
-				local var_20_3 = var_17_66
-
-				Vector3 = var_2_10005
-
-				var_20_2(var_20_1, var_20_3, var_2_10005(var_20_0.x - 10, var_20_0.y + 22))
+				arg_17_0:TryOpenChapterInfo(var_17_30, Vector3(arg_17_1.localPosition.x - 10, arg_17_1.localPosition.y + 22))
 
 				return
-			end
-
-			SFX_UI_WEIGHANCHOR_SELECT = var_1_10031
-
-			var_17_54(var_17_67, var_17_68, var_17_69, var_1_10031)
+			end, SFX_UI_WEIGHANCHOR_SELECT)
 
 			return
 		end
 	end
 end
 
-function var_0_1.PlayChapterItemAnimation(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
-	findTF = var_1_10004
+function var_0_0.PlayChapterItemAnimation(arg_21_0, arg_21_1, arg_21_2, arg_21_3)
+	local var_21_0 = findTF(arg_21_1, "main")
+	local var_21_1 = findTF(var_21_0, "circle")
+	local var_21_2 = findTF(var_21_0, "info/bk")
 
-	local var_21_0 = var_1_10004(arg_21_1, "main")
-	local var_21_1 = var_4.Find(var_21_0, "info")
+	LeanTween.cancel(go(var_21_1))
 
-	findTF = var_6
+	var_21_1.localScale = Vector3.zero
 
-	local var_21_2 = var_6(var_4, "circle")
-
-	findTF = var_21_0
-
-	local var_21_3 = var_21_0(var_4, "info/bk")
-
-	LeanTween = var_8
-
-	local var_21_4 = var_8.cancel
-
-	go = var_10
-
-	var_21_4(var_10(var_21_2))
-
-	Vector3 = var_21_4
-	var_21_2.localScale = var_21_4.zero
-	LeanTween = var_8
-
-	local var_21_5 = var_8.scale
-	local var_21_6 = var_21_2
-
-	Vector3 = var_1_10011
-
-	local var_21_7 = var_21_5(var_21_6, var_1_10011.one, 0.3)
-	local var_21_8 = var_8.setDelay(var_21_7, 0.3)
-	local var_21_9 = arg_21_0
-
-	arg_21_0.RecordTween(var_21_9, var_21_8.uniqueId)
-
-	LeanTween = var_9
-
-	local var_21_10 = var_9.cancel
-
-	go = var_21_9
-
-	var_21_10(var_21_9(var_21_3))
-
-	setAnchoredPosition = var_21_10
-
-	var_21_10(var_21_3, {
-		x = -1 * var_21_1.rect.width
+	arg_21_0:RecordTween(LeanTween.scale(var_21_1, Vector3.one, 0.3):setDelay(0.3).uniqueId)
+	LeanTween.cancel(go(var_21_2))
+	setAnchoredPosition(var_21_2, {
+		x = -1 * var_21_0:Find("info").rect.width
 	})
-
-	shiftPanel = var_21_10
-
-	var_21_10(var_21_3, 0, nil, 0.4, 0.4, true, true, nil, function()
-		local var_22_0 = arg_21_2
-
-		if var_0.isTriesLimit(var_22_0) then
-			setActive = var_0
-			findTF = var_22_0
-
-			var_0(var_22_0(var_0, "triesLimit"), true)
+	shiftPanel(var_21_2, 0, nil, 0.4, 0.4, true, true, nil, function()
+		if arg_21_2:isTriesLimit() then
+			setActive(findTF(var_21_0, "triesLimit"), true)
 		end
 
 		if arg_21_3 then
@@ -978,65 +470,24 @@ function var_0_1.PlayChapterItemAnimation(arg_21_0, arg_21_1, arg_21_2, arg_21_3
 	return
 end
 
-function var_0_1.PlayChapterItemAnimationBackward(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
-	findTF = var_1_10004
+function var_0_0.PlayChapterItemAnimationBackward(arg_23_0, arg_23_1, arg_23_2, arg_23_3)
+	local var_23_0 = findTF(arg_23_1, "main")
+	local var_23_1 = findTF(var_23_0, "circle")
+	local var_23_2 = findTF(var_23_0, "info/bk")
 
-	local var_23_0 = var_1_10004(arg_23_1, "main")
-	local var_23_1 = var_4.Find(var_23_0, "info")
+	LeanTween.cancel(go(var_23_1))
 
-	findTF = var_6
+	var_23_1.localScale = Vector3.one
 
-	local var_23_2 = var_6(var_4, "circle")
+	arg_23_0:RecordTween(LeanTween.scale(go(var_23_1), Vector3.zero, 0.3):setDelay(0.3).uniqueId)
 
-	findTF = var_23_0
+	arg_23_0.chaptersInBackAnimating[arg_23_2.id] = true
 
-	local var_23_3 = var_23_0(var_4, "info/bk")
-
-	LeanTween = var_8
-
-	local var_23_4 = var_8.cancel
-
-	go = var_10
-
-	var_23_4(var_10(var_23_2))
-
-	Vector3 = var_23_4
-	var_23_2.localScale = var_23_4.one
-	LeanTween = var_8
-
-	local var_23_5 = var_8.scale
-
-	go = var_10
-
-	local var_23_6 = var_10(var_23_2)
-
-	Vector3 = var_1_10011
-
-	local var_23_7 = var_23_5(var_23_6, var_1_10011.zero, 0.3)
-	local var_23_8 = var_8.setDelay(var_23_7, 0.3)
-
-	arg_23_0:RecordTween(var_23_8.uniqueId)
-
-	local var_23_9 = arg_23_0.chaptersInBackAnimating
-
-	var_23_9[arg_23_2.id] = true
-	LeanTween = var_23_9
-
-	local var_23_10 = var_23_9.cancel
-
-	go = var_11
-
-	var_23_10(var_11(var_23_3))
-
-	setAnchoredPosition = var_23_10
-
-	var_23_10(var_23_3, {
+	LeanTween.cancel(go(var_23_2))
+	setAnchoredPosition(var_23_2, {
 		x = 0
 	})
-
-	shiftPanel = var_23_10
-
-	var_23_10(var_23_3, -1 * var_23_1.rect.width, nil, 0.4, 0.4, true, true, nil, function()
+	shiftPanel(var_23_2, -1 * var_23_0:Find("info").rect.width, nil, 0.4, 0.4, true, true, nil, function()
 		arg_23_0.chaptersInBackAnimating[arg_23_2.id] = nil
 
 		if arg_23_3 then
@@ -1046,63 +497,39 @@ function var_0_1.PlayChapterItemAnimationBackward(arg_23_0, arg_23_1, arg_23_2, 
 		return
 	end)
 
-	local var_23_11 = arg_23_2
-
-	if arg_23_2.isTriesLimit(var_23_11) then
-		setActive = var_9
-		findTF = var_23_11
-
-		var_9(var_23_11(var_4, "triesLimit"), false)
+	if arg_23_2:isTriesLimit() then
+		setActive(findTF(var_23_0, "triesLimit"), false)
 	end
 
 	return
 end
 
-function var_0_1.UpdateChapterTF(arg_25_0, arg_25_1)
+function var_0_0.UpdateChapterTF(arg_25_0, arg_25_1)
 	if arg_25_0.chapterTFsById[arg_25_1] then
-		getProxy = var_1_10003
-		ChapterProxy = var_1_10005
+		local var_25_0 = getProxy(ChapterProxy):getChapterById(arg_25_1)
 
-		local var_25_0 = var_1_10003(var_1_10005)
-		local var_25_1 = var_3.getChapterById(var_25_0, arg_25_1)
-
-		arg_25_0:UpdateMapItem(var_2, var_25_1)
-		arg_25_0:PlayChapterItemAnimation(var_2, var_25_1)
+		arg_25_0:UpdateMapItem(arg_25_0.chapterTFsById[arg_25_1], var_25_0)
+		arg_25_0:PlayChapterItemAnimation(arg_25_0.chapterTFsById[arg_25_1], var_25_0)
 	end
 
 	return
 end
 
-function var_0_1.TryOpenChapter(arg_26_0, arg_26_1)
+function var_0_0.TryOpenChapter(arg_26_0, arg_26_1)
 	if arg_26_0.chapterTFsById[arg_26_1] then
-		local var_26_0 = var_2:Find("main")
-
-		triggerButton = var_1_10004
-
-		var_1_10004(var_26_0)
+		triggerButton((arg_26_0.chapterTFsById[arg_26_1]:Find("main")))
 	end
 
 	return
 end
 
-function var_0_1.UpdateStoryGroup(arg_27_0)
-	local var_27_0 = arg_27_0.data
-	local var_27_1 = var_1.GetChapterInProgress(var_27_0)
-	local var_27_2 = var_1.GetChapterStories(var_27_1)
-
-	UIItemList = var_27_0
-
-	var_27_0.StaticAlign(arg_27_0.storyHolder, arg_27_0.storyTpl, #var_27_2, function(arg_28_0, arg_28_1, arg_28_2)
-		UIItemList = var_2_10003
-
-		if arg_28_0 ~= var_2_10003.EventUpdate then
+function var_0_0.UpdateStoryGroup(arg_27_0)
+	UIItemList.StaticAlign(arg_27_0.storyHolder, arg_27_0.storyTpl, #arg_27_0.data:GetChapterInProgress():GetChapterStories(), function(arg_28_0, arg_28_1, arg_28_2)
+		if arg_28_0 ~= UIItemList.EventUpdate then
 			return
 		end
 
-		local var_28_0 = var_27_2[arg_28_1 + 1]
-		local var_28_1 = arg_27_0
-
-		var_4.UpdateMapStory(var_28_1, arg_28_2, var_28_0)
+		arg_27_0:UpdateMapStory(arg_28_2, var_0[arg_28_1 + 1])
 
 		arg_28_2.name = "Chapter_" .. var_28_0:GetName()
 
@@ -1112,91 +539,48 @@ function var_0_1.UpdateStoryGroup(arg_27_0)
 	return
 end
 
-function var_0_1.UpdateMapStory(arg_29_0, arg_29_1, arg_29_2)
+function var_0_0.UpdateMapStory(arg_29_0, arg_29_1, arg_29_2)
 	local var_29_0 = arg_29_2:GetPosition()
 
-	setAnchoredPosition = var_1_10004
-
-	var_1_10004(arg_29_1, {
+	setAnchoredPosition(arg_29_1, {
 		x = arg_29_0.mapWidth * var_29_0[1],
 		y = arg_29_0.mapHeight * var_29_0[2]
 	})
-
-	setText = var_1_10004
-
-	var_1_10004(arg_29_1:Find("Name"), arg_29_2:GetName())
+	setText(arg_29_1:Find("Name"), arg_29_2:GetName())
 
 	local var_29_1, var_29_2 = arg_29_2:GetIcon()
-	local var_29_3 = arg_29_0.sceneParent.loader
 
-	var_6.GetSpriteQuiet(var_29_3, var_29_1, var_29_2, arg_29_1:Find("Icon"), true)
+	arg_29_0.sceneParent.loader:GetSpriteQuiet(var_29_1, var_29_2, arg_29_1:Find("Icon"), true)
 
-	local var_29_4 = arg_29_2:GetStoryName()
+	local var_29_3 = arg_29_2:GetStoryName()
 
-	onButton = var_7
-
-	local var_29_5 = arg_29_0
-	local var_29_6 = arg_29_1
-
-	local function var_29_7()
-		pg = var_2_10000
-
-		local var_30_0 = var_2_10000.NewStoryMgr.GetInstance()
-
-		var_0.Play(var_30_0, var_29_4, function()
-			local var_31_0 = arg_29_0.sceneParent
-
-			var_0.RefreshMapBG(var_31_0)
-
-			local var_31_1 = arg_29_0
-
-			var_0.UpdateMapItems(var_31_1)
+	onButton(arg_29_0, arg_29_1, function()
+		pg.NewStoryMgr.GetInstance():Play(var_29_3, function()
+			arg_29_0.sceneParent:RefreshMapBG()
+			arg_29_0:UpdateMapItems()
 
 			return
 		end)
 
 		return
-	end
-
-	SFX_PANEL = var_12
-
-	var_7(var_29_5, var_29_6, var_29_7, var_12)
-
-	setActive = var_7
-
-	local var_29_8 = arg_29_1
-
-	pg = var_29_6
-
-	local var_29_9 = var_29_6.NewStoryMgr.GetInstance()
-
-	var_7(var_29_8, not var_10.IsPlayed(var_29_9, var_29_4))
+	end, SFX_PANEL)
+	setActive(arg_29_1, not pg.NewStoryMgr.GetInstance():IsPlayed((arg_29_2:GetStoryName())))
 
 	return
 end
 
-function var_0_1.HideFloat(arg_32_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_32_0.itemHolder, false)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_32_0.storyHolder, false)
+function var_0_0.HideFloat(arg_32_0)
+	setActive(arg_32_0.itemHolder, false)
+	setActive(arg_32_0.storyHolder, false)
 
 	return
 end
 
-function var_0_1.ShowFloat(arg_33_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_33_0.itemHolder, true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_33_0.storyHolder, true)
+function var_0_0.ShowFloat(arg_33_0)
+	setActive(arg_33_0.itemHolder, true)
+	setActive(arg_33_0.storyHolder, true)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,102 +1,44 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldBossInformationMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "WorldBossInformationMediator"
+var_0_0.RETREAT_FLEET = "WorldBossInformationMediator:RETREAT_FLEET"
+var_0_0.OnOpenSublayer = "WorldBossInformationMediator:OpenSublayer"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.RETREAT_FLEET = "WorldBossInformationMediator:RETREAT_FLEET"
-var_0_1.OnOpenSublayer = "WorldBossInformationMediator:OpenSublayer"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.RETREAT_FLEET, function()
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_2_1(var_2_0, var_2_10003.WORLD_RETREAT_FLEET)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.RETREAT_FLEET, function()
+		arg_1_0:sendNotification(GAME.WORLD_RETREAT_FLEET)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OnOpenSublayer, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-		local var_3_0 = arg_1_0
-
-		var_4.addSubLayers(var_3_0, arg_3_1, arg_3_2, arg_3_3)
+	arg_1_0:bind(var_0_0.OnOpenSublayer, function(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+		arg_1_0:addSubLayers(arg_3_1, arg_3_2, arg_3_3)
 
 		return
 	end)
-
-	local var_1_0 = arg_1_0.viewComponent
-	local var_1_1 = var_1.setPlayerInfo
-
-	getProxy = var_4
-	PlayerProxy = var_1_10006
-
-	local var_1_2 = var_4(var_1_10006)
-
-	var_1_1(var_1_0, var_4.getRawData(var_1_2))
+	arg_1_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_4_0)
-	local var_4_0 = {}
-
-	PlayerProxy = var_1_10002
-	var_4_0[1] = var_1_10002.UPDATED
-	GAME = var_2
-	var_4_0[2] = var_2.WORLD_MAP_OP_DONE
-	GAME = var_2
-	var_4_0[3] = var_2.BEGIN_STAGE_DONE
-
-	return var_4_0
+function var_0_0.listNotificationInterests(arg_4_0)
+	return {
+		PlayerProxy.UPDATED,
+		GAME.WORLD_MAP_OP_DONE,
+		GAME.BEGIN_STAGE_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1
-	local var_5_1 = arg_5_1.getName(var_5_0)
-	local var_5_2 = arg_5_1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getName()
 
-	PlayerProxy = var_5_0
-
-	local var_5_4
-
-	if var_5_1 == var_5_0.UPDATED then
-		local var_5_3 = arg_5_0.viewComponent
-
-		var_5_4 = var_5_4.setPlayerInfo
-		getProxy = var_1_10007
-		PlayerProxy = var_1_10009
-
-		local var_5_5 = var_1_10007(var_1_10009)
-
-		var_5_4(var_5_3, var_1_10007.getRawData(var_5_5))
-	else
-		GAME = var_5_4
-
-		if var_5_1 == var_5_4.WORLD_MAP_OP_DONE then
-			-- block empty
-		else
-			GAME = var_4
-
-			if var_5_1 == var_4.BEGIN_STAGE_DONE then
-				local var_5_6 = arg_5_0
-				local var_5_7 = arg_5_0.sendNotification
-
-				GAME = var_1_10007
-
-				local var_5_8 = var_1_10007.GO_SCENE
-
-				SCENE = var_1_10008
-
-				var_5_7(var_5_6, var_5_8, var_1_10008.COMBATLOAD, var_5_2)
-			end
-		end
+	if var_5_0 == PlayerProxy.UPDATED then
+		arg_5_0.viewComponent:setPlayerInfo(getProxy(PlayerProxy):getRawData())
+	elseif var_5_0 == GAME.WORLD_MAP_OP_DONE then
+		-- block empty
+	elseif var_5_0 == GAME.BEGIN_STAGE_DONE then
+		arg_5_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, (arg_5_1:getBody()))
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,58 +1,24 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("StopTechnologyCommand", pm.SimpleCommand)
 
-local var_0_0 = "StopTechnologyCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(TechnologyProxy)
+	local var_1_2 = getProxy(TechnologyProxy):getTechnologyById(var_1_0.id)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.pool_id
-
-	getProxy = var_1_10005
-	TechnologyProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.getTechnologyById(var_1_2, var_1_0) or not var_6:isActivate() or var_6:isCompleted() then
+	if not var_1_2 or not var_1_2:isActivate() or var_1_2:isCompleted() then
 		return
 	end
 
-	pg = var_1_10007
-
-	local var_1_3 = var_1_10007.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_3, 29, {
-		tech_id = var_1_0,
-		refresh_id = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(29, {
+		tech_id = var_1_0.id,
+		refresh_id = var_1_0.pool_id
 	}, 30, function(arg_2_0)
-		local var_2_3
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_3.reset(var_2_0)
-
-			local var_2_1 = var_0
-
-			var_2_3.updateTechnology(var_2_1, var_0)
-
-			local var_2_2 = arg_1_0
-
-			var_2_3 = var_2_3.sendNotification
-			GAME = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004.STOP_TECHNOLOGY_DONE)
+			var_1_2:reset()
+			var_1_1:updateTechnology(var_1_2)
+			arg_1_0:sendNotification(GAME.STOP_TECHNOLOGY_DONE)
 		else
-			pg = var_2_3
-
-			local var_2_4 = var_2_3.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004("blueprint_stop_erro") .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("blueprint_stop_erro") .. arg_2_0.result)
 		end
 
 		return
@@ -61,4 +27,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

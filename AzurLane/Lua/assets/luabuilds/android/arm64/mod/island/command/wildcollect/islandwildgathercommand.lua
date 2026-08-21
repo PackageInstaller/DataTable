@@ -1,74 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandWildGatherCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandWildGatherCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_9000
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(IslandProxy)
+	local var_1_2 = var_1_1.GetIsland(var_1_9000)
+	local var_1_3 = var_1_0.unitId
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().island_id
-	local var_1_1 = var_2.gather_id
-
-	getProxy = var_1_10005
-	IslandProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-	local var_1_3 = var_5.GetIsland(var_1_2)
-	local var_1_4 = var_2.unitId
-
-	pg = var_1_2
-
-	local var_1_5 = var_1_2.ConnectionMgr.GetInstance()
-
-	var_7.Send(var_1_5, 21524, {
-		island_id = var_1_0,
-		gather_id = var_1_1
+	pg.ConnectionMgr.GetInstance().Send(var_1_1, 21524, {
+		island_id = var_1_0.island_id,
+		gather_id = var_1_0.gather_id
 	}, 21525, function(arg_2_0)
-		local var_2_1
-
 		if arg_2_0.result == 0 then
-			pg = var_2_1
-
-			local var_2_0 = var_2_1.GameTrackerMgr.GetInstance()
-
-			var_2_1 = var_2_1.Record
-			GameTrackerBuilder = var_2_10004
-
-			var_2_1(var_2_0, var_2_10004.BuildIslandWildGather(var_1_4))
-
-			IslandDropHelper = var_2_1
-			var_2_1 = var_2_1.AddItems({
-				drop_list = arg_2_0.drop_list
+			pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandWildGather(var_1_3))
+			arg_1_0:sendNotification(GAME.ISLAND_DROPMAIN_AWARD, {
+				dropData = IslandDropHelper.AddItems({
+					drop_list = arg_2_0.drop_list
+				})
 			})
-			var_2_10004 = arg_1_0
-
-			local var_2_2 = var_2.sendNotification
-
-			GAME = var_2_10005
-
-			var_2_2(var_2_10004, var_2_10005.ISLAND_DROPMAIN_AWARD, {
-				dropData = var_2_1
-			})
-
-			var_2_10004 = var_1_3
-
-			local var_2_3 = var_2.DispatchEvent
-
-			IslandGatherCollectAgency = var_5
-
-			var_2_3(var_2_10004, var_5.RemoveGatherUnit, {
-				unitId = var_1_4
+			var_1_2:DispatchEvent(IslandGatherCollectAgency.RemoveGatherUnit, {
+				unitId = var_1_3
 			})
 		else
-			pg = var_2_1
-
-			local var_2_4 = var_2_1.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -77,4 +31,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

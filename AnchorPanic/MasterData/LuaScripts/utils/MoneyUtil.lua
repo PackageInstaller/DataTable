@@ -45,9 +45,16 @@ MoneyType = {
     --联盟币
     GUILD_TYPE = 30,
 
+    --开心农场货币
+    HappyFarm_TYPE = 33,
+
+    --联盟团战货币
+    GUILDWAR_TYPE = 35,
     ------------------------------非货币类，但需要在货币栏上显示使用
     -- 碎片货币
     PAY_FRAGMENTS_TYPE_TYPE = 1500,
+    -- dna心智体货币
+    DNA_TYPE = 2070,
     -- 基因参数
     COVENANT_GENE_POINT_TYPE = 20050,
     ------------------------------特殊------------------------------
@@ -107,6 +114,17 @@ MoneyTid = {
     GUILD_TID = 30,
     --新无限城
     DOUNDLESS_TID = 31,
+
+
+    --开心农场货币
+    HAPPYFARM_TID = 33,
+    --联盟团战货币
+    GUILDWAR_TID = 35,
+    --联盟团战巅峰货币
+    GUILDWARTOP_TID = 36,
+
+    --异象残镜货币
+    VISION_MIRROR_TID = 37,
     ------------------------------非货币类，但需要在货币栏上显示使用
     -- 碎片货币
     PAY_FRAGMENTS_TYPE_TID = 1500,
@@ -124,6 +142,8 @@ MoneyTid = {
     RECRUIT_ACT_BRACELETS_TICKET_TID = 2052,
     -- 限定研发
     RECRUIT_BRACELETS_CONVERT_TID = 2060,
+    -- dna心智体货币
+    DNA_TID = 2070,
     -- 竞技场挑战券
     ARENA_CHALLENGE_TICKET_TID = 2150,
     -- 基因参数
@@ -144,6 +164,7 @@ MoneyTid = {
     ITEM_2174 = 2174,
     ITEM_2175 = 2175,
     ITEM_2176 = 2176,
+    ITEM_2177 = 2177,
 
     ITEM_2061 = 2061,
 
@@ -153,11 +174,20 @@ MoneyTid = {
     --钛石
     TITANITE_TID = 2801,
 
-    ------------------------------限时货币  限时活动的货币
-    -- 活动玩法货币 限时
+    --新年抽奖道具
+    ROUNDPRIZE_PROPS = 2071,
+
+    ROUNDPRIZE_PROPS_TWO = 2073,
+
+    --刮刮乐
+    LOTTERY = 2081,
+
     ACTIVITY_COIN_TID = 28,
 
-
+    --模组锁定
+    EQUIP_LOCK_TID = 2064,
+    --模组重构
+    EQUIP_EMPOWER_TID = 2065,
 }
 
 -- 联盟科技耗材道具列表
@@ -168,6 +198,7 @@ MoneyTid.GUILD_SKILL_ITEM_LIST = {
     MoneyTid.ITEM_2174,
     MoneyTid.ITEM_2175,
     MoneyTid.ITEM_2176,
+    MoneyTid.ITEM_2177,
 }
 
 -- 道具相关的配置进列表，通过背包更新货币栏检测
@@ -187,7 +218,15 @@ PROPS_MONEY_TID_LIST = {
     MoneyTid.MODULE_MEMBER_TYPE_TID,
     MoneyTid.ITEM_2061,
     MoneyTid.PVP_HELL_TID,
-    MoneyTid.DISASTER_TID
+    MoneyTid.DISASTER_TID,
+    MoneyTid.ROUNDPRIZE_PROPS,
+    MoneyTid.ROUNDPRIZE_PROPS_TWO,
+    MoneyTid.GUILDWAR_TID,
+    MoneyTid.GUILDWARTOP_TID,
+    MoneyTid.DNA_TID,
+    MoneyTid.LOTTERY,
+    MoneyTid.EQUIP_LOCK_TID,
+    MoneyTid.EQUIP_EMPOWER_TID
 }
 
 MoneyUtil = {}
@@ -275,6 +314,14 @@ function MoneyUtil.getMoneyCountByTid(moneyTid)
         count = playerVo:getDoundlessCoin()
     elseif (moneyTid == MoneyTid.GUILD_FUND_TID) then
         count = guild.GuildManager:getGuildCoin()
+    elseif (moneyTid == MoneyTid.HAPPYFARM_TID) then
+        count = playerVo:getHappyFarmMoney()
+    elseif (moneyTid == MoneyTid.GUILDWAR_TID) then
+        count = playerVo:getGuildWarCoin()
+    elseif (moneyTid == MoneyTid.GUILDWARTOP_TID) then
+        count = playerVo:getGuildWarTopCoin()
+    elseif (moneyTid == MoneyTid.VISION_MIRROR_TID) then
+        count = playerVo:getVisionMirrorCoin()
     else
         count = bag.BagManager:getPropsCountByTid(moneyTid)
     end
@@ -352,14 +399,14 @@ function MoneyUtil.judgeNeedMoneyCountByTidTips(moneyTid, count, shopVo, callBac
             end
         else
             UIFactory:alertMessge(_TT(66), true, function()
-                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Purchase })
+                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Purchase})
                 if endCall then
                     endCall()
                 end
             end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil
-            )
-        end
-    end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
+        )
+    end
+end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
 end
 
 -- 根据金钱类型和需要数量，判断是否足够的提示
@@ -388,6 +435,17 @@ function MoneyUtil.shortValueStr(cusValue, cusType)
         return k_value .. "万"
     end
     return cusValue
+end
+
+function MoneyUtil.setCostIconAndNum(id, needNum, ariImage, textCpt, isNoColorChange, enoughColor, notEnoughtColor)
+    enoughColor = enoughColor or "FFFFFFFF"
+    notEnoughtColor = notEnoughtColor or "DE1E1EFF"
+    ariImage:SetImg(UrlManager:getPropsIconUrl(id), false)
+    local ownNum = MoneyUtil.getMoneyCountByTid(id)
+    textCpt.text = needNum
+    if not isNoColorChange then
+        textCpt.color = gs.ColorUtil.GetColor(ownNum >= needNum and enoughColor or notEnoughtColor)
+    end
 end
 
 return MoneyUtil

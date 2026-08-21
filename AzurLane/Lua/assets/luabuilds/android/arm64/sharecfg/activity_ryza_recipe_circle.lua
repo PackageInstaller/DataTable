@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ryza_recipe_circle") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ryza_recipe_circle"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ryza_recipe_circle = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ryza_recipe_circle
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ryza_recipe_circle = rawget(pg, "activity_ryza_recipe_circle") or setmetatable({
+	__name = "activity_ryza_recipe_circle"
+}, confNEO)
+pg.activity_ryza_recipe_circle.all = {
 	1,
 	2,
 	10,
@@ -629,25 +606,11 @@ var_0_3.all = {
 	10242,
 	10243
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_ryza_recipe_circle = {}
+pg.base = pg.base or {}
+pg.base.activity_ryza_recipe_circle = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_1_0[1] = {
+	pg.base.activity_ryza_recipe_circle[1] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -658,11 +621,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ryza_recipe_circle
-
-	var_1_1[2] = {
+	pg.base.activity_ryza_recipe_circle[2] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -673,11 +632,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ryza_recipe_circle
-
-	var_1_2[10] = {
+	pg.base.activity_ryza_recipe_circle[10] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -701,11 +656,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ryza_recipe_circle
-
-	var_1_3[11] = {
+	pg.base.activity_ryza_recipe_circle[11] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -721,11 +672,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ryza_recipe_circle
-
-	var_1_4[12] = {
+	pg.base.activity_ryza_recipe_circle[12] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -741,11 +688,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ryza_recipe_circle
-
-	var_1_5[13] = {
+	pg.base.activity_ryza_recipe_circle[13] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -761,11 +704,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ryza_recipe_circle
-
-	var_1_6[14] = {
+	pg.base.activity_ryza_recipe_circle[14] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -781,11 +720,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ryza_recipe_circle
-
-	var_1_7[15] = {
+	pg.base.activity_ryza_recipe_circle[15] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -801,11 +736,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ryza_recipe_circle
-
-	var_1_8[16] = {
+	pg.base.activity_ryza_recipe_circle[16] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -821,11 +752,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ryza_recipe_circle
-
-	var_1_9[17] = {
+	pg.base.activity_ryza_recipe_circle[17] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -836,11 +763,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ryza_recipe_circle
-
-	var_1_10[18] = {
+	pg.base.activity_ryza_recipe_circle[18] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -851,11 +774,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ryza_recipe_circle
-
-	var_1_11[19] = {
+	pg.base.activity_ryza_recipe_circle[19] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -866,11 +785,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ryza_recipe_circle
-
-	var_1_12[20] = {
+	pg.base.activity_ryza_recipe_circle[20] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -894,11 +809,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ryza_recipe_circle
-
-	var_1_13[21] = {
+	pg.base.activity_ryza_recipe_circle[21] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -914,11 +825,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ryza_recipe_circle
-
-	var_1_14[22] = {
+	pg.base.activity_ryza_recipe_circle[22] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -934,11 +841,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ryza_recipe_circle
-
-	var_1_15[23] = {
+	pg.base.activity_ryza_recipe_circle[23] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -954,11 +857,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ryza_recipe_circle
-
-	var_1_16[24] = {
+	pg.base.activity_ryza_recipe_circle[24] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -974,11 +873,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ryza_recipe_circle
-
-	var_1_17[25] = {
+	pg.base.activity_ryza_recipe_circle[25] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -994,11 +889,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ryza_recipe_circle
-
-	var_1_18[26] = {
+	pg.base.activity_ryza_recipe_circle[26] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1009,11 +900,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ryza_recipe_circle
-
-	var_1_19[27] = {
+	pg.base.activity_ryza_recipe_circle[27] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1029,11 +916,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ryza_recipe_circle
-
-	var_1_20[28] = {
+	pg.base.activity_ryza_recipe_circle[28] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1044,11 +927,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ryza_recipe_circle
-
-	var_1_21[29] = {
+	pg.base.activity_ryza_recipe_circle[29] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1064,11 +943,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ryza_recipe_circle
-
-	var_1_22[30] = {
+	pg.base.activity_ryza_recipe_circle[30] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1088,11 +963,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ryza_recipe_circle
-
-	var_1_23[31] = {
+	pg.base.activity_ryza_recipe_circle[31] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1108,11 +979,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ryza_recipe_circle
-
-	var_1_24[32] = {
+	pg.base.activity_ryza_recipe_circle[32] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1128,11 +995,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ryza_recipe_circle
-
-	var_1_25[33] = {
+	pg.base.activity_ryza_recipe_circle[33] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1148,11 +1011,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ryza_recipe_circle
-
-	var_1_26[34] = {
+	pg.base.activity_ryza_recipe_circle[34] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1168,11 +1027,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ryza_recipe_circle
-
-	var_1_27[35] = {
+	pg.base.activity_ryza_recipe_circle[35] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1183,11 +1038,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ryza_recipe_circle
-
-	var_1_28[36] = {
+	pg.base.activity_ryza_recipe_circle[36] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1203,11 +1054,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ryza_recipe_circle
-
-	var_1_29[37] = {
+	pg.base.activity_ryza_recipe_circle[37] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1227,11 +1074,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ryza_recipe_circle
-
-	var_1_30[38] = {
+	pg.base.activity_ryza_recipe_circle[38] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1242,11 +1085,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ryza_recipe_circle
-
-	var_1_31[39] = {
+	pg.base.activity_ryza_recipe_circle[39] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1262,11 +1101,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ryza_recipe_circle
-
-	var_1_32[40] = {
+	pg.base.activity_ryza_recipe_circle[40] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1286,11 +1121,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ryza_recipe_circle
-
-	var_1_33[41] = {
+	pg.base.activity_ryza_recipe_circle[41] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1306,11 +1137,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ryza_recipe_circle
-
-	var_1_34[42] = {
+	pg.base.activity_ryza_recipe_circle[42] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1326,11 +1153,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ryza_recipe_circle
-
-	var_1_35[43] = {
+	pg.base.activity_ryza_recipe_circle[43] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1346,11 +1169,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ryza_recipe_circle
-
-	var_1_36[44] = {
+	pg.base.activity_ryza_recipe_circle[44] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1366,11 +1185,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ryza_recipe_circle
-
-	var_1_37[45] = {
+	pg.base.activity_ryza_recipe_circle[45] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1386,11 +1201,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ryza_recipe_circle
-
-	var_1_38[46] = {
+	pg.base.activity_ryza_recipe_circle[46] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1406,11 +1217,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ryza_recipe_circle
-
-	var_1_39[47] = {
+	pg.base.activity_ryza_recipe_circle[47] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1426,11 +1233,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ryza_recipe_circle
-
-	var_1_40[48] = {
+	pg.base.activity_ryza_recipe_circle[48] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1446,11 +1249,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ryza_recipe_circle
-
-	var_1_41[49] = {
+	pg.base.activity_ryza_recipe_circle[49] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1461,11 +1260,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ryza_recipe_circle
-
-	var_1_42[50] = {
+	pg.base.activity_ryza_recipe_circle[50] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1481,11 +1276,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ryza_recipe_circle
-
-	var_1_43[51] = {
+	pg.base.activity_ryza_recipe_circle[51] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1496,11 +1287,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ryza_recipe_circle
-
-	var_1_44[60] = {
+	pg.base.activity_ryza_recipe_circle[60] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1520,11 +1307,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ryza_recipe_circle
-
-	var_1_45[61] = {
+	pg.base.activity_ryza_recipe_circle[61] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1535,11 +1318,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ryza_recipe_circle
-
-	var_1_46[62] = {
+	pg.base.activity_ryza_recipe_circle[62] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -1555,11 +1334,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ryza_recipe_circle
-
-	var_1_47[63] = {
+	pg.base.activity_ryza_recipe_circle[63] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -1583,11 +1358,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ryza_recipe_circle
-
-	var_1_48[64] = {
+	pg.base.activity_ryza_recipe_circle[64] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -1598,11 +1369,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ryza_recipe_circle
-
-	var_1_49[65] = {
+	pg.base.activity_ryza_recipe_circle[65] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -1613,11 +1380,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ryza_recipe_circle
-
-	var_1_50[66] = {
+	pg.base.activity_ryza_recipe_circle[66] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1633,11 +1396,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ryza_recipe_circle
-
-	var_1_51[67] = {
+	pg.base.activity_ryza_recipe_circle[67] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1648,11 +1407,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ryza_recipe_circle
-
-	var_1_52[100] = {
+	pg.base.activity_ryza_recipe_circle[100] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1676,11 +1431,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ryza_recipe_circle
-
-	var_1_53[101] = {
+	pg.base.activity_ryza_recipe_circle[101] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1696,11 +1447,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ryza_recipe_circle
-
-	var_1_54[102] = {
+	pg.base.activity_ryza_recipe_circle[102] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1716,11 +1463,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ryza_recipe_circle
-
-	var_1_55[103] = {
+	pg.base.activity_ryza_recipe_circle[103] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1736,11 +1479,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ryza_recipe_circle
-
-	var_1_56[104] = {
+	pg.base.activity_ryza_recipe_circle[104] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1751,11 +1490,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ryza_recipe_circle
-
-	var_1_57[105] = {
+	pg.base.activity_ryza_recipe_circle[105] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1771,11 +1506,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ryza_recipe_circle
-
-	var_1_58[106] = {
+	pg.base.activity_ryza_recipe_circle[106] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1786,11 +1517,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ryza_recipe_circle
-
-	var_1_59[107] = {
+	pg.base.activity_ryza_recipe_circle[107] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1806,11 +1533,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ryza_recipe_circle
-
-	var_1_60[108] = {
+	pg.base.activity_ryza_recipe_circle[108] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1830,11 +1553,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ryza_recipe_circle
-
-	var_1_61[109] = {
+	pg.base.activity_ryza_recipe_circle[109] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1845,11 +1564,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ryza_recipe_circle
-
-	var_1_62[110] = {
+	pg.base.activity_ryza_recipe_circle[110] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1860,11 +1575,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ryza_recipe_circle
-
-	var_1_63[200] = {
+	pg.base.activity_ryza_recipe_circle[200] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1875,11 +1586,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ryza_recipe_circle
-
-	var_1_64[201] = {
+	pg.base.activity_ryza_recipe_circle[201] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1895,11 +1602,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ryza_recipe_circle
-
-	var_1_65[202] = {
+	pg.base.activity_ryza_recipe_circle[202] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -1927,11 +1630,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ryza_recipe_circle
-
-	var_1_66[203] = {
+	pg.base.activity_ryza_recipe_circle[203] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1947,11 +1646,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ryza_recipe_circle
-
-	var_1_67[204] = {
+	pg.base.activity_ryza_recipe_circle[204] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1967,11 +1662,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ryza_recipe_circle
-
-	var_1_68[205] = {
+	pg.base.activity_ryza_recipe_circle[205] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -1987,11 +1678,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ryza_recipe_circle
-
-	var_1_69[206] = {
+	pg.base.activity_ryza_recipe_circle[206] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2002,11 +1689,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ryza_recipe_circle
-
-	var_1_70[207] = {
+	pg.base.activity_ryza_recipe_circle[207] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2022,11 +1705,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ryza_recipe_circle
-
-	var_1_71[208] = {
+	pg.base.activity_ryza_recipe_circle[208] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2037,11 +1716,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ryza_recipe_circle
-
-	var_1_72[209] = {
+	pg.base.activity_ryza_recipe_circle[209] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2057,11 +1732,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ryza_recipe_circle
-
-	var_1_73[210] = {
+	pg.base.activity_ryza_recipe_circle[210] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2072,11 +1743,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ryza_recipe_circle
-
-	var_1_74[300] = {
+	pg.base.activity_ryza_recipe_circle[300] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2096,11 +1763,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ryza_recipe_circle
-
-	var_1_75[301] = {
+	pg.base.activity_ryza_recipe_circle[301] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2111,11 +1774,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ryza_recipe_circle
-
-	var_1_76[302] = {
+	pg.base.activity_ryza_recipe_circle[302] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2131,11 +1790,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ryza_recipe_circle
-
-	var_1_77[303] = {
+	pg.base.activity_ryza_recipe_circle[303] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2151,11 +1806,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ryza_recipe_circle
-
-	var_1_78[304] = {
+	pg.base.activity_ryza_recipe_circle[304] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2171,11 +1822,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ryza_recipe_circle
-
-	var_1_79[305] = {
+	pg.base.activity_ryza_recipe_circle[305] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2195,11 +1842,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ryza_recipe_circle
-
-	var_1_80[306] = {
+	pg.base.activity_ryza_recipe_circle[306] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2215,11 +1858,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ryza_recipe_circle
-
-	var_1_81[307] = {
+	pg.base.activity_ryza_recipe_circle[307] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2235,11 +1874,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ryza_recipe_circle
-
-	var_1_82[308] = {
+	pg.base.activity_ryza_recipe_circle[308] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2255,11 +1890,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ryza_recipe_circle
-
-	var_1_83[309] = {
+	pg.base.activity_ryza_recipe_circle[309] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2270,11 +1901,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ryza_recipe_circle
-
-	var_1_84[310] = {
+	pg.base.activity_ryza_recipe_circle[310] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2290,11 +1917,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ryza_recipe_circle
-
-	var_1_85[311] = {
+	pg.base.activity_ryza_recipe_circle[311] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2305,11 +1928,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ryza_recipe_circle
-
-	var_1_86[400] = {
+	pg.base.activity_ryza_recipe_circle[400] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2329,11 +1948,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ryza_recipe_circle
-
-	var_1_87[401] = {
+	pg.base.activity_ryza_recipe_circle[401] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2349,11 +1964,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ryza_recipe_circle
-
-	var_1_88[402] = {
+	pg.base.activity_ryza_recipe_circle[402] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2369,11 +1980,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ryza_recipe_circle
-
-	var_1_89[403] = {
+	pg.base.activity_ryza_recipe_circle[403] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2389,11 +1996,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ryza_recipe_circle
-
-	var_1_90[404] = {
+	pg.base.activity_ryza_recipe_circle[404] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2413,11 +2016,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ryza_recipe_circle
-
-	var_1_91[405] = {
+	pg.base.activity_ryza_recipe_circle[405] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2433,11 +2032,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_ryza_recipe_circle
-
-	var_1_92[406] = {
+	pg.base.activity_ryza_recipe_circle[406] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2457,11 +2052,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_ryza_recipe_circle
-
-	var_1_93[407] = {
+	pg.base.activity_ryza_recipe_circle[407] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2477,11 +2068,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_ryza_recipe_circle
-
-	var_1_94[408] = {
+	pg.base.activity_ryza_recipe_circle[408] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2501,11 +2088,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_ryza_recipe_circle
-
-	var_1_95[409] = {
+	pg.base.activity_ryza_recipe_circle[409] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2516,11 +2099,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_ryza_recipe_circle
-
-	var_1_96[410] = {
+	pg.base.activity_ryza_recipe_circle[410] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2531,11 +2110,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_ryza_recipe_circle
-
-	var_1_97[411] = {
+	pg.base.activity_ryza_recipe_circle[411] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2546,11 +2121,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_ryza_recipe_circle
-
-	var_1_98[412] = {
+	pg.base.activity_ryza_recipe_circle[412] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2561,8 +2132,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_ryza_recipe_circle[413] = {
+	pg.base.activity_ryza_recipe_circle[413] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2577,11 +2147,7 @@ var_0_3.base.activity_ryza_recipe_circle = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_2_0[500] = {
+	pg.base.activity_ryza_recipe_circle[500] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2601,11 +2167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_ryza_recipe_circle
-
-	var_2_1[501] = {
+	pg.base.activity_ryza_recipe_circle[501] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2621,11 +2183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_ryza_recipe_circle
-
-	var_2_2[502] = {
+	pg.base.activity_ryza_recipe_circle[502] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2641,11 +2199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_ryza_recipe_circle
-
-	var_2_3[503] = {
+	pg.base.activity_ryza_recipe_circle[503] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2661,11 +2215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_ryza_recipe_circle
-
-	var_2_4[504] = {
+	pg.base.activity_ryza_recipe_circle[504] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2689,11 +2239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_ryza_recipe_circle
-
-	var_2_5[505] = {
+	pg.base.activity_ryza_recipe_circle[505] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2704,11 +2250,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_ryza_recipe_circle
-
-	var_2_6[506] = {
+	pg.base.activity_ryza_recipe_circle[506] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2724,11 +2266,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_ryza_recipe_circle
-
-	var_2_7[507] = {
+	pg.base.activity_ryza_recipe_circle[507] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2744,11 +2282,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_ryza_recipe_circle
-
-	var_2_8[508] = {
+	pg.base.activity_ryza_recipe_circle[508] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2759,11 +2293,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_ryza_recipe_circle
-
-	var_2_9[509] = {
+	pg.base.activity_ryza_recipe_circle[509] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2779,11 +2309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_ryza_recipe_circle
-
-	var_2_10[510] = {
+	pg.base.activity_ryza_recipe_circle[510] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2794,11 +2320,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_ryza_recipe_circle
-
-	var_2_11[511] = {
+	pg.base.activity_ryza_recipe_circle[511] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2809,11 +2331,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_ryza_recipe_circle
-
-	var_2_12[600] = {
+	pg.base.activity_ryza_recipe_circle[600] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2829,11 +2347,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_ryza_recipe_circle
-
-	var_2_13[601] = {
+	pg.base.activity_ryza_recipe_circle[601] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -2857,11 +2371,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_ryza_recipe_circle
-
-	var_2_14[602] = {
+	pg.base.activity_ryza_recipe_circle[602] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2877,11 +2387,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_ryza_recipe_circle
-
-	var_2_15[603] = {
+	pg.base.activity_ryza_recipe_circle[603] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2897,11 +2403,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_ryza_recipe_circle
-
-	var_2_16[604] = {
+	pg.base.activity_ryza_recipe_circle[604] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2921,11 +2423,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_ryza_recipe_circle
-
-	var_2_17[605] = {
+	pg.base.activity_ryza_recipe_circle[605] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2941,11 +2439,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_ryza_recipe_circle
-
-	var_2_18[606] = {
+	pg.base.activity_ryza_recipe_circle[606] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2961,11 +2455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_ryza_recipe_circle
-
-	var_2_19[607] = {
+	pg.base.activity_ryza_recipe_circle[607] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -2981,11 +2471,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_ryza_recipe_circle
-
-	var_2_20[608] = {
+	pg.base.activity_ryza_recipe_circle[608] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3001,11 +2487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_ryza_recipe_circle
-
-	var_2_21[609] = {
+	pg.base.activity_ryza_recipe_circle[609] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3016,11 +2498,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_ryza_recipe_circle
-
-	var_2_22[610] = {
+	pg.base.activity_ryza_recipe_circle[610] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3031,11 +2509,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_ryza_recipe_circle
-
-	var_2_23[611] = {
+	pg.base.activity_ryza_recipe_circle[611] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3046,11 +2520,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_ryza_recipe_circle
-
-	var_2_24[612] = {
+	pg.base.activity_ryza_recipe_circle[612] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3066,11 +2536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_ryza_recipe_circle
-
-	var_2_25[613] = {
+	pg.base.activity_ryza_recipe_circle[613] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3081,11 +2547,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_ryza_recipe_circle
-
-	var_2_26[700] = {
+	pg.base.activity_ryza_recipe_circle[700] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3109,11 +2571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_ryza_recipe_circle
-
-	var_2_27[701] = {
+	pg.base.activity_ryza_recipe_circle[701] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3133,11 +2591,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_ryza_recipe_circle
-
-	var_2_28[702] = {
+	pg.base.activity_ryza_recipe_circle[702] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3157,11 +2611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_ryza_recipe_circle
-
-	var_2_29[703] = {
+	pg.base.activity_ryza_recipe_circle[703] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3181,11 +2631,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_ryza_recipe_circle
-
-	var_2_30[704] = {
+	pg.base.activity_ryza_recipe_circle[704] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3201,11 +2647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_ryza_recipe_circle
-
-	var_2_31[705] = {
+	pg.base.activity_ryza_recipe_circle[705] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3221,11 +2663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_ryza_recipe_circle
-
-	var_2_32[706] = {
+	pg.base.activity_ryza_recipe_circle[706] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3241,11 +2679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_ryza_recipe_circle
-
-	var_2_33[707] = {
+	pg.base.activity_ryza_recipe_circle[707] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3261,11 +2695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_ryza_recipe_circle
-
-	var_2_34[708] = {
+	pg.base.activity_ryza_recipe_circle[708] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3276,11 +2706,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_ryza_recipe_circle
-
-	var_2_35[709] = {
+	pg.base.activity_ryza_recipe_circle[709] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3291,11 +2717,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_ryza_recipe_circle
-
-	var_2_36[710] = {
+	pg.base.activity_ryza_recipe_circle[710] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3306,11 +2728,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_ryza_recipe_circle
-
-	var_2_37[711] = {
+	pg.base.activity_ryza_recipe_circle[711] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3326,11 +2744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_ryza_recipe_circle
-
-	var_2_38[712] = {
+	pg.base.activity_ryza_recipe_circle[712] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3341,11 +2755,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_ryza_recipe_circle
-
-	var_2_39[713] = {
+	pg.base.activity_ryza_recipe_circle[713] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3356,11 +2766,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_ryza_recipe_circle
-
-	var_2_40[714] = {
+	pg.base.activity_ryza_recipe_circle[714] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3371,11 +2777,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_ryza_recipe_circle
-
-	var_2_41[800] = {
+	pg.base.activity_ryza_recipe_circle[800] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3395,11 +2797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_ryza_recipe_circle
-
-	var_2_42[801] = {
+	pg.base.activity_ryza_recipe_circle[801] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3410,11 +2808,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_ryza_recipe_circle
-
-	var_2_43[802] = {
+	pg.base.activity_ryza_recipe_circle[802] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3438,11 +2832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_ryza_recipe_circle
-
-	var_2_44[803] = {
+	pg.base.activity_ryza_recipe_circle[803] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3458,11 +2848,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_ryza_recipe_circle
-
-	var_2_45[804] = {
+	pg.base.activity_ryza_recipe_circle[804] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3478,11 +2864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_ryza_recipe_circle
-
-	var_2_46[805] = {
+	pg.base.activity_ryza_recipe_circle[805] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3493,11 +2875,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_ryza_recipe_circle
-
-	var_2_47[806] = {
+	pg.base.activity_ryza_recipe_circle[806] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3517,11 +2895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_ryza_recipe_circle
-
-	var_2_48[807] = {
+	pg.base.activity_ryza_recipe_circle[807] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3537,11 +2911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_ryza_recipe_circle
-
-	var_2_49[808] = {
+	pg.base.activity_ryza_recipe_circle[808] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3552,11 +2922,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_ryza_recipe_circle
-
-	var_2_50[809] = {
+	pg.base.activity_ryza_recipe_circle[809] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3572,11 +2938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_ryza_recipe_circle
-
-	var_2_51[810] = {
+	pg.base.activity_ryza_recipe_circle[810] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3587,11 +2949,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_ryza_recipe_circle
-
-	var_2_52[811] = {
+	pg.base.activity_ryza_recipe_circle[811] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3611,11 +2969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_ryza_recipe_circle
-
-	var_2_53[812] = {
+	pg.base.activity_ryza_recipe_circle[812] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3626,11 +2980,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_ryza_recipe_circle
-
-	var_2_54[813] = {
+	pg.base.activity_ryza_recipe_circle[813] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3646,11 +2996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_ryza_recipe_circle
-
-	var_2_55[814] = {
+	pg.base.activity_ryza_recipe_circle[814] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3661,11 +3007,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_ryza_recipe_circle
-
-	var_2_56[900] = {
+	pg.base.activity_ryza_recipe_circle[900] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3689,11 +3031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_ryza_recipe_circle
-
-	var_2_57[901] = {
+	pg.base.activity_ryza_recipe_circle[901] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3709,11 +3047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_ryza_recipe_circle
-
-	var_2_58[902] = {
+	pg.base.activity_ryza_recipe_circle[902] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3729,11 +3063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_ryza_recipe_circle
-
-	var_2_59[903] = {
+	pg.base.activity_ryza_recipe_circle[903] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3744,11 +3074,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_ryza_recipe_circle
-
-	var_2_60[904] = {
+	pg.base.activity_ryza_recipe_circle[904] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3764,11 +3090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_ryza_recipe_circle
-
-	var_2_61[905] = {
+	pg.base.activity_ryza_recipe_circle[905] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3779,11 +3101,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_ryza_recipe_circle
-
-	var_2_62[906] = {
+	pg.base.activity_ryza_recipe_circle[906] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3799,11 +3117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_ryza_recipe_circle
-
-	var_2_63[907] = {
+	pg.base.activity_ryza_recipe_circle[907] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3823,11 +3137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_ryza_recipe_circle
-
-	var_2_64[908] = {
+	pg.base.activity_ryza_recipe_circle[908] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3847,11 +3157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_ryza_recipe_circle
-
-	var_2_65[909] = {
+	pg.base.activity_ryza_recipe_circle[909] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3862,11 +3168,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_ryza_recipe_circle
-
-	var_2_66[910] = {
+	pg.base.activity_ryza_recipe_circle[910] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3877,11 +3179,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_ryza_recipe_circle
-
-	var_2_67[911] = {
+	pg.base.activity_ryza_recipe_circle[911] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3897,11 +3195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_ryza_recipe_circle
-
-	var_2_68[912] = {
+	pg.base.activity_ryza_recipe_circle[912] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3921,11 +3215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_ryza_recipe_circle
-
-	var_2_69[913] = {
+	pg.base.activity_ryza_recipe_circle[913] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3936,11 +3226,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_ryza_recipe_circle
-
-	var_2_70[914] = {
+	pg.base.activity_ryza_recipe_circle[914] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -3951,11 +3237,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_ryza_recipe_circle
-
-	var_2_71[1000] = {
+	pg.base.activity_ryza_recipe_circle[1000] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3975,11 +3257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_ryza_recipe_circle
-
-	var_2_72[1001] = {
+	pg.base.activity_ryza_recipe_circle[1001] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -3995,11 +3273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_ryza_recipe_circle
-
-	var_2_73[1002] = {
+	pg.base.activity_ryza_recipe_circle[1002] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4015,11 +3289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_ryza_recipe_circle
-
-	var_2_74[1003] = {
+	pg.base.activity_ryza_recipe_circle[1003] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4039,11 +3309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_ryza_recipe_circle
-
-	var_2_75[1004] = {
+	pg.base.activity_ryza_recipe_circle[1004] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4054,11 +3320,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_ryza_recipe_circle
-
-	var_2_76[1005] = {
+	pg.base.activity_ryza_recipe_circle[1005] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4074,11 +3336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_ryza_recipe_circle
-
-	var_2_77[1006] = {
+	pg.base.activity_ryza_recipe_circle[1006] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4089,11 +3347,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_ryza_recipe_circle
-
-	var_2_78[1007] = {
+	pg.base.activity_ryza_recipe_circle[1007] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4109,11 +3363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_ryza_recipe_circle
-
-	var_2_79[1008] = {
+	pg.base.activity_ryza_recipe_circle[1008] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4129,11 +3379,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_ryza_recipe_circle
-
-	var_2_80[1009] = {
+	pg.base.activity_ryza_recipe_circle[1009] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4153,11 +3399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_ryza_recipe_circle
-
-	var_2_81[1010] = {
+	pg.base.activity_ryza_recipe_circle[1010] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4168,11 +3410,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_ryza_recipe_circle
-
-	var_2_82[1011] = {
+	pg.base.activity_ryza_recipe_circle[1011] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4188,11 +3426,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_ryza_recipe_circle
-
-	var_2_83[1012] = {
+	pg.base.activity_ryza_recipe_circle[1012] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4208,11 +3442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_ryza_recipe_circle
-
-	var_2_84[1013] = {
+	pg.base.activity_ryza_recipe_circle[1013] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4223,11 +3453,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_ryza_recipe_circle
-
-	var_2_85[1100] = {
+	pg.base.activity_ryza_recipe_circle[1100] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4247,11 +3473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_ryza_recipe_circle
-
-	var_2_86[1101] = {
+	pg.base.activity_ryza_recipe_circle[1101] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4271,11 +3493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_ryza_recipe_circle
-
-	var_2_87[1102] = {
+	pg.base.activity_ryza_recipe_circle[1102] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4291,11 +3509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_ryza_recipe_circle
-
-	var_2_88[1103] = {
+	pg.base.activity_ryza_recipe_circle[1103] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4311,11 +3525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_ryza_recipe_circle
-
-	var_2_89[1104] = {
+	pg.base.activity_ryza_recipe_circle[1104] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4331,11 +3541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_ryza_recipe_circle
-
-	var_2_90[1105] = {
+	pg.base.activity_ryza_recipe_circle[1105] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4351,11 +3557,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_ryza_recipe_circle
-
-	var_2_91[1106] = {
+	pg.base.activity_ryza_recipe_circle[1106] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4371,11 +3573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_ryza_recipe_circle
-
-	var_2_92[1107] = {
+	pg.base.activity_ryza_recipe_circle[1107] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4386,11 +3584,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_ryza_recipe_circle
-
-	var_2_93[1108] = {
+	pg.base.activity_ryza_recipe_circle[1108] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4406,11 +3600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_ryza_recipe_circle
-
-	var_2_94[1109] = {
+	pg.base.activity_ryza_recipe_circle[1109] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4421,11 +3611,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_ryza_recipe_circle
-
-	var_2_95[1110] = {
+	pg.base.activity_ryza_recipe_circle[1110] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4441,11 +3627,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_ryza_recipe_circle
-
-	var_2_96[1111] = {
+	pg.base.activity_ryza_recipe_circle[1111] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4461,11 +3643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_ryza_recipe_circle
-
-	var_2_97[1112] = {
+	pg.base.activity_ryza_recipe_circle[1112] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4476,11 +3654,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_ryza_recipe_circle
-
-	var_2_98[1113] = {
+	pg.base.activity_ryza_recipe_circle[1113] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4500,8 +3674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.activity_ryza_recipe_circle[1114] = {
+	pg.base.activity_ryza_recipe_circle[1114] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4521,11 +3694,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_3_0[1115] = {
+	pg.base.activity_ryza_recipe_circle[1115] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4536,11 +3705,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_ryza_recipe_circle
-
-	var_3_1[1200] = {
+	pg.base.activity_ryza_recipe_circle[1200] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4564,11 +3729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_ryza_recipe_circle
-
-	var_3_2[1201] = {
+	pg.base.activity_ryza_recipe_circle[1201] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4592,11 +3753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_ryza_recipe_circle
-
-	var_3_3[1202] = {
+	pg.base.activity_ryza_recipe_circle[1202] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4612,11 +3769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_ryza_recipe_circle
-
-	var_3_4[1203] = {
+	pg.base.activity_ryza_recipe_circle[1203] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4632,11 +3785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_ryza_recipe_circle
-
-	var_3_5[1204] = {
+	pg.base.activity_ryza_recipe_circle[1204] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4647,11 +3796,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_ryza_recipe_circle
-
-	var_3_6[1205] = {
+	pg.base.activity_ryza_recipe_circle[1205] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4675,11 +3820,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_ryza_recipe_circle
-
-	var_3_7[1206] = {
+	pg.base.activity_ryza_recipe_circle[1206] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4695,11 +3836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_ryza_recipe_circle
-
-	var_3_8[1207] = {
+	pg.base.activity_ryza_recipe_circle[1207] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4710,11 +3847,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_ryza_recipe_circle
-
-	var_3_9[1208] = {
+	pg.base.activity_ryza_recipe_circle[1208] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4730,11 +3863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_ryza_recipe_circle
-
-	var_3_10[1209] = {
+	pg.base.activity_ryza_recipe_circle[1209] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4750,11 +3879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_ryza_recipe_circle
-
-	var_3_11[1210] = {
+	pg.base.activity_ryza_recipe_circle[1210] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4765,11 +3890,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_ryza_recipe_circle
-
-	var_3_12[1211] = {
+	pg.base.activity_ryza_recipe_circle[1211] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4780,11 +3901,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_ryza_recipe_circle
-
-	var_3_13[1212] = {
+	pg.base.activity_ryza_recipe_circle[1212] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4795,11 +3912,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_ryza_recipe_circle
-
-	var_3_14[1213] = {
+	pg.base.activity_ryza_recipe_circle[1213] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4815,11 +3928,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_ryza_recipe_circle
-
-	var_3_15[1214] = {
+	pg.base.activity_ryza_recipe_circle[1214] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4835,11 +3944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_ryza_recipe_circle
-
-	var_3_16[1215] = {
+	pg.base.activity_ryza_recipe_circle[1215] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4850,11 +3955,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_ryza_recipe_circle
-
-	var_3_17[1216] = {
+	pg.base.activity_ryza_recipe_circle[1216] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4870,11 +3971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_ryza_recipe_circle
-
-	var_3_18[1217] = {
+	pg.base.activity_ryza_recipe_circle[1217] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4890,11 +3987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_ryza_recipe_circle
-
-	var_3_19[1218] = {
+	pg.base.activity_ryza_recipe_circle[1218] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4905,11 +3998,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_ryza_recipe_circle
-
-	var_3_20[1300] = {
+	pg.base.activity_ryza_recipe_circle[1300] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4929,11 +4018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_ryza_recipe_circle
-
-	var_3_21[1301] = {
+	pg.base.activity_ryza_recipe_circle[1301] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -4957,11 +4042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_ryza_recipe_circle
-
-	var_3_22[1302] = {
+	pg.base.activity_ryza_recipe_circle[1302] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4977,11 +4058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_ryza_recipe_circle
-
-	var_3_23[1303] = {
+	pg.base.activity_ryza_recipe_circle[1303] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -4997,11 +4074,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_ryza_recipe_circle
-
-	var_3_24[1304] = {
+	pg.base.activity_ryza_recipe_circle[1304] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5012,11 +4085,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_ryza_recipe_circle
-
-	var_3_25[1305] = {
+	pg.base.activity_ryza_recipe_circle[1305] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -5027,11 +4096,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_ryza_recipe_circle
-
-	var_3_26[1306] = {
+	pg.base.activity_ryza_recipe_circle[1306] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5047,11 +4112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_ryza_recipe_circle
-
-	var_3_27[1307] = {
+	pg.base.activity_ryza_recipe_circle[1307] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5062,11 +4123,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_ryza_recipe_circle
-
-	var_3_28[1308] = {
+	pg.base.activity_ryza_recipe_circle[1308] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5086,11 +4143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_ryza_recipe_circle
-
-	var_3_29[1309] = {
+	pg.base.activity_ryza_recipe_circle[1309] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5110,11 +4163,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_ryza_recipe_circle
-
-	var_3_30[1310] = {
+	pg.base.activity_ryza_recipe_circle[1310] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5130,11 +4179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_ryza_recipe_circle
-
-	var_3_31[1311] = {
+	pg.base.activity_ryza_recipe_circle[1311] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5145,11 +4190,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_ryza_recipe_circle
-
-	var_3_32[1312] = {
+	pg.base.activity_ryza_recipe_circle[1312] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5160,11 +4201,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_ryza_recipe_circle
-
-	var_3_33[1313] = {
+	pg.base.activity_ryza_recipe_circle[1313] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5184,11 +4221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_ryza_recipe_circle
-
-	var_3_34[1314] = {
+	pg.base.activity_ryza_recipe_circle[1314] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5199,11 +4232,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_ryza_recipe_circle
-
-	var_3_35[1315] = {
+	pg.base.activity_ryza_recipe_circle[1315] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5214,11 +4243,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_ryza_recipe_circle
-
-	var_3_36[1400] = {
+	pg.base.activity_ryza_recipe_circle[1400] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -5246,11 +4271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_ryza_recipe_circle
-
-	var_3_37[1401] = {
+	pg.base.activity_ryza_recipe_circle[1401] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -5274,11 +4295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_ryza_recipe_circle
-
-	var_3_38[1402] = {
+	pg.base.activity_ryza_recipe_circle[1402] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5294,11 +4311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_ryza_recipe_circle
-
-	var_3_39[1403] = {
+	pg.base.activity_ryza_recipe_circle[1403] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5314,11 +4327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_ryza_recipe_circle
-
-	var_3_40[1404] = {
+	pg.base.activity_ryza_recipe_circle[1404] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5334,11 +4343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_ryza_recipe_circle
-
-	var_3_41[1405] = {
+	pg.base.activity_ryza_recipe_circle[1405] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5349,11 +4354,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_ryza_recipe_circle
-
-	var_3_42[1406] = {
+	pg.base.activity_ryza_recipe_circle[1406] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5364,11 +4365,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_ryza_recipe_circle
-
-	var_3_43[1407] = {
+	pg.base.activity_ryza_recipe_circle[1407] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5384,11 +4381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_ryza_recipe_circle
-
-	var_3_44[1408] = {
+	pg.base.activity_ryza_recipe_circle[1408] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5404,11 +4397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_ryza_recipe_circle
-
-	var_3_45[1409] = {
+	pg.base.activity_ryza_recipe_circle[1409] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5424,11 +4413,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_ryza_recipe_circle
-
-	var_3_46[1410] = {
+	pg.base.activity_ryza_recipe_circle[1410] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5439,11 +4424,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_ryza_recipe_circle
-
-	var_3_47[1411] = {
+	pg.base.activity_ryza_recipe_circle[1411] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5459,11 +4440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_ryza_recipe_circle
-
-	var_3_48[1412] = {
+	pg.base.activity_ryza_recipe_circle[1412] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5479,11 +4456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_ryza_recipe_circle
-
-	var_3_49[1413] = {
+	pg.base.activity_ryza_recipe_circle[1413] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5494,11 +4467,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_ryza_recipe_circle
-
-	var_3_50[1414] = {
+	pg.base.activity_ryza_recipe_circle[1414] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5514,11 +4483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_ryza_recipe_circle
-
-	var_3_51[1415] = {
+	pg.base.activity_ryza_recipe_circle[1415] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5534,11 +4499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_ryza_recipe_circle
-
-	var_3_52[1416] = {
+	pg.base.activity_ryza_recipe_circle[1416] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5549,11 +4510,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_ryza_recipe_circle
-
-	var_3_53[1417] = {
+	pg.base.activity_ryza_recipe_circle[1417] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5569,11 +4526,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_ryza_recipe_circle
-
-	var_3_54[1418] = {
+	pg.base.activity_ryza_recipe_circle[1418] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5589,11 +4542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_ryza_recipe_circle
-
-	var_3_55[1419] = {
+	pg.base.activity_ryza_recipe_circle[1419] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5613,11 +4562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_ryza_recipe_circle
-
-	var_3_56[1420] = {
+	pg.base.activity_ryza_recipe_circle[1420] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5633,11 +4578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_ryza_recipe_circle
-
-	var_3_57[1421] = {
+	pg.base.activity_ryza_recipe_circle[1421] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5648,11 +4589,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_ryza_recipe_circle
-
-	var_3_58[1422] = {
+	pg.base.activity_ryza_recipe_circle[1422] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5668,11 +4605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_ryza_recipe_circle
-
-	var_3_59[1423] = {
+	pg.base.activity_ryza_recipe_circle[1423] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5683,11 +4616,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_ryza_recipe_circle
-
-	var_3_60[1500] = {
+	pg.base.activity_ryza_recipe_circle[1500] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -5715,11 +4644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_ryza_recipe_circle
-
-	var_3_61[1501] = {
+	pg.base.activity_ryza_recipe_circle[1501] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -5735,11 +4660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_ryza_recipe_circle
-
-	var_3_62[1502] = {
+	pg.base.activity_ryza_recipe_circle[1502] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5755,11 +4676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_ryza_recipe_circle
-
-	var_3_63[1503] = {
+	pg.base.activity_ryza_recipe_circle[1503] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5770,11 +4687,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_ryza_recipe_circle
-
-	var_3_64[1504] = {
+	pg.base.activity_ryza_recipe_circle[1504] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5794,11 +4707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_ryza_recipe_circle
-
-	var_3_65[1505] = {
+	pg.base.activity_ryza_recipe_circle[1505] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5814,11 +4723,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_ryza_recipe_circle
-
-	var_3_66[1506] = {
+	pg.base.activity_ryza_recipe_circle[1506] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5834,11 +4739,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_ryza_recipe_circle
-
-	var_3_67[1507] = {
+	pg.base.activity_ryza_recipe_circle[1507] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5849,11 +4750,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_ryza_recipe_circle
-
-	var_3_68[1508] = {
+	pg.base.activity_ryza_recipe_circle[1508] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5869,11 +4766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_ryza_recipe_circle
-
-	var_3_69[1509] = {
+	pg.base.activity_ryza_recipe_circle[1509] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5889,11 +4782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_ryza_recipe_circle
-
-	var_3_70[1510] = {
+	pg.base.activity_ryza_recipe_circle[1510] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5904,11 +4793,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_ryza_recipe_circle
-
-	var_3_71[1511] = {
+	pg.base.activity_ryza_recipe_circle[1511] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5924,11 +4809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_ryza_recipe_circle
-
-	var_3_72[1512] = {
+	pg.base.activity_ryza_recipe_circle[1512] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5944,11 +4825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_ryza_recipe_circle
-
-	var_3_73[1513] = {
+	pg.base.activity_ryza_recipe_circle[1513] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5964,11 +4841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_ryza_recipe_circle
-
-	var_3_74[1514] = {
+	pg.base.activity_ryza_recipe_circle[1514] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -5984,11 +4857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_ryza_recipe_circle
-
-	var_3_75[1515] = {
+	pg.base.activity_ryza_recipe_circle[1515] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6004,11 +4873,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_ryza_recipe_circle
-
-	var_3_76[1516] = {
+	pg.base.activity_ryza_recipe_circle[1516] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6019,11 +4884,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_ryza_recipe_circle
-
-	var_3_77[1517] = {
+	pg.base.activity_ryza_recipe_circle[1517] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6039,11 +4900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_ryza_recipe_circle
-
-	var_3_78[1518] = {
+	pg.base.activity_ryza_recipe_circle[1518] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6059,11 +4916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_ryza_recipe_circle
-
-	var_3_79[1519] = {
+	pg.base.activity_ryza_recipe_circle[1519] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6079,11 +4932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_ryza_recipe_circle
-
-	var_3_80[1520] = {
+	pg.base.activity_ryza_recipe_circle[1520] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6099,11 +4948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_ryza_recipe_circle
-
-	var_3_81[1521] = {
+	pg.base.activity_ryza_recipe_circle[1521] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6114,11 +4959,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_ryza_recipe_circle
-
-	var_3_82[1600] = {
+	pg.base.activity_ryza_recipe_circle[1600] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -6146,11 +4987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_ryza_recipe_circle
-
-	var_3_83[1601] = {
+	pg.base.activity_ryza_recipe_circle[1601] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6166,11 +5003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_ryza_recipe_circle
-
-	var_3_84[1602] = {
+	pg.base.activity_ryza_recipe_circle[1602] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -6186,11 +5019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_ryza_recipe_circle
-
-	var_3_85[1603] = {
+	pg.base.activity_ryza_recipe_circle[1603] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6201,11 +5030,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_ryza_recipe_circle
-
-	var_3_86[1604] = {
+	pg.base.activity_ryza_recipe_circle[1604] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6216,11 +5041,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_ryza_recipe_circle
-
-	var_3_87[1605] = {
+	pg.base.activity_ryza_recipe_circle[1605] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6240,11 +5061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_ryza_recipe_circle
-
-	var_3_88[1606] = {
+	pg.base.activity_ryza_recipe_circle[1606] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6264,11 +5081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_ryza_recipe_circle
-
-	var_3_89[1607] = {
+	pg.base.activity_ryza_recipe_circle[1607] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6279,11 +5092,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_ryza_recipe_circle
-
-	var_3_90[1608] = {
+	pg.base.activity_ryza_recipe_circle[1608] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6299,11 +5108,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_ryza_recipe_circle
-
-	var_3_91[1609] = {
+	pg.base.activity_ryza_recipe_circle[1609] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6319,11 +5124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_ryza_recipe_circle
-
-	var_3_92[1610] = {
+	pg.base.activity_ryza_recipe_circle[1610] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6334,11 +5135,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_ryza_recipe_circle
-
-	var_3_93[1611] = {
+	pg.base.activity_ryza_recipe_circle[1611] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6354,11 +5151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_ryza_recipe_circle
-
-	var_3_94[1612] = {
+	pg.base.activity_ryza_recipe_circle[1612] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6369,11 +5162,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_ryza_recipe_circle
-
-	var_3_95[1613] = {
+	pg.base.activity_ryza_recipe_circle[1613] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6389,11 +5178,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_ryza_recipe_circle
-
-	var_3_96[1614] = {
+	pg.base.activity_ryza_recipe_circle[1614] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6413,11 +5198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_ryza_recipe_circle
-
-	var_3_97[1615] = {
+	pg.base.activity_ryza_recipe_circle[1615] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6428,11 +5209,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_ryza_recipe_circle
-
-	var_3_98[1616] = {
+	pg.base.activity_ryza_recipe_circle[1616] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6448,8 +5225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.activity_ryza_recipe_circle[1617] = {
+	pg.base.activity_ryza_recipe_circle[1617] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6469,11 +5245,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_4_0[1618] = {
+	pg.base.activity_ryza_recipe_circle[1618] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6489,11 +5261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_ryza_recipe_circle
-
-	var_4_1[1619] = {
+	pg.base.activity_ryza_recipe_circle[1619] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6504,11 +5272,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_ryza_recipe_circle
-
-	var_4_2[1700] = {
+	pg.base.activity_ryza_recipe_circle[1700] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -6532,11 +5296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_ryza_recipe_circle
-
-	var_4_3[1701] = {
+	pg.base.activity_ryza_recipe_circle[1701] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -6547,11 +5307,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_ryza_recipe_circle
-
-	var_4_4[1702] = {
+	pg.base.activity_ryza_recipe_circle[1702] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6567,11 +5323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_ryza_recipe_circle
-
-	var_4_5[1703] = {
+	pg.base.activity_ryza_recipe_circle[1703] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6591,11 +5343,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_ryza_recipe_circle
-
-	var_4_6[1704] = {
+	pg.base.activity_ryza_recipe_circle[1704] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6606,11 +5354,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_ryza_recipe_circle
-
-	var_4_7[1705] = {
+	pg.base.activity_ryza_recipe_circle[1705] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6621,11 +5365,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_ryza_recipe_circle
-
-	var_4_8[1706] = {
+	pg.base.activity_ryza_recipe_circle[1706] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6641,11 +5381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_ryza_recipe_circle
-
-	var_4_9[1707] = {
+	pg.base.activity_ryza_recipe_circle[1707] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6665,11 +5401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_ryza_recipe_circle
-
-	var_4_10[1708] = {
+	pg.base.activity_ryza_recipe_circle[1708] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6680,11 +5412,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_ryza_recipe_circle
-
-	var_4_11[1709] = {
+	pg.base.activity_ryza_recipe_circle[1709] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6695,11 +5423,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_ryza_recipe_circle
-
-	var_4_12[1800] = {
+	pg.base.activity_ryza_recipe_circle[1800] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -6723,11 +5447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_ryza_recipe_circle
-
-	var_4_13[1801] = {
+	pg.base.activity_ryza_recipe_circle[1801] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6743,11 +5463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_ryza_recipe_circle
-
-	var_4_14[1802] = {
+	pg.base.activity_ryza_recipe_circle[1802] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -6763,11 +5479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_ryza_recipe_circle
-
-	var_4_15[1803] = {
+	pg.base.activity_ryza_recipe_circle[1803] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6783,11 +5495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_ryza_recipe_circle
-
-	var_4_16[1804] = {
+	pg.base.activity_ryza_recipe_circle[1804] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6803,11 +5511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_ryza_recipe_circle
-
-	var_4_17[1805] = {
+	pg.base.activity_ryza_recipe_circle[1805] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6818,11 +5522,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_ryza_recipe_circle
-
-	var_4_18[1806] = {
+	pg.base.activity_ryza_recipe_circle[1806] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6838,11 +5538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_ryza_recipe_circle
-
-	var_4_19[1807] = {
+	pg.base.activity_ryza_recipe_circle[1807] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6858,11 +5554,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_ryza_recipe_circle
-
-	var_4_20[1808] = {
+	pg.base.activity_ryza_recipe_circle[1808] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6873,11 +5565,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_ryza_recipe_circle
-
-	var_4_21[1809] = {
+	pg.base.activity_ryza_recipe_circle[1809] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6897,11 +5585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_ryza_recipe_circle
-
-	var_4_22[1810] = {
+	pg.base.activity_ryza_recipe_circle[1810] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6917,11 +5601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_ryza_recipe_circle
-
-	var_4_23[1811] = {
+	pg.base.activity_ryza_recipe_circle[1811] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6937,11 +5617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_ryza_recipe_circle
-
-	var_4_24[1812] = {
+	pg.base.activity_ryza_recipe_circle[1812] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6952,11 +5628,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_ryza_recipe_circle
-
-	var_4_25[1813] = {
+	pg.base.activity_ryza_recipe_circle[1813] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6972,11 +5644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_ryza_recipe_circle
-
-	var_4_26[1814] = {
+	pg.base.activity_ryza_recipe_circle[1814] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -6992,11 +5660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_ryza_recipe_circle
-
-	var_4_27[1815] = {
+	pg.base.activity_ryza_recipe_circle[1815] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7007,11 +5671,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_ryza_recipe_circle
-
-	var_4_28[1900] = {
+	pg.base.activity_ryza_recipe_circle[1900] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -7039,11 +5699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_ryza_recipe_circle
-
-	var_4_29[1901] = {
+	pg.base.activity_ryza_recipe_circle[1901] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7054,11 +5710,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_ryza_recipe_circle
-
-	var_4_30[1902] = {
+	pg.base.activity_ryza_recipe_circle[1902] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7069,11 +5721,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_ryza_recipe_circle
-
-	var_4_31[1903] = {
+	pg.base.activity_ryza_recipe_circle[1903] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7084,11 +5732,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_ryza_recipe_circle
-
-	var_4_32[1904] = {
+	pg.base.activity_ryza_recipe_circle[1904] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7099,11 +5743,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_ryza_recipe_circle
-
-	var_4_33[1905] = {
+	pg.base.activity_ryza_recipe_circle[1905] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7119,11 +5759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_ryza_recipe_circle
-
-	var_4_34[1906] = {
+	pg.base.activity_ryza_recipe_circle[1906] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7134,11 +5770,7 @@ end)()
 		prop_level = 0,
 		circle_connect = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_ryza_recipe_circle
-
-	var_4_35[1907] = {
+	pg.base.activity_ryza_recipe_circle[1907] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7154,11 +5786,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_ryza_recipe_circle
-
-	var_4_36[1908] = {
+	pg.base.activity_ryza_recipe_circle[1908] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7169,11 +5797,7 @@ end)()
 		prop_level = 0,
 		circle_connect = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_ryza_recipe_circle
-
-	var_4_37[1909] = {
+	pg.base.activity_ryza_recipe_circle[1909] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7189,11 +5813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_ryza_recipe_circle
-
-	var_4_38[1910] = {
+	pg.base.activity_ryza_recipe_circle[1910] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7204,11 +5824,7 @@ end)()
 		prop_level = 0,
 		circle_connect = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_ryza_recipe_circle
-
-	var_4_39[1911] = {
+	pg.base.activity_ryza_recipe_circle[1911] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7224,11 +5840,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_ryza_recipe_circle
-
-	var_4_40[1912] = {
+	pg.base.activity_ryza_recipe_circle[1912] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7239,11 +5851,7 @@ end)()
 		prop_level = 0,
 		circle_connect = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_ryza_recipe_circle
-
-	var_4_41[1913] = {
+	pg.base.activity_ryza_recipe_circle[1913] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7259,11 +5867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_ryza_recipe_circle
-
-	var_4_42[1914] = {
+	pg.base.activity_ryza_recipe_circle[1914] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7279,11 +5883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_ryza_recipe_circle
-
-	var_4_43[1915] = {
+	pg.base.activity_ryza_recipe_circle[1915] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7299,11 +5899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_ryza_recipe_circle
-
-	var_4_44[1916] = {
+	pg.base.activity_ryza_recipe_circle[1916] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7319,11 +5915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_ryza_recipe_circle
-
-	var_4_45[1917] = {
+	pg.base.activity_ryza_recipe_circle[1917] = {
 		star_list = "",
 		type = 0,
 		prop_type = 0,
@@ -7334,11 +5926,7 @@ end)()
 		prop_level = 0,
 		circle_connect = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_ryza_recipe_circle
-
-	var_4_46[2000] = {
+	pg.base.activity_ryza_recipe_circle[2000] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -7362,11 +5950,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_ryza_recipe_circle
-
-	var_4_47[2001] = {
+	pg.base.activity_ryza_recipe_circle[2001] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7386,11 +5970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_ryza_recipe_circle
-
-	var_4_48[2002] = {
+	pg.base.activity_ryza_recipe_circle[2002] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7406,11 +5986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_ryza_recipe_circle
-
-	var_4_49[2003] = {
+	pg.base.activity_ryza_recipe_circle[2003] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -7426,11 +6002,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_ryza_recipe_circle
-
-	var_4_50[2004] = {
+	pg.base.activity_ryza_recipe_circle[2004] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7446,11 +6018,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_ryza_recipe_circle
-
-	var_4_51[2005] = {
+	pg.base.activity_ryza_recipe_circle[2005] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7466,11 +6034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_ryza_recipe_circle
-
-	var_4_52[2006] = {
+	pg.base.activity_ryza_recipe_circle[2006] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7486,11 +6050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_ryza_recipe_circle
-
-	var_4_53[2007] = {
+	pg.base.activity_ryza_recipe_circle[2007] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7506,11 +6066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_ryza_recipe_circle
-
-	var_4_54[2008] = {
+	pg.base.activity_ryza_recipe_circle[2008] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7521,11 +6077,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_ryza_recipe_circle
-
-	var_4_55[2009] = {
+	pg.base.activity_ryza_recipe_circle[2009] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7541,11 +6093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_ryza_recipe_circle
-
-	var_4_56[2010] = {
+	pg.base.activity_ryza_recipe_circle[2010] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7556,11 +6104,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_ryza_recipe_circle
-
-	var_4_57[2011] = {
+	pg.base.activity_ryza_recipe_circle[2011] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7576,11 +6120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_ryza_recipe_circle
-
-	var_4_58[2012] = {
+	pg.base.activity_ryza_recipe_circle[2012] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7591,11 +6131,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_ryza_recipe_circle
-
-	var_4_59[2013] = {
+	pg.base.activity_ryza_recipe_circle[2013] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7615,11 +6151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_ryza_recipe_circle
-
-	var_4_60[2014] = {
+	pg.base.activity_ryza_recipe_circle[2014] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7635,11 +6167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_ryza_recipe_circle
-
-	var_4_61[2015] = {
+	pg.base.activity_ryza_recipe_circle[2015] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7650,11 +6178,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_ryza_recipe_circle
-
-	var_4_62[2016] = {
+	pg.base.activity_ryza_recipe_circle[2016] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7670,11 +6194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_ryza_recipe_circle
-
-	var_4_63[2017] = {
+	pg.base.activity_ryza_recipe_circle[2017] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7685,11 +6205,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_ryza_recipe_circle
-
-	var_4_64[2100] = {
+	pg.base.activity_ryza_recipe_circle[2100] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7709,11 +6225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_ryza_recipe_circle
-
-	var_4_65[2101] = {
+	pg.base.activity_ryza_recipe_circle[2101] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7724,11 +6236,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_ryza_recipe_circle
-
-	var_4_66[2102] = {
+	pg.base.activity_ryza_recipe_circle[2102] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7739,11 +6247,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_ryza_recipe_circle
-
-	var_4_67[2200] = {
+	pg.base.activity_ryza_recipe_circle[2200] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -7767,11 +6271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_ryza_recipe_circle
-
-	var_4_68[2201] = {
+	pg.base.activity_ryza_recipe_circle[2201] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7782,11 +6282,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_ryza_recipe_circle
-
-	var_4_69[2202] = {
+	pg.base.activity_ryza_recipe_circle[2202] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7797,11 +6293,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_ryza_recipe_circle
-
-	var_4_70[2203] = {
+	pg.base.activity_ryza_recipe_circle[2203] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7812,11 +6304,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_ryza_recipe_circle
-
-	var_4_71[2300] = {
+	pg.base.activity_ryza_recipe_circle[2300] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -7840,11 +6328,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_ryza_recipe_circle
-
-	var_4_72[2301] = {
+	pg.base.activity_ryza_recipe_circle[2301] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7855,11 +6339,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_ryza_recipe_circle
-
-	var_4_73[2302] = {
+	pg.base.activity_ryza_recipe_circle[2302] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7870,11 +6350,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_ryza_recipe_circle
-
-	var_4_74[2303] = {
+	pg.base.activity_ryza_recipe_circle[2303] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7885,11 +6361,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_ryza_recipe_circle
-
-	var_4_75[2400] = {
+	pg.base.activity_ryza_recipe_circle[2400] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -7913,11 +6385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_ryza_recipe_circle
-
-	var_4_76[2401] = {
+	pg.base.activity_ryza_recipe_circle[2401] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7928,11 +6396,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_ryza_recipe_circle
-
-	var_4_77[2402] = {
+	pg.base.activity_ryza_recipe_circle[2402] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -7943,11 +6407,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_ryza_recipe_circle
-
-	var_4_78[2403] = {
+	pg.base.activity_ryza_recipe_circle[2403] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -7958,11 +6418,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_ryza_recipe_circle
-
-	var_4_79[2500] = {
+	pg.base.activity_ryza_recipe_circle[2500] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -7986,11 +6442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_ryza_recipe_circle
-
-	var_4_80[2501] = {
+	pg.base.activity_ryza_recipe_circle[2501] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8001,11 +6453,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_ryza_recipe_circle
-
-	var_4_81[2502] = {
+	pg.base.activity_ryza_recipe_circle[2502] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8016,11 +6464,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_ryza_recipe_circle
-
-	var_4_82[2503] = {
+	pg.base.activity_ryza_recipe_circle[2503] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8031,11 +6475,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_ryza_recipe_circle
-
-	var_4_83[2600] = {
+	pg.base.activity_ryza_recipe_circle[2600] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8063,11 +6503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_ryza_recipe_circle
-
-	var_4_84[2601] = {
+	pg.base.activity_ryza_recipe_circle[2601] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8078,11 +6514,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_ryza_recipe_circle
-
-	var_4_85[2602] = {
+	pg.base.activity_ryza_recipe_circle[2602] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8093,11 +6525,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_ryza_recipe_circle
-
-	var_4_86[2603] = {
+	pg.base.activity_ryza_recipe_circle[2603] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8108,11 +6536,7 @@ end)()
 		prop_level = 3,
 		circle_connect = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_ryza_recipe_circle
-
-	var_4_87[2604] = {
+	pg.base.activity_ryza_recipe_circle[2604] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8123,11 +6547,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_ryza_recipe_circle
-
-	var_4_88[2700] = {
+	pg.base.activity_ryza_recipe_circle[2700] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8147,11 +6567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_ryza_recipe_circle
-
-	var_4_89[2701] = {
+	pg.base.activity_ryza_recipe_circle[2701] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -8167,11 +6583,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_ryza_recipe_circle
-
-	var_4_90[2702] = {
+	pg.base.activity_ryza_recipe_circle[2702] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8187,11 +6599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_ryza_recipe_circle
-
-	var_4_91[2703] = {
+	pg.base.activity_ryza_recipe_circle[2703] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8207,11 +6615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_ryza_recipe_circle
-
-	var_4_92[2704] = {
+	pg.base.activity_ryza_recipe_circle[2704] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8222,11 +6626,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_ryza_recipe_circle
-
-	var_4_93[2705] = {
+	pg.base.activity_ryza_recipe_circle[2705] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8242,11 +6642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_ryza_recipe_circle
-
-	var_4_94[2706] = {
+	pg.base.activity_ryza_recipe_circle[2706] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8262,11 +6658,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_ryza_recipe_circle
-
-	var_4_95[2707] = {
+	pg.base.activity_ryza_recipe_circle[2707] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8282,11 +6674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_ryza_recipe_circle
-
-	var_4_96[2708] = {
+	pg.base.activity_ryza_recipe_circle[2708] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8297,11 +6685,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_ryza_recipe_circle
-
-	var_4_97[2800] = {
+	pg.base.activity_ryza_recipe_circle[2800] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8321,11 +6705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_ryza_recipe_circle
-
-	var_4_98[2801] = {
+	pg.base.activity_ryza_recipe_circle[2801] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -8341,8 +6721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.activity_ryza_recipe_circle[2802] = {
+	pg.base.activity_ryza_recipe_circle[2802] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8362,11 +6741,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_5_0[2803] = {
+	pg.base.activity_ryza_recipe_circle[2803] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8382,11 +6757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_ryza_recipe_circle
-
-	var_5_1[2804] = {
+	pg.base.activity_ryza_recipe_circle[2804] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8397,11 +6768,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_ryza_recipe_circle
-
-	var_5_2[2805] = {
+	pg.base.activity_ryza_recipe_circle[2805] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8417,11 +6784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_ryza_recipe_circle
-
-	var_5_3[2806] = {
+	pg.base.activity_ryza_recipe_circle[2806] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8437,11 +6800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.activity_ryza_recipe_circle
-
-	var_5_4[2807] = {
+	pg.base.activity_ryza_recipe_circle[2807] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8457,11 +6816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.activity_ryza_recipe_circle
-
-	var_5_5[2808] = {
+	pg.base.activity_ryza_recipe_circle[2808] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8472,11 +6827,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.activity_ryza_recipe_circle
-
-	var_5_6[2900] = {
+	pg.base.activity_ryza_recipe_circle[2900] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8496,11 +6847,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.activity_ryza_recipe_circle
-
-	var_5_7[2901] = {
+	pg.base.activity_ryza_recipe_circle[2901] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -8516,11 +6863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.activity_ryza_recipe_circle
-
-	var_5_8[2902] = {
+	pg.base.activity_ryza_recipe_circle[2902] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8536,11 +6879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.activity_ryza_recipe_circle
-
-	var_5_9[2903] = {
+	pg.base.activity_ryza_recipe_circle[2903] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8556,11 +6895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.activity_ryza_recipe_circle
-
-	var_5_10[2904] = {
+	pg.base.activity_ryza_recipe_circle[2904] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8571,11 +6906,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.activity_ryza_recipe_circle
-
-	var_5_11[2905] = {
+	pg.base.activity_ryza_recipe_circle[2905] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8591,11 +6922,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.activity_ryza_recipe_circle
-
-	var_5_12[2906] = {
+	pg.base.activity_ryza_recipe_circle[2906] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8611,11 +6938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.activity_ryza_recipe_circle
-
-	var_5_13[2907] = {
+	pg.base.activity_ryza_recipe_circle[2907] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8631,11 +6954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.activity_ryza_recipe_circle
-
-	var_5_14[2908] = {
+	pg.base.activity_ryza_recipe_circle[2908] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8646,11 +6965,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.activity_ryza_recipe_circle
-
-	var_5_15[3000] = {
+	pg.base.activity_ryza_recipe_circle[3000] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8670,11 +6985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.activity_ryza_recipe_circle
-
-	var_5_16[3001] = {
+	pg.base.activity_ryza_recipe_circle[3001] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -8690,11 +7001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.activity_ryza_recipe_circle
-
-	var_5_17[3002] = {
+	pg.base.activity_ryza_recipe_circle[3002] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8710,11 +7017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.activity_ryza_recipe_circle
-
-	var_5_18[3003] = {
+	pg.base.activity_ryza_recipe_circle[3003] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8730,11 +7033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.activity_ryza_recipe_circle
-
-	var_5_19[3004] = {
+	pg.base.activity_ryza_recipe_circle[3004] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8745,11 +7044,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.activity_ryza_recipe_circle
-
-	var_5_20[3005] = {
+	pg.base.activity_ryza_recipe_circle[3005] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8765,11 +7060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.activity_ryza_recipe_circle
-
-	var_5_21[3006] = {
+	pg.base.activity_ryza_recipe_circle[3006] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8785,11 +7076,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.activity_ryza_recipe_circle
-
-	var_5_22[3007] = {
+	pg.base.activity_ryza_recipe_circle[3007] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8805,11 +7092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.activity_ryza_recipe_circle
-
-	var_5_23[3008] = {
+	pg.base.activity_ryza_recipe_circle[3008] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8820,11 +7103,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.activity_ryza_recipe_circle
-
-	var_5_24[3100] = {
+	pg.base.activity_ryza_recipe_circle[3100] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8844,11 +7123,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.activity_ryza_recipe_circle
-
-	var_5_25[3101] = {
+	pg.base.activity_ryza_recipe_circle[3101] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -8864,11 +7139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.activity_ryza_recipe_circle
-
-	var_5_26[3102] = {
+	pg.base.activity_ryza_recipe_circle[3102] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8884,11 +7155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.activity_ryza_recipe_circle
-
-	var_5_27[3103] = {
+	pg.base.activity_ryza_recipe_circle[3103] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8904,11 +7171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.activity_ryza_recipe_circle
-
-	var_5_28[3104] = {
+	pg.base.activity_ryza_recipe_circle[3104] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8919,11 +7182,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.activity_ryza_recipe_circle
-
-	var_5_29[3105] = {
+	pg.base.activity_ryza_recipe_circle[3105] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -8939,11 +7198,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.activity_ryza_recipe_circle
-
-	var_5_30[3106] = {
+	pg.base.activity_ryza_recipe_circle[3106] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -8959,11 +7214,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.activity_ryza_recipe_circle
-
-	var_5_31[3107] = {
+	pg.base.activity_ryza_recipe_circle[3107] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8979,11 +7230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.activity_ryza_recipe_circle
-
-	var_5_32[3108] = {
+	pg.base.activity_ryza_recipe_circle[3108] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -8994,11 +7241,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.activity_ryza_recipe_circle
-
-	var_5_33[3200] = {
+	pg.base.activity_ryza_recipe_circle[3200] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -9018,11 +7261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.activity_ryza_recipe_circle
-
-	var_5_34[3201] = {
+	pg.base.activity_ryza_recipe_circle[3201] = {
 		star_list = "",
 		type = 1,
 		prop_type = 0,
@@ -9038,11 +7277,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.activity_ryza_recipe_circle
-
-	var_5_35[3202] = {
+	pg.base.activity_ryza_recipe_circle[3202] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9058,11 +7293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.activity_ryza_recipe_circle
-
-	var_5_36[3203] = {
+	pg.base.activity_ryza_recipe_circle[3203] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9078,11 +7309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.activity_ryza_recipe_circle
-
-	var_5_37[3204] = {
+	pg.base.activity_ryza_recipe_circle[3204] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9093,11 +7320,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.activity_ryza_recipe_circle
-
-	var_5_38[3205] = {
+	pg.base.activity_ryza_recipe_circle[3205] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -9113,11 +7336,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.activity_ryza_recipe_circle
-
-	var_5_39[3206] = {
+	pg.base.activity_ryza_recipe_circle[3206] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9133,11 +7352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.activity_ryza_recipe_circle
-
-	var_5_40[3207] = {
+	pg.base.activity_ryza_recipe_circle[3207] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -9153,11 +7368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.activity_ryza_recipe_circle
-
-	var_5_41[3208] = {
+	pg.base.activity_ryza_recipe_circle[3208] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -9168,11 +7379,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.activity_ryza_recipe_circle
-
-	var_5_42[3300] = {
+	pg.base.activity_ryza_recipe_circle[3300] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -9192,11 +7399,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.activity_ryza_recipe_circle
-
-	var_5_43[3301] = {
+	pg.base.activity_ryza_recipe_circle[3301] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9212,11 +7415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.activity_ryza_recipe_circle
-
-	var_5_44[3302] = {
+	pg.base.activity_ryza_recipe_circle[3302] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9232,11 +7431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.activity_ryza_recipe_circle
-
-	var_5_45[3303] = {
+	pg.base.activity_ryza_recipe_circle[3303] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9252,11 +7447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.activity_ryza_recipe_circle
-
-	var_5_46[3304] = {
+	pg.base.activity_ryza_recipe_circle[3304] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9267,11 +7458,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.activity_ryza_recipe_circle
-
-	var_5_47[3305] = {
+	pg.base.activity_ryza_recipe_circle[3305] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9287,11 +7474,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.activity_ryza_recipe_circle
-
-	var_5_48[3306] = {
+	pg.base.activity_ryza_recipe_circle[3306] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9307,11 +7490,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.activity_ryza_recipe_circle
-
-	var_5_49[3307] = {
+	pg.base.activity_ryza_recipe_circle[3307] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9327,11 +7506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.activity_ryza_recipe_circle
-
-	var_5_50[3308] = {
+	pg.base.activity_ryza_recipe_circle[3308] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9342,11 +7517,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.activity_ryza_recipe_circle
-
-	var_5_51[3400] = {
+	pg.base.activity_ryza_recipe_circle[3400] = {
 		star_list = "",
 		type = 3,
 		prop_type = 0,
@@ -9366,11 +7537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.activity_ryza_recipe_circle
-
-	var_5_52[3401] = {
+	pg.base.activity_ryza_recipe_circle[3401] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9386,11 +7553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.activity_ryza_recipe_circle
-
-	var_5_53[3402] = {
+	pg.base.activity_ryza_recipe_circle[3402] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9406,11 +7569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.activity_ryza_recipe_circle
-
-	var_5_54[3403] = {
+	pg.base.activity_ryza_recipe_circle[3403] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9426,11 +7585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.activity_ryza_recipe_circle
-
-	var_5_55[3404] = {
+	pg.base.activity_ryza_recipe_circle[3404] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9441,11 +7596,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.activity_ryza_recipe_circle
-
-	var_5_56[3405] = {
+	pg.base.activity_ryza_recipe_circle[3405] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9461,11 +7612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.activity_ryza_recipe_circle
-
-	var_5_57[3406] = {
+	pg.base.activity_ryza_recipe_circle[3406] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9481,11 +7628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.activity_ryza_recipe_circle
-
-	var_5_58[3407] = {
+	pg.base.activity_ryza_recipe_circle[3407] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9501,11 +7644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.activity_ryza_recipe_circle
-
-	var_5_59[3408] = {
+	pg.base.activity_ryza_recipe_circle[3408] = {
 		star_list = "",
 		type = 2,
 		prop_type = 0,
@@ -9516,11 +7655,7 @@ end)()
 		prop_level = 2,
 		circle_connect = {}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.activity_ryza_recipe_circle
-
-	var_5_60[3501] = {
+	pg.base.activity_ryza_recipe_circle[3501] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -9540,11 +7675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.activity_ryza_recipe_circle
-
-	var_5_61[3502] = {
+	pg.base.activity_ryza_recipe_circle[3502] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -9555,11 +7686,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.activity_ryza_recipe_circle
-
-	var_5_62[3503] = {
+	pg.base.activity_ryza_recipe_circle[3503] = {
 		star_list = "",
 		type = 4,
 		prop_type = 0,
@@ -9570,11 +7697,7 @@ end)()
 		prop_level = 1,
 		circle_connect = {}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.activity_ryza_recipe_circle
-
-	var_5_63[10001] = {
+	pg.base.activity_ryza_recipe_circle[10001] = {
 		star_list = "",
 		type = 8,
 		prop_type = 0,
@@ -9589,11 +7712,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.activity_ryza_recipe_circle
-
-	var_5_64[10002] = {
+	pg.base.activity_ryza_recipe_circle[10002] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9608,11 +7727,7 @@ end)()
 			132
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.activity_ryza_recipe_circle
-
-	var_5_65[10003] = {
+	pg.base.activity_ryza_recipe_circle[10003] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9627,11 +7742,7 @@ end)()
 			12
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.activity_ryza_recipe_circle
-
-	var_5_66[10004] = {
+	pg.base.activity_ryza_recipe_circle[10004] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9646,11 +7757,7 @@ end)()
 			-235
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.activity_ryza_recipe_circle
-
-	var_5_67[10005] = {
+	pg.base.activity_ryza_recipe_circle[10005] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9665,11 +7772,7 @@ end)()
 			201
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.activity_ryza_recipe_circle
-
-	var_5_68[10006] = {
+	pg.base.activity_ryza_recipe_circle[10006] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9684,11 +7787,7 @@ end)()
 			366
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.activity_ryza_recipe_circle
-
-	var_5_69[10007] = {
+	pg.base.activity_ryza_recipe_circle[10007] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9703,11 +7802,7 @@ end)()
 			-171
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.activity_ryza_recipe_circle
-
-	var_5_70[10011] = {
+	pg.base.activity_ryza_recipe_circle[10011] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9722,11 +7817,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.activity_ryza_recipe_circle
-
-	var_5_71[10012] = {
+	pg.base.activity_ryza_recipe_circle[10012] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9741,11 +7832,7 @@ end)()
 			-118.9
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.activity_ryza_recipe_circle
-
-	var_5_72[10013] = {
+	pg.base.activity_ryza_recipe_circle[10013] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9760,11 +7847,7 @@ end)()
 			129.5
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.activity_ryza_recipe_circle
-
-	var_5_73[10014] = {
+	pg.base.activity_ryza_recipe_circle[10014] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -9779,11 +7862,7 @@ end)()
 			129.5
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.activity_ryza_recipe_circle
-
-	var_5_74[10015] = {
+	pg.base.activity_ryza_recipe_circle[10015] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9798,11 +7877,7 @@ end)()
 			-173
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.activity_ryza_recipe_circle
-
-	var_5_75[10016] = {
+	pg.base.activity_ryza_recipe_circle[10016] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9817,11 +7892,7 @@ end)()
 			368
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.activity_ryza_recipe_circle
-
-	var_5_76[10017] = {
+	pg.base.activity_ryza_recipe_circle[10017] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -9836,11 +7907,7 @@ end)()
 			11
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.activity_ryza_recipe_circle
-
-	var_5_77[10021] = {
+	pg.base.activity_ryza_recipe_circle[10021] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9855,11 +7922,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.activity_ryza_recipe_circle
-
-	var_5_78[10022] = {
+	pg.base.activity_ryza_recipe_circle[10022] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9874,11 +7937,7 @@ end)()
 			235
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.activity_ryza_recipe_circle
-
-	var_5_79[10023] = {
+	pg.base.activity_ryza_recipe_circle[10023] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -9893,11 +7952,7 @@ end)()
 			-118
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.activity_ryza_recipe_circle
-
-	var_5_80[10024] = {
+	pg.base.activity_ryza_recipe_circle[10024] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9912,11 +7967,7 @@ end)()
 			-118
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.activity_ryza_recipe_circle
-
-	var_5_81[10025] = {
+	pg.base.activity_ryza_recipe_circle[10025] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9931,11 +7982,7 @@ end)()
 			18
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.activity_ryza_recipe_circle
-
-	var_5_82[10026] = {
+	pg.base.activity_ryza_recipe_circle[10026] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -9950,11 +7997,7 @@ end)()
 			175
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.activity_ryza_recipe_circle
-
-	var_5_83[10027] = {
+	pg.base.activity_ryza_recipe_circle[10027] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -9969,11 +8012,7 @@ end)()
 			-354
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.activity_ryza_recipe_circle
-
-	var_5_84[10031] = {
+	pg.base.activity_ryza_recipe_circle[10031] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -9988,11 +8027,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.activity_ryza_recipe_circle
-
-	var_5_85[10032] = {
+	pg.base.activity_ryza_recipe_circle[10032] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10007,11 +8042,7 @@ end)()
 			-115
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.activity_ryza_recipe_circle
-
-	var_5_86[10033] = {
+	pg.base.activity_ryza_recipe_circle[10033] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10026,11 +8057,7 @@ end)()
 			125
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.activity_ryza_recipe_circle
-
-	var_5_87[10034] = {
+	pg.base.activity_ryza_recipe_circle[10034] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -10045,11 +8072,7 @@ end)()
 			9
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.activity_ryza_recipe_circle
-
-	var_5_88[10035] = {
+	pg.base.activity_ryza_recipe_circle[10035] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -10064,11 +8087,7 @@ end)()
 			-346
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.activity_ryza_recipe_circle
-
-	var_5_89[10036] = {
+	pg.base.activity_ryza_recipe_circle[10036] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -10083,11 +8102,7 @@ end)()
 			374
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.activity_ryza_recipe_circle
-
-	var_5_90[10037] = {
+	pg.base.activity_ryza_recipe_circle[10037] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10102,11 +8117,7 @@ end)()
 			-181
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.activity_ryza_recipe_circle
-
-	var_5_91[10041] = {
+	pg.base.activity_ryza_recipe_circle[10041] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10121,11 +8132,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.activity_ryza_recipe_circle
-
-	var_5_92[10042] = {
+	pg.base.activity_ryza_recipe_circle[10042] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10140,11 +8147,7 @@ end)()
 			127
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.activity_ryza_recipe_circle
-
-	var_5_93[10043] = {
+	pg.base.activity_ryza_recipe_circle[10043] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10159,11 +8162,7 @@ end)()
 			127
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.activity_ryza_recipe_circle
-
-	var_5_94[10044] = {
+	pg.base.activity_ryza_recipe_circle[10044] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10178,11 +8177,7 @@ end)()
 			-241
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.activity_ryza_recipe_circle
-
-	var_5_95[10045] = {
+	pg.base.activity_ryza_recipe_circle[10045] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -10197,11 +8192,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.activity_ryza_recipe_circle
-
-	var_5_96[10046] = {
+	pg.base.activity_ryza_recipe_circle[10046] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10216,11 +8207,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.activity_ryza_recipe_circle
-
-	var_5_97[10047] = {
+	pg.base.activity_ryza_recipe_circle[10047] = {
 		star_list = "",
 		type = 6,
 		prop_type = 0,
@@ -10235,11 +8222,7 @@ end)()
 			372
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.activity_ryza_recipe_circle
-
-	var_5_98[10051] = {
+	pg.base.activity_ryza_recipe_circle[10051] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10254,8 +8237,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.activity_ryza_recipe_circle[10052] = {
+	pg.base.activity_ryza_recipe_circle[10052] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10274,11 +8256,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_6_0[10053] = {
+	pg.base.activity_ryza_recipe_circle[10053] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10293,11 +8271,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.activity_ryza_recipe_circle
-
-	var_6_1[10054] = {
+	pg.base.activity_ryza_recipe_circle[10054] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10312,11 +8286,7 @@ end)()
 			-241
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.activity_ryza_recipe_circle
-
-	var_6_2[10055] = {
+	pg.base.activity_ryza_recipe_circle[10055] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -10331,11 +8301,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.activity_ryza_recipe_circle
-
-	var_6_3[10056] = {
+	pg.base.activity_ryza_recipe_circle[10056] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -10350,11 +8316,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.activity_ryza_recipe_circle
-
-	var_6_4[10057] = {
+	pg.base.activity_ryza_recipe_circle[10057] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10369,11 +8331,7 @@ end)()
 			372
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.activity_ryza_recipe_circle
-
-	var_6_5[10061] = {
+	pg.base.activity_ryza_recipe_circle[10061] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10388,11 +8346,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.activity_ryza_recipe_circle
-
-	var_6_6[10062] = {
+	pg.base.activity_ryza_recipe_circle[10062] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10407,11 +8361,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.activity_ryza_recipe_circle
-
-	var_6_7[10063] = {
+	pg.base.activity_ryza_recipe_circle[10063] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10426,11 +8376,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.activity_ryza_recipe_circle
-
-	var_6_8[10064] = {
+	pg.base.activity_ryza_recipe_circle[10064] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10445,11 +8391,7 @@ end)()
 			-241
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.activity_ryza_recipe_circle
-
-	var_6_9[10065] = {
+	pg.base.activity_ryza_recipe_circle[10065] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -10464,11 +8406,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.activity_ryza_recipe_circle
-
-	var_6_10[10066] = {
+	pg.base.activity_ryza_recipe_circle[10066] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10483,11 +8421,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.activity_ryza_recipe_circle
-
-	var_6_11[10067] = {
+	pg.base.activity_ryza_recipe_circle[10067] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10502,11 +8436,7 @@ end)()
 			372
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.activity_ryza_recipe_circle
-
-	var_6_12[10071] = {
+	pg.base.activity_ryza_recipe_circle[10071] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10521,11 +8451,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.activity_ryza_recipe_circle
-
-	var_6_13[10072] = {
+	pg.base.activity_ryza_recipe_circle[10072] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10540,11 +8466,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.activity_ryza_recipe_circle
-
-	var_6_14[10073] = {
+	pg.base.activity_ryza_recipe_circle[10073] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10559,11 +8481,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.activity_ryza_recipe_circle
-
-	var_6_15[10074] = {
+	pg.base.activity_ryza_recipe_circle[10074] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10578,11 +8496,7 @@ end)()
 			-241
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.activity_ryza_recipe_circle
-
-	var_6_16[10075] = {
+	pg.base.activity_ryza_recipe_circle[10075] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -10597,11 +8511,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.activity_ryza_recipe_circle
-
-	var_6_17[10076] = {
+	pg.base.activity_ryza_recipe_circle[10076] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -10616,11 +8526,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.activity_ryza_recipe_circle
-
-	var_6_18[10077] = {
+	pg.base.activity_ryza_recipe_circle[10077] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10635,11 +8541,7 @@ end)()
 			372
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.activity_ryza_recipe_circle
-
-	var_6_19[10081] = {
+	pg.base.activity_ryza_recipe_circle[10081] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10654,11 +8556,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.activity_ryza_recipe_circle
-
-	var_6_20[10082] = {
+	pg.base.activity_ryza_recipe_circle[10082] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10673,11 +8571,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.activity_ryza_recipe_circle
-
-	var_6_21[10083] = {
+	pg.base.activity_ryza_recipe_circle[10083] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10692,11 +8586,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.activity_ryza_recipe_circle
-
-	var_6_22[10084] = {
+	pg.base.activity_ryza_recipe_circle[10084] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10711,11 +8601,7 @@ end)()
 			-241
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.activity_ryza_recipe_circle
-
-	var_6_23[10085] = {
+	pg.base.activity_ryza_recipe_circle[10085] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10730,11 +8616,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.activity_ryza_recipe_circle
-
-	var_6_24[10086] = {
+	pg.base.activity_ryza_recipe_circle[10086] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10749,11 +8631,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.activity_ryza_recipe_circle
-
-	var_6_25[10087] = {
+	pg.base.activity_ryza_recipe_circle[10087] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10768,11 +8646,7 @@ end)()
 			372
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.activity_ryza_recipe_circle
-
-	var_6_26[10091] = {
+	pg.base.activity_ryza_recipe_circle[10091] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -10787,11 +8661,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.activity_ryza_recipe_circle
-
-	var_6_27[10092] = {
+	pg.base.activity_ryza_recipe_circle[10092] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10806,11 +8676,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.activity_ryza_recipe_circle
-
-	var_6_28[10093] = {
+	pg.base.activity_ryza_recipe_circle[10093] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10825,11 +8691,7 @@ end)()
 			127
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.activity_ryza_recipe_circle
-
-	var_6_29[10094] = {
+	pg.base.activity_ryza_recipe_circle[10094] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -10844,11 +8706,7 @@ end)()
 			-241
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.activity_ryza_recipe_circle
-
-	var_6_30[10095] = {
+	pg.base.activity_ryza_recipe_circle[10095] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10863,11 +8721,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.activity_ryza_recipe_circle
-
-	var_6_31[10096] = {
+	pg.base.activity_ryza_recipe_circle[10096] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10882,11 +8736,7 @@ end)()
 			-170
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.activity_ryza_recipe_circle
-
-	var_6_32[10097] = {
+	pg.base.activity_ryza_recipe_circle[10097] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -10901,11 +8751,7 @@ end)()
 			372
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.activity_ryza_recipe_circle
-
-	var_6_33[10101] = {
+	pg.base.activity_ryza_recipe_circle[10101] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -10920,11 +8766,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.activity_ryza_recipe_circle
-
-	var_6_34[10102] = {
+	pg.base.activity_ryza_recipe_circle[10102] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -10939,11 +8781,7 @@ end)()
 			181
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.activity_ryza_recipe_circle
-
-	var_6_35[10103] = {
+	pg.base.activity_ryza_recipe_circle[10103] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -10958,11 +8796,7 @@ end)()
 			-242
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.activity_ryza_recipe_circle
-
-	var_6_36[10104] = {
+	pg.base.activity_ryza_recipe_circle[10104] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -10977,11 +8811,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.activity_ryza_recipe_circle
-
-	var_6_37[10105] = {
+	pg.base.activity_ryza_recipe_circle[10105] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -10996,11 +8826,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.activity_ryza_recipe_circle
-
-	var_6_38[10106] = {
+	pg.base.activity_ryza_recipe_circle[10106] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -11015,11 +8841,7 @@ end)()
 			345
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.activity_ryza_recipe_circle
-
-	var_6_39[10107] = {
+	pg.base.activity_ryza_recipe_circle[10107] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -11034,11 +8856,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.activity_ryza_recipe_circle
-
-	var_6_40[10108] = {
+	pg.base.activity_ryza_recipe_circle[10108] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -11053,11 +8871,7 @@ end)()
 			-352
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.activity_ryza_recipe_circle
-
-	var_6_41[10111] = {
+	pg.base.activity_ryza_recipe_circle[10111] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11072,11 +8886,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.activity_ryza_recipe_circle
-
-	var_6_42[10112] = {
+	pg.base.activity_ryza_recipe_circle[10112] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -11091,11 +8901,7 @@ end)()
 			181
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.activity_ryza_recipe_circle
-
-	var_6_43[10113] = {
+	pg.base.activity_ryza_recipe_circle[10113] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -11110,11 +8916,7 @@ end)()
 			-242
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.activity_ryza_recipe_circle
-
-	var_6_44[10114] = {
+	pg.base.activity_ryza_recipe_circle[10114] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11129,11 +8931,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.activity_ryza_recipe_circle
-
-	var_6_45[10115] = {
+	pg.base.activity_ryza_recipe_circle[10115] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -11148,11 +8946,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.activity_ryza_recipe_circle
-
-	var_6_46[10116] = {
+	pg.base.activity_ryza_recipe_circle[10116] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -11167,11 +8961,7 @@ end)()
 			345
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.activity_ryza_recipe_circle
-
-	var_6_47[10117] = {
+	pg.base.activity_ryza_recipe_circle[10117] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -11186,11 +8976,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.activity_ryza_recipe_circle
-
-	var_6_48[10118] = {
+	pg.base.activity_ryza_recipe_circle[10118] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -11205,11 +8991,7 @@ end)()
 			-352
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.activity_ryza_recipe_circle
-
-	var_6_49[10121] = {
+	pg.base.activity_ryza_recipe_circle[10121] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11224,11 +9006,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.activity_ryza_recipe_circle
-
-	var_6_50[10122] = {
+	pg.base.activity_ryza_recipe_circle[10122] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -11243,11 +9021,7 @@ end)()
 			181
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.activity_ryza_recipe_circle
-
-	var_6_51[10123] = {
+	pg.base.activity_ryza_recipe_circle[10123] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -11262,11 +9036,7 @@ end)()
 			-242
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.activity_ryza_recipe_circle
-
-	var_6_52[10124] = {
+	pg.base.activity_ryza_recipe_circle[10124] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11281,11 +9051,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.activity_ryza_recipe_circle
-
-	var_6_53[10125] = {
+	pg.base.activity_ryza_recipe_circle[10125] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -11300,11 +9066,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.activity_ryza_recipe_circle
-
-	var_6_54[10126] = {
+	pg.base.activity_ryza_recipe_circle[10126] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -11319,11 +9081,7 @@ end)()
 			345
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.activity_ryza_recipe_circle
-
-	var_6_55[10127] = {
+	pg.base.activity_ryza_recipe_circle[10127] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -11338,11 +9096,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.activity_ryza_recipe_circle
-
-	var_6_56[10128] = {
+	pg.base.activity_ryza_recipe_circle[10128] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -11357,11 +9111,7 @@ end)()
 			-352
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.activity_ryza_recipe_circle
-
-	var_6_57[10131] = {
+	pg.base.activity_ryza_recipe_circle[10131] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11376,11 +9126,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.activity_ryza_recipe_circle
-
-	var_6_58[10132] = {
+	pg.base.activity_ryza_recipe_circle[10132] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -11395,11 +9141,7 @@ end)()
 			181
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.activity_ryza_recipe_circle
-
-	var_6_59[10133] = {
+	pg.base.activity_ryza_recipe_circle[10133] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -11414,11 +9156,7 @@ end)()
 			-242
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.activity_ryza_recipe_circle
-
-	var_6_60[10134] = {
+	pg.base.activity_ryza_recipe_circle[10134] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11433,11 +9171,7 @@ end)()
 			200
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.activity_ryza_recipe_circle
-
-	var_6_61[10135] = {
+	pg.base.activity_ryza_recipe_circle[10135] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -11452,11 +9186,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.activity_ryza_recipe_circle
-
-	var_6_62[10136] = {
+	pg.base.activity_ryza_recipe_circle[10136] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -11471,11 +9201,7 @@ end)()
 			345
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.activity_ryza_recipe_circle
-
-	var_6_63[10137] = {
+	pg.base.activity_ryza_recipe_circle[10137] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -11490,11 +9216,7 @@ end)()
 			18
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.activity_ryza_recipe_circle
-
-	var_6_64[10138] = {
+	pg.base.activity_ryza_recipe_circle[10138] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -11509,11 +9231,7 @@ end)()
 			-352
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.activity_ryza_recipe_circle
-
-	var_6_65[10141] = {
+	pg.base.activity_ryza_recipe_circle[10141] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11528,11 +9246,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.activity_ryza_recipe_circle
-
-	var_6_66[10142] = {
+	pg.base.activity_ryza_recipe_circle[10142] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11547,11 +9261,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.activity_ryza_recipe_circle
-
-	var_6_67[10143] = {
+	pg.base.activity_ryza_recipe_circle[10143] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11566,11 +9276,7 @@ end)()
 			230
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.activity_ryza_recipe_circle
-
-	var_6_68[10151] = {
+	pg.base.activity_ryza_recipe_circle[10151] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11585,11 +9291,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.activity_ryza_recipe_circle
-
-	var_6_69[10152] = {
+	pg.base.activity_ryza_recipe_circle[10152] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11604,11 +9306,7 @@ end)()
 			227
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.activity_ryza_recipe_circle
-
-	var_6_70[10153] = {
+	pg.base.activity_ryza_recipe_circle[10153] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11623,11 +9321,7 @@ end)()
 			16
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.activity_ryza_recipe_circle
-
-	var_6_71[10161] = {
+	pg.base.activity_ryza_recipe_circle[10161] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11642,11 +9336,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.activity_ryza_recipe_circle
-
-	var_6_72[10162] = {
+	pg.base.activity_ryza_recipe_circle[10162] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11661,11 +9351,7 @@ end)()
 			-211.5
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.activity_ryza_recipe_circle
-
-	var_6_73[10163] = {
+	pg.base.activity_ryza_recipe_circle[10163] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11680,11 +9366,7 @@ end)()
 			15
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.activity_ryza_recipe_circle
-
-	var_6_74[10171] = {
+	pg.base.activity_ryza_recipe_circle[10171] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11699,11 +9381,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.activity_ryza_recipe_circle
-
-	var_6_75[10172] = {
+	pg.base.activity_ryza_recipe_circle[10172] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11718,11 +9396,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.activity_ryza_recipe_circle
-
-	var_6_76[10173] = {
+	pg.base.activity_ryza_recipe_circle[10173] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11737,11 +9411,7 @@ end)()
 			-211.5
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.activity_ryza_recipe_circle
-
-	var_6_77[10181] = {
+	pg.base.activity_ryza_recipe_circle[10181] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11756,11 +9426,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.activity_ryza_recipe_circle
-
-	var_6_78[10182] = {
+	pg.base.activity_ryza_recipe_circle[10182] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11775,11 +9441,7 @@ end)()
 			14
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.activity_ryza_recipe_circle
-
-	var_6_79[10183] = {
+	pg.base.activity_ryza_recipe_circle[10183] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11794,11 +9456,7 @@ end)()
 			-211.5
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.activity_ryza_recipe_circle
-
-	var_6_80[10184] = {
+	pg.base.activity_ryza_recipe_circle[10184] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11813,11 +9471,7 @@ end)()
 			16
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.activity_ryza_recipe_circle
-
-	var_6_81[10185] = {
+	pg.base.activity_ryza_recipe_circle[10185] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11832,11 +9486,7 @@ end)()
 			227
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.activity_ryza_recipe_circle
-
-	var_6_82[10191] = {
+	pg.base.activity_ryza_recipe_circle[10191] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11851,11 +9501,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.activity_ryza_recipe_circle
-
-	var_6_83[10192] = {
+	pg.base.activity_ryza_recipe_circle[10192] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -11870,11 +9516,7 @@ end)()
 			-125
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.activity_ryza_recipe_circle
-
-	var_6_84[10193] = {
+	pg.base.activity_ryza_recipe_circle[10193] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -11889,11 +9531,7 @@ end)()
 			-132
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.activity_ryza_recipe_circle
-
-	var_6_85[10194] = {
+	pg.base.activity_ryza_recipe_circle[10194] = {
 		star_list = "",
 		type = 8,
 		prop_type = 5,
@@ -11908,11 +9546,7 @@ end)()
 			251
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.activity_ryza_recipe_circle
-
-	var_6_86[10201] = {
+	pg.base.activity_ryza_recipe_circle[10201] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -11927,11 +9561,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.activity_ryza_recipe_circle
-
-	var_6_87[10202] = {
+	pg.base.activity_ryza_recipe_circle[10202] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11946,11 +9576,7 @@ end)()
 			-125
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.activity_ryza_recipe_circle
-
-	var_6_88[10203] = {
+	pg.base.activity_ryza_recipe_circle[10203] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11965,11 +9591,7 @@ end)()
 			-132
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.activity_ryza_recipe_circle
-
-	var_6_89[10204] = {
+	pg.base.activity_ryza_recipe_circle[10204] = {
 		star_list = "",
 		type = 5,
 		prop_type = 0,
@@ -11984,11 +9606,7 @@ end)()
 			251
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.activity_ryza_recipe_circle
-
-	var_6_90[10211] = {
+	pg.base.activity_ryza_recipe_circle[10211] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -12003,11 +9621,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.activity_ryza_recipe_circle
-
-	var_6_91[10212] = {
+	pg.base.activity_ryza_recipe_circle[10212] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -12022,11 +9636,7 @@ end)()
 			245
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.activity_ryza_recipe_circle
-
-	var_6_92[10213] = {
+	pg.base.activity_ryza_recipe_circle[10213] = {
 		star_list = "",
 		type = 8,
 		prop_type = 1,
@@ -12041,11 +9651,7 @@ end)()
 			-245
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.activity_ryza_recipe_circle
-
-	var_6_93[10221] = {
+	pg.base.activity_ryza_recipe_circle[10221] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -12060,11 +9666,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.activity_ryza_recipe_circle
-
-	var_6_94[10222] = {
+	pg.base.activity_ryza_recipe_circle[10222] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -12079,11 +9681,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.activity_ryza_recipe_circle
-
-	var_6_95[10223] = {
+	pg.base.activity_ryza_recipe_circle[10223] = {
 		star_list = "",
 		type = 8,
 		prop_type = 2,
@@ -12098,11 +9696,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.activity_ryza_recipe_circle
-
-	var_6_96[10231] = {
+	pg.base.activity_ryza_recipe_circle[10231] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -12117,11 +9711,7 @@ end)()
 			0
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.activity_ryza_recipe_circle
-
-	var_6_97[10232] = {
+	pg.base.activity_ryza_recipe_circle[10232] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -12136,11 +9726,7 @@ end)()
 			174
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.activity_ryza_recipe_circle
-
-	var_6_98[10233] = {
+	pg.base.activity_ryza_recipe_circle[10233] = {
 		star_list = "",
 		type = 8,
 		prop_type = 3,
@@ -12155,8 +9741,7 @@ end)()
 			-176
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.activity_ryza_recipe_circle[10241] = {
+	pg.base.activity_ryza_recipe_circle[10241] = {
 		star_list = "",
 		type = 7,
 		prop_type = 6,
@@ -12175,11 +9760,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.activity_ryza_recipe_circle
-
-	var_7_0[10242] = {
+	pg.base.activity_ryza_recipe_circle[10242] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,
@@ -12194,8 +9775,7 @@ end)()
 			-176
 		}
 	}
-	pg = var_7_0
-	var_7_0.base.activity_ryza_recipe_circle[10243] = {
+	pg.base.activity_ryza_recipe_circle[10243] = {
 		star_list = "",
 		type = 8,
 		prop_type = 4,

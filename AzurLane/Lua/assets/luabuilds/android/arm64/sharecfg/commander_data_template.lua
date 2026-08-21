@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "commander_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "commander_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.commander_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.commander_data_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.commander_data_template = rawget(pg, "commander_data_template") or setmetatable({
+	__name = "commander_data_template"
+}, confNEO)
+pg.commander_data_template.all = {
 	10011,
 	10021,
 	11011,
@@ -61,25 +38,11 @@ var_0_3.all = {
 	960061,
 	960071
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.commander_data_template = {}
+pg.base = pg.base or {}
+pg.base.commander_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.commander_data_template
-
-	var_1_0[10011] = {
+	pg.base.commander_data_template[10011] = {
 		tactic_value = 65,
 		name = "伯克喵",
 		painting = "bokemiao",
@@ -98,11 +61,7 @@ var_0_3.base.commander_data_template = {}
 		id = 10011,
 		ability_show = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.commander_data_template
-
-	var_1_1[10021] = {
+	pg.base.commander_data_template[10021] = {
 		tactic_value = 55,
 		name = "奥古喵",
 		painting = "aogumiao",
@@ -121,11 +80,7 @@ var_0_3.base.commander_data_template = {}
 		id = 10021,
 		ability_show = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.commander_data_template
-
-	var_1_2[11011] = {
+	pg.base.commander_data_template[11011] = {
 		tactic_value = 36,
 		name = "汉克喵",
 		painting = "baiyingmiao",
@@ -144,11 +99,7 @@ var_0_3.base.commander_data_template = {}
 		id = 11011,
 		ability_show = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.commander_data_template
-
-	var_1_3[11021] = {
+	pg.base.commander_data_template[11021] = {
 		tactic_value = 49,
 		name = "莫里喵",
 		painting = "baiyingmiao",
@@ -167,11 +118,7 @@ var_0_3.base.commander_data_template = {}
 		id = 11021,
 		ability_show = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.commander_data_template
-
-	var_1_4[12011] = {
+	pg.base.commander_data_template[12011] = {
 		tactic_value = 52,
 		name = "谢尔喵",
 		painting = "shuishoumiao",
@@ -190,11 +137,7 @@ var_0_3.base.commander_data_template = {}
 		id = 12011,
 		ability_show = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.commander_data_template
-
-	var_1_5[12021] = {
+	pg.base.commander_data_template[12021] = {
 		tactic_value = 26,
 		name = "查理喵",
 		painting = "shuishoumiao",
@@ -213,11 +156,7 @@ var_0_3.base.commander_data_template = {}
 		id = 12021,
 		ability_show = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.commander_data_template
-
-	var_1_6[20011] = {
+	pg.base.commander_data_template[20011] = {
 		tactic_value = 58,
 		name = "约翰喵",
 		painting = "yuehanmiao",
@@ -236,11 +175,7 @@ var_0_3.base.commander_data_template = {}
 		id = 20011,
 		ability_show = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.commander_data_template
-
-	var_1_7[20021] = {
+	pg.base.commander_data_template[20021] = {
 		tactic_value = 36,
 		name = "庞德喵",
 		painting = "pangdemiao",
@@ -259,11 +194,7 @@ var_0_3.base.commander_data_template = {}
 		id = 20021,
 		ability_show = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.commander_data_template
-
-	var_1_8[21011] = {
+	pg.base.commander_data_template[21011] = {
 		tactic_value = 45,
 		name = "威廉喵",
 		painting = "huangjiamiao",
@@ -282,11 +213,7 @@ var_0_3.base.commander_data_template = {}
 		id = 21011,
 		ability_show = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.commander_data_template
-
-	var_1_9[21021] = {
+	pg.base.commander_data_template[21021] = {
 		tactic_value = 33,
 		name = "鲁普喵",
 		painting = "huangjiamiao",
@@ -305,11 +232,7 @@ var_0_3.base.commander_data_template = {}
 		id = 21021,
 		ability_show = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.commander_data_template
-
-	var_1_10[21031] = {
+	pg.base.commander_data_template[21031] = {
 		tactic_value = 44,
 		name = "莫德喵",
 		painting = "huangjiamiao",
@@ -328,11 +251,7 @@ var_0_3.base.commander_data_template = {}
 		id = 21031,
 		ability_show = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.commander_data_template
-
-	var_1_11[21041] = {
+	pg.base.commander_data_template[21041] = {
 		tactic_value = 44,
 		name = "帕特喵",
 		painting = "huangjiamiao",
@@ -351,11 +270,7 @@ var_0_3.base.commander_data_template = {}
 		id = 21041,
 		ability_show = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.commander_data_template
-
-	var_1_12[22011] = {
+	pg.base.commander_data_template[22011] = {
 		tactic_value = 23,
 		name = "乔治喵",
 		painting = "shuishoumiao",
@@ -374,11 +289,7 @@ var_0_3.base.commander_data_template = {}
 		id = 22011,
 		ability_show = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.commander_data_template
-
-	var_1_13[22021] = {
+	pg.base.commander_data_template[22021] = {
 		tactic_value = 52,
 		name = "贝尔喵",
 		painting = "shuishoumiao",
@@ -397,11 +308,7 @@ var_0_3.base.commander_data_template = {}
 		id = 22021,
 		ability_show = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.commander_data_template
-
-	var_1_14[30011] = {
+	pg.base.commander_data_template[30011] = {
 		tactic_value = 68,
 		name = "毗沙丸",
 		painting = "duoduowan",
@@ -420,11 +327,7 @@ var_0_3.base.commander_data_template = {}
 		id = 30011,
 		ability_show = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.commander_data_template
-
-	var_1_15[30021] = {
+	pg.base.commander_data_template[30021] = {
 		tactic_value = 66,
 		name = "小竹丸",
 		painting = "xiaozhuwan",
@@ -443,11 +346,7 @@ var_0_3.base.commander_data_template = {}
 		id = 30021,
 		ability_show = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.commander_data_template
-
-	var_1_16[31011] = {
+	pg.base.commander_data_template[31011] = {
 		tactic_value = 41,
 		name = "次郎丸",
 		painting = "chongyingmiao",
@@ -466,11 +365,7 @@ var_0_3.base.commander_data_template = {}
 		id = 31011,
 		ability_show = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.commander_data_template
-
-	var_1_17[31021] = {
+	pg.base.commander_data_template[31021] = {
 		tactic_value = 36,
 		name = "小吉丸",
 		painting = "chongyingmiao",
@@ -489,11 +384,7 @@ var_0_3.base.commander_data_template = {}
 		id = 31021,
 		ability_show = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.commander_data_template
-
-	var_1_18[32011] = {
+	pg.base.commander_data_template[32011] = {
 		tactic_value = 40,
 		name = "朝丸",
 		painting = "shuishoumiao",
@@ -512,11 +403,7 @@ var_0_3.base.commander_data_template = {}
 		id = 32011,
 		ability_show = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.commander_data_template
-
-	var_1_19[32021] = {
+	pg.base.commander_data_template[32021] = {
 		tactic_value = 32,
 		name = "小胜丸",
 		painting = "shuishoumiao",
@@ -535,11 +422,7 @@ var_0_3.base.commander_data_template = {}
 		id = 32021,
 		ability_show = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.commander_data_template
-
-	var_1_20[40011] = {
+	pg.base.commander_data_template[40011] = {
 		tactic_value = 52,
 		name = "克雷喵",
 		painting = "keleimiao",
@@ -558,11 +441,7 @@ var_0_3.base.commander_data_template = {}
 		id = 40011,
 		ability_show = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.commander_data_template
-
-	var_1_21[40021] = {
+	pg.base.commander_data_template[40021] = {
 		tactic_value = 54,
 		name = "林德喵",
 		painting = "lindemiao",
@@ -581,11 +460,7 @@ var_0_3.base.commander_data_template = {}
 		id = 40021,
 		ability_show = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.commander_data_template
-
-	var_1_22[41011] = {
+	pg.base.commander_data_template[41011] = {
 		tactic_value = 43,
 		name = "弗里喵",
 		painting = "tiexuemiao",
@@ -604,11 +479,7 @@ var_0_3.base.commander_data_template = {}
 		id = 41011,
 		ability_show = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.commander_data_template
-
-	var_1_23[41021] = {
+	pg.base.commander_data_template[41021] = {
 		tactic_value = 41,
 		name = "莫赫喵",
 		painting = "tiexuemiao",
@@ -627,11 +498,7 @@ var_0_3.base.commander_data_template = {}
 		id = 41021,
 		ability_show = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.commander_data_template
-
-	var_1_24[41031] = {
+	pg.base.commander_data_template[41031] = {
 		tactic_value = 48,
 		name = "赫尔喵",
 		painting = "tiexuemiao",
@@ -650,11 +517,7 @@ var_0_3.base.commander_data_template = {}
 		id = 41031,
 		ability_show = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.commander_data_template
-
-	var_1_25[27] = {
+	pg.base.commander_data_template[27] = {
 		tactic_value = 36,
 		name = "海耶喵",
 		painting = "shuishoumiao",
@@ -673,11 +536,7 @@ var_0_3.base.commander_data_template = {}
 		id = 42011,
 		ability_show = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.commander_data_template
-
-	var_1_26[42021] = {
+	pg.base.commander_data_template[42021] = {
 		tactic_value = 49,
 		name = "埃里喵",
 		painting = "shuishoumiao",
@@ -696,11 +555,7 @@ var_0_3.base.commander_data_template = {}
 		id = 42021,
 		ability_show = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.commander_data_template
-
-	var_1_27[11] = {
+	pg.base.commander_data_template[11] = {
 		tactic_value = 55,
 		name = "德雷喵",
 		painting = "deleimiao",
@@ -728,11 +583,7 @@ var_0_3.base.commander_data_template = {}
 			5131
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.commander_data_template
-
-	var_1_28[21] = {
+	pg.base.commander_data_template[21] = {
 		tactic_value = 56,
 		name = "基德喵",
 		painting = "jidemiao",
@@ -760,11 +611,7 @@ var_0_3.base.commander_data_template = {}
 			5131
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.commander_data_template
-
-	var_1_29[31] = {
+	pg.base.commander_data_template[31] = {
 		tactic_value = 44,
 		name = "贝拉喵",
 		painting = "beilamiao",
@@ -792,11 +639,7 @@ var_0_3.base.commander_data_template = {}
 			5121
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.commander_data_template
-
-	var_1_30[960041] = {
+	pg.base.commander_data_template[960041] = {
 		tactic_value = 67,
 		name = "埃弗喵",
 		painting = "aifumiao",
@@ -824,11 +667,7 @@ var_0_3.base.commander_data_template = {}
 			5131
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.commander_data_template
-
-	var_1_31[960051] = {
+	pg.base.commander_data_template[960051] = {
 		tactic_value = 42,
 		name = "罗伯喵",
 		painting = "luobomiao",
@@ -856,11 +695,7 @@ var_0_3.base.commander_data_template = {}
 			5131
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.commander_data_template
-
-	var_1_32[960061] = {
+	pg.base.commander_data_template[960061] = {
 		tactic_value = 67,
 		name = "蒂奇喵",
 		painting = "diqimiao",
@@ -888,8 +723,7 @@ var_0_3.base.commander_data_template = {}
 			5131
 		}
 	}
-	pg = var_1_32
-	var_1_32.base.commander_data_template[960071] = {
+	pg.base.commander_data_template[960071] = {
 		tactic_value = 37,
 		name = "邦尼喵",
 		painting = "bangnimiao",

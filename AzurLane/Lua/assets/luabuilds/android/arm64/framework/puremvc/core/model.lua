@@ -1,12 +1,8 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("Model")
+﻿local var_0_0 = class("Model")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	if var_0_0.instanceMap[arg_1_1] then
-		error = var_2
-
-		var_2(var_0_0.MULTITON_MSG)
+		error(var_0_0.MULTITON_MSG)
 	end
 
 	arg_1_0.multitonKey = arg_1_1
@@ -58,10 +54,10 @@ function var_0_0.removeProxy(arg_7_0, arg_7_1)
 	if arg_7_0.proxyMap[arg_7_1] ~= nil then
 		arg_7_0.proxyMap[arg_7_1] = nil
 
-		var_2:onRemove()
+		arg_7_0.proxyMap[arg_7_1]:onRemove()
 	end
 
-	return var_2
+	return arg_7_0.proxyMap[arg_7_1]
 end
 
 function var_0_0.removeModel(arg_8_0)

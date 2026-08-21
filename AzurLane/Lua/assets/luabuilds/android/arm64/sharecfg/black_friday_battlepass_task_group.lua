@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "black_friday_battlepass_task_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "black_friday_battlepass_task_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.black_friday_battlepass_task_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.black_friday_battlepass_task_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.black_friday_battlepass_task_group = rawget(pg, "black_friday_battlepass_task_group") or setmetatable({
+	__name = "black_friday_battlepass_task_group"
+}, confNEO)
+pg.black_friday_battlepass_task_group.all = {
 	1,
 	2,
 	3,
@@ -53,25 +30,11 @@ var_0_3.all = {
 	32,
 	33
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.black_friday_battlepass_task_group = {}
+pg.base = pg.base or {}
+pg.base.black_friday_battlepass_task_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.black_friday_battlepass_task_group
-
-	var_1_0[1] = {
+	pg.base.black_friday_battlepass_task_group[1] = {
 		id = 1,
 		group_mask = 1,
 		is_ontime = 1,
@@ -90,11 +53,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.black_friday_battlepass_task_group
-
-	var_1_1[2] = {
+	pg.base.black_friday_battlepass_task_group[2] = {
 		id = 2,
 		group_mask = 2,
 		is_ontime = 1,
@@ -113,11 +72,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.black_friday_battlepass_task_group
-
-	var_1_2[3] = {
+	pg.base.black_friday_battlepass_task_group[3] = {
 		id = 3,
 		group_mask = 3,
 		is_ontime = 1,
@@ -136,11 +91,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.black_friday_battlepass_task_group
-
-	var_1_3[4] = {
+	pg.base.black_friday_battlepass_task_group[4] = {
 		id = 4,
 		group_mask = 4,
 		is_ontime = 1,
@@ -159,11 +110,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.black_friday_battlepass_task_group
-
-	var_1_4[5] = {
+	pg.base.black_friday_battlepass_task_group[5] = {
 		id = 5,
 		group_mask = 5,
 		is_ontime = 1,
@@ -182,11 +129,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.black_friday_battlepass_task_group
-
-	var_1_5[6] = {
+	pg.base.black_friday_battlepass_task_group[6] = {
 		id = 6,
 		group_mask = 6,
 		is_ontime = 1,
@@ -205,11 +148,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.black_friday_battlepass_task_group
-
-	var_1_6[7] = {
+	pg.base.black_friday_battlepass_task_group[7] = {
 		id = 7,
 		group_mask = 7,
 		is_ontime = 1,
@@ -228,11 +167,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.black_friday_battlepass_task_group
-
-	var_1_7[8] = {
+	pg.base.black_friday_battlepass_task_group[8] = {
 		id = 8,
 		group_mask = 8,
 		is_ontime = 1,
@@ -251,11 +186,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.black_friday_battlepass_task_group
-
-	var_1_8[9] = {
+	pg.base.black_friday_battlepass_task_group[9] = {
 		id = 9,
 		group_mask = 9,
 		is_ontime = 1,
@@ -274,11 +205,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.black_friday_battlepass_task_group
-
-	var_1_9[10] = {
+	pg.base.black_friday_battlepass_task_group[10] = {
 		id = 10,
 		group_mask = 10,
 		is_ontime = 1,
@@ -297,11 +224,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.black_friday_battlepass_task_group
-
-	var_1_10[11] = {
+	pg.base.black_friday_battlepass_task_group[11] = {
 		id = 11,
 		group_mask = 11,
 		is_ontime = 1,
@@ -320,11 +243,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.black_friday_battlepass_task_group
-
-	var_1_11[12] = {
+	pg.base.black_friday_battlepass_task_group[12] = {
 		id = 12,
 		group_mask = 12,
 		is_ontime = 1,
@@ -343,11 +262,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.black_friday_battlepass_task_group
-
-	var_1_12[13] = {
+	pg.base.black_friday_battlepass_task_group[13] = {
 		id = 13,
 		group_mask = 0,
 		is_ontime = 0,
@@ -384,11 +299,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.black_friday_battlepass_task_group
-
-	var_1_13[21] = {
+	pg.base.black_friday_battlepass_task_group[21] = {
 		id = 21,
 		group_mask = 1,
 		is_ontime = 1,
@@ -407,11 +318,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.black_friday_battlepass_task_group
-
-	var_1_14[22] = {
+	pg.base.black_friday_battlepass_task_group[22] = {
 		id = 22,
 		group_mask = 2,
 		is_ontime = 1,
@@ -430,11 +337,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.black_friday_battlepass_task_group
-
-	var_1_15[23] = {
+	pg.base.black_friday_battlepass_task_group[23] = {
 		id = 23,
 		group_mask = 3,
 		is_ontime = 1,
@@ -453,11 +356,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.black_friday_battlepass_task_group
-
-	var_1_16[24] = {
+	pg.base.black_friday_battlepass_task_group[24] = {
 		id = 24,
 		group_mask = 4,
 		is_ontime = 1,
@@ -476,11 +375,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.black_friday_battlepass_task_group
-
-	var_1_17[25] = {
+	pg.base.black_friday_battlepass_task_group[25] = {
 		id = 25,
 		group_mask = 5,
 		is_ontime = 1,
@@ -499,11 +394,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.black_friday_battlepass_task_group
-
-	var_1_18[26] = {
+	pg.base.black_friday_battlepass_task_group[26] = {
 		id = 26,
 		group_mask = 6,
 		is_ontime = 1,
@@ -522,11 +413,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.black_friday_battlepass_task_group
-
-	var_1_19[27] = {
+	pg.base.black_friday_battlepass_task_group[27] = {
 		id = 27,
 		group_mask = 7,
 		is_ontime = 1,
@@ -545,11 +432,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.black_friday_battlepass_task_group
-
-	var_1_20[28] = {
+	pg.base.black_friday_battlepass_task_group[28] = {
 		id = 28,
 		group_mask = 8,
 		is_ontime = 1,
@@ -568,11 +451,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.black_friday_battlepass_task_group
-
-	var_1_21[29] = {
+	pg.base.black_friday_battlepass_task_group[29] = {
 		id = 29,
 		group_mask = 9,
 		is_ontime = 1,
@@ -591,11 +470,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.black_friday_battlepass_task_group
-
-	var_1_22[30] = {
+	pg.base.black_friday_battlepass_task_group[30] = {
 		id = 30,
 		group_mask = 10,
 		is_ontime = 1,
@@ -614,11 +489,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.black_friday_battlepass_task_group
-
-	var_1_23[31] = {
+	pg.base.black_friday_battlepass_task_group[31] = {
 		id = 31,
 		group_mask = 11,
 		is_ontime = 1,
@@ -637,11 +508,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.black_friday_battlepass_task_group
-
-	var_1_24[32] = {
+	pg.base.black_friday_battlepass_task_group[32] = {
 		id = 32,
 		group_mask = 12,
 		is_ontime = 1,
@@ -660,8 +527,7 @@ var_0_3.base.black_friday_battlepass_task_group = {}
 			}
 		}
 	}
-	pg = var_1_24
-	var_1_24.base.black_friday_battlepass_task_group[33] = {
+	pg.base.black_friday_battlepass_task_group[33] = {
 		id = 33,
 		group_mask = 0,
 		is_ontime = 0,

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("AgoraLayerCell")
+﻿local var_0_0 = class("AgoraLayerCell")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.position = arg_1_1
@@ -42,13 +40,7 @@ function var_0_0.GetModel(arg_8_0)
 		return ""
 	end
 
-	math = var_1
-
-	local var_8_0 = var_1.floor(arg_8_0.id / 100)
-
-	pg = var_1_10002
-
-	return var_1_10002.island_furniture_template[var_8_0].model
+	return pg.island_furniture_template[math.floor(arg_8_0.id / 100)].model
 end
 
 function var_0_0.Clear(arg_9_0)

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ItemUsage")
+﻿local var_0_0 = class("ItemUsage")
 
 var_0_0.UNDEFINED = "usage_undefined"
 var_0_0.BOOK = "usage_book"

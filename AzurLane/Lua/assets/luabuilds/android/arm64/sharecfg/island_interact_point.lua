@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_interact_point") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_interact_point"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_interact_point = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_interact_point
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_interact_point = rawget(pg, "island_interact_point") or setmetatable({
+	__name = "island_interact_point"
+}, confNEO)
+pg.island_interact_point.all = {
 	1,
 	2,
 	3,
@@ -55,25 +32,11 @@ var_0_3.all = {
 	27,
 	28
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_interact_point = {}
+pg.base = pg.base or {}
+pg.base.island_interact_point = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_interact_point
-
-	var_1_0[1] = {
+	pg.base.island_interact_point[1] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50128(Clone)/hudong_pre/50128A/pre_item_05_50128A",
 		id = 1,
@@ -91,11 +54,7 @@ var_0_3.base.island_interact_point = {}
 			6.56
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_interact_point
-
-	var_1_1[2] = {
+	pg.base.island_interact_point[2] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50128(Clone)/hudong_pre/pre_item_05_50128B",
 		id = 2,
@@ -113,11 +72,7 @@ var_0_3.base.island_interact_point = {}
 			-0.37
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_interact_point
-
-	var_1_2[3] = {
+	pg.base.island_interact_point[3] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50128(Clone)/hudong_pre/pre_item_05_50128C",
 		id = 3,
@@ -135,11 +90,7 @@ var_0_3.base.island_interact_point = {}
 			4.06
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_interact_point
-
-	var_1_3[4] = {
+	pg.base.island_interact_point[4] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50104(Clone)",
 		id = 4,
@@ -157,11 +108,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_interact_point
-
-	var_1_4[5] = {
+	pg.base.island_interact_point[5] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50105(Clone)",
 		id = 5,
@@ -179,11 +126,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_interact_point
-
-	var_1_5[6] = {
+	pg.base.island_interact_point[6] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50103(Clone)",
 		id = 6,
@@ -201,11 +144,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_interact_point
-
-	var_1_6[7] = {
+	pg.base.island_interact_point[7] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50107(Clone)",
 		id = 7,
@@ -223,11 +162,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_interact_point
-
-	var_1_7[8] = {
+	pg.base.island_interact_point[8] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50119(Clone)",
 		id = 8,
@@ -245,11 +180,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_interact_point
-
-	var_1_8[9] = {
+	pg.base.island_interact_point[9] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50201(Clone)/hudong_pre/pre_item_05_50201a",
 		id = 9,
@@ -267,11 +198,7 @@ var_0_3.base.island_interact_point = {}
 			5.01
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_interact_point
-
-	var_1_9[10] = {
+	pg.base.island_interact_point[10] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50201(Clone)/hudong_pre/pre_item_05_50201b",
 		id = 10,
@@ -289,11 +216,7 @@ var_0_3.base.island_interact_point = {}
 			1.27
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_interact_point
-
-	var_1_10[11] = {
+	pg.base.island_interact_point[11] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50202(Clone)",
 		id = 11,
@@ -311,11 +234,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_interact_point
-
-	var_1_11[12] = {
+	pg.base.island_interact_point[12] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50205(Clone)",
 		id = 12,
@@ -333,11 +252,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_interact_point
-
-	var_1_12[13] = {
+	pg.base.island_interact_point[13] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50212(Clone)",
 		id = 13,
@@ -355,11 +270,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_interact_point
-
-	var_1_13[14] = {
+	pg.base.island_interact_point[14] = {
 		bt = "island/nodecanvas/agora/agora_50251",
 		attach = "pre_item_05_50251(Clone)",
 		id = 14,
@@ -377,11 +288,7 @@ var_0_3.base.island_interact_point = {}
 			-0.088
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_interact_point
-
-	var_1_14[15] = {
+	pg.base.island_interact_point[15] = {
 		bt = "island/nodecanvas/agora/agora_50251",
 		attach = "pre_item_05_50251(Clone)",
 		id = 15,
@@ -399,11 +306,7 @@ var_0_3.base.island_interact_point = {}
 			0.839
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_interact_point
-
-	var_1_15[16] = {
+	pg.base.island_interact_point[16] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50277(Clone)",
 		id = 16,
@@ -421,11 +324,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_interact_point
-
-	var_1_16[17] = {
+	pg.base.island_interact_point[17] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50253(Clone)",
 		id = 17,
@@ -443,11 +342,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_interact_point
-
-	var_1_17[18] = {
+	pg.base.island_interact_point[18] = {
 		bt = "island/nodecanvas/agora/agora_50254",
 		attach = "pre_item_05_50254(Clone)",
 		id = 18,
@@ -465,11 +360,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_interact_point
-
-	var_1_18[19] = {
+	pg.base.island_interact_point[19] = {
 		bt = "island/nodecanvas/agora/agora_switch_model",
 		attach = "pre_item_05_50257(Clone)",
 		id = 19,
@@ -500,11 +391,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_interact_point
-
-	var_1_19[20] = {
+	pg.base.island_interact_point[20] = {
 		bt = "island/nodecanvas/agora/agora_common_wide",
 		attach = "pre_item_05_50153(Clone)",
 		id = 20,
@@ -527,11 +414,7 @@ var_0_3.base.island_interact_point = {}
 			"hudong_pre/pre_item_05_50153/all/50153_Bone001/50153_Bone002/4"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_interact_point
-
-	var_1_20[21] = {
+	pg.base.island_interact_point[21] = {
 		bt = "island/nodecanvas/agora/agora_common_wide",
 		attach = "pre_item_05_50159(Clone)",
 		id = 21,
@@ -554,11 +437,7 @@ var_0_3.base.island_interact_point = {}
 			"pos/item_05_50159/all/bone_50159_000/bone_50159_001/bone_50159_005/4"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_interact_point
-
-	var_1_21[22] = {
+	pg.base.island_interact_point[22] = {
 		bt = "island/nodecanvas/agora/agora_common_front",
 		attach = "pre_item_05_50152(Clone)",
 		id = 22,
@@ -580,11 +459,7 @@ var_0_3.base.island_interact_point = {}
 			"all/Bone003/Bone001/Bone006/3"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_interact_point
-
-	var_1_22[23] = {
+	pg.base.island_interact_point[23] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50170(Clone)",
 		id = 23,
@@ -606,11 +481,7 @@ var_0_3.base.island_interact_point = {}
 			"all/Bone003/Bone001/Bone006/3"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_interact_point
-
-	var_1_23[24] = {
+	pg.base.island_interact_point[24] = {
 		bt = "island/nodecanvas/agora/agora_common_wide",
 		attach = "pre_item_05_50301(Clone)",
 		id = 24,
@@ -628,11 +499,7 @@ var_0_3.base.island_interact_point = {}
 			2.99
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_interact_point
-
-	var_1_24[25] = {
+	pg.base.island_interact_point[25] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50302(Clone)",
 		id = 25,
@@ -650,11 +517,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_interact_point
-
-	var_1_25[26] = {
+	pg.base.island_interact_point[26] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50304(Clone)",
 		id = 26,
@@ -674,11 +537,7 @@ var_0_3.base.island_interact_point = {}
 			"con/1"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_interact_point
-
-	var_1_26[27] = {
+	pg.base.island_interact_point[27] = {
 		bt = "island/nodecanvas/agora/agora_common_wide",
 		attach = "pre_item_05_50306(Clone)",
 		id = 27,
@@ -696,8 +555,7 @@ var_0_3.base.island_interact_point = {}
 			0
 		}
 	}
-	pg = var_1_26
-	var_1_26.base.island_interact_point[28] = {
+	pg.base.island_interact_point[28] = {
 		bt = "island/nodecanvas/agora/agora_common",
 		attach = "pre_item_05_50314(Clone)",
 		id = 28,

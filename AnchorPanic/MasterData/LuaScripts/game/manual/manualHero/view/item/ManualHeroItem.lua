@@ -45,6 +45,7 @@ function onClickHandler(self)
             end
         end })
     end
+    GameDispatcher:dispatchEvent(EventName.CLOSE_MANUALHERO_VIEW)
     --else
     --    gs.Message.Show(_TT(80019))--获得战员后解锁
     --end

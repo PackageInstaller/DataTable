@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "benefit_buff_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "benefit_buff_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.benefit_buff_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.benefit_buff_template
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.benefit_buff_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.benefit_buff_template = rawget(pg, "benefit_buff_template") or setmetatable({
+	__name = "benefit_buff_template"
+}, confNEO)
+pg.benefit_buff_template.__namecode__ = true
+pg.benefit_buff_template.all = {
 	1,
 	2,
 	3,
@@ -269,11 +242,7 @@ var_0_4.all = {
 	300326,
 	300327
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.benefit_buff_template
-
-var_0_5.get_id_list_by_benefit_type = {
+pg.benefit_buff_template.get_id_list_by_benefit_type = {
 	battle_buff = {
 		11,
 		16,
@@ -548,25 +517,11 @@ var_0_5.get_id_list_by_benefit_type = {
 		6
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.benefit_buff_template = {}
+pg.base = pg.base or {}
+pg.base.benefit_buff_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.benefit_buff_template
-
-	var_1_0[1] = {
+	pg.base.benefit_buff_template[1] = {
 		icon = "Props/haijungali",
 		name = "",
 		hide = 0,
@@ -579,11 +534,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "dorm_exp"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.benefit_buff_template
-
-	var_1_1[2] = {
+	pg.base.benefit_buff_template[2] = {
 		icon = "Props/huangjialiaoli",
 		name = "",
 		hide = 0,
@@ -596,11 +547,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "dorm_exp"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.benefit_buff_template
-
-	var_1_2[3] = {
+	pg.base.benefit_buff_template[3] = {
 		icon = "Props/manhanquanxi",
 		name = "",
 		hide = 0,
@@ -613,11 +560,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "dorm_exp"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.benefit_buff_template
-
-	var_1_3[4] = {
+	pg.base.benefit_buff_template[4] = {
 		icon = "Props/xinshou",
 		name = "经验加成",
 		hide = 0,
@@ -634,11 +577,7 @@ var_0_5.base.benefit_buff_template = {}
 			80
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.benefit_buff_template
-
-	var_1_4[5] = {
+	pg.base.benefit_buff_template[5] = {
 		icon = "Props/xinshou",
 		name = "石油消耗增加",
 		hide = 0,
@@ -651,11 +590,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "more_oil"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.benefit_buff_template
-
-	var_1_5[6] = {
+	pg.base.benefit_buff_template[6] = {
 		icon = "Props/xinshou",
 		name = "指挥官经验加成",
 		hide = 0,
@@ -668,11 +603,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "user_battle_exp"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.benefit_buff_template
-
-	var_1_6[7] = {
+	pg.base.benefit_buff_template[7] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成",
 		hide = 0,
@@ -685,11 +616,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "ship_battle_exp"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.benefit_buff_template
-
-	var_1_7[8] = {
+	pg.base.benefit_buff_template[8] = {
 		icon = "Props/xinshou",
 		name = "掉落加成",
 		hide = 0,
@@ -702,11 +629,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "extra_drop"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.benefit_buff_template
-
-	var_1_8[9] = {
+	pg.base.benefit_buff_template[9] = {
 		icon = "Props/xinshou",
 		name = "活动掉落加成",
 		hide = 0,
@@ -719,11 +642,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "extra_activity_drop"
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.benefit_buff_template
-
-	var_1_9[10] = {
+	pg.base.benefit_buff_template[10] = {
 		icon = "Props/buff_qiaozhong_10",
 		name = "学业",
 		hide = 0,
@@ -736,11 +655,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "skill_learncost_up"
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.benefit_buff_template
-
-	var_1_10[11] = {
+	pg.base.benefit_buff_template[11] = {
 		icon = "Props/buff_qiaozhong_11",
 		name = "事业",
 		hide = 0,
@@ -753,11 +668,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "battle_buff"
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.benefit_buff_template
-
-	var_1_11[12] = {
+	pg.base.benefit_buff_template[12] = {
 		icon = "Props/buff_qiaozhong_12",
 		name = "姻缘",
 		hide = 0,
@@ -770,11 +681,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "intimacy_up_extra"
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.benefit_buff_template
-
-	var_1_12[13] = {
+	pg.base.benefit_buff_template[13] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成1",
 		hide = 0,
@@ -794,11 +701,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.benefit_buff_template
-
-	var_1_13[14] = {
+	pg.base.benefit_buff_template[14] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成2",
 		hide = 0,
@@ -818,11 +721,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.benefit_buff_template
-
-	var_1_14[15] = {
+	pg.base.benefit_buff_template[15] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成3",
 		hide = 0,
@@ -842,11 +741,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.benefit_buff_template
-
-	var_1_15[16] = {
+	pg.base.benefit_buff_template[16] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成1",
 		hide = 0,
@@ -866,11 +761,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.benefit_buff_template
-
-	var_1_16[17] = {
+	pg.base.benefit_buff_template[17] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成2",
 		hide = 0,
@@ -890,11 +781,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.benefit_buff_template
-
-	var_1_17[18] = {
+	pg.base.benefit_buff_template[18] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成3",
 		hide = 0,
@@ -914,11 +801,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.benefit_buff_template
-
-	var_1_18[19] = {
+	pg.base.benefit_buff_template[19] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短1",
 		hide = 0,
@@ -938,11 +821,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.benefit_buff_template
-
-	var_1_19[20] = {
+	pg.base.benefit_buff_template[20] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短2",
 		hide = 0,
@@ -962,11 +841,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.benefit_buff_template
-
-	var_1_20[21] = {
+	pg.base.benefit_buff_template[21] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短3",
 		hide = 0,
@@ -986,11 +861,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.benefit_buff_template
-
-	var_1_21[22] = {
+	pg.base.benefit_buff_template[22] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成1",
 		hide = 0,
@@ -1010,11 +881,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.benefit_buff_template
-
-	var_1_22[23] = {
+	pg.base.benefit_buff_template[23] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成2",
 		hide = 0,
@@ -1034,11 +901,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.benefit_buff_template
-
-	var_1_23[24] = {
+	pg.base.benefit_buff_template[24] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成3",
 		hide = 0,
@@ -1058,11 +921,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.benefit_buff_template
-
-	var_1_24[25] = {
+	pg.base.benefit_buff_template[25] = {
 		icon = "Props/buff_urptup",
 		name = "活动关卡特装原型掉落加成",
 		hide = 0,
@@ -1075,11 +934,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "urpt_drop_up"
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.benefit_buff_template
-
-	var_1_25[26] = {
+	pg.base.benefit_buff_template[26] = {
 		icon = "Props/yanchangli1",
 		name = "演唱力 ",
 		hide = 0,
@@ -1096,11 +951,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.benefit_buff_template
-
-	var_1_26[27] = {
+	pg.base.benefit_buff_template[27] = {
 		icon = "Props/yanchangli2",
 		name = "演唱力 ",
 		hide = 0,
@@ -1117,11 +968,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.benefit_buff_template
-
-	var_1_27[28] = {
+	pg.base.benefit_buff_template[28] = {
 		icon = "Props/yanchangli3",
 		name = "演唱力 ",
 		hide = 0,
@@ -1138,11 +985,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.benefit_buff_template
-
-	var_1_28[29] = {
+	pg.base.benefit_buff_template[29] = {
 		icon = "Props/wudaoli1",
 		name = "舞蹈力 ",
 		hide = 0,
@@ -1159,11 +1002,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.benefit_buff_template
-
-	var_1_29[30] = {
+	pg.base.benefit_buff_template[30] = {
 		icon = "Props/wudaoli2",
 		name = "舞蹈力 ",
 		hide = 0,
@@ -1180,11 +1019,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.benefit_buff_template
-
-	var_1_30[31] = {
+	pg.base.benefit_buff_template[31] = {
 		icon = "Props/wudaoli3",
 		name = "舞蹈力 ",
 		hide = 0,
@@ -1201,11 +1036,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.benefit_buff_template
-
-	var_1_31[32] = {
+	pg.base.benefit_buff_template[32] = {
 		icon = "Props/biaoyanli1",
 		name = "表演力 ",
 		hide = 0,
@@ -1222,11 +1053,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.benefit_buff_template
-
-	var_1_32[33] = {
+	pg.base.benefit_buff_template[33] = {
 		icon = "Props/biaoyanli2",
 		name = "表演力 ",
 		hide = 0,
@@ -1243,11 +1070,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.benefit_buff_template
-
-	var_1_33[34] = {
+	pg.base.benefit_buff_template[34] = {
 		icon = "Props/biaoyanli3",
 		name = "表演力 ",
 		hide = 0,
@@ -1264,11 +1087,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.benefit_buff_template
-
-	var_1_34[35] = {
+	pg.base.benefit_buff_template[35] = {
 		icon = "Props/yanchangli1",
 		name = "<color=#ff5c5c>力量</color>LV.1：",
 		hide = 0,
@@ -1285,11 +1104,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.benefit_buff_template
-
-	var_1_35[36] = {
+	pg.base.benefit_buff_template[36] = {
 		icon = "Props/yanchangli2",
 		name = "<color=#ff5c5c>力量</color>LV.2：",
 		hide = 0,
@@ -1306,11 +1121,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.benefit_buff_template
-
-	var_1_36[37] = {
+	pg.base.benefit_buff_template[37] = {
 		icon = "Props/yanchangli3",
 		name = "<color=#ff5c5c>力量</color>MAX：",
 		hide = 0,
@@ -1327,11 +1138,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.benefit_buff_template
-
-	var_1_37[38] = {
+	pg.base.benefit_buff_template[38] = {
 		icon = "Props/buff_minigame_10",
 		name = "<color=#00BFFF>技巧</color>LV.1：",
 		hide = 0,
@@ -1348,11 +1155,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.benefit_buff_template
-
-	var_1_38[39] = {
+	pg.base.benefit_buff_template[39] = {
 		icon = "Props/buff_minigame_10",
 		name = "<color=#00BFFF>技巧</color>LV.2：",
 		hide = 0,
@@ -1369,11 +1172,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.benefit_buff_template
-
-	var_1_39[40] = {
+	pg.base.benefit_buff_template[40] = {
 		icon = "Props/buff_minigame_10",
 		name = "<color=#00BFFF>技巧</color>MAX：",
 		hide = 0,
@@ -1390,11 +1189,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.benefit_buff_template
-
-	var_1_40[41] = {
+	pg.base.benefit_buff_template[41] = {
 		icon = "Props/biaoyanli1",
 		name = "<color=#ffde38>体力</color>LV.1：",
 		hide = 0,
@@ -1411,11 +1206,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.benefit_buff_template
-
-	var_1_41[42] = {
+	pg.base.benefit_buff_template[42] = {
 		icon = "Props/biaoyanli2",
 		name = "<color=#ffde38>体力</color>LV.2：",
 		hide = 0,
@@ -1432,11 +1223,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.benefit_buff_template
-
-	var_1_42[43] = {
+	pg.base.benefit_buff_template[43] = {
 		icon = "Props/biaoyanli3",
 		name = "<color=#ffde38>体力</color>MAX：",
 		hide = 0,
@@ -1453,11 +1240,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.benefit_buff_template
-
-	var_1_43[44] = {
+	pg.base.benefit_buff_template[44] = {
 		icon = "Props/buff_minigame_12",
 		name = "<color=#FF69B4>魅力</color>LV.1：",
 		hide = 0,
@@ -1474,11 +1257,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.benefit_buff_template
-
-	var_1_44[45] = {
+	pg.base.benefit_buff_template[45] = {
 		icon = "Props/buff_minigame_12",
 		name = "<color=#FF69B4>魅力</color>LV.2：",
 		hide = 0,
@@ -1495,11 +1274,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.benefit_buff_template
-
-	var_1_45[46] = {
+	pg.base.benefit_buff_template[46] = {
 		icon = "Props/buff_minigame_12",
 		name = "<color=#FF69B4>魅力</color>MAX：",
 		hide = 0,
@@ -1516,11 +1291,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.benefit_buff_template
-
-	var_1_46[47] = {
+	pg.base.benefit_buff_template[47] = {
 		icon = "Props/xinshou",
 		name = "特殊作战加成描述",
 		hide = 0,
@@ -1533,11 +1304,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "desc"
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.benefit_buff_template
-
-	var_1_47[48] = {
+	pg.base.benefit_buff_template[48] = {
 		icon = "Props/xinshou",
 		name = "特殊作战加成",
 		hide = 0,
@@ -1550,11 +1317,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "chapter_up"
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.benefit_buff_template
-
-	var_1_48[49] = {
+	pg.base.benefit_buff_template[49] = {
 		icon = "Props/yanchangli1",
 		name = "皇家午茶Lv.1",
 		hide = 0,
@@ -1571,11 +1334,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.benefit_buff_template
-
-	var_1_49[50] = {
+	pg.base.benefit_buff_template[50] = {
 		icon = "Props/yanchangli2",
 		name = "皇家午茶Lv.2",
 		hide = 0,
@@ -1592,11 +1351,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.benefit_buff_template
-
-	var_1_50[51] = {
+	pg.base.benefit_buff_template[51] = {
 		icon = "Props/yanchangli3",
 		name = "皇家午茶Lv.3",
 		hide = 0,
@@ -1613,11 +1368,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.benefit_buff_template
-
-	var_1_51[52] = {
+	pg.base.benefit_buff_template[52] = {
 		icon = "Props/yanchangli2",
 		name = "皇家午茶Lv.4",
 		hide = 0,
@@ -1634,11 +1385,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.benefit_buff_template
-
-	var_1_52[53] = {
+	pg.base.benefit_buff_template[53] = {
 		icon = "Props/yanchangli3",
 		name = "皇家午茶Lv.5",
 		hide = 0,
@@ -1655,11 +1402,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.benefit_buff_template
-
-	var_1_53[54] = {
+	pg.base.benefit_buff_template[54] = {
 		icon = "Props/wudaoli1",
 		name = "莱茵咖啡馆Lv.1",
 		hide = 0,
@@ -1676,11 +1419,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.benefit_buff_template
-
-	var_1_54[55] = {
+	pg.base.benefit_buff_template[55] = {
 		icon = "Props/wudaoli2",
 		name = "莱茵咖啡馆Lv.2",
 		hide = 0,
@@ -1697,11 +1436,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.benefit_buff_template
-
-	var_1_55[56] = {
+	pg.base.benefit_buff_template[56] = {
 		icon = "Props/wudaoli3",
 		name = "莱茵咖啡馆Lv.3",
 		hide = 0,
@@ -1718,11 +1453,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.benefit_buff_template
-
-	var_1_56[57] = {
+	pg.base.benefit_buff_template[57] = {
 		icon = "Props/wudaoli2",
 		name = "莱茵咖啡馆Lv.4",
 		hide = 0,
@@ -1739,11 +1470,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.benefit_buff_template
-
-	var_1_57[58] = {
+	pg.base.benefit_buff_template[58] = {
 		icon = "Props/wudaoli3",
 		name = "莱茵咖啡馆Lv.5",
 		hide = 0,
@@ -1760,11 +1487,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.benefit_buff_template
-
-	var_1_58[59] = {
+	pg.base.benefit_buff_template[59] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "鹬的祈愿",
 		hide = 0,
@@ -1781,11 +1504,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.benefit_buff_template
-
-	var_1_59[60] = {
+	pg.base.benefit_buff_template[60] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "鹤的祈愿",
 		hide = 0,
@@ -1802,11 +1521,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.benefit_buff_template
-
-	var_1_60[61] = {
+	pg.base.benefit_buff_template[61] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "恶毒的祈愿",
 		hide = 0,
@@ -1823,11 +1538,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.benefit_buff_template
-
-	var_1_61[62] = {
+	pg.base.benefit_buff_template[62] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "胜利的祈愿",
 		hide = 0,
@@ -1844,11 +1555,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.benefit_buff_template
-
-	var_1_62[63] = {
+	pg.base.benefit_buff_template[63] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:436}的祈愿",
 		hide = 0,
@@ -1865,11 +1572,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.benefit_buff_template
-
-	var_1_63[64] = {
+	pg.base.benefit_buff_template[64] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "光辉的祈愿",
 		hide = 0,
@@ -1886,11 +1589,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.benefit_buff_template
-
-	var_1_64[65] = {
+	pg.base.benefit_buff_template[65] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "埃塞克斯的祈愿",
 		hide = 0,
@@ -1907,11 +1606,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.benefit_buff_template
-
-	var_1_65[66] = {
+	pg.base.benefit_buff_template[66] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "贝尔法斯特的祈愿",
 		hide = 0,
@@ -1928,11 +1623,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.benefit_buff_template
-
-	var_1_66[67] = {
+	pg.base.benefit_buff_template[67] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "凯旋的祈愿",
 		hide = 0,
@@ -1949,11 +1640,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.benefit_buff_template
-
-	var_1_67[68] = {
+	pg.base.benefit_buff_template[68] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "鹬的祈愿",
 		hide = 0,
@@ -1970,11 +1657,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.benefit_buff_template
-
-	var_1_68[69] = {
+	pg.base.benefit_buff_template[69] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "南达科他的祈愿",
 		hide = 0,
@@ -1991,11 +1674,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.benefit_buff_template
-
-	var_1_69[70] = {
+	pg.base.benefit_buff_template[70] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:437}的祈愿",
 		hide = 0,
@@ -2012,11 +1691,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.benefit_buff_template
-
-	var_1_70[71] = {
+	pg.base.benefit_buff_template[71] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "光辉的祈愿",
 		hide = 0,
@@ -2033,11 +1708,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.benefit_buff_template
-
-	var_1_71[72] = {
+	pg.base.benefit_buff_template[72] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:526}的祈愿",
 		hide = 0,
@@ -2054,11 +1725,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.benefit_buff_template
-
-	var_1_72[73] = {
+	pg.base.benefit_buff_template[73] = {
 		icon = "Props/60413",
 		name = "夏日运动饮料",
 		hide = 0,
@@ -2071,11 +1738,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "dorm_energy"
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.benefit_buff_template
-
-	var_1_73[74] = {
+	pg.base.benefit_buff_template[74] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:418}的祈愿",
 		hide = 0,
@@ -2092,11 +1755,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.benefit_buff_template
-
-	var_1_74[75] = {
+	pg.base.benefit_buff_template[75] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:203}的祈愿",
 		hide = 0,
@@ -2113,11 +1772,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.benefit_buff_template
-
-	var_1_75[76] = {
+	pg.base.benefit_buff_template[76] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "可畏的祈愿",
 		hide = 0,
@@ -2134,11 +1789,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.benefit_buff_template
-
-	var_1_76[77] = {
+	pg.base.benefit_buff_template[77] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "黎塞留的祈愿",
 		hide = 0,
@@ -2155,11 +1806,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.benefit_buff_template
-
-	var_1_77[78] = {
+	pg.base.benefit_buff_template[78] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "塔什干的祈愿",
 		hide = 0,
@@ -2176,11 +1823,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.benefit_buff_template
-
-	var_1_78[79] = {
+	pg.base.benefit_buff_template[79] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "香格里拉的祈愿",
 		hide = 0,
@@ -2197,11 +1840,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.benefit_buff_template
-
-	var_1_79[80] = {
+	pg.base.benefit_buff_template[80] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:526}的祈愿",
 		hide = 0,
@@ -2218,11 +1857,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.benefit_buff_template
-
-	var_1_80[82] = {
+	pg.base.benefit_buff_template[82] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:437}的祈愿",
 		hide = 0,
@@ -2239,11 +1874,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.benefit_buff_template
-
-	var_1_81[83] = {
+	pg.base.benefit_buff_template[83] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "贝尔法斯特的祈愿",
 		hide = 0,
@@ -2260,11 +1891,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.benefit_buff_template
-
-	var_1_82[84] = {
+	pg.base.benefit_buff_template[84] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "南达科他的祈愿",
 		hide = 0,
@@ -2281,11 +1908,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.benefit_buff_template
-
-	var_1_83[85] = {
+	pg.base.benefit_buff_template[85] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "可畏的祈愿",
 		hide = 0,
@@ -2302,11 +1925,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.benefit_buff_template
-
-	var_1_84[86] = {
+	pg.base.benefit_buff_template[86] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:50}的祈愿",
 		hide = 0,
@@ -2323,11 +1942,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.benefit_buff_template
-
-	var_1_85[87] = {
+	pg.base.benefit_buff_template[87] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "{namecode:435}的祈愿",
 		hide = 0,
@@ -2344,11 +1959,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.benefit_buff_template
-
-	var_1_86[88] = {
+	pg.base.benefit_buff_template[88] = {
 		icon = "Props/jianchuanqiyuan",
 		name = "黎塞留的祈愿",
 		hide = 0,
@@ -2365,11 +1976,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.benefit_buff_template
-
-	var_1_87[89] = {
+	pg.base.benefit_buff_template[89] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "{namecode:435}的心愿",
 		hide = 0,
@@ -2386,11 +1993,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.benefit_buff_template
-
-	var_1_88[90] = {
+	pg.base.benefit_buff_template[90] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "南达科他的祈愿",
 		hide = 0,
@@ -2407,11 +2010,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.benefit_buff_template
-
-	var_1_89[91] = {
+	pg.base.benefit_buff_template[91] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "古比雪夫的心愿",
 		hide = 0,
@@ -2428,11 +2027,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.benefit_buff_template
-
-	var_1_90[92] = {
+	pg.base.benefit_buff_template[92] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "帝国的心愿",
 		hide = 0,
@@ -2449,11 +2044,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.benefit_buff_template
-
-	var_1_91[93] = {
+	pg.base.benefit_buff_template[93] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "贝尔法斯特的心愿",
 		hide = 0,
@@ -2470,11 +2061,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.benefit_buff_template
-
-	var_1_92[94] = {
+	pg.base.benefit_buff_template[94] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "黎塞留的心愿",
 		hide = 0,
@@ -2491,11 +2078,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.benefit_buff_template
-
-	var_1_93[95] = {
+	pg.base.benefit_buff_template[95] = {
 		icon = "Props/jianchuanxinyuan",
 		name = "{namecode:437}的心愿",
 		hide = 0,
@@ -2512,11 +2095,7 @@ var_0_5.base.benefit_buff_template = {}
 			0
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.benefit_buff_template
-
-	var_1_94[101] = {
+	pg.base.benefit_buff_template[101] = {
 		icon = "Props/newserver_xinshou",
 		name = "经验加成",
 		hide = 0,
@@ -2533,11 +2112,7 @@ var_0_5.base.benefit_buff_template = {}
 			100
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.benefit_buff_template
-
-	var_1_95[102] = {
+	pg.base.benefit_buff_template[102] = {
 		icon = "Props/newserver_backyard",
 		name = "『新服活动』后宅经验buff",
 		hide = 0,
@@ -2550,11 +2125,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "dorm_exp"
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.benefit_buff_template
-
-	var_1_96[103] = {
+	pg.base.benefit_buff_template[103] = {
 		icon = "Props/newserver_skill",
 		name = "『新服活动』战术学院buff",
 		hide = 0,
@@ -2567,11 +2138,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "skill_learn_time"
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.benefit_buff_template
-
-	var_1_97[104] = {
+	pg.base.benefit_buff_template[104] = {
 		icon = "Props/newserver_upgrade",
 		name = "『新服活动』角色强化经验buff",
 		hide = 0,
@@ -2584,11 +2151,7 @@ var_0_5.base.benefit_buff_template = {}
 		type_priority = 0,
 		benefit_type = "character_strengthen_exp"
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.benefit_buff_template
-
-	var_1_98[110] = {
+	pg.base.benefit_buff_template[110] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成1",
 		hide = 1,
@@ -2608,8 +2171,7 @@ var_0_5.base.benefit_buff_template = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.benefit_buff_template[111] = {
+	pg.base.benefit_buff_template[111] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成2",
 		hide = 1,
@@ -2633,11 +2195,7 @@ var_0_5.base.benefit_buff_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.benefit_buff_template
-
-	var_2_0[112] = {
+	pg.base.benefit_buff_template[112] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成3",
 		hide = 1,
@@ -2657,11 +2215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.benefit_buff_template
-
-	var_2_1[113] = {
+	pg.base.benefit_buff_template[113] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成4",
 		hide = 1,
@@ -2681,11 +2235,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.benefit_buff_template
-
-	var_2_2[114] = {
+	pg.base.benefit_buff_template[114] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成1",
 		hide = 1,
@@ -2705,11 +2255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.benefit_buff_template
-
-	var_2_3[115] = {
+	pg.base.benefit_buff_template[115] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成2",
 		hide = 1,
@@ -2729,11 +2275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.benefit_buff_template
-
-	var_2_4[116] = {
+	pg.base.benefit_buff_template[116] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成3",
 		hide = 1,
@@ -2753,11 +2295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.benefit_buff_template
-
-	var_2_5[117] = {
+	pg.base.benefit_buff_template[117] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成4",
 		hide = 1,
@@ -2777,11 +2315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.benefit_buff_template
-
-	var_2_6[118] = {
+	pg.base.benefit_buff_template[118] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短1",
 		hide = 1,
@@ -2801,11 +2335,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.benefit_buff_template
-
-	var_2_7[119] = {
+	pg.base.benefit_buff_template[119] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短2",
 		hide = 1,
@@ -2825,11 +2355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.benefit_buff_template
-
-	var_2_8[120] = {
+	pg.base.benefit_buff_template[120] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短3",
 		hide = 1,
@@ -2849,11 +2375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.benefit_buff_template
-
-	var_2_9[121] = {
+	pg.base.benefit_buff_template[121] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短4",
 		hide = 1,
@@ -2873,11 +2395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.benefit_buff_template
-
-	var_2_10[122] = {
+	pg.base.benefit_buff_template[122] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成1",
 		hide = 1,
@@ -2897,11 +2415,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.benefit_buff_template
-
-	var_2_11[123] = {
+	pg.base.benefit_buff_template[123] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成2",
 		hide = 1,
@@ -2921,11 +2435,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.benefit_buff_template
-
-	var_2_12[124] = {
+	pg.base.benefit_buff_template[124] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成3",
 		hide = 1,
@@ -2945,11 +2455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.benefit_buff_template
-
-	var_2_13[125] = {
+	pg.base.benefit_buff_template[125] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成4",
 		hide = 1,
@@ -2969,11 +2475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.benefit_buff_template
-
-	var_2_14[126] = {
+	pg.base.benefit_buff_template[126] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.1",
 		hide = 1,
@@ -2993,11 +2495,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.benefit_buff_template
-
-	var_2_15[127] = {
+	pg.base.benefit_buff_template[127] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.2",
 		hide = 1,
@@ -3017,11 +2515,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.benefit_buff_template
-
-	var_2_16[128] = {
+	pg.base.benefit_buff_template[128] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.3",
 		hide = 1,
@@ -3041,11 +2535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.benefit_buff_template
-
-	var_2_17[129] = {
+	pg.base.benefit_buff_template[129] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.4",
 		hide = 1,
@@ -3065,11 +2555,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.benefit_buff_template
-
-	var_2_18[130] = {
+	pg.base.benefit_buff_template[130] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.1",
 		hide = 1,
@@ -3089,11 +2575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.benefit_buff_template
-
-	var_2_19[131] = {
+	pg.base.benefit_buff_template[131] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.2",
 		hide = 1,
@@ -3113,11 +2595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.benefit_buff_template
-
-	var_2_20[132] = {
+	pg.base.benefit_buff_template[132] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.3",
 		hide = 1,
@@ -3137,11 +2615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.benefit_buff_template
-
-	var_2_21[133] = {
+	pg.base.benefit_buff_template[133] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.4",
 		hide = 1,
@@ -3161,11 +2635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.benefit_buff_template
-
-	var_2_22[134] = {
+	pg.base.benefit_buff_template[134] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.1",
 		hide = 1,
@@ -3185,11 +2655,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.benefit_buff_template
-
-	var_2_23[135] = {
+	pg.base.benefit_buff_template[135] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.2",
 		hide = 1,
@@ -3209,11 +2675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.benefit_buff_template
-
-	var_2_24[136] = {
+	pg.base.benefit_buff_template[136] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.3",
 		hide = 1,
@@ -3233,11 +2695,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.benefit_buff_template
-
-	var_2_25[137] = {
+	pg.base.benefit_buff_template[137] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.4",
 		hide = 1,
@@ -3257,11 +2715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.benefit_buff_template
-
-	var_2_26[138] = {
+	pg.base.benefit_buff_template[138] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.1",
 		hide = 1,
@@ -3281,11 +2735,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.benefit_buff_template
-
-	var_2_27[139] = {
+	pg.base.benefit_buff_template[139] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.2",
 		hide = 1,
@@ -3305,11 +2755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.benefit_buff_template
-
-	var_2_28[140] = {
+	pg.base.benefit_buff_template[140] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.3",
 		hide = 1,
@@ -3329,11 +2775,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.benefit_buff_template
-
-	var_2_29[141] = {
+	pg.base.benefit_buff_template[141] = {
 		icon = "Props/xinshou",
 		name = "海岛内建筑lv.4",
 		hide = 1,
@@ -3353,11 +2795,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.benefit_buff_template
-
-	var_2_30[142] = {
+	pg.base.benefit_buff_template[142] = {
 		icon = "Props/yanhuiyaoyue",
 		name = "宴会邀约",
 		hide = 1,
@@ -3370,11 +2808,7 @@ end)()
 		type_priority = 0,
 		benefit_type = "ship_battle_intimacy"
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.benefit_buff_template
-
-	var_2_31[143] = {
+	pg.base.benefit_buff_template[143] = {
 		icon = "Props/buff_xinyuan_1",
 		name = "学业",
 		hide = 0,
@@ -3387,11 +2821,7 @@ end)()
 		type_priority = 0,
 		benefit_type = "skill_learncost_up"
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.benefit_buff_template
-
-	var_2_32[144] = {
+	pg.base.benefit_buff_template[144] = {
 		icon = "Props/buff_xinyuan_2",
 		name = "事业",
 		hide = 0,
@@ -3404,11 +2834,7 @@ end)()
 		type_priority = 0,
 		benefit_type = "battle_buff"
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.benefit_buff_template
-
-	var_2_33[145] = {
+	pg.base.benefit_buff_template[145] = {
 		icon = "Props/buff_xinyuan_3",
 		name = "缘分",
 		hide = 0,
@@ -3421,11 +2847,7 @@ end)()
 		type_priority = 0,
 		benefit_type = "intimacy_up_extra"
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.benefit_buff_template
-
-	var_2_34[300001] = {
+	pg.base.benefit_buff_template[300001] = {
 		icon = "Props/300001",
 		name = "输出提升LV1",
 		hide = 1,
@@ -3449,11 +2871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.benefit_buff_template
-
-	var_2_35[300002] = {
+	pg.base.benefit_buff_template[300002] = {
 		icon = "Props/300002",
 		name = "输出提升LV2",
 		hide = 1,
@@ -3477,11 +2895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.benefit_buff_template
-
-	var_2_36[300003] = {
+	pg.base.benefit_buff_template[300003] = {
 		icon = "Props/300003",
 		name = "输出提升LVMAX",
 		hide = 1,
@@ -3505,11 +2919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.benefit_buff_template
-
-	var_2_37[300011] = {
+	pg.base.benefit_buff_template[300011] = {
 		icon = "Props/300011",
 		name = "防御提升LV1",
 		hide = 1,
@@ -3533,11 +2943,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.benefit_buff_template
-
-	var_2_38[300012] = {
+	pg.base.benefit_buff_template[300012] = {
 		icon = "Props/300012",
 		name = "防御提升LV2",
 		hide = 1,
@@ -3561,11 +2967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.benefit_buff_template
-
-	var_2_39[300013] = {
+	pg.base.benefit_buff_template[300013] = {
 		icon = "Props/300013",
 		name = "防御提升LVMAX",
 		hide = 1,
@@ -3589,11 +2991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.benefit_buff_template
-
-	var_2_40[300021] = {
+	pg.base.benefit_buff_template[300021] = {
 		icon = "Props/300021",
 		name = "缓慢修复LV1",
 		hide = 1,
@@ -3617,11 +3015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.benefit_buff_template
-
-	var_2_41[300022] = {
+	pg.base.benefit_buff_template[300022] = {
 		icon = "Props/300022",
 		name = "缓慢修复LV2",
 		hide = 1,
@@ -3645,11 +3039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.benefit_buff_template
-
-	var_2_42[300023] = {
+	pg.base.benefit_buff_template[300023] = {
 		icon = "Props/300023",
 		name = "缓慢修复LVMAX",
 		hide = 1,
@@ -3673,11 +3063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.benefit_buff_template
-
-	var_2_43[300031] = {
+	pg.base.benefit_buff_template[300031] = {
 		icon = "Props/300031",
 		name = "损伤管控LV1",
 		hide = 1,
@@ -3701,11 +3087,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.benefit_buff_template
-
-	var_2_44[0] = {
+	pg.base.benefit_buff_template[0] = {
 		icon = "Props/300032",
 		name = "损伤管控LV2",
 		hide = 1,
@@ -3729,11 +3111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.benefit_buff_template
-
-	var_2_45[1] = {
+	pg.base.benefit_buff_template[1] = {
 		icon = "Props/300033",
 		name = "损伤管控LVMAX",
 		hide = 1,
@@ -3757,11 +3135,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.benefit_buff_template
-
-	var_2_46[9] = {
+	pg.base.benefit_buff_template[9] = {
 		icon = "Props/300041",
 		name = "点燃支援LV1",
 		hide = 1,
@@ -3785,11 +3159,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.benefit_buff_template
-
-	var_2_47[10] = {
+	pg.base.benefit_buff_template[10] = {
 		icon = "Props/300042",
 		name = "点燃支援LV2",
 		hide = 1,
@@ -3813,11 +3183,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.benefit_buff_template
-
-	var_2_48[11] = {
+	pg.base.benefit_buff_template[11] = {
 		icon = "Props/300043",
 		name = "点燃支援LVMAX",
 		hide = 1,
@@ -3841,11 +3207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.benefit_buff_template
-
-	var_2_49[19] = {
+	pg.base.benefit_buff_template[19] = {
 		icon = "Props/300051",
 		name = "易伤支援LV1",
 		hide = 1,
@@ -3869,11 +3231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.benefit_buff_template
-
-	var_2_50[20] = {
+	pg.base.benefit_buff_template[20] = {
 		icon = "Props/300052",
 		name = "易伤支援LV2",
 		hide = 1,
@@ -3897,11 +3255,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.benefit_buff_template
-
-	var_2_51[21] = {
+	pg.base.benefit_buff_template[21] = {
 		icon = "Props/300053",
 		name = "易伤支援LVMAX",
 		hide = 1,
@@ -3925,11 +3279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.benefit_buff_template
-
-	var_2_52[29] = {
+	pg.base.benefit_buff_template[29] = {
 		icon = "Props/300061",
 		name = "经验提升LV1",
 		hide = 1,
@@ -3953,11 +3303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.benefit_buff_template
-
-	var_2_53[30] = {
+	pg.base.benefit_buff_template[30] = {
 		icon = "Props/300062",
 		name = "经验提升LV2",
 		hide = 1,
@@ -3981,11 +3327,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.benefit_buff_template
-
-	var_2_54[31] = {
+	pg.base.benefit_buff_template[31] = {
 		icon = "Props/300063",
 		name = "经验提升LVMAX",
 		hide = 1,
@@ -4009,11 +3351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.benefit_buff_template
-
-	var_2_55[300071] = {
+	pg.base.benefit_buff_template[300071] = {
 		icon = "Props/300071",
 		name = "好感提升LVMAX",
 		hide = 1,
@@ -4037,11 +3375,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.benefit_buff_template
-
-	var_2_56[300081] = {
+	pg.base.benefit_buff_template[300081] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成1",
 		hide = 1,
@@ -4059,11 +3393,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.benefit_buff_template
-
-	var_2_57[300082] = {
+	pg.base.benefit_buff_template[300082] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成2",
 		hide = 1,
@@ -4081,11 +3411,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.benefit_buff_template
-
-	var_2_58[300083] = {
+	pg.base.benefit_buff_template[300083] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成3",
 		hide = 1,
@@ -4103,11 +3429,7 @@ end)()
 			3500
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.benefit_buff_template
-
-	var_2_59[300084] = {
+	pg.base.benefit_buff_template[300084] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成4",
 		hide = 1,
@@ -4125,11 +3447,7 @@ end)()
 			5000
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.benefit_buff_template
-
-	var_2_60[300085] = {
+	pg.base.benefit_buff_template[300085] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成5",
 		hide = 1,
@@ -4147,11 +3465,7 @@ end)()
 			1000000000000
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.benefit_buff_template
-
-	var_2_61[300086] = {
+	pg.base.benefit_buff_template[300086] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成1",
 		hide = 1,
@@ -4169,11 +3483,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.benefit_buff_template
-
-	var_2_62[300087] = {
+	pg.base.benefit_buff_template[300087] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成2",
 		hide = 1,
@@ -4191,11 +3501,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.benefit_buff_template
-
-	var_2_63[300088] = {
+	pg.base.benefit_buff_template[300088] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成3",
 		hide = 1,
@@ -4213,11 +3519,7 @@ end)()
 			3500
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.benefit_buff_template
-
-	var_2_64[300089] = {
+	pg.base.benefit_buff_template[300089] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成4",
 		hide = 1,
@@ -4235,11 +3537,7 @@ end)()
 			5000
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.benefit_buff_template
-
-	var_2_65[300090] = {
+	pg.base.benefit_buff_template[300090] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成5",
 		hide = 1,
@@ -4257,11 +3555,7 @@ end)()
 			1000000000000
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.benefit_buff_template
-
-	var_2_66[300091] = {
+	pg.base.benefit_buff_template[300091] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短1",
 		hide = 1,
@@ -4279,11 +3573,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.benefit_buff_template
-
-	var_2_67[300092] = {
+	pg.base.benefit_buff_template[300092] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短2",
 		hide = 1,
@@ -4301,11 +3591,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.benefit_buff_template
-
-	var_2_68[300093] = {
+	pg.base.benefit_buff_template[300093] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短3",
 		hide = 1,
@@ -4323,11 +3609,7 @@ end)()
 			3500
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.benefit_buff_template
-
-	var_2_69[300094] = {
+	pg.base.benefit_buff_template[300094] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短4",
 		hide = 1,
@@ -4345,11 +3627,7 @@ end)()
 			5000
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.benefit_buff_template
-
-	var_2_70[300095] = {
+	pg.base.benefit_buff_template[300095] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短5",
 		hide = 1,
@@ -4367,11 +3645,7 @@ end)()
 			1000000000000
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.benefit_buff_template
-
-	var_2_71[300096] = {
+	pg.base.benefit_buff_template[300096] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成1",
 		hide = 1,
@@ -4389,11 +3663,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.benefit_buff_template
-
-	var_2_72[300097] = {
+	pg.base.benefit_buff_template[300097] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成2",
 		hide = 1,
@@ -4411,11 +3681,7 @@ end)()
 			2000
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.benefit_buff_template
-
-	var_2_73[300098] = {
+	pg.base.benefit_buff_template[300098] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成3",
 		hide = 1,
@@ -4433,11 +3699,7 @@ end)()
 			3500
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.benefit_buff_template
-
-	var_2_74[300099] = {
+	pg.base.benefit_buff_template[300099] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成4",
 		hide = 1,
@@ -4455,11 +3717,7 @@ end)()
 			5000
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.benefit_buff_template
-
-	var_2_75[300100] = {
+	pg.base.benefit_buff_template[300100] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成5",
 		hide = 1,
@@ -4477,11 +3735,7 @@ end)()
 			1000000000000
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.benefit_buff_template
-
-	var_2_76[300101] = {
+	pg.base.benefit_buff_template[300101] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成1",
 		hide = 1,
@@ -4499,11 +3753,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.benefit_buff_template
-
-	var_2_77[300102] = {
+	pg.base.benefit_buff_template[300102] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成2",
 		hide = 1,
@@ -4521,11 +3771,7 @@ end)()
 			45
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.benefit_buff_template
-
-	var_2_78[300103] = {
+	pg.base.benefit_buff_template[300103] = {
 		icon = "Props/xinshou",
 		name = "舰娘经验加成3",
 		hide = 1,
@@ -4543,11 +3789,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.benefit_buff_template
-
-	var_2_79[300104] = {
+	pg.base.benefit_buff_template[300104] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成1",
 		hide = 1,
@@ -4565,11 +3807,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.benefit_buff_template
-
-	var_2_80[300105] = {
+	pg.base.benefit_buff_template[300105] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成2",
 		hide = 1,
@@ -4587,11 +3825,7 @@ end)()
 			45
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.benefit_buff_template
-
-	var_2_81[300106] = {
+	pg.base.benefit_buff_template[300106] = {
 		icon = "Props/buff_minigame_11",
 		name = "战斗伤害加成3",
 		hide = 1,
@@ -4609,11 +3843,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.benefit_buff_template
-
-	var_2_82[300107] = {
+	pg.base.benefit_buff_template[300107] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短1",
 		hide = 1,
@@ -4631,11 +3861,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.benefit_buff_template
-
-	var_2_83[300108] = {
+	pg.base.benefit_buff_template[300108] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短2",
 		hide = 1,
@@ -4653,11 +3879,7 @@ end)()
 			45
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.benefit_buff_template
-
-	var_2_84[300109] = {
+	pg.base.benefit_buff_template[300109] = {
 		icon = "Props/buff_minigame_10",
 		name = "战术学院学习时间缩短3",
 		hide = 1,
@@ -4675,11 +3897,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.benefit_buff_template
-
-	var_2_85[300110] = {
+	pg.base.benefit_buff_template[300110] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成1",
 		hide = 1,
@@ -4697,11 +3915,7 @@ end)()
 			30
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.benefit_buff_template
-
-	var_2_86[300111] = {
+	pg.base.benefit_buff_template[300111] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成2",
 		hide = 1,
@@ -4719,11 +3933,7 @@ end)()
 			45
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.benefit_buff_template
-
-	var_2_87[300112] = {
+	pg.base.benefit_buff_template[300112] = {
 		icon = "Props/buff_minigame_12",
 		name = "后宅经验加成3",
 		hide = 1,
@@ -4741,11 +3951,7 @@ end)()
 			1000
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.benefit_buff_template
-
-	var_2_88[300201] = {
+	pg.base.benefit_buff_template[300201] = {
 		icon = "Props/buff_yumia_1",
 		name = "核心等级LV1",
 		hide = 1,
@@ -4763,11 +3969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.benefit_buff_template
-
-	var_2_89[300202] = {
+	pg.base.benefit_buff_template[300202] = {
 		icon = "Props/buff_yumia_2",
 		name = "核心等级LV2",
 		hide = 1,
@@ -4785,11 +3987,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.benefit_buff_template
-
-	var_2_90[300203] = {
+	pg.base.benefit_buff_template[300203] = {
 		icon = "Props/buff_yumia_3",
 		name = "核心等级LV3",
 		hide = 1,
@@ -4807,11 +4005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.benefit_buff_template
-
-	var_2_91[300204] = {
+	pg.base.benefit_buff_template[300204] = {
 		icon = "Props/buff_yumia_4",
 		name = "核心等级LV4",
 		hide = 1,
@@ -4829,11 +4023,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.benefit_buff_template
-
-	var_2_92[300205] = {
+	pg.base.benefit_buff_template[300205] = {
 		icon = "Props/buff_yumia_1",
 		name = "核心等级LV1",
 		hide = 1,
@@ -4851,11 +4041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.benefit_buff_template
-
-	var_2_93[300206] = {
+	pg.base.benefit_buff_template[300206] = {
 		icon = "Props/buff_yumia_2",
 		name = "核心等级LV2",
 		hide = 1,
@@ -4873,11 +4059,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.benefit_buff_template
-
-	var_2_94[300207] = {
+	pg.base.benefit_buff_template[300207] = {
 		icon = "Props/buff_yumia_3",
 		name = "核心等级LV3",
 		hide = 1,
@@ -4895,11 +4077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.benefit_buff_template
-
-	var_2_95[300208] = {
+	pg.base.benefit_buff_template[300208] = {
 		icon = "Props/buff_yumia_4",
 		name = "核心等级LV4",
 		hide = 1,
@@ -4917,11 +4095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.benefit_buff_template
-
-	var_2_96[300209] = {
+	pg.base.benefit_buff_template[300209] = {
 		icon = "Props/buff_yumia_1",
 		name = "核心等级LV1",
 		hide = 1,
@@ -4939,11 +4113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.benefit_buff_template
-
-	var_2_97[300210] = {
+	pg.base.benefit_buff_template[300210] = {
 		icon = "Props/buff_yumia_2",
 		name = "核心等级LV2",
 		hide = 1,
@@ -4961,11 +4131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.benefit_buff_template
-
-	var_2_98[300211] = {
+	pg.base.benefit_buff_template[300211] = {
 		icon = "Props/buff_yumia_3",
 		name = "核心等级LV3",
 		hide = 1,
@@ -4983,8 +4149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.benefit_buff_template[300212] = {
+	pg.base.benefit_buff_template[300212] = {
 		icon = "Props/buff_yumia_4",
 		name = "核心等级LV4",
 		hide = 1,
@@ -5006,11 +4171,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.benefit_buff_template
-
-	var_3_0[300213] = {
+	pg.base.benefit_buff_template[300213] = {
 		icon = "Props/buff_yumia_1",
 		name = "核心等级LV1",
 		hide = 1,
@@ -5028,11 +4189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.benefit_buff_template
-
-	var_3_1[300214] = {
+	pg.base.benefit_buff_template[300214] = {
 		icon = "Props/buff_yumia_2",
 		name = "核心等级LV2",
 		hide = 1,
@@ -5050,11 +4207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.benefit_buff_template
-
-	var_3_2[300215] = {
+	pg.base.benefit_buff_template[300215] = {
 		icon = "Props/buff_yumia_3",
 		name = "核心等级LV3",
 		hide = 1,
@@ -5072,11 +4225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.benefit_buff_template
-
-	var_3_3[300216] = {
+	pg.base.benefit_buff_template[300216] = {
 		icon = "Props/buff_yumia_4",
 		name = "核心等级LV4",
 		hide = 1,
@@ -5094,11 +4243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.benefit_buff_template
-
-	var_3_4[300217] = {
+	pg.base.benefit_buff_template[300217] = {
 		icon = "Props/buff_yumia_1",
 		name = "核心等级LV1",
 		hide = 1,
@@ -5116,11 +4261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.benefit_buff_template
-
-	var_3_5[300218] = {
+	pg.base.benefit_buff_template[300218] = {
 		icon = "Props/buff_yumia_2",
 		name = "核心等级LV2",
 		hide = 1,
@@ -5138,11 +4279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.benefit_buff_template
-
-	var_3_6[300219] = {
+	pg.base.benefit_buff_template[300219] = {
 		icon = "Props/buff_yumia_3",
 		name = "核心等级LV3",
 		hide = 1,
@@ -5160,11 +4297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.benefit_buff_template
-
-	var_3_7[300220] = {
+	pg.base.benefit_buff_template[300220] = {
 		icon = "Props/buff_yumia_4",
 		name = "核心等级LV4",
 		hide = 1,
@@ -5182,11 +4315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.benefit_buff_template
-
-	var_3_8[300221] = {
+	pg.base.benefit_buff_template[300221] = {
 		icon = "Props/buff_yumia_ryzare",
 		name = "「炼金术士与遗迹群岛」特别加成",
 		hide = 0,
@@ -5199,11 +4328,7 @@ end)()
 		type_priority = 0,
 		benefit_type = "desc"
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.benefit_buff_template
-
-	var_3_9[12] = {
+	pg.base.benefit_buff_template[12] = {
 		icon = "Props/xinshou",
 		name = "无效效果",
 		hide = 1,
@@ -5216,11 +4341,7 @@ end)()
 		type_priority = 0,
 		benefit_type = "desc"
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.benefit_buff_template
-
-	var_3_10[13] = {
+	pg.base.benefit_buff_template[13] = {
 		icon = "Props/xinshou",
 		name = "白鹰科技模块LV1",
 		hide = 1,
@@ -5277,11 +4398,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.benefit_buff_template
-
-	var_3_11[14] = {
+	pg.base.benefit_buff_template[14] = {
 		icon = "Props/xinshou",
 		name = "白鹰科技模块LV2",
 		hide = 1,
@@ -5338,11 +4455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.benefit_buff_template
-
-	var_3_12[15] = {
+	pg.base.benefit_buff_template[15] = {
 		icon = "Props/xinshou",
 		name = "白鹰科技模块LVMAX",
 		hide = 1,
@@ -5399,11 +4512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.benefit_buff_template
-
-	var_3_13[16] = {
+	pg.base.benefit_buff_template[16] = {
 		icon = "Props/xinshou",
 		name = "皇家科技模块LV1",
 		hide = 1,
@@ -5460,11 +4569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.benefit_buff_template
-
-	var_3_14[17] = {
+	pg.base.benefit_buff_template[17] = {
 		icon = "Props/xinshou",
 		name = "皇家科技模块LV2",
 		hide = 1,
@@ -5521,11 +4626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.benefit_buff_template
-
-	var_3_15[18] = {
+	pg.base.benefit_buff_template[18] = {
 		icon = "Props/xinshou",
 		name = "皇家科技模块LVMAX",
 		hide = 1,
@@ -5582,11 +4683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.benefit_buff_template
-
-	var_3_16[19] = {
+	pg.base.benefit_buff_template[19] = {
 		icon = "Props/xinshou",
 		name = "鸢尾科技模块LV1",
 		hide = 1,
@@ -5643,11 +4740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.benefit_buff_template
-
-	var_3_17[20] = {
+	pg.base.benefit_buff_template[20] = {
 		icon = "Props/xinshou",
 		name = "鸢尾科技模块LV2",
 		hide = 1,
@@ -5704,11 +4797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.benefit_buff_template
-
-	var_3_18[21] = {
+	pg.base.benefit_buff_template[21] = {
 		icon = "Props/xinshou",
 		name = "鸢尾科技模块LVMAX",
 		hide = 1,
@@ -5765,11 +4854,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.benefit_buff_template
-
-	var_3_19[22] = {
+	pg.base.benefit_buff_template[22] = {
 		icon = "Props/xinshou",
 		name = "铁血科技模块LV1",
 		hide = 1,
@@ -5826,11 +4911,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.benefit_buff_template
-
-	var_3_20[23] = {
+	pg.base.benefit_buff_template[23] = {
 		icon = "Props/xinshou",
 		name = "铁血科技模块LV2",
 		hide = 1,
@@ -5887,11 +4968,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.benefit_buff_template
-
-	var_3_21[24] = {
+	pg.base.benefit_buff_template[24] = {
 		icon = "Props/xinshou",
 		name = "铁血科技模块LVMAX",
 		hide = 1,
@@ -5948,11 +5025,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.benefit_buff_template
-
-	var_3_22[25] = {
+	pg.base.benefit_buff_template[25] = {
 		icon = "Props/xinshou",
 		name = "东煌科技模块LV1",
 		hide = 1,
@@ -6009,11 +5082,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.benefit_buff_template
-
-	var_3_23[26] = {
+	pg.base.benefit_buff_template[26] = {
 		icon = "Props/xinshou",
 		name = "东煌科技模块LV2",
 		hide = 1,
@@ -6070,11 +5139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.benefit_buff_template
-
-	var_3_24[27] = {
+	pg.base.benefit_buff_template[27] = {
 		icon = "Props/xinshou",
 		name = "东煌科技模块LVMAX",
 		hide = 1,
@@ -6131,11 +5196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.benefit_buff_template
-
-	var_3_25[28] = {
+	pg.base.benefit_buff_template[28] = {
 		icon = "Props/xinshou",
 		name = "撒丁科技模块LV1",
 		hide = 1,
@@ -6192,11 +5253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.benefit_buff_template
-
-	var_3_26[29] = {
+	pg.base.benefit_buff_template[29] = {
 		icon = "Props/xinshou",
 		name = "撒丁科技模块LV2",
 		hide = 1,
@@ -6253,11 +5310,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.benefit_buff_template
-
-	var_3_27[30] = {
+	pg.base.benefit_buff_template[30] = {
 		icon = "Props/xinshou",
 		name = "撒丁科技模块LVMAX",
 		hide = 1,
@@ -6314,11 +5367,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.benefit_buff_template
-
-	var_3_28[31] = {
+	pg.base.benefit_buff_template[31] = {
 		icon = "Props/xinshou",
 		name = "郁金科技模块LV1",
 		hide = 1,
@@ -6375,11 +5424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.benefit_buff_template
-
-	var_3_29[300320] = {
+	pg.base.benefit_buff_template[300320] = {
 		icon = "Props/xinshou",
 		name = "郁金科技模块LV2",
 		hide = 1,
@@ -6436,11 +5481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.benefit_buff_template
-
-	var_3_30[300321] = {
+	pg.base.benefit_buff_template[300321] = {
 		icon = "Props/xinshou",
 		name = "郁金科技模块LVMAX",
 		hide = 1,
@@ -6497,11 +5538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.benefit_buff_template
-
-	var_3_31[300322] = {
+	pg.base.benefit_buff_template[300322] = {
 		icon = "Props/xinshou",
 		name = "北联科技模块LV1",
 		hide = 1,
@@ -6558,11 +5595,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.benefit_buff_template
-
-	var_3_32[300323] = {
+	pg.base.benefit_buff_template[300323] = {
 		icon = "Props/xinshou",
 		name = "北联科技模块LV2",
 		hide = 1,
@@ -6619,11 +5652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.benefit_buff_template
-
-	var_3_33[300324] = {
+	pg.base.benefit_buff_template[300324] = {
 		icon = "Props/xinshou",
 		name = "北联科技模块LVMAX",
 		hide = 1,
@@ -6680,11 +5709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.benefit_buff_template
-
-	var_3_34[300325] = {
+	pg.base.benefit_buff_template[300325] = {
 		icon = "Props/xinshou",
 		name = "重樱科技模块LV1",
 		hide = 1,
@@ -6741,11 +5766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.benefit_buff_template
-
-	var_3_35[300326] = {
+	pg.base.benefit_buff_template[300326] = {
 		icon = "Props/xinshou",
 		name = "重樱科技模块LV2",
 		hide = 1,
@@ -6802,8 +5823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-	var_3_35.base.benefit_buff_template[300327] = {
+	pg.base.benefit_buff_template[300327] = {
 		icon = "Props/xinshou",
 		name = "重樱科技模块LVMAX",
 		hide = 1,

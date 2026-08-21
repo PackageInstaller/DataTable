@@ -17,8 +17,13 @@ end
 function setup(self, go, modelId)
     self.mSpineGo = go
     self.modelId = modelId
+    self:initSpineGo()
+    self:showGuideEffect(true)
+    GameDispatcher:addEventListener(EventName.HIDE_MAINUI_EVENT, self.showGuideEffect, self)
+end
 
-    local spineTrans = self.mSpineGo.transform:Find("mGroup/spine_" .. modelId)
+function initSpineGo(self)
+    local spineTrans = self.mSpineGo.transform:Find("mGroup/spine_" .. self.modelId)
     local anim = spineTrans:GetComponent(ty.Animator)
     self.mSpineTrans = spineTrans
     self.spineAnim = self.mSpineTrans:GetComponent(ty.Animator)
@@ -46,24 +51,117 @@ function onClick3(self)
 end
 
 function startInteract(self, actName)
+
+
     local baseData = hero.HeroInteractManager:getConfigData01(self.baseModelId, self.modelId, actName)
+
 
     local finishPlayCvCall = function()
         GameDispatcher:dispatchEvent(EventName.MAINUI_LIVEVIEW_CVCALLFINISH)
         mainui.MainUIManager:setCurPlayCv(nil)
     end
 
-    local audioData = AudioManager:playHeroCVOnReplace(baseData.cv_id, finishPlayCvCall)
-    mainui.MainUIManager:setCurPlayCv(audioData)
+    if self.cvTimeout then
+        LoopManager:clearTimeout(self.cvTimeout)
+        self.cvTimeout = nil
+    end
+
+    local function _playCV()
+        local audioData
+        if AudioManager:preloadCvByCvId(baseData.cv_id, true) then
+            audioData = AudioManager:playHeroCVOnReplace(baseData.cv_id, finishPlayCvCall)
+        else
+            self.mTimeSn = LoopManager:setTimeout(10, nil, finishPlayCvCall)
+        end
+        mainui.MainUIManager:setCurPlayCv(audioData)
+    end
+    local layback = baseData["spine_voice_layback"] / 1000
+    self:destroyTimeSn()
+    self.cvTimeout = LoopManager:setTimeout(math.max(layback, 0.1), self, _playCV)
+
 
     GameDispatcher:dispatchEvent(EventName.MODEL_PLAYED, baseData)
 end
 
+-- 添加引导特效
+function showGuideEffect(self, isSetup)
+    local showTime = isSetup and 6 or 2
+    local isFirst = role.RoleManager:getMainUISpineIsFirstShow(self.modelId)
+    if isSetup and isFirst == 1 then
+        return
+    end
+    role.RoleManager:setMainUISpineIsFirstShow(self.modelId, 1)
+    for k, v in pairs(self.m_childTrans) do
+        if string.find(v.name, "mImgClick") then
+            gs.GoUtil.AddComponent(v.gameObject, ty.Canvas)
+            v:GetComponent(ty.Canvas).overrideSorting = true
+            v:GetComponent(ty.Canvas).sortingOrder = 202
+            UIEffectMgr:addEffect("fx_ui_common_guide_1", v)
+        end
+    end
+    if self.effTimerSn then
+        LoopManager:removeTimerByIndex(self.effTimerSn)
+        self.effTimerSn = nil
+    end
+
+    self.effTimerSn = LoopManager:addTimer(showTime, 1, self, self.removeGuideEffect)
+end
+
+-- 判断当前是否播放该动作
+function getAnimIsName(self, animName, layer_index)
+    local animHash = gs.Animator.StringToHash(animName)
+    if animHash == self:getCurStateHash(layer_index) then
+        return true
+    end
+    return false
+end
+
+--（获取当前播放状态hash值）
+function getCurStateHash(self, layer_index)
+    layer_index = layer_index or 0
+    local animatorStateInfo = self.spineAnim:GetCurrentAnimatorStateInfo(layer_index)
+    if not animatorStateInfo then
+        return
+    end
+
+    return animatorStateInfo.shortNameHash
+end
+
+-- 清除引导特效
+function removeGuideEffect(self)
+    if self.effTimerSn then
+        LoopManager:removeTimerByIndex(self.effTimerSn)
+        self.effTimerSn = nil
+    end
+
+    for k, v in pairs(self.m_childTrans) do
+        if string.find(v.name, "mImgClick") then
+            if not gs.GoUtil.IsCompNull(v.gameObject:GetComponent(ty.Canvas)) then
+                gs.GoUtil.RemoveComponent(v.gameObject, ty.Canvas)
+                UIEffectMgr:removeEffect("fx_ui_common_guide_1", v)
+            end
+        end
+    end
+end
+
+function destroyTimeSn(self)
+    if self.mTimeSn then
+        LoopManager:clearTimeout(self.mTimeSn)
+        self.mTimeSn = nil
+    end
+end
 
 function destroy(self)
+    GameDispatcher:removeEventListener(EventName.HIDE_MAINUI_EVENT, self.showGuideEffect, self)
     self:removeOnClick(self.m_childGos["mImgClick1"])
     self:removeOnClick(self.m_childGos["mImgClick2"])
     self:removeOnClick(self.m_childGos["mImgClick3"])
+    self:removeGuideEffect()
+    if self.cvTimeout then
+        LoopManager:clearTimeout(self.cvTimeout)
+        self.cvTimeout = nil
+    end
+    self:destroyTimeSn()
 end
 
 return _M

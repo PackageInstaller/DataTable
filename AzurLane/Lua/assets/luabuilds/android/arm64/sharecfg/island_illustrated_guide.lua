@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_illustrated_guide") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_illustrated_guide"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_illustrated_guide = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_illustrated_guide
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_illustrated_guide
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_illustrated_guide = rawget(pg, "island_illustrated_guide") or setmetatable({
+	__name = "island_illustrated_guide"
+}, confNEO)
+pg.island_illustrated_guide.__namecode__ = true
+pg.island_illustrated_guide.all = {
 	1,
 	2,
 	3,
@@ -277,25 +250,11 @@ var_0_4.all = {
 	3015,
 	3016
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_illustrated_guide = {}
+pg.base = pg.base or {}
+pg.base.island_illustrated_guide = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_illustrated_guide
-
-	var_1_0[1] = {
+	pg.base.island_illustrated_guide[1] = {
 		collect_add = 20,
 		type = 1,
 		id = 1,
@@ -327,11 +286,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_illustrated_guide
-
-	var_1_1[2] = {
+	pg.base.island_illustrated_guide[2] = {
 		collect_add = 20,
 		type = 1,
 		id = 2,
@@ -363,11 +318,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_illustrated_guide
-
-	var_1_2[3] = {
+	pg.base.island_illustrated_guide[3] = {
 		collect_add = 20,
 		type = 1,
 		id = 3,
@@ -399,11 +350,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_illustrated_guide
-
-	var_1_3[4] = {
+	pg.base.island_illustrated_guide[4] = {
 		collect_add = 20,
 		type = 1,
 		id = 4,
@@ -435,11 +382,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_illustrated_guide
-
-	var_1_4[5] = {
+	pg.base.island_illustrated_guide[5] = {
 		collect_add = 20,
 		type = 1,
 		id = 5,
@@ -471,11 +414,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_illustrated_guide
-
-	var_1_5[6] = {
+	pg.base.island_illustrated_guide[6] = {
 		collect_add = 20,
 		type = 1,
 		id = 6,
@@ -507,11 +446,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_illustrated_guide
-
-	var_1_6[7] = {
+	pg.base.island_illustrated_guide[7] = {
 		collect_add = 20,
 		type = 1,
 		id = 7,
@@ -543,11 +478,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_illustrated_guide
-
-	var_1_7[8] = {
+	pg.base.island_illustrated_guide[8] = {
 		collect_add = 20,
 		type = 1,
 		id = 8,
@@ -579,11 +510,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_illustrated_guide
-
-	var_1_8[9] = {
+	pg.base.island_illustrated_guide[9] = {
 		collect_add = 20,
 		type = 1,
 		id = 9,
@@ -615,11 +542,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_illustrated_guide
-
-	var_1_9[10] = {
+	pg.base.island_illustrated_guide[10] = {
 		collect_add = 20,
 		type = 1,
 		id = 10,
@@ -651,11 +574,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_illustrated_guide
-
-	var_1_10[11] = {
+	pg.base.island_illustrated_guide[11] = {
 		collect_add = 20,
 		type = 1,
 		id = 11,
@@ -687,11 +606,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_illustrated_guide
-
-	var_1_11[12] = {
+	pg.base.island_illustrated_guide[12] = {
 		collect_add = 20,
 		type = 1,
 		id = 12,
@@ -723,11 +638,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_illustrated_guide
-
-	var_1_12[13] = {
+	pg.base.island_illustrated_guide[13] = {
 		collect_add = 20,
 		type = 1,
 		id = 13,
@@ -759,11 +670,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_illustrated_guide
-
-	var_1_13[14] = {
+	pg.base.island_illustrated_guide[14] = {
 		collect_add = 20,
 		type = 1,
 		id = 14,
@@ -795,11 +702,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_illustrated_guide
-
-	var_1_14[15] = {
+	pg.base.island_illustrated_guide[15] = {
 		collect_add = 20,
 		type = 1,
 		id = 15,
@@ -831,11 +734,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_illustrated_guide
-
-	var_1_15[1016] = {
+	pg.base.island_illustrated_guide[1016] = {
 		collect_add = 20,
 		type = 1,
 		id = 1016,
@@ -867,11 +766,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_illustrated_guide
-
-	var_1_16[1017] = {
+	pg.base.island_illustrated_guide[1017] = {
 		collect_add = 20,
 		type = 1,
 		id = 1017,
@@ -903,11 +798,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_illustrated_guide
-
-	var_1_17[1018] = {
+	pg.base.island_illustrated_guide[1018] = {
 		collect_add = 20,
 		type = 1,
 		id = 1018,
@@ -939,11 +830,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_illustrated_guide
-
-	var_1_18[1019] = {
+	pg.base.island_illustrated_guide[1019] = {
 		collect_add = 20,
 		type = 1,
 		id = 1019,
@@ -975,11 +862,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_illustrated_guide
-
-	var_1_19[1020] = {
+	pg.base.island_illustrated_guide[1020] = {
 		collect_add = 20,
 		type = 1,
 		id = 1020,
@@ -1011,11 +894,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_illustrated_guide
-
-	var_1_20[1021] = {
+	pg.base.island_illustrated_guide[1021] = {
 		collect_add = 20,
 		type = 1,
 		id = 1021,
@@ -1047,11 +926,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_illustrated_guide
-
-	var_1_21[1022] = {
+	pg.base.island_illustrated_guide[1022] = {
 		collect_add = 20,
 		type = 1,
 		id = 1022,
@@ -1083,11 +958,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_illustrated_guide
-
-	var_1_22[1023] = {
+	pg.base.island_illustrated_guide[1023] = {
 		collect_add = 20,
 		type = 1,
 		id = 1023,
@@ -1119,11 +990,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_illustrated_guide
-
-	var_1_23[1024] = {
+	pg.base.island_illustrated_guide[1024] = {
 		collect_add = 20,
 		type = 1,
 		id = 1024,
@@ -1155,11 +1022,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_illustrated_guide
-
-	var_1_24[1025] = {
+	pg.base.island_illustrated_guide[1025] = {
 		collect_add = 20,
 		type = 1,
 		id = 1025,
@@ -1191,11 +1054,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_illustrated_guide
-
-	var_1_25[1026] = {
+	pg.base.island_illustrated_guide[1026] = {
 		collect_add = 20,
 		type = 1,
 		id = 1026,
@@ -1227,11 +1086,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_illustrated_guide
-
-	var_1_26[1027] = {
+	pg.base.island_illustrated_guide[1027] = {
 		collect_add = 20,
 		type = 1,
 		id = 1027,
@@ -1263,11 +1118,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_illustrated_guide
-
-	var_1_27[1028] = {
+	pg.base.island_illustrated_guide[1028] = {
 		collect_add = 20,
 		type = 1,
 		id = 1028,
@@ -1299,11 +1150,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_illustrated_guide
-
-	var_1_28[1029] = {
+	pg.base.island_illustrated_guide[1029] = {
 		collect_add = 20,
 		type = 1,
 		id = 1029,
@@ -1335,11 +1182,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_illustrated_guide
-
-	var_1_29[1030] = {
+	pg.base.island_illustrated_guide[1030] = {
 		collect_add = 20,
 		type = 1,
 		id = 1030,
@@ -1371,11 +1214,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_illustrated_guide
-
-	var_1_30[1031] = {
+	pg.base.island_illustrated_guide[1031] = {
 		collect_add = 20,
 		type = 1,
 		id = 1031,
@@ -1407,11 +1246,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_illustrated_guide
-
-	var_1_31[1032] = {
+	pg.base.island_illustrated_guide[1032] = {
 		collect_add = 20,
 		type = 1,
 		id = 1032,
@@ -1443,11 +1278,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_illustrated_guide
-
-	var_1_32[1033] = {
+	pg.base.island_illustrated_guide[1033] = {
 		collect_add = 20,
 		type = 1,
 		id = 1033,
@@ -1479,11 +1310,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_illustrated_guide
-
-	var_1_33[1034] = {
+	pg.base.island_illustrated_guide[1034] = {
 		collect_add = 20,
 		type = 1,
 		id = 1034,
@@ -1515,11 +1342,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_illustrated_guide
-
-	var_1_34[16] = {
+	pg.base.island_illustrated_guide[16] = {
 		collect_add = 20,
 		type = 2,
 		id = 16,
@@ -1529,11 +1352,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_illustrated_guide
-
-	var_1_35[17] = {
+	pg.base.island_illustrated_guide[17] = {
 		collect_add = 20,
 		type = 2,
 		id = 17,
@@ -1543,11 +1362,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_illustrated_guide
-
-	var_1_36[18] = {
+	pg.base.island_illustrated_guide[18] = {
 		collect_add = 20,
 		type = 2,
 		id = 18,
@@ -1557,11 +1372,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_illustrated_guide
-
-	var_1_37[19] = {
+	pg.base.island_illustrated_guide[19] = {
 		collect_add = 20,
 		type = 2,
 		id = 19,
@@ -1571,11 +1382,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_illustrated_guide
-
-	var_1_38[20] = {
+	pg.base.island_illustrated_guide[20] = {
 		collect_add = 20,
 		type = 2,
 		id = 20,
@@ -1585,11 +1392,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_illustrated_guide
-
-	var_1_39[21] = {
+	pg.base.island_illustrated_guide[21] = {
 		collect_add = 20,
 		type = 2,
 		id = 21,
@@ -1599,11 +1402,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_illustrated_guide
-
-	var_1_40[22] = {
+	pg.base.island_illustrated_guide[22] = {
 		collect_add = 20,
 		type = 2,
 		id = 22,
@@ -1613,11 +1412,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_illustrated_guide
-
-	var_1_41[23] = {
+	pg.base.island_illustrated_guide[23] = {
 		collect_add = 20,
 		type = 2,
 		id = 23,
@@ -1627,11 +1422,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_illustrated_guide
-
-	var_1_42[24] = {
+	pg.base.island_illustrated_guide[24] = {
 		collect_add = 20,
 		type = 2,
 		id = 24,
@@ -1641,11 +1432,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_illustrated_guide
-
-	var_1_43[25] = {
+	pg.base.island_illustrated_guide[25] = {
 		collect_add = 20,
 		type = 2,
 		id = 25,
@@ -1655,11 +1442,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_illustrated_guide
-
-	var_1_44[26] = {
+	pg.base.island_illustrated_guide[26] = {
 		collect_add = 20,
 		type = 2,
 		id = 26,
@@ -1669,11 +1452,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_illustrated_guide
-
-	var_1_45[27] = {
+	pg.base.island_illustrated_guide[27] = {
 		collect_add = 20,
 		type = 2,
 		id = 27,
@@ -1683,11 +1462,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_illustrated_guide
-
-	var_1_46[28] = {
+	pg.base.island_illustrated_guide[28] = {
 		collect_add = 20,
 		type = 2,
 		id = 28,
@@ -1697,11 +1472,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_illustrated_guide
-
-	var_1_47[29] = {
+	pg.base.island_illustrated_guide[29] = {
 		collect_add = 20,
 		type = 2,
 		id = 29,
@@ -1711,11 +1482,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_illustrated_guide
-
-	var_1_48[30] = {
+	pg.base.island_illustrated_guide[30] = {
 		collect_add = 20,
 		type = 2,
 		id = 30,
@@ -1725,11 +1492,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_illustrated_guide
-
-	var_1_49[2031] = {
+	pg.base.island_illustrated_guide[2031] = {
 		collect_add = 20,
 		type = 2,
 		id = 2031,
@@ -1739,11 +1502,7 @@ var_0_4.base.island_illustrated_guide = {}
 		collect_star = {},
 		award_unlock = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_illustrated_guide
-
-	var_1_50[31] = {
+	pg.base.island_illustrated_guide[31] = {
 		collect_add = 20,
 		type = 3,
 		id = 31,
@@ -1762,11 +1521,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_illustrated_guide
-
-	var_1_51[32] = {
+	pg.base.island_illustrated_guide[32] = {
 		collect_add = 20,
 		type = 3,
 		id = 32,
@@ -1785,11 +1540,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_illustrated_guide
-
-	var_1_52[33] = {
+	pg.base.island_illustrated_guide[33] = {
 		collect_add = 20,
 		type = 3,
 		id = 33,
@@ -1808,11 +1559,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_illustrated_guide
-
-	var_1_53[34] = {
+	pg.base.island_illustrated_guide[34] = {
 		collect_add = 20,
 		type = 3,
 		id = 34,
@@ -1831,11 +1578,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_illustrated_guide
-
-	var_1_54[35] = {
+	pg.base.island_illustrated_guide[35] = {
 		collect_add = 20,
 		type = 3,
 		id = 35,
@@ -1854,11 +1597,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_illustrated_guide
-
-	var_1_55[36] = {
+	pg.base.island_illustrated_guide[36] = {
 		collect_add = 20,
 		type = 3,
 		id = 36,
@@ -1877,11 +1616,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_illustrated_guide
-
-	var_1_56[37] = {
+	pg.base.island_illustrated_guide[37] = {
 		collect_add = 20,
 		type = 3,
 		id = 37,
@@ -1900,11 +1635,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_illustrated_guide
-
-	var_1_57[38] = {
+	pg.base.island_illustrated_guide[38] = {
 		collect_add = 20,
 		type = 3,
 		id = 38,
@@ -1923,11 +1654,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_illustrated_guide
-
-	var_1_58[39] = {
+	pg.base.island_illustrated_guide[39] = {
 		collect_add = 20,
 		type = 3,
 		id = 39,
@@ -1946,11 +1673,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_illustrated_guide
-
-	var_1_59[40] = {
+	pg.base.island_illustrated_guide[40] = {
 		collect_add = 20,
 		type = 3,
 		id = 40,
@@ -1969,11 +1692,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_illustrated_guide
-
-	var_1_60[41] = {
+	pg.base.island_illustrated_guide[41] = {
 		collect_add = 20,
 		type = 3,
 		id = 41,
@@ -1992,11 +1711,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_illustrated_guide
-
-	var_1_61[42] = {
+	pg.base.island_illustrated_guide[42] = {
 		collect_add = 20,
 		type = 3,
 		id = 42,
@@ -2015,11 +1730,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_illustrated_guide
-
-	var_1_62[43] = {
+	pg.base.island_illustrated_guide[43] = {
 		collect_add = 20,
 		type = 3,
 		id = 43,
@@ -2038,11 +1749,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_illustrated_guide
-
-	var_1_63[44] = {
+	pg.base.island_illustrated_guide[44] = {
 		collect_add = 20,
 		type = 3,
 		id = 44,
@@ -2061,11 +1768,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_illustrated_guide
-
-	var_1_64[45] = {
+	pg.base.island_illustrated_guide[45] = {
 		collect_add = 20,
 		type = 3,
 		id = 45,
@@ -2084,11 +1787,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_illustrated_guide
-
-	var_1_65[46] = {
+	pg.base.island_illustrated_guide[46] = {
 		collect_add = 20,
 		type = 3,
 		id = 46,
@@ -2107,11 +1806,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_illustrated_guide
-
-	var_1_66[47] = {
+	pg.base.island_illustrated_guide[47] = {
 		collect_add = 20,
 		type = 3,
 		id = 47,
@@ -2130,11 +1825,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_illustrated_guide
-
-	var_1_67[48] = {
+	pg.base.island_illustrated_guide[48] = {
 		collect_add = 20,
 		type = 3,
 		id = 48,
@@ -2153,11 +1844,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_illustrated_guide
-
-	var_1_68[49] = {
+	pg.base.island_illustrated_guide[49] = {
 		collect_add = 20,
 		type = 3,
 		id = 49,
@@ -2176,11 +1863,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_illustrated_guide
-
-	var_1_69[50] = {
+	pg.base.island_illustrated_guide[50] = {
 		collect_add = 20,
 		type = 3,
 		id = 50,
@@ -2199,11 +1882,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_illustrated_guide
-
-	var_1_70[51] = {
+	pg.base.island_illustrated_guide[51] = {
 		collect_add = 20,
 		type = 3,
 		id = 51,
@@ -2222,11 +1901,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_illustrated_guide
-
-	var_1_71[52] = {
+	pg.base.island_illustrated_guide[52] = {
 		collect_add = 20,
 		type = 3,
 		id = 52,
@@ -2245,11 +1920,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_illustrated_guide
-
-	var_1_72[57] = {
+	pg.base.island_illustrated_guide[57] = {
 		collect_add = 20,
 		type = 3,
 		id = 57,
@@ -2268,11 +1939,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_illustrated_guide
-
-	var_1_73[58] = {
+	pg.base.island_illustrated_guide[58] = {
 		collect_add = 20,
 		type = 3,
 		id = 58,
@@ -2291,11 +1958,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_illustrated_guide
-
-	var_1_74[59] = {
+	pg.base.island_illustrated_guide[59] = {
 		collect_add = 20,
 		type = 3,
 		id = 59,
@@ -2314,11 +1977,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_illustrated_guide
-
-	var_1_75[60] = {
+	pg.base.island_illustrated_guide[60] = {
 		collect_add = 20,
 		type = 3,
 		id = 60,
@@ -2337,11 +1996,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_illustrated_guide
-
-	var_1_76[61] = {
+	pg.base.island_illustrated_guide[61] = {
 		collect_add = 20,
 		type = 3,
 		id = 61,
@@ -2360,11 +2015,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_illustrated_guide
-
-	var_1_77[62] = {
+	pg.base.island_illustrated_guide[62] = {
 		collect_add = 20,
 		type = 3,
 		id = 62,
@@ -2383,11 +2034,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_illustrated_guide
-
-	var_1_78[63] = {
+	pg.base.island_illustrated_guide[63] = {
 		collect_add = 20,
 		type = 3,
 		id = 63,
@@ -2406,11 +2053,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_illustrated_guide
-
-	var_1_79[64] = {
+	pg.base.island_illustrated_guide[64] = {
 		collect_add = 20,
 		type = 3,
 		id = 64,
@@ -2429,11 +2072,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_illustrated_guide
-
-	var_1_80[65] = {
+	pg.base.island_illustrated_guide[65] = {
 		collect_add = 20,
 		type = 3,
 		id = 65,
@@ -2452,11 +2091,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_illustrated_guide
-
-	var_1_81[66] = {
+	pg.base.island_illustrated_guide[66] = {
 		collect_add = 20,
 		type = 3,
 		id = 66,
@@ -2475,11 +2110,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_illustrated_guide
-
-	var_1_82[67] = {
+	pg.base.island_illustrated_guide[67] = {
 		collect_add = 20,
 		type = 3,
 		id = 67,
@@ -2498,11 +2129,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_illustrated_guide
-
-	var_1_83[68] = {
+	pg.base.island_illustrated_guide[68] = {
 		collect_add = 20,
 		type = 3,
 		id = 68,
@@ -2521,11 +2148,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_illustrated_guide
-
-	var_1_84[69] = {
+	pg.base.island_illustrated_guide[69] = {
 		collect_add = 20,
 		type = 3,
 		id = 69,
@@ -2544,11 +2167,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_illustrated_guide
-
-	var_1_85[70] = {
+	pg.base.island_illustrated_guide[70] = {
 		collect_add = 20,
 		type = 3,
 		id = 70,
@@ -2567,11 +2186,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_illustrated_guide
-
-	var_1_86[71] = {
+	pg.base.island_illustrated_guide[71] = {
 		collect_add = 20,
 		type = 3,
 		id = 71,
@@ -2590,11 +2205,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_illustrated_guide
-
-	var_1_87[72] = {
+	pg.base.island_illustrated_guide[72] = {
 		collect_add = 20,
 		type = 3,
 		id = 72,
@@ -2613,11 +2224,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_illustrated_guide
-
-	var_1_88[73] = {
+	pg.base.island_illustrated_guide[73] = {
 		collect_add = 20,
 		type = 3,
 		id = 73,
@@ -2636,11 +2243,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_illustrated_guide
-
-	var_1_89[74] = {
+	pg.base.island_illustrated_guide[74] = {
 		collect_add = 20,
 		type = 3,
 		id = 74,
@@ -2659,11 +2262,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_illustrated_guide
-
-	var_1_90[75] = {
+	pg.base.island_illustrated_guide[75] = {
 		collect_add = 20,
 		type = 3,
 		id = 75,
@@ -2682,11 +2281,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_illustrated_guide
-
-	var_1_91[76] = {
+	pg.base.island_illustrated_guide[76] = {
 		collect_add = 20,
 		type = 3,
 		id = 76,
@@ -2705,11 +2300,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_illustrated_guide
-
-	var_1_92[77] = {
+	pg.base.island_illustrated_guide[77] = {
 		collect_add = 20,
 		type = 3,
 		id = 77,
@@ -2728,11 +2319,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_illustrated_guide
-
-	var_1_93[78] = {
+	pg.base.island_illustrated_guide[78] = {
 		collect_add = 20,
 		type = 3,
 		id = 78,
@@ -2751,11 +2338,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_illustrated_guide
-
-	var_1_94[86] = {
+	pg.base.island_illustrated_guide[86] = {
 		collect_add = 20,
 		type = 3,
 		id = 86,
@@ -2774,11 +2357,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_illustrated_guide
-
-	var_1_95[87] = {
+	pg.base.island_illustrated_guide[87] = {
 		collect_add = 20,
 		type = 3,
 		id = 87,
@@ -2797,11 +2376,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_illustrated_guide
-
-	var_1_96[88] = {
+	pg.base.island_illustrated_guide[88] = {
 		collect_add = 20,
 		type = 3,
 		id = 88,
@@ -2820,11 +2395,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_illustrated_guide
-
-	var_1_97[89] = {
+	pg.base.island_illustrated_guide[89] = {
 		collect_add = 20,
 		type = 3,
 		id = 89,
@@ -2843,11 +2414,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_illustrated_guide
-
-	var_1_98[90] = {
+	pg.base.island_illustrated_guide[90] = {
 		collect_add = 20,
 		type = 3,
 		id = 90,
@@ -2866,8 +2433,7 @@ var_0_4.base.island_illustrated_guide = {}
 		},
 		award_unlock = {}
 	}
-	pg = var_1_98
-	var_1_98.base.island_illustrated_guide[91] = {
+	pg.base.island_illustrated_guide[91] = {
 		collect_add = 20,
 		type = 3,
 		id = 91,
@@ -2890,11 +2456,7 @@ var_0_4.base.island_illustrated_guide = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.island_illustrated_guide
-
-	var_2_0[92] = {
+	pg.base.island_illustrated_guide[92] = {
 		collect_add = 20,
 		type = 3,
 		id = 92,
@@ -2913,11 +2475,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.island_illustrated_guide
-
-	var_2_1[93] = {
+	pg.base.island_illustrated_guide[93] = {
 		collect_add = 20,
 		type = 3,
 		id = 93,
@@ -2936,11 +2494,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.island_illustrated_guide
-
-	var_2_2[94] = {
+	pg.base.island_illustrated_guide[94] = {
 		collect_add = 20,
 		type = 3,
 		id = 94,
@@ -2959,11 +2513,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.island_illustrated_guide
-
-	var_2_3[95] = {
+	pg.base.island_illustrated_guide[95] = {
 		collect_add = 20,
 		type = 3,
 		id = 95,
@@ -2982,11 +2532,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.island_illustrated_guide
-
-	var_2_4[96] = {
+	pg.base.island_illustrated_guide[96] = {
 		collect_add = 20,
 		type = 3,
 		id = 96,
@@ -3005,11 +2551,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.island_illustrated_guide
-
-	var_2_5[97] = {
+	pg.base.island_illustrated_guide[97] = {
 		collect_add = 20,
 		type = 3,
 		id = 97,
@@ -3028,11 +2570,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.island_illustrated_guide
-
-	var_2_6[98] = {
+	pg.base.island_illustrated_guide[98] = {
 		collect_add = 20,
 		type = 3,
 		id = 98,
@@ -3051,11 +2589,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.island_illustrated_guide
-
-	var_2_7[99] = {
+	pg.base.island_illustrated_guide[99] = {
 		collect_add = 20,
 		type = 3,
 		id = 99,
@@ -3074,11 +2608,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.island_illustrated_guide
-
-	var_2_8[100] = {
+	pg.base.island_illustrated_guide[100] = {
 		collect_add = 20,
 		type = 3,
 		id = 100,
@@ -3097,11 +2627,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.island_illustrated_guide
-
-	var_2_9[101] = {
+	pg.base.island_illustrated_guide[101] = {
 		collect_add = 20,
 		type = 3,
 		id = 101,
@@ -3120,11 +2646,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.island_illustrated_guide
-
-	var_2_10[102] = {
+	pg.base.island_illustrated_guide[102] = {
 		collect_add = 20,
 		type = 3,
 		id = 102,
@@ -3143,11 +2665,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.island_illustrated_guide
-
-	var_2_11[103] = {
+	pg.base.island_illustrated_guide[103] = {
 		collect_add = 20,
 		type = 3,
 		id = 103,
@@ -3166,11 +2684,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.island_illustrated_guide
-
-	var_2_12[104] = {
+	pg.base.island_illustrated_guide[104] = {
 		collect_add = 20,
 		type = 3,
 		id = 104,
@@ -3189,11 +2703,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.island_illustrated_guide
-
-	var_2_13[105] = {
+	pg.base.island_illustrated_guide[105] = {
 		collect_add = 20,
 		type = 3,
 		id = 105,
@@ -3212,11 +2722,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.island_illustrated_guide
-
-	var_2_14[106] = {
+	pg.base.island_illustrated_guide[106] = {
 		collect_add = 20,
 		type = 3,
 		id = 106,
@@ -3235,11 +2741,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.island_illustrated_guide
-
-	var_2_15[107] = {
+	pg.base.island_illustrated_guide[107] = {
 		collect_add = 20,
 		type = 3,
 		id = 107,
@@ -3258,11 +2760,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.island_illustrated_guide
-
-	var_2_16[108] = {
+	pg.base.island_illustrated_guide[108] = {
 		collect_add = 20,
 		type = 3,
 		id = 108,
@@ -3281,11 +2779,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.island_illustrated_guide
-
-	var_2_17[109] = {
+	pg.base.island_illustrated_guide[109] = {
 		collect_add = 20,
 		type = 3,
 		id = 109,
@@ -3304,11 +2798,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.island_illustrated_guide
-
-	var_2_18[110] = {
+	pg.base.island_illustrated_guide[110] = {
 		collect_add = 20,
 		type = 3,
 		id = 110,
@@ -3327,11 +2817,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.island_illustrated_guide
-
-	var_2_19[111] = {
+	pg.base.island_illustrated_guide[111] = {
 		collect_add = 20,
 		type = 3,
 		id = 111,
@@ -3350,11 +2836,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.island_illustrated_guide
-
-	var_2_20[112] = {
+	pg.base.island_illustrated_guide[112] = {
 		collect_add = 20,
 		type = 3,
 		id = 112,
@@ -3373,11 +2855,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.island_illustrated_guide
-
-	var_2_21[113] = {
+	pg.base.island_illustrated_guide[113] = {
 		collect_add = 20,
 		type = 3,
 		id = 113,
@@ -3396,11 +2874,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.island_illustrated_guide
-
-	var_2_22[114] = {
+	pg.base.island_illustrated_guide[114] = {
 		collect_add = 20,
 		type = 3,
 		id = 114,
@@ -3419,11 +2893,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.island_illustrated_guide
-
-	var_2_23[115] = {
+	pg.base.island_illustrated_guide[115] = {
 		collect_add = 20,
 		type = 3,
 		id = 115,
@@ -3442,11 +2912,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.island_illustrated_guide
-
-	var_2_24[116] = {
+	pg.base.island_illustrated_guide[116] = {
 		collect_add = 20,
 		type = 3,
 		id = 116,
@@ -3465,11 +2931,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.island_illustrated_guide
-
-	var_2_25[117] = {
+	pg.base.island_illustrated_guide[117] = {
 		collect_add = 20,
 		type = 3,
 		id = 117,
@@ -3488,11 +2950,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.island_illustrated_guide
-
-	var_2_26[118] = {
+	pg.base.island_illustrated_guide[118] = {
 		collect_add = 20,
 		type = 3,
 		id = 118,
@@ -3511,11 +2969,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.island_illustrated_guide
-
-	var_2_27[120] = {
+	pg.base.island_illustrated_guide[120] = {
 		collect_add = 20,
 		type = 3,
 		id = 120,
@@ -3534,11 +2988,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.island_illustrated_guide
-
-	var_2_28[121] = {
+	pg.base.island_illustrated_guide[121] = {
 		collect_add = 20,
 		type = 3,
 		id = 121,
@@ -3557,11 +3007,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.island_illustrated_guide
-
-	var_2_29[122] = {
+	pg.base.island_illustrated_guide[122] = {
 		collect_add = 20,
 		type = 3,
 		id = 122,
@@ -3580,11 +3026,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.island_illustrated_guide
-
-	var_2_30[123] = {
+	pg.base.island_illustrated_guide[123] = {
 		collect_add = 20,
 		type = 3,
 		id = 123,
@@ -3603,11 +3045,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.island_illustrated_guide
-
-	var_2_31[124] = {
+	pg.base.island_illustrated_guide[124] = {
 		collect_add = 20,
 		type = 3,
 		id = 124,
@@ -3626,11 +3064,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.island_illustrated_guide
-
-	var_2_32[125] = {
+	pg.base.island_illustrated_guide[125] = {
 		collect_add = 20,
 		type = 3,
 		id = 125,
@@ -3649,11 +3083,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.island_illustrated_guide
-
-	var_2_33[126] = {
+	pg.base.island_illustrated_guide[126] = {
 		collect_add = 20,
 		type = 3,
 		id = 126,
@@ -3672,11 +3102,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.island_illustrated_guide
-
-	var_2_34[127] = {
+	pg.base.island_illustrated_guide[127] = {
 		collect_add = 20,
 		type = 3,
 		id = 127,
@@ -3695,11 +3121,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.island_illustrated_guide
-
-	var_2_35[128] = {
+	pg.base.island_illustrated_guide[128] = {
 		collect_add = 20,
 		type = 3,
 		id = 128,
@@ -3718,11 +3140,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.island_illustrated_guide
-
-	var_2_36[129] = {
+	pg.base.island_illustrated_guide[129] = {
 		collect_add = 20,
 		type = 3,
 		id = 129,
@@ -3741,11 +3159,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.island_illustrated_guide
-
-	var_2_37[130] = {
+	pg.base.island_illustrated_guide[130] = {
 		collect_add = 20,
 		type = 3,
 		id = 130,
@@ -3764,11 +3178,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.island_illustrated_guide
-
-	var_2_38[131] = {
+	pg.base.island_illustrated_guide[131] = {
 		collect_add = 20,
 		type = 3,
 		id = 131,
@@ -3787,11 +3197,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.island_illustrated_guide
-
-	var_2_39[132] = {
+	pg.base.island_illustrated_guide[132] = {
 		collect_add = 20,
 		type = 3,
 		id = 132,
@@ -3810,11 +3216,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.island_illustrated_guide
-
-	var_2_40[134] = {
+	pg.base.island_illustrated_guide[134] = {
 		collect_add = 20,
 		type = 3,
 		id = 134,
@@ -3833,11 +3235,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.island_illustrated_guide
-
-	var_2_41[135] = {
+	pg.base.island_illustrated_guide[135] = {
 		collect_add = 20,
 		type = 3,
 		id = 135,
@@ -3856,11 +3254,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.island_illustrated_guide
-
-	var_2_42[136] = {
+	pg.base.island_illustrated_guide[136] = {
 		collect_add = 20,
 		type = 3,
 		id = 136,
@@ -3879,11 +3273,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.island_illustrated_guide
-
-	var_2_43[137] = {
+	pg.base.island_illustrated_guide[137] = {
 		collect_add = 20,
 		type = 3,
 		id = 137,
@@ -3902,11 +3292,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.island_illustrated_guide
-
-	var_2_44[138] = {
+	pg.base.island_illustrated_guide[138] = {
 		collect_add = 20,
 		type = 3,
 		id = 138,
@@ -3925,11 +3311,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.island_illustrated_guide
-
-	var_2_45[139] = {
+	pg.base.island_illustrated_guide[139] = {
 		collect_add = 20,
 		type = 3,
 		id = 139,
@@ -3948,11 +3330,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.island_illustrated_guide
-
-	var_2_46[140] = {
+	pg.base.island_illustrated_guide[140] = {
 		collect_add = 20,
 		type = 3,
 		id = 140,
@@ -3971,11 +3349,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.island_illustrated_guide
-
-	var_2_47[141] = {
+	pg.base.island_illustrated_guide[141] = {
 		collect_add = 20,
 		type = 3,
 		id = 141,
@@ -3994,11 +3368,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.island_illustrated_guide
-
-	var_2_48[142] = {
+	pg.base.island_illustrated_guide[142] = {
 		collect_add = 20,
 		type = 3,
 		id = 142,
@@ -4017,11 +3387,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.island_illustrated_guide
-
-	var_2_49[143] = {
+	pg.base.island_illustrated_guide[143] = {
 		collect_add = 20,
 		type = 3,
 		id = 143,
@@ -4040,11 +3406,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.island_illustrated_guide
-
-	var_2_50[144] = {
+	pg.base.island_illustrated_guide[144] = {
 		collect_add = 20,
 		type = 3,
 		id = 144,
@@ -4063,11 +3425,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.island_illustrated_guide
-
-	var_2_51[145] = {
+	pg.base.island_illustrated_guide[145] = {
 		collect_add = 20,
 		type = 3,
 		id = 145,
@@ -4086,11 +3444,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.island_illustrated_guide
-
-	var_2_52[146] = {
+	pg.base.island_illustrated_guide[146] = {
 		collect_add = 20,
 		type = 3,
 		id = 146,
@@ -4109,11 +3463,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.island_illustrated_guide
-
-	var_2_53[147] = {
+	pg.base.island_illustrated_guide[147] = {
 		collect_add = 20,
 		type = 3,
 		id = 147,
@@ -4132,11 +3482,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.island_illustrated_guide
-
-	var_2_54[148] = {
+	pg.base.island_illustrated_guide[148] = {
 		collect_add = 20,
 		type = 3,
 		id = 148,
@@ -4155,11 +3501,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.island_illustrated_guide
-
-	var_2_55[149] = {
+	pg.base.island_illustrated_guide[149] = {
 		collect_add = 20,
 		type = 3,
 		id = 149,
@@ -4178,11 +3520,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.island_illustrated_guide
-
-	var_2_56[150] = {
+	pg.base.island_illustrated_guide[150] = {
 		collect_add = 20,
 		type = 3,
 		id = 150,
@@ -4201,11 +3539,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.island_illustrated_guide
-
-	var_2_57[151] = {
+	pg.base.island_illustrated_guide[151] = {
 		collect_add = 20,
 		type = 3,
 		id = 151,
@@ -4224,11 +3558,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.island_illustrated_guide
-
-	var_2_58[152] = {
+	pg.base.island_illustrated_guide[152] = {
 		collect_add = 20,
 		type = 3,
 		id = 152,
@@ -4247,11 +3577,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.island_illustrated_guide
-
-	var_2_59[153] = {
+	pg.base.island_illustrated_guide[153] = {
 		collect_add = 20,
 		type = 3,
 		id = 153,
@@ -4270,11 +3596,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.island_illustrated_guide
-
-	var_2_60[154] = {
+	pg.base.island_illustrated_guide[154] = {
 		collect_add = 20,
 		type = 3,
 		id = 154,
@@ -4293,11 +3615,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.island_illustrated_guide
-
-	var_2_61[155] = {
+	pg.base.island_illustrated_guide[155] = {
 		collect_add = 20,
 		type = 3,
 		id = 155,
@@ -4316,11 +3634,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.island_illustrated_guide
-
-	var_2_62[156] = {
+	pg.base.island_illustrated_guide[156] = {
 		collect_add = 20,
 		type = 3,
 		id = 156,
@@ -4339,11 +3653,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.island_illustrated_guide
-
-	var_2_63[157] = {
+	pg.base.island_illustrated_guide[157] = {
 		collect_add = 20,
 		type = 3,
 		id = 157,
@@ -4362,11 +3672,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.island_illustrated_guide
-
-	var_2_64[158] = {
+	pg.base.island_illustrated_guide[158] = {
 		collect_add = 20,
 		type = 3,
 		id = 158,
@@ -4385,11 +3691,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.island_illustrated_guide
-
-	var_2_65[159] = {
+	pg.base.island_illustrated_guide[159] = {
 		collect_add = 20,
 		type = 3,
 		id = 159,
@@ -4408,11 +3710,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.island_illustrated_guide
-
-	var_2_66[160] = {
+	pg.base.island_illustrated_guide[160] = {
 		collect_add = 20,
 		type = 3,
 		id = 160,
@@ -4431,11 +3729,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.island_illustrated_guide
-
-	var_2_67[161] = {
+	pg.base.island_illustrated_guide[161] = {
 		collect_add = 20,
 		type = 3,
 		id = 161,
@@ -4454,11 +3748,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.island_illustrated_guide
-
-	var_2_68[162] = {
+	pg.base.island_illustrated_guide[162] = {
 		collect_add = 20,
 		type = 3,
 		id = 162,
@@ -4477,11 +3767,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.island_illustrated_guide
-
-	var_2_69[163] = {
+	pg.base.island_illustrated_guide[163] = {
 		collect_add = 20,
 		type = 3,
 		id = 163,
@@ -4500,11 +3786,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.island_illustrated_guide
-
-	var_2_70[164] = {
+	pg.base.island_illustrated_guide[164] = {
 		collect_add = 20,
 		type = 3,
 		id = 164,
@@ -4523,11 +3805,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.island_illustrated_guide
-
-	var_2_71[165] = {
+	pg.base.island_illustrated_guide[165] = {
 		collect_add = 20,
 		type = 3,
 		id = 165,
@@ -4546,11 +3824,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.island_illustrated_guide
-
-	var_2_72[166] = {
+	pg.base.island_illustrated_guide[166] = {
 		collect_add = 20,
 		type = 3,
 		id = 166,
@@ -4569,11 +3843,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.island_illustrated_guide
-
-	var_2_73[167] = {
+	pg.base.island_illustrated_guide[167] = {
 		collect_add = 20,
 		type = 3,
 		id = 167,
@@ -4592,11 +3862,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.island_illustrated_guide
-
-	var_2_74[168] = {
+	pg.base.island_illustrated_guide[168] = {
 		collect_add = 20,
 		type = 3,
 		id = 168,
@@ -4615,11 +3881,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.island_illustrated_guide
-
-	var_2_75[169] = {
+	pg.base.island_illustrated_guide[169] = {
 		collect_add = 20,
 		type = 3,
 		id = 169,
@@ -4638,11 +3900,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.island_illustrated_guide
-
-	var_2_76[170] = {
+	pg.base.island_illustrated_guide[170] = {
 		collect_add = 20,
 		type = 3,
 		id = 170,
@@ -4661,11 +3919,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.island_illustrated_guide
-
-	var_2_77[171] = {
+	pg.base.island_illustrated_guide[171] = {
 		collect_add = 20,
 		type = 3,
 		id = 171,
@@ -4684,11 +3938,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.island_illustrated_guide
-
-	var_2_78[172] = {
+	pg.base.island_illustrated_guide[172] = {
 		collect_add = 20,
 		type = 3,
 		id = 172,
@@ -4707,11 +3957,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.island_illustrated_guide
-
-	var_2_79[4173] = {
+	pg.base.island_illustrated_guide[4173] = {
 		collect_add = 20,
 		type = 3,
 		id = 4173,
@@ -4730,11 +3976,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.island_illustrated_guide
-
-	var_2_80[4174] = {
+	pg.base.island_illustrated_guide[4174] = {
 		collect_add = 20,
 		type = 3,
 		id = 4174,
@@ -4753,11 +3995,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.island_illustrated_guide
-
-	var_2_81[4175] = {
+	pg.base.island_illustrated_guide[4175] = {
 		collect_add = 20,
 		type = 3,
 		id = 4175,
@@ -4776,11 +4014,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.island_illustrated_guide
-
-	var_2_82[4176] = {
+	pg.base.island_illustrated_guide[4176] = {
 		collect_add = 20,
 		type = 3,
 		id = 4176,
@@ -4799,11 +4033,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.island_illustrated_guide
-
-	var_2_83[4177] = {
+	pg.base.island_illustrated_guide[4177] = {
 		collect_add = 20,
 		type = 3,
 		id = 4177,
@@ -4822,11 +4052,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.island_illustrated_guide
-
-	var_2_84[4178] = {
+	pg.base.island_illustrated_guide[4178] = {
 		collect_add = 20,
 		type = 3,
 		id = 4178,
@@ -4845,11 +4071,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.island_illustrated_guide
-
-	var_2_85[4179] = {
+	pg.base.island_illustrated_guide[4179] = {
 		collect_add = 20,
 		type = 3,
 		id = 4179,
@@ -4868,11 +4090,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.island_illustrated_guide
-
-	var_2_86[4180] = {
+	pg.base.island_illustrated_guide[4180] = {
 		collect_add = 20,
 		type = 3,
 		id = 4180,
@@ -4891,11 +4109,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.island_illustrated_guide
-
-	var_2_87[173] = {
+	pg.base.island_illustrated_guide[173] = {
 		collect_add = 20,
 		type = 3,
 		id = 173,
@@ -4914,11 +4128,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.island_illustrated_guide
-
-	var_2_88[174] = {
+	pg.base.island_illustrated_guide[174] = {
 		collect_add = 20,
 		type = 3,
 		id = 174,
@@ -4937,11 +4147,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.island_illustrated_guide
-
-	var_2_89[175] = {
+	pg.base.island_illustrated_guide[175] = {
 		collect_add = 20,
 		type = 3,
 		id = 175,
@@ -4960,11 +4166,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.island_illustrated_guide
-
-	var_2_90[176] = {
+	pg.base.island_illustrated_guide[176] = {
 		collect_add = 20,
 		type = 3,
 		id = 176,
@@ -4983,11 +4185,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.island_illustrated_guide
-
-	var_2_91[177] = {
+	pg.base.island_illustrated_guide[177] = {
 		collect_add = 20,
 		type = 3,
 		id = 177,
@@ -5006,11 +4204,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.island_illustrated_guide
-
-	var_2_92[178] = {
+	pg.base.island_illustrated_guide[178] = {
 		collect_add = 20,
 		type = 3,
 		id = 178,
@@ -5029,11 +4223,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.island_illustrated_guide
-
-	var_2_93[179] = {
+	pg.base.island_illustrated_guide[179] = {
 		collect_add = 20,
 		type = 3,
 		id = 179,
@@ -5052,11 +4242,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.island_illustrated_guide
-
-	var_2_94[180] = {
+	pg.base.island_illustrated_guide[180] = {
 		collect_add = 20,
 		type = 3,
 		id = 180,
@@ -5075,11 +4261,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.island_illustrated_guide
-
-	var_2_95[181] = {
+	pg.base.island_illustrated_guide[181] = {
 		collect_add = 20,
 		type = 3,
 		id = 181,
@@ -5098,11 +4280,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.island_illustrated_guide
-
-	var_2_96[182] = {
+	pg.base.island_illustrated_guide[182] = {
 		collect_add = 20,
 		type = 3,
 		id = 182,
@@ -5121,11 +4299,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.island_illustrated_guide
-
-	var_2_97[183] = {
+	pg.base.island_illustrated_guide[183] = {
 		collect_add = 20,
 		type = 3,
 		id = 183,
@@ -5144,11 +4318,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.island_illustrated_guide
-
-	var_2_98[184] = {
+	pg.base.island_illustrated_guide[184] = {
 		collect_add = 20,
 		type = 3,
 		id = 184,
@@ -5167,8 +4337,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_2_98
-	var_2_98.base.island_illustrated_guide[185] = {
+	pg.base.island_illustrated_guide[185] = {
 		collect_add = 20,
 		type = 3,
 		id = 185,
@@ -5191,11 +4360,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.island_illustrated_guide
-
-	var_3_0[186] = {
+	pg.base.island_illustrated_guide[186] = {
 		collect_add = 20,
 		type = 3,
 		id = 186,
@@ -5214,11 +4379,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.island_illustrated_guide
-
-	var_3_1[187] = {
+	pg.base.island_illustrated_guide[187] = {
 		collect_add = 20,
 		type = 3,
 		id = 187,
@@ -5237,11 +4398,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.island_illustrated_guide
-
-	var_3_2[188] = {
+	pg.base.island_illustrated_guide[188] = {
 		collect_add = 20,
 		type = 3,
 		id = 188,
@@ -5260,11 +4417,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.island_illustrated_guide
-
-	var_3_3[189] = {
+	pg.base.island_illustrated_guide[189] = {
 		collect_add = 20,
 		type = 3,
 		id = 189,
@@ -5283,11 +4436,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.island_illustrated_guide
-
-	var_3_4[190] = {
+	pg.base.island_illustrated_guide[190] = {
 		collect_add = 20,
 		type = 3,
 		id = 190,
@@ -5306,11 +4455,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.island_illustrated_guide
-
-	var_3_5[191] = {
+	pg.base.island_illustrated_guide[191] = {
 		collect_add = 20,
 		type = 3,
 		id = 191,
@@ -5329,11 +4474,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.island_illustrated_guide
-
-	var_3_6[192] = {
+	pg.base.island_illustrated_guide[192] = {
 		collect_add = 20,
 		type = 3,
 		id = 192,
@@ -5352,11 +4493,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.island_illustrated_guide
-
-	var_3_7[193] = {
+	pg.base.island_illustrated_guide[193] = {
 		collect_add = 20,
 		type = 3,
 		id = 193,
@@ -5375,11 +4512,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.island_illustrated_guide
-
-	var_3_8[194] = {
+	pg.base.island_illustrated_guide[194] = {
 		collect_add = 20,
 		type = 3,
 		id = 194,
@@ -5398,11 +4531,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.island_illustrated_guide
-
-	var_3_9[195] = {
+	pg.base.island_illustrated_guide[195] = {
 		collect_add = 20,
 		type = 3,
 		id = 195,
@@ -5421,11 +4550,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.island_illustrated_guide
-
-	var_3_10[196] = {
+	pg.base.island_illustrated_guide[196] = {
 		collect_add = 20,
 		type = 3,
 		id = 196,
@@ -5444,11 +4569,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.island_illustrated_guide
-
-	var_3_11[197] = {
+	pg.base.island_illustrated_guide[197] = {
 		collect_add = 20,
 		type = 3,
 		id = 197,
@@ -5467,11 +4588,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.island_illustrated_guide
-
-	var_3_12[198] = {
+	pg.base.island_illustrated_guide[198] = {
 		collect_add = 20,
 		type = 3,
 		id = 198,
@@ -5490,11 +4607,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.island_illustrated_guide
-
-	var_3_13[199] = {
+	pg.base.island_illustrated_guide[199] = {
 		collect_add = 20,
 		type = 3,
 		id = 199,
@@ -5513,11 +4626,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.island_illustrated_guide
-
-	var_3_14[200] = {
+	pg.base.island_illustrated_guide[200] = {
 		collect_add = 20,
 		type = 3,
 		id = 200,
@@ -5536,11 +4645,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.island_illustrated_guide
-
-	var_3_15[201] = {
+	pg.base.island_illustrated_guide[201] = {
 		collect_add = 20,
 		type = 3,
 		id = 201,
@@ -5559,11 +4664,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.island_illustrated_guide
-
-	var_3_16[202] = {
+	pg.base.island_illustrated_guide[202] = {
 		collect_add = 20,
 		type = 3,
 		id = 202,
@@ -5582,11 +4683,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.island_illustrated_guide
-
-	var_3_17[203] = {
+	pg.base.island_illustrated_guide[203] = {
 		collect_add = 20,
 		type = 3,
 		id = 203,
@@ -5605,11 +4702,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.island_illustrated_guide
-
-	var_3_18[204] = {
+	pg.base.island_illustrated_guide[204] = {
 		collect_add = 20,
 		type = 3,
 		id = 204,
@@ -5628,11 +4721,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.island_illustrated_guide
-
-	var_3_19[205] = {
+	pg.base.island_illustrated_guide[205] = {
 		collect_add = 20,
 		type = 3,
 		id = 205,
@@ -5651,11 +4740,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.island_illustrated_guide
-
-	var_3_20[206] = {
+	pg.base.island_illustrated_guide[206] = {
 		collect_add = 20,
 		type = 3,
 		id = 206,
@@ -5674,11 +4759,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.island_illustrated_guide
-
-	var_3_21[207] = {
+	pg.base.island_illustrated_guide[207] = {
 		collect_add = 20,
 		type = 3,
 		id = 207,
@@ -5697,11 +4778,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.island_illustrated_guide
-
-	var_3_22[208] = {
+	pg.base.island_illustrated_guide[208] = {
 		collect_add = 20,
 		type = 3,
 		id = 208,
@@ -5720,11 +4797,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.island_illustrated_guide
-
-	var_3_23[209] = {
+	pg.base.island_illustrated_guide[209] = {
 		collect_add = 20,
 		type = 3,
 		id = 209,
@@ -5743,11 +4816,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.island_illustrated_guide
-
-	var_3_24[210] = {
+	pg.base.island_illustrated_guide[210] = {
 		collect_add = 20,
 		type = 3,
 		id = 210,
@@ -5766,11 +4835,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.island_illustrated_guide
-
-	var_3_25[211] = {
+	pg.base.island_illustrated_guide[211] = {
 		collect_add = 20,
 		type = 3,
 		id = 211,
@@ -5789,11 +4854,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.island_illustrated_guide
-
-	var_3_26[212] = {
+	pg.base.island_illustrated_guide[212] = {
 		collect_add = 20,
 		type = 3,
 		id = 212,
@@ -5812,11 +4873,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.island_illustrated_guide
-
-	var_3_27[213] = {
+	pg.base.island_illustrated_guide[213] = {
 		collect_add = 20,
 		type = 3,
 		id = 213,
@@ -5835,11 +4892,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.island_illustrated_guide
-
-	var_3_28[214] = {
+	pg.base.island_illustrated_guide[214] = {
 		collect_add = 20,
 		type = 3,
 		id = 214,
@@ -5858,11 +4911,7 @@ end)()
 		},
 		award_unlock = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.island_illustrated_guide
-
-	var_3_29[3001] = {
+	pg.base.island_illustrated_guide[3001] = {
 		collect_add = 10,
 		type = 4,
 		id = 3001,
@@ -5887,11 +4936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.island_illustrated_guide
-
-	var_3_30[3002] = {
+	pg.base.island_illustrated_guide[3002] = {
 		collect_add = 10,
 		type = 4,
 		id = 3002,
@@ -5916,11 +4961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.island_illustrated_guide
-
-	var_3_31[3003] = {
+	pg.base.island_illustrated_guide[3003] = {
 		collect_add = 10,
 		type = 4,
 		id = 3003,
@@ -5945,11 +4986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.island_illustrated_guide
-
-	var_3_32[3004] = {
+	pg.base.island_illustrated_guide[3004] = {
 		collect_add = 10,
 		type = 4,
 		id = 3004,
@@ -5974,11 +5011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.island_illustrated_guide
-
-	var_3_33[3005] = {
+	pg.base.island_illustrated_guide[3005] = {
 		collect_add = 10,
 		type = 4,
 		id = 3005,
@@ -6003,11 +5036,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.island_illustrated_guide
-
-	var_3_34[3006] = {
+	pg.base.island_illustrated_guide[3006] = {
 		collect_add = 10,
 		type = 4,
 		id = 3006,
@@ -6032,11 +5061,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.island_illustrated_guide
-
-	var_3_35[3007] = {
+	pg.base.island_illustrated_guide[3007] = {
 		collect_add = 10,
 		type = 4,
 		id = 3007,
@@ -6061,11 +5086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.island_illustrated_guide
-
-	var_3_36[3008] = {
+	pg.base.island_illustrated_guide[3008] = {
 		collect_add = 10,
 		type = 4,
 		id = 3008,
@@ -6090,11 +5111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.island_illustrated_guide
-
-	var_3_37[3009] = {
+	pg.base.island_illustrated_guide[3009] = {
 		collect_add = 10,
 		type = 4,
 		id = 3009,
@@ -6119,11 +5136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.island_illustrated_guide
-
-	var_3_38[3010] = {
+	pg.base.island_illustrated_guide[3010] = {
 		collect_add = 10,
 		type = 4,
 		id = 3010,
@@ -6148,11 +5161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.island_illustrated_guide
-
-	var_3_39[3011] = {
+	pg.base.island_illustrated_guide[3011] = {
 		collect_add = 10,
 		type = 4,
 		id = 3011,
@@ -6177,11 +5186,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.island_illustrated_guide
-
-	var_3_40[3012] = {
+	pg.base.island_illustrated_guide[3012] = {
 		collect_add = 10,
 		type = 4,
 		id = 3012,
@@ -6206,11 +5211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.island_illustrated_guide
-
-	var_3_41[3013] = {
+	pg.base.island_illustrated_guide[3013] = {
 		collect_add = 10,
 		type = 4,
 		id = 3013,
@@ -6235,11 +5236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.island_illustrated_guide
-
-	var_3_42[3014] = {
+	pg.base.island_illustrated_guide[3014] = {
 		collect_add = 10,
 		type = 4,
 		id = 3014,
@@ -6264,11 +5261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.island_illustrated_guide
-
-	var_3_43[3015] = {
+	pg.base.island_illustrated_guide[3015] = {
 		collect_add = 10,
 		type = 4,
 		id = 3015,
@@ -6293,8 +5286,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-	var_3_43.base.island_illustrated_guide[3016] = {
+	pg.base.island_illustrated_guide[3016] = {
 		collect_add = 10,
 		type = 4,
 		id = 3016,

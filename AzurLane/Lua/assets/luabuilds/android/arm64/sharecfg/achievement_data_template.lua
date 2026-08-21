@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "achievement_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "achievement_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.achievement_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.achievement_data_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.achievement_data_template = rawget(pg, "achievement_data_template") or setmetatable({
+	__name = "achievement_data_template"
+}, confNEO)
+pg.achievement_data_template.all = {
 	1,
 	2,
 	3,
@@ -37,25 +14,11 @@ var_0_3.all = {
 	9,
 	10
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.achievement_data_template = {}
+pg.base = pg.base or {}
+pg.base.achievement_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.achievement_data_template
-
-	var_1_0[1] = {
+	pg.base.achievement_data_template[1] = {
 		award = "[]",
 		condition = "杀怪数量达到30只",
 		action = 1,
@@ -65,11 +28,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "0"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.achievement_data_template
-
-	var_1_1[2] = {
+	pg.base.achievement_data_template[2] = {
 		award = "[]",
 		condition = "收集10艘不同的驱逐舰",
 		action = 2,
@@ -79,11 +38,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "1"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.achievement_data_template
-
-	var_1_2[3] = {
+	pg.base.achievement_data_template[3] = {
 		award = "[]",
 		condition = "收集20艘不同的驱逐舰",
 		action = 2,
@@ -93,11 +48,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "1"
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.achievement_data_template
-
-	var_1_3[4] = {
+	pg.base.achievement_data_template[4] = {
 		award = "[]",
 		condition = "收集30艘不同的驱逐舰",
 		action = 2,
@@ -107,11 +58,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "1"
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.achievement_data_template
-
-	var_1_4[5] = {
+	pg.base.achievement_data_template[5] = {
 		award = "[]",
 		condition = "任意舰船升级到30级",
 		action = 2,
@@ -121,11 +68,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "0"
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.achievement_data_template
-
-	var_1_5[6] = {
+	pg.base.achievement_data_template[6] = {
 		award = "[]",
 		condition = "任意驱逐舰升级到30级",
 		action = 2,
@@ -135,11 +78,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "1"
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.achievement_data_template
-
-	var_1_6[7] = {
+	pg.base.achievement_data_template[7] = {
 		award = "[]",
 		condition = "拉菲升级到30级",
 		action = 2,
@@ -149,11 +88,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "[101,102,103,104]"
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.achievement_data_template
-
-	var_1_7[8] = {
+	pg.base.achievement_data_template[8] = {
 		award = "[]",
 		condition = "收集10种不同的主炮装备",
 		action = 2,
@@ -163,11 +98,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "1"
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.achievement_data_template
-
-	var_1_8[9] = {
+	pg.base.achievement_data_template[9] = {
 		award = "[]",
 		condition = "竞技场连胜10场",
 		action = 3,
@@ -177,8 +108,7 @@ var_0_3.base.achievement_data_template = {}
 		limit = "[]",
 		target_id = "0"
 	}
-	pg = var_1_8
-	var_1_8.base.achievement_data_template[10] = {
+	pg.base.achievement_data_template[10] = {
 		award = "[]",
 		condition = "获得声望，反击图鉴",
 		action = 4,

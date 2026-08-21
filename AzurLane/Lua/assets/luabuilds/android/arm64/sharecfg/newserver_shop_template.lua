@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "newserver_shop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "newserver_shop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.newserver_shop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.newserver_shop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.newserver_shop_template = rawget(pg, "newserver_shop_template") or setmetatable({
+	__name = "newserver_shop_template"
+}, confNEO)
+pg.newserver_shop_template.all = {
 	1,
 	3,
 	4,
@@ -680,11 +657,7 @@ var_0_3.all = {
 	971,
 	9909
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.newserver_shop_template
-
-var_0_4.get_id_list_by_unlock_time = {
+pg.newserver_shop_template.get_id_list_by_unlock_time = {
 	[0] = {
 		1,
 		3,
@@ -1345,25 +1318,11 @@ var_0_4.get_id_list_by_unlock_time = {
 		971
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.newserver_shop_template = {}
+pg.base = pg.base or {}
+pg.base.newserver_shop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.newserver_shop_template
-
-	var_1_0[1] = {
+	pg.base.newserver_shop_template[1] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1380,11 +1339,7 @@ var_0_4.base.newserver_shop_template = {}
 			305051
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.newserver_shop_template
-
-	var_1_1[3] = {
+	pg.base.newserver_shop_template[3] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1429,11 +1384,7 @@ var_0_4.base.newserver_shop_template = {}
 			1440
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.newserver_shop_template
-
-	var_1_2[4] = {
+	pg.base.newserver_shop_template[4] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1465,11 +1416,7 @@ var_0_4.base.newserver_shop_template = {}
 			2540
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.newserver_shop_template
-
-	var_1_3[5] = {
+	pg.base.newserver_shop_template[5] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1486,11 +1433,7 @@ var_0_4.base.newserver_shop_template = {}
 			20001
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.newserver_shop_template
-
-	var_1_4[6] = {
+	pg.base.newserver_shop_template[6] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1507,11 +1450,7 @@ var_0_4.base.newserver_shop_template = {}
 			15003
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.newserver_shop_template
-
-	var_1_5[7] = {
+	pg.base.newserver_shop_template[7] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1528,11 +1467,7 @@ var_0_4.base.newserver_shop_template = {}
 			100011
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.newserver_shop_template
-
-	var_1_6[8] = {
+	pg.base.newserver_shop_template[8] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1549,11 +1484,7 @@ var_0_4.base.newserver_shop_template = {}
 			100001
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.newserver_shop_template
-
-	var_1_7[9] = {
+	pg.base.newserver_shop_template[9] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1570,11 +1501,7 @@ var_0_4.base.newserver_shop_template = {}
 			16502
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.newserver_shop_template
-
-	var_1_8[10] = {
+	pg.base.newserver_shop_template[10] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1591,11 +1518,7 @@ var_0_4.base.newserver_shop_template = {}
 			15008
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.newserver_shop_template
-
-	var_1_9[11] = {
+	pg.base.newserver_shop_template[11] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1612,11 +1535,7 @@ var_0_4.base.newserver_shop_template = {}
 			61001
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.newserver_shop_template
-
-	var_1_10[12] = {
+	pg.base.newserver_shop_template[12] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1637,11 +1556,7 @@ var_0_4.base.newserver_shop_template = {}
 			17043
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.newserver_shop_template
-
-	var_1_11[13] = {
+	pg.base.newserver_shop_template[13] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -1662,11 +1577,7 @@ var_0_4.base.newserver_shop_template = {}
 			17042
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.newserver_shop_template
-
-	var_1_12[14] = {
+	pg.base.newserver_shop_template[14] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -1687,11 +1598,7 @@ var_0_4.base.newserver_shop_template = {}
 			17041
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.newserver_shop_template
-
-	var_1_13[15] = {
+	pg.base.newserver_shop_template[15] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -1710,11 +1617,7 @@ var_0_4.base.newserver_shop_template = {}
 			16024
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.newserver_shop_template
-
-	var_1_14[16] = {
+	pg.base.newserver_shop_template[16] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1733,11 +1636,7 @@ var_0_4.base.newserver_shop_template = {}
 			16023
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.newserver_shop_template
-
-	var_1_15[17] = {
+	pg.base.newserver_shop_template[17] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1756,11 +1655,7 @@ var_0_4.base.newserver_shop_template = {}
 			16022
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.newserver_shop_template
-
-	var_1_16[18] = {
+	pg.base.newserver_shop_template[18] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -1779,11 +1674,7 @@ var_0_4.base.newserver_shop_template = {}
 			16021
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.newserver_shop_template
-
-	var_1_17[19] = {
+	pg.base.newserver_shop_template[19] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1803,11 +1694,7 @@ var_0_4.base.newserver_shop_template = {}
 			18033
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.newserver_shop_template
-
-	var_1_18[20] = {
+	pg.base.newserver_shop_template[20] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -1827,11 +1714,7 @@ var_0_4.base.newserver_shop_template = {}
 			18032
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.newserver_shop_template
-
-	var_1_19[21] = {
+	pg.base.newserver_shop_template[21] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -1851,11 +1734,7 @@ var_0_4.base.newserver_shop_template = {}
 			18031
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.newserver_shop_template
-
-	var_1_20[22] = {
+	pg.base.newserver_shop_template[22] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1872,11 +1751,7 @@ var_0_4.base.newserver_shop_template = {}
 			42000
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.newserver_shop_template
-
-	var_1_21[23] = {
+	pg.base.newserver_shop_template[23] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1893,11 +1768,7 @@ var_0_4.base.newserver_shop_template = {}
 			42010
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.newserver_shop_template
-
-	var_1_22[24] = {
+	pg.base.newserver_shop_template[24] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -1914,11 +1785,7 @@ var_0_4.base.newserver_shop_template = {}
 			1
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.newserver_shop_template
-
-	var_1_23[25] = {
+	pg.base.newserver_shop_template[25] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -1935,11 +1802,7 @@ var_0_4.base.newserver_shop_template = {}
 			2
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.newserver_shop_template
-
-	var_1_24[26] = {
+	pg.base.newserver_shop_template[26] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -1956,11 +1819,7 @@ var_0_4.base.newserver_shop_template = {}
 			3
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.newserver_shop_template
-
-	var_1_25[27] = {
+	pg.base.newserver_shop_template[27] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -1977,11 +1836,7 @@ var_0_4.base.newserver_shop_template = {}
 			59900
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.newserver_shop_template
-
-	var_1_26[101] = {
+	pg.base.newserver_shop_template[101] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -1998,11 +1853,7 @@ var_0_4.base.newserver_shop_template = {}
 			20001
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.newserver_shop_template
-
-	var_1_27[102] = {
+	pg.base.newserver_shop_template[102] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2019,11 +1870,7 @@ var_0_4.base.newserver_shop_template = {}
 			15003
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.newserver_shop_template
-
-	var_1_28[103] = {
+	pg.base.newserver_shop_template[103] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2040,11 +1887,7 @@ var_0_4.base.newserver_shop_template = {}
 			100011
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.newserver_shop_template
-
-	var_1_29[104] = {
+	pg.base.newserver_shop_template[104] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2061,11 +1904,7 @@ var_0_4.base.newserver_shop_template = {}
 			100001
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.newserver_shop_template
-
-	var_1_30[105] = {
+	pg.base.newserver_shop_template[105] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2082,11 +1921,7 @@ var_0_4.base.newserver_shop_template = {}
 			16502
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.newserver_shop_template
-
-	var_1_31[106] = {
+	pg.base.newserver_shop_template[106] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2103,11 +1938,7 @@ var_0_4.base.newserver_shop_template = {}
 			15008
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.newserver_shop_template
-
-	var_1_32[107] = {
+	pg.base.newserver_shop_template[107] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2124,11 +1955,7 @@ var_0_4.base.newserver_shop_template = {}
 			61001
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.newserver_shop_template
-
-	var_1_33[108] = {
+	pg.base.newserver_shop_template[108] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2149,11 +1976,7 @@ var_0_4.base.newserver_shop_template = {}
 			17043
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.newserver_shop_template
-
-	var_1_34[109] = {
+	pg.base.newserver_shop_template[109] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2174,11 +1997,7 @@ var_0_4.base.newserver_shop_template = {}
 			17042
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.newserver_shop_template
-
-	var_1_35[110] = {
+	pg.base.newserver_shop_template[110] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2199,11 +2018,7 @@ var_0_4.base.newserver_shop_template = {}
 			17041
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.newserver_shop_template
-
-	var_1_36[111] = {
+	pg.base.newserver_shop_template[111] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -2222,11 +2037,7 @@ var_0_4.base.newserver_shop_template = {}
 			16024
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.newserver_shop_template
-
-	var_1_37[112] = {
+	pg.base.newserver_shop_template[112] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2245,11 +2056,7 @@ var_0_4.base.newserver_shop_template = {}
 			16023
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.newserver_shop_template
-
-	var_1_38[113] = {
+	pg.base.newserver_shop_template[113] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2268,11 +2075,7 @@ var_0_4.base.newserver_shop_template = {}
 			16022
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.newserver_shop_template
-
-	var_1_39[114] = {
+	pg.base.newserver_shop_template[114] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2291,11 +2094,7 @@ var_0_4.base.newserver_shop_template = {}
 			16021
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.newserver_shop_template
-
-	var_1_40[115] = {
+	pg.base.newserver_shop_template[115] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2315,11 +2114,7 @@ var_0_4.base.newserver_shop_template = {}
 			18033
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.newserver_shop_template
-
-	var_1_41[116] = {
+	pg.base.newserver_shop_template[116] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2339,11 +2134,7 @@ var_0_4.base.newserver_shop_template = {}
 			18032
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.newserver_shop_template
-
-	var_1_42[117] = {
+	pg.base.newserver_shop_template[117] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2363,11 +2154,7 @@ var_0_4.base.newserver_shop_template = {}
 			18031
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.newserver_shop_template
-
-	var_1_43[118] = {
+	pg.base.newserver_shop_template[118] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2384,11 +2171,7 @@ var_0_4.base.newserver_shop_template = {}
 			42000
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.newserver_shop_template
-
-	var_1_44[119] = {
+	pg.base.newserver_shop_template[119] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2405,11 +2188,7 @@ var_0_4.base.newserver_shop_template = {}
 			42010
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.newserver_shop_template
-
-	var_1_45[120] = {
+	pg.base.newserver_shop_template[120] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2426,11 +2205,7 @@ var_0_4.base.newserver_shop_template = {}
 			1
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.newserver_shop_template
-
-	var_1_46[121] = {
+	pg.base.newserver_shop_template[121] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2447,11 +2222,7 @@ var_0_4.base.newserver_shop_template = {}
 			2
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.newserver_shop_template
-
-	var_1_47[122] = {
+	pg.base.newserver_shop_template[122] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2468,11 +2239,7 @@ var_0_4.base.newserver_shop_template = {}
 			3
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.newserver_shop_template
-
-	var_1_48[123] = {
+	pg.base.newserver_shop_template[123] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2489,11 +2256,7 @@ var_0_4.base.newserver_shop_template = {}
 			59900
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.newserver_shop_template
-
-	var_1_49[201] = {
+	pg.base.newserver_shop_template[201] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2510,11 +2273,7 @@ var_0_4.base.newserver_shop_template = {}
 			20001
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.newserver_shop_template
-
-	var_1_50[202] = {
+	pg.base.newserver_shop_template[202] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2531,11 +2290,7 @@ var_0_4.base.newserver_shop_template = {}
 			15003
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.newserver_shop_template
-
-	var_1_51[203] = {
+	pg.base.newserver_shop_template[203] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2552,11 +2307,7 @@ var_0_4.base.newserver_shop_template = {}
 			100011
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.newserver_shop_template
-
-	var_1_52[204] = {
+	pg.base.newserver_shop_template[204] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2573,11 +2324,7 @@ var_0_4.base.newserver_shop_template = {}
 			100001
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.newserver_shop_template
-
-	var_1_53[205] = {
+	pg.base.newserver_shop_template[205] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2594,11 +2341,7 @@ var_0_4.base.newserver_shop_template = {}
 			16502
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.newserver_shop_template
-
-	var_1_54[206] = {
+	pg.base.newserver_shop_template[206] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2615,11 +2358,7 @@ var_0_4.base.newserver_shop_template = {}
 			15008
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.newserver_shop_template
-
-	var_1_55[207] = {
+	pg.base.newserver_shop_template[207] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2636,11 +2375,7 @@ var_0_4.base.newserver_shop_template = {}
 			61001
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.newserver_shop_template
-
-	var_1_56[208] = {
+	pg.base.newserver_shop_template[208] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2661,11 +2396,7 @@ var_0_4.base.newserver_shop_template = {}
 			17043
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.newserver_shop_template
-
-	var_1_57[209] = {
+	pg.base.newserver_shop_template[209] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2686,11 +2417,7 @@ var_0_4.base.newserver_shop_template = {}
 			17042
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.newserver_shop_template
-
-	var_1_58[210] = {
+	pg.base.newserver_shop_template[210] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2711,11 +2438,7 @@ var_0_4.base.newserver_shop_template = {}
 			17041
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.newserver_shop_template
-
-	var_1_59[211] = {
+	pg.base.newserver_shop_template[211] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -2734,11 +2457,7 @@ var_0_4.base.newserver_shop_template = {}
 			16024
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.newserver_shop_template
-
-	var_1_60[212] = {
+	pg.base.newserver_shop_template[212] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2757,11 +2476,7 @@ var_0_4.base.newserver_shop_template = {}
 			16023
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.newserver_shop_template
-
-	var_1_61[213] = {
+	pg.base.newserver_shop_template[213] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2780,11 +2495,7 @@ var_0_4.base.newserver_shop_template = {}
 			16022
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.newserver_shop_template
-
-	var_1_62[214] = {
+	pg.base.newserver_shop_template[214] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2803,11 +2514,7 @@ var_0_4.base.newserver_shop_template = {}
 			16021
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.newserver_shop_template
-
-	var_1_63[215] = {
+	pg.base.newserver_shop_template[215] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2827,11 +2534,7 @@ var_0_4.base.newserver_shop_template = {}
 			18033
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.newserver_shop_template
-
-	var_1_64[216] = {
+	pg.base.newserver_shop_template[216] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -2851,11 +2554,7 @@ var_0_4.base.newserver_shop_template = {}
 			18032
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.newserver_shop_template
-
-	var_1_65[217] = {
+	pg.base.newserver_shop_template[217] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -2875,11 +2574,7 @@ var_0_4.base.newserver_shop_template = {}
 			18031
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.newserver_shop_template
-
-	var_1_66[218] = {
+	pg.base.newserver_shop_template[218] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2896,11 +2591,7 @@ var_0_4.base.newserver_shop_template = {}
 			42000
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.newserver_shop_template
-
-	var_1_67[219] = {
+	pg.base.newserver_shop_template[219] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -2917,11 +2608,7 @@ var_0_4.base.newserver_shop_template = {}
 			42010
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.newserver_shop_template
-
-	var_1_68[220] = {
+	pg.base.newserver_shop_template[220] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2938,11 +2625,7 @@ var_0_4.base.newserver_shop_template = {}
 			1
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.newserver_shop_template
-
-	var_1_69[221] = {
+	pg.base.newserver_shop_template[221] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2959,11 +2642,7 @@ var_0_4.base.newserver_shop_template = {}
 			2
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.newserver_shop_template
-
-	var_1_70[222] = {
+	pg.base.newserver_shop_template[222] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -2980,11 +2659,7 @@ var_0_4.base.newserver_shop_template = {}
 			3
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.newserver_shop_template
-
-	var_1_71[223] = {
+	pg.base.newserver_shop_template[223] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3001,11 +2676,7 @@ var_0_4.base.newserver_shop_template = {}
 			59900
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.newserver_shop_template
-
-	var_1_72[9901] = {
+	pg.base.newserver_shop_template[9901] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -3022,11 +2693,7 @@ var_0_4.base.newserver_shop_template = {}
 			1
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.newserver_shop_template
-
-	var_1_73[224] = {
+	pg.base.newserver_shop_template[224] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3043,11 +2710,7 @@ var_0_4.base.newserver_shop_template = {}
 			305051
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.newserver_shop_template
-
-	var_1_74[225] = {
+	pg.base.newserver_shop_template[225] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3064,11 +2727,7 @@ var_0_4.base.newserver_shop_template = {}
 			59361
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.newserver_shop_template
-
-	var_1_75[226] = {
+	pg.base.newserver_shop_template[226] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3113,11 +2772,7 @@ var_0_4.base.newserver_shop_template = {}
 			1440
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.newserver_shop_template
-
-	var_1_76[227] = {
+	pg.base.newserver_shop_template[227] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3149,11 +2804,7 @@ var_0_4.base.newserver_shop_template = {}
 			2540
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.newserver_shop_template
-
-	var_1_77[228] = {
+	pg.base.newserver_shop_template[228] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3170,11 +2821,7 @@ var_0_4.base.newserver_shop_template = {}
 			20001
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.newserver_shop_template
-
-	var_1_78[229] = {
+	pg.base.newserver_shop_template[229] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3191,11 +2838,7 @@ var_0_4.base.newserver_shop_template = {}
 			15003
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.newserver_shop_template
-
-	var_1_79[230] = {
+	pg.base.newserver_shop_template[230] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3212,11 +2855,7 @@ var_0_4.base.newserver_shop_template = {}
 			100011
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.newserver_shop_template
-
-	var_1_80[231] = {
+	pg.base.newserver_shop_template[231] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3233,11 +2872,7 @@ var_0_4.base.newserver_shop_template = {}
 			100001
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.newserver_shop_template
-
-	var_1_81[232] = {
+	pg.base.newserver_shop_template[232] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3254,11 +2889,7 @@ var_0_4.base.newserver_shop_template = {}
 			16502
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.newserver_shop_template
-
-	var_1_82[233] = {
+	pg.base.newserver_shop_template[233] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3275,11 +2906,7 @@ var_0_4.base.newserver_shop_template = {}
 			15008
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.newserver_shop_template
-
-	var_1_83[234] = {
+	pg.base.newserver_shop_template[234] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3296,11 +2923,7 @@ var_0_4.base.newserver_shop_template = {}
 			61001
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.newserver_shop_template
-
-	var_1_84[235] = {
+	pg.base.newserver_shop_template[235] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3321,11 +2944,7 @@ var_0_4.base.newserver_shop_template = {}
 			17043
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.newserver_shop_template
-
-	var_1_85[236] = {
+	pg.base.newserver_shop_template[236] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3346,11 +2965,7 @@ var_0_4.base.newserver_shop_template = {}
 			17042
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.newserver_shop_template
-
-	var_1_86[237] = {
+	pg.base.newserver_shop_template[237] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -3371,11 +2986,7 @@ var_0_4.base.newserver_shop_template = {}
 			17041
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.newserver_shop_template
-
-	var_1_87[238] = {
+	pg.base.newserver_shop_template[238] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -3394,11 +3005,7 @@ var_0_4.base.newserver_shop_template = {}
 			16024
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.newserver_shop_template
-
-	var_1_88[239] = {
+	pg.base.newserver_shop_template[239] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3417,11 +3024,7 @@ var_0_4.base.newserver_shop_template = {}
 			16023
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.newserver_shop_template
-
-	var_1_89[240] = {
+	pg.base.newserver_shop_template[240] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3440,11 +3043,7 @@ var_0_4.base.newserver_shop_template = {}
 			16022
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.newserver_shop_template
-
-	var_1_90[241] = {
+	pg.base.newserver_shop_template[241] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3463,11 +3062,7 @@ var_0_4.base.newserver_shop_template = {}
 			16021
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.newserver_shop_template
-
-	var_1_91[242] = {
+	pg.base.newserver_shop_template[242] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3487,11 +3082,7 @@ var_0_4.base.newserver_shop_template = {}
 			18033
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.newserver_shop_template
-
-	var_1_92[243] = {
+	pg.base.newserver_shop_template[243] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3511,11 +3102,7 @@ var_0_4.base.newserver_shop_template = {}
 			18032
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.newserver_shop_template
-
-	var_1_93[244] = {
+	pg.base.newserver_shop_template[244] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3535,11 +3122,7 @@ var_0_4.base.newserver_shop_template = {}
 			18031
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.newserver_shop_template
-
-	var_1_94[245] = {
+	pg.base.newserver_shop_template[245] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3556,11 +3139,7 @@ var_0_4.base.newserver_shop_template = {}
 			42000
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.newserver_shop_template
-
-	var_1_95[246] = {
+	pg.base.newserver_shop_template[246] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3577,11 +3156,7 @@ var_0_4.base.newserver_shop_template = {}
 			42010
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.newserver_shop_template
-
-	var_1_96[247] = {
+	pg.base.newserver_shop_template[247] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -3598,11 +3173,7 @@ var_0_4.base.newserver_shop_template = {}
 			1
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.newserver_shop_template
-
-	var_1_97[248] = {
+	pg.base.newserver_shop_template[248] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -3619,11 +3190,7 @@ var_0_4.base.newserver_shop_template = {}
 			2
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.newserver_shop_template
-
-	var_1_98[249] = {
+	pg.base.newserver_shop_template[249] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -3640,8 +3207,7 @@ var_0_4.base.newserver_shop_template = {}
 			3
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.newserver_shop_template[250] = {
+	pg.base.newserver_shop_template[250] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3662,11 +3228,7 @@ var_0_4.base.newserver_shop_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.newserver_shop_template
-
-	var_2_0[251] = {
+	pg.base.newserver_shop_template[251] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3683,11 +3245,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.newserver_shop_template
-
-	var_2_1[252] = {
+	pg.base.newserver_shop_template[252] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3704,11 +3262,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.newserver_shop_template
-
-	var_2_2[253] = {
+	pg.base.newserver_shop_template[253] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3725,11 +3279,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.newserver_shop_template
-
-	var_2_3[254] = {
+	pg.base.newserver_shop_template[254] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3746,11 +3296,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.newserver_shop_template
-
-	var_2_4[255] = {
+	pg.base.newserver_shop_template[255] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3767,11 +3313,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.newserver_shop_template
-
-	var_2_5[256] = {
+	pg.base.newserver_shop_template[256] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3788,11 +3330,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.newserver_shop_template
-
-	var_2_6[257] = {
+	pg.base.newserver_shop_template[257] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3809,11 +3347,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.newserver_shop_template
-
-	var_2_7[258] = {
+	pg.base.newserver_shop_template[258] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3834,11 +3368,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.newserver_shop_template
-
-	var_2_8[259] = {
+	pg.base.newserver_shop_template[259] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3859,11 +3389,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.newserver_shop_template
-
-	var_2_9[260] = {
+	pg.base.newserver_shop_template[260] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -3884,11 +3410,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.newserver_shop_template
-
-	var_2_10[261] = {
+	pg.base.newserver_shop_template[261] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -3907,11 +3429,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.newserver_shop_template
-
-	var_2_11[262] = {
+	pg.base.newserver_shop_template[262] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -3930,11 +3448,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.newserver_shop_template
-
-	var_2_12[263] = {
+	pg.base.newserver_shop_template[263] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -3953,11 +3467,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.newserver_shop_template
-
-	var_2_13[264] = {
+	pg.base.newserver_shop_template[264] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -3976,11 +3486,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.newserver_shop_template
-
-	var_2_14[265] = {
+	pg.base.newserver_shop_template[265] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4000,11 +3506,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.newserver_shop_template
-
-	var_2_15[266] = {
+	pg.base.newserver_shop_template[266] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4024,11 +3526,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.newserver_shop_template
-
-	var_2_16[267] = {
+	pg.base.newserver_shop_template[267] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -4048,11 +3546,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.newserver_shop_template
-
-	var_2_17[268] = {
+	pg.base.newserver_shop_template[268] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4069,11 +3563,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.newserver_shop_template
-
-	var_2_18[269] = {
+	pg.base.newserver_shop_template[269] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4090,11 +3580,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.newserver_shop_template
-
-	var_2_19[270] = {
+	pg.base.newserver_shop_template[270] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4111,11 +3597,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.newserver_shop_template
-
-	var_2_20[271] = {
+	pg.base.newserver_shop_template[271] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4132,11 +3614,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.newserver_shop_template
-
-	var_2_21[272] = {
+	pg.base.newserver_shop_template[272] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4153,11 +3631,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.newserver_shop_template
-
-	var_2_22[273] = {
+	pg.base.newserver_shop_template[273] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -4174,11 +3648,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.newserver_shop_template
-
-	var_2_23[274] = {
+	pg.base.newserver_shop_template[274] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4195,11 +3665,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.newserver_shop_template
-
-	var_2_24[275] = {
+	pg.base.newserver_shop_template[275] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4216,11 +3682,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.newserver_shop_template
-
-	var_2_25[276] = {
+	pg.base.newserver_shop_template[276] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4237,11 +3699,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.newserver_shop_template
-
-	var_2_26[277] = {
+	pg.base.newserver_shop_template[277] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4258,11 +3716,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.newserver_shop_template
-
-	var_2_27[278] = {
+	pg.base.newserver_shop_template[278] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4279,11 +3733,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.newserver_shop_template
-
-	var_2_28[279] = {
+	pg.base.newserver_shop_template[279] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4300,11 +3750,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.newserver_shop_template
-
-	var_2_29[280] = {
+	pg.base.newserver_shop_template[280] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4321,11 +3767,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.newserver_shop_template
-
-	var_2_30[281] = {
+	pg.base.newserver_shop_template[281] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4346,11 +3788,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.newserver_shop_template
-
-	var_2_31[282] = {
+	pg.base.newserver_shop_template[282] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -4371,11 +3809,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.newserver_shop_template
-
-	var_2_32[283] = {
+	pg.base.newserver_shop_template[283] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4396,11 +3830,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.newserver_shop_template
-
-	var_2_33[284] = {
+	pg.base.newserver_shop_template[284] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -4419,11 +3849,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.newserver_shop_template
-
-	var_2_34[285] = {
+	pg.base.newserver_shop_template[285] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4442,11 +3868,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.newserver_shop_template
-
-	var_2_35[286] = {
+	pg.base.newserver_shop_template[286] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4465,11 +3887,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.newserver_shop_template
-
-	var_2_36[287] = {
+	pg.base.newserver_shop_template[287] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -4488,11 +3906,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.newserver_shop_template
-
-	var_2_37[288] = {
+	pg.base.newserver_shop_template[288] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4512,11 +3926,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.newserver_shop_template
-
-	var_2_38[289] = {
+	pg.base.newserver_shop_template[289] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4536,11 +3946,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.newserver_shop_template
-
-	var_2_39[290] = {
+	pg.base.newserver_shop_template[290] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -4560,11 +3966,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.newserver_shop_template
-
-	var_2_40[291] = {
+	pg.base.newserver_shop_template[291] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4581,11 +3983,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.newserver_shop_template
-
-	var_2_41[292] = {
+	pg.base.newserver_shop_template[292] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4602,11 +4000,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.newserver_shop_template
-
-	var_2_42[293] = {
+	pg.base.newserver_shop_template[293] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4623,11 +4017,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.newserver_shop_template
-
-	var_2_43[294] = {
+	pg.base.newserver_shop_template[294] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4644,11 +4034,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.newserver_shop_template
-
-	var_2_44[295] = {
+	pg.base.newserver_shop_template[295] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4665,11 +4051,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.newserver_shop_template
-
-	var_2_45[296] = {
+	pg.base.newserver_shop_template[296] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -4686,11 +4068,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.newserver_shop_template
-
-	var_2_46[9902] = {
+	pg.base.newserver_shop_template[9902] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -4707,11 +4085,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.newserver_shop_template
-
-	var_2_47[301] = {
+	pg.base.newserver_shop_template[301] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4728,11 +4102,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.newserver_shop_template
-
-	var_2_48[302] = {
+	pg.base.newserver_shop_template[302] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4749,11 +4119,7 @@ end)()
 			59407
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.newserver_shop_template
-
-	var_2_49[303] = {
+	pg.base.newserver_shop_template[303] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4798,11 +4164,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.newserver_shop_template
-
-	var_2_50[304] = {
+	pg.base.newserver_shop_template[304] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4834,11 +4196,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.newserver_shop_template
-
-	var_2_51[305] = {
+	pg.base.newserver_shop_template[305] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4855,11 +4213,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.newserver_shop_template
-
-	var_2_52[306] = {
+	pg.base.newserver_shop_template[306] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4876,11 +4230,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.newserver_shop_template
-
-	var_2_53[307] = {
+	pg.base.newserver_shop_template[307] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4897,11 +4247,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.newserver_shop_template
-
-	var_2_54[308] = {
+	pg.base.newserver_shop_template[308] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4918,11 +4264,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.newserver_shop_template
-
-	var_2_55[309] = {
+	pg.base.newserver_shop_template[309] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4939,11 +4281,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.newserver_shop_template
-
-	var_2_56[310] = {
+	pg.base.newserver_shop_template[310] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -4960,11 +4298,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.newserver_shop_template
-
-	var_2_57[311] = {
+	pg.base.newserver_shop_template[311] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -4981,11 +4315,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.newserver_shop_template
-
-	var_2_58[312] = {
+	pg.base.newserver_shop_template[312] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5006,11 +4336,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.newserver_shop_template
-
-	var_2_59[313] = {
+	pg.base.newserver_shop_template[313] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5031,11 +4357,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.newserver_shop_template
-
-	var_2_60[314] = {
+	pg.base.newserver_shop_template[314] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5056,11 +4378,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.newserver_shop_template
-
-	var_2_61[315] = {
+	pg.base.newserver_shop_template[315] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -5079,11 +4397,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.newserver_shop_template
-
-	var_2_62[316] = {
+	pg.base.newserver_shop_template[316] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5102,11 +4416,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.newserver_shop_template
-
-	var_2_63[317] = {
+	pg.base.newserver_shop_template[317] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5125,11 +4435,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.newserver_shop_template
-
-	var_2_64[318] = {
+	pg.base.newserver_shop_template[318] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5148,11 +4454,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.newserver_shop_template
-
-	var_2_65[319] = {
+	pg.base.newserver_shop_template[319] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5172,11 +4474,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.newserver_shop_template
-
-	var_2_66[320] = {
+	pg.base.newserver_shop_template[320] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5196,11 +4494,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.newserver_shop_template
-
-	var_2_67[321] = {
+	pg.base.newserver_shop_template[321] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5220,11 +4514,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.newserver_shop_template
-
-	var_2_68[322] = {
+	pg.base.newserver_shop_template[322] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5241,11 +4531,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.newserver_shop_template
-
-	var_2_69[323] = {
+	pg.base.newserver_shop_template[323] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5262,11 +4548,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.newserver_shop_template
-
-	var_2_70[324] = {
+	pg.base.newserver_shop_template[324] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5283,11 +4565,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.newserver_shop_template
-
-	var_2_71[325] = {
+	pg.base.newserver_shop_template[325] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5304,11 +4582,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.newserver_shop_template
-
-	var_2_72[326] = {
+	pg.base.newserver_shop_template[326] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5325,11 +4599,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.newserver_shop_template
-
-	var_2_73[327] = {
+	pg.base.newserver_shop_template[327] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5346,11 +4616,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.newserver_shop_template
-
-	var_2_74[328] = {
+	pg.base.newserver_shop_template[328] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5367,11 +4633,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.newserver_shop_template
-
-	var_2_75[329] = {
+	pg.base.newserver_shop_template[329] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5388,11 +4650,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.newserver_shop_template
-
-	var_2_76[330] = {
+	pg.base.newserver_shop_template[330] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5409,11 +4667,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.newserver_shop_template
-
-	var_2_77[331] = {
+	pg.base.newserver_shop_template[331] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5430,11 +4684,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.newserver_shop_template
-
-	var_2_78[332] = {
+	pg.base.newserver_shop_template[332] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5451,11 +4701,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.newserver_shop_template
-
-	var_2_79[333] = {
+	pg.base.newserver_shop_template[333] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5472,11 +4718,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.newserver_shop_template
-
-	var_2_80[334] = {
+	pg.base.newserver_shop_template[334] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5497,11 +4739,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.newserver_shop_template
-
-	var_2_81[335] = {
+	pg.base.newserver_shop_template[335] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5522,11 +4760,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.newserver_shop_template
-
-	var_2_82[336] = {
+	pg.base.newserver_shop_template[336] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5547,11 +4781,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.newserver_shop_template
-
-	var_2_83[337] = {
+	pg.base.newserver_shop_template[337] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -5570,11 +4800,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.newserver_shop_template
-
-	var_2_84[338] = {
+	pg.base.newserver_shop_template[338] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5593,11 +4819,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.newserver_shop_template
-
-	var_2_85[339] = {
+	pg.base.newserver_shop_template[339] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5616,11 +4838,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.newserver_shop_template
-
-	var_2_86[340] = {
+	pg.base.newserver_shop_template[340] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5639,11 +4857,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.newserver_shop_template
-
-	var_2_87[341] = {
+	pg.base.newserver_shop_template[341] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5663,11 +4877,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.newserver_shop_template
-
-	var_2_88[342] = {
+	pg.base.newserver_shop_template[342] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5687,11 +4897,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.newserver_shop_template
-
-	var_2_89[343] = {
+	pg.base.newserver_shop_template[343] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5711,11 +4917,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.newserver_shop_template
-
-	var_2_90[344] = {
+	pg.base.newserver_shop_template[344] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5732,11 +4934,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.newserver_shop_template
-
-	var_2_91[345] = {
+	pg.base.newserver_shop_template[345] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5753,11 +4951,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.newserver_shop_template
-
-	var_2_92[346] = {
+	pg.base.newserver_shop_template[346] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5774,11 +4968,7 @@ end)()
 			1
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.newserver_shop_template
-
-	var_2_93[347] = {
+	pg.base.newserver_shop_template[347] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5795,11 +4985,7 @@ end)()
 			2
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.newserver_shop_template
-
-	var_2_94[348] = {
+	pg.base.newserver_shop_template[348] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -5816,11 +5002,7 @@ end)()
 			3
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.newserver_shop_template
-
-	var_2_95[349] = {
+	pg.base.newserver_shop_template[349] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -5837,11 +5019,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.newserver_shop_template
-
-	var_2_96[350] = {
+	pg.base.newserver_shop_template[350] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5858,11 +5036,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.newserver_shop_template
-
-	var_2_97[351] = {
+	pg.base.newserver_shop_template[351] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5879,11 +5053,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.newserver_shop_template
-
-	var_2_98[352] = {
+	pg.base.newserver_shop_template[352] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5900,8 +5070,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.newserver_shop_template[353] = {
+	pg.base.newserver_shop_template[353] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5922,11 +5091,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.newserver_shop_template
-
-	var_3_0[354] = {
+	pg.base.newserver_shop_template[354] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -5943,11 +5108,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.newserver_shop_template
-
-	var_3_1[355] = {
+	pg.base.newserver_shop_template[355] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5964,11 +5125,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.newserver_shop_template
-
-	var_3_2[356] = {
+	pg.base.newserver_shop_template[356] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -5989,11 +5146,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.newserver_shop_template
-
-	var_3_3[357] = {
+	pg.base.newserver_shop_template[357] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6014,11 +5167,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.newserver_shop_template
-
-	var_3_4[358] = {
+	pg.base.newserver_shop_template[358] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6039,11 +5188,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.newserver_shop_template
-
-	var_3_5[359] = {
+	pg.base.newserver_shop_template[359] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -6062,11 +5207,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.newserver_shop_template
-
-	var_3_6[360] = {
+	pg.base.newserver_shop_template[360] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6085,11 +5226,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.newserver_shop_template
-
-	var_3_7[361] = {
+	pg.base.newserver_shop_template[361] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6108,11 +5245,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.newserver_shop_template
-
-	var_3_8[362] = {
+	pg.base.newserver_shop_template[362] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6131,11 +5264,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.newserver_shop_template
-
-	var_3_9[363] = {
+	pg.base.newserver_shop_template[363] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6155,11 +5284,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.newserver_shop_template
-
-	var_3_10[364] = {
+	pg.base.newserver_shop_template[364] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6179,11 +5304,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.newserver_shop_template
-
-	var_3_11[365] = {
+	pg.base.newserver_shop_template[365] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6203,11 +5324,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.newserver_shop_template
-
-	var_3_12[366] = {
+	pg.base.newserver_shop_template[366] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6224,11 +5341,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.newserver_shop_template
-
-	var_3_13[367] = {
+	pg.base.newserver_shop_template[367] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6245,11 +5358,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.newserver_shop_template
-
-	var_3_14[368] = {
+	pg.base.newserver_shop_template[368] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6266,11 +5375,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.newserver_shop_template
-
-	var_3_15[369] = {
+	pg.base.newserver_shop_template[369] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6287,11 +5392,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.newserver_shop_template
-
-	var_3_16[370] = {
+	pg.base.newserver_shop_template[370] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6308,11 +5409,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.newserver_shop_template
-
-	var_3_17[371] = {
+	pg.base.newserver_shop_template[371] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6329,11 +5426,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.newserver_shop_template
-
-	var_3_18[9903] = {
+	pg.base.newserver_shop_template[9903] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6350,11 +5443,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.newserver_shop_template
-
-	var_3_19[401] = {
+	pg.base.newserver_shop_template[401] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6371,11 +5460,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.newserver_shop_template
-
-	var_3_20[402] = {
+	pg.base.newserver_shop_template[402] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6392,11 +5477,7 @@ end)()
 			59513
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.newserver_shop_template
-
-	var_3_21[403] = {
+	pg.base.newserver_shop_template[403] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6441,11 +5522,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.newserver_shop_template
-
-	var_3_22[404] = {
+	pg.base.newserver_shop_template[404] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6477,11 +5554,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.newserver_shop_template
-
-	var_3_23[405] = {
+	pg.base.newserver_shop_template[405] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6498,11 +5571,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.newserver_shop_template
-
-	var_3_24[406] = {
+	pg.base.newserver_shop_template[406] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6519,11 +5588,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.newserver_shop_template
-
-	var_3_25[407] = {
+	pg.base.newserver_shop_template[407] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6540,11 +5605,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.newserver_shop_template
-
-	var_3_26[408] = {
+	pg.base.newserver_shop_template[408] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6561,11 +5622,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.newserver_shop_template
-
-	var_3_27[409] = {
+	pg.base.newserver_shop_template[409] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6582,11 +5639,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.newserver_shop_template
-
-	var_3_28[410] = {
+	pg.base.newserver_shop_template[410] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6603,11 +5656,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.newserver_shop_template
-
-	var_3_29[411] = {
+	pg.base.newserver_shop_template[411] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6624,11 +5673,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.newserver_shop_template
-
-	var_3_30[412] = {
+	pg.base.newserver_shop_template[412] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6649,11 +5694,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.newserver_shop_template
-
-	var_3_31[413] = {
+	pg.base.newserver_shop_template[413] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6674,11 +5715,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.newserver_shop_template
-
-	var_3_32[414] = {
+	pg.base.newserver_shop_template[414] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6699,11 +5736,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.newserver_shop_template
-
-	var_3_33[415] = {
+	pg.base.newserver_shop_template[415] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -6722,11 +5755,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.newserver_shop_template
-
-	var_3_34[416] = {
+	pg.base.newserver_shop_template[416] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6745,11 +5774,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.newserver_shop_template
-
-	var_3_35[417] = {
+	pg.base.newserver_shop_template[417] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6768,11 +5793,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.newserver_shop_template
-
-	var_3_36[418] = {
+	pg.base.newserver_shop_template[418] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6791,11 +5812,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.newserver_shop_template
-
-	var_3_37[419] = {
+	pg.base.newserver_shop_template[419] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6815,11 +5832,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.newserver_shop_template
-
-	var_3_38[420] = {
+	pg.base.newserver_shop_template[420] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -6839,11 +5852,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.newserver_shop_template
-
-	var_3_39[421] = {
+	pg.base.newserver_shop_template[421] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6863,11 +5872,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.newserver_shop_template
-
-	var_3_40[422] = {
+	pg.base.newserver_shop_template[422] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6884,11 +5889,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.newserver_shop_template
-
-	var_3_41[423] = {
+	pg.base.newserver_shop_template[423] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -6905,11 +5906,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.newserver_shop_template
-
-	var_3_42[424] = {
+	pg.base.newserver_shop_template[424] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6926,11 +5923,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.newserver_shop_template
-
-	var_3_43[425] = {
+	pg.base.newserver_shop_template[425] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6947,11 +5940,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.newserver_shop_template
-
-	var_3_44[426] = {
+	pg.base.newserver_shop_template[426] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -6968,11 +5957,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.newserver_shop_template
-
-	var_3_45[427] = {
+	pg.base.newserver_shop_template[427] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -6989,11 +5974,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.newserver_shop_template
-
-	var_3_46[428] = {
+	pg.base.newserver_shop_template[428] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7010,11 +5991,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.newserver_shop_template
-
-	var_3_47[429] = {
+	pg.base.newserver_shop_template[429] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7031,11 +6008,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.newserver_shop_template
-
-	var_3_48[430] = {
+	pg.base.newserver_shop_template[430] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7052,11 +6025,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.newserver_shop_template
-
-	var_3_49[431] = {
+	pg.base.newserver_shop_template[431] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7073,11 +6042,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.newserver_shop_template
-
-	var_3_50[432] = {
+	pg.base.newserver_shop_template[432] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7094,11 +6059,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.newserver_shop_template
-
-	var_3_51[433] = {
+	pg.base.newserver_shop_template[433] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7115,11 +6076,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.newserver_shop_template
-
-	var_3_52[434] = {
+	pg.base.newserver_shop_template[434] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7136,11 +6093,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.newserver_shop_template
-
-	var_3_53[435] = {
+	pg.base.newserver_shop_template[435] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7161,11 +6114,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.newserver_shop_template
-
-	var_3_54[436] = {
+	pg.base.newserver_shop_template[436] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7186,11 +6135,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.newserver_shop_template
-
-	var_3_55[437] = {
+	pg.base.newserver_shop_template[437] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7211,11 +6156,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.newserver_shop_template
-
-	var_3_56[438] = {
+	pg.base.newserver_shop_template[438] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -7234,11 +6175,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.newserver_shop_template
-
-	var_3_57[439] = {
+	pg.base.newserver_shop_template[439] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7257,11 +6194,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.newserver_shop_template
-
-	var_3_58[440] = {
+	pg.base.newserver_shop_template[440] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7280,11 +6213,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.newserver_shop_template
-
-	var_3_59[441] = {
+	pg.base.newserver_shop_template[441] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7303,11 +6232,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.newserver_shop_template
-
-	var_3_60[442] = {
+	pg.base.newserver_shop_template[442] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7327,11 +6252,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.newserver_shop_template
-
-	var_3_61[443] = {
+	pg.base.newserver_shop_template[443] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7351,11 +6272,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.newserver_shop_template
-
-	var_3_62[444] = {
+	pg.base.newserver_shop_template[444] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7375,11 +6292,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.newserver_shop_template
-
-	var_3_63[445] = {
+	pg.base.newserver_shop_template[445] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7396,11 +6309,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.newserver_shop_template
-
-	var_3_64[446] = {
+	pg.base.newserver_shop_template[446] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7417,11 +6326,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.newserver_shop_template
-
-	var_3_65[447] = {
+	pg.base.newserver_shop_template[447] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7438,11 +6343,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.newserver_shop_template
-
-	var_3_66[448] = {
+	pg.base.newserver_shop_template[448] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7459,11 +6360,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.newserver_shop_template
-
-	var_3_67[449] = {
+	pg.base.newserver_shop_template[449] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7480,11 +6377,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.newserver_shop_template
-
-	var_3_68[450] = {
+	pg.base.newserver_shop_template[450] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7501,11 +6394,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.newserver_shop_template
-
-	var_3_69[451] = {
+	pg.base.newserver_shop_template[451] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7522,11 +6411,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.newserver_shop_template
-
-	var_3_70[452] = {
+	pg.base.newserver_shop_template[452] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7543,11 +6428,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.newserver_shop_template
-
-	var_3_71[453] = {
+	pg.base.newserver_shop_template[453] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7564,11 +6445,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.newserver_shop_template
-
-	var_3_72[454] = {
+	pg.base.newserver_shop_template[454] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7585,11 +6462,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.newserver_shop_template
-
-	var_3_73[455] = {
+	pg.base.newserver_shop_template[455] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7606,11 +6479,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.newserver_shop_template
-
-	var_3_74[456] = {
+	pg.base.newserver_shop_template[456] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7627,11 +6496,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.newserver_shop_template
-
-	var_3_75[457] = {
+	pg.base.newserver_shop_template[457] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7648,11 +6513,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.newserver_shop_template
-
-	var_3_76[458] = {
+	pg.base.newserver_shop_template[458] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7673,11 +6534,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.newserver_shop_template
-
-	var_3_77[459] = {
+	pg.base.newserver_shop_template[459] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7698,11 +6555,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.newserver_shop_template
-
-	var_3_78[460] = {
+	pg.base.newserver_shop_template[460] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7723,11 +6576,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.newserver_shop_template
-
-	var_3_79[461] = {
+	pg.base.newserver_shop_template[461] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -7746,11 +6595,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.newserver_shop_template
-
-	var_3_80[462] = {
+	pg.base.newserver_shop_template[462] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7769,11 +6614,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.newserver_shop_template
-
-	var_3_81[463] = {
+	pg.base.newserver_shop_template[463] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7792,11 +6633,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.newserver_shop_template
-
-	var_3_82[464] = {
+	pg.base.newserver_shop_template[464] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7815,11 +6652,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.newserver_shop_template
-
-	var_3_83[465] = {
+	pg.base.newserver_shop_template[465] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7839,11 +6672,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.newserver_shop_template
-
-	var_3_84[466] = {
+	pg.base.newserver_shop_template[466] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -7863,11 +6692,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.newserver_shop_template
-
-	var_3_85[467] = {
+	pg.base.newserver_shop_template[467] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -7887,11 +6712,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.newserver_shop_template
-
-	var_3_86[468] = {
+	pg.base.newserver_shop_template[468] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7908,11 +6729,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.newserver_shop_template
-
-	var_3_87[469] = {
+	pg.base.newserver_shop_template[469] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -7929,11 +6746,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.newserver_shop_template
-
-	var_3_88[470] = {
+	pg.base.newserver_shop_template[470] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7950,11 +6763,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.newserver_shop_template
-
-	var_3_89[471] = {
+	pg.base.newserver_shop_template[471] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7971,11 +6780,7 @@ end)()
 			2
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.newserver_shop_template
-
-	var_3_90[472] = {
+	pg.base.newserver_shop_template[472] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -7992,11 +6797,7 @@ end)()
 			3
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.newserver_shop_template
-
-	var_3_91[473] = {
+	pg.base.newserver_shop_template[473] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8013,11 +6814,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.newserver_shop_template
-
-	var_3_92[9904] = {
+	pg.base.newserver_shop_template[9904] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -8034,11 +6831,7 @@ end)()
 			1
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.newserver_shop_template
-
-	var_3_93[501] = {
+	pg.base.newserver_shop_template[501] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8055,11 +6848,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.newserver_shop_template
-
-	var_3_94[502] = {
+	pg.base.newserver_shop_template[502] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8076,11 +6865,7 @@ end)()
 			59574
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.newserver_shop_template
-
-	var_3_95[503] = {
+	pg.base.newserver_shop_template[503] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8125,11 +6910,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.newserver_shop_template
-
-	var_3_96[504] = {
+	pg.base.newserver_shop_template[504] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8161,11 +6942,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.newserver_shop_template
-
-	var_3_97[505] = {
+	pg.base.newserver_shop_template[505] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8182,11 +6959,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.newserver_shop_template
-
-	var_3_98[506] = {
+	pg.base.newserver_shop_template[506] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8203,8 +6976,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.newserver_shop_template[507] = {
+	pg.base.newserver_shop_template[507] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8225,11 +6997,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.newserver_shop_template
-
-	var_4_0[508] = {
+	pg.base.newserver_shop_template[508] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8246,11 +7014,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.newserver_shop_template
-
-	var_4_1[509] = {
+	pg.base.newserver_shop_template[509] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8267,11 +7031,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.newserver_shop_template
-
-	var_4_2[510] = {
+	pg.base.newserver_shop_template[510] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8288,11 +7048,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.newserver_shop_template
-
-	var_4_3[511] = {
+	pg.base.newserver_shop_template[511] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8309,11 +7065,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.newserver_shop_template
-
-	var_4_4[512] = {
+	pg.base.newserver_shop_template[512] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8334,11 +7086,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.newserver_shop_template
-
-	var_4_5[513] = {
+	pg.base.newserver_shop_template[513] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8359,11 +7107,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.newserver_shop_template
-
-	var_4_6[514] = {
+	pg.base.newserver_shop_template[514] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -8384,11 +7128,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.newserver_shop_template
-
-	var_4_7[515] = {
+	pg.base.newserver_shop_template[515] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -8407,11 +7147,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.newserver_shop_template
-
-	var_4_8[516] = {
+	pg.base.newserver_shop_template[516] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8430,11 +7166,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.newserver_shop_template
-
-	var_4_9[517] = {
+	pg.base.newserver_shop_template[517] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8453,11 +7185,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.newserver_shop_template
-
-	var_4_10[518] = {
+	pg.base.newserver_shop_template[518] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8476,11 +7204,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.newserver_shop_template
-
-	var_4_11[519] = {
+	pg.base.newserver_shop_template[519] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8500,11 +7224,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.newserver_shop_template
-
-	var_4_12[520] = {
+	pg.base.newserver_shop_template[520] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8524,11 +7244,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.newserver_shop_template
-
-	var_4_13[521] = {
+	pg.base.newserver_shop_template[521] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8548,11 +7264,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.newserver_shop_template
-
-	var_4_14[522] = {
+	pg.base.newserver_shop_template[522] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8569,11 +7281,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.newserver_shop_template
-
-	var_4_15[523] = {
+	pg.base.newserver_shop_template[523] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8590,11 +7298,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.newserver_shop_template
-
-	var_4_16[524] = {
+	pg.base.newserver_shop_template[524] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -8611,11 +7315,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.newserver_shop_template
-
-	var_4_17[525] = {
+	pg.base.newserver_shop_template[525] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -8632,11 +7332,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.newserver_shop_template
-
-	var_4_18[526] = {
+	pg.base.newserver_shop_template[526] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -8653,11 +7349,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.newserver_shop_template
-
-	var_4_19[527] = {
+	pg.base.newserver_shop_template[527] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8674,11 +7366,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.newserver_shop_template
-
-	var_4_20[528] = {
+	pg.base.newserver_shop_template[528] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8695,11 +7383,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.newserver_shop_template
-
-	var_4_21[529] = {
+	pg.base.newserver_shop_template[529] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8716,11 +7400,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.newserver_shop_template
-
-	var_4_22[530] = {
+	pg.base.newserver_shop_template[530] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8737,11 +7417,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.newserver_shop_template
-
-	var_4_23[531] = {
+	pg.base.newserver_shop_template[531] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8758,11 +7434,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.newserver_shop_template
-
-	var_4_24[532] = {
+	pg.base.newserver_shop_template[532] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8779,11 +7451,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.newserver_shop_template
-
-	var_4_25[533] = {
+	pg.base.newserver_shop_template[533] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8800,11 +7468,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.newserver_shop_template
-
-	var_4_26[534] = {
+	pg.base.newserver_shop_template[534] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8825,11 +7489,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.newserver_shop_template
-
-	var_4_27[535] = {
+	pg.base.newserver_shop_template[535] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8850,11 +7510,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.newserver_shop_template
-
-	var_4_28[536] = {
+	pg.base.newserver_shop_template[536] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -8875,11 +7531,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.newserver_shop_template
-
-	var_4_29[537] = {
+	pg.base.newserver_shop_template[537] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -8898,11 +7550,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.newserver_shop_template
-
-	var_4_30[538] = {
+	pg.base.newserver_shop_template[538] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8921,11 +7569,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.newserver_shop_template
-
-	var_4_31[539] = {
+	pg.base.newserver_shop_template[539] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -8944,11 +7588,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.newserver_shop_template
-
-	var_4_32[540] = {
+	pg.base.newserver_shop_template[540] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -8967,11 +7607,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.newserver_shop_template
-
-	var_4_33[541] = {
+	pg.base.newserver_shop_template[541] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -8991,11 +7627,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.newserver_shop_template
-
-	var_4_34[542] = {
+	pg.base.newserver_shop_template[542] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9015,11 +7647,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.newserver_shop_template
-
-	var_4_35[543] = {
+	pg.base.newserver_shop_template[543] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -9039,11 +7667,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.newserver_shop_template
-
-	var_4_36[544] = {
+	pg.base.newserver_shop_template[544] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9060,11 +7684,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.newserver_shop_template
-
-	var_4_37[545] = {
+	pg.base.newserver_shop_template[545] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9081,11 +7701,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.newserver_shop_template
-
-	var_4_38[546] = {
+	pg.base.newserver_shop_template[546] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9102,11 +7718,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.newserver_shop_template
-
-	var_4_39[547] = {
+	pg.base.newserver_shop_template[547] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9123,11 +7735,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.newserver_shop_template
-
-	var_4_40[548] = {
+	pg.base.newserver_shop_template[548] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9144,11 +7752,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.newserver_shop_template
-
-	var_4_41[549] = {
+	pg.base.newserver_shop_template[549] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -9165,11 +7769,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.newserver_shop_template
-
-	var_4_42[550] = {
+	pg.base.newserver_shop_template[550] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9186,11 +7786,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.newserver_shop_template
-
-	var_4_43[551] = {
+	pg.base.newserver_shop_template[551] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9207,11 +7803,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.newserver_shop_template
-
-	var_4_44[552] = {
+	pg.base.newserver_shop_template[552] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9228,11 +7820,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.newserver_shop_template
-
-	var_4_45[553] = {
+	pg.base.newserver_shop_template[553] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9249,11 +7837,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.newserver_shop_template
-
-	var_4_46[554] = {
+	pg.base.newserver_shop_template[554] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9270,11 +7854,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.newserver_shop_template
-
-	var_4_47[555] = {
+	pg.base.newserver_shop_template[555] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9291,11 +7871,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.newserver_shop_template
-
-	var_4_48[556] = {
+	pg.base.newserver_shop_template[556] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9316,11 +7892,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.newserver_shop_template
-
-	var_4_49[557] = {
+	pg.base.newserver_shop_template[557] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -9341,11 +7913,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.newserver_shop_template
-
-	var_4_50[558] = {
+	pg.base.newserver_shop_template[558] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9366,11 +7934,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.newserver_shop_template
-
-	var_4_51[559] = {
+	pg.base.newserver_shop_template[559] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -9389,11 +7953,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.newserver_shop_template
-
-	var_4_52[560] = {
+	pg.base.newserver_shop_template[560] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9412,11 +7972,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.newserver_shop_template
-
-	var_4_53[561] = {
+	pg.base.newserver_shop_template[561] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9435,11 +7991,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.newserver_shop_template
-
-	var_4_54[562] = {
+	pg.base.newserver_shop_template[562] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -9458,11 +8010,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.newserver_shop_template
-
-	var_4_55[563] = {
+	pg.base.newserver_shop_template[563] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9482,11 +8030,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.newserver_shop_template
-
-	var_4_56[564] = {
+	pg.base.newserver_shop_template[564] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9506,11 +8050,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.newserver_shop_template
-
-	var_4_57[565] = {
+	pg.base.newserver_shop_template[565] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -9530,11 +8070,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.newserver_shop_template
-
-	var_4_58[566] = {
+	pg.base.newserver_shop_template[566] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9551,11 +8087,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.newserver_shop_template
-
-	var_4_59[567] = {
+	pg.base.newserver_shop_template[567] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9572,11 +8104,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.newserver_shop_template
-
-	var_4_60[568] = {
+	pg.base.newserver_shop_template[568] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9593,11 +8121,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.newserver_shop_template
-
-	var_4_61[569] = {
+	pg.base.newserver_shop_template[569] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9614,11 +8138,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.newserver_shop_template
-
-	var_4_62[570] = {
+	pg.base.newserver_shop_template[570] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9635,11 +8155,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.newserver_shop_template
-
-	var_4_63[571] = {
+	pg.base.newserver_shop_template[571] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -9656,11 +8172,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.newserver_shop_template
-
-	var_4_64[9905] = {
+	pg.base.newserver_shop_template[9905] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -9677,11 +8189,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.newserver_shop_template
-
-	var_4_65[601] = {
+	pg.base.newserver_shop_template[601] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9698,11 +8206,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.newserver_shop_template
-
-	var_4_66[602] = {
+	pg.base.newserver_shop_template[602] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9719,11 +8223,7 @@ end)()
 			65056
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.newserver_shop_template
-
-	var_4_67[603] = {
+	pg.base.newserver_shop_template[603] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9768,11 +8268,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.newserver_shop_template
-
-	var_4_68[604] = {
+	pg.base.newserver_shop_template[604] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9804,11 +8300,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.newserver_shop_template
-
-	var_4_69[605] = {
+	pg.base.newserver_shop_template[605] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9825,11 +8317,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.newserver_shop_template
-
-	var_4_70[606] = {
+	pg.base.newserver_shop_template[606] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9846,11 +8334,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.newserver_shop_template
-
-	var_4_71[607] = {
+	pg.base.newserver_shop_template[607] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9867,11 +8351,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.newserver_shop_template
-
-	var_4_72[608] = {
+	pg.base.newserver_shop_template[608] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9888,11 +8368,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.newserver_shop_template
-
-	var_4_73[609] = {
+	pg.base.newserver_shop_template[609] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9909,11 +8385,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.newserver_shop_template
-
-	var_4_74[610] = {
+	pg.base.newserver_shop_template[610] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -9930,11 +8402,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.newserver_shop_template
-
-	var_4_75[611] = {
+	pg.base.newserver_shop_template[611] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9951,11 +8419,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.newserver_shop_template
-
-	var_4_76[612] = {
+	pg.base.newserver_shop_template[612] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -9976,11 +8440,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.newserver_shop_template
-
-	var_4_77[613] = {
+	pg.base.newserver_shop_template[613] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10001,11 +8461,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.newserver_shop_template
-
-	var_4_78[614] = {
+	pg.base.newserver_shop_template[614] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10026,11 +8482,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.newserver_shop_template
-
-	var_4_79[615] = {
+	pg.base.newserver_shop_template[615] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -10049,11 +8501,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.newserver_shop_template
-
-	var_4_80[616] = {
+	pg.base.newserver_shop_template[616] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10072,11 +8520,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.newserver_shop_template
-
-	var_4_81[617] = {
+	pg.base.newserver_shop_template[617] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10095,11 +8539,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.newserver_shop_template
-
-	var_4_82[618] = {
+	pg.base.newserver_shop_template[618] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10118,11 +8558,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.newserver_shop_template
-
-	var_4_83[619] = {
+	pg.base.newserver_shop_template[619] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10142,11 +8578,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.newserver_shop_template
-
-	var_4_84[620] = {
+	pg.base.newserver_shop_template[620] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10166,11 +8598,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.newserver_shop_template
-
-	var_4_85[621] = {
+	pg.base.newserver_shop_template[621] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10190,11 +8618,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.newserver_shop_template
-
-	var_4_86[622] = {
+	pg.base.newserver_shop_template[622] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10211,11 +8635,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.newserver_shop_template
-
-	var_4_87[623] = {
+	pg.base.newserver_shop_template[623] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10232,11 +8652,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.newserver_shop_template
-
-	var_4_88[624] = {
+	pg.base.newserver_shop_template[624] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10253,11 +8669,7 @@ end)()
 			1
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.newserver_shop_template
-
-	var_4_89[625] = {
+	pg.base.newserver_shop_template[625] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10274,11 +8686,7 @@ end)()
 			2
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.newserver_shop_template
-
-	var_4_90[626] = {
+	pg.base.newserver_shop_template[626] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10295,11 +8703,7 @@ end)()
 			3
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.newserver_shop_template
-
-	var_4_91[627] = {
+	pg.base.newserver_shop_template[627] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10316,11 +8720,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.newserver_shop_template
-
-	var_4_92[628] = {
+	pg.base.newserver_shop_template[628] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10337,11 +8737,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.newserver_shop_template
-
-	var_4_93[629] = {
+	pg.base.newserver_shop_template[629] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10358,11 +8754,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.newserver_shop_template
-
-	var_4_94[630] = {
+	pg.base.newserver_shop_template[630] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10379,11 +8771,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.newserver_shop_template
-
-	var_4_95[631] = {
+	pg.base.newserver_shop_template[631] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10400,11 +8788,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.newserver_shop_template
-
-	var_4_96[632] = {
+	pg.base.newserver_shop_template[632] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10421,11 +8805,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.newserver_shop_template
-
-	var_4_97[633] = {
+	pg.base.newserver_shop_template[633] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10442,11 +8822,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.newserver_shop_template
-
-	var_4_98[634] = {
+	pg.base.newserver_shop_template[634] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10467,8 +8843,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.newserver_shop_template[635] = {
+	pg.base.newserver_shop_template[635] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10493,11 +8868,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.newserver_shop_template
-
-	var_5_0[636] = {
+	pg.base.newserver_shop_template[636] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10518,11 +8889,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.newserver_shop_template
-
-	var_5_1[637] = {
+	pg.base.newserver_shop_template[637] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -10541,11 +8908,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.newserver_shop_template
-
-	var_5_2[638] = {
+	pg.base.newserver_shop_template[638] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10564,11 +8927,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.newserver_shop_template
-
-	var_5_3[639] = {
+	pg.base.newserver_shop_template[639] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10587,11 +8946,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.newserver_shop_template
-
-	var_5_4[640] = {
+	pg.base.newserver_shop_template[640] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10610,11 +8965,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.newserver_shop_template
-
-	var_5_5[641] = {
+	pg.base.newserver_shop_template[641] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10634,11 +8985,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.newserver_shop_template
-
-	var_5_6[642] = {
+	pg.base.newserver_shop_template[642] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10658,11 +9005,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.newserver_shop_template
-
-	var_5_7[643] = {
+	pg.base.newserver_shop_template[643] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10682,11 +9025,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.newserver_shop_template
-
-	var_5_8[644] = {
+	pg.base.newserver_shop_template[644] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10703,11 +9042,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.newserver_shop_template
-
-	var_5_9[645] = {
+	pg.base.newserver_shop_template[645] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10724,11 +9059,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.newserver_shop_template
-
-	var_5_10[646] = {
+	pg.base.newserver_shop_template[646] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10745,11 +9076,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.newserver_shop_template
-
-	var_5_11[647] = {
+	pg.base.newserver_shop_template[647] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10766,11 +9093,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.newserver_shop_template
-
-	var_5_12[648] = {
+	pg.base.newserver_shop_template[648] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -10787,11 +9110,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.newserver_shop_template
-
-	var_5_13[649] = {
+	pg.base.newserver_shop_template[649] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10808,11 +9127,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.newserver_shop_template
-
-	var_5_14[650] = {
+	pg.base.newserver_shop_template[650] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10829,11 +9144,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.newserver_shop_template
-
-	var_5_15[651] = {
+	pg.base.newserver_shop_template[651] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10850,11 +9161,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.newserver_shop_template
-
-	var_5_16[652] = {
+	pg.base.newserver_shop_template[652] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10871,11 +9178,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.newserver_shop_template
-
-	var_5_17[653] = {
+	pg.base.newserver_shop_template[653] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10892,11 +9195,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.newserver_shop_template
-
-	var_5_18[654] = {
+	pg.base.newserver_shop_template[654] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -10913,11 +9212,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.newserver_shop_template
-
-	var_5_19[655] = {
+	pg.base.newserver_shop_template[655] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10934,11 +9229,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.newserver_shop_template
-
-	var_5_20[656] = {
+	pg.base.newserver_shop_template[656] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -10959,11 +9250,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.newserver_shop_template
-
-	var_5_21[657] = {
+	pg.base.newserver_shop_template[657] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -10984,11 +9271,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.newserver_shop_template
-
-	var_5_22[658] = {
+	pg.base.newserver_shop_template[658] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11009,11 +9292,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.newserver_shop_template
-
-	var_5_23[659] = {
+	pg.base.newserver_shop_template[659] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -11032,11 +9311,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.newserver_shop_template
-
-	var_5_24[660] = {
+	pg.base.newserver_shop_template[660] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11055,11 +9330,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.newserver_shop_template
-
-	var_5_25[661] = {
+	pg.base.newserver_shop_template[661] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11078,11 +9349,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.newserver_shop_template
-
-	var_5_26[662] = {
+	pg.base.newserver_shop_template[662] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11101,11 +9368,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.newserver_shop_template
-
-	var_5_27[663] = {
+	pg.base.newserver_shop_template[663] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11125,11 +9388,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.newserver_shop_template
-
-	var_5_28[664] = {
+	pg.base.newserver_shop_template[664] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11149,11 +9408,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.newserver_shop_template
-
-	var_5_29[665] = {
+	pg.base.newserver_shop_template[665] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11173,11 +9428,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.newserver_shop_template
-
-	var_5_30[666] = {
+	pg.base.newserver_shop_template[666] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11194,11 +9445,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.newserver_shop_template
-
-	var_5_31[667] = {
+	pg.base.newserver_shop_template[667] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11215,11 +9462,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.newserver_shop_template
-
-	var_5_32[668] = {
+	pg.base.newserver_shop_template[668] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11236,11 +9479,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.newserver_shop_template
-
-	var_5_33[669] = {
+	pg.base.newserver_shop_template[669] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11257,11 +9496,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.newserver_shop_template
-
-	var_5_34[670] = {
+	pg.base.newserver_shop_template[670] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11278,11 +9513,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.newserver_shop_template
-
-	var_5_35[671] = {
+	pg.base.newserver_shop_template[671] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11299,11 +9530,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.newserver_shop_template
-
-	var_5_36[9906] = {
+	pg.base.newserver_shop_template[9906] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11320,11 +9547,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.newserver_shop_template
-
-	var_5_37[701] = {
+	pg.base.newserver_shop_template[701] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11341,11 +9564,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.newserver_shop_template
-
-	var_5_38[702] = {
+	pg.base.newserver_shop_template[702] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11362,11 +9581,7 @@ end)()
 			65093
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.newserver_shop_template
-
-	var_5_39[703] = {
+	pg.base.newserver_shop_template[703] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11411,11 +9626,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.newserver_shop_template
-
-	var_5_40[704] = {
+	pg.base.newserver_shop_template[704] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11447,11 +9658,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.newserver_shop_template
-
-	var_5_41[705] = {
+	pg.base.newserver_shop_template[705] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11468,11 +9675,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.newserver_shop_template
-
-	var_5_42[706] = {
+	pg.base.newserver_shop_template[706] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11489,11 +9692,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.newserver_shop_template
-
-	var_5_43[707] = {
+	pg.base.newserver_shop_template[707] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11510,11 +9709,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.newserver_shop_template
-
-	var_5_44[708] = {
+	pg.base.newserver_shop_template[708] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11531,11 +9726,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.newserver_shop_template
-
-	var_5_45[709] = {
+	pg.base.newserver_shop_template[709] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11552,11 +9743,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.newserver_shop_template
-
-	var_5_46[710] = {
+	pg.base.newserver_shop_template[710] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11573,11 +9760,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.newserver_shop_template
-
-	var_5_47[711] = {
+	pg.base.newserver_shop_template[711] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11594,11 +9777,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.newserver_shop_template
-
-	var_5_48[712] = {
+	pg.base.newserver_shop_template[712] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11619,11 +9798,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.newserver_shop_template
-
-	var_5_49[713] = {
+	pg.base.newserver_shop_template[713] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11644,11 +9819,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.newserver_shop_template
-
-	var_5_50[714] = {
+	pg.base.newserver_shop_template[714] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11669,11 +9840,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.newserver_shop_template
-
-	var_5_51[715] = {
+	pg.base.newserver_shop_template[715] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -11692,11 +9859,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.newserver_shop_template
-
-	var_5_52[716] = {
+	pg.base.newserver_shop_template[716] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11715,11 +9878,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.newserver_shop_template
-
-	var_5_53[717] = {
+	pg.base.newserver_shop_template[717] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11738,11 +9897,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.newserver_shop_template
-
-	var_5_54[718] = {
+	pg.base.newserver_shop_template[718] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11761,11 +9916,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.newserver_shop_template
-
-	var_5_55[719] = {
+	pg.base.newserver_shop_template[719] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11785,11 +9936,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.newserver_shop_template
-
-	var_5_56[720] = {
+	pg.base.newserver_shop_template[720] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -11809,11 +9956,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.newserver_shop_template
-
-	var_5_57[721] = {
+	pg.base.newserver_shop_template[721] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11833,11 +9976,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.newserver_shop_template
-
-	var_5_58[722] = {
+	pg.base.newserver_shop_template[722] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11854,11 +9993,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.newserver_shop_template
-
-	var_5_59[723] = {
+	pg.base.newserver_shop_template[723] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11875,11 +10010,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.newserver_shop_template
-
-	var_5_60[724] = {
+	pg.base.newserver_shop_template[724] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11896,11 +10027,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.newserver_shop_template
-
-	var_5_61[725] = {
+	pg.base.newserver_shop_template[725] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11917,11 +10044,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.newserver_shop_template
-
-	var_5_62[726] = {
+	pg.base.newserver_shop_template[726] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -11938,11 +10061,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.newserver_shop_template
-
-	var_5_63[727] = {
+	pg.base.newserver_shop_template[727] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -11959,11 +10078,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.newserver_shop_template
-
-	var_5_64[728] = {
+	pg.base.newserver_shop_template[728] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -11980,11 +10095,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.newserver_shop_template
-
-	var_5_65[729] = {
+	pg.base.newserver_shop_template[729] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12001,11 +10112,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.newserver_shop_template
-
-	var_5_66[730] = {
+	pg.base.newserver_shop_template[730] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12022,11 +10129,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.newserver_shop_template
-
-	var_5_67[731] = {
+	pg.base.newserver_shop_template[731] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12043,11 +10146,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.newserver_shop_template
-
-	var_5_68[732] = {
+	pg.base.newserver_shop_template[732] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12064,11 +10163,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.newserver_shop_template
-
-	var_5_69[733] = {
+	pg.base.newserver_shop_template[733] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12085,11 +10180,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.newserver_shop_template
-
-	var_5_70[734] = {
+	pg.base.newserver_shop_template[734] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12110,11 +10201,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.newserver_shop_template
-
-	var_5_71[735] = {
+	pg.base.newserver_shop_template[735] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12135,11 +10222,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.newserver_shop_template
-
-	var_5_72[736] = {
+	pg.base.newserver_shop_template[736] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12160,11 +10243,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.newserver_shop_template
-
-	var_5_73[737] = {
+	pg.base.newserver_shop_template[737] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -12183,11 +10262,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.newserver_shop_template
-
-	var_5_74[738] = {
+	pg.base.newserver_shop_template[738] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12206,11 +10281,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.newserver_shop_template
-
-	var_5_75[739] = {
+	pg.base.newserver_shop_template[739] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12229,11 +10300,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.newserver_shop_template
-
-	var_5_76[740] = {
+	pg.base.newserver_shop_template[740] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12252,11 +10319,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.newserver_shop_template
-
-	var_5_77[741] = {
+	pg.base.newserver_shop_template[741] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12276,11 +10339,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.newserver_shop_template
-
-	var_5_78[742] = {
+	pg.base.newserver_shop_template[742] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12300,11 +10359,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.newserver_shop_template
-
-	var_5_79[743] = {
+	pg.base.newserver_shop_template[743] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12324,11 +10379,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.newserver_shop_template
-
-	var_5_80[744] = {
+	pg.base.newserver_shop_template[744] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12345,11 +10396,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.newserver_shop_template
-
-	var_5_81[745] = {
+	pg.base.newserver_shop_template[745] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12366,11 +10413,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.newserver_shop_template
-
-	var_5_82[746] = {
+	pg.base.newserver_shop_template[746] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12387,11 +10430,7 @@ end)()
 			1
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.newserver_shop_template
-
-	var_5_83[747] = {
+	pg.base.newserver_shop_template[747] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12408,11 +10447,7 @@ end)()
 			2
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.newserver_shop_template
-
-	var_5_84[748] = {
+	pg.base.newserver_shop_template[748] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12429,11 +10464,7 @@ end)()
 			3
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.newserver_shop_template
-
-	var_5_85[749] = {
+	pg.base.newserver_shop_template[749] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12450,11 +10481,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.newserver_shop_template
-
-	var_5_86[750] = {
+	pg.base.newserver_shop_template[750] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12471,11 +10498,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.newserver_shop_template
-
-	var_5_87[751] = {
+	pg.base.newserver_shop_template[751] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12492,11 +10515,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.newserver_shop_template
-
-	var_5_88[752] = {
+	pg.base.newserver_shop_template[752] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12513,11 +10532,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.newserver_shop_template
-
-	var_5_89[753] = {
+	pg.base.newserver_shop_template[753] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12534,11 +10549,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.newserver_shop_template
-
-	var_5_90[754] = {
+	pg.base.newserver_shop_template[754] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12555,11 +10566,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.newserver_shop_template
-
-	var_5_91[755] = {
+	pg.base.newserver_shop_template[755] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12576,11 +10583,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.newserver_shop_template
-
-	var_5_92[756] = {
+	pg.base.newserver_shop_template[756] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12601,11 +10604,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.newserver_shop_template
-
-	var_5_93[757] = {
+	pg.base.newserver_shop_template[757] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12626,11 +10625,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.newserver_shop_template
-
-	var_5_94[758] = {
+	pg.base.newserver_shop_template[758] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12651,11 +10646,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.newserver_shop_template
-
-	var_5_95[759] = {
+	pg.base.newserver_shop_template[759] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -12674,11 +10665,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.newserver_shop_template
-
-	var_5_96[760] = {
+	pg.base.newserver_shop_template[760] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12697,11 +10684,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.newserver_shop_template
-
-	var_5_97[761] = {
+	pg.base.newserver_shop_template[761] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12720,11 +10703,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.newserver_shop_template
-
-	var_5_98[762] = {
+	pg.base.newserver_shop_template[762] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12743,8 +10722,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.newserver_shop_template[763] = {
+	pg.base.newserver_shop_template[763] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12768,11 +10746,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.newserver_shop_template
-
-	var_6_0[764] = {
+	pg.base.newserver_shop_template[764] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -12792,11 +10766,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.newserver_shop_template
-
-	var_6_1[765] = {
+	pg.base.newserver_shop_template[765] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12816,11 +10786,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.newserver_shop_template
-
-	var_6_2[766] = {
+	pg.base.newserver_shop_template[766] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12837,11 +10803,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.newserver_shop_template
-
-	var_6_3[767] = {
+	pg.base.newserver_shop_template[767] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12858,11 +10820,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.newserver_shop_template
-
-	var_6_4[768] = {
+	pg.base.newserver_shop_template[768] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12879,11 +10837,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.newserver_shop_template
-
-	var_6_5[769] = {
+	pg.base.newserver_shop_template[769] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12900,11 +10854,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.newserver_shop_template
-
-	var_6_6[770] = {
+	pg.base.newserver_shop_template[770] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12921,11 +10871,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.newserver_shop_template
-
-	var_6_7[771] = {
+	pg.base.newserver_shop_template[771] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -12942,11 +10888,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.newserver_shop_template
-
-	var_6_8[9907] = {
+	pg.base.newserver_shop_template[9907] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -12963,11 +10905,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.newserver_shop_template
-
-	var_6_9[801] = {
+	pg.base.newserver_shop_template[801] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -12984,11 +10922,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.newserver_shop_template
-
-	var_6_10[802] = {
+	pg.base.newserver_shop_template[802] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13005,11 +10939,7 @@ end)()
 			65109
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.newserver_shop_template
-
-	var_6_11[803] = {
+	pg.base.newserver_shop_template[803] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13054,11 +10984,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.newserver_shop_template
-
-	var_6_12[804] = {
+	pg.base.newserver_shop_template[804] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13090,11 +11016,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.newserver_shop_template
-
-	var_6_13[805] = {
+	pg.base.newserver_shop_template[805] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13111,11 +11033,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.newserver_shop_template
-
-	var_6_14[806] = {
+	pg.base.newserver_shop_template[806] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13132,11 +11050,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.newserver_shop_template
-
-	var_6_15[807] = {
+	pg.base.newserver_shop_template[807] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13153,11 +11067,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.newserver_shop_template
-
-	var_6_16[808] = {
+	pg.base.newserver_shop_template[808] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13174,11 +11084,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.newserver_shop_template
-
-	var_6_17[809] = {
+	pg.base.newserver_shop_template[809] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13195,11 +11101,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.newserver_shop_template
-
-	var_6_18[810] = {
+	pg.base.newserver_shop_template[810] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13216,11 +11118,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.newserver_shop_template
-
-	var_6_19[811] = {
+	pg.base.newserver_shop_template[811] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13237,11 +11135,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.newserver_shop_template
-
-	var_6_20[812] = {
+	pg.base.newserver_shop_template[812] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13262,11 +11156,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.newserver_shop_template
-
-	var_6_21[813] = {
+	pg.base.newserver_shop_template[813] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13287,11 +11177,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.newserver_shop_template
-
-	var_6_22[814] = {
+	pg.base.newserver_shop_template[814] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -13312,11 +11198,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.newserver_shop_template
-
-	var_6_23[815] = {
+	pg.base.newserver_shop_template[815] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -13335,11 +11217,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.newserver_shop_template
-
-	var_6_24[816] = {
+	pg.base.newserver_shop_template[816] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13358,11 +11236,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.newserver_shop_template
-
-	var_6_25[817] = {
+	pg.base.newserver_shop_template[817] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13381,11 +11255,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.newserver_shop_template
-
-	var_6_26[818] = {
+	pg.base.newserver_shop_template[818] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13404,11 +11274,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.newserver_shop_template
-
-	var_6_27[819] = {
+	pg.base.newserver_shop_template[819] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13428,11 +11294,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.newserver_shop_template
-
-	var_6_28[820] = {
+	pg.base.newserver_shop_template[820] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13452,11 +11314,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.newserver_shop_template
-
-	var_6_29[821] = {
+	pg.base.newserver_shop_template[821] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13476,11 +11334,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.newserver_shop_template
-
-	var_6_30[822] = {
+	pg.base.newserver_shop_template[822] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13497,11 +11351,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.newserver_shop_template
-
-	var_6_31[823] = {
+	pg.base.newserver_shop_template[823] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13518,11 +11368,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.newserver_shop_template
-
-	var_6_32[824] = {
+	pg.base.newserver_shop_template[824] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -13539,11 +11385,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.newserver_shop_template
-
-	var_6_33[825] = {
+	pg.base.newserver_shop_template[825] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -13560,11 +11402,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.newserver_shop_template
-
-	var_6_34[826] = {
+	pg.base.newserver_shop_template[826] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -13581,11 +11419,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.newserver_shop_template
-
-	var_6_35[827] = {
+	pg.base.newserver_shop_template[827] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13602,11 +11436,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.newserver_shop_template
-
-	var_6_36[828] = {
+	pg.base.newserver_shop_template[828] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13623,11 +11453,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.newserver_shop_template
-
-	var_6_37[829] = {
+	pg.base.newserver_shop_template[829] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13644,11 +11470,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.newserver_shop_template
-
-	var_6_38[830] = {
+	pg.base.newserver_shop_template[830] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13665,11 +11487,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.newserver_shop_template
-
-	var_6_39[831] = {
+	pg.base.newserver_shop_template[831] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13686,11 +11504,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.newserver_shop_template
-
-	var_6_40[832] = {
+	pg.base.newserver_shop_template[832] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13707,11 +11521,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.newserver_shop_template
-
-	var_6_41[833] = {
+	pg.base.newserver_shop_template[833] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13728,11 +11538,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.newserver_shop_template
-
-	var_6_42[834] = {
+	pg.base.newserver_shop_template[834] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13753,11 +11559,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.newserver_shop_template
-
-	var_6_43[835] = {
+	pg.base.newserver_shop_template[835] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13778,11 +11580,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.newserver_shop_template
-
-	var_6_44[836] = {
+	pg.base.newserver_shop_template[836] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -13803,11 +11601,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.newserver_shop_template
-
-	var_6_45[837] = {
+	pg.base.newserver_shop_template[837] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -13826,11 +11620,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.newserver_shop_template
-
-	var_6_46[838] = {
+	pg.base.newserver_shop_template[838] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13849,11 +11639,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.newserver_shop_template
-
-	var_6_47[839] = {
+	pg.base.newserver_shop_template[839] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13872,11 +11658,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.newserver_shop_template
-
-	var_6_48[840] = {
+	pg.base.newserver_shop_template[840] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13895,11 +11677,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.newserver_shop_template
-
-	var_6_49[841] = {
+	pg.base.newserver_shop_template[841] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13919,11 +11697,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.newserver_shop_template
-
-	var_6_50[842] = {
+	pg.base.newserver_shop_template[842] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -13943,11 +11717,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.newserver_shop_template
-
-	var_6_51[843] = {
+	pg.base.newserver_shop_template[843] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -13967,11 +11737,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.newserver_shop_template
-
-	var_6_52[844] = {
+	pg.base.newserver_shop_template[844] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -13988,11 +11754,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.newserver_shop_template
-
-	var_6_53[845] = {
+	pg.base.newserver_shop_template[845] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14009,11 +11771,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.newserver_shop_template
-
-	var_6_54[846] = {
+	pg.base.newserver_shop_template[846] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14030,11 +11788,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.newserver_shop_template
-
-	var_6_55[847] = {
+	pg.base.newserver_shop_template[847] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14051,11 +11805,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.newserver_shop_template
-
-	var_6_56[848] = {
+	pg.base.newserver_shop_template[848] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14072,11 +11822,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.newserver_shop_template
-
-	var_6_57[849] = {
+	pg.base.newserver_shop_template[849] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -14093,11 +11839,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.newserver_shop_template
-
-	var_6_58[850] = {
+	pg.base.newserver_shop_template[850] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14114,11 +11856,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.newserver_shop_template
-
-	var_6_59[851] = {
+	pg.base.newserver_shop_template[851] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14135,11 +11873,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.newserver_shop_template
-
-	var_6_60[852] = {
+	pg.base.newserver_shop_template[852] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14156,11 +11890,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.newserver_shop_template
-
-	var_6_61[853] = {
+	pg.base.newserver_shop_template[853] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14177,11 +11907,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.newserver_shop_template
-
-	var_6_62[854] = {
+	pg.base.newserver_shop_template[854] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14198,11 +11924,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.newserver_shop_template
-
-	var_6_63[855] = {
+	pg.base.newserver_shop_template[855] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14219,11 +11941,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.newserver_shop_template
-
-	var_6_64[856] = {
+	pg.base.newserver_shop_template[856] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14244,11 +11962,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.newserver_shop_template
-
-	var_6_65[857] = {
+	pg.base.newserver_shop_template[857] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -14269,11 +11983,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.newserver_shop_template
-
-	var_6_66[858] = {
+	pg.base.newserver_shop_template[858] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14294,11 +12004,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.newserver_shop_template
-
-	var_6_67[859] = {
+	pg.base.newserver_shop_template[859] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -14317,11 +12023,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.newserver_shop_template
-
-	var_6_68[860] = {
+	pg.base.newserver_shop_template[860] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14340,11 +12042,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.newserver_shop_template
-
-	var_6_69[861] = {
+	pg.base.newserver_shop_template[861] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14363,11 +12061,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.newserver_shop_template
-
-	var_6_70[862] = {
+	pg.base.newserver_shop_template[862] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -14386,11 +12080,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.newserver_shop_template
-
-	var_6_71[863] = {
+	pg.base.newserver_shop_template[863] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14410,11 +12100,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.newserver_shop_template
-
-	var_6_72[864] = {
+	pg.base.newserver_shop_template[864] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14434,11 +12120,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.newserver_shop_template
-
-	var_6_73[865] = {
+	pg.base.newserver_shop_template[865] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -14458,11 +12140,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.newserver_shop_template
-
-	var_6_74[866] = {
+	pg.base.newserver_shop_template[866] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14479,11 +12157,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.newserver_shop_template
-
-	var_6_75[867] = {
+	pg.base.newserver_shop_template[867] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14500,11 +12174,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.newserver_shop_template
-
-	var_6_76[868] = {
+	pg.base.newserver_shop_template[868] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14521,11 +12191,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.newserver_shop_template
-
-	var_6_77[869] = {
+	pg.base.newserver_shop_template[869] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14542,11 +12208,7 @@ end)()
 			2
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.newserver_shop_template
-
-	var_6_78[870] = {
+	pg.base.newserver_shop_template[870] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14563,11 +12225,7 @@ end)()
 			3
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.newserver_shop_template
-
-	var_6_79[871] = {
+	pg.base.newserver_shop_template[871] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -14584,11 +12242,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.newserver_shop_template
-
-	var_6_80[9908] = {
+	pg.base.newserver_shop_template[9908] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14605,11 +12259,7 @@ end)()
 			1
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.newserver_shop_template
-
-	var_6_81[901] = {
+	pg.base.newserver_shop_template[901] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14626,11 +12276,7 @@ end)()
 			305051
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.newserver_shop_template
-
-	var_6_82[902] = {
+	pg.base.newserver_shop_template[902] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14647,11 +12293,7 @@ end)()
 			66015
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.newserver_shop_template
-
-	var_6_83[903] = {
+	pg.base.newserver_shop_template[903] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14696,11 +12338,7 @@ end)()
 			1440
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.newserver_shop_template
-
-	var_6_84[904] = {
+	pg.base.newserver_shop_template[904] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14732,11 +12370,7 @@ end)()
 			2540
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.newserver_shop_template
-
-	var_6_85[905] = {
+	pg.base.newserver_shop_template[905] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14753,11 +12387,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.newserver_shop_template
-
-	var_6_86[906] = {
+	pg.base.newserver_shop_template[906] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14774,11 +12404,7 @@ end)()
 			15003
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.newserver_shop_template
-
-	var_6_87[907] = {
+	pg.base.newserver_shop_template[907] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14795,11 +12421,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.newserver_shop_template
-
-	var_6_88[908] = {
+	pg.base.newserver_shop_template[908] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14816,11 +12438,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.newserver_shop_template
-
-	var_6_89[909] = {
+	pg.base.newserver_shop_template[909] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14837,11 +12455,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.newserver_shop_template
-
-	var_6_90[910] = {
+	pg.base.newserver_shop_template[910] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -14858,11 +12472,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.newserver_shop_template
-
-	var_6_91[911] = {
+	pg.base.newserver_shop_template[911] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14879,11 +12489,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.newserver_shop_template
-
-	var_6_92[912] = {
+	pg.base.newserver_shop_template[912] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -14904,11 +12510,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.newserver_shop_template
-
-	var_6_93[913] = {
+	pg.base.newserver_shop_template[913] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -14929,11 +12531,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.newserver_shop_template
-
-	var_6_94[914] = {
+	pg.base.newserver_shop_template[914] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -14954,11 +12552,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.newserver_shop_template
-
-	var_6_95[915] = {
+	pg.base.newserver_shop_template[915] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -14977,11 +12571,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.newserver_shop_template
-
-	var_6_96[916] = {
+	pg.base.newserver_shop_template[916] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15000,11 +12590,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.newserver_shop_template
-
-	var_6_97[917] = {
+	pg.base.newserver_shop_template[917] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15023,11 +12609,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.newserver_shop_template
-
-	var_6_98[918] = {
+	pg.base.newserver_shop_template[918] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15046,8 +12628,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.newserver_shop_template[919] = {
+	pg.base.newserver_shop_template[919] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15071,11 +12652,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.newserver_shop_template
-
-	var_7_0[920] = {
+	pg.base.newserver_shop_template[920] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15095,11 +12672,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.newserver_shop_template
-
-	var_7_1[921] = {
+	pg.base.newserver_shop_template[921] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15119,11 +12692,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.newserver_shop_template
-
-	var_7_2[922] = {
+	pg.base.newserver_shop_template[922] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15140,11 +12709,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.newserver_shop_template
-
-	var_7_3[923] = {
+	pg.base.newserver_shop_template[923] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15161,11 +12726,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.newserver_shop_template
-
-	var_7_4[924] = {
+	pg.base.newserver_shop_template[924] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15182,11 +12743,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.newserver_shop_template
-
-	var_7_5[925] = {
+	pg.base.newserver_shop_template[925] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15203,11 +12760,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.newserver_shop_template
-
-	var_7_6[926] = {
+	pg.base.newserver_shop_template[926] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15224,11 +12777,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.newserver_shop_template
-
-	var_7_7[927] = {
+	pg.base.newserver_shop_template[927] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15245,11 +12794,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.newserver_shop_template
-
-	var_7_8[928] = {
+	pg.base.newserver_shop_template[928] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15266,11 +12811,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.newserver_shop_template
-
-	var_7_9[929] = {
+	pg.base.newserver_shop_template[929] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15287,11 +12828,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.newserver_shop_template
-
-	var_7_10[930] = {
+	pg.base.newserver_shop_template[930] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15308,11 +12845,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.newserver_shop_template
-
-	var_7_11[931] = {
+	pg.base.newserver_shop_template[931] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15329,11 +12862,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.newserver_shop_template
-
-	var_7_12[932] = {
+	pg.base.newserver_shop_template[932] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15350,11 +12879,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.newserver_shop_template
-
-	var_7_13[933] = {
+	pg.base.newserver_shop_template[933] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15371,11 +12896,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.newserver_shop_template
-
-	var_7_14[934] = {
+	pg.base.newserver_shop_template[934] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15396,11 +12917,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.newserver_shop_template
-
-	var_7_15[935] = {
+	pg.base.newserver_shop_template[935] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15421,11 +12938,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.newserver_shop_template
-
-	var_7_16[936] = {
+	pg.base.newserver_shop_template[936] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15446,11 +12959,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.newserver_shop_template
-
-	var_7_17[937] = {
+	pg.base.newserver_shop_template[937] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -15469,11 +12978,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.newserver_shop_template
-
-	var_7_18[938] = {
+	pg.base.newserver_shop_template[938] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15492,11 +12997,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.newserver_shop_template
-
-	var_7_19[939] = {
+	pg.base.newserver_shop_template[939] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15515,11 +13016,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.newserver_shop_template
-
-	var_7_20[940] = {
+	pg.base.newserver_shop_template[940] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15538,11 +13035,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.newserver_shop_template
-
-	var_7_21[941] = {
+	pg.base.newserver_shop_template[941] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15562,11 +13055,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.newserver_shop_template
-
-	var_7_22[942] = {
+	pg.base.newserver_shop_template[942] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15586,11 +13075,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.newserver_shop_template
-
-	var_7_23[943] = {
+	pg.base.newserver_shop_template[943] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15610,11 +13095,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.newserver_shop_template
-
-	var_7_24[944] = {
+	pg.base.newserver_shop_template[944] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15631,11 +13112,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.newserver_shop_template
-
-	var_7_25[945] = {
+	pg.base.newserver_shop_template[945] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15652,11 +13129,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.newserver_shop_template
-
-	var_7_26[946] = {
+	pg.base.newserver_shop_template[946] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15673,11 +13146,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.newserver_shop_template
-
-	var_7_27[947] = {
+	pg.base.newserver_shop_template[947] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15694,11 +13163,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.newserver_shop_template
-
-	var_7_28[948] = {
+	pg.base.newserver_shop_template[948] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15715,11 +13180,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.newserver_shop_template
-
-	var_7_29[949] = {
+	pg.base.newserver_shop_template[949] = {
 		unlock_time = 604800,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15736,11 +13197,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.newserver_shop_template
-
-	var_7_30[950] = {
+	pg.base.newserver_shop_template[950] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15757,11 +13214,7 @@ end)()
 			20001
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.newserver_shop_template
-
-	var_7_31[951] = {
+	pg.base.newserver_shop_template[951] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15778,11 +13231,7 @@ end)()
 			100011
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.newserver_shop_template
-
-	var_7_32[952] = {
+	pg.base.newserver_shop_template[952] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15799,11 +13248,7 @@ end)()
 			100001
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.newserver_shop_template
-
-	var_7_33[953] = {
+	pg.base.newserver_shop_template[953] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15820,11 +13265,7 @@ end)()
 			16502
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.newserver_shop_template
-
-	var_7_34[954] = {
+	pg.base.newserver_shop_template[954] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15841,11 +13282,7 @@ end)()
 			15008
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.newserver_shop_template
-
-	var_7_35[955] = {
+	pg.base.newserver_shop_template[955] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15862,11 +13299,7 @@ end)()
 			61001
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.newserver_shop_template
-
-	var_7_36[956] = {
+	pg.base.newserver_shop_template[956] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -15887,11 +13320,7 @@ end)()
 			17043
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.newserver_shop_template
-
-	var_7_37[957] = {
+	pg.base.newserver_shop_template[957] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -15912,11 +13341,7 @@ end)()
 			17042
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.newserver_shop_template
-
-	var_7_38[958] = {
+	pg.base.newserver_shop_template[958] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -15937,11 +13362,7 @@ end)()
 			17041
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.newserver_shop_template
-
-	var_7_39[959] = {
+	pg.base.newserver_shop_template[959] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 5,
@@ -15960,11 +13381,7 @@ end)()
 			16024
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.newserver_shop_template
-
-	var_7_40[960] = {
+	pg.base.newserver_shop_template[960] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -15983,11 +13400,7 @@ end)()
 			16023
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.newserver_shop_template
-
-	var_7_41[961] = {
+	pg.base.newserver_shop_template[961] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -16006,11 +13419,7 @@ end)()
 			16022
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.newserver_shop_template
-
-	var_7_42[962] = {
+	pg.base.newserver_shop_template[962] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -16029,11 +13438,7 @@ end)()
 			16021
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.newserver_shop_template
-
-	var_7_43[963] = {
+	pg.base.newserver_shop_template[963] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -16053,11 +13458,7 @@ end)()
 			18033
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.newserver_shop_template
-
-	var_7_44[964] = {
+	pg.base.newserver_shop_template[964] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 3,
@@ -16077,11 +13478,7 @@ end)()
 			18032
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.newserver_shop_template
-
-	var_7_45[965] = {
+	pg.base.newserver_shop_template[965] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -16101,11 +13498,7 @@ end)()
 			18031
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.newserver_shop_template
-
-	var_7_46[966] = {
+	pg.base.newserver_shop_template[966] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -16122,11 +13515,7 @@ end)()
 			42000
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.newserver_shop_template
-
-	var_7_47[967] = {
+	pg.base.newserver_shop_template[967] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 4,
@@ -16143,11 +13532,7 @@ end)()
 			42010
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.newserver_shop_template
-
-	var_7_48[968] = {
+	pg.base.newserver_shop_template[968] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -16164,11 +13549,7 @@ end)()
 			1
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.newserver_shop_template
-
-	var_7_49[969] = {
+	pg.base.newserver_shop_template[969] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -16185,11 +13566,7 @@ end)()
 			2
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.newserver_shop_template
-
-	var_7_50[970] = {
+	pg.base.newserver_shop_template[970] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 1,
@@ -16206,11 +13583,7 @@ end)()
 			3
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.newserver_shop_template
-
-	var_7_51[971] = {
+	pg.base.newserver_shop_template[971] = {
 		unlock_time = 1209600,
 		resource_category = 1,
 		goods_rarity = 2,
@@ -16227,8 +13600,7 @@ end)()
 			59900
 		}
 	}
-	pg = var_7_51
-	var_7_51.base.newserver_shop_template[9909] = {
+	pg.base.newserver_shop_template[9909] = {
 		unlock_time = 0,
 		resource_category = 1,
 		goods_rarity = 1,

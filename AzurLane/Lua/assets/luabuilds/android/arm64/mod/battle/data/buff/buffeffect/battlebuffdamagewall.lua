@@ -1,35 +1,25 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleBuffDamageWall = class("BattleBuffDamageWall", ys.Battle.BattleBuffShieldWall)
+ys.Battle.BattleBuffDamageWall.__name = "BattleBuffDamageWall"
 
-local var_0_1 = var_0.Battle
+local var_0_1 = ys.Battle.BattleBuffDamageWall
 
-class = var_0_10002
-var_0_1.BattleBuffDamageWall = var_0_10002("BattleBuffDamageWall", var_0.Battle.BattleBuffShieldWall)
-var_0.Battle.BattleBuffDamageWall.__name = "BattleBuffDamageWall"
-
-local var_0_2 = var_0.Battle.BattleBuffDamageWall
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.BattleBuffDamageWall.Ctor(arg_1_0, arg_1_1)
+	var_0_1.super.Ctor(arg_1_0, arg_1_1)
 
 	arg_1_0._cldList = {}
 
 	return
 end
 
-function var_0_2.SetArgs(arg_2_0, arg_2_1, arg_2_2)
-	var_0_2.super.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+function ys.Battle.BattleBuffDamageWall.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	var_0_1.super.SetArgs(arg_2_0, arg_2_1, arg_2_2)
+	arg_2_0._wall:SetCldObjType(var_0_0.Battle.BattleWallData.CLD_OBJ_TYPE_SHIP)
 
-	local var_2_0 = arg_2_0._wall
-
-	var_3.SetCldObjType(var_2_0, var_0.Battle.BattleWallData.CLD_OBJ_TYPE_SHIP)
-
-	setmetatable = var_3
-	arg_2_0._attr = var_3({}, {
+	arg_2_0._attr = setmetatable({}, {
 		__index = arg_2_1._attr
 	})
 	arg_2_0._atkAttrType = arg_2_0._tempData.arg_list.attack_attribute
@@ -70,25 +60,16 @@ function var_0_2.SetArgs(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0._forgeWeaponTmp = {
 		attack_attribute = arg_2_0._atkAttrType
 	}
-	arg_2_0._atkAttr = var_0.Battle.BattleAttr.GetAtkAttrByType(arg_2_0._attr, arg_2_0._atkAttrType)
+	arg_2_0._atkAttr = var_0_0.Battle.BattleAttr.GetAtkAttrByType(arg_2_0._attr, arg_2_0._atkAttrType)
 
 	return
 end
 
-function var_0_2.onWallCld(arg_5_0, arg_5_1)
-	ipairs = var_1_10002
-
-	for iter_5_0, iter_5_1 in var_1_10002(arg_5_1) do
-		table = var_1_10007
-
-		if not var_1_10007.contains(arg_5_0._cldList, iter_5_1) then
-			local var_5_0 = arg_5_0._dataProxy
-
-			var_1_10007.HandleWallDamage(var_5_0, arg_5_0, iter_5_1)
-
-			table = var_1_10007
-
-			var_1_10007.insert(arg_5_0._cldList, iter_5_1)
+function ys.Battle.BattleBuffDamageWall.onWallCld(arg_5_0, arg_5_1)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_1) do
+		if not table.contains(arg_5_0._cldList, iter_5_1) then
+			arg_5_0._dataProxy:HandleWallDamage(arg_5_0, iter_5_1)
+			table.insert(arg_5_0._cldList, iter_5_1)
 
 			arg_5_0._count = arg_5_0._count - 1
 
@@ -98,20 +79,14 @@ function var_0_2.onWallCld(arg_5_0, arg_5_1)
 		end
 	end
 
-	local var_5_1 = #arg_5_0._cldList
+	local var_5_0 = #arg_5_0._cldList
 
-	while var_5_1 > 0 do
-		local var_5_2 = arg_5_0._cldList[var_5_1]
-
-		table = var_4
-
-		if not var_4.contains(arg_5_1, var_5_2) then
-			table = var_4
-
-			var_4.remove(arg_5_0._cldList, var_5_1)
+	while var_5_0 > 0 do
+		if not table.contains(arg_5_1, arg_5_0._cldList[var_5_0]) then
+			table.remove(arg_5_0._cldList, var_5_0)
 		end
 
-		var_5_1 = var_5_1 - 1
+		var_5_0 = var_5_0 - 1
 	end
 
 	if arg_5_0._count <= 0 then
@@ -121,42 +96,42 @@ function var_0_2.onWallCld(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_2.GetDamageEnhance(arg_6_0)
+function ys.Battle.BattleBuffDamageWall.GetDamageEnhance(arg_6_0)
 	return 1
 end
 
-function var_0_2.GetHost(arg_7_0)
+function ys.Battle.BattleBuffDamageWall.GetHost(arg_7_0)
 	return arg_7_0._unit
 end
 
-function var_0_2.GetWeaponHostAttr(arg_8_0)
-	return var_0.Battle.BattleAttr.GetAttr(arg_8_0)
+function ys.Battle.BattleBuffDamageWall.GetWeaponHostAttr(arg_8_0)
+	return var_0_0.Battle.BattleAttr.GetAttr(arg_8_0)
 end
 
-function var_0_2.GetWeapon(arg_9_0)
+function ys.Battle.BattleBuffDamageWall.GetWeapon(arg_9_0)
 	return arg_9_0._forgeWeapon
 end
 
-function var_0_2.GetWeaponTempData(arg_10_0)
+function ys.Battle.BattleBuffDamageWall.GetWeaponTempData(arg_10_0)
 	return arg_10_0._forgeWeaponTmp
 end
 
-function var_0_2.GetWeaponAtkAttr(arg_11_0)
+function ys.Battle.BattleBuffDamageWall.GetWeaponAtkAttr(arg_11_0)
 	return arg_11_0._atkAttr
 end
 
-function var_0_2.GetCorrectedDMG(arg_12_0)
+function ys.Battle.BattleBuffDamageWall.GetCorrectedDMG(arg_12_0)
 	return arg_12_0._damage
 end
 
-function var_0_2.GetTemplate(arg_13_0)
+function ys.Battle.BattleBuffDamageWall.GetTemplate(arg_13_0)
 	return arg_13_0._forgeTmp
 end
 
-function var_0_2.Clear(arg_14_0)
+function ys.Battle.BattleBuffDamageWall.Clear(arg_14_0)
 	arg_14_0._cldList = nil
 
-	var_0_2.super.Clear(arg_14_0)
+	var_0_1.super.Clear(arg_14_0)
 
 	return
 end

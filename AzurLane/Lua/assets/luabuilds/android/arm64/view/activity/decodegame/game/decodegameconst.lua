@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("DecodeGameConst")
+﻿local var_0_0 = class("DecodeGameConst")
 
 var_0_0.DISORDER = {
 	11,
@@ -164,19 +162,13 @@ var_0_0.UNLOCK_STORYID = {
 var_0_0.LAST_STORYID = "LIMINGZHIAN4"
 
 function var_0_0.Vect2Index(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_0 - 1
-
-	DecodeGameConst = var_1_10003
-
-	return var_1_0 * var_1_10003.MAP_COLUMN + arg_1_1
+	return (arg_1_0 - 1) * DecodeGameConst.MAP_COLUMN + arg_1_1
 end
 
 function var_0_0.Index2Vect(arg_2_0)
-	math = var_1_10001
+	local var_2_0 = math.ceil(arg_2_0 / var_0_0.MAP_COLUMN)
 
-	local var_2_0 = arg_2_0 - (var_1_10001.ceil(arg_2_0 / var_0_0.MAP_COLUMN) - 1) * var_0_0.MAP_COLUMN
-
-	return var_1, var_2_0
+	return var_2_0, arg_2_0 - (var_2_0 - 1) * var_0_0.MAP_COLUMN
 end
 
 var_0_0.HELP_BGS = {

@@ -1,4 +1,13 @@
 ﻿return {
+	time = 3,
+	name = "",
+	init_effect = "",
+	picture = "",
+	desc = "",
+	stack = 1,
+	id = 152025,
+	icon = 152020,
+	last_effect = "",
 	effect_list = {
 		{
 			type = "BattleBuffHP",
@@ -6,27 +15,18 @@
 				"onAttach"
 			},
 			arg_list = {
-				maxHPRatio = 0.05
+				number = -1
+			}
+		},
+		{
+			type = "BattleBuffAddBuff",
+			trigger = {
+				"onRemove"
+			},
+			arg_list = {
+				buff_id = 152026,
+				target = "TargetSelf"
 			}
 		}
-	},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	{},
-	time = 5,
-	name = "",
-	init_effect = "",
-	picture = "",
-	desc = "",
-	stack = 1,
-	id = 152024,
-	icon = 152020,
-	last_effect = "Health"
+	}
 }

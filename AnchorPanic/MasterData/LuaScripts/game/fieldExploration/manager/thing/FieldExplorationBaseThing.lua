@@ -24,6 +24,7 @@ end
 function resetData(self)
     self.mEffectList = {}
     self.mSoundList = {}
+    self.mRecovering = false
 end
 
 function createModel(self)
@@ -60,6 +61,7 @@ end
 
 function addEffect(self, effctName)
     if string.NullOrEmpty(effctName) then return end
+    if self.mRecovering then return end
 
     local effct = fieldExploration.FieldExploration_effect:create(FieldExplorationConst.getFieldExplorationFxPath(effctName), self:getTrans())
     self.mEffectList[effct.m_snId] = effct
@@ -117,18 +119,73 @@ end
 
 --旋转
 function setEulerAngles(self, anglesV3)
+    if not self.mModel then
+        return
+    end
+
     self.mModel:setEulerAngles(anglesV3)
 end
 
+--旋转
+function setAngle(self, angle, isNow, callback)
+    if not self.mModel then
+        return
+    end
+
+    self.mModel:setAngle(angle, isNow, callback)
+end
+
+function getAngle(self)
+    if not self.mModel then
+        return 0
+    end
+    return self.mModel:getAngle()
+end
+
 function setPosition(self, lpos)
+    if not self.mModel then
+        return
+    end
+
     self.mModel:setPosition(lpos)
 end
 
+function setPositionTween(self, lpos, tweenTime, callback)
+    if not self.mModel then
+        return
+    end
+
+    self.mModel:setPositionTween(lpos, tweenTime, callback)
+end
+
+function getCurPos(self)
+    if not self.mModel then
+        return 0
+    end
+    return self.mModel:getCurPos()
+end
+
 function setScale(self, scale)
+    if not self.mModel then
+        return
+    end
+
     self.mModel:setScale(scale)
 end
 
+function FindNameInChilds(self, node_name)
+    if not self.mModel then
+        return
+    end
+
+    return gs.GoUtil.FindNameInChilds(self.mModel:getTrans(), node_name)
+end
+
 function getTrans(self)
+    if self.mModel == nil then
+        return
+    end
+
     return self.mModel.m_trans
 end
 
@@ -150,6 +207,12 @@ function getData(self)
     return self.mData
 end
 
+function getCollider(self)
+    if self.mModel and self.mModel.m_rootGo then
+        return self.mModel.m_rootGo:GetComponent(ty.Collider)
+    end
+end
+
 function setVisible(self, val)
     if self.mModel then
         self.mModel:setVisible(val)
@@ -157,6 +220,8 @@ function setVisible(self, val)
 end
 
 function recover(self)
+    self.mRecovering = true
+
     self:clearEffect()
     self:clearSound()
 

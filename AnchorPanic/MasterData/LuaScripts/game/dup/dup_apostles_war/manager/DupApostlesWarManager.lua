@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : DupApostlesWarManager
 @Description    : ***
@@ -13,7 +13,6 @@ module('game.dup_apostle_war.manager.DupApostlesWarManager', Class.impl(Manager)
 EVENT_DATA_UPDATE = "EVENT_DATA_UPDATE"
 -- 目标奖励信息更新
 EVENT_GOAL_UPDATE = "EVENT_GOAL_UPDATE"
-
 
 --构造
 function ctor(self)
@@ -346,9 +345,9 @@ end
 
 -- 接收使徒之战2面板信息
 function onApostlesPanelInfoMsg(self, msg)
-    if not self.mPanelInfo then
-        self.mPanelInfo = dup.DupApostlesPanelInfoVo:new()
-    end
+    -- if not self.mPanelInfo then
+    self.mPanelInfo = dup.DupApostlesPanelInfoVo:new()
+    -- end
     self.mPanelInfo:parseData(msg)
     GameDispatcher:dispatchEvent(EventName.UPDATE_DUP_APOSTLES_PANEL)
     self:checkFlag()
@@ -375,6 +374,6 @@ end
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！
-	语言包: _TT(30047):	"使徒之战"
-	语言包: _TT(36516):	"领取失败"
+语言包: _TT(30047):"使徒之战"
+语言包: _TT(36516):"领取失败"
 ]]

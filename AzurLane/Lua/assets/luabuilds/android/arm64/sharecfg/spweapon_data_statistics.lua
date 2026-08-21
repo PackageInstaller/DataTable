@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "spweapon_data_statistics") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "spweapon_data_statistics"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.spweapon_data_statistics = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.spweapon_data_statistics
-
-var_0_3.__stream__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.spweapon_data_statistics
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.spweapon_data_statistics = rawget(pg, "spweapon_data_statistics") or setmetatable({
+	__name = "spweapon_data_statistics"
+}, confNEO)
+pg.spweapon_data_statistics.__stream__ = true
+pg.spweapon_data_statistics.all = {
 	1010100,
 	1010101,
 	1010102,
@@ -2794,11 +2767,7 @@ var_0_4.all = {
 	15529,
 	15530
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.spweapon_data_statistics
-
-var_0_5.get_id_list_by_unique = {
+pg.spweapon_data_statistics.get_id_list_by_unique = {
 	[0] = {
 		1010100,
 		1010101,
@@ -6020,36 +5989,10 @@ var_0_5.get_id_list_by_unique = {
 		15490
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-
-local var_0_7 = var_0_5.base
-
-pg = var_0_6
-
-local var_0_8
-
-if not var_0_6.base.spweapon_data_statistics then
-	var_0_8 = {}
-end
-
-var_0_7.spweapon_data_statistics = var_0_8
-cs = var_0_7
-
-local var_0_9
-
-var_0_9 = var_0_7 or {}
-cs = cs
-var_0.spweapon_data_statistics = {
+pg.base = pg.base or {}
+pg.base.spweapon_data_statistics = pg.base.spweapon_data_statistics or {}
+cs = cs or {}
+cs.spweapon_data_statistics = {
 	[1010100] = {
 		0,
 		475

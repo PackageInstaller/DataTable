@@ -38,14 +38,31 @@ ShopType.DOUNDLESS = 18
 ShopType.DISASTER = 19
 --情报物资
 ShopType.FRAGMENT = 20
+--联盟商店
+ShopType.GUILDWAR = 21
+--DNA商店（心智体）
+ShopType.DNA = 22
+--巅峰商店
+ShopType.GUILDWARTOP = 23
+--异象残境商店
+ShopType.VISION = 24
 
 -- 无限城夜市
 ShopType.INFINITECITY = 101
 --回归商店
 ShopType.RETURNED = 102
 
+--开心农场商店
+ShopType.HAPPYFARM = 103
 
-
+--轮盘抽奖商店
+ShopType.ROUNDPRIZE = 104
+---隐藏商店，不做显示
+ShopType.HIDE_SHOP = 105
+--轮盘抽奖商店2
+ShopType.ROUNDPRIZETWO = 106
+---隐藏商店2，不做显示
+ShopType.HIDE_SHOP_TWO = 107
 -- 商店页签类型（对应shop_show_data配置表的id）
 ShopTabType = {}
 -- 交易所

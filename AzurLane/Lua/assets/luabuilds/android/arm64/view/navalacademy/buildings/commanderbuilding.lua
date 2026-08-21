@@ -1,103 +1,52 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CommanderBuilding", import(".NavalAcademyBuilding"))
 
-local var_0_0 = "CommanderBuilding"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".NavalAcademyBuilding"))
-
-function var_0_1.GetGameObjectName(arg_1_0)
+function var_0_0.GetGameObjectName(arg_1_0)
 	return "commander"
 end
 
-function var_0_1.GetTitle(arg_2_0)
-	i18n = var_1_10001
-
-	return var_1_10001("school_title_zhihuimiao")
+function var_0_0.GetTitle(arg_2_0)
+	return i18n("school_title_zhihuimiao")
 end
 
-function var_0_1.OnClick(arg_3_0)
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.emit
-
-	NavalAcademyMediator = var_1_10004
-
-	var_3_1(var_3_0, var_1_10004.ON_OPEN_COMMANDER)
+function var_0_0.OnClick(arg_3_0)
+	arg_3_0:emit(NavalAcademyMediator.ON_OPEN_COMMANDER)
 
 	return
 end
 
-function var_0_1.IsTip(arg_4_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_4_0 = var_1_10001(var_1_10003)
-
-	if var_1.getRawData(var_4_0).level < 40 then
+function var_0_0.IsTip(arg_4_0)
+	if getProxy(PlayerProxy):getRawData().level < 40 then
 		return false
 	end
 
-	getProxy = var_1
-	CommanderProxy = var_4_0
+	local var_4_0 = getProxy(CommanderProxy):haveFinishedBox()
 
-	local var_4_1 = var_1(var_4_0)
-	local var_4_2 = var_1.haveFinishedBox(var_4_1)
+	if not LOCK_CATTERY then
+		local var_4_1
 
-	LOCK_CATTERY = var_4_5
-
-	if not var_4_5 then
-		local var_4_5
-
-		if not var_4_2 then
+		if not var_4_0 then
 			::label_4_0::
 
-			getProxy = var_4_5
-			CommanderProxy = var_1_10004
-
-			local var_4_3 = var_4_5(var_1_10004)
-
-			if not var_4_5.AnyCatteryExistOP(var_4_3) then
-				getProxy = var_4_5
-				CommanderProxy = var_4_3
-
-				local var_4_4 = var_4_5(var_4_3)
-
-				var_4_5 = var_4_5.AnyCatteryCanUse(var_4_4)
-			end
+			var_4_1 = getProxy(CommanderProxy):AnyCatteryExistOP()
+			var_4_1 = var_4_1 or getProxy(CommanderProxy):AnyCatteryCanUse()
 		end
 
-		return var_4_5
+		return var_4_1
 	else
-		return var_4_2
+		return var_4_0
 	end
 
 	return
 end
 
-function var_0_1.OnInit(arg_5_0)
-	local var_5_0 = arg_5_0:IsUnlock()
-
-	setActive = var_1_10002
-
-	local var_5_1 = arg_5_0._tf
-
-	var_1_10002(var_4.Find(var_5_1, "name/lock"), not var_5_0)
+function var_0_0.OnInit(arg_5_0)
+	setActive(arg_5_0._tf:Find("name/lock"), not arg_5_0:IsUnlock())
 
 	return
 end
 
-function var_0_1.IsUnlock(arg_6_0)
-	pg = var_1_10001
-
-	local var_6_0 = var_1_10001.SystemOpenMgr.GetInstance()
-	local var_6_1 = var_1.isOpenSystem
-
-	getProxy = var_1_10004
-	PlayerProxy = var_1_10006
-
-	local var_6_2 = var_1_10004(var_1_10006)
-
-	return var_6_1(var_6_0, var_4.getRawData(var_6_2).level, "CommanderCatMediator")
+function var_0_0.IsUnlock(arg_6_0)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(getProxy(PlayerProxy):getRawData().level, "CommanderCatMediator")
 end
 
-return var_0_1
+return var_0_0

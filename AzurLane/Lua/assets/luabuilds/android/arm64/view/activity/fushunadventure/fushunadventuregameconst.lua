@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("FushunAdventureGameConst")
+﻿local var_0_0 = class("FushunAdventureGameConst")
 
 var_0_0.BGM_NAME = "main-chunjie2"
 var_0_0.GAME_BGM_NAME = "bgm-cccp3"
@@ -17,12 +15,10 @@ var_0_0.LEVEL_CNT = 7
 var_0_0.SHAKE_RANGE = 0.1
 var_0_0.SHAKE_TIME = 0.05
 var_0_0.SHAKE_LOOP_CNT = 2
-Vector2 = var_1
-var_0_0.FUSHUN_INIT_POSITION = var_1(-655.7, -205)
+var_0_0.FUSHUN_INIT_POSITION = Vector2(-655.7, -205)
 var_0_0.FUSHUN_ATTACK_DISTANCE = 230
 var_0_0.FUSHUN_ATTACK_RANGE = 300
-Vector2 = var_1
-var_0_0.ENEMY_SPAWN_POSITION = var_1(1300, -351)
+var_0_0.ENEMY_SPAWN_POSITION = Vector2(1300, -351)
 var_0_0.EX_ENEMY_SPAWN_TIME = 0.5
 var_0_0.SPEED_ADDITION = {
 	{

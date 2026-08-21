@@ -1,27 +1,15 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.GuildLayerMgr = singletonClass("GuildLayerMgr")
 
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-singletonClass = var_0_10001
-var_0.GuildLayerMgr = var_0_10001("GuildLayerMgr")
-pg = var_0
-
-local var_0_1 = var_0.GuildLayerMgr
-
-function var_0_1.Ctor(arg_1_0)
-	pg = var_1_10001
-	arg_1_0.overlayMain = var_1_10001.UIMgr.GetInstance().OverlayMain.transform
-	GameObject = var_1
-	arg_1_0.originLayer = var_1.Find("UICamera/Canvas")
-	GameObject = var_1
-	arg_1_0.levelGrid = var_1.Find("LevelCamera/Canvas/UIMain/LevelGrid")
+function pg.GuildLayerMgr.Ctor(arg_1_0)
+	arg_1_0.overlayMain = pg.UIMgr.GetInstance().OverlayMain.transform
+	arg_1_0.originLayer = GameObject.Find("UICamera/Canvas")
+	arg_1_0.levelGrid = GameObject.Find("LevelCamera/Canvas/UIMain/LevelGrid")
 
 	return
 end
 
-function var_0_1.Init(arg_2_0, arg_2_1)
+function pg.GuildLayerMgr.Init(arg_2_0, arg_2_1)
 	if arg_2_1 then
 		arg_2_1()
 	end
@@ -29,21 +17,19 @@ function var_0_1.Init(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.BlurTopPanel(arg_3_0, arg_3_1)
+function pg.GuildLayerMgr.BlurTopPanel(arg_3_0, arg_3_1)
 	if not arg_3_0.topPanel then
 		arg_3_0.topPrevParent = arg_3_1.parent
 		arg_3_0.topPanel = arg_3_1
 	end
 
-	setParent = var_2
-
-	var_2(arg_3_1, arg_3_0.overlayMain)
+	setParent(arg_3_1, arg_3_0.overlayMain)
 	arg_3_1:SetAsFirstSibling()
 
 	return
 end
 
-function var_0_1._BlurTopPanel(arg_4_0)
+function pg.GuildLayerMgr._BlurTopPanel(arg_4_0)
 	if arg_4_0.topPanel then
 		arg_4_0:BlurTopPanel(arg_4_0.topPanel)
 	end
@@ -51,79 +37,57 @@ function var_0_1._BlurTopPanel(arg_4_0)
 	return
 end
 
-function var_0_1.OnShowMsgBox(arg_5_0)
+function pg.GuildLayerMgr.OnShowMsgBox(arg_5_0)
 	if arg_5_0.topPanel then
-		local var_5_0 = arg_5_0.topPanel
-
-		var_1.SetAsFirstSibling(var_5_0)
+		arg_5_0.topPanel:SetAsFirstSibling()
 	end
 
 	return
 end
 
-function var_0_1.UnBlurTopPanel(arg_6_0)
-	setParent = var_1_10001
-
-	var_1_10001(arg_6_0.topPanel, arg_6_0.originLayer)
+function pg.GuildLayerMgr.UnBlurTopPanel(arg_6_0)
+	setParent(arg_6_0.topPanel, arg_6_0.originLayer)
 
 	return
 end
 
-function var_0_1.Blur(arg_7_0, arg_7_1)
+function pg.GuildLayerMgr.Blur(arg_7_0, arg_7_1)
 	arg_7_0:UnBlurTopPanel()
-
-	pg = var_2
-
-	local var_7_0 = var_2.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_7_0, arg_7_1)
+	pg.UIMgr.GetInstance():BlurPanel(arg_7_1)
 	arg_7_1:SetAsLastSibling()
 
 	return
 end
 
-function var_0_1.UnBlur(arg_8_0, arg_8_1, arg_8_2)
+function pg.GuildLayerMgr.UnBlur(arg_8_0, arg_8_1, arg_8_2)
 	arg_8_0:BlurTopPanel(arg_8_0.topPanel)
-
-	pg = var_3
-
-	local var_8_0 = var_3.UIMgr.GetInstance()
-
-	var_3.UnOverlayPanel(var_8_0, arg_8_1, arg_8_2)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_8_1, arg_8_2)
 
 	return
 end
 
-function var_0_1.BlurForLevel(arg_9_0, arg_9_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_9_0.levelGrid, false)
+function pg.GuildLayerMgr.BlurForLevel(arg_9_0, arg_9_1)
+	setActive(arg_9_0.levelGrid, false)
 	arg_9_0:Blur(arg_9_1)
 
 	return
 end
 
-function var_0_1.UnBlurForLevel(arg_10_0, arg_10_1, arg_10_2)
-	setActive = var_1_10003
-
-	var_1_10003(arg_10_0.levelGrid, true)
+function pg.GuildLayerMgr.UnBlurForLevel(arg_10_0, arg_10_1, arg_10_2)
+	setActive(arg_10_0.levelGrid, true)
 	arg_10_0:UnBlur(arg_10_1, arg_10_2)
 
 	return
 end
 
-function var_0_1.SetOverlayParent(arg_11_0, arg_11_1, arg_11_2)
-	setParent = var_1_10003
-
-	var_1_10003(arg_11_1, arg_11_2 or arg_11_0.overlayMain)
+function pg.GuildLayerMgr.SetOverlayParent(arg_11_0, arg_11_1, arg_11_2)
+	setParent(arg_11_1, arg_11_2 or arg_11_0.overlayMain)
 
 	return
 end
 
-function var_0_1.Clear(arg_12_0)
-	setParent = var_1_10001
-
-	var_1_10001(arg_12_0.topPanel, arg_12_0.topPrevParent)
+function pg.GuildLayerMgr.Clear(arg_12_0)
+	setParent(arg_12_0.topPanel, arg_12_0.topPrevParent)
 
 	arg_12_0.topPrevParent = nil
 	arg_12_0.topPanel = nil

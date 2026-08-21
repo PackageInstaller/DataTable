@@ -75,6 +75,24 @@ function __init(self)
         self:setSystemSettingBoolValue(systemSetting.SystemSettingDefine.gyro, true)
     end
 
+    --默认开启待机壁纸
+    if self.mSettingValueDic[systemSetting.SystemSettingDefine.wallpaperState] == nil then
+        self:setSystemSettingValue(systemSetting.SystemSettingDefine.wallpaperState, 2)
+    end
+
+    --待机壁纸默认24小时制
+    if self.mSettingValueDic[systemSetting.SystemSettingDefine.wallpaperTense] == nil then
+        self:setSystemSettingValue(systemSetting.SystemSettingDefine.wallpaperTense, 1)
+    end
+    --待机壁纸默认5分钟进入
+    if self.mSettingValueDic[systemSetting.SystemSettingDefine.wallpaperNeedTime] == nil then
+        self:setSystemSettingValue(systemSetting.SystemSettingDefine.wallpaperNeedTime, 2)
+    end
+    --待机壁纸默认不开启随机
+    if self.mSettingValueDic[systemSetting.SystemSettingDefine.wallpaperRandomTime] == nil then
+        self:setSystemSettingValue(systemSetting.SystemSettingDefine.wallpaperRandomTime, 1)
+    end
+
     -- if not gs.Application.isMobilePlatform then
     --     local windowResolution = self.mSettingValueDic[systemSetting.SystemSettingDefine.windowResolution]
     --     if windowResolution == nil or windowResolution == 0 then
@@ -83,6 +101,8 @@ function __init(self)
     -- end
 
     self:applyAllSetting(self.mSettingValueDic)
+
+    self.settingData = {}
 end
 
 function getPlayerPrefsKey(self, defineType)
@@ -117,7 +137,7 @@ end
 
 --获取参数值(lua计数 1 2 3,开光2为开 其他为关)
 function getSystemSettingValue(self, key)
-    if key == systemSetting.SystemSettingDefine.effect then 
+    if key == systemSetting.SystemSettingDefine.effect then
         return 3
     end
     --自定义画质，取系统缓存。不是自定义画质，取配置(非自定义)。自定义取缓存(取不到缓存，拿上次画质的参数)
@@ -146,7 +166,7 @@ function getSystemSettingBoolValue(self, key)
     return self:getIsOpen(self:getSystemSettingValue(key))
 end
 
-function getIsOpen(self,value)
+function getIsOpen(self, value)
     return value == 2
 end
 
@@ -183,8 +203,8 @@ function applyAllSetting(self, settingDic)
 end
 
 --设置帧数
-function setFrameCount(self,frameCount)
-    if not frameCount then 
+function setFrameCount(self, frameCount)
+    if not frameCount then
         local label = self:getQualityLabelValue(systemSetting.SystemSettingDefine.frameCount)
         local value = self:getSystemSettingValue(systemSetting.SystemSettingDefine.frameCount)
         frameCount = tonumber(label[value])
@@ -211,10 +231,10 @@ function applySetting(self, key, value)
     if value == nil then value = self:getSystemSettingValue(key) end
 
     if key == systemSetting.SystemSettingDefine.pictureQuality then
-        for i=2,#systemSetting.QualitySettingDrop do
+        for i = 2, #systemSetting.QualitySettingDrop do
             local k = systemSetting.QualitySettingDrop[i].key
             local val = self:getSystemSettingValue(k)
-            self:applySetting(k,val)
+            self:applySetting(k, val)
         end
     elseif key == systemSetting.SystemSettingDefine.frameCount then
         self:setFrameCount()
@@ -225,12 +245,12 @@ function applySetting(self, key, value)
     elseif key == systemSetting.SystemSettingDefine.windowResolution then
         if not gs.Application.isMobilePlatform then
             local resolutions = self:getAllwindowResolution()
-            if not resolutions[value] then 
+            if not resolutions[value] then
                 value = 1
             end
 
             local isFull = false
-            if value == 1 then 
+            if value == 1 then
                 isFull = true
             end
 
@@ -244,16 +264,17 @@ function applySetting(self, key, value)
         self:setQuality(value)
     elseif key == systemSetting.SystemSettingDefine.shadow then
         gs.QualitySettingsUtil.SetShadowResolution(value - 1)
-   
+
     elseif key == systemSetting.SystemSettingDefine.anti_Aliasing then
-        local post1, post2 = self:GetCameraPostProcessing()
-        if post1 then
-            post1.FXAA3Toggle = self:getIsOpen(value)
+        local cameraCom1 = gs.CameraMgr:GetSceneCamera()
+        if cameraCom1 and not gs.GoUtil.IsCompNull(cameraCom1) then
+            cameraCom1.allowMSAA = self:getIsOpen(value)
         end
-        if post2 then
-            post2.FXAA3Toggle = self:getIsOpen(value)
+        local cameraCom2 = gs.CameraMgr:GetDefSceneCamera()
+        if cameraCom2 and not gs.GoUtil.IsCompNull(cameraCom2) then
+            cameraCom2.allowMSAA = self:getIsOpen(value)
         end
-    
+
     elseif key == systemSetting.SystemSettingDefine.bloom then
         local post1, post2 = self:GetCameraPostProcessing()
         if post1 then
@@ -278,14 +299,14 @@ function applySetting(self, key, value)
         if post2 then
             post2.QualityRadialBlurToggle = self:getIsOpen(value)
         end
-    elseif key == systemSetting.SystemSettingDefine.special_effect_distortion then
-        local post1, post2 = self:GetCameraPostProcessing()
-        if post1 then
-            post1.NoiseToggle = self:getIsOpen(value)
-        end
-        if post2 then
-            post2.NoiseToggle = self:getIsOpen(value)
-        end
+        -- elseif key == systemSetting.SystemSettingDefine.special_effect_distortion then
+        --     local post1, post2 = self:GetCameraPostProcessing()
+        --     if post1 then
+        --         post1.NoiseToggle = self:getIsOpen(value)
+        --     end
+        --     if post2 then
+        --         post2.NoiseToggle = self:getIsOpen(value)
+        --     end
     elseif key == systemSetting.SystemSettingDefine.post_processing then
         local post1, post2 = self:GetCameraPostProcessing()
         if post1 then
@@ -294,14 +315,14 @@ function applySetting(self, key, value)
         if post2 then
             post2.PostProcessToggle = self:getIsOpen(value)
         end
-    -- elseif key == systemSetting.SystemSettingDefine.subsurface_Scattering then
-    -- elseif key == systemSetting.SystemSettingDefine.anisotropic_filtering then
-    -- elseif key == systemSetting.SystemSettingDefine.later_Effect then
-    -- elseif key == systemSetting.SystemSettingDefine.effect then
-    -- elseif key == systemSetting.SystemSettingDefine.screen then
-    -- elseif key == systemSetting.SystemSettingDefine.fog then
+        -- elseif key == systemSetting.SystemSettingDefine.subsurface_Scattering then
+        -- elseif key == systemSetting.SystemSettingDefine.anisotropic_filtering then
+        -- elseif key == systemSetting.SystemSettingDefine.later_Effect then
+        -- elseif key == systemSetting.SystemSettingDefine.effect then
+        -- elseif key == systemSetting.SystemSettingDefine.screen then
+        -- elseif key == systemSetting.SystemSettingDefine.fog then
     elseif key == systemSetting.SystemSettingDefine.reflection then
-        if self.reflectionComponent == nil or gs.GoUtil.IsCompNull(self.reflectionComponent) then 
+        if self.reflectionComponent == nil or gs.GoUtil.IsCompNull(self.reflectionComponent) then
             local reflectionNode = gs.GameObject.Find("ReflectionPlane")
             if reflectionNode then
                 self.reflectionComponent = reflectionNode:GetComponent(ty.ReflectionTexture)
@@ -311,7 +332,7 @@ function applySetting(self, key, value)
             local switch = self:getIsOpen(value)
             self.reflectionComponent.enabled = switch
         end
-    -- elseif key == systemSetting.SystemSettingDefine.dynamic_fuzzy then
+        -- elseif key == systemSetting.SystemSettingDefine.dynamic_fuzzy then
     elseif key == systemSetting.SystemSettingDefine.notch_Auto or key == systemSetting.SystemSettingDefine.notch_Value then
         GameDispatcher:dispatchEvent(EventName.SYSTEM_SETTING_NOTCH_CHANGE)
     elseif key == systemSetting.SystemSettingDefine.totalVolume then
@@ -373,13 +394,13 @@ function applySetting(self, key, value)
     elseif key == systemSetting.SystemSettingDefine.cameraLock then
     elseif key == systemSetting.SystemSettingDefine.lockTeamMember then
     elseif key == systemSetting.SystemSettingDefine.gyro then
-        GameDispatcher:dispatchEvent(EventName.SET_MAIN_SCENE_GYRO,self:getSystemSettingValue(systemSetting.SystemSettingDefine.gyro)) 
+        GameDispatcher:dispatchEvent(EventName.SET_MAIN_SCENE_GYRO, self:getSystemSettingValue(systemSetting.SystemSettingDefine.gyro))
     end
 end
 
 --获取相机后处理脚本
 function GetCameraPostProcessing(self)
-   local post1, post2
+    local post1, post2
     local cameraCom1 = gs.CameraMgr:GetSceneCamera()
     if cameraCom1 and not gs.GoUtil.IsCompNull(cameraCom1) then
         post1 = cameraCom1:GetComponent(ty.PostProcessing)
@@ -389,21 +410,20 @@ function GetCameraPostProcessing(self)
         post2 = cameraCom2:GetComponent(ty.PostProcessing)
     end
 
-    return post1,post2
+    return post1, post2
 end
 
 --切换场景需要生效的参数
 function onLoadSceneApply(self)
     self.mCurScreenSize = nil
 
-    local setingTab =
-    {
+    local setingTab =     {
         systemSetting.SystemSettingDefine.bloom,
         systemSetting.SystemSettingDefine.anti_Aliasing,
         systemSetting.SystemSettingDefine.quality,
         systemSetting.SystemSettingDefine.dispersion,
         systemSetting.SystemSettingDefine.radial_Blur,
-        systemSetting.SystemSettingDefine.special_effect_distortion,
+        -- systemSetting.SystemSettingDefine.special_effect_distortion,
         systemSetting.SystemSettingDefine.post_processing,
         systemSetting.SystemSettingDefine.reflection,
         systemSetting.SystemSettingDefine.frameCount,
@@ -472,7 +492,7 @@ function parseDeviceQualityConfig(self)
 end
 
 function getDeviceQualityConfigVo(self, deviceName, cpuName, gpuName)
-    if(not self.mDeviceQualityList)then
+    if (not self.mDeviceQualityList) then
         self:parseDeviceQualityConfig()
     end
     local isSameDeviceName = nil
@@ -480,35 +500,35 @@ function getDeviceQualityConfigVo(self, deviceName, cpuName, gpuName)
     local isSameGpuName = nil
     for i = 1, #self.mDeviceQualityList do
         local configVo = self.mDeviceQualityList[i]
-        if(configVo.deviceName == "")then
+        if (configVo.deviceName == "") then
             isSameDeviceName = nil
         else
-            if(string.lower(configVo.deviceName) == string.lower(deviceName))then
+            if (string.lower(configVo.deviceName) == string.lower(deviceName)) then
                 isSameDeviceName = true
             else
                 isSameDeviceName = false
             end
         end
-        if(configVo.cpuName == "")then
+        if (configVo.cpuName == "") then
             isSameCpuName = nil
         else
-            if(string.lower(configVo.cpuName) == string.lower(cpuName))then
+            if (string.lower(configVo.cpuName) == string.lower(cpuName)) then
                 isSameCpuName = true
             else
                 isSameCpuName = false
             end
         end
-        if(configVo.gpuName == "")then
+        if (configVo.gpuName == "") then
             isSameGpuName = nil
         else
-            if(string.lower(configVo.gpuName) == string.lower(gpuName))then
+            if (string.lower(configVo.gpuName) == string.lower(gpuName)) then
                 isSameGpuName = true
             else
                 isSameGpuName = false
             end
         end
-        if(isSameDeviceName ~= false and isSameCpuName ~= false and isSameGpuName ~= false)then
-            if(isSameDeviceName or isSameCpuName or isSameGpuName)then
+        if (isSameDeviceName ~= false and isSameCpuName ~= false and isSameGpuName ~= false) then
+            if (isSameDeviceName or isSameCpuName or isSameGpuName) then
                 return configVo
             end
         end
@@ -516,49 +536,49 @@ function getDeviceQualityConfigVo(self, deviceName, cpuName, gpuName)
 end
 
 function getDeviceQualityType(self, deviceName, cpuName, gpuName, memoryGBSize)
-    if(web.WebManager.platform == web.DEVICE_TYPE.IOS)then
+    if (web.WebManager.platform == web.DEVICE_TYPE.IOS) then
         local deviceModel, count = string.gsub(string.lower(CS.UnityEngine.SystemInfo.deviceModel), " ", "")
         local paramList = string.split(deviceModel, ",")
         local model = paramList[1]
-		local id = 0
-		local subId = paramList[2] and tonumber(paramList[2]) or 0
-		if (string.find(model, "iphone") ~= nil) then
-			local iphoneId, _count = string.gsub(model, "iphone", "")
-			id = tonumber(iphoneId)
-			model = "iphone"
-		elseif (string.find(model, "ipa") ~= nil) then
-			model = "ipa"
-		end
+        local id = 0
+        local subId = paramList[2] and tonumber(paramList[2]) or 0
+        if (string.find(model, "iphone") ~= nil) then
+            local iphoneId, _count = string.gsub(model, "iphone", "")
+            id = tonumber(iphoneId)
+            model = "iphone"
+        elseif (string.find(model, "ipa") ~= nil) then
+            model = "ipa"
+        end
 
-		if (model == "iphone") then
-			if(id <= 8)then -- iphoneSE
-				return systemSetting.QualitySetting_Grade.Low
-			elseif(id == 9)then -- iphone7
-				if(subId ~= 2 and subId ~= 4)then -- 非plus
-					return systemSetting.QualitySetting_Grade.Middle
+        if (model == "iphone") then
+            if (id <= 8) then -- iphoneSE
+                return systemSetting.QualitySetting_Grade.Low
+            elseif (id == 9) then -- iphone7
+                if (subId ~= 2 and subId ~= 4) then -- 非plus
+                    return systemSetting.QualitySetting_Grade.Middle
                 else
                     return systemSetting.QualitySetting_Grade.High
-				end
-			elseif(id == 10)then -- iphone8、iphonex
-				if(subId ~= 2 and subId ~= 5 and subId ~= 3 and subId ~= 6)then -- 非iphone8plus 和 非iphonex
-					return systemSetting.QualitySetting_Grade.Middle
+                end
+            elseif (id == 10) then -- iphone8、iphonex
+                if (subId ~= 2 and subId ~= 5 and subId ~= 3 and subId ~= 6) then -- 非iphone8plus 和 非iphonex
+                    return systemSetting.QualitySetting_Grade.Middle
                 else
                     return systemSetting.QualitySetting_Grade.High
-				end
-            elseif(11 <= id and id <= 12)then
+                end
+            elseif (11 <= id and id <= 12) then
                 return systemSetting.QualitySetting_Grade.High
-            elseif(id > 12)then
+            elseif (id > 12) then
                 return systemSetting.QualitySetting_Grade.VeryHigh
-			end
-        elseif(model == "ipa")then
+            end
+        elseif (model == "ipa") then
             return systemSetting.QualitySetting_Grade.VeryHigh
-		end
-    elseif(web.WebManager.platform == web.DEVICE_TYPE.ANDROID)then
-        if(sdk.SdkManager:getIsSimulator())then
+        end
+    elseif (web.WebManager.platform == web.DEVICE_TYPE.ANDROID) then
+        if (sdk.SdkManager:getIsSimulator()) then
             return systemSetting.QualitySetting_Grade.High
         else
             local configVo = self:getDeviceQualityConfigVo(deviceName, cpuName, gpuName)
-            if(configVo)then
+            if (configVo) then
                 return configVo.qualityType
             else
                 return self:getQualityByMemory(memoryGBSize)
@@ -568,10 +588,10 @@ function getDeviceQualityType(self, deviceName, cpuName, gpuName, memoryGBSize)
         local deviceName, cpuName, gpuName = sdk.SdkManager:getDeviceData()
         cpuName = string.lower(cpuName)
         for cpuIndex = 3, 15 do
-            if(string.find(cpuName, "i" .. cpuIndex) ~= nil)then
+            if (string.find(cpuName, "i" .. cpuIndex) ~= nil) then
                 -- i5区分
-                if(cpuIndex > 5)then
-                    if(string.find(gpuName, "uhd") == nil)then
+                if (cpuIndex > 5) then
+                    if (string.find(gpuName, "uhd") == nil) then
                         -- 非集显
                         return systemSetting.QualitySetting_Grade.VeryHigh
                     else
@@ -592,22 +612,22 @@ end
 function getQualityByMemory(self, memoryGBSize)
     -- 注:4G 内存的手机，这里获得的内存只有3.7G左右 (系统保留部分内存)
     memoryGBSize = memoryGBSize or (math.ceil(gs.SdkManager:GetMemorySize("SystemTotalMemory") / 1024))
-    if(web.WebManager.platform == web.DEVICE_TYPE.IOS)then
+    if (web.WebManager.platform == web.DEVICE_TYPE.IOS) then
         if memoryGBSize <= 3 then
-            return systemSetting.QualitySetting_Grade.Middle        -- 3G 以及以下的开中等画质
+            return systemSetting.QualitySetting_Grade.Middle -- 3G 以及以下的开中等画质
         else
-            return systemSetting.QualitySetting_Grade.High          -- 3G 以上(即4G和6G)的开高画质
+            return systemSetting.QualitySetting_Grade.High -- 3G 以上(即4G和6G)的开高画质
         end
-    elseif(web.WebManager.platform == web.DEVICE_TYPE.ANDROID or web.WebManager.platform == web.DEVICE_TYPE.WINDOWS)then
-        if memoryGBSize >= 6 then                                   
-            return systemSetting.QualitySetting_Grade.High          -- 6G 以及以上的开高画质
+    elseif (web.WebManager.platform == web.DEVICE_TYPE.ANDROID or web.WebManager.platform == web.DEVICE_TYPE.WINDOWS) then
+        if memoryGBSize >= 6 then
+            return systemSetting.QualitySetting_Grade.High -- 6G 以及以上的开高画质
         elseif memoryGBSize >= 4 then
-            return systemSetting.QualitySetting_Grade.Middle        -- 4G 以及以上的开中画质
+            return systemSetting.QualitySetting_Grade.Middle -- 4G 以及以上的开中画质
         else
-            return systemSetting.QualitySetting_Grade.Low           -- 4G 以下的开低画质
+            return systemSetting.QualitySetting_Grade.Low -- 4G 以下的开低画质
         end
     else
-        return systemSetting.QualitySetting_Grade.High              -- 开高画质
+        return systemSetting.QualitySetting_Grade.High -- 开高画质
     end
 end
 
@@ -615,7 +635,7 @@ end
 function setDefaultQuality(self)
     local deviceName, cpuName, gpuName = sdk.SdkManager:getDeviceData()
     local result = StorageUtil:getBool1(gstor.APP_FIRST_AUTO_QUALITY)
-    if(not result)then
+    if (not result) then
         logInfo("自动画质设置")
         StorageUtil:saveBool1(gstor.APP_FIRST_AUTO_QUALITY, true)
         local defaultQuality = self:getDeviceQualityType(deviceName, cpuName, gpuName)
@@ -625,7 +645,7 @@ function setDefaultQuality(self)
 
     -- 此处直接每次上报没有推荐到的画质
     local configVo = self:getDeviceQualityConfigVo(deviceName, cpuName, gpuName)
-    if(not configVo)then
+    if (not configVo) then
         local url, parasmDic = web.getReportGenericArgsUrl(web.GENERIC_ARGS_REPORT_TYPE.AUTO_CONFIG_QUALITY, "失败")
         WebInterfaceUtil:postAsyncLoop(url, parasmDic, nil, nil, self, nil)
     end
@@ -633,19 +653,20 @@ end
 
 --更新渲染精度
 function updateQuality(self)
-    self:setQuality()
+    local value = self:getSystemSettingValue(systemSetting.SystemSettingDefine.quality)
+    self:setQuality(value)
 end
 
 --设置渲染精度
 function setQuality(self, value)
     --去除渲染精度相机，设置视口分辨率
-    local normalQuality = function (resolution)
-        gs.CameraMgr:ResetRenderCamera() 
+    local normalQuality = function(resolution)
+        gs.CameraMgr:ResetRenderCamera()
         gs.ScreenResolutionUtil.SetResolutionLv01(resolution)
     end
 
     --更新渲染精度
-    local SetResolution01 = function (height)
+    local SetResolution01 = function(height)
         local width = height / gs.Screen.height * gs.Screen.width
         gs.CameraMgr:SetResolution(width, height)
 
@@ -663,23 +684,23 @@ function setQuality(self, value)
         --移动：主界面和UI等保持1080，其他场景按渲染精度设置。
 
         local height = systemSetting.getResolution(value)
-        if not height then 
+        if not height then
             height = 720
         end
 
         if gs.Application.isMobilePlatform then
-            if self:getIsNormalQuality()  then
+            if self:getIsNormalQuality() then
                 normalQuality(1080)
             else
-                if height >= 1080 then 
+                if height >= 1080 then
                     normalQuality(height)
                 else
-                   SetResolution01(height)
+                    SetResolution01(height)
                 end
             end
         else
             if self:getIsNormalQuality() then
-                if height < 1080 then 
+                if height < 1080 then
                     height = 1080
                 end
             end
@@ -692,12 +713,14 @@ end
 --是否不适用RT渲染分离
 function getIsNormalQuality(self)
     local curSceneType = map.MapLoader:getCurSceneType()
-    if curSceneType == MAP_TYPE.MAIN_CITY then 
+    if curSceneType == MAP_TYPE.MAIN_CITY then
         return true
-    elseif curSceneType == MAP_TYPE.RECRUIT_HERO then 
+    elseif curSceneType == MAP_TYPE.RECRUIT_HERO then
         return true
-    elseif curSceneType == MAP_TYPE.RECRUIT_CARD then 
+    elseif curSceneType == MAP_TYPE.RECRUIT_CARD then
         return true
+        -- elseif curSceneType == MAP_TYPE.BIG_HOSTEL then
+        --     return true
     end
 end
 
@@ -705,10 +728,10 @@ end
 function getAllwindowResolution(self)
     if gs.Application.isMobilePlatform then return end
 
-    if not self.mResolutionList then 
-        local function table_indexof(tab,value)
-            for k,v in pairs(tab) do
-                if v.width == value.width and v.height == value.height then 
+    if not self.mResolutionList then
+        local function table_indexof(tab, value)
+            for k, v in pairs(tab) do
+                if v.width == value.width and v.height == value.height then
                     return true
                 end
             end
@@ -717,16 +740,16 @@ function getAllwindowResolution(self)
         self.mResolutionList = {}
         local resolutions = gs.Screen.resolutions
         local _resolution = nil
-        for i=0,resolutions.Length - 1 do
+        for i = 0, resolutions.Length - 1 do
             _resolution = resolutions[i]
-            local resolution = {width = _resolution.width, height = _resolution.height}
-            if not table_indexof(self.mResolutionList,resolution) then 
+            local resolution = { width = _resolution.width, height = _resolution.height }
+            if not table_indexof(self.mResolutionList, resolution) then
                 table.insert(self.mResolutionList, resolution)
             end
         end
 
-        table.sort(self.mResolutionList, function (a, b)
-            if a.width == b.width then 
+        table.sort(self.mResolutionList, function(a, b)
+            if a.width == b.width then
                 return a.height > b.height
             end
             return a.width > b.width
@@ -735,7 +758,50 @@ function getAllwindowResolution(self)
     return self.mResolutionList
 end
 
+--获取cv选项参数配置
+function getCvTypeSettingCfgs(self)
+    local cvOptionsConfig = sysParam.SysParamManager:getValue(SysParamType.CV_TYPE)
+    return cvOptionsConfig
+end
+
+--获取当前cv选项配置
+function getCurCvTypeSettingCfg(self)
+    local cvOptionsConfig = self:getCvTypeSettingCfgs()
+    local curSelectIdx = self:getCurSelectCvTypeSetting()
+    local data = cvOptionsConfig[curSelectIdx]
+    return data
+end
+
+--获取当前选中cv选项
+function getCurSelectCvTypeSetting(self)
+    local curSelectIdx = StorageUtil:getNumber1(gstor.CV_TYPE)
+    local config = self:getCvTypeSettingCfgs()
+    if not config[curSelectIdx] then
+        curSelectIdx = 1
+        self:setCurSelectCvTypeSetting(curSelectIdx)
+    end
+    return curSelectIdx
+end
+
+--设置当前选中cv选项
+function setCurSelectCvTypeSetting(self, curSelectIdx)
+    StorageUtil:saveNumber1(gstor.CV_TYPE, curSelectIdx)
+end
+
+function parseScSettingMsg(self, msg)
+    self.settingData = {}
+    if msg and msg.setting_list then
+        for _, pt_attr_short in ipairs(msg.setting_list) do
+            self.settingData[pt_attr_short.key] = pt_attr_short.value
+        end
+    end
+end
+
+function getScSettingDataByType(self, scSettingType)
+    return self.settingData[scSettingType] or 0
+end
+
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

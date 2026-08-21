@@ -88,12 +88,13 @@ SC_BATTLE_RESULT =
     {"player_exp", "int32", "玩家经验"}, 
     {"hero_exp", "int32", "战员经验"}, 
     {"hero_relation", "int32", "每个战员加的亲密度"}, 
-    {"args", "int64str", "预留参数", "repeated"}, 
+    {"args", pt_int_to_string, "预留参数", "repeated"}, 
     {"hero_id_list", pt_attr_int, "战员id列表 key => 战员/敌物id, value => 来源", "repeated"}, 
     {"round", "int8", "当前回合数"}, 
     {"statistic", pt_battle_statistic, "战斗统计信息", "repeated"}, 
     {"pos_effect", "int32", "战场环境", "repeated"}, 
-    {"is_replay", "int8", "是否回放"},
+    {"is_replay", "int8", "是否回放"}, 
+    {"is_decompose", "int8", "是否分解模组"},
 }
  
 --- *c2s* 退出战斗 20107
@@ -331,4 +332,21 @@ SC_BATTLE_OUTSIDE_SKIP_RECHECK =
 {
     20143, 
     {"result", "int8", "结果 0:没有跳过结果"},
+}
+ 
+--- *c2s* 战员自动奥义规则更换 20144
+CS_HERO_AUTO_AOYI_RULE_CHANGE =
+{
+    20144, 
+    {"hero_id", "int32", "战员ID"}, 
+    {"rule_type", "int8", "自动战斗规则(0-自动,1-手动)"},
+}
+ 
+--- *s2c* 战员自动奥义规则更换返回 20145
+SC_HERO_AUTO_AOYI_RULE_CHANGE =
+{
+    20145, 
+    {"hero_id", "int32", "战员ID"}, 
+    {"rule_type", "int8", "奥义自动规则"}, 
+    {"result", "int8", "错误码"},
 }

@@ -28,12 +28,9 @@
 			}
 		},
 		getSegment = function()
-			getProxy = var_1_10000
-			BuildShipProxy = var_1_10002
+			local var_1_0 = getProxy(BuildShipProxy)
 
-			local var_1_0 = var_1_10000(var_1_10002)
-
-			return var_0.getFinishCount(var_1_0) > 0 and 2 or 1
+			return var_1_0:getFinishCount() > 0 and 2 or 1
 		end
 	},
 	{
@@ -123,27 +120,17 @@
 			},
 			func = function(arg_2_0, arg_2_1)
 				if arg_2_0 == "NewMainScene" then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 8
+					return pg.SeriesGuideMgr.CODES.MAINUI, 8
 				elseif arg_2_0 == "LevelScene" then
 					if not arg_2_1 then
-						pg = var_1_10002
-
-						return var_1_10002.SeriesGuideMgr.CODES.CONDITION, 8
+						return pg.SeriesGuideMgr.CODES.CONDITION, 8
 					elseif arg_2_1 then
 						if arg_2_1.score > 1 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 10
+							return pg.SeriesGuideMgr.CODES.CONDITION, 10
 						elseif arg_2_1.total_time >= 180 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 8
+							return pg.SeriesGuideMgr.CODES.CONDITION, 8
 						else
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 4
+							return pg.SeriesGuideMgr.CODES.CONDITION, 4
 						end
 					end
 				end
@@ -191,27 +178,17 @@
 			},
 			func = function(arg_3_0, arg_3_1)
 				if arg_3_0 == "NewMainScene" then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 11
+					return pg.SeriesGuideMgr.CODES.MAINUI, 11
 				elseif arg_3_0 == "LevelScene" then
 					if not arg_3_1 then
-						pg = var_1_10002
-
-						return var_1_10002.SeriesGuideMgr.CODES.CONDITION, 11
+						return pg.SeriesGuideMgr.CODES.CONDITION, 11
 					elseif arg_3_1 then
 						if arg_3_1.score > 1 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 13
+							return pg.SeriesGuideMgr.CODES.CONDITION, 13
 						elseif arg_3_1.total_time >= 180 then
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 11
+							return pg.SeriesGuideMgr.CODES.CONDITION, 11
 						else
-							pg = var_2
-
-							return var_2.SeriesGuideMgr.CODES.CONDITION, 4
+							return pg.SeriesGuideMgr.CODES.CONDITION, 4
 						end
 					end
 				end
@@ -270,14 +247,10 @@
 			},
 			func = function(arg_4_0)
 				if arg_4_0:getEquip(2) then
-					pg = var_1_10002
-
-					return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 17
+					return pg.SeriesGuideMgr.CODES.MAINUI, 17
 				end
 
-				pg = var_1_10002
-
-				return var_1_10002.SeriesGuideMgr.CODES.MAINUI, 16
+				return pg.SeriesGuideMgr.CODES.MAINUI, 16
 			end
 		},
 		segment = {
@@ -312,14 +285,10 @@
 			},
 			func = function(arg_5_0)
 				if arg_5_0 then
-					pg = var_1_10001
-
-					return var_1_10001.SeriesGuideMgr.CODES.MAINUI, 18
+					return pg.SeriesGuideMgr.CODES.MAINUI, 18
 				end
 
-				pg = var_1_10001
-
-				return var_1_10001.SeriesGuideMgr.CODES.MAINUI, 19
+				return pg.SeriesGuideMgr.CODES.MAINUI, 19
 			end
 		},
 		segment = {

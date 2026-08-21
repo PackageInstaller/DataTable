@@ -5,12 +5,7 @@
 			alpha = 0.4,
 			ui = {
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/live"
 					else
 						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/liveButton"
@@ -34,9 +29,7 @@
 			alpha = 0.4,
 			ui = {
 				dynamicPath = function()
-					USE_OLD_MAIN_LIVE_AREA_UI = var_1_10000
-
-					if var_1_10000 then
+					if USE_OLD_MAIN_LIVE_AREA_UI then
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaOldUI(Clone)/school_btn"
 					else
 						return "/OverlayCamera/Overlay/UIMain/MainLiveAreaUI(Clone)/school_btn"

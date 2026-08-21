@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_order_price") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_order_price"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_order_price = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_order_price
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_order_price = rawget(pg, "island_order_price") or setmetatable({
+	__name = "island_order_price"
+}, confNEO)
+pg.island_order_price.all = {
 	1,
 	2,
 	3,
@@ -127,25 +104,11 @@ var_0_3.all = {
 	99,
 	100
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_order_price = {}
+pg.base = pg.base or {}
+pg.base.island_order_price = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_order_price
-
-	var_1_0[1] = {
+	pg.base.island_order_price[1] = {
 		order_easy_award = {
 			50,
 			100
@@ -163,11 +126,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_order_price
-
-	var_1_1[2] = {
+	pg.base.island_order_price[2] = {
 		order_easy_award = {
 			50,
 			100
@@ -185,11 +144,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_order_price
-
-	var_1_2[3] = {
+	pg.base.island_order_price[3] = {
 		order_easy_award = {
 			50,
 			100
@@ -207,11 +162,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_order_price
-
-	var_1_3[4] = {
+	pg.base.island_order_price[4] = {
 		order_easy_award = {
 			50,
 			100
@@ -229,11 +180,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_order_price
-
-	var_1_4[5] = {
+	pg.base.island_order_price[5] = {
 		order_easy_award = {
 			50,
 			100
@@ -251,11 +198,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_order_price
-
-	var_1_5[6] = {
+	pg.base.island_order_price[6] = {
 		order_easy_award = {
 			50,
 			100
@@ -273,11 +216,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_order_price
-
-	var_1_6[7] = {
+	pg.base.island_order_price[7] = {
 		order_easy_award = {
 			50,
 			100
@@ -295,11 +234,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_order_price
-
-	var_1_7[8] = {
+	pg.base.island_order_price[8] = {
 		order_easy_award = {
 			50,
 			100
@@ -317,11 +252,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_order_price
-
-	var_1_8[9] = {
+	pg.base.island_order_price[9] = {
 		order_easy_award = {
 			50,
 			100
@@ -339,11 +270,7 @@ var_0_3.base.island_order_price = {}
 			300
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_order_price
-
-	var_1_9[10] = {
+	pg.base.island_order_price[10] = {
 		order_easy_award = {
 			50,
 			200
@@ -361,11 +288,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_order_price
-
-	var_1_10[11] = {
+	pg.base.island_order_price[11] = {
 		order_easy_award = {
 			50,
 			200
@@ -383,11 +306,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_order_price
-
-	var_1_11[12] = {
+	pg.base.island_order_price[12] = {
 		order_easy_award = {
 			50,
 			200
@@ -405,11 +324,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_order_price
-
-	var_1_12[13] = {
+	pg.base.island_order_price[13] = {
 		order_easy_award = {
 			50,
 			200
@@ -427,11 +342,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_order_price
-
-	var_1_13[14] = {
+	pg.base.island_order_price[14] = {
 		order_easy_award = {
 			50,
 			200
@@ -449,11 +360,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_order_price
-
-	var_1_14[15] = {
+	pg.base.island_order_price[15] = {
 		order_easy_award = {
 			50,
 			200
@@ -471,11 +378,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_order_price
-
-	var_1_15[16] = {
+	pg.base.island_order_price[16] = {
 		order_easy_award = {
 			50,
 			200
@@ -493,11 +396,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_order_price
-
-	var_1_16[17] = {
+	pg.base.island_order_price[17] = {
 		order_easy_award = {
 			50,
 			200
@@ -515,11 +414,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_order_price
-
-	var_1_17[18] = {
+	pg.base.island_order_price[18] = {
 		order_easy_award = {
 			50,
 			200
@@ -537,11 +432,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_order_price
-
-	var_1_18[19] = {
+	pg.base.island_order_price[19] = {
 		order_easy_award = {
 			50,
 			200
@@ -559,11 +450,7 @@ var_0_3.base.island_order_price = {}
 			600
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_order_price
-
-	var_1_19[20] = {
+	pg.base.island_order_price[20] = {
 		order_easy_award = {
 			50,
 			300
@@ -581,11 +468,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_order_price
-
-	var_1_20[21] = {
+	pg.base.island_order_price[21] = {
 		order_easy_award = {
 			50,
 			300
@@ -603,11 +486,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_order_price
-
-	var_1_21[22] = {
+	pg.base.island_order_price[22] = {
 		order_easy_award = {
 			50,
 			300
@@ -625,11 +504,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_order_price
-
-	var_1_22[23] = {
+	pg.base.island_order_price[23] = {
 		order_easy_award = {
 			50,
 			300
@@ -647,11 +522,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_order_price
-
-	var_1_23[24] = {
+	pg.base.island_order_price[24] = {
 		order_easy_award = {
 			50,
 			300
@@ -669,11 +540,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_order_price
-
-	var_1_24[25] = {
+	pg.base.island_order_price[25] = {
 		order_easy_award = {
 			50,
 			300
@@ -691,11 +558,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_order_price
-
-	var_1_25[26] = {
+	pg.base.island_order_price[26] = {
 		order_easy_award = {
 			50,
 			300
@@ -713,11 +576,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_order_price
-
-	var_1_26[27] = {
+	pg.base.island_order_price[27] = {
 		order_easy_award = {
 			50,
 			300
@@ -735,11 +594,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_order_price
-
-	var_1_27[28] = {
+	pg.base.island_order_price[28] = {
 		order_easy_award = {
 			50,
 			300
@@ -757,11 +612,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_order_price
-
-	var_1_28[29] = {
+	pg.base.island_order_price[29] = {
 		order_easy_award = {
 			50,
 			300
@@ -779,11 +630,7 @@ var_0_3.base.island_order_price = {}
 			900
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_order_price
-
-	var_1_29[30] = {
+	pg.base.island_order_price[30] = {
 		order_easy_award = {
 			50,
 			400
@@ -801,11 +648,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_order_price
-
-	var_1_30[31] = {
+	pg.base.island_order_price[31] = {
 		order_easy_award = {
 			50,
 			400
@@ -823,11 +666,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_order_price
-
-	var_1_31[32] = {
+	pg.base.island_order_price[32] = {
 		order_easy_award = {
 			50,
 			400
@@ -845,11 +684,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_order_price
-
-	var_1_32[33] = {
+	pg.base.island_order_price[33] = {
 		order_easy_award = {
 			50,
 			400
@@ -867,11 +702,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_order_price
-
-	var_1_33[34] = {
+	pg.base.island_order_price[34] = {
 		order_easy_award = {
 			50,
 			400
@@ -889,11 +720,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_order_price
-
-	var_1_34[35] = {
+	pg.base.island_order_price[35] = {
 		order_easy_award = {
 			50,
 			400
@@ -911,11 +738,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_order_price
-
-	var_1_35[36] = {
+	pg.base.island_order_price[36] = {
 		order_easy_award = {
 			50,
 			400
@@ -933,11 +756,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_order_price
-
-	var_1_36[37] = {
+	pg.base.island_order_price[37] = {
 		order_easy_award = {
 			50,
 			400
@@ -955,11 +774,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_order_price
-
-	var_1_37[38] = {
+	pg.base.island_order_price[38] = {
 		order_easy_award = {
 			50,
 			400
@@ -977,11 +792,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_order_price
-
-	var_1_38[39] = {
+	pg.base.island_order_price[39] = {
 		order_easy_award = {
 			50,
 			400
@@ -999,11 +810,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_order_price
-
-	var_1_39[40] = {
+	pg.base.island_order_price[40] = {
 		order_easy_award = {
 			50,
 			400
@@ -1021,11 +828,7 @@ var_0_3.base.island_order_price = {}
 			1200
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_order_price
-
-	var_1_40[41] = {
+	pg.base.island_order_price[41] = {
 		order_easy_award = {
 			50,
 			500
@@ -1043,11 +846,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_order_price
-
-	var_1_41[42] = {
+	pg.base.island_order_price[42] = {
 		order_easy_award = {
 			50,
 			500
@@ -1065,11 +864,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_order_price
-
-	var_1_42[43] = {
+	pg.base.island_order_price[43] = {
 		order_easy_award = {
 			50,
 			500
@@ -1087,11 +882,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_order_price
-
-	var_1_43[44] = {
+	pg.base.island_order_price[44] = {
 		order_easy_award = {
 			50,
 			500
@@ -1109,11 +900,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_order_price
-
-	var_1_44[45] = {
+	pg.base.island_order_price[45] = {
 		order_easy_award = {
 			50,
 			500
@@ -1131,11 +918,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_order_price
-
-	var_1_45[46] = {
+	pg.base.island_order_price[46] = {
 		order_easy_award = {
 			50,
 			500
@@ -1153,11 +936,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_order_price
-
-	var_1_46[47] = {
+	pg.base.island_order_price[47] = {
 		order_easy_award = {
 			50,
 			500
@@ -1175,11 +954,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_order_price
-
-	var_1_47[48] = {
+	pg.base.island_order_price[48] = {
 		order_easy_award = {
 			50,
 			500
@@ -1197,11 +972,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_order_price
-
-	var_1_48[49] = {
+	pg.base.island_order_price[49] = {
 		order_easy_award = {
 			50,
 			500
@@ -1219,11 +990,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_order_price
-
-	var_1_49[50] = {
+	pg.base.island_order_price[50] = {
 		order_easy_award = {
 			50,
 			500
@@ -1241,11 +1008,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_order_price
-
-	var_1_50[51] = {
+	pg.base.island_order_price[51] = {
 		order_easy_award = {
 			50,
 			500
@@ -1263,11 +1026,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_order_price
-
-	var_1_51[52] = {
+	pg.base.island_order_price[52] = {
 		order_easy_award = {
 			50,
 			500
@@ -1285,11 +1044,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_order_price
-
-	var_1_52[53] = {
+	pg.base.island_order_price[53] = {
 		order_easy_award = {
 			50,
 			500
@@ -1307,11 +1062,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_order_price
-
-	var_1_53[54] = {
+	pg.base.island_order_price[54] = {
 		order_easy_award = {
 			50,
 			500
@@ -1329,11 +1080,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_order_price
-
-	var_1_54[55] = {
+	pg.base.island_order_price[55] = {
 		order_easy_award = {
 			50,
 			500
@@ -1351,11 +1098,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_order_price
-
-	var_1_55[56] = {
+	pg.base.island_order_price[56] = {
 		order_easy_award = {
 			50,
 			500
@@ -1373,11 +1116,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_order_price
-
-	var_1_56[57] = {
+	pg.base.island_order_price[57] = {
 		order_easy_award = {
 			50,
 			500
@@ -1395,11 +1134,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_order_price
-
-	var_1_57[58] = {
+	pg.base.island_order_price[58] = {
 		order_easy_award = {
 			50,
 			500
@@ -1417,11 +1152,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_order_price
-
-	var_1_58[59] = {
+	pg.base.island_order_price[59] = {
 		order_easy_award = {
 			50,
 			500
@@ -1439,11 +1170,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_order_price
-
-	var_1_59[60] = {
+	pg.base.island_order_price[60] = {
 		order_easy_award = {
 			50,
 			500
@@ -1461,11 +1188,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_order_price
-
-	var_1_60[61] = {
+	pg.base.island_order_price[61] = {
 		order_easy_award = {
 			50,
 			500
@@ -1483,11 +1206,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_order_price
-
-	var_1_61[62] = {
+	pg.base.island_order_price[62] = {
 		order_easy_award = {
 			50,
 			500
@@ -1505,11 +1224,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_order_price
-
-	var_1_62[63] = {
+	pg.base.island_order_price[63] = {
 		order_easy_award = {
 			50,
 			500
@@ -1527,11 +1242,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_order_price
-
-	var_1_63[64] = {
+	pg.base.island_order_price[64] = {
 		order_easy_award = {
 			50,
 			500
@@ -1549,11 +1260,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_order_price
-
-	var_1_64[65] = {
+	pg.base.island_order_price[65] = {
 		order_easy_award = {
 			50,
 			500
@@ -1571,11 +1278,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_order_price
-
-	var_1_65[66] = {
+	pg.base.island_order_price[66] = {
 		order_easy_award = {
 			50,
 			500
@@ -1593,11 +1296,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_order_price
-
-	var_1_66[67] = {
+	pg.base.island_order_price[67] = {
 		order_easy_award = {
 			50,
 			500
@@ -1615,11 +1314,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_order_price
-
-	var_1_67[68] = {
+	pg.base.island_order_price[68] = {
 		order_easy_award = {
 			50,
 			500
@@ -1637,11 +1332,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_order_price
-
-	var_1_68[69] = {
+	pg.base.island_order_price[69] = {
 		order_easy_award = {
 			50,
 			500
@@ -1659,11 +1350,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_order_price
-
-	var_1_69[70] = {
+	pg.base.island_order_price[70] = {
 		order_easy_award = {
 			50,
 			500
@@ -1681,11 +1368,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_order_price
-
-	var_1_70[71] = {
+	pg.base.island_order_price[71] = {
 		order_easy_award = {
 			50,
 			500
@@ -1703,11 +1386,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_order_price
-
-	var_1_71[72] = {
+	pg.base.island_order_price[72] = {
 		order_easy_award = {
 			50,
 			500
@@ -1725,11 +1404,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_order_price
-
-	var_1_72[73] = {
+	pg.base.island_order_price[73] = {
 		order_easy_award = {
 			50,
 			500
@@ -1747,11 +1422,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_order_price
-
-	var_1_73[74] = {
+	pg.base.island_order_price[74] = {
 		order_easy_award = {
 			50,
 			500
@@ -1769,11 +1440,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_order_price
-
-	var_1_74[75] = {
+	pg.base.island_order_price[75] = {
 		order_easy_award = {
 			50,
 			500
@@ -1791,11 +1458,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_order_price
-
-	var_1_75[76] = {
+	pg.base.island_order_price[76] = {
 		order_easy_award = {
 			50,
 			500
@@ -1813,11 +1476,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_order_price
-
-	var_1_76[77] = {
+	pg.base.island_order_price[77] = {
 		order_easy_award = {
 			50,
 			500
@@ -1835,11 +1494,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_order_price
-
-	var_1_77[78] = {
+	pg.base.island_order_price[78] = {
 		order_easy_award = {
 			50,
 			500
@@ -1857,11 +1512,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_order_price
-
-	var_1_78[79] = {
+	pg.base.island_order_price[79] = {
 		order_easy_award = {
 			50,
 			500
@@ -1879,11 +1530,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_order_price
-
-	var_1_79[80] = {
+	pg.base.island_order_price[80] = {
 		order_easy_award = {
 			50,
 			500
@@ -1901,11 +1548,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_order_price
-
-	var_1_80[81] = {
+	pg.base.island_order_price[81] = {
 		order_easy_award = {
 			50,
 			500
@@ -1923,11 +1566,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_order_price
-
-	var_1_81[82] = {
+	pg.base.island_order_price[82] = {
 		order_easy_award = {
 			50,
 			500
@@ -1945,11 +1584,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_order_price
-
-	var_1_82[83] = {
+	pg.base.island_order_price[83] = {
 		order_easy_award = {
 			50,
 			500
@@ -1967,11 +1602,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.island_order_price
-
-	var_1_83[84] = {
+	pg.base.island_order_price[84] = {
 		order_easy_award = {
 			50,
 			500
@@ -1989,11 +1620,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.island_order_price
-
-	var_1_84[85] = {
+	pg.base.island_order_price[85] = {
 		order_easy_award = {
 			50,
 			500
@@ -2011,11 +1638,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.island_order_price
-
-	var_1_85[86] = {
+	pg.base.island_order_price[86] = {
 		order_easy_award = {
 			50,
 			500
@@ -2033,11 +1656,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.island_order_price
-
-	var_1_86[87] = {
+	pg.base.island_order_price[87] = {
 		order_easy_award = {
 			50,
 			500
@@ -2055,11 +1674,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.island_order_price
-
-	var_1_87[88] = {
+	pg.base.island_order_price[88] = {
 		order_easy_award = {
 			50,
 			500
@@ -2077,11 +1692,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.island_order_price
-
-	var_1_88[89] = {
+	pg.base.island_order_price[89] = {
 		order_easy_award = {
 			50,
 			500
@@ -2099,11 +1710,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.island_order_price
-
-	var_1_89[90] = {
+	pg.base.island_order_price[90] = {
 		order_easy_award = {
 			50,
 			500
@@ -2121,11 +1728,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.island_order_price
-
-	var_1_90[91] = {
+	pg.base.island_order_price[91] = {
 		order_easy_award = {
 			50,
 			500
@@ -2143,11 +1746,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.island_order_price
-
-	var_1_91[92] = {
+	pg.base.island_order_price[92] = {
 		order_easy_award = {
 			50,
 			500
@@ -2165,11 +1764,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.island_order_price
-
-	var_1_92[93] = {
+	pg.base.island_order_price[93] = {
 		order_easy_award = {
 			50,
 			500
@@ -2187,11 +1782,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.island_order_price
-
-	var_1_93[94] = {
+	pg.base.island_order_price[94] = {
 		order_easy_award = {
 			50,
 			500
@@ -2209,11 +1800,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.island_order_price
-
-	var_1_94[95] = {
+	pg.base.island_order_price[95] = {
 		order_easy_award = {
 			50,
 			500
@@ -2231,11 +1818,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.island_order_price
-
-	var_1_95[96] = {
+	pg.base.island_order_price[96] = {
 		order_easy_award = {
 			50,
 			500
@@ -2253,11 +1836,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.island_order_price
-
-	var_1_96[97] = {
+	pg.base.island_order_price[97] = {
 		order_easy_award = {
 			50,
 			500
@@ -2275,11 +1854,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.island_order_price
-
-	var_1_97[98] = {
+	pg.base.island_order_price[98] = {
 		order_easy_award = {
 			50,
 			500
@@ -2297,11 +1872,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.island_order_price
-
-	var_1_98[99] = {
+	pg.base.island_order_price[99] = {
 		order_easy_award = {
 			50,
 			500
@@ -2319,8 +1890,7 @@ var_0_3.base.island_order_price = {}
 			1500
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.island_order_price[100] = {
+	pg.base.island_order_price[100] = {
 		order_easy_award = {
 			50,
 			500

@@ -1,52 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandVisitorHudPanel", import("Mod.Island.Core.View.IslandBaseHudPanel"))
 
-local var_0_0 = "IslandVisitorHudPanel"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("Mod.Island.Core.View.IslandBaseHudPanel"))
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "IslandVisitorHud"
 end
 
-function var_0_1.OnInit(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnInit(arg_2_0)
+	local var_2_9000
 
-	arg_2_0.nameTF = var_1.Find(var_2_0, "name")
-	tonumber = var_1
-	arg_2_0.playerId = var_1(arg_2_0.param1)
+	arg_2_0.nameTF = arg_2_0._tf:Find("name")
+	arg_2_0.playerId = tonumber(arg_2_0.param1)
 
 	if not arg_2_0.playerId then
 		return
 	end
 
-	getProxy = var_1
-	IslandProxy = var_3
+	local var_2_0 = getProxy(IslandProxy)
+	local var_2_1 = var_2_0.GetIsland(var_2_9000):GetVisitorAgency().GetPlayer(var_2_0, arg_2_0.playerId)
 
-	local var_2_1 = var_1(var_3)
-	local var_2_2 = var_1.GetIsland(var_2_1)
+	var_2_1 = var_2_1 or getProxy(IslandProxy):GetSharedIsland():GetVisitorAgency():GetPlayer(arg_2_0.playerId)
+	arg_2_0.name = var_2_1:GetName()
 
-	getProxy = var_1_10002
-	IslandProxy = var_4
-
-	local var_2_3 = var_1_10002(var_4)
-	local var_2_4 = var_2.GetSharedIsland(var_2_3)
-	local var_2_5 = var_2_2:GetVisitorAgency()
-	local var_2_7
-
-	if not var_3.GetPlayer(var_2_5, arg_2_0.playerId) then
-		local var_2_6 = var_2_4:GetVisitorAgency()
-
-		var_2_7 = var_3.GetPlayer(var_2_6, arg_2_0.playerId)
-	end
-
-	arg_2_0.name = var_2_7:GetName()
-	setText = var_4
-
-	var_4(arg_2_0.nameTF, arg_2_0.name)
+	setText(arg_2_0.nameTF, arg_2_0.name)
 
 	return
 end
 
-return var_0_1
+return var_0_0

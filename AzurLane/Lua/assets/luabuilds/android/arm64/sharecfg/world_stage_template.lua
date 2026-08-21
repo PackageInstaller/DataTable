@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_stage_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_stage_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_stage_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_stage_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_stage_template = rawget(pg, "world_stage_template") or setmetatable({
+	__name = "world_stage_template"
+}, confNEO)
+pg.world_stage_template.all = {
 	1,
 	2,
 	3,
@@ -47,25 +24,11 @@ var_0_3.all = {
 	19,
 	20
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_stage_template = {}
+pg.base = pg.base or {}
+pg.base.world_stage_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_stage_template
-
-	var_1_0[1] = {
+	pg.base.world_stage_template[1] = {
 		fleet_num = 2,
 		stage_key = 0,
 		id = 1,
@@ -75,11 +38,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_stage_template
-
-	var_1_1[2] = {
+	pg.base.world_stage_template[2] = {
 		fleet_num = 0,
 		stage_key = 3,
 		id = 2,
@@ -92,11 +51,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_stage_template
-
-	var_1_2[3] = {
+	pg.base.world_stage_template[3] = {
 		fleet_num = 0,
 		stage_key = 10,
 		id = 3,
@@ -109,11 +64,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_stage_template
-
-	var_1_3[4] = {
+	pg.base.world_stage_template[4] = {
 		fleet_num = 0,
 		stage_key = 13,
 		id = 4,
@@ -126,11 +77,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_stage_template
-
-	var_1_4[5] = {
+	pg.base.world_stage_template[5] = {
 		fleet_num = 0,
 		stage_key = 13,
 		id = 5,
@@ -140,11 +87,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_stage_template
-
-	var_1_5[6] = {
+	pg.base.world_stage_template[6] = {
 		fleet_num = 0,
 		stage_key = 5,
 		id = 6,
@@ -157,11 +100,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_stage_template
-
-	var_1_6[7] = {
+	pg.base.world_stage_template[7] = {
 		fleet_num = 0,
 		stage_key = 20,
 		id = 7,
@@ -174,11 +113,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_stage_template
-
-	var_1_7[8] = {
+	pg.base.world_stage_template[8] = {
 		fleet_num = 4,
 		stage_key = 30,
 		id = 8,
@@ -188,11 +123,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_stage_template
-
-	var_1_8[9] = {
+	pg.base.world_stage_template[9] = {
 		fleet_num = 0,
 		stage_key = 55,
 		id = 9,
@@ -205,11 +136,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_stage_template
-
-	var_1_9[10] = {
+	pg.base.world_stage_template[10] = {
 		fleet_num = 0,
 		stage_key = 23,
 		id = 10,
@@ -222,11 +149,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_stage_template
-
-	var_1_10[11] = {
+	pg.base.world_stage_template[11] = {
 		fleet_num = 0,
 		stage_key = 23,
 		id = 11,
@@ -239,11 +162,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_stage_template
-
-	var_1_11[12] = {
+	pg.base.world_stage_template[12] = {
 		fleet_num = 0,
 		stage_key = 100,
 		id = 12,
@@ -256,11 +175,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_stage_template
-
-	var_1_12[13] = {
+	pg.base.world_stage_template[13] = {
 		fleet_num = 0,
 		stage_key = 100,
 		id = 13,
@@ -273,11 +188,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_stage_template
-
-	var_1_13[14] = {
+	pg.base.world_stage_template[14] = {
 		fleet_num = 0,
 		stage_key = 100,
 		id = 14,
@@ -290,11 +201,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_stage_template
-
-	var_1_14[15] = {
+	pg.base.world_stage_template[15] = {
 		fleet_num = 0,
 		stage_key = 100,
 		id = 15,
@@ -307,11 +214,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_stage_template
-
-	var_1_15[16] = {
+	pg.base.world_stage_template[16] = {
 		fleet_num = 0,
 		stage_key = 20,
 		id = 16,
@@ -324,11 +227,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_stage_template
-
-	var_1_16[17] = {
+	pg.base.world_stage_template[17] = {
 		fleet_num = 0,
 		stage_key = 9999,
 		id = 17,
@@ -341,11 +240,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_stage_template
-
-	var_1_17[18] = {
+	pg.base.world_stage_template[18] = {
 		fleet_num = 0,
 		stage_key = 9999,
 		id = 18,
@@ -358,11 +253,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_stage_template
-
-	var_1_18[19] = {
+	pg.base.world_stage_template[19] = {
 		fleet_num = 0,
 		stage_key = 100,
 		id = 19,
@@ -375,8 +266,7 @@ var_0_3.base.world_stage_template = {}
 			{}
 		}
 	}
-	pg = var_1_18
-	var_1_18.base.world_stage_template[20] = {
+	pg.base.world_stage_template[20] = {
 		fleet_num = 0,
 		stage_key = 100,
 		id = 20,

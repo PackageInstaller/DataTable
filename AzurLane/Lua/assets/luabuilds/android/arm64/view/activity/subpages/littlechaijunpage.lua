@@ -1,209 +1,103 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("LittleChaijunPage", import(".TemplatePage.PtTemplatePage"))
 
-local var_0_0 = "LittleChaijunPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
+	arg_1_0.helpBtn = arg_1_0.bg:Find("help_btn")
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PtTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0.bg
-
-	arg_1_0.helpBtn = var_1.Find(var_1_0, "help_btn")
-	onButton = var_1
-
-	local var_1_1 = arg_1_0
-	local var_1_2 = arg_1_0.helpBtn
-
-	local function var_1_3()
-		pg = var_2_10000
-
-		local var_2_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_2_1 = var_0.ShowMsgBox
-		local var_2_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_2_2.type = var_2_10004
-		pg = var_2_10004
-		var_2_2.helps = var_2_10004.gametip.littleChaijun_npc.tip
-
-		var_2_1(var_2_0, var_2_2)
+	onButton(arg_1_0, arg_1_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.littleChaijun_npc.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_1_1, var_1_2, var_1_3, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_3_0)
-	var_0_1.super.OnUpdateFlush(arg_3_0)
+function var_0_0.OnUpdateFlush(arg_3_0)
+	var_0_0.super.OnUpdateFlush(arg_3_0)
 
-	local var_3_0 = arg_3_0.ptData
-	local var_3_1, var_3_2, var_3_3 = var_1.GetLevelProgress(var_3_0)
-	local var_3_4 = arg_3_0.ptData
-	local var_3_5, var_3_6, var_3_7 = var_4.GetResProgress(var_3_4)
+	local var_3_0, var_3_1, var_3_2 = arg_3_0.ptData:GetLevelProgress()
+	local var_3_3, var_3_4, var_3_5 = arg_3_0.ptData:GetResProgress()
 
-	setText = var_1_10007
+	setText(arg_3_0.step, setColorStr(var_3_0, "ebced8") .. " / " .. var_3_1)
 
-	local var_3_8 = arg_3_0.step
+	local var_3_6 = var_3_5 >= 1 and setColorStr(var_3_3, COLOR_GREEN) or setColorStr(var_3_3, "ebced8")
 
-	setColorStr = var_1_10010
+	setText(arg_3_0.progress, var_3_6 .. "/" .. var_3_4)
 
-	var_1_10007(var_3_8, var_1_10010(var_3_1, "ebced8") .. " / " .. var_3_2)
-
-	setText = var_1_10007
-
-	local var_3_9 = arg_3_0.progress
-
-	if 1 <= var_3_7 then
-		setColorStr = var_3_11
-
-		local var_3_10 = var_3_5
-
-		COLOR_GREEN = var_13
-
-		local var_3_11
-
-		if not var_3_11(var_3_10, var_13) then
-			setColorStr = var_3_11
-			var_3_11 = var_3_11(var_3_5, "ebced8")
+	if arg_3_0.firstSliderInit then
+		if LeanTween.isTweening(go(arg_3_0.slider)) then
+			LeanTween.cancel(go(arg_3_0.slider))
 		end
 
-		var_1_10007(var_3_9, var_3_11 .. "/" .. var_3_6)
+		local var_3_7 = GetComponent(arg_3_0.slider, typeof(Slider)).value
 
-		local var_3_12
+		LeanTween.value(go(arg_3_0.slider), arg_3_0.l1 ~= var_3_0 and 0 or arg_3_0.sliderValue, var_3_5, 1):setOnUpdate(System.Action_float(function(arg_4_0)
+			setSlider(arg_3_0.slider, 0, 1, arg_4_0)
 
-		if arg_3_0.firstSliderInit then
-			LeanTween = var_3_12
-			var_3_12 = var_3_12.isTweening
-			go = var_3_9
+			arg_3_0.sliderValue = arg_4_0
 
-			if var_3_12(var_3_9(arg_3_0.slider)) then
-				LeanTween = var_3_12
-				var_3_12 = var_3_12.cancel
-				go = var_9
+			return
+		end))
+	else
+		setSlider(arg_3_0.slider, 0, 1, var_3_5)
 
-				var_3_12(var_9(arg_3_0.slider))
-			end
-
-			GetComponent = var_3_12
-
-			local var_3_13 = arg_3_0.slider
-
-			typeof = var_10
-			Slider = var_12
-			var_3_12 = var_3_12(var_3_13, var_10(var_12)).value
-			var_3_12 = arg_3_0.l1 ~= var_3_1 and 0 or arg_3_0.sliderValue
-			LeanTween = var_8
-
-			local var_3_14 = var_8.value
-
-			go = var_10
-
-			local var_3_15 = var_3_14(var_10(arg_3_0.slider), var_3_12, var_3_7, 1)
-			local var_3_16 = var_8.setOnUpdate
-
-			System = var_11
-
-			var_3_16(var_3_15, var_11.Action_float(function(arg_4_0)
-				setSlider = var_2_10001
-
-				var_2_10001(arg_3_0.slider, 0, 1, arg_4_0)
-
-				arg_3_0.sliderValue = arg_4_0
-
-				return
-			end))
-		else
-			setSlider = var_3_12
-
-			var_3_12(arg_3_0.slider, 0, 1, var_3_7)
-
-			arg_3_0.firstSliderInit = true
-			arg_3_0.sliderValue = var_3_7
-		end
-
-		arg_3_0.l1 = var_3_1
-
-		arg_3_0:updataTask()
-		arg_3_0:sortTaskGroups()
-		arg_3_0:updateTaskUI()
-
-		return
+		arg_3_0.firstSliderInit = true
+		arg_3_0.sliderValue = var_3_5
 	end
+
+	arg_3_0.l1 = var_3_0
+
+	arg_3_0:updataTask()
+	arg_3_0:sortTaskGroups()
+	arg_3_0:updateTaskUI()
+
+	return
 end
 
-function var_0_1.updataTask(arg_5_0)
-	ipairs = var_1_10001
+function var_0_0.updataTask(arg_5_0)
+	for iter_5_0, iter_5_1 in ipairs(arg_5_0.taskGroups) do
+		for iter_5_2, iter_5_3 in ipairs(iter_5_1.tasks) do
+			local var_5_0 = arg_5_0.taskProxy:getFinishTaskById(iter_5_3.id) and 1 or 0
+			local var_5_1 = arg_5_0.taskProxy:getTaskById(iter_5_3.id)
+			local var_5_2 = 0
 
-	for iter_5_0, iter_5_1 in var_1_10001(arg_5_0.taskGroups) do
-		ipairs = var_1_10006
+			if var_5_1 then
+				var_5_2 = var_5_1:getProgress()
 
-		for iter_5_2, iter_5_3 in var_1_10006(iter_5_1.tasks) do
-			local var_5_0 = arg_5_0.taskProxy
-			local var_5_1 = var_11.getFinishTaskById(var_5_0, iter_5_3.id) and 1 or 0
-			local var_5_2 = arg_5_0.taskProxy
-			local var_5_3 = var_12.getTaskById(var_5_2, iter_5_3.id)
-			local var_5_4 = 0
+				if var_5_2 == 0 then
+					iter_5_1.progress = iter_5_1.progress or var_5_2
 
-			if var_5_3 then
-				local var_5_5
+					if false then
+						var_5_2 = iter_5_1.progress
+					end
 
-				if var_5_3:getProgress() ~= 0 or not iter_5_1.progress then
-					var_5_5 = var_5_4
+					iter_5_3.progress = var_5_2
+
+					if iter_5_3.finish ~= var_5_0 then
+						setActive(iter_5_3.tf, false)
+						table.insert(arg_5_0.taskTplPool, iter_5_3.tf)
+
+						iter_5_3.tf = nil
+					end
+
+					iter_5_3.finish = var_5_0
 				end
-
-				iter_5_1.progress = var_5_5
-			else
-				var_5_4 = iter_5_1.progress
 			end
-
-			iter_5_3.progress = var_5_4
-
-			if iter_5_3.finish ~= var_5_1 then
-				setActive = var_14
-
-				var_14(iter_5_3.tf, false)
-
-				table = var_14
-
-				var_14.insert(arg_5_0.taskTplPool, iter_5_3.tf)
-
-				iter_5_3.tf = nil
-			end
-
-			iter_5_3.finish = var_5_1
 		end
 	end
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_6_0)
-	var_0_1.super.OnFirstFlush(arg_6_0)
-
-	onButton = var_1
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.displayBtn
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-		local var_7_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_7_2 = var_2_10003.SHOW_AWARD_WINDOW
-
-		PtAwardWindow = var_2_10004
-
-		var_7_1(var_7_0, var_7_2, var_2_10004, {
+function var_0_0.OnFirstFlush(arg_6_0)
+	var_0_0.super.OnFirstFlush(arg_6_0)
+	onButton(arg_6_0, arg_6_0.displayBtn, function()
+		arg_6_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
 			type = 5,
 			dropList = arg_6_0.ptData.dropList,
 			targets = arg_6_0.ptData.targets,
@@ -213,35 +107,12 @@ function var_0_1.OnFirstFlush(arg_6_0)
 		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.battleBtn
-
-	local function var_6_5()
-		local var_8_0 = arg_6_0
-		local var_8_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_8_2 = var_2_10003.EVENT_GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_8_1(var_8_0, var_8_2, var_2_10004.LEVEL)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.battleBtn, function()
+		arg_6_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.LEVEL)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_6_3, var_6_4, var_6_5, var_1_10006)
+	end, SFX_PANEL)
 	arg_6_0:initTask()
 	arg_6_0:sortTaskGroups()
 	arg_6_0:updateTaskUI()
@@ -249,105 +120,61 @@ function var_0_1.OnFirstFlush(arg_6_0)
 	return
 end
 
-function var_0_1.initTask(arg_9_0)
-	findTF = var_1_10001
-	arg_9_0.missionTpl = var_1_10001(arg_9_0.bg, "missionTpl")
-	setActive = var_1
+function var_0_0.initTask(arg_9_0)
+	arg_9_0.missionTpl = findTF(arg_9_0.bg, "missionTpl")
 
-	var_1(arg_9_0.missionTpl, false)
+	setActive(arg_9_0.missionTpl, false)
 
-	findTF = var_1
-	arg_9_0.missionContainer = var_1(arg_9_0.bg, "mission/content")
+	arg_9_0.missionContainer = findTF(arg_9_0.bg, "mission/content")
 
-	local var_9_0 = arg_9_0.activity
-	local var_9_1 = var_1.getConfig(var_9_0, "config_client").task_act_id
+	local var_9_0 = pg.activity_template[arg_9_0.activity:getConfig("config_client").task_act_id].config_data
 
-	pg = var_1_10002
-
-	local var_9_2 = var_1_10002.activity_template[var_9_1].config_data
-
-	getProxy = var_9_0
-	TaskProxy = var_1_10005
-	arg_9_0.taskProxy = var_9_0(var_1_10005)
+	arg_9_0.taskProxy = getProxy(TaskProxy)
 	arg_9_0.taskTplPool = {}
-	GetComponent = var_3
-	findTF = var_1_10005
-
-	local var_9_3 = var_1_10005(arg_9_0.bg, "mission")
-
-	typeof = var_1_10006
-	ScrollRect = var_8
-	arg_9_0.taskScroll = var_3(var_9_3, var_1_10006(var_8))
+	arg_9_0.taskScroll = GetComponent(findTF(arg_9_0.bg, "mission"), typeof(ScrollRect))
 	arg_9_0.taskGroups = {}
 
-	for iter_9_0 = 1, #var_9_2 do
-		local var_9_4 = var_9_2[iter_9_0]
-
-		pg = var_8
-
-		local var_9_5 = var_8.task_data_template[var_9_4].type
-		local var_9_6 = var_8.sub_type
-
-		if var_9_5 == 26 then
-			local var_9_7 = arg_9_0:getTaskGroup(var_9_5, var_9_6)
-
-			arg_9_0:insertTaskToGroup(var_9_4, var_8, var_9_7)
+	for iter_9_0 = 1, #var_9_0 do
+		if pg.task_data_template[var_9_0[iter_9_0]].type == 26 then
+			arg_9_0:insertTaskToGroup(var_9_0[iter_9_0], pg.task_data_template[var_9_0[iter_9_0]], (arg_9_0:getTaskGroup(pg.task_data_template[var_9_0[iter_9_0]].type, pg.task_data_template[var_9_0[iter_9_0]].sub_type)))
 		end
 	end
 
 	return
 end
 
-function var_0_1.updateTaskUI(arg_10_0)
-	local var_10_0 = 0
-
+function var_0_0.updateTaskUI(arg_10_0)
 	for iter_10_0 = 1, #arg_10_0.taskGroups do
-		local var_10_1 = arg_10_0.taskGroups[iter_10_0].tasks
-
-		ipairs = var_1_10008
-
-		for iter_10_1, iter_10_2 in var_1_10008(var_10_1) do
-			arg_10_0:updateTaskList(iter_10_1, var_10_0, iter_10_2, var_6)
-
-			var_10_0 = var_10_0 + 1
+		for iter_10_1, iter_10_2 in ipairs(arg_10_0.taskGroups[iter_10_0].tasks) do
+			arg_10_0:updateTaskList(iter_10_1, 0, iter_10_2, arg_10_0.taskGroups[iter_10_0])
 		end
 	end
 
+	local var_10_1 = 0
 	local var_10_2 = 0
-	local var_10_3 = 0
 
 	if arg_10_0.scrollToGroup then
-		ipairs = var_4
-
-		for iter_10_3, iter_10_4 in var_4(arg_10_0.taskGroups) do
+		for iter_10_3, iter_10_4 in ipairs(arg_10_0.taskGroups) do
 			if iter_10_4 == arg_10_0.scrollToGroup then
-				var_10_3 = var_10_2
+				var_10_2 = var_10_1
 			end
 
-			if iter_10_4.opening then
-				var_10_2 = var_10_2 + #iter_10_4.tasks
-			else
-				var_10_2 = var_10_2 + 1
-			end
+			var_10_1 = iter_10_4.opening and var_10_1 + #iter_10_4.tasks or var_10_1 + 1
 		end
 
 		arg_10_0.scrollToGroup = nil
 	end
 
-	if var_10_3 ~= 0 and var_10_2 ~= 0 then
-		scrollTo = var_4
-
-		var_4(arg_10_0.taskScroll, 0, 1 - var_10_3 / var_10_2)
+	if var_10_2 ~= 0 and var_10_1 ~= 0 then
+		scrollTo(arg_10_0.taskScroll, 0, 1 - var_10_2 / var_10_1)
 	else
-		scrollTo = var_4
-
-		var_4(arg_10_0.taskScroll, 0, 1)
+		scrollTo(arg_10_0.taskScroll, 0, 1)
 	end
 
 	return
 end
 
-function var_0_1.updateTaskList(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4)
+function var_0_0.updateTaskList(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4)
 	if not arg_11_3.show then
 		return
 	end
@@ -361,277 +188,109 @@ function var_0_1.updateTaskList(arg_11_0, arg_11_1, arg_11_2, arg_11_3, arg_11_4
 	local var_11_6 = arg_11_4.opening
 	local var_11_7 = #arg_11_4.tasks == 1
 
-	if not arg_11_3.tf then
-		arg_11_3.tf = arg_11_0:getTaskTfFromPool()
-	end
+	arg_11_3.tf = arg_11_3.tf or arg_11_0:getTaskTfFromPool()
 
-	findTF = var_14
+	local var_11_8 = findTF(arg_11_3.tf, "AD")
 
-	local var_11_8 = var_14(arg_11_3.tf, "AD")
-	local var_11_9 = arg_11_3.tf
+	arg_11_3.tf.sizeDelta = Vector2(778, var_11_3 and 120 or 110)
 
-	Vector2 = var_16
-	var_11_9.sizeDelta = var_16(778, var_11_3 and 120 or 110)
-	setActive = var_11_9
-	findTF = var_17
-
-	var_11_9(var_17(var_11_8, "bg1"), var_11_3)
-
-	setActive = var_11_9
-	findTF = var_17
-
-	var_11_9(var_17(var_11_8, "bg2"), not var_11_3)
+	setActive(findTF(var_11_8, "bg1"), var_11_3)
+	setActive(findTF(var_11_8, "bg2"), not var_11_3)
 
 	if var_11_3 then
-		setActive = var_11_9
-		findTF = var_17
-
-		var_11_9(var_17(var_11_8, "mask1"), var_11_2)
+		setActive(findTF(var_11_8, "mask1"), var_11_2)
 	else
-		setActive = var_11_9
-		findTF = var_17
-
-		var_11_9(var_17(var_11_8, "mask2"), var_11_2)
+		setActive(findTF(var_11_8, "mask2"), var_11_2)
 	end
 
 	if var_11_2 then
-		setActive = var_11_9
-		findTF = var_17
-
-		var_11_9(var_17(var_11_8, "pahase"), false)
-
-		setSlider = var_11_9
-		findTF = var_17
-
-		var_11_9(var_17(var_11_8, "slider"), 0, 1, 1)
+		setActive(findTF(var_11_8, "pahase"), false)
+		setSlider(findTF(var_11_8, "slider"), 0, 1, 1)
 	else
-		setActive = var_11_9
-		findTF = var_17
-
-		var_11_9(var_17(var_11_8, "pahase"), true)
-
-		setSlider = var_11_9
-		findTF = var_17
-
-		var_11_9(var_17(var_11_8, "slider"), 0, 1, var_11_1 / var_11_0)
+		setActive(findTF(var_11_8, "pahase"), true)
+		setSlider(findTF(var_11_8, "slider"), 0, 1, var_11_1 / var_11_0)
 	end
 
-	setText = var_11_9
-	findTF = var_17
-
-	var_11_9(var_17(var_11_8, "desc"), var_11_4)
-
-	local var_11_10
+	setText(findTF(var_11_8, "desc"), var_11_4)
 
 	if arg_11_4.subType ~= 33 then
-		setText = var_15
-		findTF = var_11_10
-		var_11_10 = var_11_10(var_11_8, "pahase")
-		setColorStr = var_18
-
-		var_15(var_11_10, var_18(var_11_1, "#b35845") .. "/" .. var_11_0)
+		setText(findTF(var_11_8, "pahase"), setColorStr(var_11_1, "#b35845") .. "/" .. var_11_0)
 	else
-		setText = var_15
-		findTF = var_11_10
-
-		var_15(var_11_10(var_11_8, "pahase"), "")
+		setText(findTF(var_11_8, "pahase"), "")
 	end
 
-	updateDrop = var_15
-	findTF = var_11_10
-
-	var_15(var_11_10(var_11_8, "award"), var_11_5)
-
-	onButton = var_15
-
-	local var_11_11 = arg_11_0
-
-	findTF = var_18
-
-	local var_11_12 = var_18(var_11_8, "award")
-
-	local function var_11_13()
-		local var_12_0 = arg_11_0
-		local var_12_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_12_1(var_12_0, var_2_10003.ON_DROP, var_11_5)
+	updateDrop(findTF(var_11_8, "award"), var_11_5)
+	onButton(arg_11_0, findTF(var_11_8, "award"), function()
+		arg_11_0:emit(BaseUI.ON_DROP, var_11_5)
 
 		return
-	end
-
-	SFX_PANEL = var_20
-
-	var_15(var_11_11, var_11_12, var_11_13, var_20)
-
-	setActive = var_15
-	findTF = var_11_11
-
-	var_15(var_11_11(var_11_8, "got"), false)
-
-	setActive = var_15
-	findTF = var_17
-
-	var_15(var_17(var_11_8, "get"), false)
-
-	setActive = var_15
-	findTF = var_17
-
-	var_15(var_17(var_11_8, "go"), false)
-
-	local var_11_14, var_11_15
+	end, SFX_PANEL)
+	setActive(findTF(var_11_8, "got"), false)
+	setActive(findTF(var_11_8, "get"), false)
+	setActive(findTF(var_11_8, "go"), false)
 
 	if not var_11_3 then
-		setActive = var_15
-		findTF = var_11_14
-
-		var_15(var_11_14(var_11_8, "go"), not var_11_2)
-
-		setActive = var_15
-		findTF = var_11_14
-
-		var_15(var_11_14(var_11_8, "got"), var_11_2)
+		setActive(findTF(var_11_8, "go"), not var_11_2)
+		setActive(findTF(var_11_8, "got"), var_11_2)
 	elseif var_11_2 then
-		setActive = var_15
-		findTF = var_11_14
-
-		var_15(var_11_14(var_11_8, "got"), true)
+		setActive(findTF(var_11_8, "got"), true)
 	elseif var_11_0 <= var_11_1 then
-		setActive = var_15
-		findTF = var_11_14
+		setActive(findTF(var_11_8, "get"), true)
+		onButton(arg_11_0, findTF(var_11_8, "get"), function()
+			local var_13_0 = arg_11_0.taskProxy:getTaskById(arg_11_3.id)
 
-		var_15(var_11_14(var_11_8, "get"), true)
-
-		onButton = var_15
-		var_11_14 = arg_11_0
-		findTF = var_11_15
-		var_11_15 = var_11_15(var_11_8, "get")
-
-		local function var_11_16()
-			local var_13_0 = arg_11_0.taskProxy
-
-			if var_0.getTaskById(var_13_0, arg_11_3.id) then
-				local var_13_1 = arg_11_0
-				local var_13_2 = var_1.emit
-
-				ActivityMediator = var_2_10004
-
-				var_13_2(var_13_1, var_2_10004.ON_TASK_SUBMIT, var_0)
+			if var_13_0 then
+				arg_11_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_13_0)
 			end
 
 			return
-		end
-
-		SFX_CONFIRM = var_20
-
-		var_15(var_11_14, var_11_15, var_11_16, var_20)
+		end, SFX_CONFIRM)
 	else
-		setActive = var_15
-		findTF = var_11_14
+		setActive(findTF(var_11_8, "go"), true)
+		onButton(arg_11_0, findTF(var_11_8, "go"), function()
+			local var_14_0 = arg_11_0.taskProxy:getTaskById(arg_11_3.id)
 
-		var_15(var_11_14(var_11_8, "go"), true)
-
-		onButton = var_15
-		var_11_14 = arg_11_0
-		findTF = var_11_15
-		var_11_15 = var_11_15(var_11_8, "go")
-
-		local function var_11_17()
-			local var_14_0 = arg_11_0.taskProxy
-
-			if var_0.getTaskById(var_14_0, arg_11_3.id) then
-				local var_14_1 = arg_11_0
-				local var_14_2 = var_1.emit
-
-				ActivityMediator = var_2_10004
-
-				var_14_2(var_14_1, var_2_10004.ON_TASK_GO, var_0)
+			if var_14_0 then
+				arg_11_0:emit(ActivityMediator.ON_TASK_GO, var_14_0)
 			end
 
 			return
-		end
-
-		SFX_CONFIRM = var_20
-
-		var_15(var_11_14, var_11_15, var_11_17, var_20)
+		end, SFX_CONFIRM)
 	end
 
 	if var_11_7 or not var_11_3 or var_11_2 and var_11_3 then
-		setActive = var_15
-		findTF = var_11_14
-
-		var_15(var_11_14(var_11_8, "show"), false)
+		setActive(findTF(var_11_8, "show"), false)
 	else
-		setActive = var_15
-		findTF = var_11_14
-
-		var_15(var_11_14(var_11_8, "show"), true)
-
-		setActive = var_15
-		findTF = var_17
-
-		var_15(var_17(var_11_8, "show/on"), var_11_6)
-
-		setActive = var_15
-		findTF = var_17
-
-		var_15(var_17(var_11_8, "show/off"), not var_11_6)
+		setActive(findTF(var_11_8, "show"), true)
+		setActive(findTF(var_11_8, "show/on"), var_11_6)
+		setActive(findTF(var_11_8, "show/off"), not var_11_6)
 	end
 
 	if var_11_3 then
-		onButton = var_15
-
-		local var_11_18 = arg_11_0
-
-		findTF = var_11_15
-
-		local var_11_19 = var_11_15(var_11_8, "show")
-
-		local function var_11_20()
-			local var_15_0 = arg_11_0
-
-			var_0.changeGroupOpening(var_15_0, arg_11_4)
+		onButton(arg_11_0, findTF(var_11_8, "show"), function()
+			arg_11_0:changeGroupOpening(arg_11_4)
 
 			return
-		end
-
-		SFX_CONFIRM = var_20
-
-		var_15(var_11_18, var_11_19, var_11_20, var_20)
+		end, SFX_CONFIRM)
 	end
 
-	setActive = var_15
-
-	var_15(arg_11_3.tf, true)
-
-	local var_11_21 = arg_11_3.tf
-
-	var_15.SetSiblingIndex(var_11_21, arg_11_2)
+	setActive(arg_11_3.tf, true)
+	arg_11_3.tf:SetSiblingIndex(arg_11_2)
 
 	return
 end
 
-function var_0_1.changeGroupOpening(arg_16_0, arg_16_1)
+function var_0_0.changeGroupOpening(arg_16_0, arg_16_1)
 	arg_16_1.opening = not arg_16_1.opening
 
 	for iter_16_0 = 1, #arg_16_1.tasks do
 		local var_16_0 = arg_16_1.tasks[iter_16_0]
 
-		if iter_16_0 == 1 then
-			var_16_0.show = true
-		else
-			var_16_0.show = arg_16_1.opening
-		end
+		var_16_0.show = iter_16_0 == 1 and true or arg_16_1.opening
 
 		if not var_16_0.show and var_16_0.tf then
-			setActive = var_7
-
-			var_7(var_16_0.tf, false)
-
-			table = var_7
-
-			var_7.insert(arg_16_0.taskTplPool, var_16_0.tf)
+			setActive(var_16_0.tf, false)
+			table.insert(arg_16_0.taskTplPool, var_16_0.tf)
 
 			var_16_0.tf = nil
 		end
@@ -644,109 +303,94 @@ function var_0_1.changeGroupOpening(arg_16_0, arg_16_1)
 	return
 end
 
-function var_0_1.getTaskTfFromPool(arg_17_0)
-	local var_17_0 = #arg_17_0.taskTplPool
-
-	if 0 < var_17_0 then
-		table = var_17_0
-
-		return var_17_0.remove(arg_17_0.taskTplPool, 1)
+function var_0_0.getTaskTfFromPool(arg_17_0)
+	if #arg_17_0.taskTplPool > 0 then
+		return table.remove(arg_17_0.taskTplPool, 1)
 	end
 
-	tf = var_17_0
-	Instantiate = var_1_10003
+	local var_17_0 = tf(Instantiate(arg_17_0.missionTpl))
 
-	local var_17_1 = var_17_0(var_1_10003(arg_17_0.missionTpl))
+	SetParent(var_17_0, arg_17_0.missionContainer)
 
-	SetParent = var_2
-
-	var_2(var_17_1, arg_17_0.missionContainer)
-
-	return var_17_1
+	return var_17_0
 end
 
-function var_0_1.getTaskGroup(arg_18_0, arg_18_1, arg_18_2)
+function var_0_0.getTaskGroup(arg_18_0, arg_18_1, arg_18_2)
 	for iter_18_0 = 1, #arg_18_0.taskGroups do
-		if arg_18_0.taskGroups[iter_18_0].type == arg_18_1 and var_7.subType == arg_18_2 then
-			return var_7
+		if arg_18_0.taskGroups[iter_18_0].type == arg_18_1 and arg_18_0.taskGroups[iter_18_0].subType == arg_18_2 then
+			return arg_18_0.taskGroups[iter_18_0]
 		end
 	end
 
-	local var_18_0 = {
+	table.insert(arg_18_0.taskGroups, {
+		progress = 0,
+		opening = false,
+		type = arg_18_1,
+		subType = arg_18_2,
+		tasks = {}
+	})
+
+	return {
 		progress = 0,
 		opening = false,
 		type = arg_18_1,
 		subType = arg_18_2,
 		tasks = {}
 	}
-
-	table = var_4
-
-	var_4.insert(arg_18_0.taskGroups, var_18_0)
-
-	return var_18_0
 end
 
-function var_0_1.insertTaskToGroup(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
-	local var_19_0 = arg_19_3.tasks
-
-	for iter_19_0 = 1, #var_19_0 do
-		if var_19_0[iter_19_0].id == arg_19_1 then
+function var_0_0.insertTaskToGroup(arg_19_0, arg_19_1, arg_19_2, arg_19_3)
+	for iter_19_0 = 1, #arg_19_3.tasks do
+		if arg_19_3.tasks[iter_19_0].id == arg_19_1 then
 			return
 		end
 	end
 
-	local var_19_1 = arg_19_2.target_num
-	local var_19_2 = arg_19_2.desc
-	local var_19_3 = {
+	local var_19_0 = arg_19_2.target_num
+	local var_19_1 = arg_19_2.desc
+	local var_19_2 = {
 		type = arg_19_2.award_display[1][1],
 		id = arg_19_2.award_display[1][2],
 		count = arg_19_2.award_display[1][3]
 	}
-	local var_19_4 = false
+	local var_19_3 = false
 
 	if #arg_19_3.tasks == 0 then
-		var_19_4 = true
+		var_19_3 = true
 	end
 
-	local var_19_5 = arg_19_0.taskProxy
-	local var_19_6 = var_9.getFinishTaskById(var_19_5, arg_19_1) and 1 or 0
-	local var_19_7 = arg_19_0.taskProxy
-	local var_19_8 = var_10.getTaskById(var_19_7, arg_19_1)
-	local var_19_9 = 0
+	local var_19_4 = arg_19_0.taskProxy:getFinishTaskById(arg_19_1) and 1 or 0
+	local var_19_5 = arg_19_0.taskProxy:getTaskById(arg_19_1)
+	local var_19_6 = 0
 
-	if var_19_8 then
-		if var_19_8:getProgress() ~= 0 or not arg_19_3.progress then
-			var_19_7 = var_19_9
+	if var_19_5 then
+		var_19_6 = var_19_5:getProgress()
+
+		if var_19_6 == 0 then
+			arg_19_3.progress = arg_19_3.progress or var_19_6
+
+			if false then
+				var_19_6 = arg_19_3.progress
+			end
+
+			table.insert(arg_19_3.tasks, {
+				id = arg_19_1,
+				targetNum = var_19_0,
+				show = var_19_3,
+				finish = var_19_4,
+				progress = var_19_6,
+				desc = var_19_1,
+				drop = var_19_2
+			})
+
+			return
 		end
-
-		arg_19_3.progress = var_19_7
-	else
-		var_19_9 = arg_19_3.progress
 	end
-
-	table = var_19_7
-
-	var_19_7.insert(arg_19_3.tasks, {
-		id = arg_19_1,
-		targetNum = var_19_1,
-		show = var_19_4,
-		finish = var_19_6,
-		progress = var_19_9,
-		desc = var_19_2,
-		drop = var_19_3
-	})
-
-	return
 end
 
-function var_0_1.sortTaskGroups(arg_20_0)
-	ipairs = var_1_10001
-
-	for iter_20_0, iter_20_1 in var_1_10001(arg_20_0.taskGroups) do
-		table = var_1_10006
-
-		var_1_10006.sort(iter_20_1.tasks, function(arg_21_0, arg_21_1)
+function var_0_0.sortTaskGroups(arg_20_0)
+	for iter_20_0, iter_20_1 in ipairs(arg_20_0.taskGroups) do
+		table.sort(iter_20_1.tasks, function(arg_21_0, arg_21_1)
 			if arg_21_0.finish ~= arg_21_1.finish then
 				return arg_21_0.finish < arg_21_1.finish
 			end
@@ -755,97 +399,63 @@ function var_0_1.sortTaskGroups(arg_20_0)
 		end)
 	end
 
-	table = var_1
-
-	var_1.sort(arg_20_0.taskGroups, function(arg_22_0, arg_22_1)
-		local var_22_0 = arg_22_0.tasks
-		local var_22_1 = arg_22_1.tasks
-		local var_22_2 = 0
-		local var_22_3 = arg_22_0.tasks[1].id
-		local var_22_4 = 0
+	table.sort(arg_20_0.taskGroups, function(arg_22_0, arg_22_1)
+		local var_22_0 = arg_22_1.tasks
+		local var_22_1 = 0
+		local var_22_2 = arg_22_0.tasks[1].id
+		local var_22_3 = 0
 		local var_22_5 = 0
-		local var_22_6 = 0
-		local var_22_7 = arg_22_1.tasks[1].id
-		local var_22_8 = 0
-		local var_22_9 = 0
+		local var_22_6 = arg_22_1.tasks[1].id
+		local var_22_7 = 0
 
-		ipairs = var_2_10012
-
-		for iter_22_0, iter_22_1 in var_2_10012(var_22_0) do
-			if var_22_2 == 0 and iter_22_1.finish == 0 and iter_22_1.progress >= iter_22_1.targetNum then
-				var_22_2 = 1
-				var_22_3 = iter_22_1.id
+		for iter_22_0, iter_22_1 in ipairs(arg_22_0.tasks) do
+			if var_22_1 == 0 and iter_22_1.finish == 0 and iter_22_1.progress >= iter_22_1.targetNum then
+				var_22_1 = 1
+				var_22_2 = iter_22_1.id
 			end
 
-			var_22_4 = iter_22_1.finish == 1 and var_22_4 + 1 or var_22_4
+			var_22_3 = iter_22_1.finish == 1 and var_22_3 + 1 or var_22_3
 		end
 
-		local var_22_10 = var_22_4 == #var_22_0 and 1 or 0
+		local var_22_9 = var_22_3 == #arg_22_0.tasks and 1 or 0
 
-		ipairs = var_12
-
-		for iter_22_2, iter_22_3 in var_12(var_22_1) do
-			if var_22_6 == 0 and iter_22_3.finish == 0 and iter_22_3.progress >= iter_22_3.targetNum then
-				var_22_6 = 1
-				var_22_7 = iter_22_3.id
+		for iter_22_2, iter_22_3 in ipairs(var_22_0) do
+			if var_22_5 == 0 and iter_22_3.finish == 0 and iter_22_3.progress >= iter_22_3.targetNum then
+				var_22_5 = 1
+				var_22_6 = iter_22_3.id
 			end
 
-			var_22_8 = iter_22_3.finish == 1 and var_22_8 + 1 or var_22_8
+			var_22_7 = iter_22_3.finish == 1 and var_22_7 + 1 or var_22_7
 		end
 
-		local var_22_11 = var_22_8 == #var_22_1 and 1 or 0
+		local var_22_10 = var_22_7 == #var_22_0 and 1 or 0
 
-		if var_22_2 ~= var_22_6 then
-			return var_22_6 < var_22_2
-		elseif var_22_10 ~= var_22_11 then
-			return var_22_10 < var_22_11
+		if var_22_1 ~= var_22_5 then
+			return var_22_5 < var_22_1
+		elseif var_22_9 ~= var_22_10 then
+			return var_22_9 < var_22_10
 		else
-			return var_22_3 < var_22_7
+			return var_22_2 < var_22_6
 		end
 
 		return
 	end)
 
-	ipairs = var_1
-
-	for iter_20_2, iter_20_3 in var_1(arg_20_0.taskGroups) do
-		local var_20_0 = iter_20_3.opening
-		local var_20_1 = iter_20_3.tasks
-
-		for iter_20_4 = 1, #var_20_1 do
-			local var_20_2 = var_20_1[iter_20_4]
-
-			if iter_20_4 == 1 then
-				var_20_2.show = true
-			elseif var_20_0 then
-				var_20_2.show = true
-			else
-				var_20_2.show = false
-			end
+	for iter_20_2, iter_20_3 in ipairs(arg_20_0.taskGroups) do
+		for iter_20_4 = 1, #iter_20_3.tasks do
+			iter_20_3.tasks[iter_20_4].show = iter_20_4 == 1 and true or not not iter_20_3.opening
 		end
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_23_0)
-	LeanTween = var_1_10001
-
-	local var_23_0 = var_1_10001.isTweening
-
-	go = var_1_10003
-
-	if var_23_0(var_1_10003(arg_23_0.slider)) then
-		LeanTween = var_1
-
-		local var_23_1 = var_1.cancel
-
-		go = var_3
-
-		var_23_1(var_3(arg_23_0.slider))
+function var_0_0.OnDestroy(arg_23_0)
+	if LeanTween.isTweening(go(arg_23_0.slider)) then
+		LeanTween.cancel(go(arg_23_0.slider))
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

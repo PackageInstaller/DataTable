@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "game_room_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "game_room_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.game_room_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.game_room_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.game_room_template = rawget(pg, "game_room_template") or setmetatable({
+	__name = "game_room_template"
+}, confNEO)
+pg.game_room_template.all = {
 	1,
 	2,
 	3,
@@ -53,25 +30,11 @@ var_0_3.all = {
 	25,
 	26
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.game_room_template = {}
+pg.base = pg.base or {}
+pg.base.game_room_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.game_room_template
-
-	var_1_0[1] = {
+	pg.base.game_room_template[1] = {
 		id = 1,
 		type = 11,
 		add_base = 200,
@@ -124,11 +87,7 @@ var_0_3.base.game_room_template = {}
 			20
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.game_room_template
-
-	var_1_1[2] = {
+	pg.base.game_room_template[2] = {
 		id = 2,
 		type = 11,
 		add_base = 200,
@@ -211,11 +170,7 @@ var_0_3.base.game_room_template = {}
 			-153
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.game_room_template
-
-	var_1_2[3] = {
+	pg.base.game_room_template[3] = {
 		id = 3,
 		type = 11,
 		add_base = 200,
@@ -268,11 +223,7 @@ var_0_3.base.game_room_template = {}
 			0
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.game_room_template
-
-	var_1_3[4] = {
+	pg.base.game_room_template[4] = {
 		id = 4,
 		type = 11,
 		add_base = 200,
@@ -325,11 +276,7 @@ var_0_3.base.game_room_template = {}
 			-310
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.game_room_template
-
-	var_1_4[5] = {
+	pg.base.game_room_template[5] = {
 		id = 5,
 		type = 11,
 		add_base = 200,
@@ -406,11 +353,7 @@ var_0_3.base.game_room_template = {}
 			-441
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.game_room_template
-
-	var_1_5[6] = {
+	pg.base.game_room_template[6] = {
 		id = 6,
 		type = 11,
 		add_base = 200,
@@ -463,11 +406,7 @@ var_0_3.base.game_room_template = {}
 			-450
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.game_room_template
-
-	var_1_6[7] = {
+	pg.base.game_room_template[7] = {
 		id = 7,
 		type = 11,
 		add_base = 200,
@@ -520,11 +459,7 @@ var_0_3.base.game_room_template = {}
 			-110
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.game_room_template
-
-	var_1_7[8] = {
+	pg.base.game_room_template[8] = {
 		id = 8,
 		type = 11,
 		add_base = 200,
@@ -577,11 +512,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.game_room_template
-
-	var_1_8[9] = {
+	pg.base.game_room_template[9] = {
 		id = 9,
 		type = 11,
 		add_base = 200,
@@ -634,11 +565,7 @@ var_0_3.base.game_room_template = {}
 			-180
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.game_room_template
-
-	var_1_9[10] = {
+	pg.base.game_room_template[10] = {
 		id = 10,
 		type = 11,
 		add_base = 200,
@@ -691,11 +618,7 @@ var_0_3.base.game_room_template = {}
 			-300
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.game_room_template
-
-	var_1_10[11] = {
+	pg.base.game_room_template[11] = {
 		id = 11,
 		type = 11,
 		add_base = 200,
@@ -748,11 +671,7 @@ var_0_3.base.game_room_template = {}
 			-280
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.game_room_template
-
-	var_1_11[12] = {
+	pg.base.game_room_template[12] = {
 		id = 12,
 		type = 11,
 		add_base = 200,
@@ -823,11 +742,7 @@ var_0_3.base.game_room_template = {}
 			-120
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.game_room_template
-
-	var_1_12[13] = {
+	pg.base.game_room_template[13] = {
 		id = 13,
 		type = 11,
 		add_base = 200,
@@ -880,11 +795,7 @@ var_0_3.base.game_room_template = {}
 			-120
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.game_room_template
-
-	var_1_13[14] = {
+	pg.base.game_room_template[14] = {
 		id = 14,
 		type = 11,
 		add_base = 200,
@@ -933,11 +844,7 @@ var_0_3.base.game_room_template = {}
 			-120
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.game_room_template
-
-	var_1_14[15] = {
+	pg.base.game_room_template[15] = {
 		id = 15,
 		type = 11,
 		add_base = 200,
@@ -990,11 +897,7 @@ var_0_3.base.game_room_template = {}
 			-120
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.game_room_template
-
-	var_1_15[16] = {
+	pg.base.game_room_template[16] = {
 		id = 16,
 		type = 11,
 		add_base = 200,
@@ -1043,11 +946,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.game_room_template
-
-	var_1_16[17] = {
+	pg.base.game_room_template[17] = {
 		id = 17,
 		type = 11,
 		add_base = 200,
@@ -1096,11 +995,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.game_room_template
-
-	var_1_17[18] = {
+	pg.base.game_room_template[18] = {
 		id = 18,
 		type = 11,
 		add_base = 200,
@@ -1153,11 +1048,7 @@ var_0_3.base.game_room_template = {}
 			-150
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.game_room_template
-
-	var_1_18[19] = {
+	pg.base.game_room_template[19] = {
 		id = 19,
 		type = 11,
 		add_base = 200,
@@ -1210,11 +1101,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.game_room_template
-
-	var_1_19[20] = {
+	pg.base.game_room_template[20] = {
 		id = 20,
 		type = 11,
 		add_base = 200,
@@ -1267,11 +1154,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.game_room_template
-
-	var_1_20[21] = {
+	pg.base.game_room_template[21] = {
 		id = 21,
 		type = 11,
 		add_base = 200,
@@ -1324,11 +1207,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.game_room_template
-
-	var_1_21[22] = {
+	pg.base.game_room_template[22] = {
 		id = 22,
 		type = 11,
 		add_base = 200,
@@ -1381,11 +1260,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.game_room_template
-
-	var_1_22[23] = {
+	pg.base.game_room_template[23] = {
 		id = 23,
 		type = 11,
 		add_base = 200,
@@ -1438,11 +1313,7 @@ var_0_3.base.game_room_template = {}
 			-432
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.game_room_template
-
-	var_1_23[24] = {
+	pg.base.game_room_template[24] = {
 		id = 24,
 		type = 11,
 		add_base = 200,
@@ -1495,11 +1366,7 @@ var_0_3.base.game_room_template = {}
 			-200
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.game_room_template
-
-	var_1_24[25] = {
+	pg.base.game_room_template[25] = {
 		id = 25,
 		type = 11,
 		add_base = 200,
@@ -1552,8 +1419,7 @@ var_0_3.base.game_room_template = {}
 			0
 		}
 	}
-	pg = var_1_24
-	var_1_24.base.game_room_template[26] = {
+	pg.base.game_room_template[26] = {
 		id = 26,
 		type = 11,
 		add_base = 200,

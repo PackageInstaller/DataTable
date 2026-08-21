@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿AcademyGraph = {
 	Points = {
 		[2] = {
 			x = 66,
@@ -325,6 +325,4 @@
 	}
 }
 
-AcademyGraph = AcademyGraph
-
-return var_0
+return AcademyGraph

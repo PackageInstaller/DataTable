@@ -1,51 +1,45 @@
-﻿Layer = var_0_10000
-rawget = var_0_10001
-setmetatable = var_0_10002
+﻿local var_0_0 = Layer
+local var_0_1 = rawget
+local var_0_2 = setmetatable
+local var_0_3 = {}
 
-local var_0_0 = {}
-
-function var_0_0.__index(arg_1_0, arg_1_1)
-	return var_0_10001(var_0_0, arg_1_1)
+;({}).__index = function(arg_1_0, arg_1_1)
+	return var_0_1(var_0_3, arg_1_1)
 end
-
-function var_0_0.__call(arg_2_0, arg_2_1)
-	return var_0_10002({
+;({}).__call = function(arg_2_0, arg_2_1)
+	return var_0_2({
 		value = arg_2_1 or 0
-	}, var_0_0)
+	}, var_0_3)
 end
-
-function var_0_0.New(arg_3_0)
-	return var_0_10002({
+;({}).New = function(arg_3_0)
+	return var_0_2({
 		value = arg_3_0 or 0
-	}, var_0_0)
+	}, var_0_3)
 end
-
-function var_0_0.Get(arg_4_0)
+;({}).Get = function(arg_4_0)
 	return arg_4_0.value
 end
-
-function var_0_0.NameToLayer(arg_5_0)
-	return var_0_10000[arg_5_0]
+;({}).NameToLayer = function(arg_5_0)
+	return var_0_0[arg_5_0]
 end
-
-function var_0_0.GetMask(...)
+;({}).GetMask = function(...)
 	local var_6_0 = {
 		...
 	}
 	local var_6_1 = 0
 
 	for iter_6_0 = 1, #var_6_0 do
-		if var_0_0.NameToLayer(var_6_0[iter_6_0]) ~= nil then
-			var_6_1 = var_6_1 + 2^var_6
+		local var_6_2 = var_0_3.NameToLayer(var_6_0[iter_6_0])
+
+		if var_6_2 ~= nil then
+			var_6_1 = var_6_1 + 2^var_6_2
 		end
 	end
 
 	return var_6_1
 end
+UnityEngine.LayerMask = {}
 
-UnityEngine = var_4
-var_4.LayerMask = var_0_0
+setmetatable({}, {})
 
-var_0_10002(var_0_0, var_0_0)
-
-return var_0_0
+return {}

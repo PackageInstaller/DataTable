@@ -1,54 +1,31 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Reactor", import("view.miniGame.gameView.RyzaMiniGame.BaseReactor"))
 
-local var_0_0 = "Reactor"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.miniGame.gameView.RyzaMiniGame.BaseReactor"))
-
-function var_0_1.GetBaseOrder(arg_1_0)
+function var_0_0.GetBaseOrder(arg_1_0)
 	return 1
 end
 
-function var_0_1.CellPassability(arg_2_0)
+function var_0_0.CellPassability(arg_2_0)
 	return true
 end
 
-function var_0_1.FirePassability(arg_3_0)
+function var_0_0.FirePassability(arg_3_0)
 	return 0
 end
 
-function var_0_1.InTimeRiver(arg_4_0)
+function var_0_0.InTimeRiver(arg_4_0)
 	return false
 end
 
-function var_0_1.Init(arg_5_0, arg_5_1)
+function var_0_0.Init(arg_5_0, arg_5_1)
 	arg_5_0.name = arg_5_1.name
 
 	if arg_5_0:GetBaseOrder() ~= "floor" then
-		SetCanvasOverrideSorting = var_2
-
-		var_2(arg_5_0._tf, true)
+		SetCanvasOverrideSorting(arg_5_0._tf, true)
 	end
 
-	local var_5_0 = var_0_1.UpdatePos
-	local var_5_1 = arg_5_0
+	var_0_0.UpdatePos(arg_5_0, NewPos(unpack(arg_5_1.pos)))
 
-	NewPos = var_1_10005
-	unpack = var_1_10007
-
-	var_5_0(var_5_1, var_1_10005(var_1_10007(arg_5_1.pos)))
-
-	NewPos = var_5_0
-	unpack = var_5_1
-
-	local var_5_2
-
-	if not arg_5_1.realPos then
-		var_5_2 = arg_5_1.pos
-	end
-
-	arg_5_0.realPos = var_5_0(var_5_1(var_5_2))
+	arg_5_0.realPos = NewPos(unpack(var_5_0))
 
 	arg_5_0:UpdatePosition()
 	arg_5_0:InitUI(arg_5_1)
@@ -57,22 +34,19 @@ function var_0_1.Init(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.InitUI(arg_6_0, arg_6_1)
+function var_0_0.InitUI(arg_6_0, arg_6_1)
 	return
 end
 
-function var_0_1.InitRegister(arg_7_0, arg_7_1)
+function var_0_0.InitRegister(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.UpdatePos(arg_8_0, arg_8_1)
-	if arg_8_0:GetBaseOrder() ~= "floor" then
-		local var_8_0 = arg_8_0._tf
-		local var_8_1 = var_3.GetComponent
+function var_0_0.UpdatePos(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_0:GetBaseOrder()
 
-		typeof = var_1_10006
-		Canvas = var_1_10008
-		var_8_1(var_8_0, var_1_10006(var_1_10008)).sortingOrder = arg_8_1.y * 10 + var_2
+	if var_8_0 ~= "floor" then
+		arg_8_0._tf:GetComponent(typeof(Canvas)).sortingOrder = arg_8_1.y * 10 + var_8_0
 	end
 
 	arg_8_0.pos = arg_8_1
@@ -80,10 +54,8 @@ function var_0_1.UpdatePos(arg_8_0, arg_8_1)
 	return
 end
 
-function var_0_1.UpdatePosition(arg_9_0)
-	setAnchoredPosition = var_1_10001
-
-	var_1_10001(arg_9_0._tf, {
+function var_0_0.UpdatePosition(arg_9_0)
+	setAnchoredPosition(arg_9_0._tf, {
 		x = arg_9_0.realPos.x * 32,
 		y = arg_9_0.realPos.y * -32
 	})
@@ -91,4 +63,4 @@ function var_0_1.UpdatePosition(arg_9_0)
 	return
 end
 
-return var_0_1
+return var_0_0

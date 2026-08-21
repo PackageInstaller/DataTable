@@ -1,30 +1,21 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Shrine2022View", import("..BaseMiniGameView"))
 
-local var_0_0 = "Shrine2022View"
+var_0_0.SHRINE_SELECT_SHIP_VIEW_CLS = Shrine2022SelectShipView
+var_0_0.SHRINE_SHIP_WORD_VIEW_CLS = Shrine2022ShipWordView
+var_0_0.SHRINE_SELECT_BUFF_VIEW_CLS = Shrine2022SelectBuffView
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-
-Shrine2022SelectShipView = var_0_10001
-var_0_1.SHRINE_SELECT_SHIP_VIEW_CLS = var_0_10001
-Shrine2022ShipWordView = var_0_10001
-var_0_1.SHRINE_SHIP_WORD_VIEW_CLS = var_0_10001
-Shrine2022SelectBuffView = var_0_10001
-var_0_1.SHRINE_SELECT_BUFF_VIEW_CLS = var_0_10001
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "Shrine2022UI"
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	arg_2_0:findUI()
 	arg_2_0:addListener()
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0:initData()
 	arg_3_0:updateDataView()
 	arg_3_0:updateCardList()
@@ -34,157 +25,72 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_4_0)
-	if arg_4_0.shrineSelectShipView then
-		local var_4_0 = arg_4_0.shrineSelectShipView
-		local var_4_1 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_4_1(var_4_0, var_1_10004.STATES.INITED) then
-			local var_4_2 = arg_4_0.shrineSelectShipView
-
-			var_1.closeSelf(var_4_2)
-
-			goto label_4_0
-		end
+function var_0_0.onBackPressed(arg_4_0)
+	if arg_4_0.shrineSelectShipView and arg_4_0.shrineSelectShipView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineSelectShipView:closeSelf()
+	elseif arg_4_0.shrineSelectBuffView and arg_4_0.shrineSelectBuffView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineSelectBuffView:closeMySelf()
+	elseif arg_4_0.shrineShipWordView and arg_4_0.shrineShipWordView:CheckState(BaseSubView.STATES.INITED) then
+		arg_4_0.shrineShipWordView:closeMySelf()
+	else
+		arg_4_0:emit(var_0_0.ON_BACK_PRESSED)
 	end
-
-	if arg_4_0.shrineSelectBuffView then
-		local var_4_3 = arg_4_0.shrineSelectBuffView
-		local var_4_4 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_4_4(var_4_3, var_1_10004.STATES.INITED) then
-			local var_4_5 = arg_4_0.shrineSelectBuffView
-
-			var_1.closeMySelf(var_4_5)
-
-			goto label_4_0
-		end
-	end
-
-	if arg_4_0.shrineShipWordView then
-		local var_4_6 = arg_4_0.shrineShipWordView
-		local var_4_7 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_4_7(var_4_6, var_1_10004.STATES.INITED) then
-			local var_4_8 = arg_4_0.shrineShipWordView
-
-			var_1.closeMySelf(var_4_8)
-
-			goto label_4_0
-		end
-	end
-
-	arg_4_0:emit(var_0_1.ON_BACK_PRESSED)
-
-	::label_4_0::
 
 	return
 end
 
-function var_0_1.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1.argList[1]
-	local var_5_1 = var_2[2]
+function var_0_0.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
+	arg_5_0:PrintLog("后端返回,游戏ID,操作类型", arg_5_1.argList[1], arg_5_1.argList[2])
 
-	arg_5_0:PrintLog("后端返回,游戏ID,操作类型", var_5_0, var_5_1)
-
-	if var_5_0 == arg_5_0.commanderGameID then
-		if var_5_1 == 1 then
+	if arg_5_1.argList[1] == arg_5_0.commanderGameID then
+		if arg_5_1.argList[2] == 1 then
 			arg_5_0:updateDataView()
 			arg_5_0:updateCommanderBuff()
-		elseif var_5_1 == 2 then
-			local var_5_2 = arg_5_0.playerProxy
-			local var_5_3 = var_5.getData(var_5_2)
-			local var_5_4 = var_5.consume
-			local var_5_5 = {}
-			local var_5_6 = arg_5_0:GetMGData()
+		elseif arg_5_1.argList[2] == 2 then
+			local var_5_0 = arg_5_0.playerProxy:getData()
 
-			var_5_5.gold = var_10.getConfig(var_5_6, "config_data")[1]
+			;({}).gold = arg_5_0:GetMGData():getConfig("config_data")[1]
 
-			var_5_4(var_5_3, var_5_5)
-
-			local var_5_7 = arg_5_0.playerProxy
-
-			var_6.updatePlayer(var_5_7, var_5)
+			var_5_0:consume({})
+			arg_5_0.playerProxy:updatePlayer(var_5_0)
 			arg_5_0:updateDataView()
 			arg_5_0:updateCommanderBuff(true)
-		elseif var_5_1 == 3 then
-			local var_5_8 = arg_5_0.playerProxy
-			local var_5_9 = var_5.getData(var_5_8)
-			local var_5_10 = var_5.consume
-			local var_5_11 = {}
-			local var_5_12 = arg_5_0:GetMGData()
+		elseif arg_5_1.argList[2] == 3 then
+			local var_5_1 = arg_5_0.playerProxy:getData()
 
-			var_5_11.gold = var_10.getConfig(var_5_12, "config_data")[1]
+			;({}).gold = arg_5_0:GetMGData():getConfig("config_data")[1]
 
-			var_5_10(var_5_9, var_5_11)
-
-			local var_5_13 = arg_5_0.playerProxy
-
-			var_6.updatePlayer(var_5_13, var_5)
+			var_5_1:consume({})
+			arg_5_0.playerProxy:updatePlayer(var_5_1)
 		end
-	elseif var_5_0 == arg_5_0.shipGameID then
-		if var_5_1 == 1 then
+	elseif arg_5_1.argList[1] == arg_5_0.shipGameID then
+		if arg_5_1.argList[2] == 1 then
 			arg_5_0:updateDataView()
 			arg_5_0:updateCommanderBuff()
-		elseif var_5_1 == 2 then
-			local var_5_14 = arg_5_0.playerProxy
-			local var_5_15 = var_5.getData(var_5_14)
-			local var_5_16 = var_5.consume
-			local var_5_17 = {}
-			local var_5_18 = arg_5_0:getShipGameData()
+		elseif arg_5_1.argList[2] == 2 then
+			local var_5_2 = arg_5_0.playerProxy:getData()
 
-			var_5_17.gold = var_10.getConfig(var_5_18, "config_data")[1]
+			;({}).gold = arg_5_0:getShipGameData():getConfig("config_data")[1]
 
-			var_5_16(var_5_15, var_5_17)
+			var_5_2:consume({})
+			arg_5_0.playerProxy:updatePlayer(var_5_2)
 
-			local var_5_19 = arg_5_0.playerProxy
+			local var_5_3 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHRINE)
 
-			var_6.updatePlayer(var_5_19, var_5)
+			if var_5_3 and not var_5_3:isEnd() then
+				var_5_3.data2 = var_5_3.data2 + 1
 
-			getProxy = var_6
-			ActivityProxy = var_5_19
-
-			local var_5_20 = var_6(var_5_19)
-			local var_5_21 = var_6.getActivityByType
-
-			ActivityConst = var_9
-
-			if var_5_21(var_5_20, var_9.ACTIVITY_TYPE_SHRINE) then
-				local var_5_22 = var_6
-
-				if not var_6.isEnd(var_5_22) then
-					var_6.data2 = var_6.data2 + 1
-					getProxy = var_7
-					ActivityProxy = var_5_22
-
-					local var_5_23 = var_7(var_5_22)
-
-					var_7.updateActivity(var_5_23, var_6)
-				end
+				getProxy(ActivityProxy):updateActivity(var_5_3)
 			end
 
-			local var_5_24 = arg_5_0
-			local var_5_25 = arg_5_0.SendOperator
-
-			MiniGameOPCommand = var_10
-
-			var_5_25(var_5_24, var_10.CMD_SPECIAL_GAME, {
+			arg_5_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 				arg_5_0.commanderGameID,
 				1
 			})
 			arg_5_0:updateCardList()
 			arg_5_0:updateCardBuffTag()
 			arg_5_0:openFakeDrop(function()
-				local var_6_0 = var_0[5]
-				local var_6_1 = arg_5_0
-
-				var_1.openShipWordView(var_6_1, var_6_0)
+				arg_5_0:openShipWordView(var_0[5])
 
 				return
 			end)
@@ -194,95 +100,36 @@ function var_0_1.OnSendMiniGameOPDone(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.OnModifyMiniGameDataDone(arg_7_0, arg_7_1)
+function var_0_0.OnModifyMiniGameDataDone(arg_7_0, arg_7_1)
 	return
 end
 
-function var_0_1.willExit(arg_8_0)
-	if arg_8_0.shrineSelectShipView then
-		local var_8_0 = arg_8_0.shrineSelectShipView
-		local var_8_1 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_8_1(var_8_0, var_1_10004.STATES.INITED) then
-			local var_8_2 = arg_8_0.shrineSelectShipView
-
-			var_1.Destroy(var_8_2)
-
-			goto label_8_0
-		end
+function var_0_0.willExit(arg_8_0)
+	if arg_8_0.shrineSelectShipView and arg_8_0.shrineSelectShipView:CheckState(BaseSubView.STATES.INITED) then
+		arg_8_0.shrineSelectShipView:Destroy()
+	elseif arg_8_0.shrineSelectBuffView and arg_8_0.shrineSelectBuffView:CheckState(BaseSubView.STATES.INITED) then
+		arg_8_0.shrineSelectBuffView:Destroy()
+	elseif arg_8_0.shrineShipWordView and arg_8_0.shrineShipWordView:CheckState(BaseSubView.STATES.INITED) then
+		arg_8_0.shrineShipWordView:Destroy()
 	end
-
-	if arg_8_0.shrineSelectBuffView then
-		local var_8_3 = arg_8_0.shrineSelectBuffView
-		local var_8_4 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_8_4(var_8_3, var_1_10004.STATES.INITED) then
-			local var_8_5 = arg_8_0.shrineSelectBuffView
-
-			var_1.Destroy(var_8_5)
-
-			goto label_8_0
-		end
-	end
-
-	if arg_8_0.shrineShipWordView then
-		local var_8_6 = arg_8_0.shrineShipWordView
-		local var_8_7 = var_1.CheckState
-
-		BaseSubView = var_1_10004
-
-		if var_8_7(var_8_6, var_1_10004.STATES.INITED) then
-			local var_8_8 = arg_8_0.shrineShipWordView
-
-			var_1.Destroy(var_8_8)
-		end
-	end
-
-	::label_8_0::
 
 	arg_8_0:cleanManagedTween()
 
 	return
 end
 
-function var_0_1.setUIData(arg_9_0)
-	local var_9_0 = arg_9_0._tf
-	local var_9_1 = var_1.Find(var_9_0, "Res")
-
-	getImageSprite = var_1_10002
-
-	local var_9_2 = var_1_10002(var_9_1:Find("CurBuff1"))
-
-	getImageSprite = var_9_0
-
-	local var_9_3 = var_9_0(var_9_1:Find("CurBuff2"))
-
-	getImageSprite = var_4
-
-	local var_9_4 = var_4(var_9_1:Find("CurBuff3"))
+function var_0_0.setUIData(arg_9_0)
+	local var_9_0 = arg_9_0._tf:Find("Res")
 
 	arg_9_0.curBuffSpriteList = {
-		var_9_2,
-		var_9_3,
-		var_9_4
+		getImageSprite(var_9_0:Find("CurBuff1")),
+		getImageSprite(var_9_0:Find("CurBuff2")),
+		(getImageSprite(var_9_0:Find("CurBuff3")))
 	}
 	arg_9_0.shipCardSpriteList = {}
 
 	for iter_9_0 = 1, 7 do
-		local var_9_5 = "shipcard_" .. iter_9_0
-		local var_9_6 = "Shrine2022/" .. var_9_5
-
-		LoadSprite = var_11
-
-		local var_9_7 = var_11(var_9_6, var_9_5)
-
-		table = var_1_10012
-
-		var_1_10012.insert(arg_9_0.shipCardSpriteList, var_9_7)
+		table.insert(arg_9_0.shipCardSpriteList, (LoadSprite("Shrine2022/" .. "shipcard_" .. iter_9_0, "shipcard_" .. iter_9_0)))
 	end
 
 	arg_9_0.curBuffPosStart = 160
@@ -291,26 +138,17 @@ function var_0_1.setUIData(arg_9_0)
 	return
 end
 
-function var_0_1.updateShipCardUI(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0 = arg_10_0.shipCardSpriteList[arg_10_2]
-
-	setImageSprite = var_1_10004
-
-	var_1_10004(arg_10_1, var_10_0, true)
+function var_0_0.updateShipCardUI(arg_10_0, arg_10_1, arg_10_2)
+	setImageSprite(arg_10_1, arg_10_0.shipCardSpriteList[arg_10_2], true)
 
 	return
 end
 
-function var_0_1.initData(arg_11_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-	arg_11_0.playerProxy = var_1_10001(var_1_10003)
-	getProxy = var_1
-	MiniGameProxy = var_1_10003
-	arg_11_0.miniGameProxy = var_1(var_1_10003)
+function var_0_0.initData(arg_11_0)
+	arg_11_0.playerProxy = getProxy(PlayerProxy)
+	arg_11_0.miniGameProxy = getProxy(MiniGameProxy)
 	arg_11_0.commanderGameID = arg_11_0.contextData.miniGameId
-	pg = var_1
-	arg_11_0.shipGameID = var_1.mini_game[arg_11_0.commanderGameID].simple_config_data.shipGameID
+	arg_11_0.shipGameID = pg.mini_game[arg_11_0.commanderGameID].simple_config_data.shipGameID
 	arg_11_0.cardPosList = {
 		{
 			x = -447,
@@ -344,13 +182,7 @@ function var_0_1.initData(arg_11_0)
 
 	if not arg_11_0:isInitedShipGameData() then
 		arg_11_0:PrintLog("请求舰娘游戏数据", arg_11_0.shipGameID)
-
-		local var_11_0 = arg_11_0
-		local var_11_1 = arg_11_0.SendOperator
-
-		MiniGameOPCommand = var_4
-
-		var_11_1(var_11_0, var_4.CMD_SPECIAL_GAME, {
+		arg_11_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 			arg_11_0.shipGameID,
 			1
 		})
@@ -358,13 +190,7 @@ function var_0_1.initData(arg_11_0)
 
 	if not arg_11_0:isInitedCommanderGameData() then
 		arg_11_0:PrintLog("请求指挥官游戏数据", arg_11_0.commanderGameID)
-
-		local var_11_2 = arg_11_0
-		local var_11_3 = arg_11_0.SendOperator
-
-		MiniGameOPCommand = var_4
-
-		var_11_3(var_11_2, var_4.CMD_SPECIAL_GAME, {
+		arg_11_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 			arg_11_0.commanderGameID,
 			1
 		})
@@ -373,117 +199,55 @@ function var_0_1.initData(arg_11_0)
 	return
 end
 
-function var_0_1.findUI(arg_12_0)
-	local var_12_0 = arg_12_0._tf
-	local var_12_1 = var_1.Find(var_12_0, "Adapt")
+function var_0_0.findUI(arg_12_0)
+	local var_12_0 = arg_12_0._tf:Find("Adapt")
 
-	arg_12_0.tipGoldTF = var_1.Find(var_12_1, "TipGold")
-	arg_12_0.backBtn = var_1:Find("BackBtn")
-	arg_12_0.helpBtn = var_1:Find("HelpBtn")
+	arg_12_0.tipGoldTF = var_12_0:Find("TipGold")
+	arg_12_0.backBtn = var_12_0:Find("BackBtn")
+	arg_12_0.helpBtn = var_12_0:Find("HelpBtn")
 
-	local var_12_2 = arg_12_0._tf
-	local var_12_3 = var_2.Find(var_12_2, "Data")
+	local var_12_1 = arg_12_0._tf:Find("Data")
 
-	arg_12_0.countText = var_2.Find(var_12_3, "Count")
-	arg_12_0.goldText = var_2:Find("Gold")
-	arg_12_0.countText2 = var_2:Find("Count2")
-
-	local var_12_4 = arg_12_0._tf
-
-	arg_12_0.cardTpl = var_3.Find(var_12_4, "CardTpl")
-
-	local var_12_5 = arg_12_0._tf
-
-	arg_12_0.cardContainer = var_3.Find(var_12_5, "CardContainer")
-	UIItemList = var_3
-	arg_12_0.cardUIItemList = var_3.New(arg_12_0.cardContainer, arg_12_0.cardTpl)
-
-	local var_12_6 = arg_12_0._tf
-
-	arg_12_0.selectBuffBtn = var_3.Find(var_12_6, "Decorate/String/SelectBuffBtn")
-
-	local var_12_7 = arg_12_0._tf
-
-	arg_12_0.selectBuffLight = var_3.Find(var_12_7, "Decorate/String/SelectBuffLight")
-
-	local var_12_8 = arg_12_0._tf
-
-	arg_12_0.curBuffTF = var_3.Find(var_12_8, "Decorate/String/SelectBuffBtn/CurBuff")
-
-	local var_12_9 = arg_12_0.curBuffTF
-
-	arg_12_0.curBuffImg = var_3.Find(var_12_9, "BuffImg")
+	arg_12_0.countText = var_12_1:Find("Count")
+	arg_12_0.goldText = var_12_1:Find("Gold")
+	arg_12_0.countText2 = var_12_1:Find("Count2")
+	arg_12_0.cardTpl = arg_12_0._tf:Find("CardTpl")
+	arg_12_0.cardContainer = arg_12_0._tf:Find("CardContainer")
+	arg_12_0.cardUIItemList = UIItemList.New(arg_12_0.cardContainer, arg_12_0.cardTpl)
+	arg_12_0.selectBuffBtn = arg_12_0._tf:Find("Decorate/String/SelectBuffBtn")
+	arg_12_0.selectBuffLight = arg_12_0._tf:Find("Decorate/String/SelectBuffLight")
+	arg_12_0.curBuffTF = arg_12_0._tf:Find("Decorate/String/SelectBuffBtn/CurBuff")
+	arg_12_0.curBuffImg = arg_12_0.curBuffTF:Find("BuffImg")
 
 	arg_12_0:setUIData()
 
 	return
 end
 
-function var_0_1.addListener(arg_13_0)
-	onButton = var_1_10001
-
-	local var_13_0 = arg_13_0
-	local var_13_1 = arg_13_0.backBtn
-
-	local function var_13_2()
-		local var_14_0 = arg_13_0
-
-		var_0.onBackPressed(var_14_0)
+function var_0_0.addListener(arg_13_0)
+	onButton(arg_13_0, arg_13_0.backBtn, function()
+		arg_13_0:onBackPressed()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1_10001(var_13_0, var_13_1, var_13_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_13_3 = arg_13_0
-	local var_13_4 = arg_13_0.helpBtn
-
-	local function var_13_5()
-		pg = var_2_10000
-
-		local var_15_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_15_1 = var_0.ShowMsgBox
-		local var_15_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_15_2.type = var_2_10004
-		pg = var_2_10004
-		var_15_2.helps = var_2_10004.gametip.Pray_activity_tips1.tip
-
-		var_15_1(var_15_0, var_15_2)
+	end, SFX_CANCEL)
+	onButton(arg_13_0, arg_13_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.Pray_activity_tips1.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_13_3, var_13_4, var_13_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_13_6 = arg_13_0
-	local var_13_7 = arg_13_0.selectBuffBtn
-
-	local function var_13_8()
-		local var_16_0 = arg_13_0
-
-		var_0.openSelectBuffView(var_16_0)
+	end, SFX_PANEL)
+	onButton(arg_13_0, arg_13_0.selectBuffBtn, function()
+		arg_13_0:openSelectBuffView()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_13_6, var_13_7, var_13_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updateDataView(arg_17_0)
+function var_0_0.updateDataView(arg_17_0)
 	if not arg_17_0:isInitedCommanderGameData() then
 		arg_17_0:PrintLog("无指挥官数据,返回")
 
@@ -492,37 +256,22 @@ function var_0_1.updateDataView(arg_17_0)
 
 	arg_17_0:PrintLog("刷新指挥官次数与金币")
 
-	local var_17_0 = arg_17_0:GetMGData()
-	local var_17_1 = var_1.GetRuntimeData(var_17_0, "count")
+	local var_17_0 = arg_17_0:GetMGData():GetRuntimeData("count")
 
-	setText = var_1_10002
+	setText(arg_17_0.countText, var_17_0)
+	setText(arg_17_0.countText2, (arg_17_0:getShipGameData():GetRuntimeData("count")))
+	setText(arg_17_0.goldText, arg_17_0.playerProxy:getData().gold)
 
-	var_1_10002(arg_17_0.countText, var_17_1)
+	local var_17_1 = arg_17_0:isHaveCommanderBuff()
 
-	local var_17_2 = arg_17_0:getShipGameData()
-	local var_17_3 = var_2.GetRuntimeData(var_17_2, "count")
-
-	setText = var_17_0
-
-	var_17_0(arg_17_0.countText2, var_17_3)
-
-	local var_17_4 = arg_17_0.playerProxy
-	local var_17_5 = var_3.getData(var_17_4).gold
-
-	setText = var_17_4
-
-	var_17_4(arg_17_0.goldText, var_17_5)
-
-	local var_17_6 = arg_17_0:isHaveCommanderBuff()
-
-	setActive = var_6
-
-	var_6(arg_17_0.selectBuffLight, var_17_1 > 0 and not var_17_6)
+	setActive(arg_17_0.selectBuffLight, var_17_0 > 0 and not var_17_1)
 
 	return
 end
 
-function var_0_1.updateCardList(arg_18_0)
+function var_0_0.updateCardList(arg_18_0)
+	local var_18_9000
+
 	if not arg_18_0:isInitedShipGameData() then
 		arg_18_0:PrintLog("无舰娘数据,返回")
 
@@ -533,117 +282,62 @@ function var_0_1.updateCardList(arg_18_0)
 
 	arg_18_0.cardTFList = {}
 
-	local var_18_0 = arg_18_0.cardUIItemList
-
-	var_1.make(var_18_0, function(arg_19_0, arg_19_1, arg_19_2)
-		UIItemList = var_2_10003
-
-		if arg_19_0 == var_2_10003.EventUpdate then
+	arg_18_0.cardUIItemList:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
 			local var_19_0 = arg_19_1 + 1
 
-			arg_18_0.cardTFList[var_19_0] = arg_19_2
+			arg_18_0.cardTFList[arg_19_1 + 1] = arg_19_2
 
-			local var_19_1 = arg_18_0
-
-			var_4.updateCardImg(var_19_1, var_19_0)
-
-			setLocalPosition = var_4
-
-			var_4(arg_19_2, arg_18_0.cardPosList[var_19_0])
-
-			local var_19_2 = arg_19_2
-			local var_19_3 = arg_19_2.Find(var_19_2, "Empty")
-
-			onButton = var_2_10005
-
-			local var_19_4 = arg_18_0
-			local var_19_5 = var_19_3
-
-			local function var_19_6()
-				local var_20_0 = arg_18_0
-
-				var_0.openSelectShipView(var_20_0, var_19_0)
+			arg_18_0:updateCardImg(arg_19_1 + 1)
+			setLocalPosition(arg_19_2, arg_18_0.cardPosList[arg_19_1 + 1])
+			onButton(arg_18_0, arg_19_2:Find("Empty"), function()
+				arg_18_0:openSelectShipView(var_19_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10010
-
-			var_2_10005(var_19_4, var_19_5, var_19_6, var_2_10010)
-
-			local var_19_7 = arg_19_2:Find("Ship")
-
-			onButton = var_19_2
-
-			local var_19_8 = arg_18_0
-			local var_19_9 = var_19_7
-
-			local function var_19_10()
-				local var_21_0 = arg_18_0
-				local var_21_1 = var_0.getSelectedShipByCardIndex(var_21_0, var_19_0)
-				local var_21_2 = arg_18_0
-
-				var_1.openShipWordView(var_21_2, var_21_1)
+			end, SFX_PANEL)
+			onButton(arg_18_0, arg_19_2:Find("Ship"), function()
+				arg_18_0:openShipWordView((arg_18_0:getSelectedShipByCardIndex(var_19_0)))
 
 				return
-			end
-
-			SFX_PANEL = var_2_10011
-
-			var_19_2(var_19_8, var_19_9, var_19_10, var_2_10011)
+			end, SFX_PANEL)
 		end
 
 		return
 	end)
 
-	local var_18_1 = arg_18_0:getShipGameData()
-	local var_18_2 = var_1.GetRuntimeData(var_18_1, "count")
-	local var_18_3 = arg_18_0:getSelectedShipCount()
-	local var_18_4 = arg_18_0:getShipGameData()
-	local var_18_5 = #var_3.getConfig(var_18_4, "config_data")[2] < var_18_2 + var_18_3 and var_3 or var_18_2 + var_18_3
+	local var_18_0 = arg_18_0:getShipGameData().GetRuntimeData(var_18_9000, "count")
+	local var_18_1 = arg_18_0:getSelectedShipCount()
+	local var_18_2 = #arg_18_0:getShipGameData():getConfig("config_data")[2]
+	local var_18_3 = var_18_2 < var_18_0 + var_18_1 and var_18_2 or var_18_0 + var_18_1
 
-	arg_18_0:PrintLog("舰娘次数相关", var_18_2, var_18_3, var_18_5)
-
-	local var_18_6 = arg_18_0.cardUIItemList
-
-	var_5.align(var_18_6, var_18_5)
+	arg_18_0:PrintLog("舰娘次数相关", var_18_0, var_18_1, var_18_2 < var_18_0 + var_18_1 and var_18_2 or var_18_0 + var_18_1)
+	arg_18_0.cardUIItemList:align(var_18_3)
 
 	return
 end
 
-function var_0_1.updateCardImg(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0.cardTFList[arg_22_1]
-	local var_22_1 = var_2.Find(var_22_0, "Empty")
-	local var_22_2 = var_2:Find("Ship")
-	local var_22_3 = arg_22_0:getSelectedShipByCardIndex(arg_22_1)
+function var_0_0.updateCardImg(arg_22_0, arg_22_1)
+	local var_22_0 = arg_22_0.cardTFList[arg_22_1]:Find("Empty")
+	local var_22_1 = arg_22_0.cardTFList[arg_22_1]:Find("Ship")
+	local var_22_2 = arg_22_0:getSelectedShipByCardIndex(arg_22_1)
 
-	if 0 < var_22_3 then
-		arg_22_0:updateShipCardUI(var_22_2, var_22_3)
+	if var_22_2 > 0 then
+		arg_22_0:updateShipCardUI(var_22_1, var_22_2)
 	end
 
-	setActive = var_6
-
-	var_6(var_22_1, var_22_3 == 0)
-
-	setActive = var_6
-
-	var_6(var_22_2, var_22_3 > 0)
+	setActive(var_22_0, var_22_2 == 0)
+	setActive(var_22_1, var_22_2 > 0)
 
 	return
 end
 
-function var_0_1.updateCardSelecting(arg_23_0, arg_23_1, arg_23_2)
-	local var_23_0 = arg_23_0.cardTFList[arg_23_1]
-	local var_23_1 = var_3.Find(var_23_0, "Selecting")
-
-	setActive = var_1_10005
-
-	var_1_10005(var_23_1, arg_23_2)
+function var_0_0.updateCardSelecting(arg_23_0, arg_23_1, arg_23_2)
+	setActive(arg_23_0.cardTFList[arg_23_1]:Find("Selecting"), arg_23_2)
 
 	return
 end
 
-function var_0_1.updateCardBuffTag(arg_24_0)
+function var_0_0.updateCardBuffTag(arg_24_0)
 	if not arg_24_0:isInitedShipGameData() then
 		arg_24_0:PrintLog("无舰娘数据,返回")
 
@@ -652,45 +346,25 @@ function var_0_1.updateCardBuffTag(arg_24_0)
 
 	arg_24_0:PrintLog("刷新舰娘BuffTtag")
 
-	ipairs = var_1
-
-	for iter_24_0, iter_24_1 in var_1(arg_24_0.cardTFList) do
-		local var_24_0 = iter_24_1:Find("Ship/Buff")
-
-		setActive = var_1_10007
-
-		var_1_10007(var_24_0, false)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.cardTFList) do
+		setActive(iter_24_1:Find("Ship/Buff"), false)
 	end
 
-	local var_24_1 = arg_24_0.playerProxy
-	local var_24_2 = var_1.getData(var_24_1).buff_list
-	local var_24_3 = arg_24_0:getShipGameData()
-	local var_24_4 = var_3.getConfig(var_24_3, "config_data")[2]
-	local var_24_5
+	local var_24_0 = arg_24_0:getShipGameData():getConfig("config_data")[2]
 
-	ipairs = var_24_3
+	for iter_24_2, iter_24_3 in ipairs(arg_24_0.playerProxy:getData().buff_list) do
+		local var_24_2 = table.indexof(var_24_0, iter_24_3.id, 1)
 
-	for iter_24_2, iter_24_3 in var_24_3(var_24_2) do
-		table = var_1_10010
+		if var_24_2 then
+			local var_24_3 = pg.TimeMgr.GetInstance()
 
-		if var_1_10010.indexof(var_24_4, iter_24_3.id, 1) then
-			pg = var_1_10010
+			if var_24_3:GetServerTime() < iter_24_3.timestamp then
+				local var_24_4 = arg_24_0.cardTFList[arg_24_0:getCardIndexByShip(var_24_2)]
 
-			local var_24_6 = var_1_10010.TimeMgr.GetInstance()
-
-			if var_1_10010.GetServerTime(var_24_6) < iter_24_3.timestamp then
-				local var_24_7 = arg_24_0:getCardIndexByShip(var_4)
-				local var_24_8 = arg_24_0.cardTFList[var_24_7]
-				local var_24_9 = var_13.Find(var_24_8, "Ship/Buff")
-
-				setActive = var_15
-
-				var_15(var_24_9, true)
+				setActive(var_24_4:Find("Ship/Buff"), true)
 
 				break
 			end
-
-			local var_24_10
 
 			break
 		end
@@ -699,7 +373,7 @@ function var_0_1.updateCardBuffTag(arg_24_0)
 	return
 end
 
-function var_0_1.updateCommanderBuff(arg_25_0, arg_25_1)
+function var_0_0.updateCommanderBuff(arg_25_0, arg_25_1)
 	if not arg_25_0:isInitedCommanderGameData() then
 		arg_25_0:PrintLog("无指挥官数据,返回")
 
@@ -708,84 +382,41 @@ function var_0_1.updateCommanderBuff(arg_25_0, arg_25_1)
 
 	arg_25_0:PrintLog("刷新指挥官Buff")
 
-	local var_25_0 = arg_25_0.playerProxy
-	local var_25_1 = var_2.getData(var_25_0).buff_list
-	local var_25_2 = arg_25_0:GetMGData()
-	local var_25_3 = var_4.getConfig(var_25_2, "config_data")[2]
-	local var_25_4
+	local var_25_0 = arg_25_0:GetMGData():getConfig("config_data")[2]
+	local var_25_1
 
-	ipairs = var_25_2
+	for iter_25_0, iter_25_1 in ipairs(arg_25_0.playerProxy:getData().buff_list) do
+		var_25_1 = table.indexof(var_25_0, iter_25_1.id, 1)
 
-	for iter_25_0, iter_25_1 in var_25_2(var_25_1) do
-		table = var_1_10011
+		if var_25_1 then
+			local var_25_2 = pg.TimeMgr.GetInstance()
 
-		if var_1_10011.indexof(var_25_3, iter_25_1.id, 1) then
-			pg = var_1_10011
-
-			local var_25_5 = var_1_10011.TimeMgr.GetInstance()
-
-			if var_1_10011.GetServerTime(var_25_5) < iter_25_1.timestamp then
-				setImageSprite = var_25_5
-
-				var_25_5(arg_25_0.curBuffImg, arg_25_0.curBuffSpriteList[var_25_4])
-
-				setActive = var_25_5
-
-				var_25_5(arg_25_0.curBuffTF, true)
+			if var_25_2:GetServerTime() < iter_25_1.timestamp then
+				setImageSprite(arg_25_0.curBuffImg, arg_25_0.curBuffSpriteList[var_25_1])
+				setActive(arg_25_0.curBuffTF, true)
 
 				break
 			end
 
-			var_25_4 = nil
+			var_25_1 = nil
 
 			break
 		end
 	end
 
-	if not var_25_4 then
-		setActive = var_6
-
-		var_6(arg_25_0.curBuffTF, false)
+	if not var_25_1 then
+		setActive(arg_25_0.curBuffTF, false)
 	elseif arg_25_1 then
-		local var_25_6 = arg_25_0.curBuffPosStart
-		local var_25_7 = arg_25_0.curBuffPosEnd
-		local var_25_8 = 0.5
-		local var_25_9 = {}
+		local var_25_3 = arg_25_0.curBuffPosEnd
 
-		rtf = iter_25_1
-		var_25_9.x = iter_25_1(arg_25_0.curBuffTF).localPosition.x
-		var_25_9.y = var_25_6
-		setLocalPosition = var_10
+		setLocalPosition(arg_25_0.curBuffTF, {
+			x = rtf(arg_25_0.curBuffTF).localPosition.x,
+			y = arg_25_0.curBuffPosStart
+		})
+		arg_25_0:managedTween(LeanTween.value, nil, go(arg_25_0.curBuffTF), 0, 1, 0.5):setEase(LeanTweenType.easeOutBack):setOnUpdate(System.Action_float(function(arg_26_0)
+			var_0.y = var_0 + (var_25_3 - var_0) * arg_26_0
 
-		var_10(arg_25_0.curBuffTF, var_25_9)
-
-		local var_25_10 = arg_25_0
-		local var_25_11 = arg_25_0.managedTween
-
-		LeanTween = var_13
-
-		local var_25_12 = var_13.value
-		local var_25_13
-
-		go = var_1_10015
-
-		local var_25_14 = var_25_11(var_25_10, var_25_12, var_25_13, var_1_10015(arg_25_0.curBuffTF), 0, 1, var_25_8)
-		local var_25_15 = var_10.setEase
-
-		LeanTweenType = var_25_12
-
-		local var_25_16 = var_25_15(var_25_14, var_25_12.easeOutBack)
-		local var_25_17 = var_10.setOnUpdate
-
-		System = var_13
-
-		var_25_17(var_25_16, var_13.Action_float(function(arg_26_0)
-			local var_26_0
-
-			var_26_0.y, var_26_0 = var_25_6 + (var_25_7 - var_25_6) * arg_26_0, var_25_9
-			setAnchoredPosition = var_26_0
-
-			var_26_0(arg_25_0.curBuffTF, var_25_9)
+			setAnchoredPosition(arg_25_0.curBuffTF, var_0)
 
 			return
 		end))
@@ -794,97 +425,49 @@ function var_0_1.updateCommanderBuff(arg_25_0, arg_25_1)
 	return
 end
 
-function var_0_1.openSelectShipView(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_0.playerProxy
-	local var_27_1 = var_2.getData(var_27_0)
-	local var_27_2 = arg_27_0:getShipGameData()
-
-	if var_3.getConfig(var_27_2, "config_data")[1] > var_27_1.gold then
-		pg = var_27_2
-
-		local var_27_3 = var_27_2.TipsMgr.GetInstance()
-		local var_27_4 = var_5.ShowTips
-
-		i18n = var_1_10008
-
-		var_27_4(var_27_3, var_1_10008("common_no_resource"))
+function var_0_0.openSelectShipView(arg_27_0, arg_27_1)
+	if arg_27_0:getShipGameData():getConfig("config_data")[1] > arg_27_0.playerProxy:getData().gold then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
 	arg_27_0:updateCardSelecting(arg_27_1, true)
+	setActive(arg_27_0.tipGoldTF, false)
 
-	setActive = var_5
-
-	var_5(arg_27_0.tipGoldTF, false)
-
-	local var_27_5 = {
+	arg_27_0.shrineSelectShipView = arg_27_0.SHRINE_SELECT_SHIP_VIEW_CLS.New(arg_27_0._tf.parent, arg_27_0.event, {
 		shipGameID = arg_27_0.shipGameID,
 		selectingCardIndex = arg_27_1,
 		onClose = function()
-			local var_28_0 = arg_27_0
-
-			var_0.updateCardSelecting(var_28_0, arg_27_1, false)
-
-			setActive = var_0
-
-			var_0(arg_27_0.tipGoldTF, true)
-
-			local var_28_1 = arg_27_0.cardTFList[arg_27_1]
-			local var_28_2 = var_0.Find(var_28_1, "Empty")
-			local var_28_3 = var_0:Find("Ship")
-
-			setActive = var_28_1
-
-			var_28_1(var_28_2, true)
-
-			setActive = var_28_1
-
-			var_28_1(var_28_3, false)
+			arg_27_0:updateCardSelecting(arg_27_1, false)
+			setActive(arg_27_0.tipGoldTF, true)
+			setActive(arg_27_0.cardTFList[arg_27_1]:Find("Empty"), true)
+			setActive(arg_27_0.cardTFList[arg_27_1]:Find("Ship"), false)
 
 			return
 		end,
 		onSelect = function(arg_29_0)
-			local var_29_0 = arg_27_0.cardTFList[arg_27_1]
-			local var_29_1 = var_1.Find(var_29_0, "Empty")
-			local var_29_2 = var_1:Find("Ship")
-			local var_29_3 = arg_27_0
+			local var_29_0 = arg_27_0.cardTFList[arg_27_1]:Find("Ship")
 
-			var_4.updateShipCardUI(var_29_3, var_29_2, arg_29_0)
-
-			setActive = var_4
-
-			var_4(var_29_1, false)
-
-			setActive = var_4
-
-			var_4(var_29_2, true)
+			arg_27_0:updateShipCardUI(var_29_0, arg_29_0)
+			setActive(arg_27_0.cardTFList[arg_27_1]:Find("Empty"), false)
+			setActive(var_29_0, true)
 
 			return
 		end,
 		onConfirm = function(arg_30_0)
-			local var_30_0 = arg_27_0
-			local var_30_1 = var_1.getShipGameData(var_30_0)
+			local var_30_0 = arg_27_0:getShipGameData()
 
-			if var_1.GetRuntimeData(var_30_1, "count") <= 0 then
-				local var_30_2 = arg_27_0
-
-				var_2.PrintLog(var_30_2, "Error, count <= 0")
+			if var_30_0:GetRuntimeData("count") <= 0 then
+				arg_27_0:PrintLog("Error, count <= 0")
 			else
-				local var_30_3 = var_1:getConfig("config_data")[2][arg_30_0]
-				local var_30_4 = arg_27_0
+				local var_30_1 = var_30_0:getConfig("config_data")[2][arg_30_0]
 
-				var_3.PrintLog(var_30_4, "发送选船操作", arg_27_0.shipGameID, 2, var_30_3, arg_27_1, arg_30_0)
-
-				local var_30_5 = arg_27_0
-				local var_30_6 = var_3.SendOperator
-
-				MiniGameOPCommand = var_6
-
-				var_30_6(var_30_5, var_6.CMD_SPECIAL_GAME, {
+				arg_27_0:PrintLog("发送选船操作", arg_27_0.shipGameID, 2, var_30_1, arg_27_1, arg_30_0)
+				arg_27_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 					arg_27_0.shipGameID,
 					2,
-					var_30_3,
+					var_30_1,
 					arg_27_1,
 					arg_30_0
 				})
@@ -892,164 +475,99 @@ function var_0_1.openSelectShipView(arg_27_0, arg_27_1)
 
 			return
 		end
-	}
+	})
 
-	arg_27_0.shrineSelectShipView = arg_27_0.SHRINE_SELECT_SHIP_VIEW_CLS.New(arg_27_0._tf.parent, arg_27_0.event, var_27_5)
-
-	local var_27_6 = arg_27_0.shrineSelectShipView
-
-	var_6.Reset(var_27_6)
-
-	local var_27_7 = arg_27_0.shrineSelectShipView
-
-	var_6.Load(var_27_7)
+	arg_27_0.shrineSelectShipView:Reset()
+	arg_27_0.shrineSelectShipView:Load()
 
 	return
 end
 
-function var_0_1.openSelectBuffView(arg_31_0)
-	local var_31_0 = arg_31_0.playerProxy
-	local var_31_1 = var_1.getData(var_31_0)
-	local var_31_2 = arg_31_0:GetMGData()
-
-	if var_2.getConfig(var_31_2, "config_data")[1] > var_31_1.gold then
-		pg = var_31_2
-
-		local var_31_3 = var_31_2.TipsMgr.GetInstance()
-		local var_31_4 = var_4.ShowTips
-
-		i18n = var_1_10007
-
-		var_31_4(var_31_3, var_1_10007("common_no_resource"))
+function var_0_0.openSelectBuffView(arg_31_0)
+	if arg_31_0:GetMGData():getConfig("config_data")[1] > arg_31_0.playerProxy:getData().gold then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 		return
 	end
 
-	local var_31_5 = arg_31_0:GetMGData()
+	local var_31_0 = arg_31_0:GetMGData()
 
-	if var_4.GetRuntimeData(var_31_5, "count") <= 0 then
-		pg = var_4
-
-		local var_31_6 = var_4.TipsMgr.GetInstance()
-		local var_31_7 = var_4.ShowTips
-
-		i18n = var_7
-
-		var_31_7(var_31_6, var_7("pray_cant_tips"))
+	if var_31_0:GetRuntimeData("count") <= 0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("pray_cant_tips"))
 
 		return
 	end
 
-	local var_31_8 = {
+	arg_31_0.shrineSelectBuffView = arg_31_0.SHRINE_SELECT_BUFF_VIEW_CLS.New(arg_31_0._tf.parent, arg_31_0.event, {
 		onClose = function()
 			return
 		end,
 		onSelect = function(arg_33_0)
-			local var_33_0 = arg_31_0
-			local var_33_1 = var_1.GetMGData(var_33_0)
+			local var_33_0 = arg_31_0:GetMGData()
 
-			if var_1.GetRuntimeData(var_33_1, "count") <= 0 then
-				local var_33_2 = arg_31_0
-
-				var_2.PrintLog(var_33_2, "Error, count <= 0")
+			if var_33_0:GetRuntimeData("count") <= 0 then
+				arg_31_0:PrintLog("Error, count <= 0")
 			else
-				local var_33_3 = var_1:getConfig("config_data")[2][arg_33_0]
-				local var_33_4 = arg_31_0
+				local var_33_1 = var_33_0:getConfig("config_data")[2][arg_33_0]
 
-				var_3.PrintLog(var_33_4, "发送选Buff操作", arg_31_0.commanderGameID, 2, var_33_3)
-
-				local var_33_5 = arg_31_0
-				local var_33_6 = var_3.SendOperator
-
-				MiniGameOPCommand = var_6
-
-				var_33_6(var_33_5, var_6.CMD_SPECIAL_GAME, {
+				arg_31_0:PrintLog("发送选Buff操作", arg_31_0.commanderGameID, 2, var_33_1)
+				arg_31_0:SendOperator(MiniGameOPCommand.CMD_SPECIAL_GAME, {
 					arg_31_0.commanderGameID,
 					2,
-					var_33_3
+					var_33_1
 				})
 			end
 
 			return
 		end
-	}
+	})
 
-	arg_31_0.shrineSelectBuffView = arg_31_0.SHRINE_SELECT_BUFF_VIEW_CLS.New(arg_31_0._tf.parent, arg_31_0.event, var_31_8)
-
-	local var_31_9 = arg_31_0.shrineSelectBuffView
-
-	var_5.Reset(var_31_9)
-
-	local var_31_10 = arg_31_0.shrineSelectBuffView
-
-	var_5.Load(var_31_10)
+	arg_31_0.shrineSelectBuffView:Reset()
+	arg_31_0.shrineSelectBuffView:Load()
 
 	return
 end
 
-function var_0_1.openShipWordView(arg_34_0, arg_34_1)
-	local var_34_0 = {
+function var_0_0.openShipWordView(arg_34_0, arg_34_1)
+	arg_34_0.shrineShipWordView = arg_34_0.SHRINE_SHIP_WORD_VIEW_CLS.New(arg_34_0._tf, arg_34_0.event, {
 		curSelectShip = arg_34_1
-	}
+	})
 
-	arg_34_0.shrineShipWordView = arg_34_0.SHRINE_SHIP_WORD_VIEW_CLS.New(arg_34_0._tf, arg_34_0.event, var_34_0)
-
-	local var_34_1 = arg_34_0.shrineShipWordView
-
-	var_3.Reset(var_34_1)
-
-	local var_34_2 = arg_34_0.shrineShipWordView
-
-	var_3.Load(var_34_2)
+	arg_34_0.shrineShipWordView:Reset()
+	arg_34_0.shrineShipWordView:Load()
 
 	return
 end
 
-function var_0_1.openFakeDrop(arg_35_0, arg_35_1)
-	local var_35_0 = arg_35_0:getShipGameData()
-	local var_35_1 = var_2.getConfig(var_35_0, "simple_config_data")
-	local var_35_2 = {
-		type = var_35_1[1],
-		id = var_35_1[2],
-		count = var_35_1[3]
-	}
+function var_0_0.openFakeDrop(arg_35_0, arg_35_1)
+	local var_35_0 = arg_35_0:getShipGameData():getConfig("simple_config_data")
 
-	LoadContextCommand = var_4
+	LoadContextCommand.LoadLayerOnTopContext(Context.New({
+		mediator = AwardInfoMediator,
+		viewComponent = AwardInfoLayer,
+		data = {
+			items = {
+				{
+					type = var_35_0[1],
+					id = var_35_0[2],
+					count = var_35_0[3]
+				}
+			}
+		},
+		onRemoved = function()
+			if arg_35_1 then
+				arg_35_1()
+			end
 
-	local var_35_3 = var_4.LoadLayerOnTopContext
-
-	Context = var_1_10006
-
-	local var_35_4 = var_1_10006.New
-	local var_35_5 = {}
-
-	AwardInfoMediator = var_1_10009
-	var_35_5.mediator = var_1_10009
-	AwardInfoLayer = var_1_10009
-	var_35_5.viewComponent = var_1_10009
-	var_35_5.data = {
-		items = {
-			var_35_2
-		}
-	}
-
-	function var_35_5.onRemoved()
-		if arg_35_1 then
-			arg_35_1()
+			return
 		end
-
-		return
-	end
-
-	var_35_3(var_35_4(var_35_5))
+	}))
 
 	return
 end
 
-function var_0_1.isInitedCommanderGameData(arg_37_0)
-	local var_37_0 = arg_37_0:GetMGData()
-
-	if not var_1.GetRuntimeData(var_37_0, "isInited") then
+function var_0_0.isInitedCommanderGameData(arg_37_0)
+	if not arg_37_0:GetMGData():GetRuntimeData("isInited") then
 		return false
 	else
 		return true
@@ -1058,10 +576,8 @@ function var_0_1.isInitedCommanderGameData(arg_37_0)
 	return
 end
 
-function var_0_1.isInitedShipGameData(arg_38_0)
-	local var_38_0 = arg_38_0:getShipGameData()
-
-	if not var_1.GetRuntimeData(var_38_0, "isInited") then
+function var_0_0.isInitedShipGameData(arg_38_0)
+	if not arg_38_0:getShipGameData():GetRuntimeData("isInited") then
 		return false
 	else
 		return true
@@ -1070,41 +586,29 @@ function var_0_1.isInitedShipGameData(arg_38_0)
 	return
 end
 
-function var_0_1.isHaveCommanderBuff(arg_39_0)
-	local var_39_0 = arg_39_0.playerProxy
-	local var_39_1 = var_1.getData(var_39_0).buff_list
-	local var_39_2 = arg_39_0:GetMGData()
-	local var_39_3 = var_3.getConfig(var_39_2, "config_data")[2]
-	local var_39_4
+function var_0_0.isHaveCommanderBuff(arg_39_0)
+	local var_39_0 = arg_39_0:GetMGData():getConfig("config_data")[2]
+	local var_39_1
 
-	ipairs = var_39_2
+	for iter_39_0, iter_39_1 in ipairs(arg_39_0.playerProxy:getData().buff_list) do
+		var_39_1 = table.indexof(var_39_0, iter_39_1.id, 1)
 
-	for iter_39_0, iter_39_1 in var_39_2(var_39_1) do
-		table = var_1_10010
+		if var_39_1 then
+			local var_39_2 = pg.TimeMgr.GetInstance()
 
-		if var_1_10010.indexof(var_39_3, iter_39_1.id, 1) then
-			pg = var_1_10010
-
-			local var_39_5 = var_1_10010.TimeMgr.GetInstance()
-
-			if var_1_10010.GetServerTime(var_39_5) < iter_39_1.timestamp then
-				return var_39_4
+			if var_39_2:GetServerTime() < iter_39_1.timestamp then
+				return var_39_1
 			else
 				return nil
 			end
 		end
 	end
 
-	return var_39_4
+	return var_39_1
 end
 
-function var_0_1.getSelectedShipByCardIndex(arg_40_0, arg_40_1)
-	local var_40_0 = arg_40_0:getShipGameData()
-	local var_40_1 = var_2.GetRuntimeData(var_40_0, "kvpElements")[1]
-
-	ipairs = var_1_10003
-
-	for iter_40_0, iter_40_1 in var_1_10003(var_40_1) do
+function var_0_0.getSelectedShipByCardIndex(arg_40_0, arg_40_1)
+	for iter_40_0, iter_40_1 in ipairs(arg_40_0:getShipGameData():GetRuntimeData("kvpElements")[1]) do
 		if iter_40_1.key == arg_40_1 then
 			return iter_40_1.value
 		end
@@ -1113,13 +617,8 @@ function var_0_1.getSelectedShipByCardIndex(arg_40_0, arg_40_1)
 	return 0
 end
 
-function var_0_1.getCardIndexByShip(arg_41_0, arg_41_1)
-	local var_41_0 = arg_41_0:getShipGameData()
-	local var_41_1 = var_2.GetRuntimeData(var_41_0, "kvpElements")[1]
-
-	ipairs = var_1_10003
-
-	for iter_41_0, iter_41_1 in var_1_10003(var_41_1) do
+function var_0_0.getCardIndexByShip(arg_41_0, arg_41_1)
+	for iter_41_0, iter_41_1 in ipairs(arg_41_0:getShipGameData():GetRuntimeData("kvpElements")[1]) do
 		if iter_41_1.value == arg_41_1 then
 			return iter_41_1.key
 		end
@@ -1128,87 +627,46 @@ function var_0_1.getCardIndexByShip(arg_41_0, arg_41_1)
 	return 0
 end
 
-function var_0_1.getSelectedShipCount(arg_42_0)
-	local var_42_0 = 0
-	local var_42_1 = arg_42_0:getShipGameData()
-
-	return #var_2.GetRuntimeData(var_42_1, "kvpElements")[1]
+function var_0_0.getSelectedShipCount(arg_42_0)
+	return #arg_42_0:getShipGameData():GetRuntimeData("kvpElements")[1]
 end
 
-function var_0_1.getShipGameData(arg_43_0)
-	local var_43_0 = arg_43_0.miniGameProxy
-
-	return var_1.GetMiniGameData(var_43_0, arg_43_0.shipGameID)
+function var_0_0.getShipGameData(arg_43_0)
+	return arg_43_0.miniGameProxy:GetMiniGameData(arg_43_0.shipGameID)
 end
 
-function var_0_1.PrintLog(arg_44_0, ...)
-	IsUnityEditor = var_1_10001
-
-	if var_1_10001 then
-		print = var_1_10001
-
-		var_1_10001(...)
+function var_0_0.PrintLog(arg_44_0, ...)
+	if IsUnityEditor then
+		print(...)
 	end
 
 	return
 end
 
-function var_0_1.IsNeedShowTipWithoutActivityFinalReward()
+function var_0_0.IsNeedShowTipWithoutActivityFinalReward()
 	local var_45_0 = false
+	local var_45_1 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3)
 
-	getProxy = var_1_10001
-	MiniGameProxy = var_1_10003
+	if var_45_1 then
+		local var_45_2 = var_45_1:GetRuntimeData("count") or 0
 
-	local var_45_1 = var_1_10001(var_1_10003)
-	local var_45_2 = var_1.GetMiniGameDataByType
-
-	MiniGameConst = var_1_10004
-
-	local var_45_3
-
-	if var_45_2(var_45_1, var_1_10004.MG_TYPE_3) then
-		var_45_3 = var_1
-
-		local var_45_4
-
-		if not var_1.GetRuntimeData(var_45_3, "count") then
-			var_45_4 = 0
-		end
-
-		var_45_0 = 0 < var_45_4
+		var_45_0 = var_45_2 > 0
 	end
 
-	local var_45_5
+	local var_45_3
+	local var_45_4 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_3)
 
-	getProxy = var_45_1
-	MiniGameProxy = var_1_10005
+	if var_45_4 then
+		local var_45_5 = var_45_4:getConfig("config_data")[2]
 
-	local var_45_6 = var_45_1(var_1_10005)
-	local var_45_7 = var_3.GetMiniGameDataByType
+		for iter_45_0, iter_45_1 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
+			var_45_3 = table.indexof(var_45_5, iter_45_1.id, 1)
 
-	MiniGameConst = var_1_10006
+			if var_45_3 then
+				local var_45_6 = pg.TimeMgr.GetInstance()
 
-	if var_45_7(var_45_6, var_1_10006.MG_TYPE_3) then
-		getProxy = var_45_3
-		PlayerProxy = var_6
-
-		local var_45_8 = var_45_3(var_6)
-		local var_45_9 = var_4.getData(var_45_8)
-
-		var_1_10007 = var_3
-		var_45_6 = var_3.getConfig(var_1_10007, "config_data")[2]
-		ipairs = var_45_8
-
-		for iter_45_0, iter_45_1 in var_45_8(var_45_9.buff_list) do
-			table = var_1_10011
-
-			if var_1_10011.indexof(var_45_6, iter_45_1.id, 1) then
-				pg = var_1_10011
-
-				local var_45_10 = var_1_10011.TimeMgr.GetInstance()
-
-				if var_1_10011.GetServerTime(var_45_10) > iter_45_1.timestamp then
-					var_45_5 = nil
+				if var_45_6:GetServerTime() > iter_45_1.timestamp then
+					var_45_3 = nil
 				end
 
 				break
@@ -1216,64 +674,33 @@ function var_0_1.IsNeedShowTipWithoutActivityFinalReward()
 		end
 	end
 
-	if var_45_5 then
+	if var_45_3 then
 		var_45_0 = false
 	end
 
-	local var_45_11 = false
+	local var_45_7 = false
+	local var_45_8 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
 
-	getProxy = var_45_6
-	MiniGameProxy = var_1_10007
+	if var_45_8 then
+		local var_45_9 = var_45_8:GetRuntimeData("count") or 0
 
-	local var_45_12 = var_45_6(var_1_10007)
-	local var_45_13 = var_5.GetMiniGameDataByType
-
-	MiniGameConst = var_1_10008
-
-	local var_45_14
-
-	if var_45_13(var_45_12, var_1_10008.MG_TYPE_5) then
-		var_45_14 = var_5
-
-		local var_45_15
-
-		if not var_5.GetRuntimeData(var_45_14, "count") then
-			var_45_15 = 0
-		end
-
-		var_45_11 = 0 < var_45_15
+		var_45_7 = var_45_9 > 0
 	end
 
-	local var_45_16
+	local var_45_10
+	local var_45_11 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
 
-	getProxy = var_45_12
-	MiniGameProxy = iter_45_0
+	if var_45_11 then
+		local var_45_12 = var_45_11:getConfig("config_data")[2]
 
-	local var_45_17 = var_45_12(iter_45_0)
-	local var_45_18 = var_7.GetMiniGameDataByType
+		for iter_45_2, iter_45_3 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
+			var_45_10 = table.indexof(var_45_12, iter_45_3.id, 1)
 
-	MiniGameConst = iter_45_1
+			if var_45_10 then
+				local var_45_13 = pg.TimeMgr.GetInstance()
 
-	if var_45_18(var_45_17, iter_45_1.MG_TYPE_5) then
-		getProxy = var_45_14
-		PlayerProxy = var_10
-
-		local var_45_19 = var_45_14(var_10)
-		local var_45_20 = var_8.getData(var_45_19)
-		local var_45_21 = var_7:getConfig("config_data")[2]
-
-		ipairs = var_45_19
-
-		for iter_45_2, iter_45_3 in var_45_19(var_45_20.buff_list) do
-			table = var_1_10015
-
-			if var_1_10015.indexof(var_45_21, iter_45_3.id, 1) then
-				pg = var_1_10015
-
-				local var_45_22 = var_1_10015.TimeMgr.GetInstance()
-
-				if var_1_10015.GetServerTime(var_45_22) > iter_45_3.timestamp then
-					var_45_16 = nil
+				if var_45_13:GetServerTime() > iter_45_3.timestamp then
+					var_45_10 = nil
 				end
 
 				break
@@ -1281,68 +708,37 @@ function var_0_1.IsNeedShowTipWithoutActivityFinalReward()
 		end
 	end
 
-	if var_45_16 then
-		var_45_11 = false
+	if var_45_10 then
+		var_45_7 = false
 	end
 
-	return var_45_0 or var_45_11
+	return var_45_0 or var_45_7
 end
 
-function var_0_1.IsNeedShowTipForShipCount()
+function var_0_0.IsNeedShowTipForShipCount()
 	local var_46_0 = false
+	local var_46_1 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
 
-	getProxy = var_1_10001
-	MiniGameProxy = var_1_10003
+	if var_46_1 then
+		local var_46_2 = var_46_1:GetRuntimeData("count") or 0
 
-	local var_46_1 = var_1_10001(var_1_10003)
-	local var_46_2 = var_1.GetMiniGameDataByType
-
-	MiniGameConst = var_1_10004
-
-	local var_46_3
-
-	if var_46_2(var_46_1, var_1_10004.MG_TYPE_5) then
-		var_46_3 = var_1
-
-		local var_46_4
-
-		if not var_1.GetRuntimeData(var_46_3, "count") then
-			var_46_4 = 0
-		end
-
-		var_46_0 = 0 < var_46_4
+		var_46_0 = var_46_2 > 0
 	end
 
-	local var_46_5
+	local var_46_3
+	local var_46_4 = getProxy(MiniGameProxy):GetMiniGameDataByType(MiniGameConst.MG_TYPE_5)
 
-	getProxy = var_46_1
-	MiniGameProxy = var_1_10005
+	if var_46_4 then
+		local var_46_5 = var_46_4:getConfig("config_data")[2]
 
-	local var_46_6 = var_46_1(var_1_10005)
-	local var_46_7 = var_3.GetMiniGameDataByType
+		for iter_46_0, iter_46_1 in ipairs(getProxy(PlayerProxy):getData().buff_list) do
+			var_46_3 = table.indexof(var_46_5, iter_46_1.id, 1)
 
-	MiniGameConst = var_1_10006
+			if var_46_3 then
+				local var_46_6 = pg.TimeMgr.GetInstance()
 
-	if var_46_7(var_46_6, var_1_10006.MG_TYPE_5) then
-		getProxy = var_46_3
-		PlayerProxy = var_6
-
-		local var_46_8 = var_46_3(var_6)
-		local var_46_9 = var_4.getData(var_46_8)
-		local var_46_10 = var_3:getConfig("config_data")[2]
-
-		ipairs = var_46_8
-
-		for iter_46_0, iter_46_1 in var_46_8(var_46_9.buff_list) do
-			table = var_1_10011
-
-			if var_1_10011.indexof(var_46_10, iter_46_1.id, 1) then
-				pg = var_1_10011
-
-				local var_46_11 = var_1_10011.TimeMgr.GetInstance()
-
-				if var_1_10011.GetServerTime(var_46_11) > iter_46_1.timestamp then
-					var_46_5 = nil
+				if var_46_6:GetServerTime() > iter_46_1.timestamp then
+					var_46_3 = nil
 				end
 
 				break
@@ -1350,11 +746,11 @@ function var_0_1.IsNeedShowTipForShipCount()
 		end
 	end
 
-	if var_46_5 then
+	if var_46_3 then
 		var_46_0 = false
 	end
 
 	return var_46_0
 end
 
-return var_0_1
+return var_0_0

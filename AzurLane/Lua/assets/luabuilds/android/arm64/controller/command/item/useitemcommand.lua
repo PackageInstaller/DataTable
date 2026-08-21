@@ -1,476 +1,168 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("UseItemCommand", pm.SimpleCommand)
 
-local var_0_0 = "UseItemCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.id
+	local var_1_2 = var_1_0.count
+	local var_1_3 = var_1_0.arg
+	local var_1_4 = getProxy(BagProxy)
+	local var_1_5 = getProxy(BagProxy):getItemById(var_1_0.id)
+	local var_1_6 = var_1_5:getConfig("usage")
+	local var_1_8 = var_1_0.callback
+	local var_1_9 = var_1_0.isEquipBox
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.count
-	local var_1_2 = var_2.arg
-
-	getProxy = var_1_10006
-	BagProxy = var_1_10008
-
-	local var_1_3 = var_1_10006(var_1_10008)
-	local var_1_4 = var_6.getItemById(var_1_3, var_1_0)
-	local var_1_5 = var_7.getConfig(var_1_4, "usage")
-	local var_1_6 = var_2.skip_check
-	local var_1_7 = var_2.callback
-	local var_1_8 = var_2.isEquipBox
-
-	if var_1_1 == 0 then
+	if var_1_0.count == 0 then
 		return
 	end
 
-	if var_7.count < var_1_1 then
-		pg = var_12
-
-		local var_1_9 = var_12.TipsMgr.GetInstance()
-		local var_1_10 = var_12.ShowTips
-
-		i18n = var_1_10015
-
-		var_1_10(var_1_9, var_1_10015("common_no_item_1"))
+	if var_1_2 > var_1_5.count then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_item_1"))
 
 		return
 	end
 
-	if not var_0_1.Check(var_7, var_1_1) then
+	if not var_0_0.Check(var_1_5, var_1_2) then
 		return
 	end
 
-	ItemUsage = var_12
+	if var_1_6 == ItemUsage.GUILD_DONATE or var_1_6 == ItemUsage.GUILD_OPERATION then
+		local var_1_10 = getProxy(GuildProxy)
 
-	if var_1_5 ~= var_12.GUILD_DONATE then
-		ItemUsage = var_1_15
+		if not var_1_10:getRawData() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("not_exist_guild_use_item"))
 
-		if var_1_5 == var_1_15.GUILD_OPERATION then
-			getProxy = var_1_15
-			GuildProxy = var_14
-
-			local var_1_11 = var_1_15(var_14)
-
-			if not var_1_15.getRawData(var_1_11) then
-				pg = var_1_10013
-
-				local var_1_12 = var_1_10013.TipsMgr.GetInstance()
-				local var_1_13 = var_13.ShowTips
-
-				i18n = var_1_10016
-
-				var_1_13(var_1_12, var_1_10016("not_exist_guild_use_item"))
-
-				return
-			end
-
-			goto label_1_0
+			return
 		end
-
-		ItemUsage = var_1_15
-
-		if var_1_5 ~= var_1_15.SKIN_SHOP_DISCOUNT then
-			ItemUsage = var_1_15
-
-			do
-				local var_1_15
-
-				if var_1_5 == var_1_15.USAGE_SHOP_DISCOUNT then
-					local var_1_14 = var_7
-					local var_1_16
-
-					var_1_15, var_1_16 = var_7.GetConsumeForSkinShopDiscount(var_1_14, var_1_2[1])
-					getProxy = var_1_14
-					PlayerProxy = var_1_10016
-
-					local var_1_17 = var_1_14(var_1_10016)
-					local var_1_18 = var_14.getRawData(var_1_17)
-					local var_1_19 = var_14.getResource(var_1_18, var_1_16)
-
-					if 0 < var_1_15 and var_1_19 < var_1_15 then
-						pg = var_15
-
-						local var_1_20 = var_15.TipsMgr.GetInstance()
-						local var_1_21 = var_15.ShowTips
-
-						i18n = var_1_10018
-
-						var_1_21(var_1_20, var_1_10018("common_no_resource"))
-
-						return
-					end
-				end
-			end
-
-			::label_1_0::
-
-			pg = var_1_15
-
-			local var_1_22 = var_1_15.ConnectionMgr.GetInstance()
-
-			var_12.Send(var_1_22, 15002, {
-				id = var_1_0,
-				count = var_1_1,
-				arg = var_1_2
-			}, 15003, function(arg_2_0)
-				if arg_2_0.result == 0 then
-					local var_2_0 = {}
-
-					var_2_10004 = var_0
-
-					var_2.removeItemById(var_2_10004, var_1_0, var_1_1)
-
-					ipairs = var_2
-
-					for iter_2_0, iter_2_1 in var_2(arg_2_0.drop_list) do
-						print = var_2_10007
-
-						var_2_10007(iter_2_0, iter_2_1)
-					end
-
-					local var_2_1 = var_1_5
-
-					ItemUsage = var_3
-
-					if var_2_1 == var_3.FOOD then
-						var_2_10004 = arg_1_0
-						var_2_1 = var_2_1.sendNotification
-						GAME = iter_2_0
-
-						var_2_1(var_2_10004, iter_2_0.ADD_FOOD, {
-							id = var_1_0,
-							count = var_1_1
-						})
-
-						goto label_2_0
-					end
-
-					var_2_1 = var_1_5
-					ItemUsage = var_3
-
-					if var_2_1 ~= var_3.DROP then
-						var_2_1 = var_1_5
-						ItemUsage = var_3
-
-						if var_2_1 ~= var_3.DROP_TEMPLATE then
-							var_2_1 = var_1_5
-							ItemUsage = var_3
-
-							if var_2_1 ~= var_3.DROP_APPOINTED then
-								var_2_1 = var_1_5
-								ItemUsage = var_3
-
-								if var_2_1 ~= var_3.INVITATION then
-									var_2_1 = var_1_5
-									ItemUsage = var_3
-
-									if var_2_1 ~= var_3.SKIN_SELECT then
-										var_2_1 = var_1_5
-										ItemUsage = var_3
-
-										if var_2_1 ~= var_3.RANDOM_SKIN then
-											var_2_1 = var_1_5
-											ItemUsage = var_3
-
-											if var_2_1 ~= var_3.SHIP_GIFT then
-												var_2_1 = var_1_5
-												ItemUsage = var_3
-
-												if var_2_1 == var_3.REPAIR_LOVE_LETTER then
-													PlayerConst = var_2_1
-													var_2_0 = var_2_1.addTranDrop(arg_2_0.drop_list)
-
-													goto label_2_0
-												end
-
-												var_2_1 = var_1_5
-												ItemUsage = var_3
-
-												local var_2_2
-
-												if var_2_1 == var_3.USAGE_SKIN_EXP then
-													getProxy = var_2_1
-													ShipSkinProxy = var_2_10004
-													var_2_1 = var_2_1(var_2_10004)
-													var_2_2 = var_1_2[1]
-													pg = var_2_10004
-													iter_2_0 = var_2_10004.shop_template[var_2_2].effect_args[1]
-													pg = iter_2_1
-
-													local var_2_3 = iter_2_1.TimeMgr.GetInstance()
-
-													iter_2_1 = iter_2_1.GetServerTime(var_2_3) + var_2_10004.time_second
-													ShipSkin = var_2_10007
-													var_2_10007 = var_2_10007.New({
-														id = iter_2_0,
-														end_time = iter_2_1
-													})
-
-													var_2_1:addSkin(var_2_10007)
-
-													local var_2_4 = arg_1_0
-													local var_2_5 = var_8.sendNotification
-
-													GAME = var_11
-
-													var_2_5(var_2_4, var_11.SKIN_SHOPPIGN_DONE, {
-														id = var_2_2
-													})
-
-													goto label_2_0
-												end
-
-												var_2_1 = var_1_5
-												ItemUsage = var_2_2
-
-												if var_2_1 ~= var_2_2.SKIN_SHOP_DISCOUNT then
-													var_2_1 = var_1_5
-													ItemUsage = var_2_6
-
-													do
-														local var_2_6
-
-														if var_2_1 == var_2_6.USAGE_SHOP_DISCOUNT then
-															PlayerConst = var_2_1
-															var_2_0 = var_2_1.addTranDrop(arg_2_0.drop_list)
-															var_2_10004 = var_0
-															var_2_1, var_2_6 = var_2_1.GetConsumeForSkinShopDiscount(var_2_10004, var_1_2[1])
-
-															if 0 < var_2_1 then
-																getProxy = var_2_10004
-																PlayerProxy = iter_2_1
-																iter_2_1 = var_2_10004(iter_2_1)
-																var_2_10007 = var_2_10004.getData(iter_2_1)
-																iter_2_0 = var_2_10004.consume
-
-																local var_2_7 = {}
-
-																id2res = var_2_10009
-																var_2_7[var_2_10009(var_2_6)] = var_2_1
-
-																iter_2_0(var_2_10007, var_2_7)
-
-																getProxy = iter_2_0
-																PlayerProxy = var_2_10007
-																var_2_10007 = iter_2_0(var_2_10007)
-
-																iter_2_0.updatePlayer(var_2_10007, var_2_10004)
-															end
-
-															iter_2_1 = arg_1_0
-															var_2_10004 = var_2_10004.sendNotification
-															GAME = var_2_10007
-
-															var_2_10004(iter_2_1, var_2_10007.SKIN_SHOPPIGN_DONE, {
-																id = var_1_2[1]
-															})
-														else
-															var_2_1 = var_1_5
-															ItemUsage = var_2_6
-
-															if var_2_1 == var_2_6.DORM_LV_UP then
-																var_2_10004 = arg_1_0
-																var_2_1 = var_2_1.sendNotification
-																GAME = iter_2_0
-
-																var_2_1(var_2_10004, iter_2_0.EXTEND_BACKYARD_AREA)
-															else
-																var_2_1 = var_1_5
-																ItemUsage = var_3
-
-																local var_2_8
-
-																if var_2_1 == var_3.GUILD_DONATE then
-																	getProxy = var_2_1
-																	GuildProxy = var_2_10004
-																	var_2_10004 = var_2_1(var_2_10004)
-
-																	if var_2_1.getRawData(var_2_10004) then
-																		iter_2_0 = var_2_1
-
-																		var_2_1.AddExtraDonateCnt(iter_2_0, var_1_1)
-
-																		pg = var_2_8
-																		iter_2_0 = var_2_8.TipsMgr.GetInstance()
-																		var_2_8 = var_2_8.ShowTips
-																		i18n = iter_2_1
-
-																		var_2_8(iter_2_0, iter_2_1("guild_use_donateitem_success", var_1_1))
-																	end
-																else
-																	var_2_1 = var_1_5
-																	ItemUsage = var_2_8
-
-																	local var_2_9
-
-																	if var_2_1 == var_2_8.GUILD_OPERATION then
-																		getProxy = var_2_1
-																		GuildProxy = var_2_10004
-																		var_2_10004 = var_2_1(var_2_10004)
-
-																		if var_2_1.getRawData(var_2_10004) then
-																			iter_2_0 = var_2_1
-
-																			var_2_1.AddExtraBattleCnt(iter_2_0, var_1_1)
-
-																			pg = var_2_9
-																			iter_2_0 = var_2_9.TipsMgr.GetInstance()
-																			var_2_9 = var_2_9.ShowTips
-																			i18n = iter_2_1
-
-																			var_2_9(iter_2_0, iter_2_1("guild_use_battleitem_success", var_1_1))
-																		end
-																	else
-																		var_2_1 = var_1_5
-																		ItemUsage = var_2_9
-
-																		if var_2_1 == var_2_9.REDUCE_COMMANDER_TIME then
-																			var_2_10004 = arg_1_0
-																			var_2_1 = var_2_1.sendNotification
-																			GAME = iter_2_0
-
-																			var_2_1(var_2_10004, iter_2_0.REFRESH_COMMANDER_BOXES)
-																		else
-																			assert = var_2_1
-
-																			var_2_1(false, "未处理类型" .. var_1_5)
-																		end
-																	end
-																end
-															end
-														end
-													end
-
-													::label_2_0::
-
-													QRJ_ITEM_ID_RANGE = var_2_1
-
-													local var_2_10 = var_1_0
-
-													if var_2_1[1] <= var_2_10 and var_1_0 <= var_2_1[2] then
-														table = var_3
-
-														var_3.sort(var_2_0, function(arg_3_0, arg_3_1)
-															return arg_3_0.count < arg_3_1.count
-														end)
-													end
-
-													if var_1_7 then
-														var_1_7(var_2_0)
-													end
-
-													local var_2_11 = arg_1_0
-													local var_2_12 = var_3.sendNotification
-
-													GAME = iter_2_1
-
-													var_2_12(var_2_11, iter_2_1.USE_ITEM_DONE, {
-														drops = var_2_0,
-														isEquipBox = var_1_8
-													})
-
-													goto label_2_1
-
-													if var_1_7 then
-														var_1_7({})
-													end
-
-													pg = var_1
-
-													do
-														local var_2_13 = var_1.TipsMgr.GetInstance()
-														local var_2_14 = var_1.ShowTips
-
-														errorTip = var_2_10004
-
-														var_2_14(var_2_13, var_2_10004("", arg_2_0.result))
-													end
-
-													::label_2_1::
-
-													return
-												end
-											end
-										end
-									end
-								end
-							end
-						end
-					end
-				end
-			end)
+	elseif var_1_6 == ItemUsage.SKIN_SHOP_DISCOUNT or var_1_6 == ItemUsage.USAGE_SHOP_DISCOUNT then
+		local var_1_11, var_1_12 = var_1_5:GetConsumeForSkinShopDiscount(var_1_3[1])
+
+		if var_1_11 > 0 and getProxy(PlayerProxy):getRawData():getResource(var_1_12) < var_1_11 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_no_resource"))
 
 			return
 		end
 	end
+
+	pg.ConnectionMgr.GetInstance():Send(15002, {
+		id = var_1_1,
+		count = var_1_2,
+		arg = var_1_3
+	}, 15003, function(arg_2_0)
+		if arg_2_0.result == 0 then
+			local var_2_0 = {}
+
+			var_1_4:removeItemById(var_1_1, var_1_2)
+
+			for iter_2_0, iter_2_1 in ipairs(arg_2_0.drop_list) do
+				print(iter_2_0, iter_2_1)
+			end
+
+			if var_1_6 == ItemUsage.FOOD then
+				arg_1_0:sendNotification(GAME.ADD_FOOD, {
+					id = var_1_1,
+					count = var_1_2
+				})
+			elseif var_1_6 == ItemUsage.DROP or var_1_6 == ItemUsage.DROP_TEMPLATE or var_1_6 == ItemUsage.DROP_APPOINTED or var_1_6 == ItemUsage.INVITATION or var_1_6 == ItemUsage.SKIN_SELECT or var_1_6 == ItemUsage.RANDOM_SKIN or var_1_6 == ItemUsage.SHIP_GIFT or var_1_6 == ItemUsage.REPAIR_LOVE_LETTER then
+				var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+			elseif var_1_6 == ItemUsage.USAGE_SKIN_EXP then
+				getProxy(ShipSkinProxy):addSkin((ShipSkin.New({
+					id = pg.shop_template[var_1_3[1]].effect_args[1],
+					end_time = pg.TimeMgr.GetInstance():GetServerTime() + pg.shop_template[var_1_3[1]].time_second
+				})))
+				arg_1_0:sendNotification(GAME.SKIN_SHOPPIGN_DONE, {
+					id = var_1_3[1]
+				})
+			elseif var_1_6 == ItemUsage.SKIN_SHOP_DISCOUNT or var_1_6 == ItemUsage.USAGE_SHOP_DISCOUNT then
+				var_2_0 = PlayerConst.addTranDrop(arg_2_0.drop_list)
+
+				local var_2_1, var_2_2 = var_1_5:GetConsumeForSkinShopDiscount(var_1_3[1])
+
+				if var_2_1 > 0 then
+					local var_2_3 = getProxy(PlayerProxy):getData()
+
+					var_2_3:consume({
+						[id2res(var_2_2)] = var_2_1
+					})
+					getProxy(PlayerProxy):updatePlayer(var_2_3)
+				end
+
+				arg_1_0:sendNotification(GAME.SKIN_SHOPPIGN_DONE, {
+					id = var_1_3[1]
+				})
+			elseif var_1_6 == ItemUsage.DORM_LV_UP then
+				arg_1_0:sendNotification(GAME.EXTEND_BACKYARD_AREA)
+			elseif var_1_6 == ItemUsage.GUILD_DONATE then
+				local var_2_4 = getProxy(GuildProxy):getRawData()
+
+				if var_2_4 then
+					var_2_4:AddExtraDonateCnt(var_1_2)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_use_donateitem_success", var_1_2))
+				end
+			elseif var_1_6 == ItemUsage.GUILD_OPERATION then
+				local var_2_5 = getProxy(GuildProxy):getRawData()
+
+				if var_2_5 then
+					var_2_5:AddExtraBattleCnt(var_1_2)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("guild_use_battleitem_success", var_1_2))
+				end
+			elseif var_1_6 == ItemUsage.REDUCE_COMMANDER_TIME then
+				arg_1_0:sendNotification(GAME.REFRESH_COMMANDER_BOXES)
+			else
+				assert(false, "未处理类型" .. var_1_6)
+			end
+
+			local var_2_6 = QRJ_ITEM_ID_RANGE
+
+			if var_1_1 >= QRJ_ITEM_ID_RANGE[1] and var_1_1 <= var_2_6[2] then
+				table.sort(var_2_0, function(arg_3_0, arg_3_1)
+					return arg_3_0.count < arg_3_1.count
+				end)
+			end
+
+			if var_1_8 then
+				var_1_8(var_2_0)
+			end
+
+			arg_1_0:sendNotification(GAME.USE_ITEM_DONE, {
+				drops = var_2_0,
+				isEquipBox = var_1_9
+			})
+		else
+			if var_1_8 then
+				var_1_8({})
+			end
+
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_2_0.result))
+		end
+
+		return
+	end)
+
+	return
 end
 
-function var_0_1.Check(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.GetOverflowCheckItems(var_4_0, arg_4_1)
+function var_0_0.Check(arg_4_0, arg_4_1)
+	local var_4_0, var_4_1 = CheckOverflow((GetItemsOverflowDic((arg_4_0:GetOverflowCheckItems(arg_4_1)))))
 
-	GetItemsOverflowDic = var_1_10003
-
-	local var_4_2 = var_1_10003(var_4_1)
-
-	CheckOverflow = var_4_0
-
-	local var_4_3, var_4_4 = var_4_0(var_4_2)
-
-	if not var_4_3 then
-		switch = var_6
-
-		var_6(var_4_4, {
+	if not var_4_0 then
+		switch(var_4_1, {
 			gold = function()
-				pg = var_2_10000
-
-				local var_5_0 = var_2_10000.TipsMgr.GetInstance()
-				local var_5_1 = var_0.ShowTips
-
-				i18n = var_2_10003
-
-				var_5_1(var_5_0, var_2_10003("gold_max_tip_title"))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("gold_max_tip_title"))
 
 				return
 			end,
 			oil = function()
-				pg = var_2_10000
-
-				local var_6_0 = var_2_10000.TipsMgr.GetInstance()
-				local var_6_1 = var_0.ShowTips
-
-				i18n = var_2_10003
-
-				var_6_1(var_6_0, var_2_10003("oil_max_tip_title"))
+				pg.TipsMgr.GetInstance():ShowTips(i18n("oil_max_tip_title"))
 
 				return
 			end,
 			equip = function()
-				NoPosMsgBox = var_2_10000
-				i18n = var_2_10002
-
-				local var_7_0 = var_2_10002("switch_to_shop_tip_noPos")
-
-				openDestroyEquip = var_2_10003
-				gotoChargeScene = var_4
-
-				var_2_10000(var_7_0, var_2_10003, var_4)
+				NoPosMsgBox(i18n("switch_to_shop_tip_noPos"), openDestroyEquip, gotoChargeScene)
 
 				return
 			end,
 			ship = function()
-				NoPosMsgBox = var_2_10000
-				i18n = var_2_10002
-
-				local var_8_0 = var_2_10002("switch_to_shop_tip_noDockyard")
-
-				openDockyardClear = var_2_10003
-				gotoChargeScene = var_4
-				openDockyardIntensify = var_2_10005
-
-				var_2_10000(var_8_0, var_2_10003, var_4, var_2_10005)
+				NoPosMsgBox(i18n("switch_to_shop_tip_noDockyard"), openDockyardClear, gotoChargeScene, openDockyardIntensify)
 
 				return
 			end
@@ -482,4 +174,4 @@ function var_0_1.Check(arg_4_0, arg_4_1)
 	return true
 end
 
-return var_0_1
+return var_0_0

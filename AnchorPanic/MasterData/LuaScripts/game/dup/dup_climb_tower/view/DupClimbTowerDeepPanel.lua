@@ -84,7 +84,7 @@ function active(self)
             return
         end
         local scrollerAnchord = self.mScrollerRect.content.anchoredPosition
-        self.camera.transform.localPosition = gs.Vector3(-scrollerAnchord.x * self.cameraMovePerscent, -scrollerAnchord.y * self.cameraMovePerscent, self.camera.transform.localPosition.z)
+        -- self.camera.transform.localPosition = gs.Vector3(-scrollerAnchord.x * self.cameraMovePerscent, -scrollerAnchord.y * self.cameraMovePerscent, self.camera.transform.localPosition.z)
         -- logAll(self.camera.transform.localPosition,"   4")
     end
     self.mScrollerRect.onValueChanged:AddListener(ChangeValue)
@@ -99,7 +99,7 @@ end
 
 function forceCloseAll(self)
     dup.DupClimbTowerManager:setDeepPosIndex()
-    dup.DupClimbTowerManager:setCameraPos()
+    -- dup.DupClimbTowerManager:setCameraPos()
     self.closeForce = true
     self:closeAll()
 end
@@ -117,9 +117,9 @@ function loadScene(self)
     self.bgFx = gs.ResMgr:LoadGO("arts/fx/ui/effect/fx_ui_domainSurvey_red.prefab")
     self.bgFx.gameObject:SetActive(false)
     self.bgFx.transform:SetParent(self.mBgFxNode, false)
-    self.camera = gs.CameraMgr:GetSceneCameraTrans()
-    local scrollerAnchord = self.mScrollerRect.content.anchoredPosition
-    self.camera.transform.localPosition = gs.Vector3(-scrollerAnchord.x * self.cameraMovePerscent, -scrollerAnchord.y * self.cameraMovePerscent, self.camera.transform.localPosition.z)
+    -- self.camera = gs.CameraMgr:GetSceneCameraTrans()
+    -- local scrollerAnchord = self.mScrollerRect.content.anchoredPosition
+    -- self.camera.transform.localPosition = gs.Vector3(-scrollerAnchord.x * self.cameraMovePerscent, -scrollerAnchord.y * self.cameraMovePerscent, self.camera.transform.localPosition.z)
 end
 
 function deActive(self)
@@ -127,7 +127,7 @@ function deActive(self)
     self.sceneBg:SetActive(false)
     self.scenePreBg:SetActive(true)
     self.mScrollerRect.onValueChanged:RemoveAllListeners()
-    self.camera.transform.localPosition = gs.Vector3(0, 0, 0)
+    -- self.camera.transform.localPosition = gs.Vector3(0, 0, 0)
     self:closeGyroscopeWave()
     self:removeItem()
     MoneyManager:setMoneyTidList()
@@ -281,37 +281,37 @@ function checkFinger(self)
     end
 
     -- 缩放大小适配
-    if (dup.DupClimbTowerManager:getIsInDeepMainPanel()) then
-        local pos = self.camera.transform.localPosition
-        pos.z = -(1 - self.scale) * 50
-        self.cameraMovePerscent = 0.014 + 0.0216 * (1 - self.scale)
-        if (gs.Vector3.Distance(self.camera.transform.localPosition, pos) > 0.1) then
-            self.camera.transform.localPosition = gs.Vector3.Lerp(self.camera.transform.localPosition, pos, 0.13)
-        end
-    end
+    -- if (dup.DupClimbTowerManager:getIsInDeepMainPanel()) then
+    --     local pos = self.camera.transform.localPosition
+    --     pos.z = -(1 - self.scale) * 50
+    --     self.cameraMovePerscent = 0.014 + 0.0216 * (1 - self.scale)
+    --     if (gs.Vector3.Distance(self.camera.transform.localPosition, pos) > 0.1) then
+    --         self.camera.transform.localPosition = gs.Vector3.Lerp(self.camera.transform.localPosition, pos, 0.13)
+    --     end
+    -- end
 end
 
 function checkUnlock(self)
 end
 
 function brainMovement(self)
-    if dup.DupClimbTowerManager:getCameraPos() ~= nil then
-        local cameraPos = self.camera.transform.localPosition
-        self.camera.transform.localPosition = gs.Vector3.Lerp(cameraPos, dup.DupClimbTowerManager:getCameraPos(), 0.1)
-        if (gs.Vector3.Distance(cameraPos, dup.DupClimbTowerManager:getCameraPos()) < 0.9) then
-            dup.DupClimbTowerManager:setCameraPos()
+    -- if dup.DupClimbTowerManager:getCameraPos() ~= nil then
+    --     local cameraPos = self.camera.transform.localPosition
+    --     self.camera.transform.localPosition = gs.Vector3.Lerp(cameraPos, dup.DupClimbTowerManager:getCameraPos(), 0.1)
+    --     if (gs.Vector3.Distance(cameraPos, dup.DupClimbTowerManager:getCameraPos()) < 0.9) then
+    --         dup.DupClimbTowerManager:setCameraPos()
             if (not dup.DupClimbTowerManager:getIsInDeepMainPanel()) then --进入子界面 此时已经设置index
                 GameDispatcher:dispatchEvent(EventName.OPEN_DEEP_TOWER_DUP_PANEL, { areaVo = self.mClickItemVo })
             end
-        end
-    end
+    --     end
+    -- end
 end
 
 function updateBrain(self, isMain, reset)
     local posIndex = dup.DupClimbTowerManager:getDeepPosIndex()
     if (posIndex == nil) then
         posIndex = dup.DupClimbTowerManager:maxAreaId()
-        dup.DupClimbTowerManager:setCameraPos()
+        -- dup.DupClimbTowerManager:setCameraPos()
     end
     if not isMain then
         if (dup.DupClimbTowerManager:getDeepPosIndex() == nil) then
@@ -319,10 +319,10 @@ function updateBrain(self, isMain, reset)
         end
         local pos = self.mCameraTargetPos[posIndex]
         if (not reset or reset == nil) then
-            dup.DupClimbTowerManager:setCameraPos(pos)
+            -- dup.DupClimbTowerManager:setCameraPos(pos)
             self.mAni:SetTrigger("exit")
         else
-            self.camera.transform.localPosition = pos
+            -- self.camera.transform.localPosition = pos
         end
         self:removeItem()
         for i = 1, 10 do       -- 隐藏线段
@@ -334,7 +334,7 @@ function updateBrain(self, isMain, reset)
     else
         self:updateItem()
         local scrollerAnchord = self.mScrollerRect.content.anchoredPosition
-        dup.DupClimbTowerManager:setCameraPos(gs.Vector3(-scrollerAnchord.x * self.cameraMovePerscent, -scrollerAnchord.y * self.cameraMovePerscent, -(1 - self.scale) * 50))
+        -- dup.DupClimbTowerManager:setCameraPos(gs.Vector3(-scrollerAnchord.x * self.cameraMovePerscent, -scrollerAnchord.y * self.cameraMovePerscent, -(1 - self.scale) * 50))
         dup.DupClimbTowerManager:setDeepPosIndex()
 
         self.mAni:SetTrigger("enter01")

@@ -1,15 +1,4 @@
-﻿local var_0_0 = {
-	"前往<color=#ff7d36>编队</color>，将角色编入队伍",
-	"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
-	"",
-	"点击<color=#ff7d36>添加</color>来编入新角色",
-	"选择需要上场的角色",
-	"点击<color=#ff7d36>确定</color>按钮",
-	"看！新角色成功入队！舰队实力大幅度提升！",
-	"让我们返回到主界面吧！"
-}
-
-return {
+﻿return {
 	id = "NS004",
 	events = {
 		{
@@ -19,17 +8,21 @@ return {
 				dir = -1,
 				posY = -275,
 				posX = 168,
-				text = var_0_0[1]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/formation"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/formationButton"
@@ -54,7 +47,16 @@ return {
 				dir = 1,
 				posY = -100,
 				posX = 300,
-				text = var_0_0[2]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[2]
 			}
 		},
 		{
@@ -64,7 +66,16 @@ return {
 				dir = -1,
 				posY = 122.82,
 				posX = 243.5,
-				text = var_0_0[4]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,
@@ -86,7 +97,16 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[5]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[5]
 			},
 			ui = {
 				pathIndex = 1,
@@ -113,7 +133,16 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[6]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[6]
 			},
 			ui = {
 				pathIndex = -1,
@@ -136,7 +165,16 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[7]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[7]
 			}
 		},
 		{
@@ -146,7 +184,16 @@ return {
 				dir = -1,
 				posY = 215.7,
 				posX = -95.62,
-				text = var_0_0[8]
+				text = ({
+					"前往<color=#ff7d36>编队</color>，将角色编入队伍",
+					"但需要注意，<color=#ffde38>前排先锋和后排主力都只能编入指定类型的舰种 </color>",
+					"",
+					"点击<color=#ff7d36>添加</color>来编入新角色",
+					"选择需要上场的角色",
+					"点击<color=#ff7d36>确定</color>按钮",
+					"看！新角色成功入队！舰队实力大幅度提升！",
+					"让我们返回到主界面吧！"
+				})[8]
 			},
 			ui = {
 				pathIndex = -1,

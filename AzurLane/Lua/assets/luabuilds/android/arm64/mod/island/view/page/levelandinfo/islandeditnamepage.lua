@@ -1,84 +1,35 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandEditNamePage", import("...base.IslandBasePage"))
 
-local var_0_0 = "IslandEditNamePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.IslandBasePage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandEditNameui"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.input = arg_2_0._tf:Find("frame/name/InputField")
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close")
+	arg_2_0.confirmBtn = arg_2_0._tf:Find("frame/confirm")
+	arg_2_0.content = arg_2_0._tf:Find("frame/Text")
 
-	arg_2_0.input = var_1.Find(var_2_0, "frame/name/InputField")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_1, "frame/close")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.confirmBtn = var_1.Find(var_2_2, "frame/confirm")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.content = var_1.Find(var_2_3, "frame/Text")
-	setText = var_1
-
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_3.Find(var_2_4, "frame/title")
-
-	i18n = var_4
-
-	var_1(var_2_5, var_4("island_rename_title"))
-
-	setText = var_1
-
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_3.Find(var_2_6, "frame/confirm/Text")
-
-	i18n = var_4
-
-	var_1(var_2_7, var_4("word_ok"))
-
-	setText = var_1
-
-	local var_2_8 = arg_2_0._tf
-	local var_2_9 = var_3.Find(var_2_8, "frame/name/InputField/Placeholder")
-
-	i18n = var_4
-
-	var_1(var_2_9, var_4("island_rename_input_tip"))
+	setText(arg_2_0._tf:Find("frame/title"), i18n("island_rename_title"))
+	setText(arg_2_0._tf:Find("frame/confirm/Text"), i18n("word_ok"))
+	setText(arg_2_0._tf:Find("frame/name/InputField/Placeholder"), i18n("island_rename_input_tip"))
 
 	return
 end
 
-function var_0_1.AddListeners(arg_3_0)
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.AddListener
-
-	GAME = var_1_10004
-
-	var_3_1(var_3_0, var_1_10004.ISLAND_SET_NAME_DONE, arg_3_0.OnModifyName)
+function var_0_0.AddListeners(arg_3_0)
+	arg_3_0:AddListener(GAME.ISLAND_SET_NAME_DONE, arg_3_0.OnModifyName)
 
 	return
 end
 
-function var_0_1.RemoveListeners(arg_4_0)
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.RemoveListener
-
-	GAME = var_1_10004
-
-	var_4_1(var_4_0, var_1_10004.ISLAND_SET_NAME_DONE, arg_4_0.OnModifyName)
+function var_0_0.RemoveListeners(arg_4_0)
+	arg_4_0:RemoveListener(GAME.ISLAND_SET_NAME_DONE, arg_4_0.OnModifyName)
 
 	return
 end
 
-function var_0_1.OnModifyName(arg_5_0)
+function var_0_0.OnModifyName(arg_5_0)
 	arg_5_0:Hide()
 
 	if arg_5_0.callback then
@@ -88,92 +39,41 @@ function var_0_1.OnModifyName(arg_5_0)
 	return
 end
 
-function var_0_1.OnInit(arg_6_0)
-	onButton = var_1_10001
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0._tf
-
-	local function var_6_2()
-		local var_7_0 = arg_6_0
-
-		var_0.Hide(var_7_0)
+function var_0_0.OnInit(arg_6_0)
+	onButton(arg_6_0, arg_6_0._tf, function()
+		arg_6_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_0, var_6_1, var_6_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.closeBtn
-
-	local function var_6_5()
-		local var_8_0 = arg_6_0
-
-		var_0.Hide(var_8_0)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.closeBtn, function()
+		arg_6_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_3, var_6_4, var_6_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_6_6 = arg_6_0
-	local var_6_7 = arg_6_0.confirmBtn
-
-	local function var_6_8()
-		getInputText = var_2_10000
-
-		local var_9_0 = var_2_10000(arg_6_0.input)
-		local var_9_1 = arg_6_0
-		local var_9_2 = var_1.emit
-
-		IslandMediator = var_2_10004
-
-		var_9_2(var_9_1, var_2_10004.SET_NAME, var_9_0, 1)
+	end, SFX_PANEL)
+	onButton(arg_6_0, arg_6_0.confirmBtn, function()
+		arg_6_0:emit(IslandMediator.SET_NAME, getInputText(arg_6_0.input), 1)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_6_6, var_6_7, var_6_8, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_10_0, arg_10_1)
-	var_0_1.super.Show(arg_10_0)
+function var_0_0.Show(arg_10_0, arg_10_1)
+	var_0_0.super.Show(arg_10_0)
 
 	arg_10_0.callback = arg_10_1
 
 	arg_10_0:UpdateContent()
-
-	pg = var_2
-
-	local var_10_0 = var_2.UIMgr.GetInstance()
-
-	var_2.OverlayPanel(var_10_0, arg_10_0._tf)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_10_0._tf)
 
 	return
 end
 
-function var_0_1.Hide(arg_11_0)
+function var_0_0.Hide(arg_11_0)
 	arg_11_0:PlayExitAniamtion(function()
-		var_0_1.super.Hide(arg_11_0)
-
-		pg = var_0
-
-		local var_12_0 = var_0.UIMgr.GetInstance()
-
-		var_0.UnOverlayPanel(var_12_0, arg_11_0._tf, arg_11_0._parentTf)
+		var_0_0.super.Hide(arg_11_0)
+		pg.UIMgr.GetInstance():UnOverlayPanel(arg_11_0._tf, arg_11_0._parentTf)
 
 		return
 	end)
@@ -181,7 +81,7 @@ function var_0_1.Hide(arg_11_0)
 	return
 end
 
-function var_0_1.PlayExitAniamtion(arg_13_0, arg_13_1)
+function var_0_0.PlayExitAniamtion(arg_13_0, arg_13_1)
 	arg_13_0.isPlayingAnimation = true
 
 	if arg_13_1 then
@@ -191,26 +91,17 @@ function var_0_1.PlayExitAniamtion(arg_13_0, arg_13_1)
 	return
 end
 
-function var_0_1.UpdateContent(arg_14_0)
-	setInputText = var_1_10001
-
-	var_1_10001(arg_14_0.input, "")
-
-	setText = var_1_10001
-
-	local var_14_0 = arg_14_0.content
-
-	i18n = var_4
-
-	var_1_10001(var_14_0, var_4("island_rename_consutme_tip"))
+function var_0_0.UpdateContent(arg_14_0)
+	setInputText(arg_14_0.input, "")
+	setText(arg_14_0.content, i18n("island_rename_consutme_tip"))
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_15_0)
+function var_0_0.OnDestroy(arg_15_0)
 	arg_15_0.callback = nil
 
 	return
 end
 
-return var_0_1
+return var_0_0

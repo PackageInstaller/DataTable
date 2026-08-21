@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "honormedal_goods_list") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "honormedal_goods_list"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.honormedal_goods_list = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.honormedal_goods_list
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.honormedal_goods_list = rawget(pg, "honormedal_goods_list") or setmetatable({
+	__name = "honormedal_goods_list"
+}, confNEO)
+pg.honormedal_goods_list.all = {
 	1,
 	2,
 	3,
@@ -80,25 +57,11 @@ var_0_3.all = {
 	54,
 	55
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.honormedal_goods_list = {}
+pg.base = pg.base or {}
+pg.base.honormedal_goods_list = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.honormedal_goods_list
-
-	var_1_0[1] = {
+	pg.base.honormedal_goods_list[1] = {
 		goods_rarity = 1,
 		goods_purchase_limit = 30,
 		price = 2,
@@ -119,11 +82,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17041
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.honormedal_goods_list
-
-	var_1_1[2] = {
+	pg.base.honormedal_goods_list[2] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -140,11 +99,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17002
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.honormedal_goods_list
-
-	var_1_2[3] = {
+	pg.base.honormedal_goods_list[3] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -161,11 +116,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17012
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.honormedal_goods_list
-
-	var_1_3[4] = {
+	pg.base.honormedal_goods_list[4] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -182,11 +133,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17022
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.honormedal_goods_list
-
-	var_1_4[5] = {
+	pg.base.honormedal_goods_list[5] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -203,11 +150,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17032
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.honormedal_goods_list
-
-	var_1_5[6] = {
+	pg.base.honormedal_goods_list[6] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -224,11 +167,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17042
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.honormedal_goods_list
-
-	var_1_6[7] = {
+	pg.base.honormedal_goods_list[7] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -249,11 +188,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17042
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.honormedal_goods_list
-
-	var_1_7[8] = {
+	pg.base.honormedal_goods_list[8] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 4,
 		price = 30,
@@ -270,11 +205,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17003
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.honormedal_goods_list
-
-	var_1_8[9] = {
+	pg.base.honormedal_goods_list[9] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 4,
 		price = 30,
@@ -291,11 +222,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17013
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.honormedal_goods_list
-
-	var_1_9[10] = {
+	pg.base.honormedal_goods_list[10] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 4,
 		price = 30,
@@ -312,11 +239,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17023
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.honormedal_goods_list
-
-	var_1_10[11] = {
+	pg.base.honormedal_goods_list[11] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 4,
 		price = 30,
@@ -333,11 +256,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17033
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.honormedal_goods_list
-
-	var_1_11[12] = {
+	pg.base.honormedal_goods_list[12] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 4,
 		price = 30,
@@ -354,11 +273,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17043
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.honormedal_goods_list
-
-	var_1_12[13] = {
+	pg.base.honormedal_goods_list[13] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 5,
 		price = 30,
@@ -379,11 +294,7 @@ var_0_3.base.honormedal_goods_list = {}
 			17043
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.honormedal_goods_list
-
-	var_1_13[14] = {
+	pg.base.honormedal_goods_list[14] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 24,
 		price = 30,
@@ -403,11 +314,7 @@ var_0_3.base.honormedal_goods_list = {}
 			18031
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.honormedal_goods_list
-
-	var_1_14[15] = {
+	pg.base.honormedal_goods_list[15] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 12,
 		price = 60,
@@ -427,11 +334,7 @@ var_0_3.base.honormedal_goods_list = {}
 			18032
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.honormedal_goods_list
-
-	var_1_15[16] = {
+	pg.base.honormedal_goods_list[16] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 4,
 		price = 100,
@@ -451,11 +354,7 @@ var_0_3.base.honormedal_goods_list = {}
 			18033
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.honormedal_goods_list
-
-	var_1_16[17] = {
+	pg.base.honormedal_goods_list[17] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 6,
 		price = 6,
@@ -472,11 +371,7 @@ var_0_3.base.honormedal_goods_list = {}
 			16002
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.honormedal_goods_list
-
-	var_1_17[18] = {
+	pg.base.honormedal_goods_list[18] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 6,
 		price = 6,
@@ -493,11 +388,7 @@ var_0_3.base.honormedal_goods_list = {}
 			16012
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.honormedal_goods_list
-
-	var_1_18[19] = {
+	pg.base.honormedal_goods_list[19] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 6,
 		price = 6,
@@ -514,11 +405,7 @@ var_0_3.base.honormedal_goods_list = {}
 			16022
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.honormedal_goods_list
-
-	var_1_19[20] = {
+	pg.base.honormedal_goods_list[20] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 2,
 		price = 6,
@@ -535,11 +422,7 @@ var_0_3.base.honormedal_goods_list = {}
 			16003
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.honormedal_goods_list
-
-	var_1_20[21] = {
+	pg.base.honormedal_goods_list[21] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 2,
 		price = 6,
@@ -556,11 +439,7 @@ var_0_3.base.honormedal_goods_list = {}
 			16013
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.honormedal_goods_list
-
-	var_1_21[22] = {
+	pg.base.honormedal_goods_list[22] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 2,
 		price = 6,
@@ -577,11 +456,7 @@ var_0_3.base.honormedal_goods_list = {}
 			16023
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.honormedal_goods_list
-
-	var_1_22[23] = {
+	pg.base.honormedal_goods_list[23] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 15,
 		price = 20,
@@ -598,11 +473,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42030
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.honormedal_goods_list
-
-	var_1_23[24] = {
+	pg.base.honormedal_goods_list[24] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 5,
 		price = 20,
@@ -619,11 +490,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42036
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.honormedal_goods_list
-
-	var_1_24[25] = {
+	pg.base.honormedal_goods_list[25] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 24,
 		price = 6,
@@ -640,11 +507,7 @@ var_0_3.base.honormedal_goods_list = {}
 			50005
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.honormedal_goods_list
-
-	var_1_25[26] = {
+	pg.base.honormedal_goods_list[26] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 12,
 		price = 10,
@@ -661,11 +524,7 @@ var_0_3.base.honormedal_goods_list = {}
 			50006
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.honormedal_goods_list
-
-	var_1_26[27] = {
+	pg.base.honormedal_goods_list[27] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 2,
 		price = 80,
@@ -682,11 +541,7 @@ var_0_3.base.honormedal_goods_list = {}
 			100011
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.honormedal_goods_list
-
-	var_1_27[28] = {
+	pg.base.honormedal_goods_list[28] = {
 		goods_rarity = 3,
 		goods_purchase_limit = 10,
 		price = 30,
@@ -703,11 +558,7 @@ var_0_3.base.honormedal_goods_list = {}
 			100001
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.honormedal_goods_list
-
-	var_1_28[29] = {
+	pg.base.honormedal_goods_list[29] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -730,11 +581,7 @@ var_0_3.base.honormedal_goods_list = {}
 			701051
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.honormedal_goods_list
-
-	var_1_29[30] = {
+	pg.base.honormedal_goods_list[30] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -753,11 +600,7 @@ var_0_3.base.honormedal_goods_list = {}
 			202281
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.honormedal_goods_list
-
-	var_1_30[31] = {
+	pg.base.honormedal_goods_list[31] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -780,11 +623,7 @@ var_0_3.base.honormedal_goods_list = {}
 			603031
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.honormedal_goods_list
-
-	var_1_31[32] = {
+	pg.base.honormedal_goods_list[32] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -816,11 +655,7 @@ var_0_3.base.honormedal_goods_list = {}
 			905031
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.honormedal_goods_list
-
-	var_1_32[33] = {
+	pg.base.honormedal_goods_list[33] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -843,11 +678,7 @@ var_0_3.base.honormedal_goods_list = {}
 			307111
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.honormedal_goods_list
-
-	var_1_33[34] = {
+	pg.base.honormedal_goods_list[34] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -870,11 +701,7 @@ var_0_3.base.honormedal_goods_list = {}
 			701051
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.honormedal_goods_list
-
-	var_1_34[35] = {
+	pg.base.honormedal_goods_list[35] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -893,11 +720,7 @@ var_0_3.base.honormedal_goods_list = {}
 			202281
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.honormedal_goods_list
-
-	var_1_35[36] = {
+	pg.base.honormedal_goods_list[36] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -920,11 +743,7 @@ var_0_3.base.honormedal_goods_list = {}
 			603031
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.honormedal_goods_list
-
-	var_1_36[37] = {
+	pg.base.honormedal_goods_list[37] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -956,11 +775,7 @@ var_0_3.base.honormedal_goods_list = {}
 			905031
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.honormedal_goods_list
-
-	var_1_37[38] = {
+	pg.base.honormedal_goods_list[38] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -983,11 +798,7 @@ var_0_3.base.honormedal_goods_list = {}
 			307111
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.honormedal_goods_list
-
-	var_1_38[41] = {
+	pg.base.honormedal_goods_list[41] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 20,
 		price = 15,
@@ -1004,11 +815,7 @@ var_0_3.base.honormedal_goods_list = {}
 			30205
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.honormedal_goods_list
-
-	var_1_39[42] = {
+	pg.base.honormedal_goods_list[42] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 15,
 		price = 20,
@@ -1025,11 +832,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42040
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.honormedal_goods_list
-
-	var_1_40[43] = {
+	pg.base.honormedal_goods_list[43] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 5,
 		price = 20,
@@ -1046,11 +849,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42046
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.honormedal_goods_list
-
-	var_1_41[44] = {
+	pg.base.honormedal_goods_list[44] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -1067,11 +866,7 @@ var_0_3.base.honormedal_goods_list = {}
 			408091
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.honormedal_goods_list
-
-	var_1_42[45] = {
+	pg.base.honormedal_goods_list[45] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 1,
 		price = 80,
@@ -1088,11 +883,7 @@ var_0_3.base.honormedal_goods_list = {}
 			408091
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.honormedal_goods_list
-
-	var_1_43[46] = {
+	pg.base.honormedal_goods_list[46] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 15,
 		price = 20,
@@ -1109,11 +900,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42050
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.honormedal_goods_list
-
-	var_1_44[47] = {
+	pg.base.honormedal_goods_list[47] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 5,
 		price = 20,
@@ -1130,11 +917,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42056
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.honormedal_goods_list
-
-	var_1_45[48] = {
+	pg.base.honormedal_goods_list[48] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 10,
 		price = 6,
@@ -1151,11 +934,7 @@ var_0_3.base.honormedal_goods_list = {}
 			59010
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.honormedal_goods_list
-
-	var_1_46[49] = {
+	pg.base.honormedal_goods_list[49] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 15,
 		price = 20,
@@ -1172,11 +951,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42060
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.honormedal_goods_list
-
-	var_1_47[50] = {
+	pg.base.honormedal_goods_list[50] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 5,
 		price = 20,
@@ -1193,11 +968,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42066
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.honormedal_goods_list
-
-	var_1_48[51] = {
+	pg.base.honormedal_goods_list[51] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 20,
 		price = 15,
@@ -1214,11 +985,7 @@ var_0_3.base.honormedal_goods_list = {}
 			30207
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.honormedal_goods_list
-
-	var_1_49[52] = {
+	pg.base.honormedal_goods_list[52] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 20,
 		price = 10,
@@ -1235,11 +1002,7 @@ var_0_3.base.honormedal_goods_list = {}
 			59010
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.honormedal_goods_list
-
-	var_1_50[53] = {
+	pg.base.honormedal_goods_list[53] = {
 		goods_rarity = 2,
 		goods_purchase_limit = 20,
 		price = 15,
@@ -1256,11 +1019,7 @@ var_0_3.base.honormedal_goods_list = {}
 			30208
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.honormedal_goods_list
-
-	var_1_51[54] = {
+	pg.base.honormedal_goods_list[54] = {
 		goods_rarity = 4,
 		goods_purchase_limit = 15,
 		price = 20,
@@ -1277,8 +1036,7 @@ var_0_3.base.honormedal_goods_list = {}
 			42070
 		}
 	}
-	pg = var_1_51
-	var_1_51.base.honormedal_goods_list[55] = {
+	pg.base.honormedal_goods_list[55] = {
 		goods_rarity = 5,
 		goods_purchase_limit = 5,
 		price = 20,

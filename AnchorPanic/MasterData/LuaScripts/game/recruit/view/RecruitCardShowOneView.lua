@@ -1,4 +1,4 @@
---[[ 
+--[[
 -----------------------------------------------------
 @filename       : RecruitShowOneView
 @Description    : 招募单人展示
@@ -22,7 +22,7 @@ isAddMask = 0
 function ctor(self)
     super.ctor(self)
 end
---析构  
+--析构
 function dtor(self)
 end
 
@@ -56,7 +56,6 @@ function active(self, cardInfo)
     self:setAdapta()
 
     self.mTid = cardInfo.tid
-    self.propsList = cardInfo.propsList
     self.isNoSkip = cardInfo.isNoSkip ~= nil and cardInfo.isNoSkip or false
 
     self.mPropsConfigVo = props.PropsManager:getPropsConfigVo(self.mTid)
@@ -77,7 +76,7 @@ function deActive(self)
         hero.HeroShowManager:setIsMess(false)
         local heroId = hero.HeroManager:getHeroIdByTid(self.mTid)
         showBoard.ShowBoardManager:GetSaveTheList(heroId)
-        GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DEVELOP_PANEL, { heroId = heroId, mTid = self.mTid })
+        GameDispatcher:dispatchEvent(EventName.OPEN_HERO_DEVELOP_PANEL, {heroId = heroId, mTid = self.mTid})
     end
 
     if self.mCvAudioData then
@@ -90,8 +89,7 @@ function getAdaptaTrans(self)
     return self:getChildTrans("mGroup")
 end
 
-
---[[ 
+--[[
     初始化界面的静态文本，图片字
     每次打开界面都会重新读取，多语言切换时可以及时更新
 ]]
@@ -163,12 +161,15 @@ function updateConvertView(self)
     self:recoverAllGrid()
     self:recoverAllItemGrid()
 
-    local isEmpty = table.empty(self.propsList)
+    local curId = recruit.RecruitManager:getRecruitActionId()
+    local recruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(curId)
+    local propsList = {{tid = recruitConfigVo.rebate_item[1], num = recruitConfigVo.rebate_item[2]}}
+    local isEmpty = table.empty(propsList)
     self.mGroupConvert:SetActive(not isEmpty)
     if not isEmpty then
-        for i = 1, #self.propsList do
+        for i = 1, #propsList do
             local item = SimpleInsItem:create(self.mImgConvert, self.mConvertContent, "RecruitCardShowOneViewrecruitShowOneItem")
-            local propsGrid = PropsGrid:create(item:getChildTrans("mItemPoint"), self.propsList[i], 1)
+            local propsGrid = PropsGrid:create(item:getChildTrans("mItemPoint"), propsList[i], 1)
             propsGrid:setClickEnable(false)
             table.insert(self.mPropsGridList, propsGrid)
             table.insert(self.mItemList, item)
@@ -197,5 +198,5 @@ end
 return _M
 
 --[[ 替换语言包自动生成，请勿修改！
-	语言包: _TT(571):	"已转化"
+语言包: _TT(571):"已转化"
 ]]

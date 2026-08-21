@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("Dorm3dIKController")
+﻿local var_0_0 = class("Dorm3dIKController")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.triggerName = arg_1_1.triggerName

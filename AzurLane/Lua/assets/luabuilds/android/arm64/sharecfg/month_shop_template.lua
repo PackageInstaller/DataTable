@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "month_shop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "month_shop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.month_shop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.month_shop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.month_shop_template = rawget(pg, "month_shop_template") or setmetatable({
+	__name = "month_shop_template"
+}, confNEO)
+pg.month_shop_template.all = {
 	1,
 	2,
 	3,
@@ -39,25 +16,11 @@ var_0_3.all = {
 	11,
 	12
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.month_shop_template = {}
+pg.base = pg.base or {}
+pg.base.month_shop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.month_shop_template
-
-	var_1_0[1] = {
+	pg.base.month_shop_template[1] = {
 		id = 1,
 		core_shop_goods = {
 			10001,
@@ -175,7 +138,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -223,11 +187,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.month_shop_template
-
-	var_1_1[2] = {
+	pg.base.month_shop_template[2] = {
 		id = 2,
 		core_shop_goods = {
 			10001,
@@ -345,7 +305,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -393,11 +354,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.month_shop_template
-
-	var_1_2[3] = {
+	pg.base.month_shop_template[3] = {
 		id = 3,
 		core_shop_goods = {
 			10001,
@@ -515,7 +472,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -563,11 +521,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.month_shop_template
-
-	var_1_3[4] = {
+	pg.base.month_shop_template[4] = {
 		id = 4,
 		core_shop_goods = {
 			10001,
@@ -685,7 +639,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -733,11 +688,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.month_shop_template
-
-	var_1_4[5] = {
+	pg.base.month_shop_template[5] = {
 		id = 5,
 		core_shop_goods = {
 			10001,
@@ -855,7 +806,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -903,11 +855,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.month_shop_template
-
-	var_1_5[6] = {
+	pg.base.month_shop_template[6] = {
 		id = 6,
 		core_shop_goods = {
 			10001,
@@ -1025,7 +973,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -1073,11 +1022,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.month_shop_template
-
-	var_1_6[7] = {
+	pg.base.month_shop_template[7] = {
 		id = 7,
 		core_shop_goods = {
 			10001,
@@ -1195,7 +1140,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -1243,11 +1189,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.month_shop_template
-
-	var_1_7[8] = {
+	pg.base.month_shop_template[8] = {
 		id = 8,
 		core_shop_goods = {
 			10001,
@@ -1365,7 +1307,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -1413,11 +1356,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.month_shop_template
-
-	var_1_8[9] = {
+	pg.base.month_shop_template[9] = {
 		id = 9,
 		core_shop_goods = {
 			10001,
@@ -1535,7 +1474,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -1583,11 +1523,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.month_shop_template
-
-	var_1_9[10] = {
+	pg.base.month_shop_template[10] = {
 		id = 10,
 		core_shop_goods = {
 			10001,
@@ -1705,7 +1641,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -1753,11 +1690,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.month_shop_template
-
-	var_1_10[11] = {
+	pg.base.month_shop_template[11] = {
 		id = 11,
 		core_shop_goods = {
 			10001,
@@ -1875,7 +1808,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,
@@ -1923,8 +1857,7 @@ var_0_3.base.month_shop_template = {}
 			20004
 		}
 	}
-	pg = var_1_10
-	var_1_10.base.month_shop_template[12] = {
+	pg.base.month_shop_template[12] = {
 		id = 12,
 		core_shop_goods = {
 			10001,
@@ -2042,7 +1975,8 @@ var_0_3.base.month_shop_template = {}
 			11031,
 			11033,
 			11034,
-			11035
+			11035,
+			11037
 		},
 		blueprint_shop_limit_goods = {
 			11009,

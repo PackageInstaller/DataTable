@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandSystemVO")
+﻿local var_0_0 = class("IslandSystemVO")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1
@@ -12,31 +10,23 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.GetBehaviourTree(arg_2_0)
-	assert = var_1_10001
-
-	var_1_10001(false, "overwrite me!")
+	assert(false, "overwrite me!")
 
 	return
 end
 
 function var_0_0.GetType(arg_3_0)
-	assert = var_1_10001
-
-	var_1_10001(false, "overwrite me!")
+	assert(false, "overwrite me!")
 
 	return
 end
 
 function var_0_0.GetPosition(arg_4_0)
-	Vector3 = var_1_10001
-
-	return var_1_10001.zero
+	return Vector3.zero
 end
 
 function var_0_0.GetRotation(arg_5_0)
-	Vector3 = var_1_10001
-
-	return var_1_10001.zero
+	return Vector3.zero
 end
 
 return var_0_0

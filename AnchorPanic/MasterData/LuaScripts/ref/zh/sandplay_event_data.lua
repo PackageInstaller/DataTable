@@ -27,7 +27,7 @@ local sandplay_event_data=
 },
 	[2005]={ type=2, param={2112}, btn_name=95006, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
-	[2006]={ type=2, param={2114}, btn_name=95056, btn_icon="mini_event_icon_18.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+	[2006]={ type=2, param={2125}, btn_name=95056, btn_icon="mini_event_icon_18.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
 	[2007]={ type=2, param={2115}, btn_name=95055, btn_icon="mini_event_icon_17.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
@@ -35,7 +35,27 @@ local sandplay_event_data=
 },
 	[2009]={ type=2, param={2116}, btn_name=95118, btn_icon="mini_event_icon_22.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
-	[3001]={ type=3, param={{-18.55,0.55,13.9},270}, btn_name=95007, btn_icon="mini_event_icon_10.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+	[2010]={ type=2, param={2120}, btn_name=95118, btn_icon="mini_event_icon_22.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2011]={ type=2, param={2118}, btn_name=95196, btn_icon="mini_event_icon_24.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2012]={ type=2, param={2119}, btn_name=95195, btn_icon="mini_event_icon_23.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2013]={ type=2, param={2122}, btn_name=95118, btn_icon="mini_event_icon_22.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2014]={ type=2, param={2125}, btn_name=95118, btn_icon="mini_event_icon_22.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2015]={ type=2, param={2123}, btn_name=95118, btn_icon="mini_event_icon_22.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2016]={ type=2, param={2130}, btn_name=95272, btn_icon="mini_event_icon_25.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2017]={ type=2, param={2135}, btn_name=151247, btn_icon="mini_event_icon_26.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2018]={ type=2, param={2134}, btn_name=151246, btn_icon="mini_event_icon_27.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[2019]={ type=2, param={2140}, btn_name=151288, btn_icon="mini_event_icon_28.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[3001]={ type=3, param={{5.71,0.285,-6.952},200}, btn_name=95007, btn_icon="mini_event_icon_10.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
 	[4001]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
@@ -79,6 +99,34 @@ local sandplay_event_data=
 },
 	[4103]={ type=4, param={4902}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
+	[4019]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4020]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4021]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4022]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4023]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4024]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4025]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4026]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4027]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4028]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4029]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4030]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4104]={ type=4, param={4902}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[4105]={ type=4, param={4902}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
 	[5001]={ type=5, param={1002}, btn_name=95111, btn_icon="mini_event_icon_20.png", trigger_type=0, is_repeat=0, trigger_state={2}, is_look=0, talke_type=0, camera_pos={}
 },
 	[5002]={ type=5, param={1004}, btn_name=95111, btn_icon="mini_event_icon_20.png", trigger_type=0, is_repeat=0, trigger_state={2}, is_look=0, talke_type=0, camera_pos={}
@@ -94,6 +142,10 @@ local sandplay_event_data=
 	[6002]={ type=6, param={3,{0.025,0,-6.92}}, btn_name=95112, btn_icon="mini_event_icon_19.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
 	[6003]={ type=6, param={2,{13.8,0,10.11}}, btn_name=95113, btn_icon="mini_event_icon_19.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[6004]={ type=6, param={2,{11,0,9}}, btn_name=95113, btn_icon="mini_event_icon_19.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[6005]={ type=6, param={6,{-13,0,-9}}, btn_name=95112, btn_icon="mini_event_icon_19.png", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
 	[7001]={ type=7, param={}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
@@ -120,6 +172,30 @@ local sandplay_event_data=
 	[40029]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 },
 	[40030]={ type=4, param={4901}, btn_name=95054, btn_icon="mini_event_icon_5.png", trigger_type=0, is_repeat=0, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80001]={ type=8, param={301,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80002]={ type=8, param={302,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80003]={ type=8, param={303,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80004]={ type=8, param={304,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80005]={ type=8, param={305,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80006]={ type=8, param={306,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80007]={ type=8, param={307,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80008]={ type=8, param={308,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80009]={ type=8, param={309,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80010]={ type=8, param={310,{137021,137022,137023,0,0,0,0,137024}}, btn_name=0, btn_icon="", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80101]={ type=9, param={401,402,403,404,405,406}, btn_name=95196, btn_icon="mini_event_icon_24.png", trigger_type=1, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
+},
+	[80102]={ type=10, param={1}, btn_name=0, btn_icon="", trigger_type=0, is_repeat=1, trigger_state={}, is_look=0, talke_type=0, camera_pos={}
 }
 }
 

@@ -1,113 +1,45 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewBackYardShopMediator", import("...base.ContextMediator"))
 
-local var_0_0 = "NewBackYardShopMediator"
+var_0_0.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
+var_0_0.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.ContextMediator"))
-
-var_0_1.ON_SHOPPING = "NewBackYardShopMediator:ON_SHOPPING"
-var_0_1.ON_CHARGE = "NewBackYardShopMediator:ON_CHARGE"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.ON_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_2_1(var_2_0, var_2_10006.BUY_FURNITURE, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2)
+		arg_1_0:sendNotification(GAME.BUY_FURNITURE, {
 			furnitureIds = arg_2_1,
 			type = arg_2_2
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_CHARGE, function(arg_3_0, arg_3_1)
-		local var_3_0
-
+	arg_1_0:bind(var_0_0.ON_CHARGE, function(arg_3_0, arg_3_1)
 		if arg_1_0.contextData.onDeattch then
-			var_3_0 = arg_1_0.contextData
-			var_3_0.onDeattch = nil
+			arg_1_0.contextData.onDeattch = nil
 		end
 
-		getProxy = var_3_0
-		ContextProxy = var_2_10004
+		local var_3_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(CourtYardMediator)
 
-		local var_3_1 = var_3_0(var_2_10004)
-		local var_3_2 = var_2.getCurrentContext(var_3_1)
-		local var_3_3 = var_2.getContextByMediator
-
-		CourtYardMediator = var_2_10005
-
-		if var_3_3(var_3_2, var_2_10005) then
-			var_2_10003 = var_2.data
-			var_2_10003.skipToCharge = true
+		if var_3_0 then
+			var_3_0.data.skipToCharge = true
 		end
 
-		PlayerConst = var_2_10003
-
-		local var_3_5
-
-		if arg_3_1 == var_2_10003.ResDiamond then
-			local var_3_4 = arg_1_0
-
-			var_3_5 = var_3_5.sendNotification
-			GAME = var_2_10006
-			var_2_10006 = var_2_10006.GO_SCENE
-			SCENE = var_2_10007
-			var_2_10007 = var_2_10007.CHARGE
-
-			local var_3_6 = {}
-
-			ChargeScene = var_2_10009
-			var_3_6.wrap = var_2_10009.TYPE_DIAMOND
-
-			var_3_5(var_3_4, var_2_10006, var_2_10007, var_3_6)
-		else
-			PlayerConst = var_3_5
-
-			if arg_3_1 == var_3_5.ResDormMoney then
-				local var_3_7 = arg_1_0
-				local var_3_8 = var_3.sendNotification
-
-				GAME = var_2_10006
-
-				local var_3_9 = var_2_10006.GO_SCENE
-
-				SCENE = var_2_10007
-
-				var_3_8(var_3_7, var_3_9, var_2_10007.EVENT)
-			end
+		if arg_3_1 == PlayerConst.ResDiamond then
+			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.CHARGE, {
+				wrap = ChargeScene.TYPE_DIAMOND
+			})
+		elseif arg_3_1 == PlayerConst.ResDormMoney then
+			arg_1_0:sendNotification(GAME.GO_SCENE, SCENE.EVENT)
 		end
 
 		return
 	end)
-
-	local var_1_0 = arg_1_0.viewComponent
-	local var_1_1 = var_1.SetDorm
-
-	getProxy = var_4
-	DormProxy = var_1_10006
-
-	local var_1_2 = var_4(var_1_10006)
-
-	var_1_1(var_1_0, var_4.getRawData(var_1_2))
-
-	local var_1_3 = arg_1_0.viewComponent
-	local var_1_4 = var_1.SetPlayer
-
-	getProxy = var_4
-	PlayerProxy = var_1_2
-
-	local var_1_5 = var_4(var_1_2)
-
-	var_1_4(var_1_3, var_4.getRawData(var_1_5))
+	arg_1_0.viewComponent:SetDorm(getProxy(DormProxy):getRawData())
+	arg_1_0.viewComponent:SetPlayer(getProxy(PlayerProxy):getRawData())
 
 	return
 end
 
-function var_0_1.remove(arg_4_0)
+function var_0_0.remove(arg_4_0)
 	if arg_4_0.contextData.onRemove then
 		arg_4_0.contextData.onRemove()
 	end
@@ -115,56 +47,26 @@ function var_0_1.remove(arg_4_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_5_0)
-	local var_5_0 = {}
-
-	PlayerProxy = var_1_10002
-	var_5_0[1] = var_1_10002.UPDATED
-	GAME = var_2
-	var_5_0[2] = var_2.BUY_FURNITURE_DONE
-	DormProxy = var_2
-	var_5_0[3] = var_2.DORM_UPDATEED
-
-	return var_5_0
+function var_0_0.listNotificationInterests(arg_5_0)
+	return {
+		PlayerProxy.UPDATED,
+		GAME.BUY_FURNITURE_DONE,
+		DormProxy.DORM_UPDATEED
+	}
 end
 
-function var_0_1.handleNotification(arg_6_0, arg_6_1)
+function var_0_0.handleNotification(arg_6_0, arg_6_1)
 	local var_6_0 = arg_6_1:getName()
-	local var_6_1 = arg_6_1
-	local var_6_2 = arg_6_1.getBody(var_6_1)
-	local var_6_3 = arg_6_1:getType()
 
-	PlayerProxy = var_6_1
-
-	if var_6_0 == var_6_1.UPDATED then
-		local var_6_4 = arg_6_0.viewComponent
-
-		var_5.PlayerUpdated(var_6_4, var_6_2)
-	else
-		GAME = var_5
-
-		if var_6_0 == var_5.BUY_FURNITURE_DONE then
-			local var_6_5 = arg_6_0.viewComponent
-
-			var_5.FurnituresUpdated(var_6_5, var_6_3)
-		else
-			DormProxy = var_5
-
-			if var_6_0 == var_5.DORM_UPDATEED then
-				local var_6_6 = arg_6_0.viewComponent
-				local var_6_7 = var_5.DormUpdated
-
-				getProxy = var_1_10008
-				DormProxy = var_1_10010
-
-				local var_6_8 = var_1_10008(var_1_10010)
-
-				var_6_7(var_6_6, var_8.getRawData(var_6_8))
-			end
-		end
+	if var_6_0 == PlayerProxy.UPDATED then
+		arg_6_0.viewComponent:PlayerUpdated((arg_6_1:getBody()))
+	elseif var_6_0 == GAME.BUY_FURNITURE_DONE then
+		arg_6_0.viewComponent:FurnituresUpdated((arg_6_1:getType()))
+	elseif var_6_0 == DormProxy.DORM_UPDATEED then
+		arg_6_0.viewComponent:DormUpdated(getProxy(DormProxy):getRawData())
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,17 +1,6 @@
-﻿require = var_0_10000
-
-var_0_10000("Framework/Base/MVC/Command")
-
-require = var_0_10000
-
-var_0_10000("Framework/Base/MVC/Mediator")
-
-require = var_0_10000
-
-var_0_10000("Framework/Base/MVC/Proxy")
-
-require = var_0_10000
-
-var_0_10000("Framework/Base/MVC/Facade")
+﻿require("Framework/Base/MVC/Command")
+require("Framework/Base/MVC/Mediator")
+require("Framework/Base/MVC/Proxy")
+require("Framework/Base/MVC/Facade")
 
 return

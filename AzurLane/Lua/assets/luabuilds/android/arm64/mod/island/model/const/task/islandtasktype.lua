@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandTaskType")
+﻿local var_0_0 = class("IslandTaskType")
 
 var_0_0.MAIN = 1
 var_0_0.BRANCH = 2
@@ -53,38 +51,14 @@ var_0_0.ShowTypeUnlockId = {
 	[var_0_0.SHOW_WEEKLY] = 44,
 	[var_0_0.SHOW_ACTIVITY] = 45
 }
-
-local var_0_1 = {}
-local var_0_2 = var_0_0.SHOW_ALL
-
-i18n = var_3
-var_0_1[var_0_2] = var_3("island_task_type_1")
-
-local var_0_3 = var_0_0.SHOW_MAIN
-
-i18n = var_3
-var_0_1[var_0_3] = var_3("island_task_type_2")
-
-local var_0_4 = var_0_0.SHOW_BRANCH
-
-i18n = var_3
-var_0_1[var_0_4] = var_3("island_task_type_3")
-
-local var_0_5 = var_0_0.SHOW_DAILY
-
-i18n = var_3
-var_0_1[var_0_5] = var_3("island_task_type_4")
-
-local var_0_6 = var_0_0.SHOW_WEEKLY
-
-i18n = var_3
-var_0_1[var_0_6] = var_3("island_task_type_5")
-
-local var_0_7 = var_0_0.SHOW_ACTIVITY
-
-i18n = var_3
-var_0_1[var_0_7] = var_3("island_task_type_6")
-var_0_0.ShowTypeNames = var_0_1
+var_0_0.ShowTypeNames = {
+	[var_0_0.SHOW_ALL] = i18n("island_task_type_1"),
+	[var_0_0.SHOW_MAIN] = i18n("island_task_type_2"),
+	[var_0_0.SHOW_BRANCH] = i18n("island_task_type_3"),
+	[var_0_0.SHOW_DAILY] = i18n("island_task_type_4"),
+	[var_0_0.SHOW_WEEKLY] = i18n("island_task_type_5"),
+	[var_0_0.SHOW_ACTIVITY] = i18n("island_task_type_6")
+}
 var_0_0.ShowTypeColors = {
 	[var_0_0.SHOW_MAIN] = "#36bdff",
 	[var_0_0.SHOW_BRANCH] = "#f775ff",
@@ -106,9 +80,7 @@ var_0_0.EXCLUED_TRACK_TYPES = {
 }
 
 function var_0_0.GetTrackPriority(arg_2_0)
-	switch = var_1_10001
-
-	return var_1_10001(arg_2_0, {
+	return switch(arg_2_0, {
 		[var_0_0.MAIN] = function()
 			return 1
 		end,
@@ -136,9 +108,7 @@ function var_0_0.GetTrackPriority(arg_2_0)
 end
 
 function var_0_0.GetHudPriority(arg_11_0)
-	switch = var_1_10001
-
-	return var_1_10001(arg_11_0, {
+	return switch(arg_11_0, {
 		[var_0_0.SHOW_MAIN] = function()
 			return 1
 		end,
@@ -172,9 +142,7 @@ function var_0_0.GetTrackingIconName(arg_18_0)
 		return "task_type_5"
 	end
 
-	assert = var_1
-
-	var_1(false, "Unknown type >>>" .. arg_18_0)
+	assert(false, "Unknown type >>>" .. arg_18_0)
 
 	return
 end

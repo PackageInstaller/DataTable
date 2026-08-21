@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BaseLadyEnv")
+﻿local var_0_0 = class("BaseLadyEnv")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0.event = arg_1_1
@@ -10,17 +8,13 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 end
 
 function var_0_0.Emit(arg_2_0, arg_2_1, ...)
-	local var_2_0 = arg_2_0.event
-
-	var_2.emit(var_2_0, arg_2_1, ...)
+	arg_2_0.event:emit(arg_2_1, ...)
 
 	return
 end
 
 function var_0_0.Func(arg_3_0, arg_3_1, ...)
-	assert = var_1_10002
-
-	var_1_10002(arg_3_0.scene[arg_3_1], "Function " .. arg_3_1 .. " not found in scene")
+	assert(arg_3_0.scene[arg_3_1], "Function " .. arg_3_1 .. " not found in scene")
 
 	return arg_3_0.scene[arg_3_1](arg_3_0.scene, ...)
 end

@@ -1,79 +1,51 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SummaryPage4", import(".SummaryAnimationPage"))
 
-local var_0_0 = "SummaryPage4"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SummaryAnimationPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	findTF = var_1_10001
-
-	local var_1_0 = var_1_10001(arg_1_0._go, "content")
-	local var_1_1 = arg_1_0.summaryInfoVO.furnitures
-	local var_1_2 = {}
+function var_0_0.OnInit(arg_1_0)
+	local var_1_0 = findTF(arg_1_0._go, "content")
+	local var_1_1 = {}
 
 	for iter_1_0 = 1, var_1_0.childCount do
-		local var_1_3 = var_1_0
-		local var_1_4 = var_1_0.GetChild(var_1_3, iter_1_0 - 1)
+		local var_1_2 = var_1_0:GetChild(iter_1_0 - 1)
+		local var_1_3 = findTF(var_1_2, "info")
+		local var_1_4 = tonumber(go(var_1_2).name)
+		local var_1_5 = arg_1_0.summaryInfoVO.furnitures[var_1_4]
 
-		findTF = var_1_10009
-		var_1_10009 = var_1_10009(var_1_4, "info")
-		tonumber = var_1_3
-		go = var_12
+		triggerToggle(var_1_3, arg_1_0.summaryInfoVO.furnitures[var_1_4])
 
-		local var_1_5 = var_1_1[var_1_3(var_12(var_1_4).name)]
-
-		triggerToggle = var_1_6
-
-		var_1_6(var_1_10009, var_1_5)
-
-		local var_1_6, var_1_7
+		local var_1_6 = pg.furniture_data_template[var_1_4]
+		local var_1_8 = var_1_3:Find("from/Text")
 
 		if var_1_5 then
-			setText = var_1_6
+			setText(var_1_3:Find("from/Text"), var_1_5:getConfig("gain_by"))
 
-			var_1_6(var_1_10009:Find("from/Text"), var_1_5:getConfig("gain_by"))
-		else
-			pg = var_1_6
-			var_1_6 = var_1_6.furniture_data_template[var_10]
-			setText = var_1_10013
-			var_1_7 = var_1_10009:Find("from/Text")
+			goto label_1_0
+		end
 
-			local var_1_8
+		::label_1_0::
 
-			if not var_1_6 or not var_1_6.gain_by then
-				var_1_8 = "--：--:--"
+		if pg.furniture_data_template[var_1_4] then
+			local var_1_10
+
+			do
+				local var_1_9 = var_1_6.gain_by or "--：--:--"
+
+				var_1_7(var_1_8, var_1_9)
+
+				var_1_10 = var_1_5 and var_1_5:getDate() or i18n("summary_page_un_rearch")
 			end
 
-			var_1_10013(var_1_7, var_1_8)
+			setText(var_1_3:Find("date/Text"), var_1_10)
+			table.insert(var_1_1, var_1_3)
 		end
-
-		setText = var_1_6
-
-		local var_1_9 = var_1_10009:Find("date/Text")
-
-		if not var_1_5 or not var_1_5:getDate() then
-			i18n = var_1_7
-			var_1_7 = var_1_7("summary_page_un_rearch")
-		end
-
-		var_1_6(var_1_9, var_1_7)
-
-		table = var_1_6
-
-		var_1_6.insert(var_1_2, var_1_10009)
 	end
 
-	setActive = var_4
-
-	var_4(arg_1_0._go, false)
+	setActive(arg_1_0._go, false)
 
 	return
 end
 
-function var_0_1.Clear(arg_2_0)
+function var_0_0.Clear(arg_2_0)
 	return
 end
 
-return var_0_1
+return var_0_0

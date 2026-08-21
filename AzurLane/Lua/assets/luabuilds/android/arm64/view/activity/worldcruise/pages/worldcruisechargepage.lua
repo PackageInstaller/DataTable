@@ -1,302 +1,123 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WorldCruiseChargePage", import("view.base.BaseSubView"))
 
-local var_0_0 = "WorldCruiseChargePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WorldCruiseChargePage"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.OnInit(arg_3_0)
+	arg_3_0.buyWindow = arg_3_0._tf:Find("buy_window")
+	arg_3_0.cancelBtn = arg_3_0.buyWindow:Find("button_container/button_cancel")
 
-	arg_3_0.buyWindow = var_1.Find(var_3_0, "buy_window")
+	setText(arg_3_0.cancelBtn:Find("Image"), i18n("text_cancel"))
 
-	local var_3_1 = arg_3_0.buyWindow
+	arg_3_0.confirmBtn = arg_3_0.buyWindow:Find("button_container/button_ok")
+	arg_3_0.priceTF = arg_3_0.confirmBtn:Find("Image")
 
-	arg_3_0.cancelBtn = var_1.Find(var_3_1, "button_container/button_cancel")
-	setText = var_1
+	setText(arg_3_0.buyWindow:Find("left/got/desc"), i18n("battlepass_pay_acquire"))
 
-	local var_3_2 = arg_3_0.cancelBtn
-	local var_3_3 = var_3.Find(var_3_2, "Image")
+	local var_3_0 = arg_3_0.buyWindow:Find("right/items/scrollview/list")
 
-	i18n = var_4
+	arg_3_0.uiItemList = UIItemList.New(var_3_0, var_3_0:Find("tpl"))
 
-	var_1(var_3_3, var_4("text_cancel"))
-
-	local var_3_4 = arg_3_0.buyWindow
-
-	arg_3_0.confirmBtn = var_1.Find(var_3_4, "button_container/button_ok")
-
-	local var_3_5 = arg_3_0.confirmBtn
-
-	arg_3_0.priceTF = var_1.Find(var_3_5, "Image")
-	setText = var_1
-
-	local var_3_6 = arg_3_0.buyWindow
-	local var_3_7 = var_3.Find(var_3_6, "left/got/desc")
-
-	i18n = var_4
-
-	var_1(var_3_7, var_4("battlepass_pay_acquire"))
-
-	local var_3_8 = arg_3_0.buyWindow
-	local var_3_9 = var_1.Find(var_3_8, "right/items/scrollview/list")
-
-	UIItemList = var_1_10002
-	arg_3_0.uiItemList = var_1_10002.New(var_3_9, var_3_9:Find("tpl"))
-
-	local var_3_10 = arg_3_0.uiItemList
-
-	var_2.make(var_3_10, function(arg_4_0, arg_4_1, arg_4_2)
+	arg_3_0.uiItemList:make(function(arg_4_0, arg_4_1, arg_4_2)
 		arg_4_1 = arg_4_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_4_0 == var_2_10003.EventUpdate then
+		if arg_4_0 == UIItemList.EventUpdate then
 			local var_4_0 = arg_3_0.itemList[arg_4_1]
 
-			updateDrop = var_2_10004
-
-			var_2_10004(arg_4_2, var_4_0)
-
-			setText = var_2_10004
-
-			local var_4_1 = arg_4_2:Find("name")
-
-			shortenString = var_7
-
-			var_2_10004(var_4_1, var_7(var_4_0:getConfig("name"), 4))
-
-			onButton = var_2_10004
-
-			local var_4_2 = arg_3_0
-			local var_4_3 = arg_4_2
-
-			local function var_4_4()
-				local var_5_0 = arg_3_0
-				local var_5_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_5_1(var_5_0, var_3_10003.ON_NEW_STYLE_DROP, {
+			updateDrop(arg_4_2, arg_3_0.itemList[arg_4_1])
+			setText(arg_4_2:Find("name"), shortenString(arg_3_0.itemList[arg_4_1]:getConfig("name"), 4))
+			onButton(arg_3_0, arg_4_2, function()
+				arg_3_0:emit(BaseUI.ON_NEW_STYLE_DROP, {
 					drop = var_4_0
 				})
 
 				return
-			end
-
-			SFX_CONFIRM = var_9
-
-			var_2_10004(var_4_2, var_4_3, var_4_4, var_9)
+			end, SFX_CONFIRM)
 		end
 
 		return
 	end)
 
-	local var_3_11 = arg_3_0._tf
+	arg_3_0.unlcokWindow = arg_3_0._tf:Find("unlock_window")
 
-	arg_3_0.unlcokWindow = var_2.Find(var_3_11, "unlock_window")
-	setText = var_2
+	setText(arg_3_0.unlcokWindow:Find("tip"), i18n("word_click_to_close"))
 
-	local var_3_12 = arg_3_0.unlcokWindow
-	local var_3_13 = var_4.Find(var_3_12, "tip")
+	arg_3_0.unlockItem = arg_3_0.unlcokWindow:Find("IconTpl")
 
-	i18n = var_5
-
-	var_2(var_3_13, var_5("word_click_to_close"))
-
-	local var_3_14 = arg_3_0.unlcokWindow
-
-	arg_3_0.unlockItem = var_2.Find(var_3_14, "IconTpl")
-	onButton = var_2
-
-	local var_3_15 = arg_3_0
-	local var_3_16 = arg_3_0._tf
-	local var_3_17 = var_5.Find(var_3_16, "bg")
-
-	local function var_3_18()
-		local var_6_0 = arg_3_0
-
-		var_0.Hide(var_6_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("bg"), function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_16
-
-	var_2(var_3_15, var_3_17, var_3_18, var_3_16)
-
-	onButton = var_2
-
-	local var_3_19 = arg_3_0
-	local var_3_20 = arg_3_0.cancelBtn
-
-	local function var_3_21()
-		local var_7_0 = arg_3_0
-
-		var_0.Hide(var_7_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_16
-
-	var_2(var_3_19, var_3_20, var_3_21, var_3_16)
-
-	onButton = var_2
-
-	local var_3_22 = arg_3_0
-	local var_3_23 = arg_3_0.confirmBtn
-
-	local function var_3_24()
-		ChargeConst = var_2_10000
-
-		local var_8_1
-
-		if var_2_10000.isNeedSetBirth() then
-			local var_8_0 = arg_3_0
-
-			var_8_1 = var_8_1.emit
-			WorldCruiseMediator = var_2_10003
-
-			var_8_1(var_8_0, var_2_10003.EVENT_OPEN_BIRTHDAY)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.confirmBtn, function()
+		if ChargeConst.isNeedSetBirth() then
+			arg_3_0:emit(WorldCruiseMediator.EVENT_OPEN_BIRTHDAY)
 		else
-			pg = var_8_1
-
-			local var_8_2 = var_8_1.m02
-			local var_8_3 = var_0.sendNotification
-
-			GAME = var_2_10003
-
-			var_8_3(var_8_2, var_2_10003.CHARGE_OPERATION, {
+			pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
 				shopId = arg_3_0.passId
 			})
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_3_16
-
-	var_2(var_3_22, var_3_23, var_3_24, var_3_16)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.ShowBuyWindow(arg_9_0)
-	setActive = var_1_10001
+function var_0_0.ShowBuyWindow(arg_9_0)
+	setActive(arg_9_0.buyWindow, true)
+	setActive(arg_9_0.unlcokWindow, false)
+	arg_9_0:Show()
 
-	var_1_10001(arg_9_0.buyWindow, true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_9_0.unlcokWindow, false)
-
-	local var_9_0 = arg_9_0
-
-	arg_9_0.Show(var_9_0)
-
-	local var_9_1 = var_0_1.GetPassID()
-
-	if arg_9_0.passId and arg_9_0.passId == var_9_1 then
+	if arg_9_0.passId and arg_9_0.passId == var_0_0.GetPassID() then
 		return
 	end
 
-	arg_9_0.passId = var_0_1.GetPassID()
-	Goods = var_2
+	arg_9_0.passId = var_0_0.GetPassID()
 
-	local var_9_2 = var_2.Create
-	local var_9_3 = {
+	local var_9_0 = Goods.Create({
 		shop_id = arg_9_0.passId
-	}
+	}, Goods.TYPE_CHARGE)
+	local var_9_1 = Drop.Create(var_9_0:getConfig("display")[1])
 
-	Goods = var_5
+	LoadImageSpriteAtlasAsync(var_9_1:getIcon(), "", arg_9_0.buyWindow:Find("left/got/award/icon"))
+	setText(arg_9_0.buyWindow:Find("left/got/award/count"), "x" .. var_9_1.count)
+	setText(arg_9_0.buyWindow:Find("right/tip"), var_9_0:getConfig("descrip_extra"))
 
-	local var_9_4 = var_9_2(var_9_3, var_5.TYPE_CHARGE)
+	local var_9_2 = var_9_0:getConfig("money")
 
-	Drop = var_9_0
-
-	local var_9_5 = var_9_0.Create(var_9_4:getConfig("display")[1])
-
-	LoadImageSpriteAtlasAsync = var_9_3
-
-	local var_9_6 = var_9_5:getIcon()
-	local var_9_7 = ""
-	local var_9_8 = arg_9_0.buyWindow
-
-	var_9_3(var_9_6, var_9_7, var_8.Find(var_9_8, "left/got/award/icon"))
-
-	setText = var_9_3
-
-	local var_9_9 = arg_9_0.buyWindow
-
-	var_9_3(var_6.Find(var_9_9, "left/got/award/count"), "x" .. var_9_5.count)
-
-	setText = var_9_3
-
-	local var_9_10 = arg_9_0.buyWindow
-
-	var_9_3(var_6.Find(var_9_10, "right/tip"), var_9_4:getConfig("descrip_extra"))
-
-	local var_9_11 = var_9_4
-	local var_9_12 = var_9_4.getConfig(var_9_11, "money")
-
-	PLATFORM_CODE = var_5
-	PLATFORM_CHT = var_9_11
-
-	if var_5 == var_9_11 and var_9_4:IsLocalPrice() then
+	if PLATFORM_CODE == PLATFORM_CHT and var_9_0:IsLocalPrice() then
 		-- block empty
 	else
-		GetMoneySymbol = var_5
-		var_9_12 = var_5() .. var_9_12
+		var_9_2 = GetMoneySymbol() .. var_9_2
 	end
 
-	setText = var_5
+	setText(arg_9_0.priceTF, var_9_2)
 
-	var_5(arg_9_0.priceTF, var_9_12)
+	arg_9_0.itemList = var_9_0:GetExtraServiceItem()
 
-	arg_9_0.itemList = var_9_4:GetExtraServiceItem()
-
-	local var_9_13 = arg_9_0.uiItemList
-
-	var_5.align(var_9_13, #arg_9_0.itemList)
+	arg_9_0.uiItemList:align(#arg_9_0.itemList)
 
 	return
 end
 
-function var_0_1.GetPassID()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+function var_0_0.GetPassID()
+	local var_10_0 = getProxy(ActivityProxy):getAliveActivityByType(ActivityConst.ACTIVITY_TYPE_PT_CRUSING)
 
-	local var_10_0 = var_1_10000(var_1_10002)
-	local var_10_1 = var_0.getAliveActivityByType
-
-	ActivityConst = var_1_10004
-
-	if var_10_1(var_10_0, var_1_10004.ACTIVITY_TYPE_PT_CRUSING) then
-		local var_10_2 = var_1
-
-		if not var_1.isEnd(var_10_2) then
-			ipairs = var_2
-			pg = var_10_2
-
-			for iter_10_0, iter_10_1 in var_2(var_10_2.pay_data_display.all) do
-				pg = var_1_10007
-
-				if var_1_10007.pay_data_display[iter_10_1].sub_display then
-					type = var_8
-
-					if var_8(var_1_10007.sub_display) == "table" and var_1_10007.sub_display[1] == var_1.id then
-						return iter_10_1
-					end
-				end
+	if var_10_0 and not var_10_0:isEnd() then
+		for iter_10_0, iter_10_1 in ipairs(pg.pay_data_display.all) do
+			if pg.pay_data_display[iter_10_1].sub_display and type(pg.pay_data_display[iter_10_1].sub_display) == "table" and pg.pay_data_display[iter_10_1].sub_display[1] == var_10_0.id then
+				return iter_10_1
 			end
 		end
 	end
@@ -304,76 +125,38 @@ function var_0_1.GetPassID()
 	return
 end
 
-function var_0_1.ShowUnlockWindow(arg_11_0, arg_11_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_11_0.buyWindow, false)
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_11_0.unlcokWindow, true)
+function var_0_0.ShowUnlockWindow(arg_11_0, arg_11_1)
+	setActive(arg_11_0.buyWindow, false)
+	setActive(arg_11_0.unlcokWindow, true)
 	arg_11_0:Show()
-
-	local var_11_0 = arg_11_1
-	local var_11_1 = arg_11_1.getConfig(var_11_0, "display")
-
-	Drop = var_1_10003
-
-	local var_11_2 = var_1_10003.Create(var_11_1[1])
-
-	updateDrop = var_11_0
-
-	var_11_0(arg_11_0.unlockItem, var_11_2)
-
-	onButton = var_11_0
-
-	local var_11_3 = arg_11_0
-	local var_11_4 = arg_11_0.unlockItem
-
-	local function var_11_5()
-		local var_12_0 = arg_11_0
-		local var_12_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_12_1(var_12_0, var_2_10003.ON_NEW_STYLE_DROP, {
-			drop = var_11_2
+	updateDrop(arg_11_0.unlockItem, (Drop.Create(arg_11_1:getConfig("display")[1])))
+	onButton(arg_11_0, arg_11_0.unlockItem, function()
+		arg_11_0:emit(BaseUI.ON_NEW_STYLE_DROP, {
+			drop = var_0
 		})
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10009
-
-	var_11_0(var_11_3, var_11_4, var_11_5, var_1_10009)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.Show(arg_13_0)
-	pg = var_1_10001
-
-	local var_13_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_13_0, arg_13_0._tf)
-	var_0_1.super.Show(arg_13_0)
+function var_0_0.Show(arg_13_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_13_0._tf)
+	var_0_0.super.Show(arg_13_0)
 
 	return
 end
 
-function var_0_1.Hide(arg_14_0)
-	pg = var_1_10001
-
-	local var_14_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_14_0, arg_14_0._tf)
-	var_0_1.super.Hide(arg_14_0)
+function var_0_0.Hide(arg_14_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0._tf)
+	var_0_0.super.Hide(arg_14_0)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_15_0)
+function var_0_0.OnDestroy(arg_15_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -12,7 +12,7 @@ function ctor(self)
     super.ctor(self)
     self:setTxtTitle(_TT(104001))
     self:setSize(0, 0)
-    self:setBg("disaster_main.jpg", false, "disaster")
+    self:setBg("disaster_main_2.jpg", false, "disaster")
     self:setUICode(LinkCode.Disaster)
 end
 
@@ -198,6 +198,11 @@ function getDifTxt(self, index)
 end
 
 function showPanel(self)
+    local id = sysParam.SysParamManager:getValue(SysParamType.DISASTER_BOSS_ID)
+  
+    self:setBg("disaster_main_"..id..".jpg", false, "disaster")
+
+
     --self.mBtnShop:SetActive(false)
     self.curDif = disaster.DisasterManager:getCurDif()
 

@@ -1,10 +1,8 @@
-﻿local var_0_0 = {}
-
-var_0_0.CELL_COL_CNT = 10
-var_0_0.CELL_WIDTH = 89.5
-var_0_0.CELL_HEIGHT = 89
-var_0_0.REVEAL_ITEM_TIME = 0.35
-var_0_0.AUCTION_PHASE = {
+﻿({}).CELL_COL_CNT = 10
+;({}).CELL_WIDTH = 89.5
+;({}).CELL_HEIGHT = 89
+;({}).REVEAL_ITEM_TIME = 0.35
+;({}).AUCTION_PHASE = {
 	WAIT_BID = 3,
 	COMMON_EVENT = 1,
 	WAIT_OVER = 5,
@@ -13,11 +11,11 @@ var_0_0.AUCTION_PHASE = {
 	ROUND_OVER = 4,
 	BID = 4
 }
-var_0_0.EVENT_TYPE_GROUP = {
+;({}).EVENT_TYPE_GROUP = {
 	COMMON = 2,
 	PERSONAL = 1
 }
-var_0_0.EVENT_TYPE = {
+;({}).EVENT_TYPE = {
 	RARITY_ITEMS_TOTAL_PRICE = 13,
 	RARITY_TOTAL_PRICE = 6,
 	RANDOM_ITEM_RARITY = 4,
@@ -38,11 +36,11 @@ var_0_0.EVENT_TYPE = {
 	MAX_PRICE_ITEM_PRICE = 9,
 	MAX_CELL_ITEM_CONTOUR = 7
 }
-var_0_0.TB_NPC_ID = 900284
-var_0_0.GUIDE_NPC_LIST = {
+;({}).TB_NPC_ID = 900284
+;({}).GUIDE_NPC_LIST = {
 	{
 		icon_frame = 101,
-		icon = var_0_0.TB_NPC_ID
+		icon = ({}).TB_NPC_ID
 	},
 	{
 		icon_frame = 101,
@@ -53,7 +51,7 @@ var_0_0.GUIDE_NPC_LIST = {
 		icon = 108020
 	}
 }
-var_0_0.GUIDE_ITEM_LIST = {
+;({}).GUIDE_ITEM_LIST = {
 	{
 		id = 84,
 		uid = 1,
@@ -217,8 +215,8 @@ var_0_0.GUIDE_ITEM_LIST = {
 		}
 	}
 }
-var_0_0.GUIDE_BID_VALUE = 100000
-var_0_0.GUIDE_NPC_BID_VALUE = {
+;({}).GUIDE_BID_VALUE = 100000
+;({}).GUIDE_NPC_BID_VALUE = {
 	{
 		0,
 		50000
@@ -232,7 +230,7 @@ var_0_0.GUIDE_NPC_BID_VALUE = {
 		5000
 	}
 }
-var_0_0.SOUND_EFFECT = {
+;({}).SOUND_EFFECT = {
 	EXPAND_POPUP = "ui_expand_popup",
 	COLLAPSE_POPUP = "ui_collapse_popup",
 	START_MATCHING = "ui_start_matching",
@@ -243,4 +241,4 @@ var_0_0.SOUND_EFFECT = {
 	REVEAL = "ui_reveal_search"
 }
 
-return var_0_0
+return {}

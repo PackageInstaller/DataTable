@@ -6,6 +6,12 @@
 -- module(..., package.seeall);
 
 
+--- 用string发送的大数字int型
+pt_int_to_string =
+{    
+    {"int_to_string_value", "string", "值"},
+}
+
 --- gm指令
 pt_gm_command =
 {    
@@ -78,7 +84,9 @@ pt_break_add_attr =
     {"key", "int16", "键"}, 
     {"value", "int32", "值"}, 
     {"is_active", "int8", "是否激活:0-未激活,1-激活"}, 
-    {"breakup_rank", "int32", "突破阶段"},
+    {"breakup_rank", "int32", "突破阶段"}, 
+    {"pos", "int8", "位置"}, 
+    {"is_lock", "int8", "是否上锁，1是0否"},
 }
 
 --- 效果值列表
@@ -131,6 +139,13 @@ pt_attr_int_list =
     {"value", "int64str", "值", "repeated"},
 }
 
+--- 属性key,string
+pt_attr_int_to_string_list =
+{    
+    {"key", "int16", "键"}, 
+    {"value", pt_int_to_string, "值", "repeated"},
+}
+
 --- 战斗元素信息
 pt_battle_element =
 {    
@@ -141,11 +156,11 @@ pt_battle_element =
     {"tid", "int32", "模板id"}, 
     {"lv", "int16", "等级"}, 
     {"star", "int16", "星级"}, 
-    {"hurt", "int64str", "伤害总量"}, 
-    {"cure", "int64str", "治疗总量"}, 
-    {"be_hurt", "int64str", "受伤总量"}, 
-    {"hp", "int64str", "当前血量"}, 
-    {"max_hp", "int64str", "最大血量"}, 
+    {"hurt", pt_int_to_string, "伤害总量"}, 
+    {"cure", pt_int_to_string, "治疗总量"}, 
+    {"be_hurt", pt_int_to_string, "受伤总量"}, 
+    {"hp", pt_int_to_string, "当前血量"}, 
+    {"max_hp", pt_int_to_string, "最大血量"}, 
     {"cloth_id", "int16", "时装id"},
 }
 
@@ -163,9 +178,9 @@ pt_battle_hurt =
 {    
     {"id", "int32", "被攻击者id"}, 
     {"type", "int8", "伤害类型 1-普攻 2-闪避 3-暴击 4-回血 5-真伤 6-加buff 7-减buff"}, 
-    {"value", "int64str", "效果值"}, 
+    {"value", pt_int_to_string, "效果值"}, 
     {"update", "int8", "更新类型 1-不更新血量 2-更新目标血量 3-更新攻击者血量"}, 
-    {"hp", "int64str", "目标血量"}, 
+    {"hp", pt_int_to_string, "目标血量"}, 
     {"params", "int64str", "动态参数", "repeated"},
 }
 
@@ -238,6 +253,8 @@ pt_mail_info =
 pt_prop_award =
 {    
     {"tid", "int32", "模版id"}, 
+    {"id", "int32", "道具id"}, 
+    {"is_lock", "int8", "是否上锁，1是0否"}, 
     {"count", "int32", "数量"}, 
     {"color", "int8", "颜色"}, 
     {"expiredOddTime", "int32", "限时多久（秒），多久之后就会过期"}, 
@@ -400,7 +417,16 @@ pt_hero_info =
     {"active_skill_list", pt_skill_info, "已激活主动技能列表", "repeated"}, 
     {"passive_skill_list", pt_skill_info, "已激活被动技能列表", "repeated"}, 
     {"fight_skill_list", pt_fight_skill_info, "当前出战技能列表", "repeated"}, 
-    {"resonance_id_list", "int16", "已共鸣位置列表", "repeated"},
+    {"resonance_id_list", "int16", "已共鸣位置列表", "repeated"}, 
+    {"egg_form", "int16", "战员蛋形态"}, 
+    {"egg_id", "int32", "战员蛋品质id"}, 
+    {"egg_lv", "int16", "战员蛋等级"}, 
+    {"egg_attr_cal", "int16", "战员蛋属性关闭列表，列表内的属性为不计算", "repeated"}, 
+    {"is_promise", "int8", "是否已契约"}, 
+    {"promise_time", "int32", "契约时间戳"}, 
+    {"sign_pos", "string", "签名位置记录"}, 
+    {"nickname", "string", "昵称"}, 
+    {"renickname_times", "int8", "剩余修改昵称次数"},
 }
 
 --- 其他玩家战员基础数据
@@ -471,8 +497,8 @@ pt_battle_hero =
     {"tid", "int32", "战员模板id"}, 
     {"type", "int8", "战斗对象类型"}, 
     {"pos", pt_pos, "站位"}, 
-    {"max_hp", "int64str", "最大血量"}, 
-    {"hp", "int64str", "血量"}, 
+    {"max_hp", pt_int_to_string, "最大血量"}, 
+    {"hp", pt_int_to_string, "血量"}, 
     {"rage", "int32", "怒气值"}, 
     {"skill_soul", "int8", "魂玉"}, 
     {"lv", "int16", "等级"}, 
@@ -483,7 +509,9 @@ pt_battle_hero =
     {"hit_stun", "int16", "硬直"}, 
     {"max_hit_stun", "int16", "硬直最大值"}, 
     {"auto_battle_rule", "int16", "战员自动战斗规则"}, 
-    {"body_fashion_color_id", "int16", "衣服时装炫彩id"},
+    {"body_fashion_color_id", "int16", "衣服时装炫彩id"}, 
+    {"auto_aoyi_rule", "int16", "自动释放奥义规则"}, 
+    {"source", "int16", "来源:101召唤物"},
 }
 
 --- 战斗助战数据
@@ -501,7 +529,7 @@ pt_battle_player =
     {"player_id", "int64str", "玩家id"}, 
     {"player_name", "string", "玩家名字"}, 
     {"player_lv", "int16", "玩家等级"}, 
-    {"total_hp", "int64str", "队伍总血量"}, 
+    {"total_hp", pt_int_to_string, "队伍总血量"}, 
     {"avatar", "int16", "玩家头像"}, 
     {"hero_list", pt_battle_hero, "战员列表", "repeated"}, 
     {"qte_energy", "int16", "力场值"}, 
@@ -513,7 +541,7 @@ pt_battle_effect_info =
 {    
     {"type", "int8", "效果类型 1-伤害 2-加buff 3-治疗"}, 
     {"priority", "int8", "优先级"}, 
-    {"count", "int64str", "效果值"}, 
+    {"count", pt_int_to_string, "效果值"}, 
     {"count_list", "int64str", "额外效果值", "repeated"},
 }
 
@@ -560,7 +588,7 @@ pt_battle_statistic =
     {"evolution", "int16", "星级"}, 
     {"lv", "int16", "等级"}, 
     {"is_call", "int8", "是否召唤物"}, 
-    {"info", pt_attr_int_list, "统计条目", "repeated"},
+    {"info", pt_attr_int_to_string_list, "统计条目", "repeated"},
 }
 
 --- 商店物品数据
@@ -628,16 +656,26 @@ pt_hero_formation =
     {"pet_id", "int32", "锚驴id"},
 }
 
+--- 呐源限定结束时间
+pt_select_plus =
+{    
+    {"act_tid", "int32", "激活tid"}, 
+    {"end_time", "int32", "结束时间"},
+}
+
 --- 招募数据
 pt_recruit_info =
 {    
-    {"type", "int16", "类型"}, 
+    {"recruit_id", "int16", "招募id"}, 
     {"recruit_daily_times", "int32", "今日招募已抽次数"}, 
     {"recruit_activity_times", "int32", "活动期间累计招募已抽次数"}, 
     {"guaranteed_times", "int32", "保底已抽次数"}, 
     {"guaranteed_limit", "int32", "保底最大次数"}, 
     {"is_guaranteed_award", "int8", "大保底奖励是否已领取 1是0否"}, 
-    {"free_times", "int16", "已免费次数"},
+    {"free_times", "int16", "已免费次数"}, 
+    {"select_tid", "int16", "自选tid"}, 
+    {"first_week", "int8", "呐源首周标记"}, 
+    {"select_plus_list", pt_select_plus, "呐源限定结束时间", "repeated"},
 }
 
 --- 招募日志
@@ -670,6 +708,8 @@ pt_hero_pre_info =
     {"relation_exp", "int32", "亲密经验"}, 
     {"increases_lv", "int16", "战员增幅等级"}, 
     {"power", "int32", "战员实力"}, 
+    {"is_promise", "int8", "是否已契约"}, 
+    {"nickname", "string", "昵称"}, 
     {"active_skill_list", pt_skill_info, "已激活主动技能列表", "repeated"}, 
     {"empty_equip_pos_list", "int8", "装备的空槽部位列表", "repeated"}, 
     {"resonance_id_list", "int16", "共鸣位置列表", "repeated"},
@@ -1076,7 +1116,8 @@ pt_direct_gift_info =
     {"tag", "int8", "角标（1-免费，2-折扣，3-热销）"}, 
     {"drop_id", "int32", "掉落包id"}, 
     {"value", "int16", "价值"}, 
-    {"color", "int8", "颜色"},
+    {"color", "int8", "颜色"}, 
+    {"original_cost", "int32", "原价"},
 }
 
 --- 副本列表
@@ -1104,7 +1145,8 @@ pt_lv_reward =
 pt_relation_reward =
 {    
     {"hero_tid", "int32", "战员tid"}, 
-    {"received_ids", "int16", "已领取的奖励id", "repeated"},
+    {"received_ids", "int16", "已领取的奖励id", "repeated"}, 
+    {"received_story_lvs", "int16", "已领取心语集奖励lv列表", "repeated"},
 }
 
 --- 战员的助战信息
@@ -1450,7 +1492,7 @@ pt_activity_shop =
 --- 保护刁民通关信息
 pt_protect_people_dup =
 {    
-    {"dup_id", "int16", "副本id"}, 
+    {"dup_id", "int32", "副本id"}, 
     {"star_list", "int16", "已获得星星", "repeated"},
 }
 
@@ -1557,6 +1599,24 @@ pt_team_battle_statistic =
     {"statistic", pt_battle_statistic, "战斗统计信息", "repeated"},
 }
 
+--- 战斗结果
+pt_guild_war_battle_result =
+{    
+    {"result", "int8", "1-进攻胜利,2-进攻失败,3-进攻平局,4-防守胜利,5-防守失败,6-防守平局"}, 
+    {"times", "int8", "次数"},
+}
+
+--- 联盟团战建筑信息
+pt_guild_war_build_info =
+{    
+    {"build_id", "int16", "建筑id"}, 
+    {"now_hp", "int16", "当前血量"}, 
+    {"max_hp", "int16", "最大血量"}, 
+    {"point", "int32", "建筑分数"}, 
+    {"challenge_times", "int8", "挑战次数"}, 
+    {"battle_result", pt_guild_war_battle_result, "战斗统计信息", "repeated"},
+}
+
 --- 公会信息
 pt_member_info =
 {    
@@ -1568,7 +1628,9 @@ pt_member_info =
     {"job", "int8", "0-普通会员|1-会长|2-副会长"}, 
     {"activation", "int32", "个人活跃度"}, 
     {"is_online", "int32", "0离线1在线"}, 
-    {"offline_time", "int32", "离线或上线时间"},
+    {"offline_time", "int32", "离线或上线时间"}, 
+    {"build_info", pt_guild_war_build_info, "建筑信息"}, 
+    {"is_robot", "int8", "是否是机器人0-否，1-是"},
 }
 
 --- 公会信息
@@ -1602,7 +1664,11 @@ pt_guild_detail_info =
     {"members", pt_member_info, "成员信息", "repeated"}, 
     {"apply_list", pt_apply_info, "玩家申请列表", "repeated"}, 
     {"leader_impeach", "int8", "是否弹劾中 1-是|0-否"}, 
-    {"leader_impeach_time", "int32", "弹劾时间戳"},
+    {"leader_impeach_time", "int32", "弹劾时间戳"}, 
+    {"is_join_guild_war", "int8", "是否参加公会团战中 1-是|0-否"}, 
+    {"is_join_guild_top_war", "int8", "是否参加公会团战中 1-是|0-否"}, 
+    {"icon", "int16", "公会图标"}, 
+    {"robot_members", pt_member_info, "机器人成员信息", "repeated"},
 }
 
 --- 公会基础信息
@@ -1619,7 +1685,8 @@ pt_guild_simple_info =
     {"apply_type", "int8", "公会申请设置类型1-无需审批|2-需要审批|3-禁止加入"}, 
     {"apply_lv_cond", "int16", "申请等级限制"}, 
     {"activation", "int32", "公会活跃度"}, 
-    {"member_num", "int32", "会员数量"},
+    {"member_num", "int32", "会员数量"}, 
+    {"icon", "int16", "图标id"},
 }
 
 --- 奖励信息面板
@@ -1638,7 +1705,7 @@ pt_guild_fight_record =
     {"player_name", "string", "玩家名称"}, 
     {"round", "int8", "阶段"}, 
     {"boss_name", "string", "boss名称"}, 
-    {"damage", "int64str", "伤害"}, 
+    {"damage", pt_int_to_string, "伤害"}, 
     {"time", "int32", "时间"},
 }
 
@@ -1647,7 +1714,7 @@ pt_guild_fight_rank =
 {    
     {"guild_name", "string", "公会名称"}, 
     {"rank", "int16", "排名"}, 
-    {"damage", "int64str", "伤害"},
+    {"damage", "string", "伤害"},
 }
 
 --- 公会战(联合围剿)公会排行榜
@@ -1656,15 +1723,15 @@ pt_guild_member_rank =
     {"rank", "int16", "排名"}, 
     {"name", "string", "名称"}, 
     {"time", "int16", "挑战次数"}, 
-    {"damage", "int64str", "伤害"},
+    {"damage", pt_int_to_string, "伤害"},
 }
 
 --- 公会战(联合围剿)可攻打的boss
 pt_guild_fight_boss =
 {    
     {"id", "int16", "boss副本id"}, 
-    {"now_hp", "int64str", "当前血量"}, 
-    {"max_hp", "int64str", "最大血量"}, 
+    {"now_hp", pt_int_to_string, "当前血量"}, 
+    {"max_hp", pt_int_to_string, "最大血量"}, 
     {"can_fight", "int8", "是否可以挑战：1-可以，0-不可以"},
 }
 
@@ -1675,6 +1742,116 @@ pt_guild_science_info =
     {"lv", "int16", "科技等级"}, 
     {"cur_lv_attr_list", pt_attr, "当前等级属性", "repeated"}, 
     {"next_lv_attr_list", pt_attr, "下一等级属性", "repeated"},
+}
+
+--- 联盟团战报名信息
+pt_guild_war_sign_up_info =
+{    
+    {"player_id", "int64str", "玩家id"}, 
+    {"build_id", "int16", "建筑id"},
+}
+
+--- 公会战团战排行榜
+pt_guild_war_rank =
+{    
+    {"name", "string", "公会名称"}, 
+    {"leader_name", "string", "会长名称"}, 
+    {"rank", "int16", "排名"}, 
+    {"point", "int32", "分数"},
+}
+
+--- 公会战团每日日志
+pt_guild_war_day_log =
+{    
+    {"self_uid", "int64str", "公会唯一id"}, 
+    {"self_name", "string", "公会名称"}, 
+    {"self_icon", "int16", "公会图标"}, 
+    {"self_lv", "int16", "公会等级"}, 
+    {"self_day_point", "int32", "当天破坏分(未经过转化)"}, 
+    {"enemy_uid", "int64str", "公会唯一id"}, 
+    {"enemy_name", "string", "公会名称"}, 
+    {"enemy_icon", "int16", "公会图标"}, 
+    {"enemy_lv", "int16", "公会等级"}, 
+    {"enemy_day_point", "int32", "当天破坏分(未经过转化)"}, 
+    {"old_point", "int32", "旧总积分"}, 
+    {"add_point", "int32", "添加的积分(由破坏分转化成的积分)"}, 
+    {"result", "int8", "1-胜利,2-失败,3-平局"}, 
+    {"time", "int32", "记录事件戳"}, 
+    {"rank", "int16", "排名"},
+}
+
+--- 团战战斗日志
+pt_guild_war_battle_log =
+{    
+    {"is_atk", "int8", "是否进攻方1-进攻方，0-防守方"}, 
+    {"atk_id", "int64str", "进攻联盟玩家id"}, 
+    {"atk_name", "string", "进攻联盟玩家名字"}, 
+    {"atk_avatar", "int16", "进攻联盟玩家头像"}, 
+    {"atk_avatar_frame", "int16", "进攻联盟玩家头像框"}, 
+    {"atk_lv", "int16", "进攻联盟玩家等级"}, 
+    {"def_id", "int64str", "防守联盟id"}, 
+    {"def_name", "string", "防守联盟玩家名字"}, 
+    {"def_avatar", "int16", "防守联盟玩家头像"}, 
+    {"def_avatar_frame", "int16", "防守联盟玩家头像框"}, 
+    {"def_lv", "int16", "防守联盟玩家等级"}, 
+    {"result", "int8", "战斗结果,1获胜2失败3平局,456"}, 
+    {"atk_old_point", "int16", "进攻联盟玩家旧积分"}, 
+    {"atk_new_point", "int16", "进攻联盟玩家新积分"}, 
+    {"def_old_point", "int16", "防守联盟玩家旧积分"}, 
+    {"def_new_point", "int16", "防守联盟玩家新积分"}, 
+    {"build_id", "int16", "建筑id"}, 
+    {"battle_id", "int64str", "战斗id"}, 
+    {"time", "int64str", "时间"}, 
+    {"team_list", pt_battle_log_team, "队伍列表", "repeated"}, 
+    {"show_id", "string", "战报展示id"},
+}
+
+--- 赛季信息
+pt_guild_war_season_info =
+{    
+    {"season_id", "int16", "赛季id"}, 
+    {"next_step_start_time", "int32", "下一阶段阶段开启时间"}, 
+    {"end_time", "int32", "活动结束时间"}, 
+    {"start_time", "int32", "活动开启时间"}, 
+    {"state", "int8", "赛季状态"},
+}
+
+--- 赛季信息
+pt_guild_top_war_season_info =
+{    
+    {"season_id", "int16", "赛季id"}, 
+    {"next_step_start_time", "int32", "下一阶段阶段开启时间"}, 
+    {"end_time", "int32", "活动结束时间"}, 
+    {"start_time", "int32", "活动开启时间"}, 
+    {"bet_start_time", "int32", "下注开启时间"}, 
+    {"bet_end_time", "int32", "下注开启时间"}, 
+    {"state", "int8", "赛季状态"}, 
+    {"day", "int8", "当前天数"},
+}
+
+--- 阵型中的战员
+pt_guild_war_formation_hero =
+{    
+    {"pos", pt_pos, "站位"}, 
+    {"is_captain", "int8", "是否队长"}, 
+    {"hero_id", "int32", "战员id"}, 
+    {"tid", "int32", "战员tid"}, 
+    {"hero_source", "int8", "战员来源：1、玩家自己的战员 2、主线关卡剧情外援 3、竞技场敌方玩家或机器人"}, 
+    {"lv", "int16", "战员等级"}, 
+    {"evolution", "int16", "战员星级"}, 
+    {"body_fashion_id", "int16", "衣服时装id"},
+}
+
+--- 战员阵型数据
+pt_guild_war_def_formation =
+{    
+    {"team_id", "int16", "队列id 1 or 2"}, 
+    {"formation_tid", "int16", "阵型id"}, 
+    {"is_ready", "int8", "是否出战"}, 
+    {"name", "string", "队列名字"}, 
+    {"hero_list", pt_guild_war_formation_hero, "战员列表", "repeated"}, 
+    {"assist_fight_list", pt_formation_assist_fight, "助战战员列表", "repeated"}, 
+    {"pet_id", "int32", "锚驴id"},
 }
 
 --- 无限城分数数据
@@ -1704,7 +1881,15 @@ pt_chip_plan =
 {    
     {"id", "int32", "方案编号"}, 
     {"name", "string", "方案名称"}, 
-    {"chip_list", pt_equip_pos, "模组方案列表", "repeated"},
+    {"chip_list", pt_equip_pos, "模组方案列表", "repeated"}, 
+    {"sort", "int16", "排序"},
+}
+
+--- 模组方案排序
+pt_sort_chip_plan =
+{    
+    {"id", "int32", "方案编号"}, 
+    {"sort", "int16", "排序"},
 }
 
 --- 钓鱼信息
@@ -1728,13 +1913,27 @@ pt_fashionshop_discount_data =
 --- 时装商店配置信息
 pt_fashion_shop_conf =
 {    
-    {"id", "int16", "商品id"}, 
+    {"id", "int32", "商品id"}, 
     {"skin_id", "int16", "解锁时装 [战员tid, 时装id]", "repeated"}, 
-    {"pay_type", "int16", "购买所需的货币tid"}, 
-    {"sort", "int16", "sort"}, 
+    {"pay_type", "int32", "购买所需的货币tid"}, 
+    {"sort", "int32", "sort"}, 
     {"type", "int8", "type"}, 
     {"discount_time", pt_fashionshop_discount_data, "折扣时间", "repeated"}, 
-    {"discount_cost", "int32", "折扣价格"},
+    {"discount_cost", "int32", "折扣价格"}, 
+    {"item_id", "int32", "道具id"}, 
+    {"begin_time", "int32", "开启时间"}, 
+    {"end_time", "int32", "结束时间"},
+}
+
+--- 时装组合包商店配置信息
+pt_combo_fashion_shop_conf =
+{    
+    {"id", "int32", "商品组合id"}, 
+    {"goods_list", "int16", "包含的商品列表", "repeated"}, 
+    {"pay_type", "int16", "支付类型"}, 
+    {"cost", "int32", "消耗道具数量"}, 
+    {"begin_time", "int32", "开启时间"}, 
+    {"end_time", "int32", "结束时间"},
 }
 
 --- 沙盒地图信息
@@ -1767,8 +1966,8 @@ pt_guild_sweep_member_rank =
 pt_disaster_boss_info =
 {    
     {"id", "int32", "怪物id"}, 
-    {"now_hp", "int64str", "当前血量"}, 
-    {"max_hp", "int64str", "最大血量"},
+    {"now_hp", pt_int_to_string, "当前血量"}, 
+    {"max_hp", pt_int_to_string, "最大血量"},
 }
 
 --- 主界面简易信息
@@ -1791,8 +1990,8 @@ pt_disaster_formation_info =
 --- 主面板信息
 pt_disaster_main_panel =
 {    
-    {"all_damage", "int64str", "累计总伤害"}, 
-    {"infinite_damage", "int64str", "无限模式最高伤害"}, 
+    {"all_damage", pt_int_to_string, "累计总伤害"}, 
+    {"infinite_damage", pt_int_to_string, "无限模式最高伤害"}, 
     {"today_times", "int8", "今日挑战次数"}, 
     {"war_id", "int8", "2-低级战区,3-中级战区,4-高级战区"}, 
     {"had_reward_list", "int16", "已经领取的奖励列表", "repeated"}, 
@@ -1802,7 +2001,7 @@ pt_disaster_main_panel =
 --- 阵型面板信息
 pt_disaster_formation_panel =
 {    
-    {"cur_damage", "int64str", "本次挑战累计伤害"}, 
+    {"cur_damage", pt_int_to_string, "本次挑战累计伤害"}, 
     {"challenging_difficulty", "int8", "正在挑战的难度"}, 
     {"boss_info", pt_disaster_boss_info, "boss血量信息"}, 
     {"hero_list", "int32", "已使用战员id列表", "repeated"}, 
@@ -1818,7 +2017,7 @@ pt_disaster_rank_info =
     {"avatar_id", "int32", "头像"}, 
     {"avatar_frame", "int32", "头像框"}, 
     {"designation", "int32", "称号"}, 
-    {"rank_val", "int64str", "排行值"},
+    {"rank_val", pt_int_to_string, "排行值"},
 }
 
 --- 联盟训练联盟成员排行榜
@@ -1936,4 +2135,215 @@ pt_hero_fashion_color_info =
     {"hero_id", "int32", "战员唯一id"}, 
     {"fashion_id", "int32", "战员服装id"}, 
     {"color_id", "int32", "战员服装炫彩id"},
+}
+
+--- 限时礼包商品信息
+pt_limited_gift_info =
+{    
+    {"id", "int32", "礼包id"}, 
+    {"buy_times", "int16", "已购买次数"}, 
+    {"end_time", "int32", "结束时间戳"},
+}
+
+--- 超值限时礼包商品信息
+pt_super_gift_info =
+{    
+    {"id", "int32", "礼包id"}, 
+    {"is_buy", "int8", "是否已购买0-否,1-是"},
+}
+
+--- 农场地块信息
+pt_farm_field =
+{    
+    {"field_id", "int16", "格子id"}, 
+    {"field_state", "int16", "格子状态"}, 
+    {"crop_id", "int16", "作物id"}, 
+    {"start_time", "int32", "开始的时间点"}, 
+    {"reap_count", "int8", "已经收获次数"},
+}
+
+--- 自选礼包的自选格子信息
+pt_select_gift_grid_info =
+{    
+    {"grid_id", "int32", "格子id"}, 
+    {"select_id", "int32", "选择id"},
+}
+
+--- 自选礼包信息
+pt_select_gift_info =
+{    
+    {"id", "int32", "礼包id"}, 
+    {"is_buy", "int8", "是否购买"}, 
+    {"grid_select_list", pt_select_gift_grid_info, "格子选择情况", "repeated"},
+}
+
+--- 战员拥有皮肤
+pt_hero_have_fashion_info =
+{    
+    {"hero_tid", "int32", "战员tid"}, 
+    {"have_fashion_id_list", "int32", "拥有时装id列表", "repeated"},
+}
+
+--- 羊了个羊副本
+pt_three_tiles_dup =
+{    
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "过关星星数"},
+}
+
+--- 限定up池招募大保底信息
+pt_recruit_debug_up_detail =
+{    
+    {"id", "int16", "池子id"}, 
+    {"up_tid", "int16", "uptid"}, 
+    {"up_ratio", "int16", "up概率"}, 
+    {"other_ratio", pt_int_int, "其他SSR概率", "repeated"},
+}
+
+--- 打砖块副本
+pt_breakout_dup =
+{    
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "过关星星数"},
+}
+
+--- 连连看副本
+pt_linklink_dup =
+{    
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "过关星星数"},
+}
+
+--- 战员时装场景信息
+pt_fashion_scene_info =
+{    
+    {"hero_tid", "int16", "战员tid"}, 
+    {"scene_list", "int16", "解锁的全部场景", "repeated"},
+}
+
+--- 打地鼠副本
+pt_mole_dup =
+{    
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "过关星星数"},
+}
+
+--- 刮刮乐_已经刮开卡面
+pt_scratch_card_show =
+{    
+    {"pos", "int8", "位置"}, 
+    {"jack_pot_id", "int8", "奖池id"}, 
+    {"item_list", pt_prop_award, "道具列表", "repeated"}, 
+    {"multiple", "int8", "获取倍数"},
+}
+
+--- 联结作战玩家信息
+pt_joint_ops_player_info =
+{    
+    {"player_id", "int64str", "玩家id"}, 
+    {"player_lv", "int16", "玩家等级"}, 
+    {"player_name", "string", "名字"}, 
+    {"show_id", "string", "展示id"}, 
+    {"avatar_id", "int32", "头像"}, 
+    {"avatar_frame", "int32", "头像框"},
+}
+
+--- 排位游戏副本
+pt_ranking_game_dup =
+{    
+    {"dup_id", "int16", "副本id"}, 
+    {"star", "int8", "过关星星数"},
+}
+
+--- 战员时装部件
+pt_hero_fashion_color =
+{    
+    {"hero_tid", "int16", "战员tid"}, 
+    {"fashion_id", "int16", "时装id"}, 
+    {"color_id", "int16", "部件id"},
+}
+
+--- 赛事信息
+pt_guild_top_war_game_info =
+{    
+    {"group_id", "int8", "公会唯一id"}, 
+    {"team_1", "int64str", "公会唯一id"}, 
+    {"team_1_name", "string", "公会名称"}, 
+    {"team_1_icon", "int16", "公会图标"}, 
+    {"team_1_lv", "int16", "公会等级"}, 
+    {"team_1_bet_num", "int32", "应援人数"}, 
+    {"team_2", "int64str", "公会唯一id"}, 
+    {"team_2_name", "string", "公会名称"}, 
+    {"team_2_icon", "int16", "公会图标"}, 
+    {"team_2_lv", "int16", "公会等级"}, 
+    {"team_2_bet_num", "int16", "应援人数"}, 
+    {"win_uid", "int64str", "胜利的公会uid"}, 
+    {"is_gained", "int8", "是否获取奖励0-否,1-是"},
+}
+
+--- 下注信息
+pt_guild_top_war_bet_info =
+{    
+    {"group_id", "int8", "组id"}, 
+    {"bet_uid", "int64str", "公会唯一id"},
+}
+
+--- 下注信息
+pt_guild_top_war_bet_award_info =
+{    
+    {"day", "int8", "天数"}, 
+    {"red_point", "int8", "0-不显示,1-显示"},
+}
+
+--- 回收信息
+pt_item_recycle_info =
+{    
+    {"item_tid", "int32", "道具tid"}, 
+    {"item_num", "int32", "道具数量"},
+}
+
+--- 每日累充信息
+pt_day_acc_pay =
+{    
+    {"gear", "int8", "档位"}, 
+    {"day", "int8", "天数"}, 
+    {"state", "int8", "1-可领取，2-已领取"},
+}
+
+--- 跨服排行榜数据结构
+pt_vision_mirror_rank_info =
+{    
+    {"rank", "int32", "排名"}, 
+    {"id", "int64str", "玩家id"}, 
+    {"name", "string", "名字"}, 
+    {"avatar_id", "int32", "头像"}, 
+    {"avatar_frame", "int32", "头像框"}, 
+    {"designation", "int32", "称号"}, 
+    {"rank_val", "int32", "排行值"}, 
+    {"layer", "int16", "所在层数"}, 
+    {"guild_name", "string", "公会名称"},
+}
+
+--- 异像残镜副本信息
+pt_vision_mirror_dup =
+{    
+    {"layer", "int16", "层数"}, 
+    {"dup_list", "int32", "副本列表", "repeated"},
+}
+
+--- 已通关异像残镜副本信息
+pt_pass_vision_mirror_dup =
+{    
+    {"dup_id", "int32", "副本id"}, 
+    {"battle_round", "int16", "战斗回合数"}, 
+    {"hero_die_num", "int16", "战员死亡数量"}, 
+    {"score", "int32", "最终评分"},
+}
+
+--- 已通关异像残镜副本信息
+pt_pass_vision_mirror_layer =
+{    
+    {"layer", "int16", "层数"}, 
+    {"score", "int32", "分数"}, 
+    {"dup_list", pt_pass_vision_mirror_dup, "关卡列表", "repeated"},
 }

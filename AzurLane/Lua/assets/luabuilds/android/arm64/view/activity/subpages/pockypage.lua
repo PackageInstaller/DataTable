@@ -1,76 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PockyPage", import(".TemplatePage.LoginTemplatePage"))
 
-local var_0_0 = "PockyPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.LoginTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0.bg
-
-	arg_1_0.title = var_1.Find(var_1_0, "day")
+	arg_1_0.title = arg_1_0.bg:Find("day")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_2_0.item, false)
-
-	local var_2_0 = arg_2_0.itemList
-
-	var_1.make(var_2_0, function(arg_3_0, arg_3_1, arg_3_2)
-		UIItemList = var_2_10003
-
-		local var_3_0
-
-		if arg_3_0 == var_2_10003.EventInit then
-			var_3_0 = arg_3_2:Find("item")
-			var_2_10004 = arg_2_0.config.front_drops[arg_3_1 + 1]
-
-			local var_3_1 = {
-				type = var_2_10004[1],
-				id = var_2_10004[2],
-				count = var_2_10004[3]
-			}
-
-			updateDrop = var_6
-
-			var_6(var_3_0, var_3_1)
-
-			onButton = var_6
-
-			local var_3_2 = arg_2_0
-			local var_3_3 = arg_3_2
-
-			local function var_3_4()
-				local var_4_0 = arg_2_0
-				local var_4_1 = var_0.emit
-
-				BaseUI = var_3_10003
-
-				var_4_1(var_4_0, var_3_10003.ON_DROP, var_3_1)
+function var_0_0.OnFirstFlush(arg_2_0)
+	setActive(arg_2_0.item, false)
+	arg_2_0.itemList:make(function(arg_3_0, arg_3_1, arg_3_2)
+		if arg_3_0 == UIItemList.EventInit then
+			updateDrop(arg_3_2:Find("item"), {
+				type = arg_2_0.config.front_drops[arg_3_1 + 1][1],
+				id = arg_2_0.config.front_drops[arg_3_1 + 1][2],
+				count = arg_2_0.config.front_drops[arg_3_1 + 1][3]
+			})
+			onButton(arg_2_0, arg_3_2, function()
+				arg_2_0:emit(BaseUI.ON_DROP, var_0)
 
 				return
-			end
-
-			SFX_PANEL = var_2_10011
-
-			var_6(var_3_2, var_3_3, var_3_4, var_2_10011)
-		else
-			UIItemList = var_3_0
-
-			if arg_3_0 == var_3_0.EventUpdate then
-				local var_3_5 = arg_3_2:Find("got")
-
-				setActive = var_2_10004
-
-				var_2_10004(var_3_5, arg_3_1 < arg_2_0.nday)
-			end
+			end, SFX_PANEL)
+		elseif arg_3_0 == UIItemList.EventUpdate then
+			setActive(arg_3_2:Find("got"), arg_3_1 < arg_2_0.nday)
 		end
 
 		return
@@ -79,17 +32,13 @@ function var_0_1.OnFirstFlush(arg_2_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_5_0)
+function var_0_0.OnUpdateFlush(arg_5_0)
 	arg_5_0.nday = arg_5_0.activity.data1
-	setText = var_1
 
-	var_1(arg_5_0.title, arg_5_0.nday)
-
-	local var_5_0 = arg_5_0.itemList
-
-	var_1.align(var_5_0, arg_5_0.Day)
+	setText(arg_5_0.title, arg_5_0.nday)
+	arg_5_0.itemList:align(arg_5_0.Day)
 
 	return
 end
 
-return var_0_1
+return var_0_0

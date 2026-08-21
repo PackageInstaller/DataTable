@@ -1,72 +1,40 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("PlayRoomInfoInviteMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "PlayRoomInfoInviteMediator"
+var_0_0.ON_CLICK_INVITE = "PlayRoomInfoInviteMediator::ON_CLICK_INVITE"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_CLICK_INVITE = "PlayRoomInfoInviteMediator::ON_CLICK_INVITE"
-
-function var_0_1.register(arg_1_0)
-	local var_1_0 = arg_1_0
-
-	arg_1_0.bind(var_1_0, var_0_1.ON_CLICK_INVITE, function(arg_2_0, arg_2_1)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_2_1(var_2_0, var_2_10005.PLAY_ROOM_INVITE, arg_2_1)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.ON_CLICK_INVITE, function(arg_2_0, arg_2_1)
+		arg_1_0:sendNotification(GAME.PLAY_ROOM_INVITE, arg_2_1)
 
 		return
 	end)
-
-	getProxy = var_1
-	PlayRoomProxy = var_1_0
-
-	local var_1_1 = var_1(var_1_0)
-
-	var_1.GetInviteRecordList(var_1_1)
+	getProxy(PlayRoomProxy):GetInviteRecordList()
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
-	local var_3_0 = {}
-
-	GAME = var_1_10002
-	var_3_0[1] = var_1_10002.PLAY_ROOM_INVITE_DONE
-
-	return var_3_0
+function var_0_0.listNotificationInterests(arg_3_0)
+	return {
+		GAME.PLAY_ROOM_INVITE_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getName(var_4_0)
-	local var_4_2 = arg_4_1:getBody()
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getBody()
 
-	switch = var_4_0
+	switch(arg_4_1:getName(), {
+		[GAME.PLAY_ROOM_INVITE_DONE] = function(arg_5_0)
+			arg_4_0.viewComponent:RefreshItem()
 
-	local var_4_3 = var_4_1
-	local var_4_4 = {}
-
-	GAME = var_1_10008
-	var_4_4[var_1_10008.PLAY_ROOM_INVITE_DONE] = function(arg_5_0)
-		local var_5_0 = arg_4_0.viewComponent
-
-		var_1.RefreshItem(var_5_0)
-
-		return
-	end
-
-	var_4_0(var_4_3, var_4_4)
+			return
+		end
+	})
 
 	return
 end
 
-function var_0_1.remove(arg_6_0)
+function var_0_0.remove(arg_6_0)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("DormShip")
+﻿local var_0_0 = class("DormShip")
 
 var_0_0.FLOOR_1 = 1
 var_0_0.FLOOR_2 = 2
@@ -8,22 +6,8 @@ var_0_0.FLOOR_2 = 2
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.floor = arg_1_1.floor
-
-	local var_1_0
-
-	if not arg_1_1.pop_icon then
-		var_1_0 = 0
-	end
-
-	arg_1_0.moneny = var_1_0
-
-	local var_1_1
-
-	if not arg_1_1.pop_intimacy then
-		var_1_1 = 0
-	end
-
-	arg_1_0.intimacy = var_1_1
+	arg_1_0.moneny = arg_1_1.pop_icon or 0
+	arg_1_0.intimacy = arg_1_1.pop_intimacy or 0
 
 	return
 end
@@ -44,13 +28,7 @@ function var_0_0.GetInimacy(arg_4_0)
 end
 
 function var_0_0.HasMoneyOrIntimacy(arg_5_0)
-	local var_5_0
-
-	if not arg_5_0:HasMoney() then
-		var_5_0 = arg_5_0:HasIntimacy()
-	end
-
-	return var_5_0
+	return arg_5_0:HasMoney() or arg_5_0:HasIntimacy()
 end
 
 function var_0_0.HasMoney(arg_6_0)
@@ -93,12 +71,7 @@ function var_0_0.IsSame(arg_13_0, arg_13_1)
 end
 
 function var_0_0.ToBayShip(arg_14_0)
-	getProxy = var_1_10001
-	BayProxy = var_1_10003
-
-	local var_14_0 = var_1_10001(var_1_10003)
-
-	return (var_1.RawGetShipById(var_14_0, arg_14_0.id))
+	return (getProxy(BayProxy):RawGetShipById(arg_14_0.id))
 end
 
 return var_0_0

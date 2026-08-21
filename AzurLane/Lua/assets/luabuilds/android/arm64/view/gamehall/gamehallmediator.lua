@@ -1,193 +1,88 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GameHallMediator", import("..base.ContextMediator"))
 
-local var_0_0 = "GameHallMediator"
+var_0_0.OPEN_MINI_GAME = "open mini game"
+var_0_0.OPEN_GAME_SHOP = "open game shop "
+var_0_0.GET_WEEKLY_COIN = "get weekly coin"
+var_0_0.EXCHANGE_COIN = "exchange coin"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.ContextMediator"))
-
-var_0_1.OPEN_MINI_GAME = "open mini game"
-var_0_1.OPEN_GAME_SHOP = "open game shop "
-var_0_1.GET_WEEKLY_COIN = "get weekly coin"
-var_0_1.EXCHANGE_COIN = "exchange coin"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.OPEN_MINI_GAME, function(arg_2_0, arg_2_1, arg_2_2)
-		print = var_2_10003
-
-		var_2_10003("open minigame " .. arg_2_1.game_id)
-
-		pg = var_2_10003
-
-		local var_2_0 = var_2_10003.m02
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_6
-
-		var_2_1(var_2_0, var_6.GO_MINI_GAME, arg_2_1.game_id)
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.OPEN_MINI_GAME, function(arg_2_0, arg_2_1, arg_2_2)
+		print("open minigame " .. arg_2_1.game_id)
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, arg_2_1.game_id)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.OPEN_GAME_SHOP, function(arg_3_0, arg_3_1, arg_3_2)
-		pg = var_2_10003
-
-		local var_3_0 = var_2_10003.m02
-		local var_3_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_3_2 = var_2_10006.GO_SCENE
-
-		SCENE = var_2_10007
-
-		local var_3_3 = var_2_10007.SHOP
-		local var_3_4 = {}
-
-		NewShopsScene = var_2_10009
-		var_3_4.warp = var_2_10009.TYPE_MINI_GAME
-
-		var_3_1(var_3_0, var_3_2, var_3_3, var_3_4)
-
-		return
-	end)
-	arg_1_0:bind(var_0_1.GET_WEEKLY_COIN, function(arg_4_0, arg_4_1, arg_4_2)
-		pg = var_2_10003
-
-		local var_4_0 = var_2_10003.m02
-		local var_4_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_4_1(var_4_0, var_2_10006.GAME_ROOM_WEEK_COIN)
-
-		return
-	end)
-	arg_1_0:bind(var_0_1.EXCHANGE_COIN, function(arg_5_0, arg_5_1, arg_5_2)
-		pg = var_2_10003
-
-		local var_5_0 = var_2_10003.m02
-		local var_5_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_5_1(var_5_0, var_2_10006.GAME_ROOM_EXCHANGE_COIN, arg_5_1)
-
-		return
-	end)
-
-	return
-end
-
-function var_0_1.onUIAvalible(arg_6_0)
-	getProxy = var_1_10001
-	GameRoomProxy = var_1_10003
-
-	local var_6_0 = var_1_10001(var_1_10003)
-
-	if var_1.getFirstEnter(var_6_0) then
-		pg = var_1_10002
-
-		local var_6_1 = var_1_10002.m02
-
-		var_1_10002 = var_1_10002.sendNotification
-		GAME = var_1_10005
-
-		var_1_10002(var_6_1, var_1_10005.GAME_ROOM_FIRST_COIN)
-	else
-		pg = var_1_10002
-
-		local var_6_2 = var_1_10002.SystemGuideMgr.GetInstance()
-
-		var_2.Play(var_6_2, arg_6_0.viewComponent)
-	end
-
-	return
-end
-
-function var_0_1.listNotificationInterests(arg_7_0)
-	local var_7_0 = {}
-
-	GAME = var_1_10002
-	var_7_0[1] = var_1_10002.GAME_ROOM_AWARD_DONE
-	GAME = var_2
-	var_7_0[2] = var_2.ROOM_FIRST_COIN_DONE
-	GAME = var_2
-	var_7_0[3] = var_2.END_GUIDE
-
-	return var_7_0
-end
-
-function var_0_1.handleNotification(arg_8_0, arg_8_1)
-	local var_8_0 = arg_8_1
-	local var_8_1 = arg_8_1.getName(var_8_0)
-	local var_8_2 = arg_8_1:getBody()
-
-	GAME = var_8_0
-
-	local var_8_4
-
-	if var_8_1 == var_8_0.GAME_ROOM_AWARD_DONE then
-		local var_8_3 = arg_8_0.viewComponent
-
-		var_8_4 = var_8_4.emit
-		BaseUI = var_1_10007
-
-		var_8_4(var_8_3, var_1_10007.ON_AWARD, {
-			items = var_8_2
+	arg_1_0:bind(var_0_0.OPEN_GAME_SHOP, function(arg_3_0, arg_3_1, arg_3_2)
+		pg.m02:sendNotification(GAME.GO_SCENE, SCENE.SHOP, {
+			warp = NewShopsScene.TYPE_MINI_GAME
 		})
 
-		local var_8_5 = arg_8_0.viewComponent
+		return
+	end)
+	arg_1_0:bind(var_0_0.GET_WEEKLY_COIN, function(arg_4_0, arg_4_1, arg_4_2)
+		pg.m02:sendNotification(GAME.GAME_ROOM_WEEK_COIN)
 
-		var_8_4.updateUI(var_8_5)
+		return
+	end)
+	arg_1_0:bind(var_0_0.EXCHANGE_COIN, function(arg_5_0, arg_5_1, arg_5_2)
+		pg.m02:sendNotification(GAME.GAME_ROOM_EXCHANGE_COIN, arg_5_1)
+
+		return
+	end)
+
+	return
+end
+
+function var_0_0.onUIAvalible(arg_6_0)
+	if getProxy(GameRoomProxy):getFirstEnter() then
+		pg.m02:sendNotification(GAME.GAME_ROOM_FIRST_COIN)
 	else
-		GAME = var_8_4
-
-		if var_8_1 == var_8_4.ROOM_FIRST_COIN_DONE then
-			seriesAsync = var_4
-
-			var_4({
-				function(arg_9_0)
-					local var_9_0 = arg_8_0.viewComponent
-					local var_9_1 = var_1.emit
-
-					BaseUI = var_2_10004
-
-					var_9_1(var_9_0, var_2_10004.ON_AWARD, {
-						items = var_8_2,
-						removeFunc = arg_9_0
-					})
-
-					return
-				end,
-				function(arg_10_0)
-					local var_10_0 = arg_8_0.viewComponent
-
-					var_1.updateUI(var_10_0)
-
-					pg = var_1
-
-					local var_10_1 = var_1.SystemGuideMgr.GetInstance()
-
-					var_1.Play(var_10_1, arg_8_0.viewComponent)
-					arg_10_0()
-
-					return
-				end
-			})
-		else
-			GAME = var_4
-
-			if var_8_1 == var_4.END_GUIDE then
-				pg = var_4
-
-				local var_8_6 = var_4.SystemGuideMgr.GetInstance()
-
-				var_4.Play(var_8_6, arg_8_0.viewComponent)
-			end
-		end
+		pg.SystemGuideMgr.GetInstance():Play(arg_6_0.viewComponent)
 	end
 
 	return
 end
 
-return var_0_1
+function var_0_0.listNotificationInterests(arg_7_0)
+	return {
+		GAME.GAME_ROOM_AWARD_DONE,
+		GAME.ROOM_FIRST_COIN_DONE,
+		GAME.END_GUIDE
+	}
+end
+
+function var_0_0.handleNotification(arg_8_0, arg_8_1)
+	local var_8_0 = arg_8_1:getName()
+	local var_8_1 = arg_8_1:getBody()
+
+	if var_8_0 == GAME.GAME_ROOM_AWARD_DONE then
+		arg_8_0.viewComponent:emit(BaseUI.ON_AWARD, {
+			items = arg_8_1:getBody()
+		})
+		arg_8_0.viewComponent:updateUI()
+	elseif var_8_0 == GAME.ROOM_FIRST_COIN_DONE then
+		seriesAsync({
+			function(arg_9_0)
+				arg_8_0.viewComponent:emit(BaseUI.ON_AWARD, {
+					items = var_8_1,
+					removeFunc = arg_9_0
+				})
+
+				return
+			end,
+			function(arg_10_0)
+				arg_8_0.viewComponent:updateUI()
+				pg.SystemGuideMgr.GetInstance():Play(arg_8_0.viewComponent)
+				arg_10_0()
+
+				return
+			end
+		})
+	elseif var_8_0 == GAME.END_GUIDE then
+		pg.SystemGuideMgr.GetInstance():Play(arg_8_0.viewComponent)
+	end
+
+	return
+end
+
+return var_0_0

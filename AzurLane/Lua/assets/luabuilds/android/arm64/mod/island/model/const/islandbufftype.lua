@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandBuffType")
+﻿local var_0_0 = class("IslandBuffType")
 
 var_0_0.SHIP_ATTR = 1
 var_0_0.SHIP_POWER_RECOVER = 2
@@ -22,9 +20,7 @@ function var_0_0.GetGlobalTypes()
 end
 
 function var_0_0.IsGlobalType(arg_2_0)
-	table = var_1_10001
-
-	return var_1_10001.contains(var_0_0.GetGlobalTypes(), arg_2_0)
+	return table.contains(var_0_0.GetGlobalTypes(), arg_2_0)
 end
 
 function var_0_0.GetLimitPlaceTypes()
@@ -36,9 +32,7 @@ function var_0_0.GetLimitPlaceTypes()
 end
 
 function var_0_0.IsLimitPlaceType(arg_4_0)
-	table = var_1_10001
-
-	return var_1_10001.contains(var_0_0.GetLimitPlaceTypes(), arg_4_0)
+	return table.contains(var_0_0.GetLimitPlaceTypes(), arg_4_0)
 end
 
 function var_0_0.GetLimitRestaurantTypes()
@@ -51,9 +45,7 @@ function var_0_0.GetLimitRestaurantTypes()
 end
 
 function var_0_0.IsLimitRestaurantType(arg_6_0)
-	table = var_1_10001
-
-	return var_1_10001.contains(var_0_0.GetLimitRestaurantTypes(), arg_6_0)
+	return table.contains(var_0_0.GetLimitRestaurantTypes(), arg_6_0)
 end
 
 function var_0_0.GetGreetingTypes()
@@ -64,9 +56,7 @@ function var_0_0.GetGreetingTypes()
 end
 
 function var_0_0.IsGreetingType(arg_8_0)
-	table = var_1_10001
-
-	return var_1_10001.contains(var_0_0.GetGreetingTypes(), arg_8_0)
+	return table.contains(var_0_0.GetGreetingTypes(), arg_8_0)
 end
 
 return var_0_0

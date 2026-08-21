@@ -36,6 +36,10 @@ function __init(self)
 
     -- 是否初始化完成
     self.isRoleDataInit = false
+    --拥有皮肤
+    self.mFightHasList = {}
+    --随机皮肤id
+    self.randomSkinId = nil
 end
 
 -- 解析角色升级表
@@ -243,18 +247,225 @@ function updateAttrValue(self, cusKey, cusValue)
         self:getRoleVo():setActivityCoin(cusValue)
     elseif (cusKey == role.AttrKey.PVP_HELL_COIN) then
         self:getRoleVo():setPvpHellCoin(cusValue)
-    elseif(cusKey == role.AttrKey.PLAYER_GUILD_COIN) then
+    elseif (cusKey == role.AttrKey.PLAYER_GUILD_COIN) then
         self:getRoleVo():setGuildCoin(cusValue)
-    elseif(cusKey == role.AttrKey.DOUNDLESS_COIN) then
+    elseif (cusKey == role.AttrKey.DOUNDLESS_COIN) then
         self:getRoleVo():setDoundlessCoin(cusValue)
-    elseif(cusKey == role.AttrKey.CHAT_BUBBLE_TID) then
+    elseif (cusKey == role.AttrKey.CHAT_BUBBLE_TID) then
         self:getRoleVo():setChatBubbleTid(cusValue)
+    elseif (cusKey == role.AttrKey.HAPPYFARM_COIN) then
+        self:getRoleVo():setHappyFarmMoney(cusValue)
+    elseif (cusKey == role.AttrKey.GUILDWAR_COIN) then
+        self:getRoleVo():setGuildWarCoin(cusValue)
+    elseif (cusKey == role.AttrKey.GUILDWARTOP_COIN) then
+        self:getRoleVo():setGuildWarTopCoin(cusValue)
+    elseif (cusKey == role.AttrKey.VISION_MIRROR_COIN) then
+        self:getRoleVo():setVisionMirrorCoin(cusValue)
     end
+end
+
+-- 获取看板娘预设组
+function getHeroGroup(self)
+    local data = nil
+    local type = self:getHeroGroupShowSpine()
+    if type == 0 then
+        data = StorageUtil:getTable1(gstor.HERO_GROUP_SAVE_MODEL)
+    else
+        data = StorageUtil:getTable1(gstor.HERO_GROUP_SAVE_SPINE)
+        local isChange = nil
+        if data and not table.empty(data) then
+            for k, selectId in pairs(data) do
+                local guradType, id = role.RoleManager:getGuradTypeAndId(selectId)
+                local saveType, saveId = role.RoleManager:getMainUISpineTypeAndId()
+                if guradType == role.GuradType.Gurad_hero then
+                    local heroVo = hero.HeroManager:getHeroVo(tonumber(id))
+                    if heroVo and not hero.HeroInteractManager:getModelIsDynamic(heroVo:getHeroModel()) then
+                        if saveType == guradType and id == saveId then
+                            mainui.MainUIManager:setIsShowDynamic(0)
+                        end
+                        data[k] = nil
+                        isChange = true
+                    end
+                end
+            end
+        end
+        if isChange then
+            -- 有更换过皮肤，存在不支持spine的皮肤，去除并重新保存
+            self:setHeroGroup(data)
+        end
+    end
+    if data then
+        for k, v in pairs(data) do
+            local pos = string.find(v, "|") --存在旧缓存，清理缓存
+            if pos == nil then
+                StorageUtil:deleteKey1(gstor.HERO_GROUP_SAVE_MODEL)
+                StorageUtil:deleteKey1(gstor.HERO_GROUP_SAVE_SPINE)
+                data = {}
+                break
+            end
+        end
+    end
+
+    return data or {}
+end
+
+-- 设置看板娘spine预设组
+function setHeroGroup(self, value)
+    local type = self:getHeroGroupShowSpine()
+    if type == 0 then
+        StorageUtil:saveTable1(gstor.HERO_GROUP_SAVE_MODEL, value)
+    else
+        StorageUtil:saveTable1(gstor.HERO_GROUP_SAVE_SPINE, value)
+    end
+end
+
+-- 获取看板娘预设组是否开启spine
+function getHeroGroupShowSpine(self)
+    local data = StorageUtil:getNumber1(gstor.HERO_GROUP_SHOW_SPINE)
+    return data
+end
+
+-- 设置看板娘预设组是否开启spine value 0:模型 1:spine
+function setHeroGroupShowSpine(self, value)
+    StorageUtil:saveNumber1(gstor.HERO_GROUP_SHOW_SPINE, value)
+end
+
+
+-- 获取看板娘spine是否首次设置，是就展示引导特效
+function getMainUISpineIsFirstShow(self, modelId)
+    local data = StorageUtil:getNumber1(gstor.MAINUI_DYNAMIC_IS_FIRST .. modelId)
+    return data
+end
+
+-- 获取看板娘spine是否首次设置，是就展示引导特效 value 0:首次 1:非首次
+function setMainUISpineIsFirstShow(self, modelId, value)
+    StorageUtil:saveNumber1(gstor.MAINUI_DYNAMIC_IS_FIRST .. modelId, value)
+end
+
+
+-- 获取看板娘动态立绘类型和id
+function getMainUISpineTypeAndId(self)
+    local selectId = StorageUtil:getString1(gstor.MAINUI_DYNAMIC_GURAD_TYPE_ID)
+    local guradType, id
+    if selectId and selectId ~= "" then
+        guradType, id = role.RoleManager:getGuradTypeAndId(selectId)
+        return guradType, id
+    end
+    return role.GuradType.Gurad_hero, role.RoleManager:getRoleVo():getShowBoardHeroId()
+end
+
+-- 设置看板娘动态立绘类型和id
+function setMainUISpineTypeAndId(self, guradType, id)
+    StorageUtil:saveString1(gstor.MAINUI_DYNAMIC_GURAD_TYPE_ID, guradType .. "|" .. id)
+end
+
+
+-- 分解获取选择类型和id
+function getGuradTypeAndId(self, selectId)
+    local strArr = string.split(selectId, "|")
+    local guradType = strArr[1]
+    local id = strArr[2]
+    return guradType, id
 end
 
 --析构函数
 function dtor(self)
 end
+
+
+function parseFightSkinData(self)
+    self.mFightSkinData = {}
+     local baseData = RefMgr:getData("fight_ui_data")
+    for k, v in pairs(baseData) do
+        local vo = role.FightSkinVo.new()
+        vo:parseData(k, v)
+        table.insert(self.mFightSkinData, vo)
+    end
+    table.sort(self.mFightSkinData, function(a, b) return a.sort < b.sort end)
+end
+
+function getFightSkinData(self)
+    if self.mFightSkinData == nil then
+        self:parseFightSkinData()
+    end
+     return self.mFightSkinData
+end
+
+function getFightSkinDataById(self,id)
+      if self.mFightSkinData == nil then
+        self:parseFightSkinData()
+    end
+    for i = 1, #self.mFightSkinData, 1 do
+        if self.mFightSkinData[i].id == id then
+            return self.mFightSkinData[i]
+        end
+    end
+    return nil
+end
+
+-- function parseCurSelectSkinId(self,id)
+--     --self:getRoleVo().fightUi = id
+--     self.selectSkinId = id
+-- end
+
+--仅显示服务器的皮肤id
+function getServerFightSkinId(self)
+    return self:getPersonalInfoList():getCurFightSkin()
+end
+
+--可能选了随机皮肤情况
+function getCurSelectSkinId(self)
+    self.mIsRandom = StorageUtil:hasKey0(gstor.RANDOM_FIGHT_SKIN) and StorageUtil:getBool0(gstor.RANDOM_FIGHT_SKIN) == true
+
+    if self.mIsRandom and #self.mFightHasList >= 2 then
+        local canUseFightSkin = {}
+        for i = 1, #self.mFightHasList, 1 do
+            if self.mFightHasList[i]~= 6001 then
+                table.insert(canUseFightSkin, self.mFightHasList[i])
+            end
+        end
+        if self.randomSkinId == nil  then
+           local random = math.random(1, #canUseFightSkin)
+            self.randomSkinId = canUseFightSkin[random]
+        end
+        return self.randomSkinId
+    end
+    return self:getPersonalInfoList():getCurFightSkin()
+end
+
+function resetSkinId(self)
+    self.randomSkinId = nil
+end
+
+function updateCurSelectSkin(self,id)
+    self:getPersonalInfoList():updateCurFightSkin(self:getTempSelectSkin())
+end
+
+function setTempSelectSkin(self,id)
+    self.tempSelectSkinId = id
+end
+
+function getTempSelectSkin(self)
+    return self.tempSelectSkinId
+end
+
+function getFightSkinIsLock(self,id)
+    if self.mFightHasList == nil then
+        return false
+    end
+    return table.indexof01(self.mFightHasList, id) == 0
+end
+
+function parseFightUIList(self,msg)
+    if self.mFightHasList == nil then
+        self.mFightHasList = {}
+    end
+    for i = 1, #msg.fight_ui_list, 1 do
+        table.insert(self.mFightHasList, msg.fight_ui_list[i])
+    end
+    --self.mFightHasList = msg.fight_ui_list
+end
+
 
 return _M
 

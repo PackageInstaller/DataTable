@@ -1,46 +1,25 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SettingsNotificationPanel", import(".SettingsBasePanel"))
 
-local var_0_0 = "SettingsNotificationPanel"
+var_0_0.UPDATE_ALARM_PANEL = "SettingsNotificationPanel.UPDATE_ALARM_PANEL"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SettingsBasePanel"))
-
-var_0_1.UPDATE_ALARM_PANEL = "SettingsNotificationPanel.UPDATE_ALARM_PANEL"
-
-function var_0_1.GetUIName(arg_1_0)
+function var_0_0.GetUIName(arg_1_0)
 	return "SettingsNotifications"
 end
 
-function var_0_1.GetTitle(arg_2_0)
-	i18n = var_1_10001
-
-	return var_1_10001("Settings_title_Notification")
+function var_0_0.GetTitle(arg_2_0)
+	return i18n("Settings_title_Notification")
 end
 
-function var_0_1.GetTitleEn(arg_3_0)
+function var_0_0.GetTitleEn(arg_3_0)
 	return "  / ENABLE NOTIFICATIONS"
 end
 
-function var_0_1.OnInit(arg_4_0)
-	UIItemList = var_1_10001
+function var_0_0.OnInit(arg_4_0)
+	arg_4_0.uilist = UIItemList.New(arg_4_0._tf:Find("options"), arg_4_0._tf:Find("options/notify_tpl"))
 
-	local var_4_0 = var_1_10001.New
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_3.Find(var_4_1, "options")
-	local var_4_3 = arg_4_0._tf
-
-	arg_4_0.uilist = var_4_0(var_4_2, var_4.Find(var_4_3, "options/notify_tpl"))
-
-	local var_4_4 = arg_4_0.uilist
-
-	var_1.make(var_4_4, function(arg_5_0, arg_5_1, arg_5_2)
-		UIItemList = var_2_10003
-
-		if arg_5_0 == var_2_10003.EventUpdate then
-			local var_5_0 = arg_4_0
-
-			var_3.UpdateItem(var_5_0, arg_5_1 + 1, arg_5_2)
+	arg_4_0.uilist:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventUpdate then
+			arg_4_0:UpdateItem(arg_5_1 + 1, arg_5_2)
 		end
 
 		return
@@ -50,205 +29,93 @@ function var_0_1.OnInit(arg_4_0)
 	return
 end
 
-function var_0_1.UpdateAndroidAlarm(arg_6_0)
-	local var_6_0 = arg_6_0._tf
+function var_0_0.UpdateAndroidAlarm(arg_6_0)
+	arg_6_0.alarmBtn = arg_6_0._tf:Find("android_alarm_btn")
+	arg_6_0.alarmPanel = arg_6_0._tf:Find("android_alarm_panel")
 
-	arg_6_0.alarmBtn = var_1.Find(var_6_0, "android_alarm_btn")
+	if not PermissionHelper.IsAndroid() or LOCK_ANDROID_EXACT_ALARM then
+		setActive(arg_6_0.alarmBtn, false)
+		setActive(arg_6_0.alarmPanel, false)
+	elseif not YSNormalTool.NotificationTool.CanScheduleExactAlarms() then
+		setActive(arg_6_0.alarmBtn, true)
+		setActive(arg_6_0.alarmPanel, true)
 
-	local var_6_1 = arg_6_0._tf
+		arg_6_0.alarmPanelTipText = arg_6_0.alarmPanel:Find("tip/Text")
 
-	arg_6_0.alarmPanel = var_1.Find(var_6_1, "android_alarm_panel")
-	PermissionHelper = var_1
+		setText(arg_6_0.alarmPanelTipText, i18n("notify_clock_tip"))
+		onButton(arg_6_0, arg_6_0.alarmBtn, function()
+			YSNormalTool.NotificationTool.RequestScheduleExactAlarmsPermission()
 
-	local var_6_2 = var_1.IsAndroid()
-
-	YSNormalTool = var_1_10002
-
-	local var_6_3 = var_1_10002.NotificationTool.CanScheduleExactAlarms()
-
-	if var_6_2 then
-		LOCK_ANDROID_EXACT_ALARM = var_6_1
-
-		if var_6_1 then
-			setActive = var_6_1
-
-			var_6_1(arg_6_0.alarmBtn, false)
-
-			setActive = var_6_1
-
-			var_6_1(arg_6_0.alarmPanel, false)
-		elseif not var_6_3 then
-			setActive = var_6_1
-
-			var_6_1(arg_6_0.alarmBtn, true)
-
-			setActive = var_6_1
-
-			var_6_1(arg_6_0.alarmPanel, true)
-
-			local var_6_4 = arg_6_0.alarmPanel
-
-			arg_6_0.alarmPanelTipText = var_6_1.Find(var_6_4, "tip/Text")
-			setText = var_6_1
-
-			local var_6_5 = arg_6_0.alarmPanelTipText
-
-			i18n = var_6
-
-			var_6_1(var_6_5, var_6("notify_clock_tip"))
-
-			onButton = var_6_1
-
-			local var_6_6 = arg_6_0
-			local var_6_7 = arg_6_0.alarmBtn
-
-			local function var_6_8()
-				YSNormalTool = var_2_10000
-
-				var_2_10000.NotificationTool.RequestScheduleExactAlarmsPermission()
-
-				return
-			end
-
-			SFX_PANEL = var_8
-
-			var_6_1(var_6_6, var_6_7, var_6_8, var_8)
-		else
-			setActive = var_6_1
-
-			var_6_1(arg_6_0.alarmBtn, false)
-
-			setActive = var_6_1
-
-			var_6_1(arg_6_0.alarmPanel, false)
-		end
-
-		return
+			return
+		end, SFX_PANEL)
+	else
+		setActive(arg_6_0.alarmBtn, false)
+		setActive(arg_6_0.alarmPanel, false)
 	end
+
+	return
 end
 
-function var_0_1.UpdateItem(arg_8_0, arg_8_1, arg_8_2)
+function var_0_0.UpdateItem(arg_8_0, arg_8_1, arg_8_2)
 	local var_8_0 = arg_8_0.list[arg_8_1]
-	local var_8_1 = arg_8_2:Find("mask/Text")
-	local var_8_2 = var_4.GetComponent(var_8_1, "ScrollText")
 
-	var_4.SetText(var_8_2, var_8_0.title)
-
-	onButton = var_5
-
-	local var_8_3 = arg_8_0
-	local var_8_4 = arg_8_2
-	local var_8_5 = arg_8_2.Find(var_8_4, "mask/Text")
-
-	local function var_8_6()
-		pg = var_2_10000
-
-		local var_9_0 = var_2_10000.m02
-		local var_9_1 = var_0.sendNotification
-
-		NewSettingsMediator = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.SHOW_DESC, var_8_0)
+	arg_8_2:Find("mask/Text"):GetComponent("ScrollText"):SetText(arg_8_0.list[arg_8_1].title)
+	onButton(arg_8_0, arg_8_2:Find("mask/Text"), function()
+		pg.m02:sendNotification(NewSettingsMediator.SHOW_DESC, var_8_0)
 
 		return
-	end
-
-	SFX_PANEL = var_8_4
-
-	var_5(var_8_3, var_8_5, var_8_6, var_8_4)
-
-	removeOnToggle = var_5
-
-	var_5(arg_8_2:Find("on"))
+	end, SFX_PANEL)
+	removeOnToggle(arg_8_2:Find("on"))
 
 	if arg_8_0:GetDefaultValue(var_8_0) then
-		triggerToggle = var_5
-
-		var_5(arg_8_2:Find("on"), true)
+		triggerToggle(arg_8_2:Find("on"), true)
 	else
-		triggerToggle = var_5
-
-		var_5(arg_8_2:Find("off"), true)
+		triggerToggle(arg_8_2:Find("off"), true)
 	end
 
-	onToggle = var_5
-
-	local var_8_7 = arg_8_0
-	local var_8_8 = arg_8_2
-	local var_8_9 = arg_8_2.Find(var_8_8, "on")
-
-	local function var_8_10(arg_10_0)
-		local var_10_0 = arg_8_0
-
-		var_1.OnItemSwitch(var_10_0, var_8_0, arg_10_0)
+	onToggle(arg_8_0, arg_8_2:Find("on"), function(arg_10_0)
+		arg_8_0:OnItemSwitch(var_8_0, arg_10_0)
 
 		return
-	end
-
-	SFX_UI_TAG = var_8_8
-	SFX_UI_CANCEL = var_11
-
-	var_5(var_8_7, var_8_9, var_8_10, var_8_8, var_11)
+	end, SFX_UI_TAG, SFX_UI_CANCEL)
 	arg_8_0:OnUpdateItem(var_8_0)
 	arg_8_0:OnUpdateItemWithTr(var_8_0, arg_8_2)
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_11_0, arg_11_1)
+function var_0_0.OnUpdateItem(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.OnUpdateItemWithTr(arg_12_0, arg_12_1, arg_12_2)
+function var_0_0.OnUpdateItemWithTr(arg_12_0, arg_12_1, arg_12_2)
 	return
 end
 
-function var_0_1.OnItemSwitch(arg_13_0, arg_13_1, arg_13_2)
-	pg = var_1_10003
-
-	local var_13_0 = var_1_10003.PushNotificationMgr.GetInstance()
-
-	var_3.setSwitch(var_13_0, arg_13_1.id, arg_13_2)
+function var_0_0.OnItemSwitch(arg_13_0, arg_13_1, arg_13_2)
+	pg.PushNotificationMgr.GetInstance():setSwitch(arg_13_1.id, arg_13_2)
 
 	return
 end
 
-function var_0_1.GetDefaultValue(arg_14_0, arg_14_1)
-	pg = var_1_10002
-
-	local var_14_0 = var_1_10002.PushNotificationMgr.GetInstance()
-
-	return var_2.isEnabled(var_14_0, arg_14_1.id)
+function var_0_0.GetDefaultValue(arg_14_0, arg_14_1)
+	return pg.PushNotificationMgr.GetInstance():isEnabled(arg_14_1.id)
 end
 
-function var_0_1.GetList(arg_15_0)
-	local var_15_0 = {}
-
-	ipairs = var_1_10002
-	pg = var_1_10004
-
-	for iter_15_0, iter_15_1 in var_1_10002(var_1_10004.push_data_template.all) do
-		table = var_1_10007
-		var_1_10007 = var_1_10007.insert
-
-		local var_15_1 = var_15_0
-
-		pg = var_1_10010
-
-		var_1_10007(var_15_1, var_1_10010.push_data_template[iter_15_1])
+function var_0_0.GetList(arg_15_0)
+	for iter_15_0, iter_15_1 in ipairs(pg.push_data_template.all) do
+		table.insert({}, pg.push_data_template[iter_15_1])
 	end
 
-	return var_15_0
+	return {}
 end
 
-function var_0_1.OnUpdate(arg_16_0)
+function var_0_0.OnUpdate(arg_16_0)
 	arg_16_0.list = arg_16_0:GetList()
 
-	local var_16_0 = arg_16_0.uilist
-
-	var_1.align(var_16_0, #arg_16_0.list)
+	arg_16_0.uilist:align(#arg_16_0.list)
 
 	return
 end
 
-return var_0_1
+return var_0_0

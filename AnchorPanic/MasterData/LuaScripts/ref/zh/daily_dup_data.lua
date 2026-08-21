@@ -26,6 +26,8 @@ local daily_dup_data=
 	[12]={ type=35, subtype={}, name=4594, dup_name=4594, subname={}, function_id=10215, describe=4604, tap_type=1, subcolor={}, show_tid=8103
 },
 	[13]={ type=36, subtype={}, name=4595, dup_name=4595, subname={}, function_id=10216, describe=4605, tap_type=1, subcolor={}, show_tid=9014
+},
+	[14]={ type=46, subtype={}, name=4624, dup_name=4624, subname={}, function_id=10212, describe=139, tap_type=3, subcolor={}, show_tid=2564
 }
 }
 

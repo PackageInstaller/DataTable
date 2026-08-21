@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MonthSignPageTool")
+﻿local var_0_0 = class("MonthSignPageTool")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._event = arg_1_1
@@ -9,254 +7,121 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.onAcheve(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0
+	local var_2_0 = coroutine.create(function()
+		local var_4_9000
 
-	local function var_2_1()
-		if var_2_0 then
-			coroutine = var_0
+		if table.getCount(arg_2_1) > 0 then
+			local var_4_0 = getProxy(ActivityProxy)
+			local var_4_1 = var_4_0.getActivityById(var_4_9000, ActivityConst.MONTH_SIGN_ACTIVITY_ID)
+			local var_4_2 = pg.activity_month_sign[var_4_1.data2].resign_count
+			local var_4_3 = pg.TimeMgr.GetInstance():STimeDescS(pg.TimeMgr.GetInstance().GetServerTime(var_4_0), "*t")
 
-			if var_0.status(var_2_0) == "suspended" then
-				coroutine = var_0
+			if var_4_1:getSpecialData("reMonthSignDay") ~= nil then
+				local var_4_4 = arg_2_0
 
-				local var_3_0, var_3_1 = var_0.resume(var_2_0)
+				if arg_2_0.reMonthSignItems then
+					var_4_4.reMonthSignItems = arg_2_0.reMonthSignItems or {}
 
-				assert = var_2
+					for iter_4_0, iter_4_1 in pairs(arg_2_1) do
+						table.insert(arg_2_0.reMonthSignItems, iter_4_1)
+					end
 
-				var_2(var_3_0, var_3_1)
-			end
-		end
+					if var_4_3.day > #var_4_1.data1_list and var_4_2 > var_4_1.data3 then
+						Timer.New(function()
+							arg_2_2()
 
-		return
-	end
-
-	coroutine = var_1_10005
-	var_2_0 = var_1_10005.create(function()
-		table = var_2_10000
-
-		local var_4_0 = var_2_10000.getCount(arg_2_1)
-
-		if 0 < var_4_0 then
-			getProxy = var_4_0
-			ActivityProxy = var_2
-
-			local var_4_1 = var_4_0(var_2)
-			local var_4_2 = var_0.getActivityById
-
-			ActivityConst = var_2_10003
-
-			local var_4_3 = var_4_2(var_4_1, var_2_10003.MONTH_SIGN_ACTIVITY_ID)
-
-			pg = var_1
-
-			local var_4_4 = var_1.activity_month_sign[var_4_3.data2].resign_count
-
-			pg = var_2
-
-			local var_4_5 = var_2.TimeMgr.GetInstance()
-			local var_4_6 = var_2.GetServerTime(var_4_5)
-
-			pg = var_3
-
-			local var_4_7 = var_3.TimeMgr.GetInstance()
-			local var_4_8 = var_3.STimeDescS(var_4_7, var_4_6, "*t")
-			local var_4_9
-
-			if var_4_3:getSpecialData("reMonthSignDay") ~= nil then
-				var_4_9 = arg_2_0
-
-				if not arg_2_0.reMonthSignItems or not arg_2_0.reMonthSignItems then
-					var_4_7 = {}
-				end
-
-				var_4_9.reMonthSignItems = var_4_7
-				pairs = var_4_9
-
-				for iter_4_0, iter_4_1 in var_4_9(arg_2_1) do
-					table = var_2_10009
-
-					var_2_10009.insert(arg_2_0.reMonthSignItems, iter_4_1)
-				end
-
-				var_4_9 = var_4_8.day
-
-				if #var_4_3.data1_list < var_4_9 and var_4_3.data3 < var_4_4 then
-					Timer = var_4_9
-					iter_4_0 = var_4_9.New(function()
-						arg_2_2()
+							return
+						end, 0.3, 1):Start()
 
 						return
-					end, 0.3, 1)
+					else
+						arg_2_0._event:emit(MonthSignPage.SHOW_RE_MONTH_SIGN, arg_2_0.reMonthSignItems, var_0)
 
-					var_4_9.Start(iter_4_0)
-
-					return
-				else
-					local var_4_10 = arg_2_0._event
-
-					var_4_9 = var_4_9.emit
-					MonthSignPage = iter_4_0
-
-					var_4_9(var_4_10, iter_4_0.SHOW_RE_MONTH_SIGN, arg_2_0.reMonthSignItems, var_2_1)
-
-					arg_2_1 = arg_2_0.reMonthSignItems
-				end
-			else
-				var_4_9 = arg_2_0
-				var_4_9.reMonthSignItems = nil
-
-				local var_4_11 = arg_2_0._event
-
-				var_4_9 = var_4_9.emit
-				BaseUI = iter_4_0
-
-				var_4_9(var_4_11, iter_4_0.ON_AWARD, {
-					items = arg_2_1,
-					removeFunc = var_2_1
-				})
-			end
-
-			coroutine = var_4_9
-
-			var_4_9.yield()
-
-			_ = var_4
-
-			local var_4_12 = #var_4.filter(arg_2_1, function(arg_6_0)
-				local var_6_0 = arg_6_0.type
-
-				DROP_TYPE_SHIP = var_3_10002
-
-				return var_6_0 == var_3_10002
-			end)
-
-			_ = var_4_7
-
-			local var_4_13 = var_4_12 + #var_4_7.filter(arg_2_1, function(arg_7_0)
-				local var_7_0 = arg_7_0.type
-
-				DROP_TYPE_OPERATION = var_3_10002
-
-				return var_7_0 == var_3_10002
-			end)
-
-			getProxy = var_6
-			BayProxy = var_8
-
-			local var_4_14 = var_6(var_8)
-			local var_4_15 = var_6.getNewShip(var_4_14, true)
-
-			_ = var_8
-
-			var_8.each(var_5, function(arg_8_0)
-				table = var_3_10001
-
-				local var_8_0 = var_3_10001.insert
-				local var_8_1 = var_4_15
-				local var_8_2 = var_0
-
-				var_8_0(var_8_1, var_4.getShipById(var_8_2, arg_8_0.id))
-
-				return
-			end)
-
-			pg = var_8
-
-			if var_8.gameset.award_ship_limit then
-				pg = var_8
-
-				local var_4_16
-
-				if not var_8.gameset.award_ship_limit.key_value then
-					var_4_16 = 20
-				end
-
-				if var_4_13 <= var_4_16 then
-					math = var_4_14
-
-					for iter_4_2 = var_4_14.max(1, #var_4_15 - var_4_13 + 1), #var_4_15 do
-						var_2_10015 = arg_2_0._event
-
-						local var_4_17 = var_13.emit
-
-						ActivityMediator = var_2_10016
-						var_2_10016 = var_2_10016.OPEN_LAYER
-						Context = var_2_10017
-						var_2_10017 = var_2_10017.New
-
-						local var_4_18 = {}
-
-						NewShipMediator = var_2_10020
-						var_4_18.mediator = var_2_10020
-						NewShipLayer = var_2_10020
-						var_4_18.viewComponent = var_2_10020
-						var_4_18.data = {
-							ship = var_4_15[iter_4_2]
-						}
-						var_4_18.onRemoved = var_2_1
-
-						var_4_17(var_2_10015, var_2_10016, var_2_10017(var_4_18))
-
-						coroutine = var_4_17
-
-						var_4_17.yield()
+						arg_2_1 = arg_2_0.reMonthSignItems
 					end
-				end
 
-				pairs = var_4_14
+					if false then
+						arg_2_0.reMonthSignItems = nil
 
-				for iter_4_3, iter_4_4 in var_4_14(arg_2_1) do
-					local var_4_19 = iter_4_4.type
+						arg_2_0._event:emit(BaseUI.ON_AWARD, {
+							items = arg_2_1,
+							removeFunc = var_0
+						})
+					end
 
-					DROP_TYPE_SKIN = var_2_10015
+					coroutine.yield()
 
-					if var_4_19 == var_2_10015 then
-						pg = var_4_19
+					local var_4_5 = _.filter(arg_2_1, function(arg_7_0)
+						return arg_7_0.type == DROP_TYPE_OPERATION
+					end)
+					local var_4_6 = #_.filter(arg_2_1, function(arg_6_0)
+						return arg_6_0.type == DROP_TYPE_SHIP
+					end) + #var_4_5
+					local var_4_7 = getProxy(BayProxy)
+					local var_4_8 = getProxy(BayProxy):getNewShip(true)
 
-						local var_4_20 = var_4_19.ship_skin_template[iter_4_4.id].skin_type
+					_.each(var_4_5, function(arg_8_0)
+						table.insert(var_4_8, var_4_7:getShipById(arg_8_0.id))
 
-						ShipSkin = var_2_10015
+						return
+					end)
 
-						if var_4_20 == var_2_10015.SKIN_TYPE_REMAKE then
-							-- block empty
-						else
-							local var_4_21 = arg_2_0._event
+					if pg.gameset.award_ship_limit then
+						local var_4_9 = pg.gameset.award_ship_limit.key_value or 20
 
-							var_4_20 = var_4_20.emit
-							ActivityMediator = var_2_10017
-							var_2_10017 = var_2_10017.OPEN_LAYER
-							Context = var_2_10018
-							var_2_10018 = var_2_10018.New
-
-							local var_4_22 = {}
-
-							NewSkinMediator = var_2_10021
-							var_4_22.mediator = var_2_10021
-							NewSkinLayer = var_2_10021
-							var_4_22.viewComponent = var_2_10021
-							var_4_22.data = {
-								skinId = iter_4_4.id
-							}
-							var_4_22.onRemoved = var_2_1
-
-							var_4_20(var_4_21, var_2_10017, var_2_10018(var_4_22))
+						if var_4_6 <= var_4_9 then
+							for iter_4_2 = math.max(1, #var_4_8 - var_4_6 + 1), #var_4_8 do
+								arg_2_0._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
+									mediator = NewShipMediator,
+									viewComponent = NewShipLayer,
+									data = {
+										ship = var_4_8[iter_4_2]
+									},
+									onRemoved = var_0
+								}))
+								coroutine.yield()
+							end
 						end
 
-						coroutine = var_4_20
+						for iter_4_3, iter_4_4 in pairs(arg_2_1) do
+							if iter_4_4.type == DROP_TYPE_SKIN then
+								if pg.ship_skin_template[iter_4_4.id].skin_type == ShipSkin.SKIN_TYPE_REMAKE then
+									-- block empty
+								else
+									arg_2_0._event:emit(ActivityMediator.OPEN_LAYER, Context.New({
+										mediator = NewSkinMediator,
+										viewComponent = NewSkinLayer,
+										data = {
+											skinId = iter_4_4.id
+										},
+										onRemoved = var_0
+									}))
+								end
 
-						var_4_20.yield()
+								coroutine.yield()
+							end
+						end
+
+						if arg_2_2 then
+							arg_2_2()
+						end
+
+						return
 					end
 				end
-
-				if arg_2_2 then
-					arg_2_2()
-				end
-
-				return
 			end
 		end
 	end)
 
-	var_2_1()
+	;(function()
+		if var_2_0 and coroutine.status(var_2_0) == "suspended" then
+			local var_3_0, var_3_1 = coroutine.resume(var_2_0)
+
+			assert(var_3_0, var_3_1)
+		end
+
+		return
+	end)()
 
 	return
 end

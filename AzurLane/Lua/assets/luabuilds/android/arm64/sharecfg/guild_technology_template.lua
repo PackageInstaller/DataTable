@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "guild_technology_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "guild_technology_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.guild_technology_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.guild_technology_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.guild_technology_template = rawget(pg, "guild_technology_template") or setmetatable({
+	__name = "guild_technology_template"
+}, confNEO)
+pg.guild_technology_template.all = {
 	1000,
 	1001,
 	1002,
@@ -203,11 +180,7 @@ var_0_3.all = {
 	6019,
 	6020
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.guild_technology_template
-
-var_0_4.get_id_list_by_group = {
+pg.guild_technology_template.get_id_list_by_group = {
 	{
 		1000,
 		1001,
@@ -397,25 +370,11 @@ var_0_4.get_id_list_by_group = {
 		6020
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.guild_technology_template = {}
+pg.base = pg.base or {}
+pg.base.guild_technology_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.guild_technology_template
-
-	var_1_0[1000] = {
+	pg.base.guild_technology_template[1000] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 100,
@@ -432,11 +391,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.guild_technology_template
-
-	var_1_1[1001] = {
+	pg.base.guild_technology_template[1001] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 114,
@@ -453,11 +408,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.guild_technology_template
-
-	var_1_2[1002] = {
+	pg.base.guild_technology_template[1002] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 132,
@@ -474,11 +425,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.guild_technology_template
-
-	var_1_3[1003] = {
+	pg.base.guild_technology_template[1003] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 154,
@@ -495,11 +442,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.guild_technology_template
-
-	var_1_4[1004] = {
+	pg.base.guild_technology_template[1004] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 180,
@@ -516,11 +459,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.guild_technology_template
-
-	var_1_5[1005] = {
+	pg.base.guild_technology_template[1005] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 210,
@@ -537,11 +476,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.guild_technology_template
-
-	var_1_6[1006] = {
+	pg.base.guild_technology_template[1006] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 244,
@@ -558,11 +493,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.guild_technology_template
-
-	var_1_7[1007] = {
+	pg.base.guild_technology_template[1007] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 282,
@@ -579,11 +510,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.guild_technology_template
-
-	var_1_8[1008] = {
+	pg.base.guild_technology_template[1008] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 324,
@@ -600,11 +527,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.guild_technology_template
-
-	var_1_9[1009] = {
+	pg.base.guild_technology_template[1009] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 370,
@@ -621,11 +544,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.guild_technology_template
-
-	var_1_10[1010] = {
+	pg.base.guild_technology_template[1010] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 420,
@@ -642,11 +561,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.guild_technology_template
-
-	var_1_11[1011] = {
+	pg.base.guild_technology_template[1011] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 474,
@@ -663,11 +578,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.guild_technology_template
-
-	var_1_12[1012] = {
+	pg.base.guild_technology_template[1012] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 532,
@@ -684,11 +595,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.guild_technology_template
-
-	var_1_13[1013] = {
+	pg.base.guild_technology_template[1013] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 594,
@@ -705,11 +612,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.guild_technology_template
-
-	var_1_14[1014] = {
+	pg.base.guild_technology_template[1014] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 660,
@@ -726,11 +629,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.guild_technology_template
-
-	var_1_15[1015] = {
+	pg.base.guild_technology_template[1015] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 730,
@@ -747,11 +646,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.guild_technology_template
-
-	var_1_16[1016] = {
+	pg.base.guild_technology_template[1016] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 804,
@@ -768,11 +663,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.guild_technology_template
-
-	var_1_17[1017] = {
+	pg.base.guild_technology_template[1017] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 882,
@@ -789,11 +680,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.guild_technology_template
-
-	var_1_18[1018] = {
+	pg.base.guild_technology_template[1018] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 964,
@@ -810,11 +697,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.guild_technology_template
-
-	var_1_19[1019] = {
+	pg.base.guild_technology_template[1019] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 1050,
@@ -831,11 +714,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.guild_technology_template
-
-	var_1_20[1020] = {
+	pg.base.guild_technology_template[1020] = {
 		level_max = 20,
 		name = "大舰队席位扩充",
 		exp = 0,
@@ -852,11 +731,7 @@ var_0_4.base.guild_technology_template = {}
 			"bigfleet_seats"
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.guild_technology_template
-
-	var_1_21[2000] = {
+	pg.base.guild_technology_template[2000] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 100,
@@ -873,11 +748,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.guild_technology_template
-
-	var_1_22[2001] = {
+	pg.base.guild_technology_template[2001] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 124,
@@ -894,11 +765,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.guild_technology_template
-
-	var_1_23[2002] = {
+	pg.base.guild_technology_template[2002] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 152,
@@ -915,11 +782,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.guild_technology_template
-
-	var_1_24[2003] = {
+	pg.base.guild_technology_template[2003] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 184,
@@ -936,11 +799,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.guild_technology_template
-
-	var_1_25[2004] = {
+	pg.base.guild_technology_template[2004] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 220,
@@ -957,11 +816,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.guild_technology_template
-
-	var_1_26[2005] = {
+	pg.base.guild_technology_template[2005] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 260,
@@ -978,11 +833,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.guild_technology_template
-
-	var_1_27[2006] = {
+	pg.base.guild_technology_template[2006] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 304,
@@ -999,11 +850,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.guild_technology_template
-
-	var_1_28[2007] = {
+	pg.base.guild_technology_template[2007] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 352,
@@ -1020,11 +867,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.guild_technology_template
-
-	var_1_29[2008] = {
+	pg.base.guild_technology_template[2008] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 404,
@@ -1041,11 +884,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.guild_technology_template
-
-	var_1_30[2009] = {
+	pg.base.guild_technology_template[2009] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 460,
@@ -1062,11 +901,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.guild_technology_template
-
-	var_1_31[2010] = {
+	pg.base.guild_technology_template[2010] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 520,
@@ -1083,11 +918,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.guild_technology_template
-
-	var_1_32[2011] = {
+	pg.base.guild_technology_template[2011] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 584,
@@ -1104,11 +935,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.guild_technology_template
-
-	var_1_33[2012] = {
+	pg.base.guild_technology_template[2012] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 652,
@@ -1125,11 +952,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.guild_technology_template
-
-	var_1_34[2013] = {
+	pg.base.guild_technology_template[2013] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 724,
@@ -1146,11 +969,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.guild_technology_template
-
-	var_1_35[2014] = {
+	pg.base.guild_technology_template[2014] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 800,
@@ -1167,11 +986,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.guild_technology_template
-
-	var_1_36[2015] = {
+	pg.base.guild_technology_template[2015] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 880,
@@ -1188,11 +1003,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.guild_technology_template
-
-	var_1_37[2016] = {
+	pg.base.guild_technology_template[2016] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 964,
@@ -1209,11 +1020,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.guild_technology_template
-
-	var_1_38[2017] = {
+	pg.base.guild_technology_template[2017] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1052,
@@ -1230,11 +1037,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.guild_technology_template
-
-	var_1_39[2018] = {
+	pg.base.guild_technology_template[2018] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1144,
@@ -1251,11 +1054,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.guild_technology_template
-
-	var_1_40[2019] = {
+	pg.base.guild_technology_template[2019] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1240,
@@ -1272,11 +1071,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.guild_technology_template
-
-	var_1_41[2020] = {
+	pg.base.guild_technology_template[2020] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1340,
@@ -1293,11 +1088,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.guild_technology_template
-
-	var_1_42[2021] = {
+	pg.base.guild_technology_template[2021] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1444,
@@ -1314,11 +1105,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.guild_technology_template
-
-	var_1_43[2022] = {
+	pg.base.guild_technology_template[2022] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1552,
@@ -1335,11 +1122,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.guild_technology_template
-
-	var_1_44[2023] = {
+	pg.base.guild_technology_template[2023] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1664,
@@ -1356,11 +1139,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.guild_technology_template
-
-	var_1_45[2024] = {
+	pg.base.guild_technology_template[2024] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1780,
@@ -1377,11 +1156,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.guild_technology_template
-
-	var_1_46[2025] = {
+	pg.base.guild_technology_template[2025] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 1900,
@@ -1398,11 +1173,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.guild_technology_template
-
-	var_1_47[2026] = {
+	pg.base.guild_technology_template[2026] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2024,
@@ -1419,11 +1190,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.guild_technology_template
-
-	var_1_48[2027] = {
+	pg.base.guild_technology_template[2027] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2152,
@@ -1440,11 +1207,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.guild_technology_template
-
-	var_1_49[2028] = {
+	pg.base.guild_technology_template[2028] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2284,
@@ -1461,11 +1224,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.guild_technology_template
-
-	var_1_50[2029] = {
+	pg.base.guild_technology_template[2029] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2420,
@@ -1482,11 +1241,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.guild_technology_template
-
-	var_1_51[2030] = {
+	pg.base.guild_technology_template[2030] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2560,
@@ -1503,11 +1258,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.guild_technology_template
-
-	var_1_52[2031] = {
+	pg.base.guild_technology_template[2031] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2704,
@@ -1524,11 +1275,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.guild_technology_template
-
-	var_1_53[2032] = {
+	pg.base.guild_technology_template[2032] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 2852,
@@ -1545,11 +1292,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.guild_technology_template
-
-	var_1_54[2033] = {
+	pg.base.guild_technology_template[2033] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 3004,
@@ -1566,11 +1309,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.guild_technology_template
-
-	var_1_55[2034] = {
+	pg.base.guild_technology_template[2034] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 3160,
@@ -1587,11 +1326,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.guild_technology_template
-
-	var_1_56[2035] = {
+	pg.base.guild_technology_template[2035] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 3320,
@@ -1608,11 +1343,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.guild_technology_template
-
-	var_1_57[2036] = {
+	pg.base.guild_technology_template[2036] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 3484,
@@ -1629,11 +1360,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.guild_technology_template
-
-	var_1_58[2037] = {
+	pg.base.guild_technology_template[2037] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 3652,
@@ -1650,11 +1377,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.guild_technology_template
-
-	var_1_59[2038] = {
+	pg.base.guild_technology_template[2038] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 3824,
@@ -1671,11 +1394,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.guild_technology_template
-
-	var_1_60[2039] = {
+	pg.base.guild_technology_template[2039] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 4000,
@@ -1692,11 +1411,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.guild_technology_template
-
-	var_1_61[2040] = {
+	pg.base.guild_technology_template[2040] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 4180,
@@ -1713,11 +1428,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.guild_technology_template
-
-	var_1_62[2041] = {
+	pg.base.guild_technology_template[2041] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 4364,
@@ -1734,11 +1445,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.guild_technology_template
-
-	var_1_63[2042] = {
+	pg.base.guild_technology_template[2042] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 4552,
@@ -1755,11 +1462,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.guild_technology_template
-
-	var_1_64[2043] = {
+	pg.base.guild_technology_template[2043] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 4744,
@@ -1776,11 +1479,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.guild_technology_template
-
-	var_1_65[2044] = {
+	pg.base.guild_technology_template[2044] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 4940,
@@ -1797,11 +1496,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.guild_technology_template
-
-	var_1_66[2045] = {
+	pg.base.guild_technology_template[2045] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 5140,
@@ -1818,11 +1513,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.guild_technology_template
-
-	var_1_67[2046] = {
+	pg.base.guild_technology_template[2046] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 5344,
@@ -1839,11 +1530,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.guild_technology_template
-
-	var_1_68[2047] = {
+	pg.base.guild_technology_template[2047] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 5552,
@@ -1860,11 +1547,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.guild_technology_template
-
-	var_1_69[2048] = {
+	pg.base.guild_technology_template[2048] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 5764,
@@ -1881,11 +1564,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.guild_technology_template
-
-	var_1_70[2049] = {
+	pg.base.guild_technology_template[2049] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 5980,
@@ -1902,11 +1581,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.guild_technology_template
-
-	var_1_71[2050] = {
+	pg.base.guild_technology_template[2050] = {
 		level_max = 50,
 		name = "物资存储技术",
 		exp = 0,
@@ -1923,11 +1598,7 @@ var_0_4.base.guild_technology_template = {}
 			"gold_max"
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.guild_technology_template
-
-	var_1_72[3000] = {
+	pg.base.guild_technology_template[3000] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 100,
@@ -1944,11 +1615,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.guild_technology_template
-
-	var_1_73[3001] = {
+	pg.base.guild_technology_template[3001] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 124,
@@ -1965,11 +1632,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.guild_technology_template
-
-	var_1_74[3002] = {
+	pg.base.guild_technology_template[3002] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 152,
@@ -1986,11 +1649,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.guild_technology_template
-
-	var_1_75[3003] = {
+	pg.base.guild_technology_template[3003] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 184,
@@ -2007,11 +1666,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.guild_technology_template
-
-	var_1_76[3004] = {
+	pg.base.guild_technology_template[3004] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 220,
@@ -2028,11 +1683,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.guild_technology_template
-
-	var_1_77[3005] = {
+	pg.base.guild_technology_template[3005] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 260,
@@ -2049,11 +1700,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.guild_technology_template
-
-	var_1_78[3006] = {
+	pg.base.guild_technology_template[3006] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 304,
@@ -2070,11 +1717,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.guild_technology_template
-
-	var_1_79[3007] = {
+	pg.base.guild_technology_template[3007] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 352,
@@ -2091,11 +1734,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.guild_technology_template
-
-	var_1_80[3008] = {
+	pg.base.guild_technology_template[3008] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 404,
@@ -2112,11 +1751,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.guild_technology_template
-
-	var_1_81[3009] = {
+	pg.base.guild_technology_template[3009] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 460,
@@ -2133,11 +1768,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.guild_technology_template
-
-	var_1_82[3010] = {
+	pg.base.guild_technology_template[3010] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 520,
@@ -2154,11 +1785,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.guild_technology_template
-
-	var_1_83[3011] = {
+	pg.base.guild_technology_template[3011] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 584,
@@ -2175,11 +1802,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.guild_technology_template
-
-	var_1_84[3012] = {
+	pg.base.guild_technology_template[3012] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 652,
@@ -2196,11 +1819,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.guild_technology_template
-
-	var_1_85[3013] = {
+	pg.base.guild_technology_template[3013] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 724,
@@ -2217,11 +1836,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.guild_technology_template
-
-	var_1_86[3014] = {
+	pg.base.guild_technology_template[3014] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 800,
@@ -2238,11 +1853,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.guild_technology_template
-
-	var_1_87[3015] = {
+	pg.base.guild_technology_template[3015] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 880,
@@ -2259,11 +1870,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.guild_technology_template
-
-	var_1_88[3016] = {
+	pg.base.guild_technology_template[3016] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 964,
@@ -2280,11 +1887,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.guild_technology_template
-
-	var_1_89[3017] = {
+	pg.base.guild_technology_template[3017] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1052,
@@ -2301,11 +1904,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.guild_technology_template
-
-	var_1_90[3018] = {
+	pg.base.guild_technology_template[3018] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1144,
@@ -2322,11 +1921,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.guild_technology_template
-
-	var_1_91[3019] = {
+	pg.base.guild_technology_template[3019] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1240,
@@ -2343,11 +1938,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.guild_technology_template
-
-	var_1_92[3020] = {
+	pg.base.guild_technology_template[3020] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1340,
@@ -2364,11 +1955,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.guild_technology_template
-
-	var_1_93[3021] = {
+	pg.base.guild_technology_template[3021] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1444,
@@ -2385,11 +1972,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.guild_technology_template
-
-	var_1_94[3022] = {
+	pg.base.guild_technology_template[3022] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1552,
@@ -2406,11 +1989,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.guild_technology_template
-
-	var_1_95[3023] = {
+	pg.base.guild_technology_template[3023] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1664,
@@ -2427,11 +2006,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.guild_technology_template
-
-	var_1_96[3024] = {
+	pg.base.guild_technology_template[3024] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1780,
@@ -2448,11 +2023,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.guild_technology_template
-
-	var_1_97[3025] = {
+	pg.base.guild_technology_template[3025] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 1900,
@@ -2469,11 +2040,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.guild_technology_template
-
-	var_1_98[3026] = {
+	pg.base.guild_technology_template[3026] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2024,
@@ -2490,8 +2057,7 @@ var_0_4.base.guild_technology_template = {}
 			"oil_max"
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.guild_technology_template[3027] = {
+	pg.base.guild_technology_template[3027] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2152,
@@ -2512,11 +2078,7 @@ var_0_4.base.guild_technology_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.guild_technology_template
-
-	var_2_0[3028] = {
+	pg.base.guild_technology_template[3028] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2284,
@@ -2533,11 +2095,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.guild_technology_template
-
-	var_2_1[3029] = {
+	pg.base.guild_technology_template[3029] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2420,
@@ -2554,11 +2112,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.guild_technology_template
-
-	var_2_2[3030] = {
+	pg.base.guild_technology_template[3030] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2560,
@@ -2575,11 +2129,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.guild_technology_template
-
-	var_2_3[3031] = {
+	pg.base.guild_technology_template[3031] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2704,
@@ -2596,11 +2146,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.guild_technology_template
-
-	var_2_4[3032] = {
+	pg.base.guild_technology_template[3032] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 2852,
@@ -2617,11 +2163,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.guild_technology_template
-
-	var_2_5[3033] = {
+	pg.base.guild_technology_template[3033] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 3004,
@@ -2638,11 +2180,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.guild_technology_template
-
-	var_2_6[3034] = {
+	pg.base.guild_technology_template[3034] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 3160,
@@ -2659,11 +2197,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.guild_technology_template
-
-	var_2_7[3035] = {
+	pg.base.guild_technology_template[3035] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 3320,
@@ -2680,11 +2214,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.guild_technology_template
-
-	var_2_8[3036] = {
+	pg.base.guild_technology_template[3036] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 3484,
@@ -2701,11 +2231,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.guild_technology_template
-
-	var_2_9[3037] = {
+	pg.base.guild_technology_template[3037] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 3652,
@@ -2722,11 +2248,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.guild_technology_template
-
-	var_2_10[3038] = {
+	pg.base.guild_technology_template[3038] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 3824,
@@ -2743,11 +2265,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.guild_technology_template
-
-	var_2_11[3039] = {
+	pg.base.guild_technology_template[3039] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 4000,
@@ -2764,11 +2282,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.guild_technology_template
-
-	var_2_12[3040] = {
+	pg.base.guild_technology_template[3040] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 4180,
@@ -2785,11 +2299,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.guild_technology_template
-
-	var_2_13[3041] = {
+	pg.base.guild_technology_template[3041] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 4364,
@@ -2806,11 +2316,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.guild_technology_template
-
-	var_2_14[3042] = {
+	pg.base.guild_technology_template[3042] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 4552,
@@ -2827,11 +2333,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.guild_technology_template
-
-	var_2_15[3043] = {
+	pg.base.guild_technology_template[3043] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 4744,
@@ -2848,11 +2350,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.guild_technology_template
-
-	var_2_16[3044] = {
+	pg.base.guild_technology_template[3044] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 4940,
@@ -2869,11 +2367,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.guild_technology_template
-
-	var_2_17[3045] = {
+	pg.base.guild_technology_template[3045] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 5140,
@@ -2890,11 +2384,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.guild_technology_template
-
-	var_2_18[3046] = {
+	pg.base.guild_technology_template[3046] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 5344,
@@ -2911,11 +2401,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.guild_technology_template
-
-	var_2_19[3047] = {
+	pg.base.guild_technology_template[3047] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 5552,
@@ -2932,11 +2418,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.guild_technology_template
-
-	var_2_20[3048] = {
+	pg.base.guild_technology_template[3048] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 5764,
@@ -2953,11 +2435,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.guild_technology_template
-
-	var_2_21[3049] = {
+	pg.base.guild_technology_template[3049] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 5980,
@@ -2974,11 +2452,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.guild_technology_template
-
-	var_2_22[3050] = {
+	pg.base.guild_technology_template[3050] = {
 		level_max = 50,
 		name = "石油存储技术",
 		exp = 0,
@@ -2995,11 +2469,7 @@ end)()
 			"oil_max"
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.guild_technology_template
-
-	var_2_23[4000] = {
+	pg.base.guild_technology_template[4000] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 500,
@@ -3016,11 +2486,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.guild_technology_template
-
-	var_2_24[4001] = {
+	pg.base.guild_technology_template[4001] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 580,
@@ -3037,11 +2503,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.guild_technology_template
-
-	var_2_25[4002] = {
+	pg.base.guild_technology_template[4002] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 690,
@@ -3058,11 +2520,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.guild_technology_template
-
-	var_2_26[4003] = {
+	pg.base.guild_technology_template[4003] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 830,
@@ -3079,11 +2537,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.guild_technology_template
-
-	var_2_27[4004] = {
+	pg.base.guild_technology_template[4004] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 1000,
@@ -3100,11 +2554,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.guild_technology_template
-
-	var_2_28[4005] = {
+	pg.base.guild_technology_template[4005] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 1200,
@@ -3121,11 +2571,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.guild_technology_template
-
-	var_2_29[4006] = {
+	pg.base.guild_technology_template[4006] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 1430,
@@ -3142,11 +2588,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.guild_technology_template
-
-	var_2_30[4007] = {
+	pg.base.guild_technology_template[4007] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 1690,
@@ -3163,11 +2605,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.guild_technology_template
-
-	var_2_31[4008] = {
+	pg.base.guild_technology_template[4008] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 1980,
@@ -3184,11 +2622,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.guild_technology_template
-
-	var_2_32[4009] = {
+	pg.base.guild_technology_template[4009] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 2300,
@@ -3205,11 +2639,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.guild_technology_template
-
-	var_2_33[4010] = {
+	pg.base.guild_technology_template[4010] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 2650,
@@ -3226,11 +2656,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.guild_technology_template
-
-	var_2_34[4011] = {
+	pg.base.guild_technology_template[4011] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 3030,
@@ -3247,11 +2673,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.guild_technology_template
-
-	var_2_35[4012] = {
+	pg.base.guild_technology_template[4012] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 3440,
@@ -3268,11 +2690,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.guild_technology_template
-
-	var_2_36[4013] = {
+	pg.base.guild_technology_template[4013] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 3880,
@@ -3289,11 +2707,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.guild_technology_template
-
-	var_2_37[4014] = {
+	pg.base.guild_technology_template[4014] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 4350,
@@ -3310,11 +2724,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.guild_technology_template
-
-	var_2_38[4015] = {
+	pg.base.guild_technology_template[4015] = {
 		level_max = 15,
 		name = "船坞扩容技术",
 		exp = 0,
@@ -3331,11 +2741,7 @@ end)()
 			"ship_bag_size"
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.guild_technology_template
-
-	var_2_39[5000] = {
+	pg.base.guild_technology_template[5000] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 500,
@@ -3352,11 +2758,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.guild_technology_template
-
-	var_2_40[5001] = {
+	pg.base.guild_technology_template[5001] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 580,
@@ -3373,11 +2775,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.guild_technology_template
-
-	var_2_41[5002] = {
+	pg.base.guild_technology_template[5002] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 690,
@@ -3394,11 +2792,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.guild_technology_template
-
-	var_2_42[5003] = {
+	pg.base.guild_technology_template[5003] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 830,
@@ -3415,11 +2809,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.guild_technology_template
-
-	var_2_43[5004] = {
+	pg.base.guild_technology_template[5004] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 1000,
@@ -3436,11 +2826,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.guild_technology_template
-
-	var_2_44[5005] = {
+	pg.base.guild_technology_template[5005] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 1200,
@@ -3457,11 +2843,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.guild_technology_template
-
-	var_2_45[5006] = {
+	pg.base.guild_technology_template[5006] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 1430,
@@ -3478,11 +2860,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.guild_technology_template
-
-	var_2_46[5007] = {
+	pg.base.guild_technology_template[5007] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 1690,
@@ -3499,11 +2877,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.guild_technology_template
-
-	var_2_47[5008] = {
+	pg.base.guild_technology_template[5008] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 1980,
@@ -3520,11 +2894,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.guild_technology_template
-
-	var_2_48[5009] = {
+	pg.base.guild_technology_template[5009] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 2300,
@@ -3541,11 +2911,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.guild_technology_template
-
-	var_2_49[5010] = {
+	pg.base.guild_technology_template[5010] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 2650,
@@ -3562,11 +2928,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.guild_technology_template
-
-	var_2_50[5011] = {
+	pg.base.guild_technology_template[5011] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 3030,
@@ -3583,11 +2945,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.guild_technology_template
-
-	var_2_51[5012] = {
+	pg.base.guild_technology_template[5012] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 3440,
@@ -3604,11 +2962,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.guild_technology_template
-
-	var_2_52[5013] = {
+	pg.base.guild_technology_template[5013] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 3880,
@@ -3625,11 +2979,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.guild_technology_template
-
-	var_2_53[5014] = {
+	pg.base.guild_technology_template[5014] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 4350,
@@ -3646,11 +2996,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.guild_technology_template
-
-	var_2_54[5015] = {
+	pg.base.guild_technology_template[5015] = {
 		level_max = 15,
 		name = "仓库扩容技术",
 		exp = 0,
@@ -3667,11 +3013,7 @@ end)()
 			"equip_bag_size"
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.guild_technology_template
-
-	var_2_55[6000] = {
+	pg.base.guild_technology_template[6000] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 200,
@@ -3688,11 +3030,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.guild_technology_template
-
-	var_2_56[6001] = {
+	pg.base.guild_technology_template[6001] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 300,
@@ -3709,11 +3047,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.guild_technology_template
-
-	var_2_57[6002] = {
+	pg.base.guild_technology_template[6002] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 450,
@@ -3730,11 +3064,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.guild_technology_template
-
-	var_2_58[6003] = {
+	pg.base.guild_technology_template[6003] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 650,
@@ -3751,11 +3081,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.guild_technology_template
-
-	var_2_59[6004] = {
+	pg.base.guild_technology_template[6004] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 900,
@@ -3772,11 +3098,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.guild_technology_template
-
-	var_2_60[6005] = {
+	pg.base.guild_technology_template[6005] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 1200,
@@ -3793,11 +3115,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.guild_technology_template
-
-	var_2_61[6006] = {
+	pg.base.guild_technology_template[6006] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 1550,
@@ -3814,11 +3132,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.guild_technology_template
-
-	var_2_62[6007] = {
+	pg.base.guild_technology_template[6007] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 1950,
@@ -3835,11 +3149,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.guild_technology_template
-
-	var_2_63[6008] = {
+	pg.base.guild_technology_template[6008] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 2400,
@@ -3856,11 +3166,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.guild_technology_template
-
-	var_2_64[6009] = {
+	pg.base.guild_technology_template[6009] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 2900,
@@ -3877,11 +3183,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.guild_technology_template
-
-	var_2_65[6010] = {
+	pg.base.guild_technology_template[6010] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 3450,
@@ -3898,11 +3200,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.guild_technology_template
-
-	var_2_66[6011] = {
+	pg.base.guild_technology_template[6011] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 4050,
@@ -3919,11 +3217,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.guild_technology_template
-
-	var_2_67[6012] = {
+	pg.base.guild_technology_template[6012] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 4700,
@@ -3940,11 +3234,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.guild_technology_template
-
-	var_2_68[6013] = {
+	pg.base.guild_technology_template[6013] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 5400,
@@ -3961,11 +3251,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.guild_technology_template
-
-	var_2_69[6014] = {
+	pg.base.guild_technology_template[6014] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 6150,
@@ -3982,11 +3268,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.guild_technology_template
-
-	var_2_70[6015] = {
+	pg.base.guild_technology_template[6015] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 6950,
@@ -4003,11 +3285,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.guild_technology_template
-
-	var_2_71[6016] = {
+	pg.base.guild_technology_template[6016] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 7800,
@@ -4024,11 +3302,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.guild_technology_template
-
-	var_2_72[6017] = {
+	pg.base.guild_technology_template[6017] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 8700,
@@ -4045,11 +3319,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.guild_technology_template
-
-	var_2_73[6018] = {
+	pg.base.guild_technology_template[6018] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 9650,
@@ -4066,11 +3336,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.guild_technology_template
-
-	var_2_74[6019] = {
+	pg.base.guild_technology_template[6019] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 10650,
@@ -4087,8 +3353,7 @@ end)()
 			"catbox_gold_cost"
 		}
 	}
-	pg = var_2_74
-	var_2_74.base.guild_technology_template[6020] = {
+	pg.base.guild_technology_template[6020] = {
 		level_max = 20,
 		name = "喵箱购买折扣",
 		exp = 0,

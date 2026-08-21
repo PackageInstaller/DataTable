@@ -1,10 +1,4 @@
-﻿local var_0_0 = {
-	"指挥官请点击<color=#ff7d36>出击</color>",
-	"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
-	"点击<color=#ff7d36>出击</color>进行战斗！"
-}
-
-return {
+﻿return {
 	id = "S026",
 	events = {
 		{
@@ -15,17 +9,16 @@ return {
 				dir = 1,
 				posY = -42,
 				posX = 243,
-				text = var_0_0[1]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"点击<color=#ff7d36>出击</color>进行战斗！"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/right/1/battle"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/right/combatBtn"
@@ -50,7 +43,11 @@ return {
 				dir = 1,
 				posY = -200,
 				posX = -190,
-				text = var_0_0[2]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"点击<color=#ff7d36>出击</color>进行战斗！"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -75,7 +72,11 @@ return {
 				dir = 1,
 				posY = -68.93,
 				posX = 241.87,
-				text = var_0_0[3]
+				text = ({
+					"指挥官请点击<color=#ff7d36>出击</color>",
+					"这次我们的舰队已经比较完善啦~一定可以击破大黄蜂的！",
+					"点击<color=#ff7d36>出击</color>进行战斗！"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,

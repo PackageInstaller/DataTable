@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿return {
 	fadeOut = 1.5,
 	dialogbox = 2,
 	alpha = 0,
@@ -9,62 +9,53 @@
 	id = "DORM3DTOUCH3072",
 	placeholder = {
 		"dorm3d"
-	}
-}
-local var_0_1 = {}
-local var_0_2 = {
-	actorName = 30707,
-	side = 2,
-	dir = 1,
-	voice = "event:/dorm/drom3d_Taiho_ik_tone19/drom3d_Taiho_ik_tone19",
-	nameColor = "#FFFFFF",
-	hidePaintObj = true,
-	say = "想多感受一下{namecode:97}吗？",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_3 = {}
-
-STORY_EVENT = var_0_10004
-var_0_3.name = var_0_10004.TEST
-var_0_3.data = {
-	op_list = {
+	},
+	scripts = {
 		{
-			param = "Play",
-			name = "IK_living01_idle01_fb01",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			id = 2013,
-			name = "IK_living01_idle01_fb01_CJ",
-			type = "item_action"
-		},
-		{
-			skip = true,
-			name = "Face_amazed_start",
-			type = "action"
-		},
-		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
+			actorName = 30707,
+			side = 2,
+			dir = 1,
+			voice = "event:/dorm/drom3d_Taiho_ik_tone19/drom3d_Taiho_ik_tone19",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			say = "想多感受一下{namecode:97}吗？",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "IK_living01_idle01_fb01",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							id = 2013,
+							name = "IK_living01_idle01_fb01_CJ",
+							type = "item_action"
+						},
+						{
+							skip = true,
+							name = "Face_amazed_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
 		}
 	}
 }
-
-local var_0_4 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_4.name = var_5.TEST_DONE
-var_0_3.callbackData = var_0_4
-var_0_2.dispatcher = var_0_3
-var_0_1[1] = var_0_2
-var_0_0.scripts = var_0_1
-
-return var_0_0

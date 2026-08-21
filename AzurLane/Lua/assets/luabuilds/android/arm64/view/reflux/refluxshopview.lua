@@ -1,49 +1,41 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RefluxShopView", import("..base.BaseSubView"))
 
-local var_0_0 = "RefluxShopView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseSubView"))
-
-var_0_1.GiftPackType = {
+var_0_0.GiftPackType = {
 	Gold = 3,
 	Money = 1,
 	Diamond = 2
 }
-var_0_1.GiftPackTypeName = {
+var_0_0.GiftPackTypeName = {
 	"pack_type_1",
 	"pack_type_2",
 	"pack_type_3"
 }
-var_0_1.Special_ID_Gold = 1
-var_0_1.Special_ID_Gem = 14
+var_0_0.Special_ID_Gold = 1
+var_0_0.Special_ID_Gem = 14
 
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "RefluxShopUI"
 end
 
-function var_0_1.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:initUI()
 	arg_2_0:updateUI()
-	var_0_1.SaveEnterTag()
+	var_0_0.SaveEnterTag()
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_3_0)
-	pairs = var_1_10001
-
-	for iter_3_0, iter_3_1 in var_1_10001(var_0_1.GiftPackType) do
+function var_0_0.OnDestroy(arg_3_0)
+	for iter_3_0, iter_3_1 in pairs(var_0_0.GiftPackType) do
 		if arg_3_0.packTimerList[iter_3_1] then
-			var_6:Stop()
+			arg_3_0.packTimerList[iter_3_1]:Stop()
 
 			arg_3_0.packTimerList[iter_3_1] = nil
 		end
 
 		if arg_3_0.packNextTimerList[iter_3_1] then
-			var_7:Stop()
+			var_3_0:Stop()
 
 			arg_3_0.packNextTimerList[iter_3_1] = nil
 		end
@@ -52,57 +44,32 @@ function var_0_1.OnDestroy(arg_3_0)
 	return
 end
 
-function var_0_1.OnBackPress(arg_4_0)
+function var_0_0.OnBackPress(arg_4_0)
 	arg_4_0:Hide()
 
 	return
 end
 
-function var_0_1.initData(arg_5_0)
-	getProxy = var_1_10001
-	RefluxProxy = var_1_10003
-	arg_5_0.refluxProxy = var_1_10001(var_1_10003)
-	getProxy = var_1
-	ShopsProxy = var_1_10003
-	arg_5_0.shopProxy = var_1(var_1_10003)
+function var_0_0.initData(arg_5_0)
+	arg_5_0.refluxProxy = getProxy(RefluxProxy)
+	arg_5_0.shopProxy = getProxy(ShopsProxy)
 
 	return
 end
 
-function var_0_1.initUI(arg_6_0)
-	local var_6_0 = arg_6_0._tf
-	local var_6_1 = var_1.Find(var_6_0, "BG/MoneyTip")
+function var_0_0.initUI(arg_6_0)
+	setActive(arg_6_0._tf:Find("BG/MoneyTip"), false)
 
-	setActive = var_1_10002
+	arg_6_0.itemTpl = arg_6_0._tf:Find("ItemTpl")
+	arg_6_0.packTpl = arg_6_0._tf:Find("PackTpl")
+	arg_6_0.packContainerTF = arg_6_0._tf:Find("Container")
+	arg_6_0.packItemList = UIItemList.New(arg_6_0.packContainerTF, arg_6_0.packTpl)
 
-	var_1_10002(var_6_1, false)
-
-	local var_6_2 = arg_6_0._tf
-
-	arg_6_0.itemTpl = var_2.Find(var_6_2, "ItemTpl")
-
-	local var_6_3 = arg_6_0._tf
-
-	arg_6_0.packTpl = var_2.Find(var_6_3, "PackTpl")
-
-	local var_6_4 = arg_6_0._tf
-
-	arg_6_0.packContainerTF = var_2.Find(var_6_4, "Container")
-	UIItemList = var_2
-	arg_6_0.packItemList = var_2.New(arg_6_0.packContainerTF, arg_6_0.packTpl)
-
-	local var_6_5 = arg_6_0.packItemList
-
-	var_2.make(var_6_5, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
+	arg_6_0.packItemList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
 			arg_7_1 = arg_7_1 + 1
 
-			local var_7_0 = arg_6_0.goodVOList[arg_7_1]
-			local var_7_1 = arg_6_0
-
-			var_4.updatePack(var_7_1, arg_7_2, var_7_0, arg_7_1)
+			arg_6_0:updatePack(arg_7_2, arg_6_0.goodVOList[arg_7_1], arg_7_1)
 		end
 
 		return
@@ -111,16 +78,10 @@ function var_0_1.initUI(arg_6_0)
 	arg_6_0.packTimerList = {}
 	arg_6_0.packNextTimerList = {}
 
-	local var_6_6 = arg_6_0.itemTpl
-	local var_6_7 = var_2.Find(var_6_6, "CommonItemTemplate")
+	local var_6_0 = arg_6_0.itemTpl:Find("CommonItemTemplate")
 
-	setActive = var_6_0
-
-	var_6_0(var_6_7:Find("icon_bg/count"), true)
-
-	setLocalScale = var_6_0
-
-	var_6_0(var_6_7, {
+	setActive(var_6_0:Find("icon_bg/count"), true)
+	setLocalScale(var_6_0, {
 		x = 0.45,
 		y = 0.45
 	})
@@ -128,539 +89,288 @@ function var_0_1.initUI(arg_6_0)
 	return
 end
 
-function var_0_1.updateData(arg_8_0)
+function var_0_0.updateData(arg_8_0)
 	local var_8_0 = arg_8_0:getCurDayGiftPackIDList()
 	local var_8_1 = false
-	local var_8_2
 
 	if var_8_0[1] then
-		Goods = var_8_2
-		var_8_2 = var_8_2.Create
-
-		local var_8_3 = {
+		var_8_1 = Goods.Create({
 			shop_id = var_8_0[1]
-		}
-
-		Goods = var_6
-		var_8_1 = var_8_2(var_8_3, var_6.TYPE_CHARGE)
+		}, Goods.TYPE_CHARGE)
 	end
 
-	Goods = var_8_2
-
-	local var_8_4 = var_8_2.Create
-	local var_8_5 = {
+	;({
+		var_8_1
+	})[2] = Goods.Create({
 		shop_id = var_8_0[2]
-	}
-
-	Goods = var_6
-
-	local var_8_6 = var_8_4(var_8_5, var_6.TYPE_GIFT_PACKAGE)
-
-	Goods = var_1_10004
-
-	local var_8_7 = var_1_10004.Create
-	local var_8_8 = {
+	}, Goods.TYPE_GIFT_PACKAGE)
+	;({
+		var_8_1
+	})[3] = Goods.Create({
 		shop_id = var_8_0[3]
-	}
-
-	Goods = var_7
-
-	local var_8_9 = var_8_7(var_8_8, var_7.TYPE_GIFT_PACKAGE)
-
+	}, Goods.TYPE_GIFT_PACKAGE)
 	arg_8_0.goodVOList = {
-		var_8_1,
-		var_8_6,
-		var_8_9
+		var_8_1
 	}
 
 	return
 end
 
-function var_0_1.updateUI(arg_9_0)
+function var_0_0.updateUI(arg_9_0)
 	arg_9_0:updateData()
 	arg_9_0:updatePackList()
 
 	return
 end
 
-function var_0_1.updateOutline(arg_10_0)
-	local var_10_0 = arg_10_0.packContainerTF.childCount
+function var_0_0.updateOutline(arg_10_0)
+	for iter_10_0 = 1, arg_10_0.packContainerTF.childCount do
+		local var_10_0 = arg_10_0.packContainerTF:GetChild(iter_10_0 - 1)
+		local var_10_1 = var_10_0:Find("TimeLimit/Text"):GetComponent(typeof(Text))
 
-	for iter_10_0 = 1, var_10_0 do
-		local var_10_1 = iter_10_0 - 1
-		local var_10_2 = arg_10_0.packContainerTF
-		local var_10_3 = var_7.GetChild(var_10_2, var_10_1)
-		local var_10_4 = var_7.Find(var_10_3, "TimeLimit/Text")
-		local var_10_5 = var_8.GetComponent
+		var_10_1.material = Object.Instantiate(var_10_1.material)
 
-		typeof = var_1_10012
-		Text = var_1_10014
+		local var_10_2 = var_10_0:Find("Price/Text"):GetComponent(typeof(Text))
 
-		local var_10_6 = var_10_5(var_10_4, var_1_10012(var_1_10014))
+		var_10_2.material = Object.Instantiate(var_10_2.material)
 
-		Object = var_10_3
-		var_10_6.material = var_10_3.Instantiate(var_10_6.material)
-		var_1_10012 = var_7
+		local var_10_3 = var_10_0:Find("Mask/Text"):GetComponent(typeof(Text))
 
-		local var_10_7 = var_7.Find(var_1_10012, "Price/Text")
-		local var_10_8 = var_10.GetComponent
-
-		typeof = var_1_10014
-		Text = var_1_10016
-
-		local var_10_9 = var_10_8(var_10_7, var_1_10014(var_1_10016))
-
-		Object = var_1_10012
-		var_10_9.material = var_1_10012.Instantiate(var_10_9.material)
-		var_1_10014 = var_7
-
-		local var_10_10 = var_7.Find(var_1_10014, "Mask/Text")
-		local var_10_11 = var_1_10012.GetComponent
-
-		typeof = var_1_10016
-		Text = var_1_10018
-
-		local var_10_12 = var_10_11(var_10_10, var_1_10016(var_1_10018))
-
-		Object = var_1_10014
-		var_10_12.material = var_1_10014.Instantiate(var_10_12.material)
+		var_10_3.material = Object.Instantiate(var_10_3.material)
 	end
 
 	return
 end
 
-function var_0_1.updateItem(arg_11_0, arg_11_1, arg_11_2)
-	local var_11_0 = arg_11_1:Find("Frame")
-	local var_11_1 = arg_11_1:Find("Icon")
-	local var_11_2 = arg_11_1:Find("Count")
-	local var_11_3
+function var_0_0.updateItem(arg_11_0, arg_11_1, arg_11_2)
+	local var_11_0 = arg_11_1:Find("Count")
+	local var_11_1 = arg_11_2.type or arg_11_2[1]
+	local var_11_2 = arg_11_2.id or arg_11_2[2]
+	local var_11_3 = arg_11_2.count or arg_11_2[3]
 
-	if not arg_11_2.type then
-		var_11_3 = arg_11_2[1]
-	end
+	setText(var_11_0, var_11_3)
+	setActive(arg_11_1:Find("Frame"), false)
+	setActive(arg_11_1:Find("Icon"), false)
+	setActive(var_11_0, false)
 
-	local var_11_4
+	local var_11_4 = findTF(arg_11_1, "CommonItemTemplate")
 
-	if not arg_11_2.id then
-		var_11_4 = arg_11_2[2]
-	end
-
-	local var_11_5
-
-	if not arg_11_2.count then
-		var_11_5 = arg_11_2[3]
-	end
-
-	setText = var_1_10009
-
-	var_1_10009(var_11_2, var_11_5)
-
-	setActive = var_1_10009
-
-	var_1_10009(var_11_0, false)
-
-	setActive = var_1_10009
-
-	var_1_10009(var_11_1, false)
-
-	setActive = var_1_10009
-
-	var_1_10009(var_11_2, false)
-
-	findTF = var_1_10009
-
-	local var_11_6 = var_1_10009(arg_11_1, "CommonItemTemplate")
-
-	setActive = var_1_10010
-
-	var_1_10010(var_11_6, true)
-
-	updateDrop = var_1_10010
-
-	var_1_10010(var_11_6, {
-		type = var_11_3,
-		id = var_11_4,
-		count = var_11_5
+	setActive(var_11_4, true)
+	updateDrop(var_11_4, {
+		type = var_11_1,
+		id = var_11_2,
+		count = var_11_3
 	})
 
 	return
 end
 
-function var_0_1.updatePack(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
+function var_0_0.updatePack(arg_12_0, arg_12_1, arg_12_2, arg_12_3)
 	if arg_12_2 == false then
-		setActive = var_1_10004
-
-		var_1_10004(arg_12_1, false)
+		setActive(arg_12_1, false)
 
 		return
-	elseif arg_12_3 == var_0_1.GiftPackType.Money and arg_12_0:isBuyEver(arg_12_2.id) then
-		setActive = var_4
-
-		var_4(arg_12_1, false)
+	elseif arg_12_3 == var_0_0.GiftPackType.Money and arg_12_0:isBuyEver(arg_12_2.id) then
+		setActive(arg_12_1, false)
 
 		return
 	else
-		setActive = var_4
-
-		var_4(arg_12_1, true)
+		setActive(arg_12_1, true)
 	end
 
-	local var_12_0
 	local var_12_1
 
-	if arg_12_3 == var_0_1.GiftPackType.Money then
+	if arg_12_3 == var_0_0.GiftPackType.Money then
 		-- block empty
 	else
-		local var_12_2 = arg_12_2:getConfig("effect_args")
-
-		Item = var_6
-		var_12_1 = var_6.getConfigData(var_12_2[1])
+		var_12_1 = Item.getConfigData(arg_12_2:getConfig("effect_args")[1])
 	end
 
-	local var_12_3 = arg_12_1:Find("PackIcon")
-	local var_12_4
-	local var_12_5
+	local var_12_2 = arg_12_1:Find("PackIcon")
+	local var_12_3 = arg_12_3 == var_0_0.GiftPackType.Money and "chargeicon/" .. arg_12_2:getConfig("picture") or var_12_1.icon
 
-	if arg_12_3 == var_0_1.GiftPackType.Money then
-		var_12_5 = "chargeicon/"
-		var_1_10011 = arg_12_2
-		var_12_4 = var_12_5 .. arg_12_2.getConfig(var_1_10011, "picture")
+	setImageSprite(var_12_2, LoadSprite(var_12_3), true)
+
+	local var_12_4 = arg_12_1:Find("PackName")
+
+	if arg_12_3 == var_0_0.GiftPackType.Money then
+		setText(var_12_4, arg_12_2:getConfig("name_display"))
 	else
-		var_12_4 = var_12_1.icon
+		setText(var_12_4, var_12_1.name)
 	end
 
-	setImageSprite = var_12_5
+	local var_12_5 = arg_12_1:Find("ItemList")
+	local var_12_6 = arg_12_3 == var_0_0.GiftPackType.Money and arg_12_2:getConfig("display") or var_12_1.display_icon
+	local var_12_7 = UIItemList.New(var_12_5, arg_12_0.itemTpl)
 
-	local var_12_6 = var_12_3
-
-	LoadSprite = var_1_10011
-
-	var_12_5(var_12_6, var_1_10011(var_12_4), true)
-
-	local var_12_7 = arg_12_1:Find("PackName")
-
-	if arg_12_3 == var_0_1.GiftPackType.Money then
-		setText = var_9
-
-		var_9(var_12_7, arg_12_2:getConfig("name_display"))
-	else
-		setText = var_9
-
-		var_9(var_12_7, var_12_1.name)
-	end
-
-	local var_12_8 = arg_12_1:Find("ItemList")
-	local var_12_9
-
-	if arg_12_3 == var_0_1.GiftPackType.Money then
-		var_12_9 = arg_12_2:getConfig("display")
-	else
-		var_12_9 = var_12_1.display_icon
-	end
-
-	UIItemList = var_11
-
-	local var_12_10 = var_11.New(var_12_8, arg_12_0.itemTpl)
-
-	var_11.make(var_12_10, function(arg_13_0, arg_13_1, arg_13_2)
-		UIItemList = var_2_10003
-
-		if arg_13_0 == var_2_10003.EventUpdate then
+	var_12_7:make(function(arg_13_0, arg_13_1, arg_13_2)
+		if arg_13_0 == UIItemList.EventUpdate then
 			arg_13_1 = arg_13_1 + 1
 
-			local var_13_0 = var_12_9[arg_13_1]
-			local var_13_1 = arg_12_0
-
-			var_4.updateItem(var_13_1, arg_13_2, var_13_0)
+			arg_12_0:updateItem(arg_13_2, var_12_6[arg_13_1])
 		end
 
 		return
 	end)
-	var_11:align(#var_12_9)
+	var_12_7:align(#var_12_6)
 
-	local var_12_11 = arg_12_1:Find("DescFrame/Text")
+	local var_12_8 = arg_12_1:Find("DescFrame/Text")
 
-	if arg_12_3 == var_0_1.GiftPackType.Money then
-		setText = var_13
-
-		var_13(var_12_11, arg_12_2:getConfig("descrip"))
+	if arg_12_3 == var_0_0.GiftPackType.Money then
+		setText(var_12_8, arg_12_2:getConfig("descrip"))
 	else
-		setText = var_13
-
-		var_13(var_12_11, var_12_1.display)
+		setText(var_12_8, var_12_1.display)
 	end
 
-	local var_12_12 = arg_12_1:Find("TimeLimit")
-	local var_12_13 = var_13.Find(var_12_12, "Text")
-	local var_12_14, var_12_15
+	local var_12_9 = arg_12_1:Find("TimeLimit")
+	local var_12_10 = var_12_9:Find("Text")
+	local var_12_11 = arg_12_3 ~= var_0_0.GiftPackType.Money and arg_12_0:isHaveNextPack(var_0_0.GiftPackTypeName[arg_12_3]) and not arg_12_0:isBuyEver(arg_12_2.id)
+	local var_12_12
 
-	if arg_12_3 ~= var_0_1.GiftPackType.Money then
-		var_12_14 = arg_12_0
-		var_12_15 = arg_12_0.isHaveNextPack(var_12_14, var_0_1.GiftPackTypeName[arg_12_3])
+	if var_12_11 then
+		setActive(var_12_9, true)
+		arg_12_0:updatePackTimeLimit(var_12_10, arg_12_3)
 	else
-		var_12_15 = false
+		setActive(var_12_9, false)
+
+		var_12_12 = setActive
 	end
 
-	if false then
-		var_12_15 = true
-	end
+	var_12_12(arg_12_1:Find("MoneyTag"), arg_12_3 == var_0_0.GiftPackType.Money)
 
-	var_12_15 = var_12_15 and not arg_12_0:isBuyEver(arg_12_2.id)
+	local var_12_13 = arg_12_1:Find("Price/IconMoney")
+	local var_12_14 = arg_12_1:Find("Price/Icon")
+	local var_12_15 = arg_12_1:Find("Price/Icon/Res")
+	local var_12_16 = arg_12_1:Find("Price/Text")
 
-	if var_12_15 then
-		setActive = var_12_12
-
-		var_12_12(var_13, true)
-		arg_12_0:updatePackTimeLimit(var_12_13, arg_12_3)
+	if arg_12_3 == var_0_0.GiftPackType.Money then
+		setActive(var_12_13, true)
+		setActive(var_12_14, false)
+		setText(var_12_16, arg_12_2:getConfig("money"))
 	else
-		setActive = var_12_12
+		setActive(var_12_13, false)
+		setActive(var_12_14, true)
+		setText(var_12_16, arg_12_2:getConfig("resource_num"))
 
-		var_12_12(var_13, false)
-	end
+		local var_12_17 = arg_12_2:getConfig("resource_type")
+		local var_12_18
 
-	local var_12_16 = arg_12_1:Find("MoneyTag")
-
-	setActive = var_12_14
-
-	var_12_14(var_12_16, arg_12_3 == var_0_1.GiftPackType.Money)
-
-	local var_12_17 = arg_12_1:Find("Price/IconMoney")
-	local var_12_18 = arg_12_1:Find("Price/Icon")
-	local var_12_19 = arg_12_1:Find("Price/Icon/Res")
-	local var_12_20 = arg_12_1:Find("Price/Text")
-
-	if arg_12_3 == var_0_1.GiftPackType.Money then
-		setActive = var_21
-
-		var_21(var_12_17, true)
-
-		setActive = var_21
-
-		var_21(var_12_18, false)
-
-		setText = var_21
-
-		var_21(var_12_20, arg_12_2:getConfig("money"))
-	else
-		setActive = var_21
-
-		var_21(var_12_17, false)
-
-		setActive = var_21
-
-		var_21(var_12_18, true)
-
-		setText = var_21
-
-		local var_12_21 = var_12_20
-		local var_12_22 = arg_12_2
-
-		var_21(var_12_21, arg_12_2.getConfig(var_12_22, "resource_num"))
-
-		local var_12_23 = arg_12_2:getConfig("resource_type")
-		local var_12_24
-
-		if var_12_23 == var_0_1.Special_ID_Gem then
-			var_12_24 = "props/gem"
-		elseif var_12_23 == var_0_1.Special_ID_Gold then
-			var_12_24 = "props/gold"
+		if var_12_17 == var_0_0.Special_ID_Gem then
+			var_12_18 = "props/gem"
+		elseif var_12_17 == var_0_0.Special_ID_Gold then
+			var_12_18 = "props/gold"
 		end
 
-		setImageSprite = var_23
-
-		local var_12_25 = var_12_19
-
-		LoadSprite = var_12_22
-
-		var_23(var_12_25, var_12_22(var_12_24), true)
+		setImageSprite(var_12_15, LoadSprite(var_12_18), true)
 	end
 
-	local var_12_26 = arg_12_1
-	local var_12_27 = arg_12_1.Find(var_12_26, "Mask")
-	local var_12_28 = arg_12_0:isBuyEver(arg_12_2.id)
+	local var_12_19 = arg_12_1:Find("Mask")
+	local var_12_20 = arg_12_0:isBuyEver(arg_12_2.id)
 
-	setActive = var_12_26
+	setActive(var_12_19, var_12_20)
 
-	var_12_26(var_12_27, var_12_28)
+	if var_12_20 then
+		local var_12_21 = var_12_19:Find("NextTime")
+		local var_12_22 = var_12_19:Find("Text")
+		local var_12_23 = var_12_19:Find("Sellout")
 
-	if var_12_28 then
-		var_12_26 = var_12_27:Find("NextTime")
-
-		local var_12_29 = var_12_27:Find("Text")
-		local var_12_30 = var_12_27:Find("Sellout")
-
-		var_1_10028 = arg_12_0
-
-		if arg_12_0.isHaveNextPack(var_1_10028, var_0_1.GiftPackTypeName[arg_12_3]) then
-			setActive = var_26
-
-			var_26(var_12_26, true)
-
-			setActive = var_26
-
-			var_26(var_12_29, true)
-
-			setActive = var_26
-
-			var_26(var_12_30, false)
-
-			var_1_10028 = arg_12_0
-
-			arg_12_0.updatePackNextTime(var_1_10028, var_12_29, arg_12_3)
+		if arg_12_0:isHaveNextPack(var_0_0.GiftPackTypeName[arg_12_3]) then
+			setActive(var_12_21, true)
+			setActive(var_12_22, true)
+			setActive(var_12_23, false)
+			arg_12_0:updatePackNextTime(var_12_22, arg_12_3)
 		else
-			setActive = var_26
-
-			var_26(var_12_26, false)
-
-			setActive = var_26
-
-			var_26(var_12_29, false)
-
-			setActive = var_26
-
-			var_26(var_12_30, true)
+			setActive(var_12_21, false)
+			setActive(var_12_22, false)
+			setActive(var_12_23, true)
 		end
 	end
 
-	onButton = var_12_26
-
-	local var_12_31 = arg_12_0
-	local var_12_32 = arg_12_1
-
-	local function var_12_33()
-		isActive = var_2_10000
-
-		if not var_2_10000(var_12_27) then
-			local var_14_0 = arg_12_0
-
-			var_0.confirm(var_14_0, arg_12_2)
+	onButton(arg_12_0, arg_12_1, function()
+		if not isActive(var_12_19) then
+			arg_12_0:confirm(arg_12_2)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10028
-
-	var_12_26(var_12_31, var_12_32, var_12_33, var_1_10028)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updatePackTimeLimit(arg_15_0, arg_15_1, arg_15_2)
-	local var_15_0 = arg_15_0:getCurDay()
-	local var_15_1 = var_0_1.GiftPackTypeName[arg_15_2]
-	local var_15_2 = arg_15_0:calcNextGiftPackSecByType(var_15_1, var_15_0)
+function var_0_0.updatePackTimeLimit(arg_15_0, arg_15_1, arg_15_2)
+	local var_15_0 = arg_15_0:calcNextGiftPackSecByType(var_0_0.GiftPackTypeName[arg_15_2], (arg_15_0:getCurDay()))
+	local var_15_1 = arg_15_0.packTimerList[arg_15_2]
 
 	if arg_15_0.packTimerList[arg_15_2] then
-		var_6:Stop()
+		var_15_1:Stop()
 
 		arg_15_0.packTimerList[arg_15_2] = nil
 	end
 
-	local function var_15_3()
-		local var_16_0 = var_15_2
+	var_15_1 = Timer.New(function()
+		if var_15_0 >= 0 then
+			setText(arg_15_1, (pg.TimeMgr.GetInstance():DescCDTime(var_15_0)))
 
-		if 0 <= var_16_0 then
-			pg = var_16_0
-
-			local var_16_1 = var_16_0.TimeMgr.GetInstance()
-			local var_16_2 = var_0.DescCDTime(var_16_1, var_15_2)
-
-			setText = var_1
-
-			var_1(arg_15_1, var_16_2)
-
-			var_15_2 = var_15_2 - 1
+			var_15_0 = var_15_0 - 1
 		else
-			local var_16_3 = var_0
-
-			var_0.Stop(var_16_3)
+			var_15_1:Stop()
 
 			arg_15_0.packTimerList[arg_15_2] = nil
 		end
 
 		return
-	end
+	end, 1, -1)
 
-	Timer = var_8
+	var_15_1:Start()
 
-	local var_15_4 = var_8.New(var_15_3, 1, -1)
+	arg_15_0.packTimerList[arg_15_2] = var_15_1
 
-	var_6.Start(var_15_4)
-
-	arg_15_0.packTimerList[arg_15_2] = var_6
-
-	var_15_3()
+	var_15_2()
 
 	return
 end
 
-function var_0_1.updatePackNextTime(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0 = arg_17_0:getCurDay()
-	local var_17_1 = var_0_1.GiftPackTypeName[arg_17_2]
-	local var_17_2 = arg_17_0:calcNextGiftPackSecByType(var_17_1, var_17_0)
+function var_0_0.updatePackNextTime(arg_17_0, arg_17_1, arg_17_2)
+	local var_17_0 = arg_17_0:calcNextGiftPackSecByType(var_0_0.GiftPackTypeName[arg_17_2], (arg_17_0:getCurDay()))
+	local var_17_1 = arg_17_0.packNextTimerList[arg_17_2]
 
 	if arg_17_0.packNextTimerList[arg_17_2] then
-		var_6:Stop()
+		var_17_1:Stop()
 
 		arg_17_0.packNextTimerList[arg_17_2] = nil
 	end
 
-	local function var_17_3()
-		local var_18_0 = var_17_2
+	var_17_1 = Timer.New(function()
+		if var_17_0 >= 0 then
+			setText(arg_17_1, (pg.TimeMgr.GetInstance():DescCDTime(var_17_0)))
 
-		if 0 <= var_18_0 then
-			pg = var_18_0
-
-			local var_18_1 = var_18_0.TimeMgr.GetInstance()
-			local var_18_2 = var_0.DescCDTime(var_18_1, var_17_2)
-
-			setText = var_1
-
-			var_1(arg_17_1, var_18_2)
-
-			var_17_2 = var_17_2 - 1
+			var_17_0 = var_17_0 - 1
 		else
-			local var_18_3 = var_0
-
-			var_0.Stop(var_18_3)
+			var_17_1:Stop()
 
 			arg_17_0.packNextTimerList[arg_17_2] = nil
 		end
 
 		return
-	end
+	end, 1, -1)
 
-	Timer = var_8
+	var_17_1:Start()
 
-	local var_17_4 = var_8.New(var_17_3, 1, -1)
+	arg_17_0.packNextTimerList[arg_17_2] = var_17_1
 
-	var_6.Start(var_17_4)
-
-	arg_17_0.packNextTimerList[arg_17_2] = var_6
-
-	var_17_3()
+	var_17_2()
 
 	return
 end
 
-function var_0_1.updatePackList(arg_19_0)
-	local var_19_0 = arg_19_0.packItemList
-
-	var_1.align(var_19_0, #arg_19_0.goodVOList)
+function var_0_0.updatePackList(arg_19_0)
+	arg_19_0.packItemList:align(#arg_19_0.goodVOList)
 
 	return
 end
 
-function var_0_1.isShowRedPot()
-	PlayerPrefs = var_1_10000
-
-	local var_20_0 = var_1_10000.GetInt("RefluxShop_Enter_Day", 0)
-
-	getProxy = var_1_10001
-	RefluxProxy = var_3
-
-	if var_20_0 < var_1_10001(var_3).signCount then
+function var_0_0.isShowRedPot()
+	if PlayerPrefs.GetInt("RefluxShop_Enter_Day", 0) < getProxy(RefluxProxy).signCount then
 		return true
 	else
 		return false
@@ -669,59 +379,27 @@ function var_0_1.isShowRedPot()
 	return
 end
 
-function var_0_1.SaveEnterTag()
-	getProxy = var_1_10000
-	RefluxProxy = var_1_10002
-
-	local var_21_0 = var_1_10000(var_1_10002).signCount
-
-	PlayerPrefs = var_1_10001
-
-	var_1_10001.SetInt("RefluxShop_Enter_Day", var_21_0)
+function var_0_0.SaveEnterTag()
+	PlayerPrefs.SetInt("RefluxShop_Enter_Day", getProxy(RefluxProxy).signCount)
 
 	return
 end
 
-function var_0_1.getCurDay(arg_22_0)
-	local var_22_0 = arg_22_0.refluxProxy.returnTimestamp
+function var_0_0.getCurDay(arg_22_0)
+	local var_22_0 = pg.TimeMgr.GetInstance():DiffDay(arg_22_0.refluxProxy.returnTimestamp, (pg.TimeMgr.GetInstance():GetServerTime()))
 
-	pg = var_1_10002
-
-	local var_22_1 = var_1_10002.TimeMgr.GetInstance()
-	local var_22_2 = var_2.GetServerTime(var_22_1)
-
-	pg = var_1_10003
-
-	local var_22_3 = var_1_10003.TimeMgr.GetInstance()
-	local var_22_4 = var_3.DiffDay(var_22_3, var_22_0, var_22_2)
-
-	pg = var_22_1
-
-	if var_22_4 < #var_22_1.return_giftpack_template.all then
-		return var_22_4 + 1
+	if var_22_0 < #pg.return_giftpack_template.all then
+		return var_22_0 + 1
 	else
-		return var_4
+		return #pg.return_giftpack_template.all
 	end
 
 	return
 end
 
-function var_0_1.getLevelIndex(arg_23_0, arg_23_1)
-	local var_23_0 = arg_23_1 or arg_23_0:getCurDay()
-
-	pg = var_1_10003
-
-	local var_23_1 = var_1_10003.return_giftpack_template[var_23_0].level
-	local var_23_2 = arg_23_0.refluxProxy.returnLV
-	local var_23_3
-
-	ipairs = var_1_10006
-
-	for iter_23_0, iter_23_1 in var_1_10006(var_23_1) do
-		local var_23_4 = iter_23_1[1]
-		local var_23_5 = iter_23_1[2]
-
-		if var_23_4 <= var_23_2 and var_23_2 <= var_23_5 then
+function var_0_0.getLevelIndex(arg_23_0, arg_23_1)
+	for iter_23_0, iter_23_1 in ipairs(pg.return_giftpack_template[arg_23_1 or arg_23_0:getCurDay()].level) do
+		if iter_23_1[1] <= arg_23_0.refluxProxy.returnLV and arg_23_0.refluxProxy.returnLV <= iter_23_1[2] then
 			return iter_23_0
 		end
 	end
@@ -729,24 +407,19 @@ function var_0_1.getLevelIndex(arg_23_0, arg_23_1)
 	return
 end
 
-function var_0_1.getCurDayGiftPackIDByType(arg_24_0, arg_24_1, arg_24_2)
+function var_0_0.getCurDayGiftPackIDByType(arg_24_0, arg_24_1, arg_24_2)
 	local var_24_0 = arg_24_2 or arg_24_0:getCurDay()
 
-	pg = var_1_10004
-
-	if #var_1_10004.return_giftpack_template.all < var_24_0 then
+	if var_24_0 > #pg.return_giftpack_template.all then
 		return false
 	end
 
-	pg = var_4
-
-	local var_24_1 = var_4.return_giftpack_template[var_24_0][arg_24_1]
+	local var_24_1 = pg.return_giftpack_template[var_24_0][arg_24_1]
 	local var_24_2 = var_24_0
 
-	while var_24_1 == "" and 1 < var_24_2 do
+	while var_24_1 == "" and var_24_2 > 1 do
 		var_24_2 = var_24_2 - 1
-		pg = var_6
-		var_24_1 = var_6.return_giftpack_template[var_24_2][arg_24_1]
+		var_24_1 = pg.return_giftpack_template[var_24_2][arg_24_1]
 	end
 
 	if var_24_1 == "" then
@@ -758,386 +431,209 @@ function var_0_1.getCurDayGiftPackIDByType(arg_24_0, arg_24_1, arg_24_2)
 	return
 end
 
-function var_0_1.getCurDayGiftPackIDList(arg_25_0)
+function var_0_0.getCurDayGiftPackIDList(arg_25_0)
 	local var_25_0 = arg_25_0:getCurDay()
 
 	return {
-		[var_0_1.GiftPackType.Money] = arg_25_0:getCurDayGiftPackIDByType("pack_type_1", var_25_0),
-		[var_0_1.GiftPackType.Diamond] = arg_25_0:getCurDayGiftPackIDByType("pack_type_2", var_25_0),
-		[var_0_1.GiftPackType.Gold] = arg_25_0:getCurDayGiftPackIDByType("pack_type_3", var_25_0)
+		[var_0_0.GiftPackType.Money] = arg_25_0:getCurDayGiftPackIDByType("pack_type_1", var_25_0),
+		[var_0_0.GiftPackType.Diamond] = arg_25_0:getCurDayGiftPackIDByType("pack_type_2", var_25_0),
+		[var_0_0.GiftPackType.Gold] = arg_25_0:getCurDayGiftPackIDByType("pack_type_3", var_25_0)
 	}
 end
 
-function var_0_1.getNextGiftPackDayByType(arg_26_0, arg_26_1, arg_26_2)
+function var_0_0.getNextGiftPackDayByType(arg_26_0, arg_26_1, arg_26_2)
 	local var_26_0 = arg_26_2 or arg_26_0:getCurDay()
+	local var_26_1
 
-	pg = var_1_10004
+	if var_26_0 >= #pg.return_giftpack_template.all then
+		do return false end
 
-	if #var_1_10004.return_giftpack_template.all <= var_26_0 then
-		return false
+		var_26_1 = pg.return_giftpack_template[var_26_0 + 1][arg_26_1]
 	end
 
-	local var_26_1 = var_26_0 + 1
+	local var_26_2 = var_26_0 + 1
 
-	pg = var_4
-
-	local var_26_2 = var_4.return_giftpack_template[var_26_1][arg_26_1]
-	local var_26_3 = var_26_1
-
-	::label_26_0::
-
-	if var_26_2 == "" and 1 < var_26_3 then
-		pg = var_6
-
-		if var_26_3 <= #var_6.return_giftpack_template.all then
-			repeat
-				pg = var_6
-				var_26_2 = var_6.return_giftpack_template[var_26_3][arg_26_1]
-				var_26_3 = var_26_3 + 1
-
-				goto label_26_0
-			until true
-		end
+	while var_26_1 == "" and var_26_2 > 1 and var_26_2 <= #pg.return_giftpack_template.all do
+		var_26_1 = pg.return_giftpack_template[var_26_2][arg_26_1]
+		var_26_2 = var_26_2 + 1
 	end
 
-	if var_26_2 == "" then
+	if var_26_1 == "" then
 		return false
 	else
-		return var_26_3
+		return var_26_2
 	end
 
 	return
 end
 
-function var_0_1.isHaveNextPack(arg_27_0, arg_27_1, arg_27_2)
-	local var_27_0 = arg_27_2 or arg_27_0:getCurDay()
-
-	return arg_27_0:getNextGiftPackDayByType(arg_27_1, var_27_0) ~= false
+function var_0_0.isHaveNextPack(arg_27_0, arg_27_1, arg_27_2)
+	return arg_27_0:getNextGiftPackDayByType(arg_27_1, arg_27_2 or arg_27_0:getCurDay()) ~= false
 end
 
-function var_0_1.calcNextGiftPackSecByType(arg_28_0, arg_28_1, arg_28_2)
-	local var_28_0 = arg_28_2 or arg_28_0:getCurDay()
-	local var_28_1 = arg_28_0:getNextGiftPackDayByType(arg_28_1, var_28_0)
-	local var_28_2 = 0
-	local var_28_3 = arg_28_0.refluxProxy.returnTimestamp + (var_28_1 - 1) * var_28_2
-
-	pg = var_7
-
-	local var_28_4 = var_7.TimeMgr.GetInstance()
-
-	return var_28_3 - var_7.GetServerTime(var_28_4)
+function var_0_0.calcNextGiftPackSecByType(arg_28_0, arg_28_1, arg_28_2)
+	return arg_28_0.refluxProxy.returnTimestamp + (arg_28_0:getNextGiftPackDayByType(arg_28_1, arg_28_2 or arg_28_0:getCurDay()) - 1) * 0 - pg.TimeMgr.GetInstance():GetServerTime()
 end
 
-function var_0_1.isBuyEver(arg_29_0, arg_29_1)
-	getProxy = var_1_10002
-	ShopsProxy = var_1_10004
+function var_0_0.isBuyEver(arg_29_0, arg_29_1)
+	local var_29_0 = getProxy(ShopsProxy)
+	local var_29_1 = 0
 
-	local var_29_0 = var_1_10002(var_1_10004)
-	local var_29_1 = var_2.getChargedList(var_29_0)
-	local var_29_2 = var_2
-	local var_29_3 = var_2.GetNormalList(var_29_2)
-	local var_29_4 = 0
-
-	ChargeConst = var_29_2
-
-	local var_29_5 = var_29_4 + var_29_2.getBuyCount(var_29_1, arg_29_1)
-
-	ChargeConst = var_6
-
-	return var_29_5 + var_6.getBuyCount(var_29_3, arg_29_1) > 0
+	return var_29_1 + ChargeConst.getBuyCount(var_29_0:getChargedList(), arg_29_1) + ChargeConst.getBuyCount(var_29_0:GetNormalList(), arg_29_1) > 0
 end
 
-function var_0_1.confirm(arg_30_0, arg_30_1)
+function var_0_0.confirm(arg_30_0, arg_30_1)
 	if not arg_30_1 then
 		return
 	end
 
-	Clone = var_1_10002
+	arg_30_1 = Clone(arg_30_1)
 
-	local var_30_0 = var_1_10002(arg_30_1)
-
-	if arg_30_1.isChargeType(var_30_0) then
-		table = var_2
-		var_30_0 = not var_2.contains(arg_30_0.firstChargeIds, arg_30_1.id) and arg_30_1:firstPayDouble() and 4 or arg_30_1:getConfig("tag")
+	if arg_30_1:isChargeType() then
+		local var_30_0 = not table.contains(arg_30_0.firstChargeIds, arg_30_1.id) and arg_30_1:firstPayDouble()
+		local var_30_1 = var_30_0 and 4 or arg_30_1:getConfig("tag")
 
 		if arg_30_1:isMonthCard() or arg_30_1:isGiftBox() or arg_30_1:isItemBox() or arg_30_1:isPassItem() then
-			local var_30_1 = arg_30_1:GetExtraServiceItem()
-			local var_30_2 = arg_30_1:GetExtraDrop()
-			local var_30_3 = arg_30_1:GetBonusItem()
-			local var_30_4
+			local var_30_2 = arg_30_1:GetExtraServiceItem()
+			local var_30_3 = arg_30_1:GetExtraDrop()
+			local var_30_4 = arg_30_1:GetBonusItem()
 			local var_30_5
+			local var_30_6
 
 			if arg_30_1:isPassItem() then
-				i18n = var_10
-				var_30_4 = var_10("battlepass_pay_tip")
+				var_30_5 = i18n("battlepass_pay_tip")
 			elseif arg_30_1:isMonthCard() then
-				i18n = var_10
-				var_30_4 = var_10("charge_title_getitem_month")
-				i18n = var_10
-				var_30_5 = var_10("charge_title_getitem_soon")
+				var_30_5 = i18n("charge_title_getitem_month")
+				var_30_6 = i18n("charge_title_getitem_soon")
 			else
-				i18n = var_10
-				var_30_4 = var_10("charge_title_getitem")
+				var_30_5 = i18n("charge_title_getitem")
 			end
 
-			local var_30_6 = {
+			arg_30_0:emit(RefluxMediator.OPEN_CHARGE_ITEM_PANEL, {
 				isChargeType = true,
 				commodity = arg_30_1,
-				infoTip = arg_30_1:GetInfoTip()
-			}
-
-			var_1_10011 = "chargeicon/"
-			var_1_10014 = arg_30_1
-			var_30_6.icon = var_1_10011 .. arg_30_1.getConfig(var_1_10014, "picture")
-			var_30_6.name = arg_30_1:getConfig("name_display")
-			var_30_6.tipExtra = var_30_4
-			var_30_6.extraItems = var_30_1
-			var_30_6.price = arg_30_1:getConfig("money")
-			var_30_6.isLocalPrice = arg_30_1:IsLocalPrice()
-			var_30_6.tagType = var_30_0
-			var_30_6.isMonthCard = arg_30_1:isMonthCard()
-			var_30_6.tipBonus = var_30_5
-			var_30_6.bonusItem = var_30_3
-			var_30_6.extraDrop = var_30_2
-			var_30_6.descExtra = arg_30_1:getConfig("descrip_extra")
-			var_30_6.limitArgs = arg_30_1:getConfig("limit_args")
-
-			function var_30_6.onYes()
-				ChargeConst = var_2_10000
-
-				local var_31_1
-
-				if var_2_10000.isNeedSetBirth() then
-					local var_31_0 = arg_30_0
-
-					var_31_1 = var_31_1.emit
-					RefluxMediator = var_2_10003
-
-					var_31_1(var_31_0, var_2_10003.OPEN_CHARGE_BIRTHDAY)
-				else
-					pg = var_31_1
-
-					local var_31_2 = var_31_1.m02
-					local var_31_3 = var_0.sendNotification
-
-					GAME = var_2_10003
-
-					var_31_3(var_31_2, var_2_10003.CHARGE_OPERATION, {
-						shopId = arg_30_1.id
-					})
-				end
-
-				return
-			end
-
-			local var_30_7 = arg_30_0
-
-			var_1_10011 = arg_30_0.emit
-			RefluxMediator = var_1_10014
-
-			var_1_10011(var_30_7, var_1_10014.OPEN_CHARGE_ITEM_PANEL, var_30_6)
-		elseif arg_30_1:isGem() then
-			local var_30_8 = arg_30_1:getConfig("money")
-			local var_30_9 = arg_30_1:getConfig("gem")
-
-			if var_3 then
-				var_30_9 = var_30_9 + arg_30_1:getConfig("gem")
-			else
-				var_30_9 = var_30_9 + arg_30_1:getConfig("extra_gem")
-			end
-
-			local var_30_10 = {
-				isChargeType = true,
-				commodity = arg_30_1
-			}
-			local var_30_11 = "chargeicon/"
-
-			var_1_10011 = arg_30_1
-			var_30_10.icon = var_30_11 .. arg_30_1.getConfig(var_1_10011, "picture")
-			var_30_10.name = arg_30_1:getConfig("name_display")
-			var_30_10.price = arg_30_1:getConfig("money")
-			var_30_10.isLocalPrice = arg_30_1:IsLocalPrice()
-			var_30_10.tagType = var_30_0
-			i18n = var_8
-			var_30_10.normalTip = var_8("charge_start_tip", var_30_8, var_30_9)
-
-			function var_30_10.onYes()
-				ChargeConst = var_2_10000
-
-				local var_32_1
-
-				if var_2_10000.isNeedSetBirth() then
-					local var_32_0 = arg_30_0
-
-					var_32_1 = var_32_1.emit
-					RefluxMediator = var_2_10003
-
-					var_32_1(var_32_0, var_2_10003.OPEN_CHARGE_BIRTHDAY)
-				else
-					pg = var_32_1
-
-					local var_32_2 = var_32_1.m02
-					local var_32_3 = var_0.sendNotification
-
-					GAME = var_2_10003
-
-					var_32_3(var_32_2, var_2_10003.CHARGE_OPERATION, {
-						shopId = arg_30_1.id
-					})
-				end
-
-				return
-			end
-
-			local var_30_12 = arg_30_0
-			local var_30_13 = arg_30_0.emit
-
-			RefluxMediator = var_1_10011
-
-			var_30_13(var_30_12, var_1_10011.OPEN_CHARGE_ITEM_BOX, var_30_10)
-		end
-	else
-		local var_30_14 = {}
-		local var_30_15 = arg_30_1:getConfig("effect_args")
-
-		Item = var_30_0
-
-		local var_30_16 = var_30_0.getConfigData(var_30_15[1]).display_icon
-
-		type = var_6
-
-		if var_6(var_30_16) == "table" then
-			ipairs = var_6
-
-			for iter_30_0, iter_30_1 in var_6(var_30_16) do
-				table = var_1_10011
-				var_1_10011 = var_1_10011.insert
-
-				local var_30_17 = var_30_14
-
-				Drop = var_1_10014
-
-				var_1_10011(var_30_17, var_1_10014.Create(iter_30_1))
-			end
-		end
-
-		local var_30_18 = arg_30_1
-		local var_30_19 = arg_30_1.getConfig(var_30_18, "resource_type") == var_0_1.Special_ID_Gold
-		local var_30_20
-
-		if var_30_19 then
-			i18n = var_30_18
-			var_30_20 = var_30_18("charge_scene_buy_confirm_gold", arg_30_1:getConfig("resource_num"), var_4.name)
-		else
-			i18n = var_30_18
-			var_30_20 = var_30_18("charge_scene_buy_confirm", arg_30_1:getConfig("resource_num"), var_4.name)
-		end
-
-		local var_30_21 = {
-			isLocalPrice = false,
-			isChargeType = false,
-			isMonthCard = false,
-			commodity = arg_30_1,
-			icon = var_4.icon,
-			name = var_4.name
-		}
-
-		i18n = var_9
-		var_30_21.tipExtra = var_9("charge_title_getitem")
-		var_30_21.extraItems = var_30_14
-		var_30_21.price = arg_30_1:getConfig("resource_num")
-		var_30_21.tagType = arg_30_1:getConfig("tag")
-		var_30_21.isForceGold = var_30_19
-
-		function var_30_21.onYes()
-			pg = var_2_10000
-
-			local var_33_0 = var_2_10000.MsgboxMgr.GetInstance()
-
-			var_0.ShowMsgBox(var_33_0, {
-				content = var_30_20,
+				infoTip = arg_30_1:GetInfoTip(),
+				icon = "chargeicon/" .. arg_30_1:getConfig("picture"),
+				name = arg_30_1:getConfig("name_display"),
+				tipExtra = var_30_5,
+				extraItems = var_30_2,
+				price = arg_30_1:getConfig("money"),
+				isLocalPrice = arg_30_1:IsLocalPrice(),
+				tagType = var_30_1,
+				isMonthCard = arg_30_1:isMonthCard(),
+				tipBonus = var_30_6,
+				bonusItem = var_30_4,
+				extraDrop = var_30_3,
+				descExtra = arg_30_1:getConfig("descrip_extra"),
+				limitArgs = arg_30_1:getConfig("limit_args"),
 				onYes = function()
-					pg = var_3_10000
-
-					local var_34_0 = var_3_10000.m02
-					local var_34_1 = var_0.sendNotification
-
-					GAME = var_3_10003
-
-					var_34_1(var_34_0, var_3_10003.SHOPPING, {
-						count = 1,
-						id = arg_30_1.id
-					})
+					if ChargeConst.isNeedSetBirth() then
+						arg_30_0:emit(RefluxMediator.OPEN_CHARGE_BIRTHDAY)
+					else
+						pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
+							shopId = arg_30_1.id
+						})
+					end
 
 					return
 				end
 			})
+		elseif arg_30_1:isGem() then
+			local var_30_7 = arg_30_1:getConfig("money")
+			local var_30_8 = arg_30_1:getConfig("gem")
 
-			return
+			var_30_8 = var_30_0 and var_30_8 + arg_30_1:getConfig("gem") or var_30_8 + arg_30_1:getConfig("extra_gem")
+
+			arg_30_0:emit(RefluxMediator.OPEN_CHARGE_ITEM_BOX, {
+				isChargeType = true,
+				commodity = arg_30_1,
+				icon = "chargeicon/" .. arg_30_1:getConfig("picture"),
+				name = arg_30_1:getConfig("name_display"),
+				price = arg_30_1:getConfig("money"),
+				isLocalPrice = arg_30_1:IsLocalPrice(),
+				tagType = var_30_1,
+				normalTip = i18n("charge_start_tip", var_30_7, var_30_8),
+				onYes = function()
+					if ChargeConst.isNeedSetBirth() then
+						arg_30_0:emit(RefluxMediator.OPEN_CHARGE_BIRTHDAY)
+					else
+						pg.m02:sendNotification(GAME.CHARGE_OPERATION, {
+							shopId = arg_30_1.id
+						})
+					end
+
+					return
+				end
+			})
+		end
+	else
+		local var_30_9 = {}
+		local var_30_10 = Item.getConfigData(arg_30_1:getConfig("effect_args")[1])
+
+		if type(var_30_10.display_icon) == "table" then
+			for iter_30_0, iter_30_1 in ipairs(var_30_10.display_icon) do
+				table.insert(var_30_9, Drop.Create(iter_30_1))
+			end
 		end
 
-		local var_30_22 = arg_30_0
-		local var_30_23 = arg_30_0.emit
+		local var_30_11 = arg_30_1:getConfig("resource_type") == var_0_0.Special_ID_Gold
+		local var_30_12 = var_30_11 and i18n("charge_scene_buy_confirm_gold", arg_30_1:getConfig("resource_num"), var_30_10.name) or i18n("charge_scene_buy_confirm", arg_30_1:getConfig("resource_num"), var_30_10.name)
 
-		RefluxMediator = var_12
+		arg_30_0:emit(RefluxMediator.OPEN_CHARGE_ITEM_PANEL, {
+			isLocalPrice = false,
+			isChargeType = false,
+			isMonthCard = false,
+			commodity = arg_30_1,
+			icon = var_30_10.icon,
+			name = var_30_10.name,
+			tipExtra = i18n("charge_title_getitem"),
+			extraItems = var_30_9,
+			price = arg_30_1:getConfig("resource_num"),
+			tagType = arg_30_1:getConfig("tag"),
+			isForceGold = var_30_11,
+			onYes = function()
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					content = var_30_12,
+					onYes = function()
+						pg.m02:sendNotification(GAME.SHOPPING, {
+							count = 1,
+							id = arg_30_1.id
+						})
 
-		var_30_23(var_30_22, var_12.OPEN_CHARGE_ITEM_PANEL, var_30_21)
+						return
+					end
+				})
+
+				return
+			end
+		})
 	end
 
 	return
 end
 
-function var_0_1.getAllRefluxPackID()
-	local var_35_0 = {}
-
-	ipairs = var_1_10001
-	pg = var_1_10003
-
-	for iter_35_0, iter_35_1 in var_1_10001(var_1_10003.return_giftpack_template.all) do
-		pg = var_1_10006
-
-		local var_35_1 = var_1_10006.return_giftpack_template[iter_35_1].pack_type_1
-		local var_35_2 = var_1_10006.pack_type_2
-		local var_35_3 = var_1_10006.pack_type_3
-
-		type = var_1_10010
-
-		if var_1_10010(var_35_1) == "table" then
-			pairs = var_1_10010
-
-			for iter_35_2, iter_35_3 in var_1_10010(var_35_1) do
-				table = var_1_10015
-
-				var_1_10015.insert(var_35_0, iter_35_3)
+function var_0_0.getAllRefluxPackID()
+	for iter_35_0, iter_35_1 in ipairs(pg.return_giftpack_template.all) do
+		if type(pg.return_giftpack_template[iter_35_1].pack_type_1) == "table" then
+			for iter_35_2, iter_35_3 in pairs(pg.return_giftpack_template[iter_35_1].pack_type_1) do
+				table.insert({}, iter_35_3)
 			end
 		end
 
-		type = var_1_10010
-
-		if var_1_10010(var_35_2) == "table" then
-			pairs = var_1_10010
-
-			for iter_35_4, iter_35_5 in var_1_10010(var_35_2) do
-				table = var_1_10015
-
-				var_1_10015.insert(var_35_0, iter_35_5)
+		if type(pg.return_giftpack_template[iter_35_1].pack_type_2) == "table" then
+			for iter_35_4, iter_35_5 in pairs(pg.return_giftpack_template[iter_35_1].pack_type_2) do
+				table.insert({}, iter_35_5)
 			end
 		end
 
-		type = var_1_10010
-
-		if var_1_10010(var_35_3) == "table" then
-			pairs = var_1_10010
-
-			for iter_35_6, iter_35_7 in var_1_10010(var_35_3) do
-				table = var_1_10015
-
-				var_1_10015.insert(var_35_0, iter_35_7)
+		if type(pg.return_giftpack_template[iter_35_1].pack_type_3) == "table" then
+			for iter_35_6, iter_35_7 in pairs(pg.return_giftpack_template[iter_35_1].pack_type_3) do
+				table.insert({}, iter_35_7)
 			end
 		end
 	end
 
-	return var_35_0
+	return {}
 end
 
-return var_0_1
+return var_0_0

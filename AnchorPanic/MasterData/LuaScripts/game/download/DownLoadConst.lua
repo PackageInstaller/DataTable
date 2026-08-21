@@ -21,7 +21,9 @@ download.ZipState = {
 	Rsynced = 3,
 	Restore = 4,
 	Downloading = 5,
-	Downloaded = 6
+	UnZiping = 6,
+	ZipValidating = 7,
+	Finished = 8,
 }
 
 -- 资源更新类型（和C#类FileVersionVo的FileType一致）
@@ -40,12 +42,24 @@ download.FileType = {
 	ExtraUpPack = 5,
 }
 
+-- 资源模块划分类型（和C#类AssetsUtils的DivideType一致）
+download.DivideType = {
+	-- 热更新自动下载
+	AUTO_HOT_UPDASTE = 1,
+	-- 游戏内自动静默下载资源
+	AUTO_BACKGROUND = 2,
+	-- 手动下载资源
+	HAND_MAUAL = 3,
+}
+
 -- 资源模块类型（和C#类AssetsUtils的ModuleType一致）
 download.ModuleType = {
 	-- Lua代码资源
 	LUA = 100,
 	-- 核心资源
 	CORE = 200,
+	-- 给力资源
+	Super = 250,
 	-- 更新界面资源
 	UPDATE_RES = 300,
 	-- 公用资源
@@ -64,11 +78,13 @@ download.GetModuleName = function(moduleType)
 	elseif(moduleType == download.ModuleType.UPDATE_RES)then
 		name = _TT(42)
 	elseif(moduleType == download.ModuleType.LUA)then
-		name = "代码资源"
+		name = _TT(10000256)--"代码资源"
 	elseif(moduleType == download.ModuleType.REMAIN)then
-		name = "剩余资源"
+		name = _TT(10000257)--"剩余资源"
+	elseif(moduleType == download.ModuleType.Super)then
+		name = _TT(10000257)
 	else
-		name = "资源"
+		name = _TT(10000258)--"资源"
 	end
 	return name
 end

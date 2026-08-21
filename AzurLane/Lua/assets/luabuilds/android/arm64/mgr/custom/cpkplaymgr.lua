@@ -1,16 +1,7 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.CpkPlayMgr = singletonClass("CpkPlayMgr")
 
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-singletonClass = var_0_10001
-var_0.CpkPlayMgr = var_0_10001("CpkPlayMgr")
-pg = var_0
-
-local var_0_1 = var_0.CpkPlayMgr
-
-function var_0_1.Ctor(arg_1_0)
+function pg.CpkPlayMgr.Ctor(arg_1_0)
 	arg_1_0._onPlaying = false
 	arg_1_0._mainTF = nil
 	arg_1_0._closeLimit = nil
@@ -23,7 +14,7 @@ function var_0_1.Ctor(arg_1_0)
 	return
 end
 
-function var_0_1.Reset(arg_2_0)
+function pg.CpkPlayMgr.Reset(arg_2_0)
 	arg_2_0._onPlaying = false
 	arg_2_0._mainTF = nil
 	arg_2_0._closeLimit = nil
@@ -36,49 +27,33 @@ function var_0_1.Reset(arg_2_0)
 	return
 end
 
-function var_0_1.OnPlaying(arg_3_0)
+function pg.CpkPlayMgr.OnPlaying(arg_3_0)
 	return arg_3_0._onPlaying
 end
 
-function var_0_1.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5, arg_4_6, arg_4_7, arg_4_8)
-	pg = var_1_10009
-
-	var_1_10009.DelegateInfo.New(arg_4_0)
+function pg.CpkPlayMgr.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4_5, arg_4_6, arg_4_7, arg_4_8)
+	pg.DelegateInfo.New(arg_4_0)
 
 	arg_4_0._onPlaying = true
 	arg_4_0._stopGameBGM = arg_4_6
-	pg = var_9
 
-	local var_4_0 = var_9.UIMgr.GetInstance()
+	pg.UIMgr.GetInstance():LoadingOn()
 
-	var_9.LoadingOn(var_4_0)
-
-	local function var_4_1()
+	local function var_4_0()
 		if arg_4_0.debugTimer then
-			local var_5_0 = arg_4_0.debugTimer
-
-			var_0.Stop(var_5_0)
+			arg_4_0.debugTimer:Stop()
 		end
 
 		if not arg_4_0._mainTF then
 			return
 		end
 
-		if not arg_4_8 then
-			Time = var_0
-
-			if var_0.realtimeSinceStartup < arg_4_0._closeLimit then
-				return
-			end
+		if not arg_4_8 and Time.realtimeSinceStartup < arg_4_0._closeLimit then
+			return
 		end
 
-		setActive = var_0
-
-		var_0(arg_4_0._mainTF, false)
-
-		local var_5_1 = arg_4_0
-
-		var_0.DisposeCpkMovie(var_5_1)
+		setActive(arg_4_0._mainTF, false)
+		arg_4_0:DisposeCpkMovie()
 
 		if arg_4_2 then
 			arg_4_2()
@@ -87,118 +62,62 @@ function var_0_1.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 		return
 	end
 
-	local function var_4_2()
-		onButton = var_2_10000
-
-		var_2_10000(arg_4_0, arg_4_0._mainTF, function()
+	local function var_4_1()
+		onButton(arg_4_0, arg_4_0._mainTF, function()
 			if arg_4_5 then
-				var_4_1()
+				var_4_0()
 			end
 
 			return
 		end)
 
-		local var_6_2
-
 		if arg_4_0._criUsm then
-			local var_6_0 = arg_4_0._criUsm.player
-			local var_6_1 = var_0.SetVolume
-
-			PlayerPrefs = var_6_2
-			var_6_2 = var_6_2.GetFloat
-
-			local var_6_3 = "bgm_vol"
-
-			DEFAULT_BGMVOLUME = var_2_10006
-
-			var_6_1(var_6_0, var_6_2(var_6_3, var_2_10006))
-
-			local var_6_4 = arg_4_0._criUsm.player
-
-			var_0.SetShaderDispatchCallback(var_6_4, function(arg_8_0, arg_8_1)
-				local var_8_0 = arg_4_0
-
-				var_2.CheckRatioFitter(var_8_0)
-
-				local var_8_1 = arg_4_0
-
-				var_2.checkBgmStop(var_8_1, arg_8_0)
+			arg_4_0._criUsm.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
+			arg_4_0._criUsm.player:SetShaderDispatchCallback(function(arg_8_0, arg_8_1)
+				arg_4_0:CheckRatioFitter()
+				arg_4_0:checkBgmStop(arg_8_0)
 
 				return nil
 			end)
 		end
 
 		if arg_4_0._criCpk then
-			local var_6_5 = arg_4_0._criCpk.player
-			local var_6_6 = var_0.SetVolume
-
-			PlayerPrefs = var_6_2
-
-			local var_6_7 = var_6_2.GetFloat
-			local var_6_8 = "bgm_vol"
-
-			DEFAULT_BGMVOLUME = var_2_10006
-
-			var_6_6(var_6_5, var_6_7(var_6_8, var_2_10006))
-
-			local var_6_9 = arg_4_0._criCpk.player
-
-			var_0.SetShaderDispatchCallback(var_6_9, function(arg_9_0, arg_9_1)
-				local var_9_0 = arg_4_0
-
-				var_2.CheckRatioFitter(var_9_0)
-
-				local var_9_1 = arg_4_0
-
-				var_2.checkBgmStop(var_9_1, arg_9_0)
+			arg_4_0._criCpk.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
+			arg_4_0._criCpk.player:SetShaderDispatchCallback(function(arg_9_0, arg_9_1)
+				arg_4_0:CheckRatioFitter()
+				arg_4_0:checkBgmStop(arg_9_0)
 
 				return nil
 			end)
 		end
 
-		local var_6_10
-
 		if arg_4_0._animator ~= nil then
-			var_6_10 = arg_4_0._animator
-			var_6_10.enabled = true
+			arg_4_0._animator.enabled = true
 
-			local var_6_11 = arg_4_0._mainTF
-			local var_6_12 = var_6_10.GetComponent(var_6_11, "DftAniEvent")
+			local var_6_0 = arg_4_0._mainTF:GetComponent("DftAniEvent")
 
-			var_6_10.SetStartEvent(var_6_12, function(arg_10_0)
+			var_6_0:SetStartEvent(function(arg_10_0)
 				if arg_4_0._criUsm then
-					local var_10_0 = arg_4_0._criUsm
-
-					var_1.Play(var_10_0)
+					arg_4_0._criUsm:Play()
 				end
 
 				return
 			end)
-			var_6_10:SetEndEvent(function(arg_11_0)
-				var_4_1()
+			var_6_0:SetEndEvent(function(arg_11_0)
+				var_4_0()
 
 				return
 			end)
 		else
-			var_6_10 = arg_4_0
-			Timer = var_2_10001
-			var_6_10._timer = var_2_10001.New(var_4_1, arg_4_7)
+			arg_4_0._timer = Timer.New(var_4_0, arg_4_7)
 
-			local var_6_13 = arg_4_0._timer
-
-			var_6_10.Start(var_6_13)
+			arg_4_0._timer:Start()
 		end
 
-		setActive = var_6_10
-
-		var_6_10(arg_4_0._mainTF, true)
+		setActive(arg_4_0._mainTF, true)
 
 		if arg_4_0._stopGameBGM then
-			pg = var_0
-
-			local var_6_14 = var_0.BgmMgr.GetInstance()
-
-			var_0.StopPlay(var_6_14)
+			pg.BgmMgr.GetInstance():StopPlay()
 		end
 
 		if arg_4_1 then
@@ -208,113 +127,117 @@ function var_0_1.PlayCpkMovie(arg_4_0, arg_4_1, arg_4_2, arg_4_3, arg_4_4, arg_4
 		return
 	end
 
-	IsNil = var_4_0
+	if IsNil(arg_4_0._mainTF) then
+		LoadAndInstantiateAsync(arg_4_3, arg_4_4, function(arg_12_0)
+			pg.UIMgr.GetInstance():LoadingOff()
 
-	if var_4_0(arg_4_0._mainTF) then
-		LoadAndInstantiateAsync = var_11
-
-		var_11(arg_4_3, arg_4_4, function(arg_12_0)
-			pg = var_2_10001
-
-			local var_12_0 = var_2_10001.UIMgr.GetInstance()
-
-			var_1.LoadingOff(var_12_0)
-
-			local var_12_1 = arg_4_0
-
-			Time = var_2_10002
-			var_12_1._closeLimit = var_2_10002.realtimeSinceStartup + 1
+			arg_4_0._closeLimit = Time.realtimeSinceStartup + 1
 
 			if not arg_4_0._onPlaying then
-				Destroy = var_1
-
-				var_1(arg_12_0)
+				Destroy(arg_12_0)
 
 				return
 			end
 
-			local var_12_2 = arg_4_0
-			local var_12_3
+			local var_12_0 = arg_4_0
 
-			if not arg_4_0._parentTF then
-				GameObject = var_12_3
-				var_12_3 = var_12_3.Find("UICamera/Canvas")
-			end
+			var_12_0._parentTF = arg_4_0._parentTF or GameObject.Find("UICamera/Canvas")
 
-			var_12_2._parentTF = var_12_3
-			setParent = var_12_2
-
-			var_12_2(arg_12_0, arg_4_0._parentTF)
+			setParent(arg_12_0, arg_4_0._parentTF)
 
 			arg_4_0._ratioFitter = arg_12_0:GetComponent("AspectRatioFitter")
+			arg_4_0._mainTF = arg_12_0
 
-			local var_12_4 = arg_4_0
+			pg.UIMgr.GetInstance():OverlayPanel(arg_4_0._mainTF.transform)
 
-			var_12_4._mainTF = arg_12_0
-			pg = var_12_4
-
-			local var_12_5 = var_12_4.UIMgr.GetInstance()
-
-			var_1.OverlayPanel(var_12_5, arg_4_0._mainTF.transform)
-
-			local var_12_6 = arg_4_0
-
-			tf = var_2
-
-			local var_12_7 = var_2(arg_4_0._mainTF)
-			local var_12_8 = var_2.Find(var_12_7, "usm")
-
-			var_12_6._criUsm = var_2.GetComponent(var_12_8, "CriManaEffectUI")
-
-			local var_12_9 = arg_4_0
-
-			tf = var_2
-
-			local var_12_10 = var_2(arg_4_0._mainTF)
-			local var_12_11 = var_2.Find(var_12_10, "usm")
-
-			var_12_9._criCpk = var_2.GetComponent(var_12_11, "CriManaCpkUI")
-
-			local var_12_12 = arg_4_0
-
-			tf = var_2
-
-			local var_12_13 = var_2(arg_4_0._mainTF)
-			local var_12_14 = var_2.Find(var_12_13, "usm")
-
-			var_12_12._usmImg = var_2.GetComponent(var_12_14, "Image")
-
-			local var_12_15 = arg_4_0
-			local var_12_16 = arg_4_0._mainTF
-
-			var_12_15._animator = var_2.GetComponent(var_12_16, "Animator")
+			arg_4_0._criUsm = tf(arg_4_0._mainTF):Find("usm"):GetComponent("CriManaEffectUI")
+			arg_4_0._criCpk = tf(arg_4_0._mainTF):Find("usm"):GetComponent("CriManaCpkUI")
+			arg_4_0._usmImg = tf(arg_4_0._mainTF):Find("usm"):GetComponent("Image")
+			arg_4_0._animator = arg_4_0._mainTF:GetComponent("Animator")
 
 			if arg_4_0._criUsm then
-				local var_12_17 = arg_4_0._criUsm
-
-				CriWare = var_2
-				var_12_17.renderMode = var_2.CriManaMovieMaterialBase.RenderMode.Always
+				arg_4_0._criUsm.renderMode = CriWare.CriManaMovieMaterialBase.RenderMode.Always
 			end
 
 			if arg_4_0._usmImg and arg_4_0._usmImg.color.a == 0 then
-				local var_12_18 = arg_4_0._usmImg
-
-				Color = var_2
-				var_12_18.color = var_2.New(1, 1, 1, 0.1)
+				arg_4_0._usmImg.color = Color.New(1, 1, 1, 0.1)
 			end
 
-			var_4_2()
+			var_4_1()
 
 			return
 		end)
 	else
-		var_4_2()
+		(function()
+			onButton(arg_4_0, arg_4_0._mainTF, function()
+				if arg_4_5 then
+					var_4_0()
+				end
+
+				return
+			end)
+
+			if arg_4_0._criUsm then
+				arg_4_0._criUsm.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
+				arg_4_0._criUsm.player:SetShaderDispatchCallback(function(arg_8_0, arg_8_1)
+					arg_4_0:CheckRatioFitter()
+					arg_4_0:checkBgmStop(arg_8_0)
+
+					return nil
+				end)
+			end
+
+			if arg_4_0._criCpk then
+				arg_4_0._criCpk.player:SetVolume(PlayerPrefs.GetFloat("bgm_vol", DEFAULT_BGMVOLUME))
+				arg_4_0._criCpk.player:SetShaderDispatchCallback(function(arg_9_0, arg_9_1)
+					arg_4_0:CheckRatioFitter()
+					arg_4_0:checkBgmStop(arg_9_0)
+
+					return nil
+				end)
+			end
+
+			if arg_4_0._animator ~= nil then
+				arg_4_0._animator.enabled = true
+
+				local var_6_0 = arg_4_0._mainTF:GetComponent("DftAniEvent")
+
+				var_6_0:SetStartEvent(function(arg_10_0)
+					if arg_4_0._criUsm then
+						arg_4_0._criUsm:Play()
+					end
+
+					return
+				end)
+				var_6_0:SetEndEvent(function(arg_11_0)
+					var_4_0()
+
+					return
+				end)
+			else
+				arg_4_0._timer = Timer.New(var_4_0, arg_4_7)
+
+				arg_4_0._timer:Start()
+			end
+
+			setActive(arg_4_0._mainTF, true)
+
+			if arg_4_0._stopGameBGM then
+				pg.BgmMgr.GetInstance():StopPlay()
+			end
+
+			if arg_4_1 then
+				arg_4_1()
+			end
+
+			return
+		end)()
 	end
 
 	return
 end
 
-function var_0_1.CheckRatioFitter(arg_13_0)
+function pg.CpkPlayMgr.CheckRatioFitter(arg_13_0)
 	if arg_13_0._ratioFitter then
 		arg_13_0._ratioFitter.enabled = true
 		arg_13_0._ratioFitter = nil
@@ -323,63 +246,45 @@ function var_0_1.CheckRatioFitter(arg_13_0)
 	return
 end
 
-function var_0_1.checkBgmStop(arg_14_0, arg_14_1)
-	if arg_14_0._onPlaying and arg_14_1.numAudioStreams and 0 < var_2 then
-		pg = var_3
+function pg.CpkPlayMgr.checkBgmStop(arg_14_0, arg_14_1)
+	if arg_14_0._onPlaying then
+		if arg_14_1.numAudioStreams and arg_14_1.numAudioStreams > 0 then
+			pg.BgmMgr.GetInstance():StopPlay()
 
-		local var_14_0 = var_3.BgmMgr.GetInstance()
-
-		var_3.StopPlay(var_14_0)
-
-		arg_14_0._stopGameBGM = true
+			arg_14_0._stopGameBGM = true
+		end
 	end
 
 	return
 end
 
-function var_0_1.DisposeCpkMovie(arg_15_0)
+function pg.CpkPlayMgr.DisposeCpkMovie(arg_15_0)
 	if arg_15_0._onPlaying then
 		if arg_15_0._mainTF then
-			pg = var_1
-
-			local var_15_0 = var_1.UIMgr.GetInstance()
-
-			var_1.UnOverlayPanel(var_15_0, arg_15_0._mainTF.transform, arg_15_0._tf)
-
-			Destroy = var_1
-
-			var_1(arg_15_0._mainTF)
+			pg.UIMgr.GetInstance():UnOverlayPanel(arg_15_0._mainTF.transform, arg_15_0._tf)
+			Destroy(arg_15_0._mainTF)
 
 			if arg_15_0._animator ~= nil then
 				arg_15_0._animator.enabled = false
 			end
 
 			if arg_15_0._timer ~= nil then
-				local var_15_1 = arg_15_0._timer
-
-				var_1.Stop(var_15_1)
+				arg_15_0._timer:Stop()
 
 				arg_15_0._timer = nil
 			end
 
 			if arg_15_0._criUsm then
-				local var_15_2 = arg_15_0._criUsm
-
-				var_1.Stop(var_15_2)
+				arg_15_0._criUsm:Stop()
 			end
 
 			if arg_15_0._stopGameBGM then
-				pg = var_1
-
-				local var_15_3 = var_1.BgmMgr.GetInstance()
-
-				var_1.ContinuePlay(var_15_3)
+				pg.BgmMgr.GetInstance():ContinuePlay()
 			end
 
 			arg_15_0._onPlaying = false
-			pg = var_1
 
-			var_1.DelegateInfo.Dispose(arg_15_0)
+			pg.DelegateInfo.Dispose(arg_15_0)
 		end
 
 		arg_15_0:Reset()

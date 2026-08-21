@@ -1,41 +1,10 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_event_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_event_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_event_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_event_data
-
-var_0_3.__stream__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.world_event_data
-
-var_0_4.__namecode__ = true
-pg = var_0_4
-
-local var_0_5 = var_0_4.world_event_data
-
-var_0_5.all = {
+﻿pg = pg or {}
+pg.world_event_data = rawget(pg, "world_event_data") or setmetatable({
+	__name = "world_event_data"
+}, confNEO)
+pg.world_event_data.__stream__ = true
+pg.world_event_data.__namecode__ = true
+pg.world_event_data.all = {
 	1,
 	2,
 	3,
@@ -5840,36 +5809,10 @@ var_0_5.all = {
 	11590500,
 	11590610
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-
-local var_0_7 = var_0_5.base
-
-pg = var_0_6
-
-local var_0_8
-
-if not var_0_6.base.world_event_data then
-	var_0_8 = {}
-end
-
-var_0_7.world_event_data = var_0_8
-cs = var_0_7
-
-local var_0_9
-
-var_0_9 = var_0_7 or {}
-cs = cs
-var_0.world_event_data = {
+pg.base = pg.base or {}
+pg.base.world_event_data = pg.base.world_event_data or {}
+cs = cs or {}
+cs.world_event_data = {
 	{
 		0,
 		531

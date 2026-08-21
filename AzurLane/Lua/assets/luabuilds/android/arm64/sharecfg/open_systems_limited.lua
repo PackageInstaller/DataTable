@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "open_systems_limited") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "open_systems_limited"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.open_systems_limited = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.open_systems_limited
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.open_systems_limited = rawget(pg, "open_systems_limited") or setmetatable({
+	__name = "open_systems_limited"
+}, confNEO)
+pg.open_systems_limited.all = {
 	1,
 	2,
 	3,
@@ -53,25 +30,11 @@ var_0_3.all = {
 	26,
 	27
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.open_systems_limited = {}
+pg.base = pg.base or {}
+pg.base.open_systems_limited = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.open_systems_limited
-
-	var_1_0[1] = {
+	pg.base.open_systems_limited[1] = {
 		scene = "MAINUI",
 		name = "后宅",
 		story_id = "SYG001",
@@ -79,11 +42,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "CourtYardMediator",
 		level = 8
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.open_systems_limited
-
-	var_1_1[2] = {
+	pg.base.open_systems_limited[2] = {
 		scene = "MAINUI",
 		name = "每日副本",
 		story_id = "",
@@ -91,11 +50,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "DailyLevelMediator",
 		level = 10
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.open_systems_limited
-
-	var_1_2[3] = {
+	pg.base.open_systems_limited[3] = {
 		scene = "MAINUI",
 		name = "大舰队",
 		story_id = "SYG002",
@@ -103,11 +58,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "NewGuildMediator",
 		level = 11
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.open_systems_limited
-
-	var_1_3[4] = {
+	pg.base.open_systems_limited[4] = {
 		scene = "MAINUI",
 		name = "军事委托",
 		story_id = "SYG003",
@@ -115,11 +66,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "EventMediator",
 		level = 12
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.open_systems_limited
-
-	var_1_4[5] = {
+	pg.base.open_systems_limited[5] = {
 		scene = "MAINUI",
 		name = "军事演习",
 		story_id = "SYG004",
@@ -127,11 +74,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "MilitaryExerciseMediator",
 		level = 15
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.open_systems_limited
-
-	var_1_5[6] = {
+	pg.base.open_systems_limited[6] = {
 		scene = "MAINUI",
 		name = "排行榜",
 		story_id = "SYG005",
@@ -139,11 +82,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "BillboardMediator",
 		level = 16
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.open_systems_limited
-
-	var_1_6[7] = {
+	pg.base.open_systems_limited[7] = {
 		scene = "MAINUI",
 		name = "模拟战",
 		story_id = "",
@@ -151,11 +90,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "ShamPreCombatMediator",
 		level = 10
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.open_systems_limited
-
-	var_1_7[8] = {
+	pg.base.open_systems_limited[8] = {
 		scene = "MAINUI",
 		name = "核心兑换·月度",
 		story_id = "",
@@ -163,11 +98,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "ShamShop",
 		level = 10
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.open_systems_limited
-
-	var_1_8[9] = {
+	pg.base.open_systems_limited[9] = {
 		scene = "MAINUI",
 		name = "大讲堂",
 		story_id = "",
@@ -175,11 +106,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "ClassMediator",
 		level = 50
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.open_systems_limited
-
-	var_1_9[10] = {
+	pg.base.open_systems_limited[10] = {
 		scene = "MAINUI",
 		name = "开发船坞",
 		story_id = "",
@@ -187,11 +114,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "ShipBluePrintMediator",
 		level = 30
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.open_systems_limited
-
-	var_1_10[11] = {
+	pg.base.open_systems_limited[11] = {
 		scene = "MAINUI",
 		name = "军部科研室",
 		story_id = "",
@@ -199,11 +122,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "TechnologyMediator",
 		level = 30
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.open_systems_limited
-
-	var_1_11[12] = {
+	pg.base.open_systems_limited[12] = {
 		scene = "MAINUI",
 		name = "商路护航",
 		story_id = "",
@@ -211,11 +130,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "Escort",
 		level = 30
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.open_systems_limited
-
-	var_1_12[14] = {
+	pg.base.open_systems_limited[14] = {
 		scene = "MAINUI",
 		name = "指挥喵",
 		story_id = "",
@@ -223,11 +138,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "CommanderCatMediator",
 		level = 40
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.open_systems_limited
-
-	var_1_13[15] = {
+	pg.base.open_systems_limited[15] = {
 		scene = "MAINUI",
 		name = "限界挑战",
 		story_id = "",
@@ -235,11 +146,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "ChallengeMainMediator",
 		level = 80
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.open_systems_limited
-
-	var_1_14[16] = {
+	pg.base.open_systems_limited[16] = {
 		scene = "MAINUI",
 		name = "原型商店",
 		story_id = "",
@@ -247,11 +154,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "FragmentShop",
 		level = 30
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.open_systems_limited
-
-	var_1_15[17] = {
+	pg.base.open_systems_limited[17] = {
 		scene = "MAINUI",
 		name = "meta研究室",
 		story_id = "",
@@ -259,11 +162,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "MetaCharacterMediator",
 		level = 1
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.open_systems_limited
-
-	var_1_16[18] = {
+	pg.base.open_systems_limited[18] = {
 		scene = "MAINUI",
 		name = "装备改造",
 		story_id = "",
@@ -271,11 +170,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "EquipmentTransformTreeMediator",
 		level = 60
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.open_systems_limited
-
-	var_1_17[19] = {
+	pg.base.open_systems_limited[19] = {
 		scene = "MAINUI",
 		name = "大型作战",
 		story_id = "",
@@ -283,11 +178,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "WorldMediator",
 		level = 60
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.open_systems_limited
-
-	var_1_18[20] = {
+	pg.base.open_systems_limited[20] = {
 		scene = "MAINUI",
 		name = "大世界收藏",
 		story_id = "",
@@ -295,11 +186,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "WorldMediaCollectionRecordMediator",
 		level = 60
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.open_systems_limited
-
-	var_1_19[21] = {
+	pg.base.open_systems_limited[21] = {
 		scene = "MAINUI",
 		name = "小游戏大厅",
 		story_id = "",
@@ -307,11 +194,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "GameHallMediator",
 		level = 30
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.open_systems_limited
-
-	var_1_20[22] = {
+	pg.base.open_systems_limited[22] = {
 		scene = "MAINUI",
 		name = "核心兑换·限定",
 		story_id = "",
@@ -319,11 +202,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "QuotaShop",
 		level = 10
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.open_systems_limited
-
-	var_1_21[23] = {
+	pg.base.open_systems_limited[23] = {
 		scene = "MAINUI",
 		name = "新版限界挑战",
 		story_id = "",
@@ -331,11 +210,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "LimitChallengeMediator",
 		level = 80
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.open_systems_limited
-
-	var_1_22[24] = {
+	pg.base.open_systems_limited[24] = {
 		scene = "MAINUI",
 		name = "养成系统",
 		story_id = "",
@@ -343,11 +218,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "EducateMediator",
 		level = 30
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.open_systems_limited
-
-	var_1_23[25] = {
+	pg.base.open_systems_limited[25] = {
 		scene = "MAINUI",
 		name = "宿舍计划",
 		story_id = "",
@@ -355,11 +226,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "SelectDorm3DMediator",
 		level = 80
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.open_systems_limited
-
-	var_1_24[26] = {
+	pg.base.open_systems_limited[26] = {
 		scene = "MAINUI",
 		name = "养成系统",
 		story_id = "",
@@ -367,8 +234,7 @@ var_0_3.base.open_systems_limited = {}
 		mediator = "NewEducateSelectMediator",
 		level = 30
 	}
-	pg = var_1_24
-	var_1_24.base.open_systems_limited[27] = {
+	pg.base.open_systems_limited[27] = {
 		scene = "MAINUI",
 		name = "岛屿",
 		story_id = "",

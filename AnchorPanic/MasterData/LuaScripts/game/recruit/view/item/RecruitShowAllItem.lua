@@ -92,14 +92,14 @@ end
 
 function updateView(self)
     self.mTxtName.text = self.heroConfigVo.name
-    self.mImgHero:SetImg(UrlManager:getIconPath(string.format("heroRecruit/hero_recruit_%s.png",self.heroConfigVo.showModel)), true)
+    self.mImgHero:SetImg(UrlManager:getHeroRecruitPath(self.heroConfigVo.showModel), true)
 
     self.mImgPos:SetImg(UrlManager:getMonsterJobSmallIconUrl(self.heroConfigVo.professionType), false)
     self.mImgEleType:SetImg(UrlManager:getHeroEleTypeIconUrl(self.heroConfigVo.eleType), false)
 
     self.mImgEffect1.gameObject:SetActive(false)
 
-    for i=1,3 do
+    for i = 1, 3 do
         self.m_childGos["mImgQuality_" .. i]:SetActive(self.heroConfigVo.color - 1 == i)
     end
     if self.heroConfigVo.color > 2 then
@@ -108,10 +108,10 @@ function updateView(self)
     end
 
     if self.heroConfigVo.color > 1 then
-        self.mImgEffect2:SetImg(UrlManager:getPackPath(string.format("recruitResult/recruit_show_robe_%s.png", self.heroConfigVo.color)),false)
-        self.mImgBg:SetImg(UrlManager:getPackPath(string.format("recruitResult/recruit_show_one_color_%s.png", self.heroConfigVo.color)),false)
+        self.mImgEffect2:SetImg(UrlManager:getPackPath(string.format("recruitResult/recruit_show_robe_%s.png", self.heroConfigVo.color)), false)
+        self.mImgBg:SetImg(UrlManager:getPackPath(string.format("recruitResult/recruit_show_one_color_%s.png", self.heroConfigVo.color)), false)
 
-        self:addEffect(string.format("fx_ui_recruit_show_0%s",self.heroConfigVo.color), self.mEffx, 0, 0, nil)
+        self:addEffect(string.format("fx_ui_recruit_show_0%s", self.heroConfigVo.color), self.mEffx, 0, 0, nil)
     end
     -- self:getChildGO("mGlow_0" .. self.heroConfigVo.color):SetActive(true)
 
@@ -131,7 +131,7 @@ function __updateConvertView(self)
 end
 
 function __recoverAllGrid(self)
-    if(self.mPropsGridList)then
+    if (self.mPropsGridList) then
         for i = 1, #self.mPropsGridList do
             self.mPropsGridList[i]:poolRecover()
         end
@@ -141,7 +141,7 @@ end
 
 function setPosition(self, cusX, cusY, cusZ)
     super.setPosition(self, cusX, cusY, cusZ)
-    self.pos = {x = cusX,y = cusY,z = cusZ}
+    self.pos = { x = cusX, y = cusY, z = cusZ }
 end
 
 function getPosition(self)
@@ -161,7 +161,7 @@ function poolRecover(self)
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 	语言包: _TT(571):	"已转化"
 ]]

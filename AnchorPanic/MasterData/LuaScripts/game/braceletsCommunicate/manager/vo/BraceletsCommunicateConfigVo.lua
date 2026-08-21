@@ -19,6 +19,7 @@ function parseData(self, targetId, cusData)
             self.segmentDic[k][m] = vo
         end
     end
+    self.signId = cusData.sign_id
 end
 
 function getTalkVo(self, segmentId, talkId)
@@ -28,7 +29,7 @@ end
 function getTalkMsg(self, segmentId, talkId)
     local talkVo = self:getTalkVo(segmentId, talkId)
     if talkVo == nil then 
-        logError("获取对话内容错误，检查配置--TargetId:", self.targetId, "segId:", segmentId, "TalkId:", talkId)
+        logError("获取对话内容错误，检查配置--TargetId:"..self.targetId.."segId:"..segmentId.. "TalkId:".. talkId)
     end
     return talkVo.msg
 end

@@ -1,97 +1,78 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BossRushStoryNode", import("model.vo.BaseVO"))
 
-local var_0_0 = "BossRushStoryNode"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.BaseVO"))
-
-var_0_1.TRIGGER_TYPE = {
+var_0_0.TRIGGER_TYPE = {
 	PT_GOT = 1,
 	HIDE_READED = 4,
 	STORY_READED = 3,
 	SERIES_PASSED = 2
 }
-var_0_1.NODE_TYPE = {
+var_0_0.NODE_TYPE = {
 	BATTLE = 3,
 	LOCATION = 4,
 	NORMAL = 1,
 	EVENT = 2
 }
-var_0_1.REPEATABLE_KEY = "repeatable"
+var_0_0.REPEATABLE_KEY = "repeatable"
 
-function var_0_1.bindConfigTable(arg_1_0)
-	pg = var_1_10001
-
-	return var_1_10001.activity_series_enemy_story
+function var_0_0.bindConfigTable(arg_1_0)
+	return pg.activity_series_enemy_story
 end
 
-function var_0_1.Ctor(arg_2_0, arg_2_1, ...)
-	var_0_1.super.Ctor(arg_2_0, arg_2_1, ...)
+function var_0_0.Ctor(arg_2_0, arg_2_1, ...)
+	var_0_0.super.Ctor(arg_2_0, arg_2_1, ...)
 
 	arg_2_0.configId = arg_2_0.id
 
 	return
 end
 
-function var_0_1.GetTriggers(arg_3_0)
+function var_0_0.GetTriggers(arg_3_0)
 	local var_3_0 = (function(arg_4_0)
-		type = var_2_10001
-
-		if var_2_10001(arg_4_0) ~= "table" then
+		if type(arg_4_0) ~= "table" then
 			return {}
 		end
 
 		return arg_4_0
 	end)(arg_3_0:getConfig("trigger_type"))
-	local var_3_1 = var_1(arg_3_0:getConfig("trigger_value"))
-	local var_3_2 = {}
+	local var_3_1 = (function(arg_4_0)
+		if type(arg_4_0) ~= "table" then
+			return {}
+		end
+
+		return arg_4_0
+	end)(arg_3_0:getConfig("trigger_value"))
 
 	for iter_3_0 = 1, #var_3_0 do
-		table = var_1_10009
-
-		var_1_10009.insert(var_3_2, {
+		table.insert({}, {
 			type = var_3_0[iter_3_0],
 			value = var_3_1[iter_3_0]
 		})
 	end
 
-	return var_3_2
+	return {}
 end
 
-function var_0_1.IsActive(arg_5_0, arg_5_1, arg_5_2)
-	underscore = var_1_10003
-
-	return var_1_10003.all(arg_5_0:GetTriggers(), function(arg_6_0)
-		switch = var_2_10001
-
-		return var_2_10001(arg_6_0.type, {
-			[var_0_1.TRIGGER_TYPE.PT_GOT] = function()
+function var_0_0.IsActive(arg_5_0, arg_5_1, arg_5_2)
+	return underscore.all(arg_5_0:GetTriggers(), function(arg_6_0)
+		return switch(arg_6_0.type, {
+			[var_0_0.TRIGGER_TYPE.PT_GOT] = function()
 				return arg_5_2.data1 >= arg_6_0.value
 			end,
-			[var_0_1.TRIGGER_TYPE.SERIES_PASSED] = function()
-				BossRushSeriesData = var_3_10000
-
-				local var_8_0 = var_3_10000.New({
+			[var_0_0.TRIGGER_TYPE.SERIES_PASSED] = function()
+				return BossRushSeriesData.New({
 					id = arg_6_0.value,
 					actId = arg_5_1.id
-				})
-
-				return var_0.IsUnlock(var_8_0, arg_5_1)
+				}):IsUnlock(arg_5_1)
 			end,
-			[var_0_1.TRIGGER_TYPE.STORY_READED] = function()
-				local var_9_0 = var_0_1.New({
+			[var_0_0.TRIGGER_TYPE.STORY_READED] = function()
+				return var_0_0.New({
 					id = arg_6_0.value
-				})
-
-				return var_0.IsReaded(var_9_0)
+				}):IsReaded()
 			end,
-			[var_0_1.TRIGGER_TYPE.HIDE_READED] = function()
-				local var_10_0 = var_0_1.New({
+			[var_0_0.TRIGGER_TYPE.HIDE_READED] = function()
+				return not var_0_0.New({
 					id = arg_6_0.value
-				})
-
-				return not var_0.IsReaded(var_10_0)
+				}):IsReaded()
 			end
 		}, function()
 			return false
@@ -99,14 +80,11 @@ function var_0_1.IsActive(arg_5_0, arg_5_1, arg_5_2)
 	end)
 end
 
-function var_0_1.IsReaded(arg_12_0)
-	if arg_12_0:GetStory() and var_1 ~= "" then
-		tobool = var_1_10002
-		pg = var_1_10004
+function var_0_0.IsReaded(arg_12_0)
+	local var_12_0 = arg_12_0:GetStory()
 
-		local var_12_0 = var_1_10004.NewStoryMgr.GetInstance()
-
-		return var_1_10002(var_4.IsPlayed(var_12_0, var_1))
+	if var_12_0 and var_12_0 ~= "" then
+		return tobool(pg.NewStoryMgr.GetInstance():IsPlayed(var_12_0))
 	else
 		return true
 	end
@@ -114,54 +92,46 @@ function var_0_1.IsReaded(arg_12_0)
 	return
 end
 
-function var_0_1.GetType(arg_13_0)
+function var_0_0.GetType(arg_13_0)
 	return arg_13_0:getConfig("type")
 end
 
-function var_0_1.GetName(arg_14_0)
+function var_0_0.GetName(arg_14_0)
 	return arg_14_0:getConfig("name")
 end
 
-function var_0_1.GetIconName(arg_15_0)
+function var_0_0.GetIconName(arg_15_0)
 	return arg_15_0:getConfig("icon")
 end
 
-function var_0_1.GetStory(arg_16_0)
+function var_0_0.GetStory(arg_16_0)
 	return arg_16_0:getConfig("story")
 end
 
-function var_0_1.GetActiveLink(arg_17_0)
+function var_0_0.GetActiveLink(arg_17_0)
 	return arg_17_0:getConfig("line")
 end
 
-function var_0_1.GetCleanBG(arg_18_0)
-	noEmptyStr = var_1_10001
-
-	return var_1_10001(arg_18_0:getConfig("change_background"))
+function var_0_0.GetCleanBG(arg_18_0)
+	return noEmptyStr(arg_18_0:getConfig("change_background"))
 end
 
-function var_0_1.GetCleanBGM(arg_19_0)
-	noEmptyStr = var_1_10001
-
-	return var_1_10001(arg_19_0:getConfig("change_bgm"))
+function var_0_0.GetCleanBGM(arg_19_0)
+	return noEmptyStr(arg_19_0:getConfig("change_bgm"))
 end
 
-function var_0_1.GetCleanAnimator(arg_20_0)
-	noEmptyStr = var_1_10001
-
-	return var_1_10001(arg_20_0:getConfig("change_prefab"))
+function var_0_0.GetCleanAnimator(arg_20_0)
+	return noEmptyStr(arg_20_0:getConfig("change_prefab"))
 end
 
-function var_0_1.GetParams(arg_21_0, arg_21_1)
-	noEmptyStr = var_1_10002
+function var_0_0.GetParams(arg_21_0, arg_21_1)
+	local var_21_0 = noEmptyStr(arg_21_0:getConfig("params"))
 
-	if not var_1_10002(arg_21_0:getConfig("params")) then
+	if not var_21_0 then
 		return nil
 	end
 
-	ipairs = var_1_10003
-
-	for iter_21_0, iter_21_1 in var_1_10003(var_2) do
+	for iter_21_0, iter_21_1 in ipairs(var_21_0) do
 		if iter_21_1[1] == arg_21_1 then
 			return iter_21_1
 		end
@@ -170,28 +140,20 @@ function var_0_1.GetParams(arg_21_0, arg_21_1)
 	return nil
 end
 
-function var_0_1.IsRecrew(arg_22_0)
+function var_0_0.IsRecrew(arg_22_0)
 	local var_22_0 = arg_22_0:getConfig("label_key")
 
-	type = var_1_10002
-
-	if var_1_10002(var_22_0) ~= "table" then
+	if type(var_22_0) ~= "table" then
 		return nil
 	end
 
-	StoryStep = var_2
+	local var_22_1 = StoryStep.GetGlobalFlagKey(var_22_0.flagID) .. var_22_0.flagIndex
 
-	local var_22_1 = var_2.GetGlobalFlagKey(var_22_0.flagID) .. var_22_0.flagIndex
-
-	PlayerPrefs = var_3
-
-	if not var_3.HasKey(var_22_1) then
+	if not PlayerPrefs.HasKey(var_22_1) then
 		return nil
 	end
 
-	PlayerPrefs = var_3
-
-	return var_3.GetInt(var_22_1) > 0
+	return PlayerPrefs.GetInt(var_22_1) > 0
 end
 
-return var_0_1
+return var_0_0

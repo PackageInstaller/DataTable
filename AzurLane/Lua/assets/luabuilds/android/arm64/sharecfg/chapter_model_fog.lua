@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "chapter_model_fog") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "chapter_model_fog"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.chapter_model_fog = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.chapter_model_fog
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.chapter_model_fog = rawget(pg, "chapter_model_fog") or setmetatable({
+	__name = "chapter_model_fog"
+}, confNEO)
+pg.chapter_model_fog.all = {
 	1,
 	2,
 	3,
@@ -36,25 +13,11 @@ var_0_3.all = {
 	8,
 	9
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.chapter_model_fog = {}
+pg.base = pg.base or {}
+pg.base.chapter_model_fog = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.chapter_model_fog
-
-	var_1_0[1] = {
+	pg.base.chapter_model_fog[1] = {
 		id = 1,
 		vision_range = {
 			{
@@ -75,11 +38,7 @@ var_0_3.base.chapter_model_fog = {}
 			800
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.chapter_model_fog
-
-	var_1_1[2] = {
+	pg.base.chapter_model_fog[2] = {
 		id = 2,
 		vision_range = {
 			{
@@ -108,11 +67,7 @@ var_0_3.base.chapter_model_fog = {}
 			1700
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.chapter_model_fog
-
-	var_1_2[3] = {
+	pg.base.chapter_model_fog[3] = {
 		id = 3,
 		vision_range = {
 			{
@@ -157,11 +112,7 @@ var_0_3.base.chapter_model_fog = {}
 			99999
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.chapter_model_fog
-
-	var_1_3[4] = {
+	pg.base.chapter_model_fog[4] = {
 		id = 4,
 		vision_range = {
 			{
@@ -219,11 +170,7 @@ var_0_3.base.chapter_model_fog = {}
 		},
 		attr_air = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.chapter_model_fog
-
-	var_1_4[5] = {
+	pg.base.chapter_model_fog[5] = {
 		id = 5,
 		vision_range = {
 			{
@@ -329,11 +276,7 @@ var_0_3.base.chapter_model_fog = {}
 		},
 		attr_air = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.chapter_model_fog
-
-	var_1_5[6] = {
+	pg.base.chapter_model_fog[6] = {
 		id = 6,
 		vision_range = {
 			{
@@ -487,11 +430,7 @@ var_0_3.base.chapter_model_fog = {}
 		},
 		attr_air = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.chapter_model_fog
-
-	var_1_6[7] = {
+	pg.base.chapter_model_fog[7] = {
 		id = 7,
 		vision_range = {
 			{
@@ -693,11 +632,7 @@ var_0_3.base.chapter_model_fog = {}
 		},
 		attr_air = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.chapter_model_fog
-
-	var_1_7[8] = {
+	pg.base.chapter_model_fog[8] = {
 		id = 8,
 		vision_range = {
 			{
@@ -947,8 +882,7 @@ var_0_3.base.chapter_model_fog = {}
 		},
 		attr_air = {}
 	}
-	pg = var_1_7
-	var_1_7.base.chapter_model_fog[9] = {
+	pg.base.chapter_model_fog[9] = {
 		id = 9,
 		vision_range = {
 			{

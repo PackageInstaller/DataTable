@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TeamType")
+﻿local var_0_0 = class("TeamType")
 
 var_0_0.Vanguard = "vanguard"
 var_0_0.Main = "main"

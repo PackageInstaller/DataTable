@@ -1,154 +1,68 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewYearsEveDinnerPage", import(".TemplatePage.SkinTemplatePage"))
+local var_0_1 = 3
+local var_0_2 = 2
+local var_0_3 = Vector2(760, -144)
+local var_0_4 = Vector2(370, -144)
 
-local var_0_0 = "NewYearsEveDinnerPage"
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.SkinTemplatePage"))
-local var_0_2 = 3
-local var_0_3 = 2
-
-Vector2 = var_3
-
-local var_0_4 = var_3(760, -144)
-
-Vector2 = var_0_10004
-
-local var_0_5 = var_0_10004(370, -144)
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
-
-	local var_1_0 = arg_1_0.bg
-
-	arg_1_0.roleTF = var_1.Find(var_1_0, "mask/role_pos")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.effectNode = var_1.Find(var_1_1, "mofang_yanwu")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.foodTF = var_1.Find(var_1_2, "food")
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.dialogTF = var_1.Find(var_1_3, "dialog")
-
-	local var_1_4 = arg_1_0.bg
-
-	arg_1_0.rightPanel = var_1.Find(var_1_4, "right_panel")
-
-	local var_1_5 = arg_1_0.rightPanel
-
-	arg_1_0.helpBtn = var_1.Find(var_1_5, "help_btn")
-
-	local var_1_6 = arg_1_0.rightPanel
-
-	arg_1_0.titleFoodTF = var_1.Find(var_1_6, "menu_title/icon")
-
-	local var_1_7 = arg_1_0.rightPanel
-
-	arg_1_0.cookBtn = var_1.Find(var_1_7, "cook_btn")
-
-	local var_1_8 = arg_1_0.cookBtn
-
-	arg_1_0.cookProgress = var_1.Find(var_1_8, "progress")
-
-	local var_1_9 = arg_1_0.cookBtn
-
-	arg_1_0.cookAwardTF = var_1.Find(var_1_9, "award")
+	arg_1_0.roleTF = arg_1_0.bg:Find("mask/role_pos")
+	arg_1_0.effectNode = arg_1_0.bg:Find("mofang_yanwu")
+	arg_1_0.foodTF = arg_1_0.bg:Find("food")
+	arg_1_0.dialogTF = arg_1_0.bg:Find("dialog")
+	arg_1_0.rightPanel = arg_1_0.bg:Find("right_panel")
+	arg_1_0.helpBtn = arg_1_0.rightPanel:Find("help_btn")
+	arg_1_0.titleFoodTF = arg_1_0.rightPanel:Find("menu_title/icon")
+	arg_1_0.cookBtn = arg_1_0.rightPanel:Find("cook_btn")
+	arg_1_0.cookProgress = arg_1_0.cookBtn:Find("progress")
+	arg_1_0.cookAwardTF = arg_1_0.cookBtn:Find("award")
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
-	local var_2_0 = arg_2_0.activity
-
-	arg_2_0.cookActID = var_1.getConfig(var_2_0, "config_client").linkTaskPoolAct
-	pg = var_1
-	arg_2_0.cookCfg = var_1.activity_template[arg_2_0.cookActID].config_client
-	pg = var_1
-	arg_2_0.cookTaskIds = var_1.activity_template[arg_2_0.cookActID].config_data
+function var_0_0.OnDataSetting(arg_2_0)
+	arg_2_0.cookActID = arg_2_0.activity:getConfig("config_client").linkTaskPoolAct
+	arg_2_0.cookCfg = pg.activity_template[arg_2_0.cookActID].config_client
+	arg_2_0.cookTaskIds = pg.activity_template[arg_2_0.cookActID].config_data
 	arg_2_0.totalCookCnt = #arg_2_0.cookTaskIds
-	getProxy = var_1
-	PlayerProxy = var_2_0
-
-	local var_2_1 = var_1(var_2_0)
-
-	arg_2_0.playerId = var_1.getData(var_2_1).id
+	arg_2_0.playerId = getProxy(PlayerProxy):getData().id
 	arg_2_0.randomSeed = arg_2_0:GetRandomById()
 
-	var_0_1.super.OnDataSetting(arg_2_0)
+	var_0_0.super.OnDataSetting(arg_2_0)
 
 	return
 end
 
-function var_0_1.GetRandomById(arg_3_0)
+function var_0_0.GetRandomById(arg_3_0)
 	local var_3_0 = arg_3_0.playerId
-	local var_3_1 = {}
 
-	while #var_3_1 < 7 do
-		local var_3_2 = var_3_0 % 10
+	while #{} < 7 do
+		var_3_0 = math.floor(var_3_0 / 10)
 
-		math = var_4
-
-		if var_4.floor(var_3_0 / 10) == 0 then
+		if var_3_0 == 0 then
 			var_3_0 = arg_3_0.playerId
 		end
 
-		table = var_4
-
-		var_4.insert(var_3_1, var_3_2)
+		table.insert({}, var_3_0 % 10)
 	end
 
-	return var_3_1
+	return {}
 end
 
-function var_0_1.OnFirstFlush(arg_4_0)
-	var_0_1.super.OnFirstFlush(arg_4_0)
-
-	onButton = var_1
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.helpBtn
-
-	local function var_4_2()
-		pg = var_2_10000
-
-		local var_5_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_5_1 = var_0.ShowMsgBox
-		local var_5_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_5_2.type = var_2_10004
-		pg = var_2_10004
-		var_5_2.helps = var_2_10004.gametip.sevenday_nianye.tip
-
-		var_5_1(var_5_0, var_5_2)
+function var_0_0.OnFirstFlush(arg_4_0)
+	var_0_0.super.OnFirstFlush(arg_4_0)
+	onButton(arg_4_0, arg_4_0.helpBtn, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.sevenday_nianye.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_0, var_4_1, var_4_2, var_1_10006)
-
-	onButton = var_1
-
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0.cookBtn
-
-	local function var_4_5()
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.cookBtn, function()
 		if arg_4_0.isMoving then
-			pg = var_0
-
-			local var_6_0 = var_0.TipsMgr.GetInstance()
-			local var_6_1 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_6_1(var_6_0, var_2_10003("tip_nianye"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("tip_nianye"))
 
 			return
 		end
@@ -157,75 +71,38 @@ function var_0_1.OnFirstFlush(arg_4_0)
 			return
 		end
 
-		local var_6_2 = arg_4_0.taskProxy
-		local var_6_3 = var_0.getTaskVO(var_6_2, arg_4_0.curTaskId)
+		local var_6_0 = arg_4_0.taskProxy:getTaskVO(arg_4_0.curTaskId)
 
-		if var_0.getTaskStatus(var_6_3) == 1 then
-			setActive = var_1
-
-			var_1(arg_4_0.effectNode, true)
+		if var_6_0:getTaskStatus() == 1 then
+			setActive(arg_4_0.effectNode, true)
 
 			arg_4_0.isEffectPlaying = true
 
-			local var_6_4 = arg_4_0
-			local var_6_5 = var_1.managedTween
-
-			LeanTween = var_4
-
-			var_6_5(var_6_4, var_4.delayedCall, function()
-				local var_7_0 = arg_4_0
-				local var_7_1 = var_0.emit
-
-				ActivityMediator = var_3_10003
-
-				var_7_1(var_7_0, var_3_10003.ON_TASK_SUBMIT, var_0)
-
-				setActive = var_7_1
-
-				var_7_1(arg_4_0.effectNode, false)
+			arg_4_0:managedTween(LeanTween.delayedCall, function()
+				arg_4_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_6_0)
+				setActive(arg_4_0.effectNode, false)
 
 				arg_4_0.isEffectPlaying = false
 
 				return
-			end, var_0_3, nil)
+			end, var_0_2, nil)
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_4_3, var_4_4, var_4_5, var_1_10006)
-
-	setActive = var_1
-
-	local var_4_6 = arg_4_0.cookBtn
-
-	var_1(var_3.Find(var_4_6, "shine"), false)
+	end, SFX_PANEL)
+	setActive(arg_4_0.cookBtn:Find("shine"), false)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_8_0)
-	var_0_1.super.OnUpdateFlush(arg_8_0)
+function var_0_0.OnUpdateFlush(arg_8_0)
+	var_0_0.super.OnUpdateFlush(arg_8_0)
 
-	getProxy = var_1
-	ActivityProxy = var_3
+	arg_8_0.cookAct = getProxy(ActivityProxy):getActivityById(arg_8_0.cookActID)
 
-	local var_8_0 = var_1(var_3)
+	local var_8_0 = arg_8_0.cookAct and not arg_8_0.cookAct:isEnd()
 
-	arg_8_0.cookAct = var_1.getActivityById(var_8_0, arg_8_0.cookActID)
-	assert = var_1
-
-	local var_8_2
-
-	if arg_8_0.cookAct then
-		local var_8_1 = arg_8_0.cookAct
-
-		var_8_2 = not var_3.isEnd(var_8_1)
-	end
-
-	var_1(var_8_2, "自选任务池活动(type86)已结束")
+	assert(var_8_0, "自选任务池活动(type86)已结束")
 	arg_8_0:RefreshCookData()
 	arg_8_0:UpdateCookData()
 	arg_8_0:UpdateCookUI()
@@ -233,318 +110,163 @@ function var_0_1.OnUpdateFlush(arg_8_0)
 	return
 end
 
-function var_0_1.RefreshCookData(arg_9_0)
-	local var_9_0 = arg_9_0.cookAct
+function var_0_0.RefreshCookData(arg_9_0)
+	arg_9_0.usedCnt = arg_9_0.cookAct:getData1()
 
-	arg_9_0.usedCnt = var_1.getData1(var_9_0)
-	pg = var_1
+	local var_9_0 = pg.TimeMgr.GetInstance()
 
-	local var_9_1 = var_1.TimeMgr.GetInstance()
-	local var_9_2 = var_1.DiffDay
-	local var_9_3 = arg_9_0.cookAct
-	local var_9_4 = var_9_2(var_9_1, var_5.getStartTime(var_9_3), var_1:GetServerTime()) + 1
-	local var_9_5 = arg_9_0.cookAct
-
-	arg_9_0.unlockCnt = var_9_4 * var_3.getConfig(var_9_5, "config_id")
-	math = var_2
-	arg_9_0.unlockCnt = var_2.min(arg_9_0.unlockCnt, arg_9_0.totalCookCnt)
+	arg_9_0.unlockCnt = (var_9_0:DiffDay(arg_9_0.cookAct:getStartTime(), var_9_0:GetServerTime()) + 1) * arg_9_0.cookAct:getConfig("config_id")
+	arg_9_0.unlockCnt = math.min(arg_9_0.unlockCnt, arg_9_0.totalCookCnt)
 	arg_9_0.remainCnt = arg_9_0.usedCnt >= arg_9_0.totalCookCnt and 0 or arg_9_0.unlockCnt - arg_9_0.usedCnt
 
 	return
 end
 
-function var_0_1.UpdateCookData(arg_10_0)
+function var_0_0.UpdateCookData(arg_10_0)
 	local var_10_0 = 0
 
 	arg_10_0.receivedTasks = {}
-	underscore = var_2
 
-	local var_10_1 = var_2.rest(arg_10_0.cookTaskIds, 1)
+	local var_10_1 = underscore.rest(arg_10_0.cookTaskIds, 1)
 
-	ipairs = var_1_10003
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.cookTaskIds) do
+		local var_10_2 = arg_10_0.taskProxy:getTaskVO(iter_10_1)
 
-	for iter_10_0, iter_10_1 in var_1_10003(arg_10_0.cookTaskIds) do
-		local var_10_2 = arg_10_0.taskProxy
-		local var_10_3 = var_8.getTaskVO(var_10_2, iter_10_1)
-
-		if var_8.isReceive(var_10_3) then
-			table = var_9
-
-			var_9.insert(arg_10_0.receivedTasks, var_8)
+		if var_10_2:isReceive() then
+			table.insert(arg_10_0.receivedTasks, var_10_2)
 
 			var_10_0 = var_10_0 + 1
-			table = var_9
 
-			var_9.removebyvalue(var_10_1, iter_10_1)
+			table.removebyvalue(var_10_1, iter_10_1)
 		end
 	end
 
-	table = var_3
-
-	var_3.sort(arg_10_0.receivedTasks, function(arg_11_0, arg_11_1)
+	table.sort(arg_10_0.receivedTasks, function(arg_11_0, arg_11_1)
 		return arg_11_0.submitTime < arg_11_1.submitTime
 	end)
 
-	underscore = var_3
-	arg_10_0.receivedTasks = var_3.map(arg_10_0.receivedTasks, function(arg_12_0)
+	arg_10_0.receivedTasks = underscore.map(arg_10_0.receivedTasks, function(arg_12_0)
 		return arg_12_0.id
 	end)
 
 	if arg_10_0.usedCnt ~= var_10_0 then
 		arg_10_0.usedCnt = var_10_0
+		arg_10_0.cookAct.data1 = arg_10_0.usedCnt
 
-		local var_10_4 = arg_10_0.cookAct
-
-		var_10_4.data1 = arg_10_0.usedCnt
-		getProxy = var_4
-		ActivityProxy = var_6
-
-		local var_10_5 = var_4(var_6)
-
-		var_4.updateActivity(var_10_5, var_10_4)
+		getProxy(ActivityProxy):updateActivity(arg_10_0.cookAct)
 
 		return
-	end
-
-	local var_10_6
-
-	if arg_10_0.remainCnt ~= 0 or not arg_10_0.usedCnt then
-		var_10_6 = arg_10_0.usedCnt + 1
 	end
 
 	if arg_10_0.remainCnt == 0 then
-		arg_10_0.curTaskId = arg_10_0.receivedTasks[#arg_10_0.receivedTasks]
-	else
-		arg_10_0.curTaskId = var_10_1[arg_10_0.randomSeed[var_10_6] % #var_10_1 + 1]
-	end
+		local var_10_3 = arg_10_0.usedCnt or arg_10_0.usedCnt + 1
 
-	return
-end
-
-function var_0_1.UpdateCookUI(arg_13_0)
-	local var_13_0
-
-	if arg_13_0.remainCnt ~= 0 or not arg_13_0.usedCnt then
-		var_13_0 = arg_13_0.usedCnt + 1
-	end
-
-	setText = var_1_10002
-
-	var_1_10002(arg_13_0.cookProgress, var_13_0 .. "/" .. arg_13_0.totalCookCnt)
-
-	local var_13_1 = arg_13_0.taskProxy
-	local var_13_2 = var_2.getTaskVO(var_13_1, arg_13_0.curTaskId)
-	local var_13_3 = var_2.getConfig(var_13_2, "award_display")[1]
-	local var_13_4 = {
-		type = var_13_3[1],
-		id = var_13_3[2],
-		count = var_13_3[3]
-	}
-
-	updateDrop = var_5
-
-	var_5(arg_13_0.cookAwardTF, var_13_4)
-
-	local var_13_5 = var_2
-	local var_13_6 = var_2.getTaskStatus(var_13_5) == 2
-
-	setActive = var_6
-
-	local var_13_7 = arg_13_0.cookAwardTF
-
-	var_6(var_8.Find(var_13_7, "got"), var_13_6)
-
-	setActive = var_6
-
-	local var_13_8 = arg_13_0.cookAwardTF
-
-	var_6(var_8.Find(var_13_8, "icon_bg/count"), var_13_6)
-
-	setText = var_6
-
-	local var_13_9 = arg_13_0.dialogTF
-	local var_13_10 = var_8.Find(var_13_9, "Text")
-
-	i18n = var_9
-
-	var_6(var_13_10, var_9(arg_13_0.cookCfg[arg_13_0.curTaskId][3]))
-
-	local var_13_11
-
-	if not var_13_6 or not (arg_13_0.cookCfg[arg_13_0.curTaskId][2] .. "_2") then
-		var_13_11 = "unknown"
-	end
-
-	GetImageSpriteFromAtlasAsync = var_13_5
-
-	var_13_5("ui/activityuipage/NewYearsEveDinnerPage_atlas", arg_13_0.cookCfg[arg_13_0.curTaskId][2], arg_13_0.foodTF, true)
-
-	GetImageSpriteFromAtlasAsync = var_13_5
-
-	var_13_5("ui/activityuipage/NewYearsEveDinnerPage_atlas", var_13_11, arg_13_0.titleFoodTF, true)
-
-	arg_13_0.prefabName = arg_13_0.cookCfg[arg_13_0.curTaskId][1]
-	pg = var_7
-
-	local var_13_12 = var_7.UIMgr.GetInstance()
-
-	var_7.LoadingOn(var_13_12)
-
-	PoolMgr = var_7
-
-	local var_13_13 = var_7.GetInstance()
-
-	var_7.GetSpineChar(var_13_13, arg_13_0.prefabName, true, function(arg_14_0)
-		pg = var_2_10001
-
-		local var_14_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOff(var_14_0)
-
-		local var_14_1 = arg_13_0
-
-		tf = var_2_10002
-		var_14_1.modelTf = var_2_10002(arg_14_0)
-
-		local var_14_2 = arg_13_0.modelTf
-
-		Vector3 = var_2
-		var_14_2.localPosition = var_2(0, 0, 0)
-
-		local var_14_3 = arg_13_0.modelTf
-
-		Vector3 = var_2
-		var_14_3.localScale = var_2(1, 1, 1)
-
-		local var_14_4 = arg_13_0
-
-		var_1.ClearRole(var_14_4)
-
-		setParent = var_1
-
-		var_1(arg_13_0.modelTf, arg_13_0.roleTF)
-
-		local var_14_5 = arg_13_0
-
-		var_1.PlayRoleAnim(var_14_5)
+		arg_10_0.curTaskId = arg_10_0.remainCnt == 0 and arg_10_0.receivedTasks[#arg_10_0.receivedTasks] or var_10_1[arg_10_0.randomSeed[var_10_3] % #var_10_1 + 1]
 
 		return
-	end)
-
-	return
-end
-
-function var_0_1.ClearRole(arg_15_0)
-	arg_15_0.isMoving = false
-	LeanTween = var_1
-
-	if var_1.isTweening(arg_15_0.roleTF) then
-		LeanTween = var_1
-
-		var_1.cancel(arg_15_0.roleTF)
 	end
-
-	removeAllChildren = var_1
-
-	var_1(arg_15_0.roleTF)
-
-	return
 end
 
-function var_0_1.PlayRoleAnim(arg_16_0)
-	local var_16_0 = arg_16_0.taskProxy
-	local var_16_1 = var_1.getTaskVO(var_16_0, arg_16_0.curTaskId)
-	local var_16_2 = var_1.getTaskStatus(var_16_1) == 2
-	local var_16_3 = arg_16_0.modelTf
-	local var_16_4 = var_3.GetComponent(var_16_3, "SpineAnimUI")
+function var_0_0.UpdateCookUI(arg_13_0)
+	if arg_13_0.remainCnt == 0 then
+		local var_13_0 = arg_13_0.usedCnt or arg_13_0.usedCnt + 1
 
-	setActive = var_16_1
+		setText(arg_13_0.cookProgress, var_13_0 .. "/" .. arg_13_0.totalCookCnt)
 
-	var_16_1(arg_16_0.foodTF, false)
+		local var_13_1 = arg_13_0.taskProxy:getTaskVO(arg_13_0.curTaskId)
+		local var_13_2 = var_13_1:getConfig("award_display")[1]
 
-	setActive = var_16_1
+		updateDrop(arg_13_0.cookAwardTF, {
+			type = var_13_2[1],
+			id = var_13_2[2],
+			count = var_13_2[3]
+		})
 
-	var_16_1(arg_16_0.dialogTF, false)
+		local var_13_3 = var_13_1:getTaskStatus() == 2
 
-	setActive = var_16_1
+		setActive(arg_13_0.cookAwardTF:Find("got"), var_13_3)
+		setActive(arg_13_0.cookAwardTF:Find("icon_bg/count"), var_13_3)
+		setText(arg_13_0.dialogTF:Find("Text"), i18n(arg_13_0.cookCfg[arg_13_0.curTaskId][3]))
 
-	local var_16_5 = arg_16_0.cookBtn
+		if var_13_3 then
+			local var_13_4 = arg_13_0.cookCfg[arg_13_0.curTaskId][2] .. "_2" or "unknown"
 
-	var_16_1(var_6.Find(var_16_5, "shine"), false)
+			GetImageSpriteFromAtlasAsync("ui/activityuipage/NewYearsEveDinnerPage_atlas", arg_13_0.cookCfg[arg_13_0.curTaskId][2], arg_13_0.foodTF, true)
+			GetImageSpriteFromAtlasAsync("ui/activityuipage/NewYearsEveDinnerPage_atlas", var_13_4, arg_13_0.titleFoodTF, true)
 
-	if var_16_2 then
-		setAnchoredPosition = var_16_1
+			arg_13_0.prefabName = arg_13_0.cookCfg[arg_13_0.curTaskId][1]
 
-		var_16_1(arg_16_0.roleTF, var_0_5)
-		var_16_4:SetAction("normal", 0)
+			pg.UIMgr.GetInstance():LoadingOn()
+			PoolMgr.GetInstance():GetSpineChar(arg_13_0.prefabName, true, function(arg_14_0)
+				pg.UIMgr.GetInstance():LoadingOff()
 
-		setActive = var_4
+				arg_13_0.modelTf = tf(arg_14_0)
+				arg_13_0.modelTf.localPosition = Vector3(0, 0, 0)
+				arg_13_0.modelTf.localScale = Vector3(1, 1, 1)
 
-		var_4(arg_16_0.foodTF, true)
+				arg_13_0:ClearRole()
+				setParent(arg_13_0.modelTf, arg_13_0.roleTF)
+				arg_13_0:PlayRoleAnim()
 
-		setActive = var_4
-
-		var_4(arg_16_0.dialogTF, true)
-
-		setActive = var_4
-
-		local var_16_6 = arg_16_0.cookBtn
-
-		var_4(var_6.Find(var_16_6, "shine"), not var_16_2 and arg_16_0.remainCnt > 0)
-	else
-		var_16_4:SetAction("move", 0)
-
-		arg_16_0.isMoving = true
-		setAnchoredPosition = var_4
-
-		var_4(arg_16_0.roleTF, var_0_4)
-
-		local var_16_7 = arg_16_0
-		local var_16_8 = arg_16_0.managedTween
-
-		LeanTween = var_7
-
-		local var_16_9 = var_16_8(var_16_7, var_7.moveX, function()
-			local var_17_0 = var_16_4
-
-			var_0.SetAction(var_17_0, "normal", 0)
-
-			local var_17_1 = arg_16_0
-
-			var_17_1.isMoving = false
-			setActive = var_17_1
-
-			var_17_1(arg_16_0.foodTF, var_16_2)
-
-			setActive = var_17_1
-
-			var_17_1(arg_16_0.dialogTF, var_16_2)
-
-			setActive = var_17_1
-
-			local var_17_2 = arg_16_0.cookBtn
-
-			var_17_1(var_2.Find(var_17_2, "shine"), not var_16_2 and arg_16_0.remainCnt > 0)
+				return
+			end)
 
 			return
-		end, arg_16_0.roleTF, var_0_5.x, var_0_2)
-		local var_16_10 = var_4.setEase
+		end
+	end
+end
 
-		LeanTweenType = var_7
+function var_0_0.ClearRole(arg_15_0)
+	arg_15_0.isMoving = false
 
-		var_16_10(var_16_9, var_7.linear)
+	if LeanTween.isTweening(arg_15_0.roleTF) then
+		LeanTween.cancel(arg_15_0.roleTF)
+	end
+
+	removeAllChildren(arg_15_0.roleTF)
+
+	return
+end
+
+function var_0_0.PlayRoleAnim(arg_16_0)
+	local var_16_0 = arg_16_0.taskProxy:getTaskVO(arg_16_0.curTaskId):getTaskStatus() == 2
+	local var_16_1 = arg_16_0.modelTf:GetComponent("SpineAnimUI")
+
+	setActive(arg_16_0.foodTF, false)
+	setActive(arg_16_0.dialogTF, false)
+	setActive(arg_16_0.cookBtn:Find("shine"), false)
+
+	if var_16_0 then
+		setAnchoredPosition(arg_16_0.roleTF, var_0_4)
+		var_16_1:SetAction("normal", 0)
+		setActive(arg_16_0.foodTF, true)
+		setActive(arg_16_0.dialogTF, true)
+		setActive(arg_16_0.cookBtn:Find("shine"), not var_16_0 and arg_16_0.remainCnt > 0)
+	else
+		var_16_1:SetAction("move", 0)
+
+		arg_16_0.isMoving = true
+
+		setAnchoredPosition(arg_16_0.roleTF, var_0_3)
+		arg_16_0:managedTween(LeanTween.moveX, function()
+			var_16_1:SetAction("normal", 0)
+
+			arg_16_0.isMoving = false
+
+			setActive(arg_16_0.foodTF, var_16_0)
+			setActive(arg_16_0.dialogTF, var_16_0)
+			setActive(arg_16_0.cookBtn:Find("shine"), not var_16_0 and arg_16_0.remainCnt > 0)
+
+			return
+		end, arg_16_0.roleTF, var_0_4.x, var_0_1):setEase(LeanTweenType.linear)
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_18_0)
+function var_0_0.OnDestroy(arg_18_0)
 	if arg_18_0.prefabName and arg_18_0.modelTf then
-		PoolMgr = var_1
-
-		local var_18_0 = var_1.GetInstance()
-
-		var_1.ReturnSpineChar(var_18_0, arg_18_0.prefabName, arg_18_0.modelTf.gameObject)
+		PoolMgr.GetInstance():ReturnSpineChar(arg_18_0.prefabName, arg_18_0.modelTf.gameObject)
 
 		arg_18_0.prefabName = nil
 		arg_18_0.modelTf = nil
@@ -555,4 +277,4 @@ function var_0_1.OnDestroy(arg_18_0)
 	return
 end
 
-return var_0_1
+return var_0_0

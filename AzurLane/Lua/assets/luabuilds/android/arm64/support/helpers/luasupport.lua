@@ -1,75 +1,38 @@
-﻿print = var_0_10000
+﻿local var_0_0 = print
 
-local function var_0_0(...)
-	IsUnityEditor = var_1_10000
-
-	if var_1_10000 then
-		local var_1_0 = var_0_10000
-
-		debug = var_1_10002
-		var_1_10002 = var_1_10002.traceback
-		printEx = var_1_10004
-
-		var_1_0(var_1_10002(var_1_10004(...), 2))
+function originalPrint(...)
+	if IsUnityEditor then
+		var_0_0(debug.traceback(printEx(...), 2))
 	else
-		local var_1_1 = var_0_10000
-
-		printEx = var_1_10002
-
-		var_1_1(var_1_10002(...))
+		var_0_0(printEx(...))
 	end
 
 	return
 end
 
-IsUnityEditor = originalPrint
+print = IsUnityEditor and function(...)
+	var_0_0(debug.traceback(printEx(...), 2))
 
-local var_0_1
-
-if var_0_1 then
-	function var_0_1(...)
-		local var_2_0 = var_0_10000
-
-		debug = var_1_10002
-
-		local var_2_1 = var_1_10002.traceback
-
-		printEx = var_1_10004
-
-		var_2_0(var_2_1(var_1_10004(...), 2))
-
-		return
-	end
-
-	var_0_1 = print
-else
-	function var_0_1()
-		return
-	end
-
-	var_0_1 = print
+	return
+end or function()
+	return
 end
 
-setmetatable = var_0_1
-
-local var_0_2 = var_0_1({}, {
+local var_0_1 = setmetatable({}, {
 	__mode = "kv"
 })
+local var_0_2 = getmetatable(GameObject)
+local var_0_3 = var_0_2.__index
 
-getmetatable = var_0_10002
-GameObject = var_4
-
-local var_0_3 = var_0_10002(var_4).__index
-
-function var_2.__index(arg_4_0, arg_4_1)
+function var_0_2.__index(arg_4_0, arg_4_1)
 	if arg_4_1 == "transform" then
-		if var_0_2[arg_4_0] then
-			return var_2
+		if var_0_1[arg_4_0] then
+			return var_0_1[arg_4_0]
 		end
 
 		local var_4_0 = var_0_3(arg_4_0, arg_4_1)
 
-		var_0_2[arg_4_0] = var_4_0
+		var_0_1[arg_4_0] = var_4_0
 
 		return var_4_0
 	elseif arg_4_1 == "gameObject" then
@@ -81,24 +44,19 @@ function var_2.__index(arg_4_0, arg_4_1)
 	return
 end
 
-setmetatable = var_4
-
-local var_0_4 = var_4({}, {
+local var_0_4 = setmetatable({}, {
 	__mode = "kv"
 })
+local var_0_5 = getmetatable(Transform)
+local var_0_6 = var_0_5.__index
 
-getmetatable = var_0_10005
-Transform = var_7
-
-local var_0_5 = var_0_10005(var_7).__index
-
-function var_5.__index(arg_5_0, arg_5_1)
+function var_0_5.__index(arg_5_0, arg_5_1)
 	if arg_5_1 == "gameObject" then
 		if var_0_4[arg_5_0] then
-			return var_2
+			return var_0_4[arg_5_0]
 		end
 
-		local var_5_0 = var_0_5(arg_5_0, arg_5_1)
+		local var_5_0 = var_0_6(arg_5_0, arg_5_1)
 
 		var_0_4[arg_5_0] = var_5_0
 
@@ -106,53 +64,30 @@ function var_5.__index(arg_5_0, arg_5_1)
 	elseif arg_5_1 == "transform" then
 		return arg_5_0
 	else
-		return var_0_5(arg_5_0, arg_5_1)
+		return var_0_6(arg_5_0, arg_5_1)
 	end
 
 	return
 end
 
-local function var_0_6(arg_6_0)
-	PoolMgr = var_1_10001
-
-	local var_6_0 = var_1_10001.GetInstance()
-
-	var_1.ExcessPainting(var_6_0, true)
-
-	PoolMgr = var_1
-
-	local var_6_1 = var_1.GetInstance()
-
-	var_1.ExcessDymPainting(var_6_1, true)
-
-	PoolMgr = var_1
-
-	local var_6_2 = var_1.GetInstance()
-
-	var_1.ExcessSpineChar(var_6_2, true)
-
-	GCThread = var_1
-
-	local var_6_3 = var_1.GetInstance()
-
-	var_1.GC(var_6_3, arg_6_0)
+function gcAll(arg_6_0)
+	PoolMgr.GetInstance():ExcessPainting(true)
+	PoolMgr.GetInstance():ExcessDymPainting(true)
+	PoolMgr.GetInstance():ExcessSpineChar(true)
+	GCThread.GetInstance():GC(arg_6_0)
 
 	return
 end
 
-local var_0_7 = gcAll
-
-local function var_0_8(arg_7_0, arg_7_1, arg_7_2)
-	local var_7_0 = 0
-
+function RemoveTableItem(arg_7_0, arg_7_1, arg_7_2)
 	for iter_7_0 = 1, #arg_7_0 do
-		if arg_7_0[iter_7_0 - var_7_0] == arg_7_1 then
-			table = var_8
+		local var_7_0
 
-			var_8.remove(arg_7_0, iter_7_0 - var_7_0)
+		if arg_7_0[iter_7_0 - 0] == arg_7_1 then
+			table.remove(arg_7_0, iter_7_0 - 0)
 
 			if arg_7_2 then
-				var_7_0 = var_7_0 + 1
+				var_7_0 = 0 + 1
 			else
 				break
 			end
@@ -162,69 +97,35 @@ local function var_0_8(arg_7_0, arg_7_1, arg_7_2)
 	return
 end
 
-local var_0_9 = RemoveTableItem
-
-local function var_0_10(arg_8_0)
+function IsNil(arg_8_0)
 	return arg_8_0 == nil or arg_8_0:Equals(nil)
 end
 
-local var_0_11 = IsNil
-
-local function var_0_12(arg_9_0)
+function isnan(arg_9_0)
 	return arg_9_0 ~= arg_9_0
 end
 
-local var_0_13 = isnan
-
-local function var_0_14(arg_10_0)
-	string = var_1_10001
-
-	return var_1_10001.match(arg_10_0, ".*/")
+function GetDir(arg_10_0)
+	return string.match(arg_10_0, ".*/")
 end
 
-local var_0_15 = GetDir
-
-local function var_0_16(arg_11_0)
-	string = var_1_10001
-
-	return var_1_10001.match(arg_11_0, ".*/(.*)")
+function GetFileName(arg_11_0)
+	return string.match(arg_11_0, ".*/(.*)")
 end
 
-local var_0_17 = GetFileName
-
-local function var_0_18(arg_12_0)
-	pairs = var_1_10001
-
-	for iter_12_0, iter_12_1 in var_1_10001(arg_12_0) do
+function DumpTable(arg_12_0)
+	for iter_12_0, iter_12_1 in pairs(arg_12_0) do
 		if iter_12_1 ~= nil then
-			Debugger = var_1_10006
-			var_1_10006 = var_1_10006.Log
-
-			local var_12_0 = "Key: {0}, Value: {1}"
-
-			tostring = var_1_10009
-			var_1_10009 = var_1_10009(iter_12_0)
-			tostring = var_1_10010
-
-			var_1_10006(var_12_0, var_1_10009, var_1_10010(iter_12_1))
+			Debugger.Log("Key: {0}, Value: {1}", tostring(iter_12_0), tostring(iter_12_1))
 		else
-			Debugger = var_1_10006
-			var_1_10006 = var_1_10006.Log
-
-			local var_12_1 = "Key: {0}, Value nil"
-
-			tostring = var_1_10009
-
-			var_1_10006(var_12_1, var_1_10009(iter_12_0))
+			Debugger.Log("Key: {0}, Value nil", tostring(iter_12_0))
 		end
 	end
 
 	return
 end
 
-local var_0_19 = DumpTable
-
-local function var_0_20(arg_13_0)
+function PrintTable(arg_13_0)
 	if arg_13_0 == nil then
 		return "nil"
 	end
@@ -232,274 +133,133 @@ local function var_0_20(arg_13_0)
 	local var_13_0 = {}
 
 	return (function(arg_14_0, arg_14_1)
-		type = var_2_10002
-
-		if var_2_10002(arg_14_0) ~= "table" then
+		if type(arg_14_0) ~= "table" then
 			return arg_14_0
 		end
 
 		if var_13_0[arg_14_0] then
-			tostring = var_2
-
-			return var_2(arg_14_0)
+			return tostring(arg_14_0)
 		end
 
 		var_13_0[arg_14_0] = true
 
-		local var_14_0 = {}
-
-		pairs = var_3
-
-		for iter_14_0, iter_14_1 in var_3(arg_14_0) do
-			type = var_2_10008
-
-			if var_2_10008(iter_14_1) == "table" then
-				table = var_2_10008
-				var_2_10008 = var_2_10008.insert
-
-				local var_14_1 = var_14_0
-
-				string = var_2_10011
-
-				var_2_10008(var_14_1, var_2_10011.format("%s[%s] = %s", arg_14_1 .. "  ", iter_14_0, var_0(iter_14_1, arg_14_1 .. "  ")))
+		for iter_14_0, iter_14_1 in pairs(arg_14_0) do
+			if type(iter_14_1) == "table" then
+				table.insert({}, string.format("%s[%s] = %s", arg_14_1 .. "  ", iter_14_0, var_0(iter_14_1, arg_14_1 .. "  ")))
 			else
-				table = var_2_10008
-				var_2_10008 = var_2_10008.insert
-
-				local var_14_2 = var_14_0
-
-				string = var_2_10011
-				var_2_10011 = var_2_10011.format
-
-				local var_14_3 = "%s[%s] = %s"
-				local var_14_4 = arg_14_1 .. "  "
-				local var_14_5 = iter_14_0
-
-				tostring = var_2_10016
-
-				var_2_10008(var_14_2, var_2_10011(var_14_3, var_14_4, var_14_5, var_2_10016(iter_14_1)))
+				table.insert({}, string.format("%s[%s] = %s", arg_14_1 .. "  ", iter_14_0, tostring(iter_14_1)))
 			end
 		end
 
-		if #var_14_0 == 0 then
+		if #{} == 0 then
 			return "{}"
 		else
-			string = var_3
-
-			local var_14_6 = var_3.format
-			local var_14_7 = "{\n%s\n%s}"
-
-			table = iter_14_0
-
-			return var_14_6(var_14_7, iter_14_0.concat(var_14_0, "\n"), arg_14_1)
+			return string.format("{\n%s\n%s}", table.concat({}, "\n"), arg_14_1)
 		end
 
 		return
 	end)(arg_13_0, "")
 end
 
-local var_0_21 = PrintTable
+function PrintLua(arg_15_0, arg_15_1)
+	arg_15_1 = arg_15_1 or _G
 
-local function var_0_22(arg_15_0, arg_15_1)
-	local var_15_0
-
-	if not arg_15_1 then
-		_G = arg_15_1
-	end
-
-	string = var_1_10003
-
-	for iter_15_0 in var_1_10003.gmatch(arg_15_0, "%w+") do
+	for iter_15_0 in string.gmatch(arg_15_0, "%w+") do
 		arg_15_1 = arg_15_1[iter_15_0]
 	end
 
 	if arg_15_1 == nil then
-		Debugger = var_3
-
-		var_3.Log("Lua Module {0} not exists", arg_15_0)
+		Debugger.Log("Lua Module {0} not exists", arg_15_0)
 
 		return
 	end
 
-	Debugger = var_3
+	Debugger.Log("-----------------Dump Table {0}-----------------", arg_15_0)
 
-	var_3.Log("-----------------Dump Table {0}-----------------", arg_15_0)
-
-	type = var_3
-
-	if var_3(var_2) == "table" then
-		pairs = var_3
-
-		for iter_15_1, iter_15_2 in var_3(var_2) do
-			Debugger = var_1_10008
-			var_1_10008 = var_1_10008.Log
-
-			local var_15_1 = "Key: {0}, Value: {1}"
-			local var_15_2 = iter_15_1
-
-			tostring = var_1_10012
-
-			var_1_10008(var_15_1, var_15_2, var_1_10012(iter_15_2))
+	if type(arg_15_1) == "table" then
+		for iter_15_1, iter_15_2 in pairs(arg_15_1) do
+			Debugger.Log("Key: {0}, Value: {1}", iter_15_1, tostring(iter_15_2))
 		end
 	end
 
-	getmetatable = var_3
+	local var_15_1 = getmetatable(arg_15_1)
 
-	local var_15_3 = var_3(var_2)
+	Debugger.Log("-----------------Dump meta {0}-----------------", arg_15_0)
 
-	Debugger = var_4
-
-	var_4.Log("-----------------Dump meta {0}-----------------", arg_15_0)
-
-	while var_15_3 ~= nil and var_15_3 ~= var_2 do
-		pairs = var_4
-
-		for iter_15_3, iter_15_4 in var_4(var_15_3) do
+	while var_15_1 ~= nil and var_15_1 ~= arg_15_1 do
+		for iter_15_3, iter_15_4 in pairs(var_15_1) do
 			if iter_15_3 ~= nil then
-				Debugger = var_1_10009
-				var_1_10009 = var_1_10009.Log
-
-				local var_15_4 = "Key: {0}, Value: {1}"
-
-				tostring = var_1_10012
-				var_1_10012 = var_1_10012(iter_15_3)
-				tostring = var_1_10013
-
-				var_1_10009(var_15_4, var_1_10012, var_1_10013(iter_15_4))
+				Debugger.Log("Key: {0}, Value: {1}", tostring(iter_15_3), tostring(iter_15_4))
 			end
 		end
 
-		getmetatable = var_4
-		var_15_3 = var_4(var_15_3)
+		var_15_1 = getmetatable(var_15_1)
 	end
 
-	Debugger = var_4
-
-	var_4.Log("-----------------Dump meta Over-----------------")
-
-	Debugger = var_4
-
-	var_4.Log("-----------------Dump Table Over-----------------")
+	Debugger.Log("-----------------Dump meta Over-----------------")
+	Debugger.Log("-----------------Dump Table Over-----------------")
 
 	return
 end
 
-local var_0_23 = PrintLua
-
-local function var_0_24(arg_16_0)
-	type = var_1_10001
-
-	return var_1_10001(arg_16_0) == "string"
+function IsString(arg_16_0)
+	return type(arg_16_0) == "string"
 end
 
-local var_0_25 = IsString
-
-local function var_0_26(arg_17_0)
-	type = var_1_10001
-
-	return var_1_10001(arg_17_0) == "number"
+function IsNumber(arg_17_0)
+	return type(arg_17_0) == "number"
 end
 
-local var_0_27 = IsNumber
-
-local function var_0_28(arg_18_0)
-	return arg_18_0 and true or false
+function tobool(arg_18_0)
+	return not not arg_18_0
 end
 
-local var_0_29 = tobool
-
-local function var_0_30(...)
-	IsUnityEditor = var_1_10000
-
-	if var_1_10000 then
-		Debugger = var_1_10000
-		var_1_10000 = var_1_10000.LogWarning
-		debug = var_1_10002
-		var_1_10002 = var_1_10002.traceback
-		printEx = var_1_10004
-
-		var_1_10000(var_1_10002(var_1_10004(...), 2))
+function warning(...)
+	if IsUnityEditor then
+		Debugger.LogWarning(debug.traceback(printEx(...), 2))
 	else
-		Debugger = var_1_10000
-
-		local var_19_0 = var_1_10000.LogWarning
-
-		printEx = var_1_10002
-
-		var_19_0(var_1_10002(...))
+		Debugger.LogWarning(printEx(...))
 	end
 
 	return
 end
 
-local var_0_31 = warning
-
-local function var_0_32(...)
-	IsUnityEditor = var_1_10000
-
-	if var_1_10000 then
-		Debugger = var_1_10000
-		var_1_10000 = var_1_10000.LogError
-		debug = var_1_10002
-		var_1_10002 = var_1_10002.traceback
-		printEx = var_1_10004
-
-		var_1_10000(var_1_10002(var_1_10004(...)))
+function errorMsg(...)
+	if IsUnityEditor then
+		Debugger.LogError(debug.traceback(printEx(...)))
 	else
-		Debugger = var_1_10000
-
-		local var_20_0 = var_1_10000.LogError
-
-		printEx = var_1_10002
-
-		var_20_0(var_1_10002(...))
+		Debugger.LogError(printEx(...))
 	end
 
 	return
 end
 
-local var_0_33 = errorMsg
+function BuildVector3(arg_21_0)
+	local var_21_0 = arg_21_0[1] or 0
+	local var_21_1 = arg_21_0[2] or 0
+	local var_21_2 = arg_21_0[3] or 0
 
-local function var_0_34(arg_21_0)
-	Vector3 = var_1_10001
-
-	return var_1_10001(arg_21_0[1], arg_21_0[2], arg_21_0[3])
+	return Vector3(var_21_0, var_21_1, var_21_2)
 end
 
-local var_0_35 = BuildVector3
+function ShowFuncInfo(arg_22_0)
+	local var_22_0 = debug.getinfo(arg_22_0)
 
-local function var_0_36(arg_22_0)
-	debug = var_1_10001
-
-	local var_22_0 = var_1_10001.getinfo(arg_22_0)
-
-	string = var_1_10002
-
-	return var_1_10002.format("file:%s#%d", var_22_0.source, var_22_0.linedefined)
+	return string.format("file:%s#%d", var_22_0.source, var_22_0.linedefined)
 end
 
-local var_0_37 = ShowFuncInfo
-
-local function var_0_38(arg_23_0)
-	local var_23_0 = {}
-
+function String2Table(arg_23_0)
 	for iter_23_0 in arg_23_0:gmatch(".") do
-		table = var_1_10006
-
-		var_1_10006.insert(var_23_0, iter_23_0)
+		table.insert({}, iter_23_0)
 	end
 
-	return var_23_0
+	return {}
 end
 
-require = String2Table
+local var_0_7 = require("bit")
 
-local var_0_39 = var_7("bit")
-
-local function var_0_40(arg_24_0)
-	type = var_1_10001
-
-	if var_1_10001(arg_24_0) ~= "string" then
+function unicode_to_utf8(arg_24_0)
+	if type(arg_24_0) ~= "string" then
 		return arg_24_0
 	end
 
@@ -507,84 +267,42 @@ local function var_0_40(arg_24_0)
 	local var_24_1 = 1
 
 	while true do
-		string = var_24_2
-
-		local var_24_2 = var_24_2.byte(arg_24_0, var_24_1)
+		local var_24_2 = string.byte(arg_24_0, var_24_1)
 		local var_24_3
 
-		if var_24_2 ~= nil then
-			string = var_5
-
-			if var_5.sub(arg_24_0, var_24_1, var_24_1 + 1) == "\\u" then
-				tonumber = var_5
-
-				local var_24_4 = "0x"
-
-				string = var_8
-				var_24_3 = var_5(var_24_4 .. var_8.sub(arg_24_0, var_24_1 + 2, var_24_1 + 5))
-				var_24_1 = var_24_1 + 6
-
-				goto label_24_0
-			end
-		end
-
-		if var_24_2 ~= nil then
+		if var_24_2 ~= nil and string.sub(arg_24_0, var_24_1, var_24_1 + 1) == "\\u" then
+			var_24_3 = tonumber("0x" .. string.sub(arg_24_0, var_24_1 + 2, var_24_1 + 5))
+			var_24_1 = var_24_1 + 6
+		elseif var_24_2 ~= nil then
 			var_24_3 = var_24_2
 			var_24_1 = var_24_1 + 1
 		else
 			break
 		end
 
-		::label_24_0::
-
 		if var_24_3 <= 127 then
-			local var_24_5 = var_24_0
-
-			string = var_6
-			var_24_0 = var_24_5 .. var_6.char(var_0_39.band(var_24_3, 127))
+			var_24_0 = var_24_0 .. string.char(var_0_7.band(var_24_3, 127))
 		elseif var_24_3 >= 128 and var_24_3 <= 2047 then
-			local var_24_6 = var_24_0
-
-			string = var_6
-
-			local var_24_7 = var_24_6 .. var_6.char(var_0_39.bor(192, var_0_39.band(var_0_39.rshift(var_24_3, 6), 31)))
-
-			string = var_6
-			var_24_0 = var_24_7 .. var_6.char(var_0_39.bor(128, var_0_39.band(var_24_3, 63)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(192, var_0_7.band(var_0_7.rshift(var_24_3, 6), 31)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_24_3, 63)))
 		elseif var_24_3 >= 2048 and var_24_3 <= 65535 then
-			local var_24_8 = var_24_0
-
-			string = var_6
-
-			local var_24_9 = var_24_8 .. var_6.char(var_0_39.bor(224, var_0_39.band(var_0_39.rshift(var_24_3, 12), 15)))
-
-			string = var_6
-
-			local var_24_10 = var_24_9 .. var_6.char(var_0_39.bor(128, var_0_39.band(var_0_39.rshift(var_24_3, 6), 63)))
-
-			string = var_6
-			var_24_0 = var_24_10 .. var_6.char(var_0_39.bor(128, var_0_39.band(var_24_3, 63)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(224, var_0_7.band(var_0_7.rshift(var_24_3, 12), 15)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_0_7.rshift(var_24_3, 6), 63)))
+			var_24_0 = var_24_0 .. string.char(var_0_7.bor(128, var_0_7.band(var_24_3, 63)))
 		end
 	end
 
 	return var_24_0 .. "\x00"
 end
 
-local var_0_41 = unicode_to_utf8
-
-local function var_0_42(arg_25_0)
-	type = var_1_10001
-
-	if var_1_10001(arg_25_0) ~= "string" then
+function utf8_to_unicode(arg_25_0)
+	if type(arg_25_0) ~= "string" then
 		return arg_25_0
 	end
 
 	local var_25_0 = ""
 	local var_25_1 = 1
-
-	string = var_3
-
-	local var_25_2 = var_3.byte(arg_25_0, var_25_1)
+	local var_25_2 = string.byte(arg_25_0, 1)
 	local var_25_3 = 0
 
 	while var_25_2 ~= nil do
@@ -594,63 +312,30 @@ local function var_0_42(arg_25_0)
 		if var_25_2 >= 0 and var_25_2 <= 127 then
 			var_25_4 = var_25_2
 			var_25_5 = 0
-		elseif var_0_39.band(var_25_2, 224) == 192 then
-			local var_25_6 = 0
-
-			var_1_10008 = 0
-
-			local var_25_7 = var_0_39.band(var_25_2, var_0_39.rshift(255, 3))
-
+		elseif var_0_7.band(var_25_2, 224) == 192 then
 			var_25_1 = var_25_1 + 1
-			string = var_9
-			var_25_2 = var_9.byte(arg_25_0, var_25_1)
-			var_1_10008 = var_0_39.band(var_25_2, var_0_39.rshift(255, 2))
-			var_25_4 = var_0_39.bor(var_1_10008, var_0_39.lshift(var_0_39.band(var_25_7, var_0_39.rshift(255, 6)), 6))
-			var_25_5 = var_0_39.rshift(var_25_7, 2)
-		elseif var_0_39.band(var_25_2, 240) == 224 then
-			local var_25_8 = 0
-
-			var_1_10008 = 0
-
-			local var_25_9 = 0
-			local var_25_10 = var_0_39.band(var_25_2, var_0_39.rshift(255, 3))
-
+			var_25_2 = string.byte(arg_25_0, var_25_1)
+			var_25_4 = var_0_7.bor(var_0_7.band(var_25_2, var_0_7.rshift(255, 2)), var_0_7.lshift(var_0_7.band(0, var_0_7.rshift(255, 6)), 6))
+			var_25_5 = var_0_7.rshift(var_0_7.band(var_25_2, var_0_7.rshift(255, 3)), 2)
+		elseif var_0_7.band(var_25_2, 240) == 224 then
 			var_25_1 = var_25_1 + 1
-			string = var_10
-			var_25_2 = var_10.byte(arg_25_0, var_25_1)
-			var_1_10008 = var_0_39.band(var_25_2, var_0_39.rshift(255, 2))
+			var_25_2 = string.byte(arg_25_0, var_25_1)
 			var_25_1 = var_25_1 + 1
-			string = var_10
-			var_25_2 = var_10.byte(arg_25_0, var_25_1)
-
-			local var_25_11 = var_0_39.band(var_25_2, var_0_39.rshift(255, 2))
-
-			var_25_4 = var_0_39.bor(var_0_39.lshift(var_0_39.band(var_1_10008, var_0_39.rshift(255, 6)), 6), var_25_11)
-			var_25_5 = var_0_39.bor(var_0_39.lshift(var_25_10, 4), var_0_39.rshift(var_1_10008, 2))
+			var_25_2 = string.byte(arg_25_0, var_25_1)
+			var_25_4 = var_0_7.bor(var_0_7.lshift(var_0_7.band(0, var_0_7.rshift(255, 6)), 6), (var_0_7.band(var_25_2, var_0_7.rshift(255, 2))))
+			var_25_5 = var_0_7.bor(var_0_7.lshift(var_0_7.band(var_25_2, var_0_7.rshift(255, 3)), 4), var_0_7.rshift(var_0_7.band(var_25_2, var_0_7.rshift(255, 2)), 2))
 		end
 
-		local var_25_12 = var_25_0
-
-		string = var_1_10008
-		var_25_0 = var_25_12 .. var_1_10008.format("\\u%02x%02x", var_25_5, var_25_4)
-
-		if var_25_5 == 0 then
-			var_25_3 = var_25_3 + 1
-		else
-			var_25_3 = var_25_3 + 2
-		end
-
+		var_25_0 = var_25_0 .. string.format("\\u%02x%02x", var_25_5, var_25_4)
+		var_25_3 = var_25_5 == 0 and var_25_3 + 1 or var_25_3 + 2
 		var_25_1 = var_25_1 + 1
-		string = var_25_12
-		var_25_2 = var_25_12.byte(arg_25_0, var_25_1)
+		var_25_2 = string.byte(arg_25_0, var_25_1)
 	end
 
 	return var_25_0, var_25_3
 end
 
-local var_0_43 = utf8_to_unicode
-
-local function var_0_44(arg_26_0)
+function utf8_size(arg_26_0)
 	if not arg_26_0 then
 		return 0
 	elseif arg_26_0 > 240 then
@@ -666,94 +351,53 @@ local function var_0_44(arg_26_0)
 	return
 end
 
-local var_0_45 = utf8_size
+function utf8_len(arg_27_0)
+	local var_27_0 = 0
 
-local function var_0_46(arg_27_0)
-	local var_27_0 = 1
-	local var_27_1 = 0
-	local var_27_2 = #arg_27_0
+	while 1 <= #arg_27_0 do
+		local var_27_1 = 1 + utf8_size((string.byte(arg_27_0, 1)))
 
-	while var_27_0 <= var_27_2 do
-		string = var_1_10004
-		var_1_10004 = var_1_10004.byte(arg_27_0, var_27_0)
-		utf8_size = var_1_10005
-		var_27_0 = var_27_0 + var_1_10005(var_1_10004)
-		var_27_1 = var_27_1 + 1
+		var_27_0 = var_27_0 + 1
 	end
 
-	return var_27_1
+	return var_27_0
 end
 
-local var_0_47 = utf8_len
-
-local function var_0_48(arg_28_0, ...)
-	if arg_28_0 then
-		type = var_1_10001
-
-		if var_1_10001(arg_28_0) == "function" then
-			return arg_28_0(...)
-		end
+function existCall(arg_28_0, ...)
+	if arg_28_0 and type(arg_28_0) == "function" then
+		return arg_28_0(...)
 	end
 
 	return
 end
 
-local var_0_49 = existCall
-
-local function var_0_50(...)
-	local var_29_0 = {}
-
-	select = var_1_10001
-	var_29_0.len = var_1_10001("#", ...)
-	var_29_0[1] = ...
-
-	return var_29_0
+function packEx(...)
+	return {
+		len = select("#", ...),
+		...
+	}
 end
 
-local var_0_51 = packEx
-
-local function var_0_52(arg_30_0)
-	unpack = var_1_10001
-
-	return var_1_10001(arg_30_0, 1, arg_30_0.len)
+function unpackEx(arg_30_0)
+	return unpack(arg_30_0, 1, arg_30_0.len)
 end
 
-local var_0_53 = unpackEx
-
-local function var_0_54(...)
-	packEx = var_1_10000
-
-	local var_31_0 = var_1_10000(...)
+function printEx(...)
+	local var_31_0 = packEx(...)
 
 	for iter_31_0 = 1, var_31_0.len do
-		tostring = var_1_10005
-		var_31_0[iter_31_0] = var_1_10005(var_31_0[iter_31_0])
+		var_31_0[iter_31_0] = tostring(var_31_0[iter_31_0])
 	end
 
-	table = var_1
-
-	return var_1.concat(var_31_0, " ")
+	return table.concat(var_31_0, " ")
 end
 
-local var_0_55 = printEx
+function envFunc(arg_32_0, arg_32_1, ...)
+	assert(type(arg_32_0) == "table")
 
-local function var_0_56(arg_32_0, arg_32_1, ...)
-	assert = var_1_10002
-	type = var_1_10004
+	local var_32_0 = getfenv(arg_32_1)
 
-	var_1_10002(var_1_10004(arg_32_0) == "table")
-
-	getfenv = var_1_10002
-
-	local var_32_0 = var_1_10002(arg_32_1)
-
-	setfenv = var_1_10003
-
-	local var_32_1 = arg_32_1
-
-	setmetatable = var_6
-
-	var_1_10003(var_32_1, var_6({}, {
+	setfenv(arg_32_1, setmetatable({}, {
 		__index = function(arg_33_0, arg_33_1)
 			if arg_32_0[arg_33_1] ~= nil then
 				return arg_32_0[arg_33_1]
@@ -769,103 +413,56 @@ local function var_0_56(arg_32_0, arg_32_1, ...)
 			return
 		end
 	}))
+	setfenv(arg_32_1, (getfenv(arg_32_1)))
 
-	packEx = var_1_10003
-
-	local var_32_2 = var_1_10003(arg_32_1(...))
-
-	setfenv = var_4
-
-	var_4(arg_32_1, var_32_0)
-
-	unpackEx = var_4
-
-	return var_4(var_32_2)
+	return unpackEx((packEx(arg_32_1(...))))
 end
 
-local var_0_57 = envFunc
-
-local function var_0_58(arg_35_0, arg_35_1)
-	if arg_35_0 ~= nil then
-		type = var_1_10002
-
-		local var_35_0
-
-		if var_1_10002(arg_35_0) ~= arg_35_1 then
-			var_35_0 = false
-		else
-			var_35_0 = true
-		end
-
-		return var_35_0
-	end
+local function var_0_8(arg_35_0, arg_35_1)
+	return arg_35_0 ~= nil and type(arg_35_0) == arg_35_1
 end
 
-local function var_0_59(arg_36_0, arg_36_1, arg_36_2)
-	setmetatable = var_1_10003
-
-	local var_36_0 = var_1_10003({
+function injectClassProcess(arg_36_0, arg_36_1, arg_36_2)
+	setmetatable(arg_36_0, (setmetatable({
 		__index = function(arg_37_0, arg_37_1)
-			rawget = var_2_10002
+			local var_37_0 = rawget(arg_37_0, "class")
 
-			local var_37_0 = var_2_10002(arg_37_0, "class")
-
-			if var_0_58(arg_36_1[arg_37_1], "function") then
+			if var_0_8(arg_36_1[arg_37_1], "function") then
 				return var_37_0[arg_37_1]
-			elseif var_0_58(var_37_0[arg_37_1], "function") then
+			elseif var_0_8(var_37_0[arg_37_1], "function") then
 				return function(...)
 					return arg_36_2(var_37_0[arg_37_1], ...)
 				end
 			else
-				rawget = var_3
+				local var_37_1 = rawget(arg_37_0, arg_37_1)
 
-				if var_3(arg_37_0, arg_37_1) == nil then
+				if var_37_1 == nil then
 					return var_37_0[arg_37_1]
 				else
-					return var_3
+					return var_37_1
 				end
 			end
 
 			return
 		end
-	}, arg_36_0.class)
-
-	setmetatable = var_1_10004
-
-	var_1_10004(arg_36_0, var_36_0)
+	}, arg_36_0.class)))
 
 	return
 end
 
-local var_0_60 = injectClassProcess
+function cloneRawTableFormClass(arg_39_0)
+	setmetatable(arg_39_0, nil)
 
-local function var_0_61(arg_39_0)
-	local var_39_0 = {}
-
-	getmetatable = var_1_10002
-
-	local var_39_1 = var_1_10002(arg_39_0)
-
-	setmetatable = var_1_10003
-
-	var_1_10003(arg_39_0, nil)
-
-	pairs = var_1_10003
-
-	for iter_39_0, iter_39_1 in var_1_10003(arg_39_0) do
-		var_39_0[iter_39_0] = iter_39_1
+	for iter_39_0, iter_39_1 in pairs(arg_39_0) do
+		({})[iter_39_0] = iter_39_1
 	end
 
-	setmetatable = var_3
+	setmetatable(arg_39_0, (getmetatable(arg_39_0)))
 
-	var_3(arg_39_0, var_39_1)
-
-	return var_39_0
+	return {}
 end
 
-local var_0_62 = cloneRawTableFormClass
-
-local function var_0_63(arg_40_0)
+function noEmptyStr(arg_40_0)
 	if arg_40_0 and arg_40_0 == "" then
 		return nil
 	else
@@ -874,7 +471,5 @@ local function var_0_63(arg_40_0)
 
 	return
 end
-
-local var_0_64 = noEmptyStr
 
 return

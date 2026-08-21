@@ -188,3 +188,10 @@ SC_REFRESH_SHOP_DATA =
     {"shop_type", "int8", "商店类型标签"}, 
     {"shop_data", pt_shop_data, "商城信息列表", "repeated"},
 }
+ 
+--- *s2c* 回收道具面板 17021
+SC_ITEM_RECYCLE_PANEL =
+{
+    17021, 
+    {"info_list", pt_item_recycle_info, "道具信息", "repeated"},
+}

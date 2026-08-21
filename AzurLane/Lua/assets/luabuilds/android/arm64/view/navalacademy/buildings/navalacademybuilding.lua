@@ -1,48 +1,22 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NavalAcademyBuilding")
+﻿local var_0_0 = class("NavalAcademyBuilding")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	pg = var_1_10002
-
-	var_1_10002.DelegateInfo.New(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 
 	arg_1_0.parent = arg_1_1
-
-	local var_1_0 = arg_1_1._tf
-
-	arg_1_0._tf = var_2.Find(var_1_0, "academyMap/map/" .. arg_1_0:GetGameObjectName())
-	findTF = var_2
-
-	local var_1_1 = var_2(arg_1_0._tf, "name/Text")
-	local var_1_2 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTxt = var_1_2(var_1_1, var_5(var_1_10007))
-	findTF = var_2
-	arg_1_0.tip = var_2(arg_1_0._tf, "tip")
+	arg_1_0._tf = arg_1_1._tf:Find("academyMap/map/" .. arg_1_0:GetGameObjectName())
+	arg_1_0.nameTxt = findTF(arg_1_0._tf, "name/Text"):GetComponent(typeof(Text))
+	arg_1_0.tip = findTF(arg_1_0._tf, "tip")
 
 	return
 end
 
 function var_0_0.Init(arg_2_0)
-	onButton = var_1_10001
-
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0._tf
-
-	local function var_2_2()
-		local var_3_0 = arg_2_0
-
-		var_0.OnClick(var_3_0)
+	onButton(arg_2_0, arg_2_0._tf, function()
+		arg_2_0:OnClick()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_2_0, var_2_1, var_2_2, var_1_10006)
+	end, SFX_PANEL)
 
 	arg_2_0.nameTxt.text = arg_2_0:GetTitle()
 
@@ -53,9 +27,7 @@ function var_0_0.Init(arg_2_0)
 end
 
 function var_0_0.RefreshTip(arg_4_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_4_0.tip, arg_4_0:IsTip())
+	setActive(arg_4_0.tip, arg_4_0:IsTip())
 
 	return
 end
@@ -77,25 +49,19 @@ function var_0_0.GetTitle(arg_8_0)
 end
 
 function var_0_0.GetGameObjectName(arg_9_0)
-	assert = var_1_10001
-
-	var_1_10001(false)
+	assert(false)
 
 	return
 end
 
 function var_0_0.emit(arg_10_0, ...)
-	local var_10_0 = arg_10_0.parent
-
-	var_1.emit(var_10_0, ...)
+	arg_10_0.parent:emit(...)
 
 	return
 end
 
 function var_0_0.Dispose(arg_11_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_11_0)
+	pg.DelegateInfo.Dispose(arg_11_0)
 
 	return
 end

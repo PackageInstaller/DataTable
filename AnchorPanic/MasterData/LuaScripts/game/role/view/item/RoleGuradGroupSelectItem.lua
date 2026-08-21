@@ -14,18 +14,27 @@ end
 
 function setData(self, param)
     super.setData(self, param)
-    self.heroVo = self.data:getDataVo()
-    self.mImgHero:SetImg(UrlManager:getHeroBodyImgUrl(self.heroVo:getHeroModel()))
+    self.mDataVo = self.data:getDataVo()
+    self.mGuradType = self.data:getArgs()
 
-    self.mImgSelect:SetActive(self.data:getSelect())
+    if self.mGuradType == role.GuradType.Gurad_hero then
+        self.mImgHero:SetImg(UrlManager:getHeroBodyImgUrl(self.mDataVo:getHeroModel()))
 
-    local groupData = role.RoleManager:getHeroGroup()
-    self.mImgUse:SetActive(false)
-    for k, v in pairs(groupData) do
-        if v == self.heroVo.id then
-            self.mImgUse:SetActive(true)
-            break
+        self.mImgSelect:SetActive(self.data:getSelect())
+
+        local groupData = role.RoleManager:getHeroGroup()
+        self.mImgUse:SetActive(false)
+        for k, v in pairs(groupData) do
+            if v == self.mDataVo.id then
+                self.mImgUse:SetActive(true)
+                break
+            end
         end
+    end
+
+    if self.mGuradType == role.GuradType.Gurad_painting then
+        self.mImgHero:SetImg(UrlManager:getPaintingIconPath(self.mDataVo.icon))
+        self.mImgSelect:SetActive(self.data:getSelect())
     end
 end
 
@@ -35,7 +44,7 @@ function addAllUIEvent(self)
 end
 
 function onClickItemHandler(self)
-    GameDispatcher:dispatchEvent(EventName.HERO_GROUP_SELECT_ONE, { heroId = self.heroVo.id })
+    GameDispatcher:dispatchEvent(EventName.HERO_GROUP_SELECT_ONE, { selectId = self.mGuradType .. "|" .. self.mDataVo.id })
 end
 
 function deActive(self)

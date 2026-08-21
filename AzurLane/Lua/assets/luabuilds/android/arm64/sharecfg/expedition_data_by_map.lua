@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "expedition_data_by_map") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "expedition_data_by_map"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.expedition_data_by_map = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.expedition_data_by_map
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.expedition_data_by_map
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.expedition_data_by_map = rawget(pg, "expedition_data_by_map") or setmetatable({
+	__name = "expedition_data_by_map"
+}, confNEO)
+pg.expedition_data_by_map.__namecode__ = true
+pg.expedition_data_by_map.all = {
 	1,
 	2,
 	3,
@@ -242,6 +215,12 @@ var_0_4.all = {
 	2040001,
 	2040002,
 	2040003,
+	2050001,
+	2050002,
+	2050011,
+	2050012,
+	2050025,
+	2050026,
 	2100000,
 	2100001,
 	2100010,
@@ -383,25 +362,11 @@ var_0_4.all = {
 	2200170,
 	2200171
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.expedition_data_by_map = {}
+pg.base = pg.base or {}
+pg.base.expedition_data_by_map = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.expedition_data_by_map
-
-	var_1_0[1] = {
+	pg.base.expedition_data_by_map[1] = {
 		map = 1,
 		name = "虎！虎！虎！",
 		pos_type = 0,
@@ -452,11 +417,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.expedition_data_by_map
-
-	var_1_1[2] = {
+	pg.base.expedition_data_by_map[2] = {
 		map = 2,
 		name = "珊瑚海首秀",
 		pos_type = 0,
@@ -507,11 +468,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.expedition_data_by_map
-
-	var_1_2[3] = {
+	pg.base.expedition_data_by_map[3] = {
 		map = 3,
 		name = "决战中途岛",
 		pos_type = 0,
@@ -569,11 +526,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.expedition_data_by_map
-
-	var_1_3[4] = {
+	pg.base.expedition_data_by_map[4] = {
 		map = 4,
 		name = "所罗门的噩梦上",
 		pos_type = 0,
@@ -641,11 +594,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.expedition_data_by_map
-
-	var_1_4[5] = {
+	pg.base.expedition_data_by_map[5] = {
 		map = 5,
 		name = "所罗门的噩梦中",
 		pos_type = 0,
@@ -715,11 +664,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.expedition_data_by_map
-
-	var_1_5[6] = {
+	pg.base.expedition_data_by_map[6] = {
 		map = 6,
 		name = "所罗门的噩梦下",
 		pos_type = 0,
@@ -799,11 +744,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.expedition_data_by_map
-
-	var_1_6[7] = {
+	pg.base.expedition_data_by_map[7] = {
 		map = 7,
 		name = "混沌之夜",
 		pos_type = 0,
@@ -889,11 +830,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.expedition_data_by_map
-
-	var_1_7[8] = {
+	pg.base.expedition_data_by_map[8] = {
 		map = 8,
 		name = "科曼多尔海战",
 		pos_type = 0,
@@ -981,11 +918,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.expedition_data_by_map
-
-	var_1_8[9] = {
+	pg.base.expedition_data_by_map[9] = {
 		map = 9,
 		name = "库拉湾海战",
 		pos_type = 0,
@@ -1083,11 +1016,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.expedition_data_by_map
-
-	var_1_9[10] = {
+	pg.base.expedition_data_by_map[10] = {
 		map = 10,
 		name = "科隆班加拉岛夜战",
 		pos_type = 0,
@@ -1191,11 +1120,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.expedition_data_by_map
-
-	var_1_10[11] = {
+	pg.base.expedition_data_by_map[11] = {
 		map = 11,
 		name = "奥古斯塔皇后湾海战",
 		pos_type = 0,
@@ -1246,11 +1171,7 @@ var_0_4.base.expedition_data_by_map = {}
 		},
 		drop_by_map_display = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.expedition_data_by_map
-
-	var_1_11[12] = {
+	pg.base.expedition_data_by_map[12] = {
 		map = 12,
 		name = "马里亚纳风云上",
 		pos_type = 0,
@@ -1301,11 +1222,7 @@ var_0_4.base.expedition_data_by_map = {}
 		},
 		drop_by_map_display = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.expedition_data_by_map
-
-	var_1_12[13] = {
+	pg.base.expedition_data_by_map[13] = {
 		map = 13,
 		name = "马里亚纳风云下",
 		pos_type = 0,
@@ -1356,11 +1273,7 @@ var_0_4.base.expedition_data_by_map = {}
 		},
 		drop_by_map_display = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.expedition_data_by_map
-
-	var_1_13[14] = {
+	pg.base.expedition_data_by_map[14] = {
 		map = 14,
 		name = "苏里高夜战",
 		pos_type = 0,
@@ -1390,11 +1303,7 @@ var_0_4.base.expedition_data_by_map = {}
 		clouds_pos = {},
 		drop_by_map_display = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.expedition_data_by_map
-
-	var_1_14[15] = {
+	pg.base.expedition_data_by_map[15] = {
 		map = 15,
 		name = "恩加尼奥角海战",
 		pos_type = 0,
@@ -1424,11 +1333,7 @@ var_0_4.base.expedition_data_by_map = {}
 		clouds_pos = {},
 		drop_by_map_display = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.expedition_data_by_map
-
-	var_1_15[16] = {
+	pg.base.expedition_data_by_map[16] = {
 		map = 16,
 		name = "锡布延海战",
 		pos_type = 0,
@@ -1458,11 +1363,7 @@ var_0_4.base.expedition_data_by_map = {}
 		clouds_pos = {},
 		drop_by_map_display = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.expedition_data_by_map
-
-	var_1_16[201] = {
+	pg.base.expedition_data_by_map[201] = {
 		map = 201,
 		name = "虎！虎！虎！",
 		pos_type = 0,
@@ -1513,11 +1414,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.expedition_data_by_map
-
-	var_1_17[202] = {
+	pg.base.expedition_data_by_map[202] = {
 		map = 202,
 		name = "珊瑚海首秀",
 		pos_type = 0,
@@ -1568,11 +1465,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.expedition_data_by_map
-
-	var_1_18[203] = {
+	pg.base.expedition_data_by_map[203] = {
 		map = 203,
 		name = "决战中途岛",
 		pos_type = 0,
@@ -1623,11 +1516,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.expedition_data_by_map
-
-	var_1_19[204] = {
+	pg.base.expedition_data_by_map[204] = {
 		map = 204,
 		name = "所罗门的噩梦上",
 		pos_type = 0,
@@ -1682,11 +1571,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.expedition_data_by_map
-
-	var_1_20[205] = {
+	pg.base.expedition_data_by_map[205] = {
 		map = 205,
 		name = "所罗门的噩梦中",
 		pos_type = 0,
@@ -1737,11 +1622,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.expedition_data_by_map
-
-	var_1_21[206] = {
+	pg.base.expedition_data_by_map[206] = {
 		map = 206,
 		name = "所罗门的噩梦下",
 		pos_type = 0,
@@ -1796,11 +1677,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.expedition_data_by_map
-
-	var_1_22[207] = {
+	pg.base.expedition_data_by_map[207] = {
 		map = 207,
 		name = "混沌之夜",
 		pos_type = 0,
@@ -1855,11 +1732,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.expedition_data_by_map
-
-	var_1_23[208] = {
+	pg.base.expedition_data_by_map[208] = {
 		map = 208,
 		name = "科曼多尔海战",
 		pos_type = 0,
@@ -1910,11 +1783,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.expedition_data_by_map
-
-	var_1_24[209] = {
+	pg.base.expedition_data_by_map[209] = {
 		map = 209,
 		name = "库拉湾海战",
 		pos_type = 0,
@@ -1969,11 +1838,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.expedition_data_by_map
-
-	var_1_25[210] = {
+	pg.base.expedition_data_by_map[210] = {
 		map = 210,
 		name = "科隆班加拉岛夜战",
 		pos_type = 0,
@@ -2028,11 +1893,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.expedition_data_by_map
-
-	var_1_26[211] = {
+	pg.base.expedition_data_by_map[211] = {
 		map = 211,
 		name = "奥古斯塔皇后湾海战",
 		pos_type = 0,
@@ -2083,11 +1944,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.expedition_data_by_map
-
-	var_1_27[212] = {
+	pg.base.expedition_data_by_map[212] = {
 		map = 212,
 		name = "马里亚纳风云上",
 		pos_type = 0,
@@ -2138,11 +1995,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.expedition_data_by_map
-
-	var_1_28[213] = {
+	pg.base.expedition_data_by_map[213] = {
 		map = 213,
 		name = "马里亚纳风云下",
 		pos_type = 0,
@@ -2193,11 +2046,7 @@ var_0_4.base.expedition_data_by_map = {}
 		},
 		drop_by_map_display = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.expedition_data_by_map
-
-	var_1_29[214] = {
+	pg.base.expedition_data_by_map[214] = {
 		map = 214,
 		name = "苏里高夜战",
 		pos_type = 0,
@@ -2227,11 +2076,7 @@ var_0_4.base.expedition_data_by_map = {}
 		clouds_pos = {},
 		drop_by_map_display = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.expedition_data_by_map
-
-	var_1_30[10000] = {
+	pg.base.expedition_data_by_map[10000] = {
 		map = 10000,
 		name = "努力、希望和计划|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -2282,11 +2127,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.expedition_data_by_map
-
-	var_1_31[70000] = {
+	pg.base.expedition_data_by_map[70000] = {
 		map = 70000,
 		name = "大西洋商路",
 		pos_type = 0,
@@ -2337,11 +2178,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.expedition_data_by_map
-
-	var_1_32[0] = {
+	pg.base.expedition_data_by_map[0] = {
 		map = 80000,
 		name = "公会BOSS",
 		pos_type = 0,
@@ -2392,11 +2229,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.expedition_data_by_map
-
-	var_1_33[16] = {
+	pg.base.expedition_data_by_map[16] = {
 		map = 90000,
 		name = "镜面海域",
 		pos_type = 0,
@@ -2447,11 +2280,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.expedition_data_by_map
-
-	var_1_34[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 90001,
 		name = "模拟战",
 		pos_type = 0,
@@ -2502,11 +2331,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.expedition_data_by_map
-
-	var_1_35[1080000] = {
+	pg.base.expedition_data_by_map[1080000] = {
 		map = 1080000,
 		name = "异次元的访客|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -2557,11 +2382,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.expedition_data_by_map
-
-	var_1_36[1080010] = {
+	pg.base.expedition_data_by_map[1080010] = {
 		map = 1080010,
 		name = "异次元的访客|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -2612,11 +2433,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.expedition_data_by_map
-
-	var_1_37[1160001] = {
+	pg.base.expedition_data_by_map[1160001] = {
 		map = 1160001,
 		name = "梦幻的交汇|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -2667,11 +2484,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.expedition_data_by_map
-
-	var_1_38[1160011] = {
+	pg.base.expedition_data_by_map[1160011] = {
 		map = 1160011,
 		name = "梦幻的交汇-EX|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -2722,11 +2535,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.expedition_data_by_map
-
-	var_1_39[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 1450001,
 		name = "假日航线：再现|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -2777,11 +2586,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.expedition_data_by_map
-
-	var_1_40[18] = {
+	pg.base.expedition_data_by_map[18] = {
 		map = 1450002,
 		name = "假日航线：再现·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -2832,11 +2637,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.expedition_data_by_map
-
-	var_1_41[19] = {
+	pg.base.expedition_data_by_map[19] = {
 		map = 1450003,
 		name = "假日航线：再现·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -2887,11 +2688,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.expedition_data_by_map
-
-	var_1_42[1540001] = {
+	pg.base.expedition_data_by_map[1540001] = {
 		map = 1540001,
 		name = "响彻碧海的偶像歌|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -2942,11 +2739,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.expedition_data_by_map
-
-	var_1_43[1540002] = {
+	pg.base.expedition_data_by_map[1540002] = {
 		map = 1540002,
 		name = "响彻碧海的偶像歌·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -2997,11 +2790,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.expedition_data_by_map
-
-	var_1_44[1540003] = {
+	pg.base.expedition_data_by_map[1540003] = {
 		map = 1540003,
 		name = "响彻碧海的偶像歌·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3052,11 +2841,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.expedition_data_by_map
-
-	var_1_45[1590001] = {
+	pg.base.expedition_data_by_map[1590001] = {
 		map = 1590001,
 		name = "交汇世界的弧光|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3110,11 +2895,7 @@ var_0_4.base.expedition_data_by_map = {}
 			0.5
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.expedition_data_by_map
-
-	var_1_46[1590002] = {
+	pg.base.expedition_data_by_map[1590002] = {
 		map = 1590002,
 		name = "交汇世界的弧光·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3168,11 +2949,7 @@ var_0_4.base.expedition_data_by_map = {}
 			0.5
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.expedition_data_by_map
-
-	var_1_47[1590003] = {
+	pg.base.expedition_data_by_map[1590003] = {
 		map = 1590003,
 		name = "交汇世界的弧光·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3226,11 +3003,7 @@ var_0_4.base.expedition_data_by_map = {}
 			0.5
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.expedition_data_by_map
-
-	var_1_48[1590004] = {
+	pg.base.expedition_data_by_map[1590004] = {
 		map = 1590004,
 		name = "交汇世界的弧光·再现|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3284,11 +3057,7 @@ var_0_4.base.expedition_data_by_map = {}
 			0.5
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.expedition_data_by_map
-
-	var_1_49[1670001] = {
+	pg.base.expedition_data_by_map[1670001] = {
 		map = 1670001,
 		name = "远汇点作战|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3339,11 +3108,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.expedition_data_by_map
-
-	var_1_50[1670002] = {
+	pg.base.expedition_data_by_map[1670002] = {
 		map = 1670002,
 		name = "远汇点作战·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3394,11 +3159,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.expedition_data_by_map
-
-	var_1_51[1670003] = {
+	pg.base.expedition_data_by_map[1670003] = {
 		map = 1670003,
 		name = "远汇点作战·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3449,11 +3210,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.expedition_data_by_map
-
-	var_1_52[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 1690001,
 		name = "秘密遗迹群岛|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3504,11 +3261,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.expedition_data_by_map
-
-	var_1_53[18] = {
+	pg.base.expedition_data_by_map[18] = {
 		map = 1690002,
 		name = "秘密遗迹群岛·采集地|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3559,11 +3312,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.expedition_data_by_map
-
-	var_1_54[19] = {
+	pg.base.expedition_data_by_map[19] = {
 		map = 1690003,
 		name = "秘密遗迹群岛·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3614,11 +3363,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.expedition_data_by_map
-
-	var_1_55[20] = {
+	pg.base.expedition_data_by_map[20] = {
 		map = 1690004,
 		name = "秘密遗迹群岛·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3669,11 +3414,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.expedition_data_by_map
-
-	var_1_56[1700001] = {
+	pg.base.expedition_data_by_map[1700001] = {
 		map = 1700001,
 		name = "定向折叠·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3734,11 +3475,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.expedition_data_by_map
-
-	var_1_57[1700002] = {
+	pg.base.expedition_data_by_map[1700002] = {
 		map = 1700002,
 		name = "定向折叠·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3799,11 +3536,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.expedition_data_by_map
-
-	var_1_58[1700011] = {
+	pg.base.expedition_data_by_map[1700011] = {
 		map = 1700011,
 		name = "定向折叠·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3864,11 +3597,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.expedition_data_by_map
-
-	var_1_59[1700012] = {
+	pg.base.expedition_data_by_map[1700012] = {
 		map = 1700012,
 		name = "定向折叠·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3929,11 +3658,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.expedition_data_by_map
-
-	var_1_60[1700025] = {
+	pg.base.expedition_data_by_map[1700025] = {
 		map = 1700025,
 		name = "定向折叠·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -3984,11 +3709,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.expedition_data_by_map
-
-	var_1_61[1700026] = {
+	pg.base.expedition_data_by_map[1700026] = {
 		map = 1700026,
 		name = "定向折叠·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4039,11 +3760,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.expedition_data_by_map
-
-	var_1_62[1710001] = {
+	pg.base.expedition_data_by_map[1710001] = {
 		map = 1710001,
 		name = "湮烬尘墟·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4094,11 +3811,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.expedition_data_by_map
-
-	var_1_63[1710002] = {
+	pg.base.expedition_data_by_map[1710002] = {
 		map = 1710002,
 		name = "湮烬尘墟·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4149,11 +3862,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.expedition_data_by_map
-
-	var_1_64[1710011] = {
+	pg.base.expedition_data_by_map[1710011] = {
 		map = 1710011,
 		name = "湮烬尘墟·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4204,11 +3913,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.expedition_data_by_map
-
-	var_1_65[1710012] = {
+	pg.base.expedition_data_by_map[1710012] = {
 		map = 1710012,
 		name = "湮烬尘墟·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4259,11 +3964,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.expedition_data_by_map
-
-	var_1_66[1710025] = {
+	pg.base.expedition_data_by_map[1710025] = {
 		map = 1710025,
 		name = "湮烬尘墟·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4314,11 +4015,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.expedition_data_by_map
-
-	var_1_67[1710026] = {
+	pg.base.expedition_data_by_map[1710026] = {
 		map = 1710026,
 		name = "湮烬尘墟·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4369,11 +4066,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.expedition_data_by_map
-
-	var_1_68[1720001] = {
+	pg.base.expedition_data_by_map[1720001] = {
 		map = 1720001,
 		name = "空相交汇点·上行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4479,11 +4172,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.expedition_data_by_map
-
-	var_1_69[1720002] = {
+	pg.base.expedition_data_by_map[1720002] = {
 		map = 1720002,
 		name = "空相交汇点·下行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4589,11 +4278,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.expedition_data_by_map
-
-	var_1_70[1720011] = {
+	pg.base.expedition_data_by_map[1720011] = {
 		map = 1720011,
 		name = "空相交汇点·上行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4699,11 +4384,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.expedition_data_by_map
-
-	var_1_71[1720012] = {
+	pg.base.expedition_data_by_map[1720012] = {
 		map = 1720012,
 		name = "空相交汇点·下行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4809,11 +4490,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.expedition_data_by_map
-
-	var_1_72[1720025] = {
+	pg.base.expedition_data_by_map[1720025] = {
 		map = 1720025,
 		name = "空相交汇点·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4864,11 +4541,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.expedition_data_by_map
-
-	var_1_73[1720026] = {
+	pg.base.expedition_data_by_map[1720026] = {
 		map = 1720026,
 		name = "空相交汇点·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -4919,11 +4592,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.expedition_data_by_map
-
-	var_1_74[1730001] = {
+	pg.base.expedition_data_by_map[1730001] = {
 		map = 1730001,
 		name = "奏响鸢尾之歌|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -4974,11 +4643,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.expedition_data_by_map
-
-	var_1_75[1740001] = {
+	pg.base.expedition_data_by_map[1740001] = {
 		map = 1740001,
 		name = "愚者的天平·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5135,11 +4800,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.expedition_data_by_map
-
-	var_1_76[1740002] = {
+	pg.base.expedition_data_by_map[1740002] = {
 		map = 1740002,
 		name = "愚者的天平·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5281,11 +4942,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.expedition_data_by_map
-
-	var_1_77[1740011] = {
+	pg.base.expedition_data_by_map[1740011] = {
 		map = 1740011,
 		name = "愚者的天平·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5442,11 +5099,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.expedition_data_by_map
-
-	var_1_78[1740012] = {
+	pg.base.expedition_data_by_map[1740012] = {
 		map = 1740012,
 		name = "愚者的天平·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5588,11 +5241,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.expedition_data_by_map
-
-	var_1_79[1740025] = {
+	pg.base.expedition_data_by_map[1740025] = {
 		map = 1740025,
 		name = "愚者的天平·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5643,11 +5292,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.expedition_data_by_map
-
-	var_1_80[1740026] = {
+	pg.base.expedition_data_by_map[1740026] = {
 		map = 1740026,
 		name = "愚者的天平·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5698,11 +5343,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.expedition_data_by_map
-
-	var_1_81[1750001] = {
+	pg.base.expedition_data_by_map[1750001] = {
 		map = 1750001,
 		name = "须臾望月抄·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5753,11 +5394,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.expedition_data_by_map
-
-	var_1_82[1750002] = {
+	pg.base.expedition_data_by_map[1750002] = {
 		map = 1750002,
 		name = "须臾望月抄·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5808,11 +5445,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.expedition_data_by_map
-
-	var_1_83[1750011] = {
+	pg.base.expedition_data_by_map[1750011] = {
 		map = 1750011,
 		name = "须臾望月抄·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5863,11 +5496,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.expedition_data_by_map
-
-	var_1_84[1750012] = {
+	pg.base.expedition_data_by_map[1750012] = {
 		map = 1750012,
 		name = "须臾望月抄·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5918,11 +5547,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.expedition_data_by_map
-
-	var_1_85[9] = {
+	pg.base.expedition_data_by_map[9] = {
 		map = 1750025,
 		name = "须臾望月抄·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -5973,11 +5598,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.expedition_data_by_map
-
-	var_1_86[10] = {
+	pg.base.expedition_data_by_map[10] = {
 		map = 1750026,
 		name = "须臾望月抄·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6028,11 +5649,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.expedition_data_by_map
-
-	var_1_87[1] = {
+	pg.base.expedition_data_by_map[1] = {
 		map = 1760001,
 		name = "飓风与青春之泉·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6083,11 +5700,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.expedition_data_by_map
-
-	var_1_88[2] = {
+	pg.base.expedition_data_by_map[2] = {
 		map = 1760002,
 		name = "飓风与青春之泉·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6138,11 +5751,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.expedition_data_by_map
-
-	var_1_89[3] = {
+	pg.base.expedition_data_by_map[3] = {
 		map = 1760003,
 		name = "飓风与青春之泉·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6193,11 +5802,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.expedition_data_by_map
-
-	var_1_90[4] = {
+	pg.base.expedition_data_by_map[4] = {
 		map = 1760004,
 		name = "飓风与青春之泉·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6248,11 +5853,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.expedition_data_by_map
-
-	var_1_91[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 1770001,
 		name = "苍闪忍法帖|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6303,11 +5904,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.expedition_data_by_map
-
-	var_1_92[18] = {
+	pg.base.expedition_data_by_map[18] = {
 		map = 1770002,
 		name = "苍闪忍法帖·进阶|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6358,11 +5955,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.expedition_data_by_map
-
-	var_1_93[19] = {
+	pg.base.expedition_data_by_map[19] = {
 		map = 1770003,
 		name = "苍闪忍法帖·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6413,11 +6006,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.expedition_data_by_map
-
-	var_1_94[20] = {
+	pg.base.expedition_data_by_map[20] = {
 		map = 1770004,
 		name = "苍闪忍法帖·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6468,11 +6057,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.expedition_data_by_map
-
-	var_1_95[1780001] = {
+	pg.base.expedition_data_by_map[1780001] = {
 		map = 1780001,
 		name = "星海逐光·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6564,11 +6149,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.expedition_data_by_map
-
-	var_1_96[1780002] = {
+	pg.base.expedition_data_by_map[1780002] = {
 		map = 1780002,
 		name = "星海逐光·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6629,11 +6210,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.expedition_data_by_map
-
-	var_1_97[1780011] = {
+	pg.base.expedition_data_by_map[1780011] = {
 		map = 1780011,
 		name = "星海逐光·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6725,11 +6302,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.expedition_data_by_map
-
-	var_1_98[1780012] = {
+	pg.base.expedition_data_by_map[1780012] = {
 		map = 1780012,
 		name = "星海逐光·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6790,8 +6363,7 @@ var_0_4.base.expedition_data_by_map = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.expedition_data_by_map[1780025] = {
+	pg.base.expedition_data_by_map[1780025] = {
 		map = 1780025,
 		name = "星海逐光·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6887,11 +6459,7 @@ var_0_4.base.expedition_data_by_map = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.expedition_data_by_map
-
-	var_2_0[1780026] = {
+	pg.base.expedition_data_by_map[1780026] = {
 		map = 1780026,
 		name = "星海逐光·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -6942,11 +6510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.expedition_data_by_map
-
-	var_2_1[1790001] = {
+	pg.base.expedition_data_by_map[1790001] = {
 		map = 1790001,
 		name = "雪境迷踪·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7009,11 +6573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.expedition_data_by_map
-
-	var_2_2[1790002] = {
+	pg.base.expedition_data_by_map[1790002] = {
 		map = 1790002,
 		name = "雪境迷踪·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7076,11 +6636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.expedition_data_by_map
-
-	var_2_3[1790011] = {
+	pg.base.expedition_data_by_map[1790011] = {
 		map = 1790011,
 		name = "雪境迷踪·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7143,11 +6699,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.expedition_data_by_map
-
-	var_2_4[1790012] = {
+	pg.base.expedition_data_by_map[1790012] = {
 		map = 1790012,
 		name = "雪境迷踪·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7210,11 +6762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.expedition_data_by_map
-
-	var_2_5[1790025] = {
+	pg.base.expedition_data_by_map[1790025] = {
 		map = 1790025,
 		name = "雪境迷踪·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7265,11 +6813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.expedition_data_by_map
-
-	var_2_6[1790026] = {
+	pg.base.expedition_data_by_map[1790026] = {
 		map = 1790026,
 		name = "雪境迷踪·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7320,11 +6864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.expedition_data_by_map
-
-	var_2_7[1800001] = {
+	pg.base.expedition_data_by_map[1800001] = {
 		map = 1800001,
 		name = "共鸣的Passion|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7375,11 +6915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.expedition_data_by_map
-
-	var_2_8[1800002] = {
+	pg.base.expedition_data_by_map[1800002] = {
 		map = 1800002,
 		name = "共鸣的Passion·进阶|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7430,11 +6966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.expedition_data_by_map
-
-	var_2_9[1800003] = {
+	pg.base.expedition_data_by_map[1800003] = {
 		map = 1800003,
 		name = "共鸣的Passion·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7485,11 +7017,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.expedition_data_by_map
-
-	var_2_10[1800004] = {
+	pg.base.expedition_data_by_map[1800004] = {
 		map = 1800004,
 		name = "共鸣的Passion·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7540,11 +7068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.expedition_data_by_map
-
-	var_2_11[1810001] = {
+	pg.base.expedition_data_by_map[1810001] = {
 		map = 1810001,
 		name = "绽放于辉光之城·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7616,11 +7140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.expedition_data_by_map
-
-	var_2_12[1810002] = {
+	pg.base.expedition_data_by_map[1810002] = {
 		map = 1810002,
 		name = "绽放于辉光之城·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7681,11 +7201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.expedition_data_by_map
-
-	var_2_13[1810011] = {
+	pg.base.expedition_data_by_map[1810011] = {
 		map = 1810011,
 		name = "绽放于辉光之城·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7757,11 +7273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.expedition_data_by_map
-
-	var_2_14[1810012] = {
+	pg.base.expedition_data_by_map[1810012] = {
 		map = 1810012,
 		name = "绽放于辉光之城·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7822,11 +7334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.expedition_data_by_map
-
-	var_2_15[1810025] = {
+	pg.base.expedition_data_by_map[1810025] = {
 		map = 1810025,
 		name = "绽放于辉光之城·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7877,11 +7385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.expedition_data_by_map
-
-	var_2_16[1810026] = {
+	pg.base.expedition_data_by_map[1810026] = {
 		map = 1810026,
 		name = "绽放于辉光之城·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -7932,11 +7436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.expedition_data_by_map
-
-	var_2_17[1820001] = {
+	pg.base.expedition_data_by_map[1820001] = {
 		map = 1820001,
 		name = "幻梦间奏曲|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8017,11 +7517,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.expedition_data_by_map
-
-	var_2_18[1820002] = {
+	pg.base.expedition_data_by_map[1820002] = {
 		map = 1820002,
 		name = "幻梦间奏曲|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8102,11 +7598,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.expedition_data_by_map
-
-	var_2_19[1820003] = {
+	pg.base.expedition_data_by_map[1820003] = {
 		map = 1820003,
 		name = "幻梦间奏曲·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8187,11 +7679,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.expedition_data_by_map
-
-	var_2_20[1820004] = {
+	pg.base.expedition_data_by_map[1820004] = {
 		map = 1820004,
 		name = "幻梦间奏曲·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8272,11 +7760,7 @@ end)()
 			10
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.expedition_data_by_map
-
-	var_2_21[1830001] = {
+	pg.base.expedition_data_by_map[1830001] = {
 		map = 1830001,
 		name = "铁翼擎风·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8348,11 +7832,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.expedition_data_by_map
-
-	var_2_22[1830002] = {
+	pg.base.expedition_data_by_map[1830002] = {
 		map = 1830002,
 		name = "铁翼擎风·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8424,11 +7904,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.expedition_data_by_map
-
-	var_2_23[1830011] = {
+	pg.base.expedition_data_by_map[1830011] = {
 		map = 1830011,
 		name = "铁翼擎风·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8500,11 +7976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.expedition_data_by_map
-
-	var_2_24[1830012] = {
+	pg.base.expedition_data_by_map[1830012] = {
 		map = 1830012,
 		name = "铁翼擎风·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8576,11 +8048,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.expedition_data_by_map
-
-	var_2_25[9] = {
+	pg.base.expedition_data_by_map[9] = {
 		map = 1830025,
 		name = "铁翼擎风·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8631,11 +8099,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.expedition_data_by_map
-
-	var_2_26[10] = {
+	pg.base.expedition_data_by_map[10] = {
 		map = 1830026,
 		name = "铁翼擎风·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8686,11 +8150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.expedition_data_by_map
-
-	var_2_27[1] = {
+	pg.base.expedition_data_by_map[1] = {
 		map = 1840001,
 		name = "埋葬于彼岸之花|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8768,11 +8228,7 @@ end)()
 			23
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.expedition_data_by_map
-
-	var_2_28[2] = {
+	pg.base.expedition_data_by_map[2] = {
 		map = 1840002,
 		name = "埋葬于彼岸之花·TP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8850,11 +8306,7 @@ end)()
 			23
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.expedition_data_by_map
-
-	var_2_29[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 1850001,
 		name = "唤醒苍红之炎·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -8953,11 +8405,7 @@ end)()
 			67
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.expedition_data_by_map
-
-	var_2_30[18] = {
+	pg.base.expedition_data_by_map[18] = {
 		map = 1850002,
 		name = "唤醒苍红之炎·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9056,11 +8504,7 @@ end)()
 			67
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.expedition_data_by_map
-
-	var_2_31[27] = {
+	pg.base.expedition_data_by_map[27] = {
 		map = 1850011,
 		name = "唤醒苍红之炎·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9159,11 +8603,7 @@ end)()
 			67
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.expedition_data_by_map
-
-	var_2_32[28] = {
+	pg.base.expedition_data_by_map[28] = {
 		map = 1850012,
 		name = "唤醒苍红之炎·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9262,11 +8702,7 @@ end)()
 			67
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.expedition_data_by_map
-
-	var_2_33[1850025] = {
+	pg.base.expedition_data_by_map[1850025] = {
 		map = 1850025,
 		name = "唤醒苍红之炎·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9359,11 +8795,7 @@ end)()
 			67
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.expedition_data_by_map
-
-	var_2_34[1850026] = {
+	pg.base.expedition_data_by_map[1850026] = {
 		map = 1850026,
 		name = "唤醒苍红之炎·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9457,11 +8889,7 @@ end)()
 			67
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.expedition_data_by_map
-
-	var_2_35[1860001] = {
+	pg.base.expedition_data_by_map[1860001] = {
 		map = 1860001,
 		name = "飓风与沉眠之海·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9545,11 +8973,7 @@ end)()
 			89
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.expedition_data_by_map
-
-	var_2_36[1860002] = {
+	pg.base.expedition_data_by_map[1860002] = {
 		map = 1860002,
 		name = "飓风与沉眠之海·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9633,11 +9057,7 @@ end)()
 			89
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.expedition_data_by_map
-
-	var_2_37[1860003] = {
+	pg.base.expedition_data_by_map[1860003] = {
 		map = 1860003,
 		name = "飓风与沉眠之海·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9715,11 +9135,7 @@ end)()
 			89
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.expedition_data_by_map
-
-	var_2_38[1860004] = {
+	pg.base.expedition_data_by_map[1860004] = {
 		map = 1860004,
 		name = "飓风与沉眠之海·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9797,11 +9213,7 @@ end)()
 			89
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.expedition_data_by_map
-
-	var_2_39[1870001] = {
+	pg.base.expedition_data_by_map[1870001] = {
 		map = 1870001,
 		name = "危险发明迫近中！|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9886,11 +9298,7 @@ end)()
 			106
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.expedition_data_by_map
-
-	var_2_40[1870002] = {
+	pg.base.expedition_data_by_map[1870002] = {
 		map = 1870002,
 		name = "危险发明迫近中！·进阶|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -9975,11 +9383,7 @@ end)()
 			106
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.expedition_data_by_map
-
-	var_2_41[1870003] = {
+	pg.base.expedition_data_by_map[1870003] = {
 		map = 1870003,
 		name = "危险发明迫近中！·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10052,11 +9456,7 @@ end)()
 			106
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.expedition_data_by_map
-
-	var_2_42[1870004] = {
+	pg.base.expedition_data_by_map[1870004] = {
 		map = 1870004,
 		name = "危险发明迫近中！·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10130,11 +9530,7 @@ end)()
 			106
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.expedition_data_by_map
-
-	var_2_43[1880001] = {
+	pg.base.expedition_data_by_map[1880001] = {
 		map = 1880001,
 		name = "星光下的余晖·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10232,11 +9628,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.expedition_data_by_map
-
-	var_2_44[1880002] = {
+	pg.base.expedition_data_by_map[1880002] = {
 		map = 1880002,
 		name = "星光下的余晖·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10334,11 +9726,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.expedition_data_by_map
-
-	var_2_45[1880011] = {
+	pg.base.expedition_data_by_map[1880011] = {
 		map = 1880011,
 		name = "星光下的余晖·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10436,11 +9824,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.expedition_data_by_map
-
-	var_2_46[1880012] = {
+	pg.base.expedition_data_by_map[1880012] = {
 		map = 1880012,
 		name = "星光下的余晖·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10538,11 +9922,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.expedition_data_by_map
-
-	var_2_47[1880025] = {
+	pg.base.expedition_data_by_map[1880025] = {
 		map = 1880025,
 		name = "星光下的余晖·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10631,11 +10011,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.expedition_data_by_map
-
-	var_2_48[1880026] = {
+	pg.base.expedition_data_by_map[1880026] = {
 		map = 1880026,
 		name = "星光下的余晖·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10725,11 +10101,7 @@ end)()
 			139
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.expedition_data_by_map
-
-	var_2_49[1890001] = {
+	pg.base.expedition_data_by_map[1890001] = {
 		map = 1890001,
 		name = "樊笼内的神光·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10830,11 +10202,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.expedition_data_by_map
-
-	var_2_50[1890002] = {
+	pg.base.expedition_data_by_map[1890002] = {
 		map = 1890002,
 		name = "樊笼内的神光·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -10935,11 +10303,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.expedition_data_by_map
-
-	var_2_51[1890011] = {
+	pg.base.expedition_data_by_map[1890011] = {
 		map = 1890011,
 		name = "樊笼内的神光·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11040,11 +10404,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.expedition_data_by_map
-
-	var_2_52[1890012] = {
+	pg.base.expedition_data_by_map[1890012] = {
 		map = 1890012,
 		name = "樊笼内的神光·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11145,11 +10505,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.expedition_data_by_map
-
-	var_2_53[1890025] = {
+	pg.base.expedition_data_by_map[1890025] = {
 		map = 1890025,
 		name = "樊笼内的神光·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11241,11 +10597,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.expedition_data_by_map
-
-	var_2_54[1890026] = {
+	pg.base.expedition_data_by_map[1890026] = {
 		map = 1890026,
 		name = "樊笼内的神光·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11338,11 +10690,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.expedition_data_by_map
-
-	var_2_55[1910001] = {
+	pg.base.expedition_data_by_map[1910001] = {
 		map = 1910001,
 		name = "扬起郁金之旗|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11426,11 +10774,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.expedition_data_by_map
-
-	var_2_56[1910002] = {
+	pg.base.expedition_data_by_map[1910002] = {
 		map = 1910002,
 		name = "扬起郁金之旗|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11514,11 +10858,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.expedition_data_by_map
-
-	var_2_57[1910003] = {
+	pg.base.expedition_data_by_map[1910003] = {
 		map = 1910003,
 		name = "扬起郁金之旗·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11582,11 +10922,7 @@ end)()
 			188
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.expedition_data_by_map
-
-	var_2_58[1] = {
+	pg.base.expedition_data_by_map[1] = {
 		map = 1920001,
 		name = "高塔上的蔷薇·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11687,11 +11023,7 @@ end)()
 			226
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.expedition_data_by_map
-
-	var_2_59[2] = {
+	pg.base.expedition_data_by_map[2] = {
 		map = 1920002,
 		name = "高塔上的蔷薇·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11792,11 +11124,7 @@ end)()
 			226
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.expedition_data_by_map
-
-	var_2_60[11] = {
+	pg.base.expedition_data_by_map[11] = {
 		map = 1920011,
 		name = "高塔上的蔷薇·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -11897,11 +11225,7 @@ end)()
 			226
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.expedition_data_by_map
-
-	var_2_61[12] = {
+	pg.base.expedition_data_by_map[12] = {
 		map = 1920012,
 		name = "高塔上的蔷薇·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12002,11 +11326,7 @@ end)()
 			226
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.expedition_data_by_map
-
-	var_2_62[25] = {
+	pg.base.expedition_data_by_map[25] = {
 		map = 1920025,
 		name = "高塔上的蔷薇·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12098,11 +11418,7 @@ end)()
 			226
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.expedition_data_by_map
-
-	var_2_63[26] = {
+	pg.base.expedition_data_by_map[26] = {
 		map = 1920026,
 		name = "高塔上的蔷薇·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12195,11 +11511,7 @@ end)()
 			226
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.expedition_data_by_map
-
-	var_2_64[1940001] = {
+	pg.base.expedition_data_by_map[1940001] = {
 		map = 1940001,
 		name = "天际交汇之塔|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12379,11 +11691,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.expedition_data_by_map
-
-	var_2_65[1940002] = {
+	pg.base.expedition_data_by_map[1940002] = {
 		map = 1940002,
 		name = "天际交汇之塔·采集地|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12472,11 +11780,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.expedition_data_by_map
-
-	var_2_66[1940003] = {
+	pg.base.expedition_data_by_map[1940003] = {
 		map = 1940003,
 		name = "天际交汇之塔·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12553,11 +11857,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.expedition_data_by_map
-
-	var_2_67[1940004] = {
+	pg.base.expedition_data_by_map[1940004] = {
 		map = 1940004,
 		name = "天际交汇之塔·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12635,11 +11935,7 @@ end)()
 			120
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.expedition_data_by_map
-
-	var_2_68[1950001] = {
+	pg.base.expedition_data_by_map[1950001] = {
 		map = 1950001,
 		name = "奇渊下的秘密·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12761,11 +12057,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.expedition_data_by_map
-
-	var_2_69[1950002] = {
+	pg.base.expedition_data_by_map[1950002] = {
 		map = 1950002,
 		name = "奇渊下的秘密·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -12887,11 +12179,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.expedition_data_by_map
-
-	var_2_70[1950011] = {
+	pg.base.expedition_data_by_map[1950011] = {
 		map = 1950011,
 		name = "奇渊下的秘密·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13013,11 +12301,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.expedition_data_by_map
-
-	var_2_71[1950012] = {
+	pg.base.expedition_data_by_map[1950012] = {
 		map = 1950012,
 		name = "奇渊下的秘密·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13139,11 +12423,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.expedition_data_by_map
-
-	var_2_72[1950025] = {
+	pg.base.expedition_data_by_map[1950025] = {
 		map = 1950025,
 		name = "奇渊下的秘密·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13235,11 +12515,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.expedition_data_by_map
-
-	var_2_73[1950026] = {
+	pg.base.expedition_data_by_map[1950026] = {
 		map = 1950026,
 		name = "奇渊下的秘密·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13332,11 +12608,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.expedition_data_by_map
-
-	var_2_74[1960001] = {
+	pg.base.expedition_data_by_map[1960001] = {
 		map = 1960001,
 		name = "起舞于天原之上·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13440,11 +12712,7 @@ end)()
 			269
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.expedition_data_by_map
-
-	var_2_75[1960002] = {
+	pg.base.expedition_data_by_map[1960002] = {
 		map = 1960002,
 		name = "起舞于天原之上·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13548,11 +12816,7 @@ end)()
 			269
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.expedition_data_by_map
-
-	var_2_76[1960011] = {
+	pg.base.expedition_data_by_map[1960011] = {
 		map = 1960011,
 		name = "起舞于天原之上·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13656,11 +12920,7 @@ end)()
 			269
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.expedition_data_by_map
-
-	var_2_77[1960012] = {
+	pg.base.expedition_data_by_map[1960012] = {
 		map = 1960012,
 		name = "起舞于天原之上·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13764,11 +13024,7 @@ end)()
 			269
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.expedition_data_by_map
-
-	var_2_78[1960025] = {
+	pg.base.expedition_data_by_map[1960025] = {
 		map = 1960025,
 		name = "起舞于天原之上·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13863,11 +13119,7 @@ end)()
 			269
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.expedition_data_by_map
-
-	var_2_79[1960026] = {
+	pg.base.expedition_data_by_map[1960026] = {
 		map = 1960026,
 		name = "起舞于天原之上·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -13963,11 +13215,7 @@ end)()
 			269
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.expedition_data_by_map
-
-	var_2_80[1970001] = {
+	pg.base.expedition_data_by_map[1970001] = {
 		map = 1970001,
 		name = "飓风与自由群岛·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14058,11 +13306,7 @@ end)()
 			319
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.expedition_data_by_map
-
-	var_2_81[1970002] = {
+	pg.base.expedition_data_by_map[1970002] = {
 		map = 1970002,
 		name = "飓风与自由群岛·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14153,11 +13397,7 @@ end)()
 			319
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.expedition_data_by_map
-
-	var_2_82[1970003] = {
+	pg.base.expedition_data_by_map[1970003] = {
 		map = 1970003,
 		name = "飓风与自由群岛·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14242,11 +13482,7 @@ end)()
 			319
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.expedition_data_by_map
-
-	var_2_83[1970004] = {
+	pg.base.expedition_data_by_map[1970004] = {
 		map = 1970004,
 		name = "飓风与自由群岛·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14332,11 +13568,7 @@ end)()
 			319
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.expedition_data_by_map
-
-	var_2_84[1990001] = {
+	pg.base.expedition_data_by_map[1990001] = {
 		map = 1990001,
 		name = "响彻于天穹之音·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14427,11 +13659,7 @@ end)()
 			366
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.expedition_data_by_map
-
-	var_2_85[1990002] = {
+	pg.base.expedition_data_by_map[1990002] = {
 		map = 1990002,
 		name = "响彻于天穹之音·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14522,11 +13750,7 @@ end)()
 			366
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.expedition_data_by_map
-
-	var_2_86[1990011] = {
+	pg.base.expedition_data_by_map[1990011] = {
 		map = 1990011,
 		name = "响彻于天穹之音·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14617,11 +13841,7 @@ end)()
 			366
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.expedition_data_by_map
-
-	var_2_87[1990012] = {
+	pg.base.expedition_data_by_map[1990012] = {
 		map = 1990012,
 		name = "响彻于天穹之音·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14712,11 +13932,7 @@ end)()
 			366
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.expedition_data_by_map
-
-	var_2_88[9] = {
+	pg.base.expedition_data_by_map[9] = {
 		map = 1990025,
 		name = "响彻于天穹之音·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14798,11 +14014,7 @@ end)()
 			366
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.expedition_data_by_map
-
-	var_2_89[10] = {
+	pg.base.expedition_data_by_map[10] = {
 		map = 1990026,
 		name = "响彻于天穹之音·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14885,11 +14097,7 @@ end)()
 			366
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.expedition_data_by_map
-
-	var_2_90[1] = {
+	pg.base.expedition_data_by_map[1] = {
 		map = 2000001,
 		name = "春满客栈Online·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -14953,11 +14161,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.expedition_data_by_map
-
-	var_2_91[2] = {
+	pg.base.expedition_data_by_map[2] = {
 		map = 2000002,
 		name = "春满客栈Online·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15021,11 +14225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.expedition_data_by_map
-
-	var_2_92[11] = {
+	pg.base.expedition_data_by_map[11] = {
 		map = 2000011,
 		name = "春满客栈Online·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15089,11 +14289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.expedition_data_by_map
-
-	var_2_93[12] = {
+	pg.base.expedition_data_by_map[12] = {
 		map = 2000012,
 		name = "春满客栈Online·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15157,11 +14353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.expedition_data_by_map
-
-	var_2_94[25] = {
+	pg.base.expedition_data_by_map[25] = {
 		map = 2000025,
 		name = "春满客栈Online·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15216,11 +14408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.expedition_data_by_map
-
-	var_2_95[26] = {
+	pg.base.expedition_data_by_map[26] = {
 		map = 2000026,
 		name = "春满客栈Online·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15276,11 +14464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.expedition_data_by_map
-
-	var_2_96[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 2010001,
 		name = "漫游者招募计划|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15355,11 +14539,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.expedition_data_by_map
-
-	var_2_97[18] = {
+	pg.base.expedition_data_by_map[18] = {
 		map = 2010002,
 		name = "漫游者招募计划|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15434,11 +14614,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.expedition_data_by_map
-
-	var_2_98[19] = {
+	pg.base.expedition_data_by_map[19] = {
 		map = 2010003,
 		name = "漫游者招募计划·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15504,8 +14680,7 @@ end)()
 			176
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.expedition_data_by_map[2020001] = {
+	pg.base.expedition_data_by_map[2020001] = {
 		map = 2020001,
 		name = "假日航线·闪耀海滨|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15587,11 +14762,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.expedition_data_by_map
-
-	var_3_0[2020002] = {
+	pg.base.expedition_data_by_map[2020002] = {
 		map = 2020002,
 		name = "假日航线·闪耀海滨·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15660,11 +14831,7 @@ end)()
 			402
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.expedition_data_by_map
-
-	var_3_1[2020003] = {
+	pg.base.expedition_data_by_map[2020003] = {
 		map = 2020003,
 		name = "假日航线·闪耀海滨·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15734,11 +14901,7 @@ end)()
 			402
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.expedition_data_by_map
-
-	var_3_2[2030001] = {
+	pg.base.expedition_data_by_map[2030001] = {
 		map = 2030001,
 		name = "圣印前的同盟·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15842,11 +15005,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.expedition_data_by_map
-
-	var_3_3[2030002] = {
+	pg.base.expedition_data_by_map[2030002] = {
 		map = 2030002,
 		name = "圣印前的同盟·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -15950,11 +15109,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.expedition_data_by_map
-
-	var_3_4[2030011] = {
+	pg.base.expedition_data_by_map[2030011] = {
 		map = 2030011,
 		name = "圣印前的同盟·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16058,11 +15213,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.expedition_data_by_map
-
-	var_3_5[2030012] = {
+	pg.base.expedition_data_by_map[2030012] = {
 		map = 2030012,
 		name = "圣印前的同盟·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16166,11 +15317,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.expedition_data_by_map
-
-	var_3_6[2030025] = {
+	pg.base.expedition_data_by_map[2030025] = {
 		map = 2030025,
 		name = "圣印前的同盟·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16265,11 +15412,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.expedition_data_by_map
-
-	var_3_7[2030026] = {
+	pg.base.expedition_data_by_map[2030026] = {
 		map = 2030026,
 		name = "圣印前的同盟·EX|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16365,11 +15508,7 @@ end)()
 			459
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.expedition_data_by_map
-
-	var_3_8[2040001] = {
+	pg.base.expedition_data_by_map[2040001] = {
 		map = 2040001,
 		name = "美梦巡演奇妙夜|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16443,11 +15582,7 @@ end)()
 			469
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.expedition_data_by_map
-
-	var_3_9[2040002] = {
+	pg.base.expedition_data_by_map[2040002] = {
 		map = 2040002,
 		name = "美梦巡演奇妙夜|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16521,11 +15656,7 @@ end)()
 			469
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.expedition_data_by_map
-
-	var_3_10[2040003] = {
+	pg.base.expedition_data_by_map[2040003] = {
 		map = 2040003,
 		name = "美梦巡演奇妙夜·SP|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16590,11 +15721,656 @@ end)()
 			469
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.expedition_data_by_map
-
-	var_3_11[2100000] = {
+	pg.base.expedition_data_by_map[2050001] = {
+		map = 2050001,
+		name = "沉溺于星光之城·上篇|| ||CHAPTER EX||E.X.",
+		pos_type = 0,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		level_limit = 1,
+		enter_story = "",
+		animtor = 1,
+		guide_id = "",
+		ani_name = "Map_2050001",
+		ani_controller = "",
+		default_background = "star_level_bg_154",
+		on_activity = 51101,
+		map_name = "levelscene_mapselect_part1",
+		cloud_suffix = "",
+		story_inactive_color = "162443",
+		bgm = "theme-richard-white",
+		ui_type = 10,
+		bg = "Map_2050001",
+		destory_icon_suffix = "blue",
+		default_bgm = "Story-thinking-philosophy",
+		uifx = "",
+		bind_map = 2050011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2050001,
+				2050021
+			},
+			{
+				2050002,
+				2050022
+			},
+			{
+				2050003,
+				2050023
+			}
+		},
+		story_id = {
+			481,
+			482,
+			483,
+			484,
+			485,
+			486,
+			487,
+			488,
+			489,
+			490,
+			491,
+			492,
+			493,
+			494,
+			495,
+			496,
+			497,
+			498,
+			499,
+			500,
+			501,
+			502,
+			503,
+			504,
+			505,
+			506,
+			507,
+			508,
+			509,
+			510,
+			511,
+			512,
+			513,
+			514,
+			515,
+			516,
+			517,
+			518,
+			519,
+			520,
+			521,
+			522,
+			523,
+			524,
+			525,
+			526
+		}
+	}
+	pg.base.expedition_data_by_map[2050002] = {
+		map = 2050002,
+		name = "沉溺于星光之城·下篇|| ||CHAPTER EX||E.X.",
+		pos_type = 0,
+		type = 4,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		level_limit = 1,
+		enter_story = "",
+		animtor = 1,
+		guide_id = "",
+		ani_name = "Map_2050002",
+		ani_controller = "",
+		default_background = "star_level_bg_154",
+		on_activity = 51101,
+		map_name = "levelscene_mapselect_part2",
+		cloud_suffix = "",
+		story_inactive_color = "162443",
+		bgm = "story-nailuo-theme",
+		ui_type = 10,
+		bg = "Map_2050002",
+		destory_icon_suffix = "blue",
+		default_bgm = "Story-thinking-philosophy",
+		uifx = "",
+		bind_map = 2050012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2050004,
+				2050024
+			},
+			{
+				2050005,
+				2050025
+			},
+			{
+				2050006,
+				2050026
+			}
+		},
+		story_id = {
+			481,
+			482,
+			483,
+			484,
+			485,
+			486,
+			487,
+			488,
+			489,
+			490,
+			491,
+			492,
+			493,
+			494,
+			495,
+			496,
+			497,
+			498,
+			499,
+			500,
+			501,
+			502,
+			503,
+			504,
+			505,
+			506,
+			507,
+			508,
+			509,
+			510,
+			511,
+			512,
+			513,
+			514,
+			515,
+			516,
+			517,
+			518,
+			519,
+			520,
+			521,
+			522,
+			523,
+			524,
+			525,
+			526
+		}
+	}
+	pg.base.expedition_data_by_map[2050011] = {
+		map = 2050011,
+		name = "沉溺于星光之城·上篇|| ||CHAPTER EX||E.X.",
+		pos_type = 0,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		level_limit = 1,
+		enter_story = "",
+		animtor = 1,
+		guide_id = "",
+		ani_name = "Map_2050001",
+		ani_controller = "",
+		default_background = "star_level_bg_154",
+		on_activity = 51101,
+		map_name = "levelscene_mapselect_part1",
+		cloud_suffix = "",
+		story_inactive_color = "162443",
+		bgm = "theme-richard-white",
+		ui_type = 10,
+		bg = "Map_2050001",
+		destory_icon_suffix = "blue",
+		default_bgm = "Story-thinking-philosophy",
+		uifx = "",
+		bind_map = 2050001,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2050001,
+				2050021
+			},
+			{
+				2050002,
+				2050022
+			},
+			{
+				2050003,
+				2050023
+			}
+		},
+		story_id = {
+			481,
+			482,
+			483,
+			484,
+			485,
+			486,
+			487,
+			488,
+			489,
+			490,
+			491,
+			492,
+			493,
+			494,
+			495,
+			496,
+			497,
+			498,
+			499,
+			500,
+			501,
+			502,
+			503,
+			504,
+			505,
+			506,
+			507,
+			508,
+			509,
+			510,
+			511,
+			512,
+			513,
+			514,
+			515,
+			516,
+			517,
+			518,
+			519,
+			520,
+			521,
+			522,
+			523,
+			524,
+			525,
+			526
+		}
+	}
+	pg.base.expedition_data_by_map[2050012] = {
+		map = 2050012,
+		name = "沉溺于星光之城·下篇|| ||CHAPTER EX||E.X.",
+		pos_type = 0,
+		type = 5,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		level_limit = 1,
+		enter_story = "",
+		animtor = 1,
+		guide_id = "",
+		ani_name = "Map_2050002",
+		ani_controller = "",
+		default_background = "star_level_bg_154",
+		on_activity = 51101,
+		map_name = "levelscene_mapselect_part2",
+		cloud_suffix = "",
+		story_inactive_color = "162443",
+		bgm = "story-nailuo-theme",
+		ui_type = 10,
+		bg = "Map_2050002",
+		destory_icon_suffix = "blue",
+		default_bgm = "Story-thinking-philosophy",
+		uifx = "",
+		bind_map = 2050002,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2050004,
+				2050024
+			},
+			{
+				2050005,
+				2050025
+			},
+			{
+				2050006,
+				2050026
+			}
+		},
+		story_id = {
+			481,
+			482,
+			483,
+			484,
+			485,
+			486,
+			487,
+			488,
+			489,
+			490,
+			491,
+			492,
+			493,
+			494,
+			495,
+			496,
+			497,
+			498,
+			499,
+			500,
+			501,
+			502,
+			503,
+			504,
+			505,
+			506,
+			507,
+			508,
+			509,
+			510,
+			511,
+			512,
+			513,
+			514,
+			515,
+			516,
+			517,
+			518,
+			519,
+			520,
+			521,
+			522,
+			523,
+			524,
+			525,
+			526
+		}
+	}
+	pg.base.expedition_data_by_map[2050025] = {
+		map = 2050025,
+		name = "沉溺于星光之城·SP|| ||CHAPTER EX||E.X.",
+		pos_type = 0,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		level_limit = 1,
+		enter_story = "",
+		animtor = 1,
+		guide_id = "",
+		ani_name = "Map_2050001",
+		ani_controller = "",
+		default_background = "star_level_bg_154",
+		on_activity = 51101,
+		map_name = "levelscene_mapselect_sp",
+		cloud_suffix = "",
+		story_inactive_color = "162443",
+		bgm = "battle-starcity-rhythm",
+		ui_type = 10,
+		bg = "Map_2050001",
+		destory_icon_suffix = "blue",
+		default_bgm = "Story-thinking-philosophy",
+		uifx = "",
+		bind_map = 2050011,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2050041
+			}
+		},
+		story_id = {
+			481,
+			482,
+			483,
+			484,
+			485,
+			486,
+			487,
+			488,
+			489,
+			490,
+			491,
+			492,
+			493,
+			494,
+			495,
+			496,
+			497,
+			498,
+			499,
+			500,
+			501,
+			502,
+			503,
+			504,
+			505,
+			506,
+			507,
+			508,
+			509,
+			510,
+			511,
+			512,
+			513,
+			514,
+			515,
+			516,
+			517,
+			518,
+			519,
+			520,
+			521,
+			522,
+			523,
+			524,
+			525,
+			526
+		}
+	}
+	pg.base.expedition_data_by_map[2050026] = {
+		map = 2050026,
+		name = "沉溺于星光之城·EX|| ||CHAPTER EX||E.X.",
+		pos_type = 0,
+		type = 8,
+		anchor = "",
+		title = "EX",
+		drop_by_map_display = "",
+		level_limit = 1,
+		enter_story = "",
+		animtor = 1,
+		guide_id = "",
+		ani_name = "juqing_mofazhen",
+		ani_controller = "",
+		default_background = "star_level_bg_154",
+		on_activity = 51101,
+		map_name = "levelscene_mapselect_ex",
+		cloud_suffix = "",
+		story_inactive_color = "162443",
+		bgm = "theme-richard",
+		ui_type = 10,
+		bg = "Map_2050001",
+		destory_icon_suffix = "blue",
+		default_bgm = "Story-thinking-philosophy",
+		uifx = "",
+		bind_map = 2050012,
+		clouds_pos = {
+			{
+				332,
+				271
+			},
+			{
+				896,
+				110
+			},
+			{
+				-280,
+				0
+			},
+			{
+				990,
+				-90
+			},
+			{
+				0,
+				-465
+			}
+		},
+		chapterGroups = {
+			{
+				2050051,
+				2050052
+			}
+		},
+		story_id = {
+			481,
+			482,
+			483,
+			484,
+			485,
+			486,
+			487,
+			488,
+			489,
+			490,
+			491,
+			492,
+			493,
+			494,
+			495,
+			496,
+			497,
+			498,
+			499,
+			500,
+			501,
+			502,
+			503,
+			504,
+			505,
+			506,
+			507,
+			508,
+			509,
+			510,
+			511,
+			512,
+			513,
+			514,
+			515,
+			516,
+			517,
+			518,
+			519,
+			520,
+			521,
+			522,
+			523,
+			524,
+			525,
+			526
+		}
+	}
+	pg.base.expedition_data_by_map[2100000] = {
 		map = 2100000,
 		name = "『红染的参访者』-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16645,11 +16421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.expedition_data_by_map
-
-	var_3_12[2100001] = {
+	pg.base.expedition_data_by_map[2100001] = {
 		map = 2100001,
 		name = "『红染的参访者』-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16700,11 +16472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.expedition_data_by_map
-
-	var_3_13[2100010] = {
+	pg.base.expedition_data_by_map[2100010] = {
 		map = 2100010,
 		name = "『红染的参访者』-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16755,11 +16523,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.expedition_data_by_map
-
-	var_3_14[2100011] = {
+	pg.base.expedition_data_by_map[2100011] = {
 		map = 2100011,
 		name = "『红染的参访者』-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16810,11 +16574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.expedition_data_by_map
-
-	var_3_15[2100020] = {
+	pg.base.expedition_data_by_map[2100020] = {
 		map = 2100020,
 		name = "凛冬王冠-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16865,11 +16625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.expedition_data_by_map
-
-	var_3_16[2100021] = {
+	pg.base.expedition_data_by_map[2100021] = {
 		map = 2100021,
 		name = "凛冬王冠-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16920,11 +16676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.expedition_data_by_map
-
-	var_3_17[2100030] = {
+	pg.base.expedition_data_by_map[2100030] = {
 		map = 2100030,
 		name = "凛冬王冠-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -16975,11 +16727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.expedition_data_by_map
-
-	var_3_18[2100031] = {
+	pg.base.expedition_data_by_map[2100031] = {
 		map = 2100031,
 		name = "凛冬王冠-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17030,11 +16778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.expedition_data_by_map
-
-	var_3_19[2100040] = {
+	pg.base.expedition_data_by_map[2100040] = {
 		map = 2100040,
 		name = "「异色格」作战-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17085,11 +16829,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.expedition_data_by_map
-
-	var_3_20[2100041] = {
+	pg.base.expedition_data_by_map[2100041] = {
 		map = 2100041,
 		name = "「异色格」作战-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17119,11 +16859,7 @@ end)()
 		bind_map = 2100051,
 		clouds_pos = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.expedition_data_by_map
-
-	var_3_21[2100050] = {
+	pg.base.expedition_data_by_map[2100050] = {
 		map = 2100050,
 		name = "「异色格」作战-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17174,11 +16910,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.expedition_data_by_map
-
-	var_3_22[2100051] = {
+	pg.base.expedition_data_by_map[2100051] = {
 		map = 2100051,
 		name = "「异色格」作战-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17208,11 +16940,7 @@ end)()
 		bind_map = 2100041,
 		clouds_pos = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.expedition_data_by_map
-
-	var_3_23[2100060] = {
+	pg.base.expedition_data_by_map[2100060] = {
 		map = 2100060,
 		name = "坠落之翼-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17263,11 +16991,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.expedition_data_by_map
-
-	var_3_24[2100061] = {
+	pg.base.expedition_data_by_map[2100061] = {
 		map = 2100061,
 		name = "坠落之翼-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17318,11 +17042,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.expedition_data_by_map
-
-	var_3_25[2100070] = {
+	pg.base.expedition_data_by_map[2100070] = {
 		map = 2100070,
 		name = "坠落之翼-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17373,11 +17093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.expedition_data_by_map
-
-	var_3_26[2100071] = {
+	pg.base.expedition_data_by_map[2100071] = {
 		map = 2100071,
 		name = "坠落之翼-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17428,11 +17144,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.expedition_data_by_map
-
-	var_3_27[2100080] = {
+	pg.base.expedition_data_by_map[2100080] = {
 		map = 2100080,
 		name = "光与影的鸢尾之华-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17483,11 +17195,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.expedition_data_by_map
-
-	var_3_28[2100081] = {
+	pg.base.expedition_data_by_map[2100081] = {
 		map = 2100081,
 		name = "光与影的鸢尾之华-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17517,11 +17225,7 @@ end)()
 		bind_map = 2100091,
 		clouds_pos = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.expedition_data_by_map
-
-	var_3_29[2100090] = {
+	pg.base.expedition_data_by_map[2100090] = {
 		map = 2100090,
 		name = "光与影的鸢尾之华-前篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17572,11 +17276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.expedition_data_by_map
-
-	var_3_30[2100091] = {
+	pg.base.expedition_data_by_map[2100091] = {
 		map = 2100091,
 		name = "光与影的鸢尾之华-后篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17606,11 +17306,7 @@ end)()
 		bind_map = 2100081,
 		clouds_pos = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.expedition_data_by_map
-
-	var_3_31[4] = {
+	pg.base.expedition_data_by_map[4] = {
 		map = 2100100,
 		name = "墨染的钢铁之花·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17661,11 +17357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.expedition_data_by_map
-
-	var_3_32[5] = {
+	pg.base.expedition_data_by_map[5] = {
 		map = 2100101,
 		name = "墨染的钢铁之花·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17716,11 +17408,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.expedition_data_by_map
-
-	var_3_33[14] = {
+	pg.base.expedition_data_by_map[14] = {
 		map = 2100110,
 		name = "墨染的钢铁之花·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17771,11 +17459,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.expedition_data_by_map
-
-	var_3_34[15] = {
+	pg.base.expedition_data_by_map[15] = {
 		map = 2100111,
 		name = "墨染的钢铁之花·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17826,11 +17510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.expedition_data_by_map
-
-	var_3_35[24] = {
+	pg.base.expedition_data_by_map[24] = {
 		map = 2100120,
 		name = "苍红的回响·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17881,11 +17561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.expedition_data_by_map
-
-	var_3_36[25] = {
+	pg.base.expedition_data_by_map[25] = {
 		map = 2100121,
 		name = "苍红的回响·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17936,11 +17612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.expedition_data_by_map
-
-	var_3_37[2100130] = {
+	pg.base.expedition_data_by_map[2100130] = {
 		map = 2100130,
 		name = "苍红的回响·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -17991,11 +17663,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.expedition_data_by_map
-
-	var_3_38[2100131] = {
+	pg.base.expedition_data_by_map[2100131] = {
 		map = 2100131,
 		name = "苍红的回响·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18046,11 +17714,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.expedition_data_by_map
-
-	var_3_39[2100140] = {
+	pg.base.expedition_data_by_map[2100140] = {
 		map = 2100140,
 		name = "铁血、音符与誓言·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18101,11 +17765,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.expedition_data_by_map
-
-	var_3_40[2100141] = {
+	pg.base.expedition_data_by_map[2100141] = {
 		map = 2100141,
 		name = "铁血、音符与誓言·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18156,11 +17816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.expedition_data_by_map
-
-	var_3_41[2100150] = {
+	pg.base.expedition_data_by_map[2100150] = {
 		map = 2100150,
 		name = "铁血、音符与誓言·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18211,11 +17867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.expedition_data_by_map
-
-	var_3_42[2100151] = {
+	pg.base.expedition_data_by_map[2100151] = {
 		map = 2100151,
 		name = "铁血、音符与誓言·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18266,11 +17918,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.expedition_data_by_map
-
-	var_3_43[2100160] = {
+	pg.base.expedition_data_by_map[2100160] = {
 		map = 2100160,
 		name = "神圣的悲喜剧·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18321,11 +17969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.expedition_data_by_map
-
-	var_3_44[2100161] = {
+	pg.base.expedition_data_by_map[2100161] = {
 		map = 2100161,
 		name = "神圣的悲喜剧·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18376,11 +18020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.expedition_data_by_map
-
-	var_3_45[2100170] = {
+	pg.base.expedition_data_by_map[2100170] = {
 		map = 2100170,
 		name = "神圣的悲喜剧·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18431,11 +18071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.expedition_data_by_map
-
-	var_3_46[2100171] = {
+	pg.base.expedition_data_by_map[2100171] = {
 		map = 2100171,
 		name = "神圣的悲喜剧·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18486,11 +18122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.expedition_data_by_map
-
-	var_3_47[2100180] = {
+	pg.base.expedition_data_by_map[2100180] = {
 		map = 2100180,
 		name = "箱庭疗法·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18541,11 +18173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.expedition_data_by_map
-
-	var_3_48[2100181] = {
+	pg.base.expedition_data_by_map[2100181] = {
 		map = 2100181,
 		name = "箱庭疗法·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18596,11 +18224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.expedition_data_by_map
-
-	var_3_49[2100190] = {
+	pg.base.expedition_data_by_map[2100190] = {
 		map = 2100190,
 		name = "箱庭疗法·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18651,11 +18275,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.expedition_data_by_map
-
-	var_3_50[2100191] = {
+	pg.base.expedition_data_by_map[2100191] = {
 		map = 2100191,
 		name = "箱庭疗法·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18706,11 +18326,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.expedition_data_by_map
-
-	var_3_51[2100200] = {
+	pg.base.expedition_data_by_map[2100200] = {
 		map = 2100200,
 		name = "浮樱影华·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18761,11 +18377,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.expedition_data_by_map
-
-	var_3_52[2100201] = {
+	pg.base.expedition_data_by_map[2100201] = {
 		map = 2100201,
 		name = "浮樱影华·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18816,11 +18428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.expedition_data_by_map
-
-	var_3_53[2100210] = {
+	pg.base.expedition_data_by_map[2100210] = {
 		map = 2100210,
 		name = "浮樱影华·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18871,11 +18479,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.expedition_data_by_map
-
-	var_3_54[2100211] = {
+	pg.base.expedition_data_by_map[2100211] = {
 		map = 2100211,
 		name = "浮樱影华·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18926,11 +18530,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.expedition_data_by_map
-
-	var_3_55[2100221] = {
+	pg.base.expedition_data_by_map[2100221] = {
 		map = 2100221,
 		name = "微层混合·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -18981,11 +18581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.expedition_data_by_map
-
-	var_3_56[2100222] = {
+	pg.base.expedition_data_by_map[2100222] = {
 		map = 2100222,
 		name = "微层混合·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19036,11 +18632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.expedition_data_by_map
-
-	var_3_57[7] = {
+	pg.base.expedition_data_by_map[7] = {
 		map = 2100231,
 		name = "微层混合·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19091,11 +18683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.expedition_data_by_map
-
-	var_3_58[8] = {
+	pg.base.expedition_data_by_map[8] = {
 		map = 2100232,
 		name = "微层混合·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19146,11 +18734,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.expedition_data_by_map
-
-	var_3_59[17] = {
+	pg.base.expedition_data_by_map[17] = {
 		map = 2100241,
 		name = "穹顶下的圣咏曲·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19201,11 +18785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.expedition_data_by_map
-
-	var_3_60[18] = {
+	pg.base.expedition_data_by_map[18] = {
 		map = 2100242,
 		name = "穹顶下的圣咏曲·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19256,11 +18836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.expedition_data_by_map
-
-	var_3_61[27] = {
+	pg.base.expedition_data_by_map[27] = {
 		map = 2100251,
 		name = "穹顶下的圣咏曲·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19311,11 +18887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.expedition_data_by_map
-
-	var_3_62[28] = {
+	pg.base.expedition_data_by_map[28] = {
 		map = 2100252,
 		name = "穹顶下的圣咏曲·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19366,11 +18938,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.expedition_data_by_map
-
-	var_3_63[2100261] = {
+	pg.base.expedition_data_by_map[2100261] = {
 		map = 2100261,
 		name = "北境序曲·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19421,11 +18989,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.expedition_data_by_map
-
-	var_3_64[2100262] = {
+	pg.base.expedition_data_by_map[2100262] = {
 		map = 2100262,
 		name = "北境序曲·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19476,11 +19040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.expedition_data_by_map
-
-	var_3_65[2100271] = {
+	pg.base.expedition_data_by_map[2100271] = {
 		map = 2100271,
 		name = "北境序曲·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19531,11 +19091,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.expedition_data_by_map
-
-	var_3_66[2100272] = {
+	pg.base.expedition_data_by_map[2100272] = {
 		map = 2100272,
 		name = "北境序曲·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19586,11 +19142,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.expedition_data_by_map
-
-	var_3_67[2100281] = {
+	pg.base.expedition_data_by_map[2100281] = {
 		map = 2100281,
 		name = "永夜幻光·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19641,11 +19193,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.expedition_data_by_map
-
-	var_3_68[2100282] = {
+	pg.base.expedition_data_by_map[2100282] = {
 		map = 2100282,
 		name = "永夜幻光·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19696,11 +19244,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.expedition_data_by_map
-
-	var_3_69[2100291] = {
+	pg.base.expedition_data_by_map[2100291] = {
 		map = 2100291,
 		name = "永夜幻光·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19751,11 +19295,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.expedition_data_by_map
-
-	var_3_70[2100292] = {
+	pg.base.expedition_data_by_map[2100292] = {
 		map = 2100292,
 		name = "永夜幻光·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19806,11 +19346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.expedition_data_by_map
-
-	var_3_71[2100301] = {
+	pg.base.expedition_data_by_map[2100301] = {
 		map = 2100301,
 		name = "负象限作战·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19861,11 +19397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.expedition_data_by_map
-
-	var_3_72[2100302] = {
+	pg.base.expedition_data_by_map[2100302] = {
 		map = 2100302,
 		name = "负象限作战·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19916,11 +19448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.expedition_data_by_map
-
-	var_3_73[2100311] = {
+	pg.base.expedition_data_by_map[2100311] = {
 		map = 2100311,
 		name = "负象限作战·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -19971,11 +19499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.expedition_data_by_map
-
-	var_3_74[2100312] = {
+	pg.base.expedition_data_by_map[2100312] = {
 		map = 2100312,
 		name = "负象限作战·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20026,11 +19550,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.expedition_data_by_map
-
-	var_3_75[2100321] = {
+	pg.base.expedition_data_by_map[2100321] = {
 		map = 2100321,
 		name = "蝶海梦花·现世|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20081,11 +19601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.expedition_data_by_map
-
-	var_3_76[2100322] = {
+	pg.base.expedition_data_by_map[2100322] = {
 		map = 2100322,
 		name = "蝶海梦花·梦境|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20136,11 +19652,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.expedition_data_by_map
-
-	var_3_77[2100331] = {
+	pg.base.expedition_data_by_map[2100331] = {
 		map = 2100331,
 		name = "蝶海梦花·现世|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20191,11 +19703,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.expedition_data_by_map
-
-	var_3_78[2100332] = {
+	pg.base.expedition_data_by_map[2100332] = {
 		map = 2100332,
 		name = "蝶海梦花·梦境|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20246,11 +19754,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.expedition_data_by_map
-
-	var_3_79[2100341] = {
+	pg.base.expedition_data_by_map[2100341] = {
 		map = 2100341,
 		name = "镜位螺旋·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20301,11 +19805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.expedition_data_by_map
-
-	var_3_80[2100342] = {
+	pg.base.expedition_data_by_map[2100342] = {
 		map = 2100342,
 		name = "镜位螺旋·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20356,11 +19856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.expedition_data_by_map
-
-	var_3_81[2100351] = {
+	pg.base.expedition_data_by_map[2100351] = {
 		map = 2100351,
 		name = "镜位螺旋·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20411,11 +19907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.expedition_data_by_map
-
-	var_3_82[0] = {
+	pg.base.expedition_data_by_map[0] = {
 		map = 2100352,
 		name = "镜位螺旋·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20466,11 +19958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.expedition_data_by_map
-
-	var_3_83[9] = {
+	pg.base.expedition_data_by_map[9] = {
 		map = 2100361,
 		name = "破晓冰华·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20521,11 +20009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.expedition_data_by_map
-
-	var_3_84[10] = {
+	pg.base.expedition_data_by_map[10] = {
 		map = 2100362,
 		name = "破晓冰华·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20576,11 +20060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.expedition_data_by_map
-
-	var_3_85[19] = {
+	pg.base.expedition_data_by_map[19] = {
 		map = 2100371,
 		name = "破晓冰华·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20631,11 +20111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.expedition_data_by_map
-
-	var_3_86[20] = {
+	pg.base.expedition_data_by_map[20] = {
 		map = 2100372,
 		name = "破晓冰华·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20686,11 +20162,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.expedition_data_by_map
-
-	var_3_87[29] = {
+	pg.base.expedition_data_by_map[29] = {
 		map = 2100381,
 		name = "碧海光粼·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20741,11 +20213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.expedition_data_by_map
-
-	var_3_88[30] = {
+	pg.base.expedition_data_by_map[30] = {
 		map = 2100382,
 		name = "碧海光粼·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20796,11 +20264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.expedition_data_by_map
-
-	var_3_89[2100391] = {
+	pg.base.expedition_data_by_map[2100391] = {
 		map = 2100391,
 		name = "碧海光粼·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20851,11 +20315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.expedition_data_by_map
-
-	var_3_90[2100392] = {
+	pg.base.expedition_data_by_map[2100392] = {
 		map = 2100392,
 		name = "碧海光粼·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20906,11 +20366,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.expedition_data_by_map
-
-	var_3_91[2100401] = {
+	pg.base.expedition_data_by_map[2100401] = {
 		map = 2100401,
 		name = "复兴的赞美诗·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -20961,11 +20417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.expedition_data_by_map
-
-	var_3_92[2100402] = {
+	pg.base.expedition_data_by_map[2100402] = {
 		map = 2100402,
 		name = "复兴的赞美诗·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21016,11 +20468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.expedition_data_by_map
-
-	var_3_93[2100411] = {
+	pg.base.expedition_data_by_map[2100411] = {
 		map = 2100411,
 		name = "复兴的赞美诗·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21071,11 +20519,11 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
 
-	local var_3_94 = var_3_93.base.expedition_data_by_map
-
-	var_3_94[2100412] = {
+	return
+end)()
+;(function()
+	pg.base.expedition_data_by_map[2100412] = {
 		map = 2100412,
 		name = "复兴的赞美诗·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21126,11 +20574,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.expedition_data_by_map
-
-	var_3_95[2100421] = {
+	pg.base.expedition_data_by_map[2100421] = {
 		map = 2100421,
 		name = "逆转彩虹之塔·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21181,11 +20625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.expedition_data_by_map
-
-	var_3_96[2100422] = {
+	pg.base.expedition_data_by_map[2100422] = {
 		map = 2100422,
 		name = "逆转彩虹之塔·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21236,11 +20676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.expedition_data_by_map
-
-	var_3_97[2100431] = {
+	pg.base.expedition_data_by_map[2100431] = {
 		map = 2100431,
 		name = "逆转彩虹之塔·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21291,11 +20727,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.expedition_data_by_map
-
-	var_3_98[2100432] = {
+	pg.base.expedition_data_by_map[2100432] = {
 		map = 2100432,
 		name = "逆转彩虹之塔·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21346,8 +20778,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.expedition_data_by_map[2100441] = {
+	pg.base.expedition_data_by_map[2100441] = {
 		map = 2100441,
 		name = "深度回音·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21398,15 +20829,7 @@ end)()
 			}
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.expedition_data_by_map
-
-	var_4_0[2100442] = {
+	pg.base.expedition_data_by_map[2100442] = {
 		map = 2100442,
 		name = "深度回音·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21457,11 +20880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.expedition_data_by_map
-
-	var_4_1[2100451] = {
+	pg.base.expedition_data_by_map[2100451] = {
 		map = 2100451,
 		name = "深度回音·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21512,11 +20931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.expedition_data_by_map
-
-	var_4_2[2100452] = {
+	pg.base.expedition_data_by_map[2100452] = {
 		map = 2100452,
 		name = "深度回音·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21567,11 +20982,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.expedition_data_by_map
-
-	var_4_3[2100461] = {
+	pg.base.expedition_data_by_map[2100461] = {
 		map = 2100461,
 		name = "泠誓光庭·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21659,11 +21070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.expedition_data_by_map
-
-	var_4_4[2100462] = {
+	pg.base.expedition_data_by_map[2100462] = {
 		map = 2100462,
 		name = "泠誓光庭·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21751,11 +21158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.expedition_data_by_map
-
-	var_4_5[2100471] = {
+	pg.base.expedition_data_by_map[2100471] = {
 		map = 2100471,
 		name = "泠誓光庭·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21843,11 +21246,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.expedition_data_by_map
-
-	var_4_6[2100472] = {
+	pg.base.expedition_data_by_map[2100472] = {
 		map = 2100472,
 		name = "泠誓光庭·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21935,11 +21334,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.expedition_data_by_map
-
-	var_4_7[1] = {
+	pg.base.expedition_data_by_map[1] = {
 		map = 2100481,
 		name = "雄鹰的叙事歌·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -21990,11 +21385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.expedition_data_by_map
-
-	var_4_8[2] = {
+	pg.base.expedition_data_by_map[2] = {
 		map = 2100482,
 		name = "雄鹰的叙事歌·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22045,11 +21436,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.expedition_data_by_map
-
-	var_4_9[11] = {
+	pg.base.expedition_data_by_map[11] = {
 		map = 2100491,
 		name = "雄鹰的叙事歌·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22100,11 +21487,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.expedition_data_by_map
-
-	var_4_10[12] = {
+	pg.base.expedition_data_by_map[12] = {
 		map = 2100492,
 		name = "雄鹰的叙事歌·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22155,11 +21538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.expedition_data_by_map
-
-	var_4_11[21] = {
+	pg.base.expedition_data_by_map[21] = {
 		map = 2100501,
 		name = "虹彩的终幕曲·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22213,11 +21592,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.expedition_data_by_map
-
-	var_4_12[22] = {
+	pg.base.expedition_data_by_map[22] = {
 		map = 2100502,
 		name = "虹彩的终幕曲·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22271,11 +21646,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.expedition_data_by_map
-
-	var_4_13[31] = {
+	pg.base.expedition_data_by_map[31] = {
 		map = 2100511,
 		name = "虹彩的终幕曲·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22329,11 +21700,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.expedition_data_by_map
-
-	var_4_14[2100512] = {
+	pg.base.expedition_data_by_map[2100512] = {
 		map = 2100512,
 		name = "虹彩的终幕曲·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22387,11 +21754,7 @@ end)()
 			0.5
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.expedition_data_by_map
-
-	var_4_15[2100521] = {
+	pg.base.expedition_data_by_map[2100521] = {
 		map = 2100521,
 		name = "紫绛槿岚·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22442,11 +21805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.expedition_data_by_map
-
-	var_4_16[2100522] = {
+	pg.base.expedition_data_by_map[2100522] = {
 		map = 2100522,
 		name = "紫绛槿岚·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22497,11 +21856,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.expedition_data_by_map
-
-	var_4_17[2100531] = {
+	pg.base.expedition_data_by_map[2100531] = {
 		map = 2100531,
 		name = "紫绛槿岚·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22552,11 +21907,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.expedition_data_by_map
-
-	var_4_18[2100532] = {
+	pg.base.expedition_data_by_map[2100532] = {
 		map = 2100532,
 		name = "紫绛槿岚·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22607,11 +21958,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.expedition_data_by_map
-
-	var_4_19[2100541] = {
+	pg.base.expedition_data_by_map[2100541] = {
 		map = 2100541,
 		name = "定向折叠·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22672,11 +22019,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.expedition_data_by_map
-
-	var_4_20[2100542] = {
+	pg.base.expedition_data_by_map[2100542] = {
 		map = 2100542,
 		name = "定向折叠·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22737,11 +22080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.expedition_data_by_map
-
-	var_4_21[2100551] = {
+	pg.base.expedition_data_by_map[2100551] = {
 		map = 2100551,
 		name = "定向折叠·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22802,11 +22141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.expedition_data_by_map
-
-	var_4_22[2100552] = {
+	pg.base.expedition_data_by_map[2100552] = {
 		map = 2100552,
 		name = "定向折叠·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22867,11 +22202,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.expedition_data_by_map
-
-	var_4_23[2100561] = {
+	pg.base.expedition_data_by_map[2100561] = {
 		map = 2100561,
 		name = "湮烬尘墟·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22922,11 +22253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.expedition_data_by_map
-
-	var_4_24[2100562] = {
+	pg.base.expedition_data_by_map[2100562] = {
 		map = 2100562,
 		name = "湮烬尘墟·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -22977,11 +22304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.expedition_data_by_map
-
-	var_4_25[2100571] = {
+	pg.base.expedition_data_by_map[2100571] = {
 		map = 2100571,
 		name = "湮烬尘墟·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23032,11 +22355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.expedition_data_by_map
-
-	var_4_26[2100572] = {
+	pg.base.expedition_data_by_map[2100572] = {
 		map = 2100572,
 		name = "湮烬尘墟·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23087,11 +22406,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.expedition_data_by_map
-
-	var_4_27[2100581] = {
+	pg.base.expedition_data_by_map[2100581] = {
 		map = 2100581,
 		name = "空相交汇点·上行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23197,11 +22512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.expedition_data_by_map
-
-	var_4_28[2100582] = {
+	pg.base.expedition_data_by_map[2100582] = {
 		map = 2100582,
 		name = "空相交汇点·下行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23307,11 +22618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.expedition_data_by_map
-
-	var_4_29[2100591] = {
+	pg.base.expedition_data_by_map[2100591] = {
 		map = 2100591,
 		name = "空相交汇点·上行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23417,11 +22724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.expedition_data_by_map
-
-	var_4_30[2100592] = {
+	pg.base.expedition_data_by_map[2100592] = {
 		map = 2100592,
 		name = "空相交汇点·下行篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23527,11 +22830,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.expedition_data_by_map
-
-	var_4_31[2200000] = {
+	pg.base.expedition_data_by_map[2200000] = {
 		map = 2200000,
 		name = "努力、希望和计划|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -23582,11 +22881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.expedition_data_by_map
-
-	var_4_32[2200010] = {
+	pg.base.expedition_data_by_map[2200010] = {
 		map = 2200010,
 		name = "围剿{namecode:431}！|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -23637,11 +22932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.expedition_data_by_map
-
-	var_4_33[2200020] = {
+	pg.base.expedition_data_by_map[2200020] = {
 		map = 2200020,
 		name = "朱诺行动|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -23692,11 +22983,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.expedition_data_by_map
-
-	var_4_34[2200030] = {
+	pg.base.expedition_data_by_map[2200030] = {
 		map = 2200030,
 		name = "月光下的序曲|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -23747,11 +23034,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.expedition_data_by_map
-
-	var_4_35[2200040] = {
+	pg.base.expedition_data_by_map[2200040] = {
 		map = 2200040,
 		name = "激奏的Polaris|| ||CHAPTER EX||S.P.",
 		pos_type = 0,
@@ -23802,11 +23085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.expedition_data_by_map
-
-	var_4_36[2200050] = {
+	pg.base.expedition_data_by_map[2200050] = {
 		map = 2200050,
 		name = "斯图尔特的硝烟|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -23857,11 +23136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.expedition_data_by_map
-
-	var_4_37[2200060] = {
+	pg.base.expedition_data_by_map[2200060] = {
 		map = 2200060,
 		name = "最珍贵的宝物|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -23912,11 +23187,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.expedition_data_by_map
-
-	var_4_38[6] = {
+	pg.base.expedition_data_by_map[6] = {
 		map = 2200070,
 		name = "激唱的Universe|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -23967,11 +23238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.expedition_data_by_map
-
-	var_4_39[16] = {
+	pg.base.expedition_data_by_map[16] = {
 		map = 2200080,
 		name = "峡湾间的星辰|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -24001,11 +23268,7 @@ end)()
 		bind_map = 0,
 		clouds_pos = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.expedition_data_by_map
-
-	var_4_40[26] = {
+	pg.base.expedition_data_by_map[26] = {
 		map = 2200090,
 		name = "夜幕下的归途|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -24056,11 +23319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.expedition_data_by_map
-
-	var_4_41[2200100] = {
+	pg.base.expedition_data_by_map[2200100] = {
 		map = 2200100,
 		name = "峡湾间的反击|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -24111,11 +23370,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.expedition_data_by_map
-
-	var_4_42[2200110] = {
+	pg.base.expedition_data_by_map[2200110] = {
 		map = 2200110,
 		name = "划破海空之翼|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -24166,11 +23421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.expedition_data_by_map
-
-	var_4_43[2200120] = {
+	pg.base.expedition_data_by_map[2200120] = {
 		map = 2200120,
 		name = "杰诺瓦的焰火|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -24221,11 +23472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.expedition_data_by_map
-
-	var_4_44[2200130] = {
+	pg.base.expedition_data_by_map[2200130] = {
 		map = 2200130,
 		name = "虚像构筑之塔·序章|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -24313,11 +23560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.expedition_data_by_map
-
-	var_4_45[2200140] = {
+	pg.base.expedition_data_by_map[2200140] = {
 		map = 2200140,
 		name = "飓风与青春之泉·上篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -24368,11 +23611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.expedition_data_by_map
-
-	var_4_46[2200141] = {
+	pg.base.expedition_data_by_map[2200141] = {
 		map = 2200141,
 		name = "飓风与青春之泉·下篇|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -24423,11 +23662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.expedition_data_by_map
-
-	var_4_47[2200150] = {
+	pg.base.expedition_data_by_map[2200150] = {
 		map = 2200150,
 		name = "远汇点作战|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -24478,11 +23713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.expedition_data_by_map
-
-	var_4_48[2200160] = {
+	pg.base.expedition_data_by_map[2200160] = {
 		map = 2200160,
 		name = "奏响鸢尾之歌|| ||CHAPTER SP||S.P.",
 		pos_type = 0,
@@ -24533,11 +23764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.expedition_data_by_map
-
-	var_4_49[2200170] = {
+	pg.base.expedition_data_by_map[2200170] = {
 		map = 2200170,
 		name = "幻梦间奏曲|| ||CHAPTER EX||E.X.",
 		pos_type = 0,
@@ -24601,8 +23828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-	var_4_49.base.expedition_data_by_map[2200171] = {
+	pg.base.expedition_data_by_map[2200171] = {
 		map = 2200171,
 		name = "幻梦间奏曲|| ||CHAPTER EX||E.X.",
 		pos_type = 0,

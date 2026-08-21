@@ -39,7 +39,7 @@ function configUI(self)
 
     self.mTxtMasterName = self:getChildGO("mTxtMasterName"):GetComponent(ty.Text)
     self.mTxtMemberCount = self:getChildGO("mTxtMemberCount"):GetComponent(ty.Text)
-
+    self.mImgIcon = self:getChildGO("mImgIcon"):GetComponent(ty.AutoRefImage)
     self.mTxtRequest = self:getChildGO("mTxtRequest"):GetComponent(ty.Text)
     self.mImgFree = self:getChildGO("mImgFree")
 
@@ -108,6 +108,7 @@ function showPanel(self)
     self.mTxtGuildLv.text = "公会等级:  "..self.data.lv
     self.mTxtMasterName.text = self.data.leader_name
 
+    self.mImgIcon:SetImg(UrlManager:getIconPath(guild.GuildManager:getIconDataById(self.data.icon).icon),false)
     self.localData = guild.GuildManager:getGuildData(self.data.lv)
     self.mTxtMemberCount.text = self.data.member_num .. "/"..self.localData.peopleNum
     self.mTxtMemberCount.color = self.data.member_num == self.localData.peopleNum and gs.ColorUtil.GetColor("FFB644FF") or gs.ColorUtil.GetColor("404548FF")

@@ -13,8 +13,6 @@ function ctor(self)
     self.m_lastTimeScale = nil
     -- 等待网络事件的标志
     self.m_isWaitingNet = false
-    -- 解析数据
-    self:_parseData()
 
     self.m_waitGData = {}
     -- self.m_maskMat = gs.ResMgr:Load(UrlManager:getUIMaterial("RimLight.mat"))
@@ -45,6 +43,7 @@ function resetData(self)
 end
 
 function checkResetGuide(self)
+    self:guideRos()
     -- 未获取到服务器的数据
     if StorageUtil:getString0('login_guide') == "1" then
         return false
@@ -178,7 +177,7 @@ function _parseData(self)
     -- 解析数据
     self.m_guideDict = {}
 
-    local baseData = RefMgr:getData('guide_data')
+    local baseData = RefMgr:getData("guide_data")
     for key, data in pairs(baseData) do
         local ro = LuaPoolMgr:poolGet(guide.GuideDataRo)
         ro:parseData(key, data)

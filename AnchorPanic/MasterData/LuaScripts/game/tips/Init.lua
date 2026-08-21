@@ -4,6 +4,8 @@ require("game/tips/bracelet/BraceletTipConst")
 tips.TipsManager = require("game/tips/TipsManager").new()
 tips.BaseTips = require('game/tips/base/BaseTips')
 tips.PropsTips = require('game/tips/props/PropsTips')
+tips.HeroEggTips = require('game/tips/props/HeroEggTips')
+
 tips.UAVBuyTips = require('game/tips/props/UAVUseTips')
 tips.EquipTips = require('game/tips/equip/EquipTips')
 tips.EquipTipsMin = require("game/tips/equip/EquipTipsMin")

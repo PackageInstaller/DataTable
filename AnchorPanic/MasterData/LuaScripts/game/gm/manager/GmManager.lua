@@ -19,6 +19,8 @@ function __init(self)
     self.cmdModuleList = nil
     self.mRunTimeInspector = nil
     self.mRunTimeInspectorToogle = false
+    -- 是否测试特殊材质球
+    self.isTestHar = true
 end
 
 function parseCmdData(self, cmdList)

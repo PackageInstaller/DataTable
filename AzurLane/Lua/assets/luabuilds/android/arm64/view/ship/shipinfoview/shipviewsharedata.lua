@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ShipViewShareData")
+﻿local var_0_0 = class("ShipViewShareData")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0.shipVO = nil
@@ -21,12 +19,7 @@ function var_0_0.SetPlayer(arg_3_0, arg_3_1)
 end
 
 function var_0_0.HasFashion(arg_4_0)
-	getProxy = var_1_10001
-	ShipSkinProxy = var_1_10003
-
-	local var_4_0 = var_1_10001(var_1_10003)
-
-	return var_1.HasFashion(var_4_0, arg_4_0.shipVO)
+	return getProxy(ShipSkinProxy):HasFashion(arg_4_0.shipVO)
 end
 
 function var_0_0.GetCurGroupSkinList(arg_5_0)
@@ -34,12 +27,7 @@ function var_0_0.GetCurGroupSkinList(arg_5_0)
 end
 
 function var_0_0.GetGroupSkinList(arg_6_0, arg_6_1)
-	getProxy = var_1_10002
-	ShipSkinProxy = var_1_10004
-
-	local var_6_0 = var_1_10002(var_1_10004)
-
-	return var_2.GetAllSkinForShip(var_6_0, arg_6_0.shipVO)
+	return getProxy(ShipSkinProxy):GetAllSkinForShip(arg_6_0.shipVO)
 end
 
 return var_0_0

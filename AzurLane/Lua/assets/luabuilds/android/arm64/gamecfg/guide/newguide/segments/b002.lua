@@ -1,10 +1,4 @@
-﻿local var_0_0 = {
-	"我方旗舰的<color=#ff7d36>航空支援</color>已准备完毕 ",
-	"清除战场准备！点击<color=#ff7d36>航空支援</color>按钮试试吧！",
-	"看到空中支援的威力了吧！ 紧急情况下释放，还能<color=#ff7d36>消除敌方弹幕</color>呢！"
-}
-
-return {
+﻿return {
 	id = "B002",
 	events = {
 		{
@@ -23,7 +17,11 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"我方旗舰的<color=#ff7d36>航空支援</color>已准备完毕 ",
+					"清除战场准备！点击<color=#ff7d36>航空支援</color>按钮试试吧！",
+					"看到空中支援的威力了吧！ 紧急情况下释放，还能<color=#ff7d36>消除敌方弹幕</color>呢！"
+				})[1]
 			}
 		},
 		{
@@ -36,7 +34,11 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"我方旗舰的<color=#ff7d36>航空支援</color>已准备完毕 ",
+					"清除战场准备！点击<color=#ff7d36>航空支援</color>按钮试试吧！",
+					"看到空中支援的威力了吧！ 紧急情况下释放，还能<color=#ff7d36>消除敌方弹幕</color>呢！"
+				})[2]
 			},
 			ui = {
 				path = "UICamera/Canvas/UIMain/CombatUI(Clone)/Weapon_button_container/Skill_3/ActCtl",
@@ -55,7 +57,11 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = ({
+					"我方旗舰的<color=#ff7d36>航空支援</color>已准备完毕 ",
+					"清除战场准备！点击<color=#ff7d36>航空支援</color>按钮试试吧！",
+					"看到空中支援的威力了吧！ 紧急情况下释放，还能<color=#ff7d36>消除敌方弹幕</color>呢！"
+				})[3]
 			}
 		}
 	}

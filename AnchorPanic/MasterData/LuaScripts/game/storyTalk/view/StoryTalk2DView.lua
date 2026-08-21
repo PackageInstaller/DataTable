@@ -187,7 +187,7 @@ function texturesChange(self, curData)
 
         if hv.data ~= nil then
             local dv = getSameModelFromOldDic(hv, self.mDataDic) -- 已存在模型数据
-            if not dv then                                       -- mDic是否存在模型，不存在就直接加
+            if not dv then                                       -- 在mDic是否存在模型，不存在就直接加
                 if self.mDataDic[pos] then                       -- 虽然没有相同的，但是位置上有，也删除
                     self:removeModel(pos)
                 end
@@ -288,7 +288,7 @@ function updateModel(self, oldData, newData)
 
     -- 更新mDataDic
     -- 如果mDataDic 原有的位置和新的位置不一样，则需要把新位置上原有的model清除掉
-    if oldLocation ~= newLocation and self.mDataDic[newLocation] ~= nil then
+    if oldLocation ~= newLocation then
         self:removeModel(newLocation)
         self.mDataDic[oldLocation] = nil -- 由于是角色位置变了，以前的位置要置空（但不能删，因为newLocation在用）
     end
@@ -310,6 +310,7 @@ function removeModel(self, modelLocation)
     end
 end
 
+-- 角色从右边切入动画
 function updateAllModel(self)
     local leftData = self.mDataDic[PositionType.Left]
     local middleData = self.mDataDic[PositionType.Middle]
@@ -326,6 +327,9 @@ function updateAllModel(self)
         local rightTrans = self:getModelLocationTrans(rightData.isVideoCall, PositionType.Right)
 
         middleData.liveView:updateModel(leftTrans, middleData)
+        rightData.liveView:updateModel(rightTrans, rightData)
+    elseif rightData then -- 角色在右边的动画更新
+        local rightTrans = self:getModelLocationTrans(rightData.isVideoCall, PositionType.Right)
         rightData.liveView:updateModel(rightTrans, rightData)
     end
 end

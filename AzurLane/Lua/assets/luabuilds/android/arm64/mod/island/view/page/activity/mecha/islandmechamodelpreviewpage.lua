@@ -1,149 +1,89 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandMechaModelPreviewPage", import("Mod.Island.View.page.ship.IslandBaseShipDisplayPage"))
 
-local var_0_0 = "IslandMechaModelPreviewPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("Mod.Island.View.page.ship.IslandBaseShipDisplayPage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandMechaModePreviewUI"
 end
 
-function var_0_1.NeedCache(arg_2_0)
+function var_0_0.NeedCache(arg_2_0)
 	return false
 end
 
-function var_0_1.GetActiveCamName(arg_3_0)
-	IslandConst = var_1_10001
-
-	return var_1_10001.MODEL_PREVIEW_CAMERA_NAME
+function var_0_0.GetActiveCamName(arg_3_0)
+	return IslandConst.MODEL_PREVIEW_CAMERA_NAME
 end
 
-function var_0_1.OnLoaded(arg_4_0)
-	local var_4_0 = arg_4_0._tf
+function var_0_0.OnLoaded(arg_4_0)
+	arg_4_0.backBtn = arg_4_0._tf:Find("adapt/left_panel/back")
 
-	arg_4_0.backBtn = var_1.Find(var_4_0, "adapt/left_panel/back")
-	setText = var_1
-
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_3.Find(var_4_1, "adapt/left_panel/title/Text")
-
-	i18n = var_4
-
-	var_1(var_4_2, var_4("island_dressup_titile"))
+	setText(arg_4_0._tf:Find("adapt/left_panel/title/Text"), i18n("island_dressup_titile"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_5_0)
-	onButton = var_1_10001
-
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.backBtn
-
-	local function var_5_2()
-		local var_6_0 = arg_5_0
-
-		var_0.Hide(var_6_0)
+function var_0_0.OnInit(arg_5_0)
+	onButton(arg_5_0, arg_5_0.backBtn, function()
+		arg_5_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_5_0, var_5_1, var_5_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.Show(arg_7_0)
-	var_0_1.super.Show(arg_7_0)
-
-	pg = var_1
-
-	local var_7_0 = var_1.island_unit_character[0]
-
+function var_0_0.Show(arg_7_0)
+	var_0_0.super.Show(arg_7_0)
 	arg_7_0:LoadCharacter({
-		model = var_7_0.model,
-		animator = var_7_0.animator
+		model = pg.island_unit_character[0].model,
+		animator = pg.island_unit_character[0].animator
 	}, false)
 
 	return
 end
 
-function var_0_1.GetSmoothRotateObject(arg_8_0)
-	local var_8_0 = arg_8_0._tf
-
-	return var_1.Find(var_8_0, "adapt/char")
+function var_0_0.GetSmoothRotateObject(arg_8_0)
+	return arg_8_0._tf:Find("adapt/char")
 end
 
-function var_0_1.Hide(arg_9_0)
-	var_0_1.super.Hide(arg_9_0)
+function var_0_0.Hide(arg_9_0)
+	var_0_0.super.Hide(arg_9_0)
 
 	if arg_9_0.timer then
-		local var_9_0 = arg_9_0.timer
-
-		var_1.Stop(var_9_0)
+		arg_9_0.timer:Stop()
 	end
 
 	return
 end
 
-function var_0_1.SetObjInitRotaion(arg_10_0, arg_10_1)
-	local var_10_0
+function var_0_0.SetObjInitRotaion(arg_10_0, arg_10_1)
+	local var_10_0 = GetOrAddComponent(arg_10_0:GetSmoothRotateObject(), typeof(SmoothRotateObject))
 
-	var_10_0, GetOrAddComponent = arg_10_0:GetSmoothRotateObject(), var_1_10003
-	typeof = var_1_10006
-	SmoothRotateObject = var_1_10008
+	var_10_0.rotationSpeed = 5
 
-	local var_10_1 = var_1_10003(var_10_0, var_1_10006(var_1_10008))
-
-	var_10_1.rotationSpeed = 5
-	ReflectionHelp = var_4
-
-	local var_10_2 = var_4.RefSetProperty
-
-	typeof = var_6
-	SmoothRotateObject = var_1_10008
-
-	var_10_2(var_6(var_1_10008), "targetRotation", var_10_1, arg_10_1)
+	ReflectionHelp.RefSetProperty(typeof(SmoothRotateObject), "targetRotation", var_10_0, arg_10_1)
 
 	if arg_10_0.timer then
-		local var_10_3 = arg_10_0.timer
-
-		var_4.Stop(var_10_3)
+		arg_10_0.timer:Stop()
 	end
 
-	Timer = var_4
-	arg_10_0.timer = var_4.New(function()
-		pg = var_2_10000
-
-		local var_11_0 = var_2_10000.island_set.character_detail_camera_speed.key_value_int
-
-		var_10_1.rotationSpeed = var_11_0
+	arg_10_0.timer = Timer.New(function()
+		var_10_0.rotationSpeed = pg.island_set.character_detail_camera_speed.key_value_int
 
 		return
 	end, 0.5, 1)
 
-	local var_10_4 = arg_10_0.timer
-
-	var_4.Start(var_10_4)
+	arg_10_0.timer:Start()
 
 	return
 end
 
-function var_0_1.IsPreviewScene(arg_12_0)
+function var_0_0.IsPreviewScene(arg_12_0)
 	return true
 end
 
-function var_0_1.GetDressByType(arg_13_0)
-	local var_13_0 = {}
-
-	IslandShipDressHelperNew = var_1_10002
-	var_13_0[var_1_10002.DressType.Body] = 1060013
-
-	return var_13_0
+function var_0_0.GetDressByType(arg_13_0)
+	return {
+		[IslandShipDressHelperNew.DressType.Body] = 1060013
+	}
 end
 
-return var_0_1
+return var_0_0

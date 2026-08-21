@@ -1,10 +1,5 @@
-﻿require = var_0_10000
-
-local var_0_0 = var_0_10000("Mgr/Pool/PoolUtil")
-
-class = var_0_10001
-
-local var_0_1 = var_0_10001("PoolSingleton")
+﻿local var_0_0 = require("Mgr/Pool/PoolUtil")
+local var_0_1 = class("PoolSingleton")
 
 function var_0_1.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.prefab = arg_1_1

@@ -1,62 +1,24 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("RecordableSearchBar")
+﻿local var_0_0 = class("RecordableSearchBar")
 
 function var_0_0.CreateData(arg_1_0)
-	local var_1_0 = {}
+	assert(arg_1_0.key, "key is required")
+	assert(arg_1_0.parent, "parent is required")
 
-	assert = var_1_10002
+	;({}).uiName = arg_1_0.uiName or "RecordableSearchBarUI"
+	;({}).synPosition = arg_1_0.synPosition
+	;({}).position = arg_1_0.position or Vector3.zero
+	;({}).anchoredPosition = arg_1_0.anchoredPosition or Vector3.zero
+	;({}).holder = arg_1_0.holder or "..."
+	;({}).onSearch = arg_1_0.onSearch
+	;({}).onActive = arg_1_0.onActive
+	;({}).onInputChanged = arg_1_0.onInputChanged
+	;({}).enabledFlag = arg_1_0.enabledFlag
+	;({}).expandParent = arg_1_0.expand_parent
+	;({}).refreshPosWhenExpand = arg_1_0.refresh_pos_when_expand
+	;({}).key = arg_1_0.key .. "_SearchBar_"
+	;({}).parent = arg_1_0.parent
 
-	var_1_10002(arg_1_0.key, "key is required")
-
-	assert = var_1_10002
-
-	var_1_10002(arg_1_0.parent, "parent is required")
-
-	local var_1_1
-
-	if not arg_1_0.uiName then
-		var_1_1 = "RecordableSearchBarUI"
-	end
-
-	var_1_0.uiName = var_1_1
-	var_1_0.synPosition = arg_1_0.synPosition
-
-	local var_1_2
-
-	if not arg_1_0.position then
-		Vector3 = var_1_2
-		var_1_2 = var_1_2.zero
-	end
-
-	var_1_0.position = var_1_2
-
-	local var_1_3
-
-	if not arg_1_0.anchoredPosition then
-		Vector3 = var_1_3
-		var_1_3 = var_1_3.zero
-	end
-
-	var_1_0.anchoredPosition = var_1_3
-
-	local var_1_4
-
-	if not arg_1_0.holder then
-		var_1_4 = "..."
-	end
-
-	var_1_0.holder = var_1_4
-	var_1_0.onSearch = arg_1_0.onSearch
-	var_1_0.onActive = arg_1_0.onActive
-	var_1_0.onInputChanged = arg_1_0.onInputChanged
-	var_1_0.enabledFlag = arg_1_0.enabledFlag
-	var_1_0.expandParent = arg_1_0.expand_parent
-	var_1_0.refreshPosWhenExpand = arg_1_0.refresh_pos_when_expand
-	var_1_0.key = arg_1_0.key .. "_SearchBar_"
-	var_1_0.parent = arg_1_0.parent
-
-	return var_1_0
+	return {}
 end
 
 local var_0_1 = 0
@@ -65,9 +27,7 @@ local var_0_3 = 2
 local var_0_4 = 3
 
 function var_0_0.Ctor(arg_2_0, arg_2_1)
-	pg = var_1_10002
-
-	var_1_10002.DelegateInfo.New(arg_2_0)
+	pg.DelegateInfo.New(arg_2_0)
 
 	arg_2_0.enabledFlag = arg_2_1.enabledFlag
 	arg_2_0.state = var_0_1
@@ -97,24 +57,14 @@ function var_0_0.Load(arg_6_0)
 
 	arg_6_0.state = var_0_2
 
-	local var_6_0 = arg_6_0.data
-
-	LoadAndInstantiateAsync = var_1_10002
-
-	var_1_10002("ui", var_6_0.uiName, function(arg_7_0)
-		local var_7_0 = arg_6_0
-
-		if var_1.IsDestory(var_7_0) then
-			local var_7_1 = arg_6_0
-
-			var_1.Unload(var_7_1, arg_7_0)
+	LoadAndInstantiateAsync("ui", arg_6_0.data.uiName, function(arg_7_0)
+		if arg_6_0:IsDestory() then
+			arg_6_0:Unload(arg_7_0)
 
 			return
 		end
 
-		local var_7_2 = arg_6_0
-
-		var_1.Init(var_7_2, arg_7_0)
+		arg_6_0:Init(arg_7_0)
 
 		return
 	end, true, true)
@@ -125,22 +75,17 @@ end
 function var_0_0.Init(arg_8_0, arg_8_1)
 	arg_8_0._go = arg_8_1
 
-	local var_8_0 = arg_8_0.data
-	local var_8_1 = arg_8_1.transform
-
-	var_3.SetParent(var_8_1, var_8_0.parent, false)
+	arg_8_1.transform:SetParent(arg_8_0.data.parent, false)
 	arg_8_0:InitToggle()
 	arg_8_0:UpdatePosition()
 	arg_8_0:UpdateAnchoredPosition()
 
-	if var_8_0.synPosition then
+	if arg_8_0.data.synPosition then
 		arg_8_0:SyncPosition()
 	end
 
 	if arg_8_0.enabledFlag ~= nil then
-		setActive = var_3
-
-		var_3(arg_8_0._go, arg_8_0.enabledFlag)
+		setActive(arg_8_0._go, arg_8_0.enabledFlag)
 
 		arg_8_0.enabledFlag = nil
 	end
@@ -152,118 +97,48 @@ end
 
 function var_0_0.InitToggle(arg_9_0)
 	local var_9_0 = arg_9_0.data
-	local var_9_1 = arg_9_0._go.transform
 
-	arg_9_0.toggle = var_2.Find(var_9_1, "button/Image")
-
-	local var_9_2 = arg_9_0._go.transform
-
-	arg_9_0.onTr = var_2.Find(var_9_2, "button/Image/on")
-
-	local var_9_3 = arg_9_0._go.transform
-
-	arg_9_0.offTr = var_2.Find(var_9_3, "button/Image/off")
-
-	local var_9_4 = arg_9_0._go.transform
-
-	arg_9_0.searchTr = var_2.Find(var_9_4, "button/search")
-
-	local var_9_5 = arg_9_0._go.transform
-	local var_9_6 = var_2.Find(var_9_5, "button/search/holder")
-	local var_9_7 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_9_0.holder = var_9_7(var_9_6, var_5(var_1_10007))
-
-	local var_9_8 = arg_9_0._go
-
-	arg_9_0.noDrawGraphicCom = var_2.GetComponent(var_9_8, "NoDrawingGraphic")
-
-	local var_9_9 = arg_9_0._go.transform
-
-	arg_9_0.historyTr = var_2.Find(var_9_9, "button/history")
-	UIItemList = var_2
-
-	local var_9_10 = var_2.New
-	local var_9_11 = arg_9_0.historyTr
-	local var_9_12 = arg_9_0.historyTr
-
-	arg_9_0.uiHistoryList = var_9_10(var_9_11, var_5.Find(var_9_12, "Text"))
-
-	local var_9_13 = arg_9_0._go.transform
-
-	arg_9_0.mainBtnTr = var_2.Find(var_9_13, "button")
+	arg_9_0.toggle = arg_9_0._go.transform:Find("button/Image")
+	arg_9_0.onTr = arg_9_0._go.transform:Find("button/Image/on")
+	arg_9_0.offTr = arg_9_0._go.transform:Find("button/Image/off")
+	arg_9_0.searchTr = arg_9_0._go.transform:Find("button/search")
+	arg_9_0.holder = arg_9_0._go.transform:Find("button/search/holder"):GetComponent(typeof(Text))
+	arg_9_0.noDrawGraphicCom = arg_9_0._go:GetComponent("NoDrawingGraphic")
+	arg_9_0.historyTr = arg_9_0._go.transform:Find("button/history")
+	arg_9_0.uiHistoryList = UIItemList.New(arg_9_0.historyTr, arg_9_0.historyTr:Find("Text"))
+	arg_9_0.mainBtnTr = arg_9_0._go.transform:Find("button")
 	arg_9_0.isSelected = false
-	onToggle = var_2
 
-	local var_9_14 = arg_9_0
-	local var_9_15 = arg_9_0.toggle
-
-	local function var_9_16(arg_10_0)
-		setActive = var_2_10001
-
-		var_2_10001(arg_9_0.onTr, arg_10_0)
-
-		setActive = var_2_10001
-
-		var_2_10001(arg_9_0.searchTr, arg_10_0)
-
-		setActive = var_2_10001
-
-		var_2_10001(arg_9_0.offTr, not arg_10_0)
+	onToggle(arg_9_0, arg_9_0.toggle, function(arg_10_0)
+		setActive(arg_9_0.onTr, arg_10_0)
+		setActive(arg_9_0.searchTr, arg_10_0)
+		setActive(arg_9_0.offTr, not arg_10_0)
 
 		if var_9_0.onActive then
 			var_9_0.onActive(arg_10_0)
 		end
 
 		if not arg_10_0 then
-			local var_10_0 = arg_9_0
-
-			var_1.OnUnSelectedInputField(var_10_0)
+			arg_9_0:OnUnSelectedInputField()
 		end
 
-		local var_10_1 = arg_9_0
-
-		var_1.Reparent(var_10_1, arg_10_0)
+		arg_9_0:Reparent(arg_10_0)
 
 		return
-	end
+	end, SFX_PANEL)
+	triggerToggle(arg_9_0.toggle, false)
 
-	SFX_PANEL = var_9_12
+	arg_9_0.etl = arg_9_0.searchTr:GetComponent(typeof(EventTriggerListener))
 
-	var_2(var_9_14, var_9_15, var_9_16, var_9_12)
-
-	triggerToggle = var_2
-
-	var_2(arg_9_0.toggle, false)
-
-	local var_9_17 = arg_9_0.searchTr
-	local var_9_18 = var_2.GetComponent
-
-	typeof = var_5
-	EventTriggerListener = var_9_12
-	arg_9_0.etl = var_9_18(var_9_17, var_5(var_9_12))
-
-	local var_9_19 = arg_9_0.etl
-
-	var_2.AddSelectFunc(var_9_19, function(arg_11_0, arg_11_1)
-		local var_11_0 = arg_9_0
-
-		var_2.OnSelectedInputField(var_11_0)
+	arg_9_0.etl:AddSelectFunc(function(arg_11_0, arg_11_1)
+		arg_9_0:OnSelectedInputField()
 
 		return
 	end)
+	onInputEndEdit(arg_9_0, arg_9_0.searchTr, function()
+		local var_12_0 = getInputText(arg_9_0.searchTr)
 
-	onInputEndEdit = var_2
-
-	var_2(arg_9_0, arg_9_0.searchTr, function()
-		getInputText = var_2_10000
-
-		local var_12_0 = var_2_10000(arg_9_0.searchTr)
-		local var_12_1 = arg_9_0
-
-		var_1.RecordSearch(var_12_1, var_12_0)
+		arg_9_0:RecordSearch(var_12_0)
 
 		if var_9_0.onSearch then
 			var_9_0.onSearch(var_12_0)
@@ -271,71 +146,42 @@ function var_0_0.InitToggle(arg_9_0)
 
 		return
 	end)
-
-	onInputChanged = var_2
-
-	var_2(arg_9_0, arg_9_0.searchTr, function()
+	onInputChanged(arg_9_0, arg_9_0.searchTr, function()
 		if var_9_0.onInputChanged then
-			local var_13_0 = var_9_0.onInputChanged
-
-			str = var_2_10002
-
-			var_13_0(var_2_10002)
+			var_9_0.onInputChanged(str)
 		end
 
 		return
 	end)
-
-	onButton = var_2
-
-	local var_9_20 = arg_9_0
-	local var_9_21 = arg_9_0._go
-
-	local function var_9_22()
-		getInputText = var_2_10000
-
-		local var_14_0 = var_2_10000(arg_9_0.searchTr)
-		local var_14_1 = arg_9_0
-
-		var_1.RecordSearch(var_14_1, var_14_0)
-
-		local var_14_2 = arg_9_0
-
-		var_1.OnUnSelectedInputField(var_14_2)
+	onButton(arg_9_0, arg_9_0._go, function()
+		arg_9_0:RecordSearch((getInputText(arg_9_0.searchTr)))
+		arg_9_0:OnUnSelectedInputField()
 
 		return
-	end
-
-	SFX_PANEL = var_9_12
-
-	var_2(var_9_20, var_9_21, var_9_22, var_9_12)
-	arg_9_0:UpdateHolder(var_9_0.holder)
+	end, SFX_PANEL)
+	arg_9_0:UpdateHolder(arg_9_0.data.holder)
 
 	return
 end
 
 function var_0_0.Reparent(arg_15_0, arg_15_1)
 	if arg_15_0.data.expandParent then
-		local var_15_0
+		if arg_15_1 then
+			local var_15_0 = arg_15_0.data.expandParent or arg_15_0.data.parent
 
-		if not arg_15_1 or not var_2.expandParent then
-			var_15_0 = var_2.parent
-		end
+			arg_15_0._go.transform:SetParent(var_15_0, false)
 
-		local var_15_1 = arg_15_0._go.transform
-
-		var_4.SetParent(var_15_1, var_15_0, false)
-
-		if var_2.refreshPosWhenExpand then
-			if arg_15_1 then
-				arg_15_0.mainBtnTr.position = var_2.parent.position
-			else
-				arg_15_0:UpdateAnchoredPosition()
+			if arg_15_0.data.refreshPosWhenExpand then
+				if arg_15_1 then
+					arg_15_0.mainBtnTr.position = arg_15_0.data.parent.position
+				else
+					arg_15_0:UpdateAnchoredPosition()
+				end
 			end
+
+			return
 		end
 	end
-
-	return
 end
 
 function var_0_0.UpdatePosition(arg_16_0)
@@ -343,12 +189,9 @@ function var_0_0.UpdatePosition(arg_16_0)
 		return
 	end
 
-	local var_16_0 = arg_16_0._go.transform
-	local var_16_1 = var_2.InverseTransformPoint(var_16_0, var_1.position)
-	local var_16_2 = arg_16_0.mainBtnTr
+	local var_16_0 = arg_16_0._go.transform:InverseTransformPoint(arg_16_0.data.position)
 
-	Vector3 = var_16_0
-	var_16_2.localPosition = var_16_0(var_16_1.x, var_16_1.y, 0)
+	arg_16_0.mainBtnTr.localPosition = Vector3(var_16_0.x, var_16_0.y, 0)
 
 	return
 end
@@ -358,7 +201,7 @@ function var_0_0.UpdateAnchoredPosition(arg_17_0)
 		return
 	end
 
-	arg_17_0.mainBtnTr.anchoredPosition = var_1.anchoredPosition
+	arg_17_0.mainBtnTr.anchoredPosition = arg_17_0.data.anchoredPosition
 
 	return
 end
@@ -366,27 +209,20 @@ end
 function var_0_0.SyncPosition(arg_18_0)
 	arg_18_0:RemoveSyncPosition()
 
-	Timer = var_1
-	arg_18_0.timer = var_1.New(function()
-		local var_19_0 = arg_18_0
-
-		var_0.UpdatePosition(var_19_0)
+	arg_18_0.timer = Timer.New(function()
+		arg_18_0:UpdatePosition()
 
 		return
 	end, 0.1, -1)
 
-	local var_18_0 = arg_18_0.timer
-
-	var_1.Start(var_18_0)
+	arg_18_0.timer:Start()
 
 	return
 end
 
 function var_0_0.RemoveSyncPosition(arg_20_0)
 	if arg_20_0.timer then
-		local var_20_0 = arg_20_0.timer
-
-		var_1.Stop(var_20_0)
+		arg_20_0.timer:Stop()
 
 		arg_20_0.timer = nil
 	end
@@ -400,68 +236,36 @@ function var_0_0.RecordSearch(arg_21_0, arg_21_1)
 	end
 
 	local var_21_0 = arg_21_0.data.key
-	local var_21_1 = arg_21_0
-	local var_21_2 = arg_21_0.GetHistorySearch(var_21_1)
+	local var_21_1 = arg_21_0:GetHistorySearch()
 
-	table = var_1_10004
-
-	if var_1_10004.contains(var_21_2, arg_21_1) then
+	if table.contains(var_21_1, arg_21_1) then
 		return
 	end
 
-	table = var_4
+	table.insert(var_21_1, 1, arg_21_1)
 
-	var_4.insert(var_21_2, 1, arg_21_1)
-
-	local var_21_3 = {}
-
-	math = var_21_1
-
-	local var_21_4 = var_21_1.min(#var_21_2, 3)
-
-	for iter_21_0 = 1, var_21_4 do
-		table = var_1_10010
-
-		var_1_10010.insert(var_21_3, var_21_2[iter_21_0])
+	for iter_21_0 = 1, math.min(#var_21_1, 3) do
+		table.insert({}, var_21_1[iter_21_0])
 	end
 
-	table = var_6
-
-	local var_21_5 = var_6.concat(var_21_3, "#")
-
-	PlayerPrefs = var_7
-
-	var_7.SetString(var_21_0, var_21_5)
-
-	PlayerPrefs = var_7
-
-	var_7.Save()
+	PlayerPrefs.SetString(var_21_0, (table.concat({}, "#")))
+	PlayerPrefs.Save()
 
 	return
 end
 
 function var_0_0.GetHistorySearch(arg_22_0)
-	local var_22_0 = arg_22_0.data.key
+	local var_22_0 = PlayerPrefs.GetString(arg_22_0.data.key, "")
 
-	PlayerPrefs = var_1_10002
-
-	if not var_1_10002.GetString(var_22_0, "") or var_2 == "" then
+	if not var_22_0 or var_22_0 == "" then
 		return {}
 	end
 
 	local var_22_1 = {}
 
-	string = var_4
-
-	local var_22_2 = var_4.split(var_2, "#")
-
-	ipairs = var_5
-
-	for iter_22_0, iter_22_1 in var_5(var_22_2) do
+	for iter_22_0, iter_22_1 in ipairs((string.split(var_22_0, "#"))) do
 		if iter_22_1 ~= "" then
-			table = var_1_10010
-
-			var_1_10010.insert(var_22_1, iter_22_1)
+			table.insert(var_22_1, iter_22_1)
 		end
 	end
 
@@ -499,67 +303,38 @@ end
 function var_0_0.InitHistorySearch(arg_25_0, arg_25_1)
 	local var_25_0 = arg_25_0.data
 
-	setActive = var_1_10003
-
-	var_1_10003(arg_25_0.historyTr, true)
+	setActive(arg_25_0.historyTr, true)
 
 	local var_25_1 = arg_25_0:GetHistorySearch()
-	local var_25_2 = arg_25_0.uiHistoryList
 
-	var_4.make(var_25_2, function(arg_26_0, arg_26_1, arg_26_2)
+	arg_25_0.uiHistoryList:make(function(arg_26_0, arg_26_1, arg_26_2)
 		local var_26_0 = arg_26_1 + 1
 
-		UIItemList = var_2_10004
-
-		if arg_26_0 == var_2_10004.EventUpdate then
-			setText = var_4
-
-			var_4(arg_26_2, var_25_1[var_26_0])
-
-			onButton = var_4
-
-			local var_26_1 = arg_25_0
-			local var_26_2 = arg_26_2
-
-			local function var_26_3()
-				setInputText = var_3_10000
-
-				var_3_10000(arg_25_0.searchTr, var_25_1[var_26_0])
+		if arg_26_0 == UIItemList.EventUpdate then
+			setText(arg_26_2, var_25_1[arg_26_1 + 1])
+			onButton(arg_25_0, arg_26_2, function()
+				setInputText(arg_25_0.searchTr, var_25_1[var_26_0])
 
 				if var_25_0.onSearch then
 					var_25_0.onSearch(var_25_1[var_26_0])
 				end
 
-				local var_27_0 = arg_25_0
-
-				var_0.OnUnSelectedInputField(var_27_0)
+				arg_25_0:OnUnSelectedInputField()
 
 				return
-			end
-
-			SFX_PANEL = var_2_10009
-
-			var_4(var_26_1, var_26_2, var_26_3, var_2_10009)
-
-			setActive = var_4
-
-			var_4(arg_26_2:Find("Image"), var_26_0 ~= #var_25_1)
+			end, SFX_PANEL)
+			setActive(arg_26_2:Find("Image"), arg_26_1 + 1 ~= #var_25_1)
 		end
 
 		return
 	end)
-
-	local var_25_3 = arg_25_0.uiHistoryList
-
-	var_4.align(var_25_3, #var_25_1)
+	arg_25_0.uiHistoryList:align(#arg_25_0:GetHistorySearch())
 
 	return
 end
 
 function var_0_0.CloseHistorySearch(arg_28_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_28_0.historyTr, false)
+	setActive(arg_28_0.historyTr, false)
 
 	return
 end
@@ -569,9 +344,7 @@ function var_0_0.GetInputText(arg_29_0)
 		return ""
 	end
 
-	getInputText = var_1
-
-	return var_1(arg_29_0.searchTr)
+	return getInputText(arg_29_0.searchTr)
 end
 
 function var_0_0.UpdateHolder(arg_30_0, arg_30_1)
@@ -579,9 +352,7 @@ function var_0_0.UpdateHolder(arg_30_0, arg_30_1)
 		return
 	end
 
-	setText = var_2
-
-	var_2(arg_30_0.holder, arg_30_1)
+	setText(arg_30_0.holder, arg_30_1)
 
 	return
 end
@@ -591,26 +362,20 @@ function var_0_0.ClearInputText(arg_31_0)
 		return
 	end
 
-	setInputText = var_1
-
-	var_1(arg_31_0.searchTr, "")
+	setInputText(arg_31_0.searchTr, "")
 
 	return
 end
 
 function var_0_0.Unload(arg_32_0, arg_32_1)
-	Object = var_1_10002
-
-	var_1_10002.Destroy(arg_32_1)
+	Object.Destroy(arg_32_1)
 
 	return
 end
 
 function var_0_0.EnableOrDisable(arg_33_0, arg_33_1)
 	if arg_33_0:IsLoaded() then
-		setActive = var_2
-
-		var_2(arg_33_0._go, arg_33_1)
+		setActive(arg_33_0._go, arg_33_1)
 	else
 		arg_33_0.enabledFlag = arg_33_1
 	end
@@ -619,23 +384,17 @@ function var_0_0.EnableOrDisable(arg_33_0, arg_33_1)
 end
 
 function var_0_0.Dispose(arg_34_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_34_0)
+	pg.DelegateInfo.Dispose(arg_34_0)
 
 	if arg_34_0:IsLoaded() then
 		arg_34_0:Unload(arg_34_0._go)
 		arg_34_0:OnUnSelectedInputField()
 
 		if arg_34_0.etl then
-			ClearEventTrigger = var_1
-
-			var_1(arg_34_0.etl)
+			ClearEventTrigger(arg_34_0.etl)
 		end
 
-		setInputText = var_1
-
-		var_1(arg_34_0.searchTr, "")
+		setInputText(arg_34_0.searchTr, "")
 		arg_34_0:RemoveSyncPosition()
 	end
 

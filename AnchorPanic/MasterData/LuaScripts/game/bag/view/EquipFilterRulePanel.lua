@@ -51,6 +51,7 @@ function configUI(self)
     self.mBtnConfirm = self:getChildGO("mBtnConfirm")
     
     self.mTxtColorTitle = self:getChildGO("mTxtColorTitle"):GetComponent(ty.Text)
+    self.GroupSuitTitle = self:getChildGO("GroupSuitTitle")
     self.mGroupColor = self:getChildTrans("GroupColor")
     self.mItemColor = self:getChildGO("ItemColor")
     
@@ -71,6 +72,12 @@ function configUI(self)
     self.mSelectSecondaryAttrEnter = self:getChildGO("SelectSecondaryAttrEnter")
     self.mTxtSecondaryAttrTip = self:getChildGO("mTxtSecondaryAttrTip"):GetComponent(ty.Text)
     self.mItemSecondaryAttr = self:getChildGO("ItemSecondaryAttr")    
+end
+
+function hideAgentInfo(self)
+    self.mGroupColor.gameObject:SetActive(false)
+    self.GroupSuitTitle.gameObject:SetActive(false)
+    self.mSelectSuitEnter:SetActive(false)
 end
 
 function initViewText(self)

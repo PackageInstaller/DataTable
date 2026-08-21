@@ -1,70 +1,26 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("MallStaffCard")
+﻿local var_0_0 = class("MallStaffCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.iconTF = arg_1_0._tf:Find("icon")
+	arg_1_0.nameText = arg_1_0._tf:Find("name"):GetComponent(typeof(Text))
+	arg_1_0.selTF = arg_1_0._tf:Find("sel")
+	arg_1_0.orderTF = arg_1_0._tf:Find("mask/order")
 
-	local var_1_0 = arg_1_0._tf
+	setText(arg_1_0.orderTF:Find("Text"), i18n("mall_staff_in_order"))
 
-	arg_1_0.iconTF = var_2.Find(var_1_0, "icon")
-
-	local var_1_1 = arg_1_0._tf
-	local var_1_2 = var_2.Find(var_1_1, "name")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameText = var_1_3(var_1_2, var_5(var_1_10007))
-
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0.selTF = var_2.Find(var_1_4, "sel")
-
-	local var_1_5 = arg_1_0._tf
-
-	arg_1_0.orderTF = var_2.Find(var_1_5, "mask/order")
-	setText = var_2
-
-	local var_1_6 = arg_1_0.orderTF
-	local var_1_7 = var_4.Find(var_1_6, "Text")
-
-	i18n = var_5
-
-	var_2(var_1_7, var_5("mall_staff_in_order"))
-
-	local var_1_8 = arg_1_0._tf
-
-	arg_1_0.floorTF = var_2.Find(var_1_8, "mask/floor")
-
-	local var_1_9 = {}
-	local var_1_10 = arg_1_0._tf
-
-	var_1_9[1] = var_3.Find(var_1_10, "attrs/1/Text")
-
-	local var_1_11 = arg_1_0._tf
-
-	var_1_9[2] = var_3.Find(var_1_11, "attrs/2/Text")
-
-	local var_1_12 = arg_1_0._tf
-
-	var_1_9[3] = var_3.Find(var_1_12, "attrs/3/Text")
-	arg_1_0.attrTextTFs = var_1_9
-
-	local var_1_13 = {}
-	local var_1_14 = arg_1_0._tf
-
-	var_1_13[1] = var_3.Find(var_1_14, "attrs/1")
-
-	local var_1_15 = arg_1_0._tf
-
-	var_1_13[2] = var_3.Find(var_1_15, "attrs/2")
-
-	local var_1_16 = arg_1_0._tf
-
-	var_1_13[3] = var_3.Find(var_1_16, "attrs/3")
-	arg_1_0.attrBgTFs = var_1_13
+	arg_1_0.floorTF = arg_1_0._tf:Find("mask/floor")
+	arg_1_0.attrTextTFs = {
+		arg_1_0._tf:Find("attrs/1/Text"),
+		arg_1_0._tf:Find("attrs/2/Text"),
+		arg_1_0._tf:Find("attrs/3/Text")
+	}
+	arg_1_0.attrBgTFs = {
+		arg_1_0._tf:Find("attrs/1"),
+		arg_1_0._tf:Find("attrs/2"),
+		arg_1_0._tf:Find("attrs/3")
+	}
 
 	return
 end
@@ -73,87 +29,37 @@ function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
 	arg_2_0.staff = arg_2_1
 	arg_2_0.id = arg_2_0.staff.id
 	arg_2_0.tid = arg_2_0.staff.tid
-	pg = var_5
-
-	local var_2_0 = var_5.item_virtual_data_statistics[arg_2_0.tid].name
-
-	arg_2_0.nameText.text = var_2_0
+	arg_2_0.nameText.text = pg.item_virtual_data_statistics[arg_2_0.tid].name
 
 	var_0_0.StaticUpdateIcon(arg_2_0.iconTF, arg_2_0.tid)
 
-	local var_2_1 = arg_2_0.staff
+	arg_2_0.attrList = arg_2_0.staff:GetAttrList()
 
-	arg_2_0.attrList = var_6.GetAttrList(var_2_1)
+	for iter_2_0, iter_2_1 in ipairs(arg_2_0.attrList) do
+		setText(arg_2_0.attrTextTFs[iter_2_0], iter_2_1)
 
-	local var_2_2
-
-	var_2_2 = arg_2_4 or {}
-	ipairs = var_1_10007
-
-	for iter_2_0, iter_2_1 in var_1_10007(arg_2_0.attrList) do
-		setText = var_1_10012
-
-		var_1_10012(arg_2_0.attrTextTFs[iter_2_0], iter_2_1)
-
-		table = var_1_10012
-
-		if var_1_10012.contains(arg_2_4, iter_2_0) then
-			GetImageSpriteFromAtlasAsync = var_1_10012
-
-			var_1_10012("ui/mallstafftpl_atlas", "attr_bg2", arg_2_0.attrBgTFs[iter_2_0], true)
+		if table.contains(arg_2_4, iter_2_0) then
+			GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", "attr_bg2", arg_2_0.attrBgTFs[iter_2_0], true)
 		else
-			GetImageSpriteFromAtlasAsync = var_1_10012
-
-			var_1_10012("ui/mallstafftpl_atlas", "attr_bg1", arg_2_0.attrBgTFs[iter_2_0], true)
+			GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", "attr_bg1", arg_2_0.attrBgTFs[iter_2_0], true)
 		end
 	end
 
-	table = var_7
+	local var_2_1 = table.indexof(arg_2_2, arg_2_0.id)
 
-	local var_2_3 = var_7.indexof(arg_2_2, arg_2_0.id)
+	setActive(arg_2_0.selTF, var_2_1)
 
-	setActive = var_8
-
-	var_8(arg_2_0.selTF, var_2_3)
-
-	if var_2_3 then
-		setText = var_8
-
-		local var_2_4 = arg_2_0.selTF
-
-		var_8(var_10.Find(var_2_4, "Text"), var_2_3)
+	if var_2_1 then
+		setText(arg_2_0.selTF:Find("Text"), var_2_1)
 	end
 
-	local var_2_5 = arg_2_0.staff
-	local var_2_6, var_2_7 = var_8.GetStatusInfos(var_2_5)
+	local var_2_2, var_2_3 = arg_2_0.staff:GetStatusInfos()
 
-	setActive = var_2_5
+	setActive(arg_2_0.orderTF, var_2_2 == MallStaff.STATUS.ORDER)
+	setActive(arg_2_0.floorTF, var_2_2 == MallStaff.STATUS.FLOOR and (arg_2_3 and not var_2_1 or not arg_2_3))
 
-	local var_2_8 = arg_2_0.orderTF
-
-	MallStaff = var_1_10013
-
-	var_2_5(var_2_8, var_2_6 == var_1_10013.STATUS.ORDER)
-
-	setActive = var_2_5
-
-	local var_2_9 = arg_2_0.floorTF
-
-	MallStaff = var_13
-
-	var_2_5(var_2_9, var_2_6 == var_13.STATUS.FLOOR and (arg_2_3 and not var_2_3 or not arg_2_3))
-
-	MallStaff = var_2_5
-
-	if var_2_6 == var_2_5.STATUS.FLOOR then
-		setText = var_10
-
-		local var_2_10 = arg_2_0.floorTF
-		local var_2_11 = var_12.Find(var_2_10, "Text")
-
-		i18n = var_13
-
-		var_10(var_2_11, var_13("mall_staff_in_floor", var_2_7.floorId))
+	if var_2_2 == MallStaff.STATUS.FLOOR then
+		setText(arg_2_0.floorTF:Find("Text"), i18n("mall_staff_in_floor", var_2_3.floorId))
 	end
 
 	return
@@ -164,21 +70,9 @@ function var_0_0.Dispose(arg_3_0)
 end
 
 function var_0_0.StaticUpdateIcon(arg_4_0, arg_4_1)
-	pg = var_1_10002
-
-	local var_4_0 = var_1_10002.activity_mall_staff_template[arg_4_1].icon_show
-
-	GetImageSpriteFromAtlasAsync = var_1_10003
-
-	var_1_10003("ui/mallstafftpl_atlas", var_4_0[1], arg_4_0:Find("body"))
-
-	GetImageSpriteFromAtlasAsync = var_1_10003
-
-	var_1_10003("ui/mallstafftpl_atlas", var_4_0[2], arg_4_0:Find("clothes"))
-
-	GetImageSpriteFromAtlasAsync = var_1_10003
-
-	var_1_10003("ui/mallstafftpl_atlas", var_4_0[3], arg_4_0:Find("face"))
+	GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", pg.activity_mall_staff_template[arg_4_1].icon_show[1], arg_4_0:Find("body"))
+	GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", pg.activity_mall_staff_template[arg_4_1].icon_show[2], arg_4_0:Find("clothes"))
+	GetImageSpriteFromAtlasAsync("ui/mallstafftpl_atlas", pg.activity_mall_staff_template[arg_4_1].icon_show[3], arg_4_0:Find("face"))
 
 	return
 end

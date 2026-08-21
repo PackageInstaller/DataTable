@@ -58,6 +58,7 @@ function active(self)
     GameDispatcher:addEventListener(EventName.UPDATE_ACTIVITY_RED, self.updateView, self)
     self:updateView(true)
     self:uidoTween()
+    self.mBtnHis:SetActive(not GameManager:getIsInCommiting())
 end
 
 --反激活（销毁工作）
@@ -77,61 +78,60 @@ end
 function initViewText(self)
     self.mTxtTitle.text = _TT(138502)
     self.mTxtTitle_2.text = _TT(138503)
-    self.mTxtTitle_3.text = _TT(98107) 
+    self.mTxtTitle_3.text = _TT(98107)
     self.mTxtTitle_4.text = _TT(138504)
-    self:setBtnLabel(self.mBtnRecharge,138505,"")
-    self:setBtnLabel(self.mBtnHis,138508,"")
+    self:setBtnLabel(self.mBtnRecharge, 138505, "")
+    self:setBtnLabel(self.mBtnHis, 138508, "")
 end
 
 function addAllUIEvent(self)
-    self:addUIEvent(self.mBtnShow,self.onClickShowHandle)
-    self:addUIEvent(self.mBtnRecharge,self.onClickHandle)
+    self:addUIEvent(self.mBtnShow, self.onClickShowHandle)
+    self:addUIEvent(self.mBtnRecharge, self.onClickHandle)
     self:addUIEvent(self.mBtnEveryDayGift, self.onClickBtnEveryDayGiftHandler)
     self:addUIEvent(self.mBtnHis, self.onClickBtnHisHandler)
 end
 
 function onClickBtnHisHandler(self)
-    local prefixVersion =
-    download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.PrefixVersionKey)
+    local prefixVersion =     download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.PrefixVersionKey)
 
-    local isShow = StorageUtil:getBool1(prefixVersion .. "hisFashionHisBuy") == true 
+    local isShow = StorageUtil:getBool1(prefixVersion .. "hisFashionHisBuy") == true
     if not isShow then
         StorageUtil:saveBool1(prefixVersion .. "hisFashionHisBuy", true)
         GameDispatcher:dispatchEvent(EventName.UPDATE_ACTIVITY_RED)
         --RedPointManager:remove(self.mBtnHis.transform)
     end
 
-    GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_FASHION_HIS_VIEW,{type = activity.FashionHisType.CarnivalGift})
+    GameDispatcher:dispatchEvent(EventName.OPEN_ACTIVITY_FASHION_HIS_VIEW, { type = activity.FashionHisType.CarnivalGift })
 end
 
 -- 更新 View 界面
-function updateView(self,isFirst)
-   self:clearAllItem()
-   self:addTime()
-   self.mBtnRecharge:SetActive(not activity.ActitvityExtraManager:getIsCarnivalRecharge()) 
-   local list = activity.ActitvityExtraManager:getCarnivalGiftConfigList()
-   for i, vo in ipairs(list) do
-        local numItem = SimpleInsItem:create(self.mItem, self.mContent, "CarnivalDay"..vo:getId())
+function updateView(self, isFirst)
+    self:clearAllItem()
+    self:addTime()
+    self.mBtnRecharge:SetActive(not activity.ActitvityExtraManager:getIsCarnivalRecharge())
+    local list = activity.ActitvityExtraManager:getCarnivalGiftConfigList()
+    for i, vo in ipairs(list) do
+        local numItem = SimpleInsItem:create(self.mItem, self.mContent, "CarnivalDay" .. vo:getId())
         numItem:getChildGO("mCanRec"):SetActive(vo:getIsCanRec())
-        numItem:addUIEvent("mCanRec",function ()
+        numItem:addUIEvent("mCanRec", function()
             if vo:getIsRecived() then
-                return 
+                return
             end
             if not activity.ActitvityExtraManager:getIsCarnivalRecharge() then
                 gs.Message.Show(_TT(138506))
                 return
             end
-            GameDispatcher:dispatchEvent(EventName.REQ_REC_CARNIVAL_GIFT_AWARD,vo:getId())
+            GameDispatcher:dispatchEvent(EventName.REQ_REC_CARNIVAL_GIFT_AWARD, vo:getId())
         end)
         numItem:getChildGO("mReceived"):SetActive(vo:getIsRecived())
-        numItem:getChildGO("mImgDay"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath("activity/Carnival_"..vo:getId()..".png"),true)
-        numItem:getChildGO("mIconItem"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPropsIconUrl(vo:getAwardList()[1].tid),true)
-        numItem:getChildGO("GridNodeEff"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPropsIconUrl(vo:getAwardList()[1].tid),true)
-        numItem:addUIEvent("mIconItem",function ()
+        numItem:getChildGO("mImgDay"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPackPath("activity/Carnival_" .. vo:getId() .. ".png"), true)
+        numItem:getChildGO("mIconItem"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPropsIconUrl(vo:getAwardList()[1].tid), true)
+        numItem:getChildGO("GridNodeEff"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getPropsIconUrl(vo:getAwardList()[1].tid), true)
+        numItem:addUIEvent("mIconItem", function()
             if not vo:getIsCanRec() or vo:getIsRecived() or not activity.ActitvityExtraManager:getIsCarnivalRecharge() then
                 TipsFactory:propsTips({ propsVo = props.PropsManager:getPropsConfigVo(vo:getAwardList()[1].tid) }, { rectTransform = nil })
             else
-                GameDispatcher:dispatchEvent(EventName.REQ_REC_CARNIVAL_GIFT_AWARD,vo:getId())
+                GameDispatcher:dispatchEvent(EventName.REQ_REC_CARNIVAL_GIFT_AWARD, vo:getId())
             end
         end)
         numItem:getChildGO("mTxtNum"):GetComponent(ty.Text).text = vo:getAwardList()[1].num
@@ -141,9 +141,9 @@ function updateView(self,isFirst)
             numItem:getGo():SetActive(true)
         end
         table.insert(self.mNumitemList, numItem)
-   end
+    end
 
-   --更新每日奖励可领取状态
+    --更新每日奖励可领取状态
     local isCanGetEveryDayRewardState = activity.ActitvityExtraManager:getCarnivalIsCanGetEveryDayRewardState()
     self.mImgGotEveryDayGiftMask:SetActive(not isCanGetEveryDayRewardState)
     if isCanGetEveryDayRewardState then
@@ -161,37 +161,37 @@ function updateView(self,isFirst)
 
     local dic = sysParam.SysParamManager:getValue(SysParamType.ACTIVITY_CARIVAL_GIFT_SHOW_HERO_INFO)
     -- 部分渠道需要特殊处理
-    local isHar = (RefMgr:getSpecialConfig() and sdk.SdkManager:getIsChannelHarmonious())
+    local isHar = (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())
     self.mImgHeroHar.gameObject:SetActive(isHar)
     self:getChildGO("Spine"):SetActive(not isHar)
     local fashionData = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, dic[1], dic[2])
-    self.mImgHeroHar:SetImg(UrlManager:getBgPath("heroRecord_Har/" .. fashionData:getUrlBody()))
+    self.mImgHeroHar:SetImg(UrlManager:getHeroRecoedUrlByDetail(fashionData:getUrlBody()))
 end
 
 function uidoTween(self)
-    local curIndex=0
+    local curIndex = 0
     self:clearFameHanlder()
-    self.mFrame = LoopManager:addFrame(1, 9, self, function ()
-        curIndex = curIndex+1
-        if curIndex>=6 and curIndex<=9 then
-            if #self.mNumitemList>0 then
-                if curIndex>=6 then
-                    local tween = self.mNumitemList[curIndex-5]:getGo():GetComponent(ty.UIDoTween)
+    self.mFrame = LoopManager:addFrame(1, 9, self, function()
+        curIndex = curIndex + 1
+        if curIndex >= 6 and curIndex <= 9 then
+            if #self.mNumitemList > 0 then
+                if curIndex >= 6 then
+                    local tween = self.mNumitemList[curIndex - 5]:getGo():GetComponent(ty.UIDoTween)
                     if not gs.GoUtil.IsCompNull(tween) then
-                        self.mNumitemList[curIndex-5]:getGo():SetActive(true)
+                        self.mNumitemList[curIndex - 5]:getGo():SetActive(true)
                         tween:BeginTween()
                     end
                 end
-                if curIndex>=7 then
-                    local tween = self.mNumitemList[curIndex-3]:getGo():GetComponent(ty.UIDoTween)
+                if curIndex >= 7 then
+                    local tween = self.mNumitemList[curIndex - 3]:getGo():GetComponent(ty.UIDoTween)
                     if not gs.GoUtil.IsCompNull(tween) then
-                        self.mNumitemList[curIndex-3]:getGo():SetActive(true)
+                        self.mNumitemList[curIndex - 3]:getGo():SetActive(true)
                         tween:BeginTween()
                     end
                 end
             end
-        end 
-    end )
+        end
+    end)
 end
 
 function clearFameHanlder(self)
@@ -202,27 +202,27 @@ function clearFameHanlder(self)
 end
 
 function clearAllItem(self)
-    if #self.mNumitemList>0 then
+    if #self.mNumitemList > 0 then
         for i, item in ipairs(self.mNumitemList) do
             item:poolRecover()
         end
-        self.mNumitemList={}
+        self.mNumitemList = {}
     end
     if self.mTime then
         LoopManager:removeTimerByIndex(self.mTime)
-        self.mTime=nil
+        self.mTime = nil
     end
 end
 
 function addTime(self)
     self:updateTime()
-    self.mTime= LoopManager:addTimer(1,0,self,self.updateTime)
+    self.mTime = LoopManager:addTimer(1, 0, self, self.updateTime)
 end
 
 function updateTime(self)
     if activity.ActivityManager:getActivityVoById(activity.ActivityId.Activity_Carnival_Gift) then
-        local RemainingTime =activity.ActivityManager:getActivityVoById(activity.ActivityId.Activity_Carnival_Gift):getEndTime() - GameManager:getClientTime()
-        self.mTxtActivityTime.text=_TT(94557).. HtmlUtil:color(TimeUtil.getFormatTimeBySeconds_9(RemainingTime),"000000ff") 
+        local RemainingTime = activity.ActivityManager:getActivityVoById(activity.ActivityId.Activity_Carnival_Gift):getEndTime() - GameManager:getClientTime()
+        self.mTxtActivityTime.text = _TT(94557) .. HtmlUtil:color(TimeUtil.getFormatTimeBySeconds_9(RemainingTime), "000000ff")
     end
 end
 
@@ -235,7 +235,7 @@ function onClickShowHandle(self)
     local dic = sysParam.SysParamManager:getValue(SysParamType.ACTIVITY_CARIVAL_GIFT_SHOW_HERO_INFO)
     local tid = dic[1]
     local id = dic[2]
-    GameDispatcher:dispatchEvent(EventName.OPEN_SKIN_SHOW_ONE_VIEW, {heroTid = tid, fashionId = id, isShow3D = true})
+    GameDispatcher:dispatchEvent(EventName.OPEN_SKIN_SHOW_ONE_VIEW, { heroTid = tid, fashionId = id, isShow3D = true })
 end
 
 function onClickBtnEveryDayGiftHandler(self)
@@ -243,7 +243,7 @@ function onClickBtnEveryDayGiftHandler(self)
     if not activity.ActitvityExtraManager:getCarnivalIsCanGetEveryDayRewardState() then
         return
     end
-    GameDispatcher:dispatchEvent(EventName.REQ_GET_ACTIVITY_DAILY_REWARD, {activity_id = activity.ActivityId.Activity_Carnival_Gift})
+    GameDispatcher:dispatchEvent(EventName.REQ_GET_ACTIVITY_DAILY_REWARD, { activity_id = activity.ActivityId.Activity_Carnival_Gift })
 end
 
 return _M

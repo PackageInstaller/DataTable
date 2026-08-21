@@ -11,8 +11,13 @@ function onModelLoadFinish(self)
     self.mPassModel = self.mModel.m_modelTrans:Find("light").gameObject
     self.mBlockModel = self.mModel.m_modelTrans:Find("dark").gameObject
 
-    self.mPassModel:SetActive(true)
-    self.mBlockModel:SetActive(false)
+    if self.mPassModel then
+        self.mPassModel:SetActive(true)
+    end
+    
+    if self.mBlockModel then
+        self.mBlockModel:SetActive(false)
+    end
 end
 
 function onPass(self)

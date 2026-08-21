@@ -1,21 +1,11 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("TouchCakeGameConst")
-
-this = this
-var_0.bgm_type_default = 1
-this = var_0
-var_0.bgm_type_main = 2
-this = var_0
-var_0.bgm_type_game = 3
-this = var_0
-var_0.bg_layer_back = 1
-this = var_0
-var_0.bg_layer_mid = 2
-this = var_0
-var_0.bg_layer_top = 3
-this = var_0
-var_0.game_round = {
+﻿this = class("TouchCakeGameConst")
+this.bgm_type_default = 1
+this.bgm_type_main = 2
+this.bgm_type_game = 3
+this.bg_layer_back = 1
+this.bg_layer_mid = 2
+this.bg_layer_top = 3
+this.game_round = {
 	{
 		id = 1
 	},
@@ -41,22 +31,14 @@ var_0.game_round = {
 		id = 8
 	}
 }
-this = var_0
-var_0.max_cake_count = 12
-this = var_0
-var_0.cake_anim_normal = 1
-this = var_0
-var_0.cake_anim_action = 2
-this = var_0
-var_0.prop_anim_normal = 1
-this = var_0
-var_0.prop_anim_action = 2
-this = var_0
-var_0.remove_time = 0.2
-this = var_0
-var_0.cake_down_speed = 1500
-this = var_0
-var_0.score_rate_count = {
+this.max_cake_count = 12
+this.cake_anim_normal = 1
+this.cake_anim_action = 2
+this.prop_anim_normal = 1
+this.prop_anim_action = 2
+this.remove_time = 0.2
+this.cake_down_speed = 1500
+this.score_rate_count = {
 	{
 		0,
 		1
@@ -74,15 +56,13 @@ var_0.score_rate_count = {
 		1.75
 	}
 }
-this = var_0
-var_0.prop_times = {
+this.prop_times = {
 	[5] = {
 		id = 5,
 		times = 1
 	}
 }
-this = var_0
-var_0.prop_rate = {
+this.prop_rate = {
 	{
 		id = 0,
 		weight = 10
@@ -108,13 +88,11 @@ var_0.prop_rate = {
 		weight = 5
 	}
 }
-this = var_0
-var_0.cake_init_pos = {
+this.cake_init_pos = {
 	0,
 	0
 }
-this = var_0
-var_0.prop_random_direct = {
+this.prop_random_direct = {
 	{
 		1,
 		1,
@@ -160,8 +138,7 @@ var_0.prop_random_direct = {
 		0
 	}
 }
-this = var_0
-var_0.combo_effect = {
+this.combo_effect = {
 	{
 		20,
 		"dangaota_combo01"
@@ -175,8 +152,7 @@ var_0.combo_effect = {
 		"dangaota_combo03"
 	}
 }
-this = var_0
-var_0.cake_data = {
+this.cake_data = {
 	{
 		id = 1,
 		height = 150,
@@ -201,8 +177,7 @@ var_0.cake_data = {
 		3
 	}
 }
-this = var_0
-var_0.prop_data = {
+this.prop_data = {
 	{
 		score = 0,
 		dizzi = 1,
@@ -246,6 +221,5 @@ var_0.prop_data = {
 		5
 	}
 }
-this = var_0
 
-return var_0
+return this

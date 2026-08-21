@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_combo") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_combo"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_combo = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_combo
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_combo = rawget(pg, "island_combo") or setmetatable({
+	__name = "island_combo"
+}, confNEO)
+pg.island_combo.all = {
 	601101,
 	601102,
 	602101,
@@ -40,25 +17,11 @@ var_0_3.all = {
 	901102,
 	901103
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_combo = {}
+pg.base = pg.base or {}
+pg.base.island_combo = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_combo
-
-	var_1_0[13] = {
+	pg.base.island_combo[13] = {
 		id = 601101,
 		is_hide = 0,
 		unlock_condition = {
@@ -72,11 +35,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_combo
-
-	var_1_1[14] = {
+	pg.base.island_combo[14] = {
 		id = 601102,
 		is_hide = 1,
 		unlock_condition = {
@@ -90,11 +49,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_combo
-
-	var_1_2[602101] = {
+	pg.base.island_combo[602101] = {
 		id = 602101,
 		is_hide = 0,
 		unlock_condition = {
@@ -108,11 +63,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_combo
-
-	var_1_3[602102] = {
+	pg.base.island_combo[602102] = {
 		id = 602102,
 		is_hide = 0,
 		unlock_condition = {
@@ -126,11 +77,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_combo
-
-	var_1_4[602103] = {
+	pg.base.island_combo[602103] = {
 		id = 602103,
 		is_hide = 1,
 		unlock_condition = {
@@ -144,11 +91,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_combo
-
-	var_1_5[603101] = {
+	pg.base.island_combo[603101] = {
 		id = 603101,
 		is_hide = 0,
 		unlock_condition = {
@@ -162,11 +105,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_combo
-
-	var_1_6[603102] = {
+	pg.base.island_combo[603102] = {
 		id = 603102,
 		is_hide = 0,
 		unlock_condition = {
@@ -180,11 +119,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_combo
-
-	var_1_7[603103] = {
+	pg.base.island_combo[603103] = {
 		id = 603103,
 		is_hide = 1,
 		unlock_condition = {
@@ -198,11 +133,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_combo
-
-	var_1_8[604101] = {
+	pg.base.island_combo[604101] = {
 		id = 604101,
 		is_hide = 0,
 		unlock_condition = {
@@ -216,11 +147,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_combo
-
-	var_1_9[604102] = {
+	pg.base.island_combo[604102] = {
 		id = 604102,
 		is_hide = 1,
 		unlock_condition = {
@@ -234,11 +161,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_combo
-
-	var_1_10[901101] = {
+	pg.base.island_combo[901101] = {
 		id = 901101,
 		is_hide = 0,
 		unlock_condition = {
@@ -252,11 +175,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_combo
-
-	var_1_11[901102] = {
+	pg.base.island_combo[901102] = {
 		id = 901102,
 		is_hide = 0,
 		unlock_condition = {
@@ -270,8 +189,7 @@ var_0_3.base.island_combo = {}
 			}
 		}
 	}
-	pg = var_1_11
-	var_1_11.base.island_combo[901103] = {
+	pg.base.island_combo[901103] = {
 		id = 901103,
 		is_hide = 1,
 		unlock_condition = {

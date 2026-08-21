@@ -1,37 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AmusementParkShopMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "AmusementParkShopMediator"
+var_0_0.ON_ACT_SHOPPING = "AmusementParkShopMediator:ON_ACT_SHOPPING"
+var_0_0.GO_SCENE = "GO_SCENE"
 
-import = var_0_10003
+function var_0_0.register(arg_1_0)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.ON_ACT_SHOPPING = "AmusementParkShopMediator:ON_ACT_SHOPPING"
-var_0_1.GO_SCENE = "GO_SCENE"
-
-function var_0_1.register(arg_1_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_1_0 = var_1_10001(var_1_10003)
-	local var_1_1 = var_1.getActivityByType
-
-	ActivityConst = var_1_10005
-
-	local var_1_2 = var_1_1(var_1_0, var_1_10005.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD)
-
-	assert = var_1_10003
-
-	var_1_10003(var_1_2, "Activity Type ACTIVITY_TYPE_SHOP_PROGRESS_REWARD Not exist")
-	arg_1_0:TransActivity2ShopData(var_1_2)
-	arg_1_0:AddSpecialList(var_1_2)
-	arg_1_0:bind(var_0_1.ON_ACT_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_5.sendNotification
-
-		GAME = var_2_10008
-
-		var_2_1(var_2_0, var_2_10008.ACTIVITY_SHOP_PROGRESS_REWARD, {
+	assert(var_1_0, "Activity Type ACTIVITY_TYPE_SHOP_PROGRESS_REWARD Not exist")
+	arg_1_0:TransActivity2ShopData(var_1_0)
+	arg_1_0:AddSpecialList(var_1_0)
+	arg_1_0:bind(var_0_0.ON_ACT_SHOPPING, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3, arg_2_4)
+		arg_1_0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
 			activity_id = arg_2_1,
 			cmd = arg_2_2,
 			arg1 = arg_2_3,
@@ -40,193 +19,100 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.GO_SCENE, function(arg_3_0, arg_3_1, ...)
-		local var_3_0 = arg_1_0
-		local var_3_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_3_1(var_3_0, var_2_10005.GO_SCENE, arg_3_1, ...)
+	arg_1_0:bind(var_0_0.GO_SCENE, function(arg_3_0, arg_3_1, ...)
+		arg_1_0:sendNotification(GAME.GO_SCENE, arg_3_1, ...)
 
 		return
 	end)
-	arg_1_0:HandleSpecialReach(var_1_2)
+	arg_1_0:HandleSpecialReach(var_1_0)
 
 	return
 end
 
-function var_0_1.TransActivity2ShopData(arg_4_0, arg_4_1)
+function var_0_0.TransActivity2ShopData(arg_4_0, arg_4_1)
 	if arg_4_1 and not arg_4_1:isEnd() then
-		ActivityShop = var_2
-
-		local var_4_0 = var_2.New(arg_4_1)
-		local var_4_1 = arg_4_0.viewComponent
-
-		var_3.SetShop(var_4_1, var_4_0)
+		arg_4_0.viewComponent:SetShop((ActivityShop.New(arg_4_1)))
 	end
 
 	return
 end
 
-function var_0_1.AddSpecialList(arg_5_0, arg_5_1)
-	local var_5_0 = {}
+function var_0_0.AddSpecialList(arg_5_0, arg_5_1)
+	if pg.gameset.activity_lottery_rewards then
+		local var_5_0 = pg.gameset.activity_lottery_rewards.description or {}
 
-	pg = var_1_10003
+		for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+			local var_5_1 = Drop.Create(iter_5_1[2])
 
-	if var_1_10003.gameset.activity_lottery_rewards then
-		ipairs = var_3
-		pg = var_1_10005
+			var_5_1.HasGot = table.contains(arg_5_1.data3_list, iter_5_1[1])
 
-		local var_5_1
-
-		if not var_1_10005.gameset.activity_lottery_rewards.description then
-			var_5_1 = {}
-		end
-
-		for iter_5_0, iter_5_1 in var_3(var_5_1) do
-			Drop = var_1_10008
-			var_1_10008 = var_1_10008.Create(iter_5_1[2])
-			table = var_1_10009
-			var_1_10008.HasGot = var_1_10009.contains(arg_5_1.data3_list, iter_5_1[1])
-			table = var_1_10009
-
-			var_1_10009.insert(var_5_0, var_1_10008)
+			table.insert({}, var_5_1)
 		end
 	end
 
-	local var_5_2 = arg_5_0.viewComponent
-
-	var_3.SetSpecial(var_5_2, var_5_0)
+	arg_5_0.viewComponent:SetSpecial({})
 
 	return
 end
 
-function var_0_1.HandleSpecialReach(arg_6_0, arg_6_1)
-	pg = var_1_10002
+function var_0_0.HandleSpecialReach(arg_6_0, arg_6_1)
+	if not pg.gameset.activity_lottery_rewards or not pg.gameset.activity_lottery_rewards.description then
+		return
+	end
 
-	if var_1_10002.gameset.activity_lottery_rewards then
-		pg = var_2
+	local var_6_0 = _.reduce(arg_6_1.data2_list, 0, function(arg_7_0, arg_7_1)
+		return arg_7_0 + arg_7_1
+	end)
 
-		if not var_2.gameset.activity_lottery_rewards.description then
-			return
+	for iter_6_0, iter_6_1 in ipairs(pg.gameset.activity_lottery_rewards.description) do
+		if var_6_0 >= iter_6_1[1] and not table.contains(arg_6_1.data3_list, iter_6_1[1]) then
+			arg_6_0:sendNotification(GAME.ACTIVITY_SHOP_PROGRESS_REWARD, {
+				cmd = 2,
+				arg2 = 0,
+				activity_id = arg_6_1.id,
+				arg1 = iter_6_1[1]
+			})
+
+			return true
 		end
+	end
 
-		_ = var_2
+	return false
+end
 
-		local var_6_0 = var_2.reduce(arg_6_1.data2_list, 0, function(arg_7_0, arg_7_1)
-			return arg_7_0 + arg_7_1
-		end)
+function var_0_0.listNotificationInterests(arg_8_0)
+	return {
+		ActivityProxy.ACTIVITY_UPDATED,
+		ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD
+	}
+end
 
-		ipairs = var_1_10003
-		pg = var_5
+function var_0_0.handleNotification(arg_9_0, arg_9_1)
+	local var_9_0 = arg_9_1:getName()
+	local var_9_1 = arg_9_1:getBody()
 
-		for iter_6_0, iter_6_1 in var_1_10003(var_5.gameset.activity_lottery_rewards.description) do
-			if iter_6_1[1] <= var_6_0 then
-				table = var_8
-
-				if not var_8.contains(arg_6_1.data3_list, iter_6_1[1]) then
-					local var_6_1 = arg_6_0
-					local var_6_2 = arg_6_0.sendNotification
-
-					GAME = var_11
-
-					var_6_2(var_6_1, var_11.ACTIVITY_SHOP_PROGRESS_REWARD, {
-						cmd = 2,
-						arg2 = 0,
-						activity_id = arg_6_1.id,
-						arg1 = iter_6_1[1]
-					})
-
-					return true
-				end
+	if var_9_0 == ActivityProxy.ACTIVITY_UPDATED then
+		if var_9_1:getConfig("type") == ActivityConst.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD then
+			arg_9_0:TransActivity2ShopData(var_9_1)
+			arg_9_0:AddSpecialList(var_9_1)
+			arg_9_0.viewComponent:UpdateView()
+			arg_9_0:HandleSpecialReach(var_9_1)
+		end
+	elseif var_9_0 == ActivityShopWithProgressRewardCommand.SHOW_SHOP_REWARD then
+		arg_9_0.viewComponent:emit(BaseUI.ON_ACHIEVE, var_9_1.awards, function()
+			if var_9_1.shopType == 1 then
+				arg_9_0.viewComponent:ShowShipWord(i18n("amusementpark_shop_success"))
+			elseif var_9_1.shopType == 2 then
+				arg_9_0.viewComponent:ShowShipWord(i18n("amusementpark_shop_special"))
 			end
-		end
 
-		return false
-	end
-end
+			existCall(var_9_1.callback)
 
-function var_0_1.listNotificationInterests(arg_8_0)
-	local var_8_0 = {}
-
-	ActivityProxy = var_1_10002
-	var_8_0[1] = var_1_10002.ACTIVITY_UPDATED
-	ActivityShopWithProgressRewardCommand = var_2
-	var_8_0[2] = var_2.SHOW_SHOP_REWARD
-
-	return var_8_0
-end
-
-function var_0_1.handleNotification(arg_9_0, arg_9_1)
-	local var_9_0 = arg_9_1
-	local var_9_1 = arg_9_1.getName(var_9_0)
-	local var_9_2 = arg_9_1
-	local var_9_3 = arg_9_1.getBody(var_9_2)
-
-	ActivityProxy = var_9_0
-
-	local var_9_4
-
-	if var_9_1 == var_9_0.ACTIVITY_UPDATED then
-		var_9_4 = var_9_3:getConfig("type")
-		ActivityConst = var_9_2
-
-		if var_9_4 == var_9_2.ACTIVITY_TYPE_SHOP_PROGRESS_REWARD then
-			var_9_4 = var_9_3
-			var_1_10007 = arg_9_0
-
-			arg_9_0.TransActivity2ShopData(var_1_10007, var_9_4)
-
-			var_1_10007 = arg_9_0
-
-			arg_9_0.AddSpecialList(var_1_10007, var_9_4)
-
-			var_1_10007 = arg_9_0.viewComponent
-
-			var_5.UpdateView(var_1_10007)
-
-			var_1_10007 = arg_9_0
-
-			arg_9_0.HandleSpecialReach(var_1_10007, var_9_4)
-		end
-	else
-		ActivityShopWithProgressRewardCommand = var_9_4
-
-		if var_9_1 == var_9_4.SHOW_SHOP_REWARD then
-			local var_9_5 = arg_9_0.viewComponent
-			local var_9_6 = var_4.emit
-
-			BaseUI = var_1_10007
-
-			var_9_6(var_9_5, var_1_10007.ON_ACHIEVE, var_9_3.awards, function()
-				local var_10_1
-
-				if var_9_3.shopType == 1 then
-					local var_10_0 = arg_9_0.viewComponent
-
-					var_10_1 = var_10_1.ShowShipWord
-					i18n = var_2_10003
-
-					var_10_1(var_10_0, var_2_10003("amusementpark_shop_success"))
-				elseif var_9_3.shopType == 2 then
-					local var_10_2 = arg_9_0.viewComponent
-
-					var_10_1 = var_10_1.ShowShipWord
-					i18n = var_2_10003
-
-					var_10_1(var_10_2, var_2_10003("amusementpark_shop_special"))
-				end
-
-				existCall = var_10_1
-
-				var_10_1(var_9_3.callback)
-
-				return
-			end)
-		end
+			return
+		end)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

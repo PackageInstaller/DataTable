@@ -137,6 +137,7 @@ function active(self)
 end
 
 function setParentContent(self, args)
+    self.UIRootNode.gameObject:SetActive(args.isShow)
     self.UIRootNode:SetParent(args.parentTrans, false)
     self:setDefAdapta()
 end

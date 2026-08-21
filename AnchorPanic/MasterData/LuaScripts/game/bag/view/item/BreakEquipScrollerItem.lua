@@ -55,6 +55,7 @@ function setNormalSelect(self, isSelect, isClick)
     else
         self:getChildGO("mImgSelect"):SetActive(false)
     end
+    self.isSelect = isSelect
 end
 
 function onClickGridHandler(self)
@@ -69,12 +70,23 @@ function onClickGridHandler(self)
         GameDispatcher:dispatchEvent(EventName.REQ_MODULE_READ, {type = ReadConst.NEW_EQUIP, id = equipVo.id})
     end
     bag.BagManager:dispatchEvent(bag.BagManager.SELECT_PROPS_GRID, {selectVo = selectVo, rectTransform = rect})
-    if bag.BagManager.propsOpState == 2 then
-        if (equipVo.isCanDecompose and equipVo.isLock ~= 1 and bag.BagManager:getBreakBaseData(equipVo.tid, 2)) then
-            self.isSelect = not self.isSelect
-            self:setNormalSelect(self.isSelect, true)
-        end
+
+    local isSelect = bag.BagManager:getBreakSelect(equipVo)
+    if self.mPropsGrid and isSelect and bag.BagManager:getBreakBraceletsShowTips() then
+        TipsFactory:equipTips(equipVo, nil, { rectTransform = rect }, true)
     end
+    
+    -- self.isSelect = bag.BagManager:getBreakSelect(equipVo)
+    -- self:setNormalSelect(self.isSelect, true)
+--    cusLog(self.isSelect)
+
+--     if bag.BagManager.propsOpState == 2 then
+--         if (equipVo.isCanDecompose and equipVo.isLock ~= 1 and bag.BagManager:getBreakBaseData(equipVo.tid, 2)) then
+--             self.isSelect = not self.isSelect
+--             cusLog(self.isSelect)
+--             self:setNormalSelect(self.isSelect, true)
+--         end
+--     end
 end
 
 function deActive(self)

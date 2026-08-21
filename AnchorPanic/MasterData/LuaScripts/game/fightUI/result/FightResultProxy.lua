@@ -40,13 +40,16 @@ function FightResultProxy:showWinView(cusBattleType, cusBattleFieldID, cusData, 
             self.mFightWinView = mainActivity.ActiveDupFightResultWinView.new()
             -- elseif cusBattleType == PreFightBattleType.Doundless then
             --     self.mFightWinView = doundless.DoundlessResultPanel.new()
+        elseif cusBattleType == PreFightBattleType.Vision then
+            -- 异象残境使用独立结算页 visionResultPanel
+            self.mFightWinView = vision.VisionResultPanel.new()
         else
             self.mFightWinView = fightUI.FightResultWinView.new()
         end
         self.mFightWinView:addEventListener(View.EVENT_CLOSE, closeView, self)
         self.mFightWinView:addEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
     end
-    local data = {battleType = cusBattleType, battleFieldID = cusBattleFieldID, resultData = cusData}
+    local data = {battleType = cusBattleType, battleFieldID = cusBattleFieldID, resultData = cusData, isWin = true}
     self.mFightWinView:open(data)
 
     return self.mFightWinView
@@ -74,12 +77,17 @@ function FightResultProxy:showFailView(cusBattleType, cusBattleFieldID, cusData,
         -- if (cusBattleType == PreFightBattleType.ArenaChallenge) then
         --     self.mFightFailView = fightUI.ArenaFightFailEndView.new()
         -- else
-        self.mFightFailView = fightUI.FightResultFailView.new()
+        if cusBattleType == PreFightBattleType.Vision then
+            -- 异象残境使用独立结算页 visionResultPanel（胜负共用）
+            self.mFightFailView = vision.VisionResultPanel.new()
+        else
+            self.mFightFailView = fightUI.FightResultFailView.new()
+        end
         -- end
         self.mFightFailView:addEventListener(View.EVENT_CLOSE, closeView, self)
         self.mFightFailView:addEventListener(View.EVENT_VIEW_DESTROY, destroyView, self)
     end
-    local data = {battleType = cusBattleType, battleFieldID = cusBattleFieldID, resultData = cusData}
+    local data = {battleType = cusBattleType, battleFieldID = cusBattleFieldID, resultData = cusData, isWin = false}
     self.mFightFailView:open(data)
 
     return self.mFightFailView
@@ -87,6 +95,26 @@ end
 
 -- 返回对应副本的章节名、副本名
 function FightResultProxy:getDupName(cusBattleType, cusBattleFieldID)
+    return ""
+    -- if cusBattleType == 99 then
+    --     -- gm测试战斗类型
+    --     return "M100", "GM测试战斗类型"
+    -- end
+
+    -- local mgr = FightResultProxy.battleMgrDic[cusBattleType]
+    -- if not mgr then
+    --     logError(string.format("战斗类型%s未注册", cusBattleType), "FightResultProxy")
+    --     return "M100", _TT(3042)
+    -- end
+    -- if not mgr.getDupName then
+    --     logError(string.format("战斗类型%s的manager未提供getDupName方法", cusBattleType), "FightResultProxy")
+    --     return "M100", _TT(3042)
+    -- end
+    -- return mgr:getDupName(tonumber(cusBattleFieldID), cusBattleType)
+end
+
+-- 返回对应副本的章节名、副本名(楼上方法被其他屏蔽了)
+function FightResultProxy:getDupNameBySdk(cusBattleType, cusBattleFieldID)
     if cusBattleType == 99 then
         -- gm测试战斗类型
         return "M100", "GM测试战斗类型"
@@ -94,11 +122,11 @@ function FightResultProxy:getDupName(cusBattleType, cusBattleFieldID)
 
     local mgr = FightResultProxy.battleMgrDic[cusBattleType]
     if not mgr then
-        logError(string.format("战斗类型%s未注册", cusBattleType), "FightResultProxy")
+        -- logError(string.format("战斗类型%s未注册", cusBattleType), "FightResultProxy")
         return "M100", _TT(3042)
     end
     if not mgr.getDupName then
-        logError(string.format("战斗类型%s的manager未提供getDupName方法", cusBattleType), "FightResultProxy")
+        -- logError(string.format("战斗类型%s的manager未提供getDupName方法", cusBattleType), "FightResultProxy")
         return "M100", _TT(3042)
     end
     return mgr:getDupName(tonumber(cusBattleFieldID), cusBattleType)
@@ -167,6 +195,9 @@ FightResultProxy.battleMgrDic[PreFightBattleType.Friend] = training.TrainingMana
 FightResultProxy.battleMgrDic[PreFightBattleType.Doundless] = doundless.DoundlessManager
 -- FightResultProxy.battleMgrDic[PreFightBattleType.SandPlay] = sandPlay.SandPlayManager
 FightResultProxy.battleMgrDic[PreFightBattleType.Seabed] = seabed.SeabedManager
+FightResultProxy.battleMgrDic[PreFightBattleType.GuildWar] = guildWar.GuildWarManager
+FightResultProxy.battleMgrDic[PreFightBattleType.Guild_Imitate] = guildBossImitate.GuildBossImitateManager
+FightResultProxy.battleMgrDic[PreFightBattleType.Vision] = vision.VisionManager
 
 --[[ 替换语言包自动生成，请勿修改！
 语言包: _TT(3042):"异空间"

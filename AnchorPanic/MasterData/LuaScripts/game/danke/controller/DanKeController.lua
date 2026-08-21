@@ -155,7 +155,7 @@ end
 
 --面板数据
 function onReceiveDanKePanelInfo(self, msg)
-    logAll(msg,"*s2c* 蛋壳面板 18170")
+    -- logAll(msg,"*s2c* 蛋壳面板 18170")
     for _, stage_info in pairs(msg.dup_list) do
         danke.DanKeManager:setPassStageStar(stage_info)
     end
@@ -199,7 +199,7 @@ end
 
 --关卡信息更新
 function onReceiveDanKeDupInfo(self, msg)
-    logAll(msg,"*s2c* 关卡更新 18175")
+    -- logAll(msg,"*s2c* 关卡更新 18175")
     danke.DanKeManager:setPassStageStar(msg.dup_info)
     GameDispatcher:dispatchEvent(EventName.DANKE_RECEIVE_STAGE)
 end
@@ -234,7 +234,7 @@ end
 
 --请求领取任务奖励
 function onReqDanKeRewardGetAward(self, reward_id_list)
-    logAll(reward_id_list, "请求领取任务奖励")
+    -- logAll(reward_id_list, "请求领取任务奖励")
     SOCKET_SEND(Protocol.CS_DANKE_GAIN_STAR_AWARD, {id_list = reward_id_list, Protocol.SC_DANKE_GAIN_STAR_AWARD})
 end
 
@@ -254,13 +254,13 @@ function onReqDanKePassStage(self, kill_monster_id)
     --打开结算界面
     GameDispatcher:dispatchEvent(EventName.OPEN_DANKESETTLEMENTPANEL, settlementStar_count)
     if settlementStar_count <= cacheMaxStar then
-        logAll("【蛋壳】没有星级改变，不请求通关关卡")
+        -- logAll("【蛋壳】没有星级改变，不请求通关关卡")
         return
     end
 
     --向后端发送结算数据
     local cmd = {dup_id = dup_id, kill_count = kill_count, special_kill = {kill_monster_id}}
-    logAll(cmd, "请求通关关卡")
+    -- logAll(cmd, "请求通关关卡")
     SOCKET_SEND(Protocol.CS_PASS_DANKE, cmd)
 end
 

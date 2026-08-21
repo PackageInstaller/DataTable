@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_dreamland_map") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_dreamland_map"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_dreamland_map = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_dreamland_map
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_dreamland_map = rawget(pg, "activity_dreamland_map") or setmetatable({
+	__name = "activity_dreamland_map"
+}, confNEO)
+pg.activity_dreamland_map.all = {
 	1,
 	2,
 	3,
@@ -33,25 +10,11 @@ var_0_3.all = {
 	5,
 	6
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_dreamland_map = {}
+pg.base = pg.base or {}
+pg.base.activity_dreamland_map = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_dreamland_map
-
-	var_1_0[1] = {
+	pg.base.activity_dreamland_map[1] = {
 		id = 1,
 		name = "活动广场区",
 		unlock_condition = 1,
@@ -76,11 +39,7 @@ var_0_3.base.activity_dreamland_map = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_dreamland_map
-
-	var_1_1[2] = {
+	pg.base.activity_dreamland_map[2] = {
 		id = 2,
 		name = "心愿之泉区",
 		unlock_condition = 3,
@@ -105,11 +64,7 @@ var_0_3.base.activity_dreamland_map = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_dreamland_map
-
-	var_1_2[3] = {
+	pg.base.activity_dreamland_map[3] = {
 		id = 3,
 		name = "梦幻城堡区",
 		unlock_condition = 3,
@@ -134,11 +89,7 @@ var_0_3.base.activity_dreamland_map = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_dreamland_map
-
-	var_1_3[4] = {
+	pg.base.activity_dreamland_map[4] = {
 		id = 4,
 		name = "水上乐园区",
 		unlock_condition = 4,
@@ -163,11 +114,7 @@ var_0_3.base.activity_dreamland_map = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_dreamland_map
-
-	var_1_4[5] = {
+	pg.base.activity_dreamland_map[5] = {
 		id = 5,
 		name = "奇幻表演区",
 		unlock_condition = 5,
@@ -192,8 +139,7 @@ var_0_3.base.activity_dreamland_map = {}
 			}
 		}
 	}
-	pg = var_1_4
-	var_1_4.base.activity_dreamland_map[6] = {
+	pg.base.activity_dreamland_map[6] = {
 		id = 6,
 		name = "迷雾探险区",
 		unlock_condition = 7,

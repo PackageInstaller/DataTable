@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BeatMonsterNianConst")
+﻿local var_0_0 = class("BeatMonsterNianConst")
 
 var_0_0.INPUT_TIME = 3
 var_0_0.ACTION_NAME_L = "L"

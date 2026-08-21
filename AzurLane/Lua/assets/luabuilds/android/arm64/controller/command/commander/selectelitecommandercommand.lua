@@ -1,49 +1,29 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SelectEliteCommanderCommand", pm.SimpleCommand)
 
-local var_0_0 = "SelectEliteCommanderCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(ChapterProxy)
+	local var_1_2 = var_1_1:getChapterById(var_1_0.chapterId)
 
-pm = var_0_10003
+	if var_1_0.commanderId and var_1_0.commanderId ~= 0 then
+		local var_1_3, var_1_4 = Commander.canEquipToEliteChapter(var_1_0.chapterId, var_1_0.index, var_1_0.pos, var_1_0.commanderId)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().chapterId
-	local var_1_1 = var_2.index
-	local var_1_2 = var_2.pos
-	local var_1_3 = var_2.commanderId
-	local var_1_4 = var_2.callback
-
-	getProxy = var_1_10008
-	ChapterProxy = var_1_10010
-
-	local var_1_5 = var_1_10008(var_1_10010)
-	local var_1_6 = var_8.getChapterById(var_1_5, var_1_0)
-
-	if var_1_3 and var_1_3 ~= 0 then
-		Commander = var_1_10010
-
-		local var_1_7, var_1_8 = var_1_10010.canEquipToEliteChapter(var_1_0, var_1_1, var_1_2, var_1_3)
-
-		if not var_1_7 then
-			pg = var_12
-
-			local var_1_9 = var_12.TipsMgr.GetInstance()
-
-			var_12.ShowTips(var_1_9, var_1_8)
+		if not var_1_3 then
+			pg.TipsMgr.GetInstance():ShowTips(var_1_4)
 
 			return
 		end
 	end
 
-	var_1_6:updateCommander(var_1_1, var_1_2, var_1_3)
-	var_8:updateChapter(var_1_6)
-	var_8:duplicateEliteFleet(var_1_6)
+	var_1_2:updateCommander(var_1_0.index, var_1_0.pos, var_1_0.commanderId)
+	var_1_1:updateChapter(var_1_2)
+	var_1_1:duplicateEliteFleet(var_1_2)
 
-	if var_1_4 then
-		var_1_4()
+	if var_1_0.callback then
+		var_1_0.callback()
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

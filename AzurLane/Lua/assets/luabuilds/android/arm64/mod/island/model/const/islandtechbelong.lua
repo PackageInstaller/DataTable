@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandTechBelong")
+﻿local var_0_0 = class("IslandTechBelong")
 
 var_0_0.CENTRE = 1
 var_0_0.GATHER = 2
@@ -16,38 +14,14 @@ var_0_0.Fields = {
 	[var_0_0.PLANT] = "plant",
 	[var_0_0.MECHINE] = "mechine"
 }
-
-local var_0_1 = {}
-local var_0_2 = var_0_0.CENTRE
-
-i18n = var_3
-var_0_1[var_0_2] = var_3("island_tech_type_1")
-
-local var_0_3 = var_0_0.GATHER
-
-i18n = var_3
-var_0_1[var_0_3] = var_3("island_ship_attrName_2")
-
-local var_0_4 = var_0_0.COOK
-
-i18n = var_3
-var_0_1[var_0_4] = var_3("island_ship_attrName_4")
-
-local var_0_5 = var_0_0.FEED
-
-i18n = var_3
-var_0_1[var_0_5] = var_3("island_ship_attrName_3")
-
-local var_0_6 = var_0_0.PLANT
-
-i18n = var_3
-var_0_1[var_0_6] = var_3("island_ship_attrName_1")
-
-local var_0_7 = var_0_0.MECHINE
-
-i18n = var_3
-var_0_1[var_0_7] = var_3("island_ship_attrName_6")
-var_0_0.Names = var_0_1
+var_0_0.Names = {
+	[var_0_0.CENTRE] = i18n("island_tech_type_1"),
+	[var_0_0.GATHER] = i18n("island_ship_attrName_2"),
+	[var_0_0.COOK] = i18n("island_ship_attrName_4"),
+	[var_0_0.FEED] = i18n("island_ship_attrName_3"),
+	[var_0_0.PLANT] = i18n("island_ship_attrName_1"),
+	[var_0_0.MECHINE] = i18n("island_ship_attrName_6")
+}
 var_0_0.SPECIAL_SHOW_TYPE = var_0_0.CENTRE
 var_0_0.COMMON_SHOW_TYPES = {
 	var_0_0.GATHER,

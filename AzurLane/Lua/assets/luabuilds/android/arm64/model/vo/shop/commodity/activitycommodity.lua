@@ -1,18 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ActivityCommodity", import(".BaseCommodity"))
 
-local var_0_0 = "ActivityCommodity"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BaseCommodity"))
-
-function var_0_1.bindConfigTable(arg_1_0)
-	pg = var_1_10001
-
-	return var_1_10001.activity_shop_template
+function var_0_0.bindConfigTable(arg_1_0)
+	return pg.activity_shop_template
 end
 
-function var_0_1.CheckCntLimit(arg_2_0)
+function var_0_0.CheckCntLimit(arg_2_0)
 	if arg_2_0:getConfig("num_limit") == 0 then
 		return true
 	end
@@ -20,120 +12,63 @@ function var_0_1.CheckCntLimit(arg_2_0)
 	return arg_2_0:GetPurchasableCnt() > 0
 end
 
-function var_0_1.CheckArgLimit(arg_3_0)
-	local var_3_0 = arg_3_0
+function var_0_0.CheckArgLimit(arg_3_0)
+	local var_3_0 = arg_3_0:getConfig("limit_args")
 
-	if not arg_3_0.getConfig(var_3_0, "limit_args") or var_1 == "" or #var_1 == 0 then
+	if not var_3_0 or var_3_0 == "" or #var_3_0 == 0 then
 		return true
 	end
 
 	local var_3_1 = false
 
-	ipairs = var_3_0
-
-	for iter_3_0, iter_3_1 in var_3_0(var_1) do
+	for iter_3_0, iter_3_1 in ipairs(var_3_0) do
 		local var_3_2 = iter_3_1[1]
 		local var_3_3 = iter_3_1[2]
 		local var_3_4 = iter_3_1[3]
 
-		ShopArgs = var_1_10011
+		if (iter_3_1[1] == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE or var_3_2 == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL) and (var_3_4 or 1) == 1 then
+			local var_3_5 = getProxy(BayProxy)
 
-		if var_3_2 ~= var_1_10011.LIMIT_ARGS_META_SHIP_EXISTENCE then
-			ShopArgs = var_1_10011
+			var_3_1 = var_3_5:getMetaShipByGroupId(var_3_3) ~= nil
 
-			if var_3_2 == var_1_10011.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL then
-				var_1_10011 = var_3_4 or 1
-
-				if var_1_10011 == 1 then
-					getProxy = var_1_10011
-					BayProxy = var_1_10013
-					var_1_10013 = var_1_10011(var_1_10013)
-					var_3_1 = var_1_10011.getMetaShipByGroupId(var_1_10013, var_3_3) ~= nil
-
-					if not var_3_1 then
-						local var_3_5 = var_3_1
-
-						var_1_10013 = var_3_2
-						i18n = var_14
-
-						return var_3_5, var_1_10013, var_14("meta_shop_exchange_limit"), var_3_3
-					end
-
-					goto label_3_0
-				end
+			if not var_3_1 then
+				return var_3_1, var_3_2, i18n("meta_shop_exchange_limit"), var_3_3
 			end
+		elseif var_3_2 == ShopArgs.LIMIT_ARGS_SALE_START_TIME then
+			var_3_1 = pg.TimeMgr.GetInstance():passTime(var_3_3)
 
-			ShopArgs = var_1_10011
-
-			if var_3_2 == var_1_10011.LIMIT_ARGS_SALE_START_TIME then
-				pg = var_1_10011
-				var_1_10013 = var_1_10011.TimeMgr.GetInstance()
-
-				if not var_1_10011.passTime(var_1_10013, var_3_3) then
-					var_1_10011 = var_3_1
-
-					local var_3_6 = var_3_2
-
-					i18n = var_1_10013
-
-					return var_1_10011, var_3_6, var_1_10013("meta_shop_exchange_limit_2"), var_3_3
-				end
-			else
-				ShopArgs = var_1_10011
-
-				if var_3_2 == var_1_10011.LIMIT_ARGS_UNIQUE_SHIP then
-					getProxy = var_1_10011
-					BayProxy = var_1_10013
-					var_1_10013 = var_1_10011(var_1_10013)
-					var_3_1 = var_1_10011.findShipByGroup(var_1_10013, var_3_3) == nil
-
-					if not var_3_1 then
-						local var_3_7 = var_3_1
-
-						var_1_10013 = var_3_2
-						i18n = var_14
-
-						return var_3_7, var_1_10013, var_14("quota_shop_good_limit"), var_3_3
-					end
-				elseif var_3_2 == "pass" then
-					getProxy = var_1_10011
-					ChapterProxy = var_1_10013
-					var_1_10013 = var_1_10011(var_1_10013)
-					var_3_1 = var_1_10011.getChapterById(var_1_10013, var_3_3) and var_1_10011:isClear()
-
-					if not var_3_1 then
-						return var_3_1, var_3_2, var_3_4, var_3_3
-					end
-				end
+			if not var_3_1 then
+				return var_3_1, var_3_2, i18n("meta_shop_exchange_limit_2"), var_3_3
 			end
+		elseif var_3_2 == ShopArgs.LIMIT_ARGS_UNIQUE_SHIP then
+			local var_3_6 = getProxy(BayProxy)
 
-			::label_3_0::
+			var_3_1 = var_3_6:findShipByGroup(var_3_3) == nil
+
+			if not var_3_1 then
+				return var_3_1, var_3_2, i18n("quota_shop_good_limit"), var_3_3
+			end
+		elseif var_3_2 == "pass" then
+			local var_3_7 = getProxy(ChapterProxy):getChapterById(var_3_3)
+
+			var_3_1 = var_3_7 and var_3_7:isClear()
+
+			if not var_3_1 then
+				return var_3_1, var_3_2, var_3_4, var_3_3
+			end
 		end
 	end
 
 	return var_3_1
 end
 
-local function var_0_2(arg_4_0, arg_4_1)
-	getProxy = var_1_10002
-	BayProxy = var_1_10004
+local function var_0_1(arg_4_0, arg_4_1)
+	local var_4_0 = getProxy(BayProxy):getMetaShipByGroupId(arg_4_1)
 
-	local var_4_0 = var_1_10002(var_1_10004)
+	if var_4_0 then
+		local var_4_1 = var_4_0:getMetaCharacter():getSpecialMaterialInfoToMaxStar()
 
-	if var_2.getMetaShipByGroupId(var_4_0, arg_4_1) then
-		local var_4_1 = var_2
-		local var_4_2 = var_2.getMetaCharacter(var_4_1)
-		local var_4_3 = var_3.getSpecialMaterialInfoToMaxStar(var_4_2)
-
-		getProxy = var_4_1
-		BagProxy = var_1_10007
-
-		local var_4_4 = var_4_1(var_1_10007)
-		local var_4_5 = var_5.getItemCountById(var_4_4, var_4_3.itemID)
-
-		math = var_4_2
-
-		return var_4_2.max(var_4_3.count - var_4_5, 0)
+		return math.max(var_4_1.count - getProxy(BagProxy):getItemCountById(var_4_1.itemID), 0)
 	else
 		return arg_4_0:getConfig("num_limit") - arg_4_0.buyCount
 	end
@@ -141,7 +76,7 @@ local function var_0_2(arg_4_0, arg_4_1)
 	return 0
 end
 
-function var_0_1.GetTranCntWhenFull(arg_5_0, arg_5_1)
+function var_0_0.GetTranCntWhenFull(arg_5_0, arg_5_1)
 	local var_5_0 = arg_5_0:getConfig("limit_args")
 	local var_5_1 = 0
 	local var_5_2
@@ -149,21 +84,14 @@ function var_0_1.GetTranCntWhenFull(arg_5_0, arg_5_1)
 	if not var_5_0 or var_5_0 == "" or #var_5_0 == 0 then
 		-- block empty
 	else
-		ipairs = var_5
+		for iter_5_0, iter_5_1 in ipairs(var_5_0) do
+			if iter_5_1[1] == ShopArgs.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL then
+				local var_5_4 = var_0_1(arg_5_0, iter_5_1[2]) - arg_5_1
 
-		for iter_5_0, iter_5_1 in var_5(var_5_0) do
-			local var_5_3 = iter_5_1[1]
-			local var_5_4 = iter_5_1[2]
-			local var_5_5 = iter_5_1[3]
-			local var_5_6 = iter_5_1[4]
-
-			ShopArgs = var_1_10014
-
-			if var_5_3 == var_1_10014.LIMIT_ARGS_TRAN_ITEM_WHEN_FULL and var_0_2(arg_5_0, var_5_4) - arg_5_1 < 0 then
-				math = var_16
-				var_5_1 = var_16.abs(var_15)
-				Drop = var_16
-				var_5_2 = var_16.Create(var_5_6)
+				if var_5_4 < 0 then
+					var_5_1 = math.abs(var_5_4)
+					var_5_2 = Drop.Create(iter_5_1[4])
+				end
 			end
 		end
 	end
@@ -171,48 +99,37 @@ function var_0_1.GetTranCntWhenFull(arg_5_0, arg_5_1)
 	return var_5_1, var_5_2
 end
 
-function var_0_1.CheckTimeLimit(arg_6_0)
+function var_0_0.CheckTimeLimit(arg_6_0)
 	local var_6_0 = false
 	local var_6_1 = false
 	local var_6_2 = false
-	local var_6_3 = arg_6_0
-	local var_6_4 = arg_6_0.getConfig(var_6_3, "commodity_type")
-	local var_6_5 = arg_6_0
+	local var_6_3 = arg_6_0:getConfig("commodity_type")
+	local var_6_4 = arg_6_0:getConfig("commodity_id")
 
-	if arg_6_0.getConfig(var_6_5, "commodity_id") == 0 then
+	if var_6_4 == 0 then
 		-- block empty
 	else
-		Item = var_6_3
+		local var_6_5 = Item.getConfigData(var_6_4)
 
-		local var_6_6 = var_6_3.getConfigData(var_5)
-
-		DROP_TYPE_VITEM = var_6_5
-
-		if var_6_4 == var_6_5 and var_6_6.virtual_type == 22 then
+		if var_6_3 == DROP_TYPE_VITEM and var_6_5.virtual_type == 22 then
 			var_6_0 = true
 			var_6_2 = true
-			getProxy = var_6_5
-			ActivityProxy = var_1_10009
 
-			local var_6_7 = var_6_5(var_1_10009)
+			local var_6_6 = getProxy(ActivityProxy):getActivityById(var_6_5.link_id)
 
-			if var_6_5.getActivityById(var_6_7, var_6_6.link_id) and not var_8:isEnd() then
+			if var_6_6 and not var_6_6:isEnd() then
 				var_6_1 = true
 			end
-		else
-			DROP_TYPE_ITEM = var_6_5
-
-			if var_6_4 == var_6_5 and var_6_6.time_limit == 1 then
-				var_6_0 = false
-				var_6_1 = true
-			end
+		elseif var_6_3 == DROP_TYPE_ITEM and var_6_5.time_limit == 1 then
+			var_6_0 = false
+			var_6_1 = true
 		end
 	end
 
 	return var_6_0, var_6_1, var_6_2
 end
 
-function var_0_1.canPurchase(arg_7_0)
+function var_0_0.canPurchase(arg_7_0)
 	local var_7_0, var_7_1, var_7_2 = arg_7_0:CheckCntLimit()
 	local var_7_3, var_7_4, var_7_5 = arg_7_0:CheckArgLimit()
 
@@ -227,117 +144,68 @@ function var_0_1.canPurchase(arg_7_0)
 	return true
 end
 
-function var_0_1.getSkinId(arg_8_0)
-	local var_8_0 = arg_8_0:getConfig("commodity_type")
-
-	DROP_TYPE_SKIN = var_1_10002
-
-	if var_8_0 == var_1_10002 then
+function var_0_0.getSkinId(arg_8_0)
+	if arg_8_0:getConfig("commodity_type") == DROP_TYPE_SKIN then
 		return arg_8_0:getConfig("commodity_id")
 	end
 
 	return nil
 end
 
-function var_0_1.checkCommodityType(arg_9_0, arg_9_1)
+function var_0_0.checkCommodityType(arg_9_0, arg_9_1)
 	return arg_9_0:getConfig("commodity_type") == arg_9_1
 end
 
-function var_0_1.GetPurchasableCnt(arg_10_0)
-	local var_10_0 = arg_10_0
-	local var_10_1 = arg_10_0.getConfig(var_10_0, "commodity_type")
-	local var_10_2 = arg_10_0
-	local var_10_3 = arg_10_0.getConfig(var_10_2, "commodity_id")
+function var_0_0.GetPurchasableCnt(arg_10_0)
+	local var_10_0 = arg_10_0:getConfig("commodity_type")
+	local var_10_1 = arg_10_0:getConfig("commodity_id")
 
-	DROP_TYPE_SKIN = var_10_0
+	if var_10_0 == DROP_TYPE_SKIN then
+		local var_10_2 = getProxy(ShipSkinProxy)
 
-	local var_10_4
-
-	if var_10_1 == var_10_0 then
-		getProxy = var_10_0
-		ShipSkinProxy = var_10_4
-		var_10_4 = var_10_0(var_10_4)
-		var_10_0 = var_10_0.hasSkin(var_10_4, var_10_3) and 0 or 1
-
-		return var_10_0
+		return var_10_2:hasSkin(var_10_1) and 0 or 1
+	elseif var_10_0 == DROP_TYPE_FURNITURE then
+		return math.min(pg.furniture_data_template[var_10_1].count - getProxy(DormProxy):getRawData():GetOwnFurnitureCount(var_10_1), arg_10_0:getConfig("num_limit") - arg_10_0.buyCount)
 	else
-		DROP_TYPE_FURNITURE = var_10_0
+		local var_10_3 = arg_10_0:getConfig("limit_args")
+		local var_10_4
 
-		if var_10_1 == var_10_0 then
-			getProxy = var_10_0
-			DormProxy = var_10_4
+		if type(var_10_3) == "table" then
+			var_10_4 = _.detect(var_10_3, function(arg_11_0)
+				return arg_11_0[1] == ShopArgs.LIMIT_ARGS_META_SHIP_EXISTENCE
+			end)
+		end
 
-			local var_10_5 = var_10_0(var_10_4)
-			local var_10_6 = var_3.getRawData(var_10_5)
-			local var_10_7 = var_3.GetOwnFurnitureCount(var_10_6, var_10_3)
-
-			pg = var_10_2
-
-			local var_10_8 = var_10_2.furniture_data_template[var_10_3]
-
-			math = var_10_6
-
-			return var_10_6.min(var_10_8.count - var_10_7, arg_10_0:getConfig("num_limit") - arg_10_0.buyCount)
+		if var_10_4 then
+			return var_0_1(arg_10_0, var_10_4[2])
 		else
-			local var_10_9 = arg_10_0
-			local var_10_10 = arg_10_0.getConfig(var_10_9, "limit_args")
-			local var_10_11
-
-			type = var_10_9
-
-			if var_10_9(var_10_10) == "table" then
-				_ = var_5
-				var_10_11 = var_5.detect(var_10_10, function(arg_11_0)
-					local var_11_0 = arg_11_0[1]
-
-					ShopArgs = var_2_10002
-
-					return var_11_0 == var_2_10002.LIMIT_ARGS_META_SHIP_EXISTENCE
-				end)
-			end
-
-			if var_10_11 then
-				return var_0_2(arg_10_0, var_10_11[2])
-			else
-				return arg_10_0:getConfig("num_limit") - arg_10_0.buyCount
-			end
+			return arg_10_0:getConfig("num_limit") - arg_10_0.buyCount
 		end
 	end
 
 	return
 end
 
-function var_0_1.GetConsume(arg_12_0)
-	Drop = var_1_10001
-
-	return var_1_10001.New({
+function var_0_0.GetConsume(arg_12_0)
+	return Drop.New({
 		type = arg_12_0:getConfig("resource_category"),
 		id = arg_12_0:getConfig("resource_type"),
 		count = arg_12_0:getConfig("resource_num")
 	})
 end
 
-function var_0_1.Selectable(arg_13_0)
+function var_0_0.Selectable(arg_13_0)
 	return false
 end
 
-function var_0_1.GetDropList(arg_14_0)
-	local var_14_0 = {}
-
-	table = var_1_10002
-
-	local var_14_1 = var_1_10002.insert
-	local var_14_2 = var_14_0
-
-	Drop = var_1_10005
-
-	var_14_1(var_14_2, var_1_10005.New({
+function var_0_0.GetDropList(arg_14_0)
+	table.insert({}, Drop.New({
 		count = 1,
 		type = arg_14_0:getConfig("commodity_type"),
 		id = arg_14_0:getConfig("commodity_id")
 	}))
 
-	return var_14_0
+	return {}
 end
 
-return var_0_1
+return var_0_0

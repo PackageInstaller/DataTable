@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CookGameConst")
+﻿local var_0_0 = class("CookGameConst")
 
 var_0_0.sound_marcopolo_skill = "ui-mini_shine"
 var_0_0.sound_serve = "ui-mini_click"
@@ -49,10 +47,8 @@ var_0_0.random_ids = {
 	11,
 	12
 }
-PLATFORM_CODE = var_1
-PLATFORM_CHT = var_2
 
-if var_1 == var_2 then
+if PLATFORM_CODE == PLATFORM_CHT then
 	var_0_0.char_ids = {
 		1,
 		2,
@@ -89,228 +85,145 @@ var_0_0.added_max = 3
 var_0_0.random_score = 3
 var_0_0.puzzle_rate = 25
 var_0_0.puzzle_time = 7
-
-local var_0_1 = {}
-local var_0_2 = {
-	id = 1,
-	icon = "Albacore",
-	ship_id = 108021
+var_0_0.char_data = {
+	{
+		id = 1,
+		icon = "Albacore",
+		ship_id = 108021,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_Albacore
+	},
+	{
+		id = 2,
+		icon = "august",
+		ship_id = 900921,
+		pos = Vector2(0, -30),
+		desc = var_0_0.cook_game_august
+	},
+	{
+		id = 3,
+		icon = "elbe",
+		ship_id = 406021,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_elbe
+	},
+	{
+		id = 4,
+		icon = "hakuryu",
+		ship_id = 900919,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_hakuryu
+	},
+	{
+		id = 5,
+		icon = "howe",
+		ship_id = 205091,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_howe
+	},
+	{
+		id = 6,
+		icon = "marcopolo",
+		ship_id = 900922,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_marcopolo
+	},
+	{
+		id = 7,
+		icon = "noshiro",
+		ship_id = 302211,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_noshiro
+	},
+	{
+		id = 8,
+		icon = "pnelope",
+		ship_id = 202291,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_pnelope
+	},
+	{
+		id = 9,
+		icon = "Laffey",
+		ship_id = 101511,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_laffey
+	},
+	{
+		id = 10,
+		icon = "Janus",
+		ship_id = 201351,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_janus
+	},
+	{
+		id = 11,
+		icon = "Flandre",
+		ship_id = 900398,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_flandre
+	},
+	{
+		id = 12,
+		icon = "constellation",
+		ship_id = 104011,
+		pos = Vector2(0, 0),
+		desc = var_0_0.cook_game_constellation,
+		detail_name = var_0_0.cook_game_constellation_skill_name,
+		detail_desc = var_0_0.cook_game_constellation_skill_desc
+	},
+	{
+		id = 13,
+		icon = "manjuu",
+		ship_id = 900398,
+		pos = Vector2(0, 0)
+	}
 }
-
-Vector2 = var_0_10003
-var_0_2.pos = var_0_10003(0, 0)
-var_0_2.desc = var_0_0.cook_game_Albacore
-var_0_1[1] = var_0_2
-
-local var_0_3 = {
-	id = 2,
-	icon = "august",
-	ship_id = 900921
-}
-
-Vector2 = var_3
-var_0_3.pos = var_3(0, -30)
-var_0_3.desc = var_0_0.cook_game_august
-var_0_1[2] = var_0_3
-
-local var_0_4 = {
-	id = 3,
-	icon = "elbe",
-	ship_id = 406021
-}
-
-Vector2 = var_3
-var_0_4.pos = var_3(0, 0)
-var_0_4.desc = var_0_0.cook_game_elbe
-var_0_1[3] = var_0_4
-
-local var_0_5 = {
-	id = 4,
-	icon = "hakuryu",
-	ship_id = 900919
-}
-
-Vector2 = var_3
-var_0_5.pos = var_3(0, 0)
-var_0_5.desc = var_0_0.cook_game_hakuryu
-var_0_1[4] = var_0_5
-
-local var_0_6 = {
-	id = 5,
-	icon = "howe",
-	ship_id = 205091
-}
-
-Vector2 = var_3
-var_0_6.pos = var_3(0, 0)
-var_0_6.desc = var_0_0.cook_game_howe
-var_0_1[5] = var_0_6
-
-local var_0_7 = {
-	id = 6,
-	icon = "marcopolo",
-	ship_id = 900922
-}
-
-Vector2 = var_3
-var_0_7.pos = var_3(0, 0)
-var_0_7.desc = var_0_0.cook_game_marcopolo
-var_0_1[6] = var_0_7
-
-local var_0_8 = {
-	id = 7,
-	icon = "noshiro",
-	ship_id = 302211
-}
-
-Vector2 = var_3
-var_0_8.pos = var_3(0, 0)
-var_0_8.desc = var_0_0.cook_game_noshiro
-var_0_1[7] = var_0_8
-
-local var_0_9 = {
-	id = 8,
-	icon = "pnelope",
-	ship_id = 202291
-}
-
-Vector2 = var_3
-var_0_9.pos = var_3(0, 0)
-var_0_9.desc = var_0_0.cook_game_pnelope
-var_0_1[8] = var_0_9
-
-local var_0_10 = {
-	id = 9,
-	icon = "Laffey",
-	ship_id = 101511
-}
-
-Vector2 = var_3
-var_0_10.pos = var_3(0, 0)
-var_0_10.desc = var_0_0.cook_game_laffey
-var_0_1[9] = var_0_10
-
-local var_0_11 = {
-	id = 10,
-	icon = "Janus",
-	ship_id = 201351
-}
-
-Vector2 = var_3
-var_0_11.pos = var_3(0, 0)
-var_0_11.desc = var_0_0.cook_game_janus
-var_0_1[10] = var_0_11
-
-local var_0_12 = {
-	id = 11,
-	icon = "Flandre",
-	ship_id = 900398
-}
-
-Vector2 = var_3
-var_0_12.pos = var_3(0, 0)
-var_0_12.desc = var_0_0.cook_game_flandre
-var_0_1[11] = var_0_12
-
-local var_0_13 = {
-	id = 12,
-	icon = "constellation",
-	ship_id = 104011
-}
-
-Vector2 = var_3
-var_0_13.pos = var_3(0, 0)
-var_0_13.desc = var_0_0.cook_game_constellation
-var_0_13.detail_name = var_0_0.cook_game_constellation_skill_name
-var_0_13.detail_desc = var_0_0.cook_game_constellation_skill_desc
-var_0_1[12] = var_0_13
-
-local var_0_14 = {
-	id = 13,
-	icon = "manjuu",
-	ship_id = 900398
-}
-
-Vector2 = var_3
-var_0_14.pos = var_3(0, 0)
-var_0_1[13] = var_0_14
-var_0_0.char_data = var_0_1
 var_0_0.player_char = "playerChar"
 var_0_0.parter_char = "parterchar"
 var_0_0.parter_pet = "parter_pet"
 var_0_0.enemy1_char = "enemy1Char"
 var_0_0.enemy2_char = "enemy2Char"
 var_0_0.enemy_pet = "enemy_pet"
-
-local var_0_15 = {}
-local var_0_16 = var_0_0.player_char
-local var_0_17 = {
-	parent = "scene",
-	bound = "playerBox/collider",
-	tf_name = var_0_0.player_char
+var_0_0.char_instiate_data = {
+	[var_0_0.player_char] = {
+		parent = "scene",
+		bound = "playerBox/collider",
+		tf_name = var_0_0.player_char,
+		init_pos = Vector2(-500, 0)
+	},
+	[var_0_0.parter_char] = {
+		parent = "scene",
+		bound = "playerBox/collider",
+		tf_name = var_0_0.parter_char,
+		init_pos = Vector2(-300, -300)
+	},
+	[var_0_0.parter_pet] = {
+		parent = "scene",
+		bound = "playerBox/collider",
+		tf_name = var_0_0.parter_pet,
+		init_pos = Vector2(-400, -400)
+	},
+	[var_0_0.enemy1_char] = {
+		parent = "scene",
+		bound = "enemyBox/collider",
+		tf_name = var_0_0.enemy1_char,
+		init_pos = Vector2(500, 10)
+	},
+	[var_0_0.enemy2_char] = {
+		parent = "scene",
+		bound = "enemyBox/collider",
+		tf_name = var_0_0.enemy2_char,
+		init_pos = Vector2(300, -310)
+	},
+	[var_0_0.enemy_pet] = {
+		parent = "scene",
+		bound = "enemyBox/collider",
+		tf_name = var_0_0.enemy_pet,
+		init_pos = Vector2(400, -410)
+	}
 }
-
-Vector2 = var_4
-var_0_17.init_pos = var_4(-500, 0)
-var_0_15[var_0_16] = var_0_17
-
-local var_0_18 = var_0_0.parter_char
-local var_0_19 = {
-	parent = "scene",
-	bound = "playerBox/collider",
-	tf_name = var_0_0.parter_char
-}
-
-Vector2 = var_4
-var_0_19.init_pos = var_4(-300, -300)
-var_0_15[var_0_18] = var_0_19
-
-local var_0_20 = var_0_0.parter_pet
-local var_0_21 = {
-	parent = "scene",
-	bound = "playerBox/collider",
-	tf_name = var_0_0.parter_pet
-}
-
-Vector2 = var_4
-var_0_21.init_pos = var_4(-400, -400)
-var_0_15[var_0_20] = var_0_21
-
-local var_0_22 = var_0_0.enemy1_char
-local var_0_23 = {
-	parent = "scene",
-	bound = "enemyBox/collider",
-	tf_name = var_0_0.enemy1_char
-}
-
-Vector2 = var_4
-var_0_23.init_pos = var_4(500, 10)
-var_0_15[var_0_22] = var_0_23
-
-local var_0_24 = var_0_0.enemy2_char
-local var_0_25 = {
-	parent = "scene",
-	bound = "enemyBox/collider",
-	tf_name = var_0_0.enemy2_char
-}
-
-Vector2 = var_4
-var_0_25.init_pos = var_4(300, -310)
-var_0_15[var_0_24] = var_0_25
-
-local var_0_26 = var_0_0.enemy_pet
-local var_0_27 = {
-	parent = "scene",
-	bound = "enemyBox/collider",
-	tf_name = var_0_0.enemy_pet
-}
-
-Vector2 = var_4
-var_0_27.init_pos = var_4(400, -410)
-var_0_15[var_0_26] = var_0_27
-var_0_0.char_instiate_data = var_0_15
-
-local var_0_28 = {
+var_0_0.char_battle_data = {
 	{
 		base_speed = 210,
 		name = "Albacore",
@@ -425,21 +338,17 @@ local var_0_28 = {
 		effect = {
 			"EF_Skill"
 		}
+	},
+	{
+		base_speed = 240,
+		name = "manjuu",
+		speed_able = false,
+		double_able = false,
+		id = 101,
+		ac_able = false,
+		offset = Vector2(0, 90)
 	}
 }
-local var_0_29 = {
-	base_speed = 240,
-	name = "manjuu",
-	speed_able = false,
-	double_able = false,
-	id = 101,
-	ac_able = false
-}
-
-Vector2 = var_3
-var_0_29.offset = var_3(0, 90)
-var_0_28[13] = var_0_29
-var_0_0.char_battle_data = var_0_28
 var_0_0.judge_num = 4
 var_0_0.judge_data = {
 	{

@@ -1,30 +1,21 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleDirectHitWeaponUnit = class("BattleDirectHitWeaponUnit", ys.Battle.BattleWeaponUnit)
+ys.Battle.BattleDirectHitWeaponUnit.__name = "BattleDirectHitWeaponUnit"
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleDirectHitWeaponUnit
 
-var_0_0 = var_0_10000 or {}
-ys = ys
-
-local var_0_1 = var_0.Battle
-
-class = var_0_10002
-var_0_1.BattleDirectHitWeaponUnit = var_0_10002("BattleDirectHitWeaponUnit", var_0.Battle.BattleWeaponUnit)
-var_0.Battle.BattleDirectHitWeaponUnit.__name = "BattleDirectHitWeaponUnit"
-
-local var_0_2 = var_0.Battle.BattleDirectHitWeaponUnit
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0)
+function ys.Battle.BattleDirectHitWeaponUnit.Ctor(arg_1_0)
+	var_0_0.super.Ctor(arg_1_0)
 
 	return
 end
 
-function var_0_2.Spawn(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = var_0_2.super.Spawn(arg_2_0, arg_2_1, arg_2_2)
+function ys.Battle.BattleDirectHitWeaponUnit.Spawn(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = var_0_0.super.Spawn(arg_2_0, arg_2_1, arg_2_2)
 
-	var_3.SetDirectHitUnit(var_2_0, arg_2_2)
+	var_2_0:SetDirectHitUnit(arg_2_2)
 
-	return var_3
+	return var_2_0
 end
 
 return

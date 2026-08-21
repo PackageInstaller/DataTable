@@ -1,108 +1,36 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("EvaluateShipCommand", pm.SimpleCommand)
 
-local var_0_0 = "EvaluateShipCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().groupId
-	local var_1_1 = var_2.content
-
-	pg = var_1_10005
-
-	local var_1_2 = var_1_10005.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_2, 17103, {
-		ship_group_id = var_1_0,
-		context = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(17103, {
+		ship_group_id = var_1_0.groupId,
+		context = var_1_0.content
 	}, 17104, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			CollectionProxy = var_2_10003
-			var_2_10004 = var_1(var_2_10003)
+			local var_2_0 = getProxy(CollectionProxy)
+			local var_2_1 = var_2_0:getShipGroup(var_0)
 
-			if var_1.getShipGroup(var_2_10004, var_1_0) then
-				ShipEvaluation = var_2_10003
-				var_2.evaluation = var_2_10003.New(arg_2_0.ship_discuss)
+			if var_2_1 then
+				var_2_1.evaluation = ShipEvaluation.New(arg_2_0.ship_discuss)
 
-				var_1:updateShipGroup(var_2)
-
-				local var_2_0 = arg_1_0
-
-				var_2_10003 = var_2_10003.sendNotification
-				CollectionProxy = var_2_10006
-
-				var_2_10003(var_2_0, var_2_10006.GROUP_EVALUATION_UPDATE, var_1_0)
+				var_2_0:updateShipGroup(var_2_1)
+				arg_1_0:sendNotification(CollectionProxy.GROUP_EVALUATION_UPDATE, var_0)
 			end
 
-			pg = var_2_10003
-
-			local var_2_1 = var_2_10003.TipsMgr.GetInstance()
-			local var_2_2 = var_3.ShowTips
-
-			i18n = var_2_10006
-
-			var_2_2(var_2_1, var_2_10006("eva_ship_success"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("eva_ship_success"))
 		elseif arg_2_0.result == 1 then
-			pg = var_1
-
-			local var_2_3 = var_1.TipsMgr.GetInstance()
-			local var_2_4 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_4(var_2_3, var_2_10004("report_ship_cannot_comment"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("report_ship_cannot_comment"))
 		elseif arg_2_0.result == 2011 then
-			pg = var_1
-
-			local var_2_5 = var_1.TipsMgr.GetInstance()
-			local var_2_6 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_6(var_2_5, var_2_10004("evaluate_too_loog"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("evaluate_too_loog"))
 		elseif arg_2_0.result == 2013 then
-			pg = var_1
-
-			local var_2_7 = var_1.TipsMgr.GetInstance()
-			local var_2_8 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_8(var_2_7, var_2_10004("evaluate_ban_word"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("evaluate_ban_word"))
 		elseif arg_2_0.result == 40 then
-			pg = var_1
-
-			local var_2_9 = var_1.TipsMgr.GetInstance()
-			local var_2_10 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_2_10(var_2_9, var_2_10004("report_cannot_comment_level_2"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("report_cannot_comment_level_2"))
+		elseif arg_2_0.result == 41 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("report_cannot_comment_level_1", arg_2_0.need_level))
 		else
-			local var_2_12
-
-			if arg_2_0.result == 41 then
-				pg = var_2_12
-
-				local var_2_11 = var_2_12.TipsMgr.GetInstance()
-
-				var_2_12 = var_2_12.ShowTips
-				i18n = var_2_10004
-
-				var_2_12(var_2_11, var_2_10004("report_cannot_comment_level_1", arg_2_0.need_level))
-			else
-				pg = var_2_12
-
-				local var_2_13 = var_2_12.TipsMgr.GetInstance()
-				local var_2_14 = var_1.ShowTips
-
-				errorTip = var_2_10004
-
-				var_2_14(var_2_13, var_2_10004("eva_ship", arg_2_0.result))
-			end
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("eva_ship", arg_2_0.result))
 		end
 
 		return
@@ -111,4 +39,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

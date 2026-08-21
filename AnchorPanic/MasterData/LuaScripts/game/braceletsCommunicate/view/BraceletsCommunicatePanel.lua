@@ -6,14 +6,14 @@ destroyTime = 0 -- 自动销毁时间-1默认
 panelType = -1 -- 窗口类型 1 全屏 2 弹窗
 isBlur = 1
 
---构造函数
+-- 构造函数
 function ctor(self)
     super.ctor(self)
     self:setUICode(LinkCode.Communication)
 end
 
 -- 初始化数据
-function initData(self) 
+function initData(self)
     self.mTargetListItem = {}
     self.mMsgListItem = {}
     self.mBtnList = {}
@@ -24,7 +24,7 @@ function initData(self)
     self.mCommunicateSn = nil
     self.mReplySn = nil
 
-    --刷新保存多少条记录(建议同下条参数)
+    -- 刷新保存多少条记录(建议同下条参数)
     self.channelMaxCount = 10
     -- 历史消息每次加载多少条聊天记录
     self.mOnceLoadCount = 10
@@ -65,6 +65,7 @@ function configUI(self)
     self.mGroupUP = self:getChildTrans("mGroupUP")
     self.mGroupRoom = self:getChildGO("mGroupRoom")
     self.mTxtChannel = self:getChildGO("mTxtChannel"):GetComponent(ty.Text)
+    self.mTxtChannelDes = self:getChildGO("mTxtChannelDes"):GetComponent(ty.Text)
     self.mScrollView = self:getChildGO("mScrollView"):GetComponent(ty.ScrollRect)
     self.mScrollRect = self.mScrollView:GetComponent(ty.RectTransform)
 
@@ -87,6 +88,9 @@ function configUI(self)
     self.mTxtPrivateRed = self:getChildGO("mTxtPrivateRed"):GetComponent(ty.Text)
     self.mPublicRed = self:getChildGO("mPublicRed")
     self.mTxtPublicRed = self:getChildGO("mTxtPublicRed"):GetComponent(ty.Text)
+
+    self.mEmojiTrans = self:getChildTrans("mEmoji")
+    self.mEmojiItem = self:getChildGO("mEmojiItem")
 end
 
 function initViewText(self)
@@ -102,7 +106,7 @@ end
 
 function onClickPrivateHandler(self, isInit)
     local privateData = braceletsCommunicate.BraceletsCommunicateManager:getPrivateChat()
-    if self.mIsOpenPrivate and not isInit then 
+    if self.mIsOpenPrivate and not isInit then
         return
     end
     self:updateMsgImmediately()
@@ -118,7 +122,7 @@ end
 
 function onClickPublicHandler(self)
     local publicData = braceletsCommunicate.BraceletsCommunicateManager:getPublicChat()
-    if not self.mIsOpenPrivate then 
+    if not self.mIsOpenPrivate then
         return
     end
     self:updateMsgImmediately()
@@ -133,49 +137,70 @@ function onClickPublicHandler(self)
 end
 
 function onClickCloseCommunicateHandler(self)
-    if braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget() == nil then 
+    if braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget() == nil then
         return
-    end 
+    end
     self.Right:SetActive(false)
     TweenFactory:move2LPosX(self.Left.transform, -24, 0.3)
     self:updateMsgImmediately()
-    braceletsCommunicate.BraceletsCommunicateManager:setNowSelectTarget(nil) 
+    braceletsCommunicate.BraceletsCommunicateManager:setNowSelectTarget(nil)
     self:updateTargetItem()
-    if self.mScrollSn then 
+    if self.mScrollSn then
         LoopManager:removeFrameByIndex(self.mScrollSn)
         self.mScrollSn = nil
     end
 end
 
---回复界面
+-- 回复界面
 function onClickReplyHandler(self, call)
     self:recoverBtnList()
     self:clearReplySn()
-    self.mChooseContent.gameObject:SetActive(true)
+    --self.mChooseContent.gameObject:SetActive(true)
     local mNowSelectTargetId = braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget()
-    local newestSegId, newestTalkId, _ = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(mNowSelectTargetId):getNewestSegmentId()
-    local configVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId):getTalkVo(newestSegId, newestTalkId)
-    for k,v in pairs(configVo.nextId) do
-        local btnItem = SimpleInsItem:create(self.mBtnChoose, self.mChooseContent, "BraceletsCommunicatePanelBtnChoose")
-        local btnText = btnItem:getChildGO("mTxtBtnTxt"):GetComponent(ty.Text)
-        local btnColor = btnItem:getGo():GetComponent(ty.Image)
-        local configVoMsg = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId):getTalkMsg(newestSegId ,v)
-        btnText.text = configVoMsg 
-        btnText.color = gs.ColorUtil.GetColor("202226ff") 
+    local newestSegId, newestTalkId, _ = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(
+        mNowSelectTargetId):getNewestSegmentId()
+    local configVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId)
+        :getTalkVo(newestSegId, newestTalkId)
+        self.mChooseContent.gameObject:SetActive(configVo.type == 2)
+        self.mEmojiTrans.gameObject:SetActive(configVo.type == 3)
 
-        if btnText:GetComponent(ty.RectTransform).sizeDelta.y > 30 then 
-            btnText.alignment = gs.TextAnchor.UpperLeft
-        else
-            btnText.alignment = gs.TextAnchor.UpperCenter
+    for k, v in pairs(configVo.nextId) do
+        local configVoMsg = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId)
+            :getTalkMsg(newestSegId, v)
+            local btnItem
+        if configVo.type == 2 then
+            btnItem = SimpleInsItem:create(self.mBtnChoose, self.mChooseContent,
+                "BraceletsCommunicatePanelBtnChoose")
+            local btnText = btnItem:getChildGO("mTxtBtnTxt"):GetComponent(ty.Text)
+            local btnColor = btnItem:getGo():GetComponent(ty.Image)
+
+            btnText.text = configVoMsg
+            btnText.color = gs.ColorUtil.GetColor("202226ff")
+
+            if btnText:GetComponent(ty.RectTransform).sizeDelta.y > 30 then
+                btnText.alignment = gs.TextAnchor.UpperLeft
+            else
+                btnText.alignment = gs.TextAnchor.UpperCenter
+            end
+        elseif configVo.type == 3 then
+            btnItem = SimpleInsItem:create(self.mEmojiItem, self.mEmojiTrans,
+            "BraceletsBtnEmoji")
+            btnItem.m_go:GetComponent(ty.AutoRefImage):SetImg(configVoMsg)
         end
-        if k == #configVo.nextId then 
-            --延迟等待自动布局完成
+
+      
+
+        if k == #configVo.nextId then
+            -- 延迟等待自动布局完成
             self.mReplySn = LoopManager:addFrame(1, 1, self, function()
                 call()
             end)
         end
         btnItem:addUIEvent(nil, function()
-            GameDispatcher:dispatchEvent(EventName.REQ_COMMUNICATE_SELETE, {targetId = mNowSelectTargetId, talkId = v})
+            GameDispatcher:dispatchEvent(EventName.REQ_COMMUNICATE_SELETE, {
+                targetId = mNowSelectTargetId,
+                talkId = v
+            })
             self:recoverBtnList()
             self:clearReplySn()
             self.mChooseContent.gameObject:SetActive(false)
@@ -188,47 +213,50 @@ end
 -- 点击出对话
 function onClickCommunicate(self, isEnd)
     local mNowSelectTargetId = braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget()
-    if not mNowSelectTargetId or self.mIsDraging then 
+    if not mNowSelectTargetId or self.mIsDraging then
         return
     end
-    local newestSegId, newestTalkId, index = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(mNowSelectTargetId):getNewestSegmentId()
+    local newestSegId, newestTalkId, index = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(
+        mNowSelectTargetId):getNewestSegmentId()
     local configVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId)
     local talkVo = configVo:getTalkVo(newestSegId, newestTalkId)
-    if talkVo.type == 2 or index == 2 then 
-        if self.mCommunicateSn then 
+    if talkVo.type == 2 or index == 2 then
+        if self.mCommunicateSn then
             LoopManager:removeTimerByIndex(self.mCommunicateSn)
             self.mCommunicateSn = nil
         end
         return
     end
-    if(index == 1 and #talkVo.relation > 1 )then 
-        if not braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId) or (talkVo.reward ~= 0) then 
-            local heroVo = hero.HeroManager:getHeroConfigVo(talkVo.relation[1]) 
+    if (index == 1 and #talkVo.relation > 1) then
+        if not braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId) or
+            (talkVo.reward ~= 0) then
+            local heroVo = hero.HeroManager:getHeroConfigVo(talkVo.relation[1])
             local who = heroVo.name
-            gs.Message.Show(who .. "好感度+"..talkVo.relation[2])
+            gs.Message.Show(who .. "好感度+" .. talkVo.relation[2])
         end
     end
-    if not braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId) then 
+    if not braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId) then
         braceletsCommunicate.BraceletsCommunicateManager:setNewestHasRead(mNowSelectTargetId, newestTalkId, true)
         GameDispatcher:dispatchEvent(EventName.UPDATE_TARGET_INFO, mNowSelectTargetId)
         self:checkRed()
-        if talkVo.nextId[1] ~= 2 then 
+        if talkVo.nextId[1] ~= 2 then
             self.mNowAllCount = 0
             -- self:onLoadHistoryHandler()
             local lastCommunication = self.mMsgListItem[#self.mMsgListItem]
-            if lastCommunication then 
+            if lastCommunication then
                 lastCommunication:__updateView()
             end
         end
-        if talkVo.reward > 0 then 
-            GameDispatcher:dispatchEvent(EventName.REQ_COMMUNICATE, mNowSelectTargetId)   --领取奖励
+        if talkVo.reward > 0 then
+            GameDispatcher:dispatchEvent(EventName.REQ_COMMUNICATE, mNowSelectTargetId) -- 领取奖励
         end
     else
-        if index == 1 then 
+        if index == 1 then
             GameDispatcher:dispatchEvent(EventName.REQ_COMMUNICATE, mNowSelectTargetId)
         end
     end
-    mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_COMMUNICATION, braceletsCommunicate.BraceletsCommunicateManager:checkIsRed())
+    mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_COMMUNICATION,
+        braceletsCommunicate.BraceletsCommunicateManager:checkIsRed())
 end
 
 function active(self)
@@ -242,7 +270,7 @@ function active(self)
     self.mIconPublic.color = gs.ColorUtil.GetColor("82898cff")
     self:updateView(true)
     self:checkRed()
-    if not self.mTimeSn then 
+    if not self.mTimeSn then
         local function TimeCount()
             self.mTxtTime.text = gs.DeviceInfoMgr:GetDateTime()
             local battery = gs.DeviceInfoMgr:GetBatteryLevel() == -1 and 1 or gs.DeviceInfoMgr:GetBatteryLevel()
@@ -256,12 +284,14 @@ function active(self)
         self.mTimeSn = LoopManager:addTimer(0, 0, self, TimeCount)
     end
 
-    self.mEventTrigger.onClick:AddListener(function() self:onClickCommunicate() end)
-    self.mEventTrigger.onBeginDrag:AddListener(function() 
-        self:onBeginDragHandler()
-        self.mIsDraging = true 
+    self.mEventTrigger.onClick:AddListener(function()
+        self:onClickCommunicate()
     end)
-    self.mEventTrigger.onEndDrag:AddListener(function() 
+    self.mEventTrigger.onBeginDrag:AddListener(function()
+        self:onBeginDragHandler()
+        self.mIsDraging = true
+    end)
+    self.mEventTrigger.onEndDrag:AddListener(function()
         self:onEndDragHandler()
         self.mIsDraging = false
     end)
@@ -283,15 +313,15 @@ function deActive(self)
     self.mChatCacheList = nil
     self.mChatCacheShowList = nil
 
-    if self.mTimeSn then 
+    if self.mTimeSn then
         LoopManager:removeTimerByIndex(self.mTimeSn)
         self.mTimeSn = nil
     end
-    if self.mScrollSn then 
+    if self.mScrollSn then
         LoopManager:removeFrameByIndex(self.mScrollSn)
         self.mScrollSn = nil
     end
-    if self.mCommunicateSn then 
+    if self.mCommunicateSn then
         LoopManager:removeTimerByIndex(self.mCommunicateSn)
         self.mCommunicateSn = nil
     end
@@ -305,17 +335,18 @@ function onUpdateTarget(self)
     self:checkRed()
 end
 
---变更聊天对象
+-- 变更聊天对象
 function onChangeTarget(self, targetId)
+    self.mEmojiTrans.gameObject:SetActive(false)
     local mNowSelectTargetId = braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget()
-    if mNowSelectTargetId == nil then 
+    if mNowSelectTargetId == nil then
         braceletsCommunicate.BraceletsCommunicateManager:setNowSelectTarget(targetId)
         -- 动效
         TweenFactory:move2LPosX(self.Left.transform, -414, 0.3, gs.DT.Ease.Linear, function()
         end)
         self.Right:SetActive(true)
     else
-        if mNowSelectTargetId == targetId then 
+        if mNowSelectTargetId == targetId then
             return
         end
         self.mNowAllCount = 0
@@ -328,7 +359,7 @@ function onChangeTarget(self, targetId)
 end
 
 function onReloadHistory(self, targetId)
-    if targetId == braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget() then 
+    if targetId == braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget() then
         self:onLoadHistoryHandler()
     end
     self:updateTargetItem()
@@ -339,7 +370,7 @@ end
 function updateView(self, isInit)
     self:updateTargetItem()
     self:onLoadHistoryHandler()
-    if isInit then 
+    if isInit then
         self:onClickPrivateHandler(isInit)
     end
 end
@@ -356,7 +387,9 @@ end
 -- 滚动列表拖动开始
 function onBeginDragHandler(self)
     self.mScrollerValueEvent:RemoveAllListeners()
-    self.mScrollerValueEvent:AddListener(function() self:onScollChangedHandler() end)
+    self.mScrollerValueEvent:AddListener(function()
+        self:onScollChangedHandler()
+    end)
 end
 
 function onScollChangedHandler(self)
@@ -368,7 +401,7 @@ end
 
 function onEndDragHandler(self)
     self.mScrollerValueEvent:RemoveAllListeners()
-    if(self.mIsNeedLoad)then
+    if (self.mIsNeedLoad) then
         self:onLoadHistoryHandler(self.mIsNeedLoad)
         self.mIsNeedLoad = false
     end
@@ -379,18 +412,22 @@ function onLoadHistoryHandler(self, needLoad)
     self.mMask:SetActive(true)
     local mNowSelectTargetId = braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget()
     self.mTxtChannel.gameObject:SetActive(false)
-    if not mNowSelectTargetId then 
+    if not mNowSelectTargetId then
         return
     end
     -- 旧消息
     local msgVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(mNowSelectTargetId)
     local configVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId)
-    if configVo.type == 2 then 
+    if configVo.type == 2 then
         self.mTxtChannel.text = configVo.name
+        self.mTxtChannelDes.gameObject:SetActive(false)
     else
         local heroTid = configVo.heroList[1]
         local heroConfig = hero.HeroManager:getHeroConfigVo(heroTid)
         self.mTxtChannel.text = heroConfig.name
+        self.mTxtChannelDes.text = _TT(configVo.signId)
+
+        self.mTxtChannelDes.gameObject:SetActive(self.mTxtChannelDes.text ~= "")
     end
     self.mTxtChannel.gameObject:SetActive(true)
     local anchoPosY = self.mContentRect.anchoredPosition.y
@@ -400,43 +437,55 @@ function onLoadHistoryHandler(self, needLoad)
     local list = {}
     local isEnd = false
     local replyEnd = false
-    for k,v in pairs(msgVo.segmentDic) do
+    local isImg = false
+
+    for k, v in pairs(msgVo.segmentDic) do
         local segId = k
-        local talkList = v 
+        local talkList = v
         local nextId = nil
         isEnd = false
         replyEnd = false
         -- 获得正序
-        for i= #talkList, 1, -1 do
-            if talkList[i] == 0 then 
+        for i = #talkList, 1, -1 do
+            if talkList[i] == 0 then
                 break
             end
             local msgConfig = configVo:getTalkVo(segId, talkList[i])
-            if (msgConfig.type == 2) and (i > 1) then 
+            if (msgConfig.type == 2 or msgConfig.type == 3) and (i > 1) then
             else
-                table.insert(list, {segId = segId, index = i, msgConfig = msgConfig, isEnd = false})
+                table.insert(list, {
+                    segId = segId,
+                    index = i,
+                    msgConfig = msgConfig,
+                    isEnd = false
+                })
             end
-            replyEnd = ((msgConfig.type == 2) and (i == 1))
+            replyEnd = ((msgConfig.type == 2 or msgConfig.type == 3) and (i == 1))
+            isImg = msgConfig.type == 3
             isEnd = msgConfig.nextId[1] == 0
 
-            if isEnd and (braceletsCommunicate.BraceletsCommunicateManager:getNewestStoreNum(mNowSelectTargetId) == 0
-            or newestSegId > segId) then 
-                table.insert(list, {isEnd = true})
+            if isEnd and
+                (braceletsCommunicate.BraceletsCommunicateManager:getNewestStoreNum(mNowSelectTargetId) == 0 or
+                    newestSegId > segId) then
+                table.insert(list, {
+                    isEnd = true
+                })
             end
         end
     end
     local loadCount = 0
     self.mNowStartIndex = #list - (self.mOnceLoadCount + self.mNowAllCount) + 1
     self.mNowStartIndex = self.mNowStartIndex <= 0 and 1 or self.mNowStartIndex
-    if self.mNowStartIndex < 1 then 
+    if self.mNowStartIndex < 1 then
         start = 1
     end
     for i = self.mNowStartIndex, #list do
-        if(not list[i].isEnd)then
-            if (list[i].msgConfig.type == 2) and (list[i].index > 1) then 
+        if (not list[i].isEnd) then
+            if (list[i].msgConfig.type == 2 or list[i].msgConfig.type == 3) and (list[i].index > 1) then
             else
                 --- 加内容
-                local msgItem = braceletsCommunicate.BraceletsCommunicateItem:create(self.mContentTrans, list[i].msgConfig, configVo.heroList, mNowSelectTargetId, list[i].segId)
+                local msgItem = braceletsCommunicate.BraceletsCommunicateItem:create(self.mContentTrans,
+                    list[i].msgConfig, configVo.heroList, mNowSelectTargetId, list[i].segId)
                 table.insert(self.mMsgListItem, msgItem)
             end
         else
@@ -445,50 +494,57 @@ function onLoadHistoryHandler(self, needLoad)
             table.insert(self.mMsgListItem, msgItem)
         end
         loadCount = loadCount + 1
-        if(loadCount >= self.mOnceLoadCount + self.mNowAllCount)then
+        if (loadCount >= self.mOnceLoadCount + self.mNowAllCount) then
             self.mNowAllCount = loadCount
         end
     end
-    if self.mScrollSn then 
+    if self.mScrollSn then
         LoopManager:removeFrameByIndex(self.mScrollSn)
         self.mScrollSn = nil
     end
-    self.mScrollSn = LoopManager:addFrame(2, 1, self, function() 
-        if needLoad then 
+    self.mScrollSn = LoopManager:addFrame(2, 1, self, function()
+        if needLoad then
             -- 上拉加载聊天内容时的定位
-            gs.TransQuick:UIPosY(self.mContentRect, self.mContentRect.sizeDelta.y - deltaY) 
+            gs.TransQuick:UIPosY(self.mContentRect, self.mContentRect.sizeDelta.y - deltaY)
             self.mMask:SetActive(false)
             return
         else
             self.mScrollView.verticalNormalizedPosition = 0
         end
 
-        if replyEnd and not needLoad then       --直接出对话
-            self:onClickReplyHandler(function() 
+        if replyEnd and not needLoad then -- 直接出对话
+            self:onClickReplyHandler(function()
                 self.mMask:SetActive(false)
-
-                if self.mScrollRect.sizeDelta.y ~= 77.5 - self.mChooseRect.sizeDelta.y + 20 then 
-                    gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5 - self.mChooseRect.sizeDelta.y + 20) 
+                if isImg then
+                    if self.mScrollRect.sizeDelta.y ~= 77.5 - 143 then
+                        gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5 - 143 )
+                    end
+                else
+                    if self.mScrollRect.sizeDelta.y ~= 77.5 - self.mChooseRect.sizeDelta.y + 20 then
+                        gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5 - self.mChooseRect.sizeDelta.y + 20)
+                    end
                 end
-                if self.mScrollView.verticalNormalizedPosition > 0.05 then 
+               
+                if self.mScrollView.verticalNormalizedPosition > 0.05 then
                     self.mScrollView.verticalNormalizedPosition = 0
                 end
             end)
             return
-        elseif not replyEnd and self.mScrollRect.sizeDelta.y ~= 77.5 then 
+        elseif not replyEnd and self.mScrollRect.sizeDelta.y ~= 77.5 then
             gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5)
         end
 
-        if not isEnd or (index == 1)then 
+        if not isEnd or (index == 1) then
             self:updateDelayMsg()
         end
         -- 有对话 或者 结束且已读
-        if (replyEnd or (isEnd and braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId))) then 
+        if (replyEnd or
+            (isEnd and braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId))) then
             self.mMask:SetActive(false)
         else
             self.mMask:SetActive(true)
         end
-    end) 
+    end)
 end
 
 -- 聊天消息新增更新
@@ -506,7 +562,7 @@ function onChatMsgUpdateHandler(self, args)
     end
 
     local lastCommunication = self.mMsgListItem[#self.mMsgListItem]
-    if lastCommunication then 
+    if lastCommunication then
         lastCommunication:__updateView()
     end
 
@@ -514,46 +570,57 @@ function onChatMsgUpdateHandler(self, args)
     local mNowSelectTargetId = braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget()
     local isEnd = args.isEnd
     local replyEnd = false
-    if not isEnd then 
+    local isImg = false
+    if not isEnd then
         local configVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateConfig(mNowSelectTargetId)
         local msgVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(mNowSelectTargetId)
         local msgConfig = configVo:getTalkVo(args.partId, args.talkId)
-        replyEnd = (msgConfig.type == 2)
-        local msgItem = braceletsCommunicate.BraceletsCommunicateItem:create(self.mContentTrans, msgConfig, configVo.heroList, mNowSelectTargetId, args.partId)
+        replyEnd = (msgConfig.type == 2 or msgConfig.type == 3)
+        isImg = msgConfig.type == 3
+        local msgItem = braceletsCommunicate.BraceletsCommunicateItem:create(self.mContentTrans, msgConfig,
+            configVo.heroList, mNowSelectTargetId, args.partId)
         table.insert(self.mMsgListItem, msgItem)
     else
         local msgItem = braceletsCommunicate.BraceletsCommunicateItem:create(self.mContentTrans)
         table.insert(self.mMsgListItem, msgItem)
     end
+    self.mEmojiTrans.gameObject:SetActive(false)
     GameDispatcher:dispatchEvent(EventName.UPDATE_TARGET_INFO, mNowSelectTargetId)
 
-    if self.mScrollSn then 
+    if self.mScrollSn then
         LoopManager:removeFrameByIndex(self.mScrollSn)
         self.mScrollSn = nil
     end
-    self.mScrollSn = LoopManager:addFrame(2, 1, self, function() 
-        if replyEnd and not needLoad then       --直接出对话
-            self:onClickReplyHandler(function() 
+    self.mScrollSn = LoopManager:addFrame(2, 1, self, function()
+        if replyEnd and not needLoad then -- 直接出对话
+            self:onClickReplyHandler(function()
                 self.mMask:SetActive(false)
-
-                if self.mScrollRect.sizeDelta.y ~= 77.5 - self.mChooseRect.sizeDelta.y + 20 then 
-                    gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5 - self.mChooseRect.sizeDelta.y + 20) 
+                if isImg then
+                    if self.mScrollRect.sizeDelta.y ~= 77.5- 143 then
+                        gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5- 143 )
+                    end
+                else
+                    if self.mScrollRect.sizeDelta.y ~= 77.5 - self.mChooseRect.sizeDelta.y + 20 then
+                        gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5 - self.mChooseRect.sizeDelta.y + 20)
+                    end
                 end
-                if self.mScrollView.verticalNormalizedPosition > 0.05 then 
+              
+                if self.mScrollView.verticalNormalizedPosition > 0.05 then
                     self.mScrollView.verticalNormalizedPosition = 0
                 end
             end)
             return
-        elseif not replyEnd and self.mScrollRect.sizeDelta.y ~= 77.5 then 
+        elseif not replyEnd and self.mScrollRect.sizeDelta.y ~= 77.5 then
             gs.TransQuick:SizeDelta02(self.mScrollRect, 77.5)
         end
         self.mScrollView.verticalNormalizedPosition = 0
 
-        if not isEnd then 
+        if not isEnd then
             self:updateDelayMsg()
         end
         -- 有对话 或者 结束且已读
-        if (replyEnd or (isEnd and braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId))) then 
+        if (replyEnd or
+            (isEnd and braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId))) then
             self.mMask:SetActive(false)
         else
             self.mMask:SetActive(true)
@@ -564,7 +631,7 @@ end
 
 function getIsBottom(self)
     local curIsBottom = false
-    if(not gs.GoUtil.IsCompNull(self.mContentRect))then
+    if (not gs.GoUtil.IsCompNull(self.mContentRect)) then
         local deltaY = math.ceil(self.mContentRect.sizeDelta.y - self.mScrollRect.rect.size.y)
         if (deltaY <= 0.1) then
             curIsBottom = true
@@ -575,9 +642,9 @@ function getIsBottom(self)
     return curIsBottom
 end
 
---延迟刷新消息
+-- 延迟刷新消息
 function updateDelayMsg(self)
-    if self.mCommunicateSn then 
+    if self.mCommunicateSn then
         LoopManager:removeTimerByIndex(self.mCommunicateSn)
         self.mCommunicateSn = nil
     end
@@ -590,18 +657,19 @@ function updateDelayMsg(self)
     local autoClick = function()
         self:onClickCommunicate()
     end
-    if configMsgVo.type == 2 then 
+    if configMsgVo.type == 2 then
         autoClick()
-    elseif configMsgVo.type ~= 2 and configMsgVo.reward == 0 then 
-        self.mCommunicateSn = LoopManager:addTimer(sysParam.SysParamManager:getValue(SysParamType.AUTOWAIT), 2, self, autoClick)
+    elseif configMsgVo.type ~= 2 and configMsgVo.reward == 0 then
+        self.mCommunicateSn = LoopManager:addTimer(sysParam.SysParamManager:getValue(SysParamType.AUTOWAIT), 2, self,
+            autoClick)
     end
 end
 
---立即刷新消息
+-- 立即刷新消息
 function updateMsgImmediately(self)
     local mNowSelectTargetId = braceletsCommunicate.BraceletsCommunicateManager:getNowSelectTarget()
-    if mNowSelectTargetId == nil then 
-        return 
+    if mNowSelectTargetId == nil then
+        return
     end
     local msgVo = braceletsCommunicate.BraceletsCommunicateManager:getCommunicateMsgVo(mNowSelectTargetId)
     local newestSegId, newestTalkId, index = msgVo:getNewestSegmentId()
@@ -609,7 +677,7 @@ function updateMsgImmediately(self)
     local configMsgVo = configVo:getTalkVo(newestSegId, newestTalkId)
     local newestSegId, newestTalkId, index = msgVo:getNewestSegmentId()
     local hasRead = braceletsCommunicate.BraceletsCommunicateManager:getNewestHasRead(mNowSelectTargetId)
-    if(not hasRead and (configMsgVo.type ~= 2 and configMsgVo.reward == 0)) then 
+    if (not hasRead and (configMsgVo.type ~= 2 and configMsgVo.reward == 0)) then
         self:onClickCommunicate()
     end
 end
@@ -624,26 +692,26 @@ function checkRed(self)
 end
 
 function clearReplySn(self)
-    if self.mReplySn then 
+    if self.mReplySn then
         LoopManager:removeFrameByIndex(self.mReplySn)
     end
 end
 
 function recoverMsgList(self)
-    for k,v in pairs(self.mMsgListItem) do
+    for k, v in pairs(self.mMsgListItem) do
         v:poolRecover()
     end
     self.mMsgListItem = {}
 end
 
 function recoverBtnList(self)
-    for k,v in pairs(self.mBtnList) do
+    for k, v in pairs(self.mBtnList) do
         v:poolRecover()
     end
     self.mBtnList = {}
 end
 
 return _M
- 
+
 --[[ 替换语言包自动生成，请勿修改！
 ]]

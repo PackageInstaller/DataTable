@@ -1,9 +1,4 @@
-﻿local var_0_0 = {
-	"让我们打开<color=#ff7d36>任务日志</color>",
-	"领取<color=#ff7d36>任务奖励</color>"
-}
-
-return {
+﻿return {
 	id = "S011",
 	events = {
 		{
@@ -13,17 +8,15 @@ return {
 				dir = 1,
 				posY = -123,
 				posX = 87.7,
-				text = var_0_0[1]
+				text = ({
+					"让我们打开<color=#ff7d36>任务日志</color>",
+					"领取<color=#ff7d36>任务奖励</color>"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/task"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/taskButton"
@@ -63,7 +56,10 @@ return {
 				dir = 1,
 				posY = 183,
 				posX = 474,
-				text = var_0_0[2]
+				text = ({
+					"让我们打开<color=#ff7d36>任务日志</color>",
+					"领取<color=#ff7d36>任务奖励</color>"
+				})[2]
 			},
 			ui = {
 				delay = 1,

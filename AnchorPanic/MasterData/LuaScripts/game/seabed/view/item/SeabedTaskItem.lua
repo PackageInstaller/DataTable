@@ -51,7 +51,7 @@ end
 function updateView(self)
     --local taskConfigVo = task.DailyTaskManager:getTaskConfigVo(self.taskVo.id)
     local awardList = self.taskVo.rewards
-    self.mTxtName.text = _TT(self.taskVo.title)
+    self.mTxtName.text = _TT(111170)
     self.mTxtTitle.text = _TT(self.taskVo.des)
 
     self.mImgProBar.fillAmount = self.msgVo.count/self.taskVo.times 

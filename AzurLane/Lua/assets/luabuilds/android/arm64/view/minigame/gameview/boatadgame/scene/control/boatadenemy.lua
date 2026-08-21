@@ -1,65 +1,29 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BoatAdEnemy")
+﻿local var_0_0 = class("BoatAdEnemy")
 local var_0_1
 local var_0_2
 
 var_0_0.name_index = 1
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	BoatAdGameVo = var_1_10003
-	var_0_1 = var_1_10003
-	BoatAdGameConst = var_1_10003
-	var_0_2 = var_1_10003
+	var_0_1 = BoatAdGameVo
+	var_0_2 = BoatAdGameConst
 	arg_1_0._tf = arg_1_1
 	arg_1_0._eventCall = arg_1_2
-	GetComponent = var_1_10003
-	findTF = var_1_10005
-
-	local var_1_0 = var_1_10005(arg_1_0._tf, "ad/bound")
-
-	typeof = var_1_10006
-	BoxCollider2D = var_8
-	arg_1_0._collider = var_1_10003(var_1_0, var_1_10006(var_8))
-	GetComponent = var_3
-
-	local var_1_1 = arg_1_0._tf
-
-	typeof = var_6
-	Animator = var_8
-	arg_1_0._moveAnimator = var_3(var_1_1, var_6(var_8))
-	GetComponent = var_3
-
-	local var_1_2 = arg_1_0._tf
-
-	typeof = var_6
-	DftAniEvent = var_8
-	arg_1_0._moveDftEvent = var_3(var_1_2, var_6(var_8))
-	findTF = var_3
-	arg_1_0._hpTf = var_3(arg_1_0._tf, "ad/img/hp")
-	findTF = var_3
-	arg_1_0._ad = var_3(arg_1_0._tf, "ad")
-	findTF = var_3
-	arg_1_0._imgTf = var_3(arg_1_0._tf, "ad/img")
-	findTF = var_3
-	arg_1_0._speedDownTf = var_3(arg_1_0._tf, "ad/img/speedDown")
+	arg_1_0._collider = GetComponent(findTF(arg_1_0._tf, "ad/bound"), typeof(BoxCollider2D))
+	arg_1_0._moveAnimator = GetComponent(arg_1_0._tf, typeof(Animator))
+	arg_1_0._moveDftEvent = GetComponent(arg_1_0._tf, typeof(DftAniEvent))
+	arg_1_0._hpTf = findTF(arg_1_0._tf, "ad/img/hp")
+	arg_1_0._ad = findTF(arg_1_0._tf, "ad")
+	arg_1_0._imgTf = findTF(arg_1_0._tf, "ad/img")
+	arg_1_0._speedDownTf = findTF(arg_1_0._tf, "ad/img/speedDown")
 
 	if arg_1_0._speedDownTf then
-		setActive = var_3
-
-		var_3(arg_1_0._speedDownTf, false)
+		setActive(arg_1_0._speedDownTf, false)
 	end
 
-	local var_1_3 = arg_1_0._moveDftEvent
-
-	var_3.SetEndEvent(var_1_3, function()
-		print = var_2_10000
-
-		var_2_10000("触发移除标记")
-
-		local var_2_0 = arg_1_0
-
-		var_0.setRemoveFlag(var_2_0, true)
+	arg_1_0._moveDftEvent:SetEndEvent(function()
+		print("触发移除标记")
+		arg_1_0:setRemoveFlag(true)
 
 		return
 	end)
@@ -79,9 +43,7 @@ function var_0_0.setData(arg_3_0, arg_3_1)
 end
 
 function var_0_0.update(arg_4_0)
-	setText = var_1_10001
-
-	var_1_10001(arg_4_0._hpTf, arg_4_0._hp)
+	setText(arg_4_0._hpTf, arg_4_0._hp)
 
 	return
 end
@@ -93,50 +55,33 @@ function var_0_0.start(arg_5_0)
 	local var_5_0 = arg_5_0:getConfig("hp")
 
 	arg_5_0._hp = 10
-	type = var_2
 
-	if var_2(var_5_0) == "number" then
+	if type(var_5_0) == "number" then
 		arg_5_0._hp = var_5_0
-	else
-		type = var_2
-
-		if var_2(var_5_0) == "table" then
-			math = var_2
-			arg_5_0._hp = var_2.random(var_5_0[1], var_5_0[2])
-		end
+	elseif type(var_5_0) == "table" then
+		arg_5_0._hp = math.random(var_5_0[1], var_5_0[2])
 	end
 
-	math = var_2
-	arg_5_0.moveDirect = var_2.random() < 0.5 and 1 or -1
+	arg_5_0.moveDirect = math.random() < 0.5 and 1 or -1
 
 	if arg_5_0._speedDownTf then
-		setActive = var_2
-
-		var_2(arg_5_0._speedDownTf, false)
+		setActive(arg_5_0._speedDownTf, false)
 	end
 
 	arg_5_0._battleHp = 0
 	arg_5_0._destroyFlag = false
 	arg_5_0._stopFlag = false
 	arg_5_0._battleFlag = false
+	arg_5_0._ad.anchoredPosition = Vector2(0, 0)
 
-	local var_5_1 = arg_5_0._ad
+	if arg_5_0:getConfig("boss") then
+		arg_5_0._battleSubHp = var_0_2.battle_sub_hp_boss or var_0_2.battle_sub_hp
 
-	Vector2 = var_3
-	var_5_1.anchoredPosition = var_3(0, 0)
+		arg_5_0:speedDown(false)
+		arg_5_0:update()
 
-	local var_5_2
-
-	if not arg_5_0:getConfig("boss") or not var_0_2.battle_sub_hp_boss then
-		var_5_2 = var_0_2.battle_sub_hp
+		return
 	end
-
-	arg_5_0._battleSubHp = var_5_2
-
-	arg_5_0:speedDown(false)
-	arg_5_0:update()
-
-	return
 end
 
 function var_0_0.step(arg_6_0, arg_6_1)
@@ -156,31 +101,27 @@ function var_0_0.step(arg_6_0, arg_6_1)
 
 	if arg_6_0._moveFlag and arg_6_0:getSpeed() > 0 and arg_6_0._battleHp <= 0 and not arg_6_0:getRemoveFlag() then
 		local var_6_0 = arg_6_0._imgTf.localScale.x
-		local var_6_1
 
-		if not arg_6_0._speedDownFlag or not var_0_2.speed_down_rate then
-			var_6_1 = 1
-		end
+		if arg_6_0._speedDownFlag then
+			local var_6_1 = var_0_2.speed_down_rate or 1
 
-		local var_6_2 = arg_6_0._ad
+			arg_6_0._ad.anchoredPosition = Vector2(arg_6_0._ad.anchoredPosition.x + arg_6_0.moveDirect * arg_6_0._moveSpeed * arg_6_1 * var_6_0 * var_6_1, arg_6_0._ad.anchoredPosition.y)
 
-		Vector2 = var_1_10005
-		var_6_2.anchoredPosition = var_1_10005(arg_6_0._ad.anchoredPosition.x + arg_6_0.moveDirect * arg_6_0._moveSpeed * arg_6_1 * var_6_0 * var_6_1, arg_6_0._ad.anchoredPosition.y)
+			local var_6_2 = false
 
-		local var_6_3 = false
+			if arg_6_0.moveDirect == 1 then
+				var_6_2 = var_0_1.CheckPointOutRightLine(arg_6_0:getScenePosition())
+			elseif arg_6_0.moveDirect == -1 then
+				var_6_2 = var_0_1.CheckPointOutLeftLine(arg_6_0:getScenePosition())
+			end
 
-		if arg_6_0.moveDirect == 1 then
-			var_6_3 = var_0_1.CheckPointOutRightLine(arg_6_0:getScenePosition())
-		elseif arg_6_0.moveDirect == -1 then
-			var_6_3 = var_0_1.CheckPointOutLeftLine(arg_6_0:getScenePosition())
-		end
+			if var_6_2 then
+				arg_6_0.moveDirect = -arg_6_0.moveDirect
+			end
 
-		if var_6_3 then
-			arg_6_0.moveDirect = -arg_6_0.moveDirect
+			return
 		end
 	end
-
-	return
 end
 
 function var_0_0.setMoveCount(arg_7_0, arg_7_1, arg_7_2)
@@ -197,12 +138,9 @@ function var_0_0.setMoveCount(arg_7_0, arg_7_1, arg_7_2)
 end
 
 function var_0_0.getScenePosition(arg_8_0)
-	local var_8_0 = arg_8_0._tf.anchoredPosition
-	local var_8_1 = arg_8_0._ad.anchoredPosition
-
 	return {
-		x = var_8_0.x + var_8_1.x,
-		y = var_8_0.y + var_8_1.y
+		x = arg_8_0._tf.anchoredPosition.x + arg_8_0._ad.anchoredPosition.x,
+		y = arg_8_0._tf.anchoredPosition.y + arg_8_0._ad.anchoredPosition.y
 	}
 end
 
@@ -215,8 +153,8 @@ function var_0_0.getMoveCount(arg_10_0)
 end
 
 function var_0_0.bossFocus(arg_11_0, arg_11_1)
-	var_2.x = arg_11_0._ad.anchoredPosition.x + arg_11_1
-	arg_11_0._ad.anchoredPosition = var_2
+	arg_11_0._ad.anchoredPosition.x = arg_11_0._ad.anchoredPosition.x + arg_11_1
+	arg_11_0._ad.anchoredPosition = arg_11_0._ad.anchoredPosition
 
 	return
 end
@@ -252,9 +190,8 @@ end
 function var_0_0.speedDown(arg_18_0, arg_18_1)
 	if arg_18_0._moveFlag then
 		arg_18_0._speedDownFlag = arg_18_1
-		setActive = var_2
 
-		var_2(arg_18_0._speedDownTf, arg_18_1)
+		setActive(arg_18_0._speedDownTf, arg_18_1)
 	end
 
 	return
@@ -286,9 +223,8 @@ end
 
 function var_0_0.setContent(arg_24_0, arg_24_1)
 	arg_24_0._content = arg_24_1
-	SetParent = var_1_10002
 
-	var_1_10002(arg_24_0._tf, arg_24_1)
+	SetParent(arg_24_0._tf, arg_24_1)
 
 	return
 end
@@ -298,9 +234,7 @@ function var_0_0.getId(arg_25_0)
 end
 
 function var_0_0.setVisible(arg_26_0, arg_26_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_26_0._tf, arg_26_1)
+	setActive(arg_26_0._tf, arg_26_1)
 
 	return
 end
@@ -352,37 +286,27 @@ function var_0_0.dispose(arg_36_0)
 end
 
 function var_0_0.getColliderData(arg_37_0)
-	local var_37_0 = arg_37_0._content
-	local var_37_1 = var_1.InverseTransformPoint(var_37_0, arg_37_0._collider.bounds.min)
+	local var_37_0 = arg_37_0._content:InverseTransformPoint(arg_37_0._collider.bounds.min)
 
 	if not arg_37_0._boundData then
-		local var_37_2 = arg_37_0._content
-		local var_37_3 = var_2.InverseTransformPoint(var_37_2, arg_37_0._collider.bounds.max)
-		local var_37_4 = {}
+		local var_37_1 = arg_37_0._content:InverseTransformPoint(arg_37_0._collider.bounds.max)
 
-		math = var_37_2
-		var_37_4.width = var_37_2.floor(var_37_3.x - var_37_1.x)
-		math = var_4
-		var_37_4.height = var_4.floor(var_37_3.y - var_37_1.y)
-		arg_37_0._boundData = var_37_4
-	end
-
-	return var_37_1, arg_37_0._boundData
-end
-
-function var_0_0.getWorldColliderData(arg_38_0)
-	local var_38_0 = arg_38_0._collider.bounds.min
-
-	if not arg_38_0._worldBoundData then
-		local var_38_1 = arg_38_0._collider.bounds.max
-
-		arg_38_0._worldBoundData = {
-			width = var_38_1.x - var_38_0.x,
-			height = var_38_1.y - var_38_0.y
+		arg_37_0._boundData = {
+			width = math.floor(var_37_1.x - var_37_0.x),
+			height = math.floor(var_37_1.y - var_37_0.y)
 		}
 	end
 
-	return var_38_0, arg_38_0._worldBoundData
+	return var_37_0, arg_37_0._boundData
+end
+
+function var_0_0.getWorldColliderData(arg_38_0)
+	arg_38_0._worldBoundData = arg_38_0._worldBoundData or {
+		width = arg_38_0._collider.bounds.max.x - arg_38_0._collider.bounds.min.x,
+		height = arg_38_0._collider.bounds.max.y - arg_38_0._collider.bounds.min.y
+	}
+
+	return arg_38_0._collider.bounds.min, arg_38_0._worldBoundData
 end
 
 function var_0_0.getStop(arg_39_0)
@@ -398,17 +322,9 @@ function var_0_0.getBoundWidth(arg_41_0)
 end
 
 function var_0_0.checkPositionInRange(arg_42_0, arg_42_1)
-	local var_42_0 = arg_42_0._tf.anchoredPosition
+	local var_42_0 = arg_42_0:getConfig("range")
 
-	math = var_1_10003
-
-	local var_42_1 = var_1_10003.abs(var_42_0.x - arg_42_1.x)
-
-	math = var_1_10004
-
-	local var_42_2 = var_1_10004.abs(var_42_0.y - arg_42_1.y)
-
-	if var_42_1 < arg_42_0:getConfig("range").x and var_42_2 < var_5.y then
+	if math.abs(arg_42_0._tf.anchoredPosition.x - arg_42_1.x) < var_42_0.x and math.abs(arg_42_0._tf.anchoredPosition.y - arg_42_1.y) < var_42_0.y then
 		return true
 	end
 

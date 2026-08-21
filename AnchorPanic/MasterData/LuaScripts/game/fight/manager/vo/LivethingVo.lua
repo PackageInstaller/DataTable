@@ -9,6 +9,7 @@ EVENT_ANI_TRANS_COND = 'EVENT_ANI_TRANS_COND'
 EVENT_UPATE_ANI_BOOLVAL = 'EVENT_UPATE_ANI_BOOLVAL'
 EVENT_UPATE_ANI_TRIGGERVAL = 'EVENT_UPATE_ANI_TRIGGERVAL'
 EVENT_VISIBLE = 'EVENT_VISIBLE'
+EVENT_VISIBLE_BY_SCALE = 'EVENT_VISIBLE_BY_SCALE'
 EVENT_VISIBLE_BY_CAMERA = 'EVENT_VISIBLE_BY_CAMERA'
 EVENT_ALIVE = 'EVENT_ALIVE'
 -- 设置透明
@@ -27,6 +28,8 @@ EVENT_CHANGE_METAL_EFFECT = 'EVENT_CHANGE_METAL_EFFECT'
 EVENT_CHANGE_WEEK_EFFECT = 'EVENT_CHANGE_WEEK_EFFECT'
 -- 雷遁隐身效果
 EVENT_CHANGE_MODEL_HIT = 'EVENT_CHANGE_MODEL_HIT'
+-- 泽菲琳翅膀效果
+EVENT_CHANGE_MODEL_WING = 'EVENT_CHANGE_MODEL_WING'
 
 -- 绑定非预设绑定的动作片段
 EVENT_ANIMAT_OTHER_BIND = 'EVENT_ANIMAT_OTHER_BIND'
@@ -97,6 +100,9 @@ function ctor(self, liveID, cusIsAtt)
     -- 是否冰冻定帧中
     self.isFroze = nil
 
+    -- 是否为召唤物
+    self.isMinion = false
+
     -- 角色身上的战斗特效管理器sn列表
     self.m_travelSns = {}
 end
@@ -130,7 +136,23 @@ function setVisible(self, beVisible)
         end
     end
     -- logError("setVisible ======== "..tostring(beVisible))
-    self:dispatchEvent(fight.LivethingVo.EVENT_VISIBLE, beVisible, true)
+    self:dispatchEvent(fight.LivethingVo.EVENT_VISIBLE, beVisible)
+end
+
+-- 完全隐藏角色（放逐用）
+function setVisibleByScale(self, beVisible)
+    if self.m_isAlive ~= true and beVisible == true then
+        return
+    end
+
+    self.m_beVisibleByScale = beVisible
+    if beVisible == true then
+        if self:haveAtt(AttConst.STATE_BATTLE_EXILE) then
+            return
+        end
+        self:setVisible(true)
+    end
+    self:dispatchEvent(fight.LivethingVo.EVENT_VISIBLE_BY_SCALE, beVisible)
 end
 
 -- 获取角色隐藏状态
@@ -177,6 +199,9 @@ function addBuff(self, buffId, casterID, roundCnt, addLevel, descValue)
     -- print("===================buffid", buffId)
     local buffRo = Buff.BuffRoMgr:getBuffRo(buffId)
 
+    -- 特殊buff效果
+    self:buffEffect(buffRo)
+
     local isNewBuff = false
     local bdata = self.m_buffDatas[buffId]
     if not bdata then
@@ -216,8 +241,6 @@ function addBuff(self, buffId, casterID, roundCnt, addLevel, descValue)
         end
     end
 
-    -- 特殊buff效果
-    self:buffEffect(buffRo)
 
     -- buff元素表现 删除元素反应
     -- local headItem = objLive:getHeadArea()
@@ -260,6 +283,10 @@ function buffEffect(self, buffRo)
         -- print("==================BUFF_MODEL_STATE_HIT 雷遁隐身")
         -- 雷遁
         self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_HIT, true)
+    elseif buffRo:getModelState() == BuffDef.BUFF_MODEL_STATE_WING then
+        -- print("==================BUFF_MODEL_STATE_WING 泽菲琳翅膀效果")
+        -- 泽菲琳翅膀效果
+        self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_WING, true)
     end
 end
 
@@ -332,6 +359,9 @@ function removeBuffEffect(self, buffRo)
     elseif buffRo:getModelState() == BuffDef.BUFF_MODEL_STATE_HIT then
         -- 雷遁
         self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_HIT, false)
+    elseif buffRo:getModelState() == BuffDef.BUFF_MODEL_STATE_WING then
+        -- 泽菲琳翅膀效果
+        self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_WING, false)
     end
 end
 
@@ -344,6 +374,8 @@ function clearBuff(self)
     self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_FROZE_EFFECT, false)
     self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_METAL_EFFECT, false)
     self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_WEEK_EFFECT, false)
+    self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_HIT, false)
+    self:dispatchEvent(fight.LivethingVo.EVENT_CHANGE_MODEL_WING, false)
     local objLive = fight.SceneItemManager:getLivething(self:getLiveID())
     -- 目标已经不存在了, 不用想太多了
     if not objLive then return end
@@ -643,13 +675,13 @@ function updateAni(self, aniHash, startCall, endCall, isForceEndCall)
 end
 
 -- 通过动作过度的条件Hash更新动作
-function transAni(self, transHash, startCall, endCall)
+function transAni(self, transHash, startCall, endCall, isForceEndCall)
     -- 主动行动的动作不管冰冻状态，避免先后顺序导致卡战斗
     -- if self.isFroze then
     --     -- 冰冻中不能动
     --     return
     -- end
-    self:dispatchEvent(fight.LivethingVo.EVENT_ANI_TRANS_COND, { transHash, startCall, endCall })
+    self:dispatchEvent(fight.LivethingVo.EVENT_ANI_TRANS_COND, { transHash, startCall, endCall, isForceEndCall })
 end
 
 function setAnimationBoolVal(self, keyhash, val)
@@ -722,6 +754,7 @@ function setAlive(self, beAlive)
         -- 死亡动作被复活动作中断，需要让 被中断的死亡动作 强制回调
         self:updateAni(fight.FightDef.ACT_DIE, nil, _actFinishCall, true)
         self:clearLiveData()
+        fight.FightManager:stopZCBGM(self)
     else
         if self.m_isDeading then return end
 
@@ -847,6 +880,16 @@ end
 -- 移除生命数据
 function clearLiveData(self)
     self:clearBuff()
+end
+
+-- 设置为召唤物
+function setIsMinion(self, bool)
+    self.isMinion = bool
+end
+
+-- 获取战斗单位是否为召唤物
+function getIsMinion(self)
+    return self.isMinion
 end
 
 return _M

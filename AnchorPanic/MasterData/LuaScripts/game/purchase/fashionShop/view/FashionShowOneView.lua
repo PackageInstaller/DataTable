@@ -15,6 +15,8 @@ function active(self, args)
     self.mHeroTid = args.heroTid
     self.mFashionId = args.fashionId
     self.mIsShow3D = args.isShow3D
+    self.mDefPairtsId = args.defPairtsId
+    self.mDefInit = nil
     super.active(self, args)
     MoneyManager:setMoneyTidList({})
     self:getChildGO("mGroup"):SetActive(false)
@@ -32,6 +34,7 @@ function addAllUIEvent(self)
     self:addUIEvent(self.mBtnFashionColor, self.onClickShowFashionColor)
     self:addUIEvent(self.mBtnFColorPre, self.onClickCloseFashionColor)
     self:addUIEvent(self.mBtnFColorControl, self.onClickFColorControl)
+    self:addUIEvent(self.mBtnFight, self.onClickFashionFight)
     -- self:addUIEvent(self.mImgLeft, self.onClickNextHandler, nil, true)
     -- self:addUIEvent(self.mImgRight, self.onClickNextHandler, nil, false)
 end
@@ -49,17 +52,32 @@ function onClickCloseFashionColor(self)
     self.mGroupFColorMenu:SetActive(false)
 end
 
+function getHeroTid(self)
+    return self.mHeroTid
+end
+
+function getFahiondId(self)
+    return self.mFashionId
+end
+
 -- 获取该时装的部位配置
 function getFashionColorList(self)
-    local list = fashion.FashionManager:getFasionColorList(self.mHeroTid, self.mFashionId)
+    local list = fashion.FashionManager:getFasionColorList(self:getHeroTid(), self:getFahiondId())
     return list
 end
 
 -- 是否有动态
 function isShowDynamic(self)
     local dynamicData = hero.HeroInteractManager:getModelIsDynamic(self:getModelId())
-    return not self.mIsShow3D and (dynamicData ~= nil)
+    return not self.mIsShow3D and (dynamicData ~= nil) and (not (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()))
 end
+
+function updateHeroFashionColor(self, msgVo)
+    if msgVo.heroTid == self:getHeroTid() and msgVo.fashionId == self:getFahiondId() then
+        self:updateFColorItem()
+    end
+end
+
 
 -- 皮肤部位更换列表
 function updateFColorItem(self)
@@ -70,23 +88,57 @@ function updateFColorItem(self)
     end
 
     for i, v in ipairs(list) do
-        local item = SimpleInsItem:create(self:getChildGO("mGroupFColorItem"), self.mGroupFColorMenu.transform, "FashionShowViewGroupFColorItem")
+        local item = SimpleInsItem:create(self:getChildGO("mGroupFColorItem"), self.mGroupFColorMenu.transform, "FashionClothesTabViewGroupFColorItem")
         item:getChildGO("mImgFColorIcon"):GetComponent(ty.AutoRefImage):SetImg(UrlManager:getIconPath(v.icon), false)
-        item:setArgs(v.id)
-        item:getChildGO("mImgFColorLock"):SetActive(v.id > 0)
+
+        local heroId = hero.HeroManager:getHeroIdByTid(self:getHeroTid())
+        local msgVo = fashion.FashionManager:getHeroFashionColor(self:getHeroTid(), self:getFahiondId())
+        local unlock = table.indexof(msgVo.colorList, v.id) ~= false or v.id == 0
+        item:getChildGO("mImgFColorLock"):SetActive(not unlock)
         item:getChildGO("mImgFColorSelect"):SetActive(v.id == 0)
         item:getChildGO("mImgFColorUse"):SetActive(false)
+
         table.insert(self.mFColorItemList, item)
+
         item:addUIEvent(nil, function()
             self.mFashionColorBaseVo = v
             self:resetFColorSelect()
             item:getChildGO("mImgFColorSelect"):SetActive(true)
-            --self.mBtnFColorControl:SetActive(v.id > 0)
+
+            -- 当前选择的皮肤部位id
+            self.mSelectColorId = v.id
 
             -- 替换材质球预览
-            self.mModelPlayer:setMaterial(v.posList, v.materials)
+            self.mModelPlayer:setMaterial(v.posList, v.materials, v.dissolves, v.posY)
         end)
     end
+
+    if self.mDefPairtsId ~= nil and self.mDefInit == nil then
+        for i = 1, #list do
+            if list[i].id == self.mDefPairtsId then
+
+                self:onClickShowFashionColor()
+                self.mFashionColorBaseVo = list[i]
+                self:resetFColorSelect()
+                self.mFColorItemList[i]:getChildGO("mImgFColorSelect"):SetActive(true)
+                self.mSelectColorId = self.mDefPairtsId
+                self.mModelPlayer:setMaterial(list[i].posList, list[i].materials, list[i].dissolves, list[i].posY)
+                self.mDefInit = true
+                break
+            end
+        end
+
+    end
+end
+
+-- 获取皮肤是否解锁
+function getFashionIsUnLock(self)
+    local heroId = hero.HeroManager:getHeroIdByTid(self:getHeroTid())
+    local fashionVo, state = fashion.FashionManager:getHeroFashionVo(self:getFashionType(), heroId, self.mFashionVo:getFashionId())
+    if (state == fashion.State.LOCK) then
+        return false
+    end
+    return true
 end
 
 -- 取模型id
@@ -115,9 +167,13 @@ end
 
 -- 更新皮肤部件按钮
 function updateFashionColorBtn(self)
+    local funcOpen = funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_PERMIT) --跟随通行证开放（降低审核风险）
     local list = self:getFashionColorList()
-    self.mBtnFashionColor:SetActive(not (list == nil) and self.mIsShow3D)
-    self:updateFColorItem()
+    self.mBtnFashionColor:SetActive(not (list == nil) and self.mIsShow3D and funcOpen and (not (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious())))
+    local list = self:getFashionColorList()
+    if list then
+        GameDispatcher:dispatchEvent(EventName.REQ_LOOK_FASHION_COLOR, { heroTid = self:getHeroTid(), fashionId = self:getFahiondId() })
+    end
 end
 
 
@@ -133,6 +189,14 @@ function updateModelView(self, args)
                     self.mIsFristShowModel = false
                 end
                 self:resetFColorSelect(0)
+
+                local data = fashion.FashionManager:getModelHarData(args)
+                if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious()) and data then
+                    -- 替换材质球预览
+                    self.mHarFrameSn = LoopManager:addFrame(1, 1, self, function()
+                        self.mModelPlayer:setMaterial(data.pos, data.materials, {})
+                    end)
+                end
             end)
         end
     else
@@ -143,7 +207,7 @@ end
 function updateView(self)
     self.mImgFashionShowBg:SetActive((not self.mIsShow3D))
 
-    self.mFashionVo = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self.mHeroTid, self.mFashionId)
+    self.mFashionVo = fashion.FashionManager:getHeroFashionConfigVo(fashion.Type.CLOTHES, self:getHeroTid(), self:getFahiondId())
     self.mTxtHeroSeries.text = self.mFashionVo:getFashionSeries()
     self.mTxtSeriesName.text = self.mFashionVo:getName()
     self.mTxtHeroNameLeft.text = self.mFashionVo:getHeroName()

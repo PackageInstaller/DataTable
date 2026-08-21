@@ -42,7 +42,7 @@ function setData(self, param)
     if (self.data.rank <= 3) then
         --self.mTxtRankBig.color = gs.ColorUtil.GetColor(ColorUtil:getPropColor(self.data.rank))
 
-        local color="ffc66d00"
+        local color = "ffc66d00"
         if self.data.rank == 1 then
             color = "ffc66dff"
         elseif self.data.rank == 2 then
@@ -67,7 +67,7 @@ function setData(self, param)
     else
         self.mPlayerHeadGrid:setData(rankData.avatar_id)
     end
-    self.mTxtName.text = rankData.player_name
+    self.mTxtName.text = FilterWordUtil:filterTemp(rankData.player_name)
     self.mPlayerHeadGrid:setParent(self.mHeadGridNode)
     self.mPlayerHeadGrid:setScale(1)
     self.mPlayerHeadGrid:setCallBack(self, self.__onClickHeadHandler)
@@ -77,7 +77,7 @@ function setData(self, param)
         self.mPlayerHeadGrid:setHeadFrame(rankData.avatar_frame_id)
     end
     self.mTxtScore.text = rankData.point
-    self.mTxtGuild.text = rankData.guild_name == "" and _TT(97053) or rankData.guild_name
+    self.mTxtGuild.text = FilterWordUtil:filterTemp(rankData.guild_name == "" and _TT(97053) or rankData.guild_name)
     self.mTxtLayer.text = doundless.DoundlessManager:getDupLayer(rankData.dup_id)
     --self.mTxtRankCurDan.text = _TT(arena.ArenaManager:getAwardList(rankData.segment).rankName)
 end

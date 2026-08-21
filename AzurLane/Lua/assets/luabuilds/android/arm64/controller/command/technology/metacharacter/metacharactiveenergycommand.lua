@@ -1,182 +1,87 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MetaCharActiveEnergyCommand", pm.SimpleCommand)
 
-local var_0_0 = "MetaCharActiveEnergyCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(BayProxy)
+	local var_1_1 = getProxy(BayProxy):getShipById(arg_1_1:getBody().shipId)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0).shipId
-
-	getProxy = var_1_0
-	BayProxy = var_1_10006
-
-	local var_1_2 = var_1_0(var_1_10006)
-
-	if not var_4.getShipById(var_1_2, var_1_1) then
+	if not var_1_1 then
 		return
 	end
 
-	local var_1_3 = var_5:getMetaCharacter()
-	local var_1_4 = var_6.getBreakOutInfo(var_1_3)
+	local var_1_2 = var_1_1:getMetaCharacter()
+	local var_1_3 = var_1_2:getBreakOutInfo()
 
-	if not var_7.getNextInfo(var_1_4) then
+	if not var_1_3:getNextInfo() then
 		return
 	end
 
-	local var_1_5, var_1_6 = var_7:getLimited()
+	local var_1_4, var_1_5 = var_1_3:getLimited()
 
-	if var_5.level < var_1_5 or var_6:getCurRepairExp() < var_1_6 then
-		pg = var_11
-
-		local var_1_7 = var_11.TipsMgr.GetInstance()
-
-		var_11.ShowTips(var_1_7, "level or repair progress is not enough")
+	if var_1_4 > var_1_1.level or var_1_5 > var_1_2:getCurRepairExp() then
+		pg.TipsMgr.GetInstance():ShowTips("level or repair progress is not enough")
 
 		return
 	end
 
-	local var_1_8 = var_7
-	local var_1_9, var_1_10 = var_7.getConsume(var_1_8)
+	local var_1_6, var_1_7 = var_1_3:getConsume()
 
-	getProxy = var_1_8
-	PlayerProxy = var_1_10015
-
-	local var_1_11 = var_1_8(var_1_10015)
-
-	if var_13.getData(var_1_11).gold < var_1_9 then
-		pg = var_14
-		var_1_10016 = var_14.TipsMgr.GetInstance()
-
-		var_14.ShowTips(var_1_10016, "gold not enough")
+	if var_1_6 > getProxy(PlayerProxy):getData().gold then
+		pg.TipsMgr.GetInstance():ShowTips("gold not enough")
 
 		return
 	end
 
-	getProxy = var_14
-	BagProxy = var_1_10016
+	local var_1_8 = getProxy(BagProxy)
 
-	local var_1_12 = var_14(var_1_10016)
-
-	_ = var_1_11
-
-	if var_1_11.any(var_1_10, function(arg_2_0)
-		local var_2_0 = var_1_12
-
-		return var_1.getItemCountById(var_2_0, arg_2_0.itemId) < arg_2_0.count
+	if _.any(var_1_7, function(arg_2_0)
+		return var_1_8:getItemCountById(arg_2_0.itemId) < arg_2_0.count
 	end) then
-		pg = var_15
-
-		local var_1_13 = var_15.TipsMgr.GetInstance()
-
-		var_15.ShowTips(var_1_13, "item not enough")
+		pg.TipsMgr.GetInstance():ShowTips("item not enough")
 
 		return
 	end
 
-	print = var_15
-
-	var_15("63303 meta energy", var_5.id)
-
-	pg = var_15
-
-	local var_1_14 = var_15.ConnectionMgr.GetInstance()
-
-	var_15.Send(var_1_14, 63303, {
-		ship_id = var_5.id
+	print("63303 meta energy", var_1_1.id)
+	pg.ConnectionMgr.GetInstance():Send(63303, {
+		ship_id = var_1_1.id
 	}, 63304, function(arg_3_0)
-		local var_3_0
-
 		if arg_3_0.result == 0 then
-			print = var_3_0
+			print("63304 meta energy success", var_1_1.id)
 
-			var_3_0("63304 meta energy success", var_0.id)
+			local var_3_0 = Clone(var_1_1)
 
-			Clone = var_3_0
-			var_3_0 = var_3_0(var_0)
-			var_2_10004 = arg_1_0
+			arg_1_0:updateStar(var_1_1, var_3_0.configId, var_0.id)
+			var_1_0:updateShip(var_1_1)
 
-			var_2.updateStar(var_2_10004, var_0, var_3_0.configId, var_0.id)
+			local var_3_1 = getProxy(CollectionProxy)
+			local var_3_2 = var_3_1:getShipGroup(var_3_0.groupId)
 
-			var_2_10004 = var_0
+			if var_3_2 then
+				var_3_2.star = var_1_1:getStar()
 
-			var_2.updateShip(var_2_10004, var_0)
-
-			getProxy = var_2
-			CollectionProxy = var_2_10004
-
-			local var_3_1 = var_2(var_2_10004)
-
-			if var_2.getShipGroup(var_3_1, var_3_0.groupId) then
-				local var_3_2 = var_0
-
-				var_3.star = var_2_10004.getStar(var_3_2)
-
-				var_2:updateShipGroup(var_3)
+				var_3_1:updateShipGroup(var_3_2)
 			end
 
-			local var_3_3 = var_0
-
-			var_2_10004.consume(var_3_3, {
-				gold = var_1_9
+			var_0:consume({
+				gold = var_1_6
 			})
+			getProxy(PlayerProxy):updatePlayer(var_0)
 
-			getProxy = var_2_10004
-			PlayerProxy = var_3_3
-
-			local var_3_4 = var_2_10004(var_3_3)
-
-			var_2_10004.updatePlayer(var_3_4, var_0)
-
-			pairs = var_2_10004
-
-			for iter_3_0, iter_3_1 in var_2_10004(var_1_10) do
-				local var_3_5 = arg_1_0
-				local var_3_6 = var_9.sendNotification
-
-				GAME = var_2_10012
-				var_2_10012 = var_2_10012.CONSUME_ITEM
-				Drop = var_2_10013
-				var_2_10013 = var_2_10013.New
-
-				local var_3_7 = {}
-
-				DROP_TYPE_ITEM = var_2_10016
-				var_3_7.type = var_2_10016
-				var_3_7.id = iter_3_1.itemId
-				var_3_7.count = iter_3_1.count
-
-				var_3_6(var_3_5, var_2_10012, var_2_10013(var_3_7))
+			for iter_3_0, iter_3_1 in pairs(var_1_7) do
+				arg_1_0:sendNotification(GAME.CONSUME_ITEM, Drop.New({
+					type = DROP_TYPE_ITEM,
+					id = iter_3_1.itemId,
+					count = iter_3_1.count
+				}))
 			end
 
-			getProxy = var_2_10004
-			MetaCharacterProxy = var_6
-
-			local var_3_8 = var_2_10004(var_6)
-			local var_3_9 = var_2_10004.getMetaProgressVOByID(var_3_8, var_0.id)
-
-			var_5.updateShip(var_3_9, var_0)
-
-			local var_3_10 = arg_1_0
-			local var_3_11 = var_6.sendNotification
-
-			GAME = var_9
-
-			var_3_11(var_3_10, var_9.ENERGY_META_ACTIVATION_DONE, {
-				newShip = var_0,
+			getProxy(MetaCharacterProxy):getMetaProgressVOByID(var_1_2.id):updateShip(var_1_1)
+			arg_1_0:sendNotification(GAME.ENERGY_META_ACTIVATION_DONE, {
+				newShip = var_1_1,
 				oldShip = var_3_0
 			})
 		else
-			pg = var_3_0
-
-			local var_3_12 = var_3_0.TipsMgr.GetInstance()
-			local var_3_13 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_3_13(var_3_12, var_2_10004("", arg_3_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_3_0.result))
 		end
 
 		return
@@ -185,42 +90,26 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.updateStar(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
+function var_0_0.updateStar(arg_4_0, arg_4_1, arg_4_2, arg_4_3)
 	arg_4_1.configId = arg_4_3
-	pg = var_1_10004
 
-	local var_4_0 = var_1_10004.ship_data_template[arg_4_1.configId]
-
-	ipairs = var_5
-
-	for iter_4_0, iter_4_1 in var_5(var_4_0.buff_list) do
-		if not arg_4_1.skills[iter_4_1] then
-			arg_4_1.skills[iter_4_1] = {
-				exp = 0,
-				level = 1,
-				id = iter_4_1
-			}
-		end
+	for iter_4_0, iter_4_1 in ipairs(pg.ship_data_template[arg_4_1.configId].buff_list) do
+		arg_4_1.skills[iter_4_1] = arg_4_1.skills[iter_4_1] or {
+			exp = 0,
+			level = 1,
+			id = iter_4_1
+		}
 	end
 
-	arg_4_1:updateMaxLevel(var_4_0.max_level)
+	arg_4_1:updateMaxLevel(pg.ship_data_template[arg_4_1.configId].max_level)
 
-	pg = var_5
-
-	local var_4_1 = var_5.ship_data_template[arg_4_2].buff_list
-
-	ipairs = var_6
-
-	for iter_4_2, iter_4_3 in var_6(var_4_1) do
-		table = var_1_10011
-
-		if not var_1_10011.contains(var_4_0.buff_list, iter_4_3) then
-			var_1_10011 = arg_4_1.skills
-			var_1_10011[iter_4_3] = nil
+	for iter_4_2, iter_4_3 in ipairs(pg.ship_data_template[arg_4_2].buff_list) do
+		if not table.contains(pg.ship_data_template[arg_4_1.configId].buff_list, iter_4_3) then
+			arg_4_1.skills[iter_4_3] = nil
 		end
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

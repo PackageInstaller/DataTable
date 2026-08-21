@@ -1,22 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShipGiftMediator", import("view.base.ContextMediator"))
 
-local var_0_0 = "ShipGiftMediator"
+var_0_0.SHIP_GIFT = "ShipGiftMediator:shipGift"
+var_0_0.ADD_SHIP_INTIMACY = "ShipGiftMediator:addShipIntimacy"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.ContextMediator"))
-
-var_0_1.SHIP_GIFT = "ShipGiftMediator:shipGift"
-var_0_1.ADD_SHIP_INTIMACY = "ShipGiftMediator:addShipIntimacy"
-
-function var_0_1.register(arg_1_0)
-	arg_1_0:bind(var_0_1.SHIP_GIFT, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-		local var_2_0 = arg_1_0
-		local var_2_1 = var_4.sendNotification
-
-		GAME = var_2_10007
-
-		var_2_1(var_2_0, var_2_10007.USE_ITEM, {
+function var_0_0.register(arg_1_0)
+	arg_1_0:bind(var_0_0.SHIP_GIFT, function(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+		arg_1_0:sendNotification(GAME.USE_ITEM, {
 			id = arg_2_1,
 			count = arg_2_2,
 			arg = {
@@ -26,16 +15,8 @@ function var_0_1.register(arg_1_0)
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ADD_SHIP_INTIMACY, function(arg_3_0, arg_3_1, arg_3_2)
-		local var_3_0 = arg_3_1.id
-
-		getProxy = var_2_10004
-		BayProxy = var_2_10006
-
-		local var_3_1 = var_2_10004(var_2_10006)
-		local var_3_2 = var_4.RawGetShipById(var_3_1, var_3_0)
-
-		var_4.addLikability(var_3_2, arg_3_2)
+	arg_1_0:bind(var_0_0.ADD_SHIP_INTIMACY, function(arg_3_0, arg_3_1, arg_3_2)
+		getProxy(BayProxy):RawGetShipById(arg_3_1.id):addLikability(arg_3_2)
 
 		return
 	end)
@@ -43,39 +24,28 @@ function var_0_1.register(arg_1_0)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_4_0)
-	local var_4_0 = {}
-
-	GAME = var_1_10002
-	var_4_0[1] = var_1_10002.USE_ITEM_DONE
-
-	return var_4_0
+function var_0_0.listNotificationInterests(arg_4_0)
+	return {
+		GAME.USE_ITEM_DONE
+	}
 end
 
-function var_0_1.handleNotification(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1
-	local var_5_1 = arg_5_1.getName(var_5_0)
-	local var_5_2 = arg_5_1:getBody()
+function var_0_0.handleNotification(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:getBody()
 
-	GAME = var_5_0
+	if arg_5_1:getName() == GAME.USE_ITEM_DONE then
+		if var_5_0.drops[1] then
+			local var_5_1 = var_5_0.drops[1].count or 0
 
-	if var_5_1 == var_5_0.USE_ITEM_DONE then
-		local var_5_3
+			arg_5_0.viewComponent:OnGiftSuccess(var_5_1)
 
-		if not var_5_2.drops[1] or not var_5_2.drops[1].count then
-			var_5_3 = 0
+			return
 		end
-
-		local var_5_4 = arg_5_0.viewComponent
-
-		var_5.OnGiftSuccess(var_5_4, var_5_3)
 	end
+end
 
+function var_0_0.remove(arg_6_0)
 	return
 end
 
-function var_0_1.remove(arg_6_0)
-	return
-end
-
-return var_0_1
+return var_0_0

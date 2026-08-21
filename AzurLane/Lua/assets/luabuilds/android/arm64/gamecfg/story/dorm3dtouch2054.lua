@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿return {
 	dialogbox = 2,
 	alpha = 0,
 	hideSkip = true,
@@ -8,64 +8,55 @@
 	id = "DORM3DTOUCH2054",
 	placeholder = {
 		"dorm3d"
-	}
-}
-local var_0_1 = {}
-local var_0_2 = {
-	actorName = 30221,
-	side = 2,
-	dir = 1,
-	voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_Noshiro_ik_gift1_tone7",
-	nameColor = "#FFFFFF",
-	hidePaintObj = true,
-	say = "在这个时候送上新年祝福，你会觉得奇怪吗……///",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_3 = {}
-
-STORY_EVENT = var_0_10004
-var_0_3.name = var_0_10004.TEST
-var_0_3.data = {
-	op_list = {
+	},
+	scripts = {
 		{
-			param = "Play",
-			name = "ND_TD_beilu_shou_02",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			id = 2002,
-			name = "ND_TD_beilu_shou_02_item",
-			type = "item_action"
-		},
-		{
-			param = "Play",
-			name = "Face_weixiao",
-			time = 0,
-			type = "action",
-			skip = true
-		},
-		{
-			skip = false,
-			time = 2.5,
-			type = "wait"
+			actorName = 30221,
+			side = 2,
+			dir = 1,
+			voice = "event:/dorm/Tianlangxing_dorm3d_tone1/drom3d_Noshiro_ik_gift1_tone7",
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			say = "在这个时候送上新年祝福，你会觉得奇怪吗……///",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "ND_TD_beilu_shou_02",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							id = 2002,
+							name = "ND_TD_beilu_shou_02_item",
+							type = "item_action"
+						},
+						{
+							param = "Play",
+							name = "Face_weixiao",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = false,
+							time = 2.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
 		}
 	}
 }
-
-local var_0_4 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_4.name = var_5.TEST_DONE
-var_0_3.callbackData = var_0_4
-var_0_2.dispatcher = var_0_3
-var_0_1[1] = var_0_2
-var_0_0.scripts = var_0_1
-
-return var_0_0

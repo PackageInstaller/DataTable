@@ -1,101 +1,32 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SecondSummaryPage5", import(".SummaryAnimationPage"))
 
-local var_0_0 = "SecondSummaryPage5"
+function var_0_0.OnInit(arg_1_0)
+	setText(arg_1_0._tf:Find("window_share_1/name"), arg_1_0.summaryInfoVO.name)
+	setText(arg_1_0._tf:Find("window_share_1/time/Text"), "「" .. arg_1_0.summaryInfoVO.registerTime .. "」")
+	setText(arg_1_0._tf:Find("window_share_1/day/Text"), arg_1_0.summaryInfoVO.days)
 
-import = var_0_10003
+	local var_1_0 = arg_1_0.summaryInfoVO:hasGuild()
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".SummaryAnimationPage"))
+	setActive(arg_1_0._tf:Find("window_share_2/has_guild"), var_1_0)
+	setActive(arg_1_0._tf:Find("window_share_2/without"), not var_1_0)
 
-function var_0_1.OnInit(arg_1_0)
-	setText = var_1_10001
+	if var_1_0 then
+		local var_1_1 = arg_1_0._tf:Find("window_share_2/has_guild") or arg_1_0._tf:Find("window_share_2/without")
 
-	local var_1_0 = arg_1_0._tf
-
-	var_1_10001(var_3.Find(var_1_0, "window_share_1/name"), arg_1_0.summaryInfoVO.name)
-
-	setText = var_1_10001
-
-	local var_1_1 = arg_1_0._tf
-
-	var_1_10001(var_3.Find(var_1_1, "window_share_1/time/Text"), "「" .. arg_1_0.summaryInfoVO.registerTime .. "」")
-
-	setText = var_1_10001
-
-	local var_1_2 = arg_1_0._tf
-
-	var_1_10001(var_3.Find(var_1_2, "window_share_1/day/Text"), arg_1_0.summaryInfoVO.days)
-
-	local var_1_3 = arg_1_0.summaryInfoVO
-	local var_1_4 = var_1.hasGuild(var_1_3)
-
-	setActive = var_1_10002
-
-	local var_1_5 = arg_1_0._tf
-
-	var_1_10002(var_4.Find(var_1_5, "window_share_2/has_guild"), var_1_4)
-
-	setActive = var_1_10002
-
-	local var_1_6 = arg_1_0._tf
-
-	var_1_10002(var_4.Find(var_1_6, "window_share_2/without"), not var_1_4)
-
-	if var_1_4 then
-		local var_1_7 = arg_1_0._tf
-		local var_1_9
-
-		if not var_2.Find(var_1_7, "window_share_2/has_guild") then
-			local var_1_8 = arg_1_0._tf
-
-			var_1_9 = var_2.Find(var_1_8, "window_share_2/without")
+		if var_1_0 then
+			setText(var_1_1:Find("guild_name/Text"), "「" .. arg_1_0.summaryInfoVO.guildName .. "」")
 		end
 
-		if var_1_4 then
-			setText = var_1_3
-
-			var_1_3(var_1_9:Find("guild_name/Text"), "「" .. arg_1_0.summaryInfoVO.guildName .. "」")
-		end
-
-		setText = var_1_3
-
-		var_1_3(var_1_9:Find("chapter_name/Text"), "「" .. arg_1_0.summaryInfoVO.chapterName .. "」")
-
-		setText = var_1_3
-
-		var_1_3(var_1_9:Find("number/Text"), arg_1_0.summaryInfoVO.proposeCount)
-
-		setText = var_1_3
-
-		local var_1_10 = arg_1_0._tf
-
-		var_1_3(var_5.Find(var_1_10, "window_share_3/number/Text"), arg_1_0.summaryInfoVO.medalCount)
-
-		setText = var_1_3
-
-		local var_1_11 = arg_1_0._tf
-
-		var_1_3(var_5.Find(var_1_11, "window_share_3/count/Text"), arg_1_0.summaryInfoVO.furnitureCount)
-
-		setText = var_1_3
-
-		local var_1_12 = arg_1_0._tf
-
-		var_1_3(var_5.Find(var_1_12, "window_share_3/coin/Text"), arg_1_0.summaryInfoVO.furnitureWorth)
-
-		setText = var_1_3
-
-		local var_1_13 = arg_1_0._tf
-
-		var_1_3(var_5.Find(var_1_13, "window_share_3/collection/Text"), arg_1_0.summaryInfoVO.collectionNum)
-
-		setText = var_1_3
-
-		local var_1_14 = arg_1_0._tf
-
-		var_1_3(var_5.Find(var_1_14, "window_share_3/skin/Text"), arg_1_0.summaryInfoVO.skinNum)
+		setText(var_1_1:Find("chapter_name/Text"), "「" .. arg_1_0.summaryInfoVO.chapterName .. "」")
+		setText(var_1_1:Find("number/Text"), arg_1_0.summaryInfoVO.proposeCount)
+		setText(arg_1_0._tf:Find("window_share_3/number/Text"), arg_1_0.summaryInfoVO.medalCount)
+		setText(arg_1_0._tf:Find("window_share_3/count/Text"), arg_1_0.summaryInfoVO.furnitureCount)
+		setText(arg_1_0._tf:Find("window_share_3/coin/Text"), arg_1_0.summaryInfoVO.furnitureWorth)
+		setText(arg_1_0._tf:Find("window_share_3/collection/Text"), arg_1_0.summaryInfoVO.collectionNum)
+		setText(arg_1_0._tf:Find("window_share_3/skin/Text"), arg_1_0.summaryInfoVO.skinNum)
 
 		return
 	end
 end
 
-return var_0_1
+return var_0_0

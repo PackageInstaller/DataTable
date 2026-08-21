@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "equip_skin_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "equip_skin_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.equip_skin_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.equip_skin_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.equip_skin_template = rawget(pg, "equip_skin_template") or setmetatable({
+	__name = "equip_skin_template"
+}, confNEO)
+pg.equip_skin_template.all = {
 	1,
 	2,
 	3,
@@ -1295,6 +1272,24 @@ var_0_3.all = {
 	4417,
 	4418,
 	4419,
+	4420,
+	4421,
+	4422,
+	4423,
+	4424,
+	4425,
+	4426,
+	4427,
+	4428,
+	4429,
+	4430,
+	4431,
+	4432,
+	4433,
+	4434,
+	4435,
+	4436,
+	4437,
 	1001,
 	1002,
 	1003,
@@ -1661,25 +1656,11 @@ var_0_3.all = {
 	3083,
 	3084
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.equip_skin_template = {}
+pg.base = pg.base or {}
+pg.base.equip_skin_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.equip_skin_template
-
-	var_1_0[1] = {
+	pg.base.equip_skin_template[1] = {
 		orbit_slg = "",
 		name = "海豹炮弹",
 		orbit_ui_bound = "",
@@ -1721,11 +1702,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.equip_skin_template
-
-	var_1_1[2] = {
+	pg.base.equip_skin_template[2] = {
 		orbit_slg = "",
 		name = "海豹鱼雷",
 		orbit_ui_bound = "",
@@ -1766,11 +1743,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.equip_skin_template
-
-	var_1_2[3] = {
+	pg.base.equip_skin_template[3] = {
 		orbit_slg = "",
 		name = "咸鱼炮弹",
 		orbit_ui_bound = "",
@@ -1812,11 +1785,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.equip_skin_template
-
-	var_1_3[4] = {
+	pg.base.equip_skin_template[4] = {
 		orbit_slg = "",
 		name = "咸鱼鱼雷",
 		orbit_ui_bound = "",
@@ -1857,11 +1826,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.equip_skin_template
-
-	var_1_4[5] = {
+	pg.base.equip_skin_template[5] = {
 		orbit_slg = "",
 		name = "烟花炮弹",
 		orbit_ui_bound = "",
@@ -1903,11 +1868,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.equip_skin_template
-
-	var_1_5[6] = {
+	pg.base.equip_skin_template[6] = {
 		orbit_slg = "",
 		name = "竹片鱼雷",
 		orbit_ui_bound = "",
@@ -1948,11 +1909,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.equip_skin_template
-
-	var_1_6[7] = {
+	pg.base.equip_skin_template[7] = {
 		orbit_slg = "",
 		name = "圣诞袜炮弹",
 		orbit_ui_bound = "",
@@ -1994,11 +1951,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.equip_skin_template
-
-	var_1_7[8] = {
+	pg.base.equip_skin_template[8] = {
 		orbit_slg = "",
 		name = "拐杖糖鱼雷",
 		orbit_ui_bound = "",
@@ -2039,11 +1992,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.equip_skin_template
-
-	var_1_8[9] = {
+	pg.base.equip_skin_template[9] = {
 		orbit_slg = "",
 		name = "雪球炮弹",
 		orbit_ui_bound = "",
@@ -2085,11 +2034,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.equip_skin_template
-
-	var_1_9[10] = {
+	pg.base.equip_skin_template[10] = {
 		orbit_slg = "",
 		name = "圣诞树鱼雷",
 		orbit_ui_bound = "",
@@ -2130,11 +2075,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.equip_skin_template
-
-	var_1_10[11] = {
+	pg.base.equip_skin_template[11] = {
 		orbit_slg = "",
 		name = "海豹轰炸机",
 		orbit_ui_bound = "",
@@ -2174,11 +2115,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.equip_skin_template
-
-	var_1_11[12] = {
+	pg.base.equip_skin_template[12] = {
 		orbit_slg = "",
 		name = "海豹鱼雷机",
 		orbit_ui_bound = "",
@@ -2218,11 +2155,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.equip_skin_template
-
-	var_1_12[13] = {
+	pg.base.equip_skin_template[13] = {
 		orbit_slg = "",
 		name = "咸鱼轰炸机",
 		orbit_ui_bound = "",
@@ -2262,11 +2195,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.equip_skin_template
-
-	var_1_13[14] = {
+	pg.base.equip_skin_template[14] = {
 		orbit_slg = "",
 		name = "咸鱼鱼雷机",
 		orbit_ui_bound = "",
@@ -2306,11 +2235,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.equip_skin_template
-
-	var_1_14[15] = {
+	pg.base.equip_skin_template[15] = {
 		orbit_slg = "",
 		name = "纸鹤轰炸机",
 		orbit_ui_bound = "",
@@ -2350,11 +2275,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.equip_skin_template
-
-	var_1_15[16] = {
+	pg.base.equip_skin_template[16] = {
 		orbit_slg = "",
 		name = "纸鹤鱼雷机",
 		orbit_ui_bound = "",
@@ -2394,11 +2315,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.equip_skin_template
-
-	var_1_16[17] = {
+	pg.base.equip_skin_template[17] = {
 		orbit_slg = "",
 		name = "纸鹤战斗机",
 		orbit_ui_bound = "",
@@ -2438,11 +2355,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.equip_skin_template
-
-	var_1_17[18] = {
+	pg.base.equip_skin_template[18] = {
 		orbit_slg = "",
 		name = "圣诞老啾(轰炸)",
 		orbit_ui_bound = "",
@@ -2482,11 +2395,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.equip_skin_template
-
-	var_1_18[19] = {
+	pg.base.equip_skin_template[19] = {
 		orbit_slg = "",
 		name = "圣诞老啾(战斗)",
 		orbit_ui_bound = "",
@@ -2526,11 +2435,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.equip_skin_template
-
-	var_1_19[20] = {
+	pg.base.equip_skin_template[20] = {
 		orbit_slg = "",
 		name = "圣诞飞啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -2570,11 +2475,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.equip_skin_template
-
-	var_1_20[21] = {
+	pg.base.equip_skin_template[21] = {
 		orbit_slg = "",
 		name = "圣诞飞啾(战斗)",
 		orbit_ui_bound = "",
@@ -2614,11 +2515,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.equip_skin_template
-
-	var_1_21[22] = {
+	pg.base.equip_skin_template[22] = {
 		orbit_slg = "",
 		name = "小海豹炮弹",
 		orbit_ui_bound = "",
@@ -2660,11 +2557,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.equip_skin_template
-
-	var_1_22[23] = {
+	pg.base.equip_skin_template[23] = {
 		orbit_slg = "",
 		name = "小海豹鱼雷",
 		orbit_ui_bound = "",
@@ -2705,11 +2598,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.equip_skin_template
-
-	var_1_23[24] = {
+	pg.base.equip_skin_template[24] = {
 		orbit_slg = "",
 		name = "小海豹鱼雷机",
 		orbit_ui_bound = "",
@@ -2749,11 +2638,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.equip_skin_template
-
-	var_1_24[25] = {
+	pg.base.equip_skin_template[25] = {
 		orbit_slg = "",
 		name = "小海豹战斗机",
 		orbit_ui_bound = "",
@@ -2793,11 +2678,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.equip_skin_template
-
-	var_1_25[26] = {
+	pg.base.equip_skin_template[26] = {
 		orbit_slg = "",
 		name = "小海豹轰炸机",
 		orbit_ui_bound = "",
@@ -2837,11 +2718,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.equip_skin_template
-
-	var_1_26[27] = {
+	pg.base.equip_skin_template[27] = {
 		orbit_slg = "",
 		name = "铜板子弹",
 		orbit_ui_bound = "",
@@ -2883,11 +2760,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.equip_skin_template
-
-	var_1_27[28] = {
+	pg.base.equip_skin_template[28] = {
 		orbit_slg = "",
 		name = "柑橘子弹",
 		orbit_ui_bound = "",
@@ -2929,11 +2802,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.equip_skin_template
-
-	var_1_28[29] = {
+	pg.base.equip_skin_template[29] = {
 		orbit_slg = "",
 		name = "鞭炮炮弹",
 		orbit_ui_bound = "",
@@ -2975,11 +2844,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.equip_skin_template
-
-	var_1_29[30] = {
+	pg.base.equip_skin_template[30] = {
 		orbit_slg = "",
 		name = "元宝炮弹",
 		orbit_ui_bound = "",
@@ -3021,11 +2886,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.equip_skin_template
-
-	var_1_30[31] = {
+	pg.base.equip_skin_template[31] = {
 		orbit_slg = "",
 		name = "红包鱼雷",
 		orbit_ui_bound = "",
@@ -3066,11 +2927,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.equip_skin_template
-
-	var_1_31[32] = {
+	pg.base.equip_skin_template[32] = {
 		orbit_slg = "",
 		name = "中国结鱼雷",
 		orbit_ui_bound = "",
@@ -3111,11 +2968,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.equip_skin_template
-
-	var_1_32[33] = {
+	pg.base.equip_skin_template[33] = {
 		orbit_slg = "",
 		name = "灯笼鱼雷机",
 		orbit_ui_bound = "",
@@ -3155,11 +3008,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.equip_skin_template
-
-	var_1_33[34] = {
+	pg.base.equip_skin_template[34] = {
 		orbit_slg = "",
 		name = "灯笼战斗机",
 		orbit_ui_bound = "",
@@ -3199,11 +3048,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.equip_skin_template
-
-	var_1_34[35] = {
+	pg.base.equip_skin_template[35] = {
 		orbit_slg = "",
 		name = "灯笼轰炸机",
 		orbit_ui_bound = "",
@@ -3243,11 +3088,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.equip_skin_template
-
-	var_1_35[36] = {
+	pg.base.equip_skin_template[36] = {
 		orbit_slg = "",
 		name = "财神蛮啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -3287,11 +3128,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.equip_skin_template
-
-	var_1_36[37] = {
+	pg.base.equip_skin_template[37] = {
 		orbit_slg = "",
 		name = "财神蛮啾(战斗)",
 		orbit_ui_bound = "",
@@ -3331,11 +3168,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.equip_skin_template
-
-	var_1_37[38] = {
+	pg.base.equip_skin_template[38] = {
 		orbit_slg = "",
 		name = "财神蛮啾(轰炸)",
 		orbit_ui_bound = "",
@@ -3375,11 +3208,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.equip_skin_template
-
-	var_1_38[50] = {
+	pg.base.equip_skin_template[50] = {
 		orbit_slg = "",
 		name = "竖笛鱼雷",
 		orbit_ui_bound = "",
@@ -3420,11 +3249,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.equip_skin_template
-
-	var_1_39[51] = {
+	pg.base.equip_skin_template[51] = {
 		orbit_slg = "",
 		name = "橡皮擦鱼雷",
 		orbit_ui_bound = "",
@@ -3465,11 +3290,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.equip_skin_template
-
-	var_1_40[52] = {
+	pg.base.equip_skin_template[52] = {
 		orbit_slg = "",
 		name = "铅笔鱼雷",
 		orbit_ui_bound = "",
@@ -3510,11 +3331,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.equip_skin_template
-
-	var_1_41[53] = {
+	pg.base.equip_skin_template[53] = {
 		orbit_slg = "",
 		name = "粉笔子弹",
 		orbit_ui_bound = "",
@@ -3556,11 +3373,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.equip_skin_template
-
-	var_1_42[54] = {
+	pg.base.equip_skin_template[54] = {
 		orbit_slg = "",
 		name = "花瓣子弹",
 		orbit_ui_bound = "",
@@ -3602,11 +3415,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.equip_skin_template
-
-	var_1_43[55] = {
+	pg.base.equip_skin_template[55] = {
 		orbit_slg = "",
 		name = "量角器炮弹",
 		orbit_ui_bound = "",
@@ -3648,11 +3457,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.equip_skin_template
-
-	var_1_44[56] = {
+	pg.base.equip_skin_template[56] = {
 		orbit_slg = "",
 		name = "板擦炮弹",
 		orbit_ui_bound = "",
@@ -3694,11 +3499,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.equip_skin_template
-
-	var_1_45[57] = {
+	pg.base.equip_skin_template[57] = {
 		orbit_slg = "",
 		name = "便当炮弹",
 		orbit_ui_bound = "",
@@ -3740,11 +3541,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.equip_skin_template
-
-	var_1_46[58] = {
+	pg.base.equip_skin_template[58] = {
 		orbit_slg = "",
 		name = "白色纸飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -3784,11 +3581,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.equip_skin_template
-
-	var_1_47[59] = {
+	pg.base.equip_skin_template[59] = {
 		orbit_slg = "",
 		name = "白色纸飞机(战斗)",
 		orbit_ui_bound = "",
@@ -3828,11 +3621,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.equip_skin_template
-
-	var_1_48[60] = {
+	pg.base.equip_skin_template[60] = {
 		orbit_slg = "",
 		name = "白色纸飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -3872,11 +3661,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.equip_skin_template
-
-	var_1_49[61] = {
+	pg.base.equip_skin_template[61] = {
 		orbit_slg = "",
 		name = "樱色纸飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -3916,11 +3701,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.equip_skin_template
-
-	var_1_50[62] = {
+	pg.base.equip_skin_template[62] = {
 		orbit_slg = "",
 		name = "樱色纸飞机(战斗)",
 		orbit_ui_bound = "",
@@ -3960,11 +3741,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.equip_skin_template
-
-	var_1_51[63] = {
+	pg.base.equip_skin_template[63] = {
 		orbit_slg = "",
 		name = "樱色纸飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -4004,11 +3781,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.equip_skin_template
-
-	var_1_52[64] = {
+	pg.base.equip_skin_template[64] = {
 		orbit_slg = "",
 		name = "教科书飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -4048,11 +3821,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.equip_skin_template
-
-	var_1_53[65] = {
+	pg.base.equip_skin_template[65] = {
 		orbit_slg = "",
 		name = "教科书飞机(战斗)",
 		orbit_ui_bound = "",
@@ -4092,11 +3861,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.equip_skin_template
-
-	var_1_54[66] = {
+	pg.base.equip_skin_template[66] = {
 		orbit_slg = "",
 		name = "教科书飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -4136,11 +3901,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.equip_skin_template
-
-	var_1_55[101] = {
+	pg.base.equip_skin_template[101] = {
 		orbit_slg = "",
 		name = "冰棍鱼雷",
 		orbit_ui_bound = "",
@@ -4181,11 +3942,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.equip_skin_template
-
-	var_1_56[102] = {
+	pg.base.equip_skin_template[102] = {
 		orbit_slg = "",
 		name = "汽水鱼雷",
 		orbit_ui_bound = "",
@@ -4226,11 +3983,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.equip_skin_template
-
-	var_1_57[103] = {
+	pg.base.equip_skin_template[103] = {
 		orbit_slg = "",
 		name = "风铃鱼雷",
 		orbit_ui_bound = "",
@@ -4271,11 +4024,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.equip_skin_template
-
-	var_1_58[104] = {
+	pg.base.equip_skin_template[104] = {
 		orbit_slg = "",
 		name = "西瓜子弹",
 		orbit_ui_bound = "",
@@ -4317,11 +4066,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.equip_skin_template
-
-	var_1_59[105] = {
+	pg.base.equip_skin_template[105] = {
 		orbit_slg = "",
 		name = "风车子弹",
 		orbit_ui_bound = "",
@@ -4363,11 +4108,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.equip_skin_template
-
-	var_1_60[106] = {
+	pg.base.equip_skin_template[106] = {
 		orbit_slg = "",
 		name = "木签子弹",
 		orbit_ui_bound = "",
@@ -4409,11 +4150,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.equip_skin_template
-
-	var_1_61[107] = {
+	pg.base.equip_skin_template[107] = {
 		orbit_slg = "",
 		name = "雨靴炮弹",
 		orbit_ui_bound = "",
@@ -4455,11 +4192,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.equip_skin_template
-
-	var_1_62[108] = {
+	pg.base.equip_skin_template[108] = {
 		orbit_slg = "",
 		name = "西瓜炮弹",
 		orbit_ui_bound = "",
@@ -4501,11 +4234,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.equip_skin_template
-
-	var_1_63[109] = {
+	pg.base.equip_skin_template[109] = {
 		orbit_slg = "",
 		name = "白云炮弹",
 		orbit_ui_bound = "",
@@ -4547,11 +4276,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.equip_skin_template
-
-	var_1_64[110] = {
+	pg.base.equip_skin_template[110] = {
 		orbit_slg = "",
 		name = "猪猪蚊香(鱼雷)",
 		orbit_ui_bound = "",
@@ -4591,11 +4316,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.equip_skin_template
-
-	var_1_65[111] = {
+	pg.base.equip_skin_template[111] = {
 		orbit_slg = "",
 		name = "猪猪蚊香(战斗)",
 		orbit_ui_bound = "",
@@ -4635,11 +4356,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.equip_skin_template
-
-	var_1_66[112] = {
+	pg.base.equip_skin_template[112] = {
 		orbit_slg = "",
 		name = "猪猪蚊香(轰炸)",
 		orbit_ui_bound = "",
@@ -4679,11 +4396,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.equip_skin_template
-
-	var_1_67[113] = {
+	pg.base.equip_skin_template[113] = {
 		orbit_slg = "",
 		name = "蒲公英(鱼雷)",
 		orbit_ui_bound = "",
@@ -4723,11 +4436,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.equip_skin_template
-
-	var_1_68[114] = {
+	pg.base.equip_skin_template[114] = {
 		orbit_slg = "",
 		name = "蒲公英(战斗)",
 		orbit_ui_bound = "",
@@ -4767,11 +4476,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.equip_skin_template
-
-	var_1_69[115] = {
+	pg.base.equip_skin_template[115] = {
 		orbit_slg = "",
 		name = "蒲公英(轰炸)",
 		orbit_ui_bound = "",
@@ -4811,11 +4516,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.equip_skin_template
-
-	var_1_70[116] = {
+	pg.base.equip_skin_template[116] = {
 		orbit_slg = "",
 		name = "扫晴娘(鱼雷)",
 		orbit_ui_bound = "",
@@ -4855,11 +4556,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.equip_skin_template
-
-	var_1_71[117] = {
+	pg.base.equip_skin_template[117] = {
 		orbit_slg = "",
 		name = "扫晴娘(战斗)",
 		orbit_ui_bound = "",
@@ -4899,11 +4596,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.equip_skin_template
-
-	var_1_72[118] = {
+	pg.base.equip_skin_template[118] = {
 		orbit_slg = "",
 		name = "扫晴娘(轰炸)",
 		orbit_ui_bound = "",
@@ -4943,11 +4636,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.equip_skin_template
-
-	var_1_73[120] = {
+	pg.base.equip_skin_template[120] = {
 		orbit_slg = "",
 		name = "獠牙子弹",
 		orbit_ui_bound = "",
@@ -4989,11 +4678,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.equip_skin_template
-
-	var_1_74[121] = {
+	pg.base.equip_skin_template[121] = {
 		orbit_slg = "",
 		name = "小猪尾巴",
 		orbit_ui_bound = "",
@@ -5035,11 +4720,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.equip_skin_template
-
-	var_1_75[122] = {
+	pg.base.equip_skin_template[122] = {
 		orbit_slg = "",
 		name = "肉肉子弹",
 		orbit_ui_bound = "",
@@ -5081,11 +4762,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.equip_skin_template
-
-	var_1_76[123] = {
+	pg.base.equip_skin_template[123] = {
 		orbit_slg = "",
 		name = "肉肉炮弹",
 		orbit_ui_bound = "",
@@ -5127,11 +4804,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.equip_skin_template
-
-	var_1_77[124] = {
+	pg.base.equip_skin_template[124] = {
 		orbit_slg = "",
 		name = "草丛？",
 		orbit_ui_bound = "",
@@ -5173,11 +4846,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.equip_skin_template
-
-	var_1_78[125] = {
+	pg.base.equip_skin_template[125] = {
 		orbit_slg = "",
 		name = "猪蹄炮弹",
 		orbit_ui_bound = "",
@@ -5219,11 +4888,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.equip_skin_template
-
-	var_1_79[126] = {
+	pg.base.equip_skin_template[126] = {
 		orbit_slg = "",
 		name = "肉肉鱼雷",
 		orbit_ui_bound = "",
@@ -5264,11 +4929,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.equip_skin_template
-
-	var_1_80[127] = {
+	pg.base.equip_skin_template[127] = {
 		orbit_slg = "",
 		name = "香菇鱼雷",
 		orbit_ui_bound = "",
@@ -5309,11 +4970,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.equip_skin_template
-
-	var_1_81[128] = {
+	pg.base.equip_skin_template[128] = {
 		orbit_slg = "",
 		name = "柴火鱼雷",
 		orbit_ui_bound = "",
@@ -5354,11 +5011,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.equip_skin_template
-
-	var_1_82[129] = {
+	pg.base.equip_skin_template[129] = {
 		orbit_slg = "",
 		name = "气球小猪(鱼雷)",
 		orbit_ui_bound = "",
@@ -5398,11 +5051,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.equip_skin_template
-
-	var_1_83[130] = {
+	pg.base.equip_skin_template[130] = {
 		orbit_slg = "",
 		name = "气球小猪(战斗)",
 		orbit_ui_bound = "",
@@ -5442,11 +5091,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.equip_skin_template
-
-	var_1_84[131] = {
+	pg.base.equip_skin_template[131] = {
 		orbit_slg = "",
 		name = "气球小猪(轰炸)",
 		orbit_ui_bound = "",
@@ -5486,11 +5131,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.equip_skin_template
-
-	var_1_85[132] = {
+	pg.base.equip_skin_template[132] = {
 		orbit_slg = "",
 		name = "雪云小猪(鱼雷)",
 		orbit_ui_bound = "",
@@ -5530,11 +5171,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.equip_skin_template
-
-	var_1_86[133] = {
+	pg.base.equip_skin_template[133] = {
 		orbit_slg = "",
 		name = "雪云小猪(战斗)",
 		orbit_ui_bound = "",
@@ -5574,11 +5211,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.equip_skin_template
-
-	var_1_87[134] = {
+	pg.base.equip_skin_template[134] = {
 		orbit_slg = "",
 		name = "雪云小猪(轰炸)",
 		orbit_ui_bound = "",
@@ -5618,11 +5251,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.equip_skin_template
-
-	var_1_88[135] = {
+	pg.base.equip_skin_template[135] = {
 		orbit_slg = "",
 		name = "小猪超人？！(鱼雷)",
 		orbit_ui_bound = "",
@@ -5662,11 +5291,7 @@ var_0_3.base.equip_skin_template = {}
 			61504
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.equip_skin_template
-
-	var_1_89[136] = {
+	pg.base.equip_skin_template[136] = {
 		orbit_slg = "",
 		name = "小猪超人？！(战斗)",
 		orbit_ui_bound = "",
@@ -5706,11 +5331,7 @@ var_0_3.base.equip_skin_template = {}
 			54010
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.equip_skin_template
-
-	var_1_90[137] = {
+	pg.base.equip_skin_template[137] = {
 		orbit_slg = "",
 		name = "小猪超人？！(轰炸)",
 		orbit_ui_bound = "",
@@ -5750,11 +5371,7 @@ var_0_3.base.equip_skin_template = {}
 			54014
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.equip_skin_template
-
-	var_1_91[140] = {
+	pg.base.equip_skin_template[140] = {
 		orbit_slg = "",
 		name = "红茶子弹",
 		orbit_ui_bound = "",
@@ -5796,11 +5413,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.equip_skin_template
-
-	var_1_92[141] = {
+	pg.base.equip_skin_template[141] = {
 		orbit_slg = "",
 		name = "曲奇子弹",
 		orbit_ui_bound = "",
@@ -5842,11 +5455,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.equip_skin_template
-
-	var_1_93[142] = {
+	pg.base.equip_skin_template[142] = {
 		orbit_slg = "",
 		name = "布丁子弹",
 		orbit_ui_bound = "",
@@ -5888,11 +5497,7 @@ var_0_3.base.equip_skin_template = {}
 			101
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.equip_skin_template
-
-	var_1_94[143] = {
+	pg.base.equip_skin_template[143] = {
 		orbit_slg = "",
 		name = "大钟楼炮弹",
 		orbit_ui_bound = "",
@@ -5934,11 +5539,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.equip_skin_template
-
-	var_1_95[144] = {
+	pg.base.equip_skin_template[144] = {
 		orbit_slg = "",
 		name = "皇家料理炮弹",
 		orbit_ui_bound = "",
@@ -5980,11 +5581,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.equip_skin_template
-
-	var_1_96[145] = {
+	pg.base.equip_skin_template[145] = {
 		orbit_slg = "",
 		name = "电话亭炮弹",
 		orbit_ui_bound = "",
@@ -6026,11 +5623,7 @@ var_0_3.base.equip_skin_template = {}
 			24000
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.equip_skin_template
-
-	var_1_97[146] = {
+	pg.base.equip_skin_template[146] = {
 		orbit_slg = "",
 		name = "拐杖鱼雷",
 		orbit_ui_bound = "",
@@ -6071,11 +5664,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.equip_skin_template
-
-	var_1_98[147] = {
+	pg.base.equip_skin_template[147] = {
 		orbit_slg = "",
 		name = "烟斗鱼雷",
 		orbit_ui_bound = "",
@@ -6116,8 +5705,7 @@ var_0_3.base.equip_skin_template = {}
 			107
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.equip_skin_template[148] = {
+	pg.base.equip_skin_template[148] = {
 		orbit_slg = "",
 		name = "名酒鱼雷",
 		orbit_ui_bound = "",
@@ -6162,11 +5750,7 @@ var_0_3.base.equip_skin_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.equip_skin_template
-
-	var_2_0[149] = {
+	pg.base.equip_skin_template[149] = {
 		orbit_slg = "",
 		name = "皇家热气球(鱼雷)",
 		orbit_ui_bound = "",
@@ -6206,11 +5790,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.equip_skin_template
-
-	var_2_1[150] = {
+	pg.base.equip_skin_template[150] = {
 		orbit_slg = "",
 		name = "皇家热气球(战斗)",
 		orbit_ui_bound = "",
@@ -6250,11 +5830,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.equip_skin_template
-
-	var_2_2[151] = {
+	pg.base.equip_skin_template[151] = {
 		orbit_slg = "",
 		name = "皇家热气球(轰炸)",
 		orbit_ui_bound = "",
@@ -6294,11 +5870,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.equip_skin_template
-
-	var_2_3[152] = {
+	pg.base.equip_skin_template[152] = {
 		orbit_slg = "",
 		name = "皇家铁塔(鱼雷)",
 		orbit_ui_bound = "",
@@ -6338,11 +5910,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.equip_skin_template
-
-	var_2_4[153] = {
+	pg.base.equip_skin_template[153] = {
 		orbit_slg = "",
 		name = "皇家铁塔(战斗)",
 		orbit_ui_bound = "",
@@ -6382,11 +5950,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.equip_skin_template
-
-	var_2_5[154] = {
+	pg.base.equip_skin_template[154] = {
 		orbit_slg = "",
 		name = "皇家铁塔(轰炸)",
 		orbit_ui_bound = "",
@@ -6426,11 +5990,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.equip_skin_template
-
-	var_2_6[155] = {
+	pg.base.equip_skin_template[155] = {
 		orbit_slg = "",
 		name = "双层巴士(鱼雷)",
 		orbit_ui_bound = "",
@@ -6470,11 +6030,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.equip_skin_template
-
-	var_2_7[156] = {
+	pg.base.equip_skin_template[156] = {
 		orbit_slg = "",
 		name = "双层巴士(战斗)",
 		orbit_ui_bound = "",
@@ -6514,11 +6070,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.equip_skin_template
-
-	var_2_8[157] = {
+	pg.base.equip_skin_template[157] = {
 		orbit_slg = "",
 		name = "双层巴士(轰炸)",
 		orbit_ui_bound = "",
@@ -6558,11 +6110,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.equip_skin_template
-
-	var_2_9[160] = {
+	pg.base.equip_skin_template[160] = {
 		orbit_slg = "",
 		name = "熔岩弹",
 		orbit_ui_bound = "",
@@ -6604,11 +6152,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.equip_skin_template
-
-	var_2_10[161] = {
+	pg.base.equip_skin_template[161] = {
 		orbit_slg = "",
 		name = "特调Espreso",
 		orbit_ui_bound = "",
@@ -6650,11 +6194,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.equip_skin_template
-
-	var_2_11[162] = {
+	pg.base.equip_skin_template[162] = {
 		orbit_slg = "",
 		name = "奶酪弹",
 		orbit_ui_bound = "",
@@ -6696,11 +6236,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.equip_skin_template
-
-	var_2_12[163] = {
+	pg.base.equip_skin_template[163] = {
 		orbit_slg = "",
 		name = "意面炮弹",
 		orbit_ui_bound = "",
@@ -6742,11 +6278,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.equip_skin_template
-
-	var_2_13[164] = {
+	pg.base.equip_skin_template[164] = {
 		orbit_slg = "",
 		name = "足球炮弹",
 		orbit_ui_bound = "",
@@ -6788,11 +6320,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.equip_skin_template
-
-	var_2_14[165] = {
+	pg.base.equip_skin_template[165] = {
 		orbit_slg = "",
 		name = "Pizza炮弹",
 		orbit_ui_bound = "",
@@ -6834,11 +6362,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.equip_skin_template
-
-	var_2_15[166] = {
+	pg.base.equip_skin_template[166] = {
 		orbit_slg = "",
 		name = "Gelato鱼雷",
 		orbit_ui_bound = "",
@@ -6879,11 +6403,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.equip_skin_template
-
-	var_2_16[167] = {
+	pg.base.equip_skin_template[167] = {
 		orbit_slg = "",
 		name = "葡萄酒鱼雷",
 		orbit_ui_bound = "",
@@ -6924,11 +6444,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.equip_skin_template
-
-	var_2_17[168] = {
+	pg.base.equip_skin_template[168] = {
 		orbit_slg = "",
 		name = "Piadina鱼雷",
 		orbit_ui_bound = "",
@@ -6969,11 +6485,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.equip_skin_template
-
-	var_2_18[169] = {
+	pg.base.equip_skin_template[169] = {
 		orbit_slg = "",
 		name = "斜塔飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -7013,11 +6525,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.equip_skin_template
-
-	var_2_19[170] = {
+	pg.base.equip_skin_template[170] = {
 		orbit_slg = "",
 		name = "斜塔飞机(战斗)",
 		orbit_ui_bound = "",
@@ -7057,11 +6565,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.equip_skin_template
-
-	var_2_20[171] = {
+	pg.base.equip_skin_template[171] = {
 		orbit_slg = "",
 		name = "斜塔飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -7101,11 +6605,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.equip_skin_template
-
-	var_2_21[172] = {
+	pg.base.equip_skin_template[172] = {
 		orbit_slg = "",
 		name = "贡多拉飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -7145,11 +6645,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.equip_skin_template
-
-	var_2_22[173] = {
+	pg.base.equip_skin_template[173] = {
 		orbit_slg = "",
 		name = "贡多拉飞机(战斗)",
 		orbit_ui_bound = "",
@@ -7189,11 +6685,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.equip_skin_template
-
-	var_2_23[174] = {
+	pg.base.equip_skin_template[174] = {
 		orbit_slg = "",
 		name = "贡多拉飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -7233,11 +6725,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.equip_skin_template
-
-	var_2_24[175] = {
+	pg.base.equip_skin_template[175] = {
 		orbit_slg = "",
 		name = "浴缸飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -7277,11 +6765,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.equip_skin_template
-
-	var_2_25[176] = {
+	pg.base.equip_skin_template[176] = {
 		orbit_slg = "",
 		name = "浴缸飞机(战斗)",
 		orbit_ui_bound = "",
@@ -7321,11 +6805,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.equip_skin_template
-
-	var_2_26[177] = {
+	pg.base.equip_skin_template[177] = {
 		orbit_slg = "",
 		name = "浴缸飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -7365,11 +6845,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.equip_skin_template
-
-	var_2_27[180] = {
+	pg.base.equip_skin_template[180] = {
 		orbit_slg = "",
 		name = "炸弹(?)香水",
 		orbit_ui_bound = "",
@@ -7411,11 +6887,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.equip_skin_template
-
-	var_2_28[181] = {
+	pg.base.equip_skin_template[181] = {
 		orbit_slg = "",
 		name = "唱片子弹",
 		orbit_ui_bound = "",
@@ -7457,11 +6929,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.equip_skin_template
-
-	var_2_29[182] = {
+	pg.base.equip_skin_template[182] = {
 		orbit_slg = "",
 		name = "钥匙扣子弹",
 		orbit_ui_bound = "",
@@ -7503,11 +6971,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.equip_skin_template
-
-	var_2_30[183] = {
+	pg.base.equip_skin_template[183] = {
 		orbit_slg = "",
 		name = "毛巾炮弹",
 		orbit_ui_bound = "",
@@ -7549,11 +7013,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.equip_skin_template
-
-	var_2_31[184] = {
+	pg.base.equip_skin_template[184] = {
 		orbit_slg = "",
 		name = "握手券炮弹",
 		orbit_ui_bound = "",
@@ -7595,11 +7055,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.equip_skin_template
-
-	var_2_32[185] = {
+	pg.base.equip_skin_template[185] = {
 		orbit_slg = "",
 		name = "音响炮弹",
 		orbit_ui_bound = "",
@@ -7641,11 +7097,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.equip_skin_template
-
-	var_2_33[186] = {
+	pg.base.equip_skin_template[186] = {
 		orbit_slg = "",
 		name = "鱼雷麦克风",
 		orbit_ui_bound = "",
@@ -7686,11 +7138,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.equip_skin_template
-
-	var_2_34[187] = {
+	pg.base.equip_skin_template[187] = {
 		orbit_slg = "",
 		name = "团扇鱼雷",
 		orbit_ui_bound = "",
@@ -7731,11 +7179,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.equip_skin_template
-
-	var_2_35[188] = {
+	pg.base.equip_skin_template[188] = {
 		orbit_slg = "",
 		name = "Live入场券(鱼雷)",
 		orbit_ui_bound = "",
@@ -7776,11 +7220,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.equip_skin_template
-
-	var_2_36[189] = {
+	pg.base.equip_skin_template[189] = {
 		orbit_slg = "",
 		name = "啾啾专机(鱼雷)",
 		orbit_ui_bound = "",
@@ -7820,11 +7260,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.equip_skin_template
-
-	var_2_37[190] = {
+	pg.base.equip_skin_template[190] = {
 		orbit_slg = "",
 		name = "啾啾专机(战斗)",
 		orbit_ui_bound = "",
@@ -7864,11 +7300,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.equip_skin_template
-
-	var_2_38[191] = {
+	pg.base.equip_skin_template[191] = {
 		orbit_slg = "",
 		name = "啾啾专机(轰炸)",
 		orbit_ui_bound = "",
@@ -7908,11 +7340,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.equip_skin_template
-
-	var_2_39[192] = {
+	pg.base.equip_skin_template[192] = {
 		orbit_slg = "",
 		name = "激奏热气球(鱼雷)",
 		orbit_ui_bound = "",
@@ -7952,11 +7380,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.equip_skin_template
-
-	var_2_40[193] = {
+	pg.base.equip_skin_template[193] = {
 		orbit_slg = "",
 		name = "激奏热气球(战斗)",
 		orbit_ui_bound = "",
@@ -7996,11 +7420,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.equip_skin_template
-
-	var_2_41[194] = {
+	pg.base.equip_skin_template[194] = {
 		orbit_slg = "",
 		name = "激奏热气球(轰炸)",
 		orbit_ui_bound = "",
@@ -8040,11 +7460,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.equip_skin_template
-
-	var_2_42[195] = {
+	pg.base.equip_skin_template[195] = {
 		orbit_slg = "",
 		name = "星之啾啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -8084,11 +7500,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.equip_skin_template
-
-	var_2_43[196] = {
+	pg.base.equip_skin_template[196] = {
 		orbit_slg = "",
 		name = "星之啾啾(战斗)",
 		orbit_ui_bound = "",
@@ -8128,11 +7540,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.equip_skin_template
-
-	var_2_44[197] = {
+	pg.base.equip_skin_template[197] = {
 		orbit_slg = "",
 		name = "星之啾啾(轰炸)",
 		orbit_ui_bound = "",
@@ -8172,11 +7580,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.equip_skin_template
-
-	var_2_45[200] = {
+	pg.base.equip_skin_template[200] = {
 		orbit_slg = "",
 		name = "狐笋子弹",
 		orbit_ui_bound = "",
@@ -8218,11 +7622,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.equip_skin_template
-
-	var_2_46[201] = {
+	pg.base.equip_skin_template[201] = {
 		orbit_slg = "",
 		name = "千里眼子弹",
 		orbit_ui_bound = "",
@@ -8264,11 +7664,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.equip_skin_template
-
-	var_2_47[202] = {
+	pg.base.equip_skin_template[202] = {
 		orbit_slg = "",
 		name = "式神子弹",
 		orbit_ui_bound = "",
@@ -8310,11 +7706,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.equip_skin_template
-
-	var_2_48[203] = {
+	pg.base.equip_skin_template[203] = {
 		orbit_slg = "",
 		name = "AQUA！！！！！",
 		orbit_ui_bound = "",
@@ -8356,11 +7748,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.equip_skin_template
-
-	var_2_49[204] = {
+	pg.base.equip_skin_template[204] = {
 		orbit_slg = "",
 		name = "炸虾狮炮弹",
 		orbit_ui_bound = "",
@@ -8402,11 +7790,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.equip_skin_template
-
-	var_2_50[205] = {
+	pg.base.equip_skin_template[205] = {
 		orbit_slg = "",
 		name = "吹雪雀炮弹",
 		orbit_ui_bound = "",
@@ -8448,11 +7832,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.equip_skin_template
-
-	var_2_51[206] = {
+	pg.base.equip_skin_template[206] = {
 		orbit_slg = "",
 		name = "空的麦克风鱼雷",
 		orbit_ui_bound = "",
@@ -8493,11 +7873,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.equip_skin_template
-
-	var_2_52[207] = {
+	pg.base.equip_skin_template[207] = {
 		orbit_slg = "",
 		name = "玉米鱼雷",
 		orbit_ui_bound = "",
@@ -8538,11 +7914,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.equip_skin_template
-
-	var_2_53[208] = {
+	pg.base.equip_skin_template[208] = {
 		orbit_slg = "",
 		name = "深海鱼雷",
 		orbit_ui_bound = "",
@@ -8583,11 +7955,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.equip_skin_template
-
-	var_2_54[209] = {
+	pg.base.equip_skin_template[209] = {
 		orbit_slg = "",
 		name = "2.25马赫狐笋(鱼雷)",
 		orbit_ui_bound = "",
@@ -8627,11 +7995,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.equip_skin_template
-
-	var_2_55[210] = {
+	pg.base.equip_skin_template[210] = {
 		orbit_slg = "",
 		name = "2.25马赫狐笋(战斗)",
 		orbit_ui_bound = "",
@@ -8671,11 +8035,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.equip_skin_template
-
-	var_2_56[211] = {
+	pg.base.equip_skin_template[211] = {
 		orbit_slg = "",
 		name = "2.25马赫狐笋(轰炸)",
 		orbit_ui_bound = "",
@@ -8715,11 +8075,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.equip_skin_template
-
-	var_2_57[212] = {
+	pg.base.equip_skin_template[212] = {
 		orbit_slg = "",
 		name = "三才雀(鱼雷)",
 		orbit_ui_bound = "",
@@ -8759,11 +8115,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.equip_skin_template
-
-	var_2_58[213] = {
+	pg.base.equip_skin_template[213] = {
 		orbit_slg = "",
 		name = "三才雀(战斗)",
 		orbit_ui_bound = "",
@@ -8803,11 +8155,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.equip_skin_template
-
-	var_2_59[214] = {
+	pg.base.equip_skin_template[214] = {
 		orbit_slg = "",
 		name = "三才雀(轰炸)",
 		orbit_ui_bound = "",
@@ -8847,11 +8195,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.equip_skin_template
-
-	var_2_60[215] = {
+	pg.base.equip_skin_template[215] = {
 		orbit_slg = "",
 		name = "噗哟余(鱼雷)",
 		orbit_ui_bound = "",
@@ -8891,11 +8235,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.equip_skin_template
-
-	var_2_61[216] = {
+	pg.base.equip_skin_template[216] = {
 		orbit_slg = "",
 		name = "噗哟余(战斗)",
 		orbit_ui_bound = "",
@@ -8935,11 +8275,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.equip_skin_template
-
-	var_2_62[217] = {
+	pg.base.equip_skin_template[217] = {
 		orbit_slg = "",
 		name = "噗哟余(轰炸)",
 		orbit_ui_bound = "",
@@ -8979,11 +8315,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.equip_skin_template
-
-	var_2_63[220] = {
+	pg.base.equip_skin_template[220] = {
 		orbit_slg = "",
 		name = "手铐子弹",
 		orbit_ui_bound = "",
@@ -9025,11 +8357,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.equip_skin_template
-
-	var_2_64[221] = {
+	pg.base.equip_skin_template[221] = {
 		orbit_slg = "",
 		name = "铁球子弹",
 		orbit_ui_bound = "",
@@ -9071,11 +8399,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.equip_skin_template
-
-	var_2_65[222] = {
+	pg.base.equip_skin_template[222] = {
 		orbit_slg = "",
 		name = "冰块子弹",
 		orbit_ui_bound = "",
@@ -9117,11 +8441,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.equip_skin_template
-
-	var_2_66[223] = {
+	pg.base.equip_skin_template[223] = {
 		orbit_slg = "",
 		name = "锤子炮弹",
 		orbit_ui_bound = "",
@@ -9163,11 +8483,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.equip_skin_template
-
-	var_2_67[224] = {
+	pg.base.equip_skin_template[224] = {
 		orbit_slg = "",
 		name = "镰刀炮弹",
 		orbit_ui_bound = "",
@@ -9209,11 +8525,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.equip_skin_template
-
-	var_2_68[225] = {
+	pg.base.equip_skin_template[225] = {
 		orbit_slg = "",
 		name = "空间站炮弹",
 		orbit_ui_bound = "",
@@ -9255,11 +8567,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.equip_skin_template
-
-	var_2_69[226] = {
+	pg.base.equip_skin_template[226] = {
 		orbit_slg = "",
 		name = "鱼雷「Водка」",
 		orbit_ui_bound = "",
@@ -9300,11 +8608,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.equip_skin_template
-
-	var_2_70[227] = {
+	pg.base.equip_skin_template[227] = {
 		orbit_slg = "",
 		name = "冻玉米鱼雷",
 		orbit_ui_bound = "",
@@ -9345,11 +8649,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.equip_skin_template
-
-	var_2_71[228] = {
+	pg.base.equip_skin_template[228] = {
 		orbit_slg = "",
 		name = "冻土豆鱼雷",
 		orbit_ui_bound = "",
@@ -9390,11 +8690,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.equip_skin_template
-
-	var_2_72[229] = {
+	pg.base.equip_skin_template[229] = {
 		orbit_slg = "",
 		name = "追缉啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -9434,11 +8730,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.equip_skin_template
-
-	var_2_73[230] = {
+	pg.base.equip_skin_template[230] = {
 		orbit_slg = "",
 		name = "追缉啾(战斗)",
 		orbit_ui_bound = "",
@@ -9478,11 +8770,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.equip_skin_template
-
-	var_2_74[231] = {
+	pg.base.equip_skin_template[231] = {
 		orbit_slg = "",
 		name = "追缉啾(轰炸)",
 		orbit_ui_bound = "",
@@ -9522,11 +8810,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.equip_skin_template
-
-	var_2_75[232] = {
+	pg.base.equip_skin_template[232] = {
 		orbit_slg = "",
 		name = "脱逃啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -9566,11 +8850,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.equip_skin_template
-
-	var_2_76[233] = {
+	pg.base.equip_skin_template[233] = {
 		orbit_slg = "",
 		name = "脱逃啾(战斗)",
 		orbit_ui_bound = "",
@@ -9610,11 +8890,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.equip_skin_template
-
-	var_2_77[234] = {
+	pg.base.equip_skin_template[234] = {
 		orbit_slg = "",
 		name = "脱逃啾(轰炸)",
 		orbit_ui_bound = "",
@@ -9654,11 +8930,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.equip_skin_template
-
-	var_2_78[235] = {
+	pg.base.equip_skin_template[235] = {
 		orbit_slg = "",
 		name = "毛熊啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -9698,11 +8970,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.equip_skin_template
-
-	var_2_79[236] = {
+	pg.base.equip_skin_template[236] = {
 		orbit_slg = "",
 		name = "毛熊啾(战斗)",
 		orbit_ui_bound = "",
@@ -9742,11 +9010,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.equip_skin_template
-
-	var_2_80[237] = {
+	pg.base.equip_skin_template[237] = {
 		orbit_slg = "",
 		name = "毛熊啾(轰炸)",
 		orbit_ui_bound = "",
@@ -9786,11 +9050,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.equip_skin_template
-
-	var_2_81[240] = {
+	pg.base.equip_skin_template[240] = {
 		orbit_slg = "",
 		name = "橄榄球子弹",
 		orbit_ui_bound = "",
@@ -9832,11 +9092,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.equip_skin_template
-
-	var_2_82[241] = {
+	pg.base.equip_skin_template[241] = {
 		orbit_slg = "",
 		name = "棒球子弹",
 		orbit_ui_bound = "",
@@ -9878,11 +9134,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.equip_skin_template
-
-	var_2_83[242] = {
+	pg.base.equip_skin_template[242] = {
 		orbit_slg = "",
 		name = "篮球子弹",
 		orbit_ui_bound = "",
@@ -9924,11 +9176,7 @@ end)()
 			101
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.equip_skin_template
-
-	var_2_84[243] = {
+	pg.base.equip_skin_template[243] = {
 		orbit_slg = "",
 		name = "汉堡炮弹",
 		orbit_ui_bound = "",
@@ -9970,11 +9218,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.equip_skin_template
-
-	var_2_85[244] = {
+	pg.base.equip_skin_template[244] = {
 		orbit_slg = "",
 		name = "炸鸡炮弹",
 		orbit_ui_bound = "",
@@ -10016,11 +9260,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.equip_skin_template
-
-	var_2_86[245] = {
+	pg.base.equip_skin_template[245] = {
 		orbit_slg = "",
 		name = "可乐炮弹",
 		orbit_ui_bound = "",
@@ -10062,11 +9302,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.equip_skin_template
-
-	var_2_87[246] = {
+	pg.base.equip_skin_template[246] = {
 		orbit_slg = "",
 		name = "火炬鱼雷",
 		orbit_ui_bound = "",
@@ -10107,11 +9343,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.equip_skin_template
-
-	var_2_88[247] = {
+	pg.base.equip_skin_template[247] = {
 		orbit_slg = "",
 		name = "小金人鱼雷",
 		orbit_ui_bound = "",
@@ -10152,11 +9384,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.equip_skin_template
-
-	var_2_89[248] = {
+	pg.base.equip_skin_template[248] = {
 		orbit_slg = "",
 		name = "酒桶鱼雷",
 		orbit_ui_bound = "",
@@ -10197,11 +9425,7 @@ end)()
 			107
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.equip_skin_template
-
-	var_2_90[249] = {
+	pg.base.equip_skin_template[249] = {
 		orbit_slg = "",
 		name = "鹰酱飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -10241,11 +9465,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.equip_skin_template
-
-	var_2_91[250] = {
+	pg.base.equip_skin_template[250] = {
 		orbit_slg = "",
 		name = "鹰酱飞机(战斗)",
 		orbit_ui_bound = "",
@@ -10285,11 +9505,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.equip_skin_template
-
-	var_2_92[251] = {
+	pg.base.equip_skin_template[251] = {
 		orbit_slg = "",
 		name = "鹰酱飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -10329,11 +9545,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.equip_skin_template
-
-	var_2_93[252] = {
+	pg.base.equip_skin_template[252] = {
 		orbit_slg = "",
 		name = "牛仔啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -10373,11 +9585,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.equip_skin_template
-
-	var_2_94[253] = {
+	pg.base.equip_skin_template[253] = {
 		orbit_slg = "",
 		name = "牛仔啾(战斗)",
 		orbit_ui_bound = "",
@@ -10417,11 +9625,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.equip_skin_template
-
-	var_2_95[254] = {
+	pg.base.equip_skin_template[254] = {
 		orbit_slg = "",
 		name = "牛仔啾(轰炸)",
 		orbit_ui_bound = "",
@@ -10461,11 +9665,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.equip_skin_template
-
-	var_2_96[255] = {
+	pg.base.equip_skin_template[255] = {
 		orbit_slg = "",
 		name = "超人啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -10505,11 +9705,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.equip_skin_template
-
-	var_2_97[256] = {
+	pg.base.equip_skin_template[256] = {
 		orbit_slg = "",
 		name = "超人啾(战斗)",
 		orbit_ui_bound = "",
@@ -10549,11 +9745,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.equip_skin_template
-
-	var_2_98[257] = {
+	pg.base.equip_skin_template[257] = {
 		orbit_slg = "",
 		name = "超人啾(轰炸)",
 		orbit_ui_bound = "",
@@ -10593,8 +9785,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.equip_skin_template[260] = {
+	pg.base.equip_skin_template[260] = {
 		orbit_slg = "",
 		name = "马卡龙子弹",
 		orbit_ui_bound = "",
@@ -10640,11 +9831,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.equip_skin_template
-
-	var_3_0[261] = {
+	pg.base.equip_skin_template[261] = {
 		orbit_slg = "",
 		name = "滚球子弹",
 		orbit_ui_bound = "",
@@ -10686,11 +9873,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.equip_skin_template
-
-	var_3_1[262] = {
+	pg.base.equip_skin_template[262] = {
 		orbit_slg = "",
 		name = "珍珠子弹",
 		orbit_ui_bound = "",
@@ -10732,11 +9915,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.equip_skin_template
-
-	var_3_2[263] = {
+	pg.base.equip_skin_template[263] = {
 		orbit_slg = "",
 		name = "网球拍炮弹",
 		orbit_ui_bound = "",
@@ -10778,11 +9957,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.equip_skin_template
-
-	var_3_3[264] = {
+	pg.base.equip_skin_template[264] = {
 		orbit_slg = "",
 		name = "名画炮弹",
 		orbit_ui_bound = "",
@@ -10824,11 +9999,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.equip_skin_template
-
-	var_3_4[265] = {
+	pg.base.equip_skin_template[265] = {
 		orbit_slg = "",
 		name = "香槟炮弹",
 		orbit_ui_bound = "",
@@ -10870,11 +10041,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.equip_skin_template
-
-	var_3_5[266] = {
+	pg.base.equip_skin_template[266] = {
 		orbit_slg = "",
 		name = "鱼雷「Baguette」",
 		orbit_ui_bound = "",
@@ -10915,11 +10082,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.equip_skin_template
-
-	var_3_6[267] = {
+	pg.base.equip_skin_template[267] = {
 		orbit_slg = "",
 		name = "鱼雷「Parfum」",
 		orbit_ui_bound = "",
@@ -10960,11 +10123,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.equip_skin_template
-
-	var_3_7[268] = {
+	pg.base.equip_skin_template[268] = {
 		orbit_slg = "",
 		name = "鱼雷「Lavande」",
 		orbit_ui_bound = "",
@@ -11005,11 +10164,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.equip_skin_template
-
-	var_3_8[269] = {
+	pg.base.equip_skin_template[269] = {
 		orbit_slg = "",
 		name = "啾啾自行车(鱼雷)",
 		orbit_ui_bound = "",
@@ -11049,11 +10204,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.equip_skin_template
-
-	var_3_9[270] = {
+	pg.base.equip_skin_template[270] = {
 		orbit_slg = "",
 		name = "啾啾自行车(战斗)",
 		orbit_ui_bound = "",
@@ -11093,11 +10244,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.equip_skin_template
-
-	var_3_10[271] = {
+	pg.base.equip_skin_template[271] = {
 		orbit_slg = "",
 		name = "啾啾自行车(轰炸)",
 		orbit_ui_bound = "",
@@ -11137,11 +10284,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.equip_skin_template
-
-	var_3_11[272] = {
+	pg.base.equip_skin_template[272] = {
 		orbit_slg = "",
 		name = "飞行博物馆(鱼雷)",
 		orbit_ui_bound = "",
@@ -11181,11 +10324,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.equip_skin_template
-
-	var_3_12[273] = {
+	pg.base.equip_skin_template[273] = {
 		orbit_slg = "",
 		name = "飞行博物馆(战斗)",
 		orbit_ui_bound = "",
@@ -11225,11 +10364,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.equip_skin_template
-
-	var_3_13[274] = {
+	pg.base.equip_skin_template[274] = {
 		orbit_slg = "",
 		name = "飞行博物馆(轰炸)",
 		orbit_ui_bound = "",
@@ -11269,11 +10404,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.equip_skin_template
-
-	var_3_14[275] = {
+	pg.base.equip_skin_template[275] = {
 		orbit_slg = "",
 		name = "飞天斗鸡(鱼雷)",
 		orbit_ui_bound = "",
@@ -11313,11 +10444,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.equip_skin_template
-
-	var_3_15[276] = {
+	pg.base.equip_skin_template[276] = {
 		orbit_slg = "",
 		name = "飞天斗鸡(战斗)",
 		orbit_ui_bound = "",
@@ -11357,11 +10484,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.equip_skin_template
-
-	var_3_16[277] = {
+	pg.base.equip_skin_template[277] = {
 		orbit_slg = "",
 		name = "飞天斗鸡(轰炸)",
 		orbit_ui_bound = "",
@@ -11401,11 +10524,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.equip_skin_template
-
-	var_3_17[280] = {
+	pg.base.equip_skin_template[280] = {
 		orbit_slg = "",
 		name = "落叶子弹",
 		orbit_ui_bound = "",
@@ -11447,11 +10566,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.equip_skin_template
-
-	var_3_18[281] = {
+	pg.base.equip_skin_template[281] = {
 		orbit_slg = "",
 		name = "维C子弹",
 		orbit_ui_bound = "",
@@ -11493,11 +10608,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.equip_skin_template
-
-	var_3_19[282] = {
+	pg.base.equip_skin_template[282] = {
 		orbit_slg = "",
 		name = "绷带子弹",
 		orbit_ui_bound = "",
@@ -11539,11 +10650,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.equip_skin_template
-
-	var_3_20[283] = {
+	pg.base.equip_skin_template[283] = {
 		orbit_slg = "",
 		name = "石膏炮弹",
 		orbit_ui_bound = "",
@@ -11585,11 +10692,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.equip_skin_template
-
-	var_3_21[284] = {
+	pg.base.equip_skin_template[284] = {
 		orbit_slg = "",
 		name = "氧气瓶炮弹",
 		orbit_ui_bound = "",
@@ -11631,11 +10734,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.equip_skin_template
-
-	var_3_22[285] = {
+	pg.base.equip_skin_template[285] = {
 		orbit_slg = "",
 		name = "飞刀炮弹",
 		orbit_ui_bound = "",
@@ -11677,11 +10776,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.equip_skin_template
-
-	var_3_23[286] = {
+	pg.base.equip_skin_template[286] = {
 		orbit_slg = "",
 		name = "针筒鱼雷",
 		orbit_ui_bound = "",
@@ -11722,11 +10817,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.equip_skin_template
-
-	var_3_24[287] = {
+	pg.base.equip_skin_template[287] = {
 		orbit_slg = "",
 		name = "胶囊鱼雷",
 		orbit_ui_bound = "",
@@ -11767,11 +10858,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.equip_skin_template
-
-	var_3_25[288] = {
+	pg.base.equip_skin_template[288] = {
 		orbit_slg = "",
 		name = "试管鱼雷",
 		orbit_ui_bound = "",
@@ -11812,11 +10899,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.equip_skin_template
-
-	var_3_26[289] = {
+	pg.base.equip_skin_template[289] = {
 		orbit_slg = "",
 		name = "轮椅啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -11856,11 +10939,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.equip_skin_template
-
-	var_3_27[290] = {
+	pg.base.equip_skin_template[290] = {
 		orbit_slg = "",
 		name = "轮椅啾(战斗)",
 		orbit_ui_bound = "",
@@ -11900,11 +10979,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.equip_skin_template
-
-	var_3_28[291] = {
+	pg.base.equip_skin_template[291] = {
 		orbit_slg = "",
 		name = "轮椅啾(轰炸)",
 		orbit_ui_bound = "",
@@ -11944,11 +11019,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.equip_skin_template
-
-	var_3_29[292] = {
+	pg.base.equip_skin_template[292] = {
 		orbit_slg = "",
 		name = "天使啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -11988,11 +11059,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.equip_skin_template
-
-	var_3_30[293] = {
+	pg.base.equip_skin_template[293] = {
 		orbit_slg = "",
 		name = "天使啾(战斗)",
 		orbit_ui_bound = "",
@@ -12032,11 +11099,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.equip_skin_template
-
-	var_3_31[294] = {
+	pg.base.equip_skin_template[294] = {
 		orbit_slg = "",
 		name = "天使啾(轰炸)",
 		orbit_ui_bound = "",
@@ -12076,11 +11139,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.equip_skin_template
-
-	var_3_32[295] = {
+	pg.base.equip_skin_template[295] = {
 		orbit_slg = "",
 		name = "飞天救援车(鱼雷)",
 		orbit_ui_bound = "",
@@ -12120,11 +11179,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.equip_skin_template
-
-	var_3_33[296] = {
+	pg.base.equip_skin_template[296] = {
 		orbit_slg = "",
 		name = "飞天救援车(战斗)",
 		orbit_ui_bound = "",
@@ -12164,11 +11219,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.equip_skin_template
-
-	var_3_34[297] = {
+	pg.base.equip_skin_template[297] = {
 		orbit_slg = "",
 		name = "飞天救援车(轰炸)",
 		orbit_ui_bound = "",
@@ -12208,11 +11259,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.equip_skin_template
-
-	var_3_35[300] = {
+	pg.base.equip_skin_template[300] = {
 		orbit_slg = "",
 		name = "寿司子弹",
 		orbit_ui_bound = "",
@@ -12254,11 +11301,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.equip_skin_template
-
-	var_3_36[301] = {
+	pg.base.equip_skin_template[301] = {
 		orbit_slg = "",
 		name = "将棋子弹",
 		orbit_ui_bound = "",
@@ -12300,11 +11343,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.equip_skin_template
-
-	var_3_37[302] = {
+	pg.base.equip_skin_template[302] = {
 		orbit_slg = "",
 		name = "大福子弹",
 		orbit_ui_bound = "",
@@ -12346,11 +11385,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.equip_skin_template
-
-	var_3_38[303] = {
+	pg.base.equip_skin_template[303] = {
 		orbit_slg = "",
 		name = "炮弹·达摩啾",
 		orbit_ui_bound = "",
@@ -12392,11 +11427,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.equip_skin_template
-
-	var_3_39[304] = {
+	pg.base.equip_skin_template[304] = {
 		orbit_slg = "",
 		name = "炮弹·妖怪灯笼",
 		orbit_ui_bound = "",
@@ -12438,11 +11469,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.equip_skin_template
-
-	var_3_40[305] = {
+	pg.base.equip_skin_template[305] = {
 		orbit_slg = "",
 		name = "炮弹·唐伞小僧",
 		orbit_ui_bound = "",
@@ -12484,11 +11511,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.equip_skin_template
-
-	var_3_41[306] = {
+	pg.base.equip_skin_template[306] = {
 		orbit_slg = "",
 		name = "清酒鱼雷",
 		orbit_ui_bound = "",
@@ -12529,11 +11552,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.equip_skin_template
-
-	var_3_42[307] = {
+	pg.base.equip_skin_template[307] = {
 		orbit_slg = "",
 		name = "水勺鱼雷",
 		orbit_ui_bound = "",
@@ -12574,11 +11593,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.equip_skin_template
-
-	var_3_43[308] = {
+	pg.base.equip_skin_template[308] = {
 		orbit_slg = "",
 		name = "武士刀鱼雷",
 		orbit_ui_bound = "",
@@ -12619,11 +11634,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.equip_skin_template
-
-	var_3_44[309] = {
+	pg.base.equip_skin_template[309] = {
 		orbit_slg = "",
 		name = "天狗啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -12663,11 +11674,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.equip_skin_template
-
-	var_3_45[310] = {
+	pg.base.equip_skin_template[310] = {
 		orbit_slg = "",
 		name = "天狗啾(战斗)",
 		orbit_ui_bound = "",
@@ -12707,11 +11714,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.equip_skin_template
-
-	var_3_46[311] = {
+	pg.base.equip_skin_template[311] = {
 		orbit_slg = "",
 		name = "天狗啾(轰炸)",
 		orbit_ui_bound = "",
@@ -12751,11 +11754,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.equip_skin_template
-
-	var_3_47[312] = {
+	pg.base.equip_skin_template[312] = {
 		orbit_slg = "",
 		name = "飞空城·白鹭(鱼雷)",
 		orbit_ui_bound = "",
@@ -12795,11 +11794,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.equip_skin_template
-
-	var_3_48[313] = {
+	pg.base.equip_skin_template[313] = {
 		orbit_slg = "",
 		name = "飞空城·白鹭(战斗)",
 		orbit_ui_bound = "",
@@ -12839,11 +11834,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.equip_skin_template
-
-	var_3_49[314] = {
+	pg.base.equip_skin_template[314] = {
 		orbit_slg = "",
 		name = "飞空城·白鹭(轰炸)",
 		orbit_ui_bound = "",
@@ -12883,11 +11874,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.equip_skin_template
-
-	var_3_50[315] = {
+	pg.base.equip_skin_template[315] = {
 		orbit_slg = "",
 		name = "神轿啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -12927,11 +11914,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.equip_skin_template
-
-	var_3_51[316] = {
+	pg.base.equip_skin_template[316] = {
 		orbit_slg = "",
 		name = "神轿啾(战斗)",
 		orbit_ui_bound = "",
@@ -12971,11 +11954,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.equip_skin_template
-
-	var_3_52[317] = {
+	pg.base.equip_skin_template[317] = {
 		orbit_slg = "",
 		name = "神轿啾(轰炸)",
 		orbit_ui_bound = "",
@@ -13015,11 +11994,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.equip_skin_template
-
-	var_3_53[320] = {
+	pg.base.equip_skin_template[320] = {
 		orbit_slg = "",
 		name = "星子弹(紫)",
 		orbit_ui_bound = "",
@@ -13061,11 +12036,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.equip_skin_template
-
-	var_3_54[321] = {
+	pg.base.equip_skin_template[321] = {
 		orbit_slg = "",
 		name = "星子弹(蓝)",
 		orbit_ui_bound = "",
@@ -13107,11 +12078,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.equip_skin_template
-
-	var_3_55[322] = {
+	pg.base.equip_skin_template[322] = {
 		orbit_slg = "",
 		name = "星子弹(白)",
 		orbit_ui_bound = "",
@@ -13153,11 +12120,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.equip_skin_template
-
-	var_3_56[323] = {
+	pg.base.equip_skin_template[323] = {
 		orbit_slg = "",
 		name = "星云炮弹",
 		orbit_ui_bound = "",
@@ -13199,11 +12162,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.equip_skin_template
-
-	var_3_57[324] = {
+	pg.base.equip_skin_template[324] = {
 		orbit_slg = "",
 		name = "恋星炮弹",
 		orbit_ui_bound = "",
@@ -13245,11 +12204,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.equip_skin_template
-
-	var_3_58[325] = {
+	pg.base.equip_skin_template[325] = {
 		orbit_slg = "",
 		name = "流星炮弹",
 		orbit_ui_bound = "",
@@ -13291,11 +12246,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.equip_skin_template
-
-	var_3_59[326] = {
+	pg.base.equip_skin_template[326] = {
 		orbit_slg = "",
 		name = "航天鱼雷(赤)",
 		orbit_ui_bound = "",
@@ -13336,11 +12287,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.equip_skin_template
-
-	var_3_60[327] = {
+	pg.base.equip_skin_template[327] = {
 		orbit_slg = "",
 		name = "火箭鱼雷",
 		orbit_ui_bound = "",
@@ -13381,11 +12328,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.equip_skin_template
-
-	var_3_61[328] = {
+	pg.base.equip_skin_template[328] = {
 		orbit_slg = "",
 		name = "卫星鱼雷",
 		orbit_ui_bound = "",
@@ -13426,11 +12369,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.equip_skin_template
-
-	var_3_62[329] = {
+	pg.base.equip_skin_template[329] = {
 		orbit_slg = "",
 		name = "航空舞台啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -13470,11 +12409,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.equip_skin_template
-
-	var_3_63[330] = {
+	pg.base.equip_skin_template[330] = {
 		orbit_slg = "",
 		name = "航空舞台啾(战斗)",
 		orbit_ui_bound = "",
@@ -13514,11 +12449,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.equip_skin_template
-
-	var_3_64[331] = {
+	pg.base.equip_skin_template[331] = {
 		orbit_slg = "",
 		name = "航空舞台啾(轰炸)",
 		orbit_ui_bound = "",
@@ -13558,11 +12489,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.equip_skin_template
-
-	var_3_65[332] = {
+	pg.base.equip_skin_template[332] = {
 		orbit_slg = "",
 		name = "卫星伴舞啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -13602,11 +12529,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.equip_skin_template
-
-	var_3_66[333] = {
+	pg.base.equip_skin_template[333] = {
 		orbit_slg = "",
 		name = "卫星伴舞啾(战斗)",
 		orbit_ui_bound = "",
@@ -13646,11 +12569,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.equip_skin_template
-
-	var_3_67[334] = {
+	pg.base.equip_skin_template[334] = {
 		orbit_slg = "",
 		name = "卫星伴舞啾(轰炸)",
 		orbit_ui_bound = "",
@@ -13690,11 +12609,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.equip_skin_template
-
-	var_3_68[335] = {
+	pg.base.equip_skin_template[335] = {
 		orbit_slg = "",
 		name = "神圣天使啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -13734,11 +12649,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.equip_skin_template
-
-	var_3_69[336] = {
+	pg.base.equip_skin_template[336] = {
 		orbit_slg = "",
 		name = "神圣天使啾(战斗)",
 		orbit_ui_bound = "",
@@ -13778,11 +12689,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.equip_skin_template
-
-	var_3_70[337] = {
+	pg.base.equip_skin_template[337] = {
 		orbit_slg = "",
 		name = "神圣天使啾(轰炸)",
 		orbit_ui_bound = "",
@@ -13822,11 +12729,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.equip_skin_template
-
-	var_3_71[340] = {
+	pg.base.equip_skin_template[340] = {
 		orbit_slg = "",
 		name = "强化石子弹",
 		orbit_ui_bound = "",
@@ -13868,11 +12771,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.equip_skin_template
-
-	var_3_72[341] = {
+	pg.base.equip_skin_template[341] = {
 		orbit_slg = "",
 		name = "羽毛子弹",
 		orbit_ui_bound = "",
@@ -13914,11 +12813,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.equip_skin_template
-
-	var_3_73[342] = {
+	pg.base.equip_skin_template[342] = {
 		orbit_slg = "",
 		name = "扑克牌子弹",
 		orbit_ui_bound = "",
@@ -13960,11 +12855,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.equip_skin_template
-
-	var_3_74[343] = {
+	pg.base.equip_skin_template[343] = {
 		orbit_slg = "",
 		name = "高级哈密瓜炮弹",
 		orbit_ui_bound = "",
@@ -14006,11 +12897,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.equip_skin_template
-
-	var_3_75[344] = {
+	pg.base.equip_skin_template[344] = {
 		orbit_slg = "",
 		name = "多汁桃子炮弹",
 		orbit_ui_bound = "",
@@ -14052,11 +12939,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.equip_skin_template
-
-	var_3_76[345] = {
+	pg.base.equip_skin_template[345] = {
 		orbit_slg = "",
 		name = "竞技西瓜炮弹",
 		orbit_ui_bound = "",
@@ -14098,11 +12981,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.equip_skin_template
-
-	var_3_77[346] = {
+	pg.base.equip_skin_template[346] = {
 		orbit_slg = "",
 		name = "沙锤鱼雷",
 		orbit_ui_bound = "",
@@ -14143,11 +13022,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.equip_skin_template
-
-	var_3_78[347] = {
+	pg.base.equip_skin_template[347] = {
 		orbit_slg = "",
 		name = "维纳斯群岛饮料鱼雷",
 		orbit_ui_bound = "",
@@ -14188,11 +13063,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.equip_skin_template
-
-	var_3_79[348] = {
+	pg.base.equip_skin_template[348] = {
 		orbit_slg = "",
 		name = "椰子树鱼雷",
 		orbit_ui_bound = "",
@@ -14233,11 +13104,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.equip_skin_template
-
-	var_3_80[349] = {
+	pg.base.equip_skin_template[349] = {
 		orbit_slg = "",
 		name = "度假啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -14277,11 +13144,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.equip_skin_template
-
-	var_3_81[350] = {
+	pg.base.equip_skin_template[350] = {
 		orbit_slg = "",
 		name = "度假啾(战斗)",
 		orbit_ui_bound = "",
@@ -14321,11 +13184,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.equip_skin_template
-
-	var_3_82[351] = {
+	pg.base.equip_skin_template[351] = {
 		orbit_slg = "",
 		name = "度假啾(轰炸)",
 		orbit_ui_bound = "",
@@ -14365,11 +13224,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.equip_skin_template
-
-	var_3_83[352] = {
+	pg.base.equip_skin_template[352] = {
 		orbit_slg = "",
 		name = "沙排啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -14409,11 +13264,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.equip_skin_template
-
-	var_3_84[353] = {
+	pg.base.equip_skin_template[353] = {
 		orbit_slg = "",
 		name = "沙排啾(战斗)",
 		orbit_ui_bound = "",
@@ -14453,11 +13304,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.equip_skin_template
-
-	var_3_85[354] = {
+	pg.base.equip_skin_template[354] = {
 		orbit_slg = "",
 		name = "沙排啾(轰炸)",
 		orbit_ui_bound = "",
@@ -14497,11 +13344,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.equip_skin_template
-
-	var_3_86[355] = {
+	pg.base.equip_skin_template[355] = {
 		orbit_slg = "",
 		name = "吊床啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -14541,11 +13384,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.equip_skin_template
-
-	var_3_87[356] = {
+	pg.base.equip_skin_template[356] = {
 		orbit_slg = "",
 		name = "吊床啾(战斗)",
 		orbit_ui_bound = "",
@@ -14585,11 +13424,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.equip_skin_template
-
-	var_3_88[357] = {
+	pg.base.equip_skin_template[357] = {
 		orbit_slg = "",
 		name = "吊床啾(轰炸)",
 		orbit_ui_bound = "",
@@ -14629,11 +13464,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.equip_skin_template
-
-	var_3_89[360] = {
+	pg.base.equip_skin_template[360] = {
 		orbit_slg = "",
 		name = "螺母子弹",
 		orbit_ui_bound = "",
@@ -14675,11 +13506,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.equip_skin_template
-
-	var_3_90[361] = {
+	pg.base.equip_skin_template[361] = {
 		orbit_slg = "",
 		name = "音响子弹",
 		orbit_ui_bound = "",
@@ -14721,11 +13548,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.equip_skin_template
-
-	var_3_91[362] = {
+	pg.base.equip_skin_template[362] = {
 		orbit_slg = "",
 		name = "琥珀子弹",
 		orbit_ui_bound = "",
@@ -14767,11 +13590,7 @@ end)()
 			101
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.equip_skin_template
-
-	var_3_92[363] = {
+	pg.base.equip_skin_template[363] = {
 		orbit_slg = "",
 		name = "黑森林蛋糕炮弹",
 		orbit_ui_bound = "",
@@ -14813,11 +13632,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.equip_skin_template
-
-	var_3_93[364] = {
+	pg.base.equip_skin_template[364] = {
 		orbit_slg = "",
 		name = "矢车菊炮弹",
 		orbit_ui_bound = "",
@@ -14859,11 +13674,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.equip_skin_template
-
-	var_3_94[365] = {
+	pg.base.equip_skin_template[365] = {
 		orbit_slg = "",
 		name = "白鹳(雕像)炮弹",
 		orbit_ui_bound = "",
@@ -14905,11 +13716,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.equip_skin_template
-
-	var_3_95[366] = {
+	pg.base.equip_skin_template[366] = {
 		orbit_slg = "",
 		name = "香肠鱼雷",
 		orbit_ui_bound = "",
@@ -14950,11 +13757,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.equip_skin_template
-
-	var_3_96[367] = {
+	pg.base.equip_skin_template[367] = {
 		orbit_slg = "",
 		name = "猪手鱼雷",
 		orbit_ui_bound = "",
@@ -14995,11 +13798,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.equip_skin_template
-
-	var_3_97[368] = {
+	pg.base.equip_skin_template[368] = {
 		orbit_slg = "",
 		name = "啤酒鱼雷",
 		orbit_ui_bound = "",
@@ -15040,11 +13839,7 @@ end)()
 			107
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.equip_skin_template
-
-	var_3_98[369] = {
+	pg.base.equip_skin_template[369] = {
 		orbit_slg = "",
 		name = "飞艇啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -15084,8 +13879,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.equip_skin_template[370] = {
+	pg.base.equip_skin_template[370] = {
 		orbit_slg = "",
 		name = "飞艇啾(战斗)",
 		orbit_ui_bound = "",
@@ -15129,11 +13923,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.equip_skin_template
-
-	var_4_0[371] = {
+	pg.base.equip_skin_template[371] = {
 		orbit_slg = "",
 		name = "飞艇啾(轰炸)",
 		orbit_ui_bound = "",
@@ -15173,11 +13963,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.equip_skin_template
-
-	var_4_1[372] = {
+	pg.base.equip_skin_template[372] = {
 		orbit_slg = "",
 		name = "飞天汽车啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -15217,11 +14003,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.equip_skin_template
-
-	var_4_2[373] = {
+	pg.base.equip_skin_template[373] = {
 		orbit_slg = "",
 		name = "飞天汽车啾(战斗)",
 		orbit_ui_bound = "",
@@ -15261,11 +14043,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.equip_skin_template
-
-	var_4_3[374] = {
+	pg.base.equip_skin_template[374] = {
 		orbit_slg = "",
 		name = "飞天汽车啾(轰炸)",
 		orbit_ui_bound = "",
@@ -15305,11 +14083,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.equip_skin_template
-
-	var_4_4[375] = {
+	pg.base.equip_skin_template[375] = {
 		orbit_slg = "",
 		name = "梦幻古堡啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -15349,11 +14123,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.equip_skin_template
-
-	var_4_5[376] = {
+	pg.base.equip_skin_template[376] = {
 		orbit_slg = "",
 		name = "梦幻古堡啾(战斗)",
 		orbit_ui_bound = "",
@@ -15393,11 +14163,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.equip_skin_template
-
-	var_4_6[377] = {
+	pg.base.equip_skin_template[377] = {
 		orbit_slg = "",
 		name = "梦幻古堡啾(轰炸)",
 		orbit_ui_bound = "",
@@ -15437,11 +14203,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.equip_skin_template
-
-	var_4_7[380] = {
+	pg.base.equip_skin_template[380] = {
 		orbit_slg = "",
 		name = "辣椒子弹",
 		orbit_ui_bound = "",
@@ -15483,11 +14245,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.equip_skin_template
-
-	var_4_8[381] = {
+	pg.base.equip_skin_template[381] = {
 		orbit_slg = "",
 		name = "窗花子弹",
 		orbit_ui_bound = "",
@@ -15529,11 +14287,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.equip_skin_template
-
-	var_4_9[382] = {
+	pg.base.equip_skin_template[382] = {
 		orbit_slg = "",
 		name = "福运子弹",
 		orbit_ui_bound = "",
@@ -15575,11 +14329,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.equip_skin_template
-
-	var_4_10[383] = {
+	pg.base.equip_skin_template[383] = {
 		orbit_slg = "",
 		name = "饺子炮弹",
 		orbit_ui_bound = "",
@@ -15621,11 +14371,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.equip_skin_template
-
-	var_4_11[384] = {
+	pg.base.equip_skin_template[384] = {
 		orbit_slg = "",
 		name = "汤圆炮弹",
 		orbit_ui_bound = "",
@@ -15667,11 +14413,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.equip_skin_template
-
-	var_4_12[385] = {
+	pg.base.equip_skin_template[385] = {
 		orbit_slg = "",
 		name = "年糕炮弹",
 		orbit_ui_bound = "",
@@ -15713,11 +14455,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.equip_skin_template
-
-	var_4_13[386] = {
+	pg.base.equip_skin_template[386] = {
 		orbit_slg = "",
 		name = "糖葫芦鱼雷",
 		orbit_ui_bound = "",
@@ -15758,11 +14496,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.equip_skin_template
-
-	var_4_14[387] = {
+	pg.base.equip_skin_template[387] = {
 		orbit_slg = "",
 		name = "灶糖鱼雷",
 		orbit_ui_bound = "",
@@ -15803,11 +14537,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.equip_skin_template
-
-	var_4_15[388] = {
+	pg.base.equip_skin_template[388] = {
 		orbit_slg = "",
 		name = "春卷鱼雷",
 		orbit_ui_bound = "",
@@ -15848,11 +14578,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.equip_skin_template
-
-	var_4_16[389] = {
+	pg.base.equip_skin_template[389] = {
 		orbit_slg = "",
 		name = "舞狮啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -15892,11 +14618,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.equip_skin_template
-
-	var_4_17[390] = {
+	pg.base.equip_skin_template[390] = {
 		orbit_slg = "",
 		name = "舞狮啾(战斗)",
 		orbit_ui_bound = "",
@@ -15936,11 +14658,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.equip_skin_template
-
-	var_4_18[391] = {
+	pg.base.equip_skin_template[391] = {
 		orbit_slg = "",
 		name = "舞狮啾(轰炸)",
 		orbit_ui_bound = "",
@@ -15980,11 +14698,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.equip_skin_template
-
-	var_4_19[392] = {
+	pg.base.equip_skin_template[392] = {
 		orbit_slg = "",
 		name = "牛牛啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -16024,11 +14738,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.equip_skin_template
-
-	var_4_20[393] = {
+	pg.base.equip_skin_template[393] = {
 		orbit_slg = "",
 		name = "牛牛啾(战斗)",
 		orbit_ui_bound = "",
@@ -16068,11 +14778,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.equip_skin_template
-
-	var_4_21[394] = {
+	pg.base.equip_skin_template[394] = {
 		orbit_slg = "",
 		name = "牛牛啾(轰炸)",
 		orbit_ui_bound = "",
@@ -16112,11 +14818,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.equip_skin_template
-
-	var_4_22[395] = {
+	pg.base.equip_skin_template[395] = {
 		orbit_slg = "",
 		name = "拜年啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -16156,11 +14858,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.equip_skin_template
-
-	var_4_23[396] = {
+	pg.base.equip_skin_template[396] = {
 		orbit_slg = "",
 		name = "拜年啾(战斗)",
 		orbit_ui_bound = "",
@@ -16200,11 +14898,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.equip_skin_template
-
-	var_4_24[397] = {
+	pg.base.equip_skin_template[397] = {
 		orbit_slg = "",
 		name = "拜年啾(轰炸)",
 		orbit_ui_bound = "",
@@ -16244,11 +14938,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.equip_skin_template
-
-	var_4_25[398] = {
+	pg.base.equip_skin_template[398] = {
 		orbit_slg = "",
 		name = "超级喵喵1号",
 		orbit_ui_bound = "",
@@ -16290,11 +14980,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.equip_skin_template
-
-	var_4_26[400] = {
+	pg.base.equip_skin_template[400] = {
 		orbit_slg = "",
 		name = "甜甜圈子弹",
 		orbit_ui_bound = "",
@@ -16336,11 +15022,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.equip_skin_template
-
-	var_4_27[401] = {
+	pg.base.equip_skin_template[401] = {
 		orbit_slg = "",
 		name = "棉花糖子弹",
 		orbit_ui_bound = "",
@@ -16382,11 +15064,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.equip_skin_template
-
-	var_4_28[402] = {
+	pg.base.equip_skin_template[402] = {
 		orbit_slg = "",
 		name = "奶茶子弹",
 		orbit_ui_bound = "",
@@ -16428,11 +15106,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.equip_skin_template
-
-	var_4_29[403] = {
+	pg.base.equip_skin_template[403] = {
 		orbit_slg = "",
 		name = "旋转茶杯炮弹",
 		orbit_ui_bound = "",
@@ -16474,11 +15148,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.equip_skin_template
-
-	var_4_30[404] = {
+	pg.base.equip_skin_template[404] = {
 		orbit_slg = "",
 		name = "小熊卫兵炮弹",
 		orbit_ui_bound = "",
@@ -16520,11 +15190,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.equip_skin_template
-
-	var_4_31[405] = {
+	pg.base.equip_skin_template[405] = {
 		orbit_slg = "",
 		name = "气球炮弹",
 		orbit_ui_bound = "",
@@ -16566,11 +15232,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.equip_skin_template
-
-	var_4_32[406] = {
+	pg.base.equip_skin_template[406] = {
 		orbit_slg = "",
 		name = "章鱼鱼雷",
 		orbit_ui_bound = "",
@@ -16611,11 +15273,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.equip_skin_template
-
-	var_4_33[407] = {
+	pg.base.equip_skin_template[407] = {
 		orbit_slg = "",
 		name = "激流勇进鱼雷",
 		orbit_ui_bound = "",
@@ -16656,11 +15314,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.equip_skin_template
-
-	var_4_34[408] = {
+	pg.base.equip_skin_template[408] = {
 		orbit_slg = "",
 		name = "烟花鱼雷",
 		orbit_ui_bound = "",
@@ -16701,11 +15355,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.equip_skin_template
-
-	var_4_35[409] = {
+	pg.base.equip_skin_template[409] = {
 		orbit_slg = "",
 		name = "飞天独角兽(鱼雷)",
 		orbit_ui_bound = "",
@@ -16745,11 +15395,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.equip_skin_template
-
-	var_4_36[410] = {
+	pg.base.equip_skin_template[410] = {
 		orbit_slg = "",
 		name = "飞天独角兽(战斗)",
 		orbit_ui_bound = "",
@@ -16789,11 +15435,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.equip_skin_template
-
-	var_4_37[411] = {
+	pg.base.equip_skin_template[411] = {
 		orbit_slg = "",
 		name = "飞天独角兽(轰炸)",
 		orbit_ui_bound = "",
@@ -16833,11 +15475,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.equip_skin_template
-
-	var_4_38[412] = {
+	pg.base.equip_skin_template[412] = {
 		orbit_slg = "",
 		name = "飞天马车(鱼雷)",
 		orbit_ui_bound = "",
@@ -16877,11 +15515,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.equip_skin_template
-
-	var_4_39[413] = {
+	pg.base.equip_skin_template[413] = {
 		orbit_slg = "",
 		name = "飞天马车(战斗)",
 		orbit_ui_bound = "",
@@ -16921,11 +15555,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.equip_skin_template
-
-	var_4_40[414] = {
+	pg.base.equip_skin_template[414] = {
 		orbit_slg = "",
 		name = "飞天马车(轰炸)",
 		orbit_ui_bound = "",
@@ -16965,11 +15595,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.equip_skin_template
-
-	var_4_41[415] = {
+	pg.base.equip_skin_template[415] = {
 		orbit_slg = "",
 		name = "飞天海盗船(鱼雷)",
 		orbit_ui_bound = "",
@@ -17009,11 +15635,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.equip_skin_template
-
-	var_4_42[416] = {
+	pg.base.equip_skin_template[416] = {
 		orbit_slg = "",
 		name = "飞天海盗船(战斗)",
 		orbit_ui_bound = "",
@@ -17053,11 +15675,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.equip_skin_template
-
-	var_4_43[417] = {
+	pg.base.equip_skin_template[417] = {
 		orbit_slg = "",
 		name = "飞天海盗船(轰炸)",
 		orbit_ui_bound = "",
@@ -17097,11 +15715,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.equip_skin_template
-
-	var_4_44[420] = {
+	pg.base.equip_skin_template[420] = {
 		orbit_slg = "",
 		name = "发带炮弹",
 		orbit_ui_bound = "",
@@ -17143,11 +15757,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.equip_skin_template
-
-	var_4_45[421] = {
+	pg.base.equip_skin_template[421] = {
 		orbit_slg = "",
 		name = "纪念徽章子弹",
 		orbit_ui_bound = "",
@@ -17189,11 +15799,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.equip_skin_template
-
-	var_4_46[422] = {
+	pg.base.equip_skin_template[422] = {
 		orbit_slg = "",
 		name = "纪念马克杯子弹",
 		orbit_ui_bound = "",
@@ -17235,11 +15841,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.equip_skin_template
-
-	var_4_47[423] = {
+	pg.base.equip_skin_template[423] = {
 		orbit_slg = "",
 		name = "千早炮弹",
 		orbit_ui_bound = "",
@@ -17281,11 +15883,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.equip_skin_template
-
-	var_4_48[424] = {
+	pg.base.equip_skin_template[424] = {
 		orbit_slg = "",
 		name = "梓炮弹",
 		orbit_ui_bound = "",
@@ -17327,11 +15925,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.equip_skin_template
-
-	var_4_49[425] = {
+	pg.base.equip_skin_template[425] = {
 		orbit_slg = "",
 		name = "伊织炮弹",
 		orbit_ui_bound = "",
@@ -17373,11 +15967,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.equip_skin_template
-
-	var_4_50[426] = {
+	pg.base.equip_skin_template[426] = {
 		orbit_slg = "",
 		name = "应援棒鱼雷",
 		orbit_ui_bound = "",
@@ -17418,11 +16008,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.equip_skin_template
-
-	var_4_51[427] = {
+	pg.base.equip_skin_template[427] = {
 		orbit_slg = "",
 		name = "花束鱼雷",
 		orbit_ui_bound = "",
@@ -17463,11 +16049,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.equip_skin_template
-
-	var_4_52[428] = {
+	pg.base.equip_skin_template[428] = {
 		orbit_slg = "",
 		name = "口红鱼雷",
 		orbit_ui_bound = "",
@@ -17508,11 +16090,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.equip_skin_template
-
-	var_4_53[429] = {
+	pg.base.equip_skin_template[429] = {
 		orbit_slg = "",
 		name = "啾啾应援飞艇(鱼雷)",
 		orbit_ui_bound = "",
@@ -17552,11 +16130,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.equip_skin_template
-
-	var_4_54[430] = {
+	pg.base.equip_skin_template[430] = {
 		orbit_slg = "",
 		name = "啾啾应援飞艇(战斗)",
 		orbit_ui_bound = "",
@@ -17596,11 +16170,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.equip_skin_template
-
-	var_4_55[431] = {
+	pg.base.equip_skin_template[431] = {
 		orbit_slg = "",
 		name = "啾啾应援飞艇(轰炸)",
 		orbit_ui_bound = "",
@@ -17640,11 +16210,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.equip_skin_template
-
-	var_4_56[432] = {
+	pg.base.equip_skin_template[432] = {
 		orbit_slg = "",
 		name = "应援啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -17684,11 +16250,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.equip_skin_template
-
-	var_4_57[433] = {
+	pg.base.equip_skin_template[433] = {
 		orbit_slg = "",
 		name = "应援啾(战斗)",
 		orbit_ui_bound = "",
@@ -17728,11 +16290,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.equip_skin_template
-
-	var_4_58[434] = {
+	pg.base.equip_skin_template[434] = {
 		orbit_slg = "",
 		name = "应援啾(轰炸)",
 		orbit_ui_bound = "",
@@ -17772,11 +16330,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.equip_skin_template
-
-	var_4_59[435] = {
+	pg.base.equip_skin_template[435] = {
 		orbit_slg = "",
 		name = "啾啾应援飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -17816,11 +16370,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.equip_skin_template
-
-	var_4_60[436] = {
+	pg.base.equip_skin_template[436] = {
 		orbit_slg = "",
 		name = "啾啾应援飞机(战斗)",
 		orbit_ui_bound = "",
@@ -17860,11 +16410,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.equip_skin_template
-
-	var_4_61[437] = {
+	pg.base.equip_skin_template[437] = {
 		orbit_slg = "",
 		name = "啾啾应援飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -17904,11 +16450,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.equip_skin_template
-
-	var_4_62[440] = {
+	pg.base.equip_skin_template[440] = {
 		orbit_slg = "",
 		name = "勋章子弹",
 		orbit_ui_bound = "",
@@ -17950,11 +16492,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.equip_skin_template
-
-	var_4_63[441] = {
+	pg.base.equip_skin_template[441] = {
 		orbit_slg = "",
 		name = "牛奶瓶子弹",
 		orbit_ui_bound = "",
@@ -17996,11 +16534,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.equip_skin_template
-
-	var_4_64[442] = {
+	pg.base.equip_skin_template[442] = {
 		orbit_slg = "",
 		name = "马蹄铁子弹",
 		orbit_ui_bound = "",
@@ -18042,11 +16576,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.equip_skin_template
-
-	var_4_65[443] = {
+	pg.base.equip_skin_template[443] = {
 		orbit_slg = "",
 		name = "牛仔帽炮弹",
 		orbit_ui_bound = "",
@@ -18088,11 +16618,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.equip_skin_template
-
-	var_4_66[444] = {
+	pg.base.equip_skin_template[444] = {
 		orbit_slg = "",
 		name = "牛仔靴炮弹",
 		orbit_ui_bound = "",
@@ -18134,11 +16660,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.equip_skin_template
-
-	var_4_67[445] = {
+	pg.base.equip_skin_template[445] = {
 		orbit_slg = "",
 		name = "左轮枪炮弹",
 		orbit_ui_bound = "",
@@ -18180,11 +16702,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.equip_skin_template
-
-	var_4_68[446] = {
+	pg.base.equip_skin_template[446] = {
 		orbit_slg = "",
 		name = "雪茄鱼雷",
 		orbit_ui_bound = "",
@@ -18225,11 +16743,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.equip_skin_template
-
-	var_4_69[447] = {
+	pg.base.equip_skin_template[447] = {
 		orbit_slg = "",
 		name = "飞镖鱼雷",
 		orbit_ui_bound = "",
@@ -18270,11 +16784,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.equip_skin_template
-
-	var_4_70[448] = {
+	pg.base.equip_skin_template[448] = {
 		orbit_slg = "",
 		name = "仙人掌鱼雷",
 		orbit_ui_bound = "",
@@ -18315,11 +16825,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.equip_skin_template
-
-	var_4_71[449] = {
+	pg.base.equip_skin_template[449] = {
 		orbit_slg = "",
 		name = "火车啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -18359,11 +16865,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.equip_skin_template
-
-	var_4_72[450] = {
+	pg.base.equip_skin_template[450] = {
 		orbit_slg = "",
 		name = "火车啾(战斗)",
 		orbit_ui_bound = "",
@@ -18403,11 +16905,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.equip_skin_template
-
-	var_4_73[451] = {
+	pg.base.equip_skin_template[451] = {
 		orbit_slg = "",
 		name = "火车啾(轰炸)",
 		orbit_ui_bound = "",
@@ -18447,11 +16945,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.equip_skin_template
-
-	var_4_74[452] = {
+	pg.base.equip_skin_template[452] = {
 		orbit_slg = "",
 		name = "飞行酒吧啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -18491,11 +16985,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.equip_skin_template
-
-	var_4_75[453] = {
+	pg.base.equip_skin_template[453] = {
 		orbit_slg = "",
 		name = "飞行酒吧啾(战斗)",
 		orbit_ui_bound = "",
@@ -18535,11 +17025,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.equip_skin_template
-
-	var_4_76[454] = {
+	pg.base.equip_skin_template[454] = {
 		orbit_slg = "",
 		name = "飞行酒吧啾(轰炸)",
 		orbit_ui_bound = "",
@@ -18579,11 +17065,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.equip_skin_template
-
-	var_4_77[455] = {
+	pg.base.equip_skin_template[455] = {
 		orbit_slg = "",
 		name = "骑马啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -18623,11 +17105,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.equip_skin_template
-
-	var_4_78[456] = {
+	pg.base.equip_skin_template[456] = {
 		orbit_slg = "",
 		name = "骑马啾(战斗)",
 		orbit_ui_bound = "",
@@ -18667,11 +17145,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.equip_skin_template
-
-	var_4_79[457] = {
+	pg.base.equip_skin_template[457] = {
 		orbit_slg = "",
 		name = "骑马啾(轰炸)",
 		orbit_ui_bound = "",
@@ -18711,11 +17185,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.equip_skin_template
-
-	var_4_80[460] = {
+	pg.base.equip_skin_template[460] = {
 		orbit_slg = "",
 		name = "防晒霜子弹",
 		orbit_ui_bound = "",
@@ -18757,11 +17227,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.equip_skin_template
-
-	var_4_81[461] = {
+	pg.base.equip_skin_template[461] = {
 		orbit_slg = "",
 		name = "浮球子弹",
 		orbit_ui_bound = "",
@@ -18803,11 +17269,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.equip_skin_template
-
-	var_4_82[462] = {
+	pg.base.equip_skin_template[462] = {
 		orbit_slg = "",
 		name = "海星子弹",
 		orbit_ui_bound = "",
@@ -18849,11 +17311,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.equip_skin_template
-
-	var_4_83[463] = {
+	pg.base.equip_skin_template[463] = {
 		orbit_slg = "",
 		name = "啾啾气球炮弹",
 		orbit_ui_bound = "",
@@ -18895,11 +17353,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.equip_skin_template
-
-	var_4_84[464] = {
+	pg.base.equip_skin_template[464] = {
 		orbit_slg = "",
 		name = "鲸鱼气球炮弹",
 		orbit_ui_bound = "",
@@ -18941,11 +17395,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.equip_skin_template
-
-	var_4_85[465] = {
+	pg.base.equip_skin_template[465] = {
 		orbit_slg = "",
 		name = "章鱼气球炮弹",
 		orbit_ui_bound = "",
@@ -18987,11 +17437,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.equip_skin_template
-
-	var_4_86[466] = {
+	pg.base.equip_skin_template[466] = {
 		orbit_slg = "",
 		name = "企鹅鱼雷",
 		orbit_ui_bound = "",
@@ -19032,11 +17478,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.equip_skin_template
-
-	var_4_87[467] = {
+	pg.base.equip_skin_template[467] = {
 		orbit_slg = "",
 		name = "海螺鱼雷",
 		orbit_ui_bound = "",
@@ -19077,11 +17519,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.equip_skin_template
-
-	var_4_88[468] = {
+	pg.base.equip_skin_template[468] = {
 		orbit_slg = "",
 		name = "水枪鱼雷",
 		orbit_ui_bound = "",
@@ -19122,11 +17560,7 @@ end)()
 			107
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.equip_skin_template
-
-	var_4_89[469] = {
+	pg.base.equip_skin_template[469] = {
 		orbit_slg = "",
 		name = "飞天香蕉船(鱼雷)",
 		orbit_ui_bound = "",
@@ -19166,11 +17600,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.equip_skin_template
-
-	var_4_90[470] = {
+	pg.base.equip_skin_template[470] = {
 		orbit_slg = "",
 		name = "飞天香蕉船(战斗)",
 		orbit_ui_bound = "",
@@ -19210,11 +17640,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.equip_skin_template
-
-	var_4_91[471] = {
+	pg.base.equip_skin_template[471] = {
 		orbit_slg = "",
 		name = "飞天香蕉船(轰炸)",
 		orbit_ui_bound = "",
@@ -19254,11 +17680,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.equip_skin_template
-
-	var_4_92[472] = {
+	pg.base.equip_skin_template[472] = {
 		orbit_slg = "",
 		name = "飞天冲浪啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -19298,11 +17720,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.equip_skin_template
-
-	var_4_93[473] = {
+	pg.base.equip_skin_template[473] = {
 		orbit_slg = "",
 		name = "飞天冲浪啾(战斗)",
 		orbit_ui_bound = "",
@@ -19342,11 +17760,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.equip_skin_template
-
-	var_4_94[474] = {
+	pg.base.equip_skin_template[474] = {
 		orbit_slg = "",
 		name = "飞天冲浪啾(轰炸)",
 		orbit_ui_bound = "",
@@ -19386,11 +17800,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.equip_skin_template
-
-	var_4_95[475] = {
+	pg.base.equip_skin_template[475] = {
 		orbit_slg = "",
 		name = "飞天潜水啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -19430,11 +17840,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.equip_skin_template
-
-	var_4_96[476] = {
+	pg.base.equip_skin_template[476] = {
 		orbit_slg = "",
 		name = "飞天潜水啾(战斗)",
 		orbit_ui_bound = "",
@@ -19474,11 +17880,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.equip_skin_template
-
-	var_4_97[477] = {
+	pg.base.equip_skin_template[477] = {
 		orbit_slg = "",
 		name = "飞天潜水啾(轰炸)",
 		orbit_ui_bound = "",
@@ -19518,11 +17920,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.equip_skin_template
-
-	var_4_98[480] = {
+	pg.base.equip_skin_template[480] = {
 		orbit_slg = "",
 		name = "绿色激光子弹",
 		orbit_ui_bound = "",
@@ -19564,8 +17962,7 @@ end)()
 			101
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.equip_skin_template[481] = {
+	pg.base.equip_skin_template[481] = {
 		orbit_slg = "",
 		name = "红色激光子弹",
 		orbit_ui_bound = "",
@@ -19611,11 +18008,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.equip_skin_template
-
-	var_5_0[482] = {
+	pg.base.equip_skin_template[482] = {
 		orbit_slg = "",
 		name = "紫色激光子弹",
 		orbit_ui_bound = "",
@@ -19657,11 +18050,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.equip_skin_template
-
-	var_5_1[483] = {
+	pg.base.equip_skin_template[483] = {
 		orbit_slg = "",
 		name = "潜舟爆裂飞弹?",
 		orbit_ui_bound = "",
@@ -19703,11 +18092,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.equip_skin_template
-
-	var_5_2[484] = {
+	pg.base.equip_skin_template[484] = {
 		orbit_slg = "",
 		name = "护林灭火弹",
 		orbit_ui_bound = "",
@@ -19749,11 +18134,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.equip_skin_template
-
-	var_5_3[485] = {
+	pg.base.equip_skin_template[485] = {
 		orbit_slg = "",
 		name = "火焰炮弹",
 		orbit_ui_bound = "",
@@ -19795,11 +18176,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.equip_skin_template
-
-	var_5_4[486] = {
+	pg.base.equip_skin_template[486] = {
 		orbit_slg = "",
 		name = "圣剑鱼雷",
 		orbit_ui_bound = "",
@@ -19840,11 +18217,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.equip_skin_template
-
-	var_5_5[487] = {
+	pg.base.equip_skin_template[487] = {
 		orbit_slg = "",
 		name = "钻头鱼雷",
 		orbit_ui_bound = "",
@@ -19885,11 +18258,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.equip_skin_template
-
-	var_5_6[488] = {
+	pg.base.equip_skin_template[488] = {
 		orbit_slg = "",
 		name = "天线鱼雷",
 		orbit_ui_bound = "",
@@ -19930,11 +18299,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.equip_skin_template
-
-	var_5_7[489] = {
+	pg.base.equip_skin_template[489] = {
 		orbit_slg = "",
 		name = "煌翼炎龙(鱼雷)",
 		orbit_ui_bound = "",
@@ -19974,11 +18339,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.equip_skin_template
-
-	var_5_8[490] = {
+	pg.base.equip_skin_template[490] = {
 		orbit_slg = "",
 		name = "煌翼炎龙(战斗)",
 		orbit_ui_bound = "",
@@ -20018,11 +18379,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.equip_skin_template
-
-	var_5_9[491] = {
+	pg.base.equip_skin_template[491] = {
 		orbit_slg = "",
 		name = "煌翼炎龙(轰炸)",
 		orbit_ui_bound = "",
@@ -20062,11 +18419,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.equip_skin_template
-
-	var_5_10[492] = {
+	pg.base.equip_skin_template[492] = {
 		orbit_slg = "",
 		name = "苍穹喷气机(鱼雷)",
 		orbit_ui_bound = "",
@@ -20106,11 +18459,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.equip_skin_template
-
-	var_5_11[493] = {
+	pg.base.equip_skin_template[493] = {
 		orbit_slg = "",
 		name = "苍穹喷气机(战斗)",
 		orbit_ui_bound = "",
@@ -20150,11 +18499,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.equip_skin_template
-
-	var_5_12[494] = {
+	pg.base.equip_skin_template[494] = {
 		orbit_slg = "",
 		name = "苍穹喷气机(轰炸)",
 		orbit_ui_bound = "",
@@ -20194,11 +18539,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.equip_skin_template
-
-	var_5_13[495] = {
+	pg.base.equip_skin_template[495] = {
 		orbit_slg = "",
 		name = "戴拿飞翼(鱼雷)",
 		orbit_ui_bound = "",
@@ -20238,11 +18579,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.equip_skin_template
-
-	var_5_14[496] = {
+	pg.base.equip_skin_template[496] = {
 		orbit_slg = "",
 		name = "戴拿飞翼(战斗)",
 		orbit_ui_bound = "",
@@ -20282,11 +18619,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.equip_skin_template
-
-	var_5_15[497] = {
+	pg.base.equip_skin_template[497] = {
 		orbit_slg = "",
 		name = "戴拿飞翼(轰炸)",
 		orbit_ui_bound = "",
@@ -20326,11 +18659,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.equip_skin_template
-
-	var_5_16[500] = {
+	pg.base.equip_skin_template[500] = {
 		orbit_slg = "",
 		name = "餐具子弹",
 		orbit_ui_bound = "",
@@ -20372,11 +18701,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.equip_skin_template
-
-	var_5_17[501] = {
+	pg.base.equip_skin_template[501] = {
 		orbit_slg = "",
 		name = "喵爪子弹",
 		orbit_ui_bound = "",
@@ -20418,11 +18743,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.equip_skin_template
-
-	var_5_18[502] = {
+	pg.base.equip_skin_template[502] = {
 		orbit_slg = "",
 		name = "发箍子弹(黑&白)",
 		orbit_ui_bound = "",
@@ -20464,11 +18785,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.equip_skin_template
-
-	var_5_19[503] = {
+	pg.base.equip_skin_template[503] = {
 		orbit_slg = "",
 		name = "糖罐炮弹",
 		orbit_ui_bound = "",
@@ -20510,11 +18827,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.equip_skin_template
-
-	var_5_20[504] = {
+	pg.base.equip_skin_template[504] = {
 		orbit_slg = "",
 		name = "托盘炮弹",
 		orbit_ui_bound = "",
@@ -20556,11 +18869,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.equip_skin_template
-
-	var_5_21[505] = {
+	pg.base.equip_skin_template[505] = {
 		orbit_slg = "",
 		name = "蛋包饭炮弹",
 		orbit_ui_bound = "",
@@ -20602,11 +18911,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.equip_skin_template
-
-	var_5_22[506] = {
+	pg.base.equip_skin_template[506] = {
 		orbit_slg = "",
 		name = "裱花袋鱼雷",
 		orbit_ui_bound = "",
@@ -20647,11 +18952,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.equip_skin_template
-
-	var_5_23[507] = {
+	pg.base.equip_skin_template[507] = {
 		orbit_slg = "",
 		name = "拖把鱼雷",
 		orbit_ui_bound = "",
@@ -20692,11 +18993,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.equip_skin_template
-
-	var_5_24[508] = {
+	pg.base.equip_skin_template[508] = {
 		orbit_slg = "",
 		name = "女仆鞋鱼雷",
 		orbit_ui_bound = "",
@@ -20737,11 +19034,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.equip_skin_template
-
-	var_5_25[509] = {
+	pg.base.equip_skin_template[509] = {
 		orbit_slg = "",
 		name = "冒失女仆啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -20781,11 +19074,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.equip_skin_template
-
-	var_5_26[510] = {
+	pg.base.equip_skin_template[510] = {
 		orbit_slg = "",
 		name = "冒失女仆啾(战斗)",
 		orbit_ui_bound = "",
@@ -20825,11 +19114,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.equip_skin_template
-
-	var_5_27[511] = {
+	pg.base.equip_skin_template[511] = {
 		orbit_slg = "",
 		name = "冒失女仆啾(轰炸)",
 		orbit_ui_bound = "",
@@ -20869,11 +19154,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.equip_skin_template
-
-	var_5_28[512] = {
+	pg.base.equip_skin_template[512] = {
 		orbit_slg = "",
 		name = "外送女仆啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -20913,11 +19194,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.equip_skin_template
-
-	var_5_29[513] = {
+	pg.base.equip_skin_template[513] = {
 		orbit_slg = "",
 		name = "外送女仆啾(战斗)",
 		orbit_ui_bound = "",
@@ -20957,11 +19234,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.equip_skin_template
-
-	var_5_30[514] = {
+	pg.base.equip_skin_template[514] = {
 		orbit_slg = "",
 		name = "外送女仆啾(轰炸)",
 		orbit_ui_bound = "",
@@ -21001,11 +19274,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.equip_skin_template
-
-	var_5_31[515] = {
+	pg.base.equip_skin_template[515] = {
 		orbit_slg = "",
 		name = "扫除女仆啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -21045,11 +19314,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.equip_skin_template
-
-	var_5_32[516] = {
+	pg.base.equip_skin_template[516] = {
 		orbit_slg = "",
 		name = "扫除女仆啾(战斗)",
 		orbit_ui_bound = "",
@@ -21089,11 +19354,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.equip_skin_template
-
-	var_5_33[517] = {
+	pg.base.equip_skin_template[517] = {
 		orbit_slg = "",
 		name = "扫除女仆啾(轰炸)",
 		orbit_ui_bound = "",
@@ -21133,11 +19394,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.equip_skin_template
-
-	var_5_34[520] = {
+	pg.base.equip_skin_template[520] = {
 		orbit_slg = "",
 		name = "梅花子弹",
 		orbit_ui_bound = "",
@@ -21179,11 +19436,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.equip_skin_template
-
-	var_5_35[521] = {
+	pg.base.equip_skin_template[521] = {
 		orbit_slg = "",
 		name = "翠竹子弹",
 		orbit_ui_bound = "",
@@ -21225,11 +19478,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.equip_skin_template
-
-	var_5_36[522] = {
+	pg.base.equip_skin_template[522] = {
 		orbit_slg = "",
 		name = "兰花子弹",
 		orbit_ui_bound = "",
@@ -21271,11 +19520,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.equip_skin_template
-
-	var_5_37[523] = {
+	pg.base.equip_skin_template[523] = {
 		orbit_slg = "",
 		name = "兵器炮弹·冷艳锯",
 		orbit_ui_bound = "",
@@ -21317,11 +19562,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.equip_skin_template
-
-	var_5_38[524] = {
+	pg.base.equip_skin_template[524] = {
 		orbit_slg = "",
 		name = "兵器炮弹·双股剑",
 		orbit_ui_bound = "",
@@ -21363,11 +19604,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.equip_skin_template
-
-	var_5_39[525] = {
+	pg.base.equip_skin_template[525] = {
 		orbit_slg = "",
 		name = "兵器炮弹·蛇矛",
 		orbit_ui_bound = "",
@@ -21409,11 +19646,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.equip_skin_template
-
-	var_5_40[526] = {
+	pg.base.equip_skin_template[526] = {
 		orbit_slg = "",
 		name = "毛笔鱼雷",
 		orbit_ui_bound = "",
@@ -21454,11 +19687,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.equip_skin_template
-
-	var_5_41[527] = {
+	pg.base.equip_skin_template[527] = {
 		orbit_slg = "",
 		name = "书卷鱼雷",
 		orbit_ui_bound = "",
@@ -21499,11 +19728,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.equip_skin_template
-
-	var_5_42[528] = {
+	pg.base.equip_skin_template[528] = {
 		orbit_slg = "",
 		name = "令牌鱼雷",
 		orbit_ui_bound = "",
@@ -21544,11 +19769,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.equip_skin_template
-
-	var_5_43[529] = {
+	pg.base.equip_skin_template[529] = {
 		orbit_slg = "",
 		name = "转运锦鲤(鱼雷)",
 		orbit_ui_bound = "",
@@ -21588,11 +19809,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.equip_skin_template
-
-	var_5_44[530] = {
+	pg.base.equip_skin_template[530] = {
 		orbit_slg = "",
 		name = "转运锦鲤(战斗)",
 		orbit_ui_bound = "",
@@ -21632,11 +19849,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.equip_skin_template
-
-	var_5_45[531] = {
+	pg.base.equip_skin_template[531] = {
 		orbit_slg = "",
 		name = "转运锦鲤(轰炸)",
 		orbit_ui_bound = "",
@@ -21676,11 +19889,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.equip_skin_template
-
-	var_5_46[532] = {
+	pg.base.equip_skin_template[532] = {
 		orbit_slg = "",
 		name = "腾云仙鹤(鱼雷)",
 		orbit_ui_bound = "",
@@ -21720,11 +19929,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.equip_skin_template
-
-	var_5_47[533] = {
+	pg.base.equip_skin_template[533] = {
 		orbit_slg = "",
 		name = "腾云仙鹤(战斗)",
 		orbit_ui_bound = "",
@@ -21764,11 +19969,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.equip_skin_template
-
-	var_5_48[534] = {
+	pg.base.equip_skin_template[534] = {
 		orbit_slg = "",
 		name = "腾云仙鹤(轰炸)",
 		orbit_ui_bound = "",
@@ -21808,11 +20009,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.equip_skin_template
-
-	var_5_49[535] = {
+	pg.base.equip_skin_template[535] = {
 		orbit_slg = "",
 		name = "啾啾孔明灯(鱼雷)",
 		orbit_ui_bound = "",
@@ -21852,11 +20049,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.equip_skin_template
-
-	var_5_50[536] = {
+	pg.base.equip_skin_template[536] = {
 		orbit_slg = "",
 		name = "啾啾孔明灯(战斗)",
 		orbit_ui_bound = "",
@@ -21896,11 +20089,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.equip_skin_template
-
-	var_5_51[537] = {
+	pg.base.equip_skin_template[537] = {
 		orbit_slg = "",
 		name = "啾啾孔明灯(轰炸)",
 		orbit_ui_bound = "",
@@ -21940,11 +20129,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.equip_skin_template
-
-	var_5_52[540] = {
+	pg.base.equip_skin_template[540] = {
 		orbit_slg = "",
 		name = "子弹：蝙蝠使魔",
 		orbit_ui_bound = "",
@@ -21986,11 +20171,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.equip_skin_template
-
-	var_5_53[541] = {
+	pg.base.equip_skin_template[541] = {
 		orbit_slg = "",
 		name = "子弹：银十字",
 		orbit_ui_bound = "",
@@ -22032,11 +20213,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.equip_skin_template
-
-	var_5_54[542] = {
+	pg.base.equip_skin_template[542] = {
 		orbit_slg = "",
 		name = "子弹：幽火",
 		orbit_ui_bound = "",
@@ -22078,11 +20255,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.equip_skin_template
-
-	var_5_55[543] = {
+	pg.base.equip_skin_template[543] = {
 		orbit_slg = "",
 		name = "红月炮弹",
 		orbit_ui_bound = "",
@@ -22124,11 +20297,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.equip_skin_template
-
-	var_5_56[544] = {
+	pg.base.equip_skin_template[544] = {
 		orbit_slg = "",
 		name = "烛台炮弹",
 		orbit_ui_bound = "",
@@ -22170,11 +20339,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.equip_skin_template
-
-	var_5_57[545] = {
+	pg.base.equip_skin_template[545] = {
 		orbit_slg = "",
 		name = "魔法阵炮弹",
 		orbit_ui_bound = "",
@@ -22216,11 +20381,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.equip_skin_template
-
-	var_5_58[546] = {
+	pg.base.equip_skin_template[546] = {
 		orbit_slg = "",
 		name = "尖木桩鱼雷",
 		orbit_ui_bound = "",
@@ -22261,11 +20422,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.equip_skin_template
-
-	var_5_59[547] = {
+	pg.base.equip_skin_template[547] = {
 		orbit_slg = "",
 		name = "玫瑰鱼雷",
 		orbit_ui_bound = "",
@@ -22306,11 +20463,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.equip_skin_template
-
-	var_5_60[548] = {
+	pg.base.equip_skin_template[548] = {
 		orbit_slg = "",
 		name = "棺材鱼雷",
 		orbit_ui_bound = "",
@@ -22351,11 +20504,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.equip_skin_template
-
-	var_5_61[549] = {
+	pg.base.equip_skin_template[549] = {
 		orbit_slg = "",
 		name = "伯爵啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -22395,11 +20544,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.equip_skin_template
-
-	var_5_62[550] = {
+	pg.base.equip_skin_template[550] = {
 		orbit_slg = "",
 		name = "伯爵啾(战斗)",
 		orbit_ui_bound = "",
@@ -22439,11 +20584,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.equip_skin_template
-
-	var_5_63[551] = {
+	pg.base.equip_skin_template[551] = {
 		orbit_slg = "",
 		name = "伯爵啾(轰炸)",
 		orbit_ui_bound = "",
@@ -22483,11 +20624,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.equip_skin_template
-
-	var_5_64[552] = {
+	pg.base.equip_skin_template[552] = {
 		orbit_slg = "",
 		name = "石像鬼啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -22527,11 +20664,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.equip_skin_template
-
-	var_5_65[553] = {
+	pg.base.equip_skin_template[553] = {
 		orbit_slg = "",
 		name = "石像鬼啾(战斗)",
 		orbit_ui_bound = "",
@@ -22571,11 +20704,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.equip_skin_template
-
-	var_5_66[554] = {
+	pg.base.equip_skin_template[554] = {
 		orbit_slg = "",
 		name = "石像鬼啾(轰炸)",
 		orbit_ui_bound = "",
@@ -22615,11 +20744,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.equip_skin_template
-
-	var_5_67[555] = {
+	pg.base.equip_skin_template[555] = {
 		orbit_slg = "",
 		name = "缚灵骑士啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -22659,11 +20784,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.equip_skin_template
-
-	var_5_68[556] = {
+	pg.base.equip_skin_template[556] = {
 		orbit_slg = "",
 		name = "缚灵骑士啾(战斗)",
 		orbit_ui_bound = "",
@@ -22703,11 +20824,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.equip_skin_template
-
-	var_5_69[557] = {
+	pg.base.equip_skin_template[557] = {
 		orbit_slg = "",
 		name = "缚灵骑士啾(轰炸)",
 		orbit_ui_bound = "",
@@ -22747,11 +20864,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.equip_skin_template
-
-	var_5_70[560] = {
+	pg.base.equip_skin_template[560] = {
 		orbit_slg = "",
 		name = "象棋子弹",
 		orbit_ui_bound = "",
@@ -22793,11 +20906,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.equip_skin_template
-
-	var_5_71[561] = {
+	pg.base.equip_skin_template[561] = {
 		orbit_slg = "",
 		name = "围棋子弹",
 		orbit_ui_bound = "",
@@ -22839,11 +20948,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.equip_skin_template
-
-	var_5_72[562] = {
+	pg.base.equip_skin_template[562] = {
 		orbit_slg = "",
 		name = "桃花子弹",
 		orbit_ui_bound = "",
@@ -22885,11 +20990,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.equip_skin_template
-
-	var_5_73[563] = {
+	pg.base.equip_skin_template[563] = {
 		orbit_slg = "",
 		name = "小笼包炮弹",
 		orbit_ui_bound = "",
@@ -22931,11 +21032,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.equip_skin_template
-
-	var_5_74[564] = {
+	pg.base.equip_skin_template[564] = {
 		orbit_slg = "",
 		name = "石狮子炮弹",
 		orbit_ui_bound = "",
@@ -22977,11 +21074,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.equip_skin_template
-
-	var_5_75[565] = {
+	pg.base.equip_skin_template[565] = {
 		orbit_slg = "",
 		name = "青花瓷炮弹",
 		orbit_ui_bound = "",
@@ -23023,11 +21116,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.equip_skin_template
-
-	var_5_76[566] = {
+	pg.base.equip_skin_template[566] = {
 		orbit_slg = "",
 		name = "发簪鱼雷",
 		orbit_ui_bound = "",
@@ -23068,11 +21157,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.equip_skin_template
-
-	var_5_77[567] = {
+	pg.base.equip_skin_template[567] = {
 		orbit_slg = "",
 		name = "唢呐鱼雷",
 		orbit_ui_bound = "",
@@ -23113,11 +21198,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.equip_skin_template
-
-	var_5_78[568] = {
+	pg.base.equip_skin_template[568] = {
 		orbit_slg = "",
 		name = "葫芦鱼雷",
 		orbit_ui_bound = "",
@@ -23158,11 +21239,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.equip_skin_template
-
-	var_5_79[569] = {
+	pg.base.equip_skin_template[569] = {
 		orbit_slg = "",
 		name = "油纸伞啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -23202,11 +21279,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.equip_skin_template
-
-	var_5_80[570] = {
+	pg.base.equip_skin_template[570] = {
 		orbit_slg = "",
 		name = "油纸伞啾(战斗)",
 		orbit_ui_bound = "",
@@ -23246,11 +21319,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.equip_skin_template
-
-	var_5_81[571] = {
+	pg.base.equip_skin_template[571] = {
 		orbit_slg = "",
 		name = "油纸伞啾(轰炸)",
 		orbit_ui_bound = "",
@@ -23290,11 +21359,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.equip_skin_template
-
-	var_5_82[572] = {
+	pg.base.equip_skin_template[572] = {
 		orbit_slg = "",
 		name = "纸鸢啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -23334,11 +21399,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.equip_skin_template
-
-	var_5_83[573] = {
+	pg.base.equip_skin_template[573] = {
 		orbit_slg = "",
 		name = "纸鸢啾(战斗)",
 		orbit_ui_bound = "",
@@ -23378,11 +21439,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.equip_skin_template
-
-	var_5_84[574] = {
+	pg.base.equip_skin_template[574] = {
 		orbit_slg = "",
 		name = "纸鸢啾(轰炸)",
 		orbit_ui_bound = "",
@@ -23422,11 +21479,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.equip_skin_template
-
-	var_5_85[575] = {
+	pg.base.equip_skin_template[575] = {
 		orbit_slg = "",
 		name = "泛舟啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -23466,11 +21519,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.equip_skin_template
-
-	var_5_86[576] = {
+	pg.base.equip_skin_template[576] = {
 		orbit_slg = "",
 		name = "泛舟啾(战斗)",
 		orbit_ui_bound = "",
@@ -23510,11 +21559,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.equip_skin_template
-
-	var_5_87[577] = {
+	pg.base.equip_skin_template[577] = {
 		orbit_slg = "",
 		name = "泛舟啾(轰炸)",
 		orbit_ui_bound = "",
@@ -23554,11 +21599,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.equip_skin_template
-
-	var_5_88[580] = {
+	pg.base.equip_skin_template[580] = {
 		orbit_slg = "",
 		name = "蘑菇子弹",
 		orbit_ui_bound = "",
@@ -23600,11 +21641,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.equip_skin_template
-
-	var_5_89[581] = {
+	pg.base.equip_skin_template[581] = {
 		orbit_slg = "",
 		name = "糖果子弹",
 		orbit_ui_bound = "",
@@ -23646,11 +21683,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.equip_skin_template
-
-	var_5_90[582] = {
+	pg.base.equip_skin_template[582] = {
 		orbit_slg = "",
 		name = "苹果子弹",
 		orbit_ui_bound = "",
@@ -23692,11 +21725,7 @@ end)()
 			101
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.equip_skin_template
-
-	var_5_91[583] = {
+	pg.base.equip_skin_template[583] = {
 		orbit_slg = "",
 		name = "水晶鞋炮弹",
 		orbit_ui_bound = "",
@@ -23738,11 +21767,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.equip_skin_template
-
-	var_5_92[584] = {
+	pg.base.equip_skin_template[584] = {
 		orbit_slg = "",
 		name = "斧头炮弹",
 		orbit_ui_bound = "",
@@ -23784,11 +21809,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.equip_skin_template
-
-	var_5_93[585] = {
+	pg.base.equip_skin_template[585] = {
 		orbit_slg = "",
 		name = "油灯炮弹",
 		orbit_ui_bound = "",
@@ -23830,11 +21851,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.equip_skin_template
-
-	var_5_94[586] = {
+	pg.base.equip_skin_template[586] = {
 		orbit_slg = "",
 		name = "鱼雷·吹笛人",
 		orbit_ui_bound = "",
@@ -23875,11 +21892,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.equip_skin_template
-
-	var_5_95[587] = {
+	pg.base.equip_skin_template[587] = {
 		orbit_slg = "",
 		name = "鱼雷·胡萝卜",
 		orbit_ui_bound = "",
@@ -23920,11 +21933,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.equip_skin_template
-
-	var_5_96[588] = {
+	pg.base.equip_skin_template[588] = {
 		orbit_slg = "",
 		name = "鱼雷·魔豆藤蔓",
 		orbit_ui_bound = "",
@@ -23965,11 +21974,7 @@ end)()
 			107
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.equip_skin_template
-
-	var_5_97[589] = {
+	pg.base.equip_skin_template[589] = {
 		orbit_slg = "",
 		name = "天鹅啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -24009,11 +22014,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.equip_skin_template
-
-	var_5_98[590] = {
+	pg.base.equip_skin_template[590] = {
 		orbit_slg = "",
 		name = "天鹅啾(战斗)",
 		orbit_ui_bound = "",
@@ -24053,8 +22054,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.equip_skin_template[591] = {
+	pg.base.equip_skin_template[591] = {
 		orbit_slg = "",
 		name = "天鹅啾(轰炸)",
 		orbit_ui_bound = "",
@@ -24098,11 +22098,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.equip_skin_template
-
-	var_6_0[592] = {
+	pg.base.equip_skin_template[592] = {
 		orbit_slg = "",
 		name = "魔毯啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -24142,11 +22138,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.equip_skin_template
-
-	var_6_1[593] = {
+	pg.base.equip_skin_template[593] = {
 		orbit_slg = "",
 		name = "魔毯啾(战斗)",
 		orbit_ui_bound = "",
@@ -24186,11 +22178,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.equip_skin_template
-
-	var_6_2[594] = {
+	pg.base.equip_skin_template[594] = {
 		orbit_slg = "",
 		name = "魔毯啾(轰炸)",
 		orbit_ui_bound = "",
@@ -24230,11 +22218,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.equip_skin_template
-
-	var_6_3[595] = {
+	pg.base.equip_skin_template[595] = {
 		orbit_slg = "",
 		name = "魔法南瓜车(鱼雷)",
 		orbit_ui_bound = "",
@@ -24274,11 +22258,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.equip_skin_template
-
-	var_6_4[596] = {
+	pg.base.equip_skin_template[596] = {
 		orbit_slg = "",
 		name = "魔法南瓜车(战斗)",
 		orbit_ui_bound = "",
@@ -24318,11 +22298,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.equip_skin_template
-
-	var_6_5[597] = {
+	pg.base.equip_skin_template[597] = {
 		orbit_slg = "",
 		name = "魔法南瓜车(轰炸)",
 		orbit_ui_bound = "",
@@ -24362,11 +22338,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.equip_skin_template
-
-	var_6_6[600] = {
+	pg.base.equip_skin_template[600] = {
 		orbit_slg = "",
 		name = "舞鞋",
 		orbit_ui_bound = "",
@@ -24408,11 +22380,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.equip_skin_template
-
-	var_6_7[601] = {
+	pg.base.equip_skin_template[601] = {
 		orbit_slg = "",
 		name = "假面面具",
 		orbit_ui_bound = "",
@@ -24454,11 +22422,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.equip_skin_template
-
-	var_6_8[602] = {
+	pg.base.equip_skin_template[602] = {
 		orbit_slg = "",
 		name = "跳舞机箭头",
 		orbit_ui_bound = "",
@@ -24500,11 +22464,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.equip_skin_template
-
-	var_6_9[603] = {
+	pg.base.equip_skin_template[603] = {
 		orbit_slg = "",
 		name = "聚光灯",
 		orbit_ui_bound = "",
@@ -24546,11 +22506,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.equip_skin_template
-
-	var_6_10[604] = {
+	pg.base.equip_skin_template[604] = {
 		orbit_slg = "",
 		name = "个人舞台",
 		orbit_ui_bound = "",
@@ -24592,11 +22548,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.equip_skin_template
-
-	var_6_11[605] = {
+	pg.base.equip_skin_template[605] = {
 		orbit_slg = "",
 		name = "场景道具",
 		orbit_ui_bound = "",
@@ -24638,11 +22590,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.equip_skin_template
-
-	var_6_12[606] = {
+	pg.base.equip_skin_template[606] = {
 		orbit_slg = "",
 		name = "竖琴",
 		orbit_ui_bound = "",
@@ -24683,11 +22631,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.equip_skin_template
-
-	var_6_13[607] = {
+	pg.base.equip_skin_template[607] = {
 		orbit_slg = "",
 		name = "小提琴",
 		orbit_ui_bound = "",
@@ -24728,11 +22672,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.equip_skin_template
-
-	var_6_14[608] = {
+	pg.base.equip_skin_template[608] = {
 		orbit_slg = "",
 		name = "小号",
 		orbit_ui_bound = "",
@@ -24773,11 +22713,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.equip_skin_template
-
-	var_6_15[609] = {
+	pg.base.equip_skin_template[609] = {
 		orbit_slg = "",
 		name = "康康舞啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -24817,11 +22753,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.equip_skin_template
-
-	var_6_16[610] = {
+	pg.base.equip_skin_template[610] = {
 		orbit_slg = "",
 		name = "康康舞啾(战斗)",
 		orbit_ui_bound = "",
@@ -24861,11 +22793,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.equip_skin_template
-
-	var_6_17[611] = {
+	pg.base.equip_skin_template[611] = {
 		orbit_slg = "",
 		name = "康康舞啾(轰炸)",
 		orbit_ui_bound = "",
@@ -24905,11 +22833,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.equip_skin_template
-
-	var_6_18[612] = {
+	pg.base.equip_skin_template[612] = {
 		orbit_slg = "",
 		name = "芭蕾舞裙啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -24949,11 +22873,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.equip_skin_template
-
-	var_6_19[613] = {
+	pg.base.equip_skin_template[613] = {
 		orbit_slg = "",
 		name = "芭蕾舞裙啾(战斗)",
 		orbit_ui_bound = "",
@@ -24993,11 +22913,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.equip_skin_template
-
-	var_6_20[614] = {
+	pg.base.equip_skin_template[614] = {
 		orbit_slg = "",
 		name = "芭蕾舞裙啾(轰炸)",
 		orbit_ui_bound = "",
@@ -25037,11 +22953,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.equip_skin_template
-
-	var_6_21[615] = {
+	pg.base.equip_skin_template[615] = {
 		orbit_slg = "",
 		name = "桑巴舞啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -25081,11 +22993,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.equip_skin_template
-
-	var_6_22[616] = {
+	pg.base.equip_skin_template[616] = {
 		orbit_slg = "",
 		name = "桑巴舞啾(战斗)",
 		orbit_ui_bound = "",
@@ -25125,11 +23033,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.equip_skin_template
-
-	var_6_23[617] = {
+	pg.base.equip_skin_template[617] = {
 		orbit_slg = "",
 		name = "桑巴舞啾(轰炸)",
 		orbit_ui_bound = "",
@@ -25169,11 +23073,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.equip_skin_template
-
-	var_6_24[620] = {
+	pg.base.equip_skin_template[620] = {
 		orbit_slg = "",
 		name = "姜饼子弹",
 		orbit_ui_bound = "",
@@ -25215,11 +23115,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.equip_skin_template
-
-	var_6_25[621] = {
+	pg.base.equip_skin_template[621] = {
 		orbit_slg = "",
 		name = "根刀子弹",
 		orbit_ui_bound = "",
@@ -25261,11 +23157,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.equip_skin_template
-
-	var_6_26[622] = {
+	pg.base.equip_skin_template[622] = {
 		orbit_slg = "",
 		name = "钢铁子弹",
 		orbit_ui_bound = "",
@@ -25307,11 +23199,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.equip_skin_template
-
-	var_6_27[623] = {
+	pg.base.equip_skin_template[623] = {
 		orbit_slg = "",
 		name = "酒杯炮弹",
 		orbit_ui_bound = "",
@@ -25353,11 +23241,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.equip_skin_template
-
-	var_6_28[624] = {
+	pg.base.equip_skin_template[624] = {
 		orbit_slg = "",
 		name = "雄鹰炮弹",
 		orbit_ui_bound = "",
@@ -25399,11 +23283,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.equip_skin_template
-
-	var_6_29[625] = {
+	pg.base.equip_skin_template[625] = {
 		orbit_slg = "",
 		name = "音符炮弹",
 		orbit_ui_bound = "",
@@ -25445,11 +23325,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.equip_skin_template
-
-	var_6_30[626] = {
+	pg.base.equip_skin_template[626] = {
 		orbit_slg = "",
 		name = "巨剑鱼雷",
 		orbit_ui_bound = "",
@@ -25490,11 +23366,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.equip_skin_template
-
-	var_6_31[627] = {
+	pg.base.equip_skin_template[627] = {
 		orbit_slg = "",
 		name = "农叉鱼雷",
 		orbit_ui_bound = "",
@@ -25535,11 +23407,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.equip_skin_template
-
-	var_6_32[628] = {
+	pg.base.equip_skin_template[628] = {
 		orbit_slg = "",
 		name = "线列枪鱼雷",
 		orbit_ui_bound = "",
@@ -25580,11 +23448,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.equip_skin_template
-
-	var_6_33[629] = {
+	pg.base.equip_skin_template[629] = {
 		orbit_slg = "",
 		name = "纪念城门(鱼雷)",
 		orbit_ui_bound = "",
@@ -25624,11 +23488,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.equip_skin_template
-
-	var_6_34[630] = {
+	pg.base.equip_skin_template[630] = {
 		orbit_slg = "",
 		name = "纪念城门(战斗)",
 		orbit_ui_bound = "",
@@ -25668,11 +23528,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.equip_skin_template
-
-	var_6_35[631] = {
+	pg.base.equip_skin_template[631] = {
 		orbit_slg = "",
 		name = "纪念城门(轰炸)",
 		orbit_ui_bound = "",
@@ -25712,11 +23568,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.equip_skin_template
-
-	var_6_36[632] = {
+	pg.base.equip_skin_template[632] = {
 		orbit_slg = "",
 		name = "黑森林之钟(鱼雷)",
 		orbit_ui_bound = "",
@@ -25756,11 +23608,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.equip_skin_template
-
-	var_6_37[633] = {
+	pg.base.equip_skin_template[633] = {
 		orbit_slg = "",
 		name = "黑森林之钟(战斗)",
 		orbit_ui_bound = "",
@@ -25800,11 +23648,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.equip_skin_template
-
-	var_6_38[634] = {
+	pg.base.equip_skin_template[634] = {
 		orbit_slg = "",
 		name = "黑森林之钟(轰炸)",
 		orbit_ui_bound = "",
@@ -25844,11 +23688,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.equip_skin_template
-
-	var_6_39[635] = {
+	pg.base.equip_skin_template[635] = {
 		orbit_slg = "",
 		name = "胡桃夹子骑士(鱼雷)",
 		orbit_ui_bound = "",
@@ -25888,11 +23728,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.equip_skin_template
-
-	var_6_40[636] = {
+	pg.base.equip_skin_template[636] = {
 		orbit_slg = "",
 		name = "胡桃夹子骑士(战斗)",
 		orbit_ui_bound = "",
@@ -25932,11 +23768,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.equip_skin_template
-
-	var_6_41[637] = {
+	pg.base.equip_skin_template[637] = {
 		orbit_slg = "",
 		name = "胡桃夹子骑士(轰炸)",
 		orbit_ui_bound = "",
@@ -25976,11 +23808,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.equip_skin_template
-
-	var_6_42[638] = {
+	pg.base.equip_skin_template[638] = {
 		orbit_slg = "",
 		name = "颜料刷子弹",
 		orbit_ui_bound = "",
@@ -26022,11 +23850,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.equip_skin_template
-
-	var_6_43[639] = {
+	pg.base.equip_skin_template[639] = {
 		orbit_slg = "",
 		name = "海报子弹",
 		orbit_ui_bound = "",
@@ -26068,11 +23892,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.equip_skin_template
-
-	var_6_44[640] = {
+	pg.base.equip_skin_template[640] = {
 		orbit_slg = "",
 		name = "纸星星子弹",
 		orbit_ui_bound = "",
@@ -26114,11 +23934,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.equip_skin_template
-
-	var_6_45[641] = {
+	pg.base.equip_skin_template[641] = {
 		orbit_slg = "",
 		name = "颜料罐炮弹",
 		orbit_ui_bound = "",
@@ -26160,11 +23976,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.equip_skin_template
-
-	var_6_46[642] = {
+	pg.base.equip_skin_template[642] = {
 		orbit_slg = "",
 		name = "制服包炮弹",
 		orbit_ui_bound = "",
@@ -26206,11 +24018,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.equip_skin_template
-
-	var_6_47[643] = {
+	pg.base.equip_skin_template[643] = {
 		orbit_slg = "",
 		name = "篝火炮弹",
 		orbit_ui_bound = "",
@@ -26252,11 +24060,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.equip_skin_template
-
-	var_6_48[644] = {
+	pg.base.equip_skin_template[644] = {
 		orbit_slg = "",
 		name = "章鱼烧鱼雷",
 		orbit_ui_bound = "",
@@ -26297,11 +24101,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.equip_skin_template
-
-	var_6_49[645] = {
+	pg.base.equip_skin_template[645] = {
 		orbit_slg = "",
 		name = "苹果糖鱼雷",
 		orbit_ui_bound = "",
@@ -26342,11 +24142,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.equip_skin_template
-
-	var_6_50[646] = {
+	pg.base.equip_skin_template[646] = {
 		orbit_slg = "",
 		name = "巧克力香蕉鱼雷",
 		orbit_ui_bound = "",
@@ -26387,11 +24183,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.equip_skin_template
-
-	var_6_51[647] = {
+	pg.base.equip_skin_template[647] = {
 		orbit_slg = "",
 		name = "章鱼烧摊(鱼雷)",
 		orbit_ui_bound = "",
@@ -26431,11 +24223,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.equip_skin_template
-
-	var_6_52[648] = {
+	pg.base.equip_skin_template[648] = {
 		orbit_slg = "",
 		name = "章鱼烧摊(战斗)",
 		orbit_ui_bound = "",
@@ -26475,11 +24263,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.equip_skin_template
-
-	var_6_53[649] = {
+	pg.base.equip_skin_template[649] = {
 		orbit_slg = "",
 		name = "章鱼烧摊(轰炸)",
 		orbit_ui_bound = "",
@@ -26519,11 +24303,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.equip_skin_template
-
-	var_6_54[650] = {
+	pg.base.equip_skin_template[650] = {
 		orbit_slg = "",
 		name = "巧克力香蕉摊(鱼雷)",
 		orbit_ui_bound = "",
@@ -26563,11 +24343,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.equip_skin_template
-
-	var_6_55[651] = {
+	pg.base.equip_skin_template[651] = {
 		orbit_slg = "",
 		name = "巧克力香蕉摊(战斗)",
 		orbit_ui_bound = "",
@@ -26607,11 +24383,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.equip_skin_template
-
-	var_6_56[652] = {
+	pg.base.equip_skin_template[652] = {
 		orbit_slg = "",
 		name = "巧克力香蕉摊(轰炸)",
 		orbit_ui_bound = "",
@@ -26651,11 +24423,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.equip_skin_template
-
-	var_6_57[653] = {
+	pg.base.equip_skin_template[653] = {
 		orbit_slg = "",
 		name = "苹果糖摊(鱼雷)",
 		orbit_ui_bound = "",
@@ -26695,11 +24463,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.equip_skin_template
-
-	var_6_58[654] = {
+	pg.base.equip_skin_template[654] = {
 		orbit_slg = "",
 		name = "苹果糖摊(战斗)",
 		orbit_ui_bound = "",
@@ -26739,11 +24503,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.equip_skin_template
-
-	var_6_59[655] = {
+	pg.base.equip_skin_template[655] = {
 		orbit_slg = "",
 		name = "苹果糖摊(轰炸)",
 		orbit_ui_bound = "",
@@ -26783,11 +24543,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.equip_skin_template
-
-	var_6_60[656] = {
+	pg.base.equip_skin_template[656] = {
 		orbit_slg = "",
 		name = "子弹:跃动飞踢",
 		orbit_ui_bound = "",
@@ -26829,11 +24585,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.equip_skin_template
-
-	var_6_61[657] = {
+	pg.base.equip_skin_template[657] = {
 		orbit_slg = "",
 		name = "炮弹:兔兔火球",
 		orbit_ui_bound = "",
@@ -26875,11 +24627,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.equip_skin_template
-
-	var_6_62[658] = {
+	pg.base.equip_skin_template[658] = {
 		orbit_slg = "",
 		name = "鱼雷:战士之斧",
 		orbit_ui_bound = "",
@@ -26920,11 +24668,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.equip_skin_template
-
-	var_6_63[659] = {
+	pg.base.equip_skin_template[659] = {
 		orbit_slg = "",
 		name = "勇者之盾",
 		type = 1,
@@ -26984,11 +24728,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.equip_skin_template
-
-	var_6_64[660] = {
+	pg.base.equip_skin_template[660] = {
 		orbit_slg = "",
 		name = "有翼史莱姆(鱼雷)",
 		orbit_ui_bound = "",
@@ -27028,11 +24768,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.equip_skin_template
-
-	var_6_65[661] = {
+	pg.base.equip_skin_template[661] = {
 		orbit_slg = "",
 		name = "有翼史莱姆(战斗)",
 		orbit_ui_bound = "",
@@ -27072,11 +24808,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.equip_skin_template
-
-	var_6_66[662] = {
+	pg.base.equip_skin_template[662] = {
 		orbit_slg = "",
 		name = "有翼史莱姆(轰炸)",
 		orbit_ui_bound = "",
@@ -27116,11 +24848,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.equip_skin_template
-
-	var_6_67[670] = {
+	pg.base.equip_skin_template[670] = {
 		orbit_slg = "",
 		name = "子弹:万圣糖果",
 		orbit_ui_bound = "",
@@ -27162,11 +24890,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.equip_skin_template
-
-	var_6_68[671] = {
+	pg.base.equip_skin_template[671] = {
 		orbit_slg = "",
 		name = "子弹:怪物饼干",
 		orbit_ui_bound = "",
@@ -27208,11 +24932,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.equip_skin_template
-
-	var_6_69[672] = {
+	pg.base.equip_skin_template[672] = {
 		orbit_slg = "",
 		name = "子弹:水晶蝙蝠",
 		orbit_ui_bound = "",
@@ -27254,11 +24974,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.equip_skin_template
-
-	var_6_70[673] = {
+	pg.base.equip_skin_template[673] = {
 		orbit_slg = "",
 		name = "炮弹:石墓碑",
 		orbit_ui_bound = "",
@@ -27300,11 +25016,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.equip_skin_template
-
-	var_6_71[674] = {
+	pg.base.equip_skin_template[674] = {
 		orbit_slg = "",
 		name = "炮弹:南瓜稻草人",
 		orbit_ui_bound = "",
@@ -27346,11 +25058,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.equip_skin_template
-
-	var_6_72[675] = {
+	pg.base.equip_skin_template[675] = {
 		orbit_slg = "",
 		name = "炮弹：南瓜头",
 		orbit_ui_bound = "",
@@ -27392,11 +25100,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.equip_skin_template
-
-	var_6_73[676] = {
+	pg.base.equip_skin_template[676] = {
 		orbit_slg = "",
 		name = "幽灵鱼雷",
 		orbit_ui_bound = "",
@@ -27437,11 +25141,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.equip_skin_template
-
-	var_6_74[677] = {
+	pg.base.equip_skin_template[677] = {
 		orbit_slg = "",
 		name = "蜘蛛鱼雷",
 		orbit_ui_bound = "",
@@ -27482,11 +25182,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.equip_skin_template
-
-	var_6_75[678] = {
+	pg.base.equip_skin_template[678] = {
 		orbit_slg = "",
 		name = "蜡烛鱼雷",
 		orbit_ui_bound = "",
@@ -27527,11 +25223,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.equip_skin_template
-
-	var_6_76[679] = {
+	pg.base.equip_skin_template[679] = {
 		orbit_slg = "",
 		name = "幽灵南瓜车(鱼雷)",
 		orbit_ui_bound = "",
@@ -27571,11 +25263,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.equip_skin_template
-
-	var_6_77[680] = {
+	pg.base.equip_skin_template[680] = {
 		orbit_slg = "",
 		name = "幽灵南瓜车(战斗)",
 		orbit_ui_bound = "",
@@ -27615,11 +25303,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.equip_skin_template
-
-	var_6_78[681] = {
+	pg.base.equip_skin_template[681] = {
 		orbit_slg = "",
 		name = "幽灵南瓜车(轰炸)",
 		orbit_ui_bound = "",
@@ -27659,11 +25343,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.equip_skin_template
-
-	var_6_79[682] = {
+	pg.base.equip_skin_template[682] = {
 		orbit_slg = "",
 		name = "幽灵法师(鱼雷)",
 		orbit_ui_bound = "",
@@ -27703,11 +25383,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.equip_skin_template
-
-	var_6_80[683] = {
+	pg.base.equip_skin_template[683] = {
 		orbit_slg = "",
 		name = "幽灵法师(战斗)",
 		orbit_ui_bound = "",
@@ -27747,11 +25423,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.equip_skin_template
-
-	var_6_81[684] = {
+	pg.base.equip_skin_template[684] = {
 		orbit_slg = "",
 		name = "幽灵法师(轰炸)",
 		orbit_ui_bound = "",
@@ -27791,11 +25463,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.equip_skin_template
-
-	var_6_82[685] = {
+	pg.base.equip_skin_template[685] = {
 		orbit_slg = "",
 		name = "华丽扫帚(鱼雷)",
 		orbit_ui_bound = "",
@@ -27835,11 +25503,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.equip_skin_template
-
-	var_6_83[686] = {
+	pg.base.equip_skin_template[686] = {
 		orbit_slg = "",
 		name = "华丽扫帚(战斗)",
 		orbit_ui_bound = "",
@@ -27879,11 +25543,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.equip_skin_template
-
-	var_6_84[687] = {
+	pg.base.equip_skin_template[687] = {
 		orbit_slg = "",
 		name = "华丽扫帚(轰炸)",
 		orbit_ui_bound = "",
@@ -27923,11 +25583,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.equip_skin_template
-
-	var_6_85[690] = {
+	pg.base.equip_skin_template[690] = {
 		orbit_slg = "",
 		name = "贝壳子弹",
 		orbit_ui_bound = "",
@@ -27969,11 +25625,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.equip_skin_template
-
-	var_6_86[691] = {
+	pg.base.equip_skin_template[691] = {
 		orbit_slg = "",
 		name = "椰子子弹",
 		orbit_ui_bound = "",
@@ -28015,11 +25667,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.equip_skin_template
-
-	var_6_87[692] = {
+	pg.base.equip_skin_template[692] = {
 		orbit_slg = "",
 		name = "沙铲子弹",
 		orbit_ui_bound = "",
@@ -28061,11 +25709,7 @@ end)()
 			101
 		}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.equip_skin_template
-
-	var_6_88[693] = {
+	pg.base.equip_skin_template[693] = {
 		orbit_slg = "",
 		name = "泳圈炮弹",
 		orbit_ui_bound = "",
@@ -28107,11 +25751,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.equip_skin_template
-
-	var_6_89[694] = {
+	pg.base.equip_skin_template[694] = {
 		orbit_slg = "",
 		name = "沙滩排球炮弹",
 		orbit_ui_bound = "",
@@ -28153,11 +25793,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.equip_skin_template
-
-	var_6_90[695] = {
+	pg.base.equip_skin_template[695] = {
 		orbit_slg = "",
 		name = "金枪鱼浮球炮弹",
 		orbit_ui_bound = "",
@@ -28199,11 +25835,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.equip_skin_template
-
-	var_6_91[696] = {
+	pg.base.equip_skin_template[696] = {
 		orbit_slg = "",
 		name = "木雕鱼雷",
 		orbit_ui_bound = "",
@@ -28244,11 +25876,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.equip_skin_template
-
-	var_6_92[697] = {
+	pg.base.equip_skin_template[697] = {
 		orbit_slg = "",
 		name = "漂流瓶鱼雷",
 		orbit_ui_bound = "",
@@ -28289,11 +25917,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.equip_skin_template
-
-	var_6_93[698] = {
+	pg.base.equip_skin_template[698] = {
 		orbit_slg = "",
 		name = "冲浪板鱼雷",
 		orbit_ui_bound = "",
@@ -28334,11 +25958,7 @@ end)()
 			107
 		}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.equip_skin_template
-
-	var_6_94[699] = {
+	pg.base.equip_skin_template[699] = {
 		orbit_slg = "",
 		name = "日光浴啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -28378,11 +25998,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.equip_skin_template
-
-	var_6_95[700] = {
+	pg.base.equip_skin_template[700] = {
 		orbit_slg = "",
 		name = "日光浴啾(战斗)",
 		orbit_ui_bound = "",
@@ -28422,11 +26038,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.equip_skin_template
-
-	var_6_96[701] = {
+	pg.base.equip_skin_template[701] = {
 		orbit_slg = "",
 		name = "日光浴啾(轰炸)",
 		orbit_ui_bound = "",
@@ -28466,11 +26078,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.equip_skin_template
-
-	var_6_97[702] = {
+	pg.base.equip_skin_template[702] = {
 		orbit_slg = "",
 		name = "喵喵摩托艇(鱼雷)",
 		orbit_ui_bound = "",
@@ -28510,11 +26118,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.equip_skin_template
-
-	var_6_98[703] = {
+	pg.base.equip_skin_template[703] = {
 		orbit_slg = "",
 		name = "喵喵摩托艇(战斗)",
 		orbit_ui_bound = "",
@@ -28554,8 +26158,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_6_98
-	var_6_98.base.equip_skin_template[704] = {
+	pg.base.equip_skin_template[704] = {
 		orbit_slg = "",
 		name = "喵喵摩托艇(轰炸)",
 		orbit_ui_bound = "",
@@ -28599,11 +26202,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.equip_skin_template
-
-	var_7_0[705] = {
+	pg.base.equip_skin_template[705] = {
 		orbit_slg = "",
 		name = "鳐鱼飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -28643,11 +26242,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.equip_skin_template
-
-	var_7_1[706] = {
+	pg.base.equip_skin_template[706] = {
 		orbit_slg = "",
 		name = "鳐鱼飞机(战斗)",
 		orbit_ui_bound = "",
@@ -28687,11 +26282,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.equip_skin_template
-
-	var_7_2[707] = {
+	pg.base.equip_skin_template[707] = {
 		orbit_slg = "",
 		name = "鳐鱼飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -28731,11 +26322,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.equip_skin_template
-
-	var_7_3[710] = {
+	pg.base.equip_skin_template[710] = {
 		orbit_slg = "",
 		name = "花卷子弹",
 		orbit_ui_bound = "",
@@ -28777,11 +26364,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.equip_skin_template
-
-	var_7_4[711] = {
+	pg.base.equip_skin_template[711] = {
 		orbit_slg = "",
 		name = "钵仔糕子弹",
 		orbit_ui_bound = "",
@@ -28823,11 +26406,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.equip_skin_template
-
-	var_7_5[712] = {
+	pg.base.equip_skin_template[712] = {
 		orbit_slg = "",
 		name = "臭豆腐子弹",
 		orbit_ui_bound = "",
@@ -28869,11 +26448,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.equip_skin_template
-
-	var_7_6[713] = {
+	pg.base.equip_skin_template[713] = {
 		orbit_slg = "",
 		name = "松鼠鱼炮弹",
 		orbit_ui_bound = "",
@@ -28915,11 +26490,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.equip_skin_template
-
-	var_7_7[714] = {
+	pg.base.equip_skin_template[714] = {
 		orbit_slg = "",
 		name = "狮子头炮弹",
 		orbit_ui_bound = "",
@@ -28961,11 +26532,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.equip_skin_template
-
-	var_7_8[715] = {
+	pg.base.equip_skin_template[715] = {
 		orbit_slg = "",
 		name = "冬瓜盅炮弹",
 		orbit_ui_bound = "",
@@ -29007,11 +26574,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.equip_skin_template
-
-	var_7_9[716] = {
+	pg.base.equip_skin_template[716] = {
 		orbit_slg = "",
 		name = "油条鱼雷",
 		orbit_ui_bound = "",
@@ -29052,11 +26615,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.equip_skin_template
-
-	var_7_10[717] = {
+	pg.base.equip_skin_template[717] = {
 		orbit_slg = "",
 		name = "羊肉串鱼雷",
 		orbit_ui_bound = "",
@@ -29097,11 +26656,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.equip_skin_template
-
-	var_7_11[718] = {
+	pg.base.equip_skin_template[718] = {
 		orbit_slg = "",
 		name = "麻花鱼雷",
 		orbit_ui_bound = "",
@@ -29142,11 +26697,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.equip_skin_template
-
-	var_7_12[719] = {
+	pg.base.equip_skin_template[719] = {
 		orbit_slg = "",
 		name = "飞机:铜火锅(鱼雷)",
 		orbit_ui_bound = "",
@@ -29186,11 +26737,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.equip_skin_template
-
-	var_7_13[720] = {
+	pg.base.equip_skin_template[720] = {
 		orbit_slg = "",
 		name = "飞机:铜火锅(战斗)",
 		orbit_ui_bound = "",
@@ -29230,11 +26777,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.equip_skin_template
-
-	var_7_14[721] = {
+	pg.base.equip_skin_template[721] = {
 		orbit_slg = "",
 		name = "飞机:铜火锅(轰炸)",
 		orbit_ui_bound = "",
@@ -29274,11 +26817,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.equip_skin_template
-
-	var_7_15[722] = {
+	pg.base.equip_skin_template[722] = {
 		orbit_slg = "",
 		name = "飞机:牛肉面(鱼雷)",
 		orbit_ui_bound = "",
@@ -29318,11 +26857,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.equip_skin_template
-
-	var_7_16[723] = {
+	pg.base.equip_skin_template[723] = {
 		orbit_slg = "",
 		name = "飞机:牛肉面(战斗)",
 		orbit_ui_bound = "",
@@ -29362,11 +26897,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.equip_skin_template
-
-	var_7_17[724] = {
+	pg.base.equip_skin_template[724] = {
 		orbit_slg = "",
 		name = "飞机:牛肉面(轰炸)",
 		orbit_ui_bound = "",
@@ -29406,11 +26937,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.equip_skin_template
-
-	var_7_18[725] = {
+	pg.base.equip_skin_template[725] = {
 		orbit_slg = "",
 		name = "飞机:大包子(鱼雷)",
 		orbit_ui_bound = "",
@@ -29450,11 +26977,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.equip_skin_template
-
-	var_7_19[726] = {
+	pg.base.equip_skin_template[726] = {
 		orbit_slg = "",
 		name = "飞机:大包子(战斗)",
 		orbit_ui_bound = "",
@@ -29494,11 +27017,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.equip_skin_template
-
-	var_7_20[727] = {
+	pg.base.equip_skin_template[727] = {
 		orbit_slg = "",
 		name = "飞机:大包子(轰炸)",
 		orbit_ui_bound = "",
@@ -29538,11 +27057,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.equip_skin_template
-
-	var_7_21[730] = {
+	pg.base.equip_skin_template[730] = {
 		orbit_slg = "",
 		name = "羽毛笔子弹",
 		orbit_ui_bound = "",
@@ -29584,11 +27099,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.equip_skin_template
-
-	var_7_22[731] = {
+	pg.base.equip_skin_template[731] = {
 		orbit_slg = "",
 		name = "废纸团子弹",
 		orbit_ui_bound = "",
@@ -29630,11 +27141,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.equip_skin_template
-
-	var_7_23[732] = {
+	pg.base.equip_skin_template[732] = {
 		orbit_slg = "",
 		name = "眼镜子弹",
 		orbit_ui_bound = "",
@@ -29676,11 +27183,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.equip_skin_template
-
-	var_7_24[733] = {
+	pg.base.equip_skin_template[733] = {
 		orbit_slg = "",
 		name = "手提书包炮弹",
 		orbit_ui_bound = "",
@@ -29722,11 +27225,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.equip_skin_template
-
-	var_7_25[734] = {
+	pg.base.equip_skin_template[734] = {
 		orbit_slg = "",
 		name = "地球仪炮弹",
 		orbit_ui_bound = "",
@@ -29768,11 +27267,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.equip_skin_template
-
-	var_7_26[735] = {
+	pg.base.equip_skin_template[735] = {
 		orbit_slg = "",
 		name = "三角尺炮弹",
 		orbit_ui_bound = "",
@@ -29814,11 +27309,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.equip_skin_template
-
-	var_7_27[736] = {
+	pg.base.equip_skin_template[736] = {
 		orbit_slg = "",
 		name = "笔记本鱼雷",
 		orbit_ui_bound = "",
@@ -29859,11 +27350,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.equip_skin_template
-
-	var_7_28[737] = {
+	pg.base.equip_skin_template[737] = {
 		orbit_slg = "",
 		name = "雨伞鱼雷",
 		orbit_ui_bound = "",
@@ -29904,11 +27391,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.equip_skin_template
-
-	var_7_29[738] = {
+	pg.base.equip_skin_template[738] = {
 		orbit_slg = "",
 		name = "单簧管鱼雷",
 		orbit_ui_bound = "",
@@ -29949,11 +27432,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.equip_skin_template
-
-	var_7_30[739] = {
+	pg.base.equip_skin_template[739] = {
 		orbit_slg = "",
 		name = "飞天三角钢琴(鱼雷)",
 		orbit_ui_bound = "",
@@ -29993,11 +27472,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.equip_skin_template
-
-	var_7_31[740] = {
+	pg.base.equip_skin_template[740] = {
 		orbit_slg = "",
 		name = "飞天三角钢琴(战斗)",
 		orbit_ui_bound = "",
@@ -30037,11 +27512,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.equip_skin_template
-
-	var_7_32[741] = {
+	pg.base.equip_skin_template[741] = {
 		orbit_slg = "",
 		name = "飞天三角钢琴(轰炸)",
 		orbit_ui_bound = "",
@@ -30081,11 +27552,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.equip_skin_template
-
-	var_7_33[742] = {
+	pg.base.equip_skin_template[742] = {
 		orbit_slg = "",
 		name = "飞天旋转黑板(鱼雷)",
 		orbit_ui_bound = "",
@@ -30125,11 +27592,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.equip_skin_template
-
-	var_7_34[743] = {
+	pg.base.equip_skin_template[743] = {
 		orbit_slg = "",
 		name = "飞天旋转黑板(战斗)",
 		orbit_ui_bound = "",
@@ -30169,11 +27632,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.equip_skin_template
-
-	var_7_35[744] = {
+	pg.base.equip_skin_template[744] = {
 		orbit_slg = "",
 		name = "飞天旋转黑板(轰炸)",
 		orbit_ui_bound = "",
@@ -30213,11 +27672,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.equip_skin_template
-
-	var_7_36[745] = {
+	pg.base.equip_skin_template[745] = {
 		orbit_slg = "",
 		name = "飞天啾啾雕像(鱼雷)",
 		orbit_ui_bound = "",
@@ -30257,11 +27712,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.equip_skin_template
-
-	var_7_37[746] = {
+	pg.base.equip_skin_template[746] = {
 		orbit_slg = "",
 		name = "飞天啾啾雕像(战斗)",
 		orbit_ui_bound = "",
@@ -30301,11 +27752,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.equip_skin_template
-
-	var_7_38[747] = {
+	pg.base.equip_skin_template[747] = {
 		orbit_slg = "",
 		name = "飞天啾啾雕像(轰炸)",
 		orbit_ui_bound = "",
@@ -30345,11 +27792,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.equip_skin_template
-
-	var_7_39[750] = {
+	pg.base.equip_skin_template[750] = {
 		orbit_slg = "",
 		name = "求生匕首（？)子弹",
 		orbit_ui_bound = "",
@@ -30391,11 +27834,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.equip_skin_template
-
-	var_7_40[751] = {
+	pg.base.equip_skin_template[751] = {
 		orbit_slg = "",
 		name = "指南针子弹",
 		orbit_ui_bound = "",
@@ -30437,11 +27876,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.equip_skin_template
-
-	var_7_41[752] = {
+	pg.base.equip_skin_template[752] = {
 		orbit_slg = "",
 		name = "防晒帽子弹",
 		orbit_ui_bound = "",
@@ -30483,11 +27918,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.equip_skin_template
-
-	var_7_42[753] = {
+	pg.base.equip_skin_template[753] = {
 		orbit_slg = "",
 		name = "急救箱(？)炮弹",
 		orbit_ui_bound = "",
@@ -30529,11 +27960,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.equip_skin_template
-
-	var_7_43[754] = {
+	pg.base.equip_skin_template[754] = {
 		orbit_slg = "",
 		name = "登山包(？)炮弹",
 		orbit_ui_bound = "",
@@ -30575,11 +28002,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.equip_skin_template
-
-	var_7_44[755] = {
+	pg.base.equip_skin_template[755] = {
 		orbit_slg = "",
 		name = "登山靴(？)炮弹",
 		orbit_ui_bound = "",
@@ -30621,11 +28044,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.equip_skin_template
-
-	var_7_45[756] = {
+	pg.base.equip_skin_template[756] = {
 		orbit_slg = "",
 		name = "手电筒鱼雷",
 		orbit_ui_bound = "",
@@ -30666,11 +28085,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.equip_skin_template
-
-	var_7_46[757] = {
+	pg.base.equip_skin_template[757] = {
 		orbit_slg = "",
 		name = "登山手杖(？)鱼雷",
 		orbit_ui_bound = "",
@@ -30711,11 +28126,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.equip_skin_template
-
-	var_7_47[758] = {
+	pg.base.equip_skin_template[758] = {
 		orbit_slg = "",
 		name = "露营灯鱼雷",
 		orbit_ui_bound = "",
@@ -30756,11 +28167,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.equip_skin_template
-
-	var_7_48[759] = {
+	pg.base.equip_skin_template[759] = {
 		orbit_slg = "",
 		name = "冲锋舟飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -30800,11 +28207,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.equip_skin_template
-
-	var_7_49[760] = {
+	pg.base.equip_skin_template[760] = {
 		orbit_slg = "",
 		name = "冲锋舟飞机(战斗)",
 		orbit_ui_bound = "",
@@ -30844,11 +28247,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.equip_skin_template
-
-	var_7_50[761] = {
+	pg.base.equip_skin_template[761] = {
 		orbit_slg = "",
 		name = "冲锋舟飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -30888,11 +28287,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.equip_skin_template
-
-	var_7_51[762] = {
+	pg.base.equip_skin_template[762] = {
 		orbit_slg = "",
 		name = "小摩托飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -30932,11 +28327,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.equip_skin_template
-
-	var_7_52[763] = {
+	pg.base.equip_skin_template[763] = {
 		orbit_slg = "",
 		name = "小摩托飞机(战斗)",
 		orbit_ui_bound = "",
@@ -30976,11 +28367,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.equip_skin_template
-
-	var_7_53[764] = {
+	pg.base.equip_skin_template[764] = {
 		orbit_slg = "",
 		name = "小摩托飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -31020,11 +28407,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.equip_skin_template
-
-	var_7_54[765] = {
+	pg.base.equip_skin_template[765] = {
 		orbit_slg = "",
 		name = "帐篷飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -31064,11 +28447,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.equip_skin_template
-
-	var_7_55[766] = {
+	pg.base.equip_skin_template[766] = {
 		orbit_slg = "",
 		name = "帐篷飞机(战斗)",
 		orbit_ui_bound = "",
@@ -31108,11 +28487,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.equip_skin_template
-
-	var_7_56[767] = {
+	pg.base.equip_skin_template[767] = {
 		orbit_slg = "",
 		name = "帐篷飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -31152,11 +28527,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.equip_skin_template
-
-	var_7_57[771] = {
+	pg.base.equip_skin_template[771] = {
 		orbit_slg = "",
 		name = "森林之心炮弹（绿）",
 		orbit_ui_bound = "",
@@ -31198,11 +28569,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.equip_skin_template
-
-	var_7_58[772] = {
+	pg.base.equip_skin_template[772] = {
 		orbit_slg = "",
 		name = "森林之心炮弹（紫）",
 		orbit_ui_bound = "",
@@ -31244,11 +28611,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.equip_skin_template
-
-	var_7_59[773] = {
+	pg.base.equip_skin_template[773] = {
 		orbit_slg = "",
 		name = "森林之心炮弹（蓝）",
 		orbit_ui_bound = "",
@@ -31290,11 +28653,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.equip_skin_template
-
-	var_7_60[774] = {
+	pg.base.equip_skin_template[774] = {
 		orbit_slg = "",
 		name = "精灵之翼",
 		type = 1,
@@ -31354,11 +28713,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.equip_skin_template
-
-	var_7_61[775] = {
+	pg.base.equip_skin_template[775] = {
 		orbit_slg = "",
 		name = "精灵之冠",
 		type = 1,
@@ -31418,11 +28773,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.equip_skin_template
-
-	var_7_62[780] = {
+	pg.base.equip_skin_template[780] = {
 		orbit_slg = "",
 		name = "鼠标子弹",
 		orbit_ui_bound = "",
@@ -31464,11 +28815,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.equip_skin_template
-
-	var_7_63[781] = {
+	pg.base.equip_skin_template[781] = {
 		orbit_slg = "",
 		name = "马克笔子弹",
 		orbit_ui_bound = "",
@@ -31510,11 +28857,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.equip_skin_template
-
-	var_7_64[782] = {
+	pg.base.equip_skin_template[782] = {
 		orbit_slg = "",
 		name = "工牌子弹",
 		orbit_ui_bound = "",
@@ -31556,11 +28899,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.equip_skin_template
-
-	var_7_65[783] = {
+	pg.base.equip_skin_template[783] = {
 		orbit_slg = "",
 		name = "主机炮弹",
 		orbit_ui_bound = "",
@@ -31602,11 +28941,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.equip_skin_template
-
-	var_7_66[784] = {
+	pg.base.equip_skin_template[784] = {
 		orbit_slg = "",
 		name = "数位板炮弹",
 		orbit_ui_bound = "",
@@ -31648,11 +28983,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.equip_skin_template
-
-	var_7_67[785] = {
+	pg.base.equip_skin_template[785] = {
 		orbit_slg = "",
 		name = "高跟鞋炮弹",
 		orbit_ui_bound = "",
@@ -31694,11 +29025,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.equip_skin_template
-
-	var_7_68[786] = {
+	pg.base.equip_skin_template[786] = {
 		orbit_slg = "",
 		name = "日光灯鱼雷",
 		orbit_ui_bound = "",
@@ -31739,11 +29066,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.equip_skin_template
-
-	var_7_69[787] = {
+	pg.base.equip_skin_template[787] = {
 		orbit_slg = "",
 		name = "纸杯咖啡鱼雷",
 		orbit_ui_bound = "",
@@ -31784,11 +29107,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.equip_skin_template
-
-	var_7_70[788] = {
+	pg.base.equip_skin_template[788] = {
 		orbit_slg = "",
 		name = "键盘鱼雷",
 		orbit_ui_bound = "",
@@ -31829,11 +29148,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.equip_skin_template
-
-	var_7_71[789] = {
+	pg.base.equip_skin_template[789] = {
 		orbit_slg = "",
 		name = "显示器飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -31873,11 +29188,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.equip_skin_template
-
-	var_7_72[790] = {
+	pg.base.equip_skin_template[790] = {
 		orbit_slg = "",
 		name = "显示器飞机(战斗)",
 		orbit_ui_bound = "",
@@ -31917,11 +29228,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.equip_skin_template
-
-	var_7_73[791] = {
+	pg.base.equip_skin_template[791] = {
 		orbit_slg = "",
 		name = "显示器飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -31961,11 +29268,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.equip_skin_template
-
-	var_7_74[792] = {
+	pg.base.equip_skin_template[792] = {
 		orbit_slg = "",
 		name = "滑轮椅飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -32005,11 +29308,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.equip_skin_template
-
-	var_7_75[793] = {
+	pg.base.equip_skin_template[793] = {
 		orbit_slg = "",
 		name = "滑轮椅飞机(战斗)",
 		orbit_ui_bound = "",
@@ -32049,11 +29348,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.equip_skin_template
-
-	var_7_76[794] = {
+	pg.base.equip_skin_template[794] = {
 		orbit_slg = "",
 		name = "滑轮椅飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -32093,11 +29388,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.equip_skin_template
-
-	var_7_77[795] = {
+	pg.base.equip_skin_template[795] = {
 		orbit_slg = "",
 		name = "白板飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -32137,11 +29428,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.equip_skin_template
-
-	var_7_78[796] = {
+	pg.base.equip_skin_template[796] = {
 		orbit_slg = "",
 		name = "白板飞机(战斗)",
 		orbit_ui_bound = "",
@@ -32181,11 +29468,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.equip_skin_template
-
-	var_7_79[797] = {
+	pg.base.equip_skin_template[797] = {
 		orbit_slg = "",
 		name = "白板飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -32225,11 +29508,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.equip_skin_template
-
-	var_7_80[800] = {
+	pg.base.equip_skin_template[800] = {
 		orbit_slg = "",
 		name = "古利特激光子弹",
 		orbit_ui_bound = "",
@@ -32271,11 +29550,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.equip_skin_template
-
-	var_7_81[801] = {
+	pg.base.equip_skin_template[801] = {
 		orbit_slg = "",
 		name = "古立特骑士光轮炮弹",
 		orbit_ui_bound = "",
@@ -32317,11 +29592,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.equip_skin_template
-
-	var_7_82[802] = {
+	pg.base.equip_skin_template[802] = {
 		orbit_slg = "",
 		name = "戴拿巨刃鱼雷",
 		orbit_ui_bound = "",
@@ -32362,11 +29633,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.equip_skin_template
-
-	var_7_83[803] = {
+	pg.base.equip_skin_template[803] = {
 		orbit_slg = "",
 		name = "巨翼煌翼炎龙(鱼雷)",
 		orbit_ui_bound = "",
@@ -32406,11 +29673,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.equip_skin_template
-
-	var_7_84[804] = {
+	pg.base.equip_skin_template[804] = {
 		orbit_slg = "",
 		name = "巨翼煌翼炎龙(战斗)",
 		orbit_ui_bound = "",
@@ -32450,11 +29713,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.equip_skin_template
-
-	var_7_85[805] = {
+	pg.base.equip_skin_template[805] = {
 		orbit_slg = "",
 		name = "巨翼煌翼炎龙(轰炸)",
 		orbit_ui_bound = "",
@@ -32494,11 +29753,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.equip_skin_template
-
-	var_7_86[806] = {
+	pg.base.equip_skin_template[806] = {
 		orbit_slg = "",
 		name = "戴拿飞翼(设备)",
 		type = 2,
@@ -32594,11 +29849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.equip_skin_template
-
-	var_7_87[810] = {
+	pg.base.equip_skin_template[810] = {
 		orbit_slg = "",
 		name = "泡泡子弹",
 		orbit_ui_bound = "",
@@ -32640,11 +29891,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.equip_skin_template
-
-	var_7_88[811] = {
+	pg.base.equip_skin_template[811] = {
 		orbit_slg = "",
 		name = "邀请函子弹",
 		orbit_ui_bound = "",
@@ -32686,11 +29933,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.equip_skin_template
-
-	var_7_89[812] = {
+	pg.base.equip_skin_template[812] = {
 		orbit_slg = "",
 		name = "小点心子弹",
 		orbit_ui_bound = "",
@@ -32732,11 +29975,7 @@ end)()
 			101
 		}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.equip_skin_template
-
-	var_7_90[813] = {
+	pg.base.equip_skin_template[813] = {
 		orbit_slg = "",
 		name = "冲天炮弹",
 		orbit_ui_bound = "",
@@ -32778,11 +30017,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.equip_skin_template
-
-	var_7_91[814] = {
+	pg.base.equip_skin_template[814] = {
 		orbit_slg = "",
 		name = "纪念雕像炮弹",
 		orbit_ui_bound = "",
@@ -32824,11 +30059,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.equip_skin_template
-
-	var_7_92[815] = {
+	pg.base.equip_skin_template[815] = {
 		orbit_slg = "",
 		name = "花束炮弹",
 		orbit_ui_bound = "",
@@ -32870,11 +30101,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.equip_skin_template
-
-	var_7_93[816] = {
+	pg.base.equip_skin_template[816] = {
 		orbit_slg = "",
 		name = "古典钥匙鱼雷",
 		orbit_ui_bound = "",
@@ -32915,11 +30142,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.equip_skin_template
-
-	var_7_94[817] = {
+	pg.base.equip_skin_template[817] = {
 		orbit_slg = "",
 		name = "提灯鱼雷",
 		orbit_ui_bound = "",
@@ -32960,11 +30183,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.equip_skin_template
-
-	var_7_95[818] = {
+	pg.base.equip_skin_template[818] = {
 		orbit_slg = "",
 		name = "饮品鱼雷",
 		orbit_ui_bound = "",
@@ -33005,11 +30224,7 @@ end)()
 			107
 		}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.equip_skin_template
-
-	var_7_96[819] = {
+	pg.base.equip_skin_template[819] = {
 		orbit_slg = "",
 		name = "梦幻城堡飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -33049,11 +30264,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.equip_skin_template
-
-	var_7_97[820] = {
+	pg.base.equip_skin_template[820] = {
 		orbit_slg = "",
 		name = "梦幻城堡飞机(战斗)",
 		orbit_ui_bound = "",
@@ -33093,11 +30304,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.equip_skin_template
-
-	var_7_98[821] = {
+	pg.base.equip_skin_template[821] = {
 		orbit_slg = "",
 		name = "梦幻城堡飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -33137,8 +30344,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_7_98
-	var_7_98.base.equip_skin_template[822] = {
+	pg.base.equip_skin_template[822] = {
 		orbit_slg = "",
 		name = "南瓜车飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -33182,11 +30388,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.equip_skin_template
-
-	var_8_0[823] = {
+	pg.base.equip_skin_template[823] = {
 		orbit_slg = "",
 		name = "南瓜车飞机(战斗)",
 		orbit_ui_bound = "",
@@ -33226,11 +30428,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.equip_skin_template
-
-	var_8_1[824] = {
+	pg.base.equip_skin_template[824] = {
 		orbit_slg = "",
 		name = "南瓜车飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -33270,11 +30468,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.equip_skin_template
-
-	var_8_2[825] = {
+	pg.base.equip_skin_template[825] = {
 		orbit_slg = "",
 		name = "红色沙发飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -33314,11 +30508,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.equip_skin_template
-
-	var_8_3[826] = {
+	pg.base.equip_skin_template[826] = {
 		orbit_slg = "",
 		name = "红色沙发飞机(战斗)",
 		orbit_ui_bound = "",
@@ -33358,11 +30548,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.equip_skin_template
-
-	var_8_4[827] = {
+	pg.base.equip_skin_template[827] = {
 		orbit_slg = "",
 		name = "红色沙发飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -33402,11 +30588,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.equip_skin_template
-
-	var_8_5[830] = {
+	pg.base.equip_skin_template[830] = {
 		orbit_slg = "",
 		name = "幽魂子弹",
 		orbit_ui_bound = "",
@@ -33448,11 +30630,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.equip_skin_template
-
-	var_8_6[831] = {
+	pg.base.equip_skin_template[831] = {
 		orbit_slg = "",
 		name = "勾玉子弹",
 		orbit_ui_bound = "",
@@ -33494,11 +30672,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.equip_skin_template
-
-	var_8_7[832] = {
+	pg.base.equip_skin_template[832] = {
 		orbit_slg = "",
 		name = "阴阳符子弹",
 		orbit_ui_bound = "",
@@ -33540,11 +30714,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.equip_skin_template
-
-	var_8_8[833] = {
+	pg.base.equip_skin_template[833] = {
 		orbit_slg = "",
 		name = "妖怪面具炮弹",
 		orbit_ui_bound = "",
@@ -33586,11 +30756,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.equip_skin_template
-
-	var_8_9[834] = {
+	pg.base.equip_skin_template[834] = {
 		orbit_slg = "",
 		name = "福豆炮弹",
 		orbit_ui_bound = "",
@@ -33632,11 +30798,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.equip_skin_template
-
-	var_8_10[835] = {
+	pg.base.equip_skin_template[835] = {
 		orbit_slg = "",
 		name = "浮游灵炮弹",
 		orbit_ui_bound = "",
@@ -33678,11 +30840,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.equip_skin_template
-
-	var_8_11[836] = {
+	pg.base.equip_skin_template[836] = {
 		orbit_slg = "",
 		name = "袪厄冬青鱼雷",
 		orbit_ui_bound = "",
@@ -33723,11 +30881,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.equip_skin_template
-
-	var_8_12[837] = {
+	pg.base.equip_skin_template[837] = {
 		orbit_slg = "",
 		name = "惠方卷鱼雷",
 		orbit_ui_bound = "",
@@ -33768,11 +30922,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.equip_skin_template
-
-	var_8_13[838] = {
+	pg.base.equip_skin_template[838] = {
 		orbit_slg = "",
 		name = "茶杯小妖鱼雷",
 		orbit_ui_bound = "",
@@ -33813,11 +30963,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.equip_skin_template
-
-	var_8_14[839] = {
+	pg.base.equip_skin_template[839] = {
 		orbit_slg = "",
 		name = "九尾飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -33857,11 +31003,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.equip_skin_template
-
-	var_8_15[840] = {
+	pg.base.equip_skin_template[840] = {
 		orbit_slg = "",
 		name = "九尾飞机(战斗)",
 		orbit_ui_bound = "",
@@ -33901,11 +31043,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.equip_skin_template
-
-	var_8_16[841] = {
+	pg.base.equip_skin_template[841] = {
 		orbit_slg = "",
 		name = "九尾飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -33945,11 +31083,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.equip_skin_template
-
-	var_8_17[842] = {
+	pg.base.equip_skin_template[842] = {
 		orbit_slg = "",
 		name = "河童飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -33989,11 +31123,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.equip_skin_template
-
-	var_8_18[843] = {
+	pg.base.equip_skin_template[843] = {
 		orbit_slg = "",
 		name = "河童飞机(战斗)",
 		orbit_ui_bound = "",
@@ -34033,11 +31163,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.equip_skin_template
-
-	var_8_19[844] = {
+	pg.base.equip_skin_template[844] = {
 		orbit_slg = "",
 		name = "河童飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -34077,11 +31203,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.equip_skin_template
-
-	var_8_20[845] = {
+	pg.base.equip_skin_template[845] = {
 		orbit_slg = "",
 		name = "雪女飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -34121,11 +31243,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.equip_skin_template
-
-	var_8_21[846] = {
+	pg.base.equip_skin_template[846] = {
 		orbit_slg = "",
 		name = "雪女飞机(战斗)",
 		orbit_ui_bound = "",
@@ -34165,11 +31283,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.equip_skin_template
-
-	var_8_22[847] = {
+	pg.base.equip_skin_template[847] = {
 		orbit_slg = "",
 		name = "雪女飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -34209,11 +31323,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.equip_skin_template
-
-	var_8_23[850] = {
+	pg.base.equip_skin_template[850] = {
 		orbit_slg = "",
 		name = "眼罩子弹",
 		orbit_ui_bound = "",
@@ -34255,11 +31365,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.equip_skin_template
-
-	var_8_24[851] = {
+	pg.base.equip_skin_template[851] = {
 		orbit_slg = "",
 		name = "船钩子弹",
 		orbit_ui_bound = "",
@@ -34301,11 +31407,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.equip_skin_template
-
-	var_8_25[852] = {
+	pg.base.equip_skin_template[852] = {
 		orbit_slg = "",
 		name = "弯刀子弹",
 		orbit_ui_bound = "",
@@ -34347,11 +31449,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.equip_skin_template
-
-	var_8_26[853] = {
+	pg.base.equip_skin_template[853] = {
 		orbit_slg = "",
 		name = "深渊宝箱弹",
 		orbit_ui_bound = "",
@@ -34393,11 +31491,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.equip_skin_template
-
-	var_8_27[854] = {
+	pg.base.equip_skin_template[854] = {
 		orbit_slg = "",
 		name = "铁球爆破弹",
 		orbit_ui_bound = "",
@@ -34439,11 +31533,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.equip_skin_template
-
-	var_8_28[855] = {
+	pg.base.equip_skin_template[855] = {
 		orbit_slg = "",
 		name = "指南针炮弹",
 		orbit_ui_bound = "",
@@ -34485,11 +31575,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.equip_skin_template
-
-	var_8_29[856] = {
+	pg.base.equip_skin_template[856] = {
 		orbit_slg = "",
 		name = "燧发手枪鱼雷",
 		orbit_ui_bound = "",
@@ -34530,11 +31616,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.equip_skin_template
-
-	var_8_30[857] = {
+	pg.base.equip_skin_template[857] = {
 		orbit_slg = "",
 		name = "木腿鱼雷",
 		orbit_ui_bound = "",
@@ -34575,11 +31657,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.equip_skin_template
-
-	var_8_31[858] = {
+	pg.base.equip_skin_template[858] = {
 		orbit_slg = "",
 		name = "触手鱼雷",
 		orbit_ui_bound = "",
@@ -34620,11 +31698,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.equip_skin_template
-
-	var_8_32[859] = {
+	pg.base.equip_skin_template[859] = {
 		orbit_slg = "",
 		name = "飞翔冒险船飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -34664,11 +31738,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.equip_skin_template
-
-	var_8_33[860] = {
+	pg.base.equip_skin_template[860] = {
 		orbit_slg = "",
 		name = "飞翔冒险船飞机(战斗)",
 		orbit_ui_bound = "",
@@ -34708,11 +31778,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.equip_skin_template
-
-	var_8_34[861] = {
+	pg.base.equip_skin_template[861] = {
 		orbit_slg = "",
 		name = "飞翔冒险船飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -34752,11 +31818,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.equip_skin_template
-
-	var_8_35[862] = {
+	pg.base.equip_skin_template[862] = {
 		orbit_slg = "",
 		name = "飞翔风帆舰飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -34796,11 +31858,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.equip_skin_template
-
-	var_8_36[863] = {
+	pg.base.equip_skin_template[863] = {
 		orbit_slg = "",
 		name = "飞翔风帆舰飞机(战斗)",
 		orbit_ui_bound = "",
@@ -34840,11 +31898,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.equip_skin_template
-
-	var_8_37[864] = {
+	pg.base.equip_skin_template[864] = {
 		orbit_slg = "",
 		name = "飞翔风帆舰飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -34884,11 +31938,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.equip_skin_template
-
-	var_8_38[865] = {
+	pg.base.equip_skin_template[865] = {
 		orbit_slg = "",
 		name = "飞翔幽灵船飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -34928,11 +31978,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.equip_skin_template
-
-	var_8_39[866] = {
+	pg.base.equip_skin_template[866] = {
 		orbit_slg = "",
 		name = "飞翔幽灵船飞机(战斗)",
 		orbit_ui_bound = "",
@@ -34972,11 +32018,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.equip_skin_template
-
-	var_8_40[867] = {
+	pg.base.equip_skin_template[867] = {
 		orbit_slg = "",
 		name = "飞翔幽灵船飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -35016,11 +32058,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.equip_skin_template
-
-	var_8_41[870] = {
+	pg.base.equip_skin_template[870] = {
 		orbit_slg = "",
 		name = "金话筒子弹",
 		orbit_ui_bound = "",
@@ -35062,11 +32100,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.equip_skin_template
-
-	var_8_42[871] = {
+	pg.base.equip_skin_template[871] = {
 		orbit_slg = "",
 		name = "兔耳子弹",
 		orbit_ui_bound = "",
@@ -35108,11 +32142,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.equip_skin_template
-
-	var_8_43[872] = {
+	pg.base.equip_skin_template[872] = {
 		orbit_slg = "",
 		name = "特调子弹",
 		orbit_ui_bound = "",
@@ -35154,11 +32184,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.equip_skin_template
-
-	var_8_44[873] = {
+	pg.base.equip_skin_template[873] = {
 		orbit_slg = "",
 		name = "唱片炮弹",
 		orbit_ui_bound = "",
@@ -35200,11 +32226,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.equip_skin_template
-
-	var_8_45[874] = {
+	pg.base.equip_skin_template[874] = {
 		orbit_slg = "",
 		name = "迪斯科炮弹",
 		orbit_ui_bound = "",
@@ -35246,11 +32268,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.equip_skin_template
-
-	var_8_46[875] = {
+	pg.base.equip_skin_template[875] = {
 		orbit_slg = "",
 		name = "兔兔喇叭炮弹",
 		orbit_ui_bound = "",
@@ -35292,11 +32310,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.equip_skin_template
-
-	var_8_47[876] = {
+	pg.base.equip_skin_template[876] = {
 		orbit_slg = "",
 		name = "电子吉他鱼雷",
 		orbit_ui_bound = "",
@@ -35337,11 +32351,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.equip_skin_template
-
-	var_8_48[877] = {
+	pg.base.equip_skin_template[877] = {
 		orbit_slg = "",
 		name = "电子胡萝卜鱼雷",
 		orbit_ui_bound = "",
@@ -35382,11 +32392,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.equip_skin_template
-
-	var_8_49[878] = {
+	pg.base.equip_skin_template[878] = {
 		orbit_slg = "",
 		name = "电子音响鱼雷",
 		orbit_ui_bound = "",
@@ -35427,11 +32433,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.equip_skin_template
-
-	var_8_50[879] = {
+	pg.base.equip_skin_template[879] = {
 		orbit_slg = "",
 		name = "舞台飞行器(鱼雷)",
 		orbit_ui_bound = "",
@@ -35471,11 +32473,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.equip_skin_template
-
-	var_8_51[880] = {
+	pg.base.equip_skin_template[880] = {
 		orbit_slg = "",
 		name = "舞台飞行器(战斗)",
 		orbit_ui_bound = "",
@@ -35515,11 +32513,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.equip_skin_template
-
-	var_8_52[881] = {
+	pg.base.equip_skin_template[881] = {
 		orbit_slg = "",
 		name = "舞台飞行器(轰炸)",
 		orbit_ui_bound = "",
@@ -35559,11 +32553,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.equip_skin_template
-
-	var_8_53[882] = {
+	pg.base.equip_skin_template[882] = {
 		orbit_slg = "",
 		name = "DJ台飞行器(鱼雷)",
 		orbit_ui_bound = "",
@@ -35603,11 +32593,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.equip_skin_template
-
-	var_8_54[883] = {
+	pg.base.equip_skin_template[883] = {
 		orbit_slg = "",
 		name = "DJ台飞行器(战斗)",
 		orbit_ui_bound = "",
@@ -35647,11 +32633,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.equip_skin_template
-
-	var_8_55[884] = {
+	pg.base.equip_skin_template[884] = {
 		orbit_slg = "",
 		name = "DJ台飞行器(轰炸)",
 		orbit_ui_bound = "",
@@ -35691,11 +32673,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.equip_skin_template
-
-	var_8_56[885] = {
+	pg.base.equip_skin_template[885] = {
 		orbit_slg = "",
 		name = "调酒台飞行器(鱼雷)",
 		orbit_ui_bound = "",
@@ -35735,11 +32713,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.equip_skin_template
-
-	var_8_57[886] = {
+	pg.base.equip_skin_template[886] = {
 		orbit_slg = "",
 		name = "调酒台飞行器(战斗)",
 		orbit_ui_bound = "",
@@ -35779,11 +32753,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.equip_skin_template
-
-	var_8_58[887] = {
+	pg.base.equip_skin_template[887] = {
 		orbit_slg = "",
 		name = "调酒台飞行器(轰炸)",
 		orbit_ui_bound = "",
@@ -35823,11 +32793,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.equip_skin_template
-
-	var_8_59[890] = {
+	pg.base.equip_skin_template[890] = {
 		orbit_slg = "",
 		name = "番天印子弹",
 		orbit_ui_bound = "",
@@ -35869,11 +32835,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.equip_skin_template
-
-	var_8_60[891] = {
+	pg.base.equip_skin_template[891] = {
 		orbit_slg = "",
 		name = "飞剑子弹",
 		orbit_ui_bound = "",
@@ -35915,11 +32877,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.equip_skin_template
-
-	var_8_61[892] = {
+	pg.base.equip_skin_template[892] = {
 		orbit_slg = "",
 		name = "玲珑球子弹",
 		orbit_ui_bound = "",
@@ -35961,11 +32919,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.equip_skin_template
-
-	var_8_62[893] = {
+	pg.base.equip_skin_template[893] = {
 		orbit_slg = "",
 		name = "卦盘炮弹",
 		orbit_ui_bound = "",
@@ -36007,11 +32961,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.equip_skin_template
-
-	var_8_63[894] = {
+	pg.base.equip_skin_template[894] = {
 		orbit_slg = "",
 		name = "法宝葫芦炮弹",
 		orbit_ui_bound = "",
@@ -36053,11 +33003,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.equip_skin_template
-
-	var_8_64[895] = {
+	pg.base.equip_skin_template[895] = {
 		orbit_slg = "",
 		name = "剑阵炮弹",
 		orbit_ui_bound = "",
@@ -36099,11 +33045,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.equip_skin_template
-
-	var_8_65[896] = {
+	pg.base.equip_skin_template[896] = {
 		orbit_slg = "",
 		name = "玉笛鱼雷",
 		orbit_ui_bound = "",
@@ -36144,11 +33086,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.equip_skin_template
-
-	var_8_66[897] = {
+	pg.base.equip_skin_template[897] = {
 		orbit_slg = "",
 		name = "拂尘鱼雷",
 		orbit_ui_bound = "",
@@ -36189,11 +33127,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.equip_skin_template
-
-	var_8_67[898] = {
+	pg.base.equip_skin_template[898] = {
 		orbit_slg = "",
 		name = "逍遥琴鱼雷",
 		orbit_ui_bound = "",
@@ -36234,11 +33168,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.equip_skin_template
-
-	var_8_68[899] = {
+	pg.base.equip_skin_template[899] = {
 		orbit_slg = "",
 		name = "巨阙飞剑飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -36278,11 +33208,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.equip_skin_template
-
-	var_8_69[900] = {
+	pg.base.equip_skin_template[900] = {
 		orbit_slg = "",
 		name = "巨阙飞剑飞机(战斗)",
 		orbit_ui_bound = "",
@@ -36322,11 +33248,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.equip_skin_template
-
-	var_8_70[901] = {
+	pg.base.equip_skin_template[901] = {
 		orbit_slg = "",
 		name = "巨阙飞剑飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -36366,11 +33288,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.equip_skin_template
-
-	var_8_71[902] = {
+	pg.base.equip_skin_template[902] = {
 		orbit_slg = "",
 		name = "魔剑飞剑飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -36410,11 +33328,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.equip_skin_template
-
-	var_8_72[903] = {
+	pg.base.equip_skin_template[903] = {
 		orbit_slg = "",
 		name = "魔剑飞剑飞机(战斗)",
 		orbit_ui_bound = "",
@@ -36454,11 +33368,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.equip_skin_template
-
-	var_8_73[904] = {
+	pg.base.equip_skin_template[904] = {
 		orbit_slg = "",
 		name = "魔剑飞剑飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -36498,11 +33408,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.equip_skin_template
-
-	var_8_74[905] = {
+	pg.base.equip_skin_template[905] = {
 		orbit_slg = "",
 		name = "轩辕飞剑飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -36542,11 +33448,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.equip_skin_template
-
-	var_8_75[906] = {
+	pg.base.equip_skin_template[906] = {
 		orbit_slg = "",
 		name = "轩辕飞剑飞机(战斗)",
 		orbit_ui_bound = "",
@@ -36586,11 +33488,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.equip_skin_template
-
-	var_8_76[907] = {
+	pg.base.equip_skin_template[907] = {
 		orbit_slg = "",
 		name = "轩辕飞剑飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -36630,11 +33528,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.equip_skin_template
-
-	var_8_77[908] = {
+	pg.base.equip_skin_template[908] = {
 		orbit_slg = "",
 		name = "飞彩祥云 ",
 		type = 1,
@@ -36694,11 +33588,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.equip_skin_template
-
-	var_8_78[910] = {
+	pg.base.equip_skin_template[910] = {
 		orbit_slg = "",
 		name = "怪盗眼镜子弹",
 		orbit_ui_bound = "",
@@ -36740,11 +33630,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.equip_skin_template
-
-	var_8_79[911] = {
+	pg.base.equip_skin_template[911] = {
 		orbit_slg = "",
 		name = "怪盗假面子弹",
 		orbit_ui_bound = "",
@@ -36786,11 +33672,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.equip_skin_template
-
-	var_8_80[912] = {
+	pg.base.equip_skin_template[912] = {
 		orbit_slg = "",
 		name = "怪盗棋子子弹",
 		orbit_ui_bound = "",
@@ -36832,11 +33714,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.equip_skin_template
-
-	var_8_81[913] = {
+	pg.base.equip_skin_template[913] = {
 		orbit_slg = "",
 		name = "特工熊玩偶炮弹",
 		orbit_ui_bound = "",
@@ -36878,11 +33756,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.equip_skin_template
-
-	var_8_82[914] = {
+	pg.base.equip_skin_template[914] = {
 		orbit_slg = "",
 		name = "特工兔玩偶炮弹",
 		orbit_ui_bound = "",
@@ -36924,11 +33798,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.equip_skin_template
-
-	var_8_83[915] = {
+	pg.base.equip_skin_template[915] = {
 		orbit_slg = "",
 		name = "特工啾玩偶炮弹",
 		orbit_ui_bound = "",
@@ -36970,11 +33840,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.equip_skin_template
-
-	var_8_84[916] = {
+	pg.base.equip_skin_template[916] = {
 		orbit_slg = "",
 		name = "怪盗球棒鱼雷",
 		orbit_ui_bound = "",
@@ -37015,11 +33881,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.equip_skin_template
-
-	var_8_85[917] = {
+	pg.base.equip_skin_template[917] = {
 		orbit_slg = "",
 		name = "定时炸弹鱼雷",
 		orbit_ui_bound = "",
@@ -37060,11 +33922,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.equip_skin_template
-
-	var_8_86[918] = {
+	pg.base.equip_skin_template[918] = {
 		orbit_slg = "",
 		name = "对讲机鱼雷",
 		orbit_ui_bound = "",
@@ -37105,11 +33963,7 @@ end)()
 			107
 		}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.equip_skin_template
-
-	var_8_87[919] = {
+	pg.base.equip_skin_template[919] = {
 		orbit_slg = "",
 		name = "空中特工熊玩偶(鱼雷)",
 		orbit_ui_bound = "",
@@ -37149,11 +34003,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.equip_skin_template
-
-	var_8_88[920] = {
+	pg.base.equip_skin_template[920] = {
 		orbit_slg = "",
 		name = "空中特工熊玩偶(战斗)",
 		orbit_ui_bound = "",
@@ -37193,11 +34043,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.equip_skin_template
-
-	var_8_89[921] = {
+	pg.base.equip_skin_template[921] = {
 		orbit_slg = "",
 		name = "空中特工熊玩偶(轰炸)",
 		orbit_ui_bound = "",
@@ -37237,11 +34083,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.equip_skin_template
-
-	var_8_90[922] = {
+	pg.base.equip_skin_template[922] = {
 		orbit_slg = "",
 		name = "空中特工兔(鱼雷)",
 		orbit_ui_bound = "",
@@ -37281,11 +34123,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.equip_skin_template
-
-	var_8_91[923] = {
+	pg.base.equip_skin_template[923] = {
 		orbit_slg = "",
 		name = "空中特工兔(战斗)",
 		orbit_ui_bound = "",
@@ -37325,11 +34163,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.equip_skin_template
-
-	var_8_92[924] = {
+	pg.base.equip_skin_template[924] = {
 		orbit_slg = "",
 		name = "空中特工兔(轰炸)",
 		orbit_ui_bound = "",
@@ -37369,11 +34203,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.equip_skin_template
-
-	var_8_93[925] = {
+	pg.base.equip_skin_template[925] = {
 		orbit_slg = "",
 		name = "空中特工啾玩偶(鱼雷)",
 		orbit_ui_bound = "",
@@ -37413,11 +34243,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.equip_skin_template
-
-	var_8_94[926] = {
+	pg.base.equip_skin_template[926] = {
 		orbit_slg = "",
 		name = "空中特工啾玩偶(战斗)",
 		orbit_ui_bound = "",
@@ -37457,11 +34283,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.equip_skin_template
-
-	var_8_95[927] = {
+	pg.base.equip_skin_template[927] = {
 		orbit_slg = "",
 		name = "空中特工啾玩偶(轰炸)",
 		orbit_ui_bound = "",
@@ -37501,11 +34323,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.equip_skin_template
-
-	var_8_96[930] = {
+	pg.base.equip_skin_template[930] = {
 		orbit_slg = "",
 		name = "火使魔子弹",
 		orbit_ui_bound = "",
@@ -37547,11 +34365,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.equip_skin_template
-
-	var_8_97[931] = {
+	pg.base.equip_skin_template[931] = {
 		orbit_slg = "",
 		name = "雷使魔子弹",
 		orbit_ui_bound = "",
@@ -37593,11 +34407,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.equip_skin_template
-
-	var_8_98[932] = {
+	pg.base.equip_skin_template[932] = {
 		orbit_slg = "",
 		name = "冰使魔子弹",
 		orbit_ui_bound = "",
@@ -37639,8 +34449,7 @@ end)()
 			101
 		}
 	}
-	pg = var_8_98
-	var_8_98.base.equip_skin_template[933] = {
+	pg.base.equip_skin_template[933] = {
 		orbit_slg = "",
 		name = "啾莱姆炮弹（爆弹）",
 		orbit_ui_bound = "",
@@ -37686,11 +34495,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.equip_skin_template
-
-	var_9_0[934] = {
+	pg.base.equip_skin_template[934] = {
 		orbit_slg = "",
 		name = "啾莱姆炮弹（国王）",
 		orbit_ui_bound = "",
@@ -37732,11 +34537,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.equip_skin_template
-
-	var_9_1[935] = {
+	pg.base.equip_skin_template[935] = {
 		orbit_slg = "",
 		name = "啾莱姆炮弹（魔法）",
 		orbit_ui_bound = "",
@@ -37778,11 +34579,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.equip_skin_template
-
-	var_9_2[936] = {
+	pg.base.equip_skin_template[936] = {
 		orbit_slg = "",
 		name = "牧杖鱼雷",
 		orbit_ui_bound = "",
@@ -37823,11 +34620,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.equip_skin_template
-
-	var_9_3[937] = {
+	pg.base.equip_skin_template[937] = {
 		orbit_slg = "",
 		name = "法杖鱼雷",
 		orbit_ui_bound = "",
@@ -37868,11 +34661,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.equip_skin_template
-
-	var_9_4[938] = {
+	pg.base.equip_skin_template[938] = {
 		orbit_slg = "",
 		name = "勇者之剑鱼雷",
 		orbit_ui_bound = "",
@@ -37913,11 +34702,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.equip_skin_template
-
-	var_9_5[939] = {
+	pg.base.equip_skin_template[939] = {
 		orbit_slg = "",
 		name = "使魔啾莱姆舰载机(鱼雷)",
 		orbit_ui_bound = "",
@@ -37957,11 +34742,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.equip_skin_template
-
-	var_9_6[940] = {
+	pg.base.equip_skin_template[940] = {
 		orbit_slg = "",
 		name = "使魔啾莱姆舰载机(战斗)",
 		orbit_ui_bound = "",
@@ -38001,11 +34782,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.equip_skin_template
-
-	var_9_7[941] = {
+	pg.base.equip_skin_template[941] = {
 		orbit_slg = "",
 		name = "使魔啾莱姆舰载机(轰炸)",
 		orbit_ui_bound = "",
@@ -38045,11 +34822,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.equip_skin_template
-
-	var_9_8[942] = {
+	pg.base.equip_skin_template[942] = {
 		orbit_slg = "",
 		name = "幽魂啾莱姆舰载机(鱼雷)",
 		orbit_ui_bound = "",
@@ -38089,11 +34862,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.equip_skin_template
-
-	var_9_9[943] = {
+	pg.base.equip_skin_template[943] = {
 		orbit_slg = "",
 		name = "幽魂啾莱姆舰载机(战斗)",
 		orbit_ui_bound = "",
@@ -38133,11 +34902,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.equip_skin_template
-
-	var_9_10[944] = {
+	pg.base.equip_skin_template[944] = {
 		orbit_slg = "",
 		name = "幽魂啾莱姆舰载机(轰炸)",
 		orbit_ui_bound = "",
@@ -38177,11 +34942,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.equip_skin_template
-
-	var_9_11[945] = {
+	pg.base.equip_skin_template[945] = {
 		orbit_slg = "",
 		name = "天使啾莱姆舰载机(鱼雷)",
 		orbit_ui_bound = "",
@@ -38221,11 +34982,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.equip_skin_template
-
-	var_9_12[946] = {
+	pg.base.equip_skin_template[946] = {
 		orbit_slg = "",
 		name = "天使啾莱姆舰载机(战斗)",
 		orbit_ui_bound = "",
@@ -38265,11 +35022,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.equip_skin_template
-
-	var_9_13[947] = {
+	pg.base.equip_skin_template[947] = {
 		orbit_slg = "",
 		name = "天使啾莱姆舰载机(轰炸)",
 		orbit_ui_bound = "",
@@ -38309,11 +35062,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.equip_skin_template
-
-	var_9_14[950] = {
+	pg.base.equip_skin_template[950] = {
 		orbit_slg = "",
 		name = "荧光应援棒子弹（红）",
 		orbit_ui_bound = "",
@@ -38355,11 +35104,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.equip_skin_template
-
-	var_9_15[951] = {
+	pg.base.equip_skin_template[951] = {
 		orbit_slg = "",
 		name = "荧光应援棒子弹（绿）",
 		orbit_ui_bound = "",
@@ -38401,11 +35146,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.equip_skin_template
-
-	var_9_16[952] = {
+	pg.base.equip_skin_template[952] = {
 		orbit_slg = "",
 		name = "荧光应援棒子弹（黄）",
 		orbit_ui_bound = "",
@@ -38447,11 +35188,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.equip_skin_template
-
-	var_9_17[953] = {
+	pg.base.equip_skin_template[953] = {
 		orbit_slg = "",
 		name = "陶瓷茶杯音响炮弹",
 		orbit_ui_bound = "",
@@ -38493,11 +35230,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.equip_skin_template
-
-	var_9_18[954] = {
+	pg.base.equip_skin_template[954] = {
 		orbit_slg = "",
 		name = "琴键猫猫头炮弹",
 		orbit_ui_bound = "",
@@ -38539,11 +35272,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.equip_skin_template
-
-	var_9_19[955] = {
+	pg.base.equip_skin_template[955] = {
 		orbit_slg = "",
 		name = "偶像猫爪炮弹",
 		orbit_ui_bound = "",
@@ -38585,11 +35314,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.equip_skin_template
-
-	var_9_20[956] = {
+	pg.base.equip_skin_template[956] = {
 		orbit_slg = "",
 		name = "吉他鱼雷",
 		orbit_ui_bound = "",
@@ -38630,11 +35355,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.equip_skin_template
-
-	var_9_21[957] = {
+	pg.base.equip_skin_template[957] = {
 		orbit_slg = "",
 		name = "贝斯鱼雷",
 		orbit_ui_bound = "",
@@ -38675,11 +35396,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.equip_skin_template
-
-	var_9_22[958] = {
+	pg.base.equip_skin_template[958] = {
 		orbit_slg = "",
 		name = "电子琴鱼雷",
 		orbit_ui_bound = "",
@@ -38720,11 +35437,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.equip_skin_template
-
-	var_9_23[959] = {
+	pg.base.equip_skin_template[959] = {
 		orbit_slg = "",
 		name = "飞天吉他啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -38764,11 +35477,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.equip_skin_template
-
-	var_9_24[960] = {
+	pg.base.equip_skin_template[960] = {
 		orbit_slg = "",
 		name = "飞天吉他啾(战斗)",
 		orbit_ui_bound = "",
@@ -38808,11 +35517,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.equip_skin_template
-
-	var_9_25[961] = {
+	pg.base.equip_skin_template[961] = {
 		orbit_slg = "",
 		name = "飞天吉他啾(轰炸)",
 		orbit_ui_bound = "",
@@ -38852,11 +35557,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.equip_skin_template
-
-	var_9_26[962] = {
+	pg.base.equip_skin_template[962] = {
 		orbit_slg = "",
 		name = "飞天贝斯啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -38896,11 +35597,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.equip_skin_template
-
-	var_9_27[963] = {
+	pg.base.equip_skin_template[963] = {
 		orbit_slg = "",
 		name = "飞天贝斯啾(战斗)",
 		orbit_ui_bound = "",
@@ -38940,11 +35637,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.equip_skin_template
-
-	var_9_28[964] = {
+	pg.base.equip_skin_template[964] = {
 		orbit_slg = "",
 		name = "飞天贝斯啾(轰炸)",
 		orbit_ui_bound = "",
@@ -38984,11 +35677,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.equip_skin_template
-
-	var_9_29[965] = {
+	pg.base.equip_skin_template[965] = {
 		orbit_slg = "",
 		name = "飞天鼓手啾(鱼雷)",
 		orbit_ui_bound = "",
@@ -39028,11 +35717,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.equip_skin_template
-
-	var_9_30[966] = {
+	pg.base.equip_skin_template[966] = {
 		orbit_slg = "",
 		name = "飞天鼓手啾(战斗)",
 		orbit_ui_bound = "",
@@ -39072,11 +35757,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.equip_skin_template
-
-	var_9_31[967] = {
+	pg.base.equip_skin_template[967] = {
 		orbit_slg = "",
 		name = "飞天鼓手啾(轰炸)",
 		orbit_ui_bound = "",
@@ -39116,11 +35797,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.equip_skin_template
-
-	var_9_32[970] = {
+	pg.base.equip_skin_template[970] = {
 		orbit_slg = "",
 		name = "大冰棒子弹",
 		orbit_ui_bound = "",
@@ -39162,11 +35839,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.equip_skin_template
-
-	var_9_33[971] = {
+	pg.base.equip_skin_template[971] = {
 		orbit_slg = "",
 		name = "小酒杯子弹",
 		orbit_ui_bound = "",
@@ -39208,11 +35881,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.equip_skin_template
-
-	var_9_34[972] = {
+	pg.base.equip_skin_template[972] = {
 		orbit_slg = "",
 		name = "冰可乐子弹",
 		orbit_ui_bound = "",
@@ -39254,11 +35923,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.equip_skin_template
-
-	var_9_35[973] = {
+	pg.base.equip_skin_template[973] = {
 		orbit_slg = "",
 		name = "充气穿甲弹（炮弹）",
 		orbit_ui_bound = "",
@@ -39300,11 +35965,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.equip_skin_template
-
-	var_9_36[974] = {
+	pg.base.equip_skin_template[974] = {
 		orbit_slg = "",
 		name = "充气炸弹（炮弹）",
 		orbit_ui_bound = "",
@@ -39346,11 +36007,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.equip_skin_template
-
-	var_9_37[975] = {
+	pg.base.equip_skin_template[975] = {
 		orbit_slg = "",
 		name = "充气导弹（炮弹）",
 		orbit_ui_bound = "",
@@ -39392,11 +36049,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.equip_skin_template
-
-	var_9_38[976] = {
+	pg.base.equip_skin_template[976] = {
 		orbit_slg = "",
 		name = "充气鱼雷",
 		orbit_ui_bound = "",
@@ -39437,11 +36090,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.equip_skin_template
-
-	var_9_39[977] = {
+	pg.base.equip_skin_template[977] = {
 		orbit_slg = "",
 		name = "充气小艇鱼雷",
 		orbit_ui_bound = "",
@@ -39482,11 +36131,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.equip_skin_template
-
-	var_9_40[978] = {
+	pg.base.equip_skin_template[978] = {
 		orbit_slg = "",
 		name = "充气鲨鱼鳍鱼雷",
 		orbit_ui_bound = "",
@@ -39527,11 +36172,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.equip_skin_template
-
-	var_9_41[979] = {
+	pg.base.equip_skin_template[979] = {
 		orbit_slg = "",
 		name = "火烈鸟泳圈飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -39571,11 +36212,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.equip_skin_template
-
-	var_9_42[980] = {
+	pg.base.equip_skin_template[980] = {
 		orbit_slg = "",
 		name = "火烈鸟泳圈飞机(战斗)",
 		orbit_ui_bound = "",
@@ -39615,11 +36252,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.equip_skin_template
-
-	var_9_43[981] = {
+	pg.base.equip_skin_template[981] = {
 		orbit_slg = "",
 		name = "火烈鸟泳圈飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -39659,11 +36292,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.equip_skin_template
-
-	var_9_44[982] = {
+	pg.base.equip_skin_template[982] = {
 		orbit_slg = "",
 		name = "彩虹独角兽泳圈飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -39703,11 +36332,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.equip_skin_template
-
-	var_9_45[983] = {
+	pg.base.equip_skin_template[983] = {
 		orbit_slg = "",
 		name = "彩虹独角兽泳圈飞机(战斗)",
 		orbit_ui_bound = "",
@@ -39747,11 +36372,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.equip_skin_template
-
-	var_9_46[984] = {
+	pg.base.equip_skin_template[984] = {
 		orbit_slg = "",
 		name = "彩虹独角兽泳圈飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -39791,11 +36412,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.equip_skin_template
-
-	var_9_47[985] = {
+	pg.base.equip_skin_template[985] = {
 		orbit_slg = "",
 		name = "充气海豚飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -39835,11 +36452,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.equip_skin_template
-
-	var_9_48[986] = {
+	pg.base.equip_skin_template[986] = {
 		orbit_slg = "",
 		name = "充气海豚飞机(战斗)",
 		orbit_ui_bound = "",
@@ -39879,11 +36492,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.equip_skin_template
-
-	var_9_49[987] = {
+	pg.base.equip_skin_template[987] = {
 		orbit_slg = "",
 		name = "充气海豚飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -39923,11 +36532,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.equip_skin_template
-
-	var_9_50[4001] = {
+	pg.base.equip_skin_template[4001] = {
 		orbit_slg = "",
 		name = "童心积木子弹",
 		orbit_ui_bound = "",
@@ -39969,11 +36574,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.equip_skin_template
-
-	var_9_51[4002] = {
+	pg.base.equip_skin_template[4002] = {
 		orbit_slg = "",
 		name = "童心相机子弹",
 		orbit_ui_bound = "",
@@ -40015,11 +36616,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.equip_skin_template
-
-	var_9_52[4003] = {
+	pg.base.equip_skin_template[4003] = {
 		orbit_slg = "",
 		name = "童心圆帽子弹",
 		orbit_ui_bound = "",
@@ -40061,11 +36658,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.equip_skin_template
-
-	var_9_53[4004] = {
+	pg.base.equip_skin_template[4004] = {
 		orbit_slg = "",
 		name = "校车炮弹",
 		orbit_ui_bound = "",
@@ -40107,11 +36700,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.equip_skin_template
-
-	var_9_54[4005] = {
+	pg.base.equip_skin_template[4005] = {
 		orbit_slg = "",
 		name = "跷跷板炮弹",
 		orbit_ui_bound = "",
@@ -40153,11 +36742,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.equip_skin_template
-
-	var_9_55[4006] = {
+	pg.base.equip_skin_template[4006] = {
 		orbit_slg = "",
 		name = "滑梯炮弹",
 		orbit_ui_bound = "",
@@ -40199,11 +36784,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.equip_skin_template
-
-	var_9_56[4007] = {
+	pg.base.equip_skin_template[4007] = {
 		orbit_slg = "",
 		name = "大蜡笔鱼雷",
 		orbit_ui_bound = "",
@@ -40244,11 +36825,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.equip_skin_template
-
-	var_9_57[4008] = {
+	pg.base.equip_skin_template[4008] = {
 		orbit_slg = "",
 		name = "大糖果鱼雷",
 		orbit_ui_bound = "",
@@ -40289,11 +36866,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.equip_skin_template
-
-	var_9_58[4009] = {
+	pg.base.equip_skin_template[4009] = {
 		orbit_slg = "",
 		name = "大奶瓶鱼雷",
 		orbit_ui_bound = "",
@@ -40334,11 +36907,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.equip_skin_template
-
-	var_9_59[4010] = {
+	pg.base.equip_skin_template[4010] = {
 		orbit_slg = "",
 		name = "童心气球飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -40378,11 +36947,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.equip_skin_template
-
-	var_9_60[4011] = {
+	pg.base.equip_skin_template[4011] = {
 		orbit_slg = "",
 		name = "童心气球飞机(战斗)",
 		orbit_ui_bound = "",
@@ -40422,11 +36987,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.equip_skin_template
-
-	var_9_61[4012] = {
+	pg.base.equip_skin_template[4012] = {
 		orbit_slg = "",
 		name = "童心气球飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -40466,11 +37027,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.equip_skin_template
-
-	var_9_62[4013] = {
+	pg.base.equip_skin_template[4013] = {
 		orbit_slg = "",
 		name = "童心竹蜻蜓(鱼雷)",
 		orbit_ui_bound = "",
@@ -40510,11 +37067,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.equip_skin_template
-
-	var_9_63[4014] = {
+	pg.base.equip_skin_template[4014] = {
 		orbit_slg = "",
 		name = "童心竹蜻蜓(战斗)",
 		orbit_ui_bound = "",
@@ -40554,11 +37107,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.equip_skin_template
-
-	var_9_64[4015] = {
+	pg.base.equip_skin_template[4015] = {
 		orbit_slg = "",
 		name = "童心竹蜻蜓(轰炸)",
 		orbit_ui_bound = "",
@@ -40598,11 +37147,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.equip_skin_template
-
-	var_9_65[4016] = {
+	pg.base.equip_skin_template[4016] = {
 		orbit_slg = "",
 		name = "童心纸飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -40642,11 +37187,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.equip_skin_template
-
-	var_9_66[4017] = {
+	pg.base.equip_skin_template[4017] = {
 		orbit_slg = "",
 		name = "童心纸飞机(战斗)",
 		orbit_ui_bound = "",
@@ -40686,11 +37227,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.equip_skin_template
-
-	var_9_67[4018] = {
+	pg.base.equip_skin_template[4018] = {
 		orbit_slg = "",
 		name = "童心纸飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -40730,11 +37267,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.equip_skin_template
-
-	var_9_68[4019] = {
+	pg.base.equip_skin_template[4019] = {
 		orbit_slg = "",
 		name = "童真喵石头罩（设备）",
 		type = 1,
@@ -40794,11 +37327,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.equip_skin_template
-
-	var_9_69[4020] = {
+	pg.base.equip_skin_template[4020] = {
 		orbit_slg = "",
 		name = "朱红狐面",
 		type = 1,
@@ -40858,11 +37387,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.equip_skin_template
-
-	var_9_70[4021] = {
+	pg.base.equip_skin_template[4021] = {
 		orbit_slg = "",
 		name = "金矿石子弹",
 		orbit_ui_bound = "",
@@ -40904,11 +37429,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.equip_skin_template
-
-	var_9_71[4022] = {
+	pg.base.equip_skin_template[4022] = {
 		orbit_slg = "",
 		name = "罐头子弹",
 		orbit_ui_bound = "",
@@ -40950,11 +37471,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.equip_skin_template
-
-	var_9_72[4023] = {
+	pg.base.equip_skin_template[4023] = {
 		orbit_slg = "",
 		name = "威士忌子弹",
 		orbit_ui_bound = "",
@@ -40996,11 +37513,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.equip_skin_template
-
-	var_9_73[4024] = {
+	pg.base.equip_skin_template[4024] = {
 		orbit_slg = "",
 		name = "矿镐鱼雷",
 		orbit_ui_bound = "",
@@ -41041,11 +37554,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.equip_skin_template
-
-	var_9_74[4025] = {
+	pg.base.equip_skin_template[4025] = {
 		orbit_slg = "",
 		name = "牛仔手套鱼雷",
 		orbit_ui_bound = "",
@@ -41086,11 +37595,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.equip_skin_template
-
-	var_9_75[4026] = {
+	pg.base.equip_skin_template[4026] = {
 		orbit_slg = "",
 		name = "炸药鱼雷",
 		orbit_ui_bound = "",
@@ -41131,11 +37636,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.equip_skin_template
-
-	var_9_76[4027] = {
+	pg.base.equip_skin_template[4027] = {
 		orbit_slg = "",
 		name = "套索炮弹",
 		orbit_ui_bound = "",
@@ -41177,11 +37678,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.equip_skin_template
-
-	var_9_77[4028] = {
+	pg.base.equip_skin_template[4028] = {
 		orbit_slg = "",
 		name = "煤油灯炮弹",
 		orbit_ui_bound = "",
@@ -41223,11 +37720,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.equip_skin_template
-
-	var_9_78[4029] = {
+	pg.base.equip_skin_template[4029] = {
 		orbit_slg = "",
 		name = "通缉令炮弹",
 		orbit_ui_bound = "",
@@ -41269,11 +37762,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.equip_skin_template
-
-	var_9_79[4030] = {
+	pg.base.equip_skin_template[4030] = {
 		orbit_slg = "",
 		name = "矿车飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -41313,11 +37802,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.equip_skin_template
-
-	var_9_80[4031] = {
+	pg.base.equip_skin_template[4031] = {
 		orbit_slg = "",
 		name = "矿车飞机(战斗)",
 		orbit_ui_bound = "",
@@ -41357,11 +37842,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.equip_skin_template
-
-	var_9_81[4032] = {
+	pg.base.equip_skin_template[4032] = {
 		orbit_slg = "",
 		name = "矿车飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -41401,11 +37882,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.equip_skin_template
-
-	var_9_82[4033] = {
+	pg.base.equip_skin_template[4033] = {
 		orbit_slg = "",
 		name = "马车飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -41445,11 +37922,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.equip_skin_template
-
-	var_9_83[4034] = {
+	pg.base.equip_skin_template[4034] = {
 		orbit_slg = "",
 		name = "马车飞机(战斗)",
 		orbit_ui_bound = "",
@@ -41489,11 +37962,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.equip_skin_template
-
-	var_9_84[4035] = {
+	pg.base.equip_skin_template[4035] = {
 		orbit_slg = "",
 		name = "马车飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -41533,11 +38002,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.equip_skin_template
-
-	var_9_85[4036] = {
+	pg.base.equip_skin_template[4036] = {
 		orbit_slg = "",
 		name = "牛仔啾飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -41577,11 +38042,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.equip_skin_template
-
-	var_9_86[4037] = {
+	pg.base.equip_skin_template[4037] = {
 		orbit_slg = "",
 		name = "牛仔啾飞机(战斗)",
 		orbit_ui_bound = "",
@@ -41621,11 +38082,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.equip_skin_template
-
-	var_9_87[4038] = {
+	pg.base.equip_skin_template[4038] = {
 		orbit_slg = "",
 		name = "牛仔啾飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -41665,11 +38122,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.equip_skin_template
-
-	var_9_88[4039] = {
+	pg.base.equip_skin_template[4039] = {
 		orbit_slg = "",
 		name = "苍蓝狐面",
 		type = 1,
@@ -41729,11 +38182,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.equip_skin_template
-
-	var_9_89[4040] = {
+	pg.base.equip_skin_template[4040] = {
 		orbit_slg = "",
 		name = "苍红狐面",
 		type = 1,
@@ -41793,11 +38242,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.equip_skin_template
-
-	var_9_90[4041] = {
+	pg.base.equip_skin_template[4041] = {
 		orbit_slg = "",
 		name = "汉堡子弹",
 		orbit_ui_bound = "",
@@ -41839,11 +38284,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.equip_skin_template
-
-	var_9_91[4042] = {
+	pg.base.equip_skin_template[4042] = {
 		orbit_slg = "",
 		name = "棒棒糖子弹",
 		orbit_ui_bound = "",
@@ -41885,11 +38326,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.equip_skin_template
-
-	var_9_92[4043] = {
+	pg.base.equip_skin_template[4043] = {
 		orbit_slg = "",
 		name = "冰激凌子弹",
 		orbit_ui_bound = "",
@@ -41931,11 +38368,7 @@ end)()
 			101
 		}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.equip_skin_template
-
-	var_9_93[4044] = {
+	pg.base.equip_skin_template[4044] = {
 		orbit_slg = "",
 		name = "条幅气球鱼雷",
 		orbit_ui_bound = "",
@@ -41976,11 +38409,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.equip_skin_template
-
-	var_9_94[4045] = {
+	pg.base.equip_skin_template[4045] = {
 		orbit_slg = "",
 		name = "烟花鱼雷",
 		orbit_ui_bound = "",
@@ -42021,11 +38450,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.equip_skin_template
-
-	var_9_95[4046] = {
+	pg.base.equip_skin_template[4046] = {
 		orbit_slg = "",
 		name = "风车鱼雷",
 		orbit_ui_bound = "",
@@ -42066,11 +38491,7 @@ end)()
 			107
 		}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.equip_skin_template
-
-	var_9_96[4047] = {
+	pg.base.equip_skin_template[4047] = {
 		orbit_slg = "",
 		name = "魔术帽炮弹",
 		orbit_ui_bound = "",
@@ -42112,11 +38533,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.equip_skin_template
-
-	var_9_97[4048] = {
+	pg.base.equip_skin_template[4048] = {
 		orbit_slg = "",
 		name = "碰碰车炮弹",
 		orbit_ui_bound = "",
@@ -42158,11 +38575,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.equip_skin_template
-
-	var_9_98[4049] = {
+	pg.base.equip_skin_template[4049] = {
 		orbit_slg = "",
 		name = "杂技车炮弹",
 		orbit_ui_bound = "",
@@ -42204,8 +38617,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.equip_skin_template[4050] = {
+	pg.base.equip_skin_template[4050] = {
 		orbit_slg = "",
 		name = "旋转木马飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -42249,11 +38661,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.equip_skin_template
-
-	var_10_0[4051] = {
+	pg.base.equip_skin_template[4051] = {
 		orbit_slg = "",
 		name = "旋转木马飞机(战斗)",
 		orbit_ui_bound = "",
@@ -42293,11 +38701,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.equip_skin_template
-
-	var_10_1[4052] = {
+	pg.base.equip_skin_template[4052] = {
 		orbit_slg = "",
 		name = "旋转木马飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -42337,11 +38741,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.equip_skin_template
-
-	var_10_2[4053] = {
+	pg.base.equip_skin_template[4053] = {
 		orbit_slg = "",
 		name = "摩天轮飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -42381,11 +38781,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.equip_skin_template
-
-	var_10_3[4054] = {
+	pg.base.equip_skin_template[4054] = {
 		orbit_slg = "",
 		name = "摩天轮飞机(战斗)",
 		orbit_ui_bound = "",
@@ -42425,11 +38821,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.equip_skin_template
-
-	var_10_4[4055] = {
+	pg.base.equip_skin_template[4055] = {
 		orbit_slg = "",
 		name = "摩天轮飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -42469,11 +38861,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.equip_skin_template
-
-	var_10_5[4056] = {
+	pg.base.equip_skin_template[4056] = {
 		orbit_slg = "",
 		name = "火车头飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -42513,11 +38901,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.equip_skin_template
-
-	var_10_6[4057] = {
+	pg.base.equip_skin_template[4057] = {
 		orbit_slg = "",
 		name = "火车头飞机(战斗)",
 		orbit_ui_bound = "",
@@ -42557,11 +38941,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.equip_skin_template
-
-	var_10_7[4058] = {
+	pg.base.equip_skin_template[4058] = {
 		orbit_slg = "",
 		name = "火车头飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -42601,11 +38981,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.equip_skin_template
-
-	var_10_8[4059] = {
+	pg.base.equip_skin_template[4059] = {
 		orbit_slg = "",
 		name = "鬼火子弹",
 		orbit_ui_bound = "",
@@ -42647,11 +39023,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.equip_skin_template
-
-	var_10_9[4060] = {
+	pg.base.equip_skin_template[4060] = {
 		orbit_slg = "",
 		name = "深海之触子弹",
 		orbit_ui_bound = "",
@@ -42693,11 +39065,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.equip_skin_template
-
-	var_10_10[4061] = {
+	pg.base.equip_skin_template[4061] = {
 		orbit_slg = "",
 		name = "怪奇药水子弹",
 		orbit_ui_bound = "",
@@ -42739,11 +39107,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.equip_skin_template
-
-	var_10_11[4062] = {
+	pg.base.equip_skin_template[4062] = {
 		orbit_slg = "",
 		name = "恶灵缠绕鱼雷",
 		orbit_ui_bound = "",
@@ -42784,11 +39148,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.equip_skin_template
-
-	var_10_12[4063] = {
+	pg.base.equip_skin_template[4063] = {
 		orbit_slg = "",
 		name = "甜蜜陷阱鱼雷",
 		orbit_ui_bound = "",
@@ -42829,11 +39189,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.equip_skin_template
-
-	var_10_13[4064] = {
+	pg.base.equip_skin_template[4064] = {
 		orbit_slg = "",
 		name = "恶魔之刺鱼雷",
 		orbit_ui_bound = "",
@@ -42874,11 +39230,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.equip_skin_template
-
-	var_10_14[4065] = {
+	pg.base.equip_skin_template[4065] = {
 		orbit_slg = "",
 		name = "血色永眠炮弹",
 		orbit_ui_bound = "",
@@ -42920,11 +39272,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.equip_skin_template
-
-	var_10_15[4066] = {
+	pg.base.equip_skin_template[4066] = {
 		orbit_slg = "",
 		name = "深海冲击炮弹",
 		orbit_ui_bound = "",
@@ -42966,11 +39314,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.equip_skin_template
-
-	var_10_16[4067] = {
+	pg.base.equip_skin_template[4067] = {
 		orbit_slg = "",
 		name = "怨念之网炮弹",
 		orbit_ui_bound = "",
@@ -43012,11 +39356,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.equip_skin_template
-
-	var_10_17[4068] = {
+	pg.base.equip_skin_template[4068] = {
 		orbit_slg = "",
 		name = "午夜蝙影啾飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -43056,11 +39396,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.equip_skin_template
-
-	var_10_18[4069] = {
+	pg.base.equip_skin_template[4069] = {
 		orbit_slg = "",
 		name = "午夜蝙影啾飞机(战斗)",
 		orbit_ui_bound = "",
@@ -43100,11 +39436,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.equip_skin_template
-
-	var_10_19[4070] = {
+	pg.base.equip_skin_template[4070] = {
 		orbit_slg = "",
 		name = "午夜蝙影啾飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -43144,11 +39476,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.equip_skin_template
-
-	var_10_20[4071] = {
+	pg.base.equip_skin_template[4071] = {
 		orbit_slg = "",
 		name = "万圣夜巡啾飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -43188,11 +39516,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.equip_skin_template
-
-	var_10_21[4072] = {
+	pg.base.equip_skin_template[4072] = {
 		orbit_slg = "",
 		name = "万圣夜巡啾飞机(战斗)",
 		orbit_ui_bound = "",
@@ -43232,11 +39556,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.equip_skin_template
-
-	var_10_22[4073] = {
+	pg.base.equip_skin_template[4073] = {
 		orbit_slg = "",
 		name = "万圣夜巡啾飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -43276,11 +39596,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.equip_skin_template
-
-	var_10_23[4074] = {
+	pg.base.equip_skin_template[4074] = {
 		orbit_slg = "",
 		name = "幽灵使者飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -43320,11 +39636,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.equip_skin_template
-
-	var_10_24[4075] = {
+	pg.base.equip_skin_template[4075] = {
 		orbit_slg = "",
 		name = "幽灵使者飞机(战斗)",
 		orbit_ui_bound = "",
@@ -43364,11 +39676,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.equip_skin_template
-
-	var_10_25[4076] = {
+	pg.base.equip_skin_template[4076] = {
 		orbit_slg = "",
 		name = "幽灵使者飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -43408,11 +39716,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.equip_skin_template
-
-	var_10_26[4077] = {
+	pg.base.equip_skin_template[4077] = {
 		orbit_slg = "",
 		name = "锈蚀钳夹子弹",
 		orbit_ui_bound = "",
@@ -43454,11 +39758,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.equip_skin_template
-
-	var_10_27[4078] = {
+	pg.base.equip_skin_template[4078] = {
 		orbit_slg = "",
 		name = "老旧脱漆子弹",
 		orbit_ui_bound = "",
@@ -43500,11 +39800,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.equip_skin_template
-
-	var_10_28[4079] = {
+	pg.base.equip_skin_template[4079] = {
 		orbit_slg = "",
 		name = "烈焰酒瓶子弹",
 		orbit_ui_bound = "",
@@ -43546,11 +39842,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.equip_skin_template
-
-	var_10_29[4080] = {
+	pg.base.equip_skin_template[4080] = {
 		orbit_slg = "",
 		name = "轰鸣鱼雷",
 		orbit_ui_bound = "",
@@ -43591,11 +39883,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.equip_skin_template
-
-	var_10_30[4081] = {
+	pg.base.equip_skin_template[4081] = {
 		orbit_slg = "",
 		name = "阀门鱼雷",
 		orbit_ui_bound = "",
@@ -43636,11 +39924,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.equip_skin_template
-
-	var_10_31[4082] = {
+	pg.base.equip_skin_template[4082] = {
 		orbit_slg = "",
 		name = "单发土枪鱼雷",
 		orbit_ui_bound = "",
@@ -43681,11 +39965,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.equip_skin_template
-
-	var_10_32[4083] = {
+	pg.base.equip_skin_template[4083] = {
 		orbit_slg = "",
 		name = "机甲铁拳炮弹",
 		orbit_ui_bound = "",
@@ -43727,11 +40007,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.equip_skin_template
-
-	var_10_33[4084] = {
+	pg.base.equip_skin_template[4084] = {
 		orbit_slg = "",
 		name = "巨轮碾压炮弹",
 		orbit_ui_bound = "",
@@ -43773,11 +40049,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.equip_skin_template
-
-	var_10_34[4085] = {
+	pg.base.equip_skin_template[4085] = {
 		orbit_slg = "",
 		name = "蒸汽爆发炮弹",
 		orbit_ui_bound = "",
@@ -43819,11 +40091,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.equip_skin_template
-
-	var_10_35[4086] = {
+	pg.base.equip_skin_template[4086] = {
 		orbit_slg = "",
 		name = "荒野猎手（鱼雷）",
 		orbit_ui_bound = "",
@@ -43863,11 +40131,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.equip_skin_template
-
-	var_10_36[4087] = {
+	pg.base.equip_skin_template[4087] = {
 		orbit_slg = "",
 		name = "荒野猎手（战斗）",
 		orbit_ui_bound = "",
@@ -43907,11 +40171,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.equip_skin_template
-
-	var_10_37[4088] = {
+	pg.base.equip_skin_template[4088] = {
 		orbit_slg = "",
 		name = "荒野猎手（轰炸）",
 		orbit_ui_bound = "",
@@ -43951,11 +40211,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.equip_skin_template
-
-	var_10_38[4089] = {
+	pg.base.equip_skin_template[4089] = {
 		orbit_slg = "",
 		name = "飞翔暴君（鱼雷）",
 		orbit_ui_bound = "",
@@ -43995,11 +40251,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.equip_skin_template
-
-	var_10_39[4090] = {
+	pg.base.equip_skin_template[4090] = {
 		orbit_slg = "",
 		name = "飞翔暴君（战斗）",
 		orbit_ui_bound = "",
@@ -44039,11 +40291,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.equip_skin_template
-
-	var_10_40[4091] = {
+	pg.base.equip_skin_template[4091] = {
 		orbit_slg = "",
 		name = "飞翔暴君（轰炸）",
 		orbit_ui_bound = "",
@@ -44083,11 +40331,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.equip_skin_template
-
-	var_10_41[4092] = {
+	pg.base.equip_skin_template[4092] = {
 		orbit_slg = "",
 		name = "摩托天使（鱼雷）",
 		orbit_ui_bound = "",
@@ -44127,11 +40371,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.equip_skin_template
-
-	var_10_42[4093] = {
+	pg.base.equip_skin_template[4093] = {
 		orbit_slg = "",
 		name = "摩托天使（战斗）",
 		orbit_ui_bound = "",
@@ -44171,11 +40411,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.equip_skin_template
-
-	var_10_43[4094] = {
+	pg.base.equip_skin_template[4094] = {
 		orbit_slg = "",
 		name = "摩托天使（轰炸）",
 		orbit_ui_bound = "",
@@ -44215,11 +40451,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.equip_skin_template
-
-	var_10_44[4095] = {
+	pg.base.equip_skin_template[4095] = {
 		orbit_slg = "",
 		name = "福寿平安子弹",
 		orbit_ui_bound = "",
@@ -44261,11 +40493,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.equip_skin_template
-
-	var_10_45[4096] = {
+	pg.base.equip_skin_template[4096] = {
 		orbit_slg = "",
 		name = "织梦穿梭子弹",
 		orbit_ui_bound = "",
@@ -44307,11 +40535,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.equip_skin_template
-
-	var_10_46[4097] = {
+	pg.base.equip_skin_template[4097] = {
 		orbit_slg = "",
 		name = "祈愿铃音子弹",
 		orbit_ui_bound = "",
@@ -44353,11 +40577,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.equip_skin_template
-
-	var_10_47[4098] = {
+	pg.base.equip_skin_template[4098] = {
 		orbit_slg = "",
 		name = "吉祥如意鱼雷",
 		orbit_ui_bound = "",
@@ -44398,11 +40618,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.equip_skin_template
-
-	var_10_48[4099] = {
+	pg.base.equip_skin_template[4099] = {
 		orbit_slg = "",
 		name = "千机伞影鱼雷",
 		orbit_ui_bound = "",
@@ -44443,11 +40659,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.equip_skin_template
-
-	var_10_49[4100] = {
+	pg.base.equip_skin_template[4100] = {
 		orbit_slg = "",
 		name = "拂尘净世鱼雷",
 		orbit_ui_bound = "",
@@ -44488,11 +40700,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.equip_skin_template
-
-	var_10_50[4101] = {
+	pg.base.equip_skin_template[4101] = {
 		orbit_slg = "",
 		name = "游侠斗笠炮弹",
 		orbit_ui_bound = "",
@@ -44534,11 +40742,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.equip_skin_template
-
-	var_10_51[4102] = {
+	pg.base.equip_skin_template[4102] = {
 		orbit_slg = "",
 		name = "锦绣团扇炮弹",
 		orbit_ui_bound = "",
@@ -44580,11 +40784,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.equip_skin_template
-
-	var_10_52[4103] = {
+	pg.base.equip_skin_template[4103] = {
 		orbit_slg = "",
 		name = "火纹金扣炮弹",
 		orbit_ui_bound = "",
@@ -44626,11 +40826,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.equip_skin_template
-
-	var_10_53[4104] = {
+	pg.base.equip_skin_template[4104] = {
 		orbit_slg = "",
 		name = "金鲤灯影（鱼雷）",
 		orbit_ui_bound = "",
@@ -44670,11 +40866,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.equip_skin_template
-
-	var_10_54[4105] = {
+	pg.base.equip_skin_template[4105] = {
 		orbit_slg = "",
 		name = "金鲤灯影（战斗）",
 		orbit_ui_bound = "",
@@ -44714,11 +40906,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.equip_skin_template
-
-	var_10_55[4106] = {
+	pg.base.equip_skin_template[4106] = {
 		orbit_slg = "",
 		name = "金鲤灯影（轰炸）",
 		orbit_ui_bound = "",
@@ -44758,11 +40946,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.equip_skin_template
-
-	var_10_56[4107] = {
+	pg.base.equip_skin_template[4107] = {
 		orbit_slg = "",
 		name = "霓裳羽衣啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -44802,11 +40986,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.equip_skin_template
-
-	var_10_57[4108] = {
+	pg.base.equip_skin_template[4108] = {
 		orbit_slg = "",
 		name = "霓裳羽衣啾（战斗）",
 		orbit_ui_bound = "",
@@ -44846,11 +41026,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.equip_skin_template
-
-	var_10_58[4109] = {
+	pg.base.equip_skin_template[4109] = {
 		orbit_slg = "",
 		name = "霓裳羽衣啾（轰炸）",
 		orbit_ui_bound = "",
@@ -44890,11 +41066,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.equip_skin_template
-
-	var_10_59[4110] = {
+	pg.base.equip_skin_template[4110] = {
 		orbit_slg = "",
 		name = "侠影守望啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -44934,11 +41106,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.equip_skin_template
-
-	var_10_60[4111] = {
+	pg.base.equip_skin_template[4111] = {
 		orbit_slg = "",
 		name = "侠影守望啾（战斗）",
 		orbit_ui_bound = "",
@@ -44978,11 +41146,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.equip_skin_template
-
-	var_10_61[4112] = {
+	pg.base.equip_skin_template[4112] = {
 		orbit_slg = "",
 		name = "侠影守望啾（轰炸）",
 		orbit_ui_bound = "",
@@ -45022,11 +41186,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.equip_skin_template
-
-	var_10_62[4113] = {
+	pg.base.equip_skin_template[4113] = {
 		orbit_slg = "",
 		name = "黄金圣环子弹",
 		orbit_ui_bound = "",
@@ -45068,11 +41228,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.equip_skin_template
-
-	var_10_63[4114] = {
+	pg.base.equip_skin_template[4114] = {
 		orbit_slg = "",
 		name = "太阳之眼宝石子弹",
 		orbit_ui_bound = "",
@@ -45114,11 +41270,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.equip_skin_template
-
-	var_10_64[4115] = {
+	pg.base.equip_skin_template[4115] = {
 		orbit_slg = "",
 		name = "金色圣甲虫子弹",
 		orbit_ui_bound = "",
@@ -45160,11 +41312,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.equip_skin_template
-
-	var_10_65[4116] = {
+	pg.base.equip_skin_template[4116] = {
 		orbit_slg = "",
 		name = "法老权杖鱼雷",
 		orbit_ui_bound = "",
@@ -45205,11 +41353,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.equip_skin_template
-
-	var_10_66[4117] = {
+	pg.base.equip_skin_template[4117] = {
 		orbit_slg = "",
 		name = "太阳神之矛鱼雷",
 		orbit_ui_bound = "",
@@ -45250,11 +41394,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.equip_skin_template
-
-	var_10_67[4118] = {
+	pg.base.equip_skin_template[4118] = {
 		orbit_slg = "",
 		name = "祭祀匕首鱼雷",
 		orbit_ui_bound = "",
@@ -45295,11 +41435,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.equip_skin_template
-
-	var_10_68[4119] = {
+	pg.base.equip_skin_template[4119] = {
 		orbit_slg = "",
 		name = "永恒金字塔炮弹",
 		orbit_ui_bound = "",
@@ -45341,11 +41477,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.equip_skin_template
-
-	var_10_69[4120] = {
+	pg.base.equip_skin_template[4120] = {
 		orbit_slg = "",
 		name = "生命之钥炮弹",
 		orbit_ui_bound = "",
@@ -45387,11 +41519,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.equip_skin_template
-
-	var_10_70[4121] = {
+	pg.base.equip_skin_template[4121] = {
 		orbit_slg = "",
 		name = "封印圣罐炮弹",
 		orbit_ui_bound = "",
@@ -45433,11 +41561,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.equip_skin_template
-
-	var_10_71[4122] = {
+	pg.base.equip_skin_template[4122] = {
 		orbit_slg = "",
 		name = "尼罗女皇啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -45477,11 +41601,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.equip_skin_template
-
-	var_10_72[4123] = {
+	pg.base.equip_skin_template[4123] = {
 		orbit_slg = "",
 		name = "尼罗女皇啾（战斗）",
 		orbit_ui_bound = "",
@@ -45521,11 +41641,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.equip_skin_template
-
-	var_10_73[4124] = {
+	pg.base.equip_skin_template[4124] = {
 		orbit_slg = "",
 		name = "尼罗女皇啾（轰炸）",
 		orbit_ui_bound = "",
@@ -45565,11 +41681,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.equip_skin_template
-
-	var_10_74[4125] = {
+	pg.base.equip_skin_template[4125] = {
 		orbit_slg = "",
 		name = "拉神之子啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -45609,11 +41721,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.equip_skin_template
-
-	var_10_75[4126] = {
+	pg.base.equip_skin_template[4126] = {
 		orbit_slg = "",
 		name = "拉神之子啾（战斗）",
 		orbit_ui_bound = "",
@@ -45653,11 +41761,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.equip_skin_template
-
-	var_10_76[4127] = {
+	pg.base.equip_skin_template[4127] = {
 		orbit_slg = "",
 		name = "拉神之子啾（轰炸）",
 		orbit_ui_bound = "",
@@ -45697,11 +41801,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.equip_skin_template
-
-	var_10_77[4128] = {
+	pg.base.equip_skin_template[4128] = {
 		orbit_slg = "",
 		name = "永生守卫啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -45741,11 +41841,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.equip_skin_template
-
-	var_10_78[4129] = {
+	pg.base.equip_skin_template[4129] = {
 		orbit_slg = "",
 		name = "永生守卫啾（战斗）",
 		orbit_ui_bound = "",
@@ -45785,11 +41881,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.equip_skin_template
-
-	var_10_79[4130] = {
+	pg.base.equip_skin_template[4130] = {
 		orbit_slg = "",
 		name = "永生守卫啾（轰炸）",
 		orbit_ui_bound = "",
@@ -45829,11 +41921,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.equip_skin_template
-
-	var_10_80[4131] = {
+	pg.base.equip_skin_template[4131] = {
 		orbit_slg = "",
 		name = "创可贴子弹",
 		orbit_ui_bound = "",
@@ -45875,11 +41963,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.equip_skin_template
-
-	var_10_81[4132] = {
+	pg.base.equip_skin_template[4132] = {
 		orbit_slg = "",
 		name = "药瓶子弹",
 		orbit_ui_bound = "",
@@ -45921,11 +42005,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.equip_skin_template
-
-	var_10_82[4133] = {
+	pg.base.equip_skin_template[4133] = {
 		orbit_slg = "",
 		name = "口罩子弹",
 		orbit_ui_bound = "",
@@ -45967,11 +42047,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.equip_skin_template
-
-	var_10_83[4134] = {
+	pg.base.equip_skin_template[4134] = {
 		orbit_slg = "",
 		name = "拐杖鱼雷",
 		orbit_ui_bound = "",
@@ -46012,11 +42088,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.equip_skin_template
-
-	var_10_84[4135] = {
+	pg.base.equip_skin_template[4135] = {
 		orbit_slg = "",
 		name = "体温计鱼雷",
 		orbit_ui_bound = "",
@@ -46057,11 +42129,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.equip_skin_template
-
-	var_10_85[4136] = {
+	pg.base.equip_skin_template[4136] = {
 		orbit_slg = "",
 		name = "听诊器鱼雷",
 		orbit_ui_bound = "",
@@ -46102,11 +42170,7 @@ end)()
 			107
 		}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.equip_skin_template
-
-	var_10_86[4137] = {
+	pg.base.equip_skin_template[4137] = {
 		orbit_slg = "",
 		name = "吊瓶炮弹",
 		orbit_ui_bound = "",
@@ -46148,11 +42212,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.equip_skin_template
-
-	var_10_87[4138] = {
+	pg.base.equip_skin_template[4138] = {
 		orbit_slg = "",
 		name = "药箱炮弹",
 		orbit_ui_bound = "",
@@ -46194,11 +42254,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.equip_skin_template
-
-	var_10_88[4139] = {
+	pg.base.equip_skin_template[4139] = {
 		orbit_slg = "",
 		name = "显微镜炮弹",
 		orbit_ui_bound = "",
@@ -46240,11 +42296,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.equip_skin_template
-
-	var_10_89[4140] = {
+	pg.base.equip_skin_template[4140] = {
 		orbit_slg = "",
 		name = "疾驰急救啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -46284,11 +42336,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.equip_skin_template
-
-	var_10_90[4141] = {
+	pg.base.equip_skin_template[4141] = {
 		orbit_slg = "",
 		name = "疾驰急救啾（战斗）",
 		orbit_ui_bound = "",
@@ -46328,11 +42376,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.equip_skin_template
-
-	var_10_91[4142] = {
+	pg.base.equip_skin_template[4142] = {
 		orbit_slg = "",
 		name = "疾驰急救啾（轰炸）",
 		orbit_ui_bound = "",
@@ -46372,11 +42416,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.equip_skin_template
-
-	var_10_92[4143] = {
+	pg.base.equip_skin_template[4143] = {
 		orbit_slg = "",
 		name = "疾驰护士啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -46416,11 +42456,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.equip_skin_template
-
-	var_10_93[4144] = {
+	pg.base.equip_skin_template[4144] = {
 		orbit_slg = "",
 		name = "疾驰护士啾（战斗）",
 		orbit_ui_bound = "",
@@ -46460,11 +42496,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.equip_skin_template
-
-	var_10_94[4145] = {
+	pg.base.equip_skin_template[4145] = {
 		orbit_slg = "",
 		name = "疾驰护士啾（轰炸）",
 		orbit_ui_bound = "",
@@ -46504,11 +42536,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.equip_skin_template
-
-	var_10_95[4146] = {
+	pg.base.equip_skin_template[4146] = {
 		orbit_slg = "",
 		name = "疾驰医生啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -46548,11 +42576,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.equip_skin_template
-
-	var_10_96[4147] = {
+	pg.base.equip_skin_template[4147] = {
 		orbit_slg = "",
 		name = "疾驰医生啾（战斗）",
 		orbit_ui_bound = "",
@@ -46592,11 +42616,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.equip_skin_template
-
-	var_10_97[4148] = {
+	pg.base.equip_skin_template[4148] = {
 		orbit_slg = "",
 		name = "疾驰医生啾（轰炸）",
 		orbit_ui_bound = "",
@@ -46636,11 +42656,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.equip_skin_template
-
-	var_10_98[4149] = {
+	pg.base.equip_skin_template[4149] = {
 		orbit_slg = "",
 		name = "白郁金香子弹",
 		orbit_ui_bound = "",
@@ -46682,8 +42698,7 @@ end)()
 			101
 		}
 	}
-	pg = var_10_98
-	var_10_98.base.equip_skin_template[4150] = {
+	pg.base.equip_skin_template[4150] = {
 		orbit_slg = "",
 		name = "黄郁金香子弹",
 		orbit_ui_bound = "",
@@ -46729,11 +42744,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.equip_skin_template
-
-	var_11_0[4151] = {
+	pg.base.equip_skin_template[4151] = {
 		orbit_slg = "",
 		name = "红郁金香子弹",
 		orbit_ui_bound = "",
@@ -46775,11 +42786,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.equip_skin_template
-
-	var_11_1[4152] = {
+	pg.base.equip_skin_template[4152] = {
 		orbit_slg = "",
 		name = "疾速单车鱼雷",
 		orbit_ui_bound = "",
@@ -46820,11 +42827,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.equip_skin_template
-
-	var_11_2[4153] = {
+	pg.base.equip_skin_template[4153] = {
 		orbit_slg = "",
 		name = "鲁特琴鱼雷",
 		orbit_ui_bound = "",
@@ -46865,11 +42868,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.equip_skin_template
-
-	var_11_3[4154] = {
+	pg.base.equip_skin_template[4154] = {
 		orbit_slg = "",
 		name = "彩画笔刷鱼雷",
 		orbit_ui_bound = "",
@@ -46910,11 +42909,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.equip_skin_template
-
-	var_11_4[4155] = {
+	pg.base.equip_skin_template[4155] = {
 		orbit_slg = "",
 		name = "奶酪炮弹",
 		orbit_ui_bound = "",
@@ -46956,11 +42951,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.equip_skin_template
-
-	var_11_5[4156] = {
+	pg.base.equip_skin_template[4156] = {
 		orbit_slg = "",
 		name = "风车炮弹",
 		orbit_ui_bound = "",
@@ -47002,11 +42993,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.equip_skin_template
-
-	var_11_6[4157] = {
+	pg.base.equip_skin_template[4157] = {
 		orbit_slg = "",
 		name = "木鞋炮弹",
 		orbit_ui_bound = "",
@@ -47048,11 +43035,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.equip_skin_template
-
-	var_11_7[4158] = {
+	pg.base.equip_skin_template[4158] = {
 		orbit_slg = "",
 		name = "乡间农夫啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -47092,11 +43075,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.equip_skin_template
-
-	var_11_8[4159] = {
+	pg.base.equip_skin_template[4159] = {
 		orbit_slg = "",
 		name = "乡间农夫啾（战斗）",
 		orbit_ui_bound = "",
@@ -47136,11 +43115,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.equip_skin_template
-
-	var_11_9[4160] = {
+	pg.base.equip_skin_template[4160] = {
 		orbit_slg = "",
 		name = "乡间农夫啾（轰炸）",
 		orbit_ui_bound = "",
@@ -47180,11 +43155,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.equip_skin_template
-
-	var_11_10[4161] = {
+	pg.base.equip_skin_template[4161] = {
 		orbit_slg = "",
 		name = "乡间少女啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -47224,11 +43195,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.equip_skin_template
-
-	var_11_11[4162] = {
+	pg.base.equip_skin_template[4162] = {
 		orbit_slg = "",
 		name = "乡间少女啾（战斗）",
 		orbit_ui_bound = "",
@@ -47268,11 +43235,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.equip_skin_template
-
-	var_11_12[4163] = {
+	pg.base.equip_skin_template[4163] = {
 		orbit_slg = "",
 		name = "乡间少女啾（轰炸）",
 		orbit_ui_bound = "",
@@ -47312,11 +43275,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.equip_skin_template
-
-	var_11_13[4164] = {
+	pg.base.equip_skin_template[4164] = {
 		orbit_slg = "",
 		name = "林间花环啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -47356,11 +43315,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.equip_skin_template
-
-	var_11_14[4165] = {
+	pg.base.equip_skin_template[4165] = {
 		orbit_slg = "",
 		name = "林间花环啾（战斗）",
 		orbit_ui_bound = "",
@@ -47400,11 +43355,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.equip_skin_template
-
-	var_11_15[4166] = {
+	pg.base.equip_skin_template[4166] = {
 		orbit_slg = "",
 		name = "林间花环啾（轰炸）",
 		orbit_ui_bound = "",
@@ -47444,11 +43395,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.equip_skin_template
-
-	var_11_16[4167] = {
+	pg.base.equip_skin_template[4167] = {
 		orbit_slg = "",
 		name = "海浪抱枕子弹",
 		orbit_ui_bound = "",
@@ -47490,11 +43437,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.equip_skin_template
-
-	var_11_17[4168] = {
+	pg.base.equip_skin_template[4168] = {
 		orbit_slg = "",
 		name = "假日珊瑚子弹",
 		orbit_ui_bound = "",
@@ -47536,11 +43479,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.equip_skin_template
-
-	var_11_18[4169] = {
+	pg.base.equip_skin_template[4169] = {
 		orbit_slg = "",
 		name = "假日饮料子弹",
 		orbit_ui_bound = "",
@@ -47582,11 +43521,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.equip_skin_template
-
-	var_11_19[4170] = {
+	pg.base.equip_skin_template[4170] = {
 		orbit_slg = "",
 		name = "假日遮阳伞鱼雷",
 		orbit_ui_bound = "",
@@ -47627,11 +43562,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.equip_skin_template
-
-	var_11_20[4171] = {
+	pg.base.equip_skin_template[4171] = {
 		orbit_slg = "",
 		name = "沙滩巾鱼雷",
 		orbit_ui_bound = "",
@@ -47672,11 +43603,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.equip_skin_template
-
-	var_11_21[4172] = {
+	pg.base.equip_skin_template[4172] = {
 		orbit_slg = "",
 		name = "贝壳风铃鱼雷",
 		orbit_ui_bound = "",
@@ -47717,11 +43644,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.equip_skin_template
-
-	var_11_22[4173] = {
+	pg.base.equip_skin_template[4173] = {
 		orbit_slg = "",
 		name = "海滨早餐炮弹",
 		orbit_ui_bound = "",
@@ -47763,11 +43686,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.equip_skin_template
-
-	var_11_23[4174] = {
+	pg.base.equip_skin_template[4174] = {
 		orbit_slg = "",
 		name = "便携冰箱炮弹",
 		orbit_ui_bound = "",
@@ -47809,11 +43728,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.equip_skin_template
-
-	var_11_24[4175] = {
+	pg.base.equip_skin_template[4175] = {
 		orbit_slg = "",
 		name = "海滨沙堡炮弹",
 		orbit_ui_bound = "",
@@ -47855,11 +43770,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.equip_skin_template
-
-	var_11_25[4176] = {
+	pg.base.equip_skin_template[4176] = {
 		orbit_slg = "",
 		name = "海滨度假啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -47899,11 +43810,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.equip_skin_template
-
-	var_11_26[4177] = {
+	pg.base.equip_skin_template[4177] = {
 		orbit_slg = "",
 		name = "海滨度假啾（战斗）",
 		orbit_ui_bound = "",
@@ -47943,11 +43850,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.equip_skin_template
-
-	var_11_27[4178] = {
+	pg.base.equip_skin_template[4178] = {
 		orbit_slg = "",
 		name = "海滨度假啾（轰炸）",
 		orbit_ui_bound = "",
@@ -47987,11 +43890,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.equip_skin_template
-
-	var_11_28[4179] = {
+	pg.base.equip_skin_template[4179] = {
 		orbit_slg = "",
 		name = "帆船啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -48031,11 +43930,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.equip_skin_template
-
-	var_11_29[4180] = {
+	pg.base.equip_skin_template[4180] = {
 		orbit_slg = "",
 		name = "帆船啾（战斗）",
 		orbit_ui_bound = "",
@@ -48075,11 +43970,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.equip_skin_template
-
-	var_11_30[4181] = {
+	pg.base.equip_skin_template[4181] = {
 		orbit_slg = "",
 		name = "帆船啾（轰炸）",
 		orbit_ui_bound = "",
@@ -48119,11 +44010,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.equip_skin_template
-
-	var_11_31[4182] = {
+	pg.base.equip_skin_template[4182] = {
 		orbit_slg = "",
 		name = "皮划艇啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -48163,11 +44050,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.equip_skin_template
-
-	var_11_32[4183] = {
+	pg.base.equip_skin_template[4183] = {
 		orbit_slg = "",
 		name = "皮划艇啾（战斗）",
 		orbit_ui_bound = "",
@@ -48207,11 +44090,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.equip_skin_template
-
-	var_11_33[4184] = {
+	pg.base.equip_skin_template[4184] = {
 		orbit_slg = "",
 		name = "皮划艇啾（轰炸）",
 		orbit_ui_bound = "",
@@ -48251,11 +44130,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.equip_skin_template
-
-	var_11_34[4185] = {
+	pg.base.equip_skin_template[4185] = {
 		orbit_slg = "",
 		name = "都市探照头罩（设备）",
 		type = 1,
@@ -48315,11 +44190,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.equip_skin_template
-
-	var_11_35[4186] = {
+	pg.base.equip_skin_template[4186] = {
 		orbit_slg = "",
 		name = "列车票根子弹",
 		orbit_ui_bound = "",
@@ -48361,11 +44232,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.equip_skin_template
-
-	var_11_36[4187] = {
+	pg.base.equip_skin_template[4187] = {
 		orbit_slg = "",
 		name = "铜质汽笛子弹",
 		orbit_ui_bound = "",
@@ -48407,11 +44274,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.equip_skin_template
-
-	var_11_37[4188] = {
+	pg.base.equip_skin_template[4188] = {
 		orbit_slg = "",
 		name = "车厢挂钩子弹",
 		orbit_ui_bound = "",
@@ -48453,11 +44316,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.equip_skin_template
-
-	var_11_38[4189] = {
+	pg.base.equip_skin_template[4189] = {
 		orbit_slg = "",
 		name = "车站牌鱼雷",
 		orbit_ui_bound = "",
@@ -48498,11 +44357,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.equip_skin_template
-
-	var_11_39[4190] = {
+	pg.base.equip_skin_template[4190] = {
 		orbit_slg = "",
 		name = "信号灯鱼雷",
 		orbit_ui_bound = "",
@@ -48543,11 +44398,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.equip_skin_template
-
-	var_11_40[4191] = {
+	pg.base.equip_skin_template[4191] = {
 		orbit_slg = "",
 		name = "铁轨鱼雷",
 		orbit_ui_bound = "",
@@ -48588,11 +44439,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.equip_skin_template
-
-	var_11_41[4192] = {
+	pg.base.equip_skin_template[4192] = {
 		orbit_slg = "",
 		name = "车长帽炮弹",
 		orbit_ui_bound = "",
@@ -48634,11 +44481,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.equip_skin_template
-
-	var_11_42[4193] = {
+	pg.base.equip_skin_template[4193] = {
 		orbit_slg = "",
 		name = "行李箱炮弹",
 		orbit_ui_bound = "",
@@ -48680,11 +44523,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.equip_skin_template
-
-	var_11_43[4194] = {
+	pg.base.equip_skin_template[4194] = {
 		orbit_slg = "",
 		name = "挂钟炮弹",
 		orbit_ui_bound = "",
@@ -48726,11 +44565,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.equip_skin_template
-
-	var_11_44[4195] = {
+	pg.base.equip_skin_template[4195] = {
 		orbit_slg = "",
 		name = "列车头飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -48770,11 +44605,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.equip_skin_template
-
-	var_11_45[4196] = {
+	pg.base.equip_skin_template[4196] = {
 		orbit_slg = "",
 		name = "列车头飞机（战斗）",
 		orbit_ui_bound = "",
@@ -48814,11 +44645,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.equip_skin_template
-
-	var_11_46[4197] = {
+	pg.base.equip_skin_template[4197] = {
 		orbit_slg = "",
 		name = "列车头飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -48858,11 +44685,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.equip_skin_template
-
-	var_11_47[4198] = {
+	pg.base.equip_skin_template[4198] = {
 		orbit_slg = "",
 		name = "乘务啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -48902,11 +44725,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.equip_skin_template
-
-	var_11_48[4199] = {
+	pg.base.equip_skin_template[4199] = {
 		orbit_slg = "",
 		name = "乘务啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -48946,11 +44765,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.equip_skin_template
-
-	var_11_49[4200] = {
+	pg.base.equip_skin_template[4200] = {
 		orbit_slg = "",
 		name = "乘务啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -48990,11 +44805,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.equip_skin_template
-
-	var_11_50[4201] = {
+	pg.base.equip_skin_template[4201] = {
 		orbit_slg = "",
 		name = "导游啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -49034,11 +44845,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.equip_skin_template
-
-	var_11_51[4202] = {
+	pg.base.equip_skin_template[4202] = {
 		orbit_slg = "",
 		name = "导游啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -49078,11 +44885,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.equip_skin_template
-
-	var_11_52[4203] = {
+	pg.base.equip_skin_template[4203] = {
 		orbit_slg = "",
 		name = "导游啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -49122,11 +44925,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.equip_skin_template
-
-	var_11_53[4204] = {
+	pg.base.equip_skin_template[4204] = {
 		orbit_slg = "",
 		name = "青红蝶影子弹",
 		orbit_ui_bound = "",
@@ -49168,11 +44967,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.equip_skin_template
-
-	var_11_54[4205] = {
+	pg.base.equip_skin_template[4205] = {
 		orbit_slg = "",
 		name = "古精灵之箭子弹",
 		orbit_ui_bound = "",
@@ -49214,11 +45009,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.equip_skin_template
-
-	var_11_55[4206] = {
+	pg.base.equip_skin_template[4206] = {
 		orbit_slg = "",
 		name = "速射魔法子弹",
 		orbit_ui_bound = "",
@@ -49260,11 +45051,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.equip_skin_template
-
-	var_11_56[4207] = {
+	pg.base.equip_skin_template[4207] = {
 		orbit_slg = "",
 		name = "魔法扫帚鱼雷",
 		orbit_ui_bound = "",
@@ -49305,11 +45092,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.equip_skin_template
-
-	var_11_57[4208] = {
+	pg.base.equip_skin_template[4208] = {
 		orbit_slg = "",
 		name = "古精灵之箭鱼雷",
 		orbit_ui_bound = "",
@@ -49350,11 +45133,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.equip_skin_template
-
-	var_11_58[4209] = {
+	pg.base.equip_skin_template[4209] = {
 		orbit_slg = "",
 		name = "精灵之杖鱼雷",
 		orbit_ui_bound = "",
@@ -49395,11 +45174,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.equip_skin_template
-
-	var_11_59[4210] = {
+	pg.base.equip_skin_template[4210] = {
 		orbit_slg = "",
 		name = "魔法帽炮弹",
 		orbit_ui_bound = "",
@@ -49441,11 +45216,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.equip_skin_template
-
-	var_11_60[4211] = {
+	pg.base.equip_skin_template[4211] = {
 		orbit_slg = "",
 		name = "魔法秘酿炮弹",
 		orbit_ui_bound = "",
@@ -49487,11 +45258,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.equip_skin_template
-
-	var_11_61[4212] = {
+	pg.base.equip_skin_template[4212] = {
 		orbit_slg = "",
 		name = "魔法书炮弹",
 		orbit_ui_bound = "",
@@ -49533,11 +45300,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.equip_skin_template
-
-	var_11_62[4213] = {
+	pg.base.equip_skin_template[4213] = {
 		orbit_slg = "",
 		name = "腐烂软泥啾莱姆飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -49577,11 +45340,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.equip_skin_template
-
-	var_11_63[4214] = {
+	pg.base.equip_skin_template[4214] = {
 		orbit_slg = "",
 		name = "腐烂软泥啾莱姆飞机（战斗）",
 		orbit_ui_bound = "",
@@ -49621,11 +45380,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.equip_skin_template
-
-	var_11_64[4215] = {
+	pg.base.equip_skin_template[4215] = {
 		orbit_slg = "",
 		name = "腐烂软泥啾莱姆飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -49665,11 +45420,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.equip_skin_template
-
-	var_11_65[4216] = {
+	pg.base.equip_skin_template[4216] = {
 		orbit_slg = "",
 		name = "地狱恶魔啾莱姆飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -49709,11 +45460,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.equip_skin_template
-
-	var_11_66[4217] = {
+	pg.base.equip_skin_template[4217] = {
 		orbit_slg = "",
 		name = "地狱恶魔啾莱姆飞机（战斗）",
 		orbit_ui_bound = "",
@@ -49753,11 +45500,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.equip_skin_template
-
-	var_11_67[4218] = {
+	pg.base.equip_skin_template[4218] = {
 		orbit_slg = "",
 		name = "地狱恶魔啾莱姆飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -49797,11 +45540,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.equip_skin_template
-
-	var_11_68[4219] = {
+	pg.base.equip_skin_template[4219] = {
 		orbit_slg = "",
 		name = "石像鬼啾莱姆飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -49841,11 +45580,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.equip_skin_template
-
-	var_11_69[4220] = {
+	pg.base.equip_skin_template[4220] = {
 		orbit_slg = "",
 		name = "石像鬼啾莱姆飞机（战斗）",
 		orbit_ui_bound = "",
@@ -49885,11 +45620,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.equip_skin_template
-
-	var_11_70[4221] = {
+	pg.base.equip_skin_template[4221] = {
 		orbit_slg = "",
 		name = "石像鬼啾莱姆飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -49929,11 +45660,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.equip_skin_template
-
-	var_11_71[4222] = {
+	pg.base.equip_skin_template[4222] = {
 		orbit_slg = "",
 		name = "狐火子弹",
 		orbit_ui_bound = "",
@@ -49975,11 +45702,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.equip_skin_template
-
-	var_11_72[4223] = {
+	pg.base.equip_skin_template[4223] = {
 		orbit_slg = "",
 		name = "凤羽子弹",
 		orbit_ui_bound = "",
@@ -50021,11 +45744,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.equip_skin_template
-
-	var_11_73[4224] = {
+	pg.base.equip_skin_template[4224] = {
 		orbit_slg = "",
 		name = "绳结子弹",
 		orbit_ui_bound = "",
@@ -50067,11 +45786,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.equip_skin_template
-
-	var_11_74[4225] = {
+	pg.base.equip_skin_template[4225] = {
 		orbit_slg = "",
 		name = "一枝红樱鱼雷",
 		orbit_ui_bound = "",
@@ -50112,11 +45827,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.equip_skin_template
-
-	var_11_75[4226] = {
+	pg.base.equip_skin_template[4226] = {
 		orbit_slg = "",
 		name = "一枝金桂鱼雷",
 		orbit_ui_bound = "",
@@ -50157,11 +45868,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.equip_skin_template
-
-	var_11_76[4227] = {
+	pg.base.equip_skin_template[4227] = {
 		orbit_slg = "",
 		name = "一枝青松鱼雷",
 		orbit_ui_bound = "",
@@ -50202,11 +45909,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.equip_skin_template
-
-	var_11_77[4228] = {
+	pg.base.equip_skin_template[4228] = {
 		orbit_slg = "",
 		name = "灯笼炮弹",
 		orbit_ui_bound = "",
@@ -50248,11 +45951,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.equip_skin_template
-
-	var_11_78[4229] = {
+	pg.base.equip_skin_template[4229] = {
 		orbit_slg = "",
 		name = "酒葫芦炮弹",
 		orbit_ui_bound = "",
@@ -50294,11 +45993,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.equip_skin_template
-
-	var_11_79[4230] = {
+	pg.base.equip_skin_template[4230] = {
 		orbit_slg = "",
 		name = "旋转镰刀炮弹",
 		orbit_ui_bound = "",
@@ -50340,11 +46035,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.equip_skin_template
-
-	var_11_80[4231] = {
+	pg.base.equip_skin_template[4231] = {
 		orbit_slg = "",
 		name = "云中粉樱飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -50384,11 +46075,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.equip_skin_template
-
-	var_11_81[4232] = {
+	pg.base.equip_skin_template[4232] = {
 		orbit_slg = "",
 		name = "云中粉樱飞机（战斗）",
 		orbit_ui_bound = "",
@@ -50428,11 +46115,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.equip_skin_template
-
-	var_11_82[4233] = {
+	pg.base.equip_skin_template[4233] = {
 		orbit_slg = "",
 		name = "云中粉樱飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -50472,11 +46155,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.equip_skin_template
-
-	var_11_83[4234] = {
+	pg.base.equip_skin_template[4234] = {
 		orbit_slg = "",
 		name = "云中金桂飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -50516,11 +46195,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.equip_skin_template
-
-	var_11_84[4235] = {
+	pg.base.equip_skin_template[4235] = {
 		orbit_slg = "",
 		name = "云中金桂飞机（战斗）",
 		orbit_ui_bound = "",
@@ -50560,11 +46235,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.equip_skin_template
-
-	var_11_85[4236] = {
+	pg.base.equip_skin_template[4236] = {
 		orbit_slg = "",
 		name = "云中金桂飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -50604,11 +46275,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.equip_skin_template
-
-	var_11_86[4237] = {
+	pg.base.equip_skin_template[4237] = {
 		orbit_slg = "",
 		name = "云中青松飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -50648,11 +46315,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.equip_skin_template
-
-	var_11_87[4238] = {
+	pg.base.equip_skin_template[4238] = {
 		orbit_slg = "",
 		name = "云中青松飞机（战斗）",
 		orbit_ui_bound = "",
@@ -50692,11 +46355,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.equip_skin_template
-
-	var_11_88[4239] = {
+	pg.base.equip_skin_template[4239] = {
 		orbit_slg = "",
 		name = "云中青松飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -50736,11 +46395,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.equip_skin_template
-
-	var_11_89[4240] = {
+	pg.base.equip_skin_template[4240] = {
 		orbit_slg = "",
 		name = "火焰球子弹",
 		orbit_ui_bound = "",
@@ -50782,11 +46437,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.equip_skin_template
-
-	var_11_90[4241] = {
+	pg.base.equip_skin_template[4241] = {
 		orbit_slg = "",
 		name = "幽冥子弹",
 		orbit_ui_bound = "",
@@ -50828,11 +46479,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.equip_skin_template
-
-	var_11_91[4242] = {
+	pg.base.equip_skin_template[4242] = {
 		orbit_slg = "",
 		name = "蛸目子弹",
 		orbit_ui_bound = "",
@@ -50874,11 +46521,7 @@ end)()
 			101
 		}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.equip_skin_template
-
-	var_11_92[4243] = {
+	pg.base.equip_skin_template[4243] = {
 		orbit_slg = "",
 		name = "船锚鱼雷",
 		orbit_ui_bound = "",
@@ -50919,11 +46562,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.equip_skin_template
-
-	var_11_93[4244] = {
+	pg.base.equip_skin_template[4244] = {
 		orbit_slg = "",
 		name = "三叉戟鱼雷",
 		orbit_ui_bound = "",
@@ -50964,11 +46603,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.equip_skin_template
-
-	var_11_94[4245] = {
+	pg.base.equip_skin_template[4245] = {
 		orbit_slg = "",
 		name = "桅杆鱼雷",
 		orbit_ui_bound = "",
@@ -51009,11 +46644,7 @@ end)()
 			107
 		}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.equip_skin_template
-
-	var_11_95[4246] = {
+	pg.base.equip_skin_template[4246] = {
 		orbit_slg = "",
 		name = "船长帽炮弹",
 		orbit_ui_bound = "",
@@ -51055,11 +46686,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.equip_skin_template
-
-	var_11_96[4247] = {
+	pg.base.equip_skin_template[4247] = {
 		orbit_slg = "",
 		name = "深海陈酿炮弹",
 		orbit_ui_bound = "",
@@ -51101,11 +46728,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.equip_skin_template
-
-	var_11_97[4248] = {
+	pg.base.equip_skin_template[4248] = {
 		orbit_slg = "",
 		name = "海底提灯炮弹",
 		orbit_ui_bound = "",
@@ -51147,11 +46770,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.equip_skin_template
-
-	var_11_98[4249] = {
+	pg.base.equip_skin_template[4249] = {
 		orbit_slg = "",
 		name = "冰雪幽灵船飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -51191,8 +46810,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.equip_skin_template[4250] = {
+	pg.base.equip_skin_template[4250] = {
 		orbit_slg = "",
 		name = "冰雪幽灵船飞机（战斗）",
 		orbit_ui_bound = "",
@@ -51236,11 +46854,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.equip_skin_template
-
-	var_12_0[4251] = {
+	pg.base.equip_skin_template[4251] = {
 		orbit_slg = "",
 		name = "冰雪幽灵船飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -51280,11 +46894,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.equip_skin_template
-
-	var_12_1[4252] = {
+	pg.base.equip_skin_template[4252] = {
 		orbit_slg = "",
 		name = "深海幽灵船飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -51324,11 +46934,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.equip_skin_template
-
-	var_12_2[4253] = {
+	pg.base.equip_skin_template[4253] = {
 		orbit_slg = "",
 		name = "深海幽灵船飞机（战斗）",
 		orbit_ui_bound = "",
@@ -51368,11 +46974,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.equip_skin_template
-
-	var_12_3[4254] = {
+	pg.base.equip_skin_template[4254] = {
 		orbit_slg = "",
 		name = "深海幽灵船飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -51412,11 +47014,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.equip_skin_template
-
-	var_12_4[4255] = {
+	pg.base.equip_skin_template[4255] = {
 		orbit_slg = "",
 		name = "迷雾幽灵船飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -51456,11 +47054,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.equip_skin_template
-
-	var_12_5[4256] = {
+	pg.base.equip_skin_template[4256] = {
 		orbit_slg = "",
 		name = "迷雾幽灵船飞机（战斗）",
 		orbit_ui_bound = "",
@@ -51500,11 +47094,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.equip_skin_template
-
-	var_12_6[4257] = {
+	pg.base.equip_skin_template[4257] = {
 		orbit_slg = "",
 		name = "迷雾幽灵船飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -51544,11 +47134,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.equip_skin_template
-
-	var_12_7[4258] = {
+	pg.base.equip_skin_template[4258] = {
 		orbit_slg = "",
 		name = "高脚杯子弹",
 		orbit_ui_bound = "",
@@ -51590,11 +47176,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.equip_skin_template
-
-	var_12_8[4259] = {
+	pg.base.equip_skin_template[4259] = {
 		orbit_slg = "",
 		name = "粉领结子弹",
 		orbit_ui_bound = "",
@@ -51636,11 +47218,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.equip_skin_template
-
-	var_12_9[4260] = {
+	pg.base.equip_skin_template[4260] = {
 		orbit_slg = "",
 		name = "彩话筒子弹",
 		orbit_ui_bound = "",
@@ -51682,11 +47260,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.equip_skin_template
-
-	var_12_10[4261] = {
+	pg.base.equip_skin_template[4261] = {
 		orbit_slg = "",
 		name = "粉菜单鱼雷",
 		orbit_ui_bound = "",
@@ -51727,11 +47301,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.equip_skin_template
-
-	var_12_11[4262] = {
+	pg.base.equip_skin_template[4262] = {
 		orbit_slg = "",
 		name = "粉香槟鱼雷",
 		orbit_ui_bound = "",
@@ -51772,11 +47342,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.equip_skin_template
-
-	var_12_12[4263] = {
+	pg.base.equip_skin_template[4263] = {
 		orbit_slg = "",
 		name = "黑牌鱼雷",
 		orbit_ui_bound = "",
@@ -51817,11 +47383,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.equip_skin_template
-
-	var_12_13[4264] = {
+	pg.base.equip_skin_template[4264] = {
 		orbit_slg = "",
 		name = "灯球炮弹",
 		orbit_ui_bound = "",
@@ -51863,11 +47425,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.equip_skin_template
-
-	var_12_14[4265] = {
+	pg.base.equip_skin_template[4265] = {
 		orbit_slg = "",
 		name = "标靶炮弹",
 		orbit_ui_bound = "",
@@ -51909,11 +47467,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.equip_skin_template
-
-	var_12_15[4266] = {
+	pg.base.equip_skin_template[4266] = {
 		orbit_slg = "",
 		name = "兔耳炮弹",
 		orbit_ui_bound = "",
@@ -51955,11 +47509,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.equip_skin_template
-
-	var_12_16[4267] = {
+	pg.base.equip_skin_template[4267] = {
 		orbit_slg = "",
 		name = "蛋糕女仆啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -51999,11 +47549,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.equip_skin_template
-
-	var_12_17[4268] = {
+	pg.base.equip_skin_template[4268] = {
 		orbit_slg = "",
 		name = "蛋糕女仆啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -52043,11 +47589,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.equip_skin_template
-
-	var_12_18[4269] = {
+	pg.base.equip_skin_template[4269] = {
 		orbit_slg = "",
 		name = "蛋糕女仆啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -52087,11 +47629,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.equip_skin_template
-
-	var_12_19[4270] = {
+	pg.base.equip_skin_template[4270] = {
 		orbit_slg = "",
 		name = "粉粉兔耳啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -52131,11 +47669,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.equip_skin_template
-
-	var_12_20[4271] = {
+	pg.base.equip_skin_template[4271] = {
 		orbit_slg = "",
 		name = "粉粉兔耳啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -52175,11 +47709,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.equip_skin_template
-
-	var_12_21[4272] = {
+	pg.base.equip_skin_template[4272] = {
 		orbit_slg = "",
 		name = "粉粉兔耳啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -52219,11 +47749,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.equip_skin_template
-
-	var_12_22[4273] = {
+	pg.base.equip_skin_template[4273] = {
 		orbit_slg = "",
 		name = "黑牌执事啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -52263,11 +47789,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.equip_skin_template
-
-	var_12_23[4274] = {
+	pg.base.equip_skin_template[4274] = {
 		orbit_slg = "",
 		name = "黑牌执事啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -52307,11 +47829,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.equip_skin_template
-
-	var_12_24[4275] = {
+	pg.base.equip_skin_template[4275] = {
 		orbit_slg = "",
 		name = "黑牌执事啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -52351,11 +47869,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.equip_skin_template
-
-	var_12_25[4276] = {
+	pg.base.equip_skin_template[4276] = {
 		orbit_slg = "",
 		name = "迷你相纸子弹",
 		orbit_ui_bound = "",
@@ -52397,11 +47911,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.equip_skin_template
-
-	var_12_26[4277] = {
+	pg.base.equip_skin_template[4277] = {
 		orbit_slg = "",
 		name = "电影胶卷子弹",
 		orbit_ui_bound = "",
@@ -52443,11 +47953,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.equip_skin_template
-
-	var_12_27[4278] = {
+	pg.base.equip_skin_template[4278] = {
 		orbit_slg = "",
 		name = "存储卡子弹",
 		orbit_ui_bound = "",
@@ -52489,11 +47995,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.equip_skin_template
-
-	var_12_28[4279] = {
+	pg.base.equip_skin_template[4279] = {
 		orbit_slg = "",
 		name = "补光灯鱼雷",
 		orbit_ui_bound = "",
@@ -52534,11 +48036,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.equip_skin_template
-
-	var_12_29[4280] = {
+	pg.base.equip_skin_template[4280] = {
 		orbit_slg = "",
 		name = "三角架鱼雷",
 		orbit_ui_bound = "",
@@ -52579,11 +48077,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.equip_skin_template
-
-	var_12_30[4281] = {
+	pg.base.equip_skin_template[4281] = {
 		orbit_slg = "",
 		name = "长焦镜头鱼雷",
 		orbit_ui_bound = "",
@@ -52624,11 +48118,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.equip_skin_template
-
-	var_12_31[4282] = {
+	pg.base.equip_skin_template[4282] = {
 		orbit_slg = "",
 		name = "数码相机炮弹",
 		orbit_ui_bound = "",
@@ -52670,11 +48160,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.equip_skin_template
-
-	var_12_32[4283] = {
+	pg.base.equip_skin_template[4283] = {
 		orbit_slg = "",
 		name = "单反相机炮弹",
 		orbit_ui_bound = "",
@@ -52716,11 +48202,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.equip_skin_template
-
-	var_12_33[4284] = {
+	pg.base.equip_skin_template[4284] = {
 		orbit_slg = "",
 		name = "镜头收纳箱炮弹",
 		orbit_ui_bound = "",
@@ -52762,11 +48244,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.equip_skin_template
-
-	var_12_34[4285] = {
+	pg.base.equip_skin_template[4285] = {
 		orbit_slg = "",
 		name = "啾相框飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -52806,11 +48284,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.equip_skin_template
-
-	var_12_35[4286] = {
+	pg.base.equip_skin_template[4286] = {
 		orbit_slg = "",
 		name = "啾相框飞机（战斗）",
 		orbit_ui_bound = "",
@@ -52850,11 +48324,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.equip_skin_template
-
-	var_12_36[4287] = {
+	pg.base.equip_skin_template[4287] = {
 		orbit_slg = "",
 		name = "啾相框飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -52894,11 +48364,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.equip_skin_template
-
-	var_12_37[4288] = {
+	pg.base.equip_skin_template[4288] = {
 		orbit_slg = "",
 		name = "摄影屏飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -52938,11 +48404,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.equip_skin_template
-
-	var_12_38[4289] = {
+	pg.base.equip_skin_template[4289] = {
 		orbit_slg = "",
 		name = "摄影屏飞机（战斗）",
 		orbit_ui_bound = "",
@@ -52982,11 +48444,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.equip_skin_template
-
-	var_12_39[4290] = {
+	pg.base.equip_skin_template[4290] = {
 		orbit_slg = "",
 		name = "摄影屏飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -53026,11 +48484,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.equip_skin_template
-
-	var_12_40[4291] = {
+	pg.base.equip_skin_template[4291] = {
 		orbit_slg = "",
 		name = "啾海报飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -53070,11 +48524,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.equip_skin_template
-
-	var_12_41[4292] = {
+	pg.base.equip_skin_template[4292] = {
 		orbit_slg = "",
 		name = "啾海报飞机（战斗）",
 		orbit_ui_bound = "",
@@ -53114,11 +48564,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.equip_skin_template
-
-	var_12_42[4293] = {
+	pg.base.equip_skin_template[4293] = {
 		orbit_slg = "",
 		name = "啾海报飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -53158,11 +48604,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.equip_skin_template
-
-	var_12_43[4294] = {
+	pg.base.equip_skin_template[4294] = {
 		orbit_slg = "",
 		name = "方孔金币子弹",
 		orbit_ui_bound = "",
@@ -53204,11 +48646,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.equip_skin_template
-
-	var_12_44[4295] = {
+	pg.base.equip_skin_template[4295] = {
 		orbit_slg = "",
 		name = "寒月之辉子弹",
 		orbit_ui_bound = "",
@@ -53250,11 +48688,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.equip_skin_template
-
-	var_12_45[4296] = {
+	pg.base.equip_skin_template[4296] = {
 		orbit_slg = "",
 		name = "玲珑翠环子弹",
 		orbit_ui_bound = "",
@@ -53296,11 +48730,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.equip_skin_template
-
-	var_12_46[4297] = {
+	pg.base.equip_skin_template[4297] = {
 		orbit_slg = "",
 		name = "湛蓝流苏鱼雷",
 		orbit_ui_bound = "",
@@ -53341,11 +48771,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.equip_skin_template
-
-	var_12_47[4298] = {
+	pg.base.equip_skin_template[4298] = {
 		orbit_slg = "",
 		name = "凌云折扇鱼雷",
 		orbit_ui_bound = "",
@@ -53386,11 +48812,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.equip_skin_template
-
-	var_12_48[4299] = {
+	pg.base.equip_skin_template[4299] = {
 		orbit_slg = "",
 		name = "珍珠金簪鱼雷",
 		orbit_ui_bound = "",
@@ -53431,11 +48853,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.equip_skin_template
-
-	var_12_49[4300] = {
+	pg.base.equip_skin_template[4300] = {
 		orbit_slg = "",
 		name = "君子良佩炮弹",
 		orbit_ui_bound = "",
@@ -53477,11 +48895,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.equip_skin_template
-
-	var_12_50[4301] = {
+	pg.base.equip_skin_template[4301] = {
 		orbit_slg = "",
 		name = "芬芳香炉炮弹",
 		orbit_ui_bound = "",
@@ -53523,11 +48937,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.equip_skin_template
-
-	var_12_51[4302] = {
+	pg.base.equip_skin_template[4302] = {
 		orbit_slg = "",
 		name = "祈福明灯炮弹",
 		orbit_ui_bound = "",
@@ -53569,11 +48979,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.equip_skin_template
-
-	var_12_52[4303] = {
+	pg.base.equip_skin_template[4303] = {
 		orbit_slg = "",
 		name = "雀翎窥月飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -53613,11 +49019,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.equip_skin_template
-
-	var_12_53[4304] = {
+	pg.base.equip_skin_template[4304] = {
 		orbit_slg = "",
 		name = "雀翎窥月飞机（战斗）",
 		orbit_ui_bound = "",
@@ -53657,11 +49059,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.equip_skin_template
-
-	var_12_54[4305] = {
+	pg.base.equip_skin_template[4305] = {
 		orbit_slg = "",
 		name = "雀翎窥月飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -53701,11 +49099,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.equip_skin_template
-
-	var_12_55[4306] = {
+	pg.base.equip_skin_template[4306] = {
 		orbit_slg = "",
 		name = "墨竹画卷飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -53745,11 +49139,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.equip_skin_template
-
-	var_12_56[4307] = {
+	pg.base.equip_skin_template[4307] = {
 		orbit_slg = "",
 		name = "墨竹画卷飞机（战斗）",
 		orbit_ui_bound = "",
@@ -53789,11 +49179,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.equip_skin_template
-
-	var_12_57[4308] = {
+	pg.base.equip_skin_template[4308] = {
 		orbit_slg = "",
 		name = "墨竹画卷飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -53833,11 +49219,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.equip_skin_template
-
-	var_12_58[4309] = {
+	pg.base.equip_skin_template[4309] = {
 		orbit_slg = "",
 		name = "梅花折扇飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -53877,11 +49259,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.equip_skin_template
-
-	var_12_59[4310] = {
+	pg.base.equip_skin_template[4310] = {
 		orbit_slg = "",
 		name = "梅花折扇飞机（战斗）",
 		orbit_ui_bound = "",
@@ -53921,11 +49299,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.equip_skin_template
-
-	var_12_60[4311] = {
+	pg.base.equip_skin_template[4311] = {
 		orbit_slg = "",
 		name = "梅花折扇飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -53965,11 +49339,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.equip_skin_template
-
-	var_12_61[4312] = {
+	pg.base.equip_skin_template[4312] = {
 		orbit_slg = "",
 		name = "黑白围棋子弹",
 		orbit_ui_bound = "",
@@ -54011,11 +49381,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.equip_skin_template
-
-	var_12_62[4313] = {
+	pg.base.equip_skin_template[4313] = {
 		orbit_slg = "",
 		name = "麻将牌子弹",
 		orbit_ui_bound = "",
@@ -54057,11 +49423,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.equip_skin_template
-
-	var_12_63[4314] = {
+	pg.base.equip_skin_template[4314] = {
 		orbit_slg = "",
 		name = "新春香囊子弹",
 		orbit_ui_bound = "",
@@ -54103,11 +49465,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.equip_skin_template
-
-	var_12_64[4315] = {
+	pg.base.equip_skin_template[4315] = {
 		orbit_slg = "",
 		name = "水墨竹简鱼雷",
 		orbit_ui_bound = "",
@@ -54148,11 +49506,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.equip_skin_template
-
-	var_12_65[4316] = {
+	pg.base.equip_skin_template[4316] = {
 		orbit_slg = "",
 		name = "插花玉瓶鱼雷",
 		orbit_ui_bound = "",
@@ -54193,11 +49547,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.equip_skin_template
-
-	var_12_66[4317] = {
+	pg.base.equip_skin_template[4317] = {
 		orbit_slg = "",
 		name = "绣花鞋鱼雷",
 		orbit_ui_bound = "",
@@ -54238,11 +49588,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.equip_skin_template
-
-	var_12_67[4318] = {
+	pg.base.equip_skin_template[4318] = {
 		orbit_slg = "",
 		name = "棋子罐炮弹",
 		orbit_ui_bound = "",
@@ -54284,11 +49630,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.equip_skin_template
-
-	var_12_68[4319] = {
+	pg.base.equip_skin_template[4319] = {
 		orbit_slg = "",
 		name = "毛笔架炮弹",
 		orbit_ui_bound = "",
@@ -54330,11 +49672,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.equip_skin_template
-
-	var_12_69[4320] = {
+	pg.base.equip_skin_template[4320] = {
 		orbit_slg = "",
 		name = "如意算盘炮弹",
 		orbit_ui_bound = "",
@@ -54376,11 +49714,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.equip_skin_template
-
-	var_12_70[4321] = {
+	pg.base.equip_skin_template[4321] = {
 		orbit_slg = "",
 		name = "锦绣小马灯飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -54420,11 +49754,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.equip_skin_template
-
-	var_12_71[4322] = {
+	pg.base.equip_skin_template[4322] = {
 		orbit_slg = "",
 		name = "锦绣小马灯飞机（战斗）",
 		orbit_ui_bound = "",
@@ -54464,11 +49794,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.equip_skin_template
-
-	var_12_72[4323] = {
+	pg.base.equip_skin_template[4323] = {
 		orbit_slg = "",
 		name = "锦绣小马灯飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -54508,11 +49834,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.equip_skin_template
-
-	var_12_73[4324] = {
+	pg.base.equip_skin_template[4324] = {
 		orbit_slg = "",
 		name = "棋盘小马灯飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -54552,11 +49874,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.equip_skin_template
-
-	var_12_74[4325] = {
+	pg.base.equip_skin_template[4325] = {
 		orbit_slg = "",
 		name = "棋盘小马灯飞机（战斗）",
 		orbit_ui_bound = "",
@@ -54596,11 +49914,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.equip_skin_template
-
-	var_12_75[4326] = {
+	pg.base.equip_skin_template[4326] = {
 		orbit_slg = "",
 		name = "棋盘小马灯飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -54640,11 +49954,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.equip_skin_template
-
-	var_12_76[4327] = {
+	pg.base.equip_skin_template[4327] = {
 		orbit_slg = "",
 		name = "招财小马灯飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -54684,11 +49994,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.equip_skin_template
-
-	var_12_77[4328] = {
+	pg.base.equip_skin_template[4328] = {
 		orbit_slg = "",
 		name = "招财小马灯飞机（战斗）",
 		orbit_ui_bound = "",
@@ -54728,11 +50034,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.equip_skin_template
-
-	var_12_78[4329] = {
+	pg.base.equip_skin_template[4329] = {
 		orbit_slg = "",
 		name = "招财小马灯飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -54772,11 +50074,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.equip_skin_template
-
-	var_12_79[4330] = {
+	pg.base.equip_skin_template[4330] = {
 		orbit_slg = "",
 		name = "指令芯片子弹",
 		orbit_ui_bound = "",
@@ -54818,11 +50116,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.equip_skin_template
-
-	var_12_80[4331] = {
+	pg.base.equip_skin_template[4331] = {
 		orbit_slg = "",
 		name = "光影闪电子弹",
 		orbit_ui_bound = "",
@@ -54864,11 +50158,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.equip_skin_template
-
-	var_12_81[4332] = {
+	pg.base.equip_skin_template[4332] = {
 		orbit_slg = "",
 		name = "透明水滴子弹",
 		orbit_ui_bound = "",
@@ -54910,11 +50200,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.equip_skin_template
-
-	var_12_82[4333] = {
+	pg.base.equip_skin_template[4333] = {
 		orbit_slg = "",
 		name = "脉冲电击枪鱼雷",
 		orbit_ui_bound = "",
@@ -54955,11 +50241,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.equip_skin_template
-
-	var_12_83[4334] = {
+	pg.base.equip_skin_template[4334] = {
 		orbit_slg = "",
 		name = "暗夜飞索鱼雷",
 		orbit_ui_bound = "",
@@ -55000,11 +50282,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.equip_skin_template
-
-	var_12_84[4335] = {
+	pg.base.equip_skin_template[4335] = {
 		orbit_slg = "",
 		name = "万能身份证鱼雷",
 		orbit_ui_bound = "",
@@ -55045,11 +50323,7 @@ end)()
 			107
 		}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.equip_skin_template
-
-	var_12_85[4336] = {
+	pg.base.equip_skin_template[4336] = {
 		orbit_slg = "",
 		name = "电子通缉令炮弹",
 		orbit_ui_bound = "",
@@ -55091,11 +50365,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.equip_skin_template
-
-	var_12_86[4337] = {
+	pg.base.equip_skin_template[4337] = {
 		orbit_slg = "",
 		name = "犯罪预告函炮弹",
 		orbit_ui_bound = "",
@@ -55137,11 +50407,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.equip_skin_template
-
-	var_12_87[4338] = {
+	pg.base.equip_skin_template[4338] = {
 		orbit_slg = "",
 		name = "夜行假面炮弹",
 		orbit_ui_bound = "",
@@ -55183,11 +50449,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.equip_skin_template
-
-	var_12_88[4339] = {
+	pg.base.equip_skin_template[4339] = {
 		orbit_slg = "",
 		name = "暗影啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -55227,11 +50489,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.equip_skin_template
-
-	var_12_89[4340] = {
+	pg.base.equip_skin_template[4340] = {
 		orbit_slg = "",
 		name = "暗影啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -55271,11 +50529,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.equip_skin_template
-
-	var_12_90[4341] = {
+	pg.base.equip_skin_template[4341] = {
 		orbit_slg = "",
 		name = "暗影啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -55315,11 +50569,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.equip_skin_template
-
-	var_12_91[4342] = {
+	pg.base.equip_skin_template[4342] = {
 		orbit_slg = "",
 		name = "机车啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -55359,11 +50609,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.equip_skin_template
-
-	var_12_92[4343] = {
+	pg.base.equip_skin_template[4343] = {
 		orbit_slg = "",
 		name = "机车啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -55403,11 +50649,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.equip_skin_template
-
-	var_12_93[4344] = {
+	pg.base.equip_skin_template[4344] = {
 		orbit_slg = "",
 		name = "机车啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -55447,11 +50689,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.equip_skin_template
-
-	var_12_94[4345] = {
+	pg.base.equip_skin_template[4345] = {
 		orbit_slg = "",
 		name = "假面啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -55491,11 +50729,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.equip_skin_template
-
-	var_12_95[4346] = {
+	pg.base.equip_skin_template[4346] = {
 		orbit_slg = "",
 		name = "假面啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -55535,11 +50769,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.equip_skin_template
-
-	var_12_96[4347] = {
+	pg.base.equip_skin_template[4347] = {
 		orbit_slg = "",
 		name = "假面啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -55579,11 +50809,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.equip_skin_template
-
-	var_12_97[4348] = {
+	pg.base.equip_skin_template[4348] = {
 		orbit_slg = "",
 		name = "特大强化石子弹",
 		orbit_ui_bound = "",
@@ -55625,11 +50851,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.equip_skin_template
-
-	var_12_98[4349] = {
+	pg.base.equip_skin_template[4349] = {
 		orbit_slg = "",
 		name = "嘉宾点数子弹",
 		orbit_ui_bound = "",
@@ -55671,8 +50893,7 @@ end)()
 			101
 		}
 	}
-	pg = var_12_98
-	var_12_98.base.equip_skin_template[4350] = {
+	pg.base.equip_skin_template[4350] = {
 		orbit_slg = "",
 		name = "V宝石子弹",
 		orbit_ui_bound = "",
@@ -55718,11 +50939,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.equip_skin_template
-
-	var_13_0[4351] = {
+	pg.base.equip_skin_template[4351] = {
 		orbit_slg = "",
 		name = "清凉葡萄鱼雷",
 		orbit_ui_bound = "",
@@ -55763,11 +50980,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.equip_skin_template
-
-	var_13_1[4352] = {
+	pg.base.equip_skin_template[4352] = {
 		orbit_slg = "",
 		name = "热情菠萝鱼雷",
 		orbit_ui_bound = "",
@@ -55808,11 +51021,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.equip_skin_template
-
-	var_13_2[4353] = {
+	pg.base.equip_skin_template[4353] = {
 		orbit_slg = "",
 		name = "黄金香蕉鱼雷",
 		orbit_ui_bound = "",
@@ -55853,11 +51062,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.equip_skin_template
-
-	var_13_3[4354] = {
+	pg.base.equip_skin_template[4354] = {
 		orbit_slg = "",
 		name = "长焦相机炮弹",
 		orbit_ui_bound = "",
@@ -55899,11 +51104,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.equip_skin_template
-
-	var_13_4[4355] = {
+	pg.base.equip_skin_template[4355] = {
 		orbit_slg = "",
 		name = "神秘记事本炮弹",
 		orbit_ui_bound = "",
@@ -55945,11 +51146,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.equip_skin_template
-
-	var_13_5[4356] = {
+	pg.base.equip_skin_template[4356] = {
 		orbit_slg = "",
 		name = "晶莹护甲油炮弹",
 		orbit_ui_bound = "",
@@ -55991,11 +51188,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.equip_skin_template
-
-	var_13_6[4357] = {
+	pg.base.equip_skin_template[4357] = {
 		orbit_slg = "",
 		name = "沙滩气垫啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -56035,11 +51228,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.equip_skin_template
-
-	var_13_7[4358] = {
+	pg.base.equip_skin_template[4358] = {
 		orbit_slg = "",
 		name = "沙滩气垫啾（战斗）",
 		orbit_ui_bound = "",
@@ -56079,11 +51268,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.equip_skin_template
-
-	var_13_8[4359] = {
+	pg.base.equip_skin_template[4359] = {
 		orbit_slg = "",
 		name = "沙滩气垫啾（轰炸）",
 		orbit_ui_bound = "",
@@ -56123,11 +51308,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.equip_skin_template
-
-	var_13_9[4360] = {
+	pg.base.equip_skin_template[4360] = {
 		orbit_slg = "",
 		name = "沙滩花环啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -56167,11 +51348,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.equip_skin_template
-
-	var_13_10[4361] = {
+	pg.base.equip_skin_template[4361] = {
 		orbit_slg = "",
 		name = "沙滩花环啾（战斗）",
 		orbit_ui_bound = "",
@@ -56211,11 +51388,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.equip_skin_template
-
-	var_13_11[4362] = {
+	pg.base.equip_skin_template[4362] = {
 		orbit_slg = "",
 		name = "沙滩花环啾（轰炸）",
 		orbit_ui_bound = "",
@@ -56255,11 +51428,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.equip_skin_template
-
-	var_13_12[4363] = {
+	pg.base.equip_skin_template[4363] = {
 		orbit_slg = "",
 		name = "虎鲸骑士啾（鱼雷）",
 		orbit_ui_bound = "",
@@ -56299,11 +51468,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.equip_skin_template
-
-	var_13_13[4364] = {
+	pg.base.equip_skin_template[4364] = {
 		orbit_slg = "",
 		name = "虎鲸骑士啾（战斗）",
 		orbit_ui_bound = "",
@@ -56343,11 +51508,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.equip_skin_template
-
-	var_13_14[4365] = {
+	pg.base.equip_skin_template[4365] = {
 		orbit_slg = "",
 		name = "虎鲸骑士啾（轰炸）",
 		orbit_ui_bound = "",
@@ -56387,11 +51548,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.equip_skin_template
-
-	var_13_15[4366] = {
+	pg.base.equip_skin_template[4366] = {
 		orbit_slg = "",
 		name = "糖果宝石子弹",
 		orbit_ui_bound = "",
@@ -56433,11 +51590,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.equip_skin_template
-
-	var_13_16[4367] = {
+	pg.base.equip_skin_template[4367] = {
 		orbit_slg = "",
 		name = "海蓝心钻子弹",
 		orbit_ui_bound = "",
@@ -56479,11 +51632,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.equip_skin_template
-
-	var_13_17[4368] = {
+	pg.base.equip_skin_template[4368] = {
 		orbit_slg = "",
 		name = "浑圆金珠子弹",
 		orbit_ui_bound = "",
@@ -56525,11 +51674,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.equip_skin_template
-
-	var_13_18[4369] = {
+	pg.base.equip_skin_template[4369] = {
 		orbit_slg = "",
 		name = "金钻腕表鱼雷",
 		orbit_ui_bound = "",
@@ -56570,11 +51715,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.equip_skin_template
-
-	var_13_19[4370] = {
+	pg.base.equip_skin_template[4370] = {
 		orbit_slg = "",
 		name = "冰蓝手链鱼雷",
 		orbit_ui_bound = "",
@@ -56615,11 +51756,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.equip_skin_template
-
-	var_13_20[4371] = {
+	pg.base.equip_skin_template[4371] = {
 		orbit_slg = "",
 		name = "水晶耳坠鱼雷",
 		orbit_ui_bound = "",
@@ -56660,11 +51797,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.equip_skin_template
-
-	var_13_21[4372] = {
+	pg.base.equip_skin_template[4372] = {
 		orbit_slg = "",
 		name = "月凝珠链炮弹",
 		orbit_ui_bound = "",
@@ -56706,11 +51839,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.equip_skin_template
-
-	var_13_22[4373] = {
+	pg.base.equip_skin_template[4373] = {
 		orbit_slg = "",
 		name = "钞能力手包炮弹",
 		orbit_ui_bound = "",
@@ -56752,11 +51881,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.equip_skin_template
-
-	var_13_23[4374] = {
+	pg.base.equip_skin_template[4374] = {
 		orbit_slg = "",
 		name = "蔚蓝王冠炮弹",
 		orbit_ui_bound = "",
@@ -56798,11 +51923,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.equip_skin_template
-
-	var_13_24[4375] = {
+	pg.base.equip_skin_template[4375] = {
 		orbit_slg = "",
 		name = "购物啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -56842,11 +51963,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.equip_skin_template
-
-	var_13_25[4376] = {
+	pg.base.equip_skin_template[4376] = {
 		orbit_slg = "",
 		name = "购物啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -56886,11 +52003,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.equip_skin_template
-
-	var_13_26[4377] = {
+	pg.base.equip_skin_template[4377] = {
 		orbit_slg = "",
 		name = "购物啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -56930,11 +52043,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.equip_skin_template
-
-	var_13_27[4378] = {
+	pg.base.equip_skin_template[4378] = {
 		orbit_slg = "",
 		name = "超跑啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -56974,11 +52083,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.equip_skin_template
-
-	var_13_28[4379] = {
+	pg.base.equip_skin_template[4379] = {
 		orbit_slg = "",
 		name = "超跑啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -57018,11 +52123,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.equip_skin_template
-
-	var_13_29[4380] = {
+	pg.base.equip_skin_template[4380] = {
 		orbit_slg = "",
 		name = "超跑啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -57062,11 +52163,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.equip_skin_template
-
-	var_13_30[4381] = {
+	pg.base.equip_skin_template[4381] = {
 		orbit_slg = "",
 		name = "珠宝啾飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -57106,11 +52203,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.equip_skin_template
-
-	var_13_31[4382] = {
+	pg.base.equip_skin_template[4382] = {
 		orbit_slg = "",
 		name = "珠宝啾飞机（战斗）",
 		orbit_ui_bound = "",
@@ -57150,11 +52243,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.equip_skin_template
-
-	var_13_32[4383] = {
+	pg.base.equip_skin_template[4383] = {
 		orbit_slg = "",
 		name = "珠宝啾飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -57194,11 +52283,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.equip_skin_template
-
-	var_13_33[4384] = {
+	pg.base.equip_skin_template[4384] = {
 		orbit_slg = "",
 		name = "装饰棉花糖子弹",
 		orbit_ui_bound = "",
@@ -57240,11 +52325,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.equip_skin_template
-
-	var_13_34[4385] = {
+	pg.base.equip_skin_template[4385] = {
 		orbit_slg = "",
 		name = "惊喜礼花瓶子弹",
 		orbit_ui_bound = "",
@@ -57286,11 +52367,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.equip_skin_template
-
-	var_13_35[4386] = {
+	pg.base.equip_skin_template[4386] = {
 		orbit_slg = "",
 		name = "啪啪彩球子弹",
 		orbit_ui_bound = "",
@@ -57332,11 +52409,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.equip_skin_template
-
-	var_13_36[4387] = {
+	pg.base.equip_skin_template[4387] = {
 		orbit_slg = "",
 		name = "星星纸船鱼雷",
 		orbit_ui_bound = "",
@@ -57377,11 +52450,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.equip_skin_template
-
-	var_13_37[4388] = {
+	pg.base.equip_skin_template[4388] = {
 		orbit_slg = "",
 		name = "折纸小鱼鱼雷",
 		orbit_ui_bound = "",
@@ -57422,11 +52491,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.equip_skin_template
-
-	var_13_38[4389] = {
+	pg.base.equip_skin_template[4389] = {
 		orbit_slg = "",
 		name = "嘭嘭爆米花鱼雷",
 		orbit_ui_bound = "",
@@ -57467,11 +52532,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.equip_skin_template
-
-	var_13_39[4390] = {
+	pg.base.equip_skin_template[4390] = {
 		orbit_slg = "",
 		name = "奇妙魔术帽炮弹",
 		orbit_ui_bound = "",
@@ -57513,11 +52574,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.equip_skin_template
-
-	var_13_40[4391] = {
+	pg.base.equip_skin_template[4391] = {
 		orbit_slg = "",
 		name = "快乐小丑帽炮弹",
 		orbit_ui_bound = "",
@@ -57559,11 +52616,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.equip_skin_template
-
-	var_13_41[4392] = {
+	pg.base.equip_skin_template[4392] = {
 		orbit_slg = "",
 		name = "惊吓盒子炮弹",
 		orbit_ui_bound = "",
@@ -57605,11 +52658,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.equip_skin_template
-
-	var_13_42[4393] = {
+	pg.base.equip_skin_template[4393] = {
 		orbit_slg = "",
 		name = "太阳气球飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -57649,11 +52698,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.equip_skin_template
-
-	var_13_43[4394] = {
+	pg.base.equip_skin_template[4394] = {
 		orbit_slg = "",
 		name = "太阳气球飞机（战斗）",
 		orbit_ui_bound = "",
@@ -57693,11 +52738,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.equip_skin_template
-
-	var_13_44[4395] = {
+	pg.base.equip_skin_template[4395] = {
 		orbit_slg = "",
 		name = "太阳气球飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -57737,11 +52778,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.equip_skin_template
-
-	var_13_45[4396] = {
+	pg.base.equip_skin_template[4396] = {
 		orbit_slg = "",
 		name = "汪汪气球飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -57781,11 +52818,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.equip_skin_template
-
-	var_13_46[4397] = {
+	pg.base.equip_skin_template[4397] = {
 		orbit_slg = "",
 		name = "汪汪气球飞机（战斗）",
 		orbit_ui_bound = "",
@@ -57825,11 +52858,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.equip_skin_template
-
-	var_13_47[4398] = {
+	pg.base.equip_skin_template[4398] = {
 		orbit_slg = "",
 		name = "汪汪气球飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -57869,11 +52898,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.equip_skin_template
-
-	var_13_48[4399] = {
+	pg.base.equip_skin_template[4399] = {
 		orbit_slg = "",
 		name = "星愿热气球飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -57913,11 +52938,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.equip_skin_template
-
-	var_13_49[4400] = {
+	pg.base.equip_skin_template[4400] = {
 		orbit_slg = "",
 		name = "星愿热气球飞机（战斗）",
 		orbit_ui_bound = "",
@@ -57957,11 +52978,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.equip_skin_template
-
-	var_13_50[4401] = {
+	pg.base.equip_skin_template[4401] = {
 		orbit_slg = "",
 		name = "星愿热气球飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -58001,11 +53018,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.equip_skin_template
-
-	var_13_51[4402] = {
+	pg.base.equip_skin_template[4402] = {
 		orbit_slg = "",
 		name = "安定胶囊子弹",
 		orbit_ui_bound = "",
@@ -58047,11 +53060,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.equip_skin_template
-
-	var_13_52[4403] = {
+	pg.base.equip_skin_template[4403] = {
 		orbit_slg = "",
 		name = "病房呼叫铃子弹",
 		orbit_ui_bound = "",
@@ -58093,11 +53102,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.equip_skin_template
-
-	var_13_53[4404] = {
+	pg.base.equip_skin_template[4404] = {
 		orbit_slg = "",
 		name = "平安创口贴子弹",
 		orbit_ui_bound = "",
@@ -58139,11 +53144,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.equip_skin_template
-
-	var_13_54[4405] = {
+	pg.base.equip_skin_template[4405] = {
 		orbit_slg = "",
 		name = "心跳检测仪鱼雷",
 		orbit_ui_bound = "",
@@ -58184,11 +53185,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.equip_skin_template
-
-	var_13_55[4406] = {
+	pg.base.equip_skin_template[4406] = {
 		orbit_slg = "",
 		name = "生锈剪刀鱼雷",
 		orbit_ui_bound = "",
@@ -58229,11 +53226,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.equip_skin_template
-
-	var_13_56[4407] = {
+	pg.base.equip_skin_template[4407] = {
 		orbit_slg = "",
 		name = "注射器鱼雷",
 		orbit_ui_bound = "",
@@ -58274,11 +53267,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.equip_skin_template
-
-	var_13_57[4408] = {
+	pg.base.equip_skin_template[4408] = {
 		orbit_slg = "",
 		name = "怪谈啾啾炮弹",
 		orbit_ui_bound = "",
@@ -58320,11 +53309,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.equip_skin_template
-
-	var_13_58[4409] = {
+	pg.base.equip_skin_template[4409] = {
 		orbit_slg = "",
 		name = "诊疗灯炮弹",
 		orbit_ui_bound = "",
@@ -58366,11 +53351,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.equip_skin_template
-
-	var_13_59[4410] = {
+	pg.base.equip_skin_template[4410] = {
 		orbit_slg = "",
 		name = "废弃轮椅炮弹",
 		orbit_ui_bound = "",
@@ -58412,11 +53393,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.equip_skin_template
-
-	var_13_60[4411] = {
+	pg.base.equip_skin_template[4411] = {
 		orbit_slg = "",
 		name = "培养罐飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -58456,11 +53433,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.equip_skin_template
-
-	var_13_61[4412] = {
+	pg.base.equip_skin_template[4412] = {
 		orbit_slg = "",
 		name = "培养罐飞机（战斗）",
 		orbit_ui_bound = "",
@@ -58500,11 +53473,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.equip_skin_template
-
-	var_13_62[4413] = {
+	pg.base.equip_skin_template[4413] = {
 		orbit_slg = "",
 		name = "培养罐飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -58544,11 +53513,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.equip_skin_template
-
-	var_13_63[4414] = {
+	pg.base.equip_skin_template[4414] = {
 		orbit_slg = "",
 		name = "夜诊病床飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -58588,11 +53553,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.equip_skin_template
-
-	var_13_64[4415] = {
+	pg.base.equip_skin_template[4415] = {
 		orbit_slg = "",
 		name = "夜诊病床飞机（战斗）",
 		orbit_ui_bound = "",
@@ -58632,11 +53593,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.equip_skin_template
-
-	var_13_65[4416] = {
+	pg.base.equip_skin_template[4416] = {
 		orbit_slg = "",
 		name = "夜诊病床飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -58676,11 +53633,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.equip_skin_template
-
-	var_13_66[4417] = {
+	pg.base.equip_skin_template[4417] = {
 		orbit_slg = "",
 		name = "病区铁笼飞机（鱼雷）",
 		orbit_ui_bound = "",
@@ -58720,11 +53673,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.equip_skin_template
-
-	var_13_67[4418] = {
+	pg.base.equip_skin_template[4418] = {
 		orbit_slg = "",
 		name = "病区铁笼飞机（战斗）",
 		orbit_ui_bound = "",
@@ -58764,11 +53713,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.equip_skin_template
-
-	var_13_68[4419] = {
+	pg.base.equip_skin_template[4419] = {
 		orbit_slg = "",
 		name = "病区铁笼飞机（轰炸）",
 		orbit_ui_bound = "",
@@ -58808,11 +53753,742 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.equip_skin_template
-
-	var_13_69[1001] = {
+	pg.base.equip_skin_template[4420] = {
+		orbit_slg = "",
+		name = "三色彩带子弹",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102501",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "zidan_saichecaidai",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4420,
+		hit_sfx = "",
+		desc = "嘭嘭~恭喜冲线！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[4421] = {
+		orbit_slg = "",
+		name = "梦幻泡泡子弹",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102502",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "zidan_sansepaopao",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4421,
+		hit_sfx = "",
+		desc = "赛道上的彩色幻影~",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[4422] = {
+		orbit_slg = "",
+		name = "跑车钥匙子弹",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		icon = "102503",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "zidan_cheyaoshi",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4422,
+		hit_sfx = "",
+		desc = "谁家跑车钥匙丢了呀！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "zidan_cheyaoshi_hit",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			1,
+			2,
+			3
+		},
+		weapon_ids = {
+			101,
+			101
+		}
+	}
+	pg.base.equip_skin_template[4423] = {
+		orbit_slg = "",
+		name = "三角筒鱼雷",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		icon = "102504",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "yulei_zhangai",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4423,
+		hit_sfx = "",
+		desc = "此处禁止通行！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_zhangai_hit",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[4424] = {
+		orbit_slg = "",
+		name = "黑白旗鱼雷",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102505",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "yulei_heibaiqi",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4424,
+		hit_sfx = "",
+		desc = "小心冲撞，冷静驾驶！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[4425] = {
+		orbit_slg = "",
+		name = "冠军奖杯鱼雷",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 30,
+		icon = "102506",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "yulei_jiangbei",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4425,
+		hit_sfx = "",
+		desc = "献给当之无愧的冠军！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "yulei_jiangbei_hit",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			5,
+			13
+		},
+		weapon_ids = {
+			107,
+			107
+		}
+	}
+	pg.base.equip_skin_template[4426] = {
+		orbit_slg = "",
+		name = "赛车方向盘炮弹",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102507",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "paodan_fangxiangpan",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4426,
+		hit_sfx = "",
+		desc = "右转，开始漂移~",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[4427] = {
+		orbit_slg = "",
+		name = "安全头盔炮弹",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102508",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "paodan_toukui",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4427,
+		hit_sfx = "",
+		desc = "满满的安全感~",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[4428] = {
+		orbit_slg = "",
+		name = "轮胎啾炮弹",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102509",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "paodan_luntaijiu",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4428,
+		hit_sfx = "",
+		desc = "单轮胎也可以漂移啾~",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			4,
+			11
+		},
+		weapon_ids = {
+			24000,
+			24000,
+			24000
+		}
+	}
+	pg.base.equip_skin_template[4429] = {
+		orbit_slg = "",
+		name = "黑白旗啾飞机（鱼雷）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102510",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_heibaiqihuangji",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4429,
+		hit_sfx = "",
+		desc = "向着终点前进啾！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "yulei_heibaiqi",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			8
+		},
+		weapon_ids = {
+			61503,
+			61504
+		}
+	}
+	pg.base.equip_skin_template[4430] = {
+		orbit_slg = "",
+		name = "黑白旗啾飞机（战斗）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102510",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_heibaiqihuangji",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4430,
+		hit_sfx = "",
+		desc = "向着终点前进啾！",
+		derivate_boom = "paodan_luntaijiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			7
+		},
+		weapon_ids = {
+			61505,
+			54010
+		}
+	}
+	pg.base.equip_skin_template[4431] = {
+		orbit_slg = "",
+		name = "黑白旗啾飞机（轰炸）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102510",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_heibaiqihuangji",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4431,
+		hit_sfx = "",
+		desc = "向着终点前进啾！",
+		derivate_boom = "paodan_luntaijiu",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			9
+		},
+		weapon_ids = {
+			61501,
+			54014
+		}
+	}
+	pg.base.equip_skin_template[4432] = {
+		orbit_slg = "",
+		name = "礼盒无人机飞机（鱼雷）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102511",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_lihewurenji",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4432,
+		hit_sfx = "",
+		desc = "赛事礼盒配送中—— ",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "yulei_zhangai",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			8
+		},
+		weapon_ids = {
+			61503,
+			61504
+		}
+	}
+	pg.base.equip_skin_template[4433] = {
+		orbit_slg = "",
+		name = "礼盒无人机飞机（战斗）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102511",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_lihewurenji",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4433,
+		hit_sfx = "",
+		desc = "赛事礼盒配送中—— ",
+		derivate_boom = "paodan_toukui",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			7
+		},
+		weapon_ids = {
+			61505,
+			54010
+		}
+	}
+	pg.base.equip_skin_template[4434] = {
+		orbit_slg = "",
+		name = "礼盒无人机飞机（轰炸）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102511",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_lihewurenji",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4434,
+		hit_sfx = "",
+		desc = "赛事礼盒配送中—— ",
+		derivate_boom = "paodan_toukui",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			9
+		},
+		weapon_ids = {
+			61501,
+			54014
+		}
+	}
+	pg.base.equip_skin_template[4435] = {
+		orbit_slg = "",
+		name = "赛车啾飞机（鱼雷）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102512",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_saichejiu",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4435,
+		hit_sfx = "",
+		desc = "冲刺啾！冲刺啾！",
+		derivate_boom = "",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "yulei_jiangbei",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			8
+		},
+		weapon_ids = {
+			61503,
+			61504
+		}
+	}
+	pg.base.equip_skin_template[4436] = {
+		orbit_slg = "",
+		name = "赛车啾飞机（战斗）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102512",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_saichejiu",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4436,
+		hit_sfx = "",
+		desc = "冲刺啾！冲刺啾！",
+		derivate_boom = "paodan_fangxiangpan",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			7
+		},
+		weapon_ids = {
+			61505,
+			54010
+		}
+	}
+	pg.base.equip_skin_template[4437] = {
+		orbit_slg = "",
+		name = "赛车啾飞机（轰炸）",
+		orbit_ui_bound = "",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "102512",
+		orbit_rotate = "",
+		orbit_combat = "",
+		ship_config_id = 100011,
+		double_char_bone = "",
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 88,
+		bullet_name = "feiji_saichejiu",
+		orbit_hidden_action = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 4437,
+		hit_sfx = "",
+		desc = "冲刺啾！冲刺啾！",
+		derivate_boom = "paodan_fangxiangpan",
+		orbit_ui = "",
+		mirror = 0,
+		orbit_combat_bound = "",
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			9
+		},
+		weapon_ids = {
+			61501,
+			54014
+		}
+	}
+	pg.base.equip_skin_template[1001] = {
 		orbit_slg = "",
 		name = "十字炮弹(紫)",
 		orbit_ui_bound = "",
@@ -58854,11 +54530,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.equip_skin_template
-
-	var_13_70[1002] = {
+	pg.base.equip_skin_template[1002] = {
 		orbit_slg = "",
 		name = "香菇炮弹",
 		orbit_ui_bound = "",
@@ -58900,11 +54572,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.equip_skin_template
-
-	var_13_71[1003] = {
+	pg.base.equip_skin_template[1003] = {
 		orbit_slg = "",
 		name = "按钮炮弹",
 		orbit_ui_bound = "",
@@ -58946,11 +54614,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.equip_skin_template
-
-	var_13_72[1004] = {
+	pg.base.equip_skin_template[1004] = {
 		orbit_slg = "",
 		name = "光盘炮弹",
 		orbit_ui_bound = "",
@@ -58992,11 +54656,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.equip_skin_template
-
-	var_13_73[1005] = {
+	pg.base.equip_skin_template[1005] = {
 		orbit_slg = "",
 		name = "史莱努炮弹",
 		orbit_ui_bound = "",
@@ -59038,11 +54698,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.equip_skin_template
-
-	var_13_74[1006] = {
+	pg.base.equip_skin_template[1006] = {
 		orbit_slg = "",
 		name = "电池鱼雷",
 		orbit_ui_bound = "",
@@ -59083,11 +54739,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.equip_skin_template
-
-	var_13_75[1007] = {
+	pg.base.equip_skin_template[1007] = {
 		orbit_slg = "",
 		name = "绿心轰炸机",
 		orbit_ui_bound = "",
@@ -59127,11 +54779,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.equip_skin_template
-
-	var_13_76[1008] = {
+	pg.base.equip_skin_template[1008] = {
 		orbit_slg = "",
 		name = "绿心战斗机",
 		orbit_ui_bound = "",
@@ -59171,11 +54819,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.equip_skin_template
-
-	var_13_77[1009] = {
+	pg.base.equip_skin_template[1009] = {
 		orbit_slg = "",
 		name = "绿心鱼雷机",
 		orbit_ui_bound = "",
@@ -59215,11 +54859,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.equip_skin_template
-
-	var_13_78[1010] = {
+	pg.base.equip_skin_template[1010] = {
 		orbit_slg = "",
 		name = "像素炮弹(小)",
 		orbit_ui_bound = "",
@@ -59261,11 +54901,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.equip_skin_template
-
-	var_13_79[1011] = {
+	pg.base.equip_skin_template[1011] = {
 		orbit_slg = "",
 		name = "像素炮弹(大)",
 		orbit_ui_bound = "",
@@ -59307,11 +54943,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.equip_skin_template
-
-	var_13_80[1012] = {
+	pg.base.equip_skin_template[1012] = {
 		orbit_slg = "",
 		name = "像素鱼雷",
 		orbit_ui_bound = "",
@@ -59352,11 +54984,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.equip_skin_template
-
-	var_13_81[1013] = {
+	pg.base.equip_skin_template[1013] = {
 		orbit_slg = "",
 		name = "像素轰炸机",
 		orbit_ui_bound = "",
@@ -59396,11 +55024,11 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_81
 
-	local var_13_82 = var_13_81.base.equip_skin_template
-
-	var_13_82[1014] = {
+	return
+end)()
+;(function()
+	pg.base.equip_skin_template[1014] = {
 		orbit_slg = "",
 		name = "像素战斗机",
 		orbit_ui_bound = "",
@@ -59440,11 +55068,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.equip_skin_template
-
-	var_13_83[1015] = {
+	pg.base.equip_skin_template[1015] = {
 		orbit_slg = "",
 		name = "像素鱼雷机",
 		orbit_ui_bound = "",
@@ -59484,11 +55108,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.equip_skin_template
-
-	var_13_84[1051] = {
+	pg.base.equip_skin_template[1051] = {
 		orbit_slg = "",
 		name = "饭勺？鱼雷",
 		orbit_ui_bound = "",
@@ -59529,11 +55149,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.equip_skin_template
-
-	var_13_85[1052] = {
+	pg.base.equip_skin_template[1052] = {
 		orbit_slg = "",
 		name = "苦无鱼雷",
 		orbit_ui_bound = "",
@@ -59574,11 +55190,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.equip_skin_template
-
-	var_13_86[1053] = {
+	pg.base.equip_skin_template[1053] = {
 		orbit_slg = "",
 		name = "卷轴鱼雷",
 		orbit_ui_bound = "",
@@ -59619,11 +55231,7 @@ end)()
 			107
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.equip_skin_template
-
-	var_13_87[1054] = {
+	pg.base.equip_skin_template[1054] = {
 		orbit_slg = "",
 		name = "符咒子弹",
 		orbit_ui_bound = "",
@@ -59665,11 +55273,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.equip_skin_template
-
-	var_13_88[1055] = {
+	pg.base.equip_skin_template[1055] = {
 		orbit_slg = "",
 		name = "弓箭子弹",
 		orbit_ui_bound = "",
@@ -59711,11 +55315,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.equip_skin_template
-
-	var_13_89[1056] = {
+	pg.base.equip_skin_template[1056] = {
 		orbit_slg = "",
 		name = "短剑子弹",
 		orbit_ui_bound = "",
@@ -59757,11 +55357,7 @@ end)()
 			101
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.equip_skin_template
-
-	var_13_90[1057] = {
+	pg.base.equip_skin_template[1057] = {
 		orbit_slg = "",
 		name = "式鬼壱号",
 		orbit_ui_bound = "",
@@ -59803,11 +55399,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.equip_skin_template
-
-	var_13_91[1058] = {
+	pg.base.equip_skin_template[1058] = {
 		orbit_slg = "",
 		name = "黑铁重剑",
 		orbit_ui_bound = "",
@@ -59849,11 +55441,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.equip_skin_template
-
-	var_13_92[1059] = {
+	pg.base.equip_skin_template[1059] = {
 		orbit_slg = "",
 		name = "铁扇炮弹",
 		orbit_ui_bound = "",
@@ -59895,11 +55483,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.equip_skin_template
-
-	var_13_93[1060] = {
+	pg.base.equip_skin_template[1060] = {
 		orbit_slg = "",
 		name = "迷之生物?(鱼雷)",
 		orbit_ui_bound = "",
@@ -59939,11 +55523,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.equip_skin_template
-
-	var_13_94[1061] = {
+	pg.base.equip_skin_template[1061] = {
 		orbit_slg = "",
 		name = "迷之生物?(战斗)",
 		orbit_ui_bound = "",
@@ -59983,11 +55563,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.equip_skin_template
-
-	var_13_95[1062] = {
+	pg.base.equip_skin_template[1062] = {
 		orbit_slg = "",
 		name = "迷之生物?(轰炸)",
 		orbit_ui_bound = "",
@@ -60027,11 +55603,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.equip_skin_template
-
-	var_13_96[1063] = {
+	pg.base.equip_skin_template[1063] = {
 		orbit_slg = "",
 		name = "可可波(鱼雷)",
 		orbit_ui_bound = "",
@@ -60071,11 +55643,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.equip_skin_template
-
-	var_13_97[1064] = {
+	pg.base.equip_skin_template[1064] = {
 		orbit_slg = "",
 		name = "可可波(战斗)",
 		orbit_ui_bound = "",
@@ -60115,11 +55683,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.equip_skin_template
-
-	var_13_98[1065] = {
+	pg.base.equip_skin_template[1065] = {
 		orbit_slg = "",
 		name = "可可波(轰炸)",
 		orbit_ui_bound = "",
@@ -60159,8 +55723,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_13_98
-	var_13_98.base.equip_skin_template[1066] = {
+	pg.base.equip_skin_template[1066] = {
 		orbit_slg = "",
 		name = "迷之布偶(鱼雷)",
 		orbit_ui_bound = "",
@@ -60200,15 +55763,7 @@ end)()
 			61504
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.equip_skin_template
-
-	var_14_0[1067] = {
+	pg.base.equip_skin_template[1067] = {
 		orbit_slg = "",
 		name = "迷之布偶(战斗)",
 		orbit_ui_bound = "",
@@ -60248,11 +55803,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.equip_skin_template
-
-	var_14_1[1068] = {
+	pg.base.equip_skin_template[1068] = {
 		orbit_slg = "",
 		name = "迷之布偶(轰炸)",
 		orbit_ui_bound = "",
@@ -60292,11 +55843,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.equip_skin_template
-
-	var_14_2[1101] = {
+	pg.base.equip_skin_template[1101] = {
 		orbit_slg = "",
 		name = "晃悠悠鱼雷",
 		orbit_ui_bound = "",
@@ -60337,11 +55884,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.equip_skin_template
-
-	var_14_3[1102] = {
+	pg.base.equip_skin_template[1102] = {
 		orbit_slg = "",
 		name = "领带鱼雷",
 		orbit_ui_bound = "",
@@ -60382,11 +55925,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.equip_skin_template
-
-	var_14_4[1103] = {
+	pg.base.equip_skin_template[1103] = {
 		orbit_slg = "",
 		name = "荧光棒鱼雷",
 		orbit_ui_bound = "",
@@ -60427,11 +55966,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.equip_skin_template
-
-	var_14_5[1104] = {
+	pg.base.equip_skin_template[1104] = {
 		orbit_slg = "",
 		name = "100T铁锤子弹",
 		orbit_ui_bound = "",
@@ -60473,11 +56008,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.equip_skin_template
-
-	var_14_6[1105] = {
+	pg.base.equip_skin_template[1105] = {
 		orbit_slg = "",
 		name = "领结子弹",
 		orbit_ui_bound = "",
@@ -60519,11 +56050,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.equip_skin_template
-
-	var_14_7[1106] = {
+	pg.base.equip_skin_template[1106] = {
 		orbit_slg = "",
 		name = "拳套子弹",
 		orbit_ui_bound = "",
@@ -60565,11 +56092,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.equip_skin_template
-
-	var_14_8[1107] = {
+	pg.base.equip_skin_template[1107] = {
 		orbit_slg = "",
 		name = "字幕炮弹:嗨多磨",
 		orbit_ui_bound = "",
@@ -60611,11 +56134,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.equip_skin_template
-
-	var_14_9[1108] = {
+	pg.base.equip_skin_template[1108] = {
 		orbit_slg = "",
 		name = "字幕炮弹:有罪",
 		orbit_ui_bound = "",
@@ -60657,11 +56176,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.equip_skin_template
-
-	var_14_10[1109] = {
+	pg.base.equip_skin_template[1109] = {
 		orbit_slg = "",
 		name = "字幕炮弹:可爱",
 		orbit_ui_bound = "",
@@ -60703,11 +56218,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.equip_skin_template
-
-	var_14_11[1110] = {
+	pg.base.equip_skin_template[1110] = {
 		orbit_slg = "",
 		name = "字幕炮弹:花Q",
 		orbit_ui_bound = "",
@@ -60749,11 +56260,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.equip_skin_template
-
-	var_14_12[1111] = {
+	pg.base.equip_skin_template[1111] = {
 		orbit_slg = "",
 		name = "迷你爱酱(鱼雷)",
 		orbit_ui_bound = "",
@@ -60793,11 +56300,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.equip_skin_template
-
-	var_14_13[1112] = {
+	pg.base.equip_skin_template[1112] = {
 		orbit_slg = "",
 		name = "迷你爱酱(战斗)",
 		orbit_ui_bound = "",
@@ -60837,11 +56340,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.equip_skin_template
-
-	var_14_14[1113] = {
+	pg.base.equip_skin_template[1113] = {
 		orbit_slg = "",
 		name = "迷你爱酱(轰炸)",
 		orbit_ui_bound = "",
@@ -60881,11 +56380,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.equip_skin_template
-
-	var_14_15[1114] = {
+	pg.base.equip_skin_template[1114] = {
 		orbit_slg = "",
 		name = "迷你爱酱·超级玩家(鱼雷)",
 		orbit_ui_bound = "",
@@ -60925,11 +56420,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.equip_skin_template
-
-	var_14_16[1115] = {
+	pg.base.equip_skin_template[1115] = {
 		orbit_slg = "",
 		name = "迷你爱酱·超级玩家(战斗)",
 		orbit_ui_bound = "",
@@ -60969,11 +56460,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.equip_skin_template
-
-	var_14_17[1116] = {
+	pg.base.equip_skin_template[1116] = {
 		orbit_slg = "",
 		name = "迷你爱酱·超级玩家(轰炸)",
 		orbit_ui_bound = "",
@@ -61013,11 +56500,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.equip_skin_template
-
-	var_14_18[1117] = {
+	pg.base.equip_skin_template[1117] = {
 		orbit_slg = "",
 		name = "迷你爱酱·周年(鱼雷)",
 		orbit_ui_bound = "",
@@ -61057,11 +56540,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.equip_skin_template
-
-	var_14_19[1118] = {
+	pg.base.equip_skin_template[1118] = {
 		orbit_slg = "",
 		name = "迷你爱酱·周年(战斗)",
 		orbit_ui_bound = "",
@@ -61101,11 +56580,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.equip_skin_template
-
-	var_14_20[1119] = {
+	pg.base.equip_skin_template[1119] = {
 		orbit_slg = "",
 		name = "迷你爱酱·周年(轰炸)",
 		orbit_ui_bound = "",
@@ -61145,11 +56620,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.equip_skin_template
-
-	var_14_21[1200] = {
+	pg.base.equip_skin_template[1200] = {
 		orbit_slg = "",
 		name = "白羊糖果子弹",
 		orbit_ui_bound = "",
@@ -61191,11 +56662,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.equip_skin_template
-
-	var_14_22[1201] = {
+	pg.base.equip_skin_template[1201] = {
 		orbit_slg = "",
 		name = "七光宝石子弹",
 		orbit_ui_bound = "",
@@ -61237,11 +56704,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.equip_skin_template
-
-	var_14_23[1202] = {
+	pg.base.equip_skin_template[1202] = {
 		orbit_slg = "",
 		name = "禁忌万灵药剂子弹",
 		orbit_ui_bound = "",
@@ -61283,11 +56746,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.equip_skin_template
-
-	var_14_24[1203] = {
+	pg.base.equip_skin_template[1203] = {
 		orbit_slg = "",
 		name = "拂晓魔导书炮弹",
 		orbit_ui_bound = "",
@@ -61329,11 +56788,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.equip_skin_template
-
-	var_14_25[1204] = {
+	pg.base.equip_skin_template[1204] = {
 		orbit_slg = "",
 		name = "马赛克希望炮弹",
 		orbit_ui_bound = "",
@@ -61375,11 +56830,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.equip_skin_template
-
-	var_14_26[1205] = {
+	pg.base.equip_skin_template[1205] = {
 		orbit_slg = "",
 		name = "另一颗星球炮弹",
 		orbit_ui_bound = "",
@@ -61421,11 +56872,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.equip_skin_template
-
-	var_14_27[1206] = {
+	pg.base.equip_skin_template[1206] = {
 		orbit_slg = "",
 		name = "中和剂鱼雷",
 		orbit_ui_bound = "",
@@ -61466,11 +56913,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.equip_skin_template
-
-	var_14_28[1207] = {
+	pg.base.equip_skin_template[1207] = {
 		orbit_slg = "",
 		name = "香精鱼雷",
 		orbit_ui_bound = "",
@@ -61511,11 +56954,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.equip_skin_template
-
-	var_14_29[1208] = {
+	pg.base.equip_skin_template[1208] = {
 		orbit_slg = "",
 		name = "旅行瓶鱼雷",
 		orbit_ui_bound = "",
@@ -61556,11 +56995,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.equip_skin_template
-
-	var_14_30[1209] = {
+	pg.base.equip_skin_template[1209] = {
 		orbit_slg = "",
 		name = "花精飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -61600,11 +57035,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.equip_skin_template
-
-	var_14_31[1210] = {
+	pg.base.equip_skin_template[1210] = {
 		orbit_slg = "",
 		name = "花精飞机(战斗)",
 		orbit_ui_bound = "",
@@ -61644,11 +57075,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.equip_skin_template
-
-	var_14_32[1211] = {
+	pg.base.equip_skin_template[1211] = {
 		orbit_slg = "",
 		name = "花精飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -61688,11 +57115,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.equip_skin_template
-
-	var_14_33[1212] = {
+	pg.base.equip_skin_template[1212] = {
 		orbit_slg = "",
 		name = "微风仙子飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -61732,11 +57155,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.equip_skin_template
-
-	var_14_34[1213] = {
+	pg.base.equip_skin_template[1213] = {
 		orbit_slg = "",
 		name = "微风仙子飞机(战斗)",
 		orbit_ui_bound = "",
@@ -61776,11 +57195,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.equip_skin_template
-
-	var_14_35[1214] = {
+	pg.base.equip_skin_template[1214] = {
 		orbit_slg = "",
 		name = "微风仙子飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -61820,11 +57235,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.equip_skin_template
-
-	var_14_36[1215] = {
+	pg.base.equip_skin_template[1215] = {
 		orbit_slg = "",
 		name = "微光灵者飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -61864,11 +57275,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.equip_skin_template
-
-	var_14_37[1216] = {
+	pg.base.equip_skin_template[1216] = {
 		orbit_slg = "",
 		name = "微光灵者飞机(战斗)",
 		orbit_ui_bound = "",
@@ -61908,11 +57315,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.equip_skin_template
-
-	var_14_38[1217] = {
+	pg.base.equip_skin_template[1217] = {
 		orbit_slg = "",
 		name = "微光灵者飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -61952,11 +57355,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.equip_skin_template
-
-	var_14_39[1218] = {
+	pg.base.equip_skin_template[1218] = {
 		orbit_slg = "",
 		name = "桶子炮弹",
 		orbit_ui_bound = "",
@@ -61998,11 +57397,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.equip_skin_template
-
-	var_14_40[1300] = {
+	pg.base.equip_skin_template[1300] = {
 		orbit_slg = "",
 		name = "巧克力礼盒炮弹",
 		orbit_ui_bound = "",
@@ -62044,11 +57439,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.equip_skin_template
-
-	var_14_41[1400] = {
+	pg.base.equip_skin_template[1400] = {
 		orbit_slg = "",
 		name = "忍魂子弹",
 		orbit_ui_bound = "",
@@ -62090,11 +57481,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.equip_skin_template
-
-	var_14_42[1401] = {
+	pg.base.equip_skin_template[1401] = {
 		orbit_slg = "",
 		name = "红围巾子弹",
 		orbit_ui_bound = "",
@@ -62136,11 +57523,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.equip_skin_template
-
-	var_14_43[1402] = {
+	pg.base.equip_skin_template[1402] = {
 		orbit_slg = "",
 		name = "苦无子弹",
 		orbit_ui_bound = "",
@@ -62182,11 +57565,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.equip_skin_template
-
-	var_14_44[1403] = {
+	pg.base.equip_skin_template[1403] = {
 		orbit_slg = "",
 		name = "炮弹·秘法卷轴",
 		orbit_ui_bound = "",
@@ -62228,11 +57607,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.equip_skin_template
-
-	var_14_45[1404] = {
+	pg.base.equip_skin_template[1404] = {
 		orbit_slg = "",
 		name = "树冰扇炮弹",
 		orbit_ui_bound = "",
@@ -62274,11 +57649,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.equip_skin_template
-
-	var_14_46[1405] = {
+	pg.base.equip_skin_template[1405] = {
 		orbit_slg = "",
 		name = "圆月轮炮弹",
 		orbit_ui_bound = "",
@@ -62320,11 +57691,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.equip_skin_template
-
-	var_14_47[1406] = {
+	pg.base.equip_skin_template[1406] = {
 		orbit_slg = "",
 		name = "太卷鱼雷",
 		orbit_ui_bound = "",
@@ -62365,11 +57732,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.equip_skin_template
-
-	var_14_48[1407] = {
+	pg.base.equip_skin_template[1407] = {
 		orbit_slg = "",
 		name = "寿司拼盘鱼雷",
 		orbit_ui_bound = "",
@@ -62410,11 +57773,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.equip_skin_template
-
-	var_14_49[1408] = {
+	pg.base.equip_skin_template[1408] = {
 		orbit_slg = "",
 		name = "忍兔咖喱鱼雷",
 		orbit_ui_bound = "",
@@ -62455,11 +57814,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.equip_skin_template
-
-	var_14_50[1409] = {
+	pg.base.equip_skin_template[1409] = {
 		orbit_slg = "",
 		name = "贝贝金像飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -62499,11 +57854,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.equip_skin_template
-
-	var_14_51[1410] = {
+	pg.base.equip_skin_template[1410] = {
 		orbit_slg = "",
 		name = "贝贝金像飞机(战斗)",
 		orbit_ui_bound = "",
@@ -62543,11 +57894,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.equip_skin_template
-
-	var_14_52[1411] = {
+	pg.base.equip_skin_template[1411] = {
 		orbit_slg = "",
 		name = "贝贝金像飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -62587,11 +57934,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.equip_skin_template
-
-	var_14_53[1412] = {
+	pg.base.equip_skin_template[1412] = {
 		orbit_slg = "",
 		name = "半象飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -62631,11 +57974,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.equip_skin_template
-
-	var_14_54[1413] = {
+	pg.base.equip_skin_template[1413] = {
 		orbit_slg = "",
 		name = "半象飞机(战斗)",
 		orbit_ui_bound = "",
@@ -62675,11 +58014,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.equip_skin_template
-
-	var_14_55[1414] = {
+	pg.base.equip_skin_template[1414] = {
 		orbit_slg = "",
 		name = "半象飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -62719,11 +58054,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.equip_skin_template
-
-	var_14_56[1415] = {
+	pg.base.equip_skin_template[1415] = {
 		orbit_slg = "",
 		name = "忍兔飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -62763,11 +58094,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.equip_skin_template
-
-	var_14_57[1416] = {
+	pg.base.equip_skin_template[1416] = {
 		orbit_slg = "",
 		name = "忍兔飞机(战斗)",
 		orbit_ui_bound = "",
@@ -62807,11 +58134,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.equip_skin_template
-
-	var_14_58[1417] = {
+	pg.base.equip_skin_template[1417] = {
 		orbit_slg = "",
 		name = "忍兔飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -62851,11 +58174,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.equip_skin_template
-
-	var_14_59[1450] = {
+	pg.base.equip_skin_template[1450] = {
 		orbit_slg = "",
 		name = "念力子弹 ",
 		orbit_ui_bound = "",
@@ -62897,11 +58216,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.equip_skin_template
-
-	var_14_60[1451] = {
+	pg.base.equip_skin_template[1451] = {
 		orbit_slg = "",
 		name = "转转绳索君子弹",
 		orbit_ui_bound = "",
@@ -62943,11 +58258,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.equip_skin_template
-
-	var_14_61[1452] = {
+	pg.base.equip_skin_template[1452] = {
 		orbit_slg = "",
 		name = "金色星星子弹",
 		orbit_ui_bound = "",
@@ -62989,11 +58300,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.equip_skin_template
-
-	var_14_62[1453] = {
+	pg.base.equip_skin_template[1453] = {
 		orbit_slg = "",
 		name = "变身重拳炮弹",
 		orbit_ui_bound = "",
@@ -63035,11 +58342,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.equip_skin_template
-
-	var_14_63[1454] = {
+	pg.base.equip_skin_template[1454] = {
 		orbit_slg = "",
 		name = "乳愈之花炮弹",
 		orbit_ui_bound = "",
@@ -63081,11 +58384,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.equip_skin_template
-
-	var_14_64[1455] = {
+	pg.base.equip_skin_template[1455] = {
 		orbit_slg = "",
 		name = "黑之玫瑰炮弹",
 		orbit_ui_bound = "",
@@ -63127,11 +58426,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.equip_skin_template
-
-	var_14_65[1456] = {
+	pg.base.equip_skin_template[1456] = {
 		orbit_slg = "",
 		name = "宇宙帝王之枪鱼雷",
 		orbit_ui_bound = "",
@@ -63172,11 +58467,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.equip_skin_template
-
-	var_14_66[1457] = {
+	pg.base.equip_skin_template[1457] = {
 		orbit_slg = "",
 		name = "上学飞弹鱼雷",
 		orbit_ui_bound = "",
@@ -63217,11 +58508,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.equip_skin_template
-
-	var_14_67[1458] = {
+	pg.base.equip_skin_template[1458] = {
 		orbit_slg = "",
 		name = "速射海豚君鱼雷",
 		orbit_ui_bound = "",
@@ -63262,11 +58549,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.equip_skin_template
-
-	var_14_68[1459] = {
+	pg.base.equip_skin_template[1459] = {
 		orbit_slg = "",
 		name = "鲁娜迪克舰载机（鱼雷）",
 		orbit_ui_bound = "",
@@ -63306,11 +58589,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.equip_skin_template
-
-	var_14_69[1460] = {
+	pg.base.equip_skin_template[1460] = {
 		orbit_slg = "",
 		name = "鲁娜迪克舰载机（战斗）",
 		orbit_ui_bound = "",
@@ -63350,11 +58629,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.equip_skin_template
-
-	var_14_70[1461] = {
+	pg.base.equip_skin_template[1461] = {
 		orbit_slg = "",
 		name = "鲁娜迪克舰载机（轰炸）",
 		orbit_ui_bound = "",
@@ -63394,11 +58669,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.equip_skin_template
-
-	var_14_71[1462] = {
+	pg.base.equip_skin_template[1462] = {
 		orbit_slg = "",
 		name = "神秘飞船舰载机（鱼雷）",
 		orbit_ui_bound = "",
@@ -63438,11 +58709,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.equip_skin_template
-
-	var_14_72[1463] = {
+	pg.base.equip_skin_template[1463] = {
 		orbit_slg = "",
 		name = "神秘飞船舰载机（战斗）",
 		orbit_ui_bound = "",
@@ -63482,11 +58749,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.equip_skin_template
-
-	var_14_73[1464] = {
+	pg.base.equip_skin_template[1464] = {
 		orbit_slg = "",
 		name = "神秘飞船舰载机（轰炸）",
 		orbit_ui_bound = "",
@@ -63526,11 +58789,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.equip_skin_template
-
-	var_14_74[1465] = {
+	pg.base.equip_skin_template[1465] = {
 		orbit_slg = "",
 		name = "神秘飞碟舰载机（鱼雷）",
 		orbit_ui_bound = "",
@@ -63570,11 +58829,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.equip_skin_template
-
-	var_14_75[1466] = {
+	pg.base.equip_skin_template[1466] = {
 		orbit_slg = "",
 		name = "神秘飞碟舰载机（战斗）",
 		orbit_ui_bound = "",
@@ -63614,11 +58869,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.equip_skin_template
-
-	var_14_76[1467] = {
+	pg.base.equip_skin_template[1467] = {
 		orbit_slg = "",
 		name = "神秘飞碟舰载机（轰炸）",
 		orbit_ui_bound = "",
@@ -63658,11 +58909,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.equip_skin_template
-
-	var_14_77[1471] = {
+	pg.base.equip_skin_template[1471] = {
 		orbit_slg = "",
 		name = "黑色斩击弹",
 		orbit_ui_bound = "",
@@ -63704,11 +58951,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.equip_skin_template
-
-	var_14_78[1472] = {
+	pg.base.equip_skin_template[1472] = {
 		orbit_slg = "",
 		name = "死亡的支配者（鱼雷）",
 		orbit_ui_bound = "",
@@ -63748,11 +58991,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.equip_skin_template
-
-	var_14_79[1473] = {
+	pg.base.equip_skin_template[1473] = {
 		orbit_slg = "",
 		name = "死亡的支配者（战斗）",
 		orbit_ui_bound = "",
@@ -63792,11 +59031,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.equip_skin_template
-
-	var_14_80[1474] = {
+	pg.base.equip_skin_template[1474] = {
 		orbit_slg = "",
 		name = "死亡的支配者（轰炸）",
 		orbit_ui_bound = "",
@@ -63836,11 +59071,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.equip_skin_template
-
-	var_14_81[1475] = {
+	pg.base.equip_skin_template[1475] = {
 		orbit_slg = "",
 		name = "巨臂鱼雷",
 		orbit_ui_bound = "",
@@ -63881,11 +59112,11 @@ end)()
 			107
 		}
 	}
-	pg = var_14_81
 
-	local var_14_82 = var_14_81.base.equip_skin_template
-
-	var_14_82[1476] = {
+	return
+end)()
+;(function()
+	pg.base.equip_skin_template[1476] = {
 		orbit_slg = "",
 		name = "锁链鱼雷",
 		orbit_ui_bound = "",
@@ -63926,11 +59157,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.equip_skin_template
-
-	var_14_83[1477] = {
+	pg.base.equip_skin_template[1477] = {
 		orbit_slg = "",
 		name = "Rock Cannon炮弹",
 		orbit_ui_bound = "",
@@ -63972,11 +59199,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.equip_skin_template
-
-	var_14_84[1478] = {
+	pg.base.equip_skin_template[1478] = {
 		orbit_slg = "",
 		name = "Dead Scythe炮弹",
 		orbit_ui_bound = "",
@@ -64018,11 +59241,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.equip_skin_template
-
-	var_14_85[1479] = {
+	pg.base.equip_skin_template[1479] = {
 		orbit_slg = "",
 		name = "黑炎的迷途者",
 		type = 1,
@@ -64082,11 +59301,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.equip_skin_template
-
-	var_14_86[1480] = {
+	pg.base.equip_skin_template[1480] = {
 		orbit_slg = "",
 		name = "死锁的迷途者",
 		type = 1,
@@ -64146,11 +59361,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.equip_skin_template
-
-	var_14_87[1481] = {
+	pg.base.equip_skin_template[1481] = {
 		orbit_slg = "",
 		name = "元素核心子弹",
 		orbit_ui_bound = "",
@@ -64192,11 +59403,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.equip_skin_template
-
-	var_14_88[1482] = {
+	pg.base.equip_skin_template[1482] = {
 		orbit_slg = "",
 		name = "贤者之石子弹",
 		orbit_ui_bound = "",
@@ -64238,11 +59445,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.equip_skin_template
-
-	var_14_89[1483] = {
+	pg.base.equip_skin_template[1483] = {
 		orbit_slg = "",
 		name = "尊长宝石子弹",
 		orbit_ui_bound = "",
@@ -64284,11 +59487,7 @@ end)()
 			101
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.equip_skin_template
-
-	var_14_90[1484] = {
+	pg.base.equip_skin_template[1484] = {
 		orbit_slg = "",
 		name = "流星的碎片炮弹",
 		orbit_ui_bound = "",
@@ -64330,11 +59529,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.equip_skin_template
-
-	var_14_91[1485] = {
+	pg.base.equip_skin_template[1485] = {
 		orbit_slg = "",
 		name = "永久机关炮弹",
 		orbit_ui_bound = "",
@@ -64376,11 +59571,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.equip_skin_template
-
-	var_14_92[1486] = {
+	pg.base.equip_skin_template[1486] = {
 		orbit_slg = "",
 		name = "陨石矿炮弹",
 		orbit_ui_bound = "",
@@ -64422,11 +59613,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.equip_skin_template
-
-	var_14_93[1487] = {
+	pg.base.equip_skin_template[1487] = {
 		orbit_slg = "",
 		name = "究极电池鱼雷",
 		orbit_ui_bound = "",
@@ -64467,11 +59654,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.equip_skin_template
-
-	var_14_94[1488] = {
+	pg.base.equip_skin_template[1488] = {
 		orbit_slg = "",
 		name = "万能矿石鱼雷",
 		orbit_ui_bound = "",
@@ -64512,11 +59695,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.equip_skin_template
-
-	var_14_95[1489] = {
+	pg.base.equip_skin_template[1489] = {
 		orbit_slg = "",
 		name = "黯淡阳光石鱼雷",
 		orbit_ui_bound = "",
@@ -64557,11 +59736,7 @@ end)()
 			107
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.equip_skin_template
-
-	var_14_96[1490] = {
+	pg.base.equip_skin_template[1490] = {
 		orbit_slg = "",
 		name = "百万光彩舰载机（鱼雷）",
 		orbit_ui_bound = "",
@@ -64601,11 +59776,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.equip_skin_template
-
-	var_14_97[1491] = {
+	pg.base.equip_skin_template[1491] = {
 		orbit_slg = "",
 		name = "百万光彩舰载机（战斗）",
 		orbit_ui_bound = "",
@@ -64645,11 +59816,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.equip_skin_template
-
-	var_14_98[1492] = {
+	pg.base.equip_skin_template[1492] = {
 		orbit_slg = "",
 		name = "百万光彩舰载机（轰炸）",
 		orbit_ui_bound = "",
@@ -64689,8 +59856,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.equip_skin_template[1493] = {
+	pg.base.equip_skin_template[1493] = {
 		orbit_slg = "",
 		name = "海蓝暗影舰载机（鱼雷）",
 		orbit_ui_bound = "",
@@ -64730,15 +59896,7 @@ end)()
 			61504
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.equip_skin_template
-
-	var_15_0[1494] = {
+	pg.base.equip_skin_template[1494] = {
 		orbit_slg = "",
 		name = "海蓝暗影舰载机（战斗）",
 		orbit_ui_bound = "",
@@ -64778,11 +59936,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.equip_skin_template
-
-	var_15_1[1495] = {
+	pg.base.equip_skin_template[1495] = {
 		orbit_slg = "",
 		name = "海蓝暗影舰载机（轰炸）",
 		orbit_ui_bound = "",
@@ -64822,11 +59976,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.equip_skin_template
-
-	var_15_2[1496] = {
+	pg.base.equip_skin_template[1496] = {
 		orbit_slg = "",
 		name = "炽焰蝾螈舰载机（鱼雷）",
 		orbit_ui_bound = "",
@@ -64866,11 +60016,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.equip_skin_template
-
-	var_15_3[1497] = {
+	pg.base.equip_skin_template[1497] = {
 		orbit_slg = "",
 		name = "炽焰蝾螈舰载机（战斗）",
 		orbit_ui_bound = "",
@@ -64910,11 +60056,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.equip_skin_template
-
-	var_15_4[1498] = {
+	pg.base.equip_skin_template[1498] = {
 		orbit_slg = "",
 		name = "炽焰蝾螈舰载机（轰炸）",
 		orbit_ui_bound = "",
@@ -64954,11 +60096,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.equip_skin_template
-
-	var_15_5[1499] = {
+	pg.base.equip_skin_template[1499] = {
 		orbit_slg = "",
 		name = "桶子炮弹",
 		orbit_ui_bound = "",
@@ -65000,11 +60138,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.equip_skin_template
-
-	var_15_6[1501] = {
+	pg.base.equip_skin_template[1501] = {
 		orbit_slg = "",
 		name = "地下城超级豪华珍珠三明治",
 		orbit_ui_bound = "",
@@ -65046,11 +60180,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.equip_skin_template
-
-	var_15_7[1502] = {
+	pg.base.equip_skin_template[1502] = {
 		orbit_slg = "",
 		name = "蝴蝶结子弹",
 		orbit_ui_bound = "",
@@ -65092,11 +60222,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.equip_skin_template
-
-	var_15_8[1503] = {
+	pg.base.equip_skin_template[1503] = {
 		orbit_slg = "",
 		name = "炸薯球炮弹",
 		orbit_ui_bound = "",
@@ -65138,11 +60264,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.equip_skin_template
-
-	var_15_9[1504] = {
+	pg.base.equip_skin_template[1504] = {
 		orbit_slg = "",
 		name = "赫斯缇雅之刃",
 		orbit_ui_bound = "",
@@ -65183,11 +60305,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.equip_skin_template
-
-	var_15_10[1505] = {
+	pg.base.equip_skin_template[1505] = {
 		orbit_slg = "",
 		name = "光明之风子弹",
 		orbit_ui_bound = "",
@@ -65229,11 +60347,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.equip_skin_template
-
-	var_15_11[1506] = {
+	pg.base.equip_skin_template[1506] = {
 		orbit_slg = "",
 		name = "红花繁缕鱼雷",
 		orbit_ui_bound = "",
@@ -65274,11 +60388,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.equip_skin_template
-
-	var_15_12[1507] = {
+	pg.base.equip_skin_template[1507] = {
 		orbit_slg = "",
 		name = "星之正域",
 		type = 1,
@@ -65338,11 +60448,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.equip_skin_template
-
-	var_15_13[1511] = {
+	pg.base.equip_skin_template[1511] = {
 		orbit_slg = "",
 		name = "灭绝天使之弹（子弹）",
 		orbit_ui_bound = "",
@@ -65384,11 +60490,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.equip_skin_template
-
-	var_15_14[1512] = {
+	pg.base.equip_skin_template[1512] = {
 		orbit_slg = "",
 		name = "刻刻帝之弹（子弹）",
 		orbit_ui_bound = "",
@@ -65430,11 +60532,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.equip_skin_template
-
-	var_15_15[1513] = {
+	pg.base.equip_skin_template[1513] = {
 		orbit_slg = "",
 		name = "束缚者之链弹（子弹）",
 		orbit_ui_bound = "",
@@ -65476,11 +60574,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.equip_skin_template
-
-	var_15_16[1514] = {
+	pg.base.equip_skin_template[1514] = {
 		orbit_slg = "",
 		name = "鏖杀公召唤（炮弹）",
 		orbit_ui_bound = "",
@@ -65522,11 +60616,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.equip_skin_template
-
-	var_15_17[1515] = {
+	pg.base.equip_skin_template[1515] = {
 		orbit_slg = "",
 		name = "灼烂歼鬼大战斧（炮弹）",
 		orbit_ui_bound = "",
@@ -65568,11 +60658,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.equip_skin_template
-
-	var_15_18[1516] = {
+	pg.base.equip_skin_template[1516] = {
 		orbit_slg = "",
 		name = "飞翔的四糸奈（炮弹）",
 		orbit_ui_bound = "",
@@ -65614,11 +60700,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.equip_skin_template
-
-	var_15_19[1517] = {
+	pg.base.equip_skin_template[1517] = {
 		orbit_slg = "",
 		name = "鏖杀公之刃（鱼雷）",
 		orbit_ui_bound = "",
@@ -65659,11 +60741,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.equip_skin_template
-
-	var_15_20[1518] = {
+	pg.base.equip_skin_template[1518] = {
 		orbit_slg = "",
 		name = "灼烂歼鬼·炮炎（鱼雷）",
 		orbit_ui_bound = "",
@@ -65704,11 +60782,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.equip_skin_template
-
-	var_15_21[1519] = {
+	pg.base.equip_skin_template[1519] = {
 		orbit_slg = "",
 		name = "贯穿者突击枪（鱼雷）",
 		orbit_ui_bound = "",
@@ -65749,11 +60823,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.equip_skin_template
-
-	var_15_22[1520] = {
+	pg.base.equip_skin_template[1520] = {
 		orbit_slg = "",
 		name = "冰结傀儡的暴风（鱼雷机）",
 		orbit_ui_bound = "",
@@ -65793,11 +60863,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.equip_skin_template
-
-	var_15_23[1521] = {
+	pg.base.equip_skin_template[1521] = {
 		orbit_slg = "",
 		name = "冰结傀儡的暴风（战斗机）",
 		orbit_ui_bound = "",
@@ -65837,11 +60903,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.equip_skin_template
-
-	var_15_24[1522] = {
+	pg.base.equip_skin_template[1522] = {
 		orbit_slg = "",
 		name = "冰结傀儡的暴风（轰炸机）",
 		orbit_ui_bound = "",
@@ -65881,11 +60943,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.equip_skin_template
-
-	var_15_25[1523] = {
+	pg.base.equip_skin_template[1523] = {
 		orbit_slg = "",
 		name = "日轮之环（鱼雷机）",
 		orbit_ui_bound = "",
@@ -65925,11 +60983,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.equip_skin_template
-
-	var_15_26[1524] = {
+	pg.base.equip_skin_template[1524] = {
 		orbit_slg = "",
 		name = "日轮之环（战斗机）",
 		orbit_ui_bound = "",
@@ -65969,11 +61023,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.equip_skin_template
-
-	var_15_27[1525] = {
+	pg.base.equip_skin_template[1525] = {
 		orbit_slg = "",
 		name = "日轮之环（轰炸机）",
 		orbit_ui_bound = "",
@@ -66013,11 +61063,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.equip_skin_template
-
-	var_15_28[1526] = {
+	pg.base.equip_skin_template[1526] = {
 		orbit_slg = "",
 		name = "刻刻帝的齿轮（鱼雷机）",
 		orbit_ui_bound = "",
@@ -66057,11 +61103,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.equip_skin_template
-
-	var_15_29[1527] = {
+	pg.base.equip_skin_template[1527] = {
 		orbit_slg = "",
 		name = "刻刻帝的齿轮（战斗机）",
 		orbit_ui_bound = "",
@@ -66101,11 +61143,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.equip_skin_template
-
-	var_15_30[1528] = {
+	pg.base.equip_skin_template[1528] = {
 		orbit_slg = "",
 		name = "刻刻帝的齿轮（轰炸机）",
 		orbit_ui_bound = "",
@@ -66145,11 +61183,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.equip_skin_template
-
-	var_15_31[1529] = {
+	pg.base.equip_skin_template[1529] = {
 		orbit_slg = "",
 		name = "战斗用战术目镜（设备）",
 		type = 1,
@@ -66209,11 +61243,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.equip_skin_template
-
-	var_15_32[1530] = {
+	pg.base.equip_skin_template[1530] = {
 		orbit_slg = "",
 		name = "随行支援辅助机（设备）",
 		type = 1,
@@ -66273,11 +61303,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.equip_skin_template
-
-	var_15_33[1531] = {
+	pg.base.equip_skin_template[1531] = {
 		orbit_slg = "",
 		name = "白之契约（设备）",
 		type = 1,
@@ -66337,11 +61363,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.equip_skin_template
-
-	var_15_34[1532] = {
+	pg.base.equip_skin_template[1532] = {
 		orbit_slg = "",
 		name = "四〇式战术刀（设备）",
 		type = 1,
@@ -66401,11 +61423,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.equip_skin_template
-
-	var_15_35[1533] = {
+	pg.base.equip_skin_template[1533] = {
 		orbit_slg = "",
 		name = "Hack Burst",
 		orbit_ui_bound = "",
@@ -66447,11 +61465,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.equip_skin_template
-
-	var_15_36[1534] = {
+	pg.base.equip_skin_template[1534] = {
 		orbit_slg = "",
 		name = "Double Burst",
 		orbit_ui_bound = "",
@@ -66493,11 +61507,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.equip_skin_template
-
-	var_15_37[1535] = {
+	pg.base.equip_skin_template[1535] = {
 		orbit_slg = "",
 		name = "铁管鱼雷",
 		orbit_ui_bound = "",
@@ -66538,11 +61548,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.equip_skin_template
-
-	var_15_38[1536] = {
+	pg.base.equip_skin_template[1536] = {
 		orbit_slg = "",
 		name = "龙骑枪鱼雷",
 		orbit_ui_bound = "",
@@ -66583,11 +61589,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.equip_skin_template
-
-	var_15_39[1537] = {
+	pg.base.equip_skin_template[1537] = {
 		orbit_slg = "",
 		name = "机械生命体炮弹",
 		orbit_ui_bound = "",
@@ -66629,11 +61631,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.equip_skin_template
-
-	var_15_40[1538] = {
+	pg.base.equip_skin_template[1538] = {
 		orbit_slg = "",
 		name = "三式拳套炮弹",
 		orbit_ui_bound = "",
@@ -66675,11 +61673,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.equip_skin_template
-
-	var_15_41[2001] = {
+	pg.base.equip_skin_template[2001] = {
 		orbit_slg = "",
 		name = "流星鱼雷",
 		orbit_ui_bound = "",
@@ -66720,11 +61714,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.equip_skin_template
-
-	var_15_42[2002] = {
+	pg.base.equip_skin_template[2002] = {
 		orbit_slg = "",
 		name = "彗星炮弹",
 		orbit_ui_bound = "",
@@ -66766,11 +61756,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.equip_skin_template
-
-	var_15_43[2003] = {
+	pg.base.equip_skin_template[2003] = {
 		orbit_slg = "",
 		name = "进击啾啾之星",
 		orbit_ui_bound = "",
@@ -66812,11 +61798,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.equip_skin_template
-
-	var_15_44[2004] = {
+	pg.base.equip_skin_template[2004] = {
 		orbit_slg = "",
 		name = "环绕啾啾之星",
 		type = 1,
@@ -66876,11 +61858,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.equip_skin_template
-
-	var_15_45[2005] = {
+	pg.base.equip_skin_template[2005] = {
 		orbit_slg = "",
 		name = "模拟月球",
 		type = 1,
@@ -66940,11 +61918,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.equip_skin_template
-
-	var_15_46[2006] = {
+	pg.base.equip_skin_template[2006] = {
 		orbit_slg = "",
 		name = "炮弹:双星系统",
 		orbit_ui_bound = "",
@@ -66986,11 +61960,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.equip_skin_template
-
-	var_15_47[2007] = {
+	pg.base.equip_skin_template[2007] = {
 		orbit_slg = "",
 		name = "星云蝶翼",
 		type = 1,
@@ -67050,11 +62020,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.equip_skin_template
-
-	var_15_48[2008] = {
+	pg.base.equip_skin_template[2008] = {
 		orbit_slg = "",
 		name = "鱼雷:奥陌陌",
 		orbit_ui_bound = "",
@@ -67095,11 +62061,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.equip_skin_template
-
-	var_15_49[2009] = {
+	pg.base.equip_skin_template[2009] = {
 		orbit_slg = "",
 		name = "耀星鱼雷",
 		orbit_ui_bound = "",
@@ -67140,11 +62102,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.equip_skin_template
-
-	var_15_50[2010] = {
+	pg.base.equip_skin_template[2010] = {
 		orbit_slg = "",
 		name = "黑洞炮弹",
 		orbit_ui_bound = "",
@@ -67186,11 +62144,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.equip_skin_template
-
-	var_15_51[2011] = {
+	pg.base.equip_skin_template[2011] = {
 		orbit_slg = "",
 		name = "星云子弹(黄)",
 		orbit_ui_bound = "",
@@ -67232,11 +62186,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.equip_skin_template
-
-	var_15_52[2012] = {
+	pg.base.equip_skin_template[2012] = {
 		orbit_slg = "",
 		name = "科伊伯带",
 		type = 1,
@@ -67296,11 +62246,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.equip_skin_template
-
-	var_15_53[2013] = {
+	pg.base.equip_skin_template[2013] = {
 		orbit_slg = "",
 		name = "星云子弹(蓝)",
 		orbit_ui_bound = "",
@@ -67342,11 +62288,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.equip_skin_template
-
-	var_15_54[2014] = {
+	pg.base.equip_skin_template[2014] = {
 		orbit_slg = "",
 		name = "魔术聚光灯",
 		type = 1,
@@ -67406,11 +62348,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.equip_skin_template
-
-	var_15_55[2015] = {
+	pg.base.equip_skin_template[2015] = {
 		orbit_slg = "",
 		name = "子弹：魔术牌(红)",
 		orbit_ui_bound = "",
@@ -67452,11 +62390,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.equip_skin_template
-
-	var_15_56[2016] = {
+	pg.base.equip_skin_template[2016] = {
 		orbit_slg = "",
 		name = "子弹：魔术牌(黄)",
 		orbit_ui_bound = "",
@@ -67498,11 +62432,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.equip_skin_template
-
-	var_15_57[2017] = {
+	pg.base.equip_skin_template[2017] = {
 		orbit_slg = "",
 		name = "炮弹：魔术帽",
 		orbit_ui_bound = "",
@@ -67544,11 +62474,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.equip_skin_template
-
-	var_15_58[2018] = {
+	pg.base.equip_skin_template[2018] = {
 		orbit_slg = "",
 		name = "魔术棒鱼雷",
 		orbit_ui_bound = "",
@@ -67589,11 +62515,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.equip_skin_template
-
-	var_15_59[2019] = {
+	pg.base.equip_skin_template[2019] = {
 		orbit_slg = "",
 		name = "幻惑不死鸟(鱼雷)",
 		orbit_ui_bound = "",
@@ -67633,11 +62555,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.equip_skin_template
-
-	var_15_60[2020] = {
+	pg.base.equip_skin_template[2020] = {
 		orbit_slg = "",
 		name = "幻惑不死鸟(战斗)",
 		orbit_ui_bound = "",
@@ -67677,11 +62595,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.equip_skin_template
-
-	var_15_61[2021] = {
+	pg.base.equip_skin_template[2021] = {
 		orbit_slg = "",
 		name = "幻惑不死鸟(轰炸)",
 		orbit_ui_bound = "",
@@ -67721,11 +62635,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.equip_skin_template
-
-	var_15_62[2022] = {
+	pg.base.equip_skin_template[2022] = {
 		orbit_slg = "",
 		name = "气球子弹",
 		orbit_ui_bound = "",
@@ -67767,11 +62677,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.equip_skin_template
-
-	var_15_63[2023] = {
+	pg.base.equip_skin_template[2023] = {
 		orbit_slg = "",
 		name = "硬币炮弹",
 		orbit_ui_bound = "",
@@ -67813,11 +62719,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.equip_skin_template
-
-	var_15_64[2024] = {
+	pg.base.equip_skin_template[2024] = {
 		orbit_slg = "",
 		name = "甜心鱼雷",
 		orbit_ui_bound = "",
@@ -67858,11 +62760,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.equip_skin_template
-
-	var_15_65[2025] = {
+	pg.base.equip_skin_template[2025] = {
 		orbit_slg = "",
 		name = "魔术骰子炮弹",
 		orbit_ui_bound = "",
@@ -67904,11 +62802,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.equip_skin_template
-
-	var_15_66[2026] = {
+	pg.base.equip_skin_template[2026] = {
 		orbit_slg = "",
 		name = "魔术扑克鱼雷",
 		orbit_ui_bound = "",
@@ -67949,11 +62843,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.equip_skin_template
-
-	var_15_67[2027] = {
+	pg.base.equip_skin_template[2027] = {
 		orbit_slg = "",
 		name = "魔术斗篷",
 		type = 1,
@@ -68013,11 +62903,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.equip_skin_template
-
-	var_15_68[2028] = {
+	pg.base.equip_skin_template[2028] = {
 		orbit_slg = "",
 		name = "魔术硬币子弹",
 		orbit_ui_bound = "",
@@ -68059,11 +62945,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.equip_skin_template
-
-	var_15_69[2029] = {
+	pg.base.equip_skin_template[2029] = {
 		orbit_slg = "",
 		name = "冰雹子弹",
 		orbit_ui_bound = "",
@@ -68105,11 +62987,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.equip_skin_template
-
-	var_15_70[2030] = {
+	pg.base.equip_skin_template[2030] = {
 		orbit_slg = "",
 		name = "球形闪电炮弹",
 		orbit_ui_bound = "",
@@ -68151,11 +63029,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.equip_skin_template
-
-	var_15_71[2031] = {
+	pg.base.equip_skin_template[2031] = {
 		orbit_slg = "",
 		name = "火焰龙卷风鱼雷",
 		orbit_ui_bound = "",
@@ -68196,11 +63070,19 @@ end)()
 			107
 		}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.equip_skin_template
-
-	var_15_72[2032] = {
+	;({
+		-0.21,
+		nil,
+		-10
+	})[2] = -0
+	;({
+		"face"
+	})[2] = {
+		-0.21,
+		nil,
+		-10
+	}
+	;({
 		orbit_slg = "",
 		name = "雨过天晴",
 		type = 1,
@@ -68239,32 +63121,143 @@ end)()
 			1,
 			0,
 			1
+		}
+	}).orbit_combat_bound = {
+		"face"
+	}
+	;({
+		orbit_slg = "",
+		name = "雨过天晴",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "96444",
+		orbit_rotate = false,
+		orbit_combat = "shebei_yuguotianqing",
+		ship_config_id = 100011,
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 103,
+		bullet_name = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 2032,
+		hit_sfx = "",
+		desc = "大雨过后，总会有彩虹和晴天！",
+		derivate_boom = "",
+		orbit_ui = "shebei_yuguotianqingui",
+		mirror = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			10
 		},
-		orbit_combat_bound = {
-			"face",
-			{
-				-0.21,
-				-0,
-				-10
-			}
+		weapon_ids = {
+			101,
+			101
 		},
-		orbit_ui_bound = {
-			"face",
-			{
-				-4.5,
-				-10
-			}
-		},
-		orbit_hidden_action = {
-			"sleep",
-			"wash"
+		double_char_bone = {
+			1,
+			0,
+			1
+		}
+	}).orbit_ui_bound = {
+		"face",
+		{
+			-4.5,
+			-10
 		}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.equip_skin_template
-
-	var_15_73[2033] = {
+	;({
+		orbit_slg = "",
+		name = "雨过天晴",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "96444",
+		orbit_rotate = false,
+		orbit_combat = "shebei_yuguotianqing",
+		ship_config_id = 100011,
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 103,
+		bullet_name = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 2032,
+		hit_sfx = "",
+		desc = "大雨过后，总会有彩虹和晴天！",
+		derivate_boom = "",
+		orbit_ui = "shebei_yuguotianqingui",
+		mirror = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		}
+	}).orbit_hidden_action = {
+		"sleep",
+		"wash"
+	}
+	pg.base.equip_skin_template[2032] = {
+		orbit_slg = "",
+		name = "雨过天晴",
+		type = 1,
+		preview_hit_distance = 0,
+		icon = "96444",
+		orbit_rotate = false,
+		orbit_combat = "shebei_yuguotianqing",
+		ship_config_id = 100011,
+		orbit_rotate_ui = "",
+		orbit_combat_anima_change = "",
+		themeid = 103,
+		bullet_name = "",
+		miss_sfx = "",
+		rarity = 4,
+		id = 2032,
+		hit_sfx = "",
+		desc = "大雨过后，总会有彩虹和晴天！",
+		derivate_boom = "",
+		orbit_ui = "shebei_yuguotianqingui",
+		mirror = 0,
+		derivate_bullet = "",
+		fire_fx_name = "",
+		hit_fx_name = "",
+		orbit_ui_back = 0,
+		derivate_torpedo = "",
+		ship_skin_id = 0,
+		orbit_slg_bound = "",
+		equip_type = {
+			10
+		},
+		weapon_ids = {
+			101,
+			101
+		},
+		double_char_bone = {
+			1,
+			0,
+			1
+		}
+	}
+	pg.base.equip_skin_template[2033] = {
 		orbit_slg = "",
 		name = "雷神之怒(鱼雷)",
 		orbit_ui_bound = "",
@@ -68304,11 +63297,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.equip_skin_template
-
-	var_15_74[2034] = {
+	pg.base.equip_skin_template[2034] = {
 		orbit_slg = "",
 		name = "雷神之怒(战斗)",
 		orbit_ui_bound = "",
@@ -68348,11 +63337,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.equip_skin_template
-
-	var_15_75[2035] = {
+	pg.base.equip_skin_template[2035] = {
 		orbit_slg = "",
 		name = "雷神之怒(轰炸)",
 		orbit_ui_bound = "",
@@ -68392,11 +63377,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.equip_skin_template
-
-	var_15_76[2036] = {
+	pg.base.equip_skin_template[2036] = {
 		orbit_slg = "",
 		name = "极冰之坠",
 		orbit_ui_bound = "",
@@ -68438,11 +63419,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.equip_skin_template
-
-	var_15_77[2037] = {
+	pg.base.equip_skin_template[2037] = {
 		orbit_slg = "",
 		name = "极光之翼",
 		type = 1,
@@ -68502,11 +63479,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.equip_skin_template
-
-	var_15_78[2038] = {
+	pg.base.equip_skin_template[2038] = {
 		orbit_slg = "",
 		name = "风暴之眼",
 		type = 1,
@@ -68566,11 +63539,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.equip_skin_template
-
-	var_15_79[2039] = {
+	pg.base.equip_skin_template[2039] = {
 		orbit_slg = "",
 		name = "火球炮弹",
 		orbit_ui_bound = "",
@@ -68612,11 +63581,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.equip_skin_template
-
-	var_15_80[2040] = {
+	pg.base.equip_skin_template[2040] = {
 		orbit_slg = "",
 		name = "闪电炮弹",
 		orbit_ui_bound = "",
@@ -68658,11 +63623,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.equip_skin_template
-
-	var_15_81[2041] = {
+	pg.base.equip_skin_template[2041] = {
 		orbit_slg = "",
 		name = "彩虹子弹",
 		orbit_ui_bound = "",
@@ -68704,11 +63665,11 @@ end)()
 			101
 		}
 	}
-	pg = var_15_81
 
-	local var_15_82 = var_15_81.base.equip_skin_template
-
-	var_15_82[2042] = {
+	return
+end)()
+;(function()
+	pg.base.equip_skin_template[2042] = {
 		orbit_slg = "",
 		name = "浪花鱼雷",
 		orbit_ui_bound = "",
@@ -68749,11 +63710,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.equip_skin_template
-
-	var_15_83[2043] = {
+	pg.base.equip_skin_template[2043] = {
 		orbit_slg = "",
 		name = "气功波炮弹",
 		orbit_ui_bound = "",
@@ -68795,11 +63752,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.equip_skin_template
-
-	var_15_84[2044] = {
+	pg.base.equip_skin_template[2044] = {
 		orbit_slg = "",
 		name = "红蓝球子弹",
 		orbit_ui_bound = "",
@@ -68841,11 +63794,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_84
-
-	local var_15_85 = var_15_84.base.equip_skin_template
-
-	var_15_85[2045] = {
+	pg.base.equip_skin_template[2045] = {
 		orbit_slg = "",
 		name = "飞弹鱼雷",
 		orbit_ui_bound = "",
@@ -68886,11 +63835,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.equip_skin_template
-
-	var_15_86[2046] = {
+	pg.base.equip_skin_template[2046] = {
 		orbit_slg = "",
 		name = "像素天雷(鱼雷)",
 		orbit_ui_bound = "",
@@ -68930,11 +63875,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.equip_skin_template
-
-	var_15_87[2047] = {
+	pg.base.equip_skin_template[2047] = {
 		orbit_slg = "",
 		name = "像素天雷(战斗)",
 		orbit_ui_bound = "",
@@ -68974,11 +63915,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.equip_skin_template
-
-	var_15_88[2048] = {
+	pg.base.equip_skin_template[2048] = {
 		orbit_slg = "",
 		name = "像素天雷(轰炸)",
 		orbit_ui_bound = "",
@@ -69018,11 +63955,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.equip_skin_template
-
-	var_15_89[2049] = {
+	pg.base.equip_skin_template[2049] = {
 		orbit_slg = "",
 		name = "像素星系",
 		orbit_ui_bound = "",
@@ -69064,11 +63997,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.equip_skin_template
-
-	var_15_90[2050] = {
+	pg.base.equip_skin_template[2050] = {
 		orbit_slg = "",
 		name = "像素星光子弹",
 		orbit_ui_bound = "",
@@ -69110,11 +64039,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.equip_skin_template
-
-	var_15_91[2051] = {
+	pg.base.equip_skin_template[2051] = {
 		orbit_slg = "",
 		name = "像素陨石鱼雷",
 		orbit_ui_bound = "",
@@ -69155,11 +64080,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.equip_skin_template
-
-	var_15_92[2052] = {
+	pg.base.equip_skin_template[2052] = {
 		orbit_slg = "",
 		name = "像素飞碟",
 		type = 1,
@@ -69219,11 +64140,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.equip_skin_template
-
-	var_15_93[2053] = {
+	pg.base.equip_skin_template[2053] = {
 		orbit_slg = "",
 		name = "兔兔导弹",
 		orbit_ui_bound = "",
@@ -69265,11 +64182,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.equip_skin_template
-
-	var_15_94[2054] = {
+	pg.base.equip_skin_template[2054] = {
 		orbit_slg = "",
 		name = "能量球子弹",
 		orbit_ui_bound = "",
@@ -69311,11 +64224,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.equip_skin_template
-
-	var_15_95[2055] = {
+	pg.base.equip_skin_template[2055] = {
 		orbit_slg = "",
 		name = "像素爱心鱼雷",
 		orbit_ui_bound = "",
@@ -69356,11 +64265,7 @@ end)()
 			107
 		}
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.equip_skin_template
-
-	var_15_96[2056] = {
+	pg.base.equip_skin_template[2056] = {
 		orbit_slg = "",
 		name = "多变箭头",
 		type = 1,
@@ -69420,11 +64325,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.equip_skin_template
-
-	var_15_97[2061] = {
+	pg.base.equip_skin_template[2061] = {
 		orbit_slg = "",
 		name = "陨石术炮弹",
 		orbit_ui_bound = "",
@@ -69466,11 +64367,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.equip_skin_template
-
-	var_15_98[2062] = {
+	pg.base.equip_skin_template[2062] = {
 		orbit_slg = "",
 		name = "宝石魔弹",
 		orbit_ui_bound = "",
@@ -69512,8 +64409,7 @@ end)()
 			101
 		}
 	}
-	pg = var_15_98
-	var_15_98.base.equip_skin_template[2063] = {
+	pg.base.equip_skin_template[2063] = {
 		orbit_slg = "",
 		name = "（快乐）幽灵鱼雷",
 		orbit_ui_bound = "",
@@ -69554,15 +64450,7 @@ end)()
 			107
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.equip_skin_template
-
-	var_16_0[2064] = {
+	pg.base.equip_skin_template[2064] = {
 		orbit_slg = "",
 		name = "未知魔法阵",
 		type = 1,
@@ -69622,11 +64510,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.equip_skin_template
-
-	var_16_1[2065] = {
+	pg.base.equip_skin_template[2065] = {
 		orbit_slg = "",
 		name = "秘术法球子弹",
 		orbit_ui_bound = "",
@@ -69668,11 +64552,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.equip_skin_template
-
-	var_16_2[2066] = {
+	pg.base.equip_skin_template[2066] = {
 		orbit_slg = "",
 		name = "冰霜魔爪鱼雷",
 		orbit_ui_bound = "",
@@ -69713,11 +64593,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.equip_skin_template
-
-	var_16_3[2067] = {
+	pg.base.equip_skin_template[2067] = {
 		orbit_slg = "shebei_xingguanghudunslg",
 		name = "永续型魔法盾（设备）",
 		type = 1,
@@ -69783,11 +64659,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.equip_skin_template
-
-	var_16_4[2068] = {
+	pg.base.equip_skin_template[2068] = {
 		orbit_slg = "",
 		name = "火焰巨龙飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -69827,11 +64699,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.equip_skin_template
-
-	var_16_5[2069] = {
+	pg.base.equip_skin_template[2069] = {
 		orbit_slg = "",
 		name = "火焰巨龙飞机(战斗)",
 		orbit_ui_bound = "",
@@ -69871,11 +64739,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.equip_skin_template
-
-	var_16_6[2070] = {
+	pg.base.equip_skin_template[2070] = {
 		orbit_slg = "",
 		name = "火焰巨龙飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -69915,11 +64779,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.equip_skin_template
-
-	var_16_7[2071] = {
+	pg.base.equip_skin_template[2071] = {
 		orbit_slg = "",
 		name = "火焰飞轮炮弹",
 		orbit_ui_bound = "",
@@ -69961,11 +64821,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.equip_skin_template
-
-	var_16_8[2072] = {
+	pg.base.equip_skin_template[2072] = {
 		orbit_slg = "",
 		name = "彗星术子弹",
 		orbit_ui_bound = "",
@@ -70007,11 +64863,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.equip_skin_template
-
-	var_16_9[2073] = {
+	pg.base.equip_skin_template[2073] = {
 		orbit_slg = "",
 		name = "魔法扫帚鱼雷",
 		orbit_ui_bound = "",
@@ -70052,11 +64904,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.equip_skin_template
-
-	var_16_10[2074] = {
+	pg.base.equip_skin_template[2074] = {
 		orbit_slg = "",
 		name = "圣光之翼",
 		type = 1,
@@ -70116,11 +64964,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.equip_skin_template
-
-	var_16_11[2075] = {
+	pg.base.equip_skin_template[2075] = {
 		orbit_slg = "",
 		name = "故障电磁炮弹",
 		orbit_ui_bound = "",
@@ -70162,11 +65006,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.equip_skin_template
-
-	var_16_12[2076] = {
+	pg.base.equip_skin_template[2076] = {
 		orbit_slg = "",
 		name = "指向性箭头子弹",
 		orbit_ui_bound = "",
@@ -70208,11 +65048,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.equip_skin_template
-
-	var_16_13[2077] = {
+	pg.base.equip_skin_template[2077] = {
 		orbit_slg = "",
 		name = "霓虹灯牌鱼雷",
 		orbit_ui_bound = "",
@@ -70253,11 +65089,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.equip_skin_template
-
-	var_16_14[2078] = {
+	pg.base.equip_skin_template[2078] = {
 		orbit_slg = "",
 		name = "战力分析装置",
 		type = 1,
@@ -70317,11 +65149,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.equip_skin_template
-
-	var_16_15[2079] = {
+	pg.base.equip_skin_template[2079] = {
 		orbit_slg = "",
 		name = "辉光能量炮弹",
 		orbit_ui_bound = "",
@@ -70363,11 +65191,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.equip_skin_template
-
-	var_16_16[2080] = {
+	pg.base.equip_skin_template[2080] = {
 		orbit_slg = "",
 		name = "数据子弹",
 		orbit_ui_bound = "",
@@ -70409,11 +65233,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.equip_skin_template
-
-	var_16_17[2081] = {
+	pg.base.equip_skin_template[2081] = {
 		orbit_slg = "",
 		name = "湮灭能量鱼雷",
 		orbit_ui_bound = "",
@@ -70454,11 +65274,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.equip_skin_template
-
-	var_16_18[2082] = {
+	pg.base.equip_skin_template[2082] = {
 		orbit_slg = "",
 		name = "先锋无人机（鱼雷机）",
 		orbit_ui_bound = "",
@@ -70498,11 +65314,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.equip_skin_template
-
-	var_16_19[2083] = {
+	pg.base.equip_skin_template[2083] = {
 		orbit_slg = "",
 		name = "先锋无人机（战斗机）",
 		orbit_ui_bound = "",
@@ -70542,11 +65354,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.equip_skin_template
-
-	var_16_20[2084] = {
+	pg.base.equip_skin_template[2084] = {
 		orbit_slg = "",
 		name = "先锋无人机（轰炸机）",
 		orbit_ui_bound = "",
@@ -70586,11 +65394,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.equip_skin_template
-
-	var_16_21[2085] = {
+	pg.base.equip_skin_template[2085] = {
 		orbit_slg = "",
 		name = "激流能量子弹",
 		orbit_ui_bound = "",
@@ -70632,11 +65436,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.equip_skin_template
-
-	var_16_22[2086] = {
+	pg.base.equip_skin_template[2086] = {
 		orbit_slg = "",
 		name = "紫电能量鱼雷",
 		orbit_ui_bound = "",
@@ -70677,11 +65477,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.equip_skin_template
-
-	var_16_23[2087] = {
+	pg.base.equip_skin_template[2087] = {
 		orbit_slg = "",
 		name = "流翠能量炮弹",
 		orbit_ui_bound = "",
@@ -70723,11 +65519,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.equip_skin_template
-
-	var_16_24[2088] = {
+	pg.base.equip_skin_template[2088] = {
 		orbit_slg = "",
 		name = "量子光谱护卫者",
 		type = 1,
@@ -70787,11 +65579,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.equip_skin_template
-
-	var_16_25[2089] = {
+	pg.base.equip_skin_template[2089] = {
 		orbit_slg = "",
 		name = "光羽晨曦子弹",
 		orbit_ui_bound = "",
@@ -70833,11 +65621,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.equip_skin_template
-
-	var_16_26[2090] = {
+	pg.base.equip_skin_template[2090] = {
 		orbit_slg = "",
 		name = "曙光雷霆鱼雷",
 		orbit_ui_bound = "",
@@ -70878,11 +65662,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.equip_skin_template
-
-	var_16_27[2091] = {
+	pg.base.equip_skin_template[2091] = {
 		orbit_slg = "",
 		name = "星轨之环炮弹",
 		orbit_ui_bound = "",
@@ -70924,11 +65704,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.equip_skin_template
-
-	var_16_28[2092] = {
+	pg.base.equip_skin_template[2092] = {
 		orbit_slg = "",
 		name = "天启光轮",
 		type = 1,
@@ -70988,11 +65764,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.equip_skin_template
-
-	var_16_29[2093] = {
+	pg.base.equip_skin_template[2093] = {
 		orbit_slg = "",
 		name = "螺旋尖角子弹",
 		orbit_ui_bound = "",
@@ -71034,11 +65806,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.equip_skin_template
-
-	var_16_30[2094] = {
+	pg.base.equip_skin_template[2094] = {
 		orbit_slg = "",
 		name = "恶魔尾巴鱼雷",
 		orbit_ui_bound = "",
@@ -71079,11 +65847,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.equip_skin_template
-
-	var_16_31[2095] = {
+	pg.base.equip_skin_template[2095] = {
 		orbit_slg = "",
 		name = "烛台炮弹",
 		orbit_ui_bound = "",
@@ -71125,11 +65889,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.equip_skin_template
-
-	var_16_32[2096] = {
+	pg.base.equip_skin_template[2096] = {
 		orbit_slg = "",
 		name = "恶魔翅膀",
 		type = 1,
@@ -71189,11 +65949,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.equip_skin_template
-
-	var_16_33[2097] = {
+	pg.base.equip_skin_template[2097] = {
 		orbit_slg = "",
 		name = "光影交缠子弹",
 		orbit_ui_bound = "",
@@ -71235,11 +65991,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.equip_skin_template
-
-	var_16_34[2098] = {
+	pg.base.equip_skin_template[2098] = {
 		orbit_slg = "",
 		name = "悖论量尺鱼雷",
 		orbit_ui_bound = "",
@@ -71280,11 +66032,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.equip_skin_template
-
-	var_16_35[2099] = {
+	pg.base.equip_skin_template[2099] = {
 		orbit_slg = "",
 		name = "螺旋日晷炮弹",
 		orbit_ui_bound = "",
@@ -71326,11 +66074,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.equip_skin_template
-
-	var_16_36[2100] = {
+	pg.base.equip_skin_template[2100] = {
 		orbit_slg = "",
 		name = "二律背反之环（浮游炮）",
 		type = 1,
@@ -71390,11 +66134,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.equip_skin_template
-
-	var_16_37[2101] = {
+	pg.base.equip_skin_template[2101] = {
 		orbit_slg = "",
 		name = "墨韵流光子弹",
 		orbit_ui_bound = "",
@@ -71436,11 +66176,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.equip_skin_template
-
-	var_16_38[2102] = {
+	pg.base.equip_skin_template[2102] = {
 		orbit_slg = "",
 		name = "竹影破浪鱼雷",
 		orbit_ui_bound = "",
@@ -71481,11 +66217,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.equip_skin_template
-
-	var_16_39[2103] = {
+	pg.base.equip_skin_template[2103] = {
 		orbit_slg = "",
 		name = "山岩裂石炮弹",
 		orbit_ui_bound = "",
@@ -71527,11 +66259,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.equip_skin_template
-
-	var_16_40[2104] = {
+	pg.base.equip_skin_template[2104] = {
 		orbit_slg = "",
 		name = "墨峰栖云之雾",
 		type = 1,
@@ -71591,11 +66319,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.equip_skin_template
-
-	var_16_41[2105] = {
+	pg.base.equip_skin_template[2105] = {
 		orbit_slg = "",
 		name = "惊鸿子弹",
 		orbit_ui_bound = "",
@@ -71637,11 +66361,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.equip_skin_template
-
-	var_16_42[2106] = {
+	pg.base.equip_skin_template[2106] = {
 		orbit_slg = "",
 		name = "墨鳞鱼雷",
 		orbit_ui_bound = "",
@@ -71682,11 +66402,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.equip_skin_template
-
-	var_16_43[2107] = {
+	pg.base.equip_skin_template[2107] = {
 		orbit_slg = "",
 		name = "清荷炮弹",
 		orbit_ui_bound = "",
@@ -71728,11 +66444,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.equip_skin_template
-
-	var_16_44[2108] = {
+	pg.base.equip_skin_template[2108] = {
 		orbit_slg = "",
 		name = "一枝红梅",
 		type = 1,
@@ -71792,11 +66504,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.equip_skin_template
-
-	var_16_45[2109] = {
+	pg.base.equip_skin_template[2109] = {
 		orbit_slg = "",
 		name = "花翎子弹",
 		orbit_ui_bound = "",
@@ -71838,11 +66546,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.equip_skin_template
-
-	var_16_46[2110] = {
+	pg.base.equip_skin_template[2110] = {
 		orbit_slg = "",
 		name = "浊影鱼雷",
 		orbit_ui_bound = "",
@@ -71883,11 +66587,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.equip_skin_template
-
-	var_16_47[2111] = {
+	pg.base.equip_skin_template[2111] = {
 		orbit_slg = "",
 		name = "鹤鸣炮弹",
 		orbit_ui_bound = "",
@@ -71929,11 +66629,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.equip_skin_template
-
-	var_16_48[2112] = {
+	pg.base.equip_skin_template[2112] = {
 		orbit_slg = "",
 		name = "光灼之祝",
 		type = 1,
@@ -71993,11 +66689,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.equip_skin_template
-
-	var_16_49[2113] = {
+	pg.base.equip_skin_template[2113] = {
 		orbit_slg = "",
 		name = "古代匕首子弹",
 		orbit_ui_bound = "",
@@ -72039,11 +66731,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.equip_skin_template
-
-	var_16_50[2114] = {
+	pg.base.equip_skin_template[2114] = {
 		orbit_slg = "",
 		name = "残垣立柱鱼雷",
 		orbit_ui_bound = "",
@@ -72084,11 +66772,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.equip_skin_template
-
-	var_16_51[2115] = {
+	pg.base.equip_skin_template[2115] = {
 		orbit_slg = "",
 		name = "石化啾啾像炮弹",
 		orbit_ui_bound = "",
@@ -72130,11 +66814,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.equip_skin_template
-
-	var_16_52[2116] = {
+	pg.base.equip_skin_template[2116] = {
 		orbit_slg = "",
 		name = "失落王朝之门",
 		type = 1,
@@ -72194,11 +66874,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.equip_skin_template
-
-	var_16_53[2117] = {
+	pg.base.equip_skin_template[2117] = {
 		orbit_slg = "",
 		name = "翠色流萤子弹",
 		orbit_ui_bound = "",
@@ -72240,11 +66916,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.equip_skin_template
-
-	var_16_54[2118] = {
+	pg.base.equip_skin_template[2118] = {
 		orbit_slg = "",
 		name = "古藤手杖鱼雷",
 		orbit_ui_bound = "",
@@ -72285,11 +66957,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.equip_skin_template
-
-	var_16_55[2119] = {
+	pg.base.equip_skin_template[2119] = {
 		orbit_slg = "",
 		name = "林间冠冕炮弹",
 		orbit_ui_bound = "",
@@ -72331,11 +66999,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.equip_skin_template
-
-	var_16_56[2120] = {
+	pg.base.equip_skin_template[2120] = {
 		orbit_slg = "",
 		name = "枯荣轮回之木",
 		type = 1,
@@ -72395,11 +67059,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.equip_skin_template
-
-	var_16_57[2121] = {
+	pg.base.equip_skin_template[2121] = {
 		orbit_slg = "",
 		name = "永动齿轮子弹",
 		orbit_ui_bound = "",
@@ -72441,11 +67101,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.equip_skin_template
-
-	var_16_58[2122] = {
+	pg.base.equip_skin_template[2122] = {
 		orbit_slg = "",
 		name = "沉寂烟塔鱼雷",
 		orbit_ui_bound = "",
@@ -72486,11 +67142,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.equip_skin_template
-
-	var_16_59[2123] = {
+	pg.base.equip_skin_template[2123] = {
 		orbit_slg = "",
 		name = "星轨遗器炮弹",
 		orbit_ui_bound = "",
@@ -72532,11 +67184,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.equip_skin_template
-
-	var_16_60[2124] = {
+	pg.base.equip_skin_template[2124] = {
 		orbit_slg = "",
 		name = "幻梦樊笼",
 		type = 1,
@@ -72596,11 +67244,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.equip_skin_template
-
-	var_16_61[2125] = {
+	pg.base.equip_skin_template[2125] = {
 		orbit_slg = "",
 		name = "复古怀表子弹",
 		orbit_ui_bound = "",
@@ -72642,11 +67286,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.equip_skin_template
-
-	var_16_62[2126] = {
+	pg.base.equip_skin_template[2126] = {
 		orbit_slg = "",
 		name = "雾之都巴士鱼雷",
 		orbit_ui_bound = "",
@@ -72687,11 +67327,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.equip_skin_template
-
-	var_16_63[2127] = {
+	pg.base.equip_skin_template[2127] = {
 		orbit_slg = "",
 		name = "天使街灯炮弹",
 		orbit_ui_bound = "",
@@ -72733,11 +67369,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.equip_skin_template
-
-	var_16_64[2128] = {
+	pg.base.equip_skin_template[2128] = {
 		orbit_slg = "",
 		name = "天际漫游",
 		type = 1,
@@ -72797,11 +67429,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.equip_skin_template
-
-	var_16_65[3001] = {
+	pg.base.equip_skin_template[3001] = {
 		orbit_slg = "",
 		name = "观察者之触",
 		type = 1,
@@ -72861,11 +67489,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.equip_skin_template
-
-	var_16_66[3002] = {
+	pg.base.equip_skin_template[3002] = {
 		orbit_slg = "",
 		name = "托瓦之冠",
 		type = 1,
@@ -72925,11 +67549,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.equip_skin_template
-
-	var_16_67[3003] = {
+	pg.base.equip_skin_template[3003] = {
 		orbit_slg = "",
 		name = "堕天石像鬼",
 		type = 1,
@@ -72989,11 +67609,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.equip_skin_template
-
-	var_16_68[3004] = {
+	pg.base.equip_skin_template[3004] = {
 		orbit_slg = "",
 		name = "幻影之鹰(鱼雷)",
 		orbit_ui_bound = "",
@@ -73033,11 +67649,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.equip_skin_template
-
-	var_16_69[3005] = {
+	pg.base.equip_skin_template[3005] = {
 		orbit_slg = "",
 		name = "幻影之鹰(战斗)",
 		orbit_ui_bound = "",
@@ -73077,11 +67689,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.equip_skin_template
-
-	var_16_70[3006] = {
+	pg.base.equip_skin_template[3006] = {
 		orbit_slg = "",
 		name = "幻影之鹰(轰炸)",
 		orbit_ui_bound = "",
@@ -73121,11 +67729,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.equip_skin_template
-
-	var_16_71[3007] = {
+	pg.base.equip_skin_template[3007] = {
 		orbit_slg = "",
 		name = "情报注入装置",
 		orbit_ui_bound = "",
@@ -73167,11 +67771,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.equip_skin_template
-
-	var_16_72[3008] = {
+	pg.base.equip_skin_template[3008] = {
 		orbit_slg = "",
 		name = "大铃铛炮弹",
 		orbit_ui_bound = "",
@@ -73213,11 +67813,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.equip_skin_template
-
-	var_16_73[3009] = {
+	pg.base.equip_skin_template[3009] = {
 		orbit_slg = "",
 		name = "超级猫爪子弹",
 		orbit_ui_bound = "",
@@ -73259,11 +67855,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.equip_skin_template
-
-	var_16_74[3010] = {
+	pg.base.equip_skin_template[3010] = {
 		orbit_slg = "",
 		name = "手绘爱心飞机(鱼雷)",
 		orbit_ui_bound = "",
@@ -73303,11 +67895,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.equip_skin_template
-
-	var_16_75[3011] = {
+	pg.base.equip_skin_template[3011] = {
 		orbit_slg = "",
 		name = "手绘爱心飞机(战斗)",
 		orbit_ui_bound = "",
@@ -73347,11 +67935,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.equip_skin_template
-
-	var_16_76[3012] = {
+	pg.base.equip_skin_template[3012] = {
 		orbit_slg = "",
 		name = "手绘爱心飞机(轰炸)",
 		orbit_ui_bound = "",
@@ -73391,11 +67975,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.equip_skin_template
-
-	var_16_77[3013] = {
+	pg.base.equip_skin_template[3013] = {
 		orbit_slg = "",
 		name = "凤凰式神（鱼雷机）",
 		orbit_ui_bound = "",
@@ -73435,11 +68015,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.equip_skin_template
-
-	var_16_78[3014] = {
+	pg.base.equip_skin_template[3014] = {
 		orbit_slg = "",
 		name = "凤凰式神（战斗机）",
 		orbit_ui_bound = "",
@@ -73479,11 +68055,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.equip_skin_template
-
-	var_16_79[3015] = {
+	pg.base.equip_skin_template[3015] = {
 		orbit_slg = "",
 		name = "凤凰式神（轰炸机）",
 		orbit_ui_bound = "",
@@ -73523,11 +68095,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.equip_skin_template
-
-	var_16_80[3016] = {
+	pg.base.equip_skin_template[3016] = {
 		orbit_slg = "",
 		name = "凤影之阵（聚炎） ",
 		type = 1,
@@ -73587,11 +68155,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.equip_skin_template
-
-	var_16_81[3017] = {
+	pg.base.equip_skin_template[3017] = {
 		orbit_slg = "",
 		name = "凤影之阵（掠影） ",
 		type = 1,
@@ -73651,11 +68215,11 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_81
 
-	local var_16_82 = var_16_81.base.equip_skin_template
-
-	var_16_82[3024] = {
+	return
+end)()
+;(function()
+	pg.base.equip_skin_template[3024] = {
 		orbit_slg = "",
 		name = "折扣标签子弹",
 		orbit_ui_bound = "",
@@ -73697,11 +68261,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.equip_skin_template
-
-	var_16_83[3025] = {
+	pg.base.equip_skin_template[3025] = {
 		orbit_slg = "",
 		name = "赠品购物袋鱼雷",
 		orbit_ui_bound = "",
@@ -73742,11 +68302,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.equip_skin_template
-
-	var_16_84[3026] = {
+	pg.base.equip_skin_template[3026] = {
 		orbit_slg = "",
 		name = "精选礼盒炮弹",
 		orbit_ui_bound = "",
@@ -73788,11 +68344,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_84
-
-	local var_16_85 = var_16_84.base.equip_skin_template
-
-	var_16_85[3027] = {
+	pg.base.equip_skin_template[3027] = {
 		orbit_slg = "",
 		name = "超级折扣推车（鱼雷）",
 		orbit_ui_bound = "",
@@ -73832,11 +68384,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.equip_skin_template
-
-	var_16_86[3028] = {
+	pg.base.equip_skin_template[3028] = {
 		orbit_slg = "",
 		name = "超级折扣推车（战斗）",
 		orbit_ui_bound = "",
@@ -73876,11 +68424,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.equip_skin_template
-
-	var_16_87[3029] = {
+	pg.base.equip_skin_template[3029] = {
 		orbit_slg = "",
 		name = "超级折扣推车（轰炸）",
 		orbit_ui_bound = "",
@@ -73920,11 +68464,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.equip_skin_template
-
-	var_16_88[3030] = {
+	pg.base.equip_skin_template[3030] = {
 		orbit_slg = "",
 		name = "永恒之星的回响",
 		type = 1,
@@ -73984,11 +68524,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.equip_skin_template
-
-	var_16_89[3031] = {
+	pg.base.equip_skin_template[3031] = {
 		orbit_slg = "",
 		name = "“飞剑龙”式双翼无人机（鱼雷机）",
 		orbit_ui_bound = "",
@@ -74028,11 +68564,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.equip_skin_template
-
-	var_16_90[3032] = {
+	pg.base.equip_skin_template[3032] = {
 		orbit_slg = "",
 		name = "“飞剑龙”式双翼无人机（战斗机）",
 		orbit_ui_bound = "",
@@ -74072,11 +68604,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.equip_skin_template
-
-	var_16_91[3033] = {
+	pg.base.equip_skin_template[3033] = {
 		orbit_slg = "",
 		name = "“飞剑龙”式双翼无人机（轰炸机）",
 		orbit_ui_bound = "",
@@ -74116,11 +68644,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.equip_skin_template
-
-	var_16_92[3034] = {
+	pg.base.equip_skin_template[3034] = {
 		orbit_slg = "",
 		name = "瑞蛇焰火盒",
 		type = 1,
@@ -74180,11 +68704,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.equip_skin_template
-
-	var_16_93[3035] = {
+	pg.base.equip_skin_template[3035] = {
 		orbit_slg = "",
 		name = "折扣标签子弹",
 		orbit_ui_bound = "",
@@ -74226,11 +68746,7 @@ end)()
 			101
 		}
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.equip_skin_template
-
-	var_16_94[3036] = {
+	pg.base.equip_skin_template[3036] = {
 		orbit_slg = "",
 		name = "赠品购物袋鱼雷",
 		orbit_ui_bound = "",
@@ -74271,11 +68787,7 @@ end)()
 			107
 		}
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.equip_skin_template
-
-	var_16_95[3037] = {
+	pg.base.equip_skin_template[3037] = {
 		orbit_slg = "",
 		name = "精选礼盒炮弹",
 		orbit_ui_bound = "",
@@ -74317,11 +68829,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.equip_skin_template
-
-	var_16_96[3038] = {
+	pg.base.equip_skin_template[3038] = {
 		orbit_slg = "",
 		name = "超级折扣推车（鱼雷）",
 		orbit_ui_bound = "",
@@ -74361,11 +68869,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.equip_skin_template
-
-	var_16_97[3039] = {
+	pg.base.equip_skin_template[3039] = {
 		orbit_slg = "",
 		name = "超级折扣推车（战斗）",
 		orbit_ui_bound = "",
@@ -74405,11 +68909,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.equip_skin_template
-
-	var_16_98[3040] = {
+	pg.base.equip_skin_template[3040] = {
 		orbit_slg = "",
 		name = "超级折扣推车（轰炸）",
 		orbit_ui_bound = "",
@@ -74449,8 +68949,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_16_98
-	var_16_98.base.equip_skin_template[3041] = {
+	pg.base.equip_skin_template[3041] = {
 		orbit_slg = "",
 		name = "幽灵机械鱼雷",
 		orbit_ui_bound = "",
@@ -74491,15 +68990,7 @@ end)()
 			107
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.equip_skin_template
-
-	var_17_0[3042] = {
+	pg.base.equip_skin_template[3042] = {
 		orbit_slg = "",
 		name = "幽灵机械炮弹",
 		orbit_ui_bound = "",
@@ -74541,11 +69032,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.equip_skin_template
-
-	var_17_1[3043] = {
+	pg.base.equip_skin_template[3043] = {
 		orbit_slg = "",
 		name = "探听雷达包",
 		type = 1,
@@ -74605,11 +69092,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.equip_skin_template
-
-	var_17_2[3044] = {
+	pg.base.equip_skin_template[3044] = {
 		orbit_slg = "",
 		name = "松果鱼雷",
 		orbit_ui_bound = "",
@@ -74650,11 +69133,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.equip_skin_template
-
-	var_17_3[3045] = {
+	pg.base.equip_skin_template[3045] = {
 		orbit_slg = "",
 		name = "蒲公英炮弹",
 		orbit_ui_bound = "",
@@ -74696,11 +69175,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.equip_skin_template
-
-	var_17_4[3046] = {
+	pg.base.equip_skin_template[3046] = {
 		orbit_slg = "",
 		name = "随波逐流鱼雷 ",
 		orbit_ui_bound = "",
@@ -74741,11 +69216,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.equip_skin_template
-
-	var_17_5[3047] = {
+	pg.base.equip_skin_template[3047] = {
 		orbit_slg = "",
 		name = "随波逐流炮弹 ",
 		orbit_ui_bound = "",
@@ -74787,11 +69258,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.equip_skin_template
-
-	var_17_6[3048] = {
+	pg.base.equip_skin_template[3048] = {
 		orbit_slg = "",
 		name = "夏日动感墨镜 ",
 		type = 1,
@@ -74851,11 +69318,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.equip_skin_template
-
-	var_17_7[3050] = {
+	pg.base.equip_skin_template[3050] = {
 		orbit_slg = "",
 		name = "冰枪子弹",
 		orbit_ui_bound = "",
@@ -74897,11 +69360,7 @@ end)()
 			101
 		}
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.equip_skin_template
-
-	var_17_8[3051] = {
+	pg.base.equip_skin_template[3051] = {
 		orbit_slg = "",
 		name = "冰棱炮弹",
 		orbit_ui_bound = "",
@@ -74943,11 +69402,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.equip_skin_template
-
-	var_17_9[3052] = {
+	pg.base.equip_skin_template[3052] = {
 		orbit_slg = "",
 		name = "冰寒之翼",
 		type = 1,
@@ -75007,11 +69462,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.equip_skin_template
-
-	var_17_10[3053] = {
+	pg.base.equip_skin_template[3053] = {
 		orbit_slg = "",
 		name = "冰寒之环",
 		type = 1,
@@ -75071,11 +69522,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.equip_skin_template
-
-	var_17_11[3054] = {
+	pg.base.equip_skin_template[3054] = {
 		orbit_slg = "",
 		name = "魔法炮弹",
 		orbit_ui_bound = "",
@@ -75117,11 +69564,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.equip_skin_template
-
-	var_17_12[3059] = {
+	pg.base.equip_skin_template[3059] = {
 		orbit_slg = "",
 		name = "折扣气球子弹",
 		orbit_ui_bound = "",
@@ -75163,11 +69606,7 @@ end)()
 			101
 		}
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.equip_skin_template
-
-	var_17_13[3060] = {
+	pg.base.equip_skin_template[3060] = {
 		orbit_slg = "",
 		name = "购物指示牌鱼雷",
 		orbit_ui_bound = "",
@@ -75208,11 +69647,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.equip_skin_template
-
-	var_17_14[3061] = {
+	pg.base.equip_skin_template[3061] = {
 		orbit_slg = "",
 		name = "购物礼盒炮弹",
 		orbit_ui_bound = "",
@@ -75254,11 +69689,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.equip_skin_template
-
-	var_17_15[3062] = {
+	pg.base.equip_skin_template[3062] = {
 		orbit_slg = "",
 		name = "好运转盘",
 		type = 1,
@@ -75318,11 +69749,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.equip_skin_template
-
-	var_17_16[3063] = {
+	pg.base.equip_skin_template[3063] = {
 		orbit_slg = "",
 		name = "蓝色之影（鱼雷机）",
 		orbit_ui_bound = "",
@@ -75362,11 +69789,7 @@ end)()
 			61504
 		}
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.equip_skin_template
-
-	var_17_17[3064] = {
+	pg.base.equip_skin_template[3064] = {
 		orbit_slg = "",
 		name = "蓝色之影（战斗机）",
 		orbit_ui_bound = "",
@@ -75406,11 +69829,7 @@ end)()
 			54010
 		}
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.equip_skin_template
-
-	var_17_18[3065] = {
+	pg.base.equip_skin_template[3065] = {
 		orbit_slg = "",
 		name = "蓝色之影（轰炸机）",
 		orbit_ui_bound = "",
@@ -75450,11 +69869,7 @@ end)()
 			54014
 		}
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.equip_skin_template
-
-	var_17_19[3066] = {
+	pg.base.equip_skin_template[3066] = {
 		orbit_slg = "",
 		name = "星空帷幕",
 		type = 1,
@@ -75514,11 +69929,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.equip_skin_template
-
-	var_17_20[3067] = {
+	pg.base.equip_skin_template[3067] = {
 		orbit_slg = "",
 		name = "幽蓝焰环",
 		type = 1,
@@ -75578,11 +69989,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.equip_skin_template
-
-	var_17_21[3068] = {
+	pg.base.equip_skin_template[3068] = {
 		orbit_slg = "",
 		name = "爱之甜心炮弹",
 		orbit_ui_bound = "",
@@ -75624,11 +70031,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.equip_skin_template
-
-	var_17_22[3069] = {
+	pg.base.equip_skin_template[3069] = {
 		orbit_slg = "",
 		name = "瑞马焰火盒",
 		type = 1,
@@ -75688,11 +70091,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.equip_skin_template
-
-	var_17_23[3071] = {
+	pg.base.equip_skin_template[3071] = {
 		orbit_slg = "",
 		name = "测试加速器鱼雷",
 		orbit_ui_bound = "",
@@ -75733,11 +70132,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.equip_skin_template
-
-	var_17_24[3072] = {
+	pg.base.equip_skin_template[3072] = {
 		orbit_slg = "",
 		name = "荆棘蔷薇鱼雷",
 		orbit_ui_bound = "",
@@ -75778,11 +70173,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.equip_skin_template
-
-	var_17_25[3075] = {
+	pg.base.equip_skin_template[3075] = {
 		orbit_slg = "",
 		name = "彩虹流星",
 		type = 1,
@@ -75842,11 +70233,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.equip_skin_template
-
-	var_17_26[3077] = {
+	pg.base.equip_skin_template[3077] = {
 		orbit_slg = "",
 		name = "达力摇饮料鱼雷",
 		orbit_ui_bound = "",
@@ -75887,11 +70274,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.equip_skin_template
-
-	var_17_27[3078] = {
+	pg.base.equip_skin_template[3078] = {
 		orbit_slg = "",
 		name = "久啾灯光炮弹",
 		orbit_ui_bound = "",
@@ -75933,11 +70316,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.equip_skin_template
-
-	var_17_28[3079] = {
+	pg.base.equip_skin_template[3079] = {
 		orbit_slg = "",
 		name = "猩红脉冲鱼雷",
 		orbit_ui_bound = "",
@@ -75978,11 +70357,7 @@ end)()
 			107
 		}
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.equip_skin_template
-
-	var_17_29[3080] = {
+	pg.base.equip_skin_template[3080] = {
 		orbit_slg = "",
 		name = "猩红光蝙炮弹",
 		orbit_ui_bound = "",
@@ -76024,11 +70399,7 @@ end)()
 			24000
 		}
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.equip_skin_template
-
-	var_17_30[3081] = {
+	pg.base.equip_skin_template[3081] = {
 		orbit_slg = "",
 		name = "猩红铁蝠哨兵",
 		type = 1,
@@ -76088,11 +70459,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.equip_skin_template
-
-	var_17_31[3082] = {
+	pg.base.equip_skin_template[3082] = {
 		orbit_slg = "",
 		name = "猩红机械触臂",
 		type = 1,
@@ -76152,11 +70519,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.equip_skin_template
-
-	var_17_32[3083] = {
+	pg.base.equip_skin_template[3083] = {
 		orbit_slg = "",
 		name = "无惧骄阳",
 		type = 1,
@@ -76216,8 +70579,7 @@ end)()
 			"wash"
 		}
 	}
-	pg = var_17_32
-	var_17_32.base.equip_skin_template[3084] = {
+	pg.base.equip_skin_template[3084] = {
 		orbit_slg = "",
 		name = "假牙炮弹",
 		orbit_ui_bound = "",

@@ -20,6 +20,11 @@ function onInit(self, go)
     self.mTop3 = self:getChildGO("mTop3")
 
     self.mGroup = self:getChildGO("mGroupItem")
+
+    self.mBtnMessage = self:getChildGO("mBtnMessage")
+    self:addOnClick(self.mBtnMessage, function ()
+        gs.Message.Show(self.data.damage) -- 功能暂未开启
+    end)
 end
 
 function setData(self, param)
@@ -46,8 +51,8 @@ function setData(self, param)
     self.mTxtRank.gameObject:SetActive(self.data.rank > 3)
     self.mTxtRank.text = self.data.rank
     self.mTxtRankBig.text = self.data.rank
-    self.mTxtName.text = self.data.guild_name
-    self.mTxtDamage.text = self.data.damage
+    self.mTxtName.text = FilterWordUtil:filterTemp(self.data.guild_name) --恢复围剿公会名显示
+    self.mTxtDamage.text = string.formatChineseNumber(tonumber( self.data.damage))
 end
 
 function deActive(self)

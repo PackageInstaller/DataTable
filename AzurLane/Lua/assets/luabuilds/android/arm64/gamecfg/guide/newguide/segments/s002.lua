@@ -1,12 +1,4 @@
-﻿local var_0_0 = {
-	"前往查看<color=#ffde38>建造</color>详情！",
-	"点击<color=#ffde38>建造队列</color>查看建造进程",
-	"建造新船需要花上一定时间",
-	"真是等不及了~点击<color=#ffde38>快速完工</color>并使用快速建造道具吧！",
-	"点击确定<color=#ffde38>使用加速道具</color>"
-}
-
-return {
+﻿return {
 	id = "S002",
 	events = {
 		{
@@ -17,17 +9,18 @@ return {
 				dir = 1,
 				posY = -132.4,
 				posX = 423.25,
-				text = var_0_0[1]
+				text = ({
+					"前往查看<color=#ffde38>建造</color>详情！",
+					"点击<color=#ffde38>建造队列</color>查看建造进程",
+					"建造新船需要花上一定时间",
+					"真是等不及了~点击<color=#ffde38>快速完工</color>并使用快速建造道具吧！",
+					"点击确定<color=#ffde38>使用加速道具</color>"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/build"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/buildButton"
@@ -53,7 +46,13 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"前往查看<color=#ffde38>建造</color>详情！",
+					"点击<color=#ffde38>建造队列</color>查看建造进程",
+					"建造新船需要花上一定时间",
+					"真是等不及了~点击<color=#ffde38>快速完工</color>并使用快速建造道具吧！",
+					"点击确定<color=#ffde38>使用加速道具</color>"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -75,7 +74,13 @@ return {
 				dir = -1,
 				posY = 160,
 				posX = 450,
-				text = var_0_0[3]
+				text = ({
+					"前往查看<color=#ffde38>建造</color>详情！",
+					"点击<color=#ffde38>建造队列</color>查看建造进程",
+					"建造新船需要花上一定时间",
+					"真是等不及了~点击<color=#ffde38>快速完工</color>并使用快速建造道具吧！",
+					"点击确定<color=#ffde38>使用加速道具</color>"
+				})[3]
 			}
 		},
 		{
@@ -85,7 +90,13 @@ return {
 				dir = -1,
 				posY = 160,
 				posX = 450,
-				text = var_0_0[4]
+				text = ({
+					"前往查看<color=#ffde38>建造</color>详情！",
+					"点击<color=#ffde38>建造队列</color>查看建造进程",
+					"建造新船需要花上一定时间",
+					"真是等不及了~点击<color=#ffde38>快速完工</color>并使用快速建造道具吧！",
+					"点击确定<color=#ffde38>使用加速道具</color>"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,
@@ -111,7 +122,13 @@ return {
 				dir = -1,
 				posY = 250,
 				posX = 450,
-				text = var_0_0[5]
+				text = ({
+					"前往查看<color=#ffde38>建造</color>详情！",
+					"点击<color=#ffde38>建造队列</color>查看建造进程",
+					"建造新船需要花上一定时间",
+					"真是等不及了~点击<color=#ffde38>快速完工</color>并使用快速建造道具吧！",
+					"点击确定<color=#ffde38>使用加速道具</color>"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_meta_skilltask") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_meta_skilltask"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_meta_skilltask = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_meta_skilltask
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_meta_skilltask = rawget(pg, "ship_meta_skilltask") or setmetatable({
+	__name = "ship_meta_skilltask"
+}, confNEO)
+pg.ship_meta_skilltask.all = {
 	1,
 	2,
 	3,
@@ -1503,11 +1480,7 @@ var_0_3.all = {
 	1484,
 	1485
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.ship_meta_skilltask
-
-var_0_4.get_id_list_by_skill_ID = {
+pg.ship_meta_skilltask.get_id_list_by_skill_ID = {
 	[10] = {
 		28,
 		29,
@@ -3313,25 +3286,11 @@ var_0_4.get_id_list_by_skill_ID = {
 		1485
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.ship_meta_skilltask = {}
+pg.base = pg.base or {}
+pg.base.ship_meta_skilltask = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_1_0[1] = {
+	pg.base.ship_meta_skilltask[1] = {
 		level = 1,
 		id = 1,
 		need_exp = 4000,
@@ -3416,11 +3375,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_meta_skilltask
-
-	var_1_1[2] = {
+	pg.base.ship_meta_skilltask[2] = {
 		level = 2,
 		id = 2,
 		need_exp = 5000,
@@ -3499,11 +3454,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_meta_skilltask
-
-	var_1_2[3] = {
+	pg.base.ship_meta_skilltask[3] = {
 		level = 3,
 		id = 3,
 		need_exp = 8000,
@@ -3582,11 +3533,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_meta_skilltask
-
-	var_1_3[4] = {
+	pg.base.ship_meta_skilltask[4] = {
 		level = 4,
 		id = 4,
 		need_exp = 12000,
@@ -3670,11 +3617,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_meta_skilltask
-
-	var_1_4[5] = {
+	pg.base.ship_meta_skilltask[5] = {
 		level = 5,
 		id = 5,
 		need_exp = 16000,
@@ -3763,11 +3706,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_meta_skilltask
-
-	var_1_5[6] = {
+	pg.base.ship_meta_skilltask[6] = {
 		level = 6,
 		id = 6,
 		need_exp = 20000,
@@ -3856,11 +3795,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_meta_skilltask
-
-	var_1_6[7] = {
+	pg.base.ship_meta_skilltask[7] = {
 		level = 7,
 		id = 7,
 		need_exp = 26000,
@@ -3954,11 +3889,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_meta_skilltask
-
-	var_1_7[8] = {
+	pg.base.ship_meta_skilltask[8] = {
 		level = 8,
 		id = 8,
 		need_exp = 38000,
@@ -4052,11 +3983,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_meta_skilltask
-
-	var_1_8[9] = {
+	pg.base.ship_meta_skilltask[9] = {
 		level = 9,
 		id = 9,
 		need_exp = 60000,
@@ -4150,11 +4077,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_meta_skilltask
-
-	var_1_9[10] = {
+	pg.base.ship_meta_skilltask[10] = {
 		level = 1,
 		id = 10,
 		need_exp = 4000,
@@ -4239,11 +4162,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_meta_skilltask
-
-	var_1_10[11] = {
+	pg.base.ship_meta_skilltask[11] = {
 		level = 2,
 		id = 11,
 		need_exp = 5000,
@@ -4322,11 +4241,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_meta_skilltask
-
-	var_1_11[12] = {
+	pg.base.ship_meta_skilltask[12] = {
 		level = 3,
 		id = 12,
 		need_exp = 8000,
@@ -4405,11 +4320,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_meta_skilltask
-
-	var_1_12[13] = {
+	pg.base.ship_meta_skilltask[13] = {
 		level = 4,
 		id = 13,
 		need_exp = 12000,
@@ -4493,11 +4404,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_meta_skilltask
-
-	var_1_13[14] = {
+	pg.base.ship_meta_skilltask[14] = {
 		level = 5,
 		id = 14,
 		need_exp = 16000,
@@ -4586,11 +4493,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_meta_skilltask
-
-	var_1_14[15] = {
+	pg.base.ship_meta_skilltask[15] = {
 		level = 6,
 		id = 15,
 		need_exp = 20000,
@@ -4679,11 +4582,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_meta_skilltask
-
-	var_1_15[16] = {
+	pg.base.ship_meta_skilltask[16] = {
 		level = 7,
 		id = 16,
 		need_exp = 26000,
@@ -4777,11 +4676,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_meta_skilltask
-
-	var_1_16[17] = {
+	pg.base.ship_meta_skilltask[17] = {
 		level = 8,
 		id = 17,
 		need_exp = 38000,
@@ -4875,11 +4770,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_meta_skilltask
-
-	var_1_17[18] = {
+	pg.base.ship_meta_skilltask[18] = {
 		level = 9,
 		id = 18,
 		need_exp = 60000,
@@ -4973,11 +4864,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_meta_skilltask
-
-	var_1_18[19] = {
+	pg.base.ship_meta_skilltask[19] = {
 		level = 1,
 		id = 19,
 		need_exp = 4000,
@@ -5062,11 +4949,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_meta_skilltask
-
-	var_1_19[20] = {
+	pg.base.ship_meta_skilltask[20] = {
 		level = 2,
 		id = 20,
 		need_exp = 5000,
@@ -5145,11 +5028,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_meta_skilltask
-
-	var_1_20[21] = {
+	pg.base.ship_meta_skilltask[21] = {
 		level = 3,
 		id = 21,
 		need_exp = 8000,
@@ -5228,11 +5107,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_meta_skilltask
-
-	var_1_21[22] = {
+	pg.base.ship_meta_skilltask[22] = {
 		level = 4,
 		id = 22,
 		need_exp = 12000,
@@ -5316,11 +5191,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_meta_skilltask
-
-	var_1_22[23] = {
+	pg.base.ship_meta_skilltask[23] = {
 		level = 5,
 		id = 23,
 		need_exp = 16000,
@@ -5409,11 +5280,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_meta_skilltask
-
-	var_1_23[24] = {
+	pg.base.ship_meta_skilltask[24] = {
 		level = 6,
 		id = 24,
 		need_exp = 20000,
@@ -5502,11 +5369,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_meta_skilltask
-
-	var_1_24[25] = {
+	pg.base.ship_meta_skilltask[25] = {
 		level = 7,
 		id = 25,
 		need_exp = 26000,
@@ -5600,11 +5463,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_meta_skilltask
-
-	var_1_25[26] = {
+	pg.base.ship_meta_skilltask[26] = {
 		level = 8,
 		id = 26,
 		need_exp = 38000,
@@ -5698,11 +5557,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_meta_skilltask
-
-	var_1_26[27] = {
+	pg.base.ship_meta_skilltask[27] = {
 		level = 9,
 		id = 27,
 		need_exp = 60000,
@@ -5796,11 +5651,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_meta_skilltask
-
-	var_1_27[28] = {
+	pg.base.ship_meta_skilltask[28] = {
 		level = 1,
 		id = 28,
 		need_exp = 4000,
@@ -5885,11 +5736,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_meta_skilltask
-
-	var_1_28[29] = {
+	pg.base.ship_meta_skilltask[29] = {
 		level = 2,
 		id = 29,
 		need_exp = 5000,
@@ -5968,11 +5815,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_meta_skilltask
-
-	var_1_29[30] = {
+	pg.base.ship_meta_skilltask[30] = {
 		level = 3,
 		id = 30,
 		need_exp = 8000,
@@ -6051,11 +5894,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_meta_skilltask
-
-	var_1_30[31] = {
+	pg.base.ship_meta_skilltask[31] = {
 		level = 4,
 		id = 31,
 		need_exp = 12000,
@@ -6139,11 +5978,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_meta_skilltask
-
-	var_1_31[32] = {
+	pg.base.ship_meta_skilltask[32] = {
 		level = 5,
 		id = 32,
 		need_exp = 16000,
@@ -6232,11 +6067,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_meta_skilltask
-
-	var_1_32[33] = {
+	pg.base.ship_meta_skilltask[33] = {
 		level = 6,
 		id = 33,
 		need_exp = 20000,
@@ -6325,11 +6156,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_meta_skilltask
-
-	var_1_33[34] = {
+	pg.base.ship_meta_skilltask[34] = {
 		level = 7,
 		id = 34,
 		need_exp = 26000,
@@ -6423,11 +6250,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_meta_skilltask
-
-	var_1_34[35] = {
+	pg.base.ship_meta_skilltask[35] = {
 		level = 8,
 		id = 35,
 		need_exp = 38000,
@@ -6521,11 +6344,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_meta_skilltask
-
-	var_1_35[36] = {
+	pg.base.ship_meta_skilltask[36] = {
 		level = 9,
 		id = 36,
 		need_exp = 60000,
@@ -6619,11 +6438,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_meta_skilltask
-
-	var_1_36[37] = {
+	pg.base.ship_meta_skilltask[37] = {
 		level = 1,
 		id = 37,
 		need_exp = 4000,
@@ -6708,11 +6523,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_meta_skilltask
-
-	var_1_37[38] = {
+	pg.base.ship_meta_skilltask[38] = {
 		level = 2,
 		id = 38,
 		need_exp = 5000,
@@ -6791,11 +6602,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_meta_skilltask
-
-	var_1_38[39] = {
+	pg.base.ship_meta_skilltask[39] = {
 		level = 3,
 		id = 39,
 		need_exp = 8000,
@@ -6874,11 +6681,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.ship_meta_skilltask
-
-	var_1_39[40] = {
+	pg.base.ship_meta_skilltask[40] = {
 		level = 4,
 		id = 40,
 		need_exp = 12000,
@@ -6962,11 +6765,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.ship_meta_skilltask
-
-	var_1_40[41] = {
+	pg.base.ship_meta_skilltask[41] = {
 		level = 5,
 		id = 41,
 		need_exp = 16000,
@@ -7055,11 +6854,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.ship_meta_skilltask
-
-	var_1_41[42] = {
+	pg.base.ship_meta_skilltask[42] = {
 		level = 6,
 		id = 42,
 		need_exp = 20000,
@@ -7148,11 +6943,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.ship_meta_skilltask
-
-	var_1_42[43] = {
+	pg.base.ship_meta_skilltask[43] = {
 		level = 7,
 		id = 43,
 		need_exp = 26000,
@@ -7246,11 +7037,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.ship_meta_skilltask
-
-	var_1_43[44] = {
+	pg.base.ship_meta_skilltask[44] = {
 		level = 8,
 		id = 44,
 		need_exp = 38000,
@@ -7344,11 +7131,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.ship_meta_skilltask
-
-	var_1_44[45] = {
+	pg.base.ship_meta_skilltask[45] = {
 		level = 9,
 		id = 45,
 		need_exp = 60000,
@@ -7442,11 +7225,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.ship_meta_skilltask
-
-	var_1_45[46] = {
+	pg.base.ship_meta_skilltask[46] = {
 		level = 1,
 		id = 46,
 		need_exp = 4000,
@@ -7531,11 +7310,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.ship_meta_skilltask
-
-	var_1_46[47] = {
+	pg.base.ship_meta_skilltask[47] = {
 		level = 2,
 		id = 47,
 		need_exp = 5000,
@@ -7614,11 +7389,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.ship_meta_skilltask
-
-	var_1_47[48] = {
+	pg.base.ship_meta_skilltask[48] = {
 		level = 3,
 		id = 48,
 		need_exp = 8000,
@@ -7697,11 +7468,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.ship_meta_skilltask
-
-	var_1_48[49] = {
+	pg.base.ship_meta_skilltask[49] = {
 		level = 4,
 		id = 49,
 		need_exp = 12000,
@@ -7785,11 +7552,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.ship_meta_skilltask
-
-	var_1_49[50] = {
+	pg.base.ship_meta_skilltask[50] = {
 		level = 5,
 		id = 50,
 		need_exp = 16000,
@@ -7878,11 +7641,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.ship_meta_skilltask
-
-	var_1_50[51] = {
+	pg.base.ship_meta_skilltask[51] = {
 		level = 6,
 		id = 51,
 		need_exp = 20000,
@@ -7971,11 +7730,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.ship_meta_skilltask
-
-	var_1_51[52] = {
+	pg.base.ship_meta_skilltask[52] = {
 		level = 7,
 		id = 52,
 		need_exp = 26000,
@@ -8069,11 +7824,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.ship_meta_skilltask
-
-	var_1_52[53] = {
+	pg.base.ship_meta_skilltask[53] = {
 		level = 8,
 		id = 53,
 		need_exp = 38000,
@@ -8167,11 +7918,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.ship_meta_skilltask
-
-	var_1_53[54] = {
+	pg.base.ship_meta_skilltask[54] = {
 		level = 9,
 		id = 54,
 		need_exp = 60000,
@@ -8265,11 +8012,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.ship_meta_skilltask
-
-	var_1_54[55] = {
+	pg.base.ship_meta_skilltask[55] = {
 		level = 1,
 		id = 55,
 		need_exp = 4000,
@@ -8354,11 +8097,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.ship_meta_skilltask
-
-	var_1_55[56] = {
+	pg.base.ship_meta_skilltask[56] = {
 		level = 2,
 		id = 56,
 		need_exp = 5000,
@@ -8437,11 +8176,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.ship_meta_skilltask
-
-	var_1_56[57] = {
+	pg.base.ship_meta_skilltask[57] = {
 		level = 3,
 		id = 57,
 		need_exp = 8000,
@@ -8520,11 +8255,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.ship_meta_skilltask
-
-	var_1_57[58] = {
+	pg.base.ship_meta_skilltask[58] = {
 		level = 4,
 		id = 58,
 		need_exp = 12000,
@@ -8608,11 +8339,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.ship_meta_skilltask
-
-	var_1_58[59] = {
+	pg.base.ship_meta_skilltask[59] = {
 		level = 5,
 		id = 59,
 		need_exp = 16000,
@@ -8701,11 +8428,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.ship_meta_skilltask
-
-	var_1_59[60] = {
+	pg.base.ship_meta_skilltask[60] = {
 		level = 6,
 		id = 60,
 		need_exp = 20000,
@@ -8794,11 +8517,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.ship_meta_skilltask
-
-	var_1_60[61] = {
+	pg.base.ship_meta_skilltask[61] = {
 		level = 7,
 		id = 61,
 		need_exp = 26000,
@@ -8892,11 +8611,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.ship_meta_skilltask
-
-	var_1_61[62] = {
+	pg.base.ship_meta_skilltask[62] = {
 		level = 8,
 		id = 62,
 		need_exp = 38000,
@@ -8990,11 +8705,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.ship_meta_skilltask
-
-	var_1_62[63] = {
+	pg.base.ship_meta_skilltask[63] = {
 		level = 9,
 		id = 63,
 		need_exp = 60000,
@@ -9088,11 +8799,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.ship_meta_skilltask
-
-	var_1_63[64] = {
+	pg.base.ship_meta_skilltask[64] = {
 		level = 1,
 		id = 64,
 		need_exp = 4000,
@@ -9177,11 +8884,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.ship_meta_skilltask
-
-	var_1_64[65] = {
+	pg.base.ship_meta_skilltask[65] = {
 		level = 2,
 		id = 65,
 		need_exp = 5000,
@@ -9260,11 +8963,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.ship_meta_skilltask
-
-	var_1_65[66] = {
+	pg.base.ship_meta_skilltask[66] = {
 		level = 3,
 		id = 66,
 		need_exp = 8000,
@@ -9343,11 +9042,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.ship_meta_skilltask
-
-	var_1_66[67] = {
+	pg.base.ship_meta_skilltask[67] = {
 		level = 4,
 		id = 67,
 		need_exp = 12000,
@@ -9431,11 +9126,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.ship_meta_skilltask
-
-	var_1_67[68] = {
+	pg.base.ship_meta_skilltask[68] = {
 		level = 5,
 		id = 68,
 		need_exp = 16000,
@@ -9524,11 +9215,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.ship_meta_skilltask
-
-	var_1_68[69] = {
+	pg.base.ship_meta_skilltask[69] = {
 		level = 6,
 		id = 69,
 		need_exp = 20000,
@@ -9617,11 +9304,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.ship_meta_skilltask
-
-	var_1_69[70] = {
+	pg.base.ship_meta_skilltask[70] = {
 		level = 7,
 		id = 70,
 		need_exp = 26000,
@@ -9715,11 +9398,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.ship_meta_skilltask
-
-	var_1_70[71] = {
+	pg.base.ship_meta_skilltask[71] = {
 		level = 8,
 		id = 71,
 		need_exp = 38000,
@@ -9813,11 +9492,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.ship_meta_skilltask
-
-	var_1_71[72] = {
+	pg.base.ship_meta_skilltask[72] = {
 		level = 9,
 		id = 72,
 		need_exp = 60000,
@@ -9911,11 +9586,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.ship_meta_skilltask
-
-	var_1_72[73] = {
+	pg.base.ship_meta_skilltask[73] = {
 		level = 1,
 		id = 73,
 		need_exp = 4000,
@@ -10000,11 +9671,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.ship_meta_skilltask
-
-	var_1_73[74] = {
+	pg.base.ship_meta_skilltask[74] = {
 		level = 2,
 		id = 74,
 		need_exp = 5000,
@@ -10083,11 +9750,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.ship_meta_skilltask
-
-	var_1_74[75] = {
+	pg.base.ship_meta_skilltask[75] = {
 		level = 3,
 		id = 75,
 		need_exp = 8000,
@@ -10166,11 +9829,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.ship_meta_skilltask
-
-	var_1_75[76] = {
+	pg.base.ship_meta_skilltask[76] = {
 		level = 4,
 		id = 76,
 		need_exp = 12000,
@@ -10254,11 +9913,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.ship_meta_skilltask
-
-	var_1_76[77] = {
+	pg.base.ship_meta_skilltask[77] = {
 		level = 5,
 		id = 77,
 		need_exp = 16000,
@@ -10347,11 +10002,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.ship_meta_skilltask
-
-	var_1_77[78] = {
+	pg.base.ship_meta_skilltask[78] = {
 		level = 6,
 		id = 78,
 		need_exp = 20000,
@@ -10440,11 +10091,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.ship_meta_skilltask
-
-	var_1_78[79] = {
+	pg.base.ship_meta_skilltask[79] = {
 		level = 7,
 		id = 79,
 		need_exp = 26000,
@@ -10538,11 +10185,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.ship_meta_skilltask
-
-	var_1_79[80] = {
+	pg.base.ship_meta_skilltask[80] = {
 		level = 8,
 		id = 80,
 		need_exp = 38000,
@@ -10636,11 +10279,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.ship_meta_skilltask
-
-	var_1_80[81] = {
+	pg.base.ship_meta_skilltask[81] = {
 		level = 9,
 		id = 81,
 		need_exp = 60000,
@@ -10734,11 +10373,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.ship_meta_skilltask
-
-	var_1_81[82] = {
+	pg.base.ship_meta_skilltask[82] = {
 		level = 1,
 		id = 82,
 		need_exp = 4000,
@@ -10823,11 +10458,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.ship_meta_skilltask
-
-	var_1_82[83] = {
+	pg.base.ship_meta_skilltask[83] = {
 		level = 2,
 		id = 83,
 		need_exp = 5000,
@@ -10906,11 +10537,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.ship_meta_skilltask
-
-	var_1_83[84] = {
+	pg.base.ship_meta_skilltask[84] = {
 		level = 3,
 		id = 84,
 		need_exp = 8000,
@@ -10989,11 +10616,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.ship_meta_skilltask
-
-	var_1_84[85] = {
+	pg.base.ship_meta_skilltask[85] = {
 		level = 4,
 		id = 85,
 		need_exp = 12000,
@@ -11077,11 +10700,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.ship_meta_skilltask
-
-	var_1_85[86] = {
+	pg.base.ship_meta_skilltask[86] = {
 		level = 5,
 		id = 86,
 		need_exp = 16000,
@@ -11170,11 +10789,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.ship_meta_skilltask
-
-	var_1_86[87] = {
+	pg.base.ship_meta_skilltask[87] = {
 		level = 6,
 		id = 87,
 		need_exp = 20000,
@@ -11263,11 +10878,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.ship_meta_skilltask
-
-	var_1_87[88] = {
+	pg.base.ship_meta_skilltask[88] = {
 		level = 7,
 		id = 88,
 		need_exp = 26000,
@@ -11361,11 +10972,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.ship_meta_skilltask
-
-	var_1_88[89] = {
+	pg.base.ship_meta_skilltask[89] = {
 		level = 8,
 		id = 89,
 		need_exp = 38000,
@@ -11459,11 +11066,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.ship_meta_skilltask
-
-	var_1_89[90] = {
+	pg.base.ship_meta_skilltask[90] = {
 		level = 9,
 		id = 90,
 		need_exp = 60000,
@@ -11557,11 +11160,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.ship_meta_skilltask
-
-	var_1_90[91] = {
+	pg.base.ship_meta_skilltask[91] = {
 		level = 1,
 		id = 91,
 		need_exp = 4000,
@@ -11646,11 +11245,7 @@ var_0_4.base.ship_meta_skilltask = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.ship_meta_skilltask
-
-	var_1_91[92] = {
+	pg.base.ship_meta_skilltask[92] = {
 		level = 2,
 		id = 92,
 		need_exp = 5000,
@@ -11729,11 +11324,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.ship_meta_skilltask
-
-	var_1_92[93] = {
+	pg.base.ship_meta_skilltask[93] = {
 		level = 3,
 		id = 93,
 		need_exp = 8000,
@@ -11812,11 +11403,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.ship_meta_skilltask
-
-	var_1_93[94] = {
+	pg.base.ship_meta_skilltask[94] = {
 		level = 4,
 		id = 94,
 		need_exp = 12000,
@@ -11900,11 +11487,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.ship_meta_skilltask
-
-	var_1_94[95] = {
+	pg.base.ship_meta_skilltask[95] = {
 		level = 5,
 		id = 95,
 		need_exp = 16000,
@@ -11993,11 +11576,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.ship_meta_skilltask
-
-	var_1_95[96] = {
+	pg.base.ship_meta_skilltask[96] = {
 		level = 6,
 		id = 96,
 		need_exp = 20000,
@@ -12086,11 +11665,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.ship_meta_skilltask
-
-	var_1_96[97] = {
+	pg.base.ship_meta_skilltask[97] = {
 		level = 7,
 		id = 97,
 		need_exp = 26000,
@@ -12184,11 +11759,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.ship_meta_skilltask
-
-	var_1_97[98] = {
+	pg.base.ship_meta_skilltask[98] = {
 		level = 8,
 		id = 98,
 		need_exp = 38000,
@@ -12282,11 +11853,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.ship_meta_skilltask
-
-	var_1_98[99] = {
+	pg.base.ship_meta_skilltask[99] = {
 		level = 9,
 		id = 99,
 		need_exp = 60000,
@@ -12380,8 +11947,7 @@ var_0_4.base.ship_meta_skilltask = {}
 		},
 		skill_unlock = {}
 	}
-	pg = var_1_98
-	var_1_98.base.ship_meta_skilltask[100] = {
+	pg.base.ship_meta_skilltask[100] = {
 		level = 1,
 		id = 100,
 		need_exp = 4000,
@@ -12470,11 +12036,7 @@ var_0_4.base.ship_meta_skilltask = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_2_0[101] = {
+	pg.base.ship_meta_skilltask[101] = {
 		level = 2,
 		id = 101,
 		need_exp = 5000,
@@ -12553,11 +12115,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.ship_meta_skilltask
-
-	var_2_1[102] = {
+	pg.base.ship_meta_skilltask[102] = {
 		level = 3,
 		id = 102,
 		need_exp = 8000,
@@ -12636,11 +12194,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.ship_meta_skilltask
-
-	var_2_2[103] = {
+	pg.base.ship_meta_skilltask[103] = {
 		level = 4,
 		id = 103,
 		need_exp = 12000,
@@ -12724,11 +12278,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.ship_meta_skilltask
-
-	var_2_3[104] = {
+	pg.base.ship_meta_skilltask[104] = {
 		level = 5,
 		id = 104,
 		need_exp = 16000,
@@ -12817,11 +12367,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.ship_meta_skilltask
-
-	var_2_4[105] = {
+	pg.base.ship_meta_skilltask[105] = {
 		level = 6,
 		id = 105,
 		need_exp = 20000,
@@ -12910,11 +12456,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.ship_meta_skilltask
-
-	var_2_5[106] = {
+	pg.base.ship_meta_skilltask[106] = {
 		level = 7,
 		id = 106,
 		need_exp = 26000,
@@ -13008,11 +12550,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.ship_meta_skilltask
-
-	var_2_6[107] = {
+	pg.base.ship_meta_skilltask[107] = {
 		level = 8,
 		id = 107,
 		need_exp = 38000,
@@ -13106,11 +12644,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.ship_meta_skilltask
-
-	var_2_7[108] = {
+	pg.base.ship_meta_skilltask[108] = {
 		level = 9,
 		id = 108,
 		need_exp = 60000,
@@ -13204,11 +12738,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.ship_meta_skilltask
-
-	var_2_8[109] = {
+	pg.base.ship_meta_skilltask[109] = {
 		level = 1,
 		id = 109,
 		need_exp = 4000,
@@ -13293,11 +12823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.ship_meta_skilltask
-
-	var_2_9[110] = {
+	pg.base.ship_meta_skilltask[110] = {
 		level = 2,
 		id = 110,
 		need_exp = 5000,
@@ -13376,11 +12902,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.ship_meta_skilltask
-
-	var_2_10[111] = {
+	pg.base.ship_meta_skilltask[111] = {
 		level = 3,
 		id = 111,
 		need_exp = 8000,
@@ -13459,11 +12981,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.ship_meta_skilltask
-
-	var_2_11[112] = {
+	pg.base.ship_meta_skilltask[112] = {
 		level = 4,
 		id = 112,
 		need_exp = 12000,
@@ -13547,11 +13065,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.ship_meta_skilltask
-
-	var_2_12[113] = {
+	pg.base.ship_meta_skilltask[113] = {
 		level = 5,
 		id = 113,
 		need_exp = 16000,
@@ -13640,11 +13154,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.ship_meta_skilltask
-
-	var_2_13[114] = {
+	pg.base.ship_meta_skilltask[114] = {
 		level = 6,
 		id = 114,
 		need_exp = 20000,
@@ -13733,11 +13243,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.ship_meta_skilltask
-
-	var_2_14[115] = {
+	pg.base.ship_meta_skilltask[115] = {
 		level = 7,
 		id = 115,
 		need_exp = 26000,
@@ -13831,11 +13337,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.ship_meta_skilltask
-
-	var_2_15[116] = {
+	pg.base.ship_meta_skilltask[116] = {
 		level = 8,
 		id = 116,
 		need_exp = 38000,
@@ -13929,11 +13431,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.ship_meta_skilltask
-
-	var_2_16[117] = {
+	pg.base.ship_meta_skilltask[117] = {
 		level = 9,
 		id = 117,
 		need_exp = 60000,
@@ -14027,11 +13525,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.ship_meta_skilltask
-
-	var_2_17[118] = {
+	pg.base.ship_meta_skilltask[118] = {
 		level = 1,
 		id = 118,
 		need_exp = 4000,
@@ -14116,11 +13610,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.ship_meta_skilltask
-
-	var_2_18[119] = {
+	pg.base.ship_meta_skilltask[119] = {
 		level = 2,
 		id = 119,
 		need_exp = 5000,
@@ -14199,11 +13689,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.ship_meta_skilltask
-
-	var_2_19[120] = {
+	pg.base.ship_meta_skilltask[120] = {
 		level = 3,
 		id = 120,
 		need_exp = 8000,
@@ -14282,11 +13768,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.ship_meta_skilltask
-
-	var_2_20[121] = {
+	pg.base.ship_meta_skilltask[121] = {
 		level = 4,
 		id = 121,
 		need_exp = 12000,
@@ -14370,11 +13852,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.ship_meta_skilltask
-
-	var_2_21[122] = {
+	pg.base.ship_meta_skilltask[122] = {
 		level = 5,
 		id = 122,
 		need_exp = 16000,
@@ -14463,11 +13941,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.ship_meta_skilltask
-
-	var_2_22[123] = {
+	pg.base.ship_meta_skilltask[123] = {
 		level = 6,
 		id = 123,
 		need_exp = 20000,
@@ -14556,11 +14030,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.ship_meta_skilltask
-
-	var_2_23[124] = {
+	pg.base.ship_meta_skilltask[124] = {
 		level = 7,
 		id = 124,
 		need_exp = 26000,
@@ -14654,11 +14124,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.ship_meta_skilltask
-
-	var_2_24[125] = {
+	pg.base.ship_meta_skilltask[125] = {
 		level = 8,
 		id = 125,
 		need_exp = 38000,
@@ -14752,11 +14218,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.ship_meta_skilltask
-
-	var_2_25[126] = {
+	pg.base.ship_meta_skilltask[126] = {
 		level = 9,
 		id = 126,
 		need_exp = 60000,
@@ -14850,11 +14312,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.ship_meta_skilltask
-
-	var_2_26[127] = {
+	pg.base.ship_meta_skilltask[127] = {
 		level = 1,
 		id = 127,
 		need_exp = 4000,
@@ -14939,11 +14397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.ship_meta_skilltask
-
-	var_2_27[128] = {
+	pg.base.ship_meta_skilltask[128] = {
 		level = 2,
 		id = 128,
 		need_exp = 5000,
@@ -15022,11 +14476,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.ship_meta_skilltask
-
-	var_2_28[129] = {
+	pg.base.ship_meta_skilltask[129] = {
 		level = 3,
 		id = 129,
 		need_exp = 8000,
@@ -15105,11 +14555,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.ship_meta_skilltask
-
-	var_2_29[130] = {
+	pg.base.ship_meta_skilltask[130] = {
 		level = 4,
 		id = 130,
 		need_exp = 12000,
@@ -15193,11 +14639,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.ship_meta_skilltask
-
-	var_2_30[131] = {
+	pg.base.ship_meta_skilltask[131] = {
 		level = 5,
 		id = 131,
 		need_exp = 16000,
@@ -15286,11 +14728,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.ship_meta_skilltask
-
-	var_2_31[132] = {
+	pg.base.ship_meta_skilltask[132] = {
 		level = 6,
 		id = 132,
 		need_exp = 20000,
@@ -15379,11 +14817,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.ship_meta_skilltask
-
-	var_2_32[133] = {
+	pg.base.ship_meta_skilltask[133] = {
 		level = 7,
 		id = 133,
 		need_exp = 26000,
@@ -15477,11 +14911,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.ship_meta_skilltask
-
-	var_2_33[134] = {
+	pg.base.ship_meta_skilltask[134] = {
 		level = 8,
 		id = 134,
 		need_exp = 38000,
@@ -15575,11 +15005,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.ship_meta_skilltask
-
-	var_2_34[135] = {
+	pg.base.ship_meta_skilltask[135] = {
 		level = 9,
 		id = 135,
 		need_exp = 60000,
@@ -15673,11 +15099,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.ship_meta_skilltask
-
-	var_2_35[136] = {
+	pg.base.ship_meta_skilltask[136] = {
 		level = 1,
 		id = 136,
 		need_exp = 4000,
@@ -15762,11 +15184,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.ship_meta_skilltask
-
-	var_2_36[137] = {
+	pg.base.ship_meta_skilltask[137] = {
 		level = 2,
 		id = 137,
 		need_exp = 5000,
@@ -15845,11 +15263,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.ship_meta_skilltask
-
-	var_2_37[138] = {
+	pg.base.ship_meta_skilltask[138] = {
 		level = 3,
 		id = 138,
 		need_exp = 8000,
@@ -15928,11 +15342,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.ship_meta_skilltask
-
-	var_2_38[139] = {
+	pg.base.ship_meta_skilltask[139] = {
 		level = 4,
 		id = 139,
 		need_exp = 12000,
@@ -16016,11 +15426,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.ship_meta_skilltask
-
-	var_2_39[140] = {
+	pg.base.ship_meta_skilltask[140] = {
 		level = 5,
 		id = 140,
 		need_exp = 16000,
@@ -16109,11 +15515,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.ship_meta_skilltask
-
-	var_2_40[141] = {
+	pg.base.ship_meta_skilltask[141] = {
 		level = 6,
 		id = 141,
 		need_exp = 20000,
@@ -16202,11 +15604,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.ship_meta_skilltask
-
-	var_2_41[142] = {
+	pg.base.ship_meta_skilltask[142] = {
 		level = 7,
 		id = 142,
 		need_exp = 26000,
@@ -16300,11 +15698,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.ship_meta_skilltask
-
-	var_2_42[143] = {
+	pg.base.ship_meta_skilltask[143] = {
 		level = 8,
 		id = 143,
 		need_exp = 38000,
@@ -16398,11 +15792,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.ship_meta_skilltask
-
-	var_2_43[144] = {
+	pg.base.ship_meta_skilltask[144] = {
 		level = 9,
 		id = 144,
 		need_exp = 60000,
@@ -16496,11 +15886,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.ship_meta_skilltask
-
-	var_2_44[145] = {
+	pg.base.ship_meta_skilltask[145] = {
 		level = 1,
 		id = 145,
 		need_exp = 4000,
@@ -16585,11 +15971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.ship_meta_skilltask
-
-	var_2_45[146] = {
+	pg.base.ship_meta_skilltask[146] = {
 		level = 2,
 		id = 146,
 		need_exp = 5000,
@@ -16668,11 +16050,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.ship_meta_skilltask
-
-	var_2_46[147] = {
+	pg.base.ship_meta_skilltask[147] = {
 		level = 3,
 		id = 147,
 		need_exp = 8000,
@@ -16751,11 +16129,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.ship_meta_skilltask
-
-	var_2_47[148] = {
+	pg.base.ship_meta_skilltask[148] = {
 		level = 4,
 		id = 148,
 		need_exp = 12000,
@@ -16839,11 +16213,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.ship_meta_skilltask
-
-	var_2_48[149] = {
+	pg.base.ship_meta_skilltask[149] = {
 		level = 5,
 		id = 149,
 		need_exp = 16000,
@@ -16932,11 +16302,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.ship_meta_skilltask
-
-	var_2_49[150] = {
+	pg.base.ship_meta_skilltask[150] = {
 		level = 6,
 		id = 150,
 		need_exp = 20000,
@@ -17025,11 +16391,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.ship_meta_skilltask
-
-	var_2_50[151] = {
+	pg.base.ship_meta_skilltask[151] = {
 		level = 7,
 		id = 151,
 		need_exp = 26000,
@@ -17123,11 +16485,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.ship_meta_skilltask
-
-	var_2_51[152] = {
+	pg.base.ship_meta_skilltask[152] = {
 		level = 8,
 		id = 152,
 		need_exp = 38000,
@@ -17221,11 +16579,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.ship_meta_skilltask
-
-	var_2_52[153] = {
+	pg.base.ship_meta_skilltask[153] = {
 		level = 9,
 		id = 153,
 		need_exp = 60000,
@@ -17319,11 +16673,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.ship_meta_skilltask
-
-	var_2_53[154] = {
+	pg.base.ship_meta_skilltask[154] = {
 		level = 1,
 		id = 154,
 		need_exp = 4000,
@@ -17408,11 +16758,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.ship_meta_skilltask
-
-	var_2_54[155] = {
+	pg.base.ship_meta_skilltask[155] = {
 		level = 2,
 		id = 155,
 		need_exp = 5000,
@@ -17491,11 +16837,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.ship_meta_skilltask
-
-	var_2_55[156] = {
+	pg.base.ship_meta_skilltask[156] = {
 		level = 3,
 		id = 156,
 		need_exp = 8000,
@@ -17574,11 +16916,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.ship_meta_skilltask
-
-	var_2_56[157] = {
+	pg.base.ship_meta_skilltask[157] = {
 		level = 4,
 		id = 157,
 		need_exp = 12000,
@@ -17662,11 +17000,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.ship_meta_skilltask
-
-	var_2_57[158] = {
+	pg.base.ship_meta_skilltask[158] = {
 		level = 5,
 		id = 158,
 		need_exp = 16000,
@@ -17755,11 +17089,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.ship_meta_skilltask
-
-	var_2_58[159] = {
+	pg.base.ship_meta_skilltask[159] = {
 		level = 6,
 		id = 159,
 		need_exp = 20000,
@@ -17848,11 +17178,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.ship_meta_skilltask
-
-	var_2_59[160] = {
+	pg.base.ship_meta_skilltask[160] = {
 		level = 7,
 		id = 160,
 		need_exp = 26000,
@@ -17946,11 +17272,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.ship_meta_skilltask
-
-	var_2_60[161] = {
+	pg.base.ship_meta_skilltask[161] = {
 		level = 8,
 		id = 161,
 		need_exp = 38000,
@@ -18044,11 +17366,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.ship_meta_skilltask
-
-	var_2_61[162] = {
+	pg.base.ship_meta_skilltask[162] = {
 		level = 9,
 		id = 162,
 		need_exp = 60000,
@@ -18142,11 +17460,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.ship_meta_skilltask
-
-	var_2_62[163] = {
+	pg.base.ship_meta_skilltask[163] = {
 		level = 1,
 		id = 163,
 		need_exp = 4000,
@@ -18231,11 +17545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.ship_meta_skilltask
-
-	var_2_63[164] = {
+	pg.base.ship_meta_skilltask[164] = {
 		level = 2,
 		id = 164,
 		need_exp = 5000,
@@ -18314,11 +17624,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.ship_meta_skilltask
-
-	var_2_64[165] = {
+	pg.base.ship_meta_skilltask[165] = {
 		level = 3,
 		id = 165,
 		need_exp = 8000,
@@ -18397,11 +17703,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.ship_meta_skilltask
-
-	var_2_65[166] = {
+	pg.base.ship_meta_skilltask[166] = {
 		level = 4,
 		id = 166,
 		need_exp = 12000,
@@ -18485,11 +17787,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.ship_meta_skilltask
-
-	var_2_66[167] = {
+	pg.base.ship_meta_skilltask[167] = {
 		level = 5,
 		id = 167,
 		need_exp = 16000,
@@ -18578,11 +17876,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.ship_meta_skilltask
-
-	var_2_67[168] = {
+	pg.base.ship_meta_skilltask[168] = {
 		level = 6,
 		id = 168,
 		need_exp = 20000,
@@ -18671,11 +17965,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.ship_meta_skilltask
-
-	var_2_68[169] = {
+	pg.base.ship_meta_skilltask[169] = {
 		level = 7,
 		id = 169,
 		need_exp = 26000,
@@ -18769,11 +18059,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.ship_meta_skilltask
-
-	var_2_69[170] = {
+	pg.base.ship_meta_skilltask[170] = {
 		level = 8,
 		id = 170,
 		need_exp = 38000,
@@ -18867,11 +18153,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.ship_meta_skilltask
-
-	var_2_70[171] = {
+	pg.base.ship_meta_skilltask[171] = {
 		level = 9,
 		id = 171,
 		need_exp = 60000,
@@ -18965,11 +18247,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.ship_meta_skilltask
-
-	var_2_71[172] = {
+	pg.base.ship_meta_skilltask[172] = {
 		level = 1,
 		id = 172,
 		need_exp = 4000,
@@ -19054,11 +18332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.ship_meta_skilltask
-
-	var_2_72[173] = {
+	pg.base.ship_meta_skilltask[173] = {
 		level = 2,
 		id = 173,
 		need_exp = 5000,
@@ -19137,11 +18411,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.ship_meta_skilltask
-
-	var_2_73[174] = {
+	pg.base.ship_meta_skilltask[174] = {
 		level = 3,
 		id = 174,
 		need_exp = 8000,
@@ -19220,11 +18490,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.ship_meta_skilltask
-
-	var_2_74[175] = {
+	pg.base.ship_meta_skilltask[175] = {
 		level = 4,
 		id = 175,
 		need_exp = 12000,
@@ -19308,11 +18574,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.ship_meta_skilltask
-
-	var_2_75[176] = {
+	pg.base.ship_meta_skilltask[176] = {
 		level = 5,
 		id = 176,
 		need_exp = 16000,
@@ -19401,11 +18663,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.ship_meta_skilltask
-
-	var_2_76[177] = {
+	pg.base.ship_meta_skilltask[177] = {
 		level = 6,
 		id = 177,
 		need_exp = 20000,
@@ -19494,11 +18752,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.ship_meta_skilltask
-
-	var_2_77[178] = {
+	pg.base.ship_meta_skilltask[178] = {
 		level = 7,
 		id = 178,
 		need_exp = 26000,
@@ -19592,11 +18846,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.ship_meta_skilltask
-
-	var_2_78[179] = {
+	pg.base.ship_meta_skilltask[179] = {
 		level = 8,
 		id = 179,
 		need_exp = 38000,
@@ -19690,11 +18940,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.ship_meta_skilltask
-
-	var_2_79[180] = {
+	pg.base.ship_meta_skilltask[180] = {
 		level = 9,
 		id = 180,
 		need_exp = 60000,
@@ -19788,11 +19034,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.ship_meta_skilltask
-
-	var_2_80[181] = {
+	pg.base.ship_meta_skilltask[181] = {
 		level = 1,
 		id = 181,
 		need_exp = 4000,
@@ -19877,11 +19119,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.ship_meta_skilltask
-
-	var_2_81[182] = {
+	pg.base.ship_meta_skilltask[182] = {
 		level = 2,
 		id = 182,
 		need_exp = 5000,
@@ -19960,11 +19198,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.ship_meta_skilltask
-
-	var_2_82[183] = {
+	pg.base.ship_meta_skilltask[183] = {
 		level = 3,
 		id = 183,
 		need_exp = 8000,
@@ -20043,11 +19277,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.ship_meta_skilltask
-
-	var_2_83[184] = {
+	pg.base.ship_meta_skilltask[184] = {
 		level = 4,
 		id = 184,
 		need_exp = 12000,
@@ -20131,11 +19361,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.ship_meta_skilltask
-
-	var_2_84[185] = {
+	pg.base.ship_meta_skilltask[185] = {
 		level = 5,
 		id = 185,
 		need_exp = 16000,
@@ -20224,11 +19450,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.ship_meta_skilltask
-
-	var_2_85[186] = {
+	pg.base.ship_meta_skilltask[186] = {
 		level = 6,
 		id = 186,
 		need_exp = 20000,
@@ -20317,11 +19539,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.ship_meta_skilltask
-
-	var_2_86[187] = {
+	pg.base.ship_meta_skilltask[187] = {
 		level = 7,
 		id = 187,
 		need_exp = 26000,
@@ -20415,11 +19633,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.ship_meta_skilltask
-
-	var_2_87[188] = {
+	pg.base.ship_meta_skilltask[188] = {
 		level = 8,
 		id = 188,
 		need_exp = 38000,
@@ -20513,11 +19727,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.ship_meta_skilltask
-
-	var_2_88[189] = {
+	pg.base.ship_meta_skilltask[189] = {
 		level = 9,
 		id = 189,
 		need_exp = 60000,
@@ -20611,11 +19821,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.ship_meta_skilltask
-
-	var_2_89[190] = {
+	pg.base.ship_meta_skilltask[190] = {
 		level = 1,
 		id = 190,
 		need_exp = 4000,
@@ -20700,11 +19906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.ship_meta_skilltask
-
-	var_2_90[191] = {
+	pg.base.ship_meta_skilltask[191] = {
 		level = 2,
 		id = 191,
 		need_exp = 5000,
@@ -20783,11 +19985,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.ship_meta_skilltask
-
-	var_2_91[192] = {
+	pg.base.ship_meta_skilltask[192] = {
 		level = 3,
 		id = 192,
 		need_exp = 8000,
@@ -20866,11 +20064,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.ship_meta_skilltask
-
-	var_2_92[193] = {
+	pg.base.ship_meta_skilltask[193] = {
 		level = 4,
 		id = 193,
 		need_exp = 12000,
@@ -20954,11 +20148,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.ship_meta_skilltask
-
-	var_2_93[194] = {
+	pg.base.ship_meta_skilltask[194] = {
 		level = 5,
 		id = 194,
 		need_exp = 16000,
@@ -21047,11 +20237,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.ship_meta_skilltask
-
-	var_2_94[195] = {
+	pg.base.ship_meta_skilltask[195] = {
 		level = 6,
 		id = 195,
 		need_exp = 20000,
@@ -21140,11 +20326,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.ship_meta_skilltask
-
-	var_2_95[196] = {
+	pg.base.ship_meta_skilltask[196] = {
 		level = 7,
 		id = 196,
 		need_exp = 26000,
@@ -21238,11 +20420,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.ship_meta_skilltask
-
-	var_2_96[197] = {
+	pg.base.ship_meta_skilltask[197] = {
 		level = 8,
 		id = 197,
 		need_exp = 38000,
@@ -21336,11 +20514,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.ship_meta_skilltask
-
-	var_2_97[198] = {
+	pg.base.ship_meta_skilltask[198] = {
 		level = 9,
 		id = 198,
 		need_exp = 60000,
@@ -21434,11 +20608,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.ship_meta_skilltask
-
-	var_2_98[199] = {
+	pg.base.ship_meta_skilltask[199] = {
 		level = 1,
 		id = 199,
 		need_exp = 4000,
@@ -21523,8 +20693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.ship_meta_skilltask[200] = {
+	pg.base.ship_meta_skilltask[200] = {
 		level = 2,
 		id = 200,
 		need_exp = 5000,
@@ -21607,11 +20776,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_3_0[201] = {
+	pg.base.ship_meta_skilltask[201] = {
 		level = 3,
 		id = 201,
 		need_exp = 8000,
@@ -21690,11 +20855,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.ship_meta_skilltask
-
-	var_3_1[202] = {
+	pg.base.ship_meta_skilltask[202] = {
 		level = 4,
 		id = 202,
 		need_exp = 12000,
@@ -21778,11 +20939,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.ship_meta_skilltask
-
-	var_3_2[203] = {
+	pg.base.ship_meta_skilltask[203] = {
 		level = 5,
 		id = 203,
 		need_exp = 16000,
@@ -21871,11 +21028,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.ship_meta_skilltask
-
-	var_3_3[204] = {
+	pg.base.ship_meta_skilltask[204] = {
 		level = 6,
 		id = 204,
 		need_exp = 20000,
@@ -21964,11 +21117,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.ship_meta_skilltask
-
-	var_3_4[205] = {
+	pg.base.ship_meta_skilltask[205] = {
 		level = 7,
 		id = 205,
 		need_exp = 26000,
@@ -22062,11 +21211,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.ship_meta_skilltask
-
-	var_3_5[206] = {
+	pg.base.ship_meta_skilltask[206] = {
 		level = 8,
 		id = 206,
 		need_exp = 38000,
@@ -22160,11 +21305,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.ship_meta_skilltask
-
-	var_3_6[207] = {
+	pg.base.ship_meta_skilltask[207] = {
 		level = 9,
 		id = 207,
 		need_exp = 60000,
@@ -22258,11 +21399,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.ship_meta_skilltask
-
-	var_3_7[208] = {
+	pg.base.ship_meta_skilltask[208] = {
 		level = 1,
 		id = 208,
 		need_exp = 4000,
@@ -22347,11 +21484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.ship_meta_skilltask
-
-	var_3_8[209] = {
+	pg.base.ship_meta_skilltask[209] = {
 		level = 2,
 		id = 209,
 		need_exp = 5000,
@@ -22430,11 +21563,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.ship_meta_skilltask
-
-	var_3_9[210] = {
+	pg.base.ship_meta_skilltask[210] = {
 		level = 3,
 		id = 210,
 		need_exp = 8000,
@@ -22513,11 +21642,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.ship_meta_skilltask
-
-	var_3_10[211] = {
+	pg.base.ship_meta_skilltask[211] = {
 		level = 4,
 		id = 211,
 		need_exp = 12000,
@@ -22601,11 +21726,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.ship_meta_skilltask
-
-	var_3_11[212] = {
+	pg.base.ship_meta_skilltask[212] = {
 		level = 5,
 		id = 212,
 		need_exp = 16000,
@@ -22694,11 +21815,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.ship_meta_skilltask
-
-	var_3_12[213] = {
+	pg.base.ship_meta_skilltask[213] = {
 		level = 6,
 		id = 213,
 		need_exp = 20000,
@@ -22787,11 +21904,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.ship_meta_skilltask
-
-	var_3_13[214] = {
+	pg.base.ship_meta_skilltask[214] = {
 		level = 7,
 		id = 214,
 		need_exp = 26000,
@@ -22885,11 +21998,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.ship_meta_skilltask
-
-	var_3_14[215] = {
+	pg.base.ship_meta_skilltask[215] = {
 		level = 8,
 		id = 215,
 		need_exp = 38000,
@@ -22983,11 +22092,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.ship_meta_skilltask
-
-	var_3_15[216] = {
+	pg.base.ship_meta_skilltask[216] = {
 		level = 9,
 		id = 216,
 		need_exp = 60000,
@@ -23081,11 +22186,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.ship_meta_skilltask
-
-	var_3_16[217] = {
+	pg.base.ship_meta_skilltask[217] = {
 		level = 1,
 		id = 217,
 		need_exp = 4000,
@@ -23170,11 +22271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.ship_meta_skilltask
-
-	var_3_17[218] = {
+	pg.base.ship_meta_skilltask[218] = {
 		level = 2,
 		id = 218,
 		need_exp = 5000,
@@ -23253,11 +22350,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.ship_meta_skilltask
-
-	var_3_18[219] = {
+	pg.base.ship_meta_skilltask[219] = {
 		level = 3,
 		id = 219,
 		need_exp = 8000,
@@ -23336,11 +22429,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.ship_meta_skilltask
-
-	var_3_19[220] = {
+	pg.base.ship_meta_skilltask[220] = {
 		level = 4,
 		id = 220,
 		need_exp = 12000,
@@ -23424,11 +22513,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.ship_meta_skilltask
-
-	var_3_20[221] = {
+	pg.base.ship_meta_skilltask[221] = {
 		level = 5,
 		id = 221,
 		need_exp = 16000,
@@ -23517,11 +22602,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.ship_meta_skilltask
-
-	var_3_21[222] = {
+	pg.base.ship_meta_skilltask[222] = {
 		level = 6,
 		id = 222,
 		need_exp = 20000,
@@ -23610,11 +22691,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.ship_meta_skilltask
-
-	var_3_22[223] = {
+	pg.base.ship_meta_skilltask[223] = {
 		level = 7,
 		id = 223,
 		need_exp = 26000,
@@ -23708,11 +22785,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.ship_meta_skilltask
-
-	var_3_23[224] = {
+	pg.base.ship_meta_skilltask[224] = {
 		level = 8,
 		id = 224,
 		need_exp = 38000,
@@ -23806,11 +22879,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.ship_meta_skilltask
-
-	var_3_24[225] = {
+	pg.base.ship_meta_skilltask[225] = {
 		level = 9,
 		id = 225,
 		need_exp = 60000,
@@ -23904,11 +22973,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.ship_meta_skilltask
-
-	var_3_25[226] = {
+	pg.base.ship_meta_skilltask[226] = {
 		level = 1,
 		id = 226,
 		need_exp = 4000,
@@ -23993,11 +23058,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.ship_meta_skilltask
-
-	var_3_26[227] = {
+	pg.base.ship_meta_skilltask[227] = {
 		level = 2,
 		id = 227,
 		need_exp = 5000,
@@ -24076,11 +23137,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.ship_meta_skilltask
-
-	var_3_27[228] = {
+	pg.base.ship_meta_skilltask[228] = {
 		level = 3,
 		id = 228,
 		need_exp = 8000,
@@ -24159,11 +23216,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.ship_meta_skilltask
-
-	var_3_28[229] = {
+	pg.base.ship_meta_skilltask[229] = {
 		level = 4,
 		id = 229,
 		need_exp = 12000,
@@ -24247,11 +23300,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.ship_meta_skilltask
-
-	var_3_29[230] = {
+	pg.base.ship_meta_skilltask[230] = {
 		level = 5,
 		id = 230,
 		need_exp = 16000,
@@ -24340,11 +23389,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.ship_meta_skilltask
-
-	var_3_30[231] = {
+	pg.base.ship_meta_skilltask[231] = {
 		level = 6,
 		id = 231,
 		need_exp = 20000,
@@ -24433,11 +23478,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.ship_meta_skilltask
-
-	var_3_31[232] = {
+	pg.base.ship_meta_skilltask[232] = {
 		level = 7,
 		id = 232,
 		need_exp = 26000,
@@ -24531,11 +23572,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.ship_meta_skilltask
-
-	var_3_32[233] = {
+	pg.base.ship_meta_skilltask[233] = {
 		level = 8,
 		id = 233,
 		need_exp = 38000,
@@ -24629,11 +23666,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.ship_meta_skilltask
-
-	var_3_33[234] = {
+	pg.base.ship_meta_skilltask[234] = {
 		level = 9,
 		id = 234,
 		need_exp = 60000,
@@ -24727,11 +23760,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.ship_meta_skilltask
-
-	var_3_34[235] = {
+	pg.base.ship_meta_skilltask[235] = {
 		level = 1,
 		id = 235,
 		need_exp = 4000,
@@ -24816,11 +23845,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.ship_meta_skilltask
-
-	var_3_35[236] = {
+	pg.base.ship_meta_skilltask[236] = {
 		level = 2,
 		id = 236,
 		need_exp = 5000,
@@ -24899,11 +23924,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.ship_meta_skilltask
-
-	var_3_36[237] = {
+	pg.base.ship_meta_skilltask[237] = {
 		level = 3,
 		id = 237,
 		need_exp = 8000,
@@ -24982,11 +24003,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.ship_meta_skilltask
-
-	var_3_37[238] = {
+	pg.base.ship_meta_skilltask[238] = {
 		level = 4,
 		id = 238,
 		need_exp = 12000,
@@ -25070,11 +24087,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.ship_meta_skilltask
-
-	var_3_38[239] = {
+	pg.base.ship_meta_skilltask[239] = {
 		level = 5,
 		id = 239,
 		need_exp = 16000,
@@ -25163,11 +24176,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.ship_meta_skilltask
-
-	var_3_39[240] = {
+	pg.base.ship_meta_skilltask[240] = {
 		level = 6,
 		id = 240,
 		need_exp = 20000,
@@ -25256,11 +24265,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.ship_meta_skilltask
-
-	var_3_40[241] = {
+	pg.base.ship_meta_skilltask[241] = {
 		level = 7,
 		id = 241,
 		need_exp = 26000,
@@ -25354,11 +24359,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.ship_meta_skilltask
-
-	var_3_41[242] = {
+	pg.base.ship_meta_skilltask[242] = {
 		level = 8,
 		id = 242,
 		need_exp = 38000,
@@ -25452,11 +24453,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.ship_meta_skilltask
-
-	var_3_42[243] = {
+	pg.base.ship_meta_skilltask[243] = {
 		level = 9,
 		id = 243,
 		need_exp = 60000,
@@ -25550,11 +24547,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.ship_meta_skilltask
-
-	var_3_43[244] = {
+	pg.base.ship_meta_skilltask[244] = {
 		level = 1,
 		id = 244,
 		need_exp = 4000,
@@ -25639,11 +24632,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.ship_meta_skilltask
-
-	var_3_44[245] = {
+	pg.base.ship_meta_skilltask[245] = {
 		level = 2,
 		id = 245,
 		need_exp = 5000,
@@ -25722,11 +24711,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.ship_meta_skilltask
-
-	var_3_45[246] = {
+	pg.base.ship_meta_skilltask[246] = {
 		level = 3,
 		id = 246,
 		need_exp = 8000,
@@ -25805,11 +24790,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.ship_meta_skilltask
-
-	var_3_46[247] = {
+	pg.base.ship_meta_skilltask[247] = {
 		level = 4,
 		id = 247,
 		need_exp = 12000,
@@ -25893,11 +24874,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.ship_meta_skilltask
-
-	var_3_47[248] = {
+	pg.base.ship_meta_skilltask[248] = {
 		level = 5,
 		id = 248,
 		need_exp = 16000,
@@ -25986,11 +24963,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.ship_meta_skilltask
-
-	var_3_48[249] = {
+	pg.base.ship_meta_skilltask[249] = {
 		level = 6,
 		id = 249,
 		need_exp = 20000,
@@ -26079,11 +25052,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.ship_meta_skilltask
-
-	var_3_49[250] = {
+	pg.base.ship_meta_skilltask[250] = {
 		level = 7,
 		id = 250,
 		need_exp = 26000,
@@ -26177,11 +25146,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.ship_meta_skilltask
-
-	var_3_50[251] = {
+	pg.base.ship_meta_skilltask[251] = {
 		level = 8,
 		id = 251,
 		need_exp = 38000,
@@ -26275,11 +25240,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.ship_meta_skilltask
-
-	var_3_51[252] = {
+	pg.base.ship_meta_skilltask[252] = {
 		level = 9,
 		id = 252,
 		need_exp = 60000,
@@ -26373,11 +25334,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.ship_meta_skilltask
-
-	var_3_52[253] = {
+	pg.base.ship_meta_skilltask[253] = {
 		level = 1,
 		id = 253,
 		need_exp = 4000,
@@ -26462,11 +25419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.ship_meta_skilltask
-
-	var_3_53[254] = {
+	pg.base.ship_meta_skilltask[254] = {
 		level = 2,
 		id = 254,
 		need_exp = 5000,
@@ -26545,11 +25498,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.ship_meta_skilltask
-
-	var_3_54[255] = {
+	pg.base.ship_meta_skilltask[255] = {
 		level = 3,
 		id = 255,
 		need_exp = 8000,
@@ -26628,11 +25577,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.ship_meta_skilltask
-
-	var_3_55[256] = {
+	pg.base.ship_meta_skilltask[256] = {
 		level = 4,
 		id = 256,
 		need_exp = 12000,
@@ -26716,11 +25661,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.ship_meta_skilltask
-
-	var_3_56[257] = {
+	pg.base.ship_meta_skilltask[257] = {
 		level = 5,
 		id = 257,
 		need_exp = 16000,
@@ -26809,11 +25750,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.ship_meta_skilltask
-
-	var_3_57[258] = {
+	pg.base.ship_meta_skilltask[258] = {
 		level = 6,
 		id = 258,
 		need_exp = 20000,
@@ -26902,11 +25839,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.ship_meta_skilltask
-
-	var_3_58[259] = {
+	pg.base.ship_meta_skilltask[259] = {
 		level = 7,
 		id = 259,
 		need_exp = 26000,
@@ -27000,11 +25933,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.ship_meta_skilltask
-
-	var_3_59[260] = {
+	pg.base.ship_meta_skilltask[260] = {
 		level = 8,
 		id = 260,
 		need_exp = 38000,
@@ -27098,11 +26027,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.ship_meta_skilltask
-
-	var_3_60[261] = {
+	pg.base.ship_meta_skilltask[261] = {
 		level = 9,
 		id = 261,
 		need_exp = 60000,
@@ -27196,11 +26121,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.ship_meta_skilltask
-
-	var_3_61[262] = {
+	pg.base.ship_meta_skilltask[262] = {
 		level = 1,
 		id = 262,
 		need_exp = 4000,
@@ -27285,11 +26206,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.ship_meta_skilltask
-
-	var_3_62[263] = {
+	pg.base.ship_meta_skilltask[263] = {
 		level = 2,
 		id = 263,
 		need_exp = 5000,
@@ -27368,11 +26285,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.ship_meta_skilltask
-
-	var_3_63[264] = {
+	pg.base.ship_meta_skilltask[264] = {
 		level = 3,
 		id = 264,
 		need_exp = 8000,
@@ -27451,11 +26364,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.ship_meta_skilltask
-
-	var_3_64[265] = {
+	pg.base.ship_meta_skilltask[265] = {
 		level = 4,
 		id = 265,
 		need_exp = 12000,
@@ -27539,11 +26448,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.ship_meta_skilltask
-
-	var_3_65[266] = {
+	pg.base.ship_meta_skilltask[266] = {
 		level = 5,
 		id = 266,
 		need_exp = 16000,
@@ -27632,11 +26537,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.ship_meta_skilltask
-
-	var_3_66[267] = {
+	pg.base.ship_meta_skilltask[267] = {
 		level = 6,
 		id = 267,
 		need_exp = 20000,
@@ -27725,11 +26626,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.ship_meta_skilltask
-
-	var_3_67[268] = {
+	pg.base.ship_meta_skilltask[268] = {
 		level = 7,
 		id = 268,
 		need_exp = 26000,
@@ -27823,11 +26720,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.ship_meta_skilltask
-
-	var_3_68[269] = {
+	pg.base.ship_meta_skilltask[269] = {
 		level = 8,
 		id = 269,
 		need_exp = 38000,
@@ -27921,11 +26814,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.ship_meta_skilltask
-
-	var_3_69[270] = {
+	pg.base.ship_meta_skilltask[270] = {
 		level = 9,
 		id = 270,
 		need_exp = 60000,
@@ -28019,11 +26908,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.ship_meta_skilltask
-
-	var_3_70[271] = {
+	pg.base.ship_meta_skilltask[271] = {
 		level = 1,
 		id = 271,
 		need_exp = 4000,
@@ -28108,11 +26993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.ship_meta_skilltask
-
-	var_3_71[272] = {
+	pg.base.ship_meta_skilltask[272] = {
 		level = 2,
 		id = 272,
 		need_exp = 5000,
@@ -28191,11 +27072,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.ship_meta_skilltask
-
-	var_3_72[273] = {
+	pg.base.ship_meta_skilltask[273] = {
 		level = 3,
 		id = 273,
 		need_exp = 8000,
@@ -28274,11 +27151,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.ship_meta_skilltask
-
-	var_3_73[274] = {
+	pg.base.ship_meta_skilltask[274] = {
 		level = 4,
 		id = 274,
 		need_exp = 12000,
@@ -28362,11 +27235,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.ship_meta_skilltask
-
-	var_3_74[275] = {
+	pg.base.ship_meta_skilltask[275] = {
 		level = 5,
 		id = 275,
 		need_exp = 16000,
@@ -28455,11 +27324,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.ship_meta_skilltask
-
-	var_3_75[276] = {
+	pg.base.ship_meta_skilltask[276] = {
 		level = 6,
 		id = 276,
 		need_exp = 20000,
@@ -28548,11 +27413,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.ship_meta_skilltask
-
-	var_3_76[277] = {
+	pg.base.ship_meta_skilltask[277] = {
 		level = 7,
 		id = 277,
 		need_exp = 26000,
@@ -28646,11 +27507,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.ship_meta_skilltask
-
-	var_3_77[278] = {
+	pg.base.ship_meta_skilltask[278] = {
 		level = 8,
 		id = 278,
 		need_exp = 38000,
@@ -28744,11 +27601,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.ship_meta_skilltask
-
-	var_3_78[279] = {
+	pg.base.ship_meta_skilltask[279] = {
 		level = 9,
 		id = 279,
 		need_exp = 60000,
@@ -28842,11 +27695,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.ship_meta_skilltask
-
-	var_3_79[280] = {
+	pg.base.ship_meta_skilltask[280] = {
 		level = 1,
 		id = 280,
 		need_exp = 4000,
@@ -28931,11 +27780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.ship_meta_skilltask
-
-	var_3_80[281] = {
+	pg.base.ship_meta_skilltask[281] = {
 		level = 2,
 		id = 281,
 		need_exp = 5000,
@@ -29014,11 +27859,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.ship_meta_skilltask
-
-	var_3_81[282] = {
+	pg.base.ship_meta_skilltask[282] = {
 		level = 3,
 		id = 282,
 		need_exp = 8000,
@@ -29097,11 +27938,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.ship_meta_skilltask
-
-	var_3_82[283] = {
+	pg.base.ship_meta_skilltask[283] = {
 		level = 4,
 		id = 283,
 		need_exp = 12000,
@@ -29185,11 +28022,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.ship_meta_skilltask
-
-	var_3_83[284] = {
+	pg.base.ship_meta_skilltask[284] = {
 		level = 5,
 		id = 284,
 		need_exp = 16000,
@@ -29278,11 +28111,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.ship_meta_skilltask
-
-	var_3_84[285] = {
+	pg.base.ship_meta_skilltask[285] = {
 		level = 6,
 		id = 285,
 		need_exp = 20000,
@@ -29371,11 +28200,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.ship_meta_skilltask
-
-	var_3_85[286] = {
+	pg.base.ship_meta_skilltask[286] = {
 		level = 7,
 		id = 286,
 		need_exp = 26000,
@@ -29469,11 +28294,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.ship_meta_skilltask
-
-	var_3_86[287] = {
+	pg.base.ship_meta_skilltask[287] = {
 		level = 8,
 		id = 287,
 		need_exp = 38000,
@@ -29567,11 +28388,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.ship_meta_skilltask
-
-	var_3_87[288] = {
+	pg.base.ship_meta_skilltask[288] = {
 		level = 9,
 		id = 288,
 		need_exp = 60000,
@@ -29665,11 +28482,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.ship_meta_skilltask
-
-	var_3_88[289] = {
+	pg.base.ship_meta_skilltask[289] = {
 		level = 1,
 		id = 289,
 		need_exp = 4000,
@@ -29754,11 +28567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.ship_meta_skilltask
-
-	var_3_89[290] = {
+	pg.base.ship_meta_skilltask[290] = {
 		level = 2,
 		id = 290,
 		need_exp = 5000,
@@ -29837,11 +28646,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.ship_meta_skilltask
-
-	var_3_90[291] = {
+	pg.base.ship_meta_skilltask[291] = {
 		level = 3,
 		id = 291,
 		need_exp = 8000,
@@ -29920,11 +28725,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.ship_meta_skilltask
-
-	var_3_91[292] = {
+	pg.base.ship_meta_skilltask[292] = {
 		level = 4,
 		id = 292,
 		need_exp = 12000,
@@ -30008,11 +28809,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.ship_meta_skilltask
-
-	var_3_92[293] = {
+	pg.base.ship_meta_skilltask[293] = {
 		level = 5,
 		id = 293,
 		need_exp = 16000,
@@ -30101,11 +28898,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.ship_meta_skilltask
-
-	var_3_93[294] = {
+	pg.base.ship_meta_skilltask[294] = {
 		level = 6,
 		id = 294,
 		need_exp = 20000,
@@ -30194,11 +28987,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.ship_meta_skilltask
-
-	var_3_94[295] = {
+	pg.base.ship_meta_skilltask[295] = {
 		level = 7,
 		id = 295,
 		need_exp = 26000,
@@ -30292,11 +29081,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.ship_meta_skilltask
-
-	var_3_95[296] = {
+	pg.base.ship_meta_skilltask[296] = {
 		level = 8,
 		id = 296,
 		need_exp = 38000,
@@ -30390,11 +29175,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.ship_meta_skilltask
-
-	var_3_96[297] = {
+	pg.base.ship_meta_skilltask[297] = {
 		level = 9,
 		id = 297,
 		need_exp = 60000,
@@ -30488,11 +29269,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.ship_meta_skilltask
-
-	var_3_97[298] = {
+	pg.base.ship_meta_skilltask[298] = {
 		level = 1,
 		id = 298,
 		need_exp = 4000,
@@ -30577,11 +29354,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.ship_meta_skilltask
-
-	var_3_98[299] = {
+	pg.base.ship_meta_skilltask[299] = {
 		level = 2,
 		id = 299,
 		need_exp = 5000,
@@ -30660,8 +29433,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_3_98
-	var_3_98.base.ship_meta_skilltask[300] = {
+	pg.base.ship_meta_skilltask[300] = {
 		level = 3,
 		id = 300,
 		need_exp = 8000,
@@ -30744,11 +29516,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_4_0[301] = {
+	pg.base.ship_meta_skilltask[301] = {
 		level = 4,
 		id = 301,
 		need_exp = 12000,
@@ -30832,11 +29600,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.ship_meta_skilltask
-
-	var_4_1[302] = {
+	pg.base.ship_meta_skilltask[302] = {
 		level = 5,
 		id = 302,
 		need_exp = 16000,
@@ -30925,11 +29689,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.ship_meta_skilltask
-
-	var_4_2[303] = {
+	pg.base.ship_meta_skilltask[303] = {
 		level = 6,
 		id = 303,
 		need_exp = 20000,
@@ -31018,11 +29778,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.ship_meta_skilltask
-
-	var_4_3[304] = {
+	pg.base.ship_meta_skilltask[304] = {
 		level = 7,
 		id = 304,
 		need_exp = 26000,
@@ -31116,11 +29872,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.ship_meta_skilltask
-
-	var_4_4[305] = {
+	pg.base.ship_meta_skilltask[305] = {
 		level = 8,
 		id = 305,
 		need_exp = 38000,
@@ -31214,11 +29966,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.ship_meta_skilltask
-
-	var_4_5[306] = {
+	pg.base.ship_meta_skilltask[306] = {
 		level = 9,
 		id = 306,
 		need_exp = 60000,
@@ -31312,11 +30060,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.ship_meta_skilltask
-
-	var_4_6[307] = {
+	pg.base.ship_meta_skilltask[307] = {
 		level = 1,
 		id = 307,
 		need_exp = 4000,
@@ -31401,11 +30145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.ship_meta_skilltask
-
-	var_4_7[308] = {
+	pg.base.ship_meta_skilltask[308] = {
 		level = 2,
 		id = 308,
 		need_exp = 5000,
@@ -31484,11 +30224,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.ship_meta_skilltask
-
-	var_4_8[309] = {
+	pg.base.ship_meta_skilltask[309] = {
 		level = 3,
 		id = 309,
 		need_exp = 8000,
@@ -31567,11 +30303,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.ship_meta_skilltask
-
-	var_4_9[310] = {
+	pg.base.ship_meta_skilltask[310] = {
 		level = 4,
 		id = 310,
 		need_exp = 12000,
@@ -31655,11 +30387,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.ship_meta_skilltask
-
-	var_4_10[311] = {
+	pg.base.ship_meta_skilltask[311] = {
 		level = 5,
 		id = 311,
 		need_exp = 16000,
@@ -31748,11 +30476,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.ship_meta_skilltask
-
-	var_4_11[312] = {
+	pg.base.ship_meta_skilltask[312] = {
 		level = 6,
 		id = 312,
 		need_exp = 20000,
@@ -31841,11 +30565,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.ship_meta_skilltask
-
-	var_4_12[313] = {
+	pg.base.ship_meta_skilltask[313] = {
 		level = 7,
 		id = 313,
 		need_exp = 26000,
@@ -31939,11 +30659,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.ship_meta_skilltask
-
-	var_4_13[314] = {
+	pg.base.ship_meta_skilltask[314] = {
 		level = 8,
 		id = 314,
 		need_exp = 38000,
@@ -32037,11 +30753,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.ship_meta_skilltask
-
-	var_4_14[315] = {
+	pg.base.ship_meta_skilltask[315] = {
 		level = 9,
 		id = 315,
 		need_exp = 60000,
@@ -32135,11 +30847,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.ship_meta_skilltask
-
-	var_4_15[316] = {
+	pg.base.ship_meta_skilltask[316] = {
 		level = 1,
 		id = 316,
 		need_exp = 4000,
@@ -32224,11 +30932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.ship_meta_skilltask
-
-	var_4_16[317] = {
+	pg.base.ship_meta_skilltask[317] = {
 		level = 2,
 		id = 317,
 		need_exp = 5000,
@@ -32307,11 +31011,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.ship_meta_skilltask
-
-	var_4_17[318] = {
+	pg.base.ship_meta_skilltask[318] = {
 		level = 3,
 		id = 318,
 		need_exp = 8000,
@@ -32390,11 +31090,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.ship_meta_skilltask
-
-	var_4_18[319] = {
+	pg.base.ship_meta_skilltask[319] = {
 		level = 4,
 		id = 319,
 		need_exp = 12000,
@@ -32478,11 +31174,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.ship_meta_skilltask
-
-	var_4_19[320] = {
+	pg.base.ship_meta_skilltask[320] = {
 		level = 5,
 		id = 320,
 		need_exp = 16000,
@@ -32571,11 +31263,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.ship_meta_skilltask
-
-	var_4_20[321] = {
+	pg.base.ship_meta_skilltask[321] = {
 		level = 6,
 		id = 321,
 		need_exp = 20000,
@@ -32664,11 +31352,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.ship_meta_skilltask
-
-	var_4_21[322] = {
+	pg.base.ship_meta_skilltask[322] = {
 		level = 7,
 		id = 322,
 		need_exp = 26000,
@@ -32762,11 +31446,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.ship_meta_skilltask
-
-	var_4_22[323] = {
+	pg.base.ship_meta_skilltask[323] = {
 		level = 8,
 		id = 323,
 		need_exp = 38000,
@@ -32860,11 +31540,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.ship_meta_skilltask
-
-	var_4_23[324] = {
+	pg.base.ship_meta_skilltask[324] = {
 		level = 9,
 		id = 324,
 		need_exp = 60000,
@@ -32958,11 +31634,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.ship_meta_skilltask
-
-	var_4_24[325] = {
+	pg.base.ship_meta_skilltask[325] = {
 		level = 1,
 		id = 325,
 		need_exp = 4000,
@@ -33047,11 +31719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.ship_meta_skilltask
-
-	var_4_25[326] = {
+	pg.base.ship_meta_skilltask[326] = {
 		level = 2,
 		id = 326,
 		need_exp = 5000,
@@ -33130,11 +31798,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.ship_meta_skilltask
-
-	var_4_26[327] = {
+	pg.base.ship_meta_skilltask[327] = {
 		level = 3,
 		id = 327,
 		need_exp = 8000,
@@ -33213,11 +31877,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.ship_meta_skilltask
-
-	var_4_27[328] = {
+	pg.base.ship_meta_skilltask[328] = {
 		level = 4,
 		id = 328,
 		need_exp = 12000,
@@ -33301,11 +31961,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.ship_meta_skilltask
-
-	var_4_28[329] = {
+	pg.base.ship_meta_skilltask[329] = {
 		level = 5,
 		id = 329,
 		need_exp = 16000,
@@ -33394,11 +32050,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.ship_meta_skilltask
-
-	var_4_29[330] = {
+	pg.base.ship_meta_skilltask[330] = {
 		level = 6,
 		id = 330,
 		need_exp = 20000,
@@ -33487,11 +32139,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.ship_meta_skilltask
-
-	var_4_30[331] = {
+	pg.base.ship_meta_skilltask[331] = {
 		level = 7,
 		id = 331,
 		need_exp = 26000,
@@ -33585,11 +32233,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.ship_meta_skilltask
-
-	var_4_31[332] = {
+	pg.base.ship_meta_skilltask[332] = {
 		level = 8,
 		id = 332,
 		need_exp = 38000,
@@ -33683,11 +32327,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.ship_meta_skilltask
-
-	var_4_32[333] = {
+	pg.base.ship_meta_skilltask[333] = {
 		level = 9,
 		id = 333,
 		need_exp = 60000,
@@ -33781,11 +32421,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.ship_meta_skilltask
-
-	var_4_33[334] = {
+	pg.base.ship_meta_skilltask[334] = {
 		level = 1,
 		id = 334,
 		need_exp = 4000,
@@ -33870,11 +32506,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.ship_meta_skilltask
-
-	var_4_34[335] = {
+	pg.base.ship_meta_skilltask[335] = {
 		level = 2,
 		id = 335,
 		need_exp = 5000,
@@ -33953,11 +32585,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.ship_meta_skilltask
-
-	var_4_35[336] = {
+	pg.base.ship_meta_skilltask[336] = {
 		level = 3,
 		id = 336,
 		need_exp = 8000,
@@ -34036,11 +32664,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.ship_meta_skilltask
-
-	var_4_36[337] = {
+	pg.base.ship_meta_skilltask[337] = {
 		level = 4,
 		id = 337,
 		need_exp = 12000,
@@ -34124,11 +32748,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.ship_meta_skilltask
-
-	var_4_37[338] = {
+	pg.base.ship_meta_skilltask[338] = {
 		level = 5,
 		id = 338,
 		need_exp = 16000,
@@ -34217,11 +32837,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.ship_meta_skilltask
-
-	var_4_38[339] = {
+	pg.base.ship_meta_skilltask[339] = {
 		level = 6,
 		id = 339,
 		need_exp = 20000,
@@ -34310,11 +32926,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.ship_meta_skilltask
-
-	var_4_39[340] = {
+	pg.base.ship_meta_skilltask[340] = {
 		level = 7,
 		id = 340,
 		need_exp = 26000,
@@ -34408,11 +33020,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.ship_meta_skilltask
-
-	var_4_40[341] = {
+	pg.base.ship_meta_skilltask[341] = {
 		level = 8,
 		id = 341,
 		need_exp = 38000,
@@ -34506,11 +33114,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.ship_meta_skilltask
-
-	var_4_41[342] = {
+	pg.base.ship_meta_skilltask[342] = {
 		level = 9,
 		id = 342,
 		need_exp = 60000,
@@ -34604,11 +33208,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.ship_meta_skilltask
-
-	var_4_42[343] = {
+	pg.base.ship_meta_skilltask[343] = {
 		level = 1,
 		id = 343,
 		need_exp = 4000,
@@ -34693,11 +33293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.ship_meta_skilltask
-
-	var_4_43[344] = {
+	pg.base.ship_meta_skilltask[344] = {
 		level = 2,
 		id = 344,
 		need_exp = 5000,
@@ -34776,11 +33372,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.ship_meta_skilltask
-
-	var_4_44[345] = {
+	pg.base.ship_meta_skilltask[345] = {
 		level = 3,
 		id = 345,
 		need_exp = 8000,
@@ -34859,11 +33451,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.ship_meta_skilltask
-
-	var_4_45[346] = {
+	pg.base.ship_meta_skilltask[346] = {
 		level = 4,
 		id = 346,
 		need_exp = 12000,
@@ -34947,11 +33535,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.ship_meta_skilltask
-
-	var_4_46[347] = {
+	pg.base.ship_meta_skilltask[347] = {
 		level = 5,
 		id = 347,
 		need_exp = 16000,
@@ -35040,11 +33624,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.ship_meta_skilltask
-
-	var_4_47[348] = {
+	pg.base.ship_meta_skilltask[348] = {
 		level = 6,
 		id = 348,
 		need_exp = 20000,
@@ -35133,11 +33713,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.ship_meta_skilltask
-
-	var_4_48[349] = {
+	pg.base.ship_meta_skilltask[349] = {
 		level = 7,
 		id = 349,
 		need_exp = 26000,
@@ -35231,11 +33807,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.ship_meta_skilltask
-
-	var_4_49[350] = {
+	pg.base.ship_meta_skilltask[350] = {
 		level = 8,
 		id = 350,
 		need_exp = 38000,
@@ -35329,11 +33901,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.ship_meta_skilltask
-
-	var_4_50[351] = {
+	pg.base.ship_meta_skilltask[351] = {
 		level = 9,
 		id = 351,
 		need_exp = 60000,
@@ -35427,11 +33995,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.ship_meta_skilltask
-
-	var_4_51[352] = {
+	pg.base.ship_meta_skilltask[352] = {
 		level = 1,
 		id = 352,
 		need_exp = 4000,
@@ -35516,11 +34080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.ship_meta_skilltask
-
-	var_4_52[353] = {
+	pg.base.ship_meta_skilltask[353] = {
 		level = 2,
 		id = 353,
 		need_exp = 5000,
@@ -35599,11 +34159,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.ship_meta_skilltask
-
-	var_4_53[354] = {
+	pg.base.ship_meta_skilltask[354] = {
 		level = 3,
 		id = 354,
 		need_exp = 8000,
@@ -35682,11 +34238,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.ship_meta_skilltask
-
-	var_4_54[355] = {
+	pg.base.ship_meta_skilltask[355] = {
 		level = 4,
 		id = 355,
 		need_exp = 12000,
@@ -35770,11 +34322,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.ship_meta_skilltask
-
-	var_4_55[356] = {
+	pg.base.ship_meta_skilltask[356] = {
 		level = 5,
 		id = 356,
 		need_exp = 16000,
@@ -35863,11 +34411,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.ship_meta_skilltask
-
-	var_4_56[357] = {
+	pg.base.ship_meta_skilltask[357] = {
 		level = 6,
 		id = 357,
 		need_exp = 20000,
@@ -35956,11 +34500,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.ship_meta_skilltask
-
-	var_4_57[358] = {
+	pg.base.ship_meta_skilltask[358] = {
 		level = 7,
 		id = 358,
 		need_exp = 26000,
@@ -36054,11 +34594,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.ship_meta_skilltask
-
-	var_4_58[359] = {
+	pg.base.ship_meta_skilltask[359] = {
 		level = 8,
 		id = 359,
 		need_exp = 38000,
@@ -36152,11 +34688,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.ship_meta_skilltask
-
-	var_4_59[360] = {
+	pg.base.ship_meta_skilltask[360] = {
 		level = 9,
 		id = 360,
 		need_exp = 60000,
@@ -36250,11 +34782,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.ship_meta_skilltask
-
-	var_4_60[361] = {
+	pg.base.ship_meta_skilltask[361] = {
 		level = 1,
 		id = 361,
 		need_exp = 4000,
@@ -36339,11 +34867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.ship_meta_skilltask
-
-	var_4_61[362] = {
+	pg.base.ship_meta_skilltask[362] = {
 		level = 2,
 		id = 362,
 		need_exp = 5000,
@@ -36422,11 +34946,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.ship_meta_skilltask
-
-	var_4_62[363] = {
+	pg.base.ship_meta_skilltask[363] = {
 		level = 3,
 		id = 363,
 		need_exp = 8000,
@@ -36505,11 +35025,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.ship_meta_skilltask
-
-	var_4_63[364] = {
+	pg.base.ship_meta_skilltask[364] = {
 		level = 4,
 		id = 364,
 		need_exp = 12000,
@@ -36593,11 +35109,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.ship_meta_skilltask
-
-	var_4_64[365] = {
+	pg.base.ship_meta_skilltask[365] = {
 		level = 5,
 		id = 365,
 		need_exp = 16000,
@@ -36686,11 +35198,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.ship_meta_skilltask
-
-	var_4_65[366] = {
+	pg.base.ship_meta_skilltask[366] = {
 		level = 6,
 		id = 366,
 		need_exp = 20000,
@@ -36779,11 +35287,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.ship_meta_skilltask
-
-	var_4_66[367] = {
+	pg.base.ship_meta_skilltask[367] = {
 		level = 7,
 		id = 367,
 		need_exp = 26000,
@@ -36877,11 +35381,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.ship_meta_skilltask
-
-	var_4_67[368] = {
+	pg.base.ship_meta_skilltask[368] = {
 		level = 8,
 		id = 368,
 		need_exp = 38000,
@@ -36975,11 +35475,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.ship_meta_skilltask
-
-	var_4_68[369] = {
+	pg.base.ship_meta_skilltask[369] = {
 		level = 9,
 		id = 369,
 		need_exp = 60000,
@@ -37073,11 +35569,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.ship_meta_skilltask
-
-	var_4_69[370] = {
+	pg.base.ship_meta_skilltask[370] = {
 		level = 1,
 		id = 370,
 		need_exp = 4000,
@@ -37162,11 +35654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.ship_meta_skilltask
-
-	var_4_70[371] = {
+	pg.base.ship_meta_skilltask[371] = {
 		level = 2,
 		id = 371,
 		need_exp = 5000,
@@ -37245,11 +35733,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.ship_meta_skilltask
-
-	var_4_71[372] = {
+	pg.base.ship_meta_skilltask[372] = {
 		level = 3,
 		id = 372,
 		need_exp = 8000,
@@ -37328,11 +35812,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.ship_meta_skilltask
-
-	var_4_72[373] = {
+	pg.base.ship_meta_skilltask[373] = {
 		level = 4,
 		id = 373,
 		need_exp = 12000,
@@ -37416,11 +35896,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.ship_meta_skilltask
-
-	var_4_73[374] = {
+	pg.base.ship_meta_skilltask[374] = {
 		level = 5,
 		id = 374,
 		need_exp = 16000,
@@ -37509,11 +35985,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.ship_meta_skilltask
-
-	var_4_74[375] = {
+	pg.base.ship_meta_skilltask[375] = {
 		level = 6,
 		id = 375,
 		need_exp = 20000,
@@ -37602,11 +36074,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.ship_meta_skilltask
-
-	var_4_75[376] = {
+	pg.base.ship_meta_skilltask[376] = {
 		level = 7,
 		id = 376,
 		need_exp = 26000,
@@ -37700,11 +36168,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.ship_meta_skilltask
-
-	var_4_76[377] = {
+	pg.base.ship_meta_skilltask[377] = {
 		level = 8,
 		id = 377,
 		need_exp = 38000,
@@ -37798,11 +36262,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.ship_meta_skilltask
-
-	var_4_77[378] = {
+	pg.base.ship_meta_skilltask[378] = {
 		level = 9,
 		id = 378,
 		need_exp = 60000,
@@ -37896,11 +36356,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.ship_meta_skilltask
-
-	var_4_78[379] = {
+	pg.base.ship_meta_skilltask[379] = {
 		level = 1,
 		id = 379,
 		need_exp = 2000,
@@ -37985,11 +36441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.ship_meta_skilltask
-
-	var_4_79[380] = {
+	pg.base.ship_meta_skilltask[380] = {
 		level = 2,
 		id = 380,
 		need_exp = 2500,
@@ -38068,11 +36520,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.ship_meta_skilltask
-
-	var_4_80[381] = {
+	pg.base.ship_meta_skilltask[381] = {
 		level = 3,
 		id = 381,
 		need_exp = 4000,
@@ -38151,11 +36599,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.ship_meta_skilltask
-
-	var_4_81[382] = {
+	pg.base.ship_meta_skilltask[382] = {
 		level = 4,
 		id = 382,
 		need_exp = 6000,
@@ -38239,11 +36683,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.ship_meta_skilltask
-
-	var_4_82[383] = {
+	pg.base.ship_meta_skilltask[383] = {
 		level = 5,
 		id = 383,
 		need_exp = 8000,
@@ -38332,11 +36772,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.ship_meta_skilltask
-
-	var_4_83[384] = {
+	pg.base.ship_meta_skilltask[384] = {
 		level = 6,
 		id = 384,
 		need_exp = 10000,
@@ -38425,11 +36861,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.ship_meta_skilltask
-
-	var_4_84[385] = {
+	pg.base.ship_meta_skilltask[385] = {
 		level = 7,
 		id = 385,
 		need_exp = 13000,
@@ -38523,11 +36955,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.ship_meta_skilltask
-
-	var_4_85[386] = {
+	pg.base.ship_meta_skilltask[386] = {
 		level = 8,
 		id = 386,
 		need_exp = 19000,
@@ -38621,11 +37049,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.ship_meta_skilltask
-
-	var_4_86[387] = {
+	pg.base.ship_meta_skilltask[387] = {
 		level = 9,
 		id = 387,
 		need_exp = 30000,
@@ -38719,11 +37143,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.ship_meta_skilltask
-
-	var_4_87[388] = {
+	pg.base.ship_meta_skilltask[388] = {
 		level = 1,
 		id = 388,
 		need_exp = 2000,
@@ -38808,11 +37228,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.ship_meta_skilltask
-
-	var_4_88[389] = {
+	pg.base.ship_meta_skilltask[389] = {
 		level = 2,
 		id = 389,
 		need_exp = 2500,
@@ -38891,11 +37307,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.ship_meta_skilltask
-
-	var_4_89[390] = {
+	pg.base.ship_meta_skilltask[390] = {
 		level = 3,
 		id = 390,
 		need_exp = 4000,
@@ -38974,11 +37386,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.ship_meta_skilltask
-
-	var_4_90[391] = {
+	pg.base.ship_meta_skilltask[391] = {
 		level = 4,
 		id = 391,
 		need_exp = 6000,
@@ -39062,11 +37470,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.ship_meta_skilltask
-
-	var_4_91[392] = {
+	pg.base.ship_meta_skilltask[392] = {
 		level = 5,
 		id = 392,
 		need_exp = 8000,
@@ -39155,11 +37559,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.ship_meta_skilltask
-
-	var_4_92[393] = {
+	pg.base.ship_meta_skilltask[393] = {
 		level = 6,
 		id = 393,
 		need_exp = 10000,
@@ -39248,11 +37648,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.ship_meta_skilltask
-
-	var_4_93[394] = {
+	pg.base.ship_meta_skilltask[394] = {
 		level = 7,
 		id = 394,
 		need_exp = 13000,
@@ -39346,11 +37742,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.ship_meta_skilltask
-
-	var_4_94[395] = {
+	pg.base.ship_meta_skilltask[395] = {
 		level = 8,
 		id = 395,
 		need_exp = 19000,
@@ -39444,11 +37836,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.ship_meta_skilltask
-
-	var_4_95[396] = {
+	pg.base.ship_meta_skilltask[396] = {
 		level = 9,
 		id = 396,
 		need_exp = 30000,
@@ -39542,11 +37930,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.ship_meta_skilltask
-
-	var_4_96[397] = {
+	pg.base.ship_meta_skilltask[397] = {
 		level = 1,
 		id = 397,
 		need_exp = 2000,
@@ -39631,11 +38015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.ship_meta_skilltask
-
-	var_4_97[398] = {
+	pg.base.ship_meta_skilltask[398] = {
 		level = 2,
 		id = 398,
 		need_exp = 2500,
@@ -39714,11 +38094,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.ship_meta_skilltask
-
-	var_4_98[399] = {
+	pg.base.ship_meta_skilltask[399] = {
 		level = 3,
 		id = 399,
 		need_exp = 4000,
@@ -39797,8 +38173,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_4_98
-	var_4_98.base.ship_meta_skilltask[400] = {
+	pg.base.ship_meta_skilltask[400] = {
 		level = 4,
 		id = 400,
 		need_exp = 6000,
@@ -39886,11 +38261,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_5_0[401] = {
+	pg.base.ship_meta_skilltask[401] = {
 		level = 5,
 		id = 401,
 		need_exp = 8000,
@@ -39979,11 +38350,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.ship_meta_skilltask
-
-	var_5_1[402] = {
+	pg.base.ship_meta_skilltask[402] = {
 		level = 6,
 		id = 402,
 		need_exp = 10000,
@@ -40072,11 +38439,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.ship_meta_skilltask
-
-	var_5_2[403] = {
+	pg.base.ship_meta_skilltask[403] = {
 		level = 7,
 		id = 403,
 		need_exp = 13000,
@@ -40170,11 +38533,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.ship_meta_skilltask
-
-	var_5_3[404] = {
+	pg.base.ship_meta_skilltask[404] = {
 		level = 8,
 		id = 404,
 		need_exp = 19000,
@@ -40268,11 +38627,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.ship_meta_skilltask
-
-	var_5_4[405] = {
+	pg.base.ship_meta_skilltask[405] = {
 		level = 9,
 		id = 405,
 		need_exp = 30000,
@@ -40366,11 +38721,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.ship_meta_skilltask
-
-	var_5_5[406] = {
+	pg.base.ship_meta_skilltask[406] = {
 		level = 1,
 		id = 406,
 		need_exp = 2000,
@@ -40455,11 +38806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.ship_meta_skilltask
-
-	var_5_6[407] = {
+	pg.base.ship_meta_skilltask[407] = {
 		level = 2,
 		id = 407,
 		need_exp = 2500,
@@ -40538,11 +38885,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.ship_meta_skilltask
-
-	var_5_7[408] = {
+	pg.base.ship_meta_skilltask[408] = {
 		level = 3,
 		id = 408,
 		need_exp = 4000,
@@ -40621,11 +38964,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.ship_meta_skilltask
-
-	var_5_8[409] = {
+	pg.base.ship_meta_skilltask[409] = {
 		level = 4,
 		id = 409,
 		need_exp = 6000,
@@ -40709,11 +39048,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.ship_meta_skilltask
-
-	var_5_9[410] = {
+	pg.base.ship_meta_skilltask[410] = {
 		level = 5,
 		id = 410,
 		need_exp = 8000,
@@ -40802,11 +39137,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.ship_meta_skilltask
-
-	var_5_10[411] = {
+	pg.base.ship_meta_skilltask[411] = {
 		level = 6,
 		id = 411,
 		need_exp = 10000,
@@ -40895,11 +39226,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.ship_meta_skilltask
-
-	var_5_11[412] = {
+	pg.base.ship_meta_skilltask[412] = {
 		level = 7,
 		id = 412,
 		need_exp = 13000,
@@ -40993,11 +39320,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.ship_meta_skilltask
-
-	var_5_12[413] = {
+	pg.base.ship_meta_skilltask[413] = {
 		level = 8,
 		id = 413,
 		need_exp = 19000,
@@ -41091,11 +39414,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.ship_meta_skilltask
-
-	var_5_13[414] = {
+	pg.base.ship_meta_skilltask[414] = {
 		level = 9,
 		id = 414,
 		need_exp = 30000,
@@ -41189,11 +39508,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.ship_meta_skilltask
-
-	var_5_14[415] = {
+	pg.base.ship_meta_skilltask[415] = {
 		level = 1,
 		id = 415,
 		need_exp = 4000,
@@ -41278,11 +39593,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.ship_meta_skilltask
-
-	var_5_15[416] = {
+	pg.base.ship_meta_skilltask[416] = {
 		level = 2,
 		id = 416,
 		need_exp = 5000,
@@ -41361,11 +39672,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.ship_meta_skilltask
-
-	var_5_16[417] = {
+	pg.base.ship_meta_skilltask[417] = {
 		level = 3,
 		id = 417,
 		need_exp = 8000,
@@ -41444,11 +39751,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.ship_meta_skilltask
-
-	var_5_17[418] = {
+	pg.base.ship_meta_skilltask[418] = {
 		level = 4,
 		id = 418,
 		need_exp = 12000,
@@ -41532,11 +39835,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.ship_meta_skilltask
-
-	var_5_18[419] = {
+	pg.base.ship_meta_skilltask[419] = {
 		level = 5,
 		id = 419,
 		need_exp = 16000,
@@ -41625,11 +39924,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.ship_meta_skilltask
-
-	var_5_19[420] = {
+	pg.base.ship_meta_skilltask[420] = {
 		level = 6,
 		id = 420,
 		need_exp = 20000,
@@ -41718,11 +40013,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.ship_meta_skilltask
-
-	var_5_20[421] = {
+	pg.base.ship_meta_skilltask[421] = {
 		level = 7,
 		id = 421,
 		need_exp = 26000,
@@ -41816,11 +40107,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.ship_meta_skilltask
-
-	var_5_21[422] = {
+	pg.base.ship_meta_skilltask[422] = {
 		level = 8,
 		id = 422,
 		need_exp = 38000,
@@ -41914,11 +40201,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.ship_meta_skilltask
-
-	var_5_22[423] = {
+	pg.base.ship_meta_skilltask[423] = {
 		level = 9,
 		id = 423,
 		need_exp = 60000,
@@ -42012,11 +40295,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.ship_meta_skilltask
-
-	var_5_23[424] = {
+	pg.base.ship_meta_skilltask[424] = {
 		level = 1,
 		id = 424,
 		need_exp = 4000,
@@ -42101,11 +40380,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.ship_meta_skilltask
-
-	var_5_24[425] = {
+	pg.base.ship_meta_skilltask[425] = {
 		level = 2,
 		id = 425,
 		need_exp = 5000,
@@ -42184,11 +40459,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.ship_meta_skilltask
-
-	var_5_25[426] = {
+	pg.base.ship_meta_skilltask[426] = {
 		level = 3,
 		id = 426,
 		need_exp = 8000,
@@ -42267,11 +40538,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.ship_meta_skilltask
-
-	var_5_26[427] = {
+	pg.base.ship_meta_skilltask[427] = {
 		level = 4,
 		id = 427,
 		need_exp = 12000,
@@ -42355,11 +40622,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.ship_meta_skilltask
-
-	var_5_27[428] = {
+	pg.base.ship_meta_skilltask[428] = {
 		level = 5,
 		id = 428,
 		need_exp = 16000,
@@ -42448,11 +40711,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.ship_meta_skilltask
-
-	var_5_28[429] = {
+	pg.base.ship_meta_skilltask[429] = {
 		level = 6,
 		id = 429,
 		need_exp = 20000,
@@ -42541,11 +40800,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.ship_meta_skilltask
-
-	var_5_29[430] = {
+	pg.base.ship_meta_skilltask[430] = {
 		level = 7,
 		id = 430,
 		need_exp = 26000,
@@ -42639,11 +40894,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.ship_meta_skilltask
-
-	var_5_30[431] = {
+	pg.base.ship_meta_skilltask[431] = {
 		level = 8,
 		id = 431,
 		need_exp = 38000,
@@ -42737,11 +40988,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.ship_meta_skilltask
-
-	var_5_31[432] = {
+	pg.base.ship_meta_skilltask[432] = {
 		level = 9,
 		id = 432,
 		need_exp = 60000,
@@ -42835,11 +41082,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.ship_meta_skilltask
-
-	var_5_32[433] = {
+	pg.base.ship_meta_skilltask[433] = {
 		level = 1,
 		id = 433,
 		need_exp = 4000,
@@ -42924,11 +41167,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.ship_meta_skilltask
-
-	var_5_33[434] = {
+	pg.base.ship_meta_skilltask[434] = {
 		level = 2,
 		id = 434,
 		need_exp = 5000,
@@ -43007,11 +41246,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.ship_meta_skilltask
-
-	var_5_34[435] = {
+	pg.base.ship_meta_skilltask[435] = {
 		level = 3,
 		id = 435,
 		need_exp = 8000,
@@ -43090,11 +41325,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.ship_meta_skilltask
-
-	var_5_35[436] = {
+	pg.base.ship_meta_skilltask[436] = {
 		level = 4,
 		id = 436,
 		need_exp = 12000,
@@ -43178,11 +41409,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.ship_meta_skilltask
-
-	var_5_36[437] = {
+	pg.base.ship_meta_skilltask[437] = {
 		level = 5,
 		id = 437,
 		need_exp = 16000,
@@ -43271,11 +41498,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.ship_meta_skilltask
-
-	var_5_37[438] = {
+	pg.base.ship_meta_skilltask[438] = {
 		level = 6,
 		id = 438,
 		need_exp = 20000,
@@ -43364,11 +41587,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.ship_meta_skilltask
-
-	var_5_38[439] = {
+	pg.base.ship_meta_skilltask[439] = {
 		level = 7,
 		id = 439,
 		need_exp = 26000,
@@ -43462,11 +41681,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.ship_meta_skilltask
-
-	var_5_39[440] = {
+	pg.base.ship_meta_skilltask[440] = {
 		level = 8,
 		id = 440,
 		need_exp = 38000,
@@ -43560,11 +41775,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.ship_meta_skilltask
-
-	var_5_40[441] = {
+	pg.base.ship_meta_skilltask[441] = {
 		level = 9,
 		id = 441,
 		need_exp = 60000,
@@ -43658,11 +41869,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.ship_meta_skilltask
-
-	var_5_41[442] = {
+	pg.base.ship_meta_skilltask[442] = {
 		level = 1,
 		id = 442,
 		need_exp = 2000,
@@ -43747,11 +41954,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.ship_meta_skilltask
-
-	var_5_42[443] = {
+	pg.base.ship_meta_skilltask[443] = {
 		level = 2,
 		id = 443,
 		need_exp = 2500,
@@ -43830,11 +42033,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.ship_meta_skilltask
-
-	var_5_43[444] = {
+	pg.base.ship_meta_skilltask[444] = {
 		level = 3,
 		id = 444,
 		need_exp = 4000,
@@ -43913,11 +42112,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.ship_meta_skilltask
-
-	var_5_44[445] = {
+	pg.base.ship_meta_skilltask[445] = {
 		level = 4,
 		id = 445,
 		need_exp = 6000,
@@ -44001,11 +42196,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.ship_meta_skilltask
-
-	var_5_45[446] = {
+	pg.base.ship_meta_skilltask[446] = {
 		level = 5,
 		id = 446,
 		need_exp = 8000,
@@ -44094,11 +42285,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.ship_meta_skilltask
-
-	var_5_46[447] = {
+	pg.base.ship_meta_skilltask[447] = {
 		level = 6,
 		id = 447,
 		need_exp = 10000,
@@ -44187,11 +42374,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.ship_meta_skilltask
-
-	var_5_47[448] = {
+	pg.base.ship_meta_skilltask[448] = {
 		level = 7,
 		id = 448,
 		need_exp = 13000,
@@ -44285,11 +42468,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.ship_meta_skilltask
-
-	var_5_48[449] = {
+	pg.base.ship_meta_skilltask[449] = {
 		level = 8,
 		id = 449,
 		need_exp = 19000,
@@ -44383,11 +42562,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.ship_meta_skilltask
-
-	var_5_49[450] = {
+	pg.base.ship_meta_skilltask[450] = {
 		level = 9,
 		id = 450,
 		need_exp = 30000,
@@ -44481,11 +42656,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.ship_meta_skilltask
-
-	var_5_50[451] = {
+	pg.base.ship_meta_skilltask[451] = {
 		level = 1,
 		id = 451,
 		need_exp = 2000,
@@ -44570,11 +42741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.ship_meta_skilltask
-
-	var_5_51[452] = {
+	pg.base.ship_meta_skilltask[452] = {
 		level = 2,
 		id = 452,
 		need_exp = 2500,
@@ -44653,11 +42820,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.ship_meta_skilltask
-
-	var_5_52[453] = {
+	pg.base.ship_meta_skilltask[453] = {
 		level = 3,
 		id = 453,
 		need_exp = 4000,
@@ -44736,11 +42899,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.ship_meta_skilltask
-
-	var_5_53[454] = {
+	pg.base.ship_meta_skilltask[454] = {
 		level = 4,
 		id = 454,
 		need_exp = 6000,
@@ -44824,11 +42983,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.ship_meta_skilltask
-
-	var_5_54[455] = {
+	pg.base.ship_meta_skilltask[455] = {
 		level = 5,
 		id = 455,
 		need_exp = 8000,
@@ -44917,11 +43072,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.ship_meta_skilltask
-
-	var_5_55[456] = {
+	pg.base.ship_meta_skilltask[456] = {
 		level = 6,
 		id = 456,
 		need_exp = 10000,
@@ -45010,11 +43161,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.ship_meta_skilltask
-
-	var_5_56[457] = {
+	pg.base.ship_meta_skilltask[457] = {
 		level = 7,
 		id = 457,
 		need_exp = 13000,
@@ -45108,11 +43255,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.ship_meta_skilltask
-
-	var_5_57[458] = {
+	pg.base.ship_meta_skilltask[458] = {
 		level = 8,
 		id = 458,
 		need_exp = 19000,
@@ -45206,11 +43349,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.ship_meta_skilltask
-
-	var_5_58[459] = {
+	pg.base.ship_meta_skilltask[459] = {
 		level = 9,
 		id = 459,
 		need_exp = 30000,
@@ -45304,11 +43443,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.ship_meta_skilltask
-
-	var_5_59[460] = {
+	pg.base.ship_meta_skilltask[460] = {
 		level = 1,
 		id = 460,
 		need_exp = 4000,
@@ -45393,11 +43528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.ship_meta_skilltask
-
-	var_5_60[461] = {
+	pg.base.ship_meta_skilltask[461] = {
 		level = 2,
 		id = 461,
 		need_exp = 5000,
@@ -45476,11 +43607,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.ship_meta_skilltask
-
-	var_5_61[462] = {
+	pg.base.ship_meta_skilltask[462] = {
 		level = 3,
 		id = 462,
 		need_exp = 8000,
@@ -45559,11 +43686,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.ship_meta_skilltask
-
-	var_5_62[463] = {
+	pg.base.ship_meta_skilltask[463] = {
 		level = 4,
 		id = 463,
 		need_exp = 12000,
@@ -45647,11 +43770,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.ship_meta_skilltask
-
-	var_5_63[464] = {
+	pg.base.ship_meta_skilltask[464] = {
 		level = 5,
 		id = 464,
 		need_exp = 16000,
@@ -45740,11 +43859,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.ship_meta_skilltask
-
-	var_5_64[465] = {
+	pg.base.ship_meta_skilltask[465] = {
 		level = 6,
 		id = 465,
 		need_exp = 20000,
@@ -45833,11 +43948,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.ship_meta_skilltask
-
-	var_5_65[466] = {
+	pg.base.ship_meta_skilltask[466] = {
 		level = 7,
 		id = 466,
 		need_exp = 26000,
@@ -45931,11 +44042,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.ship_meta_skilltask
-
-	var_5_66[467] = {
+	pg.base.ship_meta_skilltask[467] = {
 		level = 8,
 		id = 467,
 		need_exp = 38000,
@@ -46029,11 +44136,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.ship_meta_skilltask
-
-	var_5_67[468] = {
+	pg.base.ship_meta_skilltask[468] = {
 		level = 9,
 		id = 468,
 		need_exp = 60000,
@@ -46127,11 +44230,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.ship_meta_skilltask
-
-	var_5_68[469] = {
+	pg.base.ship_meta_skilltask[469] = {
 		level = 1,
 		id = 469,
 		need_exp = 4000,
@@ -46216,11 +44315,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.ship_meta_skilltask
-
-	var_5_69[470] = {
+	pg.base.ship_meta_skilltask[470] = {
 		level = 2,
 		id = 470,
 		need_exp = 5000,
@@ -46299,11 +44394,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.ship_meta_skilltask
-
-	var_5_70[471] = {
+	pg.base.ship_meta_skilltask[471] = {
 		level = 3,
 		id = 471,
 		need_exp = 8000,
@@ -46382,11 +44473,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.ship_meta_skilltask
-
-	var_5_71[472] = {
+	pg.base.ship_meta_skilltask[472] = {
 		level = 4,
 		id = 472,
 		need_exp = 12000,
@@ -46470,11 +44557,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.ship_meta_skilltask
-
-	var_5_72[473] = {
+	pg.base.ship_meta_skilltask[473] = {
 		level = 5,
 		id = 473,
 		need_exp = 16000,
@@ -46563,11 +44646,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.ship_meta_skilltask
-
-	var_5_73[474] = {
+	pg.base.ship_meta_skilltask[474] = {
 		level = 6,
 		id = 474,
 		need_exp = 20000,
@@ -46656,11 +44735,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.ship_meta_skilltask
-
-	var_5_74[475] = {
+	pg.base.ship_meta_skilltask[475] = {
 		level = 7,
 		id = 475,
 		need_exp = 26000,
@@ -46754,11 +44829,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.ship_meta_skilltask
-
-	var_5_75[476] = {
+	pg.base.ship_meta_skilltask[476] = {
 		level = 8,
 		id = 476,
 		need_exp = 38000,
@@ -46852,11 +44923,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.ship_meta_skilltask
-
-	var_5_76[477] = {
+	pg.base.ship_meta_skilltask[477] = {
 		level = 9,
 		id = 477,
 		need_exp = 60000,
@@ -46950,11 +45017,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.ship_meta_skilltask
-
-	var_5_77[478] = {
+	pg.base.ship_meta_skilltask[478] = {
 		level = 1,
 		id = 478,
 		need_exp = 4000,
@@ -47039,11 +45102,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.ship_meta_skilltask
-
-	var_5_78[479] = {
+	pg.base.ship_meta_skilltask[479] = {
 		level = 2,
 		id = 479,
 		need_exp = 5000,
@@ -47122,11 +45181,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.ship_meta_skilltask
-
-	var_5_79[480] = {
+	pg.base.ship_meta_skilltask[480] = {
 		level = 3,
 		id = 480,
 		need_exp = 8000,
@@ -47205,11 +45260,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.ship_meta_skilltask
-
-	var_5_80[481] = {
+	pg.base.ship_meta_skilltask[481] = {
 		level = 4,
 		id = 481,
 		need_exp = 12000,
@@ -47293,11 +45344,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.ship_meta_skilltask
-
-	var_5_81[482] = {
+	pg.base.ship_meta_skilltask[482] = {
 		level = 5,
 		id = 482,
 		need_exp = 16000,
@@ -47386,11 +45433,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.ship_meta_skilltask
-
-	var_5_82[483] = {
+	pg.base.ship_meta_skilltask[483] = {
 		level = 6,
 		id = 483,
 		need_exp = 20000,
@@ -47479,11 +45522,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.ship_meta_skilltask
-
-	var_5_83[484] = {
+	pg.base.ship_meta_skilltask[484] = {
 		level = 7,
 		id = 484,
 		need_exp = 26000,
@@ -47577,11 +45616,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.ship_meta_skilltask
-
-	var_5_84[485] = {
+	pg.base.ship_meta_skilltask[485] = {
 		level = 8,
 		id = 485,
 		need_exp = 38000,
@@ -47675,11 +45710,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.ship_meta_skilltask
-
-	var_5_85[486] = {
+	pg.base.ship_meta_skilltask[486] = {
 		level = 9,
 		id = 486,
 		need_exp = 60000,
@@ -47773,11 +45804,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.ship_meta_skilltask
-
-	var_5_86[487] = {
+	pg.base.ship_meta_skilltask[487] = {
 		level = 1,
 		id = 487,
 		need_exp = 2000,
@@ -47862,11 +45889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.ship_meta_skilltask
-
-	var_5_87[488] = {
+	pg.base.ship_meta_skilltask[488] = {
 		level = 2,
 		id = 488,
 		need_exp = 2500,
@@ -47945,11 +45968,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.ship_meta_skilltask
-
-	var_5_88[489] = {
+	pg.base.ship_meta_skilltask[489] = {
 		level = 3,
 		id = 489,
 		need_exp = 4000,
@@ -48028,11 +46047,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.ship_meta_skilltask
-
-	var_5_89[490] = {
+	pg.base.ship_meta_skilltask[490] = {
 		level = 4,
 		id = 490,
 		need_exp = 6000,
@@ -48116,11 +46131,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.ship_meta_skilltask
-
-	var_5_90[491] = {
+	pg.base.ship_meta_skilltask[491] = {
 		level = 5,
 		id = 491,
 		need_exp = 8000,
@@ -48209,11 +46220,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.ship_meta_skilltask
-
-	var_5_91[492] = {
+	pg.base.ship_meta_skilltask[492] = {
 		level = 6,
 		id = 492,
 		need_exp = 10000,
@@ -48302,11 +46309,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.ship_meta_skilltask
-
-	var_5_92[493] = {
+	pg.base.ship_meta_skilltask[493] = {
 		level = 7,
 		id = 493,
 		need_exp = 13000,
@@ -48400,11 +46403,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.ship_meta_skilltask
-
-	var_5_93[494] = {
+	pg.base.ship_meta_skilltask[494] = {
 		level = 8,
 		id = 494,
 		need_exp = 19000,
@@ -48498,11 +46497,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.ship_meta_skilltask
-
-	var_5_94[495] = {
+	pg.base.ship_meta_skilltask[495] = {
 		level = 9,
 		id = 495,
 		need_exp = 30000,
@@ -48596,11 +46591,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.ship_meta_skilltask
-
-	var_5_95[496] = {
+	pg.base.ship_meta_skilltask[496] = {
 		level = 1,
 		id = 496,
 		need_exp = 2000,
@@ -48685,11 +46676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.ship_meta_skilltask
-
-	var_5_96[497] = {
+	pg.base.ship_meta_skilltask[497] = {
 		level = 2,
 		id = 497,
 		need_exp = 2500,
@@ -48768,11 +46755,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.ship_meta_skilltask
-
-	var_5_97[498] = {
+	pg.base.ship_meta_skilltask[498] = {
 		level = 3,
 		id = 498,
 		need_exp = 4000,
@@ -48851,11 +46834,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.ship_meta_skilltask
-
-	var_5_98[499] = {
+	pg.base.ship_meta_skilltask[499] = {
 		level = 4,
 		id = 499,
 		need_exp = 6000,
@@ -48939,8 +46918,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_5_98
-	var_5_98.base.ship_meta_skilltask[500] = {
+	pg.base.ship_meta_skilltask[500] = {
 		level = 5,
 		id = 500,
 		need_exp = 8000,
@@ -49033,11 +47011,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_6_0[501] = {
+	pg.base.ship_meta_skilltask[501] = {
 		level = 6,
 		id = 501,
 		need_exp = 10000,
@@ -49126,11 +47100,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.ship_meta_skilltask
-
-	var_6_1[502] = {
+	pg.base.ship_meta_skilltask[502] = {
 		level = 7,
 		id = 502,
 		need_exp = 13000,
@@ -49224,11 +47194,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.ship_meta_skilltask
-
-	var_6_2[503] = {
+	pg.base.ship_meta_skilltask[503] = {
 		level = 8,
 		id = 503,
 		need_exp = 19000,
@@ -49322,11 +47288,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.ship_meta_skilltask
-
-	var_6_3[504] = {
+	pg.base.ship_meta_skilltask[504] = {
 		level = 9,
 		id = 504,
 		need_exp = 30000,
@@ -49420,11 +47382,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.ship_meta_skilltask
-
-	var_6_4[505] = {
+	pg.base.ship_meta_skilltask[505] = {
 		level = 1,
 		id = 505,
 		need_exp = 4000,
@@ -49509,11 +47467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.ship_meta_skilltask
-
-	var_6_5[506] = {
+	pg.base.ship_meta_skilltask[506] = {
 		level = 2,
 		id = 506,
 		need_exp = 5000,
@@ -49592,11 +47546,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.ship_meta_skilltask
-
-	var_6_6[507] = {
+	pg.base.ship_meta_skilltask[507] = {
 		level = 3,
 		id = 507,
 		need_exp = 8000,
@@ -49675,11 +47625,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.ship_meta_skilltask
-
-	var_6_7[508] = {
+	pg.base.ship_meta_skilltask[508] = {
 		level = 4,
 		id = 508,
 		need_exp = 12000,
@@ -49763,11 +47709,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.ship_meta_skilltask
-
-	var_6_8[509] = {
+	pg.base.ship_meta_skilltask[509] = {
 		level = 5,
 		id = 509,
 		need_exp = 16000,
@@ -49856,11 +47798,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.ship_meta_skilltask
-
-	var_6_9[510] = {
+	pg.base.ship_meta_skilltask[510] = {
 		level = 6,
 		id = 510,
 		need_exp = 20000,
@@ -49949,11 +47887,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.ship_meta_skilltask
-
-	var_6_10[511] = {
+	pg.base.ship_meta_skilltask[511] = {
 		level = 7,
 		id = 511,
 		need_exp = 26000,
@@ -50047,11 +47981,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.ship_meta_skilltask
-
-	var_6_11[512] = {
+	pg.base.ship_meta_skilltask[512] = {
 		level = 8,
 		id = 512,
 		need_exp = 38000,
@@ -50145,11 +48075,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.ship_meta_skilltask
-
-	var_6_12[513] = {
+	pg.base.ship_meta_skilltask[513] = {
 		level = 9,
 		id = 513,
 		need_exp = 60000,
@@ -50243,11 +48169,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.ship_meta_skilltask
-
-	var_6_13[514] = {
+	pg.base.ship_meta_skilltask[514] = {
 		level = 1,
 		id = 514,
 		need_exp = 4000,
@@ -50332,11 +48254,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.ship_meta_skilltask
-
-	var_6_14[515] = {
+	pg.base.ship_meta_skilltask[515] = {
 		level = 2,
 		id = 515,
 		need_exp = 5000,
@@ -50415,11 +48333,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.ship_meta_skilltask
-
-	var_6_15[516] = {
+	pg.base.ship_meta_skilltask[516] = {
 		level = 3,
 		id = 516,
 		need_exp = 8000,
@@ -50498,11 +48412,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.ship_meta_skilltask
-
-	var_6_16[517] = {
+	pg.base.ship_meta_skilltask[517] = {
 		level = 4,
 		id = 517,
 		need_exp = 12000,
@@ -50586,11 +48496,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.ship_meta_skilltask
-
-	var_6_17[518] = {
+	pg.base.ship_meta_skilltask[518] = {
 		level = 5,
 		id = 518,
 		need_exp = 16000,
@@ -50679,11 +48585,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.ship_meta_skilltask
-
-	var_6_18[519] = {
+	pg.base.ship_meta_skilltask[519] = {
 		level = 6,
 		id = 519,
 		need_exp = 20000,
@@ -50772,11 +48674,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.ship_meta_skilltask
-
-	var_6_19[520] = {
+	pg.base.ship_meta_skilltask[520] = {
 		level = 7,
 		id = 520,
 		need_exp = 26000,
@@ -50870,11 +48768,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.ship_meta_skilltask
-
-	var_6_20[521] = {
+	pg.base.ship_meta_skilltask[521] = {
 		level = 8,
 		id = 521,
 		need_exp = 38000,
@@ -50968,11 +48862,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.ship_meta_skilltask
-
-	var_6_21[522] = {
+	pg.base.ship_meta_skilltask[522] = {
 		level = 9,
 		id = 522,
 		need_exp = 60000,
@@ -51066,11 +48956,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.ship_meta_skilltask
-
-	var_6_22[523] = {
+	pg.base.ship_meta_skilltask[523] = {
 		level = 1,
 		id = 523,
 		need_exp = 4000,
@@ -51155,11 +49041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.ship_meta_skilltask
-
-	var_6_23[524] = {
+	pg.base.ship_meta_skilltask[524] = {
 		level = 2,
 		id = 524,
 		need_exp = 5000,
@@ -51238,11 +49120,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.ship_meta_skilltask
-
-	var_6_24[525] = {
+	pg.base.ship_meta_skilltask[525] = {
 		level = 3,
 		id = 525,
 		need_exp = 8000,
@@ -51321,11 +49199,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.ship_meta_skilltask
-
-	var_6_25[526] = {
+	pg.base.ship_meta_skilltask[526] = {
 		level = 4,
 		id = 526,
 		need_exp = 12000,
@@ -51409,11 +49283,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.ship_meta_skilltask
-
-	var_6_26[527] = {
+	pg.base.ship_meta_skilltask[527] = {
 		level = 5,
 		id = 527,
 		need_exp = 16000,
@@ -51502,11 +49372,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.ship_meta_skilltask
-
-	var_6_27[528] = {
+	pg.base.ship_meta_skilltask[528] = {
 		level = 6,
 		id = 528,
 		need_exp = 20000,
@@ -51595,11 +49461,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.ship_meta_skilltask
-
-	var_6_28[529] = {
+	pg.base.ship_meta_skilltask[529] = {
 		level = 7,
 		id = 529,
 		need_exp = 26000,
@@ -51693,11 +49555,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.ship_meta_skilltask
-
-	var_6_29[530] = {
+	pg.base.ship_meta_skilltask[530] = {
 		level = 8,
 		id = 530,
 		need_exp = 38000,
@@ -51791,11 +49649,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.ship_meta_skilltask
-
-	var_6_30[531] = {
+	pg.base.ship_meta_skilltask[531] = {
 		level = 9,
 		id = 531,
 		need_exp = 60000,
@@ -51889,11 +49743,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.ship_meta_skilltask
-
-	var_6_31[532] = {
+	pg.base.ship_meta_skilltask[532] = {
 		level = 1,
 		id = 532,
 		need_exp = 2000,
@@ -51978,11 +49828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.ship_meta_skilltask
-
-	var_6_32[533] = {
+	pg.base.ship_meta_skilltask[533] = {
 		level = 2,
 		id = 533,
 		need_exp = 2500,
@@ -52061,11 +49907,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.ship_meta_skilltask
-
-	var_6_33[534] = {
+	pg.base.ship_meta_skilltask[534] = {
 		level = 3,
 		id = 534,
 		need_exp = 4000,
@@ -52144,11 +49986,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.ship_meta_skilltask
-
-	var_6_34[535] = {
+	pg.base.ship_meta_skilltask[535] = {
 		level = 4,
 		id = 535,
 		need_exp = 6000,
@@ -52232,11 +50070,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.ship_meta_skilltask
-
-	var_6_35[536] = {
+	pg.base.ship_meta_skilltask[536] = {
 		level = 5,
 		id = 536,
 		need_exp = 8000,
@@ -52325,11 +50159,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.ship_meta_skilltask
-
-	var_6_36[537] = {
+	pg.base.ship_meta_skilltask[537] = {
 		level = 6,
 		id = 537,
 		need_exp = 10000,
@@ -52418,11 +50248,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.ship_meta_skilltask
-
-	var_6_37[538] = {
+	pg.base.ship_meta_skilltask[538] = {
 		level = 7,
 		id = 538,
 		need_exp = 13000,
@@ -52516,11 +50342,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.ship_meta_skilltask
-
-	var_6_38[539] = {
+	pg.base.ship_meta_skilltask[539] = {
 		level = 8,
 		id = 539,
 		need_exp = 19000,
@@ -52614,11 +50436,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.ship_meta_skilltask
-
-	var_6_39[540] = {
+	pg.base.ship_meta_skilltask[540] = {
 		level = 9,
 		id = 540,
 		need_exp = 30000,
@@ -52712,11 +50530,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.ship_meta_skilltask
-
-	var_6_40[541] = {
+	pg.base.ship_meta_skilltask[541] = {
 		level = 1,
 		id = 541,
 		need_exp = 2000,
@@ -52801,11 +50615,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.ship_meta_skilltask
-
-	var_6_41[542] = {
+	pg.base.ship_meta_skilltask[542] = {
 		level = 2,
 		id = 542,
 		need_exp = 2500,
@@ -52884,11 +50694,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.ship_meta_skilltask
-
-	var_6_42[543] = {
+	pg.base.ship_meta_skilltask[543] = {
 		level = 3,
 		id = 543,
 		need_exp = 4000,
@@ -52967,11 +50773,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.ship_meta_skilltask
-
-	var_6_43[544] = {
+	pg.base.ship_meta_skilltask[544] = {
 		level = 4,
 		id = 544,
 		need_exp = 6000,
@@ -53055,11 +50857,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.ship_meta_skilltask
-
-	var_6_44[545] = {
+	pg.base.ship_meta_skilltask[545] = {
 		level = 5,
 		id = 545,
 		need_exp = 8000,
@@ -53148,11 +50946,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.ship_meta_skilltask
-
-	var_6_45[546] = {
+	pg.base.ship_meta_skilltask[546] = {
 		level = 6,
 		id = 546,
 		need_exp = 10000,
@@ -53241,11 +51035,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.ship_meta_skilltask
-
-	var_6_46[547] = {
+	pg.base.ship_meta_skilltask[547] = {
 		level = 7,
 		id = 547,
 		need_exp = 13000,
@@ -53339,11 +51129,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.ship_meta_skilltask
-
-	var_6_47[548] = {
+	pg.base.ship_meta_skilltask[548] = {
 		level = 8,
 		id = 548,
 		need_exp = 19000,
@@ -53437,11 +51223,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.ship_meta_skilltask
-
-	var_6_48[549] = {
+	pg.base.ship_meta_skilltask[549] = {
 		level = 9,
 		id = 549,
 		need_exp = 30000,
@@ -53535,11 +51317,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.ship_meta_skilltask
-
-	var_6_49[550] = {
+	pg.base.ship_meta_skilltask[550] = {
 		level = 1,
 		id = 550,
 		need_exp = 4000,
@@ -53624,11 +51402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.ship_meta_skilltask
-
-	var_6_50[551] = {
+	pg.base.ship_meta_skilltask[551] = {
 		level = 2,
 		id = 551,
 		need_exp = 5000,
@@ -53707,11 +51481,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.ship_meta_skilltask
-
-	var_6_51[552] = {
+	pg.base.ship_meta_skilltask[552] = {
 		level = 3,
 		id = 552,
 		need_exp = 8000,
@@ -53790,11 +51560,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.ship_meta_skilltask
-
-	var_6_52[553] = {
+	pg.base.ship_meta_skilltask[553] = {
 		level = 4,
 		id = 553,
 		need_exp = 12000,
@@ -53878,11 +51644,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.ship_meta_skilltask
-
-	var_6_53[554] = {
+	pg.base.ship_meta_skilltask[554] = {
 		level = 5,
 		id = 554,
 		need_exp = 16000,
@@ -53971,11 +51733,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.ship_meta_skilltask
-
-	var_6_54[555] = {
+	pg.base.ship_meta_skilltask[555] = {
 		level = 6,
 		id = 555,
 		need_exp = 20000,
@@ -54064,11 +51822,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.ship_meta_skilltask
-
-	var_6_55[556] = {
+	pg.base.ship_meta_skilltask[556] = {
 		level = 7,
 		id = 556,
 		need_exp = 26000,
@@ -54162,11 +51916,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.ship_meta_skilltask
-
-	var_6_56[557] = {
+	pg.base.ship_meta_skilltask[557] = {
 		level = 8,
 		id = 557,
 		need_exp = 38000,
@@ -54260,11 +52010,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.ship_meta_skilltask
-
-	var_6_57[558] = {
+	pg.base.ship_meta_skilltask[558] = {
 		level = 9,
 		id = 558,
 		need_exp = 60000,
@@ -54358,11 +52104,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.ship_meta_skilltask
-
-	var_6_58[559] = {
+	pg.base.ship_meta_skilltask[559] = {
 		level = 1,
 		id = 559,
 		need_exp = 4000,
@@ -54447,11 +52189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.ship_meta_skilltask
-
-	var_6_59[560] = {
+	pg.base.ship_meta_skilltask[560] = {
 		level = 2,
 		id = 560,
 		need_exp = 5000,
@@ -54530,11 +52268,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.ship_meta_skilltask
-
-	var_6_60[561] = {
+	pg.base.ship_meta_skilltask[561] = {
 		level = 3,
 		id = 561,
 		need_exp = 8000,
@@ -54613,11 +52347,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.ship_meta_skilltask
-
-	var_6_61[562] = {
+	pg.base.ship_meta_skilltask[562] = {
 		level = 4,
 		id = 562,
 		need_exp = 12000,
@@ -54701,11 +52431,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.ship_meta_skilltask
-
-	var_6_62[563] = {
+	pg.base.ship_meta_skilltask[563] = {
 		level = 5,
 		id = 563,
 		need_exp = 16000,
@@ -54794,11 +52520,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.ship_meta_skilltask
-
-	var_6_63[564] = {
+	pg.base.ship_meta_skilltask[564] = {
 		level = 6,
 		id = 564,
 		need_exp = 20000,
@@ -54887,11 +52609,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.ship_meta_skilltask
-
-	var_6_64[565] = {
+	pg.base.ship_meta_skilltask[565] = {
 		level = 7,
 		id = 565,
 		need_exp = 26000,
@@ -54985,11 +52703,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.ship_meta_skilltask
-
-	var_6_65[566] = {
+	pg.base.ship_meta_skilltask[566] = {
 		level = 8,
 		id = 566,
 		need_exp = 38000,
@@ -55083,11 +52797,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.ship_meta_skilltask
-
-	var_6_66[567] = {
+	pg.base.ship_meta_skilltask[567] = {
 		level = 9,
 		id = 567,
 		need_exp = 60000,
@@ -55181,11 +52891,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.ship_meta_skilltask
-
-	var_6_67[568] = {
+	pg.base.ship_meta_skilltask[568] = {
 		level = 1,
 		id = 568,
 		need_exp = 4000,
@@ -55270,11 +52976,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.ship_meta_skilltask
-
-	var_6_68[569] = {
+	pg.base.ship_meta_skilltask[569] = {
 		level = 2,
 		id = 569,
 		need_exp = 5000,
@@ -55353,11 +53055,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.ship_meta_skilltask
-
-	var_6_69[570] = {
+	pg.base.ship_meta_skilltask[570] = {
 		level = 3,
 		id = 570,
 		need_exp = 8000,
@@ -55436,11 +53134,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.ship_meta_skilltask
-
-	var_6_70[571] = {
+	pg.base.ship_meta_skilltask[571] = {
 		level = 4,
 		id = 571,
 		need_exp = 12000,
@@ -55524,11 +53218,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.ship_meta_skilltask
-
-	var_6_71[572] = {
+	pg.base.ship_meta_skilltask[572] = {
 		level = 5,
 		id = 572,
 		need_exp = 16000,
@@ -55617,11 +53307,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.ship_meta_skilltask
-
-	var_6_72[573] = {
+	pg.base.ship_meta_skilltask[573] = {
 		level = 6,
 		id = 573,
 		need_exp = 20000,
@@ -55710,11 +53396,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.ship_meta_skilltask
-
-	var_6_73[574] = {
+	pg.base.ship_meta_skilltask[574] = {
 		level = 7,
 		id = 574,
 		need_exp = 26000,
@@ -55808,11 +53490,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.ship_meta_skilltask
-
-	var_6_74[575] = {
+	pg.base.ship_meta_skilltask[575] = {
 		level = 8,
 		id = 575,
 		need_exp = 38000,
@@ -55906,11 +53584,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.ship_meta_skilltask
-
-	var_6_75[576] = {
+	pg.base.ship_meta_skilltask[576] = {
 		level = 9,
 		id = 576,
 		need_exp = 60000,
@@ -56004,11 +53678,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.ship_meta_skilltask
-
-	var_6_76[577] = {
+	pg.base.ship_meta_skilltask[577] = {
 		level = 1,
 		id = 577,
 		need_exp = 2000,
@@ -56093,11 +53763,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.ship_meta_skilltask
-
-	var_6_77[578] = {
+	pg.base.ship_meta_skilltask[578] = {
 		level = 2,
 		id = 578,
 		need_exp = 2500,
@@ -56176,11 +53842,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.ship_meta_skilltask
-
-	var_6_78[579] = {
+	pg.base.ship_meta_skilltask[579] = {
 		level = 3,
 		id = 579,
 		need_exp = 4000,
@@ -56259,11 +53921,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.ship_meta_skilltask
-
-	var_6_79[580] = {
+	pg.base.ship_meta_skilltask[580] = {
 		level = 4,
 		id = 580,
 		need_exp = 6000,
@@ -56347,11 +54005,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.ship_meta_skilltask
-
-	var_6_80[581] = {
+	pg.base.ship_meta_skilltask[581] = {
 		level = 5,
 		id = 581,
 		need_exp = 8000,
@@ -56440,11 +54094,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.ship_meta_skilltask
-
-	var_6_81[582] = {
+	pg.base.ship_meta_skilltask[582] = {
 		level = 6,
 		id = 582,
 		need_exp = 10000,
@@ -56533,11 +54183,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.ship_meta_skilltask
-
-	var_6_82[583] = {
+	pg.base.ship_meta_skilltask[583] = {
 		level = 7,
 		id = 583,
 		need_exp = 13000,
@@ -56631,11 +54277,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.ship_meta_skilltask
-
-	var_6_83[584] = {
+	pg.base.ship_meta_skilltask[584] = {
 		level = 8,
 		id = 584,
 		need_exp = 19000,
@@ -56729,11 +54371,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.ship_meta_skilltask
-
-	var_6_84[585] = {
+	pg.base.ship_meta_skilltask[585] = {
 		level = 9,
 		id = 585,
 		need_exp = 30000,
@@ -56827,11 +54465,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.ship_meta_skilltask
-
-	var_6_85[586] = {
+	pg.base.ship_meta_skilltask[586] = {
 		level = 1,
 		id = 586,
 		need_exp = 2000,
@@ -56916,11 +54550,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.ship_meta_skilltask
-
-	var_6_86[587] = {
+	pg.base.ship_meta_skilltask[587] = {
 		level = 2,
 		id = 587,
 		need_exp = 2500,
@@ -56999,11 +54629,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.ship_meta_skilltask
-
-	var_6_87[588] = {
+	pg.base.ship_meta_skilltask[588] = {
 		level = 3,
 		id = 588,
 		need_exp = 4000,
@@ -57082,11 +54708,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.ship_meta_skilltask
-
-	var_6_88[589] = {
+	pg.base.ship_meta_skilltask[589] = {
 		level = 4,
 		id = 589,
 		need_exp = 6000,
@@ -57170,11 +54792,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.ship_meta_skilltask
-
-	var_6_89[590] = {
+	pg.base.ship_meta_skilltask[590] = {
 		level = 5,
 		id = 590,
 		need_exp = 8000,
@@ -57263,11 +54881,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.ship_meta_skilltask
-
-	var_6_90[591] = {
+	pg.base.ship_meta_skilltask[591] = {
 		level = 6,
 		id = 591,
 		need_exp = 10000,
@@ -57356,11 +54970,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.ship_meta_skilltask
-
-	var_6_91[592] = {
+	pg.base.ship_meta_skilltask[592] = {
 		level = 7,
 		id = 592,
 		need_exp = 13000,
@@ -57454,11 +55064,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.ship_meta_skilltask
-
-	var_6_92[593] = {
+	pg.base.ship_meta_skilltask[593] = {
 		level = 8,
 		id = 593,
 		need_exp = 19000,
@@ -57552,11 +55158,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.ship_meta_skilltask
-
-	var_6_93[594] = {
+	pg.base.ship_meta_skilltask[594] = {
 		level = 9,
 		id = 594,
 		need_exp = 30000,
@@ -57650,11 +55252,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.ship_meta_skilltask
-
-	var_6_94[595] = {
+	pg.base.ship_meta_skilltask[595] = {
 		level = 1,
 		id = 595,
 		need_exp = 4000,
@@ -57739,11 +55337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.ship_meta_skilltask
-
-	var_6_95[596] = {
+	pg.base.ship_meta_skilltask[596] = {
 		level = 2,
 		id = 596,
 		need_exp = 5000,
@@ -57822,11 +55416,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.ship_meta_skilltask
-
-	var_6_96[597] = {
+	pg.base.ship_meta_skilltask[597] = {
 		level = 3,
 		id = 597,
 		need_exp = 8000,
@@ -57905,11 +55495,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.ship_meta_skilltask
-
-	var_6_97[598] = {
+	pg.base.ship_meta_skilltask[598] = {
 		level = 4,
 		id = 598,
 		need_exp = 12000,
@@ -57993,11 +55579,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.ship_meta_skilltask
-
-	var_6_98[599] = {
+	pg.base.ship_meta_skilltask[599] = {
 		level = 5,
 		id = 599,
 		need_exp = 16000,
@@ -58086,8 +55668,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_6_98
-	var_6_98.base.ship_meta_skilltask[600] = {
+	pg.base.ship_meta_skilltask[600] = {
 		level = 6,
 		id = 600,
 		need_exp = 20000,
@@ -58180,11 +55761,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_7_0[601] = {
+	pg.base.ship_meta_skilltask[601] = {
 		level = 7,
 		id = 601,
 		need_exp = 26000,
@@ -58278,11 +55855,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.ship_meta_skilltask
-
-	var_7_1[602] = {
+	pg.base.ship_meta_skilltask[602] = {
 		level = 8,
 		id = 602,
 		need_exp = 38000,
@@ -58376,11 +55949,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.ship_meta_skilltask
-
-	var_7_2[603] = {
+	pg.base.ship_meta_skilltask[603] = {
 		level = 9,
 		id = 603,
 		need_exp = 60000,
@@ -58474,11 +56043,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.ship_meta_skilltask
-
-	var_7_3[604] = {
+	pg.base.ship_meta_skilltask[604] = {
 		level = 1,
 		id = 604,
 		need_exp = 4000,
@@ -58563,11 +56128,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.ship_meta_skilltask
-
-	var_7_4[605] = {
+	pg.base.ship_meta_skilltask[605] = {
 		level = 2,
 		id = 605,
 		need_exp = 5000,
@@ -58646,11 +56207,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.ship_meta_skilltask
-
-	var_7_5[606] = {
+	pg.base.ship_meta_skilltask[606] = {
 		level = 3,
 		id = 606,
 		need_exp = 8000,
@@ -58729,11 +56286,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.ship_meta_skilltask
-
-	var_7_6[607] = {
+	pg.base.ship_meta_skilltask[607] = {
 		level = 4,
 		id = 607,
 		need_exp = 12000,
@@ -58817,11 +56370,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.ship_meta_skilltask
-
-	var_7_7[608] = {
+	pg.base.ship_meta_skilltask[608] = {
 		level = 5,
 		id = 608,
 		need_exp = 16000,
@@ -58910,11 +56459,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.ship_meta_skilltask
-
-	var_7_8[609] = {
+	pg.base.ship_meta_skilltask[609] = {
 		level = 6,
 		id = 609,
 		need_exp = 20000,
@@ -59003,11 +56548,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.ship_meta_skilltask
-
-	var_7_9[610] = {
+	pg.base.ship_meta_skilltask[610] = {
 		level = 7,
 		id = 610,
 		need_exp = 26000,
@@ -59101,11 +56642,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.ship_meta_skilltask
-
-	var_7_10[611] = {
+	pg.base.ship_meta_skilltask[611] = {
 		level = 8,
 		id = 611,
 		need_exp = 38000,
@@ -59199,11 +56736,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.ship_meta_skilltask
-
-	var_7_11[612] = {
+	pg.base.ship_meta_skilltask[612] = {
 		level = 9,
 		id = 612,
 		need_exp = 60000,
@@ -59297,11 +56830,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.ship_meta_skilltask
-
-	var_7_12[613] = {
+	pg.base.ship_meta_skilltask[613] = {
 		level = 1,
 		id = 613,
 		need_exp = 4000,
@@ -59386,11 +56915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.ship_meta_skilltask
-
-	var_7_13[614] = {
+	pg.base.ship_meta_skilltask[614] = {
 		level = 2,
 		id = 614,
 		need_exp = 5000,
@@ -59469,11 +56994,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.ship_meta_skilltask
-
-	var_7_14[615] = {
+	pg.base.ship_meta_skilltask[615] = {
 		level = 3,
 		id = 615,
 		need_exp = 8000,
@@ -59552,11 +57073,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.ship_meta_skilltask
-
-	var_7_15[616] = {
+	pg.base.ship_meta_skilltask[616] = {
 		level = 4,
 		id = 616,
 		need_exp = 12000,
@@ -59640,11 +57157,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.ship_meta_skilltask
-
-	var_7_16[617] = {
+	pg.base.ship_meta_skilltask[617] = {
 		level = 5,
 		id = 617,
 		need_exp = 16000,
@@ -59733,11 +57246,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.ship_meta_skilltask
-
-	var_7_17[618] = {
+	pg.base.ship_meta_skilltask[618] = {
 		level = 6,
 		id = 618,
 		need_exp = 20000,
@@ -59826,11 +57335,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.ship_meta_skilltask
-
-	var_7_18[619] = {
+	pg.base.ship_meta_skilltask[619] = {
 		level = 7,
 		id = 619,
 		need_exp = 26000,
@@ -59924,11 +57429,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.ship_meta_skilltask
-
-	var_7_19[620] = {
+	pg.base.ship_meta_skilltask[620] = {
 		level = 8,
 		id = 620,
 		need_exp = 38000,
@@ -60022,11 +57523,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.ship_meta_skilltask
-
-	var_7_20[621] = {
+	pg.base.ship_meta_skilltask[621] = {
 		level = 9,
 		id = 621,
 		need_exp = 60000,
@@ -60120,11 +57617,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.ship_meta_skilltask
-
-	var_7_21[622] = {
+	pg.base.ship_meta_skilltask[622] = {
 		level = 1,
 		id = 622,
 		need_exp = 2000,
@@ -60209,11 +57702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.ship_meta_skilltask
-
-	var_7_22[623] = {
+	pg.base.ship_meta_skilltask[623] = {
 		level = 2,
 		id = 623,
 		need_exp = 2500,
@@ -60292,11 +57781,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.ship_meta_skilltask
-
-	var_7_23[624] = {
+	pg.base.ship_meta_skilltask[624] = {
 		level = 3,
 		id = 624,
 		need_exp = 4000,
@@ -60375,11 +57860,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.ship_meta_skilltask
-
-	var_7_24[625] = {
+	pg.base.ship_meta_skilltask[625] = {
 		level = 4,
 		id = 625,
 		need_exp = 6000,
@@ -60463,11 +57944,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.ship_meta_skilltask
-
-	var_7_25[626] = {
+	pg.base.ship_meta_skilltask[626] = {
 		level = 5,
 		id = 626,
 		need_exp = 8000,
@@ -60556,11 +58033,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.ship_meta_skilltask
-
-	var_7_26[627] = {
+	pg.base.ship_meta_skilltask[627] = {
 		level = 6,
 		id = 627,
 		need_exp = 10000,
@@ -60649,11 +58122,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.ship_meta_skilltask
-
-	var_7_27[628] = {
+	pg.base.ship_meta_skilltask[628] = {
 		level = 7,
 		id = 628,
 		need_exp = 13000,
@@ -60747,11 +58216,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.ship_meta_skilltask
-
-	var_7_28[629] = {
+	pg.base.ship_meta_skilltask[629] = {
 		level = 8,
 		id = 629,
 		need_exp = 19000,
@@ -60845,11 +58310,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.ship_meta_skilltask
-
-	var_7_29[630] = {
+	pg.base.ship_meta_skilltask[630] = {
 		level = 9,
 		id = 630,
 		need_exp = 30000,
@@ -60943,11 +58404,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.ship_meta_skilltask
-
-	var_7_30[631] = {
+	pg.base.ship_meta_skilltask[631] = {
 		level = 1,
 		id = 631,
 		need_exp = 2000,
@@ -61032,11 +58489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.ship_meta_skilltask
-
-	var_7_31[632] = {
+	pg.base.ship_meta_skilltask[632] = {
 		level = 2,
 		id = 632,
 		need_exp = 2500,
@@ -61115,11 +58568,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.ship_meta_skilltask
-
-	var_7_32[633] = {
+	pg.base.ship_meta_skilltask[633] = {
 		level = 3,
 		id = 633,
 		need_exp = 4000,
@@ -61198,11 +58647,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.ship_meta_skilltask
-
-	var_7_33[634] = {
+	pg.base.ship_meta_skilltask[634] = {
 		level = 4,
 		id = 634,
 		need_exp = 6000,
@@ -61286,11 +58731,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.ship_meta_skilltask
-
-	var_7_34[635] = {
+	pg.base.ship_meta_skilltask[635] = {
 		level = 5,
 		id = 635,
 		need_exp = 8000,
@@ -61379,11 +58820,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.ship_meta_skilltask
-
-	var_7_35[636] = {
+	pg.base.ship_meta_skilltask[636] = {
 		level = 6,
 		id = 636,
 		need_exp = 10000,
@@ -61472,11 +58909,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.ship_meta_skilltask
-
-	var_7_36[637] = {
+	pg.base.ship_meta_skilltask[637] = {
 		level = 7,
 		id = 637,
 		need_exp = 13000,
@@ -61570,11 +59003,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.ship_meta_skilltask
-
-	var_7_37[638] = {
+	pg.base.ship_meta_skilltask[638] = {
 		level = 8,
 		id = 638,
 		need_exp = 19000,
@@ -61668,11 +59097,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.ship_meta_skilltask
-
-	var_7_38[639] = {
+	pg.base.ship_meta_skilltask[639] = {
 		level = 9,
 		id = 639,
 		need_exp = 30000,
@@ -61766,11 +59191,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.ship_meta_skilltask
-
-	var_7_39[640] = {
+	pg.base.ship_meta_skilltask[640] = {
 		level = 1,
 		id = 640,
 		need_exp = 2000,
@@ -61855,11 +59276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.ship_meta_skilltask
-
-	var_7_40[641] = {
+	pg.base.ship_meta_skilltask[641] = {
 		level = 2,
 		id = 641,
 		need_exp = 2500,
@@ -61938,11 +59355,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.ship_meta_skilltask
-
-	var_7_41[642] = {
+	pg.base.ship_meta_skilltask[642] = {
 		level = 3,
 		id = 642,
 		need_exp = 4000,
@@ -62021,11 +59434,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.ship_meta_skilltask
-
-	var_7_42[643] = {
+	pg.base.ship_meta_skilltask[643] = {
 		level = 4,
 		id = 643,
 		need_exp = 6000,
@@ -62109,11 +59518,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.ship_meta_skilltask
-
-	var_7_43[644] = {
+	pg.base.ship_meta_skilltask[644] = {
 		level = 5,
 		id = 644,
 		need_exp = 8000,
@@ -62202,11 +59607,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.ship_meta_skilltask
-
-	var_7_44[645] = {
+	pg.base.ship_meta_skilltask[645] = {
 		level = 6,
 		id = 645,
 		need_exp = 10000,
@@ -62295,11 +59696,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.ship_meta_skilltask
-
-	var_7_45[646] = {
+	pg.base.ship_meta_skilltask[646] = {
 		level = 7,
 		id = 646,
 		need_exp = 13000,
@@ -62393,11 +59790,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.ship_meta_skilltask
-
-	var_7_46[647] = {
+	pg.base.ship_meta_skilltask[647] = {
 		level = 8,
 		id = 647,
 		need_exp = 19000,
@@ -62491,11 +59884,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.ship_meta_skilltask
-
-	var_7_47[648] = {
+	pg.base.ship_meta_skilltask[648] = {
 		level = 9,
 		id = 648,
 		need_exp = 30000,
@@ -62589,11 +59978,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.ship_meta_skilltask
-
-	var_7_48[649] = {
+	pg.base.ship_meta_skilltask[649] = {
 		level = 1,
 		id = 649,
 		need_exp = 2000,
@@ -62678,11 +60063,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.ship_meta_skilltask
-
-	var_7_49[650] = {
+	pg.base.ship_meta_skilltask[650] = {
 		level = 2,
 		id = 650,
 		need_exp = 2500,
@@ -62761,11 +60142,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.ship_meta_skilltask
-
-	var_7_50[651] = {
+	pg.base.ship_meta_skilltask[651] = {
 		level = 3,
 		id = 651,
 		need_exp = 4000,
@@ -62844,11 +60221,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.ship_meta_skilltask
-
-	var_7_51[652] = {
+	pg.base.ship_meta_skilltask[652] = {
 		level = 4,
 		id = 652,
 		need_exp = 6000,
@@ -62932,11 +60305,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.ship_meta_skilltask
-
-	var_7_52[653] = {
+	pg.base.ship_meta_skilltask[653] = {
 		level = 5,
 		id = 653,
 		need_exp = 8000,
@@ -63025,11 +60394,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.ship_meta_skilltask
-
-	var_7_53[654] = {
+	pg.base.ship_meta_skilltask[654] = {
 		level = 6,
 		id = 654,
 		need_exp = 10000,
@@ -63118,11 +60483,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.ship_meta_skilltask
-
-	var_7_54[655] = {
+	pg.base.ship_meta_skilltask[655] = {
 		level = 7,
 		id = 655,
 		need_exp = 13000,
@@ -63216,11 +60577,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.ship_meta_skilltask
-
-	var_7_55[656] = {
+	pg.base.ship_meta_skilltask[656] = {
 		level = 8,
 		id = 656,
 		need_exp = 19000,
@@ -63314,11 +60671,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.ship_meta_skilltask
-
-	var_7_56[657] = {
+	pg.base.ship_meta_skilltask[657] = {
 		level = 9,
 		id = 657,
 		need_exp = 30000,
@@ -63412,11 +60765,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.ship_meta_skilltask
-
-	var_7_57[658] = {
+	pg.base.ship_meta_skilltask[658] = {
 		level = 1,
 		id = 658,
 		need_exp = 4000,
@@ -63501,11 +60850,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.ship_meta_skilltask
-
-	var_7_58[659] = {
+	pg.base.ship_meta_skilltask[659] = {
 		level = 2,
 		id = 659,
 		need_exp = 5000,
@@ -63584,11 +60929,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.ship_meta_skilltask
-
-	var_7_59[660] = {
+	pg.base.ship_meta_skilltask[660] = {
 		level = 3,
 		id = 660,
 		need_exp = 8000,
@@ -63667,11 +61008,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.ship_meta_skilltask
-
-	var_7_60[661] = {
+	pg.base.ship_meta_skilltask[661] = {
 		level = 4,
 		id = 661,
 		need_exp = 12000,
@@ -63755,11 +61092,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.ship_meta_skilltask
-
-	var_7_61[662] = {
+	pg.base.ship_meta_skilltask[662] = {
 		level = 5,
 		id = 662,
 		need_exp = 16000,
@@ -63848,11 +61181,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.ship_meta_skilltask
-
-	var_7_62[663] = {
+	pg.base.ship_meta_skilltask[663] = {
 		level = 6,
 		id = 663,
 		need_exp = 20000,
@@ -63941,11 +61270,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.ship_meta_skilltask
-
-	var_7_63[664] = {
+	pg.base.ship_meta_skilltask[664] = {
 		level = 7,
 		id = 664,
 		need_exp = 26000,
@@ -64039,11 +61364,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.ship_meta_skilltask
-
-	var_7_64[665] = {
+	pg.base.ship_meta_skilltask[665] = {
 		level = 8,
 		id = 665,
 		need_exp = 38000,
@@ -64137,11 +61458,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.ship_meta_skilltask
-
-	var_7_65[666] = {
+	pg.base.ship_meta_skilltask[666] = {
 		level = 9,
 		id = 666,
 		need_exp = 60000,
@@ -64235,11 +61552,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.ship_meta_skilltask
-
-	var_7_66[667] = {
+	pg.base.ship_meta_skilltask[667] = {
 		level = 1,
 		id = 667,
 		need_exp = 4000,
@@ -64324,11 +61637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.ship_meta_skilltask
-
-	var_7_67[668] = {
+	pg.base.ship_meta_skilltask[668] = {
 		level = 2,
 		id = 668,
 		need_exp = 5000,
@@ -64407,11 +61716,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.ship_meta_skilltask
-
-	var_7_68[669] = {
+	pg.base.ship_meta_skilltask[669] = {
 		level = 3,
 		id = 669,
 		need_exp = 8000,
@@ -64490,11 +61795,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.ship_meta_skilltask
-
-	var_7_69[670] = {
+	pg.base.ship_meta_skilltask[670] = {
 		level = 4,
 		id = 670,
 		need_exp = 12000,
@@ -64578,11 +61879,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.ship_meta_skilltask
-
-	var_7_70[671] = {
+	pg.base.ship_meta_skilltask[671] = {
 		level = 5,
 		id = 671,
 		need_exp = 16000,
@@ -64671,11 +61968,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.ship_meta_skilltask
-
-	var_7_71[672] = {
+	pg.base.ship_meta_skilltask[672] = {
 		level = 6,
 		id = 672,
 		need_exp = 20000,
@@ -64764,11 +62057,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.ship_meta_skilltask
-
-	var_7_72[673] = {
+	pg.base.ship_meta_skilltask[673] = {
 		level = 7,
 		id = 673,
 		need_exp = 26000,
@@ -64862,11 +62151,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.ship_meta_skilltask
-
-	var_7_73[674] = {
+	pg.base.ship_meta_skilltask[674] = {
 		level = 8,
 		id = 674,
 		need_exp = 38000,
@@ -64960,11 +62245,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.ship_meta_skilltask
-
-	var_7_74[675] = {
+	pg.base.ship_meta_skilltask[675] = {
 		level = 9,
 		id = 675,
 		need_exp = 60000,
@@ -65058,11 +62339,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.ship_meta_skilltask
-
-	var_7_75[676] = {
+	pg.base.ship_meta_skilltask[676] = {
 		level = 1,
 		id = 676,
 		need_exp = 4000,
@@ -65147,11 +62424,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.ship_meta_skilltask
-
-	var_7_76[677] = {
+	pg.base.ship_meta_skilltask[677] = {
 		level = 2,
 		id = 677,
 		need_exp = 5000,
@@ -65230,11 +62503,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.ship_meta_skilltask
-
-	var_7_77[678] = {
+	pg.base.ship_meta_skilltask[678] = {
 		level = 3,
 		id = 678,
 		need_exp = 8000,
@@ -65313,11 +62582,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.ship_meta_skilltask
-
-	var_7_78[679] = {
+	pg.base.ship_meta_skilltask[679] = {
 		level = 4,
 		id = 679,
 		need_exp = 12000,
@@ -65401,11 +62666,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.ship_meta_skilltask
-
-	var_7_79[680] = {
+	pg.base.ship_meta_skilltask[680] = {
 		level = 5,
 		id = 680,
 		need_exp = 16000,
@@ -65494,11 +62755,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.ship_meta_skilltask
-
-	var_7_80[681] = {
+	pg.base.ship_meta_skilltask[681] = {
 		level = 6,
 		id = 681,
 		need_exp = 20000,
@@ -65587,11 +62844,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.ship_meta_skilltask
-
-	var_7_81[682] = {
+	pg.base.ship_meta_skilltask[682] = {
 		level = 7,
 		id = 682,
 		need_exp = 26000,
@@ -65685,11 +62938,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.ship_meta_skilltask
-
-	var_7_82[683] = {
+	pg.base.ship_meta_skilltask[683] = {
 		level = 8,
 		id = 683,
 		need_exp = 38000,
@@ -65783,11 +63032,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.ship_meta_skilltask
-
-	var_7_83[684] = {
+	pg.base.ship_meta_skilltask[684] = {
 		level = 9,
 		id = 684,
 		need_exp = 60000,
@@ -65881,11 +63126,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.ship_meta_skilltask
-
-	var_7_84[685] = {
+	pg.base.ship_meta_skilltask[685] = {
 		level = 1,
 		id = 685,
 		need_exp = 2000,
@@ -65970,11 +63211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.ship_meta_skilltask
-
-	var_7_85[686] = {
+	pg.base.ship_meta_skilltask[686] = {
 		level = 2,
 		id = 686,
 		need_exp = 2500,
@@ -66053,11 +63290,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.ship_meta_skilltask
-
-	var_7_86[687] = {
+	pg.base.ship_meta_skilltask[687] = {
 		level = 3,
 		id = 687,
 		need_exp = 4000,
@@ -66136,11 +63369,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.ship_meta_skilltask
-
-	var_7_87[688] = {
+	pg.base.ship_meta_skilltask[688] = {
 		level = 4,
 		id = 688,
 		need_exp = 6000,
@@ -66224,11 +63453,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.ship_meta_skilltask
-
-	var_7_88[689] = {
+	pg.base.ship_meta_skilltask[689] = {
 		level = 5,
 		id = 689,
 		need_exp = 8000,
@@ -66317,11 +63542,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.ship_meta_skilltask
-
-	var_7_89[690] = {
+	pg.base.ship_meta_skilltask[690] = {
 		level = 6,
 		id = 690,
 		need_exp = 10000,
@@ -66410,11 +63631,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.ship_meta_skilltask
-
-	var_7_90[691] = {
+	pg.base.ship_meta_skilltask[691] = {
 		level = 7,
 		id = 691,
 		need_exp = 13000,
@@ -66508,11 +63725,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.ship_meta_skilltask
-
-	var_7_91[692] = {
+	pg.base.ship_meta_skilltask[692] = {
 		level = 8,
 		id = 692,
 		need_exp = 19000,
@@ -66606,11 +63819,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.ship_meta_skilltask
-
-	var_7_92[693] = {
+	pg.base.ship_meta_skilltask[693] = {
 		level = 9,
 		id = 693,
 		need_exp = 30000,
@@ -66704,11 +63913,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.ship_meta_skilltask
-
-	var_7_93[694] = {
+	pg.base.ship_meta_skilltask[694] = {
 		level = 1,
 		id = 694,
 		need_exp = 2000,
@@ -66793,11 +63998,7 @@ end)()
 			}
 		}
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.ship_meta_skilltask
-
-	var_7_94[695] = {
+	pg.base.ship_meta_skilltask[695] = {
 		level = 2,
 		id = 695,
 		need_exp = 2500,
@@ -66876,11 +64077,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.ship_meta_skilltask
-
-	var_7_95[696] = {
+	pg.base.ship_meta_skilltask[696] = {
 		level = 3,
 		id = 696,
 		need_exp = 4000,
@@ -66959,11 +64156,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.ship_meta_skilltask
-
-	var_7_96[697] = {
+	pg.base.ship_meta_skilltask[697] = {
 		level = 4,
 		id = 697,
 		need_exp = 6000,
@@ -67047,11 +64240,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.ship_meta_skilltask
-
-	var_7_97[698] = {
+	pg.base.ship_meta_skilltask[698] = {
 		level = 5,
 		id = 698,
 		need_exp = 8000,
@@ -67140,11 +64329,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.ship_meta_skilltask
-
-	var_7_98[699] = {
+	pg.base.ship_meta_skilltask[699] = {
 		level = 6,
 		id = 699,
 		need_exp = 10000,
@@ -67233,8 +64418,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_7_98
-	var_7_98.base.ship_meta_skilltask[700] = {
+	pg.base.ship_meta_skilltask[700] = {
 		level = 7,
 		id = 700,
 		need_exp = 13000,
@@ -67332,11 +64516,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_8_0[701] = {
+	pg.base.ship_meta_skilltask[701] = {
 		level = 8,
 		id = 701,
 		need_exp = 19000,
@@ -67430,11 +64610,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.ship_meta_skilltask
-
-	var_8_1[702] = {
+	pg.base.ship_meta_skilltask[702] = {
 		level = 9,
 		id = 702,
 		need_exp = 30000,
@@ -67528,11 +64704,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.ship_meta_skilltask
-
-	var_8_2[703] = {
+	pg.base.ship_meta_skilltask[703] = {
 		level = 1,
 		id = 703,
 		need_exp = 4000,
@@ -67617,11 +64789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.ship_meta_skilltask
-
-	var_8_3[704] = {
+	pg.base.ship_meta_skilltask[704] = {
 		level = 2,
 		id = 704,
 		need_exp = 5000,
@@ -67700,11 +64868,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.ship_meta_skilltask
-
-	var_8_4[705] = {
+	pg.base.ship_meta_skilltask[705] = {
 		level = 3,
 		id = 705,
 		need_exp = 8000,
@@ -67783,11 +64947,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.ship_meta_skilltask
-
-	var_8_5[706] = {
+	pg.base.ship_meta_skilltask[706] = {
 		level = 4,
 		id = 706,
 		need_exp = 12000,
@@ -67871,11 +65031,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.ship_meta_skilltask
-
-	var_8_6[707] = {
+	pg.base.ship_meta_skilltask[707] = {
 		level = 5,
 		id = 707,
 		need_exp = 16000,
@@ -67964,11 +65120,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.ship_meta_skilltask
-
-	var_8_7[708] = {
+	pg.base.ship_meta_skilltask[708] = {
 		level = 6,
 		id = 708,
 		need_exp = 20000,
@@ -68057,11 +65209,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.ship_meta_skilltask
-
-	var_8_8[709] = {
+	pg.base.ship_meta_skilltask[709] = {
 		level = 7,
 		id = 709,
 		need_exp = 26000,
@@ -68155,11 +65303,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.ship_meta_skilltask
-
-	var_8_9[710] = {
+	pg.base.ship_meta_skilltask[710] = {
 		level = 8,
 		id = 710,
 		need_exp = 38000,
@@ -68253,11 +65397,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.ship_meta_skilltask
-
-	var_8_10[711] = {
+	pg.base.ship_meta_skilltask[711] = {
 		level = 9,
 		id = 711,
 		need_exp = 60000,
@@ -68351,11 +65491,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.ship_meta_skilltask
-
-	var_8_11[712] = {
+	pg.base.ship_meta_skilltask[712] = {
 		level = 1,
 		id = 712,
 		need_exp = 4000,
@@ -68440,11 +65576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.ship_meta_skilltask
-
-	var_8_12[713] = {
+	pg.base.ship_meta_skilltask[713] = {
 		level = 2,
 		id = 713,
 		need_exp = 5000,
@@ -68523,11 +65655,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.ship_meta_skilltask
-
-	var_8_13[714] = {
+	pg.base.ship_meta_skilltask[714] = {
 		level = 3,
 		id = 714,
 		need_exp = 8000,
@@ -68606,11 +65734,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.ship_meta_skilltask
-
-	var_8_14[715] = {
+	pg.base.ship_meta_skilltask[715] = {
 		level = 4,
 		id = 715,
 		need_exp = 12000,
@@ -68694,11 +65818,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.ship_meta_skilltask
-
-	var_8_15[716] = {
+	pg.base.ship_meta_skilltask[716] = {
 		level = 5,
 		id = 716,
 		need_exp = 16000,
@@ -68787,11 +65907,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.ship_meta_skilltask
-
-	var_8_16[717] = {
+	pg.base.ship_meta_skilltask[717] = {
 		level = 6,
 		id = 717,
 		need_exp = 20000,
@@ -68880,11 +65996,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.ship_meta_skilltask
-
-	var_8_17[718] = {
+	pg.base.ship_meta_skilltask[718] = {
 		level = 7,
 		id = 718,
 		need_exp = 26000,
@@ -68978,11 +66090,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.ship_meta_skilltask
-
-	var_8_18[719] = {
+	pg.base.ship_meta_skilltask[719] = {
 		level = 8,
 		id = 719,
 		need_exp = 38000,
@@ -69076,11 +66184,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.ship_meta_skilltask
-
-	var_8_19[720] = {
+	pg.base.ship_meta_skilltask[720] = {
 		level = 9,
 		id = 720,
 		need_exp = 60000,
@@ -69174,11 +66278,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.ship_meta_skilltask
-
-	var_8_20[721] = {
+	pg.base.ship_meta_skilltask[721] = {
 		level = 1,
 		id = 721,
 		need_exp = 4000,
@@ -69263,11 +66363,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.ship_meta_skilltask
-
-	var_8_21[722] = {
+	pg.base.ship_meta_skilltask[722] = {
 		level = 2,
 		id = 722,
 		need_exp = 5000,
@@ -69346,11 +66442,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.ship_meta_skilltask
-
-	var_8_22[723] = {
+	pg.base.ship_meta_skilltask[723] = {
 		level = 3,
 		id = 723,
 		need_exp = 8000,
@@ -69429,11 +66521,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.ship_meta_skilltask
-
-	var_8_23[724] = {
+	pg.base.ship_meta_skilltask[724] = {
 		level = 4,
 		id = 724,
 		need_exp = 12000,
@@ -69517,11 +66605,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.ship_meta_skilltask
-
-	var_8_24[725] = {
+	pg.base.ship_meta_skilltask[725] = {
 		level = 5,
 		id = 725,
 		need_exp = 16000,
@@ -69610,11 +66694,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.ship_meta_skilltask
-
-	var_8_25[726] = {
+	pg.base.ship_meta_skilltask[726] = {
 		level = 6,
 		id = 726,
 		need_exp = 20000,
@@ -69703,11 +66783,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.ship_meta_skilltask
-
-	var_8_26[727] = {
+	pg.base.ship_meta_skilltask[727] = {
 		level = 7,
 		id = 727,
 		need_exp = 26000,
@@ -69801,11 +66877,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.ship_meta_skilltask
-
-	var_8_27[728] = {
+	pg.base.ship_meta_skilltask[728] = {
 		level = 8,
 		id = 728,
 		need_exp = 38000,
@@ -69899,11 +66971,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.ship_meta_skilltask
-
-	var_8_28[729] = {
+	pg.base.ship_meta_skilltask[729] = {
 		level = 9,
 		id = 729,
 		need_exp = 60000,
@@ -69997,11 +67065,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.ship_meta_skilltask
-
-	var_8_29[730] = {
+	pg.base.ship_meta_skilltask[730] = {
 		level = 1,
 		id = 730,
 		need_exp = 4000,
@@ -70086,11 +67150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.ship_meta_skilltask
-
-	var_8_30[731] = {
+	pg.base.ship_meta_skilltask[731] = {
 		level = 2,
 		id = 731,
 		need_exp = 5000,
@@ -70169,11 +67229,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.ship_meta_skilltask
-
-	var_8_31[732] = {
+	pg.base.ship_meta_skilltask[732] = {
 		level = 3,
 		id = 732,
 		need_exp = 8000,
@@ -70252,11 +67308,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.ship_meta_skilltask
-
-	var_8_32[733] = {
+	pg.base.ship_meta_skilltask[733] = {
 		level = 4,
 		id = 733,
 		need_exp = 12000,
@@ -70340,11 +67392,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.ship_meta_skilltask
-
-	var_8_33[734] = {
+	pg.base.ship_meta_skilltask[734] = {
 		level = 5,
 		id = 734,
 		need_exp = 16000,
@@ -70433,11 +67481,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.ship_meta_skilltask
-
-	var_8_34[735] = {
+	pg.base.ship_meta_skilltask[735] = {
 		level = 6,
 		id = 735,
 		need_exp = 20000,
@@ -70526,11 +67570,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.ship_meta_skilltask
-
-	var_8_35[736] = {
+	pg.base.ship_meta_skilltask[736] = {
 		level = 7,
 		id = 736,
 		need_exp = 26000,
@@ -70624,11 +67664,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.ship_meta_skilltask
-
-	var_8_36[737] = {
+	pg.base.ship_meta_skilltask[737] = {
 		level = 8,
 		id = 737,
 		need_exp = 38000,
@@ -70722,11 +67758,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.ship_meta_skilltask
-
-	var_8_37[738] = {
+	pg.base.ship_meta_skilltask[738] = {
 		level = 9,
 		id = 738,
 		need_exp = 60000,
@@ -70820,11 +67852,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.ship_meta_skilltask
-
-	var_8_38[739] = {
+	pg.base.ship_meta_skilltask[739] = {
 		level = 1,
 		id = 739,
 		need_exp = 4000,
@@ -70909,11 +67937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.ship_meta_skilltask
-
-	var_8_39[740] = {
+	pg.base.ship_meta_skilltask[740] = {
 		level = 2,
 		id = 740,
 		need_exp = 5000,
@@ -70992,11 +68016,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.ship_meta_skilltask
-
-	var_8_40[741] = {
+	pg.base.ship_meta_skilltask[741] = {
 		level = 3,
 		id = 741,
 		need_exp = 8000,
@@ -71075,11 +68095,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.ship_meta_skilltask
-
-	var_8_41[742] = {
+	pg.base.ship_meta_skilltask[742] = {
 		level = 4,
 		id = 742,
 		need_exp = 12000,
@@ -71163,11 +68179,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.ship_meta_skilltask
-
-	var_8_42[743] = {
+	pg.base.ship_meta_skilltask[743] = {
 		level = 5,
 		id = 743,
 		need_exp = 16000,
@@ -71256,11 +68268,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.ship_meta_skilltask
-
-	var_8_43[744] = {
+	pg.base.ship_meta_skilltask[744] = {
 		level = 6,
 		id = 744,
 		need_exp = 20000,
@@ -71349,11 +68357,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.ship_meta_skilltask
-
-	var_8_44[745] = {
+	pg.base.ship_meta_skilltask[745] = {
 		level = 7,
 		id = 745,
 		need_exp = 26000,
@@ -71447,11 +68451,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.ship_meta_skilltask
-
-	var_8_45[746] = {
+	pg.base.ship_meta_skilltask[746] = {
 		level = 8,
 		id = 746,
 		need_exp = 38000,
@@ -71545,11 +68545,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.ship_meta_skilltask
-
-	var_8_46[747] = {
+	pg.base.ship_meta_skilltask[747] = {
 		level = 9,
 		id = 747,
 		need_exp = 60000,
@@ -71643,11 +68639,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.ship_meta_skilltask
-
-	var_8_47[748] = {
+	pg.base.ship_meta_skilltask[748] = {
 		level = 1,
 		id = 748,
 		need_exp = 4000,
@@ -71732,11 +68724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.ship_meta_skilltask
-
-	var_8_48[749] = {
+	pg.base.ship_meta_skilltask[749] = {
 		level = 2,
 		id = 749,
 		need_exp = 5000,
@@ -71815,11 +68803,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.ship_meta_skilltask
-
-	var_8_49[750] = {
+	pg.base.ship_meta_skilltask[750] = {
 		level = 3,
 		id = 750,
 		need_exp = 8000,
@@ -71898,11 +68882,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.ship_meta_skilltask
-
-	var_8_50[751] = {
+	pg.base.ship_meta_skilltask[751] = {
 		level = 4,
 		id = 751,
 		need_exp = 12000,
@@ -71986,11 +68966,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.ship_meta_skilltask
-
-	var_8_51[752] = {
+	pg.base.ship_meta_skilltask[752] = {
 		level = 5,
 		id = 752,
 		need_exp = 16000,
@@ -72079,11 +69055,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.ship_meta_skilltask
-
-	var_8_52[753] = {
+	pg.base.ship_meta_skilltask[753] = {
 		level = 6,
 		id = 753,
 		need_exp = 20000,
@@ -72172,11 +69144,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.ship_meta_skilltask
-
-	var_8_53[754] = {
+	pg.base.ship_meta_skilltask[754] = {
 		level = 7,
 		id = 754,
 		need_exp = 26000,
@@ -72270,11 +69238,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.ship_meta_skilltask
-
-	var_8_54[755] = {
+	pg.base.ship_meta_skilltask[755] = {
 		level = 8,
 		id = 755,
 		need_exp = 38000,
@@ -72368,11 +69332,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.ship_meta_skilltask
-
-	var_8_55[756] = {
+	pg.base.ship_meta_skilltask[756] = {
 		level = 9,
 		id = 756,
 		need_exp = 60000,
@@ -72466,11 +69426,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.ship_meta_skilltask
-
-	var_8_56[757] = {
+	pg.base.ship_meta_skilltask[757] = {
 		level = 1,
 		id = 757,
 		need_exp = 2000,
@@ -72555,11 +69511,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.ship_meta_skilltask
-
-	var_8_57[758] = {
+	pg.base.ship_meta_skilltask[758] = {
 		level = 2,
 		id = 758,
 		need_exp = 2500,
@@ -72638,11 +69590,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.ship_meta_skilltask
-
-	var_8_58[759] = {
+	pg.base.ship_meta_skilltask[759] = {
 		level = 3,
 		id = 759,
 		need_exp = 4000,
@@ -72721,11 +69669,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.ship_meta_skilltask
-
-	var_8_59[760] = {
+	pg.base.ship_meta_skilltask[760] = {
 		level = 4,
 		id = 760,
 		need_exp = 6000,
@@ -72809,11 +69753,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.ship_meta_skilltask
-
-	var_8_60[761] = {
+	pg.base.ship_meta_skilltask[761] = {
 		level = 5,
 		id = 761,
 		need_exp = 8000,
@@ -72902,11 +69842,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.ship_meta_skilltask
-
-	var_8_61[762] = {
+	pg.base.ship_meta_skilltask[762] = {
 		level = 6,
 		id = 762,
 		need_exp = 10000,
@@ -72995,11 +69931,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.ship_meta_skilltask
-
-	var_8_62[763] = {
+	pg.base.ship_meta_skilltask[763] = {
 		level = 7,
 		id = 763,
 		need_exp = 13000,
@@ -73093,11 +70025,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.ship_meta_skilltask
-
-	var_8_63[764] = {
+	pg.base.ship_meta_skilltask[764] = {
 		level = 8,
 		id = 764,
 		need_exp = 19000,
@@ -73191,11 +70119,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.ship_meta_skilltask
-
-	var_8_64[765] = {
+	pg.base.ship_meta_skilltask[765] = {
 		level = 9,
 		id = 765,
 		need_exp = 30000,
@@ -73289,11 +70213,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.ship_meta_skilltask
-
-	var_8_65[766] = {
+	pg.base.ship_meta_skilltask[766] = {
 		level = 1,
 		id = 766,
 		need_exp = 2000,
@@ -73378,11 +70298,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.ship_meta_skilltask
-
-	var_8_66[767] = {
+	pg.base.ship_meta_skilltask[767] = {
 		level = 2,
 		id = 767,
 		need_exp = 2500,
@@ -73461,11 +70377,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.ship_meta_skilltask
-
-	var_8_67[768] = {
+	pg.base.ship_meta_skilltask[768] = {
 		level = 3,
 		id = 768,
 		need_exp = 4000,
@@ -73544,11 +70456,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.ship_meta_skilltask
-
-	var_8_68[769] = {
+	pg.base.ship_meta_skilltask[769] = {
 		level = 4,
 		id = 769,
 		need_exp = 6000,
@@ -73632,11 +70540,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.ship_meta_skilltask
-
-	var_8_69[770] = {
+	pg.base.ship_meta_skilltask[770] = {
 		level = 5,
 		id = 770,
 		need_exp = 8000,
@@ -73725,11 +70629,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.ship_meta_skilltask
-
-	var_8_70[771] = {
+	pg.base.ship_meta_skilltask[771] = {
 		level = 6,
 		id = 771,
 		need_exp = 10000,
@@ -73818,11 +70718,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.ship_meta_skilltask
-
-	var_8_71[772] = {
+	pg.base.ship_meta_skilltask[772] = {
 		level = 7,
 		id = 772,
 		need_exp = 13000,
@@ -73916,11 +70812,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.ship_meta_skilltask
-
-	var_8_72[773] = {
+	pg.base.ship_meta_skilltask[773] = {
 		level = 8,
 		id = 773,
 		need_exp = 19000,
@@ -74014,11 +70906,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.ship_meta_skilltask
-
-	var_8_73[774] = {
+	pg.base.ship_meta_skilltask[774] = {
 		level = 9,
 		id = 774,
 		need_exp = 30000,
@@ -74112,11 +71000,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.ship_meta_skilltask
-
-	var_8_74[775] = {
+	pg.base.ship_meta_skilltask[775] = {
 		level = 1,
 		id = 775,
 		need_exp = 4000,
@@ -74201,11 +71085,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.ship_meta_skilltask
-
-	var_8_75[776] = {
+	pg.base.ship_meta_skilltask[776] = {
 		level = 2,
 		id = 776,
 		need_exp = 5000,
@@ -74284,11 +71164,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.ship_meta_skilltask
-
-	var_8_76[777] = {
+	pg.base.ship_meta_skilltask[777] = {
 		level = 3,
 		id = 777,
 		need_exp = 8000,
@@ -74367,11 +71243,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.ship_meta_skilltask
-
-	var_8_77[778] = {
+	pg.base.ship_meta_skilltask[778] = {
 		level = 4,
 		id = 778,
 		need_exp = 12000,
@@ -74455,11 +71327,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.ship_meta_skilltask
-
-	var_8_78[779] = {
+	pg.base.ship_meta_skilltask[779] = {
 		level = 5,
 		id = 779,
 		need_exp = 16000,
@@ -74548,11 +71416,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.ship_meta_skilltask
-
-	var_8_79[780] = {
+	pg.base.ship_meta_skilltask[780] = {
 		level = 6,
 		id = 780,
 		need_exp = 20000,
@@ -74641,11 +71505,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.ship_meta_skilltask
-
-	var_8_80[781] = {
+	pg.base.ship_meta_skilltask[781] = {
 		level = 7,
 		id = 781,
 		need_exp = 26000,
@@ -74739,11 +71599,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.ship_meta_skilltask
-
-	var_8_81[782] = {
+	pg.base.ship_meta_skilltask[782] = {
 		level = 8,
 		id = 782,
 		need_exp = 38000,
@@ -74837,11 +71693,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.ship_meta_skilltask
-
-	var_8_82[783] = {
+	pg.base.ship_meta_skilltask[783] = {
 		level = 9,
 		id = 783,
 		need_exp = 60000,
@@ -74935,11 +71787,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.ship_meta_skilltask
-
-	var_8_83[784] = {
+	pg.base.ship_meta_skilltask[784] = {
 		level = 1,
 		id = 784,
 		need_exp = 4000,
@@ -75024,11 +71872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.ship_meta_skilltask
-
-	var_8_84[785] = {
+	pg.base.ship_meta_skilltask[785] = {
 		level = 2,
 		id = 785,
 		need_exp = 5000,
@@ -75107,11 +71951,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.ship_meta_skilltask
-
-	var_8_85[786] = {
+	pg.base.ship_meta_skilltask[786] = {
 		level = 3,
 		id = 786,
 		need_exp = 8000,
@@ -75190,11 +72030,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.ship_meta_skilltask
-
-	var_8_86[787] = {
+	pg.base.ship_meta_skilltask[787] = {
 		level = 4,
 		id = 787,
 		need_exp = 12000,
@@ -75278,11 +72114,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.ship_meta_skilltask
-
-	var_8_87[788] = {
+	pg.base.ship_meta_skilltask[788] = {
 		level = 5,
 		id = 788,
 		need_exp = 16000,
@@ -75371,11 +72203,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.ship_meta_skilltask
-
-	var_8_88[789] = {
+	pg.base.ship_meta_skilltask[789] = {
 		level = 6,
 		id = 789,
 		need_exp = 20000,
@@ -75464,11 +72292,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.ship_meta_skilltask
-
-	var_8_89[790] = {
+	pg.base.ship_meta_skilltask[790] = {
 		level = 7,
 		id = 790,
 		need_exp = 26000,
@@ -75562,11 +72386,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.ship_meta_skilltask
-
-	var_8_90[791] = {
+	pg.base.ship_meta_skilltask[791] = {
 		level = 8,
 		id = 791,
 		need_exp = 38000,
@@ -75660,11 +72480,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.ship_meta_skilltask
-
-	var_8_91[792] = {
+	pg.base.ship_meta_skilltask[792] = {
 		level = 9,
 		id = 792,
 		need_exp = 60000,
@@ -75758,11 +72574,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.ship_meta_skilltask
-
-	var_8_92[793] = {
+	pg.base.ship_meta_skilltask[793] = {
 		level = 1,
 		id = 793,
 		need_exp = 4000,
@@ -75847,11 +72659,7 @@ end)()
 			}
 		}
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.ship_meta_skilltask
-
-	var_8_93[794] = {
+	pg.base.ship_meta_skilltask[794] = {
 		level = 2,
 		id = 794,
 		need_exp = 5000,
@@ -75930,11 +72738,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.ship_meta_skilltask
-
-	var_8_94[795] = {
+	pg.base.ship_meta_skilltask[795] = {
 		level = 3,
 		id = 795,
 		need_exp = 8000,
@@ -76013,11 +72817,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.ship_meta_skilltask
-
-	var_8_95[796] = {
+	pg.base.ship_meta_skilltask[796] = {
 		level = 4,
 		id = 796,
 		need_exp = 12000,
@@ -76101,11 +72901,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.ship_meta_skilltask
-
-	var_8_96[797] = {
+	pg.base.ship_meta_skilltask[797] = {
 		level = 5,
 		id = 797,
 		need_exp = 16000,
@@ -76194,11 +72990,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.ship_meta_skilltask
-
-	var_8_97[798] = {
+	pg.base.ship_meta_skilltask[798] = {
 		level = 6,
 		id = 798,
 		need_exp = 20000,
@@ -76287,11 +73079,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.ship_meta_skilltask
-
-	var_8_98[799] = {
+	pg.base.ship_meta_skilltask[799] = {
 		level = 7,
 		id = 799,
 		need_exp = 26000,
@@ -76385,8 +73173,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_8_98
-	var_8_98.base.ship_meta_skilltask[800] = {
+	pg.base.ship_meta_skilltask[800] = {
 		level = 8,
 		id = 800,
 		need_exp = 38000,
@@ -76484,11 +73271,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_9_0[801] = {
+	pg.base.ship_meta_skilltask[801] = {
 		level = 9,
 		id = 801,
 		need_exp = 60000,
@@ -76582,11 +73365,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.ship_meta_skilltask
-
-	var_9_1[802] = {
+	pg.base.ship_meta_skilltask[802] = {
 		level = 1,
 		id = 802,
 		need_exp = 2000,
@@ -76671,11 +73450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.ship_meta_skilltask
-
-	var_9_2[803] = {
+	pg.base.ship_meta_skilltask[803] = {
 		level = 2,
 		id = 803,
 		need_exp = 2500,
@@ -76754,11 +73529,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.ship_meta_skilltask
-
-	var_9_3[804] = {
+	pg.base.ship_meta_skilltask[804] = {
 		level = 3,
 		id = 804,
 		need_exp = 4000,
@@ -76837,11 +73608,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.ship_meta_skilltask
-
-	var_9_4[805] = {
+	pg.base.ship_meta_skilltask[805] = {
 		level = 4,
 		id = 805,
 		need_exp = 6000,
@@ -76925,11 +73692,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.ship_meta_skilltask
-
-	var_9_5[806] = {
+	pg.base.ship_meta_skilltask[806] = {
 		level = 5,
 		id = 806,
 		need_exp = 8000,
@@ -77018,11 +73781,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.ship_meta_skilltask
-
-	var_9_6[807] = {
+	pg.base.ship_meta_skilltask[807] = {
 		level = 6,
 		id = 807,
 		need_exp = 10000,
@@ -77111,11 +73870,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.ship_meta_skilltask
-
-	var_9_7[808] = {
+	pg.base.ship_meta_skilltask[808] = {
 		level = 7,
 		id = 808,
 		need_exp = 13000,
@@ -77209,11 +73964,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.ship_meta_skilltask
-
-	var_9_8[809] = {
+	pg.base.ship_meta_skilltask[809] = {
 		level = 8,
 		id = 809,
 		need_exp = 19000,
@@ -77307,11 +74058,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.ship_meta_skilltask
-
-	var_9_9[810] = {
+	pg.base.ship_meta_skilltask[810] = {
 		level = 9,
 		id = 810,
 		need_exp = 30000,
@@ -77405,11 +74152,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.ship_meta_skilltask
-
-	var_9_10[811] = {
+	pg.base.ship_meta_skilltask[811] = {
 		level = 1,
 		id = 811,
 		need_exp = 2000,
@@ -77494,11 +74237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.ship_meta_skilltask
-
-	var_9_11[812] = {
+	pg.base.ship_meta_skilltask[812] = {
 		level = 2,
 		id = 812,
 		need_exp = 2500,
@@ -77577,11 +74316,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.ship_meta_skilltask
-
-	var_9_12[813] = {
+	pg.base.ship_meta_skilltask[813] = {
 		level = 3,
 		id = 813,
 		need_exp = 4000,
@@ -77660,11 +74395,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.ship_meta_skilltask
-
-	var_9_13[814] = {
+	pg.base.ship_meta_skilltask[814] = {
 		level = 4,
 		id = 814,
 		need_exp = 6000,
@@ -77748,11 +74479,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.ship_meta_skilltask
-
-	var_9_14[815] = {
+	pg.base.ship_meta_skilltask[815] = {
 		level = 5,
 		id = 815,
 		need_exp = 8000,
@@ -77841,11 +74568,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.ship_meta_skilltask
-
-	var_9_15[816] = {
+	pg.base.ship_meta_skilltask[816] = {
 		level = 6,
 		id = 816,
 		need_exp = 10000,
@@ -77934,11 +74657,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.ship_meta_skilltask
-
-	var_9_16[817] = {
+	pg.base.ship_meta_skilltask[817] = {
 		level = 7,
 		id = 817,
 		need_exp = 13000,
@@ -78032,11 +74751,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.ship_meta_skilltask
-
-	var_9_17[818] = {
+	pg.base.ship_meta_skilltask[818] = {
 		level = 8,
 		id = 818,
 		need_exp = 19000,
@@ -78130,11 +74845,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.ship_meta_skilltask
-
-	var_9_18[819] = {
+	pg.base.ship_meta_skilltask[819] = {
 		level = 9,
 		id = 819,
 		need_exp = 30000,
@@ -78228,11 +74939,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.ship_meta_skilltask
-
-	var_9_19[820] = {
+	pg.base.ship_meta_skilltask[820] = {
 		level = 1,
 		id = 820,
 		need_exp = 4000,
@@ -78317,11 +75024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.ship_meta_skilltask
-
-	var_9_20[821] = {
+	pg.base.ship_meta_skilltask[821] = {
 		level = 2,
 		id = 821,
 		need_exp = 5000,
@@ -78400,11 +75103,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.ship_meta_skilltask
-
-	var_9_21[822] = {
+	pg.base.ship_meta_skilltask[822] = {
 		level = 3,
 		id = 822,
 		need_exp = 8000,
@@ -78483,11 +75182,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.ship_meta_skilltask
-
-	var_9_22[823] = {
+	pg.base.ship_meta_skilltask[823] = {
 		level = 4,
 		id = 823,
 		need_exp = 12000,
@@ -78571,11 +75266,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.ship_meta_skilltask
-
-	var_9_23[824] = {
+	pg.base.ship_meta_skilltask[824] = {
 		level = 5,
 		id = 824,
 		need_exp = 16000,
@@ -78664,11 +75355,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.ship_meta_skilltask
-
-	var_9_24[825] = {
+	pg.base.ship_meta_skilltask[825] = {
 		level = 6,
 		id = 825,
 		need_exp = 20000,
@@ -78757,11 +75444,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.ship_meta_skilltask
-
-	var_9_25[826] = {
+	pg.base.ship_meta_skilltask[826] = {
 		level = 7,
 		id = 826,
 		need_exp = 26000,
@@ -78855,11 +75538,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.ship_meta_skilltask
-
-	var_9_26[827] = {
+	pg.base.ship_meta_skilltask[827] = {
 		level = 8,
 		id = 827,
 		need_exp = 38000,
@@ -78953,11 +75632,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.ship_meta_skilltask
-
-	var_9_27[828] = {
+	pg.base.ship_meta_skilltask[828] = {
 		level = 9,
 		id = 828,
 		need_exp = 60000,
@@ -79051,11 +75726,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.ship_meta_skilltask
-
-	var_9_28[829] = {
+	pg.base.ship_meta_skilltask[829] = {
 		level = 1,
 		id = 829,
 		need_exp = 4000,
@@ -79140,11 +75811,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.ship_meta_skilltask
-
-	var_9_29[830] = {
+	pg.base.ship_meta_skilltask[830] = {
 		level = 2,
 		id = 830,
 		need_exp = 5000,
@@ -79223,11 +75890,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.ship_meta_skilltask
-
-	var_9_30[831] = {
+	pg.base.ship_meta_skilltask[831] = {
 		level = 3,
 		id = 831,
 		need_exp = 8000,
@@ -79306,11 +75969,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.ship_meta_skilltask
-
-	var_9_31[832] = {
+	pg.base.ship_meta_skilltask[832] = {
 		level = 4,
 		id = 832,
 		need_exp = 12000,
@@ -79394,11 +76053,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.ship_meta_skilltask
-
-	var_9_32[833] = {
+	pg.base.ship_meta_skilltask[833] = {
 		level = 5,
 		id = 833,
 		need_exp = 16000,
@@ -79487,11 +76142,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.ship_meta_skilltask
-
-	var_9_33[834] = {
+	pg.base.ship_meta_skilltask[834] = {
 		level = 6,
 		id = 834,
 		need_exp = 20000,
@@ -79580,11 +76231,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.ship_meta_skilltask
-
-	var_9_34[835] = {
+	pg.base.ship_meta_skilltask[835] = {
 		level = 7,
 		id = 835,
 		need_exp = 26000,
@@ -79678,11 +76325,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.ship_meta_skilltask
-
-	var_9_35[836] = {
+	pg.base.ship_meta_skilltask[836] = {
 		level = 8,
 		id = 836,
 		need_exp = 38000,
@@ -79776,11 +76419,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.ship_meta_skilltask
-
-	var_9_36[837] = {
+	pg.base.ship_meta_skilltask[837] = {
 		level = 9,
 		id = 837,
 		need_exp = 60000,
@@ -79874,11 +76513,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.ship_meta_skilltask
-
-	var_9_37[838] = {
+	pg.base.ship_meta_skilltask[838] = {
 		level = 1,
 		id = 838,
 		need_exp = 4000,
@@ -79963,11 +76598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.ship_meta_skilltask
-
-	var_9_38[839] = {
+	pg.base.ship_meta_skilltask[839] = {
 		level = 2,
 		id = 839,
 		need_exp = 5000,
@@ -80046,11 +76677,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.ship_meta_skilltask
-
-	var_9_39[840] = {
+	pg.base.ship_meta_skilltask[840] = {
 		level = 3,
 		id = 840,
 		need_exp = 8000,
@@ -80129,11 +76756,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.ship_meta_skilltask
-
-	var_9_40[841] = {
+	pg.base.ship_meta_skilltask[841] = {
 		level = 4,
 		id = 841,
 		need_exp = 12000,
@@ -80217,11 +76840,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.ship_meta_skilltask
-
-	var_9_41[842] = {
+	pg.base.ship_meta_skilltask[842] = {
 		level = 5,
 		id = 842,
 		need_exp = 16000,
@@ -80310,11 +76929,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.ship_meta_skilltask
-
-	var_9_42[843] = {
+	pg.base.ship_meta_skilltask[843] = {
 		level = 6,
 		id = 843,
 		need_exp = 20000,
@@ -80403,11 +77018,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.ship_meta_skilltask
-
-	var_9_43[844] = {
+	pg.base.ship_meta_skilltask[844] = {
 		level = 7,
 		id = 844,
 		need_exp = 26000,
@@ -80501,11 +77112,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.ship_meta_skilltask
-
-	var_9_44[845] = {
+	pg.base.ship_meta_skilltask[845] = {
 		level = 8,
 		id = 845,
 		need_exp = 38000,
@@ -80599,11 +77206,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.ship_meta_skilltask
-
-	var_9_45[846] = {
+	pg.base.ship_meta_skilltask[846] = {
 		level = 9,
 		id = 846,
 		need_exp = 60000,
@@ -80697,11 +77300,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.ship_meta_skilltask
-
-	var_9_46[847] = {
+	pg.base.ship_meta_skilltask[847] = {
 		level = 1,
 		id = 847,
 		need_exp = 2000,
@@ -80786,11 +77385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.ship_meta_skilltask
-
-	var_9_47[848] = {
+	pg.base.ship_meta_skilltask[848] = {
 		level = 2,
 		id = 848,
 		need_exp = 2500,
@@ -80869,11 +77464,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.ship_meta_skilltask
-
-	var_9_48[849] = {
+	pg.base.ship_meta_skilltask[849] = {
 		level = 3,
 		id = 849,
 		need_exp = 4000,
@@ -80952,11 +77543,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.ship_meta_skilltask
-
-	var_9_49[850] = {
+	pg.base.ship_meta_skilltask[850] = {
 		level = 4,
 		id = 850,
 		need_exp = 6000,
@@ -81040,11 +77627,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.ship_meta_skilltask
-
-	var_9_50[851] = {
+	pg.base.ship_meta_skilltask[851] = {
 		level = 5,
 		id = 851,
 		need_exp = 8000,
@@ -81133,11 +77716,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.ship_meta_skilltask
-
-	var_9_51[852] = {
+	pg.base.ship_meta_skilltask[852] = {
 		level = 6,
 		id = 852,
 		need_exp = 10000,
@@ -81226,11 +77805,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.ship_meta_skilltask
-
-	var_9_52[853] = {
+	pg.base.ship_meta_skilltask[853] = {
 		level = 7,
 		id = 853,
 		need_exp = 13000,
@@ -81324,11 +77899,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.ship_meta_skilltask
-
-	var_9_53[854] = {
+	pg.base.ship_meta_skilltask[854] = {
 		level = 8,
 		id = 854,
 		need_exp = 19000,
@@ -81422,11 +77993,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.ship_meta_skilltask
-
-	var_9_54[855] = {
+	pg.base.ship_meta_skilltask[855] = {
 		level = 9,
 		id = 855,
 		need_exp = 30000,
@@ -81520,11 +78087,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.ship_meta_skilltask
-
-	var_9_55[856] = {
+	pg.base.ship_meta_skilltask[856] = {
 		level = 1,
 		id = 856,
 		need_exp = 2000,
@@ -81609,11 +78172,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.ship_meta_skilltask
-
-	var_9_56[857] = {
+	pg.base.ship_meta_skilltask[857] = {
 		level = 2,
 		id = 857,
 		need_exp = 2500,
@@ -81692,11 +78251,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.ship_meta_skilltask
-
-	var_9_57[858] = {
+	pg.base.ship_meta_skilltask[858] = {
 		level = 3,
 		id = 858,
 		need_exp = 4000,
@@ -81775,11 +78330,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.ship_meta_skilltask
-
-	var_9_58[859] = {
+	pg.base.ship_meta_skilltask[859] = {
 		level = 4,
 		id = 859,
 		need_exp = 6000,
@@ -81863,11 +78414,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.ship_meta_skilltask
-
-	var_9_59[860] = {
+	pg.base.ship_meta_skilltask[860] = {
 		level = 5,
 		id = 860,
 		need_exp = 8000,
@@ -81956,11 +78503,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.ship_meta_skilltask
-
-	var_9_60[861] = {
+	pg.base.ship_meta_skilltask[861] = {
 		level = 6,
 		id = 861,
 		need_exp = 10000,
@@ -82049,11 +78592,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.ship_meta_skilltask
-
-	var_9_61[862] = {
+	pg.base.ship_meta_skilltask[862] = {
 		level = 7,
 		id = 862,
 		need_exp = 13000,
@@ -82147,11 +78686,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.ship_meta_skilltask
-
-	var_9_62[863] = {
+	pg.base.ship_meta_skilltask[863] = {
 		level = 8,
 		id = 863,
 		need_exp = 19000,
@@ -82245,11 +78780,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.ship_meta_skilltask
-
-	var_9_63[864] = {
+	pg.base.ship_meta_skilltask[864] = {
 		level = 9,
 		id = 864,
 		need_exp = 30000,
@@ -82343,11 +78874,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.ship_meta_skilltask
-
-	var_9_64[865] = {
+	pg.base.ship_meta_skilltask[865] = {
 		level = 1,
 		id = 865,
 		need_exp = 4000,
@@ -82432,11 +78959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.ship_meta_skilltask
-
-	var_9_65[866] = {
+	pg.base.ship_meta_skilltask[866] = {
 		level = 2,
 		id = 866,
 		need_exp = 5000,
@@ -82515,11 +79038,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.ship_meta_skilltask
-
-	var_9_66[867] = {
+	pg.base.ship_meta_skilltask[867] = {
 		level = 3,
 		id = 867,
 		need_exp = 8000,
@@ -82598,11 +79117,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.ship_meta_skilltask
-
-	var_9_67[868] = {
+	pg.base.ship_meta_skilltask[868] = {
 		level = 4,
 		id = 868,
 		need_exp = 12000,
@@ -82686,11 +79201,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.ship_meta_skilltask
-
-	var_9_68[869] = {
+	pg.base.ship_meta_skilltask[869] = {
 		level = 5,
 		id = 869,
 		need_exp = 16000,
@@ -82779,11 +79290,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.ship_meta_skilltask
-
-	var_9_69[870] = {
+	pg.base.ship_meta_skilltask[870] = {
 		level = 6,
 		id = 870,
 		need_exp = 20000,
@@ -82872,11 +79379,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.ship_meta_skilltask
-
-	var_9_70[871] = {
+	pg.base.ship_meta_skilltask[871] = {
 		level = 7,
 		id = 871,
 		need_exp = 26000,
@@ -82970,11 +79473,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.ship_meta_skilltask
-
-	var_9_71[872] = {
+	pg.base.ship_meta_skilltask[872] = {
 		level = 8,
 		id = 872,
 		need_exp = 38000,
@@ -83068,11 +79567,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.ship_meta_skilltask
-
-	var_9_72[873] = {
+	pg.base.ship_meta_skilltask[873] = {
 		level = 9,
 		id = 873,
 		need_exp = 60000,
@@ -83166,11 +79661,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.ship_meta_skilltask
-
-	var_9_73[874] = {
+	pg.base.ship_meta_skilltask[874] = {
 		level = 1,
 		id = 874,
 		need_exp = 4000,
@@ -83255,11 +79746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.ship_meta_skilltask
-
-	var_9_74[875] = {
+	pg.base.ship_meta_skilltask[875] = {
 		level = 2,
 		id = 875,
 		need_exp = 5000,
@@ -83338,11 +79825,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.ship_meta_skilltask
-
-	var_9_75[876] = {
+	pg.base.ship_meta_skilltask[876] = {
 		level = 3,
 		id = 876,
 		need_exp = 8000,
@@ -83421,11 +79904,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.ship_meta_skilltask
-
-	var_9_76[877] = {
+	pg.base.ship_meta_skilltask[877] = {
 		level = 4,
 		id = 877,
 		need_exp = 12000,
@@ -83509,11 +79988,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.ship_meta_skilltask
-
-	var_9_77[878] = {
+	pg.base.ship_meta_skilltask[878] = {
 		level = 5,
 		id = 878,
 		need_exp = 16000,
@@ -83602,11 +80077,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.ship_meta_skilltask
-
-	var_9_78[879] = {
+	pg.base.ship_meta_skilltask[879] = {
 		level = 6,
 		id = 879,
 		need_exp = 20000,
@@ -83695,11 +80166,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.ship_meta_skilltask
-
-	var_9_79[880] = {
+	pg.base.ship_meta_skilltask[880] = {
 		level = 7,
 		id = 880,
 		need_exp = 26000,
@@ -83793,11 +80260,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.ship_meta_skilltask
-
-	var_9_80[881] = {
+	pg.base.ship_meta_skilltask[881] = {
 		level = 8,
 		id = 881,
 		need_exp = 38000,
@@ -83891,11 +80354,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.ship_meta_skilltask
-
-	var_9_81[882] = {
+	pg.base.ship_meta_skilltask[882] = {
 		level = 9,
 		id = 882,
 		need_exp = 60000,
@@ -83989,11 +80448,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.ship_meta_skilltask
-
-	var_9_82[883] = {
+	pg.base.ship_meta_skilltask[883] = {
 		level = 1,
 		id = 883,
 		need_exp = 4000,
@@ -84078,11 +80533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.ship_meta_skilltask
-
-	var_9_83[884] = {
+	pg.base.ship_meta_skilltask[884] = {
 		level = 2,
 		id = 884,
 		need_exp = 5000,
@@ -84161,11 +80612,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.ship_meta_skilltask
-
-	var_9_84[885] = {
+	pg.base.ship_meta_skilltask[885] = {
 		level = 3,
 		id = 885,
 		need_exp = 8000,
@@ -84244,11 +80691,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.ship_meta_skilltask
-
-	var_9_85[886] = {
+	pg.base.ship_meta_skilltask[886] = {
 		level = 4,
 		id = 886,
 		need_exp = 12000,
@@ -84332,11 +80775,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.ship_meta_skilltask
-
-	var_9_86[887] = {
+	pg.base.ship_meta_skilltask[887] = {
 		level = 5,
 		id = 887,
 		need_exp = 16000,
@@ -84425,11 +80864,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.ship_meta_skilltask
-
-	var_9_87[888] = {
+	pg.base.ship_meta_skilltask[888] = {
 		level = 6,
 		id = 888,
 		need_exp = 20000,
@@ -84518,11 +80953,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.ship_meta_skilltask
-
-	var_9_88[889] = {
+	pg.base.ship_meta_skilltask[889] = {
 		level = 7,
 		id = 889,
 		need_exp = 26000,
@@ -84616,11 +81047,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.ship_meta_skilltask
-
-	var_9_89[890] = {
+	pg.base.ship_meta_skilltask[890] = {
 		level = 8,
 		id = 890,
 		need_exp = 38000,
@@ -84714,11 +81141,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.ship_meta_skilltask
-
-	var_9_90[891] = {
+	pg.base.ship_meta_skilltask[891] = {
 		level = 9,
 		id = 891,
 		need_exp = 60000,
@@ -84812,11 +81235,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.ship_meta_skilltask
-
-	var_9_91[892] = {
+	pg.base.ship_meta_skilltask[892] = {
 		level = 1,
 		id = 892,
 		need_exp = 4000,
@@ -84901,11 +81320,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.ship_meta_skilltask
-
-	var_9_92[893] = {
+	pg.base.ship_meta_skilltask[893] = {
 		level = 2,
 		id = 893,
 		need_exp = 5000,
@@ -84984,11 +81399,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.ship_meta_skilltask
-
-	var_9_93[894] = {
+	pg.base.ship_meta_skilltask[894] = {
 		level = 3,
 		id = 894,
 		need_exp = 8000,
@@ -85067,11 +81478,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.ship_meta_skilltask
-
-	var_9_94[895] = {
+	pg.base.ship_meta_skilltask[895] = {
 		level = 4,
 		id = 895,
 		need_exp = 12000,
@@ -85155,11 +81562,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.ship_meta_skilltask
-
-	var_9_95[896] = {
+	pg.base.ship_meta_skilltask[896] = {
 		level = 5,
 		id = 896,
 		need_exp = 16000,
@@ -85248,11 +81651,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.ship_meta_skilltask
-
-	var_9_96[897] = {
+	pg.base.ship_meta_skilltask[897] = {
 		level = 6,
 		id = 897,
 		need_exp = 20000,
@@ -85341,11 +81740,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.ship_meta_skilltask
-
-	var_9_97[898] = {
+	pg.base.ship_meta_skilltask[898] = {
 		level = 7,
 		id = 898,
 		need_exp = 26000,
@@ -85439,11 +81834,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.ship_meta_skilltask
-
-	var_9_98[899] = {
+	pg.base.ship_meta_skilltask[899] = {
 		level = 8,
 		id = 899,
 		need_exp = 38000,
@@ -85537,8 +81928,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_9_98
-	var_9_98.base.ship_meta_skilltask[900] = {
+	pg.base.ship_meta_skilltask[900] = {
 		level = 9,
 		id = 900,
 		need_exp = 60000,
@@ -85636,11 +82026,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_10_0[901] = {
+	pg.base.ship_meta_skilltask[901] = {
 		level = 1,
 		id = 901,
 		need_exp = 4000,
@@ -85725,11 +82111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.ship_meta_skilltask
-
-	var_10_1[902] = {
+	pg.base.ship_meta_skilltask[902] = {
 		level = 2,
 		id = 902,
 		need_exp = 5000,
@@ -85808,11 +82190,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.ship_meta_skilltask
-
-	var_10_2[903] = {
+	pg.base.ship_meta_skilltask[903] = {
 		level = 3,
 		id = 903,
 		need_exp = 8000,
@@ -85891,11 +82269,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.ship_meta_skilltask
-
-	var_10_3[904] = {
+	pg.base.ship_meta_skilltask[904] = {
 		level = 4,
 		id = 904,
 		need_exp = 12000,
@@ -85979,11 +82353,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.ship_meta_skilltask
-
-	var_10_4[905] = {
+	pg.base.ship_meta_skilltask[905] = {
 		level = 5,
 		id = 905,
 		need_exp = 16000,
@@ -86072,11 +82442,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.ship_meta_skilltask
-
-	var_10_5[906] = {
+	pg.base.ship_meta_skilltask[906] = {
 		level = 6,
 		id = 906,
 		need_exp = 20000,
@@ -86165,11 +82531,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.ship_meta_skilltask
-
-	var_10_6[907] = {
+	pg.base.ship_meta_skilltask[907] = {
 		level = 7,
 		id = 907,
 		need_exp = 26000,
@@ -86263,11 +82625,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.ship_meta_skilltask
-
-	var_10_7[908] = {
+	pg.base.ship_meta_skilltask[908] = {
 		level = 8,
 		id = 908,
 		need_exp = 38000,
@@ -86361,11 +82719,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.ship_meta_skilltask
-
-	var_10_8[909] = {
+	pg.base.ship_meta_skilltask[909] = {
 		level = 9,
 		id = 909,
 		need_exp = 60000,
@@ -86459,11 +82813,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.ship_meta_skilltask
-
-	var_10_9[910] = {
+	pg.base.ship_meta_skilltask[910] = {
 		level = 1,
 		id = 910,
 		need_exp = 4000,
@@ -86548,11 +82898,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.ship_meta_skilltask
-
-	var_10_10[911] = {
+	pg.base.ship_meta_skilltask[911] = {
 		level = 2,
 		id = 911,
 		need_exp = 5000,
@@ -86631,11 +82977,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.ship_meta_skilltask
-
-	var_10_11[912] = {
+	pg.base.ship_meta_skilltask[912] = {
 		level = 3,
 		id = 912,
 		need_exp = 8000,
@@ -86714,11 +83056,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.ship_meta_skilltask
-
-	var_10_12[913] = {
+	pg.base.ship_meta_skilltask[913] = {
 		level = 4,
 		id = 913,
 		need_exp = 12000,
@@ -86802,11 +83140,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.ship_meta_skilltask
-
-	var_10_13[914] = {
+	pg.base.ship_meta_skilltask[914] = {
 		level = 5,
 		id = 914,
 		need_exp = 16000,
@@ -86895,11 +83229,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.ship_meta_skilltask
-
-	var_10_14[915] = {
+	pg.base.ship_meta_skilltask[915] = {
 		level = 6,
 		id = 915,
 		need_exp = 20000,
@@ -86988,11 +83318,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.ship_meta_skilltask
-
-	var_10_15[916] = {
+	pg.base.ship_meta_skilltask[916] = {
 		level = 7,
 		id = 916,
 		need_exp = 26000,
@@ -87086,11 +83412,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.ship_meta_skilltask
-
-	var_10_16[917] = {
+	pg.base.ship_meta_skilltask[917] = {
 		level = 8,
 		id = 917,
 		need_exp = 38000,
@@ -87184,11 +83506,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.ship_meta_skilltask
-
-	var_10_17[918] = {
+	pg.base.ship_meta_skilltask[918] = {
 		level = 9,
 		id = 918,
 		need_exp = 60000,
@@ -87282,11 +83600,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.ship_meta_skilltask
-
-	var_10_18[919] = {
+	pg.base.ship_meta_skilltask[919] = {
 		level = 1,
 		id = 919,
 		need_exp = 2000,
@@ -87371,11 +83685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.ship_meta_skilltask
-
-	var_10_19[920] = {
+	pg.base.ship_meta_skilltask[920] = {
 		level = 2,
 		id = 920,
 		need_exp = 2500,
@@ -87454,11 +83764,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.ship_meta_skilltask
-
-	var_10_20[921] = {
+	pg.base.ship_meta_skilltask[921] = {
 		level = 3,
 		id = 921,
 		need_exp = 4000,
@@ -87537,11 +83843,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.ship_meta_skilltask
-
-	var_10_21[922] = {
+	pg.base.ship_meta_skilltask[922] = {
 		level = 4,
 		id = 922,
 		need_exp = 6000,
@@ -87625,11 +83927,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.ship_meta_skilltask
-
-	var_10_22[923] = {
+	pg.base.ship_meta_skilltask[923] = {
 		level = 5,
 		id = 923,
 		need_exp = 8000,
@@ -87718,11 +84016,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.ship_meta_skilltask
-
-	var_10_23[924] = {
+	pg.base.ship_meta_skilltask[924] = {
 		level = 6,
 		id = 924,
 		need_exp = 10000,
@@ -87811,11 +84105,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.ship_meta_skilltask
-
-	var_10_24[925] = {
+	pg.base.ship_meta_skilltask[925] = {
 		level = 7,
 		id = 925,
 		need_exp = 13000,
@@ -87909,11 +84199,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.ship_meta_skilltask
-
-	var_10_25[926] = {
+	pg.base.ship_meta_skilltask[926] = {
 		level = 8,
 		id = 926,
 		need_exp = 19000,
@@ -88007,11 +84293,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.ship_meta_skilltask
-
-	var_10_26[927] = {
+	pg.base.ship_meta_skilltask[927] = {
 		level = 9,
 		id = 927,
 		need_exp = 30000,
@@ -88105,11 +84387,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.ship_meta_skilltask
-
-	var_10_27[928] = {
+	pg.base.ship_meta_skilltask[928] = {
 		level = 1,
 		id = 928,
 		need_exp = 2000,
@@ -88194,11 +84472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.ship_meta_skilltask
-
-	var_10_28[929] = {
+	pg.base.ship_meta_skilltask[929] = {
 		level = 2,
 		id = 929,
 		need_exp = 2500,
@@ -88277,11 +84551,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.ship_meta_skilltask
-
-	var_10_29[930] = {
+	pg.base.ship_meta_skilltask[930] = {
 		level = 3,
 		id = 930,
 		need_exp = 4000,
@@ -88360,11 +84630,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.ship_meta_skilltask
-
-	var_10_30[931] = {
+	pg.base.ship_meta_skilltask[931] = {
 		level = 4,
 		id = 931,
 		need_exp = 6000,
@@ -88448,11 +84714,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.ship_meta_skilltask
-
-	var_10_31[932] = {
+	pg.base.ship_meta_skilltask[932] = {
 		level = 5,
 		id = 932,
 		need_exp = 8000,
@@ -88541,11 +84803,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.ship_meta_skilltask
-
-	var_10_32[933] = {
+	pg.base.ship_meta_skilltask[933] = {
 		level = 6,
 		id = 933,
 		need_exp = 10000,
@@ -88634,11 +84892,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.ship_meta_skilltask
-
-	var_10_33[934] = {
+	pg.base.ship_meta_skilltask[934] = {
 		level = 7,
 		id = 934,
 		need_exp = 13000,
@@ -88732,11 +84986,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.ship_meta_skilltask
-
-	var_10_34[935] = {
+	pg.base.ship_meta_skilltask[935] = {
 		level = 8,
 		id = 935,
 		need_exp = 19000,
@@ -88830,11 +85080,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.ship_meta_skilltask
-
-	var_10_35[936] = {
+	pg.base.ship_meta_skilltask[936] = {
 		level = 9,
 		id = 936,
 		need_exp = 30000,
@@ -88928,11 +85174,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.ship_meta_skilltask
-
-	var_10_36[937] = {
+	pg.base.ship_meta_skilltask[937] = {
 		level = 1,
 		id = 937,
 		need_exp = 2000,
@@ -89017,11 +85259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.ship_meta_skilltask
-
-	var_10_37[938] = {
+	pg.base.ship_meta_skilltask[938] = {
 		level = 2,
 		id = 938,
 		need_exp = 2500,
@@ -89100,11 +85338,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.ship_meta_skilltask
-
-	var_10_38[939] = {
+	pg.base.ship_meta_skilltask[939] = {
 		level = 3,
 		id = 939,
 		need_exp = 4000,
@@ -89183,11 +85417,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.ship_meta_skilltask
-
-	var_10_39[940] = {
+	pg.base.ship_meta_skilltask[940] = {
 		level = 4,
 		id = 940,
 		need_exp = 6000,
@@ -89271,11 +85501,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.ship_meta_skilltask
-
-	var_10_40[941] = {
+	pg.base.ship_meta_skilltask[941] = {
 		level = 5,
 		id = 941,
 		need_exp = 8000,
@@ -89364,11 +85590,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.ship_meta_skilltask
-
-	var_10_41[942] = {
+	pg.base.ship_meta_skilltask[942] = {
 		level = 6,
 		id = 942,
 		need_exp = 10000,
@@ -89457,11 +85679,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.ship_meta_skilltask
-
-	var_10_42[943] = {
+	pg.base.ship_meta_skilltask[943] = {
 		level = 7,
 		id = 943,
 		need_exp = 13000,
@@ -89555,11 +85773,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.ship_meta_skilltask
-
-	var_10_43[944] = {
+	pg.base.ship_meta_skilltask[944] = {
 		level = 8,
 		id = 944,
 		need_exp = 19000,
@@ -89653,11 +85867,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.ship_meta_skilltask
-
-	var_10_44[945] = {
+	pg.base.ship_meta_skilltask[945] = {
 		level = 9,
 		id = 945,
 		need_exp = 30000,
@@ -89751,11 +85961,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.ship_meta_skilltask
-
-	var_10_45[946] = {
+	pg.base.ship_meta_skilltask[946] = {
 		level = 1,
 		id = 946,
 		need_exp = 2000,
@@ -89840,11 +86046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.ship_meta_skilltask
-
-	var_10_46[947] = {
+	pg.base.ship_meta_skilltask[947] = {
 		level = 2,
 		id = 947,
 		need_exp = 2500,
@@ -89923,11 +86125,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.ship_meta_skilltask
-
-	var_10_47[948] = {
+	pg.base.ship_meta_skilltask[948] = {
 		level = 3,
 		id = 948,
 		need_exp = 4000,
@@ -90006,11 +86204,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.ship_meta_skilltask
-
-	var_10_48[949] = {
+	pg.base.ship_meta_skilltask[949] = {
 		level = 4,
 		id = 949,
 		need_exp = 6000,
@@ -90094,11 +86288,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.ship_meta_skilltask
-
-	var_10_49[950] = {
+	pg.base.ship_meta_skilltask[950] = {
 		level = 5,
 		id = 950,
 		need_exp = 8000,
@@ -90187,11 +86377,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.ship_meta_skilltask
-
-	var_10_50[951] = {
+	pg.base.ship_meta_skilltask[951] = {
 		level = 6,
 		id = 951,
 		need_exp = 10000,
@@ -90280,11 +86466,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.ship_meta_skilltask
-
-	var_10_51[952] = {
+	pg.base.ship_meta_skilltask[952] = {
 		level = 7,
 		id = 952,
 		need_exp = 13000,
@@ -90378,11 +86560,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.ship_meta_skilltask
-
-	var_10_52[953] = {
+	pg.base.ship_meta_skilltask[953] = {
 		level = 8,
 		id = 953,
 		need_exp = 19000,
@@ -90476,11 +86654,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.ship_meta_skilltask
-
-	var_10_53[954] = {
+	pg.base.ship_meta_skilltask[954] = {
 		level = 9,
 		id = 954,
 		need_exp = 30000,
@@ -90574,11 +86748,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.ship_meta_skilltask
-
-	var_10_54[955] = {
+	pg.base.ship_meta_skilltask[955] = {
 		level = 1,
 		id = 955,
 		need_exp = 4000,
@@ -90663,11 +86833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.ship_meta_skilltask
-
-	var_10_55[956] = {
+	pg.base.ship_meta_skilltask[956] = {
 		level = 2,
 		id = 956,
 		need_exp = 5000,
@@ -90746,11 +86912,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.ship_meta_skilltask
-
-	var_10_56[957] = {
+	pg.base.ship_meta_skilltask[957] = {
 		level = 3,
 		id = 957,
 		need_exp = 8000,
@@ -90829,11 +86991,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.ship_meta_skilltask
-
-	var_10_57[958] = {
+	pg.base.ship_meta_skilltask[958] = {
 		level = 4,
 		id = 958,
 		need_exp = 12000,
@@ -90917,11 +87075,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.ship_meta_skilltask
-
-	var_10_58[959] = {
+	pg.base.ship_meta_skilltask[959] = {
 		level = 5,
 		id = 959,
 		need_exp = 16000,
@@ -91010,11 +87164,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.ship_meta_skilltask
-
-	var_10_59[960] = {
+	pg.base.ship_meta_skilltask[960] = {
 		level = 6,
 		id = 960,
 		need_exp = 20000,
@@ -91103,11 +87253,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.ship_meta_skilltask
-
-	var_10_60[961] = {
+	pg.base.ship_meta_skilltask[961] = {
 		level = 7,
 		id = 961,
 		need_exp = 26000,
@@ -91201,11 +87347,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.ship_meta_skilltask
-
-	var_10_61[962] = {
+	pg.base.ship_meta_skilltask[962] = {
 		level = 8,
 		id = 962,
 		need_exp = 38000,
@@ -91299,11 +87441,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.ship_meta_skilltask
-
-	var_10_62[963] = {
+	pg.base.ship_meta_skilltask[963] = {
 		level = 9,
 		id = 963,
 		need_exp = 60000,
@@ -91397,11 +87535,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.ship_meta_skilltask
-
-	var_10_63[964] = {
+	pg.base.ship_meta_skilltask[964] = {
 		level = 1,
 		id = 964,
 		need_exp = 4000,
@@ -91486,11 +87620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.ship_meta_skilltask
-
-	var_10_64[965] = {
+	pg.base.ship_meta_skilltask[965] = {
 		level = 2,
 		id = 965,
 		need_exp = 5000,
@@ -91569,11 +87699,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.ship_meta_skilltask
-
-	var_10_65[966] = {
+	pg.base.ship_meta_skilltask[966] = {
 		level = 3,
 		id = 966,
 		need_exp = 8000,
@@ -91652,11 +87778,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.ship_meta_skilltask
-
-	var_10_66[967] = {
+	pg.base.ship_meta_skilltask[967] = {
 		level = 4,
 		id = 967,
 		need_exp = 12000,
@@ -91740,11 +87862,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.ship_meta_skilltask
-
-	var_10_67[968] = {
+	pg.base.ship_meta_skilltask[968] = {
 		level = 5,
 		id = 968,
 		need_exp = 16000,
@@ -91833,11 +87951,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.ship_meta_skilltask
-
-	var_10_68[969] = {
+	pg.base.ship_meta_skilltask[969] = {
 		level = 6,
 		id = 969,
 		need_exp = 20000,
@@ -91926,11 +88040,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.ship_meta_skilltask
-
-	var_10_69[970] = {
+	pg.base.ship_meta_skilltask[970] = {
 		level = 7,
 		id = 970,
 		need_exp = 26000,
@@ -92024,11 +88134,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.ship_meta_skilltask
-
-	var_10_70[971] = {
+	pg.base.ship_meta_skilltask[971] = {
 		level = 8,
 		id = 971,
 		need_exp = 38000,
@@ -92122,11 +88228,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.ship_meta_skilltask
-
-	var_10_71[972] = {
+	pg.base.ship_meta_skilltask[972] = {
 		level = 9,
 		id = 972,
 		need_exp = 60000,
@@ -92220,11 +88322,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.ship_meta_skilltask
-
-	var_10_72[973] = {
+	pg.base.ship_meta_skilltask[973] = {
 		level = 1,
 		id = 973,
 		need_exp = 4000,
@@ -92309,11 +88407,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.ship_meta_skilltask
-
-	var_10_73[974] = {
+	pg.base.ship_meta_skilltask[974] = {
 		level = 2,
 		id = 974,
 		need_exp = 5000,
@@ -92392,11 +88486,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.ship_meta_skilltask
-
-	var_10_74[975] = {
+	pg.base.ship_meta_skilltask[975] = {
 		level = 3,
 		id = 975,
 		need_exp = 8000,
@@ -92475,11 +88565,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.ship_meta_skilltask
-
-	var_10_75[976] = {
+	pg.base.ship_meta_skilltask[976] = {
 		level = 4,
 		id = 976,
 		need_exp = 12000,
@@ -92563,11 +88649,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.ship_meta_skilltask
-
-	var_10_76[977] = {
+	pg.base.ship_meta_skilltask[977] = {
 		level = 5,
 		id = 977,
 		need_exp = 16000,
@@ -92656,11 +88738,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.ship_meta_skilltask
-
-	var_10_77[978] = {
+	pg.base.ship_meta_skilltask[978] = {
 		level = 6,
 		id = 978,
 		need_exp = 20000,
@@ -92749,11 +88827,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.ship_meta_skilltask
-
-	var_10_78[979] = {
+	pg.base.ship_meta_skilltask[979] = {
 		level = 7,
 		id = 979,
 		need_exp = 26000,
@@ -92847,11 +88921,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.ship_meta_skilltask
-
-	var_10_79[980] = {
+	pg.base.ship_meta_skilltask[980] = {
 		level = 8,
 		id = 980,
 		need_exp = 38000,
@@ -92945,11 +89015,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.ship_meta_skilltask
-
-	var_10_80[981] = {
+	pg.base.ship_meta_skilltask[981] = {
 		level = 9,
 		id = 981,
 		need_exp = 60000,
@@ -93043,11 +89109,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.ship_meta_skilltask
-
-	var_10_81[982] = {
+	pg.base.ship_meta_skilltask[982] = {
 		level = 1,
 		id = 982,
 		need_exp = 4000,
@@ -93132,11 +89194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.ship_meta_skilltask
-
-	var_10_82[983] = {
+	pg.base.ship_meta_skilltask[983] = {
 		level = 2,
 		id = 983,
 		need_exp = 5000,
@@ -93215,11 +89273,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.ship_meta_skilltask
-
-	var_10_83[984] = {
+	pg.base.ship_meta_skilltask[984] = {
 		level = 3,
 		id = 984,
 		need_exp = 8000,
@@ -93298,11 +89352,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.ship_meta_skilltask
-
-	var_10_84[985] = {
+	pg.base.ship_meta_skilltask[985] = {
 		level = 4,
 		id = 985,
 		need_exp = 12000,
@@ -93386,11 +89436,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.ship_meta_skilltask
-
-	var_10_85[986] = {
+	pg.base.ship_meta_skilltask[986] = {
 		level = 5,
 		id = 986,
 		need_exp = 16000,
@@ -93479,11 +89525,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.ship_meta_skilltask
-
-	var_10_86[987] = {
+	pg.base.ship_meta_skilltask[987] = {
 		level = 6,
 		id = 987,
 		need_exp = 20000,
@@ -93572,11 +89614,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.ship_meta_skilltask
-
-	var_10_87[988] = {
+	pg.base.ship_meta_skilltask[988] = {
 		level = 7,
 		id = 988,
 		need_exp = 26000,
@@ -93670,11 +89708,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.ship_meta_skilltask
-
-	var_10_88[989] = {
+	pg.base.ship_meta_skilltask[989] = {
 		level = 8,
 		id = 989,
 		need_exp = 38000,
@@ -93768,11 +89802,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.ship_meta_skilltask
-
-	var_10_89[990] = {
+	pg.base.ship_meta_skilltask[990] = {
 		level = 9,
 		id = 990,
 		need_exp = 60000,
@@ -93866,11 +89896,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.ship_meta_skilltask
-
-	var_10_90[991] = {
+	pg.base.ship_meta_skilltask[991] = {
 		level = 1,
 		id = 991,
 		need_exp = 4000,
@@ -93955,11 +89981,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.ship_meta_skilltask
-
-	var_10_91[992] = {
+	pg.base.ship_meta_skilltask[992] = {
 		level = 2,
 		id = 992,
 		need_exp = 5000,
@@ -94038,11 +90060,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.ship_meta_skilltask
-
-	var_10_92[993] = {
+	pg.base.ship_meta_skilltask[993] = {
 		level = 3,
 		id = 993,
 		need_exp = 8000,
@@ -94121,11 +90139,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.ship_meta_skilltask
-
-	var_10_93[994] = {
+	pg.base.ship_meta_skilltask[994] = {
 		level = 4,
 		id = 994,
 		need_exp = 12000,
@@ -94209,11 +90223,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.ship_meta_skilltask
-
-	var_10_94[995] = {
+	pg.base.ship_meta_skilltask[995] = {
 		level = 5,
 		id = 995,
 		need_exp = 16000,
@@ -94302,11 +90312,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.ship_meta_skilltask
-
-	var_10_95[996] = {
+	pg.base.ship_meta_skilltask[996] = {
 		level = 6,
 		id = 996,
 		need_exp = 20000,
@@ -94395,11 +90401,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.ship_meta_skilltask
-
-	var_10_96[997] = {
+	pg.base.ship_meta_skilltask[997] = {
 		level = 7,
 		id = 997,
 		need_exp = 26000,
@@ -94493,11 +90495,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.ship_meta_skilltask
-
-	var_10_97[998] = {
+	pg.base.ship_meta_skilltask[998] = {
 		level = 8,
 		id = 998,
 		need_exp = 38000,
@@ -94591,11 +90589,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.ship_meta_skilltask
-
-	var_10_98[999] = {
+	pg.base.ship_meta_skilltask[999] = {
 		level = 9,
 		id = 999,
 		need_exp = 60000,
@@ -94689,8 +90683,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_10_98
-	var_10_98.base.ship_meta_skilltask[1000] = {
+	pg.base.ship_meta_skilltask[1000] = {
 		level = 1,
 		id = 1000,
 		need_exp = 4000,
@@ -94779,11 +90772,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_11_0[1001] = {
+	pg.base.ship_meta_skilltask[1001] = {
 		level = 2,
 		id = 1001,
 		need_exp = 5000,
@@ -94862,11 +90851,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.ship_meta_skilltask
-
-	var_11_1[1002] = {
+	pg.base.ship_meta_skilltask[1002] = {
 		level = 3,
 		id = 1002,
 		need_exp = 8000,
@@ -94945,11 +90930,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.ship_meta_skilltask
-
-	var_11_2[1003] = {
+	pg.base.ship_meta_skilltask[1003] = {
 		level = 4,
 		id = 1003,
 		need_exp = 12000,
@@ -95033,11 +91014,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.ship_meta_skilltask
-
-	var_11_3[1004] = {
+	pg.base.ship_meta_skilltask[1004] = {
 		level = 5,
 		id = 1004,
 		need_exp = 16000,
@@ -95126,11 +91103,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.ship_meta_skilltask
-
-	var_11_4[1005] = {
+	pg.base.ship_meta_skilltask[1005] = {
 		level = 6,
 		id = 1005,
 		need_exp = 20000,
@@ -95219,11 +91192,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.ship_meta_skilltask
-
-	var_11_5[1006] = {
+	pg.base.ship_meta_skilltask[1006] = {
 		level = 7,
 		id = 1006,
 		need_exp = 26000,
@@ -95317,11 +91286,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.ship_meta_skilltask
-
-	var_11_6[1007] = {
+	pg.base.ship_meta_skilltask[1007] = {
 		level = 8,
 		id = 1007,
 		need_exp = 38000,
@@ -95415,11 +91380,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.ship_meta_skilltask
-
-	var_11_7[1008] = {
+	pg.base.ship_meta_skilltask[1008] = {
 		level = 9,
 		id = 1008,
 		need_exp = 60000,
@@ -95513,11 +91474,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.ship_meta_skilltask
-
-	var_11_8[1009] = {
+	pg.base.ship_meta_skilltask[1009] = {
 		level = 1,
 		id = 1009,
 		need_exp = 2000,
@@ -95602,11 +91559,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.ship_meta_skilltask
-
-	var_11_9[1010] = {
+	pg.base.ship_meta_skilltask[1010] = {
 		level = 2,
 		id = 1010,
 		need_exp = 2500,
@@ -95685,11 +91638,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.ship_meta_skilltask
-
-	var_11_10[1011] = {
+	pg.base.ship_meta_skilltask[1011] = {
 		level = 3,
 		id = 1011,
 		need_exp = 4000,
@@ -95768,11 +91717,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.ship_meta_skilltask
-
-	var_11_11[1012] = {
+	pg.base.ship_meta_skilltask[1012] = {
 		level = 4,
 		id = 1012,
 		need_exp = 6000,
@@ -95856,11 +91801,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.ship_meta_skilltask
-
-	var_11_12[1013] = {
+	pg.base.ship_meta_skilltask[1013] = {
 		level = 5,
 		id = 1013,
 		need_exp = 8000,
@@ -95949,11 +91890,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.ship_meta_skilltask
-
-	var_11_13[1014] = {
+	pg.base.ship_meta_skilltask[1014] = {
 		level = 6,
 		id = 1014,
 		need_exp = 10000,
@@ -96042,11 +91979,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.ship_meta_skilltask
-
-	var_11_14[1015] = {
+	pg.base.ship_meta_skilltask[1015] = {
 		level = 7,
 		id = 1015,
 		need_exp = 13000,
@@ -96140,11 +92073,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.ship_meta_skilltask
-
-	var_11_15[1016] = {
+	pg.base.ship_meta_skilltask[1016] = {
 		level = 8,
 		id = 1016,
 		need_exp = 19000,
@@ -96238,11 +92167,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.ship_meta_skilltask
-
-	var_11_16[1017] = {
+	pg.base.ship_meta_skilltask[1017] = {
 		level = 9,
 		id = 1017,
 		need_exp = 30000,
@@ -96336,11 +92261,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.ship_meta_skilltask
-
-	var_11_17[1018] = {
+	pg.base.ship_meta_skilltask[1018] = {
 		level = 1,
 		id = 1018,
 		need_exp = 2000,
@@ -96425,11 +92346,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.ship_meta_skilltask
-
-	var_11_18[1019] = {
+	pg.base.ship_meta_skilltask[1019] = {
 		level = 2,
 		id = 1019,
 		need_exp = 2500,
@@ -96508,11 +92425,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.ship_meta_skilltask
-
-	var_11_19[1020] = {
+	pg.base.ship_meta_skilltask[1020] = {
 		level = 3,
 		id = 1020,
 		need_exp = 4000,
@@ -96591,11 +92504,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.ship_meta_skilltask
-
-	var_11_20[1021] = {
+	pg.base.ship_meta_skilltask[1021] = {
 		level = 4,
 		id = 1021,
 		need_exp = 6000,
@@ -96679,11 +92588,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.ship_meta_skilltask
-
-	var_11_21[1022] = {
+	pg.base.ship_meta_skilltask[1022] = {
 		level = 5,
 		id = 1022,
 		need_exp = 8000,
@@ -96772,11 +92677,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.ship_meta_skilltask
-
-	var_11_22[1023] = {
+	pg.base.ship_meta_skilltask[1023] = {
 		level = 6,
 		id = 1023,
 		need_exp = 10000,
@@ -96865,11 +92766,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.ship_meta_skilltask
-
-	var_11_23[1024] = {
+	pg.base.ship_meta_skilltask[1024] = {
 		level = 7,
 		id = 1024,
 		need_exp = 13000,
@@ -96963,11 +92860,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.ship_meta_skilltask
-
-	var_11_24[1025] = {
+	pg.base.ship_meta_skilltask[1025] = {
 		level = 8,
 		id = 1025,
 		need_exp = 19000,
@@ -97061,11 +92954,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.ship_meta_skilltask
-
-	var_11_25[1026] = {
+	pg.base.ship_meta_skilltask[1026] = {
 		level = 9,
 		id = 1026,
 		need_exp = 30000,
@@ -97159,11 +93048,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.ship_meta_skilltask
-
-	var_11_26[1027] = {
+	pg.base.ship_meta_skilltask[1027] = {
 		level = 1,
 		id = 1027,
 		need_exp = 4000,
@@ -97248,11 +93133,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.ship_meta_skilltask
-
-	var_11_27[1028] = {
+	pg.base.ship_meta_skilltask[1028] = {
 		level = 2,
 		id = 1028,
 		need_exp = 5000,
@@ -97331,11 +93212,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.ship_meta_skilltask
-
-	var_11_28[1029] = {
+	pg.base.ship_meta_skilltask[1029] = {
 		level = 3,
 		id = 1029,
 		need_exp = 8000,
@@ -97414,11 +93291,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.ship_meta_skilltask
-
-	var_11_29[1030] = {
+	pg.base.ship_meta_skilltask[1030] = {
 		level = 4,
 		id = 1030,
 		need_exp = 12000,
@@ -97502,11 +93375,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.ship_meta_skilltask
-
-	var_11_30[1031] = {
+	pg.base.ship_meta_skilltask[1031] = {
 		level = 5,
 		id = 1031,
 		need_exp = 16000,
@@ -97595,11 +93464,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.ship_meta_skilltask
-
-	var_11_31[1032] = {
+	pg.base.ship_meta_skilltask[1032] = {
 		level = 6,
 		id = 1032,
 		need_exp = 20000,
@@ -97688,11 +93553,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.ship_meta_skilltask
-
-	var_11_32[1033] = {
+	pg.base.ship_meta_skilltask[1033] = {
 		level = 7,
 		id = 1033,
 		need_exp = 26000,
@@ -97786,11 +93647,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.ship_meta_skilltask
-
-	var_11_33[1034] = {
+	pg.base.ship_meta_skilltask[1034] = {
 		level = 8,
 		id = 1034,
 		need_exp = 38000,
@@ -97884,11 +93741,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.ship_meta_skilltask
-
-	var_11_34[1035] = {
+	pg.base.ship_meta_skilltask[1035] = {
 		level = 9,
 		id = 1035,
 		need_exp = 60000,
@@ -97982,11 +93835,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.ship_meta_skilltask
-
-	var_11_35[1036] = {
+	pg.base.ship_meta_skilltask[1036] = {
 		level = 1,
 		id = 1036,
 		need_exp = 4000,
@@ -98071,11 +93920,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.ship_meta_skilltask
-
-	var_11_36[1037] = {
+	pg.base.ship_meta_skilltask[1037] = {
 		level = 2,
 		id = 1037,
 		need_exp = 5000,
@@ -98154,11 +93999,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.ship_meta_skilltask
-
-	var_11_37[1038] = {
+	pg.base.ship_meta_skilltask[1038] = {
 		level = 3,
 		id = 1038,
 		need_exp = 8000,
@@ -98237,11 +94078,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.ship_meta_skilltask
-
-	var_11_38[1039] = {
+	pg.base.ship_meta_skilltask[1039] = {
 		level = 4,
 		id = 1039,
 		need_exp = 12000,
@@ -98325,11 +94162,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.ship_meta_skilltask
-
-	var_11_39[1040] = {
+	pg.base.ship_meta_skilltask[1040] = {
 		level = 5,
 		id = 1040,
 		need_exp = 16000,
@@ -98418,11 +94251,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.ship_meta_skilltask
-
-	var_11_40[1041] = {
+	pg.base.ship_meta_skilltask[1041] = {
 		level = 6,
 		id = 1041,
 		need_exp = 20000,
@@ -98511,11 +94340,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.ship_meta_skilltask
-
-	var_11_41[1042] = {
+	pg.base.ship_meta_skilltask[1042] = {
 		level = 7,
 		id = 1042,
 		need_exp = 26000,
@@ -98609,11 +94434,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.ship_meta_skilltask
-
-	var_11_42[1043] = {
+	pg.base.ship_meta_skilltask[1043] = {
 		level = 8,
 		id = 1043,
 		need_exp = 38000,
@@ -98707,11 +94528,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.ship_meta_skilltask
-
-	var_11_43[1044] = {
+	pg.base.ship_meta_skilltask[1044] = {
 		level = 9,
 		id = 1044,
 		need_exp = 60000,
@@ -98805,11 +94622,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.ship_meta_skilltask
-
-	var_11_44[1045] = {
+	pg.base.ship_meta_skilltask[1045] = {
 		level = 1,
 		id = 1045,
 		need_exp = 4000,
@@ -98894,11 +94707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.ship_meta_skilltask
-
-	var_11_45[1046] = {
+	pg.base.ship_meta_skilltask[1046] = {
 		level = 2,
 		id = 1046,
 		need_exp = 5000,
@@ -98977,11 +94786,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.ship_meta_skilltask
-
-	var_11_46[1047] = {
+	pg.base.ship_meta_skilltask[1047] = {
 		level = 3,
 		id = 1047,
 		need_exp = 8000,
@@ -99060,11 +94865,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.ship_meta_skilltask
-
-	var_11_47[1048] = {
+	pg.base.ship_meta_skilltask[1048] = {
 		level = 4,
 		id = 1048,
 		need_exp = 12000,
@@ -99148,11 +94949,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.ship_meta_skilltask
-
-	var_11_48[1049] = {
+	pg.base.ship_meta_skilltask[1049] = {
 		level = 5,
 		id = 1049,
 		need_exp = 16000,
@@ -99241,11 +95038,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.ship_meta_skilltask
-
-	var_11_49[1050] = {
+	pg.base.ship_meta_skilltask[1050] = {
 		level = 6,
 		id = 1050,
 		need_exp = 20000,
@@ -99334,11 +95127,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.ship_meta_skilltask
-
-	var_11_50[1051] = {
+	pg.base.ship_meta_skilltask[1051] = {
 		level = 7,
 		id = 1051,
 		need_exp = 26000,
@@ -99432,11 +95221,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.ship_meta_skilltask
-
-	var_11_51[1052] = {
+	pg.base.ship_meta_skilltask[1052] = {
 		level = 8,
 		id = 1052,
 		need_exp = 38000,
@@ -99530,11 +95315,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.ship_meta_skilltask
-
-	var_11_52[1053] = {
+	pg.base.ship_meta_skilltask[1053] = {
 		level = 9,
 		id = 1053,
 		need_exp = 60000,
@@ -99628,11 +95409,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.ship_meta_skilltask
-
-	var_11_53[1054] = {
+	pg.base.ship_meta_skilltask[1054] = {
 		level = 1,
 		id = 1054,
 		need_exp = 4000,
@@ -99717,11 +95494,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.ship_meta_skilltask
-
-	var_11_54[1055] = {
+	pg.base.ship_meta_skilltask[1055] = {
 		level = 2,
 		id = 1055,
 		need_exp = 5000,
@@ -99800,11 +95573,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.ship_meta_skilltask
-
-	var_11_55[1056] = {
+	pg.base.ship_meta_skilltask[1056] = {
 		level = 3,
 		id = 1056,
 		need_exp = 8000,
@@ -99883,11 +95652,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.ship_meta_skilltask
-
-	var_11_56[1057] = {
+	pg.base.ship_meta_skilltask[1057] = {
 		level = 4,
 		id = 1057,
 		need_exp = 12000,
@@ -99971,11 +95736,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.ship_meta_skilltask
-
-	var_11_57[1058] = {
+	pg.base.ship_meta_skilltask[1058] = {
 		level = 5,
 		id = 1058,
 		need_exp = 16000,
@@ -100064,11 +95825,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.ship_meta_skilltask
-
-	var_11_58[1059] = {
+	pg.base.ship_meta_skilltask[1059] = {
 		level = 6,
 		id = 1059,
 		need_exp = 20000,
@@ -100157,11 +95914,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.ship_meta_skilltask
-
-	var_11_59[1060] = {
+	pg.base.ship_meta_skilltask[1060] = {
 		level = 7,
 		id = 1060,
 		need_exp = 26000,
@@ -100255,11 +96008,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.ship_meta_skilltask
-
-	var_11_60[1061] = {
+	pg.base.ship_meta_skilltask[1061] = {
 		level = 8,
 		id = 1061,
 		need_exp = 38000,
@@ -100353,11 +96102,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.ship_meta_skilltask
-
-	var_11_61[1062] = {
+	pg.base.ship_meta_skilltask[1062] = {
 		level = 9,
 		id = 1062,
 		need_exp = 60000,
@@ -100451,11 +96196,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.ship_meta_skilltask
-
-	var_11_62[1063] = {
+	pg.base.ship_meta_skilltask[1063] = {
 		level = 1,
 		id = 1063,
 		need_exp = 4000,
@@ -100540,11 +96281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.ship_meta_skilltask
-
-	var_11_63[1064] = {
+	pg.base.ship_meta_skilltask[1064] = {
 		level = 2,
 		id = 1064,
 		need_exp = 5000,
@@ -100623,11 +96360,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.ship_meta_skilltask
-
-	var_11_64[1065] = {
+	pg.base.ship_meta_skilltask[1065] = {
 		level = 3,
 		id = 1065,
 		need_exp = 8000,
@@ -100706,11 +96439,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.ship_meta_skilltask
-
-	var_11_65[1066] = {
+	pg.base.ship_meta_skilltask[1066] = {
 		level = 4,
 		id = 1066,
 		need_exp = 12000,
@@ -100794,11 +96523,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.ship_meta_skilltask
-
-	var_11_66[1067] = {
+	pg.base.ship_meta_skilltask[1067] = {
 		level = 5,
 		id = 1067,
 		need_exp = 16000,
@@ -100887,11 +96612,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.ship_meta_skilltask
-
-	var_11_67[1068] = {
+	pg.base.ship_meta_skilltask[1068] = {
 		level = 6,
 		id = 1068,
 		need_exp = 20000,
@@ -100980,11 +96701,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.ship_meta_skilltask
-
-	var_11_68[1069] = {
+	pg.base.ship_meta_skilltask[1069] = {
 		level = 7,
 		id = 1069,
 		need_exp = 26000,
@@ -101078,11 +96795,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.ship_meta_skilltask
-
-	var_11_69[1070] = {
+	pg.base.ship_meta_skilltask[1070] = {
 		level = 8,
 		id = 1070,
 		need_exp = 38000,
@@ -101176,11 +96889,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.ship_meta_skilltask
-
-	var_11_70[1071] = {
+	pg.base.ship_meta_skilltask[1071] = {
 		level = 9,
 		id = 1071,
 		need_exp = 60000,
@@ -101274,11 +96983,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.ship_meta_skilltask
-
-	var_11_71[1072] = {
+	pg.base.ship_meta_skilltask[1072] = {
 		level = 1,
 		id = 1072,
 		need_exp = 4000,
@@ -101363,11 +97068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.ship_meta_skilltask
-
-	var_11_72[1073] = {
+	pg.base.ship_meta_skilltask[1073] = {
 		level = 2,
 		id = 1073,
 		need_exp = 5000,
@@ -101446,11 +97147,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.ship_meta_skilltask
-
-	var_11_73[1074] = {
+	pg.base.ship_meta_skilltask[1074] = {
 		level = 3,
 		id = 1074,
 		need_exp = 8000,
@@ -101529,11 +97226,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.ship_meta_skilltask
-
-	var_11_74[1075] = {
+	pg.base.ship_meta_skilltask[1075] = {
 		level = 4,
 		id = 1075,
 		need_exp = 12000,
@@ -101617,11 +97310,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.ship_meta_skilltask
-
-	var_11_75[1076] = {
+	pg.base.ship_meta_skilltask[1076] = {
 		level = 5,
 		id = 1076,
 		need_exp = 16000,
@@ -101710,11 +97399,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.ship_meta_skilltask
-
-	var_11_76[1077] = {
+	pg.base.ship_meta_skilltask[1077] = {
 		level = 6,
 		id = 1077,
 		need_exp = 20000,
@@ -101803,11 +97488,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.ship_meta_skilltask
-
-	var_11_77[1078] = {
+	pg.base.ship_meta_skilltask[1078] = {
 		level = 7,
 		id = 1078,
 		need_exp = 26000,
@@ -101901,11 +97582,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.ship_meta_skilltask
-
-	var_11_78[1079] = {
+	pg.base.ship_meta_skilltask[1079] = {
 		level = 8,
 		id = 1079,
 		need_exp = 38000,
@@ -101999,11 +97676,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.ship_meta_skilltask
-
-	var_11_79[1080] = {
+	pg.base.ship_meta_skilltask[1080] = {
 		level = 9,
 		id = 1080,
 		need_exp = 60000,
@@ -102097,11 +97770,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.ship_meta_skilltask
-
-	var_11_80[1081] = {
+	pg.base.ship_meta_skilltask[1081] = {
 		level = 1,
 		id = 1081,
 		need_exp = 2000,
@@ -102186,11 +97855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.ship_meta_skilltask
-
-	var_11_81[1082] = {
+	pg.base.ship_meta_skilltask[1082] = {
 		level = 2,
 		id = 1082,
 		need_exp = 2500,
@@ -102269,11 +97934,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.ship_meta_skilltask
-
-	var_11_82[1083] = {
+	pg.base.ship_meta_skilltask[1083] = {
 		level = 3,
 		id = 1083,
 		need_exp = 4000,
@@ -102352,11 +98013,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.ship_meta_skilltask
-
-	var_11_83[1084] = {
+	pg.base.ship_meta_skilltask[1084] = {
 		level = 4,
 		id = 1084,
 		need_exp = 6000,
@@ -102440,11 +98097,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.ship_meta_skilltask
-
-	var_11_84[1085] = {
+	pg.base.ship_meta_skilltask[1085] = {
 		level = 5,
 		id = 1085,
 		need_exp = 8000,
@@ -102533,11 +98186,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.ship_meta_skilltask
-
-	var_11_85[1086] = {
+	pg.base.ship_meta_skilltask[1086] = {
 		level = 6,
 		id = 1086,
 		need_exp = 10000,
@@ -102626,11 +98275,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.ship_meta_skilltask
-
-	var_11_86[1087] = {
+	pg.base.ship_meta_skilltask[1087] = {
 		level = 7,
 		id = 1087,
 		need_exp = 13000,
@@ -102724,11 +98369,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.ship_meta_skilltask
-
-	var_11_87[1088] = {
+	pg.base.ship_meta_skilltask[1088] = {
 		level = 8,
 		id = 1088,
 		need_exp = 19000,
@@ -102822,11 +98463,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.ship_meta_skilltask
-
-	var_11_88[1089] = {
+	pg.base.ship_meta_skilltask[1089] = {
 		level = 9,
 		id = 1089,
 		need_exp = 30000,
@@ -102920,11 +98557,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.ship_meta_skilltask
-
-	var_11_89[1090] = {
+	pg.base.ship_meta_skilltask[1090] = {
 		level = 1,
 		id = 1090,
 		need_exp = 2000,
@@ -103009,11 +98642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.ship_meta_skilltask
-
-	var_11_90[1091] = {
+	pg.base.ship_meta_skilltask[1091] = {
 		level = 2,
 		id = 1091,
 		need_exp = 2500,
@@ -103092,11 +98721,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.ship_meta_skilltask
-
-	var_11_91[1092] = {
+	pg.base.ship_meta_skilltask[1092] = {
 		level = 3,
 		id = 1092,
 		need_exp = 4000,
@@ -103175,11 +98800,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.ship_meta_skilltask
-
-	var_11_92[1093] = {
+	pg.base.ship_meta_skilltask[1093] = {
 		level = 4,
 		id = 1093,
 		need_exp = 6000,
@@ -103263,11 +98884,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.ship_meta_skilltask
-
-	var_11_93[1094] = {
+	pg.base.ship_meta_skilltask[1094] = {
 		level = 5,
 		id = 1094,
 		need_exp = 8000,
@@ -103356,11 +98973,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.ship_meta_skilltask
-
-	var_11_94[1095] = {
+	pg.base.ship_meta_skilltask[1095] = {
 		level = 6,
 		id = 1095,
 		need_exp = 10000,
@@ -103449,11 +99062,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.ship_meta_skilltask
-
-	var_11_95[1096] = {
+	pg.base.ship_meta_skilltask[1096] = {
 		level = 7,
 		id = 1096,
 		need_exp = 13000,
@@ -103547,11 +99156,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.ship_meta_skilltask
-
-	var_11_96[1097] = {
+	pg.base.ship_meta_skilltask[1097] = {
 		level = 8,
 		id = 1097,
 		need_exp = 19000,
@@ -103645,11 +99250,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.ship_meta_skilltask
-
-	var_11_97[1098] = {
+	pg.base.ship_meta_skilltask[1098] = {
 		level = 9,
 		id = 1098,
 		need_exp = 30000,
@@ -103743,11 +99344,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.ship_meta_skilltask
-
-	var_11_98[1108] = {
+	pg.base.ship_meta_skilltask[1108] = {
 		level = 1,
 		id = 1108,
 		need_exp = 2000,
@@ -103832,8 +99429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.ship_meta_skilltask[1109] = {
+	pg.base.ship_meta_skilltask[1109] = {
 		level = 2,
 		id = 1109,
 		need_exp = 2500,
@@ -103916,11 +99512,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_12_0[1110] = {
+	pg.base.ship_meta_skilltask[1110] = {
 		level = 3,
 		id = 1110,
 		need_exp = 4000,
@@ -103999,11 +99591,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.ship_meta_skilltask
-
-	var_12_1[1111] = {
+	pg.base.ship_meta_skilltask[1111] = {
 		level = 4,
 		id = 1111,
 		need_exp = 6000,
@@ -104087,11 +99675,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.ship_meta_skilltask
-
-	var_12_2[1112] = {
+	pg.base.ship_meta_skilltask[1112] = {
 		level = 5,
 		id = 1112,
 		need_exp = 8000,
@@ -104180,11 +99764,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.ship_meta_skilltask
-
-	var_12_3[1113] = {
+	pg.base.ship_meta_skilltask[1113] = {
 		level = 6,
 		id = 1113,
 		need_exp = 10000,
@@ -104273,11 +99853,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.ship_meta_skilltask
-
-	var_12_4[1114] = {
+	pg.base.ship_meta_skilltask[1114] = {
 		level = 7,
 		id = 1114,
 		need_exp = 13000,
@@ -104371,11 +99947,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.ship_meta_skilltask
-
-	var_12_5[1115] = {
+	pg.base.ship_meta_skilltask[1115] = {
 		level = 8,
 		id = 1115,
 		need_exp = 19000,
@@ -104469,11 +100041,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.ship_meta_skilltask
-
-	var_12_6[1116] = {
+	pg.base.ship_meta_skilltask[1116] = {
 		level = 9,
 		id = 1116,
 		need_exp = 30000,
@@ -104567,11 +100135,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.ship_meta_skilltask
-
-	var_12_7[1117] = {
+	pg.base.ship_meta_skilltask[1117] = {
 		level = 1,
 		id = 1117,
 		need_exp = 2000,
@@ -104656,11 +100220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.ship_meta_skilltask
-
-	var_12_8[1118] = {
+	pg.base.ship_meta_skilltask[1118] = {
 		level = 2,
 		id = 1118,
 		need_exp = 2500,
@@ -104739,11 +100299,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.ship_meta_skilltask
-
-	var_12_9[1119] = {
+	pg.base.ship_meta_skilltask[1119] = {
 		level = 3,
 		id = 1119,
 		need_exp = 4000,
@@ -104822,11 +100378,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.ship_meta_skilltask
-
-	var_12_10[1120] = {
+	pg.base.ship_meta_skilltask[1120] = {
 		level = 4,
 		id = 1120,
 		need_exp = 6000,
@@ -104910,11 +100462,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.ship_meta_skilltask
-
-	var_12_11[1121] = {
+	pg.base.ship_meta_skilltask[1121] = {
 		level = 5,
 		id = 1121,
 		need_exp = 8000,
@@ -105003,11 +100551,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.ship_meta_skilltask
-
-	var_12_12[1122] = {
+	pg.base.ship_meta_skilltask[1122] = {
 		level = 6,
 		id = 1122,
 		need_exp = 10000,
@@ -105096,11 +100640,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.ship_meta_skilltask
-
-	var_12_13[1123] = {
+	pg.base.ship_meta_skilltask[1123] = {
 		level = 7,
 		id = 1123,
 		need_exp = 13000,
@@ -105194,11 +100734,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.ship_meta_skilltask
-
-	var_12_14[1124] = {
+	pg.base.ship_meta_skilltask[1124] = {
 		level = 8,
 		id = 1124,
 		need_exp = 19000,
@@ -105292,11 +100828,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.ship_meta_skilltask
-
-	var_12_15[1125] = {
+	pg.base.ship_meta_skilltask[1125] = {
 		level = 9,
 		id = 1125,
 		need_exp = 30000,
@@ -105390,11 +100922,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.ship_meta_skilltask
-
-	var_12_16[1126] = {
+	pg.base.ship_meta_skilltask[1126] = {
 		level = 1,
 		id = 1126,
 		need_exp = 2000,
@@ -105479,11 +101007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.ship_meta_skilltask
-
-	var_12_17[1127] = {
+	pg.base.ship_meta_skilltask[1127] = {
 		level = 2,
 		id = 1127,
 		need_exp = 2500,
@@ -105562,11 +101086,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.ship_meta_skilltask
-
-	var_12_18[1128] = {
+	pg.base.ship_meta_skilltask[1128] = {
 		level = 3,
 		id = 1128,
 		need_exp = 4000,
@@ -105645,11 +101165,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.ship_meta_skilltask
-
-	var_12_19[1129] = {
+	pg.base.ship_meta_skilltask[1129] = {
 		level = 4,
 		id = 1129,
 		need_exp = 6000,
@@ -105733,11 +101249,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.ship_meta_skilltask
-
-	var_12_20[1130] = {
+	pg.base.ship_meta_skilltask[1130] = {
 		level = 5,
 		id = 1130,
 		need_exp = 8000,
@@ -105826,11 +101338,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.ship_meta_skilltask
-
-	var_12_21[1131] = {
+	pg.base.ship_meta_skilltask[1131] = {
 		level = 6,
 		id = 1131,
 		need_exp = 10000,
@@ -105919,11 +101427,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.ship_meta_skilltask
-
-	var_12_22[1132] = {
+	pg.base.ship_meta_skilltask[1132] = {
 		level = 7,
 		id = 1132,
 		need_exp = 13000,
@@ -106017,11 +101521,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.ship_meta_skilltask
-
-	var_12_23[1133] = {
+	pg.base.ship_meta_skilltask[1133] = {
 		level = 8,
 		id = 1133,
 		need_exp = 19000,
@@ -106115,11 +101615,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.ship_meta_skilltask
-
-	var_12_24[1134] = {
+	pg.base.ship_meta_skilltask[1134] = {
 		level = 9,
 		id = 1134,
 		need_exp = 30000,
@@ -106213,11 +101709,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.ship_meta_skilltask
-
-	var_12_25[1135] = {
+	pg.base.ship_meta_skilltask[1135] = {
 		level = 1,
 		id = 1135,
 		need_exp = 4000,
@@ -106302,11 +101794,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.ship_meta_skilltask
-
-	var_12_26[1136] = {
+	pg.base.ship_meta_skilltask[1136] = {
 		level = 2,
 		id = 1136,
 		need_exp = 5000,
@@ -106385,11 +101873,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.ship_meta_skilltask
-
-	var_12_27[1137] = {
+	pg.base.ship_meta_skilltask[1137] = {
 		level = 3,
 		id = 1137,
 		need_exp = 8000,
@@ -106468,11 +101952,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.ship_meta_skilltask
-
-	var_12_28[1138] = {
+	pg.base.ship_meta_skilltask[1138] = {
 		level = 4,
 		id = 1138,
 		need_exp = 12000,
@@ -106556,11 +102036,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.ship_meta_skilltask
-
-	var_12_29[1139] = {
+	pg.base.ship_meta_skilltask[1139] = {
 		level = 5,
 		id = 1139,
 		need_exp = 16000,
@@ -106649,11 +102125,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.ship_meta_skilltask
-
-	var_12_30[1140] = {
+	pg.base.ship_meta_skilltask[1140] = {
 		level = 6,
 		id = 1140,
 		need_exp = 20000,
@@ -106742,11 +102214,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.ship_meta_skilltask
-
-	var_12_31[1141] = {
+	pg.base.ship_meta_skilltask[1141] = {
 		level = 7,
 		id = 1141,
 		need_exp = 26000,
@@ -106840,11 +102308,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.ship_meta_skilltask
-
-	var_12_32[1142] = {
+	pg.base.ship_meta_skilltask[1142] = {
 		level = 8,
 		id = 1142,
 		need_exp = 38000,
@@ -106938,11 +102402,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.ship_meta_skilltask
-
-	var_12_33[1143] = {
+	pg.base.ship_meta_skilltask[1143] = {
 		level = 9,
 		id = 1143,
 		need_exp = 60000,
@@ -107036,11 +102496,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.ship_meta_skilltask
-
-	var_12_34[1144] = {
+	pg.base.ship_meta_skilltask[1144] = {
 		level = 1,
 		id = 1144,
 		need_exp = 4000,
@@ -107125,11 +102581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.ship_meta_skilltask
-
-	var_12_35[1145] = {
+	pg.base.ship_meta_skilltask[1145] = {
 		level = 2,
 		id = 1145,
 		need_exp = 5000,
@@ -107208,11 +102660,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.ship_meta_skilltask
-
-	var_12_36[1146] = {
+	pg.base.ship_meta_skilltask[1146] = {
 		level = 3,
 		id = 1146,
 		need_exp = 8000,
@@ -107291,11 +102739,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.ship_meta_skilltask
-
-	var_12_37[1147] = {
+	pg.base.ship_meta_skilltask[1147] = {
 		level = 4,
 		id = 1147,
 		need_exp = 12000,
@@ -107379,11 +102823,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.ship_meta_skilltask
-
-	var_12_38[1148] = {
+	pg.base.ship_meta_skilltask[1148] = {
 		level = 5,
 		id = 1148,
 		need_exp = 16000,
@@ -107472,11 +102912,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.ship_meta_skilltask
-
-	var_12_39[1149] = {
+	pg.base.ship_meta_skilltask[1149] = {
 		level = 6,
 		id = 1149,
 		need_exp = 20000,
@@ -107565,11 +103001,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.ship_meta_skilltask
-
-	var_12_40[1150] = {
+	pg.base.ship_meta_skilltask[1150] = {
 		level = 7,
 		id = 1150,
 		need_exp = 26000,
@@ -107663,11 +103095,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.ship_meta_skilltask
-
-	var_12_41[1151] = {
+	pg.base.ship_meta_skilltask[1151] = {
 		level = 8,
 		id = 1151,
 		need_exp = 38000,
@@ -107761,11 +103189,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.ship_meta_skilltask
-
-	var_12_42[1152] = {
+	pg.base.ship_meta_skilltask[1152] = {
 		level = 9,
 		id = 1152,
 		need_exp = 60000,
@@ -107859,11 +103283,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.ship_meta_skilltask
-
-	var_12_43[1153] = {
+	pg.base.ship_meta_skilltask[1153] = {
 		level = 1,
 		id = 1153,
 		need_exp = 4000,
@@ -107948,11 +103368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.ship_meta_skilltask
-
-	var_12_44[1154] = {
+	pg.base.ship_meta_skilltask[1154] = {
 		level = 2,
 		id = 1154,
 		need_exp = 5000,
@@ -108031,11 +103447,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.ship_meta_skilltask
-
-	var_12_45[1155] = {
+	pg.base.ship_meta_skilltask[1155] = {
 		level = 3,
 		id = 1155,
 		need_exp = 8000,
@@ -108114,11 +103526,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.ship_meta_skilltask
-
-	var_12_46[1156] = {
+	pg.base.ship_meta_skilltask[1156] = {
 		level = 4,
 		id = 1156,
 		need_exp = 12000,
@@ -108202,11 +103610,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.ship_meta_skilltask
-
-	var_12_47[1157] = {
+	pg.base.ship_meta_skilltask[1157] = {
 		level = 5,
 		id = 1157,
 		need_exp = 16000,
@@ -108295,11 +103699,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.ship_meta_skilltask
-
-	var_12_48[1158] = {
+	pg.base.ship_meta_skilltask[1158] = {
 		level = 6,
 		id = 1158,
 		need_exp = 20000,
@@ -108388,11 +103788,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.ship_meta_skilltask
-
-	var_12_49[1159] = {
+	pg.base.ship_meta_skilltask[1159] = {
 		level = 7,
 		id = 1159,
 		need_exp = 26000,
@@ -108486,11 +103882,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.ship_meta_skilltask
-
-	var_12_50[1160] = {
+	pg.base.ship_meta_skilltask[1160] = {
 		level = 8,
 		id = 1160,
 		need_exp = 38000,
@@ -108584,11 +103976,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.ship_meta_skilltask
-
-	var_12_51[1161] = {
+	pg.base.ship_meta_skilltask[1161] = {
 		level = 9,
 		id = 1161,
 		need_exp = 60000,
@@ -108682,11 +104070,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.ship_meta_skilltask
-
-	var_12_52[1162] = {
+	pg.base.ship_meta_skilltask[1162] = {
 		level = 1,
 		id = 1162,
 		need_exp = 4000,
@@ -108771,11 +104155,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.ship_meta_skilltask
-
-	var_12_53[1163] = {
+	pg.base.ship_meta_skilltask[1163] = {
 		level = 2,
 		id = 1163,
 		need_exp = 5000,
@@ -108854,11 +104234,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.ship_meta_skilltask
-
-	var_12_54[1164] = {
+	pg.base.ship_meta_skilltask[1164] = {
 		level = 3,
 		id = 1164,
 		need_exp = 8000,
@@ -108937,11 +104313,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.ship_meta_skilltask
-
-	var_12_55[1165] = {
+	pg.base.ship_meta_skilltask[1165] = {
 		level = 4,
 		id = 1165,
 		need_exp = 12000,
@@ -109025,11 +104397,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.ship_meta_skilltask
-
-	var_12_56[1166] = {
+	pg.base.ship_meta_skilltask[1166] = {
 		level = 5,
 		id = 1166,
 		need_exp = 16000,
@@ -109118,11 +104486,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.ship_meta_skilltask
-
-	var_12_57[1167] = {
+	pg.base.ship_meta_skilltask[1167] = {
 		level = 6,
 		id = 1167,
 		need_exp = 20000,
@@ -109211,11 +104575,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.ship_meta_skilltask
-
-	var_12_58[1168] = {
+	pg.base.ship_meta_skilltask[1168] = {
 		level = 7,
 		id = 1168,
 		need_exp = 26000,
@@ -109309,11 +104669,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.ship_meta_skilltask
-
-	var_12_59[1169] = {
+	pg.base.ship_meta_skilltask[1169] = {
 		level = 8,
 		id = 1169,
 		need_exp = 38000,
@@ -109407,11 +104763,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.ship_meta_skilltask
-
-	var_12_60[1170] = {
+	pg.base.ship_meta_skilltask[1170] = {
 		level = 9,
 		id = 1170,
 		need_exp = 60000,
@@ -109505,11 +104857,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.ship_meta_skilltask
-
-	var_12_61[1171] = {
+	pg.base.ship_meta_skilltask[1171] = {
 		level = 1,
 		id = 1171,
 		need_exp = 4000,
@@ -109594,11 +104942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.ship_meta_skilltask
-
-	var_12_62[1172] = {
+	pg.base.ship_meta_skilltask[1172] = {
 		level = 2,
 		id = 1172,
 		need_exp = 5000,
@@ -109677,11 +105021,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.ship_meta_skilltask
-
-	var_12_63[1173] = {
+	pg.base.ship_meta_skilltask[1173] = {
 		level = 3,
 		id = 1173,
 		need_exp = 8000,
@@ -109760,11 +105100,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.ship_meta_skilltask
-
-	var_12_64[1174] = {
+	pg.base.ship_meta_skilltask[1174] = {
 		level = 4,
 		id = 1174,
 		need_exp = 12000,
@@ -109848,11 +105184,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.ship_meta_skilltask
-
-	var_12_65[1175] = {
+	pg.base.ship_meta_skilltask[1175] = {
 		level = 5,
 		id = 1175,
 		need_exp = 16000,
@@ -109941,11 +105273,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.ship_meta_skilltask
-
-	var_12_66[1176] = {
+	pg.base.ship_meta_skilltask[1176] = {
 		level = 6,
 		id = 1176,
 		need_exp = 20000,
@@ -110034,11 +105362,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.ship_meta_skilltask
-
-	var_12_67[1177] = {
+	pg.base.ship_meta_skilltask[1177] = {
 		level = 7,
 		id = 1177,
 		need_exp = 26000,
@@ -110132,11 +105456,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.ship_meta_skilltask
-
-	var_12_68[1178] = {
+	pg.base.ship_meta_skilltask[1178] = {
 		level = 8,
 		id = 1178,
 		need_exp = 38000,
@@ -110230,11 +105550,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.ship_meta_skilltask
-
-	var_12_69[1179] = {
+	pg.base.ship_meta_skilltask[1179] = {
 		level = 9,
 		id = 1179,
 		need_exp = 60000,
@@ -110328,11 +105644,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.ship_meta_skilltask
-
-	var_12_70[1180] = {
+	pg.base.ship_meta_skilltask[1180] = {
 		level = 1,
 		id = 1180,
 		need_exp = 4000,
@@ -110417,11 +105729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.ship_meta_skilltask
-
-	var_12_71[1181] = {
+	pg.base.ship_meta_skilltask[1181] = {
 		level = 2,
 		id = 1181,
 		need_exp = 5000,
@@ -110500,11 +105808,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.ship_meta_skilltask
-
-	var_12_72[1182] = {
+	pg.base.ship_meta_skilltask[1182] = {
 		level = 3,
 		id = 1182,
 		need_exp = 8000,
@@ -110583,11 +105887,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.ship_meta_skilltask
-
-	var_12_73[1183] = {
+	pg.base.ship_meta_skilltask[1183] = {
 		level = 4,
 		id = 1183,
 		need_exp = 12000,
@@ -110671,11 +105971,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.ship_meta_skilltask
-
-	var_12_74[1184] = {
+	pg.base.ship_meta_skilltask[1184] = {
 		level = 5,
 		id = 1184,
 		need_exp = 16000,
@@ -110764,11 +106060,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.ship_meta_skilltask
-
-	var_12_75[1185] = {
+	pg.base.ship_meta_skilltask[1185] = {
 		level = 6,
 		id = 1185,
 		need_exp = 20000,
@@ -110857,11 +106149,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.ship_meta_skilltask
-
-	var_12_76[1186] = {
+	pg.base.ship_meta_skilltask[1186] = {
 		level = 7,
 		id = 1186,
 		need_exp = 26000,
@@ -110955,11 +106243,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.ship_meta_skilltask
-
-	var_12_77[1187] = {
+	pg.base.ship_meta_skilltask[1187] = {
 		level = 8,
 		id = 1187,
 		need_exp = 38000,
@@ -111053,11 +106337,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.ship_meta_skilltask
-
-	var_12_78[1188] = {
+	pg.base.ship_meta_skilltask[1188] = {
 		level = 9,
 		id = 1188,
 		need_exp = 60000,
@@ -111151,11 +106431,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.ship_meta_skilltask
-
-	var_12_79[1189] = {
+	pg.base.ship_meta_skilltask[1189] = {
 		level = 1,
 		id = 1189,
 		need_exp = 2000,
@@ -111240,11 +106516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.ship_meta_skilltask
-
-	var_12_80[1190] = {
+	pg.base.ship_meta_skilltask[1190] = {
 		level = 2,
 		id = 1190,
 		need_exp = 2500,
@@ -111323,11 +106595,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.ship_meta_skilltask
-
-	var_12_81[1191] = {
+	pg.base.ship_meta_skilltask[1191] = {
 		level = 3,
 		id = 1191,
 		need_exp = 4000,
@@ -111406,11 +106674,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.ship_meta_skilltask
-
-	var_12_82[1192] = {
+	pg.base.ship_meta_skilltask[1192] = {
 		level = 4,
 		id = 1192,
 		need_exp = 6000,
@@ -111494,11 +106758,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.ship_meta_skilltask
-
-	var_12_83[1193] = {
+	pg.base.ship_meta_skilltask[1193] = {
 		level = 5,
 		id = 1193,
 		need_exp = 8000,
@@ -111587,11 +106847,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.ship_meta_skilltask
-
-	var_12_84[1194] = {
+	pg.base.ship_meta_skilltask[1194] = {
 		level = 6,
 		id = 1194,
 		need_exp = 10000,
@@ -111680,11 +106936,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.ship_meta_skilltask
-
-	var_12_85[1195] = {
+	pg.base.ship_meta_skilltask[1195] = {
 		level = 7,
 		id = 1195,
 		need_exp = 13000,
@@ -111778,11 +107030,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.ship_meta_skilltask
-
-	var_12_86[1196] = {
+	pg.base.ship_meta_skilltask[1196] = {
 		level = 8,
 		id = 1196,
 		need_exp = 19000,
@@ -111876,11 +107124,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.ship_meta_skilltask
-
-	var_12_87[1197] = {
+	pg.base.ship_meta_skilltask[1197] = {
 		level = 9,
 		id = 1197,
 		need_exp = 30000,
@@ -111974,11 +107218,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.ship_meta_skilltask
-
-	var_12_88[1198] = {
+	pg.base.ship_meta_skilltask[1198] = {
 		level = 1,
 		id = 1198,
 		need_exp = 2000,
@@ -112063,11 +107303,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.ship_meta_skilltask
-
-	var_12_89[1199] = {
+	pg.base.ship_meta_skilltask[1199] = {
 		level = 2,
 		id = 1199,
 		need_exp = 2500,
@@ -112146,11 +107382,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.ship_meta_skilltask
-
-	var_12_90[1200] = {
+	pg.base.ship_meta_skilltask[1200] = {
 		level = 3,
 		id = 1200,
 		need_exp = 4000,
@@ -112229,11 +107461,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.ship_meta_skilltask
-
-	var_12_91[1201] = {
+	pg.base.ship_meta_skilltask[1201] = {
 		level = 4,
 		id = 1201,
 		need_exp = 6000,
@@ -112317,11 +107545,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.ship_meta_skilltask
-
-	var_12_92[1202] = {
+	pg.base.ship_meta_skilltask[1202] = {
 		level = 5,
 		id = 1202,
 		need_exp = 8000,
@@ -112410,11 +107634,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.ship_meta_skilltask
-
-	var_12_93[1203] = {
+	pg.base.ship_meta_skilltask[1203] = {
 		level = 6,
 		id = 1203,
 		need_exp = 10000,
@@ -112503,11 +107723,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.ship_meta_skilltask
-
-	var_12_94[1204] = {
+	pg.base.ship_meta_skilltask[1204] = {
 		level = 7,
 		id = 1204,
 		need_exp = 13000,
@@ -112601,11 +107817,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.ship_meta_skilltask
-
-	var_12_95[1205] = {
+	pg.base.ship_meta_skilltask[1205] = {
 		level = 8,
 		id = 1205,
 		need_exp = 19000,
@@ -112699,11 +107911,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.ship_meta_skilltask
-
-	var_12_96[1206] = {
+	pg.base.ship_meta_skilltask[1206] = {
 		level = 9,
 		id = 1206,
 		need_exp = 30000,
@@ -112797,11 +108005,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.ship_meta_skilltask
-
-	var_12_97[1207] = {
+	pg.base.ship_meta_skilltask[1207] = {
 		level = 1,
 		id = 1207,
 		need_exp = 4000,
@@ -112886,11 +108090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.ship_meta_skilltask
-
-	var_12_98[1208] = {
+	pg.base.ship_meta_skilltask[1208] = {
 		level = 2,
 		id = 1208,
 		need_exp = 5000,
@@ -112969,8 +108169,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_12_98
-	var_12_98.base.ship_meta_skilltask[1209] = {
+	pg.base.ship_meta_skilltask[1209] = {
 		level = 3,
 		id = 1209,
 		need_exp = 8000,
@@ -113053,11 +108252,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_13_0[1210] = {
+	pg.base.ship_meta_skilltask[1210] = {
 		level = 4,
 		id = 1210,
 		need_exp = 12000,
@@ -113141,11 +108336,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.ship_meta_skilltask
-
-	var_13_1[1211] = {
+	pg.base.ship_meta_skilltask[1211] = {
 		level = 5,
 		id = 1211,
 		need_exp = 16000,
@@ -113234,11 +108425,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.ship_meta_skilltask
-
-	var_13_2[1212] = {
+	pg.base.ship_meta_skilltask[1212] = {
 		level = 6,
 		id = 1212,
 		need_exp = 20000,
@@ -113327,11 +108514,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.ship_meta_skilltask
-
-	var_13_3[1213] = {
+	pg.base.ship_meta_skilltask[1213] = {
 		level = 7,
 		id = 1213,
 		need_exp = 26000,
@@ -113425,11 +108608,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.ship_meta_skilltask
-
-	var_13_4[1214] = {
+	pg.base.ship_meta_skilltask[1214] = {
 		level = 8,
 		id = 1214,
 		need_exp = 38000,
@@ -113523,11 +108702,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.ship_meta_skilltask
-
-	var_13_5[1215] = {
+	pg.base.ship_meta_skilltask[1215] = {
 		level = 9,
 		id = 1215,
 		need_exp = 60000,
@@ -113621,11 +108796,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.ship_meta_skilltask
-
-	var_13_6[1216] = {
+	pg.base.ship_meta_skilltask[1216] = {
 		level = 1,
 		id = 1216,
 		need_exp = 4000,
@@ -113710,11 +108881,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.ship_meta_skilltask
-
-	var_13_7[1217] = {
+	pg.base.ship_meta_skilltask[1217] = {
 		level = 2,
 		id = 1217,
 		need_exp = 5000,
@@ -113793,11 +108960,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.ship_meta_skilltask
-
-	var_13_8[1218] = {
+	pg.base.ship_meta_skilltask[1218] = {
 		level = 3,
 		id = 1218,
 		need_exp = 8000,
@@ -113876,11 +109039,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.ship_meta_skilltask
-
-	var_13_9[1219] = {
+	pg.base.ship_meta_skilltask[1219] = {
 		level = 4,
 		id = 1219,
 		need_exp = 12000,
@@ -113964,11 +109123,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.ship_meta_skilltask
-
-	var_13_10[1220] = {
+	pg.base.ship_meta_skilltask[1220] = {
 		level = 5,
 		id = 1220,
 		need_exp = 16000,
@@ -114057,11 +109212,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.ship_meta_skilltask
-
-	var_13_11[1221] = {
+	pg.base.ship_meta_skilltask[1221] = {
 		level = 6,
 		id = 1221,
 		need_exp = 20000,
@@ -114150,11 +109301,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.ship_meta_skilltask
-
-	var_13_12[1222] = {
+	pg.base.ship_meta_skilltask[1222] = {
 		level = 7,
 		id = 1222,
 		need_exp = 26000,
@@ -114248,11 +109395,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.ship_meta_skilltask
-
-	var_13_13[1223] = {
+	pg.base.ship_meta_skilltask[1223] = {
 		level = 8,
 		id = 1223,
 		need_exp = 38000,
@@ -114346,11 +109489,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.ship_meta_skilltask
-
-	var_13_14[1224] = {
+	pg.base.ship_meta_skilltask[1224] = {
 		level = 9,
 		id = 1224,
 		need_exp = 60000,
@@ -114444,11 +109583,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.ship_meta_skilltask
-
-	var_13_15[1225] = {
+	pg.base.ship_meta_skilltask[1225] = {
 		level = 1,
 		id = 1225,
 		need_exp = 4000,
@@ -114533,11 +109668,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.ship_meta_skilltask
-
-	var_13_16[1226] = {
+	pg.base.ship_meta_skilltask[1226] = {
 		level = 2,
 		id = 1226,
 		need_exp = 5000,
@@ -114616,11 +109747,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.ship_meta_skilltask
-
-	var_13_17[1227] = {
+	pg.base.ship_meta_skilltask[1227] = {
 		level = 3,
 		id = 1227,
 		need_exp = 8000,
@@ -114699,11 +109826,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.ship_meta_skilltask
-
-	var_13_18[1228] = {
+	pg.base.ship_meta_skilltask[1228] = {
 		level = 4,
 		id = 1228,
 		need_exp = 12000,
@@ -114787,11 +109910,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.ship_meta_skilltask
-
-	var_13_19[1229] = {
+	pg.base.ship_meta_skilltask[1229] = {
 		level = 5,
 		id = 1229,
 		need_exp = 16000,
@@ -114880,11 +109999,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.ship_meta_skilltask
-
-	var_13_20[1230] = {
+	pg.base.ship_meta_skilltask[1230] = {
 		level = 6,
 		id = 1230,
 		need_exp = 20000,
@@ -114973,11 +110088,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.ship_meta_skilltask
-
-	var_13_21[1231] = {
+	pg.base.ship_meta_skilltask[1231] = {
 		level = 7,
 		id = 1231,
 		need_exp = 26000,
@@ -115071,11 +110182,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.ship_meta_skilltask
-
-	var_13_22[1232] = {
+	pg.base.ship_meta_skilltask[1232] = {
 		level = 8,
 		id = 1232,
 		need_exp = 38000,
@@ -115169,11 +110276,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.ship_meta_skilltask
-
-	var_13_23[1233] = {
+	pg.base.ship_meta_skilltask[1233] = {
 		level = 9,
 		id = 1233,
 		need_exp = 60000,
@@ -115267,11 +110370,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.ship_meta_skilltask
-
-	var_13_24[1234] = {
+	pg.base.ship_meta_skilltask[1234] = {
 		level = 1,
 		id = 1234,
 		need_exp = 2000,
@@ -115356,11 +110455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.ship_meta_skilltask
-
-	var_13_25[1235] = {
+	pg.base.ship_meta_skilltask[1235] = {
 		level = 2,
 		id = 1235,
 		need_exp = 2500,
@@ -115439,11 +110534,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.ship_meta_skilltask
-
-	var_13_26[1236] = {
+	pg.base.ship_meta_skilltask[1236] = {
 		level = 3,
 		id = 1236,
 		need_exp = 4000,
@@ -115522,11 +110613,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.ship_meta_skilltask
-
-	var_13_27[1237] = {
+	pg.base.ship_meta_skilltask[1237] = {
 		level = 4,
 		id = 1237,
 		need_exp = 6000,
@@ -115610,11 +110697,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.ship_meta_skilltask
-
-	var_13_28[1238] = {
+	pg.base.ship_meta_skilltask[1238] = {
 		level = 5,
 		id = 1238,
 		need_exp = 8000,
@@ -115703,11 +110786,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.ship_meta_skilltask
-
-	var_13_29[1239] = {
+	pg.base.ship_meta_skilltask[1239] = {
 		level = 6,
 		id = 1239,
 		need_exp = 10000,
@@ -115796,11 +110875,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.ship_meta_skilltask
-
-	var_13_30[1240] = {
+	pg.base.ship_meta_skilltask[1240] = {
 		level = 7,
 		id = 1240,
 		need_exp = 13000,
@@ -115894,11 +110969,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.ship_meta_skilltask
-
-	var_13_31[1241] = {
+	pg.base.ship_meta_skilltask[1241] = {
 		level = 8,
 		id = 1241,
 		need_exp = 19000,
@@ -115992,11 +111063,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.ship_meta_skilltask
-
-	var_13_32[1242] = {
+	pg.base.ship_meta_skilltask[1242] = {
 		level = 9,
 		id = 1242,
 		need_exp = 30000,
@@ -116090,11 +111157,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.ship_meta_skilltask
-
-	var_13_33[1243] = {
+	pg.base.ship_meta_skilltask[1243] = {
 		level = 1,
 		id = 1243,
 		need_exp = 2000,
@@ -116179,11 +111242,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.ship_meta_skilltask
-
-	var_13_34[1244] = {
+	pg.base.ship_meta_skilltask[1244] = {
 		level = 2,
 		id = 1244,
 		need_exp = 2500,
@@ -116262,11 +111321,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.ship_meta_skilltask
-
-	var_13_35[1245] = {
+	pg.base.ship_meta_skilltask[1245] = {
 		level = 3,
 		id = 1245,
 		need_exp = 4000,
@@ -116345,11 +111400,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.ship_meta_skilltask
-
-	var_13_36[1246] = {
+	pg.base.ship_meta_skilltask[1246] = {
 		level = 4,
 		id = 1246,
 		need_exp = 6000,
@@ -116433,11 +111484,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.ship_meta_skilltask
-
-	var_13_37[1247] = {
+	pg.base.ship_meta_skilltask[1247] = {
 		level = 5,
 		id = 1247,
 		need_exp = 8000,
@@ -116526,11 +111573,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.ship_meta_skilltask
-
-	var_13_38[1248] = {
+	pg.base.ship_meta_skilltask[1248] = {
 		level = 6,
 		id = 1248,
 		need_exp = 10000,
@@ -116619,11 +111662,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.ship_meta_skilltask
-
-	var_13_39[1249] = {
+	pg.base.ship_meta_skilltask[1249] = {
 		level = 7,
 		id = 1249,
 		need_exp = 13000,
@@ -116717,11 +111756,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.ship_meta_skilltask
-
-	var_13_40[1250] = {
+	pg.base.ship_meta_skilltask[1250] = {
 		level = 8,
 		id = 1250,
 		need_exp = 19000,
@@ -116815,11 +111850,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.ship_meta_skilltask
-
-	var_13_41[1251] = {
+	pg.base.ship_meta_skilltask[1251] = {
 		level = 9,
 		id = 1251,
 		need_exp = 30000,
@@ -116913,11 +111944,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.ship_meta_skilltask
-
-	var_13_42[1252] = {
+	pg.base.ship_meta_skilltask[1252] = {
 		level = 1,
 		id = 1252,
 		need_exp = 2000,
@@ -117002,11 +112029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.ship_meta_skilltask
-
-	var_13_43[1253] = {
+	pg.base.ship_meta_skilltask[1253] = {
 		level = 2,
 		id = 1253,
 		need_exp = 2500,
@@ -117085,11 +112108,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.ship_meta_skilltask
-
-	var_13_44[1254] = {
+	pg.base.ship_meta_skilltask[1254] = {
 		level = 3,
 		id = 1254,
 		need_exp = 4000,
@@ -117168,11 +112187,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.ship_meta_skilltask
-
-	var_13_45[1255] = {
+	pg.base.ship_meta_skilltask[1255] = {
 		level = 4,
 		id = 1255,
 		need_exp = 6000,
@@ -117256,11 +112271,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.ship_meta_skilltask
-
-	var_13_46[1256] = {
+	pg.base.ship_meta_skilltask[1256] = {
 		level = 5,
 		id = 1256,
 		need_exp = 8000,
@@ -117349,11 +112360,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.ship_meta_skilltask
-
-	var_13_47[1257] = {
+	pg.base.ship_meta_skilltask[1257] = {
 		level = 6,
 		id = 1257,
 		need_exp = 10000,
@@ -117442,11 +112449,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.ship_meta_skilltask
-
-	var_13_48[1258] = {
+	pg.base.ship_meta_skilltask[1258] = {
 		level = 7,
 		id = 1258,
 		need_exp = 13000,
@@ -117540,11 +112543,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.ship_meta_skilltask
-
-	var_13_49[1259] = {
+	pg.base.ship_meta_skilltask[1259] = {
 		level = 8,
 		id = 1259,
 		need_exp = 19000,
@@ -117638,11 +112637,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.ship_meta_skilltask
-
-	var_13_50[1260] = {
+	pg.base.ship_meta_skilltask[1260] = {
 		level = 9,
 		id = 1260,
 		need_exp = 30000,
@@ -117736,11 +112731,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.ship_meta_skilltask
-
-	var_13_51[1261] = {
+	pg.base.ship_meta_skilltask[1261] = {
 		level = 1,
 		id = 1261,
 		need_exp = 2000,
@@ -117825,11 +112816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.ship_meta_skilltask
-
-	var_13_52[1262] = {
+	pg.base.ship_meta_skilltask[1262] = {
 		level = 2,
 		id = 1262,
 		need_exp = 2500,
@@ -117908,11 +112895,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.ship_meta_skilltask
-
-	var_13_53[1263] = {
+	pg.base.ship_meta_skilltask[1263] = {
 		level = 3,
 		id = 1263,
 		need_exp = 4000,
@@ -117991,11 +112974,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.ship_meta_skilltask
-
-	var_13_54[1264] = {
+	pg.base.ship_meta_skilltask[1264] = {
 		level = 4,
 		id = 1264,
 		need_exp = 6000,
@@ -118079,11 +113058,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.ship_meta_skilltask
-
-	var_13_55[1265] = {
+	pg.base.ship_meta_skilltask[1265] = {
 		level = 5,
 		id = 1265,
 		need_exp = 8000,
@@ -118172,11 +113147,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.ship_meta_skilltask
-
-	var_13_56[1266] = {
+	pg.base.ship_meta_skilltask[1266] = {
 		level = 6,
 		id = 1266,
 		need_exp = 10000,
@@ -118265,11 +113236,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.ship_meta_skilltask
-
-	var_13_57[1267] = {
+	pg.base.ship_meta_skilltask[1267] = {
 		level = 7,
 		id = 1267,
 		need_exp = 13000,
@@ -118363,11 +113330,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.ship_meta_skilltask
-
-	var_13_58[1268] = {
+	pg.base.ship_meta_skilltask[1268] = {
 		level = 8,
 		id = 1268,
 		need_exp = 19000,
@@ -118461,11 +113424,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.ship_meta_skilltask
-
-	var_13_59[1269] = {
+	pg.base.ship_meta_skilltask[1269] = {
 		level = 9,
 		id = 1269,
 		need_exp = 30000,
@@ -118559,11 +113518,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.ship_meta_skilltask
-
-	var_13_60[1270] = {
+	pg.base.ship_meta_skilltask[1270] = {
 		level = 1,
 		id = 1270,
 		need_exp = 4000,
@@ -118648,11 +113603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.ship_meta_skilltask
-
-	var_13_61[1271] = {
+	pg.base.ship_meta_skilltask[1271] = {
 		level = 2,
 		id = 1271,
 		need_exp = 5000,
@@ -118731,11 +113682,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.ship_meta_skilltask
-
-	var_13_62[1272] = {
+	pg.base.ship_meta_skilltask[1272] = {
 		level = 3,
 		id = 1272,
 		need_exp = 8000,
@@ -118814,11 +113761,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.ship_meta_skilltask
-
-	var_13_63[1273] = {
+	pg.base.ship_meta_skilltask[1273] = {
 		level = 4,
 		id = 1273,
 		need_exp = 12000,
@@ -118902,11 +113845,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.ship_meta_skilltask
-
-	var_13_64[1274] = {
+	pg.base.ship_meta_skilltask[1274] = {
 		level = 5,
 		id = 1274,
 		need_exp = 16000,
@@ -118995,11 +113934,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.ship_meta_skilltask
-
-	var_13_65[1275] = {
+	pg.base.ship_meta_skilltask[1275] = {
 		level = 6,
 		id = 1275,
 		need_exp = 20000,
@@ -119088,11 +114023,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.ship_meta_skilltask
-
-	var_13_66[1276] = {
+	pg.base.ship_meta_skilltask[1276] = {
 		level = 7,
 		id = 1276,
 		need_exp = 26000,
@@ -119186,11 +114117,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.ship_meta_skilltask
-
-	var_13_67[1277] = {
+	pg.base.ship_meta_skilltask[1277] = {
 		level = 8,
 		id = 1277,
 		need_exp = 38000,
@@ -119284,11 +114211,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.ship_meta_skilltask
-
-	var_13_68[1278] = {
+	pg.base.ship_meta_skilltask[1278] = {
 		level = 9,
 		id = 1278,
 		need_exp = 60000,
@@ -119382,11 +114305,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.ship_meta_skilltask
-
-	var_13_69[1279] = {
+	pg.base.ship_meta_skilltask[1279] = {
 		level = 1,
 		id = 1279,
 		need_exp = 4000,
@@ -119471,11 +114390,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.ship_meta_skilltask
-
-	var_13_70[1280] = {
+	pg.base.ship_meta_skilltask[1280] = {
 		level = 2,
 		id = 1280,
 		need_exp = 5000,
@@ -119554,11 +114469,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.ship_meta_skilltask
-
-	var_13_71[1281] = {
+	pg.base.ship_meta_skilltask[1281] = {
 		level = 3,
 		id = 1281,
 		need_exp = 8000,
@@ -119637,11 +114548,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.ship_meta_skilltask
-
-	var_13_72[1282] = {
+	pg.base.ship_meta_skilltask[1282] = {
 		level = 4,
 		id = 1282,
 		need_exp = 12000,
@@ -119725,11 +114632,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.ship_meta_skilltask
-
-	var_13_73[1283] = {
+	pg.base.ship_meta_skilltask[1283] = {
 		level = 5,
 		id = 1283,
 		need_exp = 16000,
@@ -119818,11 +114721,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.ship_meta_skilltask
-
-	var_13_74[1284] = {
+	pg.base.ship_meta_skilltask[1284] = {
 		level = 6,
 		id = 1284,
 		need_exp = 20000,
@@ -119911,11 +114810,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.ship_meta_skilltask
-
-	var_13_75[1285] = {
+	pg.base.ship_meta_skilltask[1285] = {
 		level = 7,
 		id = 1285,
 		need_exp = 26000,
@@ -120009,11 +114904,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.ship_meta_skilltask
-
-	var_13_76[1286] = {
+	pg.base.ship_meta_skilltask[1286] = {
 		level = 8,
 		id = 1286,
 		need_exp = 38000,
@@ -120107,11 +114998,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.ship_meta_skilltask
-
-	var_13_77[1287] = {
+	pg.base.ship_meta_skilltask[1287] = {
 		level = 9,
 		id = 1287,
 		need_exp = 60000,
@@ -120205,11 +115092,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.ship_meta_skilltask
-
-	var_13_78[1288] = {
+	pg.base.ship_meta_skilltask[1288] = {
 		level = 1,
 		id = 1288,
 		need_exp = 4000,
@@ -120294,11 +115177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.ship_meta_skilltask
-
-	var_13_79[1289] = {
+	pg.base.ship_meta_skilltask[1289] = {
 		level = 2,
 		id = 1289,
 		need_exp = 5000,
@@ -120377,11 +115256,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.ship_meta_skilltask
-
-	var_13_80[1290] = {
+	pg.base.ship_meta_skilltask[1290] = {
 		level = 3,
 		id = 1290,
 		need_exp = 8000,
@@ -120460,11 +115335,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.ship_meta_skilltask
-
-	var_13_81[1291] = {
+	pg.base.ship_meta_skilltask[1291] = {
 		level = 4,
 		id = 1291,
 		need_exp = 12000,
@@ -120548,11 +115419,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.ship_meta_skilltask
-
-	var_13_82[1292] = {
+	pg.base.ship_meta_skilltask[1292] = {
 		level = 5,
 		id = 1292,
 		need_exp = 16000,
@@ -120641,11 +115508,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.ship_meta_skilltask
-
-	var_13_83[1293] = {
+	pg.base.ship_meta_skilltask[1293] = {
 		level = 6,
 		id = 1293,
 		need_exp = 20000,
@@ -120734,11 +115597,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.ship_meta_skilltask
-
-	var_13_84[1294] = {
+	pg.base.ship_meta_skilltask[1294] = {
 		level = 7,
 		id = 1294,
 		need_exp = 26000,
@@ -120832,11 +115691,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.ship_meta_skilltask
-
-	var_13_85[1295] = {
+	pg.base.ship_meta_skilltask[1295] = {
 		level = 8,
 		id = 1295,
 		need_exp = 38000,
@@ -120930,11 +115785,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.ship_meta_skilltask
-
-	var_13_86[1296] = {
+	pg.base.ship_meta_skilltask[1296] = {
 		level = 9,
 		id = 1296,
 		need_exp = 60000,
@@ -121028,11 +115879,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.ship_meta_skilltask
-
-	var_13_87[1297] = {
+	pg.base.ship_meta_skilltask[1297] = {
 		level = 1,
 		id = 1297,
 		need_exp = 4000,
@@ -121117,11 +115964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.ship_meta_skilltask
-
-	var_13_88[1298] = {
+	pg.base.ship_meta_skilltask[1298] = {
 		level = 2,
 		id = 1298,
 		need_exp = 5000,
@@ -121200,11 +116043,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.ship_meta_skilltask
-
-	var_13_89[1299] = {
+	pg.base.ship_meta_skilltask[1299] = {
 		level = 3,
 		id = 1299,
 		need_exp = 8000,
@@ -121283,11 +116122,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.ship_meta_skilltask
-
-	var_13_90[1300] = {
+	pg.base.ship_meta_skilltask[1300] = {
 		level = 4,
 		id = 1300,
 		need_exp = 12000,
@@ -121371,11 +116206,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.ship_meta_skilltask
-
-	var_13_91[1301] = {
+	pg.base.ship_meta_skilltask[1301] = {
 		level = 5,
 		id = 1301,
 		need_exp = 16000,
@@ -121464,11 +116295,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.ship_meta_skilltask
-
-	var_13_92[1302] = {
+	pg.base.ship_meta_skilltask[1302] = {
 		level = 6,
 		id = 1302,
 		need_exp = 20000,
@@ -121557,11 +116384,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.ship_meta_skilltask
-
-	var_13_93[1303] = {
+	pg.base.ship_meta_skilltask[1303] = {
 		level = 7,
 		id = 1303,
 		need_exp = 26000,
@@ -121655,11 +116478,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.ship_meta_skilltask
-
-	var_13_94[1304] = {
+	pg.base.ship_meta_skilltask[1304] = {
 		level = 8,
 		id = 1304,
 		need_exp = 38000,
@@ -121753,11 +116572,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.ship_meta_skilltask
-
-	var_13_95[1305] = {
+	pg.base.ship_meta_skilltask[1305] = {
 		level = 9,
 		id = 1305,
 		need_exp = 60000,
@@ -121851,11 +116666,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.ship_meta_skilltask
-
-	var_13_96[1306] = {
+	pg.base.ship_meta_skilltask[1306] = {
 		level = 1,
 		id = 1306,
 		need_exp = 4000,
@@ -121940,11 +116751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.ship_meta_skilltask
-
-	var_13_97[1307] = {
+	pg.base.ship_meta_skilltask[1307] = {
 		level = 2,
 		id = 1307,
 		need_exp = 5000,
@@ -122023,11 +116830,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.ship_meta_skilltask
-
-	var_13_98[1308] = {
+	pg.base.ship_meta_skilltask[1308] = {
 		level = 3,
 		id = 1308,
 		need_exp = 8000,
@@ -122106,8 +116909,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_13_98
-	var_13_98.base.ship_meta_skilltask[1309] = {
+	pg.base.ship_meta_skilltask[1309] = {
 		level = 4,
 		id = 1309,
 		need_exp = 12000,
@@ -122195,11 +116997,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_14_0[1310] = {
+	pg.base.ship_meta_skilltask[1310] = {
 		level = 5,
 		id = 1310,
 		need_exp = 16000,
@@ -122288,11 +117086,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.ship_meta_skilltask
-
-	var_14_1[1311] = {
+	pg.base.ship_meta_skilltask[1311] = {
 		level = 6,
 		id = 1311,
 		need_exp = 20000,
@@ -122381,11 +117175,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.ship_meta_skilltask
-
-	var_14_2[1312] = {
+	pg.base.ship_meta_skilltask[1312] = {
 		level = 7,
 		id = 1312,
 		need_exp = 26000,
@@ -122479,11 +117269,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.ship_meta_skilltask
-
-	var_14_3[1313] = {
+	pg.base.ship_meta_skilltask[1313] = {
 		level = 8,
 		id = 1313,
 		need_exp = 38000,
@@ -122577,11 +117363,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.ship_meta_skilltask
-
-	var_14_4[1314] = {
+	pg.base.ship_meta_skilltask[1314] = {
 		level = 9,
 		id = 1314,
 		need_exp = 60000,
@@ -122675,11 +117457,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.ship_meta_skilltask
-
-	var_14_5[1315] = {
+	pg.base.ship_meta_skilltask[1315] = {
 		level = 1,
 		id = 1315,
 		need_exp = 4000,
@@ -122764,11 +117542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.ship_meta_skilltask
-
-	var_14_6[1316] = {
+	pg.base.ship_meta_skilltask[1316] = {
 		level = 2,
 		id = 1316,
 		need_exp = 5000,
@@ -122847,11 +117621,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.ship_meta_skilltask
-
-	var_14_7[1317] = {
+	pg.base.ship_meta_skilltask[1317] = {
 		level = 3,
 		id = 1317,
 		need_exp = 8000,
@@ -122930,11 +117700,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.ship_meta_skilltask
-
-	var_14_8[1318] = {
+	pg.base.ship_meta_skilltask[1318] = {
 		level = 4,
 		id = 1318,
 		need_exp = 12000,
@@ -123018,11 +117784,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.ship_meta_skilltask
-
-	var_14_9[1319] = {
+	pg.base.ship_meta_skilltask[1319] = {
 		level = 5,
 		id = 1319,
 		need_exp = 16000,
@@ -123111,11 +117873,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.ship_meta_skilltask
-
-	var_14_10[1320] = {
+	pg.base.ship_meta_skilltask[1320] = {
 		level = 6,
 		id = 1320,
 		need_exp = 20000,
@@ -123204,11 +117962,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.ship_meta_skilltask
-
-	var_14_11[1321] = {
+	pg.base.ship_meta_skilltask[1321] = {
 		level = 7,
 		id = 1321,
 		need_exp = 26000,
@@ -123302,11 +118056,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.ship_meta_skilltask
-
-	var_14_12[1322] = {
+	pg.base.ship_meta_skilltask[1322] = {
 		level = 8,
 		id = 1322,
 		need_exp = 38000,
@@ -123400,11 +118150,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.ship_meta_skilltask
-
-	var_14_13[1323] = {
+	pg.base.ship_meta_skilltask[1323] = {
 		level = 9,
 		id = 1323,
 		need_exp = 60000,
@@ -123498,11 +118244,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.ship_meta_skilltask
-
-	var_14_14[1324] = {
+	pg.base.ship_meta_skilltask[1324] = {
 		level = 1,
 		id = 1324,
 		need_exp = 2000,
@@ -123587,11 +118329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.ship_meta_skilltask
-
-	var_14_15[1325] = {
+	pg.base.ship_meta_skilltask[1325] = {
 		level = 2,
 		id = 1325,
 		need_exp = 2500,
@@ -123670,11 +118408,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.ship_meta_skilltask
-
-	var_14_16[1326] = {
+	pg.base.ship_meta_skilltask[1326] = {
 		level = 3,
 		id = 1326,
 		need_exp = 4000,
@@ -123753,11 +118487,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.ship_meta_skilltask
-
-	var_14_17[1327] = {
+	pg.base.ship_meta_skilltask[1327] = {
 		level = 4,
 		id = 1327,
 		need_exp = 6000,
@@ -123841,11 +118571,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.ship_meta_skilltask
-
-	var_14_18[1328] = {
+	pg.base.ship_meta_skilltask[1328] = {
 		level = 5,
 		id = 1328,
 		need_exp = 8000,
@@ -123934,11 +118660,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.ship_meta_skilltask
-
-	var_14_19[1329] = {
+	pg.base.ship_meta_skilltask[1329] = {
 		level = 6,
 		id = 1329,
 		need_exp = 10000,
@@ -124027,11 +118749,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.ship_meta_skilltask
-
-	var_14_20[1330] = {
+	pg.base.ship_meta_skilltask[1330] = {
 		level = 7,
 		id = 1330,
 		need_exp = 13000,
@@ -124125,11 +118843,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.ship_meta_skilltask
-
-	var_14_21[1331] = {
+	pg.base.ship_meta_skilltask[1331] = {
 		level = 8,
 		id = 1331,
 		need_exp = 19000,
@@ -124223,11 +118937,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.ship_meta_skilltask
-
-	var_14_22[1332] = {
+	pg.base.ship_meta_skilltask[1332] = {
 		level = 9,
 		id = 1332,
 		need_exp = 30000,
@@ -124321,11 +119031,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.ship_meta_skilltask
-
-	var_14_23[1333] = {
+	pg.base.ship_meta_skilltask[1333] = {
 		level = 1,
 		id = 1333,
 		need_exp = 2000,
@@ -124410,11 +119116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.ship_meta_skilltask
-
-	var_14_24[1334] = {
+	pg.base.ship_meta_skilltask[1334] = {
 		level = 2,
 		id = 1334,
 		need_exp = 2500,
@@ -124493,11 +119195,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.ship_meta_skilltask
-
-	var_14_25[1335] = {
+	pg.base.ship_meta_skilltask[1335] = {
 		level = 3,
 		id = 1335,
 		need_exp = 4000,
@@ -124576,11 +119274,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.ship_meta_skilltask
-
-	var_14_26[1336] = {
+	pg.base.ship_meta_skilltask[1336] = {
 		level = 4,
 		id = 1336,
 		need_exp = 6000,
@@ -124664,11 +119358,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.ship_meta_skilltask
-
-	var_14_27[1337] = {
+	pg.base.ship_meta_skilltask[1337] = {
 		level = 5,
 		id = 1337,
 		need_exp = 8000,
@@ -124757,11 +119447,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.ship_meta_skilltask
-
-	var_14_28[1338] = {
+	pg.base.ship_meta_skilltask[1338] = {
 		level = 6,
 		id = 1338,
 		need_exp = 10000,
@@ -124850,11 +119536,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.ship_meta_skilltask
-
-	var_14_29[1339] = {
+	pg.base.ship_meta_skilltask[1339] = {
 		level = 7,
 		id = 1339,
 		need_exp = 13000,
@@ -124948,11 +119630,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.ship_meta_skilltask
-
-	var_14_30[1340] = {
+	pg.base.ship_meta_skilltask[1340] = {
 		level = 8,
 		id = 1340,
 		need_exp = 19000,
@@ -125046,11 +119724,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.ship_meta_skilltask
-
-	var_14_31[1341] = {
+	pg.base.ship_meta_skilltask[1341] = {
 		level = 9,
 		id = 1341,
 		need_exp = 30000,
@@ -125144,11 +119818,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.ship_meta_skilltask
-
-	var_14_32[1342] = {
+	pg.base.ship_meta_skilltask[1342] = {
 		level = 1,
 		id = 1342,
 		need_exp = 4000,
@@ -125233,11 +119903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.ship_meta_skilltask
-
-	var_14_33[1343] = {
+	pg.base.ship_meta_skilltask[1343] = {
 		level = 2,
 		id = 1343,
 		need_exp = 5000,
@@ -125316,11 +119982,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.ship_meta_skilltask
-
-	var_14_34[1344] = {
+	pg.base.ship_meta_skilltask[1344] = {
 		level = 3,
 		id = 1344,
 		need_exp = 8000,
@@ -125399,11 +120061,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.ship_meta_skilltask
-
-	var_14_35[1345] = {
+	pg.base.ship_meta_skilltask[1345] = {
 		level = 4,
 		id = 1345,
 		need_exp = 12000,
@@ -125487,11 +120145,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.ship_meta_skilltask
-
-	var_14_36[1346] = {
+	pg.base.ship_meta_skilltask[1346] = {
 		level = 5,
 		id = 1346,
 		need_exp = 16000,
@@ -125580,11 +120234,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.ship_meta_skilltask
-
-	var_14_37[1347] = {
+	pg.base.ship_meta_skilltask[1347] = {
 		level = 6,
 		id = 1347,
 		need_exp = 20000,
@@ -125673,11 +120323,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.ship_meta_skilltask
-
-	var_14_38[1348] = {
+	pg.base.ship_meta_skilltask[1348] = {
 		level = 7,
 		id = 1348,
 		need_exp = 26000,
@@ -125771,11 +120417,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.ship_meta_skilltask
-
-	var_14_39[1349] = {
+	pg.base.ship_meta_skilltask[1349] = {
 		level = 8,
 		id = 1349,
 		need_exp = 38000,
@@ -125869,11 +120511,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.ship_meta_skilltask
-
-	var_14_40[1350] = {
+	pg.base.ship_meta_skilltask[1350] = {
 		level = 9,
 		id = 1350,
 		need_exp = 60000,
@@ -125967,11 +120605,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.ship_meta_skilltask
-
-	var_14_41[1351] = {
+	pg.base.ship_meta_skilltask[1351] = {
 		level = 1,
 		id = 1351,
 		need_exp = 4000,
@@ -126056,11 +120690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.ship_meta_skilltask
-
-	var_14_42[1352] = {
+	pg.base.ship_meta_skilltask[1352] = {
 		level = 2,
 		id = 1352,
 		need_exp = 5000,
@@ -126139,11 +120769,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.ship_meta_skilltask
-
-	var_14_43[1353] = {
+	pg.base.ship_meta_skilltask[1353] = {
 		level = 3,
 		id = 1353,
 		need_exp = 8000,
@@ -126222,11 +120848,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.ship_meta_skilltask
-
-	var_14_44[1354] = {
+	pg.base.ship_meta_skilltask[1354] = {
 		level = 4,
 		id = 1354,
 		need_exp = 12000,
@@ -126310,11 +120932,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.ship_meta_skilltask
-
-	var_14_45[1355] = {
+	pg.base.ship_meta_skilltask[1355] = {
 		level = 5,
 		id = 1355,
 		need_exp = 16000,
@@ -126403,11 +121021,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.ship_meta_skilltask
-
-	var_14_46[1356] = {
+	pg.base.ship_meta_skilltask[1356] = {
 		level = 6,
 		id = 1356,
 		need_exp = 20000,
@@ -126496,11 +121110,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.ship_meta_skilltask
-
-	var_14_47[1357] = {
+	pg.base.ship_meta_skilltask[1357] = {
 		level = 7,
 		id = 1357,
 		need_exp = 26000,
@@ -126594,11 +121204,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.ship_meta_skilltask
-
-	var_14_48[1358] = {
+	pg.base.ship_meta_skilltask[1358] = {
 		level = 8,
 		id = 1358,
 		need_exp = 38000,
@@ -126692,11 +121298,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.ship_meta_skilltask
-
-	var_14_49[1359] = {
+	pg.base.ship_meta_skilltask[1359] = {
 		level = 9,
 		id = 1359,
 		need_exp = 60000,
@@ -126790,11 +121392,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.ship_meta_skilltask
-
-	var_14_50[1360] = {
+	pg.base.ship_meta_skilltask[1360] = {
 		level = 1,
 		id = 1360,
 		need_exp = 4000,
@@ -126879,11 +121477,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.ship_meta_skilltask
-
-	var_14_51[1361] = {
+	pg.base.ship_meta_skilltask[1361] = {
 		level = 2,
 		id = 1361,
 		need_exp = 5000,
@@ -126962,11 +121556,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.ship_meta_skilltask
-
-	var_14_52[1362] = {
+	pg.base.ship_meta_skilltask[1362] = {
 		level = 3,
 		id = 1362,
 		need_exp = 8000,
@@ -127045,11 +121635,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.ship_meta_skilltask
-
-	var_14_53[1363] = {
+	pg.base.ship_meta_skilltask[1363] = {
 		level = 4,
 		id = 1363,
 		need_exp = 12000,
@@ -127133,11 +121719,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.ship_meta_skilltask
-
-	var_14_54[1364] = {
+	pg.base.ship_meta_skilltask[1364] = {
 		level = 5,
 		id = 1364,
 		need_exp = 16000,
@@ -127226,11 +121808,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.ship_meta_skilltask
-
-	var_14_55[1365] = {
+	pg.base.ship_meta_skilltask[1365] = {
 		level = 6,
 		id = 1365,
 		need_exp = 20000,
@@ -127319,11 +121897,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.ship_meta_skilltask
-
-	var_14_56[1366] = {
+	pg.base.ship_meta_skilltask[1366] = {
 		level = 7,
 		id = 1366,
 		need_exp = 26000,
@@ -127417,11 +121991,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.ship_meta_skilltask
-
-	var_14_57[1367] = {
+	pg.base.ship_meta_skilltask[1367] = {
 		level = 8,
 		id = 1367,
 		need_exp = 38000,
@@ -127515,11 +122085,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.ship_meta_skilltask
-
-	var_14_58[1368] = {
+	pg.base.ship_meta_skilltask[1368] = {
 		level = 9,
 		id = 1368,
 		need_exp = 60000,
@@ -127613,11 +122179,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.ship_meta_skilltask
-
-	var_14_59[1369] = {
+	pg.base.ship_meta_skilltask[1369] = {
 		level = 1,
 		id = 1369,
 		need_exp = 4000,
@@ -127702,11 +122264,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.ship_meta_skilltask
-
-	var_14_60[1370] = {
+	pg.base.ship_meta_skilltask[1370] = {
 		level = 2,
 		id = 1370,
 		need_exp = 5000,
@@ -127785,11 +122343,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.ship_meta_skilltask
-
-	var_14_61[1371] = {
+	pg.base.ship_meta_skilltask[1371] = {
 		level = 3,
 		id = 1371,
 		need_exp = 8000,
@@ -127868,11 +122422,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.ship_meta_skilltask
-
-	var_14_62[1372] = {
+	pg.base.ship_meta_skilltask[1372] = {
 		level = 4,
 		id = 1372,
 		need_exp = 12000,
@@ -127956,11 +122506,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.ship_meta_skilltask
-
-	var_14_63[1373] = {
+	pg.base.ship_meta_skilltask[1373] = {
 		level = 5,
 		id = 1373,
 		need_exp = 16000,
@@ -128049,11 +122595,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.ship_meta_skilltask
-
-	var_14_64[1374] = {
+	pg.base.ship_meta_skilltask[1374] = {
 		level = 6,
 		id = 1374,
 		need_exp = 20000,
@@ -128142,11 +122684,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.ship_meta_skilltask
-
-	var_14_65[1375] = {
+	pg.base.ship_meta_skilltask[1375] = {
 		level = 7,
 		id = 1375,
 		need_exp = 26000,
@@ -128240,11 +122778,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.ship_meta_skilltask
-
-	var_14_66[1376] = {
+	pg.base.ship_meta_skilltask[1376] = {
 		level = 8,
 		id = 1376,
 		need_exp = 38000,
@@ -128338,11 +122872,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.ship_meta_skilltask
-
-	var_14_67[1377] = {
+	pg.base.ship_meta_skilltask[1377] = {
 		level = 9,
 		id = 1377,
 		need_exp = 60000,
@@ -128436,11 +122966,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.ship_meta_skilltask
-
-	var_14_68[1378] = {
+	pg.base.ship_meta_skilltask[1378] = {
 		level = 1,
 		id = 1378,
 		need_exp = 4000,
@@ -128525,11 +123051,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.ship_meta_skilltask
-
-	var_14_69[1379] = {
+	pg.base.ship_meta_skilltask[1379] = {
 		level = 2,
 		id = 1379,
 		need_exp = 5000,
@@ -128608,11 +123130,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.ship_meta_skilltask
-
-	var_14_70[1380] = {
+	pg.base.ship_meta_skilltask[1380] = {
 		level = 3,
 		id = 1380,
 		need_exp = 8000,
@@ -128691,11 +123209,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.ship_meta_skilltask
-
-	var_14_71[1381] = {
+	pg.base.ship_meta_skilltask[1381] = {
 		level = 4,
 		id = 1381,
 		need_exp = 12000,
@@ -128779,11 +123293,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.ship_meta_skilltask
-
-	var_14_72[1382] = {
+	pg.base.ship_meta_skilltask[1382] = {
 		level = 5,
 		id = 1382,
 		need_exp = 16000,
@@ -128872,11 +123382,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.ship_meta_skilltask
-
-	var_14_73[1383] = {
+	pg.base.ship_meta_skilltask[1383] = {
 		level = 6,
 		id = 1383,
 		need_exp = 20000,
@@ -128965,11 +123471,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.ship_meta_skilltask
-
-	var_14_74[1384] = {
+	pg.base.ship_meta_skilltask[1384] = {
 		level = 7,
 		id = 1384,
 		need_exp = 26000,
@@ -129063,11 +123565,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.ship_meta_skilltask
-
-	var_14_75[1385] = {
+	pg.base.ship_meta_skilltask[1385] = {
 		level = 8,
 		id = 1385,
 		need_exp = 38000,
@@ -129161,11 +123659,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.ship_meta_skilltask
-
-	var_14_76[1386] = {
+	pg.base.ship_meta_skilltask[1386] = {
 		level = 9,
 		id = 1386,
 		need_exp = 60000,
@@ -129259,11 +123753,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.ship_meta_skilltask
-
-	var_14_77[1387] = {
+	pg.base.ship_meta_skilltask[1387] = {
 		level = 1,
 		id = 1387,
 		need_exp = 2000,
@@ -129348,11 +123838,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.ship_meta_skilltask
-
-	var_14_78[1388] = {
+	pg.base.ship_meta_skilltask[1388] = {
 		level = 2,
 		id = 1388,
 		need_exp = 2500,
@@ -129431,11 +123917,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.ship_meta_skilltask
-
-	var_14_79[1389] = {
+	pg.base.ship_meta_skilltask[1389] = {
 		level = 3,
 		id = 1389,
 		need_exp = 4000,
@@ -129514,11 +123996,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.ship_meta_skilltask
-
-	var_14_80[1390] = {
+	pg.base.ship_meta_skilltask[1390] = {
 		level = 4,
 		id = 1390,
 		need_exp = 6000,
@@ -129602,11 +124080,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.ship_meta_skilltask
-
-	var_14_81[1391] = {
+	pg.base.ship_meta_skilltask[1391] = {
 		level = 5,
 		id = 1391,
 		need_exp = 8000,
@@ -129695,11 +124169,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.ship_meta_skilltask
-
-	var_14_82[1392] = {
+	pg.base.ship_meta_skilltask[1392] = {
 		level = 6,
 		id = 1392,
 		need_exp = 10000,
@@ -129788,11 +124258,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.ship_meta_skilltask
-
-	var_14_83[1393] = {
+	pg.base.ship_meta_skilltask[1393] = {
 		level = 7,
 		id = 1393,
 		need_exp = 13000,
@@ -129886,11 +124352,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.ship_meta_skilltask
-
-	var_14_84[1394] = {
+	pg.base.ship_meta_skilltask[1394] = {
 		level = 8,
 		id = 1394,
 		need_exp = 19000,
@@ -129984,11 +124446,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.ship_meta_skilltask
-
-	var_14_85[1395] = {
+	pg.base.ship_meta_skilltask[1395] = {
 		level = 9,
 		id = 1395,
 		need_exp = 30000,
@@ -130082,11 +124540,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.ship_meta_skilltask
-
-	var_14_86[1396] = {
+	pg.base.ship_meta_skilltask[1396] = {
 		level = 1,
 		id = 1396,
 		need_exp = 2000,
@@ -130171,11 +124625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.ship_meta_skilltask
-
-	var_14_87[1397] = {
+	pg.base.ship_meta_skilltask[1397] = {
 		level = 2,
 		id = 1397,
 		need_exp = 2500,
@@ -130254,11 +124704,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.ship_meta_skilltask
-
-	var_14_88[1398] = {
+	pg.base.ship_meta_skilltask[1398] = {
 		level = 3,
 		id = 1398,
 		need_exp = 4000,
@@ -130337,11 +124783,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.ship_meta_skilltask
-
-	var_14_89[1399] = {
+	pg.base.ship_meta_skilltask[1399] = {
 		level = 4,
 		id = 1399,
 		need_exp = 6000,
@@ -130425,11 +124867,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.ship_meta_skilltask
-
-	var_14_90[1400] = {
+	pg.base.ship_meta_skilltask[1400] = {
 		level = 5,
 		id = 1400,
 		need_exp = 8000,
@@ -130518,11 +124956,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.ship_meta_skilltask
-
-	var_14_91[1401] = {
+	pg.base.ship_meta_skilltask[1401] = {
 		level = 6,
 		id = 1401,
 		need_exp = 10000,
@@ -130611,11 +125045,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.ship_meta_skilltask
-
-	var_14_92[1402] = {
+	pg.base.ship_meta_skilltask[1402] = {
 		level = 7,
 		id = 1402,
 		need_exp = 13000,
@@ -130709,11 +125139,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.ship_meta_skilltask
-
-	var_14_93[1403] = {
+	pg.base.ship_meta_skilltask[1403] = {
 		level = 8,
 		id = 1403,
 		need_exp = 19000,
@@ -130807,11 +125233,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.ship_meta_skilltask
-
-	var_14_94[1404] = {
+	pg.base.ship_meta_skilltask[1404] = {
 		level = 9,
 		id = 1404,
 		need_exp = 30000,
@@ -130905,11 +125327,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.ship_meta_skilltask
-
-	var_14_95[1405] = {
+	pg.base.ship_meta_skilltask[1405] = {
 		level = 1,
 		id = 1405,
 		need_exp = 2000,
@@ -130994,11 +125412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.ship_meta_skilltask
-
-	var_14_96[1406] = {
+	pg.base.ship_meta_skilltask[1406] = {
 		level = 2,
 		id = 1406,
 		need_exp = 2500,
@@ -131077,11 +125491,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.ship_meta_skilltask
-
-	var_14_97[1407] = {
+	pg.base.ship_meta_skilltask[1407] = {
 		level = 3,
 		id = 1407,
 		need_exp = 4000,
@@ -131160,11 +125570,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.ship_meta_skilltask
-
-	var_14_98[1408] = {
+	pg.base.ship_meta_skilltask[1408] = {
 		level = 4,
 		id = 1408,
 		need_exp = 6000,
@@ -131248,8 +125654,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_14_98
-	var_14_98.base.ship_meta_skilltask[1409] = {
+	pg.base.ship_meta_skilltask[1409] = {
 		level = 5,
 		id = 1409,
 		need_exp = 8000,
@@ -131342,11 +125747,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.ship_meta_skilltask
-
-	var_15_0[1410] = {
+	pg.base.ship_meta_skilltask[1410] = {
 		level = 6,
 		id = 1410,
 		need_exp = 10000,
@@ -131435,11 +125836,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.ship_meta_skilltask
-
-	var_15_1[1411] = {
+	pg.base.ship_meta_skilltask[1411] = {
 		level = 7,
 		id = 1411,
 		need_exp = 13000,
@@ -131533,11 +125930,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.ship_meta_skilltask
-
-	var_15_2[1412] = {
+	pg.base.ship_meta_skilltask[1412] = {
 		level = 8,
 		id = 1412,
 		need_exp = 19000,
@@ -131631,11 +126024,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.ship_meta_skilltask
-
-	var_15_3[1413] = {
+	pg.base.ship_meta_skilltask[1413] = {
 		level = 9,
 		id = 1413,
 		need_exp = 30000,
@@ -131729,11 +126118,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.ship_meta_skilltask
-
-	var_15_4[1414] = {
+	pg.base.ship_meta_skilltask[1414] = {
 		level = 1,
 		id = 1414,
 		need_exp = 2000,
@@ -131818,11 +126203,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.ship_meta_skilltask
-
-	var_15_5[1415] = {
+	pg.base.ship_meta_skilltask[1415] = {
 		level = 2,
 		id = 1415,
 		need_exp = 2500,
@@ -131901,11 +126282,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.ship_meta_skilltask
-
-	var_15_6[1416] = {
+	pg.base.ship_meta_skilltask[1416] = {
 		level = 3,
 		id = 1416,
 		need_exp = 4000,
@@ -131984,11 +126361,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.ship_meta_skilltask
-
-	var_15_7[1417] = {
+	pg.base.ship_meta_skilltask[1417] = {
 		level = 4,
 		id = 1417,
 		need_exp = 6000,
@@ -132072,11 +126445,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.ship_meta_skilltask
-
-	var_15_8[1418] = {
+	pg.base.ship_meta_skilltask[1418] = {
 		level = 5,
 		id = 1418,
 		need_exp = 8000,
@@ -132165,11 +126534,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.ship_meta_skilltask
-
-	var_15_9[1419] = {
+	pg.base.ship_meta_skilltask[1419] = {
 		level = 6,
 		id = 1419,
 		need_exp = 10000,
@@ -132258,11 +126623,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.ship_meta_skilltask
-
-	var_15_10[1420] = {
+	pg.base.ship_meta_skilltask[1420] = {
 		level = 7,
 		id = 1420,
 		need_exp = 13000,
@@ -132356,11 +126717,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.ship_meta_skilltask
-
-	var_15_11[1421] = {
+	pg.base.ship_meta_skilltask[1421] = {
 		level = 8,
 		id = 1421,
 		need_exp = 19000,
@@ -132454,11 +126811,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.ship_meta_skilltask
-
-	var_15_12[1422] = {
+	pg.base.ship_meta_skilltask[1422] = {
 		level = 9,
 		id = 1422,
 		need_exp = 30000,
@@ -132552,11 +126905,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.ship_meta_skilltask
-
-	var_15_13[1423] = {
+	pg.base.ship_meta_skilltask[1423] = {
 		level = 1,
 		id = 1423,
 		need_exp = 4000,
@@ -132641,11 +126990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.ship_meta_skilltask
-
-	var_15_14[1424] = {
+	pg.base.ship_meta_skilltask[1424] = {
 		level = 2,
 		id = 1424,
 		need_exp = 5000,
@@ -132724,11 +127069,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.ship_meta_skilltask
-
-	var_15_15[1425] = {
+	pg.base.ship_meta_skilltask[1425] = {
 		level = 3,
 		id = 1425,
 		need_exp = 8000,
@@ -132807,11 +127148,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.ship_meta_skilltask
-
-	var_15_16[1426] = {
+	pg.base.ship_meta_skilltask[1426] = {
 		level = 4,
 		id = 1426,
 		need_exp = 12000,
@@ -132895,11 +127232,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.ship_meta_skilltask
-
-	var_15_17[1427] = {
+	pg.base.ship_meta_skilltask[1427] = {
 		level = 5,
 		id = 1427,
 		need_exp = 16000,
@@ -132988,11 +127321,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.ship_meta_skilltask
-
-	var_15_18[1428] = {
+	pg.base.ship_meta_skilltask[1428] = {
 		level = 6,
 		id = 1428,
 		need_exp = 20000,
@@ -133081,11 +127410,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.ship_meta_skilltask
-
-	var_15_19[1429] = {
+	pg.base.ship_meta_skilltask[1429] = {
 		level = 7,
 		id = 1429,
 		need_exp = 26000,
@@ -133179,11 +127504,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.ship_meta_skilltask
-
-	var_15_20[1430] = {
+	pg.base.ship_meta_skilltask[1430] = {
 		level = 8,
 		id = 1430,
 		need_exp = 38000,
@@ -133277,11 +127598,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.ship_meta_skilltask
-
-	var_15_21[1431] = {
+	pg.base.ship_meta_skilltask[1431] = {
 		level = 9,
 		id = 1431,
 		need_exp = 60000,
@@ -133375,11 +127692,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.ship_meta_skilltask
-
-	var_15_22[1432] = {
+	pg.base.ship_meta_skilltask[1432] = {
 		level = 1,
 		id = 1432,
 		need_exp = 4000,
@@ -133464,11 +127777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.ship_meta_skilltask
-
-	var_15_23[1433] = {
+	pg.base.ship_meta_skilltask[1433] = {
 		level = 2,
 		id = 1433,
 		need_exp = 5000,
@@ -133547,11 +127856,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.ship_meta_skilltask
-
-	var_15_24[1434] = {
+	pg.base.ship_meta_skilltask[1434] = {
 		level = 3,
 		id = 1434,
 		need_exp = 8000,
@@ -133630,11 +127935,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.ship_meta_skilltask
-
-	var_15_25[1435] = {
+	pg.base.ship_meta_skilltask[1435] = {
 		level = 4,
 		id = 1435,
 		need_exp = 12000,
@@ -133718,11 +128019,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.ship_meta_skilltask
-
-	var_15_26[1436] = {
+	pg.base.ship_meta_skilltask[1436] = {
 		level = 5,
 		id = 1436,
 		need_exp = 16000,
@@ -133811,11 +128108,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.ship_meta_skilltask
-
-	var_15_27[1437] = {
+	pg.base.ship_meta_skilltask[1437] = {
 		level = 6,
 		id = 1437,
 		need_exp = 20000,
@@ -133904,11 +128197,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.ship_meta_skilltask
-
-	var_15_28[1438] = {
+	pg.base.ship_meta_skilltask[1438] = {
 		level = 7,
 		id = 1438,
 		need_exp = 26000,
@@ -134002,11 +128291,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.ship_meta_skilltask
-
-	var_15_29[1439] = {
+	pg.base.ship_meta_skilltask[1439] = {
 		level = 8,
 		id = 1439,
 		need_exp = 38000,
@@ -134100,11 +128385,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.ship_meta_skilltask
-
-	var_15_30[1440] = {
+	pg.base.ship_meta_skilltask[1440] = {
 		level = 9,
 		id = 1440,
 		need_exp = 60000,
@@ -134198,11 +128479,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.ship_meta_skilltask
-
-	var_15_31[1441] = {
+	pg.base.ship_meta_skilltask[1441] = {
 		level = 1,
 		id = 1441,
 		need_exp = 4000,
@@ -134287,11 +128564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.ship_meta_skilltask
-
-	var_15_32[1442] = {
+	pg.base.ship_meta_skilltask[1442] = {
 		level = 2,
 		id = 1442,
 		need_exp = 5000,
@@ -134370,11 +128643,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.ship_meta_skilltask
-
-	var_15_33[1443] = {
+	pg.base.ship_meta_skilltask[1443] = {
 		level = 3,
 		id = 1443,
 		need_exp = 8000,
@@ -134453,11 +128722,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.ship_meta_skilltask
-
-	var_15_34[1444] = {
+	pg.base.ship_meta_skilltask[1444] = {
 		level = 4,
 		id = 1444,
 		need_exp = 12000,
@@ -134541,11 +128806,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.ship_meta_skilltask
-
-	var_15_35[1445] = {
+	pg.base.ship_meta_skilltask[1445] = {
 		level = 5,
 		id = 1445,
 		need_exp = 16000,
@@ -134634,11 +128895,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.ship_meta_skilltask
-
-	var_15_36[1446] = {
+	pg.base.ship_meta_skilltask[1446] = {
 		level = 6,
 		id = 1446,
 		need_exp = 20000,
@@ -134727,11 +128984,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.ship_meta_skilltask
-
-	var_15_37[1447] = {
+	pg.base.ship_meta_skilltask[1447] = {
 		level = 7,
 		id = 1447,
 		need_exp = 26000,
@@ -134825,11 +129078,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.ship_meta_skilltask
-
-	var_15_38[1448] = {
+	pg.base.ship_meta_skilltask[1448] = {
 		level = 8,
 		id = 1448,
 		need_exp = 38000,
@@ -134923,11 +129172,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.ship_meta_skilltask
-
-	var_15_39[1449] = {
+	pg.base.ship_meta_skilltask[1449] = {
 		level = 9,
 		id = 1449,
 		need_exp = 60000,
@@ -135021,11 +129266,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.ship_meta_skilltask
-
-	var_15_40[1450] = {
+	pg.base.ship_meta_skilltask[1450] = {
 		level = 1,
 		id = 1450,
 		need_exp = 4000,
@@ -135110,11 +129351,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.ship_meta_skilltask
-
-	var_15_41[1451] = {
+	pg.base.ship_meta_skilltask[1451] = {
 		level = 2,
 		id = 1451,
 		need_exp = 5000,
@@ -135193,11 +129430,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.ship_meta_skilltask
-
-	var_15_42[1452] = {
+	pg.base.ship_meta_skilltask[1452] = {
 		level = 3,
 		id = 1452,
 		need_exp = 8000,
@@ -135276,11 +129509,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.ship_meta_skilltask
-
-	var_15_43[1453] = {
+	pg.base.ship_meta_skilltask[1453] = {
 		level = 4,
 		id = 1453,
 		need_exp = 12000,
@@ -135364,11 +129593,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.ship_meta_skilltask
-
-	var_15_44[1454] = {
+	pg.base.ship_meta_skilltask[1454] = {
 		level = 5,
 		id = 1454,
 		need_exp = 16000,
@@ -135457,11 +129682,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.ship_meta_skilltask
-
-	var_15_45[1455] = {
+	pg.base.ship_meta_skilltask[1455] = {
 		level = 6,
 		id = 1455,
 		need_exp = 20000,
@@ -135550,11 +129771,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.ship_meta_skilltask
-
-	var_15_46[1456] = {
+	pg.base.ship_meta_skilltask[1456] = {
 		level = 7,
 		id = 1456,
 		need_exp = 26000,
@@ -135648,11 +129865,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.ship_meta_skilltask
-
-	var_15_47[1457] = {
+	pg.base.ship_meta_skilltask[1457] = {
 		level = 8,
 		id = 1457,
 		need_exp = 38000,
@@ -135746,11 +129959,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.ship_meta_skilltask
-
-	var_15_48[1458] = {
+	pg.base.ship_meta_skilltask[1458] = {
 		level = 9,
 		id = 1458,
 		need_exp = 60000,
@@ -135844,11 +130053,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.ship_meta_skilltask
-
-	var_15_49[1459] = {
+	pg.base.ship_meta_skilltask[1459] = {
 		level = 1,
 		id = 1459,
 		need_exp = 4000,
@@ -135933,11 +130138,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.ship_meta_skilltask
-
-	var_15_50[1460] = {
+	pg.base.ship_meta_skilltask[1460] = {
 		level = 2,
 		id = 1460,
 		need_exp = 5000,
@@ -136016,11 +130217,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.ship_meta_skilltask
-
-	var_15_51[1461] = {
+	pg.base.ship_meta_skilltask[1461] = {
 		level = 3,
 		id = 1461,
 		need_exp = 8000,
@@ -136099,11 +130296,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.ship_meta_skilltask
-
-	var_15_52[1462] = {
+	pg.base.ship_meta_skilltask[1462] = {
 		level = 4,
 		id = 1462,
 		need_exp = 12000,
@@ -136187,11 +130380,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.ship_meta_skilltask
-
-	var_15_53[1463] = {
+	pg.base.ship_meta_skilltask[1463] = {
 		level = 5,
 		id = 1463,
 		need_exp = 16000,
@@ -136280,11 +130469,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.ship_meta_skilltask
-
-	var_15_54[1464] = {
+	pg.base.ship_meta_skilltask[1464] = {
 		level = 6,
 		id = 1464,
 		need_exp = 20000,
@@ -136373,11 +130558,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.ship_meta_skilltask
-
-	var_15_55[1465] = {
+	pg.base.ship_meta_skilltask[1465] = {
 		level = 7,
 		id = 1465,
 		need_exp = 26000,
@@ -136471,11 +130652,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.ship_meta_skilltask
-
-	var_15_56[1466] = {
+	pg.base.ship_meta_skilltask[1466] = {
 		level = 8,
 		id = 1466,
 		need_exp = 38000,
@@ -136569,11 +130746,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.ship_meta_skilltask
-
-	var_15_57[1467] = {
+	pg.base.ship_meta_skilltask[1467] = {
 		level = 9,
 		id = 1467,
 		need_exp = 60000,
@@ -136667,11 +130840,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.ship_meta_skilltask
-
-	var_15_58[1468] = {
+	pg.base.ship_meta_skilltask[1468] = {
 		level = 1,
 		id = 1468,
 		need_exp = 2000,
@@ -136756,11 +130925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.ship_meta_skilltask
-
-	var_15_59[1469] = {
+	pg.base.ship_meta_skilltask[1469] = {
 		level = 2,
 		id = 1469,
 		need_exp = 2500,
@@ -136839,11 +131004,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.ship_meta_skilltask
-
-	var_15_60[1470] = {
+	pg.base.ship_meta_skilltask[1470] = {
 		level = 3,
 		id = 1470,
 		need_exp = 4000,
@@ -136922,11 +131083,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.ship_meta_skilltask
-
-	var_15_61[1471] = {
+	pg.base.ship_meta_skilltask[1471] = {
 		level = 4,
 		id = 1471,
 		need_exp = 6000,
@@ -137010,11 +131167,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.ship_meta_skilltask
-
-	var_15_62[1472] = {
+	pg.base.ship_meta_skilltask[1472] = {
 		level = 5,
 		id = 1472,
 		need_exp = 8000,
@@ -137103,11 +131256,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.ship_meta_skilltask
-
-	var_15_63[1473] = {
+	pg.base.ship_meta_skilltask[1473] = {
 		level = 6,
 		id = 1473,
 		need_exp = 10000,
@@ -137196,11 +131345,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.ship_meta_skilltask
-
-	var_15_64[1474] = {
+	pg.base.ship_meta_skilltask[1474] = {
 		level = 7,
 		id = 1474,
 		need_exp = 13000,
@@ -137294,11 +131439,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.ship_meta_skilltask
-
-	var_15_65[1475] = {
+	pg.base.ship_meta_skilltask[1475] = {
 		level = 8,
 		id = 1475,
 		need_exp = 19000,
@@ -137392,11 +131533,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.ship_meta_skilltask
-
-	var_15_66[1476] = {
+	pg.base.ship_meta_skilltask[1476] = {
 		level = 9,
 		id = 1476,
 		need_exp = 30000,
@@ -137490,11 +131627,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.ship_meta_skilltask
-
-	var_15_67[1477] = {
+	pg.base.ship_meta_skilltask[1477] = {
 		level = 1,
 		id = 1477,
 		need_exp = 2000,
@@ -137579,11 +131712,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.ship_meta_skilltask
-
-	var_15_68[1478] = {
+	pg.base.ship_meta_skilltask[1478] = {
 		level = 2,
 		id = 1478,
 		need_exp = 2500,
@@ -137662,11 +131791,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.ship_meta_skilltask
-
-	var_15_69[1479] = {
+	pg.base.ship_meta_skilltask[1479] = {
 		level = 3,
 		id = 1479,
 		need_exp = 4000,
@@ -137745,11 +131870,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.ship_meta_skilltask
-
-	var_15_70[1480] = {
+	pg.base.ship_meta_skilltask[1480] = {
 		level = 4,
 		id = 1480,
 		need_exp = 6000,
@@ -137833,11 +131954,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.ship_meta_skilltask
-
-	var_15_71[1481] = {
+	pg.base.ship_meta_skilltask[1481] = {
 		level = 5,
 		id = 1481,
 		need_exp = 8000,
@@ -137926,11 +132043,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.ship_meta_skilltask
-
-	var_15_72[1482] = {
+	pg.base.ship_meta_skilltask[1482] = {
 		level = 6,
 		id = 1482,
 		need_exp = 10000,
@@ -138019,11 +132132,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.ship_meta_skilltask
-
-	var_15_73[1483] = {
+	pg.base.ship_meta_skilltask[1483] = {
 		level = 7,
 		id = 1483,
 		need_exp = 13000,
@@ -138117,11 +132226,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.ship_meta_skilltask
-
-	var_15_74[1484] = {
+	pg.base.ship_meta_skilltask[1484] = {
 		level = 8,
 		id = 1484,
 		need_exp = 19000,
@@ -138215,8 +132320,7 @@ end)()
 		},
 		skill_unlock = {}
 	}
-	pg = var_15_74
-	var_15_74.base.ship_meta_skilltask[1485] = {
+	pg.base.ship_meta_skilltask[1485] = {
 		level = 9,
 		id = 1485,
 		need_exp = 30000,

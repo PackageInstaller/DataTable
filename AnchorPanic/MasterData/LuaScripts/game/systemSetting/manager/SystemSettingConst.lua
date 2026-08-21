@@ -17,10 +17,10 @@ systemSetting.SystemSettingDefine = {
     anti_Aliasing = "anti_aliasing", --抗锯齿
     dispersion = "dispersion", --色散
     radial_Blur = "radial_Blur", --径向模糊
-    special_effect_distortion = "special_effect_distortion", --特效扭曲
+    -- special_effect_distortion = "special_effect_distortion", --特效扭曲
     post_processing = "post_processing", --后处理
     reflection = "reflex", --镜面反射
-    gyro = "gyro",--陀螺仪
+    gyro = "gyro", --陀螺仪
 
     -- later_Effect = "visual_effects", --后期效果
     -- screen = "environment_detail", --场景细节
@@ -43,6 +43,11 @@ systemSetting.SystemSettingDefine = {
     -- checkAsset = 26, --检查资源
     lockTeamMember = "lockTeamMember", --锁定战员
     windowResolution = "windowResolution", --窗口分辨率
+
+    wallpaperState = "wallpaperState", --待机壁纸开放状态
+    wallpaperTense = "wallpaperTense", --待机壁纸时制
+    wallpaperNeedTime = "wallpaperNeedTime", --进入待机壁纸的时间
+    wallpaperRandomTime = "wallpaperRandomTime", --壁纸随机时间设置
 }
 
 --画质档次
@@ -70,10 +75,10 @@ systemSetting.QualitySettingDrop = {
     { key = systemSetting.SystemSettingDefine.bloom, title = _TT(62077), label = { _TT(62086), _TT(62087) }, isToggle = true }, --Bloom
     { key = systemSetting.SystemSettingDefine.dispersion, title = _TT(62078), label = { _TT(62086), _TT(62087) }, isToggle = true }, --色散
     { key = systemSetting.SystemSettingDefine.radial_Blur, title = _TT(62079), label = { _TT(62086), _TT(62087) }, isToggle = true }, --径向模糊
-    { key = systemSetting.SystemSettingDefine.special_effect_distortion, title = _TT(62080), label = { _TT(62086), _TT(62087) }, isToggle = true }, --特效扭曲
+    -- { key = systemSetting.SystemSettingDefine.special_effect_distortion, title = _TT(62080), label = { _TT(62086), _TT(62087) }, isToggle = true }, --特效扭曲
     { key = systemSetting.SystemSettingDefine.post_processing, title = _TT(62081), label = { _TT(62086), _TT(62087) }, isToggle = true }, --后处理
     { key = systemSetting.SystemSettingDefine.reflection, title = _TT(62090), label = { _TT(62086), _TT(62087) }, isToggle = true }, --镜面反射
-    --{ key = systemSetting.SystemSettingDefine.gyro, title = _TT(282), label = { _TT(62086), _TT(62087) }, isToggle = true }, --陀螺仪
+--{ key = systemSetting.SystemSettingDefine.gyro, title = _TT(282), label = { _TT(62086), _TT(62087) }, isToggle = true }, --陀螺仪
 -- { key = systemSetting.SystemSettingDefine.later_Effect, title = "后期效果", label = { "极低", "低", "中", "高" } }, --后期效果
 -- { key = systemSetting.SystemSettingDefine.screen, title = "场景细节", label = { "极低", "低", "中", "高", "极高" } }, --场景细节
 -- { key = systemSetting.SystemSettingDefine.fog, title = "体积雾", label = { "关闭", "打开" } }, --体积雾
@@ -115,6 +120,22 @@ systemSetting.resolutionByMobile = { 450, 560, 720, 960, 1080 }
 
 -- PC和ipad 平台渲染进度列表
 systemSetting.resolutionByPc = { 720, 960, 1080, 1440, 1600, 2048 }
+
+systemSetting.ScSettingType = {
+    TimeZone = 11
+}
+
+
+--其他设置:待机壁纸
+systemSetting.OtherSettingDrop = {
+    -- { key = systemSetting.SystemSettingDefine.wallpaperTense, title = "待机时间制", label = { "24小时制", "12小时制" } },
+    -- { key = systemSetting.SystemSettingDefine.wallpaperNeedTime, title = "进入待机模式所需时间", label = { "3分钟", "5分钟", "10分钟" } },
+    -- { key = systemSetting.SystemSettingDefine.wallpaperRandomTime, title = "随机壁纸设置", label = { "不随机", "3分钟", "5分钟", "10分钟" } },
+    { key = systemSetting.SystemSettingDefine.wallpaperTense, title = _TT(72119), label = { _TT(72120), _TT(72121) } },
+    { key = systemSetting.SystemSettingDefine.wallpaperNeedTime, title = _TT(72122), label = { _TT(72123), _TT(72124), _TT(72125) } },
+    { key = systemSetting.SystemSettingDefine.wallpaperRandomTime, title =  _TT(72126), label = { _TT(72127), _TT(72123), _TT(72124), _TT(72125) } },
+}
+
 
 --[[ 替换语言包自动生成，请勿修改！
 ]]

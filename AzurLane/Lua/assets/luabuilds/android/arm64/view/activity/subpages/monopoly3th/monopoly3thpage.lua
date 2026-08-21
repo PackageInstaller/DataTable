@@ -1,142 +1,50 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Monopoly3thPage", import("....base.BaseActivityPage"))
 
-local var_0_0 = "Monopoly3thPage"
+var_0_0.ON_START = "MonopolyGame:ON_START"
+var_0_0.ON_MOVE = "MonopolyGame:ON_MOVE"
+var_0_0.ON_TRIGGER = "MonopolyGame:ON_TRIGGER"
+var_0_0.ON_AWARD = "MonopolyGame:ON_AWARD"
+var_0_0.MONOPOLY_OP_LAST = "MonopolyGame:MONOPOLY_OP_LAST"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("....base.BaseActivityPage"))
-
-var_0_1.ON_START = "MonopolyGame:ON_START"
-var_0_1.ON_MOVE = "MonopolyGame:ON_MOVE"
-var_0_1.ON_TRIGGER = "MonopolyGame:ON_TRIGGER"
-var_0_1.ON_AWARD = "MonopolyGame:ON_AWARD"
-var_0_1.MONOPOLY_OP_LAST = "MonopolyGame:MONOPOLY_OP_LAST"
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0
-	local var_1_1 = arg_1_0.bind
-
-	Monopoly3thPage = var_1_10004
-
-	var_1_1(var_1_0, var_1_10004.MONOPOLY_OP_LAST, function(arg_2_0, arg_2_1, arg_2_2)
-		pg = var_2_10003
-
-		local var_2_0 = var_2_10003.m02
-		local var_2_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_2_2 = var_2_10006.MONOPOLY_OP
-		local var_2_3 = {
-			activity_id = arg_2_1
-		}
-
-		ActivityConst = var_2_10008
-		var_2_3.cmd = var_2_10008.MONOPOLY_OP_LAST
-		var_2_3.callback = arg_2_2
-
-		var_2_1(var_2_0, var_2_2, var_2_3)
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0:bind(Monopoly3thPage.MONOPOLY_OP_LAST, function(arg_2_0, arg_2_1, arg_2_2)
+		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
+			activity_id = arg_2_1,
+			cmd = ActivityConst.MONOPOLY_OP_LAST,
+			callback = arg_2_2
+		})
 
 		return
 	end)
-
-	local var_1_2 = arg_1_0
-	local var_1_3 = arg_1_0.bind
-
-	Monopoly3thPage = var_4
-
-	var_1_3(var_1_2, var_4.ON_START, function(arg_3_0, arg_3_1, arg_3_2)
-		pg = var_2_10003
-
-		local var_3_0 = var_2_10003.m02
-		local var_3_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_3_2 = var_2_10006.MONOPOLY_OP
-		local var_3_3 = {
-			activity_id = arg_3_1
-		}
-
-		ActivityConst = var_2_10008
-		var_3_3.cmd = var_2_10008.MONOPOLY_OP_THROW
-		var_3_3.callback = arg_3_2
-
-		var_3_1(var_3_0, var_3_2, var_3_3)
+	arg_1_0:bind(Monopoly3thPage.ON_START, function(arg_3_0, arg_3_1, arg_3_2)
+		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
+			activity_id = arg_3_1,
+			cmd = ActivityConst.MONOPOLY_OP_THROW,
+			callback = arg_3_2
+		})
 
 		return
 	end)
-
-	local var_1_4 = arg_1_0
-	local var_1_5 = arg_1_0.bind
-
-	Monopoly3thPage = var_4
-
-	var_1_5(var_1_4, var_4.ON_MOVE, function(arg_4_0, arg_4_1, arg_4_2)
-		pg = var_2_10003
-
-		local var_4_0 = var_2_10003.m02
-		local var_4_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_4_2 = var_2_10006.MONOPOLY_OP
-		local var_4_3 = {
-			activity_id = arg_4_1
-		}
-
-		ActivityConst = var_2_10008
-		var_4_3.cmd = var_2_10008.MONOPOLY_OP_MOVE
-		var_4_3.callback = arg_4_2
-
-		var_4_1(var_4_0, var_4_2, var_4_3)
+	arg_1_0:bind(Monopoly3thPage.ON_MOVE, function(arg_4_0, arg_4_1, arg_4_2)
+		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
+			activity_id = arg_4_1,
+			cmd = ActivityConst.MONOPOLY_OP_MOVE,
+			callback = arg_4_2
+		})
 
 		return
 	end)
-
-	local var_1_6 = arg_1_0
-	local var_1_7 = arg_1_0.bind
-
-	Monopoly3thPage = var_4
-
-	var_1_7(var_1_6, var_4.ON_TRIGGER, function(arg_5_0, arg_5_1, arg_5_2)
-		pg = var_2_10003
-
-		local var_5_0 = var_2_10003.m02
-		local var_5_1 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		local var_5_2 = var_2_10006.MONOPOLY_OP
-		local var_5_3 = {
-			activity_id = arg_5_1
-		}
-
-		ActivityConst = var_2_10008
-		var_5_3.cmd = var_2_10008.MONOPOLY_OP_TRIGGER
-		var_5_3.callback = arg_5_2
-
-		var_5_1(var_5_0, var_5_2, var_5_3)
+	arg_1_0:bind(Monopoly3thPage.ON_TRIGGER, function(arg_5_0, arg_5_1, arg_5_2)
+		pg.m02:sendNotification(GAME.MONOPOLY_OP, {
+			activity_id = arg_5_1,
+			cmd = ActivityConst.MONOPOLY_OP_TRIGGER,
+			callback = arg_5_2
+		})
 
 		return
 	end)
-
-	local var_1_8 = arg_1_0
-	local var_1_9 = arg_1_0.bind
-
-	Monopoly3thPage = var_4
-
-	var_1_9(var_1_8, var_4.ON_AWARD, function(arg_6_0)
-		local var_6_0 = arg_1_0
-		local var_6_1 = var_1.emit
-
-		ActivityMediator = var_2_10004
-
-		local var_6_2 = var_2_10004.EVENT_GO_SCENE
-
-		SCENE = var_2_10005
-
-		var_6_1(var_6_0, var_6_2, var_2_10005.REDPACKEY)
+	arg_1_0:bind(Monopoly3thPage.ON_AWARD, function(arg_6_0)
+		arg_1_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.REDPACKEY)
 
 		return
 	end)
@@ -144,62 +52,42 @@ function var_0_1.OnInit(arg_1_0)
 	return
 end
 
-function var_0_1.getLeftRpCount()
-	getProxy = var_1_10000
-	ActivityProxy = var_1_10002
+function var_0_0.getLeftRpCount()
+	local var_7_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
 
-	local var_7_0 = var_1_10000(var_1_10002)
-	local var_7_1 = var_0.getActivityByType
-
-	ActivityConst = var_1_10003
-
-	local var_7_2 = var_7_1(var_7_0, var_1_10003.ACTIVITY_TYPE_MONOPOLY).data2_list[2]
-
-	return var_0.data2_list[1] - var_7_2
+	return var_7_0.data2_list[1] - var_7_0.data2_list[2]
 end
 
-function var_0_1.OnFirstFlush(arg_8_0)
+function var_0_0.OnFirstFlush(arg_8_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_9_0)
+function var_0_0.OnUpdateFlush(arg_9_0)
 	arg_9_0:updateGameUI()
 
 	return
 end
 
-function var_0_1.updateGameUI(arg_10_0)
+function var_0_0.updateGameUI(arg_10_0)
 	if not arg_10_0.activity then
 		return
 	end
 
 	if arg_10_0.gameUI then
-		local var_10_0 = arg_10_0.gameUI
-
-		var_1.updataActivity(var_10_0, arg_10_0.activity)
+		arg_10_0.gameUI:updataActivity(arg_10_0.activity)
 	else
-		Monopoly3thGame = var_1
+		arg_10_0.gameUI = Monopoly3thGame.New(arg_10_0, findTF(arg_10_0._tf, "AD"), arg_10_0.event, 4)
 
-		local var_10_1 = var_1.New
-		local var_10_2 = arg_10_0
-
-		findTF = var_1_10004
-		arg_10_0.gameUI = var_10_1(var_10_2, var_1_10004(arg_10_0._tf, "AD"), arg_10_0.event, 4)
-
-		local var_10_3 = arg_10_0.gameUI
-
-		var_1.firstUpdata(var_10_3, arg_10_0.activity)
+		arg_10_0.gameUI:firstUpdata(arg_10_0.activity)
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_11_0)
-	local var_11_0 = arg_11_0.gameUI
-
-	var_1.dispose(var_11_0)
+function var_0_0.OnDestroy(arg_11_0)
+	arg_11_0.gameUI:dispose()
 
 	return
 end
 
-return var_0_1
+return var_0_0

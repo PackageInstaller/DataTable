@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("YueYeWeiYangRePage", import(".TemplatePage.SkinTemplatePage"))
 
-local var_0_0 = "YueYeWeiYangRePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.SkinTemplatePage"))
-
-function var_0_1.OnUpdateFlush(arg_1_0)
-	var_0_1.super.OnUpdateFlush(arg_1_0)
+function var_0_0.OnUpdateFlush(arg_1_0)
+	var_0_0.super.OnUpdateFlush(arg_1_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

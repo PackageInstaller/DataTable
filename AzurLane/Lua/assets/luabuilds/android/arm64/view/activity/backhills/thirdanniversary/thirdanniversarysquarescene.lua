@@ -1,129 +1,71 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ThirdAnniversarySquareScene", import("..TemplateMV.BackHillTemplate"))
 
-local var_0_0 = "ThirdAnniversarySquareScene"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..TemplateMV.BackHillTemplate"))
-
-var_0_1.UIName = "ThirdAnniversarySquareUI"
-var_0_1.HUB_ID = 9
-var_0_1.edge2area = {
+var_0_0.UIName = "ThirdAnniversarySquareUI"
+var_0_0.HUB_ID = 9
+var_0_0.edge2area = {
 	default = "_middle",
 	["3_4"] = "_bottom",
 	["4_5"] = "_bottom",
 	["7_7"] = "_front"
 }
-var_0_1.Buildings = {
+var_0_0.Buildings = {
 	"nvpukafeiting",
 	"xiaolongbaodian",
 	"zhajihanbaodian",
 	"heguozidian"
 }
 
-function var_0_1.init(arg_1_0)
-	AutoLoader = var_1_10001
-	arg_1_0.loader = var_1_10001.New()
-
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.top = var_1.Find(var_1_0, "top")
-
-	local var_1_1 = arg_1_0._tf
-
-	arg_1_0._map = var_1.Find(var_1_1, "map")
+function var_0_0.init(arg_1_0)
+	arg_1_0.loader = AutoLoader.New()
+	arg_1_0.top = arg_1_0._tf:Find("top")
+	arg_1_0._map = arg_1_0._tf:Find("map")
 
 	for iter_1_0 = 0, arg_1_0._map.childCount - 1 do
-		local var_1_2 = arg_1_0._map
-		local var_1_3 = var_5.GetChild(var_1_2, iter_1_0)
+		local var_1_0 = arg_1_0._map:GetChild(iter_1_0)
+		local var_1_1 = "map_" .. go(var_1_0).name
 
-		go = var_1_10006
-		var_1_10006 = var_1_10006(var_1_3).name
-		arg_1_0["map_" .. var_1_10006] = var_1_3
+		arg_1_0[var_1_1] = var_1_0
 	end
 
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0._upper = var_1.Find(var_1_4, "upper")
+	arg_1_0._upper = arg_1_0._tf:Find("upper")
 
 	for iter_1_1 = 0, arg_1_0._upper.childCount - 1 do
-		local var_1_5 = arg_1_0._upper
-		local var_1_6 = var_5.GetChild(var_1_5, iter_1_1)
+		local var_1_2 = arg_1_0._upper:GetChild(iter_1_1)
+		local var_1_3 = "upper_" .. go(var_1_2).name
 
-		go = var_1_10006
-		var_1_10006 = var_1_10006(var_1_6).name
-		arg_1_0["upper_" .. var_1_10006] = var_1_6
+		arg_1_0[var_1_3] = var_1_2
 	end
 
-	local var_1_7 = arg_1_0._map
-
-	arg_1_0._front = var_1.Find(var_1_7, "top")
-
-	local var_1_8 = arg_1_0._map
-
-	arg_1_0._middle = var_1.Find(var_1_8, "middle")
-
-	local var_1_9 = arg_1_0._map
-
-	arg_1_0._bottom = var_1.Find(var_1_9, "bottom")
+	arg_1_0._front = arg_1_0._map:Find("top")
+	arg_1_0._middle = arg_1_0._map:Find("middle")
+	arg_1_0._bottom = arg_1_0._map:Find("bottom")
 	arg_1_0.containers = {
 		arg_1_0._front,
 		arg_1_0._middle,
 		arg_1_0._bottom
 	}
-
-	local var_1_10 = arg_1_0._map
-
-	arg_1_0._shipTpl = var_1.Find(var_1_10, "ship")
-	GraphPath = var_1
-
-	local var_1_11 = var_1.New
-
-	import = var_1_10
-	arg_1_0.graphPath = var_1_11(var_1_10("GameCfg.BackHillGraphs.ThirdAnniversarySquareGraph"))
-
-	local var_1_12 = arg_1_0.top
-	local var_1_13 = var_1.Find(var_1_12, "usable_count/text")
-	local var_1_14 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.usableTxt = var_1_14(var_1_13, var_4(var_1_10006))
-
-	local var_1_15 = arg_1_0.top
-	local var_1_16 = var_1.Find(var_1_15, "material/text")
-	local var_1_17 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_1_0.materialTxt = var_1_17(var_1_16, var_4(var_1_10006))
+	arg_1_0._shipTpl = arg_1_0._map:Find("ship")
+	arg_1_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.ThirdAnniversarySquareGraph"))
+	arg_1_0.usableTxt = arg_1_0.top:Find("usable_count/text"):GetComponent(typeof(Text))
+	arg_1_0.materialTxt = arg_1_0.top:Find("material/text"):GetComponent(typeof(Text))
 
 	arg_1_0:RegisterDataResponse()
 
 	return
 end
 
-function var_0_1.RegisterDataResponse(arg_2_0)
-	ResponsableTree = var_1_10001
-	arg_2_0.Respones = var_1_10001.CreateShell({})
+function var_0_0.RegisterDataResponse(arg_2_0)
+	arg_2_0.Respones = ResponsableTree.CreateShell({})
 
-	local var_2_0 = arg_2_0.Respones
+	arg_2_0.Respones:SetRawData("view", arg_2_0)
 
-	var_1.SetRawData(var_2_0, "view", arg_2_0)
-
-	local var_2_1 = {
+	for iter_2_0, iter_2_1 in ipairs({
 		"xiaolongbaodian",
 		"heguozidian",
 		"nvpukafeiting",
 		"zhajihanbaodian"
-	}
-
-	ipairs = var_1_10002
-
-	for iter_2_0, iter_2_1 in var_1_10002(var_2_1) do
-		local var_2_2 = arg_2_0.Respones
-
-		var_7.AddRawListener(var_2_2, {
+	}) do
+		arg_2_0.Respones:AddRawListener({
 			"view",
 			iter_2_1
 		}, function(arg_3_0, arg_3_1)
@@ -131,27 +73,19 @@ function var_0_1.RegisterDataResponse(arg_2_0)
 				return
 			end
 
-			local var_3_0 = arg_3_0.loader
+			arg_3_0.loader:GetSpriteQuiet("ui/thirdanniversarysquareui_atlas", iter_2_1 .. arg_3_1, arg_3_0["map_" .. iter_2_1])
 
-			var_2.GetSpriteQuiet(var_3_0, "ui/thirdanniversarysquareui_atlas", iter_2_1 .. arg_3_1, arg_3_0["map_" .. iter_2_1])
-
-			if arg_3_0["upper_" .. iter_2_1] then
-				IsNil = var_3
-
-				if var_3(var_2:Find("level")) then
-					return
-				end
-
-				setText = var_3
-
-				var_3(var_2:Find("level"), "LV." .. arg_3_1)
-
+			if not arg_3_0["upper_" .. iter_2_1] or IsNil(arg_3_0["upper_" .. iter_2_1]:Find("level")) then
 				return
 			end
+
+			setText(arg_3_0["upper_" .. iter_2_1]:Find("level"), "LV." .. arg_3_1)
+
+			return
 		end)
 	end
 
-	local var_2_3 = {
+	for iter_2_2, iter_2_3 in ipairs({
 		"xiaolongbaodian",
 		"heguozidian",
 		"nvpukafeiting",
@@ -160,38 +94,24 @@ function var_0_1.RegisterDataResponse(arg_2_0)
 		"huanzhuangshandian",
 		"shujvhuigu",
 		"xianshijianzao"
-	}
-
-	ipairs = var_3
-
-	for iter_2_2, iter_2_3 in var_3(var_2_3) do
-		local var_2_4 = arg_2_0.Respones
-
-		var_8.AddRawListener(var_2_4, {
+	}) do
+		arg_2_0.Respones:AddRawListener({
 			"view",
 			iter_2_3 .. "Tip"
 		}, function(arg_4_0, arg_4_1)
-			if arg_4_0["upper_" .. iter_2_3] then
-				IsNil = var_3
-
-				if var_3(var_2:Find("tip")) then
-					return
-				end
-
-				setActive = var_3
-
-				var_3(var_2:Find("tip"), arg_4_1)
-
+			if not arg_4_0["upper_" .. iter_2_3] or IsNil(arg_4_0["upper_" .. iter_2_3]:Find("tip")) then
 				return
 			end
+
+			setActive(arg_4_0["upper_" .. iter_2_3]:Find("tip"), arg_4_1)
+
+			return
 		end)
 	end
 
 	arg_2_0.Respones.hubData = {}
 
-	local var_2_5 = arg_2_0.Respones
-
-	var_3.AddRawListener(var_2_5, {
+	arg_2_0.Respones:AddRawListener({
 		"view",
 		"hubData"
 	}, function(arg_5_0, arg_5_1)
@@ -201,10 +121,7 @@ function var_0_1.RegisterDataResponse(arg_2_0)
 	end, {
 		strict = true
 	})
-
-	local var_2_6 = arg_2_0.Respones
-
-	var_3.AddRawListener(var_2_6, {
+	arg_2_0.Respones:AddRawListener({
 		"view",
 		"materialCount"
 	}, function(arg_6_0, arg_6_1)
@@ -216,138 +133,57 @@ function var_0_1.RegisterDataResponse(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_7_0)
-	onButton = var_1_10001
+function var_0_0.didEnter(arg_7_0)
+	onButton(arg_7_0, arg_7_0._tf:Find("top/return_btn"), function()
+		arg_7_0:emit(var_0_0.ON_BACK)
 
-	local var_7_0 = arg_7_0
-	local var_7_1 = arg_7_0._tf
+		return
+	end)
+	onButton(arg_7_0, arg_7_0.top:Find("daka_count"), function()
+		arg_7_0:emit(ThirdAnniversarySquareMediator.ON_OPEN_TOWERCLIMBING_SIGNED)
 
-	var_1_10001(var_7_0, var_4.Find(var_7_1, "top/return_btn"), function()
-		local var_8_0 = arg_7_0
+		return
+	end)
+	onButton(arg_7_0, arg_7_0._tf:Find("top/return_main_btn"), function()
+		arg_7_0:emit(var_0_0.ON_HOME)
 
-		var_0.emit(var_8_0, var_0_1.ON_BACK)
+		return
+	end)
+	onButton(arg_7_0, arg_7_0._tf:Find("top/help_btn"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.qingdianguangchang_help.tip
+		})
 
 		return
 	end)
 
-	onButton = var_1_10001
-
-	local var_7_2 = arg_7_0
-	local var_7_3 = arg_7_0.top
-
-	var_1_10001(var_7_2, var_4.Find(var_7_3, "daka_count"), function()
-		local var_9_0 = arg_7_0
-		local var_9_1 = var_0.emit
-
-		ThirdAnniversarySquareMediator = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.ON_OPEN_TOWERCLIMBING_SIGNED)
-
-		return
-	end)
-
-	onButton = var_1_10001
-
-	local var_7_4 = arg_7_0
-	local var_7_5 = arg_7_0._tf
-
-	var_1_10001(var_7_4, var_4.Find(var_7_5, "top/return_main_btn"), function()
-		local var_10_0 = arg_7_0
-
-		var_0.emit(var_10_0, var_0_1.ON_HOME)
-
-		return
-	end)
-
-	onButton = var_1_10001
-
-	local var_7_6 = arg_7_0
-	local var_7_7 = arg_7_0._tf
-
-	var_1_10001(var_7_6, var_4.Find(var_7_7, "top/help_btn"), function()
-		pg = var_2_10000
-
-		local var_11_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_11_1 = var_0.ShowMsgBox
-		local var_11_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_11_2.type = var_2_10004
-		pg = var_2_10004
-		var_11_2.helps = var_2_10004.gametip.qingdianguangchang_help.tip
-
-		var_11_1(var_11_0, var_11_2)
-
-		return
-	end)
-
-	pairs = var_1_10001
-
-	for iter_7_0, iter_7_1 in var_1_10001(arg_7_0.Buildings) do
+	for iter_7_0, iter_7_1 in pairs(arg_7_0.Buildings) do
 		arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, iter_7_1, function()
-			local var_12_0 = arg_7_0
-			local var_12_1 = var_0.emit
-
-			BackHillMediatorTemplate = var_2_10003
-
-			local var_12_2 = var_2_10003.GO_SUBLAYER
-
-			Context = var_2_10004
-
-			local var_12_3 = var_2_10004.New
-			local var_12_4 = {}
-
-			BuildingUpgradeMediator = var_2_10007
-			var_12_4.mediator = var_2_10007
-			BuildingUpgradeLayer = var_2_10007
-			var_12_4.viewComponent = var_2_10007
-			var_12_4.data = {
-				buildingID = iter_7_0
-			}
-
-			var_12_1(var_12_0, var_12_2, var_12_3(var_12_4))
+			arg_7_0:emit(BackHillMediatorTemplate.GO_SUBLAYER, Context.New({
+				mediator = BuildingUpgradeMediator,
+				viewComponent = BuildingUpgradeLayer,
+				data = {
+					buildingID = iter_7_0
+				}
+			}))
 
 			return
 		end)
 	end
 
 	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "gangqvchenlieshi", function()
-		pg = var_2_10000
-
-		local var_13_0 = var_2_10000.m02
-		local var_13_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_13_1(var_13_0, var_2_10003.GO_MINI_GAME, 13)
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, 13)
 
 		return
 	end)
 	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "shujvhuigu", function()
-		local var_14_0 = arg_7_0
-		local var_14_1 = var_0.emit
-
-		ThirdAnniversarySquareMediator = var_2_10003
-
-		local var_14_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_14_1(var_14_0, var_14_2, var_2_10004.SUMMARY)
+		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SUMMARY)
 
 		return
 	end)
 	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "xianshijianzao", function()
-		local var_15_0 = arg_7_0
-		local var_15_1 = var_0.emit
-
-		ThirdAnniversarySquareMediator = var_2_10003
-
-		local var_15_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_15_1(var_15_0, var_15_2, var_2_10004.GETBOAT, {
+		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.GETBOAT, {
 			projectName = "new",
 			page = 1
 		})
@@ -355,119 +191,44 @@ function var_0_1.didEnter(arg_7_0)
 		return
 	end)
 	arg_7_0:InitFacilityCross(arg_7_0._map, arg_7_0._upper, "huanzhuangshandian", function()
-		local var_16_0 = arg_7_0
-		local var_16_1 = var_0.emit
-
-		ThirdAnniversarySquareMediator = var_2_10003
-
-		local var_16_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_16_1(var_16_0, var_16_2, var_2_10004.SKINSHOP)
+		arg_7_0:emit(ThirdAnniversarySquareMediator.GO_SCENE, SCENE.SKINSHOP)
 
 		return
 	end)
-
-	pg = var_1
-
-	local var_7_8 = var_1.UIMgr.GetInstance()
-
-	var_1.OverlayPanel(var_7_8, arg_7_0.top)
+	pg.UIMgr.GetInstance():OverlayPanel(arg_7_0.top)
 
 	return
 end
 
-function var_0_1.UpdateActivity(arg_17_0, arg_17_1)
+function var_0_0.UpdateActivity(arg_17_0, arg_17_1)
 	arg_17_0.activity = arg_17_1
-
-	local var_17_0 = arg_17_0.Respones
-	local var_17_1
-
-	if not arg_17_1.data1KeyValueList[2][1] then
-		var_17_1 = 1
-	end
-
-	var_17_0.nvpukafeiting = var_17_1
-
-	local var_17_2 = arg_17_0.Respones
-	local var_17_3
-
-	if not arg_17_1.data1KeyValueList[2][2] then
-		var_17_3 = 1
-	end
-
-	var_17_2.xiaolongbaodian = var_17_3
-
-	local var_17_4 = arg_17_0.Respones
-	local var_17_5
-
-	if not arg_17_1.data1KeyValueList[2][3] then
-		var_17_5 = 1
-	end
-
-	var_17_4.zhajihanbaodian = var_17_5
-
-	local var_17_6 = arg_17_0.Respones
-	local var_17_7
-
-	if not arg_17_1.data1KeyValueList[2][4] then
-		var_17_7 = 1
-	end
-
-	var_17_6.heguozidian = var_17_7
-	next = var_17_6
-
-	local var_17_8 = var_17_6(arg_17_1.data1KeyValueList[1])
-	local var_17_9 = arg_17_0.Respones
-	local var_17_10
-
-	if not arg_17_1.data1KeyValueList[1][var_17_8] then
-		var_17_10 = 0
-	end
-
-	var_17_9.materialCount = var_17_10
+	arg_17_0.Respones.nvpukafeiting = arg_17_1.data1KeyValueList[2][1] or 1
+	arg_17_0.Respones.xiaolongbaodian = arg_17_1.data1KeyValueList[2][2] or 1
+	arg_17_0.Respones.zhajihanbaodian = arg_17_1.data1KeyValueList[2][3] or 1
+	arg_17_0.Respones.heguozidian = arg_17_1.data1KeyValueList[2][4] or 1
+	arg_17_0.Respones.materialCount = arg_17_1.data1KeyValueList[1][next(arg_17_1.data1KeyValueList[1])] or 0
 
 	arg_17_0:UpdateView()
 
 	return
 end
 
-function var_0_1.UpdateView(arg_18_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_18_0 = var_1_10001(var_1_10003)
-
+function var_0_0.UpdateView(arg_18_0)
 	arg_18_0.Respones.nvpukafeitingTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 1)
 	arg_18_0.Respones.xiaolongbaodianTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 2)
 	arg_18_0.Respones.zhajihanbaodianTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 3)
-
-	local var_18_1 = arg_18_0.Respones
-	local var_18_2 = arg_18_0
-
-	var_18_1.heguozidianTip = arg_18_0.UpdateBuildingTip(var_18_2, arg_18_0.activity, 4)
+	arg_18_0.Respones.heguozidianTip = arg_18_0:UpdateBuildingTip(arg_18_0.activity, 4)
 	arg_18_0.Respones.shujvhuiguTip = false
 
-	local var_18_3 = var_18_0
-	local var_18_4 = var_18_0.getActivityByType
+	local var_18_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
+	local var_18_1 = getProxy(MiniGameProxy):GetHubByHubId(var_18_0:getConfig("config_id"))
 
-	ActivityConst = var_18_2
+	arg_18_0.Respones.gangqvchenlieshiTip = var_18_1.count > 0
 
-	local var_18_5 = var_18_4(var_18_3, var_18_2.ACTIVITY_TYPE_MINIGAME)
-
-	getProxy = var_3
-	MiniGameProxy = var_5
-
-	local var_18_6 = var_3(var_5)
-	local var_18_7 = var_3.GetHubByHubId(var_18_6, var_18_5:getConfig("config_id"))
-
-	arg_18_0.Respones.gangqvchenlieshiTip = var_18_7.count > 0
-
-	arg_18_0:UpdateHubData(var_18_7)
+	arg_18_0:UpdateHubData(var_18_1)
 
 	if not arg_18_0.InitStudentBegin then
-		arg_18_0:InitStudents(var_18_5.id, 2, 3)
+		arg_18_0:InitStudents(var_18_0.id, 2, 3)
 
 		arg_18_0.InitStudentBegin = true
 	end
@@ -475,31 +236,25 @@ function var_0_1.UpdateView(arg_18_0)
 	return
 end
 
-function var_0_1.UpdateHubData(arg_19_0, arg_19_1)
+function var_0_0.UpdateHubData(arg_19_0, arg_19_1)
 	arg_19_0.Respones.hubData.count = arg_19_1.count
 	arg_19_0.Respones.hubData.usedtime = arg_19_1.usedtime
 	arg_19_0.Respones.hubData.id = arg_19_1.id
 
-	local var_19_0 = arg_19_0.Respones
-
-	var_2.PropertyChange(var_19_0, "hubData")
+	arg_19_0.Respones:PropertyChange("hubData")
 
 	return
 end
 
-function var_0_1.willExit(arg_20_0)
-	pg = var_1_10001
-
-	local var_20_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_20_0, arg_20_0.top, arg_20_0._tf)
+function var_0_0.willExit(arg_20_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_20_0.top, arg_20_0._tf)
 	arg_20_0:clearStudents()
 
 	arg_20_0.Respones = nil
 
-	var_0_1.super.willExit(arg_20_0)
+	var_0_0.super.willExit(arg_20_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

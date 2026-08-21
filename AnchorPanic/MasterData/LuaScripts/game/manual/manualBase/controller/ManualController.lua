@@ -42,8 +42,8 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPEN_MODULE_DETAIL, self.onOpenModuleInfoViewHandler, self)
     --打开世界界面
     GameDispatcher:addEventListener(EventName.OPEN_WORLD_VIEW, self.onOpenManualWorldTabViewHandler, self)
-    --打开战员界面
-    GameDispatcher:addEventListener(EventName.OPEN_MANUALHERO_VIEW, self.onOpenManualHeroViewHandler, self)
+   
+
 
 end
 
@@ -136,6 +136,8 @@ function onOpenManualPanelMainHandler(self, args)
         self:onOpenManualHeroPanelHandler()
     elseif type == manual.ManualType.SolderingMark then
         self:onOpenBracelesTabViewHandler()
+    elseif type == manual.ManualType.Fashion then
+        self:onOpenManualFashionPanelHandler()
     elseif type then
         gs.Message.Show(_TT(47102))
     else
@@ -175,7 +177,7 @@ end
 ---------------------------------------------------------------图鉴-战员主界面--------------------------------------------------------------------------
 function onOpenManualHeroPanelHandler(self, data)
     if (not self.mManualHeroPanel) then
-        self.mManualHeroPanel = manual.ManualHeroPanel.new()
+        self.mManualHeroPanel = manual.ManualMapView.new()
         self.mManualHeroPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyManualHeroPanelHandler, self)
     end
     self.mManualHeroPanel:open(data)
@@ -186,18 +188,7 @@ function onDestroyManualHeroPanelHandler(self)
     self.mManualHeroPanel = nil
 end
 ---------------------------------------------------------------图鉴-战员界面--------------------------------------------------------------------------
-function onOpenManualHeroViewHandler(self, args)
-    if (not self.mManualHeroView) then
-        self.mManualHeroView = manual.ManualHeroView.new()
-        self.mManualHeroView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyManualHeroViewHandler, self)
-    end
-    self.mManualHeroView:open(args)
-end
 
-function onDestroyManualHeroViewHandler(self)
-    self.mManualHeroView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyManualHeroViewHandler, self)
-    self.mManualHeroView = nil
-end
 ---------------------------------------------------------------烙痕（手环）------------------------------------------------------------------------
 function onOpenBracelesTabViewHandler(self)
     if (not self.mManualBracelesPanel) then
@@ -318,6 +309,19 @@ end
 function onDestroyOpenModuleInfoViewHandler(self)
     self.mModuleInfoView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOpenModuleInfoViewHandler, self)
     self.mModuleInfoView = nil
+end
+
+function onOpenManualFashionPanelHandler(self,args)
+    if self.mManualFashionPanel == nil then
+        self.mManualFashionPanel = manual.ManualFashionTabView.new()
+        self.mManualFashionPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOpenManualFashionPanelHandler, self)
+    end
+    self.mManualFashionPanel:open(args)
+end
+
+function onDestroyOpenManualFashionPanelHandler(self)
+    self.mManualFashionPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyOpenManualFashionPanelHandler, self)
+    self.mManualFashionPanel = nil
 end
 
 

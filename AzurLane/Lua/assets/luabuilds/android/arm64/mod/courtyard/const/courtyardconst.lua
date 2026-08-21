@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CourtYardConst")
+﻿local var_0_0 = class("CourtYardConst")
 
 var_0_0.SYSTEM_DEFAULT = 1
 var_0_0.SYSTEM_VISIT = 2
@@ -18,12 +16,9 @@ var_0_0.BELONG_FLOOR = 1
 var_0_0.BELONG_WALL = 2
 var_0_0.MAX_STOREY_LEVEL = 3
 var_0_0.OPEN_AREA_PRE_LEVEL = 4
-Color = var_1
-var_0_0.BACKYARD_RED = var_1.New(1, 0.294, 0.08)
-Color = var_1
-var_0_0.BACKYARD_GREEN = var_1.New(0.48, 1, 0.03)
-Color = var_1
-var_0_0.BACKYARD_BLUE = var_1.New(0.3, 0.63, 0.95)
+var_0_0.BACKYARD_RED = Color.New(1, 0.294, 0.08)
+var_0_0.BACKYARD_GREEN = Color.New(0.48, 1, 0.03)
+var_0_0.BACKYARD_BLUE = Color.New(0.3, 0.63, 0.95)
 var_0_0.OBJ_TYPE_SHIP = 1
 var_0_0.OBJ_TYPE_COMMOM = 2
 var_0_0.OBJ_TYPE_SPINE = 3

@@ -1,255 +1,119 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ClueBuffSelectLayer", import("view.base.BaseUI"))
 
-local var_0_0 = "ClueBuffSelectLayer"
+var_0_0.SP_STRA_MIN_RANGE = 201308
+var_0_0.SP_STRA_MAX_RANGE = 201320
+var_0_0.SP_STRATEGY_ID = 201321
+var_0_0.BOOST_ITEM_ID = 26
+var_0_0.PLYAER_PREF_KEY = "ClueBuffSelectedBySingleEnemyID_"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-var_0_1.SP_STRA_MIN_RANGE = 201308
-var_0_1.SP_STRA_MAX_RANGE = 201320
-var_0_1.SP_STRATEGY_ID = 201321
-var_0_1.BOOST_ITEM_ID = 26
-var_0_1.PLYAER_PREF_KEY = "ClueBuffSelectedBySingleEnemyID_"
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "ClueBuffSelectUI"
 end
 
-function var_0_1.preloadUIList(arg_2_0)
+function var_0_0.preloadUIList(arg_2_0)
 	return {
 		arg_2_0:getUIName(),
 		"BossSingleFleetSelectView"
 	}
 end
 
-function var_0_1.init(arg_3_0)
-	local var_3_0 = arg_3_0._tf
+function var_0_0.init(arg_3_0)
+	arg_3_0.closeBtn = arg_3_0._tf:Find("Top/BackBtn")
 
-	arg_3_0.closeBtn = var_1.Find(var_3_0, "Top/BackBtn")
-	onButton = var_1
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:emit(var_0_0.ON_BACK_PRESSED)
 
-	var_1(arg_3_0, arg_3_0.closeBtn, function()
-		local var_4_0 = arg_3_0
-
-		var_0.emit(var_4_0, var_0_1.ON_BACK_PRESSED)
+		return
+	end)
+	onButton(arg_3_0, arg_3_0._tf:Find("mask"), function()
+		arg_3_0:emit(var_0_0.ON_BACK_PRESSED)
 
 		return
 	end)
 
-	onButton = var_1
-
-	local var_3_1 = arg_3_0
-	local var_3_2 = arg_3_0._tf
-
-	var_1(var_3_1, var_4.Find(var_3_2, "mask"), function()
-		local var_5_0 = arg_3_0
-
-		var_0.emit(var_5_0, var_0_1.ON_BACK_PRESSED)
-
-		return
-	end)
-
-	local var_3_3 = arg_3_0._tf
-
-	arg_3_0.buffContainer = var_1.Find(var_3_3, "Buff/buff_list")
-
-	local var_3_4 = arg_3_0.buffContainer
-
-	arg_3_0.buffTmp = var_1.Find(var_3_4, "buff")
+	arg_3_0.buffContainer = arg_3_0._tf:Find("Buff/buff_list")
+	arg_3_0.buffTmp = arg_3_0.buffContainer:Find("buff")
 	arg_3_0.buffTFs = {}
 	arg_3_0.strategyList = {}
 	arg_3_0.buffDescList = {}
 
 	for iter_3_0 = 1, 4 do
-		local var_3_5 = arg_3_0._tf
-		local var_3_6 = var_5.Find(var_3_5, "Buff/buff_desc_list/buff_desc_" .. iter_3_0)
+		local var_3_0 = arg_3_0._tf:Find("Buff/buff_desc_list/buff_desc_" .. iter_3_0)
 
-		table = var_3_2
-
-		var_3_2.insert(arg_3_0.buffDescList, var_3_6)
-
-		setText = var_3_2
-
-		local var_3_7 = var_3_6:Find("unselect")
-
-		i18n = var_9
-
-		var_3_2(var_3_7, var_9("clue_buff_unselect"))
+		table.insert(arg_3_0.buffDescList, var_3_0)
+		setText(var_3_0:Find("unselect"), i18n("clue_buff_unselect"))
 	end
 
-	local var_3_8 = arg_3_0._tf
+	arg_3_0.stageName = arg_3_0._tf:Find("Stage/stage_name_text")
+	arg_3_0.stageLV = arg_3_0._tf:Find("Stage/stage_level_text")
 
-	arg_3_0.stageName = var_1.Find(var_3_8, "Stage/stage_name_text")
+	setText(arg_3_0._tf:Find("Stage/text_stage_reserach"), i18n("clue_buff_research"))
+	setText(arg_3_0._tf:Find("Stage/text_stage_loot"), i18n("clue_buff_stage_loot"))
 
-	local var_3_9 = arg_3_0._tf
+	arg_3_0.awards = arg_3_0._tf:Find("Loot/awards")
+	arg_3_0.awardTpl = arg_3_0._tf:Find("Loot/awards/award")
+	arg_3_0.goBtn = arg_3_0._tf:Find("Combat/go_btn")
 
-	arg_3_0.stageLV = var_1.Find(var_3_9, "Stage/stage_level_text")
-	setText = var_1
-
-	local var_3_10 = arg_3_0._tf
-	local var_3_11 = var_3.Find(var_3_10, "Stage/text_stage_reserach")
-
-	i18n = var_4
-
-	var_1(var_3_11, var_4("clue_buff_research"))
-
-	setText = var_1
-
-	local var_3_12 = arg_3_0._tf
-	local var_3_13 = var_3.Find(var_3_12, "Stage/text_stage_loot")
-
-	i18n = var_4
-
-	var_1(var_3_13, var_4("clue_buff_stage_loot"))
-
-	local var_3_14 = arg_3_0._tf
-
-	arg_3_0.awards = var_1.Find(var_3_14, "Loot/awards")
-
-	local var_3_15 = arg_3_0._tf
-
-	arg_3_0.awardTpl = var_1.Find(var_3_15, "Loot/awards/award")
-
-	local var_3_16 = arg_3_0._tf
-
-	arg_3_0.goBtn = var_1.Find(var_3_16, "Combat/go_btn")
-	onButton = var_1
-
-	var_1(arg_3_0, arg_3_0.goBtn, function()
-		local var_6_0 = arg_3_0
-		local var_6_1 = var_0.emit
-
-		ClueBuffSelectMediator = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.ON_FLEET_SELECT, arg_3_0.singleID)
+	onButton(arg_3_0, arg_3_0.goBtn, function()
+		arg_3_0:emit(ClueBuffSelectMediator.ON_FLEET_SELECT, arg_3_0.singleID)
 
 		return
 	end)
 
-	local var_3_17 = arg_3_0._tf
+	arg_3_0.detailView = arg_3_0._tf:Find("Detail")
+	arg_3_0.detailBtn = arg_3_0._tf:Find("BuffDetail")
 
-	arg_3_0.detailView = var_1.Find(var_3_17, "Detail")
+	setActive(arg_3_0.detailBtn, false)
 
-	local var_3_18 = arg_3_0._tf
+	arg_3_0.detailList = UIItemList.New(arg_3_0.detailView:Find("panel/list"), arg_3_0.detailView:Find("panel/list/item"))
 
-	arg_3_0.detailBtn = var_1.Find(var_3_18, "BuffDetail")
-	setActive = var_1
-
-	var_1(arg_3_0.detailBtn, false)
-
-	UIItemList = var_1
-
-	local var_3_19 = var_1.New
-	local var_3_20 = arg_3_0.detailView
-	local var_3_21 = var_3.Find(var_3_20, "panel/list")
-	local var_3_22 = arg_3_0.detailView
-
-	arg_3_0.detailList = var_3_19(var_3_21, var_4.Find(var_3_22, "panel/list/item"))
-	onButton = var_1
-
-	var_1(arg_3_0, arg_3_0.detailBtn, function()
-		local var_7_0 = arg_3_0
-
-		var_0.openDetailView(var_7_0)
+	onButton(arg_3_0, arg_3_0.detailBtn, function()
+		arg_3_0:openDetailView()
 
 		return
 	end)
 
-	local var_3_23 = arg_3_0.detailView
+	arg_3_0.detailClose = arg_3_0.detailView:Find("btnBack")
 
-	arg_3_0.detailClose = var_1.Find(var_3_23, "btnBack")
-	onButton = var_1
+	onButton(arg_3_0, arg_3_0.detailClose, function()
+		arg_3_0:closeDetailView()
 
-	var_1(arg_3_0, arg_3_0.detailClose, function()
-		local var_8_0 = arg_3_0
-
-		var_0.closeDetailView(var_8_0)
+		return
+	end)
+	onButton(arg_3_0, arg_3_0.detailView:Find("mask"), function()
+		arg_3_0:closeDetailView()
 
 		return
 	end)
 
-	onButton = var_1
-
-	local var_3_24 = arg_3_0
-	local var_3_25 = arg_3_0.detailView
-
-	var_1(var_3_24, var_4.Find(var_3_25, "mask"), function()
-		local var_9_0 = arg_3_0
-
-		var_0.closeDetailView(var_9_0)
-
-		return
-	end)
-
-	local var_3_26 = arg_3_0._tf
-
-	arg_3_0.ticket = var_1.Find(var_3_26, "Ticket")
-
-	local var_3_27 = arg_3_0._tf
-
-	arg_3_0.ticketTips = var_1.Find(var_3_27, "ticketTips")
-
-	local var_3_28 = arg_3_0.ticket
-
-	arg_3_0.ticketCheckBox = var_1.Find(var_3_28, "checkbox")
+	arg_3_0.ticket = arg_3_0._tf:Find("Ticket")
+	arg_3_0.ticketTips = arg_3_0._tf:Find("ticketTips")
+	arg_3_0.ticketCheckBox = arg_3_0.ticket:Find("checkbox")
 	arg_3_0.useTicket = false
-	onButton = var_1
 
-	local var_3_29 = arg_3_0
-	local var_3_30 = arg_3_0.ticket
-
-	var_1(var_3_29, var_4.Find(var_3_30, "bg"), function()
-		local var_10_0 = arg_3_0
-
-		var_0.UpdateTicket(var_10_0)
+	onButton(arg_3_0, arg_3_0.ticket:Find("bg"), function()
+		arg_3_0:UpdateTicket()
 
 		return
 	end)
+	setText(arg_3_0.ticketTips, i18n("clue_buff_ticket_tips"))
 
-	setText = var_1
+	arg_3_0.explore = arg_3_0._tf:Find("exploreTarget")
 
-	local var_3_31 = arg_3_0.ticketTips
-
-	i18n = var_4
-
-	var_1(var_3_31, var_4("clue_buff_ticket_tips"))
-
-	local var_3_32 = arg_3_0._tf
-
-	arg_3_0.explore = var_1.Find(var_3_32, "exploreTarget")
-	setActive = var_1
-
-	var_1(arg_3_0.explore, true)
-
-	BossSingleBattleFleetSelectViewComponent = var_1
-
-	local var_3_33 = var_1.AttachFleetSelect
-	local var_3_34 = arg_3_0
-
-	ClueBuffSelectMediator = var_4
-
-	var_3_33(var_3_34, var_4)
-
-	pg = var_3_33
-
-	local var_3_35 = var_3_33.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_3_35, arg_3_0._tf)
+	setActive(arg_3_0.explore, true)
+	BossSingleBattleFleetSelectViewComponent.AttachFleetSelect(arg_3_0, ClueBuffSelectMediator)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 
 	return
 end
 
-function var_0_1.didEnter(arg_11_0)
+function var_0_0.didEnter(arg_11_0)
 	arg_11_0:updateBuffView()
 	arg_11_0:UpdateCluePanel()
 
-	local var_11_0 = arg_11_0.contextData
+	arg_11_0.contextData.selectedBuffList = {}
 
-	var_11_0.selectedBuffList = {}
-	ipairs = var_11_0
-
-	for iter_11_0, iter_11_1 in var_11_0(arg_11_0.preSelectedBuffList) do
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.preSelectedBuffList) do
 		arg_11_0:selectBuff(iter_11_1)
 	end
 
@@ -260,590 +124,236 @@ function var_0_1.didEnter(arg_11_0)
 	return
 end
 
-function var_0_1.show(arg_12_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_12_0._tf, true)
-
-	pg = var_1_10001
-
-	local var_12_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_12_0, arg_12_0._tf)
+function var_0_0.show(arg_12_0)
+	setActive(arg_12_0._tf, true)
+	pg.UIMgr.GetInstance():BlurPanel(arg_12_0._tf)
 
 	return
 end
 
-function var_0_1.hide(arg_13_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_13_0._tf, false)
-
-	pg = var_1_10001
-
-	local var_13_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_13_0, arg_13_0._tf, arg_13_0._parentTf)
+function var_0_0.hide(arg_13_0)
+	setActive(arg_13_0._tf, false)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_13_0._tf, arg_13_0._parentTf)
 
 	return
 end
 
-function var_0_1.openDetailView(arg_14_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_14_0.detailView, true)
+function var_0_0.openDetailView(arg_14_0)
+	setActive(arg_14_0.detailView, true)
 	arg_14_0:updateDetailView()
 
 	return
 end
 
-function var_0_1.closeDetailView(arg_15_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_15_0.detailView, false)
+function var_0_0.closeDetailView(arg_15_0)
+	setActive(arg_15_0.detailView, false)
 
 	return
 end
 
-function var_0_1.updateBuffView(arg_16_0)
-	pg = var_1_10001
+function var_0_0.updateBuffView(arg_16_0)
+	local var_16_0 = pg.activity_single_enemy[arg_16_0.singleID]
 
-	local var_16_0 = var_1_10001.activity_single_enemy[arg_16_0.singleID].strategy_id
-
-	ipairs = var_1_10003
-
-	for iter_16_0, iter_16_1 in var_1_10003(var_16_0) do
-		table = var_1_10008
-
-		if not var_1_10008.contains(arg_16_0.strategyList, iter_16_1) then
-			setActive = var_1_10008
-
-			local var_16_1 = arg_16_0.buffTFs[iter_16_1]
-
-			var_1_10008(var_1_10010.Find(var_16_1, "selected"), false)
+	for iter_16_0, iter_16_1 in ipairs(pg.activity_single_enemy[arg_16_0.singleID].strategy_id) do
+		if not table.contains(arg_16_0.strategyList, iter_16_1) then
+			setActive(arg_16_0.buffTFs[iter_16_1]:Find("selected"), false)
 		end
 	end
 
-	pg = var_3
+	for iter_16_2, iter_16_3 in ipairs(arg_16_0.buffDescList) do
+		local var_16_1 = iter_16_3:Find("mask/desc")
+		local var_16_2 = var_16_1:GetComponent("RectTransform")
 
-	local var_16_2 = var_3.strategy_data_template
+		if iter_16_2 > var_16_0.strategy_num then
+			local var_16_3 = iter_16_3:Find("bg")
 
-	ipairs = var_4
+			var_16_3:GetComponent(typeof(CanvasGroup)).alpha = 0.05
 
-	for iter_16_2, iter_16_3 in var_4(arg_16_0.buffDescList) do
-		local var_16_3 = iter_16_3:Find("mask/desc")
-
-		var_1_10010 = var_1_10009.GetComponent(var_16_3, "RectTransform")
-
-		local var_16_5
-
-		if var_1.strategy_num < iter_16_2 then
-			local var_16_4 = iter_16_3:Find("bg")
-
-			var_16_5 = var_16_5.GetComponent
-			typeof = var_14
-			CanvasGroup = var_1_10016
-			var_16_5 = var_16_5(var_16_4, var_14(var_1_10016))
-			var_16_5.alpha = 0.05
-			setActive = var_16_5
-
-			var_16_5(iter_16_3:Find("lock"), true)
-
-			setActive = var_16_5
-
-			var_16_5(var_1_10009, false)
-
-			setActive = var_16_5
-
-			var_16_5(iter_16_3:Find("over_deco"), false)
-
-			setActive = var_16_5
-
-			var_16_5(iter_16_3:Find("unselect"), false)
+			setActive(iter_16_3:Find("lock"), true)
+			setActive(var_16_1, false)
+			setActive(iter_16_3:Find("over_deco"), false)
+			setActive(iter_16_3:Find("unselect"), false)
 		else
-			setActive = var_16_5
-
-			var_16_5(iter_16_3:Find("lock"), false)
-
-			local var_16_6
+			setActive(iter_16_3:Find("lock"), false)
 
 			if arg_16_0.strategyList[iter_16_2] then
-				setActive = var_16_6
+				setActive(var_16_1, true)
 
-				var_16_6(var_1_10009, true)
+				local var_16_4 = iter_16_3:Find("bg")
 
-				var_16_6 = var_16_2[arg_16_0.strategyList[iter_16_2]]
+				var_16_4:GetComponent(typeof(CanvasGroup)).alpha = 1
 
-				local var_16_7 = iter_16_3:Find("bg")
-				local var_16_8 = var_12.GetComponent
-
-				typeof = var_15
-				CanvasGroup = var_1_10017
-
-				local var_16_9 = var_16_8(var_16_7, var_15(var_1_10017))
-
-				var_16_9.alpha = 1
-				setText = var_16_9
-				var_1_10016 = var_1_10009
-
-				var_16_9(var_1_10009.Find(var_1_10016, "index"), iter_16_2)
-
-				setText = var_16_9
-				var_1_10016 = var_1_10009
-
-				var_16_9(var_1_10009.Find(var_1_10016, "name"), var_16_6.name)
-
-				setText = var_16_9
-				var_1_10016 = var_1_10009
-
-				var_16_9(var_1_10009.Find(var_1_10016, "desc"), var_16_6.desc)
-
-				setActive = var_16_9
-				var_1_10016 = iter_16_3
-
-				var_16_9(iter_16_3.Find(var_1_10016, "lock"), false)
-
-				setActive = var_16_9
-				var_1_10016 = iter_16_3
-
-				var_16_9(iter_16_3.Find(var_1_10016, "unselect"), false)
-
-				Canvas = var_16_9
-
-				var_16_9.ForceUpdateCanvases()
-
-				setActive = var_12
-				var_1_10016 = iter_16_3
-
-				local var_16_10 = iter_16_3.Find(var_1_10016, "over_deco")
-				local var_16_11 = var_1_10010.rect.width
-
-				var_12(var_16_10, 560 < var_16_11)
+				setText(var_16_1:Find("index"), iter_16_2)
+				setText(var_16_1:Find("name"), pg.strategy_data_template[arg_16_0.strategyList[iter_16_2]].name)
+				setText(var_16_1:Find("desc"), pg.strategy_data_template[arg_16_0.strategyList[iter_16_2]].desc)
+				setActive(iter_16_3:Find("lock"), false)
+				setActive(iter_16_3:Find("unselect"), false)
+				Canvas.ForceUpdateCanvases()
+				setActive(iter_16_3:Find("over_deco"), var_16_2.rect.width > 560)
 			else
-				setActive = var_16_6
+				setActive(var_16_1, false)
 
-				var_16_6(var_1_10009, false)
+				local var_16_5 = iter_16_3:Find("bg")
 
-				local var_16_12 = iter_16_3:Find("bg")
-				local var_16_13 = var_11.GetComponent
+				var_16_5:GetComponent(typeof(CanvasGroup)).alpha = 0.2
 
-				typeof = var_14
-				CanvasGroup = var_1_10016
-
-				local var_16_14 = var_16_13(var_16_12, var_14(var_1_10016))
-
-				var_16_14.alpha = 0.2
-				setActive = var_16_14
-
-				var_16_14(iter_16_3:Find("unselect"), true)
-
-				setActive = var_16_14
-
-				var_16_14(iter_16_3:Find("lock"), false)
-
-				setActive = var_16_14
-
-				var_16_14(iter_16_3:Find("over_deco"), false)
+				setActive(iter_16_3:Find("unselect"), true)
+				setActive(iter_16_3:Find("lock"), false)
+				setActive(iter_16_3:Find("over_deco"), false)
 			end
 		end
 	end
 
-	pairs = var_4
-
-	for iter_16_4, iter_16_5 in var_4(arg_16_0.buffTFs) do
-		table = var_1_10009
-
-		if var_1_10009.contains(arg_16_0.strategyList, iter_16_4) then
-			setActive = var_1_10009
-
-			local var_16_15 = iter_16_5
-
-			var_1_10009(iter_16_5.Find(var_16_15, "selected"), true)
-
-			table = var_1_10009
-			var_1_10009 = var_1_10009.indexof(arg_16_0.strategyList, iter_16_4)
-			setImageSprite = var_1_10010
-
-			local var_16_16 = iter_16_5:Find("selected/counter")
-
-			LoadSprite = var_16_15
-
-			var_1_10010(var_16_16, var_16_15("ui/cluebuffselectui_atlas", "buff_n_" .. var_1_10009), true)
+	for iter_16_4, iter_16_5 in pairs(arg_16_0.buffTFs) do
+		if table.contains(arg_16_0.strategyList, iter_16_4) then
+			setActive(iter_16_5:Find("selected"), true)
+			setImageSprite(iter_16_5:Find("selected/counter"), LoadSprite("ui/cluebuffselectui_atlas", "buff_n_" .. table.indexof(arg_16_0.strategyList, iter_16_4)), true)
 		else
-			setActive = var_1_10009
-
-			var_1_10009(iter_16_5:Find("selected"), false)
+			setActive(iter_16_5:Find("selected"), false)
 		end
 	end
 
-	setActive = var_4
-
-	var_4(arg_16_0.detailBtn, #arg_16_0.strategyList > 0)
-
-	local var_16_19
+	setActive(arg_16_0.detailBtn, #arg_16_0.strategyList > 0)
 
 	if arg_16_0.ptAwardTF then
-		setActive = var_4
-
-		local var_16_17 = arg_16_0.ptAwardTF
-		local var_16_18 = var_6.Find(var_16_17, "boost")
-
-		var_16_19 = #arg_16_0.strategyList > 0
-
-		var_4(var_16_18, var_16_19)
-
-		setText = var_4
-
-		local var_16_20 = arg_16_0.ptAwardTF
-
-		var_4(var_6.Find(var_16_20, "boost/boost"), "+" .. 5 * #arg_16_0.strategyList .. "%")
+		setActive(arg_16_0.ptAwardTF:Find("boost"), #arg_16_0.strategyList > 0)
+		setText(arg_16_0.ptAwardTF:Find("boost/boost"), "+" .. 5 * #arg_16_0.strategyList .. "%")
 	end
 
-	table = var_4
-
-	local var_16_21 = var_4.concat
-	local var_16_22 = {}
-
-	unpack = var_16_19
-	var_16_22[1] = var_16_19(arg_16_0.strategyList)
-
-	local var_16_23 = var_16_21(var_16_22, "|")
-
-	PlayerPrefs = var_5
-
-	var_5.SetString(var_0_1.PLYAER_PREF_KEY .. arg_16_0.singleID, var_16_23)
-
-	setText = var_5
-
-	local var_16_24 = arg_16_0._tf
-
-	var_5(var_7.Find(var_16_24, "Stage/text_stage_buff_count"), "(" .. #arg_16_0.strategyList .. "/" .. var_1.strategy_num .. ")")
+	PlayerPrefs.SetString(var_0_0.PLYAER_PREF_KEY .. arg_16_0.singleID, (table.concat({
+		unpack(arg_16_0.strategyList)
+	}, "|")))
+	setText(arg_16_0._tf:Find("Stage/text_stage_buff_count"), "(" .. #arg_16_0.strategyList .. "/" .. var_16_0.strategy_num .. ")")
 
 	return
 end
 
-function var_0_1.UpdateCluePanel(arg_17_0)
-	ActivityConst = var_1_10001
+function var_0_0.UpdateCluePanel(arg_17_0)
+	local var_17_0 = PlayerPrefs.GetInt("investigatingGroupId_" .. ActivityConst.Valleyhospital_ACT_ID .. "_" .. getProxy(PlayerProxy):getRawData().id, 0)
+	local var_17_1 = true
+	local var_17_2
+	local var_17_3 = 0
 
-	local var_17_0 = var_1_10001.Valleyhospital_ACT_ID
-
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
-
-	local var_17_1 = var_1_10002(var_1_10004)
-	local var_17_2 = var_2.getRawData(var_17_1).id
-
-	PlayerPrefs = var_1_10003
-
-	local var_17_3 = var_1_10003.GetInt("investigatingGroupId_" .. var_17_0 .. "_" .. var_17_2, 0)
-	local var_17_4 = true
-	local var_17_5
-	local var_17_6 = 0
-
-	pg = var_7
-
-	local var_17_7 = var_7.activity_clue
-	local var_17_8
-
-	if var_17_3 ~= 0 then
-		var_17_8 = var_17_7.get_id_list_by_group[var_17_3]
-		var_17_5 = {
-			var_17_7[var_17_8[1]],
-			var_17_7[var_17_8[2]],
-			var_17_7[var_17_8[3]]
+	if var_17_0 ~= 0 then
+		var_17_2 = {
+			pg.activity_clue[pg.activity_clue.get_id_list_by_group[var_17_0][1]],
+			pg.activity_clue[pg.activity_clue.get_id_list_by_group[var_17_0][2]],
+			pg.activity_clue[pg.activity_clue.get_id_list_by_group[var_17_0][3]]
 		}
-		getProxy = var_9
-		TaskProxy = var_1_10011
-		var_1_10011 = var_9(var_1_10011)
-
-		local var_17_9 = var_9.getTaskVO
-
-		tonumber = var_1_10012
-		var_1_10011 = var_17_9(var_1_10011, var_1_10012(var_17_5[3].task_id))
-		var_17_6 = var_9.getProgress(var_1_10011)
+		var_17_3 = getProxy(TaskProxy):getTaskVO(tonumber(({
+			pg.activity_clue[pg.activity_clue.get_id_list_by_group[var_17_0][1]],
+			pg.activity_clue[pg.activity_clue.get_id_list_by_group[var_17_0][2]],
+			pg.activity_clue[pg.activity_clue.get_id_list_by_group[var_17_0][3]]
+		})[3].task_id)):getProgress()
 
 		for iter_17_0 = 1, 3 do
-			getProxy = var_1_10013
-			TaskProxy = var_1_10015
-			var_1_10015 = var_1_10013(var_1_10015)
-			var_1_10013 = var_1_10013.getFinishTaskById
-			tonumber = var_1_10016
+			local var_17_4 = getProxy(TaskProxy)
 
-			if not var_1_10013(var_1_10015, var_1_10016(var_17_5[iter_17_0].task_id)) then
-				var_17_4 = false
+			if not var_17_4:getFinishTaskById(tonumber(var_17_2[iter_17_0].task_id)) then
+				var_17_1 = false
 
 				break
 			end
 		end
 	end
 
-	if var_17_4 then
-		setText = var_17_8
-
-		local var_17_10 = arg_17_0.explore
-		local var_17_11 = var_10.Find(var_17_10, "target/Text")
-
-		i18n = var_1_10011
-
-		var_17_8(var_17_11, var_1_10011("clue_unselect_tip"))
+	if var_17_1 then
+		setText(arg_17_0.explore:Find("target/Text"), i18n("clue_unselect_tip"))
 	else
-		setText = var_17_8
-
-		local var_17_12 = arg_17_0.explore
-		local var_17_13 = var_10.Find(var_17_12, "target/Text")
-		local var_17_14 = var_17_5[1].unlock_desc
-		local var_17_15 = var_17_5[1].unlock_num
-		local var_17_16 = "/"
-		local var_17_17 = var_17_5[2].unlock_num
-		local var_17_18 = "/"
-		local var_17_19 = var_17_5[3].unlock_num
-
-		i18n = var_1_10017
-
-		var_17_8(var_17_13, var_17_14 .. var_17_15 .. var_17_16 .. var_17_17 .. var_17_18 .. var_17_19 .. var_1_10017("clue_task_tip", var_17_6))
+		setText(arg_17_0.explore:Find("target/Text"), var_17_2[1].unlock_desc .. var_17_2[1].unlock_num .. "/" .. var_17_2[2].unlock_num .. "/" .. var_17_2[3].unlock_num .. i18n("clue_task_tip", var_17_3))
 	end
 
 	return
 end
 
-function var_0_1.updateDetailView(arg_18_0)
-	pg = var_1_10001
-
-	local var_18_0 = var_1_10001.activity_single_enemy[arg_18_0.singleID]
+function var_0_0.updateDetailView(arg_18_0)
 	local var_18_1 = {}
 
-	ipairs = var_1_10003
-
-	for iter_18_0, iter_18_1 in var_1_10003(arg_18_0.strategyList) do
-		table = var_1_10008
-
-		var_1_10008.insert(var_18_1, iter_18_1)
+	for iter_18_0, iter_18_1 in ipairs(arg_18_0.strategyList) do
+		table.insert({}, iter_18_1)
 	end
 
-	ipairs = var_3
-
-	for iter_18_2, iter_18_3 in var_3(arg_18_0.strategyList) do
-		if iter_18_3 >= var_0_1.SP_STRA_MIN_RANGE and iter_18_3 <= var_0_1.SP_STRA_MAX_RANGE then
-			table = var_8
-
-			var_8.insert(var_18_1, var_0_1.SP_STRATEGY_ID)
+	for iter_18_2, iter_18_3 in ipairs(arg_18_0.strategyList) do
+		if iter_18_3 >= var_0_0.SP_STRA_MIN_RANGE and iter_18_3 <= var_0_0.SP_STRA_MAX_RANGE then
+			table.insert({}, var_0_0.SP_STRATEGY_ID)
 
 			break
 		end
 	end
 
-	pg = var_3
+	local var_18_2 = pg.strategy_data_template
 
-	local var_18_2 = var_3.strategy_data_template
-	local var_18_3 = arg_18_0.detailList
-
-	var_4.make(var_18_3, function(arg_19_0, arg_19_1, arg_19_2)
-		UIItemList = var_2_10003
-
-		if arg_19_0 == var_2_10003.EventUpdate then
-			local var_19_0 = var_18_1[arg_19_1 + 1]
-			local var_19_1 = var_18_2[var_19_0]
-
-			GetImageSpriteFromAtlasAsync = var_2_10005
-
-			var_2_10005("strategyicon/" .. var_19_1.icon, "", arg_19_2:Find("icon"))
-
-			setText = var_2_10005
-
-			var_2_10005(arg_19_2:Find("textBG/name"), var_19_1.name)
-
-			setText = var_2_10005
-
-			var_2_10005(arg_19_2:Find("textBG/desc"), var_19_1.desc)
+	arg_18_0.detailList:make(function(arg_19_0, arg_19_1, arg_19_2)
+		if arg_19_0 == UIItemList.EventUpdate then
+			GetImageSpriteFromAtlasAsync("strategyicon/" .. var_18_2[var_18_1[arg_19_1 + 1]].icon, "", arg_19_2:Find("icon"))
+			setText(arg_19_2:Find("textBG/name"), var_18_2[var_18_1[arg_19_1 + 1]].name)
+			setText(arg_19_2:Find("textBG/desc"), var_18_2[var_18_1[arg_19_1 + 1]].desc)
 		end
 
 		return
 	end)
-
-	local var_18_4 = arg_18_0.detailList
-
-	var_4.align(var_18_4, #var_18_1)
+	arg_18_0.detailList:align(#{})
 
 	return
 end
 
-function var_0_1.SetStageID(arg_20_0, arg_20_1)
+function var_0_0.SetStageID(arg_20_0, arg_20_1)
 	arg_20_0.singleID = arg_20_1
-	pg = var_1_10002
 
-	local var_20_0 = var_1_10002.activity_single_enemy[arg_20_0.singleID]
+	local var_20_0 = pg.activity_single_enemy[arg_20_0.singleID]
 
-	pg = var_3
+	setText(arg_20_0.stageName, pg.activity_single_enemy[arg_20_0.singleID].name)
+	setText(arg_20_0.stageLV, var_20_0.level)
+	setText(arg_20_0._tf:Find("Stage/text_stage_PTBoost"), i18n("clue_buff_pt_boost", var_20_0.strategy_num))
 
-	local var_20_1 = var_3.strategy_data_template
+	for iter_20_0, iter_20_1 in ipairs(var_20_0.strategy_id) do
+		local var_20_1 = cloneTplTo(arg_20_0.buffTmp, arg_20_0.buffContainer)
 
-	setText = var_1_10004
-
-	var_1_10004(arg_20_0.stageName, var_20_0.name)
-
-	setText = var_1_10004
-
-	var_1_10004(arg_20_0.stageLV, var_20_0.level)
-
-	setText = var_1_10004
-
-	local var_20_2 = arg_20_0._tf
-	local var_20_3 = var_6.Find(var_20_2, "Stage/text_stage_PTBoost")
-
-	i18n = var_7
-
-	var_1_10004(var_20_3, var_7("clue_buff_pt_boost", var_20_0.strategy_num))
-
-	local var_20_4 = var_20_0.strategy_id
-
-	ipairs = var_1_10005
-
-	for iter_20_0, iter_20_1 in var_1_10005(var_20_4) do
-		cloneTplTo = var_20_5
-
-		local var_20_5 = var_20_5(arg_20_0.buffTmp, arg_20_0.buffContainer)
-
-		setActive = var_1_10011
-
-		var_1_10011(var_20_5, true)
-
-		var_1_10011 = var_20_1[iter_20_1]
-		GetImageSpriteFromAtlasAsync = var_12
-
-		var_12("strategyicon/" .. var_1_10011.icon, "", var_20_5:Find("icon"))
-
-		setActive = var_12
-
-		var_12(var_20_5:Find("selected"), false)
-
-		onButton = var_12
-
-		var_12(arg_20_0, var_20_5, function()
-			local var_21_0 = arg_20_0
-
-			var_0.onStrategyClick(var_21_0, iter_20_1)
+		setActive(var_20_1, true)
+		GetImageSpriteFromAtlasAsync("strategyicon/" .. pg.strategy_data_template[iter_20_1].icon, "", var_20_1:Find("icon"))
+		setActive(var_20_1:Find("selected"), false)
+		onButton(arg_20_0, var_20_1, function()
+			arg_20_0:onStrategyClick(iter_20_1)
 
 			return
 		end)
 
-		arg_20_0.buffTFs[iter_20_1] = var_20_5
+		arg_20_0.buffTFs[iter_20_1] = var_20_1
 	end
 
-	setImageSprite = var_5
+	setImageSprite(arg_20_0._tf:Find("Stage/stage_icon"), LoadSprite("ui/cluebuffselectui_atlas", var_20_0.icon), true)
 
-	local var_20_6 = arg_20_0._tf
-	local var_20_7 = var_7.Find(var_20_6, "Stage/stage_icon")
-
-	LoadSprite = iter_20_0
-
-	var_5(var_20_7, iter_20_0("ui/cluebuffselectui_atlas", var_20_0.icon), true)
-
-	local var_20_8 = var_20_0.type
-
-	BossSingleVariableEnemyData = var_6
-
-	if var_6.TYPE.SP <= var_20_8 then
-		setActive = var_20_8
-
-		local var_20_9 = arg_20_0._tf
-
-		var_20_8(var_7.Find(var_20_9, "Stage/stage_type_icon"), false)
-
-		setActive = var_20_8
-
-		var_20_8(arg_20_0.ticket, true)
-
-		setActive = var_20_8
-
-		var_20_8(arg_20_0.ticketTips, true)
-
-		GetImageSpriteFromAtlasAsync = var_20_8
-		pg = var_7
-
-		local var_20_10 = var_7.item_virtual_data_statistics[var_20_0.enter_cost].icon
-		local var_20_11 = ""
-		local var_20_12 = arg_20_0.ticket
-
-		var_20_8(var_20_10, var_20_11, var_9.Find(var_20_12, "icon"), true)
-
-		getProxy = var_20_8
-		ActivityProxy = var_20_10
-
-		local var_20_13 = var_20_8(var_20_10)
-
-		var_20_8 = var_20_8.getActivityById
-		ActivityConst = var_20_11
-		var_20_8 = var_20_8(var_20_13, var_20_11.Valleyhospital_ACT_ID)
-		setText = var_6
-
-		local var_20_14 = arg_20_0.ticket
-
-		var_6(var_8.Find(var_20_14, "count"), var_20_8.data1)
+	if var_20_0.type >= BossSingleVariableEnemyData.TYPE.SP then
+		setActive(arg_20_0._tf:Find("Stage/stage_type_icon"), false)
+		setActive(arg_20_0.ticket, true)
+		setActive(arg_20_0.ticketTips, true)
+		GetImageSpriteFromAtlasAsync(pg.item_virtual_data_statistics[var_20_0.enter_cost].icon, "", arg_20_0.ticket:Find("icon"), true)
+		setText(arg_20_0.ticket:Find("count"), getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_ACT_ID).data1)
 	else
-		setActive = var_20_8
-
-		local var_20_15 = arg_20_0._tf
-
-		var_20_8(var_7.Find(var_20_15, "Stage/stage_type_icon"), true)
-
-		setActive = var_20_8
-
-		var_20_8(arg_20_0.ticket, false)
-
-		setActive = var_20_8
-
-		var_20_8(arg_20_0.ticketTips, false)
-
-		setImageSprite = var_20_8
-
-		local var_20_16 = arg_20_0._tf
-		local var_20_17 = var_7.Find(var_20_16, "Stage/stage_type_icon")
-
-		LoadSprite = var_8
-
-		var_20_8(var_20_17, var_8("ui/cluebuffselectui_atlas", "tier_" .. var_20_0.type), true)
+		setActive(arg_20_0._tf:Find("Stage/stage_type_icon"), true)
+		setActive(arg_20_0.ticket, false)
+		setActive(arg_20_0.ticketTips, false)
+		setImageSprite(arg_20_0._tf:Find("Stage/stage_type_icon"), LoadSprite("ui/cluebuffselectui_atlas", "tier_" .. var_20_0.type), true)
 
 		arg_20_0.useTicket = false
-		setActive = var_20_8
 
-		var_20_8(arg_20_0.ticketCheckBox, arg_20_0.useTicket)
+		setActive(arg_20_0.ticketCheckBox, arg_20_0.useTicket)
 
-		var_20_8 = arg_20_0.contextData
-		var_20_8.useTicket = arg_20_0.useTicket
+		arg_20_0.contextData.useTicket = arg_20_0.useTicket
 	end
 
-	pg = var_20_8
-
-	local var_20_18 = var_20_8.expedition_data_template[var_20_0.expedition_id].award_display
-
-	arg_20_0:updateAwards(var_20_18, arg_20_0.awards, arg_20_0.awardTpl)
+	arg_20_0:updateAwards(pg.expedition_data_template[var_20_0.expedition_id].award_display, arg_20_0.awards, arg_20_0.awardTpl)
 
 	return
 end
 
-function var_0_1.UpdateTicket(arg_22_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
-
-	local var_22_0 = var_1_10001(var_1_10003)
-	local var_22_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10004
-
-	if var_22_1(var_22_0, var_1_10004.Valleyhospital_ACT_ID).data1 <= 0 then
-		pg = var_2
-
-		local var_22_2 = var_2.TipsMgr.GetInstance()
-		local var_22_3 = var_2.ShowTips
-
-		i18n = var_1_10005
-
-		var_22_3(var_22_2, var_1_10005("clue_buff_empty_ticket"))
+function var_0_0.UpdateTicket(arg_22_0)
+	if getProxy(ActivityProxy):getActivityById(ActivityConst.Valleyhospital_ACT_ID).data1 <= 0 then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("clue_buff_empty_ticket"))
 	else
 		arg_22_0.useTicket = not arg_22_0.useTicket
-		setActive = var_2
 
-		var_2(arg_22_0.ticketCheckBox, arg_22_0.useTicket)
+		setActive(arg_22_0.ticketCheckBox, arg_22_0.useTicket)
 
 		arg_22_0.contextData.useTicket = arg_22_0.useTicket
 	end
@@ -851,31 +361,21 @@ function var_0_1.UpdateTicket(arg_22_0)
 	return
 end
 
-function var_0_1.SetPreSelectedBuff(arg_23_0, arg_23_1)
+function var_0_0.SetPreSelectedBuff(arg_23_0, arg_23_1)
 	arg_23_0.preSelectedBuffList = {}
-	ipairs = var_2
 
-	for iter_23_0, iter_23_1 in var_2(arg_23_1) do
-		table = var_1_10007
-
-		var_1_10007.insert(arg_23_0.preSelectedBuffList, iter_23_1)
+	for iter_23_0, iter_23_1 in ipairs(arg_23_1) do
+		table.insert(arg_23_0.preSelectedBuffList, iter_23_1)
 	end
 
 	return
 end
 
-function var_0_1.onStrategyClick(arg_24_0, arg_24_1)
-	ipairs = var_1_10002
-
-	for iter_24_0, iter_24_1 in var_1_10002(arg_24_0.strategyList) do
+function var_0_0.onStrategyClick(arg_24_0, arg_24_1)
+	for iter_24_0, iter_24_1 in ipairs(arg_24_0.strategyList) do
 		if iter_24_1 == arg_24_1 then
-			table = var_1_10007
-
-			var_1_10007.remove(arg_24_0.strategyList, iter_24_0)
-
-			table = var_1_10007
-
-			var_1_10007.remove(arg_24_0.contextData.selectedBuffList, iter_24_0)
+			table.remove(arg_24_0.strategyList, iter_24_0)
+			table.remove(arg_24_0.contextData.selectedBuffList, iter_24_0)
 			arg_24_0:updateBuffView()
 
 			return
@@ -887,129 +387,76 @@ function var_0_1.onStrategyClick(arg_24_0, arg_24_1)
 	return
 end
 
-function var_0_1.selectBuff(arg_25_0, arg_25_1)
-	pg = var_1_10002
-
-	local var_25_0 = var_1_10002.activity_single_enemy[arg_25_0.singleID]
-	local var_25_2
-
-	if #arg_25_0.strategyList >= var_25_0.strategy_num then
-		pg = var_25_2
-
-		local var_25_1 = var_25_2.TipsMgr.GetInstance()
-
-		var_25_2 = var_25_2.ShowTips
-		i18n = var_1_10006
-
-		var_25_2(var_25_1, var_1_10006("clue_buff_reach_max"))
+function var_0_0.selectBuff(arg_25_0, arg_25_1)
+	if #arg_25_0.strategyList >= pg.activity_single_enemy[arg_25_0.singleID].strategy_num then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("clue_buff_reach_max"))
 
 		return
 	end
 
-	table = var_25_2
-
-	var_25_2.insert(arg_25_0.strategyList, arg_25_1)
-
-	table = var_3
-
-	var_3.insert(arg_25_0.contextData.selectedBuffList, arg_25_1)
+	table.insert(arg_25_0.strategyList, arg_25_1)
+	table.insert(arg_25_0.contextData.selectedBuffList, arg_25_1)
 	arg_25_0:updateBuffView()
 
 	return
 end
 
-function var_0_1.updateAwards(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
+function var_0_0.updateAwards(arg_26_0, arg_26_1, arg_26_2, arg_26_3)
 	for iter_26_0 = 1, #arg_26_1 do
-		cloneTplTo = var_1_10008
-		var_1_10008 = var_1_10008(arg_26_3, arg_26_2)
-
-		local var_26_0 = arg_26_1[iter_26_0]
+		local var_26_0 = cloneTplTo(arg_26_3, arg_26_2)
 		local var_26_1 = {
-			type = var_26_0[1],
-			id = var_26_0[2],
-			count = var_26_0[3]
+			type = arg_26_1[iter_26_0][1],
+			id = arg_26_1[iter_26_0][2],
+			count = arg_26_1[iter_26_0][3]
 		}
 
-		if var_26_0[2] == var_0_1.BOOST_ITEM_ID then
-			arg_26_0.ptAwardTF = var_1_10008
+		if arg_26_1[iter_26_0][2] == var_0_0.BOOST_ITEM_ID then
+			arg_26_0.ptAwardTF = var_26_0
 		end
 
-		updateDrop = var_11
-		findTF = var_1_10013
+		updateDrop(findTF(var_26_0, "mask"), {
+			type = arg_26_1[iter_26_0][1],
+			id = arg_26_1[iter_26_0][2],
+			count = arg_26_1[iter_26_0][3]
+		})
+		onButton(arg_26_0, var_26_0, function()
+			local var_27_0 = Item.getConfigData(var_0[2])
 
-		var_11(var_1_10013(var_1_10008, "mask"), var_26_1)
-
-		onButton = var_11
-		var_1_10013 = arg_26_0
-
-		local var_26_2 = var_1_10008
-
-		local function var_26_3()
-			Item = var_2_10000
-
-			local var_27_0 = var_2_10000.getConfigData(var_26_0[2])
-			local var_27_1 = {
+			if var_27_0 and ({
 				[99] = true
-			}
-
-			if var_27_0 and var_27_1[var_27_0.type] then
-				local var_27_2 = var_27_0.display_icon
-				local var_27_3 = {}
-
-				ipairs = var_2_10004
-
-				for iter_27_0, iter_27_1 in var_2_10004(var_27_2) do
-					local var_27_4 = iter_27_1[1]
-					local var_27_5 = iter_27_1[2]
-
-					var_27_3[#var_27_3 + 1] = {
+			})[var_27_0.type] then
+				for iter_27_0, iter_27_1 in ipairs(var_27_0.display_icon) do
+					({})[#{} + 1] = {
 						hideName = true,
-						type = var_27_4,
-						id = var_27_5
+						type = iter_27_1[1],
+						id = iter_27_1[2]
 					}
 				end
 
-				local var_27_6 = arg_26_0
-
-				var_4.emit(var_27_6, var_0_1.ON_DROP_LIST, {
+				arg_26_0:emit(var_0_0.ON_DROP_LIST, {
 					item2Row = true,
-					itemList = var_27_3,
+					itemList = {},
 					content = var_27_0.display
 				})
 			else
-				local var_27_7 = arg_26_0
-				local var_27_8 = var_2.emit
-
-				BaseUI = var_2_10005
-
-				var_27_8(var_27_7, var_2_10005.ON_DROP, var_26_1)
+				arg_26_0:emit(BaseUI.ON_DROP, var_26_1)
 			end
 
 			return
-		end
-
-		SFX_PANEL = var_16
-
-		var_11(var_1_10013, var_26_2, var_26_3, var_16)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.willExit(arg_28_0)
-	pg = var_1_10001
-
-	local var_28_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_28_0, arg_28_0._tf, arg_28_0._parentTf)
+function var_0_0.willExit(arg_28_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_28_0._tf, arg_28_0._parentTf)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_29_0)
-	isActive = var_1_10001
-
-	if var_1_10001(arg_29_0.detailView) then
+function var_0_0.onBackPressed(arg_29_0)
+	if isActive(arg_29_0.detailView) then
 		arg_29_0:closeDetailView()
 	else
 		arg_29_0:closeView()
@@ -1018,4 +465,4 @@ function var_0_1.onBackPressed(arg_29_0)
 	return
 end
 
-return var_0_1
+return var_0_0

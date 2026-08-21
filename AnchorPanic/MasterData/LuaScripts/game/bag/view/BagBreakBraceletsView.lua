@@ -49,16 +49,11 @@ function updatePropsListView(self, cusIsInit)
         end
     end
 
-    self:recoverListData(self.mGridScroller.DataProvider)
-    if (cusIsInit == nil or cusIsInit == true) then
+    -- self:recoverListData(self.mGridScroller.DataProvider)
+    if cusIsInit then
         self.mGridScroller.DataProvider = scrollList
     else
-        -- 避免列表跳动
-        if (self.mGridScrollerRect.anchoredPosition.y <= 5) then
-            self.mGridScroller.DataProvider = scrollList
-        else
-            self.mGridScroller:ReplaceAllDataProvider(scrollList)
-        end
+        self.mGridScroller:ReplaceAllDataProvider(scrollList)
     end
 end
 

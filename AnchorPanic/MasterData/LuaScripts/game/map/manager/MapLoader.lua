@@ -27,8 +27,15 @@ function onEnterMapHandler(self, mapType)
 
     local sceneCtrl = self.m_ctrlMap[mapType]
     if sceneCtrl then
-        map.MapManager:setMapType(mapType)
-        self:loadScene(sceneCtrl)
+        local function _preloadCall(pro)
+            map.MapManager:setMapType(mapType)
+            self:loadScene(sceneCtrl)
+        end
+        if sceneCtrl.preloadCall then
+            sceneCtrl:preloadCall(_preloadCall)
+        else
+            _preloadCall()
+        end
     end
 end
 

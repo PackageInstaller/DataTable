@@ -81,8 +81,8 @@ OPMAP = {
     75: 51,  # FNEW
     76: 52,  # TNEW
     77: 53,  # TDUP
-    78: 55,  # GSET
-    79: 54,  # GGET
+    78: 54,  # GGET
+    79: 55,  # GSET
     80: 56,  # TGETV
     81: 57,  # TGETS
     82: 58,  # TGETB

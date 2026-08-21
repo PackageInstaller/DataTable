@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_collection_reward") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_collection_reward"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_collection_reward = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_collection_reward
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_collection_reward
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_collection_reward = rawget(pg, "island_collection_reward") or setmetatable({
+	__name = "island_collection_reward"
+}, confNEO)
+pg.island_collection_reward.__namecode__ = true
+pg.island_collection_reward.all = {
 	1,
 	2,
 	3,
@@ -116,11 +89,7 @@ var_0_4.all = {
 	4011,
 	4012
 }
-pg = var_0_4
-
-local var_0_5 = var_0_4.island_collection_reward
-
-var_0_5.get_id_list_by_type = {
+pg.island_collection_reward.get_id_list_by_type = {
 	{
 		1,
 		2,
@@ -214,25 +183,11 @@ var_0_5.get_id_list_by_type = {
 		4012
 	}
 }
-pg = var_0_5
-pg = var_1
-
-local var_0_6
-
-if not var_1.base then
-	var_0_6 = {}
-end
-
-var_0_5.base = var_0_6
-pg = var_0_5
-var_0_5.base.island_collection_reward = {}
+pg.base = pg.base or {}
+pg.base.island_collection_reward = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_collection_reward
-
-	var_1_0[1] = {
+	pg.base.island_collection_reward[1] = {
 		describe = "累计获得20收集点：生活经验指南T1*10",
 		type = 1,
 		id = 1,
@@ -244,11 +199,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_collection_reward
-
-	var_1_1[2] = {
+	pg.base.island_collection_reward[2] = {
 		describe = "累计获得40收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 2,
@@ -260,11 +211,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_collection_reward
-
-	var_1_2[3] = {
+	pg.base.island_collection_reward[3] = {
 		describe = "累计获得60收集点：指挥官装扮-线条人套装",
 		type = 1,
 		id = 3,
@@ -276,11 +223,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_collection_reward
-
-	var_1_3[4] = {
+	pg.base.island_collection_reward[4] = {
 		describe = "累计获得80收集点：互动动作-叉腰",
 		type = 1,
 		id = 4,
@@ -292,11 +235,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_collection_reward
-
-	var_1_4[5] = {
+	pg.base.island_collection_reward[5] = {
 		describe = "累计获得100收集点：丰壤农田委派效率提高 4%",
 		type = 1,
 		id = 5,
@@ -308,11 +247,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_collection_reward
-
-	var_1_5[6] = {
+	pg.base.island_collection_reward[6] = {
 		describe = "累计获得150收集点：生活经验指南T1*10",
 		type = 1,
 		id = 6,
@@ -324,11 +259,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_collection_reward
-
-	var_1_6[7] = {
+	pg.base.island_collection_reward[7] = {
 		describe = "累计获得200收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 7,
@@ -340,11 +271,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_collection_reward
-
-	var_1_7[8] = {
+	pg.base.island_collection_reward[8] = {
 		describe = "累计获得250收集点：林间居所",
 		type = 1,
 		id = 8,
@@ -356,11 +283,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_collection_reward
-
-	var_1_8[9] = {
+	pg.base.island_collection_reward[9] = {
 		describe = "累计获得300收集点：角色漂浮物-微风气球",
 		type = 1,
 		id = 9,
@@ -372,11 +295,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_collection_reward
-
-	var_1_9[10] = {
+	pg.base.island_collection_reward[10] = {
 		describe = "累计获得350收集点：坠香果园委派效率提高 4%",
 		type = 1,
 		id = 10,
@@ -388,11 +307,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_collection_reward
-
-	var_1_10[11] = {
+	pg.base.island_collection_reward[11] = {
 		describe = "累计获得400收集点：生活经验指南T1*10",
 		type = 1,
 		id = 11,
@@ -404,11 +319,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_collection_reward
-
-	var_1_11[12] = {
+	pg.base.island_collection_reward[12] = {
 		describe = "累计获得450收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 12,
@@ -420,11 +331,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_collection_reward
-
-	var_1_12[13] = {
+	pg.base.island_collection_reward[13] = {
 		describe = "累计获得500收集点：{namecode:18:岛风}岛屿权限认证函",
 		type = 1,
 		id = 13,
@@ -436,11 +343,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_collection_reward
-
-	var_1_13[14] = {
+	pg.base.island_collection_reward[14] = {
 		describe = "累计获得550收集点：角色背饰-学院背包",
 		type = 1,
 		id = 14,
@@ -452,11 +355,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_collection_reward
-
-	var_1_14[15] = {
+	pg.base.island_collection_reward[15] = {
 		describe = "累计获得600收集点：青芽苗圃委派效率提高 4%",
 		type = 1,
 		id = 15,
@@ -468,11 +367,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_collection_reward
-
-	var_1_15[16] = {
+	pg.base.island_collection_reward[16] = {
 		describe = "累计获得650收集点：生活经验指南T2*10",
 		type = 1,
 		id = 16,
@@ -484,11 +379,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_collection_reward
-
-	var_1_16[17] = {
+	pg.base.island_collection_reward[17] = {
 		describe = "累计获得700收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 17,
@@ -500,11 +391,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_collection_reward
-
-	var_1_17[18] = {
+	pg.base.island_collection_reward[18] = {
 		describe = "累计获得750收集点：互动动作-鞠躬",
 		type = 1,
 		id = 18,
@@ -516,11 +403,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_collection_reward
-
-	var_1_18[19] = {
+	pg.base.island_collection_reward[19] = {
 		describe = "累计获得800收集点：角色脚印-叽爪咔哇",
 		type = 1,
 		id = 19,
@@ -532,11 +415,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_collection_reward
-
-	var_1_19[20] = {
+	pg.base.island_collection_reward[20] = {
 		describe = "累计获得850收集点：丰壤农田委派效率提高 8%",
 		type = 1,
 		id = 20,
@@ -548,11 +427,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_collection_reward
-
-	var_1_20[21] = {
+	pg.base.island_collection_reward[21] = {
 		describe = "累计获得900收集点：生活经验指南T2*10",
 		type = 1,
 		id = 21,
@@ -564,11 +439,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_collection_reward
-
-	var_1_21[22] = {
+	pg.base.island_collection_reward[22] = {
 		describe = "累计获得950收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 22,
@@ -580,11 +451,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_collection_reward
-
-	var_1_22[23] = {
+	pg.base.island_collection_reward[23] = {
 		describe = "累计获得1000收集点：互动动作-跺脚",
 		type = 1,
 		id = 23,
@@ -596,11 +463,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_collection_reward
-
-	var_1_23[24] = {
+	pg.base.island_collection_reward[24] = {
 		describe = "累计获得1100收集点：熊熊候车亭*4",
 		type = 1,
 		id = 24,
@@ -612,11 +475,7 @@ var_0_5.base.island_collection_reward = {}
 			4
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_collection_reward
-
-	var_1_24[25] = {
+	pg.base.island_collection_reward[25] = {
 		describe = "累计获得1200收集点：坠香果园委派效率提高 8%",
 		type = 1,
 		id = 25,
@@ -628,11 +487,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_collection_reward
-
-	var_1_25[26] = {
+	pg.base.island_collection_reward[26] = {
 		describe = "累计获得1300收集点：生活经验指南T2*20",
 		type = 1,
 		id = 26,
@@ -644,11 +499,7 @@ var_0_5.base.island_collection_reward = {}
 			20
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_collection_reward
-
-	var_1_26[27] = {
+	pg.base.island_collection_reward[27] = {
 		describe = "累计获得1400收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 27,
@@ -660,11 +511,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_collection_reward
-
-	var_1_27[28] = {
+	pg.base.island_collection_reward[28] = {
 		describe = "累计获得1500收集点：装扮染色盘",
 		type = 1,
 		id = 28,
@@ -676,11 +523,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_collection_reward
-
-	var_1_28[29] = {
+	pg.base.island_collection_reward[29] = {
 		describe = "累计获得1600收集点：毛绒熊偶*2",
 		type = 1,
 		id = 29,
@@ -692,11 +535,7 @@ var_0_5.base.island_collection_reward = {}
 			2
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_collection_reward
-
-	var_1_29[30] = {
+	pg.base.island_collection_reward[30] = {
 		describe = "累计获得1700收集点：青芽苗圃委派效率提高 8%",
 		type = 1,
 		id = 30,
@@ -708,11 +547,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_collection_reward
-
-	var_1_30[31] = {
+	pg.base.island_collection_reward[31] = {
 		describe = "累计获得1800收集点：生活经验指南T2*20",
 		type = 1,
 		id = 31,
@@ -724,11 +559,7 @@ var_0_5.base.island_collection_reward = {}
 			20
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_collection_reward
-
-	var_1_31[32] = {
+	pg.base.island_collection_reward[32] = {
 		describe = "累计获得1900收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 32,
@@ -740,11 +571,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_collection_reward
-
-	var_1_32[33] = {
+	pg.base.island_collection_reward[33] = {
 		describe = "累计获得2000收集点：限量纪念币*1",
 		type = 1,
 		id = 33,
@@ -756,11 +583,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_collection_reward
-
-	var_1_33[34] = {
+	pg.base.island_collection_reward[34] = {
 		describe = "累计获得2200收集点：毛绒熊偶*3",
 		type = 1,
 		id = 34,
@@ -772,11 +595,7 @@ var_0_5.base.island_collection_reward = {}
 			3
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.island_collection_reward
-
-	var_1_34[35] = {
+	pg.base.island_collection_reward[35] = {
 		describe = "累计获得2400收集点：钻石30",
 		type = 1,
 		id = 35,
@@ -788,11 +607,7 @@ var_0_5.base.island_collection_reward = {}
 			30
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.island_collection_reward
-
-	var_1_35[36] = {
+	pg.base.island_collection_reward[36] = {
 		describe = "累计获得2600收集点：生活经验指南T3*5",
 		type = 1,
 		id = 36,
@@ -804,11 +619,7 @@ var_0_5.base.island_collection_reward = {}
 			5
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.island_collection_reward
-
-	var_1_36[37] = {
+	pg.base.island_collection_reward[37] = {
 		describe = "累计获得2800收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 37,
@@ -820,11 +631,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.island_collection_reward
-
-	var_1_37[38] = {
+	pg.base.island_collection_reward[38] = {
 		describe = "累计获得3000收集点：装扮染色盘",
 		type = 1,
 		id = 38,
@@ -836,11 +643,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.island_collection_reward
-
-	var_1_38[39] = {
+	pg.base.island_collection_reward[39] = {
 		describe = "累计获得3200收集点：森林木屋*1",
 		type = 1,
 		id = 39,
@@ -852,11 +655,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.island_collection_reward
-
-	var_1_39[40] = {
+	pg.base.island_collection_reward[40] = {
 		describe = "累计获得3400收集点：钻石30",
 		type = 1,
 		id = 40,
@@ -868,11 +667,7 @@ var_0_5.base.island_collection_reward = {}
 			30
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.island_collection_reward
-
-	var_1_40[41] = {
+	pg.base.island_collection_reward[41] = {
 		describe = "累计获得3600收集点：生活经验指南T3*5",
 		type = 1,
 		id = 41,
@@ -884,11 +679,7 @@ var_0_5.base.island_collection_reward = {}
 			5
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.island_collection_reward
-
-	var_1_41[42] = {
+	pg.base.island_collection_reward[42] = {
 		describe = "累计获得3800收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 42,
@@ -900,11 +691,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.island_collection_reward
-
-	var_1_42[43] = {
+	pg.base.island_collection_reward[43] = {
 		describe = "累计获得4000收集点：限量纪念币*1",
 		type = 1,
 		id = 43,
@@ -916,11 +703,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.island_collection_reward
-
-	var_1_43[44] = {
+	pg.base.island_collection_reward[44] = {
 		describe = "累计获得4200收集点：森林木屋*1",
 		type = 1,
 		id = 44,
@@ -932,11 +715,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.island_collection_reward
-
-	var_1_44[45] = {
+	pg.base.island_collection_reward[45] = {
 		describe = "累计获得4400收集点：钻石40",
 		type = 1,
 		id = 45,
@@ -948,11 +727,7 @@ var_0_5.base.island_collection_reward = {}
 			40
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.island_collection_reward
-
-	var_1_45[46] = {
+	pg.base.island_collection_reward[46] = {
 		describe = "累计获得4600收集点：生活经验指南T3*5",
 		type = 1,
 		id = 46,
@@ -964,11 +739,7 @@ var_0_5.base.island_collection_reward = {}
 			5
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.island_collection_reward
-
-	var_1_46[47] = {
+	pg.base.island_collection_reward[47] = {
 		describe = "累计获得4800收集点：岛屿开发结晶*1",
 		type = 1,
 		id = 47,
@@ -980,11 +751,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.island_collection_reward
-
-	var_1_47[48] = {
+	pg.base.island_collection_reward[48] = {
 		describe = "累计获得5000收集点：装扮染色盘",
 		type = 1,
 		id = 48,
@@ -996,11 +763,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.island_collection_reward
-
-	var_1_48[49] = {
+	pg.base.island_collection_reward[49] = {
 		describe = "累计获得5500收集点：森林木屋*1",
 		type = 1,
 		id = 49,
@@ -1012,11 +775,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.island_collection_reward
-
-	var_1_49[50] = {
+	pg.base.island_collection_reward[50] = {
 		describe = "累计获得6000收集点：钻石50",
 		type = 1,
 		id = 50,
@@ -1028,11 +787,7 @@ var_0_5.base.island_collection_reward = {}
 			50
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.island_collection_reward
-
-	var_1_50[2001] = {
+	pg.base.island_collection_reward[2001] = {
 		describe = "累计获得20收集点：开发资金2000",
 		type = 2,
 		id = 2001,
@@ -1044,11 +799,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.island_collection_reward
-
-	var_1_51[2002] = {
+	pg.base.island_collection_reward[2002] = {
 		describe = "累计获得40收集点：生活经验指南T1*10",
 		type = 2,
 		id = 2002,
@@ -1060,11 +811,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.island_collection_reward
-
-	var_1_52[2003] = {
+	pg.base.island_collection_reward[2003] = {
 		describe = "累计获得60收集点：开发资金2000",
 		type = 2,
 		id = 2003,
@@ -1076,11 +823,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.island_collection_reward
-
-	var_1_53[2004] = {
+	pg.base.island_collection_reward[2004] = {
 		describe = "累计获得80收集点：生活经验指南T1*10",
 		type = 2,
 		id = 2004,
@@ -1092,11 +835,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.island_collection_reward
-
-	var_1_54[2005] = {
+	pg.base.island_collection_reward[2005] = {
 		describe = "累计获得100收集点：开发资金2000",
 		type = 2,
 		id = 2005,
@@ -1108,11 +847,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.island_collection_reward
-
-	var_1_55[2006] = {
+	pg.base.island_collection_reward[2006] = {
 		describe = "累计获得120收集点：生活经验指南T2*10",
 		type = 2,
 		id = 2006,
@@ -1124,11 +859,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.island_collection_reward
-
-	var_1_56[2007] = {
+	pg.base.island_collection_reward[2007] = {
 		describe = "累计获得160收集点：开发资金5000",
 		type = 2,
 		id = 2007,
@@ -1140,11 +871,7 @@ var_0_5.base.island_collection_reward = {}
 			5000
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.island_collection_reward
-
-	var_1_57[2008] = {
+	pg.base.island_collection_reward[2008] = {
 		describe = "累计获得200收集点：生活经验指南T2*10",
 		type = 2,
 		id = 2008,
@@ -1156,11 +883,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.island_collection_reward
-
-	var_1_58[2009] = {
+	pg.base.island_collection_reward[2009] = {
 		describe = "累计获得240收集点：开发资金5000",
 		type = 2,
 		id = 2009,
@@ -1172,11 +895,7 @@ var_0_5.base.island_collection_reward = {}
 			5000
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.island_collection_reward
-
-	var_1_59[2010] = {
+	pg.base.island_collection_reward[2010] = {
 		describe = "累计获得300收集点：生活经验指南T2*10",
 		type = 2,
 		id = 2010,
@@ -1188,11 +907,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.island_collection_reward
-
-	var_1_60[3001] = {
+	pg.base.island_collection_reward[3001] = {
 		describe = "累计获得20收集点：开发资金2000",
 		type = 3,
 		id = 3001,
@@ -1204,11 +919,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.island_collection_reward
-
-	var_1_61[3002] = {
+	pg.base.island_collection_reward[3002] = {
 		describe = "累计获得60收集点：生活经验指南T1*10",
 		type = 3,
 		id = 3002,
@@ -1220,11 +931,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.island_collection_reward
-
-	var_1_62[3003] = {
+	pg.base.island_collection_reward[3003] = {
 		describe = "累计获得100收集点：开发资金2000",
 		type = 3,
 		id = 3003,
@@ -1236,11 +943,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.island_collection_reward
-
-	var_1_63[3004] = {
+	pg.base.island_collection_reward[3004] = {
 		describe = "累计获得200收集点：生活经验指南T1*10",
 		type = 3,
 		id = 3004,
@@ -1252,11 +955,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.island_collection_reward
-
-	var_1_64[3005] = {
+	pg.base.island_collection_reward[3005] = {
 		describe = "累计获得400收集点：开发资金5000",
 		type = 3,
 		id = 3005,
@@ -1268,11 +967,7 @@ var_0_5.base.island_collection_reward = {}
 			5000
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.island_collection_reward
-
-	var_1_65[3006] = {
+	pg.base.island_collection_reward[3006] = {
 		describe = "累计获得600收集点：生活经验指南T2*10",
 		type = 3,
 		id = 3006,
@@ -1284,11 +979,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.island_collection_reward
-
-	var_1_66[3007] = {
+	pg.base.island_collection_reward[3007] = {
 		describe = "累计获得1000收集点：开发资金5000",
 		type = 3,
 		id = 3007,
@@ -1300,11 +991,7 @@ var_0_5.base.island_collection_reward = {}
 			5000
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.island_collection_reward
-
-	var_1_67[3008] = {
+	pg.base.island_collection_reward[3008] = {
 		describe = "累计获得1500收集点：岛屿开发结晶*1",
 		type = 3,
 		id = 3008,
@@ -1316,11 +1003,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.island_collection_reward
-
-	var_1_68[3009] = {
+	pg.base.island_collection_reward[3009] = {
 		describe = "累计获得2000收集点：开发资金10000",
 		type = 3,
 		id = 3009,
@@ -1332,11 +1015,7 @@ var_0_5.base.island_collection_reward = {}
 			10000
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.island_collection_reward
-
-	var_1_69[3010] = {
+	pg.base.island_collection_reward[3010] = {
 		describe = "累计获得2500收集点：装扮染色盘",
 		type = 3,
 		id = 3010,
@@ -1348,11 +1027,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.island_collection_reward
-
-	var_1_70[3011] = {
+	pg.base.island_collection_reward[3011] = {
 		describe = "累计获得3000收集点：开发资金10000",
 		type = 3,
 		id = 3011,
@@ -1364,11 +1039,7 @@ var_0_5.base.island_collection_reward = {}
 			10000
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.island_collection_reward
-
-	var_1_71[3012] = {
+	pg.base.island_collection_reward[3012] = {
 		describe = "累计获得4000收集点：限量纪念币*1",
 		type = 3,
 		id = 3012,
@@ -1380,11 +1051,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.island_collection_reward
-
-	var_1_72[4001] = {
+	pg.base.island_collection_reward[4001] = {
 		describe = "累计获得10收集点：开发资金2000",
 		type = 4,
 		id = 4001,
@@ -1396,11 +1063,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.island_collection_reward
-
-	var_1_73[4002] = {
+	pg.base.island_collection_reward[4002] = {
 		describe = "累计获得20收集点：生活经验指南T1*10",
 		type = 4,
 		id = 4002,
@@ -1412,11 +1075,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.island_collection_reward
-
-	var_1_74[4003] = {
+	pg.base.island_collection_reward[4003] = {
 		describe = "累计获得30收集点：开发资金2000",
 		type = 4,
 		id = 4003,
@@ -1428,11 +1087,7 @@ var_0_5.base.island_collection_reward = {}
 			2000
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.island_collection_reward
-
-	var_1_75[4004] = {
+	pg.base.island_collection_reward[4004] = {
 		describe = "累计获得40收集点：生活经验指南T1*10",
 		type = 4,
 		id = 4004,
@@ -1444,11 +1099,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.island_collection_reward
-
-	var_1_76[4005] = {
+	pg.base.island_collection_reward[4005] = {
 		describe = "累计获得60收集点：开发资金5000",
 		type = 4,
 		id = 4005,
@@ -1460,11 +1111,7 @@ var_0_5.base.island_collection_reward = {}
 			5000
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.island_collection_reward
-
-	var_1_77[4006] = {
+	pg.base.island_collection_reward[4006] = {
 		describe = "累计获得80收集点：生活经验指南T2*10",
 		type = 4,
 		id = 4006,
@@ -1476,11 +1123,7 @@ var_0_5.base.island_collection_reward = {}
 			10
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.island_collection_reward
-
-	var_1_78[4007] = {
+	pg.base.island_collection_reward[4007] = {
 		describe = "累计获得100收集点：开发资金5000",
 		type = 4,
 		id = 4007,
@@ -1492,11 +1135,7 @@ var_0_5.base.island_collection_reward = {}
 			5000
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.island_collection_reward
-
-	var_1_79[4008] = {
+	pg.base.island_collection_reward[4008] = {
 		describe = "累计获得120收集点：岛屿开发结晶*1",
 		type = 4,
 		id = 4008,
@@ -1508,11 +1147,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.island_collection_reward
-
-	var_1_80[4009] = {
+	pg.base.island_collection_reward[4009] = {
 		describe = "累计获得160收集点：开发资金10000",
 		type = 4,
 		id = 4009,
@@ -1524,11 +1159,7 @@ var_0_5.base.island_collection_reward = {}
 			10000
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.island_collection_reward
-
-	var_1_81[4010] = {
+	pg.base.island_collection_reward[4010] = {
 		describe = "累计获得200收集点：装扮染色盘",
 		type = 4,
 		id = 4010,
@@ -1540,11 +1171,7 @@ var_0_5.base.island_collection_reward = {}
 			1
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.island_collection_reward
-
-	var_1_82[4011] = {
+	pg.base.island_collection_reward[4011] = {
 		describe = "累计获得250收集点：开发资金10000",
 		type = 4,
 		id = 4011,
@@ -1556,8 +1183,7 @@ var_0_5.base.island_collection_reward = {}
 			10000
 		}
 	}
-	pg = var_1_82
-	var_1_82.base.island_collection_reward[4012] = {
+	pg.base.island_collection_reward[4012] = {
 		describe = "累计获得300收集点：限量纪念币*1",
 		type = 4,
 		id = 4012,

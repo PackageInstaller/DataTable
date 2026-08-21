@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_sp_story") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_sp_story"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_sp_story = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_sp_story
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_sp_story = rawget(pg, "activity_sp_story") or setmetatable({
+	__name = "activity_sp_story"
+}, confNEO)
+pg.activity_sp_story.all = {
 	1,
 	2,
 	3,
@@ -459,27 +436,59 @@ var_0_3.all = {
 	474,
 	475,
 	476,
-	477
+	477,
+	481,
+	482,
+	483,
+	484,
+	485,
+	486,
+	487,
+	488,
+	489,
+	490,
+	491,
+	492,
+	493,
+	494,
+	495,
+	496,
+	497,
+	498,
+	499,
+	500,
+	501,
+	502,
+	503,
+	504,
+	505,
+	506,
+	507,
+	508,
+	509,
+	510,
+	511,
+	512,
+	513,
+	514,
+	515,
+	516,
+	517,
+	518,
+	519,
+	520,
+	521,
+	522,
+	523,
+	524,
+	525,
+	526
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_sp_story = {}
+pg.base = pg.base or {}
+pg.base.activity_sp_story = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_sp_story
-
-	var_1_0[1] = {
+	pg.base.activity_sp_story[1] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -492,11 +501,7 @@ var_0_3.base.activity_sp_story = {}
 		id = 1,
 		lock = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_sp_story
-
-	var_1_1[2] = {
+	pg.base.activity_sp_story[2] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -516,11 +521,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_sp_story
-
-	var_1_2[3] = {
+	pg.base.activity_sp_story[3] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -540,11 +541,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_sp_story
-
-	var_1_3[4] = {
+	pg.base.activity_sp_story[4] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -564,11 +561,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_sp_story
-
-	var_1_4[5] = {
+	pg.base.activity_sp_story[5] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -588,11 +581,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_sp_story
-
-	var_1_5[6] = {
+	pg.base.activity_sp_story[6] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -612,11 +601,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_sp_story
-
-	var_1_6[7] = {
+	pg.base.activity_sp_story[7] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -636,11 +621,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_sp_story
-
-	var_1_7[8] = {
+	pg.base.activity_sp_story[8] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -660,11 +641,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_sp_story
-
-	var_1_8[9] = {
+	pg.base.activity_sp_story[9] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -684,11 +661,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_sp_story
-
-	var_1_9[10] = {
+	pg.base.activity_sp_story[10] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -708,11 +681,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_sp_story
-
-	var_1_10[11] = {
+	pg.base.activity_sp_story[11] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -725,11 +694,7 @@ var_0_3.base.activity_sp_story = {}
 		id = 11,
 		lock = ""
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_sp_story
-
-	var_1_11[12] = {
+	pg.base.activity_sp_story[12] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -749,11 +714,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_sp_story
-
-	var_1_12[13] = {
+	pg.base.activity_sp_story[13] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -773,11 +734,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_sp_story
-
-	var_1_13[14] = {
+	pg.base.activity_sp_story[14] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -797,11 +754,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_sp_story
-
-	var_1_14[15] = {
+	pg.base.activity_sp_story[15] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -821,11 +774,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_sp_story
-
-	var_1_15[16] = {
+	pg.base.activity_sp_story[16] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -845,11 +794,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_sp_story
-
-	var_1_16[17] = {
+	pg.base.activity_sp_story[17] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -869,11 +814,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_sp_story
-
-	var_1_17[18] = {
+	pg.base.activity_sp_story[18] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -893,11 +834,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_sp_story
-
-	var_1_18[19] = {
+	pg.base.activity_sp_story[19] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -917,11 +854,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_sp_story
-
-	var_1_19[20] = {
+	pg.base.activity_sp_story[20] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -941,11 +874,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_sp_story
-
-	var_1_20[21] = {
+	pg.base.activity_sp_story[21] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -965,11 +894,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_sp_story
-
-	var_1_21[22] = {
+	pg.base.activity_sp_story[22] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -990,11 +915,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_sp_story
-
-	var_1_22[23] = {
+	pg.base.activity_sp_story[23] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "Map_1840002",
@@ -1014,11 +935,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_sp_story
-
-	var_1_23[31] = {
+	pg.base.activity_sp_story[31] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -1031,11 +948,7 @@ var_0_3.base.activity_sp_story = {}
 		id = 31,
 		lock = ""
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_sp_story
-
-	var_1_24[32] = {
+	pg.base.activity_sp_story[32] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1055,11 +968,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_sp_story
-
-	var_1_25[33] = {
+	pg.base.activity_sp_story[33] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1079,11 +988,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_sp_story
-
-	var_1_26[34] = {
+	pg.base.activity_sp_story[34] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1103,11 +1008,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_sp_story
-
-	var_1_27[35] = {
+	pg.base.activity_sp_story[35] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1129,11 +1030,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_sp_story
-
-	var_1_28[36] = {
+	pg.base.activity_sp_story[36] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1153,11 +1050,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_sp_story
-
-	var_1_29[37] = {
+	pg.base.activity_sp_story[37] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1177,11 +1070,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_sp_story
-
-	var_1_30[38] = {
+	pg.base.activity_sp_story[38] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1201,11 +1090,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_sp_story
-
-	var_1_31[39] = {
+	pg.base.activity_sp_story[39] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1225,11 +1110,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_sp_story
-
-	var_1_32[40] = {
+	pg.base.activity_sp_story[40] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1249,11 +1130,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_sp_story
-
-	var_1_33[41] = {
+	pg.base.activity_sp_story[41] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -1273,11 +1150,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_sp_story
-
-	var_1_34[42] = {
+	pg.base.activity_sp_story[42] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1297,11 +1170,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_sp_story
-
-	var_1_35[43] = {
+	pg.base.activity_sp_story[43] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1322,11 +1191,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_sp_story
-
-	var_1_36[44] = {
+	pg.base.activity_sp_story[44] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1346,11 +1211,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_sp_story
-
-	var_1_37[45] = {
+	pg.base.activity_sp_story[45] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1370,11 +1231,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_sp_story
-
-	var_1_38[46] = {
+	pg.base.activity_sp_story[46] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1394,11 +1251,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_sp_story
-
-	var_1_39[47] = {
+	pg.base.activity_sp_story[47] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1418,11 +1271,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_sp_story
-
-	var_1_40[48] = {
+	pg.base.activity_sp_story[48] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -1442,11 +1291,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_sp_story
-
-	var_1_41[49] = {
+	pg.base.activity_sp_story[49] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1466,11 +1311,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_sp_story
-
-	var_1_42[50] = {
+	pg.base.activity_sp_story[50] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1490,11 +1331,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_sp_story
-
-	var_1_43[51] = {
+	pg.base.activity_sp_story[51] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1514,11 +1351,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_sp_story
-
-	var_1_44[52] = {
+	pg.base.activity_sp_story[52] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -1538,11 +1371,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_sp_story
-
-	var_1_45[53] = {
+	pg.base.activity_sp_story[53] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1562,11 +1391,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_sp_story
-
-	var_1_46[54] = {
+	pg.base.activity_sp_story[54] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1587,11 +1412,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_sp_story
-
-	var_1_47[55] = {
+	pg.base.activity_sp_story[55] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1611,11 +1432,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_sp_story
-
-	var_1_48[56] = {
+	pg.base.activity_sp_story[56] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -1635,11 +1452,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_sp_story
-
-	var_1_49[57] = {
+	pg.base.activity_sp_story[57] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1659,11 +1472,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_sp_story
-
-	var_1_50[58] = {
+	pg.base.activity_sp_story[58] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1683,11 +1492,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_sp_story
-
-	var_1_51[59] = {
+	pg.base.activity_sp_story[59] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1707,11 +1512,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_sp_story
-
-	var_1_52[60] = {
+	pg.base.activity_sp_story[60] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1731,11 +1532,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_sp_story
-
-	var_1_53[61] = {
+	pg.base.activity_sp_story[61] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1755,11 +1552,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_sp_story
-
-	var_1_54[62] = {
+	pg.base.activity_sp_story[62] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1780,11 +1573,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_sp_story
-
-	var_1_55[63] = {
+	pg.base.activity_sp_story[63] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1804,11 +1593,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_sp_story
-
-	var_1_56[64] = {
+	pg.base.activity_sp_story[64] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1828,11 +1613,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_sp_story
-
-	var_1_57[65] = {
+	pg.base.activity_sp_story[65] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1852,11 +1633,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_sp_story
-
-	var_1_58[66] = {
+	pg.base.activity_sp_story[66] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1876,11 +1653,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_sp_story
-
-	var_1_59[67] = {
+	pg.base.activity_sp_story[67] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "Map_1850004",
@@ -1900,11 +1673,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_sp_story
-
-	var_1_60[68] = {
+	pg.base.activity_sp_story[68] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -1917,11 +1686,7 @@ var_0_3.base.activity_sp_story = {}
 		id = 68,
 		lock = ""
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_sp_story
-
-	var_1_61[69] = {
+	pg.base.activity_sp_story[69] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1941,11 +1706,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_sp_story
-
-	var_1_62[70] = {
+	pg.base.activity_sp_story[70] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -1965,11 +1726,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_sp_story
-
-	var_1_63[71] = {
+	pg.base.activity_sp_story[71] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -1989,11 +1746,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_sp_story
-
-	var_1_64[72] = {
+	pg.base.activity_sp_story[72] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2013,11 +1766,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_sp_story
-
-	var_1_65[73] = {
+	pg.base.activity_sp_story[73] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2037,11 +1786,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_sp_story
-
-	var_1_66[74] = {
+	pg.base.activity_sp_story[74] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2061,11 +1806,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_sp_story
-
-	var_1_67[75] = {
+	pg.base.activity_sp_story[75] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2085,11 +1826,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_sp_story
-
-	var_1_68[76] = {
+	pg.base.activity_sp_story[76] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2109,11 +1846,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_sp_story
-
-	var_1_69[77] = {
+	pg.base.activity_sp_story[77] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2133,11 +1866,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_sp_story
-
-	var_1_70[78] = {
+	pg.base.activity_sp_story[78] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2157,11 +1886,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_sp_story
-
-	var_1_71[79] = {
+	pg.base.activity_sp_story[79] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2181,11 +1906,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_sp_story
-
-	var_1_72[80] = {
+	pg.base.activity_sp_story[80] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2205,11 +1926,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_sp_story
-
-	var_1_73[81] = {
+	pg.base.activity_sp_story[81] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2229,11 +1946,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_sp_story
-
-	var_1_74[82] = {
+	pg.base.activity_sp_story[82] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2253,11 +1966,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_sp_story
-
-	var_1_75[83] = {
+	pg.base.activity_sp_story[83] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2277,11 +1986,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_sp_story
-
-	var_1_76[84] = {
+	pg.base.activity_sp_story[84] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2301,11 +2006,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_sp_story
-
-	var_1_77[85] = {
+	pg.base.activity_sp_story[85] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2325,11 +2026,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_sp_story
-
-	var_1_78[86] = {
+	pg.base.activity_sp_story[86] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2349,11 +2046,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_sp_story
-
-	var_1_79[87] = {
+	pg.base.activity_sp_story[87] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2373,11 +2066,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_sp_story
-
-	var_1_80[88] = {
+	pg.base.activity_sp_story[88] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2397,11 +2086,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_sp_story
-
-	var_1_81[89] = {
+	pg.base.activity_sp_story[89] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "Map_1860001",
@@ -2421,11 +2106,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_sp_story
-
-	var_1_82[90] = {
+	pg.base.activity_sp_story[90] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -2438,11 +2119,7 @@ var_0_3.base.activity_sp_story = {}
 		id = 90,
 		lock = ""
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_sp_story
-
-	var_1_83[91] = {
+	pg.base.activity_sp_story[91] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2462,11 +2139,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_sp_story
-
-	var_1_84[92] = {
+	pg.base.activity_sp_story[92] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2486,11 +2159,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_sp_story
-
-	var_1_85[93] = {
+	pg.base.activity_sp_story[93] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2510,11 +2179,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_sp_story
-
-	var_1_86[94] = {
+	pg.base.activity_sp_story[94] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2534,11 +2199,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_sp_story
-
-	var_1_87[95] = {
+	pg.base.activity_sp_story[95] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2558,11 +2219,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_sp_story
-
-	var_1_88[96] = {
+	pg.base.activity_sp_story[96] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2582,11 +2239,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_sp_story
-
-	var_1_89[97] = {
+	pg.base.activity_sp_story[97] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2606,11 +2259,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_sp_story
-
-	var_1_90[98] = {
+	pg.base.activity_sp_story[98] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2630,11 +2279,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_sp_story
-
-	var_1_91[99] = {
+	pg.base.activity_sp_story[99] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2654,11 +2299,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_sp_story
-
-	var_1_92[100] = {
+	pg.base.activity_sp_story[100] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2678,11 +2319,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_sp_story
-
-	var_1_93[101] = {
+	pg.base.activity_sp_story[101] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2702,11 +2339,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_sp_story
-
-	var_1_94[102] = {
+	pg.base.activity_sp_story[102] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2728,11 +2361,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_sp_story
-
-	var_1_95[103] = {
+	pg.base.activity_sp_story[103] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2752,11 +2381,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_sp_story
-
-	var_1_96[104] = {
+	pg.base.activity_sp_story[104] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2776,11 +2401,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_sp_story
-
-	var_1_97[105] = {
+	pg.base.activity_sp_story[105] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2800,11 +2421,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_sp_story
-
-	var_1_98[106] = {
+	pg.base.activity_sp_story[106] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2824,8 +2441,7 @@ var_0_3.base.activity_sp_story = {}
 			}
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_sp_story[107] = {
+	pg.base.activity_sp_story[107] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -2842,11 +2458,7 @@ var_0_3.base.activity_sp_story = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_sp_story
-
-	var_2_0[108] = {
+	pg.base.activity_sp_story[108] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2866,11 +2478,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_sp_story
-
-	var_2_1[109] = {
+	pg.base.activity_sp_story[109] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2890,11 +2498,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_sp_story
-
-	var_2_2[110] = {
+	pg.base.activity_sp_story[110] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2914,11 +2518,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_sp_story
-
-	var_2_3[111] = {
+	pg.base.activity_sp_story[111] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -2938,11 +2538,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_sp_story
-
-	var_2_4[112] = {
+	pg.base.activity_sp_story[112] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2962,11 +2558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_sp_story
-
-	var_2_5[113] = {
+	pg.base.activity_sp_story[113] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -2986,11 +2578,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_sp_story
-
-	var_2_6[114] = {
+	pg.base.activity_sp_story[114] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3010,11 +2598,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_sp_story
-
-	var_2_7[115] = {
+	pg.base.activity_sp_story[115] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3036,11 +2620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_sp_story
-
-	var_2_8[116] = {
+	pg.base.activity_sp_story[116] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3060,11 +2640,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_sp_story
-
-	var_2_9[117] = {
+	pg.base.activity_sp_story[117] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3084,11 +2660,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_sp_story
-
-	var_2_10[118] = {
+	pg.base.activity_sp_story[118] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -3108,11 +2680,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_sp_story
-
-	var_2_11[119] = {
+	pg.base.activity_sp_story[119] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3132,11 +2700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_sp_story
-
-	var_2_12[120] = {
+	pg.base.activity_sp_story[120] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3156,11 +2720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_sp_story
-
-	var_2_13[121] = {
+	pg.base.activity_sp_story[121] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3180,11 +2740,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_sp_story
-
-	var_2_14[122] = {
+	pg.base.activity_sp_story[122] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3206,11 +2762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_sp_story
-
-	var_2_15[123] = {
+	pg.base.activity_sp_story[123] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3230,11 +2782,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_sp_story
-
-	var_2_16[124] = {
+	pg.base.activity_sp_story[124] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -3254,11 +2802,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_sp_story
-
-	var_2_17[125] = {
+	pg.base.activity_sp_story[125] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3278,11 +2822,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_sp_story
-
-	var_2_18[126] = {
+	pg.base.activity_sp_story[126] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3302,11 +2842,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_sp_story
-
-	var_2_19[127] = {
+	pg.base.activity_sp_story[127] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3327,11 +2863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_sp_story
-
-	var_2_20[128] = {
+	pg.base.activity_sp_story[128] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -3351,11 +2883,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_sp_story
-
-	var_2_21[129] = {
+	pg.base.activity_sp_story[129] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3375,11 +2903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_sp_story
-
-	var_2_22[130] = {
+	pg.base.activity_sp_story[130] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3399,11 +2923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_sp_story
-
-	var_2_23[131] = {
+	pg.base.activity_sp_story[131] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3424,11 +2944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_sp_story
-
-	var_2_24[132] = {
+	pg.base.activity_sp_story[132] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3448,11 +2964,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_sp_story
-
-	var_2_25[133] = {
+	pg.base.activity_sp_story[133] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -3472,11 +2984,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_sp_story
-
-	var_2_26[134] = {
+	pg.base.activity_sp_story[134] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3496,11 +3004,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_sp_story
-
-	var_2_27[135] = {
+	pg.base.activity_sp_story[135] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3520,11 +3024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_sp_story
-
-	var_2_28[136] = {
+	pg.base.activity_sp_story[136] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3544,11 +3044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_sp_story
-
-	var_2_29[137] = {
+	pg.base.activity_sp_story[137] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3568,11 +3064,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_sp_story
-
-	var_2_30[138] = {
+	pg.base.activity_sp_story[138] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3592,11 +3084,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_sp_story
-
-	var_2_31[139] = {
+	pg.base.activity_sp_story[139] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3616,11 +3104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_sp_story
-
-	var_2_32[141] = {
+	pg.base.activity_sp_story[141] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -3633,11 +3117,7 @@ end)()
 		id = 141,
 		lock = ""
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_sp_story
-
-	var_2_33[142] = {
+	pg.base.activity_sp_story[142] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3657,11 +3137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_sp_story
-
-	var_2_34[143] = {
+	pg.base.activity_sp_story[143] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3681,11 +3157,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_sp_story
-
-	var_2_35[144] = {
+	pg.base.activity_sp_story[144] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3705,11 +3177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_sp_story
-
-	var_2_36[145] = {
+	pg.base.activity_sp_story[145] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3729,11 +3197,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_sp_story
-
-	var_2_37[146] = {
+	pg.base.activity_sp_story[146] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3753,11 +3217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_sp_story
-
-	var_2_38[147] = {
+	pg.base.activity_sp_story[147] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3778,11 +3238,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_sp_story
-
-	var_2_39[148] = {
+	pg.base.activity_sp_story[148] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3802,11 +3258,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_sp_story
-
-	var_2_40[149] = {
+	pg.base.activity_sp_story[149] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3826,11 +3278,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_sp_story
-
-	var_2_41[150] = {
+	pg.base.activity_sp_story[150] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3851,11 +3299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_sp_story
-
-	var_2_42[151] = {
+	pg.base.activity_sp_story[151] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3875,11 +3319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_sp_story
-
-	var_2_43[152] = {
+	pg.base.activity_sp_story[152] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3899,11 +3339,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_sp_story
-
-	var_2_44[153] = {
+	pg.base.activity_sp_story[153] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3923,11 +3359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_sp_story
-
-	var_2_45[154] = {
+	pg.base.activity_sp_story[154] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -3949,11 +3381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_sp_story
-
-	var_2_46[155] = {
+	pg.base.activity_sp_story[155] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3973,11 +3401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_sp_story
-
-	var_2_47[156] = {
+	pg.base.activity_sp_story[156] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -3997,11 +3421,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_sp_story
-
-	var_2_48[157] = {
+	pg.base.activity_sp_story[157] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4021,11 +3441,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_sp_story
-
-	var_2_49[158] = {
+	pg.base.activity_sp_story[158] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4047,11 +3463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_sp_story
-
-	var_2_50[159] = {
+	pg.base.activity_sp_story[159] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4071,11 +3483,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_sp_story
-
-	var_2_51[160] = {
+	pg.base.activity_sp_story[160] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4095,11 +3503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_sp_story
-
-	var_2_52[161] = {
+	pg.base.activity_sp_story[161] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4120,11 +3524,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_sp_story
-
-	var_2_53[162] = {
+	pg.base.activity_sp_story[162] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4144,11 +3544,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_sp_story
-
-	var_2_54[163] = {
+	pg.base.activity_sp_story[163] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4168,11 +3564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_sp_story
-
-	var_2_55[164] = {
+	pg.base.activity_sp_story[164] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4192,11 +3584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_sp_story
-
-	var_2_56[165] = {
+	pg.base.activity_sp_story[165] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4216,11 +3604,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_sp_story
-
-	var_2_57[166] = {
+	pg.base.activity_sp_story[166] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4240,11 +3624,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_sp_story
-
-	var_2_58[167] = {
+	pg.base.activity_sp_story[167] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4264,11 +3644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_sp_story
-
-	var_2_59[168] = {
+	pg.base.activity_sp_story[168] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4288,11 +3664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_sp_story
-
-	var_2_60[169] = {
+	pg.base.activity_sp_story[169] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4312,11 +3684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_sp_story
-
-	var_2_61[170] = {
+	pg.base.activity_sp_story[170] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4336,11 +3704,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_sp_story
-
-	var_2_62[171] = {
+	pg.base.activity_sp_story[171] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4360,11 +3724,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_sp_story
-
-	var_2_63[172] = {
+	pg.base.activity_sp_story[172] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4384,11 +3744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_sp_story
-
-	var_2_64[173] = {
+	pg.base.activity_sp_story[173] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4408,11 +3764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_sp_story
-
-	var_2_65[174] = {
+	pg.base.activity_sp_story[174] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4432,11 +3784,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_sp_story
-
-	var_2_66[175] = {
+	pg.base.activity_sp_story[175] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4456,11 +3804,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_sp_story
-
-	var_2_67[176] = {
+	pg.base.activity_sp_story[176] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4480,11 +3824,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_sp_story
-
-	var_2_68[181] = {
+	pg.base.activity_sp_story[181] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -4497,11 +3837,7 @@ end)()
 		id = 181,
 		lock = ""
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_sp_story
-
-	var_2_69[182] = {
+	pg.base.activity_sp_story[182] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4521,11 +3857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_sp_story
-
-	var_2_70[183] = {
+	pg.base.activity_sp_story[183] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4545,11 +3877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_sp_story
-
-	var_2_71[184] = {
+	pg.base.activity_sp_story[184] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4569,11 +3897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_sp_story
-
-	var_2_72[185] = {
+	pg.base.activity_sp_story[185] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4593,11 +3917,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_sp_story
-
-	var_2_73[186] = {
+	pg.base.activity_sp_story[186] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4617,11 +3937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_sp_story
-
-	var_2_74[187] = {
+	pg.base.activity_sp_story[187] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4641,11 +3957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_sp_story
-
-	var_2_75[188] = {
+	pg.base.activity_sp_story[188] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4665,11 +3977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_sp_story
-
-	var_2_76[191] = {
+	pg.base.activity_sp_story[191] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -4682,11 +3990,7 @@ end)()
 		id = 191,
 		lock = ""
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_sp_story
-
-	var_2_77[192] = {
+	pg.base.activity_sp_story[192] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4706,11 +4010,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_sp_story
-
-	var_2_78[193] = {
+	pg.base.activity_sp_story[193] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4730,11 +4030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_sp_story
-
-	var_2_79[194] = {
+	pg.base.activity_sp_story[194] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4754,11 +4050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_sp_story
-
-	var_2_80[195] = {
+	pg.base.activity_sp_story[195] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4778,11 +4070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_sp_story
-
-	var_2_81[196] = {
+	pg.base.activity_sp_story[196] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4802,11 +4090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_sp_story
-
-	var_2_82[197] = {
+	pg.base.activity_sp_story[197] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4827,11 +4111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_sp_story
-
-	var_2_83[198] = {
+	pg.base.activity_sp_story[198] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -4851,11 +4131,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_sp_story
-
-	var_2_84[199] = {
+	pg.base.activity_sp_story[199] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4875,11 +4151,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_sp_story
-
-	var_2_85[200] = {
+	pg.base.activity_sp_story[200] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4899,11 +4171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_sp_story
-
-	var_2_86[201] = {
+	pg.base.activity_sp_story[201] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4923,11 +4191,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_sp_story
-
-	var_2_87[202] = {
+	pg.base.activity_sp_story[202] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4947,11 +4211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_sp_story
-
-	var_2_88[203] = {
+	pg.base.activity_sp_story[203] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4971,11 +4231,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_sp_story
-
-	var_2_89[204] = {
+	pg.base.activity_sp_story[204] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -4995,11 +4251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_sp_story
-
-	var_2_90[205] = {
+	pg.base.activity_sp_story[205] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5019,11 +4271,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_sp_story
-
-	var_2_91[206] = {
+	pg.base.activity_sp_story[206] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5043,11 +4291,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_sp_story
-
-	var_2_92[207] = {
+	pg.base.activity_sp_story[207] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5067,11 +4311,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_sp_story
-
-	var_2_93[208] = {
+	pg.base.activity_sp_story[208] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -5092,11 +4332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_sp_story
-
-	var_2_94[209] = {
+	pg.base.activity_sp_story[209] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5116,11 +4352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_sp_story
-
-	var_2_95[210] = {
+	pg.base.activity_sp_story[210] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5140,11 +4372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_sp_story
-
-	var_2_96[211] = {
+	pg.base.activity_sp_story[211] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5164,11 +4392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_sp_story
-
-	var_2_97[212] = {
+	pg.base.activity_sp_story[212] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5188,11 +4412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_sp_story
-
-	var_2_98[213] = {
+	pg.base.activity_sp_story[213] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5212,8 +4432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.activity_sp_story[214] = {
+	pg.base.activity_sp_story[214] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5237,11 +4456,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_sp_story
-
-	var_3_0[215] = {
+	pg.base.activity_sp_story[215] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5261,11 +4476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_sp_story
-
-	var_3_1[216] = {
+	pg.base.activity_sp_story[216] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -5285,11 +4496,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_sp_story
-
-	var_3_2[217] = {
+	pg.base.activity_sp_story[217] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5309,11 +4516,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_sp_story
-
-	var_3_3[218] = {
+	pg.base.activity_sp_story[218] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5333,11 +4536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_sp_story
-
-	var_3_4[219] = {
+	pg.base.activity_sp_story[219] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5357,11 +4556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_sp_story
-
-	var_3_5[220] = {
+	pg.base.activity_sp_story[220] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5381,11 +4576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_sp_story
-
-	var_3_6[221] = {
+	pg.base.activity_sp_story[221] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5405,11 +4596,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_sp_story
-
-	var_3_7[222] = {
+	pg.base.activity_sp_story[222] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5429,11 +4616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_sp_story
-
-	var_3_8[223] = {
+	pg.base.activity_sp_story[223] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5453,11 +4636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_sp_story
-
-	var_3_9[224] = {
+	pg.base.activity_sp_story[224] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5477,11 +4656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_sp_story
-
-	var_3_10[225] = {
+	pg.base.activity_sp_story[225] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5501,11 +4676,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_sp_story
-
-	var_3_11[226] = {
+	pg.base.activity_sp_story[226] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "map_1920001",
@@ -5525,11 +4696,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_sp_story
-
-	var_3_12[231] = {
+	pg.base.activity_sp_story[231] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -5542,11 +4709,7 @@ end)()
 		id = 231,
 		lock = ""
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_sp_story
-
-	var_3_13[232] = {
+	pg.base.activity_sp_story[232] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5566,11 +4729,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_sp_story
-
-	var_3_14[233] = {
+	pg.base.activity_sp_story[233] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5590,11 +4749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_sp_story
-
-	var_3_15[234] = {
+	pg.base.activity_sp_story[234] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5614,11 +4769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_sp_story
-
-	var_3_16[235] = {
+	pg.base.activity_sp_story[235] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5638,11 +4789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_sp_story
-
-	var_3_17[236] = {
+	pg.base.activity_sp_story[236] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5662,11 +4809,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_sp_story
-
-	var_3_18[237] = {
+	pg.base.activity_sp_story[237] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5686,11 +4829,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_sp_story
-
-	var_3_19[238] = {
+	pg.base.activity_sp_story[238] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5710,11 +4849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_sp_story
-
-	var_3_20[239] = {
+	pg.base.activity_sp_story[239] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5734,11 +4869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_sp_story
-
-	var_3_21[240] = {
+	pg.base.activity_sp_story[240] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5758,11 +4889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_sp_story
-
-	var_3_22[241] = {
+	pg.base.activity_sp_story[241] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5782,11 +4909,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_sp_story
-
-	var_3_23[242] = {
+	pg.base.activity_sp_story[242] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5806,11 +4929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_sp_story
-
-	var_3_24[243] = {
+	pg.base.activity_sp_story[243] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5830,11 +4949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_sp_story
-
-	var_3_25[244] = {
+	pg.base.activity_sp_story[244] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -5855,11 +4970,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_sp_story
-
-	var_3_26[245] = {
+	pg.base.activity_sp_story[245] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5879,11 +4990,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_sp_story
-
-	var_3_27[246] = {
+	pg.base.activity_sp_story[246] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5903,11 +5010,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_sp_story
-
-	var_3_28[247] = {
+	pg.base.activity_sp_story[247] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5927,11 +5030,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_sp_story
-
-	var_3_29[248] = {
+	pg.base.activity_sp_story[248] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5951,11 +5050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_sp_story
-
-	var_3_30[249] = {
+	pg.base.activity_sp_story[249] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5975,11 +5070,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_sp_story
-
-	var_3_31[250] = {
+	pg.base.activity_sp_story[250] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -5999,11 +5090,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_sp_story
-
-	var_3_32[251] = {
+	pg.base.activity_sp_story[251] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6023,11 +5110,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_sp_story
-
-	var_3_33[252] = {
+	pg.base.activity_sp_story[252] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6047,11 +5130,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_sp_story
-
-	var_3_34[253] = {
+	pg.base.activity_sp_story[253] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6071,11 +5150,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_sp_story
-
-	var_3_35[254] = {
+	pg.base.activity_sp_story[254] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6095,11 +5170,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_sp_story
-
-	var_3_36[255] = {
+	pg.base.activity_sp_story[255] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6119,11 +5190,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_sp_story
-
-	var_3_37[256] = {
+	pg.base.activity_sp_story[256] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6143,11 +5210,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_sp_story
-
-	var_3_38[257] = {
+	pg.base.activity_sp_story[257] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6167,11 +5230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_sp_story
-
-	var_3_39[258] = {
+	pg.base.activity_sp_story[258] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6191,11 +5250,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_sp_story
-
-	var_3_40[259] = {
+	pg.base.activity_sp_story[259] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6217,11 +5272,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_sp_story
-
-	var_3_41[260] = {
+	pg.base.activity_sp_story[260] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6241,11 +5292,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_sp_story
-
-	var_3_42[261] = {
+	pg.base.activity_sp_story[261] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6265,11 +5312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_sp_story
-
-	var_3_43[262] = {
+	pg.base.activity_sp_story[262] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6289,11 +5332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_sp_story
-
-	var_3_44[263] = {
+	pg.base.activity_sp_story[263] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6313,11 +5352,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_sp_story
-
-	var_3_45[264] = {
+	pg.base.activity_sp_story[264] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6337,11 +5372,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_sp_story
-
-	var_3_46[265] = {
+	pg.base.activity_sp_story[265] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6361,11 +5392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_sp_story
-
-	var_3_47[266] = {
+	pg.base.activity_sp_story[266] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6385,11 +5412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_sp_story
-
-	var_3_48[267] = {
+	pg.base.activity_sp_story[267] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6409,11 +5432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_sp_story
-
-	var_3_49[268] = {
+	pg.base.activity_sp_story[268] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6433,11 +5452,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_sp_story
-
-	var_3_50[269] = {
+	pg.base.activity_sp_story[269] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "Map_1960002",
@@ -6457,11 +5472,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_sp_story
-
-	var_3_51[271] = {
+	pg.base.activity_sp_story[271] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -6474,11 +5485,7 @@ end)()
 		id = 271,
 		lock = ""
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_sp_story
-
-	var_3_52[272] = {
+	pg.base.activity_sp_story[272] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6498,11 +5505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_sp_story
-
-	var_3_53[273] = {
+	pg.base.activity_sp_story[273] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6522,11 +5525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_sp_story
-
-	var_3_54[274] = {
+	pg.base.activity_sp_story[274] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6546,11 +5545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_sp_story
-
-	var_3_55[275] = {
+	pg.base.activity_sp_story[275] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6570,11 +5565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_sp_story
-
-	var_3_56[276] = {
+	pg.base.activity_sp_story[276] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6594,11 +5585,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_sp_story
-
-	var_3_57[277] = {
+	pg.base.activity_sp_story[277] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6618,11 +5605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_sp_story
-
-	var_3_58[278] = {
+	pg.base.activity_sp_story[278] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6643,11 +5626,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_sp_story
-
-	var_3_59[279] = {
+	pg.base.activity_sp_story[279] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6667,11 +5646,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_sp_story
-
-	var_3_60[280] = {
+	pg.base.activity_sp_story[280] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6691,11 +5666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_sp_story
-
-	var_3_61[281] = {
+	pg.base.activity_sp_story[281] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6715,11 +5686,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_sp_story
-
-	var_3_62[282] = {
+	pg.base.activity_sp_story[282] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6739,11 +5706,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_sp_story
-
-	var_3_63[283] = {
+	pg.base.activity_sp_story[283] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -6763,11 +5726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_sp_story
-
-	var_3_64[284] = {
+	pg.base.activity_sp_story[284] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6787,11 +5746,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_sp_story
-
-	var_3_65[285] = {
+	pg.base.activity_sp_story[285] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6811,11 +5766,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_sp_story
-
-	var_3_66[291] = {
+	pg.base.activity_sp_story[291] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -6828,11 +5779,7 @@ end)()
 		id = 291,
 		lock = ""
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_sp_story
-
-	var_3_67[292] = {
+	pg.base.activity_sp_story[292] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6852,11 +5799,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_sp_story
-
-	var_3_68[293] = {
+	pg.base.activity_sp_story[293] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6876,11 +5819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_sp_story
-
-	var_3_69[294] = {
+	pg.base.activity_sp_story[294] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6900,11 +5839,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_sp_story
-
-	var_3_70[295] = {
+	pg.base.activity_sp_story[295] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6924,11 +5859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_sp_story
-
-	var_3_71[296] = {
+	pg.base.activity_sp_story[296] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6948,11 +5879,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_sp_story
-
-	var_3_72[297] = {
+	pg.base.activity_sp_story[297] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6972,11 +5899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_sp_story
-
-	var_3_73[298] = {
+	pg.base.activity_sp_story[298] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -6996,11 +5919,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_sp_story
-
-	var_3_74[299] = {
+	pg.base.activity_sp_story[299] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7020,11 +5939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_sp_story
-
-	var_3_75[300] = {
+	pg.base.activity_sp_story[300] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7044,11 +5959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_sp_story
-
-	var_3_76[301] = {
+	pg.base.activity_sp_story[301] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7069,11 +5980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_sp_story
-
-	var_3_77[302] = {
+	pg.base.activity_sp_story[302] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7093,11 +6000,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_sp_story
-
-	var_3_78[303] = {
+	pg.base.activity_sp_story[303] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7117,11 +6020,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_sp_story
-
-	var_3_79[304] = {
+	pg.base.activity_sp_story[304] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7141,11 +6040,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_sp_story
-
-	var_3_80[305] = {
+	pg.base.activity_sp_story[305] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7165,11 +6060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_sp_story
-
-	var_3_81[306] = {
+	pg.base.activity_sp_story[306] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7189,11 +6080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_sp_story
-
-	var_3_82[307] = {
+	pg.base.activity_sp_story[307] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -7213,11 +6100,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_sp_story
-
-	var_3_83[308] = {
+	pg.base.activity_sp_story[308] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7237,11 +6120,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_sp_story
-
-	var_3_84[309] = {
+	pg.base.activity_sp_story[309] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7261,11 +6140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_sp_story
-
-	var_3_85[310] = {
+	pg.base.activity_sp_story[310] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7285,11 +6160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_sp_story
-
-	var_3_86[311] = {
+	pg.base.activity_sp_story[311] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7309,11 +6180,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_sp_story
-
-	var_3_87[312] = {
+	pg.base.activity_sp_story[312] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7333,11 +6200,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_sp_story
-
-	var_3_88[313] = {
+	pg.base.activity_sp_story[313] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7357,11 +6220,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_sp_story
-
-	var_3_89[314] = {
+	pg.base.activity_sp_story[314] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7381,11 +6240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_sp_story
-
-	var_3_90[315] = {
+	pg.base.activity_sp_story[315] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -7405,11 +6260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_sp_story
-
-	var_3_91[316] = {
+	pg.base.activity_sp_story[316] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7429,11 +6280,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_sp_story
-
-	var_3_92[317] = {
+	pg.base.activity_sp_story[317] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7453,11 +6300,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_sp_story
-
-	var_3_93[318] = {
+	pg.base.activity_sp_story[318] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7477,11 +6320,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_sp_story
-
-	var_3_94[319] = {
+	pg.base.activity_sp_story[319] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "Map_1970001",
@@ -7501,11 +6340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_sp_story
-
-	var_3_95[321] = {
+	pg.base.activity_sp_story[321] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -7518,11 +6353,7 @@ end)()
 		id = 321,
 		lock = ""
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_sp_story
-
-	var_3_96[322] = {
+	pg.base.activity_sp_story[322] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7550,11 +6381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_sp_story
-
-	var_3_97[323] = {
+	pg.base.activity_sp_story[323] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7582,11 +6409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_sp_story
-
-	var_3_98[324] = {
+	pg.base.activity_sp_story[324] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -7614,8 +6437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.activity_sp_story[325] = {
+	pg.base.activity_sp_story[325] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7647,11 +6469,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_sp_story
-
-	var_4_0[326] = {
+	pg.base.activity_sp_story[326] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -7679,11 +6497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_sp_story
-
-	var_4_1[327] = {
+	pg.base.activity_sp_story[327] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7711,11 +6525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_sp_story
-
-	var_4_2[328] = {
+	pg.base.activity_sp_story[328] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7743,11 +6553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_sp_story
-
-	var_4_3[329] = {
+	pg.base.activity_sp_story[329] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -7775,11 +6581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_sp_story
-
-	var_4_4[330] = {
+	pg.base.activity_sp_story[330] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7807,11 +6609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_sp_story
-
-	var_4_5[331] = {
+	pg.base.activity_sp_story[331] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7839,11 +6637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_sp_story
-
-	var_4_6[332] = {
+	pg.base.activity_sp_story[332] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7871,11 +6665,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_sp_story
-
-	var_4_7[333] = {
+	pg.base.activity_sp_story[333] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -7903,11 +6693,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_sp_story
-
-	var_4_8[334] = {
+	pg.base.activity_sp_story[334] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7935,11 +6721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_sp_story
-
-	var_4_9[335] = {
+	pg.base.activity_sp_story[335] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7967,11 +6749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_sp_story
-
-	var_4_10[336] = {
+	pg.base.activity_sp_story[336] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -7999,11 +6777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_sp_story
-
-	var_4_11[337] = {
+	pg.base.activity_sp_story[337] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -8032,11 +6806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_sp_story
-
-	var_4_12[338] = {
+	pg.base.activity_sp_story[338] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8064,11 +6834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_sp_story
-
-	var_4_13[339] = {
+	pg.base.activity_sp_story[339] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8096,11 +6862,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_sp_story
-
-	var_4_14[341] = {
+	pg.base.activity_sp_story[341] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -8113,11 +6875,7 @@ end)()
 		id = 341,
 		lock = ""
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_sp_story
-
-	var_4_15[342] = {
+	pg.base.activity_sp_story[342] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8137,11 +6895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_sp_story
-
-	var_4_16[343] = {
+	pg.base.activity_sp_story[343] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8161,11 +6915,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_sp_story
-
-	var_4_17[344] = {
+	pg.base.activity_sp_story[344] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8185,11 +6935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_sp_story
-
-	var_4_18[345] = {
+	pg.base.activity_sp_story[345] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8209,11 +6955,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_sp_story
-
-	var_4_19[346] = {
+	pg.base.activity_sp_story[346] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8233,11 +6975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_sp_story
-
-	var_4_20[347] = {
+	pg.base.activity_sp_story[347] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8257,11 +6995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_sp_story
-
-	var_4_21[348] = {
+	pg.base.activity_sp_story[348] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8281,11 +7015,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_sp_story
-
-	var_4_22[349] = {
+	pg.base.activity_sp_story[349] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8305,11 +7035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_sp_story
-
-	var_4_23[350] = {
+	pg.base.activity_sp_story[350] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8329,11 +7055,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_sp_story
-
-	var_4_24[351] = {
+	pg.base.activity_sp_story[351] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8353,11 +7075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_sp_story
-
-	var_4_25[352] = {
+	pg.base.activity_sp_story[352] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -8377,11 +7095,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_sp_story
-
-	var_4_26[353] = {
+	pg.base.activity_sp_story[353] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8402,11 +7116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_sp_story
-
-	var_4_27[354] = {
+	pg.base.activity_sp_story[354] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8426,11 +7136,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_sp_story
-
-	var_4_28[355] = {
+	pg.base.activity_sp_story[355] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8450,11 +7156,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_sp_story
-
-	var_4_29[356] = {
+	pg.base.activity_sp_story[356] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8474,11 +7176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_sp_story
-
-	var_4_30[357] = {
+	pg.base.activity_sp_story[357] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8498,11 +7196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_sp_story
-
-	var_4_31[358] = {
+	pg.base.activity_sp_story[358] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8522,11 +7216,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_sp_story
-
-	var_4_32[359] = {
+	pg.base.activity_sp_story[359] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8546,11 +7236,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_sp_story
-
-	var_4_33[360] = {
+	pg.base.activity_sp_story[360] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8570,11 +7256,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_sp_story
-
-	var_4_34[361] = {
+	pg.base.activity_sp_story[361] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8594,11 +7276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_sp_story
-
-	var_4_35[362] = {
+	pg.base.activity_sp_story[362] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8618,11 +7296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_sp_story
-
-	var_4_36[363] = {
+	pg.base.activity_sp_story[363] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8642,11 +7316,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_sp_story
-
-	var_4_37[364] = {
+	pg.base.activity_sp_story[364] = {
 		story_type = 3,
 		label_key = "",
 		change_prefab = "",
@@ -8667,11 +7337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_sp_story
-
-	var_4_38[365] = {
+	pg.base.activity_sp_story[365] = {
 		story_type = 3,
 		label_key = "",
 		change_prefab = "",
@@ -8692,11 +7358,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_sp_story
-
-	var_4_39[366] = {
+	pg.base.activity_sp_story[366] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "map_1990001",
@@ -8716,11 +7378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_sp_story
-
-	var_4_40[371] = {
+	pg.base.activity_sp_story[371] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -8733,11 +7391,7 @@ end)()
 		id = 371,
 		lock = ""
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_sp_story
-
-	var_4_41[372] = {
+	pg.base.activity_sp_story[372] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8765,11 +7419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_sp_story
-
-	var_4_42[373] = {
+	pg.base.activity_sp_story[373] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8797,11 +7447,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_sp_story
-
-	var_4_43[374] = {
+	pg.base.activity_sp_story[374] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -8829,11 +7475,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_sp_story
-
-	var_4_44[375] = {
+	pg.base.activity_sp_story[375] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8861,11 +7503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_sp_story
-
-	var_4_45[376] = {
+	pg.base.activity_sp_story[376] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -8893,11 +7531,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_sp_story
-
-	var_4_46[377] = {
+	pg.base.activity_sp_story[377] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -8926,11 +7560,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_sp_story
-
-	var_4_47[378] = {
+	pg.base.activity_sp_story[378] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -8958,11 +7588,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_sp_story
-
-	var_4_48[379] = {
+	pg.base.activity_sp_story[379] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -8990,11 +7616,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_sp_story
-
-	var_4_49[380] = {
+	pg.base.activity_sp_story[380] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -9022,11 +7644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_sp_story
-
-	var_4_50[381] = {
+	pg.base.activity_sp_story[381] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -9056,11 +7674,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_sp_story
-
-	var_4_51[382] = {
+	pg.base.activity_sp_story[382] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -9088,11 +7702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_sp_story
-
-	var_4_52[383] = {
+	pg.base.activity_sp_story[383] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -9120,11 +7730,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_sp_story
-
-	var_4_53[384] = {
+	pg.base.activity_sp_story[384] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -9153,11 +7759,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_sp_story
-
-	var_4_54[385] = {
+	pg.base.activity_sp_story[385] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9185,11 +7787,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_sp_story
-
-	var_4_55[386] = {
+	pg.base.activity_sp_story[386] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9217,11 +7815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_sp_story
-
-	var_4_56[387] = {
+	pg.base.activity_sp_story[387] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "juqing_heisewuqi",
@@ -9249,11 +7843,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_sp_story
-
-	var_4_57[388] = {
+	pg.base.activity_sp_story[388] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9281,11 +7871,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_sp_story
-
-	var_4_58[389] = {
+	pg.base.activity_sp_story[389] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9313,11 +7899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_sp_story
-
-	var_4_59[390] = {
+	pg.base.activity_sp_story[390] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -9330,11 +7912,7 @@ end)()
 		id = 390,
 		lock = ""
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_sp_story
-
-	var_4_60[391] = {
+	pg.base.activity_sp_story[391] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9354,11 +7932,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_sp_story
-
-	var_4_61[392] = {
+	pg.base.activity_sp_story[392] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9378,11 +7952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_sp_story
-
-	var_4_62[393] = {
+	pg.base.activity_sp_story[393] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9402,11 +7972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_sp_story
-
-	var_4_63[394] = {
+	pg.base.activity_sp_story[394] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9426,11 +7992,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_sp_story
-
-	var_4_64[395] = {
+	pg.base.activity_sp_story[395] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9450,11 +8012,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_sp_story
-
-	var_4_65[396] = {
+	pg.base.activity_sp_story[396] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9474,11 +8032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_sp_story
-
-	var_4_66[397] = {
+	pg.base.activity_sp_story[397] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9498,11 +8052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_sp_story
-
-	var_4_67[398] = {
+	pg.base.activity_sp_story[398] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9522,11 +8072,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_sp_story
-
-	var_4_68[399] = {
+	pg.base.activity_sp_story[399] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9546,11 +8092,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_sp_story
-
-	var_4_69[400] = {
+	pg.base.activity_sp_story[400] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9570,11 +8112,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_sp_story
-
-	var_4_70[401] = {
+	pg.base.activity_sp_story[401] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9594,11 +8132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_sp_story
-
-	var_4_71[402] = {
+	pg.base.activity_sp_story[402] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "map_2020001",
@@ -9618,11 +8152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_sp_story
-
-	var_4_72[411] = {
+	pg.base.activity_sp_story[411] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -9647,11 +8177,7 @@ end)()
 			"完成DAY1任务"
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_sp_story
-
-	var_4_73[412] = {
+	pg.base.activity_sp_story[412] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9683,11 +8209,7 @@ end)()
 			"完成DAY2任务"
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_sp_story
-
-	var_4_74[413] = {
+	pg.base.activity_sp_story[413] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9719,11 +8241,7 @@ end)()
 			"完成DAY3任务"
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_sp_story
-
-	var_4_75[414] = {
+	pg.base.activity_sp_story[414] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9755,11 +8273,7 @@ end)()
 			"完成DAY4任务"
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_sp_story
-
-	var_4_76[415] = {
+	pg.base.activity_sp_story[415] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9791,11 +8305,7 @@ end)()
 			"完成DAY5任务"
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_sp_story
-
-	var_4_77[416] = {
+	pg.base.activity_sp_story[416] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9827,11 +8337,7 @@ end)()
 			"完成DAY6任务"
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_sp_story
-
-	var_4_78[417] = {
+	pg.base.activity_sp_story[417] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9863,11 +8369,7 @@ end)()
 			"完成DAY7任务"
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_sp_story
-
-	var_4_79[421] = {
+	pg.base.activity_sp_story[421] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -9880,11 +8382,7 @@ end)()
 		id = 421,
 		lock = ""
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_sp_story
-
-	var_4_80[422] = {
+	pg.base.activity_sp_story[422] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -9904,11 +8402,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_sp_story
-
-	var_4_81[423] = {
+	pg.base.activity_sp_story[423] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9928,11 +8422,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_sp_story
-
-	var_4_82[424] = {
+	pg.base.activity_sp_story[424] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9952,11 +8442,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_sp_story
-
-	var_4_83[425] = {
+	pg.base.activity_sp_story[425] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -9976,11 +8462,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_sp_story
-
-	var_4_84[426] = {
+	pg.base.activity_sp_story[426] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10000,11 +8482,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_sp_story
-
-	var_4_85[427] = {
+	pg.base.activity_sp_story[427] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10024,11 +8502,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_sp_story
-
-	var_4_86[428] = {
+	pg.base.activity_sp_story[428] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10048,11 +8522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_sp_story
-
-	var_4_87[429] = {
+	pg.base.activity_sp_story[429] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -10072,11 +8542,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_sp_story
-
-	var_4_88[430] = {
+	pg.base.activity_sp_story[430] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10096,11 +8562,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_sp_story
-
-	var_4_89[431] = {
+	pg.base.activity_sp_story[431] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10120,11 +8582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_sp_story
-
-	var_4_90[432] = {
+	pg.base.activity_sp_story[432] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10144,11 +8602,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_sp_story
-
-	var_4_91[433] = {
+	pg.base.activity_sp_story[433] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10168,11 +8622,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_sp_story
-
-	var_4_92[434] = {
+	pg.base.activity_sp_story[434] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10192,11 +8642,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_sp_story
-
-	var_4_93[435] = {
+	pg.base.activity_sp_story[435] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10216,11 +8662,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_sp_story
-
-	var_4_94[436] = {
+	pg.base.activity_sp_story[436] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10240,11 +8682,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_sp_story
-
-	var_4_95[437] = {
+	pg.base.activity_sp_story[437] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10264,11 +8702,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_sp_story
-
-	var_4_96[438] = {
+	pg.base.activity_sp_story[438] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10288,11 +8722,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_sp_story
-
-	var_4_97[439] = {
+	pg.base.activity_sp_story[439] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10312,11 +8742,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_sp_story
-
-	var_4_98[440] = {
+	pg.base.activity_sp_story[440] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10336,8 +8762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.activity_sp_story[441] = {
+	pg.base.activity_sp_story[441] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10361,11 +8786,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_sp_story
-
-	var_5_0[442] = {
+	pg.base.activity_sp_story[442] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10385,11 +8806,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_sp_story
-
-	var_5_1[443] = {
+	pg.base.activity_sp_story[443] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10409,11 +8826,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_sp_story
-
-	var_5_2[444] = {
+	pg.base.activity_sp_story[444] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10433,11 +8846,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_sp_story
-
-	var_5_3[445] = {
+	pg.base.activity_sp_story[445] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -10457,11 +8866,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.activity_sp_story
-
-	var_5_4[446] = {
+	pg.base.activity_sp_story[446] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10481,11 +8886,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.activity_sp_story
-
-	var_5_5[447] = {
+	pg.base.activity_sp_story[447] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10505,11 +8906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.activity_sp_story
-
-	var_5_6[448] = {
+	pg.base.activity_sp_story[448] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -10529,11 +8926,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.activity_sp_story
-
-	var_5_7[449] = {
+	pg.base.activity_sp_story[449] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10553,11 +8946,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.activity_sp_story
-
-	var_5_8[450] = {
+	pg.base.activity_sp_story[450] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10577,11 +8966,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.activity_sp_story
-
-	var_5_9[451] = {
+	pg.base.activity_sp_story[451] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10601,11 +8986,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.activity_sp_story
-
-	var_5_10[452] = {
+	pg.base.activity_sp_story[452] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -10625,11 +9006,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.activity_sp_story
-
-	var_5_11[453] = {
+	pg.base.activity_sp_story[453] = {
 		story_type = 2,
 		label_key = "",
 		change_prefab = "",
@@ -10649,11 +9026,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.activity_sp_story
-
-	var_5_12[454] = {
+	pg.base.activity_sp_story[454] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10673,11 +9046,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.activity_sp_story
-
-	var_5_13[455] = {
+	pg.base.activity_sp_story[455] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10697,11 +9066,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.activity_sp_story
-
-	var_5_14[456] = {
+	pg.base.activity_sp_story[456] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10721,11 +9086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.activity_sp_story
-
-	var_5_15[457] = {
+	pg.base.activity_sp_story[457] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10745,11 +9106,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.activity_sp_story
-
-	var_5_16[458] = {
+	pg.base.activity_sp_story[458] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10769,11 +9126,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.activity_sp_story
-
-	var_5_17[459] = {
+	pg.base.activity_sp_story[459] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "map_2030003B",
@@ -10793,11 +9146,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.activity_sp_story
-
-	var_5_18[461] = {
+	pg.base.activity_sp_story[461] = {
 		story_type = 1,
 		pre_event = "",
 		label_key = "",
@@ -10810,11 +9159,7 @@ end)()
 		id = 461,
 		lock = ""
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.activity_sp_story
-
-	var_5_19[462] = {
+	pg.base.activity_sp_story[462] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10834,11 +9179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.activity_sp_story
-
-	var_5_20[463] = {
+	pg.base.activity_sp_story[463] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10858,11 +9199,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.activity_sp_story
-
-	var_5_21[464] = {
+	pg.base.activity_sp_story[464] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10882,11 +9219,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.activity_sp_story
-
-	var_5_22[465] = {
+	pg.base.activity_sp_story[465] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10906,11 +9239,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.activity_sp_story
-
-	var_5_23[466] = {
+	pg.base.activity_sp_story[466] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10930,11 +9259,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.activity_sp_story
-
-	var_5_24[467] = {
+	pg.base.activity_sp_story[467] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10954,11 +9279,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.activity_sp_story
-
-	var_5_25[468] = {
+	pg.base.activity_sp_story[468] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -10978,11 +9299,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.activity_sp_story
-
-	var_5_26[469] = {
+	pg.base.activity_sp_story[469] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11002,11 +9319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.activity_sp_story
-
-	var_5_27[471] = {
+	pg.base.activity_sp_story[471] = {
 		story_type = 2,
 		pre_event = "",
 		label_key = "",
@@ -11031,11 +9344,7 @@ end)()
 			"完成DAY1任务"
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.activity_sp_story
-
-	var_5_28[472] = {
+	pg.base.activity_sp_story[472] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11067,11 +9376,7 @@ end)()
 			"完成DAY2任务"
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.activity_sp_story
-
-	var_5_29[473] = {
+	pg.base.activity_sp_story[473] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11103,11 +9408,7 @@ end)()
 			"完成DAY3任务"
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.activity_sp_story
-
-	var_5_30[474] = {
+	pg.base.activity_sp_story[474] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11139,11 +9440,7 @@ end)()
 			"完成DAY4任务"
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.activity_sp_story
-
-	var_5_31[475] = {
+	pg.base.activity_sp_story[475] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11175,11 +9472,7 @@ end)()
 			"完成DAY5任务"
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.activity_sp_story
-
-	var_5_32[476] = {
+	pg.base.activity_sp_story[476] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11211,8 +9504,7 @@ end)()
 			"完成DAY6任务"
 		}
 	}
-	pg = var_5_32
-	var_5_32.base.activity_sp_story[477] = {
+	pg.base.activity_sp_story[477] = {
 		story_type = 1,
 		label_key = "",
 		change_prefab = "",
@@ -11242,6 +9534,921 @@ end)()
 			"完成EP-6",
 			"完成DAY7任务",
 			"完成DAY7任务"
+		}
+	}
+	pg.base.activity_sp_story[481] = {
+		story_type = 1,
+		pre_event = "",
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "",
+		change_background = "star_level_bg_154",
+		name = "EP1-1 初梦",
+		story = "CHENNIYUXINGGUANGZHICHENG1",
+		change_bgm = "story-whiterichard-chasing",
+		id = 481,
+		lock = ""
+	}
+	pg.base.activity_sp_story[482] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP1-1",
+		change_background = "star_level_bg_154",
+		name = "EP1-2 小巷子的异常",
+		story = "CHENNIYUXINGGUANGZHICHENG2",
+		change_bgm = "story-thinking-philosophy",
+		id = 482,
+		pre_event = {
+			481
+		},
+		lock = {
+			{
+				4,
+				481
+			}
+		}
+	}
+	pg.base.activity_sp_story[483] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP1-2",
+		change_background = "star_level_bg_149",
+		name = "EP1-3 第二位名侦探",
+		story = "CHENNIYUXINGGUANGZHICHENG3",
+		change_bgm = "story-wanderingcity-future",
+		id = 483,
+		pre_event = {
+			482
+		},
+		lock = {
+			{
+				4,
+				482
+			}
+		}
+	}
+	pg.base.activity_sp_story[484] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP1-3",
+		change_background = "star_level_bg_603",
+		name = "EP1-4 下城区",
+		story = "CHENNIYUXINGGUANGZHICHENG4",
+		change_bgm = "login_us_0401",
+		id = 484,
+		pre_event = {
+			483
+		},
+		lock = {
+			{
+				4,
+				483
+			}
+		}
+	}
+	pg.base.activity_sp_story[485] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP1-4",
+		change_background = "star_level_bg_520",
+		name = "EP1-5 星光城的规则",
+		story = "CHENNIYUXINGGUANGZHICHENG5",
+		change_bgm = "idol-BlueSpirit-inst",
+		id = 485,
+		pre_event = {
+			484
+		},
+		lock = {
+			{
+				4,
+				484
+			}
+		}
+	}
+	pg.base.activity_sp_story[486] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP1-5",
+		change_background = "star_level_bg_520",
+		name = "EP2-1 指点",
+		story = "CHENNIYUXINGGUANGZHICHENG6",
+		change_bgm = "story-dailyfuture-soft",
+		id = 486,
+		pre_event = {
+			485
+		},
+		lock = {
+			{
+				4,
+				485
+			}
+		}
+	}
+	pg.base.activity_sp_story[487] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP2-1",
+		change_background = "star_level_bg_529",
+		name = "EP2-2 偶像与后援团",
+		story = "CHENNIYUXINGGUANGZHICHENG7",
+		change_bgm = "theme-richard-white",
+		id = 487,
+		pre_event = {
+			486
+		},
+		lock = {
+			{
+				4,
+				486
+			}
+		}
+	}
+	pg.base.activity_sp_story[488] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP2-2",
+		change_background = "star_level_bg_313",
+		name = "EP2-3 情绪掠影",
+		story = "CHENNIYUXINGGUANGZHICHENG8",
+		change_bgm = "story-whiterichard-chasing",
+		id = 488,
+		pre_event = {
+			486
+		},
+		lock = {
+			{
+				4,
+				487
+			}
+		}
+	}
+	pg.base.activity_sp_story[489] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP2-3",
+		change_background = "star_level_bg_313",
+		name = "EP2-4 案发现场调查",
+		story = "CHENNIYUXINGGUANGZHICHENG9",
+		change_bgm = "theme-richard-white",
+		id = 489,
+		pre_event = {
+			487,
+			488
+		},
+		lock = {
+			{
+				4,
+				488
+			}
+		}
+	}
+	pg.base.activity_sp_story[490] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP2-4",
+		change_background = "star_level_bg_160",
+		name = "EP2-5 等价交换",
+		story = "CHENNIYUXINGGUANGZHICHENG10",
+		change_bgm = "story-dailyfuture-soft",
+		id = 490,
+		pre_event = {
+			489
+		},
+		lock = {
+			{
+				4,
+				489
+			}
+		}
+	}
+	pg.base.activity_sp_story[491] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP2-5",
+		change_background = "star_level_bg_306",
+		name = "EP3-1 扩大调查",
+		story = "CHENNIYUXINGGUANGZHICHENG11",
+		change_bgm = "story-whiterichard-chasing",
+		id = 491,
+		pre_event = {
+			490
+		},
+		lock = {
+			{
+				4,
+				490
+			}
+		}
+	}
+	pg.base.activity_sp_story[492] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP3-1",
+		change_background = "star_level_bg_313",
+		name = "EP3-2 安全专家",
+		story = "CHENNIYUXINGGUANGZHICHENG12",
+		change_bgm = "login_us_0401",
+		id = 492,
+		pre_event = {
+			491
+		},
+		lock = {
+			{
+				4,
+				491
+			}
+		}
+	}
+	pg.base.activity_sp_story[493] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP3-2",
+		change_background = "bg_xingguangcheng_cg1",
+		name = "EP3-3 小偷的情报",
+		story = "CHENNIYUXINGGUANGZHICHENG13",
+		change_bgm = "theme-richard-white",
+		id = 493,
+		pre_event = {
+			492
+		},
+		lock = {
+			{
+				4,
+				492
+			}
+		}
+	}
+	pg.base.activity_sp_story[494] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP3-3",
+		change_background = "star_level_bg_603",
+		name = "EP3-4 初探大都会区",
+		story = "CHENNIYUXINGGUANGZHICHENG14",
+		change_bgm = "login_us_0401",
+		id = 494,
+		pre_event = {
+			493
+		},
+		lock = {
+			{
+				4,
+				493
+			}
+		}
+	}
+	pg.base.activity_sp_story[495] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP3-4",
+		change_background = "star_level_bg_169",
+		name = "EP4-1 进入星光塔的方法",
+		story = "CHENNIYUXINGGUANGZHICHENG15",
+		change_bgm = "story-dailyfuture-soft",
+		id = 495,
+		pre_event = {
+			494
+		},
+		lock = {
+			{
+				4,
+				494
+			}
+		}
+	}
+	pg.base.activity_sp_story[496] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP4-1",
+		change_background = "star_level_bg_603",
+		name = "EP4-2 演出举办许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG16",
+		change_bgm = "story-dailyfuture-soft",
+		id = 496,
+		pre_event = {
+			495
+		},
+		lock = {
+			{
+				4,
+				495
+			}
+		}
+	}
+	pg.base.activity_sp_story[497] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP4-2",
+		change_background = "star_level_bg_169",
+		name = "EP4-3 无法下班的公寓",
+		story = "CHENNIYUXINGGUANGZHICHENG17",
+		change_bgm = "theme-richard-white",
+		id = 497,
+		pre_event = {
+			496
+		},
+		lock = {
+			{
+				4,
+				496
+			}
+		}
+	}
+	pg.base.activity_sp_story[498] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP4-3",
+		change_background = "star_level_bg_306",
+		name = "EP4-4 更多的许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG18",
+		change_bgm = "story-whiterichard-chasing",
+		id = 498,
+		pre_event = {
+			497
+		},
+		lock = {
+			{
+				4,
+				497
+			}
+		}
+	}
+	pg.base.activity_sp_story[499] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP4-4",
+		change_background = "star_level_bg_194",
+		name = "EP4-5 梳理行动",
+		story = "CHENNIYUXINGGUANGZHICHENG19",
+		change_bgm = "doa-az-story-1",
+		id = 499,
+		pre_event = {
+			498
+		},
+		lock = {
+			{
+				4,
+				498
+			}
+		}
+	}
+	pg.base.activity_sp_story[500] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP4-5",
+		change_background = "star_level_bg_603",
+		name = "EP5-1 场地使用许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG20",
+		change_bgm = "login_us_0401",
+		id = 500,
+		pre_event = {
+			499
+		},
+		lock = {
+			{
+				4,
+				499
+			}
+		}
+	}
+	pg.base.activity_sp_story[501] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-1",
+		change_background = "star_level_bg_529",
+		name = "EP5-2 接下来的计划",
+		story = "CHENNIYUXINGGUANGZHICHENG21",
+		change_bgm = "story-dailyfuture-soft",
+		id = 501,
+		pre_event = {
+			500
+		},
+		lock = {
+			{
+				4,
+				500
+			}
+		}
+	}
+	pg.base.activity_sp_story[502] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-2",
+		change_background = "star_level_bg_325",
+		name = "EP5-3 来组乐队吧",
+		story = "CHENNIYUXINGGUANGZHICHENG22",
+		change_bgm = "idol-WISHNESS-inst",
+		id = 502,
+		pre_event = {
+			501
+		},
+		lock = {
+			{
+				4,
+				501
+			}
+		}
+	}
+	pg.base.activity_sp_story[503] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-3",
+		change_background = "star_level_bg_150",
+		name = "EP5-4 Shining☆Forever",
+		story = "CHENNIYUXINGGUANGZHICHENG23",
+		change_bgm = "story-dailyfuture-soft",
+		id = 503,
+		pre_event = {
+			502
+		},
+		lock = {
+			{
+				4,
+				502
+			}
+		}
+	}
+	pg.base.activity_sp_story[504] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-4",
+		change_background = "star_level_bg_660",
+		name = "EP5-5 舞台设备许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG24",
+		change_bgm = "theme-richard-white",
+		id = 504,
+		pre_event = {
+			503
+		},
+		lock = {
+			{
+				4,
+				503
+			}
+		}
+	}
+	pg.base.activity_sp_story[505] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-5",
+		change_background = "star_level_bg_529",
+		name = "EP5-6 P.M广场",
+		story = "CHENNIYUXINGGUANGZHICHENG25",
+		change_bgm = "theme-richard-white",
+		id = 505,
+		pre_event = {
+			504
+		},
+		lock = {
+			{
+				4,
+				504
+			}
+		}
+	}
+	pg.base.activity_sp_story[506] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-6",
+		change_background = "star_level_bg_301",
+		name = "EP5-7 演出服饰许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG26",
+		change_bgm = "story-whiterichard-chasing",
+		id = 506,
+		pre_event = {
+			505
+		},
+		lock = {
+			{
+				4,
+				505
+			}
+		}
+	}
+	pg.base.activity_sp_story[507] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-7",
+		change_background = "star_level_bg_301",
+		name = "EP5-8 被诅咒的广告卡",
+		story = "CHENNIYUXINGGUANGZHICHENG27",
+		change_bgm = "battle-starcity-rhythm",
+		id = 507,
+		pre_event = {
+			506
+		},
+		lock = {
+			{
+				4,
+				506
+			}
+		}
+	}
+	pg.base.activity_sp_story[508] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-8",
+		change_background = "star_level_bg_306",
+		name = "EP5-9 广告宣传许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG28",
+		change_bgm = "theme-richang-fashion",
+		id = 508,
+		pre_event = {
+			507
+		},
+		lock = {
+			{
+				4,
+				507
+			}
+		}
+	}
+	pg.base.activity_sp_story[509] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP5-9",
+		change_background = "star_level_bg_660",
+		name = "EP6-1 大就是美",
+		story = "CHENNIYUXINGGUANGZHICHENG29",
+		change_bgm = "story-dailyfuture-soft",
+		id = 509,
+		pre_event = {
+			508
+		},
+		lock = {
+			{
+				4,
+				508
+			}
+		}
+	}
+	pg.base.activity_sp_story[510] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP6-1",
+		change_background = "star_level_bg_326",
+		name = "EP6-2 理查德的计划",
+		story = "CHENNIYUXINGGUANGZHICHENG30",
+		change_bgm = "story-cardrive-stand",
+		id = 510,
+		pre_event = {
+			509
+		},
+		lock = {
+			{
+				4,
+				509
+			}
+		}
+	}
+	pg.base.activity_sp_story[511] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP6-2",
+		change_background = "star_level_bg_326",
+		name = "EP6-3 疾速狂飙",
+		story = "CHENNIYUXINGGUANGZHICHENG31",
+		change_bgm = "story-cardrive-racing",
+		id = 511,
+		pre_event = {
+			510
+		},
+		lock = {
+			{
+				4,
+				510
+			}
+		}
+	}
+	pg.base.activity_sp_story[512] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP6-3",
+		change_background = "star_level_bg_503",
+		name = "EP6-4 安保团队许可证",
+		story = "CHENNIYUXINGGUANGZHICHENG32",
+		change_bgm = "story-whiterichard-chasing",
+		id = 512,
+		pre_event = {
+			511
+		},
+		lock = {
+			{
+				4,
+				511
+			}
+		}
+	}
+	pg.base.activity_sp_story[513] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP6-4",
+		change_background = "star_level_bg_327",
+		name = "EP7-1 第二梦",
+		story = "CHENNIYUXINGGUANGZHICHENG33",
+		change_bgm = "theme-undead",
+		id = 513,
+		pre_event = {
+			512
+		},
+		lock = {
+			{
+				4,
+				512
+			}
+		}
+	}
+	pg.base.activity_sp_story[514] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP7-1",
+		change_background = "star_level_bg_325",
+		name = "EP7-2 梦醒",
+		story = "CHENNIYUXINGGUANGZHICHENG34",
+		change_bgm = "theme-commander-ally",
+		id = 514,
+		pre_event = {
+			513
+		},
+		lock = {
+			{
+				4,
+				513
+			}
+		}
+	}
+	pg.base.activity_sp_story[515] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP7-2",
+		change_background = "bg_xingguangcheng_2",
+		name = "EP7-3 蛾火",
+		story = "CHENNIYUXINGGUANGZHICHENG35",
+		change_bgm = "battle-starcity-rhythm",
+		id = 515,
+		pre_event = {
+			513
+		},
+		lock = {
+			{
+				4,
+				514
+			}
+		}
+	}
+	pg.base.activity_sp_story[516] = {
+		story_type = 2,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP7-3",
+		change_background = "bg_xingguangcheng_cg2",
+		name = "EP7-4 洄游",
+		story = "2056001",
+		change_bgm = "votefes-up",
+		id = 516,
+		pre_event = {
+			515
+		},
+		lock = {
+			{
+				4,
+				515
+			}
+		}
+	}
+	pg.base.activity_sp_story[517] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP7-4",
+		change_background = "bg_xingguangcheng_2",
+		name = "EP7-5 摊牌",
+		story = "CHENNIYUXINGGUANGZHICHENG37",
+		change_bgm = "theme-richard",
+		id = 517,
+		pre_event = {
+			514,
+			516
+		},
+		lock = {
+			{
+				4,
+				516
+			}
+		}
+	}
+	pg.base.activity_sp_story[518] = {
+		story_type = 2,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP7-5",
+		change_background = "bg_xingguangcheng_2",
+		name = "EP8-1 星光城之战I",
+		story = "2056002",
+		change_bgm = "theme-commander-ally",
+		id = 518,
+		pre_event = {
+			517
+		},
+		lock = {
+			{
+				4,
+				517
+			}
+		}
+	}
+	pg.base.activity_sp_story[519] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP8-1",
+		change_background = "bg_xingguangcheng_3",
+		name = "EP8-2 星光之外",
+		story = "CHENNIYUXINGGUANGZHICHENG39",
+		change_bgm = "battle-thehierophantV",
+		id = 519,
+		pre_event = {
+			518
+		},
+		lock = {
+			{
+				4,
+				518
+			}
+		}
+	}
+	pg.base.activity_sp_story[520] = {
+		story_type = 2,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP8-2",
+		change_background = "bg_xingguangcheng_3",
+		name = "EP8-3 星光城之战II",
+		story = "2056003",
+		change_bgm = "theme-shallowoftheworld",
+		id = 520,
+		pre_event = {
+			519
+		},
+		lock = {
+			{
+				4,
+				519
+			}
+		}
+	}
+	pg.base.activity_sp_story[521] = {
+		story_type = 2,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP8-3",
+		change_background = "star_level_bg_592",
+		name = "EP8-4 星光城之战III",
+		story = "2056004",
+		change_bgm = "battle-starcity-rhythm",
+		id = 521,
+		pre_event = {
+			520
+		},
+		lock = {
+			{
+				4,
+				520
+			}
+		}
+	}
+	pg.base.activity_sp_story[522] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP8-4",
+		change_background = "bg_xingguangcheng_cg3",
+		name = "EP8-5 仓惶",
+		story = "CHENNIYUXINGGUANGZHICHENG42",
+		change_bgm = "theme-lightheven",
+		id = 522,
+		pre_event = {
+			521
+		},
+		lock = {
+			{
+				4,
+				521
+			}
+		}
+	}
+	pg.base.activity_sp_story[523] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EP8-5",
+		change_background = "star_level_bg_543",
+		name = "EX-1 潘多拉之愿",
+		story = "CHENNIYUXINGGUANGZHICHENG43",
+		change_bgm = "battle-starcity-rhythm",
+		id = 523,
+		pre_event = {
+			522
+		},
+		lock = {
+			{
+				4,
+				522
+			}
+		}
+	}
+	pg.base.activity_sp_story[524] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EX-1",
+		change_background = "star_level_bg_307",
+		name = "EX-2 调查员的秘密",
+		story = "CHENNIYUXINGGUANGZHICHENG44",
+		change_bgm = "theme-donghuang",
+		id = 524,
+		pre_event = {
+			523
+		},
+		lock = {
+			{
+				4,
+				523
+			}
+		}
+	}
+	pg.base.activity_sp_story[525] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "",
+		unlock_conditions = "完成EX-2",
+		change_background = "star_level_bg_324",
+		name = "EX-3 联合远征",
+		story = "CHENNIYUXINGGUANGZHICHENG45",
+		change_bgm = "theme-suihuoproject",
+		id = 525,
+		pre_event = {
+			524
+		},
+		lock = {
+			{
+				4,
+				524
+			}
+		}
+	}
+	pg.base.activity_sp_story[526] = {
+		story_type = 1,
+		label_key = "",
+		change_prefab = "Map_2050001",
+		unlock_conditions = "完成EX-3",
+		change_background = "bg_xingguangcheng_1",
+		name = "EX-4 toTheAfter",
+		story = "CHENNIYUXINGGUANGZHICHENG46",
+		change_bgm = "theme-richard-white",
+		id = 526,
+		pre_event = {
+			525
+		},
+		lock = {
+			{
+				4,
+				525
+			}
 		}
 	}
 

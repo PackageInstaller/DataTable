@@ -1,471 +1,203 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ContextMediator", pm.Mediator)
 
-local var_0_0 = "ContextMediator"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.Mediator)
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0:initNotificationHandleDic()
-	var_0_1.super.Ctor(arg_1_0, nil, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, nil, arg_1_1)
 
 	return
 end
 
-function var_0_1.initNotificationHandleDic(arg_2_0)
+function var_0_0.initNotificationHandleDic(arg_2_0)
 	arg_2_0.handleDic, arg_2_0.handleElse = nil
 
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_3_0)
+function var_0_0.listNotificationInterests(arg_3_0)
 	if arg_3_0.handleDic then
-		underscore = var_1
-
-		return var_1.keys(arg_3_0.handleDic)
+		return underscore.keys(arg_3_0.handleDic)
 	else
-		return var_0_1.super.listNotificationInterests(arg_3_0)
+		return var_0_0.super.listNotificationInterests(arg_3_0)
 	end
 
 	return
 end
 
-function var_0_1.handleNotification(arg_4_0, arg_4_1)
+function var_0_0.handleNotification(arg_4_0, arg_4_1)
 	if arg_4_0.handleDic then
-		switch = var_2
-
-		var_2(arg_4_1:getName(), arg_4_0.handleDic, arg_4_0.handleElse, arg_4_0, arg_4_1)
+		switch(arg_4_1:getName(), arg_4_0.handleDic, arg_4_0.handleElse, arg_4_0, arg_4_1)
 	else
-		var_0_1.super.handleNotification(arg_4_0, arg_4_1)
+		var_0_0.super.handleNotification(arg_4_0, arg_4_1)
 	end
 
 	return
 end
 
-function var_0_1.onRegister(arg_5_0)
+function var_0_0.onRegister(arg_5_0)
 	arg_5_0.event = {}
 
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0.bind
-
-	BaseUI = var_1_10004
-
-	var_5_1(var_5_0, var_1_10004.ON_BACK_PRESSED, function(arg_6_0, arg_6_1)
-		local var_6_0 = arg_5_0
-
-		var_2.onBackPressed(var_6_0, arg_6_1)
+	arg_5_0:bind(BaseUI.ON_BACK_PRESSED, function(arg_6_0, arg_6_1)
+		arg_5_0:onBackPressed(arg_6_1)
 
 		return
 	end)
-
-	local var_5_2 = arg_5_0
-	local var_5_3 = arg_5_0.bind
-
-	BaseUI = var_4
-
-	var_5_3(var_5_2, var_4.AVALIBLE, function(arg_7_0, arg_7_1)
-		local var_7_0 = arg_5_0
-
-		var_2.onUIAvalible(var_7_0)
+	arg_5_0:bind(BaseUI.AVALIBLE, function(arg_7_0, arg_7_1)
+		arg_5_0:onUIAvalible()
 
 		return
 	end)
-
-	local var_5_4 = arg_5_0
-	local var_5_5 = arg_5_0.bind
-
-	BaseUI = var_4
-
-	var_5_5(var_5_4, var_4.ON_BACK, function(arg_8_0, arg_8_1, arg_8_2)
-		if arg_8_2 and 0 < arg_8_2 then
-			pg = var_3
-
-			local var_8_0 = var_3.UIMgr.GetInstance()
-
-			var_3.LoadingOn(var_8_0, false)
-
-			LeanTween = var_3
-
-			local var_8_1 = var_3.delayedCall
-			local var_8_2 = arg_8_2
-
-			System = var_2_10006
-
-			var_8_1(var_8_2, var_2_10006.Action(function()
-				pg = var_3_10000
-
-				local var_9_0 = var_3_10000.UIMgr.GetInstance()
-
-				var_0.LoadingOff(var_9_0)
-
-				local var_9_1 = arg_5_0
-				local var_9_2 = var_0.sendNotification
-
-				GAME = var_3_10003
-
-				var_9_2(var_9_1, var_3_10003.GO_BACK, nil, arg_8_1)
+	arg_5_0:bind(BaseUI.ON_BACK, function(arg_8_0, arg_8_1, arg_8_2)
+		if arg_8_2 and arg_8_2 > 0 then
+			pg.UIMgr.GetInstance():LoadingOn(false)
+			LeanTween.delayedCall(arg_8_2, System.Action(function()
+				pg.UIMgr.GetInstance():LoadingOff()
+				arg_5_0:sendNotification(GAME.GO_BACK, nil, arg_8_1)
 
 				return
 			end))
 		else
-			local var_8_3 = arg_5_0
-			local var_8_4 = var_3.sendNotification
-
-			GAME = var_2_10006
-
-			var_8_4(var_8_3, var_2_10006.GO_BACK, nil, arg_8_1)
+			arg_5_0:sendNotification(GAME.GO_BACK, nil, arg_8_1)
 		end
 
 		return
 	end)
-
-	local var_5_6 = arg_5_0
-	local var_5_7 = arg_5_0.bind
-
-	BaseUI = var_4
-
-	var_5_7(var_5_6, var_4.ON_RETURN, function(arg_10_0, arg_10_1)
-		local var_10_0 = arg_5_0
-		local var_10_1 = var_2.sendNotification
-
-		GAME = var_2_10005
-
-		var_10_1(var_10_0, var_2_10005.GO_BACK, arg_10_1)
+	arg_5_0:bind(BaseUI.ON_RETURN, function(arg_10_0, arg_10_1)
+		arg_5_0:sendNotification(GAME.GO_BACK, arg_10_1)
 
 		return
 	end)
+	arg_5_0:bind(BaseUI.ON_HOME, function(arg_11_0)
+		local var_11_0 = getProxy(ContextProxy):getCurrentContext()
 
-	local var_5_8 = arg_5_0
-	local var_5_9 = arg_5_0.bind
-
-	BaseUI = var_4
-
-	var_5_9(var_5_8, var_4.ON_HOME, function(arg_11_0)
-		getProxy = var_2_10001
-		ContextProxy = var_2_10003
-
-		local var_11_0 = var_2_10001(var_2_10003)
-		local var_11_1 = var_1.getCurrentContext(var_11_0).mediator
-
-		NewMainMediator = var_11_0
-
-		if var_11_1 == var_11_0 then
-			for iter_11_0 = #var_2.children, 1, -1 do
-				var_2_10007 = var_2.children[iter_11_0]
-
-				local var_11_2 = arg_5_0
-
-				var_2_10008 = var_2_10008.sendNotification
-				GAME = var_2_10011
-
-				var_2_10008(var_11_2, var_2_10011.REMOVE_LAYERS, {
-					context = var_2_10007
+		if var_11_0.mediator == NewMainMediator then
+			for iter_11_0 = #var_11_0.children, 1, -1 do
+				arg_5_0:sendNotification(GAME.REMOVE_LAYERS, {
+					context = var_11_0.children[iter_11_0]
 				})
 			end
 
 			return
 		end
 
-		if var_2:retriveLastChild() and var_3 ~= var_2 then
-			local var_11_3 = arg_5_0
-			local var_11_4 = var_4.sendNotification
+		local var_11_1 = var_11_0:retriveLastChild()
 
-			GAME = var_2_10007
-
-			var_11_4(var_11_3, var_2_10007.REMOVE_LAYERS, {
+		if var_11_1 and var_11_1 ~= var_11_0 then
+			arg_5_0:sendNotification(GAME.REMOVE_LAYERS, {
 				onHome = true,
-				context = var_3
+				context = var_11_1
 			})
 		end
 
-		local var_11_5 = arg_5_0
-		local var_11_6 = var_4.sendNotification
-
-		GAME = var_2_10007
-
-		local var_11_7 = var_2_10007.GO_SCENE
-
-		SCENE = var_2_10008
-
-		var_11_6(var_11_5, var_11_7, var_2_10008.MAINUI)
+		arg_5_0:sendNotification(GAME.GO_SCENE, SCENE.MAINUI)
 
 		return
 	end)
+	arg_5_0:bind(BaseUI.ON_CLOSE, function(arg_12_0)
+		local var_12_0 = getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_5_0.class)
 
-	local var_5_10 = arg_5_0
-	local var_5_11 = arg_5_0.bind
-
-	BaseUI = var_4
-
-	var_5_11(var_5_10, var_4.ON_CLOSE, function(arg_12_0)
-		getProxy = var_2_10001
-		ContextProxy = var_2_10003
-
-		local var_12_0 = var_2_10001(var_2_10003)
-		local var_12_1 = var_1.getCurrentContext(var_12_0)
-
-		if var_2.getContextByMediator(var_12_1, arg_5_0.class) then
-			local var_12_2 = arg_5_0
-			local var_12_3 = var_4.sendNotification
-
-			GAME = var_2_10007
-
-			var_12_3(var_12_2, var_2_10007.REMOVE_LAYERS, {
-				context = var_3
+		if var_12_0 then
+			arg_5_0:sendNotification(GAME.REMOVE_LAYERS, {
+				context = var_12_0
 			})
 		end
 
 		return
 	end)
-
-	local var_5_12 = arg_5_0
-	local var_5_13 = arg_5_0.bind
-
-	BaseUI = var_4
-
-	var_5_13(var_5_12, var_4.ON_AWARD, function(arg_13_0, arg_13_1)
-		local var_13_0 = {}
-
-		_ = var_2_10003
-
-		if var_2_10003.all(arg_13_1.items, function(arg_14_0)
-			local var_14_0 = arg_14_0.type
-
-			DROP_TYPE_ICON_FRAME = var_3_10002
-
-			local var_14_3
-
-			if var_14_0 ~= var_3_10002 then
-				local var_14_1 = arg_14_0.type
-
-				DROP_TYPE_CHAT_FRAME = var_3_10002
-
-				if var_14_1 ~= var_3_10002 then
-					local var_14_2 = arg_14_0.type
-
-					DROP_TYPE_LIVINGAREA_COVER = var_3_10002
-
-					if var_14_2 ~= var_3_10002 then
-						var_14_3 = false
-
-						goto label_14_0
-					end
-				end
-			end
-
-			var_14_3 = true
-
-			::label_14_0::
-
-			return var_14_3
+	arg_5_0:bind(BaseUI.ON_AWARD, function(arg_13_0, arg_13_1)
+		if _.all(arg_13_1.items, function(arg_14_0)
+			return arg_14_0.type == DROP_TYPE_ICON_FRAME or arg_14_0.type == DROP_TYPE_CHAT_FRAME or arg_14_0.type == DROP_TYPE_LIVINGAREA_COVER
 		end) then
-			table = var_3
-
-			var_3.insert(var_13_0, function(arg_15_0)
-				onNextTick = var_3_10001
-
-				var_3_10001(arg_15_0)
+			table.insert({}, function(arg_15_0)
+				onNextTick(arg_15_0)
 
 				return
 			end)
 		else
-			table = var_3
-
-			var_3.insert(var_13_0, function(arg_16_0)
-				local var_16_0 = arg_5_0
-				local var_16_1 = var_1.addSubLayers
-
-				Context = var_3_10004
-
-				local var_16_2 = var_3_10004.New
-				local var_16_3 = {}
-
-				AwardInfoMediator = var_3_10007
-				var_16_3.mediator = var_3_10007
-				AwardInfoLayer = var_3_10007
-				var_16_3.viewComponent = var_3_10007
-				setmetatable = var_3_10007
-				var_16_3.data = var_3_10007({
-					removeFunc = arg_16_0,
-					auto = arg_13_1.auto
-				}, {
-					__index = arg_13_1
-				})
-
-				var_16_1(var_16_0, var_16_2(var_16_3))
+			table.insert({}, function(arg_16_0)
+				arg_5_0:addSubLayers(Context.New({
+					mediator = AwardInfoMediator,
+					viewComponent = AwardInfoLayer,
+					data = setmetatable({
+						removeFunc = arg_16_0,
+						auto = arg_13_1.auto
+					}, {
+						__index = arg_13_1
+					})
+				}))
 
 				return
 			end)
 		end
 
-		seriesAsync = var_3
-
-		var_3(var_13_0, arg_13_1.removeFunc)
+		seriesAsync({}, arg_13_1.removeFunc)
 
 		return
 	end)
 
-	local function var_5_14(arg_17_0, arg_17_1)
-		getProxy = var_2_10002
-		BayProxy = var_2_10004
-
-		local var_17_0 = var_2_10002(var_2_10004)
-		local var_17_1 = var_2.getNewShip(var_17_0, true)
+	local function var_5_0(arg_17_0, arg_17_1)
+		local var_17_0 = getProxy(BayProxy)
+		local var_17_1 = getProxy(BayProxy):getNewShip(true)
 		local var_17_2 = {}
 
-		pairs = var_17_0
-
-		for iter_17_0, iter_17_1 in var_17_0(var_17_1) do
-			var_2_10012 = iter_17_1
-
-			if iter_17_1.isMetaShip(var_2_10012) then
-				table = var_10
-
-				var_10.insert(var_17_2, iter_17_1.configId)
+		for iter_17_0, iter_17_1 in pairs(var_17_1) do
+			if iter_17_1:isMetaShip() then
+				table.insert({}, iter_17_1.configId)
 			end
 		end
 
 		local var_17_3 = #var_17_1
 
-		underscore = var_6
+		underscore.each(arg_17_0, function(arg_18_0)
+			if arg_18_0.type == DROP_TYPE_OPERATION then
+				table.insert(var_17_1, var_17_0:getShipById(arg_18_0.count))
+			elseif arg_18_0.type == DROP_TYPE_VITEM and arg_18_0:getConfig("virtual_type") == 17 then
+				table.insert(var_17_1, var_17_0:getShipById(getProxy(ActivityProxy):getActivityById(arg_18_0:getConfig("link_id")).data2))
+			elseif arg_18_0.type == DROP_TYPE_SHIP then
+				local var_18_0 = arg_18_0.configId or arg_18_0.id
 
-		var_6.each(arg_17_0, function(arg_18_0)
-			local var_18_0 = arg_18_0.type
+				if Ship.isMetaShipByConfigID(var_18_0) then
+					local var_18_1 = table.indexof(var_17_2, var_18_0)
 
-			DROP_TYPE_OPERATION = var_3_10002
+					if var_18_1 then
+						table.remove(var_17_2, var_18_1)
 
-			if var_18_0 == var_3_10002 then
-				table = var_18_0
-
-				local var_18_1 = var_18_0.insert
-
-				var_3_10003 = var_17_1
-				var_3_10006 = var_0
-
-				var_18_1(var_3_10003, var_4.getShipById(var_3_10006, arg_18_0.count))
-			else
-				local var_18_2 = arg_18_0.type
-
-				DROP_TYPE_VITEM = var_3_10002
-
-				if var_18_2 == var_3_10002 then
-					var_3_10003 = arg_18_0
-
-					if arg_18_0.getConfig(var_3_10003, "virtual_type") == 17 then
-						getProxy = var_1
-						ActivityProxy = var_3_10003
-						var_3_10003 = var_1(var_3_10003)
-
-						local var_18_3 = var_1.getActivityById
-
-						var_3_10006 = arg_18_0
-
-						local var_18_4 = var_18_3(var_3_10003, arg_18_0.getConfig(var_3_10006, "link_id"))
-
-						table = var_3_10002
-						var_3_10002 = var_3_10002.insert
-
-						local var_18_5 = var_17_1
-						local var_18_6 = var_0
-
-						var_3_10002(var_18_5, var_5.getShipById(var_18_6, var_18_4.data2))
-
-						goto label_18_0
-					end
-				end
-
-				local var_18_7 = arg_18_0.type
-
-				DROP_TYPE_SHIP = var_3_10002
-
-				if var_18_7 == var_3_10002 then
-					local var_18_8
-
-					if not arg_18_0.configId then
-						var_18_8 = arg_18_0.id
-					end
-
-					Ship = var_3_10002
-
-					if var_3_10002.isMetaShipByConfigID(var_18_8) then
-						table = var_2
-
-						if var_2.indexof(var_17_2, var_18_8) then
-							table = var_3_10003
-
-							var_3_10003.remove(var_17_2, var_2)
-
-							var_17_3 = var_17_3 - 1
-						else
-							Ship = var_3_10003
-
-							local var_18_9 = var_3_10003.New({
-								configId = var_18_8
-							})
-
-							getProxy = var_4
-							BayProxy = var_3_10006
-
-							local var_18_10 = var_4(var_3_10006)
-
-							if var_4.getMetaTransItemMap(var_18_10, var_18_9.configId) then
-								var_18_9:setReMetaSpecialItemVO(var_4)
-							end
-
-							table = var_5
-
-							var_5.insert(var_17_1, var_18_9)
-						end
-					else
 						var_17_3 = var_17_3 - 1
+					else
+						local var_18_2 = Ship.New({
+							configId = var_18_0
+						})
+						local var_18_3 = getProxy(BayProxy):getMetaTransItemMap(var_18_2.configId)
+
+						if var_18_3 then
+							var_18_2:setReMetaSpecialItemVO(var_18_3)
+						end
+
+						table.insert(var_17_1, var_18_2)
 					end
+				else
+					var_17_3 = var_17_3 - 1
 				end
 			end
-
-			::label_18_0::
 
 			return
 		end)
 
-		underscore = var_6
-		var_17_1 = var_6.rest(var_17_1, var_17_3 + 1)
-		pg = var_6
+		var_17_1 = underscore.rest(var_17_1, #var_17_1 + 1)
 
-		if var_6.gameset.award_ship_limit then
-			pg = var_6
+		if pg.gameset.award_ship_limit then
+			local var_17_4 = pg.gameset.award_ship_limit.key_value or 20
 
-			local var_17_4
-
-			if not var_6.gameset.award_ship_limit.key_value then
-				var_17_4 = 20
-			end
-
-			if #var_17_1 <= var_17_4 then
-				ipairs = var_7
-
-				for iter_17_2, iter_17_3 in var_7(var_17_1) do
-					table = var_2_10012
-
-					var_2_10012.insert(arg_17_1, function(arg_19_0)
-						local var_19_0 = arg_5_0
-						local var_19_1 = var_1.addSubLayers
-
-						Context = var_3_10004
-
-						local var_19_2 = var_3_10004.New
-						local var_19_3 = {}
-
-						NewShipMediator = var_3_10007
-						var_19_3.mediator = var_3_10007
-						NewShipLayer = var_3_10007
-						var_19_3.viewComponent = var_3_10007
-						var_19_3.data = {
-							ship = iter_17_3
-						}
-						var_19_3.onRemoved = arg_19_0
-
-						var_19_1(var_19_0, var_19_2(var_19_3))
+			if var_17_4 >= #var_17_1 then
+				for iter_17_2, iter_17_3 in ipairs(var_17_1) do
+					table.insert(arg_17_1, function(arg_19_0)
+						arg_5_0:addSubLayers(Context.New({
+							mediator = NewShipMediator,
+							viewComponent = NewShipLayer,
+							data = {
+								ship = iter_17_3
+							},
+							onRemoved = arg_19_0
+						}))
 
 						return
 					end)
@@ -476,84 +208,38 @@ function var_0_1.onRegister(arg_5_0)
 		end
 	end
 
-	local function var_5_15(arg_20_0, arg_20_1)
-		ipairs = var_2_10002
-
-		for iter_20_0, iter_20_1 in var_2_10002(arg_20_0) do
-			local var_20_0 = iter_20_1.type
-
-			DROP_TYPE_SKIN = var_2_10008
-
-			if var_20_0 == var_2_10008 then
-				pg = var_20_0
-
-				local var_20_1 = var_20_0.ship_skin_template[iter_20_1.id].skin_type
-
-				ShipSkin = var_2_10008
-
-				if var_20_1 ~= var_2_10008.SKIN_TYPE_REMAKE then
-					table = var_20_1
-
-					var_20_1.insert(arg_20_1, function(arg_21_0)
-						local var_21_0 = arg_5_0
-						local var_21_1 = var_1.addSubLayers
-
-						Context = var_3_10004
-
-						local var_21_2 = var_3_10004.New
-						local var_21_3 = {}
-
-						NewSkinMediator = var_3_10007
-						var_21_3.mediator = var_3_10007
-						NewSkinLayer = var_3_10007
-						var_21_3.viewComponent = var_3_10007
-						var_21_3.data = {
+	local function var_5_1(arg_20_0, arg_20_1)
+		for iter_20_0, iter_20_1 in ipairs(arg_20_0) do
+			if iter_20_1.type == DROP_TYPE_SKIN and pg.ship_skin_template[iter_20_1.id].skin_type ~= ShipSkin.SKIN_TYPE_REMAKE then
+				table.insert(arg_20_1, function(arg_21_0)
+					arg_5_0:addSubLayers(Context.New({
+						mediator = NewSkinMediator,
+						viewComponent = NewSkinLayer,
+						data = {
 							skinId = iter_20_1.id
-						}
-						var_21_3.onRemoved = arg_21_0
+						},
+						onRemoved = arg_21_0
+					}))
 
-						var_21_1(var_21_0, var_21_2(var_21_3))
-
-						return
-					end)
-				end
+					return
+				end)
 			end
 
-			local var_20_2 = iter_20_1.type
+			if iter_20_1.type == DROP_TYPE_SKIN_TIMELIMIT then
+				if iter_20_1.count > 0 then
+					local var_20_0 = getProxy(ShipSkinProxy)
 
-			DROP_TYPE_SKIN_TIMELIMIT = var_2_10008
-
-			if var_20_2 == var_2_10008 then
-				local var_20_3 = iter_20_1.count
-
-				if 0 < var_20_3 then
-					getProxy = var_20_3
-					ShipSkinProxy = var_2_10009
-					var_2_10009 = var_20_3(var_2_10009)
-
-					if not var_20_3.hasNonLimitSkin(var_2_10009, iter_20_1.id) then
-						table = var_20_3
-
-						var_20_3.insert(arg_20_1, function(arg_22_0)
-							local var_22_0 = arg_5_0
-							local var_22_1 = var_1.addSubLayers
-
-							Context = var_3_10004
-
-							local var_22_2 = var_3_10004.New
-							local var_22_3 = {}
-
-							NewSkinMediator = var_3_10007
-							var_22_3.mediator = var_3_10007
-							NewSkinLayer = var_3_10007
-							var_22_3.viewComponent = var_3_10007
-							var_22_3.data = {
-								timeLimit = true,
-								skinId = iter_20_1.id
-							}
-							var_22_3.onRemoved = arg_22_0
-
-							var_22_1(var_22_0, var_22_2(var_22_3))
+					if not var_20_0:hasNonLimitSkin(iter_20_1.id) then
+						table.insert(arg_20_1, function(arg_22_0)
+							arg_5_0:addSubLayers(Context.New({
+								mediator = NewSkinMediator,
+								viewComponent = NewSkinLayer,
+								data = {
+									timeLimit = true,
+									skinId = iter_20_1.id
+								},
+								onRemoved = arg_22_0
+							}))
 
 							return
 						end)
@@ -562,17 +248,8 @@ function var_0_1.onRegister(arg_5_0)
 					end
 				end
 
-				table = var_20_3
-
-				var_20_3.insert(arg_20_1, function(arg_23_0)
-					pg = var_3_10001
-
-					local var_23_0 = var_3_10001.TipsMgr.GetInstance()
-					local var_23_1 = var_1.ShowTips
-
-					i18n = var_3_10004
-
-					var_23_1(var_23_0, var_3_10004("already_have_the_skin"))
+				table.insert(arg_20_1, function(arg_23_0)
+					pg.TipsMgr.GetInstance():ShowTips(i18n("already_have_the_skin"))
 					arg_23_0()
 
 					return
@@ -585,17 +262,11 @@ function var_0_1.onRegister(arg_5_0)
 		return
 	end
 
-	local function var_5_16(arg_24_0, arg_24_1)
+	local function var_5_2(arg_24_0, arg_24_1)
 		local var_24_0 = 0
 
-		ipairs = var_2_10003
-
-		for iter_24_0, iter_24_1 in var_2_10003(arg_24_0) do
-			local var_24_1 = iter_24_1.type
-
-			DROP_TYPE_COMMANDER_CAT = var_2_10009
-
-			if var_24_1 == var_2_10009 then
+		for iter_24_0, iter_24_1 in ipairs(arg_24_0) do
+			if iter_24_1.type == DROP_TYPE_COMMANDER_CAT then
 				var_24_0 = var_24_0 + 1
 			end
 		end
@@ -604,36 +275,18 @@ function var_0_1.onRegister(arg_5_0)
 			return
 		end
 
-		getProxy = var_3
-		CommanderProxy = var_5
+		local var_24_1 = getProxy(CommanderProxy)
 
-		local var_24_2 = var_3(var_5)
-		local var_24_3 = var_3.GetNewestCommander(var_24_2, var_24_0)
-
-		ipairs = var_4
-
-		for iter_24_2, iter_24_3 in var_4(var_24_3) do
-			table = var_2_10009
-
-			var_2_10009.insert(arg_24_1, function(arg_25_0)
-				local var_25_0 = arg_5_0
-				local var_25_1 = var_1.addSubLayers
-
-				Context = var_3_10004
-
-				local var_25_2 = var_3_10004.New
-				local var_25_3 = {}
-
-				NewCommanderScene = var_3_10007
-				var_25_3.viewComponent = var_3_10007
-				NewCommanderMediator = var_3_10007
-				var_25_3.mediator = var_3_10007
-				var_25_3.data = {
-					commander = iter_24_3,
-					onExit = arg_25_0
-				}
-
-				var_25_1(var_25_0, var_25_2(var_25_3))
+		for iter_24_2, iter_24_3 in ipairs((var_24_1:GetNewestCommander(var_24_0))) do
+			table.insert(arg_24_1, function(arg_25_0)
+				arg_5_0:addSubLayers(Context.New({
+					viewComponent = NewCommanderScene,
+					mediator = NewCommanderMediator,
+					data = {
+						commander = iter_24_3,
+						onExit = arg_25_0
+					}
+				}))
 
 				return
 			end)
@@ -642,126 +295,69 @@ function var_0_1.onRegister(arg_5_0)
 		return
 	end
 
-	local var_5_17 = arg_5_0
-	local var_5_18 = arg_5_0.bind
-
-	BaseUI = var_1_10007
-
-	var_5_18(var_5_17, var_1_10007.ON_ACHIEVE, function(arg_26_0, arg_26_1, arg_26_2)
+	arg_5_0:bind(BaseUI.ON_ACHIEVE, function(arg_26_0, arg_26_1, arg_26_2)
 		local var_26_0 = {}
 
 		if #arg_26_1 > 0 then
-			table = var_4
-
-			var_4.insert(var_26_0, function(arg_27_0)
-				local var_27_0 = arg_5_0.viewComponent
-				local var_27_1 = var_1.emit
-
-				BaseUI = var_3_10004
-
-				var_27_1(var_27_0, var_3_10004.ON_AWARD, {
+			table.insert({}, function(arg_27_0)
+				arg_5_0.viewComponent:emit(BaseUI.ON_AWARD, {
 					items = arg_26_1,
 					removeFunc = arg_27_0
 				})
 
 				return
 			end)
-
-			table = var_4
-
-			var_4.insert(var_26_0, function(arg_28_0)
-				var_5_14(arg_26_1, var_26_0)
-				var_5_15(arg_26_1, var_26_0)
-				var_5_16(arg_26_1, var_26_0)
+			table.insert({}, function(arg_28_0)
+				var_5_0(arg_26_1, var_26_0)
+				var_5_1(arg_26_1, var_26_0)
+				var_5_2(arg_26_1, var_26_0)
 				arg_28_0()
 
 				return
 			end)
 		end
 
-		seriesAsyncExtend = var_4
-
-		var_4(var_26_0, arg_26_2)
+		seriesAsyncExtend({}, arg_26_2)
 
 		return
 	end)
-
-	local var_5_19 = arg_5_0
-	local var_5_20 = arg_5_0.bind
-
-	BaseUI = var_7
-
-	var_5_20(var_5_19, var_7.ON_ACHIEVE_AUTO, function(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
+	arg_5_0:bind(BaseUI.ON_ACHIEVE_AUTO, function(arg_29_0, arg_29_1, arg_29_2, arg_29_3)
 		local var_29_0 = {}
 
 		if #arg_29_1 > 0 then
-			table = var_5
-
-			var_5.insert(var_29_0, function(arg_30_0)
-				local var_30_0 = arg_5_0.viewComponent
-				local var_30_1 = var_1.emit
-
-				BaseUI = var_3_10004
-
-				local var_30_2 = var_3_10004.ON_AWARD
-				local var_30_3 = {
+			table.insert({}, function(arg_30_0)
+				({
 					items = arg_29_1,
 					removeFunc = arg_30_0
-				}
-				local var_30_4
+				}).auto = arg_29_2 or 2
 
-				if not arg_29_2 then
-					var_30_4 = 2
-				end
-
-				var_30_3.auto = var_30_4
-
-				var_30_1(var_30_0, var_30_2, var_30_3)
+				arg_5_0.viewComponent:emit(BaseUI.ON_AWARD, {
+					items = arg_29_1,
+					removeFunc = arg_30_0
+				})
 
 				return
 			end)
-
-			table = var_5
-
-			var_5.insert(var_29_0, function(arg_31_0)
-				var_5_14(arg_29_1, var_29_0)
-				var_5_15(arg_29_1, var_29_0)
-				var_5_16(arg_29_1, var_29_0)
+			table.insert({}, function(arg_31_0)
+				var_5_0(arg_29_1, var_29_0)
+				var_5_1(arg_29_1, var_29_0)
+				var_5_2(arg_29_1, var_29_0)
 				arg_31_0()
 
 				return
 			end)
 		end
 
-		seriesAsyncExtend = var_5
-
-		var_5(var_29_0, arg_29_3)
+		seriesAsyncExtend({}, arg_29_3)
 
 		return
 	end)
-
-	local var_5_21 = arg_5_0
-	local var_5_22 = arg_5_0.bind
-
-	BaseUI = var_7
-
-	var_5_22(var_5_21, var_7.ON_WORLD_ACHIEVE, function(arg_32_0, arg_32_1)
+	arg_5_0:bind(BaseUI.ON_WORLD_ACHIEVE, function(arg_32_0, arg_32_1)
 		local var_32_0 = {}
 
 		if #arg_32_1.items > 0 then
-			table = var_4
-
-			var_4.insert(var_32_0, function(arg_33_0)
-				local var_33_0 = arg_5_0.viewComponent
-				local var_33_1 = var_1.emit
-
-				BaseUI = var_3_10004
-
-				local var_33_2 = var_3_10004.ON_AWARD
-
-				setmetatable = var_3_10005
-
-				var_33_1(var_33_0, var_33_2, var_3_10005({
+			table.insert({}, function(arg_33_0)
+				arg_5_0.viewComponent:emit(BaseUI.ON_AWARD, setmetatable({
 					removeFunc = arg_33_0
 				}, {
 					__index = arg_32_1
@@ -769,101 +365,50 @@ function var_0_1.onRegister(arg_5_0)
 
 				return
 			end)
-
-			table = var_4
-
-			var_4.insert(var_32_0, function(arg_34_0)
-				var_5_14(var_0, var_32_0)
-				var_5_15(var_0, var_32_0)
-				var_5_16(var_0, var_32_0)
+			table.insert({}, function(arg_34_0)
+				var_5_0(var_0, var_32_0)
+				var_5_1(var_0, var_32_0)
+				var_5_2(var_0, var_32_0)
 				arg_34_0()
 
 				return
 			end)
 		end
 
-		seriesAsyncExtend = var_4
-
-		var_4(var_32_0, arg_32_1.removeFunc)
+		seriesAsyncExtend({}, arg_32_1.removeFunc)
 
 		return
 	end)
-
-	local var_5_23 = arg_5_0
-	local var_5_24 = arg_5_0.bind
-
-	BaseUI = var_7
-
-	var_5_24(var_5_23, var_7.ON_SHIP_EXP, function(arg_35_0, arg_35_1, arg_35_2)
-		local var_35_0 = arg_5_0
-		local var_35_1 = var_3.addSubLayers
-
-		Context = var_2_10006
-
-		local var_35_2 = var_2_10006.New
-		local var_35_3 = {}
-
-		ShipExpMediator = var_2_10009
-		var_35_3.mediator = var_2_10009
-		ShipExpLayer = var_2_10009
-		var_35_3.viewComponent = var_2_10009
-		var_35_3.data = arg_35_1
-		var_35_3.onRemoved = arg_35_2
-
-		var_35_1(var_35_0, var_35_2(var_35_3))
+	arg_5_0:bind(BaseUI.ON_SHIP_EXP, function(arg_35_0, arg_35_1, arg_35_2)
+		arg_5_0:addSubLayers(Context.New({
+			mediator = ShipExpMediator,
+			viewComponent = ShipExpLayer,
+			data = arg_35_1,
+			onRemoved = arg_35_2
+		}))
 
 		return
 	end)
+	arg_5_0:bind(BaseUI.ON_SPWEAPON, function(arg_36_0, arg_36_1)
+		arg_36_1.type = defaultValue(arg_36_1.type, SpWeaponInfoLayer.TYPE_DEFAULT)
 
-	local var_5_25 = arg_5_0
-	local var_5_26 = arg_5_0.bind
+		local var_36_0 = arg_5_0
+		local var_36_3 = {
+			mediator = SpWeaponInfoMediator,
+			viewComponent = SpWeaponInfoLayer,
+			data = arg_36_1
+		}
 
-	BaseUI = var_7
+		if arg_36_1 then
+			var_36_3.onRemoved = arg_36_1.onRemoved or nil
 
-	var_5_26(var_5_25, var_7.ON_SPWEAPON, function(arg_36_0, arg_36_1)
-		defaultValue = var_2_10002
+			var_36_1(var_36_0, var_36_2(var_36_3))
 
-		local var_36_0 = arg_36_1.type
-
-		SpWeaponInfoLayer = var_2_10005
-		arg_36_1.type = var_2_10002(var_36_0, var_2_10005.TYPE_DEFAULT)
-
-		local var_36_1 = arg_5_0
-		local var_36_2 = var_2.addSubLayers
-
-		Context = var_5
-
-		local var_36_3 = var_5.New
-		local var_36_4 = {}
-
-		SpWeaponInfoMediator = var_2_10008
-		var_36_4.mediator = var_2_10008
-		SpWeaponInfoLayer = var_2_10008
-		var_36_4.viewComponent = var_2_10008
-		var_36_4.data = arg_36_1
-
-		local var_36_5
-
-		if not arg_36_1 or not arg_36_1.onRemoved then
-			var_36_5 = nil
+			return
 		end
-
-		var_36_4.onRemoved = var_36_5
-
-		var_36_2(var_36_1, var_36_3(var_36_4))
-
-		return
 	end)
-
-	local var_5_27 = arg_5_0
-	local var_5_28 = arg_5_0.bind
-
-	BaseUI = var_7
-
-	var_5_28(var_5_27, var_7.ON_ADD_SUBLAYER, function(arg_37_0, arg_37_1)
-		local var_37_0 = arg_5_0
-
-		var_2.addSubLayers(var_37_0, arg_37_1)
+	arg_5_0:bind(BaseUI.ON_ADD_SUBLAYER, function(arg_37_0, arg_37_1)
+		arg_5_0:addSubLayers(arg_37_1)
 
 		return
 	end)
@@ -873,475 +418,215 @@ function var_0_1.onRegister(arg_5_0)
 	return
 end
 
-function var_0_1.commonBind(arg_38_0)
-	local var_38_0 = var_0_1
-	local var_38_1
-
-	if not var_0_1.CommonBindDic then
-		var_38_1 = {}
-		BaseUI = var_1_10003
-		var_38_1[var_1_10003.ON_DROP] = function(arg_39_0, arg_39_1, arg_39_2, arg_39_3)
-			local var_39_0 = arg_39_2.type
-
-			DROP_TYPE_EQUIP = var_2_10005
-
-			if var_39_0 == var_2_10005 then
-				local var_39_1 = arg_39_0
-				local var_39_2 = arg_39_0.addSubLayers
-
-				Context = var_2_10007
-				var_2_10007 = var_2_10007.New
-
-				local var_39_3 = {}
-
-				EquipmentInfoMediator = var_2_10010
-				var_39_3.mediator = var_2_10010
-				EquipmentInfoLayer = var_2_10010
-				var_39_3.viewComponent = var_2_10010
-				var_2_10010 = {
-					equipmentId = arg_39_2:getConfig("id")
-				}
-				EquipmentInfoMediator = var_11
-				var_2_10010.type = var_11.TYPE_DISPLAY
-				var_2_10010.onRemoved = arg_39_3
-				var_39_3.data = var_2_10010
-
-				var_39_2(var_39_1, var_2_10007(var_39_3))
-			else
-				local var_39_4 = arg_39_2.type
-
-				DROP_TYPE_SPWEAPON = var_2_10005
-
-				if var_39_4 == var_2_10005 then
-					local var_39_5 = arg_39_0
-					local var_39_6 = arg_39_0.addSubLayers
-
-					Context = var_2_10007
-					var_2_10007 = var_2_10007.New
-
-					local var_39_7 = {}
-
-					SpWeaponInfoMediator = var_2_10010
-					var_39_7.mediator = var_2_10010
-					SpWeaponInfoLayer = var_2_10010
-					var_39_7.viewComponent = var_2_10010
-					var_2_10010 = {
-						spWeaponConfigId = arg_39_2:getConfig("id")
+function var_0_0.commonBind(arg_38_0)
+	var_0_0.CommonBindDic = var_0_0.CommonBindDic or {
+		[BaseUI.ON_DROP] = function(arg_39_0, arg_39_1, arg_39_2, arg_39_3)
+			if arg_39_2.type == DROP_TYPE_EQUIP then
+				arg_39_0:addSubLayers(Context.New({
+					mediator = EquipmentInfoMediator,
+					viewComponent = EquipmentInfoLayer,
+					data = {
+						equipmentId = arg_39_2:getConfig("id"),
+						type = EquipmentInfoMediator.TYPE_DISPLAY,
+						onRemoved = arg_39_3
 					}
-					SpWeaponInfoLayer = var_11
-					var_2_10010.type = var_11.TYPE_DISPLAY
-					var_2_10010.onRemoved = arg_39_3
-					var_39_7.data = var_2_10010
-
-					var_39_6(var_39_5, var_2_10007(var_39_7))
-				else
-					local var_39_8 = arg_39_2.type
-
-					DROP_TYPE_EQUIPMENT_SKIN = var_2_10005
-
-					if var_39_8 == var_2_10005 then
-						local var_39_9 = arg_39_0
-						local var_39_10 = arg_39_0.addSubLayers
-
-						Context = var_2_10007
-						var_2_10007 = var_2_10007.New
-
-						local var_39_11 = {}
-
-						EquipmentSkinMediator = var_2_10010
-						var_39_11.mediator = var_2_10010
-						EquipmentSkinLayer = var_2_10010
-						var_39_11.viewComponent = var_2_10010
-						var_2_10010 = {
-							skinId = arg_39_2:getConfig("id")
-						}
-						EquipmentSkinLayer = var_11
-						var_2_10010.mode = var_11.DISPLAY
-						var_39_11.data = var_2_10010
-
-						var_39_10(var_39_9, var_2_10007(var_39_11))
-					else
-						local var_39_12 = arg_39_2.type
-
-						DROP_TYPE_EMOJI = var_2_10005
-
-						if var_39_12 == var_2_10005 then
-							local var_39_13 = arg_39_0
-							local var_39_14 = arg_39_0.addSubLayers
-
-							Context = var_2_10007
-							var_2_10007 = var_2_10007.New
-
-							local var_39_15 = {}
-
-							ContextMediator = var_2_10010
-							var_39_15.mediator = var_2_10010
-							EmojiInfoLayer = var_2_10010
-							var_39_15.viewComponent = var_2_10010
-							var_39_15.data = {
-								id = arg_39_2.cfg.id
-							}
-
-							var_39_14(var_39_13, var_2_10007(var_39_15))
-						else
-							local var_39_16 = arg_39_2.type
-
-							DROP_TYPE_COMBAT_UI_STYLE = var_2_10005
-
-							if var_39_16 == var_2_10005 and not arg_39_2.notPlay then
-								local var_39_17 = arg_39_0
-
-								var_39_16 = arg_39_0.addSubLayers
-								Context = var_2_10007
-
-								local var_39_18 = var_2_10007.New
-								local var_39_19 = {}
-
-								CombatSkinInfoMediator = var_2_10010
-								var_39_19.mediator = var_2_10010
-								CombatSkinInfoLayer = var_2_10010
-								var_39_19.viewComponent = var_2_10010
-								var_39_19.data = {
-									skinID = arg_39_2:getConfig("id")
-								}
-
-								var_39_16(var_39_17, var_39_18(var_39_19))
-							else
-								pg = var_39_16
-
-								local var_39_20 = var_39_16.MsgboxMgr.GetInstance()
-								local var_39_21 = var_4.ShowMsgBox
-								local var_39_22 = {}
-
-								MSGBOX_TYPE_SINGLE_ITEM = var_2_10008
-								var_39_22.type = var_2_10008
-								var_39_22.drop = arg_39_2
-								var_39_22.onNo = arg_39_3
-								var_39_22.onYes = arg_39_3
-
-								var_39_21(var_39_20, var_39_22)
-							end
-						end
-					end
-				end
-			end
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_DROP_LIST] = function(arg_40_0, arg_40_1, arg_40_2)
-			pg = var_2_10003
-
-			local var_40_0 = var_2_10003.MsgboxMgr.GetInstance()
-			local var_40_1 = var_3.ShowMsgBox
-			local var_40_2 = {
-				hideNo = true
-			}
-
-			MSGBOX_TYPE_ITEM_BOX = var_2_10007
-			var_40_2.type = var_2_10007
-			var_40_2.items = arg_40_2.itemList
-			var_40_2.content = arg_40_2.content
-			var_40_2.item2Row = arg_40_2.item2Row
-
-			function var_40_2.itemFunc(arg_41_0)
-				local var_41_0 = arg_40_0.viewComponent
-				local var_41_1 = var_1.emit
-
-				BaseUI = var_3_10004
-
-				var_41_1(var_41_0, var_3_10004.ON_DROP, arg_41_0, function()
-					local var_42_0 = arg_40_0.viewComponent
-					local var_42_1 = var_0.emit
-
-					BaseUI = var_4_10003
-
-					var_42_1(var_42_0, var_4_10003.ON_DROP_LIST, arg_40_2)
-
-					return
-				end)
-
-				return
-			end
-
-			var_40_1(var_40_0, var_40_2)
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_DROP_LIST_OWN] = function(arg_43_0, arg_43_1, arg_43_2)
-			pg = var_2_10003
-
-			local var_43_0 = var_2_10003.MsgboxMgr.GetInstance()
-			local var_43_1 = var_3.ShowMsgBox
-			local var_43_2 = {
-				hideNo = true
-			}
-
-			MSGBOX_TYPE_DROP_ITEM_ESKIN = var_2_10007
-			var_43_2.type = var_2_10007
-			var_43_2.items = arg_43_2.itemList
-			var_43_2.content = arg_43_2.content
-			var_43_2.item2Row = arg_43_2.item2Row
-
-			function var_43_2.itemFunc(arg_44_0)
-				local var_44_0 = arg_43_0.viewComponent
-				local var_44_1 = var_1.emit
-
-				BaseUI = var_3_10004
-
-				var_44_1(var_44_0, var_3_10004.ON_DROP, arg_44_0, function()
-					local var_45_0 = arg_43_0.viewComponent
-					local var_45_1 = var_0.emit
-
-					BaseUI = var_4_10003
-
-					var_45_1(var_45_0, var_4_10003.ON_DROP_LIST, arg_43_2)
-
-					return
-				end)
-
-				return
-			end
-
-			var_43_1(var_43_0, var_43_2)
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_ITEM] = function(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
-			local var_46_0 = arg_46_0
-			local var_46_1 = arg_46_0.addSubLayers
-
-			Context = var_2_10007
-
-			local var_46_2 = var_2_10007.New
-			local var_46_3 = {}
-
-			ItemInfoMediator = var_2_10010
-			var_46_3.mediator = var_2_10010
-			ItemInfoLayer = var_2_10010
-			var_46_3.viewComponent = var_2_10010
-
-			local var_46_4 = {}
-
-			Drop = var_2_10011
-
-			local var_46_5 = var_2_10011.New
-			local var_46_6 = {}
-
-			DROP_TYPE_ITEM = var_2_10014
-			var_46_6.type = var_2_10014
-			var_46_6.id = arg_46_2
-			var_46_4.drop = var_46_5(var_46_6)
-			var_46_4.confirmCall = arg_46_3
-			var_46_3.data = var_46_4
-
-			var_46_1(var_46_0, var_46_2(var_46_3))
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_ITEM_EXTRA] = function(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
-			local var_47_0 = arg_47_0
-			local var_47_1 = arg_47_0.addSubLayers
-
-			Context = var_2_10007
-
-			local var_47_2 = var_2_10007.New
-			local var_47_3 = {}
-
-			ItemInfoMediator = var_2_10010
-			var_47_3.mediator = var_2_10010
-			ItemInfoLayer = var_2_10010
-			var_47_3.viewComponent = var_2_10010
-
-			local var_47_4 = {}
-
-			Drop = var_2_10011
-
-			local var_47_5 = var_2_10011.New
-			local var_47_6 = {}
-
-			DROP_TYPE_ITEM = var_2_10014
-			var_47_6.type = var_2_10014
-			var_47_6.id = arg_47_2
-			var_47_6.extra = arg_47_3
-			var_47_4.drop = var_47_5(var_47_6)
-			var_47_3.data = var_47_4
-
-			var_47_1(var_47_0, var_47_2(var_47_3))
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_SHIP] = function(arg_48_0, arg_48_1, arg_48_2)
-			local var_48_0 = arg_48_0
-			local var_48_1 = arg_48_0.addSubLayers
-
-			Context = var_2_10006
-
-			local var_48_2 = var_2_10006.New
-			local var_48_3 = {}
-
-			ItemInfoMediator = var_2_10009
-			var_48_3.mediator = var_2_10009
-			ItemInfoLayer = var_2_10009
-			var_48_3.viewComponent = var_2_10009
-
-			local var_48_4 = {}
-
-			Drop = var_2_10010
-
-			local var_48_5 = var_2_10010.New
-			local var_48_6 = {}
-
-			DROP_TYPE_SHIP = var_2_10013
-			var_48_6.type = var_2_10013
-			var_48_6.id = arg_48_2
-			var_48_4.drop = var_48_5(var_48_6)
-			var_48_3.data = var_48_4
-
-			var_48_1(var_48_0, var_48_2(var_48_3))
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_EQUIPMENT] = function(arg_49_0, arg_49_1, arg_49_2)
-			defaultValue = var_2_10003
-
-			local var_49_0 = arg_49_2.type
-
-			EquipmentInfoMediator = var_2_10006
-			arg_49_2.type = var_2_10003(var_49_0, var_2_10006.TYPE_DEFAULT)
-
-			local var_49_1 = arg_49_0
-			local var_49_2 = arg_49_0.addSubLayers
-
-			Context = var_6
-
-			local var_49_3 = var_6.New
-			local var_49_4 = {}
-
-			EquipmentInfoMediator = var_2_10009
-			var_49_4.mediator = var_2_10009
-			EquipmentInfoLayer = var_2_10009
-			var_49_4.viewComponent = var_2_10009
-			var_49_4.data = arg_49_2
-
-			local var_49_5
-
-			if not arg_49_2 or not arg_49_2.onRemoved then
-				var_49_5 = nil
-			end
-
-			var_49_4.onRemoved = var_49_5
-
-			var_49_2(var_49_1, var_49_3(var_49_4))
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_NEW_DROP] = function(arg_50_0, arg_50_1, arg_50_2)
-			pg = var_2_10003
-
-			local var_50_0 = var_2_10003.NewStyleMsgboxMgr.GetInstance()
-			local var_50_1 = var_3.Show
-
-			pg = var_2_10006
-
-			var_50_1(var_50_0, var_2_10006.NewStyleMsgboxMgr.TYPE_DROP, arg_50_2)
-
-			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_NEW_STYLE_DROP] = function(arg_51_0, arg_51_1, arg_51_2)
-			pg = var_2_10003
-
-			local var_51_0 = var_2_10003.NewStyleMsgboxMgr.TYPE_COMMON_DROP
-			local var_51_1 = arg_51_2
-
-			if arg_51_2.useDeepShow then
-				pg = var_5
-
-				local var_51_2 = var_5.NewStyleMsgboxMgr.GetInstance()
-
-				var_5.DeepShow(var_51_2, var_51_0, var_51_1)
+				}))
+			elseif arg_39_2.type == DROP_TYPE_SPWEAPON then
+				arg_39_0:addSubLayers(Context.New({
+					mediator = SpWeaponInfoMediator,
+					viewComponent = SpWeaponInfoLayer,
+					data = {
+						spWeaponConfigId = arg_39_2:getConfig("id"),
+						type = SpWeaponInfoLayer.TYPE_DISPLAY,
+						onRemoved = arg_39_3
+					}
+				}))
+			elseif arg_39_2.type == DROP_TYPE_EQUIPMENT_SKIN then
+				arg_39_0:addSubLayers(Context.New({
+					mediator = EquipmentSkinMediator,
+					viewComponent = EquipmentSkinLayer,
+					data = {
+						skinId = arg_39_2:getConfig("id"),
+						mode = EquipmentSkinLayer.DISPLAY
+					}
+				}))
+			elseif arg_39_2.type == DROP_TYPE_EMOJI then
+				arg_39_0:addSubLayers(Context.New({
+					mediator = ContextMediator,
+					viewComponent = EmojiInfoLayer,
+					data = {
+						id = arg_39_2.cfg.id
+					}
+				}))
+			elseif arg_39_2.type == DROP_TYPE_COMBAT_UI_STYLE and not arg_39_2.notPlay then
+				arg_39_0:addSubLayers(Context.New({
+					mediator = CombatSkinInfoMediator,
+					viewComponent = CombatSkinInfoLayer,
+					data = {
+						skinID = arg_39_2:getConfig("id")
+					}
+				}))
 			else
-				pg = var_5
-
-				local var_51_3 = var_5.NewStyleMsgboxMgr.GetInstance()
-
-				var_5.Show(var_51_3, var_51_0, var_51_1)
+				pg.MsgboxMgr.GetInstance():ShowMsgBox({
+					type = MSGBOX_TYPE_SINGLE_ITEM,
+					drop = arg_39_2,
+					onNo = arg_39_3,
+					onYes = arg_39_3
+				})
 			end
 
 			return
-		end
-		BaseUI = var_3
-		var_38_1[var_3.ON_NEW_STYLE_ITEMS] = function(arg_52_0, arg_52_1, arg_52_2)
-			pg = var_2_10003
+		end,
+		[BaseUI.ON_DROP_LIST] = function(arg_40_0, arg_40_1, arg_40_2)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				hideNo = true,
+				type = MSGBOX_TYPE_ITEM_BOX,
+				items = arg_40_2.itemList,
+				content = arg_40_2.content,
+				item2Row = arg_40_2.item2Row,
+				itemFunc = function(arg_41_0)
+					arg_40_0.viewComponent:emit(BaseUI.ON_DROP, arg_41_0, function()
+						arg_40_0.viewComponent:emit(BaseUI.ON_DROP_LIST, arg_40_2)
 
-			local var_52_0 = var_2_10003.NewStyleMsgboxMgr.TYPE_COMMON_ITEMS
+						return
+					end)
 
-			setmetatable = var_2_10004
+					return
+				end
+			})
 
-			local var_52_1 = arg_52_2
-			local var_52_2 = {}
-			local var_52_3 = {}
-			local var_52_4 = {}
-			local var_52_5 = {}
+			return
+		end,
+		[BaseUI.ON_DROP_LIST_OWN] = function(arg_43_0, arg_43_1, arg_43_2)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				hideNo = true,
+				type = MSGBOX_TYPE_DROP_ITEM_ESKIN,
+				items = arg_43_2.itemList,
+				content = arg_43_2.content,
+				item2Row = arg_43_2.item2Row,
+				itemFunc = function(arg_44_0)
+					arg_43_0.viewComponent:emit(BaseUI.ON_DROP, arg_44_0, function()
+						arg_43_0.viewComponent:emit(BaseUI.ON_DROP_LIST, arg_43_2)
 
-			pg = var_2_10011
-			var_52_5.type = var_2_10011.NewStyleMsgboxMgr.BUTTON_TYPE.confirm
-			i18n = var_11
-			var_52_5.name = var_11("msgbox_text_confirm")
-			SFX_CONFIRM = var_11
-			var_52_5.sound = var_11
-			var_52_4[1] = var_52_5
-			var_52_3.btnList = var_52_4
-			var_52_3.items = arg_52_2.itemList
-			var_52_3.content = arg_52_2.content
+						return
+					end)
 
-			function var_52_3.itemFunc(arg_53_0)
-				local var_53_0 = arg_52_0.viewComponent
-				local var_53_1 = var_1.emit
+					return
+				end
+			})
 
-				BaseUI = var_3_10004
+			return
+		end,
+		[BaseUI.ON_ITEM] = function(arg_46_0, arg_46_1, arg_46_2, arg_46_3)
+			arg_46_0:addSubLayers(Context.New({
+				mediator = ItemInfoMediator,
+				viewComponent = ItemInfoLayer,
+				data = {
+					drop = Drop.New({
+						type = DROP_TYPE_ITEM,
+						id = arg_46_2
+					}),
+					confirmCall = arg_46_3
+				}
+			}))
 
-				var_53_1(var_53_0, var_3_10004.ON_NEW_STYLE_DROP, {
-					useDeepShow = true,
-					drop = arg_53_0
-				})
+			return
+		end,
+		[BaseUI.ON_ITEM_EXTRA] = function(arg_47_0, arg_47_1, arg_47_2, arg_47_3)
+			arg_47_0:addSubLayers(Context.New({
+				mediator = ItemInfoMediator,
+				viewComponent = ItemInfoLayer,
+				data = {
+					drop = Drop.New({
+						type = DROP_TYPE_ITEM,
+						id = arg_47_2,
+						extra = arg_47_3
+					})
+				}
+			}))
+
+			return
+		end,
+		[BaseUI.ON_SHIP] = function(arg_48_0, arg_48_1, arg_48_2)
+			arg_48_0:addSubLayers(Context.New({
+				mediator = ItemInfoMediator,
+				viewComponent = ItemInfoLayer,
+				data = {
+					drop = Drop.New({
+						type = DROP_TYPE_SHIP,
+						id = arg_48_2
+					})
+				}
+			}))
+
+			return
+		end,
+		[BaseUI.ON_EQUIPMENT] = function(arg_49_0, arg_49_1, arg_49_2)
+			arg_49_2.type = defaultValue(arg_49_2.type, EquipmentInfoMediator.TYPE_DEFAULT)
+
+			local var_49_0 = arg_49_0
+			local var_49_3 = {
+				mediator = EquipmentInfoMediator,
+				viewComponent = EquipmentInfoLayer,
+				data = arg_49_2
+			}
+
+			if arg_49_2 then
+				var_49_3.onRemoved = arg_49_2.onRemoved or nil
+
+				var_49_1(var_49_0, var_49_2(var_49_3))
 
 				return
 			end
+		end,
+		[BaseUI.ON_NEW_DROP] = function(arg_50_0, arg_50_1, arg_50_2)
+			pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_DROP, arg_50_2)
 
-			var_52_2.__index = var_52_3
+			return
+		end,
+		[BaseUI.ON_NEW_STYLE_DROP] = function(arg_51_0, arg_51_1, arg_51_2)
+			if arg_51_2.useDeepShow then
+				pg.NewStyleMsgboxMgr.GetInstance():DeepShow(pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP, arg_51_2)
+			else
+				pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_DROP, arg_51_2)
+			end
 
-			local var_52_6 = var_2_10004(var_52_1, var_52_2)
+			return
+		end,
+		[BaseUI.ON_NEW_STYLE_ITEMS] = function(arg_52_0, arg_52_1, arg_52_2)
+			local var_52_0 = setmetatable(arg_52_2, {
+				__index = {
+					btnList = {
+						{
+							type = pg.NewStyleMsgboxMgr.BUTTON_TYPE.confirm,
+							name = i18n("msgbox_text_confirm"),
+							sound = SFX_CONFIRM
+						}
+					},
+					items = arg_52_2.itemList,
+					content = arg_52_2.content,
+					itemFunc = function(arg_53_0)
+						arg_52_0.viewComponent:emit(BaseUI.ON_NEW_STYLE_DROP, {
+							useDeepShow = true,
+							drop = arg_53_0
+						})
+
+						return
+					end
+				}
+			})
 
 			if arg_52_2.useDeepShow then
-				pg = var_5
-
-				local var_52_7 = var_5.NewStyleMsgboxMgr.GetInstance()
-
-				var_5.DeepShow(var_52_7, var_52_0, var_52_6)
+				pg.NewStyleMsgboxMgr.GetInstance():DeepShow(pg.NewStyleMsgboxMgr.TYPE_COMMON_ITEMS, var_52_0)
 			else
-				pg = var_5
-
-				local var_52_8 = var_5.NewStyleMsgboxMgr.GetInstance()
-
-				var_5.Show(var_52_8, var_52_0, var_52_6)
+				pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_ITEMS, var_52_0)
 			end
 
 			return
 		end
-	end
+	}
 
-	var_38_0.CommonBindDic = var_38_1
-	pairs = var_38_0
-
-	for iter_38_0, iter_38_1 in var_38_0(var_0_1.CommonBindDic) do
+	for iter_38_0, iter_38_1 in pairs(var_0_0.CommonBindDic) do
 		arg_38_0:bind(iter_38_0, function(...)
 			return iter_38_1(arg_38_0, ...)
 		end)
@@ -1350,28 +635,23 @@ function var_0_1.commonBind(arg_38_0)
 	return
 end
 
-function var_0_1.register(arg_55_0)
+function var_0_0.register(arg_55_0)
 	return
 end
 
-function var_0_1.onUIAvalible(arg_56_0)
+function var_0_0.onUIAvalible(arg_56_0)
 	return
 end
 
-function var_0_1.setContextData(arg_57_0, arg_57_1)
+function var_0_0.setContextData(arg_57_0, arg_57_1)
 	arg_57_0.contextData = arg_57_1
 
 	return
 end
 
-function var_0_1.bind(arg_58_0, arg_58_1, arg_58_2)
-	local var_58_0 = arg_58_0.viewComponent.event
-
-	var_3.connect(var_58_0, arg_58_1, arg_58_2)
-
-	table = var_3
-
-	var_3.insert(arg_58_0.event, {
+function var_0_0.bind(arg_58_0, arg_58_1, arg_58_2)
+	arg_58_0.viewComponent.event:connect(arg_58_1, arg_58_2)
+	table.insert(arg_58_0.event, {
 		event = arg_58_1,
 		callback = arg_58_2
 	})
@@ -1379,15 +659,11 @@ function var_0_1.bind(arg_58_0, arg_58_1, arg_58_2)
 	return
 end
 
-function var_0_1.onRemove(arg_59_0)
+function var_0_0.onRemove(arg_59_0)
 	arg_59_0:remove()
 
-	ipairs = var_1
-
-	for iter_59_0, iter_59_1 in var_1(arg_59_0.event) do
-		local var_59_0 = arg_59_0.viewComponent.event
-
-		var_6.disconnect(var_59_0, iter_59_1.event, iter_59_1.callback)
+	for iter_59_0, iter_59_1 in ipairs(arg_59_0.event) do
+		arg_59_0.viewComponent.event:disconnect(iter_59_1.event, iter_59_1.callback)
 	end
 
 	arg_59_0.event = {}
@@ -1395,160 +671,100 @@ function var_0_1.onRemove(arg_59_0)
 	return
 end
 
-function var_0_1.remove(arg_60_0)
+function var_0_0.remove(arg_60_0)
 	return
 end
 
-function var_0_1.addSubLayers(arg_61_0, arg_61_1, arg_61_2, arg_61_3, arg_61_4)
-	assert = var_1_10005
-	isa = var_1_10007
+function var_0_0.addSubLayers(arg_61_0, arg_61_1, arg_61_2, arg_61_3, arg_61_4)
+	assert(isa(arg_61_1, Context), "should be an instance of Context")
 
-	local var_61_0 = arg_61_1
-
-	Context = var_1_10010
-
-	var_1_10005(var_1_10007(var_61_0, var_1_10010), "should be an instance of Context")
-
-	local var_61_1 = arg_61_0
-	local var_61_2 = arg_61_0.GetContext(var_61_1)
+	local var_61_0 = arg_61_0:GetContext()
 
 	if arg_61_2 then
-		while var_61_2.parent do
-			var_61_2 = var_61_2.parent
+		while var_61_0.parent do
+			var_61_0 = var_61_0.parent
 		end
 	end
 
-	local var_61_3 = {
-		parentContext = var_61_2,
+	local var_61_1 = {
+		parentContext = var_61_0,
 		context = arg_61_1,
 		callback = arg_61_3
 	}
 
-	if arg_61_4 then
-		table = var_61_1
-		var_61_3 = var_61_1.merge(var_61_3, arg_61_4) or var_61_3
-	end
+	var_61_1 = arg_61_4 and table.merge(var_61_1, arg_61_4) or var_61_1
 
-	local var_61_4 = arg_61_0
-	local var_61_5 = arg_61_0.sendNotification
-
-	GAME = var_1_10010
-
-	var_61_5(var_61_4, var_1_10010.LOAD_LAYERS, var_61_3)
+	arg_61_0:sendNotification(GAME.LOAD_LAYERS, var_61_1)
 
 	return
 end
 
-function var_0_1.GetContext(arg_62_0)
-	getProxy = var_1_10001
-	ContextProxy = var_1_10003
-
-	local var_62_0 = var_1_10001(var_1_10003)
-	local var_62_1 = var_1.getCurrentContext(var_62_0)
-
-	return var_2.getContextByMediator(var_62_1, arg_62_0.class)
+function var_0_0.GetContext(arg_62_0)
+	return getProxy(ContextProxy):getCurrentContext():getContextByMediator(arg_62_0.class)
 end
 
-function var_0_1.blockEvents(arg_63_0)
+function var_0_0.blockEvents(arg_63_0)
 	if arg_63_0.event then
-		ipairs = var_1
-
-		for iter_63_0, iter_63_1 in var_1(arg_63_0.event) do
-			local var_63_0 = arg_63_0.viewComponent.event
-
-			var_6.block(var_63_0, iter_63_1.event, iter_63_1.callback)
+		for iter_63_0, iter_63_1 in ipairs(arg_63_0.event) do
+			arg_63_0.viewComponent.event:block(iter_63_1.event, iter_63_1.callback)
 		end
 	end
 
 	return
 end
 
-function var_0_1.unblockEvents(arg_64_0)
+function var_0_0.unblockEvents(arg_64_0)
 	if arg_64_0.event then
-		ipairs = var_1
-
-		for iter_64_0, iter_64_1 in var_1(arg_64_0.event) do
-			local var_64_0 = arg_64_0.viewComponent.event
-
-			var_6.unblock(var_64_0, iter_64_1.event, iter_64_1.callback)
+		for iter_64_0, iter_64_1 in ipairs(arg_64_0.event) do
+			arg_64_0.viewComponent.event:unblock(iter_64_1.event, iter_64_1.callback)
 		end
 	end
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_65_0, arg_65_1)
-	pg = var_1_10002
-
-	local var_65_0 = var_1_10002.CriMgr.GetInstance()
-	local var_65_1 = var_2.PlaySoundEffect_V3
-
-	SFX_CANCEL = var_1_10005
-
-	var_65_1(var_65_0, var_1_10005)
-
-	getProxy = var_65_1
-	ContextProxy = var_65_0
-
-	local var_65_2 = var_65_1(var_65_0)
+function var_0_0.onBackPressed(arg_65_0, arg_65_1)
+	pg.CriMgr.GetInstance():PlaySoundEffect_V3(SFX_CANCEL)
 
 	if arg_65_1 then
-		if var_65_2:getContextByMediator(arg_65_0.class).parent then
-			pg = var_65_0
+		local var_65_0 = getProxy(ContextProxy):getContextByMediator(arg_65_0.class).parent
 
-			local var_65_3 = var_65_0.m02
+		if var_65_0 then
+			local var_65_1 = pg.m02:retrieveMediator(var_65_0.mediator.__cname)
 
-			if var_4.retrieveMediator(var_65_3, var_3.mediator.__cname) and var_4.viewComponent then
-				local var_65_4 = var_4.viewComponent
-
-				var_5.onBackPressed(var_65_4)
+			if var_65_1 and var_65_1.viewComponent then
+				var_65_1.viewComponent:onBackPressed()
 			end
 		end
 	else
-		local var_65_5 = arg_65_0.viewComponent
-
-		var_3.closeView(var_65_5)
+		arg_65_0.viewComponent:closeView()
 	end
 
 	return
 end
 
-function var_0_1.removeSubLayers(arg_66_0, arg_66_1, arg_66_2)
-	assert = var_1_10003
-	isa = var_1_10005
+function var_0_0.removeSubLayers(arg_66_0, arg_66_1, arg_66_2)
+	assert(isa(arg_66_1, var_0_0), "should be a ContextMediator Class")
 
-	var_1_10003(var_1_10005(arg_66_1, var_0_1), "should be a ContextMediator Class")
+	local var_66_0 = arg_66_0.class or arg_66_0
+	local var_66_1 = getProxy(ContextProxy):getContextByMediator(var_66_0)
 
-	getProxy = var_1_10003
-	ContextProxy = var_5
-
-	local var_66_0 = var_1_10003(var_5)
-	local var_66_1 = var_3.getContextByMediator
-	local var_66_2
-
-	if not arg_66_0.class then
-		var_66_2 = arg_66_0
-	end
-
-	if not var_66_1(var_66_0, var_66_2) then
+	if not var_66_1 then
 		return
 	end
 
-	if not var_4:getContextByMediator(arg_66_1) then
+	local var_66_2 = var_66_1:getContextByMediator(arg_66_1)
+
+	if not var_66_2 then
 		return
 	end
 
-	local var_66_3 = arg_66_0
-	local var_66_4 = arg_66_0.sendNotification
-
-	GAME = var_1_10009
-
-	var_66_4(var_66_3, var_1_10009.REMOVE_LAYERS, {
-		context = var_5,
+	arg_66_0:sendNotification(GAME.REMOVE_LAYERS, {
+		context = var_66_2,
 		callback = arg_66_2
 	})
 
 	return
 end
 
-return var_0_1
+return var_0_0

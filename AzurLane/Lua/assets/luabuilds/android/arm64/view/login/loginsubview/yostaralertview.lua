@@ -1,231 +1,83 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("YostarAlertView", import("...base.BaseSubView"))
 
-local var_0_0 = "YostarAlertView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "YostarAlertView"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
+function var_0_0.OnLoaded(arg_2_0)
 	return
 end
 
-function var_0_1.SetShareData(arg_3_0, arg_3_1)
+function var_0_0.SetShareData(arg_3_0, arg_3_1)
 	arg_3_0.shareData = arg_3_1
 
 	return
 end
 
-function var_0_1.OnInit(arg_4_0)
+function var_0_0.OnInit(arg_4_0)
 	arg_4_0.yostarAlert = arg_4_0._tf
+	arg_4_0.yostarEmailTxt = arg_4_0.yostarAlert:Find("email_input_txt")
+	arg_4_0.yostarCodeTxt = arg_4_0.yostarAlert:Find("code_input_txt")
+	arg_4_0.yostarGenCodeBtn = arg_4_0.yostarAlert:Find("gen_code_btn")
+	arg_4_0.yostarGenTxt = arg_4_0.yostarGenCodeBtn:Find("Text")
+	arg_4_0.yostarSureBtn = arg_4_0.yostarAlert:Find("login_btn")
+	arg_4_0.email_text = arg_4_0.yostarAlert:Find("title1")
+	arg_4_0.emailhold_text = arg_4_0.yostarEmailTxt:Find("Placeholder")
+	arg_4_0.code_text = arg_4_0.yostarAlert:Find("title2")
+	arg_4_0.codehold_text = arg_4_0.yostarCodeTxt:Find("Placeholder")
+	arg_4_0.genBtn_text = arg_4_0.yostarGenCodeBtn:Find("Text")
+	arg_4_0.desc_text = arg_4_0.yostarAlert:Find("desc")
+	arg_4_0.loginBtn_text = arg_4_0.yostarSureBtn:Find("Image")
 
-	local var_4_0 = arg_4_0.yostarAlert
+	setText(arg_4_0.email_text, i18n("email_text"))
+	setText(arg_4_0.emailhold_text, i18n("emailhold_text"))
+	setText(arg_4_0.code_text, i18n("code_text"))
+	setText(arg_4_0.codehold_text, i18n("codehold_text"))
+	setText(arg_4_0.genBtn_text, i18n("genBtn_text"))
+	setText(arg_4_0.desc_text, i18n("desc_text"))
 
-	arg_4_0.yostarEmailTxt = var_1.Find(var_4_0, "email_input_txt")
+	local var_4_0 = arg_4_0.contextData.isLinkMode == true and i18n("linkBtn_text") or i18n("loginBtn_text")
 
-	local var_4_1 = arg_4_0.yostarAlert
+	setText(arg_4_0.loginBtn_text, var_4_0)
+	arg_4_0:InitEvent()
 
-	arg_4_0.yostarCodeTxt = var_1.Find(var_4_1, "code_input_txt")
-
-	local var_4_2 = arg_4_0.yostarAlert
-
-	arg_4_0.yostarGenCodeBtn = var_1.Find(var_4_2, "gen_code_btn")
-
-	local var_4_3 = arg_4_0.yostarGenCodeBtn
-
-	arg_4_0.yostarGenTxt = var_1.Find(var_4_3, "Text")
-
-	local var_4_4 = arg_4_0.yostarAlert
-
-	arg_4_0.yostarSureBtn = var_1.Find(var_4_4, "login_btn")
-
-	local var_4_5 = arg_4_0.yostarAlert
-
-	arg_4_0.email_text = var_1.Find(var_4_5, "title1")
-
-	local var_4_6 = arg_4_0.yostarEmailTxt
-
-	arg_4_0.emailhold_text = var_1.Find(var_4_6, "Placeholder")
-
-	local var_4_7 = arg_4_0.yostarAlert
-
-	arg_4_0.code_text = var_1.Find(var_4_7, "title2")
-
-	local var_4_8 = arg_4_0.yostarCodeTxt
-
-	arg_4_0.codehold_text = var_1.Find(var_4_8, "Placeholder")
-
-	local var_4_9 = arg_4_0.yostarGenCodeBtn
-
-	arg_4_0.genBtn_text = var_1.Find(var_4_9, "Text")
-
-	local var_4_10 = arg_4_0.yostarAlert
-
-	arg_4_0.desc_text = var_1.Find(var_4_10, "desc")
-
-	local var_4_11 = arg_4_0.yostarSureBtn
-
-	arg_4_0.loginBtn_text = var_1.Find(var_4_11, "Image")
-	setText = var_1
-
-	local var_4_12 = arg_4_0.email_text
-
-	i18n = var_4
-
-	var_1(var_4_12, var_4("email_text"))
-
-	setText = var_1
-
-	local var_4_13 = arg_4_0.emailhold_text
-
-	i18n = var_4
-
-	var_1(var_4_13, var_4("emailhold_text"))
-
-	setText = var_1
-
-	local var_4_14 = arg_4_0.code_text
-
-	i18n = var_4
-
-	var_1(var_4_14, var_4("code_text"))
-
-	setText = var_1
-
-	local var_4_15 = arg_4_0.codehold_text
-
-	i18n = var_4
-
-	var_1(var_4_15, var_4("codehold_text"))
-
-	setText = var_1
-
-	local var_4_16 = arg_4_0.genBtn_text
-
-	i18n = var_4
-
-	var_1(var_4_16, var_4("genBtn_text"))
-
-	setText = var_1
-
-	local var_4_17 = arg_4_0.desc_text
-
-	i18n = var_4
-
-	var_1(var_4_17, var_4("desc_text"))
-
-	setText = var_1
-
-	local var_4_18 = arg_4_0.loginBtn_text
-
-	if arg_4_0.contextData.isLinkMode == true then
-		i18n = var_4_19
-
-		local var_4_19
-
-		if not var_4_19("linkBtn_text") then
-			i18n = var_4_19
-			var_4_19 = var_4_19("loginBtn_text")
-		end
-
-		var_1(var_4_18, var_4_19)
-		arg_4_0:InitEvent()
-
-		return
-	end
+	return
 end
 
-function var_0_1.InitEvent(arg_5_0)
-	onButton = var_1_10001
-
-	var_1_10001(arg_5_0, arg_5_0.yostarAlert, function()
-		setActive = var_2_10000
-
-		var_2_10000(arg_5_0.yostarAlert, false)
+function var_0_0.InitEvent(arg_5_0)
+	onButton(arg_5_0, arg_5_0.yostarAlert, function()
+		setActive(arg_5_0.yostarAlert, false)
 
 		if arg_5_0.contextData.isDestroyOnClose == true then
-			local var_6_0 = arg_5_0
-
-			var_0.Destroy(var_6_0)
+			arg_5_0:Destroy()
 		end
 
 		return
 	end)
+	onButton(arg_5_0, arg_5_0.yostarGenCodeBtn, function()
+		local var_7_0 = getInputText(arg_5_0.yostarEmailTxt)
 
-	onButton = var_1_10001
-
-	var_1_10001(arg_5_0, arg_5_0.yostarGenCodeBtn, function()
-		getInputText = var_2_10000
-
-		if var_2_10000(arg_5_0.yostarEmailTxt) ~= "" then
-			pg = var_2_10001
-
-			local var_7_0 = var_2_10001.SdkMgr.GetInstance()
-
-			var_2_10001.VerificationCodeReq(var_7_0, var_0)
-
-			local var_7_1 = arg_5_0
-
-			var_2_10001.CheckAiriGenCodeCounter(var_7_1)
+		if var_7_0 ~= "" then
+			pg.SdkMgr.GetInstance():VerificationCodeReq(var_7_0)
+			arg_5_0:CheckAiriGenCodeCounter()
 		else
-			pg = var_2_10001
-
-			local var_7_2 = var_2_10001.TipsMgr.GetInstance()
-			local var_7_3 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_7_3(var_7_2, var_2_10004("verification_code_req_tip1"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("verification_code_req_tip1"))
 		end
 
 		return
 	end)
-
-	onButton = var_1_10001
-
-	var_1_10001(arg_5_0, arg_5_0.yostarSureBtn, function()
-		getInputText = var_2_10000
-
-		local var_8_0 = var_2_10000(arg_5_0.yostarEmailTxt)
-
-		getInputText = var_2_10001
-
-		local var_8_1 = var_2_10001(arg_5_0.yostarCodeTxt)
-		local var_8_3
+	onButton(arg_5_0, arg_5_0.yostarSureBtn, function()
+		local var_8_0 = getInputText(arg_5_0.yostarEmailTxt)
+		local var_8_1 = getInputText(arg_5_0.yostarCodeTxt)
 
 		if var_8_0 ~= "" and var_8_1 ~= "" then
 			if arg_5_0.contextData.isLinkMode == true then
-				pg = var_8_3
-
-				local var_8_2 = var_8_3.SdkMgr.GetInstance()
-
-				var_8_3 = var_8_3.LinkSocial
-				AIRI_PLATFORM_YOSTAR = var_2_10005
-
-				var_8_3(var_8_2, var_2_10005, var_8_0, var_8_1)
+				pg.SdkMgr.GetInstance():LinkSocial(AIRI_PLATFORM_YOSTAR, var_8_0, var_8_1)
 			else
-				pg = var_8_3
-
-				local var_8_4 = var_8_3.SdkMgr.GetInstance()
-
-				var_8_3 = var_8_3.LoginWithSocial
-				AIRI_PLATFORM_YOSTAR = var_2_10005
-
-				var_8_3(var_8_4, var_2_10005, var_8_0, var_8_1)
+				pg.SdkMgr.GetInstance():LoginWithSocial(AIRI_PLATFORM_YOSTAR, var_8_0, var_8_1)
 			end
 		else
-			pg = var_8_3
-
-			local var_8_5 = var_8_3.TipsMgr.GetInstance()
-			local var_8_6 = var_2.ShowTips
-
-			i18n = var_2_10005
-
-			var_8_6(var_8_5, var_2_10005("verification_code_req_tip3"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("verification_code_req_tip3"))
 		end
 
 		return
@@ -235,58 +87,34 @@ function var_0_1.InitEvent(arg_5_0)
 	return
 end
 
-function var_0_1.CheckAiriGenCodeCounter(arg_9_0)
-	GetAiriGenCodeTimeRemain = var_1_10001
+function var_0_0.CheckAiriGenCodeCounter(arg_9_0)
+	if GetAiriGenCodeTimeRemain() > 0 then
+		setButtonEnabled(arg_9_0.yostarGenCodeBtn, false)
 
-	if var_1_10001() > 0 then
-		setButtonEnabled = var_1
+		arg_9_0.genCodeTimer = Timer.New(function()
+			local var_10_0 = GetAiriGenCodeTimeRemain()
 
-		var_1(arg_9_0.yostarGenCodeBtn, false)
-
-		Timer = var_1
-		arg_9_0.genCodeTimer = var_1.New(function()
-			GetAiriGenCodeTimeRemain = var_2_10000
-
-			local var_10_0 = var_2_10000()
-
-			if 0 < var_10_0 then
-				setText = var_1
-
-				var_1(arg_9_0.yostarGenTxt, "(" .. var_10_0 .. ")")
+			if var_10_0 > 0 then
+				setText(arg_9_0.yostarGenTxt, "(" .. var_10_0 .. ")")
 			else
-				setText = var_1
-
-				local var_10_1 = arg_9_0.yostarGenTxt
-
-				i18n = var_2_10004
-
-				var_1(var_10_1, var_2_10004("genBtn_text"))
-
-				local var_10_2 = arg_9_0
-
-				var_1.ClearAiriGenCodeTimer(var_10_2)
+				setText(arg_9_0.yostarGenTxt, i18n("genBtn_text"))
+				arg_9_0:ClearAiriGenCodeTimer()
 			end
 
 			return
 		end, 1, -1)
 
-		local var_9_0 = arg_9_0.genCodeTimer
-
-		var_1.Start(var_9_0)
+		arg_9_0.genCodeTimer:Start()
 	end
 
 	return
 end
 
-function var_0_1.ClearAiriGenCodeTimer(arg_11_0)
-	setButtonEnabled = var_1_10001
-
-	var_1_10001(arg_11_0.yostarGenCodeBtn, true)
+function var_0_0.ClearAiriGenCodeTimer(arg_11_0)
+	setButtonEnabled(arg_11_0.yostarGenCodeBtn, true)
 
 	if arg_11_0.genCodeTimer then
-		local var_11_0 = arg_11_0.genCodeTimer
-
-		var_1.Stop(var_11_0)
+		arg_11_0.genCodeTimer:Stop()
 
 		arg_11_0.genCodeTimer = nil
 	end
@@ -294,10 +122,10 @@ function var_0_1.ClearAiriGenCodeTimer(arg_11_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_12_0)
+function var_0_0.OnDestroy(arg_12_0)
 	arg_12_0:ClearAiriGenCodeTimer()
 
 	return
 end
 
-return var_0_1
+return var_0_0

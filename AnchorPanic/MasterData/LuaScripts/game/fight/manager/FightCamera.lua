@@ -53,14 +53,20 @@ function ctor(self)
     -- boss超远镜头
     self.m_ScPoint_07 = math.Vector3(0.5, 3, -11)
     self.m_ScRotation_07 = math.Vector3(12, 0, 0)
+    -- 近战 全体
+    self.m_ScPoint_08 = math.Vector3(1.26, 3.4, -9.8)
+    self.m_ScRotation_08 = math.Vector3(12, 0, 0)
 
 
-    -- boss锁定视角
-    self.m_ScPoint_08 = math.Vector3(-5.04, 0.99, 7.5)
-    self.m_ScRotation_08 = math.Vector3(-14.67, 71.76, -0.60)
-    -- boss锁定视角
+    -- boss锁定视角常规
     self.m_ScPoint_boss = math.Vector3(-11.13, 0.9, 6.12)
     self.m_ScRotation_boss = math.Vector3(-17, 46.58, 0.37)
+    -- boss锁定视角战斗
+    self.m_ScPoint_boss_fight = math.Vector3(-5.04, 0.99, 7.5)
+    self.m_ScRotation_boss_fight = math.Vector3(-14.67, 71.76, -0.6)
+    -- boss锁定视角常规（小屏）
+    self.m_ScPoint_boss_small = math.Vector3(-17.86, 0.9, -1)
+    self.m_ScRotation_boss_small = math.Vector3(-17, 46.58, 0.37)
 
     self.m_offsetPosition = nil
     self.m_moveOffsetPosition = nil
@@ -74,6 +80,18 @@ function ctor(self)
 
     -- 是否开启锁定视角
     self.m_isLockCamera = false
+
+    -- 战斗相机类型 0默认 1跟随攻击者 2跟随选择
+    self.m_fightCameraType = 0
+    self.m_lockAttackLiveId = nil
+
+    -- 锁定战员的相机挂点
+    self.m_lockHeroCameraRt = nil
+    self.m_lockHeroCameraDt = nil
+    self.m_lockHeroCameraFt = nil
+
+    self.m_lockHeroCameraDtOrg = gs.Vector3(0, 1.5, -3)
+
 end
 
 -- 设置锁定视角
@@ -82,8 +100,19 @@ function setCameraLock(self, modelId)
     if attackerRo:getLockCamera() == 1 then
         self.m_isLockCamera = true
 
-        self.m_tempDtOrgSCPoint = self.m_ScPoint_boss
-        self.m_tempDtOrgSCRotation = self.m_ScRotation_boss
+        -- local scPoint = self.m_ScPoint_boss
+        -- local scRotation = self.m_ScRotation_boss
+        local scPoint =math.Vector3( attackerRo:getBossCameraPonit()[1],  attackerRo:getBossCameraPonit()[2],  attackerRo:getBossCameraPonit()[3])
+        local scRotation = math.Vector3(attackerRo:getBossCameraRotation()[1], attackerRo:getBossCameraRotation()[2], attackerRo:getBossCameraRotation()[3])
+
+        local screenW, screenH = ScreenUtil:getScreenSize(nil)
+        if screenW / screenH <= 1.5 then
+            scPoint = self.m_ScPoint_boss_small
+            scRotation = self.m_ScRotation_boss_small
+        end
+
+        self.m_tempDtOrgSCPoint = scPoint
+        self.m_tempDtOrgSCRotation = scRotation
     else
         self.m_isLockCamera = false
 
@@ -97,7 +126,6 @@ function setFightCamera(self, enable)
     if gs.CameraMgr:GetSceneCameraTrans() and gs.CameraMgr:GetSceneCameraTrans().gameObject then
         gs.CameraMgr:GetSceneCameraTrans().gameObject:SetActive(enable)
     end
-
 end
 
 -- 设置战斗中摄像机照射中心的初始位置
@@ -113,6 +141,7 @@ end
 -- 移除相机及还原
 function removeSCamera(self)
     self:resetTranparency()
+    self:setFightCameraType(0)
 
     if self:getCameraTrans() then
         gs.CameraMgr:RemoveSceneCamera()
@@ -246,6 +275,7 @@ function focusOnLive(self, liveId)
             local point = live:getPointTrans(fight.FightDef.POINT_CAMERA)
             if point then
                 self:getCameraTrans():SetParent(point, false)
+                self.isFocusOnLive = true
             end
         end
     end
@@ -254,8 +284,37 @@ function focusOnLive(self, liveId)
     gs.TransQuick:SetLRotation(self:getCameraTrans(), 0, 180, 0)
 end
 
+-- 自由视角锁定战员
+function lockOnLive(self, liveId)
+    if SkillEditorDef and SkillEditorDef.IS_DISABLE_FIGHT_CAMERA == true then
+        return
+    end
+
+    if liveId then
+        self.m_lockAttackLiveId = liveId
+        self:setFightCameraType(2)
+    else
+        self.m_lockAttackLiveId = nil
+        self:setFightCameraType(1)
+    end
+end
+
+-- 设置战斗镜头视角0常规，1跟随，2锁定
+function setFightCameraType(self, type)
+    self.m_fightCameraType = type
+    self:updateCameraFollow()
+end
+
 -- 摄像机由角色挂点中退回到默认位置
 function checkReturnCamera(self, cusTime)
+    if self.isFocusOnLive then
+        self.isFocusOnLive = false
+        self.currLockLiveId = nil
+    end
+    if self.m_fightCameraType ~= 0 and self.m_attackLiveVo then
+        self:updateCameraFollow()
+        return
+    end
     if self:getCameraTrans() then
 
         self.m_attackLiveVo = nil
@@ -310,6 +369,9 @@ end
 
 -- 当出手者不能出手，聚焦出手者的位置
 function focusAttacker(self, cusAttackerVo, finishCall)
+    if self.m_isLockCamera then
+        return
+    end
     self:removeReturnTween()
     local pos = cusAttackerVo.position
     pos = math.Vector3(pos.x, pos.y - 0.4, pos.z - 4.5)
@@ -385,16 +447,30 @@ function moveScFilpTrans(self, beFlip, flipPos, skillCamera, offsetZ, targetZ, f
     end
 end
 
+-- 移动镜头
 function moveScFilp(self, beFlip, flipPos, skillCamera, offsetZ, targetZ, flipTime)
     if self.m_isLockCamera then
+        if beFlip then
+            self:checkReturnCamera()
+            return
+        end
         if not beFlip and self.m_attackLiveVo and self.m_attackLiveVo.isAtt == 1 then
             self.m_moveScFilpTweens = {}
-            table.insert(self.m_moveScFilpTweens, fight.TweenManager:addTweener(TweenFactory:move2Lpos(self.m_scCameraDTTRans, self.m_ScPoint_08, 1, gs.DT.Ease.OutCubic)))
-            table.insert(self.m_moveScFilpTweens, fight.TweenManager:addTweener(TweenFactory:lRotate(self.m_scCameraDTTRans, self.m_ScRotation_08, 1)))
+            table.insert(self.m_moveScFilpTweens, fight.TweenManager:addTweener(TweenFactory:move2Lpos(self.m_scCameraDTTRans, self.m_ScPoint_boss_fight, 1, gs.DT.Ease.OutCubic)))
+            table.insert(self.m_moveScFilpTweens, fight.TweenManager:addTweener(TweenFactory:lRotate(self.m_scCameraDTTRans, self.m_ScRotation_boss_fight, 1)))
         end
         return
     end
+
+    if self.m_fightCameraType ~= 0 then
+        self:updateCameraFollow()
+        return
+    end
     GameDispatcher:dispatchEvent(EventName.FIGHT_CAMERA_MOVE)
+
+    self.m_lockHeroCameraRt = nil
+    self.m_lockHeroCameraDt = nil
+    self.m_lockHeroCameraFt = nil
 
     RateLooper:removeFrame(self, self.onFrame)
     self.isInFind = false
@@ -447,6 +523,10 @@ function moveScFilp(self, beFlip, flipPos, skillCamera, offsetZ, targetZ, flipTi
         -- boss超远镜头
         offsetPos = self:checkNeedToFar(self.m_ScPoint_07, 2)
         rotation = self.m_ScRotation_07
+    elseif skillCamera == 10 then
+        -- 近战 全体
+        offsetPos = self:checkNeedToFar(self.m_ScPoint_08, 1)
+        rotation = self.m_ScRotation_08
     else
 
         offsetPos = self.m_ScPoint_00
@@ -541,6 +621,45 @@ function checkNeedToFar(self, offsetPos, dis)
     return pos
 end
 
+-- 更新相机跟随
+function updateCameraFollow(self)
+    if self.isFocusOnLive then
+        return
+    end
+    if self.m_fightCameraType == 1 and self.m_attackLiveVo and self.currLockLiveId ~= self.m_attackLiveVo.id then
+        self.currLockLiveId = self.m_attackLiveVo.id
+        local live = fight.SceneItemManager:getLivething(self.m_attackLiveVo.id)
+        if live then
+            self.m_lockHeroCameraRt = live:getPointTrans(fight.FightDef.POINT_CAMERA_RT)
+            self.m_lockHeroCameraDt = live:getPointTrans(fight.FightDef.POINT_CAMERA_DT)
+            self.m_lockHeroCameraFt = live:getPointTrans(fight.FightDef.POINT_CAMERA_FT)
+            -- gs.TransQuick:LPos(self.m_lockHeroCameraDt, self.m_lockHeroCameraDtOrg)
+            -- gs.TransQuick:SetLRotation(self.m_lockHeroCameraDt, self.m_lOrgSCRotation)
+            gs.TransQuick:LPos(self.m_lockHeroCameraFt, gs.VEC3_ZERO)
+            gs.TransQuick:SetLRotation(self.m_lockHeroCameraFt, gs.VEC3_ZERO)
+            gs.TransQuick:SetParentOrg(self:getCameraTrans(), self.m_lockHeroCameraFt)
+        end
+    end
+    if self.m_fightCameraType == 2 and self.m_lockAttackLiveId and self.currLockLiveId ~= self.m_lockAttackLiveId then
+        self.currLockLiveId = self.m_lockAttackLiveId
+        local live = fight.SceneItemManager:getLivething(self.m_lockAttackLiveId)
+        if live then
+            self.m_lockHeroCameraRt = live:getPointTrans(fight.FightDef.POINT_CAMERA_RT)
+            self.m_lockHeroCameraDt = live:getPointTrans(fight.FightDef.POINT_CAMERA_DT)
+            self.m_lockHeroCameraFt = live:getPointTrans(fight.FightDef.POINT_CAMERA_FT)
+            -- gs.TransQuick:LPos(self.m_lockHeroCameraDt, self.m_lockHeroCameraDtOrg)
+            -- gs.TransQuick:SetLRotation(self.m_lockHeroCameraDt, self.m_lOrgSCRotation)
+            gs.TransQuick:LPos(self.m_lockHeroCameraFt, gs.VEC3_ZERO)
+            gs.TransQuick:SetLRotation(self.m_lockHeroCameraFt, gs.VEC3_ZERO)
+            gs.TransQuick:SetParentOrg(self:getCameraTrans(), self.m_lockHeroCameraFt)
+        end
+    end
+    if self.m_fightCameraType == 0 then
+        self:checkReturnCamera()
+    end
+
+end
+
 
 -- 战场受击方中心点
 function getGridCenter(self)
@@ -597,7 +716,7 @@ function setTranparency(self)
                     local tempPos = math.Vector3(targetPos.x, self:getCameraTrans().position.y, targetPos.z)
                     local cameraDis1 = gs.TransQuick:PosDist(self:getCameraTrans(), targetPos)
                     local cameraDis = gs.TransQuick:PosDist(self:getCameraTrans(), tempPos)
-                    if (isInView or cameraDis < 3) and targetPos.z < attackerPos.z then
+                    if (isInView or cameraDis < 3) and targetPos.z < attackerPos.z and self.m_fightCameraType == 0 then
                         thing:setTranparency(0.35)
                     end
                     -- if cameraDis < 2.5 and targetPos.z < attackerPos.z then
@@ -607,6 +726,22 @@ function setTranparency(self)
             end
         end
     end
+end
+
+function getFightCameraType(self)
+    return self.m_fightCameraType
+end
+
+function getLockHeroCameraRt(self)
+    return self.m_lockHeroCameraRt
+end
+
+function getLockHeroCameraDt(self)
+    return self.m_lockHeroCameraDt
+end
+
+function getLockHeroCameraFt(self)
+    return self.m_lockHeroCameraFt
 end
 
 -- 恢复战斗单位的透明化
@@ -621,6 +756,32 @@ end
 function setCameraDof(self)
     self.fakeDof = gs.ResMgr:LoadGO("arts/prefabs/fightObj/FakeDof.prefab")
     gs.TransQuick:SetParentOrg(self.fakeDof.transform, self:getCameraTrans())
+end
+
+-- 设置4k录制画质
+function setVideoQuality(self, camera)
+    local defScamera = camera
+    if not defScamera then
+        defScamera = gs.CameraMgr:GetDefSceneCamera()
+    end
+
+    if (self.m_graphicBlitCamera == nil) then
+        local go = gs.GameObject.Find("[RESOLUTION_CAMERA]")
+        if not go or gs.GoUtil.IsGoNull(go) then
+            go = gs.GameObject("[RESOLUTION_CAMERA]")
+            self.m_graphicBlitCamera = go:AddComponent(ty.Camera)
+            self.m_graphicBlit = go:AddComponent(ty.GraphicBlit)
+        end
+    end
+    self.m_graphicBlitCamera.transform:SetParent(defScamera.transform)
+    self.m_graphicBlitCamera.transform.localPosition = gs.Vector3.zero
+    self.m_graphicBlitCamera.transform.localEulerAngles = gs.Vector3.zero
+
+    self.m_graphicBlit:setRenderCamera(defScamera)
+
+    local height = 2160
+    local width = height / gs.Screen.height * gs.Screen.width
+    self.m_graphicBlit:setResolution(width, height)
 end
 
 return _M

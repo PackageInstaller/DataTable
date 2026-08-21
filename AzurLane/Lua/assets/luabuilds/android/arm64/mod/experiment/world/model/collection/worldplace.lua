@@ -1,34 +1,19 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("WorldPlace")
-local var_0_1 = {}
-
-i18n1 = var_2
-var_0_1[1] = var_2("碧蓝")
-i18n1 = var_2
-var_0_1[2] = var_2("铁血")
-i18n1 = var_2
-var_0_1[3] = var_2("塞壬")
-pg = var_2
-
-local var_0_2 = var_2.world_collection_place_template
+﻿local var_0_0 = class("WorldPlace")
+local var_0_1 = {
+	i18n1("碧蓝"),
+	i18n1("铁血"),
+	i18n1("塞壬")
+}
+local var_0_2 = pg.world_collection_place_template
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.configId = arg_1_0.id
-
-	local var_1_0
-
-	if not arg_1_1.number then
-		var_1_0 = 0
-	end
-
-	arg_1_0.number = var_1_0
+	arg_1_0.number = arg_1_1.number or 0
 	arg_1_0.unlock = false
 	arg_1_0.config = var_0_2[arg_1_0.configId]
-	assert = var_2
 
-	var_2(arg_1_0.config)
+	assert(arg_1_0.config)
 
 	return
 end
@@ -58,11 +43,7 @@ function var_0_0.getDesc(arg_5_0)
 end
 
 function var_0_0.getCamp(arg_6_0)
-	local var_6_0 = var_0_1
-
-	tonumber = var_1_10002
-
-	return var_6_0[var_1_10002(arg_6_0.config.type)]
+	return var_0_1[tonumber(arg_6_0.config.type)]
 end
 
 function var_0_0.getName(arg_7_0)

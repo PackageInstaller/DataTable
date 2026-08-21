@@ -117,6 +117,7 @@ function onFightSkipResultHandler(self)
 end
 
 function onBtnFightClick(self)
+    sdk.SdkManager:foreignNotifyPvpInfoSuc(2)
     -- gs.Message.Show("进入战斗 TODO")
     local listAtt = formation.FormationArenaPeakAttackManager:getSelectFormationHeroList(12000 + self.defIndex)
     local listDef = formation.FormationArenaPeakDefenseManager:getSelectFormationHeroList(13000 + self.defIndex)

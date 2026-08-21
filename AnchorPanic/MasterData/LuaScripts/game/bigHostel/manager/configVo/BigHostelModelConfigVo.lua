@@ -8,13 +8,15 @@ module('game.bighostel.manager.configVo.BigHostelModelConfigVo', Class.impl())
 
 function parseCogfigData(self, key, cusData)
     self.modelId = key
+
     self.cvData = {}
     for k, v in pairs(cusData.action) do
-        self.cvData[gs.Animator.StringToHash(v.action)] =
-        {
-            cv_id = v.cv,
-            voice_layback = v.voice_layback,
-        }
+        local cv_list = {}
+        for _, cvData in pairs(v.cv) do
+            table.insert(cv_list, {cv_id = cvData[1], voice_layback = cvData[2]})
+        end
+
+        self.cvData[gs.Animator.StringToHash(v.action)] = cv_list
     end
 end
 

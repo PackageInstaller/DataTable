@@ -1,110 +1,59 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WSPortTaskDetail", import("...BaseEntity"))
 
-local var_0_0 = "WSPortTaskDetail"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	onCancel = "function",
 	task = "table",
 	transform = "userdata"
 }
 
-function var_0_1.Setup(arg_1_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.New(arg_1_0)
+function var_0_0.Setup(arg_1_0)
+	pg.DelegateInfo.New(arg_1_0)
 	arg_1_0:Init()
 
 	return
 end
 
-function var_0_1.Dispose(arg_2_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_2_0)
+function var_0_0.Dispose(arg_2_0)
+	pg.DelegateInfo.Dispose(arg_2_0)
 	arg_2_0:Clear()
 
 	return
 end
 
-function var_0_1.Init(arg_3_0)
-	local var_3_0 = arg_3_0.transform
-
-	onButton = var_1_10002
-
-	local var_3_1 = arg_3_0
-	local var_3_2 = var_3_0
-
-	local function var_3_3()
+function var_0_0.Init(arg_3_0)
+	onButton(arg_3_0, arg_3_0.transform, function()
 		arg_3_0.onCancel()
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10007
-
-	var_1_10002(var_3_1, var_3_2, var_3_3, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = var_3_0
-	local var_3_6 = var_3_0.Find(var_3_5, "top/btnBack")
-
-	local function var_3_7()
+	end, SFX_CANCEL)
+	onButton(arg_3_0, arg_3_0.transform:Find("top/btnBack"), function()
 		arg_3_0.onCancel()
 
 		return
-	end
-
-	SFX_CANCEL = var_3_5
-
-	var_1_10002(var_3_4, var_3_6, var_3_7, var_3_5)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.UpdateTask(arg_6_0, arg_6_1)
+function var_0_0.UpdateTask(arg_6_0, arg_6_1)
 	arg_6_0.task = arg_6_1
 
-	local var_6_0 = arg_6_0.transform
+	setText(arg_6_0.transform:Find("window/desc"), arg_6_1.config.description)
 
-	setText = var_1_10003
+	local var_6_0 = arg_6_1:GetDisplayDrops()
+	local var_6_1 = UIItemList.New(arg_6_0.transform:Find("window/scrollview/list"), (arg_6_0.transform:Find("window/scrollview/item")))
 
-	var_1_10003(var_6_0:Find("window/desc"), arg_6_1.config.description)
-
-	local var_6_1 = arg_6_1:GetDisplayDrops()
-	local var_6_2 = var_6_0
-	local var_6_3 = var_6_0.Find(var_6_2, "window/scrollview/list")
-	local var_6_4 = var_6_0:Find("window/scrollview/item")
-
-	UIItemList = var_6_2
-
-	local var_6_5 = var_6_2.New(var_6_3, var_6_4)
-
-	var_6.make(var_6_5, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			local var_7_0 = var_6_1[arg_7_1 + 1]
-
-			updateDrop = var_4
-
-			var_4(arg_7_2, var_7_0)
-
-			setScrollText = var_4
-
-			var_4(arg_7_2:Find("name_mask/name"), var_7_0:getConfig("name"))
+	var_6_1:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			updateDrop(arg_7_2, var_6_0[arg_7_1 + 1])
+			setScrollText(arg_7_2:Find("name_mask/name"), var_6_0[arg_7_1 + 1]:getConfig("name"))
 		end
 
 		return
 	end)
-	var_6:align(#var_6_1)
+	var_6_1:align(#arg_6_1:GetDisplayDrops())
 
 	return
 end
 
-return var_0_1
+return var_0_0

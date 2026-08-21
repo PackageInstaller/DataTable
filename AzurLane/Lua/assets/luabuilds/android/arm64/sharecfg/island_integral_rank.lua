@@ -1,10 +1,5 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.island_integral_rank = {
+﻿pg = pg or {}
+pg.island_integral_rank = {
 	{
 		integral4 = 0,
 		integral1 = 30,

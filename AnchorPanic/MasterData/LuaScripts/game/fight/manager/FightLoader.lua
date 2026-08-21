@@ -101,6 +101,9 @@ function loadHeroLive(self, side, heroData, beVisible, finishCall)
     liveVo:setAtt(AttConst.SKILL_SOUL, heroData.skill_soul)
     liveVo:setAtt(AttConst.STUN, heroData.hit_stun)
     liveVo:setAtt(AttConst.STUN_MAX, heroData.max_hit_stun)
+
+    liveVo:setIsMinion(heroData.source == 101)
+
     fight.SceneManager:addThing(liveVo)
     self:loadLiveModel(liveVo, beVisible, finishCall)
 
@@ -127,7 +130,21 @@ function loadLiveModel(self, liveVo, beVisible, finishCall)
             -- live:setDisplayLayer("Role")
             live:setDisplayLayer("HideLayer")
             live:setVisible(beVisible, true)
-            live:setPreLoadAnis({ "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }, _animatLoadFinish)
+            live:setPreLoadAnis({ "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skill04", "skill05", "skill06", "skill07", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }, _animatLoadFinish)
+
+            local data = fashion.FashionManager:getModelHarData(live:getModelId())
+            if (RefMgr:getSpecialConfig() and sdk.ChannelData:getIsChannelHarmonious(sdk.ChannelData.HAR_LEVEL_0)) and data then
+                -- 替换材质球预览
+                live:updateMaterial(data.pos, data.materials, {})
+            end
+
+            if liveVo:getRaceType() == 1 then
+                -- 针对怪物表模型
+                local monsterConfigVo = monster.MonsterManager:getMonsterVo01(liveVo.tid)
+                if monsterConfigVo and monsterConfigVo.showBlack == 1 then
+                    live:setBlackEnable(true)
+                end
+            end
 
         else
             finishCall()
@@ -180,15 +197,15 @@ function loadExtraHeroModel(self, tid, finishCall)
     local mVo = monster.MonsterManager:getMonsterVo01(tid)
     if mVo and mVo.type == 3 then
         -- 战员型
-        local animStates = { "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }
+        local animStates = { "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skill04", "skill05", "skill06", "skill07", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }
         for i, s in ipairs(animStates) do
             local animUrl = string.format("arts/character/animat/role_fight/%s/%s.anim", modelID, s)
             preloadList[#preloadList + 1] = animUrl
         end
     else
-        local animStates = { "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }
+        local animStates = { "stand", "ready", "exit", "goin", "atk01", "die", "hit01", "hit02", "hit03", "hit04", "hit05", "hit06", "getup", "skill01", "skill02", "skill03", "skill04", "skill05", "skill06", "skill07", "skillmix", "skillmax", "win", "standby", "leave", "enter", "enter01", "change", "change01", "change02", "dizzy", "berserk" }
         for i, s in ipairs(animStates) do
-            local animUrl = string.format("arts/character/monster/%s/anims/%s.anim", modelID, s)
+            local animUrl = string.format("arts/character/animat/monster/%s/%s.anim", modelID, s)
             preloadList[#preloadList + 1] = animUrl
         end
     end

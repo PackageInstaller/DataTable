@@ -1,14 +1,4 @@
-﻿local var_0_0 = {
-	"让我们前往<color=#ff7d36>船坞</color>",
-	"选择一名角色，查看她的详细情况",
-	"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
-	"现在对该<color=#ff7d36>装备强化</color>一次吧！",
-	"确定强化",
-	"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
-	"点击<color=#ff7d36>强化</color>开始强化"
-}
-
-return {
+﻿return {
 	id = "S018",
 	events = {
 		{
@@ -18,17 +8,20 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/dock"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/dockBtn"
@@ -56,7 +49,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = -5.18,
-				text = var_0_0[2]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[2]
 			},
 			ui = {
 				pathIndex = 0,
@@ -87,7 +88,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[3]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -107,7 +116,15 @@ return {
 				dir = 1,
 				posY = -140,
 				posX = 6,
-				text = var_0_0[4]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,
@@ -125,7 +142,15 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 265.7,
-				text = var_0_0[5]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[5]
 			},
 			ui = {
 				pathIndex = -1,
@@ -146,7 +171,15 @@ return {
 				dir = -1,
 				posY = 226,
 				posX = 479,
-				text = var_0_0[6]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[6]
 			}
 		},
 		{
@@ -156,7 +189,15 @@ return {
 				dir = 1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[7]
+				text = ({
+					"让我们前往<color=#ff7d36>船坞</color>",
+					"选择一名角色，查看她的详细情况",
+					"点击<color=#ff7d36>装备</color>按钮，查看她当前使用的装备",
+					"现在对该<color=#ff7d36>装备强化</color>一次吧！",
+					"确定强化",
+					"这里会显示出<color=#ff7d36>强化后装备提升的属性！</color>",
+					"点击<color=#ff7d36>强化</color>开始强化"
+				})[7]
 			},
 			ui = {
 				pathIndex = -1,

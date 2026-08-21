@@ -25,6 +25,10 @@ function __initData(self)
     self.mUnLockStory = {}
     self.mNowEventTrans = nil
     self.mEndFight = false
+
+    self.mHistoryInfo = nil
+    self.mAllPoint = nil
+    self.mGainedList = nil
 end
 
 -- 析构函数
@@ -47,6 +51,40 @@ function getFightEnd(self)
     return self.mEndFight
 end
 ------------------------------------------------------------server data------------------------------------
+
+function parseCycleMonthRewardInfo(self,msg)
+    self.mGainedList = msg.gained_list
+    self.mAllPoint = msg.all_point
+    self.endTime = msg.end_time
+
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CYCLE_RED)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CYCLE_MONTH_PANEL)
+
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CYCLE_MAIN_PANEL)
+end
+
+function parseCycleMonthGainInfo(self,msg)
+    for i = 1,#msg.gain_list do
+        table.insert(self.mGainedList,msg.gain_list[i])
+    end
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CYCLE_RED)
+    GameDispatcher:dispatchEvent(EventName.UPDATE_CYCLE_MONTH_PANEL)
+end
+
+
+function getCycleMonthPoint(self)
+    return self.mAllPoint and self.mAllPoint or 0
+end
+
+function getGainedList(self,id)
+    if self.mGainedList == nil then return false end
+    return table.indexof01(self.mGainedList,id) > 0
+end
+
+function getCycleMonthEndTime(self)
+    return self.endTime
+end
+
 
 -- 解析剧情数据
 function updateStoryServerInfo(self, args)
@@ -329,10 +367,24 @@ end
 
 function getRedFlag(self)
     local canRed = false
-    if self:canGetCollection() or self:canGetStory() or self:canReceiveAward() then
+    if self:canGetCollection() or self:canGetStory() or self:canReceiveAward() or self:canMonthReward() then
         canRed = true
     end
     return canRed
+end
+
+function canMonthReward(self)
+    if self.endTime == nil then
+        return false
+    end
+    local task = self:getCycleMonthRewardData()
+    local allPoint = self:getCycleMonthPoint()
+    for i=1,#task do
+        if task[i].id <= allPoint and self:getGainedList(task[i].id) == false then
+            return true
+        end
+    end
+    return false
 end
 
 function canGetCollection(self)
@@ -1363,6 +1415,38 @@ function getCycleCollageAwardData(self)
     return self.mCyclceCollageAwardList
 end
 
+
+function parseCycleMonthRewardData(self)
+    self.mCycleMonthRewardList = {}
+    self.mCycleMaxPoint = 0
+    local baseData = RefMgr:getData("event_cycle_month_reward_data")
+    for k, v in pairs(baseData) do
+        local vo = cycle.CycleMonthRewardVo.new()
+        vo:parseData(k, v)
+        if vo.id > self.mCycleMaxPoint then
+            self.mCycleMaxPoint = vo.id
+        end
+        table.insert(self.mCycleMonthRewardList, vo)
+        --self.mCycleMonthRewardList[k]=vo
+    end
+    table.sort(self.mCycleMonthRewardList, function(vo1, vo2)
+        return vo1.id < vo2.id
+    end)
+end
+
+function getCycleMonthRewardData(self)
+    if self.mCycleMonthRewardList == nil then
+        self:parseCycleMonthRewardData()
+    end
+    return self.mCycleMonthRewardList
+end
+
+function getCycleMonthMaxPoint(self)
+    if self.mCycleMonthRewardList == nil then
+        self:parseCycleMonthRewardData()
+    end
+    return self.mCycleMaxPoint
+end
 ------------------------------------------------------------copy data------------------------------------
 -- 备份容器引用类
 function setGroupClassCopyData(self, groupItems)

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("State")
+﻿local var_0_0 = class("State")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 	arg_1_0.name = arg_1_1
@@ -23,13 +21,8 @@ function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4)
 end
 
 function var_0_0.defineTrans(arg_2_0, arg_2_1, arg_2_2)
-	assert = var_1_10003
-
-	var_1_10003(arg_2_1, "action should not be nil at " .. arg_2_0.name)
-
-	assert = var_1_10003
-
-	var_1_10003(arg_2_2, "target should not be nil at " .. arg_2_0.name)
+	assert(arg_2_1, "action should not be nil at " .. arg_2_0.name)
+	assert(arg_2_2, "target should not be nil at " .. arg_2_0.name)
 
 	if arg_2_0:getTarget(arg_2_1) ~= nil then
 		return

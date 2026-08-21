@@ -12,7 +12,7 @@ function gameStartCallBack(self)
 			end
 		end
 	end
-end
+end 
 
 function _createSkillTest(self)
     -- require("protocol/Init").init()
@@ -20,7 +20,7 @@ function _createSkillTest(self)
         require('game/socket/Init'),
         require('game/map/Init'),
         require('game/fight/Init'),
-    }
+    } 
     self:gameStartCallBack()
 
     require('game/fight/skill/performLogic/SkillPerfInit')

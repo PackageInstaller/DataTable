@@ -98,28 +98,12 @@ end
 
 function __onPlayStoryPicHandler(self, args)
     if self.mFinishPic == nil then
-        if args.id == 1 then
-            self.mFinishPic = battleMap.MainMapFinish01View.new()
-        elseif args.id == 2 then
-            self.mFinishPic = battleMap.MainMapFinish02View.new()
-        elseif args.id == 3 then
-            self.mFinishPic = battleMap.MainMapFinish03View.new()
-        elseif args.id == 4 then
-            self.mFinishPic = battleMap.MainMapFinish04View.new()
-        elseif args.id == 5 then
-            self.mFinishPic = battleMap.MainMapFinish05View.new()
-        elseif args.id == 6 then
-            self.mFinishPic = battleMap.MainMapFinish06View.new()
-        elseif args.id == 7 then
-            self.mFinishPic = battleMap.MainMapFinish07View.new()
-        elseif args.id == 8 then
-            self.mFinishPic = battleMap.MainMapFinish08View.new()
-        elseif args.id == 9 then
-            self.mFinishPic = battleMap.MainMapFinish09View.new()
-        else
-            self.mFinishPic = battleMap.MainMapFinish01View.new()
-        end
-
+       local id = args.id
+       if id < 10 then
+            id = "0"..tostring(id)
+       end
+       self.mFinishPic = battleMap.MainMapFinishView.new("MainMapFinish"..id) -- 动态加载类并创建实例，确保正确的类名和路径
+        self.mFinishPic:superCtor()
         self.mFinishPic:addEventListener(View.EVENT_VIEW_DESTROY, self.__onDestroyPlayStoryHandler, self)
     end
     self.mFinishPic:setCallFinish(args.callback)

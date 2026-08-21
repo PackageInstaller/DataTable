@@ -1,73 +1,45 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ActivitySelectableShop", import(".ActivityShop"))
 
-local var_0_0 = "ActivitySelectableShop"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".ActivityShop"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.activityId = arg_1_1.id
 
-	local var_1_0 = {}
-
-	ipairs = var_1_10003
-
-	for iter_1_0, iter_1_1 in var_1_10003(arg_1_1.data1_list) do
-		var_1_0[iter_1_1] = arg_1_1.data2_list[iter_1_0]
+	for iter_1_0, iter_1_1 in ipairs(arg_1_1.data1_list) do
+		({})[iter_1_1] = arg_1_1.data2_list[iter_1_0]
 	end
 
 	arg_1_0.goods = {}
 
-	local var_1_1 = arg_1_0:bindConfigTable()
+	local var_1_0 = arg_1_0:bindConfigTable()
 
-	ipairs = var_4
+	for iter_1_2, iter_1_3 in ipairs(var_1_0.all) do
+		if arg_1_1.id == var_1_0[iter_1_3].activity then
+			local var_1_1 = ({})[iter_1_3]
 
-	for iter_1_2, iter_1_3 in var_4(var_1_1.all) do
-		if arg_1_1.id == var_1_1[iter_1_3].activity then
-			local var_1_2
-
-			if not var_1_0[iter_1_3] then
-				var_1_2 = 0
+			if not ({})[iter_1_3] then
+				var_1_1 = 0
 			end
 
-			local var_1_3 = arg_1_0.goods
-
-			Goods = var_1_10011
-			var_1_10011 = var_1_10011.Create
-
-			local var_1_4 = {
+			arg_1_0.goods[iter_1_3] = Goods.Create({
 				shop_id = iter_1_3,
-				buy_count = var_1_2
-			}
-
-			Goods = var_1_10014
-			var_1_3[iter_1_3] = var_1_10011(var_1_4, var_1_10014.TYPE_ACTIVITY_SELECTABLE)
+				buy_count = var_1_1
+			}, Goods.TYPE_ACTIVITY_SELECTABLE)
 		end
 	end
 
-	ShopArgs = var_4
-	arg_1_0.type = var_4.ShopActivity
-	pg = var_4
-	arg_1_0.config = var_4.activity_template[arg_1_0.activityId]
+	arg_1_0.type = ShopArgs.ShopActivity
+	arg_1_0.config = pg.activity_template[arg_1_0.activityId]
 
 	return
 end
 
-function var_0_1.IsSameKind(arg_2_0, arg_2_1)
-	isa = var_1_10002
+function var_0_0.IsSameKind(arg_2_0, arg_2_1)
+	local var_2_0 = isa(arg_2_1, ActivitySelectableShop)
 
-	local var_2_0 = arg_2_1
-
-	ActivitySelectableShop = var_1_10005
-
-	local var_2_1
-
-	if var_1_10002(var_2_0, var_1_10005) and arg_2_1.activityId then
-		var_2_1 = arg_2_1.activityId == arg_2_0.activityId
+	if var_2_0 then
+		var_2_0 = arg_2_1.activityId and arg_2_1.activityId == arg_2_0.activityId
 	end
 
-	return var_2_1
+	return var_2_0
 end
 
-return var_0_1
+return var_0_0

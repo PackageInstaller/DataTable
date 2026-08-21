@@ -1,49 +1,27 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewShipDocumentView", import("..base.BaseSubView"))
 
-local var_0_0 = "NewShipDocumentView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "NewShipDocumentView"
 end
 
-function var_0_1.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
 	arg_2_0:InitUI()
 	arg_2_0:AddListener()
-
-	setActive = var_1
-
-	var_1(arg_2_0._tf, true)
-
-	LeanTween = var_1
-
-	local var_2_0 = var_1.move
-
-	rtf = var_3
-
-	local var_2_1 = var_3(arg_2_0._tf)
-
-	Vector3 = var_4
-
-	var_2_0(var_2_1, var_4(-30, 0, 0), 0.3)
+	setActive(arg_2_0._tf, true)
+	LeanTween.move(rtf(arg_2_0._tf), Vector3(-30, 0, 0), 0.3)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_3_0)
+function var_0_0.OnDestroy(arg_3_0)
 	arg_3_0._shipVO = nil
 	arg_3_0.confirmFunc = nil
 
 	return
 end
 
-function var_0_1.InitUI(arg_4_0)
-	local var_4_0 = arg_4_0._tf
-
-	arg_4_0.skillContainer = var_1.Find(var_4_0, "bg/skill_panel/frame/skill_list/viewport")
+function var_0_0.InitUI(arg_4_0)
+	arg_4_0.skillContainer = arg_4_0._tf:Find("bg/skill_panel/frame/skill_list/viewport")
 	arg_4_0.skillTpl = arg_4_0:getTpl("bg/skill_panel/frame/skilltpl", arg_4_0._tf)
 	arg_4_0.emptyTpl = arg_4_0:getTpl("bg/skill_panel/frame/emptytpl", arg_4_0._tf)
 	arg_4_0.addTpl = arg_4_0:getTpl("bg/skill_panel/frame/addtpl", arg_4_0._tf)
@@ -51,152 +29,83 @@ function var_0_1.InitUI(arg_4_0)
 	return
 end
 
-function var_0_1.AddListener(arg_5_0)
-	onButton = var_1_10001
-
-	local var_5_0 = arg_5_0
-	local var_5_1 = arg_5_0._tf
-	local var_5_2 = var_4.Find(var_5_1, "qr_btn")
-
-	local function var_5_3()
+function var_0_0.AddListener(arg_5_0)
+	onButton(arg_5_0, arg_5_0._tf:Find("qr_btn"), function()
 		arg_5_0.confirmFunc()
 
 		return
-	end
-
-	SFX_CONFIRM = var_5_1
-
-	var_1_10001(var_5_0, var_5_2, var_5_3, var_5_1)
+	end, SFX_CONFIRM)
 
 	return
 end
 
-function var_0_1.initSkills(arg_7_0)
-	local var_7_0 = arg_7_0._shipVO
-	local var_7_1 = var_1.getMaxConfigId(var_7_0)
+function var_0_0.initSkills(arg_7_0)
+	local var_7_0 = 1
 
-	pg = var_1_10002
+	for iter_7_0, iter_7_1 in ipairs(pg.ship_data_template[arg_7_0._shipVO:getMaxConfigId()].buff_list_display) do
+		local var_7_1 = getSkillConfig(iter_7_1)
+		local var_7_2
 
-	local var_7_2 = var_1_10002.ship_data_template[var_7_1]
-	local var_7_3 = 1
+		if arg_7_0._shipVO.skills[iter_7_1] then
+			var_7_2 = cloneTplTo(arg_7_0.skillTpl, arg_7_0.skillContainer)
 
-	ipairs = var_1_10004
-
-	for iter_7_0, iter_7_1 in var_1_10004(var_7_2.buff_list_display) do
-		getSkillConfig = var_1_10009
-		var_1_10009 = var_1_10009(iter_7_1)
-
-		local var_7_4 = arg_7_0._shipVO.skills
-		local var_7_5
-
-		if var_7_4[iter_7_1] then
-			cloneTplTo = var_12
-			var_7_5 = var_12(arg_7_0.skillTpl, arg_7_0.skillContainer)
-			onButton = var_12
-
-			local var_7_6 = arg_7_0
-			local var_7_7 = var_7_5
-
-			local function var_7_8()
-				local var_8_0 = arg_7_0
-				local var_8_1 = var_0.emit
-
-				NewShipMediator = var_2_10003
-
-				var_8_1(var_8_0, var_2_10003.ON_SKILLINFO, var_1_10009.id, var_7_4[iter_7_1])
+			onButton(arg_7_0, var_7_2, function()
+				arg_7_0:emit(NewShipMediator.ON_SKILLINFO, var_7_1.id, var_0[iter_7_1])
 
 				return
-			end
-
-			SFX_PANEL = var_1_10017
-
-			var_12(var_7_6, var_7_7, var_7_8, var_1_10017)
+			end, SFX_PANEL)
 		else
-			cloneTplTo = var_12
-			var_7_5 = var_12(arg_7_0.emptyTpl, arg_7_0.skillContainer)
-			setActive = var_12
+			var_7_2 = cloneTplTo(arg_7_0.emptyTpl, arg_7_0.skillContainer)
 
-			var_12(var_7_5:Find("mask"), true)
-
-			onButton = var_12
-
-			local var_7_9 = arg_7_0
-			local var_7_10 = var_7_5
-
-			local function var_7_11()
-				local var_9_0 = arg_7_0
-				local var_9_1 = var_0.emit
-
-				NewShipMediator = var_2_10003
-
-				var_9_1(var_9_0, var_2_10003.ON_SKILLINFO, var_1_10009.id)
+			setActive(var_7_2:Find("mask"), true)
+			onButton(arg_7_0, var_7_2, function()
+				arg_7_0:emit(NewShipMediator.ON_SKILLINFO, var_7_1.id)
 
 				return
-			end
-
-			SFX_PANEL = var_1_10017
-
-			var_12(var_7_9, var_7_10, var_7_11, var_1_10017)
+			end, SFX_PANEL)
 		end
 
-		var_7_3 = var_7_3 + 1
-		LoadImageSpriteAsync = var_12
+		var_7_0 = var_7_0 + 1
 
-		local var_7_12 = "skillicon/" .. var_1_10009.icon
-
-		findTF = var_15
-
-		var_12(var_7_12, var_15(var_7_5, "icon"))
+		LoadImageSpriteAsync("skillicon/" .. var_7_1.icon, findTF(var_7_2, "icon"))
 	end
 
-	for iter_7_2 = var_7_3, 3 do
-		cloneTplTo = iter_7_1
-
-		iter_7_1(arg_7_0.addTpl, arg_7_0.skillContainer)
+	for iter_7_2 = var_7_0, 3 do
+		cloneTplTo(arg_7_0.addTpl, arg_7_0.skillContainer)
 	end
 
 	return
 end
 
-function var_0_1.UpdatePropertyPanel(arg_10_0)
-	PropertyPanel = var_1_10001
+function var_0_0.UpdatePropertyPanel(arg_10_0)
+	arg_10_0.propertyPanel = PropertyPanel.New(arg_10_0._tf:Find("bg/property_panel/frame"))
 
-	local var_10_0 = var_1_10001.New
-	local var_10_1 = arg_10_0._tf
-
-	arg_10_0.propertyPanel = var_10_0(var_3.Find(var_10_1, "bg/property_panel/frame"))
-
-	local var_10_2 = arg_10_0.propertyPanel
-
-	var_1.initProperty(var_10_2, arg_10_0._shipVO.configId)
+	arg_10_0.propertyPanel:initProperty(arg_10_0._shipVO.configId)
 
 	return
 end
 
-function var_0_1.getTpl(arg_11_0, arg_11_1, arg_11_2)
+function var_0_0.getTpl(arg_11_0, arg_11_1, arg_11_2)
 	local var_11_0 = arg_11_2:Find(arg_11_1)
 
-	var_3.SetParent(var_11_0, arg_11_0._tf, false)
+	var_11_0:SetParent(arg_11_0._tf, false)
+	SetActive(var_11_0, false)
 
-	SetActive = var_4
-
-	var_4(var_3, false)
-
-	return var_3
+	return var_11_0
 end
 
-function var_0_1.SetParams(arg_12_0, arg_12_1, arg_12_2)
+function var_0_0.SetParams(arg_12_0, arg_12_1, arg_12_2)
 	arg_12_0._shipVO = arg_12_1
 	arg_12_0.confirmFunc = arg_12_2
 
 	return
 end
 
-function var_0_1.RefreshUI(arg_13_0)
+function var_0_0.RefreshUI(arg_13_0)
 	arg_13_0:initSkills()
 	arg_13_0:UpdatePropertyPanel()
 
 	return
 end
 
-return var_0_1
+return var_0_0

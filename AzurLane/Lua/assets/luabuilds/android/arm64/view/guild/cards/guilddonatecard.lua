@@ -1,37 +1,12 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GuildDonateCard")
+﻿local var_0_0 = class("GuildDonateCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._tf = arg_1_1
-
-	local var_1_0 = arg_1_0._tf
-	local var_1_1 = var_2.Find(var_1_0, "name")
-	local var_1_2 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.title = var_1_2(var_1_1, var_5(var_1_10007))
-
-	local var_1_3 = arg_1_0._tf
-
-	arg_1_0.awardTF = var_2.Find(var_1_3, "item")
-
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0.awardTxtTF = var_2.Find(var_1_4, "item/Text")
-
-	local var_1_5 = arg_1_0._tf
-	local var_1_6 = var_2.Find(var_1_5, "award/Text")
-	local var_1_7 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.res = var_1_7(var_1_6, var_5(var_1_10007))
-
-	local var_1_8 = arg_1_0._tf
-
-	arg_1_0.commitBtn = var_2.Find(var_1_8, "submit")
+	arg_1_0.title = arg_1_0._tf:Find("name"):GetComponent(typeof(Text))
+	arg_1_0.awardTF = arg_1_0._tf:Find("item")
+	arg_1_0.awardTxtTF = arg_1_0._tf:Find("item/Text")
+	arg_1_0.res = arg_1_0._tf:Find("award/Text"):GetComponent(typeof(Text))
+	arg_1_0.commitBtn = arg_1_0._tf:Find("submit")
 
 	return
 end
@@ -41,9 +16,7 @@ function var_0_0.update(arg_2_0, arg_2_1)
 
 	local var_2_0 = arg_2_1:getCommitItem()
 
-	updateDrop = var_1_10003
-
-	var_1_10003(arg_2_0.awardTF, {
+	updateDrop(arg_2_0.awardTF, {
 		type = var_2_0[1],
 		id = var_2_0[2],
 		count = var_2_0[3]
@@ -51,30 +24,11 @@ function var_0_0.update(arg_2_0, arg_2_1)
 
 	arg_2_0.title.text = arg_2_1:getConfig("name")
 
-	local var_2_1 = arg_2_0
-	local var_2_2 = arg_2_0.GetResCntByAward(var_2_1, var_2_0)
-	local var_2_3 = var_2_0[3]
-
-	setText = var_2_1
-
+	local var_2_1 = arg_2_0:GetResCntByAward(var_2_0)
 	local var_2_4 = arg_2_0.awardTxtTF
 
-	string = var_1_10008
-
-	local var_2_5 = var_1_10008.format
-
-	if var_2_2 < var_2_3 then
-		local var_2_6 = "<color="
-
-		COLOR_RED = var_1_10011
-
-		local var_2_7
-
-		if not (var_2_6 .. var_1_10011 .. ">%s</color>/%s") then
-			var_2_7 = "%s/%s"
-		end
-
-		var_2_1(var_2_4, var_2_5(var_2_7, arg_2_0:WrapNum(var_2_2), arg_2_0:WrapNum(var_2_3)))
+	if var_2_1 < var_2_0[3] then
+		var_2_3(var_2_4, var_2_5(var_2_6, arg_2_0:WrapNum(var_2_1), arg_2_0:WrapNum(var_2_2)))
 
 		arg_2_0.res.text = arg_2_1:getConfig("award_contribution")
 
@@ -83,48 +37,22 @@ function var_0_0.update(arg_2_0, arg_2_1)
 end
 
 function var_0_0.GetResCntByAward(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_1[1]
-
-	DROP_TYPE_RESOURCE = var_1_10003
-
-	if var_3_0 == var_1_10003 then
-		getProxy = var_3_0
-		PlayerProxy = var_1_10004
-		var_1_10004 = var_3_0(var_1_10004)
-		var_1_10004 = var_2.getRawData(var_1_10004)
-
-		return var_2.getResource(var_1_10004, arg_3_1[2])
+	if arg_3_1[1] == DROP_TYPE_RESOURCE then
+		return getProxy(PlayerProxy):getRawData():getResource(arg_3_1[2])
+	elseif arg_3_1[1] == DROP_TYPE_ITEM then
+		return getProxy(BagProxy):getItemCountById(arg_3_1[2])
 	else
-		local var_3_1 = arg_3_1[1]
-
-		DROP_TYPE_ITEM = var_1_10003
-
-		if var_3_1 == var_1_10003 then
-			getProxy = var_3_1
-			BagProxy = var_1_10004
-
-			local var_3_2 = var_3_1(var_1_10004)
-
-			return var_3_1.getItemCountById(var_3_2, arg_3_1[2])
-		else
-			assert = var_3_1
-
-			var_3_1(false)
-		end
+		assert(false)
 	end
 
 	return
 end
 
 function var_0_0.WrapNum(arg_4_0, arg_4_1)
-	if 1000000 < arg_4_1 then
-		math = var_2
-
-		return var_2.floor(arg_4_1 / 1000000) .. "M"
-	elseif 1000 < arg_4_1 then
-		math = var_2
-
-		return var_2.floor(arg_4_1 / 1000) .. "K"
+	if arg_4_1 > 1000000 then
+		return math.floor(arg_4_1 / 1000000) .. "M"
+	elseif arg_4_1 > 1000 then
+		return math.floor(arg_4_1 / 1000) .. "K"
 	end
 
 	return arg_4_1

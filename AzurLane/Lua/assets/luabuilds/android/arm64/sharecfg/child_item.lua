@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_item") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_item"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_item = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_item
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_item = rawget(pg, "child_item") or setmetatable({
+	__name = "child_item"
+}, confNEO)
+pg.child_item.all = {
 	1,
 	2,
 	3,
@@ -109,25 +86,11 @@ var_0_3.all = {
 	301,
 	302
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_item = {}
+pg.base = pg.base or {}
+pg.base.child_item = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_item
-
-	var_1_0[1] = {
+	pg.base.child_item[1] = {
 		name = "啾啾奶茶",
 		rarity = 2,
 		type = 4,
@@ -145,11 +108,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_item
-
-	var_1_1[2] = {
+	pg.base.child_item[2] = {
 		name = "草莓牛奶",
 		rarity = 1,
 		type = 4,
@@ -167,11 +126,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_item
-
-	var_1_2[3] = {
+	pg.base.child_item[3] = {
 		name = "柠檬蜂蜜饮",
 		rarity = 2,
 		type = 4,
@@ -194,11 +149,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.child_item
-
-	var_1_3[4] = {
+	pg.base.child_item[4] = {
 		name = "香蕉椰椰",
 		rarity = 2,
 		type = 4,
@@ -221,11 +172,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.child_item
-
-	var_1_4[5] = {
+	pg.base.child_item[5] = {
 		name = "蜜瓜双球",
 		rarity = 2,
 		type = 4,
@@ -248,11 +195,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.child_item
-
-	var_1_5[6] = {
+	pg.base.child_item[6] = {
 		name = "雪顶奶昔",
 		rarity = 3,
 		type = 4,
@@ -270,11 +213,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.child_item
-
-	var_1_6[11] = {
+	pg.base.child_item[11] = {
 		name = "蛋包饭",
 		rarity = 2,
 		type = 4,
@@ -297,11 +236,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.child_item
-
-	var_1_7[12] = {
+	pg.base.child_item[12] = {
 		name = "酥皮浓汤",
 		rarity = 3,
 		type = 4,
@@ -319,11 +254,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.child_item
-
-	var_1_8[13] = {
+	pg.base.child_item[13] = {
 		name = "马卡龙",
 		rarity = 3,
 		type = 4,
@@ -341,11 +272,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.child_item
-
-	var_1_9[14] = {
+	pg.base.child_item[14] = {
 		name = "西瓜奶油披萨",
 		rarity = 3,
 		type = 4,
@@ -363,11 +290,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.child_item
-
-	var_1_10[15] = {
+	pg.base.child_item[15] = {
 		name = "香蕉可丽饼",
 		rarity = 4,
 		type = 4,
@@ -385,11 +308,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.child_item
-
-	var_1_11[16] = {
+	pg.base.child_item[16] = {
 		name = "肉排三明治",
 		rarity = 4,
 		type = 4,
@@ -407,11 +326,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.child_item
-
-	var_1_12[17] = {
+	pg.base.child_item[17] = {
 		name = "罗勒炖肉",
 		rarity = 4,
 		type = 4,
@@ -429,11 +344,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.child_item
-
-	var_1_13[21] = {
+	pg.base.child_item[21] = {
 		name = "初学者钓竿",
 		rarity = 2,
 		type = 3,
@@ -456,11 +367,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.child_item
-
-	var_1_14[22] = {
+	pg.base.child_item[22] = {
 		name = "铁斧头",
 		rarity = 2,
 		type = 3,
@@ -478,11 +385,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.child_item
-
-	var_1_15[23] = {
+	pg.base.child_item[23] = {
 		name = "进阶者钓竿",
 		rarity = 3,
 		type = 3,
@@ -505,11 +408,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.child_item
-
-	var_1_16[24] = {
+	pg.base.child_item[24] = {
 		name = "银斧头",
 		rarity = 3,
 		type = 3,
@@ -527,11 +426,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.child_item
-
-	var_1_17[25] = {
+	pg.base.child_item[25] = {
 		name = "大师级钓竿",
 		rarity = 4,
 		type = 3,
@@ -549,11 +444,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.child_item
-
-	var_1_18[26] = {
+	pg.base.child_item[26] = {
 		name = "金斧头",
 		rarity = 4,
 		type = 3,
@@ -571,11 +462,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.child_item
-
-	var_1_19[31] = {
+	pg.base.child_item[31] = {
 		name = "《从零开始的皇家女仆生活》",
 		rarity = 1,
 		type = 1,
@@ -598,11 +485,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.child_item
-
-	var_1_20[32] = {
+	pg.base.child_item[32] = {
 		name = "《十五行诗》",
 		rarity = 1,
 		type = 1,
@@ -625,11 +508,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.child_item
-
-	var_1_21[33] = {
+	pg.base.child_item[33] = {
 		name = "《舰装养护指南》",
 		rarity = 1,
 		type = 1,
@@ -652,11 +531,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.child_item
-
-	var_1_22[34] = {
+	pg.base.child_item[34] = {
 		name = "《如何俘获指挥官的心？》",
 		rarity = 2,
 		type = 1,
@@ -674,11 +549,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.child_item
-
-	var_1_23[35] = {
+	pg.base.child_item[35] = {
 		name = "《天才创造指北！》",
 		rarity = 2,
 		type = 1,
@@ -696,11 +567,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.child_item
-
-	var_1_24[36] = {
+	pg.base.child_item[36] = {
 		name = "《心动假期旅游指南》",
 		rarity = 2,
 		type = 1,
@@ -718,11 +585,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.child_item
-
-	var_1_25[41] = {
+	pg.base.child_item[41] = {
 		name = "唱片",
 		rarity = 3,
 		type = 2,
@@ -740,11 +603,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.child_item
-
-	var_1_26[42] = {
+	pg.base.child_item[42] = {
 		name = "麦克风",
 		rarity = 3,
 		type = 2,
@@ -762,11 +621,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.child_item
-
-	var_1_27[43] = {
+	pg.base.child_item[43] = {
 		name = "单簧管",
 		rarity = 3,
 		type = 2,
@@ -789,11 +644,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.child_item
-
-	var_1_28[44] = {
+	pg.base.child_item[44] = {
 		name = "竖琴",
 		rarity = 4,
 		type = 2,
@@ -811,11 +662,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.child_item
-
-	var_1_29[45] = {
+	pg.base.child_item[45] = {
 		name = "小提琴",
 		rarity = 4,
 		type = 2,
@@ -838,11 +685,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.child_item
-
-	var_1_30[46] = {
+	pg.base.child_item[46] = {
 		name = "钢琴",
 		rarity = 4,
 		type = 2,
@@ -860,11 +703,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.child_item
-
-	var_1_31[47] = {
+	pg.base.child_item[47] = {
 		name = "小号",
 		rarity = 4,
 		type = 2,
@@ -887,11 +726,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.child_item
-
-	var_1_32[51] = {
+	pg.base.child_item[51] = {
 		name = "白珍珠",
 		rarity = 3,
 		type = 4,
@@ -909,11 +744,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.child_item
-
-	var_1_33[52] = {
+	pg.base.child_item[52] = {
 		name = "贝壳摆件",
 		rarity = 4,
 		type = 4,
@@ -931,11 +762,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.child_item
-
-	var_1_34[53] = {
+	pg.base.child_item[53] = {
 		name = "章鱼玩偶",
 		rarity = 3,
 		type = 4,
@@ -953,11 +780,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.child_item
-
-	var_1_35[54] = {
+	pg.base.child_item[54] = {
 		name = "许愿瓶",
 		rarity = 4,
 		type = 4,
@@ -975,11 +798,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.child_item
-
-	var_1_36[55] = {
+	pg.base.child_item[55] = {
 		name = "神奇海螺",
 		rarity = 3,
 		type = 4,
@@ -1002,11 +821,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.child_item
-
-	var_1_37[56] = {
+	pg.base.child_item[56] = {
 		name = "椰子",
 		rarity = 3,
 		type = 4,
@@ -1029,11 +844,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.child_item
-
-	var_1_38[101] = {
+	pg.base.child_item[101] = {
 		name = "白灼生菜",
 		rarity = 2,
 		type = 4,
@@ -1051,11 +862,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.child_item
-
-	var_1_39[102] = {
+	pg.base.child_item[102] = {
 		name = "蜜汁猪排",
 		rarity = 2,
 		type = 4,
@@ -1073,11 +880,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.child_item
-
-	var_1_40[103] = {
+	pg.base.child_item[103] = {
 		name = "酥皮浓汤",
 		rarity = 2,
 		type = 4,
@@ -1095,11 +898,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.child_item
-
-	var_1_41[104] = {
+	pg.base.child_item[104] = {
 		name = "饺子拼盘",
 		rarity = 2,
 		type = 4,
@@ -1117,11 +916,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.child_item
-
-	var_1_42[105] = {
+	pg.base.child_item[105] = {
 		name = "麻婆豆腐",
 		rarity = 3,
 		type = 4,
@@ -1139,11 +934,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.child_item
-
-	var_1_43[106] = {
+	pg.base.child_item[106] = {
 		name = "香蕉可丽饼",
 		rarity = 3,
 		type = 4,
@@ -1161,11 +952,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.child_item
-
-	var_1_44[107] = {
+	pg.base.child_item[107] = {
 		name = "杂煮锅",
 		rarity = 3,
 		type = 4,
@@ -1183,11 +970,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.child_item
-
-	var_1_45[108] = {
+	pg.base.child_item[108] = {
 		name = "迷迭香羊排",
 		rarity = 3,
 		type = 4,
@@ -1205,11 +988,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.child_item
-
-	var_1_46[109] = {
+	pg.base.child_item[109] = {
 		name = "肉排三明治",
 		rarity = 3,
 		type = 4,
@@ -1227,11 +1006,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.child_item
-
-	var_1_47[110] = {
+	pg.base.child_item[110] = {
 		name = "神秘料理",
 		rarity = 3,
 		type = 4,
@@ -1249,11 +1024,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.child_item
-
-	var_1_48[121] = {
+	pg.base.child_item[121] = {
 		name = "画作",
 		rarity = 3,
 		type = 4,
@@ -1271,11 +1042,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.child_item
-
-	var_1_49[131] = {
+	pg.base.child_item[131] = {
 		name = "小河虾",
 		rarity = 2,
 		type = 4,
@@ -1293,11 +1060,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.child_item
-
-	var_1_50[132] = {
+	pg.base.child_item[132] = {
 		name = "小鱼",
 		rarity = 2,
 		type = 4,
@@ -1315,11 +1078,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.child_item
-
-	var_1_51[134] = {
+	pg.base.child_item[134] = {
 		name = "大鱼",
 		rarity = 2,
 		type = 4,
@@ -1337,11 +1096,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.child_item
-
-	var_1_52[135] = {
+	pg.base.child_item[135] = {
 		name = "龙虾",
 		rarity = 2,
 		type = 4,
@@ -1359,11 +1114,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.child_item
-
-	var_1_53[151] = {
+	pg.base.child_item[151] = {
 		name = "写真",
 		rarity = 2,
 		type = 4,
@@ -1381,11 +1132,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.child_item
-
-	var_1_54[161] = {
+	pg.base.child_item[161] = {
 		name = "纪念奖章-文学大奖赛",
 		rarity = 4,
 		type = 4,
@@ -1397,11 +1144,7 @@ var_0_3.base.child_item = {}
 		icon = "161",
 		display = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.child_item
-
-	var_1_55[162] = {
+	pg.base.child_item[162] = {
 		name = "纪念奖章-摄影大赛",
 		rarity = 4,
 		type = 4,
@@ -1413,11 +1156,7 @@ var_0_3.base.child_item = {}
 		icon = "162",
 		display = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.child_item
-
-	var_1_56[163] = {
+	pg.base.child_item[163] = {
 		name = "纪念奖章-运动大赛",
 		rarity = 4,
 		type = 4,
@@ -1429,11 +1168,7 @@ var_0_3.base.child_item = {}
 		icon = "163",
 		display = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.child_item
-
-	var_1_57[164] = {
+	pg.base.child_item[164] = {
 		name = "纪念奖章-绘画大奖赛",
 		rarity = 4,
 		type = 4,
@@ -1445,11 +1180,7 @@ var_0_3.base.child_item = {}
 		icon = "164",
 		display = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.child_item
-
-	var_1_58[165] = {
+	pg.base.child_item[165] = {
 		name = "纪念奖章-厨神大赛",
 		rarity = 4,
 		type = 4,
@@ -1461,11 +1192,7 @@ var_0_3.base.child_item = {}
 		icon = "165",
 		display = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.child_item
-
-	var_1_59[166] = {
+	pg.base.child_item[166] = {
 		name = "纪念奖章-钓鱼达人赛",
 		rarity = 4,
 		type = 4,
@@ -1477,11 +1204,7 @@ var_0_3.base.child_item = {}
 		icon = "166",
 		display = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.child_item
-
-	var_1_60[167] = {
+	pg.base.child_item[167] = {
 		name = "纪念奖章-歌者之声大奖赛",
 		rarity = 4,
 		type = 4,
@@ -1493,11 +1216,7 @@ var_0_3.base.child_item = {}
 		icon = "167",
 		display = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.child_item
-
-	var_1_61[168] = {
+	pg.base.child_item[168] = {
 		name = "纪念奖章-明日之星大赛",
 		rarity = 4,
 		type = 4,
@@ -1509,11 +1228,7 @@ var_0_3.base.child_item = {}
 		icon = "168",
 		display = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.child_item
-
-	var_1_62[201] = {
+	pg.base.child_item[201] = {
 		name = "成长目标完成纪念·Ⅰ",
 		rarity = 3,
 		type = 4,
@@ -1541,11 +1256,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.child_item
-
-	var_1_63[202] = {
+	pg.base.child_item[202] = {
 		name = "成长目标完成纪念·Ⅰ",
 		rarity = 3,
 		type = 4,
@@ -1573,11 +1284,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.child_item
-
-	var_1_64[203] = {
+	pg.base.child_item[203] = {
 		name = "成长目标完成纪念·Ⅰ",
 		rarity = 3,
 		type = 4,
@@ -1605,11 +1312,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.child_item
-
-	var_1_65[204] = {
+	pg.base.child_item[204] = {
 		name = "成长目标完成纪念·Ⅰ",
 		rarity = 3,
 		type = 4,
@@ -1637,11 +1340,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.child_item
-
-	var_1_66[205] = {
+	pg.base.child_item[205] = {
 		name = "成长目标完成纪念·Ⅱ",
 		rarity = 3,
 		type = 4,
@@ -1669,11 +1368,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.child_item
-
-	var_1_67[206] = {
+	pg.base.child_item[206] = {
 		name = "成长目标完成纪念·Ⅱ",
 		rarity = 3,
 		type = 4,
@@ -1701,11 +1396,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.child_item
-
-	var_1_68[207] = {
+	pg.base.child_item[207] = {
 		name = "成长目标完成纪念·Ⅱ",
 		rarity = 3,
 		type = 4,
@@ -1733,11 +1424,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.child_item
-
-	var_1_69[208] = {
+	pg.base.child_item[208] = {
 		name = "成长目标完成纪念·Ⅱ",
 		rarity = 3,
 		type = 4,
@@ -1765,11 +1452,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.child_item
-
-	var_1_70[209] = {
+	pg.base.child_item[209] = {
 		name = "成长目标完成纪念·Ⅲ",
 		rarity = 3,
 		type = 4,
@@ -1807,11 +1490,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.child_item
-
-	var_1_71[210] = {
+	pg.base.child_item[210] = {
 		name = "成长目标完成纪念·Ⅲ",
 		rarity = 3,
 		type = 4,
@@ -1849,11 +1528,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.child_item
-
-	var_1_72[211] = {
+	pg.base.child_item[211] = {
 		name = "成长目标完成纪念·Ⅲ",
 		rarity = 3,
 		type = 4,
@@ -1886,11 +1561,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.child_item
-
-	var_1_73[212] = {
+	pg.base.child_item[212] = {
 		name = "成长目标完成纪念·Ⅲ",
 		rarity = 3,
 		type = 4,
@@ -1923,11 +1594,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.child_item
-
-	var_1_74[213] = {
+	pg.base.child_item[213] = {
 		name = "成长目标完成纪念·Ⅳ",
 		rarity = 4,
 		type = 4,
@@ -1955,11 +1622,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.child_item
-
-	var_1_75[214] = {
+	pg.base.child_item[214] = {
 		name = "成长目标完成纪念·Ⅳ",
 		rarity = 4,
 		type = 4,
@@ -1987,11 +1650,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.child_item
-
-	var_1_76[215] = {
+	pg.base.child_item[215] = {
 		name = "成长目标完成纪念·Ⅳ",
 		rarity = 4,
 		type = 4,
@@ -2019,11 +1678,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.child_item
-
-	var_1_77[216] = {
+	pg.base.child_item[216] = {
 		name = "成长目标完成纪念·Ⅳ",
 		rarity = 4,
 		type = 4,
@@ -2051,11 +1706,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.child_item
-
-	var_1_78[217] = {
+	pg.base.child_item[217] = {
 		name = "成长目标完成纪念·Ⅳ",
 		rarity = 4,
 		type = 4,
@@ -2083,11 +1734,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.child_item
-
-	var_1_79[218] = {
+	pg.base.child_item[218] = {
 		name = "成长目标完成纪念·Ⅳ",
 		rarity = 4,
 		type = 4,
@@ -2115,11 +1762,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.child_item
-
-	var_1_80[301] = {
+	pg.base.child_item[301] = {
 		name = "主线目标奖章",
 		rarity = 1,
 		type = 4,
@@ -2152,8 +1795,7 @@ var_0_3.base.child_item = {}
 			}
 		}
 	}
-	pg = var_1_80
-	var_1_80.base.child_item[302] = {
+	pg.base.child_item[302] = {
 		name = "成长目标进度点数",
 		rarity = 1,
 		type = 4,

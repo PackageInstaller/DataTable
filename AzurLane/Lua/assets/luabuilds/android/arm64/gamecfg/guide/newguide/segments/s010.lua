@@ -1,8 +1,4 @@
-﻿local var_0_0 = {
-	"点击后退按钮回到主界面"
-}
-
-return {
+﻿return {
 	id = "S010",
 	events = {
 		{
@@ -12,7 +8,9 @@ return {
 				dir = -1,
 				posY = 226.09,
 				posX = -245.3,
-				text = var_0_0[1]
+				text = ({
+					"点击后退按钮回到主界面"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
@@ -33,7 +31,9 @@ return {
 				dir = -1,
 				posY = 226.09,
 				posX = -245.3,
-				text = var_0_0[1]
+				text = ({
+					"点击后退按钮回到主界面"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,

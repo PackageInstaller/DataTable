@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_help_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_help_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_help_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_help_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_help_data = rawget(pg, "world_help_data") or setmetatable({
+	__name = "world_help_data"
+}, confNEO)
+pg.world_help_data.all = {
 	1,
 	2,
 	3,
 	4
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_help_data = {}
+pg.base = pg.base or {}
+pg.base.world_help_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_help_data
-
-	var_1_0[1] = {
+	pg.base.world_help_data[1] = {
 		id = 1,
 		name = "舰队",
 		stage = 5,
@@ -64,11 +27,7 @@ var_0_3.base.world_help_data = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_help_data
-
-	var_1_1[2] = {
+	pg.base.world_help_data[2] = {
 		id = 2,
 		name = "系统",
 		stage = 10,
@@ -111,11 +70,7 @@ var_0_3.base.world_help_data = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_help_data
-
-	var_1_2[3] = {
+	pg.base.world_help_data[3] = {
 		id = 3,
 		name = "探索",
 		stage = 0,
@@ -166,8 +121,7 @@ var_0_3.base.world_help_data = {}
 			}
 		}
 	}
-	pg = var_1_2
-	var_1_2.base.world_help_data[4] = {
+	pg.base.world_help_data[4] = {
 		id = 4,
 		name = "战斗",
 		stage = 10,

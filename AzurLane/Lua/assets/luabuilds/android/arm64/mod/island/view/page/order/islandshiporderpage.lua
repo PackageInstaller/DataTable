@@ -1,290 +1,94 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandShipOrderPage", import("...base.IslandBasePage"))
 
-local var_0_0 = "IslandShipOrderPage"
+var_0_0.MODE_REQUEST_VIEW = 0
+var_0_0.MODE_AWARD_VIEW = 1
+var_0_0.EVENT_CLOSE_LOAD_UP = "IslandShipOrderPage:EVENT_CLOSE_LOAD_UP"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.IslandBasePage"))
-
-var_0_1.MODE_REQUEST_VIEW = 0
-var_0_1.MODE_AWARD_VIEW = 1
-var_0_1.EVENT_CLOSE_LOAD_UP = "IslandShipOrderPage:EVENT_CLOSE_LOAD_UP"
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandShipOrderUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.backBtn = var_1.Find(var_2_0, "back")
-	UIItemList = var_1
-
-	local var_2_1 = var_1.New
-	local var_2_2 = arg_2_0._tf
-	local var_2_3 = var_3.Find(var_2_2, "frame/list")
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.uiSlots = var_2_1(var_2_3, var_4.Find(var_2_4, "frame/list/tpl"))
-	UIItemList = var_1
-
-	local var_2_5 = var_1.New
-	local var_2_6 = arg_2_0._tf
-	local var_2_7 = var_3.Find(var_2_6, "list_1")
-	local var_2_8 = arg_2_0._tf
-
-	arg_2_0.onekeySlots = var_2_5(var_2_7, var_4.Find(var_2_8, "list_1/onekey"))
-
-	local var_2_9 = arg_2_0._tf
-
-	arg_2_0.switchBtn = var_1.Find(var_2_9, "frame/switch")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.backBtn = arg_2_0._tf:Find("back")
+	arg_2_0.uiSlots = UIItemList.New(arg_2_0._tf:Find("frame/list"), arg_2_0._tf:Find("frame/list/tpl"))
+	arg_2_0.onekeySlots = UIItemList.New(arg_2_0._tf:Find("list_1"), arg_2_0._tf:Find("list_1/onekey"))
+	arg_2_0.switchBtn = arg_2_0._tf:Find("frame/switch")
 	arg_2_0.cards = {}
-	IslandShipOrderLoadUpPage = var_1
-	arg_2_0.loadUpPage = var_1.New(arg_2_0._tf, arg_2_0.event)
-	GetOrAddComponent = var_1
+	arg_2_0.loadUpPage = IslandShipOrderLoadUpPage.New(arg_2_0._tf, arg_2_0.event)
+	arg_2_0.canvasGroup = GetOrAddComponent(arg_2_0._tf, typeof(CanvasGroup))
+	arg_2_0.delegateBtn = arg_2_0._tf:Find("frame/event_btn")
+	arg_2_0.uilistAniamtion = arg_2_0._tf:Find("frame/list"):GetComponent(typeof(Animation))
 
-	local var_2_10 = arg_2_0._tf
-
-	typeof = var_4
-	CanvasGroup = var_2_8
-	arg_2_0.canvasGroup = var_1(var_2_10, var_4(var_2_8))
-
-	local var_2_11 = arg_2_0._tf
-
-	arg_2_0.delegateBtn = var_1.Find(var_2_11, "frame/event_btn")
-
-	local var_2_12 = arg_2_0._tf
-	local var_2_13 = var_1.Find(var_2_12, "frame/list")
-	local var_2_14 = var_1.GetComponent
-
-	typeof = var_4
-	Animation = var_2_8
-	arg_2_0.uilistAniamtion = var_2_14(var_2_13, var_4(var_2_8))
-	setText = var_1
-
-	local var_2_15 = arg_2_0._tf
-	local var_2_16 = var_3.Find(var_2_15, "frame/switch/on/Text")
-
-	i18n = var_4
-
-	var_1(var_2_16, var_4("island_order_ship_page_req"))
-
-	setText = var_1
-
-	local var_2_17 = arg_2_0._tf
-	local var_2_18 = var_3.Find(var_2_17, "frame/switch/off/Text")
-
-	i18n = var_4
-
-	var_1(var_2_18, var_4("island_order_ship_page_award"))
-
-	setText = var_1
-
-	local var_2_19 = arg_2_0._tf
-	local var_2_20 = var_3.Find(var_2_19, "list_1/onekey/btn/Text")
-
-	i18n = var_4
-
-	var_1(var_2_20, var_4("island_order_ship_page_onekey_loadup"))
+	setText(arg_2_0._tf:Find("frame/switch/on/Text"), i18n("island_order_ship_page_req"))
+	setText(arg_2_0._tf:Find("frame/switch/off/Text"), i18n("island_order_ship_page_award"))
+	setText(arg_2_0._tf:Find("list_1/onekey/btn/Text"), i18n("island_order_ship_page_onekey_loadup"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.backBtn
-
-	local function var_3_2()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0.backBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0._tf
-	local var_3_5 = var_4.Find(var_3_4, "frame/help")
-
-	local function var_3_6()
-		pg = var_2_10000
-
-		local var_5_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_5_1 = var_0.ShowMsgBox
-		local var_5_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_5_2.type = var_2_10004
-		pg = var_2_10004
-		var_5_2.helps = var_2_10004.gametip.island_help_ship_order.tip
-
-		var_5_1(var_5_0, var_5_2)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("frame/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.island_help_ship_order.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_3_4
-
-	var_1_10001(var_3_3, var_3_5, var_3_6, var_3_4)
-
-	onButton = var_1_10001
-
-	local var_3_7 = arg_3_0
-	local var_3_8 = arg_3_0.delegateBtn
-
-	local function var_3_9()
-		local var_6_0 = arg_3_0
-		local var_6_1 = var_0.OpenPage
-
-		IslandShipOrderDelegatePage = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.delegateBtn, function()
+		arg_3_0:OpenPage(IslandShipOrderDelegatePage)
 
 		return
-	end
-
-	SFX_PANEL = var_3_4
-
-	var_1_10001(var_3_7, var_3_8, var_3_9, var_3_4)
-	arg_3_0:bind(var_0_1.EVENT_CLOSE_LOAD_UP, function()
-		local var_7_0 = arg_3_0
-
-		var_0.ClearSelected(var_7_0)
+	end, SFX_PANEL)
+	arg_3_0:bind(var_0_0.EVENT_CLOSE_LOAD_UP, function()
+		arg_3_0:ClearSelected()
 
 		return
 	end)
-
-	triggerToggle = var_1
-
-	var_1(arg_3_0.switchBtn, false)
-
-	onToggle = var_1
-
-	local var_3_10 = arg_3_0
-	local var_3_11 = arg_3_0.switchBtn
-
-	local function var_3_12(arg_8_0)
-		local var_8_0 = arg_3_0
-
-		var_1.SwitchMode(var_8_0, arg_8_0)
+	triggerToggle(arg_3_0.switchBtn, false)
+	onToggle(arg_3_0, arg_3_0.switchBtn, function(arg_8_0)
+		arg_3_0:SwitchMode(arg_8_0)
 
 		return
-	end
-
-	SFX_PANEL = var_3_4
-
-	var_1(var_3_10, var_3_11, var_3_12, var_3_4)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.AddListeners(arg_9_0)
-	local var_9_0 = arg_9_0
-	local var_9_1 = arg_9_0.AddListener
-
-	GAME = var_1_10004
-
-	var_9_1(var_9_0, var_1_10004.ISLAND_SHIP_ORDER_OP_DONE, arg_9_0.OnOrderUpdate)
-
-	local var_9_2 = arg_9_0
-	local var_9_3 = arg_9_0.AddListener
-
-	GAME = var_4
-
-	var_9_3(var_9_2, var_4.ISLAND_USE_TICKET_DONE, arg_9_0.OnUseTicketDone)
-
-	local var_9_4 = arg_9_0
-	local var_9_5 = arg_9_0.AddListener
-
-	GAME = var_4
-
-	var_9_5(var_9_4, var_4.ISLAND_REFRESH_SHIP_ORDER_DONE, arg_9_0.OnRefreshOrder)
-
-	local var_9_6 = arg_9_0
-	local var_9_7 = arg_9_0.AddListener
-
-	IslandShipOrderCard = var_4
-
-	var_9_7(var_9_6, var_4.EVENT_CD_END, arg_9_0.OnOrderReloadingEnd)
-
-	local var_9_8 = arg_9_0
-	local var_9_9 = arg_9_0.AddListener
-
-	GAME = var_4
-
-	var_9_9(var_9_8, var_4.ISLAND_EXCHANGE_SHIP_ORDER_DONE, arg_9_0.OnExchangeShipOrderDone)
-
-	local var_9_10 = arg_9_0
-	local var_9_11 = arg_9_0.AddListener
-
-	GAME = var_4
-
-	var_9_11(var_9_10, var_4.ISLAND_RESET_SHIP_ORDER_DONE, arg_9_0.OnResetShipOrderList)
+function var_0_0.AddListeners(arg_9_0)
+	arg_9_0:AddListener(GAME.ISLAND_SHIP_ORDER_OP_DONE, arg_9_0.OnOrderUpdate)
+	arg_9_0:AddListener(GAME.ISLAND_USE_TICKET_DONE, arg_9_0.OnUseTicketDone)
+	arg_9_0:AddListener(GAME.ISLAND_REFRESH_SHIP_ORDER_DONE, arg_9_0.OnRefreshOrder)
+	arg_9_0:AddListener(IslandShipOrderCard.EVENT_CD_END, arg_9_0.OnOrderReloadingEnd)
+	arg_9_0:AddListener(GAME.ISLAND_EXCHANGE_SHIP_ORDER_DONE, arg_9_0.OnExchangeShipOrderDone)
+	arg_9_0:AddListener(GAME.ISLAND_RESET_SHIP_ORDER_DONE, arg_9_0.OnResetShipOrderList)
 
 	return
 end
 
-function var_0_1.RemoveListeners(arg_10_0)
-	local var_10_0 = arg_10_0
-	local var_10_1 = arg_10_0.RemoveListener
-
-	GAME = var_1_10004
-
-	var_10_1(var_10_0, var_1_10004.ISLAND_SHIP_ORDER_OP_DONE, arg_10_0.OnOrderUpdate)
-
-	local var_10_2 = arg_10_0
-	local var_10_3 = arg_10_0.RemoveListener
-
-	GAME = var_4
-
-	var_10_3(var_10_2, var_4.ISLAND_USE_TICKET_DONE, arg_10_0.OnUseTicketDone)
-
-	local var_10_4 = arg_10_0
-	local var_10_5 = arg_10_0.RemoveListener
-
-	GAME = var_4
-
-	var_10_5(var_10_4, var_4.ISLAND_REFRESH_SHIP_ORDER_DONE, arg_10_0.OnRefreshOrder)
-
-	local var_10_6 = arg_10_0
-	local var_10_7 = arg_10_0.RemoveListener
-
-	IslandShipOrderCard = var_4
-
-	var_10_7(var_10_6, var_4.EVENT_CD_END, arg_10_0.OnOrderReloadingEnd)
-
-	local var_10_8 = arg_10_0
-	local var_10_9 = arg_10_0.RemoveListener
-
-	GAME = var_4
-
-	var_10_9(var_10_8, var_4.ISLAND_EXCHANGE_SHIP_ORDER_DONE, arg_10_0.OnExchangeShipOrderDone)
-
-	local var_10_10 = arg_10_0
-	local var_10_11 = arg_10_0.RemoveListener
-
-	GAME = var_4
-
-	var_10_11(var_10_10, var_4.ISLAND_RESET_SHIP_ORDER_DONE, arg_10_0.OnResetShipOrderList)
+function var_0_0.RemoveListeners(arg_10_0)
+	arg_10_0:RemoveListener(GAME.ISLAND_SHIP_ORDER_OP_DONE, arg_10_0.OnOrderUpdate)
+	arg_10_0:RemoveListener(GAME.ISLAND_USE_TICKET_DONE, arg_10_0.OnUseTicketDone)
+	arg_10_0:RemoveListener(GAME.ISLAND_REFRESH_SHIP_ORDER_DONE, arg_10_0.OnRefreshOrder)
+	arg_10_0:RemoveListener(IslandShipOrderCard.EVENT_CD_END, arg_10_0.OnOrderReloadingEnd)
+	arg_10_0:RemoveListener(GAME.ISLAND_EXCHANGE_SHIP_ORDER_DONE, arg_10_0.OnExchangeShipOrderDone)
+	arg_10_0:RemoveListener(GAME.ISLAND_RESET_SHIP_ORDER_DONE, arg_10_0.OnResetShipOrderList)
 
 	return
 end
 
-function var_0_1.OnResetShipOrderList(arg_11_0)
+function var_0_0.OnResetShipOrderList(arg_11_0)
 	arg_11_0:FlushSlots()
 
 	return
 end
 
-function var_0_1.OnExchangeShipOrderDone(arg_12_0, arg_12_1)
+function var_0_0.OnExchangeShipOrderDone(arg_12_0, arg_12_1)
 	arg_12_0:OnRefreshOrder({
 		id = arg_12_1.id
 	})
@@ -293,89 +97,69 @@ function var_0_1.OnExchangeShipOrderDone(arg_12_0, arg_12_1)
 	return
 end
 
-function var_0_1.OnOrderReloadingEnd(arg_13_0)
+function var_0_0.OnOrderReloadingEnd(arg_13_0)
 	arg_13_0:UpdateOnekeyBtns()
 
 	return
 end
 
-function var_0_1.OnRefreshOrder(arg_14_0, arg_14_1)
-	local var_14_0 = arg_14_1.id
-	local var_14_1
+function var_0_0.OnRefreshOrder(arg_14_0, arg_14_1)
+	local var_14_0
 
-	pairs = var_1_10004
-
-	for iter_14_0, iter_14_1 in var_1_10004(arg_14_0.cards) do
-		if iter_14_1.slot.id == var_14_0 then
-			var_14_1 = iter_14_1
+	for iter_14_0, iter_14_1 in pairs(arg_14_0.cards) do
+		if iter_14_1.slot.id == arg_14_1.id then
+			var_14_0 = iter_14_1
 
 			break
 		end
 	end
 
-	if not var_14_1 then
+	if not var_14_0 then
 		return
 	end
 
-	var_14_1:Flush(var_14_1.slot, arg_14_0.mode)
+	var_14_0:Flush(var_14_0.slot, arg_14_0.mode)
 	arg_14_0:UpdateOnekeyBtns()
 
 	return
 end
 
-function var_0_1.OnOrderUpdate(arg_15_0, arg_15_1)
-	local var_15_0 = arg_15_1.id
-	local var_15_1
+function var_0_0.OnOrderUpdate(arg_15_0, arg_15_1)
+	local var_15_0
 
-	pairs = var_1_10004
-
-	for iter_15_0, iter_15_1 in var_1_10004(arg_15_0.cards) do
-		if iter_15_1.slot.id == var_15_0 then
-			var_15_1 = iter_15_1
+	for iter_15_0, iter_15_1 in pairs(arg_15_0.cards) do
+		if iter_15_1.slot.id == arg_15_1.id then
+			var_15_0 = iter_15_1
 
 			break
 		end
 	end
 
-	if not var_15_1 then
+	if not var_15_0 then
 		return
 	end
 
 	arg_15_0:ClearSelected()
 
-	local var_15_2 = arg_15_0.canvasGroup
+	arg_15_0.canvasGroup.blocksRaycasts = false
 
-	var_15_2.blocksRaycasts = false
-	seriesAsync = var_15_2
-
-	var_15_2({
+	seriesAsync({
 		function(arg_16_0)
-			local var_16_0 = var_15_1
-
-			var_1.PlayAniamtion(var_16_0, arg_15_1.op, arg_15_1.isLoadUpAll, arg_16_0)
+			var_15_0:PlayAniamtion(arg_15_1.op, arg_15_1.isLoadUpAll, arg_16_0)
 
 			return
 		end
 	}, function()
 		arg_15_0.canvasGroup.blocksRaycasts = true
 
-		local var_17_0 = var_15_1
+		var_15_0:Flush(var_15_0.slot, arg_15_0.mode)
+		arg_15_0:RegisterCardEvent(var_15_0)
 
-		var_0.Flush(var_17_0, var_15_1.slot, arg_15_0.mode)
-
-		local var_17_1 = arg_15_0
-
-		var_0.RegisterCardEvent(var_17_1, var_15_1)
-
-		pairs = var_0
-
-		for iter_17_0, iter_17_1 in var_0(arg_15_0.cards) do
+		for iter_17_0, iter_17_1 in pairs(arg_15_0.cards) do
 			iter_17_1:UpdateRequest(iter_17_1.slot)
 		end
 
-		local var_17_2 = arg_15_0
-
-		var_0.UpdateOnekeyBtns(var_17_2)
+		arg_15_0:UpdateOnekeyBtns()
 
 		return
 	end)
@@ -383,30 +167,23 @@ function var_0_1.OnOrderUpdate(arg_15_0, arg_15_1)
 	return
 end
 
-function var_0_1.OnUseTicketDone(arg_18_0, arg_18_1)
-	local var_18_0 = arg_18_1.type
+function var_0_0.OnUseTicketDone(arg_18_0, arg_18_1)
+	if arg_18_1.type == IslandUseTicketCommand.TYPES.SHIP_ORDER then
+		local var_18_0
 
-	IslandUseTicketCommand = var_1_10003
-
-	if var_18_0 == var_1_10003.TYPES.SHIP_ORDER then
-		local var_18_1 = arg_18_1.id
-		local var_18_2
-
-		pairs = var_1_10004
-
-		for iter_18_0, iter_18_1 in var_1_10004(arg_18_0.cards) do
-			if iter_18_1.slot.id == var_18_1 then
-				var_18_2 = iter_18_1
+		for iter_18_0, iter_18_1 in pairs(arg_18_0.cards) do
+			if iter_18_1.slot.id == arg_18_1.id then
+				var_18_0 = iter_18_1
 
 				break
 			end
 		end
 
-		if not var_18_2 then
+		if not var_18_0 then
 			return
 		end
 
-		var_18_2:Flush(var_18_2.slot, arg_18_0.mode)
+		var_18_0:Flush(var_18_0.slot, arg_18_0.mode)
 	end
 
 	arg_18_0:UpdateOnekeyBtns()
@@ -414,8 +191,8 @@ function var_0_1.OnUseTicketDone(arg_18_0, arg_18_1)
 	return
 end
 
-function var_0_1.OnShow(arg_19_0)
-	arg_19_0.mode = var_0_1.MODE_REQUEST_VIEW
+function var_0_0.OnShow(arg_19_0)
+	arg_19_0.mode = var_0_0.MODE_REQUEST_VIEW
 	arg_19_0.canvasGroup.blocksRaycasts = true
 
 	arg_19_0:FlushSlots()
@@ -424,320 +201,148 @@ function var_0_1.OnShow(arg_19_0)
 	return
 end
 
-function var_0_1.UnlockFirstSlot(arg_20_0)
-	if arg_20_0.displays[1] and var_1:IsLock() and var_1:GetUnlockGold().count <= 0 then
-		pairs = var_2
-
-		for iter_20_0, iter_20_1 in var_2(arg_20_0.cards) do
-			if iter_20_1.slot.id == var_1.id then
-				iter_20_1 = target
+function var_0_0.UnlockFirstSlot(arg_20_0)
+	if arg_20_0.displays[1] and arg_20_0.displays[1]:IsLock() and arg_20_0.displays[1]:GetUnlockGold().count <= 0 then
+		for iter_20_0, iter_20_1 in pairs(arg_20_0.cards) do
+			if iter_20_1.slot.id == arg_20_0.displays[1].id then
+				target = iter_20_1
 
 				break
 			end
 		end
 
-		target = var_2
-
-		if var_2 then
-			triggerButton = var_2
-			target = var_4
-
-			var_2(var_4.lockTr)
+		if target then
+			triggerButton(target.lockTr)
 		end
 	end
 
 	return
 end
 
-function var_0_1.SwitchMode(arg_21_0, arg_21_1)
-	local var_21_0
+function var_0_0.SwitchMode(arg_21_0, arg_21_1)
+	if arg_21_1 then
+		arg_21_0.mode = var_0_0.MODE_AWARD_VIEW or var_0_0.MODE_REQUEST_VIEW
 
-	if not arg_21_1 or not var_0_1.MODE_AWARD_VIEW then
-		var_21_0 = var_0_1.MODE_REQUEST_VIEW
+		for iter_21_0, iter_21_1 in pairs(arg_21_0.cards) do
+			iter_21_1:SwitchMode(iter_21_1.slot, arg_21_0.mode)
+		end
+
+		arg_21_0:ClearSelected()
+		arg_21_0.uilistAniamtion:Stop()
+		arg_21_0.uilistAniamtion:Play("anim_island_shiporder_list")
+
+		return
 	end
-
-	arg_21_0.mode = var_21_0
-	pairs = var_21_0
-
-	for iter_21_0, iter_21_1 in var_21_0(arg_21_0.cards) do
-		iter_21_1:SwitchMode(iter_21_1.slot, arg_21_0.mode)
-	end
-
-	arg_21_0:ClearSelected()
-
-	local var_21_1 = arg_21_0.uilistAniamtion
-
-	var_2.Stop(var_21_1)
-
-	local var_21_2 = arg_21_0.uilistAniamtion
-
-	var_2.Play(var_21_2, "anim_island_shiporder_list")
-
-	return
 end
 
-function var_0_1.GetDisplays(arg_22_0, ...)
-	getProxy = var_1_10001
-	IslandProxy = var_1_10003
-
-	local var_22_0 = var_1_10001(var_1_10003)
-	local var_22_1 = var_1.GetIsland(var_22_0)
-	local var_22_2 = var_1.GetOrderAgency(var_22_1)
-	local var_22_3 = var_1.GetShipSlotList(var_22_2)
-	local var_22_4 = {}
-
-	pairs = var_22_2
-
-	for iter_22_0, iter_22_1 in var_22_2(var_22_3) do
-		table = var_1_10009
-
-		var_1_10009.insert(var_22_4, iter_22_1)
+function var_0_0.GetDisplays(arg_22_0, ...)
+	for iter_22_0, iter_22_1 in pairs((getProxy(IslandProxy):GetIsland():GetOrderAgency():GetShipSlotList())) do
+		table.insert({}, iter_22_1)
 	end
 
-	return var_22_4
+	return {}
 end
 
-function var_0_1.FlushSlots(arg_23_0)
+function var_0_0.FlushSlots(arg_23_0)
 	arg_23_0.displays = arg_23_0:GetDisplays()
-	table = var_1
 
-	var_1.sort(arg_23_0.displays, function(arg_24_0, arg_24_1)
+	table.sort(arg_23_0.displays, function(arg_24_0, arg_24_1)
 		return arg_24_0:GetUnlockLevel() < arg_24_1:GetUnlockLevel()
 	end)
+	arg_23_0.uiSlots:make(function(arg_25_0, arg_25_1, arg_25_2)
+		if arg_25_0 == UIItemList.EventUpdate then
+			local var_25_0 = pg.TimeMgr.GetInstance()
 
-	local var_23_0 = arg_23_0.uiSlots
-
-	var_1.make(var_23_0, function(arg_25_0, arg_25_1, arg_25_2)
-		UIItemList = var_2_10003
-
-		if arg_25_0 == var_2_10003.EventUpdate then
-			local var_25_0 = arg_23_0.displays[arg_25_1 + 1].nextRefreshFinishCntTime
-
-			pg = var_4
-
-			local var_25_1 = var_4.TimeMgr.GetInstance()
-			local var_25_2 = var_4.GetServerTime(var_25_1)
-
-			print = var_2_10005
-
-			var_2_10005(arg_23_0.displays[arg_25_1 + 1].finishCnt, var_25_0 <= var_25_2)
-
-			local var_25_3 = arg_23_0
-
-			var_5.UpdateSlot(var_25_3, arg_23_0.displays[arg_25_1 + 1], arg_25_2)
+			print(arg_23_0.displays[arg_25_1 + 1].finishCnt, arg_23_0.displays[arg_25_1 + 1].nextRefreshFinishCntTime <= var_25_0:GetServerTime())
+			arg_23_0:UpdateSlot(arg_23_0.displays[arg_25_1 + 1], arg_25_2)
 		end
 
 		return
 	end)
-
-	local var_23_1 = arg_23_0.uiSlots
-
-	var_1.align(var_23_1, #arg_23_0.displays)
+	arg_23_0.uiSlots:align(#arg_23_0.displays)
 	arg_23_0:UpdateOnekeyBtns()
 
 	return
 end
 
-function var_0_1.UpdateOnekeyBtns(arg_26_0)
-	local var_26_0 = arg_26_0.onekeySlots
-
-	var_1.make(var_26_0, function(arg_27_0, arg_27_1, arg_27_2)
-		UIItemList = var_2_10003
-
-		if arg_27_0 == var_2_10003.EventUpdate then
+function var_0_0.UpdateOnekeyBtns(arg_26_0)
+	arg_26_0.onekeySlots:make(function(arg_27_0, arg_27_1, arg_27_2)
+		if arg_27_0 == UIItemList.EventUpdate then
 			local var_27_0 = arg_27_2:Find("btn")
 			local var_27_1 = arg_26_0.displays[arg_27_1 + 1]
+			local var_27_2 = arg_26_0.displays[arg_27_1 + 1]:IsWaiting() and not arg_26_0.displays[arg_27_1 + 1]:IsEmpty()
 
-			setActive = var_5
+			setActive(var_27_0, var_27_2)
 
-			local var_27_2 = var_27_0
-			local var_27_3
+			if arg_26_0.displays[arg_27_1 + 1]:IsWaiting() then
+				local var_27_3
 
-			if var_27_1:IsWaiting() then
-				var_27_3 = not var_27_1:IsEmpty()
-			end
-
-			var_5(var_27_2, var_27_3)
-
-			if var_27_1:IsWaiting() then
-				local var_27_4 = var_27_1:GetOrder()
-				local var_27_5
-
-				if var_5.AnyCanLoadUp(var_27_4) then
-					var_27_5 = not var_27_1:CanTransport()
+				if arg_26_0.displays[arg_27_1 + 1]:GetOrder():AnyCanLoadUp() then
+					var_27_3 = not arg_26_0.displays[arg_27_1 + 1]:CanTransport()
 
 					if false then
-						var_27_5 = false
+						var_27_3 = false
 					end
 				else
-					var_27_5 = true
+					var_27_3 = true
 				end
 
-				setGray = var_6
+				setGray(var_27_0, var_27_3, true)
 
-				var_6(var_27_0, var_27_5, true)
-
-				if not var_27_5 then
-					onButton = var_6
-
-					local var_27_6 = arg_26_0
-					local var_27_7 = var_27_0
-
-					local function var_27_8()
-						local var_28_0 = var_27_1
-
-						if var_0.IsEmpty(var_28_0) then
+				if not var_27_3 then
+					onButton(arg_26_0, var_27_0, function()
+						if var_27_1:IsEmpty() then
 							return
 						end
 
-						local var_28_1 = arg_26_0
-						local var_28_2 = var_0.emit
-
-						IslandMediator = var_3_10003
-
-						var_28_2(var_28_1, var_3_10003.SUBMIT_SHIP_ORDER_ITME_ONEKEY, var_27_1.id)
+						arg_26_0:emit(IslandMediator.SUBMIT_SHIP_ORDER_ITME_ONEKEY, var_27_1.id)
 
 						return
-					end
-
-					SFX_PANEL = var_2_10011
-
-					var_6(var_27_6, var_27_7, var_27_8, var_2_10011)
+					end, SFX_PANEL)
 				else
-					removeOnButton = var_6
-
-					var_6(var_27_0)
+					removeOnButton(var_27_0)
 				end
 
 				return
 			end
 		end
 	end)
-
-	local var_26_1 = arg_26_0.onekeySlots
-
-	var_1.align(var_26_1, #arg_26_0.displays)
+	arg_26_0.onekeySlots:align(#arg_26_0.displays)
 
 	return
 end
 
-function var_0_1.UpdateSlot(arg_29_0, arg_29_1, arg_29_2)
-	local var_29_0
-
-	if not arg_29_0.cards[arg_29_2] then
-		IslandShipOrderCard = var_29_0
-		var_29_0 = var_29_0.New(arg_29_2, arg_29_0)
-	end
+function var_0_0.UpdateSlot(arg_29_0, arg_29_1, arg_29_2)
+	local var_29_0 = arg_29_0.cards[arg_29_2] or IslandShipOrderCard.New(arg_29_2, arg_29_0)
 
 	var_29_0:Flush(arg_29_1, arg_29_0.mode)
-
-	onButton = var_4
-
-	local var_29_1 = arg_29_0
-	local var_29_2 = var_29_0.getBtn
-
-	local function var_29_3()
-		local var_30_0 = arg_29_0
-		local var_30_1 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_30_1(var_30_0, var_2_10003.GET_SHIP_ORDER_AWARD, var_29_0.slot.id)
+	onButton(arg_29_0, var_29_0.getBtn, function()
+		arg_29_0:emit(IslandMediator.GET_SHIP_ORDER_AWARD, var_29_0.slot.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_29_1, var_29_2, var_29_3, var_1_10009)
-
-	onButton = var_4
-
-	local var_29_4 = arg_29_0
-	local var_29_5 = var_29_0.lockTr
-
-	local function var_29_6()
-		local var_31_0 = arg_29_0
-		local var_31_1 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_31_1(var_31_0, var_2_10003.UNLOKC_SHIP_ORDER, var_29_0.slot.id)
+	end, SFX_PANEL)
+	onButton(arg_29_0, var_29_0.lockTr, function()
+		arg_29_0:emit(IslandMediator.UNLOKC_SHIP_ORDER, var_29_0.slot.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_29_4, var_29_5, var_29_6, var_1_10009)
-
-	onButton = var_4
-
-	local var_29_7 = arg_29_0
-	local var_29_8 = var_29_0.loadingRequest
-
-	local function var_29_9()
-		local var_32_0 = arg_29_0
-		local var_32_1 = var_0.OpenPage
-
-		IslandTicketUsePage = var_2_10003
-		IslandUseTicketCommand = var_2_10004
-
-		var_32_1(var_32_0, var_2_10003, var_2_10004.TYPES.SHIP_ORDER, var_29_0.slot.id)
+	end, SFX_PANEL)
+	onButton(arg_29_0, var_29_0.loadingRequest, function()
+		arg_29_0:OpenPage(IslandTicketUsePage, IslandUseTicketCommand.TYPES.SHIP_ORDER, var_29_0.slot.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_29_7, var_29_8, var_29_9, var_1_10009)
-
-	onButton = var_4
-
-	local var_29_10 = arg_29_0
-	local var_29_11 = var_29_0.exchangeBtn
-
-	local function var_29_12()
-		local var_33_0 = arg_29_0
-		local var_33_1 = var_0.OpenPage
-
-		IslandShipOrderDelegatePage = var_2_10003
-
-		var_33_1(var_33_0, var_2_10003, var_29_0.slot.id)
+	end, SFX_PANEL)
+	onButton(arg_29_0, var_29_0.exchangeBtn, function()
+		arg_29_0:OpenPage(IslandShipOrderDelegatePage, var_29_0.slot.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_29_10, var_29_11, var_29_12, var_1_10009)
-
-	onButton = var_4
-
-	local var_29_13 = arg_29_0
-	local var_29_14 = var_29_0.emptyTr
-
-	local function var_29_15()
-		local var_34_0 = arg_29_0
-		local var_34_1 = var_0.OpenPage
-
-		IslandShipOrderDelegatePage = var_2_10003
-
-		var_34_1(var_34_0, var_2_10003, var_29_0.slot.id)
+	end, SFX_PANEL)
+	onButton(arg_29_0, var_29_0.emptyTr, function()
+		arg_29_0:OpenPage(IslandShipOrderDelegatePage, var_29_0.slot.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_29_13, var_29_14, var_29_15, var_1_10009)
-
-	onNextTick = var_4
-
-	var_4(function()
-		local var_35_0 = arg_29_0
-
-		var_0.RegisterCardEvent(var_35_0, var_29_0)
+	end, SFX_PANEL)
+	onNextTick(function()
+		arg_29_0:RegisterCardEvent(var_29_0)
 
 		return
 	end)
@@ -747,7 +352,7 @@ function var_0_1.UpdateSlot(arg_29_0, arg_29_1, arg_29_2)
 	return
 end
 
-function var_0_1.CheckSelected(arg_36_0, arg_36_1)
+function var_0_0.CheckSelected(arg_36_0, arg_36_1)
 	if arg_36_0.loadUpItem == arg_36_1 then
 		arg_36_0:ClearSelected()
 
@@ -757,55 +362,29 @@ function var_0_1.CheckSelected(arg_36_0, arg_36_1)
 	return true
 end
 
-function var_0_1.RegisterCardEvent(arg_37_0, arg_37_1)
-	local var_37_0 = arg_37_1.uiRequestList
-
-	var_2.each(var_37_0, function(arg_38_0, arg_38_1)
-		onButton = var_2_10002
-
-		local var_38_0 = arg_37_0
-		local var_38_1 = arg_38_1
-
-		local function var_38_2()
-			local var_39_0 = arg_37_1.slot
-
-			if not var_0.IsWaiting(var_39_0) then
+function var_0_0.RegisterCardEvent(arg_37_0, arg_37_1)
+	arg_37_1.uiRequestList:each(function(arg_38_0, arg_38_1)
+		onButton(arg_37_0, arg_38_1, function()
+			if not arg_37_1.slot:IsWaiting() then
 				return
 			end
 
-			local var_39_1 = arg_37_1.slot
-			local var_39_2 = var_0.GetOrder(var_39_1)
+			local var_39_0 = arg_37_1.slot:GetOrder()
 
-			if var_0.ItemIsSubmited(var_39_2, arg_38_0 + 1) then
+			if var_39_0:ItemIsSubmited(arg_38_0 + 1) then
 				return
 			end
 
-			local var_39_3 = arg_37_0
-
-			if not var_0.CheckSelected(var_39_3, arg_38_1) then
+			if not arg_37_0:CheckSelected(arg_38_1) then
 				return
 			end
 
-			local var_39_4 = arg_37_0
-
-			var_0.ClearSelected(var_39_4)
-
-			setActive = var_0
-
-			local var_39_5 = arg_38_1
-
-			var_0(var_2.Find(var_39_5, "loaded_1"), true)
-
-			local var_39_6 = arg_37_0
-
-			var_0.LoadUpItem(var_39_6, arg_37_1, arg_38_0 + 1, arg_38_1)
+			arg_37_0:ClearSelected()
+			setActive(arg_38_1:Find("loaded_1"), true)
+			arg_37_0:LoadUpItem(arg_37_1, arg_38_0 + 1, arg_38_1)
 
 			return
-		end
-
-		SFX_PANEL = var_2_10007
-
-		var_2_10002(var_38_0, var_38_1, var_38_2, var_2_10007)
+		end, SFX_PANEL)
 
 		return
 	end)
@@ -813,81 +392,50 @@ function var_0_1.RegisterCardEvent(arg_37_0, arg_37_1)
 	return
 end
 
-function var_0_1.ClearSelected(arg_40_0)
+function var_0_0.ClearSelected(arg_40_0)
 	if arg_40_0.loadUpItem then
-		setActive = var_1
-
-		local var_40_0 = arg_40_0.loadUpItem
-
-		var_1(var_3.Find(var_40_0, "loaded_1"), false)
+		setActive(arg_40_0.loadUpItem:Find("loaded_1"), false)
 	end
 
 	arg_40_0.loadUpItem = nil
 
-	if arg_40_0.loadUpPage then
-		local var_40_1 = arg_40_0.loadUpPage
-
-		if var_1.GetLoaded(var_40_1) then
-			local var_40_2 = arg_40_0.loadUpPage
-
-			if var_1.isShowing(var_40_2) then
-				local var_40_3 = arg_40_0.loadUpPage
-
-				var_1.Hide(var_40_3)
-			end
-		end
+	if arg_40_0.loadUpPage and arg_40_0.loadUpPage:GetLoaded() and arg_40_0.loadUpPage:isShowing() then
+		arg_40_0.loadUpPage:Hide()
 	end
 
 	return
 end
 
-function var_0_1.LoadUpItem(arg_41_0, arg_41_1, arg_41_2, arg_41_3)
-	local var_41_0 = arg_41_0._tf
-	local var_41_1 = var_4.InverseTransformPoint
-	local var_41_2 = arg_41_3
-	local var_41_3 = var_41_1(var_41_0, arg_41_3.Find(var_41_2, "loaded_1").position)
-	local var_41_4 = arg_41_0.loadUpPage
-	local var_41_5 = var_5.ExecuteAction
-	local var_41_6 = "Show"
+function var_0_0.LoadUpItem(arg_41_0, arg_41_1, arg_41_2, arg_41_3)
+	local var_41_0 = arg_41_0._tf:InverseTransformPoint(arg_41_3:Find("loaded_1").position)
 
-	Vector3 = var_41_2
-
-	var_41_5(var_41_4, var_41_6, var_41_2(var_41_3.x, var_41_3.y, 0), arg_41_1.slot, arg_41_2)
+	arg_41_0.loadUpPage:ExecuteAction("Show", Vector3(var_41_0.x, var_41_0.y, 0), arg_41_1.slot, arg_41_2)
 
 	arg_41_0.loadUpItem = arg_41_3
 
 	return
 end
 
-function var_0_1.OnHide(arg_42_0)
+function var_0_0.OnHide(arg_42_0)
 	arg_42_0:ClearSelected()
 
 	if arg_42_0.loadUpPage then
-		local var_42_0 = arg_42_0.loadUpPage
-
-		var_1.Destroy(var_42_0)
-
-		local var_42_1 = arg_42_0.loadUpPage
-
-		var_1.Reset(var_42_1)
+		arg_42_0.loadUpPage:Destroy()
+		arg_42_0.loadUpPage:Reset()
 	end
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_43_0)
-	pairs = var_1_10001
-
-	for iter_43_0, iter_43_1 in var_1_10001(arg_43_0.cards) do
+function var_0_0.OnDestroy(arg_43_0)
+	for iter_43_0, iter_43_1 in pairs(arg_43_0.cards) do
 		iter_43_1:Dispose()
 	end
 
 	arg_43_0.cards = {}
 
 	if arg_43_0.loadUpPage then
-		local var_43_0 = arg_43_0.loadUpPage
-
-		var_1.Destroy(var_43_0)
+		arg_43_0.loadUpPage:Destroy()
 
 		arg_43_0.loadUpPage = nil
 	end
@@ -895,4 +443,4 @@ function var_0_1.OnDestroy(arg_43_0)
 	return
 end
 
-return var_0_1
+return var_0_0

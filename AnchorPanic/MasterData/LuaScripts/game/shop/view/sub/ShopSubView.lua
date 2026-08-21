@@ -163,7 +163,7 @@ function createTabItem(self, typeList)
         if funcopen.FuncOpenManager:isOpen(self.shopShowVo.pageFuncId[index]) then
             local tabItem = UI.new(shop.ShopTabChildItem)
             tabItem:setParentTrans(self.mGroupTabItem)
-            tabItem:setData(self.shopShowVo, index, self.setTabSelect, self)
+            tabItem:setData(self.shopShowVo.shopLang[index], index, self.setTabSelect, self)
             self.mTabItemDic[index] = tabItem
         end
     end

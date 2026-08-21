@@ -42,7 +42,7 @@ end
 function active(self, args)
     super.active(self, args)
 
-    self.heroId = args.heroId
+    self.selectId = args.selectId
 
     GameDispatcher:addEventListener(EventName.REQ_HERO_WEAR_FASHION, self.onHeroGroupFashionWear, self)
     self:updateView()
@@ -72,8 +72,13 @@ end
 
 function updateView(self)
 
+    if not self.selectId then
+        return
+    end
+
     local scrollList = {}
-    local heroVo = hero.HeroManager:getHeroVo(self.heroId)
+    local guradType, id = role.RoleManager:getGuradTypeAndId(self.selectId)
+    local heroVo = hero.HeroManager:getHeroVo(tonumber(id))
 
     local heroFashionDic = fashion.FashionManager:getHeroFashionConfigDic(fashion.Type.CLOTHES, heroVo.tid)
     for fashionId, vo in pairs(heroFashionDic) do

@@ -1,141 +1,44 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Dorm3dDanceGameSubView", import("..Dorm3dGameBaseSubView"))
 
-local var_0_0 = "Dorm3dDanceGameSubView"
+function var_0_0.Init(arg_1_0)
+	arg_1_0.gamePanel = arg_1_0._tf:Find("main")
+	arg_1_0.cameraContainer = arg_1_0.gamePanel:Find("camera")
+	arg_1_0.gameCucoloris = arg_1_0.gamePanel:Find("cucoloris")
+	arg_1_0.gamePhotos = arg_1_0.gamePanel:Find("photos")
+	arg_1_0.btnHide = arg_1_0.gamePanel:Find("bottom/btn_hide")
+	arg_1_0.btnPhoto = arg_1_0.gamePanel:Find("bottom/btn_photo")
+	arg_1_0.btnGameEnd = arg_1_0.gamePanel:Find("bottom/game_end")
+	arg_1_0.photoCountText = arg_1_0.gamePanel:Find("bottom/count")
+	arg_1_0.photoTpl = arg_1_0.gamePanel:Find("tpl")
+	arg_1_0.gameHideClickUI = arg_1_0._tf:Find("hide_click")
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..Dorm3dGameBaseSubView"))
-
-function var_0_1.Init(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.gamePanel = var_1.Find(var_1_0, "main")
-
-	local var_1_1 = arg_1_0.gamePanel
-
-	arg_1_0.cameraContainer = var_1.Find(var_1_1, "camera")
-
-	local var_1_2 = arg_1_0.gamePanel
-
-	arg_1_0.gameCucoloris = var_1.Find(var_1_2, "cucoloris")
-
-	local var_1_3 = arg_1_0.gamePanel
-
-	arg_1_0.gamePhotos = var_1.Find(var_1_3, "photos")
-
-	local var_1_4 = arg_1_0.gamePanel
-
-	arg_1_0.btnHide = var_1.Find(var_1_4, "bottom/btn_hide")
-
-	local var_1_5 = arg_1_0.gamePanel
-
-	arg_1_0.btnPhoto = var_1.Find(var_1_5, "bottom/btn_photo")
-
-	local var_1_6 = arg_1_0.gamePanel
-
-	arg_1_0.btnGameEnd = var_1.Find(var_1_6, "bottom/game_end")
-
-	local var_1_7 = arg_1_0.gamePanel
-
-	arg_1_0.photoCountText = var_1.Find(var_1_7, "bottom/count")
-
-	local var_1_8 = arg_1_0.gamePanel
-
-	arg_1_0.photoTpl = var_1.Find(var_1_8, "tpl")
-
-	local var_1_9 = arg_1_0._tf
-
-	arg_1_0.gameHideClickUI = var_1.Find(var_1_9, "hide_click")
-	setActive = var_1
-
-	var_1(arg_1_0.gameHideClickUI, false)
-
-	setText = var_1
-
-	local var_1_10 = arg_1_0.btnGameEnd
-	local var_1_11 = var_3.Find(var_1_10, "Text")
-
-	i18n = var_4
-
-	var_1(var_1_11, var_4("dorm3d_cafe_minigame3"))
-
-	onButton = var_1
-
-	local var_1_12 = arg_1_0
-	local var_1_13 = arg_1_0.btnHide
-
-	local function var_1_14()
-		setActive = var_2_10000
-
-		var_2_10000(arg_1_0.gamePanel, false)
-
-		setActive = var_2_10000
-
-		var_2_10000(arg_1_0.gameHideClickUI, true)
+	setActive(arg_1_0.gameHideClickUI, false)
+	setText(arg_1_0.btnGameEnd:Find("Text"), i18n("dorm3d_cafe_minigame3"))
+	onButton(arg_1_0, arg_1_0.btnHide, function()
+		setActive(arg_1_0.gamePanel, false)
+		setActive(arg_1_0.gameHideClickUI, true)
 		arg_1_0.contextData.onShowOrHideBaseUI(false)
 
 		return
-	end
-
-	SFX_DORM_CLICK = var_6
-
-	var_1(var_1_12, var_1_13, var_1_14, var_6)
-
-	onButton = var_1
-
-	local var_1_15 = arg_1_0
-	local var_1_16 = arg_1_0.gameHideClickUI
-
-	local function var_1_17()
-		setActive = var_2_10000
-
-		var_2_10000(arg_1_0.gamePanel, true)
-
-		setActive = var_2_10000
-
-		var_2_10000(arg_1_0.gameHideClickUI, false)
+	end, SFX_DORM_CLICK)
+	onButton(arg_1_0, arg_1_0.gameHideClickUI, function()
+		setActive(arg_1_0.gamePanel, true)
+		setActive(arg_1_0.gameHideClickUI, false)
 		arg_1_0.contextData.onShowOrHideBaseUI(true)
 
 		return
-	end
-
-	SFX_DORM_CLICK = var_6
-
-	var_1(var_1_15, var_1_16, var_1_17, var_6)
-
-	onButton = var_1
-
-	local var_1_18 = arg_1_0
-	local var_1_19 = arg_1_0.btnPhoto
-
-	local function var_1_20()
+	end, SFX_DORM_CLICK)
+	onButton(arg_1_0, arg_1_0.btnPhoto, function()
 		arg_1_0.contextData.onTakePhoto()
 
 		return
-	end
-
-	SFX_DORM_CLICK = var_6
-
-	var_1(var_1_18, var_1_19, var_1_20, var_6)
-
-	onButton = var_1
-
-	local var_1_21 = arg_1_0
-	local var_1_22 = arg_1_0.btnGameEnd
-
-	local function var_1_23()
+	end, SFX_DORM_CLICK)
+	onButton(arg_1_0, arg_1_0.btnGameEnd, function()
 		arg_1_0.contextData.onEndGame()
 
 		return
-	end
-
-	SFX_DORM_CLICK = var_6
-
-	var_1(var_1_21, var_1_22, var_1_23, var_6)
-
-	onButton = var_1
-
-	var_1(arg_1_0, arg_1_0.gamePhotos, function()
+	end, SFX_DORM_CLICK)
+	onButton(arg_1_0, arg_1_0.gamePhotos, function()
 		if #arg_1_0.contextData.photoData == 0 then
 			return
 		end
@@ -145,22 +48,11 @@ function var_0_1.Init(arg_1_0)
 		return
 	end)
 
-	pg = var_1
-	arg_1_0.gameConfig = var_1.dorm3d_dance[arg_1_0.contextData.groupId]
-	UIItemList = var_1
+	arg_1_0.gameConfig = pg.dorm3d_dance[arg_1_0.contextData.groupId]
+	arg_1_0.cameraItemList = UIItemList.New(arg_1_0.cameraContainer, arg_1_0.cameraContainer:Find("tpl"))
 
-	local var_1_24 = var_1.New
-	local var_1_25 = arg_1_0.cameraContainer
-	local var_1_26 = arg_1_0.cameraContainer
-
-	arg_1_0.cameraItemList = var_1_24(var_1_25, var_4.Find(var_1_26, "tpl"))
-
-	local var_1_27 = arg_1_0.cameraItemList
-
-	var_1.make(var_1_27, function(arg_7_0, arg_7_1, arg_7_2)
-		local var_7_0 = arg_1_0
-
-		var_3.UpdateCameraFunc(var_7_0, arg_7_0, arg_7_1, arg_7_2)
+	arg_1_0.cameraItemList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		arg_1_0:UpdateCameraFunc(arg_7_0, arg_7_1, arg_7_2)
 
 		return
 	end)
@@ -170,187 +62,75 @@ function var_0_1.Init(arg_1_0)
 	return
 end
 
-function var_0_1.UpdateCameraFunc(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
+function var_0_0.UpdateCameraFunc(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 	local var_8_0 = arg_8_2 + 1
-	local var_8_1 = arg_8_0.gameConfig.camera_names[var_8_0]
-	local var_8_2 = arg_8_0.gameConfig.camera_tracks[var_8_0]
+	local var_8_1 = arg_8_0.gameConfig.camera_tracks[arg_8_2 + 1]
 
-	UIItemList = var_1_10007
+	if arg_8_1 == UIItemList.EventUpdate then
+		local var_8_2 = arg_8_2 + 1 == arg_8_0.selectedCameraIndex
 
-	local var_8_3
+		setActive(arg_8_3:Find("selected"), arg_8_2 + 1 == arg_8_0.selectedCameraIndex)
+		setActive(arg_8_3:Find("normal"), not var_8_2)
+	elseif arg_8_1 == UIItemList.EventInit then
+		setText(arg_8_3:Find("selected/Text"), arg_8_0.gameConfig.camera_names[arg_8_2 + 1])
+		setText(arg_8_3:Find("normal/Text"), arg_8_0.gameConfig.camera_names[arg_8_2 + 1])
+		onButton(arg_8_0, arg_8_3, function()
+			if arg_8_0.selectedCameraIndex ~= var_8_0 then
+				arg_8_0.selectedCameraIndex = var_8_0
 
-	if arg_8_1 == var_1_10007.EventUpdate then
-		var_8_3 = var_8_0 == arg_8_0.selectedCameraIndex
-		setActive = var_1_10008
-
-		var_1_10008(arg_8_3:Find("selected"), var_8_3)
-
-		setActive = var_1_10008
-
-		var_1_10008(arg_8_3:Find("normal"), not var_8_3)
-	else
-		UIItemList = var_8_3
-
-		if arg_8_1 == var_8_3.EventInit then
-			setText = var_7
-
-			var_7(arg_8_3:Find("selected/Text"), var_8_1)
-
-			setText = var_7
-
-			var_7(arg_8_3:Find("normal/Text"), var_8_1)
-
-			onButton = var_7
-
-			local var_8_4 = arg_8_0
-			local var_8_5 = arg_8_3
-
-			local function var_8_6()
-				if arg_8_0.selectedCameraIndex ~= var_8_0 then
-					arg_8_0.selectedCameraIndex = var_8_0
-
-					arg_8_0.contextData.onSwitchCamera(var_8_2)
-
-					local var_9_0 = arg_8_0
-
-					var_0.FlushCamera(var_9_0)
-				end
-
-				return
+				arg_8_0.contextData.onSwitchCamera(var_8_1)
+				arg_8_0:FlushCamera()
 			end
 
-			SFX_DORM_CLICK = var_12
-
-			var_7(var_8_4, var_8_5, var_8_6, var_12)
-		end
+			return
+		end, SFX_DORM_CLICK)
 	end
 
 	return
 end
 
-function var_0_1.FlushCamera(arg_10_0)
-	local var_10_0 = arg_10_0.cameraItemList
-
-	var_1.align(var_10_0, #arg_10_0.gameConfig.camera_names)
+function var_0_0.FlushCamera(arg_10_0)
+	arg_10_0.cameraItemList:align(#arg_10_0.gameConfig.camera_names)
 
 	return
 end
 
-function var_0_1.Flush(arg_11_0)
-	ShipGroup = var_1_10001
+function var_0_0.Flush(arg_11_0)
+	setText(arg_11_0._tf:Find("main/hint"), i18n("dorm3d_cafe_minigame2", (ShipGroup.getDefaultShipNameByGroupID(arg_11_0.contextData.groupId))))
 
-	local var_11_0 = var_1_10001.getDefaultShipNameByGroupID(arg_11_0.contextData.groupId)
+	local var_11_0 = #arg_11_0.contextData.photoData
+	local var_11_1 = #arg_11_0.contextData.photoData >= Dorm3dDanceConst.PHOTO_TIMES
 
-	setText = var_1_10002
-
-	local var_11_1 = arg_11_0._tf
-	local var_11_2 = var_4.Find(var_11_1, "main/hint")
-
-	i18n = var_1_10005
-
-	var_1_10002(var_11_2, var_1_10005("dorm3d_cafe_minigame2", var_11_0))
-
-	local var_11_3 = #arg_11_0.contextData.photoData
-
-	Dorm3dDanceConst = var_3
-
-	local var_11_4 = var_11_3 >= var_3.PHOTO_TIMES
-
-	setActive = var_11_2
-
-	var_11_2(arg_11_0.btnPhoto, not var_11_4)
-
-	setActive = var_11_2
-
-	var_11_2(arg_11_0.photoCountText, not var_11_4)
-
-	setText = var_11_2
-
-	local var_11_5 = arg_11_0.photoCountText
-	local var_11_6 = var_11_3
-	local var_11_7 = "/"
-
-	Dorm3dDanceConst = var_1_10009
-
-	var_11_2(var_11_5, var_11_6 .. var_11_7 .. var_1_10009.PHOTO_TIMES)
-
-	setActive = var_11_2
-
-	var_11_2(arg_11_0.btnGameEnd, var_11_4)
+	setActive(arg_11_0.btnPhoto, not (#arg_11_0.contextData.photoData >= Dorm3dDanceConst.PHOTO_TIMES))
+	setActive(arg_11_0.photoCountText, not var_11_1)
+	setText(arg_11_0.photoCountText, var_11_0 .. "/" .. Dorm3dDanceConst.PHOTO_TIMES)
+	setActive(arg_11_0.btnGameEnd, var_11_1)
 	arg_11_0:FlushCamera()
 
 	for iter_11_0 = 1, #arg_11_0.contextData.cucoloris do
-		var_1_10010 = arg_11_0.gameCucoloris
-		var_11_7 = var_11_7.GetChild(var_1_10010, iter_11_0 - 1)
-		LoadImageSpriteAtlasAsync = var_9
+		local var_11_2 = arg_11_0.gameCucoloris:GetChild(iter_11_0 - 1)
 
-		local var_11_8 = arg_11_0.contextData.cucoloris[iter_11_0]
-
-		var_9(var_11.GetIcon(var_11_8), "", var_11_7:Find("Image"), true)
+		LoadImageSpriteAtlasAsync(arg_11_0.contextData.cucoloris[iter_11_0]:GetIcon(), "", var_11_2:Find("Image"), true)
 	end
 
-	if arg_11_0.gamePhotos.childCount < var_11_3 then
-		cloneTplTo = var_4
+	if var_11_0 > arg_11_0.gamePhotos.childCount then
+		local var_11_3 = cloneTplTo(arg_11_0.photoTpl, arg_11_0.gamePhotos)
 
-		local var_11_9 = var_4(arg_11_0.photoTpl, arg_11_0.gamePhotos)
+		var_11_3.localPosition = Vector3(math.random(Dorm3dDanceConst.GAME_RANDOM_RANGE_POSX[1], Dorm3dDanceConst.GAME_RANDOM_RANGE_POSX[2]), math.random(Dorm3dDanceConst.GAME_RANDOM_RANGE_POSY[1], Dorm3dDanceConst.GAME_RANDOM_RANGE_POSY[2]), 0)
+		var_11_3.localEulerAngles = Vector3(0, 0, (math.random(Dorm3dDanceConst.GAME_RANDOM_RANGE_ANGLE[1], Dorm3dDanceConst.GAME_RANDOM_RANGE_ANGLE[2])))
 
-		math = var_5
-
-		local var_11_10 = var_5.random
-
-		Dorm3dDanceConst = var_7
-
-		local var_11_11 = var_7.GAME_RANDOM_RANGE_POSX[1]
-
-		Dorm3dDanceConst = var_11_7
-
-		local var_11_12 = var_11_10(var_11_11, var_11_7.GAME_RANDOM_RANGE_POSX[2])
-
-		math = var_6
-
-		local var_11_13 = var_6.random
-
-		Dorm3dDanceConst = var_8
-
-		local var_11_14 = var_8.GAME_RANDOM_RANGE_POSY[1]
-
-		Dorm3dDanceConst = var_9
-
-		local var_11_15 = var_11_13(var_11_14, var_9.GAME_RANDOM_RANGE_POSY[2])
-
-		math = var_11_11
-
-		local var_11_16 = var_11_11.random
-
-		Dorm3dDanceConst = var_9
-
-		local var_11_17 = var_9.GAME_RANDOM_RANGE_ANGLE[1]
-
-		Dorm3dDanceConst = var_1_10010
-
-		local var_11_18 = var_11_16(var_11_17, var_1_10010.GAME_RANDOM_RANGE_ANGLE[2])
-
-		Vector3 = var_11_14
-		var_11_9.localPosition = var_11_14(var_11_12, var_11_15, 0)
-		Vector3 = var_8
-		var_11_9.localEulerAngles = var_8(0, 0, var_11_18)
-
-		arg_11_0.contextData.onShowRealImage(var_11_3, var_11_9:Find("mask/Image"), var_11_9:Find("mask"))
+		arg_11_0.contextData.onShowRealImage(var_11_0, var_11_3:Find("mask/Image"), var_11_3:Find("mask"))
 	end
 
 	return
 end
 
-function var_0_1.ClearPhoto(arg_12_0)
+function var_0_0.ClearPhoto(arg_12_0)
 	for iter_12_0 = arg_12_0.gamePhotos.childCount, 1, -1 do
-		Destroy = var_1_10005
-
-		local var_12_0 = arg_12_0.gamePhotos
-
-		var_1_10005(var_7.GetChild(var_12_0, iter_12_0 - 1).gameObject)
+		Destroy(arg_12_0.gamePhotos:GetChild(iter_12_0 - 1).gameObject)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -736,6 +736,8 @@ function destroyPanel(self)
 
     self.base_childGos = nil
     self.base_childTrans = nil
+    
+    GameDispatcher:removeEventListener(EventName.SYSTEM_SETTING_NOTCH_CHANGE, self.setAdapta, self)
 
     self:dispatchEvent(EVENT_VIEW_DESTROY)
 

@@ -16,12 +16,7 @@
 						lineMode = 1,
 						pathIndex = -1,
 						dynamicPath = function()
-							getProxy = var_1_10000
-							SettingsProxy = var_1_10002
-
-							local var_1_0 = var_1_10000(var_1_10002)
-
-							if var_0.IsMellowStyle(var_1_0) then
+							if getProxy(SettingsProxy):IsMellowStyle() then
 								return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/top/icon"
 							else
 								return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/char"
@@ -35,12 +30,7 @@
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_2_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_2_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/top/icon"
 					else
 						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/char"
@@ -49,12 +39,7 @@
 					return
 				end,
 				dynamicEventPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_3_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_3_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/top/name_bg"
 					else
 						return "OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/top/iconBack"

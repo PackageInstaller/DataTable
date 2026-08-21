@@ -1,58 +1,28 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainActDelegationBtn", import(".MainBaseSpcailActBtn"))
 
-local var_0_0 = "MainActDelegationBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainBaseSpcailActBtn"))
-
-function var_0_1.GetContainer(arg_1_0)
-	local var_1_0 = arg_1_0.root.parent
-
-	return var_1.Find(var_1_0, "eventPanel")
+function var_0_0.GetContainer(arg_1_0)
+	return arg_1_0.root.parent:Find("eventPanel")
 end
 
-function var_0_1.InShowTime(arg_2_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.InShowTime(arg_2_0)
+	local var_2_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.RYZA_TASK)
+	local var_2_1 = var_2_0 and var_2_0:getConfig("config_client").hide_main_btn or nil
 
-	local var_2_0 = var_1_10001(var_1_10003)
-	local var_2_1 = var_1.getActivityById
-
-	ActivityConst = var_1_10004
-
-	local var_2_2
-
-	if not var_2_1(var_2_0, var_1_10004.RYZA_TASK) or not var_1:getConfig("config_client").hide_main_btn then
-		var_2_2 = nil
-	end
-
-	return var_1 and not var_1:isEnd() and var_2_2 ~= 1
+	return var_2_0 and not var_2_0:isEnd() and var_2_1 ~= 1
 end
 
-function var_0_1.GetUIName(arg_3_0)
+function var_0_0.GetUIName(arg_3_0)
 	return "MainActDelegationBtn"
 end
 
-function var_0_1.OnClick(arg_4_0)
-	local var_4_0 = arg_4_0.event
-	local var_4_1 = var_1.emit
-
-	NewMainMediator = var_1_10004
-
-	local var_4_2 = var_1_10004.GO_SCENE
-
-	SCENE = var_1_10005
-
-	var_4_1(var_4_0, var_4_2, var_1_10005.RYZA_TASK)
+function var_0_0.OnClick(arg_4_0)
+	arg_4_0.event:emit(NewMainMediator.GO_SCENE, SCENE.RYZA_TASK)
 
 	return
 end
 
-function var_0_1.OnInit(arg_5_0)
-	setAnchoredPosition = var_1_10001
-
-	var_1_10001(arg_5_0._tf, {
+function var_0_0.OnInit(arg_5_0)
+	setAnchoredPosition(arg_5_0._tf, {
 		x = 200,
 		y = 220
 	})
@@ -60,30 +30,13 @@ function var_0_1.OnInit(arg_5_0)
 	return
 end
 
-function var_0_1.OnRegister(arg_6_0)
-	local var_6_0 = arg_6_0._tf
+function var_0_0.OnRegister(arg_6_0)
+	arg_6_0.redDotUI = arg_6_0._tf:Find("tip")
 
-	arg_6_0.redDotUI = var_1.Find(var_6_0, "tip")
-	pg = var_1
-
-	local var_6_1 = var_1.EasyRedDotMgr.GetInstance()
-
-	var_1.RegisterRedDot(var_6_1, arg_6_0.redDotUI, {
+	pg.EasyRedDotMgr.GetInstance():RegisterRedDot(arg_6_0.redDotUI, {
 		"RYZA_TASK"
 	}, function(arg_7_0)
-		setActive = var_2_10001
-
-		local var_7_0 = arg_7_0
-
-		getProxy = var_2_10004
-		ActivityTaskProxy = var_2_10006
-
-		local var_7_1 = var_2_10004(var_2_10006)
-		local var_7_2 = var_4.getActTaskTip
-
-		ActivityConst = var_2_10007
-
-		var_2_10001(var_7_0, var_7_2(var_7_1, var_2_10007.RYZA_TASK))
+		setActive(arg_7_0, getProxy(ActivityTaskProxy):getActTaskTip(ActivityConst.RYZA_TASK))
 
 		return
 	end)
@@ -91,13 +44,9 @@ function var_0_1.OnRegister(arg_6_0)
 	return
 end
 
-function var_0_1.OnClear(arg_8_0)
+function var_0_0.OnClear(arg_8_0)
 	if arg_8_0.redDotUI then
-		pg = var_1
-
-		local var_8_0 = var_1.EasyRedDotMgr.GetInstance()
-
-		var_1.UnRegisterRedDot(var_8_0, arg_8_0.redDotUI)
+		pg.EasyRedDotMgr.GetInstance():UnRegisterRedDot(arg_8_0.redDotUI)
 
 		arg_8_0.redDotUI = nil
 	end
@@ -105,4 +54,4 @@ function var_0_1.OnClear(arg_8_0)
 	return
 end
 
-return var_0_1
+return var_0_0

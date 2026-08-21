@@ -60,6 +60,10 @@ function onClickConfirm(self)
             gs.Message.Show(_TT(149213))
             return
         end
+        if guild.GuildManager:getIsJoinGuildWarTop() then
+            gs.Message.Show(_TT(149236))
+            return
+        end
 
         -- local result, tips = MoneyUtil.judgeNeedMoneyCountByTid(self.needTid, self.needCount, true, true)
         -- if tips == "" and result == true then

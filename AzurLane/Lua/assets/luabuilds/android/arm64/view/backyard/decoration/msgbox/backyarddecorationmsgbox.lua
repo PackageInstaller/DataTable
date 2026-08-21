@@ -1,406 +1,111 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BackYardDecorationMsgBox", import("....base.BaseSubView"))
 
-local var_0_0 = "BackYardDecorationMsgBox"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("....base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "BackYardDecorationMsgBox"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.frame = var_1.Find(var_2_0, "frame")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.cancelBtn = var_1.Find(var_2_1, "frame/control/cancel_btn")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0.deleteBtn = var_1.Find(var_2_2, "frame/control/delete_btn")
-
-	local var_2_3 = arg_2_0._tf
-
-	arg_2_0.saveBtn = var_1.Find(var_2_3, "frame/control/save_btn")
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.applyBtn = var_1.Find(var_2_4, "frame/control/set_btn")
-
-	local var_2_5 = arg_2_0._tf
-
-	arg_2_0.input = var_1.Find(var_2_5, "frame/bound/input")
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0.inputField = var_1.Find(var_2_6, "frame/bound/input/InputField")
-
-	local var_2_7 = arg_2_0._tf
-	local var_2_8 = var_1.Find(var_2_7, "frame/bound/desc")
-	local var_2_9 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.desc = var_2_9(var_2_8, var_4(var_1_10006))
-
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_1.Find(var_2_10, "frame/bound/mask/Icon")
-	local var_2_12 = var_1.GetComponent
-
-	typeof = var_4
-	Image = var_1_10006
-	arg_2_0.icon = var_2_12(var_2_11, var_4(var_1_10006))
-
-	local var_2_13 = arg_2_0._tf
-	local var_2_14 = var_1.Find(var_2_13, "frame/bound/mask/Icon_raw")
-	local var_2_15 = var_1.GetComponent
-
-	typeof = var_4
-	RawImage = var_1_10006
-	arg_2_0.iconRaw = var_2_15(var_2_14, var_4(var_1_10006))
-
-	local var_2_16 = arg_2_0._tf
-	local var_2_17 = var_1.Find(var_2_16, "frame/title")
-	local var_2_18 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.title = var_2_18(var_2_17, var_4(var_1_10006))
-
-	local var_2_19 = arg_2_0._tf
-
-	arg_2_0.closeBtn = var_1.Find(var_2_19, "frame/close")
-
-	local var_2_20 = arg_2_0._tf
-
-	arg_2_0.innerMsgbox = var_1.Find(var_2_20, "msg")
-
-	local var_2_21 = arg_2_0.innerMsgbox
-	local var_2_22 = var_1.Find(var_2_21, "bound/Text")
-	local var_2_23 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.innerMsgboxContent = var_2_23(var_2_22, var_4(var_1_10006))
-
-	local var_2_24 = arg_2_0.innerMsgbox
-
-	arg_2_0.innerMsgboxComfirmBtn = var_1.Find(var_2_24, "btns/btn1")
-
-	local var_2_25 = arg_2_0.innerMsgbox
-
-	arg_2_0.innerMsgboxCancelBtn = var_1.Find(var_2_25, "btns/btn2")
-
-	local var_2_26 = arg_2_0._tf
-
-	arg_2_0.innerCloseBtn = var_1.Find(var_2_26, "msg/close")
-
-	local var_2_27 = arg_2_0.innerMsgbox
-	local var_2_28 = var_1.Find(var_2_27, "bound/title")
-	local var_2_29 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.scrollTitleText = var_2_29(var_2_28, var_4(var_1_10006))
-
-	local var_2_30 = arg_2_0.innerMsgbox
-	local var_2_31 = var_1.Find(var_2_30, "bound/scrollrect/Text")
-	local var_2_32 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_2_0.scrollText = var_2_32(var_2_31, var_4(var_1_10006))
-	setText = var_1
-
-	local var_2_33 = arg_2_0.cancelBtn
-	local var_2_34 = var_3.Find(var_2_33, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_34, var_4("word_cancel"))
-
-	setText = var_1
-
-	local var_2_35 = arg_2_0.deleteBtn
-	local var_2_36 = var_3.Find(var_2_35, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_36, var_4("word_delete"))
-
-	setText = var_1
-
-	local var_2_37 = arg_2_0.saveBtn
-	local var_2_38 = var_3.Find(var_2_37, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_38, var_4("word_save"))
-
-	setText = var_1
-
-	local var_2_39 = arg_2_0.applyBtn
-	local var_2_40 = var_3.Find(var_2_39, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_40, var_4("backyard_theme_word_apply"))
-
-	setText = var_1
-
-	local var_2_41 = arg_2_0.innerMsgboxComfirmBtn
-	local var_2_42 = var_3.Find(var_2_41, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_42, var_4("word_ok"))
-
-	setText = var_1
-
-	local var_2_43 = arg_2_0.innerMsgboxCancelBtn
-	local var_2_44 = var_3.Find(var_2_43, "Text")
-
-	i18n = var_4
-
-	var_1(var_2_44, var_4("word_cancel"))
-
-	setText = var_1
-
-	local var_2_45 = arg_2_0.inputField
-	local var_2_46 = var_3.Find(var_2_45, "Placeholder")
-
-	i18n = var_4
-
-	var_1(var_2_46, var_4("enter_theme_name"))
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.frame = arg_2_0._tf:Find("frame")
+	arg_2_0.cancelBtn = arg_2_0._tf:Find("frame/control/cancel_btn")
+	arg_2_0.deleteBtn = arg_2_0._tf:Find("frame/control/delete_btn")
+	arg_2_0.saveBtn = arg_2_0._tf:Find("frame/control/save_btn")
+	arg_2_0.applyBtn = arg_2_0._tf:Find("frame/control/set_btn")
+	arg_2_0.input = arg_2_0._tf:Find("frame/bound/input")
+	arg_2_0.inputField = arg_2_0._tf:Find("frame/bound/input/InputField")
+	arg_2_0.desc = arg_2_0._tf:Find("frame/bound/desc"):GetComponent(typeof(Text))
+	arg_2_0.icon = arg_2_0._tf:Find("frame/bound/mask/Icon"):GetComponent(typeof(Image))
+	arg_2_0.iconRaw = arg_2_0._tf:Find("frame/bound/mask/Icon_raw"):GetComponent(typeof(RawImage))
+	arg_2_0.title = arg_2_0._tf:Find("frame/title"):GetComponent(typeof(Text))
+	arg_2_0.closeBtn = arg_2_0._tf:Find("frame/close")
+	arg_2_0.innerMsgbox = arg_2_0._tf:Find("msg")
+	arg_2_0.innerMsgboxContent = arg_2_0.innerMsgbox:Find("bound/Text"):GetComponent(typeof(Text))
+	arg_2_0.innerMsgboxComfirmBtn = arg_2_0.innerMsgbox:Find("btns/btn1")
+	arg_2_0.innerMsgboxCancelBtn = arg_2_0.innerMsgbox:Find("btns/btn2")
+	arg_2_0.innerCloseBtn = arg_2_0._tf:Find("msg/close")
+	arg_2_0.scrollTitleText = arg_2_0.innerMsgbox:Find("bound/title"):GetComponent(typeof(Text))
+	arg_2_0.scrollText = arg_2_0.innerMsgbox:Find("bound/scrollrect/Text"):GetComponent(typeof(Text))
+
+	setText(arg_2_0.cancelBtn:Find("Text"), i18n("word_cancel"))
+	setText(arg_2_0.deleteBtn:Find("Text"), i18n("word_delete"))
+	setText(arg_2_0.saveBtn:Find("Text"), i18n("word_save"))
+	setText(arg_2_0.applyBtn:Find("Text"), i18n("backyard_theme_word_apply"))
+	setText(arg_2_0.innerMsgboxComfirmBtn:Find("Text"), i18n("word_ok"))
+	setText(arg_2_0.innerMsgboxCancelBtn:Find("Text"), i18n("word_cancel"))
+	setText(arg_2_0.inputField:Find("Placeholder"), i18n("enter_theme_name"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-
-	local function var_3_2()
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf, function()
 		if arg_3_0.showInnerMsg then
-			local var_4_0 = arg_3_0
-
-			var_0.HideInnerMsgBox(var_4_0)
+			arg_3_0:HideInnerMsgBox()
 		else
-			local var_4_1 = arg_3_0
-
-			var_0.Hide(var_4_1)
+			arg_3_0:Hide()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_0, var_3_1, var_3_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.closeBtn
-
-	local function var_3_5()
-		local var_5_0 = arg_3_0
-
-		var_0.Hide(var_5_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.closeBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_3, var_3_4, var_3_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_6 = arg_3_0
-	local var_3_7 = arg_3_0.innerCloseBtn
-
-	local function var_3_8()
-		local var_6_0 = arg_3_0
-
-		var_0.HideInnerMsgBox(var_6_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.innerCloseBtn, function()
+		arg_3_0:HideInnerMsgBox()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_6, var_3_7, var_3_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_9 = arg_3_0
-	local var_3_10 = arg_3_0.cancelBtn
-
-	local function var_3_11()
-		local var_7_0 = arg_3_0
-
-		var_0.Hide(var_7_0)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.cancelBtn, function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_9, var_3_10, var_3_11, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_12 = arg_3_0
-	local var_3_13 = arg_3_0.deleteBtn
-
-	local function var_3_14()
-		local var_8_0 = arg_3_0.theme
-
-		if var_0.IsPushed(var_8_0) then
-			local var_8_1 = arg_3_0
-			local var_8_2 = var_0.ShowInnerMsgBox
-
-			i18n = var_2_10003
-
-			var_8_2(var_8_1, var_2_10003("backyard_decoration_theme_template_delete_tip"), function()
-				local var_9_0 = arg_3_0
-				local var_9_1 = var_0.emit
-
-				BackYardDecorationMediator = var_3_10003
-
-				var_9_1(var_9_0, var_3_10003.DELETE_THEME, arg_3_0.theme.id)
-
-				local var_9_2 = arg_3_0
-
-				var_0.Hide(var_9_2)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.deleteBtn, function()
+		if arg_3_0.theme:IsPushed() then
+			arg_3_0:ShowInnerMsgBox(i18n("backyard_decoration_theme_template_delete_tip"), function()
+				arg_3_0:emit(BackYardDecorationMediator.DELETE_THEME, arg_3_0.theme.id)
+				arg_3_0:Hide()
 
 				return
 			end, true)
 		else
-			local var_8_3 = arg_3_0
-			local var_8_4 = var_0.emit
-
-			BackYardDecorationMediator = var_2_10003
-
-			var_8_4(var_8_3, var_2_10003.DELETE_THEME, arg_3_0.theme.id)
-
-			local var_8_5 = arg_3_0
-
-			var_0.Hide(var_8_5)
+			arg_3_0:emit(BackYardDecorationMediator.DELETE_THEME, arg_3_0.theme.id)
+			arg_3_0:Hide()
 		end
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.saveBtn, function()
+		local var_10_0 = getInputText(arg_3_0.inputField)
 
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_12, var_3_13, var_3_14, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_15 = arg_3_0
-	local var_3_16 = arg_3_0.saveBtn
-
-	local function var_3_17()
-		getInputText = var_2_10000
-
-		local var_10_0 = var_2_10000(arg_3_0.inputField)
-
-		wordVer = var_2_10001
-
-		if var_2_10001(var_10_0) > 0 then
-			pg = var_1
-
-			local var_10_1 = var_1.TipsMgr.GetInstance()
-			local var_10_2 = var_1.ShowTips
-
-			i18n = var_2_10004
-
-			var_10_2(var_10_1, var_2_10004("backyard_theme_name_forbid"))
+		if wordVer(var_10_0) > 0 then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_theme_name_forbid"))
 
 			return
 		end
 
-		local var_10_3 = arg_3_0
-		local var_10_4 = var_1.emit
-
-		BackYardDecorationMediator = var_2_10004
-
-		var_10_4(var_10_3, var_2_10004.SAVE_THEME, arg_3_0.theme.id, var_10_0)
-
-		local var_10_5 = arg_3_0
-
-		var_1.Hide(var_10_5)
+		arg_3_0:emit(BackYardDecorationMediator.SAVE_THEME, arg_3_0.theme.id, var_10_0)
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_15, var_3_16, var_3_17, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_3_18 = arg_3_0
-	local var_3_19 = arg_3_0.applyBtn
-
-	local function var_3_20()
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.applyBtn, function()
 		local function var_11_0(arg_12_0)
 			return
 		end
 
-		local var_11_1 = arg_3_0
-		local var_11_2 = var_1.emit
-
-		BackYardDecorationMediator = var_2_10004
-
-		var_11_2(var_11_1, var_2_10004.APPLY_THEME, arg_3_0.theme, function(arg_13_0, arg_13_1)
-			gcAll = var_3_10002
-
-			var_3_10002(false)
+		arg_3_0:emit(BackYardDecorationMediator.APPLY_THEME, arg_3_0.theme, function(arg_13_0, arg_13_1)
+			gcAll(false)
 
 			if arg_13_0 then
-				local var_13_0 = arg_3_0
-				local var_13_1 = var_2.emit
-
-				BackYardDecorationMediator = var_3_10005
-
-				var_13_1(var_13_0, var_3_10005.ADD_FURNITURES, arg_3_0.theme.id, arg_13_1, var_11_0)
-
-				local var_13_2 = arg_3_0
-
-				var_2.Hide(var_13_2)
+				arg_3_0:emit(BackYardDecorationMediator.ADD_FURNITURES, arg_3_0.theme.id, arg_13_1, var_11_0)
+				arg_3_0:Hide()
 			else
-				local var_13_3 = arg_3_0
-				local var_13_4 = var_2.ShowInnerMsgBox
-
-				i18n = var_3_10005
-
-				local var_13_5 = "backyarad_theme_replace"
-				local var_13_6 = arg_3_0.theme
-
-				var_13_4(var_13_3, var_3_10005(var_13_5, var_8.getName(var_13_6)), function()
-					local var_14_0 = arg_3_0
-					local var_14_1 = var_0.emit
-
-					BackYardDecorationMediator = var_4_10003
-
-					var_14_1(var_14_0, var_4_10003.ADD_FURNITURES, arg_3_0.theme.id, arg_13_1, var_11_0)
-
-					local var_14_2 = arg_3_0
-
-					var_0.HideInnerMsgBox(var_14_2)
-
-					local var_14_3 = arg_3_0
-
-					var_0.Hide(var_14_3)
+				arg_3_0:ShowInnerMsgBox(i18n("backyarad_theme_replace", arg_3_0.theme:getName()), function()
+					arg_3_0:emit(BackYardDecorationMediator.ADD_FURNITURES, arg_3_0.theme.id, arg_13_1, var_11_0)
+					arg_3_0:HideInnerMsgBox()
+					arg_3_0:Hide()
 
 					return
 				end)
@@ -410,23 +115,10 @@ function var_0_1.OnInit(arg_3_0)
 		end)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_3_18, var_3_19, var_3_20, var_1_10006)
-
-	onInputChanged = var_1_10001
-
-	var_1_10001(arg_3_0, arg_3_0.inputField, function()
+	end, SFX_PANEL)
+	onInputChanged(arg_3_0, arg_3_0.inputField, function()
 		if not arg_3_0.unEmpty then
-			setText = var_0
-
-			local var_15_0 = arg_3_0.desc
-
-			i18n = var_2_10003
-
-			var_0(var_15_0, var_2_10003("backyard_theme_save_tip"))
+			setText(arg_3_0.desc, i18n("backyard_theme_save_tip"))
 		end
 
 		return
@@ -435,8 +127,8 @@ function var_0_1.OnInit(arg_3_0)
 	return
 end
 
-function var_0_1.Show(arg_16_0, arg_16_1, arg_16_2)
-	var_0_1.super.Show(arg_16_0)
+function var_0_0.Show(arg_16_0, arg_16_1, arg_16_2)
+	var_0_0.super.Show(arg_16_0)
 
 	arg_16_0.theme = arg_16_1
 	arg_16_0.unEmpty = arg_16_2
@@ -449,231 +141,92 @@ function var_0_1.Show(arg_16_0, arg_16_1, arg_16_2)
 
 	local var_16_0 = arg_16_0.title
 
-	if arg_16_2 and arg_16_1:IsSystem() then
-		i18n = var_1_10004
+	var_16_0.text = arg_16_2 and arg_16_1:IsSystem() and i18n("courtyard_label_system_theme") or i18n("courtyard_label_custom_theme")
 
-		if not var_1_10004("courtyard_label_system_theme") then
-			i18n = var_1_10004
-			var_1_10004 = var_1_10004("courtyard_label_custom_theme")
-		end
-
-		var_16_0.text = var_1_10004
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.frame, true)
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0._tf, true)
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.innerMsgbox, false)
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.input, not arg_16_2)
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.cancelBtn, not arg_16_2)
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.deleteBtn, arg_16_2 and not arg_16_1:IsSystem())
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.applyBtn, arg_16_2)
-
-		setActive = var_16_0
-
-		var_16_0(arg_16_0.saveBtn, not arg_16_2)
-
-		local var_16_1 = arg_16_0._tf
-
-		var_3.SetAsLastSibling(var_16_1)
-
-		return
-	end
-end
-
-function var_0_1.RemoveSizeTag(arg_17_0, arg_17_1)
-	string = var_1_10002
-
-	local var_17_0 = var_1_10002.gsub(arg_17_1, "</size>", "")
-
-	string = var_1_10003
-
-	return var_1_10003.gsub(var_17_0, "<size=%d+>", "")
-end
-
-function var_0_1.ApplyTheme(arg_18_0)
-	local var_18_0 = arg_18_0.theme
-	local var_18_1 = var_1.getName(var_18_0)
-	local var_18_2 = arg_18_0.desc
-
-	i18n = var_18_0
-	var_18_2.text = var_18_0("backyard_theme_set_tip", var_18_1)
-
-	local var_18_3 = var_1
-	local var_18_4
-
-	if not var_1.IsSystem(var_18_3) then
-		BackYardThemeTempalteUtil = var_18_4
-
-		if var_18_4.FileExists(var_1:GetTextureIconName()) or var_1:IsPushed() then
-			setActive = var_18_4
-
-			var_18_4(arg_18_0.iconRaw.gameObject, false)
-
-			setActive = var_18_4
-
-			var_18_4(arg_18_0.icon.gameObject, false)
-
-			var_18_4 = var_1:GetIconMd5()
-			BackYardThemeTempalteUtil = var_18_3
-
-			var_18_3.GetTexture(var_1:GetTextureIconName(), var_18_4, function(arg_19_0)
-				IsNil = var_2_10001
-
-				if not var_2_10001(arg_18_0.iconRaw) and arg_19_0 then
-					setActive = var_1
-
-					var_1(arg_18_0.iconRaw.gameObject, true)
-
-					arg_18_0.iconRaw.texture = arg_19_0
-				end
-
-				return
-			end)
-
-			goto label_18_0
-		end
-	end
-
-	setActive = var_18_4
-
-	var_18_4(arg_18_0.iconRaw.gameObject, false)
-
-	setActive = var_18_4
-
-	var_18_4(arg_18_0.icon.gameObject, true)
-
-	do
-		local var_18_5 = arg_18_0.icon
-
-		LoadSprite = var_18_3
-		var_18_5.sprite = var_18_3("furnitureicon/" .. var_1:getIcon())
-	end
-
-	::label_18_0::
+	setActive(arg_16_0.frame, true)
+	setActive(arg_16_0._tf, true)
+	setActive(arg_16_0.innerMsgbox, false)
+	setActive(arg_16_0.input, not arg_16_2)
+	setActive(arg_16_0.cancelBtn, not arg_16_2)
+	setActive(arg_16_0.deleteBtn, arg_16_2 and not arg_16_1:IsSystem())
+	setActive(arg_16_0.applyBtn, arg_16_2)
+	setActive(arg_16_0.saveBtn, not arg_16_2)
+	arg_16_0._tf:SetAsLastSibling()
 
 	return
 end
 
-function var_0_1.NewTheme(arg_20_0)
-	local var_20_0 = arg_20_0.theme.id
+function var_0_0.RemoveSizeTag(arg_17_0, arg_17_1)
+	return string.gsub(string.gsub(arg_17_1, "</size>", ""), "<size=%d+>", "")
+end
 
-	setInputText = var_1_10003
+function var_0_0.ApplyTheme(arg_18_0)
+	arg_18_0.desc.text = i18n("backyard_theme_set_tip", (arg_18_0.theme:getName()))
 
-	local var_20_1 = arg_20_0.inputField
+	if not arg_18_0.theme:IsSystem() and (BackYardThemeTempalteUtil.FileExists(arg_18_0.theme:GetTextureIconName()) or arg_18_0.theme:IsPushed()) then
+		setActive(arg_18_0.iconRaw.gameObject, false)
+		setActive(arg_18_0.icon.gameObject, false)
+		BackYardThemeTempalteUtil.GetTexture(arg_18_0.theme:GetTextureIconName(), arg_18_0.theme:GetIconMd5(), function(arg_19_0)
+			if not IsNil(arg_18_0.iconRaw) and arg_19_0 then
+				setActive(arg_18_0.iconRaw.gameObject, true)
 
-	i18n = var_1_10006
+				arg_18_0.iconRaw.texture = arg_19_0
+			end
 
-	var_1_10003(var_20_1, var_1_10006("backyard_theme_defaultname") .. var_20_0)
+			return
+		end)
+	else
+		setActive(arg_18_0.iconRaw.gameObject, false)
+		setActive(arg_18_0.icon.gameObject, true)
 
-	local var_20_2 = arg_20_0.desc
-
-	i18n = var_1_10004
-
-	local var_20_3 = "backyard_theme_save_tip"
-
-	i18n = var_7
-	var_20_2.text = var_1_10004(var_20_3, var_7("backyard_theme_defaultname") .. var_20_0)
-
-	local var_20_4 = arg_20_0.icon
-
-	LoadSprite = var_4
-	var_20_4.sprite = var_4("furnitureicon/default_theme")
-	setActive = var_20_4
-
-	var_20_4(arg_20_0.iconRaw.gameObject, false)
-
-	setActive = var_20_4
-
-	var_20_4(arg_20_0.icon.gameObject, true)
+		arg_18_0.icon.sprite = LoadSprite("furnitureicon/" .. arg_18_0.theme:getIcon())
+	end
 
 	return
 end
 
-function var_0_1.ShowInnerMsgBox(arg_21_0, arg_21_1, arg_21_2, arg_21_3, arg_21_4)
-	setActive = var_1_10005
+function var_0_0.NewTheme(arg_20_0)
+	setInputText(arg_20_0.inputField, i18n("backyard_theme_defaultname") .. arg_20_0.theme.id)
 
-	var_1_10005(arg_21_0.frame, false)
+	arg_20_0.desc.text = i18n("backyard_theme_save_tip", i18n("backyard_theme_defaultname") .. arg_20_0.theme.id)
+	arg_20_0.icon.sprite = LoadSprite("furnitureicon/default_theme")
 
-	setActive = var_1_10005
+	setActive(arg_20_0.iconRaw.gameObject, false)
+	setActive(arg_20_0.icon.gameObject, true)
 
-	var_1_10005(arg_21_0.innerMsgbox, true)
+	return
+end
 
-	setActive = var_1_10005
-
-	var_1_10005(arg_21_0.innerMsgboxCancelBtn, arg_21_3)
+function var_0_0.ShowInnerMsgBox(arg_21_0, arg_21_1, arg_21_2, arg_21_3, arg_21_4)
+	setActive(arg_21_0.frame, false)
+	setActive(arg_21_0.innerMsgbox, true)
+	setActive(arg_21_0.innerMsgboxCancelBtn, arg_21_3)
 
 	if arg_21_4 then
-		var_1_10005 = arg_21_0.innerMsgboxContent
-		var_1_10005.text = ""
-		var_1_10005 = arg_21_0.scrollTitleText
-		var_1_10005.text = arg_21_4
-		var_1_10005 = arg_21_0.scrollText
-		var_1_10005.text = arg_21_1
+		arg_21_0.innerMsgboxContent.text = ""
+		arg_21_0.scrollTitleText.text = arg_21_4
+		arg_21_0.scrollText.text = arg_21_1
 	else
-		var_1_10005 = arg_21_0.scrollTitleText
-		var_1_10005.text = ""
-		var_1_10005 = arg_21_0.scrollText
-		var_1_10005.text = ""
-		var_1_10005 = arg_21_0.innerMsgboxContent
-		var_1_10005.text = arg_21_1
+		arg_21_0.scrollTitleText.text = ""
+		arg_21_0.scrollText.text = ""
+		arg_21_0.innerMsgboxContent.text = arg_21_1
 	end
 
-	onButton = var_1_10005
-
-	local var_21_0 = arg_21_0
-	local var_21_1 = arg_21_0.innerMsgboxComfirmBtn
-
-	local function var_21_2()
+	onButton(arg_21_0, arg_21_0.innerMsgboxComfirmBtn, function()
 		if arg_21_2 then
 			arg_21_2()
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10010
-
-	var_1_10005(var_21_0, var_21_1, var_21_2, var_1_10010)
+	end, SFX_PANEL)
 
 	if arg_21_3 then
-		onButton = var_1_10005
-
-		local var_21_3 = arg_21_0
-		local var_21_4 = arg_21_0.innerMsgboxCancelBtn
-
-		local function var_21_5()
-			setActive = var_2_10000
-
-			var_2_10000(arg_21_0.innerMsgbox, false)
-
-			setActive = var_2_10000
-
-			var_2_10000(arg_21_0.frame, true)
+		onButton(arg_21_0, arg_21_0.innerMsgboxCancelBtn, function()
+			setActive(arg_21_0.innerMsgbox, false)
+			setActive(arg_21_0.frame, true)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10010
-
-		var_1_10005(var_21_3, var_21_4, var_21_5, var_1_10010)
+		end, SFX_PANEL)
 	end
 
 	arg_21_0.showInnerMsg = true
@@ -681,27 +234,18 @@ function var_0_1.ShowInnerMsgBox(arg_21_0, arg_21_1, arg_21_2, arg_21_3, arg_21_
 	return
 end
 
-function var_0_1.HideInnerMsgBox(arg_24_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_24_0.frame, true)
-
-	setActive = var_1_10001
-
-	var_1_10001(arg_24_0.innerMsgbox, false)
+function var_0_0.HideInnerMsgBox(arg_24_0)
+	setActive(arg_24_0.frame, true)
+	setActive(arg_24_0.innerMsgbox, false)
 
 	arg_24_0.showInnerMsg = false
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_25_0)
-	IsNil = var_1_10001
-
-	if not var_1_10001(arg_25_0.iconRaw.texture) then
-		Object = var_1
-
-		var_1.Destroy(arg_25_0.iconRaw.texture)
+function var_0_0.OnDestroy(arg_25_0)
+	if not IsNil(arg_25_0.iconRaw.texture) then
+		Object.Destroy(arg_25_0.iconRaw.texture)
 
 		arg_25_0.iconRaw.texture = nil
 	end
@@ -709,4 +253,4 @@ function var_0_1.OnDestroy(arg_25_0)
 	return
 end
 
-return var_0_1
+return var_0_0

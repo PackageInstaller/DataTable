@@ -1,4 +1,4 @@
--- from 126 职业属性说明配置表.xlsx
+-- from 129 职业属性说明配置表.xlsx
 
 local hero_tips_data=
 
@@ -26,6 +26,8 @@ local hero_tips_data=
 	[11]={ type=1, sub_type=5, name=81061, explain=81073, icon="5"
 },
 	[12]={ type=1, sub_type=6, name=81062, explain=81074, icon="6"
+},
+	[13]={ type=2, sub_type=7, name=81075, explain=81076, icon="6"
 }
 }
 

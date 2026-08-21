@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_turning") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_turning"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_turning = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_turning
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_turning = rawget(pg, "activity_event_turning") or setmetatable({
+	__name = "activity_event_turning"
+}, confNEO)
+pg.activity_event_turning.all = {
 	1,
 	2,
 	3,
@@ -38,25 +15,11 @@ var_0_3.all = {
 	10,
 	11
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_turning = {}
+pg.base = pg.base or {}
+pg.base.activity_event_turning = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_turning
-
-	var_1_0[1] = {
+	pg.base.activity_event_turning[1] = {
 		type = 1,
 		id = 1,
 		total_num = 7,
@@ -124,11 +87,7 @@ var_0_3.base.activity_event_turning = {}
 			{}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_turning
-
-	var_1_1[2] = {
+	pg.base.activity_event_turning[2] = {
 		type = 2,
 		id = 2,
 		total_num = 7,
@@ -196,11 +155,7 @@ var_0_3.base.activity_event_turning = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_turning
-
-	var_1_2[3] = {
+	pg.base.activity_event_turning[3] = {
 		type = 1,
 		id = 3,
 		total_num = 0,
@@ -255,11 +210,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_turning
-
-	var_1_3[4] = {
+	pg.base.activity_event_turning[4] = {
 		type = 1,
 		id = 4,
 		total_num = 0,
@@ -314,11 +265,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_turning
-
-	var_1_4[5] = {
+	pg.base.activity_event_turning[5] = {
 		type = 1,
 		id = 5,
 		total_num = 0,
@@ -373,11 +320,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_turning
-
-	var_1_5[6] = {
+	pg.base.activity_event_turning[6] = {
 		type = 1,
 		id = 6,
 		total_num = 0,
@@ -432,11 +375,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_turning
-
-	var_1_6[7] = {
+	pg.base.activity_event_turning[7] = {
 		type = 1,
 		id = 7,
 		total_num = 0,
@@ -491,11 +430,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_turning
-
-	var_1_7[8] = {
+	pg.base.activity_event_turning[8] = {
 		type = 1,
 		id = 8,
 		total_num = 0,
@@ -550,11 +485,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_turning
-
-	var_1_8[9] = {
+	pg.base.activity_event_turning[9] = {
 		type = 1,
 		id = 9,
 		total_num = 0,
@@ -609,11 +540,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_turning
-
-	var_1_9[10] = {
+	pg.base.activity_event_turning[10] = {
 		type = 1,
 		id = 10,
 		total_num = 0,
@@ -668,8 +595,7 @@ var_0_3.base.activity_event_turning = {}
 		story_list = {},
 		story_task = {}
 	}
-	pg = var_1_9
-	var_1_9.base.activity_event_turning[11] = {
+	pg.base.activity_event_turning[11] = {
 		type = 1,
 		id = 11,
 		total_num = 0,

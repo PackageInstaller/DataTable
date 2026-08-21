@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿return {
 	time = 0,
 	name = "",
 	init_effect = "",
@@ -8,13 +8,9 @@
 	stack = 1,
 	color = "red",
 	icon = 6400,
-	last_effect = ""
+	last_effect = "",
+	limit = {
+		SYSTEM_DUEL
+	},
+	effect_list = {}
 }
-local var_0_1 = {}
-
-SYSTEM_DUEL = var_0_10002
-var_0_1[1] = var_0_10002
-var_0_0.limit = var_0_1
-var_0_0.effect_list = {}
-
-return var_0_0

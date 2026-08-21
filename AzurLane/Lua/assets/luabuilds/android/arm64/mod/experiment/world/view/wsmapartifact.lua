@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WSMapArtifact", import("...BaseEntity"))
 
-local var_0_0 = "WSMapArtifact"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...BaseEntity"))
-
-var_0_1.Fields = {
+var_0_0.Fields = {
 	theme = "table",
 	prefab = "string",
 	transform = "userdata",
@@ -15,30 +9,23 @@ var_0_1.Fields = {
 	item_info = "table"
 }
 
-function var_0_1.Build(arg_1_0)
-	GetOrAddComponent = var_1_10001
-	GameObject = var_1_10003
-	arg_1_0.transform = var_1_10001(var_1_10003.New(), "RectTransform")
+function var_0_0.Build(arg_1_0)
+	arg_1_0.transform = GetOrAddComponent(GameObject.New(), "RectTransform")
 	arg_1_0.transform.name = "model"
 
 	return
 end
 
-function var_0_1.Dispose(arg_2_0)
+function var_0_0.Dispose(arg_2_0)
 	arg_2_0:Unload()
-
-	Destroy = var_1
-
-	var_1(arg_2_0.transform)
+	Destroy(arg_2_0.transform)
 	arg_2_0:Clear()
 
 	return
 end
 
-function var_0_1.Setup(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
-	assert = var_1_10004
-
-	var_1_10004(not arg_3_0.item_info)
+function var_0_0.Setup(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
+	assert(not arg_3_0.item_info)
 
 	arg_3_0.item_info = arg_3_1
 	arg_3_0.theme = arg_3_2
@@ -49,36 +36,21 @@ function var_0_1.Setup(arg_3_0, arg_3_1, arg_3_2, arg_3_3)
 	return
 end
 
-function var_0_1.Load(arg_4_0)
+function var_0_0.Load(arg_4_0)
+	local var_4_0 = arg_4_0.item_info[3]
+
 	arg_4_0.prefab = arg_4_0.item_info[3]
-	PoolMgr = var_1_10002
 
-	local var_4_0 = var_1_10002.GetInstance()
-	local var_4_1 = var_2.GetPrefab
+	local var_4_1 = PoolMgr.GetInstance()
 
-	WorldConst = var_1_10006
-
-	var_4_1(var_4_0, var_1_10006.ResChapterPrefab .. var_1, var_1, true, function(arg_5_0)
+	PoolMgr.GetInstance():GetPrefab(WorldConst.ResChapterPrefab .. arg_4_0.item_info[3], arg_4_0.item_info[3], true, function(arg_5_0)
 		if arg_4_0.prefab then
-			local var_5_0 = arg_4_0
+			arg_4_0.moduleTF = tf(arg_5_0)
 
-			tf = var_2_10002
-			var_5_0.moduleTF = var_2_10002(arg_5_0)
-
-			local var_5_1 = arg_4_0.moduleTF
-
-			var_1.SetParent(var_5_1, arg_4_0.transform, false)
-
-			local var_5_2 = arg_4_0
-
-			var_1.Init(var_5_2)
+			arg_4_0.moduleTF:SetParent(arg_4_0.transform, false)
+			arg_4_0:Init()
 		else
-			local var_5_3 = var_0
-			local var_5_4 = var_1.ReturnPrefab
-
-			WorldConst = var_2_10004
-
-			var_5_4(var_5_3, var_2_10004.ResChapterPrefab .. var_0, var_0, arg_5_0)
+			var_4_1:ReturnPrefab(WorldConst.ResChapterPrefab .. var_4_0, var_4_0, arg_5_0)
 		end
 
 		return
@@ -87,16 +59,9 @@ function var_0_1.Load(arg_4_0)
 	return
 end
 
-function var_0_1.Unload(arg_6_0)
+function var_0_0.Unload(arg_6_0)
 	if arg_6_0.prefab and arg_6_0.moduleTF then
-		PoolMgr = var_1
-
-		local var_6_0 = var_1.GetInstance()
-		local var_6_1 = var_1.ReturnPrefab
-
-		WorldConst = var_1_10004
-
-		var_6_1(var_6_0, var_1_10004.ResChapterPrefab .. arg_6_0.prefab, arg_6_0.prefab, arg_6_0.moduleTF.gameObject, true)
+		PoolMgr.GetInstance():ReturnPrefab(WorldConst.ResChapterPrefab .. arg_6_0.prefab, arg_6_0.prefab, arg_6_0.moduleTF.gameObject, true)
 	end
 
 	arg_6_0.prefab = nil
@@ -105,81 +70,36 @@ function var_0_1.Unload(arg_6_0)
 	return
 end
 
-function var_0_1.Init(arg_7_0)
-	local var_7_0 = arg_7_0.moduleTF
-	local var_7_1 = var_1.GetComponent
+function var_0_0.Init(arg_7_0)
+	local var_7_0 = arg_7_0.moduleTF:GetComponent(typeof(UnityEngine.UI.Graphic))
 
-	typeof = var_1_10004
-	UnityEngine = var_1_10006
-
-	local var_7_2 = var_7_1(var_7_0, var_1_10004(var_1_10006.UI.Graphic))
-
-	IsNil = var_1_10002
-
-	if not var_1_10002(var_7_2) then
-		var_7_2.raycastTarget = false
+	if not IsNil(var_7_0) then
+		var_7_0.raycastTarget = false
 	end
 
-	local var_7_3 = arg_7_0.moduleTF
-	local var_7_4 = var_2.GetComponentsInChildren
+	local var_7_1 = arg_7_0.moduleTF:GetComponentsInChildren(typeof(UnityEngine.UI.Graphic), true)
 
-	typeof = var_1_10005
-	UnityEngine = var_1_10007
-
-	local var_7_5 = var_7_4(var_7_3, var_1_10005(var_1_10007.UI.Graphic), true)
-	local var_7_6 = var_2.ToTable(var_7_5)
-
-	ipairs = var_7_0
-
-	for iter_7_0, iter_7_1 in var_7_0(var_7_6) do
+	for iter_7_0, iter_7_1 in ipairs((var_7_1:ToTable())) do
 		iter_7_1.raycastTarget = false
 	end
 
-	Vector2 = var_3
-
-	local var_7_7 = var_3.zero
-
-	Vector3 = var_4
-
-	local var_7_8 = var_4.one
-
-	Vector3 = var_5
-
-	local var_7_9 = var_5.zero
+	local var_7_2 = Vector2.zero
+	local var_7_3 = Vector3.one
+	local var_7_4 = Vector3.zero
 
 	if arg_7_0.attachment then
-		local var_7_10 = arg_7_0.attachment
-
-		var_7_7 = var_6.GetDeviation(var_7_10)
-
-		local var_7_11 = arg_7_0.attachment
-
-		var_7_8 = var_6.GetScale(var_7_11)
-
-		local var_7_12 = arg_7_0.attachment
-
-		if var_6.GetMillor(var_7_12) then
-			Vector3 = var_6
-
-			if not var_6(0, 180, 0) then
-				::label_7_0::
-
-				Vector3 = var_6
-				var_7_9 = var_6.zero
-			end
-
-			if false then
-				Vector2 = var_6
-				var_7_7 = var_6(arg_7_0.item_info[4], arg_7_0.item_info[5])
-			end
-
-			arg_7_0.transform.anchoredPosition = var_7_7
-			arg_7_0.transform.localScale = var_7_8
-			arg_7_0.transform.localEulerAngles = var_7_9
-
-			return
-		end
+		var_7_2 = arg_7_0.attachment:GetDeviation()
+		var_7_3 = arg_7_0.attachment:GetScale()
+		var_7_4 = arg_7_0.attachment:GetMillor() and Vector3(0, 180, 0) or Vector3.zero
+	else
+		var_7_2 = Vector2(arg_7_0.item_info[4], arg_7_0.item_info[5])
 	end
+
+	arg_7_0.transform.anchoredPosition = var_7_2
+	arg_7_0.transform.localScale = var_7_3
+	arg_7_0.transform.localEulerAngles = var_7_4
+
+	return
 end
 
-return var_0_1
+return var_0_0

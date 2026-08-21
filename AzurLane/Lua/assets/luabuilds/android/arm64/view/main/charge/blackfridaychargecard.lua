@@ -1,77 +1,38 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BlackFridayChargeCard", import(".ChargeCard"))
 
-local var_0_0 = "BlackFridayChargeCard"
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".ChargeCard"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
-
-	local var_1_0 = arg_1_0.tr
-
-	arg_1_0.unlockBlock = var_2.Find(var_1_0, "real_tpl/unlock_block")
-
-	local var_1_1 = arg_1_0.tr
-
-	arg_1_0.unlockBlockLabel = var_2.Find(var_1_1, "real_tpl/unlock_block/label/Text")
+	arg_1_0.unlockBlock = arg_1_0.tr:Find("real_tpl/unlock_block")
+	arg_1_0.unlockBlockLabel = arg_1_0.tr:Find("real_tpl/unlock_block/label/Text")
 
 	return
 end
 
-function var_0_1.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	var_0_1.super.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+function var_0_0.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	var_0_0.super.update(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
 
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.inTime
+	local var_2_1
 
-	unlockTime = var_7
-
-	if var_2_1(var_2_0, var_7) then
-		setActive = var_4
-
-		var_4(arg_2_0.unlockBlock, false)
+	if arg_2_0:inTime(unlockTime) then
+		setActive(arg_2_0.unlockBlock, false)
 	else
-		setActive = var_4
+		setActive(arg_2_0.unlockBlock, true)
 
-		var_4(arg_2_0.unlockBlock, true)
+		local var_2_0 = arg_2_1:getConfig("time")
 
-		local var_2_2 = arg_2_1:getConfig("time")[1][1][3]
-		local var_2_3 = var_4[1][2][1]
+		setText(arg_2_0.unlockBlockLabel, i18n("blackfriday_shop_tip", var_2_0[1][1][3], var_2_0[1][2][1]))
 
-		setText = var_7
-
-		local var_2_4 = arg_2_0.unlockBlockLabel
-
-		i18n = var_1_10010
-
-		var_7(var_2_4, var_1_10010("blackfriday_shop_tip", var_2_2, var_2_3))
+		var_2_1 = arg_2_0:inTime() and arg_2_1:isTip()
 	end
 
-	setActive = var_4
-
-	local var_2_5 = arg_2_0.focusTip
-	local var_2_6
-
-	if arg_2_0:inTime() then
-		var_2_6 = arg_2_1:isTip()
-	end
-
-	var_4(var_2_5, var_2_6)
+	setActive(arg_2_0.focusTip, var_2_1)
 
 	return
 end
 
-function var_0_1.inTime(arg_3_0)
-	local var_3_0 = arg_3_0.goods
-	local var_3_1 = var_1.getConfig(var_3_0, "time")
-
-	pg = var_1_10002
-
-	local var_3_2 = var_1_10002.TimeMgr.GetInstance()
-
-	return var_2.inTime(var_3_2, var_3_1)
+function var_0_0.inTime(arg_3_0)
+	return pg.TimeMgr.GetInstance():inTime((arg_3_0.goods:getConfig("time")))
 end
 
-return var_0_1
+return var_0_0

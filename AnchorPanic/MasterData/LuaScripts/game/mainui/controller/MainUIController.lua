@@ -39,6 +39,10 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.HIDE_MAIN_UI, self.onHideMainHandler, self)
     GameDispatcher:addEventListener(EventName.UI_SHOW_CHANGE, self.onUIShowChangeHandler, self)
     GameDispatcher:addEventListener(EventName.HERO_LIST_INIT, self.onInitHeroListHandler, self)
+    GameDispatcher:addEventListener(EventName.SHOW_MAINUI_WALLPAPER, self.onShowWallpaperHandler, self)
+    GameDispatcher:addEventListener(EventName.CLOSE_MAINUI_WALLPAPER, self.onCloseWallpaperHandler, self)
+
+    GameDispatcher:addEventListener(EventName.OPEN_RECOVERY_PANEL, self.onClickRecoveryHandler, self)
     -- GameDispatcher:addEventListener(EventName.MAP_TYPE_CHANGE, self.onMapTypeChangeHandler, self)
 end
 
@@ -72,6 +76,10 @@ end
 
 -- 战员初始化完成
 function onInitHeroListHandler(self)
+    if bigHostel.BigHostelManager:getMainUIShow() then
+        return
+    end
+
     mainui.MainUIManager:setHeroInit()
     mainui.MainUIManager:playFirstCV()
 end
@@ -84,6 +92,49 @@ end
 
 -- 检测红点
 function _checkFlag(self)
+end
+
+-- 展示壁纸
+function onShowWallpaperHandler(self, args)
+    if self.mMainUIWallpaper == nil then
+        self.mMainUIWallpaper = mainui.MainUIWallpaper.new()
+        self.mMainUIWallpaper:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMainUIWallpaper, self)
+    end
+    self.mMainUIWallpaper:open(args)
+end
+
+function onDestroyMainUIWallpaper(self)
+    self.mMainUIWallpaper:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMainUIWallpaper, self)
+    self.mMainUIWallpaper = nil
+end
+
+-- 关闭壁纸
+function onCloseWallpaperHandler(self)
+    if self.mMainUIWallpaper and self.mMainUIWallpaper.isPop == 1 then
+        self.mMainUIWallpaper:close()
+    end
+    self:onShowMainUIHandler()
+end
+
+-- 桌面是否处于壁纸状态
+function checkWallpaperIsShow(self)
+    if self.mMainUIWallpaper and self.mMainUIWallpaper.isPop == 1 then
+        return true
+    end
+end
+
+
+function onClickRecoveryHandler(self,args)
+    if self.mRecoveryPanel==nil then
+        self.mRecoveryPanel = mainui.RecoveryPanel.new()
+        self.mRecoveryPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRecoveryPanel, self)
+    end
+    self.mRecoveryPanel:open(args)
+end
+
+function onDestroyRecoveryPanel(self)
+    self.mRecoveryPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRecoveryPanel, self)
+    self.mRecoveryPanel = nil
 end
 
 return _M

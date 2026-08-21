@@ -1,35 +1,26 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
+ys.Battle.BattleBuffDeactiveCLDBox = class("BattleBuffDeactiveCLDBox", ys.Battle.BattleBuffEffect)
+ys.Battle.BattleBuffDeactiveCLDBox.__name = "BattleBuffDeactiveCLDBox"
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleBuffDeactiveCLDBox
 
-var_0_0 = var_0_10000 or {}
-ys = ys
-
-local var_0_1 = var_0.Battle
-
-class = var_0_10002
-var_0_1.BattleBuffDeactiveCLDBox = var_0_10002("BattleBuffDeactiveCLDBox", var_0.Battle.BattleBuffEffect)
-var_0.Battle.BattleBuffDeactiveCLDBox.__name = "BattleBuffDeactiveCLDBox"
-
-local var_0_2 = var_0.Battle.BattleBuffDeactiveCLDBox
-
-function var_0_2.Ctor(arg_1_0, arg_1_1)
-	var_0_2.super.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.BattleBuffDeactiveCLDBox.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
 	return
 end
 
-function var_0_2.GetEffectType(arg_2_0)
-	return var_0_2.FX_TYPE
+function ys.Battle.BattleBuffDeactiveCLDBox.GetEffectType(arg_2_0)
+	return var_0_0.FX_TYPE
 end
 
-function var_0_2.onAttach(arg_3_0, arg_3_1, arg_3_2)
+function ys.Battle.BattleBuffDeactiveCLDBox.onAttach(arg_3_0, arg_3_1, arg_3_2)
 	arg_3_1:SetCldBoxImmune(true)
 
 	return
 end
 
-function var_0_2.onRemove(arg_4_0, arg_4_1, arg_4_2)
+function ys.Battle.BattleBuffDeactiveCLDBox.onRemove(arg_4_0, arg_4_1, arg_4_2)
 	arg_4_1:SetCldBoxImmune(false)
 
 	return

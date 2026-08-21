@@ -1,301 +1,134 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("YidaliMainPage", import(".TemplatePage.PreviewTemplatePage"))
 
-local var_0_0 = "YidaliMainPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".TemplatePage.PreviewTemplatePage"))
-
-function var_0_1.OnInit(arg_1_0)
-	var_0_1.super.OnInit(arg_1_0)
+function var_0_0.OnInit(arg_1_0)
+	var_0_0.super.OnInit(arg_1_0)
 	arg_1_0:initUI()
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	var_0_1.super.OnFirstFlush(arg_2_0)
+function var_0_0.OnFirstFlush(arg_2_0)
+	var_0_0.super.OnFirstFlush(arg_2_0)
 
-	local var_2_0 = arg_2_0.btnList
+	arg_2_0.fight = arg_2_0.btnList:Find("fight")
 
-	arg_2_0.fight = var_1.Find(var_2_0, "fight")
-	onButton = var_1
-
-	local var_2_1 = arg_2_0
-	local var_2_2 = arg_2_0.fight
-
-	local function var_2_3()
-		local var_3_0 = arg_2_0
-		local var_3_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_3_1(var_3_0, var_2_10003.BATTLE_OPERA)
+	onButton(arg_2_0, arg_2_0.fight, function()
+		arg_2_0:emit(ActivityMediator.BATTLE_OPERA)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
+	arg_2_0.build = arg_2_0.btnList:Find("build")
 
-	var_1(var_2_1, var_2_2, var_2_3, var_1_10006)
-
-	local var_2_4 = arg_2_0.btnList
-
-	arg_2_0.build = var_1.Find(var_2_4, "build")
-	onButton = var_1
-
-	local var_2_5 = arg_2_0
-	local var_2_6 = arg_2_0.build
-
-	local function var_2_7()
+	onButton(arg_2_0, arg_2_0.build, function()
 		local var_4_0
 		local var_4_1
-		local var_4_2 = arg_2_0.activity
 
-		if var_2.getConfig(var_4_2, "config_client") ~= "" then
-			local var_4_3 = arg_2_0.activity
+		if arg_2_0.activity:getConfig("config_client") ~= "" then
+			var_4_0 = arg_2_0.activity:getConfig("config_client").linkActID
 
-			if var_2_10003.getConfig(var_4_3, "config_client").linkActID then
-				getProxy = var_2_10003
-				ActivityProxy = var_4_3
-
-				local var_4_4 = var_2_10003(var_4_3)
-
-				var_4_1 = var_2_10003.getActivityById(var_4_4, var_4_0)
+			if var_4_0 then
+				var_4_1 = getProxy(ActivityProxy):getActivityById(var_4_0)
 			end
 		end
 
 		if not var_4_0 then
-			local var_4_5 = arg_2_0
-
-			var_2_10003 = var_2_10003.emit
-			ActivityMediator = var_2_10006
-			var_2_10006 = var_2_10006.EVENT_GO_SCENE
-			SCENE = var_2_10007
-			var_2_10007 = var_2_10007.GETBOAT
-
-			local var_4_6 = {}
-
-			BuildShipScene = var_2_10009
-			var_4_6.projectName = var_2_10009.PROJECTS.ACTIVITY
-
-			var_2_10003(var_4_5, var_2_10006, var_2_10007, var_4_6)
+			arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+				projectName = BuildShipScene.PROJECTS.ACTIVITY
+			})
 		elseif var_4_1 and not var_4_1:isEnd() then
-			local var_4_7 = arg_2_0
-
-			var_2_10003 = var_2_10003.emit
-			ActivityMediator = var_2_10006
-			var_2_10006 = var_2_10006.EVENT_GO_SCENE
-			SCENE = var_2_10007
-
-			local var_4_8 = var_2_10007.GETBOAT
-			local var_4_9 = {}
-
-			BuildShipScene = var_2_10009
-			var_4_9.projectName = var_2_10009.PROJECTS.ACTIVITY
-
-			var_2_10003(var_4_7, var_2_10006, var_4_8, var_4_9)
+			arg_2_0:emit(ActivityMediator.EVENT_GO_SCENE, SCENE.GETBOAT, {
+				projectName = BuildShipScene.PROJECTS.ACTIVITY
+			})
 		else
-			pg = var_2_10003
-
-			local var_4_10 = var_2_10003.TipsMgr.GetInstance()
-			local var_4_11 = var_3.ShowTips
-
-			i18n = var_2_10006
-
-			var_4_11(var_4_10, var_2_10006("common_activity_end"))
+			pg.TipsMgr.GetInstance():ShowTips(i18n("common_activity_end"))
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_2_5, var_2_6, var_2_7, var_1_10006)
+	end, SFX_PANEL)
 	arg_2_0:initData()
 	arg_2_0:submitFinishedTask()
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_5_0)
+function var_0_0.OnUpdateFlush(arg_5_0)
 	arg_5_0:updateAwardBtn()
 
 	return
 end
 
-function var_0_1.initData(arg_6_0)
-	local var_6_0 = arg_6_0.activity
-
-	arg_6_0.finalTaskID = var_1.getConfig(var_6_0, "config_client")[1]
-
-	local var_6_1 = arg_6_0.activity
-
-	arg_6_0.YDLtaskIDList = var_1.getConfig(var_6_1, "config_data")
-	Clone = var_1
-	pg = var_6_1
-	arg_6_0.taskIDList = var_1(var_6_1.task_data_template[arg_6_0.finalTaskID].target_id)
-	getProxy = var_1
-	TaskProxy = var_3
-	arg_6_0.taskProxy = var_1(var_3)
+function var_0_0.initData(arg_6_0)
+	arg_6_0.finalTaskID = arg_6_0.activity:getConfig("config_client")[1]
+	arg_6_0.YDLtaskIDList = arg_6_0.activity:getConfig("config_data")
+	arg_6_0.taskIDList = Clone(pg.task_data_template[arg_6_0.finalTaskID].target_id)
+	arg_6_0.taskProxy = getProxy(TaskProxy)
 
 	return
 end
 
-function var_0_1.initUI(arg_7_0)
-	local var_7_0 = arg_7_0.bg
+function var_0_0.initUI(arg_7_0)
+	arg_7_0.awardTF = arg_7_0.bg:Find("Item")
+	arg_7_0.activeTF = arg_7_0.awardTF:Find("Active")
+	arg_7_0.finishedTF = arg_7_0.awardTF:Find("Finished")
+	arg_7_0.achievedTF = arg_7_0.awardTF:Find("Achieved")
 
-	arg_7_0.awardTF = var_1.Find(var_7_0, "Item")
+	setActive(arg_7_0.activeTF, false)
+	setActive(arg_7_0.finishedTF, false)
+	setActive(arg_7_0.achievedTF, false)
 
-	local var_7_1 = arg_7_0.awardTF
-
-	arg_7_0.activeTF = var_1.Find(var_7_1, "Active")
-
-	local var_7_2 = arg_7_0.awardTF
-
-	arg_7_0.finishedTF = var_1.Find(var_7_2, "Finished")
-
-	local var_7_3 = arg_7_0.awardTF
-
-	arg_7_0.achievedTF = var_1.Find(var_7_3, "Achieved")
-	setActive = var_1
-
-	var_1(arg_7_0.activeTF, false)
-
-	setActive = var_1
-
-	var_1(arg_7_0.finishedTF, false)
-
-	setActive = var_1
-
-	var_1(arg_7_0.achievedTF, false)
-
-	local var_7_4 = arg_7_0.bg
-
-	arg_7_0.achievementBtn = var_1.Find(var_7_4, "AchieveMentBtn")
-
-	local var_7_5 = arg_7_0._tf
-
-	arg_7_0.subViewContainer = var_1.Find(var_7_5, "SubViewContainer")
+	arg_7_0.achievementBtn = arg_7_0.bg:Find("AchieveMentBtn")
+	arg_7_0.subViewContainer = arg_7_0._tf:Find("SubViewContainer")
 
 	return
 end
 
-function var_0_1.updateAwardBtn(arg_8_0)
+function var_0_0.updateAwardBtn(arg_8_0)
 	local var_8_0 = arg_8_0:getFinalTaskStatus()
 
-	print = var_1_10002
-
-	var_1_10002("final taskid:" .. arg_8_0.finalTaskID)
-
-	print = var_1_10002
-
-	var_1_10002("task status:" .. var_8_0)
+	print("final taskid:" .. arg_8_0.finalTaskID)
+	print("task status:" .. var_8_0)
 
 	if var_8_0 == 0 then
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.activeTF, true)
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.finishedTF, false)
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.achievedTF, false)
+		setActive(arg_8_0.activeTF, true)
+		setActive(arg_8_0.finishedTF, false)
+		setActive(arg_8_0.achievedTF, false)
 	elseif var_8_0 == 1 then
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.activeTF, false)
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.finishedTF, true)
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.achievedTF, false)
-
-		onButton = var_1_10002
-
-		local var_8_1 = arg_8_0
-		local var_8_2 = arg_8_0.awardTF
-
-		local function var_8_3()
-			local var_9_0 = arg_8_0.taskProxy
-			local var_9_1 = var_0.getTaskVO(var_9_0, arg_8_0.finalTaskID)
-			local var_9_2 = arg_8_0
-			local var_9_3 = var_1.emit
-
-			ActivityMediator = var_2_10004
-
-			var_9_3(var_9_2, var_2_10004.ON_TASK_SUBMIT, var_9_1)
+		setActive(arg_8_0.activeTF, false)
+		setActive(arg_8_0.finishedTF, true)
+		setActive(arg_8_0.achievedTF, false)
+		onButton(arg_8_0, arg_8_0.awardTF, function()
+			arg_8_0:emit(ActivityMediator.ON_TASK_SUBMIT, (arg_8_0.taskProxy:getTaskVO(arg_8_0.finalTaskID)))
 
 			return
-		end
-
-		SFX_PANEL = var_1_10007
-
-		var_1_10002(var_8_1, var_8_2, var_8_3, var_1_10007)
+		end, SFX_PANEL)
 	elseif var_8_0 == 2 then
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.activeTF, false)
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.finishedTF, false)
-
-		setActive = var_1_10002
-
-		var_1_10002(arg_8_0.achievedTF, true)
-
-		onButton = var_1_10002
-
-		local var_8_4 = arg_8_0
-		local var_8_5 = arg_8_0.awardTF
-
-		local function var_8_6()
+		setActive(arg_8_0.activeTF, false)
+		setActive(arg_8_0.finishedTF, false)
+		setActive(arg_8_0.achievedTF, true)
+		onButton(arg_8_0, arg_8_0.awardTF, function()
 			return
-		end
-
-		SFX_PANEL = var_1_10007
-
-		var_1_10002(var_8_4, var_8_5, var_8_6, var_1_10007)
+		end, SFX_PANEL)
 	end
 
 	return
 end
 
-function var_0_1.submitFinishedTask(arg_11_0)
-	ipairs = var_1_10001
+function var_0_0.submitFinishedTask(arg_11_0)
+	for iter_11_0, iter_11_1 in ipairs(arg_11_0.YDLtaskIDList) do
+		local var_11_0 = arg_11_0.taskProxy:getTaskById(iter_11_1)
 
-	for iter_11_0, iter_11_1 in var_1_10001(arg_11_0.YDLtaskIDList) do
-		local var_11_0 = arg_11_0.taskProxy
-
-		if var_6.getTaskById(var_11_0, iter_11_1) and var_6:isFinish() and not var_6:isReceive() then
-			print = var_7
-
-			var_7("!!!!!!!!!!!!!20190907!!!!!!!YDLtaskIDList emit:" .. iter_11_1)
-
-			local var_11_1 = arg_11_0
-			local var_11_2 = arg_11_0.emit
-
-			ActivityMediator = var_10
-
-			var_11_2(var_11_1, var_10.ON_TASK_SUBMIT, var_6)
+		if var_11_0 and var_11_0:isFinish() and not var_11_0:isReceive() then
+			print("!!!!!!!!!!!!!20190907!!!!!!!YDLtaskIDList emit:" .. iter_11_1)
+			arg_11_0:emit(ActivityMediator.ON_TASK_SUBMIT, var_11_0)
 		end
 	end
 
 	return
 end
 
-function var_0_1.getFinalTaskStatus(arg_12_0)
-	local var_12_0 = arg_12_0.taskProxy
-	local var_12_1 = var_1.getTaskVO(var_12_0, arg_12_0.finalTaskID)
-
-	return var_1.getTaskStatus(var_12_1)
+function var_0_0.getFinalTaskStatus(arg_12_0)
+	return arg_12_0.taskProxy:getTaskVO(arg_12_0.finalTaskID):getTaskStatus()
 end
 
-return var_0_1
+return var_0_0

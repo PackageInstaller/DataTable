@@ -1,64 +1,51 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandFollowerUnitVO", import(".IslandUnitVO"))
 
-local var_0_0 = "IslandFollowerUnitVO"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandUnitVO"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5, arg_1_6)
-	defaultValue = var_1_10007
-	arg_1_0.randomizer = var_1_10007(arg_1_6, false)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2, arg_1_3, arg_1_4, arg_1_5, arg_1_6)
+	arg_1_0.randomizer = defaultValue(arg_1_6, false)
 	arg_1_0.shipId = arg_1_1
 
-	local var_1_0 = var_0_1.super.Ctor
-	local var_1_1 = arg_1_0
-	local var_1_2 = {
+	var_0_0.super.Ctor(arg_1_0, {
 		behaviourTree = "Island/NodeCanvas/Npc/FollowNpc",
 		id = arg_1_2,
-		name = "FollowNpc" .. arg_1_2
-	}
-
-	IslandConst = var_11
-	var_1_2.type = var_11.UNIT_TYPE_FOLLOWER
-	var_1_2.modelId = arg_1_3
-	var_1_2.position = {
-		arg_1_4.x,
-		arg_1_4.y,
-		arg_1_4.z
-	}
-	var_1_2.rotation = {
-		arg_1_5.x,
-		arg_1_5.y,
-		arg_1_5.z
-	}
-	var_1_2.scale = {
-		1,
-		1,
-		1
-	}
-
-	var_1_0(var_1_1, var_1_2)
+		name = "FollowNpc" .. arg_1_2,
+		type = IslandConst.UNIT_TYPE_FOLLOWER,
+		modelId = arg_1_3,
+		position = {
+			arg_1_4.x,
+			arg_1_4.y,
+			arg_1_4.z
+		},
+		rotation = {
+			arg_1_5.x,
+			arg_1_5.y,
+			arg_1_5.z
+		},
+		scale = {
+			1,
+			1,
+			1
+		}
+	})
 
 	return
 end
 
-function var_0_1.IsSameShip(arg_2_0, arg_2_1)
+function var_0_0.IsSameShip(arg_2_0, arg_2_1)
 	return arg_2_0.shipId == arg_2_1
 end
 
-function var_0_1.GetShipId(arg_3_0)
+function var_0_0.GetShipId(arg_3_0)
 	return arg_3_0.shipId
 end
 
-function var_0_1.IsRandomizer(arg_4_0)
+function var_0_0.IsRandomizer(arg_4_0)
 	return arg_4_0.randomizer
 end
 
-function var_0_1.ActiveRandomizer(arg_5_0)
+function var_0_0.ActiveRandomizer(arg_5_0)
 	arg_5_0.randomizer = true
 
 	return
 end
 
-return var_0_1
+return var_0_0

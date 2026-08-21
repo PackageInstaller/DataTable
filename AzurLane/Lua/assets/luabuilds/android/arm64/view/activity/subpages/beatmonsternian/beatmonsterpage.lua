@@ -1,80 +1,51 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BeatMonsterPage", import("....base.BaseActivityPage"))
 
-local var_0_0 = "BeatMonsterPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("....base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
+function var_0_0.OnFirstFlush(arg_2_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_3_0)
+function var_0_0.OnUpdateFlush(arg_3_0)
 	arg_3_0:Show()
 
-	local var_3_0 = arg_3_0.activity
-	local var_3_1 = arg_3_0:PacketData(var_3_0)
+	local var_3_0 = arg_3_0:PacketData(arg_3_0.activity)
 
 	if not arg_3_0.controller then
-		BeatMonsterController = var_3
-		arg_3_0.controller = var_3.New()
+		arg_3_0.controller = BeatMonsterController.New()
 
-		local var_3_2 = arg_3_0.controller.mediator
-
-		var_3.SetUI(var_3_2, arg_3_0._go)
-
-		local var_3_3 = arg_3_0.controller
-
-		var_3.SetUp(var_3_3, var_3_1, function(arg_4_0)
-			local var_4_0 = arg_3_0
-			local var_4_1 = var_1.emit
-
-			ActivityMainScene = var_2_10004
-
-			var_4_1(var_4_0, var_2_10004.LOCK_ACT_MAIN, arg_4_0)
+		arg_3_0.controller.mediator:SetUI(arg_3_0._go)
+		arg_3_0.controller:SetUp(var_3_0, function(arg_4_0)
+			arg_3_0:emit(ActivityMainScene.LOCK_ACT_MAIN, arg_4_0)
 
 			return
 		end)
 	else
-		local var_3_4 = arg_3_0.controller
-
-		var_3.NetData(var_3_4, var_3_1)
+		arg_3_0.controller:NetData(var_3_0)
 	end
 
 	return
 end
 
-function var_0_1.PacketData(arg_5_0, arg_5_1)
-	local var_5_0 = arg_5_1:GetDataConfig("hp") - arg_5_1.data3
-	local var_5_1 = arg_5_1:GetCountForHitMonster()
-	local var_5_2 = arg_5_1
-	local var_5_3 = arg_5_1.GetDataConfig(var_5_2, "story")
-	local var_5_4 = {}
+function var_0_0.PacketData(arg_5_0, arg_5_1)
+	local var_5_0 = arg_5_1:GetDataConfig("hp")
 
-	math = var_5_2
-	var_5_4.hp = var_5_2.max(var_5_0, 0)
-	var_5_4.maxHp = var_2
-	var_5_4.leftCount = var_5_1
-	var_5_4.storys = var_5_3
-
-	return var_5_4
+	return {
+		hp = math.max(var_5_0 - arg_5_1.data3, 0),
+		maxHp = var_5_0,
+		leftCount = arg_5_1:GetCountForHitMonster(),
+		storys = arg_5_1:GetDataConfig("story")
+	}
 end
 
-function var_0_1.OnDestroy(arg_6_0)
-	local var_6_0 = arg_6_0.controller
-
-	var_1.Dispose(var_6_0)
+function var_0_0.OnDestroy(arg_6_0)
+	arg_6_0.controller:Dispose()
 
 	return
 end
 
-return var_0_1
+return var_0_0

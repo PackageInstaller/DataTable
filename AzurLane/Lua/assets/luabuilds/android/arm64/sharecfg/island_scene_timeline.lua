@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_scene_timeline") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_scene_timeline"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_scene_timeline = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_scene_timeline
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.island_scene_timeline = rawget(pg, "island_scene_timeline") or setmetatable({
+	__name = "island_scene_timeline"
+}, confNEO)
+pg.island_scene_timeline.all = {
 	3,
 	4,
 	5,
@@ -46,25 +23,11 @@ var_0_3.all = {
 	8,
 	18
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.island_scene_timeline = {}
+pg.base = pg.base or {}
+pg.base.island_scene_timeline = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_scene_timeline
-
-	var_1_0[3] = {
+	pg.base.island_scene_timeline[3] = {
 		name = "Island/Timeline_scene/prologue_sc02_1",
 		id = 3,
 		sequence = "[sequence]",
@@ -112,11 +75,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_scene_timeline
-
-	var_1_1[4] = {
+	pg.base.island_scene_timeline[4] = {
 		name = "Island/Timeline_scene/prologue_sc02_2",
 		id = 4,
 		sequence = "[sequence]",
@@ -164,11 +123,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_scene_timeline
-
-	var_1_2[5] = {
+	pg.base.island_scene_timeline[5] = {
 		name = "Island/Timeline_scene/prologue_sc03",
 		id = 5,
 		sequence = "[sequence]",
@@ -231,11 +186,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_scene_timeline
-
-	var_1_3[6] = {
+	pg.base.island_scene_timeline[6] = {
 		name = "Island/Timeline_scene/prologue_sc04",
 		id = 6,
 		sequence = "[sequence]",
@@ -318,22 +269,14 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_scene_timeline
-
-	var_1_4[15] = {
+	pg.base.island_scene_timeline[15] = {
 		name = "Island/Timeline_scene/prologue_sc05",
 		id = 15,
 		sequence = "[sequence]",
 		obj = {},
 		tracks = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_scene_timeline
-
-	var_1_5[7] = {
+	pg.base.island_scene_timeline[7] = {
 		name = "Island/Timeline_scene/prologue_sc06_1",
 		id = 7,
 		sequence = "[sequence]",
@@ -396,11 +339,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_scene_timeline
-
-	var_1_6[9] = {
+	pg.base.island_scene_timeline[9] = {
 		name = "Island/Timeline_scene/prologue_sc06_3",
 		id = 9,
 		sequence = "[sequence]",
@@ -502,11 +441,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_scene_timeline
-
-	var_1_7[10] = {
+	pg.base.island_scene_timeline[10] = {
 		name = "Island/Timeline_scene/prologue_sc07_1",
 		id = 10,
 		sequence = "[sequence]",
@@ -614,11 +549,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_scene_timeline
-
-	var_1_8[13] = {
+	pg.base.island_scene_timeline[13] = {
 		name = "Island/Timeline_scene/sceneview_jhs_autumn",
 		id = 13,
 		sequence = "[sequence]",
@@ -661,11 +592,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_scene_timeline
-
-	var_1_9[11] = {
+	pg.base.island_scene_timeline[11] = {
 		name = "Island/Timeline_scene/sceneview_commercial",
 		id = 11,
 		sequence = "[sequence]",
@@ -713,11 +640,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_scene_timeline
-
-	var_1_10[12] = {
+	pg.base.island_scene_timeline[12] = {
 		name = "Island/Timeline_scene/sceneview_factory_01",
 		id = 12,
 		sequence = "[sequence]",
@@ -760,11 +683,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_scene_timeline
-
-	var_1_11[16] = {
+	pg.base.island_scene_timeline[16] = {
 		name = "Island/Timeline_scene/func_signin",
 		id = 16,
 		sequence = "[sequence]",
@@ -852,11 +771,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_scene_timeline
-
-	var_1_12[14] = {
+	pg.base.island_scene_timeline[14] = {
 		name = "Island/Timeline_scene/sceneview_ranch",
 		id = 14,
 		sequence = "Sequence",
@@ -904,11 +819,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_scene_timeline
-
-	var_1_13[2] = {
+	pg.base.island_scene_timeline[2] = {
 		name = "Island/Timeline_scene/prologue_sc07_2",
 		id = 2,
 		sequence = "[sequence]",
@@ -956,11 +867,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_scene_timeline
-
-	var_1_14[1] = {
+	pg.base.island_scene_timeline[1] = {
 		name = "Island/Timeline_scene/prologue_sc01",
 		id = 1,
 		sequence = "[sequence]",
@@ -1038,11 +945,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_scene_timeline
-
-	var_1_15[19] = {
+	pg.base.island_scene_timeline[19] = {
 		name = "Island/Timeline_scene/sceneview_orchard",
 		id = 19,
 		sequence = "[sequence]",
@@ -1069,11 +972,7 @@ var_0_3.base.island_scene_timeline = {}
 			{}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_scene_timeline
-
-	var_1_16[17] = {
+	pg.base.island_scene_timeline[17] = {
 		name = "Island/Timeline_scene/prologue_sc09_1",
 		id = 17,
 		sequence = "[sequence]",
@@ -1131,11 +1030,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_scene_timeline
-
-	var_1_17[8] = {
+	pg.base.island_scene_timeline[8] = {
 		name = "Island/Timeline_scene/prologue_sc06_2",
 		id = 8,
 		sequence = "[sequence]",
@@ -1203,8 +1098,7 @@ var_0_3.base.island_scene_timeline = {}
 			}
 		}
 	}
-	pg = var_1_17
-	var_1_17.base.island_scene_timeline[18] = {
+	pg.base.island_scene_timeline[18] = {
 		name = "Island/Timeline_scene/prologue_sc08_1",
 		id = 18,
 		sequence = "[sequence]",

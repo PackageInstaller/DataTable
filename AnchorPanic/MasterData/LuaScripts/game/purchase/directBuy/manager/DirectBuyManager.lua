@@ -55,6 +55,8 @@ function getTypeConfigList(self)
     return list
 end
 
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- 解析面板信息
 function parsePanelInfoMsg(self, msg)
@@ -71,6 +73,7 @@ function parsePanelInfoMsg(self, msg)
     self.mReqTimes = msg.request_times
     GameDispatcher:dispatchEvent(EventName.UPDATE_DIRECT_BUY_INFO)
     purchase.PurchaseManager:dispatchEvent(purchase.PurchaseManager.BUBBLE_CHANGE, purchase.PurchaseTab.DIRECT_BUY)
+    GameDispatcher:dispatchEvent(EventName.ACTIVITY_NOVICE_UPDATE)
 end
 
 -- 更新已购买数量

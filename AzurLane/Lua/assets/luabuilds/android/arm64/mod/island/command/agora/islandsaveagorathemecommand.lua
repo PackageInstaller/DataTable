@@ -1,65 +1,22 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandSaveAgoraThemeCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandSaveAgoraThemeCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().themeData.id
-	local var_1_1 = var_2.themeData.name
-	local var_1_2 = var_2.themeData.updateList
-	local var_1_3 = var_2.themeData.floorList
-	local var_1_4 = var_2.themeData.tileList
-
-	AgoraCalc = var_1_10008
-
-	local var_1_5 = var_1_10008.EncodePlaced(var_1_2)
-
-	AgoraCalc = var_1_10009
-
-	local var_1_6 = var_1_10009.EncodeLayer(var_1_3)
-
-	AgoraCalc = var_10
-
-	local var_1_7 = var_10.EncodeLayer(var_1_4)
-	local var_1_8 = {
-		id = var_1_0,
-		name = var_1_1,
-		placed_data = {
-			placed_list = var_1_5,
-			floor_data = var_1_6,
-			tile_data = var_1_7
+	pg.ConnectionMgr.GetInstance():Send(21317, {
+		theme = {
+			id = var_1_0.themeData.id,
+			name = var_1_0.themeData.name,
+			placed_data = {
+				placed_list = AgoraCalc.EncodePlaced(var_1_0.themeData.updateList),
+				floor_data = AgoraCalc.EncodeLayer(var_1_0.themeData.floorList),
+				tile_data = AgoraCalc.EncodeLayer(var_1_0.themeData.tileList)
+			}
 		}
-	}
-
-	pg = var_12
-
-	local var_1_9 = var_12.ConnectionMgr.GetInstance()
-
-	var_12.Send(var_1_9, 21317, {
-		theme = var_1_8
 	}, 21318, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			IslandProxy = var_2_10003
-
-			local var_2_0 = var_1(var_2_10003)
-			local var_2_1 = var_1.GetIsland(var_2_0)
-			local var_2_2 = var_1.GetAgoraAgency(var_2_1)
-			local var_2_3 = var_2.AddTheme
-
-			IslandTheme = var_2_10006
-
-			var_2_3(var_2_2, var_2_10006.New(var_1_8))
-
-			local var_2_4 = arg_1_0
-			local var_2_5 = var_3.sendNotification
-
-			GAME = var_6
-
-			var_2_5(var_2_4, var_6.ISLAND_SAVE_AGORA_THEME_DONE)
+			getProxy(IslandProxy):GetIsland():GetAgoraAgency():AddTheme(IslandTheme.New(var_0))
+			arg_1_0:sendNotification(GAME.ISLAND_SAVE_AGORA_THEME_DONE)
 		end
 
 		return
@@ -68,4 +25,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

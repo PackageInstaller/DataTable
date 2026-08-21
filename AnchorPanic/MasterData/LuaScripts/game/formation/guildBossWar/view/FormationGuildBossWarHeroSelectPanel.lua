@@ -35,7 +35,7 @@ function getDataList(self)
         end
 
         local scrollVo = LuaPoolMgr:poolGet(LyScrollerSelectVo)
-        scrollVo:setDataVo({dataVo = heroVo, teamId = self.m_teamId, formationId = self.m_formationId, isShowRemove = isShowRemove, manager = self:getManager(), lockState = lockState})
+        scrollVo:setDataVo({dataVo = heroVo, teamId = self.m_teamId, formationId = self.m_formationId, isShowRemove = isShowRemove, isReplaceHero = self.tileFormationHeroVo ~= nil, manager = self:getManager(), lockState = lockState})
 
         if lockState == 0 then
             if(isShowRemove)then

@@ -87,6 +87,10 @@ function onOpenDupEnterHandler(self, cusType)
     if cusType == DupType.Seaded then
         GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Seabed })
     end
+
+    if cusType == DupType.Vision then
+        GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Vision })
+    end
 end
 
 

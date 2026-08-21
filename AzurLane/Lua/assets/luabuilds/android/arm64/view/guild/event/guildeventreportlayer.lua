@@ -1,176 +1,76 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildEventReportLayer", import("...base.BaseUI"))
 
-local var_0_0 = "GuildEventReportLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "GuildEventReportUI"
 end
 
-function var_0_1.SetReports(arg_2_0, arg_2_1)
+function var_0_0.SetReports(arg_2_0, arg_2_1)
 	arg_2_0.reports = arg_2_1
 
 	return
 end
 
-function var_0_1.OnGetReportRankList(arg_3_0, arg_3_1)
-	local var_3_0 = arg_3_0.rankPage
-
-	var_2.ExecuteAction(var_3_0, "Show", arg_3_1)
+function var_0_0.OnGetReportRankList(arg_3_0, arg_3_1)
+	arg_3_0.rankPage:ExecuteAction("Show", arg_3_1)
 
 	return
 end
 
-function var_0_1.init(arg_4_0)
-	local var_4_0 = arg_4_0._tf
-	local var_4_1 = var_1.Find(var_4_0, "frame/scrollrect")
+function var_0_0.init(arg_4_0)
+	arg_4_0.scrollrect = arg_4_0._tf:Find("frame/scrollrect"):GetComponent("LScrollRect")
+	arg_4_0.getAll = arg_4_0._tf:Find("frame/get_all")
+	arg_4_0.gotAll = arg_4_0._tf:Find("frame/get_all/gray")
+	arg_4_0.descTxt = arg_4_0._tf:Find("frame/desc"):GetComponent(typeof(Text))
+	arg_4_0.cntTxt = arg_4_0._tf:Find("frame/cnt"):GetComponent(typeof(Text))
+	arg_4_0.closeBtn = arg_4_0._tf:Find("frame/close")
 
-	arg_4_0.scrollrect = var_1.GetComponent(var_4_1, "LScrollRect")
-
-	local var_4_2 = arg_4_0._tf
-
-	arg_4_0.getAll = var_1.Find(var_4_2, "frame/get_all")
-
-	local var_4_3 = arg_4_0._tf
-
-	arg_4_0.gotAll = var_1.Find(var_4_3, "frame/get_all/gray")
-
-	local var_4_4 = arg_4_0._tf
-	local var_4_5 = var_1.Find(var_4_4, "frame/desc")
-	local var_4_6 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0.descTxt = var_4_6(var_4_5, var_4(var_1_10006))
-
-	local var_4_7 = arg_4_0._tf
-	local var_4_8 = var_1.Find(var_4_7, "frame/cnt")
-	local var_4_9 = var_1.GetComponent
-
-	typeof = var_4
-	Text = var_1_10006
-	arg_4_0.cntTxt = var_4_9(var_4_8, var_4(var_1_10006))
-
-	local var_4_10 = arg_4_0._tf
-
-	arg_4_0.closeBtn = var_1.Find(var_4_10, "frame/close")
-	setText = var_1
-
-	local var_4_11 = arg_4_0.getAll
-	local var_4_12 = var_3.Find(var_4_11, "Text")
-
-	i18n = var_4
-
-	var_1(var_4_12, var_4("guild_report_get_all"))
+	setText(arg_4_0.getAll:Find("Text"), i18n("guild_report_get_all"))
 
 	arg_4_0._parentTf = arg_4_0._tf.parent
-	setText = var_1
 
-	local var_4_13 = arg_4_0._tf
-	local var_4_14 = var_3.Find(var_4_13, "frame/desc")
+	setText(arg_4_0._tf:Find("frame/desc"), i18n("guild_report_tooltip"))
 
-	i18n = var_4
-
-	var_1(var_4_14, var_4("guild_report_tooltip"))
-
-	GuildBossRankPage = var_1
-	arg_4_0.rankPage = var_1.New(arg_4_0._tf, arg_4_0.event)
+	arg_4_0.rankPage = GuildBossRankPage.New(arg_4_0._tf, arg_4_0.event)
 
 	return
 end
 
-function var_0_1.didEnter(arg_5_0)
-	pg = var_1_10001
-
-	local var_5_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_5_0, arg_5_0._tf)
-
-	onButton = var_1
-
-	local var_5_1 = arg_5_0
-	local var_5_2 = arg_5_0.closeBtn
-
-	local function var_5_3()
-		local var_6_0 = arg_5_0
-
-		var_0.emit(var_6_0, var_0_1.ON_CLOSE)
+function var_0_0.didEnter(arg_5_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_5_0._tf)
+	onButton(arg_5_0, arg_5_0.closeBtn, function()
+		arg_5_0:emit(var_0_0.ON_CLOSE)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_5_1, var_5_2, var_5_3, var_1_10006)
-
-	onButton = var_1
-
-	local var_5_4 = arg_5_0
-	local var_5_5 = arg_5_0._tf
-
-	local function var_5_6()
-		local var_7_0 = arg_5_0
-
-		var_0.emit(var_7_0, var_0_1.ON_CLOSE)
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0._tf, function()
+		arg_5_0:emit(var_0_0.ON_CLOSE)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_5_4, var_5_5, var_5_6, var_1_10006)
-
-	onButton = var_1
-
-	local var_5_7 = arg_5_0
-	local var_5_8 = arg_5_0.getAll
-
-	local function var_5_9()
-		local var_8_0 = {}
-
-		pairs = var_2_10001
-
-		for iter_8_0, iter_8_1 in var_2_10001(arg_5_0.reports) do
+	end, SFX_PANEL)
+	onButton(arg_5_0, arg_5_0.getAll, function()
+		for iter_8_0, iter_8_1 in pairs(arg_5_0.reports) do
 			if iter_8_1:CanSubmit() then
-				table = var_6
-
-				var_6.insert(var_8_0, iter_8_1.id)
+				table.insert({}, iter_8_1.id)
 			end
 		end
 
-		if #var_8_0 == 0 then
+		if #{} == 0 then
 			return
 		end
 
-		local var_8_1 = arg_5_0
-		local var_8_2 = var_1.emit
-
-		GuildEventReportMediator = iter_8_0
-
-		var_8_2(var_8_1, iter_8_0.ON_SUBMIT_REPORTS, var_8_0)
+		arg_5_0:emit(GuildEventReportMediator.ON_SUBMIT_REPORTS, {})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_5_7, var_5_8, var_5_9, var_1_10006)
+	end, SFX_PANEL)
 
 	function arg_5_0.scrollrect.onInitItem(arg_9_0)
-		local var_9_0 = arg_5_0
-
-		var_1.OnInitItem(var_9_0, arg_9_0)
+		arg_5_0:OnInitItem(arg_9_0)
 
 		return
 	end
 
 	function arg_5_0.scrollrect.onUpdateItem(arg_10_0, arg_10_1)
-		local var_10_0 = arg_5_0
-
-		var_2.OnUpdateItem(var_10_0, arg_10_0, arg_10_1)
+		arg_5_0:OnUpdateItem(arg_10_0, arg_10_1)
 
 		return
 	end
@@ -181,19 +81,10 @@ function var_0_1.didEnter(arg_5_0)
 	return
 end
 
-function var_0_1.preload(arg_11_0, arg_11_1)
-	pg = var_1_10002
-
-	local var_11_0 = var_1_10002.m02
-	local var_11_1 = var_2.sendNotification
-
-	GAME = var_1_10005
-
-	var_11_1(var_11_0, var_1_10005.GET_GUILD_REPORT, {
+function var_0_0.preload(arg_11_0, arg_11_1)
+	pg.m02:sendNotification(GAME.GET_GUILD_REPORT, {
 		callback = function(arg_12_0)
-			local var_12_0 = arg_11_0
-
-			var_1.SetReports(var_12_0, arg_12_0)
+			arg_11_0:SetReports(arg_12_0)
 			arg_11_1()
 
 			return
@@ -203,17 +94,11 @@ function var_0_1.preload(arg_11_0, arg_11_1)
 	return
 end
 
-function var_0_1.UpdateReports(arg_13_0, arg_13_1)
-	ipairs = var_1_10002
-
-	for iter_13_0, iter_13_1 in var_1_10002(arg_13_1) do
-		pairs = var_1_10007
-
-		for iter_13_2, iter_13_3 in var_1_10007(arg_13_0.cards) do
+function var_0_0.UpdateReports(arg_13_0, arg_13_1)
+	for iter_13_0, iter_13_1 in ipairs(arg_13_1) do
+		for iter_13_2, iter_13_3 in pairs(arg_13_0.cards) do
 			if iter_13_3.report.id == iter_13_1 then
-				local var_13_0 = arg_13_0.reports[iter_13_1]
-
-				iter_13_3:Update(var_13_0)
+				iter_13_3:Update(arg_13_0.reports[iter_13_1])
 			end
 		end
 	end
@@ -223,37 +108,19 @@ function var_0_1.UpdateReports(arg_13_0, arg_13_1)
 	return
 end
 
-function var_0_1.UpdateGetAllBtn(arg_14_0)
-	local var_14_0
-
-	if #arg_14_0.displays ~= 0 then
-		_ = var_1
-		var_14_0 = var_1.all(arg_14_0.displays, function(arg_15_0)
-			return not arg_15_0:CanSubmit()
-		end)
-
-		if false then
-			var_14_0 = false
-		end
-	else
-		var_14_0 = true
-	end
-
-	setActive = var_1_10002
-
-	var_1_10002(arg_14_0.gotAll, var_14_0)
+function var_0_0.UpdateGetAllBtn(arg_14_0)
+	setActive(arg_14_0.gotAll, #arg_14_0.displays == 0 or _.all(arg_14_0.displays, function(arg_15_0)
+		return not arg_15_0:CanSubmit()
+	end))
 
 	return
 end
 
-function var_0_1.SetTotalCount(arg_16_0)
+function var_0_0.SetTotalCount(arg_16_0)
 	arg_16_0.displays = {}
-	pairs = var_1
 
-	for iter_16_0, iter_16_1 in var_1(arg_16_0.reports) do
-		table = var_1_10006
-
-		var_1_10006.insert(arg_16_0.displays, iter_16_1)
+	for iter_16_0, iter_16_1 in pairs(arg_16_0.reports) do
+		table.insert(arg_16_0.displays, iter_16_1)
 	end
 
 	local function var_16_0(arg_17_0)
@@ -268,115 +135,61 @@ function var_0_1.SetTotalCount(arg_16_0)
 		return
 	end
 
-	table = var_2
-
-	var_2.sort(arg_16_0.displays, function(arg_18_0, arg_18_1)
+	table.sort(arg_16_0.displays, function(arg_18_0, arg_18_1)
 		return var_16_0(arg_18_0) > var_16_0(arg_18_1)
 	end)
+	arg_16_0.scrollrect:SetTotalCount(#arg_16_0.displays)
 
-	local var_16_1 = arg_16_0.scrollrect
-
-	var_2.SetTotalCount(var_16_1, #arg_16_0.displays)
-
-	local var_16_2 = arg_16_0.cntTxt
-	local var_16_3 = #arg_16_0.displays
-	local var_16_4 = "/"
-
-	GuildConst = var_5
-	var_16_2.text = var_16_3 .. var_16_4 .. var_5.MAX_REPORT_CNT()
+	arg_16_0.cntTxt.text = #arg_16_0.displays .. "/" .. GuildConst.MAX_REPORT_CNT()
 
 	return
 end
 
-function var_0_1.OnInitItem(arg_19_0, arg_19_1)
-	GuildReportCard = var_1_10002
+function var_0_0.OnInitItem(arg_19_0, arg_19_1)
+	local var_19_0 = GuildReportCard.New(arg_19_1, arg_19_0)
 
-	local var_19_0 = var_1_10002.New(arg_19_1, arg_19_0)
+	arg_19_0.cards = arg_19_0.cards or {}
 
-	if not arg_19_0.cards then
-		arg_19_0.cards = {}
-	end
-
-	onButton = var_3
-
-	local var_19_1 = arg_19_0
-	local var_19_2 = var_19_0.getBtn
-
-	local function var_19_3()
-		local var_20_0 = var_19_0.report
-
-		if var_0.IsLock(var_20_0) then
-			pg = var_0
-
-			local var_20_1 = var_0.TipsMgr.GetInstance()
-			local var_20_2 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_20_2(var_20_1, var_2_10003("guild_can_not_get_tip"))
+	onButton(arg_19_0, var_19_0.getBtn, function()
+		if var_19_0.report:IsLock() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("guild_can_not_get_tip"))
 
 			return
 		end
 
-		local var_20_3 = arg_19_0
-		local var_20_4 = var_0.emit
-
-		GuildEventReportMediator = var_2_10003
-
-		var_20_4(var_20_3, var_2_10003.ON_SUBMIT_REPORTS, {
+		arg_19_0:emit(GuildEventReportMediator.ON_SUBMIT_REPORTS, {
 			var_19_0.report.id
 		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_3(var_19_1, var_19_2, var_19_3, var_1_10008)
+	end, SFX_PANEL)
 
 	arg_19_0.cards[arg_19_1] = var_19_0
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_21_0, arg_21_1, arg_21_2)
-	local var_21_0
-
+function var_0_0.OnUpdateItem(arg_21_0, arg_21_1, arg_21_2)
 	if not arg_21_0.cards[arg_21_2] then
 		arg_21_0:OnInitItem(arg_21_2)
-
-		var_21_0 = arg_21_0.cards[arg_21_2]
 	end
 
-	local var_21_1 = arg_21_0.displays[arg_21_1 + 1]
-
-	var_21_0:Update(var_21_1)
+	arg_21_0.cards[arg_21_2]:Update(arg_21_0.displays[arg_21_1 + 1])
 
 	return
 end
 
-function var_0_1.ShowReportRank(arg_22_0, arg_22_1)
-	local var_22_0 = arg_22_0
-	local var_22_1 = arg_22_0.emit
-
-	GuildEventReportMediator = var_1_10005
-
-	var_22_1(var_22_0, var_1_10005.GET_REPORT_RANK, arg_22_1)
+function var_0_0.ShowReportRank(arg_22_0, arg_22_1)
+	arg_22_0:emit(GuildEventReportMediator.GET_REPORT_RANK, arg_22_1)
 
 	return
 end
 
-function var_0_1.willExit(arg_23_0)
-	pg = var_1_10001
-
-	local var_23_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_23_0, arg_23_0._tf, arg_23_0._parentTf)
+function var_0_0.willExit(arg_23_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_23_0._tf, arg_23_0._parentTf)
 
 	if arg_23_0.cards then
-		pairs = var_1
-
-		for iter_23_0, iter_23_1 in var_1(arg_23_0.cards) do
+		for iter_23_0, iter_23_1 in pairs(arg_23_0.cards) do
 			iter_23_1:Dispose()
 		end
 
@@ -384,9 +197,7 @@ function var_0_1.willExit(arg_23_0)
 	end
 
 	if arg_23_0.rankPage then
-		local var_23_1 = arg_23_0.rankPage
-
-		var_1.Destroy(var_23_1)
+		arg_23_0.rankPage:Destroy()
 
 		arg_23_0.rankPage = nil
 	end
@@ -394,4 +205,4 @@ function var_0_1.willExit(arg_23_0)
 	return
 end
 
-return var_0_1
+return var_0_0

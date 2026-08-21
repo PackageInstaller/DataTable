@@ -1,88 +1,56 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainCommonActDelegationBtn", import(".MainBaseSpcailActBtn"))
 
-local var_0_0 = "MainCommonActDelegationBtn"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainBaseSpcailActBtn"))
-
-function var_0_1.GetEventName(arg_1_0)
+function var_0_0.GetEventName(arg_1_0)
 	return "event_old_act"
 end
 
-function var_0_1.GetContainer(arg_2_0)
-	local var_2_0 = arg_2_0.root.parent
-
-	return var_1.Find(var_2_0, "eventPanel")
+function var_0_0.GetContainer(arg_2_0)
+	return arg_2_0.root.parent:Find("eventPanel")
 end
 
-function var_0_1.GetLinkConfig(arg_3_0)
-	local var_3_0 = arg_3_0:GetEventName()
-
-	pg = var_1_10002
-
-	local var_3_1
-
-	if not var_1_10002.activity_link_button.get_id_list_by_name[var_3_0] then
-		var_3_1 = {}
-	end
-
-	_ = var_1_10004
-
-	if #var_1_10004.select(var_3_1, function(arg_4_0)
-		local var_4_0 = var_0[arg_4_0].time
-
-		type = var_2_10002
-
-		if var_2_10002(var_4_0) == "table" and var_4_0[1] and var_4_0[1] == "default" then
-			local var_4_1 = arg_3_0
-
-			return var_2.InActTime(var_4_1, var_4_0[2])
+function var_0_0.GetLinkConfig(arg_3_0)
+	local var_3_0 = pg.activity_link_button
+	local var_3_1 = pg.activity_link_button.get_id_list_by_name[arg_3_0:GetEventName()] or {}
+	local var_3_2 = _.select(var_3_1, function(arg_4_0)
+		if type(var_3_0[arg_4_0].time) == "table" and var_3_0[arg_4_0].time[1] and var_3_0[arg_4_0].time[1] == "default" then
+			return arg_3_0:InActTime(var_3_0[arg_4_0].time[2])
 		else
-			pg = var_2
-
-			local var_4_2 = var_2.TimeMgr.GetInstance()
-
-			return var_2.inTime(var_4_2, var_4_0)
+			return pg.TimeMgr.GetInstance():inTime(var_3_0[arg_4_0].time)
 		end
 
 		return
-	end) > 0 then
-		table = var_5
+	end)
 
-		local var_3_2 = var_5.sort
-		local var_3_3 = var_4
-
-		CompareFuncs = var_1_10008
-
-		var_3_2(var_3_3, var_1_10008({
+	if #var_3_2 > 0 then
+		table.sort(var_3_2, CompareFuncs({
 			function(arg_5_0)
-				return var_0[arg_5_0].order
+				return var_3_0[arg_5_0].order
 			end
 		}))
 
-		return var_2[var_4[1]]
+		return pg.activity_link_button[var_3_2[1]]
 	end
 
 	return
 end
 
-function var_0_1.InActTime(arg_6_0, arg_6_1)
-	if arg_6_1 or arg_6_0:GetActivityID() then
-		getProxy = var_1_10003
-		ActivityProxy = var_1_10005
+function var_0_0.InActTime(arg_6_0, arg_6_1)
+	local var_6_0 = arg_6_1 or arg_6_0:GetActivityID()
 
-		local var_6_0 = var_1_10003(var_1_10005)
+	if var_6_0 then
+		local var_6_1 = getProxy(ActivityProxy):getActivityById(var_6_0)
 
-		return var_3.getActivityById(var_6_0, var_2) and not var_3:isEnd()
+		return var_6_1 and not var_6_1:isEnd()
 	end
 
 	return false
 end
 
-function var_0_1.InShowTime(arg_7_0)
-	if arg_7_0:GetLinkConfig() ~= nil then
-		arg_7_0.config = var_1
+function var_0_0.InShowTime(arg_7_0)
+	local var_7_0 = arg_7_0:GetLinkConfig()
+
+	if var_7_0 ~= nil then
+		arg_7_0.config = var_7_0
 
 		return true
 	else
@@ -92,83 +60,60 @@ function var_0_1.InShowTime(arg_7_0)
 	return
 end
 
-function var_0_1.GetUIName(arg_8_0)
+function var_0_0.GetUIName(arg_8_0)
 	return "MainCommonActDelegationBtn"
 end
 
-function var_0_1.OnClick(arg_9_0)
-	MainBaseActivityBtn = var_1_10001
-
-	var_1_10001.Skip(arg_9_0, arg_9_0.config)
+function var_0_0.OnClick(arg_9_0)
+	MainBaseActivityBtn.Skip(arg_9_0, arg_9_0.config)
 
 	return
 end
 
-function var_0_1.OnInit(arg_10_0)
-	local var_10_0 = arg_10_0._tf
+function var_0_0.OnInit(arg_10_0)
+	arg_10_0.tipTr = arg_10_0._tf:Find("tip")
 
-	arg_10_0.tipTr = var_1.Find(var_10_0, "tip")
-	setActive = var_1
-
-	var_1(arg_10_0.tipTr, arg_10_0:IsShowTip())
+	setActive(arg_10_0.tipTr, arg_10_0:IsShowTip())
 
 	return
 end
 
-function var_0_1.GetActivity(arg_11_0)
+function var_0_0.GetActivity(arg_11_0)
 	if arg_11_0.config and arg_11_0.config.time and arg_11_0.config.time[1] == "default" then
-		local var_11_0 = arg_11_0.config.time[2]
+		local var_11_0 = getProxy(ActivityProxy):getActivityById(arg_11_0.config.time[2])
 
-		getProxy = var_1_10002
-		ActivityProxy = var_1_10004
-
-		local var_11_1 = var_1_10002(var_1_10004)
-
-		if var_2.getActivityById(var_11_1, var_11_0) and not var_2:isEnd() then
-			return var_2
+		if var_11_0 and not var_11_0:isEnd() then
+			return var_11_0
 		end
 	end
 
 	return nil
 end
 
-function var_0_1.IsShowTip(arg_12_0)
-	local var_12_0 = arg_12_0
-	local var_12_1 = arg_12_0.GetActivity(var_12_0)
-	local var_12_2
+function var_0_0.IsShowTip(arg_12_0)
+	local var_12_0 = arg_12_0:GetActivity()
 
-	var_12_2, switch = var_1.getConfig(var_12_1, "type"), var_12_0
-
-	local var_12_3 = {}
-
-	ActivityConst = var_1_10007
-	var_12_3[var_1_10007.ACTIVITY_TYPE_TOWN2] = function()
-		LiquorFloorMapScene = var_2_10000
-
-		return var_2_10000.ShouldShowTaskTip()
-	end
-
-	return var_12_0(var_12_2, var_12_3, function()
-		local var_14_0 = var_0
-
-		return var_0.readyToAchieve(var_14_0)
+	return switch(arg_12_0:GetActivity():getConfig("type"), {
+		[ActivityConst.ACTIVITY_TYPE_TOWN2] = function()
+			return LiquorFloorMapScene.ShouldShowTaskTip()
+		end
+	}, function()
+		return var_12_0:readyToAchieve()
 	end)
 end
 
-function var_0_1.emit(arg_15_0, ...)
-	local var_15_0 = arg_15_0.event
-
-	var_1.emit(var_15_0, ...)
+function var_0_0.emit(arg_15_0, ...)
+	arg_15_0.event:emit(...)
 
 	return
 end
 
-function var_0_1.OnRegister(arg_16_0)
+function var_0_0.OnRegister(arg_16_0)
 	return
 end
 
-function var_0_1.OnClear(arg_17_0)
+function var_0_0.OnClear(arg_17_0)
 	return
 end
 
-return var_0_1
+return var_0_0

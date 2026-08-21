@@ -68,7 +68,8 @@ function __updateFightPowerView(self, cusInit)
         local count = eleTypeNum[i]
         if(i ~= 0 and count ~= nil) then 
             local color, name = hero.getHeroTypeName(eleTypeList[i])
-            text = text .. string.substitute("至少上阵{0}名{1}\n", count, name)
+            text = text .. _TT(24516, name, count)
+            --text = text .. string.substitute("至少{0}名{1}\n", count, name)
         end
     end
     self.mTxtRecommandFight.text = text

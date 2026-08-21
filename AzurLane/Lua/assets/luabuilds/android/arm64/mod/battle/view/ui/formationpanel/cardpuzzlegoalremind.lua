@@ -1,23 +1,11 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_2 = ys.Battle.BattleDataFunction
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.CardPuzzleGoalRemind = class("CardPuzzleGoalRemind")
+ys.Battle.CardPuzzleGoalRemind.__name = "CardPuzzleGoalRemind"
 
-local var_0_1 = var_0.Battle.BattleConfig
-local var_0_2 = var_0.Battle.BattleCardPuzzleEvent
-local var_0_3 = var_0.Battle.BattleDataFunction
-local var_0_4 = var_0.Battle
-
-class = var_0_10005
-var_0_4.CardPuzzleGoalRemind = var_0_10005("CardPuzzleGoalRemind")
-
-local var_0_5 = var_0.Battle.CardPuzzleGoalRemind
-
-var_0_5.__name = "CardPuzzleGoalRemind"
-
-function var_0_5.Ctor(arg_1_0, arg_1_1)
+function ys.Battle.CardPuzzleGoalRemind.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 
 	arg_1_0:init()
@@ -25,70 +13,32 @@ function var_0_5.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_5.SetCardPuzzleComponent(arg_2_0, arg_2_1)
-	local var_2_0 = arg_2_1:GetPuzzleDungeonID()
+function ys.Battle.CardPuzzleGoalRemind.SetCardPuzzleComponent(arg_2_0, arg_2_1)
+	arg_2_0._tmp = var_0_2.GetPuzzleDungeonTemplate((arg_2_1:GetPuzzleDungeonID()))
 
-	arg_2_0._tmp = var_0_3.GetPuzzleDungeonTemplate(var_2_0)
-	setText = var_3
-
-	local var_2_1 = arg_2_0._bg
-
-	var_3(var_5.Find(var_2_1, "text"), arg_2_0._tmp.description)
+	setText(arg_2_0._bg:Find("text"), arg_2_0._tmp.description)
 
 	return
 end
 
-function var_0_5.init(arg_3_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.New(arg_3_0)
+function ys.Battle.CardPuzzleGoalRemind.init(arg_3_0)
+	pg.DelegateInfo.New(arg_3_0)
 
 	arg_3_0._tf = arg_3_0._go.transform
+	arg_3_0._bg = arg_3_0._tf:Find("bg")
 
-	local var_3_0 = arg_3_0._tf
+	setText(arg_3_0._bg:Find("label_ch"), i18n("card_puzzel_goal_ch"))
+	setText(arg_3_0._bg:Find("label_en"), i18n("card_puzzel_goal_en"))
 
-	arg_3_0._bg = var_1.Find(var_3_0, "bg")
-	setText = var_1
-
-	local var_3_1 = arg_3_0._bg
-	local var_3_2 = var_3.Find(var_3_1, "label_ch")
-
-	i18n = var_4
-
-	var_1(var_3_2, var_4("card_puzzel_goal_ch"))
-
-	setText = var_1
-
-	local var_3_3 = arg_3_0._bg
-	local var_3_4 = var_3.Find(var_3_3, "label_en")
-
-	i18n = var_4
-
-	var_1(var_3_4, var_4("card_puzzel_goal_en"))
-
-	local var_3_5 = arg_3_0._bg
-
-	arg_3_0._arrow = var_1.Find(var_3_5, "arrow")
+	arg_3_0._arrow = arg_3_0._bg:Find("arrow")
 	arg_3_0._openFlag = 1
-	onButton = var_1
 
-	var_1(arg_3_0, arg_3_0._bg, function()
-		rtf = var_2_10000
+	onButton(arg_3_0, arg_3_0._bg, function()
+		local var_4_0 = rtf(arg_3_0._bg).rect
 
-		local var_4_0 = var_2_10000(arg_3_0._bg).rect.height + arg_3_0._openFlag * 22
-
-		rtf = var_2
-
-		local var_4_1 = var_2(arg_3_0._bg)
-
-		Vector2 = var_2_10003
-		var_4_1.sizeDelta = var_2_10003(var_0.width, var_4_0)
+		rtf(arg_3_0._bg).sizeDelta = Vector2(var_4_0.width, var_4_0.height + arg_3_0._openFlag * 22)
 		arg_3_0._openFlag = arg_3_0._openFlag * -1
-
-		local var_4_2 = arg_3_0._arrow
-
-		Vector3 = var_3
-		var_4_2.localScale = var_3(1, arg_3_0._openFlag, 1)
+		arg_3_0._arrow.localScale = Vector3(1, arg_3_0._openFlag, 1)
 
 		return
 	end)
@@ -96,10 +46,8 @@ function var_0_5.init(arg_3_0)
 	return
 end
 
-function var_0_5.Dispose(arg_5_0)
-	pg = var_1_10001
-
-	var_1_10001.DelegateInfo.Dispose(arg_5_0)
+function ys.Battle.CardPuzzleGoalRemind.Dispose(arg_5_0)
+	pg.DelegateInfo.Dispose(arg_5_0)
 
 	arg_5_0._arrow = nil
 	arg_5_0._bg = nil

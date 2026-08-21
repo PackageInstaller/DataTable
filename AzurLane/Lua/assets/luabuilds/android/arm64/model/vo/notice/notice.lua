@@ -1,75 +1,42 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Notice", import("..BaseVO"))
 
-local var_0_0 = "Notice"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseVO"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
 	arg_1_0.title = arg_1_1.title
 	arg_1_0.content = arg_1_1.content
-	PlayerPrefs = var_2
-	arg_1_0.isRead = var_2.GetInt(arg_1_0:prefKey()) == 1
+	arg_1_0.isRead = PlayerPrefs.GetInt(arg_1_0:prefKey()) == 1
 
 	return
 end
 
-function var_0_1.prefKey(arg_2_0)
+function var_0_0.prefKey(arg_2_0)
 	return "notice" .. arg_2_0.id
 end
 
-function var_0_1.markAsRead(arg_3_0)
+function var_0_0.markAsRead(arg_3_0)
 	if not arg_3_0.isRead then
 		arg_3_0.isRead = true
-		PlayerPrefs = var_1
 
-		var_1.SetInt(arg_3_0:prefKey(), 1)
-
-		PlayerPrefs = var_1
-
-		var_1.Save()
+		PlayerPrefs.SetInt(arg_3_0:prefKey(), 1)
+		PlayerPrefs.Save()
 	end
 
 	return
 end
 
-function var_0_1.getUniqueCode(arg_4_0)
-	local var_4_0
-
-	if not arg_4_0.title then
-		var_4_0 = "*"
-	end
-
+function var_0_0.getUniqueCode(arg_4_0)
+	local var_4_0 = arg_4_0.title or "*"
 	local var_4_1 = arg_4_0.id
-	local var_4_2
-
-	if not arg_4_0.content then
-		var_4_2 = "*"
-	end
-
+	local var_4_2 = arg_4_0.content or "*"
 	local var_4_3 = var_4_0 .. var_4_1 .. var_4_2
+	local var_4_4 = string.len(var_4_0 .. var_4_1 .. var_4_2)
+	local var_4_5 = var_4_4
 
-	string = var_4_1
-
-	local var_4_4 = var_4_1.len(var_4_3)
-
-	math = var_4_2
-
-	local var_4_5 = var_4_2.min(10, var_4_4)
-
-	math = var_4
-
-	local var_4_6 = var_4.floor(var_4_4 / var_4_5)
-	local var_4_7 = var_4_4
-
-	for iter_4_0 = 1, var_4_4, var_4_6 do
-		string = var_1_10010
-		var_4_7 = var_4_7 + var_1_10010.byte(var_4_3, iter_4_0)
+	for iter_4_0 = 1, var_4_4, math.floor(var_4_4 / math.min(10, var_4_4)) do
+		var_4_5 = var_4_5 + string.byte(var_4_3, iter_4_0)
 	end
 
-	return var_4_7
+	return var_4_5
 end
 
-return var_0_1
+return var_0_0

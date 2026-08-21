@@ -42,7 +42,7 @@ function configUI(self)
 
     self.mTextFight = self:getChildGO("mTextFight"):GetComponent(ty.Text)
 
-    -- self.mAnimator = self.UIObject:GetComponent(ty.Animator)
+    self.mAnimator = self.UIObject:GetComponent(ty.Animator)
 end
 
 function initViewText(self)
@@ -58,9 +58,9 @@ function active(self, args)
 end
 
 function updateView(self, args, noShow)
-    -- if not noShow then
-    --     self.mAnimator:SetTrigger("show")
-    -- end
+    if not noShow then
+        self.mAnimator:SetTrigger("show")
+    end
 
     self.mDupConfigVo = args
 
@@ -106,21 +106,21 @@ function deActive(self)
     self:clearItem()
 end
 
--- function __playOpenAction(self)
+function __playOpenAction(self)
 
--- end
-
-function __closeOpenAction(self)
---     local AniTime = AnimatorUtil.getAnimatorClipTime(self.mAnimator, "FieldExplorationDupPanel_Exit")
---     self.mAnimator:SetTrigger("exit")
---     self:setTimeout(AniTime, function()
-        self:close()
---     end)
 end
 
-function onClickClose(self)
-    super.onClickClose(self)
-    GameDispatcher:dispatchEvent(EventName.CIRUIT_CLOSEDUPINFOPANEL)
+function __closeOpenAction(self)
+    local AniTime = AnimatorUtil.getAnimatorClipTime(self.mAnimator, "CiruitDupPanel_Exit")
+    self.mAnimator:SetTrigger("exit")
+    self:setTimeout(AniTime, function()
+        self:close()
+    end)
+end
+
+function close(self)
+    super.close(self)
+    GameDispatcher:dispatchEvent(EventName.CIRUIT_CLOSEDUPINFOPANEL_HANDLER)
 end
 
 function onFight(self)

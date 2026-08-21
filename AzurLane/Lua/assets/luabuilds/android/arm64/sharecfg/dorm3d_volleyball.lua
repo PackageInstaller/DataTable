@@ -1,54 +1,17 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_volleyball") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_volleyball"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_volleyball = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_volleyball
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_volleyball = rawget(pg, "dorm3d_volleyball") or setmetatable({
+	__name = "dorm3d_volleyball"
+}, confNEO)
+pg.dorm3d_volleyball.all = {
 	20220,
 	30221,
 	19903
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_volleyball = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_volleyball = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_volleyball
-
-	var_1_0[20220] = {
+	pg.base.dorm3d_volleyball[20220] = {
 		scene_name = "TLX_volleyball",
 		endScore = 6,
 		id = 20220,
@@ -155,11 +118,7 @@ var_0_3.base.dorm3d_volleyball = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_volleyball
-
-	var_1_1[30221] = {
+	pg.base.dorm3d_volleyball[30221] = {
 		scene_name = "ND_volleyball",
 		endScore = 6,
 		id = 30221,
@@ -266,8 +225,7 @@ var_0_3.base.dorm3d_volleyball = {}
 			}
 		}
 	}
-	pg = var_1_1
-	var_1_1.base.dorm3d_volleyball[19903] = {
+	pg.base.dorm3d_volleyball[19903] = {
 		scene_name = "AB_volleyball",
 		endScore = 6,
 		id = 19903,

@@ -1,67 +1,37 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("ShamShopPage", import(".BaseShopPage"))
 
-local var_0_0 = "ShamShopPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BaseShopPage"))
-
-function var_0_1.GetPaintingCommodityUpdateVoice(arg_1_0)
+function var_0_0.GetPaintingCommodityUpdateVoice(arg_1_0)
 	return
 end
 
-function var_0_1.CanOpen(arg_2_0, arg_2_1, arg_2_2)
-	pg = var_1_10003
-
-	local var_2_0 = var_1_10003.SystemOpenMgr.GetInstance()
-
-	return var_3.isOpenSystem(var_2_0, arg_2_2.level, "ShamShop")
+function var_0_0.CanOpen(arg_2_0, arg_2_1, arg_2_2)
+	return pg.SystemOpenMgr.GetInstance():isOpenSystem(arg_2_2.level, "ShamShop")
 end
 
-function var_0_1.OnUpdateItems(arg_3_0)
+function var_0_0.OnUpdateItems(arg_3_0)
 	arg_3_0:RefreshResItemList()
 
 	return
 end
 
-function var_0_1.GetResDataList(arg_4_0)
-	local var_4_0 = {}
-	local var_4_1 = arg_4_0.shop
-	local var_4_2 = var_2.GetResList(var_4_1)
+function var_0_0.GetResDataList(arg_4_0)
+	for iter_4_0, iter_4_1 in ipairs((arg_4_0.shop:GetResList())) do
+		local var_4_1 = arg_4_0.items[ChapterConst.ShamMoneyItem]
 
-	ipairs = var_1_10003
-
-	for iter_4_0, iter_4_1 in var_1_10003(var_4_2) do
-		local var_4_3
-		local var_4_4 = arg_4_0.items
-
-		ChapterConst = var_1_10010
-
-		local var_4_5 = not var_4_4[var_1_10010.ShamMoneyItem] and 0 or var_1_10010.count
-
-		table = var_1_10011
-		var_1_10011 = var_1_10011.insert
-
-		local var_4_6 = var_4_0
-		local var_4_7 = {}
-
-		DROP_TYPE_ITEM = var_1_10015
-		var_4_7.type = var_1_10015
-		var_4_7.resID = iter_4_1
-		var_4_7.cnt = var_4_5
-
-		var_1_10011(var_4_6, var_4_7)
+		table.insert({}, {
+			type = DROP_TYPE_ITEM,
+			resID = iter_4_1,
+			cnt = not arg_4_0.items[ChapterConst.ShamMoneyItem] and 0 or var_4_1.count
+		})
 	end
 
-	return var_4_0
+	return {}
 end
 
-function var_0_1.OnUpdateCommodity(arg_5_0, arg_5_1)
+function var_0_0.OnUpdateCommodity(arg_5_0, arg_5_1)
 	local var_5_0
 
-	pairs = var_1_10003
-
-	for iter_5_0, iter_5_1 in var_1_10003(arg_5_0.cards) do
+	for iter_5_0, iter_5_1 in pairs(arg_5_0.cards) do
 		if iter_5_1.goodsVO.id == arg_5_1.id then
 			var_5_0 = iter_5_1
 
@@ -76,147 +46,79 @@ function var_0_1.OnUpdateCommodity(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.RefreshUI(arg_6_0)
+function var_0_0.RefreshUI(arg_6_0)
 	arg_6_0:UpdateTip()
-
-	setActive = var_1
-
-	var_1(arg_6_0.tipTextGo, true)
-
-	setActive = var_1
-
-	var_1(arg_6_0.helpBtn, false)
-
-	setActive = var_1
-
-	var_1(arg_6_0.resolveBtn, false)
-
-	setActive = var_1
-
-	var_1(arg_6_0.refreshBtn, false)
+	setActive(arg_6_0.tipTextGo, true)
+	setActive(arg_6_0.helpBtn, false)
+	setActive(arg_6_0.resolveBtn, false)
+	setActive(arg_6_0.refreshBtn, false)
 
 	return
 end
 
-function var_0_1.OnInitItem(arg_7_0, arg_7_1)
-	ActivityGoodsCard = var_1_10002
+function var_0_0.OnInitItem(arg_7_0, arg_7_1)
+	local var_7_0 = ActivityGoodsCard.New(arg_7_1)
 
-	local var_7_0 = var_1_10002.New(arg_7_1)
-
-	onButton = var_1_10003
-
-	local var_7_1 = arg_7_0
-	local var_7_2 = var_7_0.tf
-
-	local function var_7_3()
-		local var_8_0 = var_7_0.goodsVO
-
-		if not var_0.canPurchase(var_8_0) then
-			pg = var_0
-
-			local var_8_1 = var_0.TipsMgr.GetInstance()
-			local var_8_2 = var_0.ShowTips
-
-			i18n = var_2_10003
-
-			var_8_2(var_8_1, var_2_10003("buy_countLimit"))
+	onButton(arg_7_0, var_7_0.tf, function()
+		if not var_7_0.goodsVO:canPurchase() then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("buy_countLimit"))
 
 			return
 		end
 
-		local var_8_3 = arg_7_0
-
-		var_0.OnClickCommodity(var_8_3, var_7_0.goodsVO, function(arg_9_0, arg_9_1)
-			local var_9_0 = arg_7_0
-
-			var_2.OnPurchase(var_9_0, arg_9_0, arg_9_1)
+		arg_7_0:OnClickCommodity(var_7_0.goodsVO, function(arg_9_0, arg_9_1)
+			arg_7_0:OnPurchase(arg_9_0, arg_9_1)
 
 			return
 		end)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_7_1, var_7_2, var_7_3, var_1_10008)
+	end, SFX_PANEL)
 
 	arg_7_0.cards[arg_7_1] = var_7_0
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_10_0, arg_10_1, arg_10_2)
-	local var_10_0
-
+function var_0_0.OnUpdateItem(arg_10_0, arg_10_1, arg_10_2)
 	if not arg_10_0.cards[arg_10_2] then
 		arg_10_0:OnInitItem(arg_10_2)
-
-		var_10_0 = arg_10_0.cards[arg_10_2]
 	end
 
-	local var_10_1 = arg_10_0.displays[arg_10_1 + 1]
-
-	var_10_0:update(var_10_1)
+	arg_10_0.cards[arg_10_2]:update(arg_10_0.displays[arg_10_1 + 1])
 
 	return
 end
 
-function var_0_1.OnUpdateAll(arg_11_0)
+function var_0_0.OnUpdateAll(arg_11_0)
 	arg_11_0:InitCommodities()
 	arg_11_0:OnSetUp()
 
 	return
 end
 
-function var_0_1.OnSetUp(arg_12_0)
+function var_0_0.OnSetUp(arg_12_0)
 	arg_12_0:UpdateTip()
 
 	return
 end
 
-function var_0_1.UpdateTip(arg_13_0)
-	setText = var_1_10001
-
-	local var_13_0 = arg_13_0.tipText
-
-	i18n = var_1_10004
-
-	local var_13_1 = var_1_10004("title_limit_time")
-
-	i18n = var_1_10005
-
-	local var_13_2 = var_1_10005("shops_rest_day")
-
-	string = var_6
-
-	local var_13_3 = var_6.format
-	local var_13_4 = "%02d"
-	local var_13_5 = arg_13_0.shop
-	local var_13_6 = var_13_3(var_13_4, var_9.getRestDays(var_13_5))
-
-	i18n = var_7
-
-	var_1_10001(var_13_0, var_13_1 .. var_13_2 .. var_13_6 .. var_7("word_date"))
+function var_0_0.UpdateTip(arg_13_0)
+	setText(arg_13_0.tipText, i18n("title_limit_time") .. i18n("shops_rest_day") .. string.format("%02d", arg_13_0.shop:getRestDays()) .. i18n("word_date"))
 
 	return
 end
 
-function var_0_1.OnPurchase(arg_14_0, arg_14_1, arg_14_2)
-	local var_14_0 = arg_14_0
-	local var_14_1 = arg_14_0.emit
-
-	NewShopMainMediator = var_1_10006
-
-	var_14_1(var_14_0, var_1_10006.ON_SHAM_SHOPPING, arg_14_1.id, arg_14_2)
+function var_0_0.OnPurchase(arg_14_0, arg_14_1, arg_14_2)
+	arg_14_0:emit(NewShopMainMediator.ON_SHAM_SHOPPING, arg_14_1.id, arg_14_2)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_15_0)
-	var_0_1.super.OnDestroy(arg_15_0)
+function var_0_0.OnDestroy(arg_15_0)
+	var_0_0.super.OnDestroy(arg_15_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

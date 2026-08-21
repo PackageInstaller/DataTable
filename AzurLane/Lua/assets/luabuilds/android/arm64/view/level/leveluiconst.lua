@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("LevelUIConst")
+﻿local var_0_0 = class("LevelUIConst")
 
 var_0_0.OPEN_COMMANDER_PANEL = "openCommanderPanel"
 var_0_0.HANDLE_SHOW_MSG_BOX = "HandleShowMsgBox"

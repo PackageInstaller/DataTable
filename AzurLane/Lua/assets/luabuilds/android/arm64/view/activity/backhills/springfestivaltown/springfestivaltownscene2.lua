@@ -1,273 +1,113 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SpringFestivalTownScene2", import("..TemplateMV.BackHillTemplate"))
 
-local var_0_0 = "SpringFestivalTownScene2"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..TemplateMV.BackHillTemplate"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SpringFestivalTownUI2"
 end
 
-var_0_1.edge2area = {
+var_0_0.edge2area = {
 	default = "map_middle"
 }
 
-function var_0_1.init(arg_2_0)
-	var_0_1.super.init(arg_2_0)
+function var_0_0.init(arg_2_0)
+	var_0_0.super.init(arg_2_0)
 
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.top = var_1.Find(var_2_0, "top")
-
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0._bg = var_1.Find(var_2_1, "BG")
-
-	local var_2_2 = arg_2_0._tf
-
-	arg_2_0._map = var_1.Find(var_2_2, "map")
+	arg_2_0.top = arg_2_0._tf:Find("top")
+	arg_2_0._bg = arg_2_0._tf:Find("BG")
+	arg_2_0._map = arg_2_0._tf:Find("map")
 
 	for iter_2_0 = 0, arg_2_0._map.childCount - 1 do
-		local var_2_3 = arg_2_0._map
-		local var_2_4 = var_5.GetChild(var_2_3, iter_2_0)
+		local var_2_0 = arg_2_0._map:GetChild(iter_2_0)
+		local var_2_1 = "map_" .. go(var_2_0).name
 
-		go = var_1_10006
-		var_1_10006 = var_1_10006(var_2_4).name
-		arg_2_0["map_" .. var_1_10006] = var_2_4
+		arg_2_0[var_2_1] = var_2_0
 	end
 
-	local var_2_5 = arg_2_0._map
-
-	arg_2_0._shipTpl = var_1.Find(var_2_5, "ship")
-
-	local var_2_6 = arg_2_0._tf
-
-	arg_2_0._upper = var_1.Find(var_2_6, "upper")
+	arg_2_0._shipTpl = arg_2_0._map:Find("ship")
+	arg_2_0._upper = arg_2_0._tf:Find("upper")
 
 	for iter_2_1 = 0, arg_2_0._upper.childCount - 1 do
-		local var_2_7 = arg_2_0._upper
-		local var_2_8 = var_5.GetChild(var_2_7, iter_2_1)
+		local var_2_2 = arg_2_0._upper:GetChild(iter_2_1)
+		local var_2_3 = "upper_" .. go(var_2_2).name
 
-		go = var_1_10006
-		var_1_10006 = var_1_10006(var_2_8).name
-		arg_2_0["upper_" .. var_1_10006] = var_2_8
+		arg_2_0[var_2_3] = var_2_2
 	end
 
 	arg_2_0.containers = {
 		arg_2_0.map_middle
 	}
-	GraphPath = var_1
+	arg_2_0.graphPath = GraphPath.New(import("GameCfg.BackHillGraphs.SpringFestivalTownGraph2"))
 
-	local var_2_9 = var_1.New
+	local var_2_4 = arg_2_0._tf:GetComponentInParent(typeof(UnityEngine.Canvas))
 
-	import = var_3
-	arg_2_0.graphPath = var_2_9(var_3("GameCfg.BackHillGraphs.SpringFestivalTownGraph2"))
+	if var_2_4 then
+		local var_2_5 = var_2_4.sortingOrder or 0
 
-	local var_2_10 = arg_2_0._tf
-	local var_2_11 = var_1.GetComponentInParent
+		arg_2_0._bg:GetComponent(typeof(UnityEngine.Canvas)).sortingOrder = var_2_5 - 2
 
-	typeof = iter_2_1
-	UnityEngine = var_1_10006
-
-	local var_2_12
-
-	if not var_2_11(var_2_10, iter_2_1(var_1_10006.Canvas)) or not var_1.sortingOrder then
-		var_2_12 = 0
+		return
 	end
-
-	local var_2_13 = arg_2_0._bg
-	local var_2_14 = var_3.GetComponent
-
-	typeof = var_6
-	UnityEngine = var_1_10008
-	var_2_14(var_2_13, var_6(var_1_10008.Canvas)).sortingOrder = var_2_12 - 2
-
-	return
 end
 
-function var_0_1.didEnter(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "top/back")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.emit(var_4_0, var_0_1.ON_BACK)
+function var_0_0.didEnter(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("top/back"), function()
+		arg_3_0:emit(var_0_0.ON_BACK)
 
 		return
-	end
-
-	SFX_CANCEL = var_3_1
-
-	var_1_10001(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	onButton = var_1_10001
-
-	local var_3_4 = arg_3_0
-	local var_3_5 = arg_3_0._tf
-	local var_3_6 = var_4.Find(var_3_5, "top/home")
-
-	local function var_3_7()
-		local var_5_0 = arg_3_0
-
-		var_0.emit(var_5_0, var_0_1.ON_HOME)
+	end, SFX_CANCEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("top/home"), function()
+		arg_3_0:emit(var_0_0.ON_HOME)
 
 		return
-	end
-
-	SFX_PANEL = var_3_5
-
-	var_1_10001(var_3_4, var_3_6, var_3_7, var_3_5)
-
-	onButton = var_1_10001
-
-	local var_3_8 = arg_3_0
-	local var_3_9 = arg_3_0._tf
-	local var_3_10 = var_4.Find(var_3_9, "top/help")
-
-	local function var_3_11()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_6_1 = var_0.ShowMsgBox
-		local var_6_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_6_2.type = var_2_10004
-		pg = var_2_10004
-		var_6_2.helps = var_2_10004.gametip.help_chunjie2021_feast.tip
-
-		var_6_1(var_6_0, var_6_2)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0._tf:Find("top/help"), function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.help_chunjie2021_feast.tip
+		})
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_3_9
+	local var_3_0 = getProxy(ActivityProxy):getActivityById(ActivityConst.SPRING_FES_MINIGAME_SECOND)
 
-	var_1_10001(var_3_8, var_3_10, var_3_11, var_3_9)
-
-	getProxy = var_1_10001
-	ActivityProxy = var_3_8
-
-	local var_3_12 = var_1_10001(var_3_8)
-	local var_3_13 = var_1.getActivityById
-
-	ActivityConst = var_3_10
-
-	local var_3_14 = var_3_13(var_3_12, var_3_10.SPRING_FES_MINIGAME_SECOND)
-
-	arg_3_0:InitStudents(var_3_14 and var_3_14.id, 2, 3)
+	arg_3_0:InitStudents(var_3_0 and var_3_0.id, 2, 3)
 	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "damaoxian", function()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.m02
-		local var_7_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.GO_MINI_GAME, 21)
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, 21)
 
 		return
 	end)
 	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "chunyouji", function()
-		getProxy = var_2_10000
-		ActivityProxy = var_2_10002
+		local var_8_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
 
-		local var_8_0 = var_2_10000(var_2_10002)
-		local var_8_1 = var_0.getActivityByType
-
-		ActivityConst = var_2_10003
-
-		local var_8_2 = var_8_1(var_8_0, var_2_10003.ACTIVITY_TYPE_MONOPOLY)
-		local var_8_3 = arg_3_0
-		local var_8_4 = var_1.emit
-
-		NewYearFestivalMediator = var_2_10004
-
-		local var_8_5 = var_2_10004.GO_SCENE
-
-		SCENE = var_2_10005
-
-		var_8_4(var_8_3, var_8_5, var_2_10005.ACTIVITY, {
-			id = var_8_2 and var_8_2.id
+		arg_3_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.ACTIVITY, {
+			id = var_8_0 and var_8_0.id
 		})
 
 		return
 	end)
 	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "huituriji", function()
-		local var_9_0 = arg_3_0
-		local var_9_1 = var_0.emit
-
-		NewYearFestivalMediator = var_2_10003
-
-		local var_9_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_9_1(var_9_0, var_9_2, var_2_10004.COLORING)
+		arg_3_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.COLORING)
 
 		return
 	end)
 	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "dajiulou", function()
-		local var_10_0 = arg_3_0
-		local var_10_1 = var_0.emit
-
-		NewYearFestivalMediator = var_2_10003
-
-		local var_10_2 = var_2_10003.GO_SUBLAYER
-
-		Context = var_2_10004
-
-		local var_10_3 = var_2_10004.New
-		local var_10_4 = {}
-
-		RedPacketMediator = var_2_10007
-		var_10_4.mediator = var_2_10007
-		RedPacketLayer = var_2_10007
-		var_10_4.viewComponent = var_2_10007
-
-		var_10_1(var_10_0, var_10_2, var_10_3(var_10_4))
+		arg_3_0:emit(NewYearFestivalMediator.GO_SUBLAYER, Context.New({
+			mediator = RedPacketMediator,
+			viewComponent = RedPacketLayer
+		}))
 
 		return
 	end)
 	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "fuzhuang", function()
-		local var_11_0 = arg_3_0
-		local var_11_1 = var_0.emit
-
-		NewYearFestivalMediator = var_2_10003
-
-		local var_11_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		var_11_1(var_11_0, var_11_2, var_2_10004.SKINSHOP)
+		arg_3_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.SKINSHOP)
 
 		return
 	end)
 	arg_3_0:InitFacilityCross(arg_3_0._map, arg_3_0._upper, "jianzao", function()
-		local var_12_0 = arg_3_0
-		local var_12_1 = var_0.emit
-
-		NewYearFestivalMediator = var_2_10003
-
-		local var_12_2 = var_2_10003.GO_SCENE
-
-		SCENE = var_2_10004
-
-		local var_12_3 = var_2_10004.GETBOAT
-		local var_12_4 = {
-			page = 1
-		}
-
-		BuildShipScene = var_2_10006
-		var_12_4.projectName = var_2_10006.PROJECTS.LIGHT
-
-		var_12_1(var_12_0, var_12_2, var_12_3, var_12_4)
+		arg_3_0:emit(NewYearFestivalMediator.GO_SCENE, SCENE.GETBOAT, {
+			page = 1,
+			projectName = BuildShipScene.PROJECTS.LIGHT
+		})
 
 		return
 	end)
@@ -276,76 +116,29 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.UpdateView(arg_13_0)
-	local var_13_0
-	local var_13_1
+function var_0_0.UpdateView(arg_13_0)
+	local var_13_1 = getProxy(ActivityProxy)
+	local var_13_2 = getProxy(MiniGameProxy)
 
-	getProxy = var_1_10003
-	ActivityProxy = var_1_10005
+	setActive(arg_13_0.upper_huituriji:Find("Tip"), (getProxy(ColoringProxy):CheckTodayTip()))
+	setActive(arg_13_0.upper_dajiulou:Find("Tip"), (RedPacketLayer.isShowRedPoint()))
 
-	local var_13_2 = var_1_10003(var_1_10005)
+	local var_13_3 = var_13_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_MONOPOLY)
 
-	getProxy = var_1_10004
-	MiniGameProxy = var_1_10006
+	setActive(arg_13_0.upper_chunyouji:Find("Tip"), nil and not (nil):isEnd() and (nil):readyToAchieve())
 
-	local var_13_3 = var_1_10004(var_1_10006)
+	local var_13_4 = var_13_1:getActivityByType(ActivityConst.ACTIVITY_TYPE_MINIGAME)
 
-	getProxy = var_1_10005
-	ColoringProxy = var_1_10007
-
-	local var_13_4 = var_1_10005(var_1_10007)
-	local var_13_5 = var_5.CheckTodayTip(var_13_4)
-
-	setActive = var_5
-
-	local var_13_6 = arg_13_0.upper_huituriji
-
-	var_5(var_7.Find(var_13_6, "Tip"), var_13_5)
-
-	RedPacketLayer = var_5
-
-	local var_13_7 = var_5.isShowRedPoint()
-
-	setActive = var_5
-
-	local var_13_8 = arg_13_0.upper_dajiulou
-
-	var_5(var_7.Find(var_13_8, "Tip"), var_13_7)
-
-	local var_13_9 = var_13_2
-	local var_13_10 = var_13_2.getActivityByType
-
-	ActivityConst = var_8
-
-	local var_13_11 = var_13_10(var_13_9, var_8.ACTIVITY_TYPE_MONOPOLY) and not var_2:isEnd() and var_2:readyToAchieve()
-
-	setActive = var_5
-
-	local var_13_12 = arg_13_0.upper_chunyouji
-
-	var_5(var_7.Find(var_13_12, "Tip"), var_13_11)
-
-	local var_13_13 = var_13_2
-	local var_13_14 = var_13_2.getActivityByType
-
-	ActivityConst = var_8
-
-	local var_13_15 = var_13_14(var_13_13, var_8.ACTIVITY_TYPE_MINIGAME) and not var_2:isEnd() and var_2:readyToAchieve()
-
-	setActive = var_5
-
-	local var_13_16 = arg_13_0.upper_damaoxian
-
-	var_5(var_7.Find(var_13_16, "Tip"), var_13_15)
+	setActive(arg_13_0.upper_damaoxian:Find("Tip"), nil and not (nil):isEnd() and (nil):readyToAchieve())
 
 	return
 end
 
-function var_0_1.willExit(arg_14_0)
+function var_0_0.willExit(arg_14_0)
 	arg_14_0:clearStudents()
-	var_0_1.super.willExit(arg_14_0)
+	var_0_0.super.willExit(arg_14_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

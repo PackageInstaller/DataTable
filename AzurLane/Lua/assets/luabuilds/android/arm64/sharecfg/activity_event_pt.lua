@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_event_pt") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_event_pt"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_event_pt = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_event_pt
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_event_pt = rawget(pg, "activity_event_pt") or setmetatable({
+	__name = "activity_event_pt"
+}, confNEO)
+pg.activity_event_pt.all = {
 	284,
 	312,
 	316,
@@ -286,6 +263,7 @@ var_0_3.all = {
 	6010,
 	6017,
 	6022,
+	6042,
 	100004,
 	30853,
 	40061,
@@ -430,27 +408,14 @@ var_0_3.all = {
 	50652,
 	51021,
 	51062,
+	51109,
 	970003
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_event_pt = {}
+pg.base = pg.base or {}
+pg.base.activity_event_pt = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_event_pt
-
-	var_1_0[284] = {
+	pg.base.activity_event_pt[284] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -735,11 +700,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_event_pt
-
-	var_1_1[312] = {
+	pg.base.activity_event_pt[312] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -1038,11 +999,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_event_pt
-
-	var_1_2[316] = {
+	pg.base.activity_event_pt[316] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -1117,11 +1074,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_event_pt
-
-	var_1_3[330] = {
+	pg.base.activity_event_pt[330] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -1217,11 +1170,7 @@ var_0_3.base.activity_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_event_pt
-
-	var_1_4[331] = {
+	pg.base.activity_event_pt[331] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -1520,11 +1469,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_event_pt
-
-	var_1_5[345] = {
+	pg.base.activity_event_pt[345] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -1823,11 +1768,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_event_pt
-
-	var_1_6[348] = {
+	pg.base.activity_event_pt[348] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -1923,11 +1864,7 @@ var_0_3.base.activity_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_event_pt
-
-	var_1_7[350] = {
+	pg.base.activity_event_pt[350] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -2114,11 +2051,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_event_pt
-
-	var_1_8[361] = {
+	pg.base.activity_event_pt[361] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -2151,11 +2084,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_event_pt
-
-	var_1_9[373] = {
+	pg.base.activity_event_pt[373] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -2454,11 +2383,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_event_pt
-
-	var_1_10[378] = {
+	pg.base.activity_event_pt[378] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -2624,11 +2549,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_event_pt
-
-	var_1_11[379] = {
+	pg.base.activity_event_pt[379] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -2724,11 +2645,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_event_pt
-
-	var_1_12[386] = {
+	pg.base.activity_event_pt[386] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -2913,11 +2830,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_event_pt
-
-	var_1_13[399] = {
+	pg.base.activity_event_pt[399] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -2990,11 +2903,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_event_pt
-
-	var_1_14[409] = {
+	pg.base.activity_event_pt[409] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -3440,11 +3349,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_event_pt
-
-	var_1_15[421] = {
+	pg.base.activity_event_pt[421] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -3568,11 +3473,7 @@ var_0_3.base.activity_event_pt = {}
 			14
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_event_pt
-
-	var_1_16[430] = {
+	pg.base.activity_event_pt[430] = {
 		convert_resource_type = 0,
 		type = 1,
 		convert_pay = "",
@@ -3887,11 +3788,7 @@ var_0_3.base.activity_event_pt = {}
 			"pic07"
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_event_pt
-
-	var_1_17[437] = {
+	pg.base.activity_event_pt[437] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -3964,11 +3861,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_event_pt
-
-	var_1_18[450] = {
+	pg.base.activity_event_pt[450] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -4001,11 +3894,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_event_pt
-
-	var_1_19[462] = {
+	pg.base.activity_event_pt[462] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -4304,11 +4193,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_event_pt
-
-	var_1_20[477] = {
+	pg.base.activity_event_pt[477] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -4493,11 +4378,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_event_pt
-
-	var_1_21[493] = {
+	pg.base.activity_event_pt[493] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -4530,11 +4411,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_event_pt
-
-	var_1_22[506] = {
+	pg.base.activity_event_pt[506] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -4854,11 +4731,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_event_pt
-
-	var_1_23[522] = {
+	pg.base.activity_event_pt[522] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -4982,11 +4855,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_event_pt
-
-	var_1_24[525] = {
+	pg.base.activity_event_pt[525] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -5152,11 +5021,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_event_pt
-
-	var_1_25[534] = {
+	pg.base.activity_event_pt[534] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -5189,11 +5054,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_event_pt
-
-	var_1_26[545] = {
+	pg.base.activity_event_pt[545] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -5513,11 +5374,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_event_pt
-
-	var_1_27[564] = {
+	pg.base.activity_event_pt[564] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -5835,11 +5692,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_event_pt
-
-	var_1_28[568] = {
+	pg.base.activity_event_pt[568] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -5912,11 +5765,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_event_pt
-
-	var_1_29[580] = {
+	pg.base.activity_event_pt[580] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -5947,11 +5796,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_event_pt
-
-	var_1_30[582] = {
+	pg.base.activity_event_pt[582] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -6045,11 +5890,7 @@ var_0_3.base.activity_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_event_pt
-
-	var_1_31[588] = {
+	pg.base.activity_event_pt[588] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -6215,11 +6056,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_event_pt
-
-	var_1_32[594] = {
+	pg.base.activity_event_pt[594] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -6539,11 +6376,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_event_pt
-
-	var_1_33[614] = {
+	pg.base.activity_event_pt[614] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -6667,11 +6500,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_event_pt
-
-	var_1_34[623] = {
+	pg.base.activity_event_pt[623] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -6856,11 +6685,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_event_pt
-
-	var_1_35[634] = {
+	pg.base.activity_event_pt[634] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -6891,11 +6716,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_event_pt
-
-	var_1_36[640] = {
+	pg.base.activity_event_pt[640] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -7215,11 +7036,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_event_pt
-
-	var_1_37[671] = {
+	pg.base.activity_event_pt[671] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -7518,11 +7335,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_event_pt
-
-	var_1_38[680] = {
+	pg.base.activity_event_pt[680] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -7553,11 +7366,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_event_pt
-
-	var_1_39[703] = {
+	pg.base.activity_event_pt[703] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -7856,11 +7665,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_event_pt
-
-	var_1_40[732] = {
+	pg.base.activity_event_pt[732] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -7984,11 +7789,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_event_pt
-
-	var_1_41[740] = {
+	pg.base.activity_event_pt[740] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -8061,11 +7862,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_event_pt
-
-	var_1_42[753] = {
+	pg.base.activity_event_pt[753] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -8419,11 +8216,7 @@ var_0_3.base.activity_event_pt = {}
 			}
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_event_pt
-
-	var_1_43[769] = {
+	pg.base.activity_event_pt[769] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -8496,11 +8289,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_event_pt
-
-	var_1_44[779] = {
+	pg.base.activity_event_pt[779] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -8836,11 +8625,7 @@ var_0_3.base.activity_event_pt = {}
 			}
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_event_pt
-
-	var_1_45[802] = {
+	pg.base.activity_event_pt[802] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -9269,11 +9054,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_event_pt
-
-	var_1_46[811] = {
+	pg.base.activity_event_pt[811] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -9304,11 +9085,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_event_pt
-
-	var_1_47[815] = {
+	pg.base.activity_event_pt[815] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -9381,11 +9158,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_event_pt
-
-	var_1_48[826] = {
+	pg.base.activity_event_pt[826] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -9705,11 +9478,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_event_pt
-
-	var_1_49[841] = {
+	pg.base.activity_event_pt[841] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -9742,11 +9511,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_event_pt
-
-	var_1_50[847] = {
+	pg.base.activity_event_pt[847] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -10045,11 +9810,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_event_pt
-
-	var_1_51[863] = {
+	pg.base.activity_event_pt[863] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -10122,11 +9883,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_event_pt
-
-	var_1_52[872] = {
+	pg.base.activity_event_pt[872] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -10157,11 +9914,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_event_pt
-
-	var_1_53[879] = {
+	pg.base.activity_event_pt[879] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -10194,11 +9947,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_event_pt
-
-	var_1_54[906] = {
+	pg.base.activity_event_pt[906] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -10518,11 +10267,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_event_pt
-
-	var_1_55[931] = {
+	pg.base.activity_event_pt[931] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -10842,11 +10587,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_event_pt
-
-	var_1_56[914] = {
+	pg.base.activity_event_pt[914] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -10940,11 +10681,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_event_pt
-
-	var_1_57[915] = {
+	pg.base.activity_event_pt[915] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -11038,11 +10775,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_event_pt
-
-	var_1_58[920] = {
+	pg.base.activity_event_pt[920] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -11471,11 +11204,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_event_pt
-
-	var_1_59[942] = {
+	pg.base.activity_event_pt[942] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -11774,11 +11503,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_event_pt
-
-	var_1_60[945] = {
+	pg.base.activity_event_pt[945] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -11874,11 +11599,7 @@ var_0_3.base.activity_event_pt = {}
 			10
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_event_pt
-
-	var_1_61[923] = {
+	pg.base.activity_event_pt[923] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -11911,11 +11632,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_event_pt
-
-	var_1_62[955] = {
+	pg.base.activity_event_pt[955] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -11988,11 +11705,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_event_pt
-
-	var_1_63[972] = {
+	pg.base.activity_event_pt[972] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -12025,11 +11738,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_event_pt
-
-	var_1_64[981] = {
+	pg.base.activity_event_pt[981] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -12349,11 +12058,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_event_pt
-
-	var_1_65[984] = {
+	pg.base.activity_event_pt[984] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -12519,11 +12224,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_event_pt
-
-	var_1_66[988] = {
+	pg.base.activity_event_pt[988] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -12596,11 +12297,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_event_pt
-
-	var_1_67[4011] = {
+	pg.base.activity_event_pt[4011] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -12633,11 +12330,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_event_pt
-
-	var_1_68[4025] = {
+	pg.base.activity_event_pt[4025] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -12936,11 +12629,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_event_pt
-
-	var_1_69[4031] = {
+	pg.base.activity_event_pt[4031] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -13125,11 +12814,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_event_pt
-
-	var_1_70[4052] = {
+	pg.base.activity_event_pt[4052] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -13455,11 +13140,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_event_pt
-
-	var_1_71[4071] = {
+	pg.base.activity_event_pt[4071] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -13492,11 +13173,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_event_pt
-
-	var_1_72[4084] = {
+	pg.base.activity_event_pt[4084] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -13816,11 +13493,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_event_pt
-
-	var_1_73[4098] = {
+	pg.base.activity_event_pt[4098] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -13853,11 +13526,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_event_pt
-
-	var_1_74[4114] = {
+	pg.base.activity_event_pt[4114] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -14156,11 +13825,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_event_pt
-
-	var_1_75[4142] = {
+	pg.base.activity_event_pt[4142] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -14191,11 +13856,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_event_pt
-
-	var_1_76[4151] = {
+	pg.base.activity_event_pt[4151] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -14494,11 +14155,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_event_pt
-
-	var_1_77[4161] = {
+	pg.base.activity_event_pt[4161] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -14622,11 +14279,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_event_pt
-
-	var_1_78[4177] = {
+	pg.base.activity_event_pt[4177] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -14925,11 +14578,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_event_pt
-
-	var_1_79[4180] = {
+	pg.base.activity_event_pt[4180] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -15420,11 +15069,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_event_pt
-
-	var_1_80[4183] = {
+	pg.base.activity_event_pt[4183] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -15499,11 +15144,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_event_pt
-
-	var_1_81[4185] = {
+	pg.base.activity_event_pt[4185] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -15576,11 +15217,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_event_pt
-
-	var_1_82[4186] = {
+	pg.base.activity_event_pt[4186] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -15665,11 +15302,7 @@ var_0_3.base.activity_event_pt = {}
 			}
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_event_pt
-
-	var_1_83[4189] = {
+	pg.base.activity_event_pt[4189] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -15700,11 +15333,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_event_pt
-
-	var_1_84[4208] = {
+	pg.base.activity_event_pt[4208] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16003,11 +15632,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_event_pt
-
-	var_1_85[4210] = {
+	pg.base.activity_event_pt[4210] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -16080,11 +15705,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_event_pt
-
-	var_1_86[4214] = {
+	pg.base.activity_event_pt[4214] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16115,11 +15736,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_event_pt
-
-	var_1_87[4223] = {
+	pg.base.activity_event_pt[4223] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16304,11 +15921,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_event_pt
-
-	var_1_88[4247] = {
+	pg.base.activity_event_pt[4247] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16530,11 +16143,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_event_pt
-
-	var_1_89[4253] = {
+	pg.base.activity_event_pt[4253] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16567,11 +16176,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_event_pt
-
-	var_1_90[4261] = {
+	pg.base.activity_event_pt[4261] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16602,11 +16207,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_event_pt
-
-	var_1_91[4270] = {
+	pg.base.activity_event_pt[4270] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -16905,11 +16506,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_event_pt
-
-	var_1_92[4276] = {
+	pg.base.activity_event_pt[4276] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -16994,11 +16591,7 @@ var_0_3.base.activity_event_pt = {}
 			}
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_event_pt
-
-	var_1_93[4278] = {
+	pg.base.activity_event_pt[4278] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -17122,11 +16715,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_event_pt
-
-	var_1_94[4282] = {
+	pg.base.activity_event_pt[4282] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -17617,11 +17206,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_event_pt
-
-	var_1_95[4288] = {
+	pg.base.activity_event_pt[4288] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -17920,11 +17505,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_event_pt
-
-	var_1_96[4297] = {
+	pg.base.activity_event_pt[4297] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18146,11 +17727,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_event_pt
-
-	var_1_97[4302] = {
+	pg.base.activity_event_pt[4302] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18181,11 +17758,7 @@ var_0_3.base.activity_event_pt = {}
 			0
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_event_pt
-
-	var_1_98[4307] = {
+	pg.base.activity_event_pt[4307] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18258,8 +17831,7 @@ var_0_3.base.activity_event_pt = {}
 			7
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_event_pt[4316] = {
+	pg.base.activity_event_pt[4316] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18294,11 +17866,7 @@ var_0_3.base.activity_event_pt = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_event_pt
-
-	var_2_0[4325] = {
+	pg.base.activity_event_pt[4325] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18597,11 +18165,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_event_pt
-
-	var_2_1[4330] = {
+	pg.base.activity_event_pt[4330] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18674,11 +18238,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_event_pt
-
-	var_2_2[4340] = {
+	pg.base.activity_event_pt[4340] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -18709,11 +18269,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_event_pt
-
-	var_2_3[4342] = {
+	pg.base.activity_event_pt[4342] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -18779,11 +18335,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_event_pt
-
-	var_2_4[4406] = {
+	pg.base.activity_event_pt[4406] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -19082,11 +18634,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_event_pt
-
-	var_2_5[4413] = {
+	pg.base.activity_event_pt[4413] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -19159,11 +18707,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_event_pt
-
-	var_2_6[4430] = {
+	pg.base.activity_event_pt[4430] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -19287,11 +18831,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_event_pt
-
-	var_2_7[4437] = {
+	pg.base.activity_event_pt[4437] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -19476,11 +19016,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_event_pt
-
-	var_2_8[4453] = {
+	pg.base.activity_event_pt[4453] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -19702,11 +19238,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_event_pt
-
-	var_2_9[4476] = {
+	pg.base.activity_event_pt[4476] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -20005,11 +19537,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_event_pt
-
-	var_2_10[4489] = {
+	pg.base.activity_event_pt[4489] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -20308,11 +19836,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_event_pt
-
-	var_2_11[4501] = {
+	pg.base.activity_event_pt[4501] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -20532,11 +20056,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_event_pt
-
-	var_2_12[4509] = {
+	pg.base.activity_event_pt[4509] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -20835,11 +20355,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_event_pt
-
-	var_2_13[4540] = {
+	pg.base.activity_event_pt[4540] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -20912,11 +20428,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_event_pt
-
-	var_2_14[4542] = {
+	pg.base.activity_event_pt[4542] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -20989,11 +20501,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_event_pt
-
-	var_2_15[4545] = {
+	pg.base.activity_event_pt[4545] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -21157,11 +20665,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_event_pt
-
-	var_2_16[4554] = {
+	pg.base.activity_event_pt[4554] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -21346,11 +20850,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_event_pt
-
-	var_2_17[4567] = {
+	pg.base.activity_event_pt[4567] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -21572,11 +21072,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_event_pt
-
-	var_2_18[4587] = {
+	pg.base.activity_event_pt[4587] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -21882,11 +21378,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_event_pt
-
-	var_2_19[4599] = {
+	pg.base.activity_event_pt[4599] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -21960,11 +21452,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_event_pt
-
-	var_2_20[4610] = {
+	pg.base.activity_event_pt[4610] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -22263,11 +21751,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_event_pt
-
-	var_2_21[4628] = {
+	pg.base.activity_event_pt[4628] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -22489,11 +21973,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_event_pt
-
-	var_2_22[4663] = {
+	pg.base.activity_event_pt[4663] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -22524,11 +22004,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_event_pt
-
-	var_2_23[4671] = {
+	pg.base.activity_event_pt[4671] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 6,
@@ -22601,11 +22077,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_event_pt
-
-	var_2_24[4676] = {
+	pg.base.activity_event_pt[4676] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -22790,11 +22262,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_event_pt
-
-	var_2_25[4699] = {
+	pg.base.activity_event_pt[4699] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -22868,11 +22336,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_event_pt
-
-	var_2_26[4705] = {
+	pg.base.activity_event_pt[4705] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -23171,11 +22635,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_event_pt
-
-	var_2_27[4720] = {
+	pg.base.activity_event_pt[4720] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -23397,11 +22857,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_event_pt
-
-	var_2_28[4726] = {
+	pg.base.activity_event_pt[4726] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -23474,11 +22930,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_event_pt
-
-	var_2_29[4737] = {
+	pg.base.activity_event_pt[4737] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -23777,11 +23229,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_event_pt
-
-	var_2_30[4742] = {
+	pg.base.activity_event_pt[4742] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -23854,11 +23302,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_event_pt
-
-	var_2_31[4745] = {
+	pg.base.activity_event_pt[4745] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -23982,11 +23426,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_event_pt
-
-	var_2_32[4750] = {
+	pg.base.activity_event_pt[4750] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -24059,11 +23499,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_event_pt
-
-	var_2_33[4775] = {
+	pg.base.activity_event_pt[4775] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -24438,11 +23874,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_event_pt
-
-	var_2_34[4787] = {
+	pg.base.activity_event_pt[4787] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -24515,11 +23947,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_event_pt
-
-	var_2_35[4857] = {
+	pg.base.activity_event_pt[4857] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -24846,11 +24274,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_event_pt
-
-	var_2_36[4874] = {
+	pg.base.activity_event_pt[4874] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -24881,11 +24305,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_event_pt
-
-	var_2_37[4884] = {
+	pg.base.activity_event_pt[4884] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -24958,11 +24378,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_event_pt
-
-	var_2_38[4901] = {
+	pg.base.activity_event_pt[4901] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -25184,11 +24600,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_event_pt
-
-	var_2_39[4916] = {
+	pg.base.activity_event_pt[4916] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -25373,11 +24785,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_event_pt
-
-	var_2_40[4934] = {
+	pg.base.activity_event_pt[4934] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -25711,11 +25119,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_event_pt
-
-	var_2_41[4941] = {
+	pg.base.activity_event_pt[4941] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -25853,11 +25257,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_event_pt
-
-	var_2_42[4955] = {
+	pg.base.activity_event_pt[4955] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -26184,11 +25584,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_event_pt
-
-	var_2_43[4964] = {
+	pg.base.activity_event_pt[4964] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -26352,11 +25748,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_event_pt
-
-	var_2_44[4978] = {
+	pg.base.activity_event_pt[4978] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -26683,11 +26075,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_event_pt
-
-	var_2_45[5050] = {
+	pg.base.activity_event_pt[5050] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -26986,11 +26374,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_event_pt
-
-	var_2_46[5053] = {
+	pg.base.activity_event_pt[5053] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -27063,11 +26447,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_event_pt
-
-	var_2_47[5073] = {
+	pg.base.activity_event_pt[5073] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -27289,11 +26669,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_event_pt
-
-	var_2_48[5081] = {
+	pg.base.activity_event_pt[5081] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -27372,11 +26748,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_event_pt
-
-	var_2_49[5098] = {
+	pg.base.activity_event_pt[5098] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -27703,11 +27075,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_event_pt
-
-	var_2_50[5137] = {
+	pg.base.activity_event_pt[5137] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -28034,11 +27402,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_event_pt
-
-	var_2_51[5171] = {
+	pg.base.activity_event_pt[5171] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -28260,11 +27624,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_event_pt
-
-	var_2_52[5179] = {
+	pg.base.activity_event_pt[5179] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -28449,11 +27809,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_event_pt
-
-	var_2_53[5185] = {
+	pg.base.activity_event_pt[5185] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 6,
@@ -28526,11 +27882,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_event_pt
-
-	var_2_54[5194] = {
+	pg.base.activity_event_pt[5194] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -28561,11 +27913,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_event_pt
-
-	var_2_55[5224] = {
+	pg.base.activity_event_pt[5224] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -28638,11 +27986,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_event_pt
-
-	var_2_56[5229] = {
+	pg.base.activity_event_pt[5229] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -28969,11 +28313,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_event_pt
-
-	var_2_57[5237] = {
+	pg.base.activity_event_pt[5237] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -29206,11 +28546,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_event_pt
-
-	var_2_58[5247] = {
+	pg.base.activity_event_pt[5247] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -29374,11 +28710,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_event_pt
-
-	var_2_59[5270] = {
+	pg.base.activity_event_pt[5270] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -29579,11 +28911,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_event_pt
-
-	var_2_60[5274] = {
+	pg.base.activity_event_pt[5274] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -29614,11 +28942,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_event_pt
-
-	var_2_61[5292] = {
+	pg.base.activity_event_pt[5292] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -29840,11 +29164,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_event_pt
-
-	var_2_62[5297] = {
+	pg.base.activity_event_pt[5297] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -29917,11 +29237,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_event_pt
-
-	var_2_63[5308] = {
+	pg.base.activity_event_pt[5308] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -30307,11 +29623,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_event_pt
-
-	var_2_64[5314] = {
+	pg.base.activity_event_pt[5314] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -30384,11 +29696,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_event_pt
-
-	var_2_65[5321] = {
+	pg.base.activity_event_pt[5321] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -30461,11 +29769,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_event_pt
-
-	var_2_66[5346] = {
+	pg.base.activity_event_pt[5346] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -30792,11 +30096,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_event_pt
-
-	var_2_67[5362] = {
+	pg.base.activity_event_pt[5362] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -30869,11 +30169,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_event_pt
-
-	var_2_68[5379] = {
+	pg.base.activity_event_pt[5379] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -31106,11 +30402,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_event_pt
-
-	var_2_69[5404] = {
+	pg.base.activity_event_pt[5404] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -31409,11 +30701,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_event_pt
-
-	var_2_70[5432] = {
+	pg.base.activity_event_pt[5432] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -31635,11 +30923,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_event_pt
-
-	var_2_71[5505] = {
+	pg.base.activity_event_pt[5505] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -31945,11 +31229,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_event_pt
-
-	var_2_72[5524] = {
+	pg.base.activity_event_pt[5524] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -32276,11 +31556,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_event_pt
-
-	var_2_73[5543] = {
+	pg.base.activity_event_pt[5543] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -32418,11 +31694,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_event_pt
-
-	var_2_74[5566] = {
+	pg.base.activity_event_pt[5566] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -32749,11 +32021,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_event_pt
-
-	var_2_75[5602] = {
+	pg.base.activity_event_pt[5602] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -32975,11 +32243,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_event_pt
-
-	var_2_76[5630] = {
+	pg.base.activity_event_pt[5630] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -33306,11 +32570,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_event_pt
-
-	var_2_77[5646] = {
+	pg.base.activity_event_pt[5646] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -33532,11 +32792,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_event_pt
-
-	var_2_78[5653] = {
+	pg.base.activity_event_pt[5653] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -33619,11 +32875,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_event_pt
-
-	var_2_79[5685] = {
+	pg.base.activity_event_pt[5685] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -33950,11 +33202,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_event_pt
-
-	var_2_80[5704] = {
+	pg.base.activity_event_pt[5704] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -34037,11 +33285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_event_pt
-
-	var_2_81[5718] = {
+	pg.base.activity_event_pt[5718] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -34368,11 +33612,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_event_pt
-
-	var_2_82[5754] = {
+	pg.base.activity_event_pt[5754] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -34629,11 +33869,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_event_pt
-
-	var_2_83[5773] = {
+	pg.base.activity_event_pt[5773] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -34818,11 +34054,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_event_pt
-
-	var_2_84[5783] = {
+	pg.base.activity_event_pt[5783] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -34853,11 +34085,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_event_pt
-
-	var_2_85[5785] = {
+	pg.base.activity_event_pt[5785] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -35023,11 +34251,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_event_pt
-
-	var_2_86[5795] = {
+	pg.base.activity_event_pt[5795] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -35263,11 +34487,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_event_pt
-
-	var_2_87[5828] = {
+	pg.base.activity_event_pt[5828] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -35594,11 +34814,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_event_pt
-
-	var_2_88[5864] = {
+	pg.base.activity_event_pt[5864] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -35834,11 +35050,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_event_pt
-
-	var_2_89[5873] = {
+	pg.base.activity_event_pt[5873] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -36039,11 +35251,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_event_pt
-
-	var_2_90[5885] = {
+	pg.base.activity_event_pt[5885] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -36116,11 +35324,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_event_pt
-
-	var_2_91[5890] = {
+	pg.base.activity_event_pt[5890] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -36363,11 +35567,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_event_pt
-
-	var_2_92[5903] = {
+	pg.base.activity_event_pt[5903] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -36694,11 +35894,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_event_pt
-
-	var_2_93[5909] = {
+	pg.base.activity_event_pt[5909] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -36771,11 +35967,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_event_pt
-
-	var_2_94[5958] = {
+	pg.base.activity_event_pt[5958] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37102,11 +36294,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_event_pt
-
-	var_2_95[5962] = {
+	pg.base.activity_event_pt[5962] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37137,11 +36325,7 @@ end)()
 			0
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_event_pt
-
-	var_2_96[5981] = {
+	pg.base.activity_event_pt[5981] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37214,11 +36398,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_event_pt
-
-	var_2_97[5984] = {
+	pg.base.activity_event_pt[5984] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -37291,11 +36471,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_event_pt
-
-	var_2_98[5986] = {
+	pg.base.activity_event_pt[5986] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37368,8 +36544,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.activity_event_pt[5994] = {
+	pg.base.activity_event_pt[5994] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37446,11 +36621,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_event_pt
-
-	var_3_0[6026] = {
+	pg.base.activity_event_pt[6026] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37544,11 +36715,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_event_pt
-
-	var_3_1[6027] = {
+	pg.base.activity_event_pt[6027] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37642,11 +36809,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_event_pt
-
-	var_3_2[6031] = {
+	pg.base.activity_event_pt[6031] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -37973,11 +37136,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_event_pt
-
-	var_3_3[50006] = {
+	pg.base.activity_event_pt[50006] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -38244,11 +37403,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_event_pt
-
-	var_3_4[50015] = {
+	pg.base.activity_event_pt[50015] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -38547,11 +37702,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_event_pt
-
-	var_3_5[1] = {
+	pg.base.activity_event_pt[1] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -38857,11 +38008,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_event_pt
-
-	var_3_6[10] = {
+	pg.base.activity_event_pt[10] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -39188,11 +38335,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_event_pt
-
-	var_3_7[50085] = {
+	pg.base.activity_event_pt[50085] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -39519,11 +38662,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_event_pt
-
-	var_3_8[50125] = {
+	pg.base.activity_event_pt[50125] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -39554,11 +38693,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_event_pt
-
-	var_3_9[50151] = {
+	pg.base.activity_event_pt[50151] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -39631,11 +38766,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_event_pt
-
-	var_3_10[50153] = {
+	pg.base.activity_event_pt[50153] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -39708,11 +38839,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_event_pt
-
-	var_3_11[50169] = {
+	pg.base.activity_event_pt[50169] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -39963,11 +39090,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_event_pt
-
-	var_3_12[50214] = {
+	pg.base.activity_event_pt[50214] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -40105,11 +39228,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_event_pt
-
-	var_3_13[50220] = {
+	pg.base.activity_event_pt[50220] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -40366,11 +39485,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_event_pt
-
-	var_3_14[50245] = {
+	pg.base.activity_event_pt[50245] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -40697,11 +39812,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_event_pt
-
-	var_3_15[50253] = {
+	pg.base.activity_event_pt[50253] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -40795,11 +39906,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_event_pt
-
-	var_3_16[50261] = {
+	pg.base.activity_event_pt[50261] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -40872,11 +39979,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_event_pt
-
-	var_3_17[50288] = {
+	pg.base.activity_event_pt[50288] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -41203,11 +40306,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_event_pt
-
-	var_3_18[25] = {
+	pg.base.activity_event_pt[25] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -41464,11 +40563,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_event_pt
-
-	var_3_19[50341] = {
+	pg.base.activity_event_pt[50341] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -41541,11 +40636,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_event_pt
-
-	var_3_20[50353] = {
+	pg.base.activity_event_pt[50353] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -41844,11 +40935,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_event_pt
-
-	var_3_21[50409] = {
+	pg.base.activity_event_pt[50409] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -42033,11 +41120,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_event_pt
-
-	var_3_22[50417] = {
+	pg.base.activity_event_pt[50417] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -42068,11 +41151,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_event_pt
-
-	var_3_23[50419] = {
+	pg.base.activity_event_pt[50419] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -42252,11 +41331,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_event_pt
-
-	var_3_24[50429] = {
+	pg.base.activity_event_pt[50429] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -42583,11 +41658,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_event_pt
-
-	var_3_25[50502] = {
+	pg.base.activity_event_pt[50502] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -42660,11 +41731,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_event_pt
-
-	var_3_26[51013] = {
+	pg.base.activity_event_pt[51013] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -42737,11 +41804,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_event_pt
-
-	var_3_27[50604] = {
+	pg.base.activity_event_pt[50604] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -43047,11 +42110,7 @@ end)()
 			5
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_event_pt
-
-	var_3_28[17] = {
+	pg.base.activity_event_pt[17] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -43124,11 +42183,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_event_pt
-
-	var_3_29[50806] = {
+	pg.base.activity_event_pt[50806] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -43438,11 +42493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_event_pt
-
-	var_3_30[5] = {
+	pg.base.activity_event_pt[5] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -43692,11 +42743,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_event_pt
-
-	var_3_31[50621] = {
+	pg.base.activity_event_pt[50621] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -44023,11 +43070,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_event_pt
-
-	var_3_32[51031] = {
+	pg.base.activity_event_pt[51031] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -44284,11 +43327,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_event_pt
-
-	var_3_33[1] = {
+	pg.base.activity_event_pt[1] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -44587,11 +43626,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_event_pt
-
-	var_3_34[24] = {
+	pg.base.activity_event_pt[24] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -44664,11 +43699,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_event_pt
-
-	var_3_35[1020] = {
+	pg.base.activity_event_pt[1020] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -45007,11 +44038,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_event_pt
-
-	var_3_36[1021] = {
+	pg.base.activity_event_pt[1021] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -45350,11 +44377,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_event_pt
-
-	var_3_37[1022] = {
+	pg.base.activity_event_pt[1022] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -45693,11 +44716,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_event_pt
-
-	var_3_38[1023] = {
+	pg.base.activity_event_pt[1023] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -46036,11 +45055,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_event_pt
-
-	var_3_39[1024] = {
+	pg.base.activity_event_pt[1024] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -46379,11 +45394,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_event_pt
-
-	var_3_40[1025] = {
+	pg.base.activity_event_pt[1025] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -46722,11 +45733,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_event_pt
-
-	var_3_41[1026] = {
+	pg.base.activity_event_pt[1026] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -47065,11 +46072,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_event_pt
-
-	var_3_42[1027] = {
+	pg.base.activity_event_pt[1027] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -47408,11 +46411,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_event_pt
-
-	var_3_43[1049] = {
+	pg.base.activity_event_pt[1049] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -47751,11 +46750,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_event_pt
-
-	var_3_44[1050] = {
+	pg.base.activity_event_pt[1050] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -48094,11 +47089,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_event_pt
-
-	var_3_45[1051] = {
+	pg.base.activity_event_pt[1051] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -48437,11 +47428,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_event_pt
-
-	var_3_46[1052] = {
+	pg.base.activity_event_pt[1052] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -48780,11 +47767,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_event_pt
-
-	var_3_47[1053] = {
+	pg.base.activity_event_pt[1053] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -49123,11 +48106,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_event_pt
-
-	var_3_48[1054] = {
+	pg.base.activity_event_pt[1054] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -49466,11 +48445,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_event_pt
-
-	var_3_49[1055] = {
+	pg.base.activity_event_pt[1055] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -49809,11 +48784,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_event_pt
-
-	var_3_50[1056] = {
+	pg.base.activity_event_pt[1056] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -50152,11 +49123,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_event_pt
-
-	var_3_51[1057] = {
+	pg.base.activity_event_pt[1057] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -50495,11 +49462,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_event_pt
-
-	var_3_52[1086] = {
+	pg.base.activity_event_pt[1086] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 7,
@@ -50663,11 +49626,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_event_pt
-
-	var_3_53[1110] = {
+	pg.base.activity_event_pt[1110] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 7,
@@ -50831,11 +49790,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_event_pt
-
-	var_3_54[4008] = {
+	pg.base.activity_event_pt[4008] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -51262,11 +50217,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_event_pt
-
-	var_3_55[4100] = {
+	pg.base.activity_event_pt[4100] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -51757,11 +50708,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_event_pt
-
-	var_3_56[6006] = {
+	pg.base.activity_event_pt[6006] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -51834,11 +50781,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_event_pt
-
-	var_3_57[6010] = {
+	pg.base.activity_event_pt[6010] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -51925,11 +50868,7 @@ end)()
 			9
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_event_pt
-
-	var_3_58[6017] = {
+	pg.base.activity_event_pt[6017] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -52002,11 +50941,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_event_pt
-
-	var_3_59[6022] = {
+	pg.base.activity_event_pt[6022] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -52079,11 +51014,101 @@ end)()
 			7
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_event_pt
-
-	var_3_60[100004] = {
+	pg.base.activity_event_pt[6042] = {
+		convert_resource_type = 0,
+		pic_list = "",
+		type = 2,
+		convert_pay = "",
+		end_time = "",
+		buff_group = "",
+		buff_time = "",
+		id_2 = 6042,
+		link_id = 0,
+		unlock_story = "",
+		target_buff = "",
+		drop_display = "",
+		pt_list = "",
+		id = 6042,
+		pt = 2,
+		target = {
+			500,
+			1000,
+			1500,
+			2000,
+			2500,
+			3000,
+			4000,
+			5000,
+			6500,
+			8000
+		},
+		drop_client = {
+			{
+				2,
+				17003,
+				5
+			},
+			{
+				1,
+				1,
+				1000
+			},
+			{
+				2,
+				17003,
+				5
+			},
+			{
+				1,
+				1,
+				1000
+			},
+			{
+				2,
+				17003,
+				10
+			},
+			{
+				1,
+				1,
+				1500
+			},
+			{
+				2,
+				17003,
+				10
+			},
+			{
+				2,
+				42017,
+				1
+			},
+			{
+				2,
+				17003,
+				10
+			},
+			{
+				7,
+				901011,
+				1
+			}
+		},
+		allplayer = {},
+		day_unlock = {
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10
+		}
+	}
+	pg.base.activity_event_pt[100004] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -52157,11 +51182,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_event_pt
-
-	var_3_61[30853] = {
+	pg.base.activity_event_pt[30853] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -52235,11 +51256,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_event_pt
-
-	var_3_62[40061] = {
+	pg.base.activity_event_pt[40061] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -52578,11 +51595,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_event_pt
-
-	var_3_63[40062] = {
+	pg.base.activity_event_pt[40062] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -52921,11 +51934,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_event_pt
-
-	var_3_64[40063] = {
+	pg.base.activity_event_pt[40063] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -53264,11 +52273,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_event_pt
-
-	var_3_65[0] = {
+	pg.base.activity_event_pt[0] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -53607,11 +52612,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_event_pt
-
-	var_3_66[1] = {
+	pg.base.activity_event_pt[1] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -53950,11 +52951,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_event_pt
-
-	var_3_67[2] = {
+	pg.base.activity_event_pt[2] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -54293,11 +53290,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_event_pt
-
-	var_3_68[3] = {
+	pg.base.activity_event_pt[3] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -54636,11 +53629,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_event_pt
-
-	var_3_69[4] = {
+	pg.base.activity_event_pt[4] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -54979,11 +53968,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_event_pt
-
-	var_3_70[40107] = {
+	pg.base.activity_event_pt[40107] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -55219,11 +54204,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_event_pt
-
-	var_3_71[40114] = {
+	pg.base.activity_event_pt[40114] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -55522,11 +54503,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_event_pt
-
-	var_3_72[40126] = {
+	pg.base.activity_event_pt[40126] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -55622,11 +54599,7 @@ end)()
 			10
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_event_pt
-
-	var_3_73[40127] = {
+	pg.base.activity_event_pt[40127] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -55925,11 +54898,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_event_pt
-
-	var_3_74[40139] = {
+	pg.base.activity_event_pt[40139] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -56247,11 +55216,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_event_pt
-
-	var_3_75[40151] = {
+	pg.base.activity_event_pt[40151] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -56550,11 +55515,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_event_pt
-
-	var_3_76[40157] = {
+	pg.base.activity_event_pt[40157] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -56741,11 +55702,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_event_pt
-
-	var_3_77[40174] = {
+	pg.base.activity_event_pt[40174] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -56869,11 +55826,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_event_pt
-
-	var_3_78[40179] = {
+	pg.base.activity_event_pt[40179] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -56906,11 +55859,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_event_pt
-
-	var_3_79[40187] = {
+	pg.base.activity_event_pt[40187] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -57209,11 +56158,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_event_pt
-
-	var_3_80[10] = {
+	pg.base.activity_event_pt[10] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -57246,11 +56191,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_event_pt
-
-	var_3_81[20] = {
+	pg.base.activity_event_pt[20] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -57549,11 +56490,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_event_pt
-
-	var_3_82[40224] = {
+	pg.base.activity_event_pt[40224] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -57900,11 +56837,7 @@ end)()
 			}
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_event_pt
-
-	var_3_83[40239] = {
+	pg.base.activity_event_pt[40239] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -58089,11 +57022,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_event_pt
-
-	var_3_84[40248] = {
+	pg.base.activity_event_pt[40248] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -58124,11 +57053,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_event_pt
-
-	var_3_85[40251] = {
+	pg.base.activity_event_pt[40251] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -58161,11 +57086,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_event_pt
-
-	var_3_86[40260] = {
+	pg.base.activity_event_pt[40260] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -58485,11 +57406,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_event_pt
-
-	var_3_87[40267] = {
+	pg.base.activity_event_pt[40267] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -58655,11 +57572,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_event_pt
-
-	var_3_88[40272] = {
+	pg.base.activity_event_pt[40272] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -58965,11 +57878,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_event_pt
-
-	var_3_89[40290] = {
+	pg.base.activity_event_pt[40290] = {
 		convert_resource_type = 190,
 		pic_list = "",
 		type = 1,
@@ -59063,11 +57972,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_event_pt
-
-	var_3_90[40291] = {
+	pg.base.activity_event_pt[40291] = {
 		convert_resource_type = 190,
 		pic_list = "",
 		type = 1,
@@ -59161,11 +58066,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_event_pt
-
-	var_3_91[40300] = {
+	pg.base.activity_event_pt[40300] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -59464,11 +58365,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_event_pt
-
-	var_3_92[40306] = {
+	pg.base.activity_event_pt[40306] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -59543,11 +58440,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_event_pt
-
-	var_3_93[40313] = {
+	pg.base.activity_event_pt[40313] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -59580,11 +58473,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_event_pt
-
-	var_3_94[3] = {
+	pg.base.activity_event_pt[3] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -59904,11 +58793,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_event_pt
-
-	var_3_95[7] = {
+	pg.base.activity_event_pt[7] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60074,11 +58959,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_event_pt
-
-	var_3_96[11] = {
+	pg.base.activity_event_pt[11] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60151,11 +59032,7 @@ end)()
 			7
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_event_pt
-
-	var_3_97[29] = {
+	pg.base.activity_event_pt[29] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60475,11 +59352,7 @@ end)()
 			0
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_event_pt
-
-	var_3_98[24] = {
+	pg.base.activity_event_pt[24] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60512,8 +59385,11 @@ end)()
 			0
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.activity_event_pt[40362] = {
+
+	return
+end)()
+;(function()
+	pg.base.activity_event_pt[40362] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60586,15 +59462,7 @@ end)()
 			7
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_event_pt
-
-	var_4_0[40364] = {
+	pg.base.activity_event_pt[40364] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60625,11 +59493,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_event_pt
-
-	var_4_1[40370] = {
+	pg.base.activity_event_pt[40370] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -60949,11 +59813,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_event_pt
-
-	var_4_2[40500] = {
+	pg.base.activity_event_pt[40500] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -61382,11 +60242,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_event_pt
-
-	var_4_3[40387] = {
+	pg.base.activity_event_pt[40387] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -61712,11 +60568,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_event_pt
-
-	var_4_4[40415] = {
+	pg.base.activity_event_pt[40415] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -62015,11 +60867,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_event_pt
-
-	var_4_5[40402] = {
+	pg.base.activity_event_pt[40402] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -62050,11 +60898,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_event_pt
-
-	var_4_6[40443] = {
+	pg.base.activity_event_pt[40443] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -62178,11 +61022,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_event_pt
-
-	var_4_7[0] = {
+	pg.base.activity_event_pt[0] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -62367,11 +61207,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_event_pt
-
-	var_4_8[6] = {
+	pg.base.activity_event_pt[6] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -62465,11 +61301,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_event_pt
-
-	var_4_9[7] = {
+	pg.base.activity_event_pt[7] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -62768,11 +61600,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_event_pt
-
-	var_4_10[10] = {
+	pg.base.activity_event_pt[10] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -62845,11 +61673,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_event_pt
-
-	var_4_11[40482] = {
+	pg.base.activity_event_pt[40482] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -62973,11 +61797,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_event_pt
-
-	var_4_12[27] = {
+	pg.base.activity_event_pt[27] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -63276,11 +62096,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_event_pt
-
-	var_4_13[40497] = {
+	pg.base.activity_event_pt[40497] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -63600,11 +62416,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_event_pt
-
-	var_4_14[40487] = {
+	pg.base.activity_event_pt[40487] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -63635,11 +62447,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_event_pt
-
-	var_4_15[40511] = {
+	pg.base.activity_event_pt[40511] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -63712,11 +62520,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_event_pt
-
-	var_4_16[40520] = {
+	pg.base.activity_event_pt[40520] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -63747,11 +62551,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_event_pt
-
-	var_4_17[40535] = {
+	pg.base.activity_event_pt[40535] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -64090,11 +62890,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_event_pt
-
-	var_4_18[40536] = {
+	pg.base.activity_event_pt[40536] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -64433,11 +63229,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_event_pt
-
-	var_4_19[40537] = {
+	pg.base.activity_event_pt[40537] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -64776,11 +63568,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_event_pt
-
-	var_4_20[40538] = {
+	pg.base.activity_event_pt[40538] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -65119,11 +63907,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_event_pt
-
-	var_4_21[40539] = {
+	pg.base.activity_event_pt[40539] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -65462,11 +64246,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_event_pt
-
-	var_4_22[40540] = {
+	pg.base.activity_event_pt[40540] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -65805,11 +64585,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_event_pt
-
-	var_4_23[40541] = {
+	pg.base.activity_event_pt[40541] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -66148,11 +64924,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_event_pt
-
-	var_4_24[40542] = {
+	pg.base.activity_event_pt[40542] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -66491,11 +65263,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_event_pt
-
-	var_4_25[40543] = {
+	pg.base.activity_event_pt[40543] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -66834,11 +65602,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_event_pt
-
-	var_4_26[40616] = {
+	pg.base.activity_event_pt[40616] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -67023,11 +65787,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_event_pt
-
-	var_4_27[40671] = {
+	pg.base.activity_event_pt[40671] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -67100,11 +65860,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_event_pt
-
-	var_4_28[45011] = {
+	pg.base.activity_event_pt[45011] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -67403,11 +66159,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_event_pt
-
-	var_4_29[45022] = {
+	pg.base.activity_event_pt[45022] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -67592,11 +66344,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_event_pt
-
-	var_4_30[40555] = {
+	pg.base.activity_event_pt[40555] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -67629,11 +66377,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_event_pt
-
-	var_4_31[40563] = {
+	pg.base.activity_event_pt[40563] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -67953,11 +66697,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_event_pt
-
-	var_4_32[40570] = {
+	pg.base.activity_event_pt[40570] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -68081,11 +66821,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_event_pt
-
-	var_4_33[40575] = {
+	pg.base.activity_event_pt[40575] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -68118,11 +66854,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_event_pt
-
-	var_4_34[19] = {
+	pg.base.activity_event_pt[19] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -68440,11 +67172,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_event_pt
-
-	var_4_35[23] = {
+	pg.base.activity_event_pt[23] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -68517,11 +67245,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_event_pt
-
-	var_4_36[45031] = {
+	pg.base.activity_event_pt[45031] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -68950,11 +67674,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_event_pt
-
-	var_4_37[9] = {
+	pg.base.activity_event_pt[9] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -69274,11 +67994,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_event_pt
-
-	var_4_38[13] = {
+	pg.base.activity_event_pt[13] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -69351,11 +68067,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_event_pt
-
-	var_4_39[40624] = {
+	pg.base.activity_event_pt[40624] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -69388,11 +68100,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_event_pt
-
-	var_4_40[40618] = {
+	pg.base.activity_event_pt[40618] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -69819,11 +68527,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_event_pt
-
-	var_4_41[40654] = {
+	pg.base.activity_event_pt[40654] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -70122,11 +68826,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_event_pt
-
-	var_4_42[40630] = {
+	pg.base.activity_event_pt[40630] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -70446,11 +69146,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_event_pt
-
-	var_4_43[5] = {
+	pg.base.activity_event_pt[5] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -70826,11 +69522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_event_pt
-
-	var_4_44[40702] = {
+	pg.base.activity_event_pt[40702] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -71015,11 +69707,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_event_pt
-
-	var_4_45[40753] = {
+	pg.base.activity_event_pt[40753] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -71318,11 +70006,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_event_pt
-
-	var_4_46[20] = {
+	pg.base.activity_event_pt[20] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -71353,11 +70037,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_event_pt
-
-	var_4_47[22] = {
+	pg.base.activity_event_pt[22] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -71848,11 +70528,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_event_pt
-
-	var_4_48[40775] = {
+	pg.base.activity_event_pt[40775] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -71925,11 +70601,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_event_pt
-
-	var_4_49[40736] = {
+	pg.base.activity_event_pt[40736] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -72228,11 +70900,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_event_pt
-
-	var_4_50[40796] = {
+	pg.base.activity_event_pt[40796] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -72531,11 +71199,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_event_pt
-
-	var_4_51[40783] = {
+	pg.base.activity_event_pt[40783] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -72568,11 +71232,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_event_pt
-
-	var_4_52[40764] = {
+	pg.base.activity_event_pt[40764] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -72792,11 +71452,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_event_pt
-
-	var_4_53[40899] = {
+	pg.base.activity_event_pt[40899] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -73095,11 +71751,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_event_pt
-
-	var_4_54[40916] = {
+	pg.base.activity_event_pt[40916] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -73223,11 +71875,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.activity_event_pt
-
-	var_4_55[40906] = {
+	pg.base.activity_event_pt[40906] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -73300,11 +71948,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.activity_event_pt
-
-	var_4_56[40929] = {
+	pg.base.activity_event_pt[40929] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -73603,11 +72247,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.activity_event_pt
-
-	var_4_57[40932] = {
+	pg.base.activity_event_pt[40932] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -73703,11 +72343,7 @@ end)()
 			10
 		}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.activity_event_pt
-
-	var_4_58[40937] = {
+	pg.base.activity_event_pt[40937] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -73780,11 +72416,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.activity_event_pt
-
-	var_4_59[40940] = {
+	pg.base.activity_event_pt[40940] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -73948,11 +72580,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.activity_event_pt
-
-	var_4_60[40955] = {
+	pg.base.activity_event_pt[40955] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -74258,11 +72886,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.activity_event_pt
-
-	var_4_61[40993] = {
+	pg.base.activity_event_pt[40993] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -74561,11 +73185,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.activity_event_pt
-
-	var_4_62[40995] = {
+	pg.base.activity_event_pt[40995] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 3,
@@ -74638,11 +73258,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.activity_event_pt
-
-	var_4_63[41010] = {
+	pg.base.activity_event_pt[41010] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -74715,11 +73331,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.activity_event_pt
-
-	var_4_64[41012] = {
+	pg.base.activity_event_pt[41012] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -75210,11 +73822,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.activity_event_pt
-
-	var_4_65[41031] = {
+	pg.base.activity_event_pt[41031] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -75399,11 +74007,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.activity_event_pt
-
-	var_4_66[41016] = {
+	pg.base.activity_event_pt[41016] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -75434,11 +74038,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.activity_event_pt
-
-	var_4_67[41070] = {
+	pg.base.activity_event_pt[41070] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -75513,11 +74113,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.activity_event_pt
-
-	var_4_68[41078] = {
+	pg.base.activity_event_pt[41078] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -75816,11 +74412,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.activity_event_pt
-
-	var_4_69[2] = {
+	pg.base.activity_event_pt[2] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -75905,11 +74497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.activity_event_pt
-
-	var_4_70[11] = {
+	pg.base.activity_event_pt[11] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -76208,11 +74796,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.activity_event_pt
-
-	var_4_71[19] = {
+	pg.base.activity_event_pt[19] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -76397,11 +74981,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.activity_event_pt
-
-	var_4_72[41130] = {
+	pg.base.activity_event_pt[41130] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -76721,11 +75301,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.activity_event_pt
-
-	var_4_73[41150] = {
+	pg.base.activity_event_pt[41150] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -76798,11 +75374,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.activity_event_pt
-
-	var_4_74[41146] = {
+	pg.base.activity_event_pt[41146] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -77177,11 +75749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.activity_event_pt
-
-	var_4_75[41168] = {
+	pg.base.activity_event_pt[41168] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -77247,11 +75815,7 @@ end)()
 			6
 		}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.activity_event_pt
-
-	var_4_76[41175] = {
+	pg.base.activity_event_pt[41175] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -77550,11 +76114,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.activity_event_pt
-
-	var_4_77[41187] = {
+	pg.base.activity_event_pt[41187] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -77627,11 +76187,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.activity_event_pt
-
-	var_4_78[41200] = {
+	pg.base.activity_event_pt[41200] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -77755,11 +76311,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.activity_event_pt
-
-	var_4_79[41215] = {
+	pg.base.activity_event_pt[41215] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -78058,11 +76610,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.activity_event_pt
-
-	var_4_80[16] = {
+	pg.base.activity_event_pt[16] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -78361,11 +76909,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.activity_event_pt
-
-	var_4_81[31] = {
+	pg.base.activity_event_pt[31] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -78587,11 +77131,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.activity_event_pt
-
-	var_4_82[41269] = {
+	pg.base.activity_event_pt[41269] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -78925,11 +77465,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.activity_event_pt
-
-	var_4_83[41281] = {
+	pg.base.activity_event_pt[41281] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -79151,11 +77687,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.activity_event_pt
-
-	var_4_84[41286] = {
+	pg.base.activity_event_pt[41286] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -79186,11 +77718,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.activity_event_pt
-
-	var_4_85[41291] = {
+	pg.base.activity_event_pt[41291] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -79263,11 +77791,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.activity_event_pt
-
-	var_4_86[41303] = {
+	pg.base.activity_event_pt[41303] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -79566,11 +78090,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.activity_event_pt
-
-	var_4_87[41317] = {
+	pg.base.activity_event_pt[41317] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -79869,11 +78389,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.activity_event_pt
-
-	var_4_88[5] = {
+	pg.base.activity_event_pt[5] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -80095,11 +78611,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.activity_event_pt
-
-	var_4_89[41340] = {
+	pg.base.activity_event_pt[41340] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -80172,11 +78684,7 @@ end)()
 			7
 		}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.activity_event_pt
-
-	var_4_90[18] = {
+	pg.base.activity_event_pt[18] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -80361,11 +78869,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.activity_event_pt
-
-	var_4_91[31] = {
+	pg.base.activity_event_pt[31] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 5,
@@ -80444,11 +78948,7 @@ end)()
 			}
 		}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.activity_event_pt
-
-	var_4_92[45048] = {
+	pg.base.activity_event_pt[45048] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 6,
@@ -80521,11 +79021,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.activity_event_pt
-
-	var_4_93[45050] = {
+	pg.base.activity_event_pt[45050] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -80556,11 +79052,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.activity_event_pt
-
-	var_4_94[50130] = {
+	pg.base.activity_event_pt[50130] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -80887,11 +79379,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.activity_event_pt
-
-	var_4_95[29] = {
+	pg.base.activity_event_pt[29] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -81218,11 +79706,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.activity_event_pt
-
-	var_4_96[50378] = {
+	pg.base.activity_event_pt[50378] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -81472,11 +79956,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.activity_event_pt
-
-	var_4_97[50382] = {
+	pg.base.activity_event_pt[50382] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -81507,11 +79987,7 @@ end)()
 			0
 		}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.activity_event_pt
-
-	var_4_98[50483] = {
+	pg.base.activity_event_pt[50483] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -81838,8 +80314,11 @@ end)()
 			0
 		}
 	}
-	pg = var_4_98
-	var_4_98.base.activity_event_pt[31] = {
+
+	return
+end)()
+;(function()
+	pg.base.activity_event_pt[31] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -82096,15 +80575,7 @@ end)()
 			0
 		}
 	}
-
-	return
-end)()
-;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.activity_event_pt
-
-	var_5_0[50477] = {
+	pg.base.activity_event_pt[50477] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 4,
@@ -82177,11 +80648,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.activity_event_pt
-
-	var_5_1[50652] = {
+	pg.base.activity_event_pt[50652] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -82508,11 +80975,7 @@ end)()
 			0
 		}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.activity_event_pt
-
-	var_5_2[51021] = {
+	pg.base.activity_event_pt[51021] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,
@@ -82585,11 +81048,7 @@ end)()
 			7
 		}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.activity_event_pt
-
-	var_5_3[51062] = {
+	pg.base.activity_event_pt[51062] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 2,
@@ -82662,8 +81121,334 @@ end)()
 			0
 		}
 	}
-	pg = var_5_3
-	var_5_3.base.activity_event_pt[19] = {
+	pg.base.activity_event_pt[51109] = {
+		convert_resource_type = 0,
+		pic_list = "",
+		type = 1,
+		convert_pay = "",
+		end_time = "",
+		buff_group = "",
+		buff_time = "",
+		id_2 = 51101,
+		link_id = 0,
+		unlock_story = "",
+		target_buff = "",
+		drop_display = "",
+		pt_list = "",
+		id = 51109,
+		pt = 741,
+		target = {
+			100,
+			300,
+			500,
+			700,
+			1000,
+			1500,
+			2000,
+			2500,
+			3000,
+			3500,
+			4000,
+			4500,
+			5000,
+			5500,
+			6000,
+			6500,
+			7000,
+			7500,
+			8000,
+			8500,
+			9000,
+			9500,
+			10000,
+			11000,
+			12000,
+			13000,
+			14000,
+			15000,
+			17500,
+			20000,
+			22500,
+			25000,
+			27500,
+			30000,
+			35000,
+			40000,
+			45000,
+			50000,
+			55000,
+			60000,
+			70000,
+			80000,
+			100000
+		},
+		drop_client = {
+			{
+				2,
+				54005,
+				5
+			},
+			{
+				2,
+				18012,
+				1
+			},
+			{
+				2,
+				18002,
+				1
+			},
+			{
+				1,
+				1,
+				3000
+			},
+			{
+				2,
+				15008,
+				200
+			},
+			{
+				1,
+				1,
+				3000
+			},
+			{
+				2,
+				18022,
+				1
+			},
+			{
+				2,
+				18032,
+				1
+			},
+			{
+				1,
+				1,
+				4000
+			},
+			{
+				2,
+				15008,
+				300
+			},
+			{
+				2,
+				18013,
+				1
+			},
+			{
+				2,
+				18003,
+				1
+			},
+			{
+				2,
+				16003,
+				2
+			},
+			{
+				2,
+				15008,
+				300
+			},
+			{
+				2,
+				18023,
+				1
+			},
+			{
+				2,
+				18033,
+				1
+			},
+			{
+				2,
+				16023,
+				2
+			},
+			{
+				2,
+				15008,
+				300
+			},
+			{
+				2,
+				54051,
+				1
+			},
+			{
+				2,
+				16013,
+				2
+			},
+			{
+				2,
+				15008,
+				300
+			},
+			{
+				2,
+				54051,
+				2
+			},
+			{
+				4,
+				101581,
+				1
+			},
+			{
+				2,
+				54006,
+				2
+			},
+			{
+				2,
+				15008,
+				500
+			},
+			{
+				2,
+				54051,
+				2
+			},
+			{
+				2,
+				15017,
+				3
+			},
+			{
+				2,
+				42086,
+				1
+			},
+			{
+				2,
+				15021,
+				3
+			},
+			{
+				4,
+				101581,
+				1
+			},
+			{
+				2,
+				30114,
+				5
+			},
+			{
+				2,
+				15014,
+				5
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				15008,
+				500
+			},
+			{
+				2,
+				30114,
+				5
+			},
+			{
+				4,
+				101581,
+				1
+			},
+			{
+				2,
+				15017,
+				3
+			},
+			{
+				2,
+				42086,
+				2
+			},
+			{
+				2,
+				30114,
+				10
+			},
+			{
+				4,
+				101581,
+				1
+			},
+			{
+				2,
+				54007,
+				2
+			},
+			{
+				2,
+				30015,
+				1
+			},
+			{
+				2,
+				30015,
+				1
+			}
+		},
+		allplayer = {
+			0.1
+		},
+		day_unlock = {
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0,
+			0
+		}
+	}
+	pg.base.activity_event_pt[19] = {
 		convert_resource_type = 0,
 		pic_list = "",
 		type = 1,

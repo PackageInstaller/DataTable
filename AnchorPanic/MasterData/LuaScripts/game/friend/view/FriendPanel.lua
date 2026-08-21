@@ -136,6 +136,7 @@ function updateFriendInfo(self)
                 self.mRoleInfoView = role.RoleInfoView.new()
                 self.mRoleInfoView:active(otherData)
                 self.mRoleInfoView:addAllUIEvent()
+                self.mRoleInfoView:initViewText()
                 self.mRoleInfoView:setParentTrans(self:getChildTrans("mRoleInfoTrans"))
             end
         end

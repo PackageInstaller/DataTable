@@ -1,55 +1,18 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "child_resource") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "child_resource"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.child_resource = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.child_resource
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.child_resource = rawget(pg, "child_resource") or setmetatable({
+	__name = "child_resource"
+}, confNEO)
+pg.child_resource.all = {
 	1,
 	2,
 	3,
 	4
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.child_resource = {}
+pg.base = pg.base or {}
+pg.base.child_resource = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.child_resource
-
-	var_1_0[1] = {
+	pg.base.child_resource[1] = {
 		min_value = 0,
 		name = "金钱",
 		max_value = 99999,
@@ -58,11 +21,7 @@ var_0_3.base.child_resource = {}
 		default_value = 20,
 		desc = "虚拟小镇的货币，用处多多"
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.child_resource
-
-	var_1_1[2] = {
+	pg.base.child_resource[2] = {
 		min_value = 0,
 		name = "心情",
 		max_value = 100,
@@ -71,11 +30,7 @@ var_0_3.base.child_resource = {}
 		default_value = 50,
 		desc = "$1\n心情将会影响属性、能力、金钱的收益\n0~19:收益减少40%      20~39:收益减少20%\n40~59:收益不变             60~100: 收益增加40%"
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.child_resource
-
-	var_1_2[3] = {
+	pg.base.child_resource[3] = {
 		min_value = 0,
 		name = "行动力",
 		max_value = 2000,
@@ -84,8 +39,7 @@ var_0_3.base.child_resource = {}
 		default_value = 0,
 		desc = "用于大地图出行，每周会回复至满值。\n在系统升级后，行动力上限将会得到提升。"
 	}
-	pg = var_1_2
-	var_1_2.base.child_resource[4] = {
+	pg.base.child_resource[4] = {
 		min_value = 0,
 		name = "好感度",
 		max_value = 500,

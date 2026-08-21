@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_town_work_level") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_town_work_level"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_town_work_level = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_town_work_level
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_town_work_level = rawget(pg, "activity_town_work_level") or setmetatable({
+	__name = "activity_town_work_level"
+}, confNEO)
+pg.activity_town_work_level.all = {
 	1,
 	2,
 	3,
@@ -80,25 +57,11 @@ var_0_3.all = {
 	140,
 	141
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_town_work_level = {}
+pg.base = pg.base or {}
+pg.base.activity_town_work_level = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_town_work_level
-
-	var_1_0[1] = {
+	pg.base.activity_town_work_level[1] = {
 		gold = 0,
 		exp_display = 10,
 		name = "小型牧场LV.0",
@@ -110,11 +73,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 1,
 		level = 0
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_town_work_level
-
-	var_1_1[2] = {
+	pg.base.activity_town_work_level[2] = {
 		gold = 50000,
 		exp_display = 10,
 		name = "小型牧场LV.1",
@@ -126,11 +85,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 1,
 		level = 1
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_town_work_level
-
-	var_1_2[3] = {
+	pg.base.activity_town_work_level[3] = {
 		gold = 100000,
 		exp_display = 10,
 		name = "中型牧场LV.2",
@@ -142,11 +97,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 1,
 		level = 2
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_town_work_level
-
-	var_1_3[4] = {
+	pg.base.activity_town_work_level[4] = {
 		gold = 300000,
 		exp_display = 10,
 		name = "中型牧场LV.3",
@@ -158,11 +109,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 2,
 		level = 3
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_town_work_level
-
-	var_1_4[5] = {
+	pg.base.activity_town_work_level[5] = {
 		gold = 600000,
 		exp_display = 20,
 		name = "大型牧场LV.4",
@@ -174,11 +121,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 2,
 		level = 4
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_town_work_level
-
-	var_1_5[6] = {
+	pg.base.activity_town_work_level[6] = {
 		gold = 0,
 		exp_display = 0,
 		name = "大型牧场LV.5",
@@ -190,11 +133,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_town_work_level
-
-	var_1_6[11] = {
+	pg.base.activity_town_work_level[11] = {
 		gold = 1200000,
 		exp_display = 15,
 		name = "小型农场LV.0",
@@ -206,11 +145,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 3,
 		level = 0
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_town_work_level
-
-	var_1_7[12] = {
+	pg.base.activity_town_work_level[12] = {
 		gold = 800000,
 		exp_display = 15,
 		name = "小型农场LV.1",
@@ -222,11 +157,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 3,
 		level = 1
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_town_work_level
-
-	var_1_8[13] = {
+	pg.base.activity_town_work_level[13] = {
 		gold = 1000000,
 		exp_display = 15,
 		name = "中型农场LV.2",
@@ -238,11 +169,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 3,
 		level = 2
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_town_work_level
-
-	var_1_9[14] = {
+	pg.base.activity_town_work_level[14] = {
 		gold = 1200000,
 		exp_display = 15,
 		name = "中型农场LV.3",
@@ -254,11 +181,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 4,
 		level = 3
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_town_work_level
-
-	var_1_10[15] = {
+	pg.base.activity_town_work_level[15] = {
 		gold = 2000000,
 		exp_display = 20,
 		name = "大型农场LV.4",
@@ -270,11 +193,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 4,
 		level = 4
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_town_work_level
-
-	var_1_11[16] = {
+	pg.base.activity_town_work_level[16] = {
 		gold = 0,
 		exp_display = 0,
 		name = "大型农场LV.5",
@@ -286,11 +205,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_town_work_level
-
-	var_1_12[21] = {
+	pg.base.activity_town_work_level[21] = {
 		gold = 10000000,
 		exp_display = 20,
 		name = "小型矿场LV.0",
@@ -302,11 +217,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 5,
 		level = 0
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_town_work_level
-
-	var_1_13[22] = {
+	pg.base.activity_town_work_level[22] = {
 		gold = 8000000,
 		exp_display = 20,
 		name = "小型矿场LV.1",
@@ -318,11 +229,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 5,
 		level = 1
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_town_work_level
-
-	var_1_14[23] = {
+	pg.base.activity_town_work_level[23] = {
 		gold = 12000000,
 		exp_display = 20,
 		name = "中型矿场LV.2",
@@ -334,11 +241,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 5,
 		level = 2
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_town_work_level
-
-	var_1_15[24] = {
+	pg.base.activity_town_work_level[24] = {
 		gold = 20000000,
 		exp_display = 20,
 		name = "中型矿场LV.3",
@@ -350,11 +253,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 6,
 		level = 3
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_town_work_level
-
-	var_1_16[25] = {
+	pg.base.activity_town_work_level[25] = {
 		gold = 30000000,
 		exp_display = 30,
 		name = "大型矿场LV.4",
@@ -366,11 +265,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 6,
 		level = 4
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_town_work_level
-
-	var_1_17[26] = {
+	pg.base.activity_town_work_level[26] = {
 		gold = 0,
 		exp_display = 0,
 		name = "大型矿场LV.5",
@@ -382,11 +277,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_town_work_level
-
-	var_1_18[31] = {
+	pg.base.activity_town_work_level[31] = {
 		gold = 90000000,
 		exp_display = 20,
 		name = "小型摄影棚LV.0",
@@ -398,11 +289,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 7,
 		level = 0
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_town_work_level
-
-	var_1_19[32] = {
+	pg.base.activity_town_work_level[32] = {
 		gold = 45000000,
 		exp_display = 20,
 		name = "小型摄影棚LV.1",
@@ -414,11 +301,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 7,
 		level = 1
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_town_work_level
-
-	var_1_20[33] = {
+	pg.base.activity_town_work_level[33] = {
 		gold = 60000000,
 		exp_display = 20,
 		name = "中型摄影棚LV.2",
@@ -430,11 +313,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 7,
 		level = 2
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_town_work_level
-
-	var_1_21[34] = {
+	pg.base.activity_town_work_level[34] = {
 		gold = 75000000,
 		exp_display = 20,
 		name = "中型摄影棚LV.3",
@@ -446,11 +325,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 8,
 		level = 3
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_town_work_level
-
-	var_1_22[35] = {
+	pg.base.activity_town_work_level[35] = {
 		gold = 180000000,
 		exp_display = 20,
 		name = "大型摄影棚LV.4",
@@ -462,11 +337,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 8,
 		level = 4
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_town_work_level
-
-	var_1_23[36] = {
+	pg.base.activity_town_work_level[36] = {
 		gold = 0,
 		exp_display = 0,
 		name = "大型摄影棚LV.5",
@@ -478,11 +349,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_town_work_level
-
-	var_1_24[101] = {
+	pg.base.activity_town_work_level[101] = {
 		gold = 25000000,
 		exp_display = 40,
 		name = "小镇车站LV.0",
@@ -494,11 +361,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 4,
 		level = 0
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_town_work_level
-
-	var_1_25[102] = {
+	pg.base.activity_town_work_level[102] = {
 		gold = 27000000,
 		exp_display = 40,
 		name = "小镇车站LV.1",
@@ -510,11 +373,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 4,
 		level = 1
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_town_work_level
-
-	var_1_26[103] = {
+	pg.base.activity_town_work_level[103] = {
 		gold = 30000000,
 		exp_display = 40,
 		name = "小镇车站LV.2",
@@ -526,11 +385,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 4,
 		level = 2
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_town_work_level
-
-	var_1_27[104] = {
+	pg.base.activity_town_work_level[104] = {
 		gold = 35000000,
 		exp_display = 40,
 		name = "小镇车站LV.3",
@@ -542,11 +397,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 5,
 		level = 3
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_town_work_level
-
-	var_1_28[105] = {
+	pg.base.activity_town_work_level[105] = {
 		gold = 40000000,
 		exp_display = 40,
 		name = "小镇车站LV.4",
@@ -558,11 +409,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 5,
 		level = 4
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_town_work_level
-
-	var_1_29[106] = {
+	pg.base.activity_town_work_level[106] = {
 		gold = 0,
 		exp_display = 0,
 		name = "小镇车站LV.5",
@@ -574,11 +421,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_town_work_level
-
-	var_1_30[111] = {
+	pg.base.activity_town_work_level[111] = {
 		gold = 80000000,
 		exp_display = 40,
 		name = "小镇旅店LV.0",
@@ -590,11 +433,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 6,
 		level = 0
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_town_work_level
-
-	var_1_31[112] = {
+	pg.base.activity_town_work_level[112] = {
 		gold = 85000000,
 		exp_display = 40,
 		name = "小镇旅店LV.1",
@@ -606,11 +445,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 6,
 		level = 1
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_town_work_level
-
-	var_1_32[113] = {
+	pg.base.activity_town_work_level[113] = {
 		gold = 90000000,
 		exp_display = 40,
 		name = "小镇旅店LV.2",
@@ -622,11 +457,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 6,
 		level = 2
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_town_work_level
-
-	var_1_33[114] = {
+	pg.base.activity_town_work_level[114] = {
 		gold = 100000000,
 		exp_display = 40,
 		name = "小镇旅店LV.3",
@@ -638,11 +469,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 7,
 		level = 3
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_town_work_level
-
-	var_1_34[115] = {
+	pg.base.activity_town_work_level[115] = {
 		gold = 120000000,
 		exp_display = 40,
 		name = "小镇旅店LV.4",
@@ -654,11 +481,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 7,
 		level = 4
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_town_work_level
-
-	var_1_35[116] = {
+	pg.base.activity_town_work_level[116] = {
 		gold = 0,
 		exp_display = 0,
 		name = "小镇旅店LV.5",
@@ -670,11 +493,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_town_work_level
-
-	var_1_36[121] = {
+	pg.base.activity_town_work_level[121] = {
 		gold = 240000000,
 		exp_display = 10,
 		name = "小镇酒馆LV.0",
@@ -686,11 +505,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 0
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_town_work_level
-
-	var_1_37[122] = {
+	pg.base.activity_town_work_level[122] = {
 		gold = 250000000,
 		exp_display = 10,
 		name = "小镇酒馆LV.1",
@@ -702,11 +517,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 1
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_town_work_level
-
-	var_1_38[123] = {
+	pg.base.activity_town_work_level[123] = {
 		gold = 260000000,
 		exp_display = 10,
 		name = "小镇酒馆LV.2",
@@ -718,11 +529,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 2
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_town_work_level
-
-	var_1_39[124] = {
+	pg.base.activity_town_work_level[124] = {
 		gold = 280000000,
 		exp_display = 10,
 		name = "小镇酒馆LV.3",
@@ -734,11 +541,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 3
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_town_work_level
-
-	var_1_40[125] = {
+	pg.base.activity_town_work_level[125] = {
 		gold = 300000000,
 		exp_display = 10,
 		name = "小镇酒馆LV.4",
@@ -750,11 +553,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 4
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_town_work_level
-
-	var_1_41[126] = {
+	pg.base.activity_town_work_level[126] = {
 		gold = 0,
 		exp_display = 0,
 		name = "小镇酒馆LV.5",
@@ -766,11 +565,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 0,
 		level = 5
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_town_work_level
-
-	var_1_42[131] = {
+	pg.base.activity_town_work_level[131] = {
 		gold = 50000000,
 		exp_display = 50,
 		name = "小镇办公厅LV.0",
@@ -782,11 +577,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 8,
 		level = 0
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_town_work_level
-
-	var_1_43[132] = {
+	pg.base.activity_town_work_level[132] = {
 		gold = 50000000,
 		exp_display = 50,
 		name = "小镇办公厅LV.1",
@@ -798,11 +589,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 8,
 		level = 1
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_town_work_level
-
-	var_1_44[133] = {
+	pg.base.activity_town_work_level[133] = {
 		gold = 100000000,
 		exp_display = 60,
 		name = "小镇办公厅LV.2",
@@ -814,11 +601,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 2
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_town_work_level
-
-	var_1_45[134] = {
+	pg.base.activity_town_work_level[134] = {
 		gold = 100000000,
 		exp_display = 60,
 		name = "小镇办公厅LV.3",
@@ -830,11 +613,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 3
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_town_work_level
-
-	var_1_46[135] = {
+	pg.base.activity_town_work_level[135] = {
 		gold = 150000000,
 		exp_display = 70,
 		name = "小镇办公厅LV.4",
@@ -846,11 +625,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 9,
 		level = 4
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_town_work_level
-
-	var_1_47[136] = {
+	pg.base.activity_town_work_level[136] = {
 		gold = 200000000,
 		exp_display = 80,
 		name = "小镇办公厅LV.5",
@@ -862,11 +637,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 10,
 		level = 5
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_town_work_level
-
-	var_1_48[137] = {
+	pg.base.activity_town_work_level[137] = {
 		gold = 400000000,
 		exp_display = 90,
 		name = "小镇办公厅LV.6",
@@ -878,11 +649,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 10,
 		level = 6
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_town_work_level
-
-	var_1_49[138] = {
+	pg.base.activity_town_work_level[138] = {
 		gold = 800000000,
 		exp_display = 100,
 		name = "小镇办公厅LV.7",
@@ -894,11 +661,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 10,
 		level = 7
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_town_work_level
-
-	var_1_50[139] = {
+	pg.base.activity_town_work_level[139] = {
 		gold = 1500000000,
 		exp_display = 100,
 		name = "小镇办公厅LV.8",
@@ -910,11 +673,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 10,
 		level = 8
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_town_work_level
-
-	var_1_51[140] = {
+	pg.base.activity_town_work_level[140] = {
 		gold = 3000000000,
 		exp_display = 100,
 		name = "小镇办公厅LV.9",
@@ -926,8 +685,7 @@ var_0_3.base.activity_town_work_level = {}
 		town_level = 10,
 		level = 9
 	}
-	pg = var_1_51
-	var_1_51.base.activity_town_work_level[141] = {
+	pg.base.activity_town_work_level[141] = {
 		gold = 0,
 		exp_display = 0,
 		name = "小镇办公厅LV.10",

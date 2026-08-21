@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ryza_item") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ryza_item"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ryza_item = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ryza_item
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ryza_item = rawget(pg, "activity_ryza_item") or setmetatable({
+	__name = "activity_ryza_item"
+}, confNEO)
+pg.activity_ryza_item.all = {
 	1,
 	2,
 	3,
@@ -120,25 +97,11 @@ var_0_3.all = {
 	140,
 	141
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_ryza_item = {}
+pg.base = pg.base or {}
+pg.base.activity_ryza_item = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ryza_item
-
-	var_1_0[1] = {
+	pg.base.activity_ryza_item[1] = {
 		icon = "ryza_item_1",
 		display = "钓鱼竿的强化版。经过强化后，会让鱼失去戒心主动靠近。",
 		prop_type = 0,
@@ -163,11 +126,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：炼金工房调合获得"
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ryza_item
-
-	var_1_1[2] = {
+	pg.base.activity_ryza_item[2] = {
 		icon = "ryza_item_2",
 		display = "炎烧杖的强化版。前端的宝玉更换为蓝色，因此能更有效率地破坏岩石和水晶。",
 		prop_type = 0,
@@ -191,11 +150,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：炼金工房调合获得"
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ryza_item
-
-	var_1_2[3] = {
+	pg.base.activity_ryza_item[3] = {
 		icon = "ryza_item_3",
 		display = "因为经过改良，仔细调整了锋利度和重量，采集木材和木柴会比一般斧头更轻松。",
 		prop_type = 0,
@@ -220,11 +175,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：炼金工房调合获得"
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ryza_item
-
-	var_1_3[4] = {
+	pg.base.activity_ryza_item[4] = {
 		icon = "ryza_item_4",
 		display = "这把镰刀被改良得更方便采集，可以像风一样安静轻巧地割下花草。",
 		prop_type = 0,
@@ -249,11 +200,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：炼金工房调合获得"
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ryza_item
-
-	var_1_4[5] = {
+	pg.base.activity_ryza_item[5] = {
 		icon = "ryza_item_5",
 		display = "拥有强大的握力和推力的塞壬机械臂，还能发射灼热的开采激光——用来进行炼金术素材的采集似乎是个不错的选择？",
 		prop_type = 0,
@@ -280,11 +227,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：炼金工房调合获得"
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ryza_item
-
-	var_1_5[6] = {
+	pg.base.activity_ryza_item[6] = {
 		icon = "ryza_item_6",
 		display = "在沙滩相对容易发现的贝类。含有适量的盐分，直接烤一下就很好吃。",
 		prop_type = 0,
@@ -331,11 +274,7 @@ var_0_3.base.activity_ryza_item = {}
 			0.85
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ryza_item
-
-	var_1_6[7] = {
+	pg.base.activity_ryza_item[7] = {
 		icon = "ryza_item_7",
 		display = "栖息在河川和湖泊中的淡水鱼，是常见鱼类之一。",
 		prop_type = 0,
@@ -382,11 +321,7 @@ var_0_3.base.activity_ryza_item = {}
 			-1
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ryza_item
-
-	var_1_7[8] = {
+	pg.base.activity_ryza_item[8] = {
 		icon = "ryza_item_8",
 		display = "据说栖息于湖底最深处，是湖中的鱼类之主。",
 		prop_type = 0,
@@ -438,11 +373,7 @@ var_0_3.base.activity_ryza_item = {}
 			-1.5
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ryza_item
-
-	var_1_8[9] = {
+	pg.base.activity_ryza_item[9] = {
 		icon = "ryza_item_9",
 		display = "如结晶般透明的石头碎片。碎片种类包罗万象，从普通石头到矿石都有，甚至会有高级宝石混在其中。",
 		prop_type = 0,
@@ -488,11 +419,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ryza_item
-
-	var_1_9[10] = {
+	pg.base.activity_ryza_item[10] = {
 		icon = "ryza_item_10",
 		display = "敲碎岩石时可采集到的砂，散发出挥发性气体的气味，一点火就会燃烧。",
 		prop_type = 0,
@@ -539,11 +466,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ryza_item
-
-	var_1_10[11] = {
+	pg.base.activity_ryza_item[11] = {
 		icon = "ryza_item_11",
 		display = "由熔岩矿粉碎而成的粉末状物质。虽为粉末，但仍具有熔岩特质，因此仅是闲置在旁就有发热或起火的危险。要是被风吹走，估计会酿成悲剧。",
 		prop_type = 0,
@@ -590,11 +513,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ryza_item
-
-	var_1_11[12] = {
+	pg.base.activity_ryza_item[12] = {
 		icon = "ryza_item_12",
 		display = "只是杂草。唯一的特点就是无所不在，所以只被称为杂草。由于太常见，因此也常被列入炼金术的配方。",
 		prop_type = 0,
@@ -635,11 +554,7 @@ var_0_3.base.activity_ryza_item = {}
 			-1.5
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ryza_item
-
-	var_1_12[13] = {
+	pg.base.activity_ryza_item[13] = {
 		icon = "ryza_item_13",
 		display = "形状像鸟类翅膀的叶片。因为很轻，只要风一吹就会打转飘走。",
 		prop_type = 0,
@@ -686,11 +601,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ryza_item
-
-	var_1_13[14] = {
+	pg.base.activity_ryza_item[14] = {
 		icon = "ryza_item_14",
 		display = "和一般通草不同，是红黑色的。通常认为是因生长在含有铁质的土壤中才会变成这个颜色。特征是即使刚砍下来尚未干燥，一旦靠近火源也会烧得很旺。",
 		prop_type = 0,
@@ -742,11 +653,7 @@ var_0_3.base.activity_ryza_item = {}
 			0.46
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ryza_item
-
-	var_1_14[15] = {
+	pg.base.activity_ryza_item[15] = {
 		icon = "ryza_item_15",
 		display = "拥有雷之力的矿石。经常在雷雨多发之地、山丘等高处挖掘到。据说是因落雷导致岩石变质，进而产生这种矿石。",
 		prop_type = 0,
@@ -787,11 +694,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ryza_item
-
-	var_1_15[16] = {
+	pg.base.activity_ryza_item[16] = {
 		icon = "ryza_item_16",
 		display = "巨大陨石的碎片。这种碎片必定成对存在，而且两者之间有着无论相隔多远都能超越空间相系的连结。只要利用这点就能进行空间移动……也说不定。",
 		prop_type = 0,
@@ -843,11 +746,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ryza_item
-
-	var_1_16[17] = {
+	pg.base.activity_ryza_item[17] = {
 		icon = "ryza_item_17",
 		display = "内部闪耀七彩光辉且带有透明感的矿石。强度与其他矿石天差地别，据说无法使用正常方法进行加工。",
 		prop_type = 0,
@@ -894,11 +793,7 @@ var_0_3.base.activity_ryza_item = {}
 			3
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ryza_item
-
-	var_1_17[18] = {
+	pg.base.activity_ryza_item[18] = {
 		icon = "ryza_item_18",
 		display = "从核心区挖掘获得的未知结晶。质地坚硬，其中融合了各种元素的能量，或许是不错的炼金素材？",
 		prop_type = 0,
@@ -963,11 +858,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ryza_item
-
-	var_1_18[19] = {
+	pg.base.activity_ryza_item[19] = {
 		icon = "ryza_item_19",
 		display = "拆解核心区残骸获得的神秘装甲板，坚韧光洁的白色外壳显然经过各种元素的淬炼，似乎可以作为高阶炼金素材来使用。",
 		prop_type = 0,
@@ -1032,11 +923,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ryza_item
-
-	var_1_19[20] = {
+	pg.base.activity_ryza_item[20] = {
 		icon = "ryza_item_20",
 		display = "古代遗迹守护者的动力来源。即使离开了守护者的躯体，依然在向外散发着仿佛无穷无尽的能量。",
 		prop_type = 0,
@@ -1101,11 +988,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ryza_item
-
-	var_1_20[21] = {
+	pg.base.activity_ryza_item[21] = {
 		icon = "ryza_item_21",
 		display = "小瓶中封存了以炼金术人工制造的精灵之力。可适应任何属性，却不易使用。",
 		prop_type = 0,
@@ -1138,11 +1021,7 @@ var_0_3.base.activity_ryza_item = {}
 			1
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ryza_item
-
-	var_1_21[22] = {
+	pg.base.activity_ryza_item[22] = {
 		icon = "ryza_item_22",
 		display = "频繁出现在炼金术调合中的基础药剂。为红色液体，与火属性素材的契合度高。",
 		prop_type = 0,
@@ -1172,11 +1051,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ryza_item
-
-	var_1_22[23] = {
+	pg.base.activity_ryza_item[23] = {
 		icon = "ryza_item_23",
 		display = "频繁出现在炼金术调合中的基础药剂。为蓝色液体，与冰属性素材的契合度高。",
 		prop_type = 0,
@@ -1206,11 +1081,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ryza_item
-
-	var_1_23[24] = {
+	pg.base.activity_ryza_item[24] = {
 		icon = "ryza_item_25",
 		display = "频繁出现在炼金术调合中的基础药剂。为黄色液体，与雷属性素材的契合度高。",
 		prop_type = 0,
@@ -1240,11 +1111,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ryza_item
-
-	var_1_24[25] = {
+	pg.base.activity_ryza_item[25] = {
 		icon = "ryza_item_24",
 		display = "频繁出现在炼金术调合中的基础药剂。为绿色液体，与风属性素材的契合度高",
 		prop_type = 0,
@@ -1274,11 +1141,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ryza_item
-
-	var_1_25[26] = {
+	pg.base.activity_ryza_item[26] = {
 		icon = "ryza_item_26",
 		display = "从四种元素核心制作而成的最高阶素材之一。具备全属性与高属性值，进行高阶调合时可派上用场。",
 		prop_type = 0,
@@ -1311,11 +1174,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ryza_item
-
-	var_1_26[27] = {
+	pg.base.activity_ryza_item[27] = {
 		icon = "ryza_item_27",
 		display = "代表异界之森的遗迹之钥，匙柄上镶嵌有粉色的托帕石。握在手中，会让人想起这片森林曾经葳蕤的岁月。",
 		prop_type = 0,
@@ -1339,11 +1198,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：港区委托板任务奖励"
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ryza_item
-
-	var_1_27[28] = {
+	pg.base.activity_ryza_item[28] = {
 		icon = "ryza_item_28",
 		display = "代表起始之地的遗迹之钥，匙柄上镶嵌有无暇的钻石。愿冒险之人的本心始终如钻石般洁白无暇。",
 		prop_type = 0,
@@ -1367,11 +1222,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：港区委托板任务奖励"
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ryza_item
-
-	var_1_28[29] = {
+	pg.base.activity_ryza_item[29] = {
 		icon = "ryza_item_29",
 		display = "代表失落之都的遗迹之钥，匙柄上镶嵌有青翠的祖母绿。比起宝藏本身，寻找宝藏的过程才是冒险者真正的财富。",
 		prop_type = 0,
@@ -1395,11 +1246,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：港区委托板任务奖励"
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ryza_item
-
-	var_1_29[30] = {
+	pg.base.activity_ryza_item[30] = {
 		icon = "ryza_item_30",
 		display = "代表争斗之城的遗迹之钥，匙柄上镶嵌有绚烂的红宝石。往昔的残酷真相，或许已经伴着时间溶解在其中。",
 		prop_type = 0,
@@ -1423,11 +1270,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：港区委托板任务奖励"
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ryza_item
-
-	var_1_30[31] = {
+	pg.base.activity_ryza_item[31] = {
 		icon = "ryza_item_31",
 		display = "借助炼金术融合四把钥匙之后形成的类似门卡的装置，形状似乎能与核心之所大门上的凹槽完美对应。",
 		prop_type = 0,
@@ -1454,11 +1297,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：炼金工房调合获得"
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ryza_item
-
-	var_1_31[32] = {
+	pg.base.activity_ryza_item[32] = {
 		icon = "ryza_item_32",
 		display = "累计收集「遗迹水晶簇」10000点获得的纪念徽章，用来调合「遗迹冒险之证」的必要素材",
 		prop_type = 0,
@@ -1483,11 +1322,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：港区委托板任务奖励"
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ryza_item
-
-	var_1_32[33] = {
+	pg.base.activity_ryza_item[33] = {
 		icon = "ryza_item_33",
 		display = "成功开发温泉获得的纪念徽章，用来调合「遗迹冒险之证」的必要素材",
 		prop_type = 0,
@@ -1512,11 +1347,7 @@ var_0_3.base.activity_ryza_item = {}
 			[nil] = "产出途径：港区委托板任务奖励"
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ryza_item
-
-	var_1_33[34] = {
+	pg.base.activity_ryza_item[34] = {
 		icon = "300001",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得炮击、航空、雷击属性提高的效果",
 		prop_type = 0,
@@ -1547,11 +1378,7 @@ var_0_3.base.activity_ryza_item = {}
 			300003
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ryza_item
-
-	var_1_34[35] = {
+	pg.base.activity_ryza_item[35] = {
 		icon = "300011",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得伤害降低的效果",
 		prop_type = 0,
@@ -1582,11 +1409,7 @@ var_0_3.base.activity_ryza_item = {}
 			300013
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ryza_item
-
-	var_1_35[36] = {
+	pg.base.activity_ryza_item[36] = {
 		icon = "300021",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得恢复耐久的效果",
 		prop_type = 0,
@@ -1617,11 +1440,7 @@ var_0_3.base.activity_ryza_item = {}
 			300023
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ryza_item
-
-	var_1_36[37] = {
+	pg.base.activity_ryza_item[37] = {
 		icon = "300031",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得损伤管控的效果",
 		prop_type = 0,
@@ -1652,11 +1471,7 @@ var_0_3.base.activity_ryza_item = {}
 			300033
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ryza_item
-
-	var_1_37[38] = {
+	pg.base.activity_ryza_item[38] = {
 		icon = "300041",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得点燃弹幕支援的效果",
 		prop_type = 0,
@@ -1687,11 +1502,7 @@ var_0_3.base.activity_ryza_item = {}
 			300043
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ryza_item
-
-	var_1_38[39] = {
+	pg.base.activity_ryza_item[39] = {
 		icon = "300051",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得易伤弹幕支援的效果",
 		prop_type = 0,
@@ -1722,11 +1533,7 @@ var_0_3.base.activity_ryza_item = {}
 			300053
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ryza_item
-
-	var_1_39[40] = {
+	pg.base.activity_ryza_item[40] = {
 		icon = "300061",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得经验提升的效果",
 		prop_type = 0,
@@ -1757,11 +1564,7 @@ var_0_3.base.activity_ryza_item = {}
 			300063
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ryza_item
-
-	var_1_40[41] = {
+	pg.base.activity_ryza_item[41] = {
 		icon = "300071",
 		display = "于「炼金术士与遗迹群岛」控制中心中使用。使用后，在活动关卡中可以获得好感提升的效果",
 		prop_type = 0,
@@ -1790,11 +1593,7 @@ var_0_3.base.activity_ryza_item = {}
 			300071
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ryza_item
-
-	var_1_41[42] = {
+	pg.base.activity_ryza_item[42] = {
 		icon = "ryza_item_42",
 		display = "特殊兵装「闪耀梦想」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「闪耀梦想」的调合。",
 		prop_type = 0,
@@ -1825,11 +1624,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ryza_item
-
-	var_1_42[43] = {
+	pg.base.activity_ryza_item[43] = {
 		icon = "ryza_item_43",
 		display = "特殊兵装「暗夜星矢」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「暗夜星矢」的调合。",
 		prop_type = 0,
@@ -1860,11 +1655,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ryza_item
-
-	var_1_43[44] = {
+	pg.base.activity_ryza_item[44] = {
 		icon = "ryza_item_44",
 		display = "特殊兵装「百花盛开」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「百花盛开」的调合。",
 		prop_type = 0,
@@ -1895,11 +1686,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ryza_item
-
-	var_1_44[45] = {
+	pg.base.activity_ryza_item[45] = {
 		icon = "ryza_item_45",
 		display = "特殊兵装「爱瑟尔剑」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「爱瑟尔剑」的调合。",
 		prop_type = 0,
@@ -1930,11 +1717,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ryza_item
-
-	var_1_45[46] = {
+	pg.base.activity_ryza_item[46] = {
 		icon = "ryza_item_46",
 		display = "特殊兵装「百合长老」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「百合长老」的调合。",
 		prop_type = 0,
@@ -1965,11 +1748,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ryza_item
-
-	var_1_46[47] = {
+	pg.base.activity_ryza_item[47] = {
 		icon = "ryza_item_47",
 		display = "特殊兵装「幽兰爪」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「幽兰爪」的调合。",
 		prop_type = 0,
@@ -2000,11 +1779,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ryza_item
-
-	var_1_47[48] = {
+	pg.base.activity_ryza_item[48] = {
 		icon = "ryza_item_48",
 		display = "设备装备「炙烈炎烧」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「炙烈炎烧」的调合。",
 		prop_type = 0,
@@ -2034,11 +1809,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ryza_item
-
-	var_1_48[49] = {
+	pg.base.activity_ryza_item[49] = {
 		icon = "ryza_item_49",
 		display = "设备装备「结晶冰精」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「结晶冰精」的调合。",
 		prop_type = 0,
@@ -2068,11 +1839,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ryza_item
-
-	var_1_49[50] = {
+	pg.base.activity_ryza_item[50] = {
 		icon = "ryza_item_50",
 		display = "设备装备「震耳雷球」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「震耳雷球」的调合。",
 		prop_type = 0,
@@ -2102,11 +1869,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ryza_item
-
-	var_1_50[51] = {
+	pg.base.activity_ryza_item[51] = {
 		icon = "ryza_item_51",
 		display = "设备装备「涡旋风精」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「涡旋风精」的调合。",
 		prop_type = 0,
@@ -2136,11 +1899,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ryza_item
-
-	var_1_51[52] = {
+	pg.base.activity_ryza_item[52] = {
 		icon = "ryza_item_52",
 		display = "设备装备「创世之槌」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「创世之槌」的调合。",
 		prop_type = 0,
@@ -2171,11 +1930,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ryza_item
-
-	var_1_52[53] = {
+	pg.base.activity_ryza_item[53] = {
 		icon = "ryza_item_53",
 		display = "设备装备「泡云弹车」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「泡云弹车」的调合。",
 		prop_type = 0,
@@ -2206,11 +1961,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ryza_item
-
-	var_1_53[54] = {
+	pg.base.activity_ryza_item[54] = {
 		icon = "ryza_item_54",
 		display = "设备装备「Ｎ／Ａ」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「Ｎ／Ａ」的调合。",
 		prop_type = 0,
@@ -2241,11 +1992,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ryza_item
-
-	var_1_54[55] = {
+	pg.base.activity_ryza_item[55] = {
 		icon = "ryza_item_55",
 		display = "设备装备「默示录」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「默示录」的调合。",
 		prop_type = 0,
@@ -2278,11 +2025,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ryza_item
-
-	var_1_55[56] = {
+	pg.base.activity_ryza_item[56] = {
 		icon = "ryza_item_56",
 		display = "设备装备「神秘的羽衣」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「神秘的羽衣」的调合。",
 		prop_type = 0,
@@ -2313,11 +2056,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ryza_item
-
-	var_1_56[57] = {
+	pg.base.activity_ryza_item[57] = {
 		icon = "ryza_item_57",
 		display = "设备装备「万灵药剂」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「万灵药剂」的调合。",
 		prop_type = 0,
@@ -2348,11 +2087,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ryza_item
-
-	var_1_57[58] = {
+	pg.base.activity_ryza_item[58] = {
 		icon = "ryza_item_58",
 		display = "设备装备「形意口琴」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「形意口琴」的调合。",
 		prop_type = 0,
@@ -2383,11 +2118,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ryza_item
-
-	var_1_58[101] = {
+	pg.base.activity_ryza_item[101] = {
 		icon = "yumia_item_1",
 		display = "菌盖上有结晶化孢子的菌菇，加工后能作为珠宝饰品贩卖，无法食用。",
 		prop_type = 1,
@@ -2417,11 +2148,7 @@ var_0_3.base.activity_ryza_item = {}
 			}
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ryza_item
-
-	var_1_59[102] = {
+	pg.base.activity_ryza_item[102] = {
 		icon = "yumia_item_2",
 		display = "长得像菌菇，但包含菌菇部位在内都是虫，不适合食用。",
 		prop_type = 1,
@@ -2451,11 +2178,7 @@ var_0_3.base.activity_ryza_item = {}
 			}
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ryza_item
-
-	var_1_60[103] = {
+	pg.base.activity_ryza_item[103] = {
 		icon = "yumia_item_3",
 		display = "表面覆盖着一层尖刺的植物果实，可当作投掷武器，果肉可食用。",
 		prop_type = 2,
@@ -2497,11 +2220,7 @@ var_0_3.base.activity_ryza_item = {}
 			0.85
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ryza_item
-
-	var_1_61[104] = {
+	pg.base.activity_ryza_item[104] = {
 		icon = "yumia_item_4",
 		display = "大部分果肉化为结晶的海胆，未化为结晶的部分可食用，但说不上美味。",
 		prop_type = 2,
@@ -2543,11 +2262,7 @@ var_0_3.base.activity_ryza_item = {}
 			-1
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ryza_item
-
-	var_1_62[105] = {
+	pg.base.activity_ryza_item[105] = {
 		icon = "yumia_item_5",
 		display = "从持续释放有毒气体的朽木采集到的毒雾，毒性猛烈，吸入会造成麻痹。",
 		prop_type = 3,
@@ -2589,11 +2304,7 @@ var_0_3.base.activity_ryza_item = {}
 			-1.5
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ryza_item
-
-	var_1_63[106] = {
+	pg.base.activity_ryza_item[106] = {
 		icon = "yumia_item_6",
 		display = "超微粒子状态的金属……与其说是金属，不如说是气体更准确。",
 		prop_type = 3,
@@ -2629,11 +2340,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ryza_item
-
-	var_1_64[107] = {
+	pg.base.activity_ryza_item[107] = {
 		icon = "yumia_item_7",
 		display = "蕴含将周围热气转变为冷气力量的矿石，适合用来保持食材鲜度。",
 		prop_type = 4,
@@ -2675,11 +2382,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ryza_item
-
-	var_1_65[108] = {
+	pg.base.activity_ryza_item[108] = {
 		icon = "yumia_item_8",
 		display = "花瓣如水晶般的木槿亚种，即可作为植物素材，也可作为金属素材使用。",
 		prop_type = 4,
@@ -2721,11 +2424,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ryza_item
-
-	var_1_66[109] = {
+	pg.base.activity_ryza_item[109] = {
 		icon = "yumia_item_9",
 		display = "表面布满了可以轻易刺穿试图触摸它的人的尖刺。经常被人误解成球海藻……但其实是海胆的亚种。",
 		prop_type = 5,
@@ -2761,11 +2460,7 @@ var_0_3.base.activity_ryza_item = {}
 			-1.5
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ryza_item
-
-	var_1_67[110] = {
+	pg.base.activity_ryza_item[110] = {
 		icon = "yumia_item_10",
 		display = "有毒刺的鱼，受到攻击时会从体内伸出毒刺来保护自己。",
 		prop_type = 5,
@@ -2807,11 +2502,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ryza_item
-
-	var_1_68[111] = {
+	pg.base.activity_ryza_item[111] = {
 		icon = "yumia_item_11",
 		display = "在天际塔周边生长的晶矿，晶矿内蕴含着物质能量。",
 		prop_type = 6,
@@ -2856,11 +2547,7 @@ var_0_3.base.activity_ryza_item = {}
 			0.46
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ryza_item
-
-	var_1_69[112] = {
+	pg.base.activity_ryza_item[112] = {
 		icon = "yumia_item_12",
 		display = "由天际塔能源凝缩而成的晶核，晶核内凝聚着庞大能源。",
 		prop_type = 6,
@@ -2899,11 +2586,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ryza_item
-
-	var_1_70[116] = {
+	pg.base.activity_ryza_item[116] = {
 		icon = "yumia_item_13",
 		display = "特殊兵装「刹那追忆」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「刹那追忆」的调合。",
 		prop_type = 0,
@@ -2965,11 +2648,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ryza_item
-
-	var_1_71[117] = {
+	pg.base.activity_ryza_item[117] = {
 		icon = "yumia_item_14",
 		display = "特殊兵装「秘枪三叉戟」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「秘枪三叉戟」的调合。",
 		prop_type = 0,
@@ -3031,11 +2710,7 @@ var_0_3.base.activity_ryza_item = {}
 			3
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ryza_item
-
-	var_1_72[118] = {
+	pg.base.activity_ryza_item[118] = {
 		icon = "yumia_item_15",
 		display = "特殊兵装「女猎人」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「女猎人」的调合。",
 		prop_type = 0,
@@ -3097,11 +2772,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ryza_item
-
-	var_1_73[119] = {
+	pg.base.activity_ryza_item[119] = {
 		icon = "yumia_item_16",
 		display = "特殊兵装「黄泉之螳螂」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「黄泉之螳螂」的调合。",
 		prop_type = 0,
@@ -3137,11 +2808,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ryza_item
-
-	var_1_74[120] = {
+	pg.base.activity_ryza_item[120] = {
 		icon = "yumia_item_17",
 		display = "设备装备「最终陨石」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「最终陨石」的调合。",
 		prop_type = 0,
@@ -3178,11 +2845,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ryza_item
-
-	var_1_75[121] = {
+	pg.base.activity_ryza_item[121] = {
 		icon = "yumia_item_18",
 		display = "设备装备「高级魔导书」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「高级魔导书」的调合。",
 		prop_type = 0,
@@ -3218,11 +2881,7 @@ var_0_3.base.activity_ryza_item = {}
 			1
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ryza_item
-
-	var_1_76[122] = {
+	pg.base.activity_ryza_item[122] = {
 		icon = "yumia_item_19",
 		display = "设备装备「宏伟光辉」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「宏伟光辉」的调合。",
 		prop_type = 0,
@@ -3261,11 +2920,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ryza_item
-
-	var_1_77[126] = {
+	pg.base.activity_ryza_item[126] = {
 		icon = "yumia_item_20",
 		display = "设备装备「神药球」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「神药球」的调合。",
 		prop_type = 0,
@@ -3301,11 +2956,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ryza_item
-
-	var_1_78[127] = {
+	pg.base.activity_ryza_item[127] = {
 		icon = "yumia_item_21",
 		display = "设备装备「天恩浑仪」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「天恩浑仪」的调合。",
 		prop_type = 0,
@@ -3341,11 +2992,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ryza_item
-
-	var_1_79[128] = {
+	pg.base.activity_ryza_item[128] = {
 		icon = "yumia_item_22",
 		display = "设备装备「地狱立方体」的核心模块。作为配方中不可或缺的素材，可在炼金工房中用于「地狱立方体」的调合。",
 		prop_type = 0,
@@ -3381,11 +3028,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ryza_item
-
-	var_1_80[129] = {
+	pg.base.activity_ryza_item[129] = {
 		icon = "yumia_item_23",
 		display = "频繁运用于炼金术的基础药剂，红色中和剂与火属性具有良好的契合度。",
 		prop_type = 7,
@@ -3421,11 +3064,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ryza_item
-
-	var_1_81[130] = {
+	pg.base.activity_ryza_item[130] = {
 		icon = "yumia_item_24",
 		display = "频繁运用于炼金术的基础药剂，蓝色中和剂与冰属性具有良好的契合度。",
 		prop_type = 7,
@@ -3461,11 +3100,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ryza_item
-
-	var_1_82[131] = {
+	pg.base.activity_ryza_item[131] = {
 		icon = "yumia_item_25",
 		display = "频繁运用于炼金术的基础药剂，黄色中和剂与雷属性具有良好的契合度。",
 		prop_type = 7,
@@ -3501,11 +3136,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ryza_item
-
-	var_1_83[132] = {
+	pg.base.activity_ryza_item[132] = {
 		icon = "yumia_item_26",
 		display = "频繁运用于炼金术的基础药剂，绿色中和剂与风属性具有良好的契合度。",
 		prop_type = 7,
@@ -3541,11 +3172,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ryza_item
-
-	var_1_84[133] = {
+	pg.base.activity_ryza_item[133] = {
 		icon = "yumia_item_27",
 		display = "频繁用于炼金术的基础药剂。经过改良后，成了与任何素材均可高度契合的万能中和剂。",
 		prop_type = 7,
@@ -3584,11 +3211,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ryza_item
-
-	var_1_85[134] = {
+	pg.base.activity_ryza_item[134] = {
 		icon = "yumia_item_28",
 		display = "Ⅰ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = 0,
@@ -3622,11 +3245,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ryza_item
-
-	var_1_86[135] = {
+	pg.base.activity_ryza_item[135] = {
 		icon = "yumia_item_29",
 		display = "Ⅱ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = 0,
@@ -3660,11 +3279,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ryza_item
-
-	var_1_87[136] = {
+	pg.base.activity_ryza_item[136] = {
 		icon = "yumia_item_30",
 		display = "Ⅲ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = 0,
@@ -3698,11 +3313,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ryza_item
-
-	var_1_88[137] = {
+	pg.base.activity_ryza_item[137] = {
 		icon = "yumia_item_31",
 		display = "Ⅳ级调节器，用于调节天际塔能源的专属设备。",
 		prop_type = 0,
@@ -3736,11 +3347,7 @@ var_0_3.base.activity_ryza_item = {}
 			0
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ryza_item
-
-	var_1_89[138] = {
+	pg.base.activity_ryza_item[138] = {
 		icon = "65653",
 		display = "通用建筑材料，可用于建设任何木类建筑。",
 		prop_type = 0,
@@ -3758,11 +3365,7 @@ var_0_3.base.activity_ryza_item = {}
 		normal_circle = "",
 		prop = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ryza_item
-
-	var_1_90[139] = {
+	pg.base.activity_ryza_item[139] = {
 		icon = "65654",
 		display = "通用建筑素材，可用于制作任何石类建筑。",
 		prop_type = 0,
@@ -3780,11 +3383,7 @@ var_0_3.base.activity_ryza_item = {}
 		normal_circle = "",
 		prop = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ryza_item
-
-	var_1_91[140] = {
+	pg.base.activity_ryza_item[140] = {
 		icon = "65655",
 		display = "通用建筑素材，可用于制作任何金属类建筑。",
 		prop_type = 0,
@@ -3802,8 +3401,7 @@ var_0_3.base.activity_ryza_item = {}
 		normal_circle = "",
 		prop = {}
 	}
-	pg = var_1_91
-	var_1_91.base.activity_ryza_item[141] = {
+	pg.base.activity_ryza_item[141] = {
 		icon = "65656",
 		display = "通用建筑素材，可用于制作任何植被类建筑。",
 		prop_type = 0,

@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_camera_photo_frame") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_camera_photo_frame"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_camera_photo_frame = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_camera_photo_frame
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.dorm3d_camera_photo_frame
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.dorm3d_camera_photo_frame = rawget(pg, "dorm3d_camera_photo_frame") or setmetatable({
+	__name = "dorm3d_camera_photo_frame"
+}, confNEO)
+pg.dorm3d_camera_photo_frame.__namecode__ = true
+pg.dorm3d_camera_photo_frame.all = {
 	1001,
 	1002,
 	1003,
@@ -47,25 +20,11 @@ var_0_4.all = {
 	1014,
 	1015
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.dorm3d_camera_photo_frame = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_camera_photo_frame = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_camera_photo_frame
-
-	var_1_0[1001] = {
+	pg.base.dorm3d_camera_photo_frame[1001] = {
 		name = "默认",
 		rarity = 2,
 		farme_path = "photo_frame_default",
@@ -85,11 +44,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_camera_photo_frame
-
-	var_1_1[1002] = {
+	pg.base.dorm3d_camera_photo_frame[1002] = {
 		name = "视频",
 		rarity = 2,
 		farme_path = "photo_frame_vcr",
@@ -109,11 +64,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_camera_photo_frame
-
-	var_1_2[1003] = {
+	pg.base.dorm3d_camera_photo_frame[1003] = {
 		name = "票根",
 		rarity = 2,
 		farme_path = "photo_frame_counterfoil",
@@ -133,11 +84,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_camera_photo_frame
-
-	var_1_3[1004] = {
+	pg.base.dorm3d_camera_photo_frame[1004] = {
 		name = "拍立得",
 		rarity = 3,
 		farme_path = "photo_frame_polaroid",
@@ -157,11 +104,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_camera_photo_frame
-
-	var_1_4[1005] = {
+	pg.base.dorm3d_camera_photo_frame[1005] = {
 		name = "卡片",
 		rarity = 3,
 		farme_path = "photo_frame_card",
@@ -181,11 +124,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_camera_photo_frame
-
-	var_1_5[1006] = {
+	pg.base.dorm3d_camera_photo_frame[1006] = {
 		name = "格调风向",
 		rarity = 3,
 		farme_path = "photo_frame_ins",
@@ -205,11 +144,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_camera_photo_frame
-
-	var_1_6[1007] = {
+	pg.base.dorm3d_camera_photo_frame[1007] = {
 		name = "胶片质感",
 		rarity = 3,
 		farme_path = "photo_frame_film",
@@ -229,11 +164,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_camera_photo_frame
-
-	var_1_7[1008] = {
+	pg.base.dorm3d_camera_photo_frame[1008] = {
 		name = "雅致胡桃",
 		rarity = 3,
 		farme_path = "photo_frame_Wood",
@@ -253,11 +184,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_camera_photo_frame
-
-	var_1_8[1009] = {
+	pg.base.dorm3d_camera_photo_frame[1009] = {
 		name = "镜头感",
 		rarity = 3,
 		farme_path = "photo_frame_Focus",
@@ -277,11 +204,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_camera_photo_frame
-
-	var_1_9[1010] = {
+	pg.base.dorm3d_camera_photo_frame[1010] = {
 		name = "影音之窗",
 		rarity = 3,
 		farme_path = "photo_frame_player",
@@ -301,11 +224,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_camera_photo_frame
-
-	var_1_10[1011] = {
+	pg.base.dorm3d_camera_photo_frame[1011] = {
 		name = "言说之间",
 		rarity = 3,
 		farme_path = "photo_frame_phone",
@@ -325,11 +244,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_camera_photo_frame
-
-	var_1_11[1012] = {
+	pg.base.dorm3d_camera_photo_frame[1012] = {
 		name = "奢金印象",
 		rarity = 3,
 		farme_path = "photo_frame_picture",
@@ -349,11 +264,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_camera_photo_frame
-
-	var_1_12[1013] = {
+	pg.base.dorm3d_camera_photo_frame[1013] = {
 		name = "厢庭旧忆 ",
 		rarity = 3,
 		farme_path = "photo_frame_train",
@@ -373,11 +284,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_camera_photo_frame
-
-	var_1_13[1014] = {
+	pg.base.dorm3d_camera_photo_frame[1014] = {
 		name = "显像旧梦",
 		rarity = 3,
 		farme_path = "photo_frame_tv",
@@ -397,8 +304,7 @@ var_0_4.base.dorm3d_camera_photo_frame = {}
 			0
 		}
 	}
-	pg = var_1_13
-	var_1_13.base.dorm3d_camera_photo_frame[1015] = {
+	pg.base.dorm3d_camera_photo_frame[1015] = {
 		name = "全息留影",
 		rarity = 3,
 		farme_path = "photo_frame_projection",

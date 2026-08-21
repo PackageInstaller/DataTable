@@ -42,6 +42,7 @@ function parseData(self, cusId, cusData)
     self.hpSection = cusData.hp_section
     self.showModelld = cusData.show_Modelld
     self.heroTid = cusData.hero_tid
+    self.showBlack = cusData.show_black --
 end
 
 function getPrefabName(self)

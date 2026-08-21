@@ -70,12 +70,13 @@ end
 function active(self, args)
     super.active(self, args)
 
+    GameDispatcher:addEventListener(EventName.UPDATE_GUILD_WAR_SKIP_FIGHT, self.onSkipFight, self)
     self.mEnemyFormation = args.enemyFormation
     self.lastShowBuild = args.buildId
     self.defIndex = 1
     -- self.mTxtID.text = "player_id：" .. args.data.player_id
 
-    -- self.mToggleSkip.isOn = StorageUtil:getNumber1(gstor.ARENA_HELL_SKIP) == 1
+    self.mToggleSkip.isOn = StorageUtil:getNumber1(gstor.GUILD_WAR_SKIP) == 1
 
     for i = 1, #self.mRoundList do
         self.mRoundList[i].transform:Find("Text"):GetComponent(ty.Text).text = _TT(149161) .. i
@@ -87,16 +88,22 @@ end
 
 function deActive(self)
     super.deActive(self)
+    GameDispatcher:removeEventListener(EventName.UPDATE_GUILD_WAR_SKIP_FIGHT, self.onSkipFight, self)
     -- if self.mGroupSkipGO then
     --     gs.GameObject.Destroy(self.mGroupSkipGO)
     --     self.mGroupSkipGO = nil
     -- end
     -- GameDispatcher:removeEventListener(EventName.FIGHT_OUTSIDE_SKIP_RESULT, self.onFightSkipResultHandler, self)
 
-    -- StorageUtil:saveNumber1(gstor.ARENA_HELL_SKIP, self.mToggleSkip.isOn and 1 or 0)
-    -- arenaEntrance.ArenaEntranceManager.isSkipFighting = false
+    StorageUtil:saveNumber1(gstor.GUILD_WAR_SKIP, self.mToggleSkip.isOn and 1 or 0)
+    guildWar.GuildWarManager.isSkipFighting = false
     self:clearHero()
     self:clearTeam()
+
+     if self.mGroupSkipGO then
+        gs.GameObject.Destroy(self.mGroupSkipGO)
+        self.mGroupSkipGO = nil
+    end
 end
 
 function onClickClose(self)
@@ -112,7 +119,7 @@ end
 
 -- 跳过返回
 function onFightSkipResultHandler(self)
-    --arenaEntrance.ArenaEntranceManager.isSkipFighting = false
+    -- arenaEntrance.ArenaEntranceManager.isSkipFighting = false
     self:onClickClose()
 end
 
@@ -126,7 +133,10 @@ function onBtnFightClick(self)
         return
     end
 
-    GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_CURRENT_FIGHT_INFO,{buildId = self.lastShowBuild}) 
+    guildWar.GuildWarManager:setIsFight(self.mToggleSkip.isOn)
+    GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_CURRENT_FIGHT_INFO, {
+        buildId = self.lastShowBuild
+    })
 
     -- if arenaEntrance.ArenaEntranceManager.isSkipFighting == true then
     --     return
@@ -154,6 +164,22 @@ function onBtnFightClick(self)
     -- arenaEntrance.ArenaEntranceManager:setLastClickPlayerData(self.mData)
     -- fight.FightManager:reqBattleEnter(PreFightBattleType.Arena_Peak_Pvp, self.mData.player_id)
     -- arenaEntrance.ArenaEntranceManager.selectEnemyData = nil
+end
+
+function onSkipFight(self)
+    if self.mGroupSkipGO then
+        gs.GameObject.Destroy(self.mGroupSkipGO)
+        self.mGroupSkipGO = nil
+    end
+    -- 跳过战斗
+    self.mGroupSkipGO = gs.ResMgr:LoadGO(UrlManager:getUIPrefabPath("guildWar/GuildWarSkipView.prefab"))
+    gs.TransQuick:SetParentOrg01(self.mGroupSkipGO, GameView.subPop)
+    self:setTimeout(1.5, function()
+        self:onClickClose()
+        -- arenaEntrance.ArenaEntranceManager:setLastClickRefresh(GameManager:getClientTime())
+        GameDispatcher:dispatchEvent(EventName.REQ_GUILD_WAR_ENEMY_PANEL)
+        GameDispatcher:dispatchEvent(EventName.CLOSE_GUILD_WAR_FIGHT_INFO)
+    end)
 end
 
 function onBtnRound1Click(self)

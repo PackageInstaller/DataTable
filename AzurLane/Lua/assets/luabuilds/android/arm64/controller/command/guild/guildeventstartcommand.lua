@@ -1,38 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GuildEventStartCommand", pm.SimpleCommand)
 
-local var_0_0 = "GuildEventStartCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(GuildProxy)
 
-pm = var_0_10003
+	if var_1_0:getData() then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("guild_boss_appear"))
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
+		var_1_0.eventTip = true
 
-function var_0_1.execute(arg_1_0, arg_1_1)
-	getProxy = var_1_10002
-	GuildProxy = var_1_10004
-
-	local var_1_0 = var_1_10002(var_1_10004)
-
-	if var_2.getData(var_1_0) then
-		pg = var_1_10004
-
-		local var_1_1 = var_1_10004.TipsMgr.GetInstance()
-		local var_1_2 = var_4.ShowTips
-
-		i18n = var_1_10007
-
-		var_1_2(var_1_1, var_1_10007("guild_boss_appear"))
-
-		var_2.eventTip = true
-
-		local var_1_3 = arg_1_0
-		local var_1_4 = arg_1_0.sendNotification
-
-		GAME = var_7
-
-		var_1_4(var_1_3, var_7.BOSS_EVENT_START_DONE)
+		arg_1_0:sendNotification(GAME.BOSS_EVENT_START_DONE)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

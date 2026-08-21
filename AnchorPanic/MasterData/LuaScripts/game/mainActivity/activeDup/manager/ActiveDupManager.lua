@@ -1,7 +1,7 @@
 -- 1.1副本活动
 module("mainActivity.ActiveDupManager", Class.impl(Manager))
 
---[[ 
+--[[
     主线关卡数据管理器
     @autor Jacob 
 ]]
@@ -69,7 +69,7 @@ function parseStageStepConfig(self)
             self.mMaxConfigStarNum[vo.stageType] = 0
         end
         self.mMaxConfigStarNum[vo.stageType] = self.mMaxConfigStarNum[vo.stageType] > vo.starNum and
-                                                   self.mMaxConfigStarNum[vo.stageType] or vo.starNum
+        self.mMaxConfigStarNum[vo.stageType] or vo.starNum
     end
 end
 
@@ -135,35 +135,51 @@ function getCanRecAll(self)
 end
 
 function getCanRecAllByStyle(self, style)
-    return self:getCanOpenRed(style)
-    -- if not self.mStageStepDic then
-    --     self:parseStageStepConfig()
-    -- end
-    -- local red = false
-    -- local allStarNum = self:getAllStarNumByStyle(style)
-    -- for _, taskVo in pairs(self.mStageStepDic) do
-    --     local mAwardMsgVo = self:getStageAwardByStep(taskVo.stepId)
-    --     if taskVo.starNum <= allStarNum and mAwardMsgVo == nil and taskVo.stageType == style then
-    --         return true
-    --     end
-    -- end
-    -- return red or self:getCanOpenRed(style)
+    local isMain = sysParam.SysParamManager:getValue(SysParamType.MainActivityType) == 1
+    if isMain then
+        return self:getCanOpenRed(style)
+    else
+        if not self.mStageStepDic then
+            self:parseStageStepConfig()
+        end
+        local red = false
+        local allStarNum = self:getAllStarNumByStyle(style)
+        for _, taskVo in pairs(self.mStageStepDic) do
+            local mAwardMsgVo = self:getStageAwardByStep(taskVo.stepId)
+            if taskVo.starNum <= allStarNum and mAwardMsgVo == nil and taskVo.stageType == style then
+                return true
+            end
+        end
+        return red or self:getCanOpenRed(style)
+    end
 end
 
 function getCanOpenRed(self, style)
     local red = false
     local activityId = 0
     local isOpen = true
-    if style == mainActivity.ActiveDupStyleType.Easy then
-        activityId = activity.ActivityId.NomalLevel
-    elseif style == mainActivity.ActiveDupStyleType.Difficulty then
-        --local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Easy)
-        --isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Easy)
-        activityId = activity.ActivityId.DifficultyLevel
-    elseif style == mainActivity.ActiveDupStyleType.Hard then
-        --local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Difficulty)
-        --isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Difficulty)
-        activityId = activity.ActivityId.HellLevel
+    local isMain = sysParam.SysParamManager:getValue(SysParamType.MainActivityType) == 1
+
+    if isMain then
+        if style == mainActivity.ActiveDupStyleType.Easy then
+            activityId = activity.ActivityId.NomalLevel
+        elseif style == mainActivity.ActiveDupStyleType.Difficulty then
+            activityId = activity.ActivityId.DifficultyLevel
+        elseif style == mainActivity.ActiveDupStyleType.Hard then
+            activityId = activity.ActivityId.HellLevel
+        end
+    else
+        if style == mainActivity.ActiveDupStyleType.Easy then
+            activityId = activity.ActivityId.NomalLevel
+        elseif style == mainActivity.ActiveDupStyleType.Difficulty then
+            local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Easy)
+            isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Easy)
+            activityId = activity.ActivityId.DifficultyLevel
+        elseif style == mainActivity.ActiveDupStyleType.Hard then
+            local newestDupId = mainActivity.ActiveDupManager:getNewestDupId(mainActivity.ActiveDupStyleType.Difficulty)
+            isOpen = newestDupId >= mainActivity.ActiveDupManager:getFirstDupByStype(mainActivity.ActiveDupStyleType.Difficulty)
+            activityId = activity.ActivityId.HellLevel
+        end
     end
 
     local prefixVersion = download.ResDownLoadManager:getServerVersionValue(gs.AssetSetting.PrefixVersionKey)
@@ -262,13 +278,6 @@ function parseMsg(self, msg)
         local passStageId = msg.dup_info[i].dup_id
 
         self.m_passStageDic[passStageId] = true
-
-        -- 通知上报关卡信息
-        if (not isInit and not self.mRecordPassStageDic[passStageId]) then
-            local stageVo = self:getStageVo(passStageId)
-            sdk.SdkManager:notifyRoleStagePassSuc(stageVo.stepId,
-                self:getStyle() .. "-" .. string.format("%02d", stageVo.sort))
-        end
         self.mRecordPassStageDic[passStageId] = msg.dup_info[i].star_list
     end
     self:dispatchEvent(self.EVENT_DUP_UPDATE)
@@ -293,11 +302,6 @@ end
 function updateStageInfo(self, msg)
     local dupId = msg.battle_end_dup.dup_id
     self.m_passStageDic[dupId] = true
-    if (not self.mRecordPassStageDic[dupId]) then
-        local stageVo = self:getStageVo(dupId)
-        sdk.SdkManager:notifyRoleStagePassSuc(stageVo.stepId,
-            self:getStyle() .. "-" .. string.format("%02d", stageVo.sort))
-    end
     if msg.battle_end_dup.star_list ~= nil then
         local m_starList = self.mRecordPassStageDic[dupId]
         if m_starList == nil then
@@ -418,6 +422,9 @@ function getFirstDupByStype(self, style)
     -- elseif style == mainActivity.ActiveDupStyleType.Hard then
     --     id = 8010
     -- end
+    if self.styleMaxIdDic == nil then
+        self:parseStageConfig()
+    end
     return self.styleMaxIdDic[style]
     -- return style == 0 and 1001 or 1022
 end

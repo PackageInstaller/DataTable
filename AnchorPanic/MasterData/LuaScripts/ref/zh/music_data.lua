@@ -148,6 +148,108 @@ local music_data=
 	[64]={ title="boss一阶战斗曲", voice="", intro="music_battle_boss_3_a_intro.prefab", loop="music_battle_boss_3_a_loop.prefab"
 },
 	[65]={ title="boss二阶战斗曲", voice="", intro="music_battle_boss_3_b_intro.prefab", loop="music_battle_boss_3_b_loop.prefab"
+},
+	[66]={ title="2.1活动剧情音乐", voice="music_juqing_15.prefab", intro="", loop=""
+},
+	[67]={ title="搞笑和搞怪的情节", voice="music_juqing_16.prefab", intro="", loop=""
+},
+	[68]={ title="角色告白或者表达一些深度情绪", voice="music_juqing_17.prefab", intro="", loop=""
+},
+	[69]={ title="配合剧情演出的音乐，主要体现在故事中一些悲伤、痛苦的情节。比如重要之人死去，无法缅怀等等", voice="", intro="music_juqing_18_intro.prefab", loop="music_juqing_18_loop.prefab"
+},
+	[70]={ title="配合剧情演出的音乐，主要体现在故事推进，重要剧情以及对话博弈时的通用音乐", voice="", intro="music_juqing_19_intro.prefab", loop="music_juqing_19_loop.prefab"
+},
+	[71]={ title="配合剧情演出的音乐，主要体现在平和描述，日常感", voice="music_juqing_20.prefab", intro="", loop=""
+},
+	[72]={ title="2025年新年音乐", voice="music_juqing_21.prefab", intro="", loop=""
+},
+	[73]={ title="2025年新年音乐循环音乐", voice="", intro="music_juqing_21_intro.prefab", loop="music_juqing_21_loop.prefab"
+},
+	[74]={ title="2025年新年音乐的抒情段落", voice="music_juqing_21_loop2.prefab", intro="", loop=""
+},
+	[75]={ title="2.6音乐1", voice="", intro="music_juqing_22_intro.prefab", loop="music_juqing_22_loop.prefab"
+},
+	[76]={ title="2.6音乐2", voice="", intro="music_juqing_23_intro.prefab", loop="music_juqing_23_loop.prefab"
+},
+	[77]={ title="2.7音乐", voice="", intro="music_juqing_24_intro.prefab", loop="music_juqing_24_loop.prefab"
+},
+	[78]={ title="3D宿舍", voice="music_3Ddorm_1.prefab", intro="", loop=""
+},
+	[79]={ title="2.8音乐", voice="", intro="music_juqing_25_intro.prefab", loop="music_juqing_25_loop.prefab"
+},
+	[80]={ title="2.9音乐1", voice="", intro="music_juqing_26_intro.prefab", loop="music_juqing_26_loop.prefab"
+},
+	[81]={ title="2.9音乐2", voice="", intro="music_juqing_27_intro.prefab", loop="music_juqing_27_loop.prefab"
+},
+	[82]={ title="3.0音乐", voice="", intro="music_juqing_28_intro.prefab", loop="music_juqing_28_loop.prefab"
+},
+	[83]={ title="艾丽西亚大宿舍", voice="music_3Ddorm_2.prefab", intro="", loop=""
+},
+	[84]={ title="剧情音乐告白", voice="music_juqing_29.prefab", intro="", loop=""
+},
+	[85]={ title="结婚音乐", voice="", intro="music_marriage_1_intro.prefab", loop="music_marriage_1_loop.prefab"
+},
+	[86]={ title="3.0boss战斗一阶段", voice="", intro="music_battle_boss_4_a_intro.prefab", loop="music_battle_boss_4_a_loop.prefab"
+},
+	[87]={ title="3.0boss战斗二阶段", voice="", intro="music_battle_boss_4_b_intro.prefab", loop="music_battle_boss_4_b_loop.prefab"
+},
+	[88]={ title="3.1音乐", voice="music_juqing_30.prefab", intro="", loop=""
+},
+	[89]={ title="3.2音乐1", voice="music_juqing_31.prefab", intro="", loop=""
+},
+	[90]={ title="3.2音乐2", voice="music_juqing_32.prefab", intro="", loop=""
+},
+	[91]={ title="3.2音乐3", voice="music_juqing_33.prefab", intro="", loop=""
+},
+	[92]={ title="丽丽拉大宿舍", voice="music_3Ddorm_4.prefab", intro="", loop=""
+},
+	[93]={ title="3.3音乐1", voice="", intro="music_juqing_34_intro.prefab", loop="music_juqing_34_loop.prefab"
+},
+	[94]={ title="3.3音乐2", voice="", intro="music_juqing_35_intro.prefab", loop="music_juqing_35_loop.prefab"
+},
+	[95]={ title="3.3音乐3", voice="", intro="music_juqing_36_intro.prefab", loop="music_juqing_36_loop.prefab"
+},
+	[96]={ title="3.3音乐4", voice="music_juqing_37.prefab", intro="", loop=""
+},
+	[97]={ title="3.3音乐5", voice="", intro="music_juqing_38_intro.prefab", loop="music_juqing_38_loop.prefab"
+},
+	[98]={ title="3.3音乐6", voice="music_juqing_36.prefab", intro="", loop=""
+},
+	[99]={ title="暴风雪", voice="music_juqing_blizzard.prefab", intro="", loop=""
+},
+	[100]={ title="3.4音乐1", voice="music_juqing_39.prefab", intro="", loop=""
+},
+	[101]={ title="3.4音乐2", voice="", intro="music_juqing_40_intro.prefab", loop="music_juqing_40_loop.prefab"
+},
+	[102]={ title="鸣晔大宿舍", voice="", intro="music_3Ddorm_5_intro.prefab", loop="music_3Ddorm_5_loop.prefab"
+},
+	[103]={ title="3.5音乐", voice="", intro="music_juqing_41_intro.prefab", loop="music_juqing_41_loop.prefab"
+},
+	[104]={ title="3.6音乐1", voice="music_juqing_42.prefab", intro="", loop=""
+},
+	[105]={ title="3.6音乐2", voice="", intro="music_juqing_42_intro.prefab", loop="music_juqing_42_loop.prefab"
+},
+	[106]={ title="3.6音乐3", voice="music_juqing_43.prefab", intro="", loop=""
+},
+	[107]={ title="3.6音乐4", voice="", intro="music_juqing_43_intro.prefab", loop="music_juqing_43_loop.prefab"
+},
+	[108]={ title="篝火循环音乐", voice="music_juqing_campfire.prefab", intro="", loop=""
+},
+	[109]={ title="赫梅克角色印象曲，激烈的部分", voice="", intro="music_juqing_44_intro.prefab", loop="music_juqing_44_loop.prefab"
+},
+	[110]={ title="赫梅克角色印象曲，完整版", voice="music_juqing_44.prefab", intro="", loop=""
+},
+	[111]={ title="3.7音乐：因斐诺及相关剧情使用，表达王国由盛转衰的必然性和悲凉", voice="music_juqing_45.prefab", intro="", loop=""
+},
+	[112]={ title="场景:悠哉游哉，不慌不忙，庆典进行时", voice="music_juqing_46.prefab", intro="", loop=""
+},
+	[113]={ title="背景音乐，应用于主角涅普露牺牲和浴火重生时的音乐，空灵、悲伤为音乐的主旋律，搭配于之一同的人声吟唱，以安静的曲调表达牺牲之举的壮美和苍凉", voice="music_juqing_47.prefab", intro="", loop=""
+},
+	[114]={ title="通用音乐，用以描绘某种悠久、遥远的回忆", voice="music_juqing_48.prefab", intro="", loop=""
+},
+	[115]={ title="4.0boss战音乐", voice="music_battle_4.0_loop.prefab", intro="", loop=""
+},
+	[116]={ title="涅普露大宿舍", voice="music_juqing_49.prefab", intro="", loop=""
 }
 }
 

@@ -136,6 +136,9 @@ function updateView(self)
     self.favLv = self.cusHeroVo.favorableLevel
     self.favorableData = self.heroFavorableData.favorableData
     self.mMaxLv = sysParam.SysParamManager:getValue(SysParamType.MAX_FAVORABLE_LV)
+    if self.cusHeroVo.isPromise == 1 then
+        self.mMaxLv = sysParam.SysParamManager:getValue(SysParamType.MARRIAGE_MAX_LV)
+    end
 
     if self.favLv >= self.mMaxLv then
         self.mCurrentInfoTxt.text = _TT(41706) -- "-已经是最大等级了-"
@@ -156,7 +159,7 @@ function updateView(self)
 
     self.needExp = 0
     for lv, data in pairs(self.heroFavorableData.favorableData) do
-        if lv >= self.cusHeroVo.favorableLevel then
+        if lv >= self.cusHeroVo.favorableLevel and lv < self.mMaxLv then
             self.needExp = self.needExp + data.favorableExp
         end
     end
@@ -178,8 +181,9 @@ function updateView(self)
         vo.tweenId = i
         table.insert(giftList, vo)
     end
-    self.mGiveEmpty:SetActive(#giftList <= 0)
-    if self.mGiveScrollView.Count <= 0 then
+    local giftTypeCount = #giftList
+    self.mGiveEmpty:SetActive(giftTypeCount <= 0)
+    if giftTypeCount == 0 or self.mGiveScrollView.Count ~= giftTypeCount then
         self.mGiveScrollView.DataProvider = giftList
     else
         self.mGiveScrollView:ReplaceAllDataProvider(giftList)
@@ -189,7 +193,6 @@ function updateView(self)
         self.favorableData[i].cusLv = self.favLv
     end
 
-    self.mMaxLv = sysParam.SysParamManager:getValue(SysParamType.MAX_FAVORABLE_LV)
     if self.favLv == self.mMaxLv then
         self.mBtnGiveProps:SetActive(false)
         self.mImgMax:SetActive(true)

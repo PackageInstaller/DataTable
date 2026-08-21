@@ -1,263 +1,118 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandAchievementPage", import("...base.IslandBasePage"))
 
-local var_0_0 = "IslandAchievementPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.IslandBasePage"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandAchievementUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	setText = var_1_10001
+function var_0_0.OnLoaded(arg_2_0)
+	setText(arg_2_0._tf:Find("top/title/Text"), i18n("island_achievement_title"))
+	setText(arg_2_0._tf:Find("top/total/Text"), i18n("island_achv_total"))
 
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_3.Find(var_2_0, "top/title/Text")
+	arg_2_0.totalTF = arg_2_0._tf:Find("top/total/value")
 
-	i18n = var_1_10004
+	local var_2_0 = arg_2_0._tf:Find("view/content")
 
-	var_1_10001(var_2_1, var_1_10004("island_achievement_title"))
-
-	setText = var_1_10001
-
-	local var_2_2 = arg_2_0._tf
-	local var_2_3 = var_3.Find(var_2_2, "top/total/Text")
-
-	i18n = var_4
-
-	var_1_10001(var_2_3, var_4("island_achv_total"))
-
-	local var_2_4 = arg_2_0._tf
-
-	arg_2_0.totalTF = var_1.Find(var_2_4, "top/total/value")
-
-	local var_2_5 = arg_2_0._tf
-	local var_2_6 = var_1.Find(var_2_5, "view/content")
-
-	UIItemList = var_1_10002
-	arg_2_0.uiList = var_1_10002.New(var_2_6, var_2_6:Find("tpl"))
+	arg_2_0.uiList = UIItemList.New(var_2_0, var_2_0:Find("tpl"))
 
 	return
 end
 
-function var_0_1.OnInit(arg_3_0)
-	onButton = var_1_10001
-
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_4.Find(var_3_1, "top/back")
-
-	local function var_3_3()
-		local var_4_0 = arg_3_0
-
-		var_0.Hide(var_4_0)
+function var_0_0.OnInit(arg_3_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("top/back"), function()
+		arg_3_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_3_1
-
-	var_1_10001(var_3_0, var_3_2, var_3_3, var_3_1)
-
-	local var_3_4 = arg_3_0.uiList
-
-	var_1.make(var_3_4, function(arg_5_0, arg_5_1, arg_5_2)
-		UIItemList = var_2_10003
-
-		if arg_5_0 == var_2_10003.EventInit then
-			local var_5_0 = arg_3_0
-
-			var_3.InitItem(var_5_0, arg_5_1, arg_5_2)
-		else
-			UIItemList = var_3
-
-			if arg_5_0 == var_3.EventUpdate then
-				local var_5_1 = arg_3_0
-
-				var_3.UpdateItem(var_5_1, arg_5_1, arg_5_2)
-			end
+	end, SFX_PANEL)
+	arg_3_0.uiList:make(function(arg_5_0, arg_5_1, arg_5_2)
+		if arg_5_0 == UIItemList.EventInit then
+			arg_3_0:InitItem(arg_5_1, arg_5_2)
+		elseif arg_5_0 == UIItemList.EventUpdate then
+			arg_3_0:UpdateItem(arg_5_1, arg_5_2)
 		end
 
 		return
 	end)
 
-	pg = var_1
-	arg_3_0.typeIds = var_1.island_achievement_group.all
+	arg_3_0.typeIds = pg.island_achievement_group.all
 
 	return
 end
 
-function var_0_1.OnShow(arg_6_0)
+function var_0_0.OnShow(arg_6_0)
 	arg_6_0:Flush()
 
 	return
 end
 
-function var_0_1.AddListeners(arg_7_0)
-	local var_7_0 = arg_7_0
-	local var_7_1 = arg_7_0.AddListener
-
-	GAME = var_1_10004
-
-	var_7_1(var_7_0, var_1_10004.ISLAND_GET_ACHV_AWARD_DONE, arg_7_0.Flush)
+function var_0_0.AddListeners(arg_7_0)
+	arg_7_0:AddListener(GAME.ISLAND_GET_ACHV_AWARD_DONE, arg_7_0.Flush)
 
 	return
 end
 
-function var_0_1.RemoveListeners(arg_8_0)
-	local var_8_0 = arg_8_0
-	local var_8_1 = arg_8_0.RemoveListener
-
-	GAME = var_1_10004
-
-	var_8_1(var_8_0, var_1_10004.ISLAND_GET_ACHV_AWARD_DONE, arg_8_0.Flush)
+function var_0_0.RemoveListeners(arg_8_0)
+	arg_8_0:RemoveListener(GAME.ISLAND_GET_ACHV_AWARD_DONE, arg_8_0.Flush)
 
 	return
 end
 
-function var_0_1.Flush(arg_9_0)
-	getProxy = var_1_10001
-	IslandProxy = var_1_10003
+function var_0_0.Flush(arg_9_0)
+	arg_9_0.achvAgency = getProxy(IslandProxy):GetIsland():GetAchievementAgency()
 
-	local var_9_0 = var_1_10001(var_1_10003)
-	local var_9_1 = var_1.GetIsland(var_9_0)
-
-	arg_9_0.achvAgency = var_1.GetAchievementAgency(var_9_1)
-	setText = var_1
-
-	local var_9_2 = arg_9_0.totalTF
-	local var_9_3 = arg_9_0.achvAgency
-	local var_9_4 = #var_4.GetGotList(var_9_3)
-	local var_9_5 = "/"
-	local var_9_6 = arg_9_0.achvAgency
-
-	var_1(var_9_2, var_9_4 .. var_9_5 .. var_6.GetTotalCnt(var_9_6))
-
-	local var_9_7 = arg_9_0.uiList
-
-	var_1.align(var_9_7, #arg_9_0.typeIds)
+	setText(arg_9_0.totalTF, #arg_9_0.achvAgency:GetGotList() .. "/" .. arg_9_0.achvAgency:GetTotalCnt())
+	arg_9_0.uiList:align(#arg_9_0.typeIds)
 
 	return
 end
 
-function var_0_1.InitItem(arg_10_0, arg_10_1, arg_10_2)
+function var_0_0.InitItem(arg_10_0, arg_10_1, arg_10_2)
+	local var_10_0 = arg_10_0.typeIds[arg_10_1 + 1]
+
 	arg_10_2.name = arg_10_0.typeIds[arg_10_1 + 1]
-	pg = var_4
 
-	local var_10_0 = var_4.island_achievement_group[var_3]
-
-	LoadImageSpriteAtlasAsync = var_1_10005
-
-	var_1_10005("islandachievement", var_10_0.icon, arg_10_2:Find("icon"), true)
-
-	setText = var_1_10005
-
-	var_1_10005(arg_10_2:Find("name"), var_10_0.name)
-
-	onButton = var_1_10005
-
-	local var_10_1 = arg_10_0
-	local var_10_2 = arg_10_2
-
-	local function var_10_3()
-		local var_11_0 = arg_10_0
-		local var_11_1 = var_0.OpenPage
-
-		IslandAchvDetailPage = var_2_10003
-
-		var_11_1(var_11_0, var_2_10003, var_0)
+	LoadImageSpriteAtlasAsync("islandachievement", pg.island_achievement_group[arg_10_0.typeIds[arg_10_1 + 1]].icon, arg_10_2:Find("icon"), true)
+	setText(arg_10_2:Find("name"), pg.island_achievement_group[arg_10_0.typeIds[arg_10_1 + 1]].name)
+	onButton(arg_10_0, arg_10_2, function()
+		arg_10_0:OpenPage(IslandAchvDetailPage, var_10_0)
 
 		return
-	end
-
-	SFX_PANEL = var_10
-
-	var_1_10005(var_10_1, var_10_2, var_10_3, var_10)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.UpdateItem(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0 = arg_12_0.typeIds[arg_12_1 + 1]
+function var_0_0.UpdateItem(arg_12_0, arg_12_1, arg_12_2)
+	local var_12_0 = {}
 
-	pg = var_4
+	for iter_12_0, iter_12_1 in ipairs(pg.island_achievement_group[arg_12_0.typeIds[arg_12_1 + 1]].achievement_list) do
+		local var_12_1 = arg_12_0.achvAgency:GetGroup(iter_12_1)
 
-	local var_12_1 = var_4.island_achievement_group[var_12_0].achievement_list
-	local var_12_2 = {}
-
-	ipairs = var_1_10006
-
-	for iter_12_0, iter_12_1 in var_1_10006(var_12_1) do
-		local var_12_3 = arg_12_0.achvAgency
-		local var_12_4 = var_11.GetGroup(var_12_3, iter_12_1)
-
-		ipairs = var_1_10012
-
-		for iter_12_2, iter_12_3 in var_1_10012(var_12_4:GetSortAchvList()) do
-			table = var_1_10017
-
-			var_1_10017.insert(var_12_2, iter_12_3)
+		for iter_12_2, iter_12_3 in ipairs(var_12_1:GetSortAchvList()) do
+			table.insert(var_12_0, iter_12_3)
 		end
 	end
 
-	underscore = var_6
-
-	local var_12_5 = var_6.reduce(var_12_2, 0, function(arg_13_0, arg_13_1)
-		local var_13_0 = arg_13_1:GetStatus()
-
-		IslandAchievement = var_2_10003
-
-		return arg_13_0 + (var_13_0 == var_2_10003.STATUS.GOT and 1 or 0)
+	local var_12_2 = underscore.reduce(var_12_0, 0, function(arg_13_0, arg_13_1)
+		return arg_13_0 + (arg_13_1:GetStatus() == IslandAchievement.STATUS.GOT and 1 or 0)
 	end)
-
-	underscore = var_7
-
-	local var_12_6 = var_7.reduce(var_12_2, 0, function(arg_14_0, arg_14_1)
+	local var_12_3 = underscore.reduce(var_12_0, 0, function(arg_14_0, arg_14_1)
 		return arg_14_0 + (arg_14_1:IsHideType() and 0 or 1)
 	end)
 
-	setText = var_8
+	setText(arg_12_2:Find("progress/cur"), var_12_2)
+	setText(arg_12_2:Find("progress/all"), "/" .. var_12_3)
 
-	var_8(arg_12_2:Find("progress/cur"), var_12_5)
+	arg_12_2:Find("bar"):GetComponent(typeof(Image)).fillAmount = var_12_2 / var_12_3
 
-	setText = var_8
+	local var_12_4 = var_12_2 == var_12_3
 
-	var_8(arg_12_2:Find("progress/all"), "/" .. var_12_6)
-
-	local var_12_7 = arg_12_2:Find("bar")
-	local var_12_8 = var_8.GetComponent
-
-	typeof = var_11
-	Image = var_13
-	var_12_8(var_12_7, var_11(var_13)).fillAmount = var_12_5 / var_12_6
-
-	local var_12_9 = var_12_5 == var_12_6
-
-	setActive = var_9
-
-	var_9(arg_12_2:Find("bg"), not var_12_9)
-
-	setActive = var_9
-
-	var_9(arg_12_2:Find("bg_all"), var_12_9)
-
-	underscore = var_9
-
-	local var_12_10 = var_9.any(var_12_2, function(arg_15_0)
-		local var_15_0 = arg_15_0:GetStatus()
-
-		IslandAchievement = var_2_10002
-
-		return var_15_0 == var_2_10002.STATUS.GET
-	end)
-
-	setActive = var_12_7
-
-	var_12_7(arg_12_2:Find("name/tip"), var_12_10)
+	setActive(arg_12_2:Find("bg"), not (var_12_2 == var_12_3))
+	setActive(arg_12_2:Find("bg_all"), var_12_4)
+	setActive(arg_12_2:Find("name/tip"), (underscore.any(var_12_0, function(arg_15_0)
+		return arg_15_0:GetStatus() == IslandAchievement.STATUS.GET
+	end)))
 
 	return
 end
 
-return var_0_1
+return var_0_0

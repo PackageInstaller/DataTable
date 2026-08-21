@@ -1,8 +1,4 @@
-﻿local var_0_0 = {
-	"返回主界面"
-}
-
-return {
+﻿return {
 	id = "S016",
 	events = {
 		{
@@ -12,7 +8,9 @@ return {
 				dir = -1,
 				posY = 223.26,
 				posX = -136.21,
-				text = var_0_0[1]
+				text = ({
+					"返回主界面"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,

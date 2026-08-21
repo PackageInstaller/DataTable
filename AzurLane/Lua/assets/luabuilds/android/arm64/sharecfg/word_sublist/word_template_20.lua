@@ -1,15 +1,10 @@
-﻿pg = var_0_10000
+﻿pg = pg or {}
+pg.word_template_20 = {}
 
-local var_0_0
+local var_0_0 = pg.word_template_20
 
-var_0_0 = var_0_10000 or {}
-pg = pg
-var_0.word_template_20 = {}
-
-local var_0_1 = var_0.word_template_20
-
-local function var_0_2()
-	var_0_1.ㄊ = {
+function temp()
+	var_0_0.ㄊ = {
 		this = {
 			this = true
 		}
@@ -18,12 +13,10 @@ local function var_0_2()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_3()
-	var_0_1.ㄋ = {
+function temp()
+	var_0_0.ㄋ = {
 		this = {
 			this = true
 		}
@@ -32,12 +25,10 @@ local function var_0_3()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_4()
-	var_0_1.ㄌ = {
+function temp()
+	var_0_0.ㄌ = {
 		this = {
 			this = true
 		}
@@ -46,12 +37,10 @@ local function var_0_4()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_5()
-	var_0_1.ㄍ = {
+function temp()
+	var_0_0.ㄍ = {
 		this = {
 			this = true
 		}
@@ -60,12 +49,10 @@ local function var_0_5()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_6()
-	var_0_1.ㄎ = {
+function temp()
+	var_0_0.ㄎ = {
 		this = {
 			this = true
 		}
@@ -74,12 +61,10 @@ local function var_0_6()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_7()
-	var_0_1.ㄏ = {
+function temp()
+	var_0_0.ㄏ = {
 		this = {
 			this = true
 		}
@@ -88,12 +73,10 @@ local function var_0_7()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_8()
-	var_0_1.ㄐ = {
+function temp()
+	var_0_0.ㄐ = {
 		this = {
 			this = true
 		}
@@ -102,12 +85,10 @@ local function var_0_8()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_9()
-	var_0_1.ㄑ = {
+function temp()
+	var_0_0.ㄑ = {
 		this = {
 			this = true
 		}
@@ -116,12 +97,10 @@ local function var_0_9()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_10()
-	var_0_1.ㄒ = {
+function temp()
+	var_0_0.ㄒ = {
 		this = {
 			this = true
 		}
@@ -130,12 +109,10 @@ local function var_0_10()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_11()
-	var_0_1.ㄓ = {
+function temp()
+	var_0_0.ㄓ = {
 		this = {
 			this = true
 		}
@@ -144,12 +121,10 @@ local function var_0_11()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_12()
-	var_0_1.ㄔ = {
+function temp()
+	var_0_0.ㄔ = {
 		this = {
 			this = true
 		}
@@ -158,12 +133,10 @@ local function var_0_12()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_13()
-	var_0_1.ㄕ = {
+function temp()
+	var_0_0.ㄕ = {
 		this = {
 			this = true
 		}
@@ -172,12 +145,10 @@ local function var_0_13()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_14()
-	var_0_1.ㄖ = {
+function temp()
+	var_0_0.ㄖ = {
 		this = {
 			this = true
 		}
@@ -186,12 +157,10 @@ local function var_0_14()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_15()
-	var_0_1.ㄗ = {
+function temp()
+	var_0_0.ㄗ = {
 		this = {
 			this = true
 		}
@@ -200,12 +169,10 @@ local function var_0_15()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_16()
-	var_0_1.ㄘ = {
+function temp()
+	var_0_0.ㄘ = {
 		this = {
 			this = true
 		}
@@ -214,12 +181,10 @@ local function var_0_16()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_17()
-	var_0_1.ㄙ = {
+function temp()
+	var_0_0.ㄙ = {
 		this = {
 			this = true
 		},
@@ -261,12 +226,10 @@ local function var_0_17()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_18()
-	var_0_1.ㄚ = {
+function temp()
+	var_0_0.ㄚ = {
 		this = {
 			this = true
 		}
@@ -275,12 +238,10 @@ local function var_0_18()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_19()
-	var_0_1.ㄛ = {
+function temp()
+	var_0_0.ㄛ = {
 		this = {
 			this = true
 		}
@@ -289,12 +250,10 @@ local function var_0_19()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_20()
-	var_0_1.ㄜ = {
+function temp()
+	var_0_0.ㄜ = {
 		this = {
 			this = true
 		}
@@ -303,12 +262,10 @@ local function var_0_20()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_21()
-	var_0_1.ㄝ = {
+function temp()
+	var_0_0.ㄝ = {
 		this = {
 			this = true
 		},
@@ -333,12 +290,10 @@ local function var_0_21()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_22()
-	var_0_1.ㄞ = {
+function temp()
+	var_0_0.ㄞ = {
 		this = {
 			this = true
 		}
@@ -347,12 +302,10 @@ local function var_0_22()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_23()
-	var_0_1.ㄟ = {
+function temp()
+	var_0_0.ㄟ = {
 		this = {
 			this = true
 		}
@@ -361,12 +314,10 @@ local function var_0_23()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_24()
-	var_0_1.ㄠ = {
+function temp()
+	var_0_0.ㄠ = {
 		this = {
 			this = true
 		}
@@ -375,12 +326,10 @@ local function var_0_24()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_25()
-	var_0_1.ㄡ = {
+function temp()
+	var_0_0.ㄡ = {
 		this = {
 			this = true
 		}
@@ -389,12 +338,10 @@ local function var_0_25()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_26()
-	var_0_1.ㄢ = {
+function temp()
+	var_0_0.ㄢ = {
 		this = {
 			this = true
 		}
@@ -403,12 +350,10 @@ local function var_0_26()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_27()
-	var_0_1.ㄣ = {
+function temp()
+	var_0_0.ㄣ = {
 		this = {
 			this = true
 		}
@@ -417,12 +362,10 @@ local function var_0_27()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_28()
-	var_0_1.ㄤ = {
+function temp()
+	var_0_0.ㄤ = {
 		this = {
 			this = true
 		}
@@ -431,12 +374,10 @@ local function var_0_28()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_29()
-	var_0_1.ㄥ = {
+function temp()
+	var_0_0.ㄥ = {
 		this = {
 			this = true
 		}
@@ -445,12 +386,10 @@ local function var_0_29()
 	return
 end
 
-temp = temp
+temp()
 
-var_2()
-
-local function var_0_30()
-	var_0_1.ㄦ = {
+function temp()
+	var_0_0.ㄦ = {
 		this = {
 			this = true
 		}
@@ -459,8 +398,6 @@ local function var_0_30()
 	return
 end
 
-temp = temp
-
-var_2()
+temp()
 
 return

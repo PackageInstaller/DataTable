@@ -1,245 +1,98 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandIllustrationCard")
+﻿local var_0_0 = class("IslandIllustrationCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
 	arg_1_0._tf = arg_1_1.transform
+	arg_1_0.bgTF = arg_1_0._tf:Find("bg")
+	arg_1_0.bottomTF = arg_1_0._tf:Find("bottom")
+	arg_1_0.nameTF = arg_1_0._tf:Find("name")
+	arg_1_0.scrollNameTF = arg_1_0._tf:Find("scrollName/Text")
+	arg_1_0.iconTF = arg_1_0._tf:Find("mask/icon")
+	arg_1_0.selectedTF = arg_1_0._tf:Find("selected")
+	arg_1_0.phaseTF = arg_1_0._tf:Find("phase")
+	arg_1_0.lockTF = arg_1_0._tf:Find("lock")
+	arg_1_0.canUnLockTF = arg_1_0._tf:Find("can_unlock")
 
-	local var_1_0 = arg_1_0._tf
+	setText(arg_1_0.canUnLockTF:Find("Text"), i18n("island_guide_active"))
 
-	arg_1_0.bgTF = var_2.Find(var_1_0, "bg")
-
-	local var_1_1 = arg_1_0._tf
-
-	arg_1_0.bottomTF = var_2.Find(var_1_1, "bottom")
-
-	local var_1_2 = arg_1_0._tf
-
-	arg_1_0.nameTF = var_2.Find(var_1_2, "name")
-
-	local var_1_3 = arg_1_0._tf
-
-	arg_1_0.scrollNameTF = var_2.Find(var_1_3, "scrollName/Text")
-
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0.iconTF = var_2.Find(var_1_4, "mask/icon")
-
-	local var_1_5 = arg_1_0._tf
-
-	arg_1_0.selectedTF = var_2.Find(var_1_5, "selected")
-
-	local var_1_6 = arg_1_0._tf
-
-	arg_1_0.phaseTF = var_2.Find(var_1_6, "phase")
-
-	local var_1_7 = arg_1_0._tf
-
-	arg_1_0.lockTF = var_2.Find(var_1_7, "lock")
-
-	local var_1_8 = arg_1_0._tf
-
-	arg_1_0.canUnLockTF = var_2.Find(var_1_8, "can_unlock")
-	setText = var_2
-
-	local var_1_9 = arg_1_0.canUnLockTF
-	local var_1_10 = var_4.Find(var_1_9, "Text")
-
-	i18n = var_5
-
-	var_2(var_1_10, var_5("island_guide_active"))
-
-	local var_1_11 = arg_1_0._tf
-
-	arg_1_0.tipTF = var_2.Find(var_1_11, "tip")
+	arg_1_0.tipTF = arg_1_0._tf:Find("tip")
 
 	return
 end
 
 function var_0_0.Update(arg_2_0, arg_2_1, arg_2_2)
 	arg_2_0.illustration = arg_2_1
+	arg_2_0._go.name = arg_2_0.illustration.id
 
-	local var_2_0 = arg_2_0._go
+	GetImageSpriteFromAtlasAsync(arg_2_0.illustration:GetIcon(), "", arg_2_0.iconTF, true)
 
-	var_2_0.name = arg_2_0.illustration.id
-	GetImageSpriteFromAtlasAsync = var_2_0
+	local var_2_0 = arg_2_0.illustration:getConfig("type")
+	local var_2_1 = var_2_0 == IslandIllustration.TYPES.ITEM
 
-	local var_2_1 = arg_2_0.illustration
-
-	var_2_0(var_5.GetIcon(var_2_1), "", arg_2_0.iconTF, true)
-
-	local var_2_2 = arg_2_0.illustration
-	local var_2_3 = var_3.getConfig(var_2_2, "type")
-
-	IslandIllustration = var_4
-
-	if var_2_3 == var_4.TYPES.ITEM then
-		local var_2_4 = arg_2_0.illustration
-		local var_2_5 = var_5.getLinkConfig(var_2_4, "rarity")
-
-		GetImageSpriteFromAtlasAsync = var_6
-
-		var_6("ui/islandbookui_atlas", "item_bg_" .. var_2_5, arg_2_0.bgTF, true)
+	if var_2_0 == IslandIllustration.TYPES.ITEM then
+		GetImageSpriteFromAtlasAsync("ui/islandbookui_atlas", "item_bg_" .. arg_2_0.illustration:getLinkConfig("rarity"), arg_2_0.bgTF, true)
 	end
 
-	local var_2_6 = arg_2_0.illustration
-	local var_2_7 = var_5.GetStatus(var_2_6)
+	local var_2_2 = arg_2_0.illustration:GetStatus()
+	local var_2_3 = var_2_2 == IslandIllustration.STATUS.LOCK
 
-	IslandIllustration = var_6
+	setActive(arg_2_0.lockTF, var_2_2 == IslandIllustration.STATUS.LOCK)
+	setGray(arg_2_0.iconTF, var_2_3, true)
+	setImageAlpha(arg_2_0.iconTF, var_2_3 and 0.5 or 1)
+	setActive(arg_2_0.bottomTF, not var_2_3 and not var_2_1 and var_2_0 ~= IslandIllustration.TYPES.FISH)
+	setActive(arg_2_0.canUnLockTF, var_2_2 == IslandIllustration.STATUS.CAN_UNLOCK)
+	setActive(arg_2_0.tipTF, arg_2_0.illustration:IsTip())
 
-	local var_2_8 = var_2_7 == var_6.STATUS.LOCK
+	local var_2_4 = var_2_1 and not var_2_3
 
-	setActive = var_2_6
+	setActive(arg_2_0.phaseTF, var_2_1 and not var_2_3)
 
-	var_2_6(arg_2_0.lockTF, var_2_8)
+	if var_2_4 then
+		local var_2_5 = arg_2_0.illustration:GetCurPhase()
 
-	setGray = var_2_6
+		setActive(arg_2_0.phaseTF, var_2_5 > 0)
 
-	var_2_6(arg_2_0.iconTF, var_2_8, true)
+		if var_2_5 > 0 then
+			GetImageSpriteFromAtlasAsync("ui/islandbookui_atlas", "item_phase_" .. var_2_5, arg_2_0.phaseTF, true)
+		end
+	end
 
-	setImageAlpha = var_2_6
+	if not var_2_3 and var_2_2 ~= IslandIllustration.STATUS.CAN_UNLOCK then
+		local var_2_6 = arg_2_0.illustration:GetName()
 
-	var_2_6(arg_2_0.iconTF, var_2_8 and 0.5 or 1)
-
-	setActive = var_2_6
-
-	local var_2_9 = arg_2_0.bottomTF
-
-	if not var_2_8 and not var_4 then
-		IslandIllustration = var_10
-
-		local var_2_10
-
-		if var_2_3 == var_10.TYPES.FISH then
-			var_2_10 = false
+		if GetPerceptualSize(var_2_6) < 7 then
+			setActive(arg_2_0.nameTF, true)
+			setText(arg_2_0.nameTF, var_2_6)
+			setActive(arg_2_0.scrollNameTF, false)
 		else
-			var_2_10 = true
+			setActive(arg_2_0.scrollNameTF, true)
+			setScrollText(arg_2_0.scrollNameTF, var_2_6)
+			setActive(arg_2_0.nameTF, false)
 		end
-
-		var_2_6(var_2_9, var_2_10)
-
-		setActive = var_2_6
-
-		local var_2_11 = arg_2_0.canUnLockTF
-
-		IslandIllustration = var_2_10
-
-		var_2_6(var_2_11, var_2_7 == var_2_10.STATUS.CAN_UNLOCK)
-
-		setActive = var_2_6
-
-		local var_2_12 = arg_2_0.tipTF
-		local var_2_13 = arg_2_0.illustration
-
-		var_2_6(var_2_12, var_10.IsTip(var_2_13))
-
-		local var_2_14 = var_4 and not var_2_8
-
-		setActive = var_2_16
-
-		var_2_16(arg_2_0.phaseTF, var_2_14)
-
-		local var_2_15, var_2_16
-
-		if var_2_14 then
-			var_2_15 = arg_2_0.illustration
-			var_2_16 = var_2_16.GetCurPhase(var_2_15)
-			setActive = var_2_12
-
-			var_2_12(arg_2_0.phaseTF, var_2_16 > 0)
-
-			if 0 < var_2_16 then
-				GetImageSpriteFromAtlasAsync = var_2_12
-
-				var_2_12("ui/islandbookui_atlas", "item_phase_" .. var_2_16, arg_2_0.phaseTF, true)
-			end
-		end
-
-		if not var_2_8 then
-			IslandIllustration = var_2_16
-
-			local var_2_17
-
-			if var_2_7 == var_2_16.STATUS.CAN_UNLOCK then
-				var_2_17 = false
-			else
-				var_2_17 = true
-			end
-
-			if var_2_17 then
-				local var_2_18 = arg_2_0.illustration
-
-				var_2_12 = var_2_12.GetName(var_2_18)
-				GetPerceptualSize = var_2_15
-
-				if var_2_15(var_2_12) < 7 then
-					setActive = var_10
-
-					var_10(arg_2_0.nameTF, true)
-
-					setText = var_10
-
-					var_10(arg_2_0.nameTF, var_2_12)
-
-					setActive = var_10
-
-					var_10(arg_2_0.scrollNameTF, false)
-				else
-					setActive = var_10
-
-					var_10(arg_2_0.scrollNameTF, true)
-
-					setScrollText = var_10
-
-					var_10(arg_2_0.scrollNameTF, var_2_12)
-
-					setActive = var_10
-
-					var_10(arg_2_0.nameTF, false)
-				end
-			else
-				setActive = var_2_12
-
-				var_2_12(arg_2_0.nameTF, false)
-
-				setActive = var_2_12
-
-				var_2_12(arg_2_0.scrollNameTF, false)
-			end
-
-			arg_2_0:UpdateSelected(arg_2_2)
-
-			return
-		end
+	else
+		setActive(arg_2_0.nameTF, false)
+		setActive(arg_2_0.scrollNameTF, false)
 	end
+
+	arg_2_0:UpdateSelected(arg_2_2)
+
+	return
 end
 
 function var_0_0.UpdateSelected(arg_3_0, arg_3_1)
 	arg_3_0.isSel = arg_3_1 and arg_3_1 == arg_3_0.illustration.id
-	setActive = var_2
 
-	var_2(arg_3_0.selectedTF, arg_3_0.isSel)
+	setActive(arg_3_0.selectedTF, arg_3_0.isSel)
 
 	return
 end
 
 function var_0_0.PlayUnlockAnim(arg_4_0, arg_4_1)
-	table = var_1_10002
-
-	if not var_1_10002.contains(arg_4_1, arg_4_0.illustration.id) then
+	if not table.contains(arg_4_1, arg_4_0.illustration.id) then
 		return
 	end
 
-	local var_4_0 = arg_4_0._tf
-	local var_4_1 = var_2.GetComponent
-
-	typeof = var_5
-	Animation = var_1_10007
-
-	local var_4_2 = var_4_1(var_4_0, var_5(var_1_10007))
-
-	var_2.Play(var_4_2)
+	arg_4_0._tf:GetComponent(typeof(Animation)):Play()
 
 	return
 end

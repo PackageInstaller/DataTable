@@ -30,10 +30,15 @@ function configUI(self)
     self.mLevelGroup = self:getChildTrans("mLevelGroup")
     self.mAttrGroup = self:getChildTrans("mAttrGroup")
     self.mBtnSure = self:getChildGO("mBtnSure")
+
+    self.mTextTitleLevel = self:getChildGO("mTextTitleLevel"):GetComponent(ty.Text)
+    self.mTextTitleAttr = self:getChildGO("mTextTitleAttr"):GetComponent(ty.Text)
+
 end
 
 function initViewText(self)
-
+    self.mTextTitleLevel.text = _TT(108005)
+    self.mTextTitleAttr.text = _TT(108006)
 end
 
 function addAllUIEvent(self)

@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("GuideUIDuplicator")
+﻿local var_0_0 = class("GuideUIDuplicator")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.caches = {}
@@ -10,140 +8,56 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.Duplicate(arg_2_0, arg_2_1, arg_2_2)
-	Object = var_1_10003
+	local var_2_0 = Object.Instantiate(arg_2_1, arg_2_0.root).transform
 
-	local var_2_0 = var_1_10003.Instantiate(arg_2_1, arg_2_0.root).transform
-
-	setActive = var_1_10004
-
-	var_1_10004(var_2_0, true)
+	setActive(var_2_0, true)
 	arg_2_0:InitDuplication(var_2_0, arg_2_1, arg_2_2)
 
 	if arg_2_2 then
 		arg_2_0:UpdateSettings(var_2_0, arg_2_1, arg_2_2)
 	end
 
-	table = var_4
-
-	var_4.insert(arg_2_0.caches, var_2_0)
+	table.insert(arg_2_0.caches, var_2_0)
 
 	return var_2_0
 end
 
 local function var_0_1(arg_3_0)
-	local var_3_0 = arg_3_0
-	local var_3_1 = arg_3_0.GetComponent
-
-	typeof = var_1_10004
-	Button = var_1_10006
-
-	local var_3_6
-
-	if var_3_1(var_3_0, var_1_10004(var_1_10006)) == nil then
-		local var_3_2 = arg_3_0
-		local var_3_3 = arg_3_0.GetComponent
-
-		typeof = var_4
-		Toggle = var_1_10006
-
-		if var_3_3(var_3_2, var_4(var_1_10006)) == nil then
-			local var_3_4 = arg_3_0
-			local var_3_5 = arg_3_0.GetComponent
-
-			typeof = var_4
-			EventTriggerListener = var_1_10006
-
-			if var_3_5(var_3_4, var_4(var_1_10006)) == nil then
-				var_3_6 = false
-
-				goto label_3_0
-			end
-		end
-	end
-
-	var_3_6 = true
-
-	::label_3_0::
-
-	return var_3_6
+	return arg_3_0:GetComponent(typeof(Button)) ~= nil or arg_3_0:GetComponent(typeof(Toggle)) ~= nil or arg_3_0:GetComponent(typeof(EventTriggerListener)) ~= nil
 end
 
 local function var_0_2(arg_4_0)
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.GetComponent
+	local var_4_0 = arg_4_0:GetComponent(typeof(Button))
 
-	typeof = var_1_10004
-	Button = var_1_10006
-
-	local var_4_2 = var_4_1(var_4_0, var_1_10004(var_1_10006))
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0.GetComponentsInChildren
-
-	typeof = var_1_10005
-	Button = var_1_10007
-
-	local var_4_5 = var_4_4(var_4_3, var_1_10005(var_1_10007))
-	local var_4_6 = var_2.ToTable(var_4_5)
-
-	ipairs = var_4_0
-
-	for iter_4_0, iter_4_1 in var_4_0(var_4_6) do
-		if var_4_2 ~= iter_4_1 then
+	for iter_4_0, iter_4_1 in ipairs((arg_4_0:GetComponentsInChildren(typeof(Button)):ToTable())) do
+		if var_4_0 ~= iter_4_1 then
 			iter_4_1.enabled = false
 		end
 	end
 
-	local var_4_7 = arg_4_0
-	local var_4_8 = arg_4_0.GetComponent
+	local var_4_1 = arg_4_0:GetComponent(typeof(Toggle))
 
-	typeof = iter_4_0
-	Toggle = var_1_10008
-
-	local var_4_9 = var_4_8(var_4_7, iter_4_0(var_1_10008))
-	local var_4_10 = arg_4_0
-	local var_4_11 = arg_4_0.GetComponentsInChildren
-
-	typeof = iter_4_1
-	Toggle = var_1_10009
-
-	local var_4_12 = var_4_11(var_4_10, iter_4_1(var_1_10009))
-	local var_4_13 = var_4.ToTable(var_4_12)
-
-	ipairs = var_4_7
-
-	for iter_4_2, iter_4_3 in var_4_7(var_4_13) do
-		if var_4_9 ~= iter_4_3 then
+	for iter_4_2, iter_4_3 in ipairs((arg_4_0:GetComponentsInChildren(typeof(Toggle)):ToTable())) do
+		if var_4_1 ~= iter_4_3 then
 			iter_4_3.enabled = false
 		end
 	end
 
-	if var_4_9 then
-		setToggleEnabled = var_5
-
-		var_5(arg_4_0, true)
+	if var_4_1 then
+		setToggleEnabled(arg_4_0, true)
 	end
 
 	return
 end
 
 local function var_0_3(arg_5_0)
-	LeanTween = var_1_10001
-
-	if var_1_10001.isTweening(arg_5_0.gameObject) then
-		LeanTween = var_1
-
-		var_1.cancel(arg_5_0.gameObject)
+	if LeanTween.isTweening(arg_5_0.gameObject) then
+		LeanTween.cancel(arg_5_0.gameObject)
 	end
 
-	eachChild = var_1
-
-	var_1(arg_5_0, function(arg_6_0)
-		LeanTween = var_2_10001
-
-		if var_2_10001.isTweening(arg_6_0.gameObject) then
-			LeanTween = var_1
-
-			var_1.cancel(arg_6_0.gameObject)
+	eachChild(arg_5_0, function(arg_6_0)
+		if LeanTween.isTweening(arg_6_0.gameObject) then
+			LeanTween.cancel(arg_6_0.gameObject)
 		end
 
 		return
@@ -153,27 +67,13 @@ local function var_0_3(arg_5_0)
 end
 
 local function var_0_4(arg_7_0)
-	ipairs = var_1_10001
+	for iter_7_0, iter_7_1 in ipairs({
+		Animator,
+		Animation
+	}) do
+		local var_7_0 = arg_7_0:GetComponentsInChildren(typeof(iter_7_1))
 
-	local var_7_0 = {}
-
-	Animator = var_1_10004
-	var_7_0[1] = var_1_10004
-	Animation = var_1_10004
-	var_7_0[2] = var_1_10004
-
-	for iter_7_0, iter_7_1 in var_1_10001(var_7_0) do
-		local var_7_1 = arg_7_0
-		local var_7_2 = arg_7_0.GetComponentsInChildren
-
-		typeof = var_1_10009
-
-		local var_7_3 = var_7_2(var_7_1, var_1_10009(iter_7_1))
-		local var_7_4 = var_6.ToTable(var_7_3)
-
-		ipairs = var_1_10007
-
-		for iter_7_2, iter_7_3 in var_1_10007(var_7_4) do
+		for iter_7_2, iter_7_3 in ipairs((var_7_0:ToTable())) do
 			iter_7_3.enabled = false
 		end
 	end
@@ -182,45 +82,20 @@ local function var_0_4(arg_7_0)
 end
 
 function var_0_0.InitDuplication(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
-	local var_8_0 = arg_8_1
-	local var_8_1 = arg_8_1.GetComponent
+	local var_8_0 = arg_8_1:GetComponent(typeof(CanvasGroup))
 
-	typeof = var_1_10007
-	CanvasGroup = var_1_10009
-
-	if var_8_1(var_8_0, var_1_10007(var_1_10009)) then
-		var_4.alpha = 1
+	if var_8_0 then
+		var_8_0.alpha = 1
 	end
 
-	local var_8_2 = arg_8_1
-	local var_8_3 = arg_8_1.GetComponentInChildren
+	local var_8_1 = arg_8_1:GetComponentInChildren(typeof(UnityEngine.UI.Graphic))
 
-	typeof = var_1_10008
-	UnityEngine = var_1_10010
-
-	local var_8_4 = var_8_3(var_8_2, var_1_10008(var_1_10010.UI.Graphic))
-	local var_8_5 = arg_8_1
-	local var_8_6 = arg_8_1.GetComponentInChildren
-
-	typeof = var_1_10009
-	Canvas = iter_8_0
-
-	if var_8_6(var_8_5, var_1_10009(iter_8_0)) or var_8_4 == nil then
-		GetOrAddComponent = var_8_2
-
-		local var_8_7 = arg_8_1
-
-		typeof = var_10
-		Image = iter_8_1
-
-		local var_8_8 = var_8_2(var_8_7, var_10(iter_8_1))
-
-		Color = var_8_5
-		var_8_8.color = var_8_5.New(1, 1, 1, 0)
+	if arg_8_1:GetComponentInChildren(typeof(Canvas)) or var_8_1 == nil then
+		GetOrAddComponent(arg_8_1, typeof(Image)).color = Color.New(1, 1, 1, 0)
 	end
 
-	if var_8_4 and var_8_4.raycastTarget == false then
-		var_8_4.raycastTarget = true
+	if var_8_1 and var_8_1.raycastTarget == false then
+		var_8_1.raycastTarget = true
 	end
 
 	var_0_4(arg_8_1)
@@ -232,47 +107,13 @@ function var_0_0.InitDuplication(arg_8_0, arg_8_1, arg_8_2, arg_8_3)
 	var_0_3(arg_8_1)
 
 	if not arg_8_3.keepScrollTxt then
-		local var_8_9 = arg_8_1
-		local var_8_10 = arg_8_1.GetComponentsInChildren
-
-		typeof = var_10
-		ScrollText = iter_8_1
-
-		local var_8_11 = var_8_10(var_8_9, var_10(iter_8_1))
-		local var_8_12 = var_7.ToTable(var_8_11)
-
-		ipairs = var_8_5
-
-		for iter_8_0, iter_8_1 in var_8_5(var_8_12) do
-			setActive = var_1_10013
-
-			var_1_10013(iter_8_1.gameObject, false)
+		for iter_8_0, iter_8_1 in ipairs((arg_8_1:GetComponentsInChildren(typeof(ScrollText)):ToTable())) do
+			setActive(iter_8_1.gameObject, false)
 		end
 	end
 
-	local var_8_13 = arg_8_1
-	local var_8_14 = arg_8_1.GetComponent
-
-	typeof = var_10
-	Canvas = iter_8_1
-
-	if var_8_14(var_8_13, var_10(iter_8_1)) then
-		local var_8_15 = arg_8_1
-		local var_8_16 = arg_8_1.GetComponent
-
-		typeof = iter_8_0
-		GraphicRaycaster = var_1_10013
-
-		if var_8_16(var_8_15, iter_8_0(var_1_10013)) == nil then
-			GetOrAddComponent = var_8
-
-			local var_8_17 = arg_8_1
-
-			typeof = var_11
-			GraphicRaycaster = var_1_10013
-
-			var_8(var_8_17, var_11(var_1_10013))
-		end
+	if arg_8_1:GetComponent(typeof(Canvas)) and arg_8_1:GetComponent(typeof(GraphicRaycaster)) == nil then
+		GetOrAddComponent(arg_8_1, typeof(GraphicRaycaster))
 	end
 
 	arg_8_1.anchorMax = arg_8_1.pivot
@@ -290,13 +131,7 @@ function var_0_0.UpdateSettings(arg_9_0, arg_9_1, arg_9_2, arg_9_3)
 	end
 
 	if arg_9_3.clearAllEvent then
-		GetOrAddComponent = var_4
-
-		local var_9_0 = arg_9_1
-
-		typeof = var_1_10007
-		CanvasGroup = var_1_10009
-		var_4(var_9_0, var_1_10007(var_1_10009)).blocksRaycasts = false
+		GetOrAddComponent(arg_9_1, typeof(CanvasGroup)).blocksRaycasts = false
 	end
 
 	return
@@ -304,145 +139,65 @@ end
 
 function var_0_0.SetCustomPosition(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	if arg_10_3.pos then
-		Vector3 = var_4
+		local var_10_0 = arg_10_3.pos.z or 0
 
-		local var_10_0 = arg_10_3.pos.x
-		local var_10_1 = arg_10_3.pos.y
-		local var_10_2
-
-		if not arg_10_3.pos.z then
-			var_10_2 = 0
-		end
-
-		arg_10_1.localPosition = var_4(var_10_0, var_10_1, var_10_2)
+		arg_10_1.localPosition = Vector3(arg_10_3.pos.x, arg_10_3.pos.y, var_10_0)
 	elseif arg_10_3.isLevelPoint then
-		pg = var_4
-
-		local var_10_3 = var_4.UIMgr.GetInstance().levelCameraComp
-		local var_10_4 = arg_10_2.transform.parent
-
-		var_1_10005 = var_1_10005.TransformPoint(var_10_4, arg_10_2.transform.localPosition)
-
-		local var_10_5 = var_10_3
-		local var_10_6 = var_10_3.WorldToScreenPoint(var_10_5, var_1_10005)
-
-		pg = var_10_4
-
-		local var_10_7 = var_10_4.UIMgr.GetInstance().overlayCameraComp
-
-		LuaHelper = var_10_5
-		arg_10_1.localPosition = var_10_5.ScreenToLocal(arg_10_0.root, var_10_6, var_10_7)
+		arg_10_1.localPosition = LuaHelper.ScreenToLocal(arg_10_0.root, pg.UIMgr.GetInstance().levelCameraComp:WorldToScreenPoint((arg_10_2.transform.parent:TransformPoint(arg_10_2.transform.localPosition))), pg.UIMgr.GetInstance().overlayCameraComp)
 	else
 		arg_10_1.position = arg_10_2.transform.position
-		Vector3 = var_4
-		arg_10_1.localPosition = var_4(arg_10_1.localPosition.x, arg_10_1.localPosition.y, 0)
+		arg_10_1.localPosition = Vector3(arg_10_1.localPosition.x, arg_10_1.localPosition.y, 0)
 	end
 
-	local var_10_8
+	local var_10_1 = arg_10_3.scale or 1
 
-	if not arg_10_3.scale then
-		var_10_8 = 1
-	end
+	arg_10_1.localScale = Vector3(var_10_1, var_10_1, var_10_1)
+	arg_10_1.eulerAngles = arg_10_3.eulerAngles and Vector3(arg_10_3.eulerAngles[1], arg_10_3.eulerAngles[2], arg_10_3.eulerAngles[3]) or Vector3(0, 0, 0)
 
-	Vector3 = var_1_10005
-	arg_10_1.localScale = var_1_10005(var_10_8, var_10_8, var_10_8)
-
-	if arg_10_3.eulerAngles then
-		Vector3 = var_10_9
-
-		local var_10_9
-
-		if not var_10_9(arg_10_3.eulerAngles[1], arg_10_3.eulerAngles[2], arg_10_3.eulerAngles[3]) then
-			Vector3 = var_10_9
-			var_10_9 = var_10_9(0, 0, 0)
-		end
-
-		arg_10_1.eulerAngles = var_10_9
-
-		return
-	end
+	return
 end
 
 local function var_0_5(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	local var_11_0 = arg_11_0.root
-	local var_11_1 = var_4.InverseTransformPoint(var_11_0, arg_11_2.transform.position)
+	local var_11_0 = arg_11_0.root:InverseTransformPoint(arg_11_2.transform.position)
 
-	Vector3 = var_1_10005
-	arg_11_1.localPosition = var_1_10005(var_11_1.x, var_11_1.y, 0)
-
-	local var_11_2 = arg_11_2.transform.localScale
-
-	Vector3 = var_11_0
-	arg_11_1.localScale = var_11_0(var_11_2.x, var_11_2.y, var_11_2.z)
+	arg_11_1.localPosition = Vector3(var_11_0.x, var_11_0.y, 0)
+	arg_11_1.localScale = Vector3(arg_11_2.transform.localScale.x, arg_11_2.transform.localScale.y, arg_11_2.transform.localScale.z)
 
 	return
 end
 
 local function var_0_6(arg_12_0, arg_12_1, arg_12_2)
-	local var_12_0
 	local var_12_1
+	local var_12_2 = arg_12_2.image.isChild and arg_12_1:Find(arg_12_2.image.source) or GameObject.Find(arg_12_2.image.source)
 
-	if not arg_12_2.image.isChild or not arg_12_1:Find(arg_12_2.image.source) then
-		::label_12_0::
+	var_12_1 = arg_12_2.image.isRelative and (arg_12_2.image.target == "" and arg_12_0 or arg_12_0:Find(arg_12_2.image.target)) or GameObject.Find(arg_12_2.image.target)
 
-		GameObject = var_5
-		var_12_0 = var_5.Find(arg_12_2.image.source)
-	end
-
-	if arg_12_2.image.isRelative then
-		var_12_1 = arg_12_2.image.target == "" and arg_12_0 or arg_12_0:Find(arg_12_2.image.target)
-	else
-		GameObject = var_5
-		var_12_1 = var_5.Find(arg_12_2.image.target)
-	end
-
-	IsNil = var_5
-
-	if not var_5(var_12_0) then
-		IsNil = var_5
-
-		if var_5(var_12_1) then
-			return
-		end
-
-		local var_12_2 = var_12_0
-		local var_12_3 = var_12_0.GetComponent
-
-		typeof = var_1_10008
-		Image = var_1_10010
-
-		local var_12_4 = var_12_3(var_12_2, var_1_10008(var_1_10010))
-		local var_12_5 = var_12_1
-		local var_12_6 = var_12_1.GetComponent
-
-		typeof = var_1_10009
-		Image = var_1_10011
-
-		local var_12_7 = var_12_6(var_12_5, var_1_10009(var_1_10011))
-
-		if not var_12_4 or not var_12_7 then
-			return
-		end
-
-		local var_12_8 = var_12_4.sprite
-		local var_12_9 = var_12_7.sprite
-
-		if var_12_8 and var_12_9 and var_12_8 ~= var_12_9 then
-			var_12_7.enabled = var_12_4.enabled
-			setImageSprite = var_9
-
-			var_9(var_12_1, var_12_8)
-		end
-
+	if IsNil(var_12_2) or IsNil(var_12_1) then
 		return
 	end
+
+	local var_12_3 = var_12_2:GetComponent(typeof(Image))
+	local var_12_4 = var_12_1:GetComponent(typeof(Image))
+
+	if not var_12_3 or not var_12_4 then
+		return
+	end
+
+	local var_12_5 = var_12_3.sprite
+
+	if var_12_3.sprite and var_12_4.sprite and var_12_5 ~= var_12_4.sprite then
+		var_12_4.enabled = var_12_3.enabled
+
+		setImageSprite(var_12_1, var_12_5)
+	end
+
+	return
 end
 
 function var_0_0.Syn(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 	arg_13_0:RemoveTimer()
 
-	Timer = var_4
-	arg_13_0.timer = var_4.New(function()
+	arg_13_0.timer = Timer.New(function()
 		var_0_5(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 
 		if arg_13_3.image then
@@ -452,9 +207,7 @@ function var_0_0.Syn(arg_13_0, arg_13_1, arg_13_2, arg_13_3)
 		return
 	end, 0.01, -1)
 
-	local var_13_0 = arg_13_0.timer
-
-	var_4.Start(var_13_0)
+	arg_13_0.timer:Start()
 	arg_13_0.timer.func()
 
 	return
@@ -462,9 +215,7 @@ end
 
 function var_0_0.RemoveTimer(arg_15_0)
 	if arg_15_0.timer then
-		local var_15_0 = arg_15_0.timer
-
-		var_1.Stop(var_15_0)
+		arg_15_0.timer:Stop()
 
 		arg_15_0.timer = nil
 	end
@@ -474,12 +225,8 @@ end
 
 function var_0_0.Clear(arg_16_0)
 	if arg_16_0.caches and #arg_16_0.caches > 0 then
-		ipairs = var_1
-
-		for iter_16_0, iter_16_1 in var_1(arg_16_0.caches) do
-			Object = var_1_10006
-
-			var_1_10006.Destroy(iter_16_1.gameObject)
+		for iter_16_0, iter_16_1 in ipairs(arg_16_0.caches) do
+			Object.Destroy(iter_16_1.gameObject)
 		end
 
 		arg_16_0.caches = {}

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "battle_cost_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "battle_cost_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.battle_cost_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.battle_cost_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.battle_cost_template = rawget(pg, "battle_cost_template") or setmetatable({
+	__name = "battle_cost_template"
+}, confNEO)
+pg.battle_cost_template.all = {
 	0,
 	1,
 	2,
@@ -57,25 +34,11 @@ var_0_3.all = {
 	99,
 	30
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.battle_cost_template = {}
+pg.base = pg.base or {}
+pg.base.battle_cost_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.battle_cost_template
-
-	var_1_0[0] = {
+	pg.base.battle_cost_template[0] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -86,11 +49,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 0,
 		oil_cost = 0
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.battle_cost_template
-
-	var_1_1[1] = {
+	pg.base.battle_cost_template[1] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -101,11 +60,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 1,
 		oil_cost = 1
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.battle_cost_template
-
-	var_1_2[2] = {
+	pg.base.battle_cost_template[2] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -116,11 +71,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 2,
 		oil_cost = 1
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.battle_cost_template
-
-	var_1_3[3] = {
+	pg.base.battle_cost_template[3] = {
 		end_sink_cost = 0,
 		user_exp_award = 1,
 		attack_count = 2,
@@ -131,11 +82,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 3,
 		oil_cost = 0
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.battle_cost_template
-
-	var_1_4[4] = {
+	pg.base.battle_cost_template[4] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -146,11 +93,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 4,
 		oil_cost = 0
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.battle_cost_template
-
-	var_1_5[5] = {
+	pg.base.battle_cost_template[5] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -161,11 +104,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 5,
 		oil_cost = 0
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.battle_cost_template
-
-	var_1_6[6] = {
+	pg.base.battle_cost_template[6] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -176,11 +115,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 6,
 		oil_cost = 0
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.battle_cost_template
-
-	var_1_7[7] = {
+	pg.base.battle_cost_template[7] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -191,11 +126,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 7,
 		oil_cost = 0
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.battle_cost_template
-
-	var_1_8[8] = {
+	pg.base.battle_cost_template[8] = {
 		end_sink_cost = 0,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -206,11 +137,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 8,
 		oil_cost = 1
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.battle_cost_template
-
-	var_1_9[9] = {
+	pg.base.battle_cost_template[9] = {
 		end_sink_cost = 0,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -221,11 +148,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 9,
 		oil_cost = 1
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.battle_cost_template
-
-	var_1_10[10] = {
+	pg.base.battle_cost_template[10] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -236,11 +159,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 10,
 		oil_cost = 0
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.battle_cost_template
-
-	var_1_11[11] = {
+	pg.base.battle_cost_template[11] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -251,11 +170,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 11,
 		oil_cost = 1
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.battle_cost_template
-
-	var_1_12[12] = {
+	pg.base.battle_cost_template[12] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 0,
@@ -266,11 +181,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 12,
 		oil_cost = 1
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.battle_cost_template
-
-	var_1_13[13] = {
+	pg.base.battle_cost_template[13] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -281,11 +192,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 13,
 		oil_cost = 0
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.battle_cost_template
-
-	var_1_14[14] = {
+	pg.base.battle_cost_template[14] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -296,11 +203,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 14,
 		oil_cost = 0
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.battle_cost_template
-
-	var_1_15[15] = {
+	pg.base.battle_cost_template[15] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -311,11 +214,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 15,
 		oil_cost = 0
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.battle_cost_template
-
-	var_1_16[16] = {
+	pg.base.battle_cost_template[16] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -326,11 +225,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 16,
 		oil_cost = 1
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.battle_cost_template
-
-	var_1_17[17] = {
+	pg.base.battle_cost_template[17] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 1,
@@ -341,11 +236,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 17,
 		oil_cost = 1
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.battle_cost_template
-
-	var_1_18[18] = {
+	pg.base.battle_cost_template[18] = {
 		end_sink_cost = 1,
 		user_exp_award = 1,
 		attack_count = 0,
@@ -356,11 +247,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 18,
 		oil_cost = 1
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.battle_cost_template
-
-	var_1_19[19] = {
+	pg.base.battle_cost_template[19] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -371,11 +258,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 19,
 		oil_cost = 0
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.battle_cost_template
-
-	var_1_20[50] = {
+	pg.base.battle_cost_template[50] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -386,11 +269,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 50,
 		oil_cost = 0
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.battle_cost_template
-
-	var_1_21[51] = {
+	pg.base.battle_cost_template[51] = {
 		end_sink_cost = 0,
 		user_exp_award = 1,
 		attack_count = 0,
@@ -401,11 +280,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 51,
 		oil_cost = 0
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.battle_cost_template
-
-	var_1_22[93] = {
+	pg.base.battle_cost_template[93] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -416,11 +291,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 93,
 		oil_cost = 0
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.battle_cost_template
-
-	var_1_23[94] = {
+	pg.base.battle_cost_template[94] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -431,11 +302,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 94,
 		oil_cost = 0
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.battle_cost_template
-
-	var_1_24[95] = {
+	pg.base.battle_cost_template[95] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -446,11 +313,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 95,
 		oil_cost = 0
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.battle_cost_template
-
-	var_1_25[96] = {
+	pg.base.battle_cost_template[96] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -461,11 +324,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 96,
 		oil_cost = 0
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.battle_cost_template
-
-	var_1_26[97] = {
+	pg.base.battle_cost_template[97] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -476,11 +335,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 97,
 		oil_cost = 0
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.battle_cost_template
-
-	var_1_27[98] = {
+	pg.base.battle_cost_template[98] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -491,11 +346,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 98,
 		oil_cost = 0
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.battle_cost_template
-
-	var_1_28[99] = {
+	pg.base.battle_cost_template[99] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,
@@ -506,8 +357,7 @@ var_0_3.base.battle_cost_template = {}
 		id = 99,
 		oil_cost = 0
 	}
-	pg = var_1_28
-	var_1_28.base.battle_cost_template[30] = {
+	pg.base.battle_cost_template[30] = {
 		end_sink_cost = 0,
 		user_exp_award = 0,
 		attack_count = 0,

@@ -85,10 +85,8 @@ function showPanel(self)
     end
     
     if self.LyScroller.Count > 0 then
-        cusLog("刷新")
         self.LyScroller:ReplaceAllDataProvider(list)
     else
-        cusLog("初始化")
         self.LyScroller.DataProvider = list
     end
     

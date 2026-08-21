@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "dorm3d_touch_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "dorm3d_touch_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.dorm3d_touch_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.dorm3d_touch_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.dorm3d_touch_data = rawget(pg, "dorm3d_touch_data") or setmetatable({
+	__name = "dorm3d_touch_data"
+}, confNEO)
+pg.dorm3d_touch_data.all = {
 	101,
 	102,
 	103,
@@ -84,25 +61,11 @@ var_0_3.all = {
 	7990230,
 	7990240
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.dorm3d_touch_data = {}
+pg.base = pg.base or {}
+pg.base.dorm3d_touch_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.dorm3d_touch_data
-
-	var_1_0[101] = {
+	pg.base.dorm3d_touch_data[101] = {
 		default_favor = 1001,
 		finish_action = "",
 		id = 101,
@@ -126,11 +89,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			1
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.dorm3d_touch_data
-
-	var_1_1[102] = {
+	pg.base.dorm3d_touch_data[102] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 102,
@@ -154,11 +113,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			8
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.dorm3d_touch_data
-
-	var_1_2[103] = {
+	pg.base.dorm3d_touch_data[103] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 103,
@@ -182,11 +137,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			3
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.dorm3d_touch_data
-
-	var_1_3[104] = {
+	pg.base.dorm3d_touch_data[104] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 104,
@@ -210,11 +161,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			2
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.dorm3d_touch_data
-
-	var_1_4[105] = {
+	pg.base.dorm3d_touch_data[105] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 105,
@@ -238,11 +185,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			1
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.dorm3d_touch_data
-
-	var_1_5[106] = {
+	pg.base.dorm3d_touch_data[106] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 106,
@@ -266,11 +209,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			5
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.dorm3d_touch_data
-
-	var_1_6[201] = {
+	pg.base.dorm3d_touch_data[201] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 201,
@@ -294,11 +233,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			115010
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.dorm3d_touch_data
-
-	var_1_7[8] = {
+	pg.base.dorm3d_touch_data[8] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100104,
@@ -322,11 +257,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			100410
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.dorm3d_touch_data
-
-	var_1_8[11] = {
+	pg.base.dorm3d_touch_data[11] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100107,
@@ -350,11 +281,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			100710
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.dorm3d_touch_data
-
-	var_1_9[10100201] = {
+	pg.base.dorm3d_touch_data[10100201] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100201,
@@ -378,11 +305,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			100110
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.dorm3d_touch_data
-
-	var_1_10[10100202] = {
+	pg.base.dorm3d_touch_data[10100202] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100202,
@@ -406,11 +329,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			100210
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.dorm3d_touch_data
-
-	var_1_11[10100203] = {
+	pg.base.dorm3d_touch_data[10100203] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100203,
@@ -435,11 +354,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			100280
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.dorm3d_touch_data
-
-	var_1_12[10100303] = {
+	pg.base.dorm3d_touch_data[10100303] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100303,
@@ -463,11 +378,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			100310
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.dorm3d_touch_data
-
-	var_1_13[10100401] = {
+	pg.base.dorm3d_touch_data[10100401] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 10100401,
@@ -491,11 +402,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			120810
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.dorm3d_touch_data
-
-	var_1_14[2200110] = {
+	pg.base.dorm3d_touch_data[2200110] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200110,
@@ -519,11 +426,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200110
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.dorm3d_touch_data
-
-	var_1_15[18] = {
+	pg.base.dorm3d_touch_data[18] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200210,
@@ -547,11 +450,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200310
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.dorm3d_touch_data
-
-	var_1_16[2200310] = {
+	pg.base.dorm3d_touch_data[2200310] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200310,
@@ -575,11 +474,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200210
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.dorm3d_touch_data
-
-	var_1_17[2200410] = {
+	pg.base.dorm3d_touch_data[2200410] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200410,
@@ -603,11 +498,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200410
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.dorm3d_touch_data
-
-	var_1_18[2200510] = {
+	pg.base.dorm3d_touch_data[2200510] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200510,
@@ -632,11 +523,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200540
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.dorm3d_touch_data
-
-	var_1_19[2200610] = {
+	pg.base.dorm3d_touch_data[2200610] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200610,
@@ -660,11 +547,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200610
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.dorm3d_touch_data
-
-	var_1_20[6] = {
+	pg.base.dorm3d_touch_data[6] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2200710,
@@ -688,11 +571,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			200710
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.dorm3d_touch_data
-
-	var_1_21[2210110] = {
+	pg.base.dorm3d_touch_data[2210110] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 2210110,
@@ -716,11 +595,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			215110
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.dorm3d_touch_data
-
-	var_1_22[1990310] = {
+	pg.base.dorm3d_touch_data[1990310] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990310,
@@ -744,11 +619,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300210
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.dorm3d_touch_data
-
-	var_1_23[1990320] = {
+	pg.base.dorm3d_touch_data[1990320] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990320,
@@ -772,11 +643,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300310
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.dorm3d_touch_data
-
-	var_1_24[1990330] = {
+	pg.base.dorm3d_touch_data[1990330] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990330,
@@ -800,11 +667,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300110
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.dorm3d_touch_data
-
-	var_1_25[1990340] = {
+	pg.base.dorm3d_touch_data[1990340] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990340,
@@ -828,11 +691,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300410
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.dorm3d_touch_data
-
-	var_1_26[1990350] = {
+	pg.base.dorm3d_touch_data[1990350] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990350,
@@ -856,11 +715,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300510
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.dorm3d_touch_data
-
-	var_1_27[1990360] = {
+	pg.base.dorm3d_touch_data[1990360] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990360,
@@ -884,11 +739,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300610
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.dorm3d_touch_data
-
-	var_1_28[1990370] = {
+	pg.base.dorm3d_touch_data[1990370] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990370,
@@ -912,11 +763,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			300710
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.dorm3d_touch_data
-
-	var_1_29[1990390] = {
+	pg.base.dorm3d_touch_data[1990390] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1990390,
@@ -940,11 +787,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			310910
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.dorm3d_touch_data
-
-	var_1_30[1051710] = {
+	pg.base.dorm3d_touch_data[1051710] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051710,
@@ -968,11 +811,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400110
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.dorm3d_touch_data
-
-	var_1_31[1051720] = {
+	pg.base.dorm3d_touch_data[1051720] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051720,
@@ -996,11 +835,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400210
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.dorm3d_touch_data
-
-	var_1_32[1051730] = {
+	pg.base.dorm3d_touch_data[1051730] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051730,
@@ -1024,11 +859,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400310
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.dorm3d_touch_data
-
-	var_1_33[1051740] = {
+	pg.base.dorm3d_touch_data[1051740] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051740,
@@ -1052,11 +883,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400410
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.dorm3d_touch_data
-
-	var_1_34[1051750] = {
+	pg.base.dorm3d_touch_data[1051750] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051750,
@@ -1080,11 +907,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400710
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.dorm3d_touch_data
-
-	var_1_35[1051760] = {
+	pg.base.dorm3d_touch_data[1051760] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051760,
@@ -1108,11 +931,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400510
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.dorm3d_touch_data
-
-	var_1_36[4] = {
+	pg.base.dorm3d_touch_data[4] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051780,
@@ -1136,11 +955,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			400810
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.dorm3d_touch_data
-
-	var_1_37[14] = {
+	pg.base.dorm3d_touch_data[14] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051790,
@@ -1164,11 +979,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			410910
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.dorm3d_touch_data
-
-	var_1_38[23] = {
+	pg.base.dorm3d_touch_data[23] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 1051799,
@@ -1192,11 +1003,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			410910
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.dorm3d_touch_data
-
-	var_1_39[3070710] = {
+	pg.base.dorm3d_touch_data[3070710] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070710,
@@ -1220,11 +1027,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			500110
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.dorm3d_touch_data
-
-	var_1_40[0] = {
+	pg.base.dorm3d_touch_data[0] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070720,
@@ -1248,11 +1051,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			500210
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.dorm3d_touch_data
-
-	var_1_41[10] = {
+	pg.base.dorm3d_touch_data[10] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070730,
@@ -1276,11 +1075,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			500310
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.dorm3d_touch_data
-
-	var_1_42[20] = {
+	pg.base.dorm3d_touch_data[20] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070740,
@@ -1304,11 +1099,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			500410
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.dorm3d_touch_data
-
-	var_1_43[30] = {
+	pg.base.dorm3d_touch_data[30] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070750,
@@ -1332,11 +1123,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			500510
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.dorm3d_touch_data
-
-	var_1_44[3070760] = {
+	pg.base.dorm3d_touch_data[3070760] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070760,
@@ -1360,11 +1147,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			500610
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.dorm3d_touch_data
-
-	var_1_45[3070790] = {
+	pg.base.dorm3d_touch_data[3070790] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 3070790,
@@ -1388,11 +1171,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			510910
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.dorm3d_touch_data
-
-	var_1_46[4990510] = {
+	pg.base.dorm3d_touch_data[4990510] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990510,
@@ -1416,11 +1195,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			600110
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.dorm3d_touch_data
-
-	var_1_47[4990520] = {
+	pg.base.dorm3d_touch_data[4990520] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990520,
@@ -1444,11 +1219,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			600210
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.dorm3d_touch_data
-
-	var_1_48[4990530] = {
+	pg.base.dorm3d_touch_data[4990530] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990530,
@@ -1472,11 +1243,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			600310
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.dorm3d_touch_data
-
-	var_1_49[4990540] = {
+	pg.base.dorm3d_touch_data[4990540] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990540,
@@ -1500,11 +1267,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			600410
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.dorm3d_touch_data
-
-	var_1_50[4990550] = {
+	pg.base.dorm3d_touch_data[4990550] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990550,
@@ -1528,11 +1291,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			600510
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.dorm3d_touch_data
-
-	var_1_51[4990560] = {
+	pg.base.dorm3d_touch_data[4990560] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990560,
@@ -1556,11 +1315,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			600610
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.dorm3d_touch_data
-
-	var_1_52[4990590] = {
+	pg.base.dorm3d_touch_data[4990590] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 4990590,
@@ -1584,11 +1339,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			610910
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.dorm3d_touch_data
-
-	var_1_53[7990210] = {
+	pg.base.dorm3d_touch_data[7990210] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 7990210,
@@ -1612,11 +1363,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			700110
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.dorm3d_touch_data
-
-	var_1_54[7990220] = {
+	pg.base.dorm3d_touch_data[7990220] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 7990220,
@@ -1640,11 +1387,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			700210
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.dorm3d_touch_data
-
-	var_1_55[7990230] = {
+	pg.base.dorm3d_touch_data[7990230] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 7990230,
@@ -1668,8 +1411,7 @@ var_0_3.base.dorm3d_touch_data = {}
 			700310
 		}
 	}
-	pg = var_1_55
-	var_1_55.base.dorm3d_touch_data[7990240] = {
+	pg.base.dorm3d_touch_data[7990240] = {
 		default_favor = 1001,
 		finish_action = "Idle",
 		id = 7990240,

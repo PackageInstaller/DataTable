@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandFutureTask", import("model.vo.BaseVO"))
 
-local var_0_0 = "IslandFutureTask"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("model.vo.BaseVO"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.task_id
 	arg_1_0.configId = arg_1_0.id
 
@@ -15,100 +9,82 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.bindConfigTable(arg_2_0)
-	pg = var_1_10001
-
-	return var_1_10001.island_task
+function var_0_0.bindConfigTable(arg_2_0)
+	return pg.island_task
 end
 
-function var_0_1.InitTimeCfg(arg_3_0)
-	if arg_3_0:getConfig("unlock_time") == "always" then
+function var_0_0.InitTimeCfg(arg_3_0)
+	local var_3_0 = arg_3_0:getConfig("unlock_time")
+
+	if var_3_0 == "always" then
 		arg_3_0.unlockTime = 0
 		arg_3_0.endTime = 0
 	else
-		pg = var_1_10002
+		local var_3_1 = pg.TimeMgr.GetInstance()
 
-		local var_3_0 = var_1_10002.TimeMgr.GetInstance()
-
-		arg_3_0.unlockTime = var_2.parseTimeFromConfig(var_3_0, var_1[1])
-		arg_3_0.endTime = var_2:parseTimeFromConfig(var_1[2])
+		arg_3_0.unlockTime = var_3_1:parseTimeFromConfig(var_3_0[1])
+		arg_3_0.endTime = var_3_1:parseTimeFromConfig(var_3_0[2])
 	end
 
 	return
 end
 
-function var_0_1.GetUnlockTime(arg_4_0)
+function var_0_0.GetUnlockTime(arg_4_0)
 	return arg_4_0.unlockTime
 end
 
-function var_0_1.IsMatchUnlockTime(arg_5_0)
-	pg = var_1_10001
+function var_0_0.IsMatchUnlockTime(arg_5_0)
+	local var_5_0 = pg.TimeMgr.GetInstance()
 
-	local var_5_0 = var_1_10001.TimeMgr.GetInstance()
-
-	return var_1.GetServerTime(var_5_0) > arg_5_0.unlockTime
+	return var_5_0:GetServerTime() > arg_5_0.unlockTime
 end
 
-function var_0_1.InTime(arg_6_0)
+function var_0_0.InTime(arg_6_0)
 	if arg_6_0.unlockTime == 0 and arg_6_0.endTime == 0 then
 		return true
 	end
 
-	pg = var_1
+	local var_6_0 = pg.TimeMgr.GetInstance():GetServerTime()
 
-	local var_6_0 = var_1.TimeMgr.GetInstance()
-
-	return var_1.GetServerTime(var_6_0) > arg_6_0.unlockTime and var_1 < arg_6_0.endTime
+	return var_6_0 > arg_6_0.unlockTime and var_6_0 < arg_6_0.endTime
 end
 
-function var_0_1.IsAcceptImmediately(arg_7_0)
+function var_0_0.IsAcceptImmediately(arg_7_0)
 	return arg_7_0:getConfig("trigger_type") == 2 and arg_7_0:getConfig("trigger_data") == 0
 end
 
-function var_0_1.CheckAcceptOnApproach(arg_8_0, arg_8_1)
+function var_0_0.CheckAcceptOnApproach(arg_8_0, arg_8_1)
 	return arg_8_0:getConfig("trigger_data") == arg_8_1 and arg_8_0:getConfig("trigger_type") == 2
 end
 
-function var_0_1.IsMatchUnlockConditions(arg_9_0)
-	if arg_9_0:getConfig("unlock_condition") == "" or #var_1 == 0 then
+function var_0_0.IsMatchUnlockConditions(arg_9_0)
+	local var_9_0 = arg_9_0:getConfig("unlock_condition")
+
+	if var_9_0 == "" or #var_9_0 == 0 then
 		return true
 	end
 
-	underscore = var_1_10002
-
-	return var_1_10002.all(var_1, function(arg_10_0)
-		IslandTaskConditionType = var_2_10001
-
-		return var_2_10001.IsMatch(arg_10_0)
+	return underscore.all(var_9_0, function(arg_10_0)
+		return IslandTaskConditionType.IsMatch(arg_10_0)
 	end)
 end
 
-function var_0_1.IsUnlock(arg_11_0)
-	local var_11_0
-
-	if arg_11_0:IsMatchUnlockTime() then
-		var_11_0 = arg_11_0:IsMatchUnlockConditions()
-	end
-
-	return var_11_0
+function var_0_0.IsUnlock(arg_11_0)
+	return arg_11_0:IsMatchUnlockTime() and arg_11_0:IsMatchUnlockConditions()
 end
 
-function var_0_1.IsUnlockWaitTime(arg_12_0)
+function var_0_0.IsUnlockWaitTime(arg_12_0)
 	if arg_12_0.unlockTime == 0 then
 		return false
 	end
 
-	if arg_12_0:getConfig("unlock_condition") == "" or #var_1 == 0 then
+	local var_12_0 = arg_12_0:getConfig("unlock_condition")
+
+	if var_12_0 == "" or #var_12_0 == 0 then
 		return false
 	end
 
-	local var_12_0
-
-	if arg_12_0:IsMatchUnlockConditions() then
-		var_12_0 = not arg_12_0:IsMatchUnlockTime()
-	end
-
-	return var_12_0
+	return arg_12_0:IsMatchUnlockConditions() and not arg_12_0:IsMatchUnlockTime()
 end
 
-return var_0_1
+return var_0_0

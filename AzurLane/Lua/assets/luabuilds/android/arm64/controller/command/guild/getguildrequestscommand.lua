@@ -1,57 +1,23 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GetGuildRequestsCommand", pm.SimpleCommand)
 
-local var_0_0 = "GetGuildRequestsCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
-	pg = var_1_10003
-
-	local var_1_1 = var_1_10003.ConnectionMgr.GetInstance()
-
-	var_3.Send(var_1_1, 60003, {
-		id = var_1_0
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(60003, {
+		id = arg_1_1:getBody()
 	}, 60004, function(arg_2_0)
-		local var_2_0 = {}
-		local var_2_1 = {}
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.request_list) do
+			local var_2_0 = ChatMsg.New(ChatConst.ChannelGuild, {
+				player = Player.New(iter_2_1.player),
+				content = iter_2_1.content,
+				timestamp = iter_2_1.timestamp
+			})
 
-		ipairs = var_2_10003
+			;({})[var_2_0.player.id] = var_2_0
 
-		for iter_2_0, iter_2_1 in var_2_10003(arg_2_0.request_list) do
-			ChatMsg = var_2_10008
-			var_2_10008 = var_2_10008.New
-			ChatConst = var_2_10010
-			var_2_10010 = var_2_10010.ChannelGuild
-
-			local var_2_2 = {}
-
-			Player = var_2_10012
-			var_2_2.player = var_2_10012.New(iter_2_1.player)
-			var_2_2.content = iter_2_1.content
-			var_2_2.timestamp = iter_2_1.timestamp
-			var_2_0[var_2_10008(var_2_10010, var_2_2).player.id] = var_2_10008
-			table = var_9
-
-			var_9.insert(var_2_1, var_2_10008)
+			table.insert({}, var_2_0)
 		end
 
-		getProxy = var_3
-		GuildProxy = var_5
-
-		local var_2_3 = var_3(var_5)
-
-		var_3.setRequestList(var_2_3, var_2_0)
-
-		local var_2_4 = arg_1_0
-		local var_2_5 = var_4.sendNotification
-
-		GAME = var_7
-
-		var_2_5(var_2_4, var_7.GUILD_GET_REQUEST_LIST_DONE, var_2_1)
+		getProxy(GuildProxy):setRequestList({})
+		arg_1_0:sendNotification(GAME.GUILD_GET_REQUEST_LIST_DONE, {})
 
 		return
 	end)
@@ -59,4 +25,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,11 +1,4 @@
-﻿local var_0_0 = {
-	"前往<color=#ff7d36>仓库</color>界面",
-	"去看看现有的<color=#ff7d36>设计图纸</color>吧",
-	"点击制作按钮<color=#ff7d36>制作装备</color>吧！",
-	"就决定是你啦！点击确定按钮"
-}
-
-return {
+﻿return {
 	id = "S015",
 	events = {
 		{
@@ -15,17 +8,17 @@ return {
 				dir = -1,
 				posY = -102.56,
 				posX = 0,
-				text = var_0_0[1]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"去看看现有的<color=#ff7d36>设计图纸</color>吧",
+					"点击制作按钮<color=#ff7d36>制作装备</color>吧！",
+					"就决定是你啦！点击确定按钮"
+				})[1]
 			},
 			ui = {
 				pathIndex = -1,
 				dynamicPath = function()
-					getProxy = var_1_10000
-					SettingsProxy = var_1_10002
-
-					local var_1_0 = var_1_10000(var_1_10002)
-
-					if var_0.IsMellowStyle(var_1_0) then
+					if getProxy(SettingsProxy):IsMellowStyle() then
 						return "/OverlayCamera/Overlay/UIMain/NewMainMellowTheme(Clone)/frame/bottom/frame/storage"
 					else
 						return "/OverlayCamera/Overlay/UIMain/NewMainClassicTheme(Clone)/frame/bottom/equipButton"
@@ -49,7 +42,12 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 0,
-				text = var_0_0[2]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"去看看现有的<color=#ff7d36>设计图纸</color>吧",
+					"点击制作按钮<color=#ff7d36>制作装备</color>吧！",
+					"就决定是你啦！点击确定按钮"
+				})[2]
 			},
 			ui = {
 				pathIndex = -1,
@@ -71,7 +69,12 @@ return {
 				dir = -1,
 				posY = 0,
 				posX = 210.07,
-				text = var_0_0[3]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"去看看现有的<color=#ff7d36>设计图纸</color>吧",
+					"点击制作按钮<color=#ff7d36>制作装备</color>吧！",
+					"就决定是你啦！点击确定按钮"
+				})[3]
 			},
 			ui = {
 				pathIndex = -1,
@@ -92,7 +95,12 @@ return {
 				dir = -1,
 				posY = -2.69,
 				posX = 202.1,
-				text = var_0_0[4]
+				text = ({
+					"前往<color=#ff7d36>仓库</color>界面",
+					"去看看现有的<color=#ff7d36>设计图纸</color>吧",
+					"点击制作按钮<color=#ff7d36>制作装备</color>吧！",
+					"就决定是你啦！点击确定按钮"
+				})[4]
 			},
 			ui = {
 				pathIndex = -1,

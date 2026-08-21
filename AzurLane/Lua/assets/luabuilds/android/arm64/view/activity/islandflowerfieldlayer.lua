@@ -1,100 +1,44 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandFlowerFieldLayer", import("..base.BaseUI"))
 
-local var_0_0 = "IslandFlowerFieldLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandFlowerFieldUI"
 end
 
-function var_0_1.setActivity(arg_2_0, arg_2_1)
+function var_0_0.setActivity(arg_2_0, arg_2_1)
 	arg_2_0.activity = arg_2_1
 
 	return
 end
 
-function var_0_1.init(arg_3_0)
-	pg = var_1_10001
+function var_0_0.init(arg_3_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_3_0._tf)
 
-	local var_3_0 = var_1_10001.UIMgr.GetInstance()
+	local var_3_0 = arg_3_0._tf:Find("Text")
 
-	var_1.BlurPanel(var_3_0, arg_3_0._tf)
-
-	local var_3_1 = arg_3_0._tf
-	local var_3_2 = var_1.Find(var_3_1, "Text")
-
-	setText = var_1_10002
-
-	local var_3_3 = var_3_2
-
-	i18n = var_1_10005
-
-	var_1_10002(var_3_3, var_1_10005("islandnode_tips6"))
-
-	local var_3_4 = var_3_2
-	local var_3_5 = var_3_2.GetComponent
-
-	typeof = var_5
-	DftAniEvent = var_7
-
-	local var_3_6 = var_3_5(var_3_4, var_5(var_7))
-
-	var_2.SetEndEvent(var_3_6, function()
-		setActive = var_2_10000
-
-		var_2_10000(var_3_2, false)
+	setText(var_3_0, i18n("islandnode_tips6"))
+	var_3_0:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
+		setActive(var_3_0, false)
 
 		return
 	end)
 
-	local var_3_7 = arg_3_0._tf
+	arg_3_0.rtChars = arg_3_0._tf:Find("chars")
+	arg_3_0.rtShip = arg_3_0.rtChars:GetChild(math.random(arg_3_0.rtChars.childCount) - 1)
+	arg_3_0.contextData.shipConfigId = tonumber(arg_3_0.rtShip.name)
 
-	arg_3_0.rtChars = var_2.Find(var_3_7, "chars")
-
-	local var_3_8 = arg_3_0.rtChars
-	local var_3_9 = var_2.GetChild
-
-	math = var_5
-	arg_3_0.rtShip = var_3_9(var_3_8, var_5.random(arg_3_0.rtChars.childCount) - 1)
-
-	local var_3_10 = arg_3_0.contextData
-
-	tonumber = var_3_1
-	var_3_10.shipConfigId = var_3_1(arg_3_0.rtShip.name)
-	eachChild = var_3_10
-
-	var_3_10(arg_3_0.rtChars, function(arg_5_0)
-		setActive = var_2_10001
-
-		var_2_10001(arg_5_0, arg_5_0 == arg_3_0.rtShip)
+	eachChild(arg_3_0.rtChars, function(arg_5_0)
+		setActive(arg_5_0, arg_5_0 == arg_3_0.rtShip)
 
 		return
 	end)
 
 	arg_3_0.fieldList = {}
 	arg_3_0.posList = {}
-	eachChild = var_2
 
-	local var_3_11 = arg_3_0._tf
-
-	var_2(var_4.Find(var_3_11, "field"), function(arg_6_0)
-		eachChild = var_2_10001
-
-		var_2_10001(arg_6_0, function(arg_7_0)
-			table = var_3_10001
-
-			var_3_10001.insert(arg_3_0.fieldList, arg_7_0)
-
-			table = var_1
-
-			local var_7_0 = var_1.insert
-			local var_7_1 = arg_3_0.posList
-			local var_7_2 = arg_3_0.rtChars
-
-			var_7_0(var_7_1, var_4.InverseTransformPoint(var_7_2, arg_7_0.position))
+	eachChild(arg_3_0._tf:Find("field"), function(arg_6_0)
+		eachChild(arg_6_0, function(arg_7_0)
+			table.insert(arg_3_0.fieldList, arg_7_0)
+			table.insert(arg_3_0.posList, arg_3_0.rtChars:InverseTransformPoint(arg_7_0.position))
 
 			return
 		end)
@@ -102,168 +46,87 @@ function var_0_1.init(arg_3_0)
 		return
 	end)
 
-	local var_3_12 = arg_3_0._tf
+	arg_3_0.rtField = arg_3_0._tf:Find("field")
+	arg_3_0.rtBtnGet = arg_3_0._tf:Find("btn_get")
 
-	arg_3_0.rtField = var_2.Find(var_3_12, "field")
-
-	local var_3_13 = arg_3_0._tf
-
-	arg_3_0.rtBtnGet = var_2.Find(var_3_13, "btn_get")
-	onButton = var_2
-
-	local var_3_14 = arg_3_0
-	local var_3_15 = arg_3_0._tf
-	local var_3_16 = var_5.Find(var_3_15, "btn_back")
-
-	local function var_3_17()
-		local var_8_0 = arg_3_0
-
-		var_0.closeView(var_8_0)
+	onButton(arg_3_0, arg_3_0._tf:Find("btn_back"), function()
+		arg_3_0:closeView()
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_3_15
-
-	var_2(var_3_14, var_3_16, var_3_17, var_3_15)
-
-	ipairs = var_2
-
-	for iter_3_0, iter_3_1 in var_2({
+	for iter_3_0, iter_3_1 in ipairs({
 		"click",
 		"click_lock"
 	}) do
-		onButton = var_3_15
-
-		local var_3_18 = arg_3_0
-		local var_3_19 = arg_3_0.rtBtnGet
-		local var_3_20 = var_10.Find(var_3_19, iter_3_1)
-
-		local function var_3_21()
+		onButton(arg_3_0, arg_3_0.rtBtnGet:Find(iter_3_1), function()
 			if arg_3_0.timer then
-				setActive = var_0
-
-				var_0(var_3_2, true)
+				setActive(var_3_0, true)
 
 				return
 			end
 
-			local var_9_0 = arg_3_0
-			local var_9_1 = var_0.emit
-
-			IslandFlowerFieldMediator = var_2_10003
-
-			var_9_1(var_9_0, var_2_10003.GET_FLOWER_AWARD, false)
+			arg_3_0:emit(IslandFlowerFieldMediator.GET_FLOWER_AWARD, false)
 
 			return
+		end, SFX_CONFIRM)
+	end
+
+	return
+end
+
+function var_0_0.refreshDisplay(arg_10_0)
+	local var_10_0 = pg.TimeMgr.GetInstance()
+	local var_10_1 = var_10_0:GetServerTime() >= var_10_0:GetTimeToNextTime(math.max(arg_10_0.activity.data1, arg_10_0.activity.data2))
+
+	setActive(arg_10_0.rtBtnGet:Find("click"), var_10_1)
+	setActive(arg_10_0.rtBtnGet:Find("click_lock"), not var_10_1)
+
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.fieldList) do
+		triggerToggle(iter_10_1, var_10_1)
+	end
+
+	local var_10_2
+
+	if var_10_1 then
+		setText(arg_10_0.rtBtnGet:Find("time/Text"), var_10_0:DescCDTime(0))
+
+		goto label_10_0
+
+		var_10_2 = 0
+	end
+
+	arg_10_0.timer = Timer.New(function()
+		if var_10_2 < var_0 then
+			var_10_2 = var_10_2 + 1
+
+			setText(arg_10_0.rtBtnGet:Find("time/Text"), var_10_0:DescCDTime(var_0 - var_10_2))
+		else
+			arg_10_0.timer:Stop()
+
+			arg_10_0.timer = nil
+
+			arg_10_0:refreshDisplay()
 		end
 
-		SFX_CONFIRM = var_3_19
+		return
+	end, 1, var_10_0:GetTimeToNextTime() - var_10_0:GetServerTime())
 
-		var_3_15(var_3_18, var_3_20, var_3_21, var_3_19)
-	end
+	arg_10_0.timer.func()
+	arg_10_0.timer:Start()
 
-	return
-end
-
-function var_0_1.refreshDisplay(arg_10_0)
-	pg = var_1_10001
-
-	local var_10_0 = var_1_10001.TimeMgr.GetInstance()
-	local var_10_1 = var_1.GetServerTime(var_10_0)
-	local var_10_2 = var_1
-	local var_10_3 = var_1.GetTimeToNextTime
-
-	math = var_1_10006
-
-	local var_10_4 = var_10_3(var_10_2, var_1_10006.max(arg_10_0.activity.data1, arg_10_0.activity.data2)) <= var_10_1
-
-	setActive = var_3
-
-	local var_10_5 = arg_10_0.rtBtnGet
-
-	var_3(var_5.Find(var_10_5, "click"), var_10_4)
-
-	setActive = var_3
-
-	local var_10_6 = arg_10_0.rtBtnGet
-
-	var_3(var_5.Find(var_10_6, "click_lock"), not var_10_4)
-
-	ipairs = var_3
-
-	for iter_10_0, iter_10_1 in var_3(arg_10_0.fieldList) do
-		triggerToggle = var_8
-
-		var_8(iter_10_1, var_10_4)
-	end
-
-	if var_10_4 then
-		setText = var_3
-
-		local var_10_7 = arg_10_0.rtBtnGet
-
-		var_3(var_5.Find(var_10_7, "time/Text"), var_1:DescCDTime(0))
-	else
-		local var_10_8 = var_1
-		local var_10_9 = var_1.GetTimeToNextTime(var_10_8) - var_1:GetServerTime()
-		local var_10_10 = 0
-
-		Timer = var_10_8
-		arg_10_0.timer = var_10_8.New(function()
-			if var_10_10 < var_10_9 then
-				var_10_10 = var_10_10 + 1
-				setText = var_0
-
-				local var_11_0 = arg_10_0.rtBtnGet
-				local var_11_1 = var_2.Find(var_11_0, "time/Text")
-				local var_11_2 = var_0
-
-				var_0(var_11_1, var_3.DescCDTime(var_11_2, var_10_9 - var_10_10))
-			else
-				local var_11_3 = arg_10_0.timer
-
-				var_0.Stop(var_11_3)
-
-				arg_10_0.timer = nil
-
-				local var_11_4 = arg_10_0
-
-				var_0.refreshDisplay(var_11_4)
-			end
-
-			return
-		end, 1, var_10_9)
-
-		arg_10_0.timer.func()
-
-		local var_10_11 = arg_10_0.timer
-
-		var_5.Start(var_10_11)
-	end
+	::label_10_0::
 
 	return
 end
 
-function var_0_1.didEnter(arg_12_0)
-	pg = var_1_10001
+function var_0_0.didEnter(arg_12_0)
+	local var_12_0 = pg.TimeMgr.GetInstance()
 
-	local var_12_0 = var_1_10001.TimeMgr.GetInstance()
-	local var_12_1 = var_1.GetServerTime(var_12_0)
-	local var_12_2 = var_1
-	local var_12_3 = var_1.GetTimeToNextTime
-
-	math = var_1_10006
-
-	if var_12_1 - var_12_3(var_12_2, var_1_10006.max(arg_12_0.activity.data1, arg_12_0.activity.data2)) < 0 then
+	if var_12_0:GetServerTime() - var_12_0:GetTimeToNextTime(math.max(arg_12_0.activity.data1, arg_12_0.activity.data2)) < 0 then
 		arg_12_0:refreshDisplay()
 	else
-		local var_12_4 = arg_12_0
-		local var_12_5 = arg_12_0.emit
-
-		IslandFlowerFieldMediator = var_12_2
-
-		var_12_5(var_12_4, var_12_2.GET_FLOWER_AWARD, true)
+		arg_12_0:emit(IslandFlowerFieldMediator.GET_FLOWER_AWARD, true)
 	end
 
 	arg_12_0:DoCharAction()
@@ -271,118 +134,50 @@ function var_0_1.didEnter(arg_12_0)
 	return
 end
 
-local var_0_2 = 50
+local var_0_1 = 50
 
-function var_0_1.DoCharAction(arg_13_0)
-	local var_13_0 = arg_13_0.posList
+function var_0_0.DoCharAction(arg_13_0)
+	local var_13_0 = arg_13_0.posList[math.random(#arg_13_0.posList)] - arg_13_0.rtShip.anchoredPosition3D
 
-	math = var_1_10002
-
-	local var_13_1 = var_13_0[var_1_10002.random(#arg_13_0.posList)] - arg_13_0.rtShip.anchoredPosition3D
-
-	if var_2.SqrMagnitude(var_13_1) <= 0 then
+	if var_13_0:SqrMagnitude() <= 0 then
 		return arg_13_0:DoCharAction()
 	end
 
-	var_2.x = var_2.x - (var_2.x < 0 and -1 or 1) * 100
+	var_13_0.x = var_13_0.x - (var_13_0.x < 0 and -1 or 1) * 100
 
-	local var_13_2 = {}
+	table.insert({}, function(arg_14_0)
+		SetAction(arg_13_0.rtShip, "jiaoshui_walk")
+		setLocalScale(arg_13_0.rtShip, {
+			x = (var_13_0.x < 0 and -1 or 1) * math.abs(arg_13_0.rtShip.localScale.x)
+		})
 
-	table = var_5
-
-	var_5.insert(var_13_2, function(arg_14_0)
-		SetAction = var_2_10001
-
-		var_2_10001(arg_13_0.rtShip, "jiaoshui_walk")
-
-		setLocalScale = var_2_10001
-
-		local var_14_0 = arg_13_0.rtShip
-		local var_14_1 = {}
-		local var_14_2 = var_0.x < 0 and -1 or 1
-
-		math = var_6
-		var_14_1.x = var_14_2 * var_6.abs(arg_13_0.rtShip.localScale.x)
-
-		var_2_10001(var_14_0, var_14_1)
-
-		local var_14_3 = arg_13_0
-
-		LeanTween = var_2_10002
-
-		local var_14_4 = var_2_10002.move
-		local var_14_5 = arg_13_0.rtShip
-		local var_14_6 = arg_13_0.rtShip.anchoredPosition3D + var_0
-		local var_14_7 = var_0
-		local var_14_8 = var_14_4(var_14_5, var_14_6, var_6.Magnitude(var_14_7) / var_0_2)
-		local var_14_9 = var_2.setOnComplete
-
-		System = var_14_6
-		var_14_3.charLT = var_14_9(var_14_8, var_14_6.Action(arg_14_0)).uniqueId
+		arg_13_0.charLT = LeanTween.move(arg_13_0.rtShip, arg_13_0.rtShip.anchoredPosition3D + var_13_0, var_13_0:Magnitude() / var_0_1):setOnComplete(System.Action(arg_14_0)).uniqueId
 
 		return
 	end)
+	table.insert({}, function(arg_15_0)
+		var_13_0 = var_0 - arg_13_0.rtShip.anchoredPosition3D
 
-	table = var_5
+		SetAction(arg_13_0.rtShip, "jiaoshui", false)
+		setLocalScale(arg_13_0.rtShip, {
+			x = (var_13_0.x < 0 and -1 or 1) * math.abs(arg_13_0.rtShip.localScale.x)
+		})
 
-	var_5.insert(var_13_2, function(arg_15_0)
-		var_0 = var_0 - arg_13_0.rtShip.anchoredPosition3D
-		SetAction = var_1
-
-		var_1(arg_13_0.rtShip, "jiaoshui", false)
-
-		setLocalScale = var_1
-
-		local var_15_0 = arg_13_0.rtShip
-		local var_15_1 = {}
-		local var_15_2 = var_0.x < 0 and -1 or 1
-
-		math = var_6
-		var_15_1.x = var_15_2 * var_6.abs(arg_13_0.rtShip.localScale.x)
-
-		var_1(var_15_0, var_15_1)
-
-		local var_15_3 = arg_13_0
-
-		LeanTween = var_2
-
-		local var_15_4 = var_2.delayedCall
-		local var_15_5 = 3
-
-		System = var_5
-		var_15_3.charLT = var_15_4(var_15_5, var_5.Action(arg_15_0)).uniqueId
+		arg_13_0.charLT = LeanTween.delayedCall(3, System.Action(arg_15_0)).uniqueId
 
 		return
 	end)
+	table.insert({}, function(arg_16_0)
+		SetAction(arg_13_0.rtShip, "jiaoshui_stand")
 
-	table = var_5
-
-	var_5.insert(var_13_2, function(arg_16_0)
-		SetAction = var_2_10001
-
-		var_2_10001(arg_13_0.rtShip, "jiaoshui_stand")
-
-		local var_16_0 = arg_13_0
-
-		LeanTween = var_2_10002
-
-		local var_16_1 = var_2_10002.delayedCall
-		local var_16_2 = 4.666666666666667
-
-		System = var_2_10005
-		var_16_0.charLT = var_16_1(var_16_2, var_2_10005.Action(arg_16_0)).uniqueId
+		arg_13_0.charLT = LeanTween.delayedCall(4.666666666666667, System.Action(arg_16_0)).uniqueId
 
 		return
 	end)
-
-	seriesAsync = var_5
-
-	var_5(var_13_2, function()
+	seriesAsync({}, function()
 		arg_13_0.charLT = nil
 
-		local var_17_0 = arg_13_0
-
-		var_0.DoCharAction(var_17_0)
+		arg_13_0:DoCharAction()
 
 		return
 	end)
@@ -390,25 +185,17 @@ function var_0_1.DoCharAction(arg_13_0)
 	return
 end
 
-function var_0_1.willExit(arg_18_0)
-	pg = var_1_10001
-
-	local var_18_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_18_0, arg_18_0._tf)
+function var_0_0.willExit(arg_18_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_18_0._tf)
 
 	if arg_18_0.timer then
-		local var_18_1 = arg_18_0.timer
-
-		var_1.Stop(var_18_1)
+		arg_18_0.timer:Stop()
 
 		arg_18_0.timer = nil
 	end
 
 	if arg_18_0.charLT then
-		LeanTween = var_1
-
-		var_1.cancel(arg_18_0.charLT)
+		LeanTween.cancel(arg_18_0.charLT)
 
 		arg_18_0.charLT = nil
 	end
@@ -416,4 +203,4 @@ function var_0_1.willExit(arg_18_0)
 	return
 end
 
-return var_0_1
+return var_0_0

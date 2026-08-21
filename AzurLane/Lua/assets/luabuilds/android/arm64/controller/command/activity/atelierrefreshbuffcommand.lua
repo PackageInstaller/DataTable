@@ -1,40 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AtelierRefreshBuffCommand", pm.SimpleCommand)
 
-local var_0_0 = "AtelierRefreshBuffCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-pm = var_0_10003
+	assert(var_1_0)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
+	local var_1_1 = {}
 
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.body
-
-	getProxy = var_1_10003
-	ActivityProxy = var_1_10005
-
-	local var_1_1 = var_1_10003(var_1_10005)
-	local var_1_2 = var_3.getActivityByType
-
-	ActivityConst = var_1_10006
-
-	local var_1_3 = var_1_2(var_1_1, var_1_10006.ACTIVITY_TYPE_ATELIER_LINK)
-
-	assert = var_1_10004
-
-	var_1_10004(var_1_3)
-
-	local var_1_4 = {}
-
-	table = var_1_1
-
-	var_1_1.Foreach(var_1_0, function(arg_2_0, arg_2_1)
+	table.Foreach(arg_1_1.body, function(arg_2_0, arg_2_1)
 		if arg_2_1[1] == 0 then
 			return
 		end
 
-		table = var_2
-
-		var_2.insert(var_1_4, {
+		table.insert(var_1_1, {
 			pos = arg_2_0,
 			itemid = arg_2_1[1],
 			itemnum = arg_2_1[2]
@@ -42,53 +20,18 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 
 		return
 	end)
-
-	pg = var_5
-
-	local var_1_5 = var_5.ConnectionMgr.GetInstance()
-
-	var_5.Send(var_1_5, 26055, {
-		act_id = var_1_3.id,
-		slots = var_1_4
+	pg.ConnectionMgr.GetInstance():Send(26055, {
+		act_id = var_1_0.id,
+		slots = {}
 	}, 26056, function(arg_3_0)
-		local var_3_1
-
 		if arg_3_0.result == 0 then
-			getProxy = var_3_1
-			ActivityProxy = var_2_10003
+			var_1_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_ATELIER_LINK)
 
-			local var_3_0 = var_3_1(var_2_10003)
-
-			var_3_1 = var_3_1.getActivityByType
-			ActivityConst = var_2_10004
-			var_1_3 = var_3_1(var_3_0, var_2_10004.ACTIVITY_TYPE_ATELIER_LINK)
-
-			local var_3_2 = var_1_3
-
-			var_3_1.UpdateBuffSlots(var_3_2, var_1_4)
-
-			getProxy = var_3_1
-			ActivityProxy = var_3_2
-
-			local var_3_3 = var_3_1(var_3_2)
-
-			var_3_1.updateActivity(var_3_3, var_1_3)
-
-			local var_3_4 = arg_1_0
-
-			var_3_1 = var_3_1.sendNotification
-			GAME = var_2_10004
-
-			var_3_1(var_3_4, var_2_10004.UPDATE_ATELIER_BUFF_DONE, var_1_3)
+			var_1_0:UpdateBuffSlots(var_1_1)
+			getProxy(ActivityProxy):updateActivity(var_1_0)
+			arg_1_0:sendNotification(GAME.UPDATE_ATELIER_BUFF_DONE, var_1_0)
 		else
-			pg = var_3_1
-
-			local var_3_5 = var_3_1.TipsMgr.GetInstance()
-			local var_3_6 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_3_6(var_3_5, var_2_10004("", arg_3_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("", arg_3_0.result))
 		end
 
 		return
@@ -97,4 +40,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

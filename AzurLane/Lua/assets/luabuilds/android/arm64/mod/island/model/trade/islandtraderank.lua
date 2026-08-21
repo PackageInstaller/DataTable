@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandTradeRank")
+﻿local var_0_0 = class("IslandTradeRank")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
@@ -17,13 +15,9 @@ function var_0_0.IsVaild(arg_2_0)
 end
 
 function var_0_0.IsSelf(arg_3_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
+	local var_3_0 = getProxy(PlayerProxy)
 
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.getRawData(var_3_0)
-
-	return arg_3_0.id == var_3_1.id
+	return arg_3_0.id == var_3_0:getRawData().id
 end
 
 function var_0_0.SetValue(arg_4_0, arg_4_1)

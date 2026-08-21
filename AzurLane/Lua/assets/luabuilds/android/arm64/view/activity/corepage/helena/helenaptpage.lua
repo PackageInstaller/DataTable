@@ -1,417 +1,183 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("HelenaPTPage", import("view.activity.CorePage.CoreActivityPage"))
 
-local var_0_0 = "HelenaPTPage"
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.task_bg = arg_1_0.bg:Find("task_bg")
+	arg_1_0.slider = arg_1_0.task_bg:Find("slider")
+	arg_1_0.step = arg_1_0.task_bg:Find("step")
+	arg_1_0.progres = arg_1_0.task_bg:Find("progres")
+	arg_1_0.displayBtn = arg_1_0.task_bg:Find("display_btn")
+	arg_1_0.awardTF = arg_1_0.task_bg:Find("award")
+	arg_1_0.battleBtn = arg_1_0.task_bg:Find("battle_btn")
+	arg_1_0.getBtn = arg_1_0.task_bg:Find("get_btn")
+	arg_1_0.gotBtn = arg_1_0.task_bg:Find("got_btn")
+	arg_1_0.skinBtn = arg_1_0.bg:Find("skinbtn")
+	arg_1_0.scenario = HelenaScenarioPage.New(arg_1_0._tf, arg_1_0.event)
 
-import = var_0_10003
+	arg_1_0.scenario:SetCoreStoryPage(arg_1_0)
+	arg_1_0.scenario:RegisterView(arg_1_0.coreActivityUI)
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.CoreActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.task_bg = var_1.Find(var_1_1, "task_bg")
-
-	local var_1_2 = arg_1_0.task_bg
-
-	arg_1_0.slider = var_1.Find(var_1_2, "slider")
-
-	local var_1_3 = arg_1_0.task_bg
-
-	arg_1_0.step = var_1.Find(var_1_3, "step")
-
-	local var_1_4 = arg_1_0.task_bg
-
-	arg_1_0.progres = var_1.Find(var_1_4, "progres")
-
-	local var_1_5 = arg_1_0.task_bg
-
-	arg_1_0.displayBtn = var_1.Find(var_1_5, "display_btn")
-
-	local var_1_6 = arg_1_0.task_bg
-
-	arg_1_0.awardTF = var_1.Find(var_1_6, "award")
-
-	local var_1_7 = arg_1_0.task_bg
-
-	arg_1_0.battleBtn = var_1.Find(var_1_7, "battle_btn")
-
-	local var_1_8 = arg_1_0.task_bg
-
-	arg_1_0.getBtn = var_1.Find(var_1_8, "get_btn")
-
-	local var_1_9 = arg_1_0.task_bg
-
-	arg_1_0.gotBtn = var_1.Find(var_1_9, "got_btn")
-
-	local var_1_10 = arg_1_0.bg
-
-	arg_1_0.skinBtn = var_1.Find(var_1_10, "skinbtn")
-	HelenaScenarioPage = var_1
-	arg_1_0.scenario = var_1.New(arg_1_0._tf, arg_1_0.event)
-
-	local var_1_11 = arg_1_0.scenario
-
-	var_1.SetCoreStoryPage(var_1_11, arg_1_0)
-
-	local var_1_12 = arg_1_0.scenario
-
-	var_1.RegisterView(var_1_12, arg_1_0.coreActivityUI)
-
-	AutoLoader = var_1
-	arg_1_0.loader = var_1.New()
+	arg_1_0.loader = AutoLoader.New()
 	arg_1_0.mapGroup = {}
 	arg_1_0.currentBG = nil
-	setText = var_1
 
-	local var_1_13 = arg_1_0.task_bg
-	local var_1_14 = var_3.Find(var_1_13, "Text")
-
-	i18n = var_4
-
-	var_1(var_1_14, var_4("Outpost_20250904_Progress"))
-
-	setText = var_1
-
-	local var_1_15 = arg_1_0.task_bg
-	local var_1_16 = var_3.Find(var_1_15, "display_btn/Text")
-
-	i18n = var_4
-
-	var_1(var_1_16, var_4("other_world_temple_award"))
+	setText(arg_1_0.task_bg:Find("Text"), i18n("Outpost_20250904_Progress"))
+	setText(arg_1_0.task_bg:Find("display_btn/Text"), i18n("other_world_temple_award"))
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
+function var_0_0.OnDataSetting(arg_2_0)
 	if arg_2_0.ptData then
-		local var_2_0 = arg_2_0.ptData
-
-		var_1.Update(var_2_0, arg_2_0.activity)
+		arg_2_0.ptData:Update(arg_2_0.activity)
 	else
-		ActivityPtData = var_1
-		arg_2_0.ptData = var_1.New(arg_2_0.activity)
+		arg_2_0.ptData = ActivityPtData.New(arg_2_0.activity)
 	end
 
 	return
 end
 
-function var_0_1.OnShowFlush(arg_3_0)
-	var_0_1.super.OnShowFlush(arg_3_0)
+function var_0_0.OnShowFlush(arg_3_0)
+	var_0_0.super.OnShowFlush(arg_3_0)
 
 	if arg_3_0.contextData.activeScenario then
-		triggerButton = var_1
-
-		var_1(arg_3_0.skinBtn)
+		triggerButton(arg_3_0.skinBtn)
 	end
 
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_4_0)
-	onButton = var_1_10001
-
-	local var_4_0 = arg_4_0
-	local var_4_1 = arg_4_0.displayBtn
-
-	local function var_4_2()
-		local var_5_0 = arg_4_0
-		local var_5_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		local var_5_2 = var_2_10003.SHOW_AWARD_WINDOW
-
-		PtAwardWindow = var_2_10004
-
-		local var_5_3 = {
+function var_0_0.OnFirstFlush(arg_4_0)
+	onButton(arg_4_0, arg_4_0.displayBtn, function()
+		arg_4_0:emit(ActivityMediator.SHOW_AWARD_WINDOW, PtAwardWindow, {
 			blur = true,
 			type = arg_4_0.ptData.type,
 			dropList = arg_4_0.ptData.dropList,
 			targets = arg_4_0.ptData.targets,
 			level = arg_4_0.ptData.level,
 			count = arg_4_0.ptData.count,
-			resId = arg_4_0.ptData.resId
-		}
-		local var_5_4 = arg_4_0.ptData
-
-		var_5_3.unlockStamps = var_6.GetDayUnlockStamps(var_5_4)
-
-		var_5_1(var_5_0, var_5_2, var_2_10004, var_5_3)
+			resId = arg_4_0.ptData.resId,
+			unlockStamps = arg_4_0.ptData:GetDayUnlockStamps()
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_4_0, var_4_1, var_4_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_4_3 = arg_4_0
-	local var_4_4 = arg_4_0.battleBtn
-
-	local function var_4_5()
-		local var_6_0 = arg_4_0
-		local var_6_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_6_1(var_6_0, var_2_10003.SPECIAL_BATTLE_OPERA)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.battleBtn, function()
+		arg_4_0:emit(ActivityMediator.SPECIAL_BATTLE_OPERA)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_4_3, var_4_4, var_4_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_4_6 = arg_4_0
-	local var_4_7 = arg_4_0.getBtn
-
-	local function var_4_8()
-		local var_7_0 = arg_4_0
-
-		var_0.GetAllAward(var_7_0)
+	end, SFX_PANEL)
+	onButton(arg_4_0, arg_4_0.getBtn, function()
+		arg_4_0:GetAllAward()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_4_6, var_4_7, var_4_8, var_1_10006)
+	end, SFX_PANEL)
 	arg_4_0:OnAddUI()
 	arg_4_0:OnUpdateFlush()
 
 	return
 end
 
-function var_0_1.OnAddUI(arg_8_0)
-	onButton = var_1_10001
-
-	local var_8_0 = arg_8_0
-	local var_8_1 = arg_8_0.skinBtn
-
-	local function var_8_2()
-		local var_9_0 = arg_8_0.scenario
-
-		var_0.Load(var_9_0)
-
-		local var_9_1 = arg_8_0.scenario
-
-		var_0.SetActivity(var_9_1, arg_8_0.activity)
-
-		local var_9_2 = arg_8_0.scenario
-
-		var_0.UpdateStoryTask(var_9_2)
-
-		local var_9_3 = arg_8_0.scenario
-
-		var_0.ActionInvoke(var_9_3, "UpdateView")
-
-		local var_9_4 = arg_8_0
-
-		var_0.ShowScenarioLayer(var_9_4, true)
+function var_0_0.OnAddUI(arg_8_0)
+	onButton(arg_8_0, arg_8_0.skinBtn, function()
+		arg_8_0.scenario:Load()
+		arg_8_0.scenario:SetActivity(arg_8_0.activity)
+		arg_8_0.scenario:UpdateStoryTask()
+		arg_8_0.scenario:ActionInvoke("UpdateView")
+		arg_8_0:ShowScenarioLayer(true)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_8_0, var_8_1, var_8_2, var_1_10006)
-
-	setActive = var_1_10001
-
-	local var_8_3 = arg_8_0.skinBtn
-	local var_8_4 = var_3.Find(var_8_3, "red")
-	local var_8_5 = arg_8_0.scenario
-
-	var_1_10001(var_8_4, var_4.IsShowRed(var_8_5, arg_8_0.activity))
+	end, SFX_PANEL)
+	setActive(arg_8_0.skinBtn:Find("red"), arg_8_0.scenario:IsShowRed(arg_8_0.activity))
 
 	return
 end
 
-function var_0_1.SwitchBG(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
+function var_0_0.SwitchBG(arg_10_0, arg_10_1, arg_10_2, arg_10_3)
 	if not arg_10_1 or #arg_10_1 <= 0 then
-		existCall = var_1_10004
-
-		var_1_10004(arg_10_2)
+		existCall(arg_10_2)
 
 		return
 	elseif arg_10_3 then
 		-- block empty
-	else
-		table = var_1_10004
-
-		if var_1_10004.equal(arg_10_0.currentBG, arg_10_1) then
-			return
-		end
+	elseif table.equal(arg_10_0.currentBG, arg_10_1) then
+		return
 	end
 
 	arg_10_0.currentBG = arg_10_1
-	ipairs = var_1_10004
 
-	for iter_10_0, iter_10_1 in var_1_10004(arg_10_0.mapGroup) do
-		local var_10_0 = arg_10_0.loader
-
-		var_9.ClearRequest(var_10_0, iter_10_1)
+	for iter_10_0, iter_10_1 in ipairs(arg_10_0.mapGroup) do
+		arg_10_0.loader:ClearRequest(iter_10_1)
 	end
 
-	table = var_4
-
-	var_4.clear(arg_10_0.mapGroup)
-
-	local var_10_1 = arg_10_0.loader
-	local var_10_2 = var_4.GetSpriteDirect(var_10_1, "bg/" .. arg_10_1[1].BG, "", function(arg_11_0)
-		setImageSprite = var_2_10001
-
-		var_2_10001(arg_10_0.bg, arg_11_0)
-
-		SetActive = var_2_10001
-
-		var_2_10001(arg_10_0.bg, true)
+	table.clear(arg_10_0.mapGroup)
+	table.insert(arg_10_0.mapGroup, (arg_10_0.loader:GetSpriteDirect("bg/" .. arg_10_1[1].BG, "", function(arg_11_0)
+		setImageSprite(arg_10_0.bg, arg_11_0)
+		SetActive(arg_10_0.bg, true)
 
 		return
-	end)
-
-	table = var_5
-
-	var_5.insert(arg_10_0.mapGroup, var_10_2)
+	end)))
 
 	return
 end
 
-function var_0_1.ShowScenarioLayer(arg_12_0, arg_12_1)
+function var_0_0.ShowScenarioLayer(arg_12_0, arg_12_1)
 	if arg_12_1 then
-		local var_12_0 = arg_12_0.coreActivityUI
-
-		var_2.ActiveScenarioLayer(var_12_0, true)
-
-		local var_12_1 = arg_12_0.scenario
-
-		var_2.ActionInvoke(var_12_1, "Show")
+		arg_12_0.coreActivityUI:ActiveScenarioLayer(true)
+		arg_12_0.scenario:ActionInvoke("Show")
 	else
-		local var_12_2 = arg_12_0.scenario
-
-		var_2.Hide(var_12_2)
-
-		setActive = var_2
-
-		local var_12_3 = arg_12_0.skinBtn
-		local var_12_4 = var_4.Find(var_12_3, "red")
-		local var_12_5 = arg_12_0.scenario
-
-		var_2(var_12_4, var_5.IsShowRed(var_12_5, arg_12_0.activity))
-
-		local var_12_6 = arg_12_0.coreActivityUI
-
-		var_2.ActiveScenarioLayer(var_12_6, false)
+		arg_12_0.scenario:Hide()
+		setActive(arg_12_0.skinBtn:Find("red"), arg_12_0.scenario:IsShowRed(arg_12_0.activity))
+		arg_12_0.coreActivityUI:ActiveScenarioLayer(false)
 	end
 
 	return
 end
 
-function var_0_1.IsShowingPopWindow(arg_13_0)
-	local var_13_0 = arg_13_0.scenario
-
-	return var_1.isShowing(var_13_0)
+function var_0_0.IsShowingPopWindow(arg_13_0)
+	return arg_13_0.scenario:isShowing()
 end
 
-function var_0_1.ClosePopWindow(arg_14_0)
-	local var_14_0 = arg_14_0.scenario
-
-	var_1.Hide(var_14_0)
+function var_0_0.ClosePopWindow(arg_14_0)
+	arg_14_0.scenario:Hide()
 	arg_14_0:ShowScenarioLayer(false)
 
 	return
 end
 
-function var_0_1.GetAllAward(arg_15_0)
-	local var_15_0 = {}
-	local var_15_1 = arg_15_0.ptData
-	local var_15_2 = var_2.GetAward(var_15_1)
-
-	getProxy = var_1_10003
-	PlayerProxy = var_1_10005
-
-	local var_15_3 = var_1_10003(var_1_10005)
-	local var_15_4 = var_3.getRawData(var_15_3)
-
-	pg = var_1_10005
-
-	local var_15_5 = var_1_10005.gameset.urpt_chapter_max.description[1]
-
-	LOCK_UR_SHIP = var_15_3
-
-	if var_15_3 then
-		var_15_3 = 0
-	else
-		getProxy = var_15_3
-		BagProxy = var_1_10008
-
-		local var_15_6 = var_15_3(var_1_10008)
-
-		var_15_3 = var_15_3.GetLimitCntById(var_15_6, var_15_5)
-	end
-
-	Task = var_1_10007
-
-	local var_15_7, var_15_8 = var_1_10007.StaticJudgeOverflow(var_15_4.gold, var_15_4.oil, var_15_3, true, true, {
+function var_0_0.GetAllAward(arg_15_0)
+	local var_15_0 = arg_15_0.ptData:GetAward()
+	local var_15_1 = getProxy(PlayerProxy):getRawData()
+	local var_15_2 = LOCK_UR_SHIP and 0 or getProxy(BagProxy):GetLimitCntById(pg.gameset.urpt_chapter_max.description[1])
+	local var_15_3, var_15_4 = Task.StaticJudgeOverflow(var_15_1.gold, var_15_1.oil, var_15_2, true, true, {
 		{
-			var_15_2.type,
-			var_15_2.id,
-			var_15_2.count
+			var_15_0.type,
+			var_15_0.id,
+			var_15_0.count
 		}
 	})
 
-	if var_15_7 then
-		table = var_9
-
-		var_9.insert(var_15_0, function(arg_16_0)
-			pg = var_2_10001
-
-			local var_16_0 = var_2_10001.MsgboxMgr.GetInstance()
-			local var_16_1 = var_1.ShowMsgBox
-			local var_16_2 = {}
-
-			MSGBOX_TYPE_ITEM_BOX = var_2_10005
-			var_16_2.type = var_2_10005
-			i18n = var_2_10005
-			var_16_2.content = var_2_10005("award_max_warning")
-			var_16_2.items = var_15_8
-			var_16_2.onYes = arg_16_0
-
-			var_16_1(var_16_0, var_16_2)
+	if var_15_3 then
+		table.insert({}, function(arg_16_0)
+			pg.MsgboxMgr.GetInstance():ShowMsgBox({
+				type = MSGBOX_TYPE_ITEM_BOX,
+				content = i18n("award_max_warning"),
+				items = var_15_4,
+				onYes = arg_16_0
+			})
 
 			return
 		end)
 	end
 
-	seriesAsync = var_9
+	seriesAsync({}, function()
+		local var_17_0, var_17_1 = arg_15_0.ptData:GetResProgress()
 
-	var_9(var_15_0, function()
-		local var_17_0 = arg_15_0.ptData
-		local var_17_1, var_17_2 = var_0.GetResProgress(var_17_0)
-		local var_17_3 = arg_15_0
-		local var_17_4 = var_2.emit
-
-		ActivityMediator = var_2_10005
-
-		local var_17_5 = var_2_10005.EVENT_PT_OPERATION
-		local var_17_6 = {
-			cmd = 1
-		}
-		local var_17_7 = arg_15_0.ptData
-
-		var_17_6.activity_id = var_7.GetId(var_17_7)
-		var_17_6.arg1 = var_17_2
-
-		var_17_4(var_17_3, var_17_5, var_17_6)
+		arg_15_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			cmd = 1,
+			activity_id = arg_15_0.ptData:GetId(),
+			arg1 = var_17_1
+		})
 
 		return
 	end)
@@ -419,160 +185,71 @@ function var_0_1.GetAllAward(arg_15_0)
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_18_0)
-	local var_18_0 = arg_18_0.ptData
-	local var_18_1, var_18_2, var_18_3 = var_1.GetLevelProgress(var_18_0)
+function var_0_0.OnUpdateFlush(arg_18_0)
+	local var_18_0, var_18_1, var_18_2 = arg_18_0.ptData:GetLevelProgress()
 
 	if arg_18_0.step then
-		setText = var_4
-
-		var_4(arg_18_0.step, var_18_1 .. "/" .. var_18_2)
+		setText(arg_18_0.step, var_18_0 .. "/" .. var_18_1)
 	end
 
-	local var_18_4 = arg_18_0.activity
-	local var_18_5 = var_4.getConfig(var_18_4, "config_client").story
+	local var_18_3 = arg_18_0.activity:getConfig("config_client").story
 
-	checkExist = var_1_10005
-
-	if var_1_10005(var_18_5, {
-		var_18_1
+	if checkExist(var_18_3, {
+		var_18_0
 	}, {
 		1
 	}) then
-		pg = var_5
-
-		local var_18_6 = var_5.NewStoryMgr.GetInstance()
-
-		var_5.Play(var_18_6, var_18_5[var_18_1][1])
+		pg.NewStoryMgr.GetInstance():Play(var_18_3[var_18_0][1])
 	end
 
-	local var_18_7 = arg_18_0.ptData
-	local var_18_8, var_18_9, var_18_10 = var_5.GetResProgress(var_18_7)
+	local var_18_4, var_18_5, var_18_6 = arg_18_0.ptData:GetResProgress()
 
-	if var_18_9 < var_18_8 then
-		var_18_8 = var_18_9
+	if var_18_5 < var_18_4 then
+		var_18_4 = var_18_5
 	end
 
-	setText = var_8
+	setText(arg_18_0.progres, setColorStr(var_18_4, "#3f93d4") .. setColorStr("/" .. var_18_5, "#747c88"))
+	setSlider(arg_18_0.slider, 0, 1, var_18_6)
 
-	local var_18_11 = arg_18_0.progres
+	local var_18_7 = arg_18_0.ptData:CanGetAward()
+	local var_18_8 = arg_18_0.ptData:CanGetNextAward()
 
-	setColorStr = var_1_10011
-
-	local var_18_12 = var_1_10011(var_18_8, "#3f93d4")
-
-	setColorStr = var_1_10012
-
-	var_8(var_18_11, var_18_12 .. var_1_10012("/" .. var_18_9, "#747c88"))
-
-	setSlider = var_8
-
-	var_8(arg_18_0.slider, 0, 1, var_18_10)
-
-	local var_18_13 = arg_18_0.ptData
-	local var_18_14 = var_8.CanGetAward(var_18_13)
-	local var_18_15 = arg_18_0.ptData
-	local var_18_16 = var_9.CanGetNextAward(var_18_15)
-	local var_18_17 = arg_18_0.ptData
-	local var_18_18 = var_10.CanGetMorePt(var_18_17)
-
-	setActive = var_18_15
-
-	var_18_15(arg_18_0.battleBtn, var_18_18 and not var_18_14 and var_18_16)
-
-	setActive = var_18_15
-
-	var_18_15(arg_18_0.getBtn, var_18_14)
-
-	setActive = var_18_15
-
-	var_18_15(arg_18_0.gotBtn, not var_18_16)
-
-	local var_18_19 = arg_18_0.ptData
-	local var_18_20 = var_11.GetAward(var_18_19)
-
-	updateDrop = var_18_17
-
-	var_18_17(arg_18_0.awardTF, var_18_20)
-
-	onButton = var_18_17
-
-	local var_18_21 = arg_18_0
-	local var_18_22 = arg_18_0.awardTF
-
-	local function var_18_23()
-		local var_19_0 = arg_18_0
-		local var_19_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_19_1(var_19_0, var_2_10003.ON_DROP, var_18_20)
+	setActive(arg_18_0.battleBtn, arg_18_0.ptData:CanGetMorePt() and not var_18_7 and var_18_8)
+	setActive(arg_18_0.getBtn, var_18_7)
+	setActive(arg_18_0.gotBtn, not var_18_8)
+	updateDrop(arg_18_0.awardTF, (arg_18_0.ptData:GetAward()))
+	onButton(arg_18_0, arg_18_0.awardTF, function()
+		arg_18_0:emit(BaseUI.ON_DROP, var_0)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10017
-
-	var_18_17(var_18_21, var_18_22, var_18_23, var_1_10017)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_20_0)
-	local var_20_0 = arg_20_0.scenario
-
-	if var_1.isShowing(var_20_0) then
-		local var_20_1 = arg_20_0.scenario
-
-		var_1.Hide(var_20_1)
+function var_0_0.OnDestroy(arg_20_0)
+	if arg_20_0.scenario:isShowing() then
+		arg_20_0.scenario:Hide()
 	end
 
-	local var_20_2 = arg_20_0.scenario
-
-	var_1.Destroy(var_20_2)
+	arg_20_0.scenario:Destroy()
 
 	return
 end
 
-function var_0_1.GetWorldPtData(arg_21_0, arg_21_1)
-	pg = var_1_10002
+function var_0_0.GetWorldPtData(arg_21_0, arg_21_1)
+	local var_21_0 = ActivityMainScene.Data2Time or 0
 
-	local var_21_0 = var_1_10002.TimeMgr.GetInstance()
-	local var_21_1 = var_2.GetServerTime(var_21_0)
+	if arg_21_1 <= pg.TimeMgr.GetInstance():GetServerTime() - var_21_0 then
+		ActivityMainScene.Data2Time = pg.TimeMgr.GetInstance():GetServerTime()
 
-	ActivityMainScene = var_1_10003
-
-	local var_21_2
-
-	if not var_1_10003.Data2Time then
-		var_21_2 = 0
-	end
-
-	if arg_21_1 <= var_21_1 - var_21_2 then
-		ActivityMainScene = var_2
-		pg = var_21_2
-
-		local var_21_3 = var_21_2.TimeMgr.GetInstance()
-
-		var_2.Data2Time = var_3.GetServerTime(var_21_3)
-
-		local var_21_4 = arg_21_0
-		local var_21_5 = arg_21_0.emit
-
-		ActivityMediator = var_21_3
-
-		local var_21_6 = var_21_3.EVENT_PT_OPERATION
-		local var_21_7 = {
-			cmd = 2
-		}
-		local var_21_8 = arg_21_0.ptData
-
-		var_21_7.activity_id = var_7.GetId(var_21_8)
-
-		var_21_5(var_21_4, var_21_6, var_21_7)
+		arg_21_0:emit(ActivityMediator.EVENT_PT_OPERATION, {
+			cmd = 2,
+			activity_id = arg_21_0.ptData:GetId()
+		})
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

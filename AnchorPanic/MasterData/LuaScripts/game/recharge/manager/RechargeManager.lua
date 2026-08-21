@@ -24,8 +24,8 @@ function __init(self)
 end
 
 function parseRechargeList(self, msg)
-    print("商品充值列表数量：" .. #msg.pay_cfg)
-    print("商品已充值列表数量：" .. #msg.pay_list)
+    -- print("商品充值列表数量：" .. #msg.pay_cfg)
+    -- print("商品已充值列表数量：" .. #msg.pay_list)
 
     self.hasRechargeList = msg.pay_list
 
@@ -33,7 +33,7 @@ function parseRechargeList(self, msg)
     for i = 1, #msg.pay_cfg do
         local rechargeVo = recharge.RechargeVo.new()
         rechargeVo:parseData(msg.pay_cfg[i])
-        print(rechargeVo:toString())
+        -- print(rechargeVo:toString())
 
         if (not self.rechargeDic[rechargeVo.type]) then
             self.rechargeDic[rechargeVo.type] = {}
@@ -46,6 +46,7 @@ function parseRechargeList(self, msg)
     end
 
     GameDispatcher:dispatchEvent(EventName.UPDATE_RECHARGEPANEL)
+    GameDispatcher:dispatchEvent(EventName.ACTIVITY_NOVICE_UPDATE)
 end
 
 function parseRechargeConfigList(self)
@@ -90,6 +91,18 @@ end
 
 function getIsBuyOneGift(self)
     return (purchase.DirectBuyManager:getHadBuyNum(tonumber(recharge.rechargeDirectId.oneYuanGift)) >= 1)
+end
+
+function getIsBuyThirtyGift(self)
+    return (purchase.DirectBuyManager:getHadBuyNum(tonumber(recharge.rechargeDirectId.thirtyYuanGift)) >= 1)
+end
+
+function getIsBuySuperGift(self)
+    return (purchase.DirectBuyManager:getHadBuyNum(tonumber(recharge.rechargeDirectId.twoAnniversaryGift)) >= 1)
+end
+
+function getIsBuyNewSuperGift(self)
+    return (purchase.DirectBuyManager:getHadBuyNum(tonumber(recharge.rechargeDirectId.newSuperGift)) >= 1)
 end
 
 -- 判断是否已经充值过

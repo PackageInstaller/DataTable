@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "commander_skill_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "commander_skill_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.commander_skill_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.commander_skill_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.commander_skill_template = rawget(pg, "commander_skill_template") or setmetatable({
+	__name = "commander_skill_template"
+}, confNEO)
+pg.commander_skill_template.all = {
 	10011,
 	10012,
 	10013,
@@ -129,25 +106,11 @@ var_0_3.all = {
 	960072,
 	960073
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.commander_skill_template = {}
+pg.base = pg.base or {}
+pg.base.commander_skill_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.commander_skill_template
-
-	var_1_0[10011] = {
+	pg.base.commander_skill_template[10011] = {
 		name = "31节的正义",
 		desc_world = "所在舰队中有三艘驱逐时，依据指挥喵战术属性，提高所在舰队中先锋舰队的雷击属性（效果中）",
 		next_id = 10012,
@@ -164,11 +127,7 @@ var_0_3.base.commander_skill_template = {}
 			9100111
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.commander_skill_template
-
-	var_1_1[10012] = {
+	pg.base.commander_skill_template[10012] = {
 		name = "31节的正义",
 		desc_world = "作为司令位指挥喵时，若先锋舰队中间位置为驱逐舰，进入战斗后发射一轮特殊弹幕I，每场战斗一次",
 		next_id = 10013,
@@ -187,11 +146,7 @@ var_0_3.base.commander_skill_template = {}
 			9100112
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.commander_skill_template
-
-	var_1_2[10013] = {
+	pg.base.commander_skill_template[10013] = {
 		name = "31节的正义",
 		desc_world = "特殊弹幕I 强化为 特殊弹幕II",
 		next_id = 0,
@@ -211,11 +166,7 @@ var_0_3.base.commander_skill_template = {}
 			9100113
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.commander_skill_template
-
-	var_1_3[10021] = {
+	pg.base.commander_skill_template[10021] = {
 		name = "王牌射手",
 		desc_world = "与主力舰队或侦查舰队交战时，依据指挥喵战术属性，提高所在舰队中战列、战巡、航战的命中属性(效果大)",
 		next_id = 10022,
@@ -232,11 +183,7 @@ var_0_3.base.commander_skill_template = {}
 			100211
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.commander_skill_template
-
-	var_1_4[10022] = {
+	pg.base.commander_skill_template[10022] = {
 		name = "王牌射手",
 		desc_world = "若所在舰队旗舰为战列、战巡或航战，依据指挥喵指挥属性，提高旗舰造成的伤害",
 		next_id = 10023,
@@ -255,11 +202,7 @@ var_0_3.base.commander_skill_template = {}
 			100212
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.commander_skill_template
-
-	var_1_5[10023] = {
+	pg.base.commander_skill_template[10023] = {
 		name = "王牌射手",
 		desc_world = "依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的机动、防空属性(效果中)",
 		next_id = 0,
@@ -280,11 +223,7 @@ var_0_3.base.commander_skill_template = {}
 			100213
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.commander_skill_template
-
-	var_1_6[11011] = {
+	pg.base.commander_skill_template[11011] = {
 		name = "5英寸的勇气",
 		desc_world = "当作为司令位指挥喵，依据指挥喵指挥属性，提高所在舰队中驱逐的雷击属性(效果小)",
 		next_id = 11012,
@@ -301,11 +240,7 @@ var_0_3.base.commander_skill_template = {}
 			9110111
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.commander_skill_template
-
-	var_1_7[11012] = {
+	pg.base.commander_skill_template[11012] = {
 		name = "5英寸的勇气",
 		desc_world = "先锋领舰为驱逐时，战斗中靠近敌人时发射一轮特殊弹幕I，每场战斗一次",
 		next_id = 11013,
@@ -324,11 +259,7 @@ var_0_3.base.commander_skill_template = {}
 			110112
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.commander_skill_template
-
-	var_1_8[11013] = {
+	pg.base.commander_skill_template[11013] = {
 		name = "5英寸的勇气",
 		desc_world = "特殊弹幕I 强化为 特殊弹幕II",
 		next_id = 0,
@@ -347,11 +278,7 @@ var_0_3.base.commander_skill_template = {}
 			110113
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.commander_skill_template
-
-	var_1_9[11021] = {
+	pg.base.commander_skill_template[11021] = {
 		name = "幸运之翼",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻航、正航的装填属性(效果小)",
 		next_id = 11022,
@@ -368,11 +295,7 @@ var_0_3.base.commander_skill_template = {}
 			110211
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.commander_skill_template
-
-	var_1_10[11022] = {
+	pg.base.commander_skill_template[11022] = {
 		name = "幸运之翼",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻航、正航的机动、防空属性(效果小)",
 		next_id = 11023,
@@ -391,11 +314,7 @@ var_0_3.base.commander_skill_template = {}
 			9110212
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.commander_skill_template
-
-	var_1_11[11023] = {
+	pg.base.commander_skill_template[11023] = {
 		name = "幸运之翼",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻航、正航的航空属性(效果中)",
 		next_id = 0,
@@ -416,11 +335,7 @@ var_0_3.base.commander_skill_template = {}
 			110213
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.commander_skill_template
-
-	var_1_12[12011] = {
+	pg.base.commander_skill_template[12011] = {
 		name = "空母后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻航、正航的装填属性(效果小)",
 		next_id = 12012,
@@ -437,11 +352,7 @@ var_0_3.base.commander_skill_template = {}
 			120111
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.commander_skill_template
-
-	var_1_13[12012] = {
+	pg.base.commander_skill_template[12012] = {
 		name = "空母后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻航、正航的航空属性(效果小)",
 		next_id = 12013,
@@ -460,11 +371,7 @@ var_0_3.base.commander_skill_template = {}
 			120112
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.commander_skill_template
-
-	var_1_14[12013] = {
+	pg.base.commander_skill_template[12013] = {
 		name = "空母后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻航、正航的命中属性(效果小)",
 		next_id = 0,
@@ -485,11 +392,7 @@ var_0_3.base.commander_skill_template = {}
 			120113
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.commander_skill_template
-
-	var_1_15[12021] = {
+	pg.base.commander_skill_template[12021] = {
 		name = "雷达侦察",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻巡、重巡、超巡的机动属性(效果小)",
 		next_id = 12022,
@@ -506,11 +409,7 @@ var_0_3.base.commander_skill_template = {}
 			9120121
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.commander_skill_template
-
-	var_1_16[12022] = {
+	pg.base.commander_skill_template[12022] = {
 		name = "雷达侦察",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻巡、重巡、超巡的命中属性(效果小)",
 		next_id = 12023,
@@ -529,11 +428,7 @@ var_0_3.base.commander_skill_template = {}
 			120122
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.commander_skill_template
-
-	var_1_17[12023] = {
+	pg.base.commander_skill_template[12023] = {
 		name = "雷达侦察",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻巡、重巡、超巡的炮击属性(效果小)",
 		next_id = 0,
@@ -554,11 +449,7 @@ var_0_3.base.commander_skill_template = {}
 			120123
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.commander_skill_template
-
-	var_1_18[20011] = {
+	pg.base.commander_skill_template[20011] = {
 		name = "尽忠职守",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的炮击、防空属性(效果中)",
 		next_id = 20012,
@@ -575,11 +466,7 @@ var_0_3.base.commander_skill_template = {}
 			200111
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.commander_skill_template
-
-	var_1_19[20012] = {
+	pg.base.commander_skill_template[20012] = {
 		name = "尽忠职守",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队全员的炮击属性(效果中)，持续30秒",
 		next_id = 20013,
@@ -598,11 +485,7 @@ var_0_3.base.commander_skill_template = {}
 			9200112
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.commander_skill_template
-
-	var_1_20[20013] = {
+	pg.base.commander_skill_template[20013] = {
 		name = "尽忠职守",
 		desc_world = "依据指挥喵战术属性，提高所在舰队成员对战列、战巡、航战造成的伤害",
 		next_id = 0,
@@ -623,11 +506,7 @@ var_0_3.base.commander_skill_template = {}
 			200113
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.commander_skill_template
-
-	var_1_21[20021] = {
+	pg.base.commander_skill_template[20021] = {
 		name = "狡黠之獾",
 		desc_world = "作为司令位指挥喵时，依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的炮击、防空属性(效果中)",
 		next_id = 20022,
@@ -644,11 +523,7 @@ var_0_3.base.commander_skill_template = {}
 			200211
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.commander_skill_template
-
-	var_1_22[20022] = {
+	pg.base.commander_skill_template[20022] = {
 		name = "狡黠之獾",
 		desc_world = "作为司令位指挥喵时，若队伍中皇家阵营角色数量不少于4名，战斗开始后，依据后勤属性，降低队伍中先锋角色受到的伤害，持续30秒",
 		next_id = 20023,
@@ -667,11 +542,7 @@ var_0_3.base.commander_skill_template = {}
 			200212
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.commander_skill_template
-
-	var_1_23[20023] = {
+	pg.base.commander_skill_template[20023] = {
 		name = "狡黠之獾",
 		desc_world = "作为司令位指挥喵时，依据指挥喵后勤属性，提高所在舰队中皇家阵营角色的机动属性(效果大)",
 		next_id = 0,
@@ -692,11 +563,7 @@ var_0_3.base.commander_skill_template = {}
 			200213
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.commander_skill_template
-
-	var_1_24[21011] = {
+	pg.base.commander_skill_template[21011] = {
 		name = "物资拦截者",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻巡、重巡、超巡的机动属性(效果小)",
 		next_id = 21012,
@@ -713,11 +580,7 @@ var_0_3.base.commander_skill_template = {}
 			210111
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.commander_skill_template
-
-	var_1_25[21012] = {
+	pg.base.commander_skill_template[21012] = {
 		name = "物资拦截者",
 		desc_world = "作为参谋位指挥喵，与运输舰队交战时，依据指挥喵战术属性，提高所在舰队中轻巡、重巡、超巡的炮击属性(效果大)",
 		next_id = 21013,
@@ -736,11 +599,7 @@ var_0_3.base.commander_skill_template = {}
 			210112
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.commander_skill_template
-
-	var_1_26[21013] = {
+	pg.base.commander_skill_template[21013] = {
 		name = "物资拦截者",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻巡、重巡的雷击属性(效果中)",
 		next_id = 0,
@@ -761,11 +620,7 @@ var_0_3.base.commander_skill_template = {}
 			210113
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.commander_skill_template
-
-	var_1_27[21021] = {
+	pg.base.commander_skill_template[21021] = {
 		name = "斥候猎手",
 		desc_world = "作为参谋位指挥喵，与侦查舰队交战时，依据指挥喵战术属性，提高所在舰队中驱逐的命中属性(效果中)",
 		next_id = 21022,
@@ -782,11 +637,7 @@ var_0_3.base.commander_skill_template = {}
 			210211
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.commander_skill_template
-
-	var_1_28[21022] = {
+	pg.base.commander_skill_template[21022] = {
 		name = "斥候猎手",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中驱逐的机动属性(效果小)",
 		next_id = 21023,
@@ -805,11 +656,7 @@ var_0_3.base.commander_skill_template = {}
 			210212
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.commander_skill_template
-
-	var_1_29[21023] = {
+	pg.base.commander_skill_template[21023] = {
 		name = "斥候猎手",
 		desc_world = "距离自身3格范围内存在敌方侦察舰队时，依据指挥喵指挥属性，提高所在舰队中驱逐的机动属性(效果小)",
 		next_id = 0,
@@ -830,11 +677,7 @@ var_0_3.base.commander_skill_template = {}
 			9210213
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.commander_skill_template
-
-	var_1_30[21031] = {
+	pg.base.commander_skill_template[21031] = {
 		name = "守望者",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻航、正航的命中属性(效果小)",
 		next_id = 21032,
@@ -851,11 +694,7 @@ var_0_3.base.commander_skill_template = {}
 			210311
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.commander_skill_template
-
-	var_1_31[21032] = {
+	pg.base.commander_skill_template[21032] = {
 		name = "守望者",
 		desc_world = "距离自身2格范围内存在敌方侦察舰队时，依据指挥喵后勤属性，提高所在舰队中驱逐的机动属性(效果小)",
 		next_id = 21033,
@@ -874,11 +713,7 @@ var_0_3.base.commander_skill_template = {}
 			9210312
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.commander_skill_template
-
-	var_1_32[21033] = {
+	pg.base.commander_skill_template[21033] = {
 		name = "守望者",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻航、正航的航空属性(效果中)",
 		next_id = 0,
@@ -899,11 +734,7 @@ var_0_3.base.commander_skill_template = {}
 			210313
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.commander_skill_template
-
-	var_1_33[21041] = {
+	pg.base.commander_skill_template[21041] = {
 		name = "无畏的骑士",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中战列、战巡、航战的机动属性(效果小)",
 		next_id = 21042,
@@ -920,11 +751,7 @@ var_0_3.base.commander_skill_template = {}
 			9210411
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.commander_skill_template
-
-	var_1_34[21042] = {
+	pg.base.commander_skill_template[21042] = {
 		name = "无畏的骑士",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的装填属性(效果小)",
 		next_id = 21043,
@@ -943,11 +770,7 @@ var_0_3.base.commander_skill_template = {}
 			210412
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.commander_skill_template
-
-	var_1_35[21043] = {
+	pg.base.commander_skill_template[21043] = {
 		name = "无畏的骑士",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中皇家阵营角色的炮击属性(效果小)",
 		next_id = 0,
@@ -968,11 +791,7 @@ var_0_3.base.commander_skill_template = {}
 			210413
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.commander_skill_template
-
-	var_1_36[22011] = {
+	pg.base.commander_skill_template[22011] = {
 		name = "战列后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中战列、战巡、航战的装填属性(效果小)",
 		next_id = 22012,
@@ -989,11 +808,7 @@ var_0_3.base.commander_skill_template = {}
 			220111
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.commander_skill_template
-
-	var_1_37[22012] = {
+	pg.base.commander_skill_template[22012] = {
 		name = "战列后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中战列、战巡、航战的命中属性(效果小)",
 		next_id = 22013,
@@ -1012,11 +827,7 @@ var_0_3.base.commander_skill_template = {}
 			220112
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.commander_skill_template
-
-	var_1_38[22013] = {
+	pg.base.commander_skill_template[22013] = {
 		name = "战列后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中战列、战巡、航战的炮击属性(效果小)",
 		next_id = 0,
@@ -1037,11 +848,7 @@ var_0_3.base.commander_skill_template = {}
 			220113
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.commander_skill_template
-
-	var_1_39[22021] = {
+	pg.base.commander_skill_template[22021] = {
 		name = "巡洋战术",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻巡、重巡、超巡的炮击属性(效果小)",
 		next_id = 22022,
@@ -1058,11 +865,7 @@ var_0_3.base.commander_skill_template = {}
 			220211
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.commander_skill_template
-
-	var_1_40[22022] = {
+	pg.base.commander_skill_template[22022] = {
 		name = "巡洋战术",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻巡、重巡、超巡的命中属性(效果小)",
 		next_id = 22023,
@@ -1081,11 +884,7 @@ var_0_3.base.commander_skill_template = {}
 			220212
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.commander_skill_template
-
-	var_1_41[22023] = {
+	pg.base.commander_skill_template[22023] = {
 		name = "巡洋战术",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻巡、重巡、超巡的机动属性(效果小)",
 		next_id = 0,
@@ -1106,11 +905,7 @@ var_0_3.base.commander_skill_template = {}
 			220213
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.commander_skill_template
-
-	var_1_42[30011] = {
+	pg.base.commander_skill_template[30011] = {
 		name = "反击的一拳",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻航、正航的航空、装填属性(效果小)",
 		next_id = 30012,
@@ -1127,11 +922,7 @@ var_0_3.base.commander_skill_template = {}
 			300111
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.commander_skill_template
-
-	var_1_43[30012] = {
+	pg.base.commander_skill_template[30012] = {
 		name = "反击的一拳",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻航、正航的机动属性(效果小)",
 		next_id = 30013,
@@ -1150,11 +941,7 @@ var_0_3.base.commander_skill_template = {}
 			9300112
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.commander_skill_template
-
-	var_1_44[30013] = {
+	pg.base.commander_skill_template[30013] = {
 		name = "反击的一拳",
 		desc_world = "进入战斗时，若主力舰队仅剩下一艘轻航或正航，且无其他主力舰，则首轮空袭装填速度加快8%，同时首轮空袭时触发额外的鱼雷机编队攻击",
 		next_id = 0,
@@ -1175,11 +962,7 @@ var_0_3.base.commander_skill_template = {}
 			300113
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.commander_skill_template
-
-	var_1_45[30021] = {
+	pg.base.commander_skill_template[30021] = {
 		name = "敢勇当先",
 		desc_world = "作为司令位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻巡、重巡、超巡的炮击、雷击属性(效果中)",
 		next_id = 30022,
@@ -1196,11 +979,7 @@ var_0_3.base.commander_skill_template = {}
 			300211
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.commander_skill_template
-
-	var_1_46[30022] = {
+	pg.base.commander_skill_template[30022] = {
 		name = "敢勇当先",
 		desc_world = "作为司令位指挥喵时，若距离自身2格范围内存在敌方主力舰队，依据指挥属性，降低队伍中旗舰受到的伤害(Lv2生效)",
 		next_id = 30023,
@@ -1219,11 +998,7 @@ var_0_3.base.commander_skill_template = {}
 			300212
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.commander_skill_template
-
-	var_1_47[30023] = {
+	pg.base.commander_skill_template[30023] = {
 		name = "敢勇当先",
 		desc_world = "作为司令位指挥喵，与主力舰队交战时，战斗开始后，依据战术属性，提高所在舰队中轻巡、重巡、超巡的命中、机动属性(效果大)，持续30秒",
 		next_id = 0,
@@ -1244,11 +1019,7 @@ var_0_3.base.commander_skill_template = {}
 			300213
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.commander_skill_template
-
-	var_1_48[31011] = {
+	pg.base.commander_skill_template[31011] = {
 		name = "必杀·三段击",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中轻航、正航的命中属性(效果小)",
 		next_id = 31012,
@@ -1265,11 +1036,7 @@ var_0_3.base.commander_skill_template = {}
 			310111
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.commander_skill_template
-
-	var_1_49[31012] = {
+	pg.base.commander_skill_template[31012] = {
 		name = "必杀·三段击",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻航、正航的航空属性(效果中)",
 		next_id = 31013,
@@ -1288,11 +1055,7 @@ var_0_3.base.commander_skill_template = {}
 			310112
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.commander_skill_template
-
-	var_1_50[31013] = {
+	pg.base.commander_skill_template[31013] = {
 		name = "必杀·三段击",
 		desc_world = "若所在舰队旗舰为轻航或正航，战斗开始后15秒触发额外的舰载机编队攻击",
 		next_id = 0,
@@ -1313,11 +1076,7 @@ var_0_3.base.commander_skill_template = {}
 			9310113
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.commander_skill_template
-
-	var_1_51[31021] = {
+	pg.base.commander_skill_template[31021] = {
 		name = "野性的直觉",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中驱逐的机动属性(效果小)",
 		next_id = 31022,
@@ -1334,11 +1093,7 @@ var_0_3.base.commander_skill_template = {}
 			310211
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.commander_skill_template
-
-	var_1_52[31022] = {
+	pg.base.commander_skill_template[31022] = {
 		name = "野性的直觉",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中驱逐的雷击属性(效果中)",
 		next_id = 31023,
@@ -1357,11 +1112,7 @@ var_0_3.base.commander_skill_template = {}
 			310212
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.commander_skill_template
-
-	var_1_53[31023] = {
+	pg.base.commander_skill_template[31023] = {
 		name = "野性的直觉",
 		desc_world = "作为参谋位指挥喵，先锋舰队只有一艘舰船且为驱逐时，依据指挥喵指挥属性，提高所在舰队中驱逐的雷击属性(效果大)",
 		next_id = 0,
@@ -1382,11 +1133,7 @@ var_0_3.base.commander_skill_template = {}
 			310213
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.commander_skill_template
-
-	var_1_54[32011] = {
+	pg.base.commander_skill_template[32011] = {
 		name = "巡洋指挥",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻巡、重巡、超巡的炮击属性(效果小)",
 		next_id = 32012,
@@ -1403,11 +1150,7 @@ var_0_3.base.commander_skill_template = {}
 			320111
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.commander_skill_template
-
-	var_1_55[32012] = {
+	pg.base.commander_skill_template[32012] = {
 		name = "巡洋指挥",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻巡、重巡的雷击属性(效果小)",
 		next_id = 32013,
@@ -1426,11 +1169,7 @@ var_0_3.base.commander_skill_template = {}
 			320112
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.commander_skill_template
-
-	var_1_56[32013] = {
+	pg.base.commander_skill_template[32013] = {
 		name = "巡洋指挥",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻巡、重巡的雷击属性(效果小)",
 		next_id = 0,
@@ -1451,11 +1190,7 @@ var_0_3.base.commander_skill_template = {}
 			320113
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.commander_skill_template
-
-	var_1_57[32021] = {
+	pg.base.commander_skill_template[32021] = {
 		name = "战列后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中战列、战巡、航战的命中属性(效果小)",
 		next_id = 32022,
@@ -1472,11 +1207,7 @@ var_0_3.base.commander_skill_template = {}
 			320211
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.commander_skill_template
-
-	var_1_58[32022] = {
+	pg.base.commander_skill_template[32022] = {
 		name = "战列后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的防空属性(效果小)",
 		next_id = 32023,
@@ -1495,11 +1226,7 @@ var_0_3.base.commander_skill_template = {}
 			320212
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.commander_skill_template
-
-	var_1_59[32023] = {
+	pg.base.commander_skill_template[32023] = {
 		name = "战列后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中战列、战巡、航战的炮击属性(效果小)",
 		next_id = 0,
@@ -1520,11 +1247,7 @@ var_0_3.base.commander_skill_template = {}
 			320213
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.commander_skill_template
-
-	var_1_60[40011] = {
+	pg.base.commander_skill_template[40011] = {
 		name = "静寂的狩猎者",
 		desc_world = "依据指挥喵指挥、后勤属性，提高所在舰队中潜艇、潜母的雷击属性(效果小)",
 		next_id = 40012,
@@ -1541,11 +1264,7 @@ var_0_3.base.commander_skill_template = {}
 			400111
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.commander_skill_template
-
-	var_1_61[40012] = {
+	pg.base.commander_skill_template[40012] = {
 		name = "静寂的狩猎者",
 		desc_world = "作为司令位指挥喵时，提高所在舰队中潜艇15点氧气",
 		next_id = 40013,
@@ -1564,11 +1283,7 @@ var_0_3.base.commander_skill_template = {}
 			9400112
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.commander_skill_template
-
-	var_1_62[40013] = {
+	pg.base.commander_skill_template[40013] = {
 		name = "静寂的狩猎者",
 		desc_world = "作为司令位指挥喵，潜艇舰队旗舰开始战斗时，触发额外的鱼雷攻击",
 		next_id = 0,
@@ -1589,11 +1304,7 @@ var_0_3.base.commander_skill_template = {}
 			9400113
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.commander_skill_template
-
-	var_1_63[40021] = {
+	pg.base.commander_skill_template[40021] = {
 		name = "不屈的意志",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的炮击、命中属性(效果中)",
 		next_id = 40022,
@@ -1610,11 +1321,7 @@ var_0_3.base.commander_skill_template = {}
 			400211
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.commander_skill_template
-
-	var_1_64[40022] = {
+	pg.base.commander_skill_template[40022] = {
 		name = "不屈的意志",
 		desc_world = "作为参谋位指挥喵，若旗舰为战列、战巡、航战中的其中一种，开始战斗后20秒，有50%的概率发射一轮弹幕射击",
 		next_id = 40023,
@@ -1633,11 +1340,7 @@ var_0_3.base.commander_skill_template = {}
 			9400212
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.commander_skill_template
-
-	var_1_65[40023] = {
+	pg.base.commander_skill_template[40023] = {
 		name = "不屈的意志",
 		desc_world = "作为参谋位指挥喵，与主力舰队交战时，依据指挥喵后勤属性，降低队伍中战列、战巡、航战受到的伤害，并提高装填(效果中)",
 		next_id = 0,
@@ -1658,11 +1361,7 @@ var_0_3.base.commander_skill_template = {}
 			400213
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.commander_skill_template
-
-	var_1_66[41011] = {
+	pg.base.commander_skill_template[41011] = {
 		name = "海之铁骑士",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战的机动属性(效果小)",
 		next_id = 41012,
@@ -1679,11 +1378,7 @@ var_0_3.base.commander_skill_template = {}
 			410111
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.commander_skill_template
-
-	var_1_67[41012] = {
+	pg.base.commander_skill_template[41012] = {
 		name = "海之铁骑士",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中战列、战巡、航战的命中属性(效果中)",
 		next_id = 41013,
@@ -1702,11 +1397,7 @@ var_0_3.base.commander_skill_template = {}
 			410112
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.commander_skill_template
-
-	var_1_68[41013] = {
+	pg.base.commander_skill_template[41013] = {
 		name = "海之铁骑士",
 		desc_world = "与主力舰队交战时，依据指挥喵战术属性，降低旗舰受到的伤害",
 		next_id = 0,
@@ -1727,11 +1418,7 @@ var_0_3.base.commander_skill_template = {}
 			410113
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.commander_skill_template
-
-	var_1_69[41021] = {
+	pg.base.commander_skill_template[41021] = {
 		name = "海之勇者",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中潜艇、潜母的雷击属性(效果小)",
 		next_id = 41022,
@@ -1748,11 +1435,7 @@ var_0_3.base.commander_skill_template = {}
 			410211
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.commander_skill_template
-
-	var_1_70[41022] = {
+	pg.base.commander_skill_template[41022] = {
 		name = "海之勇者",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中潜艇、潜母的命中属性(效果中)",
 		next_id = 41023,
@@ -1771,11 +1454,7 @@ var_0_3.base.commander_skill_template = {}
 			410212
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.commander_skill_template
-
-	var_1_71[41023] = {
+	pg.base.commander_skill_template[41023] = {
 		name = "海之勇者",
 		desc_world = "作为参谋位指挥喵时，提高所在舰队中潜艇5点氧气",
 		next_id = 0,
@@ -1796,11 +1475,7 @@ var_0_3.base.commander_skill_template = {}
 			9410213
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.commander_skill_template
-
-	var_1_72[41031] = {
+	pg.base.commander_skill_template[41031] = {
 		name = "守护之心",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中潜艇、潜母的雷击属性(效果小)",
 		next_id = 41032,
@@ -1817,11 +1492,7 @@ var_0_3.base.commander_skill_template = {}
 			410311
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.commander_skill_template
-
-	var_1_73[41032] = {
+	pg.base.commander_skill_template[41032] = {
 		name = "守护之心",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中潜艇、潜母的机动属性(效果中)",
 		next_id = 41033,
@@ -1840,11 +1511,7 @@ var_0_3.base.commander_skill_template = {}
 			410312
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.commander_skill_template
-
-	var_1_74[41033] = {
+	pg.base.commander_skill_template[41033] = {
 		name = "守护之心",
 		desc_world = "作为潜艇舰队参谋位指挥喵时，若战斗中舰队旗舰为战列、战巡或航战，依据指挥喵指挥属性，提高所在舰队中潜艇、潜母的命中属性(效果中)",
 		next_id = 0,
@@ -1865,11 +1532,7 @@ var_0_3.base.commander_skill_template = {}
 			410313
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.commander_skill_template
-
-	var_1_75[27] = {
+	pg.base.commander_skill_template[27] = {
 		name = "巡洋后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻巡、重巡、超巡的机动属性(效果小)",
 		next_id = 42012,
@@ -1886,11 +1549,7 @@ var_0_3.base.commander_skill_template = {}
 			420111
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.commander_skill_template
-
-	var_1_76[28] = {
+	pg.base.commander_skill_template[28] = {
 		name = "巡洋后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻巡、重巡、超巡的炮击属性(效果小)",
 		next_id = 42013,
@@ -1909,11 +1568,7 @@ var_0_3.base.commander_skill_template = {}
 			420112
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.commander_skill_template
-
-	var_1_77[29] = {
+	pg.base.commander_skill_template[29] = {
 		name = "巡洋后勤",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中轻巡、重巡、超巡的炮击属性(效果小)",
 		next_id = 0,
@@ -1934,11 +1589,7 @@ var_0_3.base.commander_skill_template = {}
 			420113
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.commander_skill_template
-
-	var_1_78[42021] = {
+	pg.base.commander_skill_template[42021] = {
 		name = "驱逐指挥",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵指挥属性，提高所在舰队中驱逐的机动属性(效果小)",
 		next_id = 42022,
@@ -1955,11 +1606,7 @@ var_0_3.base.commander_skill_template = {}
 			420211
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.commander_skill_template
-
-	var_1_79[42022] = {
+	pg.base.commander_skill_template[42022] = {
 		name = "驱逐指挥",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵战术属性，提高所在舰队中驱逐的命中属性(效果小)",
 		next_id = 42023,
@@ -1978,11 +1625,7 @@ var_0_3.base.commander_skill_template = {}
 			420212
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.commander_skill_template
-
-	var_1_80[42023] = {
+	pg.base.commander_skill_template[42023] = {
 		name = "驱逐指挥",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中驱逐的雷击属性(效果小)",
 		next_id = 0,
@@ -2003,11 +1646,7 @@ var_0_3.base.commander_skill_template = {}
 			420213
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.commander_skill_template
-
-	var_1_81[11] = {
+	pg.base.commander_skill_template[11] = {
 		name = "环球航行",
 		desc_world = "依据指挥喵指挥属性，提高所在舰队中战列、战巡、航战、风帆M的炮击属性(效果中)；",
 		next_id = 960012,
@@ -2028,11 +1667,7 @@ var_0_3.base.commander_skill_template = {}
 			9600113
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.commander_skill_template
-
-	var_1_82[12] = {
+	pg.base.commander_skill_template[12] = {
 		name = "环球航行",
 		desc_world = "所在舰队中存在任意风帆舰时，依据指挥喵战术属性，降低旗舰受到的伤害",
 		next_id = 960013,
@@ -2053,11 +1688,7 @@ var_0_3.base.commander_skill_template = {}
 			9600113
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.commander_skill_template
-
-	var_1_83[13] = {
+	pg.base.commander_skill_template[13] = {
 		name = "环球航行",
 		desc_world = "依据指挥喵战术属性，提高队伍中风帆V、风帆M的机动属性(效果大)",
 		next_id = 0,
@@ -2078,11 +1709,7 @@ var_0_3.base.commander_skill_template = {}
 			9600113
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.commander_skill_template
-
-	var_1_84[21] = {
+	pg.base.commander_skill_template[21] = {
 		name = "私掠者的是非",
 		desc_world = "依据指挥喵指挥属性，提高所在舰队中轻巡、重巡、超巡、风帆V的命中属性(效果中)；",
 		next_id = 960022,
@@ -2103,11 +1730,7 @@ var_0_3.base.commander_skill_template = {}
 			9600213
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.commander_skill_template
-
-	var_1_85[22] = {
+	pg.base.commander_skill_template[22] = {
 		name = "私掠者的是非",
 		desc_world = "距离自身3格范围内存在敌方侦察舰队时，依据指挥喵指挥属性，提高所在舰队中风帆V的机动属性(效果小)",
 		next_id = 960023,
@@ -2128,11 +1751,7 @@ var_0_3.base.commander_skill_template = {}
 			9600213
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.commander_skill_template
-
-	var_1_86[23] = {
+	pg.base.commander_skill_template[23] = {
 		name = "私掠者的是非",
 		desc_world = "所在舰队中存在任意风帆舰时，依据指挥喵战术属性，降低轻巡、重巡、风帆舰V受到的伤害",
 		next_id = 0,
@@ -2153,11 +1772,7 @@ var_0_3.base.commander_skill_template = {}
 			9600213
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.commander_skill_template
-
-	var_1_87[31] = {
+	pg.base.commander_skill_template[31] = {
 		name = "“高速”的山姆",
 		desc_world = "作为潜艇编队指挥喵时，提高所在舰队中潜艇5点氧气",
 		next_id = 960032,
@@ -2178,11 +1793,7 @@ var_0_3.base.commander_skill_template = {}
 			9600313
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.commander_skill_template
-
-	var_1_88[960032] = {
+	pg.base.commander_skill_template[960032] = {
 		name = "“高速”的山姆",
 		desc_world = "作为潜艇编队指挥喵时，进入战斗后恢复所有风帆舰2%耐久",
 		next_id = 960033,
@@ -2203,11 +1814,7 @@ var_0_3.base.commander_skill_template = {}
 			9600313
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.commander_skill_template
-
-	var_1_89[960033] = {
+	pg.base.commander_skill_template[960033] = {
 		name = "“高速”的山姆",
 		desc_world = "作为潜艇编队指挥喵时，进入战斗后依据指挥喵战术属性，提高所在舰队中潜艇、潜母、风帆S的命中属性（效果中）",
 		next_id = 0,
@@ -2228,11 +1835,7 @@ var_0_3.base.commander_skill_template = {}
 			9600313
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.commander_skill_template
-
-	var_1_90[960041] = {
+	pg.base.commander_skill_template[960041] = {
 		name = "攻夺与幻想",
 		desc_world = "所在舰队中存在任意风帆舰时，依据指挥喵指挥属性，降低先锋舰队成员受到的伤害",
 		next_id = 960042,
@@ -2255,11 +1858,7 @@ var_0_3.base.commander_skill_template = {}
 			9600414
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.commander_skill_template
-
-	var_1_91[960042] = {
+	pg.base.commander_skill_template[960042] = {
 		name = "攻夺与幻想",
 		desc_world = "作为司令位指挥喵时，依据指挥喵战术属性，提高所在舰队全员的炮击属性(效果中)",
 		next_id = 960043,
@@ -2282,11 +1881,7 @@ var_0_3.base.commander_skill_template = {}
 			9600414
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.commander_skill_template
-
-	var_1_92[960043] = {
+	pg.base.commander_skill_template[960043] = {
 		name = "攻夺与幻想",
 		desc_world = "舰队成员在战斗中受到伤害，导致耐久低于30%后，为其恢复5%耐久（每场战斗1次）",
 		next_id = 0,
@@ -2309,11 +1904,7 @@ var_0_3.base.commander_skill_template = {}
 			9600414
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.commander_skill_template
-
-	var_1_93[960051] = {
+	pg.base.commander_skill_template[960051] = {
 		name = "戒律的订立者",
 		desc_world = "作为潜艇编队指挥喵时，提高所在舰队中潜艇5点氧气",
 		next_id = 960052,
@@ -2334,11 +1925,7 @@ var_0_3.base.commander_skill_template = {}
 			9600513
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.commander_skill_template
-
-	var_1_94[960052] = {
+	pg.base.commander_skill_template[960052] = {
 		name = "戒律的订立者",
 		desc_world = "作为潜艇编队指挥喵时，进入战斗后依据指挥喵指挥属性，提高所在舰队中风帆S的炮击属性，潜艇、潜母的雷击属性（效果中）",
 		next_id = 960053,
@@ -2359,11 +1946,7 @@ var_0_3.base.commander_skill_template = {}
 			9600513
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.commander_skill_template
-
-	var_1_95[960053] = {
+	pg.base.commander_skill_template[960053] = {
 		name = "戒律的订立者",
 		desc_world = "所在舰队中包含皇家财富号时，进入战斗后发射一轮特殊弹幕，每场战斗一次",
 		next_id = 0,
@@ -2384,11 +1967,7 @@ var_0_3.base.commander_skill_template = {}
 			9600513
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.commander_skill_template
-
-	var_1_96[960061] = {
+	pg.base.commander_skill_template[960061] = {
 		name = "未了的传奇",
 		desc_world = "依据指挥喵战术属性，提高所在舰队中战列、战巡、航战、风帆M的炮击属性(效果中)",
 		next_id = 960062,
@@ -2409,11 +1988,7 @@ var_0_3.base.commander_skill_template = {}
 			9600613
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.commander_skill_template
-
-	var_1_97[960062] = {
+	pg.base.commander_skill_template[960062] = {
 		name = "未了的传奇",
 		desc_world = "与主力舰队交战时，依据指挥喵战术属性，提高所在舰队中战列、正航、风帆M的命中属性(效果中)",
 		next_id = 960063,
@@ -2434,11 +2009,7 @@ var_0_3.base.commander_skill_template = {}
 			9600613
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.commander_skill_template
-
-	var_1_98[960063] = {
+	pg.base.commander_skill_template[960063] = {
 		name = "未了的传奇",
 		desc_world = "所在舰队中包含安妮女王复仇号时，进入战斗后发射一轮特殊弹幕，每场战斗一次",
 		next_id = 0,
@@ -2459,8 +2030,7 @@ var_0_3.base.commander_skill_template = {}
 			9600613
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.commander_skill_template[960071] = {
+	pg.base.commander_skill_template[960071] = {
 		name = "绅士海盗的传说",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高所在舰队中轻巡、重巡、超巡、风帆V的机动属性(效果小)",
 		next_id = 960072,
@@ -2485,11 +2055,7 @@ var_0_3.base.commander_skill_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.commander_skill_template
-
-	var_2_0[960072] = {
+	pg.base.commander_skill_template[960072] = {
 		name = "绅士海盗的传说",
 		desc_world = "作为参谋位指挥喵时，依据指挥喵后勤属性，提高先锋舰队的炮击属性(效果小)",
 		next_id = 960073,
@@ -2510,8 +2076,7 @@ end)()
 			9600713
 		}
 	}
-	pg = var_2_0
-	var_2_0.base.commander_skill_template[960073] = {
+	pg.base.commander_skill_template[960073] = {
 		name = "绅士海盗的传说",
 		desc_world = "舰队旗舰及先锋领舰在战斗中受到伤害，导致耐久低于50%后，为其恢复5%耐久（每场战斗1次）",
 		next_id = 0,

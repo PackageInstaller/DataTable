@@ -1,16 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MusicCollectionView", import("..base.BaseSubView"))
 
-local var_0_0 = "MusicCollectionView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MusicCollectionUI"
 end
 
-function var_0_1.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
 	arg_2_0:initData()
 	arg_2_0:findUI()
 	arg_2_0:addListener()
@@ -22,23 +16,16 @@ function var_0_1.OnInit(arg_2_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_3_0)
-	local var_3_0 = arg_3_0.bgmMgr
-
-	var_1.UnregisterMusicCallback(var_3_0, arg_3_0.__cname)
-
-	local var_3_1 = arg_3_0.resLoader
-
-	var_1.Clear(var_3_1)
+function var_0_0.OnDestroy(arg_3_0)
+	arg_3_0.bgmMgr:UnregisterMusicCallback(arg_3_0.__cname)
+	arg_3_0.resLoader:Clear()
 	arg_3_0:closeAlbumListPanel(true)
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_4_0)
-	isActive = var_1_10001
-
-	if var_1_10001(arg_4_0.albumListPanel) then
+function var_0_0.onBackPressed(arg_4_0)
+	if isActive(arg_4_0.albumListPanel) then
 		arg_4_0:closeAlbumListPanel()
 
 		return false
@@ -49,38 +36,19 @@ function var_0_1.onBackPressed(arg_4_0)
 	return
 end
 
-function var_0_1.initData(arg_5_0)
-	pg = var_1_10001
-	arg_5_0.bgmMgr = var_1_10001.BgmMgr.GetInstance()
-	getProxy = var_1
-	AppreciateProxy = var_1_10003
-	arg_5_0.appreciateProxy = var_1(var_1_10003)
-	underscore = var_1
+function var_0_0.initData(arg_5_0)
+	arg_5_0.bgmMgr = pg.BgmMgr.GetInstance()
+	arg_5_0.appreciateProxy = getProxy(AppreciateProxy)
+	arg_5_0.albumNames = underscore.to_array(pg.music_album.all)
 
-	local var_5_0 = var_1.to_array
-
-	pg = var_1_10003
-	arg_5_0.albumNames = var_5_0(var_1_10003.music_album.all)
-	table = var_1
-
-	local var_5_1 = var_1.sort
-	local var_5_2 = arg_5_0.albumNames
-
-	CompareFuncs = var_1_10004
-
-	var_5_1(var_5_2, var_1_10004({
+	table.sort(arg_5_0.albumNames, CompareFuncs({
 		function(arg_6_0)
-			pg = var_2_10001
-
-			return -var_2_10001.music_album[arg_6_0].order
+			return -pg.music_album[arg_6_0].order
 		end
 	}))
 
-	underscore = var_5_1
-	arg_5_0.albumNames = var_5_1.map(arg_5_0.albumNames, function(arg_7_0)
-		pg = var_2_10001
-
-		return var_2_10001.music_album[arg_7_0].album_name
+	arg_5_0.albumNames = underscore.map(arg_5_0.albumNames, function(arg_7_0)
+		return pg.music_album[arg_7_0].album_name
 	end)
 	arg_5_0.plateTFList = {}
 	arg_5_0.albumTFList = {}
@@ -88,75 +56,48 @@ function var_0_1.initData(arg_5_0)
 	arg_5_0.likeIds = {}
 	arg_5_0.curMidddleIndex = 1
 	arg_5_0.isPlayingAni = false
-	AutoLoader = var_1
-	arg_5_0.resLoader = var_1.New()
+	arg_5_0.resLoader = AutoLoader.New()
 
 	return
 end
 
-function var_0_1.saveRunData(arg_8_0)
-	local var_8_0 = arg_8_0.appreciateProxy
-
-	var_1.updateMusicRunData(var_8_0, arg_8_0.sortValue, arg_8_0.curMidddleIndex, arg_8_0.likeValue)
+function var_0_0.saveRunData(arg_8_0)
+	arg_8_0.appreciateProxy:updateMusicRunData(arg_8_0.sortValue, arg_8_0.curMidddleIndex, arg_8_0.likeValue)
 
 	return
 end
 
-function var_0_1.recoverRunData(arg_9_0)
-	local var_9_0 = arg_9_0.appreciateProxy
+function var_0_0.recoverRunData(arg_9_0)
+	local var_9_0 = arg_9_0.appreciateProxy:getMusicRunData()
 
-	arg_9_0.sortValue = var_1.getMusicRunData(var_9_0).sortValue
-	arg_9_0.curMidddleIndex = var_1.middleIndex
-	arg_9_0.likeValue = var_1.likeValue
+	arg_9_0.sortValue = var_9_0.sortValue
+	arg_9_0.curMidddleIndex = var_9_0.middleIndex
+	arg_9_0.likeValue = var_9_0.likeValue
 	arg_9_0.albumSortValue = "asc"
+	arg_9_0.likeIds = arg_9_0.appreciateProxy:getAlbumMusicList("favor")
 
-	local var_9_1 = arg_9_0.appreciateProxy
-
-	arg_9_0.likeIds = var_2.getAlbumMusicList(var_9_1, "favor")
-	ipairs = var_2
-
-	for iter_9_0, iter_9_1 in var_2(arg_9_0.likeIds) do
+	for iter_9_0, iter_9_1 in ipairs(arg_9_0.likeIds) do
 		arg_9_0.likeDic[iter_9_1] = true
 	end
 
 	arg_9_0.lScrollPageSC.MiddleIndexOnInit = arg_9_0.curMidddleIndex - 1
 
-	local var_9_2 = arg_9_0
+	arg_9_0:updatePlateListPanel()
 
-	arg_9_0.updatePlateListPanel(var_9_2)
-
-	getProxy = var_2
-	AppreciateProxy = var_9_2
-
-	local var_9_3 = var_2(var_9_2)
-
-	if var_2.CanPlayMainMusicPlayer(var_9_3) then
-		local var_9_4 = arg_9_0
-		local var_9_5 = arg_9_0.NewMusicPlayer
-		local var_9_6 = arg_9_0.appreciateProxy
-
-		var_9_5(var_9_4, var_5.getMainPlayerAlbumName(var_9_6))
+	if getProxy(AppreciateProxy):CanPlayMainMusicPlayer() then
+		arg_9_0:NewMusicPlayer(arg_9_0.appreciateProxy:getMainPlayerAlbumName())
 	else
 		arg_9_0:NewMusicPlayer(arg_9_0.tempPlateList[arg_9_0.curMidddleIndex])
 	end
 
-	local var_9_7 = arg_9_0.bgmMgr
-
-	var_2.RegisterMusicCallback(var_9_7, arg_9_0.__cname, "TempMusicPlayer", {
+	arg_9_0.bgmMgr:RegisterMusicCallback(arg_9_0.__cname, "TempMusicPlayer", {
 		startCall = function(arg_10_0)
 			if arg_9_0.plateTFList[arg_9_0.curMidddleIndex] then
-				local var_10_0 = arg_9_0
-
-				var_1.updatePlateList(var_10_0, arg_9_0.plateTFList[arg_9_0.curMidddleIndex], arg_9_0.curMidddleIndex)
+				arg_9_0:updatePlateList(arg_9_0.plateTFList[arg_9_0.curMidddleIndex], arg_9_0.curMidddleIndex)
 			end
 
-			local var_10_1 = arg_9_0
-
-			var_1.updateAlbumListPanel(var_10_1)
-
-			local var_10_2 = arg_9_0
-
-			var_1.updatePlayPanel(var_10_2, arg_10_0)
+			arg_9_0:updateAlbumListPanel()
+			arg_9_0:updatePlayPanel(arg_10_0)
 
 			return
 		end,
@@ -165,16 +106,12 @@ function var_0_1.recoverRunData(arg_9_0)
 				return
 			end
 
-			local var_11_0 = arg_9_0
-
-			var_1.updatePlayProgress(var_11_0, arg_11_0)
+			arg_9_0:updatePlayProgress(arg_11_0)
 
 			return
 		end,
 		noPlayCall = function()
-			local var_12_0 = arg_9_0
-
-			var_0.NewMusicPlayer(var_12_0, arg_9_0.tempPlateList[arg_9_0.curMidddleIndex])
+			arg_9_0:NewMusicPlayer(arg_9_0.tempPlateList[arg_9_0.curMidddleIndex])
 
 			return
 		end
@@ -186,383 +123,137 @@ function var_0_1.recoverRunData(arg_9_0)
 	return
 end
 
-function var_0_1.findUI(arg_13_0)
-	setLocalPosition = var_1_10001
-
-	local var_13_0 = arg_13_0._tf
-
-	Vector2 = var_1_10004
-
-	var_1_10001(var_13_0, var_1_10004.zero)
-
-	local var_13_1 = arg_13_0._tf
-
-	Vector2 = var_1_10002
-	var_13_1.anchorMin = var_1_10002.zero
-
-	local var_13_2 = arg_13_0._tf
-
-	Vector2 = var_2
-	var_13_2.anchorMax = var_2.one
-
-	local var_13_3 = arg_13_0._tf
-
-	Vector2 = var_2
-	var_13_3.offsetMax = var_2.zero
-
-	local var_13_4 = arg_13_0._tf
-
-	Vector2 = var_2
-	var_13_4.offsetMin = var_2.zero
-
-	local var_13_5 = arg_13_0._tf
-
-	arg_13_0.topPanel = var_1.Find(var_13_5, "TopPanel")
-
-	local var_13_6 = arg_13_0.topPanel
-
-	arg_13_0.likeFilteToggle = var_1.Find(var_13_6, "LikeBtn")
-	setActive = var_1
-
-	var_1(arg_13_0.likeFilteToggle, true)
-
-	local var_13_7 = arg_13_0.topPanel
-
-	arg_13_0.serchInputText = var_1.Find(var_13_7, "serch")
-	setText = var_1
-
-	local var_13_8 = arg_13_0.serchInputText
-	local var_13_9 = var_3.Find(var_13_8, "Placeholder")
-
-	i18n = var_4
-
-	var_1(var_13_9, var_4("NewMusic_2"))
-
-	local var_13_10 = arg_13_0._tf
-
-	arg_13_0.plateListPanel = var_1.Find(var_13_10, "PlateList")
-
-	local var_13_11 = arg_13_0.plateListPanel
-
-	arg_13_0.plateTpl = var_1.Find(var_13_11, "Plate")
-	setActive = var_1
-
-	var_1(arg_13_0.plateTpl, false)
-
-	setText = var_1
-
-	local var_13_12 = arg_13_0.plateTpl
-	local var_13_13 = var_3.Find(var_13_12, "list/panel/view/empty/icon/Text")
-
-	i18n = var_4
-
-	var_1(var_13_13, var_4("NewMusic_3"))
-
-	GetComponent = var_1
-	arg_13_0.lScrollPageSC = var_1(arg_13_0.plateListPanel, "LScrollPage")
-
-	local var_13_14 = arg_13_0._tf
-
-	arg_13_0.playPanel = var_1.Find(var_13_14, "PLayPanel")
-
-	local var_13_15 = arg_13_0.playPanel
-
-	arg_13_0.playPanelNameText = var_1.Find(var_13_15, "NameText")
-
-	local var_13_16 = arg_13_0.playPanel
-
-	arg_13_0.likeToggle = var_1.Find(var_13_16, "LikeBtn")
-
-	local var_13_17 = arg_13_0.likeToggle
-
-	arg_13_0.likeOnImg = var_1.Find(var_13_17, "On")
-
-	local var_13_18 = arg_13_0.playPanel
-
-	arg_13_0.songImg = var_1.Find(var_13_18, "SongImg/face")
-
-	local var_13_19 = arg_13_0.playPanel
-
-	arg_13_0.pauseBtn = var_1.Find(var_13_19, "PlayingBtn")
-
-	local var_13_20 = arg_13_0.playPanel
-
-	arg_13_0.playBtn = var_1.Find(var_13_20, "StopingBtn")
-
-	local var_13_21 = arg_13_0.playPanel
-
-	arg_13_0.playDesc = var_1.Find(var_13_21, "PlayDesc")
-
-	local var_13_22 = arg_13_0.playPanel
-
-	arg_13_0.nextBtn = var_1.Find(var_13_22, "NextBtn")
-
-	local var_13_23 = arg_13_0.playPanel
-
-	arg_13_0.preBtn = var_1.Find(var_13_23, "PreBtn")
-
-	local var_13_24 = arg_13_0.playPanel
-
-	arg_13_0.playProgressBar = var_1.Find(var_13_24, "Progress")
-
-	local var_13_25 = arg_13_0.playProgressBar
-
-	arg_13_0.nowTimeText = var_1.Find(var_13_25, "NowTimeText")
-
-	local var_13_26 = arg_13_0.playProgressBar
-
-	arg_13_0.totalTimeText = var_1.Find(var_13_26, "TotalTimeText")
-	GetComponent = var_1
-	arg_13_0.playSliderSC = var_1(arg_13_0.playProgressBar, "LSlider")
-
-	local var_13_27 = arg_13_0.playPanel
-
-	arg_13_0.listBtn = var_1.Find(var_13_27, "ListBtn")
-	setActive = var_1
-
-	local var_13_28 = arg_13_0.listBtn
-
-	var_1(var_3.Find(var_13_28, "on"), false)
-
-	setActive = var_1
-
-	local var_13_29 = arg_13_0.listBtn
-
-	var_1(var_3.Find(var_13_29, "off"), true)
-
-	local var_13_30 = arg_13_0._tf
-
-	arg_13_0.albumListPanel = var_1.Find(var_13_30, "AlbumListPanel")
-
-	local var_13_31 = arg_13_0.albumListPanel
-
-	arg_13_0.closeBtn = var_1.Find(var_13_31, "BG")
-
-	local var_13_32 = arg_13_0.albumListPanel
-
-	arg_13_0.panel = var_1.Find(var_13_32, "Panel")
-	setText = var_1
-
-	local var_13_33 = arg_13_0.panel
-	local var_13_34 = var_3.Find(var_13_33, "top/name")
-
-	i18n = var_4
-
-	var_1(var_13_34, var_4("NewMusic_6"))
-
-	local var_13_35 = arg_13_0.panel
-
-	arg_13_0.albumToggle = var_1.Find(var_13_35, "bottom/sort_btn")
-
-	local var_13_36 = arg_13_0.panel
-
-	arg_13_0.albumInputText = var_1.Find(var_13_36, "bottom/serch")
-	setText = var_1
-
-	local var_13_37 = arg_13_0.albumInputText
-	local var_13_38 = var_3.Find(var_13_37, "Placeholder")
-
-	i18n = var_4
-
-	var_1(var_13_38, var_4("NewMusic_2"))
-
-	local var_13_39 = arg_13_0.panel
-
-	arg_13_0.albumContainer = var_1.Find(var_13_39, "middle/Content")
-	UIItemList = var_1
-
-	local var_13_40 = var_1.New
-	local var_13_41 = arg_13_0.albumContainer
-	local var_13_42 = arg_13_0.albumContainer
-
-	arg_13_0.albumItemList = var_13_40(var_13_41, var_4.GetChild(var_13_42, 0))
-
-	local var_13_43 = arg_13_0.albumItemList
-
-	var_1.make(var_13_43, function(arg_14_0, arg_14_1, arg_14_2)
+function var_0_0.findUI(arg_13_0)
+	setLocalPosition(arg_13_0._tf, Vector2.zero)
+
+	arg_13_0._tf.anchorMin = Vector2.zero
+	arg_13_0._tf.anchorMax = Vector2.one
+	arg_13_0._tf.offsetMax = Vector2.zero
+	arg_13_0._tf.offsetMin = Vector2.zero
+	arg_13_0.topPanel = arg_13_0._tf:Find("TopPanel")
+	arg_13_0.likeFilteToggle = arg_13_0.topPanel:Find("LikeBtn")
+
+	setActive(arg_13_0.likeFilteToggle, true)
+
+	arg_13_0.serchInputText = arg_13_0.topPanel:Find("serch")
+
+	setText(arg_13_0.serchInputText:Find("Placeholder"), i18n("NewMusic_2"))
+
+	arg_13_0.plateListPanel = arg_13_0._tf:Find("PlateList")
+	arg_13_0.plateTpl = arg_13_0.plateListPanel:Find("Plate")
+
+	setActive(arg_13_0.plateTpl, false)
+	setText(arg_13_0.plateTpl:Find("list/panel/view/empty/icon/Text"), i18n("NewMusic_3"))
+
+	arg_13_0.lScrollPageSC = GetComponent(arg_13_0.plateListPanel, "LScrollPage")
+	arg_13_0.playPanel = arg_13_0._tf:Find("PLayPanel")
+	arg_13_0.playPanelNameText = arg_13_0.playPanel:Find("NameText")
+	arg_13_0.likeToggle = arg_13_0.playPanel:Find("LikeBtn")
+	arg_13_0.likeOnImg = arg_13_0.likeToggle:Find("On")
+	arg_13_0.songImg = arg_13_0.playPanel:Find("SongImg/face")
+	arg_13_0.pauseBtn = arg_13_0.playPanel:Find("PlayingBtn")
+	arg_13_0.playBtn = arg_13_0.playPanel:Find("StopingBtn")
+	arg_13_0.playDesc = arg_13_0.playPanel:Find("PlayDesc")
+	arg_13_0.nextBtn = arg_13_0.playPanel:Find("NextBtn")
+	arg_13_0.preBtn = arg_13_0.playPanel:Find("PreBtn")
+	arg_13_0.playProgressBar = arg_13_0.playPanel:Find("Progress")
+	arg_13_0.nowTimeText = arg_13_0.playProgressBar:Find("NowTimeText")
+	arg_13_0.totalTimeText = arg_13_0.playProgressBar:Find("TotalTimeText")
+	arg_13_0.playSliderSC = GetComponent(arg_13_0.playProgressBar, "LSlider")
+	arg_13_0.listBtn = arg_13_0.playPanel:Find("ListBtn")
+
+	setActive(arg_13_0.listBtn:Find("on"), false)
+	setActive(arg_13_0.listBtn:Find("off"), true)
+
+	arg_13_0.albumListPanel = arg_13_0._tf:Find("AlbumListPanel")
+	arg_13_0.closeBtn = arg_13_0.albumListPanel:Find("BG")
+	arg_13_0.panel = arg_13_0.albumListPanel:Find("Panel")
+
+	setText(arg_13_0.panel:Find("top/name"), i18n("NewMusic_6"))
+
+	arg_13_0.albumToggle = arg_13_0.panel:Find("bottom/sort_btn")
+	arg_13_0.albumInputText = arg_13_0.panel:Find("bottom/serch")
+
+	setText(arg_13_0.albumInputText:Find("Placeholder"), i18n("NewMusic_2"))
+
+	arg_13_0.albumContainer = arg_13_0.panel:Find("middle/Content")
+	arg_13_0.albumItemList = UIItemList.New(arg_13_0.albumContainer, arg_13_0.albumContainer:GetChild(0))
+
+	arg_13_0.albumItemList:make(function(arg_14_0, arg_14_1, arg_14_2)
 		arg_14_1 = arg_14_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_14_0 == var_2_10003.EventUpdate then
+		if arg_14_0 == UIItemList.EventUpdate then
 			arg_13_0.albumTFList[arg_14_1] = arg_14_2
 
-			local var_14_0 = arg_13_0
-
-			var_3.updateAlbumTF(var_14_0, arg_14_2, arg_14_1)
+			arg_13_0:updateAlbumTF(arg_14_2, arg_14_1)
 		end
 
 		return
 	end)
 
-	local var_13_44 = arg_13_0.likeFilteToggle
-
-	arg_13_0.likeFilteOnImg = var_1.Find(var_13_44, "TextLike/On")
-
-	local var_13_45 = arg_13_0.playPanel
-
-	arg_13_0.playLoopBtn = var_1.Find(var_13_45, "PlayTypeBtn")
+	arg_13_0.likeFilteOnImg = arg_13_0.likeFilteToggle:Find("TextLike/On")
+	arg_13_0.playLoopBtn = arg_13_0.playPanel:Find("PlayTypeBtn")
 
 	return
 end
 
-function var_0_1.addListener(arg_15_0)
-	onButton = var_1_10001
-
-	local var_15_0 = arg_15_0
-	local var_15_1 = arg_15_0.listBtn
-
-	local function var_15_2()
-		local var_16_0 = arg_15_0
-
-		var_0.openAlbumListPanel(var_16_0)
+function var_0_0.addListener(arg_15_0)
+	onButton(arg_15_0, arg_15_0.listBtn, function()
+		arg_15_0:openAlbumListPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_0, var_15_1, var_15_2, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_3 = arg_15_0
-	local var_15_4 = arg_15_0.closeBtn
-
-	local function var_15_5()
-		local var_17_0 = arg_15_0
-
-		var_0.closeAlbumListPanel(var_17_0)
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.closeBtn, function()
+		arg_15_0:closeAlbumListPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_3, var_15_4, var_15_5, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_6 = arg_15_0
-	local var_15_7 = arg_15_0.albumToggle
-
-	local function var_15_8()
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.albumToggle, function()
 		if arg_15_0.albumSortValue == "asc" then
 			arg_15_0.albumSortValue = "desc"
 		elseif arg_15_0.albumSortValue == "desc" then
 			arg_15_0.albumSortValue = "asc"
 		end
 
-		local var_18_0 = arg_15_0
-
-		var_0.updateAlbumListPanel(var_18_0)
+		arg_15_0:updateAlbumListPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_6, var_15_7, var_15_8, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_9 = arg_15_0
-	local var_15_10 = arg_15_0.likeFilteToggle
-
-	local function var_15_11()
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.likeFilteToggle, function()
 		arg_15_0.likeValue = 1 - arg_15_0.likeValue
 		arg_15_0.curMidddleIndex = 1
 
-		local var_19_0 = arg_15_0
-
-		var_0.saveRunData(var_19_0)
-
-		local var_19_1 = arg_15_0
-
-		var_0.updateLikeToggle(var_19_1)
-
-		local var_19_2 = arg_15_0
-
-		var_0.updatePlateListPanel(var_19_2)
+		arg_15_0:saveRunData()
+		arg_15_0:updateLikeToggle()
+		arg_15_0:updatePlateListPanel()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_9, var_15_10, var_15_11, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_12 = arg_15_0
-	local var_15_13 = arg_15_0.playBtn
-
-	local function var_15_14()
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.playBtn, function()
 		if not arg_15_0.musicPlayer then
 			return
 		end
 
-		local var_20_0 = arg_15_0.musicPlayer
-
-		var_0.Resume(var_20_0)
-
-		SetActive = var_0
-
-		var_0(arg_15_0.pauseBtn, true)
-
-		SetActive = var_0
-
-		var_0(arg_15_0.playBtn, false)
-
-		setActive = var_0
-
-		var_0(arg_15_0.playDesc, true)
+		arg_15_0.musicPlayer:Resume()
+		SetActive(arg_15_0.pauseBtn, true)
+		SetActive(arg_15_0.playBtn, false)
+		setActive(arg_15_0.playDesc, true)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_12, var_15_13, var_15_14, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_15 = arg_15_0
-	local var_15_16 = arg_15_0.pauseBtn
-
-	local function var_15_17()
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.pauseBtn, function()
 		if not arg_15_0.musicPlayer then
 			return
 		end
 
-		local var_21_0 = arg_15_0.musicPlayer
-
-		var_0.Pause(var_21_0)
-
-		SetActive = var_0
-
-		var_0(arg_15_0.pauseBtn, false)
-
-		SetActive = var_0
-
-		var_0(arg_15_0.playBtn, true)
-
-		setActive = var_0
-
-		var_0(arg_15_0.playDesc, false)
+		arg_15_0.musicPlayer:Pause()
+		SetActive(arg_15_0.pauseBtn, false)
+		SetActive(arg_15_0.playBtn, true)
+		setActive(arg_15_0.playDesc, false)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_15, var_15_16, var_15_17, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_18 = arg_15_0
-	local var_15_19 = arg_15_0.preBtn
-
-	local function var_15_20()
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.preBtn, function()
 		if not arg_15_0.musicPlayer then
 			return
 		end
@@ -571,23 +262,11 @@ function var_0_1.addListener(arg_15_0)
 			return
 		end
 
-		local var_22_0 = arg_15_0.musicPlayer
-
-		var_0.Last(var_22_0)
+		arg_15_0.musicPlayer:Last()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_18, var_15_19, var_15_20, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_21 = arg_15_0
-	local var_15_22 = arg_15_0.nextBtn
-
-	local function var_15_23()
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.nextBtn, function()
 		if not arg_15_0.musicPlayer then
 			return
 		end
@@ -596,192 +275,98 @@ function var_0_1.addListener(arg_15_0)
 			return
 		end
 
-		local var_23_0 = arg_15_0.musicPlayer
-
-		var_0.Next(var_23_0)
+		arg_15_0.musicPlayer:Next()
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_15_0, arg_15_0.likeToggle, function()
+		local var_24_0 = pg.music_collect_config[arg_15_0.musicPlayer:GetCurrentMusicId()].id
 
-	SFX_PANEL = var_1_10006
-
-	var_1_10001(var_15_21, var_15_22, var_15_23, var_1_10006)
-
-	onButton = var_1_10001
-
-	local var_15_24 = arg_15_0
-	local var_15_25 = arg_15_0.likeToggle
-
-	local function var_15_26()
-		local var_24_0 = arg_15_0.musicPlayer
-		local var_24_1 = var_0.GetCurrentMusicId(var_24_0)
-
-		pg = var_2_10001
-
-		local var_24_2 = var_2_10001.music_collect_config[var_24_1].id
-
-		pg = var_2_10003
-
-		local var_24_3 = var_2_10003.m02
-		local var_24_4 = var_3.sendNotification
-
-		GAME = var_2_10006
-
-		var_24_4(var_24_3, var_2_10006.APPRECIATE_MUSIC_LIKE, {
-			musicID = var_24_2,
-			isAdd = arg_15_0.likeDic[var_24_2] and 1 or 0
+		pg.m02:sendNotification(GAME.APPRECIATE_MUSIC_LIKE, {
+			musicID = var_24_0,
+			isAdd = arg_15_0.likeDic[var_24_0] and 1 or 0
 		})
-
-		local var_24_5 = arg_15_0
-
-		var_3.ChangeLike(var_24_5, var_24_2)
-
-		local var_24_6 = arg_15_0
-
-		var_3.updateLikeToggle(var_24_6)
-
-		setActive = var_3
-
-		var_3(arg_15_0.likeOnImg, arg_15_0.likeDic[var_24_2])
-
-		local var_24_7 = arg_15_0
-
-		var_3.updatePlateList(var_24_7, arg_15_0.plateTFList[arg_15_0.curMidddleIndex], arg_15_0.curMidddleIndex)
+		arg_15_0:ChangeLike(var_24_0)
+		arg_15_0:updateLikeToggle()
+		setActive(arg_15_0.likeOnImg, arg_15_0.likeDic[var_24_0])
+		arg_15_0:updatePlateList(arg_15_0.plateTFList[arg_15_0.curMidddleIndex], arg_15_0.curMidddleIndex)
 
 		return
-	end
+	end, SFX_PANEL)
 
-	SFX_PANEL = var_1_10006
+	local var_15_0
 
-	var_1_10001(var_15_24, var_15_25, var_15_26, var_1_10006)
-
-	local var_15_27
-	local var_15_28 = arg_15_0.playSliderSC
-
-	var_2.AddPointDownFunc(var_15_28, function(arg_25_0)
+	arg_15_0.playSliderSC:AddPointDownFunc(function(arg_25_0)
 		if arg_15_0.onDrag then
 			return
 		end
 
 		arg_15_0.onDrag = true
+		var_15_0 = arg_15_0.musicPlayer:IsPaused()
 
-		local var_25_0 = arg_15_0.musicPlayer
-
-		var_15_27 = var_1.IsPaused(var_25_0)
-
-		if not var_15_27 then
-			local var_25_1 = arg_15_0.musicPlayer
-
-			var_1.Pause(var_25_1)
+		if not var_15_0 then
+			arg_15_0.musicPlayer:Pause()
 		end
 
 		return
 	end)
-
-	local var_15_29 = arg_15_0.playSliderSC
-
-	var_2.AddPointUpFunc(var_15_29, function(arg_26_0)
+	arg_15_0.playSliderSC:AddPointUpFunc(function(arg_26_0)
 		if not arg_15_0.onDrag then
 			return
 		end
 
 		arg_15_0.onDrag = false
 
-		local var_26_0 = arg_15_0.musicPlayer
+		arg_15_0.musicPlayer:SetProgress(arg_15_0.playSliderSC.value)
 
-		var_1.SetProgress(var_26_0, arg_15_0.playSliderSC.value)
-
-		if not var_15_27 then
-			local var_26_1 = arg_15_0.musicPlayer
-
-			var_1.Resume(var_26_1)
+		if not var_15_0 then
+			arg_15_0.musicPlayer:Resume()
 		end
 
 		return
 	end)
+	onButton(arg_15_0, arg_15_0.playLoopBtn, function()
+		local var_27_0 = getProxy(AppreciateProxy):getMusicPlayerLoopType()
 
-	onButton = var_2
-
-	local var_15_30 = arg_15_0
-	local var_15_31 = arg_15_0.playLoopBtn
-
-	local function var_15_32()
-		getProxy = var_2_10000
-		AppreciateProxy = var_2_10002
-
-		local var_27_0 = var_2_10000(var_2_10002)
-		local var_27_1 = var_0.getMusicPlayerLoopType(var_27_0)
-
-		switch = var_2_10001
-
-		var_2_10001(var_27_1, {
+		switch(var_27_0, {
 			list = function()
-				var_27_1 = "random"
+				var_27_0 = "random"
 
 				return
 			end,
 			random = function()
-				var_27_1 = "one"
+				var_27_0 = "one"
 
 				return
 			end,
 			one = function()
-				var_27_1 = "list"
+				var_27_0 = "list"
 
 				return
 			end
 		})
-
-		pg = var_2_10001
-
-		local var_27_2 = var_2_10001.m02
-		local var_27_3 = var_1.sendNotification
-
-		GAME = var_4
-
-		var_27_3(var_27_2, var_4.APPRECIATE_CHANGE_MUSIC_PLAY_LOOP_TYPE, {
-			loopType = var_27_1
+		pg.m02:sendNotification(GAME.APPRECIATE_CHANGE_MUSIC_PLAY_LOOP_TYPE, {
+			loopType = var_27_0
 		})
-
-		local var_27_4 = arg_15_0
-
-		var_1.updatePlayType(var_27_4, var_27_1)
+		arg_15_0:updatePlayType(var_27_0)
 
 		if arg_15_0.musicPlayer then
-			arg_15_0.musicPlayer.loopType = var_27_1
+			arg_15_0.musicPlayer.loopType = var_27_0
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_2(var_15_30, var_15_31, var_15_32, var_1_10007)
-
-	onInputChanged = var_2
-
-	var_2(arg_15_0, arg_15_0.serchInputText, function(arg_31_0)
-		local var_31_0 = arg_15_0.likeValue
-
-		MusicCollectionConst = var_2_10002
-
-		if var_31_0 ~= var_2_10002.Filte_Like_Value then
+	end, SFX_PANEL)
+	onInputChanged(arg_15_0, arg_15_0.serchInputText, function(arg_31_0)
+		if arg_15_0.likeValue ~= MusicCollectionConst.Filte_Like_Value then
 			return
 		end
 
-		local var_31_1 = arg_15_0
-
-		var_1.updatePlateList(var_31_1, arg_15_0.plateTFList[arg_15_0.curMidddleIndex], arg_15_0.curMidddleIndex)
+		arg_15_0:updatePlateList(arg_15_0.plateTFList[arg_15_0.curMidddleIndex], arg_15_0.curMidddleIndex)
 
 		return
 	end)
-
-	onInputChanged = var_2
-
-	var_2(arg_15_0, arg_15_0.albumInputText, function(arg_32_0)
-		local var_32_0 = arg_15_0
-
-		var_1.updateAlbumListPanel(var_32_0)
+	onInputChanged(arg_15_0, arg_15_0.albumInputText, function(arg_32_0)
+		arg_15_0:updateAlbumListPanel()
 
 		return
 	end)
@@ -789,169 +374,94 @@ function var_0_1.addListener(arg_15_0)
 	return
 end
 
-function var_0_1.tryShowTipMsgBox(arg_33_0)
-	local var_33_0 = arg_33_0.appreciateProxy
-
-	if var_1.isMusicHaveNewRes(var_33_0) then
-		local function var_33_1()
-			local var_34_0 = arg_33_0.lScrollPageSC
-			local var_34_1 = var_0.MoveToItemID
-
-			MusicCollectionConst = var_2_10003
-
-			var_34_1(var_34_0, var_2_10003.AutoScrollIndex - 1)
-
-			PlayerPrefs = var_34_1
-
-			local var_34_2 = var_34_1.SetInt
-			local var_34_3 = "musicVersion"
-
-			MusicCollectionConst = var_3
-
-			var_34_2(var_34_3, var_3.Version)
-
-			local var_34_4 = arg_33_0
-			local var_34_5 = var_0.emit
-
-			CollectionScene = var_3
-
-			var_34_5(var_34_4, var_3.UPDATE_RED_POINT)
-
-			return
-		end
-
-		pg = var_33_0
-
-		local var_33_2 = var_33_0.MsgboxMgr.GetInstance()
-		local var_33_3 = var_3.ShowMsgBox
-		local var_33_4 = {
+function var_0_0.tryShowTipMsgBox(arg_33_0)
+	if arg_33_0.appreciateProxy:isMusicHaveNewRes() then
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
 			hideNo = true,
-			hideClose = true
-		}
+			hideClose = true,
+			content = i18n("res_music_new_tip", MusicCollectionConst.NewCount),
+			onYes = function()
+				arg_33_0.lScrollPageSC:MoveToItemID(MusicCollectionConst.AutoScrollIndex - 1)
+				PlayerPrefs.SetInt("musicVersion", MusicCollectionConst.Version)
+				arg_33_0:emit(CollectionScene.UPDATE_RED_POINT)
 
-		i18n = var_1_10007
+				return
+			end,
+			onCancel = function()
+				arg_33_0.lScrollPageSC:MoveToItemID(MusicCollectionConst.AutoScrollIndex - 1)
+				PlayerPrefs.SetInt("musicVersion", MusicCollectionConst.Version)
+				arg_33_0:emit(CollectionScene.UPDATE_RED_POINT)
 
-		local var_33_5 = "res_music_new_tip"
+				return
+			end,
+			onClose = function()
+				arg_33_0.lScrollPageSC:MoveToItemID(MusicCollectionConst.AutoScrollIndex - 1)
+				PlayerPrefs.SetInt("musicVersion", MusicCollectionConst.Version)
+				arg_33_0:emit(CollectionScene.UPDATE_RED_POINT)
 
-		MusicCollectionConst = var_1_10010
-		var_33_4.content = var_1_10007(var_33_5, var_1_10010.NewCount)
-		var_33_4.onYes = var_33_1
-		var_33_4.onCancel = var_33_1
-		var_33_4.onClose = var_33_1
-
-		var_33_3(var_33_2, var_33_4)
+				return
+			end
+		})
 	end
 
 	return
 end
 
-function var_0_1.initPlateListPanel(arg_35_0)
+function var_0_0.initPlateListPanel(arg_35_0)
 	function arg_35_0.lScrollPageSC.itemInitedCallback(arg_36_0, arg_36_1)
-		local var_36_0 = arg_36_0 + 1
+		arg_35_0.plateTFList[arg_36_0 + 1] = arg_36_1
 
-		arg_35_0.plateTFList[var_36_0] = arg_36_1
+		arg_36_1:GetComponent("DftAniEvent"):SetEndEvent(function()
+			arg_35_0.animCallback = nil
 
-		local var_36_1 = arg_36_1:GetComponent("DftAniEvent")
-
-		var_3.SetEndEvent(var_36_1, function()
-			local var_37_0 = arg_35_0.animCallback
-			local var_37_1 = arg_35_0
-
-			var_37_1.animCallback = nil
-			existCall = var_37_1
-
-			var_37_1(var_37_0)
+			existCall(arg_35_0.animCallback)
 
 			return
 		end)
-
-		local var_36_2 = arg_35_0
-
-		var_3.updatePlateTF(var_36_2, arg_36_1, var_36_0)
+		arg_35_0:updatePlateTF(arg_36_1, arg_36_0 + 1)
 
 		return
 	end
 
 	function arg_35_0.lScrollPageSC.itemClickCallback(arg_38_0, arg_38_1)
-		local var_38_0 = arg_38_0 + 1
-
-		if arg_35_0.curMidddleIndex ~= var_38_0 and not arg_35_0.isPlayingAni then
-			local var_38_1 = arg_35_0
-
-			var_3.setAniState(var_38_1, true)
-
-			local var_38_2 = arg_35_0
-
-			var_3.closePlateAni(var_38_2, arg_35_0.plateTFList[arg_35_0.curMidddleIndex])
-
-			local var_38_3 = arg_35_0.lScrollPageSC
-
-			var_3.MoveToItemID(var_38_3, arg_38_0)
+		if arg_35_0.curMidddleIndex ~= arg_38_0 + 1 and not arg_35_0.isPlayingAni then
+			arg_35_0:setAniState(true)
+			arg_35_0:closePlateAni(arg_35_0.plateTFList[arg_35_0.curMidddleIndex])
+			arg_35_0.lScrollPageSC:MoveToItemID(arg_38_0)
 		end
 
 		return
 	end
 
 	function arg_35_0.lScrollPageSC.itemPitchCallback(arg_39_0, arg_39_1)
-		local var_39_0 = arg_39_0 + 1
+		arg_35_0.curMidddleIndex = arg_39_0 + 1
 
-		arg_35_0.curMidddleIndex = var_39_0
-
-		local var_39_1 = arg_35_0
-
-		var_3.saveRunData(var_39_1)
-
-		local var_39_2 = arg_35_0
-
-		var_3.updatePlateList(var_39_2, arg_39_1, var_39_0)
-
-		local var_39_3 = arg_35_0
-
-		var_3.playPlateAni(var_39_3, arg_39_1, true)
+		arg_35_0:saveRunData()
+		arg_35_0:updatePlateList(arg_39_1, arg_39_0 + 1)
+		arg_35_0:playPlateAni(arg_39_1, true)
 
 		return
 	end
 
-	local var_35_0 = arg_35_0.lScrollPageSC
-
-	function var_35_0.itemRecycleCallback(arg_40_0, arg_40_1)
+	function arg_35_0.lScrollPageSC.itemRecycleCallback(arg_40_0, arg_40_1)
 		arg_35_0.plateTFList[arg_40_0 + 1] = nil
 
 		return
 	end
 
-	addSlip = var_35_0
-	SLIP_TYPE_HRZ = var_1_10003
-
-	var_35_0(var_1_10003, arg_35_0.plateListPanel, function()
+	addSlip(SLIP_TYPE_HRZ, arg_35_0.plateListPanel, function()
 		if arg_35_0.curMidddleIndex > 1 and not arg_35_0.isPlayingAni then
-			local var_41_0 = arg_35_0
-
-			var_0.setAniState(var_41_0, true)
-
-			local var_41_1 = arg_35_0.lScrollPageSC
-
-			var_0.MoveToItemID(var_41_1, arg_35_0.curMidddleIndex - 1 - 1)
-
-			local var_41_2 = arg_35_0
-
-			var_0.closePlateAni(var_41_2, arg_35_0.plateTFList[arg_35_0.curMidddleIndex])
+			arg_35_0:setAniState(true)
+			arg_35_0.lScrollPageSC:MoveToItemID(arg_35_0.curMidddleIndex - 1 - 1)
+			arg_35_0:closePlateAni(arg_35_0.plateTFList[arg_35_0.curMidddleIndex])
 		end
 
 		return
 	end, function()
 		if arg_35_0.curMidddleIndex < arg_35_0.lScrollPageSC.DataCount and not arg_35_0.isPlayingAni then
-			local var_42_0 = arg_35_0
-
-			var_0.setAniState(var_42_0, true)
-
-			local var_42_1 = arg_35_0.lScrollPageSC
-
-			var_0.MoveToItemID(var_42_1, arg_35_0.curMidddleIndex + 1 - 1)
-
-			local var_42_2 = arg_35_0
-
-			var_0.closePlateAni(var_42_2, arg_35_0.plateTFList[arg_35_0.curMidddleIndex])
+			arg_35_0:setAniState(true)
+			arg_35_0.lScrollPageSC:MoveToItemID(arg_35_0.curMidddleIndex + 1 - 1)
+			arg_35_0:closePlateAni(arg_35_0.plateTFList[arg_35_0.curMidddleIndex])
 		end
 
 		return
@@ -960,868 +470,388 @@ function var_0_1.initPlateListPanel(arg_35_0)
 	return
 end
 
-function var_0_1.updatePlateListPanel(arg_43_0)
-	local var_43_0 = arg_43_0.likeValue
+function var_0_0.updatePlateListPanel(arg_43_0)
+	local var_43_0 = arg_43_0.likeValue == MusicCollectionConst.Filte_Like_Value
 
-	MusicCollectionConst = var_1_10002
+	arg_43_0.tempPlateList = arg_43_0.likeValue == MusicCollectionConst.Filte_Like_Value and {
+		"favor"
+	} or arg_43_0.albumNames
 
-	if var_43_0 == var_1_10002.Filte_Like_Value then
-		arg_43_0.tempPlateList = {
-			"favor"
-		}
-	else
-		arg_43_0.tempPlateList = arg_43_0.albumNames
-	end
-
-	setActive = var_2
-
-	var_2(arg_43_0.serchInputText, var_1)
-
-	setActive = var_2
-
-	var_2(arg_43_0.listBtn, not var_1)
+	setActive(arg_43_0.serchInputText, var_43_0)
+	setActive(arg_43_0.listBtn, not var_43_0)
 
 	arg_43_0.lScrollPageSC.DataCount = #arg_43_0.tempPlateList
 
-	local var_43_1 = arg_43_0.lScrollPageSC
-
-	var_2.Init(var_43_1, arg_43_0.curMidddleIndex - 1)
+	arg_43_0.lScrollPageSC:Init(arg_43_0.curMidddleIndex - 1)
 
 	return
 end
 
-function var_0_1.updatePlateTF(arg_44_0, arg_44_1, arg_44_2)
-	local var_44_0 = arg_44_0.likeValue
+function var_0_0.updatePlateTF(arg_44_0, arg_44_1, arg_44_2)
+	local var_44_0 = arg_44_0.tempPlateList[arg_44_2]
 
-	MusicCollectionConst = var_1_10004
+	if arg_44_0.likeValue == MusicCollectionConst.Filte_Like_Value then
+		local var_44_1 = arg_44_0.likeIds or arg_44_0.appreciateProxy:getAlbumMusicList(var_44_0)
+		local var_44_2
 
-	local var_44_1 = var_44_0 == var_1_10004.Filte_Like_Value
-	local var_44_2 = arg_44_0.tempPlateList[arg_44_2]
-	local var_44_4
-
-	if not var_44_1 or not arg_44_0.likeIds then
-		local var_44_3 = arg_44_0.appreciateProxy
-
-		var_44_4 = var_5.getAlbumMusicList(var_44_3, var_44_2)
-	end
-
-	local var_44_5
-	local var_44_6 = #var_44_4
-
-	if 0 < var_44_6 then
-		var_44_6 = var_44_4[#var_44_4]
-		pg = var_8
-
-		local var_44_7 = var_8.music_collect_config[var_44_6].album_id
-
-		pg = var_1_10009
-		var_44_5 = var_1_10009.music_album[var_44_7].cover
-	end
-
-	setText = var_44_6
-
-	local var_44_8 = arg_44_1:Find("PlateImg/empty/Text")
-
-	i18n = var_1_10010
-
-	var_44_6(var_44_8, var_1_10010("NewMusic_7"))
-
-	setActive = var_44_6
-
-	var_44_6(arg_44_1:Find("PlateImg/face"), var_44_5)
-
-	setActive = var_44_6
-
-	var_44_6(arg_44_1:Find("PlateImg/empty"), not var_44_5)
-
-	if var_44_5 then
-		MusicCollectionConst = var_44_6
-
-		local var_44_9 = var_44_6.MUSIC_COVER_PATH_PREFIX .. var_44_5
-		local var_44_10 = arg_44_0.resLoader
-
-		var_8.LoadSprite(var_44_10, var_44_9, var_44_5, arg_44_1:Find("PlateImg/face"), false)
-	end
-
-	if arg_44_2 == arg_44_0.curMidddleIndex then
-		arg_44_0:updatePlateList(arg_44_1, arg_44_2)
-	end
-
-	return
-end
-
-function var_0_1.updatePlateList(arg_45_0, arg_45_1, arg_45_2)
-	local var_45_0 = arg_45_0.likeValue
-
-	MusicCollectionConst = var_1_10004
-
-	local var_45_1 = var_45_0 == var_1_10004.Filte_Like_Value
-	local var_45_2 = arg_45_0.tempPlateList[arg_45_2]
-	local var_45_3
-
-	if not var_45_1 or not arg_45_0.likeIds then
-		var_1_10007 = arg_45_0.appreciateProxy
-		var_45_3 = var_5.getAlbumMusicList(var_1_10007, var_45_2)
-	end
-
-	local var_45_4 = arg_45_1:Find("list")
-
-	setText = var_1_10007
-
-	local var_45_5 = var_45_4:Find("album_name")
-
-	if var_45_2 == "favor" then
-		i18n = var_1_10010
-
-		local var_45_6
-
-		if not var_1_10010("NewMusic_5") then
-			var_45_6 = var_45_2
+		if #var_44_1 > 0 then
+			var_44_2 = pg.music_album[pg.music_collect_config[var_44_1[#var_44_1]].album_id].cover
 		end
 
-		var_1_10007(var_45_5, var_45_6)
+		setText(arg_44_1:Find("PlateImg/empty/Text"), i18n("NewMusic_7"))
+		setActive(arg_44_1:Find("PlateImg/face"), var_44_2)
+		setActive(arg_44_1:Find("PlateImg/empty"), not var_44_2)
 
-		local var_45_7 = arg_45_0.appreciateProxy
-		local var_45_8 = var_7.getMainPlayerAlbumName(var_45_7) == var_45_2
-		local var_45_9 = var_45_4:Find("btn_home")
-
-		setActive = var_45_7
-
-		var_45_7(var_45_9:Find("off"), not var_45_8)
-
-		setActive = var_45_7
-
-		var_45_7(var_45_9:Find("on"), var_45_8)
-
-		onButton = var_45_7
-
-		local var_45_10 = arg_45_0
-		local var_45_11 = var_45_9
-
-		local function var_45_12()
-			local var_46_0 = arg_45_0.appreciateProxy
-			local var_46_2
-
-			if var_0.getMainPlayerAlbumName(var_46_0) == var_45_2 then
-				pg = var_46_2
-
-				local var_46_1 = var_46_2.m02
-
-				var_46_2 = var_46_2.sendNotification
-				GAME = var_2_10004
-
-				var_46_2(var_46_1, var_2_10004.APPRECIATE_CHANGE_MAIN_PLAY_ALBUM, {
-					albumName = "none"
-				})
-
-				setActive = var_46_2
-
-				local var_46_3 = var_45_9
-
-				var_46_2(var_3.Find(var_46_3, "off"), true)
-
-				setActive = var_46_2
-
-				local var_46_4 = var_45_9
-
-				var_46_2(var_3.Find(var_46_4, "on"), false)
-			else
-				pg = var_46_2
-
-				local var_46_5 = var_46_2.m02
-				local var_46_6 = var_1.sendNotification
-
-				GAME = var_2_10004
-
-				var_46_6(var_46_5, var_2_10004.APPRECIATE_CHANGE_MAIN_PLAY_ALBUM, {
-					albumName = var_45_2
-				})
-
-				setActive = var_46_6
-
-				local var_46_7 = var_45_9
-
-				var_46_6(var_3.Find(var_46_7, "off"), false)
-
-				setActive = var_46_6
-
-				local var_46_8 = var_45_9
-
-				var_46_6(var_3.Find(var_46_8, "on"), true)
-			end
-
-			local var_46_9 = arg_45_0
-
-			var_1.updateAlbumListPanel(var_46_9)
-
-			return
+		if var_44_2 then
+			arg_44_0.resLoader:LoadSprite(MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var_44_2, var_44_2, arg_44_1:Find("PlateImg/face"), false)
 		end
 
-		SFX_CONFIRM = var_14
-
-		var_45_7(var_45_10, var_45_11, var_45_12, var_14)
-
-		local var_45_13 = var_45_4
-		local var_45_14 = var_45_4.Find(var_45_13, "panel/view/container")
-
-		local function var_45_15(arg_47_0)
-			local var_47_0
-
-			if var_45_1 then
-				local var_47_1 = arg_45_0.sortValue
-
-				MusicCollectionConst = var_2_10003
-
-				if var_47_1 == var_2_10003.Sort_Order_Down then
-					underscore = var_47_1
-					var_47_0 = var_47_1.to_array(var_45_3)
-				else
-					var_47_1 = arg_45_0.sortValue
-					MusicCollectionConst = var_2_10003
-
-					if var_47_1 == var_2_10003.Sort_Order_Up then
-						underscore = var_47_1
-						var_47_0 = var_47_1.reverse(var_45_3)
-					else
-						assert = var_47_1
-
-						var_47_1(false)
-					end
-				end
-
-				string = var_47_1
-
-				local var_47_2 = var_47_1.lower
-
-				getInputText = var_2_10004
-
-				local var_47_3 = var_47_2(var_2_10004(arg_45_0.serchInputText))
-
-				if var_45_1 then
-					underscore = var_47_4
-
-					local var_47_4
-
-					if not var_47_4.filter(var_47_0, function(arg_48_0)
-						pg = var_3_10001
-
-						local var_48_0 = var_3_10001.music_collect_config[arg_48_0].name
-						local var_48_2
-
-						if var_47_3 and var_47_3 ~= "" then
-							string = var_2
-
-							local var_48_1 = var_2.find
-
-							string = var_3_10004
-							var_48_2 = var_48_1(var_3_10004.lower(var_48_0), var_47_3)
-
-							if false then
-								var_48_2 = false
-							end
-						else
-							var_48_2 = true
-						end
-
-						return var_48_2
-					end) then
-						underscore = var_47_4
-						var_47_4 = var_47_4.to_array(var_47_0)
-					end
-
-					UIItemList = var_4
-
-					local var_47_5 = var_4.StaticAlign
-					local var_47_6 = var_45_14
-					local var_47_7 = var_45_14
-
-					var_47_5(var_47_6, var_7.GetChild(var_47_7, 0), #var_47_4, function(arg_49_0, arg_49_1, arg_49_2)
-						arg_49_1 = arg_49_1 + 1
-						UIItemList = var_3_10003
-
-						if arg_49_0 == var_3_10003.EventUpdate then
-							pg = var_3
-
-							local var_49_0 = var_3.music_collect_config[var_47_4[arg_49_1]]
-							local var_49_1
-
-							if var_45_1 then
-								var_49_1 = arg_45_0.sortValue
-								MusicCollectionConst = var_3_10005
-
-								if var_49_1 == var_3_10005.Sort_Order_Up then
-									setText = var_49_1
-
-									local var_49_2 = arg_49_2:Find("mark/Text")
-
-									string = var_3_10007
-
-									var_49_1(var_49_2, var_3_10007.format("%02d", #var_47_4 - arg_49_1 + 1))
-
-									goto label_49_0
-								end
-							end
-
-							setText = var_49_1
-
-							do
-								local var_49_3 = arg_49_2:Find("mark/Text")
-
-								string = var_3_10007
-
-								var_49_1(var_49_3, var_3_10007.format("%02d", arg_49_1))
-							end
-
-							::label_49_0::
-
-							changeToScrollText = var_49_1
-
-							var_49_1(arg_49_2:Find("name"), var_49_0.name)
-
-							setText = var_49_1
-
-							local var_49_4 = arg_49_2:Find("time")
-							local var_49_5 = arg_45_0
-
-							var_49_1(var_49_4, var_7.descTime(var_49_5, var_49_0.music_time))
-
-							setActive = var_49_1
-
-							var_49_1(arg_49_2:Find("line"), arg_49_1 < #var_47_4)
-
-							onButton = var_49_1
-
-							local var_49_6 = arg_45_0
-							local var_49_7 = arg_49_2
-							local var_49_8 = arg_49_2.Find(var_49_7, "like")
-
-							local function var_49_9()
-								local var_50_0 = var_49_0.id
-
-								pg = var_4_10001
-
-								local var_50_1 = var_4_10001.m02
-								local var_50_2 = var_1.sendNotification
-
-								GAME = var_4_10004
-
-								var_50_2(var_50_1, var_4_10004.APPRECIATE_MUSIC_LIKE, {
-									musicID = var_50_0,
-									isAdd = arg_45_0.likeDic[var_50_0] and 1 or 0
-								})
-
-								local var_50_3 = arg_45_0
-
-								var_1.ChangeLike(var_50_3, var_50_0)
-
-								local var_50_4 = arg_45_0
-
-								var_1.updateLikeToggle(var_50_4)
-
-								local var_50_5 = arg_45_0
-
-								var_1.updatePlateList(var_50_5, arg_45_1, arg_45_2)
-
-								if arg_45_0.musicPlayer then
-									local var_50_6 = arg_45_0.musicPlayer
-
-									if var_1.GetCurrentMusicId(var_50_6) == var_50_0 then
-										setActive = var_1
-
-										var_1(arg_45_0.likeOnImg, arg_45_0.likeDic[var_50_0])
-									end
-								end
-
-								return
-							end
-
-							SFX_CONFIRM = var_49_7
-
-							var_49_1(var_49_6, var_49_8, var_49_9, var_49_7)
-
-							setActive = var_49_1
-
-							var_49_1(arg_49_2:Find("like/off"), not arg_45_0.likeDic[var_49_0.id])
-
-							setActive = var_49_1
-
-							var_49_1(arg_49_2:Find("like/on"), arg_45_0.likeDic[var_49_0.id])
-
-							if arg_45_0.musicPlayer then
-								if arg_45_0.musicPlayer.albumName == var_45_2 then
-									local var_49_10 = arg_45_0.musicPlayer
-									local var_49_11
-
-									if var_4.GetCurrentMusicId(var_49_10) ~= var_49_0.id then
-										var_49_11 = false
-									else
-										var_49_11 = true
-									end
-
-									setActive = var_3_10005
-
-									var_3_10005(arg_49_2:Find("mark/Text"), not var_49_11)
-
-									setActive = var_3_10005
-
-									var_3_10005(arg_49_2:Find("mark/icon"), var_49_11)
-
-									setTextColor = var_3_10005
-
-									local var_49_12 = arg_49_2:Find("name/subText")
-
-									if var_49_11 then
-										Color = var_49_13
-
-										local var_49_13
-
-										if not var_49_13.NewHex("FF596E") then
-											Color = var_49_13
-											var_49_13 = var_49_13.white
-										end
-
-										var_3_10005(var_49_12, var_49_13)
-
-										setTextColor = var_3_10005
-
-										local var_49_14 = arg_49_2:Find("time")
-
-										if var_49_11 then
-											Color = var_49_13
-
-											if not var_49_13.NewHex("FF596E") then
-												Color = var_49_13
-												var_49_13 = var_49_13.white
-											end
-
-											var_3_10005(var_49_14, var_49_13)
-
-											onButton = var_3_10005
-
-											local var_49_15 = arg_45_0
-											local var_49_16 = arg_49_2
-
-											local function var_49_17()
-												local var_51_0 = arg_45_0
-
-												var_0.NewMusicPlayer(var_51_0, var_45_2, var_47_0, var_49_0.id)
-
-												return
-											end
-
-											SFX_CONFIRM = var_10
-
-											var_3_10005(var_49_15, var_49_16, var_49_17, var_10)
-
-											return
-										end
-									end
-								end
-							end
-						end
-					end)
-
-					setActive = var_47_5
-
-					local var_47_8 = var_45_4
-
-					var_47_5(var_6.Find(var_47_8, "panel/view/empty"), #var_47_4 == 0)
-
-					return
-				end
-			end
-		end
-
-		setActive = var_45_13
-
-		var_45_13(var_45_4:Find("panel/sort"), var_45_1)
-
-		if var_45_1 then
-			local var_45_16 = var_45_4
-			local var_45_17 = var_45_4.Find(var_45_16, "panel/sort/bg/asc")
-			local var_45_18 = var_45_4
-			local var_45_19 = var_45_4.Find(var_45_18, "panel/sort/bg/desc")
-
-			setText = var_45_16
-
-			local var_45_20 = var_45_17:Find("Text")
-
-			i18n = var_16
-
-			var_45_16(var_45_20, var_16("word_asc"))
-
-			onToggle = var_45_16
-
-			local var_45_21 = arg_45_0
-			local var_45_22 = var_45_17
-
-			local function var_45_23(arg_52_0)
-				if arg_52_0 then
-					var_2_10001 = arg_45_0
-					MusicCollectionConst = var_2_10002
-					var_2_10001.sortValue = var_2_10002.Sort_Order_Up
-
-					local var_52_0 = arg_45_0
-
-					var_2_10001.saveRunData(var_52_0)
-					var_45_15(not arg_52_0)
-				end
-
-				setImageAlpha = var_2_10001
-
-				var_2_10001(var_45_17, arg_52_0 and 1 or 0)
-
-				setCanvasGroupAlpha = var_2_10001
-
-				var_2_10001(var_45_17, arg_52_0 and 1 or 0.3)
-
-				return
-			end
-
-			SFX_PANEL = var_18
-
-			var_45_16(var_45_21, var_45_22, var_45_23, var_18)
-
-			setText = var_45_16
-
-			local var_45_24 = var_45_19:Find("Text")
-
-			i18n = var_45_22
-
-			var_45_16(var_45_24, var_45_22("word_desc"))
-
-			onToggle = var_45_16
-
-			local var_45_25 = arg_45_0
-			local var_45_26 = var_45_19
-
-			local function var_45_27(arg_53_0)
-				if arg_53_0 then
-					var_2_10001 = arg_45_0
-					MusicCollectionConst = var_2_10002
-					var_2_10001.sortValue = var_2_10002.Sort_Order_Down
-
-					local var_53_0 = arg_45_0
-
-					var_2_10001.saveRunData(var_53_0)
-					var_45_15(arg_53_0)
-				end
-
-				setImageAlpha = var_2_10001
-
-				var_2_10001(var_45_19, arg_53_0 and 1 or 0)
-
-				setCanvasGroupAlpha = var_2_10001
-
-				var_2_10001(var_45_19, arg_53_0 and 1 or 0.3)
-
-				return
-			end
-
-			SFX_PANEL = var_18
-
-			var_45_16(var_45_25, var_45_26, var_45_27, var_18)
-
-			local var_45_28 = arg_45_0.sortValue
-
-			MusicCollectionConst = var_45_18
-
-			if var_45_28 == var_45_18.Sort_Order_Up then
-				triggerToggle = var_45_28
-
-				var_45_28(var_45_17, true)
-			else
-				triggerToggle = var_45_28
-
-				var_45_28(var_45_19, true)
-			end
-		else
-			var_45_15(false)
+		if arg_44_2 == arg_44_0.curMidddleIndex then
+			arg_44_0:updatePlateList(arg_44_1, arg_44_2)
 		end
 
 		return
 	end
 end
 
-function var_0_1.updateAlbumListPanel(arg_54_0)
-	string = var_1_10001
+function var_0_0.updatePlateList(arg_45_0, arg_45_1, arg_45_2)
+	local var_45_0 = arg_45_0.likeValue == MusicCollectionConst.Filte_Like_Value
+	local var_45_1 = arg_45_0.tempPlateList[arg_45_2]
+	local var_45_2
 
-	local var_54_0 = var_1_10001.lower
+	if arg_45_0.likeValue ~= MusicCollectionConst.Filte_Like_Value or not arg_45_0.likeIds then
+		var_45_2 = arg_45_0.appreciateProxy:getAlbumMusicList(var_45_1)
+	end
 
-	getInputText = var_1_10003
+	local var_45_3 = arg_45_1:Find("list")
+	local var_45_4 = var_45_1 == "favor" and i18n("NewMusic_5") or var_45_1
 
-	local var_54_1 = var_54_0(var_1_10003(arg_54_0.albumInputText))
+	setText(var_45_3:Find("album_name"), var_45_4)
 
-	underscore = var_1_10002
-	arg_54_0.tempAlbumList = var_1_10002.filter(arg_54_0.albumNames, function(arg_55_0)
-		string = var_2_10001
+	local var_45_5 = arg_45_0.appreciateProxy:getMainPlayerAlbumName() == var_45_1
+	local var_45_6 = var_45_3:Find("btn_home")
 
-		local var_55_0 = var_2_10001.find
+	setActive(var_45_6:Find("off"), not var_45_5)
+	setActive(var_45_6:Find("on"), var_45_5)
+	onButton(arg_45_0, var_45_6, function()
+		if arg_45_0.appreciateProxy:getMainPlayerAlbumName() == var_45_1 then
+			pg.m02:sendNotification(GAME.APPRECIATE_CHANGE_MAIN_PLAY_ALBUM, {
+				albumName = "none"
+			})
+			setActive(var_45_6:Find("off"), true)
+			setActive(var_45_6:Find("on"), false)
+		else
+			pg.m02:sendNotification(GAME.APPRECIATE_CHANGE_MAIN_PLAY_ALBUM, {
+				albumName = var_45_1
+			})
+			setActive(var_45_6:Find("off"), false)
+			setActive(var_45_6:Find("on"), true)
+		end
 
-		string = var_2_10003
+		arg_45_0:updateAlbumListPanel()
 
-		if var_55_0(var_2_10003.lower(arg_55_0), var_54_1) then
+		return
+	end, SFX_CONFIRM)
+
+	local var_45_7 = var_45_3:Find("panel/view/container")
+
+	local function var_45_8(arg_47_0)
+		local var_47_0
+
+		if not var_45_0 or arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Down then
+			var_47_0 = underscore.to_array(var_45_2)
+		elseif arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Up then
+			var_47_0 = underscore.reverse(var_45_2)
+		else
+			assert(false)
+		end
+
+		local var_47_1 = string.lower(getInputText(arg_45_0.serchInputText))
+		local var_47_2 = var_45_0 and underscore.filter(var_47_0, function(arg_48_0)
+			local var_48_0 = pg.music_collect_config[arg_48_0].name
+
+			return not var_47_1 or var_47_1 == "" or string.find(string.lower(var_48_0), var_47_1)
+		end) or underscore.to_array(var_47_0)
+
+		UIItemList.StaticAlign(var_45_7, var_45_7:GetChild(0), #var_47_2, function(arg_49_0, arg_49_1, arg_49_2)
+			arg_49_1 = arg_49_1 + 1
+
+			if arg_49_0 == UIItemList.EventUpdate then
+				local var_49_0 = pg.music_collect_config[var_47_2[arg_49_1]]
+
+				if var_45_0 and arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Up then
+					setText(arg_49_2:Find("mark/Text"), string.format("%02d", #var_47_2 - arg_49_1 + 1))
+				else
+					setText(arg_49_2:Find("mark/Text"), string.format("%02d", arg_49_1))
+				end
+
+				changeToScrollText(arg_49_2:Find("name"), var_49_0.name)
+				setText(arg_49_2:Find("time"), arg_45_0:descTime(var_49_0.music_time))
+				setActive(arg_49_2:Find("line"), arg_49_1 < #var_47_2)
+				onButton(arg_45_0, arg_49_2:Find("like"), function()
+					local var_50_0 = var_49_0.id
+
+					pg.m02:sendNotification(GAME.APPRECIATE_MUSIC_LIKE, {
+						musicID = var_49_0.id,
+						isAdd = arg_45_0.likeDic[var_49_0.id] and 1 or 0
+					})
+					arg_45_0:ChangeLike(var_50_0)
+					arg_45_0:updateLikeToggle()
+					arg_45_0:updatePlateList(arg_45_1, arg_45_2)
+
+					if arg_45_0.musicPlayer and arg_45_0.musicPlayer:GetCurrentMusicId() == var_50_0 then
+						setActive(arg_45_0.likeOnImg, arg_45_0.likeDic[var_50_0])
+					end
+
+					return
+				end, SFX_CONFIRM)
+				setActive(arg_49_2:Find("like/off"), not arg_45_0.likeDic[var_49_0.id])
+				setActive(arg_49_2:Find("like/on"), arg_45_0.likeDic[var_49_0.id])
+
+				local var_49_1 = arg_45_0.musicPlayer and arg_45_0.musicPlayer.albumName == var_45_1 and arg_45_0.musicPlayer:GetCurrentMusicId() == var_49_0.id
+
+				setActive(arg_49_2:Find("mark/Text"), not var_49_1)
+				setActive(arg_49_2:Find("mark/icon"), var_49_1)
+
+				local var_49_2 = var_49_1 and Color.NewHex("FF596E") or Color.white
+
+				setTextColor(arg_49_2:Find("name/subText"), var_49_2)
+
+				local var_49_3 = var_49_1 and Color.NewHex("FF596E") or Color.white
+
+				setTextColor(arg_49_2:Find("time"), var_49_3)
+				onButton(arg_45_0, arg_49_2, function()
+					arg_45_0:NewMusicPlayer(var_45_1, var_47_0, var_49_0.id)
+
+					return
+				end, SFX_CONFIRM)
+			end
+
+			return
+		end)
+		setActive(var_45_3:Find("panel/view/empty"), #var_47_2 == 0)
+
+		return
+	end
+
+	setActive(var_45_3:Find("panel/sort"), var_45_0)
+
+	if var_45_0 then
+		local var_45_9 = var_45_3:Find("panel/sort/bg/asc")
+		local var_45_10 = var_45_3:Find("panel/sort/bg/desc")
+
+		setText(var_45_9:Find("Text"), i18n("word_asc"))
+		onToggle(arg_45_0, var_45_9, function(arg_52_0)
+			if arg_52_0 then
+				arg_45_0.sortValue = MusicCollectionConst.Sort_Order_Up
+
+				arg_45_0:saveRunData()
+				var_45_8(not arg_52_0)
+			end
+
+			setImageAlpha(var_45_9, arg_52_0 and 1 or 0)
+			setCanvasGroupAlpha(var_45_9, arg_52_0 and 1 or 0.3)
+
+			return
+		end, SFX_PANEL)
+		setText(var_45_10:Find("Text"), i18n("word_desc"))
+		onToggle(arg_45_0, var_45_10, function(arg_53_0)
+			if arg_53_0 then
+				arg_45_0.sortValue = MusicCollectionConst.Sort_Order_Down
+
+				arg_45_0:saveRunData()
+				var_45_8(arg_53_0)
+			end
+
+			setImageAlpha(var_45_10, arg_53_0 and 1 or 0)
+			setCanvasGroupAlpha(var_45_10, arg_53_0 and 1 or 0.3)
+
+			return
+		end, SFX_PANEL)
+
+		if arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Up then
+			triggerToggle(var_45_9, true)
+		else
+			triggerToggle(var_45_10, true)
+		end
+	else
+		(function(arg_47_0)
+			local var_47_0
+
+			if not var_45_0 or arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Down then
+				var_47_0 = underscore.to_array(var_45_2)
+			elseif arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Up then
+				var_47_0 = underscore.reverse(var_45_2)
+			else
+				assert(false)
+			end
+
+			local var_47_1 = string.lower(getInputText(arg_45_0.serchInputText))
+			local var_47_2 = var_45_0 and underscore.filter(var_47_0, function(arg_48_0)
+				local var_48_0 = pg.music_collect_config[arg_48_0].name
+
+				return not var_47_1 or var_47_1 == "" or string.find(string.lower(var_48_0), var_47_1)
+			end) or underscore.to_array(var_47_0)
+
+			UIItemList.StaticAlign(var_45_7, var_45_7:GetChild(0), #var_47_2, function(arg_49_0, arg_49_1, arg_49_2)
+				arg_49_1 = arg_49_1 + 1
+
+				if arg_49_0 == UIItemList.EventUpdate then
+					local var_49_0 = pg.music_collect_config[var_47_2[arg_49_1]]
+
+					if var_45_0 and arg_45_0.sortValue == MusicCollectionConst.Sort_Order_Up then
+						setText(arg_49_2:Find("mark/Text"), string.format("%02d", #var_47_2 - arg_49_1 + 1))
+					else
+						setText(arg_49_2:Find("mark/Text"), string.format("%02d", arg_49_1))
+					end
+
+					changeToScrollText(arg_49_2:Find("name"), var_49_0.name)
+					setText(arg_49_2:Find("time"), arg_45_0:descTime(var_49_0.music_time))
+					setActive(arg_49_2:Find("line"), arg_49_1 < #var_47_2)
+					onButton(arg_45_0, arg_49_2:Find("like"), function()
+						local var_50_0 = var_49_0.id
+
+						pg.m02:sendNotification(GAME.APPRECIATE_MUSIC_LIKE, {
+							musicID = var_49_0.id,
+							isAdd = arg_45_0.likeDic[var_49_0.id] and 1 or 0
+						})
+						arg_45_0:ChangeLike(var_50_0)
+						arg_45_0:updateLikeToggle()
+						arg_45_0:updatePlateList(arg_45_1, arg_45_2)
+
+						if arg_45_0.musicPlayer and arg_45_0.musicPlayer:GetCurrentMusicId() == var_50_0 then
+							setActive(arg_45_0.likeOnImg, arg_45_0.likeDic[var_50_0])
+						end
+
+						return
+					end, SFX_CONFIRM)
+					setActive(arg_49_2:Find("like/off"), not arg_45_0.likeDic[var_49_0.id])
+					setActive(arg_49_2:Find("like/on"), arg_45_0.likeDic[var_49_0.id])
+
+					local var_49_1 = arg_45_0.musicPlayer and arg_45_0.musicPlayer.albumName == var_45_1 and arg_45_0.musicPlayer:GetCurrentMusicId() == var_49_0.id
+
+					setActive(arg_49_2:Find("mark/Text"), not var_49_1)
+					setActive(arg_49_2:Find("mark/icon"), var_49_1)
+
+					local var_49_2 = var_49_1 and Color.NewHex("FF596E") or Color.white
+
+					setTextColor(arg_49_2:Find("name/subText"), var_49_2)
+
+					local var_49_3 = var_49_1 and Color.NewHex("FF596E") or Color.white
+
+					setTextColor(arg_49_2:Find("time"), var_49_3)
+					onButton(arg_45_0, arg_49_2, function()
+						arg_45_0:NewMusicPlayer(var_45_1, var_47_0, var_49_0.id)
+
+						return
+					end, SFX_CONFIRM)
+				end
+
+				return
+			end)
+			setActive(var_45_3:Find("panel/view/empty"), #var_47_2 == 0)
+
+			return
+		end)(false)
+	end
+
+	return
+end
+
+function var_0_0.updateAlbumListPanel(arg_54_0)
+	local var_54_0 = string.lower(getInputText(arg_54_0.albumInputText))
+
+	arg_54_0.tempAlbumList = underscore.filter(arg_54_0.albumNames, function(arg_55_0)
+		if string.find(string.lower(arg_55_0), var_54_0) then
 			return true
 		else
-			underscore = var_1
-
-			local var_55_1 = var_1.any
-			local var_55_2 = arg_54_0.appreciateProxy
-
-			return var_55_1(var_3.getAlbumMusicList(var_55_2, arg_55_0), function(arg_56_0)
-				string = var_3_10001
-
-				local var_56_0 = var_3_10001.find
-
-				string = var_3_10003
-
-				local var_56_1 = var_3_10003.lower
-
-				pg = var_3_10005
-
-				return var_56_0(var_56_1(var_3_10005.music_collect_config[arg_56_0].name), var_54_1)
+			return underscore.any(arg_54_0.appreciateProxy:getAlbumMusicList(arg_55_0), function(arg_56_0)
+				return string.find(string.lower(pg.music_collect_config[arg_56_0].name), var_54_0)
 			end)
 		end
 
 		return
 	end)
 
-	local var_54_2 = arg_54_0.albumItemList
-
-	var_2.align(var_54_2, #arg_54_0.tempAlbumList)
-
-	setActive = var_2
-
-	local var_54_3 = arg_54_0.panel
-
-	var_2(var_4.Find(var_54_3, "middle/empty"), #arg_54_0.tempAlbumList == 0)
-
-	setActive = var_2
-
-	local var_54_4 = arg_54_0.albumToggle
-
-	var_2(var_4.Find(var_54_4, "asc"), arg_54_0.albumSortValue == "asc")
-
-	setActive = var_2
-
-	local var_54_5 = arg_54_0.albumToggle
-
-	var_2(var_4.Find(var_54_5, "desc"), arg_54_0.albumSortValue == "desc")
+	arg_54_0.albumItemList:align(#arg_54_0.tempAlbumList)
+	setActive(arg_54_0.panel:Find("middle/empty"), #arg_54_0.tempAlbumList == 0)
+	setActive(arg_54_0.albumToggle:Find("asc"), arg_54_0.albumSortValue == "asc")
+	setActive(arg_54_0.albumToggle:Find("desc"), arg_54_0.albumSortValue == "desc")
 
 	return
 end
 
-function var_0_1.updateAlbumTF(arg_57_0, arg_57_1, arg_57_2)
+function var_0_0.updateAlbumTF(arg_57_0, arg_57_1, arg_57_2)
 	if arg_57_0.albumSortValue == "desc" then
 		arg_57_2 = #arg_57_0.tempAlbumList + 1 - arg_57_2
 	end
 
 	local var_57_0 = arg_57_0.tempAlbumList[arg_57_2]
 
-	setText = var_1_10004
+	setText(arg_57_1:Find("index"), string.format("%02d", arg_57_2))
 
-	local var_57_1 = arg_57_1:Find("index")
+	local var_57_1 = pg.music_album[pg.music_collect_config[arg_57_0.appreciateProxy:getAlbumMusicList(var_57_0)[1]].album_id].cover
 
-	string = var_1_10007
+	arg_57_0.resLoader:LoadSprite(MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. var_57_1, var_57_1, arg_57_1:Find("icon/face"), false)
+	changeToScrollText(arg_57_1:Find("name"), var_57_0)
+	setActive(arg_57_1:Find("icon/main"), var_57_0 == arg_57_0.appreciateProxy:getMainPlayerAlbumName())
 
-	var_1_10004(var_57_1, var_1_10007.format("%02d", arg_57_2))
+	local var_57_2 = arg_57_0.musicPlayer and arg_57_0.musicPlayer.albumName == var_57_0
 
-	local var_57_2 = arg_57_0.appreciateProxy
-	local var_57_3 = var_4.getAlbumMusicList(var_57_2, var_57_0)
-
-	pg = var_1_10005
-
-	local var_57_4 = var_1_10005.music_collect_config[var_57_3[1]].album_id
-
-	pg = var_6
-
-	local var_57_5 = var_6.music_album[var_57_4].cover
-
-	MusicCollectionConst = var_7
-
-	local var_57_6 = var_7.MUSIC_COVER_PATH_PREFIX .. var_57_5
-	local var_57_7 = arg_57_0.resLoader
-
-	var_8.LoadSprite(var_57_7, var_57_6, var_57_5, arg_57_1:Find("icon/face"), false)
-
-	changeToScrollText = var_8
-
-	var_8(arg_57_1:Find("name"), var_57_0)
-
-	setActive = var_8
-
-	local var_57_8 = arg_57_1:Find("icon/main")
-	local var_57_9 = arg_57_0.appreciateProxy
-
-	var_8(var_57_8, var_57_0 == var_11.getMainPlayerAlbumName(var_57_9))
-
-	local var_57_10
-
-	if arg_57_0.musicPlayer then
-		var_57_10 = arg_57_0.musicPlayer.albumName == var_57_0
-	end
-
-	setActive = var_9
-
-	var_9(arg_57_1:Find("playing"), var_57_10)
-
-	setActive = var_9
-
-	var_9(arg_57_1:Find("line"), arg_57_2 < #arg_57_0.tempAlbumList)
-
-	onButton = var_9
-
-	local var_57_11 = arg_57_0
-	local var_57_12 = arg_57_1
-
-	local function var_57_13()
-		local var_58_0 = arg_57_0
-
-		var_0.closeAlbumListPanel(var_58_0)
+	setActive(arg_57_1:Find("playing"), var_57_2)
+	setActive(arg_57_1:Find("line"), arg_57_2 < #arg_57_0.tempAlbumList)
+	onButton(arg_57_0, arg_57_1, function()
+		arg_57_0:closeAlbumListPanel()
 
 		arg_57_0.curMidddleIndex = arg_57_2
 
-		local var_58_1 = arg_57_0.likeValue
+		if arg_57_0.likeValue == MusicCollectionConst.Filte_Like_Value then
+			arg_57_0.likeValue = MusicCollectionConst.Filte_Normal_Value
 
-		MusicCollectionConst = var_1
-
-		if var_58_1 == var_1.Filte_Like_Value then
-			local var_58_2 = arg_57_0
-
-			MusicCollectionConst = var_1
-			var_58_2.likeValue = var_1.Filte_Normal_Value
-
-			local var_58_3 = arg_57_0
-
-			var_0.updatePlateListPanel(var_58_3)
+			arg_57_0:updatePlateListPanel()
 		else
-			local var_58_4 = arg_57_0.lScrollPageSC
-
-			var_0.Init(var_58_4, arg_57_0.curMidddleIndex - 1)
+			arg_57_0.lScrollPageSC:Init(arg_57_0.curMidddleIndex - 1)
 		end
 
-		local var_58_5 = arg_57_0
-
-		var_0.saveRunData(var_58_5)
+		arg_57_0:saveRunData()
 
 		return
-	end
-
-	SFX_PANEL = var_14
-
-	var_9(var_57_11, var_57_12, var_57_13, var_14)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.updateLikeToggle(arg_59_0)
-	setActive = var_1_10001
-
-	local var_59_0 = arg_59_0.likeFilteOnImg
-	local var_59_1 = arg_59_0.likeValue
-
-	MusicCollectionConst = var_1_10005
-
-	var_1_10001(var_59_0, var_59_1 == var_1_10005.Filte_Like_Value)
-
-	underscore = var_1_10001
-
-	local var_59_2 = var_1_10001.reduce
-
-	underscore = var_59_0
-
-	local var_59_3 = var_59_2(var_59_0.keys(arg_59_0.likeDic), 0, function(arg_60_0, arg_60_1)
+function var_0_0.updateLikeToggle(arg_59_0)
+	setActive(arg_59_0.likeFilteOnImg, arg_59_0.likeValue == MusicCollectionConst.Filte_Like_Value)
+	setText(arg_59_0.likeFilteToggle:Find("TextNum"), string.format("(%d)", (underscore.reduce(underscore.keys(arg_59_0.likeDic), 0, function(arg_60_0, arg_60_1)
 		return arg_60_0 + (arg_59_0.likeDic[arg_60_1] and 1 or 0)
-	end)
-
-	setText = var_1_10002
-
-	local var_59_4 = arg_59_0.likeFilteToggle
-	local var_59_5 = var_4.Find(var_59_4, "TextNum")
-
-	string = var_5
-
-	var_1_10002(var_59_5, var_5.format("(%d)", var_59_3))
+	end))))
 
 	return
 end
 
-function var_0_1.updatePlayPanel(arg_61_0, arg_61_1)
-	local var_61_0 = arg_61_0.musicPlayer
-	local var_61_1 = var_2.GetCurrentMusicId(var_61_0)
+function var_0_0.updatePlayPanel(arg_61_0, arg_61_1)
+	local var_61_0 = pg.music_collect_config[arg_61_0.musicPlayer:GetCurrentMusicId()]
 
-	pg = var_1_10003
-
-	local var_61_2 = var_1_10003.music_collect_config[var_61_1].album_id
-
-	pg = var_1_10005
-
-	local var_61_3 = var_1_10005.music_album[var_61_2].cover
-
-	MusicCollectionConst = var_1_10006
-
-	local var_61_4 = var_1_10006.MUSIC_COVER_PATH_PREFIX .. var_61_3
-	local var_61_5 = arg_61_0.resLoader
-
-	var_7.LoadSprite(var_61_5, var_61_4, var_61_3, arg_61_0.songImg, false)
-
-	local var_61_6 = var_3.name
-
-	changeToScrollText = var_1_10008
-
-	var_1_10008(arg_61_0.playPanelNameText, var_61_6)
-
-	setActive = var_1_10008
-
-	var_1_10008(arg_61_0.likeOnImg, arg_61_0.likeDic[var_3.id])
-
-	setActive = var_1_10008
-
-	var_1_10008(arg_61_0.playBtn, false)
-
-	setActive = var_1_10008
-
-	var_1_10008(arg_61_0.playDesc, true)
-
-	setActive = var_1_10008
-
-	var_1_10008(arg_61_0.pauseBtn, true)
-
-	setSlider = var_1_10008
-
-	var_1_10008(arg_61_0.playProgressBar, 0, arg_61_1, 0)
-
-	setText = var_1_10008
-
-	var_1_10008(arg_61_0.totalTimeText, arg_61_0:descTime(arg_61_1))
-
-	setActive = var_1_10008
-
-	var_1_10008(arg_61_0.nowTimeText, true)
-
-	setActive = var_1_10008
-
-	var_1_10008(arg_61_0.totalTimeText, true)
+	arg_61_0.resLoader:LoadSprite(MusicCollectionConst.MUSIC_COVER_PATH_PREFIX .. pg.music_album[var_61_0.album_id].cover, pg.music_album[var_61_0.album_id].cover, arg_61_0.songImg, false)
+	changeToScrollText(arg_61_0.playPanelNameText, var_61_0.name)
+	setActive(arg_61_0.likeOnImg, arg_61_0.likeDic[var_61_0.id])
+	setActive(arg_61_0.playBtn, false)
+	setActive(arg_61_0.playDesc, true)
+	setActive(arg_61_0.pauseBtn, true)
+	setSlider(arg_61_0.playProgressBar, 0, arg_61_1, 0)
+	setText(arg_61_0.totalTimeText, arg_61_0:descTime(arg_61_1))
+	setActive(arg_61_0.nowTimeText, true)
+	setActive(arg_61_0.totalTimeText, true)
 
 	return
 end
 
-function var_0_1.updatePlayType(arg_62_0, arg_62_1)
-	if not arg_62_1 then
-		getProxy = var_1_10002
-		AppreciateProxy = var_1_10004
+function var_0_0.updatePlayType(arg_62_0, arg_62_1)
+	arg_62_1 = arg_62_1 or getProxy(AppreciateProxy):getMusicPlayerLoopType()
 
-		local var_62_0 = var_1_10002(var_1_10004)
-
-		arg_62_1 = var_1_10002.getMusicPlayerLoopType(var_62_0)
-	end
-
-	eachChild = var_1_10002
-
-	var_1_10002(arg_62_0.playLoopBtn, function(arg_63_0, arg_63_1)
-		setActive = var_2_10002
-
-		var_2_10002(arg_63_0, arg_63_0.name == arg_62_1)
+	eachChild(arg_62_0.playLoopBtn, function(arg_63_0, arg_63_1)
+		setActive(arg_63_0, arg_63_0.name == arg_62_1)
 
 		return
 	end)
@@ -1829,111 +859,66 @@ function var_0_1.updatePlayType(arg_62_0, arg_62_1)
 	return
 end
 
-function var_0_1.updatePlayProgress(arg_64_0, arg_64_1)
-	local var_64_0 = arg_64_0.playSliderSC
-
-	var_2.SetValueWithoutEvent(var_64_0, arg_64_1)
-
-	setText = var_2
-
-	var_2(arg_64_0.nowTimeText, arg_64_0:descTime(arg_64_1))
+function var_0_0.updatePlayProgress(arg_64_0, arg_64_1)
+	arg_64_0.playSliderSC:SetValueWithoutEvent(arg_64_1)
+	setText(arg_64_0.nowTimeText, arg_64_0:descTime(arg_64_1))
 
 	return
 end
 
-function var_0_1.playPlateAni(arg_65_0, arg_65_1, arg_65_2, arg_65_3, arg_65_4)
+function var_0_0.playPlateAni(arg_65_0, arg_65_1, arg_65_2, arg_65_3, arg_65_4)
 	arg_65_0:setAniState(true)
-
-	setActive = var_5
-
-	var_5(arg_65_1:Find("list"), true)
+	setActive(arg_65_1:Find("list"), true)
 
 	function arg_65_0.animCallback()
-		local var_66_0 = arg_65_0
-
-		var_0.setAniState(var_66_0, false)
+		arg_65_0:setAniState(false)
 
 		return
 	end
 
-	quickPlayAnimation = var_5
-
-	var_5(arg_65_1, "anim_MusicCollectionUI_Plate_expand")
+	quickPlayAnimation(arg_65_1, "anim_MusicCollectionUI_Plate_expand")
 
 	return
 end
 
-function var_0_1.closePlateAni(arg_67_0, arg_67_1)
+function var_0_0.closePlateAni(arg_67_0, arg_67_1)
 	arg_67_0:setAniState(true)
 
 	function arg_67_0.animCallback()
-		setActive = var_2_10000
-
-		local var_68_0 = arg_67_1
-
-		var_2_10000(var_2.Find(var_68_0, "list"), false)
-
-		local var_68_1 = arg_67_0
-
-		var_0.setAniState(var_68_1, false)
+		setActive(arg_67_1:Find("list"), false)
+		arg_67_0:setAniState(false)
 
 		return
 	end
 
-	quickPlayAnimation = var_2
-
-	var_2(arg_67_1, "anim_MusicCollectionUI_Plate_retract")
+	quickPlayAnimation(arg_67_1, "anim_MusicCollectionUI_Plate_retract")
 
 	return
 end
 
-function var_0_1.setAniState(arg_69_0, arg_69_1)
+function var_0_0.setAniState(arg_69_0, arg_69_1)
 	arg_69_0.isPlayingAni = arg_69_1
 
 	return
 end
 
-function var_0_1.openAlbumListPanel(arg_70_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_70_0.albumListPanel, true)
-
-	setActive = var_1_10001
-
-	local var_70_0 = arg_70_0.listBtn
-
-	var_1_10001(var_3.Find(var_70_0, "on"), true)
-
-	setActive = var_1_10001
-
-	local var_70_1 = arg_70_0.listBtn
-
-	var_1_10001(var_3.Find(var_70_1, "off"), false)
+function var_0_0.openAlbumListPanel(arg_70_0)
+	setActive(arg_70_0.albumListPanel, true)
+	setActive(arg_70_0.listBtn:Find("on"), true)
+	setActive(arg_70_0.listBtn:Find("off"), false)
 
 	return
 end
 
-function var_0_1.closeAlbumListPanel(arg_71_0, arg_71_1)
-	setActive = var_1_10002
-
-	var_1_10002(arg_71_0.albumListPanel, false)
-
-	setActive = var_1_10002
-
-	local var_71_0 = arg_71_0.listBtn
-
-	var_1_10002(var_4.Find(var_71_0, "on"), false)
-
-	setActive = var_1_10002
-
-	local var_71_1 = arg_71_0.listBtn
-
-	var_1_10002(var_4.Find(var_71_1, "off"), true)
+function var_0_0.closeAlbumListPanel(arg_71_0, arg_71_1)
+	setActive(arg_71_0.albumListPanel, false)
+	setActive(arg_71_0.listBtn:Find("on"), false)
+	setActive(arg_71_0.listBtn:Find("off"), true)
 
 	return
 end
 
-function var_0_1.checkupdateAlbumTF(arg_72_0)
+function var_0_0.checkupdateAlbumTF(arg_72_0)
 	if #arg_72_0.albumTFList > 0 then
 		arg_72_0:updateAlbumTF(arg_72_0.albumTFList[arg_72_0.curMidddleIndex], arg_72_0.curMidddleIndex)
 	end
@@ -1941,98 +926,55 @@ function var_0_1.checkupdateAlbumTF(arg_72_0)
 	return
 end
 
-function var_0_1.NewMusicPlayer(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
-	local var_73_0 = {}
+function var_0_0.NewMusicPlayer(arg_73_0, arg_73_1, arg_73_2, arg_73_3)
+	({}).loopType = getProxy(AppreciateProxy):getMusicPlayerLoopType()
+	;({}).albumName = arg_73_1
+	;({}).list = arg_73_2 or nil
+	;({}).index = arg_73_3 and table.indexof(arg_73_2, arg_73_3) or nil
 
-	getProxy = var_1_10005
-	AppreciateProxy = var_1_10007
+	arg_73_0.bgmMgr:TempPlay("TempMusicPlayer", {})
 
-	local var_73_1 = var_1_10005(var_1_10007)
+	arg_73_0.musicPlayer = arg_73_0.bgmMgr:GetMusicPlayer()
 
-	var_73_0.loopType = var_5.getMusicPlayerLoopType(var_73_1)
-	var_73_0.albumName = arg_73_1
-	var_73_0.list = arg_73_2 or nil
-
-	if arg_73_3 then
-		table = var_5
-
-		local var_73_2
-
-		if not var_5.indexof(arg_73_2, arg_73_3) then
-			var_73_2 = nil
-		end
-
-		var_73_0.index = var_73_2
-
-		local var_73_3 = arg_73_0.bgmMgr
-
-		var_5.TempPlay(var_73_3, "TempMusicPlayer", var_73_0)
-
-		local var_73_4 = arg_73_0.bgmMgr
-
-		arg_73_0.musicPlayer = var_5.GetMusicPlayer(var_73_4)
-
-		return
-	end
+	return
 end
 
-function var_0_1.ChangeLike(arg_74_0, arg_74_1)
+function var_0_0.ChangeLike(arg_74_0, arg_74_1)
 	arg_74_0.likeDic[arg_74_1] = not arg_74_0.likeDic[arg_74_1]
 
 	if arg_74_0.likeDic[arg_74_1] then
-		table = var_2
-
-		var_2.insert(arg_74_0.likeIds, arg_74_1)
+		table.insert(arg_74_0.likeIds, arg_74_1)
 	else
-		table = var_2
-
-		var_2.removebyvalue(arg_74_0.likeIds, arg_74_1)
+		table.removebyvalue(arg_74_0.likeIds, arg_74_1)
 	end
 
 	return
 end
 
-function var_0_1.tryPlayMusic(arg_75_0)
-	triggerButton = var_1_10001
-
-	var_1_10001(arg_75_0.playBtn)
+function var_0_0.tryPlayMusic(arg_75_0)
+	triggerButton(arg_75_0.playBtn)
 
 	return
 end
 
-function var_0_1.tryPauseMusic(arg_76_0)
-	triggerButton = var_1_10001
-
-	var_1_10001(arg_76_0.pauseBtn)
+function var_0_0.tryPauseMusic(arg_76_0)
+	triggerButton(arg_76_0.pauseBtn)
 
 	return
 end
 
-function var_0_1.descTime(arg_77_0, arg_77_1)
-	math = var_1_10002
+function var_0_0.descTime(arg_77_0, arg_77_1)
+	local var_77_0 = math.floor(arg_77_1 / 1000)
+	local var_77_1 = math.floor(var_77_0 / 16)
+	local var_77_2 = math.floor((var_77_0 - var_77_1 * 16) / 60)
 
-	local var_77_0 = var_1_10002.floor(arg_77_1 / 1000)
-
-	math = var_1_10003
-
-	local var_77_1 = var_77_0 - var_1_10003.floor(var_77_0 / 16) * 16
-
-	math = var_4
-
-	local var_77_2 = var_4.floor(var_77_1 / 60)
-	local var_77_3 = var_77_1 % 60
-
-	if var_3 ~= 0 then
-		string = var_6
-
-		return var_6.format("%02d:%02d:%02d", var_3, var_77_2, var_77_3)
+	if var_77_1 ~= 0 then
+		return string.format("%02d:%02d:%02d", var_77_1, var_77_2, (var_77_0 - var_77_1 * 16) % 60)
 	else
-		string = var_6
-
-		return var_6.format("%02d:%02d", var_77_2, var_77_3)
+		return string.format("%02d:%02d", var_77_2, (var_77_0 - var_77_1 * 16) % 60)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

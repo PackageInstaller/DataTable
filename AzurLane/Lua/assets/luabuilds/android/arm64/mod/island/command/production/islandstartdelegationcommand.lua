@@ -1,146 +1,67 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandStartDelegationCommand", pm.SimpleCommand)
 
-local var_0_0 = "IslandStartDelegationCommand"
+var_0_0.START_DELEGATION = "IslandStartDelegationCommand:START_DELEGATION"
 
-pm = var_0_10003
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_9000
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.build_id
+	local var_1_2 = var_1_0.area_id
+	local var_1_3 = var_1_0.ship_id
+	local var_1_4 = var_1_0.formula_id
+	local var_1_5 = var_1_0.num
+	local var_1_6 = getProxy(IslandProxy).GetIsland(var_1_9000)
+	local var_1_7 = getProxy(IslandProxy).GetIsland(var_1_9000):GetBuildingAgency()
+	local var_1_8 = getProxy(IslandProxy):GetIsland():GetInventoryAgency()
+	local var_1_9
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-var_0_1.START_DELEGATION = "IslandStartDelegationCommand:START_DELEGATION"
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().build_id
-	local var_1_1 = var_2.area_id
-	local var_1_2 = var_2.ship_id
-	local var_1_3 = var_2.formula_id
-	local var_1_4 = var_2.num
-
-	getProxy = var_1_10008
-	IslandProxy = var_1_10010
-
-	local var_1_5 = var_1_10008(var_1_10010)
-	local var_1_6 = var_8.GetIsland(var_1_5)
-	local var_1_7 = var_8.GetBuildingAgency(var_1_6)
-
-	getProxy = var_1_5
-	IslandProxy = var_1_10012
-
-	local var_1_8 = var_1_5(var_1_10012)
-	local var_1_9 = var_10.GetIsland(var_1_8)
-	local var_1_10 = var_10.GetInventoryAgency(var_1_9)
-	local var_1_11
-
-	if not var_2.extraCost then
-		var_1_11 = 0
+	if not var_1_0.extraCost then
+		var_1_9 = 0
 	end
 
-	pg = var_1_9
-
-	local var_1_12 = var_1_9.ConnectionMgr.GetInstance()
-
-	var_12.Send(var_1_12, 21501, {
-		build_id = var_1_0,
-		area_id = var_1_1,
-		ship_id = var_1_2,
-		formula_id = var_1_3,
-		num = var_1_4
+	pg.ConnectionMgr.GetInstance():Send(21501, {
+		build_id = var_1_0.build_id,
+		area_id = var_1_0.area_id,
+		ship_id = var_1_0.ship_id,
+		formula_id = var_1_0.formula_id,
+		num = var_1_0.num
 	}, 21502, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_1_7
+			local var_2_0 = var_1_7:GetBuilding(var_1_1)
 
-			var_2_10004 = var_1.GetBuilding(var_2_0, var_1_0)
+			var_2_0:UpdateDeleationRoleDataBySlotId(arg_2_0.ship_appoint.id, arg_2_0.ship_appoint)
 
-			var_1.UpdateDeleationRoleDataBySlotId(var_2_10004, arg_2_0.ship_appoint.id, arg_2_0.ship_appoint)
+			local var_2_1 = var_1_6:GetCharacterAgency():GetShipById(var_1_3)
 
-			var_2_10004 = var_0
-			var_2_10004 = var_2.GetCharacterAgency(var_2_10004)
+			var_2_1:UpdateEnergy(arg_2_0.ship_power)
 
-			local var_2_1 = var_2.GetShipById(var_2_10004, var_1_2)
+			local var_2_2 = var_2_0:GetDelegationSlotData(arg_2_0.ship_appoint.id)
 
-			var_2.UpdateEnergy(var_2_1, arg_2_0.ship_power)
+			var_2_1:UpdateEnergyBeginRecoverTime((var_2_2:GetRoleDelegateFinishTime()))
 
-			local var_2_2 = var_1:GetDelegationSlotData(arg_2_0.ship_appoint.id)
+			if var_1_1 == IslandTechnologyAgency.PLACE_ID then
+				local var_2_3 = IslandShip.STATE_DELEGATION or IslandShip.STATE_TECHNOLOGY
 
-			var_2_10004 = var_3.GetRoleDelegateFinishTime(var_2_2)
+				var_2_1:UpdateState(var_2_3, var_1_1)
 
-			local var_2_3 = var_2
-
-			var_2.UpdateEnergyBeginRecoverTime(var_2_3, var_2_10004)
-
-			local var_2_4 = var_1_0
-
-			IslandTechnologyAgency = var_2_2
-
-			if var_2_4 == var_2_2.PLACE_ID then
-				IslandShip = var_2_4
-
-				if not var_2_4.STATE_DELEGATION then
-					IslandShip = var_2_4
-					var_2_4 = var_2_4.STATE_TECHNOLOGY
+				for iter_2_0, iter_2_1 in ipairs(pg.island_formula[var_2_2:GetFormulaId()].commission_cost) do
+					var_1_8:RemoveItem(iter_2_1[1], (iter_2_1[2] + var_1_9) * var_1_5)
 				end
 
-				var_2:UpdateState(var_2_4, var_1_0)
-
-				local var_2_5 = var_3:GetFormulaId()
-
-				pg = var_2_3
-
-				local var_2_6 = var_2_3.island_formula[var_2_5].commission_cost
-
-				ipairs = var_9
-
-				for iter_2_0, iter_2_1 in var_9(var_2_6) do
-					local var_2_7 = var_1_10
-
-					var_14.RemoveItem(var_2_7, iter_2_1[1], (iter_2_1[2] + var_1_11) * var_1_4)
-				end
-
-				local var_2_8 = var_0
-
-				var_9.DispatchEvent(var_2_8, var_0_1.START_DELEGATION, {
-					build_id = var_1_0,
-					ship_id = var_1_2,
-					area_id = var_1_1,
-					formula_id = var_1_3
+				var_1_6:DispatchEvent(var_0_0.START_DELEGATION, {
+					build_id = var_1_1,
+					ship_id = var_1_3,
+					area_id = var_1_2,
+					formula_id = var_1_4
 				})
-
-				local var_2_9 = arg_1_0
-				local var_2_10 = var_9.sendNotification
-
-				GAME = var_12
-
-				var_2_10(var_2_9, var_12.ISLAND_START_DELEGATION_DONE, {
-					slotId = var_1_1
+				arg_1_0:sendNotification(GAME.ISLAND_START_DELEGATION_DONE, {
+					slotId = var_1_2
 				})
-
-				pg = var_2_10
-
-				local var_2_11 = var_2_10.GameTrackerMgr.GetInstance()
-				local var_2_12 = var_9.Record
-
-				GameTrackerBuilder = var_12
-
-				var_2_12(var_2_11, var_12.BuildIslandStartDelegation(var_1_2, var_1_0, var_1_1, var_1_3, var_1_4))
-
-				local var_2_13 = var_0_1.GetLocalKeyForLastData(var_1_1)
-
-				PackIntToString = var_10
-
-				local var_2_14 = var_10(var_1_2, var_1_3)
-
-				PlayerPrefs = var_11
-
-				var_11.SetString(var_2_13, var_2_14)
+				pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandStartDelegation(var_1_3, var_1_1, var_1_2, var_1_4, var_1_5))
+				PlayerPrefs.SetString(var_0_0.GetLocalKeyForLastData(var_1_2), (PackIntToString(var_1_3, var_1_4)))
 
 				if false then
-					pg = var_1
-
-					local var_2_15 = var_1.TipsMgr.GetInstance()
-					local var_2_16 = var_1.ShowTips
-
-					ERROR_MESSAGE = var_2_10004
-
-					var_2_16(var_2_15, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+					pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 				end
 
 				return
@@ -151,17 +72,8 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.GetLocalKeyForLastData(arg_3_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.getData(var_3_0).id
-	local var_3_2 = "LAST_DELEGATE"
-
-	tostring = var_3_0
-
-	return var_3_2 .. var_3_0(arg_3_0) .. "_" .. var_3_1
+function var_0_0.GetLocalKeyForLastData(arg_3_0)
+	return "LAST_DELEGATE" .. tostring(arg_3_0) .. "_" .. getProxy(PlayerProxy):getData().id
 end
 
-return var_0_1
+return var_0_0

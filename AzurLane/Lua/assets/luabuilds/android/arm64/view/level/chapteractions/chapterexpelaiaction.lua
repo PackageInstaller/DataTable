@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ChapterExpelAIAction")
+﻿local var_0_0 = class("ChapterExpelAIAction")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.actType = arg_1_1.act_type
@@ -8,74 +6,27 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 		row = arg_1_1.ai_pos.row,
 		column = arg_1_1.ai_pos.column
 	}
-	_ = var_2
-	arg_1_0.shipUpdate = var_2.map(arg_1_1.ship_update, function(arg_2_0)
+	arg_1_0.shipUpdate = _.map(arg_1_1.ship_update, function(arg_2_0)
 		return {
 			id = arg_2_0.id,
 			hpRant = arg_2_0.hp_rant
 		}
 	end)
-	_ = var_2
-	arg_1_0.cellFlagUpdates = var_2.map(arg_1_1.cell_flag_list, function(arg_3_0)
-		local var_3_0 = {
+	arg_1_0.cellFlagUpdates = _.map(arg_1_1.cell_flag_list, function(arg_3_0)
+		return {
 			row = arg_3_0.pos.row,
-			column = arg_3_0.pos.column
+			column = arg_3_0.pos.column,
+			flag_list = _.map(arg_3_0.flag_list, function(arg_4_0)
+				return arg_4_0
+			end)
 		}
-
-		_ = var_2
-		var_3_0.flag_list = var_2.map(arg_3_0.flag_list, function(arg_4_0)
-			return arg_4_0
-		end)
-
-		return var_3_0
 	end)
-	_ = var_2
-	arg_1_0.cellUpdates = var_2.map(arg_1_1.map_update, function(arg_5_0)
-		local var_5_0 = arg_5_0.item_type
-
-		ChapterConst = var_2_10002
-
-		if var_5_0 ~= var_2_10002.AttachNone then
-			local var_5_1 = arg_5_0.item_type
-
-			ChapterConst = var_2
-
-			if var_5_1 ~= var_2.AttachBorn then
-				local var_5_2 = arg_5_0.item_type
-
-				ChapterConst = var_2
-
-				if var_5_2 ~= var_2.AttachBorn_Sub then
-					local var_5_3 = arg_5_0.item_type
-
-					ChapterConst = var_2
-
-					if var_5_3 == var_2.AttachStory then
-						local var_5_4 = arg_5_0.item_data
-
-						ChapterConst = var_2
-
-						if var_5_4 ~= var_2.StoryTrigger then
-							local var_5_5 = arg_5_0.item_type
-
-							ChapterConst = var_2
-
-							if var_5_5 == var_2.AttachChampion then
-								ChapterChampionPackage = var_5_5
-
-								if not var_5_5.New(arg_5_0) then
-									ChapterCell = var_5_5
-									var_5_5 = var_5_5.New(arg_5_0)
-								end
-
-								do return var_5_5 end
-								return
-							end
-						end
-					end
-				end
-			end
+	arg_1_0.cellUpdates = _.map(arg_1_1.map_update, function(arg_5_0)
+		if arg_5_0.item_type ~= ChapterConst.AttachNone and arg_5_0.item_type ~= ChapterConst.AttachBorn and arg_5_0.item_type ~= ChapterConst.AttachBorn_Sub and (arg_5_0.item_type ~= ChapterConst.AttachStory or arg_5_0.item_data ~= ChapterConst.StoryTrigger) then
+			return arg_5_0.item_type == ChapterConst.AttachChampion and ChapterChampionPackage.New(arg_5_0) or ChapterCell.New(arg_5_0)
 		end
+
+		return
 	end)
 
 	return
@@ -94,77 +45,35 @@ function var_0_0.applyTo(arg_7_0, arg_7_1, arg_7_2)
 		local var_7_1 = 0
 
 		if #arg_7_0.cellFlagUpdates > 0 then
-			_ = var_5
+			_.each(arg_7_0.cellFlagUpdates, function(arg_8_0)
+				local var_8_0 = arg_7_1:getChapterCell(arg_8_0.row, arg_8_0.column)
 
-			var_5.each(arg_7_0.cellFlagUpdates, function(arg_8_0)
-				local var_8_0 = arg_7_1
-				local var_8_1
-
-				if var_1.getChapterCell(var_8_0, arg_8_0.row, arg_8_0.column) then
-					var_8_1:updateFlagList(arg_8_0)
+				if var_8_0 then
+					var_8_0:updateFlagList(arg_8_0)
 				else
-					ChapterCell = var_2_10002
-					var_8_1 = var_2_10002.New(arg_8_0)
+					var_8_0 = ChapterCell.New(arg_8_0)
 				end
 
-				local var_8_2 = arg_7_1
-
-				var_2.updateChapterCell(var_8_2, var_8_1)
+				arg_7_1:updateChapterCell(var_8_0)
 
 				return
 			end)
 
-			bit = var_5
-
-			local var_7_2 = var_5.bor
-			local var_7_3 = var_7_0
-
-			ChapterConst = var_8
-
-			local var_7_4 = var_8.DirtyCellFlag
-
-			ChapterConst = var_1_10009
-			var_7_0 = var_7_2(var_7_3, var_7_4, var_1_10009.DirtyWeather)
+			var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyCellFlag, ChapterConst.DirtyWeather)
 		end
 
-		local var_7_5 = #arg_7_0.cellUpdates
+		if #arg_7_0.cellUpdates > 0 then
+			_.each(arg_7_0.cellUpdates, function(arg_9_0)
+				if isa(arg_9_0, ChapterChampionPackage) then
+					if arg_7_1:mergeChampion(arg_9_0, true) then
+						local var_9_0 = ChapterConst.DirtyChampionPosition or ChapterConst.DirtyChampion
 
-		if 0 < var_7_5 then
-			_ = var_7_5
-
-			var_7_5.each(arg_7_0.cellUpdates, function(arg_9_0)
-				isa = var_2_10001
-
-				local var_9_0 = arg_9_0
-
-				ChapterChampionPackage = var_2_10004
-
-				if var_2_10001(var_9_0, var_2_10004) then
-					local var_9_1 = arg_7_1
-
-					if var_1.mergeChampion(var_9_1, arg_9_0, true) then
-						ChapterConst = var_2_10002
-
-						if not var_2_10002.DirtyChampionPosition then
-							ChapterConst = var_2_10002
-							var_2_10002 = var_2_10002.DirtyChampion
-						end
-
-						bit = var_9_1
-						var_7_0 = var_9_1.bor(var_7_0, var_2_10002)
+						var_7_0 = bit.bor(var_7_0, var_9_0)
 
 						if false then
-							local var_9_2 = arg_7_1
+							arg_7_1:mergeChapterCell(arg_9_0, true)
 
-							var_1.mergeChapterCell(var_9_2, arg_9_0, true)
-
-							bit = var_1
-
-							local var_9_3 = var_1.bor
-							local var_9_4 = var_7_0
-
-							ChapterConst = var_4
-							var_7_0 = var_9_3(var_9_4, var_4.DirtyAttachment)
+							var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyAttachment)
 						end
 
 						return
@@ -173,44 +82,24 @@ function var_0_0.applyTo(arg_7_0, arg_7_1, arg_7_2)
 			end)
 			arg_7_1:clearChapterCell(arg_7_0.sourceLine.row, arg_7_0.sourceLine.column)
 
-			if arg_7_1:getChampion(arg_7_0.sourceLine.row, arg_7_0.sourceLine.column) then
-				arg_7_1:RemoveChampion(var_5)
+			local var_7_2 = arg_7_1:getChampion(arg_7_0.sourceLine.row, arg_7_0.sourceLine.column)
+
+			if var_7_2 then
+				arg_7_1:RemoveChampion(var_7_2)
 			end
 
-			bit = var_6
-
-			local var_7_6 = var_6.bor
-			local var_7_7 = var_7_0
-
-			ChapterConst = var_9
-			var_7_0 = var_7_6(var_7_7, var_9.DirtyAttachment)
-			bit = var_6
-
-			local var_7_8 = var_6.bor
-			local var_7_9 = var_7_1
-
-			ChapterConst = var_9
-			var_7_1 = var_7_8(var_7_9, var_9.DirtyAutoAction)
+			var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyAttachment)
+			var_7_1 = bit.bor(var_7_1, ChapterConst.DirtyAutoAction)
 		end
 
 		if #arg_7_0.shipUpdate > 0 then
-			_ = var_5
-
-			var_5.each(arg_7_0.shipUpdate, function(arg_10_0)
-				local var_10_0 = arg_7_1
-
-				var_1.updateFleetShipHp(var_10_0, arg_10_0.id, arg_10_0.hpRant)
+			_.each(arg_7_0.shipUpdate, function(arg_10_0)
+				arg_7_1:updateFleetShipHp(arg_10_0.id, arg_10_0.hpRant)
 
 				return
 			end)
 
-			bit = var_5
-
-			local var_7_10 = var_5.bor
-			local var_7_11 = var_7_0
-
-			ChapterConst = var_8
-			var_7_0 = var_7_10(var_7_11, var_8.DirtyFleet)
+			var_7_0 = bit.bor(var_7_0, ChapterConst.DirtyFleet)
 		end
 
 		return true, var_7_0, var_7_1
@@ -220,17 +109,10 @@ function var_0_0.applyTo(arg_7_0, arg_7_1, arg_7_2)
 end
 
 function var_0_0.PlayAIAction(arg_11_0, arg_11_1, arg_11_2, arg_11_3)
-	seriesAsync = var_1_10004
-
-	var_1_10004({
+	seriesAsync({
 		function(arg_12_0)
-			local var_12_0 = arg_11_2.viewComponent.levelStageView
-
-			var_1.SwitchBottomStagePanel(var_12_0, false)
-
-			local var_12_1 = arg_11_2.viewComponent.grid
-
-			var_1.HideAirExpelAimingMark(var_12_1)
+			arg_11_2.viewComponent.levelStageView:SwitchBottomStagePanel(false)
+			arg_11_2.viewComponent.grid:HideAirExpelAimingMark()
 			arg_12_0()
 
 			return

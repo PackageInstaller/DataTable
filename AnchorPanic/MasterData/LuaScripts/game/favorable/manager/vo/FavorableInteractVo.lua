@@ -16,6 +16,7 @@ function parseData(self, key, cusData)
     self.relationLv = cusData.relation_lv
     self.time = cusData.time
     self.title = cusData.title
+    self.type = cusData.type
 end
 
 function getTitle(self)

@@ -59,6 +59,12 @@ PropsType = {
     RAWMAT = 9,
     --时装
     FASHIONPERMIT = 10,
+
+    --开心农场
+    HAPPYFARM = 11,
+
+    --战员蛋
+    HEROEGG = 12,
 }
 
 -- 装备道具子类型
@@ -80,7 +86,7 @@ PropsEquipSubType = {
 }
 
 -- 装备部位罗马数字
-PropsEquipSubTypeStr = { "Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ" }
+PropsEquipSubTypeStr = {"Ⅰ", "Ⅱ", "Ⅲ", "Ⅳ", "Ⅴ", "Ⅵ"}
 
 -- 序列物道具子类型
 PropsOrderSubType = {
@@ -112,6 +118,8 @@ UseEffectType = {
     ADD_STAMINA = 5,
     -- 转换成战员等级提升所需要的经验值
     CONVERT_HERO_EXP = 6,
+     --站员自选礼包
+    ADD_FREE_HEROGIFT = 9,
     -- 增加手环经验
     ADD_BRACELET_EXP = 10,
     -- 增加盟约助手等级经验
@@ -124,6 +132,8 @@ UseEffectType = {
     ADD_HERO_FASHION_WEAPON = 14,
     -- 芯片礼包
     ADD_CHIP_GIFT = 18,
+    --普通道具自选礼包
+    ADD_FREE_PROPGIFT = 20,
     --晶耀供给凭证（月卡道具）
     ADD_MONTHLY_CARD = 21,
     --域行合约凭证（高级通行证解锁道具）
@@ -132,6 +142,8 @@ UseEffectType = {
     ADD_PERMIT = 23,
     -- 时装打折卡
     ADD_DISCOUNT_ITEM = 27,
+    --获取战员蛋
+    USE_GET_HEROEGG = 28,
 }
 
 -- 常用道具tid

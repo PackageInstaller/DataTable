@@ -1,44 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RefreshCommanderBoxesCommand", pm.SimpleCommand)
 
-local var_0_0 = "RefreshCommanderBoxesCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = getProxy(CommanderProxy)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1
-	local var_1_1 = arg_1_1.getBody(var_1_0)
-
-	getProxy = var_1_10003
-	CommanderProxy = var_1_10005
-
-	local var_1_2 = var_1_10003(var_1_10005)
-
-	pg = var_1_0
-
-	local var_1_3 = var_1_0.ConnectionMgr.GetInstance()
-
-	var_4.Send(var_1_3, 25034, {
+	pg.ConnectionMgr.GetInstance():Send(25034, {
 		type = 0
 	}, 25035, function(arg_2_0)
-		ipairs = var_2_10001
-
-		for iter_2_0, iter_2_1 in var_2_10001(arg_2_0.box_list) do
-			CommanderBox = var_2_10006
-			var_2_10006 = var_2_10006.New(iter_2_1, iter_2_0)
-
-			local var_2_0 = var_1_2
-
-			var_7.updateBox(var_2_0, var_2_10006)
+		for iter_2_0, iter_2_1 in ipairs(arg_2_0.box_list) do
+			var_1_1:updateBox((CommanderBox.New(iter_2_1, iter_2_0)))
 		end
 
-		local var_2_1 = arg_1_0
-		local var_2_2 = var_1.sendNotification
-
-		GAME = iter_2_0
-
-		var_2_2(var_2_1, iter_2_0.REFRESH_COMMANDER_BOXES_DONE)
+		arg_1_0:sendNotification(GAME.REFRESH_COMMANDER_BOXES_DONE)
 
 		return
 	end)
@@ -46,4 +19,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

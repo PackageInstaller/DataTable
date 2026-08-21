@@ -80,6 +80,9 @@ function active(self, args)
     if (#self.resultData.award > 0 or #self.resultData.detail_item_award > 0) and self.battleType == PreFightBattleType.ClimbTowerDup then
         self.mCloseSn = LoopManager:addTimer(2, 1, self, self.onClickClose)
     end
+
+    local notHpPre = self.battleType == PreFightBattleType.Fashion_Imitate or self.battleType == PreFightBattleType.HeroTrial
+    self.mPreviewBtn:SetActive(not notHpPre)
 end
 
 --反激活（销毁工作）
@@ -133,7 +136,7 @@ function sendFightOver(self)
             role.RoleController:onShowPlayerLvlUp(function()
                 GameDispatcher:dispatchEvent(EventName.FIGHT_RESULT_PANEL_OVER, { isWin = true })
             end)
-        end)
+        end,self.resultData.is_decompose == 1)
 
         if (self.battleType == PreFightBattleType.ClimbTowerDup) then
             if self:isShowClimbTowerDupNext() then
@@ -192,6 +195,8 @@ function updateView(self)
             v:setActive(true)
         end
     end
+    
+   
 end
 
 function updateInfo(self)

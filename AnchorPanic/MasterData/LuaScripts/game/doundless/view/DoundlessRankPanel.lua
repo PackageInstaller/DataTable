@@ -49,11 +49,13 @@ end
 
 function active(self)
     super.active(self)
-   self:updateView()
+    self:updateView()
+    MoneyManager:setMoneyTidList({})
 end
 
 function deActive(self)
     super.deActive(self)
+    MoneyManager:setMoneyTidList({ MoneyTid.ANTIEPIDEMIC_SERUM_TID, MoneyTid.ITIANIUM_TID, MoneyTid.GOLD_COIN_TID })
     if (self.mPlayerHeadGrid) then
         self.mPlayerHeadGrid:poolRecover()
         self.mPlayerHeadGrid = nil

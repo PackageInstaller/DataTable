@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "weapon_name") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "weapon_name"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.weapon_name = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.weapon_name
-
-var_0_3.__stream__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.weapon_name
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.weapon_name = rawget(pg, "weapon_name") or setmetatable({
+	__name = "weapon_name"
+}, confNEO)
+pg.weapon_name.__stream__ = true
+pg.weapon_name.all = {
 	50000,
 	50001,
 	50002,
@@ -2454,36 +2427,10 @@ var_0_4.all = {
 	59992,
 	59993
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-
-local var_0_6 = var_0_4.base
-
-pg = var_0_5
-
-local var_0_7
-
-if not var_0_5.base.weapon_name then
-	var_0_7 = {}
-end
-
-var_0_6.weapon_name = var_0_7
-cs = var_0_6
-
-local var_0_8
-
-var_0_8 = var_0_6 or {}
-cs = cs
-var_0.weapon_name = {
+pg.base = pg.base or {}
+pg.base.weapon_name = pg.base.weapon_name or {}
+cs = cs or {}
+cs.weapon_name = {
 	[50000] = {
 		0,
 		97

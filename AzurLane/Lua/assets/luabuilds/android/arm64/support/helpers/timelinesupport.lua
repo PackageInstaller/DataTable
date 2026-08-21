@@ -1,28 +1,21 @@
-﻿local var_0_0 = {}
+﻿TimelineSupport = {}
 
-TimelineSupport = TimelineSupport
+local var_0_0 = TimelineSupport
 
-function var_0.InitTimeline(arg_1_0)
-	var_0.DynamicBinding(arg_1_0)
-	var_0.InitHXGroup(arg_1_0)
+function TimelineSupport.InitTimeline(arg_1_0)
+	var_0_0.DynamicBinding(arg_1_0)
+	var_0_0.InitHXGroup(arg_1_0)
 
 	return
 end
 
-function var_0.EachDirector(arg_2_0, arg_2_1)
+function TimelineSupport.EachDirector(arg_2_0, arg_2_1)
 	arg_2_1(arg_2_0)
+	eachChild(arg_2_0, function(arg_3_0)
+		local var_3_0 = arg_3_0:GetComponent(typeof(UnityEngine.Playables.PlayableDirector))
 
-	eachChild = var_2
-
-	var_2(arg_2_0, function(arg_3_0)
-		local var_3_0 = arg_3_0
-		local var_3_1 = arg_3_0.GetComponent
-
-		typeof = var_2_10004
-		UnityEngine = var_2_10006
-
-		if var_3_1(var_3_0, var_2_10004(var_2_10006.Playables.PlayableDirector)) then
-			var_0.EachDirector(var_1, arg_2_1)
+		if var_3_0 then
+			var_0_0.EachDirector(var_3_0, arg_2_1)
 		end
 
 		return
@@ -31,14 +24,8 @@ function var_0.EachDirector(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0.EachTrack(arg_4_0, arg_4_1)
-	table = var_1_10002
-
-	local var_4_0 = var_1_10002.IpairsCArray
-
-	TimelineHelper = var_1_10004
-
-	var_4_0(var_1_10004.GetTimelineTracks(arg_4_0), function(arg_5_0, arg_5_1)
+function TimelineSupport.EachTrack(arg_4_0, arg_4_1)
+	table.IpairsCArray(TimelineHelper.GetTimelineTracks(arg_4_0), function(arg_5_0, arg_5_1)
 		arg_4_1(arg_5_0, arg_5_1)
 
 		return
@@ -47,14 +34,8 @@ function var_0.EachTrack(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0.EachGroupTrack(arg_6_0, arg_6_1)
-	table = var_1_10002
-
-	local var_6_0 = var_1_10002.IpairsCArray
-
-	TimelineHelper = var_1_10004
-
-	var_6_0(var_1_10004.GetGroupTracks(arg_6_0), function(arg_7_0, arg_7_1)
+function TimelineSupport.EachGroupTrack(arg_6_0, arg_6_1)
+	table.IpairsCArray(TimelineHelper.GetGroupTracks(arg_6_0), function(arg_7_0, arg_7_1)
 		arg_6_1(arg_7_0, arg_7_1)
 
 		return
@@ -63,37 +44,24 @@ function var_0.EachGroupTrack(arg_6_0, arg_6_1)
 	return
 end
 
-function var_0.DynamicBinding(arg_8_0)
-	_ = var_1_10001
-
-	local var_8_0 = var_1_10001.reduce
-
-	pg = var_1_10003
-
-	local var_8_1 = var_8_0(var_1_10003.dorm3d_timeline_dynamic_binding.all, {}, function(arg_9_0, arg_9_1)
-		pg = var_2_10002
-
-		if var_2_10002.dorm3d_timeline_dynamic_binding[arg_9_1].track_name then
-			arg_9_0[var_2.track_name] = var_2.object_name
+function TimelineSupport.DynamicBinding(arg_8_0)
+	local var_8_0 = _.reduce(pg.dorm3d_timeline_dynamic_binding.all, {}, function(arg_9_0, arg_9_1)
+		if pg.dorm3d_timeline_dynamic_binding[arg_9_1].track_name then
+			arg_9_0[pg.dorm3d_timeline_dynamic_binding[arg_9_1].track_name] = pg.dorm3d_timeline_dynamic_binding[arg_9_1].object_name
 		end
 
 		return arg_9_0
 	end)
 
-	var_0.EachDirector(arg_8_0, function(arg_10_0)
-		var_0.EachTrack(arg_10_0, function(arg_11_0, arg_11_1)
-			if var_8_1[arg_11_1.name] then
-				GameObject = var_2
+	var_0_0.EachDirector(arg_8_0, function(arg_10_0)
+		var_0_0.EachTrack(arg_10_0, function(arg_11_0, arg_11_1)
+			if var_8_0[arg_11_1.name] then
+				local var_11_0 = GameObject.Find(var_8_0[arg_11_1.name])
 
-				if var_2.Find(var_8_1[arg_11_1.name]) then
-					TimelineHelper = var_3
-
-					var_3.SetAutoBinding(arg_10_0, arg_11_1, var_2)
+				if var_11_0 then
+					TimelineHelper.SetAutoBinding(arg_10_0, arg_11_1, var_11_0)
 				else
-					warning = var_3
-					string = var_5
-
-					var_3(var_5.format("轨道%s需要绑定的物体%s不存在", arg_11_1.name, var_8_1[arg_11_1.name]))
+					warning(string.format("轨道%s需要绑定的物体%s不存在", arg_11_1.name, var_8_0[arg_11_1.name]))
 				end
 			end
 
@@ -106,59 +74,30 @@ function var_0.DynamicBinding(arg_8_0)
 	return
 end
 
-function var_0.InitSubtitle(arg_12_0, arg_12_1)
-	GameObject = var_1_10002
+function TimelineSupport.InitSubtitle(arg_12_0, arg_12_1)
+	local var_12_0 = GameObject.Find("[subtitle]")
 
-	if var_1_10002.Find("[subtitle]") then
-		pg = var_1_10003
+	if var_12_0 then
+		pg.ViewUtils.SetLayer(var_12_0.transform, Layer.UI)
 
-		local var_12_0 = var_1_10003.ViewUtils.SetLayer
-		local var_12_1 = var_2.transform
-
-		Layer = var_1_10006
-
-		var_12_0(var_12_1, var_1_10006.UI)
-
-		local var_12_2 = var_2
-		local var_12_3 = var_2.GetComponent
-
-		typeof = var_6
-		Canvas = var_1_10008
-
-		local var_12_4 = var_12_3(var_12_2, var_6(var_1_10008))
-
-		pg = var_4
-		var_12_4.worldCamera = var_4.UIMgr.GetInstance().overlayCameraComp
+		var_12_0:GetComponent(typeof(Canvas)).worldCamera = pg.UIMgr.GetInstance().overlayCameraComp
 	end
 
-	local function var_12_5(arg_13_0)
-		tonumber = var_2_10001
+	function BLHXTimeline.SubtitleMixer.func(arg_13_0)
+		local var_13_0 = tonumber(arg_13_0)
 
-		if not var_2_10001(arg_13_0) then
+		if not var_13_0 then
 			return arg_13_0
 		end
 
-		pg = var_2_10002
-
-		local var_13_0 = var_2_10002.dorm3d_subtitle[var_1].subtitle
-
-		HXSet = var_3
-
-		local var_13_1 = var_3.hxLan
-
-		string = var_2_10005
-
-		return (var_13_1(var_2_10005.gsub(var_13_0, "$dorm3d", arg_12_1)))
+		return (HXSet.hxLan(string.gsub(pg.dorm3d_subtitle[var_13_0].subtitle, "$dorm3d", arg_12_1)))
 	end
-
-	BLHXTimeline = var_4
-	var_4.SubtitleMixer.func = var_12_5
 
 	return
 end
 
-function var_0.DisablePlayOnAwake(arg_14_0)
-	var_0.EachDirector(arg_14_0, function(arg_15_0)
+function TimelineSupport.DisablePlayOnAwake(arg_14_0)
+	var_0_0.EachDirector(arg_14_0, function(arg_15_0)
 		arg_15_0.playOnAwake = false
 
 		return
@@ -167,27 +106,20 @@ function var_0.DisablePlayOnAwake(arg_14_0)
 	return
 end
 
-function var_0.InitHXGroup(arg_16_0)
-	var_0.EachDirector(arg_16_0, function(arg_17_0)
+function TimelineSupport.InitHXGroup(arg_16_0)
+	var_0_0.EachDirector(arg_16_0, function(arg_17_0)
 		local var_17_0 = false
 
-		var_0.EachGroupTrack(arg_17_0, function(arg_18_0, arg_18_1)
-			if arg_18_1.name == "HXGroup" then
-				local var_18_0 = arg_18_1.muted
-
-				HXSet = var_3_10003
-
-				if var_18_0 ~= not var_3_10003.isHx() then
-					HXSet = var_18_0
-					arg_18_1.muted = not var_18_0.isHx()
-					var_17_0 = true
-				end
+		var_0_0.EachGroupTrack(arg_17_0, function(arg_18_0, arg_18_1)
+			if arg_18_1.name == "HXGroup" and arg_18_1.muted ~= not HXSet.isHx() then
+				arg_18_1.muted = not HXSet.isHx()
+				var_17_0 = true
 			end
 
 			return
 		end)
 
-		if var_17_0 then
+		if false then
 			arg_17_0:RebuildGraph()
 		end
 

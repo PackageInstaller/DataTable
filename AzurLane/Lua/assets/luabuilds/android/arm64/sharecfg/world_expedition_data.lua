@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_expedition_data") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_expedition_data"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_expedition_data = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_expedition_data
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_expedition_data = rawget(pg, "world_expedition_data") or setmetatable({
+	__name = "world_expedition_data"
+}, confNEO)
+pg.world_expedition_data.all = {
 	210000,
 	210011,
 	210012,
@@ -566,25 +543,11 @@ var_0_3.all = {
 	320001,
 	320002
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_expedition_data = {}
+pg.base = pg.base or {}
+pg.base.world_expedition_data = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_expedition_data
-
-	var_1_0[210000] = {
+	pg.base.world_expedition_data[210000] = {
 		id = 210000,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -917,11 +880,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_expedition_data
-
-	var_1_1[210011] = {
+	pg.base.world_expedition_data[210011] = {
 		id = 210011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -1254,11 +1213,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_expedition_data
-
-	var_1_2[210012] = {
+	pg.base.world_expedition_data[210012] = {
 		id = 210012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -1591,11 +1546,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_expedition_data
-
-	var_1_3[210013] = {
+	pg.base.world_expedition_data[210013] = {
 		id = 210013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -1928,11 +1879,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_expedition_data
-
-	var_1_4[210014] = {
+	pg.base.world_expedition_data[210014] = {
 		id = 210014,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -2265,11 +2212,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_expedition_data
-
-	var_1_5[211011] = {
+	pg.base.world_expedition_data[211011] = {
 		id = 211011,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -2602,11 +2545,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_expedition_data
-
-	var_1_6[211012] = {
+	pg.base.world_expedition_data[211012] = {
 		id = 211012,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -2939,11 +2878,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_expedition_data
-
-	var_1_7[211013] = {
+	pg.base.world_expedition_data[211013] = {
 		id = 211013,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -3276,11 +3211,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_expedition_data
-
-	var_1_8[211014] = {
+	pg.base.world_expedition_data[211014] = {
 		id = 211014,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -3613,11 +3544,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_expedition_data
-
-	var_1_9[211015] = {
+	pg.base.world_expedition_data[211015] = {
 		id = 211015,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -3950,11 +3877,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_expedition_data
-
-	var_1_10[211032] = {
+	pg.base.world_expedition_data[211032] = {
 		id = 211032,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -4287,11 +4210,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_expedition_data
-
-	var_1_11[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 211211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -4624,11 +4543,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_expedition_data
-
-	var_1_12[12] = {
+	pg.base.world_expedition_data[12] = {
 		id = 211212,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -4961,11 +4876,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_expedition_data
-
-	var_1_13[13] = {
+	pg.base.world_expedition_data[13] = {
 		id = 211213,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -5298,11 +5209,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_expedition_data
-
-	var_1_14[14] = {
+	pg.base.world_expedition_data[14] = {
 		id = 211214,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -5635,11 +5542,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_expedition_data
-
-	var_1_15[15] = {
+	pg.base.world_expedition_data[15] = {
 		id = 211215,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -5972,11 +5875,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_expedition_data
-
-	var_1_16[16] = {
+	pg.base.world_expedition_data[16] = {
 		id = 211216,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -6309,11 +6208,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_expedition_data
-
-	var_1_17[17] = {
+	pg.base.world_expedition_data[17] = {
 		id = 211217,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -6646,11 +6541,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_expedition_data
-
-	var_1_18[211411] = {
+	pg.base.world_expedition_data[211411] = {
 		id = 211411,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -6983,11 +6874,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_expedition_data
-
-	var_1_19[211412] = {
+	pg.base.world_expedition_data[211412] = {
 		id = 211412,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -7320,11 +7207,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_expedition_data
-
-	var_1_20[211413] = {
+	pg.base.world_expedition_data[211413] = {
 		id = 211413,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -7657,11 +7540,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_expedition_data
-
-	var_1_21[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 211611,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -7994,11 +7873,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_expedition_data
-
-	var_1_22[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 213011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -8331,11 +8206,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_expedition_data
-
-	var_1_23[20] = {
+	pg.base.world_expedition_data[20] = {
 		id = 213012,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -8668,11 +8539,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_expedition_data
-
-	var_1_24[21] = {
+	pg.base.world_expedition_data[21] = {
 		id = 213013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -9005,11 +8872,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_expedition_data
-
-	var_1_25[22] = {
+	pg.base.world_expedition_data[22] = {
 		id = 213014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -9342,11 +9205,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_expedition_data
-
-	var_1_26[23] = {
+	pg.base.world_expedition_data[23] = {
 		id = 213015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -9679,11 +9538,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_expedition_data
-
-	var_1_27[24] = {
+	pg.base.world_expedition_data[24] = {
 		id = 213016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -10016,11 +9871,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_expedition_data
-
-	var_1_28[25] = {
+	pg.base.world_expedition_data[25] = {
 		id = 213017,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -10353,11 +10204,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_expedition_data
-
-	var_1_29[213211] = {
+	pg.base.world_expedition_data[213211] = {
 		id = 213211,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -10690,11 +10537,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_expedition_data
-
-	var_1_30[213212] = {
+	pg.base.world_expedition_data[213212] = {
 		id = 213212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -11027,11 +10870,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_expedition_data
-
-	var_1_31[213213] = {
+	pg.base.world_expedition_data[213213] = {
 		id = 213213,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -11364,11 +11203,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_expedition_data
-
-	var_1_32[213411] = {
+	pg.base.world_expedition_data[213411] = {
 		id = 213411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -11701,11 +11536,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_expedition_data
-
-	var_1_33[213412] = {
+	pg.base.world_expedition_data[213412] = {
 		id = 213412,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -12038,11 +11869,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_expedition_data
-
-	var_1_34[213413] = {
+	pg.base.world_expedition_data[213413] = {
 		id = 213413,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -12375,11 +12202,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_expedition_data
-
-	var_1_35[213414] = {
+	pg.base.world_expedition_data[213414] = {
 		id = 213414,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -12712,11 +12535,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_expedition_data
-
-	var_1_36[214011] = {
+	pg.base.world_expedition_data[214011] = {
 		id = 214011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -13049,11 +12868,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_expedition_data
-
-	var_1_37[214211] = {
+	pg.base.world_expedition_data[214211] = {
 		id = 214211,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -13135,11 +12950,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_expedition_data
-
-	var_1_38[214212] = {
+	pg.base.world_expedition_data[214212] = {
 		id = 214212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -13221,11 +13032,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_expedition_data
-
-	var_1_39[214213] = {
+	pg.base.world_expedition_data[214213] = {
 		id = 214213,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -13307,11 +13114,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_expedition_data
-
-	var_1_40[215011] = {
+	pg.base.world_expedition_data[215011] = {
 		id = 215011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -13700,11 +13503,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_expedition_data
-
-	var_1_41[215012] = {
+	pg.base.world_expedition_data[215012] = {
 		id = 215012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -14093,11 +13892,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_expedition_data
-
-	var_1_42[215013] = {
+	pg.base.world_expedition_data[215013] = {
 		id = 215013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -14486,11 +14281,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_expedition_data
-
-	var_1_43[215014] = {
+	pg.base.world_expedition_data[215014] = {
 		id = 215014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -14879,11 +14670,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_expedition_data
-
-	var_1_44[215015] = {
+	pg.base.world_expedition_data[215015] = {
 		id = 215015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -15272,11 +15059,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_expedition_data
-
-	var_1_45[215016] = {
+	pg.base.world_expedition_data[215016] = {
 		id = 215016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -15665,11 +15448,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_expedition_data
-
-	var_1_46[215017] = {
+	pg.base.world_expedition_data[215017] = {
 		id = 215017,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -16058,11 +15837,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_expedition_data
-
-	var_1_47[216011] = {
+	pg.base.world_expedition_data[216011] = {
 		id = 216011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -16395,11 +16170,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_expedition_data
-
-	var_1_48[220011] = {
+	pg.base.world_expedition_data[220011] = {
 		id = 220011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -16732,11 +16503,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_expedition_data
-
-	var_1_49[220012] = {
+	pg.base.world_expedition_data[220012] = {
 		id = 220012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -17069,11 +16836,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_expedition_data
-
-	var_1_50[220013] = {
+	pg.base.world_expedition_data[220013] = {
 		id = 220013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -17406,11 +17169,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_expedition_data
-
-	var_1_51[221011] = {
+	pg.base.world_expedition_data[221011] = {
 		id = 221011,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -17743,11 +17502,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_expedition_data
-
-	var_1_52[221012] = {
+	pg.base.world_expedition_data[221012] = {
 		id = 221012,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -18080,11 +17835,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_expedition_data
-
-	var_1_53[221013] = {
+	pg.base.world_expedition_data[221013] = {
 		id = 221013,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -18417,11 +18168,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_expedition_data
-
-	var_1_54[221014] = {
+	pg.base.world_expedition_data[221014] = {
 		id = 221014,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -18754,11 +18501,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_expedition_data
-
-	var_1_55[221015] = {
+	pg.base.world_expedition_data[221015] = {
 		id = 221015,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -19091,11 +18834,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_expedition_data
-
-	var_1_56[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 221211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -19428,11 +19167,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_expedition_data
-
-	var_1_57[28] = {
+	pg.base.world_expedition_data[28] = {
 		id = 221212,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -19765,11 +19500,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_expedition_data
-
-	var_1_58[29] = {
+	pg.base.world_expedition_data[29] = {
 		id = 221213,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -20102,11 +19833,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_expedition_data
-
-	var_1_59[30] = {
+	pg.base.world_expedition_data[30] = {
 		id = 221214,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -20439,11 +20166,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_expedition_data
-
-	var_1_60[31] = {
+	pg.base.world_expedition_data[31] = {
 		id = 221215,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -20776,11 +20499,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_expedition_data
-
-	var_1_61[221216] = {
+	pg.base.world_expedition_data[221216] = {
 		id = 221216,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -21113,11 +20832,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_expedition_data
-
-	var_1_62[221411] = {
+	pg.base.world_expedition_data[221411] = {
 		id = 221411,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -21450,11 +21165,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_expedition_data
-
-	var_1_63[221412] = {
+	pg.base.world_expedition_data[221412] = {
 		id = 221412,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -21787,11 +21498,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_expedition_data
-
-	var_1_64[223011] = {
+	pg.base.world_expedition_data[223011] = {
 		id = 223011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -22124,11 +21831,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_expedition_data
-
-	var_1_65[223012] = {
+	pg.base.world_expedition_data[223012] = {
 		id = 223012,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -22461,11 +22164,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_expedition_data
-
-	var_1_66[223013] = {
+	pg.base.world_expedition_data[223013] = {
 		id = 223013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -22798,11 +22497,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_expedition_data
-
-	var_1_67[223014] = {
+	pg.base.world_expedition_data[223014] = {
 		id = 223014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -23135,11 +22830,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_expedition_data
-
-	var_1_68[223015] = {
+	pg.base.world_expedition_data[223015] = {
 		id = 223015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -23472,11 +23163,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_expedition_data
-
-	var_1_69[223016] = {
+	pg.base.world_expedition_data[223016] = {
 		id = 223016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -23809,11 +23496,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_expedition_data
-
-	var_1_70[223211] = {
+	pg.base.world_expedition_data[223211] = {
 		id = 223211,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -24146,11 +23829,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_expedition_data
-
-	var_1_71[223212] = {
+	pg.base.world_expedition_data[223212] = {
 		id = 223212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -24483,11 +24162,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_expedition_data
-
-	var_1_72[223411] = {
+	pg.base.world_expedition_data[223411] = {
 		id = 223411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -24820,11 +24495,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_expedition_data
-
-	var_1_73[223412] = {
+	pg.base.world_expedition_data[223412] = {
 		id = 223412,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -25157,11 +24828,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_expedition_data
-
-	var_1_74[223413] = {
+	pg.base.world_expedition_data[223413] = {
 		id = 223413,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -25494,11 +25161,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_expedition_data
-
-	var_1_75[223414] = {
+	pg.base.world_expedition_data[223414] = {
 		id = 223414,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -25831,11 +25494,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_expedition_data
-
-	var_1_76[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 224011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -26168,11 +25827,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_expedition_data
-
-	var_1_77[224211] = {
+	pg.base.world_expedition_data[224211] = {
 		id = 224211,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -26505,11 +26160,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_expedition_data
-
-	var_1_78[224212] = {
+	pg.base.world_expedition_data[224212] = {
 		id = 224212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -26842,11 +26493,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_expedition_data
-
-	var_1_79[224213] = {
+	pg.base.world_expedition_data[224213] = {
 		id = 224213,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -27179,11 +26826,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.world_expedition_data
-
-	var_1_80[225011] = {
+	pg.base.world_expedition_data[225011] = {
 		id = 225011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -27572,11 +27215,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.world_expedition_data
-
-	var_1_81[225012] = {
+	pg.base.world_expedition_data[225012] = {
 		id = 225012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -27965,11 +27604,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.world_expedition_data
-
-	var_1_82[225013] = {
+	pg.base.world_expedition_data[225013] = {
 		id = 225013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -28358,11 +27993,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.world_expedition_data
-
-	var_1_83[225014] = {
+	pg.base.world_expedition_data[225014] = {
 		id = 225014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -28751,11 +28382,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.world_expedition_data
-
-	var_1_84[225015] = {
+	pg.base.world_expedition_data[225015] = {
 		id = 225015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -29144,11 +28771,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.world_expedition_data
-
-	var_1_85[225016] = {
+	pg.base.world_expedition_data[225016] = {
 		id = 225016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -29537,11 +29160,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.world_expedition_data
-
-	var_1_86[225017] = {
+	pg.base.world_expedition_data[225017] = {
 		id = 225017,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -29930,11 +29549,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.world_expedition_data
-
-	var_1_87[226011] = {
+	pg.base.world_expedition_data[226011] = {
 		id = 226011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -30267,11 +29882,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.world_expedition_data
-
-	var_1_88[230011] = {
+	pg.base.world_expedition_data[230011] = {
 		id = 230011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -30604,11 +30215,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.world_expedition_data
-
-	var_1_89[230012] = {
+	pg.base.world_expedition_data[230012] = {
 		id = 230012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -30941,11 +30548,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.world_expedition_data
-
-	var_1_90[230013] = {
+	pg.base.world_expedition_data[230013] = {
 		id = 230013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -31278,11 +30881,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.world_expedition_data
-
-	var_1_91[230014] = {
+	pg.base.world_expedition_data[230014] = {
 		id = 230014,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -31615,11 +31214,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.world_expedition_data
-
-	var_1_92[231011] = {
+	pg.base.world_expedition_data[231011] = {
 		id = 231011,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -31952,11 +31547,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.world_expedition_data
-
-	var_1_93[231012] = {
+	pg.base.world_expedition_data[231012] = {
 		id = 231012,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -32289,11 +31880,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.world_expedition_data
-
-	var_1_94[231013] = {
+	pg.base.world_expedition_data[231013] = {
 		id = 231013,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -32626,11 +32213,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.world_expedition_data
-
-	var_1_95[231014] = {
+	pg.base.world_expedition_data[231014] = {
 		id = 231014,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -32963,11 +32546,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.world_expedition_data
-
-	var_1_96[231211] = {
+	pg.base.world_expedition_data[231211] = {
 		id = 231211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -33300,11 +32879,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.world_expedition_data
-
-	var_1_97[231212] = {
+	pg.base.world_expedition_data[231212] = {
 		id = 231212,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -33637,11 +33212,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.world_expedition_data
-
-	var_1_98[231213] = {
+	pg.base.world_expedition_data[231213] = {
 		id = 231213,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -33974,8 +33545,7 @@ var_0_3.base.world_expedition_data = {}
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_1_98
-	var_1_98.base.world_expedition_data[231214] = {
+	pg.base.world_expedition_data[231214] = {
 		id = 231214,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -34312,11 +33882,7 @@ var_0_3.base.world_expedition_data = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.world_expedition_data
-
-	var_2_0[231215] = {
+	pg.base.world_expedition_data[231215] = {
 		id = 231215,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -34649,11 +34215,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.world_expedition_data
-
-	var_2_1[231216] = {
+	pg.base.world_expedition_data[231216] = {
 		id = 231216,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -34986,11 +34548,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.world_expedition_data
-
-	var_2_2[231411] = {
+	pg.base.world_expedition_data[231411] = {
 		id = 231411,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -35323,11 +34881,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.world_expedition_data
-
-	var_2_3[231412] = {
+	pg.base.world_expedition_data[231412] = {
 		id = 231412,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -35660,11 +35214,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.world_expedition_data
-
-	var_2_4[231413] = {
+	pg.base.world_expedition_data[231413] = {
 		id = 231413,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -35997,11 +35547,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.world_expedition_data
-
-	var_2_5[233011] = {
+	pg.base.world_expedition_data[233011] = {
 		id = 233011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -36334,11 +35880,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.world_expedition_data
-
-	var_2_6[233012] = {
+	pg.base.world_expedition_data[233012] = {
 		id = 233012,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -36671,11 +36213,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.world_expedition_data
-
-	var_2_7[233013] = {
+	pg.base.world_expedition_data[233013] = {
 		id = 233013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -37008,11 +36546,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.world_expedition_data
-
-	var_2_8[233014] = {
+	pg.base.world_expedition_data[233014] = {
 		id = 233014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -37345,11 +36879,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.world_expedition_data
-
-	var_2_9[233015] = {
+	pg.base.world_expedition_data[233015] = {
 		id = 233015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -37682,11 +37212,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.world_expedition_data
-
-	var_2_10[233016] = {
+	pg.base.world_expedition_data[233016] = {
 		id = 233016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -38019,11 +37545,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.world_expedition_data
-
-	var_2_11[233211] = {
+	pg.base.world_expedition_data[233211] = {
 		id = 233211,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -38356,11 +37878,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.world_expedition_data
-
-	var_2_12[233212] = {
+	pg.base.world_expedition_data[233212] = {
 		id = 233212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -38693,11 +38211,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.world_expedition_data
-
-	var_2_13[233213] = {
+	pg.base.world_expedition_data[233213] = {
 		id = 233213,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -39030,11 +38544,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.world_expedition_data
-
-	var_2_14[233411] = {
+	pg.base.world_expedition_data[233411] = {
 		id = 233411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -39367,11 +38877,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.world_expedition_data
-
-	var_2_15[233412] = {
+	pg.base.world_expedition_data[233412] = {
 		id = 233412,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -39704,11 +39210,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.world_expedition_data
-
-	var_2_16[233413] = {
+	pg.base.world_expedition_data[233413] = {
 		id = 233413,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -40041,11 +39543,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.world_expedition_data
-
-	var_2_17[233414] = {
+	pg.base.world_expedition_data[233414] = {
 		id = 233414,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -40378,11 +39876,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.world_expedition_data
-
-	var_2_18[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 234011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -40715,11 +40209,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.world_expedition_data
-
-	var_2_19[234211] = {
+	pg.base.world_expedition_data[234211] = {
 		id = 234211,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -41052,11 +40542,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.world_expedition_data
-
-	var_2_20[234212] = {
+	pg.base.world_expedition_data[234212] = {
 		id = 234212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -41389,11 +40875,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.world_expedition_data
-
-	var_2_21[234213] = {
+	pg.base.world_expedition_data[234213] = {
 		id = 234213,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -41726,11 +41208,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.world_expedition_data
-
-	var_2_22[3] = {
+	pg.base.world_expedition_data[3] = {
 		id = 235011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -42119,11 +41597,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.world_expedition_data
-
-	var_2_23[4] = {
+	pg.base.world_expedition_data[4] = {
 		id = 235012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -42512,11 +41986,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.world_expedition_data
-
-	var_2_24[5] = {
+	pg.base.world_expedition_data[5] = {
 		id = 235013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -42905,11 +42375,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.world_expedition_data
-
-	var_2_25[6] = {
+	pg.base.world_expedition_data[6] = {
 		id = 235014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -43298,11 +42764,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.world_expedition_data
-
-	var_2_26[7] = {
+	pg.base.world_expedition_data[7] = {
 		id = 235015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -43691,11 +43153,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.world_expedition_data
-
-	var_2_27[8] = {
+	pg.base.world_expedition_data[8] = {
 		id = 235016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -44084,11 +43542,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.world_expedition_data
-
-	var_2_28[9] = {
+	pg.base.world_expedition_data[9] = {
 		id = 235017,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -44477,11 +43931,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.world_expedition_data
-
-	var_2_29[236011] = {
+	pg.base.world_expedition_data[236011] = {
 		id = 236011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -44814,11 +44264,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.world_expedition_data
-
-	var_2_30[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 240011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -45151,11 +44597,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.world_expedition_data
-
-	var_2_31[12] = {
+	pg.base.world_expedition_data[12] = {
 		id = 240012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -45488,11 +44930,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.world_expedition_data
-
-	var_2_32[13] = {
+	pg.base.world_expedition_data[13] = {
 		id = 240013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -45825,11 +45263,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.world_expedition_data
-
-	var_2_33[14] = {
+	pg.base.world_expedition_data[14] = {
 		id = 240014,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -46162,11 +45596,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.world_expedition_data
-
-	var_2_34[15] = {
+	pg.base.world_expedition_data[15] = {
 		id = 240015,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -46499,11 +45929,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.world_expedition_data
-
-	var_2_35[0] = {
+	pg.base.world_expedition_data[0] = {
 		id = 240512,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -46836,11 +46262,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.world_expedition_data
-
-	var_2_36[1] = {
+	pg.base.world_expedition_data[1] = {
 		id = 240513,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -47173,11 +46595,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.world_expedition_data
-
-	var_2_37[2] = {
+	pg.base.world_expedition_data[2] = {
 		id = 240514,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -47510,11 +46928,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.world_expedition_data
-
-	var_2_38[241011] = {
+	pg.base.world_expedition_data[241011] = {
 		id = 241011,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -47847,11 +47261,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.world_expedition_data
-
-	var_2_39[241012] = {
+	pg.base.world_expedition_data[241012] = {
 		id = 241012,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -48184,11 +47594,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.world_expedition_data
-
-	var_2_40[241013] = {
+	pg.base.world_expedition_data[241013] = {
 		id = 241013,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -48521,11 +47927,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.world_expedition_data
-
-	var_2_41[241014] = {
+	pg.base.world_expedition_data[241014] = {
 		id = 241014,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -48858,11 +48260,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.world_expedition_data
-
-	var_2_42[241015] = {
+	pg.base.world_expedition_data[241015] = {
 		id = 241015,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -49195,11 +48593,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.world_expedition_data
-
-	var_2_43[241211] = {
+	pg.base.world_expedition_data[241211] = {
 		id = 241211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -49532,11 +48926,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.world_expedition_data
-
-	var_2_44[241212] = {
+	pg.base.world_expedition_data[241212] = {
 		id = 241212,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -49869,11 +49259,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.world_expedition_data
-
-	var_2_45[241213] = {
+	pg.base.world_expedition_data[241213] = {
 		id = 241213,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -50206,11 +49592,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.world_expedition_data
-
-	var_2_46[241214] = {
+	pg.base.world_expedition_data[241214] = {
 		id = 241214,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -50543,11 +49925,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.world_expedition_data
-
-	var_2_47[241215] = {
+	pg.base.world_expedition_data[241215] = {
 		id = 241215,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -50880,11 +50258,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.world_expedition_data
-
-	var_2_48[241216] = {
+	pg.base.world_expedition_data[241216] = {
 		id = 241216,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -51217,11 +50591,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.world_expedition_data
-
-	var_2_49[241217] = {
+	pg.base.world_expedition_data[241217] = {
 		id = 241217,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -51554,11 +50924,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.world_expedition_data
-
-	var_2_50[3] = {
+	pg.base.world_expedition_data[3] = {
 		id = 241411,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -51891,11 +51257,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.world_expedition_data
-
-	var_2_51[4] = {
+	pg.base.world_expedition_data[4] = {
 		id = 241412,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -52228,11 +51590,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.world_expedition_data
-
-	var_2_52[243011] = {
+	pg.base.world_expedition_data[243011] = {
 		id = 243011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -52565,11 +51923,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.world_expedition_data
-
-	var_2_53[243012] = {
+	pg.base.world_expedition_data[243012] = {
 		id = 243012,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -52902,11 +52256,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.world_expedition_data
-
-	var_2_54[243013] = {
+	pg.base.world_expedition_data[243013] = {
 		id = 243013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -53239,11 +52589,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.world_expedition_data
-
-	var_2_55[243014] = {
+	pg.base.world_expedition_data[243014] = {
 		id = 243014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -53576,11 +52922,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.world_expedition_data
-
-	var_2_56[243015] = {
+	pg.base.world_expedition_data[243015] = {
 		id = 243015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -53913,11 +53255,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.world_expedition_data
-
-	var_2_57[243016] = {
+	pg.base.world_expedition_data[243016] = {
 		id = 243016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -54250,11 +53588,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.world_expedition_data
-
-	var_2_58[243017] = {
+	pg.base.world_expedition_data[243017] = {
 		id = 243017,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -54587,11 +53921,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.world_expedition_data
-
-	var_2_59[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 243211,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -54924,11 +54254,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.world_expedition_data
-
-	var_2_60[12] = {
+	pg.base.world_expedition_data[12] = {
 		id = 243212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -55261,11 +54587,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.world_expedition_data
-
-	var_2_61[243411] = {
+	pg.base.world_expedition_data[243411] = {
 		id = 243411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -55598,11 +54920,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.world_expedition_data
-
-	var_2_62[243412] = {
+	pg.base.world_expedition_data[243412] = {
 		id = 243412,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -55935,11 +55253,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.world_expedition_data
-
-	var_2_63[243413] = {
+	pg.base.world_expedition_data[243413] = {
 		id = 243413,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -56272,11 +55586,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.world_expedition_data
-
-	var_2_64[243414] = {
+	pg.base.world_expedition_data[243414] = {
 		id = 243414,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -56609,11 +55919,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.world_expedition_data
-
-	var_2_65[244011] = {
+	pg.base.world_expedition_data[244011] = {
 		id = 244011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -56946,11 +56252,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.world_expedition_data
-
-	var_2_66[244211] = {
+	pg.base.world_expedition_data[244211] = {
 		id = 244211,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -57283,11 +56585,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.world_expedition_data
-
-	var_2_67[244212] = {
+	pg.base.world_expedition_data[244212] = {
 		id = 244212,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -57620,11 +56918,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.world_expedition_data
-
-	var_2_68[244213] = {
+	pg.base.world_expedition_data[244213] = {
 		id = 244213,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -57957,11 +57251,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.world_expedition_data
-
-	var_2_69[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 245011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -58350,11 +57640,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.world_expedition_data
-
-	var_2_70[20] = {
+	pg.base.world_expedition_data[20] = {
 		id = 245012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -58743,11 +58029,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.world_expedition_data
-
-	var_2_71[21] = {
+	pg.base.world_expedition_data[21] = {
 		id = 245013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -59136,11 +58418,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.world_expedition_data
-
-	var_2_72[22] = {
+	pg.base.world_expedition_data[22] = {
 		id = 245014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -59529,11 +58807,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.world_expedition_data
-
-	var_2_73[23] = {
+	pg.base.world_expedition_data[23] = {
 		id = 245015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -59922,11 +59196,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.world_expedition_data
-
-	var_2_74[24] = {
+	pg.base.world_expedition_data[24] = {
 		id = 245016,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -60315,11 +59585,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.world_expedition_data
-
-	var_2_75[246011] = {
+	pg.base.world_expedition_data[246011] = {
 		id = 246011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -60652,11 +59918,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.world_expedition_data
-
-	var_2_76[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 250011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -60989,11 +60251,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.world_expedition_data
-
-	var_2_77[28] = {
+	pg.base.world_expedition_data[28] = {
 		id = 250012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -61326,11 +60584,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.world_expedition_data
-
-	var_2_78[15] = {
+	pg.base.world_expedition_data[15] = {
 		id = 250511,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -61663,11 +60917,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.world_expedition_data
-
-	var_2_79[16] = {
+	pg.base.world_expedition_data[16] = {
 		id = 250512,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -62000,11 +61250,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.world_expedition_data
-
-	var_2_80[3] = {
+	pg.base.world_expedition_data[3] = {
 		id = 251011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -62337,11 +61583,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.world_expedition_data
-
-	var_2_81[251211] = {
+	pg.base.world_expedition_data[251211] = {
 		id = 251211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -62674,11 +61916,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.world_expedition_data
-
-	var_2_82[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 251411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -63011,11 +62249,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.world_expedition_data
-
-	var_2_83[252011] = {
+	pg.base.world_expedition_data[252011] = {
 		id = 252011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -63348,11 +62582,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.world_expedition_data
-
-	var_2_84[252211] = {
+	pg.base.world_expedition_data[252211] = {
 		id = 252211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -63685,11 +62915,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.world_expedition_data
-
-	var_2_85[252411] = {
+	pg.base.world_expedition_data[252411] = {
 		id = 252411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -64022,11 +63248,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.world_expedition_data
-
-	var_2_86[253011] = {
+	pg.base.world_expedition_data[253011] = {
 		id = 253011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -64359,11 +63581,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.world_expedition_data
-
-	var_2_87[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 253211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -64696,11 +63914,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.world_expedition_data
-
-	var_2_88[254011] = {
+	pg.base.world_expedition_data[254011] = {
 		id = 254011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -65033,11 +64247,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.world_expedition_data
-
-	var_2_89[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 256011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -65370,11 +64580,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.world_expedition_data
-
-	var_2_90[260011] = {
+	pg.base.world_expedition_data[260011] = {
 		id = 260011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -65707,11 +64913,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.world_expedition_data
-
-	var_2_91[260012] = {
+	pg.base.world_expedition_data[260012] = {
 		id = 260012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -66044,11 +65246,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.world_expedition_data
-
-	var_2_92[31] = {
+	pg.base.world_expedition_data[31] = {
 		id = 260511,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -66381,11 +65579,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.world_expedition_data
-
-	var_2_93[260512] = {
+	pg.base.world_expedition_data[260512] = {
 		id = 260512,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -66718,11 +65912,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.world_expedition_data
-
-	var_2_94[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 261011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -67055,11 +66245,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.world_expedition_data
-
-	var_2_95[261211] = {
+	pg.base.world_expedition_data[261211] = {
 		id = 261211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -67392,11 +66578,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.world_expedition_data
-
-	var_2_96[261411] = {
+	pg.base.world_expedition_data[261411] = {
 		id = 261411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -67729,11 +66911,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.world_expedition_data
-
-	var_2_97[262011] = {
+	pg.base.world_expedition_data[262011] = {
 		id = 262011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -68066,11 +67244,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.world_expedition_data
-
-	var_2_98[262211] = {
+	pg.base.world_expedition_data[262211] = {
 		id = 262211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -68403,8 +67577,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_2_98
-	var_2_98.base.world_expedition_data[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 262411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -68741,11 +67914,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.world_expedition_data
-
-	var_3_0[263011] = {
+	pg.base.world_expedition_data[263011] = {
 		id = 263011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -69078,11 +68247,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.world_expedition_data
-
-	var_3_1[263211] = {
+	pg.base.world_expedition_data[263211] = {
 		id = 263211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -69415,11 +68580,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.world_expedition_data
-
-	var_3_2[264011] = {
+	pg.base.world_expedition_data[264011] = {
 		id = 264011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -69752,11 +68913,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.world_expedition_data
-
-	var_3_3[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 266011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -70089,11 +69246,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.world_expedition_data
-
-	var_3_4[270011] = {
+	pg.base.world_expedition_data[270011] = {
 		id = 270011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -70426,11 +69579,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.world_expedition_data
-
-	var_3_5[270012] = {
+	pg.base.world_expedition_data[270012] = {
 		id = 270012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -70763,11 +69912,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.world_expedition_data
-
-	var_3_6[270511] = {
+	pg.base.world_expedition_data[270511] = {
 		id = 270511,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -71100,11 +70245,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.world_expedition_data
-
-	var_3_7[270512] = {
+	pg.base.world_expedition_data[270512] = {
 		id = 270512,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -71437,11 +70578,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.world_expedition_data
-
-	var_3_8[271011] = {
+	pg.base.world_expedition_data[271011] = {
 		id = 271011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -71774,11 +70911,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.world_expedition_data
-
-	var_3_9[271211] = {
+	pg.base.world_expedition_data[271211] = {
 		id = 271211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -72111,11 +71244,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.world_expedition_data
-
-	var_3_10[271411] = {
+	pg.base.world_expedition_data[271411] = {
 		id = 271411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -72448,11 +71577,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.world_expedition_data
-
-	var_3_11[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 272011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -72785,11 +71910,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.world_expedition_data
-
-	var_3_12[272211] = {
+	pg.base.world_expedition_data[272211] = {
 		id = 272211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -73122,11 +72243,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.world_expedition_data
-
-	var_3_13[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 272411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -73459,11 +72576,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.world_expedition_data
-
-	var_3_14[273011] = {
+	pg.base.world_expedition_data[273011] = {
 		id = 273011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -73796,11 +72909,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.world_expedition_data
-
-	var_3_15[273211] = {
+	pg.base.world_expedition_data[273211] = {
 		id = 273211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -74133,11 +73242,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.world_expedition_data
-
-	var_3_16[274011] = {
+	pg.base.world_expedition_data[274011] = {
 		id = 274011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -74470,11 +73575,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.world_expedition_data
-
-	var_3_17[276011] = {
+	pg.base.world_expedition_data[276011] = {
 		id = 276011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -74807,11 +73908,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.world_expedition_data
-
-	var_3_18[280011] = {
+	pg.base.world_expedition_data[280011] = {
 		id = 280011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -75144,11 +74241,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.world_expedition_data
-
-	var_3_19[280012] = {
+	pg.base.world_expedition_data[280012] = {
 		id = 280012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -75481,11 +74574,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.world_expedition_data
-
-	var_3_20[280511] = {
+	pg.base.world_expedition_data[280511] = {
 		id = 280511,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -75818,11 +74907,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.world_expedition_data
-
-	var_3_21[280512] = {
+	pg.base.world_expedition_data[280512] = {
 		id = 280512,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -76155,11 +75240,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.world_expedition_data
-
-	var_3_22[281011] = {
+	pg.base.world_expedition_data[281011] = {
 		id = 281011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -76492,11 +75573,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.world_expedition_data
-
-	var_3_23[281211] = {
+	pg.base.world_expedition_data[281211] = {
 		id = 281211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -76829,11 +75906,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.world_expedition_data
-
-	var_3_24[281411] = {
+	pg.base.world_expedition_data[281411] = {
 		id = 281411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -77166,11 +76239,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.world_expedition_data
-
-	var_3_25[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 282011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -77503,11 +76572,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.world_expedition_data
-
-	var_3_26[282211] = {
+	pg.base.world_expedition_data[282211] = {
 		id = 282211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -77840,11 +76905,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.world_expedition_data
-
-	var_3_27[282411] = {
+	pg.base.world_expedition_data[282411] = {
 		id = 282411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -78177,11 +77238,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.world_expedition_data
-
-	var_3_28[3] = {
+	pg.base.world_expedition_data[3] = {
 		id = 283011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -78514,11 +77571,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.world_expedition_data
-
-	var_3_29[283211] = {
+	pg.base.world_expedition_data[283211] = {
 		id = 283211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -78851,11 +77904,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.world_expedition_data
-
-	var_3_30[284011] = {
+	pg.base.world_expedition_data[284011] = {
 		id = 284011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -79188,11 +78237,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.world_expedition_data
-
-	var_3_31[286011] = {
+	pg.base.world_expedition_data[286011] = {
 		id = 286011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -79525,11 +78570,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.world_expedition_data
-
-	var_3_32[290011] = {
+	pg.base.world_expedition_data[290011] = {
 		id = 290011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -79688,11 +78729,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.world_expedition_data
-
-	var_3_33[290012] = {
+	pg.base.world_expedition_data[290012] = {
 		id = 290012,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -79851,11 +78888,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.world_expedition_data
-
-	var_3_34[290013] = {
+	pg.base.world_expedition_data[290013] = {
 		id = 290013,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -80014,11 +79047,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.world_expedition_data
-
-	var_3_35[290021] = {
+	pg.base.world_expedition_data[290021] = {
 		id = 290021,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -80177,11 +79206,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.world_expedition_data
-
-	var_3_36[290031] = {
+	pg.base.world_expedition_data[290031] = {
 		id = 290031,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -80340,11 +79365,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.world_expedition_data
-
-	var_3_37[290041] = {
+	pg.base.world_expedition_data[290041] = {
 		id = 290041,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -80503,11 +79524,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.world_expedition_data
-
-	var_3_38[291011] = {
+	pg.base.world_expedition_data[291011] = {
 		id = 291011,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -80666,11 +79683,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.world_expedition_data
-
-	var_3_39[291021] = {
+	pg.base.world_expedition_data[291021] = {
 		id = 291021,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -80829,11 +79842,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.world_expedition_data
-
-	var_3_40[291031] = {
+	pg.base.world_expedition_data[291031] = {
 		id = 291031,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -80992,11 +80001,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.world_expedition_data
-
-	var_3_41[291041] = {
+	pg.base.world_expedition_data[291041] = {
 		id = 291041,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81155,11 +80160,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.world_expedition_data
-
-	var_3_42[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 291091,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81318,11 +80319,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.world_expedition_data
-
-	var_3_43[20] = {
+	pg.base.world_expedition_data[20] = {
 		id = 291092,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81481,11 +80478,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.world_expedition_data
-
-	var_3_44[21] = {
+	pg.base.world_expedition_data[21] = {
 		id = 291093,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81644,11 +80637,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.world_expedition_data
-
-	var_3_45[28] = {
+	pg.base.world_expedition_data[28] = {
 		id = 291100,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81730,11 +80719,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.world_expedition_data
-
-	var_3_46[29] = {
+	pg.base.world_expedition_data[29] = {
 		id = 291101,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81816,11 +80801,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.world_expedition_data
-
-	var_3_47[30] = {
+	pg.base.world_expedition_data[30] = {
 		id = 291102,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81902,11 +80883,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.world_expedition_data
-
-	var_3_48[31] = {
+	pg.base.world_expedition_data[31] = {
 		id = 291103,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -81988,11 +80965,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.world_expedition_data
-
-	var_3_49[291150] = {
+	pg.base.world_expedition_data[291150] = {
 		id = 291150,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -82215,11 +81188,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.world_expedition_data
-
-	var_3_50[291151] = {
+	pg.base.world_expedition_data[291151] = {
 		id = 291151,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -82442,11 +81411,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.world_expedition_data
-
-	var_3_51[291152] = {
+	pg.base.world_expedition_data[291152] = {
 		id = 291152,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -82669,11 +81634,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.world_expedition_data
-
-	var_3_52[291153] = {
+	pg.base.world_expedition_data[291153] = {
 		id = 291153,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -82896,11 +81857,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.world_expedition_data
-
-	var_3_53[291160] = {
+	pg.base.world_expedition_data[291160] = {
 		id = 291160,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -83123,11 +82080,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.world_expedition_data
-
-	var_3_54[291161] = {
+	pg.base.world_expedition_data[291161] = {
 		id = 291161,
 		expedition_sairenvalueC = -500,
 		failed_morale = 1,
@@ -83350,11 +82303,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.world_expedition_data
-
-	var_3_55[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 291211,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -83513,11 +82462,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.world_expedition_data
-
-	var_3_56[21] = {
+	pg.base.world_expedition_data[21] = {
 		id = 291221,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -83676,11 +82621,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.world_expedition_data
-
-	var_3_57[31] = {
+	pg.base.world_expedition_data[31] = {
 		id = 291231,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -83839,11 +82780,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.world_expedition_data
-
-	var_3_58[291241] = {
+	pg.base.world_expedition_data[291241] = {
 		id = 291241,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84002,11 +82939,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.world_expedition_data
-
-	var_3_59[291291] = {
+	pg.base.world_expedition_data[291291] = {
 		id = 291291,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84165,11 +83098,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.world_expedition_data
-
-	var_3_60[291292] = {
+	pg.base.world_expedition_data[291292] = {
 		id = 291292,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84328,11 +83257,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.world_expedition_data
-
-	var_3_61[291293] = {
+	pg.base.world_expedition_data[291293] = {
 		id = 291293,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84491,11 +83416,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.world_expedition_data
-
-	var_3_62[291300] = {
+	pg.base.world_expedition_data[291300] = {
 		id = 291300,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84577,11 +83498,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.world_expedition_data
-
-	var_3_63[291301] = {
+	pg.base.world_expedition_data[291301] = {
 		id = 291301,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84663,11 +83580,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.world_expedition_data
-
-	var_3_64[291302] = {
+	pg.base.world_expedition_data[291302] = {
 		id = 291302,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84749,11 +83662,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.world_expedition_data
-
-	var_3_65[291303] = {
+	pg.base.world_expedition_data[291303] = {
 		id = 291303,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -84835,11 +83744,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.world_expedition_data
-
-	var_3_66[22] = {
+	pg.base.world_expedition_data[22] = {
 		id = 291350,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -85062,11 +83967,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.world_expedition_data
-
-	var_3_67[23] = {
+	pg.base.world_expedition_data[23] = {
 		id = 291351,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -85289,11 +84190,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.world_expedition_data
-
-	var_3_68[24] = {
+	pg.base.world_expedition_data[24] = {
 		id = 291352,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -85516,11 +84413,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.world_expedition_data
-
-	var_3_69[25] = {
+	pg.base.world_expedition_data[25] = {
 		id = 291353,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -85743,11 +84636,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.world_expedition_data
-
-	var_3_70[291360] = {
+	pg.base.world_expedition_data[291360] = {
 		id = 291360,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -85970,11 +84859,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.world_expedition_data
-
-	var_3_71[291361] = {
+	pg.base.world_expedition_data[291361] = {
 		id = 291361,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -86197,11 +85082,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.world_expedition_data
-
-	var_3_72[291411] = {
+	pg.base.world_expedition_data[291411] = {
 		id = 291411,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -86360,11 +85241,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.world_expedition_data
-
-	var_3_73[291421] = {
+	pg.base.world_expedition_data[291421] = {
 		id = 291421,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -86523,11 +85400,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.world_expedition_data
-
-	var_3_74[291431] = {
+	pg.base.world_expedition_data[291431] = {
 		id = 291431,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -86686,11 +85559,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.world_expedition_data
-
-	var_3_75[291441] = {
+	pg.base.world_expedition_data[291441] = {
 		id = 291441,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -86849,11 +85718,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.world_expedition_data
-
-	var_3_76[291491] = {
+	pg.base.world_expedition_data[291491] = {
 		id = 291491,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87012,11 +85877,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.world_expedition_data
-
-	var_3_77[291492] = {
+	pg.base.world_expedition_data[291492] = {
 		id = 291492,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87175,11 +86036,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.world_expedition_data
-
-	var_3_78[291493] = {
+	pg.base.world_expedition_data[291493] = {
 		id = 291493,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87338,11 +86195,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.world_expedition_data
-
-	var_3_79[291500] = {
+	pg.base.world_expedition_data[291500] = {
 		id = 291500,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87424,11 +86277,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.world_expedition_data
-
-	var_3_80[291501] = {
+	pg.base.world_expedition_data[291501] = {
 		id = 291501,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87510,11 +86359,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.world_expedition_data
-
-	var_3_81[291502] = {
+	pg.base.world_expedition_data[291502] = {
 		id = 291502,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87596,11 +86441,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.world_expedition_data
-
-	var_3_82[291503] = {
+	pg.base.world_expedition_data[291503] = {
 		id = 291503,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87682,11 +86523,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.world_expedition_data
-
-	var_3_83[291550] = {
+	pg.base.world_expedition_data[291550] = {
 		id = 291550,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -87909,11 +86746,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.world_expedition_data
-
-	var_3_84[291551] = {
+	pg.base.world_expedition_data[291551] = {
 		id = 291551,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -88136,11 +86969,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.world_expedition_data
-
-	var_3_85[291552] = {
+	pg.base.world_expedition_data[291552] = {
 		id = 291552,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -88363,11 +87192,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.world_expedition_data
-
-	var_3_86[291553] = {
+	pg.base.world_expedition_data[291553] = {
 		id = 291553,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -88590,11 +87415,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.world_expedition_data
-
-	var_3_87[291560] = {
+	pg.base.world_expedition_data[291560] = {
 		id = 291560,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -88817,11 +87638,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.world_expedition_data
-
-	var_3_88[291561] = {
+	pg.base.world_expedition_data[291561] = {
 		id = 291561,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -89044,11 +87861,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.world_expedition_data
-
-	var_3_89[16] = {
+	pg.base.world_expedition_data[16] = {
 		id = 291600,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -89207,11 +88020,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.world_expedition_data
-
-	var_3_90[17] = {
+	pg.base.world_expedition_data[17] = {
 		id = 291601,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -89370,11 +88179,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.world_expedition_data
-
-	var_3_91[292000] = {
+	pg.base.world_expedition_data[292000] = {
 		id = 292000,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -89456,11 +88261,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.world_expedition_data
-
-	var_3_92[292001] = {
+	pg.base.world_expedition_data[292001] = {
 		id = 292001,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -89542,11 +88343,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.world_expedition_data
-
-	var_3_93[292002] = {
+	pg.base.world_expedition_data[292002] = {
 		id = 292002,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -89628,11 +88425,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.world_expedition_data
-
-	var_3_94[292003] = {
+	pg.base.world_expedition_data[292003] = {
 		id = 292003,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -89714,11 +88507,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.world_expedition_data
-
-	var_3_95[292010] = {
+	pg.base.world_expedition_data[292010] = {
 		id = 292010,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -89800,11 +88589,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.world_expedition_data
-
-	var_3_96[292011] = {
+	pg.base.world_expedition_data[292011] = {
 		id = 292011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -89886,11 +88671,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.world_expedition_data
-
-	var_3_97[292012] = {
+	pg.base.world_expedition_data[292012] = {
 		id = 292012,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -89972,11 +88753,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.world_expedition_data
-
-	var_3_98[292013] = {
+	pg.base.world_expedition_data[292013] = {
 		id = 292013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90058,8 +88835,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_3_98
-	var_3_98.base.world_expedition_data[292020] = {
+	pg.base.world_expedition_data[292020] = {
 		id = 292020,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90145,11 +88921,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.world_expedition_data
-
-	var_4_0[292021] = {
+	pg.base.world_expedition_data[292021] = {
 		id = 292021,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90231,11 +89003,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.world_expedition_data
-
-	var_4_1[292022] = {
+	pg.base.world_expedition_data[292022] = {
 		id = 292022,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90317,11 +89085,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.world_expedition_data
-
-	var_4_2[292023] = {
+	pg.base.world_expedition_data[292023] = {
 		id = 292023,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90403,11 +89167,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.world_expedition_data
-
-	var_4_3[292050] = {
+	pg.base.world_expedition_data[292050] = {
 		id = 292050,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -90489,11 +89249,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.world_expedition_data
-
-	var_4_4[292051] = {
+	pg.base.world_expedition_data[292051] = {
 		id = 292051,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -90575,11 +89331,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.world_expedition_data
-
-	var_4_5[292052] = {
+	pg.base.world_expedition_data[292052] = {
 		id = 292052,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -90661,11 +89413,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.world_expedition_data
-
-	var_4_6[292053] = {
+	pg.base.world_expedition_data[292053] = {
 		id = 292053,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -90747,11 +89495,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.world_expedition_data
-
-	var_4_7[292060] = {
+	pg.base.world_expedition_data[292060] = {
 		id = 292060,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90833,11 +89577,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.world_expedition_data
-
-	var_4_8[292061] = {
+	pg.base.world_expedition_data[292061] = {
 		id = 292061,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -90919,11 +89659,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.world_expedition_data
-
-	var_4_9[292062] = {
+	pg.base.world_expedition_data[292062] = {
 		id = 292062,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91005,11 +89741,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.world_expedition_data
-
-	var_4_10[292063] = {
+	pg.base.world_expedition_data[292063] = {
 		id = 292063,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91091,11 +89823,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.world_expedition_data
-
-	var_4_11[292070] = {
+	pg.base.world_expedition_data[292070] = {
 		id = 292070,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91177,11 +89905,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.world_expedition_data
-
-	var_4_12[292071] = {
+	pg.base.world_expedition_data[292071] = {
 		id = 292071,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91263,11 +89987,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.world_expedition_data
-
-	var_4_13[292072] = {
+	pg.base.world_expedition_data[292072] = {
 		id = 292072,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91349,11 +90069,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.world_expedition_data
-
-	var_4_14[292073] = {
+	pg.base.world_expedition_data[292073] = {
 		id = 292073,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91435,11 +90151,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.world_expedition_data
-
-	var_4_15[4] = {
+	pg.base.world_expedition_data[4] = {
 		id = 292100,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91521,11 +90233,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.world_expedition_data
-
-	var_4_16[5] = {
+	pg.base.world_expedition_data[5] = {
 		id = 292101,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91607,11 +90315,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.world_expedition_data
-
-	var_4_17[6] = {
+	pg.base.world_expedition_data[6] = {
 		id = 292102,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91693,11 +90397,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.world_expedition_data
-
-	var_4_18[7] = {
+	pg.base.world_expedition_data[7] = {
 		id = 292103,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91779,11 +90479,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.world_expedition_data
-
-	var_4_19[8] = {
+	pg.base.world_expedition_data[8] = {
 		id = 292104,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91865,11 +90561,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.world_expedition_data
-
-	var_4_20[292200] = {
+	pg.base.world_expedition_data[292200] = {
 		id = 292200,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -91951,11 +90643,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.world_expedition_data
-
-	var_4_21[292201] = {
+	pg.base.world_expedition_data[292201] = {
 		id = 292201,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -92037,11 +90725,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.world_expedition_data
-
-	var_4_22[292210] = {
+	pg.base.world_expedition_data[292210] = {
 		id = 292210,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -92123,11 +90807,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.world_expedition_data
-
-	var_4_23[292211] = {
+	pg.base.world_expedition_data[292211] = {
 		id = 292211,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -92209,11 +90889,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.world_expedition_data
-
-	var_4_24[292220] = {
+	pg.base.world_expedition_data[292220] = {
 		id = 292220,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -92295,11 +90971,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.world_expedition_data
-
-	var_4_25[292221] = {
+	pg.base.world_expedition_data[292221] = {
 		id = 292221,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -92381,11 +91053,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.world_expedition_data
-
-	var_4_26[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 293011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -92544,11 +91212,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.world_expedition_data
-
-	var_4_27[29] = {
+	pg.base.world_expedition_data[29] = {
 		id = 293021,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -92707,11 +91371,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.world_expedition_data
-
-	var_4_28[293031] = {
+	pg.base.world_expedition_data[293031] = {
 		id = 293031,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -92870,11 +91530,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.world_expedition_data
-
-	var_4_29[293041] = {
+	pg.base.world_expedition_data[293041] = {
 		id = 293041,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93033,11 +91689,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.world_expedition_data
-
-	var_4_30[293091] = {
+	pg.base.world_expedition_data[293091] = {
 		id = 293091,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93196,11 +91848,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.world_expedition_data
-
-	var_4_31[293092] = {
+	pg.base.world_expedition_data[293092] = {
 		id = 293092,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93359,11 +92007,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.world_expedition_data
-
-	var_4_32[293093] = {
+	pg.base.world_expedition_data[293093] = {
 		id = 293093,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93522,11 +92166,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.world_expedition_data
-
-	var_4_33[293100] = {
+	pg.base.world_expedition_data[293100] = {
 		id = 293100,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93608,11 +92248,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.world_expedition_data
-
-	var_4_34[293101] = {
+	pg.base.world_expedition_data[293101] = {
 		id = 293101,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93694,11 +92330,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.world_expedition_data
-
-	var_4_35[293102] = {
+	pg.base.world_expedition_data[293102] = {
 		id = 293102,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93780,11 +92412,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.world_expedition_data
-
-	var_4_36[293103] = {
+	pg.base.world_expedition_data[293103] = {
 		id = 293103,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93866,11 +92494,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.world_expedition_data
-
-	var_4_37[293104] = {
+	pg.base.world_expedition_data[293104] = {
 		id = 293104,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -93952,11 +92576,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.world_expedition_data
-
-	var_4_38[30] = {
+	pg.base.world_expedition_data[30] = {
 		id = 293150,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -94179,11 +92799,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.world_expedition_data
-
-	var_4_39[31] = {
+	pg.base.world_expedition_data[31] = {
 		id = 293151,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -94406,11 +93022,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.world_expedition_data
-
-	var_4_40[293152] = {
+	pg.base.world_expedition_data[293152] = {
 		id = 293152,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -94633,11 +93245,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.world_expedition_data
-
-	var_4_41[293153] = {
+	pg.base.world_expedition_data[293153] = {
 		id = 293153,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -94860,11 +93468,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.world_expedition_data
-
-	var_4_42[293154] = {
+	pg.base.world_expedition_data[293154] = {
 		id = 293154,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -95087,11 +93691,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.world_expedition_data
-
-	var_4_43[293160] = {
+	pg.base.world_expedition_data[293160] = {
 		id = 293160,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -95314,11 +93914,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.world_expedition_data
-
-	var_4_44[293161] = {
+	pg.base.world_expedition_data[293161] = {
 		id = 293161,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -95541,11 +94137,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.world_expedition_data
-
-	var_4_45[293211] = {
+	pg.base.world_expedition_data[293211] = {
 		id = 293211,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -95704,11 +94296,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.world_expedition_data
-
-	var_4_46[293221] = {
+	pg.base.world_expedition_data[293221] = {
 		id = 293221,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -95867,11 +94455,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.world_expedition_data
-
-	var_4_47[293231] = {
+	pg.base.world_expedition_data[293231] = {
 		id = 293231,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96030,11 +94614,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.world_expedition_data
-
-	var_4_48[293241] = {
+	pg.base.world_expedition_data[293241] = {
 		id = 293241,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96193,11 +94773,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.world_expedition_data
-
-	var_4_49[293291] = {
+	pg.base.world_expedition_data[293291] = {
 		id = 293291,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96356,11 +94932,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.world_expedition_data
-
-	var_4_50[293292] = {
+	pg.base.world_expedition_data[293292] = {
 		id = 293292,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96519,11 +95091,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.world_expedition_data
-
-	var_4_51[293293] = {
+	pg.base.world_expedition_data[293293] = {
 		id = 293293,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96682,11 +95250,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.world_expedition_data
-
-	var_4_52[293300] = {
+	pg.base.world_expedition_data[293300] = {
 		id = 293300,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96768,11 +95332,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.world_expedition_data
-
-	var_4_53[293301] = {
+	pg.base.world_expedition_data[293301] = {
 		id = 293301,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96854,11 +95414,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.world_expedition_data
-
-	var_4_54[293302] = {
+	pg.base.world_expedition_data[293302] = {
 		id = 293302,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -96940,11 +95496,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.world_expedition_data
-
-	var_4_55[293303] = {
+	pg.base.world_expedition_data[293303] = {
 		id = 293303,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -97026,11 +95578,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.world_expedition_data
-
-	var_4_56[293304] = {
+	pg.base.world_expedition_data[293304] = {
 		id = 293304,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -97112,11 +95660,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.world_expedition_data
-
-	var_4_57[293350] = {
+	pg.base.world_expedition_data[293350] = {
 		id = 293350,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -97339,11 +95883,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.world_expedition_data
-
-	var_4_58[293351] = {
+	pg.base.world_expedition_data[293351] = {
 		id = 293351,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -97566,11 +96106,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.world_expedition_data
-
-	var_4_59[293352] = {
+	pg.base.world_expedition_data[293352] = {
 		id = 293352,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -97793,11 +96329,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.world_expedition_data
-
-	var_4_60[293353] = {
+	pg.base.world_expedition_data[293353] = {
 		id = 293353,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -98020,11 +96552,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.world_expedition_data
-
-	var_4_61[293354] = {
+	pg.base.world_expedition_data[293354] = {
 		id = 293354,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -98247,11 +96775,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.world_expedition_data
-
-	var_4_62[293360] = {
+	pg.base.world_expedition_data[293360] = {
 		id = 293360,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -98474,11 +96998,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.world_expedition_data
-
-	var_4_63[293361] = {
+	pg.base.world_expedition_data[293361] = {
 		id = 293361,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -98701,11 +97221,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.world_expedition_data
-
-	var_4_64[293411] = {
+	pg.base.world_expedition_data[293411] = {
 		id = 293411,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -98864,11 +97380,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.world_expedition_data
-
-	var_4_65[293421] = {
+	pg.base.world_expedition_data[293421] = {
 		id = 293421,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99027,11 +97539,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.world_expedition_data
-
-	var_4_66[293431] = {
+	pg.base.world_expedition_data[293431] = {
 		id = 293431,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99190,11 +97698,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.world_expedition_data
-
-	var_4_67[293441] = {
+	pg.base.world_expedition_data[293441] = {
 		id = 293441,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99353,11 +97857,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.world_expedition_data
-
-	var_4_68[293491] = {
+	pg.base.world_expedition_data[293491] = {
 		id = 293491,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99516,11 +98016,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.world_expedition_data
-
-	var_4_69[293492] = {
+	pg.base.world_expedition_data[293492] = {
 		id = 293492,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99679,11 +98175,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.world_expedition_data
-
-	var_4_70[293493] = {
+	pg.base.world_expedition_data[293493] = {
 		id = 293493,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99842,11 +98334,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.world_expedition_data
-
-	var_4_71[293500] = {
+	pg.base.world_expedition_data[293500] = {
 		id = 293500,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -99928,11 +98416,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.world_expedition_data
-
-	var_4_72[293501] = {
+	pg.base.world_expedition_data[293501] = {
 		id = 293501,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100014,11 +98498,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.world_expedition_data
-
-	var_4_73[293502] = {
+	pg.base.world_expedition_data[293502] = {
 		id = 293502,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100100,11 +98580,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.world_expedition_data
-
-	var_4_74[293503] = {
+	pg.base.world_expedition_data[293503] = {
 		id = 293503,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100186,11 +98662,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.world_expedition_data
-
-	var_4_75[0] = {
+	pg.base.world_expedition_data[0] = {
 		id = 293504,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100272,11 +98744,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.world_expedition_data
-
-	var_4_76[293550] = {
+	pg.base.world_expedition_data[293550] = {
 		id = 293550,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100499,11 +98967,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.world_expedition_data
-
-	var_4_77[293551] = {
+	pg.base.world_expedition_data[293551] = {
 		id = 293551,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100726,11 +99190,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.world_expedition_data
-
-	var_4_78[293552] = {
+	pg.base.world_expedition_data[293552] = {
 		id = 293552,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -100953,11 +99413,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.world_expedition_data
-
-	var_4_79[293553] = {
+	pg.base.world_expedition_data[293553] = {
 		id = 293553,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -101180,11 +99636,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.world_expedition_data
-
-	var_4_80[293554] = {
+	pg.base.world_expedition_data[293554] = {
 		id = 293554,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -101407,11 +99859,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.world_expedition_data
-
-	var_4_81[293560] = {
+	pg.base.world_expedition_data[293560] = {
 		id = 293560,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -101634,11 +100082,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.world_expedition_data
-
-	var_4_82[293561] = {
+	pg.base.world_expedition_data[293561] = {
 		id = 293561,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -101861,11 +100305,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.world_expedition_data
-
-	var_4_83[294001] = {
+	pg.base.world_expedition_data[294001] = {
 		id = 294001,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -102174,11 +100614,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.world_expedition_data
-
-	var_4_84[294002] = {
+	pg.base.world_expedition_data[294002] = {
 		id = 294002,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -102487,11 +100923,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.world_expedition_data
-
-	var_4_85[294003] = {
+	pg.base.world_expedition_data[294003] = {
 		id = 294003,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -102800,11 +101232,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.world_expedition_data
-
-	var_4_86[294004] = {
+	pg.base.world_expedition_data[294004] = {
 		id = 294004,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -103113,11 +101541,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.world_expedition_data
-
-	var_4_87[294005] = {
+	pg.base.world_expedition_data[294005] = {
 		id = 294005,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -103426,11 +101850,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.world_expedition_data
-
-	var_4_88[294006] = {
+	pg.base.world_expedition_data[294006] = {
 		id = 294006,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -103739,11 +102159,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.world_expedition_data
-
-	var_4_89[294007] = {
+	pg.base.world_expedition_data[294007] = {
 		id = 294007,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -104052,11 +102468,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.world_expedition_data
-
-	var_4_90[294008] = {
+	pg.base.world_expedition_data[294008] = {
 		id = 294008,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -104365,11 +102777,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.world_expedition_data
-
-	var_4_91[294009] = {
+	pg.base.world_expedition_data[294009] = {
 		id = 294009,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -104678,11 +103086,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.world_expedition_data
-
-	var_4_92[294010] = {
+	pg.base.world_expedition_data[294010] = {
 		id = 294010,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -104991,11 +103395,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.world_expedition_data
-
-	var_4_93[294011] = {
+	pg.base.world_expedition_data[294011] = {
 		id = 294011,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -105077,11 +103477,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.world_expedition_data
-
-	var_4_94[294012] = {
+	pg.base.world_expedition_data[294012] = {
 		id = 294012,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -105163,11 +103559,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.world_expedition_data
-
-	var_4_95[294013] = {
+	pg.base.world_expedition_data[294013] = {
 		id = 294013,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -105249,11 +103641,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.world_expedition_data
-
-	var_4_96[294014] = {
+	pg.base.world_expedition_data[294014] = {
 		id = 294014,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -105335,11 +103723,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.world_expedition_data
-
-	var_4_97[294015] = {
+	pg.base.world_expedition_data[294015] = {
 		id = 294015,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 2,
@@ -105421,11 +103805,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.world_expedition_data
-
-	var_4_98[0] = {
+	pg.base.world_expedition_data[0] = {
 		id = 294016,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -105507,8 +103887,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_4_98
-	var_4_98.base.world_expedition_data[1] = {
+	pg.base.world_expedition_data[1] = {
 		id = 294017,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -105594,11 +103973,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.world_expedition_data
-
-	var_5_0[2] = {
+	pg.base.world_expedition_data[2] = {
 		id = 294018,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -105680,11 +104055,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.world_expedition_data
-
-	var_5_1[3] = {
+	pg.base.world_expedition_data[3] = {
 		id = 294019,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -105766,11 +104137,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.world_expedition_data
-
-	var_5_2[4] = {
+	pg.base.world_expedition_data[4] = {
 		id = 294020,
 		expedition_sairenvalueC = 1250,
 		failed_morale = 2,
@@ -105852,11 +104219,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.world_expedition_data
-
-	var_5_3[5] = {
+	pg.base.world_expedition_data[5] = {
 		id = 294021,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -105938,11 +104301,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.world_expedition_data
-
-	var_5_4[6] = {
+	pg.base.world_expedition_data[6] = {
 		id = 294022,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106024,11 +104383,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.world_expedition_data
-
-	var_5_5[7] = {
+	pg.base.world_expedition_data[7] = {
 		id = 294023,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106110,11 +104465,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.world_expedition_data
-
-	var_5_6[8] = {
+	pg.base.world_expedition_data[8] = {
 		id = 294024,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106196,11 +104547,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.world_expedition_data
-
-	var_5_7[9] = {
+	pg.base.world_expedition_data[9] = {
 		id = 294025,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106282,11 +104629,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.world_expedition_data
-
-	var_5_8[10] = {
+	pg.base.world_expedition_data[10] = {
 		id = 294026,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106368,11 +104711,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.world_expedition_data
-
-	var_5_9[11] = {
+	pg.base.world_expedition_data[11] = {
 		id = 294027,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106454,11 +104793,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.world_expedition_data
-
-	var_5_10[12] = {
+	pg.base.world_expedition_data[12] = {
 		id = 294028,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106540,11 +104875,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.world_expedition_data
-
-	var_5_11[13] = {
+	pg.base.world_expedition_data[13] = {
 		id = 294029,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106626,11 +104957,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.world_expedition_data
-
-	var_5_12[14] = {
+	pg.base.world_expedition_data[14] = {
 		id = 294030,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -106712,11 +105039,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.world_expedition_data
-
-	var_5_13[24] = {
+	pg.base.world_expedition_data[24] = {
 		id = 294040,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 2,
@@ -106798,11 +105121,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.world_expedition_data
-
-	var_5_14[294050] = {
+	pg.base.world_expedition_data[294050] = {
 		id = 294050,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -107111,11 +105430,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.world_expedition_data
-
-	var_5_15[294051] = {
+	pg.base.world_expedition_data[294051] = {
 		id = 294051,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -107424,11 +105739,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.world_expedition_data
-
-	var_5_16[294052] = {
+	pg.base.world_expedition_data[294052] = {
 		id = 294052,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -107737,11 +106048,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.world_expedition_data
-
-	var_5_17[294053] = {
+	pg.base.world_expedition_data[294053] = {
 		id = 294053,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108050,11 +106357,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.world_expedition_data
-
-	var_5_18[294054] = {
+	pg.base.world_expedition_data[294054] = {
 		id = 294054,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108136,11 +106439,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.world_expedition_data
-
-	var_5_19[294055] = {
+	pg.base.world_expedition_data[294055] = {
 		id = 294055,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108222,11 +106521,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.world_expedition_data
-
-	var_5_20[294056] = {
+	pg.base.world_expedition_data[294056] = {
 		id = 294056,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108308,11 +106603,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.world_expedition_data
-
-	var_5_21[294057] = {
+	pg.base.world_expedition_data[294057] = {
 		id = 294057,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108394,11 +106685,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.world_expedition_data
-
-	var_5_22[294058] = {
+	pg.base.world_expedition_data[294058] = {
 		id = 294058,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108480,11 +106767,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.world_expedition_data
-
-	var_5_23[294059] = {
+	pg.base.world_expedition_data[294059] = {
 		id = 294059,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108566,11 +106849,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.world_expedition_data
-
-	var_5_24[294060] = {
+	pg.base.world_expedition_data[294060] = {
 		id = 294060,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108652,11 +106931,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.world_expedition_data
-
-	var_5_25[294061] = {
+	pg.base.world_expedition_data[294061] = {
 		id = 294061,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108738,11 +107013,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.world_expedition_data
-
-	var_5_26[294062] = {
+	pg.base.world_expedition_data[294062] = {
 		id = 294062,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -108981,11 +107252,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.world_expedition_data
-
-	var_5_27[294063] = {
+	pg.base.world_expedition_data[294063] = {
 		id = 294063,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -109224,11 +107491,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.world_expedition_data
-
-	var_5_28[294064] = {
+	pg.base.world_expedition_data[294064] = {
 		id = 294064,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -109467,11 +107730,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.world_expedition_data
-
-	var_5_29[294065] = {
+	pg.base.world_expedition_data[294065] = {
 		id = 294065,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -109710,11 +107969,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.world_expedition_data
-
-	var_5_30[294111] = {
+	pg.base.world_expedition_data[294111] = {
 		id = 294111,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -109937,11 +108192,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.world_expedition_data
-
-	var_5_31[294112] = {
+	pg.base.world_expedition_data[294112] = {
 		id = 294112,
 		expedition_sairenvalueC = 500,
 		failed_morale = 1,
@@ -110164,11 +108415,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.world_expedition_data
-
-	var_5_32[294113] = {
+	pg.base.world_expedition_data[294113] = {
 		id = 294113,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -110391,11 +108638,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.world_expedition_data
-
-	var_5_33[294114] = {
+	pg.base.world_expedition_data[294114] = {
 		id = 294114,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -110618,11 +108861,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.world_expedition_data
-
-	var_5_34[294115] = {
+	pg.base.world_expedition_data[294115] = {
 		id = 294115,
 		expedition_sairenvalueC = 1500,
 		failed_morale = 1,
@@ -110845,11 +109084,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.world_expedition_data
-
-	var_5_35[294200] = {
+	pg.base.world_expedition_data[294200] = {
 		id = 294200,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -111158,11 +109393,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.world_expedition_data
-
-	var_5_36[294201] = {
+	pg.base.world_expedition_data[294201] = {
 		id = 294201,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -111471,11 +109702,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.world_expedition_data
-
-	var_5_37[294202] = {
+	pg.base.world_expedition_data[294202] = {
 		id = 294202,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -111784,11 +110011,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.world_expedition_data
-
-	var_5_38[294203] = {
+	pg.base.world_expedition_data[294203] = {
 		id = 294203,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112097,11 +110320,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.world_expedition_data
-
-	var_5_39[294204] = {
+	pg.base.world_expedition_data[294204] = {
 		id = 294204,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112410,11 +110629,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.world_expedition_data
-
-	var_5_40[294210] = {
+	pg.base.world_expedition_data[294210] = {
 		id = 294210,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112496,11 +110711,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.world_expedition_data
-
-	var_5_41[294211] = {
+	pg.base.world_expedition_data[294211] = {
 		id = 294211,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112582,11 +110793,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.world_expedition_data
-
-	var_5_42[294212] = {
+	pg.base.world_expedition_data[294212] = {
 		id = 294212,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112668,11 +110875,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.world_expedition_data
-
-	var_5_43[294213] = {
+	pg.base.world_expedition_data[294213] = {
 		id = 294213,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112754,11 +110957,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.world_expedition_data
-
-	var_5_44[294214] = {
+	pg.base.world_expedition_data[294214] = {
 		id = 294214,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112840,11 +111039,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.world_expedition_data
-
-	var_5_45[294215] = {
+	pg.base.world_expedition_data[294215] = {
 		id = 294215,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -112926,11 +111121,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.world_expedition_data
-
-	var_5_46[294216] = {
+	pg.base.world_expedition_data[294216] = {
 		id = 294216,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113012,11 +111203,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.world_expedition_data
-
-	var_5_47[294217] = {
+	pg.base.world_expedition_data[294217] = {
 		id = 294217,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113098,11 +111285,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.world_expedition_data
-
-	var_5_48[294218] = {
+	pg.base.world_expedition_data[294218] = {
 		id = 294218,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113184,11 +111367,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.world_expedition_data
-
-	var_5_49[294219] = {
+	pg.base.world_expedition_data[294219] = {
 		id = 294219,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113270,11 +111449,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.world_expedition_data
-
-	var_5_50[294220] = {
+	pg.base.world_expedition_data[294220] = {
 		id = 294220,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113513,11 +111688,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.world_expedition_data
-
-	var_5_51[294221] = {
+	pg.base.world_expedition_data[294221] = {
 		id = 294221,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113756,11 +111927,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.world_expedition_data
-
-	var_5_52[294222] = {
+	pg.base.world_expedition_data[294222] = {
 		id = 294222,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -113999,11 +112166,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.world_expedition_data
-
-	var_5_53[294223] = {
+	pg.base.world_expedition_data[294223] = {
 		id = 294223,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -114242,11 +112405,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.world_expedition_data
-
-	var_5_54[294224] = {
+	pg.base.world_expedition_data[294224] = {
 		id = 294224,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 1,
@@ -114485,11 +112644,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.world_expedition_data
-
-	var_5_55[295011] = {
+	pg.base.world_expedition_data[295011] = {
 		id = 295011,
 		expedition_sairenvalueC = 2000,
 		failed_morale = 2,
@@ -114728,11 +112883,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.world_expedition_data
-
-	var_5_56[295012] = {
+	pg.base.world_expedition_data[295012] = {
 		id = 295012,
 		expedition_sairenvalueC = 2000,
 		failed_morale = 2,
@@ -114971,11 +113122,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.world_expedition_data
-
-	var_5_57[295013] = {
+	pg.base.world_expedition_data[295013] = {
 		id = 295013,
 		expedition_sairenvalueC = 2000,
 		failed_morale = 2,
@@ -115214,11 +113361,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.world_expedition_data
-
-	var_5_58[295014] = {
+	pg.base.world_expedition_data[295014] = {
 		id = 295014,
 		expedition_sairenvalueC = 2000,
 		failed_morale = 2,
@@ -115457,11 +113600,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.world_expedition_data
-
-	var_5_59[295015] = {
+	pg.base.world_expedition_data[295015] = {
 		id = 295015,
 		expedition_sairenvalueC = 2000,
 		failed_morale = 2,
@@ -115700,11 +113839,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.world_expedition_data
-
-	var_5_60[295021] = {
+	pg.base.world_expedition_data[295021] = {
 		id = 295021,
 		expedition_sairenvalueC = 2500,
 		failed_morale = 1,
@@ -115873,11 +114008,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.world_expedition_data
-
-	var_5_61[295022] = {
+	pg.base.world_expedition_data[295022] = {
 		id = 295022,
 		expedition_sairenvalueC = 2500,
 		failed_morale = 1,
@@ -116046,11 +114177,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.world_expedition_data
-
-	var_5_62[295023] = {
+	pg.base.world_expedition_data[295023] = {
 		id = 295023,
 		expedition_sairenvalueC = 2500,
 		failed_morale = 1,
@@ -116219,11 +114346,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.world_expedition_data
-
-	var_5_63[295024] = {
+	pg.base.world_expedition_data[295024] = {
 		id = 295024,
 		expedition_sairenvalueC = 2500,
 		failed_morale = 1,
@@ -116392,11 +114515,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.world_expedition_data
-
-	var_5_64[295025] = {
+	pg.base.world_expedition_data[295025] = {
 		id = 295025,
 		expedition_sairenvalueC = 2500,
 		failed_morale = 1,
@@ -116517,11 +114636,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.world_expedition_data
-
-	var_5_65[295026] = {
+	pg.base.world_expedition_data[295026] = {
 		id = 295026,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -116690,11 +114805,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.world_expedition_data
-
-	var_5_66[295027] = {
+	pg.base.world_expedition_data[295027] = {
 		id = 295027,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -116863,11 +114974,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.world_expedition_data
-
-	var_5_67[295028] = {
+	pg.base.world_expedition_data[295028] = {
 		id = 295028,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -117036,11 +115143,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.world_expedition_data
-
-	var_5_68[295029] = {
+	pg.base.world_expedition_data[295029] = {
 		id = 295029,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -117209,11 +115312,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.world_expedition_data
-
-	var_5_69[295030] = {
+	pg.base.world_expedition_data[295030] = {
 		id = 295030,
 		expedition_sairenvalueC = 1000,
 		failed_morale = 1,
@@ -117358,11 +115457,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.world_expedition_data
-
-	var_5_70[295100] = {
+	pg.base.world_expedition_data[295100] = {
 		id = 295100,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -117755,11 +115850,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.world_expedition_data
-
-	var_5_71[295101] = {
+	pg.base.world_expedition_data[295101] = {
 		id = 295101,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -118152,11 +116243,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.world_expedition_data
-
-	var_5_72[295102] = {
+	pg.base.world_expedition_data[295102] = {
 		id = 295102,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -118557,11 +116644,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.world_expedition_data
-
-	var_5_73[295103] = {
+	pg.base.world_expedition_data[295103] = {
 		id = 295103,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -118962,11 +117045,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.world_expedition_data
-
-	var_5_74[295104] = {
+	pg.base.world_expedition_data[295104] = {
 		id = 295104,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -119367,11 +117446,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.world_expedition_data
-
-	var_5_75[295110] = {
+	pg.base.world_expedition_data[295110] = {
 		id = 295110,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -119764,11 +117839,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.world_expedition_data
-
-	var_5_76[295111] = {
+	pg.base.world_expedition_data[295111] = {
 		id = 295111,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -120161,11 +118232,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.world_expedition_data
-
-	var_5_77[295112] = {
+	pg.base.world_expedition_data[295112] = {
 		id = 295112,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -120566,11 +118633,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.world_expedition_data
-
-	var_5_78[295113] = {
+	pg.base.world_expedition_data[295113] = {
 		id = 295113,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -120971,11 +119034,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.world_expedition_data
-
-	var_5_79[295114] = {
+	pg.base.world_expedition_data[295114] = {
 		id = 295114,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -121376,11 +119435,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.world_expedition_data
-
-	var_5_80[295120] = {
+	pg.base.world_expedition_data[295120] = {
 		id = 295120,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -121773,11 +119828,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.world_expedition_data
-
-	var_5_81[295121] = {
+	pg.base.world_expedition_data[295121] = {
 		id = 295121,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -122170,11 +120221,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.world_expedition_data
-
-	var_5_82[295122] = {
+	pg.base.world_expedition_data[295122] = {
 		id = 295122,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -122575,11 +120622,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.world_expedition_data
-
-	var_5_83[295123] = {
+	pg.base.world_expedition_data[295123] = {
 		id = 295123,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -122980,11 +121023,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.world_expedition_data
-
-	var_5_84[295124] = {
+	pg.base.world_expedition_data[295124] = {
 		id = 295124,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -123385,11 +121424,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.world_expedition_data
-
-	var_5_85[295130] = {
+	pg.base.world_expedition_data[295130] = {
 		id = 295130,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -123782,11 +121817,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.world_expedition_data
-
-	var_5_86[295131] = {
+	pg.base.world_expedition_data[295131] = {
 		id = 295131,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -124179,11 +122210,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.world_expedition_data
-
-	var_5_87[295132] = {
+	pg.base.world_expedition_data[295132] = {
 		id = 295132,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -124584,11 +122611,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.world_expedition_data
-
-	var_5_88[295133] = {
+	pg.base.world_expedition_data[295133] = {
 		id = 295133,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -124989,11 +123012,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.world_expedition_data
-
-	var_5_89[295134] = {
+	pg.base.world_expedition_data[295134] = {
 		id = 295134,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -125394,11 +123413,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.world_expedition_data
-
-	var_5_90[295140] = {
+	pg.base.world_expedition_data[295140] = {
 		id = 295140,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -125791,11 +123806,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.world_expedition_data
-
-	var_5_91[295141] = {
+	pg.base.world_expedition_data[295141] = {
 		id = 295141,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -126188,11 +124199,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.world_expedition_data
-
-	var_5_92[295142] = {
+	pg.base.world_expedition_data[295142] = {
 		id = 295142,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -126593,11 +124600,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.world_expedition_data
-
-	var_5_93[295143] = {
+	pg.base.world_expedition_data[295143] = {
 		id = 295143,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -126998,11 +125001,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.world_expedition_data
-
-	var_5_94[295144] = {
+	pg.base.world_expedition_data[295144] = {
 		id = 295144,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -127403,11 +125402,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.world_expedition_data
-
-	var_5_95[295200] = {
+	pg.base.world_expedition_data[295200] = {
 		id = 295200,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -127495,11 +125490,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.world_expedition_data
-
-	var_5_96[295201] = {
+	pg.base.world_expedition_data[295201] = {
 		id = 295201,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -127587,11 +125578,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.world_expedition_data
-
-	var_5_97[295202] = {
+	pg.base.world_expedition_data[295202] = {
 		id = 295202,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -127679,11 +125666,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.world_expedition_data
-
-	var_5_98[295203] = {
+	pg.base.world_expedition_data[295203] = {
 		id = 295203,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -127771,8 +125754,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_5_98
-	var_5_98.base.world_expedition_data[295204] = {
+	pg.base.world_expedition_data[295204] = {
 		id = 295204,
 		expedition_sairenvalueC = 5000,
 		failed_morale = 3,
@@ -127864,11 +125846,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.world_expedition_data
-
-	var_6_0[297011] = {
+	pg.base.world_expedition_data[297011] = {
 		id = 297011,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -128201,11 +126179,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.world_expedition_data
-
-	var_6_1[1] = {
+	pg.base.world_expedition_data[1] = {
 		id = 311041,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -128538,11 +126512,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.world_expedition_data
-
-	var_6_2[312020] = {
+	pg.base.world_expedition_data[312020] = {
 		id = 312020,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -128624,11 +126594,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.world_expedition_data
-
-	var_6_3[312021] = {
+	pg.base.world_expedition_data[312021] = {
 		id = 312021,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -128736,11 +126702,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.world_expedition_data
-
-	var_6_4[6] = {
+	pg.base.world_expedition_data[6] = {
 		id = 312070,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -129073,11 +127035,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.world_expedition_data
-
-	var_6_5[312150] = {
+	pg.base.world_expedition_data[312150] = {
 		id = 312150,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -129431,11 +127389,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.world_expedition_data
-
-	var_6_6[312240] = {
+	pg.base.world_expedition_data[312240] = {
 		id = 312240,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -129789,11 +127743,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.world_expedition_data
-
-	var_6_7[30] = {
+	pg.base.world_expedition_data[30] = {
 		id = 312350,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -129875,11 +127825,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.world_expedition_data
-
-	var_6_8[312610] = {
+	pg.base.world_expedition_data[312610] = {
 		id = 312610,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -129961,11 +127907,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.world_expedition_data
-
-	var_6_9[312640] = {
+	pg.base.world_expedition_data[312640] = {
 		id = 312640,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -130047,11 +127989,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.world_expedition_data
-
-	var_6_10[312670] = {
+	pg.base.world_expedition_data[312670] = {
 		id = 312670,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -130133,11 +128071,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.world_expedition_data
-
-	var_6_11[17] = {
+	pg.base.world_expedition_data[17] = {
 		id = 314001,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -130219,11 +128153,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.world_expedition_data
-
-	var_6_12[18] = {
+	pg.base.world_expedition_data[18] = {
 		id = 314002,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -130556,11 +128486,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.world_expedition_data
-
-	var_6_13[314201] = {
+	pg.base.world_expedition_data[314201] = {
 		id = 314201,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -130893,11 +128819,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.world_expedition_data
-
-	var_6_14[315000] = {
+	pg.base.world_expedition_data[315000] = {
 		id = 315000,
 		expedition_sairenvalueC = 8000,
 		failed_morale = 1,
@@ -130979,11 +128901,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.world_expedition_data
-
-	var_6_15[315001] = {
+	pg.base.world_expedition_data[315001] = {
 		id = 315001,
 		expedition_sairenvalueC = 8000,
 		failed_morale = 1,
@@ -131065,11 +128983,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.world_expedition_data
-
-	var_6_16[315002] = {
+	pg.base.world_expedition_data[315002] = {
 		id = 315002,
 		expedition_sairenvalueC = 8000,
 		failed_morale = 1,
@@ -131151,11 +129065,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.world_expedition_data
-
-	var_6_17[2] = {
+	pg.base.world_expedition_data[2] = {
 		id = 315010,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -131502,11 +129412,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.world_expedition_data
-
-	var_6_18[3] = {
+	pg.base.world_expedition_data[3] = {
 		id = 315011,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -131851,11 +129757,7 @@ end)()
 		},
 		special_buff_display = {}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.world_expedition_data
-
-	var_6_19[4] = {
+	pg.base.world_expedition_data[4] = {
 		id = 315012,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -132202,11 +130104,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.world_expedition_data
-
-	var_6_20[7] = {
+	pg.base.world_expedition_data[7] = {
 		id = 315015,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -132553,11 +130451,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.world_expedition_data
-
-	var_6_21[8] = {
+	pg.base.world_expedition_data[8] = {
 		id = 315016,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -132902,11 +130796,7 @@ end)()
 		},
 		special_buff_display = {}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.world_expedition_data
-
-	var_6_22[9] = {
+	pg.base.world_expedition_data[9] = {
 		id = 315017,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -133253,11 +131143,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.world_expedition_data
-
-	var_6_23[12] = {
+	pg.base.world_expedition_data[12] = {
 		id = 315020,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -133554,11 +131440,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.world_expedition_data
-
-	var_6_24[13] = {
+	pg.base.world_expedition_data[13] = {
 		id = 315021,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -133855,11 +131737,7 @@ end)()
 			4010
 		}
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.world_expedition_data
-
-	var_6_25[14] = {
+	pg.base.world_expedition_data[14] = {
 		id = 315022,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -134156,11 +132034,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.world_expedition_data
-
-	var_6_26[17] = {
+	pg.base.world_expedition_data[17] = {
 		id = 315025,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -134457,11 +132331,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.world_expedition_data
-
-	var_6_27[18] = {
+	pg.base.world_expedition_data[18] = {
 		id = 315026,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -134758,11 +132628,7 @@ end)()
 			4010
 		}
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.world_expedition_data
-
-	var_6_28[19] = {
+	pg.base.world_expedition_data[19] = {
 		id = 315027,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135059,11 +132925,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.world_expedition_data
-
-	var_6_29[20] = {
+	pg.base.world_expedition_data[20] = {
 		id = 315028,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135360,11 +133222,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.world_expedition_data
-
-	var_6_30[22] = {
+	pg.base.world_expedition_data[22] = {
 		id = 315030,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135448,11 +133306,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.world_expedition_data
-
-	var_6_31[23] = {
+	pg.base.world_expedition_data[23] = {
 		id = 315031,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135536,11 +133390,7 @@ end)()
 			4010
 		}
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.world_expedition_data
-
-	var_6_32[24] = {
+	pg.base.world_expedition_data[24] = {
 		id = 315032,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135624,11 +133474,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.world_expedition_data
-
-	var_6_33[25] = {
+	pg.base.world_expedition_data[25] = {
 		id = 315033,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135712,11 +133558,7 @@ end)()
 			4000
 		}
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.world_expedition_data
-
-	var_6_34[26] = {
+	pg.base.world_expedition_data[26] = {
 		id = 315034,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135800,11 +133642,7 @@ end)()
 			4010
 		}
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.world_expedition_data
-
-	var_6_35[27] = {
+	pg.base.world_expedition_data[27] = {
 		id = 315035,
 		expedition_sairenvalueC = 3000,
 		failed_morale = 3,
@@ -135888,11 +133726,7 @@ end)()
 			4020
 		}
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.world_expedition_data
-
-	var_6_36[0] = {
+	pg.base.world_expedition_data[0] = {
 		id = 320000,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -136225,11 +134059,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.world_expedition_data
-
-	var_6_37[1] = {
+	pg.base.world_expedition_data[1] = {
 		id = 320001,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,
@@ -136562,8 +134392,7 @@ end)()
 		phase_drop_display = {},
 		special_buff_display = {}
 	}
-	pg = var_6_37
-	var_6_37.base.world_expedition_data[2] = {
+	pg.base.world_expedition_data[2] = {
 		id = 320002,
 		expedition_sairenvalueC = 0,
 		failed_morale = 1,

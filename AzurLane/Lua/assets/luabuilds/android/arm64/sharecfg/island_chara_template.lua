@@ -1,36 +1,9 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "island_chara_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "island_chara_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.island_chara_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.island_chara_template
-
-var_0_3.__namecode__ = true
-pg = var_0_3
-
-local var_0_4 = var_0_3.island_chara_template
-
-var_0_4.all = {
+﻿pg = pg or {}
+pg.island_chara_template = rawget(pg, "island_chara_template") or setmetatable({
+	__name = "island_chara_template"
+}, confNEO)
+pg.island_chara_template.__namecode__ = true
+pg.island_chara_template.all = {
 	1,
 	10517,
 	10703,
@@ -67,25 +40,11 @@ var_0_4.all = {
 	20212,
 	30707
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.island_chara_template = {}
+pg.base = pg.base or {}
+pg.base.island_chara_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.island_chara_template
-
-	var_1_0[1] = {
+	pg.base.island_chara_template[1] = {
 		name = "工作啾",
 		power = 999,
 		invite_item = 0,
@@ -299,11 +258,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.island_chara_template
-
-	var_1_1[10517] = {
+	pg.base.island_chara_template[10517] = {
 		name = "{namecode:199}",
 		power = 100,
 		invite_item = 200005,
@@ -517,11 +472,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.island_chara_template
-
-	var_1_2[10703] = {
+	pg.base.island_chara_template[10703] = {
 		name = "萨拉托加",
 		power = 100,
 		invite_item = 200002,
@@ -735,11 +686,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.island_chara_template
-
-	var_1_3[20403] = {
+	pg.base.island_chara_template[20403] = {
 		name = "胡德",
 		power = 100,
 		invite_item = 200011,
@@ -953,11 +900,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.island_chara_template
-
-	var_1_4[20603] = {
+	pg.base.island_chara_template[20603] = {
 		name = "独角兽",
 		power = 100,
 		invite_item = 200009,
@@ -1171,11 +1114,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.island_chara_template
-
-	var_1_5[29903] = {
+	pg.base.island_chara_template[29903] = {
 		name = "柴郡",
 		power = 100,
 		invite_item = 200001,
@@ -1389,11 +1328,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.island_chara_template
-
-	var_1_6[30129] = {
+	pg.base.island_chara_template[30129] = {
 		name = "{namecode:18}",
 		power = 100,
 		invite_item = 200006,
@@ -1607,11 +1542,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.island_chara_template
-
-	var_1_7[30407] = {
+	pg.base.island_chara_template[30407] = {
 		name = "{namecode:193}",
 		power = 100,
 		invite_item = 200012,
@@ -1825,11 +1756,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.island_chara_template
-
-	var_1_8[31201] = {
+	pg.base.island_chara_template[31201] = {
 		name = "{namecode:98}",
 		power = 100,
 		invite_item = 200003,
@@ -2048,11 +1975,7 @@ var_0_4.base.island_chara_template = {}
 			10001150
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.island_chara_template
-
-	var_1_9[28] = {
+	pg.base.island_chara_template[28] = {
 		name = "应瑞",
 		power = 100,
 		invite_item = 200007,
@@ -2266,11 +2189,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.island_chara_template
-
-	var_1_10[29] = {
+	pg.base.island_chara_template[29] = {
 		name = "肇和",
 		power = 100,
 		invite_item = 200014,
@@ -2484,11 +2403,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.island_chara_template
-
-	var_1_11[2] = {
+	pg.base.island_chara_template[2] = {
 		name = "莱昂纳多·达·芬奇",
 		power = 100,
 		invite_item = 200015,
@@ -2702,11 +2617,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.island_chara_template
-
-	var_1_12[70104] = {
+	pg.base.island_chara_template[70104] = {
 		name = "塔什干",
 		power = 100,
 		invite_item = 200010,
@@ -2920,11 +2831,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.island_chara_template
-
-	var_1_13[90111] = {
+	pg.base.island_chara_template[90111] = {
 		name = "恶毒",
 		power = 100,
 		invite_item = 200008,
@@ -3138,11 +3045,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.island_chara_template
-
-	var_1_14[10110] = {
+	pg.base.island_chara_template[10110] = {
 		name = "威廉·D·波特",
 		power = 100,
 		invite_item = 200016,
@@ -3356,11 +3259,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.island_chara_template
-
-	var_1_15[50601] = {
+	pg.base.island_chara_template[50601] = {
 		name = "镇海",
 		power = 100,
 		invite_item = 200017,
@@ -3574,11 +3473,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.island_chara_template
-
-	var_1_16[30312] = {
+	pg.base.island_chara_template[30312] = {
 		name = "{namecode:67}",
 		power = 100,
 		invite_item = 200018,
@@ -3792,11 +3687,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.island_chara_template
-
-	var_1_17[10205] = {
+	pg.base.island_chara_template[10205] = {
 		name = "海伦娜",
 		power = 100,
 		invite_item = 200019,
@@ -4010,11 +3901,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.island_chara_template
-
-	var_1_18[49902] = {
+	pg.base.island_chara_template[49902] = {
 		name = "{namecode:440}",
 		power = 100,
 		invite_item = 200020,
@@ -4228,11 +4115,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.island_chara_template
-
-	var_1_19[40303] = {
+	pg.base.island_chara_template[40303] = {
 		name = "{namecode:427}",
 		power = 100,
 		invite_item = 200013,
@@ -4446,11 +4329,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.island_chara_template
-
-	var_1_20[990001] = {
+	pg.base.island_chara_template[990001] = {
 		name = "领洋者-娜比娅",
 		power = 100,
 		invite_item = 200021,
@@ -4664,11 +4543,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.island_chara_template
-
-	var_1_21[990002] = {
+	pg.base.island_chara_template[990002] = {
 		name = "领航员-TB",
 		power = 100,
 		invite_item = 200022,
@@ -4882,11 +4757,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.island_chara_template
-
-	var_1_22[990003] = {
+	pg.base.island_chara_template[990003] = {
 		name = "探索者-艾普洛",
 		power = 100,
 		invite_item = 200023,
@@ -5100,11 +4971,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.island_chara_template
-
-	var_1_23[20121] = {
+	pg.base.island_chara_template[20121] = {
 		name = "标枪",
 		power = 100,
 		invite_item = 200024,
@@ -5318,11 +5185,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.island_chara_template
-
-	var_1_24[10117] = {
+	pg.base.island_chara_template[10117] = {
 		name = "拉菲",
 		power = 100,
 		invite_item = 200025,
@@ -5536,11 +5399,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.island_chara_template
-
-	var_1_25[25] = {
+	pg.base.island_chara_template[25] = {
 		name = "逸仙",
 		power = 100,
 		invite_item = 200026,
@@ -5754,11 +5613,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.island_chara_template
-
-	var_1_26[50107] = {
+	pg.base.island_chara_template[50107] = {
 		name = "飞云",
 		power = 100,
 		invite_item = 200027,
@@ -5972,11 +5827,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.island_chara_template
-
-	var_1_27[49906] = {
+	pg.base.island_chara_template[49906] = {
 		name = "{namecode:481}",
 		power = 100,
 		invite_item = 200028,
@@ -6190,11 +6041,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.island_chara_template
-
-	var_1_28[30311] = {
+	pg.base.island_chara_template[30311] = {
 		name = "{namecode:66}",
 		power = 100,
 		invite_item = 200029,
@@ -6408,11 +6255,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.island_chara_template
-
-	var_1_29[19903] = {
+	pg.base.island_chara_template[19903] = {
 		name = "安克雷奇",
 		power = 100,
 		invite_item = 200030,
@@ -6626,11 +6469,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.island_chara_template
-
-	var_1_30[90107] = {
+	pg.base.island_chara_template[90107] = {
 		name = "莫加多尔",
 		power = 100,
 		invite_item = 200031,
@@ -6844,11 +6683,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.island_chara_template
-
-	var_1_31[50108] = {
+	pg.base.island_chara_template[50108] = {
 		name = "长风",
 		power = 100,
 		invite_item = 200032,
@@ -7062,11 +6897,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.island_chara_template
-
-	var_1_32[1] = {
+	pg.base.island_chara_template[1] = {
 		name = "皇家财富号",
 		power = 100,
 		invite_item = 200033,
@@ -7280,11 +7111,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.island_chara_template
-
-	var_1_33[20212] = {
+	pg.base.island_chara_template[20212] = {
 		name = "贝尔法斯特",
 		power = 100,
 		invite_item = 200034,
@@ -7498,8 +7325,7 @@ var_0_4.base.island_chara_template = {}
 		},
 		in_task = {}
 	}
-	pg = var_1_33
-	var_1_33.base.island_chara_template[30707] = {
+	pg.base.island_chara_template[30707] = {
 		name = "{namecode:97}",
 		power = 100,
 		invite_item = 200004,

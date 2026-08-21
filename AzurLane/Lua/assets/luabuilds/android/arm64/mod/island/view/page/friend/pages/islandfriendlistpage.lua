@@ -1,331 +1,144 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandFriendListPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "IslandFriendListPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandFriendListUI"
 end
 
-function var_0_1.OnLoaded(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-
-	arg_2_0.morePanel = var_1.Find(var_2_0, "scrollrect/content/more_panel")
-
-	local var_2_1 = arg_2_0.morePanel
-
-	arg_2_0.whiteBtn = var_1.Find(var_2_1, "white")
-
-	local var_2_2 = arg_2_0.morePanel
-
-	arg_2_0.blackBtn = var_1.Find(var_2_2, "black")
-
-	local var_2_3 = arg_2_0.morePanel
-
-	arg_2_0.delBtn = var_1.Find(var_2_3, "del")
+function var_0_0.OnLoaded(arg_2_0)
+	arg_2_0.morePanel = arg_2_0._tf:Find("scrollrect/content/more_panel")
+	arg_2_0.whiteBtn = arg_2_0.morePanel:Find("white")
+	arg_2_0.blackBtn = arg_2_0.morePanel:Find("black")
+	arg_2_0.delBtn = arg_2_0.morePanel:Find("del")
 	arg_2_0.cards = {}
-
-	local var_2_4 = arg_2_0._tf
-	local var_2_5 = var_1.Find(var_2_4, "scrollrect")
-
-	arg_2_0._scrollrect = var_1.GetComponent(var_2_5, "LScrollRect")
+	arg_2_0._scrollrect = arg_2_0._tf:Find("scrollrect"):GetComponent("LScrollRect")
 
 	function arg_2_0._scrollrect.onInitItem(arg_3_0)
-		local var_3_0 = arg_2_0
-
-		var_1.OnInitItem(var_3_0, arg_3_0)
+		arg_2_0:OnInitItem(arg_3_0)
 
 		return
 	end
 
-	local var_2_6 = arg_2_0._scrollrect
-
-	function var_2_6.onUpdateItem(arg_4_0, arg_4_1)
-		local var_4_0 = arg_2_0
-
-		var_2.OnUpdateItem(var_4_0, arg_4_0, arg_4_1)
+	function arg_2_0._scrollrect.onUpdateItem(arg_4_0, arg_4_1)
+		arg_2_0:OnUpdateItem(arg_4_0, arg_4_1)
 
 		return
 	end
 
-	setText = var_2_6
-
-	local var_2_7 = arg_2_0.morePanel
-	local var_2_8 = var_3.Find(var_2_7, "white/Text")
-
-	i18n = var_4
-
-	var_2_6(var_2_8, var_4("island_whiteList"))
-
-	setText = var_2_6
-
-	local var_2_9 = arg_2_0.morePanel
-	local var_2_10 = var_3.Find(var_2_9, "black/Text")
-
-	i18n = var_4
-
-	var_2_6(var_2_10, var_4("island_blackList"))
+	setText(arg_2_0.morePanel:Find("white/Text"), i18n("island_whiteList"))
+	setText(arg_2_0.morePanel:Find("black/Text"), i18n("island_blackList"))
 
 	if arg_2_0.delBtn then
-		setText = var_1
-
-		local var_2_11 = arg_2_0.morePanel
-		local var_2_12 = var_3.Find(var_2_11, "del/Text")
-
-		i18n = var_4
-
-		var_1(var_2_12, var_4("island_btn_label_del"))
+		setText(arg_2_0.morePanel:Find("del/Text"), i18n("island_btn_label_del"))
 	end
 
 	return
 end
 
-function var_0_1.CreateCard(arg_5_0, arg_5_1)
-	IslandFriendCard = var_1_10002
-
-	return var_1_10002.New(arg_5_1)
+function var_0_0.CreateCard(arg_5_0, arg_5_1)
+	return IslandFriendCard.New(arg_5_1)
 end
 
-function var_0_1.OnInitItem(arg_6_0, arg_6_1)
+function var_0_0.OnInitItem(arg_6_0, arg_6_1)
 	local var_6_0 = arg_6_0:CreateCard(arg_6_1)
 
-	onButton = var_1_10003
-
-	local var_6_1 = arg_6_0
-	local var_6_2 = var_6_0.visitBtn
-
-	local function var_6_3()
-		pg = var_2_10000
-
-		local var_7_0 = var_2_10000.GameTrackerMgr.GetInstance()
-		local var_7_1 = var_0.Record
-
-		GameTrackerBuilder = var_2_10003
-
-		local var_7_2 = var_2_10003.BuildIslandVisit
-
-		playerId = var_2_10005
-
-		var_7_1(var_7_0, var_7_2(var_2_10005))
-
-		local var_7_3 = arg_6_0
-		local var_7_4 = var_0.emit
-
-		IslandMediator = var_3
-
-		var_7_4(var_7_3, var_3.ENTER_ISLAND, var_6_0.player.id)
+	onButton(arg_6_0, var_6_0.visitBtn, function()
+		pg.GameTrackerMgr.GetInstance():Record(GameTrackerBuilder.BuildIslandVisit(playerId))
+		arg_6_0:emit(IslandMediator.ENTER_ISLAND, var_6_0.player.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_6_1, var_6_2, var_6_3, var_1_10008)
-
-	onButton = var_1_10003
-
-	local var_6_4 = arg_6_0
-	local var_6_5 = var_6_0.moreBtn
-
-	local function var_6_6()
+	end, SFX_PANEL)
+	onButton(arg_6_0, var_6_0.moreBtn, function()
 		if arg_6_0.isOpenMore then
-			local var_8_0 = arg_6_0
-
-			var_0.CloseMorePanel(var_8_0)
+			arg_6_0:CloseMorePanel()
 		else
-			local var_8_1 = var_6_0.moreBtn.parent.parent
-			local var_8_2 = var_0.InverseTransformPoint(var_8_1, var_6_0.moreBtn.position)
-			local var_8_3 = arg_6_0
-
-			var_1.OpenMorePanel(var_8_3, var_6_0.player, var_8_2)
+			arg_6_0:OpenMorePanel(var_6_0.player, (var_6_0.moreBtn.parent.parent:InverseTransformPoint(var_6_0.moreBtn.position)))
 		end
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_6_4, var_6_5, var_6_6, var_1_10008)
-
-	onButton = var_1_10003
-
-	local var_6_7 = arg_6_0
-	local var_6_8 = var_6_0.cardBtn
-
-	local function var_6_9()
-		local var_9_0 = arg_6_0
-		local var_9_1 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_9_1(var_9_0, var_2_10003.OPEN_PAGE, "IslandOtherCardPage", {
+	end, SFX_PANEL)
+	onButton(arg_6_0, var_6_0.cardBtn, function()
+		arg_6_0:emit(IslandMediator.OPEN_PAGE, "IslandOtherCardPage", {
 			var_6_0.player.id
 		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_6_7, var_6_8, var_6_9, var_1_10008)
+	end, SFX_PANEL)
 
 	arg_6_0.cards[arg_6_1] = var_6_0
 
 	return
 end
 
-function var_0_1.OpenMorePanel(arg_10_0, arg_10_1, arg_10_2)
+function var_0_0.OpenMorePanel(arg_10_0, arg_10_1, arg_10_2)
 	arg_10_0.isOpenMore = true
-	setActive = var_3
 
-	var_3(arg_10_0.morePanel, true)
+	setActive(arg_10_0.morePanel, true)
+	arg_10_0.morePanel:SetAsLastSibling()
 
-	local var_10_0 = arg_10_0.morePanel
-
-	var_3.SetAsLastSibling(var_10_0)
-
-	local var_10_1 = arg_10_0.morePanel
-
-	Vector3 = var_1_10004
-	var_10_1.localPosition = arg_10_2 - var_1_10004(110, 0, 0)
-
-	local var_10_2 = arg_10_0.morePanel
-
-	arg_10_0.whiteBtn = var_3.Find(var_10_2, "white")
-
-	local var_10_3 = arg_10_0.morePanel
-
-	arg_10_0.blackBtn = var_3.Find(var_10_3, "black")
-
-	local var_10_4 = arg_10_0.morePanel
-
-	arg_10_0.delBtn = var_3.Find(var_10_4, "del")
+	arg_10_0.morePanel.localPosition = arg_10_2 - Vector3(110, 0, 0)
+	arg_10_0.whiteBtn = arg_10_0.morePanel:Find("white")
+	arg_10_0.blackBtn = arg_10_0.morePanel:Find("black")
+	arg_10_0.delBtn = arg_10_0.morePanel:Find("del")
 
 	arg_10_0:InitMoreBtns(arg_10_1)
 
 	return
 end
 
-function var_0_1.InitMoreBtns(arg_11_0, arg_11_1)
-	onButton = var_1_10002
-
-	local var_11_0 = arg_11_0
-	local var_11_1 = arg_11_0.whiteBtn
-
-	local function var_11_2()
-		local var_12_0 = arg_11_0
-		local var_12_1 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_12_1(var_12_0, var_2_10003.ADD_WHITE_LIST, arg_11_1.id)
+function var_0_0.InitMoreBtns(arg_11_0, arg_11_1)
+	onButton(arg_11_0, arg_11_0.whiteBtn, function()
+		arg_11_0:emit(IslandMediator.ADD_WHITE_LIST, arg_11_1.id)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_11_0, var_11_1, var_11_2, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_11_3 = arg_11_0
-	local var_11_4 = arg_11_0.blackBtn
-
-	local function var_11_5()
-		local var_13_0 = arg_11_0
-		local var_13_1 = var_0.emit
-
-		IslandMediator = var_2_10003
-
-		var_13_1(var_13_0, var_2_10003.ADD_BLACK_LIST, arg_11_1.id)
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.blackBtn, function()
+		arg_11_0:emit(IslandMediator.ADD_BLACK_LIST, arg_11_1.id)
 
 		return
-	end
+	end, SFX_PANEL)
+	onButton(arg_11_0, arg_11_0.delBtn, function()
+		pg.NewStyleMsgboxMgr.GetInstance():Show(pg.NewStyleMsgboxMgr.TYPE_COMMON_MSGBOX, {
+			contentText = i18n("remove_friend_tip"),
+			onConfirm = function()
+				arg_11_0:emit(IslandMediator.REMOVE_FRIEND, arg_11_1.id)
 
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_11_3, var_11_4, var_11_5, var_1_10007)
-
-	onButton = var_1_10002
-
-	local var_11_6 = arg_11_0
-	local var_11_7 = arg_11_0.delBtn
-
-	local function var_11_8()
-		pg = var_2_10000
-
-		local var_14_0 = var_2_10000.NewStyleMsgboxMgr.GetInstance()
-		local var_14_1 = var_0.Show
-
-		pg = var_2_10003
-
-		local var_14_2 = var_2_10003.NewStyleMsgboxMgr.TYPE_COMMON_MSGBOX
-		local var_14_3 = {}
-
-		i18n = var_2_10005
-		var_14_3.contentText = var_2_10005("remove_friend_tip")
-
-		function var_14_3.onConfirm()
-			local var_15_0 = arg_11_0
-			local var_15_1 = var_0.emit
-
-			IslandMediator = var_3_10003
-
-			var_15_1(var_15_0, var_3_10003.REMOVE_FRIEND, arg_11_1.id)
-
-			return
-		end
-
-		var_14_1(var_14_0, var_14_2, var_14_3)
+				return
+			end
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_1_10002(var_11_6, var_11_7, var_11_8, var_1_10007)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.CloseMorePanel(arg_16_0)
+function var_0_0.CloseMorePanel(arg_16_0)
 	arg_16_0.isOpenMore = false
-	setActive = var_1
 
-	var_1(arg_16_0.morePanel, false)
+	setActive(arg_16_0.morePanel, false)
 
 	return
 end
 
-function var_0_1.OnUpdateItem(arg_17_0, arg_17_1, arg_17_2)
-	local var_17_0
-
+function var_0_0.OnUpdateItem(arg_17_0, arg_17_1, arg_17_2)
 	if not arg_17_0.cards[arg_17_2] then
 		arg_17_0:OnInitItem(arg_17_2)
-
-		var_17_0 = arg_17_0.cards[arg_17_2]
 	end
 
-	local var_17_1 = arg_17_0.displays[arg_17_1 + 1]
-
-	var_17_0:Update(var_17_1)
+	arg_17_0.cards[arg_17_2]:Update(arg_17_0.displays[arg_17_1 + 1])
 
 	return
 end
 
-function var_0_1.Show(arg_18_0)
-	var_0_1.super.Show(arg_18_0)
+function var_0_0.Show(arg_18_0)
+	var_0_0.super.Show(arg_18_0)
 	arg_18_0:InitList()
 
 	return
 end
 
-function var_0_1.Hide(arg_19_0)
-	var_0_1.super.Hide(arg_19_0)
+function var_0_0.Hide(arg_19_0)
+	var_0_0.super.Hide(arg_19_0)
 
 	if arg_19_0.isOpenMore then
 		arg_19_0:CloseMorePanel()
@@ -334,39 +147,27 @@ function var_0_1.Hide(arg_19_0)
 	return
 end
 
-function var_0_1.Flush(arg_20_0)
+function var_0_0.Flush(arg_20_0)
 	arg_20_0:InitList()
 
 	return
 end
 
-function var_0_1.GetData(arg_21_0, arg_21_1)
-	getProxy = var_1_10002
-	FriendProxy = var_1_10004
+function var_0_0.GetData(arg_21_0, arg_21_1)
+	local var_21_0 = getProxy(FriendProxy):getAllFriends()
 
-	local var_21_0 = var_1_10002(var_1_10004)
-
-	if #var_2.getAllFriends(var_21_0) <= 0 then
+	if #var_21_0 <= 0 then
 		return arg_21_1({})
 	end
 
 	local var_21_1 = {}
 
-	pairs = var_4
-
-	for iter_21_0, iter_21_1 in var_4(var_2) do
-		table = var_1_10009
-
-		var_1_10009.insert(var_21_1, iter_21_1.id)
+	for iter_21_0, iter_21_1 in pairs(var_21_0) do
+		table.insert(var_21_1, iter_21_1.id)
 	end
 
-	local var_21_2 = arg_21_0
-	local var_21_3 = arg_21_0.emit
-
-	IslandMediator = iter_21_0
-
-	var_21_3(var_21_2, iter_21_0.GET_GIFT_TAG, var_21_1, function()
-		arg_21_1(var_0)
+	arg_21_0:emit(IslandMediator.GET_GIFT_TAG, var_21_1, function()
+		arg_21_1(var_21_0)
 
 		return
 	end)
@@ -374,24 +175,14 @@ function var_0_1.GetData(arg_21_0, arg_21_1)
 	return
 end
 
-function var_0_1.InitList(arg_23_0)
-	pg = var_1_10001
-
-	local var_23_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.LoadingOn(var_23_0)
+function var_0_0.InitList(arg_23_0)
+	pg.UIMgr.GetInstance():LoadingOn()
 	arg_23_0:GetData(function(arg_24_0)
-		pg = var_2_10001
-
-		local var_24_0 = var_2_10001.UIMgr.GetInstance()
-
-		var_1.LoadingOff(var_24_0)
+		pg.UIMgr.GetInstance():LoadingOff()
 
 		arg_23_0.displays = arg_24_0
 
-		local var_24_1 = arg_23_0._scrollrect
-
-		var_1.SetTotalCount(var_24_1, #arg_23_0.displays)
+		arg_23_0._scrollrect:SetTotalCount(#arg_23_0.displays)
 
 		return
 	end)
@@ -399,14 +190,10 @@ function var_0_1.InitList(arg_23_0)
 	return
 end
 
-function var_0_1.OnDestroy(arg_25_0)
-	ClearLScrollrect = var_1_10001
+function var_0_0.OnDestroy(arg_25_0)
+	ClearLScrollrect(arg_25_0._scrollrect)
 
-	var_1_10001(arg_25_0._scrollrect)
-
-	pairs = var_1_10001
-
-	for iter_25_0, iter_25_1 in var_1_10001(arg_25_0.cards) do
+	for iter_25_0, iter_25_1 in pairs(arg_25_0.cards) do
 		iter_25_1:Dispose()
 	end
 
@@ -415,4 +202,4 @@ function var_0_1.OnDestroy(arg_25_0)
 	return
 end
 
-return var_0_1
+return var_0_0

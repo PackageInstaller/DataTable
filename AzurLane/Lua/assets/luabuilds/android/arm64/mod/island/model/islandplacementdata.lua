@@ -1,32 +1,13 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandPlacementData")
+﻿local var_0_0 = class("IslandPlacementData")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.id = arg_1_1.id
-	Vector2 = var_2
 
-	local var_1_0
+	local var_1_0 = arg_1_1.x or 0
+	local var_1_1 = arg_1_1.y or 0
 
-	if not arg_1_1.x then
-		var_1_0 = 0
-	end
-
-	local var_1_1
-
-	if not arg_1_1.y then
-		var_1_1 = 0
-	end
-
-	arg_1_0.position = var_2(var_1_0, var_1_1)
-
-	local var_1_2
-
-	if not arg_1_1.dir then
-		var_1_2 = 0
-	end
-
-	arg_1_0.dir = var_1_2
+	arg_1_0.position = Vector2(var_1_0, var_1_1)
+	arg_1_0.dir = arg_1_1.dir or 0
 
 	return
 end
@@ -36,9 +17,7 @@ function var_0_0.GetPosition(arg_2_0)
 end
 
 function var_0_0.GetRotation(arg_3_0)
-	Vector3 = var_1_10001
-
-	return var_1_10001(0, arg_3_0.dir * 90, 0)
+	return Vector3(0, arg_3_0.dir * 90, 0)
 end
 
 function var_0_0.IsSame(arg_4_0, arg_4_1)

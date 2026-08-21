@@ -1,73 +1,36 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CommanderChangeCatteryStyleCommand", pm.SimpleCommand)
 
-local var_0_0 = "CommanderChangeCatteryStyleCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.styleId
+	local var_1_2 = getProxy(CommanderProxy):GetCommanderHome()
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().id
-	local var_1_1 = var_2.styleId
-
-	getProxy = var_1_10005
-	CommanderProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.GetCommanderHome(var_1_2) then
+	if not var_1_2 then
 		return
 	end
 
-	if not var_6:GetCatteryById(var_1_0) then
+	local var_1_3 = var_1_2:GetCatteryById(var_1_0.id)
+
+	if not var_1_3 then
 		return
 	end
 
-	if var_7:GetStyle() == var_1_1 then
+	if var_1_3:GetStyle() == var_1_0.styleId then
 		return
 	end
 
-	pg = var_8
-
-	local var_1_3 = var_8.ConnectionMgr.GetInstance()
-
-	var_8.Send(var_1_3, 25032, {
-		slotidx = var_1_0,
-		styleidx = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(25032, {
+		slotidx = var_1_0.id,
+		styleidx = var_1_0.styleId
 	}, 25033, function(arg_2_0)
-		local var_2_2
-
 		if arg_2_0.result == 0 then
-			local var_2_0 = var_0
-
-			var_2_2.UpdateStyle(var_2_0, var_1_1)
-
-			pg = var_2_2
-
-			local var_2_1 = var_2_2.TipsMgr.GetInstance()
-
-			var_2_2 = var_2_2.ShowTips
-			i18n = var_2_10004
-
-			var_2_2(var_2_1, var_2_10004("cattery_style_change_success"))
-
-			local var_2_3 = arg_1_0
-
-			var_2_2 = var_2_2.sendNotification
-			GAME = var_2_10004
-
-			var_2_2(var_2_3, var_2_10004.COMMANDER_CHANGE_CATTERY_STYLE_DONE, {
-				id = var_0.id
+			var_1_3:UpdateStyle(var_1_1)
+			pg.TipsMgr.GetInstance():ShowTips(i18n("cattery_style_change_success"))
+			arg_1_0:sendNotification(GAME.COMMANDER_CHANGE_CATTERY_STYLE_DONE, {
+				id = var_1_3.id
 			})
 		else
-			pg = var_2_2
-
-			local var_2_4 = var_2_2.TipsMgr.GetInstance()
-			local var_2_5 = var_1.ShowTips
-
-			ERROR_MESSAGE = var_2_10004
-
-			var_2_5(var_2_4, var_2_10004[arg_2_0.result] .. arg_2_0.result)
+			pg.TipsMgr.GetInstance():ShowTips(ERROR_MESSAGE[arg_2_0.result] .. arg_2_0.result)
 		end
 
 		return
@@ -76,4 +39,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

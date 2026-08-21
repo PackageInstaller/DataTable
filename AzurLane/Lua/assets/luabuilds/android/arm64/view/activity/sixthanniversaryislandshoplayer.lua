@@ -1,335 +1,147 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SixthAnniversaryIslandShopLayer", import("..base.BaseUI"))
 
-local var_0_0 = "SixthAnniversaryIslandShopLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SixthAnniversaryIslandShopUI"
 end
 
-function var_0_1.setShop(arg_2_0, arg_2_1)
+function var_0_0.setShop(arg_2_0, arg_2_1)
 	arg_2_0.shop = arg_2_1
-
-	local var_2_0 = arg_2_1
-
-	arg_2_0.goodsList = arg_2_1.getSortGoods(var_2_0)
-	getProxy = var_2
-	ActivityProxy = var_2_0
-
-	local var_2_1 = var_2(var_2_0)
-
-	arg_2_0.activity = var_2.getActivityById(var_2_1, arg_2_1.activityId)
+	arg_2_0.goodsList = arg_2_1:getSortGoods()
+	arg_2_0.activity = getProxy(ActivityProxy):getActivityById(arg_2_1.activityId)
 
 	return
 end
 
-function var_0_1.setPlayer(arg_3_0, arg_3_1)
+function var_0_0.setPlayer(arg_3_0, arg_3_1)
 	arg_3_0.player = arg_3_1
-	setText = var_1_10002
 
-	local var_3_0 = arg_3_0.rtRes
-	local var_3_1 = var_4.Find(var_3_0, "Text")
-	local var_3_2 = arg_3_0.player
-	local var_3_3
+	local var_3_0 = arg_3_0.player:getResById(350) or 0
 
-	if not var_5.getResById(var_3_2, 350) then
-		var_3_3 = 0
-	end
-
-	var_1_10002(var_3_1, var_3_3)
+	setText(arg_3_0.rtRes:Find("Text"), var_3_0)
 
 	return
 end
 
-function var_0_1.init(arg_4_0)
-	pg = var_1_10001
+function var_0_0.init(arg_4_0)
+	pg.UIMgr.GetInstance():BlurPanel(arg_4_0._tf)
 
-	local var_4_0 = var_1_10001.UIMgr.GetInstance()
+	local var_4_0 = arg_4_0._tf:Find("main")
 
-	var_1.BlurPanel(var_4_0, arg_4_0._tf)
+	setText(var_4_0:Find("time/Text"), i18n("islandshop_tips1"))
 
-	local var_4_1 = arg_4_0._tf
-	local var_4_2 = var_1.Find(var_4_1, "main")
+	arg_4_0.rtTime = var_4_0:Find("time/Text_2")
+	arg_4_0.rtRes = var_4_0:Find("tpl")
 
-	setText = var_1_10002
+	local var_4_1 = arg_4_0._tf:Find("main/view/content")
 
-	local var_4_3 = var_4_2:Find("time/Text")
+	arg_4_0.goodsItemList = UIItemList.New(var_4_1, var_4_1:Find("goods"))
 
-	i18n = var_1_10005
-
-	var_1_10002(var_4_3, var_1_10005("islandshop_tips1"))
-
-	arg_4_0.rtTime = var_4_2:Find("time/Text_2")
-	arg_4_0.rtRes = var_4_2:Find("tpl")
-
-	local var_4_4 = arg_4_0._tf
-	local var_4_5 = var_2.Find(var_4_4, "main/view/content")
-
-	UIItemList = var_4_1
-	arg_4_0.goodsItemList = var_4_1.New(var_4_5, var_4_5:Find("goods"))
-
-	local var_4_6 = arg_4_0.goodsItemList
-
-	var_3.make(var_4_6, function(arg_5_0, arg_5_1, arg_5_2)
+	arg_4_0.goodsItemList:make(function(arg_5_0, arg_5_1, arg_5_2)
 		arg_5_1 = arg_5_1 + 1
-		UIItemList = var_2_10003
 
-		if arg_5_0 == var_2_10003.EventUpdate then
-			local var_5_0 = arg_4_0.goodsCardDic
+		if arg_5_0 == UIItemList.EventUpdate then
+			arg_4_0.goodsCardDic[arg_4_0.goodsList[arg_5_1].id] = arg_5_2
 
-			var_5_0[arg_4_0.goodsList[arg_5_1].id] = arg_5_2
-			onButton = var_5_0
-
-			local var_5_1 = arg_4_0
-			local var_5_2 = arg_5_2
-
-			local function var_5_3()
-				local var_6_0 = arg_4_0
-				local var_6_1 = var_0.emit
-
-				SixthAnniversaryIslandShopMediator = var_3_10003
-
-				var_6_1(var_6_0, var_3_10003.OPEN_GOODS_WINDOW, arg_4_0.goodsList[arg_5_1])
+			onButton(arg_4_0, arg_5_2, function()
+				arg_4_0:emit(SixthAnniversaryIslandShopMediator.OPEN_GOODS_WINDOW, arg_4_0.goodsList[arg_5_1])
 
 				return
-			end
-
-			SFX_PANEL = var_2_10008
-
-			var_5_0(var_5_1, var_5_2, var_5_3, var_2_10008)
-
-			local var_5_4 = arg_4_0
-
-			var_3.updateGoodsCard(var_5_4, arg_5_2, arg_4_0.goodsList[arg_5_1])
+			end, SFX_PANEL)
+			arg_4_0:updateGoodsCard(arg_5_2, arg_4_0.goodsList[arg_5_1])
 		end
 
 		return
 	end)
-
-	onButton = var_3
-
-	local var_4_7 = arg_4_0
-	local var_4_8 = arg_4_0._tf
-	local var_4_9 = var_6.Find(var_4_8, "bg")
-
-	local function var_4_10()
-		local var_7_0 = arg_4_0
-
-		var_0.closeView(var_7_0)
+	onButton(arg_4_0, arg_4_0._tf:Find("bg"), function()
+		arg_4_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_4_8
-
-	var_3(var_4_7, var_4_9, var_4_10, var_4_8)
-
-	onButton = var_3
-
-	local var_4_11 = arg_4_0
-	local var_4_12 = arg_4_0._tf
-	local var_4_13 = var_6.Find(var_4_12, "main/btn_back")
-
-	local function var_4_14()
-		local var_8_0 = arg_4_0
-
-		var_0.closeView(var_8_0)
+	end, SFX_CANCEL)
+	onButton(arg_4_0, arg_4_0._tf:Find("main/btn_back"), function()
+		arg_4_0:closeView()
 
 		return
-	end
-
-	SFX_CANCEL = var_4_12
-
-	var_3(var_4_11, var_4_13, var_4_14, var_4_12)
+	end, SFX_CANCEL)
 
 	return
 end
 
-function var_0_1.updateGoodsCard(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = arg_9_2
-	local var_9_1 = arg_9_2.CheckCntLimit(var_9_0)
+function var_0_0.updateGoodsCard(arg_9_0, arg_9_1, arg_9_2)
+	local var_9_0 = arg_9_2:CheckCntLimit()
 
-	setActive = var_1_10004
+	setActive(arg_9_1:Find("mask"), not var_9_0)
+	setGray(arg_9_1, var_9_0 and not arg_9_2:CheckArgLimit())
 
-	var_1_10004(arg_9_1:Find("mask"), not var_9_1)
+	local var_9_1 = arg_9_2:GetConsume()
 
-	local var_9_2, var_9_3
-
-	if var_9_1 then
-		::label_9_0::
-
-		var_9_2 = arg_9_2
-		var_9_3 = not arg_9_2.CheckArgLimit(var_9_2)
-	end
-
-	setGray = var_9_0
-
-	var_9_0(arg_9_1, var_9_3)
-
-	local var_9_4 = arg_9_2:GetConsume()
-
-	setActive = var_9_2
-
-	var_9_2(arg_9_1:Find("btn_unable"), var_9_4:getOwnedCount() < var_9_4.count)
-
-	setButtonEnabled = var_9_2
-
-	var_9_2(arg_9_1, var_9_1)
-
-	local var_9_5 = {
+	setActive(arg_9_1:Find("btn_unable"), var_9_1:getOwnedCount() < var_9_1.count)
+	setButtonEnabled(arg_9_1, var_9_0)
+	updateDrop(arg_9_1:Find("icon/IconTpl"), {
 		type = arg_9_2:getConfig("commodity_type"),
 		id = arg_9_2:getConfig("commodity_id"),
 		count = arg_9_2:getConfig("num")
-	}
-
-	updateDrop = var_7
-
-	var_7(arg_9_1:Find("icon/IconTpl"), var_9_5)
-
-	onNextTick = var_7
-
-	var_7(function()
-		changeToScrollText = var_2_10000
-
-		local var_10_0 = arg_9_1
-		local var_10_1 = var_2.Find(var_10_0, "Text")
-		local var_10_2 = var_9_5
-
-		var_2_10000(var_10_1, var_3.getConfig(var_10_2, "name"))
+	})
+	onNextTick(function()
+		changeToScrollText(arg_9_1:Find("Text"), var_0:getConfig("name"))
 
 		return
 	end)
-
-	GetImageSpriteFromAtlasAsync = var_7
-	Drop = var_9
-
-	local var_9_6 = var_9.New({
+	GetImageSpriteFromAtlasAsync(Drop.New({
 		type = arg_9_2:getConfig("resource_category"),
 		id = arg_9_2:getConfig("resource_type")
-	})
+	}):getIcon(), "", arg_9_1:Find("res_icon"))
+	setText(arg_9_1:Find("btn_pay/cost"), arg_9_2:getConfig("resource_num"))
+	setText(arg_9_1:Find("btn_unable/cost"), arg_9_2:getConfig("resource_num"))
 
-	var_7(var_9.getIcon(var_9_6), "", arg_9_1:Find("res_icon"))
+	local var_9_2 = arg_9_2:getConfig("num_limit")
 
-	setText = var_7
-
-	var_7(arg_9_1:Find("btn_pay/cost"), arg_9_2:getConfig("resource_num"))
-
-	setText = var_7
-
-	local var_9_7 = arg_9_1
-
-	var_7(arg_9_1.Find(var_9_7, "btn_unable/cost"), arg_9_2:getConfig("resource_num"))
-
-	if arg_9_2:getConfig("num_limit") == 0 then
-		setText = var_8
-
-		local var_9_8 = arg_9_1:Find("limit")
-
-		i18n = var_9_7
-
-		var_8(var_9_8, var_9_7("common_no_limit"))
+	if var_9_2 == 0 then
+		setText(arg_9_1:Find("limit"), i18n("common_no_limit"))
 	else
-		setText = var_8
-
-		local var_9_9 = arg_9_1
-		local var_9_10 = arg_9_1.Find(var_9_9, "limit")
-
-		i18n = var_9_7
-
-		local var_9_11 = var_9_7("islandshop_tips2")
-
-		math = var_9_9
-
-		var_8(var_9_10, var_9_11 .. var_9_9.max(arg_9_2:GetPurchasableCnt(), 0) .. "/" .. var_7)
+		setText(arg_9_1:Find("limit"), i18n("islandshop_tips2") .. math.max(arg_9_2:GetPurchasableCnt(), 0) .. "/" .. var_9_2)
 	end
 
 	return
 end
 
-function var_0_1.refreshGoodsCard(arg_11_0, arg_11_1)
-	local var_11_0 = arg_11_0
-	local var_11_1 = arg_11_0.updateGoodsCard
-	local var_11_2 = arg_11_0.goodsCardDic[arg_11_1]
-	local var_11_3 = arg_11_0.shop
-
-	var_11_1(var_11_0, var_11_2, var_6.getGoodsById(var_11_3, arg_11_1))
+function var_0_0.refreshGoodsCard(arg_11_0, arg_11_1)
+	arg_11_0:updateGoodsCard(arg_11_0.goodsCardDic[arg_11_1], arg_11_0.shop:getGoodsById(arg_11_1))
 
 	return
 end
 
-function var_0_1.didEnter(arg_12_0)
-	pg = var_1_10001
+function var_0_0.didEnter(arg_12_0)
+	local var_12_0 = pg.TimeMgr.GetInstance()
 
-	local var_12_0 = var_1_10001.TimeMgr.GetInstance()
+	arg_12_0.timer = Timer.New(function()
+		if arg_12_0.delta then
+			arg_12_0.delta = arg_12_0.delta - 1 or arg_12_0.activity.stopTime - var_12_0:GetServerTime()
 
-	Timer = var_1_10002
-	arg_12_0.timer = var_1_10002.New(function()
-		local var_13_0 = arg_12_0
-		local var_13_3
+			local var_13_0 = string.format("%d" .. i18n("word_date") .. "%d" .. i18n("word_hour"), var_12_0:parseTimeFrom(arg_12_0.delta))
 
-		if not arg_12_0.delta or not (arg_12_0.delta - 1) then
-			local var_13_1 = arg_12_0.activity.stopTime
-			local var_13_2 = var_12_0
+			if arg_12_0.strTime ~= var_13_0 then
+				setText(arg_12_0.rtTime, var_13_0)
+			end
 
-			var_13_3 = var_13_1 - var_2.GetServerTime(var_13_2)
+			return
 		end
-
-		var_13_0.delta = var_13_3
-		string = var_13_0
-
-		local var_13_4 = var_13_0.format
-		local var_13_5 = "%d"
-
-		i18n = var_2_10003
-
-		local var_13_6 = var_2_10003("word_date")
-		local var_13_7 = "%d"
-
-		i18n = var_5
-
-		local var_13_8 = var_13_5 .. var_13_6 .. var_13_7 .. var_5("word_hour")
-		local var_13_9 = var_12_0
-		local var_13_10 = var_13_4(var_13_8, var_3.parseTimeFrom(var_13_9, arg_12_0.delta))
-
-		if arg_12_0.strTime ~= var_13_10 then
-			setText = var_1
-
-			var_1(arg_12_0.rtTime, var_13_10)
-		end
-
-		return
 	end, 1)
 
 	arg_12_0.timer.func()
-
-	local var_12_1 = arg_12_0.timer
-
-	var_2.Start(var_12_1)
+	arg_12_0.timer:Start()
 
 	arg_12_0.goodsCardDic = {}
 
-	local var_12_2 = arg_12_0.goodsItemList
-
-	var_2.align(var_12_2, #arg_12_0.goodsList)
+	arg_12_0.goodsItemList:align(#arg_12_0.goodsList)
 
 	return
 end
 
-function var_0_1.willExit(arg_14_0)
-	local var_14_0 = arg_14_0.timer
-
-	var_1.Stop(var_14_0)
-
-	pg = var_1
-
-	local var_14_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_14_1, arg_14_0._tf)
+function var_0_0.willExit(arg_14_0)
+	arg_14_0.timer:Stop()
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_14_0._tf)
 
 	return
 end
 
-return var_0_1
+return var_0_0

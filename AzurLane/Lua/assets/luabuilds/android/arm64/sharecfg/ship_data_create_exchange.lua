@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "ship_data_create_exchange") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "ship_data_create_exchange"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.ship_data_create_exchange = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.ship_data_create_exchange
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.ship_data_create_exchange = rawget(pg, "ship_data_create_exchange") or setmetatable({
+	__name = "ship_data_create_exchange"
+}, confNEO)
+pg.ship_data_create_exchange.all = {
 	1,
 	4620,
 	4704,
@@ -67,25 +44,11 @@ var_0_3.all = {
 	41249,
 	41328
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.ship_data_create_exchange = {}
+pg.base = pg.base or {}
+pg.base.ship_data_create_exchange = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.ship_data_create_exchange
-
-	var_1_0[1] = {
+	pg.base.ship_data_create_exchange[1] = {
 		exchange_request = 400,
 		exchange_available_times = 0,
 		id = 1,
@@ -102,11 +65,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			405051
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.ship_data_create_exchange
-
-	var_1_1[4620] = {
+	pg.base.ship_data_create_exchange[4620] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 4620,
@@ -114,11 +73,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107101
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.ship_data_create_exchange
-
-	var_1_2[4704] = {
+	pg.base.ship_data_create_exchange[4704] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 4704,
@@ -126,11 +81,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			207071
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.ship_data_create_exchange
-
-	var_1_3[4856] = {
+	pg.base.ship_data_create_exchange[4856] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 4856,
@@ -138,11 +89,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			405051
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.ship_data_create_exchange
-
-	var_1_4[4893] = {
+	pg.base.ship_data_create_exchange[4893] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 4893,
@@ -150,11 +97,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			105171
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.ship_data_create_exchange
-
-	var_1_5[5005] = {
+	pg.base.ship_data_create_exchange[5005] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5005,
@@ -162,11 +105,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			303191
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.ship_data_create_exchange
-
-	var_1_6[5067] = {
+	pg.base.ship_data_create_exchange[5067] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5067,
@@ -174,11 +113,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			301291
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.ship_data_create_exchange
-
-	var_1_7[5148] = {
+	pg.base.ship_data_create_exchange[5148] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5148,
@@ -186,11 +121,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			118021
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.ship_data_create_exchange
-
-	var_1_8[5165] = {
+	pg.base.ship_data_create_exchange[5165] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5165,
@@ -198,11 +129,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			405031
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.ship_data_create_exchange
-
-	var_1_9[5223] = {
+	pg.base.ship_data_create_exchange[5223] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5223,
@@ -210,11 +137,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			705021
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.ship_data_create_exchange
-
-	var_1_10[5285] = {
+	pg.base.ship_data_create_exchange[5285] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5285,
@@ -222,11 +145,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			718011
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.ship_data_create_exchange
-
-	var_1_11[5352] = {
+	pg.base.ship_data_create_exchange[5352] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5352,
@@ -234,11 +153,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			805031
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.ship_data_create_exchange
-
-	var_1_12[5425] = {
+	pg.base.ship_data_create_exchange[5425] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5425,
@@ -246,11 +161,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			205131
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.ship_data_create_exchange
-
-	var_1_13[5573] = {
+	pg.base.ship_data_create_exchange[5573] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5573,
@@ -258,11 +169,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			307151
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.ship_data_create_exchange
-
-	var_1_14[5633] = {
+	pg.base.ship_data_create_exchange[5633] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5633,
@@ -270,11 +177,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			305101
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.ship_data_create_exchange
-
-	var_1_15[5724] = {
+	pg.base.ship_data_create_exchange[5724] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5724,
@@ -282,11 +185,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			407041
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.ship_data_create_exchange
-
-	var_1_16[5758] = {
+	pg.base.ship_data_create_exchange[5758] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5758,
@@ -294,11 +193,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107101
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.ship_data_create_exchange
-
-	var_1_17[5846] = {
+	pg.base.ship_data_create_exchange[5846] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5846,
@@ -306,11 +201,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			605081
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.ship_data_create_exchange
-
-	var_1_18[5853] = {
+	pg.base.ship_data_create_exchange[5853] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5853,
@@ -318,11 +209,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			207071
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.ship_data_create_exchange
-
-	var_1_19[5965] = {
+	pg.base.ship_data_create_exchange[5965] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5965,
@@ -330,11 +217,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			205161
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.ship_data_create_exchange
-
-	var_1_20[5996] = {
+	pg.base.ship_data_create_exchange[5996] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 5996,
@@ -342,11 +225,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			405051
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.ship_data_create_exchange
-
-	var_1_21[50127] = {
+	pg.base.ship_data_create_exchange[50127] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50127,
@@ -354,11 +233,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			307161
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.ship_data_create_exchange
-
-	var_1_22[50226] = {
+	pg.base.ship_data_create_exchange[50226] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50226,
@@ -366,11 +241,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			303191
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.ship_data_create_exchange
-
-	var_1_23[50294] = {
+	pg.base.ship_data_create_exchange[50294] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50294,
@@ -378,11 +249,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107161
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.ship_data_create_exchange
-
-	var_1_24[31] = {
+	pg.base.ship_data_create_exchange[31] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50335,
@@ -390,11 +257,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			118021
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.ship_data_create_exchange
-
-	var_1_25[1] = {
+	pg.base.ship_data_create_exchange[1] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50433,
@@ -402,11 +265,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			703031
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.ship_data_create_exchange
-
-	var_1_26[50467] = {
+	pg.base.ship_data_create_exchange[50467] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50467,
@@ -414,11 +273,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			705021
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.ship_data_create_exchange
-
-	var_1_27[50614] = {
+	pg.base.ship_data_create_exchange[50614] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 50614,
@@ -426,11 +281,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			405071
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.ship_data_create_exchange
-
-	var_1_28[51037] = {
+	pg.base.ship_data_create_exchange[51037] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 51037,
@@ -438,11 +289,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			805031
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.ship_data_create_exchange
-
-	var_1_29[8034] = {
+	pg.base.ship_data_create_exchange[8034] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8034,
@@ -450,11 +297,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.ship_data_create_exchange
-
-	var_1_30[8044] = {
+	pg.base.ship_data_create_exchange[8044] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8044,
@@ -462,11 +305,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.ship_data_create_exchange
-
-	var_1_31[8056] = {
+	pg.base.ship_data_create_exchange[8056] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8056,
@@ -474,11 +313,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.ship_data_create_exchange
-
-	var_1_32[8083] = {
+	pg.base.ship_data_create_exchange[8083] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8083,
@@ -486,11 +321,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.ship_data_create_exchange
-
-	var_1_33[8094] = {
+	pg.base.ship_data_create_exchange[8094] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8094,
@@ -498,11 +329,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.ship_data_create_exchange
-
-	var_1_34[8105] = {
+	pg.base.ship_data_create_exchange[8105] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8105,
@@ -510,11 +337,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.ship_data_create_exchange
-
-	var_1_35[8119] = {
+	pg.base.ship_data_create_exchange[8119] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 8119,
@@ -522,11 +345,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.ship_data_create_exchange
-
-	var_1_36[30863] = {
+	pg.base.ship_data_create_exchange[30863] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 30863,
@@ -534,11 +353,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.ship_data_create_exchange
-
-	var_1_37[30900] = {
+	pg.base.ship_data_create_exchange[30900] = {
 		exchange_request = 40,
 		exchange_available_times = 1,
 		id = 30900,
@@ -546,11 +361,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			107061
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.ship_data_create_exchange
-
-	var_1_38[41249] = {
+	pg.base.ship_data_create_exchange[41249] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 41249,
@@ -558,8 +369,7 @@ var_0_3.base.ship_data_create_exchange = {}
 			307081
 		}
 	}
-	pg = var_1_38
-	var_1_38.base.ship_data_create_exchange[41328] = {
+	pg.base.ship_data_create_exchange[41328] = {
 		exchange_request = 200,
 		exchange_available_times = 4,
 		id = 41328,

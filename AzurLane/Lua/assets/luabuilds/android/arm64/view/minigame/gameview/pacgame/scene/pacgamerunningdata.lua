@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("PacGameRunningData")
+﻿local var_0_0 = class("PacGameRunningData")
 
 function var_0_0.Ctor(arg_1_0)
 	arg_1_0._tpl = nil
@@ -26,8 +24,7 @@ end
 
 function var_0_0.GetMapData(arg_5_0)
 	if not arg_5_0._mapData and arg_5_0._chapterData then
-		PacGameConst = var_1
-		arg_5_0._mapData = var_1.map_data[arg_5_0._chapterData.map]
+		arg_5_0._mapData = PacGameConst.map_data[arg_5_0._chapterData.map]
 	end
 
 	return arg_5_0._mapData
@@ -69,9 +66,8 @@ end
 
 function var_0_0.SetPlayer(arg_13_0, arg_13_1)
 	arg_13_0._player = arg_13_1
-	table = var_1_10002
 
-	var_1_10002.insert(arg_13_0._roles, arg_13_1)
+	table.insert(arg_13_0._roles, arg_13_1)
 
 	return
 end
@@ -82,12 +78,9 @@ end
 
 function var_0_0.SetEnemys(arg_15_0, arg_15_1)
 	arg_15_0._enemys = arg_15_1
-	ipairs = var_1_10002
 
-	for iter_15_0, iter_15_1 in var_1_10002(arg_15_1) do
-		table = var_1_10007
-
-		var_1_10007.insert(arg_15_0._roles, iter_15_1)
+	for iter_15_0, iter_15_1 in ipairs(arg_15_1) do
+		table.insert(arg_15_0._roles, iter_15_1)
 	end
 
 	return
@@ -117,14 +110,10 @@ end
 
 function var_0_0.GetPosByIndex(arg_21_0, arg_21_1)
 	if not arg_21_0._gridDic then
-		Vector2 = var_2
-
-		return var_2(0, 0)
+		return Vector2(0, 0)
 	end
 
-	local var_21_0 = arg_21_0._gridDic[arg_21_1]
-
-	return var_2.GetPosition(var_21_0)
+	return arg_21_0._gridDic[arg_21_1]:GetPosition()
 end
 
 function var_0_0.SetJoyData(arg_22_0, arg_22_1)
@@ -145,9 +134,7 @@ function var_0_0.GetScoreCount(arg_24_0)
 	arg_24_0._scoreCount = 0
 
 	if arg_24_0._gridDic then
-		pairs = var_1
-
-		for iter_24_0, iter_24_1 in var_1(arg_24_0._gridDic) do
+		for iter_24_0, iter_24_1 in pairs(arg_24_0._gridDic) do
 			if iter_24_1:HasScore() then
 				arg_24_0._scoreCount = arg_24_0._scoreCount + 1
 			end
@@ -160,11 +147,11 @@ end
 function var_0_0.getDirectGrid(arg_25_0, arg_25_1, arg_25_2)
 	if (arg_25_1 - 1) % arg_25_0._mapData.horizontal == 0 and arg_25_2.x == -1 then
 		return nil
-	elseif var_3 % arg_25_0._mapData.horizontal == arg_25_0._mapData.horizontal - 1 and arg_25_2.x == 1 then
+	elseif (arg_25_1 - 1) % arg_25_0._mapData.horizontal == arg_25_0._mapData.horizontal - 1 and arg_25_2.x == 1 then
 		return nil
-	elseif var_3 < arg_25_0._mapData.horizontal and arg_25_2.y == 1 then
+	elseif arg_25_1 - 1 < arg_25_0._mapData.horizontal and arg_25_2.y == 1 then
 		return nil
-	elseif var_3 >= arg_25_0._mapData.horizontal * (arg_25_0._mapData.vertical - 1) and arg_25_2.y == -1 then
+	elseif arg_25_1 - 1 >= arg_25_0._mapData.horizontal * (arg_25_0._mapData.vertical - 1) and arg_25_2.y == -1 then
 		return nil
 	end
 
@@ -176,69 +163,38 @@ function var_0_0.getDirectGrid(arg_25_0, arg_25_1, arg_25_2)
 		var_25_0 = arg_25_1 + -arg_25_2.y * arg_25_0._mapData.horizontal
 	end
 
-	if var_25_0 and arg_25_0._gridDic[var_25_0] and var_5:GetPassAble() then
-		return var_5
+	if var_25_0 then
+		if arg_25_0._gridDic[var_25_0] and arg_25_0._gridDic[var_25_0]:GetPassAble() then
+			return arg_25_0._gridDic[var_25_0]
+		end
 	end
 
 	return nil
 end
 
 function var_0_0.GetNearGridIndex(arg_26_0, arg_26_1)
-	local var_26_0 = {}
-	local var_26_1 = arg_26_0
-	local var_26_2 = arg_26_0.getDirectGrid
-	local var_26_3 = arg_26_1
+	local var_26_0 = arg_26_0:getDirectGrid(arg_26_1, Vector2(-1, 0))
+	local var_26_1 = arg_26_0:getDirectGrid(arg_26_1, Vector2(1, 0))
+	local var_26_2 = arg_26_0:getDirectGrid(arg_26_1, Vector2(0, 1))
+	local var_26_3 = arg_26_0:getDirectGrid(arg_26_1, Vector2(0, -1))
 
-	Vector2 = var_1_10007
-
-	local var_26_4 = var_26_2(var_26_1, var_26_3, var_1_10007(-1, 0))
-	local var_26_5 = arg_26_0
-	local var_26_6 = arg_26_0.getDirectGrid
-	local var_26_7 = arg_26_1
-
-	Vector2 = var_1_10008
-
-	local var_26_8 = var_26_6(var_26_5, var_26_7, var_1_10008(1, 0))
-	local var_26_9 = arg_26_0
-	local var_26_10 = arg_26_0.getDirectGrid
-	local var_26_11 = arg_26_1
-
-	Vector2 = var_9
-
-	local var_26_12 = var_26_10(var_26_9, var_26_11, var_9(0, 1))
-	local var_26_13 = arg_26_0
-	local var_26_14 = arg_26_0.getDirectGrid
-	local var_26_15 = arg_26_1
-
-	Vector2 = var_10
-
-	local var_26_16 = var_26_14(var_26_13, var_26_15, var_10(0, -1))
-
-	if var_26_4 then
-		table = var_26_9
-
-		var_26_9.insert(var_26_0, var_26_4:GetIndex())
+	if var_26_0 then
+		table.insert({}, var_26_0:GetIndex())
 	end
 
-	if var_26_8 then
-		table = var_26_9
-
-		var_26_9.insert(var_26_0, var_26_8:GetIndex())
+	if var_26_1 then
+		table.insert({}, var_26_1:GetIndex())
 	end
 
-	if var_26_12 then
-		table = var_26_9
-
-		var_26_9.insert(var_26_0, var_26_12:GetIndex())
+	if var_26_2 then
+		table.insert({}, var_26_2:GetIndex())
 	end
 
-	if var_26_16 then
-		table = var_26_9
-
-		var_26_9.insert(var_26_0, var_26_16:GetIndex())
+	if var_26_3 then
+		table.insert({}, var_26_3:GetIndex())
 	end
 
-	return var_26_0
+	return {}
 end
 
 function var_0_0.SetTpl(arg_27_0, arg_27_1)
@@ -260,22 +216,14 @@ function var_0_0.GetTplItemFromPool(arg_28_0, arg_28_1, arg_28_2)
 		arg_28_0._tplItemPool[arg_28_1] = {}
 	end
 
-	local var_28_0
-
 	if #arg_28_0._tplItemPool[arg_28_1] == 0 then
-		tf = var_28_0
-		instantiate = var_1_10005
-		findTF = var_1_10007
-		var_28_0 = var_28_0(var_1_10005(var_1_10007(arg_28_0._tpl, arg_28_1)))
-		setParent = var_1_10004
+		local var_28_0 = tf(instantiate(findTF(arg_28_0._tpl, arg_28_1)))
 
-		var_1_10004(var_28_0, arg_28_2)
+		setParent(var_28_0, arg_28_2)
 
 		return var_28_0, true
 	else
-		table = var_28_0
-
-		return var_28_0.remove(arg_28_0._tplItemPool[arg_28_1], #arg_28_0._tplItemPool[arg_28_1]), false
+		return table.remove(arg_28_0._tplItemPool[arg_28_1], #arg_28_0._tplItemPool[arg_28_1]), false
 	end
 
 	return nil, nil

@@ -1,17 +1,11 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("HolidayVillaMedalAlbumView", import(".MedalAlbumTemplateView"))
 
-local var_0_0 = "HolidayVillaMedalAlbumView"
+var_0_0.GROUP_ID = 5971
+var_0_0.MEDAL_COUNT = 7
+var_0_0.HELP_TIPS = "help_starLightAlbum"
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MedalAlbumTemplateView"))
-
-var_0_1.GROUP_ID = 5971
-var_0_1.MEDAL_COUNT = 7
-var_0_1.HELP_TIPS = "help_starLightAlbum"
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "MedalAlbumHolidayVillaPage"
 end
 
-return var_0_1
+return var_0_0

@@ -1,15 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("AuctionGameMainRoundOverPlayer", import("view.base.BasePanel"))
 
-local var_0_0 = "AuctionGameMainRoundOverPlayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BasePanel"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	arg_1_0._go = arg_1_1.gameObject
 
-	var_0_1.super.Ctor(arg_1_0, arg_1_0._go)
+	var_0_0.super.Ctor(arg_1_0, arg_1_0._go)
 
 	arg_1_0._parentClass = arg_1_2
 
@@ -19,195 +13,79 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Init(arg_2_0)
-	setText = var_1_10001
-
-	local var_2_0 = arg_2_0.uiSuccessStateText
-
-	i18n = var_1_10004
-
-	var_1_10001(var_2_0, var_1_10004("auction_main_win"))
-
-	setText = var_1_10001
-
-	local var_2_1 = arg_2_0.uiFailStateText
-
-	i18n = var_4
-
-	var_1_10001(var_2_1, var_4("auction_main_fail"))
+function var_0_0.Init(arg_2_0)
+	setText(arg_2_0.uiSuccessStateText, i18n("auction_main_win"))
+	setText(arg_2_0.uiFailStateText, i18n("auction_main_fail"))
 
 	return
 end
 
-function var_0_1.didEnter(arg_3_0, arg_3_1)
-	getProxy = var_1_10002
-	AuctionGameProxy = var_1_10004
+function var_0_0.didEnter(arg_3_0, arg_3_1)
+	local var_3_0 = getProxy(AuctionGameProxy)
+	local var_3_1 = var_3_0:GetPlayerVO(arg_3_1.playerID)
 
-	local var_3_0 = var_1_10002(var_1_10004)
-	local var_3_1 = var_2.GetPlayerVO(var_3_0, arg_3_1.playerID)
+	setScrollText(arg_3_0.uiNameText, var_3_1.name)
 
-	setScrollText = var_1_10004
+	local var_3_2 = var_3_1.icon == AuctionGameConst.TB_NPC_ID and pg.ship_skin_template[var_3_1.icon].prefab or Ship.New({
+		configId = var_3_1.icon,
+		skin_id = var_3_1.skinId
+	}):getPrefab()
 
-	var_1_10004(arg_3_0.uiNameText, var_3_1.name)
-
-	local var_3_2
-	local var_3_3 = var_3_1.icon
-
-	AuctionGameConst = var_6
-
-	if var_3_3 == var_6.TB_NPC_ID then
-		pg = var_3_3
-		var_3_2 = var_3_3.ship_skin_template[var_3_1.icon].prefab
-	else
-		Ship = var_3_3
-
-		local var_3_4 = var_3_3.New({
-			configId = var_3_1.icon,
-			skin_id = var_3_1.skinId
-		})
-
-		var_3_2 = var_3_3.getPrefab(var_3_4)
-	end
-
-	LoadSpriteAsync = var_3_3
-
-	var_3_3("qicon/" .. var_3_2, function(arg_4_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_3_0.uiIconImage) then
+	LoadSpriteAsync("qicon/" .. var_3_2, function(arg_4_0)
+		if not IsNil(arg_3_0.uiIconImage) then
 			arg_3_0.uiIconImage.sprite = arg_4_0
 		end
 
 		return
 	end)
 
-	AttireFrame = var_3_3
+	local var_3_3 = AttireFrame.attireFrameRes(var_3_1, false, AttireConst.TYPE_ICON_FRAME, var_3_1.propose)
 
-	local var_3_5 = var_3_3.attireFrameRes
-	local var_3_6 = var_3_1
-	local var_3_7 = false
-
-	AttireConst = var_1_10009
-
-	local var_3_8 = var_3_5(var_3_6, var_3_7, var_1_10009.TYPE_ICON_FRAME, var_3_1.propose)
-
-	PoolMgr = var_6
-
-	local var_3_9 = var_6.GetInstance()
-
-	var_6.GetPrefab(var_3_9, "IconFrame/" .. var_3_8, var_3_8, true, function(arg_5_0)
-		IsNil = var_2_10001
-
-		if var_2_10001(arg_3_0.uiFrameGo) then
+	PoolMgr.GetInstance():GetPrefab("IconFrame/" .. var_3_3, var_3_3, true, function(arg_5_0)
+		if IsNil(arg_3_0.uiFrameGo) then
 			return
 		end
 
 		if arg_3_0.uiFrameGo then
-			arg_5_0.name = var_3_8
-			findTF = var_1
+			arg_5_0.name = var_3_3
+			findTF(arg_5_0.transform, "icon"):GetComponent(typeof(Image)).raycastTarget = false
 
-			local var_5_0 = var_1(arg_5_0.transform, "icon")
-			local var_5_1 = var_1.GetComponent
-
-			typeof = var_2_10005
-			Image = var_2_10007
-			var_5_1(var_5_0, var_2_10005(var_2_10007)).raycastTarget = false
-			setParent = var_3
-
-			local var_5_2 = arg_5_0
-
-			tf = var_2_10006
-
-			var_3(var_5_2, var_2_10006(arg_3_0.uiFrameGo), false)
+			setParent(arg_5_0, tf(arg_3_0.uiFrameGo), false)
 		else
-			PoolMgr = var_1
-
-			local var_5_3 = var_1.GetInstance()
-
-			var_1.ReturnPrefab(var_5_3, "IconFrame/" .. var_3_8, var_3_8, arg_5_0)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_3_3, var_3_3, arg_5_0)
 		end
 
 		return
 	end)
 
-	local var_3_10 = var_2:GetRound()
-	local var_3_11 = var_3_1.id
-	local var_3_12
+	local var_3_4 = var_3_0:GetRoundEventAndBidInfo(var_3_0:GetRound(), var_3_1.id) or {}
 
-	if not var_2:GetRoundEventAndBidInfo(var_3_10, var_3_11) then
-		var_3_12 = {}
-	end
+	setText(arg_3_0.uiBidText, StringHelper.ForamtNumber(var_3_4.bidValue))
 
-	setText = var_9
-
-	local var_3_13 = arg_3_0.uiBidText
-
-	StringHelper = var_12
-
-	var_9(var_3_13, var_12.ForamtNumber(var_3_12.bidValue))
-
-	AuctionGameTools = var_9
-
-	if var_9.IsNoBid() then
-		setActive = var_9
-
-		var_9(arg_3_0.uiFailStateGo, true)
-
-		setActive = var_9
-
-		var_9(arg_3_0.uiSuccessStateGo, false)
+	if AuctionGameTools.IsNoBid() then
+		setActive(arg_3_0.uiFailStateGo, true)
+		setActive(arg_3_0.uiSuccessStateGo, false)
+	elseif AuctionGameTools.IsBidSuccess() then
+		setActive(arg_3_0.uiFailStateGo, false)
+		setActive(arg_3_0.uiSuccessStateGo, var_3_4.state == 1)
 	else
-		AuctionGameTools = var_9
-
-		if var_9.IsBidSuccess() then
-			setActive = var_9
-
-			var_9(arg_3_0.uiFailStateGo, false)
-
-			setActive = var_9
-
-			var_9(arg_3_0.uiSuccessStateGo, var_3_12.state == 1)
-		else
-			setActive = var_9
-
-			var_9(arg_3_0.uiFailStateGo, false)
-
-			setActive = var_9
-
-			var_9(arg_3_0.uiSuccessStateGo, false)
-		end
+		setActive(arg_3_0.uiFailStateGo, false)
+		setActive(arg_3_0.uiSuccessStateGo, false)
 	end
 
-	LoadSpriteAtlasAsync = var_9
-
-	var_9("ui/auctiongameui_atlas", arg_3_1.num, function(arg_6_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_3_0.uiNumImage) then
+	LoadSpriteAtlasAsync("ui/auctiongameui_atlas", arg_3_1.num, function(arg_6_0)
+		if not IsNil(arg_3_0.uiNumImage) then
 			arg_3_0.uiNumImage.sprite = arg_6_0
 		end
 
 		return
 	end)
 
-	local var_3_14 = var_2
-	local var_3_15 = var_2.GetRound(var_3_14)
-	local var_3_16
+	local var_3_5 = var_3_0:GetRound()
+	local var_3_6 = var_3_4.eventID or 501
 
-	if not var_3_12.eventID then
-		var_3_16 = 501
-	end
-
-	pg = var_3_14
-
-	local var_3_17 = var_3_14.auction_event[var_3_16]
-
-	LoadSpriteAsync = var_12
-
-	var_12(var_3_17.icon, function(arg_7_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_3_0.uiEventImage) then
+	LoadSpriteAsync(pg.auction_event[var_3_6].icon, function(arg_7_0)
+		if not IsNil(arg_3_0.uiEventImage) then
 			arg_3_0.uiEventImage.sprite = arg_7_0
 		end
 
@@ -217,21 +95,14 @@ function var_0_1.didEnter(arg_3_0, arg_3_1)
 	return
 end
 
-function var_0_1.willExit(arg_8_0)
-	IsNil = var_1_10001
+function var_0_0.willExit(arg_8_0)
+	if not IsNil(arg_8_0.uiFrameGo) then
+		local var_8_0 = tf(arg_8_0.uiFrameGo)
 
-	if not var_1_10001(arg_8_0.uiFrameGo) then
-		tf = var_1
+		if var_8_0.childCount > 0 then
+			local var_8_1 = var_8_0:GetChild(0)
 
-		if var_1(arg_8_0.uiFrameGo).childCount > 0 then
-			local var_8_0 = var_1
-			local var_8_1 = var_1.GetChild(var_8_0, 0).gameObject.name
-
-			PoolMgr = var_8_0
-
-			local var_8_2 = var_8_0.GetInstance()
-
-			var_4.ReturnPrefab(var_8_2, "IconFrame/" .. var_8_1, var_8_1, var_2.gameObject)
+			PoolMgr.GetInstance():ReturnPrefab("IconFrame/" .. var_8_1.gameObject.name, var_8_1.gameObject.name, var_8_1.gameObject)
 		end
 	end
 
@@ -240,4 +111,4 @@ function var_0_1.willExit(arg_8_0)
 	return
 end
 
-return var_0_1
+return var_0_0

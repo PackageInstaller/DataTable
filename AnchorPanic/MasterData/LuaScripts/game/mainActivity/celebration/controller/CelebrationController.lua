@@ -23,12 +23,15 @@ end
 function listNotification(self)
     GameDispatcher:addEventListener(EventName.ACTIVITY_OPEN_UPDATE, self.onUpdateRedHandler, self)
     GameDispatcher:addEventListener(EventName.ACTIVITY_CLOSE_UPDATE, self.onUpdateRedHandler, self)
+    GameDispatcher:addEventListener(EventName.UPDATE_ACTIVITY_RED, self.onUpdateRedHandler, self)
     GameDispatcher:addEventListener(EventName.UPDATE_CELEBRATION_RED_STATE, self.onUpdateRedHandler, self)
     GameDispatcher:addEventListener(EventName.OPEN_CELEBRATION_PANEL, self.onOpenCelebrationPanelHandler, self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_SSR_OPTIONAL_AWARD,self.onReqReciveSSROptionalAwardHandler,self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_RECHARGE_AWARD,self.onReqReciveCelebrationRechargetAwardHandler,self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_CELEBRATION_TASK_AWARD,self.onReqReciveCelebrationTaskAwardHandler,self)
     GameDispatcher:addEventListener(EventName.REQ_RECIVE_CELEBRATION_TARGET_TASK_AWARD,self.onReqReciveCelebrationTaskTargetAwardHandler,self)
+
+    role.RoleManager:getRoleVo():addEventListener(role.RoleVo.CHANGE_PLAYER_MONEY, self.onUpdateRedHandler, self)
 end
 
 --注册server发来的数据
@@ -42,6 +45,9 @@ function registerMsgHandler(self)
         SC_CELE_ACTIVITY_TASK_TARGET_GAIN=self.onResUpdateTaskTargetInfoMsgHandler,
         SC_CELE_RECHARGE_PANEL = self.onResUpdateAccRechargeInfoMsgHandler,
         SC_CELE_RECHARGE_RECEIVE=self.onResUpdateAccRechargeReciveMsgHandler,
+
+        SC_CELE_RECHARGE2_PANEL = self.onResUpdateAccRechargeInfo2MsgHandler,
+        SC_CELE_RECHARGE2_RECEIVE=self.onResUpdateAccRechargeRecive2MsgHandler,
     }
 end
 ---------------------------------------请求-----------------------------------------------------------------------------
@@ -64,7 +70,7 @@ end
 -----------------------------------------响应---------------------------------------------------------------------------
 -----------------周年庆ssr月卡自选领取结果返回-------------------
 function onResReciveSSROptionalAwardMsgHandler(self,msg)
-    if msg.result then
+    if msg.result == 1 then
         gs.Message.Show(_TT(41722))
     else
         gs.Message.Show(_TT(44209))
@@ -108,6 +114,14 @@ end
 function onUpdateRedHandler(self)
     Celebration.CelebrationManager:updateCelebrationRed()
 end
+
+function onResUpdateAccRechargeInfo2MsgHandler(self,msg)
+    Celebration.CelebrationManager:updateCelebrationTaskInfo2Msg(msg)
+end
+
+function onResUpdateAccRechargeRecive2MsgHandler(self,msg)
+    Celebration.CelebrationManager:updateAccRechargeRecive2Msg(msg)
+end
 -------------------------------------界面--------------------------------------------------------------------------------
 -- 打开周年庆面板
 function onOpenCelebrationPanelHandler(self,args)
@@ -124,10 +138,10 @@ function onOpenCelebrationPanelHandler(self,args)
     if not args.type then
         args.type = curPage
     end
-    if  (not self:checkActivityIsOpen(args.type)) or (not self:checkActivityIsOpen(Celebration.CelebrationConst.Celebration_Task)) then
-        gs.Message.Show(_TT(94503))
-        return
-    end
+    -- if  (not self:checkActivityIsOpen(args.type)) or (not self:checkActivityIsOpen(Celebration.CelebrationConst.Celebration_Task)) then
+    --     gs.Message.Show(_TT(94503))
+    --     return
+    -- end
     if self.mCelebrationPanel == nil then
         self.mCelebrationPanel = Celebration.CelebrationPanel.new()
         self.mCelebrationPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyCelebrationPanelHandler, self)

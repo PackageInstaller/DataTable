@@ -123,13 +123,14 @@ function reconnectSocket(self)
                 end)
                 return
             end
-
+            local channelId, channelName = sdk.ChannelData:getData()
             SOCKET_SEND(Protocol.CS_ACCOUNT_RELOGIN,
             {
                 acc_id = web.WebManager.login_account_id or "",
                 player_id = login.LoginManager.gameLoginPlayerId or "",
                 session = login.LoginManager.gameLoginSession or "",
-                dev_platform_type = web.WebManager.dev_os or web.GetDeviceCode(nil)
+                dev_platform_type = web.WebManager.dev_os or web.GetDeviceCode(nil),
+                sdk_channel_id = channelId or 0
             })
         end
         local disconnectFunc = function(msg)
@@ -188,12 +189,12 @@ function onDisConnect(self, msg)
         self.m_socketCloseTimes = 0
         self.m_reconnectTimes = 0
 
-        local disMsg = "与服务器断开连接,请检查网络"
+        local disMsg = _TT(10000118)--[["与服务器断开连接,请检查网络"--]]
         -- local confirmCall = function()
         --     CS.Lylibs.SDKManager.Ins:RestartApplication()
         -- end
         GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-        UIFactory:alertOK0("系统提示", disMsg, function()
+        UIFactory:alertOK0(_TT(10000119)--[["系统提示"--]], disMsg, function()
             GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = false, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = false })
         end)
     else
@@ -210,7 +211,7 @@ function tryToReConnect(self)
         end
         LoopManager:removeTimer(self, self.reconnectSocket)
         GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-        self.reconnectView = UIFactory:alertOK0("系统提示", "网络连接中断，请尝试重新连接", function()
+        self.reconnectView = UIFactory:alertOK0(_TT(10000119)--[["系统提示"--]], _TT(10000120)--[["网络连接中断，请尝试重新连接"--]], function()
             self.m_reconnectTimes = 0
             if self.reconnectView then
                 self.reconnectView:close()
@@ -280,13 +281,13 @@ function onSysKickMsg(self, msg)
         print("未知")
     elseif (GameManager:getGameState() == 1) then
         print("顶号")
-        local disMsg = "您的账号在其他设备登录"
+        local disMsg = _TT(10000101)-- "您的账号在其他设备登录"
         local confirmCall = function()
             -- 跳到更新界面并更新完后强制重启
             GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = false, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = false })
         end
         GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-        UIFactory:alertOK0("账号提示", disMsg, confirmCall)
+        UIFactory:alertOK0(_TT(10000102)--[["账号提示"]], disMsg, confirmCall)
         fight.SceneManager:stopLoadScene()
 
         --清理协议等待返回列表
@@ -297,7 +298,7 @@ function onSysKickMsg(self, msg)
     elseif (GameManager:getGameState() == 3) then
         print("热更新")
         if (web.WebManager.run_update_code) then
-            local disMsg = "检测到游戏需要更新，请更新游戏"
+            local disMsg = _TT(10000103)--"检测到游戏需要更新，请更新游戏"
             local confirmCall = function()
                 -- 跳到更新界面并更新完后强制重启（更新完后先优先判断状态GameManager:getGameState()）
                 GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = false, isCleanServerInfo = false, isNeedLoginSdk = true, isNeedRunUpdate = true })
@@ -305,41 +306,40 @@ function onSysKickMsg(self, msg)
                 -- CS.Lylibs.SDKManager.Ins:RestartApplication()
             end
             GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-            UIFactory:alertOK0("更新提示", disMsg, confirmCall)
+            UIFactory:alertOK0(_TT(10000109)--[["更新提示"--]], disMsg, confirmCall)
         end
     elseif (GameManager:getGameState() == 4) then
         print("服务端维护中")
-        local disMsg = "服务器正在维护中，请重启游戏"
+        local disMsg = _TT(10000104) --"服务器正在维护中，请重启游戏"
         local confirmCall = function()
             CS.Lylibs.SDKManager.Ins:CloseApplication()
         end
         GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-        UIFactory:alertOK0("维护提示", disMsg, confirmCall)
+        UIFactory:alertOK0(_TT(10000105)--[["维护提示"--]], disMsg, confirmCall)
     elseif (GameManager:getGameState() == 5) then
         print("被封号中")
-        local disMsg = "您的账号已被封禁"
+        local disMsg = _TT(10000106)--[["您的账号已被封禁"--]]
         local confirmCall = function()
             -- 跳到更新界面并更新完后强制重启
             GameDispatcher:dispatchEvent(EventName.REQ_EXIT_GAME, { isCleanGameRes = false, isCleanServerInfo = false, isNeedLoginSdk = false, isNeedRunUpdate = false })
         end
         GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-        UIFactory:alertOK0("账号提示", disMsg, confirmCall)
+        UIFactory:alertOK0(_TT(10000102)--[["账号提示"--]], disMsg, confirmCall)
     elseif (GameManager:getGameState() == 6) then
         print("服务未开服")
-        local disMsg = "服务器暂未开启，敬请期待！"
+        local disMsg = _TT(10000107)--[["服务器暂未开启，敬请期待！"--]]
         local confirmCall = function() end
         GameManager:dispatchEvent(GameManager.NET_AUTO_ALERT)
-        UIFactory:alertOK0("开服提示", disMsg, confirmCall)
+        UIFactory:alertOK0(_TT(10000108)--[["开服提示"--]], disMsg, confirmCall)
     end
 end
 -- 禁止重连
 function isBanReconnect(self)
-    if GameManager:getGameState() == 0 or
-    GameManager:getGameState() == 1 or
-    GameManager:getGameState() == 2 or
-    GameManager:getGameState() == 3 or
-    GameManager:getGameState() == 4 or
-    GameManager:getGameState() == 5 then
+    local gameState = GameManager:getGameState()
+    if(gameState == 0 or gameState == 1 or gameState == 2 or gameState == 3 or gameState == 4 or gameState == 5)then
+        return true
+    end
+    if(GameManager:getIsExiting())then
         return true
     end
     return false

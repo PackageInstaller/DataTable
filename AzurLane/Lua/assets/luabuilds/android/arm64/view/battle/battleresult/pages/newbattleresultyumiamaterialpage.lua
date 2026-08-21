@@ -1,27 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewBattleResultYumiaMaterialPage", import("view.base.BaseSubView"))
 
-local var_0_0 = "NewBattleResultYumiaMaterialPage"
+var_0_0.YUMIA_MATERIAL_DROP_TYPE_LIST = {
+	DROP_TYPE_RYZA_DROP
+}
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseSubView"))
-local var_0_2 = {}
-
-DROP_TYPE_RYZA_DROP = var_0_0
-var_0_2[1] = var_0_0
-var_0_1.YUMIA_MATERIAL_DROP_TYPE_LIST = var_0_2
-
-function var_0_1.NeedShowYumiaMaterailDrop(arg_1_0)
+function var_0_0.NeedShowYumiaMaterailDrop(arg_1_0)
 	if not arg_1_0 then
 		return false
 	end
 
-	ipairs = var_1_10001
-
-	for iter_1_0, iter_1_1 in var_1_10001(arg_1_0) do
-		table = var_1_10006
-
-		if var_1_10006.contains(var_0_1.YUMIA_MATERIAL_DROP_TYPE_LIST, iter_1_1.type) then
+	for iter_1_0, iter_1_1 in ipairs(arg_1_0) do
+		if table.contains(var_0_0.YUMIA_MATERIAL_DROP_TYPE_LIST, iter_1_1.type) then
 			return true
 		end
 	end
@@ -29,73 +18,36 @@ function var_0_1.NeedShowYumiaMaterailDrop(arg_1_0)
 	return false
 end
 
-function var_0_1.getUIName(arg_2_0)
+function var_0_0.getUIName(arg_2_0)
 	return "NewBattleResultYumiaRewardPages"
 end
 
-function var_0_1.OnLoaded(arg_3_0)
+function var_0_0.OnLoaded(arg_3_0)
 	arg_3_0.parentTr = arg_3_0._tf.parent
+	arg_3_0.itemContainer = arg_3_0._tf:Find("item/container")
+	arg_3_0.itemTpl = arg_3_0._tf:Find("item/tpl")
+	arg_3_0.confirmBtn = arg_3_0._tf:Find("confirm_btn")
+	arg_3_0.lineTxt = arg_3_0._tf:Find("words/text")
 
-	local var_3_0 = arg_3_0._tf
-
-	arg_3_0.itemContainer = var_1.Find(var_3_0, "item/container")
-
-	local var_3_1 = arg_3_0._tf
-
-	arg_3_0.itemTpl = var_1.Find(var_3_1, "item/tpl")
-
-	local var_3_2 = arg_3_0._tf
-
-	arg_3_0.confirmBtn = var_1.Find(var_3_2, "confirm_btn")
-
-	local var_3_3 = arg_3_0._tf
-
-	arg_3_0.lineTxt = var_1.Find(var_3_3, "words/text")
-	setText = var_1
-
-	local var_3_4 = arg_3_0.confirmBtn
-	local var_3_5 = var_3.Find(var_3_4, "text")
-
-	i18n = var_4
-
-	var_1(var_3_5, var_4("word_ok"))
+	setText(arg_3_0.confirmBtn:Find("text"), i18n("word_ok"))
 
 	return
 end
 
-function var_0_1.SetUp(arg_4_0, arg_4_1)
+function var_0_0.SetUp(arg_4_0, arg_4_1)
 	arg_4_0:Show()
-
-	seriesAsync = var_2
-
-	var_2({
+	seriesAsync({
 		function(arg_5_0)
-			local var_5_0 = arg_4_0
-
-			var_1.playAnima(var_5_0, "Anim_NewBattleResultYumiaRewardPages_In")
-
-			local var_5_1 = arg_4_0
-
-			var_1.UpdateItem(var_5_1)
-
-			local var_5_2 = arg_4_0
-
-			var_1.UpdateLine(var_5_2)
-
-			local var_5_3 = arg_4_0
-
-			var_1.RegisterEvent(var_5_3, arg_5_0)
+			arg_4_0:playAnima("Anim_NewBattleResultYumiaRewardPages_In")
+			arg_4_0:UpdateItem()
+			arg_4_0:UpdateLine()
+			arg_4_0:RegisterEvent(arg_5_0)
 
 			return
 		end
 	}, function()
-		local var_6_0 = arg_4_0
-
-		var_0.Clear(var_6_0)
-
-		local var_6_1 = arg_4_0
-
-		var_0.Destroy(var_6_1)
+		arg_4_0:Clear()
+		arg_4_0:Destroy()
 		arg_4_1()
 
 		return
@@ -104,65 +56,29 @@ function var_0_1.SetUp(arg_4_0, arg_4_1)
 	return
 end
 
-function var_0_1.Show(arg_7_0)
-	var_0_1.super.Show(arg_7_0)
+function var_0_0.Show(arg_7_0)
+	var_0_0.super.Show(arg_7_0)
 
-	local var_7_0 = arg_7_0.parentTr
-	local var_7_1 = var_1.GetComponent
+	arg_7_0.parentTr:GetComponent(typeof(Image)).enabled = false
 
-	typeof = var_1_10004
-	Image = var_1_10006
-
-	local var_7_2 = var_7_1(var_7_0, var_1_10004(var_1_10006))
-
-	var_7_2.enabled = false
-	SetActive = var_7_2
-
-	local var_7_3 = arg_7_0.parentTr
-
-	var_7_2(var_3.Find(var_7_3, "Effect"), false)
+	SetActive(arg_7_0.parentTr:Find("Effect"), false)
 
 	return
 end
 
-function var_0_1.dropFilter(arg_8_0)
-	local var_8_0 = {}
-
-	ipairs = var_1_10002
-
-	for iter_8_0, iter_8_1 in var_1_10002(arg_8_0) do
-		table = var_1_10007
-
-		if var_1_10007.contains(var_0_1.YUMIA_MATERIAL_DROP_TYPE_LIST, iter_8_1.type) then
-			table = var_1_10007
-
-			var_1_10007.insert(var_8_0, iter_8_1)
+function var_0_0.dropFilter(arg_8_0)
+	for iter_8_0, iter_8_1 in ipairs(arg_8_0) do
+		if table.contains(var_0_0.YUMIA_MATERIAL_DROP_TYPE_LIST, iter_8_1.type) then
+			table.insert({}, iter_8_1)
 		end
 	end
 
-	return var_8_0
+	return {}
 end
 
-function var_0_1.playAnima(arg_9_0, arg_9_1, arg_9_2)
-	local var_9_0 = arg_9_0._tf
-	local var_9_1 = var_3.GetComponent
-
-	typeof = var_1_10006
-	Animation = var_1_10008
-
-	local var_9_2 = var_9_1(var_9_0, var_1_10006(var_1_10008))
-
-	var_3.Play(var_9_2, arg_9_1)
-
-	local var_9_3 = arg_9_0._tf
-	local var_9_4 = var_4.GetComponent
-
-	typeof = var_7
-	DftAniEvent = var_1_10009
-
-	local var_9_5 = var_9_4(var_9_3, var_7(var_1_10009))
-
-	var_4.SetEndEvent(var_9_5, function()
+function var_0_0.playAnima(arg_9_0, arg_9_1, arg_9_2)
+	arg_9_0._tf:GetComponent(typeof(Animation)):Play(arg_9_1)
+	arg_9_0._tf:GetComponent(typeof(DftAniEvent)):SetEndEvent(function()
 		arg_9_2()
 
 		return
@@ -171,187 +87,100 @@ function var_0_1.playAnima(arg_9_0, arg_9_1, arg_9_2)
 	return
 end
 
-function var_0_1.UpdateItem(arg_11_0, arg_11_1)
-	local var_11_0 = var_0_1.dropFilter
+function var_0_0.UpdateItem(arg_11_0, arg_11_1)
+	local var_11_0 = arg_11_0.contextData.drops
 	local var_11_1
 
 	if not arg_11_0.contextData.drops then
+		var_11_0 = {}
 		var_11_1 = {}
 	end
 
-	local var_11_2 = var_11_0(var_11_1)
-	local var_11_3 = {}
-
-	ipairs = var_11_1
-
-	for iter_11_0, iter_11_1 in var_11_1(var_11_2) do
+	for iter_11_0, iter_11_1 in ipairs((var_0_0.dropFilter(var_11_0))) do
 		for iter_11_2 = 1, iter_11_1.count do
-			Drop = var_1_10013
-			var_1_10013 = var_1_10013.New({
+			local var_11_2 = Drop.New({
 				count = 1,
 				type = iter_11_1.type,
 				id = iter_11_1.id
 			})
-			cloneTplTo = var_1_10014
-			var_1_10014 = var_1_10014(arg_11_0.itemTpl, arg_11_0.itemContainer)
-			setActive = var_15
+			local var_11_3 = cloneTplTo(arg_11_0.itemTpl, arg_11_0.itemContainer)
 
-			var_15(var_1_10014, false)
-
-			table = var_15
-
-			var_15.insert(var_11_3, var_1_10014)
-
-			updateDrop = var_15
-
-			var_15(var_1_10014:Find("IconTpl"), var_1_10013)
+			setActive(var_11_3, false)
+			table.insert({}, var_11_3)
+			updateDrop(var_11_3:Find("IconTpl"), var_11_2)
 		end
 	end
 
 	local var_11_4 = 1
 
-	Timer = var_5
-	arg_11_0.timer = var_5.New(function()
-		local var_12_0 = var_11_3[var_11_4]
-
-		setActive = var_1
-
-		var_1(var_12_0, true)
-
-		local var_12_1 = var_12_0
-		local var_12_2 = var_12_0.GetComponent
-
-		typeof = var_4
-		Animation = var_2_10006
-
-		local var_12_3 = var_12_2(var_12_1, var_4(var_2_10006))
-
-		var_1.Play(var_12_3, "Anim_NewBattleResultYumiaRewardPages_Tpl_In")
+	arg_11_0.timer = Timer.New(function()
+		setActive(var_11_1[var_11_4], true)
+		var_11_1[var_11_4]:GetComponent(typeof(Animation)):Play("Anim_NewBattleResultYumiaRewardPages_Tpl_In")
 
 		var_11_4 = var_11_4 + 1
 
 		return
-	end, 0.08, #var_11_3)
+	end, 0.08, #{})
 
-	local var_11_5 = arg_11_0.timer
-
-	var_5.Start(var_11_5)
+	arg_11_0.timer:Start()
 
 	return
 end
 
-function var_0_1.UpdateLine(arg_13_0)
-	local var_13_0 = var_0_1.dropFilter
-	local var_13_1
+function var_0_0.UpdateLine(arg_13_0)
+	local var_13_0 = arg_13_0.contextData.drops or {}
+	local var_13_1 = var_0_0.dropFilter(var_13_0)
+	local var_13_2 = AtelierMaterial.New({
+		configId = var_13_1[math.random(#var_13_1)].id
+	}):GetVoices()
 
-	if not arg_13_0.contextData.drops then
-		var_13_1 = {}
-	end
+	if var_13_2 and #var_13_2 > 0 then
+		local var_13_3 = var_13_2[math.random(#var_13_2)]
+		local var_13_4, var_13_5, var_13_6 = ShipWordHelper.GetWordAndCV(var_13_3[1], var_13_3[2], nil, PLATFORM_CODE ~= PLATFORM_US)
 
-	local var_13_2 = var_13_0(var_13_1)
-
-	math = var_1_10002
-
-	local var_13_3 = var_1_10002.random(#var_13_2)
-
-	AtelierMaterial = var_13_1
-
-	local var_13_4 = var_13_1.New({
-		configId = var_13_2[var_13_3].id
-	})
-
-	if var_3.GetVoices(var_13_4) then
-		local var_13_5 = #var_4
-
-		if 0 < var_13_5 then
-			math = var_13_5
-
-			local var_13_6 = var_4[var_13_5.random(#var_4)]
-
-			ShipWordHelper = var_6
-
-			local var_13_7 = var_6.GetWordAndCV
-			local var_13_8 = var_13_6[1]
-			local var_13_9 = var_13_6[2]
-			local var_13_10
-
-			PLATFORM_CODE = var_1_10011
-			PLATFORM_US = var_1_10012
-
-			local var_13_11, var_13_12, var_13_13 = var_13_7(var_13_8, var_13_9, var_13_10, var_1_10011 ~= var_1_10012)
-
-			if var_13_12 then
-				pg = var_13_9
-
-				local var_13_14 = var_13_9.CriMgr.GetInstance()
-
-				var_13_9.PlaySoundEffect_V3(var_13_14, var_13_12)
-			end
-
-			setText = var_13_9
-
-			var_13_9(arg_13_0.lineTxt, var_13_13)
+		if var_13_5 then
+			pg.CriMgr.GetInstance():PlaySoundEffect_V3(var_13_5)
 		end
+
+		setText(arg_13_0.lineTxt, var_13_6)
 	end
 
 	return
 end
 
-function var_0_1.RegisterEvent(arg_14_0, arg_14_1)
+function var_0_0.RegisterEvent(arg_14_0, arg_14_1)
 	if arg_14_0.exited then
 		return
 	end
 
 	local function var_14_0()
-		local var_15_0 = arg_14_0
-
-		var_0.playAnima(var_15_0, "Anim_NewBattleResultYumiaRewardPages_Out", arg_14_1)
+		arg_14_0:playAnima("Anim_NewBattleResultYumiaRewardPages_Out", arg_14_1)
 
 		return
 	end
 
-	onButton = var_1_10003
+	onButton(arg_14_0, arg_14_0._tf, function()
+		arg_14_0:playAnima("Anim_NewBattleResultYumiaRewardPages_Out", arg_14_1)
 
-	local var_14_1 = arg_14_0
-	local var_14_2 = arg_14_0._tf
-	local var_14_3 = var_14_0
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_14_1, var_14_2, var_14_3, var_1_10008)
-
-	onButton = var_1_10003
-
-	local var_14_4 = arg_14_0
-	local var_14_5 = arg_14_0.confirmBtn
-	local var_14_6 = var_14_0
-
-	SFX_PANEL = var_1_10008
-
-	var_1_10003(var_14_4, var_14_5, var_14_6, var_1_10008)
+		return
+	end, SFX_PANEL)
+	onButton(arg_14_0, arg_14_0.confirmBtn, var_14_0, SFX_PANEL)
 
 	if arg_14_0.contextData.autoSkipFlag then
-		triggerButton = var_3
-
-		var_3(arg_14_0._tf)
+		triggerButton(arg_14_0._tf)
 	end
 
 	return
 end
 
-function var_0_1.Clear(arg_16_0)
-	removeOnButton = var_1_10001
-
-	var_1_10001(arg_16_0._tf)
-
-	removeOnButton = var_1_10001
-
-	var_1_10001(arg_16_0.confirmBtn)
+function var_0_0.Clear(arg_16_0)
+	removeOnButton(arg_16_0._tf)
+	removeOnButton(arg_16_0.confirmBtn)
 
 	return
 end
 
-function var_0_1.OnDestroy(arg_17_0)
+function var_0_0.OnDestroy(arg_17_0)
 	arg_17_0.exited = true
 
 	if arg_17_0:isShowing() then
@@ -359,27 +188,14 @@ function var_0_1.OnDestroy(arg_17_0)
 	end
 
 	if arg_17_0.timer then
-		local var_17_0 = arg_17_0.timer
-
-		var_1.Stop(var_17_0)
+		arg_17_0.timer:Stop()
 	end
 
-	local var_17_1 = arg_17_0.parentTr
-	local var_17_2 = var_1.GetComponent
+	arg_17_0.parentTr:GetComponent(typeof(Image)).enabled = true
 
-	typeof = var_1_10004
-	Image = var_1_10006
-
-	local var_17_3 = var_17_2(var_17_1, var_1_10004(var_1_10006))
-
-	var_17_3.enabled = true
-	SetActive = var_17_3
-
-	local var_17_4 = arg_17_0.parentTr
-
-	var_17_3(var_3.Find(var_17_4, "Effect"), true)
+	SetActive(arg_17_0.parentTr:Find("Effect"), true)
 
 	return
 end
 
-return var_0_1
+return var_0_0

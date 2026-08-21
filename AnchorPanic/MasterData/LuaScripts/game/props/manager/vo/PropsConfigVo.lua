@@ -67,6 +67,7 @@ function parseConfigData(self, cusTid, cusData)
     self.price = cusData.sell_price
     self.uiCode = cusData.ui_code
     self.uiCodeList = cusData.ui_code_list
+    self.useUiCodeList = cusData.use_ui_code
     self.sort = cusData.sort
 
     self.effectType = cusData.effect

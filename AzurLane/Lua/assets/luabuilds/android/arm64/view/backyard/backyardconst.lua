@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("BackYardConst")
+﻿local var_0_0 = class("BackYardConst")
 
 var_0_0.MAX_FLOOR_CNT = 2
 var_0_0.SAME_ID_MODIFY_ID = 24
@@ -28,17 +26,14 @@ var_0_0.TIME_TYPE_ALL = 0
 var_0_0.TIME_TYPE_WEEK = 1
 var_0_0.TIME_TYPE_MONTH = 2
 var_0_0.TIME_TYPE_YEAR = 3
-Vector2 = var_1
-var_0_0.MAX_MAP_SIZE = var_1(23, 23)
-Vector2 = var_1
-var_0_0.MAX_FEAST_MAP_SIZE = var_1(25, 25)
+var_0_0.MAX_MAP_SIZE = Vector2(23, 23)
+var_0_0.MAX_FEAST_MAP_SIZE = Vector2(25, 25)
 
 function var_0_0.ThemeSortIndex2ServerIndex(arg_1_0, arg_1_1)
-	defaultValue = var_1_10002
-	arg_1_1 = var_1_10002(arg_1_1, true)
-	defaultValue = var_2
+	arg_1_1 = defaultValue(arg_1_1, true)
+	arg_1_0 = defaultValue(arg_1_0, 1)
 
-	if var_2(arg_1_0, 1) == 1 then
+	if arg_1_0 == 1 then
 		return 5
 	elseif arg_1_0 == 2 and arg_1_1 then
 		return 1

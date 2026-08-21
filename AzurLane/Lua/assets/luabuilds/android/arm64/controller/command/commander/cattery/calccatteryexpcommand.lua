@@ -1,118 +1,69 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CalcCatteryExpCommand", pm.SimpleCommand)
 
-local var_0_0 = "CalcCatteryExpCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = getProxy(CommanderProxy):GetCommanderHome()
+	local var_1_1 = arg_1_1:getBody().isPeriod
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody()
-
-	getProxy = var_1_10003
-	CommanderProxy = var_1_10005
-
-	local var_1_1 = var_1_10003(var_1_10005)
-	local var_1_2 = var_3.GetCommanderHome(var_1_1)
-	local var_1_3 = var_1_0.isPeriod
-
-	if not var_1_2 then
+	if not var_1_0 then
 		return
 	end
 
 	arg_1_0.commanderExps = {}
 
-	local var_1_4 = var_1_2
-	local var_1_5 = var_1_2.GetCatteries(var_1_4)
-	local var_1_6 = var_1_2:getConfig("exp_number")
+	local var_1_2 = var_1_0:getConfig("exp_number")
 
-	pairs = var_1_4
-
-	for iter_1_0, iter_1_1 in var_1_4(var_1_5) do
+	for iter_1_0, iter_1_1 in pairs((var_1_0:GetCatteries())) do
 		if iter_1_1:ExistCommander() then
-			arg_1_0:CalcExp(iter_1_1, var_1_6, var_1_3)
+			arg_1_0:CalcExp(iter_1_1, var_1_2, var_1_1)
 		end
 	end
 
-	local var_1_7 = arg_1_0
-	local var_1_8 = arg_1_0.sendNotification
-
-	GAME = iter_1_0
-
-	var_1_8(var_1_7, iter_1_0.CALC_CATTERY_EXP_DONE, {
+	arg_1_0:sendNotification(GAME.CALC_CATTERY_EXP_DONE, {
 		commanderExps = arg_1_0.commanderExps
 	})
 
 	return
 end
 
-function var_0_1.CalcExp(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local var_2_0 = arg_2_2 / 16
+function var_0_0.CalcExp(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	local var_2_0 = pg.TimeMgr.GetInstance():GetServerTime()
+	local var_2_1 = not arg_2_3 and var_2_0 - arg_2_1:GetCalcExpTime() or 3600
 
-	pg = var_1_10005
+	if var_2_1 > 0 then
+		local var_2_2 = arg_2_0:AddCommanderExp(arg_2_1:GetCommanderId(), (math.floor(arg_2_2 / 16 * var_2_1)))
 
-	local var_2_1 = var_1_10005.TimeMgr.GetInstance()
-	local var_2_2 = var_5.GetServerTime(var_2_1)
-	local var_2_3
-
-	if not arg_2_3 then
-		var_2_3 = var_2_2 - arg_2_1:GetCalcExpTime()
-	else
-		var_2_3 = 3600
-	end
-
-	if 0 < var_2_3 then
-		math = var_7
-
-		local var_2_4 = var_7.floor(var_2_0 * var_2_3)
-		local var_2_5 = arg_2_0:AddCommanderExp(arg_2_1:GetCommanderId(), var_2_4)
-
-		table = var_9
-
-		var_9.insert(arg_2_0.commanderExps, {
+		table.insert(arg_2_0.commanderExps, {
 			id = arg_2_1.id,
-			value = var_2_5
+			value = var_2_2
 		})
+		arg_2_1:UpdateCalcExpTime(var_2_0)
 
-		local var_2_6 = arg_2_1
-
-		arg_2_1.UpdateCalcExpTime(var_2_6, var_2_2)
-
-		getProxy = var_9
-		CommanderProxy = var_2_6
-
-		local var_2_7 = var_9(var_2_6)
-
-		if not var_9.InCommanderScene(var_2_7) then
-			arg_2_1:UpdateCacheExp(var_2_5)
+		if not getProxy(CommanderProxy):InCommanderScene() then
+			arg_2_1:UpdateCacheExp(var_2_2)
 		end
 	end
 
 	return
 end
 
-function var_0_1.AddCommanderExp(arg_3_0, arg_3_1, arg_3_2)
+function var_0_0.AddCommanderExp(arg_3_0, arg_3_1, arg_3_2)
 	local var_3_0 = arg_3_2
+	local var_3_1 = getProxy(CommanderProxy)
+	local var_3_2 = var_3_1:getCommanderById(arg_3_1)
+	local var_3_3 = var_3_2:isMaxLevel()
 
-	getProxy = var_1_10004
-	CommanderProxy = var_1_10006
-
-	local var_3_1 = var_1_10004(var_1_10006)
-	local var_3_2 = var_4.getCommanderById(var_3_1, arg_3_1)
-
-	if var_5.isMaxLevel(var_3_2) then
+	if var_3_3 then
 		var_3_0 = 0
 	end
 
-	var_5:addExp(arg_3_2)
-	var_4:updateCommander(var_5)
+	var_3_2:addExp(arg_3_2)
+	var_3_1:updateCommander(var_3_2)
 
-	if not var_6 and var_5:isMaxLevel() then
-		math = var_7
-		var_3_0 = var_7.max(arg_3_2 - var_5.exp, 0)
+	if not var_3_3 and var_3_2:isMaxLevel() then
+		var_3_0 = math.max(arg_3_2 - var_3_2.exp, 0)
 	end
 
 	return var_3_0
 end
 
-return var_0_1
+return var_0_0

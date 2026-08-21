@@ -1,21 +1,12 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_1 = class("BattleBombWeaponUnit", ys.Battle.BattleWeaponUnit)
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleBombWeaponUnit = var_0_1
+var_0_1.__name = "BattleBombWeaponUnit"
 
-local var_0_1 = var_0.Battle.BattleConst
-
-class = var_0_10002
-
-local var_0_2 = var_0_10002("BattleBombWeaponUnit", var_0.Battle.BattleWeaponUnit)
-
-var_0.Battle.BattleBombWeaponUnit = var_0_2
-var_0_2.__name = "BattleBombWeaponUnit"
-
-function var_0_2.Ctor(arg_1_0)
-	var_0_2.super.Ctor(arg_1_0)
+function var_0_1.Ctor(arg_1_0)
+	var_0_1.super.Ctor(arg_1_0)
 
 	arg_1_0._alertCache = {}
 	arg_1_0._cacheList = {}
@@ -23,74 +14,54 @@ function var_0_2.Ctor(arg_1_0)
 	return
 end
 
-function var_0_2.Clear(arg_2_0)
+function var_0_1.Clear(arg_2_0)
 	if arg_2_0._alertTimer then
-		pg = var_1
-
-		local var_2_0 = var_1.TimeMgr.GetInstance()
-
-		var_1.RemoveBattleTimer(var_2_0, arg_2_0._alertTimer)
+		pg.TimeMgr.GetInstance():RemoveBattleTimer(arg_2_0._alertTimer)
 	end
 
 	arg_2_0._alertTimer = nil
-	pairs = var_1
 
-	for iter_2_0, iter_2_1 in var_1(arg_2_0._cacheList) do
+	for iter_2_0, iter_2_1 in pairs(arg_2_0._cacheList) do
 		iter_2_1:Destroy()
 	end
 
-	var_0_2._cacheList = nil
+	var_0_1._cacheList = nil
 
-	var_0_2.super.Clear(arg_2_0)
+	var_0_1.super.Clear(arg_2_0)
 
 	return
 end
 
-function var_0_2.HostOnEnemy(arg_3_0)
-	var_0_2.super.HostOnEnemy(arg_3_0)
+function var_0_1.HostOnEnemy(arg_3_0)
+	var_0_1.super.HostOnEnemy(arg_3_0)
 
 	if arg_3_0._preCastInfo.alertTime ~= nil then
 		arg_3_0._showPrecastAlert = true
 
-		local function var_3_0()
-			local var_4_0 = arg_3_0._alertTimer
+		local var_3_0 = arg_3_0._preCastInfo.alertTime or 3
 
-			var_0.Stop(var_4_0)
-
-			local var_4_1 = arg_3_0
-
-			var_0.Fire(var_4_1)
+		arg_3_0._alertTimer = pg.TimeMgr.GetInstance():AddBattleTimer("", -1, var_3_0, function()
+			arg_3_0._alertTimer:Stop()
+			arg_3_0:Fire()
 
 			return
-		end
-
-		pg = var_1_10002
-
-		local var_3_1 = var_1_10002.TimeMgr.GetInstance()
-		local var_3_2 = var_2.AddBattleTimer
-		local var_3_3 = ""
-		local var_3_4 = -1
-		local var_3_5
-
-		if not arg_3_0._preCastInfo.alertTime then
-			var_3_5 = 3
-		end
-
-		arg_3_0._alertTimer = var_3_2(var_3_1, var_3_3, var_3_4, var_3_5, var_3_0, true, true)
+		end, true, true)
 	end
 
 	return
 end
 
-function var_0_2.Update(arg_5_0, arg_5_1)
+function var_0_1.Update(arg_5_0, arg_5_1)
 	arg_5_0:UpdateReload()
 
 	if arg_5_0._currentState == arg_5_0.STATE_READY then
 		arg_5_0:updateMovementInfo()
 
-		if arg_5_0:Tracking() then
+		local var_5_0 = arg_5_0:Tracking()
+
+		if var_5_0 then
 			if arg_5_0._showPrecastAlert then
-				arg_5_0:PreCast(var_2)
+				arg_5_0:PreCast(var_5_0)
 			else
 				arg_5_0._currentState = arg_5_0.STATE_PRECAST_FINISH
 			end
@@ -100,182 +71,106 @@ function var_0_2.Update(arg_5_0, arg_5_1)
 	if arg_5_0._currentState == arg_5_0.STATE_PRECAST_FINISH then
 		arg_5_0:updateMovementInfo()
 
-		local var_5_0 = arg_5_0:Tracking()
-		local var_5_1 = arg_5_0
-		local var_5_2 = arg_5_0.GetDirection(var_5_1)
+		local var_5_1 = arg_5_0:Tracking()
+		local var_5_2 = arg_5_0:GetDirection()
 		local var_5_3 = arg_5_0:GetAttackAngle()
 
-		ipairs = var_5_1
-
-		for iter_5_0, iter_5_1 in var_5_1(arg_5_0._majorEmitterList) do
+		for iter_5_0, iter_5_1 in ipairs(arg_5_0._majorEmitterList) do
 			iter_5_1:Ready()
 		end
 
-		ipairs = var_5
-
-		for iter_5_2, iter_5_3 in var_5(arg_5_0._majorEmitterList) do
-			iter_5_3:Fire(var_5_0, var_5_2, var_5_3)
+		for iter_5_2, iter_5_3 in ipairs(arg_5_0._majorEmitterList) do
+			iter_5_3:Fire(var_5_1, var_5_2, var_5_3)
 		end
 
-		var_0_2.super.Fire(arg_5_0, var_5_0)
+		var_0_1.super.Fire(arg_5_0, var_5_1)
 	end
 
 	return
 end
 
-function var_0_2.PreCast(arg_6_0, arg_6_1)
+function var_0_1.PreCast(arg_6_0, arg_6_1)
 	arg_6_0:cacheBulletID()
 
-	ipairs = var_2
-
-	for iter_6_0, iter_6_1 in var_2(arg_6_0._majorEmitterList) do
+	for iter_6_0, iter_6_1 in ipairs(arg_6_0._majorEmitterList) do
 		iter_6_1:Ready()
 	end
 
-	ipairs = var_2
-
-	for iter_6_2, iter_6_3 in var_2(arg_6_0._majorEmitterList) do
+	for iter_6_2, iter_6_3 in ipairs(arg_6_0._majorEmitterList) do
 		iter_6_3:Fire(arg_6_1, arg_6_0:GetDirection(), arg_6_0:GetAttackAngle())
 	end
 
-	var_0_2.super.PreCast(arg_6_0)
-
-	local var_6_0 = arg_6_0._alertTimer
-
-	var_2.Start(var_6_0)
+	var_0_1.super.PreCast(arg_6_0)
+	arg_6_0._alertTimer:Start()
 
 	return
 end
 
-function var_0_2.AddPreCastTimer(arg_7_0)
-	local function var_7_0()
+function var_0_1.AddPreCastTimer(arg_7_0)
+	arg_7_0._precastTimer = pg.TimeMgr.GetInstance():AddBattleTimer("weaponPrecastTimer", 0, arg_7_0._preCastInfo.time, function()
 		arg_7_0._currentState = arg_7_0.STATE_OVER_HEAT
 
-		local var_8_0 = arg_7_0
-
-		var_0.RemovePrecastTimer(var_8_0)
-
-		local var_8_1 = arg_7_0._preCastInfo
-		local var_8_2 = var_0.Event.New(var_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, var_8_1)
-		local var_8_3 = arg_7_0._host
-
-		var_2.SetWeaponPreCastBound(var_8_3, false)
-
-		local var_8_4 = arg_7_0
-
-		var_2.DispatchEvent(var_8_4, var_8_2)
+		arg_7_0:RemovePrecastTimer()
+		arg_7_0._host:SetWeaponPreCastBound(false)
+		arg_7_0:DispatchEvent((var_0.Event.New(var_0.Battle.BattleUnitEvent.WEAPON_PRE_CAST_FINISH, arg_7_0._preCastInfo)))
 
 		return
-	end
-
-	pg = var_1_10002
-
-	local var_7_1 = var_1_10002.TimeMgr.GetInstance()
-
-	arg_7_0._precastTimer = var_2.AddBattleTimer(var_7_1, "weaponPrecastTimer", 0, arg_7_0._preCastInfo.time, var_7_0, true)
+	end, true)
 
 	return
 end
 
-function var_0_2.createMajorEmitter(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
+function var_0_1.createMajorEmitter(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4, arg_9_5)
 	local var_9_0 = {}
-	local var_9_1
-
-	local function var_9_2()
-		local var_10_0 = arg_9_0
-		local var_10_1 = var_0.DispatchBulletEvent
-
-		table = var_2_10003
-
-		var_10_1(var_10_0, var_2_10003.remove(var_9_0, 1))
+	local var_9_2 = var_0.Battle.BattleBulletEmitter.New(function()
+		arg_9_0:DispatchBulletEvent(table.remove(var_9_0, 1))
 
 		return
-	end
-
-	local var_9_3
-
-	local function var_9_4()
-		ipairs = var_2_10000
-
-		for iter_11_0, iter_11_1 in var_2_10000(arg_9_0._cacheList) do
+	end, function()
+		for iter_11_0, iter_11_1 in ipairs(arg_9_0._cacheList) do
 			if iter_11_1:GetState() ~= iter_11_1.STATE_STOP then
 				return
 			end
 		end
 
-		local var_11_0 = arg_9_0
-
-		var_0.EnterCoolDown(var_11_0)
+		arg_9_0:EnterCoolDown()
 
 		return
-	end
+	end, arg_9_1)
 
-	local var_9_5 = var_0.Battle.BattleBulletEmitter.New(var_9_2, var_9_4, arg_9_1)
+	arg_9_0._cacheList[var_9_2] = var_9_2
 
-	arg_9_0._cacheList[var_9_5] = var_9_5
+	var_0_1.super.createMajorEmitter(arg_9_0, arg_9_1, arg_9_2, nil, function(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
+		local var_12_0 = arg_9_0:Spawn(arg_9_0._emitBulletIDList[arg_9_2], arg_12_4)
 
-	local function var_9_6(arg_12_0, arg_12_1, arg_12_2, arg_12_3, arg_12_4)
-		local var_12_0 = arg_9_0._emitBulletIDList[arg_9_2]
-		local var_12_1 = arg_9_0
-		local var_12_2 = var_6.Spawn(var_12_1, var_12_0, arg_12_4)
-
-		var_6.SetOffsetPriority(var_12_2, arg_12_3)
-		var_6:SetShiftInfo(arg_12_0, arg_12_1)
-
-		local var_12_4
+		var_12_0:SetOffsetPriority(arg_12_3)
+		var_12_0:SetShiftInfo(arg_12_0, arg_12_1)
 
 		if arg_9_0._tmpData.aim_type == var_0.Battle.BattleConst.WeaponAimType.AIM and arg_12_4 ~= nil then
-			local var_12_3 = var_6
-
-			var_12_4 = var_6.SetRotateInfo
-
-			local var_12_5 = arg_12_4:GetBeenAimedPosition()
-			local var_12_6 = arg_9_0
-
-			var_12_4(var_12_3, var_12_5, var_11.GetBaseAngle(var_12_6), arg_12_2)
+			var_12_0:SetRotateInfo(arg_12_4:GetBeenAimedPosition(), arg_9_0:GetBaseAngle(), arg_12_2)
 		else
-			local var_12_7 = var_6
-
-			var_12_4 = var_6.SetRotateInfo
-
-			local var_12_8
-			local var_12_9 = arg_9_0
-
-			var_12_4(var_12_7, var_12_8, var_11.GetBaseAngle(var_12_9), arg_12_2)
+			var_12_0:SetRotateInfo(nil, arg_9_0:GetBaseAngle(), arg_12_2)
 		end
 
-		table = var_12_4
-
-		var_12_4.insert(var_9_0, var_6)
-
-		local var_12_10 = arg_9_0
-
-		var_7.showBombAlert(var_12_10, var_6)
+		table.insert(var_9_0, var_12_0)
+		arg_9_0:showBombAlert(var_12_0)
 
 		return
-	end
-
-	local function var_9_7()
+	end, function()
 		return
-	end
-
-	var_0_2.super.createMajorEmitter(arg_9_0, arg_9_1, arg_9_2, nil, var_9_6, var_9_7)
+	end)
 
 	return
 end
 
-function var_0_2.DoAttack(arg_14_0)
+function var_0_1.DoAttack(arg_14_0)
 	arg_14_0:TriggerBuffOnSteday()
 
-	pairs = var_1
-
-	for iter_14_0, iter_14_1 in var_1(arg_14_0._cacheList) do
+	for iter_14_0, iter_14_1 in pairs(arg_14_0._cacheList) do
 		iter_14_1:Ready()
 	end
 
-	pairs = var_1
-
-	for iter_14_2, iter_14_3 in var_1(arg_14_0._cacheList) do
+	for iter_14_2, iter_14_3 in pairs(arg_14_0._cacheList) do
 		iter_14_3:Fire(nil, arg_14_0:GetDirection())
 	end
 
@@ -286,7 +181,7 @@ function var_0_2.DoAttack(arg_14_0)
 	return
 end
 
-function var_0_2.showBombAlert(arg_15_0, arg_15_1)
+function var_0_1.showBombAlert(arg_15_0, arg_15_1)
 	arg_15_1:SetExist(false)
 
 	if arg_15_1:GetTemplate().alert_fx ~= "" then

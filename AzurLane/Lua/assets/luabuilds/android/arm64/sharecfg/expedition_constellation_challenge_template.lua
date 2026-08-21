@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "expedition_constellation_challenge_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "expedition_constellation_challenge_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.expedition_constellation_challenge_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.expedition_constellation_challenge_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.expedition_constellation_challenge_template = rawget(pg, "expedition_constellation_challenge_template") or setmetatable({
+	__name = "expedition_constellation_challenge_template"
+}, confNEO)
+pg.expedition_constellation_challenge_template.all = {
 	10001,
 	10002,
 	10003,
@@ -63,25 +40,11 @@ var_0_3.all = {
 	10035,
 	10036
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.expedition_constellation_challenge_template = {}
+pg.base = pg.base or {}
+pg.base.expedition_constellation_challenge_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.expedition_constellation_challenge_template
-
-	var_1_0[10001] = {
+	pg.base.expedition_constellation_challenge_template[10001] = {
 		button_style = 7,
 		information_icon = "huashengdun_constellation",
 		painting = "huashengdun",
@@ -110,11 +73,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.expedition_constellation_challenge_template
-
-	var_1_1[10002] = {
+	pg.base.expedition_constellation_challenge_template[10002] = {
 		button_style = 7,
 		information_icon = "huashengdun_constellation",
 		painting = "huashengdun",
@@ -143,11 +102,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.expedition_constellation_challenge_template
-
-	var_1_2[10003] = {
+	pg.base.expedition_constellation_challenge_template[10003] = {
 		button_style = 7,
 		information_icon = "huashengdun_constellation",
 		painting = "huashengdun",
@@ -176,11 +131,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.expedition_constellation_challenge_template
-
-	var_1_3[10004] = {
+	pg.base.expedition_constellation_challenge_template[10004] = {
 		button_style = 7,
 		information_icon = "sipeibojue_constellation",
 		painting = "sipeibojue",
@@ -209,11 +160,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.expedition_constellation_challenge_template
-
-	var_1_4[10005] = {
+	pg.base.expedition_constellation_challenge_template[10005] = {
 		button_style = 7,
 		information_icon = "sipeibojue_constellation",
 		painting = "sipeibojue",
@@ -242,11 +189,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.expedition_constellation_challenge_template
-
-	var_1_5[10006] = {
+	pg.base.expedition_constellation_challenge_template[10006] = {
 		button_style = 7,
 		information_icon = "sipeibojue_constellation",
 		painting = "sipeibojue",
@@ -275,11 +218,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.expedition_constellation_challenge_template
-
-	var_1_6[10007] = {
+	pg.base.expedition_constellation_challenge_template[10007] = {
 		button_style = 7,
 		information_icon = "shengdiyage_constellation",
 		painting = "shengdiyage",
@@ -308,11 +247,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.expedition_constellation_challenge_template
-
-	var_1_7[10008] = {
+	pg.base.expedition_constellation_challenge_template[10008] = {
 		button_style = 7,
 		information_icon = "shengdiyage_constellation",
 		painting = "shengdiyage",
@@ -341,11 +276,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.expedition_constellation_challenge_template
-
-	var_1_8[10009] = {
+	pg.base.expedition_constellation_challenge_template[10009] = {
 		button_style = 7,
 		information_icon = "shengdiyage_constellation",
 		painting = "shengdiyage",
@@ -374,11 +305,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.expedition_constellation_challenge_template
-
-	var_1_9[10010] = {
+	pg.base.expedition_constellation_challenge_template[10010] = {
 		button_style = 7,
 		information_icon = "hailunna_constellation",
 		painting = "hailunna",
@@ -407,11 +334,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.expedition_constellation_challenge_template
-
-	var_1_10[10011] = {
+	pg.base.expedition_constellation_challenge_template[10011] = {
 		button_style = 7,
 		information_icon = "hailunna_constellation",
 		painting = "hailunna",
@@ -440,11 +363,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.expedition_constellation_challenge_template
-
-	var_1_11[10012] = {
+	pg.base.expedition_constellation_challenge_template[10012] = {
 		button_style = 7,
 		information_icon = "hailunna_constellation",
 		painting = "hailunna",
@@ -473,11 +392,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.expedition_constellation_challenge_template
-
-	var_1_12[10013] = {
+	pg.base.expedition_constellation_challenge_template[10013] = {
 		button_style = 7,
 		information_icon = "qiye_constellation",
 		painting = "qiye",
@@ -506,11 +421,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.expedition_constellation_challenge_template
-
-	var_1_13[10014] = {
+	pg.base.expedition_constellation_challenge_template[10014] = {
 		button_style = 7,
 		information_icon = "qiye_constellation",
 		painting = "qiye",
@@ -539,11 +450,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.expedition_constellation_challenge_template
-
-	var_1_14[10015] = {
+	pg.base.expedition_constellation_challenge_template[10015] = {
 		button_style = 7,
 		information_icon = "qiye_constellation",
 		painting = "qiye",
@@ -572,11 +479,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.expedition_constellation_challenge_template
-
-	var_1_15[10016] = {
+	pg.base.expedition_constellation_challenge_template[10016] = {
 		button_style = 7,
 		information_icon = "aierbin_constellation",
 		painting = "aierbin",
@@ -605,11 +508,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.expedition_constellation_challenge_template
-
-	var_1_16[10017] = {
+	pg.base.expedition_constellation_challenge_template[10017] = {
 		button_style = 7,
 		information_icon = "aierbin_constellation",
 		painting = "aierbin",
@@ -638,11 +537,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.expedition_constellation_challenge_template
-
-	var_1_17[10018] = {
+	pg.base.expedition_constellation_challenge_template[10018] = {
 		button_style = 7,
 		information_icon = "aierbin_constellation",
 		painting = "aierbin",
@@ -671,11 +566,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.expedition_constellation_challenge_template
-
-	var_1_18[10019] = {
+	pg.base.expedition_constellation_challenge_template[10019] = {
 		button_style = 7,
 		information_icon = "yanzhan_constellation",
 		painting = "yanzhan",
@@ -704,11 +595,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.expedition_constellation_challenge_template
-
-	var_1_19[10020] = {
+	pg.base.expedition_constellation_challenge_template[10020] = {
 		button_style = 7,
 		information_icon = "yanzhan_constellation",
 		painting = "yanzhan",
@@ -737,11 +624,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.expedition_constellation_challenge_template
-
-	var_1_20[10021] = {
+	pg.base.expedition_constellation_challenge_template[10021] = {
 		button_style = 7,
 		information_icon = "yanzhan_constellation",
 		painting = "yanzhan",
@@ -770,11 +653,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.expedition_constellation_challenge_template
-
-	var_1_21[10022] = {
+	pg.base.expedition_constellation_challenge_template[10022] = {
 		button_style = 7,
 		information_icon = "gecheng_constellation",
 		painting = "gecheng",
@@ -803,11 +682,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.expedition_constellation_challenge_template
-
-	var_1_22[10023] = {
+	pg.base.expedition_constellation_challenge_template[10023] = {
 		button_style = 7,
 		information_icon = "gecheng_constellation",
 		painting = "gecheng",
@@ -836,11 +711,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.expedition_constellation_challenge_template
-
-	var_1_23[10024] = {
+	pg.base.expedition_constellation_challenge_template[10024] = {
 		button_style = 7,
 		information_icon = "gecheng_constellation",
 		painting = "gecheng",
@@ -869,11 +740,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.expedition_constellation_challenge_template
-
-	var_1_24[10025] = {
+	pg.base.expedition_constellation_challenge_template[10025] = {
 		button_style = 7,
 		information_icon = "niukasier_constellation",
 		painting = "niukasier",
@@ -902,11 +769,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.expedition_constellation_challenge_template
-
-	var_1_25[10026] = {
+	pg.base.expedition_constellation_challenge_template[10026] = {
 		button_style = 7,
 		information_icon = "niukasier_constellation",
 		painting = "niukasier",
@@ -935,11 +798,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.expedition_constellation_challenge_template
-
-	var_1_26[10027] = {
+	pg.base.expedition_constellation_challenge_template[10027] = {
 		button_style = 7,
 		information_icon = "niukasier_constellation",
 		painting = "niukasier",
@@ -968,11 +827,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.expedition_constellation_challenge_template
-
-	var_1_27[10028] = {
+	pg.base.expedition_constellation_challenge_template[10028] = {
 		button_style = 7,
 		information_icon = "yuekegongjue_constellation",
 		painting = "yuekegongjue",
@@ -1001,11 +856,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.expedition_constellation_challenge_template
-
-	var_1_28[10029] = {
+	pg.base.expedition_constellation_challenge_template[10029] = {
 		button_style = 7,
 		information_icon = "yuekegongjue_constellation",
 		painting = "yuekegongjue",
@@ -1034,11 +885,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.expedition_constellation_challenge_template
-
-	var_1_29[10030] = {
+	pg.base.expedition_constellation_challenge_template[10030] = {
 		button_style = 7,
 		information_icon = "yuekegongjue_constellation",
 		painting = "yuekegongjue",
@@ -1067,11 +914,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.expedition_constellation_challenge_template
-
-	var_1_30[10031] = {
+	pg.base.expedition_constellation_challenge_template[10031] = {
 		button_style = 7,
 		information_icon = "xuefeng_constellation",
 		painting = "xuefeng",
@@ -1100,11 +943,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.expedition_constellation_challenge_template
-
-	var_1_31[10032] = {
+	pg.base.expedition_constellation_challenge_template[10032] = {
 		button_style = 7,
 		information_icon = "xuefeng_constellation",
 		painting = "xuefeng",
@@ -1133,11 +972,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.expedition_constellation_challenge_template
-
-	var_1_32[10033] = {
+	pg.base.expedition_constellation_challenge_template[10033] = {
 		button_style = 7,
 		information_icon = "xuefeng_constellation",
 		painting = "xuefeng",
@@ -1166,11 +1001,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.expedition_constellation_challenge_template
-
-	var_1_33[10034] = {
+	pg.base.expedition_constellation_challenge_template[10034] = {
 		button_style = 7,
 		information_icon = "gaoxiong_constellation",
 		painting = "gaoxiong",
@@ -1199,11 +1030,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.expedition_constellation_challenge_template
-
-	var_1_34[10035] = {
+	pg.base.expedition_constellation_challenge_template[10035] = {
 		button_style = 7,
 		information_icon = "gaoxiong_constellation",
 		painting = "gaoxiong",
@@ -1232,8 +1059,7 @@ var_0_3.base.expedition_constellation_challenge_template = {}
 			}
 		}
 	}
-	pg = var_1_34
-	var_1_34.base.expedition_constellation_challenge_template[10036] = {
+	pg.base.expedition_constellation_challenge_template[10036] = {
 		button_style = 7,
 		information_icon = "gaoxiong_constellation",
 		painting = "gaoxiong",

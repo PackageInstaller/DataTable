@@ -1,164 +1,93 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NewShopSkinCard")
+﻿local var_0_0 = class("NewShopSkinCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0._go = arg_1_1
-	tf = var_1_10002
-	arg_1_0._tf = var_1_10002(arg_1_1)
+	arg_1_0._tf = tf(arg_1_1)
+	arg_1_0._content = arg_1_0._tf:Find("frame/content")
+	arg_1_0._icon = arg_1_0._tf:Find("frame/content/main/bg/mask/icon"):GetComponent(typeof(Image))
+	arg_1_0._priceTF = arg_1_0._tf:Find("frame/content/main/bg/price")
 
-	local var_1_0 = arg_1_0._tf
+	setActive(arg_1_0._priceTF, false)
 
-	arg_1_0._content = var_2.Find(var_1_0, "frame/content")
-
-	local var_1_1 = arg_1_0._tf
-	local var_1_2 = var_2.Find(var_1_1, "frame/content/main/bg/mask/icon")
-	local var_1_3 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0._icon = var_1_3(var_1_2, var_5(var_1_10007))
-
-	local var_1_4 = arg_1_0._tf
-
-	arg_1_0._priceTF = var_2.Find(var_1_4, "frame/content/main/bg/price")
-	setActive = var_2
-
-	var_2(arg_1_0._priceTF, false)
-
-	local var_1_5 = arg_1_0._priceTF
-	local var_1_6 = var_2.Find(var_1_5, "gem")
-	local var_1_7 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0._priceIcon = var_1_7(var_1_6, var_5(var_1_10007))
-
-	local var_1_8 = arg_1_0._priceTF
-	local var_1_9 = var_2.Find(var_1_8, "gem/Text")
-	local var_1_10 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0._priceTxt = var_1_10(var_1_9, var_5(var_1_10007))
-
-	local var_1_11 = arg_1_0._priceTF
-	local var_1_12 = var_2.Find(var_1_11, "originalprice")
-	local var_1_13 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0._opriceTxt = var_1_13(var_1_12, var_5(var_1_10007))
-
-	local var_1_14 = arg_1_0._tf
-	local var_1_15 = var_2.Find(var_1_14, "frame/content/top/tag_activity")
-	local var_1_16 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.tagImg = var_1_16(var_1_15, var_5(var_1_10007))
-
-	local var_1_17 = arg_1_0._tf
-
-	arg_1_0.discountTag = var_2.Find(var_1_17, "frame/content/top/tag_discount")
-
-	local var_1_18 = arg_1_0.discountTag
-	local var_1_19 = var_2.Find(var_1_18, "Text")
-	local var_1_20 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.discountTagOffTxt = var_1_20(var_1_19, var_5(var_1_10007))
+	arg_1_0._priceIcon = arg_1_0._priceTF:Find("gem"):GetComponent(typeof(Image))
+	arg_1_0._priceTxt = arg_1_0._priceTF:Find("gem/Text"):GetComponent(typeof(Text))
+	arg_1_0._opriceTxt = arg_1_0._priceTF:Find("originalprice"):GetComponent(typeof(Text))
+	arg_1_0.tagImg = arg_1_0._tf:Find("frame/content/top/tag_activity"):GetComponent(typeof(Image))
+	arg_1_0.discountTag = arg_1_0._tf:Find("frame/content/top/tag_discount")
+	arg_1_0.discountTagOffTxt = arg_1_0.discountTag:Find("Text"):GetComponent(typeof(Text))
 	arg_1_0.isSelected = false
+	arg_1_0.probability = arg_1_0._tf:Find("frame/content/top/tag_probability")
 
-	local var_1_21 = arg_1_0._tf
-
-	arg_1_0.probability = var_2.Find(var_1_21, "frame/content/top/tag_probability")
-	setActive = var_2
-
-	var_2(arg_1_0.probability, false)
+	setActive(arg_1_0.probability, false)
 
 	return
 end
 
-local var_0_1 = 1
-local var_0_2 = 2
-local var_0_3 = 3
-local var_0_4 = 4
-local var_0_5 = 5
-local var_0_6 = -1
-local var_0_7 = -2
-local var_0_8 = -3
-local var_0_9 = -4
-local var_0_10 = {
+local var_0_1 = {
 	[302053] = 39
 }
-local var_0_11 = {
-	[var_0_1] = {
+local var_0_2 = {
+	{
 		"rexiao",
 		"hot_sells"
 	},
-	[var_0_2] = {
+	{
 		"xinpin",
 		"xinpin"
 	},
-	[var_0_3] = {
+	{
 		"tuijian",
 		"tujian"
 	},
-	[var_0_4] = {
+	{
 		"huodong",
 		"huodong"
 	},
-	[var_0_5] = {
+	{
 		"",
 		""
 	},
-	[var_0_6] = {
-		"fanchang",
+	{
+		"fanchang_2",
 		""
 	},
-	[var_0_7] = {
+	[-2] = {
 		"",
 		""
 	},
-	[var_0_8] = {
+	[-3] = {
 		"yigoumai",
 		"clothing"
 	},
-	[var_0_9] = {
+	[-4] = {
 		"",
 		"clothing"
 	}
 }
 
-local function var_0_12(arg_2_0, arg_2_1)
+function var_0_0.GetTagId(arg_2_0, arg_2_1)
 	local var_2_0 = arg_2_0.buyCount == 0
 
 	if arg_2_1 and var_2_0 then
-		return var_0_6
+		return var_0
 	end
 
-	local var_2_1 = arg_2_0:getConfig("genre")
-
-	ShopArgs = var_1_10004
-
-	if var_2_1 == var_1_10004.SkinShopTimeLimit then
-		return var_0_7
+	if arg_2_0:getConfig("genre") == ShopArgs.SkinShopTimeLimit then
+		return var_0
 	end
 
 	if not var_2_0 then
-		return var_0_8
+		return var_0
 	end
 
-	local var_2_2 = arg_2_0:getConfig("tag")
+	local var_2_1 = arg_2_0:getConfig("tag")
 
-	if (arg_2_0:isDisCount() or var_2_2 == var_0_5) and not arg_2_0:IsItemDiscountType() then
-		return var_0_5
-	elseif var_0_11[var_2_2] then
-		return var_2_2
+	if (arg_2_0:isDisCount() or var_2_1 == var_0) and not arg_2_0:IsItemDiscountType() then
+		return var_0
+	elseif var_0_2[var_2_1] then
+		return var_2_1
 	else
-		return var_0_9
+		return var_0
 	end
 
 	return
@@ -170,51 +99,27 @@ function var_0_0.Update(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 
 	local var_3_0 = arg_3_1:getSkinId()
 
-	pg = var_1_10006
-	arg_3_0.shipSkinConfig = var_1_10006.ship_skin_template[var_3_0]
+	arg_3_0.shipSkinConfig = pg.ship_skin_template[var_3_0]
+	arg_3_0._icon.sprite = nil
 
-	local var_3_1 = var_6[var_3_0].prefab
-	local var_3_2 = arg_3_0._icon
-
-	var_3_2.sprite = nil
-	LoadSpriteAsync = var_3_2
-
-	var_3_2("shipYardIcon/" .. var_3_1, function(arg_4_0)
-		IsNil = var_2_10001
-
-		if not var_2_10001(arg_3_0._icon) then
+	LoadSpriteAsync("shipYardIcon/" .. pg.ship_skin_template[var_3_0].prefab, function(arg_4_0)
+		if not IsNil(arg_3_0._icon) then
 			arg_3_0._icon.sprite = arg_4_0
 		end
 
 		return
 	end)
 
-	local var_3_3 = false
-	local var_3_4 = false
-	local var_3_5 = arg_3_0.commodity.type
+	local var_3_1 = false
+	local var_3_2 = false
+	local var_3_3 = arg_3_0.commodity.type == Goods.TYPE_SKIN
 
-	Goods = var_11
-
-	local var_3_6
-
-	if var_3_5 == var_11.TYPE_SKIN then
-		var_3_6 = arg_3_1:getConfig("resource_type")
-		LoadSpriteAsync = var_1_10012
-		Drop = var_14
-
-		local var_3_7 = var_14.New
-		local var_3_8 = {}
-
-		DROP_TYPE_RESOURCE = var_1_10017
-		var_3_8.type = var_1_10017
-		var_3_8.id = var_3_6
-
-		local var_3_9 = var_3_7(var_3_8)
-
-		var_1_10012(var_14.getIcon(var_3_9), function(arg_5_0)
-			IsNil = var_2_10001
-
-			if var_2_10001(arg_3_0._priceIcon) then
+	if arg_3_0.commodity.type == Goods.TYPE_SKIN then
+		LoadSpriteAsync(Drop.New({
+			type = DROP_TYPE_RESOURCE,
+			id = arg_3_1:getConfig("resource_type")
+		}):getIcon(), function(arg_5_0)
+			if IsNil(arg_3_0._priceIcon) then
 				return
 			end
 
@@ -223,77 +128,41 @@ function var_0_0.Update(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
 			return
 		end)
 
-		local var_3_10 = arg_3_1:getConfig("resource_num")
-		local var_3_11 = arg_3_1:isDisCount()
-		local var_3_12, var_3_13 = arg_3_1:GetPrice()
+		local var_3_4, var_3_5 = arg_3_1:GetPrice()
 
-		arg_3_0._priceTxt.text = var_3_12
+		arg_3_0._priceTxt.text = var_3_4
+		arg_3_0._opriceTxt.text = arg_3_1:getConfig("resource_num")
 
-		local var_3_14 = arg_3_0._opriceTxt
+		setActive(go(arg_3_0._opriceTxt), arg_3_1:isDisCount() and var_3_5 > 0)
 
-		var_3_14.text = var_3_10
-		setActive = var_3_14
-		go = var_1_10018
+		local var_3_6 = var_0_0.GetTagId(arg_3_1, arg_3_3)
 
-		var_3_14(var_1_10018(arg_3_0._opriceTxt), var_3_11 and var_3_13 > 0)
-
-		if var_0_12(arg_3_1, arg_3_3) == var_0_5 then
-			var_3_3 = true
-
-			local var_3_15 = arg_3_0.discountTagOffTxt
-
-			string = var_18
-			var_3_15.text = var_18.format("%0.2f", var_3_13) .. "%"
-		elseif var_16 == var_0_7 then
-			var_3_4 = true
+		if var_3_6 == var_0 then
+			var_3_1 = true
+			arg_3_0.discountTagOffTxt.text = string.format("%0.2f", var_3_5) .. "%"
+		elseif var_3_6 == var_0 then
+			var_3_2 = true
 		else
-			local var_3_16 = var_0_11[var_16][1]
-			local var_3_17 = var_0_11[var_16][2]
+			local var_3_7 = var_0_2[var_3_6][1]
 
-			arg_3_0.tagImg.enabled = var_3_16 and var_3_16 ~= ""
+			arg_3_0.tagImg.enabled = var_0_2[var_3_6][1] and var_3_7 ~= ""
 
 			if arg_3_0.tagImg.enabled then
-				local var_3_18 = arg_3_0.tagImg
-
-				GetSpriteFromAtlas = var_20
-				var_3_18.sprite = var_20("ui/SkinShopUI_atlas", "tag_" .. var_3_16)
+				arg_3_0.tagImg.sprite = GetSpriteFromAtlas("ui/SkinShopUI_atlas", "tag_" .. var_3_7)
 			end
 		end
 	end
 
-	setActive = var_3_6
-
-	var_3_6(arg_3_0.tagImg.gameObject, var_10 and not var_3_3 and not var_3_4)
-
-	setActive = var_3_6
-
-	var_3_6(arg_3_0.discountTag, var_10 and var_3_3)
-
-	local var_3_19 = var_0_10[var_3_0] or 0
-
-	setAnchoredPosition = var_13
-
-	var_13(arg_3_0._icon.gameObject, {
-		y = var_3_19
+	setActive(arg_3_0.tagImg.gameObject, var_3_3 and not var_3_1 and not var_3_2)
+	setActive(arg_3_0.discountTag, var_3_3 and var_3_1)
+	setAnchoredPosition(arg_3_0._icon.gameObject, {
+		y = var_0_1[var_3_0] or 0
 	})
 	arg_3_0:UpdateSelected(arg_3_2)
 
 	if arg_3_4 then
-		setActive = var_13
-
-		var_13(arg_3_0.probability, true)
-
-		local var_3_20 = arg_3_4 or 0
-
-		setText = var_14
-
-		local var_3_21 = arg_3_0.probability
-		local var_3_22 = var_16.Find(var_3_21, "Text")
-		local var_3_23 = " "
-
-		string = var_3_21
-
-		var_14(var_3_22, var_3_23 .. var_3_21.format("%0.1f", var_3_20 / 100) .. "%")
+		setActive(arg_3_0.probability, true)
+		setText(arg_3_0.probability:Find("Text"), " " .. string.format("%0.1f", (arg_3_4 or 0) / 100) .. "%")
 	end
 
 	return
@@ -302,22 +171,11 @@ end
 function var_0_0.UpdateSelected(arg_6_0, arg_6_1)
 	if arg_6_0.isSelected ~= arg_6_1 then
 		arg_6_0.isSelected = arg_6_1
+		arg_6_0._content.localPosition = Vector3(0, arg_6_1 and -7.8 or -61, 0)
 
-		local var_6_0 = arg_6_1 and -7.8 or -61
-		local var_6_1 = arg_6_0._content
+		local var_6_0 = arg_6_0.commodity.type == Goods.TYPE_SKIN
 
-		Vector3 = var_1_10004
-		var_6_1.localPosition = var_1_10004(0, var_6_0, 0)
-
-		local var_6_2 = arg_6_0.commodity.type
-
-		Goods = var_4
-
-		local var_6_3 = var_6_2 == var_4.TYPE_SKIN
-
-		setActive = var_4
-
-		var_4(arg_6_0._priceTF, arg_6_1 and var_6_3)
+		setActive(arg_6_0._priceTF, arg_6_1 and var_6_0)
 	end
 
 	return

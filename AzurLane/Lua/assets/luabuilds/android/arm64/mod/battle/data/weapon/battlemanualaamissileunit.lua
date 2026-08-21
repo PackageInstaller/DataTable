@@ -1,23 +1,15 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_0 = ys.Battle.BattleConst
+local var_0_1 = ys.Battle.BattleUnitEvent
+local var_0_2 = ys.Battle.BattleTargetChoise
+local var_0_3 = class("BattleManualAAMissileUnit", ys.Battle.BattleManualTorpedoUnit)
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.BattleManualAAMissileUnit = var_0_3
+var_0_3.__name = "BattleManualAAMissileUnit"
 
-local var_0_1 = var_0.Battle.BattleConst
-local var_0_2 = var_0.Battle.BattleUnitEvent
-local var_0_3 = var_0.Battle.BattleTargetChoise
-
-class = var_0_10004
-
-local var_0_4 = var_0_10004("BattleManualAAMissileUnit", var_0.Battle.BattleManualTorpedoUnit)
-
-var_0.Battle.BattleManualAAMissileUnit = var_0_4
-var_0_4.__name = "BattleManualAAMissileUnit"
-
-function var_0_4.Ctor(arg_1_0)
-	var_0_4.super.Ctor(arg_1_0)
+function var_0_3.Ctor(arg_1_0)
+	var_0_3.super.Ctor(arg_1_0)
 
 	arg_1_0._strikeMode = nil
 	arg_1_0._strikeModeData = nil
@@ -25,86 +17,59 @@ function var_0_4.Ctor(arg_1_0)
 	return
 end
 
-function var_0_4.createMajorEmitter(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
-	local function var_2_0(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
-		local var_3_0 = arg_2_0._emitBulletIDList[arg_2_2]
-		local var_3_1 = arg_2_0
-		local var_3_2 = var_6.Spawn(var_3_1, var_3_0, arg_3_4, var_0_4.INTERNAL)
+function var_0_3.createMajorEmitter(arg_2_0, arg_2_1, arg_2_2, arg_2_3)
+	arg_2_3 = arg_2_3 or var_0_3.EMITTER_NORMAL
 
-		var_6.SetOffsetPriority(var_3_2, arg_3_3)
-		var_6:SetShiftInfo(arg_3_0, arg_3_1)
+	local var_2_0 = var_0.Battle[arg_2_3].New(function(arg_3_0, arg_3_1, arg_3_2, arg_3_3, arg_3_4)
+		local var_3_0 = arg_2_0:Spawn(arg_2_0._emitBulletIDList[arg_2_2], arg_3_4, var_0_3.INTERNAL)
 
-		if arg_2_0._tmpData.aim_type == var_0_1.WeaponAimType.AIM and arg_3_4 ~= nil then
-			local var_3_3 = var_6
-			local var_3_4 = var_6.SetRotateInfo
-			local var_3_5 = arg_3_4:GetBeenAimedPosition()
-			local var_3_6 = arg_2_0
+		var_3_0:SetOffsetPriority(arg_3_3)
+		var_3_0:SetShiftInfo(arg_3_0, arg_3_1)
 
-			var_3_4(var_3_3, var_3_5, var_11.GetBaseAngle(var_3_6), arg_3_2)
+		if arg_2_0._tmpData.aim_type == var_0_0.WeaponAimType.AIM and arg_3_4 ~= nil then
+			var_3_0:SetRotateInfo(arg_3_4:GetBeenAimedPosition(), arg_2_0:GetBaseAngle(), arg_3_2)
 		else
-			local var_3_7 = var_6
-			local var_3_8 = var_6.SetRotateInfo
-			local var_3_9
-			local var_3_10 = arg_2_0
-
-			var_3_8(var_3_7, var_3_9, var_11.GetBaseAngle(var_3_10), arg_3_2)
+			var_3_0:SetRotateInfo(nil, arg_2_0:GetBaseAngle(), arg_3_2)
 		end
 
-		var_6:setTrackingTarget(arg_3_4)
+		var_3_0:setTrackingTarget(arg_3_4)
 
-		local var_3_11 = {}
-
-		pairs = var_8
-
-		for iter_3_0, iter_3_1 in var_8(arg_2_0._strikeModeData) do
-			var_3_11[iter_3_0] = iter_3_1
+		for iter_3_0, iter_3_1 in pairs(arg_2_0._strikeModeData) do
+			({})[iter_3_0] = iter_3_1
 		end
 
-		var_6:SetTrackingFXData(var_3_11)
+		var_3_0:SetTrackingFXData({})
+		arg_2_0:DispatchBulletEvent(var_3_0)
 
-		local var_3_12 = arg_2_0
-
-		var_8.DispatchBulletEvent(var_3_12, var_6)
-
-		return var_6
-	end
-
-	local function var_2_1()
-		ipairs = var_2_10000
-
-		for iter_4_0, iter_4_1 in var_2_10000(arg_2_0._majorEmitterList) do
+		return var_3_0
+	end, function()
+		for iter_4_0, iter_4_1 in ipairs(arg_2_0._majorEmitterList) do
 			if iter_4_1:GetState() ~= iter_4_1.STATE_STOP then
 				return
 			end
 		end
 
-		local var_4_0 = arg_2_0
-
-		var_0.DispatchEvent(var_4_0, var_0.Event.New(var_0_2.MANUAL_WEAPON_FIRE, {}))
+		arg_2_0:DispatchEvent(var_0.Event.New(var_0_1.MANUAL_WEAPON_FIRE, {}))
 
 		arg_2_0._strikeModeData = nil
 
 		return
-	end
+	end, arg_2_1)
 
-	arg_2_3 = arg_2_3 or var_0_4.EMITTER_NORMAL
+	arg_2_0._majorEmitterList[#arg_2_0._majorEmitterList + 1] = var_2_0
 
-	local var_2_2 = var_0.Battle[arg_2_3].New(var_2_0, var_2_1, arg_2_1)
-
-	arg_2_0._majorEmitterList[#arg_2_0._majorEmitterList + 1] = var_2_2
-
-	return var_2_2
+	return var_2_0
 end
 
-function var_0_4.IsStrikeMode(arg_5_0)
+function var_0_3.IsStrikeMode(arg_5_0)
 	return arg_5_0._strikeMode
 end
 
-function var_0_4.IsAttacking(arg_6_0)
-	return arg_6_0._currentState == var_0_4.STATE_ATTACK
+function var_0_3.IsAttacking(arg_6_0)
+	return arg_6_0._currentState == var_0_3.STATE_ATTACK
 end
 
-function var_0_4.Update(arg_7_0)
+function var_0_3.Update(arg_7_0)
 	arg_7_0:UpdateReload()
 
 	if arg_7_0:IsStrikeMode() then
@@ -114,7 +79,7 @@ function var_0_4.Update(arg_7_0)
 	return
 end
 
-function var_0_4.EnterStrikeMode(arg_8_0)
+function var_0_3.EnterStrikeMode(arg_8_0)
 	arg_8_0._strikeMode = true
 	arg_8_0._strikeModeData = {}
 	arg_8_0._strikeModeData.fxName = arg_8_0._preCastInfo.fx
@@ -124,52 +89,50 @@ function var_0_4.EnterStrikeMode(arg_8_0)
 	return
 end
 
-function var_0_4.MarkTarget(arg_9_0)
-	local var_9_0 = arg_9_0._strikeModeData.aimingTarget
-
+function var_0_3.MarkTarget(arg_9_0)
 	arg_9_0:updateMovementInfo()
 
-	if var_9_0 == arg_9_0:Tracking() then
+	local var_9_0 = arg_9_0:Tracking()
+
+	if arg_9_0._strikeModeData.aimingTarget == var_9_0 then
 		return
 	end
 
-	local var_9_1 = var_0.Battle.BattleState.GetInstance()
-	local var_9_2 = var_3.GetSceneMediator(var_9_1)
+	local var_9_1 = var_0.Battle.BattleState.GetInstance():GetSceneMediator()
 
-	if arg_9_0._strikeModeData.aimingTarget and arg_9_0._strikeModeData.aimingFX and var_9_2:GetCharacter(var_9_0:GetUniqueID()) then
-		var_4:RemoveFX(arg_9_0._strikeModeData.aimingFX)
+	if arg_9_0._strikeModeData.aimingTarget and arg_9_0._strikeModeData.aimingFX then
+		local var_9_2 = var_9_1:GetCharacter(arg_9_0._strikeModeData.aimingTarget:GetUniqueID())
+
+		if var_9_2 then
+			var_9_2:RemoveFX(arg_9_0._strikeModeData.aimingFX)
+		end
 	end
 
-	table = var_4
+	table.clear(arg_9_0._strikeModeData)
 
-	var_4.clear(arg_9_0._strikeModeData)
-
-	if not var_2 then
+	if not var_9_0 then
 		return
 	end
 
-	local var_9_3 = var_9_2:GetCharacter(var_2:GetUniqueID())
+	local var_9_3 = var_9_1:GetCharacter(var_9_0:GetUniqueID())
 	local var_9_4
 
 	if arg_9_0._preCastInfo.fx and #arg_9_0._preCastInfo.fx > 0 then
 		var_9_4 = var_9_3:AddFX(arg_9_0._preCastInfo.fx)
 	end
 
-	arg_9_0._strikeModeData.aimingTarget = var_2
+	arg_9_0._strikeModeData.aimingTarget = var_9_0
 	arg_9_0._strikeModeData.aimingFX = var_9_4
 
 	return
 end
 
-function var_0_4.CancelStrikeMode(arg_10_0)
+function var_0_3.CancelStrikeMode(arg_10_0)
 	if arg_10_0._strikeModeData.aimingTarget and arg_10_0._strikeModeData.aimingFX then
-		local var_10_0 = var_0.Battle.BattleState.GetInstance()
-		local var_10_1 = var_1.GetSceneMediator(var_10_0)
-		local var_10_2 = var_1.GetCharacter
-		local var_10_3 = arg_10_0._strikeModeData.aimingTarget
+		local var_10_0 = var_0.Battle.BattleState.GetInstance():GetSceneMediator():GetCharacter(arg_10_0._strikeModeData.aimingTarget:GetUniqueID())
 
-		if var_10_2(var_10_1, var_5.GetUniqueID(var_10_3)) then
-			var_2:RemoveFX(arg_10_0._strikeModeData.aimingFX)
+		if var_10_0 then
+			var_10_0:RemoveFX(arg_10_0._strikeModeData.aimingFX)
 		end
 	end
 
@@ -179,11 +142,11 @@ function var_0_4.CancelStrikeMode(arg_10_0)
 	return
 end
 
-function var_0_4.Tracking(arg_11_0)
-	return var_0_3.TargetWeightiest(arg_11_0, nil, arg_11_0:GetFilteredList())[1]
+function var_0_3.Tracking(arg_11_0)
+	return var_0_2.TargetWeightiest(arg_11_0, nil, arg_11_0:GetFilteredList())[1]
 end
 
-function var_0_4.Fire(arg_12_0)
+function var_0_3.Fire(arg_12_0)
 	arg_12_0._strikeMode = nil
 
 	var_0.Battle.BattleWeaponUnit.Fire(arg_12_0, arg_12_0._strikeModeData.aimingTarget)
@@ -191,18 +154,15 @@ function var_0_4.Fire(arg_12_0)
 	return true
 end
 
-function var_0_4.DoAttack(arg_13_0, arg_13_1, ...)
+function var_0_3.DoAttack(arg_13_0, arg_13_1, ...)
 	if arg_13_1 == nil or not arg_13_1:IsAlive() or arg_13_0:outOfFireRange(arg_13_1) then
 		arg_13_1 = nil
 
 		if arg_13_0._strikeModeData.aimingTarget and arg_13_0._strikeModeData.aimingFX then
-			local var_13_0 = var_0.Battle.BattleState.GetInstance()
-			local var_13_1 = var_2.GetSceneMediator(var_13_0)
-			local var_13_2 = var_2.GetCharacter
-			local var_13_3 = arg_13_0._strikeModeData.aimingTarget
+			local var_13_0 = var_0.Battle.BattleState.GetInstance():GetSceneMediator():GetCharacter(arg_13_0._strikeModeData.aimingTarget:GetUniqueID())
 
-			if var_13_2(var_13_1, var_6.GetUniqueID(var_13_3)) then
-				var_3:RemoveFX(arg_13_0._strikeModeData.aimingFX)
+			if var_13_0 then
+				var_13_0:RemoveFX(arg_13_0._strikeModeData.aimingFX)
 			end
 		end
 
@@ -215,7 +175,7 @@ function var_0_4.DoAttack(arg_13_0, arg_13_1, ...)
 	return
 end
 
-function var_0_4.Prepar(arg_14_0)
+function var_0_3.Prepar(arg_14_0)
 	arg_14_0._currentState = arg_14_0.STATE_PRECAST
 
 	arg_14_0:EnterStrikeMode()
@@ -223,7 +183,7 @@ function var_0_4.Prepar(arg_14_0)
 	return
 end
 
-function var_0_4.Cancel(arg_15_0)
+function var_0_3.Cancel(arg_15_0)
 	arg_15_0._currentState = arg_15_0.STATE_READY
 
 	arg_15_0:CancelStrikeMode()

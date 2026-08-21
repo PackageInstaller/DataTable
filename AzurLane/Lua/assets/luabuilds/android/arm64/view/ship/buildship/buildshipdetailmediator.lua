@@ -1,177 +1,86 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("BuildShipDetailMediator", import("...base.ContextMediator"))
 
-local var_0_0 = "BuildShipDetailMediator"
+var_0_0.ON_QUICK = "BuildShipDetailMediator.ON_QUICK"
+var_0_0.LAUNCH_ALL = "BuildShipDetailMediator.LAUNCH_ALL"
+var_0_0.ON_LAUNCHED = "BuildShipDetailMediator.ON_LAUNCHED"
 
-import = var_0_10003
+function var_0_0.register(arg_1_0)
+	arg_1_0.viewComponent:updatePlayer(getProxy(PlayerProxy):getData())
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("...base.ContextMediator"))
+	arg_1_0.bagProxy = getProxy(BagProxy)
 
-var_0_1.ON_QUICK = "BuildShipDetailMediator.ON_QUICK"
-var_0_1.LAUNCH_ALL = "BuildShipDetailMediator.LAUNCH_ALL"
-var_0_1.ON_LAUNCHED = "BuildShipDetailMediator.ON_LAUNCHED"
+	arg_1_0.viewComponent:setItems(arg_1_0.bagProxy:getData())
 
-function var_0_1.register(arg_1_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
+	local var_1_0 = getProxy(BuildShipProxy)
 
-	local var_1_0 = var_1_10001(var_1_10003)
-	local var_1_1 = arg_1_0.viewComponent
+	arg_1_0.viewComponent:setProjectList(var_1_0:getData())
+	arg_1_0.viewComponent:setWorkCount(var_1_0:getMaxWorkCount())
 
-	var_2.updatePlayer(var_1_1, var_1_0:getData())
+	local var_1_1 = getProxy(SettingsProxy)
 
-	getProxy = var_2
-	BagProxy = var_1_1
-	arg_1_0.bagProxy = var_2(var_1_1)
-
-	local var_1_2 = arg_1_0.viewComponent
-	local var_1_3 = var_2.setItems
-	local var_1_4 = arg_1_0.bagProxy
-
-	var_1_3(var_1_2, var_5.getData(var_1_4))
-
-	getProxy = var_1_3
-	BuildShipProxy = var_1_2
-
-	local var_1_5 = var_1_3(var_1_2)
-	local var_1_6 = arg_1_0.viewComponent
-
-	var_3.setProjectList(var_1_6, var_1_5:getData())
-
-	local var_1_7 = arg_1_0.viewComponent
-
-	var_3.setWorkCount(var_1_7, var_1_5:getMaxWorkCount())
-
-	getProxy = var_3
-	SettingsProxy = var_1_7
-
-	local var_1_8 = var_3(var_1_7)
-
-	arg_1_0:bind(var_0_1.ON_QUICK, function(arg_2_0, arg_2_1, arg_2_2)
+	arg_1_0:bind(var_0_0.ON_QUICK, function(arg_2_0, arg_2_1, arg_2_2)
 		if arg_2_2 then
-			local var_2_0 = var_1_8
-
-			var_3.setStopBuildSpeedupRemind(var_2_0)
-
-			local var_2_1 = arg_1_0.viewComponent
-
-			var_3.setBuildSpeedUpRemind(var_2_1, true)
+			var_1_1:setStopBuildSpeedupRemind()
+			arg_1_0.viewComponent:setBuildSpeedUpRemind(true)
 		end
 
 		arg_1_0.isBatch = false
 
-		local var_2_2 = arg_1_0
-
-		var_3.GetShipProcess(var_2_2, {
+		arg_1_0:GetShipProcess({
 			arg_2_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.ON_LAUNCHED, function(arg_3_0, arg_3_1)
+	arg_1_0:bind(var_0_0.ON_LAUNCHED, function(arg_3_0, arg_3_1)
 		arg_1_0.isBatch = false
 
-		local var_3_0 = arg_1_0
-
-		var_2.GetShipProcess(var_3_0, {
+		arg_1_0:GetShipProcess({
 			arg_3_1
 		})
 
 		return
 	end)
-	arg_1_0:bind(var_0_1.LAUNCH_ALL, function(arg_4_0, arg_4_1)
+	arg_1_0:bind(var_0_0.LAUNCH_ALL, function(arg_4_0, arg_4_1)
 		if arg_4_1 then
-			local var_4_0 = var_1_8
-
-			var_2.setStopBuildSpeedupRemind(var_4_0)
-
-			local var_4_1 = arg_1_0.viewComponent
-
-			var_2.setBuildSpeedUpRemind(var_4_1, true)
+			var_1_1:setStopBuildSpeedupRemind()
+			arg_1_0.viewComponent:setBuildSpeedUpRemind(true)
 		end
 
 		arg_1_0.isBatch = true
 
-		local var_4_2 = {}
-
-		ipairs = var_3
-
-		local var_4_3 = var_1_5
-
-		for iter_4_0, iter_4_1 in var_3(var_5.getData(var_4_3)) do
-			table = var_2_10008
-
-			var_2_10008.insert(var_4_2, iter_4_0)
+		for iter_4_0, iter_4_1 in ipairs(var_1_0:getData()) do
+			table.insert({}, iter_4_0)
 		end
 
-		local var_4_4 = arg_1_0
-
-		var_3.GetShipProcess(var_4_4, var_4_2)
+		arg_1_0:GetShipProcess({})
 
 		return
 	end)
-
-	local var_1_9 = var_1_8:getStopBuildSpeedupRemind()
-	local var_1_10 = arg_1_0.viewComponent
-
-	var_5.setBuildSpeedUpRemind(var_1_10, var_1_9)
+	arg_1_0.viewComponent:setBuildSpeedUpRemind((getProxy(SettingsProxy):getStopBuildSpeedupRemind()))
 
 	return
 end
 
-function var_0_1.GetShipProcess(arg_5_0, arg_5_1)
-	getProxy = var_1_10002
-	BuildShipProxy = var_1_10004
+function var_0_0.GetShipProcess(arg_5_0, arg_5_1)
+	local var_5_0 = getProxy(BuildShipProxy)
 
-	local var_5_0 = var_1_10002(var_1_10004)
-	local var_5_1 = {}
-
-	table = var_1_10004
-
-	var_1_10004.insert(var_5_1, function(arg_6_0)
-		local var_6_0 = arg_5_0
-		local var_6_1 = var_1.sendNotification
-
-		GAME = var_2_10004
-
-		var_6_1(var_6_0, var_2_10004.BUILD_SHIP_IMMEDIATELY, {
+	table.insert({}, function(arg_6_0)
+		arg_5_0:sendNotification(GAME.BUILD_SHIP_IMMEDIATELY, {
 			pos_list = arg_5_1,
 			callback = arg_6_0
 		})
 
 		return
 	end)
-
-	seriesAsync = var_4
-
-	var_4(var_5_1, function()
-		if arg_5_0.isBatch then
-			underscore = var_0
-
-			if var_0.any(arg_5_1, function(arg_8_0)
-				local var_8_0 = var_5_0
-				local var_8_1 = var_1.getBuildShip(var_8_0, arg_8_0).state
-
-				BuildShip = var_3_10002
-
-				return var_8_1 ~= var_3_10002.FINISH
-			end) then
-				pg = var_0
-
-				local var_7_0 = var_0.TipsMgr.GetInstance()
-				local var_7_1 = var_0.ShowTips
-
-				i18n = var_2_10003
-
-				var_7_1(var_7_0, var_2_10003("backyard_backyardShipInfoLayer_error_noQuickItem"))
-			end
+	seriesAsync({}, function()
+		if arg_5_0.isBatch and underscore.any(arg_5_1, function(arg_8_0)
+			return var_5_0:getBuildShip(arg_8_0).state ~= BuildShip.FINISH
+		end) then
+			pg.TipsMgr.GetInstance():ShowTips(i18n("backyard_backyardShipInfoLayer_error_noQuickItem"))
 		end
 
-		local var_7_2 = arg_5_0
-		local var_7_3 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_7_3(var_7_2, var_2_10003.GET_SHIP, {
+		arg_5_0:sendNotification(GAME.GET_SHIP, {
 			pos_list = arg_5_1
 		})
 
@@ -181,154 +90,71 @@ function var_0_1.GetShipProcess(arg_5_0, arg_5_1)
 	return
 end
 
-function var_0_1.listNotificationInterests(arg_9_0)
-	local var_9_0 = {}
-
-	BagProxy = var_1_10002
-	var_9_0[1] = var_1_10002.ITEM_UPDATED
-	GAME = var_2
-	var_9_0[2] = var_2.GET_SHIP_DONE
-	BuildShipProxy = var_2
-	var_9_0[3] = var_2.REMOVED
-	BuildShipProxy = var_2
-	var_9_0[4] = var_2.UPDATED
-	PlayerProxy = var_2
-	var_9_0[5] = var_2.UPDATED
-
-	return var_9_0
+function var_0_0.listNotificationInterests(arg_9_0)
+	return {
+		BagProxy.ITEM_UPDATED,
+		GAME.GET_SHIP_DONE,
+		BuildShipProxy.REMOVED,
+		BuildShipProxy.UPDATED,
+		PlayerProxy.UPDATED
+	}
 end
 
-function var_0_1.handleNotification(arg_10_0, arg_10_1)
-	local var_10_0 = arg_10_1
-	local var_10_1 = arg_10_1.getName(var_10_0)
-	local var_10_2 = arg_10_1:getBody()
+function var_0_0.handleNotification(arg_10_0, arg_10_1)
+	local var_10_0 = arg_10_1:getName()
+	local var_10_1 = arg_10_1:getBody()
 
-	BagProxy = var_10_0
+	if var_10_0 == BagProxy.ITEM_UPDATED then
+		arg_10_0.viewComponent:setItems(arg_10_0.bagProxy:getData())
+		arg_10_0.viewComponent:updateItem()
+	elseif var_10_0 == GAME.GET_SHIP_DONE then
+		local var_10_2 = getProxy(BuildShipProxy)
 
-	local var_10_3
+		arg_10_0.viewComponent:setProjectList(getProxy(BuildShipProxy):getData())
+		arg_10_0.viewComponent:initProjectList()
+		table.insert({}, function(arg_11_0)
+			arg_10_0.viewComponent:playGetShipAnimate(arg_11_0, var_10_1.type)
 
-	if var_10_1 == var_10_0.ITEM_UPDATED then
-		var_1_10006 = arg_10_0.viewComponent
-		var_10_3 = var_10_3.setItems
+			return
+		end)
 
-		local var_10_4 = arg_10_0.bagProxy
+		for iter_10_0, iter_10_1 in ipairs(var_10_1.ships) do
+			table.insert({}, function(arg_12_0)
+				local var_12_0 = var_10_2:getSkipBatchBuildFlag()
 
-		var_10_3(var_1_10006, var_7.getData(var_10_4))
-
-		var_1_10006 = arg_10_0.viewComponent
-
-		var_10_3.updateItem(var_1_10006)
-	else
-		GAME = var_10_3
-
-		local var_10_5
-
-		if var_10_1 == var_10_3.GET_SHIP_DONE then
-			getProxy = var_10_5
-			BuildShipProxy = var_1_10006
-			var_10_5 = var_10_5(var_1_10006)
-
-			local var_10_6 = arg_10_0.viewComponent
-
-			var_5.setProjectList(var_10_6, var_10_5:getData())
-
-			local var_10_7 = arg_10_0.viewComponent
-
-			var_5.initProjectList(var_10_7)
-
-			local var_10_8 = {}
-
-			table = var_1_10006
-
-			var_1_10006.insert(var_10_8, function(arg_11_0)
-				local var_11_0 = arg_10_0.viewComponent
-
-				var_1.playGetShipAnimate(var_11_0, arg_11_0, var_10_2.type)
-
-				return
-			end)
-
-			ipairs = var_6
-
-			for iter_10_0, iter_10_1 in var_6(var_10_2.ships) do
-				table = var_1_10011
-
-				var_1_10011.insert(var_10_8, function(arg_12_0)
-					local var_12_0 = var_10_5
-
-					if var_1.getSkipBatchBuildFlag(var_12_0) and not iter_10_1.virgin then
-						local var_12_1 = iter_10_1
-
-						if var_2.getRarity(var_12_1) < 4 then
-							arg_12_0()
-
-							goto label_12_0
-						end
-					end
-
-					do
-						local var_12_2 = arg_10_0
-						local var_12_3 = var_2.addSubLayers
-
-						Context = var_2_10005
-
-						local var_12_4 = var_2_10005.New
-						local var_12_5 = {}
-
-						NewShipMediator = var_2_10008
-						var_12_5.mediator = var_2_10008
-						NewShipLayer = var_2_10008
-						var_12_5.viewComponent = var_2_10008
-						var_12_5.data = {
+				if var_12_0 and not iter_10_1.virgin and iter_10_1:getRarity() < 4 then
+					arg_12_0()
+				else
+					arg_10_0:addSubLayers(Context.New({
+						mediator = NewShipMediator,
+						viewComponent = NewShipLayer,
+						data = {
 							ship = iter_10_1,
-							canSkipBatch = not var_1 and iter_10_0 < #var_10_2.ships
-						}
-						var_12_5.onRemoved = arg_12_0
-
-						var_12_3(var_12_2, var_12_4(var_12_5))
-					end
-
-					::label_12_0::
-
-					return
-				end)
-			end
-
-			seriesAsync = var_6
-
-			var_6(var_10_8, function()
-				local var_13_0 = arg_10_0
-				local var_13_1 = var_0.sendNotification
-
-				GAME = var_2_10003
-
-				var_13_1(var_13_0, var_2_10003.CONFIRM_GET_SHIP, {
-					isBatch = arg_10_0.isBatch,
-					ships = var_10_2.ships
-				})
+							canSkipBatch = not var_12_0 and iter_10_0 < #var_10_1.ships
+						},
+						onRemoved = arg_12_0
+					}))
+				end
 
 				return
 			end)
-		else
-			BuildShipProxy = var_10_5
-
-			if var_10_1 == var_10_5.UPDATED then
-				local var_10_9 = arg_10_0.viewComponent
-
-				var_4.updateProject(var_10_9, var_10_2.index, var_10_2.buildShip)
-			else
-				PlayerProxy = var_4
-
-				if var_10_1 == var_4.UPDATED then
-					local var_10_10 = arg_10_0.viewComponent
-
-					var_4.updatePlayer(var_10_10, var_10_2)
-				end
-			end
 		end
+
+		seriesAsync({}, function()
+			arg_10_0:sendNotification(GAME.CONFIRM_GET_SHIP, {
+				isBatch = arg_10_0.isBatch,
+				ships = var_10_1.ships
+			})
+
+			return
+		end)
+	elseif var_10_0 == BuildShipProxy.UPDATED then
+		arg_10_0.viewComponent:updateProject(var_10_1.index, var_10_1.buildShip)
+	elseif var_10_0 == PlayerProxy.UPDATED then
+		arg_10_0.viewComponent:updatePlayer(var_10_1)
 	end
 
 	return
 end
 
-return var_0_1
+return var_0_0

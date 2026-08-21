@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "expedition_daily_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "expedition_daily_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.expedition_daily_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.expedition_daily_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.expedition_daily_template = rawget(pg, "expedition_daily_template") or setmetatable({
+	__name = "expedition_daily_template"
+}, confNEO)
+pg.expedition_daily_template.all = {
 	101,
 	201,
 	301,
@@ -35,25 +12,11 @@ var_0_3.all = {
 	701,
 	801
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.expedition_daily_template = {}
+pg.base = pg.base or {}
+pg.base.expedition_daily_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.expedition_daily_template
-
-	var_1_0[101] = {
+	pg.base.expedition_daily_template[101] = {
 		tips = "该副本暂未开放，敬请期待",
 		limit_type = 0,
 		pic = "daily4",
@@ -68,11 +31,7 @@ var_0_3.base.expedition_daily_template = {}
 		weekday = {},
 		expedition_and_lv_limit_list = {}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.expedition_daily_template
-
-	var_1_1[201] = {
+	pg.base.expedition_daily_template[201] = {
 		tips = "商船护送开启时间为：每周一、周四、周日",
 		limit_type = 1,
 		pic = "daily1",
@@ -140,11 +99,7 @@ var_0_3.base.expedition_daily_template = {}
 			}
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.expedition_daily_template
-
-	var_1_2[301] = {
+	pg.base.expedition_daily_template[301] = {
 		tips = "海域突进开启时间为：每周二、周五、周日",
 		limit_type = 1,
 		pic = "daily2",
@@ -188,11 +143,7 @@ var_0_3.base.expedition_daily_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.expedition_daily_template
-
-	var_1_3[401] = {
+	pg.base.expedition_daily_template[401] = {
 		tips = "斩首行动开启时间为：每周三、周六、周日",
 		limit_type = 1,
 		pic = "daily3",
@@ -236,11 +187,7 @@ var_0_3.base.expedition_daily_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.expedition_daily_template
-
-	var_1_4[501] = {
+	pg.base.expedition_daily_template[501] = {
 		tips = "破交作战每天开启，每周上限四次",
 		limit_type = 2,
 		pic = "daily5",
@@ -288,11 +235,7 @@ var_0_3.base.expedition_daily_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.expedition_daily_template
-
-	var_1_5[601] = {
+	pg.base.expedition_daily_template[601] = {
 		tips = "战术研修每天开启",
 		limit_type = 1,
 		pic = "daily6",
@@ -340,11 +283,7 @@ var_0_3.base.expedition_daily_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.expedition_daily_template
-
-	var_1_6[701] = {
+	pg.base.expedition_daily_template[701] = {
 		tips = "兵装训练每天开启，每周上限两次",
 		limit_type = 2,
 		pic = "daily7",
@@ -376,8 +315,7 @@ var_0_3.base.expedition_daily_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-	var_1_6.base.expedition_daily_template[801] = {
+	pg.base.expedition_daily_template[801] = {
 		tips = "限时兵装训练开放期间每天开启",
 		limit_type = 1,
 		pic = "daily8",

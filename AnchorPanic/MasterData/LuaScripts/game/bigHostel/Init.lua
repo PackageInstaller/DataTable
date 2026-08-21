@@ -11,10 +11,16 @@ bigHostel.BigHostelModelConfigVo = require("game/bigHostel/manager/configVo/BigH
 
 -----------------UI相关
 bigHostel.BigHostelSceneUI = "game/bigHostel/view/BigHostelSceneUI"
+bigHostel.BigHostelPoseUI = "game/bigHostel/view/BigHostelPoseUI"
 bigHostel.BigHostelBlackView = "game/bigHostel/view/BigHostelBlackView"
 
 -----------------管理器相关
 bigHostel.BigHostelConst = require("game/bigHostel/manager/BigHostelConst")
+bigHostel.BigHostelIKDragVo = require("game/bigHostel/manager/BigHostelIKDragVo")
+bigHostel.BigHostelGoCollider = require("game/bigHostel/manager/BigHostelGoCollider")
+
+bigHostel.BigHostelCamera = require("game/bigHostel/manager/BigHostelCamera")
+
 bigHostel.BigHostelManager = require("game/bigHostel/manager/BigHostelManager").new()
 bigHostel.BigHostelController = require("game/bigHostel/controller/BigHostelController").new(bigHostel.BigHostelManager)
 bigHostel.BigHostelSceneController = require("game/bigHostel/controller/BigHostelSceneController").new()

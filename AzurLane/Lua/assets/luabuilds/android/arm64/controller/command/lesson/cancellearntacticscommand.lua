@@ -1,110 +1,55 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("CancelLearnTacticsCommand", pm.SimpleCommand)
 
-local var_0_0 = "CancelLearnTacticsCommand"
+function var_0_0.execute(arg_1_0, arg_1_1)
+	local var_1_0 = arg_1_1:getBody()
+	local var_1_1 = var_1_0.shipId
+	local var_1_2 = getProxy(NavalAcademyProxy)
 
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1:getBody().shipId
-	local var_1_1 = var_2.type
-
-	getProxy = var_1_10005
-	NavalAcademyProxy = var_1_10007
-
-	local var_1_2 = var_1_10005(var_1_10007)
-
-	if not var_5.ExistStudent(var_1_2, var_1_0) then
+	if not var_1_2:ExistStudent(var_1_0.shipId) then
 		return
 	end
 
-	local var_1_3 = var_5:getStudentById(var_1_0)
-	local var_1_4 = var_2.callback
-	local var_1_5 = var_2.onConfirm
+	local var_1_3 = var_1_2:getStudentById(var_1_0.shipId)
+	local var_1_4 = var_1_0.callback
+	local var_1_5 = var_1_0.onConfirm
 
 	if not var_1_3 then
-		existCall = var_9
-
-		var_9(var_1_4)
+		existCall(var_1_0.callback)
 
 		return
 	end
 
-	getProxy = var_9
-	BayProxy = var_1_10011
+	local var_1_6 = getProxy(BayProxy)
+	local var_1_7 = var_1_6:getShipById(var_1_3.shipId)
 
-	local var_1_6 = var_9(var_1_10011)
-	local var_1_7 = var_9.getShipById(var_1_6, var_1_3.shipId)
-	local var_1_8 = var_1_3:getSkillId(var_1_7)
-	local var_1_10
-
-	if not var_1_7.skills[var_1_8] then
-		pg = var_1_10
-
-		local var_1_9 = var_1_10.TipsMgr.GetInstance()
-
-		var_1_10 = var_1_10.ShowTips
-		i18n = var_1_10015
-
-		var_1_10(var_1_9, var_1_10015("tactics_noskill_erro"))
+	if not var_1_7.skills[var_1_3:getSkillId(var_1_7)] then
+		pg.TipsMgr.GetInstance():ShowTips(i18n("tactics_noskill_erro"))
 
 		return
 	end
 
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.ConnectionMgr.GetInstance()
-
-	var_12.Send(var_1_11, 22203, {
-		room_id = var_1_0,
-		type = var_1_1
+	pg.ConnectionMgr.GetInstance():Send(22203, {
+		room_id = var_1_0.shipId,
+		type = var_1_0.type
 	}, 22204, function(arg_2_0)
-		local var_2_0
-
 		if arg_2_0.result == 0 then
-			Clone = var_2_0
-			var_2_0 = var_2_0(var_1_7.skills[var_1_8])
-			var_2_10004 = var_1_7
+			local var_2_0 = Clone(var_1_7.skills[var_0])
 
-			var_2.addSkillExp(var_2_10004, var_2_0.id, arg_2_0.exp)
-
-			var_2_10004 = var_0
-
-			var_2.updateShip(var_2_10004, var_1_7)
-
-			var_2_10004 = var_0
-
-			var_2.deleteStudent(var_2_10004, var_1_0)
-
-			var_2_10004 = var_0
-
-			var_2.SaveRecentShip(var_2_10004, var_1_3.shipId)
-
-			var_2_10004 = arg_1_0
-
-			local var_2_1 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_1(var_2_10004, var_5.CANCEL_LEARN_TACTICS_DONE, {
-				id = var_1_0,
+			var_1_7:addSkillExp(var_2_0.id, arg_2_0.exp)
+			var_1_6:updateShip(var_1_7)
+			var_1_2:deleteStudent(var_1_1)
+			var_1_2:SaveRecentShip(var_1_3.shipId)
+			arg_1_0:sendNotification(GAME.CANCEL_LEARN_TACTICS_DONE, {
+				id = var_1_1,
 				shipId = var_1_3.shipId,
 				totalExp = arg_2_0.exp,
 				oldSkill = var_2_0,
-				newSkill = var_1_7.skills[var_1_8],
+				newSkill = var_1_7.skills[var_0],
 				onConfirm = var_1_5,
 				newShipVO = var_1_7
 			})
 		else
-			pg = var_2_0
-
-			local var_2_2 = var_2_0.TipsMgr.GetInstance()
-			local var_2_3 = var_1.ShowTips
-
-			errorTip = var_2_10004
-
-			var_2_3(var_2_2, var_2_10004("lesson_endToLearn", arg_2_0.result))
+			pg.TipsMgr.GetInstance():ShowTips(errorTip("lesson_endToLearn", arg_2_0.result))
 		end
 
 		if var_1_4 ~= nil then
@@ -117,4 +62,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,49 +1,15 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "escort_map_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "escort_map_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.escort_map_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.escort_map_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.escort_map_template = rawget(pg, "escort_map_template") or setmetatable({
+	__name = "escort_map_template"
+}, confNEO)
+pg.escort_map_template.all = {
 	70000
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.escort_map_template = {}
+pg.base = pg.base or {}
+pg.base.escort_map_template = {}
 
 ;(function()
-	pg = var_1_10000
-	var_1_10000.base.escort_map_template[70000] = {
+	pg.base.escort_map_template[70000] = {
 		level_limit = 40,
 		id = 70000,
 		refresh_time = 21600,

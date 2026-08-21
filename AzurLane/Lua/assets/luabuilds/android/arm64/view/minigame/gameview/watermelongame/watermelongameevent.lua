@@ -1,45 +1,22 @@
-﻿class = var_0_10000
+﻿this = class("WatermelonGameEvent")
+this.LEVEL_GAME = "leavel game"
+this.PAUSE_GAME = "pause game "
+this.OPEN_PAUSE_UI = "open pause ui"
+this.OPEN_LEVEL_UI = "open leave ui"
+this.BACK_MENU = "back menu"
+this.OPEN_EQUIP_UI = "open equip ui"
+this.ON_HOME = "on home"
+this.CLOSE_GAME = "close game"
+this.SHOW_RULE = "show rule"
+this.SHOW_RANK = "show rank"
+this.READY_START = "ready start"
+this.COUNT_DOWN = "count down"
+this.STORE_SERVER = "store server"
+this.SUBMIT_GAME_SUCCESS = "submit game success"
+this.GAME_OVER = "game over"
+this.ADD_SCORE = "add score"
+this.CLICK_DOWN = "click down"
+this.UPDATE_NEXT_BALL = "update next ball"
+this.CLICK_MOVE = "click move"
 
-local var_0_0 = var_0_10000("WatermelonGameEvent")
-
-this = this
-var_0.LEVEL_GAME = "leavel game"
-this = var_0
-var_0.PAUSE_GAME = "pause game "
-this = var_0
-var_0.OPEN_PAUSE_UI = "open pause ui"
-this = var_0
-var_0.OPEN_LEVEL_UI = "open leave ui"
-this = var_0
-var_0.BACK_MENU = "back menu"
-this = var_0
-var_0.OPEN_EQUIP_UI = "open equip ui"
-this = var_0
-var_0.ON_HOME = "on home"
-this = var_0
-var_0.CLOSE_GAME = "close game"
-this = var_0
-var_0.SHOW_RULE = "show rule"
-this = var_0
-var_0.SHOW_RANK = "show rank"
-this = var_0
-var_0.READY_START = "ready start"
-this = var_0
-var_0.COUNT_DOWN = "count down"
-this = var_0
-var_0.STORE_SERVER = "store server"
-this = var_0
-var_0.SUBMIT_GAME_SUCCESS = "submit game success"
-this = var_0
-var_0.GAME_OVER = "game over"
-this = var_0
-var_0.ADD_SCORE = "add score"
-this = var_0
-var_0.CLICK_DOWN = "click down"
-this = var_0
-var_0.UPDATE_NEXT_BALL = "update next ball"
-this = var_0
-var_0.CLICK_MOVE = "click move"
-this = var_0
-
-return var_0
+return this

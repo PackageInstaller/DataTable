@@ -1,32 +1,17 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("TouchCakeGameView", import("..BaseMiniGameView"))
+local var_0_1 = import("view.miniGame.gameView.TouchCakeGame.TouchCakeGameVo")
+local var_0_2 = import("view.miniGame.gameView.TouchCakeGame.TouchCakeGameConst")
+local var_0_3 = import("view.miniGame.gameView.TouchCakeGame.TouchCakeGameEvent")
 
-local var_0_0 = "TouchCakeGameView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseMiniGameView"))
-
-import = var_0_10001
-
-local var_0_2 = var_0_10001("view.miniGame.gameView.TouchCakeGame.TouchCakeGameVo")
-
-import = var_0_0
-
-local var_0_3 = var_0_0("view.miniGame.gameView.TouchCakeGame.TouchCakeGameConst")
-
-import = var_3
-
-local var_0_4 = var_3("view.miniGame.gameView.TouchCakeGame.TouchCakeGameEvent")
-
-function var_0_1.getUIName(arg_1_0)
-	return var_0_2.game_ui
+function var_0_0.getUIName(arg_1_0)
+	return var_0_1.game_ui
 end
 
-function var_0_1.getBGM(arg_2_0)
-	return var_0_2.menu_bgm
+function var_0_0.getBGM(arg_2_0)
+	return var_0_1.menu_bgm
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	arg_3_0:initData()
 	arg_3_0:initEvent()
 	arg_3_0:initUI()
@@ -34,257 +19,154 @@ function var_0_1.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.initData(arg_4_0)
-	var_0_2.Init(arg_4_0:GetMGData().id, arg_4_0:GetMGHubData().id)
+function var_0_0.initData(arg_4_0)
+	var_0_1.Init(arg_4_0:GetMGData().id, arg_4_0:GetMGHubData().id)
+	var_0_1.SetGameTpl(findTF(arg_4_0._tf, "tpl"))
 
-	local var_4_0 = var_0_2.SetGameTpl
+	local var_4_0 = var_0_1.frameRate
 
-	findTF = var_3
-
-	var_4_0(var_3(arg_4_0._tf, "tpl"))
-
-	local var_4_1 = var_0_2.frameRate
-
-	if 60 < var_4_1 then
-		var_4_1 = 60
+	if var_0_1.frameRate > 60 then
+		var_4_0 = 60
 	end
 
-	Timer = var_2
-	arg_4_0.timer = var_2.New(function()
-		local var_5_0 = arg_4_0
-
-		var_0.onTimer(var_5_0)
+	arg_4_0.timer = Timer.New(function()
+		arg_4_0:onTimer()
 
 		return
-	end, 1 / var_4_1, -1)
+	end, 1 / var_4_0, -1)
 
 	return
 end
 
-function var_0_1.initEvent(arg_6_0)
-	if not arg_6_0.handle then
-		IsUnityEditor = var_1
+function var_0_0.initEvent(arg_6_0)
+	if not arg_6_0.handle and IsUnityEditor then
+		arg_6_0.handle = UpdateBeat:CreateListener(arg_6_0.UpdateBeat, arg_6_0)
 
-		if var_1 then
-			UpdateBeat = var_1
-			arg_6_0.handle = var_1:CreateListener(arg_6_0.UpdateBeat, arg_6_0)
-			UpdateBeat = var_1
-
-			var_1:AddListener(arg_6_0.handle)
-		end
+		UpdateBeat:AddListener(arg_6_0.handle)
 	end
 
-	arg_6_0:bind(var_0_4.LEVEL_GAME, function(arg_7_0, arg_7_1, arg_7_2)
+	arg_6_0:bind(var_0_3.LEVEL_GAME, function(arg_7_0, arg_7_1, arg_7_2)
 		if arg_7_1 then
-			local var_7_0 = arg_6_0
-
-			var_3.resumeGame(var_7_0)
-
-			local var_7_1 = arg_6_0
-
-			var_3.onGameOver(var_7_1)
+			arg_6_0:resumeGame()
+			arg_6_0:onGameOver()
 		else
-			local var_7_2 = arg_6_0
-
-			var_3.resumeGame(var_7_2)
+			arg_6_0:resumeGame()
 		end
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.COUNT_DOWN, function(arg_8_0, arg_8_1, arg_8_2)
-		local var_8_0 = arg_6_0
-
-		var_3.gameStart(var_8_0)
+	arg_6_0:bind(var_0_3.COUNT_DOWN, function(arg_8_0, arg_8_1, arg_8_2)
+		arg_6_0:gameStart()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.ON_HOME, function(arg_9_0, arg_9_1, arg_9_2)
-		local var_9_0 = arg_6_0
-		local var_9_1 = var_3.emit
-
-		BaseUI = var_2_10006
-
-		var_9_1(var_9_0, var_2_10006.ON_HOME)
+	arg_6_0:bind(var_0_3.ON_HOME, function(arg_9_0, arg_9_1, arg_9_2)
+		arg_6_0:emit(BaseUI.ON_HOME)
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.OPEN_PAUSE_UI, function(arg_10_0, arg_10_1, arg_10_2)
-		local var_10_0 = arg_6_0.popUI
-
-		var_3.popPauseUI(var_10_0)
+	arg_6_0:bind(var_0_3.OPEN_PAUSE_UI, function(arg_10_0, arg_10_1, arg_10_2)
+		arg_6_0.popUI:popPauseUI()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.OPEN_LEVEL_UI, function(arg_11_0, arg_11_1, arg_11_2)
-		local var_11_0 = arg_6_0.popUI
-
-		var_3.popLeaveUI(var_11_0)
+	arg_6_0:bind(var_0_3.OPEN_LEVEL_UI, function(arg_11_0, arg_11_1, arg_11_2)
+		arg_6_0.popUI:popLeaveUI()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.PAUSE_GAME, function(arg_12_0, arg_12_1, arg_12_2)
+	arg_6_0:bind(var_0_3.PAUSE_GAME, function(arg_12_0, arg_12_1, arg_12_2)
 		if arg_12_1 then
-			local var_12_0 = arg_6_0
-
-			var_3.pauseGame(var_12_0)
+			arg_6_0:pauseGame()
 		else
-			local var_12_1 = arg_6_0
-
-			var_3.resumeGame(var_12_1)
+			arg_6_0:resumeGame()
 		end
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.BACK_MENU, function(arg_13_0, arg_13_1, arg_13_2)
+	arg_6_0:bind(var_0_3.BACK_MENU, function(arg_13_0, arg_13_1, arg_13_2)
 		arg_6_0.gameStop = false
 
-		local var_13_0 = arg_6_0.gameScene
-
-		var_3.resume(var_13_0)
-
-		local var_13_1 = arg_6_0.menuUI
-		local var_13_2 = var_3.update
-		local var_13_3 = arg_6_0
-
-		var_13_2(var_13_1, var_6.GetMGHubData(var_13_3))
-
-		local var_13_4 = arg_6_0.menuUI
-
-		var_3.show(var_13_4, true)
-
-		local var_13_5 = arg_6_0.gameUI
-
-		var_3.show(var_13_5, false)
-
-		local var_13_6 = arg_6_0.gameScene
-
-		var_3.showContainer(var_13_6, false)
-
-		local var_13_7 = arg_6_0
-
-		var_3.changeBgm(var_13_7, var_0_3.bgm_type_default)
+		arg_6_0.gameScene:resume()
+		arg_6_0.menuUI:update(arg_6_0:GetMGHubData())
+		arg_6_0.menuUI:show(true)
+		arg_6_0.gameUI:show(false)
+		arg_6_0.gameScene:showContainer(false)
+		arg_6_0:changeBgm(var_0_2.bgm_type_default)
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.CLOSE_GAME, function(arg_14_0, arg_14_1, arg_14_2)
-		local var_14_0 = arg_6_0
-
-		var_3.closeView(var_14_0)
+	arg_6_0:bind(var_0_3.CLOSE_GAME, function(arg_14_0, arg_14_1, arg_14_2)
+		arg_6_0:closeView()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.GAME_OVER, function(arg_15_0, arg_15_1, arg_15_2)
-		local var_15_0 = arg_6_0
-
-		var_3.onGameOver(var_15_0)
+	arg_6_0:bind(var_0_3.GAME_OVER, function(arg_15_0, arg_15_1, arg_15_2)
+		arg_6_0:onGameOver()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.SHOW_RULE, function(arg_16_0, arg_16_1, arg_16_2)
-		pg = var_2_10003
-
-		local var_16_0 = var_2_10003.MsgboxMgr.GetInstance()
-		local var_16_1 = var_3.ShowMsgBox
-		local var_16_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10007
-		var_16_2.type = var_2_10007
-		pg = var_2_10007
-		var_16_2.helps = var_2_10007.gametip[var_0_2.rule_tip].tip
-
-		var_16_1(var_16_0, var_16_2)
+	arg_6_0:bind(var_0_3.SHOW_RULE, function(arg_16_0, arg_16_1, arg_16_2)
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip[var_0_1.rule_tip].tip
+		})
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.SHOW_RANK, function(arg_17_0, arg_17_1, arg_17_2)
-		local var_17_0 = arg_6_0
-
-		var_3.getRankData(var_17_0)
-
-		local var_17_1 = arg_6_0.popUI
-
-		var_3.showRank(var_17_1, true)
+	arg_6_0:bind(var_0_3.SHOW_RANK, function(arg_17_0, arg_17_1, arg_17_2)
+		arg_6_0:getRankData()
+		arg_6_0.popUI:showRank(true)
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.READY_START, function(arg_18_0, arg_18_1, arg_18_2)
-		local var_18_0 = arg_6_0
-
-		var_3.readyStart(var_18_0)
+	arg_6_0:bind(var_0_3.READY_START, function(arg_18_0, arg_18_1, arg_18_2)
+		arg_6_0:readyStart()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.STORE_SERVER, function(arg_19_0, arg_19_1, arg_19_2)
-		getProxy = var_2_10003
-		MiniGameProxy = var_2_10005
-
-		local var_19_0 = var_2_10003(var_2_10005)
-
-		var_3.UpdataHighScore(var_19_0, var_0_2.game_id, arg_19_1)
+	arg_6_0:bind(var_0_3.STORE_SERVER, function(arg_19_0, arg_19_1, arg_19_2)
+		getProxy(MiniGameProxy):UpdataHighScore(var_0_1.game_id, arg_19_1)
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.PRESS_DIRECT, function(arg_20_0, arg_20_1, arg_20_2)
+	arg_6_0:bind(var_0_3.PRESS_DIRECT, function(arg_20_0, arg_20_1, arg_20_2)
 		if arg_6_0.gameScene then
-			local var_20_0 = arg_6_0.gameScene
-
-			var_3.touchDirect(var_20_0, arg_20_1, true)
+			arg_6_0.gameScene:touchDirect(arg_20_1, true)
 		end
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.SUBMIT_GAME_SUCCESS, function(arg_21_0, arg_21_1, arg_21_2)
+	arg_6_0:bind(var_0_3.SUBMIT_GAME_SUCCESS, function(arg_21_0, arg_21_1, arg_21_2)
 		if not arg_6_0.sendSuccessFlag then
 			arg_6_0.sendSuccessFlag = true
 
-			local var_21_0 = arg_6_0
-
-			var_3.SendSuccess(var_21_0, 0)
+			arg_6_0:SendSuccess(0)
 		end
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.ADD_SCORE, function(arg_22_0, arg_22_1, arg_22_2)
-		local var_22_0 = arg_6_0
-
-		var_3.addScore(var_22_0, arg_22_1)
-
-		local var_22_1 = arg_6_0.gameUI
-
-		var_3.updateScore(var_22_1)
+	arg_6_0:bind(var_0_3.ADD_SCORE, function(arg_22_0, arg_22_1, arg_22_2)
+		arg_6_0:addScore(arg_22_1)
+		arg_6_0.gameUI:updateScore()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.ADD_COMBO, function(arg_23_0, arg_23_1, arg_23_2)
-		local var_23_0 = arg_6_0
-
-		var_3.addCombo(var_23_0)
-
-		local var_23_1 = arg_6_0.gameUI
-
-		var_3.updateCombo(var_23_1)
+	arg_6_0:bind(var_0_3.ADD_COMBO, function(arg_23_0, arg_23_1, arg_23_2)
+		arg_6_0:addCombo()
+		arg_6_0.gameUI:updateCombo()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.PLAYER_DIZZI, function(arg_24_0, arg_24_1, arg_24_2)
-		local var_24_0 = arg_6_0
-
-		var_3.clearCombo(var_24_0)
-
-		local var_24_1 = arg_6_0.gameUI
-
-		var_3.updateCombo(var_24_1)
+	arg_6_0:bind(var_0_3.PLAYER_DIZZI, function(arg_24_0, arg_24_1, arg_24_2)
+		arg_6_0:clearCombo()
+		arg_6_0.gameUI:updateCombo()
 
 		return
 	end)
-	arg_6_0:bind(var_0_4.PLAYER_BOOM, function(arg_25_0, arg_25_1, arg_25_2)
-		local var_25_0 = arg_6_0
-
-		var_3.clearCombo(var_25_0)
-
-		local var_25_1 = arg_6_0.gameUI
-
-		var_3.updateCombo(var_25_1)
+	arg_6_0:bind(var_0_3.PLAYER_BOOM, function(arg_25_0, arg_25_1, arg_25_2)
+		arg_6_0:clearCombo()
+		arg_6_0.gameUI:updateCombo()
 
 		return
 	end)
@@ -292,188 +174,103 @@ function var_0_1.initEvent(arg_6_0)
 	return
 end
 
-function var_0_1.initUI(arg_26_0)
-	IsUnityEditor = var_1_10001
-
-	if var_1_10001 then
-		setActive = var_1_10001
-		findTF = var_1_10003
-
-		var_1_10001(var_1_10003(arg_26_0._tf, "tpl"), false)
+function var_0_0.initUI(arg_26_0)
+	if IsUnityEditor then
+		setActive(findTF(arg_26_0._tf, "tpl"), false)
 	end
 
-	findTF = var_1_10001
-	arg_26_0.clickMask = var_1_10001(arg_26_0._tf, "clickMask")
-	TouchCakePopUI = var_1
-	arg_26_0.popUI = var_1.New(arg_26_0._tf, arg_26_0)
+	arg_26_0.clickMask = findTF(arg_26_0._tf, "clickMask")
+	arg_26_0.popUI = TouchCakePopUI.New(arg_26_0._tf, arg_26_0)
 
-	local var_26_0 = arg_26_0.popUI
+	arg_26_0.popUI:clearUI()
 
-	var_1.clearUI(var_26_0)
+	arg_26_0.gameUI = TouchCakeGamingUI.New(arg_26_0._tf, arg_26_0)
 
-	TouchCakeGamingUI = var_1
-	arg_26_0.gameUI = var_1.New(arg_26_0._tf, arg_26_0)
+	arg_26_0.gameUI:show(false)
 
-	local var_26_1 = arg_26_0.gameUI
+	arg_26_0.menuUI = TouchCakeMenuUI.New(arg_26_0._tf, arg_26_0)
 
-	var_1.show(var_26_1, false)
+	arg_26_0.menuUI:update(arg_26_0:GetMGHubData())
+	arg_26_0.menuUI:show(true)
 
-	TouchCakeMenuUI = var_1
-	arg_26_0.menuUI = var_1.New(arg_26_0._tf, arg_26_0)
-
-	local var_26_2 = arg_26_0.menuUI
-
-	var_1.update(var_26_2, arg_26_0:GetMGHubData())
-
-	local var_26_3 = arg_26_0.menuUI
-
-	var_1.show(var_26_3, true)
-
-	TouchCakeScene = var_1
-	arg_26_0.gameScene = var_1.New(arg_26_0._tf, arg_26_0)
+	arg_26_0.gameScene = TouchCakeScene.New(arg_26_0._tf, arg_26_0)
 
 	return
 end
 
-function var_0_1.changeBgm(arg_27_0, arg_27_1)
+function var_0_0.changeBgm(arg_27_0, arg_27_1)
 	local var_27_0
 
-	if arg_27_1 == var_0_3.bgm_type_default then
-		if not arg_27_0:getBGM() then
-			pg = var_3
-
-			local var_27_1 = var_3.CriMgr.GetInstance()
-
-			if var_3.IsDefaultBGM(var_27_1) then
-				pg = var_3
-				var_27_0 = var_3.voice_bgm.NewMainScene.default_bgm
-			else
-				pg = var_3
-				var_27_0 = var_3.voice_bgm.NewMainScene.bgm
-			end
-		end
-	elseif arg_27_1 == var_0_3.bgm_type_menu then
-		var_27_0 = var_0_2.menu_bgm
-	elseif arg_27_1 == var_0_3.bgm_type_game then
-		var_27_0 = var_0_2.game_bgm
+	if arg_27_1 == var_0_2.bgm_type_default then
+		var_27_0 = arg_27_0:getBGM() or pg.CriMgr.GetInstance():IsDefaultBGM() and pg.voice_bgm.NewMainScene.default_bgm or pg.voice_bgm.NewMainScene.bgm
+	elseif arg_27_1 == var_0_2.bgm_type_menu then
+		var_27_0 = var_0_1.menu_bgm
+	elseif arg_27_1 == var_0_2.bgm_type_game then
+		var_27_0 = var_0_1.game_bgm
 	end
 
 	if arg_27_0.bgm ~= var_27_0 then
 		arg_27_0.bgm = var_27_0
-		pg = var_3
 
-		local var_27_2 = var_3.BgmMgr.GetInstance()
-
-		var_3.Push(var_27_2, arg_27_0.__cname, var_27_0)
+		pg.BgmMgr.GetInstance():Push(arg_27_0.__cname, var_27_0)
 	end
 
 	return
 end
 
-function var_0_1.UpdateBeat(arg_28_0)
+function var_0_0.UpdateBeat(arg_28_0)
 	if arg_28_0.gameStop or arg_28_0.settlementFlag or not arg_28_0.gameStartFlag then
 		return
 	end
 
-	Input = var_1
-
-	local var_28_0 = var_1.GetKeyDown
-
-	KeyCode = var_1_10003
-
-	local var_28_1, var_28_2
-
-	if var_28_0(var_1_10003.A) then
-		var_28_1 = arg_28_0.gameScene
-		var_28_2 = var_28_2.press
-		KeyCode = var_1_10004
-
-		var_28_2(var_28_1, var_1_10004.A, true)
-	else
-		Input = var_28_2
-
-		local var_28_3 = var_28_2.GetKeyDown
-
-		KeyCode = var_28_1
-
-		if var_28_3(var_28_1.D) then
-			local var_28_4 = arg_28_0.gameScene
-			local var_28_5 = var_1.press
-
-			KeyCode = var_1_10004
-
-			var_28_5(var_28_4, var_1_10004.D, true)
-		end
+	if Input.GetKeyDown(KeyCode.A) then
+		arg_28_0.gameScene:press(KeyCode.A, true)
+	elseif Input.GetKeyDown(KeyCode.D) then
+		arg_28_0.gameScene:press(KeyCode.D, true)
 	end
 
 	return
 end
 
-function var_0_1.readyStart(arg_29_0)
+function var_0_0.readyStart(arg_29_0)
 	arg_29_0.readyStartFlag = true
 
-	var_0_2.Prepare()
-
-	local var_29_0 = arg_29_0.popUI
-
-	var_1.readyStart(var_29_0)
-
-	local var_29_1 = arg_29_0.menuUI
-
-	var_1.show(var_29_1, false)
-
-	local var_29_2 = arg_29_0.gameUI
-
-	var_1.show(var_29_2, false)
+	var_0_1.Prepare()
+	arg_29_0.popUI:readyStart()
+	arg_29_0.menuUI:show(false)
+	arg_29_0.gameUI:show(false)
 
 	return
 end
 
-function var_0_1.gameStart(arg_30_0)
+function var_0_0.gameStart(arg_30_0)
 	arg_30_0.readyStartFlag = false
 	arg_30_0.gameStartFlag = true
 	arg_30_0.sendSuccessFlag = false
 
-	local var_30_0 = arg_30_0.popUI
-
-	var_1.popCountUI(var_30_0, false)
-
-	local var_30_1 = arg_30_0.gameUI
-
-	var_1.start(var_30_1)
-
-	local var_30_2 = arg_30_0.gameUI
-
-	var_1.show(var_30_2, true)
-
-	local var_30_3 = arg_30_0.gameScene
-
-	var_1.start(var_30_3)
+	arg_30_0.popUI:popCountUI(false)
+	arg_30_0.gameUI:start()
+	arg_30_0.gameUI:show(true)
+	arg_30_0.gameScene:start()
 	arg_30_0:timerStart()
-	arg_30_0:changeBgm(var_0_3.bgm_type_game)
+	arg_30_0:changeBgm(var_0_2.bgm_type_game)
 
 	return
 end
 
-function var_0_1.onTimer(arg_31_0)
+function var_0_0.onTimer(arg_31_0)
 	arg_31_0:gameStep()
 
 	return
 end
 
-function var_0_1.gameStep(arg_32_0)
+function var_0_0.gameStep(arg_32_0)
 	arg_32_0:stepRunTimeData()
+	arg_32_0.gameScene:step(var_0_1.deltaTime)
+	arg_32_0.gameUI:step(var_0_1.deltaTime)
 
-	local var_32_0 = arg_32_0.gameScene
-
-	var_1.step(var_32_0, var_0_2.deltaTime)
-
-	local var_32_1 = arg_32_0.gameUI
-
-	var_1.step(var_32_1, var_0_2.deltaTime)
-
-	if var_0_2.gameTime <= 0 then
-		var_0_2.gameTime = 0
+	if var_0_1.gameTime <= 0 then
+		var_0_1.gameTime = 0
 
 		arg_32_0:onGameOver()
 	end
@@ -481,71 +278,59 @@ function var_0_1.gameStep(arg_32_0)
 	return
 end
 
-function var_0_1.timerStart(arg_33_0)
+function var_0_0.timerStart(arg_33_0)
 	if not arg_33_0.timer.running then
-		local var_33_0 = arg_33_0.timer
-
-		var_1.Start(var_33_0)
+		arg_33_0.timer:Start()
 	end
 
 	return
 end
 
-function var_0_1.timerResume(arg_34_0)
+function var_0_0.timerResume(arg_34_0)
 	if not arg_34_0.timer.running then
-		local var_34_0 = arg_34_0.timer
-
-		var_1.Start(var_34_0)
+		arg_34_0.timer:Start()
 	end
 
-	local var_34_1 = arg_34_0.gameScene
-
-	var_1.resume(var_34_1)
+	arg_34_0.gameScene:resume()
 
 	return
 end
 
-function var_0_1.timerStop(arg_35_0)
+function var_0_0.timerStop(arg_35_0)
 	if arg_35_0.timer.running then
-		local var_35_0 = arg_35_0.timer
-
-		var_1.Stop(var_35_0)
+		arg_35_0.timer:Stop()
 	end
 
 	return
 end
 
-function var_0_1.stepRunTimeData(arg_36_0)
-	Time = var_1_10001
-
-	local var_36_0 = var_1_10001.deltaTime
-
-	var_0_2.gameTime = var_0_2.gameTime - var_36_0
-	var_0_2.gameStepTime = var_0_2.gameStepTime + var_36_0
-	var_0_2.deltaTime = var_36_0
+function var_0_0.stepRunTimeData(arg_36_0)
+	var_0_1.gameTime = var_0_1.gameTime - Time.deltaTime
+	var_0_1.gameStepTime = var_0_1.gameStepTime + Time.deltaTime
+	var_0_1.deltaTime = Time.deltaTime
 
 	return
 end
 
-function var_0_1.addScore(arg_37_0, arg_37_1)
-	var_0_2.scoreNum = var_0_2.scoreNum + arg_37_1
+function var_0_0.addScore(arg_37_0, arg_37_1)
+	var_0_1.scoreNum = var_0_1.scoreNum + arg_37_1
 
 	return
 end
 
-function var_0_1.addCombo(arg_38_0)
-	var_0_2.comboNum = var_0_2.comboNum + 1
+function var_0_0.addCombo(arg_38_0)
+	var_0_1.comboNum = var_0_1.comboNum + 1
 
 	return
 end
 
-function var_0_1.clearCombo(arg_39_0)
-	var_0_2.comboNum = 0
+function var_0_0.clearCombo(arg_39_0)
+	var_0_1.comboNum = 0
 
 	return
 end
 
-function var_0_1.onGameOver(arg_40_0)
+function var_0_0.onGameOver(arg_40_0)
 	if arg_40_0.settlementFlag then
 		return
 	end
@@ -554,42 +339,16 @@ function var_0_1.onGameOver(arg_40_0)
 	arg_40_0:clearController()
 
 	arg_40_0.settlementFlag = true
-	setActive = var_1
 
-	var_1(arg_40_0.clickMask, true)
-
-	LeanTween = var_1
-
-	local var_40_0 = var_1.delayedCall
-
-	go = var_3
-
-	local var_40_1 = var_3(arg_40_0._tf)
-	local var_40_2 = 0.1
-
-	System = var_5
-
-	var_40_0(var_40_1, var_40_2, var_5.Action(function()
+	setActive(arg_40_0.clickMask, true)
+	LeanTween.delayedCall(go(arg_40_0._tf), 0.1, System.Action(function()
 		arg_40_0.settlementFlag = false
+		arg_40_0.gameStartFlag = false
 
-		local var_41_0 = arg_40_0
-
-		var_41_0.gameStartFlag = false
-		setActive = var_41_0
-
-		var_41_0(arg_40_0.clickMask, false)
-
-		local var_41_1 = arg_40_0.popUI
-
-		var_0.updateSettlementUI(var_41_1)
-
-		local var_41_2 = arg_40_0.popUI
-
-		var_0.popSettlementUI(var_41_2, true)
-
-		local var_41_3 = arg_40_0
-
-		var_0.OnApplicationPaused(var_41_3)
+		setActive(arg_40_0.clickMask, false)
+		arg_40_0.popUI:updateSettlementUI()
+		arg_40_0.popUI:popSettlementUI(true)
+		arg_40_0:OnApplicationPaused()
 
 		return
 	end))
@@ -597,7 +356,7 @@ function var_0_1.onGameOver(arg_40_0)
 	return
 end
 
-function var_0_1.OnApplicationPaused(arg_42_0)
+function var_0_0.OnApplicationPaused(arg_42_0)
 	if not arg_42_0.gameStartFlag then
 		return
 	end
@@ -611,45 +370,36 @@ function var_0_1.OnApplicationPaused(arg_42_0)
 	end
 
 	arg_42_0:pauseGame()
-
-	local var_42_0 = arg_42_0.popUI
-
-	var_1.popPauseUI(var_42_0)
+	arg_42_0.popUI:popPauseUI()
 
 	return
 end
 
-function var_0_1.clearController(arg_43_0)
-	local var_43_0 = arg_43_0.gameScene
-
-	var_1.clear(var_43_0)
+function var_0_0.clearController(arg_43_0)
+	arg_43_0.gameScene:clear()
 
 	return
 end
 
-function var_0_1.pauseGame(arg_44_0)
+function var_0_0.pauseGame(arg_44_0)
 	arg_44_0.gameStop = true
 
-	local var_44_0 = arg_44_0.gameScene
-
-	var_1.stop(var_44_0)
+	arg_44_0.gameScene:stop()
 	arg_44_0:timerStop()
 
 	return
 end
 
-function var_0_1.resumeGame(arg_45_0)
+function var_0_0.resumeGame(arg_45_0)
 	arg_45_0.gameStop = false
 
-	local var_45_0 = arg_45_0.gameScene
-
-	var_1.resume(var_45_0)
+	arg_45_0.gameScene:resume()
 	arg_45_0:timerStart()
 
 	return
 end
 
-function var_0_1.onBackPressed(arg_46_0)
+function var_0_0.onBackPressed(arg_46_0)
 	if arg_46_0.readyStartFlag then
 		return
 	end
@@ -663,48 +413,29 @@ function var_0_1.onBackPressed(arg_46_0)
 			return
 		end
 
-		local var_46_0 = arg_46_0.popUI
-
-		var_1.backPressed(var_46_0)
+		arg_46_0.popUI:backPressed()
 	end
 
 	return
 end
 
-function var_0_1.OnSendMiniGameOPDone(arg_47_0, arg_47_1)
+function var_0_0.OnSendMiniGameOPDone(arg_47_0, arg_47_1)
 	return
 end
 
-function var_0_1.getRankData(arg_48_0)
-	pg = var_1_10001
-
-	local var_48_0 = var_1_10001.m02
-	local var_48_1 = var_1.sendNotification
-
-	GAME = var_1_10004
-
-	var_48_1(var_48_0, var_1_10004.MINI_GAME_FRIEND_RANK, {
-		id = var_0_2.game_id,
+function var_0_0.getRankData(arg_48_0)
+	pg.m02:sendNotification(GAME.MINI_GAME_FRIEND_RANK, {
+		id = var_0_1.game_id,
 		callback = function(arg_49_0)
-			local var_49_0 = {}
-
 			for iter_49_0 = 1, #arg_49_0 do
-				local var_49_1 = {}
-
-				pairs = var_2_10007
-
-				for iter_49_1, iter_49_2 in var_2_10007(arg_49_0[iter_49_0]) do
-					var_49_1[iter_49_1] = iter_49_2
+				for iter_49_1, iter_49_2 in pairs(arg_49_0[iter_49_0]) do
+					({})[iter_49_1] = iter_49_2
 				end
 
-				table = var_2_10007
-
-				var_2_10007.insert(var_49_0, var_49_1)
+				table.insert({}, {})
 			end
 
-			table = var_2
-
-			var_2.sort(var_49_0, function(arg_50_0, arg_50_1)
+			table.sort({}, function(arg_50_0, arg_50_1)
 				if arg_50_0.score ~= arg_50_1.score then
 					return arg_50_0.score > arg_50_1.score
 				elseif arg_50_0.time_data ~= arg_50_1.time_data then
@@ -715,10 +446,7 @@ function var_0_1.getRankData(arg_48_0)
 
 				return
 			end)
-
-			local var_49_2 = arg_48_0.popUI
-
-			var_2.updateRankData(var_49_2, var_49_0)
+			arg_48_0.popUI:updateRankData({})
 
 			return
 		end
@@ -727,51 +455,29 @@ function var_0_1.getRankData(arg_48_0)
 	return
 end
 
-function var_0_1.willExit(arg_51_0)
+function var_0_0.willExit(arg_51_0)
 	if arg_51_0.handle then
-		UpdateBeat = var_1
-		var_1_10003 = var_1
-
-		var_1.RemoveListener(var_1_10003, arg_51_0.handle)
+		UpdateBeat:RemoveListener(arg_51_0.handle)
 	end
 
-	if arg_51_0._tf then
-		LeanTween = var_1
-
-		local var_51_0 = var_1.isTweening
-
-		go = var_1_10003
-
-		if var_51_0(var_1_10003(arg_51_0._tf)) then
-			LeanTween = var_1
-
-			local var_51_1 = var_1.cancel
-
-			go = var_3
-
-			var_51_1(var_3(arg_51_0._tf))
-		end
+	if arg_51_0._tf and LeanTween.isTweening(go(arg_51_0._tf)) then
+		LeanTween.cancel(go(arg_51_0._tf))
 	end
 
 	if arg_51_0.timer and arg_51_0.timer.running then
-		local var_51_2 = arg_51_0.timer
-
-		var_1.Stop(var_51_2)
+		arg_51_0.timer:Stop()
 	end
 
-	Time = var_1
-	var_1.timeScale = 1
+	Time.timeScale = 1
 	arg_51_0.timer = nil
 
 	if arg_51_0.gameUI then
-		local var_51_3 = arg_51_0.gameUI
-
-		var_1.dispose(var_51_3)
+		arg_51_0.gameUI:dispose()
 	end
 
-	var_0_2.Clear()
+	var_0_1.Clear()
 
 	return
 end
 
-return var_0_1
+return var_0_0

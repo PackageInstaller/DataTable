@@ -1,116 +1,31 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("IslandFriendCard")
+﻿local var_0_0 = class("IslandFriendCard")
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
-	local var_1_0 = arg_1_1.transform
-	local var_1_1 = var_2.Find(var_1_0, "icon")
-	local var_1_2 = var_2.GetComponent
+	arg_1_0.iconTr = arg_1_1.transform:Find("icon"):GetComponent(typeof(Image))
+	arg_1_0.giftTr = arg_1_1.transform:Find("gift")
+	arg_1_0.nameTr = arg_1_1.transform:Find("name"):GetComponent(typeof(Text))
+	arg_1_0.levelTr = arg_1_1.transform:Find("level"):GetComponent(typeof(Text))
+	arg_1_0.descTxt = arg_1_1.transform:Find("Text"):GetComponent(typeof(Text))
+	arg_1_0.onlineTr = arg_1_1.transform:Find("online")
+	arg_1_0.offlineTr = arg_1_1.transform:Find("offline")
+	arg_1_0.offlineTxt = arg_1_1.transform:Find("offline/Text"):GetComponent(typeof(Text))
+	arg_1_0.visitBtn = arg_1_1.transform:Find("visit")
+	arg_1_0.moreBtn = arg_1_1.transform:Find("more")
+	arg_1_0.cardBtn = arg_1_1.transform:Find("icon")
 
-	typeof = var_5
-	Image = var_1_10007
-	arg_1_0.iconTr = var_1_2(var_1_1, var_5(var_1_10007))
-
-	local var_1_3 = arg_1_1.transform
-
-	arg_1_0.giftTr = var_2.Find(var_1_3, "gift")
-
-	local var_1_4 = arg_1_1.transform
-	local var_1_5 = var_2.Find(var_1_4, "name")
-	local var_1_6 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.nameTr = var_1_6(var_1_5, var_5(var_1_10007))
-
-	local var_1_7 = arg_1_1.transform
-	local var_1_8 = var_2.Find(var_1_7, "level")
-	local var_1_9 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.levelTr = var_1_9(var_1_8, var_5(var_1_10007))
-
-	local var_1_10 = arg_1_1.transform
-	local var_1_11 = var_2.Find(var_1_10, "Text")
-	local var_1_12 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.descTxt = var_1_12(var_1_11, var_5(var_1_10007))
-
-	local var_1_13 = arg_1_1.transform
-
-	arg_1_0.onlineTr = var_2.Find(var_1_13, "online")
-
-	local var_1_14 = arg_1_1.transform
-
-	arg_1_0.offlineTr = var_2.Find(var_1_14, "offline")
-
-	local var_1_15 = arg_1_1.transform
-	local var_1_16 = var_2.Find(var_1_15, "offline/Text")
-	local var_1_17 = var_2.GetComponent
-
-	typeof = var_5
-	Text = var_1_10007
-	arg_1_0.offlineTxt = var_1_17(var_1_16, var_5(var_1_10007))
-
-	local var_1_18 = arg_1_1.transform
-
-	arg_1_0.visitBtn = var_2.Find(var_1_18, "visit")
-
-	local var_1_19 = arg_1_1.transform
-
-	arg_1_0.moreBtn = var_2.Find(var_1_19, "more")
-
-	local var_1_20 = arg_1_1.transform
-
-	arg_1_0.cardBtn = var_2.Find(var_1_20, "icon")
-	setText = var_2
-
-	local var_1_21 = arg_1_0.visitBtn
-	local var_1_22 = var_4.Find(var_1_21, "Text")
-
-	i18n = var_5
-
-	var_2(var_1_22, var_5("island_btn_label_visit"))
-
-	setText = var_2
-
-	local var_1_23 = arg_1_0.moreBtn
-	local var_1_24 = var_4.Find(var_1_23, "Text")
-
-	i18n = var_5
-
-	var_2(var_1_24, var_5("island_btn_label_more"))
-
-	setText = var_2
-
-	local var_1_25 = arg_1_0.onlineTr
-	local var_1_26 = var_4.Find(var_1_25, "Text")
-
-	i18n = var_5
-
-	var_2(var_1_26, var_5("island_btn_label_online"))
+	setText(arg_1_0.visitBtn:Find("Text"), i18n("island_btn_label_visit"))
+	setText(arg_1_0.moreBtn:Find("Text"), i18n("island_btn_label_more"))
+	setText(arg_1_0.onlineTr:Find("Text"), i18n("island_btn_label_online"))
 
 	return
 end
 
 function var_0_0.Update(arg_2_0, arg_2_1)
 	arg_2_0.player = arg_2_1
-	pg = var_1_10002
 
-	local var_2_0 = var_1_10002.ship_data_statistics[arg_2_1.icon]
-
-	Ship = var_3
-
-	local var_2_1 = var_3.New({
+	LoadSpriteAsync("qicon/" .. Ship.New({
 		configId = arg_2_1.icon
-	})
-
-	LoadSpriteAsync = var_1_10004
-
-	var_1_10004("qicon/" .. var_2_1:getPrefab(), function(arg_3_0)
+	}):getPrefab(), function(arg_3_0)
 		arg_2_0.iconTr.sprite = arg_3_0
 
 		return
@@ -126,32 +41,17 @@ function var_0_0.Update(arg_2_0, arg_2_1)
 end
 
 function var_0_0.UpdateOnline(arg_4_0, arg_4_1)
-	getProxy = var_1_10002
-	IslandProxy = var_1_10004
+	local var_4_0 = getProxy(IslandProxy):GetGiftTagInfoCache(arg_4_1.id)
 
-	local var_4_0 = var_1_10002(var_1_10004)
-	local var_4_1 = var_2.GetGiftTagInfoCache(var_4_0, arg_4_1.id)
+	setActive(arg_4_0.giftTr, var_4_0 and var_4_0:ExistGift())
 
-	setActive = var_1_10003
+	local var_4_1 = arg_4_1:isOnline()
 
-	var_1_10003(arg_4_0.giftTr, var_4_1 and var_4_1:ExistGift())
+	setActive(arg_4_0.onlineTr, var_4_1)
+	setActive(arg_4_0.offlineTr, not var_4_1)
 
-	local var_4_2 = arg_4_1
-	local var_4_3 = arg_4_1.isOnline(var_4_2)
-
-	setActive = var_4_0
-
-	var_4_0(arg_4_0.onlineTr, var_4_3)
-
-	setActive = var_4_0
-
-	var_4_0(arg_4_0.offlineTr, not var_4_3)
-
-	if not var_4_3 then
-		local var_4_4 = arg_4_0.offlineTxt
-
-		getOfflineTimeStamp = var_4_2
-		var_4_4.text = var_4_2(arg_4_1.preOnLineTime)
+	if not var_4_1 then
+		arg_4_0.offlineTxt.text = getOfflineTimeStamp(arg_4_1.preOnLineTime)
 	end
 
 	return

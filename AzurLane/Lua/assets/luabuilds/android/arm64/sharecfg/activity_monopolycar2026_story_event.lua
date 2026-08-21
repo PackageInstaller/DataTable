@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_monopolycar2026_story_event") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_monopolycar2026_story_event"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_monopolycar2026_story_event = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_monopolycar2026_story_event
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_monopolycar2026_story_event = rawget(pg, "activity_monopolycar2026_story_event") or setmetatable({
+	__name = "activity_monopolycar2026_story_event"
+}, confNEO)
+pg.activity_monopolycar2026_story_event.all = {
 	1,
 	2,
 	3,
@@ -37,25 +14,11 @@ var_0_3.all = {
 	9,
 	10
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.activity_monopolycar2026_story_event = {}
+pg.base = pg.base or {}
+pg.base.activity_monopolycar2026_story_event = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_monopolycar2026_story_event
-
-	var_1_0[1] = {
+	pg.base.activity_monopolycar2026_story_event[1] = {
 		main_story = "BINHAIJISU3",
 		name = "日常剧情1",
 		id = 1,
@@ -66,11 +29,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = -116.54
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_monopolycar2026_story_event
-
-	var_1_1[2] = {
+	pg.base.activity_monopolycar2026_story_event[2] = {
 		main_story = "BINHAIJISU4",
 		name = "日常剧情2",
 		id = 2,
@@ -81,11 +40,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = 233
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_monopolycar2026_story_event
-
-	var_1_2[3] = {
+	pg.base.activity_monopolycar2026_story_event[3] = {
 		main_story = "BINHAIJISU5",
 		name = "日常剧情3",
 		id = 3,
@@ -96,11 +51,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = -131.1
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_monopolycar2026_story_event
-
-	var_1_3[4] = {
+	pg.base.activity_monopolycar2026_story_event[4] = {
 		main_story = "BINHAIJISU6",
 		name = "日常剧情4",
 		id = 4,
@@ -111,11 +62,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = 302
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_monopolycar2026_story_event
-
-	var_1_4[5] = {
+	pg.base.activity_monopolycar2026_story_event[5] = {
 		main_story = "BINHAIJISU7",
 		name = "日常剧情5",
 		id = 5,
@@ -126,11 +73,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = -131
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_monopolycar2026_story_event
-
-	var_1_5[6] = {
+	pg.base.activity_monopolycar2026_story_event[6] = {
 		main_story = "BINHAIJISU8",
 		name = "日常剧情6",
 		id = 6,
@@ -141,11 +84,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = 342
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_monopolycar2026_story_event
-
-	var_1_6[7] = {
+	pg.base.activity_monopolycar2026_story_event[7] = {
 		main_story = "BINHAIJISU9",
 		name = "日常剧情7",
 		id = 7,
@@ -156,11 +95,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = -397
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_monopolycar2026_story_event
-
-	var_1_7[8] = {
+	pg.base.activity_monopolycar2026_story_event[8] = {
 		main_story = "BINHAIJISU10",
 		name = "日常剧情8",
 		id = 8,
@@ -171,11 +106,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = 182
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_monopolycar2026_story_event
-
-	var_1_8[9] = {
+	pg.base.activity_monopolycar2026_story_event[9] = {
 		main_story = "BINHAIJISU11",
 		name = "日常剧情9",
 		id = 9,
@@ -186,8 +117,7 @@ var_0_3.base.activity_monopolycar2026_story_event = {}
 			y = -391
 		}
 	}
-	pg = var_1_8
-	var_1_8.base.activity_monopolycar2026_story_event[10] = {
+	pg.base.activity_monopolycar2026_story_event[10] = {
 		main_story = "BINHAIJISU12",
 		name = "日常剧情10",
 		id = 10,

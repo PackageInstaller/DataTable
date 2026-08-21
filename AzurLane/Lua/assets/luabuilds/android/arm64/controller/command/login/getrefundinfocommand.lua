@@ -1,48 +1,15 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("GetRefundInfoCommand", pm.SimpleCommand)
 
-local var_0_0 = "GetRefundInfoCommand"
-
-pm = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003.SimpleCommand)
-
-function var_0_1.execute(arg_1_0, arg_1_1)
-	pg = var_1_10002
-
-	local var_1_0 = var_1_10002.ConnectionMgr.GetInstance()
-
-	var_2.Send(var_1_0, 11023, {
+function var_0_0.execute(arg_1_0, arg_1_1)
+	pg.ConnectionMgr.GetInstance():Send(11023, {
 		type = 1
 	}, 11024, function(arg_2_0)
 		if arg_2_0.result == 0 then
-			getProxy = var_1
-			PlayerProxy = var_2_10003
+			getProxy(PlayerProxy):setRefundInfo(arg_2_0.shop_info)
+			pg.m02:sendNotification(GAME.REFUND_INFO_UPDATE)
 
-			local var_2_0 = var_1(var_2_10003)
-
-			var_1.setRefundInfo(var_2_0, arg_2_0.shop_info)
-
-			pg = var_2
-
-			local var_2_1 = var_2.m02
-			local var_2_2 = var_2.sendNotification
-
-			GAME = var_5
-
-			var_2_2(var_2_1, var_5.REFUND_INFO_UPDATE)
-
-			if arg_1_1 then
-				local var_2_3 = arg_1_1
-
-				if var_2.getBody(var_2_3) then
-					local var_2_4 = arg_1_1
-
-					if var_2.getBody(var_2_4).callback then
-						local var_2_5 = arg_1_1
-
-						var_2.getBody(var_2_5).callback()
-					end
-				end
+			if arg_1_1 and arg_1_1:getBody() and arg_1_1:getBody().callback then
+				arg_1_1:getBody().callback()
 			end
 		end
 
@@ -52,4 +19,4 @@ function var_0_1.execute(arg_1_0, arg_1_1)
 	return
 end
 
-return var_0_1
+return var_0_0

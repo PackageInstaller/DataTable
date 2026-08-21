@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("NewStoryRecordPanel")
+﻿local var_0_0 = class("NewStoryRecordPanel")
 local var_0_1 = 0
 local var_0_2 = 1
 local var_0_3 = 2
@@ -22,27 +20,12 @@ end
 function var_0_0.Load(arg_3_0)
 	arg_3_0.state = var_0_2
 	arg_3_0.parentTF = arg_3_0:GetParent()
-	ResourceMgr = var_1
 
-	local var_3_0 = var_1.Inst
-	local var_3_1 = var_1.getAssetAsync
-	local var_3_2 = "ui/" .. arg_3_0:GetUIName()
-	local var_3_3 = ""
-
-	UnityEngine = var_1_10006
-
-	var_3_1(var_3_0, var_3_2, var_3_3, var_1_10006.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
-		Object = var_2_10001
-
-		local var_4_0 = var_2_10001.Instantiate(arg_4_0, arg_3_0.parentTF)
-		local var_4_1 = arg_3_0
-
-		if var_2.IsLoading(var_4_1) then
+	ResourceMgr.Inst:getAssetAsync("ui/" .. arg_3_0:GetUIName(), "", UnityEngine.Events.UnityAction_UnityEngine_Object(function(arg_4_0)
+		if arg_3_0:IsLoading() then
 			arg_3_0.state = var_0_3
 
-			local var_4_2 = arg_3_0
-
-			var_2.Init(var_4_2, var_4_0)
+			arg_3_0:Init((Object.Instantiate(arg_4_0, arg_3_0.parentTF)))
 		end
 
 		return
@@ -52,9 +35,7 @@ function var_0_0.Load(arg_3_0)
 end
 
 function var_0_0.GetParent(arg_5_0)
-	pg = var_1_10001
-
-	return var_1_10001.NewStoryMgr.GetInstance().frontTr
+	return pg.NewStoryMgr.GetInstance().frontTr
 end
 
 function var_0_0.IsEmptyOrUnload(arg_6_0)
@@ -76,84 +57,25 @@ end
 function var_0_0.Init(arg_10_0, arg_10_1)
 	arg_10_0._go = arg_10_1
 	arg_10_0._tf = arg_10_1.transform
-
-	local var_10_0 = arg_10_0._tf
-	local var_10_1 = var_2.GetComponent
-
-	typeof = var_1_10005
-	Animation = var_1_10007
-	arg_10_0.pageAnim = var_10_1(var_10_0, var_1_10005(var_1_10007))
-
-	local var_10_2 = arg_10_0._tf
-	local var_10_3 = var_2.GetComponent
-
-	typeof = var_5
-	DftAniEvent = var_1_10007
-	arg_10_0.pageAniEvent = var_10_3(var_10_2, var_5(var_1_10007))
-
-	local var_10_4 = arg_10_0._tf
-
-	arg_10_0.container = var_2.Find(var_10_4, "content")
-
-	local var_10_5 = arg_10_0._tf
-
-	arg_10_0.tpl = var_2.Find(var_10_5, "content/tpl")
-	GetOrAddComponent = var_2
-
-	local var_10_6 = arg_10_0._tf
-
-	typeof = var_5
-	CanvasGroup = var_1_10007
-	arg_10_0.cg = var_2(var_10_6, var_5(var_1_10007))
+	arg_10_0.pageAnim = arg_10_0._tf:GetComponent(typeof(Animation))
+	arg_10_0.pageAniEvent = arg_10_0._tf:GetComponent(typeof(DftAniEvent))
+	arg_10_0.container = arg_10_0._tf:Find("content")
+	arg_10_0.tpl = arg_10_0._tf:Find("content/tpl")
+	arg_10_0.cg = GetOrAddComponent(arg_10_0._tf, typeof(CanvasGroup))
 	arg_10_0.tplPools = {
 		arg_10_0.tpl
 	}
+	arg_10_0.closeBtn = arg_10_0._tf:Find("adapt/close")
+	arg_10_0.bgImage = arg_10_0._tf:GetComponent(typeof(Image))
+	arg_10_0.scrollrect = arg_10_0._tf:GetComponent(typeof(ScrollRect))
+	arg_10_0.contentSizeFitter = arg_10_0._tf:Find("content"):GetComponent(typeof(ContentSizeFitter))
 
-	local var_10_7 = arg_10_0._tf
-
-	arg_10_0.closeBtn = var_2.Find(var_10_7, "adapt/close")
-
-	local var_10_8 = arg_10_0._tf
-	local var_10_9 = var_2.GetComponent
-
-	typeof = var_5
-	Image = var_1_10007
-	arg_10_0.bgImage = var_10_9(var_10_8, var_5(var_1_10007))
-
-	local var_10_10 = arg_10_0._tf
-	local var_10_11 = var_2.GetComponent
-
-	typeof = var_5
-	ScrollRect = var_1_10007
-	arg_10_0.scrollrect = var_10_11(var_10_10, var_5(var_1_10007))
-
-	local var_10_12 = arg_10_0._tf
-	local var_10_13 = var_2.Find(var_10_12, "content")
-	local var_10_14 = var_2.GetComponent
-
-	typeof = var_5
-	ContentSizeFitter = var_1_10007
-	arg_10_0.contentSizeFitter = var_10_14(var_10_13, var_5(var_1_10007))
-	onButton = var_2
-
-	local var_10_15
-	local var_10_16 = arg_10_0.closeBtn
-
-	local function var_10_17()
-		setButtonEnabled = var_2_10000
-
-		var_2_10000(arg_10_0.closeBtn, false)
-
-		local var_11_0 = arg_10_0
-
-		var_0.Hide(var_11_0)
+	onButton(nil, arg_10_0.closeBtn, function()
+		setButtonEnabled(arg_10_0.closeBtn, false)
+		arg_10_0:Hide()
 
 		return
-	end
-
-	SFX_PANEL = var_1_10007
-
-	var_2(var_10_15, var_10_16, var_10_17, var_1_10007)
+	end, SFX_PANEL)
 
 	arg_10_0.state = var_0_4
 
@@ -163,43 +85,32 @@ function var_0_0.Init(arg_10_0, arg_10_1)
 end
 
 function var_0_0.UpdateAll(arg_12_0)
-	local var_12_0 = arg_12_0.cg
+	arg_12_0.cg.blocksRaycasts = false
 
-	var_12_0.blocksRaycasts = false
-	seriesAsync = var_12_0
-
-	var_12_0({
+	seriesAsync({
 		function(arg_13_0)
 			arg_12_0.cg.alpha = 0
 
-			local var_13_0 = arg_12_0
-
-			var_1.UpdateList(var_13_0, arg_13_0)
+			arg_12_0:UpdateList(arg_13_0)
 
 			return
 		end,
 		function(arg_14_0)
-			onNextTick = var_2_10001
-
-			var_2_10001(arg_14_0)
+			onNextTick(arg_14_0)
 
 			return
 		end,
 		function(arg_15_0)
 			arg_12_0.cg.alpha = 1
 
-			local var_15_0 = arg_12_0
-
-			var_1.PlayAnimation(var_15_0, arg_15_0)
+			arg_12_0:PlayAnimation(arg_15_0)
 
 			return
 		end
 	}, function()
 		arg_12_0.cg.blocksRaycasts = true
 
-		local var_16_0 = arg_12_0
-
-		var_0.BlurPanel(var_16_0)
+		arg_12_0:BlurPanel()
 
 		return
 	end)
@@ -208,27 +119,14 @@ function var_0_0.UpdateAll(arg_12_0)
 end
 
 local function var_0_8(arg_17_0)
-	setActive = var_1_10001
-
-	var_1_10001(arg_17_0._tf, true)
-
-	setButtonEnabled = var_1_10001
-
-	var_1_10001(arg_17_0.closeBtn, true)
-
-	local var_17_0 = arg_17_0.pageAniEvent
-
-	var_1.SetEndEvent(var_17_0, function()
-		local var_18_0 = arg_17_0.pageAniEvent
-
-		var_0.SetEndEvent(var_18_0, nil)
+	setActive(arg_17_0._tf, true)
+	setButtonEnabled(arg_17_0.closeBtn, true)
+	arg_17_0.pageAniEvent:SetEndEvent(function()
+		arg_17_0.pageAniEvent:SetEndEvent(nil)
 
 		return
 	end)
-
-	local var_17_1 = arg_17_0.pageAnim
-
-	var_1.Play(var_17_1, "anim_storyrecordUI_record_in")
+	arg_17_0.pageAnim:Play("anim_storyrecordUI_record_in")
 
 	arg_17_0.state = var_0_4
 
@@ -257,46 +155,26 @@ local function var_0_9(arg_20_0)
 	local var_20_1 = false
 
 	if #arg_20_0.tplPools <= 0 then
-		Object = var_3
-		var_20_0 = var_3.Instantiate(arg_20_0.tpl, arg_20_0.tpl.parent)
+		var_20_0 = Object.Instantiate(arg_20_0.tpl, arg_20_0.tpl.parent)
 	else
 		var_20_1 = true
-		table = var_3
-		var_20_0 = var_3.remove(arg_20_0.tplPools, 1)
+		var_20_0 = table.remove(arg_20_0.tplPools, 1)
 	end
 
-	GetOrAddComponent = var_3
-
-	local var_20_2 = var_20_0
-
-	typeof = var_1_10006
-	CanvasGroup = var_1_10008
-	var_3(var_20_2, var_1_10006(var_1_10008)).alpha = 1
+	GetOrAddComponent(var_20_0, typeof(CanvasGroup)).alpha = 1
 
 	return var_20_0, var_20_1
 end
 
 local function var_0_10(arg_21_0, arg_21_1)
-	setActive = var_1_10002
+	setActive(arg_21_1, false)
 
-	var_1_10002(arg_21_1, false)
-
-	GetOrAddComponent = var_1_10002
-
-	local var_21_0 = arg_21_1
-
-	typeof = var_5
-	CanvasGroup = var_1_10007
-	var_1_10002(var_21_0, var_5(var_1_10007)).alpha = 1
+	GetOrAddComponent(arg_21_1, typeof(CanvasGroup)).alpha = 1
 
 	if #arg_21_0.tplPools >= 5 and arg_21_1 ~= arg_21_0.tpl then
-		Object = var_2
-
-		var_2.Destroy(arg_21_1.gameObject)
+		Object.Destroy(arg_21_1.gameObject)
 	else
-		table = var_2
-
-		var_2.insert(arg_21_0.tplPools, arg_21_1)
+		table.insert(arg_21_0.tplPools, arg_21_1)
 	end
 
 	return
@@ -313,96 +191,51 @@ function var_0_0.UpdateList(arg_22_0, arg_22_1)
 
 	arg_22_0.usingTpls = {}
 
-	local var_22_3
+	local var_22_3 = #var_22_0 < var_0_7 and #var_22_0 or var_0_7
 
-	if not (#var_22_0 < var_0_7) or not #var_22_0 then
-		var_22_3 = var_0_7
-	end
-
-	ipairs = var_6
-
-	for iter_22_0, iter_22_1 in var_6(var_22_0) do
+	for iter_22_0, iter_22_1 in ipairs(var_22_0) do
 		local var_22_4 = #var_22_0
 
-		table = var_1_10012
-
-		var_1_10012.insert(var_22_1, function(arg_23_0)
+		table.insert(var_22_1, function(arg_23_0)
 			local var_23_0, var_23_1 = var_0_9(arg_22_0)
 
 			if not var_23_1 then
 				var_22_2 = var_22_2 + 1
 			end
 
-			local var_23_2 = arg_22_0
-
-			var_3.UpdateRecord(var_23_2, var_23_0, iter_22_1)
-
-			table = var_3
-
-			var_3.insert(arg_22_0.usingTpls, var_23_0)
-
-			tf = var_3
-
-			local var_23_3 = var_3(var_23_0)
-
-			var_3.SetAsLastSibling(var_23_3)
+			arg_22_0:UpdateRecord(var_23_0, iter_22_1)
+			table.insert(arg_22_0.usingTpls, var_23_0)
+			tf(var_23_0):SetAsLastSibling()
 
 			if var_22_2 % 5 == 0 then
 				var_22_2 = 1
-				onNextTick = var_3
 
-				var_3(arg_23_0)
+				onNextTick(arg_23_0)
 			else
 				arg_23_0()
 			end
 
-			local var_23_4 = var_23_0
-			local var_23_5 = var_23_0.GetComponent
-
-			typeof = var_6
-			Animation = var_2_10008
-
-			local var_23_6 = var_23_5(var_23_4, var_6(var_2_10008))
+			local var_23_2 = var_23_0:GetComponent(typeof(Animation))
 
 			if iter_22_0 + var_22_3 <= var_22_4 then
-				setActive = var_4
-
-				var_4(var_23_0, true)
-				var_23_6:Play("anim_storyrecordUI_tql_reset")
+				setActive(var_23_0, true)
+				var_23_2:Play("anim_storyrecordUI_tql_reset")
 			else
-				GetOrAddComponent = var_4
+				GetOrAddComponent(var_23_0, typeof(CanvasGroup)).alpha = 0
 
-				local var_23_7 = var_23_0
-
-				typeof = var_7
-				CanvasGroup = var_2_10009
-
-				local var_23_8 = var_4(var_23_7, var_7(var_2_10009))
-
-				var_23_8.alpha = 0
-				setActive = var_23_8
-
-				var_23_8(var_23_0, true)
+				setActive(var_23_0, true)
 			end
 
 			return
 		end)
 	end
 
-	table = var_6
-
-	var_6.insert(var_22_1, function(arg_24_0)
-		onDelayTick = var_2_10001
-
-		var_2_10001(function()
+	table.insert(var_22_1, function(arg_24_0)
+		onDelayTick(function()
 			arg_22_0.contentSizeFitter.enabled = false
+			arg_22_0.contentSizeFitter.enabled = true
 
-			local var_25_0 = arg_22_0.contentSizeFitter
-
-			var_25_0.enabled = true
-			scrollToBottom = var_25_0
-
-			var_25_0(arg_22_0._tf)
+			scrollToBottom(arg_22_0._tf)
 			arg_24_0()
 
 			return
@@ -410,165 +243,85 @@ function var_0_0.UpdateList(arg_22_0, arg_22_1)
 
 		return
 	end)
-
-	seriesAsync = var_6
-
-	var_6(var_22_1, arg_22_1)
+	seriesAsync(var_22_1, arg_22_1)
 
 	return
 end
 
 function var_0_0.PlayAnimation(arg_26_0, arg_26_1)
-	local var_26_0
+	if #arg_26_0.displays < var_0_7 then
+		local var_26_0 = #arg_26_0.displays or var_0_7
+		local var_26_1 = {}
 
-	if not (#arg_26_0.displays < var_0_7) or not #var_2 then
-		var_26_0 = var_0_7
-	end
+		for iter_26_0 = 1, var_26_0 do
+			table.insert(var_26_1, function(arg_27_0)
+				arg_26_0.usingTpls[#arg_26_0.usingTpls - var_26_0 + iter_26_0]:GetComponent(typeof(Animation)):Play("anim_storyrecordUI_tpl_in")
+				onDelayTick(function()
+					arg_27_0()
 
-	local var_26_1 = {}
-
-	for iter_26_0 = 1, var_26_0 do
-		table = var_1_10009
-
-		var_1_10009.insert(var_26_1, function(arg_27_0)
-			local var_27_0 = #arg_26_0.usingTpls - var_26_0 + iter_26_0
-			local var_27_1 = arg_26_0.usingTpls[var_27_0]
-			local var_27_2 = var_2.GetComponent
-
-			typeof = var_2_10006
-			Animation = var_2_10008
-
-			local var_27_3 = var_27_2(var_27_1, var_2_10006(var_2_10008))
-
-			var_3.Play(var_27_3, "anim_storyrecordUI_tpl_in")
-
-			onDelayTick = var_3
-
-			var_3(function()
-				arg_27_0()
+					return
+				end, 0.033)
 
 				return
-			end, 0.033)
+			end)
+		end
 
-			return
-		end)
+		seriesAsync(var_26_1)
+		arg_26_1()
+
+		return
 	end
-
-	seriesAsync = var_5
-
-	var_5(var_26_1)
-	arg_26_1()
-
-	return
 end
 
 function var_0_0.UpdateIcon(arg_29_0, arg_29_1, arg_29_2)
-	local var_29_0 = arg_29_1.icon
-
-	GetImageSpriteFromAtlasAsync = var_1_10004
-
-	var_1_10004("SquareIcon/" .. var_29_0, "", arg_29_2:Find("Image"))
+	GetImageSpriteFromAtlasAsync("SquareIcon/" .. arg_29_1.icon, "", arg_29_2:Find("Image"))
 
 	return
 end
 
 function var_0_0.UpdateRecord(arg_30_0, arg_30_1, arg_30_2)
-	GetOrAddComponent = var_1_10003
+	GetOrAddComponent(arg_30_1, typeof(CanvasGroup)).alpha = 1
 
-	local var_30_0 = arg_30_1
+	local var_30_0 = arg_30_1:Find("icon")
 
-	typeof = var_1_10006
-	CanvasGroup = var_1_10008
-	var_1_10003(var_30_0, var_1_10006(var_1_10008)).alpha = 1
-
-	local var_30_1 = arg_30_1
-	local var_30_2 = arg_30_1.Find(var_30_1, "icon")
-
-	setActive = var_4
-
-	var_4(var_30_2, arg_30_2.icon)
+	setActive(var_30_0, arg_30_2.icon)
 
 	if arg_30_2.icon then
-		arg_30_0:UpdateIcon(arg_30_2, var_30_2)
+		arg_30_0:UpdateIcon(arg_30_2, var_30_0)
 	end
-
-	local var_30_3
 
 	if arg_30_2.name and arg_30_2.nameColor then
-		string = var_30_3
-		var_30_3 = var_30_3.gsub(arg_30_2.nameColor, "#", "")
+		arg_30_1:Find("name"):GetComponent(typeof(Outline)).effectColor = Color.NewHex((string.gsub(arg_30_2.nameColor, "#", "")))
 
-		local var_30_4 = arg_30_1:Find("name")
-
-		var_30_1 = var_30_1.GetComponent
-		typeof = var_8
-		Outline = var_1_10010
-		var_30_1 = var_30_1(var_30_4, var_8(var_1_10010))
-		Color = var_6
-		var_30_1.effectColor = var_6.NewHex(var_30_3)
-		setText = var_6
-
-		local var_30_5 = arg_30_1:Find("name")
-
-		setColorStr = var_1_10009
-
-		var_6(var_30_5, var_1_10009(arg_30_2.name, arg_30_2.nameColor))
+		setText(arg_30_1:Find("name"), setColorStr(arg_30_2.name, arg_30_2.nameColor))
 	else
-		setText = var_30_3
+		local var_30_2 = arg_30_2.name or ""
 
-		local var_30_6 = arg_30_1:Find("name")
-		local var_30_7
-
-		if not arg_30_2.name then
-			var_30_7 = ""
-		end
-
-		var_30_3(var_30_6, var_30_7)
+		var_30_1(arg_30_1:Find("name"), var_30_2)
 	end
 
-	local var_30_8 = arg_30_2.list
+	local var_30_3 = arg_30_2.list
+	local var_30_4 = UIItemList.New(arg_30_1:Find("content"), arg_30_1:Find("content/Text"))
 
-	UIItemList = var_30_1
-
-	local var_30_9 = var_30_1.New(arg_30_1:Find("content"), arg_30_1:Find("content/Text"))
-
-	var_5.make(var_30_9, function(arg_31_0, arg_31_1, arg_31_2)
-		UIItemList = var_2_10003
-
-		if arg_31_0 == var_2_10003.EventUpdate then
-			setText = var_3
-
-			var_3(arg_31_2, var_30_8[arg_31_1 + 1])
+	var_30_4:make(function(arg_31_0, arg_31_1, arg_31_2)
+		if arg_31_0 == UIItemList.EventUpdate then
+			setText(arg_31_2, var_30_3[arg_31_1 + 1])
 		end
 
 		return
 	end)
-	var_5:align(#var_30_8)
+	var_30_4:align(#var_30_3)
+	setActive(arg_30_1:Find("player"), arg_30_2.icon == nil and arg_30_2.isPlayer)
 
-	setActive = var_6
+	local var_30_5 = arg_30_2.icon == nil and arg_30_2.name == nil
+	local var_30_6 = var_30_4.container:GetComponent(typeof(UnityEngine.UI.HorizontalOrVerticalLayoutGroup))
+	local var_30_7 = UnityEngine.RectOffset.New()
 
-	local var_30_10 = arg_30_1
-
-	var_6(arg_30_1.Find(var_30_10, "player"), arg_30_2.icon == nil and arg_30_2.isPlayer)
-
-	local var_30_11 = arg_30_2.icon == nil and arg_30_2.name == nil
-	local var_30_12 = var_5.container
-	local var_30_13 = var_7.GetComponent
-
-	typeof = var_30_10
-	UnityEngine = var_1_10012
-
-	local var_30_14 = var_30_13(var_30_12, var_30_10(var_1_10012.UI.HorizontalOrVerticalLayoutGroup))
-
-	UnityEngine = var_8
-
-	local var_30_15 = var_8.RectOffset.New()
-
-	var_30_15.left = 170
-	var_30_15.right = 0
-	var_30_15.top = var_30_11 and 25 or 90
-	var_30_15.bottom = var_30_11 and 25 or 50
-	var_30_14.padding = var_30_15
+	var_30_7.left = 170
+	var_30_7.right = 0
+	var_30_7.top = var_30_5 and 25 or 90
+	var_30_7.bottom = var_30_5 and 25 or 50
+	var_30_6.padding = var_30_7
 
 	return
 end
@@ -576,14 +329,8 @@ end
 function var_0_0.OnHide(arg_32_0)
 	arg_32_0:Clear()
 	arg_32_0:UnblurPanel()
-
-	setActive = var_1
-
-	var_1(arg_32_0._tf, false)
-
-	setButtonEnabled = var_1
-
-	var_1(arg_32_0.closeBtn, true)
+	setActive(arg_32_0._tf, false)
+	setButtonEnabled(arg_32_0.closeBtn, true)
 
 	arg_32_0.state = var_0_5
 
@@ -592,103 +339,57 @@ end
 
 function var_0_0.Hide(arg_33_0)
 	if arg_33_0:IsShowing() then
-		local var_33_0 = arg_33_0.pageAniEvent
-
-		var_1.SetEndEvent(var_33_0, nil)
-
-		local var_33_1 = arg_33_0.pageAniEvent
-
-		var_1.SetEndEvent(var_33_1, function()
-			local var_34_0 = arg_33_0
-
-			var_0.OnHide(var_34_0)
+		arg_33_0.pageAniEvent:SetEndEvent(nil)
+		arg_33_0.pageAniEvent:SetEndEvent(function()
+			arg_33_0:OnHide()
 
 			return
 		end)
-
-		local var_33_2 = arg_33_0.pageAnim
-
-		var_1.Play(var_33_2, "anim_storyrecordUI_record_out")
+		arg_33_0.pageAnim:Play("anim_storyrecordUI_record_out")
 	end
 
 	return
 end
 
 function var_0_0.BlurPanel(arg_35_0)
-	setParent = var_1_10001
-	pg = var_1_10003
+	setParent(pg.NewStoryMgr.GetInstance()._tf, pg.UIMgr.GetInstance().UIMain)
 
-	local var_35_0 = var_1_10003.NewStoryMgr.GetInstance()._tf
-
-	pg = var_1_10004
-
-	var_1_10001(var_35_0, var_1_10004.UIMgr.GetInstance().UIMain)
-
-	pg = var_1_10001
-
-	local var_35_1 = var_1_10001.UIMgr.GetInstance().OverlayMain
+	local var_35_0 = pg.UIMgr.GetInstance().OverlayMain
 
 	arg_35_0.hideNodes = {}
 
-	for iter_35_0 = 1, var_35_1.childCount do
-		local var_35_2 = var_35_1:GetChild(iter_35_0 - 1)
+	for iter_35_0 = 1, var_35_0.childCount do
+		local var_35_1 = var_35_0:GetChild(iter_35_0 - 1)
 
-		isActive = var_1_10007
-
-		if var_1_10007(var_35_2) then
-			table = var_1_10007
-
-			var_1_10007.insert(arg_35_0.hideNodes, var_35_2)
-
-			setActive = var_1_10007
-
-			var_1_10007(var_35_2, false)
+		if isActive(var_35_1) then
+			table.insert(arg_35_0.hideNodes, var_35_1)
+			setActive(var_35_1, false)
 		end
 	end
 
-	pg = var_2
-
-	local var_35_3 = var_2.UIMgr.GetInstance()
-
-	var_2.BlurPanel(var_35_3, arg_35_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_35_0._tf)
 
 	return
 end
 
 function var_0_0.UnblurPanel(arg_36_0)
-	setParent = var_1_10001
-	pg = var_1_10003
-
-	local var_36_0 = var_1_10003.NewStoryMgr.GetInstance()._tf
-
-	pg = var_1_10004
-
-	var_1_10001(var_36_0, var_1_10004.UIMgr.GetInstance().OverlayToast)
+	setParent(pg.NewStoryMgr.GetInstance()._tf, pg.UIMgr.GetInstance().OverlayToast)
 
 	if arg_36_0.hideNodes and #arg_36_0.hideNodes > 0 then
-		ipairs = var_1
-
-		for iter_36_0, iter_36_1 in var_1(arg_36_0.hideNodes) do
-			setActive = var_1_10006
-
-			var_1_10006(iter_36_1, true)
+		for iter_36_0, iter_36_1 in ipairs(arg_36_0.hideNodes) do
+			setActive(iter_36_1, true)
 		end
 	end
 
 	arg_36_0.hideNodes = {}
-	pg = var_1
 
-	local var_36_1 = var_1.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_36_1, arg_36_0._tf, arg_36_0.parentTF)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_36_0._tf, arg_36_0.parentTF)
 
 	return
 end
 
 function var_0_0.Clear(arg_37_0)
-	ipairs = var_1_10001
-
-	for iter_37_0, iter_37_1 in var_1_10001(arg_37_0.usingTpls) do
+	for iter_37_0, iter_37_1 in ipairs(arg_37_0.usingTpls) do
 		var_0_10(arg_37_0, iter_37_1)
 	end
 
@@ -700,17 +401,12 @@ end
 function var_0_0.Unload(arg_38_0)
 	if arg_38_0.state > var_0_2 then
 		arg_38_0.state = var_0_6
-		IsNil = var_1
 
-		if not var_1(arg_38_0.closeBtn) then
-			removeOnButton = var_1
-
-			var_1(arg_38_0.closeBtn)
+		if not IsNil(arg_38_0.closeBtn) then
+			removeOnButton(arg_38_0.closeBtn)
 		end
 
-		Object = var_1
-
-		var_1.Destroy(arg_38_0._go)
+		Object.Destroy(arg_38_0._go)
 
 		arg_38_0._go = nil
 		arg_38_0._tf = nil

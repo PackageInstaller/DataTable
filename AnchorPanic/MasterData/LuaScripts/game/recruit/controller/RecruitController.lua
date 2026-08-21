@@ -50,9 +50,15 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.CLOSE_RECRUIT_MASKVIEW, self.onCloseRecuitMaskView, self)
 
     --背包数据更新
-    bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.updateRedState, self)
+    bag.BagManager:addEventListener(bag.BagManager.BAG_UPDATE, self.onBagUpdateHandler, self)
     --主题活动试玩红点更新
     GameDispatcher:addEventListener(EventName.MAINACTIVITY_REDSTATE_UPDATE, self.updateRedState, self)
+
+    read.ReadManager:addEventListener(read.ReadManager.UPDATE_MODULE_READ, self.updateRedState, self)
+
+    shop.ShopManager:addEventListener(shop.ShopManager.EVENT_SHOP_DATA_UPDATE, self.updateRedState, self)
+    shop.ShopManager:addEventListener(shop.ShopManager.EVENT_SHOP_TYPE_UPDATE, self.updateRedState, self)
+    shop.ShopManager:addEventListener(shop.ShopManager.EVENT_SHOP_ITEM_UPDATE, self.updateRedState, self)
 
     -- 打开招募单人展示
     GameDispatcher:addEventListener(EventName.OPEN_RECRUIT_SHOW_ONE_VIEW, self.openRecruitShowOneView, self)
@@ -68,8 +74,13 @@ function listNotification(self)
     GameDispatcher:addEventListener(EventName.OPENRECRUITSKIPVIEW, self.onOpenRecruitSkipView, self)
     GameDispatcher:addEventListener(EventName.CLOSERECRUITSKIPVIEW, self.onCloseRecruitSkipView, self)
 
+    GameDispatcher:addEventListener(EventName.OPEN_MAINACTIVITY_TRIAL_PANEL, self.onOpenMainActivityTrialPanelHandler, self)
+
     --抽卡结束
     GameDispatcher:addEventListener(EventName.RECRUIT_FINISH, self.onRecruitOver, self)
+
+    GameDispatcher:addEventListener(EventName.OPEN_RECRUIT_APP_SELECTPANEL, self.openRecruitAppSelectHeroPanel, self)
+    GameDispatcher:addEventListener(EventName.CLOSE_RECRUIT_APP_SELECTPANEL, self.closeRecruitAppSelectHeroPanel, self)
 
     --商店购买返回
     GameDispatcher:addEventListener(EventName.SHOPBUYSUCCESS, self.shopBuySucce, self)
@@ -86,6 +97,9 @@ function listNotification(self)
     -- 请求招募日志
     GameDispatcher:addEventListener(EventName.REQ_RECRUIT_LOG, self.onReqRecruitLogHandler, self)
 
+    --请求选择定向卡池目标
+    GameDispatcher:addEventListener(EventName.REQ_APP_RECRUITSELECTTID, self.onReqRecruitSelectTid, self)
+
     -- GameDispatcher:addEventListener(EventName.OPEN_HERO_DISMISS_PANEL, self.onOpenHeroDismissPanel, self)
     -- GameDispatcher:addEventListener(EventName.OPEN_HERO_DISMISS_PRE_PANEL, self.onOpenHeroDismissPrePanel, self)
     -- GameDispatcher:addEventListener(EventName.OPEN_HERO_DISMISS_SURE_PANEL, self.onOpenHeroDismissSurePanel, self)
@@ -99,14 +113,14 @@ end
 function registerMsgHandler(self)
     return {
         --- *s2c* 招募信息 13050
-        SC_RECRUIT_INFO = self.__onResRecruitInfoHandler,
+        SC_RECRUIT_INFO = self.onResRecruitInfoHandler,
         --- *s2c* 招募战员 13052
-        SC_RECRUIT_ITEM = self.__onResRecruitHandler,
+        SC_RECRUIT_ITEM = self.onResRecruitHandler,
         --- *s2c* 查看招募日志 13054
-        SC_GET_RECRUIT_LOG = self.__onResRecruitLogHandler,
+        SC_GET_RECRUIT_LOG = self.onResRecruitLogHandler,
 
         --- *s2c* 战员退役 13131
-        SC_HERO_RETIRE = self.__onResDismissHandler,
+        SC_HERO_RETIRE = self.onResDismissHandler,
 
         --- *s2c* 新手招募 13293
         SC_RECRUIT_HERO_NEW_PREPARE = self.onResNewPlayRecruitInfoHandler,
@@ -117,17 +131,32 @@ function registerMsgHandler(self)
         --- *s2c* 限定up池招募大保底信息 13057
         SC_RECRUIT_DEBUG_UP_INFO = self.onDebugShowRecruitUpInfo,
 
-    --- *s2c* 领取保底奖励 13056
-    -- SC_RECRUIT_GUARANTEED_AWARD = self.__onResRecruitGuaranteedPlusHandler,
+        --- *s2c* 自选up选择 13059
+        SC_SELECT_RECRUIT = self.onResAppRecruitSelectTid,
+
+        --- *s2c* 战员试玩信息 19601
+        SC_HERO_TRY_INFO = self.onRes_Activity_Trial_Handler
+
+        --- *s2c* 领取保底奖励 13056
+        -- SC_RECRUIT_GUARANTEED_AWARD = self.onResRecruitGuaranteedPlusHandler,
     }
 end
 
 ---------------------------------------------------------------响应------------------------------------------------------------------
 
-
 --- *s2c* 限定up池招募大保底信息 13057
 function onDebugShowRecruitUpInfo(self, msg)
     recruit.RecruitManager:onDebugShowRecruitUpInfoMsg(msg)
+end
+
+--- *s2c* 自选up选择 13059
+function onResAppRecruitSelectTid(self, msg)
+    if msg.result == 0 then
+        gs.Message.Show("选择失败")
+        return
+    end
+
+    GameDispatcher:dispatchEvent(EventName.RES_APP_RECRUITSELECTTID)
 end
 
 --- *s2c* 新手招募确认 13295
@@ -137,6 +166,8 @@ function onResNewPlayRecruitConfirmResult(self, msg)
         self:onCloseRecruitShowAllViewHandlerHandler()
         GameDispatcher:dispatchEvent(EventName.RECRUIT_FINISH)
         gs.Message.Show(_TT(28039))
+
+        sdk.SdkManager:foreignNotifyRecruitSuc(false, recruit.RecruitType.RECRUIT_NEW_PLAYER, 10, 0)
     else
         gs.Message.Show("确认结果失败")
     end
@@ -145,7 +176,8 @@ end
 --* s2c * 新手招募保存的招募列表 13291（上一次新手抽卡的结果战员）
 function onResNewPlayRecruitHero(self, msg)
     if not table.empty(msg.item_list) then
-        recruit.RecruitManager:setRecruitActionType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        local recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        recruit.RecruitManager:setRecruitActionId(recruit_id)
 
         local recruitResultList = {}
         for i = 1, #msg.item_list do
@@ -161,11 +193,11 @@ end
 
 --- *s2c* 新手招募 13293
 function onResNewPlayRecruitInfoHandler(self, msg)
-    -- logAll(msg, "*s2c* 新手招募 13293")
     self.canSendRecruitHero = true
 
     if (msg.result == 1) then
-        recruit.RecruitManager:setRecruitActionType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        local recruit_id = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
+        recruit.RecruitManager:setRecruitActionId(recruit_id)
 
         local recruitResultList = {}
         for i = 1, #msg.item_list do
@@ -177,28 +209,41 @@ function onResNewPlayRecruitInfoHandler(self, msg)
         recruit.RecruitManager:setRecruitHeroResultList(recruitResultList)
         self:onOpenHeroRecruitMap()
 
-        GameDispatcher:dispatchEvent(EventName.UPDATE_RECRUIT_PANEL, { type = recruit.RecruitType.RECRUIT_NEW_PLAYER })
+        GameDispatcher:dispatchEvent(EventName.UPDATE_RECRUIT_PANEL, {type = recruit.RecruitType.RECRUIT_NEW_PLAYER})
     else
         gs.Message.Show(_TT(28004)) --"招募失败"
     end
 end
 
 --- *s2c* 招募信息 13050
-function __onResRecruitInfoHandler(self, msg)
+function onResRecruitInfoHandler(self, msg)
     recruit.RecruitManager:parseRecruitInfo(msg)
     self:updateRedState()
 end
 
 --- *s2c* 招募战员 13052
-function __onResRecruitHandler(self, msg)
+function onResRecruitHandler(self, msg)
     self.canSendRecruitHero = true
 
     if (msg.result == 1) then
-        recruit.RecruitManager:setRecruitActionType(msg.type)
+        recruit.RecruitManager:setRecruitActionId(msg.recruit_id)
+        local type = recruit.RecruitManager:getRecruitTypeById(msg.recruit_id)
 
-        if msg.type == recruit.RecruitType.RECRUIT_BRACELETS or msg.type == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
-            recruit.RecruitManager:setRecruitCardResultList(msg.detail_item_list)
-            GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.RECRUIT_CARD)
+        if type == recruit.RecruitType.RECRUIT_BRACELETS or type == recruit.RecruitType.RECRUIT_APP_BRACELETS or type == recruit.RecruitType.RECRUIT_ACTIVITY_2 then
+            if subPack.SubDownLoadController:isExistNeedUpdate() then
+                if #msg.detail_item_list > 1 then
+                    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ALL_VIEW, msg.detail_item_list)
+                elseif #msg.detail_item_list == 1 then
+
+                    GameDispatcher:dispatchEvent(EventName.OPEN_RECRUIT_CARD_SHOW_ONE_VIEW, {tid = msg.detail_item_list[1].tid, isNoSkip = true})
+                end
+
+                gs.Message.Show("请等待资源下载完成获得最佳体验")
+                return
+            else
+                recruit.RecruitManager:setRecruitCardResultList(msg.detail_item_list)
+                GameDispatcher:dispatchEvent(EventName.ENTER_NEW_MAP, MAP_TYPE.RECRUIT_CARD)
+            end
         else
             local recruitResultList = {}
             for i = 1, #msg.item_list do
@@ -211,41 +256,44 @@ function __onResRecruitHandler(self, msg)
             self:onOpenHeroRecruitMap()
         end
 
-        GameDispatcher:dispatchEvent(EventName.UPDATE_RECRUIT_PANEL, { type = msg.type })
+        GameDispatcher:dispatchEvent(EventName.UPDATE_RECRUIT_PANEL, {type = type})
+
+        sdk.SdkManager:foreignNotifyRecruitSuc(false, type, msg.times, 0)
     else
         gs.Message.Show(_TT(28004)) --"招募失败"
     end
 end
 
 --- *s2c* 查看招募日志 13054
-function __onResRecruitLogHandler(self, msg)
+function onResRecruitLogHandler(self, msg)
+    -- logAll(msg, " *s2c* 查看招募日志 13054---")
     recruit.RecruitManager:updateRecruitLog(msg)
 end
 
-function __onResDismissHandler(self, msg)
+function onResDismissHandler(self, msg)
     recruit.RecruitManager:setDismissResResult(msg)
 end
 
---- *s2c* 领取保底奖励 13056
-function __onResRecruitGuaranteedPlusHandler(self, msg)
+--[[--- *s2c* 领取保底奖励 13056
+function onResRecruitGuaranteedPlusHandler(self, msg)
     if (msg.result == 1) then
         local vo = recruit.RecruitManager:getRecruitInfo(msg.type)
         if (vo) then
             vo.is_guaranteed_award = 1
             gs.Message.Show2("领取成功")
-            GameDispatcher:dispatchEvent(EventName.UPDATE_RECRUIT_GUARANTEED_PLUS, { type = msg.type })
+            GameDispatcher:dispatchEvent(EventName.UPDATE_RECRUIT_GUARANTEED_PLUS, {type = msg.type})
         end
     else
         gs.Message.Show2("领取失败")
     end
-end
+end--]]
 
 --购买返回
 function shopBuySucce(self, propTid)
     if not self.m_CurRecruitTimes then return end
 
     local costTid = 0
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_CurRecruitType)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(self.m_CurRecruitId)
     if (self.m_CurRecruitTimes == 1) then
         costTid = configVo:getCostOneId()
     elseif (self.m_CurRecruitTimes == 10) then
@@ -254,22 +302,35 @@ function shopBuySucce(self, propTid)
 
     if costTid ~= propTid then return end
 
-    self:onRecruitSend({ type = self.m_CurRecruitType, times = self.m_CurRecruitTimes })
+    self:onRecruitSend({recruitId = self.m_CurRecruitId, times = self.m_CurRecruitTimes})
+end
+
+--- *s2c* 战员试玩信息 19601
+function onRes_Activity_Trial_Handler(self, msg)
+    -- logAll(msg, "*s2c* 战员试玩信息 19601--------------")
+    recruit.RecruitManager:updateTrialStateMsg(msg)
 end
 
 ---------------------------------------------------------------请求-----------------------------------------------------------------
 
+--- *c2s* 自选up选择 13058
+function onReqRecruitSelectTid(self, args)
+    local cmd = {recruit_id = args.recruit_id, select_tid = args.tid}
+    logAll(cmd, "*c2s* 自选up选择 13058")
+    SOCKET_SEND(Protocol.CS_SELECT_RECRUIT, cmd, Protocol.SC_SELECT_RECRUIT)
+end
+
 -- 招募站员
 function onRecruitSend(self, args)
-    local configVo = recruit.RecruitManager:getRecruitConfigVo(args.type)
+    local configVo = recruit.RecruitManager:getRecruitConfigVo(args.recruitId)
     local costTid = 0
     local costCount = 0
     if (args.times == 1) then
-        local RecruitInfo = recruit.RecruitManager:getRecruitInfo(args.type)
-        local RecruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(args.type)
+        local RecruitInfo = recruit.RecruitManager:getRecruitInfo(args.recruitId)
+        local RecruitConfigVo = recruit.RecruitManager:getRecruitConfigVo(args.recruitId)
         if RecruitInfo.free_times < RecruitConfigVo.free_times then
-            self:onReqRecruitHeroHandler({ type = args.type, times = args.times })
-            self.m_CurRecruitType = nil
+            self:onReqRecruitHeroHandler({recruitId = args.recruitId, times = args.times})
+            self.m_CurRecruitId = nil
             self.m_CurRecruitTimes = nil
 
             return
@@ -284,8 +345,8 @@ function onRecruitSend(self, args)
 
     local hasCount = MoneyUtil.getMoneyCountByTid(costTid)
     if (hasCount >= costCount) then
-        self:onReqRecruitHeroHandler({ type = args.type, times = args.times })
-        self.m_CurRecruitType = nil
+        self:onReqRecruitHeroHandler({recruitId = args.recruitId, times = args.times})
+        self.m_CurRecruitId = nil
         self.m_CurRecruitTimes = nil
     else
         local itemVo = props.PropsManager:getPropsConfigVo(costTid)
@@ -304,47 +365,49 @@ function onRecruitSend(self, args)
             local buyCall = function()
                 local hasMoney = MoneyUtil.getMoneyCountByTid(moneyTid)
                 if (hasMoney >= needMoney) then
-                    self.m_CurRecruitType = args.type
+                    self.m_CurRecruitId = args.recruitId
                     self.m_CurRecruitTimes = args.times
-                    GameDispatcher:dispatchEvent(EventName.REQ_SHOP_BUY, { type = shopVo:getType(), id = shopVo:getId(), num = needCount })
+                    GameDispatcher:dispatchEvent(EventName.REQ_SHOP_BUY, {type = shopVo:getType(), id = shopVo:getId(), num = needCount})
                 else
                     local deletionMoney = needMoney - hasMoney
                     UIFactory:alertMessge(_TT(67, deletionMoney), true, function()
                         local sum = MoneyUtil.getMoneyCountByTid(MoneyTid.PAY_ITIANIUM_TID)
                         if sum >= deletionMoney then
-                            GameDispatcher:dispatchEvent(EventName.REQ_CONVERT_TITANIUM, { num = deletionMoney, aTid = MoneyTid.PAY_ITIANIUM_TID, bTid = moneyTid })
+                            GameDispatcher:dispatchEvent(EventName.REQ_CONVERT_TITANIUM, {num = deletionMoney, aTid = MoneyTid.PAY_ITIANIUM_TID, bTid = moneyTid})
                         else
                             UIFactory:alertMessge(_TT(66), true, function()
-                                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, { linkId = LinkCode.Purchase })
+                                GameDispatcher:dispatchEvent(EventName.OPEN_LINK_UI, {linkId = LinkCode.Purchase})
                             end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil
-                            )
-                        end
+                        )
+                    end
 
-                    end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
-                end
+                end, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
             end
-
-            local costName = props.PropsManager:getName(costTid)
-            UIFactory:alertMessge(_TT(28038, needCount, costName, needMoney, moneyName), true, buyCall, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
-
-        else
-            gs.Message.Show(_TT(156))--"道具不足"
         end
+
+        local costName = props.PropsManager:getName(costTid)
+        UIFactory:alertMessge(_TT(28038, needCount, costName, needMoney, moneyName), true, buyCall, _TT(1), nil, true, nil, _TT(2), _TT(5), nil, nil)
+
+    else
+        gs.Message.Show(_TT(156))--"道具不足"
     end
+end
 end
 
 -- 请求招募战员
 function onReqRecruitHeroHandler(self, args)
+    -- logAll(args, "请求招募")
     if not self.canSendRecruitHero then return end
 
     --新手招募走另外一条协议
-    if args.type == recruit.RecruitType.RECRUIT_NEW_PLAYER then
+    local type = recruit.RecruitManager:getRecruitTypeById(args.recruitId)
+    if type == recruit.RecruitType.RECRUIT_NEW_PLAYER then
         SOCKET_SEND(Protocol.CS_RECRUIT_HERO_NEW_PREPARE, {})
     else
-        local type = args.type
+        local recruitId = args.recruitId
         local times = args.times
         --- *c2s* 招募战员 13039
-        SOCKET_SEND(Protocol.CS_RECRUIT_ITEM, { type = type, times = times }, Protocol.SC_RECRUIT_ITEM)
+        SOCKET_SEND(Protocol.CS_RECRUIT_ITEM, {recruit_id = recruitId, times = times}, Protocol.SC_RECRUIT_ITEM)
     end
 
     self.canSendRecruitHero = false
@@ -362,14 +425,14 @@ end
 
 -- 请求招募日志
 function onReqRecruitLogHandler(self, args)
-    local type = args.type
+    local recruit_id = args.recruit_id
     --- *c2s* 查看招募日志 13041
-    SOCKET_SEND(Protocol.CS_GET_RECRUIT_LOG, { type = type })
+    SOCKET_SEND(Protocol.CS_GET_RECRUIT_LOG, {recruit_id = recruit_id}, Protocol.SC_GET_RECRUIT_LOG)
 end
 
 --遣散战员
 function __onReqHeroDismissHandler(self, args)
-    SOCKET_SEND(Protocol.CS_HERO_RETIRE, { cost_hero_list = args.ids })
+    SOCKET_SEND(Protocol.CS_HERO_RETIRE, {cost_hero_list = args.ids})
 end
 
 -- --请求活动招募最大保底领取
@@ -444,16 +507,17 @@ function onOpenHeroRecruitPanelHandler(self, args)
         self.m_heroRecruitPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroRecruitPanelHandler, self)
     end
 
-    local recruitType = recruit.RecruitManager:getRecruitActionType()
-    if (recruitType) then
-        recruit.RecruitManager:setRecruitActionType(nil)
+    local recruitId = recruit.RecruitManager:getRecruitActionId()
+    if (recruitId) then
+        recruit.RecruitManager:setRecruitActionId(nil)
     else
-        recruitType = recruit.RecruitType.RECRUIT_NEW_PLAYER
-        if (args and args.type) then
-            recruitType = args.type
+        if (args and args.recruitId) then
+            recruitId = args.recruitId
+        else
+            recruitId = recruit.RecruitManager:getRecruitIdByType(recruit.RecruitType.RECRUIT_NEW_PLAYER)
         end
     end
-    self.m_heroRecruitPanel:open({ type = recruitType })
+    self.m_heroRecruitPanel:open({recruitId = recruitId})
     GameDispatcher:dispatchEvent(EventName.CLOSE_RECRUIT_MASKVIEW)
 end
 
@@ -475,12 +539,7 @@ function onOpenHeroRecruitLogPanelHandler(self, args)
         self.m_heroRecruitLogPanel = recruit.RecruitLogPanel.new()
         self.m_heroRecruitLogPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroRecruitLogPanelHandler, self)
     end
-
-    local recruitType = recruit.RecruitType.RECRUIT_TOP
-    if (args and args.type) then
-        recruitType = args.type
-    end
-    self.m_heroRecruitLogPanel:open({ recruitType = recruitType })
+    self.m_heroRecruitLogPanel:open(args)
 end
 
 function onDestroyHeroRecruitLogPanelHandler(self)
@@ -494,12 +553,7 @@ function onOpenHeroRecruitRulePanelHandler(self, args)
         self.m_heroRecruitRulePanel = recruit.RecruitRulePanel.new()
         self.m_heroRecruitRulePanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyHeroRecruitRulePanelHandler, self)
     end
-
-    local recruitType = recruit.RecruitType.RECRUIT_TOP
-    if (args and args.type) then
-        recruitType = args.type
-    end
-    self.m_heroRecruitRulePanel:open({ recruitType = recruitType })
+    self.m_heroRecruitRulePanel:open(args)
 end
 
 function onDestroyHeroRecruitRulePanelHandler(self)
@@ -535,7 +589,7 @@ function __onOpenRecruitSucPanelHandler(self, args)
     end
     local heroTidList = args.heroTidList
     local times = args.times
-    self.m_recruitSucPanel:open({ times = times, heroTidList = heroTidList })
+    self.m_recruitSucPanel:open({times = times, heroTidList = heroTidList})
 end
 
 function onDestroyRecruitSucPanelHandler(self)
@@ -612,6 +666,30 @@ function onDestroyRecruitCardShowOneViewHandler(self)
     self.mRecruitCardShowOneView:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRecruitCardShowOneViewHandler, self)
     self.mRecruitCardShowOneView = nil
 end
+
+--打开定向选择界面
+function openRecruitAppSelectHeroPanel(self, args)
+    if self.mRecruitSelectHeroPanel == nil then
+        self.mRecruitSelectHeroPanel = recruit.RecruitSelectHeroPanel.new()
+        self.mRecruitSelectHeroPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRecruitSelectHeroPanelHandler, self)
+    end
+
+    self.mRecruitSelectHeroPanel:open(args)
+end
+
+function onDestroyRecruitSelectHeroPanelHandler(self)
+    self.mRecruitSelectHeroPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRecruitSelectHeroPanelHandler, self)
+    self.mRecruitSelectHeroPanel = nil
+end
+
+--关闭新手抽卡结果确定弹窗
+function closeRecruitAppSelectHeroPanel(self)
+    if self.mRecruitSelectHeroPanel == nil then
+        return
+    end
+    self.mRecruitSelectHeroPanel:close()
+end
+
 ------------------------------------------------------------------------ 英雄招募十连总览 ------------------------------------------------------------------------
 function onOpenRecruitShowAllView(self, args)
     if self.mRecruitShowAllView == nil then
@@ -654,6 +732,7 @@ function onOpenRecruitSkipView(self, args)
         self.mRecruitSkipView:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyRecruitSkipViewHandler, self)
     end
     self.mRecruitSkipView:open(args)
+    self.mRecruitSkipView:refreshView(args)
 end
 
 function onCloseRecruitSkipView(self)
@@ -718,17 +797,91 @@ function onOpenHeroRecruitMap(self)
     end
 end
 
+---------------------------------1,1活动 试玩-----------------------\
+
+function onOpenMainActivityTrialPanelHandler(self, args)
+    if self.mMainActivityTrialPanel == nil then
+        self.mMainActivityTrialPanel = mainActivity.MainActivityTrialPanel.new()
+        self.mMainActivityTrialPanel:addEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMainActivityTrialPanel,
+        self)
+    end
+    self.mMainActivityTrialPanel:open(args)
+end
+
+function onDestroyMainActivityTrialPanel(self)
+    self.mMainActivityTrialPanel:removeEventListener(View.EVENT_VIEW_DESTROY, self.onDestroyMainActivityTrialPanel, self)
+    self.mMainActivityTrialPanel = nil
+end
+
+function onBagUpdateHandler(self)
+    self:updateRedState()
+end
+
 --红点更新
 function updateRedState(self)
     if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, false) then
-        local redState = false
-        local newPlayRedState = recruit.RecruitManager:updateNewPlayRedState()
-        local braceletsFreeState = recruit.RecruitManager:updatRecruitFreeRedState(recruit.RecruitType.RECRUIT_BRACELETS)
-        local trial_RedState = mainActivity.MainActivityManager:getIsShowTrial()
-        if newPlayRedState == true or braceletsFreeState == true or trial_RedState == true then
-            redState = true
+        if recruit.RecruitManager:updateNewPlayRedState() then
+            mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+            return
         end
-        mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, redState)
+
+        if recruit.RecruitManager:updatRecruitFreeRedState() then
+            mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+            return
+        end
+
+        local actTopRecruitList = recruit.RecruitManager:getRecruitConfigListByType(recruit.RecruitType.RECRUIT_ACTIVITY_1)
+        for _, configVo in pairs(actTopRecruitList) do
+            local menuVo = recruit.RecruitManager:getRecruitMenuVo(configVo.id)
+            if menuVo:isOpenTime() then
+                if funcopen.FuncOpenManager:isOpen(menuVo.funcId) then
+                    if recruit.RecruitManager:getIsShowTrial(configVo:getTry_hero()) then
+                        mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+                        return
+                    end
+                end
+            end
+        end
+
+        if recruit.RecruitManager:updateActBraceletsShopRedState() then
+            mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+            return
+        end
+
+        if recruit.RecruitManager:updateAppBraceletsShopRedState() then
+            mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+            return
+        end
+
+        if not table.empty(shop.ShopManager:getShopItemData(ShopType.COVENANT)) then
+            local recruitList = recruit.RecruitManager:getRecruitConfigListByType(recruit.RecruitType.RECRUIT_ACTIVITY_2)
+            for _, configVo in pairs(recruitList) do
+                if recruit.RecruitManager:updateActBraceletsShopBuyRedState(configVo.id) then
+                    mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+                    return
+                end
+            end
+
+            local recruitList = recruit.RecruitManager:getRecruitConfigListByType(recruit.RecruitType.RECRUIT_APP_BRACELETS)
+            for _, configVo in pairs(recruitList) do
+                if recruit.RecruitManager:updateAppBraceletsShopBuyRedState(configVo.id) then
+                    mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+                    return
+                end
+            end
+        end
+
+        if recruit.RecruitManager:updateSeniorAppBraceletsRedState() then
+            mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+            return
+        end
+
+        if recruit.RecruitManager:updateSeniorAppActRedState() then
+            mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, true)
+            return
+        end
+
+        mainui.MainUIManager:setRedFlag(funcopen.FuncOpenConst.FUNC_ID_RECRUIT, false)
     end
 end
 

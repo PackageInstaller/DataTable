@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("CrusingMapInfo")
+﻿local var_0_0 = class("CrusingMapInfo")
 
 var_0_0.MapInfo = {
 	CrusingMap_0 = {
@@ -53,19 +51,12 @@ var_0_0.MapInfo = {
 }
 
 function var_0_0.GetPhaseFrame(arg_1_0)
-	local var_1_0 = var_0_0.MapInfo[arg_1_0]
-
-	setmetatable = var_1_10002
-	Clone = var_1_10004
-
-	return var_1_10002(var_1_10004(var_1_0.frame), {
+	return setmetatable(Clone(var_0_0.MapInfo[arg_1_0].frame), {
 		__index = function(arg_2_0, arg_2_1)
 			local var_2_0 = 0
 			local var_2_1 = 100
 
-			pairs = var_2_10004
-
-			for iter_2_0, iter_2_1 in var_2_10004(arg_2_0) do
+			for iter_2_0, iter_2_1 in pairs(arg_2_0) do
 				if iter_2_0 < arg_2_1 and var_2_0 < iter_2_0 then
 					var_2_0 = iter_2_0
 				end
@@ -75,9 +66,9 @@ function var_0_0.GetPhaseFrame(arg_1_0)
 				end
 			end
 
-			return (1 - (arg_2_1 - var_2_0) / (var_2_1 - var_2_0)) * arg_2_0[var_2_0] + var_4 * arg_2_0[var_2_1]
+			return (1 - (arg_2_1 - var_2_0) / (var_2_1 - var_2_0)) * arg_2_0[var_2_0] + (arg_2_1 - var_2_0) / (var_2_1 - var_2_0) * arg_2_0[var_2_1]
 		end
-	}), var_1_0.all
+	}), var_0_0.MapInfo[arg_1_0].all
 end
 
 return var_0_0

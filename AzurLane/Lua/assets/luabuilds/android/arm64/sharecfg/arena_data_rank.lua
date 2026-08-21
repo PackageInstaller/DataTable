@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "arena_data_rank") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "arena_data_rank"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.arena_data_rank = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.arena_data_rank
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.arena_data_rank = rawget(pg, "arena_data_rank") or setmetatable({
+	__name = "arena_data_rank"
+}, confNEO)
+pg.arena_data_rank.all = {
 	1,
 	2,
 	3,
@@ -41,25 +18,11 @@ var_0_3.all = {
 	13,
 	14
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.arena_data_rank = {}
+pg.base = pg.base or {}
+pg.base.arena_data_rank = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.arena_data_rank
-
-	var_1_0[1] = {
+	pg.base.arena_data_rank[1] = {
 		name = "列兵",
 		refresh_limit = 5,
 		k_value = 50,
@@ -72,11 +35,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.arena_data_rank
-
-	var_1_1[2] = {
+	pg.base.arena_data_rank[2] = {
 		name = "士官",
 		refresh_limit = 5,
 		k_value = 45,
@@ -95,11 +54,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.arena_data_rank
-
-	var_1_2[3] = {
+	pg.base.arena_data_rank[3] = {
 		name = "少尉",
 		refresh_limit = 5,
 		k_value = 40,
@@ -118,11 +73,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.arena_data_rank
-
-	var_1_3[4] = {
+	pg.base.arena_data_rank[4] = {
 		name = "中尉",
 		refresh_limit = 5,
 		k_value = 35,
@@ -141,11 +92,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.arena_data_rank
-
-	var_1_4[5] = {
+	pg.base.arena_data_rank[5] = {
 		name = "上尉",
 		refresh_limit = 5,
 		k_value = 30,
@@ -164,11 +111,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.arena_data_rank
-
-	var_1_5[6] = {
+	pg.base.arena_data_rank[6] = {
 		name = "少校",
 		refresh_limit = 5,
 		k_value = 30,
@@ -187,11 +130,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.arena_data_rank
-
-	var_1_6[7] = {
+	pg.base.arena_data_rank[7] = {
 		name = "中校",
 		refresh_limit = 5,
 		k_value = 30,
@@ -210,11 +149,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.arena_data_rank
-
-	var_1_7[8] = {
+	pg.base.arena_data_rank[8] = {
 		name = "上校",
 		refresh_limit = 5,
 		k_value = 25,
@@ -233,11 +168,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.arena_data_rank
-
-	var_1_8[9] = {
+	pg.base.arena_data_rank[9] = {
 		name = "准将",
 		refresh_limit = 5,
 		k_value = 20,
@@ -256,11 +187,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.arena_data_rank
-
-	var_1_9[10] = {
+	pg.base.arena_data_rank[10] = {
 		name = "少将",
 		refresh_limit = 5,
 		k_value = 20,
@@ -279,11 +206,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.arena_data_rank
-
-	var_1_10[11] = {
+	pg.base.arena_data_rank[11] = {
 		name = "中将",
 		refresh_limit = 5,
 		k_value = 20,
@@ -302,11 +225,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.arena_data_rank
-
-	var_1_11[12] = {
+	pg.base.arena_data_rank[12] = {
 		name = "上将",
 		refresh_limit = 5,
 		k_value = 20,
@@ -325,11 +244,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.arena_data_rank
-
-	var_1_12[13] = {
+	pg.base.arena_data_rank[13] = {
 		name = "五星上将",
 		refresh_limit = 5,
 		k_value = 20,
@@ -348,8 +263,7 @@ var_0_3.base.arena_data_rank = {}
 			0
 		}
 	}
-	pg = var_1_12
-	var_1_12.base.arena_data_rank[14] = {
+	pg.base.arena_data_rank[14] = {
 		name = "海军元帅",
 		refresh_limit = 5,
 		k_value = 20,

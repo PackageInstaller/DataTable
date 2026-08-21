@@ -1,43 +1,18 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("SailingShip3CoreActivityUI", import("view.activity.CorePage.CoreActivityMainScene"))
 
-local var_0_0 = "SailingShip3CoreActivityUI"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.CoreActivityMainScene"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "SailingShip3CoreActivityUI"
 end
 
-function var_0_1.loadingQueue(arg_2_0)
-	local var_2_0 = "play_jjufengyuziyouqundao_fullscreen_"
-
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
-
-	local var_2_1 = var_1_10002(var_1_10004)
-	local var_2_2 = var_2_0 .. var_2.getPlayerId(var_2_1)
-
-	PlayerPrefs = var_2
-
-	if var_2.GetInt(var_2_2, 0) == 1 then
+function var_0_0.loadingQueue(arg_2_0)
+	if PlayerPrefs.GetInt("play_jjufengyuziyouqundao_fullscreen_" .. getProxy(PlayerProxy):getPlayerId(), 0) == 1 then
 		return nil
 	else
 		return function(arg_3_0)
-			pg = var_2_10001
-
-			local var_3_0 = var_2_10001.SceneAnimMgr.GetInstance()
-
-			var_1.CommonSceneChange(var_3_0, "jufengyuziyouqundao_fullscreen", function(arg_4_0)
+			pg.SceneAnimMgr.GetInstance():CommonSceneChange("jufengyuziyouqundao_fullscreen", function(arg_4_0)
 				return arg_3_0(function()
-					PlayerPrefs = var_4_10000
-
-					var_4_10000.SetInt(var_2_2, 1)
-
-					existCall = var_0
-
-					var_0(arg_4_0)
+					PlayerPrefs.SetInt(var_0, 1)
+					existCall(arg_4_0)
 
 					return
 				end)
@@ -50,111 +25,56 @@ function var_0_1.loadingQueue(arg_2_0)
 	return
 end
 
-function var_0_1.init(arg_6_0, ...)
-	var_0_1.super.init(arg_6_0, ...)
+function var_0_0.init(arg_6_0, ...)
+	var_0_0.super.init(arg_6_0, ...)
 
 	local var_6_0
 
-	setText = var_1_10002
+	setText(arg_6_0._tf:Find("adapt/top/btn_back/back"), i18n("word_back"))
+	arg_6_0.tabsList:make(function(arg_7_0, arg_7_1, arg_7_2)
+		if arg_7_0 == UIItemList.EventUpdate then
+			local var_7_0 = underscore.detect(arg_6_0.activities, function(arg_8_0)
+				return tostring(arg_8_0:getConfig("is_show")) == arg_7_2.name
+			end)
 
-	local var_6_1 = arg_6_0._tf
-	local var_6_2 = var_4.Find(var_6_1, "adapt/top/btn_back/back")
+			if not var_7_0 or var_7_0:isEnd() then
+				setActive(arg_7_2, false)
+			elseif not arg_6_0.pageDic[var_7_0.id] then
+				warning(string.format("without page in act:", var_7_0.id))
+			else
+				arg_6_0:ONToggleName(arg_7_2, var_7_0)
 
-	i18n = var_1_10005
+				if arg_6_0.pageDic[var_7_0.id] ~= nil then
+					local var_7_1 = arg_7_2:Find("tip")
+					local var_7_2 = arg_6_0.pageDic[var_7_0.id]:IsShowReminder()
 
-	var_1_10002(var_6_2, var_1_10005("word_back"))
+					if var_7_2 == nil then
+						setActive(var_7_1, var_7_0:readyToAchieve())
+					else
+						setActive(var_7_1, var_7_2)
+					end
 
-	local var_6_3 = arg_6_0.tabsList
-
-	var_2.make(var_6_3, function(arg_7_0, arg_7_1, arg_7_2)
-		UIItemList = var_2_10003
-
-		if arg_7_0 == var_2_10003.EventUpdate then
-			underscore = var_3
-
-			if var_3.detect(arg_6_0.activities, function(arg_8_0)
-				tostring = var_3_10001
-
-				return var_3_10001(arg_8_0:getConfig("is_show")) == arg_7_2.name
-			end) then
-				local var_7_0 = var_3
-
-				if var_3.isEnd(var_7_0) then
-					setActive = var_2_10004
-
-					var_2_10004(arg_7_2, false)
-				elseif not arg_6_0.pageDic[var_3.id] then
-					warning = var_4
-					string = var_7_0
-
-					var_4(var_7_0.format("without page in act:", var_3.id))
-				else
-					local var_7_1 = arg_6_0
-
-					var_4.ONToggleName(var_7_1, arg_7_2, var_3)
-
-					if arg_6_0.pageDic[var_3.id] ~= nil then
-						local var_7_2 = arg_7_2
-						local var_7_3 = arg_7_2.Find(var_7_2, "tip")
-
-						if var_4:IsShowReminder() == nil then
-							setActive = var_7_2
-
-							local var_7_4 = var_7_3
-
-							var_2_10012 = var_3
-
-							var_7_2(var_7_4, var_3.readyToAchieve(var_2_10012))
-						else
-							setActive = var_7_2
-
-							var_7_2(var_7_3, var_6)
-						end
-
-						onToggle = var_7_2
-
-						local var_7_5 = arg_6_0
-						local var_7_6 = arg_7_2
-
-						local function var_7_7(arg_9_0)
-							if arg_9_0 then
-								if var_6_0 ~= var_0.id then
-									local var_9_0 = arg_6_0
-
-									var_1.selectActivity(var_9_0, var_0)
-
-									local var_9_1 = arg_6_0
-
-									var_1.OnplayAnimation(var_9_1, arg_7_2)
-								end
-
-								var_6_0 = var_0.id
+					onToggle(arg_6_0, arg_7_2, function(arg_9_0)
+						if arg_9_0 then
+							if var_6_0 ~= var_7_0.id then
+								arg_6_0:selectActivity(var_7_0)
+								arg_6_0:OnplayAnimation(arg_7_2)
 							end
 
-							return
+							var_6_0 = var_7_0.id
 						end
 
-						SFX_PANEL = var_2_10012
-
-						var_7_2(var_7_5, var_7_6, var_7_7, var_2_10012)
-					end
+						return
+					end, SFX_PANEL)
 				end
-
-				return
 			end
 		end
+
+		return
 	end)
 
-	pg = var_2
-
-	local var_6_4 = var_2.CameraFixMgr.GetInstance()
-	local var_6_5 = var_2.bind
-
-	pg = var_5
-	arg_6_0.camEventId = var_6_5(var_6_4, var_5.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg_10_0, arg_10_1)
-		local var_10_0 = arg_6_0
-
-		var_2.UpdateAdapt(var_10_0)
+	arg_6_0.camEventId = pg.CameraFixMgr.GetInstance():bind(pg.CameraFixMgr.ASPECT_RATIO_UPDATE, function(arg_10_0, arg_10_1)
+		arg_6_0:UpdateAdapt()
 
 		return
 	end)
@@ -164,134 +84,59 @@ function var_0_1.init(arg_6_0, ...)
 	return
 end
 
-function var_0_1.UpdateAdapt(arg_11_0)
-	local var_11_0 = 1.3333333333333333
-	local var_11_1 = 2.3333333333333335
+function var_0_0.UpdateAdapt(arg_11_0)
+	local var_11_0 = 2.3333333333333335
+	local var_11_1 = pg.CameraFixMgr.GetInstance()
 
-	pg = var_1_10003
+	arg_11_0._tf:GetComponent(typeof(AspectRatioFitter)).aspectRatio = math.clamp(var_11_1.currentWidth / var_11_1.currentHeight, 1.3333333333333333, 2.3333333333333335)
 
-	local var_11_2 = var_1_10003.CameraFixMgr.GetInstance().currentWidth / var_3.currentHeight
-
-	math = var_5
-
-	local var_11_3 = var_5.clamp(var_11_2, var_11_0, var_11_1)
-	local var_11_4 = arg_11_0._tf
-	local var_11_5 = var_5.GetComponent
-
-	typeof = var_8
-	AspectRatioFitter = var_1_10010
-
-	local var_11_6 = var_11_5(var_11_4, var_8(var_1_10010))
-
-	var_11_6.aspectRatio = var_11_3
-	setSizeDelta = var_11_6
-
-	local var_11_7 = arg_11_0._tf
-
-	var_11_6(var_7.Find(var_11_7, "adapt"), {
+	setSizeDelta(arg_11_0._tf:Find("adapt"), {
 		x = 0,
 		y = 0
 	})
-
-	NotchAdapt = var_11_6
-
-	local var_11_8 = var_11_6.CheckNotchRatio
-
-	math = var_1_10006
-
-	local var_11_9 = var_1_10006.clamp
-
-	NotchAdapt = var_8
-
-	local var_11_10 = var_11_8 == var_11_9(var_8.CheckNotchRatio, var_11_0, var_11_1)
-
-	SetComponentEnabled = var_6
-
-	local var_11_11 = arg_11_0._tf
-
-	var_6(var_8.Find(var_11_11, "adapt"), "NotchAdapt", var_11_10)
+	SetComponentEnabled(arg_11_0._tf:Find("adapt"), "NotchAdapt", NotchAdapt.CheckNotchRatio == math.clamp(NotchAdapt.CheckNotchRatio, 1.3333333333333333, var_11_0))
 
 	return
 end
 
-function var_0_1.ONToggleName(arg_12_0, arg_12_1, arg_12_2)
-	setText = var_1_10003
-
-	local var_12_0 = arg_12_1:Find("off/name")
-
-	i18n = var_1_10006
-
-	var_1_10003(var_12_0, var_1_10006("fengfanV3_20251023_Sidebar" .. arg_12_2:getConfig("is_show")))
-
-	setText = var_1_10003
-
-	local var_12_1 = arg_12_1:Find("on/name")
-
-	i18n = var_6
-
-	var_1_10003(var_12_1, var_6("fengfanV3_20251023_Sidebar" .. arg_12_2:getConfig("is_show")))
+function var_0_0.ONToggleName(arg_12_0, arg_12_1, arg_12_2)
+	setText(arg_12_1:Find("off/name"), i18n("fengfanV3_20251023_Sidebar" .. arg_12_2:getConfig("is_show")))
+	setText(arg_12_1:Find("on/name"), i18n("fengfanV3_20251023_Sidebar" .. arg_12_2:getConfig("is_show")))
 
 	return
 end
 
-function var_0_1.OnplayAnimation(arg_13_0, arg_13_1)
-	quickPlayAnimation = var_1_10002
-
-	var_1_10002(arg_13_1, "Anim_SailingShip3SkinActUI_tabs_on_click")
+function var_0_0.OnplayAnimation(arg_13_0, arg_13_1)
+	quickPlayAnimation(arg_13_1, "Anim_SailingShip3SkinActUI_tabs_on_click")
 
 	return
 end
 
-function var_0_1.didEnter(arg_14_0)
-	var_0_1.super.didEnter(arg_14_0)
-
-	local var_14_1
+function var_0_0.didEnter(arg_14_0)
+	var_0_0.super.didEnter(arg_14_0)
 
 	if not arg_14_0.contextData.activeScenario then
-		local var_14_0 = arg_14_0._tf
-
-		var_14_1 = var_14_1.GetComponent
-		typeof = var_1_10004
-		Animation = var_1_10006
-		var_14_1 = var_14_1(var_14_0, var_1_10004(var_1_10006))
-		var_14_1.enabled = true
+		arg_14_0._tf:GetComponent(typeof(Animation)).enabled = true
 	end
 
-	onButton = var_14_1
-
-	local var_14_2 = arg_14_0
-	local var_14_3 = arg_14_0.btnBack
-
-	local function var_14_4()
-		local var_15_0 = arg_14_0.pageDic[arg_14_0.activity.id]
-
-		if var_0.IsShowingPopWindow(var_15_0) then
-			var_0:ClosePopWindow()
+	onButton(arg_14_0, arg_14_0.btnBack, function()
+		if arg_14_0.pageDic[arg_14_0.activity.id]:IsShowingPopWindow() then
+			arg_14_0.pageDic[arg_14_0.activity.id]:ClosePopWindow()
 		else
-			local var_15_1 = arg_14_0
-
-			var_1.emit(var_15_1, var_0_1.ON_BACK)
+			arg_14_0:emit(var_0_0.ON_BACK)
 		end
 
 		return
-	end
-
-	SOUND_BACK = var_1_10006
-
-	var_14_1(var_14_2, var_14_3, var_14_4, var_1_10006)
+	end, SOUND_BACK)
 
 	return
 end
 
-function var_0_1.willExit(arg_16_0)
-	var_0_1.super.willExit(arg_16_0)
+function var_0_0.willExit(arg_16_0)
+	var_0_0.super.willExit(arg_16_0)
 
 	if arg_16_0.camEventId then
-		pg = var_1
-
-		local var_16_0 = var_1.CameraFixMgr.GetInstance()
-
-		var_1.disconnect(var_16_0, arg_16_0.camEventId)
+		pg.CameraFixMgr.GetInstance():disconnect(arg_16_0.camEventId)
 
 		arg_16_0.camEventId = nil
 	end
@@ -299,4 +144,4 @@ function var_0_1.willExit(arg_16_0)
 	return
 end
 
-return var_0_1
+return var_0_0

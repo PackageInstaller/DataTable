@@ -18,6 +18,9 @@ SUPPLY_REIVED = 8 --已经领取的
 SUPPLY_EXPIRE = 9 --已经过期
 SUPPLY_CANNOTRECEIVE = 10--早于
 
+--成长返还
+NOVICEACTIVITY_RETURN = 11
+
 function getTabList(self)
     local tabList = {}
 
@@ -55,6 +58,13 @@ function getTabList(self)
 
     if welfareOpt.WelfareOptManager:getTapActivityIsOpen() then
         table.insert(tabList, {page = self.WELFAREOPT_TAPTAP, nomalLan = "TAPTAP联动", nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), view = welfareOpt.WelfareOptTapTapView})
+    end
+
+    if activity.ActivityManager:getNoviceActivityIsOpen() then
+        --升级返回
+        if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN) then
+            table.insert(tabList, {page = self.NOVICEACTIVITY_RETURN, nomalLan = _TT(90038), nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_64.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_64.png"), view = noviceActivity.NoviceActivityReturnTabView, funcId = funcopen.FuncOpenConst.FUNC_ID_NOVICEACTIVITY_RETURN})
+        end
     end
     -- if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_RAFFLE,false) then
     --     table.insert(tabList, { page = self.WELFAREOPT_RAFFLE, nomalLan = "抽奖", nomalLanEn = "", nomalIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), selectIcon = UrlManager:getIconPath("tabIcon/tabIcon_9.png"), view = welfareOpt.WelfareOptRaffleView })

@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RivalShip", import(".CheckCustomNameShip"))
 
-local var_0_0 = "RivalShip"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".CheckCustomNameShip"))
-
-function var_0_1.IsOwner(arg_1_0)
+function var_0_0.IsOwner(arg_1_0)
 	return false
 end
 
-return var_0_1
+return var_0_0

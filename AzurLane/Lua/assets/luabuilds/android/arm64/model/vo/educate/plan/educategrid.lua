@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("EducateGrid")
+﻿local var_0_0 = class("EducateGrid")
 
 var_0_0.TYPE_LOCK = -1
 var_0_0.TYPE_EMPTY = 0
@@ -11,14 +9,7 @@ var_0_0.TYPE_EVENT_OCCUPY = 4
 
 function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.type = arg_1_1.type
-
-	local var_1_0
-
-	if not arg_1_1.id then
-		var_1_0 = 0
-	end
-
-	arg_1_0.id = var_1_0
+	arg_1_0.id = arg_1_1.id or 0
 
 	arg_1_0:initData(arg_1_1)
 
@@ -26,9 +17,7 @@ function var_0_0.Ctor(arg_1_0, arg_1_1)
 end
 
 function var_0_0.initData(arg_2_0)
-	switch = var_1_10001
-
-	var_1_10001(arg_2_0.type, {
+	switch(arg_2_0.type, {
 		[var_0_0.TYPE_LOCK] = function()
 			arg_2_0.data = nil
 
@@ -40,34 +29,22 @@ function var_0_0.initData(arg_2_0)
 			return
 		end,
 		[var_0_0.TYPE_PLAN] = function()
-			local var_5_0 = arg_2_0
-
-			EducatePlan = var_2_10001
-			var_5_0.data = var_2_10001.New(arg_2_0.id)
+			arg_2_0.data = EducatePlan.New(arg_2_0.id)
 
 			return
 		end,
 		[var_0_0.TYPE_PLAN_OCCUPY] = function()
-			local var_6_0 = arg_2_0
-
-			EducatePlan = var_2_10001
-			var_6_0.data = var_2_10001.New(arg_2_0.id)
+			arg_2_0.data = EducatePlan.New(arg_2_0.id)
 
 			return
 		end,
 		[var_0_0.TYPE_EVENT] = function()
-			local var_7_0 = arg_2_0
-
-			EducateSpecialEvent = var_2_10001
-			var_7_0.data = var_2_10001.New(arg_2_0.id)
+			arg_2_0.data = EducateSpecialEvent.New(arg_2_0.id)
 
 			return
 		end,
 		[var_0_0.TYPE_EVENT_OCCUPY] = function()
-			local var_8_0 = arg_2_0
-
-			EducateSpecialEvent = var_2_10001
-			var_8_0.data = var_2_10001.New(arg_2_0.id)
+			arg_2_0.data = EducateSpecialEvent.New(arg_2_0.id)
 
 			return
 		end
@@ -102,55 +79,26 @@ end
 
 function var_0_0.GetOccupyGridCnt(arg_15_0)
 	if arg_15_0:IsPlan() or arg_15_0:IsPlanOccupy() then
-		local var_15_0 = arg_15_0.data
-		local var_15_1
-
-		if not var_1.getConfig(var_15_0, "cost_resource3") then
-			var_15_1 = 1
-		end
-
-		return var_15_1
+		return arg_15_0.data:getConfig("cost_resource3") or 1
 	end
 end
 
 function var_0_0.GetName(arg_16_0)
 	if arg_16_0.type == var_0_0.TYPE_PLAN then
-		local var_16_0 = arg_16_0.data
-
-		return var_1.getConfig(var_16_0, "name")
+		return arg_16_0.data:getConfig("name")
 	elseif arg_16_0.type == var_0_0.TYPE_EVENT then
-		local var_16_1 = arg_16_0.data
-
-		return var_1.getConfig(var_16_1, "id")
+		return arg_16_0.data:getConfig("id")
 	end
 
 	return ""
 end
 
 function var_0_0.GetPerformance(arg_17_0)
-	if arg_17_0.data then
-		local var_17_0 = arg_17_0.data
-		local var_17_1
-
-		if not var_1.GetPerformance(var_17_0) then
-			var_17_1 = ""
-		end
-
-		return var_17_1
-	end
+	return arg_17_0.data and arg_17_0.data:GetPerformance() or ""
 end
 
 function var_0_0.GetResult(arg_18_0)
-	if arg_18_0.data then
-		local var_18_0 = arg_18_0.data
-		local var_18_1
-
-		if not var_1.GetResult(var_18_0) then
-			var_18_1 = {}
-		end
-
-		return var_18_1
-	end
+	return arg_18_0.data and arg_18_0.data:GetResult() or {}
 end
 
 return var_0_0

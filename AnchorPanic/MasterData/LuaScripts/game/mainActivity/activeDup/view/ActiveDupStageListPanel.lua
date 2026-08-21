@@ -610,7 +610,7 @@ function updateStageAward(self)
     self.mStageAwardNum = mainActivity.ActiveDupManager:getAllStarNum()
     self.mTxtStageNum.text = self.mStageAwardNum .. "/" .. showStepStar -- self.mStageProgress --.. HtmlUtil:colorAndSize("/" .. self.mStageAwardNum, "82898Cff", 20)
     self.mTxtTips.color = gs.ColorUtil.GetColor(mainActivity.ActiveDupManager:getCanRecAll() and "ffe76fff" or
-                                                    "ffffffff")
+                                                    "000000ff")
     -- self.mImageStage:SetImg(mainActivity.ActiveDupManager:getCanRecAll() and UrlManager:getPackPath("mainActivity/Activelevels_icon_03.png") or UrlManager:getPackPath("mainActivity/Activelevels_icon_02.png"))
     self.mImgEffect:SetActive(mainActivity.ActiveDupManager:getCanRecAll())
     if mainActivity.ActiveDupManager:getCanRecAll() then

@@ -1,21 +1,9 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("RapidSeasideGamePage", import("view.activity.CorePage.CoreActivityPage"))
+local var_0_1 = 89
 
-local var_0_0 = "RapidSeasideGamePage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.activity.CorePage.CoreActivityPage"))
-local var_0_2 = 89
-
-function var_0_1.OnInit(arg_1_0)
-	getProxy = var_1_10001
-	MiniGameProxy = var_1_10003
-
-	local var_1_0 = var_1_10001(var_1_10003)
-
-	arg_1_0.mgHubData = var_1.GetHubByGameId(var_1_0, var_0_2)
-	pg = var_1
-	arg_1_0.drops = var_1.mini_game[var_0_2].simple_config_data.drop_ids
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.mgHubData = getProxy(MiniGameProxy):GetHubByGameId(var_0_1)
+	arg_1_0.drops = pg.mini_game[var_0_1].simple_config_data.drop_ids
 	arg_1_0.totalTimes = #arg_1_0.drops
 	arg_1_0.useTimes = arg_1_0.mgHubData.usedtime
 	arg_1_0.gameTimes = arg_1_0.mgHubData.count
@@ -23,181 +11,90 @@ function var_0_1.OnInit(arg_1_0)
 	return
 end
 
-function var_0_1.OnFirstFlush(arg_2_0)
-	findTF = var_1_10001
-	arg_2_0.btnRule = var_1_10001(arg_2_0._tf, "ad/rule")
-	onButton = var_1
+function var_0_0.OnFirstFlush(arg_2_0)
+	arg_2_0.btnRule = findTF(arg_2_0._tf, "ad/rule")
 
-	local var_2_0 = arg_2_0
-	local var_2_1 = arg_2_0.btnRule
-
-	local function var_2_2()
-		pg = var_2_10000
-
-		local var_3_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_3_1 = var_0.ShowMsgBox
-		local var_3_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_3_2.type = var_2_10004
-		pg = var_2_10004
-		var_3_2.helps = var_2_10004.gametip.crossroad_minigame_help.tip
-
-		var_3_1(var_3_0, var_3_2)
+	onButton(arg_2_0, arg_2_0.btnRule, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.crossroad_minigame_help.tip
+		})
 
 		return
-	end
+	end, SFX_CANCEL)
 
-	SFX_CANCEL = var_1_10006
+	arg_2_0.btnStart = findTF(arg_2_0._tf, "ad/start")
 
-	var_1(var_2_0, var_2_1, var_2_2, var_1_10006)
-
-	findTF = var_1
-	arg_2_0.btnStart = var_1(arg_2_0._tf, "ad/start")
-	onButton = var_1
-
-	local var_2_3 = arg_2_0
-	local var_2_4 = arg_2_0.btnStart
-
-	local function var_2_5()
-		pg = var_2_10000
-
-		local var_4_0 = var_2_10000.m02
-		local var_4_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.GO_MINI_GAME, var_0_2)
+	onButton(arg_2_0, arg_2_0.btnStart, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_1)
 
 		return
-	end
-
-	SFX_CANCEL = var_1_10006
-
-	var_1(var_2_3, var_2_4, var_2_5, var_1_10006)
+	end, SFX_CANCEL)
 
 	arg_2_0.battleItems = {}
-	findTF = var_1
-	arg_2_0._tplBattleItem = var_1(arg_2_0._tf, "ad/awards/Viewport/Content/item_tpl")
-	setActive = var_1
+	arg_2_0._tplBattleItem = findTF(arg_2_0._tf, "ad/awards/Viewport/Content/item_tpl")
 
-	var_1(arg_2_0._tplBattleItem, false)
-
-	local var_2_6 = arg_2_0.drops
+	setActive(arg_2_0._tplBattleItem, false)
 
 	for iter_2_0 = 1, 7 do
-		local var_2_7 = iter_2_0
+		local var_2_1 = tf(instantiate(arg_2_0._tplBattleItem))
 
-		tf = var_1_10007
-		instantiate = var_1_10009
-		var_1_10007 = var_1_10007(var_1_10009(arg_2_0._tplBattleItem))
-		var_1_10007.name = "award_" .. iter_2_0
-		setParent = var_8
+		var_2_1.name = "award_" .. iter_2_0
 
-		local var_2_8 = var_1_10007
+		setParent(var_2_1, findTF(arg_2_0._tf, "ad/awards/Viewport/Content"))
+		setText(findTF(var_2_1, "ad/desc"), "DAY" .. iter_2_0)
 
-		findTF = var_11
+		local var_2_2 = findTF(var_2_1, "ad/iconMask/icon")
 
-		var_8(var_2_8, var_11(arg_2_0._tf, "ad/awards/Viewport/Content"))
-
-		local var_2_9 = iter_2_0
-
-		setText = var_1_10009
-		findTF = var_11
-
-		var_1_10009(var_11(var_1_10007, "ad/desc"), "DAY" .. var_2_9)
-
-		findTF = var_1_10009
-		var_1_10009 = var_1_10009(var_1_10007, "ad/iconMask/icon")
-
-		local var_2_10 = {
-			type = var_2_6[iter_2_0][1],
-			id = var_2_6[iter_2_0][2],
-			count = var_2_6[iter_2_0][3]
-		}
-
-		updateDrop = var_11
-
-		var_11(var_1_10009, var_2_10)
-
-		onButton = var_11
-
-		local var_2_11 = arg_2_0
-		local var_2_12 = var_1_10009
-
-		local function var_2_13()
-			local var_5_0 = arg_2_0
-			local var_5_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_5_1(var_5_0, var_2_10003.ON_DROP, var_2_10)
+		updateDrop(var_2_2, {
+			type = arg_2_0.drops[iter_2_0][1],
+			id = arg_2_0.drops[iter_2_0][2],
+			count = arg_2_0.drops[iter_2_0][3]
+		})
+		onButton(arg_2_0, var_2_2, function()
+			arg_2_0:emit(BaseUI.ON_DROP, var_0)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10016
-
-		var_11(var_2_11, var_2_12, var_2_13, var_1_10016)
-
-		setActive = var_11
-
-		var_11(var_1_10007, true)
-
-		table = var_11
-
-		var_11.insert(arg_2_0.battleItems, var_1_10007)
+		end, SFX_PANEL)
+		setActive(var_2_1, true)
+		table.insert(arg_2_0.battleItems, var_2_1)
 	end
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_6_0)
+function var_0_0.OnUpdateFlush(arg_6_0)
 	for iter_6_0 = 1, 7 do
-		findTF = var_1_10005
-		var_1_10005 = var_1_10005(arg_6_0.battleItems[iter_6_0], "ad/lock")
-		findTF = var_1_10006
-		var_1_10006 = var_1_10006(arg_6_0.battleItems[iter_6_0], "ad/got")
-		setActive = var_7
+		local var_6_0 = findTF(arg_6_0.battleItems[iter_6_0], "ad/lock")
+		local var_6_1 = findTF(arg_6_0.battleItems[iter_6_0], "ad/got")
 
-		var_7(var_1_10005, false)
-
-		setActive = var_7
-
-		var_7(var_1_10006, false)
+		setActive(var_6_0, false)
+		setActive(var_6_1, false)
 
 		if iter_6_0 <= arg_6_0.useTimes then
-			setActive = var_7
-
-			var_7(var_1_10006, true)
+			setActive(var_6_1, true)
 		elseif iter_6_0 == arg_6_0.useTimes + 1 and arg_6_0.gameTimes >= 1 then
 			-- block empty
-		elseif arg_6_0.useTimes < iter_6_0 and iter_6_0 <= arg_6_0.useTimes + arg_6_0.gameTimes then
+		elseif iter_6_0 > arg_6_0.useTimes and iter_6_0 <= arg_6_0.useTimes + arg_6_0.gameTimes then
 			-- block empty
 		else
-			setActive = var_7
-
-			var_7(var_1_10005, true)
+			setActive(var_6_0, true)
 		end
 	end
 
 	return
 end
 
-function var_0_1.setChildVisible(arg_7_0, arg_7_1, arg_7_2)
+function var_0_0.setChildVisible(arg_7_0, arg_7_1, arg_7_2)
 	for iter_7_0 = 1, arg_7_1.childCount do
-		local var_7_0 = arg_7_1:GetChild(iter_7_0 - 1)
-
-		setActive = var_1_10008
-
-		var_1_10008(var_7_0, arg_7_2)
+		setActive(arg_7_1:GetChild(iter_7_0 - 1), arg_7_2)
 	end
 
 	return
 end
 
-function var_0_1.willExit(arg_8_0)
+function var_0_0.willExit(arg_8_0)
 	return
 end
 
-return var_0_1
+return var_0_0

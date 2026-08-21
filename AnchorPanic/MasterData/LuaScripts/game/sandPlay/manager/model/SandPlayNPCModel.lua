@@ -71,7 +71,7 @@ function playAction(self, aniName, startCall, endCall, isForceEndCall)
 end
 
 function setPosition(self, lpos)
-    if self.m_trans and lpos and not table.empty(lpos) then
+    if self.m_trans and lpos then
         gs.TransQuick:Pos(self.m_trans, lpos.x, lpos.y, lpos.z)
     end
 end

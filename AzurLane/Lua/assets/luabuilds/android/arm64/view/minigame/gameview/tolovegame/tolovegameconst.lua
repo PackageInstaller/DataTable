@@ -1,33 +1,17 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("ToLoveGameConst")
-
-this = this
-var_0.gameTime = 117
-this = var_0
-var_0.motionTime = 4
-this = var_0
-var_0.bombBlastTime = 0.3
-this = var_0
-var_0.waitingTime = 1
-this = var_0
-var_0.addTime = 10
-this = var_0
-var_0.rule_tip = "tolovegame_tutorial"
-this = var_0
-var_0.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
-this = var_0
-var_0.bgm_type_default = 1
-this = var_0
-var_0.bgm_type_menu = 2
-this = var_0
-var_0.bgm_type_game = 3
-this = var_0
-var_0.menu_bgm = "main"
-this = var_0
-var_0.game_bgm = "main"
-this = var_0
-var_0.buffList = {
+﻿this = class("ToLoveGameConst")
+this.gameTime = 117
+this.motionTime = 4
+this.bombBlastTime = 0.3
+this.waitingTime = 1
+this.addTime = 10
+this.rule_tip = "tolovegame_tutorial"
+this.SFX_COUNT_DOWN = "event:/ui/ddldaoshu2"
+this.bgm_type_default = 1
+this.bgm_type_menu = 2
+this.bgm_type_game = 3
+this.menu_bgm = "main"
+this.game_bgm = "main"
+this.buffList = {
 	{
 		"shield protection"
 	},
@@ -50,8 +34,7 @@ var_0.buffList = {
 		"all up"
 	}
 }
-this = var_0
-var_0.map = {
+this.map = {
 	{
 		0,
 		1,
@@ -88,30 +71,23 @@ var_0.map = {
 		24
 	}
 }
-this = var_0
-var_0.remainingTimeToArrowTime = {
+this.remainingTimeToArrowTime = {
 	110,
 	80,
 	20,
 	0
 }
-this = var_0
-var_0.remainingTimeToArrowNumber = {
+this.remainingTimeToArrowNumber = {
 	2,
 	3,
 	4,
 	5
 }
-this = var_0
-var_0.arrowUp = "arrow up"
-this = var_0
-var_0.arrowDown = "arrow down"
-this = var_0
-var_0.arrowLeft = "arrow left"
-this = var_0
-var_0.arrowRight = "arrow right"
-this = var_0
-var_0.comboNum = {
+this.arrowUp = "arrow up"
+this.arrowDown = "arrow down"
+this.arrowLeft = "arrow left"
+this.arrowRight = "arrow right"
+this.comboNum = {
 	5,
 	10,
 	15,
@@ -119,8 +95,7 @@ var_0.comboNum = {
 	30,
 	40
 }
-this = var_0
-var_0.comboAdd = {
+this.comboAdd = {
 	5,
 	10,
 	15,
@@ -128,8 +103,7 @@ var_0.comboAdd = {
 	25,
 	30
 }
-this = var_0
-var_0.scoreMultiplyTimes = {
+this.scoreMultiplyTimes = {
 	110,
 	100,
 	90,
@@ -139,8 +113,7 @@ var_0.scoreMultiplyTimes = {
 	10,
 	0
 }
-this = var_0
-var_0.scoreMultiplyRate = {
+this.scoreMultiplyRate = {
 	1,
 	1.05,
 	1.1,
@@ -150,6 +123,5 @@ var_0.scoreMultiplyRate = {
 	1.3,
 	1.35
 }
-this = var_0
 
-return var_0
+return this

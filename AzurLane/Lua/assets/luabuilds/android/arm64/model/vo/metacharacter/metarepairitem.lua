@@ -1,18 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MetaRepairItem", import("..BaseVO"))
 
-local var_0_0 = "MetaRepairItem"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..BaseVO"))
-
-function var_0_1.bindConfigTable(arg_1_0)
-	pg = var_1_10001
-
-	return var_1_10001.ship_meta_repair
+function var_0_0.bindConfigTable(arg_1_0)
+	return pg.ship_meta_repair
 end
 
-function var_0_1.Ctor(arg_2_0, arg_2_1)
+function var_0_0.Ctor(arg_2_0, arg_2_1)
 	arg_2_0.id = arg_2_1.id
 	arg_2_0.configId = arg_2_0.id
 	arg_2_0.itemId = arg_2_0:getConfig("item_id")
@@ -29,26 +21,20 @@ function var_0_1.Ctor(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.getItemId(arg_3_0)
+function var_0_0.getItemId(arg_3_0)
 	return arg_3_0.itemId
 end
 
-function var_0_1.getTotalCnt(arg_4_0)
-	local var_4_0
-
-	if not arg_4_0.totalCnt then
-		var_4_0 = 0
-	end
-
-	return var_4_0
+function var_0_0.getTotalCnt(arg_4_0)
+	return arg_4_0.totalCnt or 0
 end
 
-function var_0_1.getRepairExp(arg_5_0)
+function var_0_0.getRepairExp(arg_5_0)
 	return arg_5_0.repairExp
 end
 
-function var_0_1.getAdditionValue(arg_6_0)
+function var_0_0.getAdditionValue(arg_6_0)
 	return arg_6_0.addition.value
 end
 
-return var_0_1
+return var_0_0

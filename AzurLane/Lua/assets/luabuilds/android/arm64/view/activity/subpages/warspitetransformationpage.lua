@@ -1,235 +1,100 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WarspiteTransformationPage", import("view.base.BaseActivityPage"))
 
-local var_0_0 = "WarspiteTransformationPage"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseActivityPage"))
-
-function var_0_1.OnInit(arg_1_0)
-	local var_1_0 = arg_1_0._tf
-
-	arg_1_0.bg = var_1.Find(var_1_0, "AD")
-
-	local var_1_1 = arg_1_0.bg
-
-	arg_1_0.btn = var_1.Find(var_1_1, "battle_btn")
-
-	local var_1_2 = arg_1_0.bg
-
-	arg_1_0.tip = var_1.Find(var_1_2, "help")
-
-	local var_1_3 = arg_1_0.bg
-
-	arg_1_0.mainAward = var_1.Find(var_1_3, "award")
-	CustomIndexLayer = var_1
-
-	local var_1_4 = var_1.Clone2Full
-	local var_1_5 = arg_1_0.bg
-
-	arg_1_0.subAwards = var_1_4(var_3.Find(var_1_5, "list"), 7)
-
-	local var_1_6 = arg_1_0.bg
-
-	arg_1_0.step = var_1.Find(var_1_6, "receivetimes")
-
-	local var_1_7 = arg_1_0.bg
-
-	arg_1_0.score = var_1.Find(var_1_7, "highscore")
+function var_0_0.OnInit(arg_1_0)
+	arg_1_0.bg = arg_1_0._tf:Find("AD")
+	arg_1_0.btn = arg_1_0.bg:Find("battle_btn")
+	arg_1_0.tip = arg_1_0.bg:Find("help")
+	arg_1_0.mainAward = arg_1_0.bg:Find("award")
+	arg_1_0.subAwards = CustomIndexLayer.Clone2Full(arg_1_0.bg:Find("list"), 7)
+	arg_1_0.step = arg_1_0.bg:Find("receivetimes")
+	arg_1_0.score = arg_1_0.bg:Find("highscore")
 
 	return
 end
 
-function var_0_1.OnDataSetting(arg_2_0)
-	local var_2_1
-
-	if arg_2_0.activity.data4 == 0 and var_1.data2 >= 7 then
-		local var_2_0 = arg_2_0
-
-		var_2_1 = arg_2_0.emit
-		ActivityMediator = var_1_10005
-
-		var_2_1(var_2_0, var_1_10005.EVENT_OPERATION, {
+function var_0_0.OnDataSetting(arg_2_0)
+	if arg_2_0.activity.data4 == 0 and arg_2_0.activity.data2 >= 7 then
+		arg_2_0:emit(ActivityMediator.EVENT_OPERATION, {
 			cmd = 3,
-			activity_id = var_1.id
+			activity_id = arg_2_0.activity.id
 		})
 
-		do return true end
+		return true
+	elseif defaultValue(arg_2_0.activity.data2_list[1], 0) > 0 or defaultValue(arg_2_0.activity.data2_list[2], 0) > 0 then
+		arg_2_0:emit(ActivityMediator.EVENT_OPERATION, {
+			cmd = 2,
+			activity_id = arg_2_0.activity.id
+		})
 
-		goto label_2_0
+		return true
 	end
 
-	defaultValue = var_2_1
-
-	if not (var_2_1(var_1.data2_list[1], 0) > 0) then
-		defaultValue = var_2
-
-		if var_2(var_1.data2_list[2], 0) > 0 then
-			local var_2_2 = arg_2_0
-			local var_2_3 = arg_2_0.emit
-
-			ActivityMediator = var_5
-
-			var_2_3(var_2_2, var_5.EVENT_OPERATION, {
-				cmd = 2,
-				activity_id = var_1.id
-			})
-
-			return true
-		end
-
-		::label_2_0::
-
-		return
-	end
+	return
 end
 
-function var_0_1.OnFirstFlush(arg_3_0)
-	local var_3_0 = arg_3_0.activity
-	local var_3_1 = var_1.getConfig(var_3_0, "config_client")[2]
-	local var_3_2 = {
-		type = var_3_1[1],
-		id = var_3_1[2],
-		count = var_3_1[3]
+function var_0_0.OnFirstFlush(arg_3_0)
+	local var_3_0 = arg_3_0.activity:getConfig("config_client")[2]
+	local var_3_1 = {
+		type = var_3_0[1],
+		id = var_3_0[2],
+		count = var_3_0[3]
 	}
 
-	onButton = var_4
-
-	local var_3_3 = arg_3_0
-	local var_3_4 = arg_3_0.mainAward
-
-	local function var_3_5()
-		local var_4_0 = arg_3_0
-		local var_4_1 = var_0.emit
-
-		BaseUI = var_2_10003
-
-		var_4_1(var_4_0, var_2_10003.ON_DROP, var_3_2)
+	onButton(arg_3_0, arg_3_0.mainAward, function()
+		arg_3_0:emit(BaseUI.ON_DROP, var_3_1)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_3_3, var_3_4, var_3_5, var_1_10009)
+	end, SFX_PANEL)
 
 	for iter_3_0 = 1, 7 do
-		local var_3_6 = arg_3_0.subAwards[iter_3_0]
-
-		var_1_10009 = var_1:getConfig("config_client")[1]
-
-		local var_3_7 = {
-			type = var_1_10009[1],
-			id = var_1_10009[2],
-			count = var_1_10009[3]
+		local var_3_2 = arg_3_0.activity:getConfig("config_client")[1]
+		local var_3_3 = {
+			type = var_3_2[1],
+			id = var_3_2[2],
+			count = var_3_2[3]
 		}
 
-		onButton = var_11
-
-		local var_3_8 = arg_3_0
-		local var_3_9 = var_3_6
-
-		local function var_3_10()
-			local var_5_0 = arg_3_0
-			local var_5_1 = var_0.emit
-
-			BaseUI = var_2_10003
-
-			var_5_1(var_5_0, var_2_10003.ON_DROP, var_3_7)
+		onButton(arg_3_0, arg_3_0.subAwards[iter_3_0], function()
+			arg_3_0:emit(BaseUI.ON_DROP, var_3_3)
 
 			return
-		end
-
-		SFX_PANEL = var_1_10016
-
-		var_11(var_3_8, var_3_9, var_3_10, var_1_10016)
+		end, SFX_PANEL)
 	end
 
-	onButton = var_4
-
-	local var_3_11 = arg_3_0
-	local var_3_12 = arg_3_0.tip
-
-	local function var_3_13()
-		pg = var_2_10000
-
-		local var_6_0 = var_2_10000.MsgboxMgr.GetInstance()
-		local var_6_1 = var_0.ShowMsgBox
-		local var_6_2 = {}
-
-		MSGBOX_TYPE_HELP = var_2_10004
-		var_6_2.type = var_2_10004
-		pg = var_2_10004
-		var_6_2.helps = var_2_10004.gametip.goldship_help_tip.tip
-
-		var_6_1(var_6_0, var_6_2)
+	onButton(arg_3_0, arg_3_0.tip, function()
+		pg.MsgboxMgr.GetInstance():ShowMsgBox({
+			type = MSGBOX_TYPE_HELP,
+			helps = pg.gametip.goldship_help_tip.tip
+		})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_3_11, var_3_12, var_3_13, var_1_10009)
-
-	onButton = var_4
-
-	local var_3_14 = arg_3_0
-	local var_3_15 = arg_3_0.btn
-
-	local function var_3_16()
-		local var_7_0 = arg_3_0
-		local var_7_1 = var_0.emit
-
-		ActivityMediator = var_2_10003
-
-		var_7_1(var_7_0, var_2_10003.GO_DODGEM)
+	end, SFX_PANEL)
+	onButton(arg_3_0, arg_3_0.btn, function()
+		arg_3_0:emit(ActivityMediator.GO_DODGEM)
 
 		return
-	end
-
-	SFX_PANEL = var_1_10009
-
-	var_4(var_3_14, var_3_15, var_3_16, var_1_10009)
+	end, SFX_PANEL)
 
 	return
 end
 
-function var_0_1.OnUpdateFlush(arg_8_0)
-	local var_8_0 = arg_8_0.activity
+function var_0_0.OnUpdateFlush(arg_8_0)
+	local var_8_0 = pg.TimeMgr.GetInstance()
+	local var_8_1 = var_8_0:DiffDay(arg_8_0.activity.data1, var_8_0:GetServerTime()) + 1
 
-	pg = var_1_10002
-
-	local var_8_1 = var_1_10002.TimeMgr.GetInstance()
-	local var_8_2 = var_2.DiffDay(var_8_1, var_8_0.data1, var_2:GetServerTime()) + 1
-
-	setActive = var_1_10004
-	findTF = var_6
-
-	var_1_10004(var_6(arg_8_0.mainAward, "get"), var_8_0.data4 > 0)
+	setActive(findTF(arg_8_0.mainAward, "get"), arg_8_0.activity.data4 > 0)
 
 	for iter_8_0 = 1, 7 do
-		local var_8_3 = arg_8_0.subAwards[iter_8_0]
+		local var_8_2 = arg_8_0.subAwards[iter_8_0]
 
-		setActive = var_9
-		findTF = var_1_10011
-
-		var_9(var_1_10011(var_8_3, "get"), iter_8_0 <= var_8_0.data2)
-
-		setActive = var_9
-		findTF = var_1_10011
-
-		var_9(var_1_10011(var_8_3, "lock"), var_8_2 < iter_8_0)
+		setActive(findTF(arg_8_0.subAwards[iter_8_0], "get"), iter_8_0 <= arg_8_0.activity.data2)
+		setActive(findTF(var_8_2, "lock"), var_8_1 < iter_8_0)
 	end
 
-	setText = var_4
-
-	var_4(arg_8_0.step, var_8_0.data2)
-
-	setText = var_4
-
-	var_4(arg_8_0.score, var_8_0.data1_list[1])
+	setText(arg_8_0.step, arg_8_0.activity.data2)
+	setText(arg_8_0.score, arg_8_0.activity.data1_list[1])
 
 	return
 end
 
-return var_0_1
+return var_0_0

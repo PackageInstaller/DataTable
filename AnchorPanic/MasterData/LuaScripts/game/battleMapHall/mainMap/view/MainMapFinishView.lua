@@ -5,9 +5,14 @@ isAdapta = 0
 destroyTime = 0
 escapeClose = 0
 
---构造函数
-function ctor(self)
+UIRes = ""
+function superCtor(self)
     super.ctor(self)
+end
+
+--构造函数
+function ctor(self,path)
+    UIRes = UrlManager:getUIPrefabPath(string.format( "battleMapHall/mainMap/%s.prefab",path))
 end
 
 -- 取父容器

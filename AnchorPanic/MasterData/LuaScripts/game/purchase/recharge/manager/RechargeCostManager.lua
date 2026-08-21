@@ -34,7 +34,14 @@ function getRechargeData(self, id)
     if self.rechargeList == nil then
         self:parseRechargeConfig()
     end
-    return self.rechargeList[id]
+    for i = 1, #self.rechargeList do
+        if self.rechargeList[i].id == id then
+            return self.rechargeList[i]
+        end
+    end
+
+
+    return nil
 end
 
 return _M

@@ -1,35 +1,17 @@
-﻿local var_0_0 = 18
-local var_0_1 = XANA
+﻿XANA = 18
 
-local function var_0_2()
-	PlayerPrefs = var_1_10000
-
-	local var_1_0
-
-	if not var_1_10000.GetInt("stage_scratch") then
-		var_1_0 = 0
-	end
-
+local function var_0_0()
+	local var_1_0 = PlayerPrefs.GetInt("stage_scratch") or 0
 	local var_1_1 = 1 - var_1_0
 
-	PlayerPrefs = var_1_10001
-
-	var_1_10001.SetInt("stage_scratch", var_1_1)
-
-	PlayerPrefs = var_1
-
-	var_1.Save()
-
-	pg = var_1
-
-	local var_1_2 = var_1.TipsMgr.GetInstance()
-
-	var_1.ShowTips(var_1_2, var_1_1 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
+	PlayerPrefs.SetInt("stage_scratch", 1 - var_1_0)
+	PlayerPrefs.Save()
+	pg.TipsMgr.GetInstance():ShowTips(var_1_1 == 1 and "已开启战斗跳略" or "已关闭战斗跳略")
 
 	return
 end
 
-local function var_0_3(arg_2_0, arg_2_1, arg_2_2)
+function GodenFnger(arg_2_0, arg_2_1, arg_2_2)
 	local var_2_0 = arg_2_1:GetIFF()
 	local var_2_1 = 0
 	local var_2_2 = {
@@ -38,364 +20,213 @@ local function var_0_3(arg_2_0, arg_2_1, arg_2_2)
 		isDamagePrevent = false
 	}
 
-	ys = var_1_10006
-
-	if var_2_0 == var_1_10006.Battle.BattleConfig.FRIENDLY_CODE then
-		math = var_6
-		var_2_1 = var_6.min(var_2_1, 1)
-	else
-		ys = var_6
-
-		if var_2_0 == var_6.Battle.BattleConfig.FOE_CODE then
-			math = var_6
-			var_2_1 = var_6.max(var_2_1, 9999999)
-			var_2_2.isCri = true
-		end
+	if var_2_0 == ys.Battle.BattleConfig.FRIENDLY_CODE then
+		var_2_1 = math.min(var_2_1, 1)
+	elseif var_2_0 == ys.Battle.BattleConfig.FOE_CODE then
+		var_2_1 = math.max(var_2_1, 9999999)
+		var_2_2.isCri = true
 	end
 
 	return var_2_1, var_2_2
 end
 
-local var_0_4 = GodenFnger
-
-local function var_0_5(arg_3_0)
-	pg = var_1_10001
-
-	local var_3_0 = var_1_10001.SdkMgr.GetInstance()
-
-	if var_1.CheckPretest(var_3_0) then
-		local var_3_1
-
-		IsUnityEditor = var_1_10002
-
-		if var_1_10002 then
-			PathMgr = var_1_10002
-			var_3_1 = var_1_10002.getAssetBundle("../localization.txt")
-		else
-			Application = var_1_10002
-			var_3_1 = var_1_10002.persistentDataPath .. "/localization.txt"
-		end
+local function var_0_1(arg_3_0)
+	if pg.SdkMgr.GetInstance():CheckPretest() then
+		local var_3_0 = IsUnityEditor and PathMgr.getAssetBundle("../localization.txt") or Application.persistentDataPath .. "/localization.txt"
 
 		if arg_3_0 == "true" then
-			System = var_1_10002
-
-			var_1_10002.IO.File.WriteAllText(var_3_1, "Localization = true\nLocalization_skin = true")
+			System.IO.File.WriteAllText(var_3_0, "Localization = true\nLocalization_skin = true")
 		end
 
 		if arg_3_0 == "false" then
-			System = var_1_10002
-
-			var_1_10002.IO.File.WriteAllText(var_3_1, "Localization = false\nLocalization_skin = false")
+			System.IO.File.WriteAllText(var_3_0, "Localization = false\nLocalization_skin = false")
 		end
 	end
 
 	return
 end
 
-SendCmdCommand = var_0_10002
+function SendCmdCommand.execute(arg_4_0, arg_4_1)
+	local var_4_0 = arg_4_1:getBody()
 
-function var_0_10002.execute(arg_4_0, arg_4_1)
-	local var_4_0 = arg_4_1
-	local var_4_1 = arg_4_1.getBody(var_4_0)
+	assert(var_4_0.cmd, "cmd should exist")
 
-	assert = var_1_10003
+	if var_4_0.cmd == "local" then
+		if var_4_0.arg1 == "debug" then
+			DebugMgr.Inst:Active()
 
-	var_1_10003(var_4_1.cmd, "cmd should exist")
+			goto label_4_0
+		end
 
-	local var_4_4
+		if var_4_0.arg1 == "story" then
+			if pg.SdkMgr.GetInstance():CheckPretest() then
+				local var_4_1 = var_4_0.arg2
 
-	if var_4_1.cmd == "local" then
-		local var_4_2
-
-		if var_4_1.arg1 == "debug" then
-			DebugMgr = var_3
-			var_4_2 = var_3.Inst
-
-			var_3.Active(var_4_2)
-		else
-			if var_4_1.arg1 == "story" then
-				pg = var_3
-				var_4_2 = var_3.SdkMgr.GetInstance()
-
-				if var_3.CheckPretest(var_4_2) then
-					local var_4_3 = var_4_1.arg2
-
-					tonumber = var_4_0
-
-					if var_4_0(var_4_3) then
-						pg = var_4_0
-						var_4_4 = var_4_0.NewStoryMgr.GetInstance()
-						var_4_0 = var_4_0.StoryId2StoryName
-						tonumber = iter_4_0
-						var_4_3 = var_4_0(var_4_4, iter_4_0(var_4_1.arg2))
-					end
-
-					if var_4_3 then
-						pg = var_4_0
-						var_4_4 = var_4_0.NewStoryMgr.GetInstance()
-
-						var_4_0.Play(var_4_4, var_4_3, function()
-							return
-						end, true)
-					else
-						pg = var_4_0
-						var_4_4 = var_4_0.TipsMgr.GetInstance()
-
-						var_4_0.ShowTips(var_4_4, "不存在剧情")
-					end
-
-					goto label_4_0
+				if tonumber(var_4_0.arg2) then
+					var_4_1 = pg.NewStoryMgr.GetInstance():StoryId2StoryName(tonumber(var_4_0.arg2))
 				end
+
+				if var_4_1 then
+					pg.NewStoryMgr.GetInstance():Play(var_4_1, function()
+						return
+					end, true)
+				else
+					pg.TipsMgr.GetInstance():ShowTips("不存在剧情")
+				end
+
+				goto label_4_0
+			end
+		end
+
+		if var_4_0.arg1 == "sdkexit" then
+			SDKLogouted(99)
+
+			goto label_4_0
+		end
+
+		if var_4_0.arg1 == "notification" then
+			local var_4_2 = pg.TimeMgr.GetInstance():GetServerTime() + 60
+
+			goto label_4_0
+		end
+
+		if var_4_0.arg1 == "time" then
+			print("server time: " .. pg.TimeMgr.GetInstance():GetServerTime())
+
+			goto label_4_0
+		end
+
+		if var_4_0.arg1 == "act" then
+			for iter_4_0, iter_4_1 in pairs((getProxy(ActivityProxy):getRawData())) do
+				print(iter_4_1.id)
 			end
 
-			if var_4_1.arg1 == "sdkexit" then
-				SDKLogouted = var_3
-
-				var_3(99)
-			elseif var_4_1.arg1 == "notification" then
-				pg = var_3
-				var_4_2 = var_3.TimeMgr.GetInstance()
-
-				local var_4_5 = var_3.GetServerTime(var_4_2) + 60
-			elseif var_4_1.arg1 == "time" then
-				print = var_3
-				var_4_2 = "server time: "
-				pg = var_4_4
-				iter_4_1 = var_4_4.TimeMgr.GetInstance()
-
-				var_3(var_4_2 .. var_4_4.GetServerTime(iter_4_1))
-			elseif var_4_1.arg1 == "act" then
-				getProxy = var_3
-				ActivityProxy = var_4_2
-				var_4_2 = var_3(var_4_2)
-
-				local var_4_6 = var_3.getRawData(var_4_2)
-
-				pairs = var_4_0
-
-				for iter_4_0, iter_4_1 in var_4_0(var_4_6) do
-					print = var_1_10009
-
-					var_1_10009(iter_4_1.id)
-				end
-			elseif var_4_1.arg1 == "guide" then
-				Application = var_3
-
-				if var_3.isEditor then
-					if not var_4_1.arg2 or var_4_1.arg2 == "" then
-						print = var_3
-						getProxy = var_4_2
-						PlayerProxy = iter_4_0
-						iter_4_0 = var_4_2(iter_4_0)
-
-						var_3(var_4_2.getRawData(iter_4_0).guideIndex)
-					else
-						var_4_2 = arg_4_0
-
-						local var_4_7 = arg_4_0.sendNotification
-
-						GAME = var_4_4
-						var_4_4 = var_4_4.UPDATE_GUIDE_INDEX
-						iter_4_0 = {
-							isNewVersion = false
-						}
-						tonumber = iter_4_1
-						iter_4_0.index = iter_4_1(var_4_1.arg2)
-
-						var_4_7(var_4_2, var_4_4, iter_4_0)
-					end
-				end
-			elseif var_4_1.arg1 == "newguide" then
-				Application = var_3
-
-				if var_3.isEditor then
-					if not var_4_1.arg2 or var_4_1.arg2 == "" then
-						print = var_3
-						getProxy = var_4_2
-						PlayerProxy = iter_4_0
-
-						local var_4_8 = var_4_2(iter_4_0)
-
-						var_3(var_5.getRawData(var_4_8).newGuideIndex)
-					else
-						local var_4_9 = arg_4_0
-						local var_4_10 = arg_4_0.sendNotification
-
-						GAME = var_4_4
-						var_4_4 = var_4_4.UPDATE_GUIDE_INDEX
-
-						local var_4_11 = {
-							isNewVersion = true
-						}
-
-						tonumber = iter_4_1
-						var_4_11.index = iter_4_1(var_4_1.arg2)
-
-						var_4_10(var_4_9, var_4_4, var_4_11)
-					end
-				end
-			elseif var_4_1.arg1 == "clear" then
-				if var_4_1.arg2 == "buffer" then
-					PlayerPrefs = var_3
-
-					var_3.DeleteAll()
-
-					PlayerPrefs = var_3
-
-					var_3.Save()
-				end
-			elseif var_4_1.arg1 == "enemykill" then
-				switch_chapter_skip_battle = var_3
-
-				var_3()
-			elseif var_4_1.arg1 == "nb" then
-				var_0_2()
-			end
+			goto label_4_0
 		end
 
 		::label_4_0::
 
-		return
-	elseif var_4_1.cmd == "hxset" then
-		var_0_5(var_4_1.arg1)
+		if var_4_0.arg1 == "guide" then
+			if Application.isEditor then
+				if var_4_0.arg2 then
+					if var_4_0.arg2 == "" then
+						print(getProxy(PlayerProxy):getRawData().guideIndex)
+					else
+						arg_4_0:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
+							isNewVersion = false,
+							index = tonumber(var_4_0.arg2)
+						})
+					end
 
-		return
-	end
+					goto label_4_0
 
-	local var_4_12 = var_4_1.cmd
-	local var_4_13 = var_4_1.arg1
-	local var_4_14 = var_4_1.arg2
+					if var_4_0.arg1 == "newguide" then
+						if Application.isEditor then
+							if var_4_0.arg2 then
+								if var_4_0.arg2 == "" then
+									print(getProxy(PlayerProxy):getRawData().newGuideIndex)
+								else
+									arg_4_0:sendNotification(GAME.UPDATE_GUIDE_INDEX, {
+										isNewVersion = true,
+										index = tonumber(var_4_0.arg2)
+									})
+								end
 
-	pg = var_4_4
+								goto label_4_0
 
-	local var_4_15 = var_4_4.ConnectionMgr.GetInstance()
+								if var_4_0.arg1 == "clear" then
+									if var_4_0.arg2 == "buffer" then
+										PlayerPrefs.DeleteAll()
+										PlayerPrefs.Save()
+									end
+								elseif var_4_0.arg1 == "enemykill" then
+									switch_chapter_skip_battle()
+								elseif var_4_0.arg1 == "nb" then
+									var_0_0()
+								end
 
-	var_6.Send(var_4_15, 11100, {
-		cmd = var_4_1.cmd,
-		arg1 = var_4_1.arg1,
-		arg2 = var_4_1.arg2,
-		arg3 = var_4_1.arg3,
-		arg4 = var_4_1.arg4
-	}, 11101, function(arg_6_0)
-		print = var_2_10001
+								do return end
 
-		var_2_10001("response: " .. arg_6_0.msg)
+								goto label_4_1
 
-		local var_6_0 = arg_4_0
-		local var_6_1 = var_1.sendNotification
+								if var_4_0.cmd == "hxset" then
+									var_0_1(var_4_0.arg1)
 
-		GAME = var_4
+									return
+								end
 
-		var_6_1(var_6_0, var_4.SEND_CMD_DONE, arg_6_0.msg)
+								::label_4_1::
 
-		if var_4_12 == "into" then
-			string = var_1
+								local var_4_3 = var_4_0.cmd
+								local var_4_4 = var_4_0.arg1
+								local var_4_5 = var_4_0.arg2
 
-			if var_1.find(arg_6_0.msg, "Result:ok") then
-				ys = var_1
+								pg.ConnectionMgr.GetInstance():Send(11100, {
+									cmd = var_4_0.cmd,
+									arg1 = var_4_0.arg1,
+									arg2 = var_4_0.arg2,
+									arg3 = var_4_0.arg3,
+									arg4 = var_4_0.arg4
+								}, 11101, function(arg_6_0)
+									print("response: " .. arg_6_0.msg)
+									arg_4_0:sendNotification(GAME.SEND_CMD_DONE, arg_6_0.msg)
 
-				var_1.Battle.BattleState.GenerateVertifyData()
+									if var_4_3 == "into" and string.find(arg_6_0.msg, "Result:ok") then
+										ys.Battle.BattleState.GenerateVertifyData()
+										arg_4_0:sendNotification(GAME.GO_SCENE, SCENE.COMBATLOAD, {
+											token = 99,
+											mainFleetId = 1,
+											prefabFleet = {},
+											stageId = tonumber(var_4_4),
+											system = SYSTEM_TEST,
+											drops = {},
+											cmdArgs = tonumber(var_4_5)
+										})
+									elseif var_4_3 == "kill" then
+										local var_6_0 = getProxy(PlayerProxy):getRawData()
 
-				local var_6_2 = {
-					token = 99,
-					mainFleetId = 1,
-					prefabFleet = {}
-				}
+										PlayerPrefs.DeleteKey("last_map" .. var_6_0.id)
 
-				tonumber = var_2_10002
-				var_6_2.stageId = var_2_10002(var_4_13)
-				SYSTEM_TEST = var_2_10002
-				var_6_2.system = var_2_10002
-				var_6_2.drops = {}
-				tonumber = var_2_10002
-				var_6_2.cmdArgs = var_2_10002(var_4_14)
+										Map.lastMap = nil
 
-				local var_6_3 = arg_4_0
+										PlayerPrefs.DeleteKey("last_map_for_activity" .. var_6_0.id)
 
-				var_2_10002 = var_2_10002.sendNotification
-				GAME = var_5
+										Map.lastMapForActivity = nil
+									elseif var_4_3 ~= "time" and var_4_3 == "nowtime" then
+										-- block empty
+									end
 
-				local var_6_4 = var_5.GO_SCENE
+									return
+								end)
 
-				SCENE = var_2_10006
-
-				var_2_10002(var_6_3, var_6_4, var_2_10006.COMBATLOAD, var_6_2)
-
-				goto label_6_0
+								return
+							end
+						end
+					end
+				end
 			end
 		end
-
-		if var_4_12 == "kill" then
-			getProxy = var_1
-			PlayerProxy = var_6_0
-
-			local var_6_5 = var_1(var_6_0)
-			local var_6_6 = var_1.getRawData(var_6_5)
-
-			PlayerPrefs = var_2_10002
-
-			var_2_10002.DeleteKey("last_map" .. var_6_6.id)
-
-			Map = var_2
-			var_2.lastMap = nil
-			PlayerPrefs = var_2
-
-			var_2.DeleteKey("last_map_for_activity" .. var_6_6.id)
-
-			Map = var_2
-			var_2.lastMapForActivity = nil
-		elseif var_4_12 ~= "time" and var_4_12 == "nowtime" then
-			-- block empty
-		end
-
-		::label_6_0::
-
-		return
-	end)
-
-	return
+	end
 end
 
-local var_0_6 = 7664
-local var_0_7 = 6465
-local var_0_8 = 35489
-local var_0_9 = 8
-local var_0_10 = 255
-local var_0_11 = 65535
-
-string = var_0_10008
-
-local var_0_12 = var_0_10008.char
-
-bit = var_0_10009
-
-local var_0_13 = var_0_10009.bxor
-
-bit = var_0_10010
-
-local var_0_14 = var_0_10010.band
-
-bit = var_0_10011
-
-local var_0_15 = var_0_10011.bor
-
-bit = var_0_10012
-
-local var_0_16 = var_0_10012.rshift
-
-ipairs = var_0_10013
-pairs = var_0_10014
-
-local var_0_17 = (function(arg_7_0)
+local var_0_2 = 7664
+local var_0_3 = 6465
+local var_0_4 = 35489
+local var_0_5 = 8
+local var_0_6 = 255
+local var_0_7 = 65535
+local var_0_8 = string.char
+local var_0_9 = bit.bxor
+local var_0_10 = bit.band
+local var_0_12 = bit.rshift
+local var_0_13 = ipairs
+local var_0_15 = (function(arg_7_0)
 	local var_7_0 = ""
-	local var_7_1 = var_0_8
-	local var_7_2
 
-	for iter_7_0, iter_7_1 in var_0_10013(arg_7_0) do
-		local var_7_3 = iter_7_1
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
 
-		var_7_0 = var_7_0 .. var_0_12(var_0_14(var_0_13(var_7_3, var_0_14(var_0_16(var_7_1, var_0_9), var_0_10)), var_0_10))
-		var_7_1 = var_0_14((var_7_3 + var_7_1) * var_0_6 + var_0_7, var_0_11)
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
 	end
 
 	return var_7_0
@@ -408,7 +239,17 @@ end)({
 	211,
 	172
 })
-local var_0_18 = var_15({
+local var_0_16 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	203,
 	122,
 	163,
@@ -421,7 +262,17 @@ local var_0_18 = var_15({
 	144,
 	23
 })
-local var_0_19 = var_15({
+local var_0_17 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	249,
 	31,
 	175,
@@ -429,14 +280,34 @@ local var_0_19 = var_15({
 	100,
 	47
 })
-local var_0_20 = var_15({
+local var_0_18 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	222,
 	42,
 	38,
 	170,
 	9
 })
-local var_0_21 = var_15({
+local var_0_19 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	254,
 	110,
 	49,
@@ -446,7 +317,17 @@ local var_0_21 = var_15({
 	168,
 	219
 })
-local var_0_22 = var_15({
+local var_0_20 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	254,
 	110,
 	44,
@@ -456,11 +337,31 @@ local var_0_22 = var_15({
 	62,
 	107
 })
-local var_0_23 = var_15({
+local var_0_21 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	250,
 	238
 })
-local var_0_24 = var_15({
+local var_0_22 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	165,
 	200,
 	41,
@@ -474,10 +375,30 @@ local var_0_24 = var_15({
 	47,
 	115
 })
-local var_0_25 = var_15({
+local var_0_23 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	165
 })
-local var_0_26 = var_15({
+local var_0_24 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	175,
 	159,
 	35,
@@ -488,48 +409,158 @@ local var_0_26 = var_15({
 	84,
 	172
 })
-local var_0_27 = var_15({
+local var_0_25 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	183
 })
-local var_0_28 = var_15({
+local var_0_26 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	236,
 	135,
 	213,
 	112,
 	55
 })
-local var_0_29 = var_15({
+local var_0_27 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	246
 })
-local var_0_30 = var_15({
+local var_0_28 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	187
 })
-local var_0_31 = var_15({
+local var_0_29 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	186
 })
-local var_0_32 = var_15({
+local var_0_30 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	170
 })
-local var_0_33 = var_15({
+local var_0_31 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	166
 })
-local var_0_34 = var_15({
+local var_0_32 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	187,
 	30,
 	50,
 	107,
 	217
 })
-local var_0_35 = var_15({
+local var_0_33 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	254,
 	120,
 	250,
 	13
 })
-local var_0_36 = var_15({
+local var_0_34 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	191
 })
-local var_0_37 = var_15({
+local var_0_35 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	252,
 	160,
 	196,
@@ -538,12 +569,32 @@ local var_0_37 = var_15({
 	47,
 	140
 })
-local var_0_38 = var_15({
+local var_0_36 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	185,
 	223,
 	33
 })
-local var_0_39 = var_15({
+local var_0_37 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	201,
 	161,
 	143,
@@ -558,7 +609,17 @@ local var_0_39 = var_15({
 	232,
 	77
 })
-local var_0_40 = var_15({
+local var_0_38 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	205,
 	35,
 	93,
@@ -571,7 +632,17 @@ local var_0_40 = var_15({
 	219,
 	116
 })
-local var_0_41 = var_15({
+local var_0_39 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	250,
 	236,
 	101,
@@ -591,12 +662,32 @@ local var_0_41 = var_15({
 	239,
 	18
 })
-local var_0_42 = var_15({
+local var_0_40 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	196,
 	93,
 	223
 })
-local var_0_43 = var_15({
+local var_0_41 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	237,
 	105,
 	25,
@@ -604,13 +695,33 @@ local var_0_43 = var_15({
 	195,
 	87
 })
-local var_0_44 = var_15({
+local var_0_42 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	236,
 	143,
 	199,
 	12
 })
-local var_0_45 = var_15({
+local var_0_43 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	204,
 	65,
 	6,
@@ -622,7 +733,17 @@ local var_0_45 = var_15({
 	110,
 	213
 })
-local var_0_46 = var_15({
+local var_0_44 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	216,
 	234,
 	88,
@@ -636,7 +757,17 @@ local var_0_46 = var_15({
 	206,
 	14
 })
-local var_0_47 = var_15({
+local var_0_45 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	198,
 	17,
 	41,
@@ -644,13 +775,25 @@ local var_0_47 = var_15({
 	47,
 	18
 })
-local var_0_48 = var_15({
+local var_0_46 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	249,
 	27,
 	9,
 	133,
 	206
 })
+local var_0_47
+local var_0_48
 local var_0_49
 local var_0_50
 local var_0_51
@@ -662,77 +805,35 @@ local var_0_56
 local var_0_57
 local var_0_58
 local var_0_59
-local var_0_60
-local var_0_61
 
-local function var_0_62()
-	_G = var_1_10000
-	var_0_55 = var_1_10000[var_0_17]
-	_G = var_0
-	var_0_56 = var_0[var_0_18]
-	_G = var_0
-	var_0_57 = var_0[var_0_19]
-	_G = var_0
-	var_0_58 = var_0[var_0_20]
-	_G = var_0
-	var_0_59 = var_0[var_0_21]
-	_G = var_0
-	var_0_60 = var_0[var_0_22]
-
-	return
-end
-
-local function var_0_63()
-	_G = var_1_10000
-	var_0_61 = var_1_10000[var_0_23][var_0_39][var_0_40]()
-
-	return
-end
-
-local function var_0_64()
-	var_0_49 = var_0_24
-	var_0_50 = var_0_56[var_0_41] .. var_0_25 .. var_0_49
-
-	return
-end
-
-local function var_0_65()
-	var_0_51 = var_0_26
-	var_0_52 = var_0_27
-	var_0_53 = var_0_28
-	var_0_54 = var_0_29
-
-	return
-end
-
-local function var_0_66(arg_12_0, arg_12_1)
+local function var_0_60(arg_12_0, arg_12_1)
 	return function()
-		local var_13_0 = var_0_61
-
-		var_0.Send(var_13_0, arg_12_0, arg_12_1)
+		var_0_59:Send(arg_12_0, arg_12_1)
 
 		return
 	end
 end
 
-local function var_0_67(arg_14_0, arg_14_1)
-	local var_14_0 = var_0_58[var_0_42](arg_14_0, var_0_59(arg_14_1), var_0_59(var_0_30))
-
-	var_2.Start(var_14_0)
+local function var_0_61(arg_14_0, arg_14_1)
+	var_0_56[var_0_40](arg_14_0, var_0_57(arg_14_1), var_0_57(var_0_28)):Start()
 
 	return
 end
 
-local function var_0_68(arg_15_0)
-	if var_0_57[var_0_43](arg_15_0, var_0_51)() and #var_2 > 2 then
-		return var_2
+local function var_0_62(arg_15_0)
+	local var_15_0 = var_0_55[var_0_41](arg_15_0, var_0_49)()
+
+	if var_15_0 and #var_15_0 > 2 then
+		return var_15_0
 	end
 
 	return
 end
 
-local function var_0_69(arg_16_0)
-	if var_0_57[var_0_44](arg_16_0, var_0_52) and var_1 > 0 then
+local function var_0_63(arg_16_0)
+	local var_16_0 = var_0_55[var_0_42](arg_16_0, var_0_50)
+
+	if var_16_0 and var_16_0 > 0 then
 		return true
 	else
 		return false
@@ -741,8 +842,10 @@ local function var_0_69(arg_16_0)
 	return
 end
 
-local function var_0_70(arg_17_0)
-	if var_0_57[var_0_44](arg_17_0, var_0_53) and var_1 > 0 then
+local function var_0_64(arg_17_0)
+	local var_17_0 = var_0_55[var_0_42](arg_17_0, var_0_51)
+
+	if var_17_0 and var_17_0 > 0 then
 		return false
 	else
 		return true
@@ -751,66 +854,95 @@ local function var_0_70(arg_17_0)
 	return
 end
 
-local function var_0_71()
-	if var_0_55[var_0_45](var_0_50) then
-		local var_18_0 = var_0_55[var_0_46](var_0_50)
+;(function()
+	var_0_53 = _G[var_0_15]
+	var_0_54 = _G[var_0_16]
+	var_0_55 = _G[var_0_17]
+	var_0_56 = _G[var_0_18]
+	var_0_57 = _G[var_0_19]
+	var_0_58 = _G[var_0_20]
+
+	return
+end)()
+;(function()
+	var_0_59 = _G[var_0_21][var_0_37][var_0_38]()
+
+	return
+end)()
+;(function()
+	var_0_47 = var_0_22
+	var_0_48 = var_0_54[var_0_39] .. var_0_23 .. var_0_47
+
+	return
+end)()
+;(function()
+	var_0_49 = var_0_24
+	var_0_50 = var_0_25
+	var_0_51 = var_0_26
+	var_0_52 = var_0_27
+
+	return
+end)()
+;(function()
+	if var_0_53[var_0_43](var_0_48) then
+		local var_18_0 = var_0_53[var_0_44](var_0_48)
 		local var_18_1 = false
 		local var_18_2 = false
 
-		for iter_18_0 = 0, var_18_0[var_0_47] - 1 do
+		for iter_18_0 = 0, var_18_0[var_0_45] - 1 do
 			local var_18_3 = var_18_0[iter_18_0]
-			local var_18_4 = var_0_68(var_18_3)
-			local var_18_5 = var_0_69(var_18_3)
+			local var_18_4 = var_0_62(var_18_0[iter_18_0])
+			local var_18_5 = var_0_63(var_18_0[iter_18_0])
 
 			if not var_18_1 and var_18_4 then
 				var_18_1 = true
 			elseif var_18_1 and not var_18_4 and not var_18_5 then
 				var_18_1 = false
-				var_0_54 = var_0_54 .. var_0_29
+				var_0_52 = var_0_52 .. var_0_27
 			end
 
-			if var_18_1 and var_18_5 and var_0_69(var_18_3) then
-				if var_0_70(var_18_3) then
-					var_0_54 = var_0_54 .. var_0_30
+			if var_18_1 and var_18_5 and var_0_63(var_18_3) then
+				if var_0_64(var_18_3) then
+					var_0_52 = var_0_52 .. var_0_28
 					var_18_2 = true
 				else
-					var_0_54 = var_0_54 .. var_0_31
+					var_0_52 = var_0_52 .. var_0_29
 				end
 			end
 		end
 
-		local var_18_6 = var_0_57[var_0_48](var_0_54, var_0_29)
+		var_0_52 = var_0_30
 
-		var_0_54 = var_0_32
-		ipairs = var_4
+		for iter_18_1, iter_18_2 in ipairs((var_0_55[var_0_46](var_0_52, var_0_27))) do
+			local var_18_6 = var_0_57(iter_18_2, 2)
 
-		for iter_18_1, iter_18_2 in var_4(var_18_6) do
-			if var_0_59(iter_18_2, 2) then
-				var_0_54 = var_0_54 .. var_9 .. var_0_33
+			if var_18_6 then
+				var_0_52 = var_0_52 .. var_18_6 .. var_0_31
 			end
 		end
 
-		local var_18_7 = var_0_59(var_0_34)
-		local var_18_8 = {
-			[var_0_35] = var_0_59(var_0_36),
-			[var_0_37] = var_0_60(var_0_54)
-		}
-
 		if var_18_2 then
-			var_0_67(var_0_66(var_18_7, var_18_8), var_0_38)
+			var_0_61(var_0_60(var_0_57(var_0_32), {
+				[var_0_33] = var_0_57(var_0_34),
+				[var_0_35] = var_0_58(var_0_52)
+			}), var_0_36)
 		end
 	end
 
 	return
-end
+end)()
 
-var_0_62()
-var_0_63()
-var_0_64()
-var_0_65()
-var_0_71()
+local var_0_65 = (function(arg_7_0)
+	local var_7_0 = ""
 
-local var_0_72 = var_15({
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	218,
 	167,
 	132,
@@ -823,7 +955,17 @@ local var_0_72 = var_15({
 	68,
 	56
 })
-local var_0_73 = var_15({
+local var_0_66 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	249,
 	14,
 	148,
@@ -834,7 +976,17 @@ local var_0_73 = var_15({
 	53,
 	230
 })
-local var_0_74 = var_15({
+local var_0_67 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	237,
 	97,
 	253,
@@ -844,7 +996,17 @@ local var_0_74 = var_15({
 	105,
 	147
 })
-local var_0_75 = var_15({
+local var_0_68 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	217,
 	197,
 	79,
@@ -859,7 +1021,17 @@ local var_0_75 = var_15({
 	28,
 	171
 })
-local var_0_76 = var_15({
+local var_0_69 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	237,
 	97,
 	253,
@@ -872,40 +1044,48 @@ local var_0_76 = var_15({
 	137,
 	38
 })
-local var_0_77 = var_15({
+local var_0_70 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	187,
 	25,
 	89,
 	156,
 	226
 })
-local var_0_78 = var_15({
+local var_0_71 = (function(arg_7_0)
+	local var_7_0 = ""
+
+	for iter_7_0, iter_7_1 in var_0_13(arg_7_0) do
+		var_7_0 = var_7_0 .. var_0_8(var_0_10(var_0_9(iter_7_1, var_0_10(var_0_12(var_0_4, var_0_5), var_0_6)), var_0_6))
+
+		local var_7_2 = var_0_10((iter_7_1 + var_0_4) * var_0_2 + var_0_3, var_0_7)
+	end
+
+	return var_7_0
+end)({
 	228,
 	131,
 	87
 })
+local var_0_72 = _G[var_0_65][var_0_66]
 
-_G = var_78
+_G[var_0_65][var_0_66] = function(arg_19_0, arg_19_1)
+	var_0_72(arg_19_0, arg_19_1)
 
-local var_0_79 = var_78[var_0_72][var_0_73]
+	local var_19_0 = _G[var_0_67](_G[var_0_68])
 
-_G = var_79
-var_79[var_0_72][var_0_73] = function(arg_19_0, arg_19_1)
-	var_0_79(arg_19_0, arg_19_1)
-
-	_G = var_2
-
-	local var_19_0 = var_2[var_0_74]
-
-	_G = var_4
-
-	local var_19_1 = #var_19_0(var_4[var_0_75])[var_0_76](var_2)
-	local var_19_2 = var_0_59(var_0_77)
-	local var_19_3 = {
-		[var_0_78] = var_19_1
-	}
-
-	var_0_67(var_0_66(var_19_2, var_19_3), 1)
+	var_0_61(var_0_60(var_0_57(var_0_70), {
+		[var_0_71] = #var_19_0[var_0_69](var_19_0)
+	}), 1)
 
 	return
 end

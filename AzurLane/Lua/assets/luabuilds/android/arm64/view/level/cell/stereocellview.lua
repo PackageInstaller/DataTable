@@ -1,65 +1,36 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("StereoCellView", import("view.level.cell.LevelCellView"))
 
-local var_0_0 = "StereoCellView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.level.cell.LevelCellView"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.Ctor(arg_1_0)
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.Ctor(arg_1_0)
 
 	arg_1_0.assetName = nil
 	arg_1_0.line = {
 		row = arg_1_1,
 		column = arg_1_2
 	}
-	FuncBuffer = var_3
-	arg_1_0.buffer = var_3.New()
+	arg_1_0.buffer = FuncBuffer.New()
 
 	return
 end
 
-function var_0_1.UpdateGO(arg_2_0, arg_2_1, arg_2_2)
-	local var_2_0 = arg_2_0:GetLoader()
+function var_0_0.UpdateGO(arg_2_0, arg_2_1, arg_2_2)
+	local var_2_0 = arg_2_0:GetLoader():GetRequestPackage("main")
 
-	if var_3.GetRequestPackage(var_2_0, "main") and var_3.name == arg_2_0.assetName then
+	if var_2_0 and var_2_0.name == arg_2_0.assetName then
 		return
 	end
 
-	local var_2_1 = arg_2_0.buffer
-
-	var_4.Clear(var_2_1)
-
-	local var_2_2 = arg_2_0.buffer
-
-	var_4.SetNotifier(var_2_2, nil)
-
-	local var_2_3 = arg_2_0:GetLoader()
-
-	var_4.GetPrefab(var_2_3, arg_2_1, arg_2_2, function(arg_3_0)
+	arg_2_0.buffer:Clear()
+	arg_2_0.buffer:SetNotifier(nil)
+	arg_2_0:GetLoader():GetPrefab(arg_2_1, arg_2_2, function(arg_3_0)
 		arg_2_0.go = arg_3_0
 		arg_2_0.tf = arg_2_0.go.transform
 
-		local var_3_0 = arg_2_0
-
-		var_1.OnLoaded(var_3_0, arg_3_0)
-
-		local var_3_1 = arg_2_0.buffer
-
-		var_1.SetNotifier(var_3_1, arg_2_0)
-
-		local var_3_2 = arg_2_0.buffer
-
-		var_1.ExcuteAll(var_3_2)
-
-		local var_3_3 = arg_2_0
-
-		var_1.OverrideCanvas(var_3_3)
-
-		local var_3_4 = arg_2_0
-
-		var_1.ResetCanvasOrder(var_3_4)
+		arg_2_0:OnLoaded(arg_3_0)
+		arg_2_0.buffer:SetNotifier(arg_2_0)
+		arg_2_0.buffer:ExcuteAll()
+		arg_2_0:OverrideCanvas()
+		arg_2_0:ResetCanvasOrder()
 
 		return
 	end, "main")
@@ -67,8 +38,8 @@ function var_0_1.UpdateGO(arg_2_0, arg_2_1, arg_2_2)
 	return
 end
 
-function var_0_1.OnLoaded(arg_4_0, arg_4_1)
+function var_0_0.OnLoaded(arg_4_0, arg_4_1)
 	return
 end
 
-return var_0_1
+return var_0_0

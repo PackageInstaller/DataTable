@@ -1,13 +1,7 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandProductSlotUnitVO", import(".IslandUnitVO"))
 
-local var_0_0 = "IslandProductSlotUnitVO"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".IslandUnitVO"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
-	var_0_1.super.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
+	var_0_0.super.Ctor(arg_1_0, arg_1_1)
 
 	arg_1_0.slotId = arg_1_1.slotId
 	arg_1_0.isSelfIsland = arg_1_1.isSelfIsland
@@ -18,7 +12,7 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.ChangeSlotType(arg_2_0, arg_2_1)
+function var_0_0.ChangeSlotType(arg_2_0, arg_2_1)
 	arg_2_0.slotType = arg_2_1
 
 	arg_2_0:BindSlotData()
@@ -27,59 +21,44 @@ function var_0_1.ChangeSlotType(arg_2_0, arg_2_1)
 	return
 end
 
-function var_0_1.InitGrowthEndTime(arg_3_0)
+function var_0_0.InitGrowthEndTime(arg_3_0)
 	if not arg_3_0.slotData then
 		return
 	end
 
-	switch = var_1
+	switch(arg_3_0.slotType, {
+		[IslandProductConst.ProductSlotType.HandPlant] = function()
+			arg_3_0.logic_startTime = arg_3_0.slotData.start_time
+			arg_3_0.end_time = arg_3_0.slotData.end_time
 
-	local var_3_0 = arg_3_0.slotType
-	local var_3_1 = {}
+			return
+		end,
+		[IslandProductConst.ProductSlotType.RoleDelegation] = function()
+			local var_5_0 = arg_3_0.slotData:GetSlotRoleData()
 
-	IslandProductConst = var_1_10005
-	var_3_1[var_1_10005.ProductSlotType.HandPlant] = function()
-		arg_3_0.logic_startTime = arg_3_0.slotData.start_time
-		arg_3_0.end_time = arg_3_0.slotData.end_time
+			if var_5_0 then
+				arg_3_0.logic_startTime = var_5_0.start_time
+				arg_3_0.end_time = arg_3_0.logic_startTime + var_5_0.cost_time_list[1]
+			else
+				local var_5_1 = arg_3_0
 
-		return
-	end
-	IslandProductConst = var_5
-	var_3_1[var_5.ProductSlotType.RoleDelegation] = function()
-		local var_5_0 = arg_3_0.slotData
+				var_5_1.logic_startTime = pg.TimeMgr.GetInstance():GetServerTime()
+				arg_3_0.end_time = arg_3_0.logic_startTime
+			end
 
-		if var_0.GetSlotRoleData(var_5_0) then
-			arg_3_0.logic_startTime = var_0.start_time
-			arg_3_0.end_time = arg_3_0.logic_startTime + var_0.cost_time_list[1]
-		else
-			local var_5_1 = arg_3_0
-
-			pg = var_5_0
-
-			local var_5_2 = var_5_0.TimeMgr.GetInstance()
-
-			var_5_1.logic_startTime = var_2.GetServerTime(var_5_2)
-			arg_3_0.end_time = arg_3_0.logic_startTime
+			return
 		end
-
-		return
-	end
-
-	var_1(var_3_0, var_3_1)
+	})
 
 	return
 end
 
-function var_0_1.GetEndProductEndTime(arg_6_0)
+function var_0_0.GetEndProductEndTime(arg_6_0)
 	if not arg_6_0.slotData then
 		return
 	end
 
-	local var_6_0 = arg_6_0.slotType
-
-	IslandProductConst = var_1_10002
-
-	if var_6_0 == var_1_10002.ProductSlotType.HandPlant then
+	if arg_6_0.slotType == IslandProductConst.ProductSlotType.HandPlant then
 		return arg_6_0.slotData.end_time
 	else
 		return arg_6_0.slotData.end_time
@@ -88,7 +67,7 @@ function var_0_1.GetEndProductEndTime(arg_6_0)
 	return
 end
 
-function var_0_1.StartPlantGrowthTime(arg_7_0, arg_7_1, arg_7_2)
+function var_0_0.StartPlantGrowthTime(arg_7_0, arg_7_1, arg_7_2)
 	arg_7_0.formula_id = arg_7_1
 
 	if not arg_7_0.formula_id then
@@ -98,165 +77,88 @@ function var_0_1.StartPlantGrowthTime(arg_7_0, arg_7_1, arg_7_2)
 	end
 
 	arg_7_0.startGrowthTime = arg_7_2 or arg_7_0.logic_startTime
-	pg = var_3
-
-	local var_7_0 = var_3.island_formula[arg_7_0.formula_id].unitid
-
 	arg_7_0.productProcess = {}
 
-	local var_7_1 = arg_7_0.end_time - arg_7_0.startGrowthTime
-
-	ipairs = var_6
-
-	for iter_7_0, iter_7_1 in var_6(var_7_0) do
-		math = var_1_10011
-		var_1_10011 = var_1_10011.floor(iter_7_1[1] * var_7_1) + arg_7_0.startGrowthTime
-
-		local var_7_2 = iter_7_1[2]
-
-		table = var_13
-
-		var_13.insert(arg_7_0.productProcess, {
-			startTime = var_1_10011,
-			model = var_7_2
+	for iter_7_0, iter_7_1 in ipairs(pg.island_formula[arg_7_0.formula_id].unitid) do
+		table.insert(arg_7_0.productProcess, {
+			startTime = math.floor(iter_7_1[1] * (arg_7_0.end_time - arg_7_0.startGrowthTime)) + arg_7_0.startGrowthTime,
+			model = iter_7_1[2]
 		})
 	end
 
 	return
 end
 
-function var_0_1.StartDelegateSlotPerform(arg_8_0)
-	local var_8_0 = arg_8_0.slotData
-	local var_8_1 = var_1.GetFormulaId(var_8_0)
-	local var_8_2 = arg_8_0
-	local var_8_3 = arg_8_0.StartPlantGrowthTime
-	local var_8_4 = var_8_1
-
-	pg = var_1_10006
-
-	local var_8_5 = var_1_10006.TimeMgr.GetInstance()
-
-	var_8_3(var_8_2, var_8_4, var_6.GetServerTime(var_8_5))
+function var_0_0.StartDelegateSlotPerform(arg_8_0)
+	arg_8_0:StartPlantGrowthTime(arg_8_0.slotData:GetFormulaId(), pg.TimeMgr.GetInstance():GetServerTime())
 
 	return
 end
 
-function var_0_1.BindSlotData(arg_9_0)
-	switch = var_1_10001
+function var_0_0.BindSlotData(arg_9_0)
+	switch(arg_9_0.slotType, {
+		[IslandProductConst.ProductSlotType.HandPlant] = function()
+			arg_9_0.slotData = arg_9_0:HandPlantSlotData()
 
-	local var_9_0 = arg_9_0.slotType
-	local var_9_1 = {}
+			return
+		end,
+		[IslandProductConst.ProductSlotType.RoleDelegation] = function()
+			arg_9_0.slotData = arg_9_0:HandDelegationData()
 
-	IslandProductConst = var_1_10005
-	var_9_1[var_1_10005.ProductSlotType.HandPlant] = function()
-		local var_10_0 = arg_9_0
-		local var_10_1 = arg_9_0
-
-		var_10_0.slotData = var_1.HandPlantSlotData(var_10_1)
-
-		return
-	end
-	IslandProductConst = var_5
-	var_9_1[var_5.ProductSlotType.RoleDelegation] = function()
-		local var_11_0 = arg_9_0
-		local var_11_1 = arg_9_0
-
-		var_11_0.slotData = var_1.HandDelegationData(var_11_1)
-
-		return
-	end
-
-	var_1_10001(var_9_0, var_9_1)
+			return
+		end
+	})
 
 	return
 end
 
-function var_0_1.GetProductProcess(arg_12_0)
+function var_0_0.GetProductProcess(arg_12_0)
 	return arg_12_0.productProcess
 end
 
-function var_0_1.HandPlantSlotData(arg_13_0)
-	local var_13_0
+function var_0_0.HandPlantSlotData(arg_13_0)
+	local var_13_0 = arg_13_0.isSelfIsland and getProxy(IslandProxy):GetIsland():GetBuildingAgency() or getProxy(IslandProxy):GetSharedIsland():GetBuildingAgency()
+	local var_13_1 = arg_13_0.slotId
+	local var_13_2 = var_13_0:GetBuilding(pg.island_production_slot[arg_13_0.slotId].place)
 
-	if arg_13_0.isSelfIsland then
-		getProxy = var_2
-		IslandProxy = var_1_10004
-		var_1_10004 = var_2(var_1_10004)
-		var_1_10004 = var_2.GetIsland(var_1_10004)
-		var_13_0 = var_2.GetBuildingAgency(var_1_10004)
-	else
-		getProxy = var_2
-		IslandProxy = var_1_10004
-
-		local var_13_1 = var_2(var_1_10004)
-		local var_13_2 = var_2.GetSharedIsland(var_13_1)
-
-		var_13_0 = var_2.GetBuildingAgency(var_13_2)
-	end
-
-	local var_13_3 = arg_13_0.slotId
-
-	pg = var_1_10003
-
-	local var_13_4 = var_1_10003.island_production_slot[var_13_3].place
-
-	if not var_13_0:GetBuilding(var_13_4) then
+	if not var_13_2 then
 		return nil
 	end
 
-	if var_4:GetHandPlantSlotData(var_13_3) then
-		return var_5
+	local var_13_3 = var_13_2:GetHandPlantSlotData(var_13_1)
+
+	if var_13_3 then
+		return var_13_3
 	end
 
 	return nil
 end
 
-function var_0_1.HandDelegationData(arg_14_0)
-	local var_14_0
+function var_0_0.HandDelegationData(arg_14_0)
+	local var_14_0 = arg_14_0.isSelfIsland and getProxy(IslandProxy):GetIsland():GetBuildingAgency() or getProxy(IslandProxy):GetSharedIsland():GetBuildingAgency()
+	local var_14_1 = var_14_0:GetBuilding(pg.island_production_slot[arg_14_0.slotId].place)
 
-	if arg_14_0.isSelfIsland then
-		getProxy = var_2
-		IslandProxy = var_1_10004
-		var_1_10004 = var_2(var_1_10004)
-		var_1_10004 = var_2.GetIsland(var_1_10004)
-		var_14_0 = var_2.GetBuildingAgency(var_1_10004)
-	else
-		getProxy = var_2
-		IslandProxy = var_1_10004
-		var_1_10004 = var_2(var_1_10004)
-		var_1_10004 = var_2.GetSharedIsland(var_1_10004)
-		var_14_0 = var_2.GetBuildingAgency(var_1_10004)
-	end
-
-	local var_14_1 = arg_14_0.slotId
-
-	pg = var_1_10003
-
-	local var_14_2 = var_1_10003.island_production_slot[var_14_1].exclusion_slot[1]
-
-	pg = var_1_10004
-
-	local var_14_3 = var_1_10004.island_production_slot[var_14_1].place
-
-	if not var_14_0:GetBuilding(var_14_3) then
+	if not var_14_1 then
 		return nil
 	end
 
-	if var_5:GetDelegationSlotData(var_14_2) then
-		return var_6
+	local var_14_2 = var_14_1:GetDelegationSlotData(pg.island_production_slot[arg_14_0.slotId].exclusion_slot[1])
+
+	if var_14_2 then
+		return var_14_2
 	end
 
 	return nil
 end
 
-function var_0_1.SetHighLight(arg_15_0, arg_15_1)
+function var_0_0.SetHighLight(arg_15_0, arg_15_1)
 	arg_15_0.isHighLight = arg_15_1
 
 	return
 end
 
-function var_0_1.GetHighLight(arg_16_0, arg_16_1)
+function var_0_0.GetHighLight(arg_16_0, arg_16_1)
 	return arg_16_0.isHighLight
 end
 
-return var_0_1
+return var_0_0

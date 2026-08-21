@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "furniture_shop_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "furniture_shop_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.furniture_shop_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.furniture_shop_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.furniture_shop_template = rawget(pg, "furniture_shop_template") or setmetatable({
+	__name = "furniture_shop_template"
+}, confNEO)
+pg.furniture_shop_template.all = {
 	120,
 	121,
 	122,
@@ -3212,27 +3189,32 @@ var_0_3.all = {
 	341301,
 	341302,
 	341303,
-	341304
+	341304,
+	342001,
+	342002,
+	342101,
+	342102,
+	342103,
+	342104,
+	342105,
+	342106,
+	342107,
+	342108,
+	342109,
+	342110,
+	342111,
+	342112,
+	342113,
+	342114,
+	342115,
+	342116,
+	342117
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.furniture_shop_template = {}
+pg.base = pg.base or {}
+pg.base.furniture_shop_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.furniture_shop_template
-
-	var_1_0[120] = {
+	pg.base.furniture_shop_template[120] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -3243,11 +3225,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.furniture_shop_template
-
-	var_1_1[121] = {
+	pg.base.furniture_shop_template[121] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -3258,11 +3236,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.furniture_shop_template
-
-	var_1_2[122] = {
+	pg.base.furniture_shop_template[122] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -3298,11 +3272,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.furniture_shop_template
-
-	var_1_3[123] = {
+	pg.base.furniture_shop_template[123] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -3338,11 +3308,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.furniture_shop_template
-
-	var_1_4[213] = {
+	pg.base.furniture_shop_template[213] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 213,
@@ -3378,11 +3344,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.furniture_shop_template
-
-	var_1_5[236] = {
+	pg.base.furniture_shop_template[236] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 236,
@@ -3418,11 +3380,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.furniture_shop_template
-
-	var_1_6[238] = {
+	pg.base.furniture_shop_template[238] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 238,
@@ -3458,11 +3416,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.furniture_shop_template
-
-	var_1_7[200003] = {
+	pg.base.furniture_shop_template[200003] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200003,
@@ -3498,11 +3452,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.furniture_shop_template
-
-	var_1_8[200001] = {
+	pg.base.furniture_shop_template[200001] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200001,
@@ -3538,11 +3488,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.furniture_shop_template
-
-	var_1_9[200002] = {
+	pg.base.furniture_shop_template[200002] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200002,
@@ -3578,11 +3524,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.furniture_shop_template
-
-	var_1_10[200004] = {
+	pg.base.furniture_shop_template[200004] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200004,
@@ -3618,11 +3560,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.furniture_shop_template
-
-	var_1_11[200005] = {
+	pg.base.furniture_shop_template[200005] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200005,
@@ -3658,11 +3596,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.furniture_shop_template
-
-	var_1_12[200006] = {
+	pg.base.furniture_shop_template[200006] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200006,
@@ -3698,11 +3632,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.furniture_shop_template
-
-	var_1_13[200009] = {
+	pg.base.furniture_shop_template[200009] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		id = 200009,
@@ -3738,11 +3668,7 @@ var_0_3.base.furniture_shop_template = {}
 			}
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.furniture_shop_template
-
-	var_1_14[1001] = {
+	pg.base.furniture_shop_template[1001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3753,11 +3679,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.furniture_shop_template
-
-	var_1_15[1002] = {
+	pg.base.furniture_shop_template[1002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3768,11 +3690,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.furniture_shop_template
-
-	var_1_16[1101] = {
+	pg.base.furniture_shop_template[1101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3783,11 +3701,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.furniture_shop_template
-
-	var_1_17[1102] = {
+	pg.base.furniture_shop_template[1102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3798,11 +3712,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.furniture_shop_template
-
-	var_1_18[1103] = {
+	pg.base.furniture_shop_template[1103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3813,11 +3723,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.furniture_shop_template
-
-	var_1_19[1104] = {
+	pg.base.furniture_shop_template[1104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3828,11 +3734,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.furniture_shop_template
-
-	var_1_20[1105] = {
+	pg.base.furniture_shop_template[1105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3843,11 +3745,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.furniture_shop_template
-
-	var_1_21[1106] = {
+	pg.base.furniture_shop_template[1106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3858,11 +3756,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.furniture_shop_template
-
-	var_1_22[1107] = {
+	pg.base.furniture_shop_template[1107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3873,11 +3767,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.furniture_shop_template
-
-	var_1_23[1108] = {
+	pg.base.furniture_shop_template[1108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3888,11 +3778,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.furniture_shop_template
-
-	var_1_24[1109] = {
+	pg.base.furniture_shop_template[1109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3903,11 +3789,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.furniture_shop_template
-
-	var_1_25[1110] = {
+	pg.base.furniture_shop_template[1110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3918,11 +3800,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.furniture_shop_template
-
-	var_1_26[1111] = {
+	pg.base.furniture_shop_template[1111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3933,11 +3811,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.furniture_shop_template
-
-	var_1_27[1112] = {
+	pg.base.furniture_shop_template[1112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3948,11 +3822,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.furniture_shop_template
-
-	var_1_28[1201] = {
+	pg.base.furniture_shop_template[1201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3963,11 +3833,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.furniture_shop_template
-
-	var_1_29[1202] = {
+	pg.base.furniture_shop_template[1202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3978,11 +3844,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.furniture_shop_template
-
-	var_1_30[1203] = {
+	pg.base.furniture_shop_template[1203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -3993,11 +3855,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.furniture_shop_template
-
-	var_1_31[1204] = {
+	pg.base.furniture_shop_template[1204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4008,11 +3866,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.furniture_shop_template
-
-	var_1_32[1205] = {
+	pg.base.furniture_shop_template[1205] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4023,11 +3877,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.furniture_shop_template
-
-	var_1_33[1206] = {
+	pg.base.furniture_shop_template[1206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4038,11 +3888,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.furniture_shop_template
-
-	var_1_34[1301] = {
+	pg.base.furniture_shop_template[1301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4053,11 +3899,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.furniture_shop_template
-
-	var_1_35[1302] = {
+	pg.base.furniture_shop_template[1302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4068,11 +3910,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.furniture_shop_template
-
-	var_1_36[1303] = {
+	pg.base.furniture_shop_template[1303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4083,11 +3921,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.furniture_shop_template
-
-	var_1_37[1304] = {
+	pg.base.furniture_shop_template[1304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4098,11 +3932,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.furniture_shop_template
-
-	var_1_38[1305] = {
+	pg.base.furniture_shop_template[1305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4113,11 +3943,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.furniture_shop_template
-
-	var_1_39[1306] = {
+	pg.base.furniture_shop_template[1306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4128,11 +3954,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.furniture_shop_template
-
-	var_1_40[1307] = {
+	pg.base.furniture_shop_template[1307] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4143,11 +3965,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.furniture_shop_template
-
-	var_1_41[1308] = {
+	pg.base.furniture_shop_template[1308] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4158,11 +3976,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.furniture_shop_template
-
-	var_1_42[1309] = {
+	pg.base.furniture_shop_template[1309] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4173,11 +3987,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.furniture_shop_template
-
-	var_1_43[2001] = {
+	pg.base.furniture_shop_template[2001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4188,11 +3998,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.furniture_shop_template
-
-	var_1_44[2002] = {
+	pg.base.furniture_shop_template[2002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4203,11 +4009,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.furniture_shop_template
-
-	var_1_45[2101] = {
+	pg.base.furniture_shop_template[2101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4218,11 +4020,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.furniture_shop_template
-
-	var_1_46[2102] = {
+	pg.base.furniture_shop_template[2102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4233,11 +4031,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.furniture_shop_template
-
-	var_1_47[2105] = {
+	pg.base.furniture_shop_template[2105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4248,11 +4042,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.furniture_shop_template
-
-	var_1_48[2106] = {
+	pg.base.furniture_shop_template[2106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4263,11 +4053,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.furniture_shop_template
-
-	var_1_49[2107] = {
+	pg.base.furniture_shop_template[2107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4278,11 +4064,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.furniture_shop_template
-
-	var_1_50[2108] = {
+	pg.base.furniture_shop_template[2108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4293,11 +4075,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.furniture_shop_template
-
-	var_1_51[2109] = {
+	pg.base.furniture_shop_template[2109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4308,11 +4086,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.furniture_shop_template
-
-	var_1_52[2110] = {
+	pg.base.furniture_shop_template[2110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4323,11 +4097,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.furniture_shop_template
-
-	var_1_53[2201] = {
+	pg.base.furniture_shop_template[2201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4338,11 +4108,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.furniture_shop_template
-
-	var_1_54[2202] = {
+	pg.base.furniture_shop_template[2202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4353,11 +4119,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.furniture_shop_template
-
-	var_1_55[2203] = {
+	pg.base.furniture_shop_template[2203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4368,11 +4130,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.furniture_shop_template
-
-	var_1_56[2204] = {
+	pg.base.furniture_shop_template[2204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4383,11 +4141,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.furniture_shop_template
-
-	var_1_57[2205] = {
+	pg.base.furniture_shop_template[2205] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4398,11 +4152,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.furniture_shop_template
-
-	var_1_58[2206] = {
+	pg.base.furniture_shop_template[2206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4413,11 +4163,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.furniture_shop_template
-
-	var_1_59[2207] = {
+	pg.base.furniture_shop_template[2207] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4428,11 +4174,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.furniture_shop_template
-
-	var_1_60[2301] = {
+	pg.base.furniture_shop_template[2301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4443,11 +4185,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.furniture_shop_template
-
-	var_1_61[2302] = {
+	pg.base.furniture_shop_template[2302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4458,11 +4196,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.furniture_shop_template
-
-	var_1_62[2303] = {
+	pg.base.furniture_shop_template[2303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4473,11 +4207,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.furniture_shop_template
-
-	var_1_63[2304] = {
+	pg.base.furniture_shop_template[2304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4488,11 +4218,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.furniture_shop_template
-
-	var_1_64[2305] = {
+	pg.base.furniture_shop_template[2305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4503,11 +4229,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.furniture_shop_template
-
-	var_1_65[3001] = {
+	pg.base.furniture_shop_template[3001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4518,11 +4240,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.furniture_shop_template
-
-	var_1_66[3002] = {
+	pg.base.furniture_shop_template[3002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4533,11 +4251,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.furniture_shop_template
-
-	var_1_67[3101] = {
+	pg.base.furniture_shop_template[3101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4548,11 +4262,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.furniture_shop_template
-
-	var_1_68[3102] = {
+	pg.base.furniture_shop_template[3102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4563,11 +4273,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.furniture_shop_template
-
-	var_1_69[3103] = {
+	pg.base.furniture_shop_template[3103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4578,11 +4284,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.furniture_shop_template
-
-	var_1_70[3104] = {
+	pg.base.furniture_shop_template[3104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4593,11 +4295,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.furniture_shop_template
-
-	var_1_71[3106] = {
+	pg.base.furniture_shop_template[3106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4608,11 +4306,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.furniture_shop_template
-
-	var_1_72[3107] = {
+	pg.base.furniture_shop_template[3107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4623,11 +4317,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.furniture_shop_template
-
-	var_1_73[3108] = {
+	pg.base.furniture_shop_template[3108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4638,11 +4328,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.furniture_shop_template
-
-	var_1_74[3109] = {
+	pg.base.furniture_shop_template[3109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4653,11 +4339,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.furniture_shop_template
-
-	var_1_75[3110] = {
+	pg.base.furniture_shop_template[3110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4668,11 +4350,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.furniture_shop_template
-
-	var_1_76[3112] = {
+	pg.base.furniture_shop_template[3112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4683,11 +4361,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.furniture_shop_template
-
-	var_1_77[3201] = {
+	pg.base.furniture_shop_template[3201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4698,11 +4372,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.furniture_shop_template
-
-	var_1_78[3202] = {
+	pg.base.furniture_shop_template[3202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4713,11 +4383,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.furniture_shop_template
-
-	var_1_79[3203] = {
+	pg.base.furniture_shop_template[3203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4728,11 +4394,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.furniture_shop_template
-
-	var_1_80[3204] = {
+	pg.base.furniture_shop_template[3204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4743,11 +4405,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.furniture_shop_template
-
-	var_1_81[3301] = {
+	pg.base.furniture_shop_template[3301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4758,11 +4416,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.furniture_shop_template
-
-	var_1_82[3302] = {
+	pg.base.furniture_shop_template[3302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4773,11 +4427,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.furniture_shop_template
-
-	var_1_83[3303] = {
+	pg.base.furniture_shop_template[3303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4788,11 +4438,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.furniture_shop_template
-
-	var_1_84[3304] = {
+	pg.base.furniture_shop_template[3304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4803,11 +4449,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.furniture_shop_template
-
-	var_1_85[3305] = {
+	pg.base.furniture_shop_template[3305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4818,11 +4460,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.furniture_shop_template
-
-	var_1_86[3306] = {
+	pg.base.furniture_shop_template[3306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4833,11 +4471,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.furniture_shop_template
-
-	var_1_87[4001] = {
+	pg.base.furniture_shop_template[4001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4848,11 +4482,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.furniture_shop_template
-
-	var_1_88[4002] = {
+	pg.base.furniture_shop_template[4002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4863,11 +4493,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.furniture_shop_template
-
-	var_1_89[4101] = {
+	pg.base.furniture_shop_template[4101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4878,11 +4504,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.furniture_shop_template
-
-	var_1_90[4102] = {
+	pg.base.furniture_shop_template[4102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4893,11 +4515,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.furniture_shop_template
-
-	var_1_91[4103] = {
+	pg.base.furniture_shop_template[4103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4908,11 +4526,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.furniture_shop_template
-
-	var_1_92[4104] = {
+	pg.base.furniture_shop_template[4104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4923,11 +4537,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.furniture_shop_template
-
-	var_1_93[4105] = {
+	pg.base.furniture_shop_template[4105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4938,11 +4548,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.furniture_shop_template
-
-	var_1_94[4106] = {
+	pg.base.furniture_shop_template[4106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4953,11 +4559,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.furniture_shop_template
-
-	var_1_95[4107] = {
+	pg.base.furniture_shop_template[4107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4968,11 +4570,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.furniture_shop_template
-
-	var_1_96[4109] = {
+	pg.base.furniture_shop_template[4109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4983,11 +4581,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.furniture_shop_template
-
-	var_1_97[4110] = {
+	pg.base.furniture_shop_template[4110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -4998,11 +4592,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.furniture_shop_template
-
-	var_1_98[4112] = {
+	pg.base.furniture_shop_template[4112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5013,8 +4603,7 @@ var_0_3.base.furniture_shop_template = {}
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_1_98
-	var_1_98.base.furniture_shop_template[4113] = {
+	pg.base.furniture_shop_template[4113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5029,11 +4618,7 @@ var_0_3.base.furniture_shop_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.furniture_shop_template
-
-	var_2_0[4114] = {
+	pg.base.furniture_shop_template[4114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5044,11 +4629,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.furniture_shop_template
-
-	var_2_1[4201] = {
+	pg.base.furniture_shop_template[4201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5059,11 +4640,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.furniture_shop_template
-
-	var_2_2[4202] = {
+	pg.base.furniture_shop_template[4202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5074,11 +4651,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.furniture_shop_template
-
-	var_2_3[4203] = {
+	pg.base.furniture_shop_template[4203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5089,11 +4662,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.furniture_shop_template
-
-	var_2_4[4301] = {
+	pg.base.furniture_shop_template[4301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5104,11 +4673,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.furniture_shop_template
-
-	var_2_5[4302] = {
+	pg.base.furniture_shop_template[4302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5119,11 +4684,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.furniture_shop_template
-
-	var_2_6[4303] = {
+	pg.base.furniture_shop_template[4303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5134,11 +4695,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.furniture_shop_template
-
-	var_2_7[4304] = {
+	pg.base.furniture_shop_template[4304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5149,11 +4706,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.furniture_shop_template
-
-	var_2_8[4305] = {
+	pg.base.furniture_shop_template[4305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5164,11 +4717,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.furniture_shop_template
-
-	var_2_9[4306] = {
+	pg.base.furniture_shop_template[4306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5179,11 +4728,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.furniture_shop_template
-
-	var_2_10[4307] = {
+	pg.base.furniture_shop_template[4307] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5194,11 +4739,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.furniture_shop_template
-
-	var_2_11[5001] = {
+	pg.base.furniture_shop_template[5001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5209,11 +4750,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.furniture_shop_template
-
-	var_2_12[5002] = {
+	pg.base.furniture_shop_template[5002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5224,11 +4761,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.furniture_shop_template
-
-	var_2_13[5101] = {
+	pg.base.furniture_shop_template[5101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5239,11 +4772,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.furniture_shop_template
-
-	var_2_14[5102] = {
+	pg.base.furniture_shop_template[5102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5254,11 +4783,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.furniture_shop_template
-
-	var_2_15[5104] = {
+	pg.base.furniture_shop_template[5104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5269,11 +4794,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.furniture_shop_template
-
-	var_2_16[5105] = {
+	pg.base.furniture_shop_template[5105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5284,11 +4805,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.furniture_shop_template
-
-	var_2_17[5106] = {
+	pg.base.furniture_shop_template[5106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5299,11 +4816,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.furniture_shop_template
-
-	var_2_18[5107] = {
+	pg.base.furniture_shop_template[5107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5314,11 +4827,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.furniture_shop_template
-
-	var_2_19[5108] = {
+	pg.base.furniture_shop_template[5108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5329,11 +4838,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.furniture_shop_template
-
-	var_2_20[5109] = {
+	pg.base.furniture_shop_template[5109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5344,11 +4849,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.furniture_shop_template
-
-	var_2_21[5111] = {
+	pg.base.furniture_shop_template[5111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5359,11 +4860,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.furniture_shop_template
-
-	var_2_22[5112] = {
+	pg.base.furniture_shop_template[5112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5374,11 +4871,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.furniture_shop_template
-
-	var_2_23[5113] = {
+	pg.base.furniture_shop_template[5113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5389,11 +4882,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.furniture_shop_template
-
-	var_2_24[5114] = {
+	pg.base.furniture_shop_template[5114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5404,11 +4893,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.furniture_shop_template
-
-	var_2_25[5201] = {
+	pg.base.furniture_shop_template[5201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5419,11 +4904,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.furniture_shop_template
-
-	var_2_26[5202] = {
+	pg.base.furniture_shop_template[5202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5434,11 +4915,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.furniture_shop_template
-
-	var_2_27[5203] = {
+	pg.base.furniture_shop_template[5203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5449,11 +4926,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.furniture_shop_template
-
-	var_2_28[5301] = {
+	pg.base.furniture_shop_template[5301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5464,11 +4937,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.furniture_shop_template
-
-	var_2_29[5302] = {
+	pg.base.furniture_shop_template[5302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5479,11 +4948,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.furniture_shop_template
-
-	var_2_30[5303] = {
+	pg.base.furniture_shop_template[5303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5494,11 +4959,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.furniture_shop_template
-
-	var_2_31[5304] = {
+	pg.base.furniture_shop_template[5304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5509,11 +4970,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.furniture_shop_template
-
-	var_2_32[5305] = {
+	pg.base.furniture_shop_template[5305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5524,11 +4981,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.furniture_shop_template
-
-	var_2_33[5306] = {
+	pg.base.furniture_shop_template[5306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5539,11 +4992,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.furniture_shop_template
-
-	var_2_34[5307] = {
+	pg.base.furniture_shop_template[5307] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5554,11 +5003,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.furniture_shop_template
-
-	var_2_35[6103] = {
+	pg.base.furniture_shop_template[6103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5569,11 +5014,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.furniture_shop_template
-
-	var_2_36[6107] = {
+	pg.base.furniture_shop_template[6107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5584,11 +5025,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.furniture_shop_template
-
-	var_2_37[6112] = {
+	pg.base.furniture_shop_template[6112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5599,11 +5036,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.furniture_shop_template
-
-	var_2_38[6114] = {
+	pg.base.furniture_shop_template[6114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5614,11 +5047,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.furniture_shop_template
-
-	var_2_39[6115] = {
+	pg.base.furniture_shop_template[6115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		id = 6115,
@@ -5654,11 +5083,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.furniture_shop_template
-
-	var_2_40[6118] = {
+	pg.base.furniture_shop_template[6118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5669,11 +5094,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.furniture_shop_template
-
-	var_2_41[6203] = {
+	pg.base.furniture_shop_template[6203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5684,11 +5105,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.furniture_shop_template
-
-	var_2_42[6206] = {
+	pg.base.furniture_shop_template[6206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5699,11 +5116,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.furniture_shop_template
-
-	var_2_43[6207] = {
+	pg.base.furniture_shop_template[6207] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		id = 6207,
@@ -5739,11 +5152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.furniture_shop_template
-
-	var_2_44[6209] = {
+	pg.base.furniture_shop_template[6209] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5754,11 +5163,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.furniture_shop_template
-
-	var_2_45[6213] = {
+	pg.base.furniture_shop_template[6213] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5769,11 +5174,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.furniture_shop_template
-
-	var_2_46[7001] = {
+	pg.base.furniture_shop_template[7001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5784,11 +5185,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.furniture_shop_template
-
-	var_2_47[7002] = {
+	pg.base.furniture_shop_template[7002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5799,11 +5196,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.furniture_shop_template
-
-	var_2_48[7101] = {
+	pg.base.furniture_shop_template[7101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5814,11 +5207,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.furniture_shop_template
-
-	var_2_49[7102] = {
+	pg.base.furniture_shop_template[7102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5829,11 +5218,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.furniture_shop_template
-
-	var_2_50[7103] = {
+	pg.base.furniture_shop_template[7103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5844,11 +5229,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.furniture_shop_template
-
-	var_2_51[7104] = {
+	pg.base.furniture_shop_template[7104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5859,11 +5240,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.furniture_shop_template
-
-	var_2_52[7105] = {
+	pg.base.furniture_shop_template[7105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5874,11 +5251,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.furniture_shop_template
-
-	var_2_53[7106] = {
+	pg.base.furniture_shop_template[7106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5889,11 +5262,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.furniture_shop_template
-
-	var_2_54[7107] = {
+	pg.base.furniture_shop_template[7107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5904,11 +5273,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.furniture_shop_template
-
-	var_2_55[7108] = {
+	pg.base.furniture_shop_template[7108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5919,11 +5284,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.furniture_shop_template
-
-	var_2_56[7109] = {
+	pg.base.furniture_shop_template[7109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5934,11 +5295,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.furniture_shop_template
-
-	var_2_57[7110] = {
+	pg.base.furniture_shop_template[7110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5949,11 +5306,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.furniture_shop_template
-
-	var_2_58[7111] = {
+	pg.base.furniture_shop_template[7111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5964,11 +5317,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.furniture_shop_template
-
-	var_2_59[7112] = {
+	pg.base.furniture_shop_template[7112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5979,11 +5328,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.furniture_shop_template
-
-	var_2_60[7113] = {
+	pg.base.furniture_shop_template[7113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -5994,11 +5339,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.furniture_shop_template
-
-	var_2_61[7114] = {
+	pg.base.furniture_shop_template[7114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6009,11 +5350,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.furniture_shop_template
-
-	var_2_62[7115] = {
+	pg.base.furniture_shop_template[7115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6024,11 +5361,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.furniture_shop_template
-
-	var_2_63[7116] = {
+	pg.base.furniture_shop_template[7116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6039,11 +5372,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.furniture_shop_template
-
-	var_2_64[7117] = {
+	pg.base.furniture_shop_template[7117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6054,11 +5383,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.furniture_shop_template
-
-	var_2_65[7118] = {
+	pg.base.furniture_shop_template[7118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6069,11 +5394,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.furniture_shop_template
-
-	var_2_66[7119] = {
+	pg.base.furniture_shop_template[7119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6084,11 +5405,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.furniture_shop_template
-
-	var_2_67[7120] = {
+	pg.base.furniture_shop_template[7120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6099,11 +5416,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.furniture_shop_template
-
-	var_2_68[7121] = {
+	pg.base.furniture_shop_template[7121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6114,11 +5427,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.furniture_shop_template
-
-	var_2_69[7122] = {
+	pg.base.furniture_shop_template[7122] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6129,11 +5438,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.furniture_shop_template
-
-	var_2_70[7123] = {
+	pg.base.furniture_shop_template[7123] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6144,11 +5449,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.furniture_shop_template
-
-	var_2_71[7201] = {
+	pg.base.furniture_shop_template[7201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6159,11 +5460,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.furniture_shop_template
-
-	var_2_72[7202] = {
+	pg.base.furniture_shop_template[7202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6174,11 +5471,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.furniture_shop_template
-
-	var_2_73[7203] = {
+	pg.base.furniture_shop_template[7203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6189,11 +5482,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.furniture_shop_template
-
-	var_2_74[7204] = {
+	pg.base.furniture_shop_template[7204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6204,11 +5493,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.furniture_shop_template
-
-	var_2_75[7205] = {
+	pg.base.furniture_shop_template[7205] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6219,11 +5504,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.furniture_shop_template
-
-	var_2_76[7206] = {
+	pg.base.furniture_shop_template[7206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6234,11 +5515,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.furniture_shop_template
-
-	var_2_77[7207] = {
+	pg.base.furniture_shop_template[7207] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6249,11 +5526,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.furniture_shop_template
-
-	var_2_78[7208] = {
+	pg.base.furniture_shop_template[7208] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6264,11 +5537,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.furniture_shop_template
-
-	var_2_79[7209] = {
+	pg.base.furniture_shop_template[7209] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6279,11 +5548,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.furniture_shop_template
-
-	var_2_80[7210] = {
+	pg.base.furniture_shop_template[7210] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6294,11 +5559,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.furniture_shop_template
-
-	var_2_81[7211] = {
+	pg.base.furniture_shop_template[7211] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6309,11 +5570,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.furniture_shop_template
-
-	var_2_82[7212] = {
+	pg.base.furniture_shop_template[7212] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6324,11 +5581,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.furniture_shop_template
-
-	var_2_83[7213] = {
+	pg.base.furniture_shop_template[7213] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6339,11 +5592,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.furniture_shop_template
-
-	var_2_84[7214] = {
+	pg.base.furniture_shop_template[7214] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6354,11 +5603,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.furniture_shop_template
-
-	var_2_85[7301] = {
+	pg.base.furniture_shop_template[7301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6369,11 +5614,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.furniture_shop_template
-
-	var_2_86[7302] = {
+	pg.base.furniture_shop_template[7302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6384,11 +5625,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.furniture_shop_template
-
-	var_2_87[7303] = {
+	pg.base.furniture_shop_template[7303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6399,11 +5636,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.furniture_shop_template
-
-	var_2_88[7304] = {
+	pg.base.furniture_shop_template[7304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6414,11 +5647,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.furniture_shop_template
-
-	var_2_89[8001] = {
+	pg.base.furniture_shop_template[8001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6429,11 +5658,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.furniture_shop_template
-
-	var_2_90[8002] = {
+	pg.base.furniture_shop_template[8002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6444,11 +5669,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.furniture_shop_template
-
-	var_2_91[8101] = {
+	pg.base.furniture_shop_template[8101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6459,11 +5680,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.furniture_shop_template
-
-	var_2_92[8102] = {
+	pg.base.furniture_shop_template[8102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6474,11 +5691,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.furniture_shop_template
-
-	var_2_93[8104] = {
+	pg.base.furniture_shop_template[8104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6489,11 +5702,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.furniture_shop_template
-
-	var_2_94[8105] = {
+	pg.base.furniture_shop_template[8105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6504,11 +5713,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.furniture_shop_template
-
-	var_2_95[8108] = {
+	pg.base.furniture_shop_template[8108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6519,11 +5724,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.furniture_shop_template
-
-	var_2_96[8109] = {
+	pg.base.furniture_shop_template[8109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6534,11 +5735,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.furniture_shop_template
-
-	var_2_97[8110] = {
+	pg.base.furniture_shop_template[8110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6549,11 +5746,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.furniture_shop_template
-
-	var_2_98[8112] = {
+	pg.base.furniture_shop_template[8112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6564,8 +5757,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_2_98
-	var_2_98.base.furniture_shop_template[8113] = {
+	pg.base.furniture_shop_template[8113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6580,11 +5772,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.furniture_shop_template
-
-	var_3_0[8114] = {
+	pg.base.furniture_shop_template[8114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6595,11 +5783,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.furniture_shop_template
-
-	var_3_1[8115] = {
+	pg.base.furniture_shop_template[8115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6610,11 +5794,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.furniture_shop_template
-
-	var_3_2[8116] = {
+	pg.base.furniture_shop_template[8116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6625,11 +5805,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.furniture_shop_template
-
-	var_3_3[8117] = {
+	pg.base.furniture_shop_template[8117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6640,11 +5816,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.furniture_shop_template
-
-	var_3_4[8119] = {
+	pg.base.furniture_shop_template[8119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6655,11 +5827,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.furniture_shop_template
-
-	var_3_5[8120] = {
+	pg.base.furniture_shop_template[8120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6670,11 +5838,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.furniture_shop_template
-
-	var_3_6[8121] = {
+	pg.base.furniture_shop_template[8121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6685,11 +5849,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.furniture_shop_template
-
-	var_3_7[8201] = {
+	pg.base.furniture_shop_template[8201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6700,11 +5860,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.furniture_shop_template
-
-	var_3_8[8202] = {
+	pg.base.furniture_shop_template[8202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6715,11 +5871,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.furniture_shop_template
-
-	var_3_9[8203] = {
+	pg.base.furniture_shop_template[8203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6730,11 +5882,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.furniture_shop_template
-
-	var_3_10[8204] = {
+	pg.base.furniture_shop_template[8204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6745,11 +5893,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.furniture_shop_template
-
-	var_3_11[8301] = {
+	pg.base.furniture_shop_template[8301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6760,11 +5904,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.furniture_shop_template
-
-	var_3_12[8302] = {
+	pg.base.furniture_shop_template[8302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6775,11 +5915,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.furniture_shop_template
-
-	var_3_13[8303] = {
+	pg.base.furniture_shop_template[8303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6790,11 +5926,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.furniture_shop_template
-
-	var_3_14[8304] = {
+	pg.base.furniture_shop_template[8304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6805,11 +5937,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.furniture_shop_template
-
-	var_3_15[8305] = {
+	pg.base.furniture_shop_template[8305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6820,11 +5948,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.furniture_shop_template
-
-	var_3_16[8306] = {
+	pg.base.furniture_shop_template[8306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6835,11 +5959,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.furniture_shop_template
-
-	var_3_17[8307] = {
+	pg.base.furniture_shop_template[8307] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6850,11 +5970,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.furniture_shop_template
-
-	var_3_18[9001] = {
+	pg.base.furniture_shop_template[9001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6865,11 +5981,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.furniture_shop_template
-
-	var_3_19[9002] = {
+	pg.base.furniture_shop_template[9002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6880,11 +5992,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.furniture_shop_template
-
-	var_3_20[9101] = {
+	pg.base.furniture_shop_template[9101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6895,11 +6003,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.furniture_shop_template
-
-	var_3_21[9102] = {
+	pg.base.furniture_shop_template[9102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6910,11 +6014,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.furniture_shop_template
-
-	var_3_22[9103] = {
+	pg.base.furniture_shop_template[9103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6925,11 +6025,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.furniture_shop_template
-
-	var_3_23[9104] = {
+	pg.base.furniture_shop_template[9104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6940,11 +6036,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.furniture_shop_template
-
-	var_3_24[9105] = {
+	pg.base.furniture_shop_template[9105] = {
 		not_for_sale = 2,
 		gem_price = 0,
 		time = "always",
@@ -6955,11 +6047,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.furniture_shop_template
-
-	var_3_25[9106] = {
+	pg.base.furniture_shop_template[9106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6970,11 +6058,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.furniture_shop_template
-
-	var_3_26[9107] = {
+	pg.base.furniture_shop_template[9107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -6985,11 +6069,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.furniture_shop_template
-
-	var_3_27[9108] = {
+	pg.base.furniture_shop_template[9108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7000,11 +6080,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.furniture_shop_template
-
-	var_3_28[9109] = {
+	pg.base.furniture_shop_template[9109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7015,11 +6091,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.furniture_shop_template
-
-	var_3_29[9110] = {
+	pg.base.furniture_shop_template[9110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7030,11 +6102,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.furniture_shop_template
-
-	var_3_30[9111] = {
+	pg.base.furniture_shop_template[9111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7045,11 +6113,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.furniture_shop_template
-
-	var_3_31[9112] = {
+	pg.base.furniture_shop_template[9112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7060,11 +6124,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.furniture_shop_template
-
-	var_3_32[9113] = {
+	pg.base.furniture_shop_template[9113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7075,11 +6135,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.furniture_shop_template
-
-	var_3_33[9114] = {
+	pg.base.furniture_shop_template[9114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7090,11 +6146,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.furniture_shop_template
-
-	var_3_34[9116] = {
+	pg.base.furniture_shop_template[9116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7105,11 +6157,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.furniture_shop_template
-
-	var_3_35[9117] = {
+	pg.base.furniture_shop_template[9117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7120,11 +6168,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.furniture_shop_template
-
-	var_3_36[9118] = {
+	pg.base.furniture_shop_template[9118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7135,11 +6179,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.furniture_shop_template
-
-	var_3_37[9119] = {
+	pg.base.furniture_shop_template[9119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7150,11 +6190,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.furniture_shop_template
-
-	var_3_38[9120] = {
+	pg.base.furniture_shop_template[9120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7165,11 +6201,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.furniture_shop_template
-
-	var_3_39[9121] = {
+	pg.base.furniture_shop_template[9121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7180,11 +6212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.furniture_shop_template
-
-	var_3_40[9122] = {
+	pg.base.furniture_shop_template[9122] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7195,11 +6223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.furniture_shop_template
-
-	var_3_41[9123] = {
+	pg.base.furniture_shop_template[9123] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7210,11 +6234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.furniture_shop_template
-
-	var_3_42[9201] = {
+	pg.base.furniture_shop_template[9201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7225,11 +6245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.furniture_shop_template
-
-	var_3_43[9202] = {
+	pg.base.furniture_shop_template[9202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7240,11 +6256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.furniture_shop_template
-
-	var_3_44[9203] = {
+	pg.base.furniture_shop_template[9203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7255,11 +6267,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.furniture_shop_template
-
-	var_3_45[9204] = {
+	pg.base.furniture_shop_template[9204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7270,11 +6278,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.furniture_shop_template
-
-	var_3_46[9205] = {
+	pg.base.furniture_shop_template[9205] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7285,11 +6289,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.furniture_shop_template
-
-	var_3_47[9206] = {
+	pg.base.furniture_shop_template[9206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7300,11 +6300,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.furniture_shop_template
-
-	var_3_48[9207] = {
+	pg.base.furniture_shop_template[9207] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7315,11 +6311,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.furniture_shop_template
-
-	var_3_49[9208] = {
+	pg.base.furniture_shop_template[9208] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7330,11 +6322,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.furniture_shop_template
-
-	var_3_50[9209] = {
+	pg.base.furniture_shop_template[9209] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7345,11 +6333,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.furniture_shop_template
-
-	var_3_51[9301] = {
+	pg.base.furniture_shop_template[9301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7360,11 +6344,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.furniture_shop_template
-
-	var_3_52[9302] = {
+	pg.base.furniture_shop_template[9302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7375,11 +6355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.furniture_shop_template
-
-	var_3_53[9303] = {
+	pg.base.furniture_shop_template[9303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7390,11 +6366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.furniture_shop_template
-
-	var_3_54[9304] = {
+	pg.base.furniture_shop_template[9304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7405,11 +6377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.furniture_shop_template
-
-	var_3_55[9306] = {
+	pg.base.furniture_shop_template[9306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7420,11 +6388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.furniture_shop_template
-
-	var_3_56[10001] = {
+	pg.base.furniture_shop_template[10001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7435,11 +6399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.furniture_shop_template
-
-	var_3_57[10002] = {
+	pg.base.furniture_shop_template[10002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7450,11 +6410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.furniture_shop_template
-
-	var_3_58[10103] = {
+	pg.base.furniture_shop_template[10103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7465,11 +6421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.furniture_shop_template
-
-	var_3_59[10104] = {
+	pg.base.furniture_shop_template[10104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7480,11 +6432,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.furniture_shop_template
-
-	var_3_60[10105] = {
+	pg.base.furniture_shop_template[10105] = {
 		not_for_sale = 2,
 		gem_price = 0,
 		time = "always",
@@ -7495,11 +6443,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.furniture_shop_template
-
-	var_3_61[10106] = {
+	pg.base.furniture_shop_template[10106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7510,11 +6454,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.furniture_shop_template
-
-	var_3_62[10107] = {
+	pg.base.furniture_shop_template[10107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7525,11 +6465,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.furniture_shop_template
-
-	var_3_63[10108] = {
+	pg.base.furniture_shop_template[10108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7540,11 +6476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.furniture_shop_template
-
-	var_3_64[10109] = {
+	pg.base.furniture_shop_template[10109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7555,11 +6487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.furniture_shop_template
-
-	var_3_65[10110] = {
+	pg.base.furniture_shop_template[10110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7570,11 +6498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.furniture_shop_template
-
-	var_3_66[10111] = {
+	pg.base.furniture_shop_template[10111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7585,11 +6509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.furniture_shop_template
-
-	var_3_67[10112] = {
+	pg.base.furniture_shop_template[10112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7600,11 +6520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.furniture_shop_template
-
-	var_3_68[10113] = {
+	pg.base.furniture_shop_template[10113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7615,11 +6531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.furniture_shop_template
-
-	var_3_69[10114] = {
+	pg.base.furniture_shop_template[10114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7630,11 +6542,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.furniture_shop_template
-
-	var_3_70[10115] = {
+	pg.base.furniture_shop_template[10115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7645,11 +6553,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.furniture_shop_template
-
-	var_3_71[10116] = {
+	pg.base.furniture_shop_template[10116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7660,11 +6564,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.furniture_shop_template
-
-	var_3_72[10117] = {
+	pg.base.furniture_shop_template[10117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7675,11 +6575,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.furniture_shop_template
-
-	var_3_73[10118] = {
+	pg.base.furniture_shop_template[10118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7690,11 +6586,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.furniture_shop_template
-
-	var_3_74[10119] = {
+	pg.base.furniture_shop_template[10119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7705,11 +6597,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.furniture_shop_template
-
-	var_3_75[10120] = {
+	pg.base.furniture_shop_template[10120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7720,11 +6608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.furniture_shop_template
-
-	var_3_76[10121] = {
+	pg.base.furniture_shop_template[10121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7735,11 +6619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.furniture_shop_template
-
-	var_3_77[10122] = {
+	pg.base.furniture_shop_template[10122] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7750,11 +6630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.furniture_shop_template
-
-	var_3_78[10123] = {
+	pg.base.furniture_shop_template[10123] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7765,11 +6641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.furniture_shop_template
-
-	var_3_79[10124] = {
+	pg.base.furniture_shop_template[10124] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7780,11 +6652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.furniture_shop_template
-
-	var_3_80[10125] = {
+	pg.base.furniture_shop_template[10125] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7795,11 +6663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.furniture_shop_template
-
-	var_3_81[10201] = {
+	pg.base.furniture_shop_template[10201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7810,11 +6674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.furniture_shop_template
-
-	var_3_82[10202] = {
+	pg.base.furniture_shop_template[10202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7825,11 +6685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.furniture_shop_template
-
-	var_3_83[10203] = {
+	pg.base.furniture_shop_template[10203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7840,11 +6696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.furniture_shop_template
-
-	var_3_84[10204] = {
+	pg.base.furniture_shop_template[10204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7855,11 +6707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.furniture_shop_template
-
-	var_3_85[10205] = {
+	pg.base.furniture_shop_template[10205] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7870,11 +6718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.furniture_shop_template
-
-	var_3_86[10206] = {
+	pg.base.furniture_shop_template[10206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7885,11 +6729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.furniture_shop_template
-
-	var_3_87[10207] = {
+	pg.base.furniture_shop_template[10207] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7900,11 +6740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.furniture_shop_template
-
-	var_3_88[10208] = {
+	pg.base.furniture_shop_template[10208] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7915,11 +6751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.furniture_shop_template
-
-	var_3_89[10209] = {
+	pg.base.furniture_shop_template[10209] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7930,11 +6762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.furniture_shop_template
-
-	var_3_90[10210] = {
+	pg.base.furniture_shop_template[10210] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7945,11 +6773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.furniture_shop_template
-
-	var_3_91[10211] = {
+	pg.base.furniture_shop_template[10211] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7960,11 +6784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.furniture_shop_template
-
-	var_3_92[10212] = {
+	pg.base.furniture_shop_template[10212] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7975,11 +6795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.furniture_shop_template
-
-	var_3_93[10213] = {
+	pg.base.furniture_shop_template[10213] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -7990,11 +6806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.furniture_shop_template
-
-	var_3_94[10214] = {
+	pg.base.furniture_shop_template[10214] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8005,11 +6817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.furniture_shop_template
-
-	var_3_95[10215] = {
+	pg.base.furniture_shop_template[10215] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8020,11 +6828,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.furniture_shop_template
-
-	var_3_96[10302] = {
+	pg.base.furniture_shop_template[10302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8035,11 +6839,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.furniture_shop_template
-
-	var_3_97[10303] = {
+	pg.base.furniture_shop_template[10303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8050,11 +6850,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.furniture_shop_template
-
-	var_3_98[11001] = {
+	pg.base.furniture_shop_template[11001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8065,8 +6861,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_3_98
-	var_3_98.base.furniture_shop_template[11002] = {
+	pg.base.furniture_shop_template[11002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8081,11 +6876,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.furniture_shop_template
-
-	var_4_0[11101] = {
+	pg.base.furniture_shop_template[11101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8096,11 +6887,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.furniture_shop_template
-
-	var_4_1[11102] = {
+	pg.base.furniture_shop_template[11102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8111,11 +6898,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.furniture_shop_template
-
-	var_4_2[11103] = {
+	pg.base.furniture_shop_template[11103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8126,11 +6909,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.furniture_shop_template
-
-	var_4_3[11104] = {
+	pg.base.furniture_shop_template[11104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8141,11 +6920,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.furniture_shop_template
-
-	var_4_4[11105] = {
+	pg.base.furniture_shop_template[11105] = {
 		not_for_sale = 2,
 		gem_price = 0,
 		time = "always",
@@ -8156,11 +6931,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.furniture_shop_template
-
-	var_4_5[11106] = {
+	pg.base.furniture_shop_template[11106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8171,11 +6942,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.furniture_shop_template
-
-	var_4_6[11107] = {
+	pg.base.furniture_shop_template[11107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8186,11 +6953,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.furniture_shop_template
-
-	var_4_7[11108] = {
+	pg.base.furniture_shop_template[11108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8201,11 +6964,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.furniture_shop_template
-
-	var_4_8[11109] = {
+	pg.base.furniture_shop_template[11109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8216,11 +6975,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.furniture_shop_template
-
-	var_4_9[11110] = {
+	pg.base.furniture_shop_template[11110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8231,11 +6986,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.furniture_shop_template
-
-	var_4_10[11111] = {
+	pg.base.furniture_shop_template[11111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8246,11 +6997,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.furniture_shop_template
-
-	var_4_11[11112] = {
+	pg.base.furniture_shop_template[11112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8261,11 +7008,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.furniture_shop_template
-
-	var_4_12[11113] = {
+	pg.base.furniture_shop_template[11113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8276,11 +7019,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.furniture_shop_template
-
-	var_4_13[11114] = {
+	pg.base.furniture_shop_template[11114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8291,11 +7030,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.furniture_shop_template
-
-	var_4_14[11116] = {
+	pg.base.furniture_shop_template[11116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8306,11 +7041,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.furniture_shop_template
-
-	var_4_15[11117] = {
+	pg.base.furniture_shop_template[11117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8321,11 +7052,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.furniture_shop_template
-
-	var_4_16[11118] = {
+	pg.base.furniture_shop_template[11118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8336,11 +7063,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.furniture_shop_template
-
-	var_4_17[11119] = {
+	pg.base.furniture_shop_template[11119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8351,11 +7074,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.furniture_shop_template
-
-	var_4_18[11120] = {
+	pg.base.furniture_shop_template[11120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8366,11 +7085,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.furniture_shop_template
-
-	var_4_19[11121] = {
+	pg.base.furniture_shop_template[11121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8381,11 +7096,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.furniture_shop_template
-
-	var_4_20[11122] = {
+	pg.base.furniture_shop_template[11122] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8396,11 +7107,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.furniture_shop_template
-
-	var_4_21[11123] = {
+	pg.base.furniture_shop_template[11123] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8411,11 +7118,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.furniture_shop_template
-
-	var_4_22[11124] = {
+	pg.base.furniture_shop_template[11124] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8426,11 +7129,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.furniture_shop_template
-
-	var_4_23[11125] = {
+	pg.base.furniture_shop_template[11125] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8441,11 +7140,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.furniture_shop_template
-
-	var_4_24[11126] = {
+	pg.base.furniture_shop_template[11126] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8456,11 +7151,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.furniture_shop_template
-
-	var_4_25[11127] = {
+	pg.base.furniture_shop_template[11127] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8471,11 +7162,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.furniture_shop_template
-
-	var_4_26[11128] = {
+	pg.base.furniture_shop_template[11128] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8486,11 +7173,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.furniture_shop_template
-
-	var_4_27[11201] = {
+	pg.base.furniture_shop_template[11201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8501,11 +7184,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.furniture_shop_template
-
-	var_4_28[11202] = {
+	pg.base.furniture_shop_template[11202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8516,11 +7195,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.furniture_shop_template
-
-	var_4_29[11203] = {
+	pg.base.furniture_shop_template[11203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8531,11 +7206,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.furniture_shop_template
-
-	var_4_30[11301] = {
+	pg.base.furniture_shop_template[11301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8546,11 +7217,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.furniture_shop_template
-
-	var_4_31[11302] = {
+	pg.base.furniture_shop_template[11302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8561,11 +7228,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.furniture_shop_template
-
-	var_4_32[11303] = {
+	pg.base.furniture_shop_template[11303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8576,11 +7239,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.furniture_shop_template
-
-	var_4_33[11304] = {
+	pg.base.furniture_shop_template[11304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8591,11 +7250,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.furniture_shop_template
-
-	var_4_34[11305] = {
+	pg.base.furniture_shop_template[11305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8606,11 +7261,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.furniture_shop_template
-
-	var_4_35[11306] = {
+	pg.base.furniture_shop_template[11306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8621,11 +7272,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.furniture_shop_template
-
-	var_4_36[11307] = {
+	pg.base.furniture_shop_template[11307] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8636,11 +7283,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.furniture_shop_template
-
-	var_4_37[12101] = {
+	pg.base.furniture_shop_template[12101] = {
 		not_for_sale = 2,
 		gem_price = 0,
 		time = "always",
@@ -8651,11 +7294,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.furniture_shop_template
-
-	var_4_38[13001] = {
+	pg.base.furniture_shop_template[13001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8666,11 +7305,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.furniture_shop_template
-
-	var_4_39[13002] = {
+	pg.base.furniture_shop_template[13002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8681,11 +7316,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.furniture_shop_template
-
-	var_4_40[13101] = {
+	pg.base.furniture_shop_template[13101] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -8696,11 +7327,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.furniture_shop_template
-
-	var_4_41[13102] = {
+	pg.base.furniture_shop_template[13102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8711,11 +7338,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.furniture_shop_template
-
-	var_4_42[13103] = {
+	pg.base.furniture_shop_template[13103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8726,11 +7349,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.furniture_shop_template
-
-	var_4_43[13104] = {
+	pg.base.furniture_shop_template[13104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8741,11 +7360,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.furniture_shop_template
-
-	var_4_44[13105] = {
+	pg.base.furniture_shop_template[13105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8756,11 +7371,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.furniture_shop_template
-
-	var_4_45[13106] = {
+	pg.base.furniture_shop_template[13106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8771,11 +7382,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.furniture_shop_template
-
-	var_4_46[13107] = {
+	pg.base.furniture_shop_template[13107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8786,11 +7393,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.furniture_shop_template
-
-	var_4_47[13108] = {
+	pg.base.furniture_shop_template[13108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8801,11 +7404,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.furniture_shop_template
-
-	var_4_48[13109] = {
+	pg.base.furniture_shop_template[13109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8816,11 +7415,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.furniture_shop_template
-
-	var_4_49[13111] = {
+	pg.base.furniture_shop_template[13111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8831,11 +7426,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.furniture_shop_template
-
-	var_4_50[13112] = {
+	pg.base.furniture_shop_template[13112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8846,11 +7437,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.furniture_shop_template
-
-	var_4_51[13113] = {
+	pg.base.furniture_shop_template[13113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8861,11 +7448,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.furniture_shop_template
-
-	var_4_52[13114] = {
+	pg.base.furniture_shop_template[13114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8876,11 +7459,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.furniture_shop_template
-
-	var_4_53[13115] = {
+	pg.base.furniture_shop_template[13115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8891,11 +7470,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.furniture_shop_template
-
-	var_4_54[13116] = {
+	pg.base.furniture_shop_template[13116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8906,11 +7481,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_54
-
-	local var_4_55 = var_4_54.base.furniture_shop_template
-
-	var_4_55[13117] = {
+	pg.base.furniture_shop_template[13117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8921,11 +7492,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_55
-
-	local var_4_56 = var_4_55.base.furniture_shop_template
-
-	var_4_56[13118] = {
+	pg.base.furniture_shop_template[13118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8936,11 +7503,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_56
-
-	local var_4_57 = var_4_56.base.furniture_shop_template
-
-	var_4_57[13119] = {
+	pg.base.furniture_shop_template[13119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8951,11 +7514,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_57
-
-	local var_4_58 = var_4_57.base.furniture_shop_template
-
-	var_4_58[13120] = {
+	pg.base.furniture_shop_template[13120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8966,11 +7525,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_58
-
-	local var_4_59 = var_4_58.base.furniture_shop_template
-
-	var_4_59[13121] = {
+	pg.base.furniture_shop_template[13121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8981,11 +7536,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_59
-
-	local var_4_60 = var_4_59.base.furniture_shop_template
-
-	var_4_60[13122] = {
+	pg.base.furniture_shop_template[13122] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -8996,11 +7547,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_60
-
-	local var_4_61 = var_4_60.base.furniture_shop_template
-
-	var_4_61[13123] = {
+	pg.base.furniture_shop_template[13123] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9011,11 +7558,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_61
-
-	local var_4_62 = var_4_61.base.furniture_shop_template
-
-	var_4_62[13124] = {
+	pg.base.furniture_shop_template[13124] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9026,11 +7569,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_62
-
-	local var_4_63 = var_4_62.base.furniture_shop_template
-
-	var_4_63[13125] = {
+	pg.base.furniture_shop_template[13125] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9041,11 +7580,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_63
-
-	local var_4_64 = var_4_63.base.furniture_shop_template
-
-	var_4_64[13126] = {
+	pg.base.furniture_shop_template[13126] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -9056,11 +7591,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_64
-
-	local var_4_65 = var_4_64.base.furniture_shop_template
-
-	var_4_65[13127] = {
+	pg.base.furniture_shop_template[13127] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -9071,11 +7602,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_65
-
-	local var_4_66 = var_4_65.base.furniture_shop_template
-
-	var_4_66[13128] = {
+	pg.base.furniture_shop_template[13128] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9086,11 +7613,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_66
-
-	local var_4_67 = var_4_66.base.furniture_shop_template
-
-	var_4_67[13201] = {
+	pg.base.furniture_shop_template[13201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9101,11 +7624,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_67
-
-	local var_4_68 = var_4_67.base.furniture_shop_template
-
-	var_4_68[13202] = {
+	pg.base.furniture_shop_template[13202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9116,11 +7635,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_68
-
-	local var_4_69 = var_4_68.base.furniture_shop_template
-
-	var_4_69[13203] = {
+	pg.base.furniture_shop_template[13203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9131,11 +7646,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_69
-
-	local var_4_70 = var_4_69.base.furniture_shop_template
-
-	var_4_70[13204] = {
+	pg.base.furniture_shop_template[13204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9146,11 +7657,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_70
-
-	local var_4_71 = var_4_70.base.furniture_shop_template
-
-	var_4_71[13205] = {
+	pg.base.furniture_shop_template[13205] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9161,11 +7668,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_71
-
-	local var_4_72 = var_4_71.base.furniture_shop_template
-
-	var_4_72[13206] = {
+	pg.base.furniture_shop_template[13206] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9176,11 +7679,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_72
-
-	local var_4_73 = var_4_72.base.furniture_shop_template
-
-	var_4_73[13301] = {
+	pg.base.furniture_shop_template[13301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9191,11 +7690,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_73
-
-	local var_4_74 = var_4_73.base.furniture_shop_template
-
-	var_4_74[13302] = {
+	pg.base.furniture_shop_template[13302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9206,11 +7701,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_74
-
-	local var_4_75 = var_4_74.base.furniture_shop_template
-
-	var_4_75[13303] = {
+	pg.base.furniture_shop_template[13303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9221,11 +7712,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_75
-
-	local var_4_76 = var_4_75.base.furniture_shop_template
-
-	var_4_76[13304] = {
+	pg.base.furniture_shop_template[13304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9236,11 +7723,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_76
-
-	local var_4_77 = var_4_76.base.furniture_shop_template
-
-	var_4_77[13305] = {
+	pg.base.furniture_shop_template[13305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9251,11 +7734,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_77
-
-	local var_4_78 = var_4_77.base.furniture_shop_template
-
-	var_4_78[13306] = {
+	pg.base.furniture_shop_template[13306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9266,11 +7745,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_78
-
-	local var_4_79 = var_4_78.base.furniture_shop_template
-
-	var_4_79[14001] = {
+	pg.base.furniture_shop_template[14001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9281,11 +7756,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_79
-
-	local var_4_80 = var_4_79.base.furniture_shop_template
-
-	var_4_80[14002] = {
+	pg.base.furniture_shop_template[14002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9296,11 +7767,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_80
-
-	local var_4_81 = var_4_80.base.furniture_shop_template
-
-	var_4_81[14101] = {
+	pg.base.furniture_shop_template[14101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9311,11 +7778,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_81
-
-	local var_4_82 = var_4_81.base.furniture_shop_template
-
-	var_4_82[14102] = {
+	pg.base.furniture_shop_template[14102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9326,11 +7789,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_82
-
-	local var_4_83 = var_4_82.base.furniture_shop_template
-
-	var_4_83[14103] = {
+	pg.base.furniture_shop_template[14103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9341,11 +7800,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_83
-
-	local var_4_84 = var_4_83.base.furniture_shop_template
-
-	var_4_84[14104] = {
+	pg.base.furniture_shop_template[14104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9356,11 +7811,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_84
-
-	local var_4_85 = var_4_84.base.furniture_shop_template
-
-	var_4_85[14105] = {
+	pg.base.furniture_shop_template[14105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9371,11 +7822,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_85
-
-	local var_4_86 = var_4_85.base.furniture_shop_template
-
-	var_4_86[14106] = {
+	pg.base.furniture_shop_template[14106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9386,11 +7833,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_86
-
-	local var_4_87 = var_4_86.base.furniture_shop_template
-
-	var_4_87[14107] = {
+	pg.base.furniture_shop_template[14107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9401,11 +7844,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_87
-
-	local var_4_88 = var_4_87.base.furniture_shop_template
-
-	var_4_88[14108] = {
+	pg.base.furniture_shop_template[14108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9416,11 +7855,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_88
-
-	local var_4_89 = var_4_88.base.furniture_shop_template
-
-	var_4_89[14109] = {
+	pg.base.furniture_shop_template[14109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9431,11 +7866,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_89
-
-	local var_4_90 = var_4_89.base.furniture_shop_template
-
-	var_4_90[14110] = {
+	pg.base.furniture_shop_template[14110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9446,11 +7877,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_90
-
-	local var_4_91 = var_4_90.base.furniture_shop_template
-
-	var_4_91[14111] = {
+	pg.base.furniture_shop_template[14111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9461,11 +7888,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_91
-
-	local var_4_92 = var_4_91.base.furniture_shop_template
-
-	var_4_92[14112] = {
+	pg.base.furniture_shop_template[14112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9476,11 +7899,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_92
-
-	local var_4_93 = var_4_92.base.furniture_shop_template
-
-	var_4_93[14113] = {
+	pg.base.furniture_shop_template[14113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9491,11 +7910,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_93
-
-	local var_4_94 = var_4_93.base.furniture_shop_template
-
-	var_4_94[14114] = {
+	pg.base.furniture_shop_template[14114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9506,11 +7921,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_94
-
-	local var_4_95 = var_4_94.base.furniture_shop_template
-
-	var_4_95[14115] = {
+	pg.base.furniture_shop_template[14115] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -9521,11 +7932,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_95
-
-	local var_4_96 = var_4_95.base.furniture_shop_template
-
-	var_4_96[14116] = {
+	pg.base.furniture_shop_template[14116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9536,11 +7943,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_96
-
-	local var_4_97 = var_4_96.base.furniture_shop_template
-
-	var_4_97[14117] = {
+	pg.base.furniture_shop_template[14117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9551,11 +7954,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_97
-
-	local var_4_98 = var_4_97.base.furniture_shop_template
-
-	var_4_98[14118] = {
+	pg.base.furniture_shop_template[14118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9566,8 +7965,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_4_98
-	var_4_98.base.furniture_shop_template[14119] = {
+	pg.base.furniture_shop_template[14119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9582,11 +7980,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_5_0 = var_1_10000.base.furniture_shop_template
-
-	var_5_0[14120] = {
+	pg.base.furniture_shop_template[14120] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -9597,11 +7991,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_0
-
-	local var_5_1 = var_5_0.base.furniture_shop_template
-
-	var_5_1[14121] = {
+	pg.base.furniture_shop_template[14121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9612,11 +8002,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_1
-
-	local var_5_2 = var_5_1.base.furniture_shop_template
-
-	var_5_2[14201] = {
+	pg.base.furniture_shop_template[14201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9627,11 +8013,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_2
-
-	local var_5_3 = var_5_2.base.furniture_shop_template
-
-	var_5_3[14301] = {
+	pg.base.furniture_shop_template[14301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9642,11 +8024,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_3
-
-	local var_5_4 = var_5_3.base.furniture_shop_template
-
-	var_5_4[14302] = {
+	pg.base.furniture_shop_template[14302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9657,11 +8035,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_4
-
-	local var_5_5 = var_5_4.base.furniture_shop_template
-
-	var_5_5[14303] = {
+	pg.base.furniture_shop_template[14303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9672,11 +8046,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_5
-
-	local var_5_6 = var_5_5.base.furniture_shop_template
-
-	var_5_6[14304] = {
+	pg.base.furniture_shop_template[14304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9687,11 +8057,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_5_6
-
-	local var_5_7 = var_5_6.base.furniture_shop_template
-
-	var_5_7[16001] = {
+	pg.base.furniture_shop_template[16001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9727,11 +8093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_7
-
-	local var_5_8 = var_5_7.base.furniture_shop_template
-
-	var_5_8[16002] = {
+	pg.base.furniture_shop_template[16002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9767,11 +8129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_8
-
-	local var_5_9 = var_5_8.base.furniture_shop_template
-
-	var_5_9[16101] = {
+	pg.base.furniture_shop_template[16101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9807,11 +8165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_9
-
-	local var_5_10 = var_5_9.base.furniture_shop_template
-
-	var_5_10[16102] = {
+	pg.base.furniture_shop_template[16102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9847,11 +8201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_10
-
-	local var_5_11 = var_5_10.base.furniture_shop_template
-
-	var_5_11[16103] = {
+	pg.base.furniture_shop_template[16103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9887,11 +8237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_11
-
-	local var_5_12 = var_5_11.base.furniture_shop_template
-
-	var_5_12[16104] = {
+	pg.base.furniture_shop_template[16104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9927,11 +8273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_12
-
-	local var_5_13 = var_5_12.base.furniture_shop_template
-
-	var_5_13[16105] = {
+	pg.base.furniture_shop_template[16105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -9967,11 +8309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_13
-
-	local var_5_14 = var_5_13.base.furniture_shop_template
-
-	var_5_14[16106] = {
+	pg.base.furniture_shop_template[16106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10007,11 +8345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_14
-
-	local var_5_15 = var_5_14.base.furniture_shop_template
-
-	var_5_15[16107] = {
+	pg.base.furniture_shop_template[16107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10047,11 +8381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_15
-
-	local var_5_16 = var_5_15.base.furniture_shop_template
-
-	var_5_16[16108] = {
+	pg.base.furniture_shop_template[16108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10087,11 +8417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_16
-
-	local var_5_17 = var_5_16.base.furniture_shop_template
-
-	var_5_17[16109] = {
+	pg.base.furniture_shop_template[16109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10127,11 +8453,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_17
-
-	local var_5_18 = var_5_17.base.furniture_shop_template
-
-	var_5_18[16110] = {
+	pg.base.furniture_shop_template[16110] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -10167,11 +8489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_18
-
-	local var_5_19 = var_5_18.base.furniture_shop_template
-
-	var_5_19[16111] = {
+	pg.base.furniture_shop_template[16111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10207,11 +8525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_19
-
-	local var_5_20 = var_5_19.base.furniture_shop_template
-
-	var_5_20[16112] = {
+	pg.base.furniture_shop_template[16112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10247,11 +8561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_20
-
-	local var_5_21 = var_5_20.base.furniture_shop_template
-
-	var_5_21[16113] = {
+	pg.base.furniture_shop_template[16113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10287,11 +8597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_21
-
-	local var_5_22 = var_5_21.base.furniture_shop_template
-
-	var_5_22[16114] = {
+	pg.base.furniture_shop_template[16114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10327,11 +8633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_22
-
-	local var_5_23 = var_5_22.base.furniture_shop_template
-
-	var_5_23[16115] = {
+	pg.base.furniture_shop_template[16115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10367,11 +8669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_23
-
-	local var_5_24 = var_5_23.base.furniture_shop_template
-
-	var_5_24[16116] = {
+	pg.base.furniture_shop_template[16116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10407,11 +8705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_24
-
-	local var_5_25 = var_5_24.base.furniture_shop_template
-
-	var_5_25[16117] = {
+	pg.base.furniture_shop_template[16117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10447,11 +8741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_25
-
-	local var_5_26 = var_5_25.base.furniture_shop_template
-
-	var_5_26[16201] = {
+	pg.base.furniture_shop_template[16201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10487,11 +8777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_26
-
-	local var_5_27 = var_5_26.base.furniture_shop_template
-
-	var_5_27[16202] = {
+	pg.base.furniture_shop_template[16202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10527,11 +8813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_27
-
-	local var_5_28 = var_5_27.base.furniture_shop_template
-
-	var_5_28[16203] = {
+	pg.base.furniture_shop_template[16203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10567,11 +8849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_28
-
-	local var_5_29 = var_5_28.base.furniture_shop_template
-
-	var_5_29[16204] = {
+	pg.base.furniture_shop_template[16204] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10607,11 +8885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_29
-
-	local var_5_30 = var_5_29.base.furniture_shop_template
-
-	var_5_30[16301] = {
+	pg.base.furniture_shop_template[16301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10647,11 +8921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_30
-
-	local var_5_31 = var_5_30.base.furniture_shop_template
-
-	var_5_31[16302] = {
+	pg.base.furniture_shop_template[16302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10687,11 +8957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_31
-
-	local var_5_32 = var_5_31.base.furniture_shop_template
-
-	var_5_32[16303] = {
+	pg.base.furniture_shop_template[16303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10727,11 +8993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_32
-
-	local var_5_33 = var_5_32.base.furniture_shop_template
-
-	var_5_33[16304] = {
+	pg.base.furniture_shop_template[16304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10767,11 +9029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_33
-
-	local var_5_34 = var_5_33.base.furniture_shop_template
-
-	var_5_34[16305] = {
+	pg.base.furniture_shop_template[16305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10807,11 +9065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_34
-
-	local var_5_35 = var_5_34.base.furniture_shop_template
-
-	var_5_35[16306] = {
+	pg.base.furniture_shop_template[16306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10847,11 +9101,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_35
-
-	local var_5_36 = var_5_35.base.furniture_shop_template
-
-	var_5_36[17001] = {
+	pg.base.furniture_shop_template[17001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10887,11 +9137,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_36
-
-	local var_5_37 = var_5_36.base.furniture_shop_template
-
-	var_5_37[17002] = {
+	pg.base.furniture_shop_template[17002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10927,11 +9173,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_37
-
-	local var_5_38 = var_5_37.base.furniture_shop_template
-
-	var_5_38[17101] = {
+	pg.base.furniture_shop_template[17101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -10967,11 +9209,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_38
-
-	local var_5_39 = var_5_38.base.furniture_shop_template
-
-	var_5_39[17102] = {
+	pg.base.furniture_shop_template[17102] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		time = "always",
@@ -11007,11 +9245,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_39
-
-	local var_5_40 = var_5_39.base.furniture_shop_template
-
-	var_5_40[17103] = {
+	pg.base.furniture_shop_template[17103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11047,11 +9281,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_40
-
-	local var_5_41 = var_5_40.base.furniture_shop_template
-
-	var_5_41[17104] = {
+	pg.base.furniture_shop_template[17104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11087,11 +9317,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_41
-
-	local var_5_42 = var_5_41.base.furniture_shop_template
-
-	var_5_42[17105] = {
+	pg.base.furniture_shop_template[17105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11127,11 +9353,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_42
-
-	local var_5_43 = var_5_42.base.furniture_shop_template
-
-	var_5_43[17106] = {
+	pg.base.furniture_shop_template[17106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11167,11 +9389,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_43
-
-	local var_5_44 = var_5_43.base.furniture_shop_template
-
-	var_5_44[17107] = {
+	pg.base.furniture_shop_template[17107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11207,11 +9425,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_44
-
-	local var_5_45 = var_5_44.base.furniture_shop_template
-
-	var_5_45[17108] = {
+	pg.base.furniture_shop_template[17108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11247,11 +9461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_45
-
-	local var_5_46 = var_5_45.base.furniture_shop_template
-
-	var_5_46[17109] = {
+	pg.base.furniture_shop_template[17109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11287,11 +9497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_46
-
-	local var_5_47 = var_5_46.base.furniture_shop_template
-
-	var_5_47[17110] = {
+	pg.base.furniture_shop_template[17110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11327,11 +9533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_47
-
-	local var_5_48 = var_5_47.base.furniture_shop_template
-
-	var_5_48[17111] = {
+	pg.base.furniture_shop_template[17111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11367,11 +9569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_48
-
-	local var_5_49 = var_5_48.base.furniture_shop_template
-
-	var_5_49[17112] = {
+	pg.base.furniture_shop_template[17112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11407,11 +9605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_49
-
-	local var_5_50 = var_5_49.base.furniture_shop_template
-
-	var_5_50[17113] = {
+	pg.base.furniture_shop_template[17113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11447,11 +9641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_50
-
-	local var_5_51 = var_5_50.base.furniture_shop_template
-
-	var_5_51[17114] = {
+	pg.base.furniture_shop_template[17114] = {
 		not_for_sale = 0,
 		gem_price = 90,
 		time = "always",
@@ -11487,11 +9677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_51
-
-	local var_5_52 = var_5_51.base.furniture_shop_template
-
-	var_5_52[17115] = {
+	pg.base.furniture_shop_template[17115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11527,11 +9713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_52
-
-	local var_5_53 = var_5_52.base.furniture_shop_template
-
-	var_5_53[17116] = {
+	pg.base.furniture_shop_template[17116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11567,11 +9749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_53
-
-	local var_5_54 = var_5_53.base.furniture_shop_template
-
-	var_5_54[17117] = {
+	pg.base.furniture_shop_template[17117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11607,11 +9785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_54
-
-	local var_5_55 = var_5_54.base.furniture_shop_template
-
-	var_5_55[17118] = {
+	pg.base.furniture_shop_template[17118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11647,11 +9821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_55
-
-	local var_5_56 = var_5_55.base.furniture_shop_template
-
-	var_5_56[17119] = {
+	pg.base.furniture_shop_template[17119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11687,11 +9857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_56
-
-	local var_5_57 = var_5_56.base.furniture_shop_template
-
-	var_5_57[17120] = {
+	pg.base.furniture_shop_template[17120] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11727,11 +9893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_57
-
-	local var_5_58 = var_5_57.base.furniture_shop_template
-
-	var_5_58[17121] = {
+	pg.base.furniture_shop_template[17121] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11767,11 +9929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_58
-
-	local var_5_59 = var_5_58.base.furniture_shop_template
-
-	var_5_59[17201] = {
+	pg.base.furniture_shop_template[17201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11807,11 +9965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_59
-
-	local var_5_60 = var_5_59.base.furniture_shop_template
-
-	var_5_60[17202] = {
+	pg.base.furniture_shop_template[17202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11847,11 +10001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_60
-
-	local var_5_61 = var_5_60.base.furniture_shop_template
-
-	var_5_61[17203] = {
+	pg.base.furniture_shop_template[17203] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11887,11 +10037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_61
-
-	local var_5_62 = var_5_61.base.furniture_shop_template
-
-	var_5_62[17301] = {
+	pg.base.furniture_shop_template[17301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -11927,11 +10073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_62
-
-	local var_5_63 = var_5_62.base.furniture_shop_template
-
-	var_5_63[18001] = {
+	pg.base.furniture_shop_template[18001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 18001,
@@ -11967,11 +10109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_63
-
-	local var_5_64 = var_5_63.base.furniture_shop_template
-
-	var_5_64[18002] = {
+	pg.base.furniture_shop_template[18002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 18002,
@@ -12007,11 +10145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_64
-
-	local var_5_65 = var_5_64.base.furniture_shop_template
-
-	var_5_65[18103] = {
+	pg.base.furniture_shop_template[18103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18103,
@@ -12047,11 +10181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_65
-
-	local var_5_66 = var_5_65.base.furniture_shop_template
-
-	var_5_66[18104] = {
+	pg.base.furniture_shop_template[18104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18104,
@@ -12087,11 +10217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_66
-
-	local var_5_67 = var_5_66.base.furniture_shop_template
-
-	var_5_67[18105] = {
+	pg.base.furniture_shop_template[18105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 18105,
@@ -12127,11 +10253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_67
-
-	local var_5_68 = var_5_67.base.furniture_shop_template
-
-	var_5_68[18106] = {
+	pg.base.furniture_shop_template[18106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18106,
@@ -12167,11 +10289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_68
-
-	local var_5_69 = var_5_68.base.furniture_shop_template
-
-	var_5_69[18107] = {
+	pg.base.furniture_shop_template[18107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 18107,
@@ -12207,11 +10325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_69
-
-	local var_5_70 = var_5_69.base.furniture_shop_template
-
-	var_5_70[18108] = {
+	pg.base.furniture_shop_template[18108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 18108,
@@ -12247,11 +10361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_70
-
-	local var_5_71 = var_5_70.base.furniture_shop_template
-
-	var_5_71[18109] = {
+	pg.base.furniture_shop_template[18109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 18109,
@@ -12287,11 +10397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_71
-
-	local var_5_72 = var_5_71.base.furniture_shop_template
-
-	var_5_72[18110] = {
+	pg.base.furniture_shop_template[18110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18110,
@@ -12327,11 +10433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_72
-
-	local var_5_73 = var_5_72.base.furniture_shop_template
-
-	var_5_73[18111] = {
+	pg.base.furniture_shop_template[18111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18111,
@@ -12367,11 +10469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_73
-
-	local var_5_74 = var_5_73.base.furniture_shop_template
-
-	var_5_74[18112] = {
+	pg.base.furniture_shop_template[18112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18112,
@@ -12407,11 +10505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_74
-
-	local var_5_75 = var_5_74.base.furniture_shop_template
-
-	var_5_75[18113] = {
+	pg.base.furniture_shop_template[18113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18113,
@@ -12447,11 +10541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_75
-
-	local var_5_76 = var_5_75.base.furniture_shop_template
-
-	var_5_76[18114] = {
+	pg.base.furniture_shop_template[18114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 18114,
@@ -12487,11 +10577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_76
-
-	local var_5_77 = var_5_76.base.furniture_shop_template
-
-	var_5_77[18115] = {
+	pg.base.furniture_shop_template[18115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 18115,
@@ -12527,11 +10613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_77
-
-	local var_5_78 = var_5_77.base.furniture_shop_template
-
-	var_5_78[18116] = {
+	pg.base.furniture_shop_template[18116] = {
 		not_for_sale = 0,
 		gem_price = 90,
 		id = 18116,
@@ -12567,11 +10649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_78
-
-	local var_5_79 = var_5_78.base.furniture_shop_template
-
-	var_5_79[18118] = {
+	pg.base.furniture_shop_template[18118] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 18118,
@@ -12607,11 +10685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_79
-
-	local var_5_80 = var_5_79.base.furniture_shop_template
-
-	var_5_80[18119] = {
+	pg.base.furniture_shop_template[18119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18119,
@@ -12647,11 +10721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_80
-
-	local var_5_81 = var_5_80.base.furniture_shop_template
-
-	var_5_81[18120] = {
+	pg.base.furniture_shop_template[18120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 18120,
@@ -12687,11 +10757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_81
-
-	local var_5_82 = var_5_81.base.furniture_shop_template
-
-	var_5_82[18121] = {
+	pg.base.furniture_shop_template[18121] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		id = 18121,
@@ -12727,11 +10793,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_82
-
-	local var_5_83 = var_5_82.base.furniture_shop_template
-
-	var_5_83[18122] = {
+	pg.base.furniture_shop_template[18122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18122,
@@ -12767,11 +10829,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_83
-
-	local var_5_84 = var_5_83.base.furniture_shop_template
-
-	var_5_84[18202] = {
+	pg.base.furniture_shop_template[18202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 18202,
@@ -12807,11 +10865,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_84
-
-	local var_5_85 = var_5_84.base.furniture_shop_template
-
-	var_5_85[18301] = {
+	pg.base.furniture_shop_template[18301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18301,
@@ -12847,11 +10901,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_85
-
-	local var_5_86 = var_5_85.base.furniture_shop_template
-
-	var_5_86[18302] = {
+	pg.base.furniture_shop_template[18302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 18302,
@@ -12887,11 +10937,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_86
-
-	local var_5_87 = var_5_86.base.furniture_shop_template
-
-	var_5_87[18303] = {
+	pg.base.furniture_shop_template[18303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 18303,
@@ -12927,11 +10973,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_87
-
-	local var_5_88 = var_5_87.base.furniture_shop_template
-
-	var_5_88[18304] = {
+	pg.base.furniture_shop_template[18304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 18304,
@@ -12967,11 +11009,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_88
-
-	local var_5_89 = var_5_88.base.furniture_shop_template
-
-	var_5_89[18305] = {
+	pg.base.furniture_shop_template[18305] = {
 		not_for_sale = 0,
 		gem_price = 90,
 		id = 18305,
@@ -13007,11 +11045,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_89
-
-	local var_5_90 = var_5_89.base.furniture_shop_template
-
-	var_5_90[18306] = {
+	pg.base.furniture_shop_template[18306] = {
 		not_for_sale = 0,
 		gem_price = 90,
 		id = 18306,
@@ -13047,11 +11081,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_90
-
-	local var_5_91 = var_5_90.base.furniture_shop_template
-
-	var_5_91[19001] = {
+	pg.base.furniture_shop_template[19001] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13087,11 +11117,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_91
-
-	local var_5_92 = var_5_91.base.furniture_shop_template
-
-	var_5_92[19002] = {
+	pg.base.furniture_shop_template[19002] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13127,11 +11153,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_92
-
-	local var_5_93 = var_5_92.base.furniture_shop_template
-
-	var_5_93[19101] = {
+	pg.base.furniture_shop_template[19101] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13167,11 +11189,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_93
-
-	local var_5_94 = var_5_93.base.furniture_shop_template
-
-	var_5_94[19102] = {
+	pg.base.furniture_shop_template[19102] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13207,11 +11225,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_94
-
-	local var_5_95 = var_5_94.base.furniture_shop_template
-
-	var_5_95[19103] = {
+	pg.base.furniture_shop_template[19103] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13247,11 +11261,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_95
-
-	local var_5_96 = var_5_95.base.furniture_shop_template
-
-	var_5_96[19104] = {
+	pg.base.furniture_shop_template[19104] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13287,11 +11297,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_96
-
-	local var_5_97 = var_5_96.base.furniture_shop_template
-
-	var_5_97[19105] = {
+	pg.base.furniture_shop_template[19105] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13327,11 +11333,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_97
-
-	local var_5_98 = var_5_97.base.furniture_shop_template
-
-	var_5_98[19106] = {
+	pg.base.furniture_shop_template[19106] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13367,8 +11369,7 @@ end)()
 			}
 		}
 	}
-	pg = var_5_98
-	var_5_98.base.furniture_shop_template[19107] = {
+	pg.base.furniture_shop_template[19107] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13408,11 +11409,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_6_0 = var_1_10000.base.furniture_shop_template
-
-	var_6_0[19108] = {
+	pg.base.furniture_shop_template[19108] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13448,11 +11445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_0
-
-	local var_6_1 = var_6_0.base.furniture_shop_template
-
-	var_6_1[19109] = {
+	pg.base.furniture_shop_template[19109] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13488,11 +11481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_1
-
-	local var_6_2 = var_6_1.base.furniture_shop_template
-
-	var_6_2[19110] = {
+	pg.base.furniture_shop_template[19110] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13528,11 +11517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_2
-
-	local var_6_3 = var_6_2.base.furniture_shop_template
-
-	var_6_3[19111] = {
+	pg.base.furniture_shop_template[19111] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13568,11 +11553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_3
-
-	local var_6_4 = var_6_3.base.furniture_shop_template
-
-	var_6_4[19112] = {
+	pg.base.furniture_shop_template[19112] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13608,11 +11589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_4
-
-	local var_6_5 = var_6_4.base.furniture_shop_template
-
-	var_6_5[19113] = {
+	pg.base.furniture_shop_template[19113] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13648,11 +11625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_5
-
-	local var_6_6 = var_6_5.base.furniture_shop_template
-
-	var_6_6[19114] = {
+	pg.base.furniture_shop_template[19114] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13688,11 +11661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_6
-
-	local var_6_7 = var_6_6.base.furniture_shop_template
-
-	var_6_7[19115] = {
+	pg.base.furniture_shop_template[19115] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13728,11 +11697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_7
-
-	local var_6_8 = var_6_7.base.furniture_shop_template
-
-	var_6_8[19116] = {
+	pg.base.furniture_shop_template[19116] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13768,11 +11733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_8
-
-	local var_6_9 = var_6_8.base.furniture_shop_template
-
-	var_6_9[19117] = {
+	pg.base.furniture_shop_template[19117] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13808,11 +11769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_9
-
-	local var_6_10 = var_6_9.base.furniture_shop_template
-
-	var_6_10[19118] = {
+	pg.base.furniture_shop_template[19118] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13848,11 +11805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_10
-
-	local var_6_11 = var_6_10.base.furniture_shop_template
-
-	var_6_11[19119] = {
+	pg.base.furniture_shop_template[19119] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13888,11 +11841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_11
-
-	local var_6_12 = var_6_11.base.furniture_shop_template
-
-	var_6_12[19120] = {
+	pg.base.furniture_shop_template[19120] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -13928,11 +11877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_12
-
-	local var_6_13 = var_6_12.base.furniture_shop_template
-
-	var_6_13[19201] = {
+	pg.base.furniture_shop_template[19201] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -13968,11 +11913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_13
-
-	local var_6_14 = var_6_13.base.furniture_shop_template
-
-	var_6_14[19202] = {
+	pg.base.furniture_shop_template[19202] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14008,11 +11949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_14
-
-	local var_6_15 = var_6_14.base.furniture_shop_template
-
-	var_6_15[19301] = {
+	pg.base.furniture_shop_template[19301] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14048,11 +11985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_15
-
-	local var_6_16 = var_6_15.base.furniture_shop_template
-
-	var_6_16[19302] = {
+	pg.base.furniture_shop_template[19302] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14088,11 +12021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_16
-
-	local var_6_17 = var_6_16.base.furniture_shop_template
-
-	var_6_17[19303] = {
+	pg.base.furniture_shop_template[19303] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14128,11 +12057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_17
-
-	local var_6_18 = var_6_17.base.furniture_shop_template
-
-	var_6_18[19304] = {
+	pg.base.furniture_shop_template[19304] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14168,11 +12093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_18
-
-	local var_6_19 = var_6_18.base.furniture_shop_template
-
-	var_6_19[19305] = {
+	pg.base.furniture_shop_template[19305] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14208,11 +12129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_19
-
-	local var_6_20 = var_6_19.base.furniture_shop_template
-
-	var_6_20[19306] = {
+	pg.base.furniture_shop_template[19306] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14248,11 +12165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_20
-
-	local var_6_21 = var_6_20.base.furniture_shop_template
-
-	var_6_21[19307] = {
+	pg.base.furniture_shop_template[19307] = {
 		not_for_sale = 0,
 		gem_price = 0,
 		time = "always",
@@ -14288,11 +12201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_6_21
-
-	local var_6_22 = var_6_21.base.furniture_shop_template
-
-	var_6_22[20001] = {
+	pg.base.furniture_shop_template[20001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14303,11 +12212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_22
-
-	local var_6_23 = var_6_22.base.furniture_shop_template
-
-	var_6_23[20002] = {
+	pg.base.furniture_shop_template[20002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14318,11 +12223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_23
-
-	local var_6_24 = var_6_23.base.furniture_shop_template
-
-	var_6_24[20101] = {
+	pg.base.furniture_shop_template[20101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14333,11 +12234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_24
-
-	local var_6_25 = var_6_24.base.furniture_shop_template
-
-	var_6_25[20102] = {
+	pg.base.furniture_shop_template[20102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14348,11 +12245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_25
-
-	local var_6_26 = var_6_25.base.furniture_shop_template
-
-	var_6_26[20103] = {
+	pg.base.furniture_shop_template[20103] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14363,11 +12256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_26
-
-	local var_6_27 = var_6_26.base.furniture_shop_template
-
-	var_6_27[20104] = {
+	pg.base.furniture_shop_template[20104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14378,11 +12267,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_27
-
-	local var_6_28 = var_6_27.base.furniture_shop_template
-
-	var_6_28[20105] = {
+	pg.base.furniture_shop_template[20105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14393,11 +12278,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_28
-
-	local var_6_29 = var_6_28.base.furniture_shop_template
-
-	var_6_29[20106] = {
+	pg.base.furniture_shop_template[20106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14408,11 +12289,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_29
-
-	local var_6_30 = var_6_29.base.furniture_shop_template
-
-	var_6_30[20107] = {
+	pg.base.furniture_shop_template[20107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14423,11 +12300,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_30
-
-	local var_6_31 = var_6_30.base.furniture_shop_template
-
-	var_6_31[20108] = {
+	pg.base.furniture_shop_template[20108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14438,11 +12311,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_31
-
-	local var_6_32 = var_6_31.base.furniture_shop_template
-
-	var_6_32[20109] = {
+	pg.base.furniture_shop_template[20109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14453,11 +12322,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_32
-
-	local var_6_33 = var_6_32.base.furniture_shop_template
-
-	var_6_33[20110] = {
+	pg.base.furniture_shop_template[20110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14468,11 +12333,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_33
-
-	local var_6_34 = var_6_33.base.furniture_shop_template
-
-	var_6_34[20111] = {
+	pg.base.furniture_shop_template[20111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14483,11 +12344,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_34
-
-	local var_6_35 = var_6_34.base.furniture_shop_template
-
-	var_6_35[20112] = {
+	pg.base.furniture_shop_template[20112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14498,11 +12355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_35
-
-	local var_6_36 = var_6_35.base.furniture_shop_template
-
-	var_6_36[20113] = {
+	pg.base.furniture_shop_template[20113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14513,11 +12366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_36
-
-	local var_6_37 = var_6_36.base.furniture_shop_template
-
-	var_6_37[20114] = {
+	pg.base.furniture_shop_template[20114] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14528,11 +12377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_37
-
-	local var_6_38 = var_6_37.base.furniture_shop_template
-
-	var_6_38[21001] = {
+	pg.base.furniture_shop_template[21001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14543,11 +12388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_38
-
-	local var_6_39 = var_6_38.base.furniture_shop_template
-
-	var_6_39[21002] = {
+	pg.base.furniture_shop_template[21002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14558,11 +12399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_39
-
-	local var_6_40 = var_6_39.base.furniture_shop_template
-
-	var_6_40[21101] = {
+	pg.base.furniture_shop_template[21101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14573,11 +12410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_40
-
-	local var_6_41 = var_6_40.base.furniture_shop_template
-
-	var_6_41[21102] = {
+	pg.base.furniture_shop_template[21102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14588,11 +12421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_41
-
-	local var_6_42 = var_6_41.base.furniture_shop_template
-
-	var_6_42[21103] = {
+	pg.base.furniture_shop_template[21103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14603,11 +12432,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_42
-
-	local var_6_43 = var_6_42.base.furniture_shop_template
-
-	var_6_43[21104] = {
+	pg.base.furniture_shop_template[21104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14618,11 +12443,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_43
-
-	local var_6_44 = var_6_43.base.furniture_shop_template
-
-	var_6_44[21105] = {
+	pg.base.furniture_shop_template[21105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14633,11 +12454,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_44
-
-	local var_6_45 = var_6_44.base.furniture_shop_template
-
-	var_6_45[21106] = {
+	pg.base.furniture_shop_template[21106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14648,11 +12465,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_45
-
-	local var_6_46 = var_6_45.base.furniture_shop_template
-
-	var_6_46[21107] = {
+	pg.base.furniture_shop_template[21107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14663,11 +12476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_46
-
-	local var_6_47 = var_6_46.base.furniture_shop_template
-
-	var_6_47[21108] = {
+	pg.base.furniture_shop_template[21108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14678,11 +12487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_47
-
-	local var_6_48 = var_6_47.base.furniture_shop_template
-
-	var_6_48[21109] = {
+	pg.base.furniture_shop_template[21109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14693,11 +12498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_48
-
-	local var_6_49 = var_6_48.base.furniture_shop_template
-
-	var_6_49[21110] = {
+	pg.base.furniture_shop_template[21110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14708,11 +12509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_49
-
-	local var_6_50 = var_6_49.base.furniture_shop_template
-
-	var_6_50[21111] = {
+	pg.base.furniture_shop_template[21111] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14723,11 +12520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_50
-
-	local var_6_51 = var_6_50.base.furniture_shop_template
-
-	var_6_51[21112] = {
+	pg.base.furniture_shop_template[21112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14738,11 +12531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_51
-
-	local var_6_52 = var_6_51.base.furniture_shop_template
-
-	var_6_52[21113] = {
+	pg.base.furniture_shop_template[21113] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14753,11 +12542,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_52
-
-	local var_6_53 = var_6_52.base.furniture_shop_template
-
-	var_6_53[21114] = {
+	pg.base.furniture_shop_template[21114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14768,11 +12553,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_53
-
-	local var_6_54 = var_6_53.base.furniture_shop_template
-
-	var_6_54[21115] = {
+	pg.base.furniture_shop_template[21115] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -14783,11 +12564,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_54
-
-	local var_6_55 = var_6_54.base.furniture_shop_template
-
-	var_6_55[21201] = {
+	pg.base.furniture_shop_template[21201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14798,11 +12575,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_55
-
-	local var_6_56 = var_6_55.base.furniture_shop_template
-
-	var_6_56[21202] = {
+	pg.base.furniture_shop_template[21202] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14813,11 +12586,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_56
-
-	local var_6_57 = var_6_56.base.furniture_shop_template
-
-	var_6_57[21203] = {
+	pg.base.furniture_shop_template[21203] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14828,11 +12597,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_57
-
-	local var_6_58 = var_6_57.base.furniture_shop_template
-
-	var_6_58[21204] = {
+	pg.base.furniture_shop_template[21204] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14843,11 +12608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_58
-
-	local var_6_59 = var_6_58.base.furniture_shop_template
-
-	var_6_59[21205] = {
+	pg.base.furniture_shop_template[21205] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14858,11 +12619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_59
-
-	local var_6_60 = var_6_59.base.furniture_shop_template
-
-	var_6_60[21206] = {
+	pg.base.furniture_shop_template[21206] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -14873,11 +12630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_60
-
-	local var_6_61 = var_6_60.base.furniture_shop_template
-
-	var_6_61[21207] = {
+	pg.base.furniture_shop_template[21207] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14888,11 +12641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_61
-
-	local var_6_62 = var_6_61.base.furniture_shop_template
-
-	var_6_62[21301] = {
+	pg.base.furniture_shop_template[21301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14903,11 +12652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_62
-
-	local var_6_63 = var_6_62.base.furniture_shop_template
-
-	var_6_63[21302] = {
+	pg.base.furniture_shop_template[21302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -14918,11 +12663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_63
-
-	local var_6_64 = var_6_63.base.furniture_shop_template
-
-	var_6_64[22001] = {
+	pg.base.furniture_shop_template[22001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14933,11 +12674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_64
-
-	local var_6_65 = var_6_64.base.furniture_shop_template
-
-	var_6_65[22002] = {
+	pg.base.furniture_shop_template[22002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14948,11 +12685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_65
-
-	local var_6_66 = var_6_65.base.furniture_shop_template
-
-	var_6_66[22101] = {
+	pg.base.furniture_shop_template[22101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -14963,11 +12696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_66
-
-	local var_6_67 = var_6_66.base.furniture_shop_template
-
-	var_6_67[22102] = {
+	pg.base.furniture_shop_template[22102] = {
 		not_for_sale = 0,
 		gem_price = 250,
 		time = "always",
@@ -14978,11 +12707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_67
-
-	local var_6_68 = var_6_67.base.furniture_shop_template
-
-	var_6_68[22104] = {
+	pg.base.furniture_shop_template[22104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -14993,11 +12718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_68
-
-	local var_6_69 = var_6_68.base.furniture_shop_template
-
-	var_6_69[22105] = {
+	pg.base.furniture_shop_template[22105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15008,11 +12729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_69
-
-	local var_6_70 = var_6_69.base.furniture_shop_template
-
-	var_6_70[22106] = {
+	pg.base.furniture_shop_template[22106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15023,11 +12740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_70
-
-	local var_6_71 = var_6_70.base.furniture_shop_template
-
-	var_6_71[22107] = {
+	pg.base.furniture_shop_template[22107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15038,11 +12751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_71
-
-	local var_6_72 = var_6_71.base.furniture_shop_template
-
-	var_6_72[22109] = {
+	pg.base.furniture_shop_template[22109] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -15053,11 +12762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_72
-
-	local var_6_73 = var_6_72.base.furniture_shop_template
-
-	var_6_73[22110] = {
+	pg.base.furniture_shop_template[22110] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -15068,11 +12773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_73
-
-	local var_6_74 = var_6_73.base.furniture_shop_template
-
-	var_6_74[22111] = {
+	pg.base.furniture_shop_template[22111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15083,11 +12784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_74
-
-	local var_6_75 = var_6_74.base.furniture_shop_template
-
-	var_6_75[22112] = {
+	pg.base.furniture_shop_template[22112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15098,11 +12795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_75
-
-	local var_6_76 = var_6_75.base.furniture_shop_template
-
-	var_6_76[22113] = {
+	pg.base.furniture_shop_template[22113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15113,11 +12806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_76
-
-	local var_6_77 = var_6_76.base.furniture_shop_template
-
-	var_6_77[22114] = {
+	pg.base.furniture_shop_template[22114] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15128,11 +12817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_77
-
-	local var_6_78 = var_6_77.base.furniture_shop_template
-
-	var_6_78[22115] = {
+	pg.base.furniture_shop_template[22115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15143,11 +12828,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_78
-
-	local var_6_79 = var_6_78.base.furniture_shop_template
-
-	var_6_79[22116] = {
+	pg.base.furniture_shop_template[22116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15158,11 +12839,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_79
-
-	local var_6_80 = var_6_79.base.furniture_shop_template
-
-	var_6_80[22117] = {
+	pg.base.furniture_shop_template[22117] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15173,11 +12850,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_80
-
-	local var_6_81 = var_6_80.base.furniture_shop_template
-
-	var_6_81[22119] = {
+	pg.base.furniture_shop_template[22119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15188,11 +12861,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_81
-
-	local var_6_82 = var_6_81.base.furniture_shop_template
-
-	var_6_82[22120] = {
+	pg.base.furniture_shop_template[22120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15203,11 +12872,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_82
-
-	local var_6_83 = var_6_82.base.furniture_shop_template
-
-	var_6_83[22201] = {
+	pg.base.furniture_shop_template[22201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15218,11 +12883,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_83
-
-	local var_6_84 = var_6_83.base.furniture_shop_template
-
-	var_6_84[22202] = {
+	pg.base.furniture_shop_template[22202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15233,11 +12894,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_84
-
-	local var_6_85 = var_6_84.base.furniture_shop_template
-
-	var_6_85[22203] = {
+	pg.base.furniture_shop_template[22203] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15248,11 +12905,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_85
-
-	local var_6_86 = var_6_85.base.furniture_shop_template
-
-	var_6_86[22301] = {
+	pg.base.furniture_shop_template[22301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15263,11 +12916,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_86
-
-	local var_6_87 = var_6_86.base.furniture_shop_template
-
-	var_6_87[22302] = {
+	pg.base.furniture_shop_template[22302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15278,11 +12927,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_87
-
-	local var_6_88 = var_6_87.base.furniture_shop_template
-
-	var_6_88[22303] = {
+	pg.base.furniture_shop_template[22303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15293,11 +12938,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_88
-
-	local var_6_89 = var_6_88.base.furniture_shop_template
-
-	var_6_89[22304] = {
+	pg.base.furniture_shop_template[22304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15308,11 +12949,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_89
-
-	local var_6_90 = var_6_89.base.furniture_shop_template
-
-	var_6_90[22305] = {
+	pg.base.furniture_shop_template[22305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15323,11 +12960,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_90
-
-	local var_6_91 = var_6_90.base.furniture_shop_template
-
-	var_6_91[23001] = {
+	pg.base.furniture_shop_template[23001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15338,11 +12971,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_91
-
-	local var_6_92 = var_6_91.base.furniture_shop_template
-
-	var_6_92[23002] = {
+	pg.base.furniture_shop_template[23002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15353,11 +12982,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_92
-
-	local var_6_93 = var_6_92.base.furniture_shop_template
-
-	var_6_93[23101] = {
+	pg.base.furniture_shop_template[23101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15368,11 +12993,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_93
-
-	local var_6_94 = var_6_93.base.furniture_shop_template
-
-	var_6_94[23102] = {
+	pg.base.furniture_shop_template[23102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15383,11 +13004,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_94
-
-	local var_6_95 = var_6_94.base.furniture_shop_template
-
-	var_6_95[23103] = {
+	pg.base.furniture_shop_template[23103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15398,11 +13015,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_95
-
-	local var_6_96 = var_6_95.base.furniture_shop_template
-
-	var_6_96[23104] = {
+	pg.base.furniture_shop_template[23104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15413,11 +13026,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_96
-
-	local var_6_97 = var_6_96.base.furniture_shop_template
-
-	var_6_97[23105] = {
+	pg.base.furniture_shop_template[23105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15428,11 +13037,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_97
-
-	local var_6_98 = var_6_97.base.furniture_shop_template
-
-	var_6_98[23106] = {
+	pg.base.furniture_shop_template[23106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15443,8 +13048,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_6_98
-	var_6_98.base.furniture_shop_template[23107] = {
+	pg.base.furniture_shop_template[23107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15459,11 +13063,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_7_0 = var_1_10000.base.furniture_shop_template
-
-	var_7_0[23108] = {
+	pg.base.furniture_shop_template[23108] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15474,11 +13074,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_0
-
-	local var_7_1 = var_7_0.base.furniture_shop_template
-
-	var_7_1[23109] = {
+	pg.base.furniture_shop_template[23109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15489,11 +13085,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_1
-
-	local var_7_2 = var_7_1.base.furniture_shop_template
-
-	var_7_2[23110] = {
+	pg.base.furniture_shop_template[23110] = {
 		not_for_sale = 0,
 		gem_price = 180,
 		time = "always",
@@ -15504,11 +13096,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_2
-
-	local var_7_3 = var_7_2.base.furniture_shop_template
-
-	var_7_3[23111] = {
+	pg.base.furniture_shop_template[23111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15519,11 +13107,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_3
-
-	local var_7_4 = var_7_3.base.furniture_shop_template
-
-	var_7_4[23112] = {
+	pg.base.furniture_shop_template[23112] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -15534,11 +13118,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_4
-
-	local var_7_5 = var_7_4.base.furniture_shop_template
-
-	var_7_5[23113] = {
+	pg.base.furniture_shop_template[23113] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -15549,11 +13129,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_5
-
-	local var_7_6 = var_7_5.base.furniture_shop_template
-
-	var_7_6[23114] = {
+	pg.base.furniture_shop_template[23114] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -15564,11 +13140,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_6
-
-	local var_7_7 = var_7_6.base.furniture_shop_template
-
-	var_7_7[23201] = {
+	pg.base.furniture_shop_template[23201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15579,11 +13151,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_7
-
-	local var_7_8 = var_7_7.base.furniture_shop_template
-
-	var_7_8[23202] = {
+	pg.base.furniture_shop_template[23202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15594,11 +13162,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_8
-
-	local var_7_9 = var_7_8.base.furniture_shop_template
-
-	var_7_9[23301] = {
+	pg.base.furniture_shop_template[23301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15609,11 +13173,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_9
-
-	local var_7_10 = var_7_9.base.furniture_shop_template
-
-	var_7_10[23302] = {
+	pg.base.furniture_shop_template[23302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15624,11 +13184,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_10
-
-	local var_7_11 = var_7_10.base.furniture_shop_template
-
-	var_7_11[23303] = {
+	pg.base.furniture_shop_template[23303] = {
 		not_for_sale = 0,
 		gem_price = 180,
 		time = "always",
@@ -15639,11 +13195,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_11
-
-	local var_7_12 = var_7_11.base.furniture_shop_template
-
-	var_7_12[23304] = {
+	pg.base.furniture_shop_template[23304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15654,11 +13206,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_12
-
-	local var_7_13 = var_7_12.base.furniture_shop_template
-
-	var_7_13[23305] = {
+	pg.base.furniture_shop_template[23305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15669,11 +13217,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_13
-
-	local var_7_14 = var_7_13.base.furniture_shop_template
-
-	var_7_14[23306] = {
+	pg.base.furniture_shop_template[23306] = {
 		not_for_sale = 0,
 		gem_price = 180,
 		time = "always",
@@ -15684,11 +13228,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_14
-
-	local var_7_15 = var_7_14.base.furniture_shop_template
-
-	var_7_15[23307] = {
+	pg.base.furniture_shop_template[23307] = {
 		not_for_sale = 0,
 		gem_price = 180,
 		time = "always",
@@ -15699,11 +13239,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_15
-
-	local var_7_16 = var_7_15.base.furniture_shop_template
-
-	var_7_16[24001] = {
+	pg.base.furniture_shop_template[24001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15714,11 +13250,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_16
-
-	local var_7_17 = var_7_16.base.furniture_shop_template
-
-	var_7_17[24002] = {
+	pg.base.furniture_shop_template[24002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15729,11 +13261,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_17
-
-	local var_7_18 = var_7_17.base.furniture_shop_template
-
-	var_7_18[24101] = {
+	pg.base.furniture_shop_template[24101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15744,11 +13272,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_18
-
-	local var_7_19 = var_7_18.base.furniture_shop_template
-
-	var_7_19[24102] = {
+	pg.base.furniture_shop_template[24102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15759,11 +13283,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_19
-
-	local var_7_20 = var_7_19.base.furniture_shop_template
-
-	var_7_20[24103] = {
+	pg.base.furniture_shop_template[24103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15774,11 +13294,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_20
-
-	local var_7_21 = var_7_20.base.furniture_shop_template
-
-	var_7_21[24104] = {
+	pg.base.furniture_shop_template[24104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15789,11 +13305,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_21
-
-	local var_7_22 = var_7_21.base.furniture_shop_template
-
-	var_7_22[24105] = {
+	pg.base.furniture_shop_template[24105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15804,11 +13316,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_22
-
-	local var_7_23 = var_7_22.base.furniture_shop_template
-
-	var_7_23[24106] = {
+	pg.base.furniture_shop_template[24106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15819,11 +13327,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_23
-
-	local var_7_24 = var_7_23.base.furniture_shop_template
-
-	var_7_24[24107] = {
+	pg.base.furniture_shop_template[24107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15834,11 +13338,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_24
-
-	local var_7_25 = var_7_24.base.furniture_shop_template
-
-	var_7_25[24108] = {
+	pg.base.furniture_shop_template[24108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15849,11 +13349,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_25
-
-	local var_7_26 = var_7_25.base.furniture_shop_template
-
-	var_7_26[24109] = {
+	pg.base.furniture_shop_template[24109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15864,11 +13360,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_26
-
-	local var_7_27 = var_7_26.base.furniture_shop_template
-
-	var_7_27[24110] = {
+	pg.base.furniture_shop_template[24110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -15879,11 +13371,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_27
-
-	local var_7_28 = var_7_27.base.furniture_shop_template
-
-	var_7_28[24111] = {
+	pg.base.furniture_shop_template[24111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15894,11 +13382,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_28
-
-	local var_7_29 = var_7_28.base.furniture_shop_template
-
-	var_7_29[24112] = {
+	pg.base.furniture_shop_template[24112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15909,11 +13393,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_29
-
-	local var_7_30 = var_7_29.base.furniture_shop_template
-
-	var_7_30[24113] = {
+	pg.base.furniture_shop_template[24113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15924,11 +13404,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_30
-
-	local var_7_31 = var_7_30.base.furniture_shop_template
-
-	var_7_31[24114] = {
+	pg.base.furniture_shop_template[24114] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -15939,11 +13415,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_31
-
-	local var_7_32 = var_7_31.base.furniture_shop_template
-
-	var_7_32[24115] = {
+	pg.base.furniture_shop_template[24115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15954,11 +13426,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_32
-
-	local var_7_33 = var_7_32.base.furniture_shop_template
-
-	var_7_33[24116] = {
+	pg.base.furniture_shop_template[24116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -15969,11 +13437,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_33
-
-	local var_7_34 = var_7_33.base.furniture_shop_template
-
-	var_7_34[24117] = {
+	pg.base.furniture_shop_template[24117] = {
 		not_for_sale = 0,
 		gem_price = 100,
 		time = "always",
@@ -15984,11 +13448,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_34
-
-	local var_7_35 = var_7_34.base.furniture_shop_template
-
-	var_7_35[24118] = {
+	pg.base.furniture_shop_template[24118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -15999,11 +13459,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_35
-
-	local var_7_36 = var_7_35.base.furniture_shop_template
-
-	var_7_36[24119] = {
+	pg.base.furniture_shop_template[24119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16014,11 +13470,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_36
-
-	local var_7_37 = var_7_36.base.furniture_shop_template
-
-	var_7_37[24120] = {
+	pg.base.furniture_shop_template[24120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16029,11 +13481,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_37
-
-	local var_7_38 = var_7_37.base.furniture_shop_template
-
-	var_7_38[24121] = {
+	pg.base.furniture_shop_template[24121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16044,11 +13492,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_38
-
-	local var_7_39 = var_7_38.base.furniture_shop_template
-
-	var_7_39[24122] = {
+	pg.base.furniture_shop_template[24122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16059,11 +13503,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_39
-
-	local var_7_40 = var_7_39.base.furniture_shop_template
-
-	var_7_40[24123] = {
+	pg.base.furniture_shop_template[24123] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -16074,11 +13514,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_40
-
-	local var_7_41 = var_7_40.base.furniture_shop_template
-
-	var_7_41[24124] = {
+	pg.base.furniture_shop_template[24124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -16089,11 +13525,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_41
-
-	local var_7_42 = var_7_41.base.furniture_shop_template
-
-	var_7_42[24125] = {
+	pg.base.furniture_shop_template[24125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -16104,11 +13536,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_42
-
-	local var_7_43 = var_7_42.base.furniture_shop_template
-
-	var_7_43[24201] = {
+	pg.base.furniture_shop_template[24201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16119,11 +13547,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_43
-
-	local var_7_44 = var_7_43.base.furniture_shop_template
-
-	var_7_44[24202] = {
+	pg.base.furniture_shop_template[24202] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16134,11 +13558,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_44
-
-	local var_7_45 = var_7_44.base.furniture_shop_template
-
-	var_7_45[24301] = {
+	pg.base.furniture_shop_template[24301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16149,11 +13569,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_45
-
-	local var_7_46 = var_7_45.base.furniture_shop_template
-
-	var_7_46[24302] = {
+	pg.base.furniture_shop_template[24302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16164,11 +13580,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_46
-
-	local var_7_47 = var_7_46.base.furniture_shop_template
-
-	var_7_47[24303] = {
+	pg.base.furniture_shop_template[24303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16179,11 +13591,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_47
-
-	local var_7_48 = var_7_47.base.furniture_shop_template
-
-	var_7_48[24304] = {
+	pg.base.furniture_shop_template[24304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16194,11 +13602,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_48
-
-	local var_7_49 = var_7_48.base.furniture_shop_template
-
-	var_7_49[24305] = {
+	pg.base.furniture_shop_template[24305] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16209,11 +13613,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_49
-
-	local var_7_50 = var_7_49.base.furniture_shop_template
-
-	var_7_50[24306] = {
+	pg.base.furniture_shop_template[24306] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16224,11 +13624,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_50
-
-	local var_7_51 = var_7_50.base.furniture_shop_template
-
-	var_7_51[25001] = {
+	pg.base.furniture_shop_template[25001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16239,11 +13635,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_51
-
-	local var_7_52 = var_7_51.base.furniture_shop_template
-
-	var_7_52[25002] = {
+	pg.base.furniture_shop_template[25002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16254,11 +13646,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_52
-
-	local var_7_53 = var_7_52.base.furniture_shop_template
-
-	var_7_53[25101] = {
+	pg.base.furniture_shop_template[25101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16269,11 +13657,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_53
-
-	local var_7_54 = var_7_53.base.furniture_shop_template
-
-	var_7_54[25102] = {
+	pg.base.furniture_shop_template[25102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16284,11 +13668,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_54
-
-	local var_7_55 = var_7_54.base.furniture_shop_template
-
-	var_7_55[25103] = {
+	pg.base.furniture_shop_template[25103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16299,11 +13679,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_55
-
-	local var_7_56 = var_7_55.base.furniture_shop_template
-
-	var_7_56[25104] = {
+	pg.base.furniture_shop_template[25104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16314,11 +13690,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_56
-
-	local var_7_57 = var_7_56.base.furniture_shop_template
-
-	var_7_57[25105] = {
+	pg.base.furniture_shop_template[25105] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16329,11 +13701,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_57
-
-	local var_7_58 = var_7_57.base.furniture_shop_template
-
-	var_7_58[25106] = {
+	pg.base.furniture_shop_template[25106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16344,11 +13712,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_58
-
-	local var_7_59 = var_7_58.base.furniture_shop_template
-
-	var_7_59[25107] = {
+	pg.base.furniture_shop_template[25107] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16359,11 +13723,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_59
-
-	local var_7_60 = var_7_59.base.furniture_shop_template
-
-	var_7_60[25108] = {
+	pg.base.furniture_shop_template[25108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16374,11 +13734,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_60
-
-	local var_7_61 = var_7_60.base.furniture_shop_template
-
-	var_7_61[25109] = {
+	pg.base.furniture_shop_template[25109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16389,11 +13745,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_61
-
-	local var_7_62 = var_7_61.base.furniture_shop_template
-
-	var_7_62[25110] = {
+	pg.base.furniture_shop_template[25110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16404,11 +13756,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_62
-
-	local var_7_63 = var_7_62.base.furniture_shop_template
-
-	var_7_63[25111] = {
+	pg.base.furniture_shop_template[25111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16419,11 +13767,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_63
-
-	local var_7_64 = var_7_63.base.furniture_shop_template
-
-	var_7_64[25112] = {
+	pg.base.furniture_shop_template[25112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16434,11 +13778,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_64
-
-	local var_7_65 = var_7_64.base.furniture_shop_template
-
-	var_7_65[25113] = {
+	pg.base.furniture_shop_template[25113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16449,11 +13789,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_65
-
-	local var_7_66 = var_7_65.base.furniture_shop_template
-
-	var_7_66[25114] = {
+	pg.base.furniture_shop_template[25114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16464,11 +13800,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_66
-
-	local var_7_67 = var_7_66.base.furniture_shop_template
-
-	var_7_67[25115] = {
+	pg.base.furniture_shop_template[25115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16479,11 +13811,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_67
-
-	local var_7_68 = var_7_67.base.furniture_shop_template
-
-	var_7_68[25116] = {
+	pg.base.furniture_shop_template[25116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16494,11 +13822,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_68
-
-	local var_7_69 = var_7_68.base.furniture_shop_template
-
-	var_7_69[25117] = {
+	pg.base.furniture_shop_template[25117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16509,11 +13833,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_69
-
-	local var_7_70 = var_7_69.base.furniture_shop_template
-
-	var_7_70[25118] = {
+	pg.base.furniture_shop_template[25118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16524,11 +13844,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_70
-
-	local var_7_71 = var_7_70.base.furniture_shop_template
-
-	var_7_71[25119] = {
+	pg.base.furniture_shop_template[25119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16539,11 +13855,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_71
-
-	local var_7_72 = var_7_71.base.furniture_shop_template
-
-	var_7_72[25120] = {
+	pg.base.furniture_shop_template[25120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16554,11 +13866,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_72
-
-	local var_7_73 = var_7_72.base.furniture_shop_template
-
-	var_7_73[25121] = {
+	pg.base.furniture_shop_template[25121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16569,11 +13877,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_73
-
-	local var_7_74 = var_7_73.base.furniture_shop_template
-
-	var_7_74[25122] = {
+	pg.base.furniture_shop_template[25122] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16584,11 +13888,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_74
-
-	local var_7_75 = var_7_74.base.furniture_shop_template
-
-	var_7_75[25123] = {
+	pg.base.furniture_shop_template[25123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16599,11 +13899,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_75
-
-	local var_7_76 = var_7_75.base.furniture_shop_template
-
-	var_7_76[25124] = {
+	pg.base.furniture_shop_template[25124] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16614,11 +13910,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_76
-
-	local var_7_77 = var_7_76.base.furniture_shop_template
-
-	var_7_77[25125] = {
+	pg.base.furniture_shop_template[25125] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16629,11 +13921,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_77
-
-	local var_7_78 = var_7_77.base.furniture_shop_template
-
-	var_7_78[25201] = {
+	pg.base.furniture_shop_template[25201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16644,11 +13932,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_78
-
-	local var_7_79 = var_7_78.base.furniture_shop_template
-
-	var_7_79[25202] = {
+	pg.base.furniture_shop_template[25202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16659,11 +13943,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_79
-
-	local var_7_80 = var_7_79.base.furniture_shop_template
-
-	var_7_80[25203] = {
+	pg.base.furniture_shop_template[25203] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16674,11 +13954,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_80
-
-	local var_7_81 = var_7_80.base.furniture_shop_template
-
-	var_7_81[25301] = {
+	pg.base.furniture_shop_template[25301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16689,11 +13965,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_81
-
-	local var_7_82 = var_7_81.base.furniture_shop_template
-
-	var_7_82[25302] = {
+	pg.base.furniture_shop_template[25302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16704,11 +13976,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_82
-
-	local var_7_83 = var_7_82.base.furniture_shop_template
-
-	var_7_83[25303] = {
+	pg.base.furniture_shop_template[25303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16719,11 +13987,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_83
-
-	local var_7_84 = var_7_83.base.furniture_shop_template
-
-	var_7_84[25304] = {
+	pg.base.furniture_shop_template[25304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16734,11 +13998,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_84
-
-	local var_7_85 = var_7_84.base.furniture_shop_template
-
-	var_7_85[25305] = {
+	pg.base.furniture_shop_template[25305] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16749,11 +14009,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_85
-
-	local var_7_86 = var_7_85.base.furniture_shop_template
-
-	var_7_86[27001] = {
+	pg.base.furniture_shop_template[27001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16764,11 +14020,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_86
-
-	local var_7_87 = var_7_86.base.furniture_shop_template
-
-	var_7_87[27002] = {
+	pg.base.furniture_shop_template[27002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16779,11 +14031,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_87
-
-	local var_7_88 = var_7_87.base.furniture_shop_template
-
-	var_7_88[27101] = {
+	pg.base.furniture_shop_template[27101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16794,11 +14042,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_88
-
-	local var_7_89 = var_7_88.base.furniture_shop_template
-
-	var_7_89[27102] = {
+	pg.base.furniture_shop_template[27102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16809,11 +14053,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_89
-
-	local var_7_90 = var_7_89.base.furniture_shop_template
-
-	var_7_90[27103] = {
+	pg.base.furniture_shop_template[27103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -16824,11 +14064,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_90
-
-	local var_7_91 = var_7_90.base.furniture_shop_template
-
-	var_7_91[27104] = {
+	pg.base.furniture_shop_template[27104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16839,11 +14075,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_91
-
-	local var_7_92 = var_7_91.base.furniture_shop_template
-
-	var_7_92[27105] = {
+	pg.base.furniture_shop_template[27105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16854,11 +14086,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_92
-
-	local var_7_93 = var_7_92.base.furniture_shop_template
-
-	var_7_93[27106] = {
+	pg.base.furniture_shop_template[27106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16869,11 +14097,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_93
-
-	local var_7_94 = var_7_93.base.furniture_shop_template
-
-	var_7_94[27107] = {
+	pg.base.furniture_shop_template[27107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16884,11 +14108,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_94
-
-	local var_7_95 = var_7_94.base.furniture_shop_template
-
-	var_7_95[27108] = {
+	pg.base.furniture_shop_template[27108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16899,11 +14119,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_95
-
-	local var_7_96 = var_7_95.base.furniture_shop_template
-
-	var_7_96[27109] = {
+	pg.base.furniture_shop_template[27109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16914,11 +14130,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_96
-
-	local var_7_97 = var_7_96.base.furniture_shop_template
-
-	var_7_97[27110] = {
+	pg.base.furniture_shop_template[27110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16929,11 +14141,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_97
-
-	local var_7_98 = var_7_97.base.furniture_shop_template
-
-	var_7_98[27111] = {
+	pg.base.furniture_shop_template[27111] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -16944,8 +14152,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_7_98
-	var_7_98.base.furniture_shop_template[27112] = {
+	pg.base.furniture_shop_template[27112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -16960,11 +14167,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_8_0 = var_1_10000.base.furniture_shop_template
-
-	var_8_0[27113] = {
+	pg.base.furniture_shop_template[27113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16975,11 +14178,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_0
-
-	local var_8_1 = var_8_0.base.furniture_shop_template
-
-	var_8_1[27114] = {
+	pg.base.furniture_shop_template[27114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -16990,11 +14189,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_1
-
-	local var_8_2 = var_8_1.base.furniture_shop_template
-
-	var_8_2[27115] = {
+	pg.base.furniture_shop_template[27115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17005,11 +14200,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_2
-
-	local var_8_3 = var_8_2.base.furniture_shop_template
-
-	var_8_3[27116] = {
+	pg.base.furniture_shop_template[27116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17020,11 +14211,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_3
-
-	local var_8_4 = var_8_3.base.furniture_shop_template
-
-	var_8_4[27117] = {
+	pg.base.furniture_shop_template[27117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17035,11 +14222,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_4
-
-	local var_8_5 = var_8_4.base.furniture_shop_template
-
-	var_8_5[27118] = {
+	pg.base.furniture_shop_template[27118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17050,11 +14233,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_5
-
-	local var_8_6 = var_8_5.base.furniture_shop_template
-
-	var_8_6[27119] = {
+	pg.base.furniture_shop_template[27119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17065,11 +14244,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_6
-
-	local var_8_7 = var_8_6.base.furniture_shop_template
-
-	var_8_7[27120] = {
+	pg.base.furniture_shop_template[27120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17080,11 +14255,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_7
-
-	local var_8_8 = var_8_7.base.furniture_shop_template
-
-	var_8_8[27121] = {
+	pg.base.furniture_shop_template[27121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17095,11 +14266,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_8
-
-	local var_8_9 = var_8_8.base.furniture_shop_template
-
-	var_8_9[27122] = {
+	pg.base.furniture_shop_template[27122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17110,11 +14277,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_9
-
-	local var_8_10 = var_8_9.base.furniture_shop_template
-
-	var_8_10[27123] = {
+	pg.base.furniture_shop_template[27123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17125,11 +14288,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_10
-
-	local var_8_11 = var_8_10.base.furniture_shop_template
-
-	var_8_11[27124] = {
+	pg.base.furniture_shop_template[27124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -17140,11 +14299,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_11
-
-	local var_8_12 = var_8_11.base.furniture_shop_template
-
-	var_8_12[27125] = {
+	pg.base.furniture_shop_template[27125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -17155,11 +14310,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_12
-
-	local var_8_13 = var_8_12.base.furniture_shop_template
-
-	var_8_13[27126] = {
+	pg.base.furniture_shop_template[27126] = {
 		not_for_sale = 0,
 		gem_price = 180,
 		time = "always",
@@ -17170,11 +14321,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_13
-
-	local var_8_14 = var_8_13.base.furniture_shop_template
-
-	var_8_14[27201] = {
+	pg.base.furniture_shop_template[27201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17185,11 +14332,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_14
-
-	local var_8_15 = var_8_14.base.furniture_shop_template
-
-	var_8_15[27202] = {
+	pg.base.furniture_shop_template[27202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17200,11 +14343,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_15
-
-	local var_8_16 = var_8_15.base.furniture_shop_template
-
-	var_8_16[27301] = {
+	pg.base.furniture_shop_template[27301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17215,11 +14354,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_16
-
-	local var_8_17 = var_8_16.base.furniture_shop_template
-
-	var_8_17[28001] = {
+	pg.base.furniture_shop_template[28001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17230,11 +14365,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_17
-
-	local var_8_18 = var_8_17.base.furniture_shop_template
-
-	var_8_18[28002] = {
+	pg.base.furniture_shop_template[28002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17245,11 +14376,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_18
-
-	local var_8_19 = var_8_18.base.furniture_shop_template
-
-	var_8_19[28101] = {
+	pg.base.furniture_shop_template[28101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17260,11 +14387,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_19
-
-	local var_8_20 = var_8_19.base.furniture_shop_template
-
-	var_8_20[28102] = {
+	pg.base.furniture_shop_template[28102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17275,11 +14398,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_20
-
-	local var_8_21 = var_8_20.base.furniture_shop_template
-
-	var_8_21[28103] = {
+	pg.base.furniture_shop_template[28103] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17290,11 +14409,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_21
-
-	local var_8_22 = var_8_21.base.furniture_shop_template
-
-	var_8_22[28104] = {
+	pg.base.furniture_shop_template[28104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17305,11 +14420,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_22
-
-	local var_8_23 = var_8_22.base.furniture_shop_template
-
-	var_8_23[28105] = {
+	pg.base.furniture_shop_template[28105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17320,11 +14431,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_23
-
-	local var_8_24 = var_8_23.base.furniture_shop_template
-
-	var_8_24[28106] = {
+	pg.base.furniture_shop_template[28106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17335,11 +14442,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_24
-
-	local var_8_25 = var_8_24.base.furniture_shop_template
-
-	var_8_25[28107] = {
+	pg.base.furniture_shop_template[28107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17350,11 +14453,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_25
-
-	local var_8_26 = var_8_25.base.furniture_shop_template
-
-	var_8_26[28108] = {
+	pg.base.furniture_shop_template[28108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17365,11 +14464,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_26
-
-	local var_8_27 = var_8_26.base.furniture_shop_template
-
-	var_8_27[28109] = {
+	pg.base.furniture_shop_template[28109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17380,11 +14475,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_27
-
-	local var_8_28 = var_8_27.base.furniture_shop_template
-
-	var_8_28[28110] = {
+	pg.base.furniture_shop_template[28110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17395,11 +14486,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_28
-
-	local var_8_29 = var_8_28.base.furniture_shop_template
-
-	var_8_29[28111] = {
+	pg.base.furniture_shop_template[28111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17410,11 +14497,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_29
-
-	local var_8_30 = var_8_29.base.furniture_shop_template
-
-	var_8_30[28112] = {
+	pg.base.furniture_shop_template[28112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17425,11 +14508,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_30
-
-	local var_8_31 = var_8_30.base.furniture_shop_template
-
-	var_8_31[28113] = {
+	pg.base.furniture_shop_template[28113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17440,11 +14519,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_31
-
-	local var_8_32 = var_8_31.base.furniture_shop_template
-
-	var_8_32[28114] = {
+	pg.base.furniture_shop_template[28114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17455,11 +14530,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_32
-
-	local var_8_33 = var_8_32.base.furniture_shop_template
-
-	var_8_33[28115] = {
+	pg.base.furniture_shop_template[28115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17470,11 +14541,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_33
-
-	local var_8_34 = var_8_33.base.furniture_shop_template
-
-	var_8_34[28116] = {
+	pg.base.furniture_shop_template[28116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17485,11 +14552,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_34
-
-	local var_8_35 = var_8_34.base.furniture_shop_template
-
-	var_8_35[28117] = {
+	pg.base.furniture_shop_template[28117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17500,11 +14563,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_35
-
-	local var_8_36 = var_8_35.base.furniture_shop_template
-
-	var_8_36[28118] = {
+	pg.base.furniture_shop_template[28118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17515,11 +14574,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_36
-
-	local var_8_37 = var_8_36.base.furniture_shop_template
-
-	var_8_37[28119] = {
+	pg.base.furniture_shop_template[28119] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17530,11 +14585,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_37
-
-	local var_8_38 = var_8_37.base.furniture_shop_template
-
-	var_8_38[28120] = {
+	pg.base.furniture_shop_template[28120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17545,11 +14596,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_38
-
-	local var_8_39 = var_8_38.base.furniture_shop_template
-
-	var_8_39[28121] = {
+	pg.base.furniture_shop_template[28121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17560,11 +14607,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_39
-
-	local var_8_40 = var_8_39.base.furniture_shop_template
-
-	var_8_40[28122] = {
+	pg.base.furniture_shop_template[28122] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17575,11 +14618,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_40
-
-	local var_8_41 = var_8_40.base.furniture_shop_template
-
-	var_8_41[28123] = {
+	pg.base.furniture_shop_template[28123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17590,11 +14629,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_41
-
-	local var_8_42 = var_8_41.base.furniture_shop_template
-
-	var_8_42[28124] = {
+	pg.base.furniture_shop_template[28124] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17605,11 +14640,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_42
-
-	local var_8_43 = var_8_42.base.furniture_shop_template
-
-	var_8_43[28125] = {
+	pg.base.furniture_shop_template[28125] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17620,11 +14651,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_43
-
-	local var_8_44 = var_8_43.base.furniture_shop_template
-
-	var_8_44[28126] = {
+	pg.base.furniture_shop_template[28126] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17635,11 +14662,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_44
-
-	local var_8_45 = var_8_44.base.furniture_shop_template
-
-	var_8_45[28127] = {
+	pg.base.furniture_shop_template[28127] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17650,11 +14673,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_45
-
-	local var_8_46 = var_8_45.base.furniture_shop_template
-
-	var_8_46[28128] = {
+	pg.base.furniture_shop_template[28128] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17665,11 +14684,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_46
-
-	local var_8_47 = var_8_46.base.furniture_shop_template
-
-	var_8_47[28129] = {
+	pg.base.furniture_shop_template[28129] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17680,11 +14695,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_47
-
-	local var_8_48 = var_8_47.base.furniture_shop_template
-
-	var_8_48[28130] = {
+	pg.base.furniture_shop_template[28130] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17695,11 +14706,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_48
-
-	local var_8_49 = var_8_48.base.furniture_shop_template
-
-	var_8_49[28131] = {
+	pg.base.furniture_shop_template[28131] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17710,11 +14717,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_49
-
-	local var_8_50 = var_8_49.base.furniture_shop_template
-
-	var_8_50[28132] = {
+	pg.base.furniture_shop_template[28132] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17725,11 +14728,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_50
-
-	local var_8_51 = var_8_50.base.furniture_shop_template
-
-	var_8_51[28133] = {
+	pg.base.furniture_shop_template[28133] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -17740,11 +14739,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_51
-
-	local var_8_52 = var_8_51.base.furniture_shop_template
-
-	var_8_52[28134] = {
+	pg.base.furniture_shop_template[28134] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -17755,11 +14750,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_52
-
-	local var_8_53 = var_8_52.base.furniture_shop_template
-
-	var_8_53[28201] = {
+	pg.base.furniture_shop_template[28201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17770,11 +14761,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_53
-
-	local var_8_54 = var_8_53.base.furniture_shop_template
-
-	var_8_54[28202] = {
+	pg.base.furniture_shop_template[28202] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17785,11 +14772,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_54
-
-	local var_8_55 = var_8_54.base.furniture_shop_template
-
-	var_8_55[28203] = {
+	pg.base.furniture_shop_template[28203] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17800,11 +14783,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_55
-
-	local var_8_56 = var_8_55.base.furniture_shop_template
-
-	var_8_56[28204] = {
+	pg.base.furniture_shop_template[28204] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17815,11 +14794,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_56
-
-	local var_8_57 = var_8_56.base.furniture_shop_template
-
-	var_8_57[28205] = {
+	pg.base.furniture_shop_template[28205] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17830,11 +14805,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_57
-
-	local var_8_58 = var_8_57.base.furniture_shop_template
-
-	var_8_58[28206] = {
+	pg.base.furniture_shop_template[28206] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17845,11 +14816,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_58
-
-	local var_8_59 = var_8_58.base.furniture_shop_template
-
-	var_8_59[28301] = {
+	pg.base.furniture_shop_template[28301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17860,11 +14827,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_59
-
-	local var_8_60 = var_8_59.base.furniture_shop_template
-
-	var_8_60[28302] = {
+	pg.base.furniture_shop_template[28302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17875,11 +14838,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_60
-
-	local var_8_61 = var_8_60.base.furniture_shop_template
-
-	var_8_61[28303] = {
+	pg.base.furniture_shop_template[28303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17890,11 +14849,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_61
-
-	local var_8_62 = var_8_61.base.furniture_shop_template
-
-	var_8_62[28304] = {
+	pg.base.furniture_shop_template[28304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -17905,11 +14860,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_62
-
-	local var_8_63 = var_8_62.base.furniture_shop_template
-
-	var_8_63[28305] = {
+	pg.base.furniture_shop_template[28305] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17920,11 +14871,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_63
-
-	local var_8_64 = var_8_63.base.furniture_shop_template
-
-	var_8_64[28306] = {
+	pg.base.furniture_shop_template[28306] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17935,11 +14882,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_64
-
-	local var_8_65 = var_8_64.base.furniture_shop_template
-
-	var_8_65[28307] = {
+	pg.base.furniture_shop_template[28307] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -17950,11 +14893,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_65
-
-	local var_8_66 = var_8_65.base.furniture_shop_template
-
-	var_8_66[29001] = {
+	pg.base.furniture_shop_template[29001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17965,11 +14904,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_66
-
-	local var_8_67 = var_8_66.base.furniture_shop_template
-
-	var_8_67[29002] = {
+	pg.base.furniture_shop_template[29002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -17980,11 +14915,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_67
-
-	local var_8_68 = var_8_67.base.furniture_shop_template
-
-	var_8_68[29101] = {
+	pg.base.furniture_shop_template[29101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -17995,11 +14926,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_68
-
-	local var_8_69 = var_8_68.base.furniture_shop_template
-
-	var_8_69[29102] = {
+	pg.base.furniture_shop_template[29102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18010,11 +14937,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_69
-
-	local var_8_70 = var_8_69.base.furniture_shop_template
-
-	var_8_70[29103] = {
+	pg.base.furniture_shop_template[29103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18025,11 +14948,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_70
-
-	local var_8_71 = var_8_70.base.furniture_shop_template
-
-	var_8_71[29104] = {
+	pg.base.furniture_shop_template[29104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18040,11 +14959,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_71
-
-	local var_8_72 = var_8_71.base.furniture_shop_template
-
-	var_8_72[29105] = {
+	pg.base.furniture_shop_template[29105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18055,11 +14970,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_72
-
-	local var_8_73 = var_8_72.base.furniture_shop_template
-
-	var_8_73[29106] = {
+	pg.base.furniture_shop_template[29106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18070,11 +14981,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_73
-
-	local var_8_74 = var_8_73.base.furniture_shop_template
-
-	var_8_74[29107] = {
+	pg.base.furniture_shop_template[29107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18085,11 +14992,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_74
-
-	local var_8_75 = var_8_74.base.furniture_shop_template
-
-	var_8_75[29108] = {
+	pg.base.furniture_shop_template[29108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18100,11 +15003,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_75
-
-	local var_8_76 = var_8_75.base.furniture_shop_template
-
-	var_8_76[29109] = {
+	pg.base.furniture_shop_template[29109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18115,11 +15014,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_76
-
-	local var_8_77 = var_8_76.base.furniture_shop_template
-
-	var_8_77[29110] = {
+	pg.base.furniture_shop_template[29110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18130,11 +15025,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_77
-
-	local var_8_78 = var_8_77.base.furniture_shop_template
-
-	var_8_78[29111] = {
+	pg.base.furniture_shop_template[29111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18145,11 +15036,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_78
-
-	local var_8_79 = var_8_78.base.furniture_shop_template
-
-	var_8_79[29112] = {
+	pg.base.furniture_shop_template[29112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18160,11 +15047,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_79
-
-	local var_8_80 = var_8_79.base.furniture_shop_template
-
-	var_8_80[29113] = {
+	pg.base.furniture_shop_template[29113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18175,11 +15058,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_80
-
-	local var_8_81 = var_8_80.base.furniture_shop_template
-
-	var_8_81[29114] = {
+	pg.base.furniture_shop_template[29114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18190,11 +15069,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_81
-
-	local var_8_82 = var_8_81.base.furniture_shop_template
-
-	var_8_82[29115] = {
+	pg.base.furniture_shop_template[29115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18205,11 +15080,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_82
-
-	local var_8_83 = var_8_82.base.furniture_shop_template
-
-	var_8_83[29116] = {
+	pg.base.furniture_shop_template[29116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18220,11 +15091,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_83
-
-	local var_8_84 = var_8_83.base.furniture_shop_template
-
-	var_8_84[29117] = {
+	pg.base.furniture_shop_template[29117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18235,11 +15102,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_84
-
-	local var_8_85 = var_8_84.base.furniture_shop_template
-
-	var_8_85[29118] = {
+	pg.base.furniture_shop_template[29118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18250,11 +15113,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_85
-
-	local var_8_86 = var_8_85.base.furniture_shop_template
-
-	var_8_86[29119] = {
+	pg.base.furniture_shop_template[29119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18265,11 +15124,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_86
-
-	local var_8_87 = var_8_86.base.furniture_shop_template
-
-	var_8_87[29120] = {
+	pg.base.furniture_shop_template[29120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18280,11 +15135,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_87
-
-	local var_8_88 = var_8_87.base.furniture_shop_template
-
-	var_8_88[29121] = {
+	pg.base.furniture_shop_template[29121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18295,11 +15146,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_88
-
-	local var_8_89 = var_8_88.base.furniture_shop_template
-
-	var_8_89[29122] = {
+	pg.base.furniture_shop_template[29122] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -18310,11 +15157,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_89
-
-	local var_8_90 = var_8_89.base.furniture_shop_template
-
-	var_8_90[29123] = {
+	pg.base.furniture_shop_template[29123] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -18325,11 +15168,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_90
-
-	local var_8_91 = var_8_90.base.furniture_shop_template
-
-	var_8_91[29124] = {
+	pg.base.furniture_shop_template[29124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -18340,11 +15179,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_91
-
-	local var_8_92 = var_8_91.base.furniture_shop_template
-
-	var_8_92[29201] = {
+	pg.base.furniture_shop_template[29201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18355,11 +15190,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_92
-
-	local var_8_93 = var_8_92.base.furniture_shop_template
-
-	var_8_93[29202] = {
+	pg.base.furniture_shop_template[29202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18370,11 +15201,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_93
-
-	local var_8_94 = var_8_93.base.furniture_shop_template
-
-	var_8_94[29301] = {
+	pg.base.furniture_shop_template[29301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18385,11 +15212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_94
-
-	local var_8_95 = var_8_94.base.furniture_shop_template
-
-	var_8_95[29302] = {
+	pg.base.furniture_shop_template[29302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18400,11 +15223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_95
-
-	local var_8_96 = var_8_95.base.furniture_shop_template
-
-	var_8_96[30001] = {
+	pg.base.furniture_shop_template[30001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18415,11 +15234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_96
-
-	local var_8_97 = var_8_96.base.furniture_shop_template
-
-	var_8_97[30002] = {
+	pg.base.furniture_shop_template[30002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18430,11 +15245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_97
-
-	local var_8_98 = var_8_97.base.furniture_shop_template
-
-	var_8_98[30101] = {
+	pg.base.furniture_shop_template[30101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18445,8 +15256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_8_98
-	var_8_98.base.furniture_shop_template[30102] = {
+	pg.base.furniture_shop_template[30102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18461,11 +15271,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_9_0 = var_1_10000.base.furniture_shop_template
-
-	var_9_0[30103] = {
+	pg.base.furniture_shop_template[30103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18476,11 +15282,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_0
-
-	local var_9_1 = var_9_0.base.furniture_shop_template
-
-	var_9_1[30104] = {
+	pg.base.furniture_shop_template[30104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18491,11 +15293,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_1
-
-	local var_9_2 = var_9_1.base.furniture_shop_template
-
-	var_9_2[30105] = {
+	pg.base.furniture_shop_template[30105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18506,11 +15304,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_2
-
-	local var_9_3 = var_9_2.base.furniture_shop_template
-
-	var_9_3[30106] = {
+	pg.base.furniture_shop_template[30106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18521,11 +15315,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_3
-
-	local var_9_4 = var_9_3.base.furniture_shop_template
-
-	var_9_4[30107] = {
+	pg.base.furniture_shop_template[30107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18536,11 +15326,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_4
-
-	local var_9_5 = var_9_4.base.furniture_shop_template
-
-	var_9_5[30108] = {
+	pg.base.furniture_shop_template[30108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18551,11 +15337,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_5
-
-	local var_9_6 = var_9_5.base.furniture_shop_template
-
-	var_9_6[30109] = {
+	pg.base.furniture_shop_template[30109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18566,11 +15348,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_6
-
-	local var_9_7 = var_9_6.base.furniture_shop_template
-
-	var_9_7[30110] = {
+	pg.base.furniture_shop_template[30110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18581,11 +15359,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_7
-
-	local var_9_8 = var_9_7.base.furniture_shop_template
-
-	var_9_8[30111] = {
+	pg.base.furniture_shop_template[30111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18596,11 +15370,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_8
-
-	local var_9_9 = var_9_8.base.furniture_shop_template
-
-	var_9_9[30112] = {
+	pg.base.furniture_shop_template[30112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18611,11 +15381,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_9
-
-	local var_9_10 = var_9_9.base.furniture_shop_template
-
-	var_9_10[30113] = {
+	pg.base.furniture_shop_template[30113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18626,11 +15392,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_10
-
-	local var_9_11 = var_9_10.base.furniture_shop_template
-
-	var_9_11[30114] = {
+	pg.base.furniture_shop_template[30114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18641,11 +15403,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_11
-
-	local var_9_12 = var_9_11.base.furniture_shop_template
-
-	var_9_12[30115] = {
+	pg.base.furniture_shop_template[30115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18656,11 +15414,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_12
-
-	local var_9_13 = var_9_12.base.furniture_shop_template
-
-	var_9_13[30116] = {
+	pg.base.furniture_shop_template[30116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18671,11 +15425,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_13
-
-	local var_9_14 = var_9_13.base.furniture_shop_template
-
-	var_9_14[30117] = {
+	pg.base.furniture_shop_template[30117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18686,11 +15436,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_14
-
-	local var_9_15 = var_9_14.base.furniture_shop_template
-
-	var_9_15[30118] = {
+	pg.base.furniture_shop_template[30118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18701,11 +15447,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_15
-
-	local var_9_16 = var_9_15.base.furniture_shop_template
-
-	var_9_16[30119] = {
+	pg.base.furniture_shop_template[30119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18716,11 +15458,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_16
-
-	local var_9_17 = var_9_16.base.furniture_shop_template
-
-	var_9_17[30120] = {
+	pg.base.furniture_shop_template[30120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18731,11 +15469,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_17
-
-	local var_9_18 = var_9_17.base.furniture_shop_template
-
-	var_9_18[30121] = {
+	pg.base.furniture_shop_template[30121] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18746,11 +15480,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_18
-
-	local var_9_19 = var_9_18.base.furniture_shop_template
-
-	var_9_19[30122] = {
+	pg.base.furniture_shop_template[30122] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -18761,11 +15491,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_19
-
-	local var_9_20 = var_9_19.base.furniture_shop_template
-
-	var_9_20[30123] = {
+	pg.base.furniture_shop_template[30123] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		time = "always",
@@ -18776,11 +15502,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_20
-
-	local var_9_21 = var_9_20.base.furniture_shop_template
-
-	var_9_21[30124] = {
+	pg.base.furniture_shop_template[30124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -18791,11 +15513,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_21
-
-	local var_9_22 = var_9_21.base.furniture_shop_template
-
-	var_9_22[30125] = {
+	pg.base.furniture_shop_template[30125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -18806,11 +15524,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_22
-
-	local var_9_23 = var_9_22.base.furniture_shop_template
-
-	var_9_23[30201] = {
+	pg.base.furniture_shop_template[30201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18821,11 +15535,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_23
-
-	local var_9_24 = var_9_23.base.furniture_shop_template
-
-	var_9_24[30202] = {
+	pg.base.furniture_shop_template[30202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -18836,11 +15546,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_24
-
-	local var_9_25 = var_9_24.base.furniture_shop_template
-
-	var_9_25[30301] = {
+	pg.base.furniture_shop_template[30301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18851,11 +15557,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_25
-
-	local var_9_26 = var_9_25.base.furniture_shop_template
-
-	var_9_26[30302] = {
+	pg.base.furniture_shop_template[30302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18866,11 +15568,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_26
-
-	local var_9_27 = var_9_26.base.furniture_shop_template
-
-	var_9_27[30303] = {
+	pg.base.furniture_shop_template[30303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18881,11 +15579,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_27
-
-	local var_9_28 = var_9_27.base.furniture_shop_template
-
-	var_9_28[33001] = {
+	pg.base.furniture_shop_template[33001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18896,11 +15590,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_28
-
-	local var_9_29 = var_9_28.base.furniture_shop_template
-
-	var_9_29[33002] = {
+	pg.base.furniture_shop_template[33002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18911,11 +15601,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_29
-
-	local var_9_30 = var_9_29.base.furniture_shop_template
-
-	var_9_30[33101] = {
+	pg.base.furniture_shop_template[33101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18926,11 +15612,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_30
-
-	local var_9_31 = var_9_30.base.furniture_shop_template
-
-	var_9_31[33102] = {
+	pg.base.furniture_shop_template[33102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18941,11 +15623,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_31
-
-	local var_9_32 = var_9_31.base.furniture_shop_template
-
-	var_9_32[33103] = {
+	pg.base.furniture_shop_template[33103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -18956,11 +15634,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_32
-
-	local var_9_33 = var_9_32.base.furniture_shop_template
-
-	var_9_33[33104] = {
+	pg.base.furniture_shop_template[33104] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -18971,11 +15645,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_33
-
-	local var_9_34 = var_9_33.base.furniture_shop_template
-
-	var_9_34[33105] = {
+	pg.base.furniture_shop_template[33105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -18986,11 +15656,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_34
-
-	local var_9_35 = var_9_34.base.furniture_shop_template
-
-	var_9_35[33106] = {
+	pg.base.furniture_shop_template[33106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19001,11 +15667,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_35
-
-	local var_9_36 = var_9_35.base.furniture_shop_template
-
-	var_9_36[33107] = {
+	pg.base.furniture_shop_template[33107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19016,11 +15678,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_36
-
-	local var_9_37 = var_9_36.base.furniture_shop_template
-
-	var_9_37[33108] = {
+	pg.base.furniture_shop_template[33108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19031,11 +15689,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_37
-
-	local var_9_38 = var_9_37.base.furniture_shop_template
-
-	var_9_38[33109] = {
+	pg.base.furniture_shop_template[33109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19046,11 +15700,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_38
-
-	local var_9_39 = var_9_38.base.furniture_shop_template
-
-	var_9_39[33110] = {
+	pg.base.furniture_shop_template[33110] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -19061,11 +15711,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_39
-
-	local var_9_40 = var_9_39.base.furniture_shop_template
-
-	var_9_40[33111] = {
+	pg.base.furniture_shop_template[33111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19076,11 +15722,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_40
-
-	local var_9_41 = var_9_40.base.furniture_shop_template
-
-	var_9_41[33112] = {
+	pg.base.furniture_shop_template[33112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19091,11 +15733,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_41
-
-	local var_9_42 = var_9_41.base.furniture_shop_template
-
-	var_9_42[33113] = {
+	pg.base.furniture_shop_template[33113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19106,11 +15744,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_42
-
-	local var_9_43 = var_9_42.base.furniture_shop_template
-
-	var_9_43[33114] = {
+	pg.base.furniture_shop_template[33114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19121,11 +15755,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_43
-
-	local var_9_44 = var_9_43.base.furniture_shop_template
-
-	var_9_44[33115] = {
+	pg.base.furniture_shop_template[33115] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -19136,11 +15766,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_44
-
-	local var_9_45 = var_9_44.base.furniture_shop_template
-
-	var_9_45[33116] = {
+	pg.base.furniture_shop_template[33116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19151,11 +15777,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_45
-
-	local var_9_46 = var_9_45.base.furniture_shop_template
-
-	var_9_46[33117] = {
+	pg.base.furniture_shop_template[33117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19166,11 +15788,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_46
-
-	local var_9_47 = var_9_46.base.furniture_shop_template
-
-	var_9_47[33118] = {
+	pg.base.furniture_shop_template[33118] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19181,11 +15799,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_47
-
-	local var_9_48 = var_9_47.base.furniture_shop_template
-
-	var_9_48[33119] = {
+	pg.base.furniture_shop_template[33119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19196,11 +15810,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_48
-
-	local var_9_49 = var_9_48.base.furniture_shop_template
-
-	var_9_49[33120] = {
+	pg.base.furniture_shop_template[33120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19211,11 +15821,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_49
-
-	local var_9_50 = var_9_49.base.furniture_shop_template
-
-	var_9_50[33121] = {
+	pg.base.furniture_shop_template[33121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19226,11 +15832,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_50
-
-	local var_9_51 = var_9_50.base.furniture_shop_template
-
-	var_9_51[33122] = {
+	pg.base.furniture_shop_template[33122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19241,11 +15843,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_51
-
-	local var_9_52 = var_9_51.base.furniture_shop_template
-
-	var_9_52[33123] = {
+	pg.base.furniture_shop_template[33123] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -19256,11 +15854,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_52
-
-	local var_9_53 = var_9_52.base.furniture_shop_template
-
-	var_9_53[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19271,11 +15865,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_53
-
-	local var_9_54 = var_9_53.base.furniture_shop_template
-
-	var_9_54[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19286,11 +15876,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_54
-
-	local var_9_55 = var_9_54.base.furniture_shop_template
-
-	var_9_55[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19301,11 +15887,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_55
-
-	local var_9_56 = var_9_55.base.furniture_shop_template
-
-	var_9_56[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19316,11 +15898,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_56
-
-	local var_9_57 = var_9_56.base.furniture_shop_template
-
-	var_9_57[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19331,11 +15909,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_57
-
-	local var_9_58 = var_9_57.base.furniture_shop_template
-
-	var_9_58[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19346,11 +15920,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_58
-
-	local var_9_59 = var_9_58.base.furniture_shop_template
-
-	var_9_59[35001] = {
+	pg.base.furniture_shop_template[35001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -19361,11 +15931,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_59
-
-	local var_9_60 = var_9_59.base.furniture_shop_template
-
-	var_9_60[35002] = {
+	pg.base.furniture_shop_template[35002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -19376,11 +15942,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_60
-
-	local var_9_61 = var_9_60.base.furniture_shop_template
-
-	var_9_61[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19391,11 +15953,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_61
-
-	local var_9_62 = var_9_61.base.furniture_shop_template
-
-	var_9_62[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19406,11 +15964,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_62
-
-	local var_9_63 = var_9_62.base.furniture_shop_template
-
-	var_9_63[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19421,11 +15975,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_63
-
-	local var_9_64 = var_9_63.base.furniture_shop_template
-
-	var_9_64[35104] = {
+	pg.base.furniture_shop_template[35104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19436,11 +15986,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_64
-
-	local var_9_65 = var_9_64.base.furniture_shop_template
-
-	var_9_65[35105] = {
+	pg.base.furniture_shop_template[35105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19451,11 +15997,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_65
-
-	local var_9_66 = var_9_65.base.furniture_shop_template
-
-	var_9_66[35106] = {
+	pg.base.furniture_shop_template[35106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19466,11 +16008,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_66
-
-	local var_9_67 = var_9_66.base.furniture_shop_template
-
-	var_9_67[35107] = {
+	pg.base.furniture_shop_template[35107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19481,11 +16019,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_67
-
-	local var_9_68 = var_9_67.base.furniture_shop_template
-
-	var_9_68[35108] = {
+	pg.base.furniture_shop_template[35108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19496,11 +16030,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_68
-
-	local var_9_69 = var_9_68.base.furniture_shop_template
-
-	var_9_69[35109] = {
+	pg.base.furniture_shop_template[35109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -19511,11 +16041,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_69
-
-	local var_9_70 = var_9_69.base.furniture_shop_template
-
-	var_9_70[35110] = {
+	pg.base.furniture_shop_template[35110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19526,11 +16052,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_70
-
-	local var_9_71 = var_9_70.base.furniture_shop_template
-
-	var_9_71[35111] = {
+	pg.base.furniture_shop_template[35111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19541,11 +16063,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_71
-
-	local var_9_72 = var_9_71.base.furniture_shop_template
-
-	var_9_72[35112] = {
+	pg.base.furniture_shop_template[35112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19556,11 +16074,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_72
-
-	local var_9_73 = var_9_72.base.furniture_shop_template
-
-	var_9_73[35113] = {
+	pg.base.furniture_shop_template[35113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19571,11 +16085,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_73
-
-	local var_9_74 = var_9_73.base.furniture_shop_template
-
-	var_9_74[35114] = {
+	pg.base.furniture_shop_template[35114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19586,11 +16096,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_74
-
-	local var_9_75 = var_9_74.base.furniture_shop_template
-
-	var_9_75[35115] = {
+	pg.base.furniture_shop_template[35115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19601,11 +16107,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_75
-
-	local var_9_76 = var_9_75.base.furniture_shop_template
-
-	var_9_76[35116] = {
+	pg.base.furniture_shop_template[35116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19616,11 +16118,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_76
-
-	local var_9_77 = var_9_76.base.furniture_shop_template
-
-	var_9_77[35117] = {
+	pg.base.furniture_shop_template[35117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19631,11 +16129,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_77
-
-	local var_9_78 = var_9_77.base.furniture_shop_template
-
-	var_9_78[35118] = {
+	pg.base.furniture_shop_template[35118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19646,11 +16140,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_78
-
-	local var_9_79 = var_9_78.base.furniture_shop_template
-
-	var_9_79[35119] = {
+	pg.base.furniture_shop_template[35119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19661,11 +16151,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_79
-
-	local var_9_80 = var_9_79.base.furniture_shop_template
-
-	var_9_80[35120] = {
+	pg.base.furniture_shop_template[35120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19676,11 +16162,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_80
-
-	local var_9_81 = var_9_80.base.furniture_shop_template
-
-	var_9_81[35121] = {
+	pg.base.furniture_shop_template[35121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19691,11 +16173,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_81
-
-	local var_9_82 = var_9_81.base.furniture_shop_template
-
-	var_9_82[35122] = {
+	pg.base.furniture_shop_template[35122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19706,11 +16184,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_82
-
-	local var_9_83 = var_9_82.base.furniture_shop_template
-
-	var_9_83[35123] = {
+	pg.base.furniture_shop_template[35123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19721,11 +16195,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_83
-
-	local var_9_84 = var_9_83.base.furniture_shop_template
-
-	var_9_84[35124] = {
+	pg.base.furniture_shop_template[35124] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19736,11 +16206,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_84
-
-	local var_9_85 = var_9_84.base.furniture_shop_template
-
-	var_9_85[35125] = {
+	pg.base.furniture_shop_template[35125] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19751,11 +16217,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_85
-
-	local var_9_86 = var_9_85.base.furniture_shop_template
-
-	var_9_86[35126] = {
+	pg.base.furniture_shop_template[35126] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19766,11 +16228,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_86
-
-	local var_9_87 = var_9_86.base.furniture_shop_template
-
-	var_9_87[35127] = {
+	pg.base.furniture_shop_template[35127] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -19781,11 +16239,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_87
-
-	local var_9_88 = var_9_87.base.furniture_shop_template
-
-	var_9_88[35128] = {
+	pg.base.furniture_shop_template[35128] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -19796,11 +16250,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_88
-
-	local var_9_89 = var_9_88.base.furniture_shop_template
-
-	var_9_89[35129] = {
+	pg.base.furniture_shop_template[35129] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -19811,11 +16261,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_89
-
-	local var_9_90 = var_9_89.base.furniture_shop_template
-
-	var_9_90[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19826,11 +16272,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_90
-
-	local var_9_91 = var_9_90.base.furniture_shop_template
-
-	var_9_91[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19841,11 +16283,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_91
-
-	local var_9_92 = var_9_91.base.furniture_shop_template
-
-	var_9_92[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19856,11 +16294,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_92
-
-	local var_9_93 = var_9_92.base.furniture_shop_template
-
-	var_9_93[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19871,11 +16305,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_93
-
-	local var_9_94 = var_9_93.base.furniture_shop_template
-
-	var_9_94[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19886,11 +16316,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_94
-
-	local var_9_95 = var_9_94.base.furniture_shop_template
-
-	var_9_95[35301] = {
+	pg.base.furniture_shop_template[35301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -19901,11 +16327,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_95
-
-	local var_9_96 = var_9_95.base.furniture_shop_template
-
-	var_9_96[35302] = {
+	pg.base.furniture_shop_template[35302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19916,11 +16338,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_96
-
-	local var_9_97 = var_9_96.base.furniture_shop_template
-
-	var_9_97[35303] = {
+	pg.base.furniture_shop_template[35303] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -19931,11 +16349,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_9_97
-
-	local var_9_98 = var_9_97.base.furniture_shop_template
-
-	var_9_98[36001] = {
+	pg.base.furniture_shop_template[36001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 36001,
@@ -19971,8 +16385,7 @@ end)()
 			}
 		}
 	}
-	pg = var_9_98
-	var_9_98.base.furniture_shop_template[36002] = {
+	pg.base.furniture_shop_template[36002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 36002,
@@ -20012,11 +16425,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_10_0 = var_1_10000.base.furniture_shop_template
-
-	var_10_0[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36102,
@@ -20052,11 +16461,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_0
-
-	local var_10_1 = var_10_0.base.furniture_shop_template
-
-	var_10_1[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36103,
@@ -20092,11 +16497,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_1
-
-	local var_10_2 = var_10_1.base.furniture_shop_template
-
-	var_10_2[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36104,
@@ -20132,11 +16533,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_2
-
-	local var_10_3 = var_10_2.base.furniture_shop_template
-
-	var_10_3[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36105,
@@ -20172,11 +16569,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_3
-
-	local var_10_4 = var_10_3.base.furniture_shop_template
-
-	var_10_4[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36106,
@@ -20212,11 +16605,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_4
-
-	local var_10_5 = var_10_4.base.furniture_shop_template
-
-	var_10_5[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36107,
@@ -20252,11 +16641,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_5
-
-	local var_10_6 = var_10_5.base.furniture_shop_template
-
-	var_10_6[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36110,
@@ -20292,11 +16677,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_6
-
-	local var_10_7 = var_10_6.base.furniture_shop_template
-
-	var_10_7[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36113,
@@ -20332,11 +16713,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_7
-
-	local var_10_8 = var_10_7.base.furniture_shop_template
-
-	var_10_8[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 36117,
@@ -20372,11 +16749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_8
-
-	local var_10_9 = var_10_8.base.furniture_shop_template
-
-	var_10_9[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36118,
@@ -20412,11 +16785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_9
-
-	local var_10_10 = var_10_9.base.furniture_shop_template
-
-	var_10_10[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 36119,
@@ -20452,11 +16821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_10
-
-	local var_10_11 = var_10_10.base.furniture_shop_template
-
-	var_10_11[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 36120,
@@ -20492,11 +16857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_11
-
-	local var_10_12 = var_10_11.base.furniture_shop_template
-
-	var_10_12[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 36121,
@@ -20532,11 +16893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_12
-
-	local var_10_13 = var_10_12.base.furniture_shop_template
-
-	var_10_13[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 36122,
@@ -20572,11 +16929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_13
-
-	local var_10_14 = var_10_13.base.furniture_shop_template
-
-	var_10_14[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36123,
@@ -20612,11 +16965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_14
-
-	local var_10_15 = var_10_14.base.furniture_shop_template
-
-	var_10_15[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 36124,
@@ -20652,11 +17001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_15
-
-	local var_10_16 = var_10_15.base.furniture_shop_template
-
-	var_10_16[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 36125,
@@ -20692,11 +17037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_16
-
-	local var_10_17 = var_10_16.base.furniture_shop_template
-
-	var_10_17[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 36126,
@@ -20732,11 +17073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_17
-
-	local var_10_18 = var_10_17.base.furniture_shop_template
-
-	var_10_18[36301] = {
+	pg.base.furniture_shop_template[36301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36301,
@@ -20772,11 +17109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_18
-
-	local var_10_19 = var_10_18.base.furniture_shop_template
-
-	var_10_19[36303] = {
+	pg.base.furniture_shop_template[36303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36303,
@@ -20812,11 +17145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_19
-
-	local var_10_20 = var_10_19.base.furniture_shop_template
-
-	var_10_20[36304] = {
+	pg.base.furniture_shop_template[36304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 36304,
@@ -20852,11 +17181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_20
-
-	local var_10_21 = var_10_20.base.furniture_shop_template
-
-	var_10_21[36305] = {
+	pg.base.furniture_shop_template[36305] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 36305,
@@ -20892,11 +17217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_10_21
-
-	local var_10_22 = var_10_21.base.furniture_shop_template
-
-	var_10_22[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -20907,11 +17228,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_22
-
-	local var_10_23 = var_10_22.base.furniture_shop_template
-
-	var_10_23[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -20922,11 +17239,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_23
-
-	local var_10_24 = var_10_23.base.furniture_shop_template
-
-	var_10_24[37101] = {
+	pg.base.furniture_shop_template[37101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -20937,11 +17250,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_24
-
-	local var_10_25 = var_10_24.base.furniture_shop_template
-
-	var_10_25[37102] = {
+	pg.base.furniture_shop_template[37102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -20952,11 +17261,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_25
-
-	local var_10_26 = var_10_25.base.furniture_shop_template
-
-	var_10_26[37103] = {
+	pg.base.furniture_shop_template[37103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -20967,11 +17272,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_26
-
-	local var_10_27 = var_10_26.base.furniture_shop_template
-
-	var_10_27[37104] = {
+	pg.base.furniture_shop_template[37104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -20982,11 +17283,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_27
-
-	local var_10_28 = var_10_27.base.furniture_shop_template
-
-	var_10_28[37105] = {
+	pg.base.furniture_shop_template[37105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -20997,11 +17294,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_28
-
-	local var_10_29 = var_10_28.base.furniture_shop_template
-
-	var_10_29[37106] = {
+	pg.base.furniture_shop_template[37106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21012,11 +17305,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_29
-
-	local var_10_30 = var_10_29.base.furniture_shop_template
-
-	var_10_30[37107] = {
+	pg.base.furniture_shop_template[37107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21027,11 +17316,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_30
-
-	local var_10_31 = var_10_30.base.furniture_shop_template
-
-	var_10_31[37108] = {
+	pg.base.furniture_shop_template[37108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21042,11 +17327,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_31
-
-	local var_10_32 = var_10_31.base.furniture_shop_template
-
-	var_10_32[37109] = {
+	pg.base.furniture_shop_template[37109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21057,11 +17338,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_32
-
-	local var_10_33 = var_10_32.base.furniture_shop_template
-
-	var_10_33[37110] = {
+	pg.base.furniture_shop_template[37110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21072,11 +17349,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_33
-
-	local var_10_34 = var_10_33.base.furniture_shop_template
-
-	var_10_34[37111] = {
+	pg.base.furniture_shop_template[37111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21087,11 +17360,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_34
-
-	local var_10_35 = var_10_34.base.furniture_shop_template
-
-	var_10_35[37112] = {
+	pg.base.furniture_shop_template[37112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21102,11 +17371,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_35
-
-	local var_10_36 = var_10_35.base.furniture_shop_template
-
-	var_10_36[37113] = {
+	pg.base.furniture_shop_template[37113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21117,11 +17382,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_36
-
-	local var_10_37 = var_10_36.base.furniture_shop_template
-
-	var_10_37[37114] = {
+	pg.base.furniture_shop_template[37114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21132,11 +17393,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_37
-
-	local var_10_38 = var_10_37.base.furniture_shop_template
-
-	var_10_38[37115] = {
+	pg.base.furniture_shop_template[37115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -21147,11 +17404,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_38
-
-	local var_10_39 = var_10_38.base.furniture_shop_template
-
-	var_10_39[37116] = {
+	pg.base.furniture_shop_template[37116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21162,11 +17415,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_39
-
-	local var_10_40 = var_10_39.base.furniture_shop_template
-
-	var_10_40[37117] = {
+	pg.base.furniture_shop_template[37117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21177,11 +17426,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_40
-
-	local var_10_41 = var_10_40.base.furniture_shop_template
-
-	var_10_41[37118] = {
+	pg.base.furniture_shop_template[37118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21192,11 +17437,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_41
-
-	local var_10_42 = var_10_41.base.furniture_shop_template
-
-	var_10_42[37119] = {
+	pg.base.furniture_shop_template[37119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21207,11 +17448,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_42
-
-	local var_10_43 = var_10_42.base.furniture_shop_template
-
-	var_10_43[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21222,11 +17459,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_43
-
-	local var_10_44 = var_10_43.base.furniture_shop_template
-
-	var_10_44[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -21237,11 +17470,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_44
-
-	local var_10_45 = var_10_44.base.furniture_shop_template
-
-	var_10_45[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -21252,11 +17481,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_45
-
-	local var_10_46 = var_10_45.base.furniture_shop_template
-
-	var_10_46[38001] = {
+	pg.base.furniture_shop_template[38001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -21267,11 +17492,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_46
-
-	local var_10_47 = var_10_46.base.furniture_shop_template
-
-	var_10_47[38002] = {
+	pg.base.furniture_shop_template[38002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -21282,11 +17503,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_47
-
-	local var_10_48 = var_10_47.base.furniture_shop_template
-
-	var_10_48[38101] = {
+	pg.base.furniture_shop_template[38101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21297,11 +17514,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_48
-
-	local var_10_49 = var_10_48.base.furniture_shop_template
-
-	var_10_49[38102] = {
+	pg.base.furniture_shop_template[38102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21312,11 +17525,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_49
-
-	local var_10_50 = var_10_49.base.furniture_shop_template
-
-	var_10_50[38103] = {
+	pg.base.furniture_shop_template[38103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21327,11 +17536,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_50
-
-	local var_10_51 = var_10_50.base.furniture_shop_template
-
-	var_10_51[38104] = {
+	pg.base.furniture_shop_template[38104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21342,11 +17547,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_51
-
-	local var_10_52 = var_10_51.base.furniture_shop_template
-
-	var_10_52[38105] = {
+	pg.base.furniture_shop_template[38105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21357,11 +17558,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_52
-
-	local var_10_53 = var_10_52.base.furniture_shop_template
-
-	var_10_53[38106] = {
+	pg.base.furniture_shop_template[38106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -21372,11 +17569,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_53
-
-	local var_10_54 = var_10_53.base.furniture_shop_template
-
-	var_10_54[38107] = {
+	pg.base.furniture_shop_template[38107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21387,11 +17580,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_54
-
-	local var_10_55 = var_10_54.base.furniture_shop_template
-
-	var_10_55[38108] = {
+	pg.base.furniture_shop_template[38108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21402,11 +17591,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_55
-
-	local var_10_56 = var_10_55.base.furniture_shop_template
-
-	var_10_56[38109] = {
+	pg.base.furniture_shop_template[38109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21417,11 +17602,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_56
-
-	local var_10_57 = var_10_56.base.furniture_shop_template
-
-	var_10_57[38110] = {
+	pg.base.furniture_shop_template[38110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21432,11 +17613,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_57
-
-	local var_10_58 = var_10_57.base.furniture_shop_template
-
-	var_10_58[38111] = {
+	pg.base.furniture_shop_template[38111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21447,11 +17624,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_58
-
-	local var_10_59 = var_10_58.base.furniture_shop_template
-
-	var_10_59[38112] = {
+	pg.base.furniture_shop_template[38112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21462,11 +17635,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_59
-
-	local var_10_60 = var_10_59.base.furniture_shop_template
-
-	var_10_60[38113] = {
+	pg.base.furniture_shop_template[38113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21477,11 +17646,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_60
-
-	local var_10_61 = var_10_60.base.furniture_shop_template
-
-	var_10_61[38114] = {
+	pg.base.furniture_shop_template[38114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21492,11 +17657,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_61
-
-	local var_10_62 = var_10_61.base.furniture_shop_template
-
-	var_10_62[38115] = {
+	pg.base.furniture_shop_template[38115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21507,11 +17668,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_62
-
-	local var_10_63 = var_10_62.base.furniture_shop_template
-
-	var_10_63[38116] = {
+	pg.base.furniture_shop_template[38116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21522,11 +17679,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_63
-
-	local var_10_64 = var_10_63.base.furniture_shop_template
-
-	var_10_64[38117] = {
+	pg.base.furniture_shop_template[38117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21537,11 +17690,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_64
-
-	local var_10_65 = var_10_64.base.furniture_shop_template
-
-	var_10_65[38118] = {
+	pg.base.furniture_shop_template[38118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21552,11 +17701,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_65
-
-	local var_10_66 = var_10_65.base.furniture_shop_template
-
-	var_10_66[38119] = {
+	pg.base.furniture_shop_template[38119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21567,11 +17712,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_66
-
-	local var_10_67 = var_10_66.base.furniture_shop_template
-
-	var_10_67[38120] = {
+	pg.base.furniture_shop_template[38120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21582,11 +17723,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_67
-
-	local var_10_68 = var_10_67.base.furniture_shop_template
-
-	var_10_68[38121] = {
+	pg.base.furniture_shop_template[38121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21597,11 +17734,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_68
-
-	local var_10_69 = var_10_68.base.furniture_shop_template
-
-	var_10_69[38122] = {
+	pg.base.furniture_shop_template[38122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21612,11 +17745,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_69
-
-	local var_10_70 = var_10_69.base.furniture_shop_template
-
-	var_10_70[38123] = {
+	pg.base.furniture_shop_template[38123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21627,11 +17756,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_70
-
-	local var_10_71 = var_10_70.base.furniture_shop_template
-
-	var_10_71[38124] = {
+	pg.base.furniture_shop_template[38124] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -21642,11 +17767,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_71
-
-	local var_10_72 = var_10_71.base.furniture_shop_template
-
-	var_10_72[38125] = {
+	pg.base.furniture_shop_template[38125] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21657,11 +17778,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_72
-
-	local var_10_73 = var_10_72.base.furniture_shop_template
-
-	var_10_73[38126] = {
+	pg.base.furniture_shop_template[38126] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21672,11 +17789,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_73
-
-	local var_10_74 = var_10_73.base.furniture_shop_template
-
-	var_10_74[38127] = {
+	pg.base.furniture_shop_template[38127] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21687,11 +17800,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_74
-
-	local var_10_75 = var_10_74.base.furniture_shop_template
-
-	var_10_75[38128] = {
+	pg.base.furniture_shop_template[38128] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21702,11 +17811,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_75
-
-	local var_10_76 = var_10_75.base.furniture_shop_template
-
-	var_10_76[38129] = {
+	pg.base.furniture_shop_template[38129] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21717,11 +17822,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_76
-
-	local var_10_77 = var_10_76.base.furniture_shop_template
-
-	var_10_77[38130] = {
+	pg.base.furniture_shop_template[38130] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -21732,11 +17833,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_77
-
-	local var_10_78 = var_10_77.base.furniture_shop_template
-
-	var_10_78[38131] = {
+	pg.base.furniture_shop_template[38131] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21747,11 +17844,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_78
-
-	local var_10_79 = var_10_78.base.furniture_shop_template
-
-	var_10_79[38132] = {
+	pg.base.furniture_shop_template[38132] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21762,11 +17855,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_79
-
-	local var_10_80 = var_10_79.base.furniture_shop_template
-
-	var_10_80[38133] = {
+	pg.base.furniture_shop_template[38133] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21777,11 +17866,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_80
-
-	local var_10_81 = var_10_80.base.furniture_shop_template
-
-	var_10_81[38201] = {
+	pg.base.furniture_shop_template[38201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21792,11 +17877,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_81
-
-	local var_10_82 = var_10_81.base.furniture_shop_template
-
-	var_10_82[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21807,11 +17888,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_82
-
-	local var_10_83 = var_10_82.base.furniture_shop_template
-
-	var_10_83[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21822,11 +17899,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_83
-
-	local var_10_84 = var_10_83.base.furniture_shop_template
-
-	var_10_84[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21837,11 +17910,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_84
-
-	local var_10_85 = var_10_84.base.furniture_shop_template
-
-	var_10_85[38304] = {
+	pg.base.furniture_shop_template[38304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21852,11 +17921,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_85
-
-	local var_10_86 = var_10_85.base.furniture_shop_template
-
-	var_10_86[38305] = {
+	pg.base.furniture_shop_template[38305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21867,11 +17932,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_86
-
-	local var_10_87 = var_10_86.base.furniture_shop_template
-
-	var_10_87[39001] = {
+	pg.base.furniture_shop_template[39001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -21882,11 +17943,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_87
-
-	local var_10_88 = var_10_87.base.furniture_shop_template
-
-	var_10_88[39002] = {
+	pg.base.furniture_shop_template[39002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -21897,11 +17954,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_88
-
-	local var_10_89 = var_10_88.base.furniture_shop_template
-
-	var_10_89[39101] = {
+	pg.base.furniture_shop_template[39101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21912,11 +17965,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_89
-
-	local var_10_90 = var_10_89.base.furniture_shop_template
-
-	var_10_90[39102] = {
+	pg.base.furniture_shop_template[39102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21927,11 +17976,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_90
-
-	local var_10_91 = var_10_90.base.furniture_shop_template
-
-	var_10_91[39103] = {
+	pg.base.furniture_shop_template[39103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21942,11 +17987,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_91
-
-	local var_10_92 = var_10_91.base.furniture_shop_template
-
-	var_10_92[39104] = {
+	pg.base.furniture_shop_template[39104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21957,11 +17998,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_92
-
-	local var_10_93 = var_10_92.base.furniture_shop_template
-
-	var_10_93[39105] = {
+	pg.base.furniture_shop_template[39105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -21972,11 +18009,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_93
-
-	local var_10_94 = var_10_93.base.furniture_shop_template
-
-	var_10_94[39106] = {
+	pg.base.furniture_shop_template[39106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -21987,11 +18020,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_94
-
-	local var_10_95 = var_10_94.base.furniture_shop_template
-
-	var_10_95[39107] = {
+	pg.base.furniture_shop_template[39107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22002,11 +18031,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_95
-
-	local var_10_96 = var_10_95.base.furniture_shop_template
-
-	var_10_96[39108] = {
+	pg.base.furniture_shop_template[39108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22017,11 +18042,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_96
-
-	local var_10_97 = var_10_96.base.furniture_shop_template
-
-	var_10_97[39109] = {
+	pg.base.furniture_shop_template[39109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22032,11 +18053,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_97
-
-	local var_10_98 = var_10_97.base.furniture_shop_template
-
-	var_10_98[39110] = {
+	pg.base.furniture_shop_template[39110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22047,8 +18064,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_10_98
-	var_10_98.base.furniture_shop_template[39111] = {
+	pg.base.furniture_shop_template[39111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22063,11 +18079,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_11_0 = var_1_10000.base.furniture_shop_template
-
-	var_11_0[39112] = {
+	pg.base.furniture_shop_template[39112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22078,11 +18090,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_0
-
-	local var_11_1 = var_11_0.base.furniture_shop_template
-
-	var_11_1[39113] = {
+	pg.base.furniture_shop_template[39113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22093,11 +18101,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_1
-
-	local var_11_2 = var_11_1.base.furniture_shop_template
-
-	var_11_2[39114] = {
+	pg.base.furniture_shop_template[39114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22108,11 +18112,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_2
-
-	local var_11_3 = var_11_2.base.furniture_shop_template
-
-	var_11_3[39115] = {
+	pg.base.furniture_shop_template[39115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22123,11 +18123,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_3
-
-	local var_11_4 = var_11_3.base.furniture_shop_template
-
-	var_11_4[39116] = {
+	pg.base.furniture_shop_template[39116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22138,11 +18134,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_4
-
-	local var_11_5 = var_11_4.base.furniture_shop_template
-
-	var_11_5[39117] = {
+	pg.base.furniture_shop_template[39117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -22153,11 +18145,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_5
-
-	local var_11_6 = var_11_5.base.furniture_shop_template
-
-	var_11_6[39118] = {
+	pg.base.furniture_shop_template[39118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22168,11 +18156,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_6
-
-	local var_11_7 = var_11_6.base.furniture_shop_template
-
-	var_11_7[39119] = {
+	pg.base.furniture_shop_template[39119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22183,11 +18167,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_7
-
-	local var_11_8 = var_11_7.base.furniture_shop_template
-
-	var_11_8[39120] = {
+	pg.base.furniture_shop_template[39120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -22198,11 +18178,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_8
-
-	local var_11_9 = var_11_8.base.furniture_shop_template
-
-	var_11_9[39121] = {
+	pg.base.furniture_shop_template[39121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22213,11 +18189,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_9
-
-	local var_11_10 = var_11_9.base.furniture_shop_template
-
-	var_11_10[39122] = {
+	pg.base.furniture_shop_template[39122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22228,11 +18200,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_10
-
-	local var_11_11 = var_11_10.base.furniture_shop_template
-
-	var_11_11[39123] = {
+	pg.base.furniture_shop_template[39123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22243,11 +18211,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_11
-
-	local var_11_12 = var_11_11.base.furniture_shop_template
-
-	var_11_12[39124] = {
+	pg.base.furniture_shop_template[39124] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22258,11 +18222,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_12
-
-	local var_11_13 = var_11_12.base.furniture_shop_template
-
-	var_11_13[39125] = {
+	pg.base.furniture_shop_template[39125] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22273,11 +18233,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_13
-
-	local var_11_14 = var_11_13.base.furniture_shop_template
-
-	var_11_14[39126] = {
+	pg.base.furniture_shop_template[39126] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -22288,11 +18244,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_14
-
-	local var_11_15 = var_11_14.base.furniture_shop_template
-
-	var_11_15[39201] = {
+	pg.base.furniture_shop_template[39201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22303,11 +18255,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_15
-
-	local var_11_16 = var_11_15.base.furniture_shop_template
-
-	var_11_16[39202] = {
+	pg.base.furniture_shop_template[39202] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22318,11 +18266,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_16
-
-	local var_11_17 = var_11_16.base.furniture_shop_template
-
-	var_11_17[39203] = {
+	pg.base.furniture_shop_template[39203] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22333,11 +18277,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_17
-
-	local var_11_18 = var_11_17.base.furniture_shop_template
-
-	var_11_18[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22348,11 +18288,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_18
-
-	local var_11_19 = var_11_18.base.furniture_shop_template
-
-	var_11_19[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22363,11 +18299,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_19
-
-	local var_11_20 = var_11_19.base.furniture_shop_template
-
-	var_11_20[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22378,11 +18310,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_20
-
-	local var_11_21 = var_11_20.base.furniture_shop_template
-
-	var_11_21[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22393,11 +18321,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_21
-
-	local var_11_22 = var_11_21.base.furniture_shop_template
-
-	var_11_22[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22408,11 +18332,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_22
-
-	local var_11_23 = var_11_22.base.furniture_shop_template
-
-	var_11_23[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22423,11 +18343,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_23
-
-	local var_11_24 = var_11_23.base.furniture_shop_template
-
-	var_11_24[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22438,11 +18354,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_24
-
-	local var_11_25 = var_11_24.base.furniture_shop_template
-
-	var_11_25[40001] = {
+	pg.base.furniture_shop_template[40001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -22453,11 +18365,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_25
-
-	local var_11_26 = var_11_25.base.furniture_shop_template
-
-	var_11_26[40002] = {
+	pg.base.furniture_shop_template[40002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -22468,11 +18376,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_26
-
-	local var_11_27 = var_11_26.base.furniture_shop_template
-
-	var_11_27[40101] = {
+	pg.base.furniture_shop_template[40101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22483,11 +18387,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_27
-
-	local var_11_28 = var_11_27.base.furniture_shop_template
-
-	var_11_28[40102] = {
+	pg.base.furniture_shop_template[40102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22498,11 +18398,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_28
-
-	local var_11_29 = var_11_28.base.furniture_shop_template
-
-	var_11_29[40103] = {
+	pg.base.furniture_shop_template[40103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22513,11 +18409,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_29
-
-	local var_11_30 = var_11_29.base.furniture_shop_template
-
-	var_11_30[40104] = {
+	pg.base.furniture_shop_template[40104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22528,11 +18420,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_30
-
-	local var_11_31 = var_11_30.base.furniture_shop_template
-
-	var_11_31[40105] = {
+	pg.base.furniture_shop_template[40105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22543,11 +18431,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_31
-
-	local var_11_32 = var_11_31.base.furniture_shop_template
-
-	var_11_32[40106] = {
+	pg.base.furniture_shop_template[40106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22558,11 +18442,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_32
-
-	local var_11_33 = var_11_32.base.furniture_shop_template
-
-	var_11_33[40107] = {
+	pg.base.furniture_shop_template[40107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22573,11 +18453,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_33
-
-	local var_11_34 = var_11_33.base.furniture_shop_template
-
-	var_11_34[40108] = {
+	pg.base.furniture_shop_template[40108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22588,11 +18464,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_34
-
-	local var_11_35 = var_11_34.base.furniture_shop_template
-
-	var_11_35[40109] = {
+	pg.base.furniture_shop_template[40109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22603,11 +18475,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_35
-
-	local var_11_36 = var_11_35.base.furniture_shop_template
-
-	var_11_36[40110] = {
+	pg.base.furniture_shop_template[40110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22618,11 +18486,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_36
-
-	local var_11_37 = var_11_36.base.furniture_shop_template
-
-	var_11_37[40111] = {
+	pg.base.furniture_shop_template[40111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -22633,11 +18497,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_37
-
-	local var_11_38 = var_11_37.base.furniture_shop_template
-
-	var_11_38[40112] = {
+	pg.base.furniture_shop_template[40112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22648,11 +18508,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_38
-
-	local var_11_39 = var_11_38.base.furniture_shop_template
-
-	var_11_39[40114] = {
+	pg.base.furniture_shop_template[40114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22663,11 +18519,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_39
-
-	local var_11_40 = var_11_39.base.furniture_shop_template
-
-	var_11_40[40115] = {
+	pg.base.furniture_shop_template[40115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22678,11 +18530,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_40
-
-	local var_11_41 = var_11_40.base.furniture_shop_template
-
-	var_11_41[40116] = {
+	pg.base.furniture_shop_template[40116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22693,11 +18541,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_41
-
-	local var_11_42 = var_11_41.base.furniture_shop_template
-
-	var_11_42[40117] = {
+	pg.base.furniture_shop_template[40117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22708,11 +18552,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_42
-
-	local var_11_43 = var_11_42.base.furniture_shop_template
-
-	var_11_43[40118] = {
+	pg.base.furniture_shop_template[40118] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -22723,11 +18563,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_43
-
-	local var_11_44 = var_11_43.base.furniture_shop_template
-
-	var_11_44[40119] = {
+	pg.base.furniture_shop_template[40119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22738,11 +18574,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_44
-
-	local var_11_45 = var_11_44.base.furniture_shop_template
-
-	var_11_45[40120] = {
+	pg.base.furniture_shop_template[40120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22753,11 +18585,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_45
-
-	local var_11_46 = var_11_45.base.furniture_shop_template
-
-	var_11_46[40121] = {
+	pg.base.furniture_shop_template[40121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22768,11 +18596,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_46
-
-	local var_11_47 = var_11_46.base.furniture_shop_template
-
-	var_11_47[40122] = {
+	pg.base.furniture_shop_template[40122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22783,11 +18607,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_47
-
-	local var_11_48 = var_11_47.base.furniture_shop_template
-
-	var_11_48[40123] = {
+	pg.base.furniture_shop_template[40123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22798,11 +18618,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_48
-
-	local var_11_49 = var_11_48.base.furniture_shop_template
-
-	var_11_49[40124] = {
+	pg.base.furniture_shop_template[40124] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -22813,11 +18629,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_49
-
-	local var_11_50 = var_11_49.base.furniture_shop_template
-
-	var_11_50[40125] = {
+	pg.base.furniture_shop_template[40125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -22828,11 +18640,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_50
-
-	local var_11_51 = var_11_50.base.furniture_shop_template
-
-	var_11_51[40126] = {
+	pg.base.furniture_shop_template[40126] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -22843,11 +18651,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_51
-
-	local var_11_52 = var_11_51.base.furniture_shop_template
-
-	var_11_52[41001] = {
+	pg.base.furniture_shop_template[41001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -22858,11 +18662,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_52
-
-	local var_11_53 = var_11_52.base.furniture_shop_template
-
-	var_11_53[41002] = {
+	pg.base.furniture_shop_template[41002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -22873,11 +18673,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_53
-
-	local var_11_54 = var_11_53.base.furniture_shop_template
-
-	var_11_54[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22888,11 +18684,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_54
-
-	local var_11_55 = var_11_54.base.furniture_shop_template
-
-	var_11_55[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22903,11 +18695,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_55
-
-	local var_11_56 = var_11_55.base.furniture_shop_template
-
-	var_11_56[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22918,11 +18706,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_56
-
-	local var_11_57 = var_11_56.base.furniture_shop_template
-
-	var_11_57[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22933,11 +18717,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_57
-
-	local var_11_58 = var_11_57.base.furniture_shop_template
-
-	var_11_58[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22948,11 +18728,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_58
-
-	local var_11_59 = var_11_58.base.furniture_shop_template
-
-	var_11_59[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -22963,11 +18739,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_59
-
-	local var_11_60 = var_11_59.base.furniture_shop_template
-
-	var_11_60[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22978,11 +18750,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_60
-
-	local var_11_61 = var_11_60.base.furniture_shop_template
-
-	var_11_61[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -22993,11 +18761,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_61
-
-	local var_11_62 = var_11_61.base.furniture_shop_template
-
-	var_11_62[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23008,11 +18772,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_62
-
-	local var_11_63 = var_11_62.base.furniture_shop_template
-
-	var_11_63[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23023,11 +18783,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_63
-
-	local var_11_64 = var_11_63.base.furniture_shop_template
-
-	var_11_64[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23038,11 +18794,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_64
-
-	local var_11_65 = var_11_64.base.furniture_shop_template
-
-	var_11_65[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23053,11 +18805,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_65
-
-	local var_11_66 = var_11_65.base.furniture_shop_template
-
-	var_11_66[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23068,11 +18816,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_66
-
-	local var_11_67 = var_11_66.base.furniture_shop_template
-
-	var_11_67[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23083,11 +18827,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_67
-
-	local var_11_68 = var_11_67.base.furniture_shop_template
-
-	var_11_68[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23098,11 +18838,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_68
-
-	local var_11_69 = var_11_68.base.furniture_shop_template
-
-	var_11_69[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23113,11 +18849,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_69
-
-	local var_11_70 = var_11_69.base.furniture_shop_template
-
-	var_11_70[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -23128,11 +18860,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_70
-
-	local var_11_71 = var_11_70.base.furniture_shop_template
-
-	var_11_71[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -23143,11 +18871,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_71
-
-	local var_11_72 = var_11_71.base.furniture_shop_template
-
-	var_11_72[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -23158,11 +18882,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_72
-
-	local var_11_73 = var_11_72.base.furniture_shop_template
-
-	var_11_73[42102] = {
+	pg.base.furniture_shop_template[42102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23173,11 +18893,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_73
-
-	local var_11_74 = var_11_73.base.furniture_shop_template
-
-	var_11_74[42103] = {
+	pg.base.furniture_shop_template[42103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -23188,11 +18904,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_74
-
-	local var_11_75 = var_11_74.base.furniture_shop_template
-
-	var_11_75[42104] = {
+	pg.base.furniture_shop_template[42104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23203,11 +18915,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_75
-
-	local var_11_76 = var_11_75.base.furniture_shop_template
-
-	var_11_76[42105] = {
+	pg.base.furniture_shop_template[42105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23218,11 +18926,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_76
-
-	local var_11_77 = var_11_76.base.furniture_shop_template
-
-	var_11_77[42106] = {
+	pg.base.furniture_shop_template[42106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23233,11 +18937,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_77
-
-	local var_11_78 = var_11_77.base.furniture_shop_template
-
-	var_11_78[42107] = {
+	pg.base.furniture_shop_template[42107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23248,11 +18948,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_78
-
-	local var_11_79 = var_11_78.base.furniture_shop_template
-
-	var_11_79[42109] = {
+	pg.base.furniture_shop_template[42109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23263,11 +18959,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_79
-
-	local var_11_80 = var_11_79.base.furniture_shop_template
-
-	var_11_80[42110] = {
+	pg.base.furniture_shop_template[42110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23278,11 +18970,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_80
-
-	local var_11_81 = var_11_80.base.furniture_shop_template
-
-	var_11_81[42111] = {
+	pg.base.furniture_shop_template[42111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -23293,11 +18981,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_81
-
-	local var_11_82 = var_11_81.base.furniture_shop_template
-
-	var_11_82[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23308,11 +18992,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_82
-
-	local var_11_83 = var_11_82.base.furniture_shop_template
-
-	var_11_83[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23323,11 +19003,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_83
-
-	local var_11_84 = var_11_83.base.furniture_shop_template
-
-	var_11_84[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23338,11 +19014,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_84
-
-	local var_11_85 = var_11_84.base.furniture_shop_template
-
-	var_11_85[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23353,11 +19025,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_85
-
-	local var_11_86 = var_11_85.base.furniture_shop_template
-
-	var_11_86[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23368,11 +19036,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_86
-
-	local var_11_87 = var_11_86.base.furniture_shop_template
-
-	var_11_87[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23383,11 +19047,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_87
-
-	local var_11_88 = var_11_87.base.furniture_shop_template
-
-	var_11_88[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23398,11 +19058,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_88
-
-	local var_11_89 = var_11_88.base.furniture_shop_template
-
-	var_11_89[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23413,11 +19069,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_89
-
-	local var_11_90 = var_11_89.base.furniture_shop_template
-
-	var_11_90[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -23428,11 +19080,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_90
-
-	local var_11_91 = var_11_90.base.furniture_shop_template
-
-	var_11_91[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23443,11 +19091,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_91
-
-	local var_11_92 = var_11_91.base.furniture_shop_template
-
-	var_11_92[42301] = {
+	pg.base.furniture_shop_template[42301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23458,11 +19102,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_92
-
-	local var_11_93 = var_11_92.base.furniture_shop_template
-
-	var_11_93[42302] = {
+	pg.base.furniture_shop_template[42302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23473,11 +19113,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_93
-
-	local var_11_94 = var_11_93.base.furniture_shop_template
-
-	var_11_94[42303] = {
+	pg.base.furniture_shop_template[42303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -23488,11 +19124,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_94
-
-	local var_11_95 = var_11_94.base.furniture_shop_template
-
-	var_11_95[42304] = {
+	pg.base.furniture_shop_template[42304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -23503,11 +19135,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_11_95
-
-	local var_11_96 = var_11_95.base.furniture_shop_template
-
-	var_11_96[43001] = {
+	pg.base.furniture_shop_template[43001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 43001,
@@ -23543,11 +19171,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_96
-
-	local var_11_97 = var_11_96.base.furniture_shop_template
-
-	var_11_97[43002] = {
+	pg.base.furniture_shop_template[43002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 43002,
@@ -23583,11 +19207,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_97
-
-	local var_11_98 = var_11_97.base.furniture_shop_template
-
-	var_11_98[43102] = {
+	pg.base.furniture_shop_template[43102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43102,
@@ -23623,8 +19243,7 @@ end)()
 			}
 		}
 	}
-	pg = var_11_98
-	var_11_98.base.furniture_shop_template[43103] = {
+	pg.base.furniture_shop_template[43103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 43103,
@@ -23664,11 +19283,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_12_0 = var_1_10000.base.furniture_shop_template
-
-	var_12_0[43104] = {
+	pg.base.furniture_shop_template[43104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43104,
@@ -23704,11 +19319,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_0
-
-	local var_12_1 = var_12_0.base.furniture_shop_template
-
-	var_12_1[43105] = {
+	pg.base.furniture_shop_template[43105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43105,
@@ -23744,11 +19355,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_1
-
-	local var_12_2 = var_12_1.base.furniture_shop_template
-
-	var_12_2[43106] = {
+	pg.base.furniture_shop_template[43106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43106,
@@ -23784,11 +19391,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_2
-
-	local var_12_3 = var_12_2.base.furniture_shop_template
-
-	var_12_3[43107] = {
+	pg.base.furniture_shop_template[43107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43107,
@@ -23824,11 +19427,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_3
-
-	local var_12_4 = var_12_3.base.furniture_shop_template
-
-	var_12_4[43108] = {
+	pg.base.furniture_shop_template[43108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43108,
@@ -23864,11 +19463,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_4
-
-	local var_12_5 = var_12_4.base.furniture_shop_template
-
-	var_12_5[43109] = {
+	pg.base.furniture_shop_template[43109] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		id = 43109,
@@ -23904,11 +19499,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_5
-
-	local var_12_6 = var_12_5.base.furniture_shop_template
-
-	var_12_6[43110] = {
+	pg.base.furniture_shop_template[43110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43110,
@@ -23944,11 +19535,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_6
-
-	local var_12_7 = var_12_6.base.furniture_shop_template
-
-	var_12_7[43111] = {
+	pg.base.furniture_shop_template[43111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 43111,
@@ -23984,11 +19571,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_7
-
-	local var_12_8 = var_12_7.base.furniture_shop_template
-
-	var_12_8[43112] = {
+	pg.base.furniture_shop_template[43112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43112,
@@ -24024,11 +19607,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_8
-
-	local var_12_9 = var_12_8.base.furniture_shop_template
-
-	var_12_9[43113] = {
+	pg.base.furniture_shop_template[43113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43113,
@@ -24064,11 +19643,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_9
-
-	local var_12_10 = var_12_9.base.furniture_shop_template
-
-	var_12_10[43114] = {
+	pg.base.furniture_shop_template[43114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43114,
@@ -24104,11 +19679,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_10
-
-	local var_12_11 = var_12_10.base.furniture_shop_template
-
-	var_12_11[43116] = {
+	pg.base.furniture_shop_template[43116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43116,
@@ -24144,11 +19715,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_11
-
-	local var_12_12 = var_12_11.base.furniture_shop_template
-
-	var_12_12[43117] = {
+	pg.base.furniture_shop_template[43117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43117,
@@ -24184,11 +19751,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_12
-
-	local var_12_13 = var_12_12.base.furniture_shop_template
-
-	var_12_13[43118] = {
+	pg.base.furniture_shop_template[43118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43118,
@@ -24224,11 +19787,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_13
-
-	local var_12_14 = var_12_13.base.furniture_shop_template
-
-	var_12_14[43119] = {
+	pg.base.furniture_shop_template[43119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43119,
@@ -24264,11 +19823,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_14
-
-	local var_12_15 = var_12_14.base.furniture_shop_template
-
-	var_12_15[43120] = {
+	pg.base.furniture_shop_template[43120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43120,
@@ -24304,11 +19859,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_15
-
-	local var_12_16 = var_12_15.base.furniture_shop_template
-
-	var_12_16[43122] = {
+	pg.base.furniture_shop_template[43122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43122,
@@ -24344,11 +19895,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_16
-
-	local var_12_17 = var_12_16.base.furniture_shop_template
-
-	var_12_17[43123] = {
+	pg.base.furniture_shop_template[43123] = {
 		not_for_sale = 0,
 		gem_price = 200,
 		id = 43123,
@@ -24384,11 +19931,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_17
-
-	local var_12_18 = var_12_17.base.furniture_shop_template
-
-	var_12_18[43201] = {
+	pg.base.furniture_shop_template[43201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 43201,
@@ -24424,11 +19967,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_18
-
-	local var_12_19 = var_12_18.base.furniture_shop_template
-
-	var_12_19[43202] = {
+	pg.base.furniture_shop_template[43202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 43202,
@@ -24464,11 +20003,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_19
-
-	local var_12_20 = var_12_19.base.furniture_shop_template
-
-	var_12_20[43301] = {
+	pg.base.furniture_shop_template[43301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 43301,
@@ -24504,11 +20039,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_20
-
-	local var_12_21 = var_12_20.base.furniture_shop_template
-
-	var_12_21[43303] = {
+	pg.base.furniture_shop_template[43303] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 43303,
@@ -24544,11 +20075,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_21
-
-	local var_12_22 = var_12_21.base.furniture_shop_template
-
-	var_12_22[43304] = {
+	pg.base.furniture_shop_template[43304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43304,
@@ -24584,11 +20111,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_22
-
-	local var_12_23 = var_12_22.base.furniture_shop_template
-
-	var_12_23[43307] = {
+	pg.base.furniture_shop_template[43307] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 43307,
@@ -24624,11 +20147,7 @@ end)()
 			}
 		}
 	}
-	pg = var_12_23
-
-	local var_12_24 = var_12_23.base.furniture_shop_template
-
-	var_12_24[44001] = {
+	pg.base.furniture_shop_template[44001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -24639,11 +20158,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_24
-
-	local var_12_25 = var_12_24.base.furniture_shop_template
-
-	var_12_25[44002] = {
+	pg.base.furniture_shop_template[44002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -24654,11 +20169,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_25
-
-	local var_12_26 = var_12_25.base.furniture_shop_template
-
-	var_12_26[44101] = {
+	pg.base.furniture_shop_template[44101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24669,11 +20180,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_26
-
-	local var_12_27 = var_12_26.base.furniture_shop_template
-
-	var_12_27[44102] = {
+	pg.base.furniture_shop_template[44102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24684,11 +20191,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_27
-
-	local var_12_28 = var_12_27.base.furniture_shop_template
-
-	var_12_28[44103] = {
+	pg.base.furniture_shop_template[44103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24699,11 +20202,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_28
-
-	local var_12_29 = var_12_28.base.furniture_shop_template
-
-	var_12_29[44104] = {
+	pg.base.furniture_shop_template[44104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24714,11 +20213,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_29
-
-	local var_12_30 = var_12_29.base.furniture_shop_template
-
-	var_12_30[44105] = {
+	pg.base.furniture_shop_template[44105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24729,11 +20224,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_30
-
-	local var_12_31 = var_12_30.base.furniture_shop_template
-
-	var_12_31[44106] = {
+	pg.base.furniture_shop_template[44106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24744,11 +20235,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_31
-
-	local var_12_32 = var_12_31.base.furniture_shop_template
-
-	var_12_32[44107] = {
+	pg.base.furniture_shop_template[44107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24759,11 +20246,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_32
-
-	local var_12_33 = var_12_32.base.furniture_shop_template
-
-	var_12_33[44108] = {
+	pg.base.furniture_shop_template[44108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24774,11 +20257,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_33
-
-	local var_12_34 = var_12_33.base.furniture_shop_template
-
-	var_12_34[44109] = {
+	pg.base.furniture_shop_template[44109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24789,11 +20268,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_34
-
-	local var_12_35 = var_12_34.base.furniture_shop_template
-
-	var_12_35[44110] = {
+	pg.base.furniture_shop_template[44110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24804,11 +20279,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_35
-
-	local var_12_36 = var_12_35.base.furniture_shop_template
-
-	var_12_36[44111] = {
+	pg.base.furniture_shop_template[44111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24819,11 +20290,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_36
-
-	local var_12_37 = var_12_36.base.furniture_shop_template
-
-	var_12_37[44112] = {
+	pg.base.furniture_shop_template[44112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24834,11 +20301,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_37
-
-	local var_12_38 = var_12_37.base.furniture_shop_template
-
-	var_12_38[44113] = {
+	pg.base.furniture_shop_template[44113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24849,11 +20312,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_38
-
-	local var_12_39 = var_12_38.base.furniture_shop_template
-
-	var_12_39[44114] = {
+	pg.base.furniture_shop_template[44114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24864,11 +20323,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_39
-
-	local var_12_40 = var_12_39.base.furniture_shop_template
-
-	var_12_40[44115] = {
+	pg.base.furniture_shop_template[44115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24879,11 +20334,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_40
-
-	local var_12_41 = var_12_40.base.furniture_shop_template
-
-	var_12_41[44116] = {
+	pg.base.furniture_shop_template[44116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24894,11 +20345,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_41
-
-	local var_12_42 = var_12_41.base.furniture_shop_template
-
-	var_12_42[44117] = {
+	pg.base.furniture_shop_template[44117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24909,11 +20356,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_42
-
-	local var_12_43 = var_12_42.base.furniture_shop_template
-
-	var_12_43[44118] = {
+	pg.base.furniture_shop_template[44118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24924,11 +20367,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_43
-
-	local var_12_44 = var_12_43.base.furniture_shop_template
-
-	var_12_44[44119] = {
+	pg.base.furniture_shop_template[44119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24939,11 +20378,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_44
-
-	local var_12_45 = var_12_44.base.furniture_shop_template
-
-	var_12_45[44120] = {
+	pg.base.furniture_shop_template[44120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -24954,11 +20389,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_45
-
-	local var_12_46 = var_12_45.base.furniture_shop_template
-
-	var_12_46[44121] = {
+	pg.base.furniture_shop_template[44121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24969,11 +20400,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_46
-
-	local var_12_47 = var_12_46.base.furniture_shop_template
-
-	var_12_47[44122] = {
+	pg.base.furniture_shop_template[44122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -24984,11 +20411,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_47
-
-	local var_12_48 = var_12_47.base.furniture_shop_template
-
-	var_12_48[44123] = {
+	pg.base.furniture_shop_template[44123] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -24999,11 +20422,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_48
-
-	local var_12_49 = var_12_48.base.furniture_shop_template
-
-	var_12_49[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25014,11 +20433,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_49
-
-	local var_12_50 = var_12_49.base.furniture_shop_template
-
-	var_12_50[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25029,11 +20444,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_50
-
-	local var_12_51 = var_12_50.base.furniture_shop_template
-
-	var_12_51[45001] = {
+	pg.base.furniture_shop_template[45001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25044,11 +20455,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_51
-
-	local var_12_52 = var_12_51.base.furniture_shop_template
-
-	var_12_52[45002] = {
+	pg.base.furniture_shop_template[45002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25059,11 +20466,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_52
-
-	local var_12_53 = var_12_52.base.furniture_shop_template
-
-	var_12_53[45101] = {
+	pg.base.furniture_shop_template[45101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25074,11 +20477,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_53
-
-	local var_12_54 = var_12_53.base.furniture_shop_template
-
-	var_12_54[45102] = {
+	pg.base.furniture_shop_template[45102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25089,11 +20488,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_54
-
-	local var_12_55 = var_12_54.base.furniture_shop_template
-
-	var_12_55[45103] = {
+	pg.base.furniture_shop_template[45103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -25104,11 +20499,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_55
-
-	local var_12_56 = var_12_55.base.furniture_shop_template
-
-	var_12_56[45104] = {
+	pg.base.furniture_shop_template[45104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -25119,11 +20510,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_56
-
-	local var_12_57 = var_12_56.base.furniture_shop_template
-
-	var_12_57[45105] = {
+	pg.base.furniture_shop_template[45105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -25134,11 +20521,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_57
-
-	local var_12_58 = var_12_57.base.furniture_shop_template
-
-	var_12_58[45106] = {
+	pg.base.furniture_shop_template[45106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25149,11 +20532,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_58
-
-	local var_12_59 = var_12_58.base.furniture_shop_template
-
-	var_12_59[45107] = {
+	pg.base.furniture_shop_template[45107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25164,11 +20543,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_59
-
-	local var_12_60 = var_12_59.base.furniture_shop_template
-
-	var_12_60[45108] = {
+	pg.base.furniture_shop_template[45108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25179,11 +20554,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_60
-
-	local var_12_61 = var_12_60.base.furniture_shop_template
-
-	var_12_61[45109] = {
+	pg.base.furniture_shop_template[45109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25194,11 +20565,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_61
-
-	local var_12_62 = var_12_61.base.furniture_shop_template
-
-	var_12_62[45110] = {
+	pg.base.furniture_shop_template[45110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25209,11 +20576,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_62
-
-	local var_12_63 = var_12_62.base.furniture_shop_template
-
-	var_12_63[45111] = {
+	pg.base.furniture_shop_template[45111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25224,11 +20587,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_63
-
-	local var_12_64 = var_12_63.base.furniture_shop_template
-
-	var_12_64[45112] = {
+	pg.base.furniture_shop_template[45112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25239,11 +20598,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_64
-
-	local var_12_65 = var_12_64.base.furniture_shop_template
-
-	var_12_65[45113] = {
+	pg.base.furniture_shop_template[45113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25254,11 +20609,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_65
-
-	local var_12_66 = var_12_65.base.furniture_shop_template
-
-	var_12_66[45114] = {
+	pg.base.furniture_shop_template[45114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25269,11 +20620,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_66
-
-	local var_12_67 = var_12_66.base.furniture_shop_template
-
-	var_12_67[45115] = {
+	pg.base.furniture_shop_template[45115] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25284,11 +20631,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_67
-
-	local var_12_68 = var_12_67.base.furniture_shop_template
-
-	var_12_68[45116] = {
+	pg.base.furniture_shop_template[45116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25299,11 +20642,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_68
-
-	local var_12_69 = var_12_68.base.furniture_shop_template
-
-	var_12_69[45117] = {
+	pg.base.furniture_shop_template[45117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25314,11 +20653,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_69
-
-	local var_12_70 = var_12_69.base.furniture_shop_template
-
-	var_12_70[45118] = {
+	pg.base.furniture_shop_template[45118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25329,11 +20664,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_70
-
-	local var_12_71 = var_12_70.base.furniture_shop_template
-
-	var_12_71[45119] = {
+	pg.base.furniture_shop_template[45119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25344,11 +20675,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_71
-
-	local var_12_72 = var_12_71.base.furniture_shop_template
-
-	var_12_72[45120] = {
+	pg.base.furniture_shop_template[45120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25359,11 +20686,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_72
-
-	local var_12_73 = var_12_72.base.furniture_shop_template
-
-	var_12_73[45121] = {
+	pg.base.furniture_shop_template[45121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25374,11 +20697,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_73
-
-	local var_12_74 = var_12_73.base.furniture_shop_template
-
-	var_12_74[45122] = {
+	pg.base.furniture_shop_template[45122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25389,11 +20708,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_74
-
-	local var_12_75 = var_12_74.base.furniture_shop_template
-
-	var_12_75[45123] = {
+	pg.base.furniture_shop_template[45123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25404,11 +20719,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_75
-
-	local var_12_76 = var_12_75.base.furniture_shop_template
-
-	var_12_76[45124] = {
+	pg.base.furniture_shop_template[45124] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25419,11 +20730,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_76
-
-	local var_12_77 = var_12_76.base.furniture_shop_template
-
-	var_12_77[45125] = {
+	pg.base.furniture_shop_template[45125] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25434,11 +20741,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_77
-
-	local var_12_78 = var_12_77.base.furniture_shop_template
-
-	var_12_78[45126] = {
+	pg.base.furniture_shop_template[45126] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25449,11 +20752,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_78
-
-	local var_12_79 = var_12_78.base.furniture_shop_template
-
-	var_12_79[45127] = {
+	pg.base.furniture_shop_template[45127] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25464,11 +20763,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_79
-
-	local var_12_80 = var_12_79.base.furniture_shop_template
-
-	var_12_80[45128] = {
+	pg.base.furniture_shop_template[45128] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25479,11 +20774,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_80
-
-	local var_12_81 = var_12_80.base.furniture_shop_template
-
-	var_12_81[45129] = {
+	pg.base.furniture_shop_template[45129] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25494,11 +20785,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_81
-
-	local var_12_82 = var_12_81.base.furniture_shop_template
-
-	var_12_82[45130] = {
+	pg.base.furniture_shop_template[45130] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25509,11 +20796,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_82
-
-	local var_12_83 = var_12_82.base.furniture_shop_template
-
-	var_12_83[45131] = {
+	pg.base.furniture_shop_template[45131] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25524,11 +20807,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_83
-
-	local var_12_84 = var_12_83.base.furniture_shop_template
-
-	var_12_84[45132] = {
+	pg.base.furniture_shop_template[45132] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25539,11 +20818,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_84
-
-	local var_12_85 = var_12_84.base.furniture_shop_template
-
-	var_12_85[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25554,11 +20829,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_85
-
-	local var_12_86 = var_12_85.base.furniture_shop_template
-
-	var_12_86[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25569,11 +20840,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_86
-
-	local var_12_87 = var_12_86.base.furniture_shop_template
-
-	var_12_87[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -25584,11 +20851,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_87
-
-	local var_12_88 = var_12_87.base.furniture_shop_template
-
-	var_12_88[45301] = {
+	pg.base.furniture_shop_template[45301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25599,11 +20862,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_88
-
-	local var_12_89 = var_12_88.base.furniture_shop_template
-
-	var_12_89[45302] = {
+	pg.base.furniture_shop_template[45302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25614,11 +20873,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_89
-
-	local var_12_90 = var_12_89.base.furniture_shop_template
-
-	var_12_90[45303] = {
+	pg.base.furniture_shop_template[45303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25629,11 +20884,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_90
-
-	local var_12_91 = var_12_90.base.furniture_shop_template
-
-	var_12_91[45304] = {
+	pg.base.furniture_shop_template[45304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25644,11 +20895,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_91
-
-	local var_12_92 = var_12_91.base.furniture_shop_template
-
-	var_12_92[45305] = {
+	pg.base.furniture_shop_template[45305] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25659,11 +20906,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_92
-
-	local var_12_93 = var_12_92.base.furniture_shop_template
-
-	var_12_93[45306] = {
+	pg.base.furniture_shop_template[45306] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25674,11 +20917,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_93
-
-	local var_12_94 = var_12_93.base.furniture_shop_template
-
-	var_12_94[45307] = {
+	pg.base.furniture_shop_template[45307] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25689,11 +20928,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_94
-
-	local var_12_95 = var_12_94.base.furniture_shop_template
-
-	var_12_95[45308] = {
+	pg.base.furniture_shop_template[45308] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25704,11 +20939,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_95
-
-	local var_12_96 = var_12_95.base.furniture_shop_template
-
-	var_12_96[45309] = {
+	pg.base.furniture_shop_template[45309] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25719,11 +20950,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_96
-
-	local var_12_97 = var_12_96.base.furniture_shop_template
-
-	var_12_97[45310] = {
+	pg.base.furniture_shop_template[45310] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25734,11 +20961,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_97
-
-	local var_12_98 = var_12_97.base.furniture_shop_template
-
-	var_12_98[46001] = {
+	pg.base.furniture_shop_template[46001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25749,8 +20972,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_12_98
-	var_12_98.base.furniture_shop_template[46002] = {
+	pg.base.furniture_shop_template[46002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -25765,11 +20987,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_13_0 = var_1_10000.base.furniture_shop_template
-
-	var_13_0[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25780,11 +20998,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_0
-
-	local var_13_1 = var_13_0.base.furniture_shop_template
-
-	var_13_1[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25795,11 +21009,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_1
-
-	local var_13_2 = var_13_1.base.furniture_shop_template
-
-	var_13_2[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25810,11 +21020,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_2
-
-	local var_13_3 = var_13_2.base.furniture_shop_template
-
-	var_13_3[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25825,11 +21031,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_3
-
-	local var_13_4 = var_13_3.base.furniture_shop_template
-
-	var_13_4[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25840,11 +21042,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_4
-
-	local var_13_5 = var_13_4.base.furniture_shop_template
-
-	var_13_5[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25855,11 +21053,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_5
-
-	local var_13_6 = var_13_5.base.furniture_shop_template
-
-	var_13_6[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25870,11 +21064,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_6
-
-	local var_13_7 = var_13_6.base.furniture_shop_template
-
-	var_13_7[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25885,11 +21075,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_7
-
-	local var_13_8 = var_13_7.base.furniture_shop_template
-
-	var_13_8[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25900,11 +21086,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_8
-
-	local var_13_9 = var_13_8.base.furniture_shop_template
-
-	var_13_9[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25915,11 +21097,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_9
-
-	local var_13_10 = var_13_9.base.furniture_shop_template
-
-	var_13_10[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25930,11 +21108,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_10
-
-	local var_13_11 = var_13_10.base.furniture_shop_template
-
-	var_13_11[46112] = {
+	pg.base.furniture_shop_template[46112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -25945,11 +21119,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_11
-
-	local var_13_12 = var_13_11.base.furniture_shop_template
-
-	var_13_12[46113] = {
+	pg.base.furniture_shop_template[46113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25960,11 +21130,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_12
-
-	local var_13_13 = var_13_12.base.furniture_shop_template
-
-	var_13_13[46114] = {
+	pg.base.furniture_shop_template[46114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25975,11 +21141,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_13
-
-	local var_13_14 = var_13_13.base.furniture_shop_template
-
-	var_13_14[46115] = {
+	pg.base.furniture_shop_template[46115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -25990,11 +21152,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_14
-
-	local var_13_15 = var_13_14.base.furniture_shop_template
-
-	var_13_15[46116] = {
+	pg.base.furniture_shop_template[46116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26005,11 +21163,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_15
-
-	local var_13_16 = var_13_15.base.furniture_shop_template
-
-	var_13_16[46117] = {
+	pg.base.furniture_shop_template[46117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26020,11 +21174,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_16
-
-	local var_13_17 = var_13_16.base.furniture_shop_template
-
-	var_13_17[46118] = {
+	pg.base.furniture_shop_template[46118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26035,11 +21185,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_17
-
-	local var_13_18 = var_13_17.base.furniture_shop_template
-
-	var_13_18[46119] = {
+	pg.base.furniture_shop_template[46119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26050,11 +21196,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_18
-
-	local var_13_19 = var_13_18.base.furniture_shop_template
-
-	var_13_19[46120] = {
+	pg.base.furniture_shop_template[46120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26065,11 +21207,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_19
-
-	local var_13_20 = var_13_19.base.furniture_shop_template
-
-	var_13_20[46121] = {
+	pg.base.furniture_shop_template[46121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26080,11 +21218,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_20
-
-	local var_13_21 = var_13_20.base.furniture_shop_template
-
-	var_13_21[46122] = {
+	pg.base.furniture_shop_template[46122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26095,11 +21229,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_21
-
-	local var_13_22 = var_13_21.base.furniture_shop_template
-
-	var_13_22[46123] = {
+	pg.base.furniture_shop_template[46123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26110,11 +21240,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_22
-
-	local var_13_23 = var_13_22.base.furniture_shop_template
-
-	var_13_23[46124] = {
+	pg.base.furniture_shop_template[46124] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26125,11 +21251,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_23
-
-	local var_13_24 = var_13_23.base.furniture_shop_template
-
-	var_13_24[46125] = {
+	pg.base.furniture_shop_template[46125] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26140,11 +21262,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_24
-
-	local var_13_25 = var_13_24.base.furniture_shop_template
-
-	var_13_25[46126] = {
+	pg.base.furniture_shop_template[46126] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26155,11 +21273,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_25
-
-	local var_13_26 = var_13_25.base.furniture_shop_template
-
-	var_13_26[46127] = {
+	pg.base.furniture_shop_template[46127] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26170,11 +21284,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_26
-
-	local var_13_27 = var_13_26.base.furniture_shop_template
-
-	var_13_27[46128] = {
+	pg.base.furniture_shop_template[46128] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26185,11 +21295,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_27
-
-	local var_13_28 = var_13_27.base.furniture_shop_template
-
-	var_13_28[46129] = {
+	pg.base.furniture_shop_template[46129] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -26200,11 +21306,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_28
-
-	local var_13_29 = var_13_28.base.furniture_shop_template
-
-	var_13_29[46130] = {
+	pg.base.furniture_shop_template[46130] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -26215,11 +21317,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_29
-
-	local var_13_30 = var_13_29.base.furniture_shop_template
-
-	var_13_30[46131] = {
+	pg.base.furniture_shop_template[46131] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -26230,11 +21328,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_30
-
-	local var_13_31 = var_13_30.base.furniture_shop_template
-
-	var_13_31[46301] = {
+	pg.base.furniture_shop_template[46301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26245,11 +21339,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_31
-
-	local var_13_32 = var_13_31.base.furniture_shop_template
-
-	var_13_32[46302] = {
+	pg.base.furniture_shop_template[46302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26260,11 +21350,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_32
-
-	local var_13_33 = var_13_32.base.furniture_shop_template
-
-	var_13_33[46303] = {
+	pg.base.furniture_shop_template[46303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26275,11 +21361,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_33
-
-	local var_13_34 = var_13_33.base.furniture_shop_template
-
-	var_13_34[46304] = {
+	pg.base.furniture_shop_template[46304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26290,11 +21372,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_34
-
-	local var_13_35 = var_13_34.base.furniture_shop_template
-
-	var_13_35[46305] = {
+	pg.base.furniture_shop_template[46305] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26305,11 +21383,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_35
-
-	local var_13_36 = var_13_35.base.furniture_shop_template
-
-	var_13_36[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -26320,11 +21394,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_36
-
-	local var_13_37 = var_13_36.base.furniture_shop_template
-
-	var_13_37[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -26335,11 +21405,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_37
-
-	local var_13_38 = var_13_37.base.furniture_shop_template
-
-	var_13_38[48101] = {
+	pg.base.furniture_shop_template[48101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26350,11 +21416,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_38
-
-	local var_13_39 = var_13_38.base.furniture_shop_template
-
-	var_13_39[48102] = {
+	pg.base.furniture_shop_template[48102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26365,11 +21427,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_39
-
-	local var_13_40 = var_13_39.base.furniture_shop_template
-
-	var_13_40[48103] = {
+	pg.base.furniture_shop_template[48103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26380,11 +21438,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_40
-
-	local var_13_41 = var_13_40.base.furniture_shop_template
-
-	var_13_41[48104] = {
+	pg.base.furniture_shop_template[48104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26395,11 +21449,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_41
-
-	local var_13_42 = var_13_41.base.furniture_shop_template
-
-	var_13_42[48105] = {
+	pg.base.furniture_shop_template[48105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26410,11 +21460,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_42
-
-	local var_13_43 = var_13_42.base.furniture_shop_template
-
-	var_13_43[48106] = {
+	pg.base.furniture_shop_template[48106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26425,11 +21471,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_43
-
-	local var_13_44 = var_13_43.base.furniture_shop_template
-
-	var_13_44[48107] = {
+	pg.base.furniture_shop_template[48107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26440,11 +21482,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_44
-
-	local var_13_45 = var_13_44.base.furniture_shop_template
-
-	var_13_45[48108] = {
+	pg.base.furniture_shop_template[48108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26455,11 +21493,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_45
-
-	local var_13_46 = var_13_45.base.furniture_shop_template
-
-	var_13_46[48109] = {
+	pg.base.furniture_shop_template[48109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26470,11 +21504,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_46
-
-	local var_13_47 = var_13_46.base.furniture_shop_template
-
-	var_13_47[48110] = {
+	pg.base.furniture_shop_template[48110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26485,11 +21515,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_47
-
-	local var_13_48 = var_13_47.base.furniture_shop_template
-
-	var_13_48[48111] = {
+	pg.base.furniture_shop_template[48111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26500,11 +21526,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_48
-
-	local var_13_49 = var_13_48.base.furniture_shop_template
-
-	var_13_49[48112] = {
+	pg.base.furniture_shop_template[48112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26515,11 +21537,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_49
-
-	local var_13_50 = var_13_49.base.furniture_shop_template
-
-	var_13_50[48113] = {
+	pg.base.furniture_shop_template[48113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26530,11 +21548,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_50
-
-	local var_13_51 = var_13_50.base.furniture_shop_template
-
-	var_13_51[48114] = {
+	pg.base.furniture_shop_template[48114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26545,11 +21559,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_51
-
-	local var_13_52 = var_13_51.base.furniture_shop_template
-
-	var_13_52[48115] = {
+	pg.base.furniture_shop_template[48115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26560,11 +21570,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_52
-
-	local var_13_53 = var_13_52.base.furniture_shop_template
-
-	var_13_53[48116] = {
+	pg.base.furniture_shop_template[48116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26575,11 +21581,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_53
-
-	local var_13_54 = var_13_53.base.furniture_shop_template
-
-	var_13_54[48117] = {
+	pg.base.furniture_shop_template[48117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26590,11 +21592,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_54
-
-	local var_13_55 = var_13_54.base.furniture_shop_template
-
-	var_13_55[48118] = {
+	pg.base.furniture_shop_template[48118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26605,11 +21603,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_55
-
-	local var_13_56 = var_13_55.base.furniture_shop_template
-
-	var_13_56[48119] = {
+	pg.base.furniture_shop_template[48119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26620,11 +21614,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_56
-
-	local var_13_57 = var_13_56.base.furniture_shop_template
-
-	var_13_57[48120] = {
+	pg.base.furniture_shop_template[48120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26635,11 +21625,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_57
-
-	local var_13_58 = var_13_57.base.furniture_shop_template
-
-	var_13_58[48121] = {
+	pg.base.furniture_shop_template[48121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26650,11 +21636,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_58
-
-	local var_13_59 = var_13_58.base.furniture_shop_template
-
-	var_13_59[48122] = {
+	pg.base.furniture_shop_template[48122] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -26665,11 +21647,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_59
-
-	local var_13_60 = var_13_59.base.furniture_shop_template
-
-	var_13_60[48201] = {
+	pg.base.furniture_shop_template[48201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26680,11 +21658,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_60
-
-	local var_13_61 = var_13_60.base.furniture_shop_template
-
-	var_13_61[48202] = {
+	pg.base.furniture_shop_template[48202] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26695,11 +21669,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_61
-
-	local var_13_62 = var_13_61.base.furniture_shop_template
-
-	var_13_62[48203] = {
+	pg.base.furniture_shop_template[48203] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26710,11 +21680,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_62
-
-	local var_13_63 = var_13_62.base.furniture_shop_template
-
-	var_13_63[48301] = {
+	pg.base.furniture_shop_template[48301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -26725,11 +21691,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_63
-
-	local var_13_64 = var_13_63.base.furniture_shop_template
-
-	var_13_64[48302] = {
+	pg.base.furniture_shop_template[48302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26740,11 +21702,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_64
-
-	local var_13_65 = var_13_64.base.furniture_shop_template
-
-	var_13_65[48303] = {
+	pg.base.furniture_shop_template[48303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -26755,11 +21713,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_65
-
-	local var_13_66 = var_13_65.base.furniture_shop_template
-
-	var_13_66[49001] = {
+	pg.base.furniture_shop_template[49001] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49001,
@@ -26795,11 +21749,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_66
-
-	local var_13_67 = var_13_66.base.furniture_shop_template
-
-	var_13_67[49002] = {
+	pg.base.furniture_shop_template[49002] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49002,
@@ -26835,11 +21785,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_67
-
-	local var_13_68 = var_13_67.base.furniture_shop_template
-
-	var_13_68[49101] = {
+	pg.base.furniture_shop_template[49101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49101,
@@ -26875,11 +21821,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_68
-
-	local var_13_69 = var_13_68.base.furniture_shop_template
-
-	var_13_69[49102] = {
+	pg.base.furniture_shop_template[49102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49102,
@@ -26915,11 +21857,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_69
-
-	local var_13_70 = var_13_69.base.furniture_shop_template
-
-	var_13_70[49103] = {
+	pg.base.furniture_shop_template[49103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49103,
@@ -26955,11 +21893,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_70
-
-	local var_13_71 = var_13_70.base.furniture_shop_template
-
-	var_13_71[49104] = {
+	pg.base.furniture_shop_template[49104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49104,
@@ -26995,11 +21929,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_71
-
-	local var_13_72 = var_13_71.base.furniture_shop_template
-
-	var_13_72[49105] = {
+	pg.base.furniture_shop_template[49105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49105,
@@ -27035,11 +21965,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_72
-
-	local var_13_73 = var_13_72.base.furniture_shop_template
-
-	var_13_73[49106] = {
+	pg.base.furniture_shop_template[49106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49106,
@@ -27075,11 +22001,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_73
-
-	local var_13_74 = var_13_73.base.furniture_shop_template
-
-	var_13_74[49107] = {
+	pg.base.furniture_shop_template[49107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49107,
@@ -27115,11 +22037,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_74
-
-	local var_13_75 = var_13_74.base.furniture_shop_template
-
-	var_13_75[49108] = {
+	pg.base.furniture_shop_template[49108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49108,
@@ -27155,11 +22073,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_75
-
-	local var_13_76 = var_13_75.base.furniture_shop_template
-
-	var_13_76[49109] = {
+	pg.base.furniture_shop_template[49109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49109,
@@ -27195,11 +22109,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_76
-
-	local var_13_77 = var_13_76.base.furniture_shop_template
-
-	var_13_77[49110] = {
+	pg.base.furniture_shop_template[49110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49110,
@@ -27235,11 +22145,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_77
-
-	local var_13_78 = var_13_77.base.furniture_shop_template
-
-	var_13_78[49111] = {
+	pg.base.furniture_shop_template[49111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49111,
@@ -27275,11 +22181,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_78
-
-	local var_13_79 = var_13_78.base.furniture_shop_template
-
-	var_13_79[49112] = {
+	pg.base.furniture_shop_template[49112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49112,
@@ -27315,11 +22217,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_79
-
-	local var_13_80 = var_13_79.base.furniture_shop_template
-
-	var_13_80[49113] = {
+	pg.base.furniture_shop_template[49113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49113,
@@ -27355,11 +22253,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_80
-
-	local var_13_81 = var_13_80.base.furniture_shop_template
-
-	var_13_81[49114] = {
+	pg.base.furniture_shop_template[49114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49114,
@@ -27395,11 +22289,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_81
-
-	local var_13_82 = var_13_81.base.furniture_shop_template
-
-	var_13_82[49115] = {
+	pg.base.furniture_shop_template[49115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49115,
@@ -27435,11 +22325,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_82
-
-	local var_13_83 = var_13_82.base.furniture_shop_template
-
-	var_13_83[49116] = {
+	pg.base.furniture_shop_template[49116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49116,
@@ -27475,11 +22361,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_83
-
-	local var_13_84 = var_13_83.base.furniture_shop_template
-
-	var_13_84[49117] = {
+	pg.base.furniture_shop_template[49117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49117,
@@ -27515,11 +22397,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_84
-
-	local var_13_85 = var_13_84.base.furniture_shop_template
-
-	var_13_85[49118] = {
+	pg.base.furniture_shop_template[49118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49118,
@@ -27555,11 +22433,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_85
-
-	local var_13_86 = var_13_85.base.furniture_shop_template
-
-	var_13_86[49119] = {
+	pg.base.furniture_shop_template[49119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49119,
@@ -27595,11 +22469,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_86
-
-	local var_13_87 = var_13_86.base.furniture_shop_template
-
-	var_13_87[49120] = {
+	pg.base.furniture_shop_template[49120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49120,
@@ -27635,11 +22505,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_87
-
-	local var_13_88 = var_13_87.base.furniture_shop_template
-
-	var_13_88[49121] = {
+	pg.base.furniture_shop_template[49121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49121,
@@ -27675,11 +22541,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_88
-
-	local var_13_89 = var_13_88.base.furniture_shop_template
-
-	var_13_89[49122] = {
+	pg.base.furniture_shop_template[49122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49122,
@@ -27715,11 +22577,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_89
-
-	local var_13_90 = var_13_89.base.furniture_shop_template
-
-	var_13_90[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49301,
@@ -27755,11 +22613,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_90
-
-	local var_13_91 = var_13_90.base.furniture_shop_template
-
-	var_13_91[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49302,
@@ -27795,11 +22649,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_91
-
-	local var_13_92 = var_13_91.base.furniture_shop_template
-
-	var_13_92[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49303,
@@ -27835,11 +22685,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_92
-
-	local var_13_93 = var_13_92.base.furniture_shop_template
-
-	var_13_93[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49304,
@@ -27875,11 +22721,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_93
-
-	local var_13_94 = var_13_93.base.furniture_shop_template
-
-	var_13_94[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 49305,
@@ -27915,11 +22757,7 @@ end)()
 			}
 		}
 	}
-	pg = var_13_94
-
-	local var_13_95 = var_13_94.base.furniture_shop_template
-
-	var_13_95[50001] = {
+	pg.base.furniture_shop_template[50001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -27930,11 +22768,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_95
-
-	local var_13_96 = var_13_95.base.furniture_shop_template
-
-	var_13_96[50002] = {
+	pg.base.furniture_shop_template[50002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -27945,11 +22779,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_96
-
-	local var_13_97 = var_13_96.base.furniture_shop_template
-
-	var_13_97[50101] = {
+	pg.base.furniture_shop_template[50101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -27960,11 +22790,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_97
-
-	local var_13_98 = var_13_97.base.furniture_shop_template
-
-	var_13_98[50102] = {
+	pg.base.furniture_shop_template[50102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -27975,8 +22801,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_13_98
-	var_13_98.base.furniture_shop_template[50103] = {
+	pg.base.furniture_shop_template[50103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -27991,11 +22816,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_14_0 = var_1_10000.base.furniture_shop_template
-
-	var_14_0[50104] = {
+	pg.base.furniture_shop_template[50104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28006,11 +22827,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_0
-
-	local var_14_1 = var_14_0.base.furniture_shop_template
-
-	var_14_1[50105] = {
+	pg.base.furniture_shop_template[50105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28021,11 +22838,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_1
-
-	local var_14_2 = var_14_1.base.furniture_shop_template
-
-	var_14_2[50106] = {
+	pg.base.furniture_shop_template[50106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28036,11 +22849,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_2
-
-	local var_14_3 = var_14_2.base.furniture_shop_template
-
-	var_14_3[50107] = {
+	pg.base.furniture_shop_template[50107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28051,11 +22860,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_3
-
-	local var_14_4 = var_14_3.base.furniture_shop_template
-
-	var_14_4[50108] = {
+	pg.base.furniture_shop_template[50108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28066,11 +22871,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_4
-
-	local var_14_5 = var_14_4.base.furniture_shop_template
-
-	var_14_5[50109] = {
+	pg.base.furniture_shop_template[50109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28081,11 +22882,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_5
-
-	local var_14_6 = var_14_5.base.furniture_shop_template
-
-	var_14_6[50110] = {
+	pg.base.furniture_shop_template[50110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28096,11 +22893,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_6
-
-	local var_14_7 = var_14_6.base.furniture_shop_template
-
-	var_14_7[50111] = {
+	pg.base.furniture_shop_template[50111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28111,11 +22904,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_7
-
-	local var_14_8 = var_14_7.base.furniture_shop_template
-
-	var_14_8[50112] = {
+	pg.base.furniture_shop_template[50112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28126,11 +22915,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_8
-
-	local var_14_9 = var_14_8.base.furniture_shop_template
-
-	var_14_9[50113] = {
+	pg.base.furniture_shop_template[50113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28141,11 +22926,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_9
-
-	local var_14_10 = var_14_9.base.furniture_shop_template
-
-	var_14_10[50114] = {
+	pg.base.furniture_shop_template[50114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28156,11 +22937,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_10
-
-	local var_14_11 = var_14_10.base.furniture_shop_template
-
-	var_14_11[50115] = {
+	pg.base.furniture_shop_template[50115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28171,11 +22948,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_11
-
-	local var_14_12 = var_14_11.base.furniture_shop_template
-
-	var_14_12[50116] = {
+	pg.base.furniture_shop_template[50116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28186,11 +22959,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_12
-
-	local var_14_13 = var_14_12.base.furniture_shop_template
-
-	var_14_13[50117] = {
+	pg.base.furniture_shop_template[50117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28201,11 +22970,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_13
-
-	local var_14_14 = var_14_13.base.furniture_shop_template
-
-	var_14_14[50118] = {
+	pg.base.furniture_shop_template[50118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28216,11 +22981,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_14
-
-	local var_14_15 = var_14_14.base.furniture_shop_template
-
-	var_14_15[50119] = {
+	pg.base.furniture_shop_template[50119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28231,11 +22992,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_15
-
-	local var_14_16 = var_14_15.base.furniture_shop_template
-
-	var_14_16[50120] = {
+	pg.base.furniture_shop_template[50120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28246,11 +23003,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_16
-
-	local var_14_17 = var_14_16.base.furniture_shop_template
-
-	var_14_17[50121] = {
+	pg.base.furniture_shop_template[50121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28261,11 +23014,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_17
-
-	local var_14_18 = var_14_17.base.furniture_shop_template
-
-	var_14_18[50122] = {
+	pg.base.furniture_shop_template[50122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28276,11 +23025,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_18
-
-	local var_14_19 = var_14_18.base.furniture_shop_template
-
-	var_14_19[50123] = {
+	pg.base.furniture_shop_template[50123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28291,11 +23036,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_19
-
-	local var_14_20 = var_14_19.base.furniture_shop_template
-
-	var_14_20[50124] = {
+	pg.base.furniture_shop_template[50124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -28306,11 +23047,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_20
-
-	local var_14_21 = var_14_20.base.furniture_shop_template
-
-	var_14_21[52001] = {
+	pg.base.furniture_shop_template[52001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -28321,11 +23058,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_21
-
-	local var_14_22 = var_14_21.base.furniture_shop_template
-
-	var_14_22[52002] = {
+	pg.base.furniture_shop_template[52002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -28336,11 +23069,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_22
-
-	local var_14_23 = var_14_22.base.furniture_shop_template
-
-	var_14_23[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28351,11 +23080,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_23
-
-	local var_14_24 = var_14_23.base.furniture_shop_template
-
-	var_14_24[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28366,11 +23091,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_24
-
-	local var_14_25 = var_14_24.base.furniture_shop_template
-
-	var_14_25[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28381,11 +23102,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_25
-
-	local var_14_26 = var_14_25.base.furniture_shop_template
-
-	var_14_26[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28396,11 +23113,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_26
-
-	local var_14_27 = var_14_26.base.furniture_shop_template
-
-	var_14_27[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28411,11 +23124,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_27
-
-	local var_14_28 = var_14_27.base.furniture_shop_template
-
-	var_14_28[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28426,11 +23135,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_28
-
-	local var_14_29 = var_14_28.base.furniture_shop_template
-
-	var_14_29[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28441,11 +23146,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_29
-
-	local var_14_30 = var_14_29.base.furniture_shop_template
-
-	var_14_30[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28456,11 +23157,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_30
-
-	local var_14_31 = var_14_30.base.furniture_shop_template
-
-	var_14_31[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28471,11 +23168,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_31
-
-	local var_14_32 = var_14_31.base.furniture_shop_template
-
-	var_14_32[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28486,11 +23179,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_32
-
-	local var_14_33 = var_14_32.base.furniture_shop_template
-
-	var_14_33[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28501,11 +23190,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_33
-
-	local var_14_34 = var_14_33.base.furniture_shop_template
-
-	var_14_34[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28516,11 +23201,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_34
-
-	local var_14_35 = var_14_34.base.furniture_shop_template
-
-	var_14_35[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28531,11 +23212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_35
-
-	local var_14_36 = var_14_35.base.furniture_shop_template
-
-	var_14_36[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28546,11 +23223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_36
-
-	local var_14_37 = var_14_36.base.furniture_shop_template
-
-	var_14_37[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28561,11 +23234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_37
-
-	local var_14_38 = var_14_37.base.furniture_shop_template
-
-	var_14_38[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28576,11 +23245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_38
-
-	local var_14_39 = var_14_38.base.furniture_shop_template
-
-	var_14_39[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28591,11 +23256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_39
-
-	local var_14_40 = var_14_39.base.furniture_shop_template
-
-	var_14_40[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28606,11 +23267,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_40
-
-	local var_14_41 = var_14_40.base.furniture_shop_template
-
-	var_14_41[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -28621,11 +23278,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_41
-
-	local var_14_42 = var_14_41.base.furniture_shop_template
-
-	var_14_42[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -28636,11 +23289,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_42
-
-	local var_14_43 = var_14_42.base.furniture_shop_template
-
-	var_14_43[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -28651,11 +23300,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_43
-
-	local var_14_44 = var_14_43.base.furniture_shop_template
-
-	var_14_44[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -28666,11 +23311,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_44
-
-	local var_14_45 = var_14_44.base.furniture_shop_template
-
-	var_14_45[53101] = {
+	pg.base.furniture_shop_template[53101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28681,11 +23322,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_45
-
-	local var_14_46 = var_14_45.base.furniture_shop_template
-
-	var_14_46[53102] = {
+	pg.base.furniture_shop_template[53102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28696,11 +23333,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_46
-
-	local var_14_47 = var_14_46.base.furniture_shop_template
-
-	var_14_47[53103] = {
+	pg.base.furniture_shop_template[53103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28711,11 +23344,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_47
-
-	local var_14_48 = var_14_47.base.furniture_shop_template
-
-	var_14_48[53104] = {
+	pg.base.furniture_shop_template[53104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28726,11 +23355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_48
-
-	local var_14_49 = var_14_48.base.furniture_shop_template
-
-	var_14_49[53105] = {
+	pg.base.furniture_shop_template[53105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28741,11 +23366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_49
-
-	local var_14_50 = var_14_49.base.furniture_shop_template
-
-	var_14_50[53106] = {
+	pg.base.furniture_shop_template[53106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28756,11 +23377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_50
-
-	local var_14_51 = var_14_50.base.furniture_shop_template
-
-	var_14_51[53107] = {
+	pg.base.furniture_shop_template[53107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28771,11 +23388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_51
-
-	local var_14_52 = var_14_51.base.furniture_shop_template
-
-	var_14_52[53108] = {
+	pg.base.furniture_shop_template[53108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28786,11 +23399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_52
-
-	local var_14_53 = var_14_52.base.furniture_shop_template
-
-	var_14_53[53109] = {
+	pg.base.furniture_shop_template[53109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28801,11 +23410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_53
-
-	local var_14_54 = var_14_53.base.furniture_shop_template
-
-	var_14_54[53111] = {
+	pg.base.furniture_shop_template[53111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28816,11 +23421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_54
-
-	local var_14_55 = var_14_54.base.furniture_shop_template
-
-	var_14_55[53112] = {
+	pg.base.furniture_shop_template[53112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28831,11 +23432,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_55
-
-	local var_14_56 = var_14_55.base.furniture_shop_template
-
-	var_14_56[53113] = {
+	pg.base.furniture_shop_template[53113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28846,11 +23443,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_56
-
-	local var_14_57 = var_14_56.base.furniture_shop_template
-
-	var_14_57[53114] = {
+	pg.base.furniture_shop_template[53114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28861,11 +23454,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_57
-
-	local var_14_58 = var_14_57.base.furniture_shop_template
-
-	var_14_58[53119] = {
+	pg.base.furniture_shop_template[53119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -28876,11 +23465,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_58
-
-	local var_14_59 = var_14_58.base.furniture_shop_template
-
-	var_14_59[53117] = {
+	pg.base.furniture_shop_template[53117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -28891,11 +23476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_59
-
-	local var_14_60 = var_14_59.base.furniture_shop_template
-
-	var_14_60[53118] = {
+	pg.base.furniture_shop_template[53118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -28906,11 +23487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_60
-
-	local var_14_61 = var_14_60.base.furniture_shop_template
-
-	var_14_61[53301] = {
+	pg.base.furniture_shop_template[53301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28921,11 +23498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_61
-
-	local var_14_62 = var_14_61.base.furniture_shop_template
-
-	var_14_62[53302] = {
+	pg.base.furniture_shop_template[53302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28936,11 +23509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_62
-
-	local var_14_63 = var_14_62.base.furniture_shop_template
-
-	var_14_63[53303] = {
+	pg.base.furniture_shop_template[53303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -28951,11 +23520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_63
-
-	local var_14_64 = var_14_63.base.furniture_shop_template
-
-	var_14_64[53304] = {
+	pg.base.furniture_shop_template[53304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -28966,11 +23531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_14_64
-
-	local var_14_65 = var_14_64.base.furniture_shop_template
-
-	var_14_65[55001] = {
+	pg.base.furniture_shop_template[55001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 55001,
@@ -29006,11 +23567,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_65
-
-	local var_14_66 = var_14_65.base.furniture_shop_template
-
-	var_14_66[55002] = {
+	pg.base.furniture_shop_template[55002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 55002,
@@ -29046,11 +23603,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_66
-
-	local var_14_67 = var_14_66.base.furniture_shop_template
-
-	var_14_67[55101] = {
+	pg.base.furniture_shop_template[55101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55101,
@@ -29086,11 +23639,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_67
-
-	local var_14_68 = var_14_67.base.furniture_shop_template
-
-	var_14_68[55102] = {
+	pg.base.furniture_shop_template[55102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 55102,
@@ -29126,11 +23675,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_68
-
-	local var_14_69 = var_14_68.base.furniture_shop_template
-
-	var_14_69[55103] = {
+	pg.base.furniture_shop_template[55103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55103,
@@ -29166,11 +23711,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_69
-
-	local var_14_70 = var_14_69.base.furniture_shop_template
-
-	var_14_70[55104] = {
+	pg.base.furniture_shop_template[55104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55104,
@@ -29206,11 +23747,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_70
-
-	local var_14_71 = var_14_70.base.furniture_shop_template
-
-	var_14_71[55106] = {
+	pg.base.furniture_shop_template[55106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55106,
@@ -29246,11 +23783,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_71
-
-	local var_14_72 = var_14_71.base.furniture_shop_template
-
-	var_14_72[55108] = {
+	pg.base.furniture_shop_template[55108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55108,
@@ -29286,11 +23819,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_72
-
-	local var_14_73 = var_14_72.base.furniture_shop_template
-
-	var_14_73[55109] = {
+	pg.base.furniture_shop_template[55109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 55109,
@@ -29326,11 +23855,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_73
-
-	local var_14_74 = var_14_73.base.furniture_shop_template
-
-	var_14_74[55110] = {
+	pg.base.furniture_shop_template[55110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55110,
@@ -29366,11 +23891,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_74
-
-	local var_14_75 = var_14_74.base.furniture_shop_template
-
-	var_14_75[55111] = {
+	pg.base.furniture_shop_template[55111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55111,
@@ -29406,11 +23927,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_75
-
-	local var_14_76 = var_14_75.base.furniture_shop_template
-
-	var_14_76[55112] = {
+	pg.base.furniture_shop_template[55112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55112,
@@ -29446,11 +23963,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_76
-
-	local var_14_77 = var_14_76.base.furniture_shop_template
-
-	var_14_77[55113] = {
+	pg.base.furniture_shop_template[55113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55113,
@@ -29486,11 +23999,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_77
-
-	local var_14_78 = var_14_77.base.furniture_shop_template
-
-	var_14_78[55114] = {
+	pg.base.furniture_shop_template[55114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55114,
@@ -29526,11 +24035,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_78
-
-	local var_14_79 = var_14_78.base.furniture_shop_template
-
-	var_14_79[55115] = {
+	pg.base.furniture_shop_template[55115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55115,
@@ -29566,11 +24071,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_79
-
-	local var_14_80 = var_14_79.base.furniture_shop_template
-
-	var_14_80[55116] = {
+	pg.base.furniture_shop_template[55116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55116,
@@ -29606,11 +24107,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_80
-
-	local var_14_81 = var_14_80.base.furniture_shop_template
-
-	var_14_81[55117] = {
+	pg.base.furniture_shop_template[55117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55117,
@@ -29646,11 +24143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_81
-
-	local var_14_82 = var_14_81.base.furniture_shop_template
-
-	var_14_82[55118] = {
+	pg.base.furniture_shop_template[55118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 55118,
@@ -29686,11 +24179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_82
-
-	local var_14_83 = var_14_82.base.furniture_shop_template
-
-	var_14_83[55119] = {
+	pg.base.furniture_shop_template[55119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 55119,
@@ -29726,11 +24215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_83
-
-	local var_14_84 = var_14_83.base.furniture_shop_template
-
-	var_14_84[55120] = {
+	pg.base.furniture_shop_template[55120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 55120,
@@ -29766,11 +24251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_84
-
-	local var_14_85 = var_14_84.base.furniture_shop_template
-
-	var_14_85[55201] = {
+	pg.base.furniture_shop_template[55201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 55201,
@@ -29806,11 +24287,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_85
-
-	local var_14_86 = var_14_85.base.furniture_shop_template
-
-	var_14_86[55202] = {
+	pg.base.furniture_shop_template[55202] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55202,
@@ -29846,11 +24323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_86
-
-	local var_14_87 = var_14_86.base.furniture_shop_template
-
-	var_14_87[55203] = {
+	pg.base.furniture_shop_template[55203] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55203,
@@ -29886,11 +24359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_87
-
-	local var_14_88 = var_14_87.base.furniture_shop_template
-
-	var_14_88[55204] = {
+	pg.base.furniture_shop_template[55204] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55204,
@@ -29926,11 +24395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_88
-
-	local var_14_89 = var_14_88.base.furniture_shop_template
-
-	var_14_89[55205] = {
+	pg.base.furniture_shop_template[55205] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 55205,
@@ -29966,11 +24431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_89
-
-	local var_14_90 = var_14_89.base.furniture_shop_template
-
-	var_14_90[55206] = {
+	pg.base.furniture_shop_template[55206] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55206,
@@ -30006,11 +24467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_90
-
-	local var_14_91 = var_14_90.base.furniture_shop_template
-
-	var_14_91[55207] = {
+	pg.base.furniture_shop_template[55207] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55207,
@@ -30046,11 +24503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_91
-
-	local var_14_92 = var_14_91.base.furniture_shop_template
-
-	var_14_92[55208] = {
+	pg.base.furniture_shop_template[55208] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55208,
@@ -30086,11 +24539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_92
-
-	local var_14_93 = var_14_92.base.furniture_shop_template
-
-	var_14_93[55209] = {
+	pg.base.furniture_shop_template[55209] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55209,
@@ -30126,11 +24575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_93
-
-	local var_14_94 = var_14_93.base.furniture_shop_template
-
-	var_14_94[55210] = {
+	pg.base.furniture_shop_template[55210] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55210,
@@ -30166,11 +24611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_94
-
-	local var_14_95 = var_14_94.base.furniture_shop_template
-
-	var_14_95[55211] = {
+	pg.base.furniture_shop_template[55211] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55211,
@@ -30206,11 +24647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_95
-
-	local var_14_96 = var_14_95.base.furniture_shop_template
-
-	var_14_96[55212] = {
+	pg.base.furniture_shop_template[55212] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55212,
@@ -30246,11 +24683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_96
-
-	local var_14_97 = var_14_96.base.furniture_shop_template
-
-	var_14_97[55213] = {
+	pg.base.furniture_shop_template[55213] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55213,
@@ -30286,11 +24719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_97
-
-	local var_14_98 = var_14_97.base.furniture_shop_template
-
-	var_14_98[55214] = {
+	pg.base.furniture_shop_template[55214] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55214,
@@ -30326,8 +24755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_14_98
-	var_14_98.base.furniture_shop_template[55215] = {
+	pg.base.furniture_shop_template[55215] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55215,
@@ -30367,11 +24795,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_15_0 = var_1_10000.base.furniture_shop_template
-
-	var_15_0[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 55301,
@@ -30407,11 +24831,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_0
-
-	local var_15_1 = var_15_0.base.furniture_shop_template
-
-	var_15_1[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 55302,
@@ -30447,11 +24867,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_1
-
-	local var_15_2 = var_15_1.base.furniture_shop_template
-
-	var_15_2[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55303,
@@ -30487,11 +24903,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_2
-
-	local var_15_3 = var_15_2.base.furniture_shop_template
-
-	var_15_3[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 55304,
@@ -30527,11 +24939,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_3
-
-	local var_15_4 = var_15_3.base.furniture_shop_template
-
-	var_15_4[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55305,
@@ -30567,11 +24975,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_4
-
-	local var_15_5 = var_15_4.base.furniture_shop_template
-
-	var_15_5[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 55306,
@@ -30607,11 +25011,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_5
-
-	local var_15_6 = var_15_5.base.furniture_shop_template
-
-	var_15_6[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 55307,
@@ -30647,11 +25047,7 @@ end)()
 			}
 		}
 	}
-	pg = var_15_6
-
-	local var_15_7 = var_15_6.base.furniture_shop_template
-
-	var_15_7[56001] = {
+	pg.base.furniture_shop_template[56001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -30662,11 +25058,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_7
-
-	local var_15_8 = var_15_7.base.furniture_shop_template
-
-	var_15_8[56002] = {
+	pg.base.furniture_shop_template[56002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -30677,11 +25069,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_8
-
-	local var_15_9 = var_15_8.base.furniture_shop_template
-
-	var_15_9[56101] = {
+	pg.base.furniture_shop_template[56101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -30692,11 +25080,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_9
-
-	local var_15_10 = var_15_9.base.furniture_shop_template
-
-	var_15_10[56102] = {
+	pg.base.furniture_shop_template[56102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30707,11 +25091,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_10
-
-	local var_15_11 = var_15_10.base.furniture_shop_template
-
-	var_15_11[56103] = {
+	pg.base.furniture_shop_template[56103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30722,11 +25102,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_11
-
-	local var_15_12 = var_15_11.base.furniture_shop_template
-
-	var_15_12[56104] = {
+	pg.base.furniture_shop_template[56104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -30737,11 +25113,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_12
-
-	local var_15_13 = var_15_12.base.furniture_shop_template
-
-	var_15_13[56105] = {
+	pg.base.furniture_shop_template[56105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30752,11 +25124,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_13
-
-	local var_15_14 = var_15_13.base.furniture_shop_template
-
-	var_15_14[56106] = {
+	pg.base.furniture_shop_template[56106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30767,11 +25135,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_14
-
-	local var_15_15 = var_15_14.base.furniture_shop_template
-
-	var_15_15[56107] = {
+	pg.base.furniture_shop_template[56107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30782,11 +25146,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_15
-
-	local var_15_16 = var_15_15.base.furniture_shop_template
-
-	var_15_16[56108] = {
+	pg.base.furniture_shop_template[56108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30797,11 +25157,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_16
-
-	local var_15_17 = var_15_16.base.furniture_shop_template
-
-	var_15_17[56109] = {
+	pg.base.furniture_shop_template[56109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -30812,11 +25168,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_17
-
-	local var_15_18 = var_15_17.base.furniture_shop_template
-
-	var_15_18[56110] = {
+	pg.base.furniture_shop_template[56110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -30827,11 +25179,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_18
-
-	local var_15_19 = var_15_18.base.furniture_shop_template
-
-	var_15_19[56111] = {
+	pg.base.furniture_shop_template[56111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -30842,11 +25190,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_19
-
-	local var_15_20 = var_15_19.base.furniture_shop_template
-
-	var_15_20[56112] = {
+	pg.base.furniture_shop_template[56112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -30857,11 +25201,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_20
-
-	local var_15_21 = var_15_20.base.furniture_shop_template
-
-	var_15_21[56113] = {
+	pg.base.furniture_shop_template[56113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -30872,11 +25212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_21
-
-	local var_15_22 = var_15_21.base.furniture_shop_template
-
-	var_15_22[56114] = {
+	pg.base.furniture_shop_template[56114] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -30887,11 +25223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_22
-
-	local var_15_23 = var_15_22.base.furniture_shop_template
-
-	var_15_23[56115] = {
+	pg.base.furniture_shop_template[56115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -30902,11 +25234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_23
-
-	local var_15_24 = var_15_23.base.furniture_shop_template
-
-	var_15_24[57001] = {
+	pg.base.furniture_shop_template[57001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -30917,11 +25245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_24
-
-	local var_15_25 = var_15_24.base.furniture_shop_template
-
-	var_15_25[57002] = {
+	pg.base.furniture_shop_template[57002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -30932,11 +25256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_25
-
-	local var_15_26 = var_15_25.base.furniture_shop_template
-
-	var_15_26[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30947,11 +25267,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_26
-
-	local var_15_27 = var_15_26.base.furniture_shop_template
-
-	var_15_27[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -30962,11 +25278,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_27
-
-	local var_15_28 = var_15_27.base.furniture_shop_template
-
-	var_15_28[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30977,11 +25289,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_28
-
-	local var_15_29 = var_15_28.base.furniture_shop_template
-
-	var_15_29[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -30992,11 +25300,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_29
-
-	local var_15_30 = var_15_29.base.furniture_shop_template
-
-	var_15_30[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31007,11 +25311,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_30
-
-	local var_15_31 = var_15_30.base.furniture_shop_template
-
-	var_15_31[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31022,11 +25322,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_31
-
-	local var_15_32 = var_15_31.base.furniture_shop_template
-
-	var_15_32[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31037,11 +25333,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_32
-
-	local var_15_33 = var_15_32.base.furniture_shop_template
-
-	var_15_33[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31052,11 +25344,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_33
-
-	local var_15_34 = var_15_33.base.furniture_shop_template
-
-	var_15_34[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31067,11 +25355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_34
-
-	local var_15_35 = var_15_34.base.furniture_shop_template
-
-	var_15_35[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31082,11 +25366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_35
-
-	local var_15_36 = var_15_35.base.furniture_shop_template
-
-	var_15_36[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31097,11 +25377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_36
-
-	local var_15_37 = var_15_36.base.furniture_shop_template
-
-	var_15_37[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31112,11 +25388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_37
-
-	local var_15_38 = var_15_37.base.furniture_shop_template
-
-	var_15_38[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31127,11 +25399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_38
-
-	local var_15_39 = var_15_38.base.furniture_shop_template
-
-	var_15_39[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31142,11 +25410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_39
-
-	local var_15_40 = var_15_39.base.furniture_shop_template
-
-	var_15_40[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31157,11 +25421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_40
-
-	local var_15_41 = var_15_40.base.furniture_shop_template
-
-	var_15_41[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31172,11 +25432,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_41
-
-	local var_15_42 = var_15_41.base.furniture_shop_template
-
-	var_15_42[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31187,11 +25443,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_42
-
-	local var_15_43 = var_15_42.base.furniture_shop_template
-
-	var_15_43[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31202,11 +25454,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_43
-
-	local var_15_44 = var_15_43.base.furniture_shop_template
-
-	var_15_44[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31217,11 +25465,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_44
-
-	local var_15_45 = var_15_44.base.furniture_shop_template
-
-	var_15_45[57120] = {
+	pg.base.furniture_shop_template[57120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31232,11 +25476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_45
-
-	local var_15_46 = var_15_45.base.furniture_shop_template
-
-	var_15_46[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31247,11 +25487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_46
-
-	local var_15_47 = var_15_46.base.furniture_shop_template
-
-	var_15_47[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31262,11 +25498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_47
-
-	local var_15_48 = var_15_47.base.furniture_shop_template
-
-	var_15_48[58101] = {
+	pg.base.furniture_shop_template[58101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31277,11 +25509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_48
-
-	local var_15_49 = var_15_48.base.furniture_shop_template
-
-	var_15_49[58102] = {
+	pg.base.furniture_shop_template[58102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31292,11 +25520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_49
-
-	local var_15_50 = var_15_49.base.furniture_shop_template
-
-	var_15_50[58103] = {
+	pg.base.furniture_shop_template[58103] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31307,11 +25531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_50
-
-	local var_15_51 = var_15_50.base.furniture_shop_template
-
-	var_15_51[58104] = {
+	pg.base.furniture_shop_template[58104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31322,11 +25542,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_51
-
-	local var_15_52 = var_15_51.base.furniture_shop_template
-
-	var_15_52[58105] = {
+	pg.base.furniture_shop_template[58105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31337,11 +25553,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_52
-
-	local var_15_53 = var_15_52.base.furniture_shop_template
-
-	var_15_53[58106] = {
+	pg.base.furniture_shop_template[58106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31352,11 +25564,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_53
-
-	local var_15_54 = var_15_53.base.furniture_shop_template
-
-	var_15_54[58107] = {
+	pg.base.furniture_shop_template[58107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31367,11 +25575,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_54
-
-	local var_15_55 = var_15_54.base.furniture_shop_template
-
-	var_15_55[58108] = {
+	pg.base.furniture_shop_template[58108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31382,11 +25586,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_55
-
-	local var_15_56 = var_15_55.base.furniture_shop_template
-
-	var_15_56[58109] = {
+	pg.base.furniture_shop_template[58109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31397,11 +25597,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_56
-
-	local var_15_57 = var_15_56.base.furniture_shop_template
-
-	var_15_57[58110] = {
+	pg.base.furniture_shop_template[58110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31412,11 +25608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_57
-
-	local var_15_58 = var_15_57.base.furniture_shop_template
-
-	var_15_58[58111] = {
+	pg.base.furniture_shop_template[58111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31427,11 +25619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_58
-
-	local var_15_59 = var_15_58.base.furniture_shop_template
-
-	var_15_59[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31442,11 +25630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_59
-
-	local var_15_60 = var_15_59.base.furniture_shop_template
-
-	var_15_60[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31457,11 +25641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_60
-
-	local var_15_61 = var_15_60.base.furniture_shop_template
-
-	var_15_61[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31472,11 +25652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_61
-
-	local var_15_62 = var_15_61.base.furniture_shop_template
-
-	var_15_62[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31487,11 +25663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_62
-
-	local var_15_63 = var_15_62.base.furniture_shop_template
-
-	var_15_63[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31502,11 +25674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_63
-
-	local var_15_64 = var_15_63.base.furniture_shop_template
-
-	var_15_64[58301] = {
+	pg.base.furniture_shop_template[58301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31517,11 +25685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_64
-
-	local var_15_65 = var_15_64.base.furniture_shop_template
-
-	var_15_65[58302] = {
+	pg.base.furniture_shop_template[58302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31532,11 +25696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_65
-
-	local var_15_66 = var_15_65.base.furniture_shop_template
-
-	var_15_66[58303] = {
+	pg.base.furniture_shop_template[58303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31547,11 +25707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_66
-
-	local var_15_67 = var_15_66.base.furniture_shop_template
-
-	var_15_67[58304] = {
+	pg.base.furniture_shop_template[58304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31562,11 +25718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_67
-
-	local var_15_68 = var_15_67.base.furniture_shop_template
-
-	var_15_68[59001] = {
+	pg.base.furniture_shop_template[59001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31577,11 +25729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_68
-
-	local var_15_69 = var_15_68.base.furniture_shop_template
-
-	var_15_69[59002] = {
+	pg.base.furniture_shop_template[59002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31592,11 +25740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_69
-
-	local var_15_70 = var_15_69.base.furniture_shop_template
-
-	var_15_70[59101] = {
+	pg.base.furniture_shop_template[59101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31607,11 +25751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_70
-
-	local var_15_71 = var_15_70.base.furniture_shop_template
-
-	var_15_71[59103] = {
+	pg.base.furniture_shop_template[59103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31622,11 +25762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_71
-
-	local var_15_72 = var_15_71.base.furniture_shop_template
-
-	var_15_72[59104] = {
+	pg.base.furniture_shop_template[59104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31637,11 +25773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_72
-
-	local var_15_73 = var_15_72.base.furniture_shop_template
-
-	var_15_73[59105] = {
+	pg.base.furniture_shop_template[59105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31652,11 +25784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_73
-
-	local var_15_74 = var_15_73.base.furniture_shop_template
-
-	var_15_74[59106] = {
+	pg.base.furniture_shop_template[59106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31667,11 +25795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_74
-
-	local var_15_75 = var_15_74.base.furniture_shop_template
-
-	var_15_75[59107] = {
+	pg.base.furniture_shop_template[59107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31682,11 +25806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_75
-
-	local var_15_76 = var_15_75.base.furniture_shop_template
-
-	var_15_76[59108] = {
+	pg.base.furniture_shop_template[59108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31697,11 +25817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_76
-
-	local var_15_77 = var_15_76.base.furniture_shop_template
-
-	var_15_77[59109] = {
+	pg.base.furniture_shop_template[59109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31712,11 +25828,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_77
-
-	local var_15_78 = var_15_77.base.furniture_shop_template
-
-	var_15_78[59111] = {
+	pg.base.furniture_shop_template[59111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31727,11 +25839,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_78
-
-	local var_15_79 = var_15_78.base.furniture_shop_template
-
-	var_15_79[59112] = {
+	pg.base.furniture_shop_template[59112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31742,11 +25850,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_79
-
-	local var_15_80 = var_15_79.base.furniture_shop_template
-
-	var_15_80[59113] = {
+	pg.base.furniture_shop_template[59113] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31757,11 +25861,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_80
-
-	local var_15_81 = var_15_80.base.furniture_shop_template
-
-	var_15_81[59114] = {
+	pg.base.furniture_shop_template[59114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31772,11 +25872,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_81
-
-	local var_15_82 = var_15_81.base.furniture_shop_template
-
-	var_15_82[59115] = {
+	pg.base.furniture_shop_template[59115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31787,11 +25883,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_82
-
-	local var_15_83 = var_15_82.base.furniture_shop_template
-
-	var_15_83[59116] = {
+	pg.base.furniture_shop_template[59116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31802,11 +25894,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_83
-
-	local var_15_84 = var_15_83.base.furniture_shop_template
-
-	var_15_84[59117] = {
+	pg.base.furniture_shop_template[59117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -31817,11 +25905,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_84
-
-	local var_15_85 = var_15_84.base.furniture_shop_template
-
-	var_15_85[59301] = {
+	pg.base.furniture_shop_template[59301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31832,11 +25916,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_85
-
-	local var_15_86 = var_15_85.base.furniture_shop_template
-
-	var_15_86[59302] = {
+	pg.base.furniture_shop_template[59302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31847,11 +25927,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_86
-
-	local var_15_87 = var_15_86.base.furniture_shop_template
-
-	var_15_87[59303] = {
+	pg.base.furniture_shop_template[59303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -31862,11 +25938,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_87
-
-	local var_15_88 = var_15_87.base.furniture_shop_template
-
-	var_15_88[60001] = {
+	pg.base.furniture_shop_template[60001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31877,11 +25949,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_88
-
-	local var_15_89 = var_15_88.base.furniture_shop_template
-
-	var_15_89[60002] = {
+	pg.base.furniture_shop_template[60002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31892,11 +25960,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_89
-
-	local var_15_90 = var_15_89.base.furniture_shop_template
-
-	var_15_90[60101] = {
+	pg.base.furniture_shop_template[60101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31907,11 +25971,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_90
-
-	local var_15_91 = var_15_90.base.furniture_shop_template
-
-	var_15_91[60102] = {
+	pg.base.furniture_shop_template[60102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31922,11 +25982,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_91
-
-	local var_15_92 = var_15_91.base.furniture_shop_template
-
-	var_15_92[60103] = {
+	pg.base.furniture_shop_template[60103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -31937,11 +25993,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_92
-
-	local var_15_93 = var_15_92.base.furniture_shop_template
-
-	var_15_93[60104] = {
+	pg.base.furniture_shop_template[60104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31952,11 +26004,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_93
-
-	local var_15_94 = var_15_93.base.furniture_shop_template
-
-	var_15_94[60105] = {
+	pg.base.furniture_shop_template[60105] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31967,11 +26015,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_94
-
-	local var_15_95 = var_15_94.base.furniture_shop_template
-
-	var_15_95[60106] = {
+	pg.base.furniture_shop_template[60106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -31982,11 +26026,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_95
-
-	local var_15_96 = var_15_95.base.furniture_shop_template
-
-	var_15_96[60107] = {
+	pg.base.furniture_shop_template[60107] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -31997,11 +26037,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_96
-
-	local var_15_97 = var_15_96.base.furniture_shop_template
-
-	var_15_97[60108] = {
+	pg.base.furniture_shop_template[60108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32012,11 +26048,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_97
-
-	local var_15_98 = var_15_97.base.furniture_shop_template
-
-	var_15_98[60109] = {
+	pg.base.furniture_shop_template[60109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32027,8 +26059,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_15_98
-	var_15_98.base.furniture_shop_template[60110] = {
+	pg.base.furniture_shop_template[60110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32043,11 +26074,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_16_0 = var_1_10000.base.furniture_shop_template
-
-	var_16_0[60111] = {
+	pg.base.furniture_shop_template[60111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32058,11 +26085,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_0
-
-	local var_16_1 = var_16_0.base.furniture_shop_template
-
-	var_16_1[60112] = {
+	pg.base.furniture_shop_template[60112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32073,11 +26096,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_1
-
-	local var_16_2 = var_16_1.base.furniture_shop_template
-
-	var_16_2[60113] = {
+	pg.base.furniture_shop_template[60113] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -32088,11 +26107,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_2
-
-	local var_16_3 = var_16_2.base.furniture_shop_template
-
-	var_16_3[60114] = {
+	pg.base.furniture_shop_template[60114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32103,11 +26118,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_3
-
-	local var_16_4 = var_16_3.base.furniture_shop_template
-
-	var_16_4[60115] = {
+	pg.base.furniture_shop_template[60115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32118,11 +26129,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_4
-
-	local var_16_5 = var_16_4.base.furniture_shop_template
-
-	var_16_5[60116] = {
+	pg.base.furniture_shop_template[60116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32133,11 +26140,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_5
-
-	local var_16_6 = var_16_5.base.furniture_shop_template
-
-	var_16_6[60117] = {
+	pg.base.furniture_shop_template[60117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32148,11 +26151,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_6
-
-	local var_16_7 = var_16_6.base.furniture_shop_template
-
-	var_16_7[60119] = {
+	pg.base.furniture_shop_template[60119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32163,11 +26162,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_7
-
-	local var_16_8 = var_16_7.base.furniture_shop_template
-
-	var_16_8[60121] = {
+	pg.base.furniture_shop_template[60121] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32178,11 +26173,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_8
-
-	local var_16_9 = var_16_8.base.furniture_shop_template
-
-	var_16_9[60122] = {
+	pg.base.furniture_shop_template[60122] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32193,11 +26184,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_9
-
-	local var_16_10 = var_16_9.base.furniture_shop_template
-
-	var_16_10[60123] = {
+	pg.base.furniture_shop_template[60123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32208,11 +26195,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_10
-
-	local var_16_11 = var_16_10.base.furniture_shop_template
-
-	var_16_11[60124] = {
+	pg.base.furniture_shop_template[60124] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32223,11 +26206,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_11
-
-	local var_16_12 = var_16_11.base.furniture_shop_template
-
-	var_16_12[60118] = {
+	pg.base.furniture_shop_template[60118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -32238,11 +26217,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_12
-
-	local var_16_13 = var_16_12.base.furniture_shop_template
-
-	var_16_13[60120] = {
+	pg.base.furniture_shop_template[60120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -32253,11 +26228,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_13
-
-	local var_16_14 = var_16_13.base.furniture_shop_template
-
-	var_16_14[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32268,11 +26239,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_14
-
-	local var_16_15 = var_16_14.base.furniture_shop_template
-
-	var_16_15[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32283,11 +26250,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_15
-
-	local var_16_16 = var_16_15.base.furniture_shop_template
-
-	var_16_16[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32298,11 +26261,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_16
-
-	local var_16_17 = var_16_16.base.furniture_shop_template
-
-	var_16_17[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32313,11 +26272,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_17
-
-	local var_16_18 = var_16_17.base.furniture_shop_template
-
-	var_16_18[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32328,11 +26283,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_18
-
-	local var_16_19 = var_16_18.base.furniture_shop_template
-
-	var_16_19[61001] = {
+	pg.base.furniture_shop_template[61001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -32343,11 +26294,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_19
-
-	local var_16_20 = var_16_19.base.furniture_shop_template
-
-	var_16_20[61002] = {
+	pg.base.furniture_shop_template[61002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -32358,11 +26305,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_20
-
-	local var_16_21 = var_16_20.base.furniture_shop_template
-
-	var_16_21[61101] = {
+	pg.base.furniture_shop_template[61101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32373,11 +26316,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_21
-
-	local var_16_22 = var_16_21.base.furniture_shop_template
-
-	var_16_22[61102] = {
+	pg.base.furniture_shop_template[61102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32388,11 +26327,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_22
-
-	local var_16_23 = var_16_22.base.furniture_shop_template
-
-	var_16_23[61103] = {
+	pg.base.furniture_shop_template[61103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32403,11 +26338,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_23
-
-	local var_16_24 = var_16_23.base.furniture_shop_template
-
-	var_16_24[61104] = {
+	pg.base.furniture_shop_template[61104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32418,11 +26349,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_24
-
-	local var_16_25 = var_16_24.base.furniture_shop_template
-
-	var_16_25[61105] = {
+	pg.base.furniture_shop_template[61105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32433,11 +26360,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_25
-
-	local var_16_26 = var_16_25.base.furniture_shop_template
-
-	var_16_26[61106] = {
+	pg.base.furniture_shop_template[61106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32448,11 +26371,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_26
-
-	local var_16_27 = var_16_26.base.furniture_shop_template
-
-	var_16_27[61107] = {
+	pg.base.furniture_shop_template[61107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32463,11 +26382,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_27
-
-	local var_16_28 = var_16_27.base.furniture_shop_template
-
-	var_16_28[61108] = {
+	pg.base.furniture_shop_template[61108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32478,11 +26393,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_28
-
-	local var_16_29 = var_16_28.base.furniture_shop_template
-
-	var_16_29[61109] = {
+	pg.base.furniture_shop_template[61109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32493,11 +26404,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_29
-
-	local var_16_30 = var_16_29.base.furniture_shop_template
-
-	var_16_30[61110] = {
+	pg.base.furniture_shop_template[61110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32508,11 +26415,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_30
-
-	local var_16_31 = var_16_30.base.furniture_shop_template
-
-	var_16_31[61111] = {
+	pg.base.furniture_shop_template[61111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32523,11 +26426,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_31
-
-	local var_16_32 = var_16_31.base.furniture_shop_template
-
-	var_16_32[61112] = {
+	pg.base.furniture_shop_template[61112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32538,11 +26437,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_32
-
-	local var_16_33 = var_16_32.base.furniture_shop_template
-
-	var_16_33[61113] = {
+	pg.base.furniture_shop_template[61113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32553,11 +26448,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_33
-
-	local var_16_34 = var_16_33.base.furniture_shop_template
-
-	var_16_34[61114] = {
+	pg.base.furniture_shop_template[61114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32568,11 +26459,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_34
-
-	local var_16_35 = var_16_34.base.furniture_shop_template
-
-	var_16_35[61115] = {
+	pg.base.furniture_shop_template[61115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32583,11 +26470,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_35
-
-	local var_16_36 = var_16_35.base.furniture_shop_template
-
-	var_16_36[61116] = {
+	pg.base.furniture_shop_template[61116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32598,11 +26481,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_36
-
-	local var_16_37 = var_16_36.base.furniture_shop_template
-
-	var_16_37[61117] = {
+	pg.base.furniture_shop_template[61117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32613,11 +26492,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_37
-
-	local var_16_38 = var_16_37.base.furniture_shop_template
-
-	var_16_38[61118] = {
+	pg.base.furniture_shop_template[61118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32628,11 +26503,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_38
-
-	local var_16_39 = var_16_38.base.furniture_shop_template
-
-	var_16_39[61119] = {
+	pg.base.furniture_shop_template[61119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32643,11 +26514,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_39
-
-	local var_16_40 = var_16_39.base.furniture_shop_template
-
-	var_16_40[61120] = {
+	pg.base.furniture_shop_template[61120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32658,11 +26525,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_40
-
-	local var_16_41 = var_16_40.base.furniture_shop_template
-
-	var_16_41[61121] = {
+	pg.base.furniture_shop_template[61121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32673,11 +26536,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_41
-
-	local var_16_42 = var_16_41.base.furniture_shop_template
-
-	var_16_42[61122] = {
+	pg.base.furniture_shop_template[61122] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -32688,11 +26547,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_42
-
-	local var_16_43 = var_16_42.base.furniture_shop_template
-
-	var_16_43[61123] = {
+	pg.base.furniture_shop_template[61123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32703,11 +26558,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_43
-
-	local var_16_44 = var_16_43.base.furniture_shop_template
-
-	var_16_44[61124] = {
+	pg.base.furniture_shop_template[61124] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32718,11 +26569,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_44
-
-	local var_16_45 = var_16_44.base.furniture_shop_template
-
-	var_16_45[61125] = {
+	pg.base.furniture_shop_template[61125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -32733,11 +26580,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_45
-
-	local var_16_46 = var_16_45.base.furniture_shop_template
-
-	var_16_46[61126] = {
+	pg.base.furniture_shop_template[61126] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32748,11 +26591,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_46
-
-	local var_16_47 = var_16_46.base.furniture_shop_template
-
-	var_16_47[61301] = {
+	pg.base.furniture_shop_template[61301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32763,11 +26602,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_47
-
-	local var_16_48 = var_16_47.base.furniture_shop_template
-
-	var_16_48[61302] = {
+	pg.base.furniture_shop_template[61302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32778,11 +26613,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_48
-
-	local var_16_49 = var_16_48.base.furniture_shop_template
-
-	var_16_49[61303] = {
+	pg.base.furniture_shop_template[61303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32793,11 +26624,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_49
-
-	local var_16_50 = var_16_49.base.furniture_shop_template
-
-	var_16_50[62001] = {
+	pg.base.furniture_shop_template[62001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -32808,11 +26635,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_50
-
-	local var_16_51 = var_16_50.base.furniture_shop_template
-
-	var_16_51[62002] = {
+	pg.base.furniture_shop_template[62002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -32823,11 +26646,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_51
-
-	local var_16_52 = var_16_51.base.furniture_shop_template
-
-	var_16_52[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32838,11 +26657,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_52
-
-	local var_16_53 = var_16_52.base.furniture_shop_template
-
-	var_16_53[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32853,11 +26668,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_53
-
-	local var_16_54 = var_16_53.base.furniture_shop_template
-
-	var_16_54[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32868,11 +26679,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_54
-
-	local var_16_55 = var_16_54.base.furniture_shop_template
-
-	var_16_55[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32883,11 +26690,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_55
-
-	local var_16_56 = var_16_55.base.furniture_shop_template
-
-	var_16_56[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32898,11 +26701,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_56
-
-	local var_16_57 = var_16_56.base.furniture_shop_template
-
-	var_16_57[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32913,11 +26712,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_57
-
-	local var_16_58 = var_16_57.base.furniture_shop_template
-
-	var_16_58[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32928,11 +26723,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_58
-
-	local var_16_59 = var_16_58.base.furniture_shop_template
-
-	var_16_59[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32943,11 +26734,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_59
-
-	local var_16_60 = var_16_59.base.furniture_shop_template
-
-	var_16_60[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -32958,11 +26745,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_60
-
-	local var_16_61 = var_16_60.base.furniture_shop_template
-
-	var_16_61[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -32973,11 +26756,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_61
-
-	local var_16_62 = var_16_61.base.furniture_shop_template
-
-	var_16_62[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -32988,11 +26767,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_62
-
-	local var_16_63 = var_16_62.base.furniture_shop_template
-
-	var_16_63[62112] = {
+	pg.base.furniture_shop_template[62112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -33003,11 +26778,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_63
-
-	local var_16_64 = var_16_63.base.furniture_shop_template
-
-	var_16_64[62113] = {
+	pg.base.furniture_shop_template[62113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -33018,11 +26789,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_64
-
-	local var_16_65 = var_16_64.base.furniture_shop_template
-
-	var_16_65[62114] = {
+	pg.base.furniture_shop_template[62114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -33033,11 +26800,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_65
-
-	local var_16_66 = var_16_65.base.furniture_shop_template
-
-	var_16_66[62115] = {
+	pg.base.furniture_shop_template[62115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -33048,11 +26811,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_66
-
-	local var_16_67 = var_16_66.base.furniture_shop_template
-
-	var_16_67[62116] = {
+	pg.base.furniture_shop_template[62116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -33063,11 +26822,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_67
-
-	local var_16_68 = var_16_67.base.furniture_shop_template
-
-	var_16_68[62117] = {
+	pg.base.furniture_shop_template[62117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -33078,11 +26833,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_68
-
-	local var_16_69 = var_16_68.base.furniture_shop_template
-
-	var_16_69[62118] = {
+	pg.base.furniture_shop_template[62118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -33093,11 +26844,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_69
-
-	local var_16_70 = var_16_69.base.furniture_shop_template
-
-	var_16_70[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 63001,
@@ -33133,11 +26880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_70
-
-	local var_16_71 = var_16_70.base.furniture_shop_template
-
-	var_16_71[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 63002,
@@ -33173,11 +26916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_71
-
-	local var_16_72 = var_16_71.base.furniture_shop_template
-
-	var_16_72[63101] = {
+	pg.base.furniture_shop_template[63101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63101,
@@ -33213,11 +26952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_72
-
-	local var_16_73 = var_16_72.base.furniture_shop_template
-
-	var_16_73[63102] = {
+	pg.base.furniture_shop_template[63102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63102,
@@ -33253,11 +26988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_73
-
-	local var_16_74 = var_16_73.base.furniture_shop_template
-
-	var_16_74[63103] = {
+	pg.base.furniture_shop_template[63103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 63103,
@@ -33293,11 +27024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_74
-
-	local var_16_75 = var_16_74.base.furniture_shop_template
-
-	var_16_75[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63105,
@@ -33333,11 +27060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_75
-
-	local var_16_76 = var_16_75.base.furniture_shop_template
-
-	var_16_76[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 63106,
@@ -33373,11 +27096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_76
-
-	local var_16_77 = var_16_76.base.furniture_shop_template
-
-	var_16_77[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 63107,
@@ -33413,11 +27132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_77
-
-	local var_16_78 = var_16_77.base.furniture_shop_template
-
-	var_16_78[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 63108,
@@ -33453,11 +27168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_78
-
-	local var_16_79 = var_16_78.base.furniture_shop_template
-
-	var_16_79[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63109,
@@ -33493,11 +27204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_79
-
-	local var_16_80 = var_16_79.base.furniture_shop_template
-
-	var_16_80[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 63110,
@@ -33533,11 +27240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_80
-
-	local var_16_81 = var_16_80.base.furniture_shop_template
-
-	var_16_81[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63111,
@@ -33573,11 +27276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_81
-
-	local var_16_82 = var_16_81.base.furniture_shop_template
-
-	var_16_82[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63113,
@@ -33613,11 +27312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_82
-
-	local var_16_83 = var_16_82.base.furniture_shop_template
-
-	var_16_83[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 63114,
@@ -33653,11 +27348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_83
-
-	local var_16_84 = var_16_83.base.furniture_shop_template
-
-	var_16_84[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63115,
@@ -33693,11 +27384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_84
-
-	local var_16_85 = var_16_84.base.furniture_shop_template
-
-	var_16_85[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63116,
@@ -33733,11 +27420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_85
-
-	local var_16_86 = var_16_85.base.furniture_shop_template
-
-	var_16_86[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 63117,
@@ -33773,11 +27456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_86
-
-	local var_16_87 = var_16_86.base.furniture_shop_template
-
-	var_16_87[63301] = {
+	pg.base.furniture_shop_template[63301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63301,
@@ -33813,11 +27492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_87
-
-	local var_16_88 = var_16_87.base.furniture_shop_template
-
-	var_16_88[63302] = {
+	pg.base.furniture_shop_template[63302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63302,
@@ -33853,11 +27528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_88
-
-	local var_16_89 = var_16_88.base.furniture_shop_template
-
-	var_16_89[63303] = {
+	pg.base.furniture_shop_template[63303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63303,
@@ -33893,11 +27564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_89
-
-	local var_16_90 = var_16_89.base.furniture_shop_template
-
-	var_16_90[63304] = {
+	pg.base.furniture_shop_template[63304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63304,
@@ -33933,11 +27600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_90
-
-	local var_16_91 = var_16_90.base.furniture_shop_template
-
-	var_16_91[63305] = {
+	pg.base.furniture_shop_template[63305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 63305,
@@ -33973,11 +27636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_16_91
-
-	local var_16_92 = var_16_91.base.furniture_shop_template
-
-	var_16_92[65001] = {
+	pg.base.furniture_shop_template[65001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -33988,11 +27647,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_92
-
-	local var_16_93 = var_16_92.base.furniture_shop_template
-
-	var_16_93[65002] = {
+	pg.base.furniture_shop_template[65002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -34003,11 +27658,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_93
-
-	local var_16_94 = var_16_93.base.furniture_shop_template
-
-	var_16_94[65101] = {
+	pg.base.furniture_shop_template[65101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34018,11 +27669,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_94
-
-	local var_16_95 = var_16_94.base.furniture_shop_template
-
-	var_16_95[65102] = {
+	pg.base.furniture_shop_template[65102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34033,11 +27680,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_95
-
-	local var_16_96 = var_16_95.base.furniture_shop_template
-
-	var_16_96[65103] = {
+	pg.base.furniture_shop_template[65103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34048,11 +27691,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_96
-
-	local var_16_97 = var_16_96.base.furniture_shop_template
-
-	var_16_97[65104] = {
+	pg.base.furniture_shop_template[65104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34063,11 +27702,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_97
-
-	local var_16_98 = var_16_97.base.furniture_shop_template
-
-	var_16_98[65105] = {
+	pg.base.furniture_shop_template[65105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34078,8 +27713,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_16_98
-	var_16_98.base.furniture_shop_template[65106] = {
+	pg.base.furniture_shop_template[65106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34094,11 +27728,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_17_0 = var_1_10000.base.furniture_shop_template
-
-	var_17_0[65107] = {
+	pg.base.furniture_shop_template[65107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34109,11 +27739,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_0
-
-	local var_17_1 = var_17_0.base.furniture_shop_template
-
-	var_17_1[65108] = {
+	pg.base.furniture_shop_template[65108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34124,11 +27750,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_1
-
-	local var_17_2 = var_17_1.base.furniture_shop_template
-
-	var_17_2[65109] = {
+	pg.base.furniture_shop_template[65109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34139,11 +27761,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_2
-
-	local var_17_3 = var_17_2.base.furniture_shop_template
-
-	var_17_3[65110] = {
+	pg.base.furniture_shop_template[65110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34154,11 +27772,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_3
-
-	local var_17_4 = var_17_3.base.furniture_shop_template
-
-	var_17_4[65111] = {
+	pg.base.furniture_shop_template[65111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34169,11 +27783,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_4
-
-	local var_17_5 = var_17_4.base.furniture_shop_template
-
-	var_17_5[65112] = {
+	pg.base.furniture_shop_template[65112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34184,11 +27794,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_5
-
-	local var_17_6 = var_17_5.base.furniture_shop_template
-
-	var_17_6[65113] = {
+	pg.base.furniture_shop_template[65113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34199,11 +27805,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_6
-
-	local var_17_7 = var_17_6.base.furniture_shop_template
-
-	var_17_7[65114] = {
+	pg.base.furniture_shop_template[65114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34214,11 +27816,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_7
-
-	local var_17_8 = var_17_7.base.furniture_shop_template
-
-	var_17_8[65115] = {
+	pg.base.furniture_shop_template[65115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34229,11 +27827,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_8
-
-	local var_17_9 = var_17_8.base.furniture_shop_template
-
-	var_17_9[65116] = {
+	pg.base.furniture_shop_template[65116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34244,11 +27838,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_9
-
-	local var_17_10 = var_17_9.base.furniture_shop_template
-
-	var_17_10[65117] = {
+	pg.base.furniture_shop_template[65117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34259,11 +27849,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_10
-
-	local var_17_11 = var_17_10.base.furniture_shop_template
-
-	var_17_11[65118] = {
+	pg.base.furniture_shop_template[65118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34274,11 +27860,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_11
-
-	local var_17_12 = var_17_11.base.furniture_shop_template
-
-	var_17_12[65119] = {
+	pg.base.furniture_shop_template[65119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34289,11 +27871,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_12
-
-	local var_17_13 = var_17_12.base.furniture_shop_template
-
-	var_17_13[65120] = {
+	pg.base.furniture_shop_template[65120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -34304,11 +27882,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_13
-
-	local var_17_14 = var_17_13.base.furniture_shop_template
-
-	var_17_14[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34319,11 +27893,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_14
-
-	local var_17_15 = var_17_14.base.furniture_shop_template
-
-	var_17_15[66001] = {
+	pg.base.furniture_shop_template[66001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -34334,11 +27904,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_15
-
-	local var_17_16 = var_17_15.base.furniture_shop_template
-
-	var_17_16[66002] = {
+	pg.base.furniture_shop_template[66002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -34349,11 +27915,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_16
-
-	local var_17_17 = var_17_16.base.furniture_shop_template
-
-	var_17_17[66101] = {
+	pg.base.furniture_shop_template[66101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34364,11 +27926,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_17
-
-	local var_17_18 = var_17_17.base.furniture_shop_template
-
-	var_17_18[66102] = {
+	pg.base.furniture_shop_template[66102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34379,11 +27937,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_18
-
-	local var_17_19 = var_17_18.base.furniture_shop_template
-
-	var_17_19[66103] = {
+	pg.base.furniture_shop_template[66103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34394,11 +27948,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_19
-
-	local var_17_20 = var_17_19.base.furniture_shop_template
-
-	var_17_20[66104] = {
+	pg.base.furniture_shop_template[66104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34409,11 +27959,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_20
-
-	local var_17_21 = var_17_20.base.furniture_shop_template
-
-	var_17_21[66105] = {
+	pg.base.furniture_shop_template[66105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34424,11 +27970,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_21
-
-	local var_17_22 = var_17_21.base.furniture_shop_template
-
-	var_17_22[66106] = {
+	pg.base.furniture_shop_template[66106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34439,11 +27981,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_22
-
-	local var_17_23 = var_17_22.base.furniture_shop_template
-
-	var_17_23[66107] = {
+	pg.base.furniture_shop_template[66107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34454,11 +27992,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_23
-
-	local var_17_24 = var_17_23.base.furniture_shop_template
-
-	var_17_24[66108] = {
+	pg.base.furniture_shop_template[66108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34469,11 +28003,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_24
-
-	local var_17_25 = var_17_24.base.furniture_shop_template
-
-	var_17_25[66109] = {
+	pg.base.furniture_shop_template[66109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34484,11 +28014,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_25
-
-	local var_17_26 = var_17_25.base.furniture_shop_template
-
-	var_17_26[66110] = {
+	pg.base.furniture_shop_template[66110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34499,11 +28025,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_26
-
-	local var_17_27 = var_17_26.base.furniture_shop_template
-
-	var_17_27[66111] = {
+	pg.base.furniture_shop_template[66111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34514,11 +28036,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_27
-
-	local var_17_28 = var_17_27.base.furniture_shop_template
-
-	var_17_28[66112] = {
+	pg.base.furniture_shop_template[66112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34529,11 +28047,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_28
-
-	local var_17_29 = var_17_28.base.furniture_shop_template
-
-	var_17_29[66113] = {
+	pg.base.furniture_shop_template[66113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34544,11 +28058,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_29
-
-	local var_17_30 = var_17_29.base.furniture_shop_template
-
-	var_17_30[66114] = {
+	pg.base.furniture_shop_template[66114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34559,11 +28069,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_30
-
-	local var_17_31 = var_17_30.base.furniture_shop_template
-
-	var_17_31[66115] = {
+	pg.base.furniture_shop_template[66115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34574,11 +28080,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_31
-
-	local var_17_32 = var_17_31.base.furniture_shop_template
-
-	var_17_32[66116] = {
+	pg.base.furniture_shop_template[66116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34589,11 +28091,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_32
-
-	local var_17_33 = var_17_32.base.furniture_shop_template
-
-	var_17_33[66117] = {
+	pg.base.furniture_shop_template[66117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34604,11 +28102,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_33
-
-	local var_17_34 = var_17_33.base.furniture_shop_template
-
-	var_17_34[66118] = {
+	pg.base.furniture_shop_template[66118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34619,11 +28113,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_34
-
-	local var_17_35 = var_17_34.base.furniture_shop_template
-
-	var_17_35[66119] = {
+	pg.base.furniture_shop_template[66119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34634,11 +28124,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_35
-
-	local var_17_36 = var_17_35.base.furniture_shop_template
-
-	var_17_36[66120] = {
+	pg.base.furniture_shop_template[66120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34649,11 +28135,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_36
-
-	local var_17_37 = var_17_36.base.furniture_shop_template
-
-	var_17_37[66121] = {
+	pg.base.furniture_shop_template[66121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34664,11 +28146,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_37
-
-	local var_17_38 = var_17_37.base.furniture_shop_template
-
-	var_17_38[66123] = {
+	pg.base.furniture_shop_template[66123] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		time = "always",
@@ -34679,11 +28157,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_38
-
-	local var_17_39 = var_17_38.base.furniture_shop_template
-
-	var_17_39[66124] = {
+	pg.base.furniture_shop_template[66124] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		time = "always",
@@ -34694,11 +28168,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_39
-
-	local var_17_40 = var_17_39.base.furniture_shop_template
-
-	var_17_40[66125] = {
+	pg.base.furniture_shop_template[66125] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		time = "always",
@@ -34709,11 +28179,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_40
-
-	local var_17_41 = var_17_40.base.furniture_shop_template
-
-	var_17_41[66126] = {
+	pg.base.furniture_shop_template[66126] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		time = "always",
@@ -34724,11 +28190,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_41
-
-	local var_17_42 = var_17_41.base.furniture_shop_template
-
-	var_17_42[66127] = {
+	pg.base.furniture_shop_template[66127] = {
 		not_for_sale = 0,
 		gem_price = 90,
 		time = "always",
@@ -34739,11 +28201,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_42
-
-	local var_17_43 = var_17_42.base.furniture_shop_template
-
-	var_17_43[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -34754,11 +28212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_43
-
-	local var_17_44 = var_17_43.base.furniture_shop_template
-
-	var_17_44[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -34769,11 +28223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_44
-
-	local var_17_45 = var_17_44.base.furniture_shop_template
-
-	var_17_45[69101] = {
+	pg.base.furniture_shop_template[69101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34784,11 +28234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_45
-
-	local var_17_46 = var_17_45.base.furniture_shop_template
-
-	var_17_46[69102] = {
+	pg.base.furniture_shop_template[69102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34799,11 +28245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_46
-
-	local var_17_47 = var_17_46.base.furniture_shop_template
-
-	var_17_47[69103] = {
+	pg.base.furniture_shop_template[69103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34814,11 +28256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_47
-
-	local var_17_48 = var_17_47.base.furniture_shop_template
-
-	var_17_48[69104] = {
+	pg.base.furniture_shop_template[69104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34829,11 +28267,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_48
-
-	local var_17_49 = var_17_48.base.furniture_shop_template
-
-	var_17_49[69105] = {
+	pg.base.furniture_shop_template[69105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34844,11 +28278,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_49
-
-	local var_17_50 = var_17_49.base.furniture_shop_template
-
-	var_17_50[69106] = {
+	pg.base.furniture_shop_template[69106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34859,11 +28289,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_50
-
-	local var_17_51 = var_17_50.base.furniture_shop_template
-
-	var_17_51[69107] = {
+	pg.base.furniture_shop_template[69107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34874,11 +28300,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_51
-
-	local var_17_52 = var_17_51.base.furniture_shop_template
-
-	var_17_52[69108] = {
+	pg.base.furniture_shop_template[69108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34889,11 +28311,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_52
-
-	local var_17_53 = var_17_52.base.furniture_shop_template
-
-	var_17_53[69109] = {
+	pg.base.furniture_shop_template[69109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34904,11 +28322,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_53
-
-	local var_17_54 = var_17_53.base.furniture_shop_template
-
-	var_17_54[69110] = {
+	pg.base.furniture_shop_template[69110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -34919,11 +28333,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_54
-
-	local var_17_55 = var_17_54.base.furniture_shop_template
-
-	var_17_55[69111] = {
+	pg.base.furniture_shop_template[69111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34934,11 +28344,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_55
-
-	local var_17_56 = var_17_55.base.furniture_shop_template
-
-	var_17_56[69112] = {
+	pg.base.furniture_shop_template[69112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34949,11 +28355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_56
-
-	local var_17_57 = var_17_56.base.furniture_shop_template
-
-	var_17_57[69113] = {
+	pg.base.furniture_shop_template[69113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -34964,11 +28366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_57
-
-	local var_17_58 = var_17_57.base.furniture_shop_template
-
-	var_17_58[69114] = {
+	pg.base.furniture_shop_template[69114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34979,11 +28377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_58
-
-	local var_17_59 = var_17_58.base.furniture_shop_template
-
-	var_17_59[69115] = {
+	pg.base.furniture_shop_template[69115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -34994,11 +28388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_59
-
-	local var_17_60 = var_17_59.base.furniture_shop_template
-
-	var_17_60[69116] = {
+	pg.base.furniture_shop_template[69116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35009,11 +28399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_60
-
-	local var_17_61 = var_17_60.base.furniture_shop_template
-
-	var_17_61[69117] = {
+	pg.base.furniture_shop_template[69117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35024,11 +28410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_61
-
-	local var_17_62 = var_17_61.base.furniture_shop_template
-
-	var_17_62[69118] = {
+	pg.base.furniture_shop_template[69118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35039,11 +28421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_62
-
-	local var_17_63 = var_17_62.base.furniture_shop_template
-
-	var_17_63[69119] = {
+	pg.base.furniture_shop_template[69119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35054,11 +28432,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_63
-
-	local var_17_64 = var_17_63.base.furniture_shop_template
-
-	var_17_64[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35069,11 +28443,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_64
-
-	local var_17_65 = var_17_64.base.furniture_shop_template
-
-	var_17_65[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35084,11 +28454,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_65
-
-	local var_17_66 = var_17_65.base.furniture_shop_template
-
-	var_17_66[69301] = {
+	pg.base.furniture_shop_template[69301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35099,11 +28465,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_66
-
-	local var_17_67 = var_17_66.base.furniture_shop_template
-
-	var_17_67[69302] = {
+	pg.base.furniture_shop_template[69302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35114,11 +28476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_67
-
-	local var_17_68 = var_17_67.base.furniture_shop_template
-
-	var_17_68[69303] = {
+	pg.base.furniture_shop_template[69303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35129,11 +28487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_68
-
-	local var_17_69 = var_17_68.base.furniture_shop_template
-
-	var_17_69[69304] = {
+	pg.base.furniture_shop_template[69304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35144,11 +28498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_69
-
-	local var_17_70 = var_17_69.base.furniture_shop_template
-
-	var_17_70[69305] = {
+	pg.base.furniture_shop_template[69305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35159,11 +28509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_70
-
-	local var_17_71 = var_17_70.base.furniture_shop_template
-
-	var_17_71[69306] = {
+	pg.base.furniture_shop_template[69306] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35174,11 +28520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_71
-
-	local var_17_72 = var_17_71.base.furniture_shop_template
-
-	var_17_72[69307] = {
+	pg.base.furniture_shop_template[69307] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35189,11 +28531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_72
-
-	local var_17_73 = var_17_72.base.furniture_shop_template
-
-	var_17_73[69308] = {
+	pg.base.furniture_shop_template[69308] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35204,11 +28542,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_73
-
-	local var_17_74 = var_17_73.base.furniture_shop_template
-
-	var_17_74[69309] = {
+	pg.base.furniture_shop_template[69309] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35219,11 +28553,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_74
-
-	local var_17_75 = var_17_74.base.furniture_shop_template
-
-	var_17_75[70001] = {
+	pg.base.furniture_shop_template[70001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35234,11 +28564,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_75
-
-	local var_17_76 = var_17_75.base.furniture_shop_template
-
-	var_17_76[70002] = {
+	pg.base.furniture_shop_template[70002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35249,11 +28575,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_76
-
-	local var_17_77 = var_17_76.base.furniture_shop_template
-
-	var_17_77[70101] = {
+	pg.base.furniture_shop_template[70101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35264,11 +28586,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_77
-
-	local var_17_78 = var_17_77.base.furniture_shop_template
-
-	var_17_78[70102] = {
+	pg.base.furniture_shop_template[70102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35279,11 +28597,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_78
-
-	local var_17_79 = var_17_78.base.furniture_shop_template
-
-	var_17_79[70103] = {
+	pg.base.furniture_shop_template[70103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35294,11 +28608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_79
-
-	local var_17_80 = var_17_79.base.furniture_shop_template
-
-	var_17_80[70104] = {
+	pg.base.furniture_shop_template[70104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35309,11 +28619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_80
-
-	local var_17_81 = var_17_80.base.furniture_shop_template
-
-	var_17_81[70105] = {
+	pg.base.furniture_shop_template[70105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35324,11 +28630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_81
-
-	local var_17_82 = var_17_81.base.furniture_shop_template
-
-	var_17_82[70106] = {
+	pg.base.furniture_shop_template[70106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35339,11 +28641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_82
-
-	local var_17_83 = var_17_82.base.furniture_shop_template
-
-	var_17_83[70107] = {
+	pg.base.furniture_shop_template[70107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35354,11 +28652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_83
-
-	local var_17_84 = var_17_83.base.furniture_shop_template
-
-	var_17_84[70108] = {
+	pg.base.furniture_shop_template[70108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35369,11 +28663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_84
-
-	local var_17_85 = var_17_84.base.furniture_shop_template
-
-	var_17_85[70109] = {
+	pg.base.furniture_shop_template[70109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35384,11 +28674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_85
-
-	local var_17_86 = var_17_85.base.furniture_shop_template
-
-	var_17_86[70110] = {
+	pg.base.furniture_shop_template[70110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35399,11 +28685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_86
-
-	local var_17_87 = var_17_86.base.furniture_shop_template
-
-	var_17_87[70111] = {
+	pg.base.furniture_shop_template[70111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35414,11 +28696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_87
-
-	local var_17_88 = var_17_87.base.furniture_shop_template
-
-	var_17_88[70112] = {
+	pg.base.furniture_shop_template[70112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35429,11 +28707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_88
-
-	local var_17_89 = var_17_88.base.furniture_shop_template
-
-	var_17_89[70113] = {
+	pg.base.furniture_shop_template[70113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35444,11 +28718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_89
-
-	local var_17_90 = var_17_89.base.furniture_shop_template
-
-	var_17_90[70114] = {
+	pg.base.furniture_shop_template[70114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35459,11 +28729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_90
-
-	local var_17_91 = var_17_90.base.furniture_shop_template
-
-	var_17_91[70115] = {
+	pg.base.furniture_shop_template[70115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35474,11 +28740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_91
-
-	local var_17_92 = var_17_91.base.furniture_shop_template
-
-	var_17_92[70116] = {
+	pg.base.furniture_shop_template[70116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35489,11 +28751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_92
-
-	local var_17_93 = var_17_92.base.furniture_shop_template
-
-	var_17_93[70117] = {
+	pg.base.furniture_shop_template[70117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35504,11 +28762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_93
-
-	local var_17_94 = var_17_93.base.furniture_shop_template
-
-	var_17_94[70118] = {
+	pg.base.furniture_shop_template[70118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35519,11 +28773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_94
-
-	local var_17_95 = var_17_94.base.furniture_shop_template
-
-	var_17_95[70119] = {
+	pg.base.furniture_shop_template[70119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35534,11 +28784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_95
-
-	local var_17_96 = var_17_95.base.furniture_shop_template
-
-	var_17_96[70120] = {
+	pg.base.furniture_shop_template[70120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35549,11 +28795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_96
-
-	local var_17_97 = var_17_96.base.furniture_shop_template
-
-	var_17_97[70121] = {
+	pg.base.furniture_shop_template[70121] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35564,11 +28806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_97
-
-	local var_17_98 = var_17_97.base.furniture_shop_template
-
-	var_17_98[70122] = {
+	pg.base.furniture_shop_template[70122] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35579,8 +28817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_17_98
-	var_17_98.base.furniture_shop_template[70123] = {
+	pg.base.furniture_shop_template[70123] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35595,11 +28832,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_18_0 = var_1_10000.base.furniture_shop_template
-
-	var_18_0[70124] = {
+	pg.base.furniture_shop_template[70124] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35610,11 +28843,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_0
-
-	local var_18_1 = var_18_0.base.furniture_shop_template
-
-	var_18_1[70125] = {
+	pg.base.furniture_shop_template[70125] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35625,11 +28854,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_1
-
-	local var_18_2 = var_18_1.base.furniture_shop_template
-
-	var_18_2[71001] = {
+	pg.base.furniture_shop_template[71001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35640,11 +28865,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_2
-
-	local var_18_3 = var_18_2.base.furniture_shop_template
-
-	var_18_3[71002] = {
+	pg.base.furniture_shop_template[71002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -35655,11 +28876,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_3
-
-	local var_18_4 = var_18_3.base.furniture_shop_template
-
-	var_18_4[71101] = {
+	pg.base.furniture_shop_template[71101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35670,11 +28887,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_4
-
-	local var_18_5 = var_18_4.base.furniture_shop_template
-
-	var_18_5[71102] = {
+	pg.base.furniture_shop_template[71102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35685,11 +28898,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_5
-
-	local var_18_6 = var_18_5.base.furniture_shop_template
-
-	var_18_6[71103] = {
+	pg.base.furniture_shop_template[71103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35700,11 +28909,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_6
-
-	local var_18_7 = var_18_6.base.furniture_shop_template
-
-	var_18_7[71104] = {
+	pg.base.furniture_shop_template[71104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35715,11 +28920,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_7
-
-	local var_18_8 = var_18_7.base.furniture_shop_template
-
-	var_18_8[71105] = {
+	pg.base.furniture_shop_template[71105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35730,11 +28931,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_8
-
-	local var_18_9 = var_18_8.base.furniture_shop_template
-
-	var_18_9[71106] = {
+	pg.base.furniture_shop_template[71106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35745,11 +28942,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_9
-
-	local var_18_10 = var_18_9.base.furniture_shop_template
-
-	var_18_10[71107] = {
+	pg.base.furniture_shop_template[71107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35760,11 +28953,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_10
-
-	local var_18_11 = var_18_10.base.furniture_shop_template
-
-	var_18_11[71108] = {
+	pg.base.furniture_shop_template[71108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35775,11 +28964,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_11
-
-	local var_18_12 = var_18_11.base.furniture_shop_template
-
-	var_18_12[71109] = {
+	pg.base.furniture_shop_template[71109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35790,11 +28975,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_12
-
-	local var_18_13 = var_18_12.base.furniture_shop_template
-
-	var_18_13[71110] = {
+	pg.base.furniture_shop_template[71110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35805,11 +28986,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_13
-
-	local var_18_14 = var_18_13.base.furniture_shop_template
-
-	var_18_14[71111] = {
+	pg.base.furniture_shop_template[71111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35820,11 +28997,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_14
-
-	local var_18_15 = var_18_14.base.furniture_shop_template
-
-	var_18_15[71112] = {
+	pg.base.furniture_shop_template[71112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -35835,11 +29008,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_15
-
-	local var_18_16 = var_18_15.base.furniture_shop_template
-
-	var_18_16[71113] = {
+	pg.base.furniture_shop_template[71113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35850,11 +29019,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_16
-
-	local var_18_17 = var_18_16.base.furniture_shop_template
-
-	var_18_17[71114] = {
+	pg.base.furniture_shop_template[71114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35865,11 +29030,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_17
-
-	local var_18_18 = var_18_17.base.furniture_shop_template
-
-	var_18_18[71115] = {
+	pg.base.furniture_shop_template[71115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -35880,11 +29041,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_18
-
-	local var_18_19 = var_18_18.base.furniture_shop_template
-
-	var_18_19[71116] = {
+	pg.base.furniture_shop_template[71116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35895,11 +29052,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_19
-
-	local var_18_20 = var_18_19.base.furniture_shop_template
-
-	var_18_20[71117] = {
+	pg.base.furniture_shop_template[71117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35910,11 +29063,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_20
-
-	local var_18_21 = var_18_20.base.furniture_shop_template
-
-	var_18_21[71118] = {
+	pg.base.furniture_shop_template[71118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35925,11 +29074,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_21
-
-	local var_18_22 = var_18_21.base.furniture_shop_template
-
-	var_18_22[71119] = {
+	pg.base.furniture_shop_template[71119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35940,11 +29085,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_22
-
-	local var_18_23 = var_18_22.base.furniture_shop_template
-
-	var_18_23[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -35955,11 +29096,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_23
-
-	local var_18_24 = var_18_23.base.furniture_shop_template
-
-	var_18_24[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -35970,11 +29107,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_24
-
-	local var_18_25 = var_18_24.base.furniture_shop_template
-
-	var_18_25[72001] = {
+	pg.base.furniture_shop_template[72001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 72001,
@@ -36010,11 +29143,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_25
-
-	local var_18_26 = var_18_25.base.furniture_shop_template
-
-	var_18_26[72002] = {
+	pg.base.furniture_shop_template[72002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 72002,
@@ -36050,11 +29179,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_26
-
-	local var_18_27 = var_18_26.base.furniture_shop_template
-
-	var_18_27[72101] = {
+	pg.base.furniture_shop_template[72101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72101,
@@ -36090,11 +29215,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_27
-
-	local var_18_28 = var_18_27.base.furniture_shop_template
-
-	var_18_28[72102] = {
+	pg.base.furniture_shop_template[72102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72102,
@@ -36130,11 +29251,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_28
-
-	local var_18_29 = var_18_28.base.furniture_shop_template
-
-	var_18_29[72103] = {
+	pg.base.furniture_shop_template[72103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72103,
@@ -36170,11 +29287,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_29
-
-	local var_18_30 = var_18_29.base.furniture_shop_template
-
-	var_18_30[72104] = {
+	pg.base.furniture_shop_template[72104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72104,
@@ -36210,11 +29323,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_30
-
-	local var_18_31 = var_18_30.base.furniture_shop_template
-
-	var_18_31[72105] = {
+	pg.base.furniture_shop_template[72105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72105,
@@ -36250,11 +29359,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_31
-
-	local var_18_32 = var_18_31.base.furniture_shop_template
-
-	var_18_32[72106] = {
+	pg.base.furniture_shop_template[72106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72106,
@@ -36290,11 +29395,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_32
-
-	local var_18_33 = var_18_32.base.furniture_shop_template
-
-	var_18_33[72107] = {
+	pg.base.furniture_shop_template[72107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72107,
@@ -36330,11 +29431,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_33
-
-	local var_18_34 = var_18_33.base.furniture_shop_template
-
-	var_18_34[72108] = {
+	pg.base.furniture_shop_template[72108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 72108,
@@ -36370,11 +29467,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_34
-
-	local var_18_35 = var_18_34.base.furniture_shop_template
-
-	var_18_35[72109] = {
+	pg.base.furniture_shop_template[72109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 72109,
@@ -36410,11 +29503,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_35
-
-	local var_18_36 = var_18_35.base.furniture_shop_template
-
-	var_18_36[72110] = {
+	pg.base.furniture_shop_template[72110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72110,
@@ -36450,11 +29539,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_36
-
-	local var_18_37 = var_18_36.base.furniture_shop_template
-
-	var_18_37[72111] = {
+	pg.base.furniture_shop_template[72111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 72111,
@@ -36490,11 +29575,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_37
-
-	local var_18_38 = var_18_37.base.furniture_shop_template
-
-	var_18_38[72112] = {
+	pg.base.furniture_shop_template[72112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72112,
@@ -36530,11 +29611,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_38
-
-	local var_18_39 = var_18_38.base.furniture_shop_template
-
-	var_18_39[72113] = {
+	pg.base.furniture_shop_template[72113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72113,
@@ -36570,11 +29647,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_39
-
-	local var_18_40 = var_18_39.base.furniture_shop_template
-
-	var_18_40[72114] = {
+	pg.base.furniture_shop_template[72114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72114,
@@ -36610,11 +29683,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_40
-
-	local var_18_41 = var_18_40.base.furniture_shop_template
-
-	var_18_41[72115] = {
+	pg.base.furniture_shop_template[72115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72115,
@@ -36650,11 +29719,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_41
-
-	local var_18_42 = var_18_41.base.furniture_shop_template
-
-	var_18_42[72116] = {
+	pg.base.furniture_shop_template[72116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72116,
@@ -36690,11 +29755,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_42
-
-	local var_18_43 = var_18_42.base.furniture_shop_template
-
-	var_18_43[72117] = {
+	pg.base.furniture_shop_template[72117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72117,
@@ -36730,11 +29791,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_43
-
-	local var_18_44 = var_18_43.base.furniture_shop_template
-
-	var_18_44[72118] = {
+	pg.base.furniture_shop_template[72118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72118,
@@ -36770,11 +29827,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_44
-
-	local var_18_45 = var_18_44.base.furniture_shop_template
-
-	var_18_45[72119] = {
+	pg.base.furniture_shop_template[72119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72119,
@@ -36810,11 +29863,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_45
-
-	local var_18_46 = var_18_45.base.furniture_shop_template
-
-	var_18_46[72120] = {
+	pg.base.furniture_shop_template[72120] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72120,
@@ -36850,11 +29899,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_46
-
-	local var_18_47 = var_18_46.base.furniture_shop_template
-
-	var_18_47[72121] = {
+	pg.base.furniture_shop_template[72121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72121,
@@ -36890,11 +29935,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_47
-
-	local var_18_48 = var_18_47.base.furniture_shop_template
-
-	var_18_48[72122] = {
+	pg.base.furniture_shop_template[72122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 72122,
@@ -36930,11 +29971,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_48
-
-	local var_18_49 = var_18_48.base.furniture_shop_template
-
-	var_18_49[72123] = {
+	pg.base.furniture_shop_template[72123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 72123,
@@ -36970,11 +30007,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_49
-
-	local var_18_50 = var_18_49.base.furniture_shop_template
-
-	var_18_50[72124] = {
+	pg.base.furniture_shop_template[72124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 72124,
@@ -37010,11 +30043,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_50
-
-	local var_18_51 = var_18_50.base.furniture_shop_template
-
-	var_18_51[72125] = {
+	pg.base.furniture_shop_template[72125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 72125,
@@ -37050,11 +30079,7 @@ end)()
 			}
 		}
 	}
-	pg = var_18_51
-
-	local var_18_52 = var_18_51.base.furniture_shop_template
-
-	var_18_52[73001] = {
+	pg.base.furniture_shop_template[73001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -37065,11 +30090,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_52
-
-	local var_18_53 = var_18_52.base.furniture_shop_template
-
-	var_18_53[73002] = {
+	pg.base.furniture_shop_template[73002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -37080,11 +30101,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_53
-
-	local var_18_54 = var_18_53.base.furniture_shop_template
-
-	var_18_54[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37095,11 +30112,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_54
-
-	local var_18_55 = var_18_54.base.furniture_shop_template
-
-	var_18_55[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37110,11 +30123,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_55
-
-	local var_18_56 = var_18_55.base.furniture_shop_template
-
-	var_18_56[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37125,11 +30134,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_56
-
-	local var_18_57 = var_18_56.base.furniture_shop_template
-
-	var_18_57[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37140,11 +30145,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_57
-
-	local var_18_58 = var_18_57.base.furniture_shop_template
-
-	var_18_58[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37155,11 +30156,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_58
-
-	local var_18_59 = var_18_58.base.furniture_shop_template
-
-	var_18_59[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37170,11 +30167,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_59
-
-	local var_18_60 = var_18_59.base.furniture_shop_template
-
-	var_18_60[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37185,11 +30178,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_60
-
-	local var_18_61 = var_18_60.base.furniture_shop_template
-
-	var_18_61[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37200,11 +30189,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_61
-
-	local var_18_62 = var_18_61.base.furniture_shop_template
-
-	var_18_62[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37215,11 +30200,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_62
-
-	local var_18_63 = var_18_62.base.furniture_shop_template
-
-	var_18_63[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37230,11 +30211,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_63
-
-	local var_18_64 = var_18_63.base.furniture_shop_template
-
-	var_18_64[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37245,11 +30222,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_64
-
-	local var_18_65 = var_18_64.base.furniture_shop_template
-
-	var_18_65[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37260,11 +30233,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_65
-
-	local var_18_66 = var_18_65.base.furniture_shop_template
-
-	var_18_66[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37275,11 +30244,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_66
-
-	local var_18_67 = var_18_66.base.furniture_shop_template
-
-	var_18_67[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37290,11 +30255,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_67
-
-	local var_18_68 = var_18_67.base.furniture_shop_template
-
-	var_18_68[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37305,11 +30266,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_68
-
-	local var_18_69 = var_18_68.base.furniture_shop_template
-
-	var_18_69[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37320,11 +30277,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_69
-
-	local var_18_70 = var_18_69.base.furniture_shop_template
-
-	var_18_70[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37335,11 +30288,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_70
-
-	local var_18_71 = var_18_70.base.furniture_shop_template
-
-	var_18_71[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37350,11 +30299,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_71
-
-	local var_18_72 = var_18_71.base.furniture_shop_template
-
-	var_18_72[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37365,11 +30310,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_72
-
-	local var_18_73 = var_18_72.base.furniture_shop_template
-
-	var_18_73[73120] = {
+	pg.base.furniture_shop_template[73120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37380,11 +30321,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_73
-
-	local var_18_74 = var_18_73.base.furniture_shop_template
-
-	var_18_74[73121] = {
+	pg.base.furniture_shop_template[73121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37395,11 +30332,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_74
-
-	local var_18_75 = var_18_74.base.furniture_shop_template
-
-	var_18_75[73122] = {
+	pg.base.furniture_shop_template[73122] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -37410,11 +30343,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_75
-
-	local var_18_76 = var_18_75.base.furniture_shop_template
-
-	var_18_76[73301] = {
+	pg.base.furniture_shop_template[73301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37425,11 +30354,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_76
-
-	local var_18_77 = var_18_76.base.furniture_shop_template
-
-	var_18_77[73302] = {
+	pg.base.furniture_shop_template[73302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37440,11 +30365,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_77
-
-	local var_18_78 = var_18_77.base.furniture_shop_template
-
-	var_18_78[73303] = {
+	pg.base.furniture_shop_template[73303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37455,11 +30376,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_78
-
-	local var_18_79 = var_18_78.base.furniture_shop_template
-
-	var_18_79[73304] = {
+	pg.base.furniture_shop_template[73304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37470,11 +30387,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_79
-
-	local var_18_80 = var_18_79.base.furniture_shop_template
-
-	var_18_80[73305] = {
+	pg.base.furniture_shop_template[73305] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37485,11 +30398,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_80
-
-	local var_18_81 = var_18_80.base.furniture_shop_template
-
-	var_18_81[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -37500,11 +30409,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_81
-
-	local var_18_82 = var_18_81.base.furniture_shop_template
-
-	var_18_82[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -37515,11 +30420,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_82
-
-	local var_18_83 = var_18_82.base.furniture_shop_template
-
-	var_18_83[74101] = {
+	pg.base.furniture_shop_template[74101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37530,11 +30431,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_83
-
-	local var_18_84 = var_18_83.base.furniture_shop_template
-
-	var_18_84[74102] = {
+	pg.base.furniture_shop_template[74102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37545,11 +30442,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_84
-
-	local var_18_85 = var_18_84.base.furniture_shop_template
-
-	var_18_85[74103] = {
+	pg.base.furniture_shop_template[74103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37560,11 +30453,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_85
-
-	local var_18_86 = var_18_85.base.furniture_shop_template
-
-	var_18_86[74104] = {
+	pg.base.furniture_shop_template[74104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37575,11 +30464,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_86
-
-	local var_18_87 = var_18_86.base.furniture_shop_template
-
-	var_18_87[74105] = {
+	pg.base.furniture_shop_template[74105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37590,11 +30475,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_87
-
-	local var_18_88 = var_18_87.base.furniture_shop_template
-
-	var_18_88[74106] = {
+	pg.base.furniture_shop_template[74106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37605,11 +30486,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_88
-
-	local var_18_89 = var_18_88.base.furniture_shop_template
-
-	var_18_89[74107] = {
+	pg.base.furniture_shop_template[74107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37620,11 +30497,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_89
-
-	local var_18_90 = var_18_89.base.furniture_shop_template
-
-	var_18_90[74108] = {
+	pg.base.furniture_shop_template[74108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37635,11 +30508,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_90
-
-	local var_18_91 = var_18_90.base.furniture_shop_template
-
-	var_18_91[74109] = {
+	pg.base.furniture_shop_template[74109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37650,11 +30519,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_91
-
-	local var_18_92 = var_18_91.base.furniture_shop_template
-
-	var_18_92[74110] = {
+	pg.base.furniture_shop_template[74110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37665,11 +30530,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_92
-
-	local var_18_93 = var_18_92.base.furniture_shop_template
-
-	var_18_93[74111] = {
+	pg.base.furniture_shop_template[74111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37680,11 +30541,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_93
-
-	local var_18_94 = var_18_93.base.furniture_shop_template
-
-	var_18_94[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37695,11 +30552,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_94
-
-	local var_18_95 = var_18_94.base.furniture_shop_template
-
-	var_18_95[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37710,11 +30563,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_95
-
-	local var_18_96 = var_18_95.base.furniture_shop_template
-
-	var_18_96[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37725,11 +30574,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_96
-
-	local var_18_97 = var_18_96.base.furniture_shop_template
-
-	var_18_97[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37740,11 +30585,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_97
-
-	local var_18_98 = var_18_97.base.furniture_shop_template
-
-	var_18_98[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37755,8 +30596,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_18_98
-	var_18_98.base.furniture_shop_template[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37771,11 +30611,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_19_0 = var_1_10000.base.furniture_shop_template
-
-	var_19_0[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37786,11 +30622,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_0
-
-	local var_19_1 = var_19_0.base.furniture_shop_template
-
-	var_19_1[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -37801,11 +30633,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_1
-
-	local var_19_2 = var_19_1.base.furniture_shop_template
-
-	var_19_2[75001] = {
+	pg.base.furniture_shop_template[75001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -37816,11 +30644,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_2
-
-	local var_19_3 = var_19_2.base.furniture_shop_template
-
-	var_19_3[75002] = {
+	pg.base.furniture_shop_template[75002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -37831,11 +30655,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_3
-
-	local var_19_4 = var_19_3.base.furniture_shop_template
-
-	var_19_4[75101] = {
+	pg.base.furniture_shop_template[75101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37846,11 +30666,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_4
-
-	local var_19_5 = var_19_4.base.furniture_shop_template
-
-	var_19_5[75102] = {
+	pg.base.furniture_shop_template[75102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37861,11 +30677,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_5
-
-	local var_19_6 = var_19_5.base.furniture_shop_template
-
-	var_19_6[75103] = {
+	pg.base.furniture_shop_template[75103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37876,11 +30688,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_6
-
-	local var_19_7 = var_19_6.base.furniture_shop_template
-
-	var_19_7[75104] = {
+	pg.base.furniture_shop_template[75104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37891,11 +30699,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_7
-
-	local var_19_8 = var_19_7.base.furniture_shop_template
-
-	var_19_8[75105] = {
+	pg.base.furniture_shop_template[75105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37906,11 +30710,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_8
-
-	local var_19_9 = var_19_8.base.furniture_shop_template
-
-	var_19_9[75106] = {
+	pg.base.furniture_shop_template[75106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -37921,11 +30721,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_9
-
-	local var_19_10 = var_19_9.base.furniture_shop_template
-
-	var_19_10[75107] = {
+	pg.base.furniture_shop_template[75107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37936,11 +30732,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_10
-
-	local var_19_11 = var_19_10.base.furniture_shop_template
-
-	var_19_11[75108] = {
+	pg.base.furniture_shop_template[75108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37951,11 +30743,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_11
-
-	local var_19_12 = var_19_11.base.furniture_shop_template
-
-	var_19_12[75109] = {
+	pg.base.furniture_shop_template[75109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -37966,11 +30754,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_12
-
-	local var_19_13 = var_19_12.base.furniture_shop_template
-
-	var_19_13[75110] = {
+	pg.base.furniture_shop_template[75110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37981,11 +30765,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_13
-
-	local var_19_14 = var_19_13.base.furniture_shop_template
-
-	var_19_14[75111] = {
+	pg.base.furniture_shop_template[75111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -37996,11 +30776,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_14
-
-	local var_19_15 = var_19_14.base.furniture_shop_template
-
-	var_19_15[75112] = {
+	pg.base.furniture_shop_template[75112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -38011,11 +30787,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_15
-
-	local var_19_16 = var_19_15.base.furniture_shop_template
-
-	var_19_16[75113] = {
+	pg.base.furniture_shop_template[75113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -38026,11 +30798,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_16
-
-	local var_19_17 = var_19_16.base.furniture_shop_template
-
-	var_19_17[75114] = {
+	pg.base.furniture_shop_template[75114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -38041,11 +30809,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_17
-
-	local var_19_18 = var_19_17.base.furniture_shop_template
-
-	var_19_18[75115] = {
+	pg.base.furniture_shop_template[75115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -38056,11 +30820,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_18
-
-	local var_19_19 = var_19_18.base.furniture_shop_template
-
-	var_19_19[75116] = {
+	pg.base.furniture_shop_template[75116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -38071,11 +30831,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_19
-
-	local var_19_20 = var_19_19.base.furniture_shop_template
-
-	var_19_20[75117] = {
+	pg.base.furniture_shop_template[75117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -38086,11 +30842,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_20
-
-	local var_19_21 = var_19_20.base.furniture_shop_template
-
-	var_19_21[75118] = {
+	pg.base.furniture_shop_template[75118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -38101,11 +30853,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_21
-
-	local var_19_22 = var_19_21.base.furniture_shop_template
-
-	var_19_22[75301] = {
+	pg.base.furniture_shop_template[75301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -38116,11 +30864,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_22
-
-	local var_19_23 = var_19_22.base.furniture_shop_template
-
-	var_19_23[76001] = {
+	pg.base.furniture_shop_template[76001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 76001,
@@ -38156,11 +30900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_23
-
-	local var_19_24 = var_19_23.base.furniture_shop_template
-
-	var_19_24[76002] = {
+	pg.base.furniture_shop_template[76002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 76002,
@@ -38196,11 +30936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_24
-
-	local var_19_25 = var_19_24.base.furniture_shop_template
-
-	var_19_25[76101] = {
+	pg.base.furniture_shop_template[76101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76101,
@@ -38236,11 +30972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_25
-
-	local var_19_26 = var_19_25.base.furniture_shop_template
-
-	var_19_26[76102] = {
+	pg.base.furniture_shop_template[76102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76102,
@@ -38276,11 +31008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_26
-
-	local var_19_27 = var_19_26.base.furniture_shop_template
-
-	var_19_27[76103] = {
+	pg.base.furniture_shop_template[76103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76103,
@@ -38316,11 +31044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_27
-
-	local var_19_28 = var_19_27.base.furniture_shop_template
-
-	var_19_28[76104] = {
+	pg.base.furniture_shop_template[76104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76104,
@@ -38356,11 +31080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_28
-
-	local var_19_29 = var_19_28.base.furniture_shop_template
-
-	var_19_29[76105] = {
+	pg.base.furniture_shop_template[76105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 76105,
@@ -38396,11 +31116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_29
-
-	local var_19_30 = var_19_29.base.furniture_shop_template
-
-	var_19_30[76106] = {
+	pg.base.furniture_shop_template[76106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76106,
@@ -38436,11 +31152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_30
-
-	local var_19_31 = var_19_30.base.furniture_shop_template
-
-	var_19_31[76107] = {
+	pg.base.furniture_shop_template[76107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76107,
@@ -38476,11 +31188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_31
-
-	local var_19_32 = var_19_31.base.furniture_shop_template
-
-	var_19_32[76108] = {
+	pg.base.furniture_shop_template[76108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76108,
@@ -38516,11 +31224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_32
-
-	local var_19_33 = var_19_32.base.furniture_shop_template
-
-	var_19_33[76109] = {
+	pg.base.furniture_shop_template[76109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76109,
@@ -38556,11 +31260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_33
-
-	local var_19_34 = var_19_33.base.furniture_shop_template
-
-	var_19_34[76110] = {
+	pg.base.furniture_shop_template[76110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 76110,
@@ -38596,11 +31296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_34
-
-	local var_19_35 = var_19_34.base.furniture_shop_template
-
-	var_19_35[76111] = {
+	pg.base.furniture_shop_template[76111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76111,
@@ -38636,11 +31332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_35
-
-	local var_19_36 = var_19_35.base.furniture_shop_template
-
-	var_19_36[76112] = {
+	pg.base.furniture_shop_template[76112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 76112,
@@ -38676,11 +31368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_36
-
-	local var_19_37 = var_19_36.base.furniture_shop_template
-
-	var_19_37[76113] = {
+	pg.base.furniture_shop_template[76113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76113,
@@ -38716,11 +31404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_37
-
-	local var_19_38 = var_19_37.base.furniture_shop_template
-
-	var_19_38[76114] = {
+	pg.base.furniture_shop_template[76114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76114,
@@ -38756,11 +31440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_38
-
-	local var_19_39 = var_19_38.base.furniture_shop_template
-
-	var_19_39[76115] = {
+	pg.base.furniture_shop_template[76115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 76115,
@@ -38796,11 +31476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_39
-
-	local var_19_40 = var_19_39.base.furniture_shop_template
-
-	var_19_40[76116] = {
+	pg.base.furniture_shop_template[76116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76116,
@@ -38836,11 +31512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_40
-
-	local var_19_41 = var_19_40.base.furniture_shop_template
-
-	var_19_41[76117] = {
+	pg.base.furniture_shop_template[76117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76117,
@@ -38876,11 +31548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_41
-
-	local var_19_42 = var_19_41.base.furniture_shop_template
-
-	var_19_42[76118] = {
+	pg.base.furniture_shop_template[76118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76118,
@@ -38916,11 +31584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_42
-
-	local var_19_43 = var_19_42.base.furniture_shop_template
-
-	var_19_43[76119] = {
+	pg.base.furniture_shop_template[76119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 76119,
@@ -38956,11 +31620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_43
-
-	local var_19_44 = var_19_43.base.furniture_shop_template
-
-	var_19_44[76120] = {
+	pg.base.furniture_shop_template[76120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76120,
@@ -38996,11 +31656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_44
-
-	local var_19_45 = var_19_44.base.furniture_shop_template
-
-	var_19_45[76121] = {
+	pg.base.furniture_shop_template[76121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76121,
@@ -39036,11 +31692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_45
-
-	local var_19_46 = var_19_45.base.furniture_shop_template
-
-	var_19_46[76122] = {
+	pg.base.furniture_shop_template[76122] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76122,
@@ -39076,11 +31728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_46
-
-	local var_19_47 = var_19_46.base.furniture_shop_template
-
-	var_19_47[76123] = {
+	pg.base.furniture_shop_template[76123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76123,
@@ -39116,11 +31764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_47
-
-	local var_19_48 = var_19_47.base.furniture_shop_template
-
-	var_19_48[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76301,
@@ -39156,11 +31800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_48
-
-	local var_19_49 = var_19_48.base.furniture_shop_template
-
-	var_19_49[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76302,
@@ -39196,11 +31836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_49
-
-	local var_19_50 = var_19_49.base.furniture_shop_template
-
-	var_19_50[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76303,
@@ -39236,11 +31872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_50
-
-	local var_19_51 = var_19_50.base.furniture_shop_template
-
-	var_19_51[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 76304,
@@ -39276,11 +31908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_51
-
-	local var_19_52 = var_19_51.base.furniture_shop_template
-
-	var_19_52[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 76305,
@@ -39316,11 +31944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_19_52
-
-	local var_19_53 = var_19_52.base.furniture_shop_template
-
-	var_19_53[77001] = {
+	pg.base.furniture_shop_template[77001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -39331,11 +31955,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_53
-
-	local var_19_54 = var_19_53.base.furniture_shop_template
-
-	var_19_54[77002] = {
+	pg.base.furniture_shop_template[77002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -39346,11 +31966,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_54
-
-	local var_19_55 = var_19_54.base.furniture_shop_template
-
-	var_19_55[77101] = {
+	pg.base.furniture_shop_template[77101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -39361,11 +31977,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_55
-
-	local var_19_56 = var_19_55.base.furniture_shop_template
-
-	var_19_56[77102] = {
+	pg.base.furniture_shop_template[77102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39376,11 +31988,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_56
-
-	local var_19_57 = var_19_56.base.furniture_shop_template
-
-	var_19_57[77103] = {
+	pg.base.furniture_shop_template[77103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39391,11 +31999,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_57
-
-	local var_19_58 = var_19_57.base.furniture_shop_template
-
-	var_19_58[77104] = {
+	pg.base.furniture_shop_template[77104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39406,11 +32010,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_58
-
-	local var_19_59 = var_19_58.base.furniture_shop_template
-
-	var_19_59[77105] = {
+	pg.base.furniture_shop_template[77105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39421,11 +32021,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_59
-
-	local var_19_60 = var_19_59.base.furniture_shop_template
-
-	var_19_60[77106] = {
+	pg.base.furniture_shop_template[77106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -39436,11 +32032,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_60
-
-	local var_19_61 = var_19_60.base.furniture_shop_template
-
-	var_19_61[77107] = {
+	pg.base.furniture_shop_template[77107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39451,11 +32043,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_61
-
-	local var_19_62 = var_19_61.base.furniture_shop_template
-
-	var_19_62[77108] = {
+	pg.base.furniture_shop_template[77108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39466,11 +32054,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_62
-
-	local var_19_63 = var_19_62.base.furniture_shop_template
-
-	var_19_63[77109] = {
+	pg.base.furniture_shop_template[77109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39481,11 +32065,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_63
-
-	local var_19_64 = var_19_63.base.furniture_shop_template
-
-	var_19_64[77110] = {
+	pg.base.furniture_shop_template[77110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39496,11 +32076,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_64
-
-	local var_19_65 = var_19_64.base.furniture_shop_template
-
-	var_19_65[77111] = {
+	pg.base.furniture_shop_template[77111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39511,11 +32087,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_65
-
-	local var_19_66 = var_19_65.base.furniture_shop_template
-
-	var_19_66[77112] = {
+	pg.base.furniture_shop_template[77112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -39526,11 +32098,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_66
-
-	local var_19_67 = var_19_66.base.furniture_shop_template
-
-	var_19_67[77113] = {
+	pg.base.furniture_shop_template[77113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39541,11 +32109,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_67
-
-	local var_19_68 = var_19_67.base.furniture_shop_template
-
-	var_19_68[77114] = {
+	pg.base.furniture_shop_template[77114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39556,11 +32120,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_68
-
-	local var_19_69 = var_19_68.base.furniture_shop_template
-
-	var_19_69[77115] = {
+	pg.base.furniture_shop_template[77115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39571,11 +32131,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_69
-
-	local var_19_70 = var_19_69.base.furniture_shop_template
-
-	var_19_70[77116] = {
+	pg.base.furniture_shop_template[77116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39586,11 +32142,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_70
-
-	local var_19_71 = var_19_70.base.furniture_shop_template
-
-	var_19_71[77117] = {
+	pg.base.furniture_shop_template[77117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -39601,11 +32153,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_71
-
-	local var_19_72 = var_19_71.base.furniture_shop_template
-
-	var_19_72[77118] = {
+	pg.base.furniture_shop_template[77118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -39616,11 +32164,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_72
-
-	local var_19_73 = var_19_72.base.furniture_shop_template
-
-	var_19_73[77119] = {
+	pg.base.furniture_shop_template[77119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -39631,11 +32175,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_73
-
-	local var_19_74 = var_19_73.base.furniture_shop_template
-
-	var_19_74[78001] = {
+	pg.base.furniture_shop_template[78001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -39646,11 +32186,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_74
-
-	local var_19_75 = var_19_74.base.furniture_shop_template
-
-	var_19_75[78002] = {
+	pg.base.furniture_shop_template[78002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -39661,11 +32197,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_75
-
-	local var_19_76 = var_19_75.base.furniture_shop_template
-
-	var_19_76[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39676,11 +32208,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_76
-
-	local var_19_77 = var_19_76.base.furniture_shop_template
-
-	var_19_77[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -39691,11 +32219,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_77
-
-	local var_19_78 = var_19_77.base.furniture_shop_template
-
-	var_19_78[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39706,11 +32230,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_78
-
-	local var_19_79 = var_19_78.base.furniture_shop_template
-
-	var_19_79[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39721,11 +32241,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_79
-
-	local var_19_80 = var_19_79.base.furniture_shop_template
-
-	var_19_80[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39736,11 +32252,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_80
-
-	local var_19_81 = var_19_80.base.furniture_shop_template
-
-	var_19_81[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -39751,11 +32263,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_81
-
-	local var_19_82 = var_19_81.base.furniture_shop_template
-
-	var_19_82[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39766,11 +32274,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_82
-
-	local var_19_83 = var_19_82.base.furniture_shop_template
-
-	var_19_83[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39781,11 +32285,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_83
-
-	local var_19_84 = var_19_83.base.furniture_shop_template
-
-	var_19_84[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39796,11 +32296,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_84
-
-	local var_19_85 = var_19_84.base.furniture_shop_template
-
-	var_19_85[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39811,11 +32307,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_85
-
-	local var_19_86 = var_19_85.base.furniture_shop_template
-
-	var_19_86[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39826,11 +32318,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_86
-
-	local var_19_87 = var_19_86.base.furniture_shop_template
-
-	var_19_87[78112] = {
+	pg.base.furniture_shop_template[78112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -39841,11 +32329,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_87
-
-	local var_19_88 = var_19_87.base.furniture_shop_template
-
-	var_19_88[78113] = {
+	pg.base.furniture_shop_template[78113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39856,11 +32340,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_88
-
-	local var_19_89 = var_19_88.base.furniture_shop_template
-
-	var_19_89[78114] = {
+	pg.base.furniture_shop_template[78114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39871,11 +32351,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_89
-
-	local var_19_90 = var_19_89.base.furniture_shop_template
-
-	var_19_90[78115] = {
+	pg.base.furniture_shop_template[78115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39886,11 +32362,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_90
-
-	local var_19_91 = var_19_90.base.furniture_shop_template
-
-	var_19_91[78116] = {
+	pg.base.furniture_shop_template[78116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -39901,11 +32373,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_91
-
-	local var_19_92 = var_19_91.base.furniture_shop_template
-
-	var_19_92[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -39916,11 +32384,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_92
-
-	local var_19_93 = var_19_92.base.furniture_shop_template
-
-	var_19_93[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -39931,11 +32395,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_93
-
-	local var_19_94 = var_19_93.base.furniture_shop_template
-
-	var_19_94[80101] = {
+	pg.base.furniture_shop_template[80101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39946,11 +32406,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_94
-
-	local var_19_95 = var_19_94.base.furniture_shop_template
-
-	var_19_95[80102] = {
+	pg.base.furniture_shop_template[80102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39961,11 +32417,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_95
-
-	local var_19_96 = var_19_95.base.furniture_shop_template
-
-	var_19_96[80103] = {
+	pg.base.furniture_shop_template[80103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -39976,11 +32428,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_96
-
-	local var_19_97 = var_19_96.base.furniture_shop_template
-
-	var_19_97[80105] = {
+	pg.base.furniture_shop_template[80105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -39991,11 +32439,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_97
-
-	local var_19_98 = var_19_97.base.furniture_shop_template
-
-	var_19_98[80106] = {
+	pg.base.furniture_shop_template[80106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40006,8 +32450,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_19_98
-	var_19_98.base.furniture_shop_template[80108] = {
+	pg.base.furniture_shop_template[80108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40022,11 +32465,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_20_0 = var_1_10000.base.furniture_shop_template
-
-	var_20_0[80109] = {
+	pg.base.furniture_shop_template[80109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40037,11 +32476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_0
-
-	local var_20_1 = var_20_0.base.furniture_shop_template
-
-	var_20_1[80110] = {
+	pg.base.furniture_shop_template[80110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40052,11 +32487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_1
-
-	local var_20_2 = var_20_1.base.furniture_shop_template
-
-	var_20_2[80111] = {
+	pg.base.furniture_shop_template[80111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40067,11 +32498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_2
-
-	local var_20_3 = var_20_2.base.furniture_shop_template
-
-	var_20_3[80112] = {
+	pg.base.furniture_shop_template[80112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40082,11 +32509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_3
-
-	local var_20_4 = var_20_3.base.furniture_shop_template
-
-	var_20_4[80113] = {
+	pg.base.furniture_shop_template[80113] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -40097,11 +32520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_4
-
-	local var_20_5 = var_20_4.base.furniture_shop_template
-
-	var_20_5[80114] = {
+	pg.base.furniture_shop_template[80114] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -40112,11 +32531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_5
-
-	local var_20_6 = var_20_5.base.furniture_shop_template
-
-	var_20_6[80115] = {
+	pg.base.furniture_shop_template[80115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -40127,11 +32542,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_6
-
-	local var_20_7 = var_20_6.base.furniture_shop_template
-
-	var_20_7[80301] = {
+	pg.base.furniture_shop_template[80301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40142,11 +32553,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_7
-
-	local var_20_8 = var_20_7.base.furniture_shop_template
-
-	var_20_8[80304] = {
+	pg.base.furniture_shop_template[80304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -40157,11 +32564,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_8
-
-	local var_20_9 = var_20_8.base.furniture_shop_template
-
-	var_20_9[80305] = {
+	pg.base.furniture_shop_template[80305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40172,11 +32575,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_9
-
-	local var_20_10 = var_20_9.base.furniture_shop_template
-
-	var_20_10[80306] = {
+	pg.base.furniture_shop_template[80306] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40187,11 +32586,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_10
-
-	local var_20_11 = var_20_10.base.furniture_shop_template
-
-	var_20_11[81001] = {
+	pg.base.furniture_shop_template[81001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -40202,11 +32597,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_11
-
-	local var_20_12 = var_20_11.base.furniture_shop_template
-
-	var_20_12[81002] = {
+	pg.base.furniture_shop_template[81002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -40217,11 +32608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_12
-
-	local var_20_13 = var_20_12.base.furniture_shop_template
-
-	var_20_13[81101] = {
+	pg.base.furniture_shop_template[81101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40232,11 +32619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_13
-
-	local var_20_14 = var_20_13.base.furniture_shop_template
-
-	var_20_14[81102] = {
+	pg.base.furniture_shop_template[81102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40247,11 +32630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_14
-
-	local var_20_15 = var_20_14.base.furniture_shop_template
-
-	var_20_15[81103] = {
+	pg.base.furniture_shop_template[81103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40262,11 +32641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_15
-
-	local var_20_16 = var_20_15.base.furniture_shop_template
-
-	var_20_16[81104] = {
+	pg.base.furniture_shop_template[81104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -40277,11 +32652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_16
-
-	local var_20_17 = var_20_16.base.furniture_shop_template
-
-	var_20_17[81105] = {
+	pg.base.furniture_shop_template[81105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40292,11 +32663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_17
-
-	local var_20_18 = var_20_17.base.furniture_shop_template
-
-	var_20_18[81106] = {
+	pg.base.furniture_shop_template[81106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40307,11 +32674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_18
-
-	local var_20_19 = var_20_18.base.furniture_shop_template
-
-	var_20_19[81107] = {
+	pg.base.furniture_shop_template[81107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40322,11 +32685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_19
-
-	local var_20_20 = var_20_19.base.furniture_shop_template
-
-	var_20_20[81109] = {
+	pg.base.furniture_shop_template[81109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40337,11 +32696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_20
-
-	local var_20_21 = var_20_20.base.furniture_shop_template
-
-	var_20_21[81110] = {
+	pg.base.furniture_shop_template[81110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40352,11 +32707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_21
-
-	local var_20_22 = var_20_21.base.furniture_shop_template
-
-	var_20_22[81112] = {
+	pg.base.furniture_shop_template[81112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40367,11 +32718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_22
-
-	local var_20_23 = var_20_22.base.furniture_shop_template
-
-	var_20_23[81113] = {
+	pg.base.furniture_shop_template[81113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40382,11 +32729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_23
-
-	local var_20_24 = var_20_23.base.furniture_shop_template
-
-	var_20_24[81116] = {
+	pg.base.furniture_shop_template[81116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40397,11 +32740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_24
-
-	local var_20_25 = var_20_24.base.furniture_shop_template
-
-	var_20_25[81117] = {
+	pg.base.furniture_shop_template[81117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -40412,11 +32751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_25
-
-	local var_20_26 = var_20_25.base.furniture_shop_template
-
-	var_20_26[81118] = {
+	pg.base.furniture_shop_template[81118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40427,11 +32762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_26
-
-	local var_20_27 = var_20_26.base.furniture_shop_template
-
-	var_20_27[81119] = {
+	pg.base.furniture_shop_template[81119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40442,11 +32773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_27
-
-	local var_20_28 = var_20_27.base.furniture_shop_template
-
-	var_20_28[81120] = {
+	pg.base.furniture_shop_template[81120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40457,11 +32784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_28
-
-	local var_20_29 = var_20_28.base.furniture_shop_template
-
-	var_20_29[81126] = {
+	pg.base.furniture_shop_template[81126] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40472,11 +32795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_29
-
-	local var_20_30 = var_20_29.base.furniture_shop_template
-
-	var_20_30[81129] = {
+	pg.base.furniture_shop_template[81129] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40487,11 +32806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_30
-
-	local var_20_31 = var_20_30.base.furniture_shop_template
-
-	var_20_31[81132] = {
+	pg.base.furniture_shop_template[81132] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -40502,11 +32817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_31
-
-	local var_20_32 = var_20_31.base.furniture_shop_template
-
-	var_20_32[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40517,11 +32828,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_32
-
-	local var_20_33 = var_20_32.base.furniture_shop_template
-
-	var_20_33[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -40532,11 +32839,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_33
-
-	local var_20_34 = var_20_33.base.furniture_shop_template
-
-	var_20_34[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -40547,11 +32850,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_34
-
-	local var_20_35 = var_20_34.base.furniture_shop_template
-
-	var_20_35[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -40562,11 +32861,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_35
-
-	local var_20_36 = var_20_35.base.furniture_shop_template
-
-	var_20_36[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 79001,
@@ -40602,11 +32897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_36
-
-	local var_20_37 = var_20_36.base.furniture_shop_template
-
-	var_20_37[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 79002,
@@ -40642,11 +32933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_37
-
-	local var_20_38 = var_20_37.base.furniture_shop_template
-
-	var_20_38[79101] = {
+	pg.base.furniture_shop_template[79101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 79101,
@@ -40682,11 +32969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_38
-
-	local var_20_39 = var_20_38.base.furniture_shop_template
-
-	var_20_39[79102] = {
+	pg.base.furniture_shop_template[79102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79102,
@@ -40722,11 +33005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_39
-
-	local var_20_40 = var_20_39.base.furniture_shop_template
-
-	var_20_40[79103] = {
+	pg.base.furniture_shop_template[79103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79103,
@@ -40762,11 +33041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_40
-
-	local var_20_41 = var_20_40.base.furniture_shop_template
-
-	var_20_41[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79105,
@@ -40802,11 +33077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_41
-
-	local var_20_42 = var_20_41.base.furniture_shop_template
-
-	var_20_42[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79106,
@@ -40842,11 +33113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_42
-
-	local var_20_43 = var_20_42.base.furniture_shop_template
-
-	var_20_43[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79107,
@@ -40882,11 +33149,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_43
-
-	local var_20_44 = var_20_43.base.furniture_shop_template
-
-	var_20_44[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79108,
@@ -40922,11 +33185,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_44
-
-	local var_20_45 = var_20_44.base.furniture_shop_template
-
-	var_20_45[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79109,
@@ -40962,11 +33221,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_45
-
-	local var_20_46 = var_20_45.base.furniture_shop_template
-
-	var_20_46[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79110,
@@ -41002,11 +33257,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_46
-
-	local var_20_47 = var_20_46.base.furniture_shop_template
-
-	var_20_47[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79111,
@@ -41042,11 +33293,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_47
-
-	local var_20_48 = var_20_47.base.furniture_shop_template
-
-	var_20_48[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79112,
@@ -41082,11 +33329,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_48
-
-	local var_20_49 = var_20_48.base.furniture_shop_template
-
-	var_20_49[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79113,
@@ -41122,11 +33365,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_49
-
-	local var_20_50 = var_20_49.base.furniture_shop_template
-
-	var_20_50[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 79114,
@@ -41162,11 +33401,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_50
-
-	local var_20_51 = var_20_50.base.furniture_shop_template
-
-	var_20_51[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79115,
@@ -41202,11 +33437,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_51
-
-	local var_20_52 = var_20_51.base.furniture_shop_template
-
-	var_20_52[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79116,
@@ -41242,11 +33473,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_52
-
-	local var_20_53 = var_20_52.base.furniture_shop_template
-
-	var_20_53[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79118,
@@ -41282,11 +33509,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_53
-
-	local var_20_54 = var_20_53.base.furniture_shop_template
-
-	var_20_54[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79119,
@@ -41322,11 +33545,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_54
-
-	local var_20_55 = var_20_54.base.furniture_shop_template
-
-	var_20_55[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79121,
@@ -41362,11 +33581,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_55
-
-	local var_20_56 = var_20_55.base.furniture_shop_template
-
-	var_20_56[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79122,
@@ -41402,11 +33617,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_56
-
-	local var_20_57 = var_20_56.base.furniture_shop_template
-
-	var_20_57[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79123,
@@ -41442,11 +33653,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_57
-
-	local var_20_58 = var_20_57.base.furniture_shop_template
-
-	var_20_58[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79124,
@@ -41482,11 +33689,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_58
-
-	local var_20_59 = var_20_58.base.furniture_shop_template
-
-	var_20_59[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 79125,
@@ -41522,11 +33725,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_59
-
-	local var_20_60 = var_20_59.base.furniture_shop_template
-
-	var_20_60[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79127,
@@ -41562,11 +33761,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_60
-
-	local var_20_61 = var_20_60.base.furniture_shop_template
-
-	var_20_61[79301] = {
+	pg.base.furniture_shop_template[79301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79301,
@@ -41602,11 +33797,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_61
-
-	local var_20_62 = var_20_61.base.furniture_shop_template
-
-	var_20_62[79303] = {
+	pg.base.furniture_shop_template[79303] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 79303,
@@ -41642,11 +33833,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_62
-
-	local var_20_63 = var_20_62.base.furniture_shop_template
-
-	var_20_63[79304] = {
+	pg.base.furniture_shop_template[79304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 79304,
@@ -41682,11 +33869,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_63
-
-	local var_20_64 = var_20_63.base.furniture_shop_template
-
-	var_20_64[79306] = {
+	pg.base.furniture_shop_template[79306] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 79306,
@@ -41722,11 +33905,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_64
-
-	local var_20_65 = var_20_64.base.furniture_shop_template
-
-	var_20_65[79307] = {
+	pg.base.furniture_shop_template[79307] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 79307,
@@ -41762,11 +33941,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_65
-
-	local var_20_66 = var_20_65.base.furniture_shop_template
-
-	var_20_66[79308] = {
+	pg.base.furniture_shop_template[79308] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 79308,
@@ -41802,11 +33977,7 @@ end)()
 			}
 		}
 	}
-	pg = var_20_66
-
-	local var_20_67 = var_20_66.base.furniture_shop_template
-
-	var_20_67[82001] = {
+	pg.base.furniture_shop_template[82001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -41817,11 +33988,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_67
-
-	local var_20_68 = var_20_67.base.furniture_shop_template
-
-	var_20_68[82002] = {
+	pg.base.furniture_shop_template[82002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -41832,11 +33999,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_68
-
-	local var_20_69 = var_20_68.base.furniture_shop_template
-
-	var_20_69[82101] = {
+	pg.base.furniture_shop_template[82101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -41847,11 +34010,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_69
-
-	local var_20_70 = var_20_69.base.furniture_shop_template
-
-	var_20_70[82105] = {
+	pg.base.furniture_shop_template[82105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -41862,11 +34021,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_70
-
-	local var_20_71 = var_20_70.base.furniture_shop_template
-
-	var_20_71[82106] = {
+	pg.base.furniture_shop_template[82106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41877,11 +34032,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_71
-
-	local var_20_72 = var_20_71.base.furniture_shop_template
-
-	var_20_72[82107] = {
+	pg.base.furniture_shop_template[82107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41892,11 +34043,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_72
-
-	local var_20_73 = var_20_72.base.furniture_shop_template
-
-	var_20_73[82108] = {
+	pg.base.furniture_shop_template[82108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41907,11 +34054,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_73
-
-	local var_20_74 = var_20_73.base.furniture_shop_template
-
-	var_20_74[82109] = {
+	pg.base.furniture_shop_template[82109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -41922,11 +34065,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_74
-
-	local var_20_75 = var_20_74.base.furniture_shop_template
-
-	var_20_75[82110] = {
+	pg.base.furniture_shop_template[82110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41937,11 +34076,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_75
-
-	local var_20_76 = var_20_75.base.furniture_shop_template
-
-	var_20_76[82111] = {
+	pg.base.furniture_shop_template[82111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41952,11 +34087,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_76
-
-	local var_20_77 = var_20_76.base.furniture_shop_template
-
-	var_20_77[82112] = {
+	pg.base.furniture_shop_template[82112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41967,11 +34098,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_77
-
-	local var_20_78 = var_20_77.base.furniture_shop_template
-
-	var_20_78[82113] = {
+	pg.base.furniture_shop_template[82113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41982,11 +34109,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_78
-
-	local var_20_79 = var_20_78.base.furniture_shop_template
-
-	var_20_79[82114] = {
+	pg.base.furniture_shop_template[82114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -41997,11 +34120,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_79
-
-	local var_20_80 = var_20_79.base.furniture_shop_template
-
-	var_20_80[82115] = {
+	pg.base.furniture_shop_template[82115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -42012,11 +34131,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_80
-
-	local var_20_81 = var_20_80.base.furniture_shop_template
-
-	var_20_81[82116] = {
+	pg.base.furniture_shop_template[82116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -42027,11 +34142,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_81
-
-	local var_20_82 = var_20_81.base.furniture_shop_template
-
-	var_20_82[82117] = {
+	pg.base.furniture_shop_template[82117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42042,11 +34153,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_82
-
-	local var_20_83 = var_20_82.base.furniture_shop_template
-
-	var_20_83[82118] = {
+	pg.base.furniture_shop_template[82118] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -42057,11 +34164,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_83
-
-	local var_20_84 = var_20_83.base.furniture_shop_template
-
-	var_20_84[82119] = {
+	pg.base.furniture_shop_template[82119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42072,11 +34175,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_84
-
-	local var_20_85 = var_20_84.base.furniture_shop_template
-
-	var_20_85[82120] = {
+	pg.base.furniture_shop_template[82120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -42087,11 +34186,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_85
-
-	local var_20_86 = var_20_85.base.furniture_shop_template
-
-	var_20_86[82122] = {
+	pg.base.furniture_shop_template[82122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42102,11 +34197,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_86
-
-	local var_20_87 = var_20_86.base.furniture_shop_template
-
-	var_20_87[82123] = {
+	pg.base.furniture_shop_template[82123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -42117,11 +34208,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_87
-
-	local var_20_88 = var_20_87.base.furniture_shop_template
-
-	var_20_88[82124] = {
+	pg.base.furniture_shop_template[82124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -42132,11 +34219,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_88
-
-	local var_20_89 = var_20_88.base.furniture_shop_template
-
-	var_20_89[82125] = {
+	pg.base.furniture_shop_template[82125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -42147,11 +34230,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_89
-
-	local var_20_90 = var_20_89.base.furniture_shop_template
-
-	var_20_90[83001] = {
+	pg.base.furniture_shop_template[83001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -42162,11 +34241,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_90
-
-	local var_20_91 = var_20_90.base.furniture_shop_template
-
-	var_20_91[83002] = {
+	pg.base.furniture_shop_template[83002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -42177,11 +34252,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_91
-
-	local var_20_92 = var_20_91.base.furniture_shop_template
-
-	var_20_92[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42192,11 +34263,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_92
-
-	local var_20_93 = var_20_92.base.furniture_shop_template
-
-	var_20_93[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -42207,11 +34274,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_93
-
-	local var_20_94 = var_20_93.base.furniture_shop_template
-
-	var_20_94[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42222,11 +34285,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_94
-
-	local var_20_95 = var_20_94.base.furniture_shop_template
-
-	var_20_95[83104] = {
+	pg.base.furniture_shop_template[83104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42237,11 +34296,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_95
-
-	local var_20_96 = var_20_95.base.furniture_shop_template
-
-	var_20_96[83105] = {
+	pg.base.furniture_shop_template[83105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -42252,11 +34307,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_96
-
-	local var_20_97 = var_20_96.base.furniture_shop_template
-
-	var_20_97[83106] = {
+	pg.base.furniture_shop_template[83106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42267,11 +34318,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_97
-
-	local var_20_98 = var_20_97.base.furniture_shop_template
-
-	var_20_98[83107] = {
+	pg.base.furniture_shop_template[83107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42282,8 +34329,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_20_98
-	var_20_98.base.furniture_shop_template[83109] = {
+	pg.base.furniture_shop_template[83109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -42298,11 +34344,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_21_0 = var_1_10000.base.furniture_shop_template
-
-	var_21_0[83110] = {
+	pg.base.furniture_shop_template[83110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42313,11 +34355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_0
-
-	local var_21_1 = var_21_0.base.furniture_shop_template
-
-	var_21_1[83111] = {
+	pg.base.furniture_shop_template[83111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -42328,11 +34366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_1
-
-	local var_21_2 = var_21_1.base.furniture_shop_template
-
-	var_21_2[83114] = {
+	pg.base.furniture_shop_template[83114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -42343,11 +34377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_2
-
-	local var_21_3 = var_21_2.base.furniture_shop_template
-
-	var_21_3[83116] = {
+	pg.base.furniture_shop_template[83116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42358,11 +34388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_3
-
-	local var_21_4 = var_21_3.base.furniture_shop_template
-
-	var_21_4[83117] = {
+	pg.base.furniture_shop_template[83117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -42373,11 +34399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_4
-
-	local var_21_5 = var_21_4.base.furniture_shop_template
-
-	var_21_5[83118] = {
+	pg.base.furniture_shop_template[83118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -42388,11 +34410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_5
-
-	local var_21_6 = var_21_5.base.furniture_shop_template
-
-	var_21_6[83119] = {
+	pg.base.furniture_shop_template[83119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -42403,11 +34421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_6
-
-	local var_21_7 = var_21_6.base.furniture_shop_template
-
-	var_21_7[84001] = {
+	pg.base.furniture_shop_template[84001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 84001,
@@ -42443,11 +34457,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_7
-
-	local var_21_8 = var_21_7.base.furniture_shop_template
-
-	var_21_8[84002] = {
+	pg.base.furniture_shop_template[84002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 84002,
@@ -42483,11 +34493,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_8
-
-	local var_21_9 = var_21_8.base.furniture_shop_template
-
-	var_21_9[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84101,
@@ -42523,11 +34529,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_9
-
-	local var_21_10 = var_21_9.base.furniture_shop_template
-
-	var_21_10[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84102,
@@ -42563,11 +34565,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_10
-
-	local var_21_11 = var_21_10.base.furniture_shop_template
-
-	var_21_11[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84103,
@@ -42603,11 +34601,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_11
-
-	local var_21_12 = var_21_11.base.furniture_shop_template
-
-	var_21_12[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84104,
@@ -42643,11 +34637,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_12
-
-	local var_21_13 = var_21_12.base.furniture_shop_template
-
-	var_21_13[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84106,
@@ -42683,11 +34673,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_13
-
-	local var_21_14 = var_21_13.base.furniture_shop_template
-
-	var_21_14[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84107,
@@ -42723,11 +34709,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_14
-
-	local var_21_15 = var_21_14.base.furniture_shop_template
-
-	var_21_15[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84108,
@@ -42763,11 +34745,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_15
-
-	local var_21_16 = var_21_15.base.furniture_shop_template
-
-	var_21_16[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84111,
@@ -42803,11 +34781,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_16
-
-	local var_21_17 = var_21_16.base.furniture_shop_template
-
-	var_21_17[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84117,
@@ -42843,11 +34817,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_17
-
-	local var_21_18 = var_21_17.base.furniture_shop_template
-
-	var_21_18[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84123,
@@ -42883,11 +34853,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_18
-
-	local var_21_19 = var_21_18.base.furniture_shop_template
-
-	var_21_19[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84124,
@@ -42923,11 +34889,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_19
-
-	local var_21_20 = var_21_19.base.furniture_shop_template
-
-	var_21_20[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84127,
@@ -42963,11 +34925,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_20
-
-	local var_21_21 = var_21_20.base.furniture_shop_template
-
-	var_21_21[84129] = {
+	pg.base.furniture_shop_template[84129] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84129,
@@ -43003,11 +34961,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_21
-
-	local var_21_22 = var_21_21.base.furniture_shop_template
-
-	var_21_22[84132] = {
+	pg.base.furniture_shop_template[84132] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84132,
@@ -43043,11 +34997,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_22
-
-	local var_21_23 = var_21_22.base.furniture_shop_template
-
-	var_21_23[84135] = {
+	pg.base.furniture_shop_template[84135] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84135,
@@ -43083,11 +35033,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_23
-
-	local var_21_24 = var_21_23.base.furniture_shop_template
-
-	var_21_24[84136] = {
+	pg.base.furniture_shop_template[84136] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84136,
@@ -43123,11 +35069,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_24
-
-	local var_21_25 = var_21_24.base.furniture_shop_template
-
-	var_21_25[84137] = {
+	pg.base.furniture_shop_template[84137] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84137,
@@ -43163,11 +35105,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_25
-
-	local var_21_26 = var_21_25.base.furniture_shop_template
-
-	var_21_26[84138] = {
+	pg.base.furniture_shop_template[84138] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84138,
@@ -43203,11 +35141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_26
-
-	local var_21_27 = var_21_26.base.furniture_shop_template
-
-	var_21_27[84146] = {
+	pg.base.furniture_shop_template[84146] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84146,
@@ -43243,11 +35177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_27
-
-	local var_21_28 = var_21_27.base.furniture_shop_template
-
-	var_21_28[84149] = {
+	pg.base.furniture_shop_template[84149] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84149,
@@ -43283,11 +35213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_28
-
-	local var_21_29 = var_21_28.base.furniture_shop_template
-
-	var_21_29[84152] = {
+	pg.base.furniture_shop_template[84152] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84152,
@@ -43323,11 +35249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_29
-
-	local var_21_30 = var_21_29.base.furniture_shop_template
-
-	var_21_30[84155] = {
+	pg.base.furniture_shop_template[84155] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84155,
@@ -43363,11 +35285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_30
-
-	local var_21_31 = var_21_30.base.furniture_shop_template
-
-	var_21_31[84158] = {
+	pg.base.furniture_shop_template[84158] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84158,
@@ -43403,11 +35321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_31
-
-	local var_21_32 = var_21_31.base.furniture_shop_template
-
-	var_21_32[84161] = {
+	pg.base.furniture_shop_template[84161] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 84161,
@@ -43443,11 +35357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_32
-
-	local var_21_33 = var_21_32.base.furniture_shop_template
-
-	var_21_33[84164] = {
+	pg.base.furniture_shop_template[84164] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84164,
@@ -43483,11 +35393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_33
-
-	local var_21_34 = var_21_33.base.furniture_shop_template
-
-	var_21_34[84165] = {
+	pg.base.furniture_shop_template[84165] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84165,
@@ -43523,11 +35429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_34
-
-	local var_21_35 = var_21_34.base.furniture_shop_template
-
-	var_21_35[84166] = {
+	pg.base.furniture_shop_template[84166] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84166,
@@ -43563,11 +35465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_35
-
-	local var_21_36 = var_21_35.base.furniture_shop_template
-
-	var_21_36[84167] = {
+	pg.base.furniture_shop_template[84167] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84167,
@@ -43603,11 +35501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_36
-
-	local var_21_37 = var_21_36.base.furniture_shop_template
-
-	var_21_37[84168] = {
+	pg.base.furniture_shop_template[84168] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84168,
@@ -43643,11 +35537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_37
-
-	local var_21_38 = var_21_37.base.furniture_shop_template
-
-	var_21_38[84169] = {
+	pg.base.furniture_shop_template[84169] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84169,
@@ -43683,11 +35573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_38
-
-	local var_21_39 = var_21_38.base.furniture_shop_template
-
-	var_21_39[84171] = {
+	pg.base.furniture_shop_template[84171] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 84171,
@@ -43723,11 +35609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_39
-
-	local var_21_40 = var_21_39.base.furniture_shop_template
-
-	var_21_40[84173] = {
+	pg.base.furniture_shop_template[84173] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84173,
@@ -43763,11 +35645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_40
-
-	local var_21_41 = var_21_40.base.furniture_shop_template
-
-	var_21_41[84174] = {
+	pg.base.furniture_shop_template[84174] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 84174,
@@ -43803,11 +35681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_41
-
-	local var_21_42 = var_21_41.base.furniture_shop_template
-
-	var_21_42[84175] = {
+	pg.base.furniture_shop_template[84175] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84175,
@@ -43843,11 +35717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_42
-
-	local var_21_43 = var_21_42.base.furniture_shop_template
-
-	var_21_43[84176] = {
+	pg.base.furniture_shop_template[84176] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84176,
@@ -43883,11 +35753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_43
-
-	local var_21_44 = var_21_43.base.furniture_shop_template
-
-	var_21_44[84177] = {
+	pg.base.furniture_shop_template[84177] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84177,
@@ -43923,11 +35789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_44
-
-	local var_21_45 = var_21_44.base.furniture_shop_template
-
-	var_21_45[84178] = {
+	pg.base.furniture_shop_template[84178] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 84178,
@@ -43963,11 +35825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_45
-
-	local var_21_46 = var_21_45.base.furniture_shop_template
-
-	var_21_46[84184] = {
+	pg.base.furniture_shop_template[84184] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 84184,
@@ -44003,11 +35861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_46
-
-	local var_21_47 = var_21_46.base.furniture_shop_template
-
-	var_21_47[84185] = {
+	pg.base.furniture_shop_template[84185] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 84185,
@@ -44043,11 +35897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_47
-
-	local var_21_48 = var_21_47.base.furniture_shop_template
-
-	var_21_48[84188] = {
+	pg.base.furniture_shop_template[84188] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 84188,
@@ -44083,11 +35933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_48
-
-	local var_21_49 = var_21_48.base.furniture_shop_template
-
-	var_21_49[84189] = {
+	pg.base.furniture_shop_template[84189] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 84189,
@@ -44123,11 +35969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_21_49
-
-	local var_21_50 = var_21_49.base.furniture_shop_template
-
-	var_21_50[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44138,11 +35980,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_50
-
-	local var_21_51 = var_21_50.base.furniture_shop_template
-
-	var_21_51[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44153,11 +35991,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_51
-
-	local var_21_52 = var_21_51.base.furniture_shop_template
-
-	var_21_52[85101] = {
+	pg.base.furniture_shop_template[85101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44168,11 +36002,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_52
-
-	local var_21_53 = var_21_52.base.furniture_shop_template
-
-	var_21_53[85102] = {
+	pg.base.furniture_shop_template[85102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44183,11 +36013,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_53
-
-	local var_21_54 = var_21_53.base.furniture_shop_template
-
-	var_21_54[85103] = {
+	pg.base.furniture_shop_template[85103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44198,11 +36024,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_54
-
-	local var_21_55 = var_21_54.base.furniture_shop_template
-
-	var_21_55[85106] = {
+	pg.base.furniture_shop_template[85106] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44213,11 +36035,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_55
-
-	local var_21_56 = var_21_55.base.furniture_shop_template
-
-	var_21_56[85107] = {
+	pg.base.furniture_shop_template[85107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44228,11 +36046,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_56
-
-	local var_21_57 = var_21_56.base.furniture_shop_template
-
-	var_21_57[85109] = {
+	pg.base.furniture_shop_template[85109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44243,11 +36057,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_57
-
-	local var_21_58 = var_21_57.base.furniture_shop_template
-
-	var_21_58[85112] = {
+	pg.base.furniture_shop_template[85112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44258,11 +36068,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_58
-
-	local var_21_59 = var_21_58.base.furniture_shop_template
-
-	var_21_59[85113] = {
+	pg.base.furniture_shop_template[85113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44273,11 +36079,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_59
-
-	local var_21_60 = var_21_59.base.furniture_shop_template
-
-	var_21_60[85114] = {
+	pg.base.furniture_shop_template[85114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44288,11 +36090,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_60
-
-	local var_21_61 = var_21_60.base.furniture_shop_template
-
-	var_21_61[85115] = {
+	pg.base.furniture_shop_template[85115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44303,11 +36101,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_61
-
-	local var_21_62 = var_21_61.base.furniture_shop_template
-
-	var_21_62[85119] = {
+	pg.base.furniture_shop_template[85119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44318,11 +36112,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_62
-
-	local var_21_63 = var_21_62.base.furniture_shop_template
-
-	var_21_63[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44333,11 +36123,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_63
-
-	local var_21_64 = var_21_63.base.furniture_shop_template
-
-	var_21_64[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44348,11 +36134,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_64
-
-	local var_21_65 = var_21_64.base.furniture_shop_template
-
-	var_21_65[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44363,11 +36145,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_65
-
-	local var_21_66 = var_21_65.base.furniture_shop_template
-
-	var_21_66[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44378,11 +36156,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_66
-
-	local var_21_67 = var_21_66.base.furniture_shop_template
-
-	var_21_67[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -44393,11 +36167,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_67
-
-	local var_21_68 = var_21_67.base.furniture_shop_template
-
-	var_21_68[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44408,11 +36178,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_68
-
-	local var_21_69 = var_21_68.base.furniture_shop_template
-
-	var_21_69[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44423,11 +36189,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_69
-
-	local var_21_70 = var_21_69.base.furniture_shop_template
-
-	var_21_70[85201] = {
+	pg.base.furniture_shop_template[85201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44438,11 +36200,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_70
-
-	local var_21_71 = var_21_70.base.furniture_shop_template
-
-	var_21_71[85202] = {
+	pg.base.furniture_shop_template[85202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44453,11 +36211,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_71
-
-	local var_21_72 = var_21_71.base.furniture_shop_template
-
-	var_21_72[85203] = {
+	pg.base.furniture_shop_template[85203] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44468,11 +36222,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_72
-
-	local var_21_73 = var_21_72.base.furniture_shop_template
-
-	var_21_73[85301] = {
+	pg.base.furniture_shop_template[85301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44483,11 +36233,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_73
-
-	local var_21_74 = var_21_73.base.furniture_shop_template
-
-	var_21_74[85302] = {
+	pg.base.furniture_shop_template[85302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44498,11 +36244,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_74
-
-	local var_21_75 = var_21_74.base.furniture_shop_template
-
-	var_21_75[85303] = {
+	pg.base.furniture_shop_template[85303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44513,11 +36255,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_75
-
-	local var_21_76 = var_21_75.base.furniture_shop_template
-
-	var_21_76[85304] = {
+	pg.base.furniture_shop_template[85304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44528,11 +36266,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_76
-
-	local var_21_77 = var_21_76.base.furniture_shop_template
-
-	var_21_77[85305] = {
+	pg.base.furniture_shop_template[85305] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44543,11 +36277,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_77
-
-	local var_21_78 = var_21_77.base.furniture_shop_template
-
-	var_21_78[85306] = {
+	pg.base.furniture_shop_template[85306] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44558,11 +36288,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_78
-
-	local var_21_79 = var_21_78.base.furniture_shop_template
-
-	var_21_79[85307] = {
+	pg.base.furniture_shop_template[85307] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44573,11 +36299,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_79
-
-	local var_21_80 = var_21_79.base.furniture_shop_template
-
-	var_21_80[85308] = {
+	pg.base.furniture_shop_template[85308] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44588,11 +36310,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_80
-
-	local var_21_81 = var_21_80.base.furniture_shop_template
-
-	var_21_81[85309] = {
+	pg.base.furniture_shop_template[85309] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44603,11 +36321,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_81
-
-	local var_21_82 = var_21_81.base.furniture_shop_template
-
-	var_21_82[86001] = {
+	pg.base.furniture_shop_template[86001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44618,11 +36332,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_82
-
-	local var_21_83 = var_21_82.base.furniture_shop_template
-
-	var_21_83[86002] = {
+	pg.base.furniture_shop_template[86002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44633,11 +36343,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_83
-
-	local var_21_84 = var_21_83.base.furniture_shop_template
-
-	var_21_84[86101] = {
+	pg.base.furniture_shop_template[86101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44648,11 +36354,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_84
-
-	local var_21_85 = var_21_84.base.furniture_shop_template
-
-	var_21_85[86102] = {
+	pg.base.furniture_shop_template[86102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44663,11 +36365,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_85
-
-	local var_21_86 = var_21_85.base.furniture_shop_template
-
-	var_21_86[86103] = {
+	pg.base.furniture_shop_template[86103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44678,11 +36376,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_86
-
-	local var_21_87 = var_21_86.base.furniture_shop_template
-
-	var_21_87[86104] = {
+	pg.base.furniture_shop_template[86104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44693,11 +36387,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_87
-
-	local var_21_88 = var_21_87.base.furniture_shop_template
-
-	var_21_88[86105] = {
+	pg.base.furniture_shop_template[86105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44708,11 +36398,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_88
-
-	local var_21_89 = var_21_88.base.furniture_shop_template
-
-	var_21_89[86106] = {
+	pg.base.furniture_shop_template[86106] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44723,11 +36409,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_89
-
-	local var_21_90 = var_21_89.base.furniture_shop_template
-
-	var_21_90[86107] = {
+	pg.base.furniture_shop_template[86107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44738,11 +36420,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_90
-
-	local var_21_91 = var_21_90.base.furniture_shop_template
-
-	var_21_91[86108] = {
+	pg.base.furniture_shop_template[86108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44753,11 +36431,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_91
-
-	local var_21_92 = var_21_91.base.furniture_shop_template
-
-	var_21_92[86109] = {
+	pg.base.furniture_shop_template[86109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44768,11 +36442,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_92
-
-	local var_21_93 = var_21_92.base.furniture_shop_template
-
-	var_21_93[86110] = {
+	pg.base.furniture_shop_template[86110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44783,11 +36453,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_93
-
-	local var_21_94 = var_21_93.base.furniture_shop_template
-
-	var_21_94[86111] = {
+	pg.base.furniture_shop_template[86111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44798,11 +36464,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_94
-
-	local var_21_95 = var_21_94.base.furniture_shop_template
-
-	var_21_95[86112] = {
+	pg.base.furniture_shop_template[86112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44813,11 +36475,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_95
-
-	local var_21_96 = var_21_95.base.furniture_shop_template
-
-	var_21_96[86113] = {
+	pg.base.furniture_shop_template[86113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44828,11 +36486,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_96
-
-	local var_21_97 = var_21_96.base.furniture_shop_template
-
-	var_21_97[86114] = {
+	pg.base.furniture_shop_template[86114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44843,11 +36497,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_97
-
-	local var_21_98 = var_21_97.base.furniture_shop_template
-
-	var_21_98[86115] = {
+	pg.base.furniture_shop_template[86115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44858,8 +36508,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_21_98
-	var_21_98.base.furniture_shop_template[86116] = {
+	pg.base.furniture_shop_template[86116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44874,11 +36523,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_22_0 = var_1_10000.base.furniture_shop_template
-
-	var_22_0[86117] = {
+	pg.base.furniture_shop_template[86117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44889,11 +36534,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_0
-
-	local var_22_1 = var_22_0.base.furniture_shop_template
-
-	var_22_1[86119] = {
+	pg.base.furniture_shop_template[86119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44904,11 +36545,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_1
-
-	local var_22_2 = var_22_1.base.furniture_shop_template
-
-	var_22_2[86122] = {
+	pg.base.furniture_shop_template[86122] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -44919,11 +36556,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_2
-
-	local var_22_3 = var_22_2.base.furniture_shop_template
-
-	var_22_3[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -44934,11 +36567,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_3
-
-	local var_22_4 = var_22_3.base.furniture_shop_template
-
-	var_22_4[87001] = {
+	pg.base.furniture_shop_template[87001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44949,11 +36578,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_4
-
-	local var_22_5 = var_22_4.base.furniture_shop_template
-
-	var_22_5[87002] = {
+	pg.base.furniture_shop_template[87002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -44964,11 +36589,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_5
-
-	local var_22_6 = var_22_5.base.furniture_shop_template
-
-	var_22_6[87101] = {
+	pg.base.furniture_shop_template[87101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -44979,11 +36600,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_6
-
-	local var_22_7 = var_22_6.base.furniture_shop_template
-
-	var_22_7[87102] = {
+	pg.base.furniture_shop_template[87102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -44994,11 +36611,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_7
-
-	local var_22_8 = var_22_7.base.furniture_shop_template
-
-	var_22_8[87107] = {
+	pg.base.furniture_shop_template[87107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45009,11 +36622,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_8
-
-	local var_22_9 = var_22_8.base.furniture_shop_template
-
-	var_22_9[87112] = {
+	pg.base.furniture_shop_template[87112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45024,11 +36633,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_9
-
-	local var_22_10 = var_22_9.base.furniture_shop_template
-
-	var_22_10[87113] = {
+	pg.base.furniture_shop_template[87113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45039,11 +36644,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_10
-
-	local var_22_11 = var_22_10.base.furniture_shop_template
-
-	var_22_11[87115] = {
+	pg.base.furniture_shop_template[87115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45054,11 +36655,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_11
-
-	local var_22_12 = var_22_11.base.furniture_shop_template
-
-	var_22_12[87116] = {
+	pg.base.furniture_shop_template[87116] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -45069,11 +36666,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_12
-
-	local var_22_13 = var_22_12.base.furniture_shop_template
-
-	var_22_13[87117] = {
+	pg.base.furniture_shop_template[87117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45084,11 +36677,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_13
-
-	local var_22_14 = var_22_13.base.furniture_shop_template
-
-	var_22_14[87118] = {
+	pg.base.furniture_shop_template[87118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45099,11 +36688,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_14
-
-	local var_22_15 = var_22_14.base.furniture_shop_template
-
-	var_22_15[87121] = {
+	pg.base.furniture_shop_template[87121] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45114,11 +36699,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_15
-
-	local var_22_16 = var_22_15.base.furniture_shop_template
-
-	var_22_16[87123] = {
+	pg.base.furniture_shop_template[87123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45129,11 +36710,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_16
-
-	local var_22_17 = var_22_16.base.furniture_shop_template
-
-	var_22_17[87124] = {
+	pg.base.furniture_shop_template[87124] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45144,11 +36721,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_17
-
-	local var_22_18 = var_22_17.base.furniture_shop_template
-
-	var_22_18[87126] = {
+	pg.base.furniture_shop_template[87126] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45159,11 +36732,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_18
-
-	local var_22_19 = var_22_18.base.furniture_shop_template
-
-	var_22_19[87127] = {
+	pg.base.furniture_shop_template[87127] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45174,11 +36743,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_19
-
-	local var_22_20 = var_22_19.base.furniture_shop_template
-
-	var_22_20[87130] = {
+	pg.base.furniture_shop_template[87130] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45189,11 +36754,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_20
-
-	local var_22_21 = var_22_20.base.furniture_shop_template
-
-	var_22_21[87131] = {
+	pg.base.furniture_shop_template[87131] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45204,11 +36765,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_21
-
-	local var_22_22 = var_22_21.base.furniture_shop_template
-
-	var_22_22[88001] = {
+	pg.base.furniture_shop_template[88001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -45219,11 +36776,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_22
-
-	local var_22_23 = var_22_22.base.furniture_shop_template
-
-	var_22_23[88002] = {
+	pg.base.furniture_shop_template[88002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -45234,11 +36787,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_23
-
-	local var_22_24 = var_22_23.base.furniture_shop_template
-
-	var_22_24[88101] = {
+	pg.base.furniture_shop_template[88101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45249,11 +36798,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_24
-
-	local var_22_25 = var_22_24.base.furniture_shop_template
-
-	var_22_25[88102] = {
+	pg.base.furniture_shop_template[88102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45264,11 +36809,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_25
-
-	local var_22_26 = var_22_25.base.furniture_shop_template
-
-	var_22_26[88103] = {
+	pg.base.furniture_shop_template[88103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45279,11 +36820,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_26
-
-	local var_22_27 = var_22_26.base.furniture_shop_template
-
-	var_22_27[88105] = {
+	pg.base.furniture_shop_template[88105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45294,11 +36831,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_27
-
-	local var_22_28 = var_22_27.base.furniture_shop_template
-
-	var_22_28[88106] = {
+	pg.base.furniture_shop_template[88106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45309,11 +36842,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_28
-
-	local var_22_29 = var_22_28.base.furniture_shop_template
-
-	var_22_29[88107] = {
+	pg.base.furniture_shop_template[88107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45324,11 +36853,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_29
-
-	local var_22_30 = var_22_29.base.furniture_shop_template
-
-	var_22_30[88108] = {
+	pg.base.furniture_shop_template[88108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45339,11 +36864,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_30
-
-	local var_22_31 = var_22_30.base.furniture_shop_template
-
-	var_22_31[88110] = {
+	pg.base.furniture_shop_template[88110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45354,11 +36875,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_31
-
-	local var_22_32 = var_22_31.base.furniture_shop_template
-
-	var_22_32[88111] = {
+	pg.base.furniture_shop_template[88111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45369,11 +36886,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_32
-
-	local var_22_33 = var_22_32.base.furniture_shop_template
-
-	var_22_33[88112] = {
+	pg.base.furniture_shop_template[88112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45384,11 +36897,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_33
-
-	local var_22_34 = var_22_33.base.furniture_shop_template
-
-	var_22_34[88113] = {
+	pg.base.furniture_shop_template[88113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45399,11 +36908,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_34
-
-	local var_22_35 = var_22_34.base.furniture_shop_template
-
-	var_22_35[88114] = {
+	pg.base.furniture_shop_template[88114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45414,11 +36919,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_35
-
-	local var_22_36 = var_22_35.base.furniture_shop_template
-
-	var_22_36[88116] = {
+	pg.base.furniture_shop_template[88116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45429,11 +36930,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_36
-
-	local var_22_37 = var_22_36.base.furniture_shop_template
-
-	var_22_37[88118] = {
+	pg.base.furniture_shop_template[88118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45444,11 +36941,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_37
-
-	local var_22_38 = var_22_37.base.furniture_shop_template
-
-	var_22_38[88119] = {
+	pg.base.furniture_shop_template[88119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45459,11 +36952,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_38
-
-	local var_22_39 = var_22_38.base.furniture_shop_template
-
-	var_22_39[88120] = {
+	pg.base.furniture_shop_template[88120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45474,11 +36963,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_39
-
-	local var_22_40 = var_22_39.base.furniture_shop_template
-
-	var_22_40[88123] = {
+	pg.base.furniture_shop_template[88123] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45489,11 +36974,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_40
-
-	local var_22_41 = var_22_40.base.furniture_shop_template
-
-	var_22_41[88126] = {
+	pg.base.furniture_shop_template[88126] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -45504,11 +36985,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_41
-
-	local var_22_42 = var_22_41.base.furniture_shop_template
-
-	var_22_42[88301] = {
+	pg.base.furniture_shop_template[88301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45519,11 +36996,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_42
-
-	local var_22_43 = var_22_42.base.furniture_shop_template
-
-	var_22_43[88303] = {
+	pg.base.furniture_shop_template[88303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45534,11 +37007,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_43
-
-	local var_22_44 = var_22_43.base.furniture_shop_template
-
-	var_22_44[88304] = {
+	pg.base.furniture_shop_template[88304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45549,11 +37018,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_44
-
-	local var_22_45 = var_22_44.base.furniture_shop_template
-
-	var_22_45[88305] = {
+	pg.base.furniture_shop_template[88305] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45564,11 +37029,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_45
-
-	local var_22_46 = var_22_45.base.furniture_shop_template
-
-	var_22_46[89001] = {
+	pg.base.furniture_shop_template[89001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -45579,11 +37040,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_46
-
-	local var_22_47 = var_22_46.base.furniture_shop_template
-
-	var_22_47[89002] = {
+	pg.base.furniture_shop_template[89002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -45594,11 +37051,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_47
-
-	local var_22_48 = var_22_47.base.furniture_shop_template
-
-	var_22_48[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45609,11 +37062,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_48
-
-	local var_22_49 = var_22_48.base.furniture_shop_template
-
-	var_22_49[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45624,11 +37073,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_49
-
-	local var_22_50 = var_22_49.base.furniture_shop_template
-
-	var_22_50[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45639,11 +37084,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_50
-
-	local var_22_51 = var_22_50.base.furniture_shop_template
-
-	var_22_51[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45654,11 +37095,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_51
-
-	local var_22_52 = var_22_51.base.furniture_shop_template
-
-	var_22_52[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -45669,11 +37106,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_52
-
-	local var_22_53 = var_22_52.base.furniture_shop_template
-
-	var_22_53[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45684,11 +37117,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_53
-
-	local var_22_54 = var_22_53.base.furniture_shop_template
-
-	var_22_54[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45699,11 +37128,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_54
-
-	local var_22_55 = var_22_54.base.furniture_shop_template
-
-	var_22_55[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45714,11 +37139,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_55
-
-	local var_22_56 = var_22_55.base.furniture_shop_template
-
-	var_22_56[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45729,11 +37150,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_56
-
-	local var_22_57 = var_22_56.base.furniture_shop_template
-
-	var_22_57[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45744,11 +37161,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_57
-
-	local var_22_58 = var_22_57.base.furniture_shop_template
-
-	var_22_58[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45759,11 +37172,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_58
-
-	local var_22_59 = var_22_58.base.furniture_shop_template
-
-	var_22_59[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45774,11 +37183,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_59
-
-	local var_22_60 = var_22_59.base.furniture_shop_template
-
-	var_22_60[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45789,11 +37194,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_60
-
-	local var_22_61 = var_22_60.base.furniture_shop_template
-
-	var_22_61[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45804,11 +37205,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_61
-
-	local var_22_62 = var_22_61.base.furniture_shop_template
-
-	var_22_62[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45819,11 +37216,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_62
-
-	local var_22_63 = var_22_62.base.furniture_shop_template
-
-	var_22_63[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45834,11 +37227,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_63
-
-	local var_22_64 = var_22_63.base.furniture_shop_template
-
-	var_22_64[89120] = {
+	pg.base.furniture_shop_template[89120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45849,11 +37238,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_64
-
-	local var_22_65 = var_22_64.base.furniture_shop_template
-
-	var_22_65[89121] = {
+	pg.base.furniture_shop_template[89121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45864,11 +37249,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_65
-
-	local var_22_66 = var_22_65.base.furniture_shop_template
-
-	var_22_66[89122] = {
+	pg.base.furniture_shop_template[89122] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45879,11 +37260,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_66
-
-	local var_22_67 = var_22_66.base.furniture_shop_template
-
-	var_22_67[89123] = {
+	pg.base.furniture_shop_template[89123] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45894,11 +37271,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_67
-
-	local var_22_68 = var_22_67.base.furniture_shop_template
-
-	var_22_68[89124] = {
+	pg.base.furniture_shop_template[89124] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45909,11 +37282,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_68
-
-	local var_22_69 = var_22_68.base.furniture_shop_template
-
-	var_22_69[89126] = {
+	pg.base.furniture_shop_template[89126] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -45924,11 +37293,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_69
-
-	local var_22_70 = var_22_69.base.furniture_shop_template
-
-	var_22_70[89201] = {
+	pg.base.furniture_shop_template[89201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -45939,11 +37304,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_70
-
-	local var_22_71 = var_22_70.base.furniture_shop_template
-
-	var_22_71[89301] = {
+	pg.base.furniture_shop_template[89301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45954,11 +37315,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_71
-
-	local var_22_72 = var_22_71.base.furniture_shop_template
-
-	var_22_72[89303] = {
+	pg.base.furniture_shop_template[89303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -45969,11 +37326,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_72
-
-	local var_22_73 = var_22_72.base.furniture_shop_template
-
-	var_22_73[89307] = {
+	pg.base.furniture_shop_template[89307] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45984,11 +37337,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_73
-
-	local var_22_74 = var_22_73.base.furniture_shop_template
-
-	var_22_74[89309] = {
+	pg.base.furniture_shop_template[89309] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -45999,11 +37348,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_74
-
-	local var_22_75 = var_22_74.base.furniture_shop_template
-
-	var_22_75[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46014,11 +37359,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_75
-
-	local var_22_76 = var_22_75.base.furniture_shop_template
-
-	var_22_76[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46029,11 +37370,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_76
-
-	local var_22_77 = var_22_76.base.furniture_shop_template
-
-	var_22_77[90101] = {
+	pg.base.furniture_shop_template[90101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46044,11 +37381,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_77
-
-	local var_22_78 = var_22_77.base.furniture_shop_template
-
-	var_22_78[90102] = {
+	pg.base.furniture_shop_template[90102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46059,11 +37392,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_78
-
-	local var_22_79 = var_22_78.base.furniture_shop_template
-
-	var_22_79[90103] = {
+	pg.base.furniture_shop_template[90103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46074,11 +37403,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_79
-
-	local var_22_80 = var_22_79.base.furniture_shop_template
-
-	var_22_80[90104] = {
+	pg.base.furniture_shop_template[90104] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -46089,11 +37414,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_80
-
-	local var_22_81 = var_22_80.base.furniture_shop_template
-
-	var_22_81[90105] = {
+	pg.base.furniture_shop_template[90105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46104,11 +37425,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_81
-
-	local var_22_82 = var_22_81.base.furniture_shop_template
-
-	var_22_82[90106] = {
+	pg.base.furniture_shop_template[90106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46119,11 +37436,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_82
-
-	local var_22_83 = var_22_82.base.furniture_shop_template
-
-	var_22_83[90107] = {
+	pg.base.furniture_shop_template[90107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46134,11 +37447,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_83
-
-	local var_22_84 = var_22_83.base.furniture_shop_template
-
-	var_22_84[90111] = {
+	pg.base.furniture_shop_template[90111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46149,11 +37458,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_84
-
-	local var_22_85 = var_22_84.base.furniture_shop_template
-
-	var_22_85[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46164,11 +37469,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_85
-
-	local var_22_86 = var_22_85.base.furniture_shop_template
-
-	var_22_86[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46179,11 +37480,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_86
-
-	local var_22_87 = var_22_86.base.furniture_shop_template
-
-	var_22_87[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46194,11 +37491,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_87
-
-	local var_22_88 = var_22_87.base.furniture_shop_template
-
-	var_22_88[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -46209,11 +37502,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_88
-
-	local var_22_89 = var_22_88.base.furniture_shop_template
-
-	var_22_89[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46224,11 +37513,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_89
-
-	local var_22_90 = var_22_89.base.furniture_shop_template
-
-	var_22_90[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46239,11 +37524,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_90
-
-	local var_22_91 = var_22_90.base.furniture_shop_template
-
-	var_22_91[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46254,11 +37535,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_91
-
-	local var_22_92 = var_22_91.base.furniture_shop_template
-
-	var_22_92[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46269,11 +37546,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_92
-
-	local var_22_93 = var_22_92.base.furniture_shop_template
-
-	var_22_93[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46284,11 +37557,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_93
-
-	local var_22_94 = var_22_93.base.furniture_shop_template
-
-	var_22_94[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46299,11 +37568,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_94
-
-	local var_22_95 = var_22_94.base.furniture_shop_template
-
-	var_22_95[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46314,11 +37579,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_95
-
-	local var_22_96 = var_22_95.base.furniture_shop_template
-
-	var_22_96[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46329,11 +37590,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_96
-
-	local var_22_97 = var_22_96.base.furniture_shop_template
-
-	var_22_97[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46344,11 +37601,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_97
-
-	local var_22_98 = var_22_97.base.furniture_shop_template
-
-	var_22_98[91001] = {
+	pg.base.furniture_shop_template[91001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46359,8 +37612,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_22_98
-	var_22_98.base.furniture_shop_template[91002] = {
+	pg.base.furniture_shop_template[91002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46375,11 +37627,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_23_0 = var_1_10000.base.furniture_shop_template
-
-	var_23_0[91101] = {
+	pg.base.furniture_shop_template[91101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46390,11 +37638,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_0
-
-	local var_23_1 = var_23_0.base.furniture_shop_template
-
-	var_23_1[91102] = {
+	pg.base.furniture_shop_template[91102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46405,11 +37649,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_1
-
-	local var_23_2 = var_23_1.base.furniture_shop_template
-
-	var_23_2[91103] = {
+	pg.base.furniture_shop_template[91103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46420,11 +37660,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_2
-
-	local var_23_3 = var_23_2.base.furniture_shop_template
-
-	var_23_3[91104] = {
+	pg.base.furniture_shop_template[91104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46435,11 +37671,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_3
-
-	local var_23_4 = var_23_3.base.furniture_shop_template
-
-	var_23_4[91105] = {
+	pg.base.furniture_shop_template[91105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46450,11 +37682,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_4
-
-	local var_23_5 = var_23_4.base.furniture_shop_template
-
-	var_23_5[91106] = {
+	pg.base.furniture_shop_template[91106] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46465,11 +37693,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_5
-
-	local var_23_6 = var_23_5.base.furniture_shop_template
-
-	var_23_6[91107] = {
+	pg.base.furniture_shop_template[91107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46480,11 +37704,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_6
-
-	local var_23_7 = var_23_6.base.furniture_shop_template
-
-	var_23_7[91108] = {
+	pg.base.furniture_shop_template[91108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46495,11 +37715,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_7
-
-	local var_23_8 = var_23_7.base.furniture_shop_template
-
-	var_23_8[91109] = {
+	pg.base.furniture_shop_template[91109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46510,11 +37726,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_8
-
-	local var_23_9 = var_23_8.base.furniture_shop_template
-
-	var_23_9[91111] = {
+	pg.base.furniture_shop_template[91111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46525,11 +37737,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_9
-
-	local var_23_10 = var_23_9.base.furniture_shop_template
-
-	var_23_10[91112] = {
+	pg.base.furniture_shop_template[91112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46540,11 +37748,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_10
-
-	local var_23_11 = var_23_10.base.furniture_shop_template
-
-	var_23_11[91113] = {
+	pg.base.furniture_shop_template[91113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46555,11 +37759,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_11
-
-	local var_23_12 = var_23_11.base.furniture_shop_template
-
-	var_23_12[91114] = {
+	pg.base.furniture_shop_template[91114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46570,11 +37770,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_12
-
-	local var_23_13 = var_23_12.base.furniture_shop_template
-
-	var_23_13[91115] = {
+	pg.base.furniture_shop_template[91115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46585,11 +37781,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_13
-
-	local var_23_14 = var_23_13.base.furniture_shop_template
-
-	var_23_14[91116] = {
+	pg.base.furniture_shop_template[91116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46600,11 +37792,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_14
-
-	local var_23_15 = var_23_14.base.furniture_shop_template
-
-	var_23_15[91119] = {
+	pg.base.furniture_shop_template[91119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46615,11 +37803,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_15
-
-	local var_23_16 = var_23_15.base.furniture_shop_template
-
-	var_23_16[91120] = {
+	pg.base.furniture_shop_template[91120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46630,11 +37814,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_16
-
-	local var_23_17 = var_23_16.base.furniture_shop_template
-
-	var_23_17[91121] = {
+	pg.base.furniture_shop_template[91121] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46645,11 +37825,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_17
-
-	local var_23_18 = var_23_17.base.furniture_shop_template
-
-	var_23_18[91122] = {
+	pg.base.furniture_shop_template[91122] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46660,11 +37836,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_18
-
-	local var_23_19 = var_23_18.base.furniture_shop_template
-
-	var_23_19[91123] = {
+	pg.base.furniture_shop_template[91123] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46675,11 +37847,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_19
-
-	local var_23_20 = var_23_19.base.furniture_shop_template
-
-	var_23_20[91124] = {
+	pg.base.furniture_shop_template[91124] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46690,11 +37858,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_20
-
-	local var_23_21 = var_23_20.base.furniture_shop_template
-
-	var_23_21[91125] = {
+	pg.base.furniture_shop_template[91125] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46705,11 +37869,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_21
-
-	local var_23_22 = var_23_21.base.furniture_shop_template
-
-	var_23_22[91126] = {
+	pg.base.furniture_shop_template[91126] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46720,11 +37880,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_22
-
-	local var_23_23 = var_23_22.base.furniture_shop_template
-
-	var_23_23[91127] = {
+	pg.base.furniture_shop_template[91127] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46735,11 +37891,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_23
-
-	local var_23_24 = var_23_23.base.furniture_shop_template
-
-	var_23_24[91128] = {
+	pg.base.furniture_shop_template[91128] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46750,11 +37902,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_24
-
-	local var_23_25 = var_23_24.base.furniture_shop_template
-
-	var_23_25[91129] = {
+	pg.base.furniture_shop_template[91129] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -46765,11 +37913,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_25
-
-	local var_23_26 = var_23_25.base.furniture_shop_template
-
-	var_23_26[91301] = {
+	pg.base.furniture_shop_template[91301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46780,11 +37924,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_26
-
-	local var_23_27 = var_23_26.base.furniture_shop_template
-
-	var_23_27[91302] = {
+	pg.base.furniture_shop_template[91302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46795,11 +37935,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_27
-
-	local var_23_28 = var_23_27.base.furniture_shop_template
-
-	var_23_28[91303] = {
+	pg.base.furniture_shop_template[91303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46810,11 +37946,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_28
-
-	local var_23_29 = var_23_28.base.furniture_shop_template
-
-	var_23_29[91304] = {
+	pg.base.furniture_shop_template[91304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46825,11 +37957,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_29
-
-	local var_23_30 = var_23_29.base.furniture_shop_template
-
-	var_23_30[91305] = {
+	pg.base.furniture_shop_template[91305] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46840,11 +37968,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_30
-
-	local var_23_31 = var_23_30.base.furniture_shop_template
-
-	var_23_31[93001] = {
+	pg.base.furniture_shop_template[93001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46855,11 +37979,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_31
-
-	local var_23_32 = var_23_31.base.furniture_shop_template
-
-	var_23_32[93002] = {
+	pg.base.furniture_shop_template[93002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46870,11 +37990,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_32
-
-	local var_23_33 = var_23_32.base.furniture_shop_template
-
-	var_23_33[93101] = {
+	pg.base.furniture_shop_template[93101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46885,11 +38001,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_33
-
-	local var_23_34 = var_23_33.base.furniture_shop_template
-
-	var_23_34[93102] = {
+	pg.base.furniture_shop_template[93102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46900,11 +38012,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_34
-
-	local var_23_35 = var_23_34.base.furniture_shop_template
-
-	var_23_35[93103] = {
+	pg.base.furniture_shop_template[93103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46915,11 +38023,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_35
-
-	local var_23_36 = var_23_35.base.furniture_shop_template
-
-	var_23_36[93104] = {
+	pg.base.furniture_shop_template[93104] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -46930,11 +38034,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_36
-
-	local var_23_37 = var_23_36.base.furniture_shop_template
-
-	var_23_37[93105] = {
+	pg.base.furniture_shop_template[93105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46945,11 +38045,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_37
-
-	local var_23_38 = var_23_37.base.furniture_shop_template
-
-	var_23_38[93106] = {
+	pg.base.furniture_shop_template[93106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -46960,11 +38056,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_38
-
-	local var_23_39 = var_23_38.base.furniture_shop_template
-
-	var_23_39[93107] = {
+	pg.base.furniture_shop_template[93107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -46975,11 +38067,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_39
-
-	local var_23_40 = var_23_39.base.furniture_shop_template
-
-	var_23_40[93108] = {
+	pg.base.furniture_shop_template[93108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -46990,11 +38078,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_40
-
-	local var_23_41 = var_23_40.base.furniture_shop_template
-
-	var_23_41[93109] = {
+	pg.base.furniture_shop_template[93109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47005,11 +38089,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_41
-
-	local var_23_42 = var_23_41.base.furniture_shop_template
-
-	var_23_42[93110] = {
+	pg.base.furniture_shop_template[93110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47020,11 +38100,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_42
-
-	local var_23_43 = var_23_42.base.furniture_shop_template
-
-	var_23_43[93111] = {
+	pg.base.furniture_shop_template[93111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47035,11 +38111,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_43
-
-	local var_23_44 = var_23_43.base.furniture_shop_template
-
-	var_23_44[93113] = {
+	pg.base.furniture_shop_template[93113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47050,11 +38122,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_44
-
-	local var_23_45 = var_23_44.base.furniture_shop_template
-
-	var_23_45[93114] = {
+	pg.base.furniture_shop_template[93114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47065,11 +38133,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_45
-
-	local var_23_46 = var_23_45.base.furniture_shop_template
-
-	var_23_46[93115] = {
+	pg.base.furniture_shop_template[93115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47080,11 +38144,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_46
-
-	local var_23_47 = var_23_46.base.furniture_shop_template
-
-	var_23_47[93116] = {
+	pg.base.furniture_shop_template[93116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47095,11 +38155,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_47
-
-	local var_23_48 = var_23_47.base.furniture_shop_template
-
-	var_23_48[93117] = {
+	pg.base.furniture_shop_template[93117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -47110,11 +38166,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_48
-
-	local var_23_49 = var_23_48.base.furniture_shop_template
-
-	var_23_49[93118] = {
+	pg.base.furniture_shop_template[93118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -47125,11 +38177,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_49
-
-	local var_23_50 = var_23_49.base.furniture_shop_template
-
-	var_23_50[93119] = {
+	pg.base.furniture_shop_template[93119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -47140,11 +38188,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_50
-
-	local var_23_51 = var_23_50.base.furniture_shop_template
-
-	var_23_51[93120] = {
+	pg.base.furniture_shop_template[93120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47155,11 +38199,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_51
-
-	local var_23_52 = var_23_51.base.furniture_shop_template
-
-	var_23_52[94001] = {
+	pg.base.furniture_shop_template[94001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -47170,11 +38210,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_52
-
-	local var_23_53 = var_23_52.base.furniture_shop_template
-
-	var_23_53[94002] = {
+	pg.base.furniture_shop_template[94002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -47185,11 +38221,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_53
-
-	local var_23_54 = var_23_53.base.furniture_shop_template
-
-	var_23_54[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47200,11 +38232,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_54
-
-	local var_23_55 = var_23_54.base.furniture_shop_template
-
-	var_23_55[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -47215,11 +38243,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_55
-
-	local var_23_56 = var_23_55.base.furniture_shop_template
-
-	var_23_56[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47230,11 +38254,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_56
-
-	local var_23_57 = var_23_56.base.furniture_shop_template
-
-	var_23_57[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47245,11 +38265,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_57
-
-	local var_23_58 = var_23_57.base.furniture_shop_template
-
-	var_23_58[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47260,11 +38276,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_58
-
-	local var_23_59 = var_23_58.base.furniture_shop_template
-
-	var_23_59[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47275,11 +38287,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_59
-
-	local var_23_60 = var_23_59.base.furniture_shop_template
-
-	var_23_60[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -47290,11 +38298,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_60
-
-	local var_23_61 = var_23_60.base.furniture_shop_template
-
-	var_23_61[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47305,11 +38309,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_61
-
-	local var_23_62 = var_23_61.base.furniture_shop_template
-
-	var_23_62[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47320,11 +38320,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_62
-
-	local var_23_63 = var_23_62.base.furniture_shop_template
-
-	var_23_63[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47335,11 +38331,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_63
-
-	local var_23_64 = var_23_63.base.furniture_shop_template
-
-	var_23_64[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47350,11 +38342,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_64
-
-	local var_23_65 = var_23_64.base.furniture_shop_template
-
-	var_23_65[94112] = {
+	pg.base.furniture_shop_template[94112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -47365,11 +38353,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_65
-
-	local var_23_66 = var_23_65.base.furniture_shop_template
-
-	var_23_66[94114] = {
+	pg.base.furniture_shop_template[94114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47380,11 +38364,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_66
-
-	local var_23_67 = var_23_66.base.furniture_shop_template
-
-	var_23_67[94115] = {
+	pg.base.furniture_shop_template[94115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47395,11 +38375,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_67
-
-	local var_23_68 = var_23_67.base.furniture_shop_template
-
-	var_23_68[94116] = {
+	pg.base.furniture_shop_template[94116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47410,11 +38386,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_68
-
-	local var_23_69 = var_23_68.base.furniture_shop_template
-
-	var_23_69[94117] = {
+	pg.base.furniture_shop_template[94117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47425,11 +38397,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_69
-
-	local var_23_70 = var_23_69.base.furniture_shop_template
-
-	var_23_70[94119] = {
+	pg.base.furniture_shop_template[94119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -47440,11 +38408,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_70
-
-	local var_23_71 = var_23_70.base.furniture_shop_template
-
-	var_23_71[94120] = {
+	pg.base.furniture_shop_template[94120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -47455,11 +38419,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_71
-
-	local var_23_72 = var_23_71.base.furniture_shop_template
-
-	var_23_72[94301] = {
+	pg.base.furniture_shop_template[94301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47470,11 +38430,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_72
-
-	local var_23_73 = var_23_72.base.furniture_shop_template
-
-	var_23_73[94302] = {
+	pg.base.furniture_shop_template[94302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47485,11 +38441,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_73
-
-	local var_23_74 = var_23_73.base.furniture_shop_template
-
-	var_23_74[94303] = {
+	pg.base.furniture_shop_template[94303] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47500,11 +38452,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_74
-
-	local var_23_75 = var_23_74.base.furniture_shop_template
-
-	var_23_75[94305] = {
+	pg.base.furniture_shop_template[94305] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -47515,11 +38463,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_75
-
-	local var_23_76 = var_23_75.base.furniture_shop_template
-
-	var_23_76[94306] = {
+	pg.base.furniture_shop_template[94306] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -47530,11 +38474,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_23_76
-
-	local var_23_77 = var_23_76.base.furniture_shop_template
-
-	var_23_77[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 95001,
@@ -47570,11 +38510,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_77
-
-	local var_23_78 = var_23_77.base.furniture_shop_template
-
-	var_23_78[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 95002,
@@ -47610,11 +38546,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_78
-
-	local var_23_79 = var_23_78.base.furniture_shop_template
-
-	var_23_79[95101] = {
+	pg.base.furniture_shop_template[95101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95101,
@@ -47650,11 +38582,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_79
-
-	local var_23_80 = var_23_79.base.furniture_shop_template
-
-	var_23_80[95102] = {
+	pg.base.furniture_shop_template[95102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95102,
@@ -47690,11 +38618,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_80
-
-	local var_23_81 = var_23_80.base.furniture_shop_template
-
-	var_23_81[95103] = {
+	pg.base.furniture_shop_template[95103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95103,
@@ -47730,11 +38654,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_81
-
-	local var_23_82 = var_23_81.base.furniture_shop_template
-
-	var_23_82[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95104,
@@ -47770,11 +38690,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_82
-
-	local var_23_83 = var_23_82.base.furniture_shop_template
-
-	var_23_83[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 95105,
@@ -47810,11 +38726,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_83
-
-	local var_23_84 = var_23_83.base.furniture_shop_template
-
-	var_23_84[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95106,
@@ -47850,11 +38762,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_84
-
-	local var_23_85 = var_23_84.base.furniture_shop_template
-
-	var_23_85[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95107,
@@ -47890,11 +38798,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_85
-
-	local var_23_86 = var_23_85.base.furniture_shop_template
-
-	var_23_86[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 95109,
@@ -47930,11 +38834,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_86
-
-	local var_23_87 = var_23_86.base.furniture_shop_template
-
-	var_23_87[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 95110,
@@ -47970,11 +38870,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_87
-
-	local var_23_88 = var_23_87.base.furniture_shop_template
-
-	var_23_88[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95111,
@@ -48010,11 +38906,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_88
-
-	local var_23_89 = var_23_88.base.furniture_shop_template
-
-	var_23_89[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 95112,
@@ -48050,11 +38942,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_89
-
-	local var_23_90 = var_23_89.base.furniture_shop_template
-
-	var_23_90[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 95114,
@@ -48090,11 +38978,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_90
-
-	local var_23_91 = var_23_90.base.furniture_shop_template
-
-	var_23_91[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 95116,
@@ -48130,11 +39014,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_91
-
-	local var_23_92 = var_23_91.base.furniture_shop_template
-
-	var_23_92[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95117,
@@ -48170,11 +39050,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_92
-
-	local var_23_93 = var_23_92.base.furniture_shop_template
-
-	var_23_93[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95118,
@@ -48210,11 +39086,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_93
-
-	local var_23_94 = var_23_93.base.furniture_shop_template
-
-	var_23_94[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95120,
@@ -48250,11 +39122,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_94
-
-	local var_23_95 = var_23_94.base.furniture_shop_template
-
-	var_23_95[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95121,
@@ -48290,11 +39158,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_95
-
-	local var_23_96 = var_23_95.base.furniture_shop_template
-
-	var_23_96[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95122,
@@ -48330,11 +39194,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_96
-
-	local var_23_97 = var_23_96.base.furniture_shop_template
-
-	var_23_97[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95123,
@@ -48370,11 +39230,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_97
-
-	local var_23_98 = var_23_97.base.furniture_shop_template
-
-	var_23_98[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95124,
@@ -48410,8 +39266,7 @@ end)()
 			}
 		}
 	}
-	pg = var_23_98
-	var_23_98.base.furniture_shop_template[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95126,
@@ -48451,11 +39306,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_24_0 = var_1_10000.base.furniture_shop_template
-
-	var_24_0[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95129,
@@ -48491,11 +39342,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_0
-
-	local var_24_1 = var_24_0.base.furniture_shop_template
-
-	var_24_1[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95130,
@@ -48531,11 +39378,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_1
-
-	local var_24_2 = var_24_1.base.furniture_shop_template
-
-	var_24_2[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 95133,
@@ -48571,11 +39414,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_2
-
-	local var_24_3 = var_24_2.base.furniture_shop_template
-
-	var_24_3[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 95134,
@@ -48611,11 +39450,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_3
-
-	local var_24_4 = var_24_3.base.furniture_shop_template
-
-	var_24_4[95143] = {
+	pg.base.furniture_shop_template[95143] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95143,
@@ -48651,11 +39486,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_4
-
-	local var_24_5 = var_24_4.base.furniture_shop_template
-
-	var_24_5[95301] = {
+	pg.base.furniture_shop_template[95301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 95301,
@@ -48691,11 +39522,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_5
-
-	local var_24_6 = var_24_5.base.furniture_shop_template
-
-	var_24_6[95302] = {
+	pg.base.furniture_shop_template[95302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95302,
@@ -48731,11 +39558,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_6
-
-	local var_24_7 = var_24_6.base.furniture_shop_template
-
-	var_24_7[95303] = {
+	pg.base.furniture_shop_template[95303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 95303,
@@ -48771,11 +39594,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_7
-
-	local var_24_8 = var_24_7.base.furniture_shop_template
-
-	var_24_8[95304] = {
+	pg.base.furniture_shop_template[95304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 95304,
@@ -48811,11 +39630,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_8
-
-	local var_24_9 = var_24_8.base.furniture_shop_template
-
-	var_24_9[95305] = {
+	pg.base.furniture_shop_template[95305] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 95305,
@@ -48851,11 +39666,7 @@ end)()
 			}
 		}
 	}
-	pg = var_24_9
-
-	local var_24_10 = var_24_9.base.furniture_shop_template
-
-	var_24_10[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -48866,11 +39677,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_10
-
-	local var_24_11 = var_24_10.base.furniture_shop_template
-
-	var_24_11[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -48881,11 +39688,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_11
-
-	local var_24_12 = var_24_11.base.furniture_shop_template
-
-	var_24_12[96101] = {
+	pg.base.furniture_shop_template[96101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -48896,11 +39699,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_12
-
-	local var_24_13 = var_24_12.base.furniture_shop_template
-
-	var_24_13[96102] = {
+	pg.base.furniture_shop_template[96102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -48911,11 +39710,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_13
-
-	local var_24_14 = var_24_13.base.furniture_shop_template
-
-	var_24_14[96103] = {
+	pg.base.furniture_shop_template[96103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -48926,11 +39721,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_14
-
-	local var_24_15 = var_24_14.base.furniture_shop_template
-
-	var_24_15[96104] = {
+	pg.base.furniture_shop_template[96104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -48941,11 +39732,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_15
-
-	local var_24_16 = var_24_15.base.furniture_shop_template
-
-	var_24_16[96105] = {
+	pg.base.furniture_shop_template[96105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -48956,11 +39743,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_16
-
-	local var_24_17 = var_24_16.base.furniture_shop_template
-
-	var_24_17[96106] = {
+	pg.base.furniture_shop_template[96106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -48971,11 +39754,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_17
-
-	local var_24_18 = var_24_17.base.furniture_shop_template
-
-	var_24_18[96107] = {
+	pg.base.furniture_shop_template[96107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -48986,11 +39765,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_18
-
-	local var_24_19 = var_24_18.base.furniture_shop_template
-
-	var_24_19[96109] = {
+	pg.base.furniture_shop_template[96109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49001,11 +39776,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_19
-
-	local var_24_20 = var_24_19.base.furniture_shop_template
-
-	var_24_20[96110] = {
+	pg.base.furniture_shop_template[96110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49016,11 +39787,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_20
-
-	local var_24_21 = var_24_20.base.furniture_shop_template
-
-	var_24_21[96112] = {
+	pg.base.furniture_shop_template[96112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49031,11 +39798,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_21
-
-	local var_24_22 = var_24_21.base.furniture_shop_template
-
-	var_24_22[96113] = {
+	pg.base.furniture_shop_template[96113] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49046,11 +39809,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_22
-
-	local var_24_23 = var_24_22.base.furniture_shop_template
-
-	var_24_23[96114] = {
+	pg.base.furniture_shop_template[96114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49061,11 +39820,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_23
-
-	local var_24_24 = var_24_23.base.furniture_shop_template
-
-	var_24_24[96115] = {
+	pg.base.furniture_shop_template[96115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49076,11 +39831,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_24
-
-	local var_24_25 = var_24_24.base.furniture_shop_template
-
-	var_24_25[96116] = {
+	pg.base.furniture_shop_template[96116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -49091,11 +39842,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_25
-
-	local var_24_26 = var_24_25.base.furniture_shop_template
-
-	var_24_26[96117] = {
+	pg.base.furniture_shop_template[96117] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -49106,11 +39853,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_26
-
-	local var_24_27 = var_24_26.base.furniture_shop_template
-
-	var_24_27[96301] = {
+	pg.base.furniture_shop_template[96301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49121,11 +39864,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_27
-
-	local var_24_28 = var_24_27.base.furniture_shop_template
-
-	var_24_28[96302] = {
+	pg.base.furniture_shop_template[96302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49136,11 +39875,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_28
-
-	local var_24_29 = var_24_28.base.furniture_shop_template
-
-	var_24_29[96303] = {
+	pg.base.furniture_shop_template[96303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49151,11 +39886,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_29
-
-	local var_24_30 = var_24_29.base.furniture_shop_template
-
-	var_24_30[96304] = {
+	pg.base.furniture_shop_template[96304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49166,11 +39897,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_30
-
-	local var_24_31 = var_24_30.base.furniture_shop_template
-
-	var_24_31[96305] = {
+	pg.base.furniture_shop_template[96305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49181,11 +39908,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_31
-
-	local var_24_32 = var_24_31.base.furniture_shop_template
-
-	var_24_32[96306] = {
+	pg.base.furniture_shop_template[96306] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49196,11 +39919,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_32
-
-	local var_24_33 = var_24_32.base.furniture_shop_template
-
-	var_24_33[96307] = {
+	pg.base.furniture_shop_template[96307] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49211,11 +39930,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_33
-
-	local var_24_34 = var_24_33.base.furniture_shop_template
-
-	var_24_34[97001] = {
+	pg.base.furniture_shop_template[97001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49226,11 +39941,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_34
-
-	local var_24_35 = var_24_34.base.furniture_shop_template
-
-	var_24_35[97002] = {
+	pg.base.furniture_shop_template[97002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49241,11 +39952,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_35
-
-	local var_24_36 = var_24_35.base.furniture_shop_template
-
-	var_24_36[97101] = {
+	pg.base.furniture_shop_template[97101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49256,11 +39963,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_36
-
-	local var_24_37 = var_24_36.base.furniture_shop_template
-
-	var_24_37[97102] = {
+	pg.base.furniture_shop_template[97102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49271,11 +39974,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_37
-
-	local var_24_38 = var_24_37.base.furniture_shop_template
-
-	var_24_38[97103] = {
+	pg.base.furniture_shop_template[97103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49286,11 +39985,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_38
-
-	local var_24_39 = var_24_38.base.furniture_shop_template
-
-	var_24_39[97104] = {
+	pg.base.furniture_shop_template[97104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49301,11 +39996,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_39
-
-	local var_24_40 = var_24_39.base.furniture_shop_template
-
-	var_24_40[97105] = {
+	pg.base.furniture_shop_template[97105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49316,11 +40007,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_40
-
-	local var_24_41 = var_24_40.base.furniture_shop_template
-
-	var_24_41[97106] = {
+	pg.base.furniture_shop_template[97106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49331,11 +40018,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_41
-
-	local var_24_42 = var_24_41.base.furniture_shop_template
-
-	var_24_42[97110] = {
+	pg.base.furniture_shop_template[97110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49346,11 +40029,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_42
-
-	local var_24_43 = var_24_42.base.furniture_shop_template
-
-	var_24_43[97116] = {
+	pg.base.furniture_shop_template[97116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49361,11 +40040,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_43
-
-	local var_24_44 = var_24_43.base.furniture_shop_template
-
-	var_24_44[97117] = {
+	pg.base.furniture_shop_template[97117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49376,11 +40051,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_44
-
-	local var_24_45 = var_24_44.base.furniture_shop_template
-
-	var_24_45[97118] = {
+	pg.base.furniture_shop_template[97118] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49391,11 +40062,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_45
-
-	local var_24_46 = var_24_45.base.furniture_shop_template
-
-	var_24_46[97119] = {
+	pg.base.furniture_shop_template[97119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49406,11 +40073,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_46
-
-	local var_24_47 = var_24_46.base.furniture_shop_template
-
-	var_24_47[97120] = {
+	pg.base.furniture_shop_template[97120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49421,11 +40084,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_47
-
-	local var_24_48 = var_24_47.base.furniture_shop_template
-
-	var_24_48[97122] = {
+	pg.base.furniture_shop_template[97122] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49436,11 +40095,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_48
-
-	local var_24_49 = var_24_48.base.furniture_shop_template
-
-	var_24_49[97123] = {
+	pg.base.furniture_shop_template[97123] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49451,11 +40106,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_49
-
-	local var_24_50 = var_24_49.base.furniture_shop_template
-
-	var_24_50[97124] = {
+	pg.base.furniture_shop_template[97124] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49466,11 +40117,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_50
-
-	local var_24_51 = var_24_50.base.furniture_shop_template
-
-	var_24_51[97125] = {
+	pg.base.furniture_shop_template[97125] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49481,11 +40128,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_51
-
-	local var_24_52 = var_24_51.base.furniture_shop_template
-
-	var_24_52[97126] = {
+	pg.base.furniture_shop_template[97126] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49496,11 +40139,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_52
-
-	local var_24_53 = var_24_52.base.furniture_shop_template
-
-	var_24_53[97127] = {
+	pg.base.furniture_shop_template[97127] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49511,11 +40150,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_53
-
-	local var_24_54 = var_24_53.base.furniture_shop_template
-
-	var_24_54[97128] = {
+	pg.base.furniture_shop_template[97128] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49526,11 +40161,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_54
-
-	local var_24_55 = var_24_54.base.furniture_shop_template
-
-	var_24_55[97129] = {
+	pg.base.furniture_shop_template[97129] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49541,11 +40172,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_55
-
-	local var_24_56 = var_24_55.base.furniture_shop_template
-
-	var_24_56[97130] = {
+	pg.base.furniture_shop_template[97130] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49556,11 +40183,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_56
-
-	local var_24_57 = var_24_56.base.furniture_shop_template
-
-	var_24_57[97131] = {
+	pg.base.furniture_shop_template[97131] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -49571,11 +40194,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_57
-
-	local var_24_58 = var_24_57.base.furniture_shop_template
-
-	var_24_58[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49586,11 +40205,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_58
-
-	local var_24_59 = var_24_58.base.furniture_shop_template
-
-	var_24_59[98001] = {
+	pg.base.furniture_shop_template[98001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49601,11 +40216,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_59
-
-	local var_24_60 = var_24_59.base.furniture_shop_template
-
-	var_24_60[98002] = {
+	pg.base.furniture_shop_template[98002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49616,11 +40227,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_60
-
-	local var_24_61 = var_24_60.base.furniture_shop_template
-
-	var_24_61[98101] = {
+	pg.base.furniture_shop_template[98101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49631,11 +40238,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_61
-
-	local var_24_62 = var_24_61.base.furniture_shop_template
-
-	var_24_62[98102] = {
+	pg.base.furniture_shop_template[98102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49646,11 +40249,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_62
-
-	local var_24_63 = var_24_62.base.furniture_shop_template
-
-	var_24_63[98103] = {
+	pg.base.furniture_shop_template[98103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49661,11 +40260,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_63
-
-	local var_24_64 = var_24_63.base.furniture_shop_template
-
-	var_24_64[98104] = {
+	pg.base.furniture_shop_template[98104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49676,11 +40271,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_64
-
-	local var_24_65 = var_24_64.base.furniture_shop_template
-
-	var_24_65[98105] = {
+	pg.base.furniture_shop_template[98105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49691,11 +40282,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_65
-
-	local var_24_66 = var_24_65.base.furniture_shop_template
-
-	var_24_66[98107] = {
+	pg.base.furniture_shop_template[98107] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -49706,11 +40293,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_66
-
-	local var_24_67 = var_24_66.base.furniture_shop_template
-
-	var_24_67[98108] = {
+	pg.base.furniture_shop_template[98108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49721,11 +40304,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_67
-
-	local var_24_68 = var_24_67.base.furniture_shop_template
-
-	var_24_68[98111] = {
+	pg.base.furniture_shop_template[98111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49736,11 +40315,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_68
-
-	local var_24_69 = var_24_68.base.furniture_shop_template
-
-	var_24_69[98112] = {
+	pg.base.furniture_shop_template[98112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49751,11 +40326,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_69
-
-	local var_24_70 = var_24_69.base.furniture_shop_template
-
-	var_24_70[98114] = {
+	pg.base.furniture_shop_template[98114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49766,11 +40337,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_70
-
-	local var_24_71 = var_24_70.base.furniture_shop_template
-
-	var_24_71[98115] = {
+	pg.base.furniture_shop_template[98115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49781,11 +40348,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_71
-
-	local var_24_72 = var_24_71.base.furniture_shop_template
-
-	var_24_72[98116] = {
+	pg.base.furniture_shop_template[98116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49796,11 +40359,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_72
-
-	local var_24_73 = var_24_72.base.furniture_shop_template
-
-	var_24_73[98117] = {
+	pg.base.furniture_shop_template[98117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49811,11 +40370,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_73
-
-	local var_24_74 = var_24_73.base.furniture_shop_template
-
-	var_24_74[98118] = {
+	pg.base.furniture_shop_template[98118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49826,11 +40381,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_74
-
-	local var_24_75 = var_24_74.base.furniture_shop_template
-
-	var_24_75[98119] = {
+	pg.base.furniture_shop_template[98119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49841,11 +40392,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_75
-
-	local var_24_76 = var_24_75.base.furniture_shop_template
-
-	var_24_76[98120] = {
+	pg.base.furniture_shop_template[98120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49856,11 +40403,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_76
-
-	local var_24_77 = var_24_76.base.furniture_shop_template
-
-	var_24_77[98121] = {
+	pg.base.furniture_shop_template[98121] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49871,11 +40414,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_77
-
-	local var_24_78 = var_24_77.base.furniture_shop_template
-
-	var_24_78[98122] = {
+	pg.base.furniture_shop_template[98122] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49886,11 +40425,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_78
-
-	local var_24_79 = var_24_78.base.furniture_shop_template
-
-	var_24_79[98123] = {
+	pg.base.furniture_shop_template[98123] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49901,11 +40436,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_79
-
-	local var_24_80 = var_24_79.base.furniture_shop_template
-
-	var_24_80[98124] = {
+	pg.base.furniture_shop_template[98124] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49916,11 +40447,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_80
-
-	local var_24_81 = var_24_80.base.furniture_shop_template
-
-	var_24_81[98125] = {
+	pg.base.furniture_shop_template[98125] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49931,11 +40458,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_81
-
-	local var_24_82 = var_24_81.base.furniture_shop_template
-
-	var_24_82[98126] = {
+	pg.base.furniture_shop_template[98126] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -49946,11 +40469,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_82
-
-	local var_24_83 = var_24_82.base.furniture_shop_template
-
-	var_24_83[98127] = {
+	pg.base.furniture_shop_template[98127] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -49961,11 +40480,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_83
-
-	local var_24_84 = var_24_83.base.furniture_shop_template
-
-	var_24_84[98128] = {
+	pg.base.furniture_shop_template[98128] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49976,11 +40491,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_84
-
-	local var_24_85 = var_24_84.base.furniture_shop_template
-
-	var_24_85[98129] = {
+	pg.base.furniture_shop_template[98129] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -49991,11 +40502,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_85
-
-	local var_24_86 = var_24_85.base.furniture_shop_template
-
-	var_24_86[98136] = {
+	pg.base.furniture_shop_template[98136] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50006,11 +40513,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_86
-
-	local var_24_87 = var_24_86.base.furniture_shop_template
-
-	var_24_87[98137] = {
+	pg.base.furniture_shop_template[98137] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50021,11 +40524,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_87
-
-	local var_24_88 = var_24_87.base.furniture_shop_template
-
-	var_24_88[98138] = {
+	pg.base.furniture_shop_template[98138] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50036,11 +40535,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_88
-
-	local var_24_89 = var_24_88.base.furniture_shop_template
-
-	var_24_89[98139] = {
+	pg.base.furniture_shop_template[98139] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50051,11 +40546,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_89
-
-	local var_24_90 = var_24_89.base.furniture_shop_template
-
-	var_24_90[98140] = {
+	pg.base.furniture_shop_template[98140] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50066,11 +40557,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_90
-
-	local var_24_91 = var_24_90.base.furniture_shop_template
-
-	var_24_91[98141] = {
+	pg.base.furniture_shop_template[98141] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50081,11 +40568,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_91
-
-	local var_24_92 = var_24_91.base.furniture_shop_template
-
-	var_24_92[98142] = {
+	pg.base.furniture_shop_template[98142] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -50096,11 +40579,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_92
-
-	local var_24_93 = var_24_92.base.furniture_shop_template
-
-	var_24_93[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50111,11 +40590,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_93
-
-	local var_24_94 = var_24_93.base.furniture_shop_template
-
-	var_24_94[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50126,11 +40601,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_94
-
-	local var_24_95 = var_24_94.base.furniture_shop_template
-
-	var_24_95[98301] = {
+	pg.base.furniture_shop_template[98301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50141,11 +40612,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_95
-
-	local var_24_96 = var_24_95.base.furniture_shop_template
-
-	var_24_96[98302] = {
+	pg.base.furniture_shop_template[98302] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -50156,11 +40623,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_96
-
-	local var_24_97 = var_24_96.base.furniture_shop_template
-
-	var_24_97[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50171,11 +40634,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_97
-
-	local var_24_98 = var_24_97.base.furniture_shop_template
-
-	var_24_98[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50186,8 +40645,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_24_98
-	var_24_98.base.furniture_shop_template[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50202,11 +40660,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_25_0 = var_1_10000.base.furniture_shop_template
-
-	var_25_0[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50217,11 +40671,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_0
-
-	local var_25_1 = var_25_0.base.furniture_shop_template
-
-	var_25_1[99001] = {
+	pg.base.furniture_shop_template[99001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -50232,11 +40682,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_1
-
-	local var_25_2 = var_25_1.base.furniture_shop_template
-
-	var_25_2[99002] = {
+	pg.base.furniture_shop_template[99002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -50247,11 +40693,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_2
-
-	local var_25_3 = var_25_2.base.furniture_shop_template
-
-	var_25_3[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -50262,11 +40704,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_3
-
-	local var_25_4 = var_25_3.base.furniture_shop_template
-
-	var_25_4[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50277,11 +40715,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_4
-
-	local var_25_5 = var_25_4.base.furniture_shop_template
-
-	var_25_5[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50292,11 +40726,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_5
-
-	local var_25_6 = var_25_5.base.furniture_shop_template
-
-	var_25_6[99104] = {
+	pg.base.furniture_shop_template[99104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50307,11 +40737,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_6
-
-	local var_25_7 = var_25_6.base.furniture_shop_template
-
-	var_25_7[99105] = {
+	pg.base.furniture_shop_template[99105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50322,11 +40748,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_7
-
-	local var_25_8 = var_25_7.base.furniture_shop_template
-
-	var_25_8[99106] = {
+	pg.base.furniture_shop_template[99106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50337,11 +40759,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_8
-
-	local var_25_9 = var_25_8.base.furniture_shop_template
-
-	var_25_9[99109] = {
+	pg.base.furniture_shop_template[99109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50352,11 +40770,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_9
-
-	local var_25_10 = var_25_9.base.furniture_shop_template
-
-	var_25_10[99112] = {
+	pg.base.furniture_shop_template[99112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50367,11 +40781,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_10
-
-	local var_25_11 = var_25_10.base.furniture_shop_template
-
-	var_25_11[99113] = {
+	pg.base.furniture_shop_template[99113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50382,11 +40792,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_11
-
-	local var_25_12 = var_25_11.base.furniture_shop_template
-
-	var_25_12[99114] = {
+	pg.base.furniture_shop_template[99114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50397,11 +40803,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_12
-
-	local var_25_13 = var_25_12.base.furniture_shop_template
-
-	var_25_13[99115] = {
+	pg.base.furniture_shop_template[99115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50412,11 +40814,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_13
-
-	local var_25_14 = var_25_13.base.furniture_shop_template
-
-	var_25_14[99116] = {
+	pg.base.furniture_shop_template[99116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50427,11 +40825,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_14
-
-	local var_25_15 = var_25_14.base.furniture_shop_template
-
-	var_25_15[99117] = {
+	pg.base.furniture_shop_template[99117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50442,11 +40836,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_15
-
-	local var_25_16 = var_25_15.base.furniture_shop_template
-
-	var_25_16[99120] = {
+	pg.base.furniture_shop_template[99120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50457,11 +40847,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_16
-
-	local var_25_17 = var_25_16.base.furniture_shop_template
-
-	var_25_17[99121] = {
+	pg.base.furniture_shop_template[99121] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50472,11 +40858,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_17
-
-	local var_25_18 = var_25_17.base.furniture_shop_template
-
-	var_25_18[99123] = {
+	pg.base.furniture_shop_template[99123] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50487,11 +40869,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_18
-
-	local var_25_19 = var_25_18.base.furniture_shop_template
-
-	var_25_19[99124] = {
+	pg.base.furniture_shop_template[99124] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50502,11 +40880,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_19
-
-	local var_25_20 = var_25_19.base.furniture_shop_template
-
-	var_25_20[99126] = {
+	pg.base.furniture_shop_template[99126] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50517,11 +40891,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_20
-
-	local var_25_21 = var_25_20.base.furniture_shop_template
-
-	var_25_21[99128] = {
+	pg.base.furniture_shop_template[99128] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -50532,11 +40902,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_21
-
-	local var_25_22 = var_25_21.base.furniture_shop_template
-
-	var_25_22[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50547,11 +40913,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_22
-
-	local var_25_23 = var_25_22.base.furniture_shop_template
-
-	var_25_23[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50562,11 +40924,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_23
-
-	local var_25_24 = var_25_23.base.furniture_shop_template
-
-	var_25_24[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50577,11 +40935,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_24
-
-	local var_25_25 = var_25_24.base.furniture_shop_template
-
-	var_25_25[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50592,11 +40946,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_25
-
-	local var_25_26 = var_25_25.base.furniture_shop_template
-
-	var_25_26[99301] = {
+	pg.base.furniture_shop_template[99301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50607,11 +40957,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_26
-
-	local var_25_27 = var_25_26.base.furniture_shop_template
-
-	var_25_27[99302] = {
+	pg.base.furniture_shop_template[99302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50622,11 +40968,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_27
-
-	local var_25_28 = var_25_27.base.furniture_shop_template
-
-	var_25_28[99303] = {
+	pg.base.furniture_shop_template[99303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50637,11 +40979,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_28
-
-	local var_25_29 = var_25_28.base.furniture_shop_template
-
-	var_25_29[99304] = {
+	pg.base.furniture_shop_template[99304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50652,11 +40990,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_29
-
-	local var_25_30 = var_25_29.base.furniture_shop_template
-
-	var_25_30[300001] = {
+	pg.base.furniture_shop_template[300001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -50667,11 +41001,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_30
-
-	local var_25_31 = var_25_30.base.furniture_shop_template
-
-	var_25_31[300002] = {
+	pg.base.furniture_shop_template[300002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -50682,11 +41012,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_31
-
-	local var_25_32 = var_25_31.base.furniture_shop_template
-
-	var_25_32[300101] = {
+	pg.base.furniture_shop_template[300101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50697,11 +41023,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_32
-
-	local var_25_33 = var_25_32.base.furniture_shop_template
-
-	var_25_33[300102] = {
+	pg.base.furniture_shop_template[300102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50712,11 +41034,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_33
-
-	local var_25_34 = var_25_33.base.furniture_shop_template
-
-	var_25_34[300103] = {
+	pg.base.furniture_shop_template[300103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50727,11 +41045,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_34
-
-	local var_25_35 = var_25_34.base.furniture_shop_template
-
-	var_25_35[300104] = {
+	pg.base.furniture_shop_template[300104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50742,11 +41056,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_35
-
-	local var_25_36 = var_25_35.base.furniture_shop_template
-
-	var_25_36[300105] = {
+	pg.base.furniture_shop_template[300105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50757,11 +41067,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_36
-
-	local var_25_37 = var_25_36.base.furniture_shop_template
-
-	var_25_37[300106] = {
+	pg.base.furniture_shop_template[300106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50772,11 +41078,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_37
-
-	local var_25_38 = var_25_37.base.furniture_shop_template
-
-	var_25_38[300109] = {
+	pg.base.furniture_shop_template[300109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50787,11 +41089,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_38
-
-	local var_25_39 = var_25_38.base.furniture_shop_template
-
-	var_25_39[300111] = {
+	pg.base.furniture_shop_template[300111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50802,11 +41100,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_39
-
-	local var_25_40 = var_25_39.base.furniture_shop_template
-
-	var_25_40[300113] = {
+	pg.base.furniture_shop_template[300113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50817,11 +41111,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_40
-
-	local var_25_41 = var_25_40.base.furniture_shop_template
-
-	var_25_41[300114] = {
+	pg.base.furniture_shop_template[300114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50832,11 +41122,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_41
-
-	local var_25_42 = var_25_41.base.furniture_shop_template
-
-	var_25_42[300115] = {
+	pg.base.furniture_shop_template[300115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50847,11 +41133,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_42
-
-	local var_25_43 = var_25_42.base.furniture_shop_template
-
-	var_25_43[300116] = {
+	pg.base.furniture_shop_template[300116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50862,11 +41144,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_43
-
-	local var_25_44 = var_25_43.base.furniture_shop_template
-
-	var_25_44[300117] = {
+	pg.base.furniture_shop_template[300117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50877,11 +41155,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_44
-
-	local var_25_45 = var_25_44.base.furniture_shop_template
-
-	var_25_45[300118] = {
+	pg.base.furniture_shop_template[300118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -50892,11 +41166,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_45
-
-	local var_25_46 = var_25_45.base.furniture_shop_template
-
-	var_25_46[300119] = {
+	pg.base.furniture_shop_template[300119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -50907,11 +41177,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_46
-
-	local var_25_47 = var_25_46.base.furniture_shop_template
-
-	var_25_47[300120] = {
+	pg.base.furniture_shop_template[300120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50922,11 +41188,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_47
-
-	local var_25_48 = var_25_47.base.furniture_shop_template
-
-	var_25_48[300121] = {
+	pg.base.furniture_shop_template[300121] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50937,11 +41199,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_48
-
-	local var_25_49 = var_25_48.base.furniture_shop_template
-
-	var_25_49[300122] = {
+	pg.base.furniture_shop_template[300122] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50952,11 +41210,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_49
-
-	local var_25_50 = var_25_49.base.furniture_shop_template
-
-	var_25_50[300124] = {
+	pg.base.furniture_shop_template[300124] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50967,11 +41221,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_50
-
-	local var_25_51 = var_25_50.base.furniture_shop_template
-
-	var_25_51[300125] = {
+	pg.base.furniture_shop_template[300125] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50982,11 +41232,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_51
-
-	local var_25_52 = var_25_51.base.furniture_shop_template
-
-	var_25_52[300127] = {
+	pg.base.furniture_shop_template[300127] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -50997,11 +41243,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_52
-
-	local var_25_53 = var_25_52.base.furniture_shop_template
-
-	var_25_53[300128] = {
+	pg.base.furniture_shop_template[300128] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51012,11 +41254,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_53
-
-	local var_25_54 = var_25_53.base.furniture_shop_template
-
-	var_25_54[300129] = {
+	pg.base.furniture_shop_template[300129] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51027,11 +41265,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_54
-
-	local var_25_55 = var_25_54.base.furniture_shop_template
-
-	var_25_55[300130] = {
+	pg.base.furniture_shop_template[300130] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51042,11 +41276,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_55
-
-	local var_25_56 = var_25_55.base.furniture_shop_template
-
-	var_25_56[300131] = {
+	pg.base.furniture_shop_template[300131] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51057,11 +41287,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_56
-
-	local var_25_57 = var_25_56.base.furniture_shop_template
-
-	var_25_57[300132] = {
+	pg.base.furniture_shop_template[300132] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51072,11 +41298,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_57
-
-	local var_25_58 = var_25_57.base.furniture_shop_template
-
-	var_25_58[300133] = {
+	pg.base.furniture_shop_template[300133] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51087,11 +41309,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_58
-
-	local var_25_59 = var_25_58.base.furniture_shop_template
-
-	var_25_59[300134] = {
+	pg.base.furniture_shop_template[300134] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51102,11 +41320,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_59
-
-	local var_25_60 = var_25_59.base.furniture_shop_template
-
-	var_25_60[300201] = {
+	pg.base.furniture_shop_template[300201] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51117,11 +41331,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_60
-
-	local var_25_61 = var_25_60.base.furniture_shop_template
-
-	var_25_61[300202] = {
+	pg.base.furniture_shop_template[300202] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51132,11 +41342,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_61
-
-	local var_25_62 = var_25_61.base.furniture_shop_template
-
-	var_25_62[302001] = {
+	pg.base.furniture_shop_template[302001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51147,11 +41353,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_62
-
-	local var_25_63 = var_25_62.base.furniture_shop_template
-
-	var_25_63[302002] = {
+	pg.base.furniture_shop_template[302002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51162,11 +41364,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_63
-
-	local var_25_64 = var_25_63.base.furniture_shop_template
-
-	var_25_64[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51177,11 +41375,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_64
-
-	local var_25_65 = var_25_64.base.furniture_shop_template
-
-	var_25_65[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51192,11 +41386,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_65
-
-	local var_25_66 = var_25_65.base.furniture_shop_template
-
-	var_25_66[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51207,11 +41397,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_66
-
-	local var_25_67 = var_25_66.base.furniture_shop_template
-
-	var_25_67[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51222,11 +41408,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_67
-
-	local var_25_68 = var_25_67.base.furniture_shop_template
-
-	var_25_68[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51237,11 +41419,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_68
-
-	local var_25_69 = var_25_68.base.furniture_shop_template
-
-	var_25_69[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51252,11 +41430,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_69
-
-	local var_25_70 = var_25_69.base.furniture_shop_template
-
-	var_25_70[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51267,11 +41441,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_70
-
-	local var_25_71 = var_25_70.base.furniture_shop_template
-
-	var_25_71[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51282,11 +41452,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_71
-
-	local var_25_72 = var_25_71.base.furniture_shop_template
-
-	var_25_72[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51297,11 +41463,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_72
-
-	local var_25_73 = var_25_72.base.furniture_shop_template
-
-	var_25_73[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51312,11 +41474,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_73
-
-	local var_25_74 = var_25_73.base.furniture_shop_template
-
-	var_25_74[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51327,11 +41485,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_74
-
-	local var_25_75 = var_25_74.base.furniture_shop_template
-
-	var_25_75[302112] = {
+	pg.base.furniture_shop_template[302112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51342,11 +41496,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_75
-
-	local var_25_76 = var_25_75.base.furniture_shop_template
-
-	var_25_76[302113] = {
+	pg.base.furniture_shop_template[302113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51357,11 +41507,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_76
-
-	local var_25_77 = var_25_76.base.furniture_shop_template
-
-	var_25_77[302114] = {
+	pg.base.furniture_shop_template[302114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51372,11 +41518,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_77
-
-	local var_25_78 = var_25_77.base.furniture_shop_template
-
-	var_25_78[302115] = {
+	pg.base.furniture_shop_template[302115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51387,11 +41529,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_78
-
-	local var_25_79 = var_25_78.base.furniture_shop_template
-
-	var_25_79[302116] = {
+	pg.base.furniture_shop_template[302116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51402,11 +41540,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_79
-
-	local var_25_80 = var_25_79.base.furniture_shop_template
-
-	var_25_80[302117] = {
+	pg.base.furniture_shop_template[302117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51417,11 +41551,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_80
-
-	local var_25_81 = var_25_80.base.furniture_shop_template
-
-	var_25_81[302118] = {
+	pg.base.furniture_shop_template[302118] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51432,11 +41562,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_81
-
-	local var_25_82 = var_25_81.base.furniture_shop_template
-
-	var_25_82[302119] = {
+	pg.base.furniture_shop_template[302119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51447,11 +41573,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_82
-
-	local var_25_83 = var_25_82.base.furniture_shop_template
-
-	var_25_83[302120] = {
+	pg.base.furniture_shop_template[302120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51462,11 +41584,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_83
-
-	local var_25_84 = var_25_83.base.furniture_shop_template
-
-	var_25_84[302121] = {
+	pg.base.furniture_shop_template[302121] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51477,11 +41595,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_84
-
-	local var_25_85 = var_25_84.base.furniture_shop_template
-
-	var_25_85[302122] = {
+	pg.base.furniture_shop_template[302122] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51492,11 +41606,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_85
-
-	local var_25_86 = var_25_85.base.furniture_shop_template
-
-	var_25_86[302123] = {
+	pg.base.furniture_shop_template[302123] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51507,11 +41617,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_86
-
-	local var_25_87 = var_25_86.base.furniture_shop_template
-
-	var_25_87[302124] = {
+	pg.base.furniture_shop_template[302124] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51522,11 +41628,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_87
-
-	local var_25_88 = var_25_87.base.furniture_shop_template
-
-	var_25_88[302125] = {
+	pg.base.furniture_shop_template[302125] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51537,11 +41639,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_88
-
-	local var_25_89 = var_25_88.base.furniture_shop_template
-
-	var_25_89[302126] = {
+	pg.base.furniture_shop_template[302126] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51552,11 +41650,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_89
-
-	local var_25_90 = var_25_89.base.furniture_shop_template
-
-	var_25_90[302301] = {
+	pg.base.furniture_shop_template[302301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51567,11 +41661,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_90
-
-	local var_25_91 = var_25_90.base.furniture_shop_template
-
-	var_25_91[302302] = {
+	pg.base.furniture_shop_template[302302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51582,11 +41672,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_91
-
-	local var_25_92 = var_25_91.base.furniture_shop_template
-
-	var_25_92[302303] = {
+	pg.base.furniture_shop_template[302303] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51597,11 +41683,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_92
-
-	local var_25_93 = var_25_92.base.furniture_shop_template
-
-	var_25_93[302304] = {
+	pg.base.furniture_shop_template[302304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51612,11 +41694,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_93
-
-	local var_25_94 = var_25_93.base.furniture_shop_template
-
-	var_25_94[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51627,11 +41705,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_94
-
-	local var_25_95 = var_25_94.base.furniture_shop_template
-
-	var_25_95[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51642,11 +41716,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_95
-
-	local var_25_96 = var_25_95.base.furniture_shop_template
-
-	var_25_96[303101] = {
+	pg.base.furniture_shop_template[303101] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51657,11 +41727,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_96
-
-	local var_25_97 = var_25_96.base.furniture_shop_template
-
-	var_25_97[303102] = {
+	pg.base.furniture_shop_template[303102] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -51672,11 +41738,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_97
-
-	local var_25_98 = var_25_97.base.furniture_shop_template
-
-	var_25_98[303103] = {
+	pg.base.furniture_shop_template[303103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51687,8 +41749,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_25_98
-	var_25_98.base.furniture_shop_template[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51703,11 +41764,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_26_0 = var_1_10000.base.furniture_shop_template
-
-	var_26_0[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51718,11 +41775,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_0
-
-	local var_26_1 = var_26_0.base.furniture_shop_template
-
-	var_26_1[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51733,11 +41786,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_1
-
-	local var_26_2 = var_26_1.base.furniture_shop_template
-
-	var_26_2[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51748,11 +41797,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_2
-
-	local var_26_3 = var_26_2.base.furniture_shop_template
-
-	var_26_3[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51763,11 +41808,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_3
-
-	local var_26_4 = var_26_3.base.furniture_shop_template
-
-	var_26_4[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51778,11 +41819,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_4
-
-	local var_26_5 = var_26_4.base.furniture_shop_template
-
-	var_26_5[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51793,11 +41830,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_5
-
-	local var_26_6 = var_26_5.base.furniture_shop_template
-
-	var_26_6[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51808,11 +41841,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_6
-
-	local var_26_7 = var_26_6.base.furniture_shop_template
-
-	var_26_7[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51823,11 +41852,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_7
-
-	local var_26_8 = var_26_7.base.furniture_shop_template
-
-	var_26_8[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51838,11 +41863,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_8
-
-	local var_26_9 = var_26_8.base.furniture_shop_template
-
-	var_26_9[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51853,11 +41874,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_9
-
-	local var_26_10 = var_26_9.base.furniture_shop_template
-
-	var_26_10[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51868,11 +41885,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_10
-
-	local var_26_11 = var_26_10.base.furniture_shop_template
-
-	var_26_11[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51883,11 +41896,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_11
-
-	local var_26_12 = var_26_11.base.furniture_shop_template
-
-	var_26_12[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -51898,11 +41907,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_12
-
-	local var_26_13 = var_26_12.base.furniture_shop_template
-
-	var_26_13[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51913,11 +41918,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_13
-
-	local var_26_14 = var_26_13.base.furniture_shop_template
-
-	var_26_14[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -51928,11 +41929,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_14
-
-	local var_26_15 = var_26_14.base.furniture_shop_template
-
-	var_26_15[304101] = {
+	pg.base.furniture_shop_template[304101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -51943,11 +41940,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_15
-
-	local var_26_16 = var_26_15.base.furniture_shop_template
-
-	var_26_16[304102] = {
+	pg.base.furniture_shop_template[304102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51958,11 +41951,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_16
-
-	local var_26_17 = var_26_16.base.furniture_shop_template
-
-	var_26_17[304103] = {
+	pg.base.furniture_shop_template[304103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51973,11 +41962,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_17
-
-	local var_26_18 = var_26_17.base.furniture_shop_template
-
-	var_26_18[304104] = {
+	pg.base.furniture_shop_template[304104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -51988,11 +41973,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_18
-
-	local var_26_19 = var_26_18.base.furniture_shop_template
-
-	var_26_19[304105] = {
+	pg.base.furniture_shop_template[304105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52003,11 +41984,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_19
-
-	local var_26_20 = var_26_19.base.furniture_shop_template
-
-	var_26_20[304107] = {
+	pg.base.furniture_shop_template[304107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52018,11 +41995,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_20
-
-	local var_26_21 = var_26_20.base.furniture_shop_template
-
-	var_26_21[304108] = {
+	pg.base.furniture_shop_template[304108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -52033,11 +42006,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_21
-
-	local var_26_22 = var_26_21.base.furniture_shop_template
-
-	var_26_22[304109] = {
+	pg.base.furniture_shop_template[304109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52048,11 +42017,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_22
-
-	local var_26_23 = var_26_22.base.furniture_shop_template
-
-	var_26_23[304110] = {
+	pg.base.furniture_shop_template[304110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52063,11 +42028,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_23
-
-	local var_26_24 = var_26_23.base.furniture_shop_template
-
-	var_26_24[304111] = {
+	pg.base.furniture_shop_template[304111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52078,11 +42039,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_24
-
-	local var_26_25 = var_26_24.base.furniture_shop_template
-
-	var_26_25[304112] = {
+	pg.base.furniture_shop_template[304112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52093,11 +42050,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_25
-
-	local var_26_26 = var_26_25.base.furniture_shop_template
-
-	var_26_26[304113] = {
+	pg.base.furniture_shop_template[304113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52108,11 +42061,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_26
-
-	local var_26_27 = var_26_26.base.furniture_shop_template
-
-	var_26_27[304114] = {
+	pg.base.furniture_shop_template[304114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52123,11 +42072,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_27
-
-	local var_26_28 = var_26_27.base.furniture_shop_template
-
-	var_26_28[304115] = {
+	pg.base.furniture_shop_template[304115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52138,11 +42083,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_28
-
-	local var_26_29 = var_26_28.base.furniture_shop_template
-
-	var_26_29[304116] = {
+	pg.base.furniture_shop_template[304116] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52153,11 +42094,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_29
-
-	local var_26_30 = var_26_29.base.furniture_shop_template
-
-	var_26_30[304117] = {
+	pg.base.furniture_shop_template[304117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52168,11 +42105,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_30
-
-	local var_26_31 = var_26_30.base.furniture_shop_template
-
-	var_26_31[304118] = {
+	pg.base.furniture_shop_template[304118] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52183,11 +42116,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_31
-
-	local var_26_32 = var_26_31.base.furniture_shop_template
-
-	var_26_32[304119] = {
+	pg.base.furniture_shop_template[304119] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -52198,11 +42127,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_32
-
-	local var_26_33 = var_26_32.base.furniture_shop_template
-
-	var_26_33[304120] = {
+	pg.base.furniture_shop_template[304120] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52213,11 +42138,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_33
-
-	local var_26_34 = var_26_33.base.furniture_shop_template
-
-	var_26_34[304121] = {
+	pg.base.furniture_shop_template[304121] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52228,11 +42149,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_34
-
-	local var_26_35 = var_26_34.base.furniture_shop_template
-
-	var_26_35[304122] = {
+	pg.base.furniture_shop_template[304122] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52243,11 +42160,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_35
-
-	local var_26_36 = var_26_35.base.furniture_shop_template
-
-	var_26_36[304123] = {
+	pg.base.furniture_shop_template[304123] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52258,11 +42171,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_36
-
-	local var_26_37 = var_26_36.base.furniture_shop_template
-
-	var_26_37[304124] = {
+	pg.base.furniture_shop_template[304124] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52273,11 +42182,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_37
-
-	local var_26_38 = var_26_37.base.furniture_shop_template
-
-	var_26_38[304125] = {
+	pg.base.furniture_shop_template[304125] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52288,11 +42193,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_38
-
-	local var_26_39 = var_26_38.base.furniture_shop_template
-
-	var_26_39[304126] = {
+	pg.base.furniture_shop_template[304126] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52303,11 +42204,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_39
-
-	local var_26_40 = var_26_39.base.furniture_shop_template
-
-	var_26_40[304127] = {
+	pg.base.furniture_shop_template[304127] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52318,11 +42215,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_40
-
-	local var_26_41 = var_26_40.base.furniture_shop_template
-
-	var_26_41[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52333,11 +42226,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_41
-
-	local var_26_42 = var_26_41.base.furniture_shop_template
-
-	var_26_42[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52348,11 +42237,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_42
-
-	local var_26_43 = var_26_42.base.furniture_shop_template
-
-	var_26_43[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52363,11 +42248,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_43
-
-	local var_26_44 = var_26_43.base.furniture_shop_template
-
-	var_26_44[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -52378,11 +42259,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_44
-
-	local var_26_45 = var_26_44.base.furniture_shop_template
-
-	var_26_45[304201] = {
+	pg.base.furniture_shop_template[304201] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52393,11 +42270,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_45
-
-	local var_26_46 = var_26_45.base.furniture_shop_template
-
-	var_26_46[304301] = {
+	pg.base.furniture_shop_template[304301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52408,11 +42281,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_46
-
-	local var_26_47 = var_26_46.base.furniture_shop_template
-
-	var_26_47[304302] = {
+	pg.base.furniture_shop_template[304302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52423,11 +42292,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_47
-
-	local var_26_48 = var_26_47.base.furniture_shop_template
-
-	var_26_48[304303] = {
+	pg.base.furniture_shop_template[304303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52438,11 +42303,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_48
-
-	local var_26_49 = var_26_48.base.furniture_shop_template
-
-	var_26_49[304304] = {
+	pg.base.furniture_shop_template[304304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52453,11 +42314,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_49
-
-	local var_26_50 = var_26_49.base.furniture_shop_template
-
-	var_26_50[304305] = {
+	pg.base.furniture_shop_template[304305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -52468,11 +42325,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_50
-
-	local var_26_51 = var_26_50.base.furniture_shop_template
-
-	var_26_51[304306] = {
+	pg.base.furniture_shop_template[304306] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52483,11 +42336,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_51
-
-	local var_26_52 = var_26_51.base.furniture_shop_template
-
-	var_26_52[304307] = {
+	pg.base.furniture_shop_template[304307] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -52498,11 +42347,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_52
-
-	local var_26_53 = var_26_52.base.furniture_shop_template
-
-	var_26_53[305001] = {
+	pg.base.furniture_shop_template[305001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 305001,
@@ -52538,11 +42383,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_53
-
-	local var_26_54 = var_26_53.base.furniture_shop_template
-
-	var_26_54[305002] = {
+	pg.base.furniture_shop_template[305002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 305002,
@@ -52578,11 +42419,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_54
-
-	local var_26_55 = var_26_54.base.furniture_shop_template
-
-	var_26_55[305101] = {
+	pg.base.furniture_shop_template[305101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305101,
@@ -52618,11 +42455,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_55
-
-	local var_26_56 = var_26_55.base.furniture_shop_template
-
-	var_26_56[305103] = {
+	pg.base.furniture_shop_template[305103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305103,
@@ -52658,11 +42491,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_56
-
-	local var_26_57 = var_26_56.base.furniture_shop_template
-
-	var_26_57[305104] = {
+	pg.base.furniture_shop_template[305104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305104,
@@ -52698,11 +42527,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_57
-
-	local var_26_58 = var_26_57.base.furniture_shop_template
-
-	var_26_58[305105] = {
+	pg.base.furniture_shop_template[305105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305105,
@@ -52738,11 +42563,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_58
-
-	local var_26_59 = var_26_58.base.furniture_shop_template
-
-	var_26_59[305106] = {
+	pg.base.furniture_shop_template[305106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 305106,
@@ -52778,11 +42599,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_59
-
-	local var_26_60 = var_26_59.base.furniture_shop_template
-
-	var_26_60[305107] = {
+	pg.base.furniture_shop_template[305107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305107,
@@ -52818,11 +42635,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_60
-
-	local var_26_61 = var_26_60.base.furniture_shop_template
-
-	var_26_61[305108] = {
+	pg.base.furniture_shop_template[305108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305108,
@@ -52858,11 +42671,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_61
-
-	local var_26_62 = var_26_61.base.furniture_shop_template
-
-	var_26_62[305109] = {
+	pg.base.furniture_shop_template[305109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305109,
@@ -52898,11 +42707,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_62
-
-	local var_26_63 = var_26_62.base.furniture_shop_template
-
-	var_26_63[305110] = {
+	pg.base.furniture_shop_template[305110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305110,
@@ -52938,11 +42743,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_63
-
-	local var_26_64 = var_26_63.base.furniture_shop_template
-
-	var_26_64[305111] = {
+	pg.base.furniture_shop_template[305111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305111,
@@ -52978,11 +42779,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_64
-
-	local var_26_65 = var_26_64.base.furniture_shop_template
-
-	var_26_65[305112] = {
+	pg.base.furniture_shop_template[305112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305112,
@@ -53018,11 +42815,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_65
-
-	local var_26_66 = var_26_65.base.furniture_shop_template
-
-	var_26_66[305113] = {
+	pg.base.furniture_shop_template[305113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 305113,
@@ -53058,11 +42851,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_66
-
-	local var_26_67 = var_26_66.base.furniture_shop_template
-
-	var_26_67[305114] = {
+	pg.base.furniture_shop_template[305114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305114,
@@ -53098,11 +42887,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_67
-
-	local var_26_68 = var_26_67.base.furniture_shop_template
-
-	var_26_68[305115] = {
+	pg.base.furniture_shop_template[305115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305115,
@@ -53138,11 +42923,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_68
-
-	local var_26_69 = var_26_68.base.furniture_shop_template
-
-	var_26_69[305116] = {
+	pg.base.furniture_shop_template[305116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305116,
@@ -53178,11 +42959,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_69
-
-	local var_26_70 = var_26_69.base.furniture_shop_template
-
-	var_26_70[305117] = {
+	pg.base.furniture_shop_template[305117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305117,
@@ -53218,11 +42995,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_70
-
-	local var_26_71 = var_26_70.base.furniture_shop_template
-
-	var_26_71[305119] = {
+	pg.base.furniture_shop_template[305119] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 305119,
@@ -53258,11 +43031,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_71
-
-	local var_26_72 = var_26_71.base.furniture_shop_template
-
-	var_26_72[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		id = 305301,
@@ -53298,11 +43067,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_72
-
-	local var_26_73 = var_26_72.base.furniture_shop_template
-
-	var_26_73[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		id = 305302,
@@ -53338,11 +43103,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_73
-
-	local var_26_74 = var_26_73.base.furniture_shop_template
-
-	var_26_74[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		id = 305303,
@@ -53378,11 +43139,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_74
-
-	local var_26_75 = var_26_74.base.furniture_shop_template
-
-	var_26_75[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 50,
 		id = 305304,
@@ -53418,11 +43175,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_75
-
-	local var_26_76 = var_26_75.base.furniture_shop_template
-
-	var_26_76[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305305,
@@ -53458,11 +43211,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_76
-
-	local var_26_77 = var_26_76.base.furniture_shop_template
-
-	var_26_77[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 305306,
@@ -53498,11 +43247,7 @@ end)()
 			}
 		}
 	}
-	pg = var_26_77
-
-	local var_26_78 = var_26_77.base.furniture_shop_template
-
-	var_26_78[306001] = {
+	pg.base.furniture_shop_template[306001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53513,11 +43258,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_78
-
-	local var_26_79 = var_26_78.base.furniture_shop_template
-
-	var_26_79[306002] = {
+	pg.base.furniture_shop_template[306002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53528,11 +43269,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_79
-
-	local var_26_80 = var_26_79.base.furniture_shop_template
-
-	var_26_80[306101] = {
+	pg.base.furniture_shop_template[306101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -53543,11 +43280,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_80
-
-	local var_26_81 = var_26_80.base.furniture_shop_template
-
-	var_26_81[306102] = {
+	pg.base.furniture_shop_template[306102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -53558,11 +43291,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_81
-
-	local var_26_82 = var_26_81.base.furniture_shop_template
-
-	var_26_82[306103] = {
+	pg.base.furniture_shop_template[306103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53573,11 +43302,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_82
-
-	local var_26_83 = var_26_82.base.furniture_shop_template
-
-	var_26_83[306104] = {
+	pg.base.furniture_shop_template[306104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53588,11 +43313,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_83
-
-	local var_26_84 = var_26_83.base.furniture_shop_template
-
-	var_26_84[306105] = {
+	pg.base.furniture_shop_template[306105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53603,11 +43324,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_84
-
-	local var_26_85 = var_26_84.base.furniture_shop_template
-
-	var_26_85[306106] = {
+	pg.base.furniture_shop_template[306106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53618,11 +43335,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_85
-
-	local var_26_86 = var_26_85.base.furniture_shop_template
-
-	var_26_86[306107] = {
+	pg.base.furniture_shop_template[306107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -53633,11 +43346,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_86
-
-	local var_26_87 = var_26_86.base.furniture_shop_template
-
-	var_26_87[306108] = {
+	pg.base.furniture_shop_template[306108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -53648,11 +43357,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_87
-
-	local var_26_88 = var_26_87.base.furniture_shop_template
-
-	var_26_88[306110] = {
+	pg.base.furniture_shop_template[306110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -53663,11 +43368,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_88
-
-	local var_26_89 = var_26_88.base.furniture_shop_template
-
-	var_26_89[306111] = {
+	pg.base.furniture_shop_template[306111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -53678,11 +43379,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_89
-
-	local var_26_90 = var_26_89.base.furniture_shop_template
-
-	var_26_90[306112] = {
+	pg.base.furniture_shop_template[306112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53693,11 +43390,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_90
-
-	local var_26_91 = var_26_90.base.furniture_shop_template
-
-	var_26_91[306114] = {
+	pg.base.furniture_shop_template[306114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53708,11 +43401,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_91
-
-	local var_26_92 = var_26_91.base.furniture_shop_template
-
-	var_26_92[306115] = {
+	pg.base.furniture_shop_template[306115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -53723,11 +43412,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_92
-
-	local var_26_93 = var_26_92.base.furniture_shop_template
-
-	var_26_93[307001] = {
+	pg.base.furniture_shop_template[307001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53738,11 +43423,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_93
-
-	local var_26_94 = var_26_93.base.furniture_shop_template
-
-	var_26_94[307002] = {
+	pg.base.furniture_shop_template[307002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53753,11 +43434,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_94
-
-	local var_26_95 = var_26_94.base.furniture_shop_template
-
-	var_26_95[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -53768,11 +43445,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_95
-
-	local var_26_96 = var_26_95.base.furniture_shop_template
-
-	var_26_96[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53783,11 +43456,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_96
-
-	local var_26_97 = var_26_96.base.furniture_shop_template
-
-	var_26_97[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -53798,11 +43467,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_97
-
-	local var_26_98 = var_26_97.base.furniture_shop_template
-
-	var_26_98[307104] = {
+	pg.base.furniture_shop_template[307104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -53813,8 +43478,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_26_98
-	var_26_98.base.furniture_shop_template[307105] = {
+	pg.base.furniture_shop_template[307105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -53829,11 +43493,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_27_0 = var_1_10000.base.furniture_shop_template
-
-	var_27_0[307106] = {
+	pg.base.furniture_shop_template[307106] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53844,11 +43504,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_0
-
-	local var_27_1 = var_27_0.base.furniture_shop_template
-
-	var_27_1[307107] = {
+	pg.base.furniture_shop_template[307107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -53859,11 +43515,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_1
-
-	local var_27_2 = var_27_1.base.furniture_shop_template
-
-	var_27_2[307108] = {
+	pg.base.furniture_shop_template[307108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53874,11 +43526,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_2
-
-	local var_27_3 = var_27_2.base.furniture_shop_template
-
-	var_27_3[307109] = {
+	pg.base.furniture_shop_template[307109] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -53889,11 +43537,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_3
-
-	local var_27_4 = var_27_3.base.furniture_shop_template
-
-	var_27_4[307110] = {
+	pg.base.furniture_shop_template[307110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53904,11 +43548,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_4
-
-	local var_27_5 = var_27_4.base.furniture_shop_template
-
-	var_27_5[307111] = {
+	pg.base.furniture_shop_template[307111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53919,11 +43559,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_5
-
-	local var_27_6 = var_27_5.base.furniture_shop_template
-
-	var_27_6[307112] = {
+	pg.base.furniture_shop_template[307112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53934,11 +43570,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_6
-
-	local var_27_7 = var_27_6.base.furniture_shop_template
-
-	var_27_7[307113] = {
+	pg.base.furniture_shop_template[307113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53949,11 +43581,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_7
-
-	local var_27_8 = var_27_7.base.furniture_shop_template
-
-	var_27_8[307114] = {
+	pg.base.furniture_shop_template[307114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -53964,11 +43592,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_8
-
-	local var_27_9 = var_27_8.base.furniture_shop_template
-
-	var_27_9[308001] = {
+	pg.base.furniture_shop_template[308001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53979,11 +43603,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_9
-
-	local var_27_10 = var_27_9.base.furniture_shop_template
-
-	var_27_10[308002] = {
+	pg.base.furniture_shop_template[308002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -53994,11 +43614,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_10
-
-	local var_27_11 = var_27_10.base.furniture_shop_template
-
-	var_27_11[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54009,11 +43625,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_11
-
-	local var_27_12 = var_27_11.base.furniture_shop_template
-
-	var_27_12[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54024,11 +43636,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_12
-
-	local var_27_13 = var_27_12.base.furniture_shop_template
-
-	var_27_13[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54039,11 +43647,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_13
-
-	local var_27_14 = var_27_13.base.furniture_shop_template
-
-	var_27_14[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54054,11 +43658,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_14
-
-	local var_27_15 = var_27_14.base.furniture_shop_template
-
-	var_27_15[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54069,11 +43669,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_15
-
-	local var_27_16 = var_27_15.base.furniture_shop_template
-
-	var_27_16[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54084,11 +43680,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_16
-
-	local var_27_17 = var_27_16.base.furniture_shop_template
-
-	var_27_17[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54099,11 +43691,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_17
-
-	local var_27_18 = var_27_17.base.furniture_shop_template
-
-	var_27_18[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54114,11 +43702,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_18
-
-	local var_27_19 = var_27_18.base.furniture_shop_template
-
-	var_27_19[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54129,11 +43713,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_19
-
-	local var_27_20 = var_27_19.base.furniture_shop_template
-
-	var_27_20[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54144,11 +43724,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_20
-
-	local var_27_21 = var_27_20.base.furniture_shop_template
-
-	var_27_21[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54159,11 +43735,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_21
-
-	local var_27_22 = var_27_21.base.furniture_shop_template
-
-	var_27_22[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54174,11 +43746,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_22
-
-	local var_27_23 = var_27_22.base.furniture_shop_template
-
-	var_27_23[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54189,11 +43757,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_23
-
-	local var_27_24 = var_27_23.base.furniture_shop_template
-
-	var_27_24[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54204,11 +43768,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_24
-
-	local var_27_25 = var_27_24.base.furniture_shop_template
-
-	var_27_25[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54219,11 +43779,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_25
-
-	local var_27_26 = var_27_25.base.furniture_shop_template
-
-	var_27_26[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54234,11 +43790,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_26
-
-	local var_27_27 = var_27_26.base.furniture_shop_template
-
-	var_27_27[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54249,11 +43801,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_27
-
-	local var_27_28 = var_27_27.base.furniture_shop_template
-
-	var_27_28[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54264,11 +43812,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_28
-
-	local var_27_29 = var_27_28.base.furniture_shop_template
-
-	var_27_29[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -54279,11 +43823,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_29
-
-	local var_27_30 = var_27_29.base.furniture_shop_template
-
-	var_27_30[308301] = {
+	pg.base.furniture_shop_template[308301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54294,11 +43834,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_30
-
-	local var_27_31 = var_27_30.base.furniture_shop_template
-
-	var_27_31[308302] = {
+	pg.base.furniture_shop_template[308302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54309,11 +43845,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_31
-
-	local var_27_32 = var_27_31.base.furniture_shop_template
-
-	var_27_32[308303] = {
+	pg.base.furniture_shop_template[308303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54324,11 +43856,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_32
-
-	local var_27_33 = var_27_32.base.furniture_shop_template
-
-	var_27_33[308304] = {
+	pg.base.furniture_shop_template[308304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54339,11 +43867,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_33
-
-	local var_27_34 = var_27_33.base.furniture_shop_template
-
-	var_27_34[308305] = {
+	pg.base.furniture_shop_template[308305] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -54354,11 +43878,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_34
-
-	local var_27_35 = var_27_34.base.furniture_shop_template
-
-	var_27_35[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54369,11 +43889,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_35
-
-	local var_27_36 = var_27_35.base.furniture_shop_template
-
-	var_27_36[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54384,11 +43900,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_36
-
-	local var_27_37 = var_27_36.base.furniture_shop_template
-
-	var_27_37[309101] = {
+	pg.base.furniture_shop_template[309101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54399,11 +43911,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_37
-
-	local var_27_38 = var_27_37.base.furniture_shop_template
-
-	var_27_38[309102] = {
+	pg.base.furniture_shop_template[309102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54414,11 +43922,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_38
-
-	local var_27_39 = var_27_38.base.furniture_shop_template
-
-	var_27_39[309103] = {
+	pg.base.furniture_shop_template[309103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54429,11 +43933,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_39
-
-	local var_27_40 = var_27_39.base.furniture_shop_template
-
-	var_27_40[309104] = {
+	pg.base.furniture_shop_template[309104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54444,11 +43944,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_40
-
-	local var_27_41 = var_27_40.base.furniture_shop_template
-
-	var_27_41[309105] = {
+	pg.base.furniture_shop_template[309105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54459,11 +43955,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_41
-
-	local var_27_42 = var_27_41.base.furniture_shop_template
-
-	var_27_42[309106] = {
+	pg.base.furniture_shop_template[309106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54474,11 +43966,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_42
-
-	local var_27_43 = var_27_42.base.furniture_shop_template
-
-	var_27_43[309107] = {
+	pg.base.furniture_shop_template[309107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54489,11 +43977,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_43
-
-	local var_27_44 = var_27_43.base.furniture_shop_template
-
-	var_27_44[309108] = {
+	pg.base.furniture_shop_template[309108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54504,11 +43988,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_44
-
-	local var_27_45 = var_27_44.base.furniture_shop_template
-
-	var_27_45[309109] = {
+	pg.base.furniture_shop_template[309109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54519,11 +43999,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_45
-
-	local var_27_46 = var_27_45.base.furniture_shop_template
-
-	var_27_46[309110] = {
+	pg.base.furniture_shop_template[309110] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54534,11 +44010,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_46
-
-	local var_27_47 = var_27_46.base.furniture_shop_template
-
-	var_27_47[309111] = {
+	pg.base.furniture_shop_template[309111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54549,11 +44021,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_47
-
-	local var_27_48 = var_27_47.base.furniture_shop_template
-
-	var_27_48[309112] = {
+	pg.base.furniture_shop_template[309112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54564,11 +44032,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_48
-
-	local var_27_49 = var_27_48.base.furniture_shop_template
-
-	var_27_49[309113] = {
+	pg.base.furniture_shop_template[309113] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -54579,11 +44043,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_49
-
-	local var_27_50 = var_27_49.base.furniture_shop_template
-
-	var_27_50[309114] = {
+	pg.base.furniture_shop_template[309114] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54594,11 +44054,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_50
-
-	local var_27_51 = var_27_50.base.furniture_shop_template
-
-	var_27_51[309301] = {
+	pg.base.furniture_shop_template[309301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54609,11 +44065,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_51
-
-	local var_27_52 = var_27_51.base.furniture_shop_template
-
-	var_27_52[309302] = {
+	pg.base.furniture_shop_template[309302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54624,11 +44076,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_52
-
-	local var_27_53 = var_27_52.base.furniture_shop_template
-
-	var_27_53[310001] = {
+	pg.base.furniture_shop_template[310001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54639,11 +44087,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_53
-
-	local var_27_54 = var_27_53.base.furniture_shop_template
-
-	var_27_54[310002] = {
+	pg.base.furniture_shop_template[310002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54654,11 +44098,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_54
-
-	local var_27_55 = var_27_54.base.furniture_shop_template
-
-	var_27_55[310101] = {
+	pg.base.furniture_shop_template[310101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54669,11 +44109,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_55
-
-	local var_27_56 = var_27_55.base.furniture_shop_template
-
-	var_27_56[310102] = {
+	pg.base.furniture_shop_template[310102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54684,11 +44120,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_56
-
-	local var_27_57 = var_27_56.base.furniture_shop_template
-
-	var_27_57[310103] = {
+	pg.base.furniture_shop_template[310103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54699,11 +44131,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_57
-
-	local var_27_58 = var_27_57.base.furniture_shop_template
-
-	var_27_58[310104] = {
+	pg.base.furniture_shop_template[310104] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54714,11 +44142,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_58
-
-	local var_27_59 = var_27_58.base.furniture_shop_template
-
-	var_27_59[310105] = {
+	pg.base.furniture_shop_template[310105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54729,11 +44153,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_59
-
-	local var_27_60 = var_27_59.base.furniture_shop_template
-
-	var_27_60[310106] = {
+	pg.base.furniture_shop_template[310106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54744,11 +44164,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_60
-
-	local var_27_61 = var_27_60.base.furniture_shop_template
-
-	var_27_61[310107] = {
+	pg.base.furniture_shop_template[310107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54759,11 +44175,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_61
-
-	local var_27_62 = var_27_61.base.furniture_shop_template
-
-	var_27_62[310108] = {
+	pg.base.furniture_shop_template[310108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -54774,11 +44186,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_62
-
-	local var_27_63 = var_27_62.base.furniture_shop_template
-
-	var_27_63[310109] = {
+	pg.base.furniture_shop_template[310109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54789,11 +44197,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_63
-
-	local var_27_64 = var_27_63.base.furniture_shop_template
-
-	var_27_64[310110] = {
+	pg.base.furniture_shop_template[310110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54804,11 +44208,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_64
-
-	local var_27_65 = var_27_64.base.furniture_shop_template
-
-	var_27_65[310111] = {
+	pg.base.furniture_shop_template[310111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54819,11 +44219,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_65
-
-	local var_27_66 = var_27_65.base.furniture_shop_template
-
-	var_27_66[310112] = {
+	pg.base.furniture_shop_template[310112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54834,11 +44230,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_66
-
-	local var_27_67 = var_27_66.base.furniture_shop_template
-
-	var_27_67[310113] = {
+	pg.base.furniture_shop_template[310113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54849,11 +44241,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_67
-
-	local var_27_68 = var_27_67.base.furniture_shop_template
-
-	var_27_68[310114] = {
+	pg.base.furniture_shop_template[310114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54864,11 +44252,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_68
-
-	local var_27_69 = var_27_68.base.furniture_shop_template
-
-	var_27_69[310115] = {
+	pg.base.furniture_shop_template[310115] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -54879,11 +44263,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_69
-
-	local var_27_70 = var_27_69.base.furniture_shop_template
-
-	var_27_70[310116] = {
+	pg.base.furniture_shop_template[310116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -54894,11 +44274,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_70
-
-	local var_27_71 = var_27_70.base.furniture_shop_template
-
-	var_27_71[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54909,11 +44285,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_71
-
-	local var_27_72 = var_27_71.base.furniture_shop_template
-
-	var_27_72[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54924,11 +44296,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_72
-
-	local var_27_73 = var_27_72.base.furniture_shop_template
-
-	var_27_73[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54939,11 +44307,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_73
-
-	local var_27_74 = var_27_73.base.furniture_shop_template
-
-	var_27_74[310304] = {
+	pg.base.furniture_shop_template[310304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54954,11 +44318,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_74
-
-	local var_27_75 = var_27_74.base.furniture_shop_template
-
-	var_27_75[310305] = {
+	pg.base.furniture_shop_template[310305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -54969,11 +44329,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_75
-
-	local var_27_76 = var_27_75.base.furniture_shop_template
-
-	var_27_76[310306] = {
+	pg.base.furniture_shop_template[310306] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54984,11 +44340,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_76
-
-	local var_27_77 = var_27_76.base.furniture_shop_template
-
-	var_27_77[310307] = {
+	pg.base.furniture_shop_template[310307] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -54999,11 +44351,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_77
-
-	local var_27_78 = var_27_77.base.furniture_shop_template
-
-	var_27_78[310308] = {
+	pg.base.furniture_shop_template[310308] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55014,11 +44362,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_78
-
-	local var_27_79 = var_27_78.base.furniture_shop_template
-
-	var_27_79[310309] = {
+	pg.base.furniture_shop_template[310309] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55029,11 +44373,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_79
-
-	local var_27_80 = var_27_79.base.furniture_shop_template
-
-	var_27_80[310310] = {
+	pg.base.furniture_shop_template[310310] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55044,11 +44384,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_80
-
-	local var_27_81 = var_27_80.base.furniture_shop_template
-
-	var_27_81[311001] = {
+	pg.base.furniture_shop_template[311001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55059,11 +44395,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_81
-
-	local var_27_82 = var_27_81.base.furniture_shop_template
-
-	var_27_82[311002] = {
+	pg.base.furniture_shop_template[311002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55074,11 +44406,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_82
-
-	local var_27_83 = var_27_82.base.furniture_shop_template
-
-	var_27_83[311101] = {
+	pg.base.furniture_shop_template[311101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55089,11 +44417,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_83
-
-	local var_27_84 = var_27_83.base.furniture_shop_template
-
-	var_27_84[311102] = {
+	pg.base.furniture_shop_template[311102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55104,11 +44428,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_84
-
-	local var_27_85 = var_27_84.base.furniture_shop_template
-
-	var_27_85[311103] = {
+	pg.base.furniture_shop_template[311103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55119,11 +44439,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_85
-
-	local var_27_86 = var_27_85.base.furniture_shop_template
-
-	var_27_86[311104] = {
+	pg.base.furniture_shop_template[311104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55134,11 +44450,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_86
-
-	local var_27_87 = var_27_86.base.furniture_shop_template
-
-	var_27_87[311105] = {
+	pg.base.furniture_shop_template[311105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55149,11 +44461,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_87
-
-	local var_27_88 = var_27_87.base.furniture_shop_template
-
-	var_27_88[311106] = {
+	pg.base.furniture_shop_template[311106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55164,11 +44472,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_88
-
-	local var_27_89 = var_27_88.base.furniture_shop_template
-
-	var_27_89[311107] = {
+	pg.base.furniture_shop_template[311107] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55179,11 +44483,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_89
-
-	local var_27_90 = var_27_89.base.furniture_shop_template
-
-	var_27_90[311108] = {
+	pg.base.furniture_shop_template[311108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55194,11 +44494,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_90
-
-	local var_27_91 = var_27_90.base.furniture_shop_template
-
-	var_27_91[311109] = {
+	pg.base.furniture_shop_template[311109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55209,11 +44505,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_91
-
-	local var_27_92 = var_27_91.base.furniture_shop_template
-
-	var_27_92[311110] = {
+	pg.base.furniture_shop_template[311110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55224,11 +44516,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_92
-
-	local var_27_93 = var_27_92.base.furniture_shop_template
-
-	var_27_93[311111] = {
+	pg.base.furniture_shop_template[311111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55239,11 +44527,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_93
-
-	local var_27_94 = var_27_93.base.furniture_shop_template
-
-	var_27_94[311112] = {
+	pg.base.furniture_shop_template[311112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55254,11 +44538,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_94
-
-	local var_27_95 = var_27_94.base.furniture_shop_template
-
-	var_27_95[311113] = {
+	pg.base.furniture_shop_template[311113] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55269,11 +44549,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_95
-
-	local var_27_96 = var_27_95.base.furniture_shop_template
-
-	var_27_96[311114] = {
+	pg.base.furniture_shop_template[311114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55284,11 +44560,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_96
-
-	local var_27_97 = var_27_96.base.furniture_shop_template
-
-	var_27_97[311115] = {
+	pg.base.furniture_shop_template[311115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55299,11 +44571,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_97
-
-	local var_27_98 = var_27_97.base.furniture_shop_template
-
-	var_27_98[311116] = {
+	pg.base.furniture_shop_template[311116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -55314,8 +44582,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_27_98
-	var_27_98.base.furniture_shop_template[312001] = {
+	pg.base.furniture_shop_template[312001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55330,11 +44597,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_28_0 = var_1_10000.base.furniture_shop_template
-
-	var_28_0[312002] = {
+	pg.base.furniture_shop_template[312002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55345,11 +44608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_0
-
-	local var_28_1 = var_28_0.base.furniture_shop_template
-
-	var_28_1[312101] = {
+	pg.base.furniture_shop_template[312101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55360,11 +44619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_1
-
-	local var_28_2 = var_28_1.base.furniture_shop_template
-
-	var_28_2[312102] = {
+	pg.base.furniture_shop_template[312102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55375,11 +44630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_2
-
-	local var_28_3 = var_28_2.base.furniture_shop_template
-
-	var_28_3[312103] = {
+	pg.base.furniture_shop_template[312103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55390,11 +44641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_3
-
-	local var_28_4 = var_28_3.base.furniture_shop_template
-
-	var_28_4[312104] = {
+	pg.base.furniture_shop_template[312104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55405,11 +44652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_4
-
-	local var_28_5 = var_28_4.base.furniture_shop_template
-
-	var_28_5[312105] = {
+	pg.base.furniture_shop_template[312105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55420,11 +44663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_5
-
-	local var_28_6 = var_28_5.base.furniture_shop_template
-
-	var_28_6[312106] = {
+	pg.base.furniture_shop_template[312106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55435,11 +44674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_6
-
-	local var_28_7 = var_28_6.base.furniture_shop_template
-
-	var_28_7[312107] = {
+	pg.base.furniture_shop_template[312107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55450,11 +44685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_7
-
-	local var_28_8 = var_28_7.base.furniture_shop_template
-
-	var_28_8[312108] = {
+	pg.base.furniture_shop_template[312108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55465,11 +44696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_8
-
-	local var_28_9 = var_28_8.base.furniture_shop_template
-
-	var_28_9[312109] = {
+	pg.base.furniture_shop_template[312109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55480,11 +44707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_9
-
-	local var_28_10 = var_28_9.base.furniture_shop_template
-
-	var_28_10[312110] = {
+	pg.base.furniture_shop_template[312110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55495,11 +44718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_10
-
-	local var_28_11 = var_28_10.base.furniture_shop_template
-
-	var_28_11[312111] = {
+	pg.base.furniture_shop_template[312111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55510,11 +44729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_11
-
-	local var_28_12 = var_28_11.base.furniture_shop_template
-
-	var_28_12[312112] = {
+	pg.base.furniture_shop_template[312112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55525,11 +44740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_12
-
-	local var_28_13 = var_28_12.base.furniture_shop_template
-
-	var_28_13[312113] = {
+	pg.base.furniture_shop_template[312113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55540,11 +44751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_13
-
-	local var_28_14 = var_28_13.base.furniture_shop_template
-
-	var_28_14[312114] = {
+	pg.base.furniture_shop_template[312114] = {
 		not_for_sale = 0,
 		gem_price = 80,
 		time = "always",
@@ -55555,11 +44762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_14
-
-	local var_28_15 = var_28_14.base.furniture_shop_template
-
-	var_28_15[312115] = {
+	pg.base.furniture_shop_template[312115] = {
 		not_for_sale = 0,
 		gem_price = 80,
 		time = "always",
@@ -55570,11 +44773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_15
-
-	local var_28_16 = var_28_15.base.furniture_shop_template
-
-	var_28_16[312301] = {
+	pg.base.furniture_shop_template[312301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55585,11 +44784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_16
-
-	local var_28_17 = var_28_16.base.furniture_shop_template
-
-	var_28_17[312302] = {
+	pg.base.furniture_shop_template[312302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55600,11 +44795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_17
-
-	local var_28_18 = var_28_17.base.furniture_shop_template
-
-	var_28_18[313001] = {
+	pg.base.furniture_shop_template[313001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55615,11 +44806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_18
-
-	local var_28_19 = var_28_18.base.furniture_shop_template
-
-	var_28_19[313002] = {
+	pg.base.furniture_shop_template[313002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55630,11 +44817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_19
-
-	local var_28_20 = var_28_19.base.furniture_shop_template
-
-	var_28_20[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55645,11 +44828,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_20
-
-	local var_28_21 = var_28_20.base.furniture_shop_template
-
-	var_28_21[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55660,11 +44839,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_21
-
-	local var_28_22 = var_28_21.base.furniture_shop_template
-
-	var_28_22[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55675,11 +44850,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_22
-
-	local var_28_23 = var_28_22.base.furniture_shop_template
-
-	var_28_23[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55690,11 +44861,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_23
-
-	local var_28_24 = var_28_23.base.furniture_shop_template
-
-	var_28_24[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55705,11 +44872,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_24
-
-	local var_28_25 = var_28_24.base.furniture_shop_template
-
-	var_28_25[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55720,11 +44883,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_25
-
-	local var_28_26 = var_28_25.base.furniture_shop_template
-
-	var_28_26[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55735,11 +44894,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_26
-
-	local var_28_27 = var_28_26.base.furniture_shop_template
-
-	var_28_27[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -55750,11 +44905,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_27
-
-	local var_28_28 = var_28_27.base.furniture_shop_template
-
-	var_28_28[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55765,11 +44916,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_28
-
-	local var_28_29 = var_28_28.base.furniture_shop_template
-
-	var_28_29[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55780,11 +44927,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_29
-
-	local var_28_30 = var_28_29.base.furniture_shop_template
-
-	var_28_30[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55795,11 +44938,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_30
-
-	local var_28_31 = var_28_30.base.furniture_shop_template
-
-	var_28_31[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55810,11 +44949,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_31
-
-	local var_28_32 = var_28_31.base.furniture_shop_template
-
-	var_28_32[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -55825,11 +44960,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_32
-
-	local var_28_33 = var_28_32.base.furniture_shop_template
-
-	var_28_33[313301] = {
+	pg.base.furniture_shop_template[313301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55840,11 +44971,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_33
-
-	local var_28_34 = var_28_33.base.furniture_shop_template
-
-	var_28_34[313302] = {
+	pg.base.furniture_shop_template[313302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55855,11 +44982,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_34
-
-	local var_28_35 = var_28_34.base.furniture_shop_template
-
-	var_28_35[313303] = {
+	pg.base.furniture_shop_template[313303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55870,11 +44993,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_35
-
-	local var_28_36 = var_28_35.base.furniture_shop_template
-
-	var_28_36[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55885,11 +45004,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_36
-
-	local var_28_37 = var_28_36.base.furniture_shop_template
-
-	var_28_37[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55900,11 +45015,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_37
-
-	local var_28_38 = var_28_37.base.furniture_shop_template
-
-	var_28_38[314101] = {
+	pg.base.furniture_shop_template[314101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55915,11 +45026,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_38
-
-	local var_28_39 = var_28_38.base.furniture_shop_template
-
-	var_28_39[314102] = {
+	pg.base.furniture_shop_template[314102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -55930,11 +45037,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_39
-
-	local var_28_40 = var_28_39.base.furniture_shop_template
-
-	var_28_40[314103] = {
+	pg.base.furniture_shop_template[314103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55945,11 +45048,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_40
-
-	local var_28_41 = var_28_40.base.furniture_shop_template
-
-	var_28_41[314104] = {
+	pg.base.furniture_shop_template[314104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55960,11 +45059,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_41
-
-	local var_28_42 = var_28_41.base.furniture_shop_template
-
-	var_28_42[314105] = {
+	pg.base.furniture_shop_template[314105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -55975,11 +45070,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_42
-
-	local var_28_43 = var_28_42.base.furniture_shop_template
-
-	var_28_43[314107] = {
+	pg.base.furniture_shop_template[314107] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -55990,11 +45081,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_43
-
-	local var_28_44 = var_28_43.base.furniture_shop_template
-
-	var_28_44[314108] = {
+	pg.base.furniture_shop_template[314108] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56005,11 +45092,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_44
-
-	local var_28_45 = var_28_44.base.furniture_shop_template
-
-	var_28_45[314109] = {
+	pg.base.furniture_shop_template[314109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56020,11 +45103,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_45
-
-	local var_28_46 = var_28_45.base.furniture_shop_template
-
-	var_28_46[314110] = {
+	pg.base.furniture_shop_template[314110] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56035,11 +45114,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_46
-
-	local var_28_47 = var_28_46.base.furniture_shop_template
-
-	var_28_47[314111] = {
+	pg.base.furniture_shop_template[314111] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56050,11 +45125,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_47
-
-	local var_28_48 = var_28_47.base.furniture_shop_template
-
-	var_28_48[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -56065,11 +45136,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_48
-
-	local var_28_49 = var_28_48.base.furniture_shop_template
-
-	var_28_49[315001] = {
+	pg.base.furniture_shop_template[315001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56080,11 +45147,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_49
-
-	local var_28_50 = var_28_49.base.furniture_shop_template
-
-	var_28_50[315002] = {
+	pg.base.furniture_shop_template[315002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56095,11 +45158,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_50
-
-	local var_28_51 = var_28_50.base.furniture_shop_template
-
-	var_28_51[315101] = {
+	pg.base.furniture_shop_template[315101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56110,11 +45169,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_51
-
-	local var_28_52 = var_28_51.base.furniture_shop_template
-
-	var_28_52[315102] = {
+	pg.base.furniture_shop_template[315102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56125,11 +45180,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_52
-
-	local var_28_53 = var_28_52.base.furniture_shop_template
-
-	var_28_53[315103] = {
+	pg.base.furniture_shop_template[315103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -56140,11 +45191,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_53
-
-	local var_28_54 = var_28_53.base.furniture_shop_template
-
-	var_28_54[315104] = {
+	pg.base.furniture_shop_template[315104] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56155,11 +45202,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_54
-
-	local var_28_55 = var_28_54.base.furniture_shop_template
-
-	var_28_55[315105] = {
+	pg.base.furniture_shop_template[315105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -56170,11 +45213,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_55
-
-	local var_28_56 = var_28_55.base.furniture_shop_template
-
-	var_28_56[315106] = {
+	pg.base.furniture_shop_template[315106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -56185,11 +45224,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_56
-
-	local var_28_57 = var_28_56.base.furniture_shop_template
-
-	var_28_57[315107] = {
+	pg.base.furniture_shop_template[315107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -56200,11 +45235,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_57
-
-	local var_28_58 = var_28_57.base.furniture_shop_template
-
-	var_28_58[315108] = {
+	pg.base.furniture_shop_template[315108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -56215,11 +45246,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_58
-
-	local var_28_59 = var_28_58.base.furniture_shop_template
-
-	var_28_59[315109] = {
+	pg.base.furniture_shop_template[315109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56230,11 +45257,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_59
-
-	local var_28_60 = var_28_59.base.furniture_shop_template
-
-	var_28_60[315110] = {
+	pg.base.furniture_shop_template[315110] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56245,11 +45268,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_60
-
-	local var_28_61 = var_28_60.base.furniture_shop_template
-
-	var_28_61[315111] = {
+	pg.base.furniture_shop_template[315111] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -56260,11 +45279,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_61
-
-	local var_28_62 = var_28_61.base.furniture_shop_template
-
-	var_28_62[315112] = {
+	pg.base.furniture_shop_template[315112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -56275,11 +45290,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_62
-
-	local var_28_63 = var_28_62.base.furniture_shop_template
-
-	var_28_63[315113] = {
+	pg.base.furniture_shop_template[315113] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -56290,11 +45301,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_63
-
-	local var_28_64 = var_28_63.base.furniture_shop_template
-
-	var_28_64[316001] = {
+	pg.base.furniture_shop_template[316001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316001,
@@ -56330,11 +45337,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_64
-
-	local var_28_65 = var_28_64.base.furniture_shop_template
-
-	var_28_65[316002] = {
+	pg.base.furniture_shop_template[316002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316002,
@@ -56370,11 +45373,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_65
-
-	local var_28_66 = var_28_65.base.furniture_shop_template
-
-	var_28_66[316101] = {
+	pg.base.furniture_shop_template[316101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 316101,
@@ -56410,11 +45409,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_66
-
-	local var_28_67 = var_28_66.base.furniture_shop_template
-
-	var_28_67[316104] = {
+	pg.base.furniture_shop_template[316104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 316104,
@@ -56450,11 +45445,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_67
-
-	local var_28_68 = var_28_67.base.furniture_shop_template
-
-	var_28_68[316105] = {
+	pg.base.furniture_shop_template[316105] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316105,
@@ -56490,11 +45481,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_68
-
-	local var_28_69 = var_28_68.base.furniture_shop_template
-
-	var_28_69[316107] = {
+	pg.base.furniture_shop_template[316107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 316107,
@@ -56530,11 +45517,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_69
-
-	local var_28_70 = var_28_69.base.furniture_shop_template
-
-	var_28_70[316109] = {
+	pg.base.furniture_shop_template[316109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 316109,
@@ -56570,11 +45553,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_70
-
-	local var_28_71 = var_28_70.base.furniture_shop_template
-
-	var_28_71[316112] = {
+	pg.base.furniture_shop_template[316112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316112,
@@ -56610,11 +45589,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_71
-
-	local var_28_72 = var_28_71.base.furniture_shop_template
-
-	var_28_72[316114] = {
+	pg.base.furniture_shop_template[316114] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316114,
@@ -56650,11 +45625,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_72
-
-	local var_28_73 = var_28_72.base.furniture_shop_template
-
-	var_28_73[316115] = {
+	pg.base.furniture_shop_template[316115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 316115,
@@ -56690,11 +45661,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_73
-
-	local var_28_74 = var_28_73.base.furniture_shop_template
-
-	var_28_74[316116] = {
+	pg.base.furniture_shop_template[316116] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316116,
@@ -56730,11 +45697,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_74
-
-	local var_28_75 = var_28_74.base.furniture_shop_template
-
-	var_28_75[316117] = {
+	pg.base.furniture_shop_template[316117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 316117,
@@ -56770,11 +45733,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_75
-
-	local var_28_76 = var_28_75.base.furniture_shop_template
-
-	var_28_76[316118] = {
+	pg.base.furniture_shop_template[316118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 316118,
@@ -56810,11 +45769,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_76
-
-	local var_28_77 = var_28_76.base.furniture_shop_template
-
-	var_28_77[316121] = {
+	pg.base.furniture_shop_template[316121] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 316121,
@@ -56850,11 +45805,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_77
-
-	local var_28_78 = var_28_77.base.furniture_shop_template
-
-	var_28_78[316122] = {
+	pg.base.furniture_shop_template[316122] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 316122,
@@ -56890,11 +45841,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_78
-
-	local var_28_79 = var_28_78.base.furniture_shop_template
-
-	var_28_79[316123] = {
+	pg.base.furniture_shop_template[316123] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 316123,
@@ -56930,11 +45877,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_79
-
-	local var_28_80 = var_28_79.base.furniture_shop_template
-
-	var_28_80[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 316301,
@@ -56970,11 +45913,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_80
-
-	local var_28_81 = var_28_80.base.furniture_shop_template
-
-	var_28_81[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 316302,
@@ -57010,11 +45949,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_81
-
-	local var_28_82 = var_28_81.base.furniture_shop_template
-
-	var_28_82[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 316304,
@@ -57050,11 +45985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_82
-
-	local var_28_83 = var_28_82.base.furniture_shop_template
-
-	var_28_83[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 316305,
@@ -57090,11 +46021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_28_83
-
-	local var_28_84 = var_28_83.base.furniture_shop_template
-
-	var_28_84[317001] = {
+	pg.base.furniture_shop_template[317001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57105,11 +46032,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_84
-
-	local var_28_85 = var_28_84.base.furniture_shop_template
-
-	var_28_85[317002] = {
+	pg.base.furniture_shop_template[317002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57120,11 +46043,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_85
-
-	local var_28_86 = var_28_85.base.furniture_shop_template
-
-	var_28_86[317101] = {
+	pg.base.furniture_shop_template[317101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57135,11 +46054,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_86
-
-	local var_28_87 = var_28_86.base.furniture_shop_template
-
-	var_28_87[317102] = {
+	pg.base.furniture_shop_template[317102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57150,11 +46065,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_87
-
-	local var_28_88 = var_28_87.base.furniture_shop_template
-
-	var_28_88[317103] = {
+	pg.base.furniture_shop_template[317103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57165,11 +46076,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_88
-
-	local var_28_89 = var_28_88.base.furniture_shop_template
-
-	var_28_89[317104] = {
+	pg.base.furniture_shop_template[317104] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57180,11 +46087,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_89
-
-	local var_28_90 = var_28_89.base.furniture_shop_template
-
-	var_28_90[317105] = {
+	pg.base.furniture_shop_template[317105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57195,11 +46098,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_90
-
-	local var_28_91 = var_28_90.base.furniture_shop_template
-
-	var_28_91[317106] = {
+	pg.base.furniture_shop_template[317106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57210,11 +46109,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_91
-
-	local var_28_92 = var_28_91.base.furniture_shop_template
-
-	var_28_92[317107] = {
+	pg.base.furniture_shop_template[317107] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57225,11 +46120,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_92
-
-	local var_28_93 = var_28_92.base.furniture_shop_template
-
-	var_28_93[317108] = {
+	pg.base.furniture_shop_template[317108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57240,11 +46131,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_93
-
-	local var_28_94 = var_28_93.base.furniture_shop_template
-
-	var_28_94[317109] = {
+	pg.base.furniture_shop_template[317109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57255,11 +46142,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_94
-
-	local var_28_95 = var_28_94.base.furniture_shop_template
-
-	var_28_95[317110] = {
+	pg.base.furniture_shop_template[317110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57270,11 +46153,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_95
-
-	local var_28_96 = var_28_95.base.furniture_shop_template
-
-	var_28_96[317111] = {
+	pg.base.furniture_shop_template[317111] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -57285,11 +46164,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_96
-
-	local var_28_97 = var_28_96.base.furniture_shop_template
-
-	var_28_97[317301] = {
+	pg.base.furniture_shop_template[317301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57300,11 +46175,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_97
-
-	local var_28_98 = var_28_97.base.furniture_shop_template
-
-	var_28_98[317302] = {
+	pg.base.furniture_shop_template[317302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57315,8 +46186,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_28_98
-	var_28_98.base.furniture_shop_template[317303] = {
+	pg.base.furniture_shop_template[317303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57331,11 +46201,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_29_0 = var_1_10000.base.furniture_shop_template
-
-	var_29_0[317304] = {
+	pg.base.furniture_shop_template[317304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57346,11 +46212,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_0
-
-	local var_29_1 = var_29_0.base.furniture_shop_template
-
-	var_29_1[318001] = {
+	pg.base.furniture_shop_template[318001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57361,11 +46223,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_1
-
-	local var_29_2 = var_29_1.base.furniture_shop_template
-
-	var_29_2[318002] = {
+	pg.base.furniture_shop_template[318002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57376,11 +46234,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_2
-
-	local var_29_3 = var_29_2.base.furniture_shop_template
-
-	var_29_3[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -57391,11 +46245,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_3
-
-	local var_29_4 = var_29_3.base.furniture_shop_template
-
-	var_29_4[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -57406,11 +46256,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_4
-
-	local var_29_5 = var_29_4.base.furniture_shop_template
-
-	var_29_5[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57421,11 +46267,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_5
-
-	local var_29_6 = var_29_5.base.furniture_shop_template
-
-	var_29_6[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57436,11 +46278,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_6
-
-	local var_29_7 = var_29_6.base.furniture_shop_template
-
-	var_29_7[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57451,11 +46289,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_7
-
-	local var_29_8 = var_29_7.base.furniture_shop_template
-
-	var_29_8[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57466,11 +46300,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_8
-
-	local var_29_9 = var_29_8.base.furniture_shop_template
-
-	var_29_9[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57481,11 +46311,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_9
-
-	local var_29_10 = var_29_9.base.furniture_shop_template
-
-	var_29_10[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -57496,11 +46322,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_10
-
-	local var_29_11 = var_29_10.base.furniture_shop_template
-
-	var_29_11[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57511,11 +46333,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_11
-
-	local var_29_12 = var_29_11.base.furniture_shop_template
-
-	var_29_12[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57526,11 +46344,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_12
-
-	local var_29_13 = var_29_12.base.furniture_shop_template
-
-	var_29_13[318112] = {
+	pg.base.furniture_shop_template[318112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57541,11 +46355,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_13
-
-	local var_29_14 = var_29_13.base.furniture_shop_template
-
-	var_29_14[318113] = {
+	pg.base.furniture_shop_template[318113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57556,11 +46366,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_14
-
-	local var_29_15 = var_29_14.base.furniture_shop_template
-
-	var_29_15[318114] = {
+	pg.base.furniture_shop_template[318114] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57571,11 +46377,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_15
-
-	local var_29_16 = var_29_15.base.furniture_shop_template
-
-	var_29_16[318115] = {
+	pg.base.furniture_shop_template[318115] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57586,11 +46388,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_16
-
-	local var_29_17 = var_29_16.base.furniture_shop_template
-
-	var_29_17[318301] = {
+	pg.base.furniture_shop_template[318301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57601,11 +46399,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_17
-
-	local var_29_18 = var_29_17.base.furniture_shop_template
-
-	var_29_18[318302] = {
+	pg.base.furniture_shop_template[318302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57616,11 +46410,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_18
-
-	local var_29_19 = var_29_18.base.furniture_shop_template
-
-	var_29_19[318303] = {
+	pg.base.furniture_shop_template[318303] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57631,11 +46421,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_19
-
-	local var_29_20 = var_29_19.base.furniture_shop_template
-
-	var_29_20[318304] = {
+	pg.base.furniture_shop_template[318304] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57646,11 +46432,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_20
-
-	local var_29_21 = var_29_20.base.furniture_shop_template
-
-	var_29_21[318305] = {
+	pg.base.furniture_shop_template[318305] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -57661,11 +46443,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_21
-
-	local var_29_22 = var_29_21.base.furniture_shop_template
-
-	var_29_22[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57676,11 +46454,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_22
-
-	local var_29_23 = var_29_22.base.furniture_shop_template
-
-	var_29_23[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57691,11 +46465,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_23
-
-	local var_29_24 = var_29_23.base.furniture_shop_template
-
-	var_29_24[319101] = {
+	pg.base.furniture_shop_template[319101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57706,11 +46476,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_24
-
-	local var_29_25 = var_29_24.base.furniture_shop_template
-
-	var_29_25[319102] = {
+	pg.base.furniture_shop_template[319102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57721,11 +46487,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_25
-
-	local var_29_26 = var_29_25.base.furniture_shop_template
-
-	var_29_26[319103] = {
+	pg.base.furniture_shop_template[319103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57736,11 +46498,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_26
-
-	local var_29_27 = var_29_26.base.furniture_shop_template
-
-	var_29_27[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57751,11 +46509,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_27
-
-	local var_29_28 = var_29_27.base.furniture_shop_template
-
-	var_29_28[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57766,11 +46520,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_28
-
-	local var_29_29 = var_29_28.base.furniture_shop_template
-
-	var_29_29[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57781,11 +46531,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_29
-
-	local var_29_30 = var_29_29.base.furniture_shop_template
-
-	var_29_30[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57796,11 +46542,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_30
-
-	local var_29_31 = var_29_30.base.furniture_shop_template
-
-	var_29_31[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -57811,11 +46553,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_31
-
-	local var_29_32 = var_29_31.base.furniture_shop_template
-
-	var_29_32[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57826,11 +46564,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_32
-
-	local var_29_33 = var_29_32.base.furniture_shop_template
-
-	var_29_33[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57841,11 +46575,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_33
-
-	local var_29_34 = var_29_33.base.furniture_shop_template
-
-	var_29_34[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57856,11 +46586,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_34
-
-	local var_29_35 = var_29_34.base.furniture_shop_template
-
-	var_29_35[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57871,11 +46597,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_35
-
-	local var_29_36 = var_29_35.base.furniture_shop_template
-
-	var_29_36[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57886,11 +46608,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_36
-
-	local var_29_37 = var_29_36.base.furniture_shop_template
-
-	var_29_37[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57901,11 +46619,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_37
-
-	local var_29_38 = var_29_37.base.furniture_shop_template
-
-	var_29_38[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -57916,11 +46630,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_38
-
-	local var_29_39 = var_29_38.base.furniture_shop_template
-
-	var_29_39[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57931,11 +46641,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_39
-
-	local var_29_40 = var_29_39.base.furniture_shop_template
-
-	var_29_40[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -57946,11 +46652,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_40
-
-	local var_29_41 = var_29_40.base.furniture_shop_template
-
-	var_29_41[319301] = {
+	pg.base.furniture_shop_template[319301] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57961,11 +46663,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_41
-
-	local var_29_42 = var_29_41.base.furniture_shop_template
-
-	var_29_42[319302] = {
+	pg.base.furniture_shop_template[319302] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -57976,11 +46674,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_42
-
-	local var_29_43 = var_29_42.base.furniture_shop_template
-
-	var_29_43[319303] = {
+	pg.base.furniture_shop_template[319303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -57991,11 +46685,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_43
-
-	local var_29_44 = var_29_43.base.furniture_shop_template
-
-	var_29_44[319304] = {
+	pg.base.furniture_shop_template[319304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58006,11 +46696,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_44
-
-	local var_29_45 = var_29_44.base.furniture_shop_template
-
-	var_29_45[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -58021,11 +46707,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_45
-
-	local var_29_46 = var_29_45.base.furniture_shop_template
-
-	var_29_46[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -58036,11 +46718,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_46
-
-	local var_29_47 = var_29_46.base.furniture_shop_template
-
-	var_29_47[320101] = {
+	pg.base.furniture_shop_template[320101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -58051,11 +46729,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_47
-
-	local var_29_48 = var_29_47.base.furniture_shop_template
-
-	var_29_48[320102] = {
+	pg.base.furniture_shop_template[320102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58066,11 +46740,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_48
-
-	local var_29_49 = var_29_48.base.furniture_shop_template
-
-	var_29_49[320103] = {
+	pg.base.furniture_shop_template[320103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -58081,11 +46751,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_49
-
-	local var_29_50 = var_29_49.base.furniture_shop_template
-
-	var_29_50[320104] = {
+	pg.base.furniture_shop_template[320104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58096,11 +46762,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_50
-
-	local var_29_51 = var_29_50.base.furniture_shop_template
-
-	var_29_51[320105] = {
+	pg.base.furniture_shop_template[320105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58111,11 +46773,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_51
-
-	local var_29_52 = var_29_51.base.furniture_shop_template
-
-	var_29_52[320106] = {
+	pg.base.furniture_shop_template[320106] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58126,11 +46784,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_52
-
-	local var_29_53 = var_29_52.base.furniture_shop_template
-
-	var_29_53[320107] = {
+	pg.base.furniture_shop_template[320107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58141,11 +46795,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_53
-
-	local var_29_54 = var_29_53.base.furniture_shop_template
-
-	var_29_54[320108] = {
+	pg.base.furniture_shop_template[320108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58156,11 +46806,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_54
-
-	local var_29_55 = var_29_54.base.furniture_shop_template
-
-	var_29_55[320109] = {
+	pg.base.furniture_shop_template[320109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58171,11 +46817,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_55
-
-	local var_29_56 = var_29_55.base.furniture_shop_template
-
-	var_29_56[320110] = {
+	pg.base.furniture_shop_template[320110] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -58186,11 +46828,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_56
-
-	local var_29_57 = var_29_56.base.furniture_shop_template
-
-	var_29_57[320111] = {
+	pg.base.furniture_shop_template[320111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58201,11 +46839,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_57
-
-	local var_29_58 = var_29_57.base.furniture_shop_template
-
-	var_29_58[320112] = {
+	pg.base.furniture_shop_template[320112] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		time = "always",
@@ -58216,11 +46850,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_58
-
-	local var_29_59 = var_29_58.base.furniture_shop_template
-
-	var_29_59[320113] = {
+	pg.base.furniture_shop_template[320113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58231,11 +46861,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_59
-
-	local var_29_60 = var_29_59.base.furniture_shop_template
-
-	var_29_60[320114] = {
+	pg.base.furniture_shop_template[320114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58246,11 +46872,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_60
-
-	local var_29_61 = var_29_60.base.furniture_shop_template
-
-	var_29_61[320115] = {
+	pg.base.furniture_shop_template[320115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "always",
@@ -58261,11 +46883,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_61
-
-	local var_29_62 = var_29_61.base.furniture_shop_template
-
-	var_29_62[320301] = {
+	pg.base.furniture_shop_template[320301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		time = "always",
@@ -58276,11 +46894,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_62
-
-	local var_29_63 = var_29_62.base.furniture_shop_template
-
-	var_29_63[320302] = {
+	pg.base.furniture_shop_template[320302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -58291,11 +46905,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_63
-
-	local var_29_64 = var_29_63.base.furniture_shop_template
-
-	var_29_64[320303] = {
+	pg.base.furniture_shop_template[320303] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58306,11 +46916,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_64
-
-	local var_29_65 = var_29_64.base.furniture_shop_template
-
-	var_29_65[320304] = {
+	pg.base.furniture_shop_template[320304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -58321,11 +46927,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_65
-
-	local var_29_66 = var_29_65.base.furniture_shop_template
-
-	var_29_66[320305] = {
+	pg.base.furniture_shop_template[320305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		time = "always",
@@ -58336,11 +46938,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_66
-
-	local var_29_67 = var_29_66.base.furniture_shop_template
-
-	var_29_67[320306] = {
+	pg.base.furniture_shop_template[320306] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		time = "always",
@@ -58351,11 +46949,7 @@ end)()
 		new = 0,
 		discount_time = ""
 	}
-	pg = var_29_67
-
-	local var_29_68 = var_29_67.base.furniture_shop_template
-
-	var_29_68[321001] = {
+	pg.base.furniture_shop_template[321001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 321001,
@@ -58391,11 +46985,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_68
-
-	local var_29_69 = var_29_68.base.furniture_shop_template
-
-	var_29_69[321002] = {
+	pg.base.furniture_shop_template[321002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 321002,
@@ -58431,11 +47021,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_69
-
-	local var_29_70 = var_29_69.base.furniture_shop_template
-
-	var_29_70[321101] = {
+	pg.base.furniture_shop_template[321101] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 321101,
@@ -58471,11 +47057,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_70
-
-	local var_29_71 = var_29_70.base.furniture_shop_template
-
-	var_29_71[321102] = {
+	pg.base.furniture_shop_template[321102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 321102,
@@ -58511,11 +47093,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_71
-
-	local var_29_72 = var_29_71.base.furniture_shop_template
-
-	var_29_72[321103] = {
+	pg.base.furniture_shop_template[321103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 321103,
@@ -58551,11 +47129,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_72
-
-	local var_29_73 = var_29_72.base.furniture_shop_template
-
-	var_29_73[321104] = {
+	pg.base.furniture_shop_template[321104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 321104,
@@ -58591,11 +47165,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_73
-
-	local var_29_74 = var_29_73.base.furniture_shop_template
-
-	var_29_74[321105] = {
+	pg.base.furniture_shop_template[321105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 321105,
@@ -58631,11 +47201,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_74
-
-	local var_29_75 = var_29_74.base.furniture_shop_template
-
-	var_29_75[321106] = {
+	pg.base.furniture_shop_template[321106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 321106,
@@ -58671,11 +47237,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_75
-
-	local var_29_76 = var_29_75.base.furniture_shop_template
-
-	var_29_76[321107] = {
+	pg.base.furniture_shop_template[321107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 321107,
@@ -58711,11 +47273,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_76
-
-	local var_29_77 = var_29_76.base.furniture_shop_template
-
-	var_29_77[321108] = {
+	pg.base.furniture_shop_template[321108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 321108,
@@ -58751,11 +47309,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_77
-
-	local var_29_78 = var_29_77.base.furniture_shop_template
-
-	var_29_78[321109] = {
+	pg.base.furniture_shop_template[321109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 321109,
@@ -58791,11 +47345,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_78
-
-	local var_29_79 = var_29_78.base.furniture_shop_template
-
-	var_29_79[321110] = {
+	pg.base.furniture_shop_template[321110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 321110,
@@ -58831,11 +47381,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_79
-
-	local var_29_80 = var_29_79.base.furniture_shop_template
-
-	var_29_80[321111] = {
+	pg.base.furniture_shop_template[321111] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 321111,
@@ -58871,11 +47417,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_80
-
-	local var_29_81 = var_29_80.base.furniture_shop_template
-
-	var_29_81[321112] = {
+	pg.base.furniture_shop_template[321112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 321112,
@@ -58911,11 +47453,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_81
-
-	local var_29_82 = var_29_81.base.furniture_shop_template
-
-	var_29_82[321113] = {
+	pg.base.furniture_shop_template[321113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 321113,
@@ -58951,11 +47489,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_82
-
-	local var_29_83 = var_29_82.base.furniture_shop_template
-
-	var_29_83[321114] = {
+	pg.base.furniture_shop_template[321114] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 321114,
@@ -58991,11 +47525,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_83
-
-	local var_29_84 = var_29_83.base.furniture_shop_template
-
-	var_29_84[321115] = {
+	pg.base.furniture_shop_template[321115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 321115,
@@ -59031,11 +47561,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_84
-
-	local var_29_85 = var_29_84.base.furniture_shop_template
-
-	var_29_85[321116] = {
+	pg.base.furniture_shop_template[321116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 321116,
@@ -59071,11 +47597,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_85
-
-	local var_29_86 = var_29_85.base.furniture_shop_template
-
-	var_29_86[321117] = {
+	pg.base.furniture_shop_template[321117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 321117,
@@ -59111,11 +47633,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_86
-
-	local var_29_87 = var_29_86.base.furniture_shop_template
-
-	var_29_87[321118] = {
+	pg.base.furniture_shop_template[321118] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 321118,
@@ -59151,11 +47669,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_87
-
-	local var_29_88 = var_29_87.base.furniture_shop_template
-
-	var_29_88[322001] = {
+	pg.base.furniture_shop_template[322001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 322001,
@@ -59191,11 +47705,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_88
-
-	local var_29_89 = var_29_88.base.furniture_shop_template
-
-	var_29_89[322002] = {
+	pg.base.furniture_shop_template[322002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 322002,
@@ -59231,11 +47741,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_89
-
-	local var_29_90 = var_29_89.base.furniture_shop_template
-
-	var_29_90[322101] = {
+	pg.base.furniture_shop_template[322101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 322101,
@@ -59271,11 +47777,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_90
-
-	local var_29_91 = var_29_90.base.furniture_shop_template
-
-	var_29_91[322102] = {
+	pg.base.furniture_shop_template[322102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 322102,
@@ -59311,11 +47813,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_91
-
-	local var_29_92 = var_29_91.base.furniture_shop_template
-
-	var_29_92[322103] = {
+	pg.base.furniture_shop_template[322103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 322103,
@@ -59351,11 +47849,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_92
-
-	local var_29_93 = var_29_92.base.furniture_shop_template
-
-	var_29_93[322104] = {
+	pg.base.furniture_shop_template[322104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 322104,
@@ -59391,11 +47885,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_93
-
-	local var_29_94 = var_29_93.base.furniture_shop_template
-
-	var_29_94[322105] = {
+	pg.base.furniture_shop_template[322105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 322105,
@@ -59431,11 +47921,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_94
-
-	local var_29_95 = var_29_94.base.furniture_shop_template
-
-	var_29_95[322106] = {
+	pg.base.furniture_shop_template[322106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 322106,
@@ -59471,11 +47957,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_95
-
-	local var_29_96 = var_29_95.base.furniture_shop_template
-
-	var_29_96[322107] = {
+	pg.base.furniture_shop_template[322107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 322107,
@@ -59511,11 +47993,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_96
-
-	local var_29_97 = var_29_96.base.furniture_shop_template
-
-	var_29_97[322108] = {
+	pg.base.furniture_shop_template[322108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 322108,
@@ -59551,11 +48029,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_97
-
-	local var_29_98 = var_29_97.base.furniture_shop_template
-
-	var_29_98[322109] = {
+	pg.base.furniture_shop_template[322109] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 322109,
@@ -59591,8 +48065,7 @@ end)()
 			}
 		}
 	}
-	pg = var_29_98
-	var_29_98.base.furniture_shop_template[322110] = {
+	pg.base.furniture_shop_template[322110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 322110,
@@ -59632,11 +48105,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_30_0 = var_1_10000.base.furniture_shop_template
-
-	var_30_0[322111] = {
+	pg.base.furniture_shop_template[322111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 322111,
@@ -59672,11 +48141,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_0
-
-	local var_30_1 = var_30_0.base.furniture_shop_template
-
-	var_30_1[322112] = {
+	pg.base.furniture_shop_template[322112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 322112,
@@ -59712,11 +48177,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_1
-
-	local var_30_2 = var_30_1.base.furniture_shop_template
-
-	var_30_2[322113] = {
+	pg.base.furniture_shop_template[322113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 322113,
@@ -59752,11 +48213,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_2
-
-	local var_30_3 = var_30_2.base.furniture_shop_template
-
-	var_30_3[322114] = {
+	pg.base.furniture_shop_template[322114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 322114,
@@ -59792,11 +48249,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_3
-
-	local var_30_4 = var_30_3.base.furniture_shop_template
-
-	var_30_4[322115] = {
+	pg.base.furniture_shop_template[322115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 322115,
@@ -59832,11 +48285,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_4
-
-	local var_30_5 = var_30_4.base.furniture_shop_template
-
-	var_30_5[322116] = {
+	pg.base.furniture_shop_template[322116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 322116,
@@ -59872,11 +48321,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_5
-
-	local var_30_6 = var_30_5.base.furniture_shop_template
-
-	var_30_6[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 323101,
@@ -59912,11 +48357,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_6
-
-	local var_30_7 = var_30_6.base.furniture_shop_template
-
-	var_30_7[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 323102,
@@ -59952,11 +48393,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_7
-
-	local var_30_8 = var_30_7.base.furniture_shop_template
-
-	var_30_8[324001] = {
+	pg.base.furniture_shop_template[324001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 324001,
@@ -59992,11 +48429,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_8
-
-	local var_30_9 = var_30_8.base.furniture_shop_template
-
-	var_30_9[324002] = {
+	pg.base.furniture_shop_template[324002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 324002,
@@ -60032,11 +48465,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_9
-
-	local var_30_10 = var_30_9.base.furniture_shop_template
-
-	var_30_10[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 324101,
@@ -60072,11 +48501,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_10
-
-	local var_30_11 = var_30_10.base.furniture_shop_template
-
-	var_30_11[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324102,
@@ -60112,11 +48537,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_11
-
-	local var_30_12 = var_30_11.base.furniture_shop_template
-
-	var_30_12[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324103,
@@ -60152,11 +48573,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_12
-
-	local var_30_13 = var_30_12.base.furniture_shop_template
-
-	var_30_13[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 324104,
@@ -60192,11 +48609,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_13
-
-	local var_30_14 = var_30_13.base.furniture_shop_template
-
-	var_30_14[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324105,
@@ -60232,11 +48645,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_14
-
-	local var_30_15 = var_30_14.base.furniture_shop_template
-
-	var_30_15[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324106,
@@ -60272,11 +48681,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_15
-
-	local var_30_16 = var_30_15.base.furniture_shop_template
-
-	var_30_16[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 324107,
@@ -60312,11 +48717,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_16
-
-	local var_30_17 = var_30_16.base.furniture_shop_template
-
-	var_30_17[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324108,
@@ -60352,11 +48753,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_17
-
-	local var_30_18 = var_30_17.base.furniture_shop_template
-
-	var_30_18[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 324109,
@@ -60392,11 +48789,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_18
-
-	local var_30_19 = var_30_18.base.furniture_shop_template
-
-	var_30_19[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324110,
@@ -60432,11 +48825,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_19
-
-	local var_30_20 = var_30_19.base.furniture_shop_template
-
-	var_30_20[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324111,
@@ -60472,11 +48861,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_20
-
-	local var_30_21 = var_30_20.base.furniture_shop_template
-
-	var_30_21[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 324112,
@@ -60512,11 +48897,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_21
-
-	local var_30_22 = var_30_21.base.furniture_shop_template
-
-	var_30_22[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 324113,
@@ -60552,11 +48933,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_22
-
-	local var_30_23 = var_30_22.base.furniture_shop_template
-
-	var_30_23[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324114,
@@ -60592,11 +48969,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_23
-
-	local var_30_24 = var_30_23.base.furniture_shop_template
-
-	var_30_24[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324115,
@@ -60632,11 +49005,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_24
-
-	local var_30_25 = var_30_24.base.furniture_shop_template
-
-	var_30_25[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 324116,
@@ -60672,11 +49041,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_25
-
-	local var_30_26 = var_30_25.base.furniture_shop_template
-
-	var_30_26[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 324117,
@@ -60712,11 +49077,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_26
-
-	local var_30_27 = var_30_26.base.furniture_shop_template
-
-	var_30_27[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 324118,
@@ -60752,11 +49113,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_27
-
-	local var_30_28 = var_30_27.base.furniture_shop_template
-
-	var_30_28[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		time = "stop",
@@ -60767,11 +49124,7 @@ end)()
 		new = 1,
 		discount_time = ""
 	}
-	pg = var_30_28
-
-	local var_30_29 = var_30_28.base.furniture_shop_template
-
-	var_30_29[328001] = {
+	pg.base.furniture_shop_template[328001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 328001,
@@ -60807,11 +49160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_29
-
-	local var_30_30 = var_30_29.base.furniture_shop_template
-
-	var_30_30[328002] = {
+	pg.base.furniture_shop_template[328002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 328002,
@@ -60847,11 +49196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_30
-
-	local var_30_31 = var_30_30.base.furniture_shop_template
-
-	var_30_31[328101] = {
+	pg.base.furniture_shop_template[328101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 328101,
@@ -60887,11 +49232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_31
-
-	local var_30_32 = var_30_31.base.furniture_shop_template
-
-	var_30_32[328102] = {
+	pg.base.furniture_shop_template[328102] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 328102,
@@ -60927,11 +49268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_32
-
-	local var_30_33 = var_30_32.base.furniture_shop_template
-
-	var_30_33[328103] = {
+	pg.base.furniture_shop_template[328103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 328103,
@@ -60967,11 +49304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_33
-
-	local var_30_34 = var_30_33.base.furniture_shop_template
-
-	var_30_34[328104] = {
+	pg.base.furniture_shop_template[328104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 328104,
@@ -61007,11 +49340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_34
-
-	local var_30_35 = var_30_34.base.furniture_shop_template
-
-	var_30_35[328105] = {
+	pg.base.furniture_shop_template[328105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 328105,
@@ -61047,11 +49376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_35
-
-	local var_30_36 = var_30_35.base.furniture_shop_template
-
-	var_30_36[328106] = {
+	pg.base.furniture_shop_template[328106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 328106,
@@ -61087,11 +49412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_36
-
-	local var_30_37 = var_30_36.base.furniture_shop_template
-
-	var_30_37[328107] = {
+	pg.base.furniture_shop_template[328107] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 328107,
@@ -61127,11 +49448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_37
-
-	local var_30_38 = var_30_37.base.furniture_shop_template
-
-	var_30_38[328108] = {
+	pg.base.furniture_shop_template[328108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 328108,
@@ -61167,11 +49484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_38
-
-	local var_30_39 = var_30_38.base.furniture_shop_template
-
-	var_30_39[328109] = {
+	pg.base.furniture_shop_template[328109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 328109,
@@ -61207,11 +49520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_39
-
-	local var_30_40 = var_30_39.base.furniture_shop_template
-
-	var_30_40[328110] = {
+	pg.base.furniture_shop_template[328110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 328110,
@@ -61247,11 +49556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_40
-
-	local var_30_41 = var_30_40.base.furniture_shop_template
-
-	var_30_41[328111] = {
+	pg.base.furniture_shop_template[328111] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 328111,
@@ -61287,11 +49592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_41
-
-	local var_30_42 = var_30_41.base.furniture_shop_template
-
-	var_30_42[328112] = {
+	pg.base.furniture_shop_template[328112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 328112,
@@ -61327,11 +49628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_42
-
-	local var_30_43 = var_30_42.base.furniture_shop_template
-
-	var_30_43[328113] = {
+	pg.base.furniture_shop_template[328113] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 328113,
@@ -61367,11 +49664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_43
-
-	local var_30_44 = var_30_43.base.furniture_shop_template
-
-	var_30_44[328114] = {
+	pg.base.furniture_shop_template[328114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 328114,
@@ -61407,11 +49700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_44
-
-	local var_30_45 = var_30_44.base.furniture_shop_template
-
-	var_30_45[328115] = {
+	pg.base.furniture_shop_template[328115] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 328115,
@@ -61447,11 +49736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_45
-
-	local var_30_46 = var_30_45.base.furniture_shop_template
-
-	var_30_46[328116] = {
+	pg.base.furniture_shop_template[328116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 328116,
@@ -61487,11 +49772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_46
-
-	local var_30_47 = var_30_46.base.furniture_shop_template
-
-	var_30_47[328117] = {
+	pg.base.furniture_shop_template[328117] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 328117,
@@ -61527,11 +49808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_47
-
-	local var_30_48 = var_30_47.base.furniture_shop_template
-
-	var_30_48[328118] = {
+	pg.base.furniture_shop_template[328118] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 328118,
@@ -61567,11 +49844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_48
-
-	local var_30_49 = var_30_48.base.furniture_shop_template
-
-	var_30_49[329001] = {
+	pg.base.furniture_shop_template[329001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 329001,
@@ -61607,11 +49880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_49
-
-	local var_30_50 = var_30_49.base.furniture_shop_template
-
-	var_30_50[329002] = {
+	pg.base.furniture_shop_template[329002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 329002,
@@ -61647,11 +49916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_50
-
-	local var_30_51 = var_30_50.base.furniture_shop_template
-
-	var_30_51[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329101,
@@ -61687,11 +49952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_51
-
-	local var_30_52 = var_30_51.base.furniture_shop_template
-
-	var_30_52[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 329102,
@@ -61727,11 +49988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_52
-
-	local var_30_53 = var_30_52.base.furniture_shop_template
-
-	var_30_53[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329103,
@@ -61767,11 +50024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_53
-
-	local var_30_54 = var_30_53.base.furniture_shop_template
-
-	var_30_54[16] = {
+	pg.base.furniture_shop_template[16] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 329104,
@@ -61807,11 +50060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_54
-
-	local var_30_55 = var_30_54.base.furniture_shop_template
-
-	var_30_55[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 329105,
@@ -61847,11 +50096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_55
-
-	local var_30_56 = var_30_55.base.furniture_shop_template
-
-	var_30_56[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 329106,
@@ -61887,11 +50132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_56
-
-	local var_30_57 = var_30_56.base.furniture_shop_template
-
-	var_30_57[19] = {
+	pg.base.furniture_shop_template[19] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 329107,
@@ -61927,11 +50168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_57
-
-	local var_30_58 = var_30_57.base.furniture_shop_template
-
-	var_30_58[20] = {
+	pg.base.furniture_shop_template[20] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329108,
@@ -61967,11 +50204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_58
-
-	local var_30_59 = var_30_58.base.furniture_shop_template
-
-	var_30_59[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329109,
@@ -62007,11 +50240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_59
-
-	local var_30_60 = var_30_59.base.furniture_shop_template
-
-	var_30_60[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 329110,
@@ -62047,11 +50276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_60
-
-	local var_30_61 = var_30_60.base.furniture_shop_template
-
-	var_30_61[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 329111,
@@ -62087,11 +50312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_61
-
-	local var_30_62 = var_30_61.base.furniture_shop_template
-
-	var_30_62[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 329112,
@@ -62127,11 +50348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_62
-
-	local var_30_63 = var_30_62.base.furniture_shop_template
-
-	var_30_63[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 329113,
@@ -62167,11 +50384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_63
-
-	local var_30_64 = var_30_63.base.furniture_shop_template
-
-	var_30_64[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329114,
@@ -62207,11 +50420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_64
-
-	local var_30_65 = var_30_64.base.furniture_shop_template
-
-	var_30_65[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 329115,
@@ -62247,11 +50456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_65
-
-	local var_30_66 = var_30_65.base.furniture_shop_template
-
-	var_30_66[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329116,
@@ -62287,11 +50492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_66
-
-	local var_30_67 = var_30_66.base.furniture_shop_template
-
-	var_30_67[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 329117,
@@ -62327,11 +50528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_67
-
-	local var_30_68 = var_30_67.base.furniture_shop_template
-
-	var_30_68[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329118,
@@ -62367,11 +50564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_68
-
-	local var_30_69 = var_30_68.base.furniture_shop_template
-
-	var_30_69[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 329119,
@@ -62407,11 +50600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_69
-
-	local var_30_70 = var_30_69.base.furniture_shop_template
-
-	var_30_70[329120] = {
+	pg.base.furniture_shop_template[329120] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 329120,
@@ -62447,11 +50636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_70
-
-	local var_30_71 = var_30_70.base.furniture_shop_template
-
-	var_30_71[17] = {
+	pg.base.furniture_shop_template[17] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 330001,
@@ -62487,11 +50672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_71
-
-	local var_30_72 = var_30_71.base.furniture_shop_template
-
-	var_30_72[18] = {
+	pg.base.furniture_shop_template[18] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 330002,
@@ -62527,11 +50708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_72
-
-	local var_30_73 = var_30_72.base.furniture_shop_template
-
-	var_30_73[330101] = {
+	pg.base.furniture_shop_template[330101] = {
 		not_for_sale = 0,
 		gem_price = 2700,
 		id = 330101,
@@ -62567,11 +50744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_73
-
-	local var_30_74 = var_30_73.base.furniture_shop_template
-
-	var_30_74[330102] = {
+	pg.base.furniture_shop_template[330102] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 330102,
@@ -62607,11 +50780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_74
-
-	local var_30_75 = var_30_74.base.furniture_shop_template
-
-	var_30_75[332001] = {
+	pg.base.furniture_shop_template[332001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 332001,
@@ -62647,11 +50816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_75
-
-	local var_30_76 = var_30_75.base.furniture_shop_template
-
-	var_30_76[332002] = {
+	pg.base.furniture_shop_template[332002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 332002,
@@ -62687,11 +50852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_76
-
-	local var_30_77 = var_30_76.base.furniture_shop_template
-
-	var_30_77[332101] = {
+	pg.base.furniture_shop_template[332101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 332101,
@@ -62727,11 +50888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_77
-
-	local var_30_78 = var_30_77.base.furniture_shop_template
-
-	var_30_78[332102] = {
+	pg.base.furniture_shop_template[332102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 332102,
@@ -62767,11 +50924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_78
-
-	local var_30_79 = var_30_78.base.furniture_shop_template
-
-	var_30_79[332103] = {
+	pg.base.furniture_shop_template[332103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 332103,
@@ -62807,11 +50960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_79
-
-	local var_30_80 = var_30_79.base.furniture_shop_template
-
-	var_30_80[332104] = {
+	pg.base.furniture_shop_template[332104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 332104,
@@ -62847,11 +50996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_80
-
-	local var_30_81 = var_30_80.base.furniture_shop_template
-
-	var_30_81[332105] = {
+	pg.base.furniture_shop_template[332105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 332105,
@@ -62887,11 +51032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_81
-
-	local var_30_82 = var_30_81.base.furniture_shop_template
-
-	var_30_82[332106] = {
+	pg.base.furniture_shop_template[332106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 332106,
@@ -62927,11 +51068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_82
-
-	local var_30_83 = var_30_82.base.furniture_shop_template
-
-	var_30_83[332107] = {
+	pg.base.furniture_shop_template[332107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 332107,
@@ -62967,11 +51104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_83
-
-	local var_30_84 = var_30_83.base.furniture_shop_template
-
-	var_30_84[332108] = {
+	pg.base.furniture_shop_template[332108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 332108,
@@ -63007,11 +51140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_84
-
-	local var_30_85 = var_30_84.base.furniture_shop_template
-
-	var_30_85[332109] = {
+	pg.base.furniture_shop_template[332109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 332109,
@@ -63047,11 +51176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_85
-
-	local var_30_86 = var_30_85.base.furniture_shop_template
-
-	var_30_86[332110] = {
+	pg.base.furniture_shop_template[332110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 332110,
@@ -63087,11 +51212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_86
-
-	local var_30_87 = var_30_86.base.furniture_shop_template
-
-	var_30_87[332111] = {
+	pg.base.furniture_shop_template[332111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 332111,
@@ -63127,11 +51248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_87
-
-	local var_30_88 = var_30_87.base.furniture_shop_template
-
-	var_30_88[332112] = {
+	pg.base.furniture_shop_template[332112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 332112,
@@ -63167,11 +51284,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_88
-
-	local var_30_89 = var_30_88.base.furniture_shop_template
-
-	var_30_89[332113] = {
+	pg.base.furniture_shop_template[332113] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 332113,
@@ -63207,11 +51320,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_89
-
-	local var_30_90 = var_30_89.base.furniture_shop_template
-
-	var_30_90[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 332301,
@@ -63247,11 +51356,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_90
-
-	local var_30_91 = var_30_90.base.furniture_shop_template
-
-	var_30_91[331001] = {
+	pg.base.furniture_shop_template[331001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 331001,
@@ -63287,11 +51392,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_91
-
-	local var_30_92 = var_30_91.base.furniture_shop_template
-
-	var_30_92[331002] = {
+	pg.base.furniture_shop_template[331002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 331002,
@@ -63327,11 +51428,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_92
-
-	local var_30_93 = var_30_92.base.furniture_shop_template
-
-	var_30_93[331101] = {
+	pg.base.furniture_shop_template[331101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 331101,
@@ -63367,11 +51464,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_93
-
-	local var_30_94 = var_30_93.base.furniture_shop_template
-
-	var_30_94[331102] = {
+	pg.base.furniture_shop_template[331102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331102,
@@ -63407,11 +51500,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_94
-
-	local var_30_95 = var_30_94.base.furniture_shop_template
-
-	var_30_95[331103] = {
+	pg.base.furniture_shop_template[331103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331103,
@@ -63447,11 +51536,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_95
-
-	local var_30_96 = var_30_95.base.furniture_shop_template
-
-	var_30_96[331104] = {
+	pg.base.furniture_shop_template[331104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331104,
@@ -63487,11 +51572,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_96
-
-	local var_30_97 = var_30_96.base.furniture_shop_template
-
-	var_30_97[331105] = {
+	pg.base.furniture_shop_template[331105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331105,
@@ -63527,11 +51608,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_97
-
-	local var_30_98 = var_30_97.base.furniture_shop_template
-
-	var_30_98[331106] = {
+	pg.base.furniture_shop_template[331106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331106,
@@ -63567,8 +51644,7 @@ end)()
 			}
 		}
 	}
-	pg = var_30_98
-	var_30_98.base.furniture_shop_template[331107] = {
+	pg.base.furniture_shop_template[331107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331107,
@@ -63608,11 +51684,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_31_0 = var_1_10000.base.furniture_shop_template
-
-	var_31_0[331108] = {
+	pg.base.furniture_shop_template[331108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 331108,
@@ -63648,11 +51720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_0
-
-	local var_31_1 = var_31_0.base.furniture_shop_template
-
-	var_31_1[331109] = {
+	pg.base.furniture_shop_template[331109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331109,
@@ -63688,11 +51756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_1
-
-	local var_31_2 = var_31_1.base.furniture_shop_template
-
-	var_31_2[331110] = {
+	pg.base.furniture_shop_template[331110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331110,
@@ -63728,11 +51792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_2
-
-	local var_31_3 = var_31_2.base.furniture_shop_template
-
-	var_31_3[331111] = {
+	pg.base.furniture_shop_template[331111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331111,
@@ -63768,11 +51828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_3
-
-	local var_31_4 = var_31_3.base.furniture_shop_template
-
-	var_31_4[331112] = {
+	pg.base.furniture_shop_template[331112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331112,
@@ -63808,11 +51864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_4
-
-	local var_31_5 = var_31_4.base.furniture_shop_template
-
-	var_31_5[331113] = {
+	pg.base.furniture_shop_template[331113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331113,
@@ -63848,11 +51900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_5
-
-	local var_31_6 = var_31_5.base.furniture_shop_template
-
-	var_31_6[331114] = {
+	pg.base.furniture_shop_template[331114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331114,
@@ -63888,11 +51936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_6
-
-	local var_31_7 = var_31_6.base.furniture_shop_template
-
-	var_31_7[331115] = {
+	pg.base.furniture_shop_template[331115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331115,
@@ -63928,11 +51972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_7
-
-	local var_31_8 = var_31_7.base.furniture_shop_template
-
-	var_31_8[331116] = {
+	pg.base.furniture_shop_template[331116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331116,
@@ -63968,11 +52008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_8
-
-	local var_31_9 = var_31_8.base.furniture_shop_template
-
-	var_31_9[331117] = {
+	pg.base.furniture_shop_template[331117] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 331117,
@@ -64008,11 +52044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_9
-
-	local var_31_10 = var_31_9.base.furniture_shop_template
-
-	var_31_10[331301] = {
+	pg.base.furniture_shop_template[331301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331301,
@@ -64048,11 +52080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_10
-
-	local var_31_11 = var_31_10.base.furniture_shop_template
-
-	var_31_11[331302] = {
+	pg.base.furniture_shop_template[331302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331302,
@@ -64088,11 +52116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_11
-
-	local var_31_12 = var_31_11.base.furniture_shop_template
-
-	var_31_12[331303] = {
+	pg.base.furniture_shop_template[331303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 331303,
@@ -64128,11 +52152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_12
-
-	local var_31_13 = var_31_12.base.furniture_shop_template
-
-	var_31_13[331304] = {
+	pg.base.furniture_shop_template[331304] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331304,
@@ -64168,11 +52188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_13
-
-	local var_31_14 = var_31_13.base.furniture_shop_template
-
-	var_31_14[331305] = {
+	pg.base.furniture_shop_template[331305] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 331305,
@@ -64208,11 +52224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_14
-
-	local var_31_15 = var_31_14.base.furniture_shop_template
-
-	var_31_15[331306] = {
+	pg.base.furniture_shop_template[331306] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 331306,
@@ -64248,11 +52260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_15
-
-	local var_31_16 = var_31_15.base.furniture_shop_template
-
-	var_31_16[331307] = {
+	pg.base.furniture_shop_template[331307] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 331307,
@@ -64288,11 +52296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_16
-
-	local var_31_17 = var_31_16.base.furniture_shop_template
-
-	var_31_17[331308] = {
+	pg.base.furniture_shop_template[331308] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 331308,
@@ -64328,11 +52332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_17
-
-	local var_31_18 = var_31_17.base.furniture_shop_template
-
-	var_31_18[331309] = {
+	pg.base.furniture_shop_template[331309] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 331309,
@@ -64368,11 +52368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_18
-
-	local var_31_19 = var_31_18.base.furniture_shop_template
-
-	var_31_19[333001] = {
+	pg.base.furniture_shop_template[333001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 333001,
@@ -64408,11 +52404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_19
-
-	local var_31_20 = var_31_19.base.furniture_shop_template
-
-	var_31_20[333002] = {
+	pg.base.furniture_shop_template[333002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 333002,
@@ -64448,11 +52440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_20
-
-	local var_31_21 = var_31_20.base.furniture_shop_template
-
-	var_31_21[333101] = {
+	pg.base.furniture_shop_template[333101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333101,
@@ -64488,11 +52476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_21
-
-	local var_31_22 = var_31_21.base.furniture_shop_template
-
-	var_31_22[333102] = {
+	pg.base.furniture_shop_template[333102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333102,
@@ -64528,11 +52512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_22
-
-	local var_31_23 = var_31_22.base.furniture_shop_template
-
-	var_31_23[333103] = {
+	pg.base.furniture_shop_template[333103] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 333103,
@@ -64568,11 +52548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_23
-
-	local var_31_24 = var_31_23.base.furniture_shop_template
-
-	var_31_24[333104] = {
+	pg.base.furniture_shop_template[333104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333104,
@@ -64608,11 +52584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_24
-
-	local var_31_25 = var_31_24.base.furniture_shop_template
-
-	var_31_25[333105] = {
+	pg.base.furniture_shop_template[333105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333105,
@@ -64648,11 +52620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_25
-
-	local var_31_26 = var_31_25.base.furniture_shop_template
-
-	var_31_26[333106] = {
+	pg.base.furniture_shop_template[333106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 333106,
@@ -64688,11 +52656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_26
-
-	local var_31_27 = var_31_26.base.furniture_shop_template
-
-	var_31_27[333107] = {
+	pg.base.furniture_shop_template[333107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333107,
@@ -64728,11 +52692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_27
-
-	local var_31_28 = var_31_27.base.furniture_shop_template
-
-	var_31_28[333108] = {
+	pg.base.furniture_shop_template[333108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333108,
@@ -64768,11 +52728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_28
-
-	local var_31_29 = var_31_28.base.furniture_shop_template
-
-	var_31_29[333109] = {
+	pg.base.furniture_shop_template[333109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333109,
@@ -64808,11 +52764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_29
-
-	local var_31_30 = var_31_29.base.furniture_shop_template
-
-	var_31_30[333110] = {
+	pg.base.furniture_shop_template[333110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333110,
@@ -64848,11 +52800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_30
-
-	local var_31_31 = var_31_30.base.furniture_shop_template
-
-	var_31_31[333111] = {
+	pg.base.furniture_shop_template[333111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333111,
@@ -64888,11 +52836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_31
-
-	local var_31_32 = var_31_31.base.furniture_shop_template
-
-	var_31_32[333112] = {
+	pg.base.furniture_shop_template[333112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333112,
@@ -64928,11 +52872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_32
-
-	local var_31_33 = var_31_32.base.furniture_shop_template
-
-	var_31_33[333113] = {
+	pg.base.furniture_shop_template[333113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333113,
@@ -64968,11 +52908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_33
-
-	local var_31_34 = var_31_33.base.furniture_shop_template
-
-	var_31_34[333114] = {
+	pg.base.furniture_shop_template[333114] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333114,
@@ -65008,11 +52944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_34
-
-	local var_31_35 = var_31_34.base.furniture_shop_template
-
-	var_31_35[333115] = {
+	pg.base.furniture_shop_template[333115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333115,
@@ -65048,11 +52980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_35
-
-	local var_31_36 = var_31_35.base.furniture_shop_template
-
-	var_31_36[333116] = {
+	pg.base.furniture_shop_template[333116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333116,
@@ -65088,11 +53016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_36
-
-	local var_31_37 = var_31_36.base.furniture_shop_template
-
-	var_31_37[333117] = {
+	pg.base.furniture_shop_template[333117] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 333117,
@@ -65128,11 +53052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_37
-
-	local var_31_38 = var_31_37.base.furniture_shop_template
-
-	var_31_38[333118] = {
+	pg.base.furniture_shop_template[333118] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 333118,
@@ -65168,11 +53088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_38
-
-	local var_31_39 = var_31_38.base.furniture_shop_template
-
-	var_31_39[333119] = {
+	pg.base.furniture_shop_template[333119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 333119,
@@ -65208,11 +53124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_39
-
-	local var_31_40 = var_31_39.base.furniture_shop_template
-
-	var_31_40[333301] = {
+	pg.base.furniture_shop_template[333301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 333301,
@@ -65248,11 +53160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_40
-
-	local var_31_41 = var_31_40.base.furniture_shop_template
-
-	var_31_41[334001] = {
+	pg.base.furniture_shop_template[334001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 334001,
@@ -65288,11 +53196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_41
-
-	local var_31_42 = var_31_41.base.furniture_shop_template
-
-	var_31_42[334002] = {
+	pg.base.furniture_shop_template[334002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 334002,
@@ -65328,11 +53232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_42
-
-	local var_31_43 = var_31_42.base.furniture_shop_template
-
-	var_31_43[21] = {
+	pg.base.furniture_shop_template[21] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334101,
@@ -65368,11 +53268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_43
-
-	local var_31_44 = var_31_43.base.furniture_shop_template
-
-	var_31_44[22] = {
+	pg.base.furniture_shop_template[22] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334102,
@@ -65408,11 +53304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_44
-
-	local var_31_45 = var_31_44.base.furniture_shop_template
-
-	var_31_45[23] = {
+	pg.base.furniture_shop_template[23] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334103,
@@ -65448,11 +53340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_45
-
-	local var_31_46 = var_31_45.base.furniture_shop_template
-
-	var_31_46[24] = {
+	pg.base.furniture_shop_template[24] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334104,
@@ -65488,11 +53376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_46
-
-	local var_31_47 = var_31_46.base.furniture_shop_template
-
-	var_31_47[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 334105,
@@ -65528,11 +53412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_47
-
-	local var_31_48 = var_31_47.base.furniture_shop_template
-
-	var_31_48[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 334106,
@@ -65568,11 +53448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_48
-
-	local var_31_49 = var_31_48.base.furniture_shop_template
-
-	var_31_49[27] = {
+	pg.base.furniture_shop_template[27] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334107,
@@ -65608,11 +53484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_49
-
-	local var_31_50 = var_31_49.base.furniture_shop_template
-
-	var_31_50[28] = {
+	pg.base.furniture_shop_template[28] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334108,
@@ -65648,11 +53520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_50
-
-	local var_31_51 = var_31_50.base.furniture_shop_template
-
-	var_31_51[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 334109,
@@ -65688,11 +53556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_51
-
-	local var_31_52 = var_31_51.base.furniture_shop_template
-
-	var_31_52[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334110,
@@ -65728,11 +53592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_52
-
-	local var_31_53 = var_31_52.base.furniture_shop_template
-
-	var_31_53[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334111,
@@ -65768,11 +53628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_53
-
-	local var_31_54 = var_31_53.base.furniture_shop_template
-
-	var_31_54[334112] = {
+	pg.base.furniture_shop_template[334112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334112,
@@ -65808,11 +53664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_54
-
-	local var_31_55 = var_31_54.base.furniture_shop_template
-
-	var_31_55[334113] = {
+	pg.base.furniture_shop_template[334113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334113,
@@ -65848,11 +53700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_55
-
-	local var_31_56 = var_31_55.base.furniture_shop_template
-
-	var_31_56[334114] = {
+	pg.base.furniture_shop_template[334114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334114,
@@ -65888,11 +53736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_56
-
-	local var_31_57 = var_31_56.base.furniture_shop_template
-
-	var_31_57[334115] = {
+	pg.base.furniture_shop_template[334115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334115,
@@ -65928,11 +53772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_57
-
-	local var_31_58 = var_31_57.base.furniture_shop_template
-
-	var_31_58[334116] = {
+	pg.base.furniture_shop_template[334116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334116,
@@ -65968,11 +53808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_58
-
-	local var_31_59 = var_31_58.base.furniture_shop_template
-
-	var_31_59[334117] = {
+	pg.base.furniture_shop_template[334117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334117,
@@ -66008,11 +53844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_59
-
-	local var_31_60 = var_31_59.base.furniture_shop_template
-
-	var_31_60[334118] = {
+	pg.base.furniture_shop_template[334118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334118,
@@ -66048,11 +53880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_60
-
-	local var_31_61 = var_31_60.base.furniture_shop_template
-
-	var_31_61[334119] = {
+	pg.base.furniture_shop_template[334119] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334119,
@@ -66088,11 +53916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_61
-
-	local var_31_62 = var_31_61.base.furniture_shop_template
-
-	var_31_62[334120] = {
+	pg.base.furniture_shop_template[334120] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334120,
@@ -66128,11 +53952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_62
-
-	local var_31_63 = var_31_62.base.furniture_shop_template
-
-	var_31_63[334121] = {
+	pg.base.furniture_shop_template[334121] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334121,
@@ -66168,11 +53988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_63
-
-	local var_31_64 = var_31_63.base.furniture_shop_template
-
-	var_31_64[334123] = {
+	pg.base.furniture_shop_template[334123] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 334123,
@@ -66208,11 +54024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_64
-
-	local var_31_65 = var_31_64.base.furniture_shop_template
-
-	var_31_65[334301] = {
+	pg.base.furniture_shop_template[334301] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 334301,
@@ -66248,11 +54060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_65
-
-	local var_31_66 = var_31_65.base.furniture_shop_template
-
-	var_31_66[334302] = {
+	pg.base.furniture_shop_template[334302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 334302,
@@ -66288,11 +54096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_66
-
-	local var_31_67 = var_31_66.base.furniture_shop_template
-
-	var_31_67[25] = {
+	pg.base.furniture_shop_template[25] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 335001,
@@ -66328,11 +54132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_67
-
-	local var_31_68 = var_31_67.base.furniture_shop_template
-
-	var_31_68[26] = {
+	pg.base.furniture_shop_template[26] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 335002,
@@ -66368,11 +54168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_68
-
-	local var_31_69 = var_31_68.base.furniture_shop_template
-
-	var_31_69[335101] = {
+	pg.base.furniture_shop_template[335101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 335101,
@@ -66408,11 +54204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_69
-
-	local var_31_70 = var_31_69.base.furniture_shop_template
-
-	var_31_70[335102] = {
+	pg.base.furniture_shop_template[335102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 335102,
@@ -66448,11 +54240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_70
-
-	local var_31_71 = var_31_70.base.furniture_shop_template
-
-	var_31_71[335103] = {
+	pg.base.furniture_shop_template[335103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 335103,
@@ -66488,11 +54276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_71
-
-	local var_31_72 = var_31_71.base.furniture_shop_template
-
-	var_31_72[0] = {
+	pg.base.furniture_shop_template[0] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335104,
@@ -66528,11 +54312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_72
-
-	local var_31_73 = var_31_72.base.furniture_shop_template
-
-	var_31_73[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335105,
@@ -66568,11 +54348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_73
-
-	local var_31_74 = var_31_73.base.furniture_shop_template
-
-	var_31_74[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335106,
@@ -66608,11 +54384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_74
-
-	local var_31_75 = var_31_74.base.furniture_shop_template
-
-	var_31_75[3] = {
+	pg.base.furniture_shop_template[3] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335107,
@@ -66648,11 +54420,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_75
-
-	local var_31_76 = var_31_75.base.furniture_shop_template
-
-	var_31_76[4] = {
+	pg.base.furniture_shop_template[4] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 335108,
@@ -66688,11 +54456,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_76
-
-	local var_31_77 = var_31_76.base.furniture_shop_template
-
-	var_31_77[5] = {
+	pg.base.furniture_shop_template[5] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335109,
@@ -66728,11 +54492,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_77
-
-	local var_31_78 = var_31_77.base.furniture_shop_template
-
-	var_31_78[6] = {
+	pg.base.furniture_shop_template[6] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 335110,
@@ -66768,11 +54528,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_78
-
-	local var_31_79 = var_31_78.base.furniture_shop_template
-
-	var_31_79[7] = {
+	pg.base.furniture_shop_template[7] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 335111,
@@ -66808,11 +54564,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_79
-
-	local var_31_80 = var_31_79.base.furniture_shop_template
-
-	var_31_80[8] = {
+	pg.base.furniture_shop_template[8] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 335112,
@@ -66848,11 +54600,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_80
-
-	local var_31_81 = var_31_80.base.furniture_shop_template
-
-	var_31_81[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335113,
@@ -66888,11 +54636,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_81
-
-	local var_31_82 = var_31_81.base.furniture_shop_template
-
-	var_31_82[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335114,
@@ -66928,11 +54672,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_82
-
-	local var_31_83 = var_31_82.base.furniture_shop_template
-
-	var_31_83[11] = {
+	pg.base.furniture_shop_template[11] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335115,
@@ -66968,11 +54708,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_83
-
-	local var_31_84 = var_31_83.base.furniture_shop_template
-
-	var_31_84[12] = {
+	pg.base.furniture_shop_template[12] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 335116,
@@ -67008,11 +54744,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_84
-
-	local var_31_85 = var_31_84.base.furniture_shop_template
-
-	var_31_85[13] = {
+	pg.base.furniture_shop_template[13] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 335117,
@@ -67048,11 +54780,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_85
-
-	local var_31_86 = var_31_85.base.furniture_shop_template
-
-	var_31_86[14] = {
+	pg.base.furniture_shop_template[14] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335118,
@@ -67088,11 +54816,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_86
-
-	local var_31_87 = var_31_86.base.furniture_shop_template
-
-	var_31_87[15] = {
+	pg.base.furniture_shop_template[15] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 335119,
@@ -67128,11 +54852,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_87
-
-	local var_31_88 = var_31_87.base.furniture_shop_template
-
-	var_31_88[335301] = {
+	pg.base.furniture_shop_template[335301] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 335301,
@@ -67168,11 +54888,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_88
-
-	local var_31_89 = var_31_88.base.furniture_shop_template
-
-	var_31_89[335302] = {
+	pg.base.furniture_shop_template[335302] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 335302,
@@ -67208,11 +54924,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_89
-
-	local var_31_90 = var_31_89.base.furniture_shop_template
-
-	var_31_90[1] = {
+	pg.base.furniture_shop_template[1] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 336001,
@@ -67248,11 +54960,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_90
-
-	local var_31_91 = var_31_90.base.furniture_shop_template
-
-	var_31_91[2] = {
+	pg.base.furniture_shop_template[2] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 336002,
@@ -67288,11 +54996,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_91
-
-	local var_31_92 = var_31_91.base.furniture_shop_template
-
-	var_31_92[336101] = {
+	pg.base.furniture_shop_template[336101] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 336101,
@@ -67328,11 +55032,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_92
-
-	local var_31_93 = var_31_92.base.furniture_shop_template
-
-	var_31_93[336102] = {
+	pg.base.furniture_shop_template[336102] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 336102,
@@ -67368,11 +55068,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_93
-
-	local var_31_94 = var_31_93.base.furniture_shop_template
-
-	var_31_94[336103] = {
+	pg.base.furniture_shop_template[336103] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 336103,
@@ -67408,11 +55104,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_94
-
-	local var_31_95 = var_31_94.base.furniture_shop_template
-
-	var_31_95[336104] = {
+	pg.base.furniture_shop_template[336104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 336104,
@@ -67448,11 +55140,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_95
-
-	local var_31_96 = var_31_95.base.furniture_shop_template
-
-	var_31_96[336105] = {
+	pg.base.furniture_shop_template[336105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 336105,
@@ -67488,11 +55176,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_96
-
-	local var_31_97 = var_31_96.base.furniture_shop_template
-
-	var_31_97[336106] = {
+	pg.base.furniture_shop_template[336106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 336106,
@@ -67528,11 +55212,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_97
-
-	local var_31_98 = var_31_97.base.furniture_shop_template
-
-	var_31_98[336107] = {
+	pg.base.furniture_shop_template[336107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 336107,
@@ -67568,8 +55248,7 @@ end)()
 			}
 		}
 	}
-	pg = var_31_98
-	var_31_98.base.furniture_shop_template[336108] = {
+	pg.base.furniture_shop_template[336108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 336108,
@@ -67609,11 +55288,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_32_0 = var_1_10000.base.furniture_shop_template
-
-	var_32_0[336109] = {
+	pg.base.furniture_shop_template[336109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 336109,
@@ -67649,11 +55324,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_0
-
-	local var_32_1 = var_32_0.base.furniture_shop_template
-
-	var_32_1[336110] = {
+	pg.base.furniture_shop_template[336110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 336110,
@@ -67689,11 +55360,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_1
-
-	local var_32_2 = var_32_1.base.furniture_shop_template
-
-	var_32_2[336111] = {
+	pg.base.furniture_shop_template[336111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 336111,
@@ -67729,11 +55396,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_2
-
-	local var_32_3 = var_32_2.base.furniture_shop_template
-
-	var_32_3[336112] = {
+	pg.base.furniture_shop_template[336112] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 336112,
@@ -67769,11 +55432,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_3
-
-	local var_32_4 = var_32_3.base.furniture_shop_template
-
-	var_32_4[336113] = {
+	pg.base.furniture_shop_template[336113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 336113,
@@ -67809,11 +55468,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_4
-
-	local var_32_5 = var_32_4.base.furniture_shop_template
-
-	var_32_5[336114] = {
+	pg.base.furniture_shop_template[336114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 336114,
@@ -67849,11 +55504,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_5
-
-	local var_32_6 = var_32_5.base.furniture_shop_template
-
-	var_32_6[336115] = {
+	pg.base.furniture_shop_template[336115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 336115,
@@ -67889,11 +55540,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_6
-
-	local var_32_7 = var_32_6.base.furniture_shop_template
-
-	var_32_7[336301] = {
+	pg.base.furniture_shop_template[336301] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 336301,
@@ -67929,11 +55576,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_7
-
-	local var_32_8 = var_32_7.base.furniture_shop_template
-
-	var_32_8[336302] = {
+	pg.base.furniture_shop_template[336302] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 336302,
@@ -67969,11 +55612,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_8
-
-	local var_32_9 = var_32_8.base.furniture_shop_template
-
-	var_32_9[337001] = {
+	pg.base.furniture_shop_template[337001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 337001,
@@ -68009,11 +55648,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_9
-
-	local var_32_10 = var_32_9.base.furniture_shop_template
-
-	var_32_10[337002] = {
+	pg.base.furniture_shop_template[337002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 337002,
@@ -68049,11 +55684,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_10
-
-	local var_32_11 = var_32_10.base.furniture_shop_template
-
-	var_32_11[337101] = {
+	pg.base.furniture_shop_template[337101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 337101,
@@ -68089,11 +55720,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_11
-
-	local var_32_12 = var_32_11.base.furniture_shop_template
-
-	var_32_12[337102] = {
+	pg.base.furniture_shop_template[337102] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 337102,
@@ -68129,11 +55756,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_12
-
-	local var_32_13 = var_32_12.base.furniture_shop_template
-
-	var_32_13[337104] = {
+	pg.base.furniture_shop_template[337104] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 337104,
@@ -68169,11 +55792,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_13
-
-	local var_32_14 = var_32_13.base.furniture_shop_template
-
-	var_32_14[337105] = {
+	pg.base.furniture_shop_template[337105] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 337105,
@@ -68209,11 +55828,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_14
-
-	local var_32_15 = var_32_14.base.furniture_shop_template
-
-	var_32_15[337106] = {
+	pg.base.furniture_shop_template[337106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 337106,
@@ -68249,11 +55864,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_15
-
-	local var_32_16 = var_32_15.base.furniture_shop_template
-
-	var_32_16[337107] = {
+	pg.base.furniture_shop_template[337107] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 337107,
@@ -68289,11 +55900,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_16
-
-	local var_32_17 = var_32_16.base.furniture_shop_template
-
-	var_32_17[337108] = {
+	pg.base.furniture_shop_template[337108] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 337108,
@@ -68329,11 +55936,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_17
-
-	local var_32_18 = var_32_17.base.furniture_shop_template
-
-	var_32_18[337109] = {
+	pg.base.furniture_shop_template[337109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 337109,
@@ -68369,11 +55972,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_18
-
-	local var_32_19 = var_32_18.base.furniture_shop_template
-
-	var_32_19[337110] = {
+	pg.base.furniture_shop_template[337110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 337110,
@@ -68409,11 +56008,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_19
-
-	local var_32_20 = var_32_19.base.furniture_shop_template
-
-	var_32_20[337111] = {
+	pg.base.furniture_shop_template[337111] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 337111,
@@ -68449,11 +56044,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_20
-
-	local var_32_21 = var_32_20.base.furniture_shop_template
-
-	var_32_21[337112] = {
+	pg.base.furniture_shop_template[337112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 337112,
@@ -68489,11 +56080,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_21
-
-	local var_32_22 = var_32_21.base.furniture_shop_template
-
-	var_32_22[337113] = {
+	pg.base.furniture_shop_template[337113] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 337113,
@@ -68529,11 +56116,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_22
-
-	local var_32_23 = var_32_22.base.furniture_shop_template
-
-	var_32_23[337114] = {
+	pg.base.furniture_shop_template[337114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 337114,
@@ -68569,11 +56152,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_23
-
-	local var_32_24 = var_32_23.base.furniture_shop_template
-
-	var_32_24[337115] = {
+	pg.base.furniture_shop_template[337115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 337115,
@@ -68609,11 +56188,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_24
-
-	local var_32_25 = var_32_24.base.furniture_shop_template
-
-	var_32_25[337116] = {
+	pg.base.furniture_shop_template[337116] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 337116,
@@ -68649,11 +56224,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_25
-
-	local var_32_26 = var_32_25.base.furniture_shop_template
-
-	var_32_26[338001] = {
+	pg.base.furniture_shop_template[338001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 338001,
@@ -68689,11 +56260,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_26
-
-	local var_32_27 = var_32_26.base.furniture_shop_template
-
-	var_32_27[338002] = {
+	pg.base.furniture_shop_template[338002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 338002,
@@ -68729,11 +56296,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_27
-
-	local var_32_28 = var_32_27.base.furniture_shop_template
-
-	var_32_28[338101] = {
+	pg.base.furniture_shop_template[338101] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 338101,
@@ -68769,11 +56332,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_28
-
-	local var_32_29 = var_32_28.base.furniture_shop_template
-
-	var_32_29[338102] = {
+	pg.base.furniture_shop_template[338102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 338102,
@@ -68809,11 +56368,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_29
-
-	local var_32_30 = var_32_29.base.furniture_shop_template
-
-	var_32_30[338103] = {
+	pg.base.furniture_shop_template[338103] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 338103,
@@ -68849,11 +56404,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_30
-
-	local var_32_31 = var_32_30.base.furniture_shop_template
-
-	var_32_31[338104] = {
+	pg.base.furniture_shop_template[338104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 338104,
@@ -68889,11 +56440,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_31
-
-	local var_32_32 = var_32_31.base.furniture_shop_template
-
-	var_32_32[338105] = {
+	pg.base.furniture_shop_template[338105] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 338105,
@@ -68929,11 +56476,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_32
-
-	local var_32_33 = var_32_32.base.furniture_shop_template
-
-	var_32_33[338106] = {
+	pg.base.furniture_shop_template[338106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 338106,
@@ -68969,11 +56512,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_33
-
-	local var_32_34 = var_32_33.base.furniture_shop_template
-
-	var_32_34[338107] = {
+	pg.base.furniture_shop_template[338107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 338107,
@@ -69009,11 +56548,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_34
-
-	local var_32_35 = var_32_34.base.furniture_shop_template
-
-	var_32_35[338108] = {
+	pg.base.furniture_shop_template[338108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 338108,
@@ -69049,11 +56584,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_35
-
-	local var_32_36 = var_32_35.base.furniture_shop_template
-
-	var_32_36[338109] = {
+	pg.base.furniture_shop_template[338109] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 338109,
@@ -69089,11 +56620,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_36
-
-	local var_32_37 = var_32_36.base.furniture_shop_template
-
-	var_32_37[338110] = {
+	pg.base.furniture_shop_template[338110] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 338110,
@@ -69129,11 +56656,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_37
-
-	local var_32_38 = var_32_37.base.furniture_shop_template
-
-	var_32_38[338111] = {
+	pg.base.furniture_shop_template[338111] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 338111,
@@ -69169,11 +56692,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_38
-
-	local var_32_39 = var_32_38.base.furniture_shop_template
-
-	var_32_39[338112] = {
+	pg.base.furniture_shop_template[338112] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 338112,
@@ -69209,11 +56728,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_39
-
-	local var_32_40 = var_32_39.base.furniture_shop_template
-
-	var_32_40[338113] = {
+	pg.base.furniture_shop_template[338113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 338113,
@@ -69249,11 +56764,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_40
-
-	local var_32_41 = var_32_40.base.furniture_shop_template
-
-	var_32_41[338114] = {
+	pg.base.furniture_shop_template[338114] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 338114,
@@ -69289,11 +56800,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_41
-
-	local var_32_42 = var_32_41.base.furniture_shop_template
-
-	var_32_42[338115] = {
+	pg.base.furniture_shop_template[338115] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 338115,
@@ -69329,11 +56836,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_42
-
-	local var_32_43 = var_32_42.base.furniture_shop_template
-
-	var_32_43[338116] = {
+	pg.base.furniture_shop_template[338116] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 338116,
@@ -69369,11 +56872,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_43
-
-	local var_32_44 = var_32_43.base.furniture_shop_template
-
-	var_32_44[339001] = {
+	pg.base.furniture_shop_template[339001] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 339001,
@@ -69409,11 +56908,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_44
-
-	local var_32_45 = var_32_44.base.furniture_shop_template
-
-	var_32_45[339002] = {
+	pg.base.furniture_shop_template[339002] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 339002,
@@ -69449,11 +56944,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_45
-
-	local var_32_46 = var_32_45.base.furniture_shop_template
-
-	var_32_46[29] = {
+	pg.base.furniture_shop_template[29] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339101,
@@ -69489,11 +56980,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_46
-
-	local var_32_47 = var_32_46.base.furniture_shop_template
-
-	var_32_47[30] = {
+	pg.base.furniture_shop_template[30] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 339102,
@@ -69529,11 +57016,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_47
-
-	local var_32_48 = var_32_47.base.furniture_shop_template
-
-	var_32_48[31] = {
+	pg.base.furniture_shop_template[31] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339103,
@@ -69569,11 +57052,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_48
-
-	local var_32_49 = var_32_48.base.furniture_shop_template
-
-	var_32_49[339104] = {
+	pg.base.furniture_shop_template[339104] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 339104,
@@ -69609,11 +57088,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_49
-
-	local var_32_50 = var_32_49.base.furniture_shop_template
-
-	var_32_50[339105] = {
+	pg.base.furniture_shop_template[339105] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339105,
@@ -69649,11 +57124,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_50
-
-	local var_32_51 = var_32_50.base.furniture_shop_template
-
-	var_32_51[339106] = {
+	pg.base.furniture_shop_template[339106] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339106,
@@ -69689,11 +57160,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_51
-
-	local var_32_52 = var_32_51.base.furniture_shop_template
-
-	var_32_52[339107] = {
+	pg.base.furniture_shop_template[339107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339107,
@@ -69729,11 +57196,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_52
-
-	local var_32_53 = var_32_52.base.furniture_shop_template
-
-	var_32_53[339108] = {
+	pg.base.furniture_shop_template[339108] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339108,
@@ -69769,11 +57232,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_53
-
-	local var_32_54 = var_32_53.base.furniture_shop_template
-
-	var_32_54[339109] = {
+	pg.base.furniture_shop_template[339109] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339109,
@@ -69809,11 +57268,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_54
-
-	local var_32_55 = var_32_54.base.furniture_shop_template
-
-	var_32_55[339110] = {
+	pg.base.furniture_shop_template[339110] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339110,
@@ -69849,11 +57304,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_55
-
-	local var_32_56 = var_32_55.base.furniture_shop_template
-
-	var_32_56[339111] = {
+	pg.base.furniture_shop_template[339111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 339111,
@@ -69889,11 +57340,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_56
-
-	local var_32_57 = var_32_56.base.furniture_shop_template
-
-	var_32_57[339112] = {
+	pg.base.furniture_shop_template[339112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 339112,
@@ -69929,11 +57376,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_57
-
-	local var_32_58 = var_32_57.base.furniture_shop_template
-
-	var_32_58[339113] = {
+	pg.base.furniture_shop_template[339113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 339113,
@@ -69969,11 +57412,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_58
-
-	local var_32_59 = var_32_58.base.furniture_shop_template
-
-	var_32_59[339114] = {
+	pg.base.furniture_shop_template[339114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 339114,
@@ -70009,11 +57448,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_59
-
-	local var_32_60 = var_32_59.base.furniture_shop_template
-
-	var_32_60[339115] = {
+	pg.base.furniture_shop_template[339115] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 339115,
@@ -70049,11 +57484,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_60
-
-	local var_32_61 = var_32_60.base.furniture_shop_template
-
-	var_32_61[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 340105,
@@ -70089,11 +57520,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_61
-
-	local var_32_62 = var_32_61.base.furniture_shop_template
-
-	var_32_62[9] = {
+	pg.base.furniture_shop_template[9] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 341001,
@@ -70129,11 +57556,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_62
-
-	local var_32_63 = var_32_62.base.furniture_shop_template
-
-	var_32_63[10] = {
+	pg.base.furniture_shop_template[10] = {
 		not_for_sale = 0,
 		gem_price = 450,
 		id = 341002,
@@ -70169,11 +57592,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_63
-
-	local var_32_64 = var_32_63.base.furniture_shop_template
-
-	var_32_64[341101] = {
+	pg.base.furniture_shop_template[341101] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341101,
@@ -70209,11 +57628,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_64
-
-	local var_32_65 = var_32_64.base.furniture_shop_template
-
-	var_32_65[341102] = {
+	pg.base.furniture_shop_template[341102] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341102,
@@ -70249,11 +57664,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_65
-
-	local var_32_66 = var_32_65.base.furniture_shop_template
-
-	var_32_66[341103] = {
+	pg.base.furniture_shop_template[341103] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341103,
@@ -70289,11 +57700,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_66
-
-	local var_32_67 = var_32_66.base.furniture_shop_template
-
-	var_32_67[341104] = {
+	pg.base.furniture_shop_template[341104] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341104,
@@ -70329,11 +57736,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_67
-
-	local var_32_68 = var_32_67.base.furniture_shop_template
-
-	var_32_68[341105] = {
+	pg.base.furniture_shop_template[341105] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341105,
@@ -70369,11 +57772,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_68
-
-	local var_32_69 = var_32_68.base.furniture_shop_template
-
-	var_32_69[341106] = {
+	pg.base.furniture_shop_template[341106] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 341106,
@@ -70409,11 +57808,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_69
-
-	local var_32_70 = var_32_69.base.furniture_shop_template
-
-	var_32_70[341107] = {
+	pg.base.furniture_shop_template[341107] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341107,
@@ -70449,11 +57844,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_70
-
-	local var_32_71 = var_32_70.base.furniture_shop_template
-
-	var_32_71[341108] = {
+	pg.base.furniture_shop_template[341108] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341108,
@@ -70489,11 +57880,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_71
-
-	local var_32_72 = var_32_71.base.furniture_shop_template
-
-	var_32_72[341109] = {
+	pg.base.furniture_shop_template[341109] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341109,
@@ -70529,11 +57916,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_72
-
-	local var_32_73 = var_32_72.base.furniture_shop_template
-
-	var_32_73[341110] = {
+	pg.base.furniture_shop_template[341110] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341110,
@@ -70569,11 +57952,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_73
-
-	local var_32_74 = var_32_73.base.furniture_shop_template
-
-	var_32_74[341111] = {
+	pg.base.furniture_shop_template[341111] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 341111,
@@ -70609,11 +57988,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_74
-
-	local var_32_75 = var_32_74.base.furniture_shop_template
-
-	var_32_75[341112] = {
+	pg.base.furniture_shop_template[341112] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341112,
@@ -70649,11 +58024,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_75
-
-	local var_32_76 = var_32_75.base.furniture_shop_template
-
-	var_32_76[341113] = {
+	pg.base.furniture_shop_template[341113] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341113,
@@ -70689,11 +58060,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_76
-
-	local var_32_77 = var_32_76.base.furniture_shop_template
-
-	var_32_77[341114] = {
+	pg.base.furniture_shop_template[341114] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341114,
@@ -70729,11 +58096,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_77
-
-	local var_32_78 = var_32_77.base.furniture_shop_template
-
-	var_32_78[341115] = {
+	pg.base.furniture_shop_template[341115] = {
 		not_for_sale = 0,
 		gem_price = 60,
 		id = 341115,
@@ -70769,11 +58132,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_78
-
-	local var_32_79 = var_32_78.base.furniture_shop_template
-
-	var_32_79[341116] = {
+	pg.base.furniture_shop_template[341116] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341116,
@@ -70809,11 +58168,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_79
-
-	local var_32_80 = var_32_79.base.furniture_shop_template
-
-	var_32_80[341117] = {
+	pg.base.furniture_shop_template[341117] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341117,
@@ -70849,11 +58204,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_80
-
-	local var_32_81 = var_32_80.base.furniture_shop_template
-
-	var_32_81[341118] = {
+	pg.base.furniture_shop_template[341118] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341118,
@@ -70889,11 +58240,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_81
-
-	local var_32_82 = var_32_81.base.furniture_shop_template
-
-	var_32_82[341119] = {
+	pg.base.furniture_shop_template[341119] = {
 		not_for_sale = 0,
 		gem_price = 150,
 		id = 341119,
@@ -70929,11 +58276,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_82
-
-	local var_32_83 = var_32_82.base.furniture_shop_template
-
-	var_32_83[341301] = {
+	pg.base.furniture_shop_template[341301] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341301,
@@ -70969,11 +58312,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_83
-
-	local var_32_84 = var_32_83.base.furniture_shop_template
-
-	var_32_84[341302] = {
+	pg.base.furniture_shop_template[341302] = {
 		not_for_sale = 0,
 		gem_price = 120,
 		id = 341302,
@@ -71009,11 +58348,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_84
-
-	local var_32_85 = var_32_84.base.furniture_shop_template
-
-	var_32_85[341303] = {
+	pg.base.furniture_shop_template[341303] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341303,
@@ -71049,8 +58384,7 @@ end)()
 			}
 		}
 	}
-	pg = var_32_85
-	var_32_85.base.furniture_shop_template[341304] = {
+	pg.base.furniture_shop_template[341304] = {
 		not_for_sale = 0,
 		gem_price = 240,
 		id = 341304,
@@ -71077,6 +58411,694 @@ end)()
 					2026,
 					8,
 					5
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342001] = {
+		not_for_sale = 0,
+		gem_price = 450,
+		id = 342001,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 150,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342002] = {
+		not_for_sale = 0,
+		gem_price = 450,
+		id = 342002,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 150,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342101] = {
+		not_for_sale = 0,
+		gem_price = 60,
+		id = 342101,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 20,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342102] = {
+		not_for_sale = 0,
+		gem_price = 120,
+		id = 342102,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 40,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342103] = {
+		not_for_sale = 0,
+		gem_price = 240,
+		id = 342103,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 80,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342104] = {
+		not_for_sale = 0,
+		gem_price = 240,
+		id = 342104,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 80,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342105] = {
+		not_for_sale = 0,
+		gem_price = 120,
+		id = 342105,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 40,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342106] = {
+		not_for_sale = 0,
+		gem_price = 240,
+		id = 342106,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 80,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342107] = {
+		not_for_sale = 0,
+		gem_price = 60,
+		id = 342107,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 20,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342108] = {
+		not_for_sale = 0,
+		gem_price = 450,
+		id = 342108,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 150,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342109] = {
+		not_for_sale = 0,
+		gem_price = 450,
+		id = 342109,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 150,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342110] = {
+		not_for_sale = 0,
+		gem_price = 450,
+		id = 342110,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 150,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342111] = {
+		not_for_sale = 0,
+		gem_price = 450,
+		id = 342111,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 150,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+
+	return
+end)()
+;(function()
+	pg.base.furniture_shop_template[342112] = {
+		not_for_sale = 0,
+		gem_price = 120,
+		id = 342112,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 40,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342113] = {
+		not_for_sale = 0,
+		gem_price = 120,
+		id = 342113,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 40,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342114] = {
+		not_for_sale = 0,
+		gem_price = 240,
+		id = 342114,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 80,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342115] = {
+		not_for_sale = 0,
+		gem_price = 60,
+		id = 342115,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 20,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342116] = {
+		not_for_sale = 0,
+		gem_price = 120,
+		id = 342116,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 40,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
+				},
+				{
+					23,
+					59,
+					59
+				}
+			}
+		}
+	}
+	pg.base.furniture_shop_template[342117] = {
+		not_for_sale = 0,
+		gem_price = 150,
+		id = 342117,
+		collaboration_furniture_time = "",
+		discount = 0,
+		dorm_icon_price = 0,
+		new = 1,
+		discount_time = "",
+		time = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					0,
+					0,
+					0
+				}
+			},
+			{
+				{
+					2026,
+					8,
+					26
 				},
 				{
 					23,

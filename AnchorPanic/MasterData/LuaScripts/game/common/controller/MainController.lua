@@ -64,6 +64,7 @@ end
 function __checkGameStart(self)
     if GameManager:getIsLoadPreResComplete() and GameManager:getIsGetPlayerData() then
         web.WebController:reqReportStep(web.REPORT_STEP.GAME_START)
+        sdk.SdkManager:foreignNotifyStartUp("enter_game")
         GameDispatcher:dispatchEvent(EventName.GAME_START)
     end
 end

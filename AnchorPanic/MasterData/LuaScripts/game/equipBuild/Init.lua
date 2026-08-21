@@ -26,6 +26,9 @@ equipBuild.EquipBreakUpSucUnlockAttrPanel = require("game/equipBuild/view/suc/Eq
 equipBuild.EquipStrengthenSucPanel = require("game/equipBuild/view/suc/EquipStrengthenSucPanel")
 
 -- 芯片改造
+equipBuild.EquipRemakeShowDataVo = require("game/equipBuild/manager/vo/EquipRemakeShowDataVo")
+equipBuild.EquipRemakeUpAgentView = require("game/equipBuild/view/EquipRemakeUpAgentView")
+
 equipBuild.EquipRemakeVo = require('rodata/EquipRemakeDataRo')
 equipBuild.EquipRemakeManager = require("game/equipBuild/manager/EquipRemakeManager").new()
 equipBuild.EquipRemakeController = require("game/equipBuild/controller/EquipRemakeController").new(equipBuild.EquipRemakeManager)
@@ -35,6 +38,11 @@ equipBuild.EquipRemakeSucPanel = require("game/equipBuild/view/suc/EquipRemakeSu
 equipBuild.EquipRemakeInfoItem = require("game/equipBuild/view/item/EquipRemakeInfoItem")
 equipBuild.EquipRemakeUpView = require("game/equipBuild/view/EquipRemakeUpView")
 equipBuild.EquipRemakeMaterialItem = require("game/equipBuild/view/item/EquipRemakeMaterialItem")
+
+equipBuild.EquipRemakeUpTargetView = require("game/equipBuild/view/EquipRemakeUpTargetView")
+equipBuild.EquipRemakeMaterialAgentItem = require("game/equipBuild/view/item/EquipRemakeMaterialAgentItem")
+
+equipBuild.EquipRemakeUpAgentOptView = require("game/equipBuild/view/EquipRemakeUpAgentOptView")
 
 -- 芯片重构
 equipBuild.EquipReconstructVo = require('rodata/EquipReconstructDataRo')
@@ -53,10 +61,23 @@ equipBuild.EquipPlanScrollItem = require("game/equipBuild/view/item/EquipPlanScr
 equipBuild.EquipPlanChangeNamePanel = require("game/equipBuild/view/EquipPlanChangeNamePanel")
 equipBuild.EquipPlanWearTipPanel = require("game/equipBuild/view/EquipPlanWearTipPanel")
 equipBuild.EquipPlanVo = require("game/equipBuild/manager/vo/EquipPlanVo")
+
+equipBuild.EquipAddPlanPanel = require("game/equipBuild/view/EquipAddPlanPanel")
+
 -- tip
 equipBuild.EquipInfoTipsItem = require('game/equipBuild/view/item/EquipInfoTipsItem')
 
-local module = {equipBuild.EquipBuildController, equipBuild.EquipStrengthenController, equipBuild.EquipRemakeController, equipBuild.EquipRestructureController}
+
+equipBuild.EquipEmpowerCostVo = require('game/equipBuild/manager/vo/EquipEmpowerCostVo')
+equipBuild.EquipEmpowerManager = require("game/equipBuild/manager/EquipEmpowerManager").new()
+equipBuild.EquipEmpowerController = require("game/equipBuild/controller/EquipEmpowerController").new(equipBuild.EquipEmpowerManager)
+equipBuild.EquipEmpowerTabView = require("game/equipBuild/view/tab/EquipEmpowerTabView")
+equipBuild.EquipEmpowerTipsPanel = require("game/equipBuild/view/EquipEmpowerTipsPanel")
+equipBuild.EquipEmpowerLockSurePanel = require("game/equipBuild/view/EquipEmpowerLockSurePanel")
+equipBuild.EquipEmpowerPreparePanel = require("game/equipBuild/view/EquipEmpowerPreparePanel")
+
+
+local module = {equipBuild.EquipBuildController, equipBuild.EquipStrengthenController, equipBuild.EquipRemakeController, equipBuild.EquipRestructureController,equipBuild.EquipEmpowerController }
 return module
  
 --[[ 替换语言包自动生成，请勿修改！

@@ -79,12 +79,16 @@ function addTriggerEvent(self)
         end
     end
     local function _onReqBeginSpeechHandler()
-        if(sdk.SdkManager:getIsSimulator())then
+        -- local isSimulator = sdk.SdkManager:getIsSimulator()
+        local isSimulator = false
+        if(isSimulator)then
             gs.Message.Show("模拟器暂不支持本功能")
+        elseif (sdk.ChannelData:isChannel(sdk.ChannelData.ANDROID_QUICK3_XM)) then
+            gs.Message.Show("语音功能暂不支持")
         else
             gs.AudioManager:StopPcm()
-            if(sdk.SdkManager:checkPermission(sdk.AndroidPermission.RECORD_AUDIO))then
-                if(not self.mXunFeiFrameSn)then
+            if (sdk.SdkManager:checkPermission(sdk.AndroidPermission.RECORD_AUDIO)) then
+                if (not self.mXunFeiFrameSn) then
                     self.mXunFeiFrameSn = LoopManager:addFrame(1, 0, self, frameUpdate)
                 end
                 self:onReqBeginSpeechHandler()
@@ -95,7 +99,7 @@ function addTriggerEvent(self)
     end
     self.mBtnMscTrigger.onLongPress:AddListener(_onReqBeginSpeechHandler)
     local function _onReqEndSpeechHandler()
-        if(self.mXunFeiFrameSn)then
+        if (self.mXunFeiFrameSn) then
             LoopManager:removeFrameByIndex(self.mXunFeiFrameSn)
             self.mXunFeiFrameSn = nil
         end
@@ -149,7 +153,7 @@ function addTriggerEvent(self)
 end
 
 function removeTriggerEvent(self)
-    if(self.mXunFeiFrameSn)then
+    if (self.mXunFeiFrameSn) then
         LoopManager:removeFrameByIndex(self.mXunFeiFrameSn)
         self.mXunFeiFrameSn = nil
     end

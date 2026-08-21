@@ -1,91 +1,55 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FileDownloadPanel", import(".MsgboxSubPanel"))
 
-local var_0_0 = "FileDownloadPanel"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MsgboxSubPanel"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "FileDownloadBox"
 end
 
-function var_0_1.OnInit(arg_2_0)
+function var_0_0.OnInit(arg_2_0)
 	arg_2_0:findUI()
 	arg_2_0:addListener()
 
 	return
 end
 
-function var_0_1.UpdateView(arg_3_0, arg_3_1)
+function var_0_0.UpdateView(arg_3_0, arg_3_1)
 	local var_3_0 = arg_3_1.onYes
 
 	function arg_3_1.onYes()
-		pg = var_2_10000
-
-		local var_4_0 = var_2_10000.FileDownloadMgr.GetInstance()
-
-		var_0.SetRemind(var_4_0, arg_3_0.curStopValue)
+		pg.FileDownloadMgr.GetInstance():SetRemind(arg_3_0.curStopValue)
 		var_3_0()
 
 		return
 	end
 
 	arg_3_0:PreRefresh(arg_3_1)
+	setText(arg_3_0.contextText, arg_3_1.content)
 
-	setText = var_3
+	rtf(arg_3_0.viewParent._window).sizeDelta = Vector2.New(1000, 638)
 
-	var_3(arg_3_0.contextText, arg_3_1.content)
-
-	rtf = var_3
-
-	local var_3_1 = var_3(arg_3_0.viewParent._window)
-
-	Vector2 = var_1_10004
-	var_3_1.sizeDelta = var_1_10004.New(1000, 638)
-	setActive = var_3_1
-
-	var_3_1(arg_3_0.toggleTF, not arg_3_1.hideToggle)
+	setActive(arg_3_0.toggleTF, not arg_3_1.hideToggle)
 	arg_3_0:PostRefresh(arg_3_1)
 
 	return
 end
 
-function var_0_1.findUI(arg_5_0)
-	local var_5_0 = arg_5_0._tf
-
-	arg_5_0.contextText = var_1.Find(var_5_0, "Context")
-
-	local var_5_1 = arg_5_0._tf
-
-	arg_5_0.toggleTF = var_1.Find(var_5_1, "Toggle")
-
-	local var_5_2 = arg_5_0.toggleTF
-
-	arg_5_0.tickTF = var_1.Find(var_5_2, "Tip/TickBG/Tick")
+function var_0_0.findUI(arg_5_0)
+	arg_5_0.contextText = arg_5_0._tf:Find("Context")
+	arg_5_0.toggleTF = arg_5_0._tf:Find("Toggle")
+	arg_5_0.tickTF = arg_5_0.toggleTF:Find("Tip/TickBG/Tick")
 
 	return
 end
 
-function var_0_1.addListener(arg_6_0)
+function var_0_0.addListener(arg_6_0)
 	arg_6_0.curStopValue = false
-	onToggle = var_1
 
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0.toggleTF
-
-	local function var_6_2(arg_7_0)
+	onToggle(arg_6_0, arg_6_0.toggleTF, function(arg_7_0)
 		arg_6_0.curStopValue = arg_7_0
 
 		return
-	end
-
-	SFX_CONFIRM = var_1_10006
-	SFX_CANCEL = var_1_10007
-
-	var_1(var_6_0, var_6_1, var_6_2, var_1_10006, var_1_10007)
+	end, SFX_CONFIRM, SFX_CANCEL)
 
 	return
 end
 
-return var_0_1
+return var_0_0

@@ -1,16 +1,10 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("IslandFriendInfoLayer", import("view.friend.FriendInfoLayer"))
 
-local var_0_0 = "IslandFriendInfoLayer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.friend.FriendInfoLayer"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "IslandFriendInfoUI"
 end
 
-function var_0_1.GetBtnTags(arg_2_0)
+function var_0_0.GetBtnTags(arg_2_0)
 	return {
 		"OPEN_RESUME",
 		"OPEND_FRIEND",
@@ -20,4 +14,4 @@ function var_0_1.GetBtnTags(arg_2_0)
 	}
 end
 
-return var_0_1
+return var_0_0

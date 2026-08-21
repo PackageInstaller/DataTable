@@ -29,17 +29,21 @@ end
 
 function initData(self)
     self.SETTING_ITEM1_INFOs = {
-        { gstor.FIGHT_JUMP_CAMERA, _TT(3008), sysParam.SysParamManager:getValue(SysParamType.FIGHT_JUMP_CAMERA) == 1 },
-        { gstor.FIGHT_HIDE_INFO, _TT(3081), sysParam.SysParamManager:getValue(SysParamType.FIGHT_HIDE_INFO) == 1 },
-        { gstor.FIGHT_SHOW_AUTO_HP, _TT(3089), false, gstor.FIGHT_SHOW_AUTO_HP_BUFF },
-    -- { gstor.FIGHT_SKIP_SKILL, "跳过技能后摇", sysParam.SysParamManager:getValue(SysParamType.FIGHT_JUMP_CAMERA) == 1 },
-    -- { gstor.FIGHT_SHOW_HP, _TT(3009), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_HP) == 1 },
-    -- { gstor.FIGHT_SHOW_DAMAGE, _TT(3010), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_DAMAGE) == 1 },
-    -- { gstor.FIGHT_SHOW_PROFESSIONTYPE, _TT(3026), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_PROFESSIONTYPE) == 1 },
+        {gstor.FIGHT_JUMP_CAMERA, _TT(3008), sysParam.SysParamManager:getValue(SysParamType.FIGHT_JUMP_CAMERA) == 1},
+        {gstor.FIGHT_HIDE_INFO, _TT(3081), sysParam.SysParamManager:getValue(SysParamType.FIGHT_HIDE_INFO) == 1},
+        {gstor.FIGHT_SHOW_AUTO_HP, _TT(3089), false, gstor.FIGHT_SHOW_AUTO_HP_BUFF},
+        {gstor.FIGHT_CLOSE_AUDIO, _TT(3092), not systemSetting.SystemSettingManager:getSystemSettingBoolValue(systemSetting.SystemSettingDefine.totalVolumeSwitch)},
+        --{gstor.FIGHT_AUTO_DECOMPOSING,_TT(71485),fight.FightManager:getSettingInfo(FightSettingConst.AutoDecomposing) == 1}
+        -- { gstor.FIGHT_SKIP_SKILL, "跳过技能后摇", sysParam.SysParamManager:getValue(SysParamType.FIGHT_JUMP_CAMERA) == 1 },
+        -- { gstor.FIGHT_SHOW_HP, _TT(3009), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_HP) == 1 },
+        -- { gstor.FIGHT_SHOW_DAMAGE, _TT(3010), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_DAMAGE) == 1 },
+        -- { gstor.FIGHT_SHOW_PROFESSIONTYPE, _TT(3026), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_PROFESSIONTYPE) == 1 },
     }
     -- self.SETTING_HIDE_UI = { gstor.FIGHT_SHOW_UI, _TT(3011), sysParam.SysParamManager:getValue(SysParamType.FIGHT_SHOW_UI) == 1 }
     -- self.SETTING_SHOW_COUNT = { gstor.FIGHT_QUEUE10, _TT(3012), sysParam.SysParamManager:getValue(SysParamType.FIGHT_QUEUE10) == 1 }
-
+    if funcopen.FuncOpenManager:isOpen(funcopen.FuncOpenConst.FUNC_ID_AUTO_DECOMPOSING, false) then
+        table.insert(self.SETTING_ITEM1_INFOs, { gstor.FIGHT_AUTO_DECOMPOSING,_TT(71485),fight.FightManager:getSettingInfo(FightSettingConst.AutoDecomposing) == 1})
+    end
 end
 
 -- 初始化
@@ -104,6 +108,12 @@ function onClickQuit(self)
         return
     end
 
+    if fight.FightManager:getBattleType() == PreFightBattleType.GuildWar and fight.FightManager:isReplaying() == false then
+        -- gs.Message.Show("当前战斗不可以中途退出哦")
+        gs.Message.Show(_TT(92022))
+        return
+    end
+
     if fight.FightManager:isReplaying() then
         fight.FightManager:setManualExitReplay(true)
         fight.FightManager:reqBattleQuit()
@@ -139,8 +149,8 @@ end
 -- 页签
 function updateTab(self)
     local list = {}
-    list[1] = { page = 1, nomalLan = _TT(3006), nomalLanEn = "" }
-    list[2] = { page = 2, nomalLan = _TT(3007), nomalLanEn = "" }
+    list[1] = {page = 1, nomalLan = _TT(3006), nomalLanEn = ""}
+    list[2] = {page = 2, nomalLan = _TT(3007), nomalLanEn = ""}
     self.tabBar = CustomTabBar:create(self:getChildGO("GroupTabItem"), self.mGroupTab, self.setPage, self)
     self.tabBar:setData(list)
     self.tabBar:setPage(1)
@@ -159,6 +169,7 @@ end
 function updateFight(self)
     self:recoverItem()
     self.mBtnQuit:GetComponent(ty.Button).interactable = fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp
+
     --self.mBtnQuit:SetActive(fight.FightManager:getBattleType() ~= PreFightBattleType.Arena_Peak_Pvp)
 
     for i, v in ipairs(self.SETTING_ITEM1_INFOs) do
@@ -167,15 +178,26 @@ function updateFight(self)
         item:getChildGO("mToggle2"):SetActive(false)
 
         local val = v[3]
-        if StorageUtil:hasKey1(v[1]) == true then
-            val = StorageUtil:getBool1(v[1])
-        else
-            StorageUtil:saveBool1(v[1], v[3])
+        if v[1] ~= gstor.FIGHT_CLOSE_AUDIO and v[1] ~= gstor.FIGHT_AUTO_DECOMPOSING then
+            if StorageUtil:hasKey1(v[1]) == true then
+                val = StorageUtil:getBool1(v[1])
+            else
+                StorageUtil:saveBool1(v[1], v[3])
+            end
         end
 
-
         local onToggle = function(val)
-            StorageUtil:saveBool1(v[1], val)
+
+            if v[1] == gstor.FIGHT_CLOSE_AUDIO then
+                systemSetting.SystemSettingManager:setSystemSettingBoolValue(systemSetting.SystemSettingDefine.totalVolumeSwitch, not val)
+                systemSetting.SystemSettingManager:applySetting(systemSetting.SystemSettingDefine.totalVolumeSwitch)
+            else
+                StorageUtil:saveBool1(v[1], val)
+            end
+
+            if v[1] == gstor.FIGHT_AUTO_DECOMPOSING then
+                GameDispatcher:dispatchEvent(EventName.REQ_SAVE_SETTING_INFO, {key = FightSettingConst.AutoDecomposing, value = val and 1 or 0})
+            end
         end
         item:getChildGO("mToggle"):GetComponent(ty.Toggle).onValueChanged:AddListener(onToggle)
         item:getChildGO("mToggle"):GetComponent(ty.Toggle).isOn = val

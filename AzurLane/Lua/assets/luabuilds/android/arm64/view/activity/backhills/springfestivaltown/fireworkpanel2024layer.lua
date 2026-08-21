@@ -1,393 +1,191 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("FireworkPanel2024Layer", import("view.base.BaseUI"))
 
-local var_0_0 = "FireworkPanel2024Layer"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("view.base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "FireworkPanelUI"
 end
 
-function var_0_1.init(arg_2_0)
-	local var_2_0 = arg_2_0._tf
+function var_0_0.init(arg_2_0)
+	arg_2_0.leftPanel = arg_2_0._tf:Find("main/left_panel")
+	arg_2_0.rightPanel = arg_2_0._tf:Find("main/right_panel")
+	arg_2_0.fireBtn = arg_2_0.rightPanel:Find("fire_btn")
 
-	arg_2_0.leftPanel = var_1.Find(var_2_0, "main/left_panel")
+	setText(arg_2_0.rightPanel:Find("tip"), i18n("activity_yanhua_tip7"))
 
-	local var_2_1 = arg_2_0._tf
-
-	arg_2_0.rightPanel = var_1.Find(var_2_1, "main/right_panel")
-
-	local var_2_2 = arg_2_0.rightPanel
-
-	arg_2_0.fireBtn = var_1.Find(var_2_2, "fire_btn")
-	setText = var_1
-
-	local var_2_3 = arg_2_0.rightPanel
-	local var_2_4 = var_3.Find(var_2_3, "tip")
-
-	i18n = var_4
-
-	var_1(var_2_4, var_4("activity_yanhua_tip7"))
-
-	local var_2_5 = arg_2_0.leftPanel
-
-	arg_2_0.leftItem = var_1.Find(var_2_5, "scrollrect/content/item_tpl")
-
-	local var_2_6 = arg_2_0.leftPanel
-
-	arg_2_0.leftItems = var_1.Find(var_2_6, "scrollrect/content")
-	UIItemList = var_1
-	arg_2_0.leftUIList = var_1.New(arg_2_0.leftItems, arg_2_0.leftItem)
-
-	local var_2_7 = arg_2_0.rightPanel
-
-	arg_2_0.rightItem = var_1.Find(var_2_7, "content/item_tpl")
-
-	local var_2_8 = arg_2_0.rightPanel
-
-	arg_2_0.rightItems = var_1.Find(var_2_8, "content")
-	UIItemList = var_1
-	arg_2_0.rightUIList = var_1.New(arg_2_0.rightItems, arg_2_0.rightItem)
-
-	local var_2_9 = arg_2_0.rightPanel
-
-	arg_2_0.arrowsTF = var_1.Find(var_2_9, "arrows")
+	arg_2_0.leftItem = arg_2_0.leftPanel:Find("scrollrect/content/item_tpl")
+	arg_2_0.leftItems = arg_2_0.leftPanel:Find("scrollrect/content")
+	arg_2_0.leftUIList = UIItemList.New(arg_2_0.leftItems, arg_2_0.leftItem)
+	arg_2_0.rightItem = arg_2_0.rightPanel:Find("content/item_tpl")
+	arg_2_0.rightItems = arg_2_0.rightPanel:Find("content")
+	arg_2_0.rightUIList = UIItemList.New(arg_2_0.rightItems, arg_2_0.rightItem)
+	arg_2_0.arrowsTF = arg_2_0.rightPanel:Find("arrows")
 
 	arg_2_0:initData()
 
 	return
 end
 
-function var_0_1.initData(arg_3_0)
-	getProxy = var_1_10001
-	ActivityProxy = var_1_10003
+function var_0_0.initData(arg_3_0)
+	local var_3_0 = getProxy(ActivityProxy):getActivityByType(ActivityConst.ACTIVITY_TYPE_FIREWORK)
 
-	local var_3_0 = var_1_10001(var_1_10003)
-	local var_3_1 = var_1.getActivityByType
+	assert(var_3_0 and not var_3_0:isEnd(), "烟花活动(type92)已结束")
 
-	ActivityConst = var_1_10004
-
-	local var_3_2 = var_3_1(var_3_0, var_1_10004.ACTIVITY_TYPE_FIREWORK)
-
-	assert = var_1_10002
-
-	var_1_10002(var_3_2 and not var_3_2:isEnd(), "烟花活动(type92)已结束")
-
-	arg_3_0.unlockCount = var_3_2:getData1()
-
-	local var_3_3 = var_3_2
-
-	arg_3_0.unlockIds = var_3_2.getData1List(var_3_3)
-	pg = var_2
-	arg_3_0.allIds = var_2.activity_template[var_3_2.id].config_data[3]
-	arg_3_0.actId = var_3_2.id
-	getProxy = var_2
-	PlayerProxy = var_3_3
-
-	local var_3_4 = var_2(var_3_3)
-
-	arg_3_0.playerId = var_2.getData(var_3_4).id
+	arg_3_0.unlockCount = var_3_0:getData1()
+	arg_3_0.unlockIds = var_3_0:getData1List()
+	arg_3_0.allIds = pg.activity_template[var_3_0.id].config_data[3]
+	arg_3_0.actId = var_3_0.id
+	arg_3_0.playerId = getProxy(PlayerProxy):getData().id
 	arg_3_0.orderIds = arg_3_0:getLocalData()
 
 	return
 end
 
-function var_0_1.getLocalData(arg_4_0)
-	local var_4_0 = {}
-
+function var_0_0.getLocalData(arg_4_0)
 	for iter_4_0 = 1, #arg_4_0.allIds do
-		PlayerPrefs = var_1_10006
+		local var_4_0 = PlayerPrefs.GetInt("fireworks_" .. arg_4_0.actId .. "_" .. arg_4_0.playerId .. "_pos_" .. iter_4_0)
 
-		if var_1_10006.GetInt("fireworks_" .. arg_4_0.actId .. "_" .. arg_4_0.playerId .. "_pos_" .. iter_4_0) ~= 0 then
-			table = var_1_10007
-
-			var_1_10007.insert(var_4_0, var_1_10006)
+		if var_4_0 ~= 0 then
+			table.insert({}, var_4_0)
 		end
 	end
 
-	return var_4_0
+	return {}
 end
 
-function var_0_1.setLocalData(arg_5_0)
+function var_0_0.setLocalData(arg_5_0)
 	for iter_5_0 = 1, #arg_5_0.allIds do
-		local var_5_0
+		local var_5_0 = arg_5_0.orderIds[iter_5_0] or 0
 
-		if not arg_5_0.orderIds[iter_5_0] then
-			var_5_0 = 0
-		end
-
-		PlayerPrefs = var_1_10006
-
-		var_1_10006.SetInt("fireworks_" .. arg_5_0.actId .. "_" .. arg_5_0.playerId .. "_pos_" .. iter_5_0, var_5_0)
+		PlayerPrefs.SetInt("fireworks_" .. arg_5_0.actId .. "_" .. arg_5_0.playerId .. "_pos_" .. iter_5_0, var_5_0)
 	end
 
 	return
 end
 
-function var_0_1.didEnter(arg_6_0)
-	onButton = var_1_10001
-
-	local var_6_0 = arg_6_0
-	local var_6_1 = arg_6_0._tf
-
-	var_1_10001(var_6_0, var_4.Find(var_6_1, "main/mask"), function()
-		local var_7_0 = arg_6_0
-
-		var_0.emit(var_7_0, var_0_1.ON_CLOSE)
+function var_0_0.didEnter(arg_6_0)
+	onButton(arg_6_0, arg_6_0._tf:Find("main/mask"), function()
+		arg_6_0:emit(var_0_0.ON_CLOSE)
 
 		return
 	end)
-
-	onButton = var_1_10001
-
-	local var_6_2 = arg_6_0
-	local var_6_3 = arg_6_0.rightPanel
-
-	var_1_10001(var_6_2, var_4.Find(var_6_3, "close_btn"), function()
-		local var_8_0 = arg_6_0
-
-		var_0.emit(var_8_0, var_0_1.ON_CLOSE)
+	onButton(arg_6_0, arg_6_0.rightPanel:Find("close_btn"), function()
+		arg_6_0:emit(var_0_0.ON_CLOSE)
 
 		return
 	end)
-
-	onButton = var_1_10001
-
-	var_1_10001(arg_6_0, arg_6_0.fireBtn, function()
-		local var_9_0 = arg_6_0
-
-		var_0.emit(var_9_0, var_0_1.ON_CLOSE)
+	onButton(arg_6_0, arg_6_0.fireBtn, function()
+		arg_6_0:emit(var_0_0.ON_CLOSE)
 
 		return
 	end)
 	arg_6_0:initLeft()
 	arg_6_0:initRight()
-
-	pg = var_1
-
-	local var_6_4 = var_1.UIMgr.GetInstance()
-
-	var_1.BlurPanel(var_6_4, arg_6_0._tf)
+	pg.UIMgr.GetInstance():BlurPanel(arg_6_0._tf)
 
 	return
 end
 
-function var_0_1.initLeft(arg_10_0)
-	setActive = var_1_10001
+function var_0_0.initLeft(arg_10_0)
+	setActive(arg_10_0.leftPanel:Find("empty"), #arg_10_0.unlockIds == 0)
+	setActive(arg_10_0.leftPanel:Find("scrollrect"), #arg_10_0.unlockIds > 0)
+	arg_10_0.leftUIList:make(function(arg_11_0, arg_11_1, arg_11_2)
+		if arg_11_0 == UIItemList.EventUpdate then
+			local var_11_0 = "lock"
 
-	local var_10_0 = arg_10_0.leftPanel
-
-	var_1_10001(var_3.Find(var_10_0, "empty"), #arg_10_0.unlockIds == 0)
-
-	setActive = var_1_10001
-
-	local var_10_1 = arg_10_0.leftPanel
-
-	var_1_10001(var_3.Find(var_10_1, "scrollrect"), #arg_10_0.unlockIds > 0)
-
-	local var_10_2 = arg_10_0.leftUIList
-
-	var_1.make(var_10_2, function(arg_11_0, arg_11_1, arg_11_2)
-		UIItemList = var_2_10003
-
-		if arg_11_0 == var_2_10003.EventUpdate then
-			local var_11_0 = arg_11_1 + 1
-			local var_11_1 = "lock"
-
-			if var_11_0 <= #arg_10_0.unlockIds then
-				tostring = var_5
-				var_11_1 = var_5(arg_10_0.unlockIds[var_11_0])
+			if arg_11_1 + 1 <= #arg_10_0.unlockIds then
+				var_11_0 = tostring(arg_10_0.unlockIds[arg_11_1 + 1])
 			end
 
-			arg_11_2.name = var_11_1
+			arg_11_2.name = var_11_0
 
-			if var_11_1 == "lock" then
-				setActive = var_5
-
-				var_5(arg_11_2:Find("firework"), false)
+			if var_11_0 == "lock" then
+				setActive(arg_11_2:Find("firework"), false)
 			else
-				tonumber = var_5
+				local var_11_1 = tonumber(arg_11_2.name)
 
-				local var_11_2 = var_5(arg_11_2.name)
-				local var_11_3 = arg_11_2
-				local var_11_4 = arg_11_2.Find(var_11_3, "firework/icon")
-				local var_11_5 = arg_11_2
-				local var_11_6 = arg_11_2.Find(var_11_5, "firework/selected")
-
-				setActive = var_11_3
-
-				var_11_3(arg_11_2:Find("firework"), true)
-
-				table = var_11_3
-
-				local var_11_7 = var_11_3.contains(arg_10_0.orderIds, var_11_2)
-
-				setActive = var_11_5
-
-				var_11_5(var_11_6, var_11_7)
-
-				GetImageSpriteFromAtlasAsync = var_11_5
-				Item = var_11
-
-				var_11_5(var_11.getConfigData(var_11_2).icon, "", var_11_4)
-
-				onButton = var_11_5
-
-				local var_11_8 = arg_10_0
-				local var_11_9 = arg_11_2
-
-				local function var_11_10()
-					local var_12_0 = arg_10_0
-
-					var_0.onLeftClick(var_12_0, var_11_2, var_11_7)
+				setActive(arg_11_2:Find("firework"), true)
+				setActive(arg_11_2:Find("firework/selected"), (table.contains(arg_10_0.orderIds, var_11_1)))
+				GetImageSpriteFromAtlasAsync(Item.getConfigData(var_11_1).icon, "", (arg_11_2:Find("firework/icon")))
+				onButton(arg_10_0, arg_11_2, function()
+					arg_10_0:onLeftClick(var_11_1, var_0)
 
 					return
-				end
-
-				SFX_PANEL = var_2_10014
-
-				var_11_5(var_11_8, var_11_9, var_11_10, var_2_10014)
+				end, SFX_PANEL)
 			end
 		end
 
 		return
 	end)
-
-	local var_10_3 = arg_10_0.leftUIList
-
-	var_1.align(var_10_3, #arg_10_0.allIds)
+	arg_10_0.leftUIList:align(#arg_10_0.allIds)
 
 	return
 end
 
-function var_0_1.initRight(arg_13_0)
+function var_0_0.initRight(arg_13_0)
 	for iter_13_0 = 1, #arg_13_0.allIds - 2 do
-		cloneTplTo = var_1_10005
-
-		local var_13_0 = arg_13_0.arrowsTF
-
-		var_1_10005(var_7.Find(var_13_0, "tpl"), arg_13_0.arrowsTF)
+		cloneTplTo(arg_13_0.arrowsTF:Find("tpl"), arg_13_0.arrowsTF)
 	end
 
-	local var_13_1 = arg_13_0.rightUIList
+	arg_13_0.rightUIList:make(function(arg_14_0, arg_14_1, arg_14_2)
+		if arg_14_0 == UIItemList.EventUpdate then
+			local var_14_0 = "null"
 
-	var_1.make(var_13_1, function(arg_14_0, arg_14_1, arg_14_2)
-		UIItemList = var_2_10003
-
-		if arg_14_0 == var_2_10003.EventUpdate then
-			local var_14_0 = arg_14_1 + 1
-			local var_14_1 = "null"
-
-			if var_14_0 <= #arg_13_0.orderIds then
-				tostring = var_5
-				var_14_1 = var_5(arg_13_0.orderIds[var_14_0])
+			if arg_14_1 + 1 <= #arg_13_0.orderIds then
+				var_14_0 = tostring(arg_13_0.orderIds[arg_14_1 + 1])
 			end
 
-			arg_14_2.name = var_14_1
+			arg_14_2.name = var_14_0
 
-			local var_14_2 = arg_14_2
-			local var_14_3 = arg_14_2.Find(var_14_2, "icon")
+			local var_14_1 = arg_14_2:Find("icon")
 
-			setActive = var_2_10006
+			setActive(arg_14_2:Find("add"), var_14_0 == "null")
 
-			var_2_10006(arg_14_2:Find("add"), var_14_1 == "null")
-
-			if var_14_1 == "null" then
-				setActive = var_2_10006
-
-				var_2_10006(var_14_3, false)
+			if var_14_0 == "null" then
+				setActive(var_14_1, false)
 			else
-				tonumber = var_2_10006
+				local var_14_2 = tonumber(arg_14_2.name)
 
-				local var_14_4 = var_2_10006(arg_14_2.name)
-
-				setActive = var_14_2
-
-				var_14_2(var_14_3, true)
-
-				GetImageSpriteFromAtlasAsync = var_14_2
-				Item = var_9
-
-				var_14_2(var_9.getConfigData(var_14_4).icon, "", var_14_3)
-
-				onButton = var_14_2
-
-				local var_14_5 = arg_13_0
-				local var_14_6 = var_14_3
-
-				local function var_14_7()
-					local var_15_0 = arg_13_0
-
-					var_0.onRightClick(var_15_0, var_14_4)
+				setActive(var_14_1, true)
+				GetImageSpriteFromAtlasAsync(Item.getConfigData(var_14_2).icon, "", var_14_1)
+				onButton(arg_13_0, var_14_1, function()
+					arg_13_0:onRightClick(var_14_2)
 
 					return
-				end
-
-				SFX_PANEL = var_2_10012
-
-				var_14_2(var_14_5, var_14_6, var_14_7, var_2_10012)
+				end, SFX_PANEL)
 			end
 		end
 
 		return
 	end)
-
-	local var_13_2 = arg_13_0.rightUIList
-
-	var_1.align(var_13_2, #arg_13_0.allIds)
+	arg_13_0.rightUIList:align(#arg_13_0.allIds)
 
 	return
 end
 
-function var_0_1.onLeftClick(arg_16_0, arg_16_1, arg_16_2)
+function var_0_0.onLeftClick(arg_16_0, arg_16_1, arg_16_2)
 	if arg_16_2 then
-		table = var_1_10003
-
-		var_1_10003.removebyvalue(arg_16_0.orderIds, arg_16_1)
+		table.removebyvalue(arg_16_0.orderIds, arg_16_1)
 	else
-		table = var_1_10003
-
-		var_1_10003.insert(arg_16_0.orderIds, arg_16_1)
+		table.insert(arg_16_0.orderIds, arg_16_1)
 	end
 
 	arg_16_0:setLocalData()
-
-	local var_16_0 = arg_16_0.leftUIList
-
-	var_3.align(var_16_0, #arg_16_0.allIds)
-
-	local var_16_1 = arg_16_0.rightUIList
-
-	var_3.align(var_16_1, #arg_16_0.allIds)
+	arg_16_0.leftUIList:align(#arg_16_0.allIds)
+	arg_16_0.rightUIList:align(#arg_16_0.allIds)
 
 	return
 end
 
-function var_0_1.onRightClick(arg_17_0, arg_17_1)
-	table = var_1_10002
-
-	var_1_10002.removebyvalue(arg_17_0.orderIds, arg_17_1)
+function var_0_0.onRightClick(arg_17_0, arg_17_1)
+	table.removebyvalue(arg_17_0.orderIds, arg_17_1)
 	arg_17_0:setLocalData()
-
-	local var_17_0 = arg_17_0.leftUIList
-
-	var_2.align(var_17_0, #arg_17_0.allIds)
-
-	local var_17_1 = arg_17_0.rightUIList
-
-	var_2.align(var_17_1, #arg_17_0.allIds)
+	arg_17_0.leftUIList:align(#arg_17_0.allIds)
+	arg_17_0.rightUIList:align(#arg_17_0.allIds)
 
 	return
 end
 
-function var_0_1.willExit(arg_18_0)
-	pg = var_1_10001
-
-	local var_18_0 = var_1_10001.UIMgr.GetInstance()
-
-	var_1.UnOverlayPanel(var_18_0, arg_18_0._tf)
+function var_0_0.willExit(arg_18_0)
+	pg.UIMgr.GetInstance():UnOverlayPanel(arg_18_0._tf)
 
 	if arg_18_0.contextData.onExit then
 		arg_18_0.contextData.onExit()
@@ -396,4 +194,4 @@ function var_0_1.willExit(arg_18_0)
 	return
 end
 
-return var_0_1
+return var_0_0

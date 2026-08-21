@@ -1,91 +1,53 @@
-﻿ys = var_0_10000
+﻿ys = ys or {}
 
-local var_0_0
+local var_0_1 = class("MoveComponent")
 
-var_0_0 = var_0_10000 or {}
-ys = ys
+ys.Battle.MoveComponent = var_0_1
+var_0_1._pos = Vector3.zero
+var_0_1._isForceMove = false
+var_0_1._staticState = false
+var_0_1._speed = Vector3.zero
+var_0_1._additiveSpeedList = {}
+var_0_1._additiveSpeed = Vector3.zero
+var_0_1._corpsLimitSpeed = 0
+var_0_1._leftCorpsBound = 0
+var_0_1._rightCorpsBound = 0
+var_0_1._immuneAreaLimit = false
+var_0_1._immuneMaxAreaLimit = false
+var_0_1._leftBorder = 0
+var_0_1._rightBorder = 0
+var_0_1._upBorder = 0
+var_0_1._downBorder = 0
+var_0_1._IFF = 0
 
-local var_0_1 = var_0.Battle.BattleVariable
-
-class = var_0_10001
-
-local var_0_2 = var_0_10001("MoveComponent")
-
-ys = var_0_10002
-
-local var_0_3 = var_0_10002.Battle
-
-var_0_3.MoveComponent = var_0_2
-ys = var_0_3
-
-local var_0_4 = var_0_3.Battle.BattleConst
-
-ys = var_3
-
-local var_0_5 = var_3.Battle.BattleFormulas
-
-Vector3 = var_0_10004
-var_0_2._pos = var_0_10004.zero
-var_0_2._isForceMove = false
-var_0_2._staticState = false
-Vector3 = var_4
-var_0_2._speed = var_4.zero
-var_0_2._additiveSpeedList = {}
-Vector3 = var_4
-var_0_2._additiveSpeed = var_4.zero
-var_0_2._corpsLimitSpeed = 0
-var_0_2._leftCorpsBound = 0
-var_0_2._rightCorpsBound = 0
-var_0_2._immuneAreaLimit = false
-var_0_2._immuneMaxAreaLimit = false
-var_0_2._leftBorder = 0
-var_0_2._rightBorder = 0
-var_0_2._upBorder = 0
-var_0_2._downBorder = 0
-var_0_2._IFF = 0
-
-function var_0_2.Ctor(arg_1_0)
+function var_0_1.Ctor(arg_1_0)
 	return
 end
 
-function var_0_2.GetPos(arg_2_0)
+function var_0_1.GetPos(arg_2_0)
 	return arg_2_0._pos
 end
 
-function var_0_2.SetPos(arg_3_0, arg_3_1)
+function var_0_1.SetPos(arg_3_0, arg_3_1)
 	arg_3_0._pos = arg_3_1
 
 	return
 end
 
-function var_0_2.Update(arg_4_0)
+function var_0_1.Update(arg_4_0)
 	arg_4_0._speed = arg_4_0:GetFinalSpeed()
 
 	return
 end
 
-function var_0_2.FixSpeed(arg_5_0, arg_5_1)
-	assert = var_1_10002
+function var_0_1.FixSpeed(arg_5_0, arg_5_1)
+	assert(arg_5_1.FixSpeed ~= nil and type(arg_5_1.FixSpeed) == "function", " MoveComponent.FixSpeed 速度修正出错")
+	arg_5_1:FixSpeed(arg_5_0._speed)
 
-	if arg_5_1.FixSpeed ~= nil then
-		type = var_4
-
-		local var_5_0
-
-		if var_4(arg_5_1.FixSpeed) ~= "function" then
-			var_5_0 = false
-		else
-			var_5_0 = true
-		end
-
-		var_1_10002(var_5_0, " MoveComponent.FixSpeed 速度修正出错")
-		arg_5_1:FixSpeed(arg_5_0._speed)
-
-		return
-	end
+	return
 end
 
-function var_0_2.Move(arg_6_0, arg_6_1)
+function var_0_1.Move(arg_6_0, arg_6_1)
 	arg_6_1 = arg_6_1 or 1
 	arg_6_0._pos.x = arg_6_0._pos.x + arg_6_0._speed.x * arg_6_1
 	arg_6_0._pos.y = arg_6_0._pos.y + arg_6_0._speed.y * arg_6_1
@@ -94,18 +56,18 @@ function var_0_2.Move(arg_6_0, arg_6_1)
 	return
 end
 
-function var_0_2.GetSpeed(arg_7_0)
+function var_0_1.GetSpeed(arg_7_0)
 	return arg_7_0._speed
 end
 
-function var_0_2.SetCorpsArea(arg_8_0, arg_8_1, arg_8_2)
+function var_0_1.SetCorpsArea(arg_8_0, arg_8_1, arg_8_2)
 	arg_8_0._leftCorpsBound = arg_8_1
 	arg_8_0._rightCorpsBound = arg_8_2
 
 	return
 end
 
-function var_0_2.SetBorder(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
+function var_0_1.SetBorder(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
 	arg_9_0._leftBorder = arg_9_1
 	arg_9_0._rightBorder = arg_9_2
 	arg_9_0._upBorder = arg_9_3
@@ -114,7 +76,7 @@ function var_0_2.SetBorder(arg_9_0, arg_9_1, arg_9_2, arg_9_3, arg_9_4)
 	return
 end
 
-function var_0_2.GetFinalSpeed(arg_10_0)
+function var_0_1.GetFinalSpeed(arg_10_0)
 	local var_10_0 = arg_10_0:getInitialSpeed()
 
 	if not arg_10_0._unstoppable then
@@ -124,7 +86,7 @@ function var_0_2.GetFinalSpeed(arg_10_0)
 	return (arg_10_0:BorderLimit(var_10_0))
 end
 
-function var_0_2.CorpsAreaLimit(arg_11_0, arg_11_1)
+function var_0_1.CorpsAreaLimit(arg_11_0, arg_11_1)
 	if arg_11_0._immuneAreaLimit then
 		return arg_11_1
 	end
@@ -132,21 +94,17 @@ function var_0_2.CorpsAreaLimit(arg_11_0, arg_11_1)
 	local var_11_0 = arg_11_0._pos.x
 	local var_11_1 = arg_11_0._corpsLimitSpeed
 
-	if var_11_0 < arg_11_0._leftCorpsBound then
-		math = var_4
-		var_11_1 = var_4.max(var_11_1, 0.1)
+	if arg_11_0._pos.x < arg_11_0._leftCorpsBound then
+		var_11_1 = math.max(var_11_1, 0.1)
 
 		if arg_11_1.x < 0 then
-			math = var_4
-			var_11_1 = var_4.min(10, var_11_1 * 1.04)
+			var_11_1 = math.min(10, var_11_1 * 1.04)
 		end
-	elseif arg_11_0._rightCorpsBound < var_11_0 then
-		math = var_4
-		var_11_1 = var_4.min(var_11_1, -0.1)
+	elseif var_11_0 > arg_11_0._rightCorpsBound then
+		var_11_1 = math.min(var_11_1, -0.1)
 
 		if arg_11_1.x > 0 then
-			math = var_4
-			var_11_1 = var_4.max(-10, var_11_1 * 1.04)
+			var_11_1 = math.max(-10, var_11_1 * 1.04)
 		end
 	else
 		var_11_1 = var_11_1 < 0.1 and var_11_1 > -0.1 and 0 or var_11_1 * 0.8
@@ -158,7 +116,7 @@ function var_0_2.CorpsAreaLimit(arg_11_0, arg_11_1)
 	return arg_11_1
 end
 
-function var_0_2.BorderLimit(arg_12_0, arg_12_1)
+function var_0_1.BorderLimit(arg_12_0, arg_12_1)
 	if arg_12_0._immuneMaxAreaLimit then
 		return arg_12_1
 	end
@@ -176,51 +134,42 @@ function var_0_2.BorderLimit(arg_12_0, arg_12_1)
 	return arg_12_1
 end
 
-function var_0_2.ImmuneAreaLimit(arg_13_0, arg_13_1)
+function var_0_1.ImmuneAreaLimit(arg_13_0, arg_13_1)
 	arg_13_0._immuneAreaLimit = arg_13_1
 
 	return
 end
 
-function var_0_2.ImmuneMaxAreaLimit(arg_14_0, arg_14_1)
+function var_0_1.ImmuneMaxAreaLimit(arg_14_0, arg_14_1)
 	arg_14_0._immuneMaxAreaLimit = arg_14_1
 
 	return
 end
 
-function var_0_2.getInitialSpeed(arg_15_0)
+function var_0_1.getInitialSpeed(arg_15_0)
 	if arg_15_0._isForceMove and not arg_15_0._unstoppable then
-		local var_15_0 = arg_15_0._forceSpeed
-
 		arg_15_0:UpdateForceMove()
 
-		return var_15_0
+		return arg_15_0._forceSpeed
 	end
 
-	if arg_15_0._moveProcess then
-		return arg_15_0._moveProcess()
-	end
-
-	if arg_15_0._staticState then
-		Vector3 = var_1
-
-		return var_1.zero
+	if arg_15_0._staticState and not arg_15_0._unstoppable then
+		return Vector3.zero
 	end
 
 	if arg_15_0._manuallyMove then
 		return arg_15_0:CorpsAreaLimit(arg_15_0._manuallyMove())
 	end
 
-	assert = var_1
-
-	var_1(arg_15_0._autoMoveAi ~= nil, "角色缺少默认移动的ai")
+	assert(arg_15_0._autoMoveAi ~= nil, "角色缺少默认移动的ai")
 
 	return arg_15_0._autoMoveAi()
 end
 
-function var_0_2.SetForceMove(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5)
+function var_0_1.SetForceMove(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, arg_16_5)
 	arg_16_0._isForceMove = true
-	arg_16_0._forceSpeed = arg_16_1.normalized * arg_16_2
+	arg_16_1 = arg_16_1.normalized
+	arg_16_0._forceSpeed = arg_16_1 * arg_16_2
 	arg_16_0._forceReduce = arg_16_1 * arg_16_3
 	arg_16_0._forceLastTime = arg_16_4
 	arg_16_0._decayValve = arg_16_5 or 0
@@ -228,25 +177,23 @@ function var_0_2.SetForceMove(arg_16_0, arg_16_1, arg_16_2, arg_16_3, arg_16_4, 
 	return
 end
 
-function var_0_2.UpdateForceMove(arg_17_0)
+function var_0_1.UpdateForceMove(arg_17_0)
 	if arg_17_0._forceLastTime <= 0 then
 		arg_17_0:ClearForceMove()
 
 		return
 	end
 
-	arg_17_0._forceLastTime = var_1 - 1
+	arg_17_0._forceLastTime = arg_17_0._forceLastTime - 1
 
-	if var_1 < arg_17_0._decayValve then
-		local var_17_0 = arg_17_0._forceSpeed
-
-		var_2.Sub(var_17_0, arg_17_0._forceReduce)
+	if arg_17_0._forceLastTime < arg_17_0._decayValve then
+		arg_17_0._forceSpeed:Sub(arg_17_0._forceReduce)
 	end
 
 	return
 end
 
-function var_0_2.ClearForceMove(arg_18_0)
+function var_0_1.ClearForceMove(arg_18_0)
 	arg_18_0._isForceMove = false
 	arg_18_0._forceSpeed = nil
 	arg_18_0._forceReduce = nil
@@ -255,92 +202,71 @@ function var_0_2.ClearForceMove(arg_18_0)
 	return
 end
 
-function var_0_2.SetMoveProcess(arg_19_0, arg_19_1)
-	arg_19_0._moveProcess = arg_19_1
+function var_0_1.SetStaticState(arg_19_0, arg_19_1)
+	arg_19_0._staticState = arg_19_1
 
 	return
 end
 
-function var_0_2.SetStaticState(arg_20_0, arg_20_1)
-	arg_20_0._staticState = arg_20_1
-
-	return
-end
-
-function var_0_2.SetAutoMoveAI(arg_21_0, arg_21_1, arg_21_2)
-	function arg_21_0._autoMoveAi()
-		local var_22_0 = arg_21_1
-		local var_22_1 = var_0.GetDirection(var_22_0)
-		local var_22_2 = var_0.Mul
-		local var_22_3 = arg_21_2
-
-		return var_22_2(var_22_1, var_4.GetAttrByName(var_22_3, "velocity"))
+function var_0_1.SetAutoMoveAI(arg_20_0, arg_20_1, arg_20_2)
+	function arg_20_0._autoMoveAi()
+		return arg_20_1:GetDirection():Mul(arg_20_2:GetAttrByName("velocity"))
 	end
 
 	return
 end
 
-function var_0_2.SetFormationCtrlInfo(arg_23_0, arg_23_1)
-	function arg_23_0._manuallyMove()
-		local var_24_0 = arg_23_0
-
-		return var_0.UpdateFleetInfo(var_24_0, arg_23_1)
+function var_0_1.SetFormationCtrlInfo(arg_22_0, arg_22_1)
+	function arg_22_0._manuallyMove()
+		return arg_22_0:UpdateFleetInfo(arg_22_1)
 	end
 
 	return
 end
 
-function var_0_2.CancelFormationCtrl(arg_25_0)
-	arg_25_0._manuallyMove = nil
+function var_0_1.CancelFormationCtrl(arg_24_0)
+	arg_24_0._manuallyMove = nil
 
 	return
 end
 
-function var_0_2.SetMotionVO(arg_26_0, arg_26_1)
-	arg_26_0._fleetMotionVO = arg_26_1
+function var_0_1.SetMotionVO(arg_25_0, arg_25_1)
+	arg_25_0._fleetMotionVO = arg_25_1
 
 	return
 end
 
-function var_0_2.UpdateFleetInfo(arg_27_0, arg_27_1)
-	local var_27_0 = arg_27_0._fleetMotionVO
-	local var_27_1 = var_2.GetSpeed(var_27_0)
+function var_0_1.UpdateFleetInfo(arg_26_0, arg_26_1)
+	local var_26_0 = arg_26_0._fleetMotionVO:GetSpeed()
 
-	if arg_27_1:EqualZero() then
-		return var_27_1
+	if arg_26_1:EqualZero() then
+		return var_26_0
 	end
 
-	local var_27_2 = var_2:GetPos()
-	local var_27_3 = var_2:GetDirAngle() * arg_27_1
-	local var_27_4 = var_5.Add(var_27_3, var_27_2)
-	local var_27_5 = var_6.Sub(var_27_4, arg_27_0._pos)
-	local var_27_6 = var_6.Div(var_27_5, 25)
-
-	return var_6.Add(var_27_6, var_27_1)
+	return (arg_26_0._fleetMotionVO:GetDirAngle() * arg_26_1):Add((arg_26_0._fleetMotionVO:GetPos())):Sub(arg_26_0._pos):Div(25):Add(var_26_0)
 end
 
-function var_0_2.AdditiveForce(arg_28_0, arg_28_1)
-	arg_28_1.x = arg_28_1.x + arg_28_0._additiveSpeed.x
-	arg_28_1.z = arg_28_1.z + arg_28_0._additiveSpeed.z
+function var_0_1.AdditiveForce(arg_27_0, arg_27_1)
+	arg_27_1.x = arg_27_1.x + arg_27_0._additiveSpeed.x
+	arg_27_1.z = arg_27_1.z + arg_27_0._additiveSpeed.z
 
-	return arg_28_1
+	return arg_27_1
 end
 
-function var_0_2.UpdateAdditiveSpeed(arg_29_0, arg_29_1)
-	arg_29_0._additiveSpeed = arg_29_1
+function var_0_1.UpdateAdditiveSpeed(arg_28_0, arg_28_1)
+	arg_28_0._additiveSpeed = arg_28_1
 
 	return
 end
 
-function var_0_2.RemoveAdditiveSpeed(arg_30_0)
-	Vector3 = var_1_10001
-	arg_30_0._additiveSpeed = var_1_10001.zero
+function var_0_1.RemoveAdditiveSpeed(arg_29_0)
+	arg_29_0._additiveSpeed = Vector3.zero
 
 	return
 end
 
-function var_0_2.ActiveUnstoppable(arg_31_0, arg_31_1)
-	arg_31_0._unstoppable = arg_31_1
+function var_0_1.ActiveUnstoppable(arg_30_0, arg_30_1)
+	arg_30_0._unstoppable = arg_30_1
 
 	return
 end

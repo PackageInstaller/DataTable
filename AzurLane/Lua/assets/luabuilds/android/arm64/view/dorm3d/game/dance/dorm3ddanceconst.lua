@@ -1,6 +1,4 @@
-﻿class = var_0_10000
-
-local var_0_0 = var_0_10000("Dorm3dDanceConst")
+﻿local var_0_0 = class("Dorm3dDanceConst")
 
 var_0_0.CUCOLORIS_COUNT = 3
 var_0_0.PHOTO_TIMES = 6
@@ -59,7 +57,6 @@ var_0_0.CUCOLORIS_FADE_50_0 = 0.5
 var_0_0.MATCH_ANIM_TIME = 0.2
 var_0_0.SCORE_ANIM_TIME = 0.3
 var_0_0.RANK_ANIM_TIME = 0.5
-Vector3 = var_1
-var_0_0.PHOTO_SCALE = var_1(0.58, 0.58, 0.58)
+var_0_0.PHOTO_SCALE = Vector3(0.58, 0.58, 0.58)
 
 return var_0_0

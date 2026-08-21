@@ -267,7 +267,7 @@ local event_cycle_collage_data=
 },
 	[50005]={ skill_id=0, gain_type=0, attr_type=0, ele_type=-1, icon="event_1132", effect_param={-25,0}, name=77157, des2=77292, des=77672
 },
-	[50006]={ skill_id=20300, gain_type=0, attr_type=0, ele_type=-1, icon="event_1133", effect_param={3,2}, name=77158, des2=77293, des=77673
+	[50006]={ skill_id=20300, gain_type=0, attr_type=0, ele_type=-1, icon="event_1133", effect_param={3,-2,-10}, name=77158, des2=77293, des=77673
 },
 	[50007]={ skill_id=20301, gain_type=0, attr_type=0, ele_type=-1, icon="event_1134", effect_param={-15,0}, name=77159, des2=77294, des=77674
 },

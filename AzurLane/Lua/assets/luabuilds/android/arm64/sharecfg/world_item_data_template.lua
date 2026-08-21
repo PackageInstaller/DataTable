@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_item_data_template") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_item_data_template"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_item_data_template = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_item_data_template
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_item_data_template = rawget(pg, "world_item_data_template") or setmetatable({
+	__name = "world_item_data_template"
+}, confNEO)
+pg.world_item_data_template.all = {
 	100,
 	101,
 	102,
@@ -209,25 +186,11 @@ var_0_3.all = {
 	2100022,
 	2100030
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_item_data_template = {}
+pg.base = pg.base or {}
+pg.base.world_item_data_template = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_item_data_template
-
-	var_1_0[100] = {
+	pg.base.world_item_data_template[100] = {
 		item_transform_item_type = 1,
 		name = "作战补给凭证",
 		item_transform_item_id = 3002,
@@ -254,11 +217,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_item_data_template
-
-	var_1_1[101] = {
+	pg.base.world_item_data_template[101] = {
 		item_transform_item_type = 1,
 		name = "特别兑换凭证",
 		item_transform_item_id = 3002,
@@ -287,11 +246,7 @@ var_0_3.base.world_item_data_template = {}
 			11
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_item_data_template
-
-	var_1_2[102] = {
+	pg.base.world_item_data_template[102] = {
 		item_transform_item_type = 0,
 		name = "战役信息记录仪",
 		item_transform_item_id = 0,
@@ -313,11 +268,7 @@ var_0_3.base.world_item_data_template = {}
 			101
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_item_data_template
-
-	var_1_3[103] = {
+	pg.base.world_item_data_template[103] = {
 		item_transform_item_type = 1,
 		name = "仲裁机关战利品回收箱（小）",
 		item_transform_item_id = 3002,
@@ -339,11 +290,7 @@ var_0_3.base.world_item_data_template = {}
 			12
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_item_data_template
-
-	var_1_4[104] = {
+	pg.base.world_item_data_template[104] = {
 		item_transform_item_type = 1,
 		name = "仲裁机关战利品回收箱（中）",
 		item_transform_item_id = 3002,
@@ -365,11 +312,7 @@ var_0_3.base.world_item_data_template = {}
 			12
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_item_data_template
-
-	var_1_5[105] = {
+	pg.base.world_item_data_template[105] = {
 		item_transform_item_type = 1,
 		name = "仲裁机关战利品回收箱（大）",
 		item_transform_item_id = 3002,
@@ -391,11 +334,7 @@ var_0_3.base.world_item_data_template = {}
 			12
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_item_data_template
-
-	var_1_6[110] = {
+	pg.base.world_item_data_template[110] = {
 		item_transform_item_type = 1,
 		name = "塞壬能源储存容器",
 		item_transform_item_id = 3002,
@@ -420,11 +359,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_item_data_template
-
-	var_1_7[120] = {
+	pg.base.world_item_data_template[120] = {
 		item_transform_item_type = 0,
 		name = "隐秘海域信息记录仪",
 		item_transform_item_id = 0,
@@ -448,11 +383,7 @@ var_0_3.base.world_item_data_template = {}
 			101
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_item_data_template
-
-	var_1_8[201] = {
+	pg.base.world_item_data_template[201] = {
 		item_transform_item_type = 0,
 		name = "应急维修箱",
 		item_transform_item_id = 0,
@@ -480,11 +411,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.world_item_data_template
-
-	var_1_9[202] = {
+	pg.base.world_item_data_template[202] = {
 		item_transform_item_type = 0,
 		name = "豪华维修箱",
 		item_transform_item_id = 0,
@@ -511,11 +438,7 @@ var_0_3.base.world_item_data_template = {}
 			4
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.world_item_data_template
-
-	var_1_10[203] = {
+	pg.base.world_item_data_template[203] = {
 		item_transform_item_type = 0,
 		name = "应急维修箱（组件）",
 		item_transform_item_id = 0,
@@ -543,11 +466,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.world_item_data_template
-
-	var_1_11[204] = {
+	pg.base.world_item_data_template[204] = {
 		item_transform_item_type = 0,
 		name = "豪华应急维修箱（组件）",
 		item_transform_item_id = 0,
@@ -574,11 +493,7 @@ var_0_3.base.world_item_data_template = {}
 			4
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.world_item_data_template
-
-	var_1_12[205] = {
+	pg.base.world_item_data_template[205] = {
 		item_transform_item_type = 0,
 		name = "应急维修箱（套装）",
 		item_transform_item_id = 0,
@@ -606,11 +521,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.world_item_data_template
-
-	var_1_13[206] = {
+	pg.base.world_item_data_template[206] = {
 		item_transform_item_type = 0,
 		name = "豪华应急维修箱（套装）",
 		item_transform_item_id = 0,
@@ -638,11 +549,7 @@ var_0_3.base.world_item_data_template = {}
 			10
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.world_item_data_template
-
-	var_1_14[251] = {
+	pg.base.world_item_data_template[251] = {
 		item_transform_item_type = 0,
 		name = "能源补给箱（小）",
 		item_transform_item_id = 0,
@@ -668,11 +575,7 @@ var_0_3.base.world_item_data_template = {}
 			3
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.world_item_data_template
-
-	var_1_15[252] = {
+	pg.base.world_item_data_template[252] = {
 		item_transform_item_type = 0,
 		name = "能源补给箱（中）",
 		item_transform_item_id = 0,
@@ -698,11 +601,7 @@ var_0_3.base.world_item_data_template = {}
 			3
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.world_item_data_template
-
-	var_1_16[253] = {
+	pg.base.world_item_data_template[253] = {
 		item_transform_item_type = 0,
 		name = "能源补给箱（大）",
 		item_transform_item_id = 0,
@@ -727,11 +626,7 @@ var_0_3.base.world_item_data_template = {}
 			201
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.world_item_data_template
-
-	var_1_17[301] = {
+	pg.base.world_item_data_template[301] = {
 		item_transform_item_type = 0,
 		name = "效能样本-攻击",
 		item_transform_item_id = 0,
@@ -756,11 +651,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.world_item_data_template
-
-	var_1_18[302] = {
+	pg.base.world_item_data_template[302] = {
 		item_transform_item_type = 0,
 		name = "效能样本-耐久",
 		item_transform_item_id = 0,
@@ -785,11 +676,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.world_item_data_template
-
-	var_1_19[303] = {
+	pg.base.world_item_data_template[303] = {
 		item_transform_item_type = 0,
 		name = "效能样本-恢复",
 		item_transform_item_id = 0,
@@ -814,11 +701,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.world_item_data_template
-
-	var_1_20[304] = {
+	pg.base.world_item_data_template[304] = {
 		item_transform_item_type = 0,
 		name = "强力效能样本-攻击",
 		item_transform_item_id = 0,
@@ -843,11 +726,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.world_item_data_template
-
-	var_1_21[305] = {
+	pg.base.world_item_data_template[305] = {
 		item_transform_item_type = 0,
 		name = "强力效能样本-耐久",
 		item_transform_item_id = 0,
@@ -872,11 +751,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.world_item_data_template
-
-	var_1_22[306] = {
+	pg.base.world_item_data_template[306] = {
 		item_transform_item_type = 0,
 		name = "强力效能样本-恢复",
 		item_transform_item_id = 0,
@@ -901,11 +776,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.world_item_data_template
-
-	var_1_23[2002] = {
+	pg.base.world_item_data_template[2002] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪R2",
 		item_transform_item_id = 3002,
@@ -928,11 +799,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.world_item_data_template
-
-	var_1_24[2003] = {
+	pg.base.world_item_data_template[2003] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪R3",
 		item_transform_item_id = 3002,
@@ -955,11 +822,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.world_item_data_template
-
-	var_1_25[2004] = {
+	pg.base.world_item_data_template[2004] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪R4",
 		item_transform_item_id = 3002,
@@ -982,11 +845,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.world_item_data_template
-
-	var_1_26[2005] = {
+	pg.base.world_item_data_template[2005] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪R5",
 		item_transform_item_id = 3002,
@@ -1011,11 +870,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.world_item_data_template
-
-	var_1_27[2006] = {
+	pg.base.world_item_data_template[2006] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪R6",
 		item_transform_item_id = 3002,
@@ -1040,11 +895,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.world_item_data_template
-
-	var_1_28[2014] = {
+	pg.base.world_item_data_template[2014] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标记录仪R4",
 		item_transform_item_id = 3002,
@@ -1068,11 +919,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.world_item_data_template
-
-	var_1_29[2015] = {
+	pg.base.world_item_data_template[2015] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标记录仪R5",
 		item_transform_item_id = 3002,
@@ -1097,11 +944,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.world_item_data_template
-
-	var_1_30[2016] = {
+	pg.base.world_item_data_template[2016] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标记录仪R6",
 		item_transform_item_id = 3002,
@@ -1125,11 +968,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.world_item_data_template
-
-	var_1_31[2050] = {
+	pg.base.world_item_data_template[2050] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪1",
 		item_transform_item_id = 0,
@@ -1149,11 +988,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.world_item_data_template
-
-	var_1_32[2051] = {
+	pg.base.world_item_data_template[2051] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪2",
 		item_transform_item_id = 0,
@@ -1173,11 +1008,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.world_item_data_template
-
-	var_1_33[2052] = {
+	pg.base.world_item_data_template[2052] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪3",
 		item_transform_item_id = 0,
@@ -1197,11 +1028,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.world_item_data_template
-
-	var_1_34[2053] = {
+	pg.base.world_item_data_template[2053] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪4",
 		item_transform_item_id = 0,
@@ -1221,11 +1048,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.world_item_data_template
-
-	var_1_35[2054] = {
+	pg.base.world_item_data_template[2054] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪5",
 		item_transform_item_id = 0,
@@ -1245,11 +1068,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.world_item_data_template
-
-	var_1_36[2055] = {
+	pg.base.world_item_data_template[2055] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪6",
 		item_transform_item_id = 0,
@@ -1269,11 +1088,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.world_item_data_template
-
-	var_1_37[2056] = {
+	pg.base.world_item_data_template[2056] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪7",
 		item_transform_item_id = 0,
@@ -1293,11 +1108,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.world_item_data_template
-
-	var_1_38[2057] = {
+	pg.base.world_item_data_template[2057] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪8",
 		item_transform_item_id = 0,
@@ -1317,11 +1128,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.world_item_data_template
-
-	var_1_39[2058] = {
+	pg.base.world_item_data_template[2058] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪9",
 		item_transform_item_id = 0,
@@ -1341,11 +1148,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.world_item_data_template
-
-	var_1_40[2059] = {
+	pg.base.world_item_data_template[2059] = {
 		item_transform_item_type = 0,
 		name = "档案坐标记录仪10",
 		item_transform_item_id = 0,
@@ -1365,11 +1168,7 @@ var_0_3.base.world_item_data_template = {}
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.world_item_data_template
-
-	var_1_41[2101] = {
+	pg.base.world_item_data_template[2101] = {
 		item_transform_item_type = 0,
 		name = "装备研发物资箱T1",
 		item_transform_item_id = 0,
@@ -1391,11 +1190,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.world_item_data_template
-
-	var_1_42[2102] = {
+	pg.base.world_item_data_template[2102] = {
 		item_transform_item_type = 0,
 		name = "装备研发物资箱T2",
 		item_transform_item_id = 0,
@@ -1417,11 +1212,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.world_item_data_template
-
-	var_1_43[2103] = {
+	pg.base.world_item_data_template[2103] = {
 		item_transform_item_type = 0,
 		name = "装备研发物资箱T3",
 		item_transform_item_id = 0,
@@ -1443,11 +1234,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.world_item_data_template
-
-	var_1_44[2111] = {
+	pg.base.world_item_data_template[2111] = {
 		item_transform_item_type = 0,
 		name = "常规实验计划",
 		item_transform_item_id = 0,
@@ -1469,11 +1256,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.world_item_data_template
-
-	var_1_45[2112] = {
+	pg.base.world_item_data_template[2112] = {
 		item_transform_item_type = 0,
 		name = "机密实验计划",
 		item_transform_item_id = 0,
@@ -1495,11 +1278,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.world_item_data_template
-
-	var_1_46[2113] = {
+	pg.base.world_item_data_template[2113] = {
 		item_transform_item_type = 0,
 		name = "未知装备部件T4",
 		item_transform_item_id = 0,
@@ -1521,11 +1300,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.world_item_data_template
-
-	var_1_47[2114] = {
+	pg.base.world_item_data_template[2114] = {
 		item_transform_item_type = 0,
 		name = "试作型突破部件",
 		item_transform_item_id = 0,
@@ -1547,11 +1322,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.world_item_data_template
-
-	var_1_48[2115] = {
+	pg.base.world_item_data_template[2115] = {
 		item_transform_item_type = 0,
 		name = "特装型突破部件",
 		item_transform_item_id = 0,
@@ -1573,11 +1344,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.world_item_data_template
-
-	var_1_49[2116] = {
+	pg.base.world_item_data_template[2116] = {
 		item_transform_item_type = 0,
 		name = "结晶化热强钢",
 		item_transform_item_id = 0,
@@ -1597,11 +1364,7 @@ var_0_3.base.world_item_data_template = {}
 		id = 2116,
 		item_origin = {}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.world_item_data_template
-
-	var_1_50[2117] = {
+	pg.base.world_item_data_template[2117] = {
 		item_transform_item_type = 0,
 		name = "纳米陶铝合金",
 		item_transform_item_id = 0,
@@ -1621,11 +1384,7 @@ var_0_3.base.world_item_data_template = {}
 		id = 2117,
 		item_origin = {}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.world_item_data_template
-
-	var_1_51[2118] = {
+	pg.base.world_item_data_template[2118] = {
 		item_transform_item_type = 0,
 		name = "可塑性机械臂",
 		item_transform_item_id = 0,
@@ -1645,11 +1404,7 @@ var_0_3.base.world_item_data_template = {}
 		id = 2118,
 		item_origin = {}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.world_item_data_template
-
-	var_1_52[2119] = {
+	pg.base.world_item_data_template[2119] = {
 		item_transform_item_type = 0,
 		name = "超空泡发生器",
 		item_transform_item_id = 0,
@@ -1669,11 +1424,7 @@ var_0_3.base.world_item_data_template = {}
 		id = 2119,
 		item_origin = {}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.world_item_data_template
-
-	var_1_53[2120] = {
+	pg.base.world_item_data_template[2120] = {
 		item_transform_item_type = 2,
 		name = "装备研发图纸SSR型",
 		item_transform_item_id = 30914,
@@ -1714,11 +1465,7 @@ var_0_3.base.world_item_data_template = {}
 		},
 		item_origin = {}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.world_item_data_template
-
-	var_1_54[2121] = {
+	pg.base.world_item_data_template[2121] = {
 		item_transform_item_type = 2,
 		name = "装备研发图纸UR型",
 		item_transform_item_id = 30915,
@@ -1759,11 +1506,7 @@ var_0_3.base.world_item_data_template = {}
 		},
 		item_origin = {}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.world_item_data_template
-
-	var_1_55[2122] = {
+	pg.base.world_item_data_template[2122] = {
 		item_transform_item_type = 0,
 		name = "绝密实验计划",
 		item_transform_item_id = 0,
@@ -1785,11 +1528,7 @@ var_0_3.base.world_item_data_template = {}
 			100
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.world_item_data_template
-
-	var_1_56[100011] = {
+	pg.base.world_item_data_template[100011] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:卡利比安海A",
 		item_transform_item_id = 3002,
@@ -1814,11 +1553,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.world_item_data_template
-
-	var_1_57[100012] = {
+	pg.base.world_item_data_template[100012] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:卡利比安海B",
 		item_transform_item_id = 3002,
@@ -1843,11 +1578,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.world_item_data_template
-
-	var_1_58[100013] = {
+	pg.base.world_item_data_template[100013] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:卡利比安海C",
 		item_transform_item_id = 3002,
@@ -1872,11 +1603,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.world_item_data_template
-
-	var_1_59[100014] = {
+	pg.base.world_item_data_template[100014] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:卡利比安海D",
 		item_transform_item_id = 3002,
@@ -1899,11 +1626,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.world_item_data_template
-
-	var_1_60[100021] = {
+	pg.base.world_item_data_template[100021] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西南A",
 		item_transform_item_id = 3002,
@@ -1926,11 +1649,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.world_item_data_template
-
-	var_1_61[100023] = {
+	pg.base.world_item_data_template[100023] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西南C",
 		item_transform_item_id = 3002,
@@ -1953,11 +1672,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.world_item_data_template
-
-	var_1_62[100024] = {
+	pg.base.world_item_data_template[100024] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西南D",
 		item_transform_item_id = 3002,
@@ -1980,11 +1695,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.world_item_data_template
-
-	var_1_63[100025] = {
+	pg.base.world_item_data_template[100025] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西南E",
 		item_transform_item_id = 3002,
@@ -2007,11 +1718,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.world_item_data_template
-
-	var_1_64[100031] = {
+	pg.base.world_item_data_template[100031] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西南洋脊A",
 		item_transform_item_id = 3002,
@@ -2034,11 +1741,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.world_item_data_template
-
-	var_1_65[100032] = {
+	pg.base.world_item_data_template[100032] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西南洋脊B",
 		item_transform_item_id = 3002,
@@ -2061,11 +1764,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.world_item_data_template
-
-	var_1_66[100033] = {
+	pg.base.world_item_data_template[100033] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西南洋脊C",
 		item_transform_item_id = 3002,
@@ -2088,11 +1787,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.world_item_data_template
-
-	var_1_67[100034] = {
+	pg.base.world_item_data_template[100034] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西南洋脊D",
 		item_transform_item_id = 3002,
@@ -2115,11 +1810,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.world_item_data_template
-
-	var_1_68[100041] = {
+	pg.base.world_item_data_template[100041] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西大陆架A",
 		item_transform_item_id = 3002,
@@ -2142,11 +1833,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.world_item_data_template
-
-	var_1_69[100042] = {
+	pg.base.world_item_data_template[100042] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西大陆架B",
 		item_transform_item_id = 3002,
@@ -2169,11 +1856,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.world_item_data_template
-
-	var_1_70[100043] = {
+	pg.base.world_item_data_template[100043] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西大陆架C",
 		item_transform_item_id = 3002,
@@ -2196,11 +1879,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.world_item_data_template
-
-	var_1_71[100051] = {
+	pg.base.world_item_data_template[100051] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东南洋脊A",
 		item_transform_item_id = 3002,
@@ -2223,11 +1902,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.world_item_data_template
-
-	var_1_72[100052] = {
+	pg.base.world_item_data_template[100052] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东南洋脊B",
 		item_transform_item_id = 3002,
@@ -2250,11 +1925,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.world_item_data_template
-
-	var_1_73[100053] = {
+	pg.base.world_item_data_template[100053] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东南洋脊C",
 		item_transform_item_id = 3002,
@@ -2277,11 +1948,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.world_item_data_template
-
-	var_1_74[100054] = {
+	pg.base.world_item_data_template[100054] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东南洋脊D",
 		item_transform_item_id = 3002,
@@ -2304,11 +1971,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.world_item_data_template
-
-	var_1_75[100061] = {
+	pg.base.world_item_data_template[100061] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东南A",
 		item_transform_item_id = 3002,
@@ -2331,11 +1994,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.world_item_data_template
-
-	var_1_76[100062] = {
+	pg.base.world_item_data_template[100062] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东南B",
 		item_transform_item_id = 3002,
@@ -2358,11 +2017,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.world_item_data_template
-
-	var_1_77[100063] = {
+	pg.base.world_item_data_template[100063] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东南C",
 		item_transform_item_id = 3002,
@@ -2385,11 +2040,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.world_item_data_template
-
-	var_1_78[100064] = {
+	pg.base.world_item_data_template[100064] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东南D",
 		item_transform_item_id = 3002,
@@ -2412,11 +2063,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.world_item_data_template
-
-	var_1_79[100065] = {
+	pg.base.world_item_data_template[100065] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东南E",
 		item_transform_item_id = 3002,
@@ -2439,11 +2086,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.world_item_data_template
-
-	var_1_80[100066] = {
+	pg.base.world_item_data_template[100066] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东南F",
 		item_transform_item_id = 3002,
@@ -2466,11 +2109,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.world_item_data_template
-
-	var_1_81[100071] = {
+	pg.base.world_item_data_template[100071] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:陆间海A",
 		item_transform_item_id = 3002,
@@ -2495,11 +2134,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.world_item_data_template
-
-	var_1_82[100072] = {
+	pg.base.world_item_data_template[100072] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:陆间海B",
 		item_transform_item_id = 3002,
@@ -2524,11 +2159,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.world_item_data_template
-
-	var_1_83[100073] = {
+	pg.base.world_item_data_template[100073] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:陆间海C",
 		item_transform_item_id = 3002,
@@ -2553,11 +2184,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.world_item_data_template
-
-	var_1_84[100081] = {
+	pg.base.world_item_data_template[100081] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西A",
 		item_transform_item_id = 3002,
@@ -2580,11 +2207,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.world_item_data_template
-
-	var_1_85[100082] = {
+	pg.base.world_item_data_template[100082] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西B",
 		item_transform_item_id = 3002,
@@ -2607,11 +2230,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.world_item_data_template
-
-	var_1_86[100083] = {
+	pg.base.world_item_data_template[100083] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西C",
 		item_transform_item_id = 3002,
@@ -2634,11 +2253,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.world_item_data_template
-
-	var_1_87[100084] = {
+	pg.base.world_item_data_template[100084] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西D",
 		item_transform_item_id = 3002,
@@ -2661,11 +2276,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.world_item_data_template
-
-	var_1_88[100085] = {
+	pg.base.world_item_data_template[100085] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西E",
 		item_transform_item_id = 3002,
@@ -2688,11 +2299,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.world_item_data_template
-
-	var_1_89[100091] = {
+	pg.base.world_item_data_template[100091] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西北A",
 		item_transform_item_id = 3002,
@@ -2715,11 +2322,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.world_item_data_template
-
-	var_1_90[100092] = {
+	pg.base.world_item_data_template[100092] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西北B",
 		item_transform_item_id = 3002,
@@ -2742,11 +2345,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.world_item_data_template
-
-	var_1_91[100093] = {
+	pg.base.world_item_data_template[100093] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西北C",
 		item_transform_item_id = 3002,
@@ -2769,11 +2368,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.world_item_data_template
-
-	var_1_92[100094] = {
+	pg.base.world_item_data_template[100094] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西北D",
 		item_transform_item_id = 3002,
@@ -2796,11 +2391,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.world_item_data_template
-
-	var_1_93[100095] = {
+	pg.base.world_item_data_template[100095] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域西北E",
 		item_transform_item_id = 3002,
@@ -2823,11 +2414,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.world_item_data_template
-
-	var_1_94[5] = {
+	pg.base.world_item_data_template[5] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西北航道A",
 		item_transform_item_id = 3002,
@@ -2852,11 +2439,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.world_item_data_template
-
-	var_1_95[6] = {
+	pg.base.world_item_data_template[6] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西北航道B",
 		item_transform_item_id = 3002,
@@ -2881,11 +2464,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.world_item_data_template
-
-	var_1_96[7] = {
+	pg.base.world_item_data_template[7] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西北航道C",
 		item_transform_item_id = 3002,
@@ -2908,11 +2487,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.world_item_data_template
-
-	var_1_97[8] = {
+	pg.base.world_item_data_template[8] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西北航道D",
 		item_transform_item_id = 3002,
@@ -2935,11 +2510,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.world_item_data_template
-
-	var_1_98[9] = {
+	pg.base.world_item_data_template[9] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西北航道E",
 		item_transform_item_id = 3002,
@@ -2962,8 +2533,7 @@ var_0_3.base.world_item_data_template = {}
 			7
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.world_item_data_template[10] = {
+	pg.base.world_item_data_template[10] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:西北航道F",
 		item_transform_item_id = 3002,
@@ -2992,11 +2562,7 @@ var_0_3.base.world_item_data_template = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.world_item_data_template
-
-	var_2_0[15] = {
+	pg.base.world_item_data_template[15] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东A",
 		item_transform_item_id = 3002,
@@ -3019,11 +2585,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.world_item_data_template
-
-	var_2_1[16] = {
+	pg.base.world_item_data_template[16] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东B",
 		item_transform_item_id = 3002,
@@ -3046,11 +2608,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.world_item_data_template
-
-	var_2_2[17] = {
+	pg.base.world_item_data_template[17] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东C",
 		item_transform_item_id = 3002,
@@ -3073,11 +2631,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.world_item_data_template
-
-	var_2_3[18] = {
+	pg.base.world_item_data_template[18] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东D",
 		item_transform_item_id = 3002,
@@ -3100,11 +2654,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.world_item_data_template
-
-	var_2_4[25] = {
+	pg.base.world_item_data_template[25] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东大陆架A",
 		item_transform_item_id = 3002,
@@ -3129,11 +2679,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.world_item_data_template
-
-	var_2_5[26] = {
+	pg.base.world_item_data_template[26] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东大陆架B",
 		item_transform_item_id = 3002,
@@ -3156,11 +2702,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.world_item_data_template
-
-	var_2_6[27] = {
+	pg.base.world_item_data_template[27] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东大陆架C",
 		item_transform_item_id = 3002,
@@ -3183,11 +2725,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.world_item_data_template
-
-	var_2_7[28] = {
+	pg.base.world_item_data_template[28] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东大陆架D",
 		item_transform_item_id = 3002,
@@ -3212,11 +2750,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.world_item_data_template
-
-	var_2_8[29] = {
+	pg.base.world_item_data_template[29] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东大陆架E",
 		item_transform_item_id = 3002,
@@ -3239,11 +2773,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.world_item_data_template
-
-	var_2_9[100131] = {
+	pg.base.world_item_data_template[100131] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东北A",
 		item_transform_item_id = 3002,
@@ -3266,11 +2796,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.world_item_data_template
-
-	var_2_10[100132] = {
+	pg.base.world_item_data_template[100132] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东北B",
 		item_transform_item_id = 3002,
@@ -3293,11 +2819,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.world_item_data_template
-
-	var_2_11[100133] = {
+	pg.base.world_item_data_template[100133] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东北C",
 		item_transform_item_id = 3002,
@@ -3320,11 +2842,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.world_item_data_template
-
-	var_2_12[100134] = {
+	pg.base.world_item_data_template[100134] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东北D",
 		item_transform_item_id = 3002,
@@ -3347,11 +2865,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.world_item_data_template
-
-	var_2_13[100135] = {
+	pg.base.world_item_data_template[100135] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域东北E",
 		item_transform_item_id = 3002,
@@ -3374,11 +2888,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.world_item_data_template
-
-	var_2_14[100141] = {
+	pg.base.world_item_data_template[100141] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东北航道A",
 		item_transform_item_id = 3002,
@@ -3401,11 +2911,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.world_item_data_template
-
-	var_2_15[100142] = {
+	pg.base.world_item_data_template[100142] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东北航道B",
 		item_transform_item_id = 3002,
@@ -3428,11 +2934,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.world_item_data_template
-
-	var_2_16[100143] = {
+	pg.base.world_item_data_template[100143] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东北航道C",
 		item_transform_item_id = 3002,
@@ -3455,11 +2957,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.world_item_data_template
-
-	var_2_17[100144] = {
+	pg.base.world_item_data_template[100144] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:东北航道D",
 		item_transform_item_id = 3002,
@@ -3484,11 +2982,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.world_item_data_template
-
-	var_2_18[100151] = {
+	pg.base.world_item_data_template[100151] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处A",
 		item_transform_item_id = 3002,
@@ -3513,11 +3007,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.world_item_data_template
-
-	var_2_19[100152] = {
+	pg.base.world_item_data_template[100152] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处B",
 		item_transform_item_id = 3002,
@@ -3542,11 +3032,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.world_item_data_template
-
-	var_2_20[100153] = {
+	pg.base.world_item_data_template[100153] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处C",
 		item_transform_item_id = 3002,
@@ -3571,11 +3057,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.world_item_data_template
-
-	var_2_21[100155] = {
+	pg.base.world_item_data_template[100155] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处D",
 		item_transform_item_id = 3002,
@@ -3600,11 +3082,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.world_item_data_template
-
-	var_2_22[100156] = {
+	pg.base.world_item_data_template[100156] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处E",
 		item_transform_item_id = 3002,
@@ -3629,11 +3107,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.world_item_data_template
-
-	var_2_23[100157] = {
+	pg.base.world_item_data_template[100157] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处F",
 		item_transform_item_id = 3002,
@@ -3658,11 +3132,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.world_item_data_template
-
-	var_2_24[100158] = {
+	pg.base.world_item_data_template[100158] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处G",
 		item_transform_item_id = 3002,
@@ -3687,11 +3157,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.world_item_data_template
-
-	var_2_25[100159] = {
+	pg.base.world_item_data_template[100159] = {
 		item_transform_item_type = 1,
 		name = "海域坐标:NA海域深处H",
 		item_transform_item_id = 3002,
@@ -3716,11 +3182,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.world_item_data_template
-
-	var_2_26[110011] = {
+	pg.base.world_item_data_template[110011] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:卡利比安海A",
 		item_transform_item_id = 3002,
@@ -3746,11 +3208,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.world_item_data_template
-
-	var_2_27[110012] = {
+	pg.base.world_item_data_template[110012] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:卡利比安海B",
 		item_transform_item_id = 3002,
@@ -3777,11 +3235,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.world_item_data_template
-
-	var_2_28[110013] = {
+	pg.base.world_item_data_template[110013] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:卡利比安海C",
 		item_transform_item_id = 3002,
@@ -3808,11 +3262,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.world_item_data_template
-
-	var_2_29[110014] = {
+	pg.base.world_item_data_template[110014] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:卡利比安海D",
 		item_transform_item_id = 3002,
@@ -3838,11 +3288,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.world_item_data_template
-
-	var_2_30[110042] = {
+	pg.base.world_item_data_template[110042] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:西大陆架B",
 		item_transform_item_id = 3002,
@@ -3868,11 +3314,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.world_item_data_template
-
-	var_2_31[110051] = {
+	pg.base.world_item_data_template[110051] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东南洋脊A",
 		item_transform_item_id = 3002,
@@ -3898,11 +3340,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.world_item_data_template
-
-	var_2_32[110052] = {
+	pg.base.world_item_data_template[110052] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东南洋脊B",
 		item_transform_item_id = 3002,
@@ -3928,11 +3366,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.world_item_data_template
-
-	var_2_33[110053] = {
+	pg.base.world_item_data_template[110053] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东南洋脊C",
 		item_transform_item_id = 3002,
@@ -3958,11 +3392,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.world_item_data_template
-
-	var_2_34[110054] = {
+	pg.base.world_item_data_template[110054] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东南洋脊D",
 		item_transform_item_id = 3002,
@@ -3988,11 +3418,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.world_item_data_template
-
-	var_2_35[110061] = {
+	pg.base.world_item_data_template[110061] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域东南A",
 		item_transform_item_id = 3002,
@@ -4018,11 +3444,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.world_item_data_template
-
-	var_2_36[110063] = {
+	pg.base.world_item_data_template[110063] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域东南C",
 		item_transform_item_id = 3002,
@@ -4048,11 +3470,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.world_item_data_template
-
-	var_2_37[110064] = {
+	pg.base.world_item_data_template[110064] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域东南D",
 		item_transform_item_id = 3002,
@@ -4078,11 +3496,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.world_item_data_template
-
-	var_2_38[110071] = {
+	pg.base.world_item_data_template[110071] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:陆间海A",
 		item_transform_item_id = 3002,
@@ -4109,11 +3523,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.world_item_data_template
-
-	var_2_39[110072] = {
+	pg.base.world_item_data_template[110072] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:陆间海B",
 		item_transform_item_id = 3002,
@@ -4139,11 +3549,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.world_item_data_template
-
-	var_2_40[110073] = {
+	pg.base.world_item_data_template[110073] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:陆间海C",
 		item_transform_item_id = 3002,
@@ -4170,11 +3576,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.world_item_data_template
-
-	var_2_41[2] = {
+	pg.base.world_item_data_template[2] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域西B",
 		item_transform_item_id = 3002,
@@ -4200,11 +3602,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.world_item_data_template
-
-	var_2_42[5] = {
+	pg.base.world_item_data_template[5] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域西E",
 		item_transform_item_id = 3002,
@@ -4230,11 +3628,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.world_item_data_template
-
-	var_2_43[11] = {
+	pg.base.world_item_data_template[11] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域西北A",
 		item_transform_item_id = 3002,
@@ -4260,11 +3654,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.world_item_data_template
-
-	var_2_44[21] = {
+	pg.base.world_item_data_template[21] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:西北航道A",
 		item_transform_item_id = 3002,
@@ -4291,11 +3681,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.world_item_data_template
-
-	var_2_45[22] = {
+	pg.base.world_item_data_template[22] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:西北航道B",
 		item_transform_item_id = 3002,
@@ -4322,11 +3708,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.world_item_data_template
-
-	var_2_46[23] = {
+	pg.base.world_item_data_template[23] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:西北航道C",
 		item_transform_item_id = 3002,
@@ -4352,11 +3734,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.world_item_data_template
-
-	var_2_47[24] = {
+	pg.base.world_item_data_template[24] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:西北航道D",
 		item_transform_item_id = 3002,
@@ -4382,11 +3760,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.world_item_data_template
-
-	var_2_48[26] = {
+	pg.base.world_item_data_template[26] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:西北航道F",
 		item_transform_item_id = 3002,
@@ -4412,11 +3786,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.world_item_data_template
-
-	var_2_49[110121] = {
+	pg.base.world_item_data_template[110121] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东大陆架A",
 		item_transform_item_id = 3002,
@@ -4442,11 +3812,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.world_item_data_template
-
-	var_2_50[110124] = {
+	pg.base.world_item_data_template[110124] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东大陆架D",
 		item_transform_item_id = 3002,
@@ -4473,11 +3839,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.world_item_data_template
-
-	var_2_51[110142] = {
+	pg.base.world_item_data_template[110142] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东北航道B",
 		item_transform_item_id = 3002,
@@ -4503,11 +3865,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.world_item_data_template
-
-	var_2_52[110144] = {
+	pg.base.world_item_data_template[110144] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:东北航道D",
 		item_transform_item_id = 3002,
@@ -4534,11 +3892,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.world_item_data_template
-
-	var_2_53[110151] = {
+	pg.base.world_item_data_template[110151] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处A",
 		item_transform_item_id = 3002,
@@ -4565,11 +3919,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.world_item_data_template
-
-	var_2_54[110152] = {
+	pg.base.world_item_data_template[110152] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处B",
 		item_transform_item_id = 3002,
@@ -4596,11 +3946,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.world_item_data_template
-
-	var_2_55[110153] = {
+	pg.base.world_item_data_template[110153] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处C",
 		item_transform_item_id = 3002,
@@ -4626,11 +3972,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.world_item_data_template
-
-	var_2_56[110155] = {
+	pg.base.world_item_data_template[110155] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处D",
 		item_transform_item_id = 3002,
@@ -4656,11 +3998,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.world_item_data_template
-
-	var_2_57[110156] = {
+	pg.base.world_item_data_template[110156] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处E",
 		item_transform_item_id = 3002,
@@ -4686,11 +4024,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.world_item_data_template
-
-	var_2_58[110157] = {
+	pg.base.world_item_data_template[110157] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处F",
 		item_transform_item_id = 3002,
@@ -4716,11 +4050,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.world_item_data_template
-
-	var_2_59[110158] = {
+	pg.base.world_item_data_template[110158] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处G",
 		item_transform_item_id = 3002,
@@ -4747,11 +4077,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.world_item_data_template
-
-	var_2_60[110159] = {
+	pg.base.world_item_data_template[110159] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标:NA海域深处H",
 		item_transform_item_id = 3002,
@@ -4778,11 +4104,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.world_item_data_template
-
-	var_2_61[0] = {
+	pg.base.world_item_data_template[0] = {
 		item_transform_item_type = 0,
 		name = "作战效能-攻击",
 		item_transform_item_id = 0,
@@ -4805,11 +4127,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.world_item_data_template
-
-	var_2_62[1] = {
+	pg.base.world_item_data_template[1] = {
 		item_transform_item_type = 0,
 		name = "作战效能-耐久",
 		item_transform_item_id = 0,
@@ -4832,11 +4150,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.world_item_data_template
-
-	var_2_63[2] = {
+	pg.base.world_item_data_template[2] = {
 		item_transform_item_type = 0,
 		name = "作战效能-恢复",
 		item_transform_item_id = 0,
@@ -4859,11 +4173,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.world_item_data_template
-
-	var_2_64[3] = {
+	pg.base.world_item_data_template[3] = {
 		item_transform_item_type = 0,
 		name = "作战效能-攻击",
 		item_transform_item_id = 0,
@@ -4886,11 +4196,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.world_item_data_template
-
-	var_2_65[4] = {
+	pg.base.world_item_data_template[4] = {
 		item_transform_item_type = 0,
 		name = "作战效能-耐久",
 		item_transform_item_id = 0,
@@ -4913,11 +4219,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.world_item_data_template
-
-	var_2_66[5] = {
+	pg.base.world_item_data_template[5] = {
 		item_transform_item_type = 0,
 		name = "作战效能-恢复",
 		item_transform_item_id = 0,
@@ -4940,11 +4242,7 @@ end)()
 			6
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.world_item_data_template
-
-	var_2_67[6] = {
+	pg.base.world_item_data_template[6] = {
 		item_transform_item_type = 0,
 		name = "作战补给凭证",
 		item_transform_item_id = 0,
@@ -4971,11 +4269,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.world_item_data_template
-
-	var_2_68[7] = {
+	pg.base.world_item_data_template[7] = {
 		item_transform_item_type = 0,
 		name = "作战补给凭证",
 		item_transform_item_id = 0,
@@ -5002,11 +4296,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.world_item_data_template
-
-	var_2_69[8] = {
+	pg.base.world_item_data_template[8] = {
 		item_transform_item_type = 0,
 		name = "能源补给箱（小）",
 		item_transform_item_id = 0,
@@ -5031,11 +4321,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.world_item_data_template
-
-	var_2_70[9] = {
+	pg.base.world_item_data_template[9] = {
 		item_transform_item_type = 0,
 		name = "应急维修箱",
 		item_transform_item_id = 0,
@@ -5060,11 +4346,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.world_item_data_template
-
-	var_2_71[2100001] = {
+	pg.base.world_item_data_template[2100001] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪",
 		item_transform_item_id = 3002,
@@ -5089,11 +4371,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.world_item_data_template
-
-	var_2_72[2100002] = {
+	pg.base.world_item_data_template[2100002] = {
 		item_transform_item_type = 1,
 		name = "海域坐标记录仪",
 		item_transform_item_id = 3002,
@@ -5118,11 +4396,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.world_item_data_template
-
-	var_2_73[2100003] = {
+	pg.base.world_item_data_template[2100003] = {
 		item_transform_item_type = 1,
 		name = "塞壬坐标记录仪",
 		item_transform_item_id = 3002,
@@ -5147,11 +4421,7 @@ end)()
 			7
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.world_item_data_template
-
-	var_2_74[2100011] = {
+	pg.base.world_item_data_template[2100011] = {
 		item_transform_item_type = 0,
 		name = "装备研发物资箱T1",
 		item_transform_item_id = 0,
@@ -5179,11 +4449,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.world_item_data_template
-
-	var_2_75[2100012] = {
+	pg.base.world_item_data_template[2100012] = {
 		item_transform_item_type = 0,
 		name = "装备研发物资箱T2",
 		item_transform_item_id = 0,
@@ -5211,11 +4477,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.world_item_data_template
-
-	var_2_76[2100013] = {
+	pg.base.world_item_data_template[2100013] = {
 		item_transform_item_type = 0,
 		name = "装备研发物资箱T3",
 		item_transform_item_id = 0,
@@ -5243,11 +4505,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.world_item_data_template
-
-	var_2_77[2100014] = {
+	pg.base.world_item_data_template[2100014] = {
 		item_transform_item_type = 0,
 		name = "未知装备研发图纸SSR型",
 		item_transform_item_id = 0,
@@ -5275,11 +4533,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.world_item_data_template
-
-	var_2_78[2100015] = {
+	pg.base.world_item_data_template[2100015] = {
 		item_transform_item_type = 0,
 		name = "未知装备研发图纸UR型",
 		item_transform_item_id = 0,
@@ -5299,11 +4553,7 @@ end)()
 		usage_arg = {},
 		item_origin = {}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.world_item_data_template
-
-	var_2_79[2100021] = {
+	pg.base.world_item_data_template[2100021] = {
 		item_transform_item_type = 0,
 		name = "未知装备部件T4",
 		item_transform_item_id = 0,
@@ -5331,11 +4581,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.world_item_data_template
-
-	var_2_80[2100022] = {
+	pg.base.world_item_data_template[2100022] = {
 		item_transform_item_type = 0,
 		name = "试作型突破部件",
 		item_transform_item_id = 0,
@@ -5363,8 +4609,7 @@ end)()
 			11
 		}
 	}
-	pg = var_2_80
-	var_2_80.base.world_item_data_template[2100030] = {
+	pg.base.world_item_data_template[2100030] = {
 		item_transform_item_type = 0,
 		name = "未知档案",
 		item_transform_item_id = 0,

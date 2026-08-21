@@ -1,189 +1,48 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("MainPlayerInfoBtn4Mellow", import(".MainPlayerInfoBtn"))
 
-local var_0_0 = "MainPlayerInfoBtn4Mellow"
+function var_0_0.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	var_0_0.super.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
+	pg.DelegateInfo.New(arg_1_0)
 
-import = var_0_10003
+	arg_1_0.playerInfoBtn = findTF(arg_1_0._tf, "name_bg")
+	arg_1_0.playerNameTxt = findTF(arg_1_0._tf, "name_bg/Text"):GetComponent(typeof(Text))
+	arg_1_0.playerLevelTr = findTF(arg_1_0._tf, "name_bg/level/Text")
+	arg_1_0.playerLevelTxt = findTF(arg_1_0._tf, "name_bg/level/Text"):GetComponent(typeof(Text))
+	arg_1_0.expTxt = findTF(arg_1_0._tf, "name_bg/level/mask/Text"):GetComponent(typeof(Text))
+	arg_1_0.goldMax = findTF(arg_1_0._tf, "res/gold/max"):GetComponent(typeof(Text))
+	arg_1_0.goldValue = findTF(arg_1_0._tf, "res/gold/Text"):GetComponent(typeof(Text))
+	arg_1_0.oilMax = findTF(arg_1_0._tf, "res/oil/max"):GetComponent(typeof(Text))
+	arg_1_0.oilValue = findTF(arg_1_0._tf, "res/oil/Text"):GetComponent(typeof(Text))
+	arg_1_0.gemValue = findTF(arg_1_0._tf, "res/gem/Text"):GetComponent(typeof(Text))
+	arg_1_0.expTr = findTF(arg_1_0._tf, "name_bg/level/mask")
 
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".MainPlayerInfoBtn"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
-	var_0_1.super.super.Ctor(arg_1_0, arg_1_1, arg_1_2)
-
-	pg = var_3
-
-	var_3.DelegateInfo.New(arg_1_0)
-
-	findTF = var_3
-	arg_1_0.playerInfoBtn = var_3(arg_1_0._tf, "name_bg")
-	findTF = var_3
-
-	local var_1_0 = var_3(arg_1_0._tf, "name_bg/Text")
-	local var_1_1 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.playerNameTxt = var_1_1(var_1_0, var_6(var_1_10008))
-	findTF = var_3
-	arg_1_0.playerLevelTr = var_3(arg_1_0._tf, "name_bg/level/Text")
-	findTF = var_3
-
-	local var_1_2 = var_3(arg_1_0._tf, "name_bg/level/Text")
-	local var_1_3 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.playerLevelTxt = var_1_3(var_1_2, var_6(var_1_10008))
-	findTF = var_3
-
-	local var_1_4 = var_3(arg_1_0._tf, "name_bg/level/mask/Text")
-	local var_1_5 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.expTxt = var_1_5(var_1_4, var_6(var_1_10008))
-	findTF = var_3
-
-	local var_1_6 = var_3(arg_1_0._tf, "res/gold/max")
-	local var_1_7 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.goldMax = var_1_7(var_1_6, var_6(var_1_10008))
-	findTF = var_3
-
-	local var_1_8 = var_3(arg_1_0._tf, "res/gold/Text")
-	local var_1_9 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.goldValue = var_1_9(var_1_8, var_6(var_1_10008))
-	findTF = var_3
-
-	local var_1_10 = var_3(arg_1_0._tf, "res/oil/max")
-	local var_1_11 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.oilMax = var_1_11(var_1_10, var_6(var_1_10008))
-	findTF = var_3
-
-	local var_1_12 = var_3(arg_1_0._tf, "res/oil/Text")
-	local var_1_13 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.oilValue = var_1_13(var_1_12, var_6(var_1_10008))
-	findTF = var_3
-
-	local var_1_14 = var_3(arg_1_0._tf, "res/gem/Text")
-	local var_1_15 = var_3.GetComponent
-
-	typeof = var_6
-	Text = var_1_10008
-	arg_1_0.gemValue = var_1_15(var_1_14, var_6(var_1_10008))
-	findTF = var_3
-	arg_1_0.expTr = var_3(arg_1_0._tf, "name_bg/level/mask")
-	onButton = var_3
-
-	local var_1_16 = arg_1_0
-
-	findTF = var_6
-
-	local var_1_17 = var_6(arg_1_0._tf, "res/gold")
-
-	local function var_1_18()
-		pg = var_2_10000
-
-		local var_2_0 = var_2_10000.playerResUI
-
-		var_0.ClickGold(var_2_0)
+	onButton(arg_1_0, findTF(arg_1_0._tf, "res/gold"), function()
+		pg.playerResUI:ClickGold()
 
 		return
-	end
-
-	SFX_PANEL = var_8
-
-	var_3(var_1_16, var_1_17, var_1_18, var_8)
-
-	onButton = var_3
-
-	local var_1_19 = arg_1_0
-
-	findTF = var_1_17
-
-	local var_1_20 = var_1_17(arg_1_0._tf, "res/oil")
-
-	local function var_1_21()
-		pg = var_2_10000
-
-		local var_3_0 = var_2_10000.playerResUI
-
-		var_0.ClickOil(var_3_0)
+	end, SFX_PANEL)
+	onButton(arg_1_0, findTF(arg_1_0._tf, "res/oil"), function()
+		pg.playerResUI:ClickOil()
 
 		return
-	end
-
-	SFX_PANEL = var_8
-
-	var_3(var_1_19, var_1_20, var_1_21, var_8)
-
-	onButton = var_3
-
-	local var_1_22 = arg_1_0
-
-	findTF = var_1_20
-
-	local var_1_23 = var_1_20(arg_1_0._tf, "res/gem")
-
-	local function var_1_24()
-		pg = var_2_10000
-
-		local var_4_0 = var_2_10000.playerResUI
-
-		var_0.ClickGem(var_4_0)
+	end, SFX_PANEL)
+	onButton(arg_1_0, findTF(arg_1_0._tf, "res/gem"), function()
+		pg.playerResUI:ClickGem()
 
 		return
-	end
-
-	SFX_PANEL = var_8
-
-	var_3(var_1_22, var_1_23, var_1_24, var_8)
-
-	local var_1_25 = arg_1_0
-	local var_1_26 = arg_1_0.bind
-
-	PlayerProxy = var_1_23
-
-	var_1_26(var_1_25, var_1_23.UPDATED, function()
-		local var_5_0 = arg_1_0
-
-		var_0.Flush(var_5_0)
+	end, SFX_PANEL)
+	arg_1_0:bind(PlayerProxy.UPDATED, function()
+		arg_1_0:Flush()
 
 		return
 	end)
-
-	local var_1_27 = arg_1_0
-	local var_1_28 = arg_1_0.bind
-
-	GAME = var_6
-
-	var_1_28(var_1_27, var_6.GUILD_GET_USER_INFO_DONE, function()
-		local var_6_0 = arg_1_0
-
-		var_0.Flush(var_6_0)
+	arg_1_0:bind(GAME.GUILD_GET_USER_INFO_DONE, function()
+		arg_1_0:Flush()
 
 		return
 	end)
-
-	local var_1_29 = arg_1_0
-	local var_1_30 = arg_1_0.bind
-
-	GAME = var_6
-
-	var_1_30(var_1_29, var_6.GET_PUBLIC_GUILD_USER_DATA_DONE, function()
-		local var_7_0 = arg_1_0
-
-		var_0.Flush(var_7_0)
+	arg_1_0:bind(GAME.GET_PUBLIC_GUILD_USER_DATA_DONE, function()
+		arg_1_0:Flush()
 
 		return
 	end)
@@ -191,67 +50,37 @@ function var_0_1.Ctor(arg_1_0, arg_1_1, arg_1_2)
 	return
 end
 
-function var_0_1.Flush(arg_8_0, arg_8_1)
-	var_0_1.super.Flush(arg_8_0, arg_8_1)
+function var_0_0.Flush(arg_8_0, arg_8_1)
+	var_0_0.super.Flush(arg_8_0, arg_8_1)
 	arg_8_0:UpdateRes()
 
 	return
 end
 
-function var_0_1.UpdateRes(arg_9_0)
-	getProxy = var_1_10001
-	PlayerProxy = var_1_10003
-
-	local var_9_0 = var_1_10001(var_1_10003)
-	local var_9_1 = var_1.getRawData(var_9_0)
-
-	PlayerResUI = var_1_10002
-
-	var_1_10002.StaticFlush(var_9_1, arg_9_0.goldMax, arg_9_0.goldValue, arg_9_0.oilMax, arg_9_0.oilValue, arg_9_0.gemValue)
+function var_0_0.UpdateRes(arg_9_0)
+	PlayerResUI.StaticFlush(getProxy(PlayerProxy):getRawData(), arg_9_0.goldMax, arg_9_0.goldValue, arg_9_0.oilMax, arg_9_0.oilValue, arg_9_0.gemValue)
 
 	return
 end
 
-function var_0_1.UpdateExp(arg_10_0)
-	local var_10_0 = 0
+function var_0_0.UpdateExp(arg_10_0)
+	local var_10_1 = getProxy(PlayerProxy):getRawData()
 
-	getProxy = var_1_10002
-	PlayerProxy = var_1_10004
+	arg_10_0.playerLevelTxt.text = var_10_1.level
+	arg_10_0.expTxt.text = var_10_1.level
 
-	local var_10_1 = var_1_10002(var_1_10004)
-	local var_10_2 = var_2.getRawData(var_10_1)
+	local var_10_2 = var_10_1.level == var_10_1:getMaxLevel() and 1 or var_10_1.exp / getConfigFromLevel1(pg.user_level, var_10_1.level).exp_interval
 
-	arg_10_0.playerLevelTxt.text = var_10_2.level
-	arg_10_0.expTxt.text = var_10_2.level
-
-	if var_10_2.level == var_10_2:getMaxLevel() then
-		var_10_0 = 1
-	else
-		getConfigFromLevel1 = var_3
-		pg = var_1_10005
-
-		local var_10_3 = var_3(var_1_10005.user_level, var_10_2.level)
-
-		var_10_0 = var_10_2.exp / var_10_3.exp_interval
-	end
-
-	local var_10_4 = 34 * var_10_0
-	local var_10_5 = arg_10_0.expTr
-
-	Vector2 = var_1_10005
-	var_10_5.sizeDelta = var_1_10005(70, var_10_4)
+	arg_10_0.expTr.sizeDelta = Vector2(70, 34 * var_10_2)
 
 	return
 end
 
-function var_0_1.Dispose(arg_11_0)
-	var_0_1.super.Dispose(arg_11_0)
-
-	pg = var_1
-
-	var_1.DelegateInfo.Dispose(arg_11_0)
+function var_0_0.Dispose(arg_11_0)
+	var_0_0.super.Dispose(arg_11_0)
+	pg.DelegateInfo.Dispose(arg_11_0)
 
 	return
 end
 
-return var_0_1
+return var_0_0

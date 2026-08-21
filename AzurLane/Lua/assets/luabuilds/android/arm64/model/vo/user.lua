@@ -1,12 +1,6 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("User", import(".BaseVO"))
 
-local var_0_0 = "User"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".BaseVO"))
-
-function var_0_1.Ctor(arg_1_0, arg_1_1)
+function var_0_0.Ctor(arg_1_0, arg_1_1)
 	arg_1_0.type = arg_1_1.type
 	arg_1_0.arg1 = arg_1_1.arg1
 	arg_1_0.arg2 = arg_1_1.arg2
@@ -20,19 +14,13 @@ function var_0_1.Ctor(arg_1_0, arg_1_1)
 	return
 end
 
-function var_0_1.isLogin(arg_2_0)
-	tobool = var_1_10001
+function var_0_0.isLogin(arg_2_0)
+	local var_2_0 = arg_2_0.uid and arg_2_0.server and arg_2_0.token
 
-	local var_2_0
-
-	if arg_2_0.uid and arg_2_0.server then
-		var_2_0 = arg_2_0.token
-	end
-
-	return var_1_10001(var_2_0)
+	return tobool(var_2_0)
 end
 
-function var_0_1.clear(arg_3_0)
+function var_0_0.clear(arg_3_0)
 	arg_3_0.id = nil
 	arg_3_0.uid = nil
 	arg_3_0.token = nil
@@ -41,4 +29,4 @@ function var_0_1.clear(arg_3_0)
 	return
 end
 
-return var_0_1
+return var_0_0

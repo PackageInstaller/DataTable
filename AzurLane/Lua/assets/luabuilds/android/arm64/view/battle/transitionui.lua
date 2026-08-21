@@ -1,29 +1,26 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("Transition", import("..base.BaseUI"))
 
-local var_0_0 = "Transition"
+function var_0_0.getUIName(arg_1_0)
+	local var_1_0 = arg_1_0.UIName
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003("..base.BaseUI"))
-
-function var_0_1.getUIName(arg_1_0)
 	if not arg_1_0.UIName then
+		var_1_0 = arg_1_0.contextData.loadUI
 		arg_1_0.UIName = arg_1_0.contextData.loadUI
 	end
 
-	return var_1
+	return var_1_0
 end
 
-function var_0_1.init(arg_2_0)
+function var_0_0.init(arg_2_0)
 	return
 end
 
-function var_0_1.didEnter(arg_3_0)
+function var_0_0.didEnter(arg_3_0)
 	return
 end
 
-function var_0_1.onBackPressed(arg_4_0)
+function var_0_0.onBackPressed(arg_4_0)
 	return
 end
 
-return var_0_1
+return var_0_0

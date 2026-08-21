@@ -1,4 +1,4 @@
-﻿local var_0_0 = {
+﻿return {
 	fadeOut = 1.5,
 	dialogbox = 2,
 	alpha = 0,
@@ -9,92 +9,83 @@
 	id = "DORM3DDAILYCONVERSATION12013",
 	placeholder = {
 		"dorm3d"
-	}
-}
-local var_0_1 = {}
-local var_0_2 = {
-	actorName = 30707,
-	side = 2,
-	hidePaintObj = true,
-	dir = 1,
-	nameColor = "#FFFFFF",
-	say = "{dorm3d}，你终于来看望{namecode:97}啦。{namecode:97}好像生病了，感觉热热的呢……",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-local var_0_3 = {}
-
-STORY_EVENT = var_0_10004
-var_0_3.name = var_0_10004.TEST
-var_0_3.data = {
-	op_list = {
+	},
+	scripts = {
 		{
-			param = "Play",
-			name = "happy_01-start",
-			time = 0,
-			type = "action",
-			skip = true
+			actorName = 30707,
+			side = 2,
+			hidePaintObj = true,
+			dir = 1,
+			nameColor = "#FFFFFF",
+			say = "{dorm3d}，你终于来看望{namecode:97}啦。{namecode:97}好像生病了，感觉热热的呢……",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			},
+			dispatcher = {
+				name = STORY_EVENT.TEST,
+				data = {
+					op_list = {
+						{
+							param = "Play",
+							name = "happy_01-start",
+							time = 0,
+							type = "action",
+							skip = true
+						},
+						{
+							skip = true,
+							name = "Face_shy_start",
+							type = "action"
+						},
+						{
+							skip = false,
+							time = 1.5,
+							type = "wait"
+						}
+					}
+				},
+				callbackData = {
+					hideUI = false,
+					name = STORY_EVENT.TEST_DONE
+				}
+			}
 		},
 		{
-			skip = true,
-			name = "Face_shy_start",
-			type = "action"
+			actor = 0,
+			side = 2,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "让我摸摸额头看看",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		},
 		{
-			skip = false,
-			time = 1.5,
-			type = "wait"
+			actorName = 30707,
+			side = 2,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "嗯……只是摸摸额头可能不够哦。",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
+		},
+		{
+			actorName = 30707,
+			side = 2,
+			nameColor = "#FFFFFF",
+			hidePaintObj = true,
+			dir = 1,
+			say = "为了让{namecode:97}更快好起来，还请{dorm3d}检查得更全面一点吧，任何地方都可以哦❤",
+			typewriter = {
+				speed = 0.05,
+				speedUp = 0.01
+			}
 		}
 	}
 }
-
-local var_0_4 = {
-	hideUI = false
-}
-
-STORY_EVENT = var_5
-var_0_4.name = var_5.TEST_DONE
-var_0_3.callbackData = var_0_4
-var_0_2.dispatcher = var_0_3
-var_0_1[1] = var_0_2
-var_0_1[2] = {
-	actor = 0,
-	side = 2,
-	nameColor = "#FFFFFF",
-	hidePaintObj = true,
-	dir = 1,
-	say = "让我摸摸额头看看",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-var_0_1[3] = {
-	actorName = 30707,
-	side = 2,
-	nameColor = "#FFFFFF",
-	hidePaintObj = true,
-	dir = 1,
-	say = "嗯……只是摸摸额头可能不够哦。",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-var_0_1[4] = {
-	actorName = 30707,
-	side = 2,
-	nameColor = "#FFFFFF",
-	hidePaintObj = true,
-	dir = 1,
-	say = "为了让{namecode:97}更快好起来，还请{dorm3d}检查得更全面一点吧，任何地方都可以哦❤",
-	typewriter = {
-		speed = 0.05,
-		speedUp = 0.01
-	}
-}
-var_0_0.scripts = var_0_1
-
-return var_0_0

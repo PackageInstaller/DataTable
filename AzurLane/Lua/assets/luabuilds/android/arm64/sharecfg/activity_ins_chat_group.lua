@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "activity_ins_chat_group") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "activity_ins_chat_group"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.activity_ins_chat_group = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.activity_ins_chat_group
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.activity_ins_chat_group = rawget(pg, "activity_ins_chat_group") or setmetatable({
+	__name = "activity_ins_chat_group"
+}, confNEO)
+pg.activity_ins_chat_group.all = {
 	1,
 	2,
 	3,
@@ -381,13 +358,25 @@ var_0_3.all = {
 	353,
 	354,
 	355,
-	356
+	356,
+	357,
+	358,
+	359,
+	360,
+	361,
+	362,
+	363,
+	364,
+	365,
+	366,
+	367,
+	368,
+	369,
+	370,
+	371,
+	372
 }
-pg = var_0_3
-
-local var_0_4 = var_0_3.activity_ins_chat_group
-
-var_0_4.get_id_list_by_ship_group = {
+pg.activity_ins_chat_group.get_id_list_by_ship_group = {
 	[101] = {
 		21,
 		304
@@ -434,6 +423,9 @@ var_0_4.get_id_list_by_ship_group = {
 	[202] = {
 		324
 	},
+	[203] = {
+		372
+	},
 	[10110] = {
 		217,
 		218,
@@ -449,6 +441,21 @@ var_0_4.get_id_list_by_ship_group = {
 		221,
 		222
 	},
+	[10156] = {
+		363,
+		364,
+		365
+	},
+	[10157] = {
+		366,
+		367,
+		368
+	},
+	[10158] = {
+		369,
+		370,
+		371
+	},
 	[10233] = {
 		207,
 		208,
@@ -463,6 +470,11 @@ var_0_4.get_id_list_by_ship_group = {
 		223,
 		224,
 		225
+	},
+	[10236] = {
+		360,
+		361,
+		362
 	},
 	[10324] = {
 		201,
@@ -491,6 +503,11 @@ var_0_4.get_id_list_by_ship_group = {
 		90,
 		91,
 		92
+	},
+	[10720] = {
+		357,
+		358,
+		359
 	},
 	[10725] = {
 		226,
@@ -993,25 +1010,11 @@ var_0_4.get_id_list_by_ship_group = {
 		200
 	}
 }
-pg = var_0_4
-pg = var_1
-
-local var_0_5
-
-if not var_1.base then
-	var_0_5 = {}
-end
-
-var_0_4.base = var_0_5
-pg = var_0_4
-var_0_4.base.activity_ins_chat_group = {}
+pg.base = pg.base or {}
+pg.base.activity_ins_chat_group = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.activity_ins_chat_group
-
-	var_1_0[1] = {
+	pg.base.activity_ins_chat_group[1] = {
 		ship_group = 960007,
 		name = "休闲计划",
 		group_ii = 0,
@@ -1053,11 +1056,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			31
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.activity_ins_chat_group
-
-	var_1_1[2] = {
+	pg.base.activity_ins_chat_group[2] = {
 		ship_group = 960007,
 		name = "共进晚餐",
 		group_ii = 0,
@@ -1087,11 +1086,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			50
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.activity_ins_chat_group
-
-	var_1_2[3] = {
+	pg.base.activity_ins_chat_group[3] = {
 		ship_group = 960007,
 		name = "日出",
 		group_ii = 0,
@@ -1137,11 +1132,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			85
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.activity_ins_chat_group
-
-	var_1_3[4] = {
+	pg.base.activity_ins_chat_group[4] = {
 		ship_group = 960008,
 		name = "沐浴露",
 		group_ii = 0,
@@ -1173,11 +1164,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			106
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.activity_ins_chat_group
-
-	var_1_4[5] = {
+	pg.base.activity_ins_chat_group[5] = {
 		ship_group = 960008,
 		name = "味道",
 		group_ii = 0,
@@ -1216,11 +1203,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			134
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.activity_ins_chat_group
-
-	var_1_5[6] = {
+	pg.base.activity_ins_chat_group[6] = {
 		ship_group = 960008,
 		name = "无聊",
 		group_ii = 0,
@@ -1252,11 +1235,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			155
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.activity_ins_chat_group
-
-	var_1_6[7] = {
+	pg.base.activity_ins_chat_group[7] = {
 		ship_group = 960009,
 		name = "爱好",
 		group_ii = 0,
@@ -1314,11 +1293,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			202
 		}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.activity_ins_chat_group
-
-	var_1_7[8] = {
+	pg.base.activity_ins_chat_group[8] = {
 		ship_group = 960009,
 		name = "夜宵",
 		group_ii = 0,
@@ -1354,11 +1329,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			227
 		}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.activity_ins_chat_group
-
-	var_1_8[9] = {
+	pg.base.activity_ins_chat_group[9] = {
 		ship_group = 960009,
 		name = "思念",
 		group_ii = 0,
@@ -1396,11 +1367,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			254
 		}
 	}
-	pg = var_1_8
-
-	local var_1_9 = var_1_8.base.activity_ins_chat_group
-
-	var_1_9[10] = {
+	pg.base.activity_ins_chat_group[10] = {
 		ship_group = 960010,
 		name = "踩背",
 		group_ii = 0,
@@ -1434,11 +1401,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			277
 		}
 	}
-	pg = var_1_9
-
-	local var_1_10 = var_1_9.base.activity_ins_chat_group
-
-	var_1_10[11] = {
+	pg.base.activity_ins_chat_group[11] = {
 		ship_group = 960010,
 		name = "醉话",
 		group_ii = 0,
@@ -1473,11 +1436,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			301
 		}
 	}
-	pg = var_1_10
-
-	local var_1_11 = var_1_10.base.activity_ins_chat_group
-
-	var_1_11[12] = {
+	pg.base.activity_ins_chat_group[12] = {
 		ship_group = 960010,
 		name = "健身",
 		group_ii = 0,
@@ -1515,11 +1474,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			328
 		}
 	}
-	pg = var_1_11
-
-	local var_1_12 = var_1_11.base.activity_ins_chat_group
-
-	var_1_12[13] = {
+	pg.base.activity_ins_chat_group[13] = {
 		ship_group = 960011,
 		name = "手机短信",
 		group_ii = 0,
@@ -1566,11 +1521,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			364
 		}
 	}
-	pg = var_1_12
-
-	local var_1_13 = var_1_12.base.activity_ins_chat_group
-
-	var_1_13[14] = {
+	pg.base.activity_ins_chat_group[14] = {
 		ship_group = 960011,
 		name = "走失",
 		group_ii = 0,
@@ -1603,11 +1554,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			386
 		}
 	}
-	pg = var_1_13
-
-	local var_1_14 = var_1_13.base.activity_ins_chat_group
-
-	var_1_14[15] = {
+	pg.base.activity_ins_chat_group[15] = {
 		ship_group = 960011,
 		name = "失眠",
 		group_ii = 0,
@@ -1654,11 +1601,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			422
 		}
 	}
-	pg = var_1_14
-
-	local var_1_15 = var_1_14.base.activity_ins_chat_group
-
-	var_1_15[16] = {
+	pg.base.activity_ins_chat_group[16] = {
 		ship_group = 960005,
 		name = "请假",
 		group_ii = 0,
@@ -1722,11 +1665,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			475
 		}
 	}
-	pg = var_1_15
-
-	local var_1_16 = var_1_15.base.activity_ins_chat_group
-
-	var_1_16[17] = {
+	pg.base.activity_ins_chat_group[17] = {
 		ship_group = 960005,
 		name = "下雨天",
 		group_ii = 0,
@@ -1784,11 +1723,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			522
 		}
 	}
-	pg = var_1_16
-
-	local var_1_17 = var_1_16.base.activity_ins_chat_group
-
-	var_1_17[18] = {
+	pg.base.activity_ins_chat_group[18] = {
 		ship_group = 960005,
 		name = "睡醒",
 		group_ii = 0,
@@ -1818,11 +1753,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			541
 		}
 	}
-	pg = var_1_17
-
-	local var_1_18 = var_1_17.base.activity_ins_chat_group
-
-	var_1_18[19] = {
+	pg.base.activity_ins_chat_group[19] = {
 		ship_group = 109,
 		name = "指挥室的宝藏",
 		group_ii = 0,
@@ -1900,11 +1831,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			595
 		}
 	}
-	pg = var_1_18
-
-	local var_1_19 = var_1_18.base.activity_ins_chat_group
-
-	var_1_19[20] = {
+	pg.base.activity_ins_chat_group[20] = {
 		ship_group = 200,
 		name = "给指挥官的惊喜",
 		group_ii = 0,
@@ -1989,11 +1916,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			656
 		}
 	}
-	pg = var_1_19
-
-	local var_1_20 = var_1_19.base.activity_ins_chat_group
-
-	var_1_20[21] = {
+	pg.base.activity_ins_chat_group[21] = {
 		ship_group = 101,
 		name = "观影会筹备中",
 		group_ii = 0,
@@ -2076,11 +1999,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			715
 		}
 	}
-	pg = var_1_20
-
-	local var_1_21 = var_1_20.base.activity_ins_chat_group
-
-	var_1_21[22] = {
+	pg.base.activity_ins_chat_group[22] = {
 		ship_group = 102,
 		name = "“遵守纪律”的北方联合",
 		group_ii = 0,
@@ -2153,11 +2072,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			764
 		}
 	}
-	pg = var_1_21
-
-	local var_1_22 = var_1_21.base.activity_ins_chat_group
-
-	var_1_22[23] = {
+	pg.base.activity_ins_chat_group[23] = {
 		ship_group = 103,
 		name = "聚餐",
 		group_ii = 0,
@@ -2237,11 +2152,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			820
 		}
 	}
-	pg = var_1_22
-
-	local var_1_23 = var_1_22.base.activity_ins_chat_group
-
-	var_1_23[24] = {
+	pg.base.activity_ins_chat_group[24] = {
 		ship_group = 104,
 		name = "特别关注",
 		group_ii = 0,
@@ -2333,11 +2244,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			888
 		}
 	}
-	pg = var_1_23
-
-	local var_1_24 = var_1_23.base.activity_ins_chat_group
-
-	var_1_24[25] = {
+	pg.base.activity_ins_chat_group[25] = {
 		ship_group = 105,
 		name = "演习成绩",
 		group_ii = 0,
@@ -2411,11 +2318,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			938
 		}
 	}
-	pg = var_1_24
-
-	local var_1_25 = var_1_24.base.activity_ins_chat_group
-
-	var_1_25[26] = {
+	pg.base.activity_ins_chat_group[26] = {
 		ship_group = 106,
 		name = "频道幸运日",
 		group_ii = 0,
@@ -2499,11 +2402,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			998
 		}
 	}
-	pg = var_1_25
-
-	local var_1_26 = var_1_25.base.activity_ins_chat_group
-
-	var_1_26[27] = {
+	pg.base.activity_ins_chat_group[27] = {
 		ship_group = 107,
 		name = "重樱的实力！",
 		group_ii = 0,
@@ -2590,11 +2489,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1061
 		}
 	}
-	pg = var_1_26
-
-	local var_1_27 = var_1_26.base.activity_ins_chat_group
-
-	var_1_27[28] = {
+	pg.base.activity_ins_chat_group[28] = {
 		ship_group = 108,
 		name = "特别的茶会",
 		group_ii = 0,
@@ -2678,11 +2573,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1121
 		}
 	}
-	pg = var_1_27
-
-	local var_1_28 = var_1_27.base.activity_ins_chat_group
-
-	var_1_28[29] = {
+	pg.base.activity_ins_chat_group[29] = {
 		ship_group = 20509,
 		name = "甜品课",
 		group_ii = 0,
@@ -2731,11 +2622,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1159
 		}
 	}
-	pg = var_1_28
-
-	local var_1_29 = var_1_28.base.activity_ins_chat_group
-
-	var_1_29[30] = {
+	pg.base.activity_ins_chat_group[30] = {
 		ship_group = 20509,
 		name = "约会的行程",
 		group_ii = 0,
@@ -2779,11 +2666,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1192
 		}
 	}
-	pg = var_1_29
-
-	local var_1_30 = var_1_29.base.activity_ins_chat_group
-
-	var_1_30[31] = {
+	pg.base.activity_ins_chat_group[31] = {
 		ship_group = 20509,
 		name = "弄脏的衣物",
 		group_ii = 0,
@@ -2826,11 +2709,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1224
 		}
 	}
-	pg = var_1_30
-
-	local var_1_31 = var_1_30.base.activity_ins_chat_group
-
-	var_1_31[32] = {
+	pg.base.activity_ins_chat_group[32] = {
 		ship_group = 40503,
 		name = "音乐会邀请",
 		group_ii = 0,
@@ -2872,11 +2751,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1255
 		}
 	}
-	pg = var_1_31
-
-	local var_1_32 = var_1_31.base.activity_ins_chat_group
-
-	var_1_32[33] = {
+	pg.base.activity_ins_chat_group[33] = {
 		ship_group = 40503,
 		name = "不可思议事件",
 		group_ii = 0,
@@ -2921,11 +2796,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1290
 		}
 	}
-	pg = var_1_32
-
-	local var_1_33 = var_1_32.base.activity_ins_chat_group
-
-	var_1_33[34] = {
+	pg.base.activity_ins_chat_group[34] = {
 		ship_group = 40503,
 		name = "健康工作小贴士",
 		group_ii = 0,
@@ -2965,11 +2836,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1319
 		}
 	}
-	pg = var_1_33
-
-	local var_1_34 = var_1_33.base.activity_ins_chat_group
-
-	var_1_34[35] = {
+	pg.base.activity_ins_chat_group[35] = {
 		ship_group = 49906,
 		name = "表情包的魔法",
 		group_ii = 0,
@@ -3004,11 +2871,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1343
 		}
 	}
-	pg = var_1_34
-
-	local var_1_35 = var_1_34.base.activity_ins_chat_group
-
-	var_1_35[36] = {
+	pg.base.activity_ins_chat_group[36] = {
 		ship_group = 49906,
 		name = "魔法甘露",
 		group_ii = 0,
@@ -3052,11 +2915,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1376
 		}
 	}
-	pg = var_1_35
-
-	local var_1_36 = var_1_35.base.activity_ins_chat_group
-
-	var_1_36[37] = {
+	pg.base.activity_ins_chat_group[37] = {
 		ship_group = 49906,
 		name = "魔女的梦",
 		group_ii = 0,
@@ -3093,11 +2952,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1402
 		}
 	}
-	pg = var_1_36
-
-	local var_1_37 = var_1_36.base.activity_ins_chat_group
-
-	var_1_37[38] = {
+	pg.base.activity_ins_chat_group[38] = {
 		ship_group = 40404,
 		name = "睡过头了",
 		group_ii = 0,
@@ -3132,11 +2987,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1426
 		}
 	}
-	pg = var_1_37
-
-	local var_1_38 = var_1_37.base.activity_ins_chat_group
-
-	var_1_38[39] = {
+	pg.base.activity_ins_chat_group[39] = {
 		ship_group = 40404,
 		name = "等指挥官的地方",
 		group_ii = 0,
@@ -3180,11 +3031,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1459
 		}
 	}
-	pg = var_1_38
-
-	local var_1_39 = var_1_38.base.activity_ins_chat_group
-
-	var_1_39[40] = {
+	pg.base.activity_ins_chat_group[40] = {
 		ship_group = 40404,
 		name = "与指挥官约会的方法",
 		group_ii = 0,
@@ -3228,11 +3075,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1492
 		}
 	}
-	pg = var_1_39
-
-	local var_1_40 = var_1_39.base.activity_ins_chat_group
-
-	var_1_40[41] = {
+	pg.base.activity_ins_chat_group[41] = {
 		ship_group = 40704,
 		name = "高效沟通",
 		group_ii = 0,
@@ -3281,11 +3124,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1530
 		}
 	}
-	pg = var_1_40
-
-	local var_1_41 = var_1_40.base.activity_ins_chat_group
-
-	var_1_41[42] = {
+	pg.base.activity_ins_chat_group[42] = {
 		ship_group = 40704,
 		name = "深夜的监督者",
 		group_ii = 0,
@@ -3322,11 +3161,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1556
 		}
 	}
-	pg = var_1_41
-
-	local var_1_42 = var_1_41.base.activity_ins_chat_group
-
-	var_1_42[43] = {
+	pg.base.activity_ins_chat_group[43] = {
 		ship_group = 40704,
 		name = "鲁梅的晚餐",
 		group_ii = 0,
@@ -3363,11 +3198,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1582
 		}
 	}
-	pg = var_1_42
-
-	local var_1_43 = var_1_42.base.activity_ins_chat_group
-
-	var_1_43[44] = {
+	pg.base.activity_ins_chat_group[44] = {
 		ship_group = 40152,
 		name = "跑酷线路",
 		group_ii = 0,
@@ -3402,11 +3233,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1606
 		}
 	}
-	pg = var_1_43
-
-	local var_1_44 = var_1_43.base.activity_ins_chat_group
-
-	var_1_44[45] = {
+	pg.base.activity_ins_chat_group[45] = {
 		ship_group = 40152,
 		name = "雨天",
 		group_ii = 0,
@@ -3448,11 +3275,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1637
 		}
 	}
-	pg = var_1_44
-
-	local var_1_45 = var_1_44.base.activity_ins_chat_group
-
-	var_1_45[46] = {
+	pg.base.activity_ins_chat_group[46] = {
 		ship_group = 40152,
 		name = "整理文件",
 		group_ii = 0,
@@ -3498,11 +3321,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1672
 		}
 	}
-	pg = var_1_45
-
-	local var_1_46 = var_1_45.base.activity_ins_chat_group
-
-	var_1_46[47] = {
+	pg.base.activity_ins_chat_group[47] = {
 		ship_group = 40211,
 		name = "甜品店",
 		group_ii = 0,
@@ -3540,11 +3359,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1699
 		}
 	}
-	pg = var_1_46
-
-	local var_1_47 = var_1_46.base.activity_ins_chat_group
-
-	var_1_47[48] = {
+	pg.base.activity_ins_chat_group[48] = {
 		ship_group = 40211,
 		name = "口红",
 		group_ii = 0,
@@ -3579,11 +3394,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1723
 		}
 	}
-	pg = var_1_47
-
-	local var_1_48 = var_1_47.base.activity_ins_chat_group
-
-	var_1_48[49] = {
+	pg.base.activity_ins_chat_group[49] = {
 		ship_group = 40211,
 		name = "开店构想",
 		group_ii = 0,
@@ -3625,11 +3436,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1754
 		}
 	}
-	pg = var_1_48
-
-	local var_1_49 = var_1_48.base.activity_ins_chat_group
-
-	var_1_49[50] = {
+	pg.base.activity_ins_chat_group[50] = {
 		ship_group = 40109,
 		name = "整理文件",
 		group_ii = 0,
@@ -3674,11 +3481,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1788
 		}
 	}
-	pg = var_1_49
-
-	local var_1_50 = var_1_49.base.activity_ins_chat_group
-
-	var_1_50[51] = {
+	pg.base.activity_ins_chat_group[51] = {
 		ship_group = 40109,
 		name = "绘本",
 		group_ii = 0,
@@ -3724,11 +3527,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1823
 		}
 	}
-	pg = var_1_50
-
-	local var_1_51 = var_1_50.base.activity_ins_chat_group
-
-	var_1_51[52] = {
+	pg.base.activity_ins_chat_group[52] = {
 		ship_group = 40109,
 		name = "噩梦",
 		group_ii = 0,
@@ -3781,11 +3580,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1865
 		}
 	}
-	pg = var_1_51
-
-	local var_1_52 = var_1_51.base.activity_ins_chat_group
-
-	var_1_52[53] = {
+	pg.base.activity_ins_chat_group[53] = {
 		ship_group = 40111,
 		name = "新游戏",
 		group_ii = 0,
@@ -3834,11 +3629,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1903
 		}
 	}
-	pg = var_1_52
-
-	local var_1_53 = var_1_52.base.activity_ins_chat_group
-
-	var_1_53[54] = {
+	pg.base.activity_ins_chat_group[54] = {
 		ship_group = 40111,
 		name = "料理练习",
 		group_ii = 0,
@@ -3883,11 +3674,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1937
 		}
 	}
-	pg = var_1_53
-
-	local var_1_54 = var_1_53.base.activity_ins_chat_group
-
-	var_1_54[55] = {
+	pg.base.activity_ins_chat_group[55] = {
 		ship_group = 40111,
 		name = "克服家里蹲",
 		group_ii = 0,
@@ -3933,11 +3720,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			1972
 		}
 	}
-	pg = var_1_54
-
-	local var_1_55 = var_1_54.base.activity_ins_chat_group
-
-	var_1_55[56] = {
+	pg.base.activity_ins_chat_group[56] = {
 		ship_group = 50105,
 		name = "口味调查",
 		group_ii = 0,
@@ -3978,11 +3761,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2002
 		}
 	}
-	pg = var_1_55
-
-	local var_1_56 = var_1_55.base.activity_ins_chat_group
-
-	var_1_56[57] = {
+	pg.base.activity_ins_chat_group[57] = {
 		ship_group = 50105,
 		name = "厨房中的战场",
 		group_ii = 0,
@@ -4021,11 +3800,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2030
 		}
 	}
-	pg = var_1_56
-
-	local var_1_57 = var_1_56.base.activity_ins_chat_group
-
-	var_1_57[58] = {
+	pg.base.activity_ins_chat_group[58] = {
 		ship_group = 50105,
 		name = "香甜软糯？",
 		group_ii = 0,
@@ -4075,11 +3850,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2069
 		}
 	}
-	pg = var_1_57
-
-	local var_1_58 = var_1_57.base.activity_ins_chat_group
-
-	var_1_58[59] = {
+	pg.base.activity_ins_chat_group[59] = {
 		ship_group = 50301,
 		name = "细节问题",
 		group_ii = 0,
@@ -4120,11 +3891,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2099
 		}
 	}
-	pg = var_1_58
-
-	local var_1_59 = var_1_58.base.activity_ins_chat_group
-
-	var_1_59[60] = {
+	pg.base.activity_ins_chat_group[60] = {
 		ship_group = 50301,
 		name = "晚间邀约",
 		group_ii = 0,
@@ -4163,11 +3930,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2127
 		}
 	}
-	pg = var_1_59
-
-	local var_1_60 = var_1_59.base.activity_ins_chat_group
-
-	var_1_60[61] = {
+	pg.base.activity_ins_chat_group[61] = {
 		ship_group = 50301,
 		name = "正式邀约",
 		group_ii = 0,
@@ -4208,11 +3971,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2157
 		}
 	}
-	pg = var_1_60
-
-	local var_1_61 = var_1_60.base.activity_ins_chat_group
-
-	var_1_61[62] = {
+	pg.base.activity_ins_chat_group[62] = {
 		ship_group = 50210,
 		name = "过度关注",
 		group_ii = 0,
@@ -4250,11 +4009,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2184
 		}
 	}
-	pg = var_1_61
-
-	local var_1_62 = var_1_61.base.activity_ins_chat_group
-
-	var_1_62[63] = {
+	pg.base.activity_ins_chat_group[63] = {
 		ship_group = 50210,
 		name = "展览邀约",
 		group_ii = 0,
@@ -4295,11 +4050,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2214
 		}
 	}
-	pg = var_1_62
-
-	local var_1_63 = var_1_62.base.activity_ins_chat_group
-
-	var_1_63[64] = {
+	pg.base.activity_ins_chat_group[64] = {
 		ship_group = 50210,
 		name = "心意传递",
 		group_ii = 0,
@@ -4348,11 +4099,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2252
 		}
 	}
-	pg = var_1_63
-
-	local var_1_64 = var_1_63.base.activity_ins_chat_group
-
-	var_1_64[65] = {
+	pg.base.activity_ins_chat_group[65] = {
 		ship_group = 50109,
 		name = "撤回大法",
 		group_ii = 0,
@@ -4391,11 +4138,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2280
 		}
 	}
-	pg = var_1_64
-
-	local var_1_65 = var_1_64.base.activity_ins_chat_group
-
-	var_1_65[66] = {
+	pg.base.activity_ins_chat_group[66] = {
 		ship_group = 50109,
 		name = "恶作剧计划",
 		group_ii = 0,
@@ -4444,11 +4187,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2318
 		}
 	}
-	pg = var_1_65
-
-	local var_1_66 = var_1_65.base.activity_ins_chat_group
-
-	var_1_66[67] = {
+	pg.base.activity_ins_chat_group[67] = {
 		ship_group = 50109,
 		name = "分享灵感",
 		group_ii = 0,
@@ -4493,11 +4232,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2352
 		}
 	}
-	pg = var_1_66
-
-	local var_1_67 = var_1_66.base.activity_ins_chat_group
-
-	var_1_67[68] = {
+	pg.base.activity_ins_chat_group[68] = {
 		ship_group = 50108,
 		name = "保持洁净",
 		group_ii = 0,
@@ -4535,11 +4270,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2379
 		}
 	}
-	pg = var_1_67
-
-	local var_1_68 = var_1_67.base.activity_ins_chat_group
-
-	var_1_68[69] = {
+	pg.base.activity_ins_chat_group[69] = {
 		ship_group = 50108,
 		name = "围裙挑选",
 		group_ii = 0,
@@ -4581,11 +4312,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2410
 		}
 	}
-	pg = var_1_68
-
-	local var_1_69 = var_1_68.base.activity_ins_chat_group
-
-	var_1_69[70] = {
+	pg.base.activity_ins_chat_group[70] = {
 		ship_group = 50108,
 		name = "到达前的准备",
 		group_ii = 0,
@@ -4627,11 +4354,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2441
 		}
 	}
-	pg = var_1_69
-
-	local var_1_70 = var_1_69.base.activity_ins_chat_group
-
-	var_1_70[71] = {
+	pg.base.activity_ins_chat_group[71] = {
 		ship_group = 103,
 		name = "新年红包",
 		group_ii = 0,
@@ -4722,11 +4445,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2508
 		}
 	}
-	pg = var_1_70
-
-	local var_1_71 = var_1_70.base.activity_ins_chat_group
-
-	var_1_71[72] = {
+	pg.base.activity_ins_chat_group[72] = {
 		ship_group = 50209,
 		name = "排忧解难",
 		group_ii = 0,
@@ -4767,11 +4486,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2538
 		}
 	}
-	pg = var_1_71
-
-	local var_1_72 = var_1_71.base.activity_ins_chat_group
-
-	var_1_72[73] = {
+	pg.base.activity_ins_chat_group[73] = {
 		ship_group = 50209,
 		name = "下厨",
 		group_ii = 0,
@@ -4815,11 +4530,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2571
 		}
 	}
-	pg = var_1_72
-
-	local var_1_73 = var_1_72.base.activity_ins_chat_group
-
-	var_1_73[74] = {
+	pg.base.activity_ins_chat_group[74] = {
 		ship_group = 50209,
 		name = "仪式感",
 		group_ii = 0,
@@ -4854,11 +4565,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2595
 		}
 	}
-	pg = var_1_73
-
-	local var_1_74 = var_1_73.base.activity_ins_chat_group
-
-	var_1_74[75] = {
+	pg.base.activity_ins_chat_group[75] = {
 		ship_group = 60508,
 		name = "灵感再现",
 		group_ii = 0,
@@ -4919,11 +4626,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2645
 		}
 	}
-	pg = var_1_74
-
-	local var_1_75 = var_1_74.base.activity_ins_chat_group
-
-	var_1_75[76] = {
+	pg.base.activity_ins_chat_group[76] = {
 		ship_group = 60508,
 		name = "照片，看看",
 		group_ii = 0,
@@ -4963,11 +4666,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2674
 		}
 	}
-	pg = var_1_75
-
-	local var_1_76 = var_1_75.base.activity_ins_chat_group
-
-	var_1_76[77] = {
+	pg.base.activity_ins_chat_group[77] = {
 		ship_group = 60508,
 		name = "艺术家的饭",
 		group_ii = 0,
@@ -5003,11 +4702,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2699
 		}
 	}
-	pg = var_1_76
-
-	local var_1_77 = var_1_76.base.activity_ins_chat_group
-
-	var_1_77[78] = {
+	pg.base.activity_ins_chat_group[78] = {
 		ship_group = 60803,
 		name = "探险！",
 		group_ii = 0,
@@ -5067,11 +4762,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2748
 		}
 	}
-	pg = var_1_77
-
-	local var_1_78 = var_1_77.base.activity_ins_chat_group
-
-	var_1_78[79] = {
+	pg.base.activity_ins_chat_group[79] = {
 		ship_group = 60803,
 		name = "整理文件",
 		group_ii = 0,
@@ -5118,11 +4809,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2784
 		}
 	}
-	pg = var_1_78
-
-	local var_1_79 = var_1_78.base.activity_ins_chat_group
-
-	var_1_79[80] = {
+	pg.base.activity_ins_chat_group[80] = {
 		ship_group = 60803,
 		name = "心路",
 		group_ii = 0,
@@ -5170,11 +4857,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2821
 		}
 	}
-	pg = var_1_79
-
-	local var_1_80 = var_1_79.base.activity_ins_chat_group
-
-	var_1_80[81] = {
+	pg.base.activity_ins_chat_group[81] = {
 		ship_group = 60111,
 		name = "去标准化",
 		group_ii = 0,
@@ -5218,11 +4901,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2854
 		}
 	}
-	pg = var_1_80
-
-	local var_1_81 = var_1_80.base.activity_ins_chat_group
-
-	var_1_81[82] = {
+	pg.base.activity_ins_chat_group[82] = {
 		ship_group = 60111,
 		name = "看书的地点",
 		group_ii = 0,
@@ -5266,11 +4945,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2887
 		}
 	}
-	pg = var_1_81
-
-	local var_1_82 = var_1_81.base.activity_ins_chat_group
-
-	var_1_82[83] = {
+	pg.base.activity_ins_chat_group[83] = {
 		ship_group = 60111,
 		name = "诗歌的灵感",
 		group_ii = 0,
@@ -5331,11 +5006,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2937
 		}
 	}
-	pg = var_1_82
-
-	local var_1_83 = var_1_82.base.activity_ins_chat_group
-
-	var_1_83[84] = {
+	pg.base.activity_ins_chat_group[84] = {
 		ship_group = 60203,
 		name = "特别的作战报告",
 		group_ii = 0,
@@ -5384,11 +5055,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			2975
 		}
 	}
-	pg = var_1_83
-
-	local var_1_84 = var_1_83.base.activity_ins_chat_group
-
-	var_1_84[85] = {
+	pg.base.activity_ins_chat_group[85] = {
 		ship_group = 60203,
 		name = "战术饮品",
 		group_ii = 0,
@@ -5431,11 +5098,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3007
 		}
 	}
-	pg = var_1_84
-
-	local var_1_85 = var_1_84.base.activity_ins_chat_group
-
-	var_1_85[86] = {
+	pg.base.activity_ins_chat_group[86] = {
 		ship_group = 60203,
 		name = "错发的快件",
 		group_ii = 0,
@@ -5486,11 +5149,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3047
 		}
 	}
-	pg = var_1_85
-
-	local var_1_86 = var_1_85.base.activity_ins_chat_group
-
-	var_1_86[87] = {
+	pg.base.activity_ins_chat_group[87] = {
 		ship_group = 90107,
 		name = "问候之夜",
 		group_ii = 0,
@@ -5537,11 +5196,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3083
 		}
 	}
-	pg = var_1_86
-
-	local var_1_87 = var_1_86.base.activity_ins_chat_group
-
-	var_1_87[88] = {
+	pg.base.activity_ins_chat_group[88] = {
 		ship_group = 90107,
 		name = "加班之夜",
 		group_ii = 0,
@@ -5583,11 +5238,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3114
 		}
 	}
-	pg = var_1_87
-
-	local var_1_88 = var_1_87.base.activity_ins_chat_group
-
-	var_1_88[89] = {
+	pg.base.activity_ins_chat_group[89] = {
 		ship_group = 90107,
 		name = "浓情之夜",
 		group_ii = 0,
@@ -5631,11 +5282,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3147
 		}
 	}
-	pg = var_1_88
-
-	local var_1_89 = var_1_88.base.activity_ins_chat_group
-
-	var_1_89[90] = {
+	pg.base.activity_ins_chat_group[90] = {
 		ship_group = 10713,
 		name = "探险装备",
 		group_ii = 0,
@@ -5667,11 +5314,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3168
 		}
 	}
-	pg = var_1_89
-
-	local var_1_90 = var_1_89.base.activity_ins_chat_group
-
-	var_1_90[91] = {
+	pg.base.activity_ins_chat_group[91] = {
 		ship_group = 10713,
 		name = "野外求生食谱",
 		group_ii = 0,
@@ -5716,11 +5359,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3202
 		}
 	}
-	pg = var_1_90
-
-	local var_1_91 = var_1_90.base.activity_ins_chat_group
-
-	var_1_91[92] = {
+	pg.base.activity_ins_chat_group[92] = {
 		ship_group = 10713,
 		name = "深夜温泉探险",
 		group_ii = 0,
@@ -5760,11 +5399,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3231
 		}
 	}
-	pg = var_1_91
-
-	local var_1_92 = var_1_91.base.activity_ins_chat_group
-
-	var_1_92[93] = {
+	pg.base.activity_ins_chat_group[93] = {
 		ship_group = 10153,
 		name = "米勒大人的纸飞机",
 		group_ii = 0,
@@ -5794,11 +5429,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3250
 		}
 	}
-	pg = var_1_92
-
-	local var_1_93 = var_1_92.base.activity_ins_chat_group
-
-	var_1_93[94] = {
+	pg.base.activity_ins_chat_group[94] = {
 		ship_group = 10153,
 		name = "米勒大人的笔记本",
 		group_ii = 0,
@@ -5852,11 +5483,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3293
 		}
 	}
-	pg = var_1_93
-
-	local var_1_94 = var_1_93.base.activity_ins_chat_group
-
-	var_1_94[95] = {
+	pg.base.activity_ins_chat_group[95] = {
 		ship_group = 10153,
 		name = "米勒大人的咖啡",
 		group_ii = 0,
@@ -5894,11 +5521,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3320
 		}
 	}
-	pg = var_1_94
-
-	local var_1_95 = var_1_94.base.activity_ins_chat_group
-
-	var_1_95[96] = {
+	pg.base.activity_ins_chat_group[96] = {
 		ship_group = 10234,
 		name = "指挥官——！！！",
 		group_ii = 0,
@@ -5940,11 +5563,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3351
 		}
 	}
-	pg = var_1_95
-
-	local var_1_96 = var_1_95.base.activity_ins_chat_group
-
-	var_1_96[97] = {
+	pg.base.activity_ins_chat_group[97] = {
 		ship_group = 10234,
 		name = "日程安排",
 		group_ii = 0,
@@ -5981,11 +5600,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3377
 		}
 	}
-	pg = var_1_96
-
-	local var_1_97 = var_1_96.base.activity_ins_chat_group
-
-	var_1_97[98] = {
+	pg.base.activity_ins_chat_group[98] = {
 		ship_group = 10234,
 		name = "八卦特刊重磅头版！",
 		group_ii = 0,
@@ -6036,11 +5651,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3417
 		}
 	}
-	pg = var_1_97
-
-	local var_1_98 = var_1_97.base.activity_ins_chat_group
-
-	var_1_98[99] = {
+	pg.base.activity_ins_chat_group[99] = {
 		ship_group = 70203,
 		name = "宠物",
 		group_ii = 0,
@@ -6086,8 +5697,7 @@ var_0_4.base.activity_ins_chat_group = {}
 			3452
 		}
 	}
-	pg = var_1_98
-	var_1_98.base.activity_ins_chat_group[100] = {
+	pg.base.activity_ins_chat_group[100] = {
 		ship_group = 70203,
 		name = "互相监督",
 		group_ii = 0,
@@ -6142,11 +5752,7 @@ var_0_4.base.activity_ins_chat_group = {}
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_2_0 = var_1_10000.base.activity_ins_chat_group
-
-	var_2_0[101] = {
+	pg.base.activity_ins_chat_group[101] = {
 		ship_group = 70203,
 		name = "新装",
 		group_ii = 0,
@@ -6201,11 +5807,7 @@ end)()
 			3536
 		}
 	}
-	pg = var_2_0
-
-	local var_2_1 = var_2_0.base.activity_ins_chat_group
-
-	var_2_1[102] = {
+	pg.base.activity_ins_chat_group[102] = {
 		ship_group = 110201,
 		name = "植物交流",
 		group_ii = 0,
@@ -6243,11 +5845,7 @@ end)()
 			3563
 		}
 	}
-	pg = var_2_1
-
-	local var_2_2 = var_2_1.base.activity_ins_chat_group
-
-	var_2_2[103] = {
+	pg.base.activity_ins_chat_group[103] = {
 		ship_group = 110201,
 		name = "厨房大危机",
 		group_ii = 0,
@@ -6300,11 +5898,7 @@ end)()
 			3605
 		}
 	}
-	pg = var_2_2
-
-	local var_2_3 = var_2_2.base.activity_ins_chat_group
-
-	var_2_3[104] = {
+	pg.base.activity_ins_chat_group[104] = {
 		ship_group = 110201,
 		name = "孩子们的名字",
 		group_ii = 0,
@@ -6351,11 +5945,7 @@ end)()
 			3641
 		}
 	}
-	pg = var_2_3
-
-	local var_2_4 = var_2_3.base.activity_ins_chat_group
-
-	var_2_4[105] = {
+	pg.base.activity_ins_chat_group[105] = {
 		ship_group = 110101,
 		name = "绿色环境",
 		group_ii = 0,
@@ -6389,11 +5979,7 @@ end)()
 			3664
 		}
 	}
-	pg = var_2_4
-
-	local var_2_5 = var_2_4.base.activity_ins_chat_group
-
-	var_2_5[106] = {
+	pg.base.activity_ins_chat_group[106] = {
 		ship_group = 110101,
 		name = "疗愈魔法",
 		group_ii = 0,
@@ -6428,11 +6014,7 @@ end)()
 			3688
 		}
 	}
-	pg = var_2_5
-
-	local var_2_6 = var_2_5.base.activity_ins_chat_group
-
-	var_2_6[107] = {
+	pg.base.activity_ins_chat_group[107] = {
 		ship_group = 110101,
 		name = "真是浪漫",
 		group_ii = 0,
@@ -6476,11 +6058,7 @@ end)()
 			3721
 		}
 	}
-	pg = var_2_6
-
-	local var_2_7 = var_2_6.base.activity_ins_chat_group
-
-	var_2_7[108] = {
+	pg.base.activity_ins_chat_group[108] = {
 		ship_group = 70509,
 		name = "送饭",
 		group_ii = 0,
@@ -6510,11 +6088,7 @@ end)()
 			3740
 		}
 	}
-	pg = var_2_7
-
-	local var_2_8 = var_2_7.base.activity_ins_chat_group
-
-	var_2_8[109] = {
+	pg.base.activity_ins_chat_group[109] = {
 		ship_group = 70509,
 		name = "你觉得冷么？",
 		group_ii = 0,
@@ -6545,11 +6119,7 @@ end)()
 			3760
 		}
 	}
-	pg = var_2_8
-
-	local var_2_9 = var_2_8.base.activity_ins_chat_group
-
-	var_2_9[110] = {
+	pg.base.activity_ins_chat_group[110] = {
 		ship_group = 70509,
 		name = "暖夜",
 		group_ii = 0,
@@ -6589,11 +6159,7 @@ end)()
 			3789
 		}
 	}
-	pg = var_2_9
-
-	local var_2_10 = var_2_9.base.activity_ins_chat_group
-
-	var_2_10[111] = {
+	pg.base.activity_ins_chat_group[111] = {
 		ship_group = 70208,
 		name = "提神机器人",
 		group_ii = 0,
@@ -6634,11 +6200,7 @@ end)()
 			3819
 		}
 	}
-	pg = var_2_10
-
-	local var_2_11 = var_2_10.base.activity_ins_chat_group
-
-	var_2_11[112] = {
+	pg.base.activity_ins_chat_group[112] = {
 		ship_group = 70208,
 		name = "爆炸发明",
 		group_ii = 0,
@@ -6675,11 +6237,7 @@ end)()
 			3845
 		}
 	}
-	pg = var_2_11
-
-	local var_2_12 = var_2_11.base.activity_ins_chat_group
-
-	var_2_12[113] = {
+	pg.base.activity_ins_chat_group[113] = {
 		ship_group = 70208,
 		name = "专属发明",
 		group_ii = 0,
@@ -6730,11 +6288,7 @@ end)()
 			3885
 		}
 	}
-	pg = var_2_12
-
-	local var_2_13 = var_2_12.base.activity_ins_chat_group
-
-	var_2_13[114] = {
+	pg.base.activity_ins_chat_group[114] = {
 		ship_group = 20712,
 		name = "休息的艺术",
 		group_ii = 0,
@@ -6783,11 +6337,7 @@ end)()
 			3923
 		}
 	}
-	pg = var_2_13
-
-	local var_2_14 = var_2_13.base.activity_ins_chat_group
-
-	var_2_14[115] = {
+	pg.base.activity_ins_chat_group[115] = {
 		ship_group = 20712,
 		name = "午休",
 		group_ii = 0,
@@ -6834,11 +6384,7 @@ end)()
 			3959
 		}
 	}
-	pg = var_2_14
-
-	local var_2_15 = var_2_14.base.activity_ins_chat_group
-
-	var_2_15[116] = {
+	pg.base.activity_ins_chat_group[116] = {
 		ship_group = 20712,
 		name = "睡衣办公革命",
 		group_ii = 0,
@@ -6885,11 +6431,7 @@ end)()
 			3995
 		}
 	}
-	pg = var_2_15
-
-	local var_2_16 = var_2_15.base.activity_ins_chat_group
-
-	var_2_16[117] = {
+	pg.base.activity_ins_chat_group[117] = {
 		ship_group = 20516,
 		name = "百密一疏",
 		group_ii = 0,
@@ -6924,11 +6466,7 @@ end)()
 			4019
 		}
 	}
-	pg = var_2_16
-
-	local var_2_17 = var_2_16.base.activity_ins_chat_group
-
-	var_2_17[118] = {
+	pg.base.activity_ins_chat_group[118] = {
 		ship_group = 20516,
 		name = "你所期望的惩罚",
 		group_ii = 0,
@@ -6971,11 +6509,7 @@ end)()
 			4051
 		}
 	}
-	pg = var_2_17
-
-	local var_2_18 = var_2_17.base.activity_ins_chat_group
-
-	var_2_18[119] = {
+	pg.base.activity_ins_chat_group[119] = {
 		ship_group = 20516,
 		name = "彼此的信物",
 		group_ii = 0,
@@ -7020,11 +6554,7 @@ end)()
 			4085
 		}
 	}
-	pg = var_2_18
-
-	local var_2_19 = var_2_18.base.activity_ins_chat_group
-
-	var_2_19[120] = {
+	pg.base.activity_ins_chat_group[120] = {
 		ship_group = 20138,
 		name = "罪孽深重之人",
 		group_ii = 0,
@@ -7063,11 +6593,7 @@ end)()
 			4113
 		}
 	}
-	pg = var_2_19
-
-	local var_2_20 = var_2_19.base.activity_ins_chat_group
-
-	var_2_20[121] = {
+	pg.base.activity_ins_chat_group[121] = {
 		ship_group = 20138,
 		name = "距离感",
 		group_ii = 0,
@@ -7109,11 +6635,7 @@ end)()
 			4144
 		}
 	}
-	pg = var_2_20
-
-	local var_2_21 = var_2_20.base.activity_ins_chat_group
-
-	var_2_21[122] = {
+	pg.base.activity_ins_chat_group[122] = {
 		ship_group = 20138,
 		name = "指挥官研究进行中",
 		group_ii = 0,
@@ -7158,11 +6680,7 @@ end)()
 			4178
 		}
 	}
-	pg = var_2_21
-
-	local var_2_22 = var_2_21.base.activity_ins_chat_group
-
-	var_2_22[123] = {
+	pg.base.activity_ins_chat_group[123] = {
 		ship_group = 20235,
 		name = "尼罗河粽子",
 		group_ii = 0,
@@ -7200,11 +6718,7 @@ end)()
 			4205
 		}
 	}
-	pg = var_2_22
-
-	local var_2_23 = var_2_22.base.activity_ins_chat_group
-
-	var_2_23[124] = {
+	pg.base.activity_ins_chat_group[124] = {
 		ship_group = 20235,
 		name = "招财狮身人面像",
 		group_ii = 0,
@@ -7238,11 +6752,7 @@ end)()
 			4228
 		}
 	}
-	pg = var_2_23
-
-	local var_2_24 = var_2_23.base.activity_ins_chat_group
-
-	var_2_24[125] = {
+	pg.base.activity_ins_chat_group[125] = {
 		ship_group = 20235,
 		name = "从未失去",
 		group_ii = 0,
@@ -7286,11 +6796,7 @@ end)()
 			4261
 		}
 	}
-	pg = var_2_24
-
-	local var_2_25 = var_2_24.base.activity_ins_chat_group
-
-	var_2_25[126] = {
+	pg.base.activity_ins_chat_group[126] = {
 		ship_group = 20139,
 		name = "惊喜",
 		group_ii = 0,
@@ -7331,11 +6837,7 @@ end)()
 			4291
 		}
 	}
-	pg = var_2_25
-
-	local var_2_26 = var_2_25.base.activity_ins_chat_group
-
-	var_2_26[127] = {
+	pg.base.activity_ins_chat_group[127] = {
 		ship_group = 20139,
 		name = "七彩按摩仪",
 		group_ii = 0,
@@ -7375,11 +6877,7 @@ end)()
 			4320
 		}
 	}
-	pg = var_2_26
-
-	local var_2_27 = var_2_26.base.activity_ins_chat_group
-
-	var_2_27[128] = {
+	pg.base.activity_ins_chat_group[128] = {
 		ship_group = 20139,
 		name = "各自的工作",
 		group_ii = 0,
@@ -7431,11 +6929,7 @@ end)()
 			4361
 		}
 	}
-	pg = var_2_27
-
-	local var_2_28 = var_2_27.base.activity_ins_chat_group
-
-	var_2_28[129] = {
+	pg.base.activity_ins_chat_group[129] = {
 		ship_group = 20236,
 		name = "握住我的手",
 		group_ii = 0,
@@ -7476,11 +6970,7 @@ end)()
 			4391
 		}
 	}
-	pg = var_2_28
-
-	local var_2_29 = var_2_28.base.activity_ins_chat_group
-
-	var_2_29[130] = {
+	pg.base.activity_ins_chat_group[130] = {
 		ship_group = 20236,
 		name = "我会一直注视着你",
 		group_ii = 0,
@@ -7521,11 +7011,7 @@ end)()
 			4421
 		}
 	}
-	pg = var_2_29
-
-	local var_2_30 = var_2_29.base.activity_ins_chat_group
-
-	var_2_30[131] = {
+	pg.base.activity_ins_chat_group[131] = {
 		ship_group = 20236,
 		name = "猎人与猎手",
 		group_ii = 0,
@@ -7563,11 +7049,7 @@ end)()
 			4448
 		}
 	}
-	pg = var_2_30
-
-	local var_2_31 = var_2_30.base.activity_ins_chat_group
-
-	var_2_31[132] = {
+	pg.base.activity_ins_chat_group[132] = {
 		ship_group = 40407,
 		name = "系统的日程规划",
 		group_ii = 0,
@@ -7603,11 +7085,7 @@ end)()
 			4473
 		}
 	}
-	pg = var_2_31
-
-	local var_2_32 = var_2_31.base.activity_ins_chat_group
-
-	var_2_32[133] = {
+	pg.base.activity_ins_chat_group[133] = {
 		ship_group = 40407,
 		name = "给我好好休息",
 		group_ii = 0,
@@ -7640,11 +7118,7 @@ end)()
 			4495
 		}
 	}
-	pg = var_2_32
-
-	local var_2_33 = var_2_32.base.activity_ins_chat_group
-
-	var_2_33[134] = {
+	pg.base.activity_ins_chat_group[134] = {
 		ship_group = 40407,
 		name = "反客为主",
 		group_ii = 0,
@@ -7688,11 +7162,7 @@ end)()
 			4528
 		}
 	}
-	pg = var_2_33
-
-	local var_2_34 = var_2_33.base.activity_ins_chat_group
-
-	var_2_34[135] = {
+	pg.base.activity_ins_chat_group[135] = {
 		ship_group = 40814,
 		name = "节能教学",
 		group_ii = 0,
@@ -7726,11 +7196,7 @@ end)()
 			4551
 		}
 	}
-	pg = var_2_34
-
-	local var_2_35 = var_2_34.base.activity_ins_chat_group
-
-	var_2_35[136] = {
+	pg.base.activity_ins_chat_group[136] = {
 		ship_group = 40814,
 		name = "睡觉的地方",
 		group_ii = 0,
@@ -7773,11 +7239,7 @@ end)()
 			4583
 		}
 	}
-	pg = var_2_35
-
-	local var_2_36 = var_2_35.base.activity_ins_chat_group
-
-	var_2_36[137] = {
+	pg.base.activity_ins_chat_group[137] = {
 		ship_group = 40814,
 		name = "星夜休憩",
 		group_ii = 0,
@@ -7817,11 +7279,7 @@ end)()
 			4612
 		}
 	}
-	pg = var_2_36
-
-	local var_2_37 = var_2_36.base.activity_ins_chat_group
-
-	var_2_37[138] = {
+	pg.base.activity_ins_chat_group[138] = {
 		ship_group = 40113,
 		name = "开发顾问",
 		group_ii = 0,
@@ -7863,11 +7321,7 @@ end)()
 			4643
 		}
 	}
-	pg = var_2_37
-
-	local var_2_38 = var_2_37.base.activity_ins_chat_group
-
-	var_2_38[139] = {
+	pg.base.activity_ins_chat_group[139] = {
 		ship_group = 40113,
 		name = "评分系统",
 		group_ii = 0,
@@ -7913,11 +7367,7 @@ end)()
 			4678
 		}
 	}
-	pg = var_2_38
-
-	local var_2_39 = var_2_38.base.activity_ins_chat_group
-
-	var_2_39[140] = {
+	pg.base.activity_ins_chat_group[140] = {
 		ship_group = 40113,
 		name = "恋爱大师",
 		group_ii = 0,
@@ -7965,11 +7415,7 @@ end)()
 			4715
 		}
 	}
-	pg = var_2_39
-
-	local var_2_40 = var_2_39.base.activity_ins_chat_group
-
-	var_2_40[141] = {
+	pg.base.activity_ins_chat_group[141] = {
 		ship_group = 90401,
 		name = "甜点派送",
 		group_ii = 0,
@@ -8016,11 +7462,7 @@ end)()
 			4751
 		}
 	}
-	pg = var_2_40
-
-	local var_2_41 = var_2_40.base.activity_ins_chat_group
-
-	var_2_41[142] = {
+	pg.base.activity_ins_chat_group[142] = {
 		ship_group = 90401,
 		name = "香味残留",
 		group_ii = 0,
@@ -8071,11 +7513,7 @@ end)()
 			4791
 		}
 	}
-	pg = var_2_41
-
-	local var_2_42 = var_2_41.base.activity_ins_chat_group
-
-	var_2_42[143] = {
+	pg.base.activity_ins_chat_group[143] = {
 		ship_group = 90401,
 		name = "哄睡服务",
 		group_ii = 0,
@@ -8133,11 +7571,7 @@ end)()
 			4838
 		}
 	}
-	pg = var_2_42
-
-	local var_2_43 = var_2_42.base.activity_ins_chat_group
-
-	var_2_43[144] = {
+	pg.base.activity_ins_chat_group[144] = {
 		ship_group = 90105,
 		name = "神秘记事本",
 		group_ii = 0,
@@ -8177,11 +7611,7 @@ end)()
 			4867
 		}
 	}
-	pg = var_2_43
-
-	local var_2_44 = var_2_43.base.activity_ins_chat_group
-
-	var_2_44[145] = {
+	pg.base.activity_ins_chat_group[145] = {
 		ship_group = 90105,
 		name = "魔术柜子",
 		group_ii = 0,
@@ -8223,11 +7653,7 @@ end)()
 			4898
 		}
 	}
-	pg = var_2_44
-
-	local var_2_45 = var_2_44.base.activity_ins_chat_group
-
-	var_2_45[146] = {
+	pg.base.activity_ins_chat_group[146] = {
 		ship_group = 90105,
 		name = "花的实验",
 		group_ii = 0,
@@ -8268,11 +7694,7 @@ end)()
 			4928
 		}
 	}
-	pg = var_2_45
-
-	local var_2_46 = var_2_45.base.activity_ins_chat_group
-
-	var_2_46[147] = {
+	pg.base.activity_ins_chat_group[147] = {
 		ship_group = 80401,
 		name = "“公平交易”",
 		group_ii = 0,
@@ -8302,11 +7724,7 @@ end)()
 			4947
 		}
 	}
-	pg = var_2_46
-
-	local var_2_47 = var_2_46.base.activity_ins_chat_group
-
-	var_2_47[148] = {
+	pg.base.activity_ins_chat_group[148] = {
 		ship_group = 80401,
 		name = "咖啡除外",
 		group_ii = 0,
@@ -8347,11 +7765,7 @@ end)()
 			4977
 		}
 	}
-	pg = var_2_47
-
-	local var_2_48 = var_2_47.base.activity_ins_chat_group
-
-	var_2_48[149] = {
+	pg.base.activity_ins_chat_group[149] = {
 		ship_group = 80401,
 		name = "指挥官的味道",
 		group_ii = 0,
@@ -8387,11 +7801,7 @@ end)()
 			5002
 		}
 	}
-	pg = var_2_48
-
-	local var_2_49 = var_2_48.base.activity_ins_chat_group
-
-	var_2_49[150] = {
+	pg.base.activity_ins_chat_group[150] = {
 		ship_group = 80601,
 		name = "线上工作",
 		group_ii = 0,
@@ -8435,11 +7845,7 @@ end)()
 			5035
 		}
 	}
-	pg = var_2_49
-
-	local var_2_50 = var_2_49.base.activity_ins_chat_group
-
-	var_2_50[151] = {
+	pg.base.activity_ins_chat_group[151] = {
 		ship_group = 80601,
 		name = "健康与音乐",
 		group_ii = 0,
@@ -8482,11 +7888,7 @@ end)()
 			5067
 		}
 	}
-	pg = var_2_50
-
-	local var_2_51 = var_2_50.base.activity_ins_chat_group
-
-	var_2_51[152] = {
+	pg.base.activity_ins_chat_group[152] = {
 		ship_group = 80601,
 		name = "梦境控制",
 		group_ii = 0,
@@ -8525,11 +7927,7 @@ end)()
 			5095
 		}
 	}
-	pg = var_2_51
-
-	local var_2_52 = var_2_51.base.activity_ins_chat_group
-
-	var_2_52[153] = {
+	pg.base.activity_ins_chat_group[153] = {
 		ship_group = 80105,
 		name = "形象改造",
 		group_ii = 0,
@@ -8562,11 +7960,7 @@ end)()
 			5117
 		}
 	}
-	pg = var_2_52
-
-	local var_2_53 = var_2_52.base.activity_ins_chat_group
-
-	var_2_53[154] = {
+	pg.base.activity_ins_chat_group[154] = {
 		ship_group = 80105,
 		name = "柜子动了",
 		group_ii = 0,
@@ -8613,11 +8007,7 @@ end)()
 			5153
 		}
 	}
-	pg = var_2_53
-
-	local var_2_54 = var_2_53.base.activity_ins_chat_group
-
-	var_2_54[155] = {
+	pg.base.activity_ins_chat_group[155] = {
 		ship_group = 80105,
 		name = "真心话大冒险",
 		group_ii = 0,
@@ -8661,11 +8051,7 @@ end)()
 			5186
 		}
 	}
-	pg = var_2_54
-
-	local var_2_55 = var_2_54.base.activity_ins_chat_group
-
-	var_2_55[156] = {
+	pg.base.activity_ins_chat_group[156] = {
 		ship_group = 80303,
 		name = "特色庆典",
 		group_ii = 0,
@@ -8702,11 +8088,7 @@ end)()
 			5212
 		}
 	}
-	pg = var_2_55
-
-	local var_2_56 = var_2_55.base.activity_ins_chat_group
-
-	var_2_56[157] = {
+	pg.base.activity_ins_chat_group[157] = {
 		ship_group = 80303,
 		name = "喜欢的餐点",
 		group_ii = 0,
@@ -8742,11 +8124,7 @@ end)()
 			5237
 		}
 	}
-	pg = var_2_56
-
-	local var_2_57 = var_2_56.base.activity_ins_chat_group
-
-	var_2_57[158] = {
+	pg.base.activity_ins_chat_group[158] = {
 		ship_group = 80303,
 		name = "挑战旅行",
 		group_ii = 0,
@@ -8785,11 +8163,7 @@ end)()
 			5265
 		}
 	}
-	pg = var_2_57
-
-	local var_2_58 = var_2_57.base.activity_ins_chat_group
-
-	var_2_58[159] = {
+	pg.base.activity_ins_chat_group[159] = {
 		ship_group = 80204,
 		name = "净化邪祟",
 		group_ii = 0,
@@ -8827,11 +8201,7 @@ end)()
 			5292
 		}
 	}
-	pg = var_2_58
-
-	local var_2_59 = var_2_58.base.activity_ins_chat_group
-
-	var_2_59[160] = {
+	pg.base.activity_ins_chat_group[160] = {
 		ship_group = 80204,
 		name = "打碟机与专辑",
 		group_ii = 0,
@@ -8864,11 +8234,7 @@ end)()
 			5314
 		}
 	}
-	pg = var_2_59
-
-	local var_2_60 = var_2_59.base.activity_ins_chat_group
-
-	var_2_60[161] = {
+	pg.base.activity_ins_chat_group[161] = {
 		ship_group = 80204,
 		name = "一日支配权",
 		group_ii = 0,
@@ -8905,11 +8271,7 @@ end)()
 			5340
 		}
 	}
-	pg = var_2_60
-
-	local var_2_61 = var_2_60.base.activity_ins_chat_group
-
-	var_2_61[162] = {
+	pg.base.activity_ins_chat_group[162] = {
 		ship_group = 10709,
 		name = "一起喝",
 		group_ii = 0,
@@ -8942,11 +8304,7 @@ end)()
 			5362
 		}
 	}
-	pg = var_2_61
-
-	local var_2_62 = var_2_61.base.activity_ins_chat_group
-
-	var_2_62[163] = {
+	pg.base.activity_ins_chat_group[163] = {
 		ship_group = 10709,
 		name = "创意汉堡",
 		group_ii = 0,
@@ -8982,11 +8340,7 @@ end)()
 			5387
 		}
 	}
-	pg = var_2_62
-
-	local var_2_63 = var_2_62.base.activity_ins_chat_group
-
-	var_2_63[164] = {
+	pg.base.activity_ins_chat_group[164] = {
 		ship_group = 10709,
 		name = "约会的默契",
 		group_ii = 0,
@@ -9020,11 +8374,7 @@ end)()
 			5410
 		}
 	}
-	pg = var_2_63
-
-	local var_2_64 = var_2_63.base.activity_ins_chat_group
-
-	var_2_64[165] = {
+	pg.base.activity_ins_chat_group[165] = {
 		ship_group = 30716,
 		name = "雨天的香道",
 		group_ii = 0,
@@ -9060,11 +8410,7 @@ end)()
 			5435
 		}
 	}
-	pg = var_2_64
-
-	local var_2_65 = var_2_64.base.activity_ins_chat_group
-
-	var_2_65[166] = {
+	pg.base.activity_ins_chat_group[166] = {
 		ship_group = 30716,
 		name = "镜中画面",
 		group_ii = 0,
@@ -9103,11 +8449,7 @@ end)()
 			5463
 		}
 	}
-	pg = var_2_65
-
-	local var_2_66 = var_2_65.base.activity_ins_chat_group
-
-	var_2_66[167] = {
+	pg.base.activity_ins_chat_group[167] = {
 		ship_group = 30716,
 		name = "相伴永恒",
 		group_ii = 0,
@@ -9140,11 +8482,7 @@ end)()
 			5485
 		}
 	}
-	pg = var_2_66
-
-	local var_2_67 = var_2_66.base.activity_ins_chat_group
-
-	var_2_67[168] = {
+	pg.base.activity_ins_chat_group[168] = {
 		ship_group = 31702,
 		name = "水族馆",
 		group_ii = 0,
@@ -9180,11 +8518,7 @@ end)()
 			5510
 		}
 	}
-	pg = var_2_67
-
-	local var_2_68 = var_2_67.base.activity_ins_chat_group
-
-	var_2_68[169] = {
+	pg.base.activity_ins_chat_group[169] = {
 		ship_group = 31702,
 		name = "快速召唤",
 		group_ii = 0,
@@ -9224,11 +8558,7 @@ end)()
 			5539
 		}
 	}
-	pg = var_2_68
-
-	local var_2_69 = var_2_68.base.activity_ins_chat_group
-
-	var_2_69[170] = {
+	pg.base.activity_ins_chat_group[170] = {
 		ship_group = 31702,
 		name = "深海之舞",
 		group_ii = 0,
@@ -9259,11 +8589,7 @@ end)()
 			5559
 		}
 	}
-	pg = var_2_69
-
-	local var_2_70 = var_2_69.base.activity_ins_chat_group
-
-	var_2_70[171] = {
+	pg.base.activity_ins_chat_group[171] = {
 		ship_group = 30516,
 		name = "对酒当歌",
 		group_ii = 0,
@@ -9304,11 +8630,7 @@ end)()
 			5589
 		}
 	}
-	pg = var_2_70
-
-	local var_2_71 = var_2_70.base.activity_ins_chat_group
-
-	var_2_71[172] = {
+	pg.base.activity_ins_chat_group[172] = {
 		ship_group = 30516,
 		name = "俳谐情真切",
 		group_ii = 0,
@@ -9347,11 +8669,7 @@ end)()
 			5617
 		}
 	}
-	pg = var_2_71
-
-	local var_2_72 = var_2_71.base.activity_ins_chat_group
-
-	var_2_72[173] = {
+	pg.base.activity_ins_chat_group[173] = {
 		ship_group = 30516,
 		name = "酒一杯",
 		group_ii = 0,
@@ -9389,11 +8707,7 @@ end)()
 			5644
 		}
 	}
-	pg = var_2_72
-
-	local var_2_73 = var_2_72.base.activity_ins_chat_group
-
-	var_2_73[174] = {
+	pg.base.activity_ins_chat_group[174] = {
 		ship_group = 30320,
 		name = "迷迭香",
 		group_ii = 0,
@@ -9428,11 +8742,7 @@ end)()
 			5668
 		}
 	}
-	pg = var_2_73
-
-	local var_2_74 = var_2_73.base.activity_ins_chat_group
-
-	var_2_74[175] = {
+	pg.base.activity_ins_chat_group[175] = {
 		ship_group = 30320,
 		name = "温泉邀约",
 		group_ii = 0,
@@ -9467,11 +8777,7 @@ end)()
 			5692
 		}
 	}
-	pg = var_2_74
-
-	local var_2_75 = var_2_74.base.activity_ins_chat_group
-
-	var_2_75[176] = {
+	pg.base.activity_ins_chat_group[176] = {
 		ship_group = 30320,
 		name = "未完成的告别",
 		group_ii = 0,
@@ -9509,11 +8815,7 @@ end)()
 			5719
 		}
 	}
-	pg = var_2_75
-
-	local var_2_76 = var_2_75.base.activity_ins_chat_group
-
-	var_2_76[177] = {
+	pg.base.activity_ins_chat_group[177] = {
 		ship_group = 30227,
 		name = "奇特食材",
 		group_ii = 0,
@@ -9547,11 +8849,7 @@ end)()
 			5742
 		}
 	}
-	pg = var_2_76
-
-	local var_2_77 = var_2_76.base.activity_ins_chat_group
-
-	var_2_77[178] = {
+	pg.base.activity_ins_chat_group[178] = {
 		ship_group = 30227,
 		name = "汤锅升级",
 		group_ii = 0,
@@ -9590,11 +8888,7 @@ end)()
 			5770
 		}
 	}
-	pg = var_2_77
-
-	local var_2_78 = var_2_77.base.activity_ins_chat_group
-
-	var_2_78[179] = {
+	pg.base.activity_ins_chat_group[179] = {
 		ship_group = 30227,
 		name = "汤名为爱",
 		group_ii = 0,
@@ -9629,11 +8923,7 @@ end)()
 			5794
 		}
 	}
-	pg = var_2_78
-
-	local var_2_79 = var_2_78.base.activity_ins_chat_group
-
-	var_2_79[180] = {
+	pg.base.activity_ins_chat_group[180] = {
 		ship_group = 30192,
 		name = "盆栽在说话",
 		group_ii = 0,
@@ -9669,11 +8959,7 @@ end)()
 			5819
 		}
 	}
-	pg = var_2_79
-
-	local var_2_80 = var_2_79.base.activity_ins_chat_group
-
-	var_2_80[181] = {
+	pg.base.activity_ins_chat_group[181] = {
 		ship_group = 30192,
 		name = "你以为是忍具？",
 		group_ii = 0,
@@ -9706,11 +8992,7 @@ end)()
 			5841
 		}
 	}
-	pg = var_2_80
-
-	local var_2_81 = var_2_80.base.activity_ins_chat_group
-
-	var_2_81[182] = {
+	pg.base.activity_ins_chat_group[182] = {
 		ship_group = 30192,
 		name = "小心头顶",
 		group_ii = 0,
@@ -9740,11 +9022,7 @@ end)()
 			5860
 		}
 	}
-	pg = var_2_81
-
-	local var_2_82 = var_2_81.base.activity_ins_chat_group
-
-	var_2_82[183] = {
+	pg.base.activity_ins_chat_group[183] = {
 		ship_group = 30225,
 		name = "缝缝补补",
 		group_ii = 0,
@@ -9774,11 +9052,7 @@ end)()
 			5879
 		}
 	}
-	pg = var_2_82
-
-	local var_2_83 = var_2_82.base.activity_ins_chat_group
-
-	var_2_83[184] = {
+	pg.base.activity_ins_chat_group[184] = {
 		ship_group = 30225,
 		name = "武者的直觉",
 		group_ii = 0,
@@ -9809,11 +9083,7 @@ end)()
 			5899
 		}
 	}
-	pg = var_2_83
-
-	local var_2_84 = var_2_83.base.activity_ins_chat_group
-
-	var_2_84[185] = {
+	pg.base.activity_ins_chat_group[185] = {
 		ship_group = 30225,
 		name = "彼此的工作",
 		group_ii = 0,
@@ -9848,11 +9118,7 @@ end)()
 			5923
 		}
 	}
-	pg = var_2_84
-
-	local var_2_85 = var_2_84.base.activity_ins_chat_group
-
-	var_2_85[186] = {
+	pg.base.activity_ins_chat_group[186] = {
 		ship_group = 960012,
 		name = "宰了你！",
 		group_ii = 0,
@@ -9889,11 +9155,7 @@ end)()
 			5949
 		}
 	}
-	pg = var_2_85
-
-	local var_2_86 = var_2_85.base.activity_ins_chat_group
-
-	var_2_86[187] = {
+	pg.base.activity_ins_chat_group[187] = {
 		ship_group = 960012,
 		name = "在路上了",
 		group_ii = 0,
@@ -9931,11 +9193,7 @@ end)()
 			5976
 		}
 	}
-	pg = var_2_86
-
-	local var_2_87 = var_2_86.base.activity_ins_chat_group
-
-	var_2_87[188] = {
+	pg.base.activity_ins_chat_group[188] = {
 		ship_group = 960012,
 		name = "送一增一",
 		group_ii = 0,
@@ -9974,11 +9232,7 @@ end)()
 			6004
 		}
 	}
-	pg = var_2_87
-
-	local var_2_88 = var_2_87.base.activity_ins_chat_group
-
-	var_2_88[189] = {
+	pg.base.activity_ins_chat_group[189] = {
 		ship_group = 960013,
 		name = "指挥官，请下令吧！",
 		group_ii = 0,
@@ -10018,11 +9272,7 @@ end)()
 			6033
 		}
 	}
-	pg = var_2_88
-
-	local var_2_89 = var_2_88.base.activity_ins_chat_group
-
-	var_2_89[190] = {
+	pg.base.activity_ins_chat_group[190] = {
 		ship_group = 960013,
 		name = "夸夸比试",
 		group_ii = 0,
@@ -10059,11 +9309,7 @@ end)()
 			6059
 		}
 	}
-	pg = var_2_89
-
-	local var_2_90 = var_2_89.base.activity_ins_chat_group
-
-	var_2_90[191] = {
+	pg.base.activity_ins_chat_group[191] = {
 		ship_group = 960013,
 		name = "像揉面团一样？",
 		group_ii = 0,
@@ -10097,11 +9343,7 @@ end)()
 			6082
 		}
 	}
-	pg = var_2_90
-
-	local var_2_91 = var_2_90.base.activity_ins_chat_group
-
-	var_2_91[192] = {
+	pg.base.activity_ins_chat_group[192] = {
 		ship_group = 960014,
 		name = "温柔之心",
 		group_ii = 0,
@@ -10140,11 +9382,7 @@ end)()
 			6110
 		}
 	}
-	pg = var_2_91
-
-	local var_2_92 = var_2_91.base.activity_ins_chat_group
-
-	var_2_92[193] = {
+	pg.base.activity_ins_chat_group[193] = {
 		ship_group = 960014,
 		name = "祝福之歌",
 		group_ii = 0,
@@ -10185,11 +9423,7 @@ end)()
 			6140
 		}
 	}
-	pg = var_2_92
-
-	local var_2_93 = var_2_92.base.activity_ins_chat_group
-
-	var_2_93[194] = {
+	pg.base.activity_ins_chat_group[194] = {
 		ship_group = 960014,
 		name = "永恒之爱",
 		group_ii = 0,
@@ -10226,11 +9460,7 @@ end)()
 			6166
 		}
 	}
-	pg = var_2_93
-
-	local var_2_94 = var_2_93.base.activity_ins_chat_group
-
-	var_2_94[195] = {
+	pg.base.activity_ins_chat_group[195] = {
 		ship_group = 960015,
 		name = "出发！去钓鱼",
 		group_ii = 0,
@@ -10267,11 +9497,7 @@ end)()
 			6192
 		}
 	}
-	pg = var_2_94
-
-	local var_2_95 = var_2_94.base.activity_ins_chat_group
-
-	var_2_95[196] = {
+	pg.base.activity_ins_chat_group[196] = {
 		ship_group = 960015,
 		name = "出发！去寻宝",
 		group_ii = 0,
@@ -10306,11 +9532,7 @@ end)()
 			6216
 		}
 	}
-	pg = var_2_95
-
-	local var_2_96 = var_2_95.base.activity_ins_chat_group
-
-	var_2_96[197] = {
+	pg.base.activity_ins_chat_group[197] = {
 		ship_group = 960015,
 		name = "出发！总之先别加班啦！",
 		group_ii = 0,
@@ -10347,11 +9569,7 @@ end)()
 			6242
 		}
 	}
-	pg = var_2_96
-
-	local var_2_97 = var_2_96.base.activity_ins_chat_group
-
-	var_2_97[198] = {
+	pg.base.activity_ins_chat_group[198] = {
 		ship_group = 960016,
 		name = "仓库怪谈",
 		group_ii = 0,
@@ -10393,11 +9611,7 @@ end)()
 			6273
 		}
 	}
-	pg = var_2_97
-
-	local var_2_98 = var_2_97.base.activity_ins_chat_group
-
-	var_2_98[199] = {
+	pg.base.activity_ins_chat_group[199] = {
 		ship_group = 960016,
 		name = "生存游戏",
 		group_ii = 0,
@@ -10438,8 +9652,7 @@ end)()
 			6303
 		}
 	}
-	pg = var_2_98
-	var_2_98.base.activity_ins_chat_group[200] = {
+	pg.base.activity_ins_chat_group[200] = {
 		ship_group = 960016,
 		name = "神秘邻居",
 		group_ii = 0,
@@ -10483,11 +9696,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_3_0 = var_1_10000.base.activity_ins_chat_group
-
-	var_3_0[201] = {
+	pg.base.activity_ins_chat_group[201] = {
 		ship_group = 10324,
 		name = "烦恼咨询",
 		group_ii = 0,
@@ -10532,11 +9741,7 @@ end)()
 			6366
 		}
 	}
-	pg = var_3_0
-
-	local var_3_1 = var_3_0.base.activity_ins_chat_group
-
-	var_3_1[202] = {
+	pg.base.activity_ins_chat_group[202] = {
 		ship_group = 10324,
 		name = "关怀问卷",
 		group_ii = 0,
@@ -10580,11 +9785,7 @@ end)()
 			6399
 		}
 	}
-	pg = var_3_1
-
-	local var_3_2 = var_3_1.base.activity_ins_chat_group
-
-	var_3_2[203] = {
+	pg.base.activity_ins_chat_group[203] = {
 		ship_group = 10324,
 		name = "特别运动计划",
 		group_ii = 0,
@@ -10622,11 +9823,7 @@ end)()
 			6426
 		}
 	}
-	pg = var_3_2
-
-	local var_3_3 = var_3_2.base.activity_ins_chat_group
-
-	var_3_3[204] = {
+	pg.base.activity_ins_chat_group[204] = {
 		ship_group = 80503,
 		name = "这里挤不下这么多人",
 		group_ii = 0,
@@ -10665,11 +9862,7 @@ end)()
 			6454
 		}
 	}
-	pg = var_3_3
-
-	local var_3_4 = var_3_3.base.activity_ins_chat_group
-
-	var_3_4[205] = {
+	pg.base.activity_ins_chat_group[205] = {
 		ship_group = 80503,
 		name = "燃起来了",
 		group_ii = 0,
@@ -10714,11 +9907,7 @@ end)()
 			6488
 		}
 	}
-	pg = var_3_4
-
-	local var_3_5 = var_3_4.base.activity_ins_chat_group
-
-	var_3_5[206] = {
+	pg.base.activity_ins_chat_group[206] = {
 		ship_group = 80503,
 		name = "指挥官电波",
 		group_ii = 0,
@@ -10757,11 +9946,7 @@ end)()
 			6516
 		}
 	}
-	pg = var_3_5
-
-	local var_3_6 = var_3_5.base.activity_ins_chat_group
-
-	var_3_6[207] = {
+	pg.base.activity_ins_chat_group[207] = {
 		ship_group = 10233,
 		name = "惊人的差评率",
 		group_ii = 0,
@@ -10798,11 +9983,7 @@ end)()
 			6542
 		}
 	}
-	pg = var_3_6
-
-	local var_3_7 = var_3_6.base.activity_ins_chat_group
-
-	var_3_7[208] = {
+	pg.base.activity_ins_chat_group[208] = {
 		ship_group = 10233,
 		name = "额外服务",
 		group_ii = 0,
@@ -10845,11 +10026,7 @@ end)()
 			6574
 		}
 	}
-	pg = var_3_7
-
-	local var_3_8 = var_3_7.base.activity_ins_chat_group
-
-	var_3_8[209] = {
+	pg.base.activity_ins_chat_group[209] = {
 		ship_group = 10233,
 		name = "冒失攻势",
 		group_ii = 0,
@@ -10888,11 +10065,7 @@ end)()
 			6602
 		}
 	}
-	pg = var_3_8
-
-	local var_3_9 = var_3_8.base.activity_ins_chat_group
-
-	var_3_9[210] = {
+	pg.base.activity_ins_chat_group[210] = {
 		ship_group = 110,
 		name = "游园邀请",
 		group_ii = 0,
@@ -10961,11 +10134,7 @@ end)()
 			6647
 		}
 	}
-	pg = var_3_9
-
-	local var_3_10 = var_3_9.base.activity_ins_chat_group
-
-	var_3_10[211] = {
+	pg.base.activity_ins_chat_group[211] = {
 		ship_group = 10702,
 		name = "要记得好好吃饭",
 		group_ii = 0,
@@ -11001,11 +10170,7 @@ end)()
 			6672
 		}
 	}
-	pg = var_3_10
-
-	local var_3_11 = var_3_10.base.activity_ins_chat_group
-
-	var_3_11[212] = {
+	pg.base.activity_ins_chat_group[212] = {
 		ship_group = 10702,
 		name = "新的曲风",
 		group_ii = 0,
@@ -11041,11 +10206,7 @@ end)()
 			6697
 		}
 	}
-	pg = var_3_11
-
-	local var_3_12 = var_3_11.base.activity_ins_chat_group
-
-	var_3_12[213] = {
+	pg.base.activity_ins_chat_group[213] = {
 		ship_group = 10702,
 		name = "为了成为你的助力",
 		group_ii = 0,
@@ -11086,11 +10247,7 @@ end)()
 			6727
 		}
 	}
-	pg = var_3_12
-
-	local var_3_13 = var_3_12.base.activity_ins_chat_group
-
-	var_3_13[214] = {
+	pg.base.activity_ins_chat_group[214] = {
 		ship_group = 10702,
 		name = "追气球的人",
 		group_ii = 10716,
@@ -11127,11 +10284,7 @@ end)()
 			6753
 		}
 	}
-	pg = var_3_13
-
-	local var_3_14 = var_3_13.base.activity_ins_chat_group
-
-	var_3_14[215] = {
+	pg.base.activity_ins_chat_group[215] = {
 		ship_group = 10702,
 		name = "蓝色幽灵",
 		group_ii = 10716,
@@ -11167,11 +10320,7 @@ end)()
 			6778
 		}
 	}
-	pg = var_3_14
-
-	local var_3_15 = var_3_14.base.activity_ins_chat_group
-
-	var_3_15[216] = {
+	pg.base.activity_ins_chat_group[216] = {
 		ship_group = 10702,
 		name = "新的歌谣",
 		group_ii = 10716,
@@ -11209,11 +10358,7 @@ end)()
 			6805
 		}
 	}
-	pg = var_3_15
-
-	local var_3_16 = var_3_15.base.activity_ins_chat_group
-
-	var_3_16[217] = {
+	pg.base.activity_ins_chat_group[217] = {
 		ship_group = 10110,
 		name = "要爆炸啦！",
 		group_ii = 0,
@@ -11251,11 +10396,7 @@ end)()
 			6832
 		}
 	}
-	pg = var_3_16
-
-	local var_3_17 = var_3_16.base.activity_ins_chat_group
-
-	var_3_17[218] = {
+	pg.base.activity_ins_chat_group[218] = {
 		ship_group = 10110,
 		name = "要撞上啦！",
 		group_ii = 0,
@@ -11295,11 +10436,7 @@ end)()
 			6861
 		}
 	}
-	pg = var_3_17
-
-	local var_3_18 = var_3_17.base.activity_ins_chat_group
-
-	var_3_18[219] = {
+	pg.base.activity_ins_chat_group[219] = {
 		ship_group = 10110,
 		name = "要……已经坠机啦！",
 		group_ii = 0,
@@ -11333,11 +10470,7 @@ end)()
 			6884
 		}
 	}
-	pg = var_3_18
-
-	local var_3_19 = var_3_18.base.activity_ins_chat_group
-
-	var_3_19[220] = {
+	pg.base.activity_ins_chat_group[220] = {
 		ship_group = 10155,
 		name = "全面测试",
 		group_ii = 0,
@@ -11378,11 +10511,7 @@ end)()
 			6914
 		}
 	}
-	pg = var_3_19
-
-	local var_3_20 = var_3_19.base.activity_ins_chat_group
-
-	var_3_20[221] = {
+	pg.base.activity_ins_chat_group[221] = {
 		ship_group = 10155,
 		name = "bug测试",
 		group_ii = 0,
@@ -11419,11 +10548,7 @@ end)()
 			6940
 		}
 	}
-	pg = var_3_20
-
-	local var_3_21 = var_3_20.base.activity_ins_chat_group
-
-	var_3_21[222] = {
+	pg.base.activity_ins_chat_group[222] = {
 		ship_group = 10155,
 		name = "戒断测试",
 		group_ii = 0,
@@ -11458,11 +10583,7 @@ end)()
 			6964
 		}
 	}
-	pg = var_3_21
-
-	local var_3_22 = var_3_21.base.activity_ins_chat_group
-
-	var_3_22[223] = {
+	pg.base.activity_ins_chat_group[223] = {
 		ship_group = 10235,
 		name = "快乐向导",
 		group_ii = 0,
@@ -11501,11 +10622,7 @@ end)()
 			6992
 		}
 	}
-	pg = var_3_22
-
-	local var_3_23 = var_3_22.base.activity_ins_chat_group
-
-	var_3_23[224] = {
+	pg.base.activity_ins_chat_group[224] = {
 		ship_group = 10235,
 		name = "活动的秘密",
 		group_ii = 0,
@@ -11547,11 +10664,7 @@ end)()
 			7023
 		}
 	}
-	pg = var_3_23
-
-	local var_3_24 = var_3_23.base.activity_ins_chat_group
-
-	var_3_24[225] = {
+	pg.base.activity_ins_chat_group[225] = {
 		ship_group = 10235,
 		name = "每天都是纪念日",
 		group_ii = 0,
@@ -11589,11 +10702,7 @@ end)()
 			7050
 		}
 	}
-	pg = var_3_24
-
-	local var_3_25 = var_3_24.base.activity_ins_chat_group
-
-	var_3_25[226] = {
+	pg.base.activity_ins_chat_group[226] = {
 		ship_group = 10725,
 		name = "营养速递",
 		group_ii = 0,
@@ -11626,11 +10735,7 @@ end)()
 			7072
 		}
 	}
-	pg = var_3_25
-
-	local var_3_26 = var_3_25.base.activity_ins_chat_group
-
-	var_3_26[227] = {
+	pg.base.activity_ins_chat_group[227] = {
 		ship_group = 10725,
 		name = "全营养作战",
 		group_ii = 0,
@@ -11669,11 +10774,7 @@ end)()
 			7100
 		}
 	}
-	pg = var_3_26
-
-	local var_3_27 = var_3_26.base.activity_ins_chat_group
-
-	var_3_27[228] = {
+	pg.base.activity_ins_chat_group[228] = {
 		ship_group = 10725,
 		name = "安眠特饮",
 		group_ii = 0,
@@ -11710,11 +10811,7 @@ end)()
 			7126
 		}
 	}
-	pg = var_3_27
-
-	local var_3_28 = var_3_27.base.activity_ins_chat_group
-
-	var_3_28[229] = {
+	pg.base.activity_ins_chat_group[229] = {
 		ship_group = 69903,
 		name = "课题选择",
 		group_ii = 0,
@@ -11751,11 +10848,7 @@ end)()
 			7152
 		}
 	}
-	pg = var_3_28
-
-	local var_3_29 = var_3_28.base.activity_ins_chat_group
-
-	var_3_29[230] = {
+	pg.base.activity_ins_chat_group[230] = {
 		ship_group = 69903,
 		name = "猫的小知识",
 		group_ii = 0,
@@ -11787,11 +10880,7 @@ end)()
 			7173
 		}
 	}
-	pg = var_3_29
-
-	local var_3_30 = var_3_29.base.activity_ins_chat_group
-
-	var_3_30[231] = {
+	pg.base.activity_ins_chat_group[231] = {
 		ship_group = 69903,
 		name = "库尼贝尔蒂小课堂",
 		group_ii = 0,
@@ -11832,11 +10921,7 @@ end)()
 			7203
 		}
 	}
-	pg = var_3_30
-
-	local var_3_31 = var_3_30.base.activity_ins_chat_group
-
-	var_3_31[232] = {
+	pg.base.activity_ins_chat_group[232] = {
 		ship_group = 49910,
 		name = "魔女的工作",
 		group_ii = 0,
@@ -11872,11 +10957,7 @@ end)()
 			7228
 		}
 	}
-	pg = var_3_31
-
-	local var_3_32 = var_3_31.base.activity_ins_chat_group
-
-	var_3_32[233] = {
+	pg.base.activity_ins_chat_group[233] = {
 		ship_group = 49910,
 		name = "自夜空坠落",
 		group_ii = 0,
@@ -11920,11 +11001,7 @@ end)()
 			7261
 		}
 	}
-	pg = var_3_32
-
-	local var_3_33 = var_3_32.base.activity_ins_chat_group
-
-	var_3_33[234] = {
+	pg.base.activity_ins_chat_group[234] = {
 		ship_group = 49910,
 		name = "星光之宴",
 		group_ii = 0,
@@ -11960,11 +11037,7 @@ end)()
 			7286
 		}
 	}
-	pg = var_3_33
-
-	local var_3_34 = var_3_33.base.activity_ins_chat_group
-
-	var_3_34[235] = {
+	pg.base.activity_ins_chat_group[235] = {
 		ship_group = 119901,
 		name = "自然之音",
 		group_ii = 0,
@@ -12004,11 +11077,7 @@ end)()
 			7315
 		}
 	}
-	pg = var_3_34
-
-	local var_3_35 = var_3_34.base.activity_ins_chat_group
-
-	var_3_35[236] = {
+	pg.base.activity_ins_chat_group[236] = {
 		ship_group = 119901,
 		name = "不听话有惩罚",
 		group_ii = 0,
@@ -12043,11 +11112,7 @@ end)()
 			7339
 		}
 	}
-	pg = var_3_35
-
-	local var_3_36 = var_3_35.base.activity_ins_chat_group
-
-	var_3_36[237] = {
+	pg.base.activity_ins_chat_group[237] = {
 		ship_group = 119901,
 		name = "森林治愈之旅",
 		group_ii = 0,
@@ -12088,11 +11153,7 @@ end)()
 			7369
 		}
 	}
-	pg = var_3_36
-
-	local var_3_37 = var_3_36.base.activity_ins_chat_group
-
-	var_3_37[238] = {
+	pg.base.activity_ins_chat_group[238] = {
 		ship_group = 79903,
 		name = "欢迎秘诀",
 		group_ii = 0,
@@ -12124,11 +11185,7 @@ end)()
 			7390
 		}
 	}
-	pg = var_3_37
-
-	local var_3_38 = var_3_37.base.activity_ins_chat_group
-
-	var_3_38[239] = {
+	pg.base.activity_ins_chat_group[239] = {
 		ship_group = 79903,
 		name = "人气调查",
 		group_ii = 0,
@@ -12167,11 +11224,7 @@ end)()
 			7418
 		}
 	}
-	pg = var_3_38
-
-	local var_3_39 = var_3_38.base.activity_ins_chat_group
-
-	var_3_39[240] = {
+	pg.base.activity_ins_chat_group[240] = {
 		ship_group = 79903,
 		name = "特别安排",
 		group_ii = 0,
@@ -12207,11 +11260,7 @@ end)()
 			7443
 		}
 	}
-	pg = var_3_39
-
-	local var_3_40 = var_3_39.base.activity_ins_chat_group
-
-	var_3_40[241] = {
+	pg.base.activity_ins_chat_group[241] = {
 		ship_group = 19906,
 		name = "请假方案",
 		group_ii = 0,
@@ -12250,11 +11299,7 @@ end)()
 			7471
 		}
 	}
-	pg = var_3_40
-
-	local var_3_41 = var_3_40.base.activity_ins_chat_group
-
-	var_3_41[242] = {
+	pg.base.activity_ins_chat_group[242] = {
 		ship_group = 19906,
 		name = "最可怕的场合",
 		group_ii = 0,
@@ -12289,11 +11334,7 @@ end)()
 			7495
 		}
 	}
-	pg = var_3_41
-
-	local var_3_42 = var_3_41.base.activity_ins_chat_group
-
-	var_3_42[243] = {
+	pg.base.activity_ins_chat_group[243] = {
 		ship_group = 19906,
 		name = "约会时间",
 		group_ii = 0,
@@ -12333,11 +11374,7 @@ end)()
 			7524
 		}
 	}
-	pg = var_3_42
-
-	local var_3_43 = var_3_42.base.activity_ins_chat_group
-
-	var_3_43[244] = {
+	pg.base.activity_ins_chat_group[244] = {
 		ship_group = 60501,
 		name = "撒丁的午后",
 		group_ii = 0,
@@ -12372,11 +11409,7 @@ end)()
 			7548
 		}
 	}
-	pg = var_3_43
-
-	local var_3_44 = var_3_43.base.activity_ins_chat_group
-
-	var_3_44[245] = {
+	pg.base.activity_ins_chat_group[245] = {
 		ship_group = 60501,
 		name = "美味一刻",
 		group_ii = 0,
@@ -12411,11 +11444,7 @@ end)()
 			7572
 		}
 	}
-	pg = var_3_44
-
-	local var_3_45 = var_3_44.base.activity_ins_chat_group
-
-	var_3_45[246] = {
+	pg.base.activity_ins_chat_group[246] = {
 		ship_group = 60501,
 		name = "放松的艺术",
 		group_ii = 0,
@@ -12451,11 +11480,7 @@ end)()
 			7597
 		}
 	}
-	pg = var_3_45
-
-	local var_3_46 = var_3_45.base.activity_ins_chat_group
-
-	var_3_46[247] = {
+	pg.base.activity_ins_chat_group[247] = {
 		ship_group = 30194,
 		name = "潮流日新月异",
 		group_ii = 0,
@@ -12490,11 +11515,7 @@ end)()
 			7621
 		}
 	}
-	pg = var_3_46
-
-	local var_3_47 = var_3_46.base.activity_ins_chat_group
-
-	var_3_47[248] = {
+	pg.base.activity_ins_chat_group[248] = {
 		ship_group = 30194,
 		name = "今日幸运色",
 		group_ii = 0,
@@ -12528,11 +11549,7 @@ end)()
 			7644
 		}
 	}
-	pg = var_3_47
-
-	local var_3_48 = var_3_47.base.activity_ins_chat_group
-
-	var_3_48[249] = {
+	pg.base.activity_ins_chat_group[249] = {
 		ship_group = 30194,
 		name = "连携式穿搭",
 		group_ii = 0,
@@ -12565,11 +11582,7 @@ end)()
 			7666
 		}
 	}
-	pg = var_3_48
-
-	local var_3_49 = var_3_48.base.activity_ins_chat_group
-
-	var_3_49[250] = {
+	pg.base.activity_ins_chat_group[250] = {
 		ship_group = 60509,
 		name = "笑容的奥秘",
 		group_ii = 0,
@@ -12603,11 +11616,7 @@ end)()
 			7689
 		}
 	}
-	pg = var_3_49
-
-	local var_3_50 = var_3_49.base.activity_ins_chat_group
-
-	var_3_50[251] = {
+	pg.base.activity_ins_chat_group[251] = {
 		ship_group = 60509,
 		name = "神秘雕像",
 		group_ii = 0,
@@ -12646,11 +11655,7 @@ end)()
 			7717
 		}
 	}
-	pg = var_3_50
-
-	local var_3_51 = var_3_50.base.activity_ins_chat_group
-
-	var_3_51[252] = {
+	pg.base.activity_ins_chat_group[252] = {
 		ship_group = 60509,
 		name = "深度学习",
 		group_ii = 0,
@@ -12685,11 +11690,7 @@ end)()
 			7741
 		}
 	}
-	pg = var_3_51
-
-	local var_3_52 = var_3_51.base.activity_ins_chat_group
-
-	var_3_52[253] = {
+	pg.base.activity_ins_chat_group[253] = {
 		ship_group = 60112,
 		name = "万物诊断",
 		group_ii = 0,
@@ -12724,11 +11725,7 @@ end)()
 			7765
 		}
 	}
-	pg = var_3_52
-
-	local var_3_53 = var_3_52.base.activity_ins_chat_group
-
-	var_3_53[254] = {
+	pg.base.activity_ins_chat_group[254] = {
 		ship_group = 60112,
 		name = "创口贴收藏家",
 		group_ii = 0,
@@ -12761,11 +11758,7 @@ end)()
 			7787
 		}
 	}
-	pg = var_3_53
-
-	local var_3_54 = var_3_53.base.activity_ins_chat_group
-
-	var_3_54[255] = {
+	pg.base.activity_ins_chat_group[255] = {
 		ship_group = 60112,
 		name = "线上问诊",
 		group_ii = 0,
@@ -12804,11 +11797,7 @@ end)()
 			7815
 		}
 	}
-	pg = var_3_54
-
-	local var_3_55 = var_3_54.base.activity_ins_chat_group
-
-	var_3_55[256] = {
+	pg.base.activity_ins_chat_group[256] = {
 		ship_group = 60204,
 		name = "华丽训练",
 		group_ii = 0,
@@ -12845,11 +11834,7 @@ end)()
 			7841
 		}
 	}
-	pg = var_3_55
-
-	local var_3_56 = var_3_55.base.activity_ins_chat_group
-
-	var_3_56[257] = {
+	pg.base.activity_ins_chat_group[257] = {
 		ship_group = 60204,
 		name = "此地无银三百两",
 		group_ii = 0,
@@ -12886,11 +11871,7 @@ end)()
 			7867
 		}
 	}
-	pg = var_3_56
-
-	local var_3_57 = var_3_56.base.activity_ins_chat_group
-
-	var_3_57[258] = {
+	pg.base.activity_ins_chat_group[258] = {
 		ship_group = 60204,
 		name = "默契度大挑战",
 		group_ii = 0,
@@ -12925,11 +11906,7 @@ end)()
 			7891
 		}
 	}
-	pg = var_3_57
-
-	local var_3_58 = var_3_57.base.activity_ins_chat_group
-
-	var_3_58[259] = {
+	pg.base.activity_ins_chat_group[259] = {
 		ship_group = 51901,
 		name = "后勤保障",
 		group_ii = 0,
@@ -12963,11 +11940,7 @@ end)()
 			7914
 		}
 	}
-	pg = var_3_58
-
-	local var_3_59 = var_3_58.base.activity_ins_chat_group
-
-	var_3_59[260] = {
+	pg.base.activity_ins_chat_group[260] = {
 		ship_group = 51901,
 		name = "重要情报",
 		group_ii = 0,
@@ -13004,11 +11977,7 @@ end)()
 			7940
 		}
 	}
-	pg = var_3_59
-
-	local var_3_60 = var_3_59.base.activity_ins_chat_group
-
-	var_3_60[261] = {
+	pg.base.activity_ins_chat_group[261] = {
 		ship_group = 51901,
 		name = "温柔的夜晚",
 		group_ii = 0,
@@ -13041,11 +12010,7 @@ end)()
 			7962
 		}
 	}
-	pg = var_3_60
-
-	local var_3_61 = var_3_60.base.activity_ins_chat_group
-
-	var_3_61[262] = {
+	pg.base.activity_ins_chat_group[262] = {
 		ship_group = 103,
 		name = "新春晚会！",
 		group_ii = 0,
@@ -13122,11 +12087,7 @@ end)()
 			8015
 		}
 	}
-	pg = var_3_61
-
-	local var_3_62 = var_3_61.base.activity_ins_chat_group
-
-	var_3_62[263] = {
+	pg.base.activity_ins_chat_group[263] = {
 		ship_group = 50302,
 		name = "琢玉",
 		group_ii = 0,
@@ -13161,11 +12122,7 @@ end)()
 			8039
 		}
 	}
-	pg = var_3_62
-
-	local var_3_63 = var_3_62.base.activity_ins_chat_group
-
-	var_3_63[264] = {
+	pg.base.activity_ins_chat_group[264] = {
 		ship_group = 50302,
 		name = "伴玉",
 		group_ii = 0,
@@ -13201,11 +12158,7 @@ end)()
 			8064
 		}
 	}
-	pg = var_3_63
-
-	local var_3_64 = var_3_63.base.activity_ins_chat_group
-
-	var_3_64[265] = {
+	pg.base.activity_ins_chat_group[265] = {
 		ship_group = 50302,
 		name = "求玉",
 		group_ii = 0,
@@ -13240,11 +12193,7 @@ end)()
 			8088
 		}
 	}
-	pg = var_3_64
-
-	local var_3_65 = var_3_64.base.activity_ins_chat_group
-
-	var_3_65[266] = {
+	pg.base.activity_ins_chat_group[266] = {
 		ship_group = 50212,
 		name = "隐试调香",
 		group_ii = 0,
@@ -13280,11 +12229,7 @@ end)()
 			8113
 		}
 	}
-	pg = var_3_65
-
-	local var_3_66 = var_3_65.base.activity_ins_chat_group
-
-	var_3_66[267] = {
+	pg.base.activity_ins_chat_group[267] = {
 		ship_group = 50212,
 		name = "诱之味",
 		group_ii = 0,
@@ -13317,11 +12262,7 @@ end)()
 			8135
 		}
 	}
-	pg = var_3_66
-
-	local var_3_67 = var_3_66.base.activity_ins_chat_group
-
-	var_3_67[268] = {
+	pg.base.activity_ins_chat_group[268] = {
 		ship_group = 50212,
 		name = "人间至味",
 		group_ii = 0,
@@ -13355,11 +12296,7 @@ end)()
 			8158
 		}
 	}
-	pg = var_3_67
-
-	local var_3_68 = var_3_67.base.activity_ins_chat_group
-
-	var_3_68[269] = {
+	pg.base.activity_ins_chat_group[269] = {
 		ship_group = 20607,
 		name = "关于称呼",
 		group_ii = 0,
@@ -13398,11 +12335,7 @@ end)()
 			8186
 		}
 	}
-	pg = var_3_68
-
-	local var_3_69 = var_3_68.base.activity_ins_chat_group
-
-	var_3_69[270] = {
+	pg.base.activity_ins_chat_group[270] = {
 		ship_group = 20607,
 		name = "另一种森林浴",
 		group_ii = 0,
@@ -13435,11 +12368,7 @@ end)()
 			8208
 		}
 	}
-	pg = var_3_69
-
-	local var_3_70 = var_3_69.base.activity_ins_chat_group
-
-	var_3_70[271] = {
+	pg.base.activity_ins_chat_group[271] = {
 		ship_group = 20607,
 		name = "夏日的微风",
 		group_ii = 0,
@@ -13480,11 +12409,7 @@ end)()
 			8238
 		}
 	}
-	pg = var_3_70
-
-	local var_3_71 = var_3_70.base.activity_ins_chat_group
-
-	var_3_71[272] = {
+	pg.base.activity_ins_chat_group[272] = {
 		ship_group = 70303,
 		name = "同志，一起冬泳！",
 		group_ii = 0,
@@ -13520,11 +12445,7 @@ end)()
 			8263
 		}
 	}
-	pg = var_3_71
-
-	local var_3_72 = var_3_71.base.activity_ins_chat_group
-
-	var_3_72[273] = {
+	pg.base.activity_ins_chat_group[273] = {
 		ship_group = 70303,
 		name = "朋友，一起加班！",
 		group_ii = 0,
@@ -13556,11 +12477,7 @@ end)()
 			8284
 		}
 	}
-	pg = var_3_72
-
-	local var_3_73 = var_3_72.base.activity_ins_chat_group
-
-	var_3_73[274] = {
+	pg.base.activity_ins_chat_group[274] = {
 		ship_group = 70303,
 		name = "挚友，坦诚相见！",
 		group_ii = 0,
@@ -13595,11 +12512,7 @@ end)()
 			8308
 		}
 	}
-	pg = var_3_73
-
-	local var_3_74 = var_3_73.base.activity_ins_chat_group
-
-	var_3_74[275] = {
+	pg.base.activity_ins_chat_group[275] = {
 		ship_group = 70113,
 		name = "禁止加班",
 		group_ii = 0,
@@ -13631,11 +12544,7 @@ end)()
 			8329
 		}
 	}
-	pg = var_3_74
-
-	local var_3_75 = var_3_74.base.activity_ins_chat_group
-
-	var_3_75[276] = {
+	pg.base.activity_ins_chat_group[276] = {
 		ship_group = 70113,
 		name = "快来陪我",
 		group_ii = 0,
@@ -13675,11 +12584,7 @@ end)()
 			8358
 		}
 	}
-	pg = var_3_75
-
-	local var_3_76 = var_3_75.base.activity_ins_chat_group
-
-	var_3_76[277] = {
+	pg.base.activity_ins_chat_group[277] = {
 		ship_group = 70113,
 		name = "不存在的坦率",
 		group_ii = 0,
@@ -13717,11 +12622,7 @@ end)()
 			8385
 		}
 	}
-	pg = var_3_76
-
-	local var_3_77 = var_3_76.base.activity_ins_chat_group
-
-	var_3_77[278] = {
+	pg.base.activity_ins_chat_group[278] = {
 		ship_group = 70209,
 		name = "瓶颈期",
 		group_ii = 0,
@@ -13758,11 +12659,7 @@ end)()
 			8411
 		}
 	}
-	pg = var_3_77
-
-	local var_3_78 = var_3_77.base.activity_ins_chat_group
-
-	var_3_78[279] = {
+	pg.base.activity_ins_chat_group[279] = {
 		ship_group = 70209,
 		name = "练习拒绝",
 		group_ii = 0,
@@ -13796,11 +12693,7 @@ end)()
 			8434
 		}
 	}
-	pg = var_3_78
-
-	local var_3_79 = var_3_78.base.activity_ins_chat_group
-
-	var_3_79[280] = {
+	pg.base.activity_ins_chat_group[280] = {
 		ship_group = 70209,
 		name = "特别测试 ",
 		group_ii = 0,
@@ -13834,11 +12727,7 @@ end)()
 			8457
 		}
 	}
-	pg = var_3_79
-
-	local var_3_80 = var_3_79.base.activity_ins_chat_group
-
-	var_3_80[281] = {
+	pg.base.activity_ins_chat_group[281] = {
 		ship_group = 70210,
 		name = "一杯咖啡引起的过载",
 		group_ii = 0,
@@ -13873,11 +12762,7 @@ end)()
 			8481
 		}
 	}
-	pg = var_3_80
-
-	local var_3_81 = var_3_80.base.activity_ins_chat_group
-
-	var_3_81[282] = {
+	pg.base.activity_ins_chat_group[282] = {
 		ship_group = 70210,
 		name = "约会行程加载中",
 		group_ii = 0,
@@ -13917,11 +12802,7 @@ end)()
 			8510
 		}
 	}
-	pg = var_3_81
-
-	local var_3_82 = var_3_81.base.activity_ins_chat_group
-
-	var_3_82[283] = {
+	pg.base.activity_ins_chat_group[283] = {
 		ship_group = 70210,
 		name = "激励程序执行中",
 		group_ii = 0,
@@ -13954,11 +12835,7 @@ end)()
 			8532
 		}
 	}
-	pg = var_3_82
-
-	local var_3_83 = var_3_82.base.activity_ins_chat_group
-
-	var_3_83[284] = {
+	pg.base.activity_ins_chat_group[284] = {
 		ship_group = 30116,
 		name = "好运的苦恼",
 		group_ii = 0,
@@ -13994,11 +12871,7 @@ end)()
 			8557
 		}
 	}
-	pg = var_3_83
-
-	local var_3_84 = var_3_83.base.activity_ins_chat_group
-
-	var_3_84[285] = {
+	pg.base.activity_ins_chat_group[285] = {
 		ship_group = 30116,
 		name = "单人温泉旅行？",
 		group_ii = 0,
@@ -14036,11 +12909,7 @@ end)()
 			8584
 		}
 	}
-	pg = var_3_84
-
-	local var_3_85 = var_3_84.base.activity_ins_chat_group
-
-	var_3_85[286] = {
+	pg.base.activity_ins_chat_group[286] = {
 		ship_group = 30116,
 		name = "寻找红尖尖",
 		group_ii = 0,
@@ -14076,11 +12945,7 @@ end)()
 			8609
 		}
 	}
-	pg = var_3_85
-
-	local var_3_86 = var_3_85.base.activity_ins_chat_group
-
-	var_3_86[287] = {
+	pg.base.activity_ins_chat_group[287] = {
 		ship_group = 107,
 		name = "深夜故事会",
 		group_ii = 0,
@@ -14161,11 +13026,7 @@ end)()
 			8666
 		}
 	}
-	pg = var_3_86
-
-	local var_3_87 = var_3_86.base.activity_ins_chat_group
-
-	var_3_87[288] = {
+	pg.base.activity_ins_chat_group[288] = {
 		ship_group = 30717,
 		name = "二选一？",
 		group_ii = 0,
@@ -14197,11 +13058,7 @@ end)()
 			8687
 		}
 	}
-	pg = var_3_87
-
-	local var_3_88 = var_3_87.base.activity_ins_chat_group
-
-	var_3_88[289] = {
+	pg.base.activity_ins_chat_group[289] = {
 		ship_group = 30717,
 		name = "高级餐厅",
 		group_ii = 0,
@@ -14236,11 +13093,7 @@ end)()
 			8711
 		}
 	}
-	pg = var_3_88
-
-	local var_3_89 = var_3_88.base.activity_ins_chat_group
-
-	var_3_89[290] = {
+	pg.base.activity_ins_chat_group[290] = {
 		ship_group = 30717,
 		name = "共选新居",
 		group_ii = 0,
@@ -14281,11 +13134,7 @@ end)()
 			8741
 		}
 	}
-	pg = var_3_89
-
-	local var_3_90 = var_3_89.base.activity_ins_chat_group
-
-	var_3_90[291] = {
+	pg.base.activity_ins_chat_group[291] = {
 		ship_group = 30228,
 		name = "神使之证",
 		group_ii = 0,
@@ -14322,11 +13171,7 @@ end)()
 			8767
 		}
 	}
-	pg = var_3_90
-
-	local var_3_91 = var_3_90.base.activity_ins_chat_group
-
-	var_3_91[292] = {
+	pg.base.activity_ins_chat_group[292] = {
 		ship_group = 30228,
 		name = "天气预报",
 		group_ii = 0,
@@ -14362,11 +13207,7 @@ end)()
 			8792
 		}
 	}
-	pg = var_3_91
-
-	local var_3_92 = var_3_91.base.activity_ins_chat_group
-
-	var_3_92[293] = {
+	pg.base.activity_ins_chat_group[293] = {
 		ship_group = 30228,
 		name = "心有灵犀？",
 		group_ii = 0,
@@ -14401,11 +13242,7 @@ end)()
 			8816
 		}
 	}
-	pg = var_3_92
-
-	local var_3_93 = var_3_92.base.activity_ins_chat_group
-
-	var_3_93[294] = {
+	pg.base.activity_ins_chat_group[294] = {
 		ship_group = 30229,
 		name = "尾巴护理",
 		group_ii = 0,
@@ -14441,11 +13278,7 @@ end)()
 			8841
 		}
 	}
-	pg = var_3_93
-
-	local var_3_94 = var_3_93.base.activity_ins_chat_group
-
-	var_3_94[295] = {
+	pg.base.activity_ins_chat_group[295] = {
 		ship_group = 30229,
 		name = "特别惊喜",
 		group_ii = 0,
@@ -14482,11 +13315,7 @@ end)()
 			8867
 		}
 	}
-	pg = var_3_94
-
-	local var_3_95 = var_3_94.base.activity_ins_chat_group
-
-	var_3_95[296] = {
+	pg.base.activity_ins_chat_group[296] = {
 		ship_group = 30229,
 		name = "好烦恼啊~",
 		group_ii = 0,
@@ -14518,11 +13347,7 @@ end)()
 			8888
 		}
 	}
-	pg = var_3_95
-
-	local var_3_96 = var_3_95.base.activity_ins_chat_group
-
-	var_3_96[297] = {
+	pg.base.activity_ins_chat_group[297] = {
 		ship_group = 201,
 		name = "下午茶时间到！",
 		group_ii = 0,
@@ -14605,11 +13430,7 @@ end)()
 			8947
 		}
 	}
-	pg = var_3_96
-
-	local var_3_97 = var_3_96.base.activity_ins_chat_group
-
-	var_3_97[298] = {
+	pg.base.activity_ins_chat_group[298] = {
 		ship_group = 20313,
 		name = "问卷调查",
 		group_ii = 0,
@@ -14649,11 +13470,7 @@ end)()
 			8976
 		}
 	}
-	pg = var_3_97
-
-	local var_3_98 = var_3_97.base.activity_ins_chat_group
-
-	var_3_98[299] = {
+	pg.base.activity_ins_chat_group[299] = {
 		ship_group = 20313,
 		name = "爱意递送",
 		group_ii = 0,
@@ -14695,8 +13512,7 @@ end)()
 			9007
 		}
 	}
-	pg = var_3_98
-	var_3_98.base.activity_ins_chat_group[300] = {
+	pg.base.activity_ins_chat_group[300] = {
 		ship_group = 20313,
 		name = "补充誓约",
 		group_ii = 0,
@@ -14735,11 +13551,7 @@ end)()
 	return
 end)()
 ;(function()
-	pg = var_1_10000
-
-	local var_4_0 = var_1_10000.base.activity_ins_chat_group
-
-	var_4_0[301] = {
+	pg.base.activity_ins_chat_group[301] = {
 		ship_group = 10601,
 		name = "额外工作",
 		group_ii = 0,
@@ -14776,11 +13588,7 @@ end)()
 			9057
 		}
 	}
-	pg = var_4_0
-
-	local var_4_1 = var_4_0.base.activity_ins_chat_group
-
-	var_4_1[302] = {
+	pg.base.activity_ins_chat_group[302] = {
 		ship_group = 10601,
 		name = "再战一场！",
 		group_ii = 0,
@@ -14818,11 +13626,7 @@ end)()
 			9084
 		}
 	}
-	pg = var_4_1
-
-	local var_4_2 = var_4_1.base.activity_ins_chat_group
-
-	var_4_2[303] = {
+	pg.base.activity_ins_chat_group[303] = {
 		ship_group = 10601,
 		name = "人气模型",
 		group_ii = 0,
@@ -14858,11 +13662,7 @@ end)()
 			9109
 		}
 	}
-	pg = var_4_2
-
-	local var_4_3 = var_4_2.base.activity_ins_chat_group
-
-	var_4_3[304] = {
+	pg.base.activity_ins_chat_group[304] = {
 		ship_group = 101,
 		name = "谁动了她的雪糕",
 		group_ii = 0,
@@ -14943,11 +13743,7 @@ end)()
 			9166
 		}
 	}
-	pg = var_4_3
-
-	local var_4_4 = var_4_3.base.activity_ins_chat_group
-
-	var_4_4[305] = {
+	pg.base.activity_ins_chat_group[305] = {
 		ship_group = 20403,
 		name = "不完美的下午茶",
 		group_ii = 0,
@@ -14980,11 +13776,7 @@ end)()
 			9188
 		}
 	}
-	pg = var_4_4
-
-	local var_4_5 = var_4_4.base.activity_ins_chat_group
-
-	var_4_5[306] = {
+	pg.base.activity_ins_chat_group[306] = {
 		ship_group = 20403,
 		name = "放慢舞步",
 		group_ii = 0,
@@ -15020,11 +13812,7 @@ end)()
 			9213
 		}
 	}
-	pg = var_4_5
-
-	local var_4_6 = var_4_5.base.activity_ins_chat_group
-
-	var_4_6[307] = {
+	pg.base.activity_ins_chat_group[307] = {
 		ship_group = 20403,
 		name = "别样的品尝",
 		group_ii = 0,
@@ -15061,11 +13849,7 @@ end)()
 			9239
 		}
 	}
-	pg = var_4_6
-
-	local var_4_7 = var_4_6.base.activity_ins_chat_group
-
-	var_4_7[308] = {
+	pg.base.activity_ins_chat_group[308] = {
 		ship_group = 40507,
 		name = "茶会的邀请",
 		group_ii = 0,
@@ -15103,11 +13887,7 @@ end)()
 			9266
 		}
 	}
-	pg = var_4_7
-
-	local var_4_8 = var_4_7.base.activity_ins_chat_group
-
-	var_4_8[309] = {
+	pg.base.activity_ins_chat_group[309] = {
 		ship_group = 40507,
 		name = "购物的邀请",
 		group_ii = 0,
@@ -15143,11 +13923,7 @@ end)()
 			9291
 		}
 	}
-	pg = var_4_8
-
-	local var_4_9 = var_4_8.base.activity_ins_chat_group
-
-	var_4_9[310] = {
+	pg.base.activity_ins_chat_group[310] = {
 		ship_group = 40507,
 		name = "赌约的邀请",
 		group_ii = 0,
@@ -15186,11 +13962,7 @@ end)()
 			9319
 		}
 	}
-	pg = var_4_9
-
-	local var_4_10 = var_4_9.base.activity_ins_chat_group
-
-	var_4_10[311] = {
+	pg.base.activity_ins_chat_group[311] = {
 		ship_group = 40815,
 		name = "夜晚的声音",
 		group_ii = 0,
@@ -15228,11 +14000,7 @@ end)()
 			9346
 		}
 	}
-	pg = var_4_10
-
-	local var_4_11 = var_4_10.base.activity_ins_chat_group
-
-	var_4_11[312] = {
+	pg.base.activity_ins_chat_group[312] = {
 		ship_group = 40815,
 		name = "定制音频",
 		group_ii = 0,
@@ -15267,11 +14035,7 @@ end)()
 			9370
 		}
 	}
-	pg = var_4_11
-
-	local var_4_12 = var_4_11.base.activity_ins_chat_group
-
-	var_4_12[313] = {
+	pg.base.activity_ins_chat_group[313] = {
 		ship_group = 40815,
 		name = "倾听呼吸",
 		group_ii = 0,
@@ -15307,11 +14071,7 @@ end)()
 			9395
 		}
 	}
-	pg = var_4_12
-
-	local var_4_13 = var_4_12.base.activity_ins_chat_group
-
-	var_4_13[314] = {
+	pg.base.activity_ins_chat_group[314] = {
 		ship_group = 40317,
 		name = "这里已经满员了",
 		group_ii = 0,
@@ -15348,11 +14108,7 @@ end)()
 			9421
 		}
 	}
-	pg = var_4_13
-
-	local var_4_14 = var_4_13.base.activity_ins_chat_group
-
-	var_4_14[315] = {
+	pg.base.activity_ins_chat_group[315] = {
 		ship_group = 40317,
 		name = "背上有什么……？",
 		group_ii = 0,
@@ -15393,11 +14149,7 @@ end)()
 			9451
 		}
 	}
-	pg = var_4_14
-
-	local var_4_15 = var_4_14.base.activity_ins_chat_group
-
-	var_4_15[316] = {
+	pg.base.activity_ins_chat_group[316] = {
 		ship_group = 40317,
 		name = "外援登场！",
 		group_ii = 0,
@@ -15431,11 +14183,7 @@ end)()
 			9474
 		}
 	}
-	pg = var_4_15
-
-	local var_4_16 = var_4_15.base.activity_ins_chat_group
-
-	var_4_16[317] = {
+	pg.base.activity_ins_chat_group[317] = {
 		ship_group = 40114,
 		name = "脑力比赛？体力比赛？",
 		group_ii = 0,
@@ -15472,11 +14220,7 @@ end)()
 			9500
 		}
 	}
-	pg = var_4_16
-
-	local var_4_17 = var_4_16.base.activity_ins_chat_group
-
-	var_4_17[318] = {
+	pg.base.activity_ins_chat_group[318] = {
 		ship_group = 40114,
 		name = "伊酱注意到了……？",
 		group_ii = 0,
@@ -15517,11 +14261,7 @@ end)()
 			9530
 		}
 	}
-	pg = var_4_17
-
-	local var_4_18 = var_4_17.base.activity_ins_chat_group
-
-	var_4_18[319] = {
+	pg.base.activity_ins_chat_group[319] = {
 		ship_group = 40114,
 		name = "失眠误会",
 		group_ii = 0,
@@ -15559,11 +14299,7 @@ end)()
 			9557
 		}
 	}
-	pg = var_4_18
-
-	local var_4_19 = var_4_18.base.activity_ins_chat_group
-
-	var_4_19[320] = {
+	pg.base.activity_ins_chat_group[320] = {
 		ship_group = 40115,
 		name = "交通“意外“",
 		group_ii = 0,
@@ -15599,11 +14335,7 @@ end)()
 			9582
 		}
 	}
-	pg = var_4_19
-
-	local var_4_20 = var_4_19.base.activity_ins_chat_group
-
-	var_4_20[321] = {
+	pg.base.activity_ins_chat_group[321] = {
 		ship_group = 40115,
 		name = "载具事故",
 		group_ii = 0,
@@ -15639,11 +14371,7 @@ end)()
 			9607
 		}
 	}
-	pg = var_4_20
-
-	local var_4_21 = var_4_20.base.activity_ins_chat_group
-
-	var_4_21[322] = {
+	pg.base.activity_ins_chat_group[322] = {
 		ship_group = 40115,
 		name = "别抬头",
 		group_ii = 0,
@@ -15679,11 +14407,7 @@ end)()
 			9632
 		}
 	}
-	pg = var_4_21
-
-	local var_4_22 = var_4_21.base.activity_ins_chat_group
-
-	var_4_22[323] = {
+	pg.base.activity_ins_chat_group[323] = {
 		ship_group = 105,
 		name = "魔界大战！",
 		group_ii = 0,
@@ -15764,11 +14488,7 @@ end)()
 			9689
 		}
 	}
-	pg = var_4_22
-
-	local var_4_23 = var_4_22.base.activity_ins_chat_group
-
-	var_4_23[324] = {
+	pg.base.activity_ins_chat_group[324] = {
 		ship_group = 202,
 		name = "爱的浮金湾",
 		group_ii = 0,
@@ -15854,11 +14574,7 @@ end)()
 			9751
 		}
 	}
-	pg = var_4_23
-
-	local var_4_24 = var_4_23.base.activity_ins_chat_group
-
-	var_4_24[325] = {
+	pg.base.activity_ins_chat_group[325] = {
 		ship_group = 90111,
 		name = "茶会游戏",
 		group_ii = 0,
@@ -15891,11 +14607,7 @@ end)()
 			9773
 		}
 	}
-	pg = var_4_24
-
-	local var_4_25 = var_4_24.base.activity_ins_chat_group
-
-	var_4_25[326] = {
+	pg.base.activity_ins_chat_group[326] = {
 		ship_group = 90111,
 		name = "保持优雅",
 		group_ii = 0,
@@ -15932,11 +14644,7 @@ end)()
 			9799
 		}
 	}
-	pg = var_4_25
-
-	local var_4_26 = var_4_25.base.activity_ins_chat_group
-
-	var_4_26[327] = {
+	pg.base.activity_ins_chat_group[327] = {
 		ship_group = 90111,
 		name = "主动加班？",
 		group_ii = 0,
@@ -15972,11 +14680,7 @@ end)()
 			9824
 		}
 	}
-	pg = var_4_26
-
-	local var_4_27 = var_4_26.base.activity_ins_chat_group
-
-	var_4_27[328] = {
+	pg.base.activity_ins_chat_group[328] = {
 		ship_group = 81801,
 		name = "乐趣之书",
 		group_ii = 0,
@@ -16009,11 +14713,7 @@ end)()
 			9846
 		}
 	}
-	pg = var_4_27
-
-	local var_4_28 = var_4_27.base.activity_ins_chat_group
-
-	var_4_28[329] = {
+	pg.base.activity_ins_chat_group[329] = {
 		ship_group = 81801,
 		name = "论正确使用幻术",
 		group_ii = 0,
@@ -16048,11 +14748,7 @@ end)()
 			9870
 		}
 	}
-	pg = var_4_28
-
-	local var_4_29 = var_4_28.base.activity_ins_chat_group
-
-	var_4_29[330] = {
+	pg.base.activity_ins_chat_group[330] = {
 		ship_group = 81801,
 		name = "全随机约会",
 		group_ii = 0,
@@ -16089,11 +14785,7 @@ end)()
 			9896
 		}
 	}
-	pg = var_4_29
-
-	local var_4_30 = var_4_29.base.activity_ins_chat_group
-
-	var_4_30[331] = {
+	pg.base.activity_ins_chat_group[331] = {
 		ship_group = 80602,
 		name = "大力出奇迹",
 		group_ii = 0,
@@ -16130,11 +14822,7 @@ end)()
 			9922
 		}
 	}
-	pg = var_4_30
-
-	local var_4_31 = var_4_30.base.activity_ins_chat_group
-
-	var_4_31[332] = {
+	pg.base.activity_ins_chat_group[332] = {
 		ship_group = 80602,
 		name = "学习优雅",
 		group_ii = 0,
@@ -16168,11 +14856,7 @@ end)()
 			9945
 		}
 	}
-	pg = var_4_31
-
-	local var_4_32 = var_4_31.base.activity_ins_chat_group
-
-	var_4_32[333] = {
+	pg.base.activity_ins_chat_group[333] = {
 		ship_group = 80602,
 		name = "两个人的舞",
 		group_ii = 0,
@@ -16210,11 +14894,7 @@ end)()
 			9972
 		}
 	}
-	pg = var_4_32
-
-	local var_4_33 = var_4_32.base.activity_ins_chat_group
-
-	var_4_33[334] = {
+	pg.base.activity_ins_chat_group[334] = {
 		ship_group = 80106,
 		name = "烤肉分享",
 		group_ii = 0,
@@ -16247,11 +14927,7 @@ end)()
 			9994
 		}
 	}
-	pg = var_4_33
-
-	local var_4_34 = var_4_33.base.activity_ins_chat_group
-
-	var_4_34[335] = {
+	pg.base.activity_ins_chat_group[335] = {
 		ship_group = 80106,
 		name = "烤肉探店马拉松！",
 		group_ii = 0,
@@ -16289,11 +14965,7 @@ end)()
 			10021
 		}
 	}
-	pg = var_4_34
-
-	local var_4_35 = var_4_34.base.activity_ins_chat_group
-
-	var_4_35[336] = {
+	pg.base.activity_ins_chat_group[336] = {
 		ship_group = 80106,
 		name = "烤肉畅吃！",
 		group_ii = 0,
@@ -16328,11 +15000,7 @@ end)()
 			10045
 		}
 	}
-	pg = var_4_35
-
-	local var_4_36 = var_4_35.base.activity_ins_chat_group
-
-	var_4_36[337] = {
+	pg.base.activity_ins_chat_group[337] = {
 		ship_group = 106,
 		name = "浪漫骑士故事",
 		group_ii = 0,
@@ -16407,11 +15075,7 @@ end)()
 			10096
 		}
 	}
-	pg = var_4_36
-
-	local var_4_37 = var_4_36.base.activity_ins_chat_group
-
-	var_4_37[338] = {
+	pg.base.activity_ins_chat_group[338] = {
 		ship_group = 20501,
 		name = "皇家女仆大赛",
 		group_ii = 0,
@@ -16447,11 +15111,7 @@ end)()
 			10121
 		}
 	}
-	pg = var_4_37
-
-	local var_4_38 = var_4_37.base.activity_ins_chat_group
-
-	var_4_38[339] = {
+	pg.base.activity_ins_chat_group[339] = {
 		ship_group = 20501,
 		name = "休息日穿搭",
 		group_ii = 0,
@@ -16487,11 +15147,7 @@ end)()
 			10146
 		}
 	}
-	pg = var_4_38
-
-	local var_4_39 = var_4_38.base.activity_ins_chat_group
-
-	var_4_39[340] = {
+	pg.base.activity_ins_chat_group[340] = {
 		ship_group = 20501,
 		name = "爱吃小蛋糕的猫",
 		group_ii = 0,
@@ -16527,11 +15183,7 @@ end)()
 			10171
 		}
 	}
-	pg = var_4_39
-
-	local var_4_40 = var_4_39.base.activity_ins_chat_group
-
-	var_4_40[341] = {
+	pg.base.activity_ins_chat_group[341] = {
 		ship_group = 29905,
 		name = "绝对的洁净",
 		group_ii = 0,
@@ -16567,11 +15219,7 @@ end)()
 			10196
 		}
 	}
-	pg = var_4_40
-
-	local var_4_41 = var_4_40.base.activity_ins_chat_group
-
-	var_4_41[342] = {
+	pg.base.activity_ins_chat_group[342] = {
 		ship_group = 29905,
 		name = "幸福的加法",
 		group_ii = 0,
@@ -16618,11 +15266,7 @@ end)()
 			10232
 		}
 	}
-	pg = var_4_41
-
-	local var_4_42 = var_4_41.base.activity_ins_chat_group
-
-	var_4_42[343] = {
+	pg.base.activity_ins_chat_group[343] = {
 		ship_group = 29905,
 		name = "休憩时分",
 		group_ii = 0,
@@ -16659,11 +15303,7 @@ end)()
 			10258
 		}
 	}
-	pg = var_4_42
-
-	local var_4_43 = var_4_42.base.activity_ins_chat_group
-
-	var_4_43[344] = {
+	pg.base.activity_ins_chat_group[344] = {
 		ship_group = 20237,
 		name = "抽象艺术",
 		group_ii = 0,
@@ -16700,11 +15340,7 @@ end)()
 			10284
 		}
 	}
-	pg = var_4_43
-
-	local var_4_44 = var_4_43.base.activity_ins_chat_group
-
-	var_4_44[345] = {
+	pg.base.activity_ins_chat_group[345] = {
 		ship_group = 20237,
 		name = "礼仪课程",
 		group_ii = 0,
@@ -16739,11 +15375,7 @@ end)()
 			10308
 		}
 	}
-	pg = var_4_44
-
-	local var_4_45 = var_4_44.base.activity_ins_chat_group
-
-	var_4_45[346] = {
+	pg.base.activity_ins_chat_group[346] = {
 		ship_group = 20237,
 		name = "特别礼仪",
 		group_ii = 0,
@@ -16774,11 +15406,7 @@ end)()
 			10328
 		}
 	}
-	pg = var_4_45
-
-	local var_4_46 = var_4_45.base.activity_ins_chat_group
-
-	var_4_46[347] = {
+	pg.base.activity_ins_chat_group[347] = {
 		ship_group = 20115,
 		name = "街头战斗！",
 		group_ii = 0,
@@ -16811,11 +15439,7 @@ end)()
 			10350
 		}
 	}
-	pg = var_4_46
-
-	local var_4_47 = var_4_46.base.activity_ins_chat_group
-
-	var_4_47[348] = {
+	pg.base.activity_ins_chat_group[348] = {
 		ship_group = 20115,
 		name = "加急锻炼",
 		group_ii = 0,
@@ -16851,11 +15475,7 @@ end)()
 			10375
 		}
 	}
-	pg = var_4_47
-
-	local var_4_48 = var_4_47.base.activity_ins_chat_group
-
-	var_4_48[349] = {
+	pg.base.activity_ins_chat_group[349] = {
 		ship_group = 20115,
 		name = "推荐信",
 		group_ii = 0,
@@ -16892,11 +15512,7 @@ end)()
 			10401
 		}
 	}
-	pg = var_4_48
-
-	local var_4_49 = var_4_48.base.activity_ins_chat_group
-
-	var_4_49[350] = {
+	pg.base.activity_ins_chat_group[350] = {
 		ship_group = 20314,
 		name = "待命位置",
 		group_ii = 0,
@@ -16934,11 +15550,7 @@ end)()
 			10428
 		}
 	}
-	pg = var_4_49
-
-	local var_4_50 = var_4_49.base.activity_ins_chat_group
-
-	var_4_50[351] = {
+	pg.base.activity_ins_chat_group[351] = {
 		ship_group = 20314,
 		name = "入睡求助",
 		group_ii = 0,
@@ -16974,11 +15586,7 @@ end)()
 			10453
 		}
 	}
-	pg = var_4_50
-
-	local var_4_51 = var_4_50.base.activity_ins_chat_group
-
-	var_4_51[352] = {
+	pg.base.activity_ins_chat_group[352] = {
 		ship_group = 20314,
 		name = "“我们”的模式",
 		group_ii = 0,
@@ -17015,11 +15623,7 @@ end)()
 			10479
 		}
 	}
-	pg = var_4_51
-
-	local var_4_52 = var_4_51.base.activity_ins_chat_group
-
-	var_4_52[353] = {
+	pg.base.activity_ins_chat_group[353] = {
 		ship_group = 108,
 		name = "别墅合宿",
 		group_ii = 0,
@@ -17104,11 +15708,7 @@ end)()
 			10540
 		}
 	}
-	pg = var_4_52
-
-	local var_4_53 = var_4_52.base.activity_ins_chat_group
-
-	var_4_53[354] = {
+	pg.base.activity_ins_chat_group[354] = {
 		ship_group = 30129,
 		name = "限量版大作战！",
 		group_ii = 0,
@@ -17147,11 +15747,7 @@ end)()
 			10568
 		}
 	}
-	pg = var_4_53
-
-	local var_4_54 = var_4_53.base.activity_ins_chat_group
-
-	var_4_54[355] = {
+	pg.base.activity_ins_chat_group[355] = {
 		ship_group = 30129,
 		name = "兔耳危机",
 		group_ii = 0,
@@ -17182,8 +15778,7 @@ end)()
 			10588
 		}
 	}
-	pg = var_4_54
-	var_4_54.base.activity_ins_chat_group[356] = {
+	pg.base.activity_ins_chat_group[356] = {
 		ship_group = 30129,
 		name = "想变强的{namecode:18}",
 		group_ii = 0,
@@ -17218,6 +15813,639 @@ end)()
 			10612,
 			10613,
 			10614
+		}
+	}
+	pg.base.activity_ins_chat_group[357] = {
+		ship_group = 10720,
+		name = "阳光测评",
+		group_ii = 0,
+		unlock_desc = "获得角色",
+		id = 357,
+		trigger_param = "",
+		trigger_type = 1,
+		content = {
+			10615,
+			10616,
+			10617,
+			10618,
+			10619,
+			10620,
+			10621,
+			10622,
+			10623,
+			10624,
+			10625,
+			10626,
+			10627,
+			10628,
+			10629,
+			10630,
+			10631,
+			10632,
+			10633,
+			10634,
+			10635,
+			10636,
+			10637,
+			10638,
+			10639
+		}
+	}
+	pg.base.activity_ins_chat_group[358] = {
+		ship_group = 10720,
+		name = "直升机与跑车",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到100",
+		id = 358,
+		trigger_param = "100",
+		trigger_type = 2,
+		content = {
+			10640,
+			10641,
+			10642,
+			10643,
+			10644,
+			10645,
+			10646,
+			10647,
+			10648,
+			10649,
+			10650,
+			10651,
+			10652,
+			10653,
+			10654,
+			10655,
+			10656,
+			10657,
+			10658,
+			10659,
+			10660,
+			10661,
+			10662,
+			10663,
+			10664,
+			10665
+		}
+	}
+	pg.base.activity_ins_chat_group[359] = {
+		ship_group = 10720,
+		name = "浪漫双人企划！",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到150",
+		id = 359,
+		trigger_param = "150",
+		trigger_type = 2,
+		content = {
+			10666,
+			10667,
+			10668,
+			10669,
+			10670,
+			10671,
+			10672,
+			10673,
+			10674,
+			10675,
+			10676,
+			10677,
+			10678,
+			10679,
+			10680,
+			10681,
+			10682,
+			10683,
+			10684,
+			10685,
+			10686,
+			10687,
+			10688,
+			10689,
+			10690,
+			10691
+		}
+	}
+	pg.base.activity_ins_chat_group[360] = {
+		ship_group = 10236,
+		name = "演出意外",
+		group_ii = 0,
+		unlock_desc = "获得角色",
+		id = 360,
+		trigger_param = "",
+		trigger_type = 1,
+		content = {
+			10692,
+			10693,
+			10694,
+			10695,
+			10696,
+			10697,
+			10698,
+			10699,
+			10700,
+			10701,
+			10702,
+			10703,
+			10704,
+			10705,
+			10706,
+			10707,
+			10708,
+			10709,
+			10710,
+			10711,
+			10712,
+			10713,
+			10714,
+			10715,
+			10716,
+			10717
+		}
+	}
+	pg.base.activity_ins_chat_group[361] = {
+		ship_group = 10236,
+		name = "秘密约会",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到100",
+		id = 361,
+		trigger_param = "100",
+		trigger_type = 2,
+		content = {
+			10718,
+			10719,
+			10720,
+			10721,
+			10722,
+			10723,
+			10724,
+			10725,
+			10726,
+			10727,
+			10728,
+			10729,
+			10730,
+			10731,
+			10732,
+			10733,
+			10734,
+			10735,
+			10736,
+			10737,
+			10738,
+			10739,
+			10740,
+			10741,
+			10742
+		}
+	}
+	pg.base.activity_ins_chat_group[362] = {
+		ship_group = 10236,
+		name = "全新祝福",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到150",
+		id = 362,
+		trigger_param = "150",
+		trigger_type = 2,
+		content = {
+			10743,
+			10744,
+			10745,
+			10746,
+			10747,
+			10748,
+			10749,
+			10750,
+			10751,
+			10752,
+			10753,
+			10754,
+			10755,
+			10756,
+			10757,
+			10758,
+			10759,
+			10760,
+			10761,
+			10762,
+			10763,
+			10764,
+			10765,
+			10766
+		}
+	}
+	pg.base.activity_ins_chat_group[363] = {
+		ship_group = 10156,
+		name = "安全测试",
+		group_ii = 0,
+		unlock_desc = "获得角色",
+		id = 363,
+		trigger_param = "",
+		trigger_type = 1,
+		content = {
+			10767,
+			10768,
+			10769,
+			10770,
+			10771,
+			10772,
+			10773,
+			10774,
+			10775,
+			10776,
+			10777,
+			10778,
+			10779,
+			10780,
+			10781,
+			10782,
+			10783,
+			10784,
+			10785,
+			10786,
+			10787,
+			10788,
+			10789,
+			10790,
+			10791
+		}
+	}
+	pg.base.activity_ins_chat_group[364] = {
+		ship_group = 10156,
+		name = "饲养计划",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到100",
+		id = 364,
+		trigger_param = "100",
+		trigger_type = 2,
+		content = {
+			10792,
+			10793,
+			10794,
+			10795,
+			10796,
+			10797,
+			10798,
+			10799,
+			10800,
+			10801,
+			10802,
+			10803,
+			10804,
+			10805,
+			10806,
+			10807,
+			10808,
+			10809,
+			10810,
+			10811,
+			10812,
+			10813,
+			10814,
+			10815,
+			10816,
+			10817,
+			10818,
+			10819,
+			10820
+		}
+	}
+	pg.base.activity_ins_chat_group[365] = {
+		ship_group = 10156,
+		name = "AI助手",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到150",
+		id = 365,
+		trigger_param = "150",
+		trigger_type = 2,
+		content = {
+			10821,
+			10822,
+			10823,
+			10824,
+			10825,
+			10826,
+			10827,
+			10828,
+			10829,
+			10830,
+			10831,
+			10832,
+			10833,
+			10834,
+			10835,
+			10836,
+			10837,
+			10838,
+			10839,
+			10840,
+			10841,
+			10842,
+			10843,
+			10844,
+			10845,
+			10846,
+			10847,
+			10848,
+			10849
+		}
+	}
+	pg.base.activity_ins_chat_group[366] = {
+		ship_group = 10157,
+		name = "帮派对峙？",
+		group_ii = 0,
+		unlock_desc = "获得角色",
+		id = 366,
+		trigger_param = "",
+		trigger_type = 1,
+		content = {
+			10850,
+			10851,
+			10852,
+			10853,
+			10854,
+			10855,
+			10856,
+			10857,
+			10858,
+			10859,
+			10860,
+			10861,
+			10862,
+			10863,
+			10864,
+			10865,
+			10866,
+			10867,
+			10868,
+			10869,
+			10870,
+			10871,
+			10872,
+			10873
+		}
+	}
+	pg.base.activity_ins_chat_group[367] = {
+		ship_group = 10157,
+		name = "取长补短",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到100",
+		id = 367,
+		trigger_param = "100",
+		trigger_type = 2,
+		content = {
+			10874,
+			10875,
+			10876,
+			10877,
+			10878,
+			10879,
+			10880,
+			10881,
+			10882,
+			10883,
+			10884,
+			10885,
+			10886,
+			10887,
+			10888,
+			10889,
+			10890,
+			10891,
+			10892,
+			10893,
+			10894,
+			10895,
+			10896,
+			10897,
+			10898
+		}
+	}
+	pg.base.activity_ins_chat_group[368] = {
+		ship_group = 10157,
+		name = "藏起来的小册子",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到150",
+		id = 368,
+		trigger_param = "150",
+		trigger_type = 2,
+		content = {
+			10899,
+			10900,
+			10901,
+			10902,
+			10903,
+			10904,
+			10905,
+			10906,
+			10907,
+			10908,
+			10909,
+			10910,
+			10911,
+			10912,
+			10913,
+			10914,
+			10915,
+			10916,
+			10917,
+			10918,
+			10919,
+			10920,
+			10921,
+			10922,
+			10923,
+			10924,
+			10925
+		}
+	}
+	pg.base.activity_ins_chat_group[369] = {
+		ship_group = 10158,
+		name = "离家出走？",
+		group_ii = 0,
+		unlock_desc = "获得角色",
+		id = 369,
+		trigger_param = "",
+		trigger_type = 1,
+		content = {
+			10926,
+			10927,
+			10928,
+			10929,
+			10930,
+			10931,
+			10932,
+			10933,
+			10934,
+			10935,
+			10936,
+			10937,
+			10938,
+			10939,
+			10940,
+			10941,
+			10942,
+			10943,
+			10944,
+			10945,
+			10946,
+			10947,
+			10948,
+			10949,
+			10950,
+			10951,
+			10952,
+			10953,
+			10954
+		}
+	}
+	pg.base.activity_ins_chat_group[370] = {
+		ship_group = 10158,
+		name = "危机应对",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到100",
+		id = 370,
+		trigger_param = "100",
+		trigger_type = 2,
+		content = {
+			10955,
+			10956,
+			10957,
+			10958,
+			10959,
+			10960,
+			10961,
+			10962,
+			10963,
+			10964,
+			10965,
+			10966,
+			10967,
+			10968,
+			10969,
+			10970,
+			10971,
+			10972,
+			10973,
+			10974,
+			10975,
+			10976,
+			10977,
+			10978,
+			10979
+		}
+	}
+	pg.base.activity_ins_chat_group[371] = {
+		ship_group = 10158,
+		name = "再次离家出走？",
+		group_ii = 0,
+		unlock_desc = "角色好感度达到150",
+		id = 371,
+		trigger_param = "150",
+		trigger_type = 2,
+		content = {
+			10980,
+			10981,
+			10982,
+			10983,
+			10984,
+			10985,
+			10986,
+			10987,
+			10988,
+			10989,
+			10990,
+			10991,
+			10992,
+			10993,
+			10994,
+			10995,
+			10996,
+			10997,
+			10998,
+			10999,
+			11000,
+			11001,
+			11002,
+			11003
+		}
+	}
+	pg.base.activity_ins_chat_group[372] = {
+		ship_group = 203,
+		name = "意见收集中",
+		group_ii = 0,
+		unlock_desc = "时间解锁",
+		id = 372,
+		trigger_type = 3,
+		trigger_param = {
+			{
+				{
+					2026,
+					8,
+					13
+				},
+				{
+					13,
+					0,
+					0
+				}
+			}
+		},
+		content = {
+			11004,
+			11005,
+			11006,
+			11007,
+			11008,
+			11009,
+			11010,
+			11011,
+			11012,
+			11013,
+			11014,
+			11015,
+			11016,
+			11017,
+			11018,
+			11019,
+			11020,
+			11021,
+			11022,
+			11023,
+			11024,
+			11025,
+			11026,
+			11027,
+			11028,
+			11029,
+			11030,
+			11031,
+			11032,
+			11033,
+			11034,
+			11035,
+			11036,
+			11037,
+			11038,
+			11039,
+			11040,
+			11041,
+			11042,
+			11043,
+			11044,
+			11045,
+			11046,
+			11047,
+			11048,
+			11049,
+			11050,
+			11051,
+			11052,
+			11053,
+			11054,
+			11055,
+			11056,
+			11057,
+			11058
 		}
 	}
 

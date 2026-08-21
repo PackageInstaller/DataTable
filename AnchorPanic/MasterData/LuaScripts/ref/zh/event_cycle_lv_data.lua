@@ -242,6 +242,166 @@ local event_cycle_lv_data=
 	[119]={ need_exp=2000, reward={11,8000}, is_core=0, describe=0, title=0
 },
 	[120]={ need_exp=2000, reward={2401,30}, is_core=1, describe=0, title=0
+},
+	[121]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[122]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[123]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[124]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[125]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[126]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[127]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[128]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[129]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[130]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[131]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[132]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[133]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[134]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[135]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[136]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[137]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[138]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[139]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[140]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[141]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[142]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[143]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[144]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[145]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[146]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[147]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[148]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[149]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[150]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[151]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[152]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[153]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[154]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[155]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[156]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[157]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[158]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[159]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[160]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[161]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[162]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[163]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[164]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[165]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[166]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[167]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[168]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[169]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[170]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[171]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[172]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[173]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[174]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[175]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[176]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[177]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[178]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[179]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[180]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[181]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[182]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[183]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[184]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[185]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[186]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[187]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[188]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[189]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[190]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
+},
+	[191]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[192]={ need_exp=3000, reward={2452,12}, is_core=0, describe=0, title=0
+},
+	[193]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[194]={ need_exp=3000, reward={2023,3}, is_core=0, describe=0, title=0
+},
+	[195]={ need_exp=3000, reward={8103,8}, is_core=0, describe=0, title=0
+},
+	[196]={ need_exp=3000, reward={1,120000}, is_core=0, describe=0, title=0
+},
+	[197]={ need_exp=3000, reward={2052,3}, is_core=0, describe=0, title=0
+},
+	[198]={ need_exp=3000, reward={2453,10}, is_core=0, describe=0, title=0
+},
+	[199]={ need_exp=3000, reward={11,10000}, is_core=0, describe=0, title=0
+},
+	[200]={ need_exp=3000, reward={2401,36}, is_core=0, describe=0, title=0
 }
 }
 

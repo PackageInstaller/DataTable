@@ -70,6 +70,12 @@ function onReqRechargeHandler(self, args)
             end
         end
         if (RMB) then
+	        if web.WebManager:isInner() and GameManager.IS_DEBUG then
+                local cmd = string.format("imitate_pay %s", itemId)
+                GameDispatcher:dispatchEvent(EventName.REQ_GM_RUN, { command = cmd })
+                print("进行imitate_pay 模拟充值, 商品id : " .. itemId)
+                return
+            end
             local moneyType = 1
             web.WebController:reqRecharge(itemId, RMB, moneyType, itemTitle, itemName, itemDes, successFun, failFun)
         else

@@ -1,31 +1,8 @@
-﻿pg = var_0_10000
-
-local var_0_0
-
-var_0_0 = var_0_10000 or {}
-pg = pg
-rawget = var_0_10001
-pg = var_0_10003
-
-local var_0_2
-
-if not var_0_10001(var_0_10003, "world_event_complete") then
-	setmetatable = var_0_2
-
-	local var_0_1 = {
-		__name = "world_event_complete"
-	}
-
-	confNEO = var_4
-	var_0_2 = var_0_2(var_0_1, var_4)
-end
-
-var_0.world_event_complete = var_0_2
-pg = var_0
-
-local var_0_3 = var_0.world_event_complete
-
-var_0_3.all = {
+﻿pg = pg or {}
+pg.world_event_complete = rawget(pg, "world_event_complete") or setmetatable({
+	__name = "world_event_complete"
+}, confNEO)
+pg.world_event_complete.all = {
 	1,
 	2,
 	3,
@@ -37,25 +14,11 @@ var_0_3.all = {
 	9,
 	10
 }
-pg = var_0_3
-pg = var_1
-
-local var_0_4
-
-if not var_1.base then
-	var_0_4 = {}
-end
-
-var_0_3.base = var_0_4
-pg = var_0_3
-var_0_3.base.world_event_complete = {}
+pg.base = pg.base or {}
+pg.base.world_event_complete = {}
 
 ;(function()
-	pg = var_1_10000
-
-	local var_1_0 = var_1_10000.base.world_event_complete
-
-	var_1_0[1] = {
+	pg.base.world_event_complete[1] = {
 		event_id = 200,
 		map_icon = "buff_a2",
 		id = 1,
@@ -74,11 +37,7 @@ var_0_3.base.world_event_complete = {}
 			5
 		}
 	}
-	pg = var_1_0
-
-	local var_1_1 = var_1_0.base.world_event_complete
-
-	var_1_1[2] = {
+	pg.base.world_event_complete[2] = {
 		event_id = 200,
 		map_icon = "buff_h2",
 		id = 2,
@@ -97,11 +56,7 @@ var_0_3.base.world_event_complete = {}
 			5
 		}
 	}
-	pg = var_1_1
-
-	local var_1_2 = var_1_1.base.world_event_complete
-
-	var_1_2[3] = {
+	pg.base.world_event_complete[3] = {
 		event_id = 200,
 		map_icon = "buff_d2",
 		id = 3,
@@ -120,11 +75,7 @@ var_0_3.base.world_event_complete = {}
 			5
 		}
 	}
-	pg = var_1_2
-
-	local var_1_3 = var_1_2.base.world_event_complete
-
-	var_1_3[4] = {
+	pg.base.world_event_complete[4] = {
 		event_id = 200,
 		map_icon = "buff_a",
 		id = 4,
@@ -143,11 +94,7 @@ var_0_3.base.world_event_complete = {}
 			10
 		}
 	}
-	pg = var_1_3
-
-	local var_1_4 = var_1_3.base.world_event_complete
-
-	var_1_4[5] = {
+	pg.base.world_event_complete[5] = {
 		event_id = 200,
 		map_icon = "buff_h",
 		id = 5,
@@ -166,11 +113,7 @@ var_0_3.base.world_event_complete = {}
 			10
 		}
 	}
-	pg = var_1_4
-
-	local var_1_5 = var_1_4.base.world_event_complete
-
-	var_1_5[6] = {
+	pg.base.world_event_complete[6] = {
 		event_id = 200,
 		map_icon = "buff_d",
 		id = 6,
@@ -189,11 +132,7 @@ var_0_3.base.world_event_complete = {}
 			10
 		}
 	}
-	pg = var_1_5
-
-	local var_1_6 = var_1_5.base.world_event_complete
-
-	var_1_6[7] = {
+	pg.base.world_event_complete[7] = {
 		event_id = 200,
 		map_icon = "currency",
 		id = 7,
@@ -215,11 +154,7 @@ var_0_3.base.world_event_complete = {}
 		},
 		event_reward_slgbuff = {}
 	}
-	pg = var_1_6
-
-	local var_1_7 = var_1_6.base.world_event_complete
-
-	var_1_7[8] = {
+	pg.base.world_event_complete[8] = {
 		event_id = 200,
 		map_icon = "currency",
 		id = 8,
@@ -241,11 +176,7 @@ var_0_3.base.world_event_complete = {}
 		},
 		event_reward_slgbuff = {}
 	}
-	pg = var_1_7
-
-	local var_1_8 = var_1_7.base.world_event_complete
-
-	var_1_8[9] = {
+	pg.base.world_event_complete[9] = {
 		event_id = 200,
 		map_icon = "currency",
 		id = 9,
@@ -267,8 +198,7 @@ var_0_3.base.world_event_complete = {}
 		},
 		event_reward_slgbuff = {}
 	}
-	pg = var_1_8
-	var_1_8.base.world_event_complete[10] = {
+	pg.base.world_event_complete[10] = {
 		event_id = 200,
 		map_icon = "currency",
 		id = 10,

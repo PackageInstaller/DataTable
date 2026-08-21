@@ -1,56 +1,33 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("WinterFestival2025ShrineSelectShipView", import(".Shrine2022SelectShipView"))
 
-local var_0_0 = "WinterFestival2025ShrineSelectShipView"
-
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".Shrine2022SelectShipView"))
-
-function var_0_1.getUIName(arg_1_0)
+function var_0_0.getUIName(arg_1_0)
 	return "WinterFestival2025ShrineSelectShipUI"
 end
 
-function var_0_1.setUIData(arg_2_0)
-	local var_2_0 = arg_2_0._tf
-	local var_2_1 = var_1.Find(var_2_0, "Res")
+function var_0_0.setUIData(arg_2_0)
+	local var_2_0 = arg_2_0._tf:Find("Res")
 
 	arg_2_0.shipCardSpriteList = {}
 
 	for iter_2_0 = 1, 7 do
-		getImageSprite = var_1_10006
-		var_1_10006 = var_1_10006(var_2_1:Find("ShipCard" .. iter_2_0))
-		table = var_1_10007
-
-		var_1_10007.insert(arg_2_0.shipCardSpriteList, var_1_10006)
+		table.insert(arg_2_0.shipCardSpriteList, (getImageSprite(var_2_0:Find("ShipCard" .. iter_2_0))))
 	end
 
 	arg_2_0.shipNameSpriteList = {}
 
 	for iter_2_1 = 1, 7 do
-		getImageSprite = var_1_10006
-		var_1_10006 = var_1_10006(var_2_1:Find("ShipName" .. iter_2_1))
-		table = var_1_10007
-
-		var_1_10007.insert(arg_2_0.shipNameSpriteList, var_1_10006)
+		table.insert(arg_2_0.shipNameSpriteList, (getImageSprite(var_2_0:Find("ShipName" .. iter_2_1))))
 	end
 
-	local var_2_2 = {}
-
-	Ship = var_3
-	var_2_2[1] = var_3.getShipName(19)
-	Ship = var_3
-	var_2_2[2] = var_3.getShipName(105141)
-	Ship = var_3
-	var_2_2[3] = var_3.getShipName(702051)
-	Ship = var_3
-	var_2_2[4] = var_3.getShipName(607021)
-	Ship = var_3
-	var_2_2[5] = var_3.getShipName(9)
-	Ship = var_3
-	var_2_2[6] = var_3.getShipName(19)
-	Ship = var_3
-	var_2_2[7] = var_3.getShipName(407011)
-	arg_2_0.shipNameTextList = var_2_2
+	arg_2_0.shipNameTextList = {
+		Ship.getShipName(19),
+		Ship.getShipName(105141),
+		Ship.getShipName(702051),
+		Ship.getShipName(607021),
+		Ship.getShipName(9),
+		Ship.getShipName(19),
+		Ship.getShipName(407011)
+	}
 	arg_2_0.cardPosList = {
 		{
 			x = -75.5,
@@ -115,44 +92,23 @@ function var_0_1.setUIData(arg_2_0)
 	return
 end
 
-function var_0_1.updateShipCardUI(arg_3_0, arg_3_1, arg_3_2)
-	setImageSprite = var_1_10003
+function var_0_0.updateShipCardUI(arg_3_0, arg_3_1, arg_3_2)
+	setImageSprite(arg_3_1, arg_3_0.shipCardSpriteList[arg_3_2], true)
+	setActive(arg_3_1:Find("Name"), false)
 
-	var_1_10003(arg_3_1, arg_3_0.shipCardSpriteList[arg_3_2], true)
+	local var_3_0 = arg_3_1:Find("NameMask/Name_Text")
 
-	local var_3_0 = arg_3_1
-	local var_3_1 = arg_3_1.Find(var_3_0, "Name")
+	setScrollText(var_3_0, arg_3_0.shipNameTextList[arg_3_2])
+	setLocalPosition(arg_3_1, arg_3_0.cardPosList[arg_3_2])
 
-	setActive = var_1_10004
+	local var_3_1 = arg_3_0:isSelected(arg_3_2)
 
-	var_1_10004(var_3_1, false)
+	setActive(arg_3_1:Find("Selected"), var_3_1)
+	setActive(var_3_0, not var_3_1)
 
-	local var_3_2 = arg_3_1:Find("NameMask/Name_Text")
-
-	setScrollText = var_3_0
-
-	var_3_0(var_3_2, arg_3_0.shipNameTextList[arg_3_2])
-
-	setLocalPosition = var_3_0
-
-	var_3_0(arg_3_1, arg_3_0.cardPosList[arg_3_2])
-
-	local var_3_3 = arg_3_1
-	local var_3_4 = arg_3_1.Find(var_3_3, "Selected")
-	local var_3_5 = arg_3_0:isSelected(arg_3_2)
-
-	setActive = var_3_3
-
-	var_3_3(var_3_4, var_3_5)
-
-	setActive = var_3_3
-
-	var_3_3(var_3_2, not var_3_5)
-
-	GetComponent = var_3_3
-	var_3_3(arg_3_1, "Toggle").enabled = not var_3_5
+	GetComponent(arg_3_1, "Toggle").enabled = not var_3_1
 
 	return
 end
 
-return var_0_1
+return var_0_0

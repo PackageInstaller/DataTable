@@ -120,9 +120,11 @@ function __updateView(self)
         self.mRatioY = 1
         local sdkInfo = sdk.SdkManager:getSdkInfo()
         if(sdkInfo)then
-            self.mRatioX = (sdkInfo and sdkInfo.screenWidth and sdkInfo.screenHeight) and math.max(sdkInfo.screenWidth, sdkInfo.screenHeight) / screenWidth or self.mRatioX
-            self.mRatioY = (sdkInfo and sdkInfo.screenWidth and sdkInfo.screenHeight) and math.min(sdkInfo.screenWidth, sdkInfo.screenHeight) / screenHeight or self.mRatioY
-            print(string.format("SdkWidth = %s, SdkHeight = %s", sdkInfo.screenWidth, sdkInfo.screenHeight))
+            if(web.WebManager.platform ~= web.DEVICE_TYPE.WINDOWS)then
+                self.mRatioX = (sdkInfo and sdkInfo.screenWidth and sdkInfo.screenHeight) and math.max(sdkInfo.screenWidth, sdkInfo.screenHeight) / screenWidth or self.mRatioX
+                self.mRatioY = (sdkInfo and sdkInfo.screenWidth and sdkInfo.screenHeight) and math.min(sdkInfo.screenWidth, sdkInfo.screenHeight) / screenHeight or self.mRatioY
+                print(string.format("SdkWidth = %s, SdkHeight = %s", sdkInfo.screenWidth, sdkInfo.screenHeight))
+            end
         end
         print(string.format("ScreenWidth = %s, ScreenHeight = %s", screenWidth, screenHeight))
         print(string.format("WebWidth = %s, WebHeight = %s", self.mWebWidth, self.mWebHeight))

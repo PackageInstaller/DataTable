@@ -1,39 +1,16 @@
-﻿class = var_0_10000
+﻿local var_0_0 = class("NewYearShrinePage2025", import(".NewYearShrinePage"))
 
-local var_0_0 = "NewYearShrinePage2025"
+var_0_0.GO_MINI_GAME_ID = 71
 
-import = var_0_10003
-
-local var_0_1 = var_0_10000(var_0_0, var_0_10003(".NewYearShrinePage"))
-
-var_0_1.GO_MINI_GAME_ID = 71
-
-function var_0_1.OnFirstFlush(arg_1_0)
-	var_0_1.super.OnFirstFlush(arg_1_0)
-
-	onButton = var_1
-
-	local var_1_0 = arg_1_0
-	local var_1_1 = arg_1_0.goBtn
-
-	local function var_1_2()
-		pg = var_2_10000
-
-		local var_2_0 = var_2_10000.m02
-		local var_2_1 = var_0.sendNotification
-
-		GAME = var_2_10003
-
-		var_2_1(var_2_0, var_2_10003.GO_MINI_GAME, var_0_1.GO_MINI_GAME_ID, {})
+function var_0_0.OnFirstFlush(arg_1_0)
+	var_0_0.super.OnFirstFlush(arg_1_0)
+	onButton(arg_1_0, arg_1_0.goBtn, function()
+		pg.m02:sendNotification(GAME.GO_MINI_GAME, var_0_0.GO_MINI_GAME_ID, {})
 
 		return
-	end
-
-	SFX_PANEL = var_1_10006
-
-	var_1(var_1_0, var_1_1, var_1_2, var_1_10006)
+	end, SFX_PANEL)
 
 	return
 end
 
-return var_0_1
+return var_0_0

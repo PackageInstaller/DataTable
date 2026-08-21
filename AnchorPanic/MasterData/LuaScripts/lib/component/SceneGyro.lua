@@ -8,17 +8,23 @@ end
 -- 连接对象
 function attach(self, roleView, sceneGo)
     local roleNode = gs.GameObject.Find("Role_node")
+    if roleView == nil or roleNode == nil then
+        return
+    end
+
     roleNode.transform:SetParent(sceneGo.transform, true)
 
     self.mRoleView = roleView
     self.mSceneTrans = sceneGo.transform
     self.mSceneCameraTrans = gs.CameraMgr:GetSceneCameraTrans()
     self.spineNode = self.mRoleView:getPointTrans(fight.FightDef.POINT_SPINE)
+    if not self.spineNode then
+        return
+    end
     self.spineNodePos = self.mSceneTrans.parent:InverseTransformPoint(self.spineNode.position) -- 胸部挂点位置转换为相机挂点的位置
 
     self.spineNodePos = math.Vector3(self.spineNodePos.x, self.spineNodePos.y, self.spineNodePos.z - 8)
     self.initialRotation = self.mSceneCameraTrans.rotation -- 保存初始旋转
-
 
     -- 添加新的成员变量
     self.roleTransform = gs.GameObject.Find("Role_node").transform
@@ -27,19 +33,18 @@ function attach(self, roleView, sceneGo)
     self.initialRolePos = self.roleTransform.position
     self.initialRoleRot = self.roleTransform.rotation
 
-
-    --限制陀螺仪旋转加速度
+    -- 限制陀螺仪旋转加速度
     self.clampAngle = gs.Mathf.PI
 
-    --累加X值
+    -- 累加X值
     self.allX = 0
-    --累加Y值
+    -- 累加Y值
     self.allY = 0
     self.velocity = self.velocity or gs.Vector3.zero
 
-    --是否正在运行
+    -- 是否正在运行
     self.run = false
-    --是否在进行移动操作
+    -- 是否在进行移动操作
     self.moveMode = false
     self.angleLimit = 2.5 -- 角度限制
     self.lerpSpeed = 3    -- 插值速度，用于控制回正速度
@@ -51,44 +56,26 @@ function attach(self, roleView, sceneGo)
     self.mLoop = LoopManager:addFrame(1, 0, self, self.update)
 end
 
---设置模型移动
+-- 设置模型移动
 function setMoveModel(self, bo)
     self.moveMode = bo
 end
 
---设置是否运行
+-- 设置是否运行
 function setRun(self, bo)
     self.run = bo
 end
 
---重置位置
+-- 重置位置
 function resetTran(self)
-    if self.mSceneTrans then
+    if self.mSceneTrans and not gs.GoUtil.IsTransNull(self.mSceneTrans) and self.allY and self.spineNodePos then
         self.mSceneTrans:RotateAround(self.spineNodePos, gs.Vector3.up, -self.allY)
     end
     self.allY = 0
 end
 
--- function update(self)
---     if gs.Input.gyro.enabled == false or self.run == false or self.moveMode == true then
---         return
---     end
-
---     local gyroRotationRate = gs.UnityEngineUtil.GetGyroRotationRateUnbiased()
---     local xRotationRate = gyroRotationRate[0] * self.angleLimit
---     local yRotationRate = gyroRotationRate[1] * self.angleLimit
-
---     -- 通过四元数创建目标旋转
---     local targetRotation = gs.Quaternion.Euler(xRotationRate, yRotationRate, 0)
-
---     -- 使用Slerp平滑插值旋转
---     self.mSceneCameraTrans.rotation = gs.Quaternion.Slerp(self.mSceneCameraTrans.rotation,
---         self.initialRotation * targetRotation, gs.Time.deltaTime * self.lerpSpeed)
--- end
-
-
 function update(self)
-    if gs.Input.gyro.enabled == false or self.run == false or self.moveMode == true then
+    if not self.mSceneCameraTrans or gs.GoUtil.IsTransNull(self.mSceneCameraTrans) or not self.roleTransform or gs.GoUtil.IsTransNull(self.roleTransform) or gs.Input.gyro.enabled == false or self.run == false or self.moveMode == true then
         return
     end
 
@@ -98,14 +85,12 @@ function update(self)
 
     -- 通过四元数创建目标旋转
     local targetRotation = gs.Quaternion.Euler(xRotationRate, yRotationRate, 0)
-    self.mSceneCameraTrans.rotation = gs.Quaternion.Slerp(self.mSceneCameraTrans.rotation,
-        self.initialRotation * targetRotation, gs.Time.deltaTime * self.lerpSpeed)
+    self.mSceneCameraTrans.rotation = gs.Quaternion.Slerp(self.mSceneCameraTrans.rotation, self.initialRotation * targetRotation, gs.Time.deltaTime * self.lerpSpeed)
 
     -- 基于陀螺仪旋转的角色位置偏移
     local positionOffset = self.mSceneCameraTrans.right * yRotationRate * 0.08
     local roleTargetPos = self.initialRolePos + positionOffset
-    self.roleTransform.position = gs.Vector3.Lerp(self.roleTransform.position, roleTargetPos,
-        gs.Time.deltaTime * self.lerpSpeed)
+    self.roleTransform.position = gs.Vector3.Lerp(self.roleTransform.position, roleTargetPos, gs.Time.deltaTime * self.lerpSpeed)
 end
 
 -- 限制旋转角度的函数
